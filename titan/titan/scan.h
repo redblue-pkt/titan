@@ -127,7 +127,7 @@ int findchannel(unsigned char *buf, unsigned long transponderid, uint8_t* lastse
 	// service_description_section elements
 	unsigned short seclen;
 	uint8_t secnr;
-	unsigned short onid;
+	unsigned short onid, tid;
 	unsigned short serviceid;
 	unsigned short desclooplen;
 	unsigned short running;
@@ -142,9 +142,11 @@ int findchannel(unsigned char *buf, unsigned long transponderid, uint8_t* lastse
 	seclen = ((buf[1] & 0x0F) << 8) | buf[2];
 	secnr = buf[6];
 	*lastsecnr = buf[7];
-	transponderid = (buf[3] << 8) | buf[4];
+	tid = (buf[3] << 8) | buf[4];
 	onid = (buf[8] << 8) | buf[9];
-	debug(500, "SDT nr: %d, lastnr: %d, len: %d, tid: %ld, onid: %d", secnr, *lastsecnr, seclen, transponderid, onid);
+	
+	transponderid = (onid << 16) | tid;
+	debug(500, "SDT nr: %d, lastnr: %d, len: %d, tid: %ld, onid: %d, transponderid: %lu", secnr, *lastsecnr, seclen, tid, onid, transponderid);
 
 	for(pos = 11; pos < seclen - 1; pos += desclooplen + 5)
 	{

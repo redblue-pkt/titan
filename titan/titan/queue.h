@@ -1,7 +1,18 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
-struct queue* addqueue(int type, void* data, int len, struct queue* last)
+void debugqueue()
+{
+	struct queue* node = queue;
+
+	while(node != NULL)
+	{
+		printf("%s %p <%p >%p\n", (char*)node->data, node, node->prev, node->next);
+		node = node->next;
+	}
+}
+
+struct queue* addqueue(int type, void* data, int len, int flag, struct queue* last)
 {
 	//debug(1000, "in");
 
@@ -30,6 +41,7 @@ struct queue* addqueue(int type, void* data, int len, struct queue* last)
 
 	newnode->type = type;
 	newnode->len = len;
+	newnode->flag = flag;
 	newnode->data = memcpy(tmpdata, data, len);
 
 	if(last == NULL)
