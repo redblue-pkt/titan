@@ -442,9 +442,9 @@ void screenplay(int flag)
 	char* tmppolicy = NULL;
 	struct skin* playinfobar = getscreen("playinfobar");
 
-	int skip13 = getconfigint("skip13", NULL) * 60;
-	int skip46 = getconfigint("skip46", NULL) * 60;
-	int skip79 = getconfigint("skip79", NULL) * 60;
+	int skip13 = getconfigint("skip13", NULL);
+	int skip46 = getconfigint("skip46", NULL);
+	int skip79 = getconfigint("skip79", NULL);
 	
 	rcret = servicestop(status.aktservice, 1, 1);
 	if(rcret == 1) return;

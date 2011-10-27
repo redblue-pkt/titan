@@ -32,9 +32,9 @@ void screenmc_videoplayer()
 	// read configs
 	int style = getconfigint("style", NULL);
 	int view = getconfigint("view", NULL);
-	int skip13 = getconfigint("skip13", NULL) * 60;
-	int skip46 = getconfigint("skip46", NULL) * 60;
-	int skip79 = getconfigint("skip79", NULL) * 60;
+	int skip13 = getconfigint("skip13", NULL);
+	int skip46 = getconfigint("skip46", NULL);
+	int skip79 = getconfigint("skip79", NULL);
 
 	// set allowed filemask
 	char* filemask = "*.m3u *.ifo *.rar *.iso *.img *.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.pls *.trp *.ts *.vdr *.vob *.wmv *.rm";
