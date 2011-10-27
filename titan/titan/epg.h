@@ -1134,11 +1134,13 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 
 		dvbtime = dvbconvertdate(&evt->mjd_hi, 0);
 		starttime = dvbtime;
+		starttime -= starttime % 60;
 
 		dvbtime += bcdtoint(evt->duration_s & 0xff);
 		dvbtime += (bcdtoint(evt->duration_m & 0xff) * 60);
 		dvbtime += (bcdtoint(evt->duration_h & 0xff) * 60 * 60);
 		endtime = dvbtime;
+		endtime -= endtime % 60;
 
 #ifndef SIMULATE
 		if(endtime < time(NULL) || starttime > time(NULL) + epgmaxsec)
