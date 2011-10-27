@@ -1,0 +1,42 @@
+<screen fontcol=fontcol title="Networkbrowser" valign=bottom titlealign=center name=networkbrowser hspace=15 vspace=15 fontsize=30 posx=center posy=center width=80% height=60% bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node pic=dummy_dont_change_or_add_png_file fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox  posx=center posy=center width=80% height=90% />
+<node name=b1 text=OK halign=center valign=middle bordercol=okcol bordersize=4 bordertype=2 posx=0 posy=0 width=150 height=30/>
+<node name=b2 text=EXIT halign=center valign=middle bordercol=exitcol bordersize=4 bordertype=2 posx=160 posy=0 width=150 height=30/>
+</screen>
+
+<screen fontcol=fontcol valign=bottom titlealign=center name="networkbrowser_main" hspace=15 vspace=15 fontsize=30 title="" posx=center posy=center width=80% height=60% bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node bordercol=bordercol scrollbar=auto type=listbox name=listbox posy=1 width=100% height=-35>
+</screen>
+
+<screen fontcol=fontcol valign=bottom titlealign=center name="networkbrowser_shares" hspace=15 vspace=15 fontsize=30 title="" posx=center posy=center width=80% height=60% bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node bordercol=bordercol scrollbar=auto type=listbox name=listbox posy=10 width=100% height=-35>
+<node name=b1 text=OK halign=center valign=middle bordercol=okcol bordersize=4 bordertype=2 posx=0 posy=0 width=150 height=30/>
+<node name=b2 text=EXIT halign=center valign=middle bordercol=exitcol bordersize=4 bordertype=2 posx=160 posy=0 width=150 height=30/>
+</screen>
+
+<screen fontcol=fontcol valign=bottom titlealign=center name="networkbrowser_add_share" hspace=15 vspace=15 fontsize=30 title="" posx=center posy=center width=80% height=60% bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node bordercol=bordercol scrollbar=auto type=listbox name=listbox posy=10 width=100% height=-35>
+<node name=skin_mode type=choicebox parent=listbox valign=middle posx=0 text="type" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=skin_sharename type=inputbox parent=listbox valign=middle posx=0 text="sharename" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=skin_ipaddresse type=inputboxnum parent=listbox valign=middle posx=0 text="ipaddresse" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=skin_ftpport type=inputboxnum parent=listbox valign=middle posx=0 text="ftpport" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=skin_sharedir type=inputbox parent=listbox valign=middle posx=0 text="sharedir" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=skin_userauth type=choicebox parent=listbox valign=middle posx=0 text="userauth" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=skin_username type=inputbox parent=listbox valign=middle posx=0 text="username" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=skin_password type=inputbox parent=listbox valign=middle posx=0 text="password" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=skin_protocol type=choicebox parent=listbox valign=middle posx=0 text="protocol" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=skin_options type=choicebox parent=listbox valign=middle posx=0 text="options" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=skin_wsize type=choicebox parent=listbox valign=middle posx=0 text="wsize" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=skin_rsize type=choicebox parent=listbox valign=middle posx=0 text="rsize" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=skin_usessl type=choicebox parent=listbox valign=middle posx=0 text="usessl" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=skin_ssl type=choicebox parent=listbox valign=middle posx=0 text="ssl" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=skin_useproxy type=choicebox parent=listbox valign=middle posx=0 text="useproxy" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=skin_proxyip type=inputboxnum parent=listbox valign=middle posx=0 text="proxyip" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=skin_proxyport type=inputboxnum parent=listbox valign=middle posx=0 text="proxyport" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=skin_proxyauth type=choicebox parent=listbox valign=middle posx=0 text="proxyauth" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=skin_proxyuser type=inputbox parent=listbox valign=middle posx=0 text="proxyuser" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=skin_proxypass type=inputbox parent=listbox valign=middle posx=0 text="proxypass" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=skin_hddreplacement type=choicebox parent=listbox valign=middle posx=0 text="hddreplacement" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=b1 text=OK halign=center valign=middle bordercol=okcol bordersize=4 bordertype=2 posx=0 posy=0 width=150 height=30/>
+<node name=b2 text=EXIT halign=center valign=middle bordercol=exitcol bordersize=4 bordertype=2 posx=160 posy=0 width=150 height=30/>
+</screen>

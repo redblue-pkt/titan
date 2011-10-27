@@ -1,0 +1,114 @@
+#ifndef INPUTHELP_H
+#define INPUTHELP_H
+
+char* screeninputhelp(char* text)
+{
+	int rcret = 0, tmpscreencalc = 0;
+	struct skin* inputhelp = getscreen("inputhelp");
+	struct skin* grid = NULL;
+	struct skin* grid1 = getscreennode(inputhelp, "grid1");
+	struct skin* grid2 = getscreennode(inputhelp, "grid2");
+	struct skin* inputbox = getscreennode(inputhelp, "inputbox");
+	char* tmpstr = NULL;
+
+	grid1->hidden = NO;
+	grid2->hidden = YES;
+	grid = grid1;
+	if(text != NULL && strlen(text) > 0)
+	{
+		inputbox->aktpage = strlen(text);
+	}
+	changeinput(inputbox, text);
+	tmpscreencalc = status.screencalc;
+	status.screencalc = 0;
+	drawscreen(inputhelp, 0);
+	addscreenrc(inputhelp, grid);
+
+	while(1)
+	{
+		rcret = waitrc(inputhelp, 0, 0);
+
+		if(rcret == getrcconfigint("rcexit", NULL))
+		{
+			tmpstr = ostrcat(tmpstr, text, 1, 0);
+			break;
+		}
+		if(rcret == getrcconfigint("rcff", NULL))
+			inputboxright(inputhelp, inputbox);
+		if(rcret == getrcconfigint("rcfr", NULL))
+			inputboxleft(inputhelp, inputbox);
+		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcred", NULL) || rcret == getrcconfigint("rcgreen", NULL) || rcret == getrcconfigint("rcyellow", NULL) || rcret == getrcconfigint("rcblue", NULL))
+		{
+			if(grid->select != NULL && grid->select->name != NULL)
+			{
+				if(rcret == getrcconfigint("rcgreen", NULL) || (rcret == getrcconfigint("rcok", NULL) && ostrcmp(grid->select->name, "ok") == 0))
+				{
+					tmpstr = ostrcat(tmpstr, inputbox->input, 1, 0);
+					break;
+				}
+				if(rcret == getrcconfigint("rcred", NULL) || (rcret == getrcconfigint("rcok", NULL) && ostrcmp(grid->select->name, "bs") == 0))
+				{
+					inputboxfr(inputhelp, inputbox);
+					continue;
+				}
+				if(rcret == getrcconfigint("rcok", NULL) && ostrcmp(grid->select->name, "clear") == 0)
+				{
+					changeinput(inputbox, NULL);
+					drawscreen(inputhelp, 0);
+					continue;
+				}
+				if(rcret == getrcconfigint("rcok", NULL) && ostrcmp(grid->select->name, "left") == 0)
+				{
+					inputboxleft(inputhelp, inputbox);
+					drawscreen(inputhelp, 0);
+					continue;
+				}
+				if(rcret == getrcconfigint("rcok", NULL) && ostrcmp(grid->select->name, "right") == 0)
+				{
+					inputboxright(inputhelp, inputbox);
+					drawscreen(inputhelp, 0);
+					continue;
+				}
+				if(rcret == getrcconfigint("rcblue", NULL) || (rcret == getrcconfigint("rcok", NULL) && ostrcmp(grid->select->name, "switch") == 0))
+				{
+					if(grid1->hidden == YES)
+					{
+						delownerrc(inputhelp);
+						grid = grid1;
+						grid1->hidden = NO;
+						grid2->hidden = YES;
+						addscreenrc(inputhelp, grid);
+					}
+					else
+					{
+						delownerrc(inputhelp);
+						grid = grid2;
+						grid1->hidden = YES;
+						grid2->hidden = NO;
+						addscreenrc(inputhelp, grid);
+					}
+					drawscreen(inputhelp, 0);
+					continue;
+				}
+				if(rcret == getrcconfigint("rcyellow", NULL))
+				{
+					inputboxff(inputhelp, inputbox);
+					inputboxchar(inputhelp, inputbox, ' ', 0);
+					drawscreen(inputhelp, 0);
+					continue;
+				}
+
+				inputboxff(inputhelp, inputbox);
+				inputboxchar(inputhelp, inputbox, grid->select->name[0], 0);
+			}
+		}
+	}
+
+	delownerrc(inputhelp);
+	clearscreen(inputhelp);
+	drawscreen(skin, 0);
+	status.screencalc = tmpscreencalc;
+	return tmpstr;
+}
+
+#endif

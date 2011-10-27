@@ -1,0 +1,25 @@
+LIB = netlib.a
+
+OBJS = list.o nbtscan.o range.o showmount.o smbinfo.o statusq.o
+
+DEPS = $(patsubst %.o,%.d,$(OBJS))
+
+CC = $(HOME)/flashimg/BUILDGIT/checkout_stm22/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc
+AR = $(HOME)/flashimg/BUILDGIT/checkout_stm22/tdt/tufsbox/devkit/sh4/bin/sh4-linux-ar
+
+CFLAGS = -Os -Wall -g -I.
+
+all: $(LIB)
+
+$(LIB): $(OBJS) Makefile
+	$(AR) ru  $@ $(OBJS)
+	ranlib $@
+
+%.o: %.c
+	$(CC) -MD $(CFLAGS) -c $<
+
+clean:
+	rm $(OBJS) $(DEPS) $(LIB)
+
+
+-include $(DEPS)

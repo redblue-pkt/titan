@@ -1,0 +1,34 @@
+.body {background-color: #303030; font-family: verdana}
+.error {font-family:verdana; font-size: 12pt; color: #707070; text-decoration: none}
+.biglabel {font-family:verdana; font-size: 15pt; color: #707070; text-decoration: none}
+.label {font-family:verdana; font-size: 12pt; color: #707070; text-decoration: none}
+.label1 {font-family:verdana; font-size: 12pt; color: #000000; text-decoration: none}
+.smalllabel1 {font-family:verdana; font-size: 10pt; color: #000000; text-decoration: none}
+.link {vertical-align: middle; font-family:verdana; font-size: 12pt; color: #000000; text-decoration: none}
+.link:hover {background-color: #a0a0a0}
+.smalllink {vertical-align: middle; font-family:verdana; font-size: 8pt; color: #000000; text-decoration: none}
+.smalllink:hover {background-color: #a0a0a0}
+.line1 {background-color: #707070}
+.line2 {background-color: #505050}
+.hreflink {font-family: verdana; font-size: 12pt; color: #707070; text-decoration: none}
+.hreflink:hover {background-color: #a0a0a0}
+.pagelink {margin: 2pt; border: 1pt solid #000000; font-family: verdana; font-size: 12pt; color: #000000; text-decoration: none}
+.pagelink:hover {background-color: #a0a0a0}
+.pagesellink {margin: 2pt; border: 1pt solid #c0c0c0; font-family: verdana; font-size: 12pt; color: #000000; text-decoration: none}
+.pagesellink:hover {background-color: #a0a0a0}
+.linelink {padding-left: 4pt; padding-right: 4pt; margin: 2pt; border: 1pt solid #000000; font-family: verdana; font-size: 12pt; color: #707070; text-decoration: none}
+.linelink:hover {background-color: #a0a0a0}
+.bigbutton {height: 80px; width: 200px; font-family: verdana; font-size: 12pt; background-color: #c0c0c0; border: 1px solid #000000; cursor:pointer}
+.button {height: 40px; width: 200px; font-family: verdana; font-size: 12pt; background-color: #c0c0c0; border: 1px solid #000000}
+.timelineborder {vertical-align: middle; float: left; position: relative; font-size: 6px; height: 8px; width: 50px; margin-top: 4px; margin-right: 5px; padding: 0px; border: 1px solid #000000}
+.timelinebar {float: left; position: relative; font-size: 6px; height: 8px; margin: 0px; padding: 0px; border: 0px; background-color: #00ff00}
+.inputbox {border: 1px solid #000000}
+
+.gepgtimelinecell {text-align: left; white-space: nowrap; height: 20px; width: 75px; max-height: 20px; max-width: 75px; min-width: 75px; overflow: hidden; background-color: #707070}
+.gepgchannel1 {text-align: left; white-space: nowrap; border: 1px solid #303030; height: 27px; width: 150px; max-height: 27px; max-width: 150px; min-width: 150px; overflow: hidden; background-color: #707070}
+.gepgchannel2 {text-align: left; white-space: nowrap; border: 1px solid #303030; height: 27px; width: 150px; max-height: 27px; max-width: 150px; min-width: 150px; overflow: hidden; background-color: #505050}
+.gepgchannelcell {border: 1px solid #303030; height: 27px; width: 100px; max-height: 27px; max-width: 100px; min-width: 100px; overflow: hidden}
+.gepgcell {white-space: nowrap; font-size: 10px; height: 27px; max-height: 27px; overflow: hidden}
+.gepgcellborder {border-left: 2px solid #303030; height: 27px; max-height: 27px;}
+.gepgcellblank {height: 27px; width: 100px; max-height: 27px; max-width: 100px; overflow: hidden; background-color: #303030}
+.tableBoxOuter {width: 100%; height: 100%}

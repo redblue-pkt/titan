@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>Titan Web Control</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="titan.css">
+</head>
+<body class=body>
+
+<iframe name=nothing scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=0 height=0></iframe>
+
+<table border=0 width=100% height=100% cellpadding=5 cellspacing=0>
+<tr>
+<!-- LINKLINE -->
+<td valign=bottom style="border: 2px solid #303030; border-right: 0px;"><font class=biglabel>Titan Web</font></td>
+<td style="border: 2px solid #303030; border-left: 0px;" nowrap>
+
+<table border=0 width=100%>
+<tr>
+<td width=100% valign=bottom>
+<a class=linelink target=leftpanel href=boxcontrol.html>Boxcontrol</a>
+<a class=linelink target=main href=query?getmoviefilelist>Movies</a>
+<a class=linelink target=leftpanel href=timer.html>Timer</a>
+</td>
+<td nowrap>
+<a href=query?record target=main><img border=0 src=img/record.png alt=Record width=16 height=16></a>
+<a href=query?getsignal target=main><img border=0 src=img/signal.png alt=Signal width=16 height=16></a>
+</td>
+</tr>
+</table>
+
+</td>
+<!-- LINKLINE END-->
+</tr>
+
+<tr>
+<!-- AKT SERVICE -->
+<td colspan=2>
+<iframe name=aktservice scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=35 src=query?getaktservice></iframe>
+</td>
+<!-- AKT SERVICE END -->
+<tr>
+
+<!-- BOXCONTROL -->
+<td valign=top>
+
+<table width=100% style="border: 2px solid #303030;" cellpadding=5 cellspacing=0>
+<tr><td bgcolor=#505050>Channel List</td></tr>
+<tr><td nowrap>
+<a class=hreflink href=query?getallchannel target=main>All</a><br>
+<a class=hreflink href=query?getsat target=main>Sat</a><br>
+<a class=hreflink href=query?getprovider target=main>Provider</a><br>
+<a class=hreflink href=query?getaz target=main>A-Z</a><br>
+<a class=hreflink href=query?getbouquet target=main>Bouquets</a><br>
+</td></tr>
+</table>
+
+<br>
+
+<table width=100% style="border: 2px solid #303030;" cellpadding=5 cellspacing=0>
+<tr><td bgcolor=#505050>Volume Control</td></tr>
+<tr><td nowrap align=center>
+<iframe name=setvol scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=25 src=query?setvol></iframe>
+<br>
+<iframe name=setmute scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=20 src=query?setmute></iframe>
+</td></tr>
+</table>
+
+<br>
+
+<table width=100% style="border: 2px solid #303030;" cellpadding=5 cellspacing=0>
+<tr><td bgcolor=#505050>EPG-Search</td></tr>
+<tr><td nowrap align=center>
+<form target=main action=query method=get><input class=inputbox type=text name=getepgsearch></form>
+</td></tr>
+</table>
+
+<iframe name=leftpanel scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=100% src=boxcontrol.html></iframe>
+
+</td>
+<!-- BOXCONTROL END -->
+
+<!-- MAIN -->
+<td valign=top width=100% height=100%>
+<iframe name=main marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=100% src=query?getbouquet></iframe>
+</td>
+<!-- MAIN END-->
+</tr>
+
+</tr>
+</table>
+
+</body>
+</html>
