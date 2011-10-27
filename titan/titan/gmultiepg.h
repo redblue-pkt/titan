@@ -327,8 +327,8 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode)
 	int zoom = getconfigint("gmultiepgzoom", NULL);
 	if(zoom < 1) zoom = 2;
 
-	akttime -= (((akttime) % 100));
 	akttime -= (((akttime / 60) % 15) * 60);
+	akttime -= (((akttime) % 60));
 	time_t starttime = akttime;
 
 	//chalc screen, so we have all infos
@@ -338,7 +338,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode)
 
 	time_t addtime = (listbox->iwidth / zoom) * 60;
 	addtime -= (((addtime / 60) % 15) * 60);
-	addtime -= (((addtime) % 100));
+	addtime -= (((addtime) % 60));
 	epgscreenconf = getconfigint("epg_screen", NULL);
 
 	if(status.servicetype == 0)
