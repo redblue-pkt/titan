@@ -146,7 +146,7 @@ int findchannel(unsigned char *buf, unsigned long transponderid, uint8_t* lastse
 	onid = (buf[8] << 8) | buf[9];
 	
 	transponderid = (onid << 16) | tid;
-	debug(500, "SDT nr: %d, lastnr: %d, len: %d, tid: %ld, onid: %d, transponderid: %lu", secnr, *lastsecnr, seclen, tid, onid, transponderid);
+	debug(500, "SDT nr: %d, lastnr: %d, len: %d, tid: %d, onid: %d, transponderid: %lu", secnr, *lastsecnr, seclen, tid, onid, transponderid);
 
 	for(pos = 11; pos < seclen - 1; pos += desclooplen + 5)
 	{
