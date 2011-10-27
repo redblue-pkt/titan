@@ -1,6 +1,13 @@
 #ifndef INPUTHELP_H
 #define INPUTHELP_H
 
+void inputhelpnum(struct skin* inputhelp, struct skin* inputbox, char num)
+{
+	inputboxff(inputhelp, inputbox);
+	inputboxchar(inputhelp, inputbox, num, 0);
+	drawscreen(inputhelp, 0);
+}
+
 char* screeninputhelp(char* text)
 {
 	int rcret = 0, tmpscreencalc = 0;
@@ -37,6 +44,27 @@ char* screeninputhelp(char* text)
 			inputboxright(inputhelp, inputbox);
 		if(rcret == getrcconfigint("rcfr", NULL))
 			inputboxleft(inputhelp, inputbox);
+		if(rcret == getrcconfigint("rc0", NULL))
+			inputhelpnum(inputhelp, inputbox, '0');
+		if(rcret == getrcconfigint("rc1", NULL))
+			inputhelpnum(inputhelp, inputbox, '1');
+		if(rcret == getrcconfigint("rc2", NULL))
+			inputhelpnum(inputhelp, inputbox, '2');
+		if(rcret == getrcconfigint("rc3", NULL))
+			inputhelpnum(inputhelp, inputbox, '3');
+		if(rcret == getrcconfigint("rc4", NULL))
+			inputhelpnum(inputhelp, inputbox, '4');
+		if(rcret == getrcconfigint("rc5", NULL))
+			inputhelpnum(inputhelp, inputbox, '5');
+		if(rcret == getrcconfigint("rc6", NULL))
+			inputhelpnum(inputhelp, inputbox, '6');
+		if(rcret == getrcconfigint("rc7", NULL))
+			inputhelpnum(inputhelp, inputbox, '7');
+		if(rcret == getrcconfigint("rc8", NULL))
+			inputhelpnum(inputhelp, inputbox, '8');
+		if(rcret == getrcconfigint("rc9", NULL))
+			inputhelpnum(inputhelp, inputbox, '9');
+
 		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcred", NULL) || rcret == getrcconfigint("rcgreen", NULL) || rcret == getrcconfigint("rcyellow", NULL) || rcret == getrcconfigint("rcblue", NULL))
 		{
 			if(grid->select != NULL && grid->select->name != NULL)
