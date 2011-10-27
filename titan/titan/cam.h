@@ -1,8 +1,6 @@
 #ifndef CAM_H
 #define CAM_H
 
-#define CAM_EXT
-
 void dvbwritepmt(struct service* node, unsigned char* pmtbuf)
 {
 	int length;
@@ -102,6 +100,7 @@ void sendcapmtend(struct service* node)
 
 //flag 0 = close old socket
 //flag 1 = don't close old socket
+//flag 2 = send to ca
 void sendcapmt(struct service* node, int flag)
 {
 	int pos = 10, i = 0, lenbytes = 0, nok = 0;
@@ -172,64 +171,53 @@ void sendcapmt(struct service* node, int flag)
 	buf[pos++] = node->channel->pmt->programnumber >> 8;
 	buf[pos++] = node->channel->pmt->programnumber & 0xff;
 
-#ifdef CAM_EXT
-	buf[pos++] = (node->channel->pmt->versionnumber << 1) | node->channel->pmt->currentnextindicator;
-#else
 	buf[pos++] = (node->channel->pmt->reserved1 << 6) | (node->channel->pmt->versionnumber << 1) | node->channel->pmt->currentnextindicator;
-#endif
 
-#ifdef CAM_EXT
-	buf[pos++] = 0x00; //len from here
-	buf[pos++] = 0x00; //len from here
-	buf[pos++] = 0x01;
+	buf[pos++] = 0x00; //len from here (programinfo len) 
+	buf[pos++] = 0x00; //len from here (programinfo len)
+	buf[pos++] = 0x01; //ca_pmt_cmd_id: ok_descrambling=1
 
-	buf[pos++] = 0x81; //id (fix)
-	buf[pos++] = 0x08; //id (fix)
-	buf[pos++] = 0x00; //namespace >> 24
-	buf[pos++] = 0x00; //(namespace >> 16) & 0xff
-	buf[pos++] = 0x00; //(namespace >> 8) & 0xff
-	buf[pos++] = 0x00; //namespace & 0xff
-	buf[pos++] = 0x00; //transportstreamid >> 8
-	buf[pos++] = 0x00; //transportstreamid & 0xff
-	buf[pos++] = 0x00; //original network id >> 8
-	buf[pos++] = 0x00; //original network id & 0xff
+	if(flag < 2)
+	{
+		buf[pos++] = 0x81; //id (fix)
+		buf[pos++] = 0x08; //len
+		buf[pos++] = 0x00; //namespace >> 24
+		buf[pos++] = 0x00; //(namespace >> 16) & 0xff
+		buf[pos++] = 0x00; //(namespace >> 8) & 0xff
+		buf[pos++] = 0x00; //namespace & 0xff
+		buf[pos++] = 0x00; //transportstreamid >> 8
+		buf[pos++] = 0x00; //transportstreamid & 0xff
+		buf[pos++] = 0x00; //original network id >> 8
+		buf[pos++] = 0x00; //original network id & 0xff
 
-	buf[pos++] = 0x82; //id (fix)
-	buf[pos++] = 0x02; //id (fix)
+		buf[pos++] = 0x82; //id (fix)
+		buf[pos++] = 0x02; //len
 
 /*
-	while(tmpnode != NULL)
-	{
-		if(tmpnode->fedev != NULL)
+		while(tmpnode != NULL)
 		{
-			//(demuxmask |= (1 << dmxdev->devnr)
-			buf[pos] |= (1 << tmpnode->fedev->devnr);
+			if(tmpnode->fedev != NULL)
+			{
+				//(demuxmask |= (1 << dmxdev->devnr)
+				buf[pos] |= (1 << tmpnode->fedev->devnr);
+			}
+			tmpnode = tmpnode->next;
 		}
-		tmpnode = tmpnode->next;
-	}
-	pos++;
+		pos++;
 */
-	buf[pos++] |= (1 << node->fedev->devnr); //cadev_nr
-	buf[pos++] = node->fedev->devnr; //demux_dev_nr
+		buf[pos++] |= (1 << node->fedev->devnr); //cadev_nr
+		buf[pos++] = node->fedev->devnr; //demux_dev_nr
 
-	buf[pos++] = 0x84;
-	buf[pos++] = 0x02;
-	buf[pos++] = node->channel->pmtpid >> 8; //pmtpid >> 8
-	buf[pos++] = node->channel->pmtpid & 0xff; //pmtpid & 0xff
-#endif
+		buf[pos++] = 0x84; //id (fix)
+		buf[pos++] = 0x02; //len
+		buf[pos++] = node->channel->pmtpid >> 8; //pmtpid >> 8
+		buf[pos++] = node->channel->pmtpid & 0xff; //pmtpid & 0xff
+	}
 
 	while(cadescnode != NULL)
 	{
-#ifndef CAM_EXT
-		buf[pos++] = (cadescnode->reserved << 4) | (cadescnode->len >> 8);
-        	buf[pos++] = cadescnode->len & 0xff;
-#endif
 		if(cadescnode->len > 0)
 		{
-#ifndef CAM_EXT
-        		buf[pos++] = 1; // ca_pmt_cmd_id: ok_descrambling= 1
-#endif
-
 			buf[pos++] = 0x09; //ca desc tag
 			buf[pos++] = cadescnode->len;
 			buf[pos++] = cadescnode->systemid >> 8;
@@ -251,18 +239,11 @@ void sendcapmt(struct service* node, int flag)
 	while(esinfonode != NULL)
 	{
 		buf[pos++] = esinfonode->streamtype;
-#ifdef CAM_EXT
-		buf[pos++] = esinfonode->pid >> 8;
-#else
 		buf[pos++] = (esinfonode->reserved1 << 5) | (esinfonode->pid >> 8);
-#endif
 		buf[pos++] = esinfonode->pid & 0xff;
-#ifdef CAM_EXT
 		pos += 2;
-#endif
 		esinfonode = esinfonode->next;
 	}
-
 
 	lenbytes = writelengthfield(&buf[3], pos - 10);
 	for(i = 0; i < pos + 10; i++)
@@ -272,18 +253,9 @@ void sendcapmt(struct service* node, int flag)
 	pos = pos - 10 + lenbytes + 3;
 	tmppos = tmppos - 10 + lenbytes + 3;
 
-#ifdef CAM_EXT
-/*
-	lenbytes = writelengthfield(&buf[7 + lenbytes], tmppos - 9 - lenbytes);
-	if(lenbytes == 1)
-	{
-		buf[8 + lenbytes] = buf[7 + lenbytes];
-		buf[7 + lenbytes] = 0x00;
-	}
-*/
+	//programinfo len
 	buf[8 + lenbytes] = (tmppos - 9 - lenbytes) & 0xff;
 	buf[7 + lenbytes] = ((tmppos - 9 - lenbytes) >> 8) & 0xff;
-#endif
 
 	if(debug_level == 250)
 	{
@@ -293,7 +265,12 @@ void sendcapmt(struct service* node, int flag)
 		printf("\n");
 	}
 
-	sendcapmttosock(node, buf, pos);
+	if(flag == 2)
+	{
+		//sendcapmttocam(buf, pos);
+	}
+	else
+		sendcapmttosock(node, buf, pos);
 
 	free(buf);
 }
