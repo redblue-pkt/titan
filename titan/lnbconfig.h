@@ -19,7 +19,7 @@ int changeloftype(struct skin* lofl, struct skin* lofh, struct skin* threshold, 
 	}
 }
 
-void changelnb(struct skin* voltagemode, struct skin* tonemode, struct skin* voltageinc, struct skin* loftype, struct skin* lofl, struct skin* lofh, struct skin* threshold, char *lnbnr)
+void changelnb(struct skin* voltagemode, struct skin* tonemode, struct skin* loftype, struct skin* lofl, struct skin* lofh, struct skin* threshold, char *lnbnr)
 {
 	char* tmpstr = NULL;
 
@@ -31,11 +31,6 @@ void changelnb(struct skin* voltagemode, struct skin* tonemode, struct skin* vol
 	tmpstr = ostrcat("lnb_tonemode", lnbnr, 0, 0);
 	changename(tonemode, tmpstr);
 	setchoiceboxselection(tonemode, getconfig(tmpstr, NULL));
-	free(tmpstr);
-
-	tmpstr = ostrcat("lnb_voltageinc", lnbnr, 0, 0);
-	changename(voltageinc, tmpstr);
-	setchoiceboxselection(voltageinc, getconfig(tmpstr, NULL));
 	free(tmpstr);
 
 	tmpstr = ostrcat("lnb_loftype", lnbnr, 0, 0);
@@ -68,11 +63,8 @@ void screenlnb(char* lnbnr)
 	struct skin* lnbscreen = getscreen("lnbscreen");
 	struct skin* listbox = getscreennode(lnbscreen, "listbox");
 	struct skin* lnb = getscreennode(lnbscreen, "lnb");
-
 	struct skin* voltagemode = getscreennode(lnbscreen, "voltagemode");
 	struct skin* tonemode = getscreennode(lnbscreen, "tonemode");
-	struct skin* voltageinc = getscreennode(lnbscreen, "voltageinc");
-
 	struct skin* loftype = getscreennode(lnbscreen, "loftype");
 	struct skin* lofl = getscreennode(lnbscreen, "lofl");
 	struct skin* lofh = getscreennode(lnbscreen, "lofh");
@@ -107,16 +99,12 @@ void screenlnb(char* lnbnr)
 	addchoicebox(tonemode, "1", _("On"));
 	addchoicebox(tonemode, "2", _("Off"));
 
-	changeinput(voltageinc, NULL);
-	addchoicebox(voltageinc, "0", _("no"));
-	addchoicebox(voltageinc, "1", _("yes"));
-
 	changeinput(loftype, NULL);
 	addchoicebox(loftype, "0", _("universal"));
 	addchoicebox(loftype, "1", _("C-Band"));
 	addchoicebox(loftype, "2", _("user defined"));
 
-	changelnb(voltagemode, tonemode, voltageinc, loftype, lofl, lofh, threshold, lnbnr);
+	changelnb(voltagemode, tonemode, loftype, lofl, lofh, threshold, lnbnr);
 	changeloftype(lofl, lofh, threshold, getconfig("lnb_loftype", lnbnr));
 
 	drawscreen(lnbscreen, 0);
@@ -132,7 +120,7 @@ void screenlnb(char* lnbnr)
 
 		if(listbox->select != NULL && ostrcmp(listbox->select->name, "lnb") == 0 && (rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)))		
 		{
-			changelnb(voltagemode, tonemode, voltageinc, loftype, lofl, lofh, threshold, listbox->select->ret);
+			changelnb(voltagemode, tonemode, loftype, lofl, lofh, threshold, listbox->select->ret);
 			changeloftype(lofl, lofh, threshold, getconfig("lnb_loftype", listbox->select->ret));
 		}
 		drawscreen(lnbscreen, 0);
@@ -144,7 +132,6 @@ void screenlnb(char* lnbnr)
 
 		addconfigscreentmpcheck(voltagemode->name, voltagemode, "0");
 		addconfigscreentmpcheck(tonemode->name, tonemode, "0");
-		addconfigscreentmpcheck(voltageinc->name, voltageinc, "0");
 		addconfigscreentmpcheck(loftype->name, loftype, "0");
 		addconfigscreentmpcheck(lofl->name, lofl, "000000");
 		addconfigscreentmpcheck(lofh->name, lofh, "000000");
@@ -163,8 +150,6 @@ void screenlnb(char* lnbnr)
 
 	changename(voltagemode, "voltagemode");
 	changename(tonemode, "tonemode");
-	changename(voltageinc, "voltageinc");
-
 	changename(loftype, "loftype");
 	changename(lofl, "lofl");
 	changename(lofh, "lofh");
