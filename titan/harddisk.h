@@ -1,0 +1,821 @@
+#ifndef HARDDISK_H
+#define HARDDISK_H
+
+char* blocktogb(unsigned long size)
+{
+	char* buf = NULL;
+
+	buf = malloc(MINMALLOC);
+	if(buf == NULL)
+	{
+		err("no mem");
+		return NULL;
+	}
+	snprintf(buf, MINMALLOC, "%.2f", (float)size / 2 / 1024 / 1024); //size is in 512KB blocks
+	return buf;
+}
+
+struct hdd* gethdd(char* device)
+{
+	debug(1000, "in");
+	struct hdd *node = hdd;
+
+	while(node != NULL)
+	{
+		if(ostrcmp(node->device, device) == 0)
+		{
+			debug(1000, "out");
+			return node;
+		}
+		node = node->next;
+	}
+	debug(100, "hdd not found (device=%s)", device);
+	return NULL;
+}
+
+unsigned long hddgetsize(char* device, char* partition)
+{
+	char* file = NULL;
+	unsigned long size = 0;
+
+	file = ostrcat(file , "/sys/block/", 1, 0);
+	file = ostrcat(file , device, 1, 0);
+	if(partition != NULL)
+	{
+		file = ostrcat(file , "/", 1, 0);
+		file = ostrcat(file , partition, 1, 0);
+	}
+	file = ostrcat(file , "/size", 1, 0);
+	size = readsysul(file, 1);
+	debug(80, "file: %s, size: %lu", file, size);
+	free(file); file = NULL;
+
+	return size;
+}
+
+char* hddgetvendor(char* device)
+{
+	char* file = NULL, *vendor = NULL;
+
+	file = ostrcat(file , "/sys/block/", 1, 0);
+	file = ostrcat(file , device, 1, 0);
+	file = ostrcat(file , "/device/vendor", 1, 0);
+	vendor = strstrip(readsys(file, 1));
+	debug(80, "file: %s, vendor: %s", file, vendor);
+	free(file); file = NULL;
+
+	return vendor;
+}
+
+char* hddgetmodel(char* device)
+{
+	char* file = NULL, *model = NULL;
+
+	file = ostrcat(file , "/sys/block/", 1, 0);
+	file = ostrcat(file , device, 1, 0);
+	file = ostrcat(file , "/device/model", 1, 0);
+	model = strstrip(readsys(file, 1));
+	debug(80, "file: %s, model: %s", file, model);
+	free(file); file = NULL;
+
+	return model;
+}
+
+int hddgetremovable(char* device)
+{
+	char* file = NULL;
+	int removable = 0;
+
+	file = ostrcat(file , "/sys/block/", 1, 0);
+	file = ostrcat(file , device, 1, 0);
+	file = ostrcat(file , "/removable", 1, 0);
+	removable = readsysul(file, 1);
+	debug(80, "file: %s, removable: %d", file, removable);
+	free(file); file = NULL;
+
+	return removable;
+}
+
+void screenfilesystem(char* dev)
+{
+	int i, rcret = 0;
+	struct skin* screen = getscreen("harddisk_main");
+	struct skin* listbox = getscreennode(screen, "listbox");
+	struct skin* tmp = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL;
+
+	delmarkedscreennodes(screen, 1);
+	listbox->aktpage = -1;
+	listbox->aktline = 1;
+	changetitle(screen, "Harddisk Format - Filesystem");
+
+	for(i = 0; i < 4; i++)
+	{
+		tmp = addlistbox(screen, listbox, tmp, 1);
+		if(tmp != NULL)
+		{
+			if(i == 0) tmpstr = "ext2";
+			else if(i == 1) tmpstr = "ext3";
+			else if(i == 2) tmpstr = "vfat";
+			else if(i == 3) tmpstr = "jfs";
+			tmpstr1 = ostrcat(tmpstr1, getconfig("skinpath", NULL), 1, 0);
+			tmpstr1 = ostrcat(tmpstr1, "/skin/ext2.png", 1, 0);
+			tmpstr1 = ostrcat(tmpstr1, "/skin/", 1, 0);
+			tmpstr1 = ostrcat(tmpstr1, tmpstr, 1, 0);
+			tmpstr1 = ostrcat(tmpstr1, ".png", 1, 0);
+
+			if(!file_exist(tmpstr1))
+			{
+				free(tmpstr1); tmpstr1 = NULL;
+				tmpstr1 = ostrcat(tmpstr1, getconfig("skinpath", NULL), 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, "/skin/default.png", 1, 0);
+			}
+			changepic(tmp, tmpstr1);
+			free(tmpstr1); tmpstr1 = NULL;
+
+			changetext(tmp, tmpstr);
+			changename(tmp, tmpstr);
+			tmp->textposx = 120;
+			tmp->height = 50;
+			tmp->valign = convertxmlentry("middle", 0);
+			tmp->hspace = 5;
+		}
+	}
+
+	drawscreen(screen, 0);
+	addscreenrc(screen, listbox);
+
+	while (1)
+	{
+		rcret = waitrc(screen, 0, 0);
+
+		if(rcret==getrcconfigint("rcexit",NULL)) break;
+		if(listbox->select != NULL && rcret==getrcconfigint("rcok",NULL))
+		{
+			hddformat(dev, listbox->select->name);
+			break;
+		}
+	}
+	delownerrc(screen);
+	delmarkedscreennodes(screen, 1);
+	clearscreen(screen);
+}
+
+void screenconfigurehdd(char* dev)
+{
+	int i, rcret = 0, ret = 0, mode = 0;
+	struct skin* screen = getscreen("harddisk_main");
+	struct skin* listbox = getscreennode(screen, "listbox");
+	struct skin* tmp = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
+	char* path = NULL;
+
+	delmarkedscreennodes(screen, 1);
+	listbox->aktpage = -1;
+	listbox->aktline = 1;
+	changetitle(screen, "Harddisk Configure");
+
+	for(i = 0; i < 8; i++)
+	{
+		tmp = addlistbox(screen, listbox, tmp, 1);
+		if(tmp != NULL)
+		{
+			if(i == 0)
+			{
+				tmpstr = "use medium for record";
+				tmpstr1 = "addrecord";
+			}
+			else if(i == 1)
+			{
+				tmpstr = "use medium for extension";
+				tmpstr1 = "addext";
+			}
+			else if(i == 2)
+			{
+				tmpstr = "use medium for swap";
+				tmpstr1 = "addswap";
+			}
+			else if(i == 3)
+			{
+				tmpstr = "use medium for backup";
+				tmpstr1 = "addbackup";
+			}
+			else if(i == 4)
+			{
+				tmpstr = "del medium for record";
+				tmpstr1 = "delrecord";
+			}
+			else if(i == 5)
+			{
+				tmpstr = "del medium for extension";
+				tmpstr1 = "delext";
+			}
+			else if(i == 6)
+			{
+				tmpstr = "del medium for swap";
+				tmpstr1 = "delswap";
+			}
+			else if(i == 7)
+			{
+				tmpstr = "del medium for backup";
+				tmpstr1 = "delbackup";
+			}
+			tmpstr2 = ostrcat(tmpstr2, getconfig("skinpath", NULL), 1, 0);
+			tmpstr2 = ostrcat(tmpstr2, "/skin/ext2.png", 1, 0);
+			tmpstr2 = ostrcat(tmpstr2, "/skin/", 1, 0);
+			tmpstr2 = ostrcat(tmpstr2, tmpstr1, 1, 0);
+			tmpstr2 = ostrcat(tmpstr2, ".png", 1, 0);
+
+			if(!file_exist(tmpstr2))
+			{
+				free(tmpstr2); tmpstr2 = NULL;
+				tmpstr2 = ostrcat(tmpstr2, getconfig("skinpath", NULL), 1, 0);
+				tmpstr2 = ostrcat(tmpstr2, "/skin/default.png", 1, 0);
+			}
+			changepic(tmp, tmpstr2);
+			free(tmpstr2); tmpstr2 = NULL;
+
+			changetext(tmp, _(tmpstr));
+			changename(tmp, tmpstr1);
+			tmp->textposx = 120;
+			tmp->height = 50;
+			tmp->valign = convertxmlentry("middle", 0);
+			tmp->hspace = 5;
+		}
+	}
+
+	drawscreen(screen, 0);
+	addscreenrc(screen, listbox);
+
+	while (1)
+	{
+		rcret = waitrc(screen, 0, 0);
+
+		if(rcret==getrcconfigint("rcexit",NULL)) break;
+		if(listbox->select != NULL && rcret==getrcconfigint("rcok",NULL))
+		{
+			path = getconfig("mountpath", NULL);
+			path = ostrcat(path, "/", 0, 0);
+			path = ostrcat(path, dev, 1, 0);
+			path = ostrcat(path, "/", 1, 0);
+
+			if(ostrcmp(listbox->select->name, "addrecord") == 0)
+			{
+				mode = 0;
+				path = ostrcat(path, "movie", 1, 0);
+			}
+			if(ostrcmp(listbox->select->name, "addswap") == 0)
+			{
+				mode = 0;
+				path = ostrcat(path, "swapdir", 1, 0);
+			}
+			if(ostrcmp(listbox->select->name, "addext") == 0)
+			{
+				mode = 0;
+				path = ostrcat(path, "swapextensions", 1, 0);
+			}
+			if(ostrcmp(listbox->select->name, "addbackup") == 0)
+			{
+				mode = 0;
+				path = ostrcat(path, "backup", 1, 0);
+			}
+			if(ostrcmp(listbox->select->name, "delrecord") == 0)
+			{
+				mode = 1;
+				path = ostrcat(path, "movie", 1, 0);
+			}
+			if(ostrcmp(listbox->select->name, "delswap") == 0)
+			{
+				mode = 1;
+				path = ostrcat(path, "swapdir", 1, 0);
+			}
+			if(ostrcmp(listbox->select->name, "delext") == 0)
+			{
+				mode = 1;
+				path = ostrcat(path, "swapextensions", 1, 0);
+			}
+			if(ostrcmp(listbox->select->name, "delbackup") == 0)
+			{
+				mode = 1;
+				path = ostrcat(path, "backup", 1, 0);
+			}
+
+			if(mode == 0) ret = mkdir(path, 777);
+			if(mode == 1)
+			{
+				if(textbox("Message", _("Are you sure you want to delete this directory?"), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+					ret = rmdir(path);
+				else
+					ret = 9999;
+			}
+			free(path); path = NULL;
+			if(ret < 0)
+			{
+				if(mode == 0) perr("mkdir");
+				if(mode == 1) perr("rmdir");
+				textbox("Message", _("can't create or delete directory"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
+			}
+			else if(ret != 9999)
+				textbox("Message", _("succesfull create or delelete directory"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
+			drawscreen(screen, 0);
+		}
+	}
+	delownerrc(screen);
+	delmarkedscreennodes(screen, 1);
+	clearscreen(screen);
+}
+
+void screenharddisk(int mode)
+{
+	struct skin* screen = getscreen("harddisk_main");
+	struct skin* listbox = getscreennode(screen, "listbox");
+	struct skin* tmp = NULL;
+	struct hdd* hddnode = NULL;
+	int tmphangtime = 999999, rcret = 0;
+	char* tmpstr = NULL, *tmpstr1 = NULL, *path = NULL;
+
+	addhddall();
+start:
+	tmp = NULL;
+	hddnode = hdd;
+
+	if(hdd == NULL)
+	{
+		textbox(_("Harddisk"), _("sorry found no harddisk"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
+		return;
+	}
+
+	status.hangtime = tmphangtime;
+	delmarkedscreennodes(screen, 1);
+	if(mode == 0)
+		changetitle(screen, "Harddisk Format - List Devices");
+	else if(mode == 1)
+		changetitle(screen, "Harddisk Fsck - List Devices");
+	else if(mode == 2)
+		changetitle(screen, "Harddisk Configure - List Devices");
+	
+	listbox->aktpage = -1;
+	listbox->aktline = 1;
+
+	while(hddnode != NULL)
+	{
+		if(mode == 2 && hddnode->partition == 0)
+		{
+			hddnode = hddnode->next;
+			continue;
+		}
+		tmp = addlistbox(screen, listbox, tmp, 1);
+		if(tmp != NULL)
+		{
+			if(hddnode->removable == 0)
+			{
+				tmpstr = ostrcat(tmpstr, "HDD ", 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, getconfig("skinpath", NULL), 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, "/skin/hdd.png", 1, 0);
+			}
+			else
+			{
+				tmpstr = ostrcat(tmpstr, "STICK ", 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, getconfig("skinpath", NULL), 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, "/skin/stick.png", 1, 0);
+			}
+			if(mode == 2)
+			{
+				tmpstr = ostrcat(tmpstr, hddnode->label, 1, 0);
+				tmpstr = ostrcat(tmpstr, " (", 1, 0);
+				tmpstr = ostrcat(tmpstr, hddnode->device, 1, 0);
+				tmpstr = ostrcat(tmpstr, ")", 1, 0);
+
+				path = getconfig("mountpath", NULL);
+				path = ostrcat(path, "/", 0, 0);
+				path = ostrcat(path, hddnode->device, 1, 0);
+				path = ostrcat(path, "/", 1, 0);
+				path = ostrcat(path, "swapextensions", 1, 0);
+				if(file_exist(path) == 1)
+					tmpstr = ostrcat(tmpstr, " - ext", 1, 0);
+				free(path); path = NULL;
+
+				path = getconfig("mountpath", NULL);
+				path = ostrcat(path, "/", 0, 0);
+				path = ostrcat(path, hddnode->device, 1, 0);
+				path = ostrcat(path, "/", 1, 0);
+				path = ostrcat(path, "swapdir", 1, 0);
+				if(file_exist(path) == 1)
+					tmpstr = ostrcat(tmpstr, " - swap", 1, 0);
+				free(path); path = NULL;
+
+				path = getconfig("mountpath", NULL);
+				path = ostrcat(path, "/", 0, 0);
+				path = ostrcat(path, hddnode->device, 1, 0);
+				path = ostrcat(path, "/", 1, 0);
+				path = ostrcat(path, "backup", 1, 0);
+				if(file_exist(path) == 1)
+					tmpstr = ostrcat(tmpstr, " - backup", 1, 0);
+				free(path); path = NULL;
+
+				path = getconfig("mountpath", NULL);
+				path = ostrcat(path, "/", 0, 0);
+				path = ostrcat(path, hddnode->device, 1, 0);
+				path = ostrcat(path, "/", 1, 0);
+				path = ostrcat(path, "movie", 1, 0);
+				if(file_exist(path) == 1)
+					tmpstr = ostrcat(tmpstr, " - record", 1, 0);
+				free(path); path = NULL;
+			}
+			else
+			{
+				tmpstr = ostrcat(tmpstr, "(", 1, 0);
+				tmpstr = ostrcat(tmpstr, hddnode->device, 1, 0);
+				tmpstr = ostrcat(tmpstr, "-", 1, 0);
+				tmpstr = ostrcat(tmpstr, hddnode->label, 1, 0);
+				tmpstr = ostrcat(tmpstr, "-", 1, 0);
+				tmpstr = ostrcat(tmpstr, hddnode->filesystem, 1, 0);
+				tmpstr = ostrcat(tmpstr, ") ", 1, 0);
+				tmpstr = ostrcat(tmpstr, hddnode->model, 1, 0);
+				tmpstr = ostrcat(tmpstr, " ", 1, 0);
+				tmpstr = ostrcat(tmpstr, blocktogb(hddnode->size), 1, 1);
+				tmpstr = ostrcat(tmpstr, " GB", 1, 0);
+			}
+			changetext(tmp, tmpstr);
+			free(tmpstr); tmpstr = NULL;
+
+			changename(tmp, hddnode->device);
+			tmp->textposx = 120;
+			tmp->height = 50;
+			tmp->valign = convertxmlentry("middle", 0);
+			tmp->hspace = 5;
+
+			if(!file_exist(tmpstr1))
+			{
+				free(tmpstr1); tmpstr1 = NULL;
+				tmpstr1 = ostrcat(tmpstr1, getconfig("skinpath", NULL), 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, "/skin/default.png", 1, 0);
+			}
+			changepic(tmp, tmpstr1);
+			free(tmpstr1); tmpstr1 = NULL;
+		}
+		hddnode = hddnode->next;
+	}
+
+	drawscreen(screen, 0);
+	addscreenrc(screen, listbox);
+
+	while (1)
+	{
+		rcret = waitrc(screen, 0, 0);
+
+		if(rcret==getrcconfigint("rcexit",NULL)) break;
+		if(listbox->select != NULL && rcret==getrcconfigint("rcok",NULL))
+		{
+			if(mode == 0)
+			{
+				tmpstr = ostrcat(listbox->select->name, NULL, 0, 0);
+				screenfilesystem(tmpstr);
+				free(tmpstr); tmpstr = NULL;
+			}
+			else if(mode == 1)
+				hddfsck(listbox->select->name);
+			else if(mode == 2)
+			{
+				tmpstr = ostrcat(listbox->select->name, NULL, 0, 0);
+				screenconfigurehdd(tmpstr);
+				free(tmpstr); tmpstr = NULL;
+				delownerrc(screen);
+				goto start;
+			}
+			break;
+		}
+	}
+
+	delownerrc(screen);
+	delmarkedscreennodes(screen, 1);
+	clearscreen(screen);
+}
+
+void hddformat(char* dev, char* filesystem)
+{
+	int format = 0;
+	char* cmd = NULL;
+	struct hdd* node = NULL;
+
+	node = gethdd(dev);
+	if(node == NULL) return;
+
+	if(node->partition == 0)
+	{
+		if(textbox(_("Message"), _("Are you sure you want to remove all Partitions\non this device and create a new Partition 1?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 2)
+		{
+			cmd = ostrcat("/sbin/parter.sh /dev/" , dev, 0, 0);
+			cmd = ostrcat(cmd , " create 1", 1, 0);
+
+			debug(80, "fdisk create cmd: %s", cmd);
+			system(cmd);
+			format = 2;
+			free(cmd); cmd = NULL;
+		}
+		
+	}
+	else
+	{
+		if(textbox(_("Message"), _("Are you sure you want to format this Partition?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 2)
+			format = 1;
+	}
+
+	if(format > 0)
+	{
+		if(ostrcmp(filesystem, "vfat") == 0)
+			cmd = ostrcat("/sbin/cmd.sh mkfs.fat -F 32 /dev/" , dev, 0, 0);
+		else if(ostrcmp(filesystem, "jfs") == 0)
+			cmd = ostrcat("/sbin/cmd.sh mkfs.jfs -q /dev/" , dev, 0, 0);
+		else if(ostrcmp(filesystem, "ext2") == 0)
+			cmd = ostrcat("/sbin/cmd.sh mkfs.ext2 /dev/" , dev, 0, 0);
+		else if(ostrcmp(filesystem, "ext3") == 0)
+			cmd = ostrcat("/sbin/cmd.sh mkfs.ext3 -T largefile -m0 -O dir_index /dev/" , dev, 0, 0);
+
+		if(format == 2) cmd = ostrcat(cmd , "1", 1, 0);
+
+		debug(80, "format cmd: %s", cmd);
+		system(cmd);
+		free(cmd); cmd = NULL;
+	}
+}
+
+void hddfsck(char* dev)
+{
+	char* cmd = NULL;
+	struct hdd* node = NULL;
+
+	if(textbox(_("Message"), _("Are you sure you want to FSCK this Partition?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 2)
+	{
+		node = gethdd(dev);
+		if(node == NULL) return;
+		debug(80, "device=%s filesystem=%s", dev, node->filesystem);
+
+		if(ostrcmp(node->filesystem, "vfat") == 0)
+			cmd = ostrcat("/sbin/cmd.sh fsck.fat -a -v /dev/" , dev, 0, 0);
+		else if(ostrcmp(node->filesystem, "jfs") == 0)
+			cmd = ostrcat("/sbin/cmd.sh fsck.jfs -f -p /dev/" , dev, 0, 0);
+		else if(ostrcmp(node->filesystem, "ext2") == 0)
+			cmd = ostrcat("/sbin/cmd.sh fsck.ext2 -f -p /dev/" , dev, 0, 0);
+		else if(ostrcmp(node->filesystem, "ext3") == 0)
+			cmd = ostrcat("/sbin/cmd.sh fsck.ext3 -f -p /dev/" , dev, 0, 0);
+
+		debug(80, "fsck cmd: %s", cmd);
+		system(cmd);
+		free(cmd); cmd = NULL;
+	}
+
+}
+
+void screenharddisksleep()
+{
+	
+	char* sleepWert = NULL;
+	int rcret = 0;
+	struct skin* sleep_config = getscreen("harddisk_main");
+	struct skin* listbox = getscreennode(sleep_config, "listbox");
+	struct skin* node = NULL;
+	struct skin* tmp = NULL;
+	
+	/*int m_with = sleep_config->width;
+	int m_height = sleep_config->height;
+	int m_prozwidth = sleep_config->prozwidth;
+	int m_prozheight= sleep_config->prozheight;
+	
+	sleep_config->prozheight = YES;
+	sleep_config->prozwidth = YES;
+	sleep_config->width = 40;
+	sleep_config->height = 30;*/
+	
+	node = addlistbox(sleep_config, listbox, node, 1);
+	if(node != NULL)
+	{
+		node->type = CHOICEBOX;
+		changetext(node, _("Time to sleep")); changename(node, "timetosleep");
+		addchoicebox(node, "0", _("off"));
+		addchoicebox(node, "300", _("5 min")); addchoicebox(node, "600", _("10 min"));
+		addchoicebox(node, "900", _("15 min")); addchoicebox(node, "3600", _("60 min"));
+	
+		sleepWert = getconfig("timetosleep", NULL);
+		if(sleepWert == NULL)
+			setchoiceboxselection(node, "0");
+		else
+			setchoiceboxselection(node, sleepWert);
+	}
+		
+	drawscreen(sleep_config, 0);
+	tmp = listbox->select;
+	
+	while(1)
+	{
+		addscreenrc(sleep_config, tmp);
+		rcret = waitrc(sleep_config, 0, 0);
+		tmp = listbox->select;
+
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+
+		if(listbox->select != NULL && listbox->select->ret != NULL && rcret == getrcconfigint("rcok", NULL))
+		{
+			addconfig("timetosleep", listbox->select->ret);
+			settimetosleep(atoi(listbox->select->ret));
+			break;
+		}
+	}
+
+	/*sleep_config->width = m_with;
+	sleep_config->height = m_height;
+	sleep_config->prozheight = m_prozheight;
+	sleep_config->prozwidth = m_prozwidth;*/
+	delmarkedscreennodes(sleep_config, 1);
+	delownerrc(sleep_config);
+	clearscreen(sleep_config);
+}
+
+//flag 0: lock
+//flag 1: no lock
+void delhdd(char* device, int flag)
+{
+	debug(1000, "in");
+	if(flag == 0) m_lock(&status.hddmutex, 13);
+	struct hdd *node = hdd, *prev = hdd;
+	
+	while(node != NULL)
+	{
+		if(ostrcmp(node->device, device) == 0)
+		{
+			if(node == hdd)
+			{
+				hdd = node->next;
+				if(hdd != NULL)
+					hdd->prev = NULL;
+			}
+			else
+			{
+				prev->next = node->next;
+				if(node->next != NULL)
+					node->next->prev = prev;
+			}
+
+			free(node->device); node->device = NULL;
+			free(node->vendor); node->vendor = NULL;
+			free(node->model); node->model = NULL;
+			free(node->label); node->label = NULL;
+			free(node->uuid); node->uuid = NULL;
+			free(node->filesystem); node->filesystem = NULL;
+	
+			free(node);
+			node = NULL;
+			break;
+		}
+
+		prev = node;
+		node = node->next;
+	}
+	if(flag == 0) m_unlock(&status.hddmutex, 13);
+	debug(1000, "out");
+}
+
+//flag 0: lock
+//flag 1: no lock
+struct hdd* addhdd(char* device, int partition, unsigned long size, int removable, char* vendor, char *model, char* label, char* filesystem, char* uuid, struct hdd* last, int flag)
+{
+	debug(1000, "in");
+	if(flag == 0) m_lock(&status.hddmutex, 13);
+	struct hdd *newnode = NULL, *prev = NULL, *node = hdd;
+
+	newnode = (struct hdd*)malloc(sizeof(struct hdd));	
+	if(newnode == NULL)
+	{
+		err("no memory");
+		if(flag == 0) m_unlock(&status.hddmutex, 13);
+		return NULL;
+	}
+	memset(newnode, 0, sizeof(struct hdd));
+
+	newnode->device = device;
+	newnode->partition = partition;
+	newnode->size = size;
+	newnode->removable = removable;
+	newnode->vendor = vendor;
+	newnode->model = model;
+	newnode->label = label;
+	newnode->uuid = uuid;
+	newnode->filesystem = filesystem;
+
+	debug(80, "add hdd %s", device);
+	
+	if(last == NULL)
+	{
+		while(node != NULL && strcoll(newnode->device, node->device) > 0)
+		{
+			prev = node;
+			node = node->next;
+		}
+	}
+	else
+	{
+		prev = last;
+		node = last->next;
+	}
+
+	if(prev == NULL)
+		hdd = newnode;
+	else
+	{
+		prev->next = newnode;
+		newnode->prev = prev;
+	}
+	newnode->next = node;
+
+	if(flag == 0) m_unlock(&status.hddmutex, 13);
+	debug(1000, "out");
+	return newnode;
+}
+
+void freehdd()
+{
+	debug(1000, "in");
+	m_lock(&status.hddmutex, 13);
+	struct hdd *node = hdd, *prev = hdd;
+
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+		if(prev != NULL)
+			delhdd(prev->device, 1);
+	}
+	debug(1000, "out");
+	m_unlock(&status.hddmutex, 13);
+}
+
+int addhddall()
+{
+	m_lock(&status.hddmutex, 13);
+	FILE* fd = NULL;
+	char* fileline = NULL, *dev = NULL, *pos = NULL, *part = NULL;
+	char* tmpstr = NULL;
+	int partition = 0;
+	struct hdd *node = hdd;
+
+	fd = fopen("/proc/partitions", "r");
+	if(fd == NULL)
+	{
+		err("open /proc/partitions");
+		m_unlock(&status.hddmutex, 13);
+		return 1;
+	}
+
+	fileline = malloc(MINMALLOC);
+	if(fileline == NULL)
+	{
+		err("no mem");
+		m_unlock(&status.hddmutex, 13);
+		return 1;
+	}
+
+	while(fgets(fileline, MINMALLOC, fd) != NULL)
+	{
+		pos = strstr(fileline, "sd");
+		if(pos != NULL)
+		{
+			partition = 0;
+			part = NULL;
+			pos = string_newline(pos);
+			if(strlen(pos) == 3)
+			{
+				free(dev); dev = NULL;
+				dev = ostrcat(pos, NULL, 0, 0);
+			}
+			if(strlen(pos) == 4)
+			{
+				part = pos;
+				partition = atoi(&pos[3]);
+			}
+			tmpstr = ostrcat(tmpstr, "#", 0, 0);
+			tmpstr = ostrcat(tmpstr, pos, 1, 0);
+			if(gethdd(pos) == NULL)
+				addhdd(ostrcat(pos, NULL, 0, 0), partition, hddgetsize(dev, part), hddgetremovable(dev), hddgetvendor(dev), hddgetmodel(dev), get_label(part), get_filesystem(part), get_uuid(part), NULL, 1);
+		}
+	}
+
+	//check for removed devs
+	while(node != NULL && tmpstr != NULL)
+	{
+		if(strstr(tmpstr, node->device) == 0)
+		{
+			debug(80, "remove %s", node->device);
+			delhdd(node->device, 1);
+		}
+		node = node->next;
+	}
+
+	free(tmpstr);
+	free(dev);
+	free(fileline);
+	fclose(fd);
+	m_unlock(&status.hddmutex, 13);
+	return 0;
+}
+
+#endif
