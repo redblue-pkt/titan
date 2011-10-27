@@ -1020,7 +1020,7 @@ void screenscanconfig(int flag)
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			clearscreen(scan);
-			screenscan(scan->child, tuner->ret, iscantype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, inetworkscan, ionlyfree, iclear, isystem, -1);
+			screenscan(scan->child, tuner->ret, iscantype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, inetworkscan, ionlyfree, iclear, isystem, 5000000);
 			drawscreen(scan, 0);
 		}
 		if(rcret == getrcconfigint("rcred", NULL) && tpnode != NULL && iscantype == 0)
