@@ -161,6 +161,7 @@ struct queue
 {
 	//0-99 for ca module
 	int type;
+	int flag;
 	int len;
 	void* data;
 	struct queue* prev;
@@ -183,7 +184,6 @@ struct caslot
 	int rlen;
 	unsigned char* rbuf;
 	char* name;
-	int poll;
 	int fastrun;
 	int mmimanager;
 	int camanager;
