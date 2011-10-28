@@ -150,7 +150,10 @@ int playerstart(char* file)
 		char * tmpfile = NULL;
 
 		if(player != NULL)
+		{
 			debug(150, "eplayer allready running");
+			playerstop();
+		}
 
 		player = malloc(sizeof(Context_t));
 
@@ -202,6 +205,12 @@ int playerstart(char* file)
 #ifdef EPLAYER4
 		int flags = 0x47; //(GST_PLAY_FLAG_VIDEO | GST_PLAY_FLAG_AUDIO | GST_PLAY_FLAG_NATIVE_VIDEO | GST_PLAY_FLAG_TEXT);
 		gchar *uri;
+		
+		if(m_gst_playbin != NULL)
+		{
+			debug(150, "eplayer allready running");
+			playerstop();
+		}
 		
 		uri = g_filename_to_uri(file, NULL, NULL);
 		m_gst_playbin = gst_element_factory_make("playbin2", "playbin");
@@ -270,7 +279,8 @@ int playerstop()
 	if(m_gst_playbin)
 	{
 		gst_element_set_state(m_gst_playbin, GST_STATE_NULL);
-		//TODO: free gst player ????
+		gst_object_unref(GST_OBJECT(m_gst_playbin))
+		m_gst_playbin = 0;
 	}
 #endif
 
@@ -483,6 +493,21 @@ void playergetcurtrac(int type, int *CurTrackId, char** CurTrackEncoding, char**
 			debug(150, "Current Track Name: %s", *CurTrackName);
 	}
 #endif
+
+#ifdef EPLAYER4
+	if(m_gst_playbin != NULL)
+	{
+		switch(type)
+		{
+			case 1:
+				g_object_get(G_OBJECT(m_gst_playbin), "current-audio", CurTrackId, NULL);
+				break;
+		}
+		
+		if(CurTrackId != NULL)
+			debug(150, "Current Track ID: %d", *CurTrackId);
+	}
+#endif
 }
 
 unsigned long long int playergetpts()
@@ -577,6 +602,11 @@ void playerchangeaudiotrack(int num)
 		if(num >= 0 && num <= 9)
 			player->playback->Command(player, PLAYBACK_SWITCH_AUDIO, (void*)&num);
 	}
+#endif
+
+#ifdef EPLAYER4
+	if(m_gst_playbin != NULL)
+		g_object_set(G_OBJECT(m_gst_playbin), "current-audio", num, NULL);	
 #endif
 }
 
