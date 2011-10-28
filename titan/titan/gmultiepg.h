@@ -15,7 +15,6 @@ void createtimeline(struct skin* gmultiepg, struct skin* timeline, time_t akttim
 		return;
 	}
 
-	loctime = olocaltime(&akttime);
 	delmarkedscreennodes(gmultiepg, 3);
 
 	while(posx < timeline->iwidth)

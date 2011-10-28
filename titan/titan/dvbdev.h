@@ -113,6 +113,9 @@ void deldvbdev(char *dev)
 
 			free(node->feaktdiseqc);
 			node->feaktdiseqc = NULL;
+			
+			free(node->caslot);
+			node->caslot = NULL;
 
 			free(node);
 			node = NULL;
