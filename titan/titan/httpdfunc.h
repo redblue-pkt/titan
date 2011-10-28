@@ -73,9 +73,12 @@ void webcreateheadbig(char** buf, int* maxlen, char* meta, int* pos, int flag)
 		ostrcatbig(buf, "<center><table border=0 width=100% height=100%>", maxlen, pos);
 }
 
-char* webcreatehead(char* buf, int flag)
+char* webcreatehead(char* buf, char* meta, int flag)
 {
-	buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=stylesheet type=text/css href=titan.css></head><body class=body>", 1, 0);
+	buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=stylesheet type=text/css href=titan.css>", 1, 0);
+	if(meta != NULL)
+		buf = ostrcat(buf, meta, 1, 0);
+	buf = ostrcat(buf, "</head><body class=body>", 1, 0);
 	if(flag == 0)
 		buf = ostrcat(buf, "<center><table border=0 width=100%>", 1, 0);
 	else
@@ -762,7 +765,7 @@ char* websendmessage(char* param)
 	}
 	addtimer(&webmessage, START, 1000, 1, (void*)text, NULL, NULL);
 
-	buf = webcreatehead(buf, 1);
+	buf = webcreatehead(buf, NULL, 1);
 	buf = ostrcat(buf, "<tr><td align=center valign=top><font class=biglabel><br><br>Message Send !!!</font></td></tr>", 1, 0);
 	buf = webcreatetail(buf, 1);
 
@@ -781,7 +784,7 @@ char* webgetsignal()
 	snr = fereadsnr(status.aktservice->fedev);
         snr = (snr * 100) / 0xffff;
 
-	buf = webcreatehead(buf, 0);
+	buf = webcreatehead(buf, "<meta http-equiv=refresh content=1>", 0);
 
 	buf = ostrcat(buf, "<tr><td align=center><font class=biglabel><br><br>BER: ", 1, 0);
 	tmpnr = oitoa(ber);
@@ -835,7 +838,7 @@ char* webgetepg(char* param)
 	epgnode = getepg(chnode, atoi(param2), 0);
 	if(epgnode == NULL) return NULL;
 
-	buf = webcreatehead(buf, 0);
+	buf = webcreatehead(buf, NULL, 0);
 
 	buf1 = malloc(MINMALLOC);
 	if(buf1 == NULL)
