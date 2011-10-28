@@ -489,7 +489,7 @@ void sendoktext(int* connfd, char* text)
 {
 	char* buf = NULL;
 	char* header = NULL;
-	buf = webcreatehead(buf, 1);
+	buf = webcreatehead(buf, NULL, 1);
 	buf = ostrcat(buf, "<tr><td align=center valign=top><font class=biglabel><br><br>", 1, 0);
 	buf = ostrcat(buf, text, 1, 0);
 	buf = ostrcat(buf, "</font></td></tr>", 1, 0);
