@@ -204,6 +204,8 @@ int menucall(struct skin* menunode, struct skin* menuentry)
 		screenscanconfig(0);
 	else if(ostrcmp("autosearch", menuentry->name) == 0)
 		screenscanconfig(1);
+	else if(ostrcmp("rotorsettings", menuentry->name) == 0)
+		screenpossetup();
 	else if(ostrcmp("cinterface", menuentry->name) == 0)
 		screenmoduleconfig();
 	else if(menuentry->pluginhandle != NULL)

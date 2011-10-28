@@ -1,0 +1,116 @@
+#ifndef POSSETUP_H
+#define POSSETUP_H
+
+void poschangebutton(int type, struct skin* b1, struct skin* b2, struct skin* b3, struct skin* b4)
+{
+	if(type == 0)
+	{
+		changetext(b1, _("move west"));
+		changetext(b2, _("search west"));
+		changetext(b3, _("search east"));
+		changetext(b4, _("move east"));
+	}
+	else if(type == 1)
+	{
+		changetext(b1, NULL);
+		changetext(b2, _("step west"));
+		changetext(b3, _("step east"));
+		changetext(b4, NULL);
+	}
+	else if(type == 2)
+	{
+		changetext(b1, _("limits off"));
+		changetext(b2, _("limit west"));
+		changetext(b3, _("limit east"));
+		changetext(b4, _("limits on"));
+	}
+	else if(type == 3)
+	{
+		changetext(b1, NULL);
+		changetext(b2, _("store position"));
+		changetext(b3, _("goto position"));
+		changetext(b4, NULL);
+	}
+	else if(type == 4)
+	{
+		changetext(b1, _("startposition"));
+		changetext(b2, NULL);
+		changetext(b3, NULL);
+		changetext(b4, NULL);
+	}
+	else
+	{
+		changetext(b1, NULL);
+		changetext(b2, NULL);
+		changetext(b3, NULL);
+		changetext(b4, NULL);
+	}
+}
+
+void screenpossetup()
+{
+	int rcret = 0, i = 0;
+	struct skin* possetup = getscreen("possetup");
+	struct skin* listbox = getscreennode(possetup, "listbox");
+	//struct skin* move = getscreennode(possetup, "move");
+	//struct skin* finemove = getscreennode(possetup, "finemove");
+	//struct skin* limit = getscreennode(possetup, "limit");
+	struct skin* storagepos = getscreennode(possetup, "storagepos");
+	//struct skin* goto0 = getscreennode(possetup, "goto0");
+	struct skin* b1 = getscreennode(possetup, "b1");
+	struct skin* b2 = getscreennode(possetup, "b2");
+	struct skin* b3 = getscreennode(possetup, "b3");
+	struct skin* b4 = getscreennode(possetup, "b4");
+	struct skin* tmp = NULL;
+	char* tmpnr = NULL;
+
+	listbox->aktline = 1;
+	listbox->aktpage = -1;
+
+	for(i = 1; i < 255; i++)
+	{
+		tmpnr = oitoa(i);
+		addchoicebox(storagepos, tmpnr, tmpnr);
+		free(tmpnr); tmpnr = NULL;
+	}
+
+	poschangebutton(0, b1, b2, b3, b4);
+
+	drawscreen(possetup, 0);
+	addscreenrc(possetup, listbox);
+
+	tmp = listbox->select;
+	while(1)
+	{
+		addscreenrc(possetup, tmp);
+		rcret = waitrc(possetup, 0, 0);
+		tmp = listbox->select;
+
+		if(listbox->select != NULL)
+		{
+			if(ostrcmp(listbox->select->name, "move") == 0)
+				poschangebutton(0, b1, b2, b3, b4);
+			if(ostrcmp(listbox->select->name, "finemove") == 0)
+				poschangebutton(1, b1, b2, b3, b4);
+			if(ostrcmp(listbox->select->name, "limit") == 0)
+				poschangebutton(2, b1, b2, b3, b4);
+			if(ostrcmp(listbox->select->name, "storagepos") == 0)
+				poschangebutton(3, b1, b2, b3, b4);
+			if(ostrcmp(listbox->select->name, "goto0") == 0)
+				poschangebutton(4, b1, b2, b3, b4);
+		}
+
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			break;
+		}
+
+		drawscreen(possetup, 0);
+	}
+
+	delownerrc(possetup);
+	clearscreen(possetup);
+}
+
+#endif
