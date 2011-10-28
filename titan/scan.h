@@ -591,7 +591,7 @@ void screenscan(struct skin* mscan, char* tuner, int scantype, int orbitalpos, i
 		rcret = waitrc(scan, 1000, 0);
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
-			if(timernode != NULL)
+			if(timernode != NULL && scaninfo.threadend == 0)
 			{
 				timernode->aktion = STOP;
 				while(i < 3 && scaninfo.threadend == 0)
