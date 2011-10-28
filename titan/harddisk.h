@@ -792,7 +792,7 @@ int addhddall()
 				part = pos;
 				partition = atoi(&pos[3]);
 			}
-			tmpstr = ostrcat(tmpstr, "#", 0, 0);
+			tmpstr = ostrcat(tmpstr, "#", 1, 0);
 			tmpstr = ostrcat(tmpstr, pos, 1, 0);
 			if(gethdd(pos) == NULL)
 				addhdd(ostrcat(pos, NULL, 0, 0), partition, hddgetsize(dev, part), hddgetremovable(dev), hddgetvendor(dev), hddgetmodel(dev), get_label(part), get_filesystem(part), get_uuid(part), NULL, 1);

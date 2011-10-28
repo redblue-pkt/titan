@@ -260,6 +260,7 @@ void oshutdown(int exitcode, int flag)
 		freercconfig();
 		freeskinconfig();
 		freequeue();
+		freehdd();
 
 		free(status.configfile);
 		freeconfig();
