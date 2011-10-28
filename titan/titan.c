@@ -123,6 +123,7 @@ struct queue* queue = NULL;
 #include "adjust.h"
 #include "skinadjust.h"
 #include "moduleconfig.h"
+#include "possetup.h"
 #include "rectimer.h"
 #include "pin.h"
 #include "plugin.h"
