@@ -495,6 +495,7 @@ struct epg* getepgakt(struct channel* chnode)
 #ifdef SIMULATE
 	time_t akttime = 1307871000;
 	//akttime = 1315614900;
+	akttime = 1317927300;
 #else
 	time_t akttime = time(NULL);
 #endif
@@ -1090,6 +1091,7 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 	char* zbuf = NULL;
 	int zlen = 0, ret = 0;
 	time_t epgmaxsec = status.epgdays * 24 * 60 * 60;
+	unsigned long transponderid = 0;
 
 	len -= 4; //remove CRC
 	if(chnode == NULL) chnode = status.aktservice->channel;
@@ -1104,8 +1106,11 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 			return;
 		if(chnode == status.aktservice->channel && status.aktservice->type != CHANNEL)
 			return;
-
-		tmpchnode = getchannel(HILO(eit->service_id), chnode->transponderid);
+		
+		//TODO: change to onid + tid
+		transponderid = HILO(eit->transport_stream_id);
+		//transponderid = (HILO(eit->original_network_id) << 16) | HILO(eit->transport_stream_id);
+		tmpchnode = getchannel(HILO(eit->service_id), transponderid);
 		if(tmpchnode == NULL)
 		{
 			debug(1000, "out -> NULL detect");
@@ -1116,7 +1121,7 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 		//only if epglist is marked as whitelist
 		if(status.epglistmode == 2 || status.epglistmode == 3)
 		{
-			if(getepgscanlist(HILO(eit->service_id), chnode->transponderid) == NULL)
+			if(getepgscanlist(HILO(eit->service_id), transponderid) == NULL)
 				return;
 		}
 
@@ -1330,7 +1335,7 @@ int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 	struct dvbdev* dmxnode;
 	struct eit* eit = NULL;
 
-	buf = malloc(MINMALLOC);
+	buf = malloc(MINMALLOC * 4);
 	if(buf == NULL)
 	{
 		err("no memory");
@@ -1372,10 +1377,17 @@ int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 		if(pos < 3) goto read_more;
 
 		eit = (struct eit*)head;
-		if(eit->table_id < 0x4e || eit->table_id > 0x6f) goto read_more;
 
 		len = 3 + GETEITSECLEN(eit);
 		if (pos < len) goto read_more;
+		
+		if(eit->table_id < 0x4e || eit->table_id > 0x6f)
+		{
+			err("epg table id");
+			pos -= len;
+			head += len;
+			goto read_more;
+		}
 
 		if(dvbcrc32((uint8_t *)head, len) == 0)
 			parseeit(chnode, head, len, flag);
@@ -1395,10 +1407,12 @@ int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 		continue;
 read_more:
 		//clear buffer
-		if(pos == MINMALLOC)
+		if(pos == MINMALLOC * 4)
 		{
 			pos = 0;
 			head = buf;
+			dmxstop(dmxnode);
+			dmxstart(dmxnode);
 		}
 
 		//move remaining data to front of buffer
@@ -1412,10 +1426,10 @@ read_more:
 		}
 		//fill with fresh data
 #ifdef SIMULATE
-		readlen = TEMP_FAILURE_RETRY(read(fd, buf + pos, MINMALLOC - pos));
+		readlen = TEMP_FAILURE_RETRY(read(fd, buf + pos, (MINMALLOC * 4) - pos));
 		usleep(200000);
 #else
-		readlen = dvbread(dmxnode, buf, pos, MINMALLOC - pos, 100000);
+		readlen = dvbread(dmxnode, buf, pos, (MINMALLOC * 4) - pos, 100000);
 		usleep(1000);
 #endif
 		if(flag == 1 && status.epgscantimer < time(NULL) - 3) goto end;
@@ -1427,9 +1441,9 @@ read_more:
 			head = buf;
 			while(self->aktion != STOP && self->aktion != PAUSE && status.epgtimer < time(NULL) - 3)
 			{
-				if(count > 10 * 60 * 10) break; //10 min
+				if(count > 2 * 60 * 20) break; //20 min
 				count++;
-				usleep(100000);
+				usleep(500000);
 			}
 			count = 0;
 			status.epgtimer = time(NULL);

@@ -60,7 +60,7 @@ int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktlnb, int
 			node->feloffrequency = frequency - lofl;
 	}
 
-	debug(200, "tuning to freq %d (befor lof %d)", node->feloffrequency, frequency);
+	debug(200, "tuning to freq %d (befor lof %d), band=%d", node->feloffrequency, frequency, node->feaktband);
 	return node->feaktband;
 }
 
