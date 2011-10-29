@@ -25,6 +25,8 @@ void epgscanlistthread(struct stimerthread* self)
 	struct epgscanlist* node = epgscanlist, *tmpepgscannode = NULL;
 	struct dvbdev* fenode = NULL;
 	struct channel* chnode = NULL;
+	
+	debug(400, "epgscan thread start");
 
 	if(status.standby == 0)
 	{
@@ -37,8 +39,6 @@ void epgscanlistthread(struct stimerthread* self)
 	//wait for right time
 	while(self->aktion != STOP && time(NULL) < 1072224000) // 01.01.2004
 		usleep(1 * 1000000);
-
-	debug(400, "epgscan thread start");
 
 	while(node != NULL)
 	{
