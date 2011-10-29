@@ -893,10 +893,6 @@ struct status
 	struct stimerthread* epgscanlistthread;
 	// httpd thread pointer
 	struct stimerthread* httpthread;
-	// got new epg if 0 and stop it no new epg for a spezified period
-	time_t epgtimer;
-	// same as epgtimer for epgscan
-	time_t epgscantimer;
 	struct service* aktservice;
 	struct service* lastservice;
 	struct channel* markedchannel;

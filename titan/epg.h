@@ -1152,9 +1152,6 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 			return;
 		}
 #endif
-		//set timer to akttime
-		if(flag == 0) status.epgtimer = time(NULL);
-		if(flag == 1) status.epgscantimer = time(NULL);
 
 		epgnode = addepg(tmpchnode, HILO(evt->event_id), eit->version_number, starttime, endtime, NULL, 1);
 		if(epgnode == NULL)
@@ -1332,6 +1329,10 @@ int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 	unsigned char *buf = NULL, *head = buf;
 	struct dvbdev* dmxnode;
 	struct eit* eit = NULL;
+	unsigned long seen[16] = {0};
+	unsigned long firstseen[16] = {0};
+	int roundend = 0, round = 0x4e, i = 0;
+	time_t akttime, roundstart;
 
 	buf = malloc(MINMALLOC * 4);
 	if(buf == NULL)
@@ -1358,7 +1359,6 @@ int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 
 	dmxsetbuffersize(dmxnode, getconfigint("dmxepgbuffersize", NULL));
 	dmxsetsource(dmxnode, fenode->fedmxsource);
-	dmxsetfilter(dmxnode, 0x12, 0, 5);
 
 #ifdef SIMULATE
 	int fd = open("simulate/epg.ts", O_RDONLY);
@@ -1368,10 +1368,72 @@ int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 		return 1;
 	}
 #endif
-	if(flag == 0) status.epgtimer = time(NULL);
-	if(flag == 1) status.epgscantimer = time(NULL);
+
+	for(i = 2; i < 16; i++) firstseen[i] = 1;
+	roundstart = time(NULL);
+	dmxsetfilter(dmxnode, 0x12, 0, 8);
 	while(self->aktion != STOP && self->aktion != PAUSE)
 	{
+		akttime = time(NULL);
+		roundend = 1;
+
+		//check end of epg infos
+		for(i = 0; i < 16; i++)
+		{
+			if(roundstart + 5 < akttime && firstseen[i] == 0)
+				firstseen[i] = 1;
+			if(roundstart + 30 < akttime && firstseen[i] != 1)
+				firstseen[i] = 1;
+			if(firstseen[i] != 1)
+				roundend = 0;
+		}
+		
+		if(roundend == 1)
+		{
+			for(i = 0; i < 16; i++)
+			{
+				seen[i] = 0;
+				firstseen[i] = 0;
+			}
+
+			roundend = 0;
+			pos = 0;
+			head = buf;
+
+			if(round == 0x60)
+			{
+				dmxstop(dmxnode);
+				if(flag == 1) goto end;
+				debug(400, "epg no more new data, wait for next run");
+				while(self->aktion != STOP && self->aktion != PAUSE)
+				{
+					if(count > 10 * 60 * 20) break; //20 min
+					count++;
+					usleep(100000);
+				}
+				count = 0;
+				debug(400, "epg next run start");
+			}
+			if(round == 0x4e)
+			{
+				dmxsetfilter(dmxnode, 0x12, 0, 6);
+				round = 0x50;
+			}
+			else if(round == 0x50)
+			{
+				dmxsetfilter(dmxnode, 0x12, 0, 7);
+				round = 0x60;
+			}
+			else if(round == 0x60)
+			{
+				dmxsetfilter(dmxnode, 0x12, 0, 8);
+				for(i = 2; i < 16; i++) firstseen[i] = 1;
+				round = 0x4e;
+			}
+			roundstart = time(NULL);
+			continue;
+		}
+	
 		if(pos < 3) goto read_more;
 
 		eit = (struct eit*)head;
@@ -1379,25 +1441,24 @@ int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 		len = 3 + GETEITSECLEN(eit);
 		if (pos < len) goto read_more;
 		
-		if(eit->table_id < 0x4e || eit->table_id > 0x6f)
+		if(eit->table_id - round < 0 || eit->table_id - round > 15 || dvbcrc32((uint8_t *)head, len) != 0)
 		{
-			err("epg table id");
-			pos -= len;
-			head += len;
-			goto read_more;
-		}
-
-		if(dvbcrc32((uint8_t *)head, len) == 0)
-			parseeit(chnode, head, len, flag);
-		else
-		{
-			err("epg crc");
+			err("epg crc or table id not ok");
 			dmxstop(dmxnode);
 			dmxstart(dmxnode);
 			pos = 0;
 			head = buf;
 			goto read_more;
 		}
+
+		seen[eit->table_id - round] = (eit->table_id << 24) | (HILO(eit->service_id) << 8) | eit->section_number;
+
+		if(firstseen[eit->table_id - round] == 0)
+			firstseen[eit->table_id - round] = seen[eit->table_id - round];
+		else if(firstseen[eit->table_id - round] == seen[eit->table_id - round])
+			firstseen[eit->table_id - round] = 1;
+
+		parseeit(chnode, head, len, flag);
 
 		//remove packet
 		pos -= len;
@@ -1430,24 +1491,6 @@ read_more:
 		readlen = dvbread(dmxnode, buf, pos, (MINMALLOC * 4) - pos, 100000);
 		usleep(1000);
 #endif
-		if(flag == 1 && status.epgscantimer < time(NULL) - 3) goto end;
-		if(flag == 0 && status.epgtimer < time(NULL) - 3)
-		{
-			debug(400, "epg no more new data, wait for next run");
-			dmxstop(dmxnode);
-			pos = 0;
-			head = buf;
-			while(self->aktion != STOP && self->aktion != PAUSE && status.epgtimer < time(NULL) - 3)
-			{
-				if(count > 2 * 60 * 20) break; //20 min
-				count++;
-				usleep(500000);
-			}
-			count = 0;
-			status.epgtimer = time(NULL);
-			dmxstart(dmxnode);
-			debug(400, "epg next run start");
-		}
 		if(readlen < 0) readlen = 0;
 		head = buf;
 		pos += readlen;
