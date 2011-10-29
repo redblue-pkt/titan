@@ -1107,9 +1107,7 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 		if(chnode == status.aktservice->channel && status.aktservice->type != CHANNEL)
 			return;
 		
-		//TODO: change to onid + tid
-		transponderid = HILO(eit->transport_stream_id);
-		//transponderid = (HILO(eit->original_network_id) << 16) | HILO(eit->transport_stream_id);
+		transponderid = (HILO(eit->original_network_id) << 16) | HILO(eit->transport_stream_id);
 		tmpchnode = getchannel(HILO(eit->service_id), transponderid);
 		if(tmpchnode == NULL)
 		{
