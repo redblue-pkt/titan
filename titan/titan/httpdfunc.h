@@ -607,7 +607,12 @@ char* websetvol(char* param)
 		buf = ostrcat(buf, "<a href=query?setvol&100><img src=img/led_off.png border=0></img></a> ", 1, 0);
 	buf = ostrcat(buf, "</center></body></html>", 1, 0);
 
-	setvol(vol);
+	if(param != NULL)
+	{
+		setvol(vol);
+		if(status.mute == 1)
+			screenmute(0);
+	}
 	return buf;
 }
 
