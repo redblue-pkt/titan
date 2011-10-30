@@ -1,18 +1,10 @@
 #ifndef CIDEV_H
 #define CIDEV_H
 
-struct dvbdev* ciopen(int adapter)
+struct dvbdev* ciopen(struct dvbdev* node)
 {
 	debug(1000, "in");
 	int fd = -1;
-	struct dvbdev* node = dvbdev;
-
-	while(node != NULL)
-	{
-		if(node->fd == -1 && node->type == CIDEV && node->adapter == adapter)
-			break;
-		node = node->next;
-	}
 
 	if(node != NULL)
 	{

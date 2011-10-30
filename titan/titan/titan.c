@@ -455,8 +455,8 @@ int main(int argc, char *argv[])
 		goto starterror;
 	}
 	ret = fecreatedummy();
-	ret = cigetdev();
 	ret = cagetdev();
+	ret = cigetdev();
 	ret = dvrgetdev();
 	
 	//check skin

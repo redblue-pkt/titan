@@ -180,6 +180,7 @@ struct caslot
 {
 	struct casession casession[MAXCASESSION];
 	int connid;
+	int poll;
 	int status;
 	int rlen;
 	unsigned char* rbuf;
