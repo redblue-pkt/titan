@@ -66,7 +66,6 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 	struct dvbdev *videonode = NULL;
 	int ret = 0, festatus = 1;
 	unsigned char *patbuf = NULL;
-	char* tmpstr = NULL;
 	int checkpmt = 0, pincheck = 0, stopflag = 0, ageprotect = 0;
 	struct epg* epgnode = NULL;
 

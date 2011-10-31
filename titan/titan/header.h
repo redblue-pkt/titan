@@ -1,6 +1,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//gmultiepg.h
+void screengmultiepg(struct channel* chnode, struct epg* epgnode);
+
 //multiepg.h
 void screenmultiepg(struct channel* chnode, struct epg* epgnode);
 
