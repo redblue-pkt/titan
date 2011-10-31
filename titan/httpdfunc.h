@@ -671,11 +671,14 @@ char* webgetaktservice()
 
 char* webswitch(char* param)
 {
+	if(status.channelswitch == 1) goto end;
+
 	int ret = 0;
 	char* param1 = NULL, *param2 = NULL;
 	struct channel* chnode = NULL;
+	int tmpservicetype = status.servicetype;
 
-	if(param == NULL) return NULL;
+	if(param == NULL) goto end;
 
 	//create param1
 	param1 = strchr(param, '&');
@@ -687,20 +690,37 @@ char* webswitch(char* param)
 			*param2++ = '\0';
 	}
 
-	if(param1 == NULL) return NULL;
+	if(param1 == NULL && param2 == NULL) goto end;
 
 	chnode = getchannel(atoi(param), atoi(param1));
 	if(chnode != NULL)
 	{
 		ret = channelnottunable(chnode);
 		if(ret == 0)
+		{
+			status.servicetype = chnode->servicetype;
 			ret = servicestart(chnode, NULL, 0);
+			if(ret != 20 && ret != 21 && ret != 22)
 			{
-				if(param2 != NULL && ret != 20 && ret != 21 && ret != 22)
+				if(status.servicetype == 0)
+				{
+					free(status.oldchannellist); status.oldchannellist = NULL;
+					status.oldchannellist = ostrcat(NULL, getconfig("channellist", NULL), 0, 0);
 					addconfig("channellist", param2);
+				}
+				else
+				{
+					free(status.oldchannellist); status.oldchannellist = NULL;
+					status.oldchannellist = ostrcat(NULL, getconfig("rchannellist", NULL), 0, 0);
+					addconfig("rchannellist", param2);
+				}
 			}
+			else
+				status.servicetype = tmpservicetype;
+		}
 	}
 
+end:
 	return webgetaktservice();
 }
 

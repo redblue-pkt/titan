@@ -346,6 +346,9 @@ int screenchannellist(struct channel** retchannel, char** retchannellist, int fl
 	int rcret, ret, listmode, newmodus, list;
 	char* tmpstr, *tmpstr1;
 	void* movesel, *aktlist;
+	
+	status.channelswitch = 1;
+	
 start:
 	rcret = 0, ret = -1, list = ALLCHANNEL, listmode = NOMODE, newmodus = 0;
 	tmpstr = NULL, tmpstr1 = NULL, movesel = NULL, aktlist = NULL, tmpskin = NULL;
@@ -1108,6 +1111,7 @@ start:
 	delconfigtmpall();
 	clearscreen(channellist);
 	if(newmodus == 1) goto start;
+	status.channelswitch = 0;
 	return ret;
 }
 
