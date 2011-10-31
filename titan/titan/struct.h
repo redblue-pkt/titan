@@ -765,6 +765,8 @@ struct hddparm
 
 struct status
 {
+	//set to 1 if channellist or channelnr open
+	int channelswitch;
 	//deaktivates child protect if greater then akttime
 	time_t protecttime;
 	char* boxtype;

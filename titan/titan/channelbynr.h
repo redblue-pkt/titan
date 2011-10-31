@@ -18,6 +18,8 @@ void screenchannelbynr(int rcret)
 	struct mainbouquet* mainbouquetnode = NULL;
 	int count = 0, ret = 0;
 	char* tmpstr = NULL;
+	
+	status.channelswitch = 1;
 
 	status.rckey = rcret;
 	drawscreen(channelbynr, 0);
@@ -87,6 +89,7 @@ void screenchannelbynr(int rcret)
 	changetext(channelbynr, NULL);
 	delownerrc(channelbynr);
 	clearscreen(channelbynr);
+	status.channelswitch = 0;
 }
 
 #endif
