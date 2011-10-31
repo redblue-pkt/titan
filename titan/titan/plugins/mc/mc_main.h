@@ -320,7 +320,9 @@ void mc_main()
 	writesysint("/proc/sys/vm/drop_caches", 3, 0);
 	debug(1000, "out");
 	debug(50, "startservice: lastservice");
-	servicestart(status.lastservice->channel, status.lastservice->channellist, NULL, 0);
+	tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
+	servicestart(status.lastservice->channel, tmpstr, NULL, 0);
+	free(tmpstr); tmpstr = NULL;
 	debug(50, "set default osdtransparent");
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	status.hangtime = getconfigint("hangtime", NULL);
