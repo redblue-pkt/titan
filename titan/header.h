@@ -313,7 +313,7 @@ struct service* checkservice(struct service* node);
 struct service* addservice(struct service* last);
 void delservice(struct service* snode, int flag);
 int servicestop(struct service *node, int clear, int flag);
-int servicestart(struct channel* chnode, char* pin, int flag);
+int servicestart(struct channel* chnode, char* channellist, char* pin, int flag);
 void serviceresetchannelinfo(struct channel* chnode);
 
 //mainbouquets.h

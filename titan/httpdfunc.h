@@ -676,7 +676,6 @@ char* webswitch(char* param)
 	int ret = 0;
 	char* param1 = NULL, *param2 = NULL;
 	struct channel* chnode = NULL;
-	int tmpservicetype = status.servicetype;
 
 	if(param == NULL) goto end;
 
@@ -697,27 +696,7 @@ char* webswitch(char* param)
 	{
 		ret = channelnottunable(chnode);
 		if(ret == 0)
-		{
-			status.servicetype = chnode->servicetype;
-			ret = servicestart(chnode, NULL, 0);
-			if(ret != 20 && ret != 21 && ret != 22)
-			{
-				if(status.servicetype == 0)
-				{
-					free(status.oldchannellist); status.oldchannellist = NULL;
-					status.oldchannellist = ostrcat(NULL, getconfig("channellist", NULL), 0, 0);
-					addconfig("channellist", param2);
-				}
-				else
-				{
-					free(status.oldchannellist); status.oldchannellist = NULL;
-					status.oldchannellist = ostrcat(NULL, getconfig("rchannellist", NULL), 0, 0);
-					addconfig("rchannellist", param2);
-				}
-			}
-			else
-				status.servicetype = tmpservicetype;
-		}
+			ret = servicestart(chnode, param2, NULL, 0);
 	}
 
 end:

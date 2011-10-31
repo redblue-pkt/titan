@@ -47,12 +47,14 @@ void akttolast()
 	status.lastservice->videodev = status.aktservice->videodev;
 	status.lastservice->transponder = status.aktservice->transponder;
 	status.lastservice->channel = status.aktservice->channel;
+	free(status.lastservice->channellist);
+	status.lastservice->channellist = ostrcat(status.aktservice->channellist, NULL, 0, 0);
 }
 
 //flag 0: channel
 //flag 1: playback
 //flag 2: timeshift
-int servicestart(struct channel* chnode, char* pin, int flag)
+int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 {
 	debug(1000, "in");
 	struct transponder* tpnode = NULL;
@@ -124,21 +126,8 @@ int servicestart(struct channel* chnode, char* pin, int flag)
 	status.aktservice->type = CHANNEL;
 	if(status.epgthread != NULL) status.epgthread->aktion = PAUSE;
 
-	if(flag == 0 && status.aktservice->type == CHANNEL && status.aktservice->channel != NULL)
-	{
-		tmpstr = oitoa(status.aktservice->channel->serviceid);
-		if(status.servicetype == 0)
-			addconfig("serviceid", tmpstr);
-		else
-			addconfig("rserviceid", tmpstr);
-		free(tmpstr);
-		tmpstr = oitoa(status.aktservice->channel->transponderid);
-		if(status.servicetype == 0)
-			addconfig("transponderid", tmpstr);
-		else
-			addconfig("rtransponderid", tmpstr);
-		free(tmpstr);
-	}
+	if(flag == 0 && status.aktservice->type == CHANNEL)
+		changechannellist(chnode, channellist);
 
 	//got frontend dev
 	if(flag == 0)
@@ -711,6 +700,9 @@ void delservice(struct service* snode, int flag)
 				if(flag == 0)
 					m_unlock(&status.rectimermutex, 1);
 			}
+
+			free(node->channellist);
+			node->channellist = NULL;
 
 			free(node->recname);
 			node->recname = NULL;

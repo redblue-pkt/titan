@@ -64,23 +64,11 @@ void screenchannelbynr(int rcret)
 				{
 					tmpstr = ostrcat(tmpstr, "(BOUQUET)-", 0, 0);
 					tmpstr = ostrcat(tmpstr, mainbouquetnode->name, 1, 0);
-					if(status.servicetype == 0)
-					{
-						free(status.oldchannellist); status.oldchannellist = NULL;
-						status.oldchannellist = ostrcat(NULL, getconfig("channellist", NULL), 0, 0);
-						addconfig("channellist", tmpstr);
-					}
-					else
-					{
-						free(status.oldrchannellist); status.oldrchannellist = NULL;
-						status.oldchannellist = ostrcat(NULL, getconfig("rchannellist", NULL), 0, 0);
-						addconfig("rchannellist", tmpstr);
-					}
-					free(tmpstr); tmpstr = NULL;
 				}
 
-				ret = servicestart(bouquetnode->channel, NULL, 0);
+				ret = servicestart(bouquetnode->channel, tmpstr, NULL, 0);
 				servicecheckret(ret, 0);
+				free(tmpstr); tmpstr = NULL;
 			}
 			break;
 		}

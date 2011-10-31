@@ -6,7 +6,7 @@ void screenstandby()
 	int rcret = 0;
 	struct skin* standbyscreen = getscreen("standby");
 	struct stimerthread *epgscan = NULL;
-	char* loctime = NULL;
+	char* loctime = NULL, *tmpstr = NULL;
 	time_t lastrun = 0;
 
 	rcret = servicestop(status.aktservice, 1, 0);
@@ -48,7 +48,9 @@ void screenstandby()
 	setoverclockfreq(1);
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	setvfdbrightness(getconfigint("vfdbrightness", NULL));
-	servicestart(status.lastservice->channel, NULL, 0);
+	tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
+	servicestart(status.lastservice->channel, tmpstr, NULL, 0);
+	free(tmpstr); tmpstr = NULL;
 	subtitlepause(0);
 	status.standby = 0;
 	status.startmode = 2;

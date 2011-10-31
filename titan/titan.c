@@ -236,8 +236,6 @@ void oshutdown(int exitcode, int flag)
 		free(status.gateway);
 		free(status.dnsserver1);
 		free(status.dnsserver2);
-		free(status.oldchannellist);
-		free(status.oldrchannellist);
 		free(status.boxtype);
 
 		freeservice();
@@ -498,9 +496,9 @@ int main(int argc, char *argv[])
 
 	//tune to channel
 	if(status.servicetype == 0)
-		serviceret = servicestart(getchannel(getconfigint("serviceid", NULL), getconfigint("transponderid", NULL)), NULL, 0);
+		serviceret = servicestart(getchannel(getconfigint("serviceid", NULL), getconfigint("transponderid", NULL)), getconfig("channellist", NULL), NULL, 0);
 	else
-		serviceret = servicestart(getchannel(getconfigint("rserviceid", NULL), getconfigint("rtransponderid", NULL)), NULL, 0);
+		serviceret = servicestart(getchannel(getconfigint("rserviceid", NULL), getconfigint("rtransponderid", NULL)), getconfig("rchannellist", NULL),  NULL, 0);
 
 	ret = readscreen(getconfig("skinfile", NULL), 0, 0);
 	ret = readmainbouquet(getconfig("bouquetfile", NULL));

@@ -344,8 +344,8 @@ int screenchannellist(struct channel** retchannel, char** retchannellist, int fl
 	struct skin* b7 = getscreennode(channellist, "b7");
 	struct skin* tmpskin;
 	int rcret, ret, listmode, newmodus, list;
-	char* tmpstr, *tmpstr1;
-	void* movesel, *aktlist;
+	char* tmpstr = NULL, *tmpstr1 = NULL;
+	void* movesel = NULL, *aktlist = NULL;
 	
 	status.channelswitch = 1;
 	
@@ -801,24 +801,13 @@ start:
 					}
 					break;
 				}
-				char* oldchannellist = NULL;
-				if(status.servicetype == 0)
-					oldchannellist = ostrcat(NULL, getconfignotmp("channellist", NULL), 0, 0);
-				else
-					oldchannellist = ostrcat(NULL, getconfignotmp("rchannellist", NULL), 0, 0);
 
 				clearscreen(channellist);
 				drawscreen(skin, 0);
-				ret = servicestart((struct channel*)listbox->select->handle, NULL, 0);
-				if(ret == 20 || ret == 21 || ret == 22)
-					free(oldchannellist);
+				if(status.servicetype == 0)
+					ret = servicestart((struct channel*)listbox->select->handle, getconfig("channellist", NULL), NULL, 0);
 				else
-				{
-					writeconfigtmp();
-					free(status.oldchannellist);
-					status.oldchannellist = oldchannellist;
-				}
-
+					ret = servicestart((struct channel*)listbox->select->handle, getconfig("rchannellist", NULL), NULL, 0);
 				servicecheckret(ret, 0);
 				break;
 			}
@@ -1108,7 +1097,8 @@ start:
 	delmarkedscreennodes(channellist, 1);
 	delmarkedscreennodes(channellist, 2);
 	delownerrc(channellist);
-	delconfigtmpall();
+	delconfigtmp("channellist");
+	delconfigtmp("rchannellist");
 	clearscreen(channellist);
 	if(newmodus == 1) goto start;
 	status.channelswitch = 0;

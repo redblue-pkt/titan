@@ -40,6 +40,11 @@ int selectchannelmepg(struct skin* listbox)
 
 	while(node != NULL)
 	{
+		if(node->deaktivcol > -1)
+		{
+			node = node->next;
+			continue;
+		}
 		if(chnode == (struct channel*) node->handle)
 			return 0;
 
@@ -102,7 +107,7 @@ int showallmepgchannel(struct skin* multiepg, struct skin* listbox, int epgnr)
 				}
 
 				chnode->handle = (char*) tmpchannel;
-				if(tmpchannel->transponder == NULL)
+				if(channelnottunable(tmpchannel) == 1)
 					chnode->deaktivcol = convertcol("deaktivcol");
 			}
 		}
@@ -172,7 +177,7 @@ int showbouquetmepgchannel(struct skin* multiepg, struct skin* listbox, struct b
 						chnode->handle1 = (char*) epgnode;
 					}
 					chnode->handle = (char*) tmpbouquet->channel;
-					if(tmpbouquet->channel->transponder == NULL)
+					if(channelnottunable(tmpbouquet->channel) == 1)
 						chnode->deaktivcol = convertcol("deaktivcol");
 				}
 			}
@@ -236,6 +241,8 @@ int showprovidermepgchannel(struct skin* multiepg, struct skin* listbox, struct 
 						chnode->handle1 = (char*) epgnode;
 					}
 					chnode->handle = (char*) tmpchannel;
+					if(channelnottunable(tmpchannel) == 1)
+						chnode->deaktivcol = convertcol("deaktivcol");
 				}
 			}
 		}
@@ -301,6 +308,8 @@ int showsatmepgchannel(struct skin* multiepg, struct skin* listbox, struct sat* 
 						chnode->handle1 = (char*) epgnode;
 					}
 					chnode->handle = (char*) tmpchannel;
+					if(channelnottunable(tmpchannel) == 1)
+						chnode->deaktivcol = convertcol("deaktivcol");
 				}
 			}
 		}
@@ -362,6 +371,8 @@ int showazmepgchannel(struct skin* multiepg, struct skin* listbox, int character
 						chnode->handle1 = (char*) epgnode;
 					}
 					chnode->handle = (char*) tmpchannel;
+					if(channelnottunable(tmpchannel) == 1)
+						chnode->deaktivcol = convertcol("deaktivcol");
 				}
 			}
 		}
@@ -504,8 +515,12 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode)
 		status.screencalc = 0;
 
 		if((rcret == getrcconfigint("rcexit", NULL)) || (rcret == getrcconfigint("rcepg", NULL))) break;
-		if(rcret == getrcconfigint("rcok", NULL)) break;
 		if(rcret == getrcconfigint("rcinfo", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			servicecheckret(servicestart((struct channel*)listbox->select->handle, NULL, NULL, 0), 0);
+			break;
+		}
 		
 		if(epgscreenconf == 2 && rcret == getrcconfigint("rcred", NULL))
 		{

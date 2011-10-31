@@ -433,7 +433,7 @@ void screentunerconfig()
 		{
 			status.aktservice->channel = NULL;
 			status.aktservice->transponder = NULL;
-			servicecheckret(servicestart(chnode, NULL, 0), 0);
+			servicecheckret(servicestart(chnode, NULL, NULL, 0), 0);
 		}
 	}
 }

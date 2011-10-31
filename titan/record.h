@@ -640,9 +640,9 @@ int recordstart(struct channel* chnode, int filefd, int recordfd, int type, time
 				else
 				{
 					if(rectimernode != NULL)
-						servicestart(chnode, rectimernode->pincode, 0);
+						servicestart(chnode, rectimernode->channellist, rectimernode->pincode, 0);
 					else
-						servicestart(chnode, NULL, 0);
+						servicestart(chnode, NULL, NULL, 0);
 					fenode = fegetfree(tpnode, 2, NULL);
 					if(fenode == NULL)
 					{
