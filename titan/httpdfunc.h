@@ -86,7 +86,7 @@ char* webcreatehead(char* buf, char* meta, int flag)
 	return buf;
 }
 
-void webcreatechannelbody(char** buf, int line, struct channel* chnode, int* maxlen, int* pos, int flag)
+void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* channellist, int* maxlen, int* pos, int flag)
 {
 	char* tmpstr = NULL, *buf1 = NULL, *serviceid = NULL, *transponderid = NULL;
 	struct epg* epgnode = getepgakt(chnode);
@@ -132,6 +132,8 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, int* max
 		ostrcatbig(buf, serviceid, maxlen, pos);
 		ostrcatbig(buf, "&", maxlen, pos);
 		ostrcatbig(buf, transponderid, maxlen, pos);
+		ostrcatbig(buf, "&", maxlen, pos);
+		ostrcatbig(buf, channellist, maxlen, pos);
 		ostrcatbig(buf, ">", maxlen, pos);
 	}
 
@@ -244,7 +246,7 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, int* max
 
 char* webgetbouquetchannel(char* param)
 {
-	char* buf = NULL;
+	char* buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
 	struct mainbouquet *mbouquet = NULL;
 	struct bouquet *node = NULL;
 	struct channel* chnode = NULL;
@@ -258,20 +260,24 @@ char* webgetbouquetchannel(char* param)
 	if(mbouquet != NULL)
 	{
 		node = mbouquet->bouquet;
+		tmpstr = ostrcat(tmpstr, "(BOUQUET)-", 1, 0);
+		tmpstr = ostrcat(tmpstr, mbouquet->name, 1, 0);
+		tmpstr1 = htmlencode(tmpstr);
+		free(tmpstr); tmpstr = NULL;
 		while(node != NULL)
 		{
 			chnode = getchannel(node->serviceid, node->transponderid);
 			if(chnode != NULL)
 			{
-				webcreatechannelbody(&buf, line, chnode, &maxlen, &pos, 0);
+				webcreatechannelbody(&buf, line, chnode, tmpstr1, &maxlen, &pos, 0);
 				if(line == 0)
 					line = 1;
 				else
 					line = 0;
 			}
-
 			node = node->next;
 		}
+		free(tmpstr1); tmpstr1 = NULL;
 	}
 	webcreatetailbig(&buf, &maxlen, &pos, 0);
 
@@ -284,11 +290,44 @@ char* webgetbouquetchannel(char* param)
 //flag 3: A-Z
 char* webgetchannel(int param, int flag, int page)
 {
-	char* buf = NULL, *tmpnr = NULL;
+	char* buf = NULL, *tmpnr = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
 	struct channel* chnode = channel;
 	int line = 0, maxcount = 0, maxlen = 0, pos = 0;
 
 	webcreateheadbig(&buf, &maxlen, "<meta http-equiv=refresh content=15>", &pos, 0);
+
+	if(flag == 0) tmpstr1 = ostrcat(tmpstr1, "(ALL)", 1, 0);
+	if(flag == 1)
+	{
+		struct sat* node = getsatbyorbitalpos(param);
+		if(node != NULL)
+		{
+			tmpstr = ostrcat(tmpstr, "(SAT)-", 1, 0);
+			tmpstr = ostrcat(tmpstr, node->name, 1, 0);
+			tmpstr1 = htmlencode(tmpstr);
+			free(tmpstr); tmpstr = NULL;
+		}
+	}
+	if(flag == 2)
+	{
+		struct provider* node = getprovider(param);
+		if(node != NULL)
+		{
+			tmpstr = ostrcat(tmpstr, "(PROVIDER)-", 1, 0);
+			tmpstr = ostrcat(tmpstr, node->name, 1, 0);
+			tmpstr1 = htmlencode(tmpstr);
+			free(tmpstr); tmpstr = NULL;
+		}
+	}
+	if(flag == 3)
+	{
+		tmpstr = malloc(2);
+		if(tmpstr != NULL)
+			snprintf(tmpstr, 2, "%c", param);
+		tmpstr = ostrcat("(A-Z)-", tmpstr, 0, 1);
+		tmpstr1 = htmlencode(tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
 
 	while(chnode != NULL)
 	{
@@ -324,7 +363,7 @@ char* webgetchannel(int param, int flag, int page)
 			chnode = chnode->next;
 			continue;
 		}
-		webcreatechannelbody(&buf, line, chnode, &maxlen, &pos, 0);
+		webcreatechannelbody(&buf, line, chnode, tmpstr1, &maxlen, &pos, 0);
 
 		if(line == 0)
 			line = 1;
@@ -333,6 +372,7 @@ char* webgetchannel(int param, int flag, int page)
 
 		chnode = chnode->next;
 	}
+	free(tmpstr); tmpstr = NULL;
 
 	if(maxcount > MAXHTMLLINE)
 	{
@@ -623,7 +663,7 @@ char* webgetaktservice()
 	int line = 0, maxlen = 0, pos = 0;
 
 	webcreateheadbig(&buf, &maxlen, NULL, &pos, 1);
-	webcreatechannelbody(&buf, line, chnode, &maxlen, &pos ,1);
+	webcreatechannelbody(&buf, line, chnode, getconfig("channellist", NULL), &maxlen, &pos ,1);
 	webcreatetailbig(&buf, &maxlen, &pos, 1);
 
 	return buf;
@@ -632,7 +672,7 @@ char* webgetaktservice()
 char* webswitch(char* param)
 {
 	int ret = 0;
-	char* param1 = NULL;
+	char* param1 = NULL, *param2 = NULL;
 	struct channel* chnode = NULL;
 
 	if(param == NULL) return NULL;
@@ -640,7 +680,12 @@ char* webswitch(char* param)
 	//create param1
 	param1 = strchr(param, '&');
 	if(param1 != NULL)
+	{
 		*param1++ = '\0';
+		param2 = strchr(param1, '&');
+		if(param2 != NULL)
+			*param2++ = '\0';
+	}
 
 	if(param1 == NULL) return NULL;
 
@@ -650,6 +695,10 @@ char* webswitch(char* param)
 		ret = channelnottunable(chnode);
 		if(ret == 0)
 			ret = servicestart(chnode, NULL, 0);
+			{
+				if(param2 != NULL && ret != 20 && ret != 21 && ret != 22)
+					addconfig("channellist", param2);
+			}
 	}
 
 	return webgetaktservice();
