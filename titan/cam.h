@@ -86,12 +86,12 @@ void sendcapmtend(struct service* node)
 	memset(buf, 0, 8);
 
 	buf[0] = 0x9F; // ca_pmt_tag
-        buf[1] = 0x80; // ca_pmt_tag
-        buf[2] = 0x3f; // ca_pmt_tag
-        buf[3] = 0x04; // ca_pmt_tag
-        buf[4] = 0x83; // ca_pmt_tag
-        buf[5] = 0x02; // ca_pmt_tag
-        buf[6] = 0x00; // ca_pmt_tag
+	buf[1] = 0x80; // ca_pmt_tag
+	buf[2] = 0x3f; // ca_pmt_tag
+	buf[3] = 0x04; // ca_pmt_tag
+	buf[4] = 0x83; // ca_pmt_tag
+	buf[5] = 0x02; // ca_pmt_tag
+	buf[6] = 0x00; // ca_pmt_tag
 	buf[7] = node->fedev->devnr; //demux_dev_nr
 	sendcapmttosock(node, buf, 8);
 
@@ -267,7 +267,9 @@ void sendcapmt(struct service* node, int flag)
 
 	if(flag == 2)
 	{
-		//sendcapmttocam(buf, pos);
+#ifdef CAMSUPP
+		sendcapmttocam(buf, pos);
+#endif
 	}
 	else
 		sendcapmttosock(node, buf, pos);
