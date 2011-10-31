@@ -66,6 +66,7 @@ int screenlistedit(int list, struct channel* chnode)
 				newentry = textinput("bouquet");
 				if(newentry != NULL)
 				{
+					newentry = stringreplacechar(newentry, '#', '_');
 					tmpstr = ostrcat(newentry, "#", 0, 0);
 					tmpnr = oitoa(status.servicetype);
 					tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
