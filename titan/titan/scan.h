@@ -173,7 +173,9 @@ int findchannel(unsigned char *buf, unsigned long transponderid, uint8_t* lastse
 					if(tmpstr2 == NULL || strlen(tmpstr2) == 0) tmpstr2 = ostrcat(tmpstr2, "unknown", 1, 0);
 
 					tmpstr1 = strutf8(tmpstr1, strlen(tmpstr1), 0, 0, 1, 0);
+					tmpstr1 = stringreplacechar(tmpstr1, '#', '_');
 					tmpstr2 = strutf8(tmpstr2, strlen(tmpstr2), 0, 0, 1, 1);
+					tmpstr2 = stringreplacechar(tmpstr2, '#', '_');
 
 					//add to listbox
 					chnode = getchannel(serviceid, transponderid);

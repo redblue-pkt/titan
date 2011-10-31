@@ -495,6 +495,7 @@ start:
 			newentry = textinput("playlist");
 			if(newentry != NULL)
 			{
+				newentry = stringreplacechar(newentry, '#', '_');
 				tmpstr = ostrcat(newentry, "#", 0, 0);
 				tmpstr = ostrcat(tmpstr, getconfig("playlistpath", NULL), 1, 0);
 				tmpstr = ostrcat(tmpstr, "/", 1, 0);
