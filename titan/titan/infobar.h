@@ -303,23 +303,9 @@ void screeninfobar()
 			drawscreen(skin, 0);
 			if(status.lastservice->channel != NULL)
 			{
-				if(status.servicetype == 0 && status.oldchannellist != NULL)
-				{
-					char* tmpchannellist = ostrcat(NULL, getconfig("channellist", NULL), 0, 0);
-					addconfig("channellist", status.oldchannellist);
-					free(status.oldchannellist); status.oldchannellist = NULL;
-					status.oldchannellist = tmpchannellist;
-					servicecheckret(servicestart(status.lastservice->channel, NULL, 0), 0);
-				}
-				else if(status.oldrchannellist != NULL)
-				{
-					char* tmpchannellist = ostrcat(NULL, getconfig("rchannellist", NULL), 0, 0);
-					addconfig("rchannellist", status.oldrchannellist);
-					free(status.oldrchannellist); status.oldrchannellist = NULL;
-					status.oldrchannellist = tmpchannellist;
-					servicecheckret(servicestart(status.lastservice->channel, NULL, 0), 0);
-				}
-
+				tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
+				servicecheckret(servicestart(status.lastservice->channel, tmpstr, NULL, 0), 0);
+				free(tmpstr); tmpstr = NULL;
 			}
 			infobartimeout = 0;
 			status.infobar = 1;

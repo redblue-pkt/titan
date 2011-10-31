@@ -576,7 +576,9 @@ playerstart:
 		}
 	}
 
-	servicestart(status.lastservice->channel, NULL, 0);
+	tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
+	servicecheckret(servicestart(status.lastservice->channel, tmpstr, NULL, 0), 0);
+	free(tmpstr); tmpstr = NULL;
 	status.updatevfd = START;
 
 	if(tmppolicy != NULL)

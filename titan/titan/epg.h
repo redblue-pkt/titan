@@ -104,8 +104,12 @@ void screensingleepg(struct channel* chnode, struct epg* epgnode)
 		rcret = waitrc(singleepg, 0, 0);
 		status.screencalc = 0;
 		if((rcret == getrcconfigint("rcexit", NULL)) || (rcret == getrcconfigint("rcepg", NULL))) break;
-		if(rcret == getrcconfigint("rcok", NULL)) break;
 		if(rcret == getrcconfigint("rcinfo", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			servicecheckret(servicestart(chnode, NULL, NULL, 0), 0);
+			break;
+		}
 		if(epgscreenconf == 1 && rcret == getrcconfigint("rcred", NULL))
 		{
 			if(listbox->select != NULL)
@@ -258,8 +262,12 @@ nextepg:
 	{
 		rcret = waitrc(screenepg, 0, 0);
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcok", NULL)) break;
 		if(rcret == getrcconfigint("rcinfo", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			servicecheckret(servicestart(chnode, NULL, NULL, 0), 0);
+			break;
+		}
 		if(rcret == getrcconfigint("rcright", NULL))
 		{
 			if(epgnode != NULL && epgnode->next != NULL)

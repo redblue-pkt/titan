@@ -67,6 +67,11 @@ int selectchannelgmepg(struct skin* listbox)
 
 	while(node != NULL)
 	{
+		if(node->deaktivcol > -1)
+		{
+			node = node->next;
+			continue;
+		}
 		if(chnode == (struct channel*)node->handle)
 			return 0;
 
@@ -80,12 +85,13 @@ int selectchannelgmepg(struct skin* listbox)
 
 int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, int zoom, time_t akttime, struct channel* aktchannel, int linecol1, int linecol2, int* aktline, struct skin** pchnode, struct skin** pchnode1, int height)
 {
-	int treffer = 0, gridbr = 0, aktcol = 0;
+	int treffer = 0, gridbr = 0, aktcol = 0, nottuneable = 0;
 	struct epg* epgnode = NULL;
 	struct skin* chnode = NULL, *chnode1 = NULL;
 
 	if(tmpchannel != NULL && tmpchannel->servicetype == status.servicetype)
 	{
+		if(channelnottunable(tmpchannel) == 1) nottuneable = 1;
 		*pchnode = addlistbox(gmultiepg, channellistbox, *pchnode, 1);
 		chnode = *pchnode;
 		if(chnode != NULL)
@@ -140,6 +146,8 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 					chnode1->bgspace = 1;
 					chnode1->vspace = 2;
 					chnode1->hspace = 2;
+					if(nottuneable == 1)
+						chnode1->deaktivcol = convertcol("deaktivcol");
 					
 					//TODO: record timeline
 					//chnode1->type = MULTIPROGRESSBAR;
@@ -171,7 +179,7 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 			}
 
 			chnode->handle = (char*)tmpchannel;
-			if(tmpchannel->transponder == NULL)
+			if(nottuneable == 1)
 				chnode->deaktivcol = convertcol("deaktivcol");
 		}
 	}
@@ -468,8 +476,12 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode)
 		channellistbox->aktpage = listbox->aktpage;
 
 		if((rcret == getrcconfigint("rcexit", NULL)) || (rcret == getrcconfigint("rcepg", NULL))) break;
-		if(rcret == getrcconfigint("rcok", NULL)) break;
 		if(rcret == getrcconfigint("rcinfo", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			servicecheckret(servicestart((struct channel*)listbox->select->handle, NULL, NULL, 0), 0);
+			break;
+		}
 		
 		if(epgscreenconf == 3 && rcret == getrcconfigint("rcred", NULL))
 		{

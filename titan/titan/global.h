@@ -1,6 +1,47 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+void changechannellist(struct channel* chnode, char* channellist)
+{
+		char* tmpstr = NULL;
+
+		if(chnode == NULL || status.aktservice->channel == NULL) return;
+
+		status.servicetype = chnode->servicetype;
+		if(status.servicetype == 0)
+		{
+			if(channellist != NULL)
+			{
+				tmpstr = ostrcat(channellist, NULL, 0, 0);
+				free(status.aktservice->channellist);
+				status.aktservice->channellist = tmpstr;
+				addconfig("channellist", tmpstr);
+			}
+			tmpstr = oitoa(status.aktservice->channel->serviceid);
+			addconfig("serviceid", tmpstr);
+                	free(tmpstr); tmpstr = NULL;
+			tmpstr = oitoa(status.aktservice->channel->transponderid);
+			addconfig("transponderid", tmpstr);
+                	free(tmpstr); tmpstr = NULL;
+		}
+		else
+		{
+			if(channellist != NULL)
+			{
+				tmpstr = ostrcat(channellist, NULL, 0, 0);
+				free(status.aktservice->channellist);
+				status.aktservice->channellist = tmpstr;
+				addconfig("rchannellist", tmpstr);
+			}
+			tmpstr = oitoa(status.aktservice->channel->serviceid);
+			addconfig("rserviceid", tmpstr);
+                	free(tmpstr); tmpstr = NULL;
+			tmpstr = oitoa(status.aktservice->channel->transponderid);
+			addconfig("rtransponderid", tmpstr);
+                	free(tmpstr); tmpstr = NULL;
+		}
+}
+
 char* createpiconpath(struct channel* chnode)
 {
 	char* tmpstr = NULL, *tmpnr = NULL;
@@ -1193,6 +1234,8 @@ char* ostrcat(char* value1, char* value2, int free1, int free2)
 {
 //	debug(1000, "in");
 	char* buf = NULL;
+
+	if(value1 == NULL && value2 == NULL) return NULL;
 
 	if(value2 == NULL)
 	{

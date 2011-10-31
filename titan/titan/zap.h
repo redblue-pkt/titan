@@ -133,7 +133,7 @@ start:
 	}
 	
 	if(node != NULL)
-		servicecheckret(servicestart(node, NULL, 0), 0);
+		servicecheckret(servicestart(node, NULL, NULL, 0), 0);
 
 	return 0;
 }
@@ -156,7 +156,7 @@ int zapbouquet(int zapdir, char* aktblist)
 				
 				tmpchannel = nextprev(zapdir, node);
 				if(tmpchannel != NULL)
-					servicecheckret(servicestart(tmpchannel, NULL, 0), 0);
+					servicecheckret(servicestart(tmpchannel, NULL, NULL, 0), 0);
 				return 0;
 			}
 			node = node->next;
@@ -234,7 +234,7 @@ start:
 	}
 	
 	if(node != NULL)
-		servicecheckret(servicestart(node, NULL, 0), 0);
+		servicecheckret(servicestart(node, NULL, NULL, 0), 0);
 
 	return 0;
 }
@@ -312,7 +312,7 @@ start:
 	}
 
 	if(node != NULL)
-		servicecheckret(servicestart(node, NULL, 0), 0);
+		servicecheckret(servicestart(node, NULL, NULL, 0), 0);
 	
 	return 0;
 }
@@ -387,7 +387,7 @@ start:
 	}
 
 	if(node != NULL)
-		servicecheckret(servicestart(node, NULL, 0), 0);
+		servicecheckret(servicestart(node, NULL, NULL, 0), 0);
 	
 	return 0;
 }

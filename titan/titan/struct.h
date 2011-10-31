@@ -716,6 +716,7 @@ struct sat
 struct service
 {
 	int type;
+	char* channellist;
 	struct dvbdev *fedev;
 	struct dvbdev *dmxaudiodev;
 	struct dvbdev *dmxvideodev;
@@ -778,8 +779,6 @@ struct status
 	int borderradius;
 	int picbordersize;
 	int titlelinesize;
-	char* oldchannellist;
-	char* oldrchannellist;
 	//0 border
 	//1 fullbar
 	int listboxselecttype;

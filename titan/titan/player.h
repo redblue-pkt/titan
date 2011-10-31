@@ -69,7 +69,7 @@ int playerstartts(char* file, int flag)
 
 	if(flag == 1)
 	{
-		ret = servicestart(chnode, NULL, 2);
+		ret = servicestart(chnode, NULL, NULL, 2);
 		if(ret != 0)
 		{
 			err("start play");
@@ -90,7 +90,7 @@ int playerstartts(char* file, int flag)
 
 	if(flag == 0)
 	{
-		ret = servicestart(chnode, NULL, 1);
+		ret = servicestart(chnode, NULL, NULL, 1);
 		if(ret != 0)
 		{
 			err("start play");
