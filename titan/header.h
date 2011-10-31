@@ -1,6 +1,14 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//multiepg.h
+void screenmultiepg(struct channel* chnode, struct epg* epgnode);
+
+//harddisk.h
+void hddfsck(char* dev);
+void hddformat(char* dev, char* filesystem);
+int addhddall();
+
 //autores.h
 void autoresthreadfunc(struct stimerthread* self, char* text, int timeout);
 void screenautores(char* text, int timeout, int flag);
@@ -89,6 +97,7 @@ int writeprovider(const char *filename);
 
 //httpd.h
 void httpdthreadfunc(struct stimerthread* timernode);
+void sendoktext(int* connfd, char* text);
 
 //skinconfig.h
 int getskinconfigint(char *key, char *ext);
@@ -327,6 +336,7 @@ struct skin* addlistbox(struct skin* screen, struct skin* listbox, struct skin* 
 //bouquets.h
 void delbouquetbychannel(int serviceid, int transponderid);
 struct bouquet* getbouquetbychannelmain(int serviceid, int transponderid);
+void recalcbouquetnr();
 
 //audiotrack.h
 struct audiotrack* addaudiotrack(struct channel* chnode, char* langdesc, int pid, int audiocodec, struct audiotrack* last);
