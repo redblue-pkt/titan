@@ -1,16 +1,81 @@
 <html>
-<head>
-<title>Titan Remote Control</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="titan.css">
-</head>
-<body topmargin=20 class=body>
-<div align="center">
-<img src="img/rc.png" border="0" usemap="#rc">
-<map id="rc" name="rc">
-<area shape="rect" coords="52,457,84,476" href="query?sendrc&rcsubtitle" alt="Subtitle" title="Subtitle" target="nothing"><area shape="rect" coords="2,457,34,476" href="query?sendrc&rcresolution" alt="Resolution" title="Resolution" target="nothing"><area shape="rect" coords="2,434,34,453" href="query?sendrc&rcvromat" alt="Repeat" title="Repeat" target="nothing"><area shape="rect" coords="95,376,131,396" href="query?sendrc&rcmedia" alt="Media" title="Media" target="nothing"><area shape="rect" coords="70,136,101,152" href="query?sendrc&rcarchive" alt="Archiv" title="Archiv" target="nothing"><area shape="rect" coords="36,136,67,152" href="query?sendrc&rccheck" alt="Check" title="Check" target="nothing"><area shape="rect" coords="100,35,132,55" href="query?sendrc&rcpip" alt="PiP" title="PiP" target="nothing"><area shape="rect" coords="53,35,85,55" href="query?sendrc&rcsleep" alt="Sleep" title="Sleep" target="nothing"><area shape="rect" coords="4,35,36,55" href="query?sendrc&rctvradio" alt="Radio / TV" title="Radio / TV" target="nothing"><area shape="rect" coords="57,62,83,88" href="query?sendrc&rcrecall" alt="RCL" title="RCL" target="nothing"><area shape="rect" coords="3,136,34,152" href="query?sendrc&rcfav" alt="FAV" title="FAV" target="nothing"><area shape="rect" coords="5,287,41,307" href="query?sendrc&rc1" alt="1" title="1" target="nothing"><area shape="rect" coords="49,287,85,307" href="query?sendrc&rc2" alt="2" title="2" target="nothing"><area shape="rect" coords="95,287,131,307" href="query?sendrc&rc3" alt="3" title="3" target="nothing"><area shape="rect" coords="4,317,40,337" href="query?sendrc&rc4" alt="4" title="4" target="nothing"><area shape="rect" coords="51,317,87,337" href="query?sendrc&rc5" alt="5" title="5" target="nothing"><area shape="rect" coords="95,317,131,337" href="query?sendrc&rc6" alt="6" title="6" target="nothing"><area shape="rect" coords="50,347,86,367" href="query?sendrc&rc8" alt="8" title="8" target="nothing"><area shape="rect" coords="4,347,40,367" href="query?sendrc&rc7" alt="7" title="7" target="nothing"><area shape="rect" coords="95,347,131,367" href="query?sendrc&rc9" alt="9" title="9" target="nothing"><area shape="rect" coords="50,376,86,396" href="query?sendrc&rc0" alt="0" title="0" target="nothing"><area shape="rect" coords="11,223,37,248" href="query?sendrc&rcmenu" alt="Menu" title="Menu" target="nothing"><area shape="rect" coords="102,458,134,476" href="query?sendrc&rctext" alt="Text" title="Text" target="nothing"><area shape="rect" coords="36,408,67,428" href="query?sendrc&rcfr" alt="Rewind" title="Rewind" target="nothing"><area shape="rect" coords="103,408,133,428" href="query?sendrc&rcff" alt="Fast Forward" title="Fast Forward" target="nothing"><area shape="rect" coords="53,434,85,452" href="query?sendrc&rcstop" alt="Stop" title="Stop" target="nothing"><area shape="rect" coords="102,433,133,452" href="query?sendrc&rcpause" alt="Pause" title="Pause" target="nothing"><area shape="rect" coords="69,408,101,428" href="query?sendrc&rcplay" alt="Play" title="Play" target="nothing"><area shape="rect" coords="2,408,34,428" href="query?sendrc&rcrecord" alt="Record" title="Record" target="nothing"><area shape="rect" coords="49,194,85,216" href="query?sendrc&rcok" alt="OK" title="OK" target="nothing"><area shape="rect" coords="5,194,41,216" href="query?sendrc&rcleft" alt="Left" title="Left" target="nothing"><area shape="rect" coords="95,194,131,216" href="query?sendrc&rcright" alt="Right" title="Right" target="nothing"><area shape="rect" coords="50,161,86,184" href="query?sendrc&rcup" alt="Up" title="Up" target="nothing"><area shape="rect" coords="49,225,85,248" href="query?sendrc&rcdown" alt="Down" title="Down" target="nothing"><area shape="rect" coords="3,255,27,278" href="query?sendrc&rcred" alt="Red" title="Red" target="nothing"><area shape="rect" coords="38,255,62,278" href="query?sendrc&rcgreen" alt="Green" title="Green" target="nothing"><area shape="rect" coords="75,255,99,278" href="query?sendrc&rcyellow" alt="Yellow" title="Yellow" target="nothing"><area shape="rect" coords="109,255,133,278" href="query?sendrc&rcblue" alt="Blue" title="Blue" target="nothing"><area shape="rect" coords="106,3,132,29" href="query?sendrc&rcmute" alt="Mute" title="Mute" target="nothing"><area shape="rect" coords="6,5,31,29" href="query?sendrc&rcpower" alt="Power" title="Power" target="nothing"><area shape="rect" coords="90,62,127,88" href="query?sendrc&rcvolup" alt="Volume Up" title="Volume Up" target="nothing"><area shape="rect" coords="91,102,126,125" href="query?sendrc&rcvoldown" alt="Volume Down" title="Volume Down" target="nothing"><area shape="rect" coords="10,63,48,89" href="query?sendrc&rcchup" alt="Channel Up" title="Channel Up" target="nothing"><area shape="rect" coords="11,101,47,126" href="query?sendrc&rcchdown" alt="Channel Down" title="Channel Down" target="nothing"><area shape="rect" coords="56,100,82,126" href="query?sendrc&rcinfo" alt="Info" title="Info" target="nothing"><area shape="rect" coords="101,223,127,249" href="query?sendrc&rcexit" alt="Exit" title="Exit" target="nothing"><area shape="rect" coords="104,136,134,153" href="query?sendrc&rcepg" alt="EPG" title="EPG" target="nothing"></map> 
-<br><br><a href="javascript:window.close()" class=openrctext>close window</a>
-</div>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="rc-Dateien/titan.css">
+	</head>
+<body class="body">
+	<img usemap="#rc" src="img/rc.png">
+	<center>
+		<map name="rc" style="cursor:pointer" >
+			<area target="nothing" shape="circle" coords="51,53,13" href="query?sendrc&rcpower" alt="power">
+			<area target="nothing" shape="rect" coords="109,45,144,62" href="query?sendrc&rcmute" alt="Mute">
+
+			<!-- <area target="nothing" shape="rect" coords="17,73,47,89" href="query?sendrc&rc" alt="TV">
+			<area target="nothing" shape="rect" coords="55,73,85,89" href="query?sendrc&rctvradio" alt="TV/Radio">
+			<area target="nothing" shape="rect" coords="92,73,124,89" href="query?sendrc&rc" alt="www">
+			<area target="nothing" shape="rect" coords="129,73,161,89" href="query?sendrc&rc" alt="???"> -->
+            
+			<!-- <area target="nothing" shape="rect" coords="52,98,83,117"  href="query?sendrc&rc" alt="Zoom">
+			<area target="nothing" shape="rect" coords="94,98,125,117"  href="query?sendrc&rc" alt="MultiScreen">
+			<area target="nothing" shape="circle" coords="30,106,12" href="query?sendrc&rc" alt="PiP">
+			<area target="nothing" shape="circle" coords="148,106,12" href="query?sendrc&rc" alt="Sub Channel"> -->
+
+			<area target="nothing" shape="rect" coords="39,129,68,157" href="query?sendrc&rcchup" alt="Kanal +">
+			<area target="nothing" shape="rect" coords="39,156,68,184" href="query?sendrc&rcchdown" alt="Kanal -">
+			<!-- <area target="nothing" shape="circle" coords="88,141,12" href="query?sendrc&rcrecall" alt="Recall"> -->
+            <area target="nothing" shape="circle" coords="88,170,12" href="query?sendrc&rcinfo" alt="Info">
+			<area target="nothing" shape="rect" coords="110,129,139,157" href="query?sendrc&rcvolup" alt="Lautstärke +">
+			<area target="nothing" shape="rect" coords="110,156,139,184" href="query?sendrc&rcvoldown" alt="Lautstärke -">
+
+			<area target="nothing" shape="circle" coords="30,204,12" href="query?sendrc&rcfav" alt="Favoriten">
+			<!-- <area target="nothing" shape="rect" coords="52,195,83,214"  href="query?sendrc&rc" alt="Hackerl">
+			<area target="nothing" shape="rect" coords="94,195,125,214"  href="query?sendrc&rc" alt="???"> -->
+			<area target="nothing" shape="circle" coords="148,204,12" href="query?sendrc&rcepg" alt="EPG">
+
+			<area target="nothing" shape="rect" coords="20,247,36,278" href="query?sendrc&rcmenu" alt="Men&uuml;">
+			<area target="nothing" shape="rect" coords="65,222,112,245" href="query?sendrc&rcup" alt="rauf">
+			<area target="nothing" shape="rect" coords="47,242,69,283" href="query?sendrc&rcleft" alt="Links">
+			<area target="nothing" shape="rect" coords="75,250,104,274" href="query?sendrc&rcok" alt="OK">
+			<area target="nothing" shape="rect" coords="109,242,131,283" href="query?sendrc&rcright" alt="rechts">
+			<area target="nothing" shape="rect" coords="65,277,112,300" href="query?sendrc&rcdown" alt="runter">
+			<area target="nothing" shape="rect" coords="141,247,157,278" href="query?sendrc&rcexit" alt="Exit">
+
+			<area target="nothing" shape="circle" coords="31,325,12" href="query?sendrc&rcred" alt="rot">
+			<area target="nothing" shape="circle" coords="70,325,12" href="query?sendrc&rcgreen" alt="grün">
+			<area target="nothing" shape="circle" coords="108,325,12" href="query?sendrc&rcyellow" alt="gelb">
+			<area target="nothing" shape="circle" coords="146,325,12" href="query?sendrc&rcblue" alt="blau">
+
+			<area target="nothing" shape="rect" coords="26,343,59,358" href="query?sendrc&rc1" alt="1">
+			<area target="nothing" shape="rect" coords="72,343,105,358" href="query?sendrc&rc2" alt="2">
+			<area target="nothing" shape="rect" coords="119,343,152,358" href="query?sendrc&rc3" alt="3">
+
+			<area target="nothing" shape="rect" coords="26,363,59,378" href="query?sendrc&rc4" alt="4">
+			<area target="nothing" shape="rect" coords="72,363,105,378" href="query?sendrc&rc5" alt="5">
+			<area target="nothing" shape="rect" coords="119,363,152,378" href="query?sendrc&rc6" alt="6">
+
+			<area target="nothing" shape="rect" coords="26,383,59,398" href="query?sendrc&rc7" alt="7">
+			<area target="nothing" shape="rect" coords="72,383,105,398" href="query?sendrc&rc8" alt="8">
+			<area target="nothing" shape="rect" coords="119,383,152,398" href="query?sendrc&rc9" alt="9">
+
+			<!-- <area target="nothing" shape="rect" coords="26,403,59,418" href="query?sendrc&rc" alt="Musik"> -->
+			<area target="nothing" shape="rect" coords="72,403,105,418" href="query?sendrc&rc0" alt="0">
+			<!-- <area target="nothing" shape="rect" coords="119,403,152,418" href="query?sendrc&rc" alt="Photo"> -->
+
+			<area target="nothing" shape="rect" coords="24,433,52,450" href="query?sendrc&rcrecord" alt="Aufnahme">
+			<area target="nothing" shape="rect" coords="58,433,86,450" href="query?sendrc&rcfr" alt="Schneller Rücklauf">
+			<area target="nothing" shape="rect" coords="92,433,120,450" href="query?sendrc&rcplay" alt="Wiedergabe">
+			<area target="nothing" shape="rect" coords="126,433,154,450" href="query?sendrc&rcff" alt="Schneller Vorlauf">
+
+			<!-- <area target="nothing" shape="rect" coords="24,453,52,470" href="query?sendrc&rc" alt="Wiederholen">
+			<area target="nothing" shape="rect" coords="58,453,86,470" href="query?sendrc&rc" alt="Schritt Vorwärts">-->
+			<area target="nothing" shape="rect" coords="92,453,120,470" href="query?sendrc&rcstop" alt="Stoppen">
+			<area target="nothing" shape="rect" coords="126,453,154,470" href="query?sendrc&rcpause" alt="Pause">
+
+			<!-- <area target="nothing" shape="rect" coords="24,475,52,492" href="query?sendrc&rc" alt="???">
+			<area target="nothing" shape="rect" coords="58,475,86,492" href="query?sendrc&rc" alt="???">
+			<area target="nothing" shape="rect" coords="92,475,120,492" href="query?sendrc&rc" alt="???">
+			<area target="nothing" shape="rect" coords="126,475,154,492" href="query?sendrc&rc" alt="Tonspur wählen"> -->
+		</map>
+	</center>
 </body>
 </html>
-
