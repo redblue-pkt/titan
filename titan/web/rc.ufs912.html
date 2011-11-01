@@ -1,12 +1,13 @@
 <html>
 <head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" type="text/css" href="rc-Dateien/titan.css">
-	</head>
-<body class="body">
-	<img usemap="#rc" src="img/rc.png">
-<center>
-		<map name="rc" style="cursor:pointer" >
+<title>Titan Remote Control</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="titan.css">
+</head>
+<body topmargin=20 class=body>
+<div align="center">
+<img src="img/rc.png" border="0" usemap="#rc">
+<map id="rc" name="rc">
 			<area target="nothing" shape="rect" coords="55,27,127,43" href="query?sendrc&rcpower" alt="power">
 			<area target="nothing" shape="rect" coords="16,27,46,43" href="query?sendrc&rchelp" alt="help">
 			<area target="nothing" shape="rect" coords="18,56,49,86" href="query?sendrc&rc1" alt="1">
@@ -53,8 +54,7 @@
 			<area target="nothing" shape="rect" coords="16,471,41,495"  href="query?sendrc&rcpause" alt="Pause">
 			<area target="nothing" shape="rect" coords="55,471,85,495" href="query?sendrc&rcrecord" alt="Aufnahme">
 			<area target="nothing" shape="rect" coords="92,471,122,495" href="query?sendrc&rcstop" alt="Stoppen">
-		</map>
-	</center>
+</map><br><br><a href="javascript:window.close()" class=openrctext>close window</a>
+</div>
 </body>
-</html>
-
+</html>
