@@ -125,7 +125,7 @@ struct epgscanlist* addepgscanlist(char *line, int count, struct epgscanlist* la
 	memset(newnode, 0, sizeof(struct epgscanlist));
 	status.writeepgscanlist = 1;
 
-	ret = sscanf(line, "%d#%ld", &newnode->serviceid, &newnode->transponderid);
+	ret = sscanf(line, "%d#%lu", &newnode->serviceid, &newnode->transponderid);
         if(ret != 2)
         {
 		if(count > 0)
