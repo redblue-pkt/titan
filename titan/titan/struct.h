@@ -186,11 +186,13 @@ struct caslot
 	unsigned char* rbuf;
 	char* name;
 	int fastrun;
+	int mmiopen;
 	int mmimanager;
 	int camanager;
 	int datetimemanager;
 	int appmanager;
 	int resmanager;
+	char* caids;
 };
 
 struct hdd
