@@ -498,6 +498,38 @@ struct service* getservicebychannel(struct channel* chnode)
 	return NULL;
 }
 
+struct service* checkdoubleservice(struct service* node)
+{
+	struct service* snode = service;
+
+	while(snode != NULL)
+	{
+		if(snode != status.lastservice && snode != node && snode->channel == node->channel)
+			return snode;
+		snode = snode->next;
+
+	}
+	return NULL;
+}
+
+//flag2: timeshift/player
+void camsockclose(struct service* node, int flag)
+{
+	struct service* snode = NULL;
+
+	if(flag == 2) return;
+	
+	snode = checkdoubleservice(node);
+	if(snode == NULL)
+		sockclose(&node->camsockfd);
+	else
+	{
+		if(snode->camsockfd > -1) sockclose(&node->camsockfd);
+		snode->camsockfd = node->camsockfd;
+		if(snode != node) node->camsockfd = -1;
+	}
+}
+
 //flag 0: with mutex
 //flag 1: without mutex
 struct service* getservice(int type, int flag)
@@ -550,7 +582,9 @@ int servicestop(struct service *node, int clear, int flag)
 
 		audiostop(node->audiodev);
 		videostop(node->videodev, clear);
-		sockclose(&node->camsockfd);
+
+		camsockclose(node, flag);
+		
 		if(flag == 1 || (flag == 0 && getconfigint("fastzap", NULL) == 0))
 		{
 			audioclose(node->audiodev, -1);
@@ -676,7 +710,7 @@ void delservice(struct service* snode, int flag)
 			videoclose(node->videodev, -1);
 			close(node->recdstfd);
 			close(node->recsrcfd);
-			sockclose(&node->camsockfd);
+			camsockclose(node, 0);
 
 			//check if a rectimer is joined with a service
 			if(node->type == RECORDTIMER)
@@ -765,7 +799,7 @@ char* servicecheckret(int ret, int flag)
 		}
 		if(tmpstr != NULL)
 		textbox(_("Message"), _(tmpstr), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, timeout, 0);
-	}
+		}
 	if(flag != 1)
 	{
 		free(tmpstr);

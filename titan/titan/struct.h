@@ -181,14 +181,13 @@ struct caslot
 	struct casession casession[MAXCASESSION];
 	int connid;
 	int poll;
-	int capmtsend;
 	int status;
 	int rlen;
 	unsigned char* rbuf;
 	char* name;
 	int fastrun;
-	int mmiopen;
 	int mmimanager;
+	int mmiopen;
 	int camanager;
 	int datetimemanager;
 	int appmanager;
@@ -735,6 +734,8 @@ struct service
 	int recdstfd;
 	int recsrcfd;
 	int camsockfd;
+	//ca is send to module
+	int capmtsend;
 	time_t recendtime;
 	size_t reclastsync;
 	off64_t rectotal;
