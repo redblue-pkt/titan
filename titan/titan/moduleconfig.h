@@ -70,8 +70,8 @@ start:
 		if(rcret == getrcconfigint("rcok", NULL)) break;
 		if(listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcred", NULL))
 		{
-			//TODO: test (close / open / set status to 0)
-			careset((struct dvbdev*)listbox->select->handle, ((struct dvbdev*)listbox->select->handle)->devnr);
+			if(((struct dvbdev*)listbox->select->handle)->caslot != NULL)
+				((struct dvbdev*)listbox->select->handle)->caslot->status = 0;
 		}
 		if(rcret == RCTIMEOUT) goto start;
 	}
