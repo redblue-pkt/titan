@@ -181,6 +181,7 @@ struct caslot
 	struct casession casession[MAXCASESSION];
 	int connid;
 	int poll;
+	int capmtsend;
 	int status;
 	int rlen;
 	unsigned char* rbuf;
