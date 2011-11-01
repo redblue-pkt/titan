@@ -191,7 +191,7 @@ struct bouquet* addbouquet(struct bouquet **firstnode, char *line, int type, int
 	memset(newnode, 0, sizeof(struct bouquet));
 	status.writebouquet = 1;
 
-	ret = sscanf(line, "%d#%ld", &newnode->serviceid, &newnode->transponderid);
+	ret = sscanf(line, "%d#%lu", &newnode->serviceid, &newnode->transponderid);
 	if(ret != 2)
 	{
 		if(count > 0)
