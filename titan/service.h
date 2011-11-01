@@ -765,7 +765,7 @@ char* servicecheckret(int ret, int flag)
 		}
 		if(tmpstr != NULL)
 		textbox(_("Message"), _(tmpstr), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, timeout, 0);
-		}
+	}
 	if(flag != 1)
 	{
 		free(tmpstr);
