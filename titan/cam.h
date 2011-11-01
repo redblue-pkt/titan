@@ -86,20 +86,20 @@ void sendcapmtend(struct service* node)
 	memset(buf, 0, 8);
 
 	buf[0] = 0x9F; // ca_pmt_tag
-	buf[1] = 0x80; // ca_pmt_tag
-	buf[2] = 0x3f; // ca_pmt_tag
-	buf[3] = 0x04; // ca_pmt_tag
-	buf[4] = 0x83; // ca_pmt_tag
-	buf[5] = 0x02; // ca_pmt_tag
-	buf[6] = 0x00; // ca_pmt_tag
+        buf[1] = 0x80; // ca_pmt_tag
+        buf[2] = 0x3f; // ca_pmt_tag
+        buf[3] = 0x04; // ca_pmt_tag
+        buf[4] = 0x83; // ca_pmt_tag
+        buf[5] = 0x02; // ca_pmt_tag
+        buf[6] = 0x00; // ca_pmt_tag
 	buf[7] = node->fedev->devnr; //demux_dev_nr
 	sendcapmttosock(node, buf, 8);
 
 	free(buf);
 }
 
-//flag 0 = close old socket
-//flag 1 = don't close old socket
+//flag 0 = from zap or record
+//flag 1 = from watchthread
 //flag 2 = send to ca
 void sendcapmt(struct service* node, int flag)
 {
@@ -111,7 +111,6 @@ void sendcapmt(struct service* node, int flag)
 		debug(250, "service empty");
 		return;
 	}
-
 	if(node->channel == NULL)
 	{
 		debug(250, "channel empty");
@@ -142,6 +141,11 @@ void sendcapmt(struct service* node, int flag)
 		debug(250, "no frontend");
 		nok = 1;
 	}
+	if(checkdoubleservice(node) != NULL)
+	{
+		debug(250, "other service makes encrypt");
+		nok = 1;
+	}
 
 	struct cadesc* cadescnode = node->channel->cadesc;
 	struct esinfo* esinfonode = node->channel->esinfo;
@@ -156,10 +160,11 @@ void sendcapmt(struct service* node, int flag)
 	if(nok == 1)
 	{
 		free(buf);
-		sockclose(&node->camsockfd);
 		return;
 	}
-	if(flag == 0) sockclose(&node->camsockfd);
+
+	if(node->camsockfd > -1)
+		camsockclose(node);
 
 	memset(buf, 0, MINMALLOC);
 
@@ -268,7 +273,7 @@ void sendcapmt(struct service* node, int flag)
 	if(flag == 2)
 	{
 #ifdef CAMSUPP
-		sendcapmttocam(buf, pos);
+		sendcapmttocam(node, buf, pos);
 #endif
 	}
 	else
@@ -293,17 +298,10 @@ void checkcam()
 		{
 			ret = sockcheck(&node->camsockfd);
 
-			if(checkservice(node) == NULL)
-			{
-				node = service;
-				continue;
-			}
 			if(ret != 0) // socket not connected
 			{
 				debug(250, "socket not connected, try connect");
-				ret = sockopen(&node->camsockfd, "/tmp/camd.socket", 1, -1);
-				if(ret == 0)
-					sendcapmt(node, 1);
+				sendcapmt(node, 1);
 			}
 		}
 		node = node->next;

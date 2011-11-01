@@ -320,6 +320,7 @@ int writeallconfig(int flag);
 int getrcconfigint(char *key, char* ext);
 
 //service.h
+struct service* checkdoubleservice(struct service* node);
 struct service* getservicebychannel(struct channel* chnode);
 struct service* checkservice(struct service* node);
 struct service* addservice(struct service* last);

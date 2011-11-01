@@ -523,7 +523,7 @@ int main(int argc, char *argv[])
 		goto starterror;
 	}
 
-	addtimer(&checkdate, START, 1000, -1, NULL, NULL, NULL);
+	addtimer(&checkdate, START, 2000, -1, NULL, NULL, NULL);
 	addtimer(&updatevfd, START, 1000, -1, NULL, NULL, NULL);
 
 	//first wizzard
@@ -558,9 +558,9 @@ firstwizzardstep1:
 	}
 	
 	//start spinner thread
-	addtimer(&checkspinner, START, 1000, -1, NULL, NULL, NULL);
+	addtimer(&checkspinner, START, 2000, -1, NULL, NULL, NULL);
 	//start auto shutdown thread
-	addtimer(&checkshutdowntimer, START, 1000, -1, NULL, NULL, NULL);
+	addtimer(&checkshutdowntimer, START, 2000, -1, NULL, NULL, NULL);
 
 	//check servicestart
 	if(serviceret != 21) // no message if startchannel empty
@@ -579,13 +579,13 @@ firstwizzardstep1:
 	//start record timer thread
 	addtimer(&checkrectimer, START, 10000, -1, NULL, NULL, NULL);
 	//check if cam socket connected
-	addtimer(&checkcam, START, 1000, -1, NULL, NULL, NULL);
+	addtimer(&checkcam, START, 3000, -1, NULL, NULL, NULL);
 	//start stream server
 	addtimer(&streamthreadfunc, START, 10000, -1, NULL, NULL, NULL);
 	//start epg scanlist
 	status.epgscanlistthread = addtimer(&epgscanlistthread, START, 1000, 1, NULL, NULL, NULL);
 	//get pmt
-	addtimer(&dvbgetpmtthread, START, 1000, -1, NULL, NULL, NULL);
+	addtimer(&dvbgetpmtthread, START, 2000, -1, NULL, NULL, NULL);
 	//check hdd (in the moment not needed, but can aktivated when needed)
 	//addtimer(&addhddall, START, 3000, -1, NULL, NULL, NULL);
 #ifdef CAMSUPP
