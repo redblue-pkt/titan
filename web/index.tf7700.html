@@ -1,130 +1,0 @@
-<html>
-<head>
-<title>Titan Web Control</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="titan.css">
-<script type="text/javascript">
-function show(das) {
- if (document.getElementById(das).style.display=='none') {
-  document.getElementById(das).style.display='block';
- }
- else {
-  document.getElementById(das).style.display='none';
- }
-}
-</script>
-<script type="text/javascript">
-function vertAl(){
-  breite = window.innerWidth;
-  if (breite <= 1140)
- {
-    document.getElementById("eins").style.left = 680;
-    document.getElementById("eins").style.top = 140;
-  } else {
-    document.getElementById("eins").style.left = 1000;
-  }
-  if (breite > 1360) 
-   {
-  divPos = ((breite)/2)-647;
-  webIFPos = ((breite)/2)-490;
-  document.getElementById("eins").style.left = divPos;
-  document.getElementById("webif").style.left = webIFPos;
-   }
-}
-</script>
-<script language="JavaScript" type="text/javascript">
-function rcopen() {
-pwin = window.open("rc.html","_blank","toolbar=0,status=0,scrollbars=0,resizable=0,width=220,height=470,top=50,left=50");
-pwin.blur();
-window.focus();
-javascript:show('eins');
-}
-</script>
-</head>
-<body class=body onLoad="vertAl()">
-<iframe name=nothing scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=0 height=0></iframe>
-<table id="webif" style="position: absolute;" border=0 width=980 height=99% cellpadding=5 cellspacing=0>
- <tr>
- <!-- LINKLINE -->
-  <td valign=bottom colspan=2><img src="img/titanweb.png"></td>
-  	<td width=50% align=right valign=top height=20>
-	 <table border=0 width=340>
-	  <tr>
-	   <td width=16 align=center>
-	   	<a href="javascript:show('eins');"><img border=0 width=16 height=16 title="Show/Hide Remote Control" src="img/icon_rcopen.png"></a> 
-	   </td>
-	   <td width=100 align=center>
-		<form action=query method=get target=nothing style="height:18px; margin:auto;">
-		<input type=image name=poweroff title="Power Off" src="img/icon_poweroff.png" width=16 height=16></input>
-		<input type=image name=restart title="Restart" src="img/icon_restart.png" width=16 height=16></input>
-		<input type=image name=guirestart title="GUI Restart" src="img/icon_guirestart.png" width=16 height=16></input>
-		<input type=image name=standby title="Standby" src="img/icon_standby.png" width=16 height=16></input>
-		</form>
-	   </td>
-	   <td width=16 align=center>
-	   	<iframe name=setmute scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=16 src=query?setmute></iframe>	
-	   </td>
-	   <td width=135 align=center>
-		<iframe name=setvol scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=27 src=query?setvol></iframe>
-	   </td>
-	   <td align=right>
-		<a href=query?record target=main><img border=0 src=img/record.png title="Start Record" alt=Record width=16 height=16></a>
-		<a href=query?getsignal target=main><img border=0 src=img/signal.png title="Show Signal Infos" alt=Signal width=16 height=16></a>
-	   </td>
-	  </tr>
-	</table>
-   </td>
- </tr>
- <tr>
-  <td colspan=4>
-	<table border=0 width=100%>
-	<tr>
-	<td valign=bottom>
-	<a class=linelink target=leftpanel href=channellist.html>Channel List</a>
-	<a class=linelink target=leftpanel href=boxcontrol.html>Boxcontrol</a>
-	<a class=linelink target=main href=query?getmoviefilelist>Movies</a>
-	<a class=linelink target=leftpanel href=timer.html>Timer</a>
-	</td>
-   <td align=right><form target=main action=query method=get><input class=inputbox type=text name=getepgsearch value="EPG Search" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;"></form></td>
-  <!-- LINKLINE END-->
-  </tr>
-</table>
-</td>
-</tr>
-
- <tr>
- <!-- BOXCONTROL -->
-  <td colspan=4 valign=top height=40>
-
-	<iframe name=leftpanel scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=100% src=channellist.html></iframe>
-
-  </td>
- <!-- BOXCONTROL END -->
- </tr>
- 
- <tr>
- <!-- AKT SERVICE -->
-  <td colspan=4 style="border-radius: 5px 5px 5px 5px">
-   <iframe name=aktservice scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=35 src=query?getaktservice></iframe>
-  </td>
- <!-- AKT SERVICE END -->
- </tr>
- 
- <tr>
- <!-- MAIN -->
-  <td colspan=4 valign=top width=100% height=100%>
-   <iframe name=main marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=100% src=query?getbouquet></iframe>
-  </td>
- <!-- MAIN END-->
- </tr>
-</tr>
-</table>
-
-<div style="display: none; position: absolute; top:168; left:10; background-color:323232; padding:12px" id="eins" align="center" >
-<img src="img/rc.png" border="0" usemap="#rc">
-<map id="rc" name="rc">
-<area shape="rect" coords="6,126,42,149" href="query?sendrc&rcrecall" alt="Recall" title="Recall" target="nothing"><area shape="rect" coords="5,186,31,212" href="query?sendrc&rcfav" alt="FAV" title="FAV" target="nothing"><area shape="rect" coords="6,156,43,179" href="query?sendrc&rcarchive" alt="Archiv" title="Archiv" target="nothing"><area shape="rect" coords="50,156,86,180" href="query?sendrc&rchelp" alt="Help" title="Help" target="nothing"><area shape="rect" coords="5,37,41,57" href="query?sendrc&rc1" alt="1" title="1" target="nothing"><area shape="rect" coords="50,37,86,57" href="query?sendrc&rc2" alt="2" title="2" target="nothing"><area shape="rect" coords="95,37,131,57" href="query?sendrc&rc3" alt="3" title="3" target="nothing"><area shape="rect" coords="5,67,41,87" href="query?sendrc&rc4" alt="4" title="4" target="nothing"><area shape="rect" coords="50,67,86,87" href="query?sendrc&rc5" alt="5" title="5" target="nothing"><area shape="rect" coords="95,67,131,87" href="query?sendrc&rc6" alt="6" title="6" target="nothing"><area shape="rect" coords="5,97,41,117" href="query?sendrc&rc7" alt="7" title="7" target="nothing"><area shape="rect" coords="50,97,86,117" href="query?sendrc&rc8" alt="8" title="8" target="nothing"><area shape="rect" coords="95,97,131,117" href="query?sendrc&rc9" alt="9" title="9" target="nothing"><area shape="rect" coords="50,127,86,147" href="query?sendrc&rc0" alt="0" title="0" target="nothing"><area shape="rect" coords="5,251,30,273" href="query?sendrc&rcmenu" alt="Menu" title="Menu" target="nothing"><area shape="rect" coords="94,156,131,177" href="query?sendrc&rctext" alt="Text" title="Text" target="nothing"><area shape="rect" coords="3,311,39,331" href="query?sendrc&rcfr" alt="Rewind" title="Rewind" target="nothing"><area shape="rect" coords="98,311,134,331" href="query?sendrc&rcff" alt="Fast Forward" title="Fast Forward" target="nothing"><area shape="rect" coords="99,336,135,356" href="query?sendrc&rcstop" alt="Stop" title="Stop" target="nothing"><area shape="rect" coords="3,336,39,356" href="query?sendrc&rcpause" alt="Pause" title="Pause" target="nothing"><area shape="rect" coords="51,311,87,331" href="query?sendrc&rcplay" alt="Play" title="Play" target="nothing"><area shape="rect" coords="51,336,87,356" href="query?sendrc&rcrecord" alt="Record" title="Record" target="nothing"><area shape="rect" coords="51,220,87,242" href="query?sendrc&rcok" alt="OK" title="OK" target="nothing"><area shape="rect" coords="3,281,27,304" href="query?sendrc&rcred" alt="Red" title="Red" target="nothing"><area shape="rect" coords="38,281,62,304" href="query?sendrc&rcgreen" alt="Green" title="Green" target="nothing"><area shape="rect" coords="74,280,98,303" href="query?sendrc&rcyellow" alt="Yellow" title="Yellow" target="nothing"><area shape="rect" coords="110,281,134,304" href="query?sendrc&rcblue" alt="Blue" title="Blue" target="nothing"><area shape="rect" coords="95,6,131,30" href="query?sendrc&rcmute" alt="Mute" title="Mute" target="nothing"><area shape="rect" coords="6,6,42,30" href="query?sendrc&rcpower" alt="Power" title="Power" target="nothing"><area shape="rect" coords="95,218,132,244" href="query?sendrc&rcvolup" alt="Volume Up" title="Volume Up" target="nothing"><area shape="rect" coords="6,218,42,244" href="query?sendrc&rcvoldown" alt="Volume Down" title="Volume Down" target="nothing"><area shape="rect" coords="49,186,87,211" href="query?sendrc&rcchup" alt="Channel Up" title="Channel Up" target="nothing"><area shape="rect" coords="50,251,86,273" href="query?sendrc&rcchdown" alt="Channel Down" title="Channel Down" target="nothing"><area shape="rect" coords="95,125,131,148" href="query?sendrc&rcinfo" alt="Info" title="Info" target="nothing"><area shape="rect" coords="106,249,132,275" href="query?sendrc&rcexit" alt="Exit" title="Exit" target="nothing"><area shape="rect" coords="106,186,132,212" href="query?sendrc&rcepg" alt="EPG" title="EPG" target="nothing"></map> 
-<br><br><a href="javascript:rcopen()" class=openrctext>open in new window</a>
-</div>
-</body>
-</html>
