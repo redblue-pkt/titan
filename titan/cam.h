@@ -294,9 +294,15 @@ void checkcam()
 	node = service;
 	while(node != NULL)
 	{
-		if((node->type == CHANNEL || node->type == RECORDDIRECT || node ->type == RECORDTIMER || node->type == RECORDTIMESHIFT || node->type == RECORDSTREAM) && node->channel != NULL && node->channel->crypt == 1 && node->fedev != NULL && node->fedev->type != FRONTENDDEVDUMMY)
+		if((node->type == CHANNEL || node->type == RECORDDIRECT || node ->type == RECORDTIMER || node->type == RECORDTIMESHIFT || node->type == RECORDSTREAM) && node->channel != NULL && node->channel->crypt == 1)
 		{
 			ret = sockcheck(&node->camsockfd);
+			
+			if(node->fedev != NULL && node->fedev->type == FRONTENDDEVDUMMY)
+			{
+				node = node->next;
+				continue;
+			}
 
 			if(ret != 0) // socket not connected
 			{

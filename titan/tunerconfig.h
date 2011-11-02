@@ -330,7 +330,6 @@ void screentunerconfig()
 	struct skin* tunernode = NULL;
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpnr = NULL;
 	struct skin* tmp = NULL;
-	struct channel* chnode = NULL;
 
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
@@ -427,7 +426,6 @@ void screentunerconfig()
 	if(ret == 1)
 	{
 		drawscreen(skin, 0);
-		chnode = status.aktservice->channel;
 		if(status.aktservice->fedev != NULL)
 		{
 			status.aktservice->fedev->felasttransponder = NULL;
@@ -439,7 +437,7 @@ void screentunerconfig()
 		{
 			status.aktservice->channel = NULL;
 			status.aktservice->transponder = NULL;
-			servicecheckret(servicestart(chnode, NULL, NULL, 0), 0);
+			servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 3), 0);
 		}
 	}
 }
