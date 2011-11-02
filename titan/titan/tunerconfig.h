@@ -428,6 +428,12 @@ void screentunerconfig()
 	{
 		drawscreen(skin, 0);
 		chnode = status.aktservice->channel;
+		if(status.aktservice->fedev != NULL)
+		{
+			status.aktservice->fedev->felasttransponder = NULL;
+			status.aktservice->fedev->feaktpolarization = 0;
+			status.aktservice->fedev->feakttransponder = NULL;
+		}
 		ret = servicestop(status.aktservice, 1, 1);
 		if(ret == 0)
 		{
