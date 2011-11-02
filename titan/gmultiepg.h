@@ -352,7 +352,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode)
         time_t akttime = time(NULL);
 #endif
 	int zoom = getconfigint("gmultiepgzoom", NULL);
-	if(zoom < 1) zoom = 2;
+	if(zoom < 1) zoom = 4;
 
 	akttime -= (((akttime / 60) % 15) * 60);
 	akttime -= (((akttime) % 60));
