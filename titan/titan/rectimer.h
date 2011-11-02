@@ -963,7 +963,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "path") == 0)
 			{
 				clearscreen(rectimerext);
-				tmpstr = screendir(listbox->select->ret, "", NULL, NULL, NULL, "OK", 0, NULL, 0, NULL, 0, NULL, 0, 500, 0, 400, 0, 0);
+				tmpstr = screendir(listbox->select->ret, "", NULL, NULL, NULL, "OK", 0, NULL, 0, NULL, 0, NULL, 0, 700, 0, 650, 0, 0);
 				if(tmpstr != NULL)
 					changeinput(listbox->select, tmpstr);
 				free(tmpstr); tmpstr = NULL;

@@ -41,7 +41,7 @@ void screenrecordpath()
 			if(listbox->select != NULL)
 			{
 				clearscreen(recordpath);
-				ret = screendir(listbox->select->ret, "", NULL, NULL, NULL, "OK", 0, NULL, 0, NULL, 0, NULL, 0, 500, 0, 400, 0, 0);
+				ret = screendir(listbox->select->ret, "", NULL, NULL, NULL, "OK", 0, NULL, 0, NULL, 0, NULL, 0, 700, 0, 650, 0, 0);
 				if(ret != NULL)
 					changeinput(listbox->select, ret);
 				free(ret);
