@@ -14,9 +14,7 @@ void timeshiftpause()
 			if(ret != 0)
 			{
 				status.timeshift = 0;
-				struct channel* tmpchnode = status.aktservice->channel;
-				status.aktservice->channel = NULL;
-				servicecheckret(servicestart(tmpchnode, NULL, NULL, 0), 0);
+				servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 3), 0);
 			}
 			recordcheckret(NULL, ret, 6);
 		}
@@ -53,10 +51,7 @@ void timeshiftstop(int flag)
 			usleep(100000);
 			i++; if(i > 20) break;
 		}
-
-		struct channel* tmpchnode = status.aktservice->channel;
-		status.aktservice->channel = NULL;
-		servicecheckret(servicestart(tmpchnode, NULL, NULL, 0), 0);
+		servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 3), 0);
 	}
 }
 
