@@ -188,7 +188,16 @@ void screenskinselect(void)
 			{
 				debug(10,"skin file selected: %s", selection->name);
 				if(selection->is_cur) break; //same file chosen again
-				tmpstr = ostrcat(selection->name, "", 0, 0);
+				
+				struct splitstr* ret1 = NULL;
+				int count1 = 0;
+				char* tmpstr1 = NULL;
+				tmpstr1 = ostrcat("", selection->name, 0, 0);
+				ret1 = strsplit(tmpstr1, " ", &count1);
+				tmpstr = ostrcat((&ret1[0])->part, "", 0, 0);
+				free(ret1), ret1 = NULL;
+				free(tmpstr1), tmpstr1 = NULL;
+				
 				tmpstr = dirname(tmpstr);
 				tmpstr = ostrcat(tmpstr, "/skinconfig", 1, 0);
 				if(file_exist(tmpstr))
