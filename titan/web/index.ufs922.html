@@ -1,9 +1,10 @@
-_virtual<html>
+<html>
 <head>
 <title>Titan Web Control</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="titan.css">
 <script type="text/javascript">
+var firststart=true;
 function show(das) {
  if (document.getElementById(das).style.display=='none') {
   document.getElementById(das).style.display='block';
@@ -12,8 +13,6 @@ function show(das) {
   document.getElementById(das).style.display='none';
  }
 }
-</script>
-<script type="text/javascript">
 function vertAl(){
   breite = window.innerWidth;
   if (breite <= 1140)
@@ -28,35 +27,44 @@ function vertAl(){
   }
   if (breite > 1360) 
    {
-  divPos = ((breite)/2)-667;
+  divPos = ((breite)/2)-657;
   webIFPos = ((breite)/2)-490;
   document.getElementById("eins").style.left = divPos;
     document.getElementById("zwei").style.left = divPos -40;
   document.getElementById("webif").style.left = webIFPos;
    }
 }
-</script>
-<script language="JavaScript" type="text/javascript">
 function rcopen_virtual() {
 pwin = window.open("rc_virtual.html","_blank","toolbar=0,status=0,scrollbars=0,resizable=0,width=220,height=470,top=50,left=50");
 pwin.blur();
 window.focus();
 javascript:show('eins');
 }
-</script>
-<script language="JavaScript" type="text/javascript">
+function saveLastIframe(temp){
+	if(firststart){
+	      showLastIframe();
+        firststart=false;
+  }else{
+  var lastQuery = temp.toString().split("/");
+	var a = new Date();
+	a = new Date(a.getTime() +1000*60*60*24*365);
+  document.cookie = 'tiTan2='+lastQuery[3]+'; expires='+a.toGMTString()+';';
+}       
+}
+function showLastIframe(){
+  var temp;
+  if((temp=GetCookie('tiTan2'))!=null)
+  document.getElementById('main').src=temp;
+}
 function rcopen_org() {
 pwin = window.open("rc.html","_blank","toolbar=0,status=0,scrollbars=0,resizable=0,width=220,height=670,top=50,left=50");
 pwin.blur();
 window.focus();
 javascript:show('zwei');
 }
-</script>
-<script language="JavaScript" type="text/javascript">
 function rcswitch() {
-
-cookiewert = document.cookie;
-if(cookiewert == 'tiTan=VirtualRemote')
+cookiewert = GetCookie('tiTan');
+if(cookiewert == 'VirtualRemote')
 	{ 
 	var a = new Date();
 	a = new Date(a.getTime() +1000*60*60*24*365);
@@ -72,16 +80,30 @@ if(cookiewert == 'tiTan=VirtualRemote')
 	javascript:show('eins');
  }
 }
-</script>
-<script language="JavaScript" type="text/javascript">
 function rcshow() {
-cookiewert = document.cookie;
-if(cookiewert == 'tiTan=VirtualRemote')
+cookiewert = GetCookie('tiTan');
+if(cookiewert == 'VirtualRemote')
 	{ 
 	javascript:show('eins');
     } else 	{ 	
 	javascript:show('zwei');
-}}
+    }
+}
+
+function GetCookie(sName)
+{
+  // cookies are separated by semicolons
+  var aCookie = document.cookie.split("; ");
+  for (var i=0; i < aCookie.length; i++)
+  {
+    // a name/value pair (a crumb) is separated by an equal sign
+    var aCrumb = aCookie[i].split("=");
+    if (sName == aCrumb[0]) 
+      return unescape(aCrumb[1]);
+  }
+  return null;
+}
+showLastIframe();
 </script>
 </head>
 <body class=body onLoad="vertAl()">
@@ -94,14 +116,14 @@ if(cookiewert == 'tiTan=VirtualRemote')
 	 <table border=0 width=340>
 	  <tr>
 	   <td width=16 align=center>
-	   	<a href="javascript:show('eins');"><img border=0 width=16 height=16 title="Show/Hide Remote Control" src="img/icon_rcopen.png"></a> 
+	   	<a href="javascript:rcshow()"><img border=0 width=16 height=16 title="Show/Hide Remote Control" src="img/icon_rcopen.png"></a> 
 	   </td>
 	   <td width=100 align=center>
 		<form action=query method=get target=nothing style="height:18px; margin:auto;">
-		<input type=image name=poweroff title="Power Off" src="img/icon_poweroff.png" width=16 height=16></input>
-		<input type=image name=restart title="Restart" src="img/icon_restart.png" width=16 height=16></input>
-		<input type=image name=guirestart title="GUI Restart" src="img/icon_guirestart.png" width=16 height=16></input>
-		<input type=image name=standby title="Standby" src="img/icon_standby.png" width=16 height=16></input>
+		<input type=image name=poweroff title="Power Off" src="img/icon_poweroff.png" width=16 height=16/>
+		<input type=image name=restart title="Restart" src="img/icon_restart.png" width=16 height=16/>
+		<input type=image name=guirestart title="GUI Restart" src="img/icon_guirestart.png" width=16 height=16/>
+		<input type=image name=standby title="Standby" src="img/icon_standby.png" width=16 height=16/>
 		</form>
 	   </td>
 	   <td width=16 align=center>
@@ -156,13 +178,11 @@ if(cookiewert == 'tiTan=VirtualRemote')
  <tr>
  <!-- MAIN -->
   <td colspan=4 valign=top width=100% height=100%>
-   <iframe name=main marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=100% src=query?getbouquet></iframe>
+   <iframe  id="main" onLoad="saveLastIframe(this.contentWindow.location)" name=main marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=100% src=query?getbouquet></iframe>
   </td>
  <!-- MAIN END-->
  </tr>
-</tr>
 </table>
-
 <div style="display: none; position: absolute; top:168; left:10; background-color:323232; padding:12px" id="eins" align="center" >
 <img src="img/rc_virtual.png" border="0" usemap="#rc">
 <map id="rc" name="rc">
