@@ -1,16 +1,53 @@
 TYPE=$1
 STM=$2
 MEDIAFW=$3
+SVNUSER=$4
+SVNPASS=$5
+SVNURL=$6
 
 if [ -z "$TYPE" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl>"
 	exit 1
 fi
 
 if [ -z "$STM" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl>"
 	exit 1
 fi
+
+if [ -z "$MEDIAFW" ]; then
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl>"
+	exit 1
+fi
+
+if [ -z "$STM" ]; then
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl>"
+	exit 1
+fi
+
+if [ -z "$STM" ]; then
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl>"
+	exit 1
+fi
+
+if [ -z "$STM" ]; then
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl>"
+	exit 1
+fi
+
+echo "[titan]--------------------------------------------------------"
+echo "[titan] get titan skin"
+echo "[titan]--------------------------------------------------------"
+
+rm -rf "$HOMEDIR"/source.titan/skin
+mkdir "$HOMEDIR"/source.titan/skin	
+svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source.sh4/titanskins_default/var/usr/local/share/titan/skin/default "$HOMEDIR"/source.titan/skin/default
+
+echo "[titan]--------------------------------------------------------"
+echo "[titan] get plugin skins"
+echo "[titan]--------------------------------------------------------"
+
+cp -a "$HOMEDIR"/source.titan/skins/[^.]* "$HOMEDIR"/source.titan/titan/plugins
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] cleanup"
