@@ -20,17 +20,17 @@ if [ -z "$MEDIAFW" ]; then
 	exit 1
 fi
 
-if [ -z "$STM" ]; then
+if [ -z "$SVNUSER" ]; then
 	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl>"
 	exit 1
 fi
 
-if [ -z "$STM" ]; then
+if [ -z "$SVNPASS" ]; then
 	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl>"
 	exit 1
 fi
 
-if [ -z "$STM" ]; then
+if [ -z "$SVNURL" ]; then
 	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl>"
 	exit 1
 fi
