@@ -1,6 +1,6 @@
-#include "../../struct.h"
-#include "../../debug.h"
-#include "../../header.h"
+#include "../titan/struct.h"
+#include "../titan/debug.h"
+#include "../titan/header.h"
 
 char pluginname[] = "Mbox Info";
 char plugindesc[] = "Mbox Info V0.1    25/10/2011 AAF-tiTan";
