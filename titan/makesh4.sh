@@ -4,7 +4,6 @@ MEDIAFW=$3
 SVNUSER=$4
 SVNPASS=$5
 SVNURL=$6
-HOMEDIR=`pwd`
 
 if [ -z "$TYPE" ]; then
 	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl>"
@@ -40,15 +39,15 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] get titan skin"
 echo "[titan]--------------------------------------------------------"
 
-rm -rf "$HOMEDIR"/source.titan/skin
-mkdir "$HOMEDIR"/source.titan/skin	
-svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source.sh4/titanskins_default/var/usr/local/share/titan/skin/default "$HOMEDIR"/source.titan/skin/default
+rm -rf "$HOME"/flashimg/source.titan/skin
+mkdir "$HOME"/flashimg/source.titan/skin	
+svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source.sh4/titanskins_default/var/usr/local/share/titan/skin/default "$HOME"/flashimg/source.titan/skin/default
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] get plugin skins"
 echo "[titan]--------------------------------------------------------"
 
-cp -a "$HOMEDIR"/source.titan/skins/[^.]* "$HOMEDIR"/source.titan/titan/plugins
+cp -a "$HOME"/flashimg/source.titan/skins/[^.]* "$HOME"/flashimg/source.titan/titan/plugins
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] cleanup"
