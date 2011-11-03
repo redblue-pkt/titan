@@ -40,82 +40,82 @@
 
 <screen fontcol=fontcol title="AAF Panel" titlealign=center name=aafpanel_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=60% bordercol=bordercol bordersize=1 bgcol=bgcol transparent=40>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=100%>
-<node pic="%pluginpath%/aafpanel/skin/aafpanel_softcam_panel.png" textposx=120 valign=middle name=aafpanel_softcam text="Softcam Panel" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_setup.png textposx=120 valign=middle name=aafpanel_settings text="Settings" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_system.png textposx=120 valign=middle name=aafpanel_system text="System" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_plugins.png textposx=120 valign=middle name=aafpanel_extensions text="Extensions" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_infos.png textposx=120 valign=middle name=aafpanel_infos text="Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
+<node pic="%pluginpath%/aafpanel/skin/aafpanel_softcam_panel.png" textposx=120 valign=middle name=aafpanel_softcam text="Softcam Panel" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_setup.png textposx=120 valign=middle name=aafpanel_settings text="Settings" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_system.png textposx=120 valign=middle name=aafpanel_system text="System" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_plugins.png textposx=120 valign=middle name=aafpanel_extensions text="Extensions" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_infos.png textposx=120 valign=middle name=aafpanel_infos text="Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
 <screen fontcol=fontcol title="Settings" titlealign=center name=aafpanel_settings_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=80% bordercol=bordercol bordersize=1 bgcol=bgcol transparent=40>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=85%>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_automount.png textposx=120 valign=middle name=aafpanel_settings_automount text="Automount" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_autostart.png textposx=120 valign=middle name=aafpanel_settings_autostart text="Autostart" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_overclock.png textposx=120 valign=middle name=aafpanel_settings_overclocking text="Overclocking" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_redkeyaction.png textposx=120 valign=middle name=aafpanel_settings_redbutton text="Red Button" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_bluekeyaction.png textposx=120 valign=middle name=aafpanel_settings_bluebutton text="Blue Button" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_videotune.png textposx=120 valign=middle name=aafpanel_settings_videotune text="Videotune" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_betaconfig.png textposx=120 valign=middle name=aafpanel_settings_betacfg text="Beta Config" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hidden=no>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_fancontrol.png textposx=120 valign=middle name=aafpanel_settings_fancontrol text="Fancontrol" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hidden=no>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_automount.png textposx=120 valign=middle name=aafpanel_settings_automount text="Automount" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_autostart.png textposx=120 valign=middle name=aafpanel_settings_autostart text="Autostart" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_overclock.png textposx=120 valign=middle name=aafpanel_settings_overclocking text="Overclocking" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_redkeyaction.png textposx=120 valign=middle name=aafpanel_settings_redbutton text="Red Button" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_bluekeyaction.png textposx=120 valign=middle name=aafpanel_settings_bluebutton text="Blue Button" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_videotune.png textposx=120 valign=middle name=aafpanel_settings_videotune text="Videotune" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_betaconfig.png textposx=120 valign=middle name=aafpanel_settings_betacfg text="Beta Config" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hidden=no hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_fancontrol.png textposx=120 valign=middle name=aafpanel_settings_fancontrol text="Fancontrol" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hidden=no hspace=5>
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
 <screen fontcol=fontcol title="System" titlealign=center name=aafpanel_system_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=85% bordercol=bordercol bordersize=1 bgcol=bgcol transparent=40>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=85%>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_aaf.png textposx=120 valign=middle name=aafpanel_system_aafwizard text="AAF Wizard" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_info.png textposx=120 valign=middle name=aafpanel_system_imageinfo text="Image Information" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_backup.png textposx=120 valign=middle name=aafpanel_system_backup text="Backup" parent=listbox bordercol=bordercol bordersize=0 width=100% height=15%>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_backup_and_restore_settings.png textposx=120 valign=middle name=aafpanel_system_restore text="Settings backup/restore" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic="%pluginpath%/aafpanel/skin/aafpanel_flash_online_updater.png" textposx=120 valign=middle name=aafpanel_system_update_flash_online text="Flashupdate (online)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic="%pluginpath%/aafpanel/skin/aafpanel_flash_tmp_updater.png" textposx=120 valign=middle name=aafpanel_system_update_flash_tmp text="Flashupdate (tmp)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic="%pluginpath%/aafpanel/skin/aafpanel_usb_online_updater.png" textposx=120 valign=middle name=aafpanel_system_update_usb_online text="Usbupdate (online)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic="%pluginpath%/aafpanel/skin/aafpanel_usb_tmp_updater.png" textposx=120 valign=middle name=aafpanel_system_update_usb_tmp text="Usbupdate (tmp)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_aaf.png textposx=120 valign=middle name=aafpanel_system_aafwizard text="AAF Wizard" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_info.png textposx=120 valign=middle name=aafpanel_system_imageinfo text="Image Information" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_backup.png textposx=120 valign=middle name=aafpanel_system_backup text="Backup" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_backup_and_restore_settings.png textposx=120 valign=middle name=aafpanel_system_restore text="Settings backup/restore" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic="%pluginpath%/aafpanel/skin/aafpanel_flash_online_updater.png" textposx=120 valign=middle name=aafpanel_system_update_flash_online text="Flashupdate (online)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic="%pluginpath%/aafpanel/skin/aafpanel_flash_tmp_updater.png" textposx=120 valign=middle name=aafpanel_system_update_flash_tmp text="Flashupdate (tmp)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic="%pluginpath%/aafpanel/skin/aafpanel_usb_online_updater.png" textposx=120 valign=middle name=aafpanel_system_update_usb_online text="Usbupdate (online)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic="%pluginpath%/aafpanel/skin/aafpanel_usb_tmp_updater.png" textposx=120 valign=middle name=aafpanel_system_update_usb_tmp text="Usbupdate (tmp)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
 <screen fontcol=fontcol title="Extensions" titlealign=center name=aafpanel_extensions_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=60% bordercol=bordercol bordersize=1 bgcol=bgcol transparent=40>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=85%>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_plugins.png textposx=120 valign=middle name=aafpanel_extensions_menu text="Extensions Menu" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic="%pluginpath%/aafpanel/skin/aafpanel_tmp_ipk_install.png" textposx=120 valign=middle name=aafpanel_extensions_ipkinstall text="IPK install (online)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic="%pluginpath%/aafpanel/skin/aafpanel_tmp_ipk_install.png" textposx=120 valign=middle name=aafpanel_extensions_tmpipkinstall text="IPK tmp (tmp)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic="%pluginpath%/aafpanel/skin/aafpanel_tmp_ipk_remove.png" textposx=120 valign=middle name=aafpanel_extensions_ipkremove text="IPK remove" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_plugins.png textposx=120 valign=middle name=aafpanel_extensions_menu text="Extensions Menu" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic="%pluginpath%/aafpanel/skin/aafpanel_tmp_ipk_install.png" textposx=120 valign=middle name=aafpanel_extensions_ipkinstall text="IPK install (online)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic="%pluginpath%/aafpanel/skin/aafpanel_tmp_ipk_install.png" textposx=120 valign=middle name=aafpanel_extensions_tmpipkinstall text="IPK tmp (tmp)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic="%pluginpath%/aafpanel/skin/aafpanel_tmp_ipk_remove.png" textposx=120 valign=middle name=aafpanel_extensions_ipkremove text="IPK remove" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
 <screen fontcol=fontcol title="Info" titlealign=center name=aafpanel_infos_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=85% bordercol=bordercol bordersize=1 bgcol=bgcol transparent=40>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=85%>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_infos.png textposx=120 valign=middle name=aafpanel_infos_aaf text="AAF Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_default.png textposx=120 valign=middle name=aafpanel_infos_default text="default" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_freespace.png textposx=120 valign=middle name=aafpanel_infos_free text="free space" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_kernel.png textposx=120 valign=middle name=aafpanel_infos_kernel text="Kernel" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_mounts.png textposx=120 valign=middle name=aafpanel_infos_mounts text="Mounts" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_network.png textposx=120 valign=middle name=aafpanel_infos_network text="Network" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_ram.png textposx=120 valign=middle name=aafpanel_infos_ram text="Ram" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic="%pluginpath%/aafpanel/skin/aafpanel_system_info.png" textposx=120 valign=middle name=aafpanel_infos_sysinfo text="System Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_infos.png textposx=120 valign=middle name=aafpanel_infos_aaf text="AAF Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_default.png textposx=120 valign=middle name=aafpanel_infos_default text="default" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_freespace.png textposx=120 valign=middle name=aafpanel_infos_free text="free space" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_kernel.png textposx=120 valign=middle name=aafpanel_infos_kernel text="Kernel" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_mounts.png textposx=120 valign=middle name=aafpanel_infos_mounts text="Mounts" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_network.png textposx=120 valign=middle name=aafpanel_infos_network text="Network" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_ram.png textposx=120 valign=middle name=aafpanel_infos_ram text="Ram" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic="%pluginpath%/aafpanel/skin/aafpanel_system_info.png" textposx=120 valign=middle name=aafpanel_infos_sysinfo text="System Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
 <screen fontcol=fontcol title="Sysinfo" titlealign=center name=aafpanel_sysinfos_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=75% bordercol=bordercol bordersize=1 bgcol=bgcol transparent=40>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=85%>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_cpu.png textposx=120 valign=middle name=aafpanel_sysinfos_cpu text="CPU" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_meminfo.png textposx=120 valign=middle name=aafpanel_sysinfos_mem text="Memory" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_mtd.png textposx=120 valign=middle name=aafpanel_sysinfos_mtd text="MTD" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_module.png textposx=120 valign=middle name=aafpanel_sysinfos_module text="Module" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic="%pluginpath%/aafpanel/skin/aafpanel_devices_config.png" textposx=120 valign=middle name=aafpanel_sysinfos_devices text="Devices" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_swap.png textposx=120 valign=middle name=aafpanel_sysinfos_swap text="Swap" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_top.png textposx=120 valign=middle name=aafpanel_sysinfos_top text="Top" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_cpu.png textposx=120 valign=middle name=aafpanel_sysinfos_cpu text="CPU" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_meminfo.png textposx=120 valign=middle name=aafpanel_sysinfos_mem text="Memory" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_mtd.png textposx=120 valign=middle name=aafpanel_sysinfos_mtd text="MTD" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_module.png textposx=120 valign=middle name=aafpanel_sysinfos_module text="Module" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic="%pluginpath%/aafpanel/skin/aafpanel_devices_config.png" textposx=120 valign=middle name=aafpanel_sysinfos_devices text="Devices" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_swap.png textposx=120 valign=middle name=aafpanel_sysinfos_swap text="Swap" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_top.png textposx=120 valign=middle name=aafpanel_sysinfos_top text="Top" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
 <screen fontcol=fontcol title="Autostart" titlealign=center name=aafpanel_autostart_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=75% bordercol=bordercol bordersize=1 bgcol=bgcol transparent=40>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=85%>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_default.png textposx=120 valign=middle name=aafpanel_autostart_default text="Default" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic="%pluginpath%/aafpanel/skin/aafpanel_audiovideosat_config.png" textposx=120 valign=middle name=aafpanel_autostart_audiovideo text="Audio / Video / Sat" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_autofs.png textposx=120 valign=middle name=aafpanel_autostart_usb text="Usb Device" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic="%pluginpath%/aafpanel/skin/aafpanel_camemu_config.png" textposx=120 valign=middle name=aafpanel_autostart_emu text="Cam / Emu" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic="%pluginpath%/aafpanel/skin/aafpanel_network.png" textposx=120 valign=middle name=aafpanel_autostart_network text="Network" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_parental.png textposx=120 valign=middle name=aafpanel_autostart_safety text="Child safety" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_default.png textposx=120 valign=middle name=aafpanel_autostart_default text="Default" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic="%pluginpath%/aafpanel/skin/aafpanel_audiovideosat_config.png" textposx=120 valign=middle name=aafpanel_autostart_audiovideo text="Audio / Video / Sat" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_autofs.png textposx=120 valign=middle name=aafpanel_autostart_usb text="Usb Device" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic="%pluginpath%/aafpanel/skin/aafpanel_camemu_config.png" textposx=120 valign=middle name=aafpanel_autostart_emu text="Cam / Emu" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic="%pluginpath%/aafpanel/skin/aafpanel_network.png" textposx=120 valign=middle name=aafpanel_autostart_network text="Network" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_parental.png textposx=120 valign=middle name=aafpanel_autostart_safety text="Child safety" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
