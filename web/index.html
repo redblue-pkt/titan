@@ -1,66 +1,73 @@
 <html>
-<head>
-<title>Titan Web Control</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="titan.css">
+  <head>
+    <title>tiTan Web Control
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="titan.css">
 <script type="text/javascript">
 var firststart=true;
 function show(das) {
- if (document.getElementById(das).style.display=='none') {
-  document.getElementById(das).style.display='block';
- }
- else {
-  document.getElementById(das).style.display='none';
+  if (document.getElementById(das).style.display=='none') {
+    document.getElementById(das).style.display='block';
+  }
+  else {
+    document.getElementById(das).style.display='none';
  }
 }
 function vertAl(){
   breite = window.innerWidth;
-  if (breite <= 1140)
- {
+  if (breite <= 1140){
     document.getElementById("eins").style.left = 680;
     document.getElementById("eins").style.top = 140;
-        document.getElementById("zwei").style.left = 680;
+    document.getElementById("zwei").style.left = 680;
     document.getElementById("zwei").style.top = 140;
   } else {
     document.getElementById("eins").style.left = 1000;
-        document.getElementById("zwei").style.left = 1000;
+    document.getElementById("zwei").style.left = 1000;
   }
-  if (breite > 1360) 
-   {
-  divPos = ((breite)/2)-657;
-  webIFPos = ((breite)/2)-490;
-  document.getElementById("eins").style.left = divPos;
+  if (breite > 1360){
+    divPos = ((breite)/2)-657;
+    webIFPos = ((breite)/2)-490;
+    document.getElementById("eins").style.left = divPos;
     document.getElementById("zwei").style.left = divPos -40;
-  document.getElementById("webif").style.left = webIFPos;
-   }
+    document.getElementById("webif").style.left = webIFPos;
+  }
 }
 function rcopen_virtual() {
-pwin = window.open("rc_virtual.html","_blank","toolbar=0,status=0,scrollbars=0,resizable=0,width=220,height=470,top=50,left=50");
-pwin.blur();
-window.focus();
-javascript:show('eins');
+  pwin = window.open("rc_virtual.html","_blank","toolbar=0,status=0,scrollbars=0,resizable=0,width=220,height=470,top=50,left=50");
+  pwin.blur();
+  window.focus();
+  javascript:show('eins');
 }
-function saveLastIframe(temp){
+function saveLastIframe(actQuery){
 	if(firststart){
-	      showLastIframe();
-        firststart=false;
+	 showLastIframe();
+   firststart=false;
   }else{
-  var lastQuery = temp.toString().split("/");
-	var a = new Date();
-	a = new Date(a.getTime() +1000*60*60*24*365);
-  document.cookie = 'tiTan2='+lastQuery[3]+'; expires='+a.toGMTString()+';';
-}       
-}
+    var temp;
+    try{
+      if(((temp=actQuery.href.toString()).indexOf('getepg'))<=0 && (temp.indexOf('query?get')>0)){
+        var lastQuery = actQuery.href.toString().split("/");
+  	    var a = new Date();
+        a = new Date(a.getTime() +1000*60*60*24*365);
+        document.cookie = 'tiTan2='+lastQuery[3]+'; expires='+a.toGMTString()+';';
+      }
+    }catch(err){
+          
+    }
+  } 
+}      
+
 function showLastIframe(){
   var temp;
-  if((temp=GetCookie('tiTan2'))!=null)
-  document.getElementById('main').src=temp;
+  if((temp=GetCookie('tiTan2'))!=null){
+  document.getElementById('main').src=temp; }
 }
 function rcopen_org() {
-pwin = window.open("rc.html","_blank","toolbar=0,status=0,scrollbars=0,resizable=0,width=220,height=670,top=50,left=50");
-pwin.blur();
-window.focus();
-javascript:show('zwei');
+  pwin = window.open("rc.html","_blank","toolbar=0,status=0,scrollbars=0,resizable=0,width=220,height=670,top=50,left=50");
+  pwin.blur();
+  window.focus();
+  javascript:show('zwei');
 }
 function rcswitch() {
 cookiewert = GetCookie('tiTan');
@@ -72,7 +79,6 @@ if(cookiewert == 'VirtualRemote')
 	javascript:show('eins');
 	javascript:show('zwei');
     } else {
-
 	var a = new Date();
 	a = new Date(a.getTime() +1000*60*60*24*365);
 	document.cookie = 'tiTan=VirtualRemote; expires='+a.toGMTString()+';'; 
@@ -89,7 +95,6 @@ if(cookiewert == 'VirtualRemote')
 	javascript:show('zwei');
     }
 }
-
 function GetCookie(sName)
 {
   // cookies are separated by semicolons
@@ -103,86 +108,82 @@ function GetCookie(sName)
   }
   return null;
 }
-showLastIframe();
 </script>
-</head>
-<body class=body onLoad="vertAl()">
-<iframe name=nothing scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=0 height=0></iframe>
-<table id="webif" style="position: absolute;" border=0 width=980 height=99% cellpadding=5 cellspacing=0>
- <tr>
- <!-- LINKLINE -->
-  <td valign=bottom colspan=2><img src="img/titanweb.png"></td>
-  	<td width=50% align=right valign=top height=20>
-	 <table border=0 width=340>
-	  <tr>
-	   <td width=16 align=center>
-	   	<a href="javascript:rcshow()"><img border=0 width=16 height=16 title="Show/Hide Remote Control" src="img/icon_rcopen.png"></a> 
-	   </td>
-	   <td width=100 align=center>
-		<form action=query method=get target=nothing style="height:18px; margin:auto;">
-		<input type=image name=poweroff title="Power Off" src="img/icon_poweroff.png" width=16 height=16/>
-		<input type=image name=restart title="Restart" src="img/icon_restart.png" width=16 height=16/>
-		<input type=image name=guirestart title="GUI Restart" src="img/icon_guirestart.png" width=16 height=16/>
-		<input type=image name=standby title="Standby" src="img/icon_standby.png" width=16 height=16/>
-		</form>
-	   </td>
-	   <td width=16 align=center>
-	   	<iframe name=setmute scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=16 src=query?setmute></iframe>	
-	   </td>
-	   <td width=135 align=center>
-		<iframe name=setvol scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=27 src=query?setvol></iframe>
-	   </td>
-	   <td align=right>
-		<a href=query?record target=main><img border=0 src=img/record.png title="Start Record" alt=Record width=16 height=16></a>
-		<a href=query?getsignal target=main><img border=0 src=img/signal.png title="Show Signal Infos" alt=Signal width=16 height=16></a>
-	   </td>
-	  </tr>
-	</table>
-   </td>
- </tr>
- <tr>
-  <td colspan=4>
-	<table border=0 width=100%>
-	<tr>
-	<td valign=bottom>
-	<a class=linelink target=leftpanel href=channellist.html>Channel List</a>
-	<a class=linelink target=leftpanel href=boxcontrol.html>Boxcontrol</a>
-	<a class=linelink target=main href=query?getmoviefilelist>Movies</a>
-	<a class=linelink target=leftpanel href=timer.html>Timer</a>
-	</td>
-   <td align=right><form target=main action=query method=get><input class=inputbox type=text name=getepgsearch value="EPG Search" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;"></form></td>
-  <!-- LINKLINE END-->
-  </tr>
-</table>
-</td>
-</tr>
-
- <tr>
- <!-- BOXCONTROL -->
-  <td colspan=4 valign=top height=40>
-
-	<iframe name=leftpanel scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=100% src=channellist.html></iframe>
-
-  </td>
- <!-- BOXCONTROL END -->
- </tr>
- 
- <tr>
- <!-- AKT SERVICE -->
-  <td colspan=4 style="border-radius: 5px 5px 5px 5px">
-   <iframe name=aktservice scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=35 src=query?getaktservice></iframe>
-  </td>
- <!-- AKT SERVICE END -->
- </tr>
- 
- <tr>
- <!-- MAIN -->
-  <td colspan=4 valign=top width=100% height=100%>
-   <iframe  id="main" onLoad="saveLastIframe(this.contentWindow.location)" name=main marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=100% src=query?getbouquet></iframe>
-  </td>
- <!-- MAIN END-->
- </tr>
-</table>
+  </head>
+  <body class=body onLoad="vertAl()">
+    <iframe name=nothing scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=0 height=0>
+    </iframe>
+    <table id="webif" style="position: absolute;" border=0 width=980 height=99% cellpadding=5 cellspacing=0> 
+      <tr> 
+        <!-- LINKLINE -->  
+        <td valign=bottom colspan=2>
+          <img src="img/titanweb.png"></td>  	
+        <td width=50% align=right valign=top height=20>	 
+          <table border=0 width=340>	  
+            <tr>	   
+              <td width=16 align=center>	   	
+                <a href="javascript:rcshow()">
+                  <img border=0 width=16 height=16 title="Show/Hide Remote Control" src="img/icon_rcopen.png"></a>  	   </td>	   
+              <td width=100 align=center>		
+                <form action=query method=get target=nothing style="height:18px; margin:auto;">		
+                  <input type=image name=poweroff title="Power Off" src="img/icon_poweroff.png" width=16 height=16/>		
+                  <input type=image name=restart title="Restart" src="img/icon_restart.png" width=16 height=16/>		
+                  <input type=image name=guirestart title="GUI Restart" src="img/icon_guirestart.png" width=16 height=16/>		
+                  <input type=image name=standby title="Standby" src="img/icon_standby.png" width=16 height=16/>		
+                </form>	   </td>	   
+              <td width=16 align=center>	   	
+                <iframe name=setmute scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=16 src=query?setmute>
+                </iframe>	 	   </td>	   
+              <td width=135 align=center>		
+                <iframe name=setvol scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=27 src=query?setvol>
+                </iframe>	   </td>	   
+              <td align=right>		
+                <a href=query?record target=main>
+                  <img border=0 src=img/record.png title="Start Record" alt=Record width=16 height=16></a>		
+                <a href=query?getsignal target=main>
+                  <img border=0 src=img/signal.png title="Show Signal Infos" alt=Signal width=16 height=16></a>	   </td>	  
+            </tr>	
+          </table>   </td> 
+      </tr> 
+      <tr>  
+        <td colspan=4>	
+          <table border=0 width=100%>	
+            <tr>	
+              <td valign=bottom>	
+                <a class=linelink target=leftpanel href=channellist.html>Channel List</a>	
+                <a class=linelink target=leftpanel href=boxcontrol.html>Boxcontrol</a>	
+                <a class=linelink target=main href=query?getmoviefilelist>Movies</a>	
+                <a class=linelink target=leftpanel href=timer.html>Timer</a>	</td>   
+              <td align=right>
+                <form target=main action=query method=get>
+                  <input class=inputbox type=text name=getepgsearch value="EPG Search" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
+                </form></td>  
+              <!-- LINKLINE END-->  
+            </tr>
+          </table></td>
+      </tr> 
+      <tr> 
+        <!-- BOXCONTROL -->  
+        <td colspan=4 valign=top height=40>	
+          <iframe name=leftpanel scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=100% src=channellist.html>
+          </iframe>  </td> 
+        <!-- BOXCONTROL END --> 
+      </tr>   
+      <tr> 
+        <!-- AKT SERVICE -->  
+        <td colspan=4 style="border-radius: 5px 5px 5px 5px">   
+          <iframe name=aktservice scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=35 src=query?getaktservice>
+          </iframe>  </td> 
+        <!-- AKT SERVICE END --> 
+      </tr>   
+      <tr> 
+        <!-- MAIN -->  
+        <td colspan=4 valign=top width=100% height=100%>   
+          <iframe  id="main" onLoad="saveLastIframe(this.contentWindow.location)" name=main marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=100% src=query?getbouquet>
+          </iframe>  </td> 
+        <!-- MAIN END--> 
+      </tr>
+    </table>
 <div style="display: none; position: absolute; top:168; left:10; background-color:323232; padding:12px" id="eins" align="center" >
 <img src="img/rc_virtual.png" border="0" usemap="#rc">
 <map id="rc" name="rc">
