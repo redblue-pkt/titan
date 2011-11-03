@@ -138,7 +138,7 @@ void screenskinselect(void)
 				changetext(tmp, _("unknown")); //skin.xml is in main dir
 			else
 			{
-				if(string_find("/var/swap/titanskins",list[j].name))
+				if(string_find("/swap/",list[j].name))
 				{
 					char* tmpname = NULL;
 					tmpname = ostrcat("", list[j].displayname, 0, 0);
