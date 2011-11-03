@@ -116,20 +116,23 @@ void screensingleepg(struct channel* chnode, struct epg* epgnode)
 			{
 				clearscreen(singleepg);
 				screenepg(chnode, (struct epg*)listbox->select->handle);
-				drawscreen(singleepg, 0);
+				//drawscreen(singleepg, 0);
+				break;
 			}
 		}
 		if(epgscreenconf == 1 && rcret == getrcconfigint("rcgreen", NULL))
 		{
 			clearscreen(singleepg);
 			screenmultiepg(chnode, NULL);
-			drawscreen(singleepg, 0);
+			//drawscreen(singleepg, 0);
+			break;
 		}
 		if(epgscreenconf == 1 && rcret == getrcconfigint("rcyellow", NULL))
 		{
 			clearscreen(singleepg);
 			screengmultiepg(chnode, NULL);
-			drawscreen(singleepg, 0);
+			//drawscreen(singleepg, 0);
+			break;
 		}
 		if(listbox->select != NULL)
 		{
@@ -284,19 +287,22 @@ nextepg:
 		{
 			clearscreen(screenepg);
 			screensingleepg(chnode, NULL);
-			drawscreen(screenepg, 0);
+			//drawscreen(screenepg, 0);
+			break;
 		}
 		if(epgscreenconf == 0 && rcret == getrcconfigint("rcgreen", NULL))
 		{
 			clearscreen(screenepg);
 			screenmultiepg(chnode, NULL);
-			drawscreen(screenepg, 0);
+			//drawscreen(screenepg, 0);
+			break;
 		}
 		if(epgscreenconf == 0 && rcret == getrcconfigint("rcyellow", NULL))
 		{
 			clearscreen(screenepg);
 			screengmultiepg(chnode, NULL);
-			drawscreen(screenepg, 0);
+			//drawscreen(screenepg, 0);
+			break;
 		}
 		if(rcret == getrcconfigint("rcblue", NULL))
 		{
@@ -310,13 +316,15 @@ nextepg:
 			{
 				clearscreen(screenepg);
 				screensingleepg(chnode, NULL);
-				drawscreen(screenepg, 0);
+				//drawscreen(screenepg, 0);
+				break;
 			}
 			else
 			{
 				clearscreen(screenepg);
 				screenmultiepg(chnode, NULL);				
-				drawscreen(screenepg, 0);
+				//drawscreen(screenepg, 0);
+				break;
 			}
 		}
 	}	

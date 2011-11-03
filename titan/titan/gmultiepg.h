@@ -489,7 +489,8 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode)
 			{
 				clearscreen(gmultiepg);
 				screenepg((struct channel*)listbox->select->handle, (struct epg*)listbox->select->handle1);
-				drawscreen(gmultiepg, 0);
+				//drawscreen(gmultiepg, 0);
+				break;
 			}
 		}
 		if(epgscreenconf == 3 && rcret == getrcconfigint("rcgreen", NULL))
@@ -498,7 +499,8 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode)
 			{
 				clearscreen(gmultiepg);
 				screensingleepg((struct channel*)listbox->select->handle, NULL);
-				drawscreen(gmultiepg, 0);
+				//drawscreen(gmultiepg, 0);
+				break;
 			}
 		}
 		if(epgscreenconf == 3 && rcret == getrcconfigint("rcyellow", NULL))
@@ -507,7 +509,8 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode)
 			{
 				clearscreen(gmultiepg);
 				screenmultiepg((struct channel*)listbox->select->handle, NULL);
-				drawscreen(gmultiepg, 0);
+				//drawscreen(gmultiepg, 0);
+				break;
 			}
 		}
 
@@ -524,7 +527,6 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode)
 						akttime = starttime;
 					else
 						showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, ((struct mainbouquet*)aktlist)->bouquet, zoom, akttime, aktchannel);
-
 				}
 			}
 			else if(list == ALLCHANNEL)

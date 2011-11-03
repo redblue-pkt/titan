@@ -528,7 +528,8 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode)
 			{
 				clearscreen(multiepg);
 				screenepg((struct channel*)listbox->select->handle, (struct epg*)listbox->select->handle1);
-				drawscreen(multiepg, 0);
+				//drawscreen(multiepg, 0);
+				break;
 			}
 		}
 		if(epgscreenconf == 2 && rcret == getrcconfigint("rcgreen", NULL))
@@ -537,7 +538,8 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode)
 			{
 				clearscreen(multiepg);
 				screensingleepg((struct channel*)listbox->select->handle, NULL);
-				drawscreen(multiepg, 0);
+				//drawscreen(multiepg, 0);
+				break;
 			}
 		}
 		if(epgscreenconf == 2 && rcret == getrcconfigint("rcyellow", NULL))
@@ -546,7 +548,8 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode)
 			{
 				clearscreen(multiepg);
 				screengmultiepg((struct channel*)listbox->select->handle, NULL);
-				drawscreen(multiepg, 0);
+				//drawscreen(multiepg, 0);
+				break;
 			}
 		}
 
