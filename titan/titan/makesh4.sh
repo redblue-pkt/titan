@@ -4,6 +4,7 @@ MEDIAFW=$3
 SVNUSER=$4
 SVNPASS=$5
 SVNURL=$6
+HOMEDIR=`pwd`
 
 if [ -z "$TYPE" ]; then
 	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl>"
