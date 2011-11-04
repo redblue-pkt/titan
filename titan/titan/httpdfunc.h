@@ -662,7 +662,7 @@ char* webgetaktservice()
 	struct channel* chnode = status.aktservice->channel;
 	int line = 0, maxlen = 0, pos = 0;
 
-	webcreateheadbig(&buf, &maxlen, "<meta http-equiv=refresh content=15>", &pos, 1);
+	webcreateheadbig(&buf, &maxlen, NULL, &pos, 1);
 	webcreatechannelbody(&buf, line, chnode, getconfig("channellist", NULL), &maxlen, &pos ,1);
 	webcreatetailbig(&buf, &maxlen, &pos, 1);
 
