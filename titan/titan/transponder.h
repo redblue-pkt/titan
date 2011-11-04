@@ -102,7 +102,7 @@ char* transpondergetfecstr(struct transponder* node, int flag)
 		text = ostrcat(text, "AUTO\n1/2\n2/3\n3/4\n5/6\n7/8\n8/9\n3/5\n4/5\n9/10\nNONE\n6/7", 1, 0);
 	else if(flag == 2)
 		text = ostrcat(text, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11", 1, 0);
-	}
+	
 
 	return text;
 }
