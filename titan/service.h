@@ -502,7 +502,21 @@ struct service* getservicebychannel(struct channel* chnode)
 	return NULL;
 }
 
-struct service* checkdoubleservice(struct service* node)
+void delcaservice(int slot)
+{
+	m_lock(&status.servicemutex, 2);
+	struct service* snode = service;
+
+	while(snode != NULL)
+	{
+		if(snode->capmtsend == slot)
+			snode->capmtsend = -1;
+		snode = snode->next;
+	}
+	m_unlock(&status.servicemutex, 2);
+}
+
+struct service* checkcaservice(struct service* node)
 {
 	struct service* snode = service;
 
@@ -520,6 +534,7 @@ void camsockclose(struct service* node)
 	struct service* snode = service;
 	
 	if(node == NULL) return;
+	node->capmtsend = -1;
 	if(node->camsockfd < 0) return;
 	
 	while(snode != NULL)
@@ -658,6 +673,7 @@ struct service* addservice(struct service* last)
 	newnode->recdstfd = -1;
 	newnode->recsrcfd = -1;
 	newnode->camsockfd = -1;
+	newnode->capmtsend = -1;
 
 	m_lock(&status.servicemutex, 2);
 	node = service;

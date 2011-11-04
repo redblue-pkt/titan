@@ -141,7 +141,7 @@ void sendcapmt(struct service* node, int flag)
 		debug(250, "no frontend");
 		nok = 1;
 	}
-	if(checkdoubleservice(node) != NULL)
+	if(checkcaservice(node) != NULL)
 	{
 		debug(250, "other service makes encrypt");
 		nok = 1;
@@ -163,9 +163,13 @@ void sendcapmt(struct service* node, int flag)
 		return;
 	}
 
-	if(node->camsockfd > -1)
+	if(flag != 2 && node->camsockfd > -1)
 		camsockclose(node);
 
+start:
+	pos = 10, lenbytes = 0, i = 0;
+	cadescnode = node->channel->cadesc;
+	esinfonode = node->channel->esinfo;
 	memset(buf, 0, MINMALLOC);
 
 	buf[0] = 0x9F; // ca_pmt_tag
@@ -277,7 +281,11 @@ void sendcapmt(struct service* node, int flag)
 #endif
 	}
 	else
+	{
 		sendcapmttosock(node, buf, pos);
+		flag = 2;
+		goto start;
+	}
 
 	free(buf);
 }
@@ -294,10 +302,10 @@ void checkcam()
 	node = service;
 	while(node != NULL)
 	{
-		if((node->type == CHANNEL || node->type == RECORDDIRECT || node ->type == RECORDTIMER || node->type == RECORDTIMESHIFT || node->type == RECORDSTREAM) && node->channel != NULL && node->channel->crypt == 1)
+		if((node->type == CHANNEL || node->type == RECORDDIRECT || node ->type == RECORDTIMER || node->type == RECORDTIMESHIFT || node->type == RECORDSTREAM) && node->channel != NULL && node->channel->crypt == 1 && node->capmtsend < 0)
 		{
 			ret = sockcheck(&node->camsockfd);
-			
+
 			if(node->fedev != NULL && node->fedev->type == FRONTENDDEVDUMMY)
 			{
 				node = node->next;
