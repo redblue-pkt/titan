@@ -782,6 +782,48 @@ void gridright(struct skin* screen, struct skin* grid)
 	debug(1000, "out");
 }
 
+void gridchup(struct skin* screen, struct skin* grid)
+{
+	debug(1000, "in");
+
+	if(grid != NULL)
+	{
+		grid->aktline = -1;
+		grid->aktpage--;
+		if(grid->aktpage < 1)
+			grid->aktpage = 1;
+
+		drawscreen(screen, 0);
+		if(grid->select != NULL)
+			grid->gridcol = grid->select->posx + (grid->select->width / 2);
+	}
+
+	debug(1000, "out");
+}
+
+void gridchdown(struct skin* screen, struct skin* grid)
+{
+	debug(1000, "in");
+
+	if(grid != NULL)
+	{
+		grid->aktline = -1;
+		grid->aktpage++;
+		if(grid->aktpage > grid->pagecount)
+		{
+			grid->aktpage = grid->pagecount;
+			grid->aktline = -2;
+		}
+
+		drawscreen(screen, 0);
+		if(grid->select != NULL)
+			grid->gridcol = grid->select->posx + (grid->select->width / 2);
+	}
+
+	debug(1000, "out");
+}
+
+
 void listboxleft(struct skin* screen, struct skin* listbox)
 {
 	debug(1000, "in");
@@ -900,6 +942,8 @@ int addscreenrc(struct skin* screen, struct skin* node)
 		addrc(getrcconfigint("rcleft", NULL), gridleft, screen, node);
 		addrc(getrcconfigint("rcup", NULL), gridup, screen, node);
 		addrc(getrcconfigint("rcdown", NULL), griddown, screen, node);
+		addrc(getrcconfigint("rcchup", NULL), gridchup, screen, node);
+		addrc(getrcconfigint("rcchdown", NULL), gridchdown, screen, node);
 	}
 	else if(node->type == LISTBOX)
 	{
