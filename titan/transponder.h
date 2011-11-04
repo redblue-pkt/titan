@@ -55,14 +55,14 @@ char* transpondergetrolloffstr(struct transponder* node, int flag)
 		switch(node->rolloff)
 		{	
 			case 0: text = ostrcat(text, "0.35", 1, 0); break;
-			case 1: text = ostrcat(text, "0.20", 1, 0); break;
-			case 2: text = ostrcat(text, "0.25", 1, 0); break;
+			case 1: text = ostrcat(text, "0.25", 1, 0); break;
+			case 2: text = ostrcat(text, "0.20", 1, 0); break;
 			case 3: text = ostrcat(text, "Auto", 1, 0); break;
 			default: text = ostrcat(text, "unknown", 1, 0);
 		}
 	}
 	else if(flag == 1)
-		text = ostrcat(text, "0.35\n0.20\n0.25\nAuto", 1, 0);
+		text = ostrcat(text, "0.35\n0.25\n0.20\nAuto", 1, 0);
 	else if(flag == 2)
 		text = ostrcat(text, "0\n1\n2\n3", 1, 0);
 
@@ -83,65 +83,25 @@ char* transpondergetfecstr(struct transponder* node, int flag)
 
 		switch(node->fec)
 		{	
-			case FEC_AUTO: text = ostrcat(text, "AUTO", 1, 0); break;
-			case FEC_1_2: text = ostrcat(text, "1/2", 1, 0); break;
-			case FEC_2_3: text = ostrcat(text, "2/3", 1, 0); break;
-			case FEC_3_4: text = ostrcat(text, "3/4", 1, 0); break;
-			case FEC_5_6: text = ostrcat(text, "5/6", 1, 0); break;
-			case FEC_7_8: text = ostrcat(text, "7/8", 1, 0); break;
-			case FEC_8_9: text = ostrcat(text, "8/9", 1, 0); break;
-			case FEC_4_5: text = ostrcat(text, "4/5", 1, 0); break;
-			case FEC_NONE: text = ostrcat(text, "NONE", 1, 0); break;
-			case FEC_6_7: text = ostrcat(text, "6/7", 1, 0); break;
-#if DVB_API_VERSION <= 3
-			case FEC_1_4: text = ostrcat(text, "1/4", 1, 0); break;
-			case FEC_1_3: text = ostrcat(text, "1/3", 1, 0); break;
-			case FEC_2_5: text = ostrcat(text, "2/5", 1, 0); break;
-#endif
-			case FEC_3_5: text = ostrcat(text, "3/5", 1, 0); break;
-			case FEC_9_10: text = ostrcat(text, "9/10", 1, 0); break;
+			case 0: text = ostrcat(text, "AUTO", 1, 0); break;
+			case 1: text = ostrcat(text, "1/2", 1, 0); break;
+			case 2: text = ostrcat(text, "2/3", 1, 0); break;
+			case 3: text = ostrcat(text, "3/4", 1, 0); break;
+			case 4: text = ostrcat(text, "5/6", 1, 0); break;
+			case 5: text = ostrcat(text, "7/8", 1, 0); break;
+			case 6: text = ostrcat(text, "8/9", 1, 0); break;
+			case 7: text = ostrcat(text, "3/5", 1, 0); break;
+			case 8: text = ostrcat(text, "4/5", 1, 0); break;
+			case 9: text = ostrcat(text, "9/10", 1, 0); break;
+			case 10: text = ostrcat(text, "NONE", 1, 0); break;
+			case 11: text = ostrcat(text, "6/7", 1, 0); break;
 			default: text = ostrcat(text, "unknown", 1, 0);
 		}
 	}
 	else if(flag == 1)
-	{
-		text = ostrcat(text, "AUTO\n1/2\n2/3\n3/4\n3/5\n4/5\n5/6\n6/7\n7/8\n8/9\n9/10", 1, 0);
-#if DVB_API_VERSION <= 3
-		text = ostrcat(text, "\n1/4\n1/3\n2/5", 1, 0);
-#endif
-	}
+		text = ostrcat(text, "AUTO\n1/2\n2/3\n3/4\n5/6\n7/8\n8/9\n3/5\n4/5\n9/10\nNONE\n6/7", 1, 0);
 	else if(flag == 2)
-	{
-		text = ostrcat(text, oitoa(FEC_AUTO), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(FEC_1_2), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(FEC_2_3), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(FEC_3_4), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(FEC_3_5), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(FEC_4_5), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(FEC_5_6), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(FEC_6_7), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(FEC_7_8), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(FEC_8_9), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(FEC_9_10), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-#if DVB_API_VERSION <= 3
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(FEC_1_4), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(FEC_1_3), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(FEC_2_5), 1, 1);
-#endif
+		text = ostrcat(text, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11", 1, 0);
 	}
 
 	return text;
@@ -161,23 +121,16 @@ char* transpondergetinversionstr(struct transponder* node, int flag)
 
 		switch(node->inversion)
 		{	
-			case INVERSION_OFF: text = ostrcat(text, "Off", 1, 0); break;
-			case INVERSION_ON: text = ostrcat(text, "On", 1, 0); break;
-			case INVERSION_AUTO: text = ostrcat(text, "Auto", 1, 0); break;
+			case 0: text = ostrcat(text, "Off", 1, 0); break;
+			case 1: text = ostrcat(text, "On", 1, 0); break;
+			case 2: text = ostrcat(text, "Auto", 1, 0); break;
 			default: text = ostrcat(text, "unknown", 1, 0);
 		}
 	}
 	else if(flag == 1)
 		text = ostrcat(text, "Off\nON\nAuto", 1, 0);
 	else if(flag == 2)
-	{
-		text = ostrcat(text, oitoa(INVERSION_OFF), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(INVERSION_ON), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(INVERSION_AUTO), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-	}
+		text = ostrcat(text, "0\n1\n2", 1, 0);
 
 	return text;
 }
@@ -223,57 +176,23 @@ char* transpondergetmodulationstr(struct transponder* node, int flag)
 
 		switch(node->modulation)
 		{
-			case QPSK: text = ostrcat(text, "QPSK", 1, 0); break;
-			case QAM_16: text = ostrcat(text, "QAM_16", 1, 0); break;
-			case QAM_32: text = ostrcat(text, "QAM_32", 1, 0); break;
-			case QAM_64: text = ostrcat(text, "QAM_64", 1, 0); break;
-			case QAM_128: text = ostrcat(text, "QAM_128", 1, 0); break;
-			case QAM_256: text = ostrcat(text, "QAM_256", 1, 0); break;
-			case VSB_8: text = ostrcat(text, "VSB_8", 1, 0); break;
-			case VSB_16: text = ostrcat(text, "VSB_16", 1, 0); break;
-#if DVB_API_VERSION >= 5
-			case PSK_8: text = ostrcat(text, "PSK8", 1, 0); break;
-#else
-			case QPSK_S2: text = ostrcat(text, "QPSK_S2", 1, 0); break;
-			case PSK8: text = ostrcat(text, "PSK8", 1, 0); break;
-#endif
+			case 0: text = ostrcat(text, "QAM AUTO", 1, 0); break;
+			case 1: text = ostrcat(text, "QPSK", 1, 0); break;
+			case 2: text = ostrcat(text, "PSK 8", 1, 0); break;
+			case 3: text = ostrcat(text, "QAM 16", 1, 0); break;
+			case 4: text = ostrcat(text, "QAM 32", 1, 0); break;
+			case 5: text = ostrcat(text, "QAM 64", 1, 0); break;
+			case 6: text = ostrcat(text, "QAM 128", 1, 0); break;
+			case 7: text = ostrcat(text, "QAM 256", 1, 0); break;
+			case 8: text = ostrcat(text, "VSB 8", 1, 0); break;
+			case 9: text = ostrcat(text, "VSB 16", 1, 0); break;
 			default: text = ostrcat(text, "unknown", 1, 0);
 		}
 	}
 	else if(flag == 1)
-	{
-		text = ostrcat(text, "QPSK\nQAM_16\nQAM_32\nQAM_64\nQAM_128\nQAM_256\nVSB_8\nVSB_16\nPSK8", 1, 0);
-#if DVB_API_VERSION < 5
-		text = ostrcat(text, "\nQPSK_S2", 1, 0);
-#endif
-
-	}
+		text = ostrcat(text, "QAM AUTO\nQPSK\nPSK 8\nQAM 16\nQAM 32\nQAM 64\nQAM 128\nQAM 256\nVSB 8\nVSB 16", 1, 0);
 	else if(flag == 2)
-	{
-		text = ostrcat(text, oitoa(QPSK), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(QAM_16), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(QAM_32), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(QAM_64), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(QAM_128), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(QAM_256), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(VSB_8), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(VSB_16), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-#if DVB_API_VERSION >= 5
-		text = ostrcat(text, oitoa(PSK_8), 1, 1);
-#else
-		text = ostrcat(text, oitoa(PSK8), 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, oitoa(QPSK_S2), 1, 1);
-#endif
-	}
+		text = ostrcat(text, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9", 1, 0);
 
 	return text;
 }

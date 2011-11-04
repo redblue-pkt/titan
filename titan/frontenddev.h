@@ -1126,20 +1126,45 @@ void fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 	cmdseq.props = p;
 
 	//convert transponderlist for dvbapi5
-	int fec = tpnode->fec;
 	int system = tpnode->system;
 	if(system == 0) system = SYS_DVBS;
-	if(system == 1) 
-	{
-		system = SYS_DVBS2;
-		if(fec == 9) fec = 11;
-	}
+	if(system == 1) system = SYS_DVBS2;
+
+	int fec = tpnode->fec;
+	if(fec == 0) fec = FEC_AUTO;
+	if(fec == 1) fec = FEC_1_2;
+	if(fec == 2) fec = FEC_2_3;
+	if(fec == 3) fec = FEC_3_4;
+	if(fec == 4) fec = FEC_5_6;
+	if(fec == 5) fec = FEC_7_8;
+	if(fec == 6) fec = FEC_8_9;
+	if(fec == 7) fec = FEC_3_5;
+	if(fec == 8) fec = FEC_4_5;
+	if(fec == 9) fec = FEC_9_10;
+	if(fec == 10) fec = FEC_NONE;
+	if(fec == 11) fec = FEC_6_7;
+
+	int pilot = tpnode->pilot;
+	if(pilot == 0) pilot = PILOT_OFF;
+	if(pilot == 1) pilot = PILOT_ON;
+	if(pilot == 2) pilot = PILOT_AUTO;
+
+	int rolloff = tpnode->rolloff;
+	if(rolloff == 0) rolloff = ROLLOFF_35;
+	if(rolloff == 1) rolloff = ROLLOFF_25;
+	if(rolloff == 2) rolloff = ROLLOFF_20;
 
 	int modulation = tpnode->modulation;
-	if(modulation == 0) modulation = QPSK;
+	if(modulation == 0) modulation = QAM_AUTO;
 	if(modulation == 1) modulation = QPSK;
 	if(modulation == 2) modulation = PSK_8;
 	if(modulation == 3) modulation = QAM_16;
+	if(modulation == 4) modulation = QAM_32;
+	if(modulation == 5) modulation = QAM_64;
+	if(modulation == 6) modulation = QAM_128;
+	if(modulation == 7) modulation = QAM_256;
+	if(modulation == 8) modulation = VSB_8;
+	if(modulation == 9) modulation = VSB_16;
 
 	p[0].cmd = DTV_CLEAR;
 	p[1].cmd = DTV_DELIVERY_SYSTEM,	p[1].u.data = system;
@@ -1150,8 +1175,8 @@ void fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 	p[6].cmd = DTV_INVERSION,	p[6].u.data = (fe_spectral_inversion_t) tpnode->inversion;
 	if(system == SYS_DVBS2)
 	{
-		p[7].cmd = DTV_ROLLOFF,		p[7].u.data = tpnode->rolloff;
-		p[8].cmd = DTV_PILOT,		p[8].u.data = tpnode->pilot;
+		p[7].cmd = DTV_ROLLOFF,		p[7].u.data = rolloff;
+		p[8].cmd = DTV_PILOT,		p[8].u.data = pilot;
 		p[9].cmd = DTV_TUNE;
 		cmdseq.num = 10;
 	}
@@ -1161,7 +1186,7 @@ void fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 		cmdseq.num = 8;
 	}
 
-	debug(200, "frequ=%d, inversion=%d, pilot=%d, rolloff=%d, fec=%d, sr=%d, modulation=%d, system=%d", node->feloffrequency, tpnode->inversion, tpnode->pilot, tpnode->rolloff, fec, tpnode->symbolrate, modulation, system);
+	debug(200, "frequ=%d, inversion=%d, pilot=%d, rolloff=%d, fec=%d, sr=%d, modulation=%d, system=%d", node->feloffrequency, tpnode->inversion, pilot, rolloff, fec, tpnode->symbolrate, modulation, system);
 #else
 	struct dvb_frontend_parameters tuneto;
 	fe_spectral_inversion_t inversion = tpnode->inversion;
