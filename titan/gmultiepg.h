@@ -96,6 +96,7 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 		chnode = *pchnode;
 		if(chnode != NULL)
 		{
+			chnode->bgspace = 1;
 			chnode->height = height;
 			changetext(chnode, tmpchannel->name);
 			epgnode = getepgakt(tmpchannel);
@@ -171,10 +172,16 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 				chnode1 = *pchnode1;
 				if(chnode1 != NULL)
 				{
+					(*aktline)++;
+					if(tmpchannel == aktchannel)
+						listbox->aktline = *aktline;
 					if(gridbr == 0) chnode1->type = GRIDBR;
 					gridbr = 1;
 					chnode1->height = height;
-					chnode1->deaktivcol = 1;
+					chnode1->handle = (char*)tmpchannel;
+					chnode1->bgspace = 1;
+					if(nottuneable == 1)
+						chnode1->deaktivcol = convertcol("deaktivcol");
 				}
 			}
 
