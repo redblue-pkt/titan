@@ -10,7 +10,7 @@ if [ -z "$MEDIAFW" ]; then
 	exit 1
 fi
 
-cd "$HOME"/flashimg/source.titan/titan/plugins
+cd "$HOME"/flashimg/source.titan/plugins
 
 if [ $MEDIAFW = 1 ]; then
 	eplayer=EPLAYER3
@@ -52,8 +52,8 @@ compile()
 	echo "[titan]--------------------------------------------------------"
 }
 
-rm -rf `find "$HOME"/flashimg/source.titan/titan/plugins -type f -name "*.o"`
-rm -rf `find "$HOME"/flashimg/source.titan/titan/plugins -type f -name "*.so"`
+rm -rf `find "$HOME"/flashimg/source.titan/plugins -type f -name "*.o"`
+rm -rf `find "$HOME"/flashimg/source.titan/plugins -type f -name "*.so"`
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Make networkbrowser"
@@ -62,7 +62,7 @@ cd networkbrowser/netlib
 cp Makefile."$STM".sh4 Makefile
 make clean
 make
-cd "$HOME"/flashimg/source.titan/titan/plugins
+cd "$HOME"/flashimg/source.titan/plugins
 echo "[titan]--------------------------------------------------------"
 echo "[titan] networkbrowser done"
 echo "[titan]--------------------------------------------------------"
