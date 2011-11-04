@@ -47,7 +47,7 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] get plugin skins"
 echo "[titan]--------------------------------------------------------"
 
-cp -a "$HOME"/flashimg/source.titan/skins/[^.]* "$HOME"/flashimg/source.titan/titan/plugins
+cp -a "$HOME"/flashimg/source.titan/skins/[^.]* "$HOME"/flashimg/source.titan/plugins
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] cleanup"
@@ -56,8 +56,8 @@ echo "[titan]--------------------------------------------------------"
 cd "$HOME"/flashimg/source.titan/titan
 rm -rf titan
 rm -rf titan.o
-rm -rf `find "$HOME"/flashimg/source.titan/titan/plugins -type f -name "*.o"`
-rm -rf `find "$HOME"/flashimg/source.titan/titan/plugins -type f -name "*.so"`
+rm -rf `find "$HOME"/flashimg/source.titan/plugins -type f -name "*.o"`
+rm -rf `find "$HOME"/flashimg/source.titan/plugins -type f -name "*.so"`
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] cleanup done"
@@ -111,7 +111,7 @@ fi
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Make Plugins"
 echo "[titan]--------------------------------------------------------"
-"$HOME"/flashimg/source.titan/titan/plugins/makesh4.sh "$STM" "$MEDIAFW"
+"$HOME"/flashimg/source.titan/plugins/makesh4.sh "$STM" "$MEDIAFW"
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Plugins done"
 echo "[titan]--------------------------------------------------------"
@@ -133,14 +133,14 @@ mkdir -p "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins
 mkdir -p "$HOME"/flashimg/BUILD/titan/usr/local/bin
 mkdir -p "$HOME"/flashimg/BUILD/titan/sbin
 
-PLIST=`ls -1 "$HOME"/flashimg/source.titan/titan/plugins`
+PLIST=`ls -1 "$HOME"/flashimg/source.titan/plugins`
 
 for ROUND in $PLIST;do
 	if [ "$ROUND" == "makesh4.sh" ]; then
 		skiped=1
 	else
 		echo "[titan] copy plugins/$ROUND" 
-		cp -a "$HOME"/flashimg/source.titan/titan/plugins/"$ROUND" "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins
+		cp -a "$HOME"/flashimg/source.titan/plugins/"$ROUND" "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins
 	fi
 done
 
