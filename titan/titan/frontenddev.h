@@ -1141,9 +1141,8 @@ void fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 	if(fec == 7) fec = FEC_3_5;
 	if(fec == 8) fec = FEC_4_5;
 	if(fec == 9) fec = FEC_9_10;
-	if(fec == 10) fec = FEC_NONE;
-	if(fec == 11) fec = FEC_6_7;
-
+	if(fec == 15) fec = FEC_NONE;
+	
 	int pilot = tpnode->pilot;
 	if(pilot == 0) pilot = PILOT_OFF;
 	if(pilot == 1) pilot = PILOT_ON;
@@ -1159,12 +1158,6 @@ void fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 	if(modulation == 1) modulation = QPSK;
 	if(modulation == 2) modulation = PSK_8;
 	if(modulation == 3) modulation = QAM_16;
-	if(modulation == 4) modulation = QAM_32;
-	if(modulation == 5) modulation = QAM_64;
-	if(modulation == 6) modulation = QAM_128;
-	if(modulation == 7) modulation = QAM_256;
-	if(modulation == 8) modulation = VSB_8;
-	if(modulation == 9) modulation = VSB_16;
 
 	p[0].cmd = DTV_CLEAR;
 	p[1].cmd = DTV_DELIVERY_SYSTEM,	p[1].u.data = system;
@@ -1235,6 +1228,24 @@ void fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 		debug(1000, "out-> NULL detect");
 		return;
 	}
+	
+	int fec = tpnode->fec;
+	if(fec == 0) fec = FEC_AUTO;
+	if(fec == 1) fec = FEC_1_2;
+	if(fec == 2) fec = FEC_2_3;
+	if(fec == 3) fec = FEC_3_4;
+	if(fec == 4) fec = FEC_5_6;
+	if(fec == 5) fec = FEC_7_8;
+	if(fec == 6) fec = FEC_8_9;
+	if(fec == 15) fec = FEC_NONE;
+
+	int modulation = tpnode->modulation;
+	if(modulation == 0) modulation = QAM_AUTO;
+	if(modulation == 1) modulation = QAM_16;
+	if(modulation == 2) modulation = QAM_32;
+	if(modulation == 3) modulation = QAM_64;
+	if(modulation == 4) modulation = QAM_128;
+	if(modulation == 5) modulation = QAM_256;
 
 #if DVB_API_VERSION >= 5
 	struct dtv_property p[8];
@@ -1244,14 +1255,14 @@ void fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 	p[0].cmd = DTV_CLEAR;
 	p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = tpnode->system;
 	p[2].cmd = DTV_FREQUENCY,	p[2].u.data = tpnode->frequency;
-	p[3].cmd = DTV_MODULATION,	p[3].u.data = tpnode->modulation;
+	p[3].cmd = DTV_MODULATION,	p[3].u.data = modulation;
 	p[4].cmd = DTV_SYMBOL_RATE,	p[4].u.data = tpnode->symbolrate;
 	p[5].cmd = DTV_INVERSION,	p[5].u.data = (fe_spectral_inversion_t) tpnode->inversion;
-	p[6].cmd = DTV_INNER_FEC,	p[6].u.data = tpnode->fec;
+	p[6].cmd = DTV_INNER_FEC,	p[6].u.data = fec;
 	p[7].cmd = DTV_TUNE;
 	cmdseq.num = 8;
 
-	debug(200, "frequ=%d, inversion=%d, fec=%d, sr=%d, modulation=%d, system=%d", tpnode->frequency, tpnode->inversion, tpnode->fec, tpnode->symbolrate, tpnode->modulation, tpnode->system);
+	debug(200, "frequ=%d, inversion=%d, fec=%d, sr=%d, modulation=%d, system=%d", tpnode->frequency, tpnode->inversion, fec, tpnode->symbolrate, modulation, tpnode->system);
 #else
 	struct dvb_frontend_parameters tuneto;
 
@@ -1261,7 +1272,7 @@ void fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 	tuneto.u.qam.fec_inner = tpnode->fec;
 	tuneto.u.qam.modulation = tpnode->modulation;
 
-	debug(200, "frequ=%d, inversion=%d, fec=%d, sr=%d, modulation=%d", tpnode->frequency, tpnode->inversion, tpnode->fec, tpnode->symbolrate, tpnode->modulation);
+	debug(200, "frequ=%d, inversion=%d, fec=%d, sr=%d, modulation=%d", tpnode->frequency, tpnode->inversion, fec, tpnode->symbolrate, modulation);
 #endif
 
 	fediscard(node);
@@ -1290,16 +1301,57 @@ void fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		debug(1000, "out-> NULL detect");
 		return;
 	}
+	
+	int fec = tpnode->fec;
+	if(fec == 0) fec = FEC_1_2;
+	if(fec == 1) fec = FEC_2_3;
+	if(fec == 2) fec = FEC_3_4;
+	if(fec == 3) fec = FEC_5_6;
+	if(fec == 4) fec = FEC_7_8;
+	if(fec == 5) fec = FEC_AUTO;
+	
+	int modulation = tpnode->modulation;
+	if(modulation == 0) modulation = QPSK;
+	if(modulation == 1) modulation = QAM_16;
+	if(modulation == 2) modulation = QAM_64;
+	if(modulation == 3) modulation = QAM_AUTO;
+	
+/*
+	int bandwidth = tpnode->bandwidth;
+	if(bandwidth == 0) bandwidth = BANDWIDTH_8MHZ;
+	if(bandwidth == 1) bandwidth = BANDWIDTH_7MHZ;
+	if(bandwidth == 2) bandwidth = BANDWIDTH_6MHZ;
+	if(bandwidth == 3) bandwidth = BANDWIDTH_AUTO;
+	
+	int transmission = tpnode->transmission;
+	if(transmission == 0) transmission = TRANSMISSIONMODE_2K;
+	if(transmission == 1) transmission = TRANSMISSIONMODE_8K;
+	if(transmission == 2) transmission = TRANSMISSIONMODE_AUTO;
+	
+	int guardinterval = tpnode->guardinterval;
+	if(guardinterval == 0) guardinterval = GUARDINTERVAL_1_32;
+	if(guardinterval == 1) guardinterval = GUARDINTERVAL_1_16;
+	if(guardinterval == 2) guardinterval = GUARDINTERVAL_1_8;
+	if(guardinterval == 3) guardinterval = GUARDINTERVAL_1_4;
+	if(guardinterval == 4) guardinterval = GUARDINTERVAL_AUTO;
+	
+	int hierarchy = tpnode->hierarchy;
+	if(hierarchy == 0) hierarchy = HIERARCHY_NONE;
+	if(hierarchy == 1) hierarchy = HIERARCHY_1;
+	if(hierarchy == 2) hierarchy = HIERARCHY_2;
+	if(hierarchy == 3) hierarchy = HIERARCHY_4;
+	if(hierarchy == 4) hierarchy = HIERARCHY_NONE;
+*/
 
 	tuneto.frequency = tpnode->frequency;
 	tuneto.inversion = tpnode->inversion;
-	tuneto.u.ofdm.bandwidth = 0;
+	//tuneto.u.ofdm.bandwidth = bandwidth;
 	tuneto.u.ofdm.code_rate_HP = 0;
 	tuneto.u.ofdm.code_rate_LP = 0;
 	tuneto.u.ofdm.constellation = 0;
-	tuneto.u.ofdm.transmission_mode = 0;
-	tuneto.u.ofdm.guard_interval = 0;
-	tuneto.u.ofdm.hierarchy_information = 0;
+	//tuneto.u.ofdm.transmission_mode = transmission;
+	//tuneto.u.ofdm.guard_interval = guardinterval;
+	//tuneto.u.ofdm.hierarchy_information = hierarchy;
 
 	fediscard(node);
 
