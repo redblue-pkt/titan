@@ -340,7 +340,7 @@ char* transpondergetmodulationstr(struct transponder* node, int flag)
 		{
 			switch(node->modulation)
 			{
-				case 0: text = ostrcat(text, "QAM AUTO", 1, 0); break;
+				case 0: text = ostrcat(text, "AUTO", 1, 0); break;
 				case 1: text = ostrcat(text, "QPSK", 1, 0); break;
 				case 2: text = ostrcat(text, "PSK 8", 1, 0); break;
 				case 3: text = ostrcat(text, "QAM 16", 1, 0); break;
@@ -375,7 +375,7 @@ char* transpondergetmodulationstr(struct transponder* node, int flag)
 	else if(flag == 1)
 	{
 		if(node->fetype == FE_QPSK)
-			text = ostrcat(text, "QAM AUTO\nQPSK\nPSK 8\nQAM 16", 1, 0);
+			text = ostrcat(text, "AUTO\nQPSK\nPSK 8\nQAM 16", 1, 0);
 		if(node->fetype == FE_QAM)
 			text = ostrcat(text, "QAM AUTO\nQAM 16\nQAM 32\nQAM 64\nQAM 128\nQAM 256", 1, 0);
 		if(node->fetype == FE_OFDM)
