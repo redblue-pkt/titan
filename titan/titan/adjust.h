@@ -24,7 +24,6 @@ void screenadjust()
 	struct skin* recsplitsize = getscreennode(adjust, "recsplitsize");
 	struct skin* forerun = getscreennode(adjust, "recforerun");
 	struct skin* overrun = getscreennode(adjust, "recoverrun");
-	struct skin* pmtmode = getscreennode(adjust, "pmtmode");
 	struct skin* skip13 = getscreennode(adjust, "skip13");
 	struct skin* skip46 = getscreennode(adjust, "skip46");
 	struct skin* skip79 = getscreennode(adjust, "skip79");
@@ -108,10 +107,6 @@ void screenadjust()
 	changeinput(overrun, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n15\n20");
 	setchoiceboxselection(overrun, getconfig("recoverrun", NULL));
 
-	addchoicebox(pmtmode, "0", _("no"));
-	addchoicebox(pmtmode, "1", _("yes"));
-	setchoiceboxselection(pmtmode, getconfig("pmtmode", NULL));
-
 	changeinput(skip13, "15\n20\n30\n45\n60\n90\n120\n180\n300\n600\n900\n1200");
 	setchoiceboxselection(skip13, getconfig("skip13", NULL));
 
@@ -151,8 +146,6 @@ void screenadjust()
 			addconfigscreencheck("poweraktion", poweraktion, "0");
 			addconfigscreencheck("recforerun", forerun, "0");
 			addconfigscreencheck("recoverrun", overrun, "0");
-			addconfigscreencheck("pmtmode", pmtmode, "0");
-			status.pmtmode = getconfigint("pmtmode", NULL);
 			if(starthttp->ret != NULL)
 			{
 				if(ostrcmp(getconfig("httpdstart", NULL), starthttp->ret) != 0)

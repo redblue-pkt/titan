@@ -436,6 +436,10 @@ void updatevfd()
 			case 3: // only time
 				tmpstr = ostrcat(tmpstr, gettime("%H:%M"), 1, 1);
 				break;
+				
+			case 4: // only time (small)
+				tmpstr = ostrcat(tmpstr, gettime("%H%M"), 1, 1);
+				break;
 
 			default: // only channel name
 				if(status.aktservice->channel != NULL)
