@@ -55,6 +55,19 @@ start:
 				tmp->type = TEXTBOX;
 				tmp->handle = (void*)dvbnode;
 			}
+			tmp = addlistbox(moduleconfig, listbox, tmp, 1);
+			if(tmp != NULL)
+			{
+				tmpstr = ostrcat(tmpstr, "camtype_", 1, 0);
+				tmpstr = ostrcat(tmpstr, oitoa(i - 1), 1, 1);
+				tmp->type = CHOICEBOX;
+				changetext(tmp, "Module Type");
+				addchoicebox(tmp, "0", _("Single Service"));
+				addchoicebox(tmp, "1", _("Multiple Service"));
+				setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
+				changename(tmp, tmpstr);
+				free(tmpstr); tmpstr = NULL;
+			}
 		}
 		dvbnode = dvbnode->next;
 	}
@@ -62,12 +75,26 @@ start:
 	drawscreen(moduleconfig, 0);
 	addscreenrc(moduleconfig, listbox);
 
+	tmp = listbox->select;
 	while(1)
 	{
+		if(listbox->select != NULL && listbox->select->type == CHOICEBOX)
+			addscreenrc(moduleconfig, tmp);
 		rcret = waitrc(moduleconfig, 2000, 0);
+		tmp = listbox->select;
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcok", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			tmp = listbox;
+			while(tmp != NULL)
+			{
+				if(ostrncmp("camtype_", tmp->name, 8) == 0)
+					addconfigscreencheck(tmp->name, tmp, "0");
+				tmp = tmp->next;
+			}
+			break;
+		}
 		if(listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcred", NULL))
 		{
 			if(((struct dvbdev*)listbox->select->handle)->caslot != NULL)
