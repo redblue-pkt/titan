@@ -27,6 +27,7 @@ void screenvfdisplay()
 	addchoicebox(vfdnotstandby, "1", _("channel + time"));
 	addchoicebox(vfdnotstandby, "2", _("time + channel"));
 	addchoicebox(vfdnotstandby, "3", _("time"));
+	addchoicebox(vfdnotstandby, "4", _("time small"));
 	setchoiceboxselection(vfdnotstandby, getconfig("vfdisplay", NULL));
 
 	addchoicebox(vfdstandby, "0", _("time"));
