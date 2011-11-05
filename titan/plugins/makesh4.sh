@@ -28,6 +28,7 @@ fi
 compile()
 {
 	cd $1
+	ln -s ../../titan ../titan
 	echo "[titan]--------------------------------------------------------"
 	echo "[titan] Make Plugin $1"
 	echo "[titan]--------------------------------------------------------"
@@ -46,6 +47,7 @@ compile()
 	fi
 
 	$HOME/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-strip $2.so
+	rm ../titan
 	cd ..
 	echo "[titan]--------------------------------------------------------"
 	echo "[titan] Plugin $1 done"
