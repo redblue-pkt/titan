@@ -1127,37 +1127,57 @@ void fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 
 	//convert transponderlist for dvbapi5
 	int system = tpnode->system;
-	if(system == 0) system = SYS_DVBS;
-	if(system == 1) system = SYS_DVBS2;
+	switch(system)
+	{
+		case 0: system = SYS_DVBS; break;
+		case 1: system = SYS_DVBS2; break;
+		default: system = SYS_DVBS; break;
+	}
 
 	int fec = tpnode->fec;
-	if(fec == 0) fec = FEC_AUTO;
-	if(fec == 1) fec = FEC_1_2;
-	if(fec == 2) fec = FEC_2_3;
-	if(fec == 3) fec = FEC_3_4;
-	if(fec == 4) fec = FEC_5_6;
-	if(fec == 5) fec = FEC_7_8;
-	if(fec == 6) fec = FEC_8_9;
-	if(fec == 7) fec = FEC_3_5;
-	if(fec == 8) fec = FEC_4_5;
-	if(fec == 9) fec = FEC_9_10;
-	if(fec == 15) fec = FEC_NONE;
+	switch(fec)
+	{
+		case 0: fec = FEC_AUTO; break;
+		case 1: fec = FEC_1_2; break;
+		case 2: fec = FEC_2_3; break;
+		case 3: fec = FEC_3_4; break;
+		case 4: fec = FEC_5_6; break;
+		case 5: fec = FEC_7_8; break;
+		case 6: fec = FEC_8_9; break;
+		case 7: fec = FEC_3_5; break;
+		case 8: fec = FEC_4_5; break;
+		case 9: fec = FEC_9_10; break;
+		case 15: fec = FEC_NONE; break;
+		default: fec = FEC_AUTO; break;
+	}
 	
 	int pilot = tpnode->pilot;
-	if(pilot == 0) pilot = PILOT_OFF;
-	if(pilot == 1) pilot = PILOT_ON;
-	if(pilot == 2) pilot = PILOT_AUTO;
+	switch(pilot)
+	{
+		case 0: pilot = PILOT_OFF; break;
+		case 1: pilot = PILOT_ON; break;
+		case 2: pilot = PILOT_AUTO; break;
+		default: pilot = PILOT_AUTO; break;
+	}
 
 	int rolloff = tpnode->rolloff;
-	if(rolloff == 0) rolloff = ROLLOFF_35;
-	if(rolloff == 1) rolloff = ROLLOFF_25;
-	if(rolloff == 2) rolloff = ROLLOFF_20;
+	switch(rolloff)
+	{
+		case 0: rolloff = ROLLOFF_35; break;
+		case 1: rolloff = ROLLOFF_25; break;
+		case 2: rolloff = ROLLOFF_20; break;
+		default: rolloff = ROLLOFF_35; break;
+	}
 
 	int modulation = tpnode->modulation;
-	if(modulation == 0) modulation = QAM_AUTO;
-	if(modulation == 1) modulation = QPSK;
-	if(modulation == 2) modulation = PSK_8;
-	if(modulation == 3) modulation = QAM_16;
+	switch(modulation)
+	{
+		case 0: modulation = QPSK; break;
+		case 1: modulation = QPSK; break;
+		case 2: modulation = PSK_8; break;
+		case 3: modulation = QAM_16; break;
+		default: modulation = QPSK; break;
+	}
 
 	p[0].cmd = DTV_CLEAR;
 	p[1].cmd = DTV_DELIVERY_SYSTEM,	p[1].u.data = system;
@@ -1230,22 +1250,30 @@ void fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 	}
 	
 	int fec = tpnode->fec;
-	if(fec == 0) fec = FEC_AUTO;
-	if(fec == 1) fec = FEC_1_2;
-	if(fec == 2) fec = FEC_2_3;
-	if(fec == 3) fec = FEC_3_4;
-	if(fec == 4) fec = FEC_5_6;
-	if(fec == 5) fec = FEC_7_8;
-	if(fec == 6) fec = FEC_8_9;
-	if(fec == 15) fec = FEC_NONE;
+	switch(fec)
+	{
+		case 0: fec = FEC_AUTO; break;
+		case 1: fec = FEC_1_2; break;
+		case 2: fec = FEC_2_3; break;
+		case 3: fec = FEC_3_4; break;
+		case 4: fec = FEC_5_6; break;
+		case 5: fec = FEC_7_8; break;
+		case 6: fec = FEC_8_9; break;
+		case 15: fec = FEC_NONE; break;
+		default: fec = FEC_AUTO; break;
+	}
 
 	int modulation = tpnode->modulation;
-	if(modulation == 0) modulation = QAM_AUTO;
-	if(modulation == 1) modulation = QAM_16;
-	if(modulation == 2) modulation = QAM_32;
-	if(modulation == 3) modulation = QAM_64;
-	if(modulation == 4) modulation = QAM_128;
-	if(modulation == 5) modulation = QAM_256;
+	switch(modulation)
+	{
+		case 0: modulation = QAM_AUTO; break;
+		case 1: modulation = QAM_16; break;
+		case 2: modulation = QAM_32; break;
+		case 3: modulation = QAM_64; break;
+		case 4: modulation = QAM_128; break;
+		case 5: modulation = QAM_256; break;
+		default: modulation = QAM_AUTO; break;
+	}
 
 #if DVB_API_VERSION >= 5
 	struct dtv_property p[8];
@@ -1303,44 +1331,68 @@ void fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	}
 	
 	int fec = tpnode->fec;
-	if(fec == 0) fec = FEC_1_2;
-	if(fec == 1) fec = FEC_2_3;
-	if(fec == 2) fec = FEC_3_4;
-	if(fec == 3) fec = FEC_5_6;
-	if(fec == 4) fec = FEC_7_8;
-	if(fec == 5) fec = FEC_AUTO;
+	switch(fec)
+	{
+		case 0: fec = FEC_1_2; break;
+		case 1: fec = FEC_2_3; break;
+		case 2: fec = FEC_3_4; break;
+		case 3: fec = FEC_5_6; break;
+		case 4: fec = FEC_7_8; break;
+		case 5: fec = FEC_AUTO; break;
+		default: fec = FEC_AUTO; break;
+	}
 	
 	int modulation = tpnode->modulation;
-	if(modulation == 0) modulation = QPSK;
-	if(modulation == 1) modulation = QAM_16;
-	if(modulation == 2) modulation = QAM_64;
-	if(modulation == 3) modulation = QAM_AUTO;
+	switch(modulation)
+	{
+		case 0: modulation = QPSK; break;
+		case 1: modulation = QAM_16; break;
+		case 2: modulation = QAM_64; break;
+		case 3: modulation = QAM_AUTO; break;
+		default: modulation = QAM_AUTO; break;
+	}
 	
 /*
 	int bandwidth = tpnode->bandwidth;
-	if(bandwidth == 0) bandwidth = BANDWIDTH_8MHZ;
-	if(bandwidth == 1) bandwidth = BANDWIDTH_7MHZ;
-	if(bandwidth == 2) bandwidth = BANDWIDTH_6MHZ;
-	if(bandwidth == 3) bandwidth = BANDWIDTH_AUTO;
+	switch(bandwidth)
+	{
+		case 0: bandwidth = BANDWIDTH_8MHZ; break;
+		case 1: bandwidth = BANDWIDTH_7MHZ; break;
+		case 2: bandwidth = BANDWIDTH_6MHZ; break;
+		case 3: bandwidth = BANDWIDTH_AUTO; break;
+		default: modulation = BANDWIDTH_AUTO; break;
+	}
 	
 	int transmission = tpnode->transmission;
-	if(transmission == 0) transmission = TRANSMISSIONMODE_2K;
-	if(transmission == 1) transmission = TRANSMISSIONMODE_8K;
-	if(transmission == 2) transmission = TRANSMISSIONMODE_AUTO;
+	switch(transmission)
+	{
+		case 0: transmission = TRANSMISSIONMODE_2K; break;
+		case 1: transmission = TRANSMISSIONMODE_8K; break;
+		case 2: transmission = TRANSMISSIONMODE_AUTO; break;
+		default: transmission = TRANSMISSIONMODE_AUTO; break;
+	}
 	
 	int guardinterval = tpnode->guardinterval;
-	if(guardinterval == 0) guardinterval = GUARDINTERVAL_1_32;
-	if(guardinterval == 1) guardinterval = GUARDINTERVAL_1_16;
-	if(guardinterval == 2) guardinterval = GUARDINTERVAL_1_8;
-	if(guardinterval == 3) guardinterval = GUARDINTERVAL_1_4;
-	if(guardinterval == 4) guardinterval = GUARDINTERVAL_AUTO;
+	switch(guardinterval)
+	{
+		case 0: guardinterval = GUARDINTERVAL_1_32; break;
+		case 1: guardinterval = GUARDINTERVAL_1_16; break;
+		case 2: guardinterval = GUARDINTERVAL_1_8; break;
+		case 3: guardinterval = GUARDINTERVAL_1_4; break;
+		case 4: guardinterval = GUARDINTERVAL_AUTO; break;
+		default: guardinterval = GUARDINTERVAL_AUTO; break;
+	}
 	
 	int hierarchy = tpnode->hierarchy;
-	if(hierarchy == 0) hierarchy = HIERARCHY_NONE;
-	if(hierarchy == 1) hierarchy = HIERARCHY_1;
-	if(hierarchy == 2) hierarchy = HIERARCHY_2;
-	if(hierarchy == 3) hierarchy = HIERARCHY_4;
-	if(hierarchy == 4) hierarchy = HIERARCHY_NONE;
+	switch(guardinterval)
+	{
+		case 0: hierarchy = HIERARCHY_NONE;
+		case 1: hierarchy = HIERARCHY_1;
+		case 2: hierarchy = HIERARCHY_2;
+		case 3: hierarchy = HIERARCHY_4;
+		case 4: hierarchy = HIERARCHY_AUTO;
+		default: hierarchy = HIERARCHY_AUTO; break;
+	}
 */
 
 	tuneto.frequency = tpnode->frequency;
