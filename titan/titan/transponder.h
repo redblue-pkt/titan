@@ -264,7 +264,7 @@ char* transpondergetfecstr(struct transponder* node, int flag)
 			text = ostrcat(text, "0\n1\n2\n3\n4\n5\n6\n7", 1, 0);
 		if(node->fetype == FE_OFDM)
 			text = ostrcat(text, "0\n1\n2\n3\n4\n5", 1, 0);
-	
+	}
 
 	return text;
 }
