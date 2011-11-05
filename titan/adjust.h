@@ -27,6 +27,7 @@ void screenadjust()
 	struct skin* skip13 = getscreennode(adjust, "skip13");
 	struct skin* skip46 = getscreennode(adjust, "skip46");
 	struct skin* skip79 = getscreennode(adjust, "skip79");
+	struct skin* camtype = getscreennode(adjust, "camtype");
 	
 	struct skin* tmp = NULL;
 
@@ -114,7 +115,11 @@ void screenadjust()
 	setchoiceboxselection(skip46, getconfig("skip46", NULL));
 
 	changeinput(skip79, "15\n20\n30\n45\n60\n90\n120\n180\n300\n600\n900\n1200");
-	setchoiceboxselection(skip79, getconfig("skip79", NULL)); 	
+	setchoiceboxselection(skip79, getconfig("skip79", NULL));
+	
+	addchoicebox(camtype, "0", _("Single Service"));
+	addchoicebox(camtype, "1", _("Multi Service"));
+	setchoiceboxselection(camtype, getconfig("camtype", NULL));
 
 	drawscreen(adjust, 0);
 	addscreenrc(adjust, listbox);
@@ -146,6 +151,7 @@ void screenadjust()
 			addconfigscreencheck("poweraktion", poweraktion, "0");
 			addconfigscreencheck("recforerun", forerun, "0");
 			addconfigscreencheck("recoverrun", overrun, "0");
+			addconfigscreencheck("camtype", camtype, "0");
 			if(starthttp->ret != NULL)
 			{
 				if(ostrcmp(getconfig("httpdstart", NULL), starthttp->ret) != 0)
