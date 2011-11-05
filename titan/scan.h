@@ -854,10 +854,10 @@ void screenscanconfig(int flag)
 	scanchangesat(sat, tpnode, feshortname);
 
 	//system
-	tmpstr = transpondergetsystemstr(NULL, 1);
+	tmpstr = transpondergetsystemstr(tpnode, 1);
 	changeinput(system, tmpstr);
 	free(tmpstr); tmpstr = NULL;
-	tmpstr = transpondergetsystemstr(NULL, 2);
+	tmpstr = transpondergetsystemstr(tpnode, 2);
 	changechoiceboxvalue(system, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	if(tpnode != NULL)
@@ -877,10 +877,10 @@ void screenscanconfig(int flag)
 	free(tmpstr); tmpstr = NULL;
 
 	//inversion
-	tmpstr = transpondergetinversionstr(NULL, 1);
+	tmpstr = transpondergetinversionstr(tpnode, 1);
 	changeinput(inversion, tmpstr);
 	free(tmpstr); tmpstr = NULL;
-	tmpstr = transpondergetinversionstr(NULL, 2);
+	tmpstr = transpondergetinversionstr(tpnode, 2);
 	changechoiceboxvalue(inversion, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	if(tpnode != NULL)
@@ -900,10 +900,10 @@ void screenscanconfig(int flag)
 	free(tmpstr); tmpstr = NULL;
 
 	//polarization
-	tmpstr = transpondergetpolarizationstr(NULL, 1);
+	tmpstr = transpondergetpolarizationstr(tpnode, 1);
 	changeinput(polarization, tmpstr);
 	free(tmpstr); tmpstr = NULL;
-	tmpstr = transpondergetpolarizationstr(NULL, 2);
+	tmpstr = transpondergetpolarizationstr(tpnode, 2);
 	changechoiceboxvalue(polarization, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	if(tpnode != NULL)
@@ -914,10 +914,10 @@ void screenscanconfig(int flag)
 	}
 
 	//fec
-	tmpstr = transpondergetfecstr(NULL, 1);
+	tmpstr = transpondergetfecstr(tpnode, 1);
 	changeinput(fec, tmpstr);
 	free(tmpstr); tmpstr = NULL;
-	tmpstr = transpondergetfecstr(NULL, 2);
+	tmpstr = transpondergetfecstr(tpnode, 2);
 	changechoiceboxvalue(fec, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	if(tpnode != NULL)
@@ -928,10 +928,10 @@ void screenscanconfig(int flag)
 	}
 
 	//modulation
-	tmpstr = transpondergetmodulationstr(NULL, 1);
+	tmpstr = transpondergetmodulationstr(tpnode, 1);
 	changeinput(modulation, tmpstr);
 	free(tmpstr); tmpstr = NULL;
-	tmpstr = transpondergetmodulationstr(NULL, 2);
+	tmpstr = transpondergetmodulationstr(tpnode, 2);
 	changechoiceboxvalue(modulation, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	if(tpnode != NULL)
@@ -942,10 +942,10 @@ void screenscanconfig(int flag)
 	}
 
 	//rolloff
-	tmpstr = transpondergetrolloffstr(NULL, 1);
+	tmpstr = transpondergetrolloffstr(tpnode, 1);
 	changeinput(rolloff, tmpstr);
 	free(tmpstr); tmpstr = NULL;
-	tmpstr = transpondergetrolloffstr(NULL, 2);
+	tmpstr = transpondergetrolloffstr(tpnode, 2);
 	changechoiceboxvalue(rolloff, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	if(tpnode != NULL)
@@ -956,10 +956,10 @@ void screenscanconfig(int flag)
 	}
 
 	//pilot
-	tmpstr = transpondergetpilotstr(NULL, 1);
+	tmpstr = transpondergetpilotstr(tpnode, 1);
 	changeinput(pilot, tmpstr);
 	free(tmpstr); tmpstr = NULL;
-	tmpstr = transpondergetpilotstr(NULL, 2);
+	tmpstr = transpondergetpilotstr(tpnode, 2);
 	changechoiceboxvalue(pilot, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	if(tpnode != NULL)
