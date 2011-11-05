@@ -2,7 +2,7 @@
 <node pic=dummy_dont_change_or_add_png_file fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox  posx=center posy=center width=90% height=90% />
 </screen>
 
-<screen fontcol=fontcol title="System - Flashupdate (online)" titlealign=center name=aafpanel_system_update_flash_online_menu hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=95% height=90% bordercol=bordercol bordersize=1 bgcol=bgcol transparent=40>
+<screen fontcol=fontcol title="System - Flashupdate (online)" titlealign=center name=aafpanel_system_update_flash_online_menu hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=95% height=90% bordercol=bordercol bordersize=2 bgcol=bgcol transparent=40>
 <node name=aafpanel_filelistpath valign=middle posy=1 bordercol=bordercol bordersize=1 width=100% height=25>
 <node hspace=10 pic=skin/folder.png textposx=30 fontsize=30 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=aafpanel_filelist posy=30 width=100% height=80%>
 <node name=b1 text=cancel halign=center valign=center bordercol=red bordersize=4 bordertype=2 posx=20% posy=90% width=150 height=30/>
@@ -10,7 +10,7 @@
 <node name=b3 text=update halign=center valign=center bordercol=yellow bordersize=4 bordertype=2 posx=60% posy=90% width=150 height=30/>
 </screen>
 
-<screen fontcol=fontcol title="System - Flashupdate (tmp)" titlealign=center name=aafpanel_system_update_flash_tmp_menu hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=95% height=90% bordercol=bordercol bordersize=1 bgcol=bgcol transparent=40>
+<screen fontcol=fontcol title="System - Flashupdate (tmp)" titlealign=center name=aafpanel_system_update_flash_tmp_menu hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=95% height=90% bordercol=bordercol bordersize=2 bgcol=bgcol transparent=40>
 <node name=aafpanel_filelistpath valign=middle posy=1 bordercol=bordercol bordersize=1 width=100% height=25>
 <node hspace=10 pic=skin/folder.png textposx=30 fontsize=30 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=aafpanel_filelist posy=30 width=100% height=80%>
 <node name=b1 text=cancel halign=center valign=center bordercol=red bordersize=4 bordertype=2 posx=20% posy=90% width=150 height=30/>
@@ -18,7 +18,7 @@
 <node name=b3 text=update halign=center valign=center bordercol=yellow bordersize=4 bordertype=2 posx=60% posy=90% width=150 height=30/>
 </screen>
 
-<screen fontcol=fontcol title="System - Usbupdate (online)" titlealign=center name=aafpanel_system_update_usb_online_menu hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=95% height=90% bordercol=bordercol bordersize=1 bgcol=bgcol transparent=40>
+<screen fontcol=fontcol title="System - Usbupdate (online)" titlealign=center name=aafpanel_system_update_usb_online_menu hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=95% height=90% bordercol=bordercol bordersize=2 bgcol=bgcol transparent=40>
 <node name=aafpanel_filelistpath valign=middle posy=1 bordercol=bordercol bordersize=1 width=100% height=25>
 <node hspace=10 pic=skin/folder.png textposx=30 fontsize=30 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=aafpanel_filelist posy=30 width=100% height=60%>
 <node bordercol=bordercol scrollbar=auto type=listbox posx=25% posy=75% name=listbox  width=50% height=40>
@@ -28,7 +28,7 @@
 <node name=b3 text=update halign=center valign=center bordercol=yellow bordersize=4 bordertype=2 posx=60% posy=90% width=150 height=30/>
 </screen>
 
-<screen fontcol=fontcol title="System - Usbupdate (tmp)" titlealign=center name=aafpanel_system_update_usb_tmp_menu hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=95% height=90% bordercol=bordercol bordersize=1 bgcol=bgcol transparent=40>
+<screen fontcol=fontcol title="System - Usbupdate (tmp)" titlealign=center name=aafpanel_system_update_usb_tmp_menu hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=95% height=90% bordercol=bordercol bordersize=2 bgcol=bgcol transparent=40>
 <node name=aafpanel_filelistpath valign=middle posy=1 bordercol=bordercol bordersize=1 width=100% height=25>
 <node hspace=10 pic=skin/folder.png textposx=30 fontsize=30 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=aafpanel_filelist posy=30 width=100% height=60%>
 <node bordercol=bordercol scrollbar=auto type=listbox posx=25% posy=75% name=listbox  width=50% height=40>
@@ -38,7 +38,7 @@
 <node name=b3 text=update halign=center valign=center bordercol=yellow bordersize=4 bordertype=2 posx=60% posy=90% width=150 height=30/>
 </screen>
 
-<screen fontcol=fontcol title="AAF Panel" titlealign=center name=aafpanel_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=60% bordercol=bordercol bordersize=1 bgcol=bgcol transparent=40>
+<screen fontcol=fontcol title="AAF Panel" titlealign=center name=aafpanel_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=60% bordercol=bordercol bordersize=2 bgcol=bgcol transparent=40>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=100%>
 <node pic="%pluginpath%/aafpanel/skin/aafpanel_softcam_panel.png" textposx=120 valign=middle name=aafpanel_softcam text="Softcam Panel" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node pic=%pluginpath%/aafpanel/skin/aafpanel_setup.png textposx=120 valign=middle name=aafpanel_settings text="Settings" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
@@ -48,7 +48,7 @@
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
-<screen fontcol=fontcol title="Settings" titlealign=center name=aafpanel_settings_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=80% bordercol=bordercol bordersize=1 bgcol=bgcol transparent=40>
+<screen fontcol=fontcol title="Settings" titlealign=center name=aafpanel_settings_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=80% bordercol=bordercol bordersize=2 bgcol=bgcol transparent=40>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=85%>
 <node pic=%pluginpath%/aafpanel/skin/aafpanel_automount.png textposx=120 valign=middle name=aafpanel_settings_automount text="Automount" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node pic=%pluginpath%/aafpanel/skin/aafpanel_autostart.png textposx=120 valign=middle name=aafpanel_settings_autostart text="Autostart" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
@@ -61,7 +61,7 @@
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
-<screen fontcol=fontcol title="System" titlealign=center name=aafpanel_system_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=85% bordercol=bordercol bordersize=1 bgcol=bgcol transparent=40>
+<screen fontcol=fontcol title="System" titlealign=center name=aafpanel_system_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=85% bordercol=bordercol bordersize=2 bgcol=bgcol transparent=40>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=85%>
 <node pic=%pluginpath%/aafpanel/skin/aafpanel_aaf.png textposx=120 valign=middle name=aafpanel_system_aafwizard text="AAF Wizard" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node pic=%pluginpath%/aafpanel/skin/aafpanel_info.png textposx=120 valign=middle name=aafpanel_system_imageinfo text="Image Information" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
@@ -74,7 +74,7 @@
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
-<screen fontcol=fontcol title="Extensions" titlealign=center name=aafpanel_extensions_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=60% bordercol=bordercol bordersize=1 bgcol=bgcol transparent=40>
+<screen fontcol=fontcol title="Extensions" titlealign=center name=aafpanel_extensions_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=60% bordercol=bordercol bordersize=2 bgcol=bgcol transparent=40>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=85%>
 <node pic=%pluginpath%/aafpanel/skin/aafpanel_plugins.png textposx=120 valign=middle name=aafpanel_extensions_menu text="Extensions Menu" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node pic="%pluginpath%/aafpanel/skin/aafpanel_tmp_ipk_install.png" textposx=120 valign=middle name=aafpanel_extensions_ipkinstall text="IPK install (online)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
@@ -83,7 +83,7 @@
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
-<screen fontcol=fontcol title="Info" titlealign=center name=aafpanel_infos_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=85% bordercol=bordercol bordersize=1 bgcol=bgcol transparent=40>
+<screen fontcol=fontcol title="Info" titlealign=center name=aafpanel_infos_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=85% bordercol=bordercol bordersize=2 bgcol=bgcol transparent=40>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=85%>
 <node pic=%pluginpath%/aafpanel/skin/aafpanel_infos.png textposx=120 valign=middle name=aafpanel_infos_aaf text="AAF Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node pic=%pluginpath%/aafpanel/skin/aafpanel_default.png textposx=120 valign=middle name=aafpanel_infos_default text="default" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
@@ -96,7 +96,7 @@
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
-<screen fontcol=fontcol title="Sysinfo" titlealign=center name=aafpanel_sysinfos_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=75% bordercol=bordercol bordersize=1 bgcol=bgcol transparent=40>
+<screen fontcol=fontcol title="Sysinfo" titlealign=center name=aafpanel_sysinfos_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=75% bordercol=bordercol bordersize=2 bgcol=bgcol transparent=40>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=85%>
 <node pic=%pluginpath%/aafpanel/skin/aafpanel_cpu.png textposx=120 valign=middle name=aafpanel_sysinfos_cpu text="CPU" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node pic=%pluginpath%/aafpanel/skin/aafpanel_meminfo.png textposx=120 valign=middle name=aafpanel_sysinfos_mem text="Memory" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
@@ -108,7 +108,7 @@
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
-<screen fontcol=fontcol title="Autostart" titlealign=center name=aafpanel_autostart_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=75% bordercol=bordercol bordersize=1 bgcol=bgcol transparent=40>
+<screen fontcol=fontcol title="Autostart" titlealign=center name=aafpanel_autostart_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=80% bordercol=bordercol bordersize=2 bgcol=bgcol transparent=40>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=85%>
 <node pic=%pluginpath%/aafpanel/skin/aafpanel_default.png textposx=120 valign=middle name=aafpanel_autostart_default text="Default" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node pic="%pluginpath%/aafpanel/skin/aafpanel_audiovideosat_config.png" textposx=120 valign=middle name=aafpanel_autostart_audiovideo text="Audio / Video / Sat" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
@@ -119,7 +119,7 @@
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
-<screen fontcol=fontcol title="Softcam Panel" titlealign=center name=aafpanel_softcam hspace=1 vspace=1 fontsize=30 title="" posx=center posy=center width=60% height=60% bordercol=bordercol bordersize=1 bgcol=bgcol transparent=40>
+<screen fontcol=fontcol title="Softcam Panel" titlealign=center name=aafpanel_softcam hspace=1 vspace=1 fontsize=30 title="" posx=center posy=center width=60% height=60% bordercol=bordercol bordersize=2 bgcol=bgcol transparent=40>
 <node name=menutitle text="Softcam auswahl:" posx=1% posy=1% width=250 height=30 fontcol=fontcol/>
 <node name=ecminfo type=TEXTBOX wrap=yes posx=55% posy=40 width=340 height=300 bordercol=red bordersize=0 fontsize=30 fontcol=fontcol/>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=50% height=50% posx=1% posy=10%>
@@ -129,24 +129,24 @@
 <node name=b4 text=Activate halign=center valign=middle bordercol=blue bordersize=4 bordertype=2 posx=71% posy=89% width=150 height=30/>
 </screen>
 
-<screen font=tuxtxt fontcol=fontcol title="" titlealign=center name=aafpanel_infos hspace=30 vspace=30 fontsize=30 posx=center posy=center width=95% height=95% bordercol=bordercol bordersize=1 bgcol=bgcol transparent=40>
-<node name=info type=textbox wrap=no scrollbar=auto posx=0 posy=0 width=100% height=100% bordercol=red bordersize=0 fontsize=20 fontcol=fontcol/>
+<screen font=tuxtxt fontcol=fontcol title="" titlealign=center name=aafpanel_infos hspace=30 vspace=30 fontsize=30 posx=center posy=center width=95% height=95% bordercol=bordercol bordersize=2 bgcol=bgcol transparent=40>
+<node name=info type=textbox wrap=no scrollbar=auto posx=0 posy=0 width=100% height=100% bordercol=bordercol bordersize=0 fontsize=20 fontcol=fontcol/>
 </screen>
 
-<screen fontcol=fontcol valign=bottom titlealign=center name="aafpanel_config" hspace=15 vspace=15 fontsize=30 title="" posx=center posy=center width=80% height=90% bordercol=bordercol bordersize=1 bgcol=bgcol>
+<screen fontcol=fontcol valign=bottom titlealign=center name="aafpanel_config" hspace=15 vspace=15 fontsize=30 title="" posx=center posy=center width=80% height=90% bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox posy=1 width=100% height=-35>
 <node name=b1 text=SAVE halign=center valign=middle bordercol=green bordersize=4 bordertype=2 posx=30% posy=90% width=150 height=30/>
 <node name=b2 text=EXIT halign=center valign=middle bordercol=white bordersize=4 bordertype=2 posx=55% posy=90% width=150 height=30/>
 </screen>
 
-<screen fontcol=fontcol title="Backup / Restore Settings" titlealign=center name=aafpanel_system_restore hspace=1 vspace=1 fontsize=30 posx=center posy=center width=90% height=90% bordercol=bordercol bordersize=1 bgcol=bgcol>
+<screen fontcol=fontcol title="Backup / Restore Settings" titlealign=center name=aafpanel_system_restore hspace=1 vspace=1 fontsize=30 posx=center posy=center width=90% height=90% bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node bordercol=bordercol scrollbar=auto wrap=yes type=textbox name=info width=100% height=90% posx=0% posy=10%>
 <node name=b1 text=Cancel halign=center valign=middle bordercol=red bordersize=4 bordertype=2 posx=18% posy=90% width=150 height=30/>
 <node name=b2 text=Restore halign=center valign=middle bordercol=green bordersize=4 bordertype=2 posx=39% posy=90% width=150 height=30/>
 <node name=b3 text=Backup halign=center valign=middle bordercol=yellow bordersize=4 bordertype=2 posx=60% posy=90% width=150 height=30/>
 </screen>
 
-<screen fontcol=fontcol title="OverClock Settings" titlealign=center name=aafpanel_settings_overclocking hspace=1 vspace=1 fontsize=30 posx=center posy=center width=90% height=90% bordercol=bordercol bordersize=1 bgcol=bgcol>
+<screen fontcol=fontcol title="OverClock Settings" titlealign=center name=aafpanel_settings_overclocking hspace=1 vspace=1 fontsize=30 posx=center posy=center width=90% height=90% bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node fontsize=32 bordercol=bordercol scrollbar=auto type=listbox name=listbox posy=50 width=55% height=-35>
 <node bordercol=bordercol scrollbar=auto fontsize=25 fontcol=yellow type=textbox name=label1 width=40% height=90% posx=60% posy=10%>
 <node name=b1 text=Cancel halign=center valign=middle bordercol=red bordersize=4 bordertype=2 posx=18% posy=90% width=150 height=30/>
@@ -154,7 +154,7 @@
 <node name=b3 text=Test frequency halign=center valign=middle bordercol=yellow bordersize=4 bordertype=2 posx=60% posy=90% width=150 height=30/>
 </screen>
 
-<screen fontcol=fontcol title="Create Backup" titlealign=center name=aafpanel_system_backup hspace=1 vspace=1 fontsize=30 posx=center posy=center width=90% height=90% bordercol=bordercol bordersize=1 bgcol=bgcol>
+<screen fontcol=fontcol title="Create Backup" titlealign=center name=aafpanel_system_backup hspace=1 vspace=1 fontsize=30 posx=center posy=center width=90% height=90% bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node bordercol=bordercol scrollbar=auto wrap=yes type=textbox name=info width=90% height=60% posx=10% posy=10%>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% posy=70% height=10%>
 <node name=listfield type=choicebox parent=listbox valign=middle posx=65% text="Select backup: " bordercol=bordercol bordersize=1 width=30% height=30>
