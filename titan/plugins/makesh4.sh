@@ -11,6 +11,7 @@ if [ -z "$MEDIAFW" ]; then
 fi
 
 cd "$HOME"/flashimg/source.titan/plugins
+ln -s "$HOME"/flashimg/source.titan/titan "$HOME"/flashimg/source.titan/plugins/titan
 
 if [ $MEDIAFW = 1 ]; then
 	eplayer=EPLAYER3
@@ -28,7 +29,6 @@ fi
 compile()
 {
 	cd $1
-	ln -s ../../titan ../titan
 	echo "[titan]--------------------------------------------------------"
 	echo "[titan] Make Plugin $1"
 	echo "[titan]--------------------------------------------------------"
@@ -47,7 +47,6 @@ compile()
 	fi
 
 	$HOME/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-strip $2.so
-	rm ../titan
 	cd ..
 	echo "[titan]--------------------------------------------------------"
 	echo "[titan] Plugin $1 done"
