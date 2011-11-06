@@ -10,7 +10,7 @@ int recordcheckcrypt(struct dvbdev* fenode, int servicetype)
 
 	while(servicenode != NULL)
 	{
-		if(fenode == servicenode->fedev && servicenode->channel != NULL && servicenode->channel->crypt == 1)
+		if(fenode == servicenode->fedev && servicenode->channel != NULL && servicenode->channel->crypt > 0)
 		{
 			if(servicenode->type == RECORDDIRECT || servicenode->type == RECORDTIMER) return 1;
 			if(servicetype == RECORDSTREAM && servicenode->type == RECORDTIMESHIFT) return 1;

@@ -170,7 +170,7 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 		ostrcatbig(buf, epgnode->title, maxlen, pos);
 
 		max = (epgnode->endtime - epgnode->starttime) / 60;
-		akt = (epgnode->endtime - (time(NULL) - 60)) / 60;
+		akt = (time(NULL) - epgnode->starttime) / 60;
 		if(max < 0) max = 0;
 		if(akt < 0) akt = 0;
 		snprintf(buf1, MINMALLOC, " (%ld from %ld min, %d%%)", akt, max, proz);
