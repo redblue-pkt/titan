@@ -1,4 +1,3 @@
-
 msgid "--- SD resolution"
 
 msgstr "--- SD Auflösung"
@@ -94,6 +93,10 @@ msgstr "Aktivieren"
 msgid "Adapter Settings"
 
 msgstr "Adapter Einstellungen"
+
+msgid "ADD ALL"
+
+msgstr "Alle hinzufügen"
 
 msgid "add service"
 
@@ -275,13 +278,17 @@ msgid "Blue Button"
 
 msgstr "Blaue Taste"
 
+msgid "bootlogos"
+
+msgstr "Bootlogos"
+
 msgid "bootlogo"
 
-msgstr "Startbild"
+msgstr "Bootlogo"
 
-msgid "Bootlogo"        
+msgid "Bootlogo"
 
-msgstr "Startbild"
+msgstr "Bootlogo"
 
 msgid "BootResolution"
 
@@ -355,6 +362,10 @@ msgid "Can't start timeshift play !"
 
 msgstr "Timeshift kann nicht gestartet werden"
 
+msgid "CHANGE"
+
+msgstr "Ändern"
+
 msgid "Channels A-Z"
 
 msgstr "Sender A-Z"
@@ -365,7 +376,7 @@ msgstr "Senderliste bearbeiten"
 
 msgid "Channel EPG"
 
-msgstr "Sender  EPG"
+msgstr "Sender EPG"
 
 msgid "Channel Search"
 
@@ -430,6 +441,10 @@ msgstr "Common Interface"
 msgid "Contrast"
 
 msgstr "Kontrast"
+
+msgid "Configure"
+
+msgstr "Festplatte konfigurieren"
 
 msgid "copy service"
 
@@ -557,7 +572,7 @@ msgstr "Soll der AAF-Assistent gestartet werden? Die Box wird neu gestartet und 
 
 msgid "Don't clear TV on zap (only with fastzap)"
 
-msgstr "TV Bild beim Umschalten nicht löschen (nur mit fastzap)"
+msgstr "Wenn Fastzap aktiv TV Bild beim umschalten nicht löschen"
 
 msgid "download error"
 
@@ -629,7 +644,7 @@ msgstr "EPG Einstellungen"
 
 msgid "Epgfreespace (KB)"
 
-msgstr "freier EPG Speicher"
+msgstr "Freier EPG Speicher"
 
 msgid "Error file not supported"
 
@@ -677,7 +692,7 @@ msgstr "Lüftersteuerung"
 
 msgid "Fast DiSEqC"
 
-msgstr "schnelles DiSEqC" 
+msgstr "schnelles DiSEqC"
 
 msgid "Fast Text Render"
 
@@ -689,7 +704,7 @@ msgstr "schnell"
 
 msgid "Faststop"
 
-msgstr "Schnellstop"
+msgstr "Faststop"
 
 msgid "Fastzap"
 
@@ -761,7 +776,7 @@ msgstr "Gefundene - Daten:"
 
 msgid "Found Radio:"
 
-msgstr "Gefundene -  Radio:"
+msgstr "Gefundene - Radio:"
 
 msgid "Found TV:"
 
@@ -773,7 +788,7 @@ msgstr "Französisch"
 
 msgid "free space"
 
-msgstr "freier Speicher"
+msgstr "Freier Speicher"
 
 msgid "Frequency"
 
@@ -885,7 +900,7 @@ msgstr "I"
 
 msgid "Image Information"
 
-msgstr "Image  Informationen"
+msgstr "Image Informationen"
 
 msgid "Imdb Directory"
 
@@ -898,6 +913,10 @@ msgstr "erhöhte Spannung"
 msgid "Info"
 
 msgstr "Info"
+
+msgid "infos"
+
+msgstr "Infos"
 
 msgid "Infobar Auto hide on call"
 
@@ -1145,7 +1164,7 @@ msgstr "Menüliste"
 
 msgid "MENUPROTECT"
 
-msgstr "Menüschutz"   
+msgstr "Menüschutz"
 
 msgid "Message"
 
@@ -1278,6 +1297,10 @@ msgstr "NFS-Server"
 msgid "nfs server"
 
 msgstr "NFS-Server"
+
+msgid "No Live Stream running"
+
+msgstr "Kein Stream aktiv"
 
 msgid "No"
 
@@ -1526,11 +1549,11 @@ msgstr "Polarisation:"
 msgid "Policy"
 
 msgstr "Regelwerk"
-   
+
 msgid "Polish"
 
 msgstr "Polnisch"
-     
+
 msgid "portmap"
 
 msgstr "Port Weiterleitung"
@@ -1715,9 +1738,13 @@ msgid "Repeat-On"
 
 msgstr "Repeat-Ein"
 
+msgid "RESET"
+
+msgstr "Reset"
+
 msgid "RESTORE ERROR"
 
-msgstr "!!!Fehler bei Wiederherstellung!!!"
+msgstr "Fehler bei der Wiederherstellung!"
 
 msgid "Restore Settings"
 
@@ -2033,7 +2060,7 @@ msgstr "Größe"
 
 msgid "Skin Adjust"
 
-msgstr "Skin Einstellung"
+msgstr "Skin Einstellungen"
 
 msgid "Skin Select"
 
@@ -2049,15 +2076,15 @@ msgstr "Skins"
 
 msgid "Skip 1/3"
 
-msgstr "Sprungzeit auf den Tasten 1+3"
+msgstr "Sprungzeit auf den Tasten 1+3 in Sekunden"
 
 msgid "Skip 4/6"
 
-msgstr "Sprungzeit auf den Tasten 4+6"
+msgstr "Sprungzeit auf den Tasten 4+6 in Sekunden"
 
 msgid "Skip 7/9"
 
-msgstr "Sprungzeit auf den Tasten 7+9"
+msgstr "Sprungzeit auf den Tasten 7+9 in Sekunden"
 
 msgid "small"
 
@@ -2202,6 +2229,14 @@ msgstr "Swap-Netzwerk"
 msgid "swapscreensaver"
 
 msgstr "Swap-Bildschirmschoner"
+
+msgid "swapskins"
+
+msgstr "Swap-Skins"
+
+msgid "swapsystem"
+
+msgstr "Swap-System"
 
 msgid "swapsize"
 
@@ -2393,7 +2428,7 @@ msgstr "Tuner:"
 
 msgid "tuner_sleep_off"
 
-msgstr "Tuner im Ruhezustand aus" 
+msgstr "Tuner im Ruhezustand aus"
 
 msgid "Tunerconfig"
 
@@ -2641,4 +2676,4 @@ msgstr "z"
 
 msgid "Z"
 
-msgstr "Z"
+msgstr "Z" 
