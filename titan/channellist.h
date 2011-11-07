@@ -11,9 +11,9 @@ int selectchannel(struct skin* listbox)
 	listbox->select = NULL;
 
 	if(status.servicetype == 0)
-		chnode = getchannel(getconfigint("serviceid", NULL), getconfigint("transponderid", NULL));
+		chnode = getchannel(getconfigint("serviceid", NULL), getconfiglu("transponderid", NULL));
 	else
-		chnode = getchannel(getconfigint("rserviceid", NULL), getconfigint("rtransponderid", NULL));
+		chnode = getchannel(getconfigint("rserviceid", NULL), getconfiglu("rtransponderid", NULL));
 
 	if(chnode == NULL)
 	{

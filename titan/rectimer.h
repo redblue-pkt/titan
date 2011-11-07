@@ -983,8 +983,8 @@ void screenrectimerext(struct rectimer* node, int flag)
 					addconfigtmp("channellist", tmpchannellist);
 					if(tmpchnode != NULL)
 					{
-               				 	addconfiginttmp("serviceid", tmpchnode->serviceid);
-              				  	addconfiginttmp("transponderid", tmpchnode->transponderid);
+						addconfiginttmp("serviceid", tmpchnode->serviceid);
+						addconfiglutmp("transponderid", tmpchnode->transponderid);
 					}
 				}
      				else
@@ -993,7 +993,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 					if(tmpchnode != NULL)
 					{
 						addconfiginttmp("rserviceid", tmpchnode->serviceid);
-						addconfiginttmp("rtransponderid", tmpchnode->transponderid);
+						addconfiglutmp("rtransponderid", tmpchnode->transponderid);
 					}
 				}
 
