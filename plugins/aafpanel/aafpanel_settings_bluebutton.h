@@ -12,6 +12,7 @@ void screenaafpanel_settings_bluebutton()
 	tmpstr = ostrcat(tmpstr, "Softcam Panel\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, "Extentions List\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, "Multi EPG\n", 1, 0);
+	tmpstr = ostrcat(tmpstr, "Graphic Multi EPG\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, "Sleep Timer\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, "Child Protection\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, "TV / Radio Switch\n", 1, 0);
