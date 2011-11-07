@@ -99,6 +99,18 @@ msgid "add service"
 
 msgstr "Sender hinzufügen"
 
+msgid "add recording (stop after current event)"
+
+msgstr "Aufnahme hinzufügen (diese Sendung)"
+
+msgid "add recording (indefinitely)"
+
+msgstr "Aufnahme hinzufügen (unbegrenzt)"
+
+msgid "add recording (enter duration)"
+
+msgstr "Aufnahme hinzufügen (Länge eingeben)"
+
 msgid "ADD"
 
 msgstr "Hinzufügen"
@@ -665,7 +677,7 @@ msgstr "Lüftersteuerung"
 
 msgid "Fast DiSEqC"
 
-msgstr "schnelles Diseqc"
+msgstr "schnelles DiSEqC" 
 
 msgid "Fast Text Render"
 
@@ -709,7 +721,7 @@ msgstr "Datei"
 
 msgid "filealtresult"
 
-msgstr "alternative Datei Resultat"
+msgstr "alternatives Datei Resultat"
 
 msgid "Filelist-Mode"
 
@@ -745,19 +757,19 @@ msgstr "Festplatte formatieren"
 
 msgid "Found Data:"
 
-msgstr "Gefundene Daten:"
+msgstr "Gefundene - Daten:"
 
 msgid "Found Radio:"
 
-msgstr "Gefundenes Radio:"
+msgstr "Gefundene -  Radio:"
 
 msgid "Found TV:"
 
-msgstr "Gefundenes TV:"
+msgstr "Gefundene - TV:"
 
 msgid "French"
 
-msgstr "Fransösisch"
+msgstr "Französisch"
 
 msgid "free space"
 
@@ -777,15 +789,15 @@ msgstr "Freitag"
 
 msgid "fsckrecord"
 
-msgstr "Dateiprüfung Aufnahme-Partition"
+msgstr "Dateisystemprüfung Aufnahme-Partition"
 
 msgid "fsckroot"
 
-msgstr "Dateiprüfung Root-Partition"
+msgstr "Dateisystemprüfung Root-Partition"
 
 msgid "fsckswap"
 
-msgstr "Dateiprüfung SWAP-Partition"
+msgstr "Dateisystemprüfung SWAP-Partition"
 
 msgid "ftdi"
 
@@ -945,11 +957,11 @@ msgstr "IP Adresse"
 
 msgid "Ipk Install Info"
 
-msgstr "Info zur Ipk installation"
+msgstr "Info zur IPK installation"
 
 msgid "Ipk Install - select file"
 
-msgstr "Ipk installieren - Datei wählen"
+msgstr "IPK installieren - Datei wählen"
 
 msgid "IPK install (online)"
 
@@ -961,7 +973,7 @@ msgstr "IPK löschen"
 
 msgid "Ipk Remove Info"
 
-msgstr "Info zur Ipk deinstallation"
+msgstr "Info zur IPK Deinstallation"
 
 msgid "IPK tmp (tmp)"
 
@@ -970,6 +982,10 @@ msgstr "IPK installieren aus /tmp"
 msgid "Is this Videomode ok ?"
 
 msgstr "Ist dieser Videomodus ok?"
+
+msgid "Italian"
+
+msgstr "Italienisch"
 
 msgid "iwatch"
 
@@ -1001,7 +1017,7 @@ msgstr "Tastatur"
 
 msgid "keymaps"
 
-msgstr "Ferbedienungseinstellungen"
+msgstr "Fernbedienungseinstellungen"
 
 msgid "l"
 
@@ -1089,7 +1105,7 @@ msgstr "Manuelle Suche"
 
 msgid "Manuel Scan"
 
-msgstr "Manueller Sendersuchlauf"
+msgstr "Sendersuchlauf"
 
 msgid "maxdelay"
 
@@ -1259,6 +1275,10 @@ msgid "nfsserver"
 
 msgstr "NFS-Server"
 
+msgid "nfs server"
+
+msgstr "NFS-Server"
+
 msgid "No"
 
 msgstr "Nein"
@@ -1305,7 +1325,7 @@ msgstr "Ok = Wiederherstellung starten"
 
 msgid "oldaudiofw"
 
-msgstr "oldaudio Firmware"
+msgstr "Alte Audio Firmware"
 
 msgid "Old Audiofw"
 
@@ -1313,7 +1333,7 @@ msgstr "Alte Audio Firmware"
 
 msgid "oldvideofw"
 
-msgstr "oldvideo Firmware"
+msgstr "Alte Video Firmware"
 
 msgid "ONID:"
 
@@ -1433,7 +1453,7 @@ msgstr "PIN Einstellungen"
 
 msgid "Pin"
 
-msgstr "Anschluss ode "
+msgstr "Pin"
 
 msgid "PIN:"
 
@@ -1529,7 +1549,7 @@ msgstr "Ausschalten"
 
 msgid "Poweroff Timer"
 
-msgstr "Ausschalt Timer"
+msgstr "Ausschalttimer"
 
 msgid "Poweroff"
 
@@ -1677,11 +1697,11 @@ msgstr "Max. Aufnahme Sektoren"
 
 msgid "record_split_size"
 
-msgstr "Größe der geplitteten Datei"
+msgstr "Größe der geteilten Dateien"
 
 msgid "record_split_type"
 
-msgstr "Aufnahme Teilung"
+msgstr "Typ der Aufnahmeteilung"
 
 msgid "Red Button"
 
@@ -1819,6 +1839,10 @@ msgid "sambaserver"
 
 msgstr "Samba Server"
 
+msgid "samba server"
+
+msgstr "Samba Server"
+
 msgid "Sat Config"
 
 msgstr "Satelliten Einstellung"
@@ -1871,13 +1895,17 @@ msgid "Scan is not allowed if record"
 
 msgstr "Während der Aufnahme ist keine Suche möglich"
 
+msgid "scan wlan"
+
+msgstr "Suche WLAN"
+
 msgid "scartonstandby"
 
 msgstr "SCART im Standby"
 
 msgid "Scart-Recorder"
 
-msgstr "Scart-Recorder"
+msgstr "SCART-Recorder"
 
 msgid "Screensaver Adjust"
 
@@ -1934,6 +1962,10 @@ msgstr "Senderinfo"
 msgid "set startchannel"
 
 msgstr "Startsender einstellen"
+
+msgid "Settings succesfull saved"
+
+msgstr "Einstellungen erfolgreich gespeichert"
 
 msgid "Settings backup/restore"
 
@@ -2329,7 +2361,7 @@ msgstr "Tone Modus"
 
 msgid "Top"
 
-msgstr "Oben"
+msgstr "Top (Prozesse)"
 
 msgid "Transponder:"
 
@@ -2409,7 +2441,7 @@ msgstr "UNC:"
 
 msgid "Uncommitted Diseqc command"
 
-msgstr "Uncommitted Diseqc command"
+msgstr "Uncommitted DiSEqC command"
 
 msgid "unknown"
 
