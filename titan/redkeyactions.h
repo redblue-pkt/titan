@@ -27,38 +27,32 @@ void screenredkeyactions()
 			if(startplugin != NULL){
 				startplugin();
 			}
-			free(redkey); redkey = NULL;
 			return;
 		}
 	}
 	else if(ostrcmp(redkey, "Auto Resolution (default)") == 0)
 	{
 		bluekeyactions_setres();
-		free(redkey); redkey = NULL;
 		return;
 	}
 	else if(ostrcmp(redkey, "Extentions List") == 0)
 	{
 		redkeyactions_extensions();
-		free(redkey); redkey = NULL;
 		return;
 	}
 	else if(ostrcmp(redkey, "Multi EPG") == 0)
 	{
 		screenmultiepg(NULL, NULL);
-		free(redkey); redkey = NULL;
 		return;
 	}
 	else if(ostrcmp(redkey, "Sleep Timer") == 0)
 	{
 		screenpowerofftimer();
-		free(redkey); redkey = NULL;
 		return;
 	}
 	else if(ostrcmp(redkey, "Child Protection") == 0)
 	{
 		screenpin();
-		free(redkey); redkey = NULL;
 		return;
 	}
 			
