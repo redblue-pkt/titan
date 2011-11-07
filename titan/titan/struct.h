@@ -110,6 +110,7 @@
 #define MAXHTMLLINE 300
 #define LISTHASHSIZE 27
 #define MAXCASESSION 16
+#define MAXCASERVICE 20
 
 //CA Defines
 #define T_SB 0x80		//sb (h<--m)
@@ -733,15 +734,22 @@ struct service
 	int recdmxstart;
 	int recdstfd;
 	int recsrcfd;
-	int camsockfd;
-	//ca is send to module
-	int capmtsend;
 	time_t recendtime;
 	size_t reclastsync;
 	off64_t rectotal;
 	int reccount;
 	char* recname;
 	struct service *next;
+};
+
+struct caservice
+{
+	struct service* service;
+	struct channel* channel;
+	int count;
+	//0-10000 filedescriptor
+	//10000- camslot
+	int camsockfd;
 };
 
 struct stimerthread

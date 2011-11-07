@@ -1,6 +1,89 @@
 #ifndef CAM_H
 #define CAM_H
 
+void debugcaservice()
+{
+	int i = 0;
+
+	for(i = 0; i < MAXCASERVICE; i++)
+	{
+		if(caservice[i].service != NULL)
+		{
+			printf("number: %d\n", i);
+			if(caservice[i].channel != NULL)
+				printf("channel: %s\n", caservice[i].channel->name);
+			printf("camsockfd: %d\n", caservice[i].camsockfd);
+			printf("count: %d\n", caservice[i].count);
+		}
+	}
+}
+
+int caserviceadd(struct service* snode)
+{
+	int i = 0, first = -1;
+
+	if(snode == NULL) return -1;
+
+	for(i = 0; i < MAXCASERVICE; i++)
+	{
+		if(caservice[i].service != NULL && caservice[i].channel == snode->channel)
+		{
+			if(caservice[i].camsockfd > -1)
+			{
+				caservice[i].service = snode;
+				caservice[i].count++;
+				return -1;
+			}
+			return i;
+		}
+		if(caservice[i].service == NULL && first == -1)
+			first = i;
+	}
+
+	if(first != -1)
+	{
+		caservice[first].service = snode;
+		caservice[first].channel = snode->channel;
+		caservice[first].count = 1;
+		caservice[first].camsockfd = -1;
+		return first;
+	}
+
+	return -1;
+}
+
+void caservicedel(struct service* snode, int camslot)
+{
+	int i = 0;
+
+	for(i = 0; i < MAXCASERVICE; i++)
+	{
+		if(snode != NULL && caservice[i].service != NULL && caservice[i].channel == snode->channel)
+		{
+			caservice[i].count--;
+			if(caservice[i].count < 1)
+			{
+				caservice[i].service = NULL;
+				caservice[i].channel = NULL;
+				if(caservice[i].camsockfd < 10000)
+					sockclose(&caservice[i].camsockfd);
+				else
+				{
+					caservice[i].camsockfd = -1;
+					//TODO: check if crypt is from cam and cam is single
+					//tmpstr = ostrcat("camtype_", oitoa(node->camsockfd - 10000), 1, 1);
+					//if(getconfigint(tmpstr, NULL) == 0)
+					//	return 1;
+				}
+
+			}
+		}
+		//remove cam from slot
+		if(caservice[i].service != NULL && caservice[i].camsockfd == camslot + 10000)
+			caservice[i].camsockfd = -1;
+	}
+}
+
 void dvbwritepmt(struct service* node, unsigned char* pmtbuf)
 {
 	int length;
@@ -43,23 +126,24 @@ void dvbwritepmt(struct service* node, unsigned char* pmtbuf)
 }
 
 
-void sendcapmttosock(struct service* node, unsigned char* buf, int pos)
+void sendcapmttosock(struct service* node, unsigned char* buf, int pos, int caservicenr)
 {
-	int ret = 0;
+	int ret = 0, i = 0;
 
-	if(node->camsockfd < 0 || socksend(&node->camsockfd, buf, pos, -1) != 0)
+	if(caservice[caservicenr].camsockfd < 0 || socksend(&caservice[caservicenr].camsockfd, buf, pos, -1) != 0)
 	{
-		ret = sockopen(&node->camsockfd, "/tmp/camd.socket", 0, -1);
+		ret = sockopen(&caservice[caservicenr].camsockfd, "/tmp/camd.socket", 0, -1);
 		if(ret == 0)
-		{
-			if(socksend(&node->camsockfd, buf, pos, -1) == 0)
-			{
-				debug(250, "send ca pmt -> ok");
-			}
-		}
+			ret = socksend(&caservice[caservicenr].camsockfd, buf, pos, -1);
 	}
-	else
-		debug(250, "send ca pmt -> ok");
+
+	if(ret == 0 && debug_level == 620)
+	{
+		printf("CA-PMT: ");
+		for(i = 0; i < pos; i++)
+			printf("%02x ", buf[i] & 0xff);
+		printf("\n");
+	}
 }
 
 void sendcapmtend(struct service* node)
@@ -68,12 +152,12 @@ void sendcapmtend(struct service* node)
 
 	if(node->fedev == 0)
 	{
-		debug(250, "no frontend");
+		debug(620, "no frontend");
 		return;
 	}
 	if(node == NULL)
 	{
-		debug(250, "service empty");
+		debug(620, "service empty");
 		return;
 	}
 
@@ -93,78 +177,85 @@ void sendcapmtend(struct service* node)
         buf[5] = 0x02; // ca_pmt_tag
         buf[6] = 0x00; // ca_pmt_tag
 	buf[7] = node->fedev->devnr; //demux_dev_nr
-	sendcapmttosock(node, buf, 8);
+	//sendcapmttosock(node, buf, 8);
 
 	free(buf);
 }
 
-//flag 0 = from zap or record
+//flag 0 = from zap
 //flag 1 = from watchthread
-//flag 2 = send to ca
+//flag 2 = from cathread
+//flag 3 = from recordthread
 void sendcapmt(struct service* node, int flag)
 {
-	int pos = 10, i = 0, lenbytes = 0, nok = 0;
+	int pos = 10, i = 0, lenbytes = 0, sendtosock = 0, caservicenr = 0;
 	unsigned char* buf = NULL;
+	struct service* snode = service;
 
+	//check if service should decrypt
 	if(node == NULL)
 	{
-		debug(250, "service empty");
+		debug(620, "service empty");
 		return;
 	}
 	if(node->channel == NULL)
 	{
-		debug(250, "channel empty");
-		nok = 1;
+		debug(620, "channel empty");
+		return;
 	}
 	if(node->channel->pmt == NULL)
 	{
-		debug(250, "pmt empty");
-		nok = 1;
+		debug(620, "pmt empty");
+		return;
 	}
 	if(node->channel->cadesc == NULL)
 	{
-		debug(250, "cadesc empty");
-		nok = 1;
+		debug(620, "cadesc empty");
+		return;
 	}
 	if(node->channel->esinfo == NULL)
 	{
-		debug(250, "esinfo empty");
-		nok = 1;
+		debug(620, "esinfo empty");
+		return;
+	}
+	if(node->fedev == NULL)
+	{
+		debug(620, "no frontend");
+		return;
 	}
 	if(node->channel->crypt == 0)
 	{
-		debug(250, "channel not crypr");
-		nok = 1;
+		debug(620, "channel not crypt");
+		return;
 	}
-	if(node->fedev == 0)
+	if(node->fedev->type == FRONTENDDEVDUMMY)
 	{
-		debug(250, "no frontend");
-		nok = 1;
+		debug(620, "dummy frontend not crypt");
+		return;
 	}
-	if(checkcaservice(node) != NULL)
+	if(flag != 3 && node->type != CHANNEL && node->type != RECORDDIRECT && node->type != RECORDTIMER && node->type != RECORDTIMESHIFT && node->type != RECORDSTREAM)
 	{
-		debug(250, "other service makes encrypt");
-		nok = 1;
+		debug(620, "service type should not decrypt");
+		return;
 	}
-
-	struct cadesc* cadescnode = node->channel->cadesc;
-	struct esinfo* esinfonode = node->channel->esinfo;
 
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
 	{
 		err("no mem");
-		nok = 1;
+		return;
 	}
 
-	if(nok == 1)
+	caservicenr = caserviceadd(node);
+	if(caservicenr < 0)
 	{
+		debug(620, "service is decrypt");
 		free(buf);
 		return;
 	}
 
-	if(flag != 2 && node->camsockfd > -1)
-		camsockclose(node);
+	struct cadesc* cadescnode = node->channel->cadesc;
+	struct esinfo* esinfonode = node->channel->esinfo;
 
 start:
 	pos = 10, lenbytes = 0, i = 0;
@@ -186,7 +277,7 @@ start:
 	buf[pos++] = 0x00; //len from here (programinfo len)
 	buf[pos++] = 0x01; //ca_pmt_cmd_id: ok_descrambling=1
 
-	if(flag < 2)
+	if(sendtosock == 1)
 	{
 		buf[pos++] = 0x81; //id (fix)
 		buf[pos++] = 0x08; //len
@@ -266,59 +357,36 @@ start:
 	buf[8 + lenbytes] = (tmppos - 9 - lenbytes) & 0xff;
 	buf[7 + lenbytes] = ((tmppos - 9 - lenbytes) >> 8) & 0xff;
 
-	if(debug_level == 250)
-	{
-		printf("CA-PMT: ");
-		for(i = 0; i < pos; i++)
-			printf("%02x ", buf[i] & 0xff);
-		printf("\n");
-	}
-
-	if(flag == 2)
+	if(sendtosock == 0)
 	{
 #ifdef CAMSUPP
-		sendcapmttocam(node, buf, pos);
+		sendtosock = sendcapmttocam(node, buf, pos, caservicenr);
+		if(flag != 2 && sendtosock == 1)
+			goto start;
 #endif
 	}
 	else
-	{
-		sendcapmttosock(node, buf, pos);
-		flag = 2;
-		goto start;
-	}
+		sendcapmttosock(node, buf, pos, caservicenr);
 
 	free(buf);
 }
 
 void checkcam()
 {
-	int ret = 1; 
-	struct service* node = NULL;
+	int ret = 1, i = 0; 
 
 	if(status.pmtmode == 1) return;
 
 	//struct can change from another thread
 	m_lock(&status.servicemutex, 2);
-	node = service;
-	while(node != NULL)
+	for(i = 0; i < MAXCASERVICE; i++)
 	{
-		if((node->type == CHANNEL || node->type == RECORDDIRECT || node ->type == RECORDTIMER || node->type == RECORDTIMESHIFT || node->type == RECORDSTREAM) && node->channel != NULL && node->channel->crypt == 1 && node->capmtsend < 0)
+		if(caservice[i].service != NULL && caservice[i].camsockfd < 10000)
 		{
-			ret = sockcheck(&node->camsockfd);
-
-			if(node->fedev != NULL && node->fedev->type == FRONTENDDEVDUMMY)
-			{
-				node = node->next;
-				continue;
-			}
-
+			ret = sockcheck(&caservice[i].camsockfd);
 			if(ret != 0) // socket not connected
-			{
-				debug(250, "socket not connected, try connect");
-				sendcapmt(node, 1);
-			}
+				sendcapmt(caservice[i].service, 1);
 		}
-		node = node->next;
 	}
 	m_unlock(&status.servicemutex, 2);
 }

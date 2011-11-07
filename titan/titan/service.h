@@ -19,7 +19,6 @@ void debugservice()
 		if(node->dmxpcrdev != NULL) printf("%s (%d)\n", node->dmxpcrdev->dev, node->dmxpcrdev->fd);
 		if(node->audiodev != NULL) printf("%s (%d)\n", node->audiodev->dev, node->audiodev->fd);
 		if(node->videodev != NULL) printf("%s (%d)\n", node->videodev->dev, node->videodev->fd);
-		printf("camsockfd (%d)\n", node->camsockfd);
 		node = node->next;
 	}
 }
@@ -502,58 +501,6 @@ struct service* getservicebychannel(struct channel* chnode)
 	return NULL;
 }
 
-void delcaservice(int slot)
-{
-	m_lock(&status.servicemutex, 2);
-	struct service* snode = service;
-
-	while(snode != NULL)
-	{
-		if(snode->capmtsend == slot)
-			snode->capmtsend = -1;
-		snode = snode->next;
-	}
-	m_unlock(&status.servicemutex, 2);
-}
-
-struct service* checkcaservice(struct service* node)
-{
-	struct service* snode = service;
-
-	while(snode != NULL)
-	{
-		if(snode != status.lastservice && snode != node && snode->channel == node->channel && snode->camsockfd > -1)
-			return snode;
-		snode = snode->next;
-	}
-	return NULL;
-}
-
-void camsockclose(struct service* node)
-{
-	struct service* snode = service;
-	
-	if(node == NULL) return;
-	node->capmtsend = -1;
-	if(node->camsockfd < 0) return;
-	
-	while(snode != NULL)
-	{
-		if(snode != status.lastservice && snode != node && snode->channel == node->channel)
-			break;
-		snode = snode->next;
-	}
-	
-	if(snode == NULL)
-		sockclose(&node->camsockfd);
-	else
-	{
-		if(snode->camsockfd > -1) sockclose(&snode->camsockfd);
-		snode->camsockfd = node->camsockfd;
-		node->camsockfd = -1;
-	}
-}
-
 //flag 0: with mutex
 //flag 1: without mutex
 struct service* getservice(int type, int flag)
@@ -591,6 +538,19 @@ int servicestop(struct service *node, int clear, int flag)
 			if(rcret == 1) return 1;
 			timeshiftstop(1);
 		}
+		if(flag != 2)
+		{
+			caservicedel(node, -1);
+/*
+			rcret = caservicedel(node, -1);
+			if(rcret == 1)
+			{
+				rcret = textbox(_("Message"), _("Record is running with single crypt cam.\nIf you switch, the record is damaged."), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 400, 10, 0);
+				if(rcret == 1) return 1;
+				node->camsockfd = -1;
+			}
+*/
+		}
 
 		truncate("/tmp/ecm.info", 0);
 		unlink("/tmp/pid.info");
@@ -607,8 +567,6 @@ int servicestop(struct service *node, int clear, int flag)
 		audiostop(node->audiodev);
 		videostop(node->videodev, clear);
 
-		if(flag != 2) camsockclose(node);
-		
 		if(flag == 1 || (flag == 0 && getconfigint("fastzap", NULL) == 0))
 		{
 			audioclose(node->audiodev, -1);
@@ -672,8 +630,6 @@ struct service* addservice(struct service* last)
 	memset(newnode, 0, sizeof(struct service));
 	newnode->recdstfd = -1;
 	newnode->recsrcfd = -1;
-	newnode->camsockfd = -1;
-	newnode->capmtsend = -1;
 
 	m_lock(&status.servicemutex, 2);
 	node = service;
@@ -735,7 +691,7 @@ void delservice(struct service* snode, int flag)
 			videoclose(node->videodev, -1);
 			close(node->recdstfd);
 			close(node->recsrcfd);
-			camsockclose(node);
+			caservicedel(node, -1);
 
 			//check if a rectimer is joined with a service
 			if(node->type == RECORDTIMER)
