@@ -28,7 +28,7 @@ int getcaservicebyfd(int camsockfd, int flag)
 		{
 			if(flag == 1)
 			{
-				if(caservice[i].service != NULL & (caservice[i].service->type == RECORDDIRECT || caservice[i].service->type == RECORDTIMER))
+				if(caservice[i].service != NULL && (caservice[i].service->type == RECORDDIRECT || caservice[i].service->type == RECORDTIMER))
 					return i;
 			}
 			else
