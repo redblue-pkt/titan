@@ -34,6 +34,7 @@ struct screensaver* screensaver = NULL;
 struct channelcache* channelcache[CHANNELCACHEMAX] = {NULL};
 struct hdd* hdd = NULL;
 struct queue* queue = NULL;
+struct caservice caservice[MAXCASERVICE];
 
 #include "queue.h"
 #include "channelcache.h"

@@ -723,7 +723,7 @@ int recordstart(struct channel* chnode, int filefd, int recordfd, int type, time
 					debug(250, "don't write pmt.tmp, another crypt channel use this frontend");
 			}
 			else
-				sendcapmt(servicenode, 0);
+				sendcapmt(servicenode, 3);
 			m_unlock(&status.servicemutex, 2);
 
 			free(pmtbuf); pmtbuf = NULL;
