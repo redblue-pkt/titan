@@ -20,7 +20,7 @@ void changechannellist(struct channel* chnode, char* channellist)
 			tmpstr = oitoa(status.aktservice->channel->serviceid);
 			addconfig("serviceid", tmpstr);
                 	free(tmpstr); tmpstr = NULL;
-			tmpstr = oitoa(status.aktservice->channel->transponderid);
+			tmpstr = olutoa(status.aktservice->channel->transponderid);
 			addconfig("transponderid", tmpstr);
                 	free(tmpstr); tmpstr = NULL;
 		}
@@ -36,7 +36,7 @@ void changechannellist(struct channel* chnode, char* channellist)
 			tmpstr = oitoa(status.aktservice->channel->serviceid);
 			addconfig("rserviceid", tmpstr);
                 	free(tmpstr); tmpstr = NULL;
-			tmpstr = oitoa(status.aktservice->channel->transponderid);
+			tmpstr = olutoa(status.aktservice->channel->transponderid);
 			addconfig("rtransponderid", tmpstr);
                 	free(tmpstr); tmpstr = NULL;
 		}
