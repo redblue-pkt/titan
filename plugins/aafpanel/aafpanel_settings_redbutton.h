@@ -31,10 +31,12 @@ void screenaafpanel_settings_redbutton()
 
 	char* mlistbox = menulistbox(redkey, tmpstr, NULL, skintitle, NULL, 1);
 
-	if(mlistbox == NULL){
-		debug(60, "(cancel) Redkey=%s", mlistbox);
+	if(mlistbox == NULL)
+	{
+		free(tmpstr); tmpstr = NULL;
 		return;
 	}
+	debug(60, "(new) Redkey=%s", mlistbox);
 
 	if(ostrcmp(mlistbox, "Extentions List (default)") == 0)
 		delconfig("redkey");

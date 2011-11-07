@@ -32,10 +32,12 @@ void screenaafpanel_settings_bluebutton()
 
 	char* mlistbox = menulistbox(bluekey, tmpstr, NULL, skintitle, NULL, 1);
 
-	if(mlistbox == NULL){
-		debug(60, "(cancel) Bluekey=%s", mlistbox);
+	if(mlistbox == NULL)
+	{
+		free(tmpstr); tmpstr = NULL;
 		return;
 	}
+	debug(60, "(new) Bluekey=%s", mlistbox);
 
 	if(ostrcmp(mlistbox, "Auto Resolution (default)") == 0)
 		delconfig("bluekey");
