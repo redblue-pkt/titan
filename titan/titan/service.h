@@ -538,19 +538,7 @@ int servicestop(struct service *node, int clear, int flag)
 			if(rcret == 1) return 1;
 			timeshiftstop(1);
 		}
-		if(flag != 2)
-		{
-			caservicedel(node, -1);
-/*
-			rcret = caservicedel(node, -1);
-			if(rcret == 1)
-			{
-				rcret = textbox(_("Message"), _("Record is running with single crypt cam.\nIf you switch, the record is damaged."), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 400, 10, 0);
-				if(rcret == 1) return 1;
-				node->camsockfd = -1;
-			}
-*/
-		}
+		if(flag != 2) caservicedel(node, -1);
 
 		truncate("/tmp/ecm.info", 0);
 		unlink("/tmp/pid.info");

@@ -68,14 +68,7 @@ void caservicedel(struct service* snode, int camslot)
 				if(caservice[i].camsockfd < 10000)
 					sockclose(&caservice[i].camsockfd);
 				else
-				{
 					caservice[i].camsockfd = -1;
-					//TODO: check if crypt is from cam and cam is single
-					//tmpstr = ostrcat("camtype_", oitoa(node->camsockfd - 10000), 1, 1);
-					//if(getconfigint(tmpstr, NULL) == 0)
-					//	return 1;
-				}
-
 			}
 		}
 		//remove cam from slot
