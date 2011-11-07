@@ -18,6 +18,26 @@ void debugcaservice()
 	}
 }
 
+int getcaservicebyfd(int camsockfd, int flag)
+{
+	int i = 0;
+
+	for(i = 0; i < MAXCASERVICE; i++)
+	{
+		if(camsockfd == caservice[i].camsockfd)
+		{
+			if(flag == 1)
+			{
+				if(caservice[i].service != NULL & (caservice[i].service->type == RECORDDIRECT || caservice[i].service->type == RECORDTIMER))
+					return i;
+			}
+			else
+				return i;
+		}
+	}
+	return -1;
+}
+
 int caserviceadd(struct service* snode)
 {
 	int i = 0, first = -1;
