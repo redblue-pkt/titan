@@ -50,6 +50,12 @@ void screenbluekeyactions()
 		free(bluekey); bluekey = NULL;
 		return;
 	}
+	else if(ostrcmp(bluekey, "Graphic Multi EPG") == 0)
+	{
+		screengmultiepg(NULL, NULL);
+		free(bluekey); bluekey = NULL;
+		return;
+	}
 	else if(ostrcmp(bluekey, "Sleep Timer") == 0)
 	{
 		screenpowerofftimer();
