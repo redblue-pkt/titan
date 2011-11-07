@@ -15,7 +15,11 @@ void screenscart()
 		while(1)
 		{
 			rcret = waitrc(NULL, 0, 0);
-			if(rcret == getrcconfigint("rcback", NULL)) break;
+			if(rcret == getrcconfigint("rcback", NULL))
+			{
+				setinput("encoder");
+				break;
+			}
 		}
 	}
 	else
