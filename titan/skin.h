@@ -1315,11 +1315,65 @@ struct jpgerror
         jmp_buf setjmpbuf;
 };
 
+void blitscale(int posx, int posy, int width, int height, int scalewidth, int scaleheight)
+{
+#ifndef SIMULATE
+	STMFBIO_BLT_DATA  blt_data;
+        memset(&blt_data, 0, sizeof(STMFBIO_BLT_DATA));
+
+	if(scalewidth == 0) scalewidth = width;
+	if(scaleheight == 0) scaleheight = height;
+
+	if(posx < 0) posx = 0;
+	if(posy < 0) posy = 0;
+	if(scalewidth > skinfb->width) scalewidth = skinfb->width;
+	if(scaleheight > skinfb->height) scaleheight = skinfb->height;
+	if(posx + scalewidth > skinfb->width) posx = skinfb->width - scalewidth;
+	if(posy + scaleheight > skinfb->height) posy = skinfb->height - scaleheight;
+	if(width == 0 || height == 0) return;
+
+	blt_data.operation  = BLT_OP_COPY;
+	if(status.usedirectfb == 1)
+		blt_data.srcOffset  = fb->varfbsize;
+	else
+		blt_data.srcOffset  = fb->varfbsize + skinfb->varfbsize;
+	blt_data.srcPitch   = width * 4;
+	blt_data.src_top    = 0;
+	blt_data.src_left   = 0;
+	blt_data.src_right  = width;
+	blt_data.src_bottom = height;
+	blt_data.srcFormat  = SURF_ARGB8888;
+	blt_data.srcMemBase = STMFBGP_FRAMEBUFFER;
+	
+	if(status.usedirectfb == 1)
+                blt_data.dstOffset  = 0;
+	else
+		blt_data.dstOffset  = fb->varfbsize;
+	blt_data.dstPitch   = skinfb->pitch;
+	blt_data.dst_left   = posx;
+	blt_data.dst_top    = posy;
+	blt_data.dst_right  = posx + scalewidth;
+	blt_data.dst_bottom = posy + scaleheight;
+	blt_data.dstFormat  = SURF_ARGB8888;
+	blt_data.dstMemBase = STMFBGP_FRAMEBUFFER;
+	
+	if (ioctl(fb->fd, STMFBIO_BLT, &blt_data) < 0)
+	{
+		perr("ioctl STMFBIO_BLT");
+	}
+	if(ioctl(fb->fd, STMFBIO_SYNC_BLITTER) < 0)
+	{
+		perr("ioctl STMFBIO_SYNC_BLITTER");
+	}
+#endif
+}
+
 void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int scalewidth, int scaleheight)
 {
 #ifndef SIMULATE
 	STMFBIO_BLT_EXTERN_DATA blt_data;
 	memset(&blt_data, 0, sizeof(STMFBIO_BLT_EXTERN_DATA));
+
 	blt_data.operation  = BLT_OP_COPY;
 	blt_data.ulFlags    = 0;
 	blt_data.srcOffset  = 0;
@@ -1349,9 +1403,9 @@ void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int 
 	{
 		err("ioctl STMFBIO_BLT_EXTERN");
 	}
-	else
+	if(ioctl(fb->fd, STMFBIO_SYNC_BLITTER) < 0)
 	{
-		ioctl(skinfb->fd, STMFBIO_SYNC_BLITTER);
+		perr("ioctl STMFBIO_SYNC_BLITTER");
 	}
 #endif
 }
@@ -1376,7 +1430,7 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 	fd = fopen(filename, "rb");
 	if(fd == NULL)
 	{
-		perr("open png file %s", filename);
+		perr("open jpg file %s", filename);
 		return 1;
 	}
 
@@ -1401,40 +1455,83 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 	row_stride = cinfo.output_width * cinfo.output_components;
 	buffer = (*cinfo.mem->alloc_sarray) ((j_common_ptr) &cinfo, JPOOL_IMAGE, row_stride, 1);
 
-	if(width > mwidth) width = mwidth;
-	if(height > mheight) height = mheight;
-
-	if(halign == CENTER)
-		posx += mwidth / 2 - width / 2;
-	else if(halign == RIGHT)
-		posx += mwidth - width;
-	if(valign == MIDDLE)
-		posy += mheight / 2 - height / 2;
-	else if(valign == BOTTOM)
-		posy += mheight - height;
-
-	while(cinfo.output_scanline < height)
+	if(accelfb != NULL && accelfb->varfbsize > width * 8 && (scalewidth != 0 || scaleheight != 0))
 	{
-		jpeg_read_scanlines(&cinfo, buffer, 1);
-		py = (posy + cinfo.output_scanline - 1) * skinfb->width;
-		for(x = 0; x < width; x++)
-		{
-			red = buffer[0][cinfo.output_components * x];
-			if(cinfo.output_components > 2)
-			{
-				green = buffer[0][cinfo.output_components * x + 1];
-				blue = buffer[0][cinfo.output_components * x + 2];
-			}
-			else
-			{
-				green = red;
-				blue = red;
-			}
-			color = (0 << 24) | (red << 16) | (green << 8) | blue;
-			drawpixelfast(posx + x, py, color);
-		}
-	} 
+		int nposy = posy;
+		if(scalewidth == 0) scalewidth = width;
+		if(scaleheight == 0) scaleheight = height;
+		py = -1;
 
+		while(cinfo.output_scanline < height)
+		{
+			jpeg_read_scanlines(&cinfo, buffer, 1);
+			py++;
+			for(x = 0; x < width; x++)
+			{
+				red = buffer[0][cinfo.output_components * x];
+				if(cinfo.output_components > 2)
+				{
+					green = buffer[0][cinfo.output_components * x + 1];
+					blue = buffer[0][cinfo.output_components * x + 2];
+				}
+				else
+				{
+					green = red;
+					blue = red;
+				}
+				color = (0 << 24) | (red << 16) | (green << 8) | blue;
+				drawpixelfb(accelfb, (width * py) + x, 0, color);
+			}
+			if((py * width * 4) + (width * 4) > accelfb->varfbsize && scaleheight > 0)
+			{
+				int tmp = height / scaleheight;
+				if(tmp > 0)
+				{
+					tmp = py / tmp;
+				
+					blitscale(posx, nposy, width, py, scalewidth, tmp);
+					nposy += tmp;
+				}
+				py = -1;
+			}
+		} 
+	}
+	else
+	{
+		if(width > mwidth) width = mwidth;
+		if(height > mheight) height = mheight;
+
+		if(halign == CENTER)
+			posx += mwidth / 2 - width / 2;
+		else if(halign == RIGHT)
+			posx += mwidth - width;
+		if(valign == MIDDLE)
+			posy += mheight / 2 - height / 2;
+		else if(valign == BOTTOM)
+			posy += mheight - height;
+
+		while(cinfo.output_scanline < height)
+		{
+			jpeg_read_scanlines(&cinfo, buffer, 1);
+			py = (posy + cinfo.output_scanline - 1) * skinfb->width;
+			for(x = 0; x < width; x++)
+			{
+				red = buffer[0][cinfo.output_components * x];
+				if(cinfo.output_components > 2)
+				{
+					green = buffer[0][cinfo.output_components * x + 1];
+					blue = buffer[0][cinfo.output_components * x + 2];
+				}
+				else
+				{
+					green = red;
+					blue = red;
+				}
+				color = (0 << 24) | (red << 16) | (green << 8) | blue;
+				drawpixelfast(posx + x, py, color);
+			}
+		} 
+	}
 	jpeg_finish_decompress(&cinfo);
 	jpeg_destroy_decompress(&cinfo);
 	fclose(fd);
@@ -1722,7 +1819,7 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 		}
 	}
 	else if(pictype == 1 && memfd > -1)
-		blitjpg(buf, posx, posy, width, height, scalewidth, scaleheight);
+		blitjpg(buf, posx, posy, width, height, scalewidth, scaleheight );
 
 	if(picnode == NULL)
 	{
