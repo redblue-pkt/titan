@@ -83,6 +83,10 @@ struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int
 	newnode->height = height;
 	newnode->colbytes = colbytes;
 	newnode->pitch = newnode->width * newnode->colbytes;
+	newnode->fb = mmapfb;
+	newnode->fblong = (unsigned long*)newnode->fb;
+	newnode->fd = fd;
+	newnode->fixfbsize = fixfbsize;
 	if(ostrcmp(name, FB) == 0)
 	{
 #ifdef NOHWBLIT
@@ -90,26 +94,14 @@ struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int
 #else
 		newnode->varfbsize = 1920 * 1080 * newnode->colbytes;
 #endif
-		newnode->fd = fd;
-		newnode->fb = mmapfb;
-		newnode->fblong = (unsigned long*)newnode->fb;
-        	newnode->fixfbsize = fixfbsize;
 	}
 	else if(ostrcmp(name, FB1) == 0)
 	{
 		newnode->varfbsize = 720 * 576 * newnode->colbytes;
-		newnode->fd = fd;
-		newnode->fb = mmapfb;
-		newnode->fblong = (unsigned long*)newnode->fb;
-        	newnode->fixfbsize = fixfbsize;
 	}
 	else
 	{
 		newnode->varfbsize = width * height * newnode->colbytes;
-		newnode->fd = fb->fd;
-		newnode->fb = fb->fb + fb->varfbsize;
-		newnode->fblong = (unsigned long*)newnode->fb;
-        	newnode->fixfbsize = fb->fixfbsize;
 	}
 
 	if(node != NULL)
