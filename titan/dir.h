@@ -112,7 +112,7 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 			continue;
 		}
 
-		if(rcret == getrcconfigint("rcok", NULL) || (b2 != NULL && rcret == getrcconfigint("rcyellow", NULL)) || (b3 != NULL && rcret == getrcconfigint("rcgreen", NULL)) || (b4 != NULL && rcret == getrcconfigint("rcred", NULL)))
+		if(rcret == getrcconfigint("rcok", NULL) || (b1 != NULL && rcret == getrcconfigint("rcred", NULL)) || (b3 != NULL && rcret == getrcconfigint("rcyellow", NULL)) || (b4 != NULL && rcret == getrcconfigint("rcblue", NULL)))
 		{
 			if(filelist->select != NULL && filelist->select->input != NULL) //dir
 			{
@@ -125,11 +125,11 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 				ret = createpath(filelistpath->text, filelist->select->text);
 				if(dirrcret != NULL)
 				{
-					if(b2 != NULL && rcret == getrcconfigint("rcyellow", NULL))
-						*dirrcret = 2;
-					else if(b3 != NULL && rcret == getrcconfigint("rcgreen", NULL))
+					if(b1 != NULL && rcret == getrcconfigint("rcred", NULL))
+						*dirrcret = 1;
+					else if(b3 != NULL && rcret == getrcconfigint("rcyellow", NULL))
 						*dirrcret = 3;
-					else if(b4 != NULL && rcret == getrcconfigint("rcred", NULL))
+					else if(b4 != NULL && rcret == getrcconfigint("rcblue", NULL))
 						*dirrcret = 4;
 				}
 				break;
@@ -138,20 +138,20 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 				drawscreen(dir, 0);
 		}
 
-		if(rcret == getrcconfigint("rcblue", NULL))
+		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			if(filelistpath != NULL)
 			{
 				if(filelist->mask == NULL || strlen(filelist->mask) == 0)
 				{
 					ret = createpath(filelistpath->text, "");
-					if(dirrcret != NULL) *dirrcret = 1;
+					if(dirrcret != NULL) *dirrcret = 2;
 					break;
 				}
 				else if(filelist->select != NULL && filelist->select->input == NULL)
 				{
 					ret = createpath(filelistpath->text, filelist->select->text);
-					if(dirrcret != NULL) *dirrcret = 1;
+					if(dirrcret != NULL) *dirrcret = 2;
 					break;
 				}
 			}

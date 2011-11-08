@@ -408,7 +408,7 @@ int playcheckdirrcret(char* file, int dirrcret)
 		free(tmpstr); tmpstr = NULL;
 		ret = 1;
 	}
-	if(dirrcret == 4)
+	if(dirrcret == 1)
 	{
 		if(textbox(_("Realy Delete ?"), file, _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
 		{
@@ -456,7 +456,7 @@ playerstart:
 	int playinfobarcount = 0, playinfobarstatus = 1, dirrcret = 0;
 
 	tmpstr = ostrcat(file, "", 1, 0); file = NULL;
-	file = screendir(getconfig("rec_moviepath", NULL), "*.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", basename(tmpstr), &dirrcret, ".epg", "OK", 0, NULL, 0, "EPG", getrcconfigint("rcyellow", NULL), "Del", getrcconfigint("rcred", NULL), 90, 1, 90, 1, 0);
+	file = screendir(getconfig("rec_moviepath", NULL), "*.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", basename(tmpstr), &dirrcret, ".epg", "DEL", getrcconfigint("rcred", NULL), "SELECT", 0, "EPG", getrcconfigint("rcyellow", NULL), NULL, 0, 90, 1, 90, 1, 0);
 	free(tmpstr); tmpstr = NULL;
 
 	if(file != NULL)
