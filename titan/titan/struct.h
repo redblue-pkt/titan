@@ -582,6 +582,7 @@ struct dvbdev
 	uint8_t felock;
 	struct transponder* felasttransponder;
 	struct transponder* feakttransponder;
+	int feunicable;
 	int feloffrequency;
 	int feaktband;
 	int feaktpolarization;
