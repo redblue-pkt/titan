@@ -1482,15 +1482,17 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 				color = (0 << 24) | (red << 16) | (green << 8) | blue;
 				drawpixelfb(accelfb, (width * py) + x, 0, color);
 			}
-			if((py * width * 4) + (width * 4) > accelfb->varfbsize && scaleheight > 0)
+			if((py * width * 4) + (width * 4) >= accelfb->varfbsize)
 			{
-				int tmp = height / scaleheight;
-				if(tmp > 0)
+				if(scaleheight > 0)
 				{
-					tmp = py / tmp;
-				
-					blitscale(posx, nposy, width, py, scalewidth, tmp);
-					nposy += tmp;
+					int tmp = height / scaleheight;
+					if(tmp > 0)
+					{
+						tmp = py / tmp;
+						blitscale(posx, nposy, width, py, scalewidth, tmp);
+						nposy += tmp;
+					}
 				}
 				py = -1;
 			}
