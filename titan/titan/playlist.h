@@ -447,7 +447,7 @@ start:
 		if(movesel == NULL && rcret == getrcconfigint("rcgreen", NULL))
 		{
 			clearscreen(playlist);
-			ret = screendir(getconfig("addplaylistpath", NULL), "*.mp3 *.flac *.ogg *.wma *.ra *.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.pls *.trp *.ts *.vdr *.vob *.wmv *.rm", NULL, NULL, NULL, "OK", 0, NULL, 0, NULL, 0, NULL, 0, 1200, 0, 600, 0, 0);
+			ret = screendir(getconfig("addplaylistpath", NULL), "*.mp3 *.flac *.ogg *.wma *.ra *.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.pls *.trp *.ts *.vdr *.vob *.wmv *.rm", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, 1200, 0, 600, 0, 0);
 
 			tmpstr = ostrcat(ret, "", 0, 0);
 			if(tmpstr != NULL) addconfig("addplaylistpath", dirname(tmpstr));
