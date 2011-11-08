@@ -1226,7 +1226,7 @@ inline void drawpixelfb(struct fb* node, int posx, int posy, unsigned long color
 	node->fblong[(node->width * posy) + posx] = color;
 }
 
-unsigned char* scale(unsigned char* buf, int width, int height, int channels, int newwidth, int newheight)
+unsigned char* scale(unsigned char* buf, int width, int height, int channels, int newwidth, int newheight, int free1)
 {
 	debug(1000, "out");
 	int h, w, pixel, nmatch;
@@ -1264,7 +1264,7 @@ unsigned char* scale(unsigned char* buf, int width, int height, int channels, in
 		}
 	}
 
-	free(buf);
+	if(free1 == 1) free(buf);
 	debug(1000, "out");
 	return newbuf;
 }
@@ -1669,7 +1669,14 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 	{
 		if(scalewidth == 0) scalewidth = width;
 		if(scaleheight == 0) scaleheight = height;
-		scalebuf = scale(buf, rowbytes / channels, height, channels, scalewidth, scaleheight);
+		if(picnode == NULL)
+			scalebuf = scale(buf, rowbytes / channels, height, channels, scalewidth, scaleheight, 1);
+		else
+		{
+			scalebuf = scale(buf, rowbytes / channels, height, channels, scalewidth, scaleheight, 0);
+			buf = NULL;
+			picnode = NULL;
+		}
 		if(scalebuf != NULL)
 		{
 			buf = scalebuf;
