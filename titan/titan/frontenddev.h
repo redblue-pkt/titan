@@ -6,6 +6,7 @@ int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktlnb, int
 	debug(1000, "in");
 	int loftype = 0;
 	int lofl, lofh, lofthreshold;
+	int satcrfrequ = 0;
 
 	if(node == NULL || tpnode == NULL)
 	{
@@ -17,6 +18,7 @@ int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktlnb, int
 		return 0;
 
 	int frequency = tpnode->frequency;
+	node->feunicable = 0;
 
 	if(feaktlnb == NULL) feaktlnb = node->feaktlnb;
 
@@ -32,6 +34,12 @@ int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktlnb, int
 			lofl = getconfigint("lnb_lofl", feaktlnb) * 1000;
 			lofh = getconfigint("lnb_lofh", feaktlnb) * 1000;
 			lofthreshold = getconfigint("lnb_lofthreshold", feaktlnb) * 1000;
+			break;
+		case 3: //unicable
+			lofl = getconfigint("lnb_lofl", feaktlnb) * 1000;
+			lofh = getconfigint("lnb_lofh", feaktlnb) * 1000;
+			lofthreshold = getconfigint("lnb_lofthreshold", feaktlnb) * 1000;
+			satcrfrequ = getconfigint("lnb_satcrfrequ", feaktlnb) * 1000;
 			break;
 		default: //standard lnb
 			lofl = 9750 * 1000;
@@ -50,17 +58,27 @@ int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktlnb, int
 		node->feaktband = 0;
 	}
 
-	if(node->feaktband)
-		node->feloffrequency = frequency - lofh;
+	if(satcrfrequ == 0)
+	{
+		if(node->feaktband)
+			node->feloffrequency = frequency - lofh;
+		else
+		{
+			if(frequency < lofl)
+				node->feloffrequency = lofl - frequency;
+			else
+				node->feloffrequency = frequency - lofl;
+		}
+	}
 	else
 	{
-		if(frequency < lofl)
-			node->feloffrequency = lofl - frequency;
-		else
-			node->feloffrequency = frequency - lofl;
+		int lof = (node->feaktband & 1) ? lofh : lofl;
+		int tmp = (frequency - lof) + satcrfrequ;
+		node->feloffrequency = (tmp / 4) - 350000;
+		node->feunicable = 1;
 	}
 
-	debug(200, "tuning to freq %d (befor lof %d), band=%d", node->feloffrequency, frequency, node->feaktband);
+	debug(200, "tuning to freq %d (befor lof %d), band=%d, unicable=%d", node->feloffrequency, frequency, node->feaktband, node->feunicable);
 	return node->feaktband;
 }
 
@@ -589,6 +607,12 @@ void fesdiseqcpoweron(struct dvbdev* node)
 	debug(1000, "in");
 	struct dvb_diseqc_master_cmd cmd = {{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0};
 
+	if(node == NULL)
+	{
+		debug(1000, "out-> NULL detect");
+		return;
+	}
+
 	cmd.msg[0] = 0xE0;
 	cmd.msg[1] = 0x00;
 	cmd.msg[2] = 0x03;
@@ -603,6 +627,12 @@ void fesdiseqcreset(struct dvbdev* node)
 {
 	debug(1000, "in");
 	struct dvb_diseqc_master_cmd cmd = {{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0};
+	
+	if(node == NULL)
+	{
+		debug(1000, "out-> NULL detect");
+		return;
+	}
 
 	cmd.msg[0] = 0xE0;
 	cmd.msg[1] = 0x00;
@@ -618,6 +648,12 @@ void fesdiseqcstandby(struct dvbdev* node)
 {
 	debug(1000, "in");
 	struct dvb_diseqc_master_cmd cmd = {{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0};
+	
+	if(node == NULL)
+	{
+		debug(1000, "out-> NULL detect");
+		return;
+	}
 	
 	cmd.msg[0] = 0xE0;
 	cmd.msg[1] = 0x00;
@@ -655,6 +691,13 @@ void fediseqcrotor(struct dvbdev* node, int pos, int oldpos, int flag)
 {
 	debug(1000, "in");
 	struct dvb_diseqc_master_cmd cmd = {{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0};
+	
+	if(node == NULL)
+	{
+		debug(1000, "out-> NULL detect");
+		return;
+	}
+	
 	//float speed13V = 1.5;
 	float speed18V = 2.4;
 	float degreesmov, a1, a2, waittime;
@@ -735,6 +778,50 @@ void fediseqcrotor(struct dvbdev* node, int pos, int oldpos, int flag)
 			usleep(waittime * 100000);
 	}
 	debug(1000, "out");
+}
+
+void fesetunicable(struct dvbdev* node)
+{
+	int aktlnb = 1, unicabletune = 0;
+	struct dvb_diseqc_master_cmd cmd = {{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0};
+
+	if(node == NULL)
+	{
+		debug(1000, "out-> NULL detect");
+		return;
+	}
+
+	int satcr = getconfigint("lnb_satcr", node->feaktlnb) + 1;
+	if(node->feaktlnb != NULL) aktlnb = atoi(node->feaktlnb);
+
+	unicabletune |= ((satcr & 0x7) << 13);
+	unicabletune |= (((aktlnb - 1) & 0x1) << 12);
+	unicabletune |= (((!node->feaktpolarization) & 0x1) << 11);
+	unicabletune |= ((node->feaktband & 0x1) << 10);
+	unicabletune |= ((node->feloffrequency / 1000) & 0x3ff);
+
+	debug(200, "unicabletune %#04x", unicabletune);
+
+	fesetvoltage(node, SEC_VOLTAGE_OFF, 15);
+	fesetvoltage(node, SEC_VOLTAGE_18, 15);
+	fesettone(node, SEC_TONE_OFF, 15);
+
+	//feunicable
+	//byte1 (bit 7/6/5) -> satcr number
+	//byte1 (bit 4/3/2) -> lnb number
+	//byte1 (bit 1/0) -> frequ
+	//byte0 -> frequ
+	
+	cmd.msg[0] = 0xE0;
+	cmd.msg[1] = 0x10;
+	cmd.msg[2] = 0x5A;
+	cmd.msg[3] = (unicabletune >> 8) & 0xff;
+	cmd.msg[4] = unicabletune & 0xff;
+	cmd.msg_len = 5;
+
+	debug(200, "send diseqc unicable cmd");
+	fediseqcsendmastercmd(node, &cmd, 100);
+	fesetvoltage(node, SEC_VOLTAGE_13, 15);
 }
 
 //TODO
@@ -1119,6 +1206,9 @@ void fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 		debug(1000, "out-> NULL detect");
 		return;
 	}
+	
+	if(node->feunicable == 1)
+		fesetunicable(node);
 
 #if DVB_API_VERSION >= 5
 	struct dtv_property p[10];
