@@ -161,7 +161,7 @@ void subdraw(unsigned long long subpts, struct subpage* page)
 			regnode->scaleheight = regnode->height * skinfb->height / subdisplayheight;
 			if(regnode->scalewidth != regnode->width || regnode->scaleheight != regnode->height)
 			{
-				scalebuf = scale(regnode->buf, regnode->width, regnode->height, 1, regnode->scalewidth, regnode->scaleheight);
+				scalebuf = scale(regnode->buf, regnode->width, regnode->height, 1, regnode->scalewidth, regnode->scaleheight, 1);
 				if(scalebuf != NULL) regnode->buf = scalebuf;
 			}
 			else
