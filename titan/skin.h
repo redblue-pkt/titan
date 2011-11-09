@@ -615,7 +615,7 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 		ret = getxmlentry(line, " shadowpos=");
 		if(ret != NULL)
 		{
-			newnode->shadowpos = atoi(ret);
+			newnode->shadowpos = convertxmlentry(ret, NULL);
 			free(ret);
 		}
 		ret = getxmlentry(line, " fontsize=");
