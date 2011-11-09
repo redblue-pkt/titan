@@ -232,6 +232,58 @@ void playerinit(int argc, char* argv[])
 #endif
 }
 
+#ifdef EPLAYER4
+int gstbuscall(GstBus *bus, GstMessage *msg)
+{
+	int ret = 1;
+	if(!msg) return;
+	if(!m_gst_playbin) return;
+
+	gchar *sourceName = NULL;
+	GstObject *source = GST_MESSAGE_SRC(msg);
+
+	if(!GST_IS_OBJECT(source)) return;
+	sourceName = gst_object_get_name(source);
+
+	switch(GST_MESSAGE_TYPE(msg))
+	{
+		case GST_MESSAGE_EOS:
+			debug(150, "gst player eof");
+			ret = 0;
+			break;
+		case GST_MESSAGE_STATE_CHANGED:
+			debug(150, "gst player state changed");
+			break;
+		case GST_MESSAGE_ERROR:
+			debug(150, "gst player error");
+			break;
+		case GST_MESSAGE_INFO:
+			debug(150, "gst player info");
+			break;
+		case GST_MESSAGE_TAG:
+			debug(150, "gst player tag");
+			break;
+		case GST_MESSAGE_ASYNC_DONE:
+			debug(150, "gst player async done");
+			break;
+		case GST_MESSAGE_ELEMENT:
+			debug(150, "gst player element");
+			break;
+		case GST_MESSAGE_BUFFERING:
+			debug(150, "gst player buffering");
+			break;
+		case GST_MESSAGE_STREAM_STATUS:
+			debug(150, "gst player stream status");
+			break;
+		default:
+			debug(150, "gst player unknown message");
+			break;
+	}
+	g_free(sourceName);
+	return ret;
+}
+#endif
+
 int playerisplaying()
 {
 #ifdef SIMULATE
@@ -243,6 +295,21 @@ int playerisplaying()
 		return 1;
 #endif
 
+#ifdef EPLAYER4
+	int ret = 1;
+
+	if(m_gst_playbin)
+	{
+		GstBus *bus = gst_pipeline_get_bus(GST_PIPELINE(m_gst_playbin));
+		GstMessage *message = NULL;
+		while((message = gst_bus_pop(bus)))
+		{
+			ret = gstBusCall(bus, message);
+			gst_message_unref(message);
+		}
+	}
+	return ret;
+#endif
 	return 0;
 }
 
@@ -622,17 +689,3 @@ void playerchangesubtitletrack(int num)
 }
 
 #endif
-
-//TODO: implement
-/*
-SubtitleOutputDef_t out;
-
-out.screen_width = xRes;
-out.screen_height = yRes;
-out.framebufferFD = fd;
-out.destination   = lfb;
-out.destStride    = stride;
-out.shareFramebuffer = 1;
-    
-player->output->subtitle->Command(player, (OutputCmd_t)OUTPUT_SET_SUBTITLE_OUTPUT, (void*) &out);
-*/
