@@ -186,7 +186,12 @@ int waitrc(struct skin* owner, unsigned int timeout, int flag)
 
 			node = getrc(rcdata.code, owner);
 			if(node != NULL && node->rcfunc != NULL) 
- 				node->rcfunc(node->screen, node->screennode);
+			{
+				if(fromthread == 0)
+ 					node->rcfunc(node->screen, node->screennode, 0);
+				else
+ 					node->rcfunc(node->screen, node->screennode, 2);
+			}
 			
 			ret = rcdata.code;
 #ifdef SIMULATE
@@ -200,7 +205,12 @@ int waitrc(struct skin* owner, unsigned int timeout, int flag)
 
 			node = getrc(0, NULL);
 			if(node != NULL && node->rcfunc != NULL) 
- 				node->rcfunc(node->screen, node->screennode);
+			{
+				if(fromthread == 0)
+ 					node->rcfunc(node->screen, node->screennode, 0);
+				else
+ 					node->rcfunc(node->screen, node->screennode, 2);
+			}
 			ret = RCTIMEOUT;
 		}
 		else if(fromthread == 0 && status.rckey != 0)
@@ -210,7 +220,12 @@ int waitrc(struct skin* owner, unsigned int timeout, int flag)
 
 			node = getrc(status.rckey, owner);
 			if(node != NULL && node->rcfunc != NULL) 
- 				node->rcfunc(node->screen, node->screennode);
+			{
+				if(fromthread == 0)
+ 					node->rcfunc(node->screen, node->screennode, 0);
+				else
+ 					node->rcfunc(node->screen, node->screennode, 2);
+			}
 			ret = status.rckey;
 			status.rckey = 0;
 		}

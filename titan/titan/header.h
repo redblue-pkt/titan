@@ -203,6 +203,8 @@ char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 char* gettime(char* format);
 
 //skin.h
+char* savescreen(struct skin* node);
+void restorescreen(char* buf, struct skin* node);
 char* changepicpath(char* picname);
 long convertcol(char *value);
 void delmarkedscreen(int del);
@@ -261,10 +263,10 @@ void delrc(int key, struct skin* owner, struct skin* screennode);
 
 //rcfunc.h
 void inputboxchar(struct skin* screen, struct skin* inputbox, char zeichen, int flag);
-void inputboxff(struct skin* screen, struct skin* inputbox);
-void inputboxfr(struct skin* screen, struct skin* inputbox);
-void inputboxright(struct skin* screen, struct skin* inputbox);
-void inputboxleft(struct skin* screen, struct skin* inputbox);
+void inputboxff(struct skin* screen, struct skin* inputbox, int flag);
+void inputboxfr(struct skin* screen, struct skin* inputbox, int flag);
+void inputboxright(struct skin* screen, struct skin* inputbox, int flag);
+void inputboxleft(struct skin* screen, struct skin* inputbox, int flag);
 int addscreenrc(struct skin* screen, struct skin* node);
 void checkinputboxnumright(struct skin* inputbox);
 int delscreenrc(struct skin* screen, struct skin* node);

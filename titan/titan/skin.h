@@ -675,7 +675,6 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 		if(ret != NULL)
 		{
 			changetitle(newnode, _(ret));
-			newnode->titlesize = newnode->fontsize + 6;
 			free(ret);
 		}
 		ret = getxmlentry(line, " titlealign=");
@@ -3718,9 +3717,15 @@ int changetitle(struct skin* node, char* text)
 	{
 		free(node->title);
 		if(text != NULL)
+		{
 			node->title = strdup(text);
+			node->titlesize = node->fontsize + 6;
+		}
 		else
+		{
 			node->title = text;
+			node->titlesize = 0;
+		}
 		ret = 0;
 	}
 	debug(1000, "out");
