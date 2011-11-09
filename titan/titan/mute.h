@@ -14,7 +14,7 @@ void screenmute(int flag)
 		setnodeattr(mute, framebuffer);
 		if(status.drawallwaysbg[0] != NULL)
 			free(status.drawallwaysbg[0]);
-		status.drawallwaysbg[0] = saverect(mute->rposx, mute->rposy, mute->rwidth, mute->rheight);
+		status.drawallwaysbg[0] = savescreen(mute);
 		tmpscreencalc = status.screencalc;
 		status.screencalc = 0;
 		drawscreen(mute, 0);
@@ -28,7 +28,7 @@ void screenmute(int flag)
 		clearscreen(mute);
 		if(status.drawallwaysbg[0] != NULL)
 		{
-			restorerect(status.drawallwaysbg[0], mute->rposx, mute->rposy, mute->rwidth, mute->rheight);
+			restorescreen(status.drawallwaysbg[0], mute);
 			status.drawallwaysbg[0] = NULL;
 		}
 		status.drawallways[0] = NULL;

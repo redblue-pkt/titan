@@ -39,7 +39,7 @@ void screenvolume(int direction)
 	changevolume(direction, volumebar);
 
 	setnodeattr(volume, framebuffer);
-	bg = saverect(volume->rposx, volume->rposy, volume->rwidth, volume->rheight);
+	bg = savescreen(volume);
 
 	tmpscreencalc = status.screencalc;
 	status.screencalc = 0;
@@ -78,7 +78,7 @@ void screenvolume(int direction)
 	addrc(getrcconfigint("rcvolup", NULL), screenvolumeup, NULL, NULL);
 	addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
 	addrc(getrcconfigint("rcmute", NULL), screenmute, NULL, NULL);
-	restorerect(bg, volume->rposx, volume->rposy, volume->rwidth, volume->rheight);
+	restorescreen(bg, volume);
 	blitfb();
 }
 
