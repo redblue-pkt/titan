@@ -1,14 +1,14 @@
 #ifndef INPUTHELP_H
 #define INPUTHELP_H
 
-void inputhelpnum(struct skin* inputhelp, struct skin* inputbox, char num)
+void inputhelpnum(struct skin* inputhelp, struct skin* inputbox, char num, int flag)
 {
-	inputboxff(inputhelp, inputbox);
-	inputboxchar(inputhelp, inputbox, num, 0);
-	drawscreen(inputhelp, 0);
+	inputboxff(inputhelp, inputbox, flag);
+	inputboxchar(inputhelp, inputbox, num, flag);
+	drawscreen(inputhelp, flag);
 }
 
-char* screeninputhelp(char* text)
+char* screeninputhelp(char* text, int flag)
 {
 	int rcret = 0, tmpscreencalc = 0;
 	struct skin* inputhelp = getscreen("inputhelp");
@@ -28,7 +28,7 @@ char* screeninputhelp(char* text)
 	changeinput(inputbox, text);
 	tmpscreencalc = status.screencalc;
 	status.screencalc = 0;
-	drawscreen(inputhelp, 0);
+	drawscreen(inputhelp, flag);
 	addscreenrc(inputhelp, grid);
 
 	while(1)
@@ -41,29 +41,29 @@ char* screeninputhelp(char* text)
 			break;
 		}
 		if(rcret == getrcconfigint("rcff", NULL))
-			inputboxright(inputhelp, inputbox);
+			inputboxright(inputhelp, inputbox, flag);
 		if(rcret == getrcconfigint("rcfr", NULL))
-			inputboxleft(inputhelp, inputbox);
+			inputboxleft(inputhelp, inputbox, flag);
 		if(rcret == getrcconfigint("rc0", NULL))
-			inputhelpnum(inputhelp, inputbox, '0');
+			inputhelpnum(inputhelp, inputbox, '0', flag);
 		if(rcret == getrcconfigint("rc1", NULL))
-			inputhelpnum(inputhelp, inputbox, '1');
+			inputhelpnum(inputhelp, inputbox, '1', flag);
 		if(rcret == getrcconfigint("rc2", NULL))
-			inputhelpnum(inputhelp, inputbox, '2');
+			inputhelpnum(inputhelp, inputbox, '2', flag);
 		if(rcret == getrcconfigint("rc3", NULL))
-			inputhelpnum(inputhelp, inputbox, '3');
+			inputhelpnum(inputhelp, inputbox, '3', flag);
 		if(rcret == getrcconfigint("rc4", NULL))
-			inputhelpnum(inputhelp, inputbox, '4');
+			inputhelpnum(inputhelp, inputbox, '4', flag);
 		if(rcret == getrcconfigint("rc5", NULL))
-			inputhelpnum(inputhelp, inputbox, '5');
+			inputhelpnum(inputhelp, inputbox, '5', flag);
 		if(rcret == getrcconfigint("rc6", NULL))
-			inputhelpnum(inputhelp, inputbox, '6');
+			inputhelpnum(inputhelp, inputbox, '6', flag);
 		if(rcret == getrcconfigint("rc7", NULL))
-			inputhelpnum(inputhelp, inputbox, '7');
+			inputhelpnum(inputhelp, inputbox, '7', flag);
 		if(rcret == getrcconfigint("rc8", NULL))
-			inputhelpnum(inputhelp, inputbox, '8');
+			inputhelpnum(inputhelp, inputbox, '8', flag);
 		if(rcret == getrcconfigint("rc9", NULL))
-			inputhelpnum(inputhelp, inputbox, '9');
+			inputhelpnum(inputhelp, inputbox, '9', flag);
 
 		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcred", NULL) || rcret == getrcconfigint("rcgreen", NULL) || rcret == getrcconfigint("rcyellow", NULL) || rcret == getrcconfigint("rcblue", NULL))
 		{
@@ -76,25 +76,25 @@ char* screeninputhelp(char* text)
 				}
 				if(rcret == getrcconfigint("rcred", NULL) || (rcret == getrcconfigint("rcok", NULL) && ostrcmp(grid->select->name, "bs") == 0))
 				{
-					inputboxfr(inputhelp, inputbox);
+					inputboxfr(inputhelp, inputbox, flag);
 					continue;
 				}
 				if(rcret == getrcconfigint("rcok", NULL) && ostrcmp(grid->select->name, "clear") == 0)
 				{
 					changeinput(inputbox, NULL);
-					drawscreen(inputhelp, 0);
+					drawscreen(inputhelp, flag);
 					continue;
 				}
 				if(rcret == getrcconfigint("rcok", NULL) && ostrcmp(grid->select->name, "left") == 0)
 				{
-					inputboxleft(inputhelp, inputbox);
-					drawscreen(inputhelp, 0);
+					inputboxleft(inputhelp, inputbox, flag);
+					drawscreen(inputhelp, flag);
 					continue;
 				}
 				if(rcret == getrcconfigint("rcok", NULL) && ostrcmp(grid->select->name, "right") == 0)
 				{
-					inputboxright(inputhelp, inputbox);
-					drawscreen(inputhelp, 0);
+					inputboxright(inputhelp, inputbox, flag);
+					drawscreen(inputhelp, flag);
 					continue;
 				}
 				if(rcret == getrcconfigint("rcblue", NULL) || (rcret == getrcconfigint("rcok", NULL) && ostrcmp(grid->select->name, "switch") == 0))
@@ -115,26 +115,26 @@ char* screeninputhelp(char* text)
 						grid2->hidden = NO;
 						addscreenrc(inputhelp, grid);
 					}
-					drawscreen(inputhelp, 0);
+					drawscreen(inputhelp, flag);
 					continue;
 				}
 				if(rcret == getrcconfigint("rcyellow", NULL))
 				{
-					inputboxff(inputhelp, inputbox);
-					inputboxchar(inputhelp, inputbox, ' ', 0);
-					drawscreen(inputhelp, 0);
+					inputboxff(inputhelp, inputbox, flag);
+					inputboxchar(inputhelp, inputbox, ' ', flag);
+					drawscreen(inputhelp, flag);
 					continue;
 				}
 
-				inputboxff(inputhelp, inputbox);
-				inputboxchar(inputhelp, inputbox, grid->select->name[0], 0);
+				inputboxff(inputhelp, inputbox, flag);
+				inputboxchar(inputhelp, inputbox, grid->select->name[0], flag);
 			}
 		}
 	}
 
 	delownerrc(inputhelp);
 	clearscreen(inputhelp);
-	drawscreen(skin, 0);
+	drawscreen(skin, flag);
 	status.screencalc = tmpscreencalc;
 	return tmpstr;
 }

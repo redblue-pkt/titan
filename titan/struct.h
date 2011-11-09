@@ -960,7 +960,7 @@ struct fb
 struct rc
 {
 	int key;
-	void (*rcfunc)(struct skin*, struct skin*);
+	void (*rcfunc)(struct skin*, struct skin*, int flag);
 	struct skin *screen;
 	struct skin *screennode;
 	struct skin *owner;
