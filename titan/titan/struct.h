@@ -175,6 +175,10 @@ struct casession
 	int sessionnr;
 	int action;
 	int state;
+	char* mmititle;
+	char* mmisubtitle;
+	char* mmitext;
+	char* mmibottom;
 };
 
 struct caslot
@@ -188,7 +192,6 @@ struct caslot
 	char* name;
 	int fastrun;
 	int mmimanager;
-	int mmiopen;
 	int camanager;
 	int datetimemanager;
 	int appmanager;
