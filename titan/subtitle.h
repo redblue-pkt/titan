@@ -145,7 +145,7 @@ void subdraw(unsigned long long subpts, struct subpage* page)
 			if(regnode->regid == pageregnode->regid) break;
 			regnode = regnode->next;
 		}
-		if(regnode != NULL)
+		if(regnode != NULL && regnode->buf != NULL)
 		{
 
 			stat = 1;
@@ -159,31 +159,49 @@ void subdraw(unsigned long long subpts, struct subpage* page)
 			//scale
 			regnode->scalewidth = regnode->width * skinfb->width / subdisplaywidth;
 			regnode->scaleheight = regnode->height * skinfb->height / subdisplayheight;
-			if(regnode->scalewidth != regnode->width || regnode->scaleheight != regnode->height)
+
+			if(accelfb != NULL && accelfb->varfbsize >= regnode->width * regnode->height * 4)
 			{
-				scalebuf = scale(regnode->buf, regnode->width, regnode->height, 1, regnode->scalewidth, regnode->scaleheight, 1);
-				if(scalebuf != NULL) regnode->buf = scalebuf;
+
+				for(y = 0; y < regnode->height; y++)
+				{
+					for(x = 0; x < regnode->width; x++)
+					{
+						if(regnode->buf[y * regnode->width + x] != 0)
+							drawpixelfb(accelfb, (regnode->width * y) + x, 0, palette[regnode->buf[y * regnode->width + x]]);
+						else
+							drawpixelfb(accelfb, (regnode->width * y) + x, 0, 0);
+					}
+				}
+				blitscale(posx, posy, regnode->width, regnode->height, regnode->scalewidth, regnode->scaleheight);
 			}
 			else
-				scalebuf = regnode->buf;
-
+			{
+				if(regnode->scalewidth != regnode->width || regnode->scaleheight != regnode->height)
+				{
+					scalebuf = scale(regnode->buf, regnode->width, regnode->height, 1, regnode->scalewidth, regnode->scaleheight, 1);
+					if(scalebuf != NULL) regnode->buf = scalebuf;
+				}
+				else
+					scalebuf = regnode->buf;
 /*
-			//only for test no scale
-			posx = pageregnode->reghorizontaladdress;
-			posy = pageregnode->regverticaladdress;
-			pageregnode->scaleposx = posx;
-			pageregnode->scaleposy = posy;
-			regnode->scalewidth = regnode->width;
-			regnode->scaleheight = regnode->height;
+				//only for test no scale
+				posx = pageregnode->reghorizontaladdress;
+				posy = pageregnode->regverticaladdress;
+				pageregnode->scaleposx = posx;
+				pageregnode->scaleposy = posy;
+				regnode->scalewidth = regnode->width;
+				regnode->scaleheight = regnode->height;
 */
 
-			for(y = 0; y < regnode->scaleheight; y++)
-			{
-				for(x = 0; x < regnode->scalewidth; x++)
+				for(y = 0; y < regnode->scaleheight; y++)
 				{
-					if(regnode->buf[y * regnode->scalewidth + x] != 0)
+					for(x = 0; x < regnode->scalewidth; x++)
 					{
-						drawpixel(posx + x, posy + y, palette[regnode->buf[y * regnode->scalewidth + x]]);
+						if(regnode->buf[y * regnode->scalewidth + x] != 0)
+						{
+							drawpixel(posx + x, posy + y, palette[regnode->buf[y * regnode->scalewidth + x]]);
+						}
 					}
 				}
 			}
@@ -361,7 +379,8 @@ void subcalc(int pageid, unsigned long long pts)
 						reg->palette[i].r = MAX(MIN(((298 * y            + 460 * cr) / 256), 255), 0);
 						reg->palette[i].g = MAX(MIN(((298 * y -  55 * cb - 137 * cr) / 256), 255), 0);
 						reg->palette[i].b = MAX(MIN(((298 * y + 543 * cb           ) / 256), 255), 0);
-						reg->palette[i].a = (entries[i].T) & 0xFF;
+						//reg->palette[i].a = (entries[i].T) & 0xFF;
+						reg->palette[i].a = 0xFF;
 					}
 					else
 					{
