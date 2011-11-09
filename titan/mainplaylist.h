@@ -492,7 +492,7 @@ start:
 		if(flag == 0 && rcret == getrcconfigint("rcgreen", NULL))
 		{
 			//clearscreen(playlist);
-			newentry = textinput("playlist");
+			newentry = textinput(NULL, "playlist");
 			if(newentry != NULL)
 			{
 				newentry = stringreplacechar(newentry, '#', '_');

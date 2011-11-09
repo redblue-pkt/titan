@@ -1,7 +1,7 @@
 #ifndef TEXTINPUT_H
 #define TEXTINPUT_H
 
-char* textinput(char* text)
+char* textinput(char* title, char* text)
 {
 	debug(1000, "in");
 	int rcret = -1;
@@ -9,6 +9,7 @@ char* textinput(char* text)
 	struct skin* input = getscreennode(textinput, "input");
 	char* ret = NULL;
 
+	changeinput(textinput, title);
 	changeinput(input, text);
 
 	drawscreen(textinput, 0);

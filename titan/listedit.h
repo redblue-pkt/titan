@@ -63,7 +63,7 @@ int screenlistedit(int list, struct channel* chnode)
 				ret = PROTECTMODE;
 			if(ostrcmp(listbox->select->name, "addmode") == 0)
 			{
-				newentry = textinput("bouquet");
+				newentry = textinput(NULL, "bouquet");
 				if(newentry != NULL)
 				{
 					newentry = stringreplacechar(newentry, '#', '_');
