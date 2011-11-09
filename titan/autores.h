@@ -22,7 +22,7 @@ void screenautores(char* text, int timeout, int flag)
 		setnodeattr(autores, framebuffer);
 		status.screencalc = 0;
 		status.rcowner = autores;
-		bg = saverect(autores->rposx, autores->rposy, autores->rwidth, autores->rheight);
+		bg = savescreen(autores);
 		tmpscreencalc = status.screencalc;
 		status.screencalc = 0;
 		drawscreen(autores, 2);
@@ -40,7 +40,7 @@ void screenautores(char* text, int timeout, int flag)
 	if(fromthread == 1)
 	{
 		clearscreennolock(autores);
-		restorerect(bg, autores->rposx, autores->rposy, autores->rwidth, autores->rheight);
+		restorescreen(bg, autores);
 		blitfb();
 		status.screencalc = tmpscreencalc;
 		sleep(1);

@@ -73,7 +73,7 @@ int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char*
 		setnodeattr(messagebox, framebuffer);
 		status.screencalc = 0;
 		status.rcowner = messagebox;
-		bg = saverect(messagebox->rposx, messagebox->rposy, messagebox->rwidth, messagebox->rheight);
+		bg = savescreen(messagebox);
 		tmpscreencalc = status.screencalc;
 		status.screencalc = 0;
 		drawscreen(messagebox, 2);
@@ -93,7 +93,7 @@ int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char*
 	if(fromthread == 1)
 	{
 		clearscreennolock(messagebox);
-		restorerect(bg, messagebox->rposx, messagebox->rposy, messagebox->rwidth, messagebox->rheight);
+		restorescreen(bg, messagebox);
 		blitfb();
 		status.screencalc = tmpscreencalc;
 		sleep(1);

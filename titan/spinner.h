@@ -71,14 +71,14 @@ findspinner:
 	tmpscreencalc = status.screencalc;
 	status.screencalc = 0;
 	setnodeattr(spinner, framebuffer);
-	bg = saverect(spinner->rposx, spinner->rposy, spinner->rwidth, spinner->rheight);
+	bg = savescreen(spinner);
 
 	drawscreen(spinner, 2);
 	usleep(status.spinnerspeed * 10000);
 	clearscreennolock(spinner);
 
 	//restore bg
-	restorerect(bg, spinner->rposx, spinner->rposy, spinner->rwidth, spinner->rheight);
+	restorescreen(bg, spinner);
 	blitfb();
 	status.screencalc = tmpscreencalc;
 	m_unlock(&status.drawingmutex, 0);

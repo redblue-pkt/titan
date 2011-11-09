@@ -2315,6 +2315,11 @@ char* saverect(int posx, int posy, int width, int height)
 	return buf;
 }
 
+char* savescreen(struct skin* node)
+{
+	return saverect(node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->rwidth + (node->shadowsize * 2), node->rheight + (node->shadowsize * 2));
+}
+
 void restorerect(char* buf, int posx, int posy, int width, int height)
 {
 	debug(1000, "in");
@@ -2330,6 +2335,11 @@ void restorerect(char* buf, int posx, int posy, int width, int height)
 		buf = NULL;
 	}
 	debug(1000, "out");
+}
+
+void restorescreen(char* buf, struct skin* node)
+{
+	restorerect(buf, node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->rwidth + (node->shadowsize * 2), node->rheight + (node->shadowsize * 2));
 }
 
 #ifndef SIMULATE
@@ -2466,12 +2476,14 @@ void clearscreen(struct skin* node)
 {
 	m_lock(&status.drawingmutex, 0);
 	clearrect(node->rposx, node->rposy, node->rwidth, node->rheight);
+	clearshadow(node);
 	m_unlock(&status.drawingmutex, 0);
 }
 
 void clearscreennolock(struct skin* node)
 {
 	clearrect(node->rposx, node->rposy, node->rwidth, node->rheight);
+	clearshadow(node);
 }
 
 //flag 0 = horizontal
@@ -2760,6 +2772,33 @@ void drawscrollbar(struct skin* node)
 		fillrect(node->rposx + node->rwidth - node->bordersize - node->scrollbarwidth, node->iposy, node->scrollbarbordersize, node->iheight, node->bordercol, node->transparent);
 
 	fillrect(node->rposx + node->rwidth - node->bordersize - node->scrollbarwidth, node->iposy + node->scrollbarpos, node->scrollbarwidth, node->scrollbarheight, node->bordercol, node->transparent);
+	debug(1000, "out");
+}
+
+void clearshadow(struct skin* node)
+{
+	debug(1000, "in");
+
+	if(node->shadowsize < 1) return;
+	switch(node->shadowpos)
+	{
+		case BOTTOMLEFT:
+		clearrect(node->rposx - node->shadowsize, node->rposy + node->rheight, node->rwidth, node->shadowsize);
+		clearrect(node->rposx - node->shadowsize, node->rposy + node->shadowsize, node->shadowsize, node->rheight);
+		break;
+		case BOTTOMRIGHT:
+		clearrect(node->rposx + node->shadowsize, node->rposy + node->rheight, node->rwidth, node->shadowsize);
+		clearrect(node->rposx + node->rwidth, node->rposy + node->shadowsize, node->shadowsize, node->rheight);
+		break;
+		case TOPLEFT:
+		clearrect(node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->rwidth, node->shadowsize);
+		clearrect(node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->shadowsize, node->rheight);
+		break;
+		default:
+		clearrect(node->rposx + node->shadowsize, node->rposy - node->shadowsize, node->rwidth, node->shadowsize);
+		clearrect(node->rposx + node->rwidth, node->rposy - node->shadowsize, node->shadowsize, node->rheight);
+		break;
+	}
 	debug(1000, "out");
 }
 
@@ -3397,7 +3436,7 @@ int drawscreenalways(struct skin* node)
 			{
 				if(status.drawallwaysbg[i] != NULL)
 					free(status.drawallwaysbg[i]);
-				status.drawallwaysbg[i] = saverect(status.drawallways[i]->rposx, status.drawallways[i]->rposy, status.drawallways[i]->rwidth, status.drawallways[i]->rheight);
+				status.drawallwaysbg[i] = savescreen(status.drawallways[i]);
 				ret = drawscreen(status.drawallways[i], 1);
 			}
 		}

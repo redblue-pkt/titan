@@ -34,7 +34,7 @@ int screendownload(char* title, char* host, char* page, int port, char* filename
 		setnodeattr(download, framebuffer);
 		status.screencalc = 0;
 		status.rcowner = download;
-		bg = saverect(download->rposx, download->rposy, download->rwidth, download->rheight);
+		bg = savescreen(download);
 		tmpscreencalc = status.screencalc;
 		status.screencalc = 0;
 		drawscreen(download, 2);
@@ -109,7 +109,7 @@ int screendownload(char* title, char* host, char* page, int port, char* filename
 	if(fromthread == 1)
 	{
 		clearscreennolock(download);
-		restorerect(bg, download->rposx, download->rposy, download->rwidth, download->rheight);
+		restorescreen(bg, download);
 		blitfb();
 		status.screencalc = tmpscreencalc;
 		sleep(1);
