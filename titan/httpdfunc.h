@@ -124,7 +124,7 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 	ostrcatbig(buf, "%;\"> </div></div>", maxlen, pos);
 
 	serviceid = oitoa(chnode->serviceid);
-	transponderid = oitoa(chnode->transponderid);
+	transponderid = olutoa(chnode->transponderid);
 
 	if(ret == 0)
 	{
@@ -982,7 +982,7 @@ char* webgetsingleepg(char* param)
 		ostrcatbig(&buf, tmpstr, &maxlen, &pos);
 		free(tmpstr); tmpstr = NULL;
 		ostrcatbig(&buf, "&", &maxlen, &pos);
-		tmpstr = oitoa(chnode->transponderid);
+		tmpstr = olutoa(chnode->transponderid);
 		ostrcatbig(&buf, tmpstr, &maxlen, &pos);
 		free(tmpstr); tmpstr = NULL;
 		ostrcatbig(&buf, "&", &maxlen, &pos);
@@ -1210,7 +1210,7 @@ void webgetshoot(char* param)
 			cmd = ostrcat(cmd, tmpstr, 1, 0);
 			free(tmpstr); tmpstr = NULL;
 			cmd = ostrcat(cmd, ",", 1, 0);
-			tmpstr = oitoa(status.aktservice->channel->transponderid);
+			tmpstr = olutoa(status.aktservice->channel->transponderid);
 			cmd = ostrcat(cmd, tmpstr, 1, 0);
 			free(tmpstr); tmpstr = NULL;
 			cmd = ostrcat(cmd, " -vframes 1 -vcodec png -sn -an -y -f image2 /tmp/dump.png", 1, 0);
@@ -1226,7 +1226,7 @@ void webgetshoot(char* param)
 			cmd = ostrcat(cmd, tmpstr, 1, 0);
 			free(tmpstr); tmpstr = NULL;
 			cmd = ostrcat(cmd, ",", 1, 0);
-			tmpstr = oitoa(status.aktservice->channel->transponderid);
+			tmpstr = olutoa(status.aktservice->channel->transponderid);
 			cmd = ostrcat(cmd, tmpstr, 1, 0);
 			free(tmpstr); tmpstr = NULL;
 			cmd = ostrcat(cmd, " titan", 1, 0);
@@ -1309,7 +1309,7 @@ char* webgetepgsearch(char* query, char* param)
 				ostrcatbig(&buf, tmpstr, &maxlen, &pos);
 				free(tmpstr); tmpstr = NULL;
 				ostrcatbig(&buf, "&", &maxlen, &pos);
-				tmpstr = oitoa(chnode->transponderid);
+				tmpstr = olutoa(chnode->transponderid);
 				ostrcatbig(&buf, tmpstr, &maxlen, &pos);
 				free(tmpstr); tmpstr = NULL;
 				ostrcatbig(&buf, "&", &maxlen, &pos);
