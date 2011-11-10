@@ -68,6 +68,12 @@ start:
 				changename(tmp, tmpstr);
 				free(tmpstr); tmpstr = NULL;
 			}
+			tmp = addlistbox(moduleconfig, listbox, tmp, 1);
+			if(tmp != NULL)
+			{
+				tmp->height = 20;
+				tmp->deaktivcol = 1;
+			}
 		}
 		dvbnode = dvbnode->next;
 	}
