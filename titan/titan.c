@@ -334,11 +334,6 @@ int main(int argc, char *argv[])
 	if(checkbox("UFS922") == 1)
 		setfanspeed(-1, 0);
 			
-	if(getconfig("timetosleep", NULL) == NULL)
-		settimetosleep(0);
-	else 
-		settimetosleep(atoi(getconfig("timetosleep", NULL)));
-	
 	if(getconfig("av_videomode_default", NULL) == NULL)
 		ret = setvideomode(getconfig("av_videomode", NULL));
 	else
@@ -589,8 +584,8 @@ firstwizzardstep1:
 	status.epgscanlistthread = addtimer(&epgscanlistthread, START, 1000, 1, NULL, NULL, NULL);
 	//get pmt
 	addtimer(&dvbgetpmtthread, START, 2000, -1, NULL, NULL, NULL);
-	//check hdd (in the moment not needed, but can aktivated when needed)
-	//addtimer(&addhddall, START, 3000, -1, NULL, NULL, NULL);
+	//check hdd (in the moment not needed, but can aktivated when needed) -> aktivated from GOst
+	status.addhddall = addtimer(&addhddall, START, 6000, -1, NULL, NULL, NULL);
 #ifdef CAMSUPP
 	//start ca slot watching threads
 	castart();
