@@ -210,6 +210,10 @@ struct hdd
 	char* vendor;
 	char* model;
 	int removable;
+	int read;
+	int write;
+	int sleeptime;
+	int notchanged;
 	struct hdd* prev;
 	struct hdd* next;
 };
@@ -937,7 +941,7 @@ struct status
 	struct stimerthread* restimer;
 	//spindown USB/HDD
 	struct hddparm hdd[3];
-	struct stimerthread* hddsleeptimer;
+	struct stimerthread* addhddall;
 
 } status;
 

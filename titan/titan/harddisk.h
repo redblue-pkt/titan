@@ -617,7 +617,7 @@ void screenharddisksleep()
 		if(listbox->select != NULL && listbox->select->ret != NULL && rcret == getrcconfigint("rcok", NULL))
 		{
 			addconfig("timetosleep", listbox->select->ret);
-			settimetosleep(atoi(listbox->select->ret));
+			//settimetosleep(atoi(listbox->select->ret));
 			break;
 		}
 	}
@@ -677,7 +677,7 @@ void delhdd(char* device, int flag)
 
 //flag 0: lock
 //flag 1: no lock
-struct hdd* addhdd(char* device, int partition, unsigned long size, int removable, char* vendor, char *model, char* label, char* filesystem, char* uuid, struct hdd* last, int flag)
+struct hdd* addhdd(char* device, int partition, unsigned long size, int removable, char* vendor, char *model, char* label, char* filesystem, char* uuid, int timetosleep, struct hdd* last, int flag)
 {
 	debug(1000, "in");
 	if(flag == 0) m_lock(&status.hddmutex, 13);
@@ -701,6 +701,10 @@ struct hdd* addhdd(char* device, int partition, unsigned long size, int removabl
 	newnode->label = label;
 	newnode->uuid = uuid;
 	newnode->filesystem = filesystem;
+	newnode->read = 0;
+	newnode->write = 0;
+	newnode->sleeptime = timetosleep;
+	newnode->notchanged = 0;
 
 	debug(80, "add hdd %s", device);
 	
@@ -753,11 +757,16 @@ int addhddall()
 {
 	m_lock(&status.hddmutex, 13);
 	FILE* fd = NULL;
+	FILE* fd2 = NULL;
 	char* fileline = NULL, *dev = NULL, *pos = NULL, *part = NULL;
 	char* tmpstr = NULL;
+	char* tmpstr2 = NULL;
 	int partition = 0;
+	int timetosleep = 0;
 	struct hdd *node = hdd;
-
+	struct hdd *nodedev = hdd;
+	int w1, w2, w3, w4, w5;
+		
 	fd = fopen("/proc/partitions", "r");
 	if(fd == NULL)
 	{
@@ -786,6 +795,10 @@ int addhddall()
 			{
 				free(dev); dev = NULL;
 				dev = ostrcat(pos, NULL, 0, 0);
+				if(getconfig("timetosleep", NULL) == NULL)
+					timetosleep = 0;
+				else 
+					timetosleep = atoi(getconfig("timetosleep", NULL));
 			}
 			if(strlen(pos) == 4)
 			{
@@ -794,8 +807,49 @@ int addhddall()
 			}
 			tmpstr = ostrcat(tmpstr, "#", 1, 0);
 			tmpstr = ostrcat(tmpstr, pos, 1, 0);
-			if(gethdd(pos) == NULL)
-				addhdd(ostrcat(pos, NULL, 0, 0), partition, hddgetsize(dev, part), hddgetremovable(dev), hddgetvendor(dev), hddgetmodel(dev), get_label(part), get_filesystem(part), get_uuid(part), NULL, 1);
+			//if(gethdd(pos) == NULL) 
+			nodedev = gethdd(pos);
+			if(nodedev == NULL) 
+				nodedev = addhdd(ostrcat(pos, NULL, 0, 0), partition, hddgetsize(dev, part), hddgetremovable(dev), hddgetvendor(dev), hddgetmodel(dev), get_label(part), get_filesystem(part), get_uuid(part), timetosleep, NULL, 1);
+			
+			//HDD SleepTimer start
+			if(nodedev != NULL) {
+				if(nodedev->sleeptime != timetosleep) {
+					nodedev->read = 0;
+					nodedev->write = 0;
+					nodedev->sleeptime = timetosleep;
+					nodedev->notchanged = 0;
+				}
+				if(strlen(pos) == 3) {
+					free(tmpstr2);tmpstr2=NULL;
+					tmpstr2 = ostrcat(tmpstr2, "/sys/block/", 1, 0);
+					tmpstr2 = ostrcat(tmpstr2, nodedev->device, 1, 0);
+					tmpstr2 = ostrcat(tmpstr2, "/stat", 1, 0);
+					fd2 = fopen(tmpstr2, "r");
+					if(fd2 != NULL) {
+						fscanf(fd2, "%d%d%d%d%d", &w1,&w2,&w3,&w4,&w5);
+						fclose(fd2);
+						fd2 = NULL;
+						if((nodedev->read != w1) || (nodedev->write != w5)) {
+							nodedev->read = w1;
+							nodedev->write = w5;
+							nodedev->notchanged = 0;
+						} else {
+							if (nodedev->notchanged < nodedev->sleeptime) {
+								nodedev->notchanged = nodedev->notchanged + (status.addhddall->delay / 1000);
+								if (nodedev->notchanged >= nodedev->sleeptime) {
+									free(tmpstr2);tmpstr2=NULL;
+									tmpstr2 = ostrcat(tmpstr2, "/sbin/sdparm -C stop /dev/", 1, 0);
+									tmpstr2 = ostrcat(tmpstr2, nodedev->device, 1, 0);
+									system(tmpstr2);
+								}
+							}
+						}
+					}
+				}
+			}
+			//HDD SleepTimer end
+		
 		}
 	}
 
@@ -811,6 +865,7 @@ int addhddall()
 	}
 
 	free(tmpstr);
+	free(tmpstr2);
 	free(dev);
 	free(fileline);
 	fclose(fd);
