@@ -1126,7 +1126,7 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 		if(tmpchnode == NULL)
 		{
 			debug(1000, "out -> NULL detect");
-			return;
+			continue;
 		}
 
 		//look in epglist if channel exists
@@ -1134,7 +1134,7 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 		if(status.epglistmode == 2 || status.epglistmode == 3)
 		{
 			if(getepgscanlist(serviceid, transponderid) == NULL)
-				return;
+				continue;
 		}
 
 		m_lock(&status.epgmutex, 4);
@@ -1145,7 +1145,7 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 			if(epgnode->version <= eit->version_number)
 			{
 				m_unlock(&status.epgmutex, 4);
-				return;
+				continue;
 			}
 			delepg(tmpchnode, eventid, 1);
 		}
@@ -1164,7 +1164,7 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 		if(endtime < time(NULL) || starttime > time(NULL) + epgmaxsec)
 		{
 			m_unlock(&status.epgmutex, 4);
-			return;
+			continue;
 		}
 #endif
 
@@ -1173,7 +1173,7 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 		{
 			debug(1000, "out -> NULL detect");
 			m_unlock(&status.epgmutex, 4);
-			return;
+			continue;
 		}
 
 		//1 Airing, 2 Starts in a few seconds, 3 Pausing, 4 About to air
@@ -1506,7 +1506,7 @@ read_more:
 		readlen = TEMP_FAILURE_RETRY(read(fd, buf + pos, (MINMALLOC * 4) - pos));
 		usleep(200000);
 #else
-		readlen = dvbread(dmxnode, buf, pos, (MINMALLOC * 4) - pos, 100000);
+		readlen = dvbread(dmxnode, buf, pos, (MINMALLOC * 4) - pos, 500000);
 		usleep(1000);
 #endif
 		if(readlen < 0) readlen = 0;
