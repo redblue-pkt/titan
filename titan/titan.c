@@ -557,15 +557,17 @@ firstwizzardstep1:
 		drawscreen(skin, 0);
 		addconfig("nofirstwizzard", "1");
 	}
+	else
+	{
+		//check servicestart
+		if(serviceret != 21) // no message if startchannel empty
+			servicecheckret(serviceret, 0);
+	}
 	
 	//start spinner thread
 	addtimer(&checkspinner, START, 2000, -1, NULL, NULL, NULL);
 	//start auto shutdown thread
 	addtimer(&checkshutdowntimer, START, 2000, -1, NULL, NULL, NULL);
-
-	//check servicestart
-	if(serviceret != 21) // no message if startchannel empty
-		servicecheckret(serviceret, 0);
 
 	ret = loadplugin();
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
