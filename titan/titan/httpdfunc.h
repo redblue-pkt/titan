@@ -1197,7 +1197,7 @@ void webgetshoot(char* param)
 	char* cmd = NULL, *tmpstr = NULL;
 
 	if(ostrcmp(param, "1") == 0) //OSD
-		cmd = ostrcat(cmd, "stfbshot PNG /tmp/dump.png", 1, 0);
+		cmd = ostrcat(cmd, "stfbshot PNG /tmp", 1, 0);
 
 	if(ostrcmp(param, "2") == 0) //Video
 	{
