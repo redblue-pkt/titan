@@ -1196,41 +1196,21 @@ void webgetshoot(char* param)
 {
 	char* cmd = NULL, *tmpstr = NULL;
 
-	if(ostrcmp(param, "1") == 0) //OSD
-		cmd = ostrcat(cmd, "stfbshot PNG /tmp", 1, 0);
-
-	if(ostrcmp(param, "2") == 0) //Video
+	if(status.aktservice->channel != NULL)
 	{
-		if(status.aktservice->channel != NULL)
-		{
-			cmd = ostrcat(cmd, "ffmpeg -itsoffset -4 -i http://127.0.0.1:", 1, 0);
-			cmd = ostrcat(cmd, getconfig("streamport", NULL), 1, 0);
-			cmd = ostrcat(cmd, "/", 1, 0);
-			tmpstr = oitoa(status.aktservice->channel->serviceid);
-			cmd = ostrcat(cmd, tmpstr, 1, 0);
-			free(tmpstr); tmpstr = NULL;
-			cmd = ostrcat(cmd, ",", 1, 0);
-			tmpstr = olutoa(status.aktservice->channel->transponderid);
-			cmd = ostrcat(cmd, tmpstr, 1, 0);
-			free(tmpstr); tmpstr = NULL;
-			cmd = ostrcat(cmd, " -vframes 1 -vcodec png -sn -an -y -f image2 /tmp/dump.png", 1, 0);
-		}
-	}
-
-	if(ostrcmp(param, "3") == 0) //OSD + Video
-	{
-		if(status.aktservice->channel != NULL)
-		{
-			cmd = ostrcat(cmd, "grab.sh ", 1, 0);
-			tmpstr = oitoa(status.aktservice->channel->serviceid);
-			cmd = ostrcat(cmd, tmpstr, 1, 0);
-			free(tmpstr); tmpstr = NULL;
-			cmd = ostrcat(cmd, ",", 1, 0);
-			tmpstr = olutoa(status.aktservice->channel->transponderid);
-			cmd = ostrcat(cmd, tmpstr, 1, 0);
-			free(tmpstr); tmpstr = NULL;
-			cmd = ostrcat(cmd, " titan", 1, 0);
-		}
+		cmd = ostrcat(cmd, "grab.sh ", 1, 0);
+		cmd = ostrcat(cmd, param, 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, getconfig("streamport", NULL), 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		tmpstr = oitoa(status.aktservice->channel->serviceid);
+		cmd = ostrcat(cmd, tmpstr, 1, 0);
+		free(tmpstr); tmpstr = NULL;
+		cmd = ostrcat(cmd, ",", 1, 0);
+		tmpstr = olutoa(status.aktservice->channel->transponderid);
+		cmd = ostrcat(cmd, tmpstr, 1, 0);
+		free(tmpstr); tmpstr = NULL;
+		cmd = ostrcat(cmd, " titan", 1, 0);
 	}
 
 	if(cmd != NULL)
