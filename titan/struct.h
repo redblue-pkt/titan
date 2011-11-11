@@ -755,9 +755,8 @@ struct caservice
 	struct service* service;
 	struct channel* channel;
 	int count;
-	//0-10000 filedescriptor
-	//10000- camslot
 	int camsockfd;
+	int caslot;
 };
 
 struct stimerthread
