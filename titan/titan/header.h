@@ -1,6 +1,11 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//cam.h
+int getcaservicebyslot(int caslot, int flag);
+void caservicedel(struct service* snode, int caslot);
+void sendcapmt(struct service* node, int clear, int flag);
+
 //gmultiepg.h
 void screengmultiepg(struct channel* chnode, struct epg* epgnode);
 
@@ -115,6 +120,7 @@ void screenplay(int flag);
 struct inetwork* getinetworkbydevice(char* device);
 
 //fb.h
+void blitfb();
 void changefbresolution(char *value);
 void setfbtransparent(int value);
 
@@ -137,6 +143,8 @@ struct rectimer* getrectimerbyservice(struct service* servicenode);
 void delrectimer(struct rectimer* rectimernode, int write, int flag);
 
 //dvb.h
+int dvbreadfd(int fd, unsigned char *buf, int pos, int count, int tout);
+int dvbwrite(int fd, unsigned char* buf, int count, int tout);
 int dvbgetdate(time_t* time, int timeout);
 
 //pin.h
@@ -203,6 +211,9 @@ char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 char* gettime(char* format);
 
 //skin.h
+int setnodeattr(struct skin* node, struct skin* parent);
+void clearscreennolock(struct skin* node);
+void clearshadow(struct skin* node);
 char* savescreen(struct skin* node);
 void restorescreen(char* buf, struct skin* node);
 char* changepicpath(char* picname);
