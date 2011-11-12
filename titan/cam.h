@@ -211,7 +211,6 @@ void sendcapmt(struct service* node, int clear, int flag)
 {
 	int pos = 10, i = 0, lenbytes = 0, round = 0, caservicenr = 0;
 	unsigned char* buf = NULL;
-	struct service* snode = service;
 
 	//check if service should decrypt
 	if(node == NULL)
