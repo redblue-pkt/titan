@@ -383,11 +383,9 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 
 	// pmt
 	int programnumber = (pmtbuf[3] << 8) + pmtbuf[4];
-	int reserved1 = pmtbuf[5] >> 6;
 	int versionnumber = (pmtbuf[5] >> 1) & 0x1F;
 	int currentnextindicator = pmtbuf[5] & 0x01;
-	int reserved2 = pmtbuf[10] >> 4;
-	addpmt(chnode, programnumber, reserved1, versionnumber, currentnextindicator, reserved2);
+	addpmt(chnode, programnumber, versionnumber, currentnextindicator);
 
 	if(programinfolength)
 	{
@@ -414,7 +412,7 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 		char langdesc[4] = "---";
 		int y = 0;
 
-		addesinfo(chnode, streamtype, tmpbuf[1] >> 5, pid, tmpbuf[3] >> 4, NULL);
+		addesinfo(chnode, streamtype, pid, NULL);
 
 		for(pos = 5; pos < esinfolength + 5; pos += descriptorlength + 2)
 		{

@@ -289,7 +289,7 @@ start:
 	buf[pos++] = node->channel->pmt->programnumber >> 8;
 	buf[pos++] = node->channel->pmt->programnumber & 0xff;
 
-	buf[pos++] = (node->channel->pmt->reserved1 << 6) | (node->channel->pmt->versionnumber << 1) | node->channel->pmt->currentnextindicator;
+	buf[pos++] = (node->channel->pmt->versionnumber << 1) | node->channel->pmt->currentnextindicator;
 
 	buf[pos++] = 0x00; //len from here (programinfo len) 
 	buf[pos++] = 0x00; //len from here (programinfo len)
@@ -357,7 +357,7 @@ start:
 	while(esinfonode != NULL)
 	{
 		buf[pos++] = esinfonode->streamtype;
-		buf[pos++] = (esinfonode->reserved1 << 5) | (esinfonode->pid >> 8);
+		buf[pos++] = esinfonode->pid >> 8;
 		buf[pos++] = esinfonode->pid & 0xff;
 		pos += 2;
 		esinfonode = esinfonode->next;
@@ -413,7 +413,7 @@ void checkcam()
 	m_unlock(&status.servicemutex, 2);
 }
 
-struct pmt* addpmt(struct channel* chnode, int programnumber, int reserved1, int versionnumber, int currentnextindicator, int reserved2)
+struct pmt* addpmt(struct channel* chnode, int programnumber, int versionnumber, int currentnextindicator)
 {
 	debug(1000, "in");
 	struct pmt *newnode = NULL;
@@ -434,10 +434,8 @@ struct pmt* addpmt(struct channel* chnode, int programnumber, int reserved1, int
 	memset(newnode, 0, sizeof(struct pmt));
 
 	newnode->programnumber = programnumber;
-	newnode->reserved1 = reserved1;
 	newnode->versionnumber = versionnumber;
 	newnode->currentnextindicator = currentnextindicator;
-	newnode->reserved2 = reserved2;
 
 	chnode->pmt = newnode;
 
@@ -508,7 +506,7 @@ struct cadesc* addcadesc(struct channel* chnode, unsigned char* buf, struct cade
 	return newnode;
 }
 
-struct esinfo* addesinfo(struct channel* chnode, int streamtype, int reserved1, int pid, int reserved2, struct esinfo* last)
+struct esinfo* addesinfo(struct channel* chnode, int streamtype, int pid, struct esinfo* last)
 {
 	debug(1000, "in");
 	struct esinfo *newnode = NULL, *prev = NULL, *node = NULL;
@@ -531,9 +529,7 @@ struct esinfo* addesinfo(struct channel* chnode, int streamtype, int reserved1, 
 	memset(newnode, 0, sizeof(struct esinfo));
 
 	newnode->streamtype = streamtype;
-	newnode->reserved1 = reserved1;
 	newnode->pid = pid;
-	newnode->reserved2 = reserved2;
 
 	if(last == NULL)
 	{
