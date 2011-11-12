@@ -213,7 +213,7 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 					debug(200, "don't write pmt.tmp, another crypt channel use this frontend");
 			}
 			else
-				sendcapmt(status.aktservice, 0);
+				sendcapmt(status.aktservice, 0, 0);
 		}
 		free(patbuf);
 	}
@@ -396,7 +396,7 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 					debug(200, "don't write pmt.tmp, another crypt channel use this frontend");
 			}
 			else
-				sendcapmt(status.aktservice, 0);
+				sendcapmt(status.aktservice, 0, 0);
 		}
 		free(patbuf);
 	}

@@ -40,7 +40,7 @@ int getcaservicebyslot(int caslot, int flag)
 
 //flag 0 = from zap
 //flag 1 = from watchthread
-//flag 2 = from cathread
+//flag 2 = from cathread / caservicedel
 //flag 3 = from recordthread
 int caserviceadd(struct service* snode, int flag)
 {
@@ -88,12 +88,15 @@ void caservicedel(struct service* snode, int caslot)
 			caservice[i].count--;
 			if(caservice[i].count < 1)
 			{
-				caservice[i].service = NULL;
-				caservice[i].channel = NULL;
 				if(caservice[i].camsockfd > -1)
 					sockclose(&caservice[i].camsockfd);
 				if(caservice[i].caslot > -1)
+				{
+					sendcapmt(caservice[i].service, 1, 2);
 					caservice[i].caslot = -1;
+				}
+				caservice[i].service = NULL;
+				caservice[i].channel = NULL;
 			}
 		}
 		//remove cam from slot
@@ -202,9 +205,9 @@ void sendcapmtend(struct service* node)
 
 //flag 0 = from zap
 //flag 1 = from watchthread
-//flag 2 = from cathread
+//flag 2 = from cathread / caservicedel
 //flag 3 = from recordthread
-void sendcapmt(struct service* node, int flag)
+void sendcapmt(struct service* node, int clear, int flag)
 {
 	int pos = 10, i = 0, lenbytes = 0, round = 0, caservicenr = 0;
 	unsigned char* buf = NULL;
@@ -264,12 +267,15 @@ void sendcapmt(struct service* node, int flag)
 		return;
 	}
 
-	caservicenr = caserviceadd(node, flag);
-	if(caservicenr < 0)
+	if(clear == 0)
 	{
-		debug(620, "service is decrypt");
-		free(buf);
-		return;
+		caservicenr = caserviceadd(node, flag);
+		if(caservicenr < 0)
+		{
+			debug(620, "service is decrypt");
+			free(buf);
+			return;
+		}
 	}
 
 	struct cadesc* cadescnode = node->channel->cadesc;
@@ -332,7 +338,7 @@ start:
 		buf[pos++] = node->channel->pmtpid & 0xff; //pmtpid & 0xff
 	}
 
-	while(cadescnode != NULL)
+	while(cadescnode != NULL && clear == 0)
 	{
 		if(cadescnode->len > 0)
 		{
@@ -378,11 +384,14 @@ start:
 	if(round == 0)
 	{
 #ifdef CAMSUPP
-		if(caservice[caservicenr].caslot < 0)
+		if(caservice[caservicenr].caslot < 0 || clear == 1)
 			sendcapmttocam(node, buf, pos, caservicenr);
 #endif
-		round = 1;
-		goto start;
+		if(clear == 0)
+		{
+			round = 1;
+			goto start;
+		}
 	}
 	else
 	{
@@ -407,7 +416,7 @@ void checkcam()
 		{
 			sockcheck(&caservice[i].camsockfd);
 			if(caservice[i].camsockfd < 0 || caservice[i].caslot < 0)
-				sendcapmt(caservice[i].service, 1);
+				sendcapmt(caservice[i].service, 0, 1);
 		}
 	}
 	m_unlock(&status.servicemutex, 2);
