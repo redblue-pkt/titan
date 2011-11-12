@@ -648,9 +648,7 @@ struct subtitle
 struct esinfo
 {
 	int streamtype;
-	int reserved1;
 	int pid;
-	int reserved2;
 	struct esinfo* next;
 };
 
@@ -667,10 +665,8 @@ struct cadesc
 struct pmt
 {
 	int programnumber;
-	int reserved1;
 	int versionnumber;
 	int currentnextindicator;
-	int reserved2;
 };
 
 struct audiotrack
