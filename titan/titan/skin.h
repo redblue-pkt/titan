@@ -1485,17 +1485,27 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 			{
 				if(scaleheight > 0)
 				{
-					int tmp = height / scaleheight;
+					float tmp = (float)height / (float)scaleheight;
 					if(tmp > 0)
 					{
-						tmp = py / tmp;
-						blitscale(posx, nposy, width, py, scalewidth, tmp);
+						tmp = (float)py / tmp;
+						blitscale(posx, nposy, width, py, scalewidth, (int)tmp);
 						nposy += tmp;
 					}
 				}
 				py = -1;
 			}
 		} 
+		//blit the rest
+		if(scaleheight > 0 && py > 0)
+		{
+			float tmp = (float)height / (float)scaleheight;
+			if(tmp > 0)
+			{
+				tmp = (float)py / tmp;
+				blitscale(posx, nposy, width, py, scalewidth, (int)tmp);
+			}
+		}
 	}
 	else
 	{
