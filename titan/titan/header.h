@@ -2,8 +2,8 @@
 #define HEADER_H
 
 //cam.h
-int getcaservicebyslot(int caslot, int flag);
-void caservicedel(struct service* snode, int caslot);
+int getcaservicebyslot(struct caslot* caslot, int flag);
+void caservicedel(struct service* snode, struct caslot* caslot);
 void sendcapmt(struct service* node, int clear, int flag);
 
 //gmultiepg.h

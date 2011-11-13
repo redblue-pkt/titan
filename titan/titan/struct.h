@@ -175,6 +175,11 @@ struct casession
 	int sessionnr;
 	int action;
 	int state;
+	int mmimanager;
+	int camanager;
+	int datetimemanager;
+	int appmanager;
+	int resmanager;
 	char* mmititle;
 	char* mmisubtitle;
 	char* mmitext;
@@ -191,11 +196,6 @@ struct caslot
 	unsigned char* rbuf;
 	char* name;
 	int fastrun;
-	int mmimanager;
-	int camanager;
-	int datetimemanager;
-	int appmanager;
-	int resmanager;
 	char* caids;
 };
 
@@ -752,7 +752,8 @@ struct caservice
 	struct channel* channel;
 	int count;
 	int camsockfd;
-	int caslot;
+	struct caslot* caslot;
+	int camanager;
 };
 
 struct stimerthread

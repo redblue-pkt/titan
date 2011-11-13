@@ -538,7 +538,7 @@ int servicestop(struct service *node, int clear, int flag)
 			if(rcret == 1) return 1;
 			timeshiftstop(1);
 		}
-		if(flag != 2) caservicedel(node, -1);
+		if(flag != 2) caservicedel(node, NULL);
 
 		truncate("/tmp/ecm.info", 0);
 		unlink("/tmp/pid.info");
@@ -679,7 +679,7 @@ void delservice(struct service* snode, int flag)
 			videoclose(node->videodev, -1);
 			close(node->recdstfd);
 			close(node->recsrcfd);
-			caservicedel(node, -1);
+			caservicedel(node, NULL);
 
 			//check if a rectimer is joined with a service
 			if(node->type == RECORDTIMER)
