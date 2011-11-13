@@ -10,23 +10,33 @@ char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 	char* skinname1 = NULL;
 	char* skinpath1 = NULL;
 	char* tmpskinpath = NULL;
-	int rcret = 0;
+	int rcret = 0, tmpscreencalc = 0, fromthread = 0;
+	struct skin* framebuffer = getscreen("framebuffer");
+        char* bg = NULL;
 
-	if (str == NULL)
-		return 0;
+	if(str == NULL) return 0;
 
-	if (skinname == NULL){
+	if(pthread_self() != status.mainthread)
+		fromthread = 1;
+
+	if(skinname == NULL)
+	{
 		debug(60, "skinname default=menulist");
 		skinname1 = ostrcat(skinname, "menulist", 1, 0);
-	} else {
+	}
+	else
+	{
 		debug(60, "skinname changed=%s", skinname);
 		skinname1 = ostrcat(skinname, "", 0, 0);
 	}
 
-	if (skinpath == NULL){
+	if(skinpath == NULL)
+	{
 		debug(60, "skinpath default=skin/");
 		skinpath1 = ostrcat(skinpath, "skin/", 1, 0);
-	} else {
+	}
+	else
+	{
 		debug(60, "skinpath changed=%s", skinpath);
 		skinpath1 = ostrcat(skinpath, "", 0, 0);
 	}
@@ -37,7 +47,8 @@ char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
 
-	if(skintitle != NULL){
+	if(skintitle != NULL)
+	{
 		debug(60, "skintitle changed=%s", skintitle);
 		changetitle(screen, _(skintitle));
 	}
@@ -59,7 +70,7 @@ char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 	int i = 0;
 	ret1 = strsplit(str, "\n", &count);
 
-	for( i = 0; i < count; i++)
+	for(i = 0; i < count; i++)
 	{
 		int count2 = 0;
 		tmpsplit = ostrcat(tmpsplit, (&ret1[i])->part, 1, 0);
@@ -167,7 +178,22 @@ char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 
 	listbox->aktpage = -1;
 
-	drawscreen(screen,0);
+	if(fromthread == 1)
+	{
+		m_lock(&status.drawingmutex, 0);
+		m_lock(&status.rcmutex, 10);
+		status.screencalc = 2;
+		setnodeattr(screen, framebuffer);
+		status.screencalc = 0;
+		status.rcowner = screen;
+		bg = savescreen(screen);
+		tmpscreencalc = status.screencalc;
+		status.screencalc = 0;
+		drawscreen(screen, 2);
+	}
+	else
+		drawscreen(screen,0);
+
 	addscreenrc(screen, listbox);
 
 	while (1)
@@ -186,7 +212,21 @@ char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 	free(skinpath1); skinpath1 = NULL;
 	delownerrc(screen);
 	delmarkedscreennodes(screen, 1);
-	clearscreen(screen);
+
+	if(fromthread == 1)
+	{
+		clearscreennolock(screen);
+		restorescreen(bg, screen);
+		blitfb();
+		status.screencalc = tmpscreencalc;
+		sleep(1);
+		status.rcowner = NULL;
+		m_unlock(&status.rcmutex, 3);
+		m_unlock(&status.drawingmutex, 0);
+	}
+	else
+		clearscreen(screen);
+
 	debug(1000, "out");
 	return tmpstr;
 }
