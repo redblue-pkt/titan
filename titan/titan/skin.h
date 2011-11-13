@@ -1481,7 +1481,7 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 				color = (0 << 24) | (red << 16) | (green << 8) | blue;
 				drawpixelfb(accelfb, (width * py) + x, 0, color);
 			}
-			if((py * width * 4) + (width * 4) >= accelfb->varfbsize)
+			if((py * width * 4) + (width * 8) >= accelfb->varfbsize)
 			{
 				if(scaleheight > 0)
 				{
