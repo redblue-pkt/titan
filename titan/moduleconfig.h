@@ -106,6 +106,11 @@ start:
 			if(((struct dvbdev*)listbox->select->handle)->caslot != NULL)
 				((struct dvbdev*)listbox->select->handle)->caslot->status = 0;
 		}
+		if(listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcgreen", NULL))
+		{
+			if((struct dvbdev*)listbox->select->handle != NULL)
+				caappmenu((struct dvbdev*)listbox->select->handle);
+		}
 		if(rcret == RCTIMEOUT) goto start;
 	}
 
