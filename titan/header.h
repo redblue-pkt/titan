@@ -333,7 +333,7 @@ int writeallconfig(int flag);
 int getrcconfigint(char *key, char* ext);
 
 //service.h
-struct service* checkcaservice(struct service* node);
+struct service* getservicebyservice(struct service* node, int flag);
 struct service* getservicebychannel(struct channel* chnode);
 struct service* checkservice(struct service* node);
 struct service* addservice(struct service* last);
