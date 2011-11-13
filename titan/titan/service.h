@@ -501,6 +501,25 @@ struct service* getservicebychannel(struct channel* chnode)
 	return NULL;
 }
 
+struct service* getservicebyservice(struct service* node, int flag)
+{
+	if(flag == 0) m_lock(&status.servicemutex, 2);
+	struct service* snode = service;
+
+	while(snode != NULL)
+	{
+		if(snode != status.lastservice && snode != node && snode->channel == node->channel)
+		{
+			if(flag == 0) m_unlock(&status.servicemutex, 2);
+			return snode;
+		}
+		snode = snode->next;
+
+	}
+	if(flag == 0) m_unlock(&status.servicemutex, 2);
+	return NULL;
+}
+
 //flag 0: with mutex
 //flag 1: without mutex
 struct service* getservice(int type, int flag)

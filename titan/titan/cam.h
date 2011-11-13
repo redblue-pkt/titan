@@ -10,9 +10,11 @@ void debugcaservice()
 		if(caservice[i].service != NULL)
 		{
 			printf("number: %d\n", i);
+			printf("service: %p\n", caservice[i].service);
 			if(caservice[i].channel != NULL)
 				printf("channel: %s\n", caservice[i].channel->name);
 			printf("camsockfd: %d\n", caservice[i].camsockfd);
+			printf("caslot: %p\n", caservice[i].caslot);
 			printf("count: %d\n", caservice[i].count);
 		}
 	}
@@ -52,7 +54,7 @@ int caserviceadd(struct service* snode, int flag)
 	{
 		if(caservice[i].service != NULL && caservice[i].channel == snode->channel)
 		{
-			if((flag == 0 || flag == 3) && (caservice[i].camsockfd > -1 || caservice[i].caslot != NULL))
+			if((flag == 0 || flag == 3))
 			{
 				caservice[i].service = snode;
 				caservice[i].count++;
@@ -102,6 +104,8 @@ void caservicedel(struct service* snode, struct caslot* caslot)
 				caservice[i].service = NULL;
 				caservice[i].channel = NULL;
 			}
+			else
+				caservice[i].service = getservicebyservice(snode, 1);
 		}
 		//remove cam from slot
 		if(caservice[i].service != NULL && caservice[i].caslot == caslot)
@@ -179,14 +183,14 @@ void sendcapmtend(struct service* node)
 {
 	unsigned char* buf = NULL;
 
-	if(node->fedev == 0)
-	{
-		debug(620, "no frontend");
-		return;
-	}
 	if(node == NULL)
 	{
 		debug(620, "service empty");
+		return;
+	}
+	if(node->fedev == 0)
+	{
+		debug(620, "no frontend");
 		return;
 	}
 
