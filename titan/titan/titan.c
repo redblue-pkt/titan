@@ -584,7 +584,7 @@ firstwizzardstep1:
 	status.epgscanlistthread = addtimer(&epgscanlistthread, START, 1000, 1, NULL, NULL, NULL);
 	//get pmt
 	addtimer(&dvbgetpmtthread, START, 2000, -1, NULL, NULL, NULL);
-	//check hdd (in the moment not needed, but can aktivated when needed) -> aktivated from GOst
+	//check hdd
 	status.addhddall = addtimer(&addhddall, START, 6000, -1, NULL, NULL, NULL);
 #ifdef CAMSUPP
 	//start ca slot watching threads
@@ -608,17 +608,12 @@ firstwizzardstep1:
 		}
 	}
 
-//createcapmt(status.aktservice->channel);
-//screeninputhelp();
-//recrepeatecheck();
-//sleep(1000);
-//gethttp(NULL, NULL, 80, "test.html");
-//screendownload("test", "www.orf.at", NULL, 80, "test.html", 0);
-//	screentunerconfig();
-//screenmanualscan();
 	screeninfobar();
 
 	//for testign screens
+	//screenmanualscan();
+	//screeninputhelp();
+	//screendownload("test", "www.orf.at", NULL, 80, "test.html", 0);
 	//screenrectimer();
 	//screenepgsettings();
 	//screenlnb("1");
