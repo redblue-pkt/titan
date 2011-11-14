@@ -238,6 +238,7 @@ void oshutdown(int exitcode, int flag)
 		free(status.dnsserver1);
 		free(status.dnsserver2);
 		free(status.boxtype);
+		free(status.httpauth);
 
 		freeservice();
 

@@ -43,7 +43,7 @@ char* getmimetype(char* name, char* mime)
 	return "text/html";
 }
 
-char* createheader(off64_t len, char* filename, char* mime, char* ext, int code)
+char* createheader(off64_t len, char* filename, char* mime, char* ext, int code, int auth)
 {
 	char* header = NULL, *buf = NULL;
 	time_t now = time(NULL);
@@ -55,6 +55,7 @@ char* createheader(off64_t len, char* filename, char* mime, char* ext, int code)
 		return NULL;
 	}
 
+	if(auth == 1) code=401;
 	switch(code)
 	{
 		case 200:
@@ -74,8 +75,11 @@ char* createheader(off64_t len, char* filename, char* mime, char* ext, int code)
 	snprintf(buf, 99, "Server: %s\r\n", PROGNAME);
 	header = ostrcat(header, buf, 1, 0);
 
-	//snprintf(buf, 99, "WWW-Authenticate: Basic realm=\"Contol Panel\"\r\n");
-	//header = ostrcat(header, buf, 1, 0);
+	if(auth == 1)
+	{
+		snprintf(buf, 99, "WWW-Authenticate: Basic realm=\"Contol Panel\"\r\n");
+		header = ostrcat(header, buf, 1, 0);
+	}
 
 	strftime(buf, 99, "Date: %a, %d %b %Y %H:%M:%S GMT\r\n", gmtime(&now));
 	header = ostrcat(header, buf, 1, 0);
@@ -84,6 +88,7 @@ char* createheader(off64_t len, char* filename, char* mime, char* ext, int code)
 	header = ostrcat(header, getmimetype(filename, mime), 1, 0);
 	header = ostrcat(header, "\r\n", 1, 0);
 
+	if(auth == 1) len = 0;
 	snprintf(buf, 99, "Content-Length: %lld\r\n", len);
 	header = ostrcat(header, buf, 1, 0);
 
@@ -110,7 +115,7 @@ char* createheader(off64_t len, char* filename, char* mime, char* ext, int code)
 	return header;
 }
 
-void senderror(int* connfd, char* title, char* text)
+void senderror(int* connfd, char* title, char* text, int auth)
 {
 	char* buf = NULL, *header = NULL;;
 
@@ -120,7 +125,7 @@ void senderror(int* connfd, char* title, char* text)
 	buf = ostrcat(buf, text, 1, 0);
 	buf = ostrcat(buf, "</font></body></html>", 1, 0);
 
-	header = createheader(strlen(buf), NULL, NULL, NULL, 500);
+	header = createheader(strlen(buf), NULL, NULL, NULL, 500, auth);
 
 	socksend(connfd, (unsigned char*)header, strlen(header), 5000 * 1000);
 	socksend(connfd, (unsigned char*)buf, strlen(buf), 5000 * 1000);
@@ -129,7 +134,7 @@ void senderror(int* connfd, char* title, char* text)
 	free(buf);
 }
 
-void checkquery(int* connfd, char* query)
+void checkquery(int* connfd, char* query, int auth)
 {
 	char* buf = NULL, *header = NULL, *param = NULL;
 	char* ext = NULL, *mime = NULL;
@@ -225,9 +230,9 @@ void checkquery(int* connfd, char* query)
 	if(query != NULL && strstr(query, "boxstatus") == query)
 	{
 		if(status.standby > 0)
-			sendoktext(connfd, "standby");
+			sendoktext(connfd, "standby", auth);
 		else
-			sendoktext(connfd, "running");
+			sendoktext(connfd, "running", auth);
 	}
 	if(query != NULL && strstr(query, "message") == query)
 		buf = websendmessage(query);
@@ -236,13 +241,13 @@ void checkquery(int* connfd, char* query)
 	{
 		if(buflen == 0 && onlyheader == 0) buflen = strlen(buf);
 
-		header = createheader(buflen, NULL, mime, ext, code);
+		header = createheader(buflen, NULL, mime, ext, code, auth);
 		socksend(connfd, (unsigned char*)header, strlen(header), 5000 * 1000);
-		if(onlyheader == 0)
+		if(onlyheader == 0 && auth == 0)
 			socksend(connfd, (unsigned char*)buf, buflen, 5000 * 1000);
 	}
 	else
-		senderror(connfd, "query", "Error in query string");
+		senderror(connfd, "query", "Error in query string", auth);
 
 	free(header);
 	free(buf);
@@ -250,9 +255,9 @@ void checkquery(int* connfd, char* query)
 
 void gotdata(int* connfd)
 {
-	int ret = 0, filefd = -1;
+	int ret = 0, filefd = -1, auth = 0;
 	unsigned char* buf = NULL;
-	char* tmpstr = NULL, *filename = NULL, *fullfilename = NULL, *header = NULL, *query = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL, *filename = NULL, *fullfilename = NULL, *header = NULL, *query = NULL;
 
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
@@ -287,6 +292,30 @@ void gotdata(int* connfd)
 	if(buf != NULL)
 	{
 		tmpstr = strstr((char*)buf, "GET /");
+		tmpstr1 = strstr((char*)buf, "Authorization: Basic ");
+	}
+
+	//Auth Password
+	if(status.httpauth != NULL)
+	{
+		if(tmpstr1 != NULL)
+		{
+			tmpstr1 += 21;
+			char* tmpstr3 = malloc(255);
+			if(tmpstr3 != NULL)
+			{
+				int l = b64dec(tmpstr3, tmpstr1);
+				if(l < 255) tmpstr3[l] = '\0';
+			}
+			if(ostrncmp(tmpstr3, status.httpauth, strlen(status.httpauth)) != 0)
+			{
+				//not ok:
+				tmpstr1 = NULL;
+			}
+			free(tmpstr3); tmpstr3 = NULL;
+		}
+	
+		if(tmpstr1 == NULL) auth = 1;
 	}
 
 	if(tmpstr != NULL)
@@ -309,11 +338,14 @@ void gotdata(int* connfd)
 		{
 			htmldecode(filename, filename);
 			
-			if(strstr(filename, "xmessage") == filename+1  || strstr(filename, "/cgi-bin/xmessage") == filename )
+			if(strstr(filename, "xmessage") == filename + 1  || strstr(filename, "/cgi-bin/xmessage") == filename )
 			{	
 				xmessage(filename);
-				sendoktext(connfd, "ok");
-				//senderror(connfd, "ok", "ok");
+				sendoktext(connfd, "ok", 0);
+				//senderror(connfd, "ok", "ok", 0);
+				free(buf); buf = NULL;
+				free(filename); filename = NULL;
+				tmpstr = NULL;
 				return;
 			}
 
@@ -328,7 +360,7 @@ void gotdata(int* connfd)
 			//query
 			if(ostrcmp(filename, "/query") == 0 && query != NULL)
 			{
-				checkquery(connfd, query);
+				checkquery(connfd, query, auth);
 				free(buf); buf = NULL;
 				free(filename); filename = NULL;
 				tmpstr = NULL;
@@ -346,7 +378,7 @@ void gotdata(int* connfd)
 			if(filefd < 0)
 			{
 				perr("open filename=%s", fullfilename);
-				senderror(connfd, "Open File", "Can't open File");
+				senderror(connfd, "Open File", "Can't open File", auth);
 				free(fullfilename); fullfilename = NULL;
 				free(buf); buf = NULL;
 				free(filename); filename = NULL;
@@ -355,7 +387,7 @@ void gotdata(int* connfd)
 			}
 			debug(250, "sende OK response to client");
 			char* rpath = realpath(fullfilename, NULL);
-			header = createheader(getfilesize(rpath), fullfilename, NULL, NULL, 200);
+			header = createheader(getfilesize(rpath), fullfilename, NULL, NULL, 200, auth);
 			free(rpath); rpath = NULL;
 			free(fullfilename); fullfilename = NULL;
 			ret = socksend(connfd, (unsigned char*)header, strlen(header), 5000 * 1000);
@@ -370,15 +402,14 @@ void gotdata(int* connfd)
 				return;
 			}
 
-//TODO:
-int readret = 1;
-while(readret > 0)
-{
-	readret = dvbreadfd(filefd, buf, 0, MINMALLOC, 1000);
-	if(readret > 0)
-		socksend(connfd, buf, readret, 5000 * 1000);
-}
-
+			//TODO:
+			int readret = 1;
+			while(readret > 0 && auth == 0)
+			{
+				readret = dvbreadfd(filefd, buf, 0, MINMALLOC, 1000);
+				if(readret > 0)
+					socksend(connfd, buf, readret, 5000 * 1000);
+			}
 		}
 	}
 
@@ -485,7 +516,7 @@ void httpdthreadfunc(struct stimerthread* timernode)
 	return;
 }
 
-void sendoktext(int* connfd, char* text)
+void sendoktext(int* connfd, char* text, int auth)
 {
 	char* buf = NULL;
 	char* header = NULL;
@@ -495,11 +526,12 @@ void sendoktext(int* connfd, char* text)
 	buf = ostrcat(buf, "</font></td></tr>", 1, 0);
 	buf = webcreatetail(buf, 1);
 	int buflen = strlen(buf);
-	header = createheader(buflen, NULL, NULL, NULL, 200);
+	header = createheader(buflen, NULL, NULL, NULL, 200, auth);
 	socksend(connfd, (unsigned char*)header, strlen(header), 5000 * 1000);
-  socksend(connfd, (unsigned char*)buf, buflen, 5000 * 1000);
-  free(buf); buf=NULL;
-  free(header); header=NULL;
+	if(auth == 0)
+		socksend(connfd, (unsigned char*)buf, buflen, 5000 * 1000);
+	free(buf); buf=NULL;
+	free(header); header=NULL;
 }
 
 #endif

@@ -782,6 +782,8 @@ struct hddparm
 
 struct status
 {
+	//http user:passwd
+	char* httpauth;
 	//set to 1 if channellist or channelnr open
 	int channelswitch;
 	//deaktivates child protect if greater then akttime

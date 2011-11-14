@@ -1,6 +1,72 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+int isbase64(char c)
+{
+	if((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') || c == '+' || c == '/' || c == '=')
+		return 1;
+	return 0;
+}
+
+char decodebase64(char c)
+{
+	if(c >= 'A' && c <= 'Z') return(c - 'A');
+	if(c >= 'a' && c <= 'z') return(c - 'a' + 26);
+	if(c >= '0' && c <= '9') return(c - '0' + 52);
+	if(c == '+') return(62);
+	return 63;
+}
+
+int b64dec(char* dest, char* src)
+{
+	if(src && *src)
+	{
+		char* p = dest;
+		int k, l = strlen(src) + 1;
+		char* buf = NULL;
+
+		buf = malloc(l);
+		if(buf == NULL) return 0;
+
+		for(k = 0, l = 0; src[k]; k++)
+		{
+			if(isbase64(src[k]))
+				buf[l++] = src[k];	
+		}
+	
+		for(k = 0; k < l; k += 4)
+		{
+			char c1 = 'A', c2 = 'A', c3 = 'A', c4 = 'A';
+			char b1 = 0, b2 = 0, b3 = 0, b4 = 0;
+
+			c1 = buf[k];
+			if(k + 1 < l)
+				c2 = buf[k + 1];
+			if(k + 2 < l)
+				c3 = buf[k + 2];
+			if(k + 3 < l)
+				c4 = buf[k + 3];
+
+			b1 = decodebase64(c1);
+			b2 = decodebase64(c2);
+			b3 = decodebase64(c3);
+			b4 = decodebase64(c4);
+
+			*p++ = ((b1 << 2) | (b2 >> 4));
+
+			if(c3 != '=')
+				*p++ = (((b2 & 0xf) << 4) | (b3 >> 2));
+			if(c4 != '=')
+				*p++ = (((b3 & 0x3) << 6) | b4);
+				
+		}
+
+		free(buf);
+		return(p - dest);
+	}
+	return 0;
+}
+
 void changechannellist(struct channel* chnode, char* channellist)
 {
 		char* tmpstr = NULL;
