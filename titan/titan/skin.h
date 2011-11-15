@@ -466,6 +466,15 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 		if(ret != NULL)
 		{
 			newnode->type = convertxmlentry(ret, NULL);
+			if(newnode->type == MENU)
+			{
+				if(checkmenuforbox(newnode->name) == 0)
+				{
+					free(newnode);
+					free(ret);
+					return(NULL);
+				}
+			}
 			free(ret);
 		}
 		ret = getxmlentry(line, " posx=");

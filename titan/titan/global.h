@@ -1,6 +1,16 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+//can use to disable a menu for a box (node type must be MENU)
+int checkmenuforbox(char *name)
+{
+	if(checkbox("atemio500") == 1)
+	{
+		if(ostrcmp("vfdisplay", name) == 0) return 0;
+	}
+	return 1;
+}
+
 int isbase64(char c)
 {
 	if((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') || c == '+' || c == '/' || c == '=')
