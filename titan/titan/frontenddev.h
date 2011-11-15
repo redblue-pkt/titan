@@ -782,7 +782,7 @@ void fediseqcrotor(struct dvbdev* node, int pos, int oldpos, int flag)
 
 void fesetunicable(struct dvbdev* node)
 {
-	int aktlnb = 1, unicabletune = 0;
+	int aktdiseqc = 1, unicabletune = 0;
 	struct dvb_diseqc_master_cmd cmd = {{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0};
 
 	if(node == NULL)
@@ -792,10 +792,10 @@ void fesetunicable(struct dvbdev* node)
 	}
 
 	int satcr = getconfigint("lnb_satcr", node->feaktlnb) + 1;
-	if(node->feaktlnb != NULL) aktlnb = atoi(node->feaktlnb);
+	if(node->feaktdiseqc != NULL) aktdiseqc = atoi(node->feaktdiseqc);
 
 	unicabletune |= ((satcr & 0x7) << 13);
-	unicabletune |= (((aktlnb - 1) & 0x1) << 12);
+	unicabletune |= (((aktdiseqc - 1) & 0x1) << 12);
 	unicabletune |= (((!node->feaktpolarization) & 0x1) << 11);
 	unicabletune |= ((node->feaktband & 0x1) << 10);
 	unicabletune |= ((node->feloffrequency / 1000) & 0x3ff);
@@ -926,7 +926,7 @@ int CFrontend::driveToSatellitePosition(t_satellite_position satellitePosition, 
 void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 {
 	debug(1000, "in");
-	int toneburst = 0, cmdorder = 0, aktlnb = 1, input = 0, uinput = 0, diseqmode = 0;
+	int toneburst = 0, cmdorder = 0, aktdiseqc = 1, input = 0, uinput = 0, diseqmode = 0;
 	fe_sec_mini_cmd_t mini = -1;
 	struct dvb_diseqc_master_cmd cmd = {{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0};
 	struct dvb_diseqc_master_cmd ucmd = {{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0};
@@ -939,10 +939,10 @@ void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 	cmdorder = getconfigint("diseqc_cmdorder", node->feaktdiseqc);
 	toneburst = getconfigint("diseqc_toneburst", node->feaktdiseqc);
 
-	if(node->feaktlnb != NULL)
-		aktlnb = atoi(node->feaktlnb);
+	if(node->feaktdiseqc != NULL)
+		aktdiseqc = atoi(node->feaktdiseqc);
 
-	debug(200, "set diseqc: number=%d, band=%d, pol=%d", aktlnb, node->feaktband, node->feaktpolarization);
+	debug(200, "set diseqc: number=%d, band=%d, pol=%d", aktdiseqc, node->feaktband, node->feaktpolarization);
 	debug(200, "set diseqc: diseqmode=%d, input=%d, uinput=%d, cmdorder=%d, toneburst=%d", diseqmode, input, uinput, cmdorder, toneburst);
 	 
 	switch(toneburst)
@@ -955,7 +955,7 @@ void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 	{
 		debug(200, "set diseqc: Tonburst A/B");
 		if(mini == -1)
-			mini = (aktlnb - 1) % 2 ? SEC_MINI_B : SEC_MINI_A;
+			mini = (aktdiseqc - 1) % 2 ? SEC_MINI_B : SEC_MINI_A;
 		fediseqcsendburst(node, mini, 15);
 		return;
 	}
@@ -968,7 +968,7 @@ void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 		cmd.msg[2] = 0x38;
 
 		if(input == 0)
-			cmd.msg[3] = 0xF0 | ((((aktlnb - 1) * 4) & 0x0F) | (node->feaktband ? 1 : 0) | (node->feaktpolarization ? 0 : 2));
+			cmd.msg[3] = 0xF0 | ((((aktdiseqc - 1) * 4) & 0x0F) | (node->feaktband ? 1 : 0) | (node->feaktpolarization ? 0 : 2));
 		else
 			cmd.msg[3] = 0xF0 + ((input - 1) & 0x0F);
 

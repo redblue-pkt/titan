@@ -50,14 +50,19 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 
 		tmp = addlistbox(tunerreceptiondvbs, listbox, tmp, 1);
 		tmp->type = CHOICEBOX;
-		changetext(tmp, _("LNB"));
-		tmpstr = ostrcat(_("Standard LNB\n"), maxsatstring, 0, 0);
+		changetext(tmp, _("DiSEqC"));
+		tmpstr = ostrcat(_("no\n"), maxsatstring, 0, 0);
+		tmpstr = stringreplacecharonce(tmpstr, '1', 'A');
+		tmpstr = stringreplacecharonce(tmpstr, '2', 'B');
+		tmpstr = stringreplacecharonce(tmpstr, '3', 'C');
+		tmpstr = stringreplacecharonce(tmpstr, '4', 'D');
+		changechoiceboxvalue(tmp, tmpstr);
 		changeinput(tmp, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 		tmpstr = ostrcat("0\n", maxsatstring, 0, 0);
 		changechoiceboxvalue(tmp, tmpstr);
 		free(tmpstr); tmpstr = NULL;
-		tmpstr = ostrcat(tuner->feshortname, "_lnb", 0, 0);
+		tmpstr = ostrcat(tuner->feshortname, "_diseqc", 0, 0);
 		tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
 		changename(tmp, tmpstr);
 		setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
@@ -66,14 +71,14 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 
 		tmp = addlistbox(tunerreceptiondvbs, listbox, tmp, 1);
 		tmp->type = CHOICEBOX;
-		changetext(tmp, _("DiSEqC"));
-		tmpstr = ostrcat(_("no\n"), maxsatstring, 0, 0);
+		changetext(tmp, _("LNB"));
+		tmpstr = ostrcat(_("Standard LNB\n"), maxsatstring, 0, 0);
 		changeinput(tmp, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 		tmpstr = ostrcat("0\n", maxsatstring, 0, 0);
 		changechoiceboxvalue(tmp, tmpstr);
 		free(tmpstr); tmpstr = NULL;
-		tmpstr = ostrcat(tuner->feshortname, "_diseqc", 0, 0);
+		tmpstr = ostrcat(tuner->feshortname, "_lnb", 0, 0);
 		tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
 		changename(tmp, tmpstr);
 		setchoiceboxselection(tmp, getconfig(tmpstr, NULL));

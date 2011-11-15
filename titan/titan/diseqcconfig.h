@@ -110,14 +110,24 @@ void screendiseqc(char* diseqcnr)
 	if(diseqcnr == NULL)
 	{
 		tmpstr = getmaxsatstring();
+		changechoiceboxvalue(diseqc, tmpstr);
+		tmpstr = stringreplacecharonce(tmpstr, '1', 'A');
+		tmpstr = stringreplacecharonce(tmpstr, '2', 'B');
+		tmpstr = stringreplacecharonce(tmpstr, '3', 'C');
+		tmpstr = stringreplacecharonce(tmpstr, '4', 'D');
 		changeinput(diseqc, tmpstr);
 		diseqc->aktpage = 1;
-		free(tmpstr);
+		free(tmpstr); tmpstr = NULL;
 		diseqcnr = "1";
 	}
 	else
 	{
-		changeinput(diseqc, diseqcnr);
+		changechoiceboxvalue(diseqc, diseqcnr);
+		if(ostrcmp(diseqcnr, "1") == 0) changeinput(diseqc, "A");
+		else if(ostrcmp(diseqcnr, "2") == 0) changeinput(diseqc, "B");
+		else if(ostrcmp(diseqcnr, "3") == 0) changeinput(diseqc, "C");
+		else if(ostrcmp(diseqcnr, "4") == 0) changeinput(diseqc, "D");
+		else changeinput(diseqc, diseqcnr);
 		diseqc->aktpage = atoi(diseqcnr);
 	}
 
