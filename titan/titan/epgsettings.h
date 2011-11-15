@@ -16,6 +16,7 @@ void screenepgsettings()
 	struct skin* epgrefresh = getscreennode(epgsettings, "epgrefresh");
 	struct skin* epgbutton = getscreennode(epgsettings, "epgbutton");
 	struct skin* epgzoom = getscreennode(epgsettings, "epgzoom");
+	struct skin* epgpicon = getscreennode(epgsettings, "epgpicon");
 	struct skin* tmp = NULL;
 
 	changeinput(epgpath, getconfig("epg_path", NULL));
@@ -51,6 +52,10 @@ void screenepgsettings()
 
 	changeinput(epgzoom, "1\n2\n3\n4\n5\n6\n7");
 	setchoiceboxselection(epgzoom, getconfig("gmultiepgzoom", NULL));
+	
+	addchoicebox(epgpicon, "0", _("no"));
+	addchoicebox(epgpicon, "1", _("yes"));
+	setchoiceboxselection(epgpicon, getconfig("epgpicon", NULL));
 
 	drawscreen(epgsettings, 0);
 	addscreenrc(epgsettings, listbox);
@@ -76,6 +81,7 @@ void screenepgsettings()
 			addconfigscreencheck("epg_refreshtime", epgrefresh, "deaktiv");
 			addconfigscreencheck("epgbutton", epgbutton, "0");
 			addconfigscreen("gmultiepgzoom", epgzoom);
+			addconfigscreencheck("epgpicon", epgpicon, "0");
 			break;
 		}
 		if(rcret == getrcconfigint("rcok", NULL))
