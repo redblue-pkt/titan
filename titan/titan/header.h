@@ -105,7 +105,7 @@ int writeprovider(const char *filename);
 
 //httpd.h
 void httpdthreadfunc(struct stimerthread* timernode);
-void sendoktext(int* connfd, char* text);
+void sendoktext(int* connfd, char* text, int auth);
 
 //skinconfig.h
 int getskinconfigint(char *key, char *ext);
