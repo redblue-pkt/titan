@@ -1,16 +1,6 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-//can use to disable a menu for a box (node type must be MENU)
-int checkmenuforbox(char *name)
-{
-	if(checkbox("atemio500") == 1)
-	{
-		if(ostrcmp("vfdisplay", name) == 0) return 0;
-	}
-	return 1;
-}
-
 int isbase64(char c)
 {
 	if((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') || c == '+' || c == '/' || c == '=')
@@ -2811,6 +2801,26 @@ char* string_toupper(char *str)
 
 	for( i = 0; i < strlen(str); i++)
 		str[i] = toupper(str[i]);
+
+	debug(1000, "out");
+	return str;
+}
+
+char* stringreplacecharonce(char *str, char c1, char c2)
+{
+	debug(1000, "in");
+	int i;
+
+	if(str == NULL) return NULL;
+
+	for( i = 0; i < strlen(str); i++)
+	{
+		if(str[i] == c1)
+		{
+			str[i] = c2;
+			break;
+		}
+	}
 
 	debug(1000, "out");
 	return str;
