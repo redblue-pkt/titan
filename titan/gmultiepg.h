@@ -88,6 +88,9 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 	int treffer = 0, gridbr = 0, aktcol = 0, nottuneable = 0;
 	struct epg* epgnode = NULL;
 	struct skin* chnode = NULL, *chnode1 = NULL;
+	char* tmpstr = NULL;
+
+	int epgpicon = getskinconfigint("epgpicon", NULL);
 
 	if(tmpchannel != NULL && tmpchannel->servicetype == status.servicetype)
 	{
@@ -98,7 +101,13 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 		{
 			chnode->bgspace = 1;
 			chnode->height = height;
-			changetext(chnode, tmpchannel->name);
+			tmpstr = createpiconpath(tmpchannel);
+			if(epgpicon == 1 && tmpstr != NULL && strstr(tmpstr, "default.png") == NULL)
+				changepic(chnode, tmpstr);
+			else
+				changetext(chnode, tmpchannel->name);
+			free(tmpstr); tmpstr = NULL;
+
 			epgnode = getepgakt(tmpchannel);
 
 			while(epgnode != NULL)
