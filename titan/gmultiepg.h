@@ -90,7 +90,7 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 	struct skin* chnode = NULL, *chnode1 = NULL;
 	char* tmpstr = NULL;
 
-	int epgpicon = getskinconfigint("epgpicon", NULL);
+	int epgpicon = getconfigint("epgpicon", NULL);
 
 	if(tmpchannel != NULL && tmpchannel->servicetype == status.servicetype)
 	{
