@@ -1,6 +1,7 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+//check if emu ist installed, if not it hiddes the menu
 int checkemu()
 {
 	char* tmpstr = NULL;
