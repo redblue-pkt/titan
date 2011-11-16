@@ -9,7 +9,8 @@ void screenaafpanel_settings_bluebutton()
 	struct skin* child = plugin->child;
 	char* tmpstr = NULL;
 	tmpstr = ostrcat(tmpstr, "Auto Resolution (default)\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, "Softcam Panel\n", 1, 0);
+	if(checkemu() == 1)
+		tmpstr = ostrcat(tmpstr, "Softcam Panel\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, "Extentions List\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, "Multi EPG\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, "Graphic Multi EPG\n", 1, 0);
