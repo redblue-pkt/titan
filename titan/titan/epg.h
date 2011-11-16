@@ -28,7 +28,7 @@ void debugepg()
 	}
 }
 
-void screensingleepg(struct channel* chnode, struct epg* epgnode)
+void screensingleepg(struct channel* chnode, struct epg* epgnode, int flag)
 {
 	int rcret = 0, ret = 0, epgscreenconf = 0;
 	struct skin* singleepg = getscreen("singleepg");
@@ -82,17 +82,17 @@ void screensingleepg(struct channel* chnode, struct epg* epgnode)
 
 	free(buf); buf = NULL;
 
-	if(epgscreenconf != 1)
-	{
-		b1->hidden = YES;
-		b2->hidden = YES;
-		b3->hidden = YES;
-	}
-	else
+	if(flag == 0 && epgscreenconf == 1)
 	{
 		b1->hidden = NO;
 		b2->hidden = NO;
 		b3->hidden = NO;
+	}
+	else
+	{
+		b1->hidden = YES;
+		b2->hidden = YES;
+		b3->hidden = YES;
 	}
 
 	drawscreen(singleepg, 0);
@@ -110,27 +110,27 @@ void screensingleepg(struct channel* chnode, struct epg* epgnode)
 			servicecheckret(servicestart(chnode, NULL, NULL, 0), 0);
 			break;
 		}
-		if(epgscreenconf == 1 && rcret == getrcconfigint("rcred", NULL))
+		if(flag == 0 && epgscreenconf == 1 && rcret == getrcconfigint("rcred", NULL))
 		{
 			if(listbox->select != NULL)
 			{
 				clearscreen(singleepg);
-				screenepg(chnode, (struct epg*)listbox->select->handle);
+				screenepg(chnode, (struct epg*)listbox->select->handle, 0);
 				//drawscreen(singleepg, 0);
 				break;
 			}
 		}
-		if(epgscreenconf == 1 && rcret == getrcconfigint("rcgreen", NULL))
+		if(flag == 0 && epgscreenconf == 1 && rcret == getrcconfigint("rcgreen", NULL))
 		{
 			clearscreen(singleepg);
-			screenmultiepg(chnode, NULL);
+			screenmultiepg(chnode, NULL, 0);
 			//drawscreen(singleepg, 0);
 			break;
 		}
-		if(epgscreenconf == 1 && rcret == getrcconfigint("rcyellow", NULL))
+		if(flag == 0 && epgscreenconf == 1 && rcret == getrcconfigint("rcyellow", NULL))
 		{
 			clearscreen(singleepg);
-			screengmultiepg(chnode, NULL);
+			screengmultiepg(chnode, NULL, 0);
 			//drawscreen(singleepg, 0);
 			break;
 		}
@@ -154,7 +154,7 @@ void screensingleepg(struct channel* chnode, struct epg* epgnode)
 	clearscreen(singleepg);
 }
 
-void screenepg(struct channel* chnode, struct epg* epgnode)
+void screenepg(struct channel* chnode, struct epg* epgnode, int flag)
 {
 	int rcret = 0, ret = 0, epgscreenconf = 0, min = 0;
 	struct skin* screenepg = getscreen("epg");
@@ -197,17 +197,17 @@ nextepg:
 	changetext(epgtimeremaining, NULL);
 	changetext(channelnr, NULL);
 
-	if(epgscreenconf != 0)
-	{
-		b1->hidden = YES;
-		b2->hidden = YES;
-		b3->hidden = YES;
-	}
-	else
+	if(flag == 0 && epgscreenconf == 0)
 	{
 		b1->hidden = NO;
 		b2->hidden = NO;
 		b3->hidden = NO;
+	}
+	else
+	{
+		b1->hidden = YES;
+		b2->hidden = YES;
+		b3->hidden = YES;
 	}
 
 	if(epgnode != NULL)
@@ -283,24 +283,24 @@ nextepg:
 				epgnode = epgnode->prev;
 			goto nextepg;
 		}
-		if(epgscreenconf == 0 && rcret == getrcconfigint("rcred", NULL))
+		if(flag == 0 && epgscreenconf == 0 && rcret == getrcconfigint("rcred", NULL))
 		{
 			clearscreen(screenepg);
-			screensingleepg(chnode, NULL);
+			screensingleepg(chnode, NULL, 0);
 			//drawscreen(screenepg, 0);
 			break;
 		}
-		if(epgscreenconf == 0 && rcret == getrcconfigint("rcgreen", NULL))
+		if(flag == 0 && epgscreenconf == 0 && rcret == getrcconfigint("rcgreen", NULL))
 		{
 			clearscreen(screenepg);
-			screenmultiepg(chnode, NULL);
+			screenmultiepg(chnode, NULL, 0);
 			//drawscreen(screenepg, 0);
 			break;
 		}
-		if(epgscreenconf == 0 && rcret == getrcconfigint("rcyellow", NULL))
+		if(flag == 0 && epgscreenconf == 0 && rcret == getrcconfigint("rcyellow", NULL))
 		{
 			clearscreen(screenepg);
-			screengmultiepg(chnode, NULL);
+			screengmultiepg(chnode, NULL, 0);
 			//drawscreen(screenepg, 0);
 			break;
 		}
@@ -315,14 +315,14 @@ nextepg:
 			if(getconfigint("epgbutton", NULL) == 0)
 			{
 				clearscreen(screenepg);
-				screensingleepg(chnode, NULL);
+				screensingleepg(chnode, NULL, 0);
 				//drawscreen(screenepg, 0);
 				break;
 			}
 			else
 			{
 				clearscreen(screenepg);
-				screenmultiepg(chnode, NULL);				
+				screenmultiepg(chnode, NULL, 0);				
 				//drawscreen(screenepg, 0);
 				break;
 			}
@@ -340,13 +340,13 @@ void epgchoice(struct channel* chnode)
 
 	epgscreenconf = getconfigint("epg_screen", NULL);
 	if(epgscreenconf == 1)
-		screensingleepg(chnode, NULL);
+		screensingleepg(chnode, NULL, 0);
 	else if(epgscreenconf == 2)
-		screenmultiepg(chnode, NULL);
+		screenmultiepg(chnode, NULL, 0);
 	else if(epgscreenconf == 3)
-		screengmultiepg(chnode, NULL);
+		screengmultiepg(chnode, NULL, 0);
 	else
-		screenepg(chnode, NULL);
+		screenepg(chnode, NULL, 0);
 }
 
 int writeepg(const char* filename)

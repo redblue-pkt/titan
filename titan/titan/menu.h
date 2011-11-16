@@ -100,6 +100,11 @@ int menucall(struct skin* menunode, struct skin* menuentry)
 		struct skin* screen = getscreen("settingsmenu");
 		menu(screen);
 	}
+	if(ostrcmp("timermenu", menuentry->name) == 0)
+	{
+		struct skin* screen = getscreen("timermenu");
+		menu(screen);
+	}
 	else if(ostrcmp("information", menuentry->name) == 0)
 	{
 		struct skin* screen = getscreen("infomenu");
@@ -130,6 +135,12 @@ int menucall(struct skin* menunode, struct skin* menuentry)
 		struct skin* screen = getscreen("networkmenu");
 		menu(screen);
 	}
+	else if(ostrcmp("singleepg", menuentry->name) == 0)
+		screensingleepg(NULL, NULL, 1);
+	else if(ostrcmp("multiepg", menuentry->name) == 0)
+		screenmultiepg(NULL, NULL, 1);
+	else if(ostrcmp("gmultiepg", menuentry->name) == 0)
+		screengmultiepg(NULL, NULL, 1);
 	else if(ostrcmp("formathdd", menuentry->name) == 0)
 		screenharddisk(0);
 	else if(ostrcmp("filesystemcheck", menuentry->name) == 0)

@@ -343,7 +343,7 @@ void drawchannellistgmepg(struct skin* gmultiepg, int list, struct skin* listbox
 	drawscreen(gmultiepg, 0);
 }
 
-void screengmultiepg(struct channel* chnode, struct epg* epgnode)
+void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 {
 	int rcret = 0, ret = 0, epgscreenconf = 0;
 	struct skin* gmultiepg = getscreen("gmultiepg");
@@ -459,17 +459,17 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode)
 		selectchannelgmepg(channellistbox);
 	}
 
-	if(epgscreenconf != 3)
-	{
-		b1->hidden = YES;
-		b2->hidden = YES;
-		b3->hidden = YES;
-	}
-	else
+	if(flag == 0 && epgscreenconf == 3)
 	{
 		b1->hidden = NO;
 		b2->hidden = NO;
 		b3->hidden = NO;
+	}
+	else
+	{
+		b1->hidden = YES;
+		b2->hidden = YES;
+		b3->hidden = YES;
 	}
 
 	tmpstr = NULL;
@@ -499,32 +499,32 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode)
 			break;
 		}
 		
-		if(epgscreenconf == 3 && rcret == getrcconfigint("rcred", NULL))
+		if(flag == 0 && epgscreenconf == 3 && rcret == getrcconfigint("rcred", NULL))
 		{
 			if(listbox->select != NULL)
 			{
 				clearscreen(gmultiepg);
-				screenepg((struct channel*)listbox->select->handle, (struct epg*)listbox->select->handle1);
+				screenepg((struct channel*)listbox->select->handle, (struct epg*)listbox->select->handle1, 0);
 				//drawscreen(gmultiepg, 0);
 				break;
 			}
 		}
-		if(epgscreenconf == 3 && rcret == getrcconfigint("rcgreen", NULL))
+		if(flag == 0 && epgscreenconf == 3 && rcret == getrcconfigint("rcgreen", NULL))
 		{
 			if(listbox->select != NULL)
 			{
 				clearscreen(gmultiepg);
-				screensingleepg((struct channel*)listbox->select->handle, NULL);
+				screensingleepg((struct channel*)listbox->select->handle, NULL, 0);
 				//drawscreen(gmultiepg, 0);
 				break;
 			}
 		}
-		if(epgscreenconf == 3 && rcret == getrcconfigint("rcyellow", NULL))
+		if(flag == 0 && epgscreenconf == 3 && rcret == getrcconfigint("rcyellow", NULL))
 		{
 			if(listbox->select != NULL)
 			{
 				clearscreen(gmultiepg);
-				screenmultiepg((struct channel*)listbox->select->handle, NULL);
+				screenmultiepg((struct channel*)listbox->select->handle, NULL, 0);
 				//drawscreen(gmultiepg, 0);
 				break;
 			}

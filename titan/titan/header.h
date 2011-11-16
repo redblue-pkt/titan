@@ -7,10 +7,10 @@ void caservicedel(struct service* snode, struct caslot* caslot);
 void sendcapmt(struct service* node, int clear, int flag);
 
 //gmultiepg.h
-void screengmultiepg(struct channel* chnode, struct epg* epgnode);
+void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag);
 
 //multiepg.h
-void screenmultiepg(struct channel* chnode, struct epg* epgnode);
+void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag);
 
 //harddisk.h
 void hddfsck(char* dev);
@@ -370,8 +370,8 @@ void zapup();
 void zapdown();
 
 //epg.h
-void screensingleepg(struct channel* chnode, struct epg* epgnode);
-void screenepg(struct channel* chnode, struct epg* epgnode);
+void screensingleepg(struct channel* chnode, struct epg* epgnode, int flag);
+void screenepg(struct channel* chnode, struct epg* epgnode, int flag);
 int writeepg(const char* filename);
 void freeepg(struct channel* chnode);
 struct epg* getepgakt(struct channel* chnode);

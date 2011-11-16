@@ -42,7 +42,7 @@ void screenredkeyactions()
 	}
 	else if(ostrcmp(redkey, "Multi EPG") == 0)
 	{
-		screenmultiepg(NULL, NULL);
+		screenmultiepg(NULL, NULL, 0);
 		return;
 	}
 	else if(ostrcmp(redkey, "Sleep Timer") == 0)
@@ -122,7 +122,7 @@ void redkeyactions_extensions()
 	}
 	else if(ostrcmp(mlistbox, "Multi EPG") == 0)
 	{
-		screenmultiepg(NULL, NULL);
+		screenmultiepg(NULL, NULL, 0);
 		free(mlistbox); mlistbox = NULL;
 		return;
 	}
