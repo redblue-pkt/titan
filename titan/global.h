@@ -11,7 +11,6 @@ int checkmenuforbox(char *name)
 		if(ostrcmp("savesettings", name) == 0) return 0;
 		if(ostrcmp("recordpath", name) == 0) return 0;
 		if(ostrcmp("videosettings", name) == 0) return 0;
-		if(ostrcmp("timer", name) == 0) return 0;
 		if(ostrcmp("scartrecorder", name) == 0) return 0;
 		if(ostrcmp("information", name) == 0) return 0;
 		if(ostrcmp("plugins", name) == 0) return 0;

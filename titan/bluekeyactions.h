@@ -43,12 +43,12 @@ void screenbluekeyactions()
 	}
 	else if(ostrcmp(bluekey, "Multi EPG") == 0)
 	{
-		screenmultiepg(NULL, NULL);
+		screenmultiepg(NULL, NULL, 0);
 		return;
 	}
 	else if(ostrcmp(bluekey, "Graphic Multi EPG") == 0)
 	{
-		screengmultiepg(NULL, NULL);
+		screengmultiepg(NULL, NULL, 0);
 		return;
 	}
 	else if(ostrcmp(bluekey, "Sleep Timer") == 0)
