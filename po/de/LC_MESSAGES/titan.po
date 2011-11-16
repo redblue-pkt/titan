@@ -40,11 +40,11 @@ msgstr "Es muss eine Festplatte oder ein USB-Stick eingebunden sein"
 
 msgid "A/V Settings"
 
-msgstr "Audio / Video Einstellungen"
+msgstr "Bild / Ton Einstellen"
 
 msgid "AAF Beta Config"
 
-msgstr "AAF Beta Einstellung"
+msgstr "AAF Beta Einstellen"
 
 msgid "AAF Info"
 
@@ -92,7 +92,7 @@ msgstr "Aktivieren"
 
 msgid "Adapter Settings"
 
-msgstr "Adapter Einstellungen"
+msgstr "IP-Addresse Einstellen"
 
 msgid "ADD ALL"
 
@@ -120,7 +120,11 @@ msgstr "Hinzufügen"
 
 msgid "Adjust"
 
-msgstr "System Einstellungen"
+msgstr "System Einstellen"
+
+msgid "Auto Scan"
+
+msgstr "automatisch"
 
 msgid "all"
 
@@ -152,7 +156,7 @@ msgstr "Sollen die Einstellungen wieder hergestellt werden?"
 
 msgid "Apple Trailer"
 
-msgstr "Apple Trailer"
+msgstr "Apple Movie Trailer"
 
 msgid "Aspect Ratio:"
 
@@ -160,8 +164,7 @@ msgstr "Seitenverhältnis:"
 
 msgid "Aspect Settings"
 
-msgstr "Bildverhältnis Einstellung"
-
+msgstr "Bildverhältnis Einstellen"
 msgid "Aspect"
 
 msgstr "Seitenverhältnis"
@@ -196,7 +199,7 @@ msgstr "Audio"
 
 msgid "Audio/Subt."
 
-msgstr "Audio/Untert."
+msgstr "Ton/Untertitel"
 
 msgid "Auto resolution"
 
@@ -232,19 +235,19 @@ msgstr "Einstellungen sichern/wiederherstellen"
 
 msgid "Backup"
 
-msgstr "Backup erstellen"
+msgstr "Sicherung erstellen"
 
 msgid "BACKUP ERROR"
 
-msgstr "!!!Fehler beim Backup!!!"
+msgstr "!!! Fehler beim Sichern der Daten !!!"
 
 msgid "Backup - Settings"
 
-msgstr "Enstellungen werden gesichert"
+msgstr "Einstellungen werden gesichert"
 
 msgid "Backup started\n\nPlease wait..."
 
-msgstr "Backup wurde gestartet\n\nBitte warten..."
+msgstr "Sicherung wurde gestartet\n\nBitte warten..."
 
 msgid "bbgain"
 
@@ -320,7 +323,7 @@ msgstr "Sendung"
 
 msgid "browsers"
 
-msgstr "Browser"
+msgstr "Internet Browser"
 
 msgid "c"
 
@@ -436,7 +439,7 @@ msgstr "Committed command"
 
 msgid "Common Interface"
 
-msgstr "Common Interface"
+msgstr "CI Steckkarten (Module)"
 
 msgid "Contrast"
 
@@ -524,7 +527,7 @@ msgstr "Geräte"
 
 msgid "dhcp"
 
-msgstr "dhcp"
+msgstr "Automatisch (dhcp)"
 
 msgid "Dirsort"
 
@@ -540,7 +543,7 @@ msgstr "DiSEqC Übertragungsart"
 
 msgid "DiSEqC Configuration"
 
-msgstr "DiSEqC Konfiguration"
+msgstr "DiSEqC Einstellen"
 
 msgid "DiSEqC Mode"
 
@@ -640,7 +643,7 @@ msgstr "EPG löschen"
 
 msgid "EPG Settings"
 
-msgstr "EPG Einstellungen"
+msgstr "EPG Einstellen"
 
 msgid "Epgfreespace (KB)"
 
@@ -704,11 +707,11 @@ msgstr "schnell"
 
 msgid "Faststop"
 
-msgstr "Faststop"
+msgstr "Schneller Titan neustart"
 
 msgid "Fastzap"
 
-msgstr "Fastzap"
+msgstr "Schnelles Umschalten"
 
 msgid "Fav"
 
@@ -748,11 +751,11 @@ msgstr "Dateisystem prüfen"
 
 msgid "Flashupdate (online)"
 
-msgstr "FLASH Aktualisierung (online)"
+msgstr "FLASH Aktualisierung (internet)"
 
 msgid "Flashupdate (tmp)"
 
-msgstr "FLASH Aktualisierung (tmp)"
+msgstr "FLASH Aktualisierung (lokal)"
 
 msgid "fonts"
 
@@ -820,15 +823,15 @@ msgstr "Aktiviere ftdi-Treiber"
 
 msgid "ftpd"
 
-msgstr "FTP Deamon"
+msgstr "FTP Dienst"
 
 msgid "ftpport"
 
-msgstr "ftpport"
+msgstr "Ftp Port"
 
 msgid "fullcover"
 
-msgstr "ganzes Cover"
+msgstr "Kompletter Hintergrund mit Cover"
 
 msgid "g"
 
@@ -880,7 +883,7 @@ msgstr "Festplatte"
 
 msgid "hddreplacement"
 
-msgstr "Festplatte zurücksetzen"
+msgstr "Netzwerk Freigabe als Aufnahmeort"
 
 msgid "HighSR"
 
@@ -1068,7 +1071,7 @@ msgstr "Listbox Auswahl"
 
 msgid "LNB Configuration"
 
-msgstr "LNB Einstellung"
+msgstr "LNB Einstellen"
 
 msgid "LNB Settings"
 
@@ -1361,6 +1364,10 @@ msgstr "Alte Video Firmware"
 msgid "ONID:"
 
 msgstr "ONID:"
+
+msgid "Only free scan"
+
+msgstr "Nur unverschlüsselte Sender"
 
 msgid "Only free channel scan"
 
@@ -1820,11 +1827,11 @@ msgstr "Größe zurücksetzen"
 
 msgid "rmcrashlog"
 
-msgstr "rm Crashlog"
+msgstr "Crashlog l�schen"
 
 msgid "rmemthy"
 
-msgstr "rmemthy"
+msgstr "lehre Verzeichnisse l�schen"
 
 msgid "Rolloff"
 
@@ -1922,6 +1929,10 @@ msgid "Scan is not allowed if record"
 
 msgstr "Während der Aufnahme ist keine Suche möglich"
 
+msgid "Scan Config"
+
+msgstr "Sendersuchlaufs Einstellungen"
+
 msgid "scan wlan"
 
 msgstr "Suche WLAN"
@@ -1932,7 +1943,7 @@ msgstr "SCART im Standby"
 
 msgid "Scart-Recorder"
 
-msgstr "SCART-Recorder"
+msgstr "SCART-Eingang"
 
 msgid "Screensaver Adjust"
 
@@ -2008,7 +2019,7 @@ msgstr "Einstellungen"
 
 msgid "Share Settings"
 
-msgstr "Share Einstellungen"
+msgstr "Freigabe Einstellungen"
 
 msgid "sharedir"
 
@@ -2268,19 +2279,19 @@ msgstr "Systeminformation"
 
 msgid "System - Flashupdate (online)"
 
-msgstr "System - Flashupdate (online)"
+msgstr "System - Flashupdate (Internet)"
 
 msgid "System - Flashupdate (tmp)"
 
-msgstr "System - Flashupdate (tmp)"
+msgstr "System - Flashupdate (Lokal)"
 
 msgid "System - Usbupdate (online)"
 
-msgstr "System - USB-Update (online)"
+msgstr "System - USB-Update (Internet)"
 
 msgid "System - Usbupdate (tmp)"
 
-msgstr "System - USB-Update (tmp)"
+msgstr "System - USB-Update (Lokal)"
 
 msgid "System Info"
 
@@ -2360,7 +2371,7 @@ msgstr "Ordner für Timeraufnahne"
 
 msgid "Timer"
 
-msgstr "Timer"
+msgstr "Aufnahmemen�"
 
 msgid "time"
 
@@ -2412,7 +2423,7 @@ msgstr "Dienstag"
 
 msgid "Tuner Configuration"
 
-msgstr "Tuner Einstellungen"
+msgstr "Tuner Einstellen"
 
 msgid "Tuner Reception"
 
@@ -2432,7 +2443,7 @@ msgstr "Tuner im Ruhezustand aus"
 
 msgid "Tunerconfig"
 
-msgstr "Tunereinstellungen"
+msgstr "Tuner Einstellungen"
 
 msgid "tuxtxt_cpufrequ_workaround"
 
@@ -2448,7 +2459,7 @@ msgstr "TXT PID:"
 
 msgid "Type of Scan"
 
-msgstr "Art des Scan´s"
+msgstr "Art des Suchlaufs"
 
 msgid "type"
 
@@ -2476,7 +2487,7 @@ msgstr "UNC:"
 
 msgid "Uncommitted Diseqc command"
 
-msgstr "Uncommitted DiSEqC command"
+msgstr "Fehlerhafter DiSEqC Befehl"
 
 msgid "unknown"
 
@@ -2504,11 +2515,11 @@ msgstr "USB Geräte"
 
 msgid "Usbupdate (online)"
 
-msgstr "USB Aktualisierung (online)"
+msgstr "USB Aktualisierung (Internet)"
 
 msgid "Usbupdate (tmp)"
 
-msgstr "USB Aktualisierung (tmp)"
+msgstr "USB Aktualisierung (Lokal)"
 
 msgid "Use EPG Endtime"
 
@@ -2560,35 +2571,35 @@ msgstr "Video Player"
 
 msgid "Video Settings"
 
-msgstr "Video Einstellungen"
+msgstr "Bild Einstellungen"
 
 msgid "VIDEO SETTINGS"
 
-msgstr "VIDEO EINSTELLUNGEN"
+msgstr "BILD EINSTELLUNGEN"
 
 msgid "Video"
 
-msgstr "Video"
+msgstr "Bild"
 
 msgid "VIDEO"
 
-msgstr "VIDEO"
+msgstr "BILD"
 
 msgid "VideoMode Aspect Settings"
 
-msgstr "Video-Modus Seitenverhältnis Einstellungen"
+msgstr "Bild Seitenverhältnis Einstellungen"
 
 msgid "VideoMode Resolution Settings"
 
-msgstr "Video-Modus Auflösung Einstellungen"
+msgstr "Bild Auflösung Einstellungen"
 
 msgid "VideoMode Settings"
 
-msgstr "Video-Modus Einstellungen"
+msgstr "Bild Einstellungen"
 
 msgid "Videotune"
 
-msgstr "Video Einstellungen"
+msgstr "Bild Einstellungen"
 
 msgid "View"
 
@@ -2648,7 +2659,7 @@ msgstr "Mittwoch"
 
 msgid "wlan"
 
-msgstr "W-Lan"
+msgstr "Wireless Lan"
 
 msgid "wsize"
 
