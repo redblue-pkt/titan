@@ -1,6 +1,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//ca.h
+void caappmenu(struct dvbdev* dvbnode);
+
 //cam.h
 int getcaservicebyslot(struct caslot* caslot, int flag);
 void caservicedel(struct service* snode, struct caslot* caslot);
