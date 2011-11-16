@@ -1939,11 +1939,11 @@ msgstr "Suche WLAN"
 
 msgid "scartonstandby"
 
-msgstr "SCART im Standby"
+msgstr "Scart im Standby"
 
 msgid "Scart-Recorder"
 
-msgstr "SCART-Eingang"
+msgstr "Scart Eingang"
 
 msgid "Screensaver Adjust"
 
