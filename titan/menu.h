@@ -100,7 +100,7 @@ int menucall(struct skin* menunode, struct skin* menuentry)
 		struct skin* screen = getscreen("settingsmenu");
 		menu(screen);
 	}
-	if(ostrcmp("timermenu", menuentry->name) == 0)
+	else if(ostrcmp("timermenu", menuentry->name) == 0)
 	{
 		struct skin* screen = getscreen("timermenu");
 		menu(screen);
