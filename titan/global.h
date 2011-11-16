@@ -16,7 +16,7 @@ int checkemu()
 //can use to disable a menu for a box (node type must be MENU) 	 	 
 int checkmenuforbox(char *name)
 {
-	if(checkbox("atemio500") == 1)
+	if(checkbox("ATEMIO500") == 1)
 	{
 		if(ostrcmp("vfdisplay", name) == 0) return 0;
 		if(ostrcmp("savesettings", name) == 0) return 0;
