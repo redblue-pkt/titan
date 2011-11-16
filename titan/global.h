@@ -21,7 +21,8 @@ int checkmenuforbox(char *name)
 		if(ostrcmp("aafpanel_settings_fancontrol", name) == 0) return 0;
 		if(ostrcmp("aafpanel_settings_automount", name) == 0) return 0;
 		if(ostrcmp("aafpanel_settings_autostart", name) == 0) return 0;
-		if(ostrcmp("aafpanel_settings_autostart", name) == 0) return 0;												
+		if(ostrcmp("aafpanel_settings_autostart", name) == 0) return 0;
+		if(ostrcmp("aafpanel_settings_videotune", name) == 0) return 0;
 	}
 	return 1;
 }
