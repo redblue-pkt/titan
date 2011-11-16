@@ -9,7 +9,8 @@ void screenaafpanel_settings_redbutton()
 	struct skin* child = plugin->child;
 	char* tmpstr = NULL;
 	tmpstr = ostrcat(tmpstr, "Extentions List (default)\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, "Softcam Panel\n", 1, 0);
+	if(checkemu() == 1)
+		tmpstr = ostrcat(tmpstr, "Softcam Panel\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, "Auto Resolution\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, "Multi EPG\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, "Sleep Timer\n", 1, 0);

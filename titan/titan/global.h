@@ -1,8 +1,18 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-//can use to disable a menu for a box (node type must be MENU) 	 	 
+int checkemu()
+{
+	char* tmpstr = NULL;
+	
+	tmpstr = getconfig("checkemucmd", NULL);
+	if(tmpstr != NULL)
+		return system(tmpstr);
+	
+	return 0;
+}
 
+//can use to disable a menu for a box (node type must be MENU) 	 	 
 int checkmenuforbox(char *name)
 {
 	if(checkbox("atemio500") == 1)
