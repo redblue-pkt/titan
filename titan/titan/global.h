@@ -7,15 +7,21 @@ int checkmenuforbox(char *name)
 {
 	if(checkbox("atemio500") == 1)
 	{
-			if(ostrcmp("vfdisplay", name) == 0) return 0;
-			if(ostrcmp("savesettings", name) == 0) return 0;
-			if(ostrcmp("recordpath", name) == 0) return 0;
-			if(ostrcmp("videosettings", name) == 0) return 0;
-			if(ostrcmp("timer", name) == 0) return 0;
-			if(ostrcmp("scartrecorder", name) == 0) return 0;
-			if(ostrcmp("information", name) == 0) return 0;
-			if(ostrcmp("plugins", name) == 0) return 0;
-			if(ostrcmp("vfdisplay", name) == 0) return 0;
+		if(ostrcmp("vfdisplay", name) == 0) return 0;
+		if(ostrcmp("savesettings", name) == 0) return 0;
+		if(ostrcmp("recordpath", name) == 0) return 0;
+		if(ostrcmp("videosettings", name) == 0) return 0;
+		if(ostrcmp("timer", name) == 0) return 0;
+		if(ostrcmp("scartrecorder", name) == 0) return 0;
+		if(ostrcmp("information", name) == 0) return 0;
+		if(ostrcmp("plugins", name) == 0) return 0;
+		if(ostrcmp("vfdisplay", name) == 0) return 0;
+		if(ostrcmp("aafpanel_system_aafwizard", name) == 0) return 0;
+		if(ostrcmp("aafpanel_settings_overclocking", name) == 0) return 0;
+		if(ostrcmp("aafpanel_settings_fancontrol", name) == 0) return 0;
+		if(ostrcmp("aafpanel_settings_automount", name) == 0) return 0;
+		if(ostrcmp("aafpanel_settings_autostart", name) == 0) return 0;
+		if(ostrcmp("aafpanel_settings_autostart", name) == 0) return 0;												
 	}
 	return 1;
 }
