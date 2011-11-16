@@ -145,6 +145,7 @@ struct caservice caservice[MAXCASERVICE];
 #include "screensaver.h"
 #include "screensaveradjust.h"
 #include "scan.h"
+#include "restoredefault.h"
 
 int createstartscreen()
 {
@@ -180,7 +181,7 @@ void oshutdown(int exitcode, int flag)
 	char* tmpstr = NULL;
 
 	//check if record running
-	if(flag == 1 && status.recording > 0)
+	if((flag == 1 || flag == 2) && status.recording > 0)
 	{
 		if(textbox(_("Message"), _("Found running Record.\nRealy shutdown ?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 1) == 1)
 			return;
@@ -209,7 +210,7 @@ void oshutdown(int exitcode, int flag)
 
 	status.sec = 0;
 
-	writeallconfig(0);
+	if(flag != 2) writeallconfig(0);
 
 	if(faststop == 0)
 	{
