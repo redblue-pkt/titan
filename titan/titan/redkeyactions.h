@@ -19,7 +19,7 @@ void screenredkeyactions()
 	debug(60, "redkey=%s", redkey);
 	if(ostrcmp(redkey, "Softcam Panel") == 0)
 	{
-		pluginnode = getplugin("AAF Panel");
+		pluginnode = getplugin("Panel");
 		
 		if(pluginnode != NULL)
 		{
@@ -103,7 +103,7 @@ void redkeyactions_extensions()
 
 	if(ostrcmp(mlistbox, "Softcam Panel") == 0)
 	{
-		pluginnode = getplugin("AAF Panel");
+		pluginnode = getplugin("Panel");
 		
 		if(pluginnode != NULL)
 		{

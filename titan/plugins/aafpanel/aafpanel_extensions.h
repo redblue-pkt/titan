@@ -8,7 +8,8 @@ void screenaafpanel_extensions(int mode)
 	char* file = NULL;
 	char* tmpstr = NULL;
 
-	if (mode == 0){
+	if (mode == 0)
+	{
 		free(get_ipk_update());
 		tmpstr = get_ipk_section();
 		free(section); section = NULL;
@@ -17,14 +18,16 @@ void screenaafpanel_extensions(int mode)
 		free(tmpstr); tmpstr = NULL;
 	
 		debug(60, "section: %s", section);
-		if(section != NULL){
+		if(section != NULL)
+		{
 			tmpstr = get_ipk_list(section);
 			free(file); file = NULL;
 //			file = ostrcat(file, ipklistbox(NULL, tmpstr, "ipkinstall", "Ipk Install - select file", "/tmp/preview/", 2), 1, 1);
 			file = ipklistbox(NULL, tmpstr, "ipkinstall", "Ipk Install - select file", "/tmp/preview/", 2);
 			free(tmpstr); tmpstr = NULL;
 			debug(60, "file: %s", file);
-			if(file != NULL){
+			if(file != NULL)
+			{
 				tmpstr = ostrcat(section, "-", 0, 0);
 				tmpstr = ostrcat(tmpstr, file, 1, 0);
 
@@ -33,9 +36,8 @@ void screenaafpanel_extensions(int mode)
 				tmpinfo = ostrcat(tmpinfo, tmpstr, 1, 0);
 				tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 
-				if(textbox(_("Ipk Install Info"), _(tmpinfo), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2){
+				if(textbox(_("Ipk Install Info"), _(tmpinfo), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
 					textbox(_("Ipk Install Info"), _(get_ipk_install(tmpstr)), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
-				}
 				free(tmpinfo); tmpinfo = NULL;
 			}
 			free(section); section = NULL;
@@ -44,29 +46,34 @@ void screenaafpanel_extensions(int mode)
 			screenaafpanel_extensions(0);
 		}	
 	}
-
-	if (mode == 1){
+	elif (mode == 1)
+	{
 		tmpstr = get_ipk_listinstall();
 		free(file); file = NULL;
 //		file = ostrcat(file, ipklistbox(NULL, tmpstr, NULL, "Ipk Remove - select file", "%pluginpath%/aafpanel/skin/", 1), 1, 1);
 		file = ipklistbox(NULL, tmpstr, NULL, "Ipk Remove - select file", "%pluginpath%/aafpanel/skin/", 1);
 		free(tmpstr); tmpstr = NULL;
 		debug(60, "file: %s", file);
-		if(file != NULL){
-
+		if(file != NULL)
+		{
 			char* tmpinfo = NULL;
 			tmpinfo = ostrcat(tmpinfo, "Remove ", 1, 0);
 			tmpinfo = ostrcat(tmpinfo, file, 1, 0);
 			tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 
-			if(textbox(_("Ipk Remove Info"), _(tmpinfo), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2){
+			if(textbox(_("Ipk Remove Info"), _(tmpinfo), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
 				textbox(_("Ipk Remove Info"), _(get_ipk_remove(file)), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
-			}
+
 			free(tmpinfo); tmpinfo = NULL;
 			free(file); file = NULL;
 			screenaafpanel_extensions(1);
 		}
 		free(file); file = NULL;
+	}
+	elif (mode == 2)
+	{
+		if(textbox(_("Ipk Tmp Info"), _("Install ipg from /tmp ?"), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+				textbox(_("Ipk Tmp Info"), _(get_ipk_listinstall()), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 	}
 }
 
