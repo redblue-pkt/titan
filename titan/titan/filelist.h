@@ -228,9 +228,18 @@ int createfilelist(struct skin* screen, struct skin* node)
 	count = scandir64(node->input , &filelist, 0, cmpfunc);
 	if(count < 0)
 	{
-		perr("scandir");
-		count = scandir64("/" , &filelist, 0, cmpfunc);
-		changeinput(node, "/");
+		if(getconfig("failbackpath", NULL) != NULL)
+		{
+			perr("scandir");
+			count = scandir64(getconfig("failbackpath", NULL) , &filelist, 0, cmpfunc);
+			changeinput(node, getconfig("failbackpath", NULL));
+		}
+		if(count < 0)
+		{
+			perr("scandir");
+			count = scandir64("/" , &filelist, 0, cmpfunc);
+			changeinput(node, "/");
+		}
 		if(count < 0)
 			return 1;
 	}
