@@ -1786,8 +1786,21 @@ char* webeditrectimer(char* param)
 {
 	char* buf = NULL;
 	int maxlen = 0, pos = 0;
+	struct rectimer *node = NULL;
+	node = atoi(param);
+	ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"titan.css\"></head>", &maxlen, &pos);
+	ostrcatbig(&buf, "<body class=body ><left>", &maxlen, &pos);
+	ostrcatbig(&buf, "<form name=F1 action=query?editrectimersend method=get><br><br>", &maxlen, &pos);
+	ostrcatbig(&buf, "<font class=label>Name:&nbsp;</font>", &maxlen, &pos);
+	ostrcatbig(&buf, "<input class=inputbox type=\"text\" name=\"name\" value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, node->name, &maxlen, &pos);
+	ostrcatbig(&buf, "\" /><br />", &maxlen, &pos);
+	ostrcatbig(&buf, "<font class=label>Type:&nbsp;</font>", &maxlen, &pos);
+	ostrcatbig(&buf, "<select name=\"type\" border=0><option selected>record<option>record<option>switch channel</select>", &maxlen, &pos);
 	
-	ostrcatbig(&buf, param, &maxlen, &pos);
+	ostrcatbig(&buf, "</form></left></body></html>", &maxlen, &pos);
+		
+	//ostrcatbig(&buf, param, &maxlen, &pos);
 	return buf;
 }
 
