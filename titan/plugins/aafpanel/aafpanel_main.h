@@ -6,7 +6,7 @@ struct skin* aafpanel_menu(struct skin* aafpanel_menu)
 	debug(1000, "in");
 	int rcret = 0, ret = 0;
 	struct skin* listbox = getscreennode(aafpanel_menu, "listbox");
-	struct skin* aafpanel_softcam = getscreen("aafpanel_softcam");
+	struct skin* aafpanel_softcam_menu = getscreen("aafpanel_softcam");
 
 	if(listbox == NULL || aafpanel_menu == NULL)
 	{
@@ -15,13 +15,13 @@ struct skin* aafpanel_menu(struct skin* aafpanel_menu)
 	}
 	
 	if(checkemu() != 1)
-		aafpanel_softcam->hidden == YES;
+		aafpanel_softcam_menu->hidden == YES;
 	else
-		aafpanel_softcam->hidden == NO;
+		aafpanel_softcam_menu->hidden == NO;
 
 	drawscreen(aafpanel_menu, 0);
 	addscreenrc(aafpanel_menu, listbox);
-
+			
 	while(1)
 	{
 		rcret = waitrc(aafpanel_menu, 0, 0);
