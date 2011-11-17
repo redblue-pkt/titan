@@ -1641,7 +1641,7 @@ void websendrc(char* param)
 //flag 1: get old timer
 char* webgetrectimer(char* param, int flag)
 {
-	char* buf = NULL, *buf1 = NULL;
+	char* buf = NULL, *buf1 = NULL, *tmpnr = NULL;
 	struct rectimer* node = rectimer;
 	struct channel* chnode = NULL;
 	int line = 0, maxlen = 0, pos = 0;
@@ -1744,9 +1744,11 @@ char* webgetrectimer(char* param, int flag)
 			//delete png
 			ostrcatbig(&buf, "<img border=0 src=img/delete.png width=16 height=16 alt=Delete onclick='delquestion(\"", &maxlen, &pos);
 			ostrcatbig(&buf, "query?delrectimer", &maxlen, &pos);
-			//ostrcatbig(&buf, dellink, &maxlen, &pos);
-			//ostrcatbig(&buf, "&", &maxlen, &pos);
-			//ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
+			ostrcatbig(&buf, "&", &maxlen, &pos);
+			tmpnr = oitoa(node);
+			ostrcatbig(&buf, tmpnr, &maxlen, &pos);
+			free(tmpnr); tmpnr = NULL;
+    	//ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
 			//ostrcatbig(&buf, "&", &maxlen, &pos);
 			//tmpnr = oitoa(page);
 			//ostrcatbig(&buf, tmpnr, &maxlen, &pos);
@@ -1788,9 +1790,14 @@ char* webeditrectimer(char* param)
 char* webdelrectimer(char* param)
 {
 	char* buf = NULL;
-	int maxlen = 0, pos = 0;
+	struct rectimer *node = NULL;
+	//int maxlen = 0, pos = 0;
+	//ostrcatbig(&buf, param, &maxlen, &pos);
+	err("*********************** 1\n");
+	node = atoi(param);
+	delrectimer(node, 1, 0);
+	buf = webgetrectimer(NULL, 0);
 	
-	ostrcatbig(&buf, param, &maxlen, &pos);
 	return buf;
 }
 
