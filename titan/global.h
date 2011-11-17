@@ -5,15 +5,15 @@
 int checkemu()
 {
 	char* tmpstr = NULL;
-	
-	tmpstr = getconfig("checkemucmd", NULL);
+
+	tmpstr = command("emu.sh list");
 	if(tmpstr != NULL)
-		return system(tmpstr);
-	
+		return 1;
+
 	return 0;
 }
 
-//can use to disable a menu for a box (node type must be MENU) 	 	 
+//can use to disable a menu for a box (node type must be MENU)
 int checkmenuforbox(char *name)
 {
 	if(checkbox("ATEMIO500") == 1)
@@ -70,9 +70,9 @@ int b64dec(char* dest, char* src)
 		for(k = 0, l = 0; src[k]; k++)
 		{
 			if(isbase64(src[k]))
-				buf[l++] = src[k];	
+				buf[l++] = src[k];
 		}
-	
+
 		for(k = 0; k < l; k += 4)
 		{
 			char c1 = 'A', c2 = 'A', c3 = 'A', c4 = 'A';
@@ -97,7 +97,7 @@ int b64dec(char* dest, char* src)
 				*p++ = (((b2 & 0xf) << 4) | (b3 >> 2));
 			if(c4 != '=')
 				*p++ = (((b3 & 0x3) << 6) | b4);
-				
+
 		}
 
 		free(buf);
@@ -233,7 +233,7 @@ int getaktvideosize()
 #endif
 			status.videosizevalid = 1;
 	}
-	
+
 	return 1;
 }
 
@@ -359,7 +359,7 @@ int hexit(char c)
 		return c - 'a' + 10;
 	if(c >= 'A' && c <= 'F')
 		return c - 'A' + 10;
-	
+
 	return 0;
 }
 
@@ -484,7 +484,7 @@ int autoresolution()
 	debug(1000, "in");
 	char *hotpluginfo = NULL;
 	char *value = NULL;
-	
+
 	if(getconfig("av_videomode", NULL) != NULL || getconfig("av_colorformat", NULL))
 		return 1;
 
@@ -502,16 +502,16 @@ int autoresolution()
 		debug(1000, "out -> NULL detect");
 		return 1;
 	}
-	
+
 	if(value[0] == 'y')
 	{
-		setvideomode("720p50"); 
+		setvideomode("720p50");
 		changefbresolution("720p50");
 		setcolorformat("hdmi_rgb");
 	}
 	else
 	{
-		setvideomode("576i50"); 
+		setvideomode("576i50");
 		changefbresolution("576i50");
 		setcolorformat("rgb");
 	}
@@ -705,7 +705,7 @@ int mountauto(const char *file, const char *dir, unsigned long int flag, const v
 {
 	int ret = -1;
 	char* saveptr = NULL, *filesystems = NULL, *tmpfilesystems = NULL, *token = NULL;
-	
+
 	filesystems = getconfig("filesystems", NULL);
 	tmpfilesystems = ostrcat(tmpfilesystems, filesystems, 0, 0);
 
@@ -800,7 +800,7 @@ char* getdefaultgw()
 {
 	char* name = NULL;
 	unsigned long def, gw, m;
-	int flags, ref, use, metric, mtu, win, ir; 
+	int flags, ref, use, metric, mtu, win, ir;
 	struct in_addr ip;
 
 	FILE *fd = fopen("/proc/net/route", "r");
@@ -930,7 +930,7 @@ int checkbox(char* box)
 {
 	char* boxversion = NULL;
 	int ret = 0;
-	
+
 	if(status.boxtype == NULL)
 	{
 		if(isfile("/etc/model")	== 0) return 0;
@@ -1305,14 +1305,14 @@ void ostrcatbig(char** value1, char* value2, int* maxlen, int* pos)
 	if(value2 == NULL)
 	{
 		debug(1000, "out -> NULL detect");
-		return; 
+		return;
 	}
 	len = strlen(value2);
 
 	if(len > MINMALLOC)
 	{
 		err("string to long");
-		return; 
+		return;
 	}
 
 	if(*value1 != NULL && maxlen == 0)
@@ -2821,7 +2821,7 @@ char* string_tolower(char *str)
 {
 	debug(1000, "in");
 	int i;
-	
+
 	if(str == NULL) return NULL;
 
 	for( i = 0; i < strlen(str); i++)
@@ -2835,7 +2835,7 @@ char* string_toupper(char *str)
 {
 	debug(1000, "in");
 	int i;
-	
+
 	if(str == NULL) return NULL;
 
 	for( i = 0; i < strlen(str); i++)
@@ -3027,7 +3027,7 @@ int string_find(char* str, char* filename)
 {
 	debug(1000, "in");
 	int i, len_str, len_filename;
-	
+
 	if(str == NULL || filename == NULL) return 0;
 
 	len_str = strlen(str);
@@ -3164,9 +3164,9 @@ char* get_ipk_list(char* section)
 {
 	debug(60, "in %s",section);
 	char* cmd = NULL, *tmpstr = NULL;
-	
+
 	if(section == NULL) return NULL;
-	
+
 	cmd = ostrcat(cmd, "ipkg list *-", 1, 0);
 	cmd = ostrcat(cmd, section, 1, 0);
 	cmd = ostrcat(cmd, "-* | sed 's/Successfully terminated.//'", 1, 0);
@@ -3185,9 +3185,9 @@ char* get_ipk_install(char* ipk)
 	char* tmpstr1 = NULL;
 	char* tmpstr2 = NULL;
 	char* tmpstr3 = NULL;
-	
+
 	if(ipk == NULL) return NULL;
-	
+
 	struct splitstr* ret1 = NULL;
 	int count1 = 0;
 	tmpstr1 = ostrcat("", ipk, 0, 0);
@@ -3260,7 +3260,7 @@ char* get_ipk_listinstall()
 {
 	debug(60, "in");
 	char* cmd = NULL, *tmpstr = NULL;
-	
+
 	cmd = ostrcat(cmd, "ipkg list_installed | awk '{ print $1 }' | sed 's/Successfully//' | sed 's/titan-plugin-//'", 1, 0);
 
 	tmpstr = command(cmd);
@@ -3274,9 +3274,9 @@ char* get_ipk_remove(char* ipk)
 {
 	debug(60, "in %s",ipk);
 	char* cmd = NULL, *tmpstr = NULL;
-	
+
 	if(ipk == NULL) return NULL;
-	
+
 	cmd = ostrcat(cmd, "ipkg remove titan-plugin-", 1, 0);
 	cmd = ostrcat(cmd, ipk, 1, 0);
 
@@ -3329,7 +3329,7 @@ char* get_ipk_update()
 			screendownload("Download", ip, path, 80, "/tmp/Packages.preview.tar.gz", 0);
 
 			system("tar -zxvf /tmp/Packages.preview.tar.gz -C /tmp");
-			
+
 		}
 
 		free(cmd), cmd = NULL;
@@ -3344,9 +3344,9 @@ char* get_ipk_info(char* section)
 {
 	debug(60, "in %s",section);
 	char* cmd = NULL, *tmpstr = NULL;
-	
+
 	if(section == NULL) return NULL;
-	
+
 	cmd = ostrcat(cmd, "ipkg list *-", 1, 0);
 	cmd = ostrcat(cmd, section, 1, 0);
 	cmd = ostrcat(cmd, " | cut -d'-' -f6 | sed 's/Successfully terminated.//'", 1, 0);
@@ -3383,9 +3383,9 @@ char* get_label(char* device)
 {
 	debug(60, "in %s", device);
 	char* cmd = NULL, *tmpstr = NULL;
-	
+
 	if(device == NULL) return NULL;
-	
+
 	cmd = ostrcat(cmd, "/bin/blkid -w /dev/null -c /dev/null -s LABEL /dev/", 1, 0);
 	cmd = ostrcat(cmd, device, 1, 0);
 	cmd = ostrcat(cmd, " | cut -d'\"' -f2", 1, 0);
@@ -3407,9 +3407,9 @@ char* get_filesystem(char* device)
 {
 	debug(60, "in %s", device);
 	char* cmd = NULL, *tmpstr = NULL;
-	
+
 	if(device == NULL) return NULL;
-	
+
 	cmd = ostrcat(cmd, "/bin/blkid -w /dev/null -c /dev/null -s TYPE /dev/", 1, 0);
 	cmd = ostrcat(cmd, device, 1, 0);
 	cmd = ostrcat(cmd, " | cut -d'\"' -f2", 1, 0);
@@ -3432,7 +3432,7 @@ char* fixip(char* ipinput, int flag)
 	debug(60, "in %s", ipinput);
 	char* ipout = NULL;
 	unsigned char ip[4];
-	
+
 	if(ipinput == NULL)	return NULL;
 	sscanf(ipinput, "%hhu.%hhu.%hhu.%hhu", &ip[0], &ip[1], &ip[2], &ip[3]);
 
@@ -3455,11 +3455,11 @@ void setfanspeed(int speed, int aktion)
 {
 	char* speedWert = NULL;
 	char* speedSet = NULL;
-	
-	if(speed < 0) 
+
+	if(speed < 0)
 	{
 		speedWert = getconfig("fanspeed", NULL);
-		if(speedWert == NULL) 
+		if(speedWert == NULL)
 			speedSet = ostrcat(speedSet, "170", 1, 0);
 		else
 			speedSet = ostrcat(speedSet, speedWert, 1, 0);
@@ -3471,20 +3471,20 @@ void setfanspeed(int speed, int aktion)
 		else if(speed == 25)
 			speedSet = ostrcat(speedSet, "130", 1, 0);
 		else if(speed == 50)
-			speedSet = ostrcat(speedSet, "145", 1, 0);	
+			speedSet = ostrcat(speedSet, "145", 1, 0);
 		else if(speed == 75)
 			speedSet = ostrcat(speedSet, "155", 1, 0);
 		else
 			speedSet = ostrcat(speedSet, "170", 1, 0);
 	}
-	
+
 	writesys("/proc/stb/fan/fan_ctrl", speedSet, 1);
-	
+
 	if(aktion == 1)
 		addconfig("fanspeed", speedSet);
-	
+
 	free(speedSet); speedSet=NULL;
-}	
+}
 
 void setaktres()
 {
@@ -3494,12 +3494,12 @@ void setaktres()
 	char* res_sd = NULL;
 	int count=1;
 	int sec = 0;
-	
+
 	if(status.restimer == NULL) return;
 	sec = (int)status.restimer->param1;
 
 	if(sec > 0)
-	{	
+	{
 		while(status.restimer->aktion == START && count <= sec)
 		{
 			sleep(1);
@@ -3517,27 +3517,27 @@ void setaktres()
 		m_width = status.videosize.w;
 		if (m_width == 720) {
 			res_sd = getconfig("av_videomode_autores_sd", NULL);
-			if(res_sd == NULL) 
+			if(res_sd == NULL)
 				res = ostrcat(res, "576i50", 1, 0);
 			else
-				res = ostrcat(res, res_sd, 1, 0);	
+				res = ostrcat(res, res_sd, 1, 0);
 		}
 		else if (m_width == 1280)
 			res = ostrcat(res, "720p50", 1, 0);
 		else if (m_width == 1920)
-			res = ostrcat(res, "1080i50", 1, 0);	
+			res = ostrcat(res, "1080i50", 1, 0);
 		else
 			m_width = 0;
 		if ( m_width > 0)
-		{	
+		{
 			res_akt = getvideomode();
-			if (ostrcmp(res_akt, res) != 0) 
+			if (ostrcmp(res_akt, res) != 0)
 			{
 				setvideomode(res);
 	  		changefbresolution(res);
 				sleep(1);
 				screenautores(res, 5, 0);
-			}		
+			}
 		}
 	}
 	else
@@ -3547,6 +3547,6 @@ void setaktres()
 	res = NULL;
 	status.restimer = NULL;
 	return;
-}				
+}
 
 #endif
