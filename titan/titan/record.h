@@ -37,7 +37,7 @@ char* recordcheckret(struct stimerthread* timernode, int ret, int flag)
 		switch(ret)
 		{
 			case 1:
-				tmpstr = ostrcat("Can't find Path", "", 0, 0);
+				tmpstr = ostrcat("HDD not configured\ncan't find record path", "", 0, 0);
 				break;
 			case 2:
 				tmpstr = ostrcat("Not enought space", "", 0, 0);
