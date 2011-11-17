@@ -54,59 +54,71 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 		if(mode > 0)
 		{
 			tmp = addlistbox(tunerreceptiondvbs, listbox, tmp, 1);
-			tmp->type = CHOICEBOX;
-			changetext(tmp, _("DiSEqC"));
-			tmpstr = ostrcat(_("no\n"), maxsatstring, 0, 0);
-			tmpstr = stringreplacecharonce(tmpstr, '1', 'A');
-			tmpstr = stringreplacecharonce(tmpstr, '2', 'B');
-			tmpstr = stringreplacecharonce(tmpstr, '3', 'C');
-			tmpstr = stringreplacecharonce(tmpstr, '4', 'D');
-			changechoiceboxvalue(tmp, tmpstr);
-			changeinput(tmp, tmpstr);
-			free(tmpstr); tmpstr = NULL;
-			tmpstr = ostrcat("0\n", maxsatstring, 0, 0);
-			changechoiceboxvalue(tmp, tmpstr);
-			free(tmpstr); tmpstr = NULL;
-			tmpstr = ostrcat(tuner->feshortname, "_diseqc", 0, 0);
-			tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
-			changename(tmp, tmpstr);
-			setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
-			free(tmpstr); tmpstr = NULL;
-			tmp->del = 1;
+			if(tmp != NULL)
+			{
+				tmp->type = CHOICEBOX;
+				changetext(tmp, _("DiSEqC"));
+				tmpstr = ostrcat(_("no\n"), maxsatstring, 0, 0);
+				tmpstr = stringreplacecharonce(tmpstr, '1', 'A');
+				tmpstr = stringreplacecharonce(tmpstr, '2', 'B');
+				tmpstr = stringreplacecharonce(tmpstr, '3', 'C');
+				tmpstr = stringreplacecharonce(tmpstr, '4', 'D');
+				changechoiceboxvalue(tmp, tmpstr);
+				changeinput(tmp, tmpstr);
+				free(tmpstr); tmpstr = NULL;
+				tmpstr = ostrcat("0\n", maxsatstring, 0, 0);
+				changechoiceboxvalue(tmp, tmpstr);
+				free(tmpstr); tmpstr = NULL;
+				tmpstr = ostrcat(tuner->feshortname, "_diseqc", 0, 0);
+				tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
+				changename(tmp, tmpstr);
+				setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
+				free(tmpstr); tmpstr = NULL;
+				tmp->del = 1;
+			}
 		}
 
 		if(mode > 1)
 		{
 			tmp = addlistbox(tunerreceptiondvbs, listbox, tmp, 1);
-			tmp->type = CHOICEBOX;
-			changetext(tmp, _("LNB"));
-			tmpstr = ostrcat(_("Standard LNB\n"), maxsatstring, 0, 0);
-			changeinput(tmp, tmpstr);
-			free(tmpstr); tmpstr = NULL;
-			tmpstr = ostrcat("0\n", maxsatstring, 0, 0);
-			changechoiceboxvalue(tmp, tmpstr);
-			free(tmpstr); tmpstr = NULL;
-			tmpstr = ostrcat(tuner->feshortname, "_lnb", 0, 0);
-			tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
-			changename(tmp, tmpstr);
-			setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
-			free(tmpstr); tmpstr = NULL;
-			tmp->del = 1;
+			if(tmp != NULL)
+			{
+				tmp->type = CHOICEBOX;
+				changetext(tmp, _("LNB"));
+				tmpstr = ostrcat(_("Standard LNB\n"), maxsatstring, 0, 0);
+				changeinput(tmp, tmpstr);
+				free(tmpstr); tmpstr = NULL;
+				tmpstr = ostrcat("0\n", maxsatstring, 0, 0);
+				changechoiceboxvalue(tmp, tmpstr);
+				free(tmpstr); tmpstr = NULL;
+				tmpstr = ostrcat(tuner->feshortname, "_lnb", 0, 0);
+				tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
+				changename(tmp, tmpstr);
+				setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
+				free(tmpstr); tmpstr = NULL;
+				tmp->del = 1;
+			}
 		}
 
 /*
 		tmp = addlistbox(tunerreceptiondvbs, listbox, NULL, 1);
-		tmp->type = CHOICEBOX;
-		changetext(tmp, _("Rotor Position"));
-		tmpstr = ostrcat(_("no\n"), maxsatstring, 0, 0);
-		changeinput(tmp, tmpstr);
-		free(tmpstr); tmpstr = NULL;
+		if(tmp != NULL)
+		{
+			tmp->type = CHOICEBOX;
+			changetext(tmp, _("Rotor Position"));
+			tmpstr = ostrcat(_("no\n"), maxsatstring, 0, 0);
+			changeinput(tmp, tmpstr);
+			free(tmpstr); tmpstr = NULL;
+		}
 */
 
 		tmp = addlistbox(tunerreceptiondvbs, listbox, tmp, 1);
-		tmp->deaktivcol = 1;
-		tmp->height = 20;
-		tmp->del = 2;
+		if(tmp != NULL)
+		{
+			tmp->deaktivcol = 1;
+			tmp->height = 20;
+			tmp->del = 2;
+		}
 
 		free(tmpnr);
 		if(mode == 0) break;
@@ -361,8 +373,8 @@ void screentunerconfig()
 				tunernode->handle = (char*)dvbnode;
 
 				tmpnr = oitoa(dvbnode->adapter);
-				tmpstr = ostrcat(_("Tuner"), tmpnr, 0, 1);
-				tmpstr = ostrcat(tmpstr, " /", 1, 0);
+				tmpstr = ostrcat(_("Tuner "), tmpnr, 0, 1);
+				tmpstr = ostrcat(tmpstr, "/", 1, 0);
 				tmpnr = oitoa(dvbnode->devnr);
 				tmpstr = ostrcat(tmpstr, tmpnr, 1, 1);
 				tmpstr = ostrcat(tmpstr, ": ", 1, 0);
@@ -471,7 +483,6 @@ void screentunerconfig()
 		ret = servicestop(status.aktservice, 1, 1);
 		if(ret == 0)
 		{
-			status.aktservice->channel = NULL;
 			status.aktservice->transponder = NULL;
 			servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 3), 0);
 		}
