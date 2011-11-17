@@ -1788,18 +1788,47 @@ char* webeditrectimer(char* param)
 	int maxlen = 0, pos = 0;
 	struct rectimer *node = NULL;
 	node = atoi(param);
+		
 	ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"titan.css\"></head>", &maxlen, &pos);
 	ostrcatbig(&buf, "<body class=body ><left>", &maxlen, &pos);
-	ostrcatbig(&buf, "<form name=F1 action=query?editrectimersend method=get><br><br>", &maxlen, &pos);
-	ostrcatbig(&buf, "<font class=label>Name:&nbsp;</font>", &maxlen, &pos);
-	ostrcatbig(&buf, "<input class=inputbox type=\"text\" name=\"name\" value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, "<form name=F1 action=query?editrectimersend method=get><br><br><table border=\"0\"><tr>", &maxlen, &pos);
+	ostrcatbig(&buf, "<td><font class=label>Name:&nbsp;</font></td>", &maxlen, &pos);
+	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"name\" value=\"", &maxlen, &pos);
 	ostrcatbig(&buf, node->name, &maxlen, &pos);
-	ostrcatbig(&buf, "\" /><br />", &maxlen, &pos);
-	ostrcatbig(&buf, "<font class=label>Type:&nbsp;</font>", &maxlen, &pos);
-	ostrcatbig(&buf, "<select name=\"type\" border=0><option selected>record<option>record<option>switch channel</select>", &maxlen, &pos);
+	ostrcatbig(&buf, "\" /></td></tr>", &maxlen, &pos);
+
+	ostrcatbig(&buf, "<td><font class=label>Type:&nbsp;</font></td>", &maxlen, &pos);
+	ostrcatbig(&buf, "<td><select name=\"type\" border=0><option selected>", &maxlen, &pos);
+	if( node->justplay == 0 )
+		ostrcatbig(&buf, "record", &maxlen, &pos);
+	else
+		ostrcatbig(&buf, "switch channel", &maxlen, &pos);
+	ostrcatbig(&buf, "<option>record<option>switch channel</select></td></tr>", &maxlen, &pos);
 	
-	ostrcatbig(&buf, "</form></left></body></html>", &maxlen, &pos);
+	ostrcatbig(&buf, "<td><font class=label>Repeate:&nbsp;</font></td>", &maxlen, &pos);
+	ostrcatbig(&buf, "<td><select name=\"repeate\" border=0><option selected>", &maxlen, &pos);
+	if( node->repeate == 0 )
+		ostrcatbig(&buf, "once", &maxlen, &pos);
+	else
+		ostrcatbig(&buf, "repeate", &maxlen, &pos);
+	ostrcatbig(&buf, "<option>once<option>repeate</select></td></tr>", &maxlen, &pos);	
+	
+	/*ostrcatbig(&buf, "<td><font class=label>Repeate type:&nbsp;</font></td>", &maxlen, &pos);
+	ostrcatbig(&buf, "<td><select name=\"repeatetype\" border=0><option selected>", &maxlen, &pos);
+	if( node->repeate == 0 )
+		ostrcatbig(&buf, "daily", &maxlen, &pos);
+	else if( node->repeate == 1 )
+		ostrcatbig(&buf, "weekly", &maxlen, &pos);
+	else if( node->repeate == 2 )
+		ostrcatbig(&buf, "workdays", &maxlen, &pos);
+	else
+		ostrcatbig(&buf, "user defined", &maxlen, &pos);
+	ostrcatbig(&buf, "<option>daily<option>weekly<option>workdays<option>user defined</select></td></tr>", &maxlen, &pos);	
+	*/
 		
+	ostrcatbig(&buf, "</table></form></left></body></html>", &maxlen, &pos);
+	
+	
 	//ostrcatbig(&buf, param, &maxlen, &pos);
 	return buf;
 }
