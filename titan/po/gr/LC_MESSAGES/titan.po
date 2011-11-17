@@ -31,17 +31,17 @@ msgid "AAF Beta Config"
 
 msgstr "AAF Beta Ρύθμιση"
 
-msgid "AAF Info"
+msgid "Info"
 
-msgstr "AAF Πληροφορίες"
+msgstr "Πληροφορίες"
 
-msgid "AAF Panel"
+msgid "Panel"
 
-msgstr "AAF Panel"
+msgstr "Panel"
 
-msgid "AAF Wizard"
+msgid "Wizard"
 
-msgstr "AAF - Βοηθός εγκατάστασης"
+msgstr "Βοηθός εγκατάστασης"
 
 msgid "About"
 
