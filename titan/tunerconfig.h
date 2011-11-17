@@ -349,6 +349,7 @@ void screentunerconfig()
 
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
+	changetext(tunemode, "Single");
 
 	while(dvbnode != NULL)
 	{
