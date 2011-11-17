@@ -540,9 +540,11 @@ firstwizzardstep1:
 		//this screen can reload the skin (on language change)
 		//all skin changes before here than are deleted
 		if(screenlanguage(2) == 2) return 100; 
-		screentunerconfig(); 
-		screennetwork_adapter(); 
- 	 	
+		screentunerconfig();
+		if(checkbox("atemio500") == 0)
+		{
+			screennetwork_adapter(); 
+ 		} 	
 		writevfd("Setting OK ?");
 		if(textbox(_("First Wizzard"), _("Settings OK ?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 		{
