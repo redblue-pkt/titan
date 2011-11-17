@@ -541,7 +541,7 @@ firstwizzardstep1:
 		//all skin changes before here than are deleted
 		if(screenlanguage(2) == 2) return 100; 
 		screentunerconfig();
-		if(checkbox("atemio500") == 0)
+		if(checkbox("ATEMIO500") == 0)
 		{
 			screennetwork_adapter(); 
  		} 	
