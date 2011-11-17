@@ -192,7 +192,7 @@ void aafpanel_main()
 	struct skin* aafpanel_main_selected = getscreennode(aafpanel_main, "aafpanel_main_selected_pic");
 	struct skin* child = NULL;
 
-	drawscreen(aafpanel_main, 0);
+	drawscreen(aafpanel_main, 1);
 	addscreenrc(aafpanel_main, listbox);
 
 	listbox->aktpage = -1;
@@ -214,6 +214,7 @@ void aafpanel_main()
 		child = child->next;
 	}
 	
+	drawscreen(aafpanel_main, 0);
 	if(listbox->select != NULL)
 	{
 		status.updatevfd = PAUSE;
