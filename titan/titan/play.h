@@ -435,11 +435,11 @@ void playwritevfd(char* file)
 // flag 0 = dirlist/playing/infobar
 // flag 1 = playing/infobar
 // flag 2 = playing
-void screenplay(int flag)
+void screenplay(int startfolder, int flag)
 {
 	int rcret = 0;
 	char* file = NULL, *tmpstr = NULL;
-	char* tmppolicy = NULL;
+	char* tmppolicy = NULL, *startdir = NULL;
 	struct skin* playinfobar = getscreen("playinfobar");
 
 	int skip13 = getconfigint("skip13", NULL);
@@ -451,18 +451,23 @@ void screenplay(int flag)
 	status.updatevfd = PAUSE;
 	tmppolicy = getpolicy();
 
+	if(startfolder == 0)
+		startdir = getconfig("rec_moviepath", NULL);
+	else
+		startdir = getconfig("rec_path", NULL);
+
 playerstart:
 	status.playspeed = 0, status.play = 0, status.pause = 0;
 	int playinfobarcount = 0, playinfobarstatus = 1, dirrcret = 0;
 
 	tmpstr = ostrcat(file, "", 1, 0); file = NULL;
-	file = screendir(getconfig("rec_moviepath", NULL), "*.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", basename(tmpstr), &dirrcret, ".epg", "DEL", getrcconfigint("rcred", NULL), "SELECT", 0, "EPG", getrcconfigint("rcyellow", NULL), NULL, 0, 90, 1, 90, 1, 0);
+	file = screendir(startdir, "*.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", basename(tmpstr), &dirrcret, ".epg", "DEL", getrcconfigint("rcred", NULL), "SELECT", 0, "EPG", getrcconfigint("rcyellow", NULL), NULL, 0, 90, 1, 90, 1, 0);
 	free(tmpstr); tmpstr = NULL;
 
 	if(file != NULL)
 	{
 		tmpstr = ostrcat(file, "", 0, 0);
-		if(tmpstr != NULL) addconfig("rec_moviepath", dirname(tmpstr));
+		if(tmpstr != NULL && startfolder == 0) addconfig("rec_moviepath", dirname(tmpstr));
 		free(tmpstr); tmpstr = NULL;
 		
 		if(playcheckdirrcret(file, dirrcret) == 1)
