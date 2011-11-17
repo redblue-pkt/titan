@@ -1736,6 +1736,10 @@ char* webgetrectimer(char* param, int flag)
 
 			//edit png
 			ostrcatbig(&buf, "<a target=main href=\"query?editrectimer", &maxlen, &pos);
+			ostrcatbig(&buf, "&", &maxlen, &pos);
+			tmpnr = oitoa(node);
+			ostrcatbig(&buf, tmpnr, &maxlen, &pos);
+			free(tmpnr); tmpnr = NULL;
 			//ostrcatbig(&buf, node->text, &maxlen, &pos);
 			ostrcatbig(&buf, "\">", &maxlen, &pos);
 
