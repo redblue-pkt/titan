@@ -120,6 +120,8 @@ int aafpanel_menucall(struct skin* aafpanel_menuentry)
 		screenaafpanel_extensions(0);
 	} else if(ostrcmp("aafpanel_extensions_ipkremove", aafpanel_menuentry->name) == 0){
 		screenaafpanel_extensions(1);
+	} else if(ostrcmp("aafpanel_extensions_tmpipkinstall", aafpanel_menuentry->name) == 0){
+		screenaafpanel_extensions(2);
 // infos main
 	} else if(ostrcmp("aafpanel_infos", aafpanel_menuentry->name) == 0){
 		struct skin* screen = getscreen("aafpanel_infos_main");

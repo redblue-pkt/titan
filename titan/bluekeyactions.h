@@ -20,7 +20,7 @@ void screenbluekeyactions()
 
 	if(ostrcmp(bluekey, "Softcam Panel") == 0)
 	{
-		pluginnode = getplugin("AAF Panel");
+		pluginnode = getplugin("Panel");
 		
 		if(pluginnode != NULL)
 		{

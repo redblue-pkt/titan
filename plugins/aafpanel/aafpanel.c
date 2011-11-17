@@ -19,8 +19,8 @@
 #include "aafpanel_ipk.h"
 #include "aafpanel_main.h"
 
-char pluginname[] = "AAF Panel";
-char plugindesc[] = "AAF Extensions";
+char pluginname[] = "Panel";
+char plugindesc[] = "Extensions";
 char pluginpic[] = "%pluginpath%/aafpanel/plugin.png";
 
 int pluginaktiv = 0;
@@ -47,7 +47,7 @@ void init(void)
 	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/aafpanel/skin.xml", 0, 0);
 	readscreen(tmpstr, 100, 1);
 	free(tmpstr); tmpstr = NULL;
-	debug(10, "AAF Plugin loadet !!!");
+	debug(10, "Panel Plugin loadet !!!");
 }
 
 //wird beim entladen ausgefuehrt
@@ -55,7 +55,7 @@ void deinit(void)
 {
 	delmarkedscreen(100);
 	pluginaktiv = 0;
-	debug(10, "AAF Plugin removed !!!");
+	debug(10, "Panel Plugin removed !!!");
 }
 
 

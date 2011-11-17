@@ -3257,6 +3257,20 @@ char* get_ipk_install(char* ipk)
 	return tmpstr;
 }
 
+char* get_ipk_tmpinstall()
+{
+	debug(60, "in");
+
+	char* cmd = NULL, *tmpstr = NULL;
+	cmd = ostrcat(cmd, "ipkg install /tmp/*.ipk", 1, 0);
+
+	tmpstr = command(cmd);
+
+	debug(60, "out %s",cmd);
+	free(cmd); cmd = NULL;
+	return tmpstr;
+}
+
 char* get_ipk_listinstall()
 {
 	debug(60, "in");
