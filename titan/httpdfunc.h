@@ -1784,13 +1784,14 @@ char* webaddrectimer(char* param)
 
 char* webeditrectimer(char* param)
 {
-	char* buf = NULL;
+	char* buf = NULL, *buf1 = NULL, *buf2 = NULL;
 	int maxlen = 0, pos = 0;
 	struct rectimer *node = NULL;
+	struct tm* loctime = NULL;
 	node = atoi(param);
 		
 	ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"titan.css\"></head>", &maxlen, &pos);
-	ostrcatbig(&buf, "<body class=body ><left>", &maxlen, &pos);
+	ostrcatbig(&buf, "<body class=body ><center>", &maxlen, &pos);
 	ostrcatbig(&buf, "<form name=F1 action=query?editrectimersend method=get><br><br><table border=\"0\"><tr>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><font class=label>Name:&nbsp;</font></td>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"name\" value=\"", &maxlen, &pos);
@@ -1805,13 +1806,14 @@ char* webeditrectimer(char* param)
 		ostrcatbig(&buf, "switch channel", &maxlen, &pos);
 	ostrcatbig(&buf, "<option>record<option>switch channel</select></td></tr>", &maxlen, &pos);
 	
-	ostrcatbig(&buf, "<td><font class=label>Repeate:&nbsp;</font></td>", &maxlen, &pos);
+	/*ostrcatbig(&buf, "<td><font class=label>Repeate:&nbsp;</font></td>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><select name=\"repeate\" border=0><option selected>", &maxlen, &pos);
 	if( node->repeate == 0 )
 		ostrcatbig(&buf, "once", &maxlen, &pos);
 	else
 		ostrcatbig(&buf, "repeate", &maxlen, &pos);
 	ostrcatbig(&buf, "<option>once<option>repeate</select></td></tr>", &maxlen, &pos);	
+	*/
 	
 	/*ostrcatbig(&buf, "<td><font class=label>Repeate type:&nbsp;</font></td>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><select name=\"repeatetype\" border=0><option selected>", &maxlen, &pos);
@@ -1826,8 +1828,28 @@ char* webeditrectimer(char* param)
 	ostrcatbig(&buf, "<option>daily<option>weekly<option>workdays<option>user defined</select></td></tr>", &maxlen, &pos);	
 	*/
 		
-	ostrcatbig(&buf, "</table></form></left></body></html>", &maxlen, &pos);
+	buf2 = malloc(MINMALLOC);
+	loctime = localtime(&node->begin);
+	strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
+	buf1 = ostrcat(buf2, "", 0, 0);
+	ostrcatbig(&buf, "<td><font class=label>Begin:&nbsp;</font></td>", &maxlen, &pos);
+	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"begin\" value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, buf1, &maxlen, &pos);
+	ostrcatbig(&buf, "\" /></td></tr>", &maxlen, &pos);
+	free(buf1); buf1 = NULL;
 	
+	loctime = localtime(&node->end);
+	strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
+	buf1 = ostrcat(buf2, "", 0, 0);
+	ostrcatbig(&buf, "<td><font class=label>End:&nbsp;</font></td>", &maxlen, &pos);
+	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"end\" value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, buf1, &maxlen, &pos);
+	ostrcatbig(&buf, "\" /></td></tr>", &maxlen, &pos);
+	free(buf1); buf1 = NULL;
+	
+	free(buf2); buf2 = NULL;
+	
+	ostrcatbig(&buf, "</table><br><br><input class=button type=submit name=send value=\"Send\"></input>&nbsp;<input class=button type=reset name=reset value=\"Reset\"></input></form></center></body></html>", &maxlen, &pos);
 	
 	//ostrcatbig(&buf, param, &maxlen, &pos);
 	return buf;
