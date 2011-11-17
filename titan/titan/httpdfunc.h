@@ -1793,7 +1793,6 @@ char* webdelrectimer(char* param)
 	struct rectimer *node = NULL;
 	//int maxlen = 0, pos = 0;
 	//ostrcatbig(&buf, param, &maxlen, &pos);
-	err("*********************** 1\n");
 	node = atoi(param);
 	delrectimer(node, 1, 0);
 	buf = webgetrectimer(NULL, 0);
