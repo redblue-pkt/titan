@@ -13,7 +13,7 @@ struct skin* aafpanel_menu(struct skin* aafpanel_menu)
 		debug(1000, "out -> NULL detect");
 		return NULL;
 	}
-	
+
 //	if(checkemu() != 1)
 //		aafpanel_softcam_menu->hidden == YES;
 //	else
@@ -21,7 +21,7 @@ struct skin* aafpanel_menu(struct skin* aafpanel_menu)
 
 	drawscreen(aafpanel_menu, 0);
 	addscreenrc(aafpanel_menu, listbox);
-			
+
 	while(1)
 	{
 		rcret = waitrc(aafpanel_menu, 0, 0);
@@ -66,15 +66,15 @@ int aafpanel_menucall(struct skin* aafpanel_menuentry)
 
 		if(checkbeta() != 1)
 			delscreennode(screen, "aafpanel_settings_betacfg");
-		
+
 		if(checkbox("UFS922") != 1)
 			delscreennode(screen, "aafpanel_settings_fancontrol");
-				
+
 		if(isfile("/proc/cpu_frequ/pll0_ndiv_mdiv") != 1)
 			delscreennode(screen, "aafpanel_settings_overclocking");
-		
+
 		aafpanel_menu(screen);
-			
+
 	} else if(ostrcmp("aafpanel_settings_overclocking", aafpanel_menuentry->name) == 0){
 		screenaafpanel_settings_overclocking();
 	} else if(ostrcmp("aafpanel_settings_betacfg", aafpanel_menuentry->name) == 0){
@@ -190,9 +190,30 @@ void aafpanel_main()
 	struct skin* listbox = getscreennode(aafpanel_main, "listbox");
 
 	struct skin* aafpanel_main_selected = getscreennode(aafpanel_main, "aafpanel_main_selected_pic");
+	struct skin* child = NULL;
 
 	drawscreen(aafpanel_main, 0);
 	addscreenrc(aafpanel_main, listbox);
+
+	listbox->aktpage = -1;
+	listbox->aktline = 1;
+	// Hide SoftCam Panel when no Emu's installed
+	child = listbox->next;
+	while(child != NULL)
+	{
+		if(ostrcmp(child->name, "aafpanel_softcam") == 0){
+			if(checkemu() == 0){
+				child->hidden = YES;
+			} else{
+				child->hidden = NO;
+			}
+			listbox->aktline = 1;
+			listbox->aktpage = -1;
+			break;
+			}
+		child = child->next;
+	}
+	
 	if(listbox->select != NULL)
 	{
 		status.updatevfd = PAUSE;

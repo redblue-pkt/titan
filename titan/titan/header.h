@@ -331,6 +331,7 @@ int writesysint(const char *filename, int value, int flag);
 char* string_remove_whitechars(char *text);
 void setfanspeed(int speed, int aktion);
 int writeallconfig(int flag);
+int checkemu();
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
