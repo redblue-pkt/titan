@@ -146,7 +146,7 @@ void screeninfobar()
 			subtitlepause(1);
 			status.infobar = 0;
 			clearscreen(infobar);
-			screenplay(0);
+			screenplay(1, 0);
 			status.updatevfd = START;
 			drawscreen(skin, 0);
 			subtitlepause(0);

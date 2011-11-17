@@ -11,7 +11,7 @@ void setdefaults()
 	addconfigdef("dmxrecordbuffersize", "3145728");
 	addconfigdef("dmxtimeshiftbuffersize", "3145728");
 	addconfigdef("dmxstreambuffersize", "3145728");
-	addconfigdef("rec_moviepath", "/media/hdd/movie");
+	addconfigdef("rec_moviepath", "/media");
 	addconfigdef("rec_path", "/media/hdd/movie");
 	addconfigdef("rec_timeshiftpath", "/media/hdd/movie");
 	addconfigdef("rec_timerpath", "/media/hdd/movie");

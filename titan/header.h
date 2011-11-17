@@ -117,7 +117,7 @@ int getskinconfigint(char *key, char *ext);
 struct service* getrecordbyname(char* recname, int type);
 
 // play.h
-void screenplay(int flag);
+void screenplay(int startfolder, int flag);
 
 //inetwork.h
 struct inetwork* getinetworkbydevice(char* device);

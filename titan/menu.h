@@ -135,6 +135,8 @@ int menucall(struct skin* menunode, struct skin* menuentry)
 		struct skin* screen = getscreen("networkmenu");
 		menu(screen);
 	}
+	else if(ostrcmp("mediaplayer", menuentry->name) == 0)
+		screenplay(0, 0);
 	else if(ostrcmp("restoredefault", menuentry->name) == 0)
 		screenrestoredefault();
 	else if(ostrcmp("singleepg", menuentry->name) == 0)
