@@ -148,14 +148,14 @@ msgstr "a"
 msgid "A"
 msgstr "A"
 
-msgid "AAF Infos"
-msgstr "Informacje AAF"
+msgid "Infos"
+msgstr "Informacje"
 
-msgid "AAF Panel"
-msgstr "Panel AAF"
+msgid "Panel"
+msgstr "Panel"
 
-msgid "AAF Wizard"
-msgstr "AAF Wizard"
+msgid "Wizard"
+msgstr "Wizard"
 
 msgid "About"
 msgstr "O.."

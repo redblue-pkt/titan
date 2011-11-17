@@ -46,17 +46,17 @@ msgid "AAF Beta Config"
 
 msgstr "AAF Beta Einstellen"
 
-msgid "AAF Info"
+msgid "Info"
 
-msgstr "AAF Infos"
+msgstr "Infos"
 
-msgid "AAF Panel"
+msgid "Panel"
 
-msgstr "AAF Panel"
+msgstr "Panel"
 
-msgid "AAF Wizard"
+msgid "Wizard"
 
-msgstr "AAF Setup-Assistent"
+msgstr "Setup-Assistent"
 
 msgid "Aborting restoring..."
 
@@ -569,9 +569,9 @@ msgid "dnsserver 2"
 
 msgstr "DNS-Server 2"
 
-msgid "Do you really want to start the AAF-Wizard? The Box will reboot and the Wizard will be started!"
+msgid "Do you really want to start the Wizard? The Box will reboot and the Wizard will be started!"
 
-msgstr "Soll der AAF-Assistent gestartet werden? Die Box wird neu gestartet und der Assistent wird ausgeführt"
+msgstr "Soll der Assistent gestartet werden? Die Box wird neu gestartet und der Assistent wird ausgeführt"
 
 msgid "Don't clear TV on zap (only with fastzap)"
 
@@ -2687,4 +2687,4 @@ msgstr "z"
 
 msgid "Z"
 
-msgstr "Z" 
+msgstr "Z"

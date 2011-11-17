@@ -31,14 +31,14 @@ msgstr "Réglages Audio/Video"
 msgid "AAF Beta Config"
 msgstr "Configuration AAF Beta"
 
-msgid "AAF Info"
-msgstr "Informations AAF"
+msgid "Info"
+msgstr "Informations"
 
-msgid "AAF Panel"
-msgstr "Panneau AAF"
+msgid "Panel"
+msgstr "Panneau"
 
 msgid "AAF Wizard"
-msgstr "Réglages assisté AAF"
+msgstr "Réglages assisté"
 
 msgid "About"
 msgstr "A Propos"

@@ -38,7 +38,7 @@
 <node name=b3 text=update halign=center valign=center bordercol=yellow bordersize=4 bordertype=2 posx=60% posy=90% width=150 height=30/>
 </screen>
 
-<screen fontcol=fontcol title="AAF Panel" titlealign=center name=aafpanel_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=60% bordercol=bordercol bordersize=2 bgcol=bgcol transparent=40>
+<screen fontcol=fontcol title="Panel" titlealign=center name=aafpanel_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=60% bordercol=bordercol bordersize=2 bgcol=bgcol transparent=40>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=100%>
 <node pic="%pluginpath%/aafpanel/skin/aafpanel_softcam_panel.png" textposx=120 valign=middle name=aafpanel_softcam text="Softcam Panel" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node pic=%pluginpath%/aafpanel/skin/aafpanel_setup.png textposx=120 valign=middle name=aafpanel_settings text="Settings" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
@@ -63,7 +63,7 @@
 
 <screen fontcol=fontcol title="System" titlealign=center name=aafpanel_system_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=85% bordercol=bordercol bordersize=2 bgcol=bgcol transparent=40>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=85%>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_aaf.png textposx=120 valign=middle name=aafpanel_system_aafwizard text="AAF Wizard" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_aaf.png textposx=120 valign=middle name=aafpanel_system_aafwizard text="Wizard" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node pic=%pluginpath%/aafpanel/skin/aafpanel_info.png textposx=120 valign=middle name=aafpanel_system_imageinfo text="Image Information" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node pic=%pluginpath%/aafpanel/skin/aafpanel_backup.png textposx=120 valign=middle name=aafpanel_system_backup text="Backup" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node pic=%pluginpath%/aafpanel/skin/aafpanel_backup_and_restore_settings.png textposx=120 valign=middle name=aafpanel_system_restore text="Settings backup/restore" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
@@ -85,7 +85,7 @@
 
 <screen fontcol=fontcol title="Info" titlealign=center name=aafpanel_infos_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=85% bordercol=bordercol bordersize=2 bgcol=bgcol transparent=40>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=85%>
-<node pic=%pluginpath%/aafpanel/skin/aafpanel_infos.png textposx=120 valign=middle name=aafpanel_infos_aaf text="AAF Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node pic=%pluginpath%/aafpanel/skin/aafpanel_infos.png textposx=120 valign=middle name=aafpanel_infos_aaf text="Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node pic=%pluginpath%/aafpanel/skin/aafpanel_default.png textposx=120 valign=middle name=aafpanel_infos_default text="default" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node pic=%pluginpath%/aafpanel/skin/aafpanel_freespace.png textposx=120 valign=middle name=aafpanel_infos_free text="free space" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node pic=%pluginpath%/aafpanel/skin/aafpanel_kernel.png textposx=120 valign=middle name=aafpanel_infos_kernel text="Kernel" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
