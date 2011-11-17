@@ -3417,8 +3417,9 @@ int setnodeattr(struct skin* node, struct skin* parent)
 		}
 	}
 
-	if(node->transparent == 0 && parent != skin)
-		node->transparent = parent->transparent;
+	//set parent transparent to child
+	//if(node->transparent == 0 && parent != skin)
+		//node->transparent = parent->transparent;
 
 	debug(1000, "out");
 	return 0;
