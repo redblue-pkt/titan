@@ -361,7 +361,11 @@ void screentunerconfig()
 
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
-	changetext(tunemode, "Single");
+	
+	mode = getconfigint("tunermode", NULL);
+	if(mode == 0) changetext(tunemode, "Single");
+	else if(mode == 1) changetext(tunemode, "DiSEqC");
+	else if(mode == 2) changetext(tunemode, "Expert");
 
 	while(dvbnode != NULL)
 	{
@@ -418,16 +422,19 @@ void screentunerconfig()
 			{
 				mode = 1;
 				changetext(tunemode, "DiSEqC");
+				addconfigint("tunermode", mode);
 			}
 			else if(mode == 1)
 			{
 				mode = 2;
 				changetext(tunemode, "Expert");
+				addconfigint("tunermode", mode);
 			}
 			else if(mode == 2)
 			{
 				mode = 0;
 				changetext(tunemode, "Single");
+				delconfig("tunermode");
 			}
 			drawscreen(tunerconfig, 0);
 		}
