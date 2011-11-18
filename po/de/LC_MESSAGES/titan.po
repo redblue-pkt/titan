@@ -1745,6 +1745,10 @@ msgid "Record Timer"
 
 msgstr "Aufnahme Timer"
 
+msgid "Records EPG..."
+
+msgstr "Aufnahme und EPG"
+
 msgid "record_max_sectors"
 
 msgstr "Max. Aufnahme Sektoren"
@@ -1904,6 +1908,26 @@ msgstr "Samba Server"
 msgid "Sat Config"
 
 msgstr "Satelliten Einstellung"
+
+msgid "Satelite Type"
+
+msgstr "Satelliten Auswahl"
+
+msgid "sat_single"
+
+msgstr "Einzel Satellit Einstellung"
+
+msgid "sat_diseqc_ab"
+
+msgstr "DiSEqC A/B Einstellung"
+
+msgid "sat_diseqc_abcd"
+
+msgstr "DiSEqC A/B/B/C Einstellung"
+
+msgid "sat_expert"
+
+msgstr "Experten Satellit Einstellung"
 
 msgid "Sat Finder"
 
@@ -2516,6 +2540,10 @@ msgstr "UNC:"
 msgid "Uncommitted Diseqc command"
 
 msgstr "Fehlerhafter DiSEqC Befehl"
+
+msgid "Unicable Configuration"
+
+msgstr "Unicable Einstellen"
 
 msgid "unknown"
 
