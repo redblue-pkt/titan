@@ -16,7 +16,7 @@ void screenaafpanel_extensions(int mode)
 //		char* section = ostrcat(section, ipklistbox(NULL, tmpstr, NULL, "Ipk Install - select section", "%pluginpath%/aafpanel/skin/", 1), 1, 1);
 		section = ipklistbox(NULL, tmpstr, NULL, "Ipk Install - select section", "%pluginpath%/aafpanel/skin/", 1);
 		free(tmpstr); tmpstr = NULL;
-	
+
 		debug(60, "section: %s", section);
 		if(section != NULL)
 		{
@@ -44,9 +44,9 @@ void screenaafpanel_extensions(int mode)
 			free(file); file = NULL;
 			free(tmpstr); tmpstr = NULL;
 			screenaafpanel_extensions(0);
-		}	
+		}
 	}
-	elif (mode == 1)
+	else if (mode == 1)
 	{
 		tmpstr = get_ipk_listinstall();
 		free(file); file = NULL;
@@ -70,7 +70,7 @@ void screenaafpanel_extensions(int mode)
 		}
 		free(file); file = NULL;
 	}
-	elif (mode == 2)
+	else if (mode == 2)
 	{
 		if(textbox(_("Ipk Tmp Info"), _("Install ipg from /tmp ?"), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
 				textbox(_("Ipk Tmp Info"), _(get_ipk_listinstall()), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
