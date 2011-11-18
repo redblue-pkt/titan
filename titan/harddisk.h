@@ -163,7 +163,7 @@ void screenfilesystem(char* dev)
 
 void screenconfigurehdd(char* dev)
 {
-	int i, rcret = 0, ret = 0, mode = 0;
+	int i, y = 8, rcret = 0, ret = 0, mode = 0;
 	struct skin* screen = getscreen("harddisk_main");
 	struct skin* listbox = getscreennode(screen, "listbox");
 	struct skin* tmp = NULL;
@@ -175,7 +175,8 @@ void screenconfigurehdd(char* dev)
 	listbox->aktline = 1;
 	changetitle(screen, "Harddisk Configure");
 
-	for(i = 0; i < 8; i++)
+	if(status.expertmodus == 0) y = 1;
+	for(i = 0; i < y; i++)
 	{
 		tmp = addlistbox(screen, listbox, tmp, 1);
 		if(tmp != NULL)
