@@ -451,12 +451,12 @@ void screenplay(int startfolder, int flag)
 	status.updatevfd = PAUSE;
 	tmppolicy = getpolicy();
 
+playerstart:
 	if(startfolder == 0)
 		startdir = getconfig("rec_moviepath", NULL);
 	else
 		startdir = getconfig("rec_path", NULL);
 
-playerstart:
 	status.playspeed = 0, status.play = 0, status.pause = 0;
 	int playinfobarcount = 0, playinfobarstatus = 1, dirrcret = 0;
 
