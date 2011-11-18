@@ -16,6 +16,7 @@ int checkemu()
 //can use to disable a menu for a box (node type must be MENU)
 int checkmenuforbox(char *name)
 {
+	if(status.expertmodus == 1) return 1;
 	if(checkbox("ATEMIO500") == 1)
 	{
 		if(ostrcmp("vfdisplay", name) == 0) return 0;
@@ -2370,6 +2371,26 @@ char* getvideomodechoices()
 	{
 		debug(1000, "out -> NULL detect");
 		return NULL;
+	}
+	
+	if(status.expertmodus == 0)
+	{
+		value = string_replace("1080p60", "", value, 1);
+		value = string_replace("  ", " ", value, 1);
+		value = string_replace("1080p59", "", value, 1);
+		value = string_replace("  ", " ", value, 1);
+		value = string_replace("1080p50", "", value, 1);
+		value = string_replace("  ", " ", value, 1);
+		value = string_replace("1080p30", "", value, 1);
+		value = string_replace("  ", " ", value, 1);
+		value = string_replace("1080p25", "", value, 1);
+		value = string_replace("  ", " ", value, 1);
+		value = string_replace("1080p24", "", value, 1);
+		value = string_replace("  ", " ", value, 1);
+		value = string_replace("1080i60", "", value, 1);
+		value = string_replace("  ", " ", value, 1);
+		value = string_replace("720p60", "", value, 1);
+		value = string_replace("  ", " ", value, 1);
 	}
 
 	value = convertspacetolf(value);

@@ -50,6 +50,7 @@ void setdefaults()
 	addconfigdef("skip79", "900");
 	addconfigdef("gmultiepgzoom", "4");
 	
+	status.expertmodus = getconfigint("expertmodus", NULL);
 	status.pmtmode = getconfigint("pmtmode", NULL);
 	status.usedirectfb = getconfigint("usedirectfb", NULL);
 	status.servicetype = getconfigint("servicetype", NULL);

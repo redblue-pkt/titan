@@ -799,6 +799,8 @@ struct hddparm
 
 struct status
 {
+	//aktivate extra featers
+	int expertmodus;
 	//http user:passwd
 	char* httpauth;
 	//set to 1 if channellist or channelnr open
