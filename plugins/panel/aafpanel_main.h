@@ -215,7 +215,7 @@ void aafpanel_main()
 			}
 		child = child->next;
 	}
-	
+
 	drawscreen(aafpanel_main, 0);
 	if(listbox->select != NULL)
 	{
@@ -245,15 +245,15 @@ void aafpanel_main()
 
 			debug(10, "[aafpanal_main] (select) menu=%s", listbox->select->name);
 			if(ostrcmp(listbox->select->name, "aafpanel_softcam") == 0){
-				changepic(aafpanel_main_selected, "aafpanel/skin/aafpanel_softcam.png");
+				changepic(aafpanel_main_selected, "panel/skin/aafpanel_softcam.png");
 			} else if(ostrcmp(listbox->select->name, "aafpanel_settings") == 0){
-				changepic(aafpanel_main_selected, "aafpanel/skin/aafpanel_settings.png");
+				changepic(aafpanel_main_selected, "panel/skin/aafpanel_settings.png");
 			} else if(ostrcmp(listbox->select->name, "aafpanel_system") == 0){
-				changepic(aafpanel_main_selected, "aafpanel/skin/aafpanel_system.png");
+				changepic(aafpanel_main_selected, "panel/skin/aafpanel_system.png");
 			} else if(ostrcmp(listbox->select->name, "aafpanel_extensions") == 0){
-				changepic(aafpanel_main_selected, "aafpanel/skin/aafpanel_extensions.png");
+				changepic(aafpanel_main_selected, "panel/skin/aafpanel_extensions.png");
 			} else if(ostrcmp(listbox->select->name, "aafpanel_infos") == 0){
-				changepic(aafpanel_main_selected, "aafpanel/skin/aafpanel_infos.png");
+				changepic(aafpanel_main_selected, "panel/skin/aafpanel_infos.png");
 			}
 		}
 		drawscreen(aafpanel_main, 0);
