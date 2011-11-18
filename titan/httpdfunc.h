@@ -1784,12 +1784,13 @@ char* webaddrectimer(char* param)
 
 char* webrectimersend(char* param)
 {
-	char* buf = NULL, *string = NULL, *name = NULL, *begin = NULL, *end = NULL, *type = NULL, *node = NULL;
+	char* buf = NULL, *string = NULL, *name = NULL, *begin = NULL, *end = NULL, *type = NULL, *anode = NULL;
 	int maxlen = 0, pos = 0;
+	struct rectimer *node = NULL;
 
-	node=strstr(param, "node=");
-	if(node != NULL)
-		node = node + 5;
+	anode=strstr(param, "node=");
+	if(anode != NULL)
+		anode = anode + 5;
 	name=strstr(param, "name=");
 	if(name != NULL)
 		name = name + 5;
@@ -1810,7 +1811,13 @@ char* webrectimersend(char* param)
 			*string++ = '\0';
 	} 
 	
-	ostrcatbig(&buf, param, &maxlen, &pos);
+	node = atoi(anode);
+	node->name = ostrcat(NULL, name, 1, 0);
+	status.writerectimer = 1;
+	writerectimer(getconfig("rectimerfile", NULL), 0);
+		
+	buf = webgetrectimer(NULL, 0);
+	//ostrcatbig(&buf, param, &maxlen, &pos);
 	return buf;
 }
 
