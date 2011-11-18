@@ -1809,7 +1809,10 @@ char* webrectimersend(char* param)
 		if(string != NULL)
 			*string++ = '\0';
 	} 
-
+	
+	node = atoi(node);
+	node->name = name; 
+	
 	ostrcatbig(&buf, param, &maxlen, &pos);
 	return buf;
 }
