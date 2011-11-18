@@ -39,6 +39,11 @@ int checkmenuforbox(char *name)
 		if(ostrcmp("aafpanel_settings_autostart", name) == 0) return 0;
 		if(ostrcmp("aafpanel_settings_autostart", name) == 0) return 0;
 		if(ostrcmp("aafpanel_settings_videotune", name) == 0) return 0;
+		if(ostrcmp("aafpanel_system_update_usb_online", name) == 0) return 0;
+		if(ostrcmp("aafpanel_system_update_usb_tmp", name) == 0) return 0;
+		if(ostrcmp("aafpanel_extensions", name) == 0) return 0;
+		if(ostrcmp("aafpanel_system_aafwizard", name) == 0) return 0;
+		if(ostrcmp("aafpanel_system_backup", name) == 0) return 0;
 	}
 	return 1;
 }
