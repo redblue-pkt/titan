@@ -155,6 +155,8 @@ void checkquery(int* connfd, char* query, int auth)
 		buf = webdelrectimer(param);
 	if(ostrcmp(query, "editrectimer") == 0)
 		buf = webeditrectimer(param);
+	if(ostrcmp(query, "rectimersend") == 0)
+		buf = webrectimersend(param);
 	if(ostrcmp(query, "getrectimerarchive") == 0)
 		buf = webgetrectimer(param, 1);
 	if(ostrcmp(query, "setvol") == 0)
@@ -236,7 +238,7 @@ void checkquery(int* connfd, char* query, int auth)
 	}
 	if(query != NULL && strstr(query, "message") == query)
 		buf = websendmessage(query);
-
+		
 	if(buf != NULL || onlyheader == 1)
 	{
 		if(buflen == 0 && onlyheader == 0) buflen = strlen(buf);
