@@ -17,7 +17,7 @@ void writetunerconfig(struct skin* tunerreceptiondvbs)
 //mode 0: single
 //mode 1: diseqc
 //mode 2: expert
-void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct skin* listbox, int mode)
+void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct skin* listbox, int mode, int maxsat)
 {
 	int i;
 	char* maxsatstring = NULL, *satstring = NULL;
@@ -31,10 +31,13 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 
 
 	tmp = addlistbox(tunerreceptiondvbs, listbox, tmp, 1);
-	tmp->type = CHOICEBOX;
-	tmpstr = ostrcat(_("Satelite Type"), "", 0, 0);
-	changetext(tmp, tmpstr);
-	free(tmpstr); tmpstr = NULL;
+	if(tmp != NULL)
+	{
+		tmp->type = CHOICEBOX;
+		tmpstr = ostrcat(_("Satelite Type"), "", 0, 0);
+		changetext(tmp, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
 
 	if(mode == 0)	
 		tmpstr = ostrcat(_("sat_single\nsat_diseqc_ab\nsat_diseqc_abcd\nsat_expert\n"), "", 0, 0);
@@ -61,7 +64,7 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 		tmp->del = 2;
 	}
 
-	for(i = 1; i <= status.maxsat; i++)
+	for(i = 1; i <= maxsat; i++)
 	{
 		tmpnr = oitoa(i);
 
@@ -187,7 +190,7 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 
 int screentunerreceptiondvbs(struct dvbdev* tuner)
 {
-	int rcret = 0, ret = 0, mode = 0;
+	int rcret = 0, ret = 0, mode = 0, maxsat = 1;
 
 	struct skin* tunerreceptiondvbs = getscreen("tunerreceptiondvbs");
 	struct skin* listbox = getscreennode(tunerreceptiondvbs, "listbox");
@@ -207,7 +210,7 @@ int screentunerreceptiondvbs(struct dvbdev* tuner)
 	}
 
 start:
-	createsatlist(tuner, tunerreceptiondvbs, listbox, mode);
+	createsatlist(tuner, tunerreceptiondvbs, listbox, mode, maxsat);
 /*
 	addchoicebox(east_west, "0", _("east"));
 	addchoicebox(east_west, "1", _("west"));
@@ -219,8 +222,6 @@ start:
 	drawscreen(tunerreceptiondvbs, 0);
 	addscreenrc(tunerreceptiondvbs, listbox);
 
-	drawscreen(tunerreceptiondvbs, 0);
-
 	tmp = listbox->select;
 	while(1)
 	{
@@ -229,52 +230,6 @@ start:
 		tmp = listbox->select;
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-
-		if(ostrcmp(listbox->select->name, "sat_type") == 0)
-		{
-			if(ostrcmp(listbox->select->ret, "sat_single") == 0)
-			{
-				delconfigtmpall();
-				delmarkedscreennodes(tunerreceptiondvbs, 1);
-				delmarkedscreennodes(tunerreceptiondvbs, 2);
-				delownerrc(tunerreceptiondvbs);
-				clearscreen(tunerreceptiondvbs);
-				mode = 0;
-				status.maxsat = 1;
-			}
-			else if(ostrcmp(listbox->select->ret, "sat_diseqc_ab") == 0)
-			{
-				delconfigtmpall();
-				delmarkedscreennodes(tunerreceptiondvbs, 1);
-				delmarkedscreennodes(tunerreceptiondvbs, 2);
-				delownerrc(tunerreceptiondvbs);
-				clearscreen(tunerreceptiondvbs);
-				mode = 1;
-				status.maxsat = 2;
-			}
-			else if(ostrcmp(listbox->select->ret, "sat_diseqc_abcd") == 0)
-			{
-				delconfigtmpall();
-				delmarkedscreennodes(tunerreceptiondvbs, 1);
-				delmarkedscreennodes(tunerreceptiondvbs, 2);
-				delownerrc(tunerreceptiondvbs);
-				clearscreen(tunerreceptiondvbs);
-				mode = 2;
-				status.maxsat = 4;
-			}
-			else if(ostrcmp(listbox->select->ret, "sat_expert") == 0)
-			{
-				delconfigtmpall();
-				delmarkedscreennodes(tunerreceptiondvbs, 1);
-				delmarkedscreennodes(tunerreceptiondvbs, 2);
-				delownerrc(tunerreceptiondvbs);
-				clearscreen(tunerreceptiondvbs);
-				mode = 3;
-				status.maxsat = 16;
-			}
-			goto start;
-		} 
-
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			if(listbox->select != NULL && ostrcmp(listbox->select->text, "LNB") == 0 && listbox->select->ret != NULL && ostrcmp(listbox->select->ret, "0") != 0)
@@ -290,12 +245,56 @@ start:
 				drawscreen(tunerreceptiondvbs, 0);
 			}
 		}
-		if(rcret == getrcconfigint("rcgreen", NULL))
+		else if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			ret = 1;
 			deltranspondertunablestatus();
 			writetunerconfig(tunerreceptiondvbs);
 			break;
+		}
+		else if(ostrcmp(listbox->select->name, "sat_type") == 0)
+		{
+			if(ostrcmp(listbox->select->ret, "sat_single") == 0)
+			{
+				delconfigtmpall();
+				delmarkedscreennodes(tunerreceptiondvbs, 1);
+				delmarkedscreennodes(tunerreceptiondvbs, 2);
+				delownerrc(tunerreceptiondvbs);
+				clearscreen(tunerreceptiondvbs);
+				mode = 0;
+				maxsat = 1;
+			}
+			else if(ostrcmp(listbox->select->ret, "sat_diseqc_ab") == 0)
+			{
+				delconfigtmpall();
+				delmarkedscreennodes(tunerreceptiondvbs, 1);
+				delmarkedscreennodes(tunerreceptiondvbs, 2);
+				delownerrc(tunerreceptiondvbs);
+				clearscreen(tunerreceptiondvbs);
+				mode = 1;
+				maxsat = 2;
+			}
+			else if(ostrcmp(listbox->select->ret, "sat_diseqc_abcd") == 0)
+			{
+				delconfigtmpall();
+				delmarkedscreennodes(tunerreceptiondvbs, 1);
+				delmarkedscreennodes(tunerreceptiondvbs, 2);
+				delownerrc(tunerreceptiondvbs);
+				clearscreen(tunerreceptiondvbs);
+				mode = 2;
+				maxsat = 4;
+			}
+			else if(ostrcmp(listbox->select->ret, "sat_expert") == 0)
+			{
+				delconfigtmpall();
+				delmarkedscreennodes(tunerreceptiondvbs, 1);
+				delmarkedscreennodes(tunerreceptiondvbs, 2);
+				delownerrc(tunerreceptiondvbs);
+				clearscreen(tunerreceptiondvbs);
+				mode = 3;
+				maxsat = 16;
+			}
+			goto start;
 		}
 	}
 
