@@ -135,7 +135,7 @@ void screendiseqc(char* diseqcnr)
 	changeinput(diseqcmode, NULL);
 	addchoicebox(diseqcmode, "0", _("DiSEqC 1.0"));
 	addchoicebox(diseqcmode, "1", _("DiSEqC 1.1"));
-	addchoicebox(diseqcmode, "2", _("DiSEqC 1.2"));
+	//addchoicebox(diseqcmode, "2", _("DiSEqC 1.2"));
 	addchoicebox(diseqcmode, "100", _("Tonburst A/B"));
 
 	changeinput(toneburst, NULL);
