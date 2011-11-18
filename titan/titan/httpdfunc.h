@@ -1784,16 +1784,39 @@ char* webaddrectimer(char* param)
 
 char* webrectimersend(char* param)
 {
-	char* buf = NULL;
+	char* buf = NULL, *string = NULL, *name = NULL, *begin = NULL, *end = NULL, *type = NULL, *node = NULL;
 	int maxlen = 0, pos = 0;
-	err("*************** func1 \n");
+
+	node=strstr(param, "node=");
+	if(node != NULL)
+		node = node + 5;
+	name=strstr(param, "name=");
+	if(name != NULL)
+		name = name + 5;
+	begin=strstr(param, "begin=");
+	if(begin != NULL)
+		begin = begin + 6;
+	end=strstr(param, "end=");
+	if(end != NULL)
+		end = end + 4;
+	type=strstr(param, "type=");
+	if(type != NULL)
+		type = type + 5;
+	
+	string = param;	
+	while(string != NULL) {	
+		string = strchr(string, '&');
+		if(string != NULL)
+			*string++ = '\0';
+	} 
+
 	ostrcatbig(&buf, param, &maxlen, &pos);
 	return buf;
 }
 
 char* webeditrectimer(char* param)
 {
-	char* buf = NULL, *buf1 = NULL, *buf2 = NULL;
+	char* buf = NULL, *buf1 = NULL, *buf2 = NULL, *tmpnr = NULL;
 	int maxlen = 0, pos = 0;
 	struct rectimer *node = NULL;
 	struct tm* loctime = NULL;
@@ -1801,9 +1824,15 @@ char* webeditrectimer(char* param)
 		
 	ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"titan.css\"></head>", &maxlen, &pos);
 	ostrcatbig(&buf, "<body class=body ><center>", &maxlen, &pos);
-	ostrcatbig(&buf, "<form name=F1 action=query method=get><br><br><table border=\"0\"><tr>", &maxlen, &pos);
+	ostrcatbig(&buf, "<form name=F1 action=query method=get><br><br>", &maxlen, &pos);
+	ostrcatbig(&buf, "<input type=\"hidden\" name=\"rectimersend&node\" value=\"", &maxlen, &pos);
+	tmpnr = oitoa(node);
+	ostrcatbig(&buf, tmpnr, &maxlen, &pos);
+	free(tmpnr); tmpnr = NULL;
+	ostrcatbig(&buf, "\">", &maxlen, &pos);
+	ostrcatbig(&buf, "<table border=\"0\"><tr>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><font class=label>Name:&nbsp;</font></td>", &maxlen, &pos);
-	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"rectimersend&name\" value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"name\" value=\"", &maxlen, &pos);
 	ostrcatbig(&buf, node->name, &maxlen, &pos);
 	ostrcatbig(&buf, "\" /></td></tr>", &maxlen, &pos);
 
