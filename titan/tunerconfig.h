@@ -363,9 +363,9 @@ void screentunerconfig()
 	listbox->aktpage = -1;
 	
 	mode = getconfigint("tunermode", NULL);
-	if(mode == 0) changetext(tunemode, "Single Satelite");
-	else if(mode == 1) changetext(tunemode, "DiSEqC Sat Settings");
-	else if(mode == 2) changetext(tunemode, "Expert Sat Settings");
+	if(mode == 0) changetext(tunemode, "MODE: Single Satelite");
+	else if(mode == 1) changetext(tunemode, "MODE: DiSEqC Sat Settings");
+	else if(mode == 2) changetext(tunemode, "MODE: Expert Sat Settings");
 
 	while(dvbnode != NULL)
 	{
@@ -421,19 +421,19 @@ void screentunerconfig()
 			if(mode == 0)
 			{
 				mode = 1;
-				changetext(tunemode, "DiSEqC Sat Settings");
+				changetext(tunemode, "MODE: DiSEqC Sat Settings");
 				addconfigint("tunermode", mode);
 			}
 			else if(mode == 1)
 			{
 				mode = 2;
-				changetext(tunemode, "Expert Sat Settings");
+				changetext(tunemode, "MODE: Expert Sat Settings");
 				addconfigint("tunermode", mode);
 			}
 			else if(mode == 2)
 			{
 				mode = 0;
-				changetext(tunemode, "Single Satelite");
+				changetext(tunemode, "MODE: Single Satelite");
 				delconfig("tunermode");
 			}
 			drawscreen(tunerconfig, 0);
