@@ -317,7 +317,12 @@ void screenconfigurehdd(char* dev)
 				textbox("Message", _("can't create or delete directory"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
 			}
 			else if(ret != 9999)
+			{
 				textbox("Message", _("succesfull create or delelete directory"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
+				//mount hdd after create dir movie
+				if(ostrcmp(listbox->select->name, "addrecord") == 0)
+					system("hotplug.sh first");
+			}
 			drawscreen(screen, 0);
 		}
 	}
