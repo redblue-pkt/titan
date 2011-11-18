@@ -1193,6 +1193,18 @@ msgid "Minutes:"
 
 msgstr "Minuten:"
 
+msgid "SATMODE"
+msgid "Satellite-Modus"
+
+msgid "MODE: Single Satelite"
+msgid "Aktuelle Modus: Einzelner Satellite"
+
+msgid "MODE: DiSEqC Sat Settings"
+msgstr "Aktuelle Modus: DiSEqC Satellite Einstellungen"
+
+msgid "MODE: Expert Sat Settings"
+msgstr "Aktuelle Modus: Experten Satellite Einstellung"
+
 msgid "Modulation"
 
 msgstr "Modulation"
