@@ -1,4 +1,4 @@
-STM=$1 
+STM=$1
 MEDIAFW=$2
 
 if [ -z "$STM" ]; then
@@ -70,7 +70,7 @@ echo "[titan]--------------------------------------------------------"
 
 compile "networkbrowser" "networkbrowser" "netlib/netlib"
 compile "hello" "hello" ""
-compile "aafpanel" "aafpanel" ""
+compile "panel" "panel" ""
 compile "mc" "mc" ""
 compile "TopfieldVFD" "TopfieldVFD" ""
 compile "mboxinfo" "mboxinfo" ""

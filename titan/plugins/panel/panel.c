@@ -21,7 +21,7 @@
 
 char pluginname[] = "Panel";
 char plugindesc[] = "Extensions";
-char pluginpic[] = "%pluginpath%/aafpanel/plugin.png";
+char pluginpic[] = "%pluginpath%/panel/plugin.png";
 
 int pluginaktiv = 0;
 struct skin* pluginmenu = NULL;
@@ -39,12 +39,12 @@ void init(void)
 	if(mainmenu == NULL || listbox == NULL)
 		return;
 
-	child = getscreennode(mainmenu, "aafpanel");
+	child = getscreennode(mainmenu, "panel");
 	if(child != NULL)
 		changeinput(child, "start");
 
 	pluginmenu = child;
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/aafpanel/skin.xml", 0, 0);
+	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/panel/skin.xml", 0, 0);
 	readscreen(tmpstr, 100, 1);
 	free(tmpstr); tmpstr = NULL;
 	debug(10, "Panel Plugin loadet !!!");
