@@ -28,7 +28,7 @@ int screenlanguage(int flag)
 
 		if (rcret == getrcconfigint("rcexit", NULL)) break;
 
-		if(rcret == getrcconfigint("rcok", NULL))
+		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcgreen", NULL))
 		{
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, getconfig("lang", NULL)) != 0)
 			{
