@@ -62,7 +62,10 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 			changechoiceboxvalue(tmp, tmpstr);
 			free(tmpstr); tmpstr = NULL;
 
-			changename(tmp, "sat_max");
+			char* satmax = NULL;
+			satmax = ostrcat(tuner->feshortname, "_satmax", 0, 0);	
+			changename(tmp, satmax);
+			free(satmax),satmax = NULL;
 			tmpstr = oitoa(status.maxsat);
 			setchoiceboxselection(tmp, tmpstr);
 			free(tmpstr); tmpstr = NULL;
@@ -298,6 +301,9 @@ int screentunerreceptiondvbs(struct dvbdev* tuner)
 	listmode = ostrcat(tuner->feshortname, "_mode", 0, 0);
 	mode = getconfigint(listmode, NULL);
 
+	char* satmax = NULL;
+	satmax = ostrcat(tuner->feshortname, "_satmax", 0, 0);
+
 start:
 	createsatlist(tuner, tunerreceptiondvbs, listbox, mode);
 /*
@@ -319,6 +325,7 @@ start:
 		tmp = listbox->select;
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
+	
 		if(ostrcmp(listbox->select->name, "sat_type") == 0)
 		{
 			printf("listbox->select->ret: %s\n", listbox->select->ret);
@@ -378,7 +385,7 @@ start:
 				goto start;
 			}
 		}
-		else if(ostrcmp(listbox->select->name, "sat_max") == 0)
+		else if(ostrcmp(listbox->select->name, satmax) == 0)
 		{
 			if(atoi(listbox->select->ret) != status.maxsat)
 			{
@@ -418,6 +425,8 @@ start:
 			break;
 		}
 	}
+
+	free(satmax),satmax = NULL;
 
 	delconfigtmpall();
 	delmarkedscreennodes(tunerreceptiondvbs, 1);
