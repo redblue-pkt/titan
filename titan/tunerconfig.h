@@ -390,7 +390,7 @@ start:
 				goto start;
 			}
 		}
-		else if(ostrcmp(listbox->select->name, satmax) == 0)
+		else if(ostrcmp(listbox->select->name, "sat_max") == 0)
 		{
 			if(atoi(listbox->select->ret) != status.maxsat)
 			{
