@@ -14,7 +14,7 @@ void writetunerconfig(struct skin* tunerreceptiondvbs)
 	writeconfigtmp();
 }
 
-void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct skin* listbox, int mode)
+void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct skin* listbox, int mode, int maxsat)
 {
 	int i;
 	char* maxsatstring = NULL, *satstring = NULL;
@@ -60,11 +60,9 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 			changeinput(tmp, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n38\n39\n40\n41\n42\n43\n44\n45\n46\n47\n48\n49\n50\n51\n52\n53\n54\n55\n56\n57\n58\n59\n60\n61\n62\n63\n64");
 			changechoiceboxvalue(tmp, "A\nB\nC\nD\nE\nF\nG\nH\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n38\n39\n40\n41\n42\n43\n44\n45\n46\n47\n48\n49\n50\n51\n52\n53\n54\n55\n56\n57\n58\n59\n60\n61\n62\n63\n64");
 
-			char* satmax = NULL;
-			satmax = ostrcat(tuner->feshortname, "_satmax", 0, 0);	
-			changename(tmp, satmax);
-			free(satmax),satmax = NULL;
-			tmpstr = oitoa(status.maxsat);
+			changename(tmp, "sat_max");
+			
+			tmpstr = oitoa(maxsat);
 			setchoiceboxselection(tmp, tmpstr);
 			free(tmpstr); tmpstr = NULL;
 			tmp->del = 1;
@@ -79,7 +77,7 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 		tmp->del = 2;
 	}
 
-	for(i = 1; i <= status.maxsat; i++)
+	for(i = 1; i <= maxsat; i++)
 	{
 		tmpnr = oitoa(i);
 
@@ -276,7 +274,7 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 
 int screentunerreceptiondvbs(struct dvbdev* tuner)
 {
-	int rcret = 0, ret = 0, mode = 0;
+	int rcret = 0, ret = 0, mode = 0, maxsat = 1;
 
 	struct skin* tunerreceptiondvbs = getscreen("tunerreceptiondvbs");
 	struct skin* listbox = getscreennode(tunerreceptiondvbs, "listbox");
@@ -299,11 +297,12 @@ int screentunerreceptiondvbs(struct dvbdev* tuner)
 	listmode = ostrcat(tuner->feshortname, "_mode", 0, 0);
 	mode = getconfigint(listmode, NULL);
 
-	char* satmax = NULL;
-	satmax = ostrcat(tuner->feshortname, "_satmax", 0, 0);
-
+	char* listmax = NULL;
+	listmax = ostrcat(tuner->feshortname, "_max", 0, 0);
+	maxsat = getconfigint(listmax, NULL);
+		
 start:
-	createsatlist(tuner, tunerreceptiondvbs, listbox, mode);
+	createsatlist(tuner, tunerreceptiondvbs, listbox, mode, maxsat);
 /*
 	addchoicebox(east_west, "0", _("east"));
 	addchoicebox(east_west, "1", _("west"));
@@ -335,7 +334,9 @@ start:
 				delownerrc(tunerreceptiondvbs);
 				clearscreen(tunerreceptiondvbs);
 				mode = 0;
-				status.maxsat = 1;
+				maxsat = 1;
+//				if(status.maxsat <= maxsat)
+//					status.maxsat = maxsat;
 				goto start;
 			}
 			else if((ostrcmp(listbox->select->ret, "1") == 0) && (mode != 1))
@@ -346,7 +347,9 @@ start:
 				delownerrc(tunerreceptiondvbs);
 				clearscreen(tunerreceptiondvbs);
 				mode = 1;
-				status.maxsat = 2;
+				maxsat = 2;
+//				if(status.maxsat <= maxsat)
+//					status.maxsat = maxsat;
 				goto start;
 			}
 			else if((ostrcmp(listbox->select->ret, "2") == 0) && (mode != 2))
@@ -357,7 +360,9 @@ start:
 				delownerrc(tunerreceptiondvbs);
 				clearscreen(tunerreceptiondvbs);
 				mode = 2;
-				status.maxsat = 4;
+				maxsat = 4;
+//				if(status.maxsat <= maxsat)
+//					status.maxsat = maxsat;
 				goto start;
 			}
 			else if((ostrcmp(listbox->select->ret, "3") == 0) && (mode != 3))
@@ -368,7 +373,9 @@ start:
 				delownerrc(tunerreceptiondvbs);
 				clearscreen(tunerreceptiondvbs);
 				mode = 3;
-				status.maxsat = 8;
+				maxsat = 8;
+//				if(status.maxsat <= maxsat)
+//					status.maxsat = maxsat;
 				goto start;
 			}
 			else if((ostrcmp(listbox->select->ret, "4") == 0) && (mode != 4))
@@ -418,13 +425,14 @@ start:
 			deltranspondertunablestatus();
 			writetunerconfig(tunerreceptiondvbs);
 			addconfigint(listmode, mode);
+			addconfigint(listmax, maxsat);
 			free(listmode), listmode = NULL;
 			writeallconfig(0);
 			break;
 		}
 	}
 
-	free(satmax),satmax = NULL;
+	free(maxsat),maxsat = NULL;
 
 	delconfigtmpall();
 	delmarkedscreennodes(tunerreceptiondvbs, 1);
