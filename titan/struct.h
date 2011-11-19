@@ -111,7 +111,6 @@
 #define LISTHASHSIZE 27
 #define MAXCASESSION 16
 #define MAXCASERVICE 20
-#define MAXUNICABLE 200
 
 //CA Defines
 #define T_SB 0x80		//sb (h<--m)
@@ -158,22 +157,6 @@ enum {START, PAUSE, STOP};
 enum {DEACTIVE, ACTIVE, INPAUSE, ERROR};
 enum {FUNCTEXT, FUNCPIC, FUNCPROGRESS};
 enum {CASESSIONCREATE, CASESSIONBUSY, CASESSIONDEL, CASESSIONSTART, CASESSIONFINAL, CARESFIRSTENQUIRY, CARESCHANGE, CARESENQUIRY, CADATETIMESEND, CAMMIIDLE, CAMMIDISPLAYREPLAY, CAMMIFAKEOK};
-
-struct unicable
-{
-	char* name;
-	int satcr1;
-	int satcr2;
-	int satcr3;
-	int satcr4;
-	int satcr5;
-	int satcr6;
-	int satcr7;
-	int satcr8;
-	int pos;
-	int lofl;
-	int lofh;
-};
 
 struct queue
 {
