@@ -144,7 +144,7 @@ struct caservice caservice[MAXCASERVICE];
 #include "download.h"
 #include "screensaver.h"
 #include "screensaveradjust.h"
-#include "unicable.h"
+//#include "unicable.h"
 #include "scan.h"
 #include "restoredefault.h"
 //#include "cardreader.h"

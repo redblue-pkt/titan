@@ -242,17 +242,17 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 				tmp->handle = (char*)i;
 				tmp->del = 1;
 			}
-			tmp = addlistbox(tunerreceptiondvbs, listbox, tmp, 1);
-			if(tmp != NULL)
-			{
-				tmp->type = CHOICEBOX;
-				changetext(tmp, "LNB / UNICABLE");
-				changeinput(tmp, _("press ok"));
-				changechoiceboxvalue(tmp, _("press ok"));
+		}
+		tmp = addlistbox(tunerreceptiondvbs, listbox, tmp, 1);
+		if(tmp != NULL)
+		{
+			tmp->type = CHOICEBOX;
+			changetext(tmp, "Lnb / Unicable");
+			changeinput(tmp, _("press ok"));
+			changechoiceboxvalue(tmp, _("press ok"));
 
-				tmp->handle = (char*)i;
-				tmp->del = 1;
-			}
+			tmp->handle = (char*)i;
+			tmp->del = 1;
 		}
 
 /*
@@ -424,7 +424,7 @@ start:
 		}
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
-			if(listbox->select != NULL && ostrcmp(listbox->select->text, "LNB / UNICABLE") == 0 && listbox->select->ret != NULL && ostrcmp(listbox->select->ret, "0") != 0)
+			if(listbox->select != NULL && ostrcmp(listbox->select->text, "Lnb / Unicable") == 0 && listbox->select->ret != NULL && ostrcmp(listbox->select->ret, "0") != 0)
 			{
 				clearscreen(tunerreceptiondvbs);
 				screenlnb(tuner->feshortname, listbox->select->handle);

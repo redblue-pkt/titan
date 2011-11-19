@@ -1,15 +1,26 @@
 #ifndef LNBCONFIG_H
 #define LNBCONFIG_H
 
-int changeloftype(struct skin* lofl, struct skin* lofh, struct skin* threshold, struct skin* satcr, struct skin* satcrfrequ, char *type)
+int changeloftype(struct skin* lofl, struct skin* lofh, struct skin* threshold, struct skin* satcr, struct skin* satcrfrequ1, struct skin* satcrfrequ2, char *type)
 {
+	if(ostrcmp(type, "4") == 0)
+	{
+		lofl->hidden = NO;
+		lofh->hidden = NO;
+		threshold->hidden = NO;
+		satcr->hidden = NO;
+		satcrfrequ1->hidden = YES;
+		satcrfrequ2->hidden = NO;
+		return 4;
+	}
 	if(ostrcmp(type, "3") == 0)
 	{
 		lofl->hidden = NO;
 		lofh->hidden = NO;
 		threshold->hidden = NO;
 		satcr->hidden = NO;
-		satcrfrequ->hidden = NO;
+		satcrfrequ1->hidden = NO;
+		satcrfrequ2->hidden = YES;
 		return 3;
 	}
 	if(ostrcmp(type, "2") == 0)
@@ -18,7 +29,8 @@ int changeloftype(struct skin* lofl, struct skin* lofh, struct skin* threshold, 
 		lofh->hidden = NO;
 		threshold->hidden = NO;
 		satcr->hidden = YES;
-		satcrfrequ->hidden = YES;
+		satcrfrequ1->hidden = YES;
+		satcrfrequ2->hidden = YES;
 		return 2;
 	}
 	else
@@ -27,12 +39,13 @@ int changeloftype(struct skin* lofl, struct skin* lofh, struct skin* threshold, 
 		lofh->hidden = YES;
 		threshold->hidden = YES;
 		satcr->hidden = YES;
-		satcrfrequ->hidden = YES;
+		satcrfrequ1->hidden = YES;
+		satcrfrequ2->hidden = YES;
 		return 0;
 	}
 }
 
-void changelnb(struct skin* voltagemode, struct skin* tonemode, struct skin* loftype, struct skin* lofl, struct skin* lofh, struct skin* threshold, struct skin* satcr, struct skin* satcrfrequ, char* feshortname, char *lnbnr)
+void changelnb(struct skin* voltagemode, struct skin* tonemode, struct skin* loftype, struct skin* lofl, struct skin* lofh, struct skin* threshold, struct skin* satcr, struct skin* satcrfrequ1, struct skin* satcrfrequ2, char* feshortname, char *lnbnr)
 {
 	char* tmpstr = NULL;
 
@@ -83,9 +96,15 @@ void changelnb(struct skin* voltagemode, struct skin* tonemode, struct skin* lof
 
 	tmpstr = ostrcat(feshortname, "_lnb_satcrfrequ", 0, 0);
 	tmpstr = ostrcat(tmpstr, lnbnr, 1, 0);
-	changename(satcrfrequ, tmpstr);
-	changemask(satcrfrequ, "0000");
-	changeinput(satcrfrequ, getconfig(tmpstr, NULL));
+	changename(satcrfrequ1, tmpstr);
+	setchoiceboxselection(satcrfrequ1, getconfig(tmpstr, NULL));
+	free(tmpstr);
+
+	tmpstr = ostrcat(feshortname, "_lnb_satcrfrequ", 0, 0);
+	tmpstr = ostrcat(tmpstr, lnbnr, 1, 0);
+	changename(satcrfrequ2, tmpstr);
+	changemask(satcrfrequ2, "0000");
+	changeinput(satcrfrequ2, getconfig(tmpstr, NULL));
 	free(tmpstr);
 }
 
@@ -101,7 +120,8 @@ void screenlnb(char* feshortname, char* lnbnr)
 	struct skin* lofh = getscreennode(lnbscreen, "lofh");
 	struct skin* threshold = getscreennode(lnbscreen, "threshold");
 	struct skin* satcr = getscreennode(lnbscreen, "satcr");
-	struct skin* satcrfrequ = getscreennode(lnbscreen, "satcrfrequ");
+	struct skin* satcrfrequ1 = getscreennode(lnbscreen, "satcrfrequ1");
+	struct skin* satcrfrequ2 = getscreennode(lnbscreen, "satcrfrequ2");
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL;
 
@@ -128,6 +148,7 @@ void screenlnb(char* feshortname, char* lnbnr)
 	addchoicebox(loftype, "1", _("C-Band"));
 	addchoicebox(loftype, "2", _("user defined"));
 	addchoicebox(loftype, "3", _("unicable"));
+	addchoicebox(loftype, "4", _("user unicable"));
 
 	changeinput(satcr, NULL);
 	addchoicebox(satcr, "1", "1");
@@ -139,10 +160,20 @@ void screenlnb(char* feshortname, char* lnbnr)
 	addchoicebox(satcr, "7", "7");
 	addchoicebox(satcr, "8", "8");
 
-	changelnb(voltagemode, tonemode, loftype, lofl, lofh, threshold, satcr, satcrfrequ, feshortname, lnbnr);
+	changeinput(satcrfrequ1, NULL);
+	addchoicebox(satcrfrequ1, "1285", "1285");
+	addchoicebox(satcrfrequ1, "1400", "1400");
+	addchoicebox(satcrfrequ1, "1516", "1516");
+	addchoicebox(satcrfrequ1, "1632", "1632");
+	addchoicebox(satcrfrequ1, "1748", "1748");
+	addchoicebox(satcrfrequ1, "1864", "1864");
+	addchoicebox(satcrfrequ1, "1980", "1980");
+	addchoicebox(satcrfrequ1, "2096", "2096");
+
+	changelnb(voltagemode, tonemode, loftype, lofl, lofh, threshold, satcr, satcrfrequ1, satcrfrequ2, feshortname, lnbnr);
 
 	tmpstr = ostrcat(feshortname, "_lnb_loftype", 0, 0);
-	changeloftype(lofl, lofh, threshold, satcr, satcrfrequ, getconfig(tmpstr, lnbnr));
+	changeloftype(lofl, lofh, threshold, satcr, satcrfrequ1, satcrfrequ2, getconfig(tmpstr, lnbnr));
         free(tmpstr); tmpstr = NULL;
 	free(lnbnr); lnbnr = NULL;
 
@@ -159,7 +190,7 @@ void screenlnb(char* feshortname, char* lnbnr)
 
 		if(listbox->select != NULL && listbox->select->name != NULL && strstr(listbox->select->name, "lnb_loftype") != NULL && (rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)))
 		{
-			changeloftype(lofl, lofh, threshold, satcr, satcrfrequ, loftype->ret);
+			changeloftype(lofl, lofh, threshold, satcr, satcrfrequ1, satcrfrequ2, loftype->ret);
 		}
 
 		addconfigscreentmpcheck(voltagemode->name, voltagemode, "0");
@@ -169,7 +200,13 @@ void screenlnb(char* feshortname, char* lnbnr)
 		addconfigscreentmpcheck(lofh->name, lofh, "000000");
 		addconfigscreentmpcheck(threshold->name, threshold, "000000");
 		addconfigscreentmpcheck(satcr->name, satcr, "0");
-		addconfigscreentmpcheck(satcrfrequ->name, satcrfrequ, "0000");
+		if(loftype != NULL)
+		{
+			if(ostrcmp(loftype->ret, "3") == 0)
+				addconfigscreentmpcheck(satcrfrequ1->name, satcrfrequ1, "0000");
+			if(ostrcmp(loftype->ret, "4") == 0)
+				addconfigscreentmpcheck(satcrfrequ2->name, satcrfrequ2, "0000");
+		}
 
 		status.screencalc = 0;
 		drawscreen(lnbscreen, 0);
@@ -189,7 +226,8 @@ void screenlnb(char* feshortname, char* lnbnr)
 	changename(lofh, "lofh");
 	changename(threshold, "threshold");
 	changename(satcr, "satcr");
-	changename(satcrfrequ, "satcrfrequ");
+	changename(satcrfrequ1, "satcrfrequ1");
+	changename(satcrfrequ2, "satcrfrequ2");
 
 	status.screencalc = 0;
 	delconfigtmpall();
