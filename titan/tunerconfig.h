@@ -58,7 +58,7 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 			tmp->type = CHOICEBOX;
 			changetext(tmp, _("Satelite Entrys"));
 			changeinput(tmp, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n38\n39\n40\n41\n42\n43\n44\n45\n46\n47\n48\n49\n50\n51\n52\n53\n54\n55\n56\n57\n58\n59\n60\n61\n62\n63\n64");
-			changechoiceboxvalue(tmp, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n38\n39\n40\n41\n42\n43\n44\n45\n46\n47\n48\n49\n50\n51\n52\n53\n54\n55\n56\n57\n58\n59\n60\n61\n62\n63\n64");
+			changechoiceboxvalue(tmp, "A\nB\nC\nD\nE\nF\nG\nH\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n38\n39\n40\n41\n42\n43\n44\n45\n46\n47\n48\n49\n50\n51\n52\n53\n54\n55\n56\n57\n58\n59\n60\n61\n62\n63\n64");
 
 			changename(tmp, "sat_max");
 			
@@ -130,7 +130,6 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 				setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
 				free(tmpstr); tmpstr = NULL;
 
-				tmp->handle = (char*)i;
 				tmp->del = 1;
 			}
 		}
@@ -164,7 +163,6 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 				setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
 				free(tmpstr); tmpstr = NULL;
 
-				tmp->handle = (char*)i;
 				tmp->del = 1;
 			}
 		}
@@ -195,8 +193,6 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 				changename(tmp, tmpstr);
 				setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
 				free(tmpstr); tmpstr = NULL;
-				
-				tmp->handle = (char*)i;
 				tmp->del = 1;
 			}
 		}
@@ -222,7 +218,6 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 				setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
 				free(tmpstr); tmpstr = NULL;
 
-				tmp->handle = (char*)i;
 				tmp->del = 1;
 			}
 			tmp = addlistbox(tunerreceptiondvbs, listbox, tmp, 1);
@@ -230,8 +225,13 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 			{
 				tmp->type = CHOICEBOX;
 				changetext(tmp, "LNB");
-				changeinput(tmp, _("press ok"));
-				changechoiceboxvalue(tmp, _("press ok"));
+				tmpstr = ostrcat(_("Standard LNB\n"), maxsatstring, 0, 0);
+				changeinput(tmp, tmpstr);
+				free(tmpstr); tmpstr = NULL;
+
+				tmpstr = ostrcat("0\n", maxsatstring, 0, 0);
+				changechoiceboxvalue(tmp, tmpstr);
+				free(tmpstr); tmpstr = NULL;
 
 				tmpstr = ostrcat(tuner->feshortname, "_lnb", 0, 0);
 				tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
@@ -239,7 +239,6 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 				setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
 				free(tmpstr); tmpstr = NULL;
 
-				tmp->handle = (char*)i;
 				tmp->del = 1;
 			}
 		}
@@ -402,7 +401,7 @@ start:
 				delownerrc(tunerreceptiondvbs);
 				clearscreen(tunerreceptiondvbs);
 				mode = 4;
-				if(status.maxsat <= maxsat)
+//				if(status.maxsat <= maxsat)
 					status.maxsat = maxsat;			
 				goto start;
 			}
@@ -412,13 +411,13 @@ start:
 			if(listbox->select != NULL && ostrcmp(listbox->select->text, "LNB") == 0 && listbox->select->ret != NULL && ostrcmp(listbox->select->ret, "0") != 0)
 			{
 				clearscreen(tunerreceptiondvbs);
-				screenlnb(tuner->feshortname, listbox->select->handle);
+				screenlnb(listbox->select->ret);
 				drawscreen(tunerreceptiondvbs, 0);
 			}
 			if(listbox->select != NULL && ostrcmp(listbox->select->text, "DiSEqC") == 0 && listbox->select->ret != NULL && ostrcmp(listbox->select->ret, "0") != 0)
 			{
 				clearscreen(tunerreceptiondvbs);
-				screendiseqc(tuner->feshortname, listbox->select->handle);
+				screendiseqc(listbox->select->ret);
 				drawscreen(tunerreceptiondvbs, 0);
 			}
 		}
