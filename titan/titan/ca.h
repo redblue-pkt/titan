@@ -1730,16 +1730,28 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 			free(tmpstr); tmpstr = NULL;
 
 			//TODO: if record is running input should not changed
-			//change ciX_input
+			//change ciX_input and inputX
 			if(node->fedev != NULL)
 			{
-				debug(620, "set ci source %d to %d\n", dvbnode->devnr, node->fedev->devnr);
+				debug(620, "set ci slot %d to tuner %d\n", dvbnode->devnr, node->fedev->devnr);
 				switch(node->fedev->devnr)
 				{
-					case 0: setciinput(dvbnode->devnr, "A"); break;
-					case 1: setciinput(dvbnode->devnr, "B"); break;
-					case 2: setciinput(dvbnode->devnr, "C"); break;
-					case 3: setciinput(dvbnode->devnr, "D"); break;
+					case 0:
+						setciinput(dvbnode->devnr, "A");
+						setcisource(dvbnode->devnr, "CI0");
+						break;
+					case 1: 
+						setciinput(dvbnode->devnr, "B");
+						setcisource(dvbnode->devnr, "CI1");
+						break;
+					case 2: 
+						setciinput(dvbnode->devnr, "C");
+						setcisource(dvbnode->devnr, "CI2");
+						break;
+					case 3: 
+						setciinput(dvbnode->devnr, "D");
+						setcisource(dvbnode->devnr, "CI3");
+						break;
 				}
 			}
 
