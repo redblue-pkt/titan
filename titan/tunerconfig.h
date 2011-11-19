@@ -77,7 +77,7 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 		tmp->del = 2;
 	}
 
-	for(i = 1; i <= status.maxsat; i++)
+	for(i = 1; i <= maxsat; i++)
 	{
 		tmpnr = oitoa(i);
 
