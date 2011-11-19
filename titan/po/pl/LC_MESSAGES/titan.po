@@ -148,9 +148,6 @@ msgstr "a"
 msgid "A"
 msgstr "A"
 
-msgid "Infos"
-msgstr "Informacje"
-
 msgid "Panel"
 msgstr "Panel"
 
