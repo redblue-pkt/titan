@@ -115,6 +115,10 @@ void screendiseqc(char* diseqcnr)
 		tmpstr = stringreplacecharonce(tmpstr, '2', 'B');
 		tmpstr = stringreplacecharonce(tmpstr, '3', 'C');
 		tmpstr = stringreplacecharonce(tmpstr, '4', 'D');
+		tmpstr = stringreplacecharonce(tmpstr, '5', 'E');
+		tmpstr = stringreplacecharonce(tmpstr, '6', 'F');
+		tmpstr = stringreplacecharonce(tmpstr, '7', 'G');
+		tmpstr = stringreplacecharonce(tmpstr, '8', 'H');
 		changeinput(diseqc, tmpstr);
 		diseqc->aktpage = 1;
 		free(tmpstr); tmpstr = NULL;
@@ -127,6 +131,10 @@ void screendiseqc(char* diseqcnr)
 		else if(ostrcmp(diseqcnr, "2") == 0) changeinput(diseqc, "B");
 		else if(ostrcmp(diseqcnr, "3") == 0) changeinput(diseqc, "C");
 		else if(ostrcmp(diseqcnr, "4") == 0) changeinput(diseqc, "D");
+		else if(ostrcmp(diseqcnr, "5") == 0) changeinput(diseqc, "E");
+		else if(ostrcmp(diseqcnr, "6") == 0) changeinput(diseqc, "F");
+		else if(ostrcmp(diseqcnr, "7") == 0) changeinput(diseqc, "G");
+		else if(ostrcmp(diseqcnr, "8") == 0) changeinput(diseqc, "H");
 		else changeinput(diseqc, diseqcnr);
 		diseqc->aktpage = atoi(diseqcnr);
 	}
