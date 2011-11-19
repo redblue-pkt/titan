@@ -62,7 +62,7 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 
 			changename(tmp, "sat_max");
 			
-			tmpstr = oitoa(maxsat);
+			tmpstr = oitoa(status.maxsat);
 			setchoiceboxselection(tmp, tmpstr);
 			free(tmpstr); tmpstr = NULL;
 			tmp->del = 1;
