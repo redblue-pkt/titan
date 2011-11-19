@@ -46,10 +46,6 @@ msgid "AAF Beta Config"
 
 msgstr "AAF Beta Einstellen"
 
-msgid "Info"
-
-msgstr "Infos"
-
 msgid "Panel"
 
 msgstr "Panel"
@@ -1193,18 +1189,6 @@ msgid "Minutes:"
 
 msgstr "Minuten:"
 
-msgid "SATMODE"
-msgid "Satellite-Modus"
-
-msgid "MODE: Single Satelite"
-msgid "Aktuelle Modus: Einzelner Satellite"
-
-msgid "MODE: DiSEqC Sat Settings"
-msgstr "Aktuelle Modus: DiSEqC Satellite Einstellungen"
-
-msgid "MODE: Expert Sat Settings"
-msgstr "Aktuelle Modus: Experten Satellite Einstellung"
-
 msgid "Modulation"
 
 msgstr "Modulation"
@@ -1745,7 +1729,7 @@ msgid "Record Timer"
 
 msgstr "Aufnahme Timer"
 
-msgid "Records EPG..."
+msgid "Records and EPG ..."
 
 msgstr "Aufnahme und EPG"
 
@@ -1924,6 +1908,10 @@ msgstr "DiSEqC A/B Einstellung"
 msgid "sat_diseqc_abcd"
 
 msgstr "DiSEqC A/B/B/C Einstellung"
+
+msgid "sat_diseqc_abcdefgh"
+
+msgstr "DiSEqC A/B/B/C/E/F/G/H Einstellung"
 
 msgid "sat_expert"
 

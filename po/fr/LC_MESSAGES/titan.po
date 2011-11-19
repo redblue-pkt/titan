@@ -31,9 +31,6 @@ msgstr "Réglages Audio/Video"
 msgid "AAF Beta Config"
 msgstr "Configuration AAF Beta"
 
-msgid "Info"
-msgstr "Informations"
-
 msgid "Panel"
 msgstr "Panneau"
 
