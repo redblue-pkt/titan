@@ -77,7 +77,7 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 		tmp->del = 2;
 	}
 
-	for(i = 1; i <= maxsat; i++)
+	for(i = 1; i <= status.maxsat; i++)
 	{
 		tmpnr = oitoa(i);
 
@@ -335,8 +335,8 @@ start:
 				clearscreen(tunerreceptiondvbs);
 				mode = 0;
 				maxsat = 1;
-//				if(status.maxsat <= maxsat)
-//					status.maxsat = maxsat;
+				if(status.maxsat <= maxsat)
+					status.maxsat = maxsat;
 				goto start;
 			}
 			else if((ostrcmp(listbox->select->ret, "1") == 0) && (mode != 1))
@@ -348,8 +348,8 @@ start:
 				clearscreen(tunerreceptiondvbs);
 				mode = 1;
 				maxsat = 2;
-//				if(status.maxsat <= maxsat)
-//					status.maxsat = maxsat;
+				if(status.maxsat <= maxsat)
+					status.maxsat = maxsat;
 				goto start;
 			}
 			else if((ostrcmp(listbox->select->ret, "2") == 0) && (mode != 2))
@@ -361,8 +361,8 @@ start:
 				clearscreen(tunerreceptiondvbs);
 				mode = 2;
 				maxsat = 4;
-//				if(status.maxsat <= maxsat)
-//					status.maxsat = maxsat;
+				if(status.maxsat <= maxsat)
+					status.maxsat = maxsat;
 				goto start;
 			}
 			else if((ostrcmp(listbox->select->ret, "3") == 0) && (mode != 3))
@@ -374,8 +374,8 @@ start:
 				clearscreen(tunerreceptiondvbs);
 				mode = 3;
 				maxsat = 8;
-//				if(status.maxsat <= maxsat)
-//					status.maxsat = maxsat;
+				if(status.maxsat <= maxsat)
+					status.maxsat = maxsat;
 				goto start;
 			}
 			else if((ostrcmp(listbox->select->ret, "4") == 0) && (mode != 4))
@@ -392,15 +392,17 @@ start:
 		}
 		else if(ostrcmp(listbox->select->name, "sat_max") == 0)
 		{
-			if(atoi(listbox->select->ret) != status.maxsat)
+			if(atoi(listbox->select->ret) != maxsat)
 			{
-				status.maxsat = atoi(listbox->select->ret);
+				maxsat = atoi(listbox->select->ret);
 				delconfigtmpall();
 				delmarkedscreennodes(tunerreceptiondvbs, 1);
 				delmarkedscreennodes(tunerreceptiondvbs, 2);
 				delownerrc(tunerreceptiondvbs);
 				clearscreen(tunerreceptiondvbs);
 				mode = 4;
+				if(status.maxsat <= maxsat)
+					status.maxsat = maxsat;			
 				goto start;
 			}
 		}
