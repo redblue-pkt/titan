@@ -791,7 +791,7 @@ void fesetunicable(struct dvbdev* node)
 		return;
 	}
 
-	int satcr = getconfigint("lnb_satcr", node->feaktlnb) + 1;
+	int satcr = getconfigint("lnb_satcr", node->feaktlnb);
 	if(node->feaktdiseqc != NULL) aktdiseqc = atoi(node->feaktdiseqc);
 
 	unicabletune |= ((satcr & 0x7) << 13);

@@ -132,14 +132,14 @@ void screenlnb(char* lnbnr)
 	addchoicebox(loftype, "3", _("unicable"));
 
 	changeinput(satcr, NULL);
-	addchoicebox(satcr, "0", "1");
-	addchoicebox(satcr, "1", "2");
-	addchoicebox(satcr, "2", "3");
-	addchoicebox(satcr, "3", "4");
-	addchoicebox(satcr, "4", "5");
-	addchoicebox(satcr, "5", "6");
-	addchoicebox(satcr, "6", "7");
-	addchoicebox(satcr, "7", "8");
+	addchoicebox(satcr, "1", "1");
+	addchoicebox(satcr, "2", "2");
+	addchoicebox(satcr, "3", "3");
+	addchoicebox(satcr, "4", "4");
+	addchoicebox(satcr, "5", "5");
+	addchoicebox(satcr, "6", "6");
+	addchoicebox(satcr, "7", "7");
+	addchoicebox(satcr, "8", "8");
 
 	changelnb(voltagemode, tonemode, loftype, lofl, lofh, threshold, satcr, satcrfrequ, lnbnr);
 	changeloftype(lofl, lofh, threshold, satcr, satcrfrequ, getconfig("lnb_loftype", lnbnr));
