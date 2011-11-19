@@ -1,12 +1,13 @@
 #ifndef FRONTENDDEV_H
 #define FRONTENDDEV_H
 
-int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktlnb, int flag)
+int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktnr, int flag)
 {
 	debug(1000, "in");
 	int loftype = 0;
 	int lofl, lofh, lofthreshold;
 	int satcrfrequ = 0;
+	char* tmpstr = NULL;
 
 	if(node == NULL || tpnode == NULL)
 	{
@@ -20,9 +21,11 @@ int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktlnb, int
 	int frequency = tpnode->frequency;
 	node->feunicable = 0;
 
-	if(feaktlnb == NULL) feaktlnb = node->feaktlnb;
+	if(feaktnr == NULL) feaktnr = node->feaktnr;
 
-	loftype = getconfigint("lnb_loftype", feaktlnb);
+	tmpstr = ostrcat(node->feshortname, "_lnb_loftype", 0, 0);
+	loftype = getconfigint(tmpstr, feaktnr);
+	free(tmpstr); tmpstr = NULL;
         switch(loftype)
         {
 		case 1: //c-band
@@ -31,15 +34,29 @@ int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktlnb, int
 			lofthreshold = 5150 * 1000;
 			break;
 		case 2: //user
-			lofl = getconfigint("lnb_lofl", feaktlnb) * 1000;
-			lofh = getconfigint("lnb_lofh", feaktlnb) * 1000;
-			lofthreshold = getconfigint("lnb_lofthreshold", feaktlnb) * 1000;
+			tmpstr = ostrcat(node->feshortname, "_lnb_lofl", 0, 0);
+			lofl = getconfigint(tmpstr, feaktnr) * 1000;
+			free(tmpstr); tmpstr = NULL;
+			tmpstr = ostrcat(node->feshortname, "_lnb_lofh", 0, 0);
+			lofh = getconfigint(tmpstr, feaktnr) * 1000;
+			free(tmpstr); tmpstr = NULL;
+			tmpstr = ostrcat(node->feshortname, "_lnb_lofthreshold", 0, 0);
+			lofthreshold = getconfigint(tmpstr, feaktnr) * 1000;
+			free(tmpstr); tmpstr = NULL;
 			break;
 		case 3: //unicable
-			lofl = getconfigint("lnb_lofl", feaktlnb) * 1000;
-			lofh = getconfigint("lnb_lofh", feaktlnb) * 1000;
-			lofthreshold = getconfigint("lnb_lofthreshold", feaktlnb) * 1000;
-			satcrfrequ = getconfigint("lnb_satcrfrequ", feaktlnb) * 1000;
+			tmpstr = ostrcat(node->feshortname, "_lnb_lofl", 0, 0);
+			lofl = getconfigint(tmpstr, feaktnr) * 1000;
+			free(tmpstr); tmpstr = NULL;
+			tmpstr = ostrcat(node->feshortname, "_lnb_lofh", 0, 0);
+			lofh = getconfigint(tmpstr, feaktnr) * 1000;
+			free(tmpstr); tmpstr = NULL;
+			tmpstr = ostrcat(node->feshortname, "_lnb_lofthreshold", 0, 0);
+			lofthreshold = getconfigint(tmpstr, feaktnr) * 1000;
+			free(tmpstr); tmpstr = NULL;
+			tmpstr = ostrcat(node->feshortname, "_lnb_satcrfrequ", 0, 0);
+			satcrfrequ = getconfigint(tmpstr, feaktnr) * 1000;
+			free(tmpstr); tmpstr = NULL;
 			break;
 		default: //standard lnb
 			lofl = 9750 * 1000;
@@ -116,7 +133,7 @@ struct dvbdev* fegetbyshortname(char* feshortname)
 	return NULL;
 }
 
-void fegetconfig(struct dvbdev *dvbnode, struct transponder *tpnode, char** aktlnb, char** aktdiseqc, char* tmpnr)
+void fegetconfig(struct dvbdev *dvbnode, struct transponder *tpnode, char** aktnr, char* tmpnr)
 {
 	char* tmpstr = NULL;
 
@@ -126,12 +143,8 @@ void fegetconfig(struct dvbdev *dvbnode, struct transponder *tpnode, char** aktl
 		return;
 	}
 
-	tmpstr = ostrcat(dvbnode->feshortname, "_lnb", 0, 0);
-	*aktlnb = getconfig(tmpstr, tmpnr);
-
-	free(tmpstr); tmpstr = NULL;
-	tmpstr = ostrcat(dvbnode->feshortname, "_diseqc", 0, 0);
-	*aktdiseqc = getconfig(tmpstr, tmpnr);
+	tmpstr = ostrcat(dvbnode->feshortname, "_satnr", 0, 0);
+	*aktnr = getconfig(tmpstr, tmpnr);
 	free(tmpstr); tmpstr = NULL;
 }
 
@@ -156,7 +169,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 	debug(1000, "in");
 	struct dvbdev* dvbnode = NULL;
 	struct dvbdev* tmpdvbnode = NULL;
-	char* tmpstr = NULL, *tmpnr = NULL, *aktlnb = NULL, *aktdiseqc = NULL;
+	char* tmpstr = NULL, *tmpnr = NULL, *aktnr = NULL;
 	int i, orbitalpos = 0, band = 0;
 
 	if(dvbfirst != NULL)
@@ -179,7 +192,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 		{
 			if(dvbnode->feakttransponder != NULL && dvbnode->feakttransponder->orbitalpos == tpnode->orbitalpos && dvbnode->feakttransponder->frequency == tpnode->frequency && dvbnode->feaktpolarization == tpnode->polarization)
 			{
-				band = calclof(dvbnode, tpnode, dvbnode->feaktlnb, 1);
+				band = calclof(dvbnode, tpnode, dvbnode->feaktnr, 1);
 				if(dvbnode->feaktband != band)
 				{
 					dvbnode = dvbnode->next;
@@ -231,8 +244,8 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 				orbitalpos = getconfigint(tmpstr, tmpnr);
 				if(orbitalpos == tpnode->orbitalpos)
 				{
-					fegetconfig(dvbnode, tpnode, &aktlnb, &aktdiseqc, tmpnr);
-					band = calclof(dvbnode, tpnode, aktlnb, 1);
+					fegetconfig(dvbnode, tpnode, &aktnr, tmpnr);
+					band = calclof(dvbnode, tpnode, aktnr, 1);
 					if(tmpdvbnode != NULL && tmpdvbnode->feaktband != band && (tmpdvbnode->felock != 0 || (flag == 2 && tmpdvbnode->felock == 0)))
 					{
 						free(tmpnr); tmpnr = NULL;
@@ -252,16 +265,11 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 					dvbnode->felasttransponder = dvbnode->feakttransponder;
 					dvbnode->feakttransponder = tpnode;
 					dvbnode->feaktpolarization = tpnode->polarization;
-					free(dvbnode->feaktlnb);
-					if(aktlnb != NULL)
-						dvbnode->feaktlnb = ostrcat(aktlnb, "", 0, 0);
+					free(dvbnode->feaktnr);
+					if(aktnr != NULL)
+						dvbnode->feaktnr = ostrcat(aktnr, "", 0, 0);
 					else
-						dvbnode->feaktlnb = NULL;
-					free(dvbnode->feaktdiseqc);
-					if(aktdiseqc != NULL)
-						dvbnode->feaktdiseqc = ostrcat(aktdiseqc, "", 0, 0);
-					else
-						dvbnode->feaktdiseqc = NULL;
+						dvbnode->feaktnr = NULL;
 
 					free(tmpstr); tmpstr = NULL;
 					free(tmpnr); tmpnr = NULL;
@@ -318,8 +326,8 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 				orbitalpos = getconfigint(tmpstr, tmpnr);
 				if(orbitalpos == tpnode->orbitalpos)
 				{ 
-					fegetconfig(tmpdvbnode, tpnode, &aktlnb, &aktdiseqc, tmpnr);
-					band = calclof(dvbnode, tpnode, aktlnb, 1);
+					fegetconfig(tmpdvbnode, tpnode, &aktnr, tmpnr);
+					band = calclof(dvbnode, tpnode, aktnr, 1);
 					if(tmpdvbnode != NULL && tmpdvbnode->feaktband != band && (tmpdvbnode->felock != 0 || (flag == 2 && tmpdvbnode->felock == 0)))
 					{
 						free(tmpnr); tmpnr = NULL;
@@ -339,16 +347,11 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 					dvbnode->felasttransponder = dvbnode->feakttransponder;
 					dvbnode->feakttransponder = tpnode;
 					dvbnode->feaktpolarization = tpnode->polarization;
-					free(dvbnode->feaktlnb);
-					if(aktlnb != NULL)
-						dvbnode->feaktlnb = ostrcat(aktlnb, "", 0, 0);
+					free(dvbnode->feaktnr);
+					if(aktnr != NULL)
+						dvbnode->feaktnr = ostrcat(aktnr, "", 0, 0);
 					else
-						dvbnode->feaktlnb = NULL;
-					free(dvbnode->feaktdiseqc);
-					if(aktdiseqc != NULL)
-						dvbnode->feaktdiseqc = ostrcat(aktdiseqc, "", 0, 0);
-					else
-						dvbnode->feaktdiseqc = NULL;
+						dvbnode->feaktnr = NULL;
 					free(tmpstr); tmpstr = NULL;
 					free(tmpnr); tmpnr = NULL;
 					if(flag != 1) debug(200, "found free looptuner witch same orbitalpos/polarization/band %s", dvbnode->feshortname);
@@ -581,6 +584,7 @@ void fediseqcsendmastercmd(struct dvbdev* node, struct dvb_diseqc_master_cmd *cm
 {
 	debug(1000, "in");
 	int i, repeat = 0; 
+	char* tmpstr = NULL;
 
 	if(node == NULL)
 	{
@@ -588,7 +592,9 @@ void fediseqcsendmastercmd(struct dvbdev* node, struct dvb_diseqc_master_cmd *cm
 		return;
 	}
 
-	repeat = getconfigint("diseqc_repeat", node->feaktdiseqc); 
+	tmpstr = ostrcat(node->feshortname, "_diseqc_repeat", 0, 0);
+	repeat = getconfigint(tmpstr, node->feaktnr); 
+	free(tmpstr); tmpstr = NULL;
 	if(repeat < 1) repeat = 1;
 
 	for(i = 0; i < repeat; i++)
@@ -782,7 +788,8 @@ void fediseqcrotor(struct dvbdev* node, int pos, int oldpos, int flag)
 
 void fesetunicable(struct dvbdev* node)
 {
-	int aktdiseqc = 1, unicabletune = 0;
+	int unicabletune = 0;
+	char* tmpstr = NULL;
 	struct dvb_diseqc_master_cmd cmd = {{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0};
 
 	if(node == NULL)
@@ -791,8 +798,14 @@ void fesetunicable(struct dvbdev* node)
 		return;
 	}
 
-	int satcr = getconfigint("lnb_satcr", node->feaktlnb);
-	if(node->feaktdiseqc != NULL) aktdiseqc = atoi(node->feaktdiseqc);
+	tmpstr = ostrcat(node->feshortname, "_lnb_satcr", 0, 0);
+	int satcr = getconfigint(tmpstr, node->feaktnr);
+	free(tmpstr); tmpstr = NULL;
+
+	tmpstr = ostrcat(node->feshortname, "_diseqc", 0, 0);
+	int aktdiseqc = getconfigint(tmpstr, node->feaktnr);
+	if(aktdiseqc < 1) aktdiseqc = 1;
+	free(tmpstr); tmpstr = NULL;
 
 	unicabletune |= ((satcr & 0x7) << 13);
 	unicabletune |= (((aktdiseqc - 1) & 0x1) << 12);
@@ -926,21 +939,34 @@ int CFrontend::driveToSatellitePosition(t_satellite_position satellitePosition, 
 void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 {
 	debug(1000, "in");
-	int toneburst = 0, cmdorder = 0, aktdiseqc = 1, input = 0, uinput = 0, diseqmode = 0;
+	char* tmpstr = NULL;
+	int toneburst = 0, cmdorder = 0, input = 0, uinput = 0, diseqmode = 0;
 	fe_sec_mini_cmd_t mini = -1;
 	struct dvb_diseqc_master_cmd cmd = {{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0};
 	struct dvb_diseqc_master_cmd ucmd = {{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0};
 	
 	if(node == NULL) return;
 	
-	input = getconfigint("diseqc_committedcmd", node->feaktdiseqc);
-	uinput = getconfigint("diseqc_uncommittedcmd", node->feaktdiseqc);
-	diseqmode = getconfigint("diseqc_mode", node->feaktdiseqc);
-	cmdorder = getconfigint("diseqc_cmdorder", node->feaktdiseqc);
-	toneburst = getconfigint("diseqc_toneburst", node->feaktdiseqc);
+	tmpstr = ostrcat(node->feshortname, "_diseqc_committedcmd", 0, 0);
+	input = getconfigint(tmpstr, node->feaktnr);
+	free(tmpstr); tmpstr = NULL;
+	tmpstr = ostrcat(node->feshortname, "_diseqc_uncommittedcmd", 0, 0);
+	uinput = getconfigint(tmpstr, node->feaktnr);
+	free(tmpstr); tmpstr = NULL;
+	tmpstr = ostrcat(node->feshortname, "_diseqc_mode", 0, 0);
+	diseqmode = getconfigint(tmpstr, node->feaktnr);
+	free(tmpstr); tmpstr = NULL;
+	tmpstr = ostrcat(node->feshortname, "_diseqc_cmdorder", 0, 0);
+	cmdorder = getconfigint(tmpstr, node->feaktnr);
+	free(tmpstr); tmpstr = NULL;
+	tmpstr = ostrcat(node->feshortname, "_diseqc_toneburst", 0, 0);
+	toneburst = getconfigint(tmpstr, node->feaktnr);
+	free(tmpstr); tmpstr = NULL;
 
-	if(node->feaktdiseqc != NULL)
-		aktdiseqc = atoi(node->feaktdiseqc);
+	tmpstr = ostrcat(node->feshortname, "_diseqc", 0, 0);
+	int aktdiseqc = getconfigint(tmpstr, node->feaktnr);
+	if(aktdiseqc < 1) aktdiseqc = 1;
+	free(tmpstr); tmpstr = NULL;
 
 	debug(200, "set diseqc: number=%d, band=%d, pol=%d", aktdiseqc, node->feaktband, node->feaktpolarization);
 	debug(200, "set diseqc: diseqmode=%d, input=%d, uinput=%d, cmdorder=%d, toneburst=%d", diseqmode, input, uinput, cmdorder, toneburst);
@@ -1030,6 +1056,7 @@ void feset(struct dvbdev* node, struct transponder* tpnode)
 	fe_sec_tone_mode_t tone;
 	fe_sec_voltage_t volt;
 	struct dvbdev* dvbnode = dvbdev;
+	char* tmpstr = NULL;
 
 	if(node == NULL)
 	{
@@ -1050,7 +1077,9 @@ void feset(struct dvbdev* node, struct transponder* tpnode)
 
 	calclof(node, tpnode, NULL, 0);
 
-	voltagemode = getconfigint("lnb_voltagemode", node->feaktlnb); 
+	tmpstr = ostrcat(node->feshortname, "lnb_voltagemode", 0, 0);
+	voltagemode = getconfigint(tmpstr, node->feaktnr); 
+	free(tmpstr); tmpstr = NULL;
 	switch(voltagemode)
 	{
 		case 1: volt = SEC_VOLTAGE_13; break;
@@ -1059,7 +1088,8 @@ void feset(struct dvbdev* node, struct transponder* tpnode)
 	}
 	fesetvoltage(node, volt, 15);
 
-	if(node->feaktdiseqc == NULL)
+	tmpstr = ostrcat(node->feshortname, "_diseqc", 0, 0);
+	if(getconfigint(tmpstr, node->feaktnr) == 0)
 	{
 		debug(200, "don't use diseqc");
 	}
@@ -1068,8 +1098,11 @@ void feset(struct dvbdev* node, struct transponder* tpnode)
 		fesettone(node, SEC_TONE_OFF, 15);
 		fediseqcset(node, tpnode);
 	}
+	free(tmpstr); tmpstr = NULL;
 
-	tonemode = getconfigint("lnb_tonemode", node->feaktlnb); 
+	tmpstr = ostrcat(node->feshortname, "lnb_tonemode", 0, 0);
+	tonemode = getconfigint(tmpstr, node->feaktnr); 
+	free(tmpstr); tmpstr = NULL;
 	switch(tonemode)
 	{
 		case 1: tone = SEC_TONE_ON; break;
