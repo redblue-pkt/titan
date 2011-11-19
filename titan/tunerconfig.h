@@ -30,20 +30,10 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 	if(tmp != NULL)
 	{
 		tmp->type = CHOICEBOX;
-		tmpstr = ostrcat(_("Satelite Type"), "", 0, 0);
-		changetext(tmp, tmpstr);
-		free(tmpstr); tmpstr = NULL;
-
-		tmpstr = ostrcat(_("sat_single\nsat_diseqc_ab\nsat_diseqc_abcd\nsat_diseqc_abcdefgh\nsat_expert"), "", 0, 0);
-		changeinput(tmp, tmpstr);
-		free(tmpstr); tmpstr = NULL;
-
-		tmpstr = ostrcat("0\n1\n2\n3\n4", "", 0, 0);		
-		changechoiceboxvalue(tmp, tmpstr);
-		free(tmpstr); tmpstr = NULL;
-
-		tmpstr = ostrcat("sat_type", "", 0, 0);
-		changename(tmp, tmpstr);
+		changetext(tmp, _("Satelite Type"));
+		changeinput(tmp, _("sat_single\nsat_diseqc_ab\nsat_diseqc_abcd\nsat_diseqc_abcdefgh\nsat_expert"));
+		changechoiceboxvalue(tmp, "0\n1\n2\n3\n4");
+		changename(tmp, "sat_type");
 
 		if(mode == 0)
 			setchoiceboxselection(tmp, "0");
@@ -66,20 +56,15 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 		if(tmp != NULL)
 		{
 			tmp->type = CHOICEBOX;
-			tmpstr = ostrcat(_("Satelite Entrys"), "", 0, 0);
-			changetext(tmp, tmpstr);
-			free(tmpstr); tmpstr = NULL;
-			tmpstr = ostrcat(_("1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n38\n39\n40\n41\n42\n43\n44\n45\n46\n47\n48\n49\n50\n51\n52\n53\n54\n55\n56\n57\n58\n59\n60\n61\n62\n63\n64\n"), "", 0, 0);
+			changetext(tmp, _("Satelite Entrys"));
+			tmpstr = ostrcat("1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n38\n39\n40\n41\n42\n43\n44\n45\n46\n47\n48\n49\n50\n51\n52\n53\n54\n55\n56\n57\n58\n59\n60\n61\n62\n63\n64", "", 0, 0);
 			changeinput(tmp, tmpstr);
-			free(tmpstr); tmpstr = NULL;
-
-			tmpstr = ostrcat(_("1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n38\n39\n40\n41\n42\n43\n44\n45\n46\n47\n48\n49\n50\n51\n52\n53\n54\n55\n56\n57\n58\n59\n60\n61\n62\n63\n64\n"), "", 0, 0);
 			changechoiceboxvalue(tmp, tmpstr);
 			free(tmpstr); tmpstr = NULL;
 
-			tmpstr = ostrcat("sat_max", "", 0, 0);
-			changename(tmp, tmpstr);
-			setchoiceboxselection(tmp, oitoa(status.maxsat));
+			changename(tmp, "sat_max");
+			tmpstr = oitoa(status.maxsat);
+			setchoiceboxselection(tmp, tmpstr);
 			free(tmpstr); tmpstr = NULL;
 			tmp->del = 1;
 		}
