@@ -130,6 +130,7 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 				setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
 				free(tmpstr); tmpstr = NULL;
 
+				tmp->handle = (char*)i;
 				tmp->del = 1;
 			}
 		}
@@ -163,6 +164,7 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 				setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
 				free(tmpstr); tmpstr = NULL;
 
+				tmp->handle = (char*)i;
 				tmp->del = 1;
 			}
 		}
@@ -193,6 +195,8 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 				changename(tmp, tmpstr);
 				setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
 				free(tmpstr); tmpstr = NULL;
+				
+				tmp->handle = (char*)i;
 				tmp->del = 1;
 			}
 		}
@@ -218,6 +222,7 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 				setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
 				free(tmpstr); tmpstr = NULL;
 
+				tmp->handle = (char*)i;
 				tmp->del = 1;
 			}
 			tmp = addlistbox(tunerreceptiondvbs, listbox, tmp, 1);
@@ -225,13 +230,8 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 			{
 				tmp->type = CHOICEBOX;
 				changetext(tmp, "LNB");
-				tmpstr = ostrcat(_("Standard LNB\n"), maxsatstring, 0, 0);
-				changeinput(tmp, tmpstr);
-				free(tmpstr); tmpstr = NULL;
-
-				tmpstr = ostrcat("0\n", maxsatstring, 0, 0);
-				changechoiceboxvalue(tmp, tmpstr);
-				free(tmpstr); tmpstr = NULL;
+				changeinput(tmp, _("press ok"));
+				changechoiceboxvalue(tmp, _("press ok"));
 
 				tmpstr = ostrcat(tuner->feshortname, "_lnb", 0, 0);
 				tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
@@ -239,6 +239,7 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 				setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
 				free(tmpstr); tmpstr = NULL;
 
+				tmp->handle = (char*)i;
 				tmp->del = 1;
 			}
 		}
@@ -411,13 +412,13 @@ start:
 			if(listbox->select != NULL && ostrcmp(listbox->select->text, "LNB") == 0 && listbox->select->ret != NULL && ostrcmp(listbox->select->ret, "0") != 0)
 			{
 				clearscreen(tunerreceptiondvbs);
-				screenlnb(listbox->select->ret);
+				screenlnb(tuner->feshortname, listbox->select->handle);
 				drawscreen(tunerreceptiondvbs, 0);
 			}
 			if(listbox->select != NULL && ostrcmp(listbox->select->text, "DiSEqC") == 0 && listbox->select->ret != NULL && ostrcmp(listbox->select->ret, "0") != 0)
 			{
 				clearscreen(tunerreceptiondvbs);
-				screendiseqc(listbox->select->ret);
+				screendiseqc(tuner->feshortname, listbox->select->handle);
 				drawscreen(tunerreceptiondvbs, 0);
 			}
 		}

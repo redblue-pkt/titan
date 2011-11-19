@@ -193,10 +193,6 @@ int menucall(struct skin* menunode, struct skin* menuentry)
 		screentunerconfig();
 	else if(ostrcmp("unicable", menuentry->name) == 0)
 		screenunicable();
-	else if(ostrcmp("lnbconfig", menuentry->name) == 0)
-		screenlnb(NULL);
-	else if(ostrcmp("diseqcconfig", menuentry->name) == 0)
-		screendiseqc(NULL);
 	else if(ostrcmp("vfdisplay", menuentry->name) == 0)
 		screenvfdisplay();
 	else if(ostrcmp("serviceinfo", menuentry->name) == 0)
