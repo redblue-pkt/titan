@@ -1,14 +1,30 @@
 #ifndef TUNERCONFIG_H
 #define TUNERCONFIG_H
 
-void writetunerconfig(struct skin* tunerreceptiondvbs)
+void writetunerconfig(struct dvbdev* tuner, struct skin* tunerreceptiondvbs)
 {
+	if(tuner == NULL) return;
+	if(tunerreceptiondvbs == NULL) return;
+
 	struct skin* child = tunerreceptiondvbs->child;
+	char* tmpstr = NULL, *tmpnr = NULL;
 
 	while(child != NULL)
 	{
-		if(child->del == 1)
+		if(child->del == 1 && child->name != NULL && strstr(child->name, "_lnb") == NULL)
+		{
 			addconfigscreentmpcheck(child->name, child, "0");
+			if(strstr(child->name, "_sat") != NULL && child->ret != NULL && ostrcmp(child->ret, "0") != NULL)
+			{
+				if(child->handle != NULL)
+                			tmpnr = oitoa((int)child->handle);
+				tmpstr = ostrcat(tuner->feshortname, "_satnr", 0, 0);
+				tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
+				addconfigtmp(tmpstr, tmpnr);
+				free(tmpstr); tmpstr = NULL;
+				free(tmpnr); tmpnr = NULL;
+			}
+		}
 		child = child->next;
 	}
 	writeconfigtmp();
@@ -31,7 +47,7 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 	{
 		tmp->type = CHOICEBOX;
 		changetext(tmp, _("Satelite Type"));
-		changeinput(tmp, _("sat_single\nsat_diseqc_ab\nsat_diseqc_abcd\nsat_diseqc_abcdefgh\nsat_expert"));
+		changeinput(tmp, _("Single\nDiSEqC A/B\nDiSEqC A/B/C/D\nDiSEqC A/B/C/D/E/F/G/H\nExpert"));
 		changechoiceboxvalue(tmp, "0\n1\n2\n3\n4");
 		changename(tmp, "sat_type");
 
@@ -102,7 +118,8 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 			changename(tmp, tmpstr);
 			setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
 			free(tmpstr); tmpstr = NULL;
-
+		
+			tmp->handle = (char*)i;
 			tmp->del = 1;
 		}
 
@@ -232,12 +249,6 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 				changetext(tmp, "LNB");
 				changeinput(tmp, _("press ok"));
 				changechoiceboxvalue(tmp, _("press ok"));
-
-				tmpstr = ostrcat(tuner->feshortname, "_lnb", 0, 0);
-				tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
-				changename(tmp, tmpstr);
-				setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
-				free(tmpstr); tmpstr = NULL;
 
 				tmp->handle = (char*)i;
 				tmp->del = 1;
@@ -430,7 +441,7 @@ start:
 		{
 			ret = 1;
 			deltranspondertunablestatus();
-			writetunerconfig(tunerreceptiondvbs);
+			writetunerconfig(tuner, tunerreceptiondvbs);
 			addconfigint(listmode, mode);
 			addconfigint(listmax, maxsat);
 			free(listmode), listmode = NULL;
@@ -509,7 +520,7 @@ int screentunerreceptiondvbc(struct dvbdev* tuner)
 		{
 			ret = 1;
 			deltranspondertunablestatus();
-			writetunerconfig(tunerreceptiondvbc);
+			writetunerconfig(tuner, tunerreceptiondvbc);
 			break;
 		}
 	}
