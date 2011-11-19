@@ -432,8 +432,6 @@ start:
 		}
 	}
 
-	free(maxsat),maxsat = NULL;
-
 	delconfigtmpall();
 	delmarkedscreennodes(tunerreceptiondvbs, 1);
 	delmarkedscreennodes(tunerreceptiondvbs, 2);
