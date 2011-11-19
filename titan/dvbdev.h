@@ -108,11 +108,8 @@ void deldvbdev(char *dev)
 			free(node->feshortname);
 			node->feshortname = NULL;
 
-			free(node->feaktlnb);
-			node->feaktlnb = NULL;
-
-			free(node->feaktdiseqc);
-			node->feaktdiseqc = NULL;
+			free(node->feaktnr);
+			node->feaktnr = NULL;
 			
 			free(node->caslot);
 			node->caslot = NULL;

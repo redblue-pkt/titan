@@ -611,8 +611,7 @@ struct dvbdev
 	int feaktband;
 	int feaktpolarization;
 	int fedmxsource;
-	char* feaktlnb;
-	char* feaktdiseqc;
+	char* feaktnr;
 	char* feshortname;
 	struct dvb_frontend_info* feinfo;
 	struct caslot* caslot;
