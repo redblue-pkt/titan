@@ -509,7 +509,7 @@ void hddformat(char* dev, char* filesystem)
 
 	if(node->partition == 0)
 	{
-		if(textbox(_("Message"), _("Are you sure you want to remove all Partitions\non this device and create a new Partition 1?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 2)
+		if(textbox(_("Message"), _("Are you sure you want to remove all Partitions\non this device and create a new Partition 1?\nBox reboots after format"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 2)
 		{
 			cmd = ostrcat("/sbin/parter.sh /dev/" , dev, 0, 0);
 			cmd = ostrcat(cmd , " create 1", 1, 0);
@@ -523,7 +523,7 @@ void hddformat(char* dev, char* filesystem)
 	}
 	else
 	{
-		if(textbox(_("Message"), _("Are you sure you want to format this Partition?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 2)
+		if(textbox(_("Message"), _("Are you sure you want to format this Partition?\nBox reboots after format"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 2)
 			format = 1;
 	}
 
