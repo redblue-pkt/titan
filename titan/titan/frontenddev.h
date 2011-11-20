@@ -747,7 +747,7 @@ void fediseqcrotor(struct dvbdev* node, int pos, int oldpos, int flag)
 			break;
 		case 8: //goto pos
 			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x6B; cmd.msg[3] = pos; cmd.msg_len = 4;
-			debug(200, "DISEQC Rotorpos goto pos", node->feshortname);
+			debug(200, "DISEQC Rotorpos goto pos (%s)", node->feshortname);
 			break;
 	}
 
