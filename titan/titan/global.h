@@ -3011,10 +3011,13 @@ char* string_replace_remove_last_chars(char *search, char *replace, char *string
 	debug(1000, "in");
 	char* searchpos = NULL;
 	char* tmpstr = NULL;
+	
+	if(string == NULL || search == NULL)
+		return string;
 
 	searchpos = strstr(string, search);
 
-	if(searchpos == NULL || string == NULL)
+	if(searchpos == NULL)
 		return string;
 
 	tmpstr = strndup(string, searchpos - string);
@@ -3032,10 +3035,13 @@ char* string_replace(char *search, char *replace, char *string, int free1)
 	debug(1000, "in");
 	char* searchpos = NULL;
 	char* tmpstr = NULL;
+	
+	if(string == NULL || search == NULL)
+		return string;
 
 	searchpos = strstr(string, search);
 
-	if(searchpos == NULL || string == NULL)
+	if(searchpos == NULL)
 		return string;
 
 	tmpstr = strndup(string, searchpos - string);
