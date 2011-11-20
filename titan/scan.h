@@ -442,7 +442,7 @@ void scansetmultisat(struct skin* scan)
 	}
 }
 
-void screenscan(struct skin* mscan, char* tuner, int scantype, int orbitalpos, int frequency, int inversion, int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int networkscan, int onlyfree, int clear, int system, int timeout)
+void screenscan(struct transponder* transpondernode, struct skin* mscan, char* tuner, int scantype, int orbitalpos, int frequency, int inversion, int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int networkscan, int onlyfree, int clear, int system, int timeout)
 {
 	int rcret = 0, tpmax = 0, i = 0;
 	struct skin* scan = getscreen("scan");
@@ -457,6 +457,7 @@ void screenscan(struct skin* mscan, char* tuner, int scantype, int orbitalpos, i
 	struct dvbdev* fenode = NULL, *dvbnode = dvbdev;
 	struct stimerthread* timernode = NULL;
 	struct sat* satnode = NULL;
+	struct channel* chnode = NULL;
 	char* tmpstr = NULL;
 
 	listbox->aktline = 1;
@@ -488,6 +489,18 @@ void screenscan(struct skin* mscan, char* tuner, int scantype, int orbitalpos, i
 	{
 		if(fenode != NULL && fenode->feinfo != NULL)
 		{
+			//del channels from transponder if selected
+			if(clear == 1)
+			{
+				chnode = channel;
+				while(chnode != NULL)
+				{
+					if(chnode->transponder == transpondernode)
+						delchannel(chnode->serviceid, chnode->transponderid, 1);
+					chnode = chnode->next;
+				}
+			}
+
 			debug(500, "fetype=%d, orbitalpos=%d, frequ=%d, inverion=%d, symbolrate=%d, polarization=%d, fec=%d, modulation=%d, rolloff=%d, pilot=%d, system=%d", fenode->feinfo->type, orbitalpos, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, system);
 			tpnode = createtransponder(0, fenode->feinfo->type, orbitalpos, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, system);
 		}
@@ -1022,7 +1035,7 @@ void screenscanconfig(int flag)
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			clearscreen(scan);
-			screenscan(scan->child, tuner->ret, iscantype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, inetworkscan, ionlyfree, iclear, isystem, 5000000);
+			screenscan(tpnode, scan->child, tuner->ret, iscantype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, inetworkscan, ionlyfree, iclear, isystem, 5000000);
 			drawscreen(scan, 0);
 		}
 		if(rcret == getrcconfigint("rcred", NULL) && tpnode != NULL && iscantype == 0)
