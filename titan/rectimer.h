@@ -359,6 +359,7 @@ void checkrectimer()
 			char* retstr = servicecheckret(ret, 1);
 			free(node->errstr);
 			node->errstr = ostrcat(retstr, "", 0, 0);
+			stringreplacecharonce(node->errstr, '\n', '\0');
 			free(retstr); retstr = NULL;
 		}
 		else
@@ -366,6 +367,7 @@ void checkrectimer()
 			char* retstr = recordcheckret(NULL, ret, 15);
 			free(node->errstr);
 			node->errstr = ostrcat(retstr, "", 0, 0);
+			stringreplacecharonce(node->errstr, '\n', '\0');
 			free(retstr); retstr = NULL;
 		}
 		status.writerectimer = 1;
@@ -1112,7 +1114,9 @@ void screenrectimerext(struct rectimer* node, int flag)
 				if(ret == 1 || ret == 99)
 				{
 					node->status = 3;
-					node->errstr = ostrcat(node->errstr, checkret, 1, 0);
+					free(node->errstr); node->errstr = NULL;
+					node->errstr = ostrcat(checkret, NULL, 0, 0);
+					stringreplacecharonce(node->errstr, '\n', '\0');
 					if(ret == 1) textbox(_("Message"), _(checkret), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 				}
 			}
