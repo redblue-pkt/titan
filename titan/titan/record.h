@@ -281,7 +281,7 @@ int recordsplit(struct service* servicenode)
 
 int readwritethread(struct stimerthread* stimer, struct service* servicenode, int flag)
 {
-	int readret = 0, writeret = 0, ret = 0, overrun = 0, recbsize = 0;
+	int readret = 0, writeret = 0, ret = 0, recbsize = 0;
 	int readtimeout = -1, writetimeout = -1;
 	unsigned char* buf = NULL;
 	char* retstr = NULL;
@@ -297,7 +297,6 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 
 	if(servicenode->type == RECORDDIRECT || servicenode->type == RECORDTIMER || servicenode->type == RECORDTIMESHIFT)
 	{
-		overrun = getconfigint("recoverrun", NULL) * 60;
 		recbsize = RECBSIZE;
 		readtimeout = 5000000;
 		writetimeout = 5000000; //5 sec
@@ -404,7 +403,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				perr("read");
 		}
 
-		if(servicenode->recendtime != 0 && (servicenode->recendtime + overrun) < time(NULL))
+		if(servicenode->recendtime != 0 && (servicenode->recendtime) < time(NULL))
 		{
 			if(servicenode->type == RECORDDIRECT || servicenode->type == RECORDTIMER || servicenode->type == RECORDTIMESHIFT)
 				fdatasync(servicenode->recdstfd);

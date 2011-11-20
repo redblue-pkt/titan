@@ -15,8 +15,6 @@ void debugrectimer()
 int checkrectimeradd(struct rectimer* recnode, char** ret)
 {
 	struct rectimer* node = rectimer;
-	int forerun = getconfigint("recforerun", NULL) * 60;
-	int overrun = getconfigint("recoverrun", NULL) * 60;
 
 	if(recnode == NULL)
 	{
@@ -53,7 +51,7 @@ int checkrectimeradd(struct rectimer* recnode, char** ret)
 	{
 		if(recnode != node)
 		{
-			if((recnode->begin - forerun >= node->begin - forerun && recnode->begin - forerun < node->end + overrun) || (recnode->end + overrun >= node->begin - forerun && recnode->end + overrun < node->end + overrun))
+			if((recnode->begin >= node->begin && recnode->begin < node->end) || (recnode->end >= node->begin && recnode->end < node->end))
 			{
 				*ret = "Timer conflicts with other timer";
 				return 2;
@@ -281,12 +279,10 @@ struct rectimer* getrectimerbyservice(struct service* servicenode)
 
 void checkrectimer()
 {
-	int ret = 0, forerun = 0;
+	int ret = 0;
 	struct rectimer* node = rectimer, *newnode = NULL;
 	struct channel* chnode = NULL;
 	time_t t = time(NULL), begin = 0, end = 0;
-
-	forerun = getconfigint("recforerun", NULL) * 60;
 
 	m_lock(&status.rectimermutex, 1);
 	
@@ -299,7 +295,7 @@ void checkrectimer()
 		}
 		else
 		{
-			begin = node->begin - forerun;
+			begin = node->begin;
 			end = node->end;
 		}
 
@@ -1058,6 +1054,9 @@ void screenrectimerext(struct rectimer* node, int flag)
 				tmpstr = strptime(begin->ret, "%H:%M %d-%m-%Y", loctime); 
 				if(tmpstr != NULL)
 					node->begin = mktime(loctime);
+
+				if(newnode == 1 && node->justplay == 0)
+					node->begin -= getconfigint("recforerun", NULL) * 60;
 				node->begin -= (node->begin % 60);
 				if(node->justplay == 1)
 					node->end = node->begin + 1;
@@ -1068,6 +1067,9 @@ void screenrectimerext(struct rectimer* node, int flag)
 				tmpstr = strptime(end->ret, "%H:%M %d-%m-%Y", loctime); 
 				if(tmpstr != NULL)
 					node->end = mktime(loctime);
+
+				if(newnode == 1 && node->justplay == 0)
+					node->end += getconfigint("recoverrun", NULL) * 60;
 				node->end -= (node->end % 60);
 			}
 			if(after->ret != NULL)

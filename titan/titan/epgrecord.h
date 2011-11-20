@@ -115,23 +115,17 @@ struct epgrecord* getepgrecord(struct channel* chnode, struct epg* epgnode)
 {
 	struct rectimer* rectimernode = rectimer;
 	struct epgrecord* first = NULL;
-	int recbegin = 0, recend = 0;
-
-	int recforerun = getconfigint("recforerun", NULL) * 60;
-	int recoverrun = getconfigint("recoverrun", NULL) * 60;
 
 	while(rectimernode != NULL)
 	{
-		recbegin = rectimernode->begin - recforerun;
-		recend = rectimernode->end + recoverrun;
 
-		if(recbegin >= epgnode->endtime || recend <= epgnode->starttime || rectimernode->status == 2 || rectimernode->status == 3 || rectimernode->justplay != 0)
+		if(rectimernode->begin >= epgnode->endtime || rectimernode->end <= epgnode->starttime || rectimernode->status == 2 || rectimernode->status == 3 || rectimernode->justplay != 0)
 		{
 			rectimernode = rectimernode->next;
 			continue;
 		}
 		if(chnode == getchannel(rectimernode->serviceid, rectimernode->transponderid))
-			addepgrecord(epgnode->starttime, epgnode->endtime, recbegin, recend, &first, NULL);
+			addepgrecord(epgnode->starttime, epgnode->endtime, rectimernode->begin, rectimernode->end, &first, NULL);
 
 		rectimernode = rectimernode->next;
 	}
