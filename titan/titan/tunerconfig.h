@@ -163,10 +163,6 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 				tmpstr = stringreplacecharonce(tmpstr, '2', 'B');
 				tmpstr = stringreplacecharonce(tmpstr, '3', 'C');
 				tmpstr = stringreplacecharonce(tmpstr, '4', 'D');
-				tmpstr = stringreplacecharonce(tmpstr, '5', 'E');
-				tmpstr = stringreplacecharonce(tmpstr, '6', 'F');
-				tmpstr = stringreplacecharonce(tmpstr, '7', 'G');
-				tmpstr = stringreplacecharonce(tmpstr, '8', 'H');
 				changechoiceboxvalue(tmp, tmpstr);
 				changeinput(tmp, tmpstr);
 				free(tmpstr); tmpstr = NULL;
