@@ -551,7 +551,7 @@ void hddfsck(char* dev)
 	char* cmd = NULL;
 	struct hdd* node = NULL;
 
-	if(textbox(_("Message"), _("Are you sure you want to FSCK this Partition?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 2)
+	if(textbox(_("Message"), _("Are you sure you want to check this Partition?\nBox reboots after check"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 2)
 	{
 		node = gethdd(dev);
 		if(node == NULL) return;
