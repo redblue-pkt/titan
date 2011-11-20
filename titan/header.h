@@ -1,6 +1,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//help.h
+void screenhelp(struct skin* node);
+
 //restoredefault.h
 void screenrestoredefault();
 
@@ -147,6 +150,7 @@ void checkrecepgret(int ret);
 int addrecepg(struct channel* chnode, struct epg* epgnode, char* channellist);
 struct rectimer* getrectimerbyservice(struct service* servicenode);
 void delrectimer(struct rectimer* rectimernode, int write, int flag);
+int rectimergetaktday();
 
 //dvb.h
 int dvbreadfd(int fd, unsigned char *buf, int pos, int count, int tout);
