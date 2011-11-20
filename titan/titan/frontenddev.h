@@ -26,8 +26,8 @@ int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktnr, int 
 	tmpstr = ostrcat(node->feshortname, "_lnb_loftype", 0, 0);
 	loftype = getconfigint(tmpstr, feaktnr);
 	free(tmpstr); tmpstr = NULL;
-	switch(loftype)
-	{
+        switch(loftype)
+        {
 		case 1: //c-band
 			lofl = 5150 * 1000;
 			lofh = 5150 * 1000;
@@ -63,7 +63,7 @@ int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktnr, int 
 			lofl = 9750 * 1000;
 			lofh = 10600 * 1000;
 			lofthreshold = 11700 * 1000;
-	}
+        }
 
 	if(lofthreshold && lofh && frequency >= lofthreshold)
 	{
@@ -542,7 +542,7 @@ void fesettone(struct dvbdev* node, fe_sec_tone_mode_t tone, int wait)
 		return;
 	}
 
-	debug(200, "FE_SET_TONE: %d", tone);
+	debug(200, "FE_SET_TONE: %d (%s)", tone, node->feshortname);
 	if(ioctl(node->fd, FE_SET_TONE, tone) == -1)
 		perr("FE_SET_TONE");
 	usleep(wait * 1000);
@@ -558,7 +558,7 @@ void fesetvoltage(struct dvbdev* node, fe_sec_voltage_t volt, int wait)
 		return;
 	}
 
-	debug(200, "FE_SET_VOLT: %d", volt);
+	debug(200, "FE_SET_VOLT: %d (%s)", volt, node->feshortname);
 	if(ioctl(node->fd, FE_SET_VOLTAGE, volt) == -1)
 		perr("FE_SET_VOLTAGE");
 	usleep(wait * 1000);
@@ -574,7 +574,7 @@ void fediseqcsendburst(struct dvbdev* node, fe_sec_mini_cmd_t burst, int wait)
 		return;
 	}
 
-	debug(200, "FE_DISEQC_SEND_BURST: %d", burst);
+	debug(200, "FE_DISEQC_SEND_BURST: %d (%s)", burst, node->feshortname);
 	if(ioctl(node->fd, FE_DISEQC_SEND_BURST, burst) == -1)
 		perr("FE_DISEQC_SEND_BURST");
 	usleep(wait * 1000);
@@ -606,6 +606,7 @@ void fediseqcsendmastercmd(struct dvbdev* node, struct dvb_diseqc_master_cmd *cm
 		}
 		usleep(wait * 1000);
 	}
+	debug(200, "DISEQC Master cmd (%s)", node->feshortname);
 	debug(1000, "out");
 }
 
@@ -625,7 +626,7 @@ void fesdiseqcpoweron(struct dvbdev* node)
 	cmd.msg[2] = 0x03;
 	cmd.msg_len = 3;
 
-	debug(200, "DISEQC Power on");
+	debug(200, "DISEQC Power on (%s)", node->feshortname);
 	fediseqcsendmastercmd(node, &cmd, 100);
 	debug(1000, "out");
 }
@@ -646,7 +647,7 @@ void fesdiseqcreset(struct dvbdev* node)
 	cmd.msg[2] = 0x00;
 	cmd.msg_len = 3;
 
-	debug(200, "DISEQC Reset");
+	debug(200, "DISEQC Reset (%s)", node->feshortname);
 	fediseqcsendmastercmd(node, &cmd, 100);
 	debug(1000, "out");
 }
@@ -667,7 +668,7 @@ void fesdiseqcstandby(struct dvbdev* node)
 	cmd.msg[2] = 0x02;
 	cmd.msg_len = 3;
 
-	debug(200, "DISEQC Standby");
+	debug(200, "DISEQC Standby (%s)", node->feshortname);
 	fediseqcsendmastercmd(node, &cmd, 100);
 	debug(1000, "out");
 }
@@ -714,39 +715,39 @@ void fediseqcrotor(struct dvbdev* node, int pos, int oldpos, int flag)
 	{
 		case 0: //stop move
 			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x60; cmd.msg_len = 3;
-			debug(200, "DISEQC Rotorpos (stop move)");
+			debug(200, "DISEQC Rotorpos stop move (%s)", node->feshortname);
 			break;
 		case 1: //disable limits
 			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x63; cmd.msg_len = 3;
-			debug(200, "DISEQC Rotorpos (disable limits)");
+			debug(200, "DISEQC Rotorpos disable limits (%s)", node->feshortname);
 			break;
 		case 2: //enable limits
 			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x6A; cmd.msg[3] = 0x00; cmd.msg_len = 4;
-			debug(200, "DISEQC Rotorpos (enable limits)");
+			debug(200, "DISEQC Rotorpos enable limits (%s)", node->feshortname);
 			break;
 		case 3: //set east limit
 			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x66; cmd.msg_len = 3;
-			debug(200, "DISEQC Rotorpos (set east limit)");
+			debug(200, "DISEQC Rotorpos set east limit (%s)", node->feshortname);
 			break;
 		case 4: //set west limit
 			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x67; cmd.msg_len = 3;
-			debug(200, "DISEQC Rotorpos (set west limit)");
+			debug(200, "DISEQC Rotorpos set west limit (%s)", node->feshortname);
 			break;
 		case 5: //move east cont.
 			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x68; cmd.msg[3] = 0x00; cmd.msg_len = 4;
-			debug(200, "DISEQC Rotorpos (move east cont.)");
+			debug(200, "DISEQC Rotorpos move east cont. (%s)", node->feshortname);
 			break;
 		case 6: //move west cont.
 			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x69; cmd.msg[3] = 0x00; cmd.msg_len = 4;
-			debug(200, "DISEQC Rotorpos (move west cont.)");
+			debug(200, "DISEQC Rotorpos move west cont. (%s)", node->feshortname);
 			break;
 		case 7: //store pos
 			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x6A; cmd.msg[3] = pos; cmd.msg_len = 4;
-			debug(200, "DISEQC Rotorpos (store pos)");
+			debug(200, "DISEQC Rotorpos store pos (%s)", node->feshortname);
 			break;
 		case 8: //goto pos
 			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x6B; cmd.msg[3] = pos; cmd.msg_len = 4;
-			debug(200, "DISEQC Rotorpos (goto pos)");
+			debug(200, "DISEQC Rotorpos goto pos", node->feshortname);
 			break;
 	}
 
@@ -833,7 +834,7 @@ void fesetunicable(struct dvbdev* node)
 	cmd.msg[4] = unicabletune & 0xff;
 	cmd.msg_len = 5;
 
-	debug(200, "send diseqc unicable cmd");
+	debug(200, "send diseqc unicable cmd (%s)", node->feshortname);
 	fediseqcsendmastercmd(node, &cmd, 100);
 	fesetvoltage(node, SEC_VOLTAGE_13, 15);
 }
@@ -969,8 +970,7 @@ void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 	if(aktdiseqc < 1) aktdiseqc = 1;
 	free(tmpstr); tmpstr = NULL;
 
-	debug(200, "set diseqc: number=%d, band=%d, pol=%d", aktdiseqc, node->feaktband, node->feaktpolarization);
-	debug(200, "set diseqc: diseqmode=%d, input=%d, uinput=%d, cmdorder=%d, toneburst=%d", diseqmode, input, uinput, cmdorder, toneburst);
+	debug(200, "set diseqc: number=%d, band=%d, pol=%d, diseqmode=%d, input=%d, uinput=%d, cmdorder=%d, toneburst=%d (%s)", aktdiseqc, node->feaktband, node->feaktpolarization, diseqmode, input, uinput, cmdorder, toneburst, node->feshortname);
 	 
 	switch(toneburst)
 	{
@@ -980,7 +980,7 @@ void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 	
 	if(diseqmode == 100) // Tonburst A/B
 	{
-		debug(200, "set diseqc: Tonburst A/B");
+		debug(200, "set diseqc: Tonburst A/B (%s)", node->feshortname);
 		if(mini == -1)
 			mini = (aktdiseqc - 1) % 2 ? SEC_MINI_B : SEC_MINI_A;
 		fediseqcsendburst(node, mini, 15);
@@ -989,7 +989,7 @@ void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 		
 	if(diseqmode == 0 || diseqmode == 1) // Diseqc 1.0 + 1.1
 	{
-		debug(200, "set committed switch");
+		debug(200, "set committed switch (%s)", node->feshortname);
 		cmd.msg[0] = 0xE0;
 		cmd.msg[1] = 0x10;
 		cmd.msg[2] = 0x38;
@@ -1006,7 +1006,7 @@ void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 	{
 		if(uinput > 0)
 		{
-			debug(200, "set uncommitted switch");
+			debug(200, "set uncommitted switch (%s)", node->feshortname);
 			ucmd.msg[0] = 0xE0;
 			ucmd.msg[1] = 0x10;
 			ucmd.msg[2] = 0x39;
@@ -1323,7 +1323,7 @@ void fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 		cmdseq.num = 8;
 	}
 
-	debug(200, "frequ=%d, inversion=%d, pilot=%d, rolloff=%d, fec=%d, sr=%d, modulation=%d, system=%d", node->feloffrequency, tpnode->inversion, pilot, rolloff, fec, tpnode->symbolrate, modulation, system);
+	debug(200, "frequ=%d, inversion=%d, pilot=%d, rolloff=%d, fec=%d, sr=%d, modulation=%d, system=%d (%s)", node->feloffrequency, tpnode->inversion, pilot, rolloff, fec, tpnode->symbolrate, modulation, system, node->feshortname);
 #else
 	struct dvb_frontend_parameters tuneto;
 	fe_spectral_inversion_t inversion = tpnode->inversion;
@@ -1344,7 +1344,7 @@ void fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 	tuneto.u.qpsk.symbol_rate = tpnode->symbolrate;
 	tuneto.u.qpsk.fec_inner = fec;
 
-	debug(200, "frequ=%d, inversion=%d, pilot=%d, rolloff=%d, fec=%d, sr=%d modulation=%d, system=%d", node->feloffrequency, inversion, tpnode->pilot, tpnode->rolloff, fec, tpnode->symbolrate, tpnode->modulation, tpnode->system);
+	debug(200, "frequ=%d, inversion=%d, pilot=%d, rolloff=%d, fec=%d, sr=%d modulation=%d, system=%d (%s)", node->feloffrequency, inversion, tpnode->pilot, tpnode->rolloff, fec, tpnode->symbolrate, tpnode->modulation, tpnode->system, node->feshortname);
 #endif
 
 	fediscard(node);
@@ -1414,7 +1414,7 @@ void fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 	p[7].cmd = DTV_TUNE;
 	cmdseq.num = 8;
 
-	debug(200, "frequ=%d, inversion=%d, fec=%d, sr=%d, modulation=%d, system=%d", tpnode->frequency, tpnode->inversion, fec, tpnode->symbolrate, modulation, tpnode->system);
+	debug(200, "frequ=%d, inversion=%d, fec=%d, sr=%d, modulation=%d, system=%d (%s)", tpnode->frequency, tpnode->inversion, fec, tpnode->symbolrate, modulation, tpnode->system, node->feshortname);
 #else
 	struct dvb_frontend_parameters tuneto;
 
@@ -1424,7 +1424,7 @@ void fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 	tuneto.u.qam.fec_inner = tpnode->fec;
 	tuneto.u.qam.modulation = tpnode->modulation;
 
-	debug(200, "frequ=%d, inversion=%d, fec=%d, sr=%d, modulation=%d", tpnode->frequency, tpnode->inversion, fec, tpnode->symbolrate, modulation);
+	debug(200, "frequ=%d, inversion=%d, fec=%d, sr=%d, modulation=%d (%s)", tpnode->frequency, tpnode->inversion, fec, tpnode->symbolrate, modulation, node->feshortname);
 #endif
 
 	fediscard(node);
