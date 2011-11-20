@@ -1,6 +1,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//restoredefault.h
+void screenrestoredefault();
+
 //ca.h
 void caappmenu(struct dvbdev* dvbnode);
 
