@@ -28,13 +28,13 @@ msgstr "A"
 msgid "A/V Settings"
 msgstr "Réglages Audio/Video"
 
-msgid "AAF Beta Config"
-msgstr "Configuration AAF Beta"
+msgid "Beta Config"
+msgstr "Configuration Beta"
 
 msgid "Panel"
 msgstr "Panneau"
 
-msgid "AAF Wizard"
+msgid "Wizard"
 msgstr "Réglages assisté"
 
 msgid "About"
