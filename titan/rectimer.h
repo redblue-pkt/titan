@@ -53,7 +53,7 @@ int checkrectimeradd(struct rectimer* recnode, char** ret)
 		{
 			if((recnode->begin >= node->begin && recnode->begin < node->end) || (recnode->end >= node->begin && recnode->end < node->end))
 			{
-				*ret = "Timer conflicts with other timer";
+				*ret = "Timer conflicts with other timer\nWould you add the timer?";
 				return 2;
 			}
 		}
