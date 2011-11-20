@@ -15,9 +15,9 @@ int changeloftype(struct skin* lofl, struct skin* lofh, struct skin* threshold, 
 	}
 	if(ostrcmp(type, "3") == 0)
 	{
-		lofl->hidden = NO;
-		lofh->hidden = NO;
-		threshold->hidden = NO;
+		lofl->hidden = YES;
+		lofh->hidden = YES;
+		threshold->hidden = YES;
 		satcr->hidden = NO;
 		satcrfrequ1->hidden = NO;
 		satcrfrequ2->hidden = YES;
