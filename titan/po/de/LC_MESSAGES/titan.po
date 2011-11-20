@@ -42,9 +42,9 @@ msgid "A/V Settings"
 
 msgstr "Bild / Ton Einstellen"
 
-msgid "AAF Beta Config"
+msgid "Beta Config"
 
-msgstr "AAF Beta Einstellen"
+msgstr "Beta Einstellen"
 
 msgid "Panel"
 
