@@ -607,17 +607,27 @@ int writerectimer(const char *filename, int flag)
 	return 0;
 }
 
-int recrepeateget(struct skin* repeate, struct skin* repeatetype, struct skin* day, struct skin* mon, struct skin* tue, struct skin* wed, struct skin* thur, struct skin* fri, struct skin* sat, struct skin* sun)
+int recrepeateget(int newnode, struct skin* repeate, struct skin* repeatetype, struct skin* day, struct skin* mon, struct skin* tue, struct skin* wed, struct skin* thur, struct skin* fri, struct skin* sat, struct skin* sun)
 {
 	unsigned char ret = 0;
+	int aktday = rectimergetaktday();
+
+	if(repeate == NULL) return 0;
+	if(repeatetype == NULL) return 0;
 
 	if(ostrcmp(repeate->ret, "0") == 0) return 0;
 
 	if(ostrcmp(repeatetype->ret, "0") == 0) return 127;
 	if(ostrcmp(repeatetype->ret, "1") == 0)
 	{
-		if(day->ret == NULL) return 1;
-		if(ostrcmp(day->ret, "0") == 0) return 1;
+		if(day->ret == NULL) return aktday;
+		if(ostrcmp(day->ret, "0") == 0)
+		{
+			if(newnode == 1)
+				return aktday;
+			else
+				return 1;
+		}
 		if(ostrcmp(day->ret, "1") == 0) return 2;
 		if(ostrcmp(day->ret, "2") == 0) return 4;
 		if(ostrcmp(day->ret, "3") == 0) return 8;
@@ -628,6 +638,7 @@ int recrepeateget(struct skin* repeate, struct skin* repeatetype, struct skin* d
 	if(ostrcmp(repeatetype->ret, "2") == 0) return 31;
 	if(ostrcmp(repeatetype->ret, "3") == 0)
 	{
+		if(mon == NULL || tue == NULL || wed == NULL || thur == NULL || fri == NULL || sat == NULL || sun == NULL) return aktday;
 		if(ostrcmp(mon->ret, "1") == 0) ret = setbit(ret, 0);
 		if(ostrcmp(tue->ret, "1") == 0) ret = setbit(ret, 1);
 		if(ostrcmp(wed->ret, "1") == 0) ret = setbit(ret, 2);
@@ -635,7 +646,7 @@ int recrepeateget(struct skin* repeate, struct skin* repeatetype, struct skin* d
 		if(ostrcmp(fri->ret, "1") == 0) ret = setbit(ret, 4);
 		if(ostrcmp(sat->ret, "1") == 0) ret = setbit(ret, 5);
 		if(ostrcmp(sun->ret, "1") == 0) ret = setbit(ret, 6);
-		if(ret == 0) ret = 128;
+		if(ret == 0) ret = aktday;
 		return ret;
 	}
 
@@ -658,6 +669,25 @@ void recjustplayhidden(int justplay, struct skin* end, struct skin* path, struct
 	}
 }
 
+int rectimergetaktday()
+{
+	int ret = 1;
+	struct tm* loctime = NULL;
+
+	time_t akttime = time(NULL);
+	loctime = olocaltime(&akttime);
+	if(loctime->tm_wday == 0) ret = 64;
+	if(loctime->tm_wday == 1) ret = 1;
+	if(loctime->tm_wday == 2) ret = 2;
+	if(loctime->tm_wday == 3) ret = 4;
+	if(loctime->tm_wday == 4) ret = 8;
+	if(loctime->tm_wday == 5) ret = 16;
+	if(loctime->tm_wday == 6) ret = 32;
+	free(loctime); loctime = NULL;
+
+	return ret;
+}
+
 void recrepeatehidden(int repeate, struct skin* repeatetype, struct skin* day, struct skin* mon, struct skin* tue, struct skin* wed, struct skin* thur, struct skin* fri, struct skin* sat, struct skin* sun)
 {
 	repeatetype->hidden = YES;
@@ -672,19 +702,19 @@ void recrepeatehidden(int repeate, struct skin* repeatetype, struct skin* day, s
 
 	if(repeate == 0) return;
 
-	if(repeate == 127) //dayly
+	if(repeate == 127 && ostrcmp(repeatetype->ret, "3") != 0) //dayly
 	{
 		repeatetype->hidden = NO;
 		setchoiceboxselection(repeatetype, "0");
 		return;
 	}
-	if(repeate == 31) //workday
+	if(repeate == 31 && ostrcmp(repeatetype->ret, "3") != 0) //workday
 	{
 		repeatetype->hidden = NO;
 		setchoiceboxselection(repeatetype, "2");
 		return;
 	}
-	if(repeate == 1 || repeate == 2 || repeate == 4 || repeate == 8 || repeate == 16 || repeate == 32 || repeate == 64) //weekly
+	if((repeate == 1 || repeate == 2 || repeate == 4 || repeate == 8 || repeate == 16 || repeate == 32 || repeate == 64) && ostrcmp(repeatetype->ret, "3") != 0) //weekly
 	{
 		repeatetype->hidden = NO;
 		setchoiceboxselection(repeatetype, "1");
@@ -946,7 +976,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 			recjustplayhidden(atoi(listbox->select->ret), end, path, after);
 		}
 
-		tmprepeate = recrepeateget(repeate, repeatetype, day, mon, tue, wed, thur, fri, sat, sun);
+		tmprepeate = recrepeateget(newnode, repeate, repeatetype, day, mon, tue, wed, thur, fri, sat, sun);
 		if(listbox->select != NULL && (ostrcmp(listbox->select->name, "repeate") == 0 || ostrcmp(listbox->select->name, "repeatetype") == 0))
 		{
 			recrepeatehidden(tmprepeate, repeatetype, day, mon, tue, wed, thur, fri, sat, sun);
