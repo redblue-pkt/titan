@@ -32,16 +32,15 @@ int checkmenuforbox(char *name)
 		if(ostrcmp("satfinder", name) == 0) return 0;
 		if(ostrcmp("mediacenter", name) == 0) return 0;
 		if(ostrcmp("configurehdd", name) == 0) return 0;
-		if(ostrcmp("aafpanel_system_aafwizard", name) == 0) return 0;
-		if(ostrcmp("aafpanel_settings_overclocking", name) == 0) return 0;
-		if(ostrcmp("aafpanel_settings_fancontrol", name) == 0) return 0;
-		if(ostrcmp("aafpanel_settings_automount", name) == 0) return 0;
-		if(ostrcmp("aafpanel_settings_autostart", name) == 0) return 0;
-		if(ostrcmp("aafpanel_settings_videotune", name) == 0) return 0;
-		if(ostrcmp("aafpanel_system_update_usb_online", name) == 0) return 0;
-		if(ostrcmp("aafpanel_system_update_usb_tmp", name) == 0) return 0;
-		if(ostrcmp("aafpanel_extensions_menu", name) == 0) return 0;
-		if(ostrcmp("aafpanel_system_backup", name) == 0) return 0;
+		if(ostrcmp("panel_settings_overclocking", name) == 0) return 0;
+		if(ostrcmp("panel_settings_fancontrol", name) == 0) return 0;
+		if(ostrcmp("panel_settings_automount", name) == 0) return 0;
+		if(ostrcmp("panel_settings_autostart", name) == 0) return 0;
+		if(ostrcmp("panel_settings_videotune", name) == 0) return 0;
+		if(ostrcmp("panel_system_update_usb_online", name) == 0) return 0;
+		if(ostrcmp("panel_system_update_usb_tmp", name) == 0) return 0;
+		if(ostrcmp("panel_extensions_menu", name) == 0) return 0;
+		if(ostrcmp("panel_system_backup", name) == 0) return 0;
 	}
 	return 1;
 }

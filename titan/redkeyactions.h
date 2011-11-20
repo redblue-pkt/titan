@@ -23,7 +23,7 @@ void screenredkeyactions()
 		
 		if(pluginnode != NULL)
 		{
-			startplugin = dlsym(pluginnode->pluginhandle, "screenaafpanel_softcam");
+			startplugin = dlsym(pluginnode->pluginhandle, "screenpanel_softcam");
 			if(startplugin != NULL){
 				startplugin();
 			}
@@ -107,7 +107,7 @@ void redkeyactions_extensions()
 		
 		if(pluginnode != NULL)
 		{
-			startplugin = dlsym(pluginnode->pluginhandle, "screenaafpanel_softcam");
+			startplugin = dlsym(pluginnode->pluginhandle, "screenpanel_softcam");
 			if(startplugin != NULL){
 				startplugin();
 			}
