@@ -1787,6 +1787,8 @@ char* webrectimersend(char* param)
 	char* buf = NULL, *string = NULL, *name = NULL, *begin = NULL, *end = NULL, *type = NULL, *anode = NULL;
 	int maxlen = 0, pos = 0;
 	struct rectimer *node = NULL;
+	char* tmpstr = NULL;
+	struct tm* loctime = NULL;
 
 	anode=strstr(param, "node=");
 	if(anode != NULL)
@@ -1812,12 +1814,41 @@ char* webrectimersend(char* param)
 	} 
 	
 	node = atoi(anode);
-	node->name = ostrcat(NULL, name, 1, 0);
+	
+	string = name;	
+	while(string != NULL) {	
+		string = strchr(string, '+');
+		if(string != NULL)
+			*string++ = ' ';
+	} 
+	free(node->name); node->name = NULL;
+	node->name = ostrcat(name, "", 0, 0);
+	
+	if(ostrcmp(type, "record") == 0)
+		node->justplay = 0;
+	else
+		node->justplay = 1;
+	
+	loctime = localtime(&node->begin);
+	tmpstr = strptime(begin, "%H:%M+%d-%m-%Y", loctime); 
+	if(tmpstr != NULL)
+		node->begin = mktime(loctime);
+	node->begin -= (node->begin % 60);
+	tmpstr=NULL;
+
+	loctime = localtime(&node->end);
+	tmpstr = strptime(end, "%H:%M+%d-%m-%Y", loctime); 
+	if(tmpstr != NULL)
+		node->end = mktime(loctime);
+	node->end -= (node->end % 60);
+	tmpstr=NULL;
+
 	status.writerectimer = 1;
 	writerectimer(getconfig("rectimerfile", NULL), 0);
 		
 	buf = webgetrectimer(NULL, 0);
 	//ostrcatbig(&buf, param, &maxlen, &pos);
+
 	return buf;
 }
 
@@ -1894,7 +1925,7 @@ char* webeditrectimer(char* param)
 	
 	free(buf2); buf2 = NULL;
 	
-	ostrcatbig(&buf, "</table><br><br><input class=button type=submit name=send value=\"Send\"></input>&nbsp;<input class=button type=reset name=reset value=\"Reset\"></input></form></center></body></html>", &maxlen, &pos);
+	ostrcatbig(&buf, "</table><br><br><input class=button type=submit name=send value=\"Send\" onClick=\"return checkdaytime(begin.value, end.value)\"></input>&nbsp;<input class=button type=reset name=reset value=\"Reset\"></input></form></center></body></html>", &maxlen, &pos);
 	
 	//ostrcatbig(&buf, param, &maxlen, &pos);
 	return buf;
