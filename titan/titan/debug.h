@@ -4,7 +4,7 @@
 short debug_level = 10;
 
 // mc debug_level = 50;
-// aafpanel debug_level = 60;
+// panel debug_level = 60;
 
 //first line shows greater/same debuglevel
 //second line shows only same debuglevel
