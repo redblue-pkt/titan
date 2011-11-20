@@ -94,8 +94,6 @@ int aafpanel_menucall(struct skin* aafpanel_menuentry)
 	} else if(ostrcmp("aafpanel_system", aafpanel_menuentry->name) == 0){
 		struct skin* screen = getscreen("aafpanel_system_main");
 		aafpanel_menu(screen);
-	} else if(ostrcmp("aafpanel_system_aafwizard", aafpanel_menuentry->name) == 0){
-		screenaafpanel_system_aafwizard();
 	} else if(ostrcmp("aafpanel_system_restore", aafpanel_menuentry->name) == 0){
 		screenaafpanel_system_restore();
 	} else if(ostrcmp("aafpanel_system_backup", aafpanel_menuentry->name) == 0){
