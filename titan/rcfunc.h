@@ -89,11 +89,9 @@ void filelistok(struct skin* screen, struct skin* filelist, int flag)
 
 void helpbox(struct skin* screen, struct skin* node, int flag)
 {
-	char* tmpstr = NULL;
-
 	if(node != NULL && flag == 0)
 	{
-		tmpstr = screenhelp(screen);
+		screenhelp(screen);
 		drawscreen(screen, flag);
 	}
 }
