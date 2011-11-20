@@ -1,6 +1,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//ca.h
+int getfreecasession(struct dvbdev* dvbnode, int type, int value);
+
 //help.h
 void screenhelp(struct skin* node);
 
