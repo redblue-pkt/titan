@@ -1,16 +1,16 @@
-#ifndef AAFPANEL_SETTINGS_FANCONTROL_H
-#define AAFPANEL_SETTINGS_FANCONTROL_H
+#ifndef PANEL_SETTINGS_FANCONTROL_H
+#define PANEL_SETTINGS_FANCONTROL_H
 
 
 
-void screenaafpanel_settings_fancontrol()
+void screenpanel_settings_fancontrol()
 {
 	int rcret = 0;
 	int speed = 0;
 	char* speedWert = NULL;
 	
-	struct skin* aaf_fancontrol = getscreen("aafpanel_settings_fancontrol");
-	struct skin* fanprogress = getscreennode(aaf_fancontrol, "fanprogress");
+	struct skin* panel_fancontrol = getscreen("panel_settings_fancontrol");
+	struct skin* fanprogress = getscreennode(panel_fancontrol, "fanprogress");
 
 	speedWert = getconfig("fanspeed", NULL);
 	if (speedWert != NULL) 
@@ -30,11 +30,11 @@ void screenaafpanel_settings_fancontrol()
 		speed = 100;
 		
 	fanprogress->progresssize = speed;
-	drawscreen(aaf_fancontrol, 0);
+	drawscreen(panel_fancontrol, 0);
 
 	while(1)
 	{
-		rcret = waitrc(aaf_fancontrol, 0, 0);
+		rcret = waitrc(panel_fancontrol, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) {
 			setfanspeed(-1, 0);
@@ -49,14 +49,14 @@ void screenaafpanel_settings_fancontrol()
 				speed = speed - 25;
 			fanprogress->progresssize = speed;
 			setfanspeed(speed, 0);
-			drawscreen(aaf_fancontrol, 0);
+			drawscreen(panel_fancontrol, 0);
 		}
 		if(rcret == getrcconfigint("rcright", NULL)){
 			if(speed < 100)
 				speed = speed + 25;
 			fanprogress->progresssize = speed;
 			setfanspeed(speed, 0);
-			drawscreen(aaf_fancontrol, 0);
+			drawscreen(panel_fancontrol, 0);
 		}
 	}
 }

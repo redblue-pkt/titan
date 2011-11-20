@@ -44,7 +44,7 @@
 <node type=MENU pic=%pluginpath%/panel/skin/panel_setup.png textposx=120 valign=middle name=panel_settings text="Settings" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_system.png textposx=120 valign=middle name=panel_system text="System" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_plugins.png textposx=120 valign=middle name=panel_extensions text="Extensions" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic=%pluginpath%/panel/skin/panel_infos.png textposx=120 valign=middle name=panel_infos text="Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node type=MENU pic=%pluginpath%/panel/skin/panel_infos.png textposx=120 valign=middle name=panel_infos_main text="Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 

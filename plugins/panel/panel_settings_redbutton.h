@@ -1,7 +1,7 @@
-#ifndef AAFPANEL_SETTINGS_REDBUTTON_H
-#define AAFPANEL_SETTINGS_REDBUTTON_H
+#ifndef PANEL_SETTINGS_REDBUTTON_H
+#define PANEL_SETTINGS_REDBUTTON_H
 
-void screenaafpanel_settings_redbutton()
+void screenpanel_settings_redbutton()
 {
 	debug(1000, "in");
 	char* skintitle = "Red Key Action - Setup";

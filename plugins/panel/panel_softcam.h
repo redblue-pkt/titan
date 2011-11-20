@@ -1,5 +1,5 @@
-#ifndef AAFPANEL_SOFTCAM_H
-#define AAFPANEL_SOFTCAM_H
+#ifndef PANEL_SOFTCAM_H
+#define PANEL_SOFTCAM_H
 
 char* swhichcam = NULL;
 struct clist *emulist[LISTHASHSIZE] = {NULL};
@@ -108,7 +108,7 @@ void readmenu()
 void fillmenubox()
 {
 	struct clist* elist = NULL;
-	struct skin* screen = getscreen("aafpanel_softcam");
+	struct skin* screen = getscreen("panel_softcam");
 	struct skin* listbox = getscreennode(screen, "listbox");
 	struct skin* node = NULL;
 	char* aktemu = NULL;
@@ -224,17 +224,17 @@ void readecminfo(struct skin* labelecminfo)
 	free(tmpstr);
 }
 
-void screenaafpanel_softcam()
+void screenpanel_softcam()
 {
 	int rcret = 0;
-	struct skin* aafpanel_softcam = getscreen("aafpanel_softcam");
-	struct skin* listbox = getscreennode(aafpanel_softcam, "listbox");
-	struct skin* labelecminfo = getscreennode(aafpanel_softcam, "ecminfo");
-	struct skin* menutitle = getscreennode(aafpanel_softcam, "menutitle");
-	struct skin* b_red = getscreennode(aafpanel_softcam, "b1");
-	struct skin* b_green = getscreennode(aafpanel_softcam, "b2");
-	struct skin* b_yellow = getscreennode(aafpanel_softcam, "b3");
-	struct skin* b_blue = getscreennode(aafpanel_softcam, "b4");
+	struct skin* panel_softcam = getscreen("panel_softcam");
+	struct skin* listbox = getscreennode(panel_softcam, "listbox");
+	struct skin* labelecminfo = getscreennode(panel_softcam, "ecminfo");
+	struct skin* menutitle = getscreennode(panel_softcam, "menutitle");
+	struct skin* b_red = getscreennode(panel_softcam, "b1");
+	struct skin* b_green = getscreennode(panel_softcam, "b2");
+	struct skin* b_yellow = getscreennode(panel_softcam, "b3");
+	struct skin* b_blue = getscreennode(panel_softcam, "b4");
 	struct skin* tmp = NULL;
 
 	// show labels
@@ -253,39 +253,39 @@ void screenaafpanel_softcam()
 	// add emu's to selectionbox
 	fillmenubox();
 
-	drawscreen(aafpanel_softcam, 0);
-	addscreenrc(aafpanel_softcam, listbox);
+	drawscreen(panel_softcam, 0);
+	addscreenrc(panel_softcam, listbox);
 
 	tmp = listbox->select;
 
 	while(1)
 	{
-		addscreenrc(aafpanel_softcam, tmp);
-		rcret = waitrc(aafpanel_softcam, 4000, 0);
+		addscreenrc(panel_softcam, tmp);
+		rcret = waitrc(panel_softcam, 4000, 0);
 		tmp = listbox->select;
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcred", NULL)){
 			// deactivate emu
 			deactivate(tmp->name);
-			drawscreen(aafpanel_softcam, 0);
+			drawscreen(panel_softcam, 0);
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL)){
 			// restart emu
 			restartcam(tmp->name);
-			drawscreen(aafpanel_softcam, 0);
+			drawscreen(panel_softcam, 0);
 		}
 		if(rcret == getrcconfigint("rcyellow", NULL)){
 			// refrech screen
 			readecminfo(labelecminfo);
 			readmenu();
 			fillmenubox();
-			drawscreen(aafpanel_softcam, 0);
+			drawscreen(panel_softcam, 0);
 		}
 		if(rcret == getrcconfigint("rcblue", NULL)){
 			// activate emu
 			activate(tmp->name);
-			drawscreen(aafpanel_softcam, 0);
+			drawscreen(panel_softcam, 0);
 		}
 		if(rcret == getrcconfigint("rcok", NULL)){
 			// start/stop emu, depending if emu already runs
@@ -295,12 +295,12 @@ void screenaafpanel_softcam()
 			else{
 				startcam(tmp->name);
 			}
-			drawscreen(aafpanel_softcam, 0);
+			drawscreen(panel_softcam, 0);
 		}
 		if(rcret == RCTIMEOUT){
 			// update ecminfo
 			readecminfo(labelecminfo);
-			drawscreen(aafpanel_softcam, 0);
+			drawscreen(panel_softcam, 0);
 		}
         }
 
@@ -308,9 +308,9 @@ void screenaafpanel_softcam()
 		freelist(emulist);
 
 	free(swhichcam);
-	delmarkedscreennodes(aafpanel_softcam, 1);
-	delownerrc(aafpanel_softcam);
-	clearscreen(aafpanel_softcam);
+	delmarkedscreennodes(panel_softcam, 1);
+	delownerrc(panel_softcam);
+	clearscreen(panel_softcam);
 }
 
 #endif

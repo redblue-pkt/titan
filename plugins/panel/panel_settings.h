@@ -1,32 +1,32 @@
-#ifndef AAFPANEL_SETTINGS_H
-#define AAFPANEL_SETTINGS_H
+#ifndef PANEL_SETTINGS_H
+#define PANEL_SETTINGS_H
 
 // mode 0 = Betaconfig
 // mode 1 = Automount
 // mode 2 = Red Button
 
-void screenaafpanel_settings(int mode)
+void screenpanel_settings(int mode)
 {
 	int rcret = 0;
-	struct skin* aaf_config = getscreen("aafpanel_config");
-	struct skin* listbox = getscreennode(aaf_config, "listbox");
+	struct skin* config = getscreen("panel_config");
+	struct skin* listbox = getscreennode(config, "listbox");
 	struct skin* node = NULL;
 	struct skin* tmp = NULL;
 
-	addscreenrc(aaf_config, listbox);
+	addscreenrc(config, listbox);
 	listbox->aktline = 1;
 	listbox->aktpage = 1;
 
 	if (mode == 0){
-		changetitle(aaf_config, _("AAF Beta Config"));
+		changetitle(config, _("Beta Config"));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(config, listbox, node, 1);
 		node->type = INPUTBOX;
 		changetext(node, _("User"));
 		changename(node, "betauser");
 		changeinput(node, getownconfigq(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(config, listbox, node, 1);
 		node->type = INPUTBOX;
 		changetext(node, _("Password"));
 		changename(node, "betapass");
@@ -34,9 +34,9 @@ void screenaafpanel_settings(int mode)
 	}
 
 	if (mode == 1){
-		changetitle(aaf_config, _("AAF Automount Config"));
+		changetitle(config, _("Automount Config"));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("Ntfs Write"));
 		changename(node, "ntfs_write");
@@ -47,24 +47,24 @@ void screenaafpanel_settings(int mode)
 	}
 
 	if (mode == 2){
-		changetitle(aaf_config, _("AAF Red Button Config"));
+		changetitle(config, _("Red Button Config"));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(config, listbox, node, 1);
 		node->type = CHOICEBOX;
-		changetext(node, _("Open AAF-Panel when pressing red button:"));
+		changetext(node, _("Open Panel when pressing red button:"));
 		changename(node, "redpanel");
 		addchoicebox(node, "0", _("no"));
 		addchoicebox(node, "1", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
 
-	drawscreen(aaf_config, 0);
+	drawscreen(config, 0);
 	tmp = listbox->select;
 
 	while(1)
 	{
-		addscreenrc(aaf_config, tmp);
-		rcret = waitrc(aaf_config, 0, 0);
+		addscreenrc(config, tmp);
+		rcret = waitrc(config, 0, 0);
 		tmp = listbox->select;
 
 		if(listbox->select != NULL)
@@ -87,9 +87,9 @@ void screenaafpanel_settings(int mode)
 	}
 
 	delownconfigtmpall();
-	delmarkedscreennodes(aaf_config, 1);
-	delownerrc(aaf_config);
-	clearscreen(aaf_config);
+	delmarkedscreennodes(config, 1);
+	delownerrc(config);
+	clearscreen(config);
 }
 
 #endif

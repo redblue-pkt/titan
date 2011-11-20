@@ -1,5 +1,5 @@
-#ifndef AAFPANEL_SETTINGS_OVERCLOCKING_H
-#define AAFPANEL_SETTINGS_OVERCLOCKING_H
+#ifndef PANEL_SETTINGS_OVERCLOCKING_H
+#define PANEL_SETTINGS_OVERCLOCKING_H
 
 void read_cpufreq(struct skin* label)
 {
@@ -68,15 +68,15 @@ void set_freq(char* inifreq, char* oldfreq, char* newfreq)
 {
 	if(isfile("/proc/cpu_frequ/pll0_ndiv_mdiv") == 0)
 	{
-		debug(10, "[screenaafpanel_settings_overclock] file not found%s", "/proc/cpu_frequ/pll0_ndiv_mdiv");
+		debug(10, "[screenpanel_settings_overclock] file not found%s", "/proc/cpu_frequ/pll0_ndiv_mdiv");
 		return;
 	}
 
-	debug(10, "[screenaafpanel_settings_overclock] inifreq=%s oldfreq=%s => newfreq=%s", inifreq, oldfreq, newfreq);
+	debug(10, "[screenpanel_settings_overclock] inifreq=%s oldfreq=%s => newfreq=%s", inifreq, oldfreq, newfreq);
 
 	if(ostrcmp(newfreq, inifreq) == 0 && ostrcmp(newfreq, oldfreq) == 0)
 	{
-		debug(10, "[screenaafpanel_settings_overclock] Nothing to change in FREQ");
+		debug(10, "[screenpanel_settings_overclock] Nothing to change in FREQ");
 		return;
 	}
 
@@ -86,7 +86,7 @@ void set_freq(char* inifreq, char* oldfreq, char* newfreq)
 	tmpstr = ostrcat(tmpstr, newfreq, 1, 0);
 	tmpstr = ostrcat(tmpstr, "\" > /proc/cpu_frequ/pll0_ndiv_mdiv", 1, 0);
 
-	debug(10, "[screenaafpanel_settings_overclock] Set FREQ to %s", newfreq);
+	debug(10, "[screenpanel_settings_overclock] Set FREQ to %s", newfreq);
 	system(tmpstr);
 
 	if(oldfreq != NULL && newfreq != NULL){
@@ -104,13 +104,13 @@ void set_fdma(char* inifdma, char* oldfdma, char* newfdma)
 
 	if(isfile("/proc/cpu_frequ/pll1_fdma_bypass") == 0)
 	{
-		debug(10, "[screenaafpanel_settings_overclock] file not found%s", "/proc/cpu_frequ/pll1_fdma_bypass");
+		debug(10, "[screenpanel_settings_overclock] file not found%s", "/proc/cpu_frequ/pll1_fdma_bypass");
 		return;
 	}
 
 	if(ostrcmp(newfdma, inifdma) == 0 && ostrcmp(newfdma, oldfdma) == 0)
 	{
-		debug(10, "[screenaafpanel_settings_overclock] Nothing to change in FDMA");
+		debug(10, "[screenpanel_settings_overclock] Nothing to change in FDMA");
 		return;
 	}
 
@@ -120,7 +120,7 @@ void set_fdma(char* inifdma, char* oldfdma, char* newfdma)
 	tmpstr = ostrcat(tmpstr, newfdma, 1, 0);
 	tmpstr = ostrcat(tmpstr, "\" > /proc/cpu_frequ/pll1_fdma_bypass", 1, 0);
 
-	debug(10, "[screenaafpanel_settings_overclock] Set FDMA to %s", newfdma);
+	debug(10, "[screenpanel_settings_overclock] Set FDMA to %s", newfdma);
 	system(tmpstr);
 
 	if(oldfdma != NULL && newfdma != NULL){
@@ -155,12 +155,12 @@ char* getlistvalue(struct skin* mylist, char* name)
 	return tmpstr;
 }
 
-void screenaafpanel_settings_overclocking()
+void screenpanel_settings_overclocking()
 {
 	int rcret = 0;
-	struct skin* aaf_overclock = getscreen("aafpanel_settings_overclocking");
-	struct skin* listbox = getscreennode(aaf_overclock, "listbox");
-	struct skin* label1 = getscreennode(aaf_overclock, "label1");
+	struct skin* panel_overclock = getscreen("panel_settings_overclocking");
+	struct skin* listbox = getscreennode(panel_overclock, "listbox");
+	struct skin* label1 = getscreennode(panel_overclock, "label1");
 	struct skin* node = NULL;
 	struct skin* tmp = NULL;
 
@@ -169,7 +169,7 @@ void screenaafpanel_settings_overclocking()
 	char* inifreq = NULL, *oldfreq = NULL;
 	char* inifdma = NULL, *oldfdma = NULL;
 
-	addscreenrc(aaf_overclock, listbox);
+	addscreenrc(panel_overclock, listbox);
 
 	if(checkbox("UFS912") || checkbox("AT7500") || checkbox("SPARK"))
 	{
@@ -186,7 +186,7 @@ void screenaafpanel_settings_overclocking()
 		standbyFreqSeltext = "266 (default)\n200\n166\n133";
 	}
 
-	node = addlistbox(aaf_overclock, listbox, node, 1);
+	node = addlistbox(panel_overclock, listbox, node, 1);
 	if(node != NULL)
 	{
 		node->type = CHOICEBOX;
@@ -195,7 +195,7 @@ void screenaafpanel_settings_overclocking()
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
 
-	node = addlistbox(aaf_overclock, listbox, node, 1);
+	node = addlistbox(panel_overclock, listbox, node, 1);
 	if(node != NULL)
 	{
 		node->type = CHOICEBOX;
@@ -206,7 +206,7 @@ void screenaafpanel_settings_overclocking()
 
 	if(checkbox("UFS912") == 0 && checkbox("AT7500") == 0 && checkbox("SPARK") == 0)
 	{
-		node = addlistbox(aaf_overclock, listbox, node, 1);
+		node = addlistbox(panel_overclock, listbox, node, 1);
 		if(node != NULL)
 		{
 			node->type = CHOICEBOX;
@@ -216,7 +216,7 @@ void screenaafpanel_settings_overclocking()
 		}
 	}
 
-	node = addlistbox(aaf_overclock, listbox, node, 1);
+	node = addlistbox(panel_overclock, listbox, node, 1);
 	if(node != NULL)
 	{
 		node->type = CHOICEBOX;
@@ -226,7 +226,7 @@ void screenaafpanel_settings_overclocking()
 
 		if(ostrcmp(getownconfig(node->name), "1") == 0)
 		{
-			node = addlistbox(aaf_overclock, listbox, node, 1);
+			node = addlistbox(panel_overclock, listbox, node, 1);
 			if(node != NULL)
 			{
 				node->type = CHOICEBOX;
@@ -237,7 +237,7 @@ void screenaafpanel_settings_overclocking()
 		}
 		else
 		{
-			node = addlistbox(aaf_overclock, listbox, node, 1);
+			node = addlistbox(panel_overclock, listbox, node, 1);
 			if(node != NULL)
 			{
 				node->type = CHOICEBOX;
@@ -248,7 +248,7 @@ void screenaafpanel_settings_overclocking()
 
 	if(checkbox("UFS912") == 0 && checkbox("AT7500") == 0 && checkbox("SPARK") == 0)
 	{
-		node = addlistbox(aaf_overclock, listbox, node, 1);
+		node = addlistbox(panel_overclock, listbox, node, 1);
 		if(node != NULL)
 		{
 			node->type = CHOICEBOX;
@@ -259,7 +259,7 @@ void screenaafpanel_settings_overclocking()
 	}
 
 	read_cpufreq(label1);
-	drawscreen(aaf_overclock, 0);
+	drawscreen(panel_overclock, 0);
 
 	inifreq = getlistvalue(listbox,"pll0_ndiv_mdiv");
 	oldfreq = getlistvalue(listbox,"pll0_ndiv_mdiv");
@@ -270,8 +270,8 @@ void screenaafpanel_settings_overclocking()
 
 	while(1)
 	{
-		addscreenrc(aaf_overclock, tmp);
-		rcret = waitrc(aaf_overclock, 0, 0);
+		addscreenrc(panel_overclock, tmp);
+		rcret = waitrc(panel_overclock, 0, 0);
 		tmp = listbox->select;
 
 		if(rcret == getrcconfigint("rcexit", NULL) || rcret == getrcconfigint("rcred", NULL)){
@@ -284,7 +284,7 @@ void screenaafpanel_settings_overclocking()
 			set_freq(oldfreq, oldfreq, getownconfig("pll0_ndiv_mdiv"));
 			set_fdma(oldfdma, oldfdma, getownconfig("pll1_fdma_bypass"));
 			read_cpufreq(label1);
-			drawscreen(aaf_overclock, 0);
+			drawscreen(panel_overclock, 0);
 		}
 
 		if(listbox->select != NULL)
@@ -305,7 +305,7 @@ void screenaafpanel_settings_overclocking()
 					changetext(listbox->select, NULL);
 					changeinput(listbox->select, NULL);
 				}
-				drawscreen(aaf_overclock, 0);
+				drawscreen(panel_overclock, 0);
 			}
 		}
 
@@ -321,9 +321,9 @@ void screenaafpanel_settings_overclocking()
 	FreqSelvalue = NULL; FreqSeltext = NULL; standbyFreqSelvalue = NULL; standbyFreqSeltext = NULL; tmp = NULL;
 	inifreq = NULL; oldfreq = NULL; inifdma = NULL; oldfdma = NULL;
 	delownconfigtmpall();
-	delmarkedscreennodes(aaf_overclock, 1);
-	delownerrc(aaf_overclock);
-	clearscreen(aaf_overclock);
+	delmarkedscreennodes(panel_overclock, 1);
+	delownerrc(panel_overclock);
+	clearscreen(panel_overclock);
 }
 
 #endif

@@ -1,7 +1,7 @@
-#ifndef AAFPANEL_SETTINGS_BLUEBUTTON_H
-#define AAFPANEL_SETTINGS_BLUEBUTTON_H
+#ifndef PANEL_SETTINGS_BLUEBUTTON_H
+#define PANEL_SETTINGS_BLUEBUTTON_H
 
-void screenaafpanel_settings_bluebutton()
+void screenpanel_settings_bluebutton()
 {
 	debug(1000, "in");
 	char* skintitle = "Blue Key Action - Setup";

@@ -1,20 +1,20 @@
-#ifndef AAFPANEL_INFOS_H
-#define AAFPANEL_INFOS_H
+#ifndef PANEL_INFOS_H
+#define PANEL_INFOS_H
 
-void screenaafpanel_infos(int mode)
+void screenpanel_infos(int mode)
 {
 
 	char* tmpstr = NULL;
 	int rcret = 0;
-	struct skin* aaf_info = getscreen("aafpanel_infos");
-	struct skin* info = getscreennode(aaf_info, "info");
+	struct skin* panel_info = getscreen("panel_infos");
+	struct skin* info = getscreennode(panel_info, "info");
 
-	addscreenrc(aaf_info, info);
+	addscreenrc(panel_info, info);
 
 	if (mode == 0){
 		char* tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
 
-		changetitle(aaf_info, _("AAF Infos"));
+		changetitle(panel_info, _("Infos"));
 
 		tmpstr1 = command("cat /etc/motd");
 		if(tmpstr1 != NULL) tmpstr2 = strstr(tmpstr1, "wElc0me");
@@ -32,7 +32,7 @@ void screenaafpanel_infos(int mode)
 	if (mode == 1){
 		char* tmpstr1 = NULL, *tmpstr2 = NULL;
 
-		changetitle(aaf_info, _("AAF Default"));
+		changetitle(panel_info, _("Default"));
 
 		tmpstr1 = ostrcat("Date = ", "", 0, 0);
 		tmpstr1 = ostrcat(tmpstr1, gettime("%d %B %Y"), 1, 1);
@@ -63,7 +63,7 @@ void screenaafpanel_infos(int mode)
 	}
 
 	if (mode == 2){
-		changetitle(aaf_info, _("AAF Free Space"));
+		changetitle(panel_info, _("Free Space"));
 
 		tmpstr = command("df -h");
 		changetext(info, tmpstr);
@@ -72,7 +72,7 @@ void screenaafpanel_infos(int mode)
 	}
 
 	if (mode == 3){
-		changetitle(aaf_info, _("AAF Kernel"));
+		changetitle(panel_info, _("Kernel"));
 
 		tmpstr = command("cat /proc/version");
 		changetext(info, tmpstr);
@@ -81,7 +81,7 @@ void screenaafpanel_infos(int mode)
 	}
 
 	if (mode == 4){
-		changetitle(aaf_info, _("AAF Mounts"));
+		changetitle(panel_info, _("Mounts"));
 
 		tmpstr = command("mount");
 		changetext(info, tmpstr);
@@ -92,7 +92,7 @@ void screenaafpanel_infos(int mode)
 	if (mode == 5){
 		char* tmpstr1 = NULL, *tmpstr2 = NULL;
 
-		changetitle(aaf_info, _("AAF Network"));
+		changetitle(panel_info, _("Network"));
 
 		tmpstr = command("ifconfig");
 		tmpstr1 = command("route -n");
@@ -103,7 +103,7 @@ void screenaafpanel_infos(int mode)
 	}
 
 	if (mode == 6){
-		changetitle(aaf_info, _("AAF Ram"));
+		changetitle(panel_info, _("Ram"));
 
 		tmpstr = command("free");
 		changetext(info, tmpstr);
@@ -111,19 +111,19 @@ void screenaafpanel_infos(int mode)
 		free(tmpstr); tmpstr = NULL;
 	}
 
-	drawscreen(aaf_info, 0);
+	drawscreen(panel_info, 0);
 
 	while(1)
 	{
-		rcret = waitrc(aaf_info, 0, 0);
+		rcret = waitrc(panel_info, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL)) break;
 	}
 
-	delownerrc(aaf_info);
-	clearscreen(aaf_info);
-	//delscreen(aaf_info);
+	delownerrc(panel_info);
+	clearscreen(panel_info);
+	//delscreen(panel_info);
 }
 
 #endif

@@ -1,8 +1,8 @@
-#ifndef AAFPANEL_EXTENSIONS_H
-#define AAFPANEL_EXTENSIONS_H
+#ifndef PANEL_EXTENSIONS_H
+#define PANEL_EXTENSIONS_H
 
 
-void screenaafpanel_extensions(int mode)
+void screenpanel_extensions(int mode)
 {
 	char* section = NULL;
 	char* file = NULL;
@@ -13,8 +13,8 @@ void screenaafpanel_extensions(int mode)
 		free(get_ipk_update());
 		tmpstr = get_ipk_section();
 		free(section); section = NULL;
-//		char* section = ostrcat(section, ipklistbox(NULL, tmpstr, NULL, "Ipk Install - select section", "%pluginpath%/aafpanel/skin/", 1), 1, 1);
-		section = ipklistbox(NULL, tmpstr, NULL, "Ipk Install - select section", "%pluginpath%/aafpanel/skin/", 1);
+//		char* section = ostrcat(section, ipklistbox(NULL, tmpstr, NULL, "Ipk Install - select section", "%pluginpath%/panel/skin/", 1), 1, 1);
+		section = ipklistbox(NULL, tmpstr, NULL, "Ipk Install - select section", "%pluginpath%/panel/skin/", 1);
 		free(tmpstr); tmpstr = NULL;
 
 		debug(60, "section: %s", section);
@@ -43,15 +43,15 @@ void screenaafpanel_extensions(int mode)
 			free(section); section = NULL;
 			free(file); file = NULL;
 			free(tmpstr); tmpstr = NULL;
-			screenaafpanel_extensions(0);
+			screenpanel_extensions(0);
 		}
 	}
 	else if (mode == 1)
 	{
 		tmpstr = get_ipk_listinstall();
 		free(file); file = NULL;
-//		file = ostrcat(file, ipklistbox(NULL, tmpstr, NULL, "Ipk Remove - select file", "%pluginpath%/aafpanel/skin/", 1), 1, 1);
-		file = ipklistbox(NULL, tmpstr, NULL, "Ipk Remove - select file", "%pluginpath%/aafpanel/skin/", 1);
+//		file = ostrcat(file, ipklistbox(NULL, tmpstr, NULL, "Ipk Remove - select file", "%pluginpath%/panel/skin/", 1), 1, 1);
+		file = ipklistbox(NULL, tmpstr, NULL, "Ipk Remove - select file", "%pluginpath%/panel/skin/", 1);
 		free(tmpstr); tmpstr = NULL;
 		debug(60, "file: %s", file);
 		if(file != NULL)
@@ -66,7 +66,7 @@ void screenaafpanel_extensions(int mode)
 
 			free(tmpinfo); tmpinfo = NULL;
 			free(file); file = NULL;
-			screenaafpanel_extensions(1);
+			screenpanel_extensions(1);
 		}
 		free(file); file = NULL;
 	}
