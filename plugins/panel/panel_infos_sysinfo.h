@@ -98,13 +98,12 @@ void screenpanel_infos_sysinfo(int mode)
 	}
 
 	if (mode == 6){
-		changetitle(panel_info, _("Top info"));
+		changetitle(panel_info, _("Top Info"));
 
-		//tmpstr = command("top -b -n1");
-		tmpstr = "Not yet working !!!\n\n";
-		changetext(info, _(tmpstr));
+		tmpstr = command("top -b -n1");
+		changetext(info, tmpstr);
 
-		//free(tmpstr); tmpstr = NULL;
+		free(tmpstr); tmpstr = NULL;
 	}
 
 	drawscreen(panel_info, 0);
