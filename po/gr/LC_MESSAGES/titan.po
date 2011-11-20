@@ -27,9 +27,9 @@ msgid "A"
 
 msgstr "A"
 
-msgid "AAF Beta Config"
+msgid "Beta Config"
 
-msgstr "AAF Beta Ρύθμιση"
+msgstr "Beta Ρύθμιση"
 
 msgid "Info"
 
