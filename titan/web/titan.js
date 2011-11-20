@@ -319,3 +319,69 @@ function delquestion(link)
 		window.location=link;
 }
 
+function checkdaytime(wort, wort2) 
+{ 
+     ok=true;
+     if(wort.length==0)
+        ok=false;
+     else 
+     {   
+        if(wort.substring(0,2)>"23")
+        	ok=false;
+        if(wort.charAt(2)!=":")
+        	ok=false;
+        if(wort.substring(3,5)>"59")
+        	ok=false;
+        if(wort.charAt(5)!=" ")
+        	ok=false;
+        if(wort.substring(6,8)>"31")
+        	ok=false;
+        if(wort.charAt(8)!="-")
+         	ok=false;
+        if(wort.substring(9,11)>"12")
+        	ok=false;
+        if(wort.charAt(11)!="-")
+         	ok=false;
+        if(wort.substring(12,16)<"2010" || wort.substring(12,16)>"2100")
+        	ok=false;
+     }  
+     if(!ok)
+      {
+         alert("Begin --> invalid value \nHH:MM DD-MM-YYYY");
+         window.document.F1.begin.focus();
+         ok=false;
+         return ok;
+     }
+     if(wort2.length==0)
+        ok=false;
+     else 
+     {   
+        if(wort2.substring(0,2)>"23")
+        	ok=false;
+        if(wort2.charAt(2)!=":")
+        	ok=false;
+        if(wort2.substring(3,5)>"59")
+        	ok=false;
+        if(wort2.charAt(5)!=" ")
+        	ok=false;
+        if(wort2.substring(6,8)>"31")
+        	ok=false;
+        if(wort2.charAt(8)!="-")
+         	ok=false;
+        if(wort2.substring(9,11)>"12")
+        	ok=false;
+        if(wort2.charAt(11)!="-")
+         	ok=false;
+        if(wort2.substring(12,16)<"2010" || wort2.substring(12,16)>"2100")
+        	ok=false;
+     }  
+     if(!ok)
+      {
+         alert("End --> invalid value \nHH:MM DD-MM-YYYY");
+         window.document.F1.end.focus();
+         ok=false;
+         return ok;
+     }
+     return ok; 
+} 
+
