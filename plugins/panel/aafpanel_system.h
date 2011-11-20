@@ -1,18 +1,6 @@
 #ifndef AAFPANEL_SYSTEM_H
 #define AAFPANEL_SYSTEM_H
 
-void screenaafpanel_system_aafwizard()
-{
-	if(textbox(_("Message"), _("Do you really want to start the AAF-Wizard? The Box will reboot and the Wizard will be started!"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2){
-			debug(40, "[aafpanel_system] (start) AAF-Wizzard");
-			system("touch /var/etc/.firstszap");
-			system("touch /var/etc/.firstwizard");
-			sleep(4);
-			oshutdown(2, 1);
-	}	
-}
-
-
 void screenaafpanel_system_update(int mode)
 {
 	debug(50, "(start) mode=%d", mode);
