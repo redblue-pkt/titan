@@ -73,7 +73,7 @@ void screenpanel_extensions(int mode)
 	else if (mode == 2)
 	{
 		if(textbox(_("Ipk Tmp Info"), _("Install ipg from /tmp ?"), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
-				textbox(_("Ipk Tmp Info"), _(get_ipk_listinstall()), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
+				textbox(_("Ipk Tmp Info"), _(get_ipk_tmpinstall()), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 	}
 }
 
