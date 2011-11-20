@@ -87,6 +87,17 @@ void filelistok(struct skin* screen, struct skin* filelist, int flag)
 	debug(1000, "out");
 }
 
+void helpbox(struct skin* screen, struct skin* node, int flag)
+{
+	char* tmpstr = NULL;
+
+	if(node != NULL && flag == 0)
+	{
+		tmpstr = screenhelp(screen);
+		drawscreen(screen, flag);
+	}
+}
+
 void inputboxhelp(struct skin* screen, struct skin* inputbox, int flag)
 {
 	char* tmpstr = NULL;
@@ -944,6 +955,7 @@ int addscreenrc(struct skin* screen, struct skin* node)
 		addrc(getrcconfigint("rcdown", NULL), griddown, screen, node);
 		addrc(getrcconfigint("rcchup", NULL), gridchup, screen, node);
 		addrc(getrcconfigint("rcchdown", NULL), gridchdown, screen, node);
+		addrc(getrcconfigint("rchelp", NULL), helpbox, screen, node);
 	}
 	else if(node->type == LISTBOX)
 	{
@@ -953,11 +965,13 @@ int addscreenrc(struct skin* screen, struct skin* node)
 		addrc(getrcconfigint("rcleft", NULL), listboxleft, screen, node);
 		addrc(getrcconfigint("rcchup", NULL), listboxright, screen, node);
 		addrc(getrcconfigint("rcchdown", NULL), listboxleft, screen, node);
+		addrc(getrcconfigint("rchelp", NULL), helpbox, screen, node);
 	}
 	else if(node->type == CHOICEBOX)
 	{
 		addrc(getrcconfigint("rcleft", NULL), choiceboxleft, screen, node);
 		addrc(getrcconfigint("rcright", NULL), choiceboxright, screen, node);
+		addrc(getrcconfigint("rchelp", NULL), helpbox, screen, node);
 	}
 	else if(node->type == INPUTBOX || node->type == INPUTBOXNUM)
 	{
@@ -973,9 +987,10 @@ int addscreenrc(struct skin* screen, struct skin* node)
 		addrc(getrcconfigint("rc9", NULL), inputbox9, screen, node);
 		addrc(getrcconfigint("rcright", NULL), inputboxright, screen, node);
 		addrc(getrcconfigint("rcleft", NULL), inputboxleft, screen, node);
+		addrc(getrcconfigint("rchelp", NULL), helpbox, screen, node);
 		if(node->type == INPUTBOX) addrc(getrcconfigint("rcff", NULL), inputboxff, screen, node);
 		if(node->type == INPUTBOX) addrc(getrcconfigint("rcfr", NULL), inputboxfr, screen, node);
-		if(node->type == INPUTBOX) addrc(getrcconfigint("rchelp", NULL), inputboxhelp, screen, node);
+		if(node->type == INPUTBOX) addrc(getrcconfigint("rctxt", NULL), inputboxhelp, screen, node);
 	}
 	else if(node->type == TEXTBOX)
 	{
@@ -983,6 +998,7 @@ int addscreenrc(struct skin* screen, struct skin* node)
 		addrc(getrcconfigint("rcdown", NULL), textboxdown, screen, node);
 		addrc(getrcconfigint("rcchup", NULL), textboxup, screen, node);
 		addrc(getrcconfigint("rcchdown", NULL), textboxdown, screen, node);
+		addrc(getrcconfigint("rchelp", NULL), helpbox, screen, node);
 	}
 	else if(node->type == FILELIST)
 	{
@@ -993,11 +1009,13 @@ int addscreenrc(struct skin* screen, struct skin* node)
 		addrc(getrcconfigint("rcok", NULL), filelistok, screen, node);
 		addrc(getrcconfigint("rcchup", NULL), listboxright, screen, node);
 		addrc(getrcconfigint("rcchdown", NULL), listboxleft, screen, node);
+		addrc(getrcconfigint("rchelp", NULL), helpbox, screen, node);
 	}
 	else if(node->type == PROGRESSBAR)
 	{
 		addrc(getrcconfigint("rcleft", NULL), progressbarleft, screen, node);
 		addrc(getrcconfigint("rcright", NULL), progressbarright, screen, node);
+		addrc(getrcconfigint("rchelp", NULL), helpbox, screen, node);
 	}
 
 	debug(1000, "out");
@@ -1022,6 +1040,7 @@ int delscreenrc(struct skin* screen, struct skin* node)
 		delrc(getrcconfigint("rcdown", NULL), screen, node);
 		delrc(getrcconfigint("rcchup", NULL), screen, node);
 		delrc(getrcconfigint("rcchdown", NULL), screen, node);
+		delrc(getrcconfigint("rchelp", NULL), screen, node);
 	}
 	if(node->type == LISTBOX)
 	{
@@ -1031,11 +1050,13 @@ int delscreenrc(struct skin* screen, struct skin* node)
 		delrc(getrcconfigint("rcleft", NULL), screen, node);
 		delrc(getrcconfigint("rcchup", NULL), screen, node);
 		delrc(getrcconfigint("rcchdown", NULL), screen, node);
+		delrc(getrcconfigint("rchelp", NULL), screen, node);
 	}
 	else if(node->type == CHOICEBOX)
 	{
 		delrc(getrcconfigint("rcleft", NULL), screen, node);
 		delrc(getrcconfigint("rcright", NULL), screen, node);
+		delrc(getrcconfigint("rchelp", NULL), screen, node);
 	}
 	else if(node->type == INPUTBOX || node->type == INPUTBOXNUM)
 	{
@@ -1051,6 +1072,7 @@ int delscreenrc(struct skin* screen, struct skin* node)
 		delrc(getrcconfigint("rc9", NULL), screen, node);
 		delrc(getrcconfigint("rcright", NULL), screen, node);
 		delrc(getrcconfigint("rcleft", NULL), screen, node);
+		delrc(getrcconfigint("rchelp", NULL), screen, node);
 		if(node->type == INPUTBOX) delrc(getrcconfigint("rcff", NULL), screen, node);
 		if(node->type == INPUTBOX) delrc(getrcconfigint("rcfr", NULL), screen, node);
 		if(node->type == INPUTBOX) delrc(getrcconfigint("rchelp", NULL), screen, node);
@@ -1061,6 +1083,7 @@ int delscreenrc(struct skin* screen, struct skin* node)
 		delrc(getrcconfigint("rcdown", NULL), screen, node);
 		delrc(getrcconfigint("rcchup", NULL), screen, node);
 		delrc(getrcconfigint("rcchdown", NULL), screen, node);
+		delrc(getrcconfigint("rchelp", NULL), screen, node);
 	}
 	else if(node->type == FILELIST)
 	{
@@ -1071,11 +1094,13 @@ int delscreenrc(struct skin* screen, struct skin* node)
 		delrc(getrcconfigint("rcok", NULL), screen, node);
 		delrc(getrcconfigint("rcchup", NULL), screen, node);
 		delrc(getrcconfigint("rcchdown", NULL), screen, node);
+		delrc(getrcconfigint("rchelp", NULL), screen, node);
 	}
 	else if(node->type == PROGRESSBAR)
 	{
 		delrc(getrcconfigint("rcleft", NULL), screen, node);
 		delrc(getrcconfigint("rcright", NULL), screen, node);
+		delrc(getrcconfigint("rchelp", NULL), screen, node);
 	}
 
 	debug(1000, "out");
