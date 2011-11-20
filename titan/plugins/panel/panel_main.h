@@ -1,176 +1,176 @@
-#ifndef AAFPANEL_MAIN_H
-#define AAFPANEL_MAIN_H
+#ifndef PANEL_MAIN_H
+#define PANEL_MAIN_H
 
-struct skin* aafpanel_menu(struct skin* aafpanel_menu)
+struct skin* panel_menu(struct skin* panel_menu)
 {
 	debug(1000, "in");
 	int rcret = 0, ret = 0;
-	struct skin* listbox = getscreennode(aafpanel_menu, "listbox");
-//	struct skin* aafpanel_softcam_menu = getscreen("aafpanel_softcam");
+	struct skin* listbox = getscreennode(panel_menu, "listbox");
+//	struct skin* panel_softcam_menu = getscreen("panel_softcam");
 
-	if(listbox == NULL || aafpanel_menu == NULL)
+	if(listbox == NULL || panel_menu == NULL)
 	{
 		debug(1000, "out -> NULL detect");
 		return NULL;
 	}
 
 //	if(checkemu() != 1)
-//		aafpanel_softcam_menu->hidden == YES;
+//		panel_softcam_menu->hidden == YES;
 //	else
-//		aafpanel_softcam_menu->hidden == NO;
+//		panel_softcam_menu->hidden == NO;
 
-	drawscreen(aafpanel_menu, 0);
-	addscreenrc(aafpanel_menu, listbox);
+	drawscreen(panel_menu, 0);
+	addscreenrc(panel_menu, listbox);
 
 	while(1)
 	{
-		rcret = waitrc(aafpanel_menu, 0, 0);
+		rcret = waitrc(panel_menu, 0, 0);
 
 		if (rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
-			clearscreen(aafpanel_menu);
-			ret = aafpanel_menucall(listbox->select);
+			clearscreen(panel_menu);
+			ret = panel_menucall(listbox->select);
 			if(ret != 0)
 				textbox(_("Message"), _("Menu not implemented !"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
-			drawscreen(aafpanel_menu, 0);
+			drawscreen(panel_menu, 0);
 		}
 	}
 
-	delownerrc(aafpanel_menu);
-	clearscreen(aafpanel_menu);
+	delownerrc(panel_menu);
+	clearscreen(panel_menu);
 	debug(1000, "out");
 	return listbox->select;
 }
 
-int aafpanel_menucall(struct skin* aafpanel_menuentry)
+int panel_menucall(struct skin* panel_menuentry)
 {
 	debug(1000, "in");
 //	void (*startplugin) (void);
 	int ret = 0;
 
-	if(aafpanel_menuentry == NULL)
+	if(panel_menuentry == NULL)
 	{
 		debug(1000, "out -> NULL detect");
 		return 1;
 	}
 
-	printf("MENU: %s\n", aafpanel_menuentry->name);	// must be removed later
+	printf("MENU: %s\n", panel_menuentry->name);	// must be removed later
 
 // softcam
-	if(ostrcmp("aafpanel_softcam", aafpanel_menuentry->name) == 0){
-		screenaafpanel_softcam();
+	if(ostrcmp("panel_softcam", panel_menuentry->name) == 0){
+		screenpanel_softcam();
 // settings
-	} else if(ostrcmp("aafpanel_settings", aafpanel_menuentry->name) == 0){
-		struct skin* screen = getscreen("aafpanel_settings_main");
+	} else if(ostrcmp("panel_settings", panel_menuentry->name) == 0){
+		struct skin* screen = getscreen("panel_settings_main");
 
 		if(checkbeta() != 1)
-			delscreennode(screen, "aafpanel_settings_betacfg");
+			delscreennode(screen, "panel_settings_betacfg");
 
 		if(checkbox("UFS922") != 1)
-			delscreennode(screen, "aafpanel_settings_fancontrol");
+			delscreennode(screen, "panel_settings_fancontrol");
 
 		if(isfile("/proc/cpu_frequ/pll0_ndiv_mdiv") != 1)
-			delscreennode(screen, "aafpanel_settings_overclocking");
+			delscreennode(screen, "panel_settings_overclocking");
 
-		aafpanel_menu(screen);
+		panel_menu(screen);
 
-	} else if(ostrcmp("aafpanel_settings_overclocking", aafpanel_menuentry->name) == 0){
-		screenaafpanel_settings_overclocking();
-	} else if(ostrcmp("aafpanel_settings_betacfg", aafpanel_menuentry->name) == 0){
-		screenaafpanel_settings(0);
-	} else if(ostrcmp("aafpanel_settings_automount", aafpanel_menuentry->name) == 0){
-		screenaafpanel_settings(1);
-	} else if(ostrcmp("aafpanel_settings_redbutton", aafpanel_menuentry->name) == 0){
-		screenaafpanel_settings_redbutton();
-	} else if(ostrcmp("aafpanel_settings_bluebutton", aafpanel_menuentry->name) == 0){
-		screenaafpanel_settings_bluebutton();
-	} else if(ostrcmp("aafpanel_settings_autostart", aafpanel_menuentry->name) == 0){
-		struct skin* screen = getscreen("aafpanel_autostart_main");
-		aafpanel_menu(screen);
-	} else if(ostrcmp("aafpanel_settings_fancontrol", aafpanel_menuentry->name) == 0){
-		screenaafpanel_settings_fancontrol();
+	} else if(ostrcmp("panel_settings_overclocking", panel_menuentry->name) == 0){
+		screenpanel_settings_overclocking();
+	} else if(ostrcmp("panel_settings_betacfg", panel_menuentry->name) == 0){
+		screenpanel_settings(0);
+	} else if(ostrcmp("panel_settings_automount", panel_menuentry->name) == 0){
+		screenpanel_settings(1);
+	} else if(ostrcmp("panel_settings_redbutton", panel_menuentry->name) == 0){
+		screenpanel_settings_redbutton();
+	} else if(ostrcmp("panel_settings_bluebutton", panel_menuentry->name) == 0){
+		screenpanel_settings_bluebutton();
+	} else if(ostrcmp("panel_settings_autostart", panel_menuentry->name) == 0){
+		struct skin* screen = getscreen("panel_autostart_main");
+		panel_menu(screen);
+	} else if(ostrcmp("panel_settings_fancontrol", panel_menuentry->name) == 0){
+		screenpanel_settings_fancontrol();
 // system
-	} else if(ostrcmp("aafpanel_system", aafpanel_menuentry->name) == 0){
-		struct skin* screen = getscreen("aafpanel_system_main");
-		aafpanel_menu(screen);
-	} else if(ostrcmp("aafpanel_system_restore", aafpanel_menuentry->name) == 0){
-		screenaafpanel_system_restore();
-	} else if(ostrcmp("aafpanel_system_backup", aafpanel_menuentry->name) == 0){
-		screenaafpanel_system_backup();
-	} else if(ostrcmp("aafpanel_system_imageinfo", aafpanel_menuentry->name) == 0){
-		screenaafpanel_infos(0);
-	} else if(ostrcmp("aafpanel_system_update_flash_online", aafpanel_menuentry->name) == 0){
-		screenaafpanel_system_update(0);
-	} else if(ostrcmp("aafpanel_system_update_flash_tmp", aafpanel_menuentry->name) == 0){
-		screenaafpanel_system_update(1);
-	} else if(ostrcmp("aafpanel_system_update_usb_online", aafpanel_menuentry->name) == 0){
-		screenaafpanel_system_update(2);
-	} else if(ostrcmp("aafpanel_system_update_usb_tmp", aafpanel_menuentry->name) == 0){
-		screenaafpanel_system_update(3);
+	} else if(ostrcmp("panel_system", panel_menuentry->name) == 0){
+		struct skin* screen = getscreen("panel_system_main");
+		panel_menu(screen);
+	} else if(ostrcmp("panel_system_restore", panel_menuentry->name) == 0){
+		screenpanel_system_restore();
+	} else if(ostrcmp("panel_system_backup", panel_menuentry->name) == 0){
+		screenpanel_system_backup();
+	} else if(ostrcmp("panel_system_imageinfo", panel_menuentry->name) == 0){
+		screenpanel_infos(0);
+	} else if(ostrcmp("panel_system_update_flash_online", panel_menuentry->name) == 0){
+		screenpanel_system_update(0);
+	} else if(ostrcmp("panel_system_update_flash_tmp", panel_menuentry->name) == 0){
+		screenpanel_system_update(1);
+	} else if(ostrcmp("panel_system_update_usb_online", panel_menuentry->name) == 0){
+		screenpanel_system_update(2);
+	} else if(ostrcmp("panel_system_update_usb_tmp", panel_menuentry->name) == 0){
+		screenpanel_system_update(3);
 // extensions
-	} else if(ostrcmp("aafpanel_extensions", aafpanel_menuentry->name) == 0){
-		struct skin* screen = getscreen("aafpanel_extensions_main");
-		aafpanel_menu(screen);
-	} else if(ostrcmp("aafpanel_extensions_menu", aafpanel_menuentry->name) == 0){
+	} else if(ostrcmp("panel_extensions", panel_menuentry->name) == 0){
+		struct skin* screen = getscreen("panel_extensions_main");
+		panel_menu(screen);
+	} else if(ostrcmp("panel_extensions_menu", panel_menuentry->name) == 0){
 		screenplugin();
-	} else if(ostrcmp("aafpanel_extensions_ipkinstall", aafpanel_menuentry->name) == 0){
-		screenaafpanel_extensions(0);
-	} else if(ostrcmp("aafpanel_extensions_ipkremove", aafpanel_menuentry->name) == 0){
-		screenaafpanel_extensions(1);
-	} else if(ostrcmp("aafpanel_extensions_tmpipkinstall", aafpanel_menuentry->name) == 0){
-		screenaafpanel_extensions(2);
+	} else if(ostrcmp("panel_extensions_ipkinstall", panel_menuentry->name) == 0){
+		screenpanel_extensions(0);
+	} else if(ostrcmp("panel_extensions_ipkremove", panel_menuentry->name) == 0){
+		screenpanel_extensions(1);
+	} else if(ostrcmp("panel_extensions_tmpipkinstall", panel_menuentry->name) == 0){
+		screenpanel_extensions(2);
 // infos main
-	} else if(ostrcmp("aafpanel_infos", aafpanel_menuentry->name) == 0){
-		struct skin* screen = getscreen("aafpanel_infos_main");
-		aafpanel_menu(screen);
-	} else if(ostrcmp("aafpanel_infos_aaf", aafpanel_menuentry->name) == 0){
-		screenaafpanel_infos(0);
-	} else if(ostrcmp("aafpanel_infos_default", aafpanel_menuentry->name) == 0){
-		screenaafpanel_infos(1);
-	} else if(ostrcmp("aafpanel_infos_free", aafpanel_menuentry->name) == 0){
-		screenaafpanel_infos(2);
-	} else if(ostrcmp("aafpanel_infos_kernel", aafpanel_menuentry->name) == 0){
-		screenaafpanel_infos(3);
-	} else if(ostrcmp("aafpanel_infos_mounts", aafpanel_menuentry->name) == 0){
-		screenaafpanel_infos(4);
-	} else if(ostrcmp("aafpanel_infos_network", aafpanel_menuentry->name) == 0){
-		screenaafpanel_infos(5);
-	} else if(ostrcmp("aafpanel_infos_ram", aafpanel_menuentry->name) == 0){
-		screenaafpanel_infos(6);
+	} else if(ostrcmp("panel_infos_main", panel_menuentry->name) == 0){
+		struct skin* screen = getscreen("panel_infos_main");
+		panel_menu(screen);
+	} else if(ostrcmp("panel_infos", panel_menuentry->name) == 0){
+		screenpanel_infos(0);
+	} else if(ostrcmp("panel_infos_default", panel_menuentry->name) == 0){
+		screenpanel_infos(1);
+	} else if(ostrcmp("panel_infos_free", panel_menuentry->name) == 0){
+		screenpanel_infos(2);
+	} else if(ostrcmp("panel_infos_kernel", panel_menuentry->name) == 0){
+		screenpanel_infos(3);
+	} else if(ostrcmp("panel_infos_mounts", panel_menuentry->name) == 0){
+		screenpanel_infos(4);
+	} else if(ostrcmp("panel_infos_network", panel_menuentry->name) == 0){
+		screenpanel_infos(5);
+	} else if(ostrcmp("panel_infos_ram", panel_menuentry->name) == 0){
+		screenpanel_infos(6);
 // infos sysinfos
-	} else if(ostrcmp("aafpanel_infos_sysinfo", aafpanel_menuentry->name) == 0){
-		struct skin* screen = getscreen("aafpanel_sysinfos_main");
-		aafpanel_menu(screen);
-	} else if(ostrcmp("aafpanel_sysinfos_cpu", aafpanel_menuentry->name) == 0){
-		screenaafpanel_infos_sysinfo(0);
-	} else if(ostrcmp("aafpanel_sysinfos_mem", aafpanel_menuentry->name) == 0){
-		screenaafpanel_infos_sysinfo(1);
-	} else if(ostrcmp("aafpanel_sysinfos_mtd", aafpanel_menuentry->name) == 0){
-		screenaafpanel_infos_sysinfo(2);
-	} else if(ostrcmp("aafpanel_sysinfos_module", aafpanel_menuentry->name) == 0){
-		screenaafpanel_infos_sysinfo(3);
-	} else if(ostrcmp("aafpanel_sysinfos_devices", aafpanel_menuentry->name) == 0){
-		screenaafpanel_infos_sysinfo(4);
-	} else if(ostrcmp("aafpanel_sysinfos_swap", aafpanel_menuentry->name) == 0){
-		screenaafpanel_infos_sysinfo(5);
-	} else if(ostrcmp("aafpanel_sysinfos_top", aafpanel_menuentry->name) == 0){
-		screenaafpanel_infos_sysinfo(6);
+	} else if(ostrcmp("panel_infos_sysinfo", panel_menuentry->name) == 0){
+		struct skin* screen = getscreen("panel_sysinfos_main");
+		panel_menu(screen);
+	} else if(ostrcmp("panel_sysinfos_cpu", panel_menuentry->name) == 0){
+		screenpanel_infos_sysinfo(0);
+	} else if(ostrcmp("panel_sysinfos_mem", panel_menuentry->name) == 0){
+		screenpanel_infos_sysinfo(1);
+	} else if(ostrcmp("panel_sysinfos_mtd", panel_menuentry->name) == 0){
+		screenpanel_infos_sysinfo(2);
+	} else if(ostrcmp("panel_sysinfos_module", panel_menuentry->name) == 0){
+		screenpanel_infos_sysinfo(3);
+	} else if(ostrcmp("panel_sysinfos_devices", panel_menuentry->name) == 0){
+		screenpanel_infos_sysinfo(4);
+	} else if(ostrcmp("panel_sysinfos_swap", panel_menuentry->name) == 0){
+		screenpanel_infos_sysinfo(5);
+	} else if(ostrcmp("panel_sysinfos_top", panel_menuentry->name) == 0){
+		screenpanel_infos_sysinfo(6);
 // autostart
-	} else if(ostrcmp("aafpanel_autostart_default", aafpanel_menuentry->name) == 0){
-		screenaafpanel_settings_autostart(0);
-	} else if(ostrcmp("aafpanel_autostart_audiovideo", aafpanel_menuentry->name) == 0){
-		screenaafpanel_settings_autostart(1);
-	} else if(ostrcmp("aafpanel_autostart_usb", aafpanel_menuentry->name) == 0){
-		screenaafpanel_settings_autostart(2);
-	} else if(ostrcmp("aafpanel_autostart_emu", aafpanel_menuentry->name) == 0){
-		screenaafpanel_settings_autostart(3);
-	} else if(ostrcmp("aafpanel_autostart_network", aafpanel_menuentry->name) == 0){
-		screenaafpanel_settings_autostart(4);
-	} else if(ostrcmp("aafpanel_autostart_safety", aafpanel_menuentry->name) == 0){
-		screenaafpanel_settings_autostart(5);
+	} else if(ostrcmp("panel_autostart_default", panel_menuentry->name) == 0){
+		screenpanel_settings_autostart(0);
+	} else if(ostrcmp("panel_autostart_audiovideo", panel_menuentry->name) == 0){
+		screenpanel_settings_autostart(1);
+	} else if(ostrcmp("panel_autostart_usb", panel_menuentry->name) == 0){
+		screenpanel_settings_autostart(2);
+	} else if(ostrcmp("panel_autostart_emu", panel_menuentry->name) == 0){
+		screenpanel_settings_autostart(3);
+	} else if(ostrcmp("panel_autostart_network", panel_menuentry->name) == 0){
+		screenpanel_settings_autostart(4);
+	} else if(ostrcmp("panel_autostart_safety", panel_menuentry->name) == 0){
+		screenpanel_settings_autostart(5);
 // videotune
-	} else if(ostrcmp("aafpanel_settings_videotune", aafpanel_menuentry->name) == 0){
+	} else if(ostrcmp("panel_settings_videotune", panel_menuentry->name) == 0){
 		screenvideosettings();
 	} else {
 		ret = 1;
@@ -180,20 +180,20 @@ int aafpanel_menucall(struct skin* aafpanel_menuentry)
 	return ret;
 }
 
-void aafpanel_main()
+void panel_main()
 {
 	debug(1000, "in");
 	status.hangtime = 99999;
 	int rcret = 0, ret = 0;
 
-	struct skin* aafpanel_main = getscreen("aafpanel_main");
-	struct skin* listbox = getscreennode(aafpanel_main, "listbox");
+	struct skin* panel_main = getscreen("panel_main");
+	struct skin* listbox = getscreennode(panel_main, "listbox");
 
-	struct skin* aafpanel_main_selected = getscreennode(aafpanel_main, "aafpanel_main_selected_pic");
+	struct skin* panel_main_selected = getscreennode(panel_main, "panel_main_selected_pic");
 	struct skin* child = NULL;
 
-	drawscreen(aafpanel_main, 1);
-	addscreenrc(aafpanel_main, listbox);
+	drawscreen(panel_main, 1);
+	addscreenrc(panel_main, listbox);
 
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
@@ -201,7 +201,7 @@ void aafpanel_main()
 	child = listbox->next;
 	while(child != NULL)
 	{
-		if(ostrcmp(child->name, "aafpanel_softcam") == 0){
+		if(ostrcmp(child->name, "panel_softcam") == 0){
 			if(checkemu() == 0){
 				child->hidden = YES;
 			} else{
@@ -214,7 +214,7 @@ void aafpanel_main()
 		child = child->next;
 	}
 
-	drawscreen(aafpanel_main, 0);
+	drawscreen(panel_main, 0);
 	if(listbox->select != NULL)
 	{
 		status.updatevfd = PAUSE;
@@ -224,44 +224,44 @@ void aafpanel_main()
 	while(1)
 	{
 		status.screencalc = 1;
-		rcret = waitrc(aafpanel_main, 0, 0);
+		rcret = waitrc(panel_main, 0, 0);
 		status.screencalc = 0;
 
 		if (rcret == getrcconfigint("rcexit", NULL)) break;
 
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
-			clearscreen(aafpanel_main);
-			ret = aafpanel_menucall(listbox->select);
+			clearscreen(panel_main);
+			ret = panel_menucall(listbox->select);
 			if(ret != 0)
 				textbox(_("Message"), _("Menu not implemented !"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
-			drawscreen(aafpanel_main, 0);
+			drawscreen(panel_main, 0);
 		}
-			debug(10, "[aafpanal_main] (select) menu=%s", listbox->select->name);
+			debug(10, "[panal_main] (select) menu=%s", listbox->select->name);
 		if(listbox->select != NULL && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL)))
 		{
 
-			debug(10, "[aafpanal_main] (select) menu=%s", listbox->select->name);
-			if(ostrcmp(listbox->select->name, "aafpanel_softcam") == 0){
-				changepic(aafpanel_main_selected, "panel/skin/aafpanel_softcam.png");
-			} else if(ostrcmp(listbox->select->name, "aafpanel_settings") == 0){
-				changepic(aafpanel_main_selected, "panel/skin/aafpanel_settings.png");
-			} else if(ostrcmp(listbox->select->name, "aafpanel_system") == 0){
-				changepic(aafpanel_main_selected, "panel/skin/aafpanel_system.png");
-			} else if(ostrcmp(listbox->select->name, "aafpanel_extensions") == 0){
-				changepic(aafpanel_main_selected, "panel/skin/aafpanel_extensions.png");
-			} else if(ostrcmp(listbox->select->name, "aafpanel_infos") == 0){
-				changepic(aafpanel_main_selected, "panel/skin/aafpanel_infos.png");
+			debug(10, "[panal_main] (select) menu=%s", listbox->select->name);
+			if(ostrcmp(listbox->select->name, "panel_softcam") == 0){
+				changepic(panel_main_selected, "panel/skin/panel_softcam.png");
+			} else if(ostrcmp(listbox->select->name, "panel_settings") == 0){
+				changepic(panel_main_selected, "panel/skin/panel_settings.png");
+			} else if(ostrcmp(listbox->select->name, "panel_system") == 0){
+				changepic(panel_main_selected, "panel/skin/panel_system.png");
+			} else if(ostrcmp(listbox->select->name, "panel_extensions") == 0){
+				changepic(panel_main_selected, "panel/skin/panel_extensions.png");
+			} else if(ostrcmp(listbox->select->name, "panel_infos") == 0){
+				changepic(panel_main_selected, "panel/skin/panel_infos.png");
 			}
 		}
-		drawscreen(aafpanel_main, 0);
+		drawscreen(panel_main, 0);
 		if(listbox->select != NULL)
 			writevfd(listbox->select->text);
 	}
 
-	delownerrc(aafpanel_main);
-	clearscreen(aafpanel_main);
-	//delscreen(aafpanel_main);
+	delownerrc(panel_main);
+	clearscreen(panel_main);
+	//delscreen(panel_main);
 	status.hangtime = getconfigint("hangtime", NULL);
 	debug(1000, "out");
 }

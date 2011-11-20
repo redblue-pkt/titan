@@ -1,5 +1,5 @@
-#ifndef AAFPANEL_GLOBAL_H
-#define AAFPANEL_GLOBAL_H
+#ifndef PANEL_GLOBAL_H
+#define PANEL_GLOBAL_H
 
 #define MAXTOKENS       256
 

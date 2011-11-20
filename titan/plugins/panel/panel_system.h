@@ -1,14 +1,14 @@
-#ifndef AAFPANEL_SYSTEM_H
-#define AAFPANEL_SYSTEM_H
+#ifndef PANEL_SYSTEM_H
+#define PANEL_SYSTEM_H
 
-void screenaafpanel_system_update(int mode)
+void screenpanel_system_update(int mode)
 {
 	debug(50, "(start) mode=%d", mode);
 	int rcret = 0;
 
 	status.hangtime = 99999;
-	struct skin* aafpanel_system = getscreen("aafpanel_system_main");
-	drawscreen(aafpanel_system, 0);
+	struct skin* panel_system = getscreen("panel_system_main");
+	drawscreen(panel_system, 0);
 
 	char* tmpstr = NULL;
 
@@ -20,33 +20,33 @@ void screenaafpanel_system_update(int mode)
 	
 	if (mode == 0){
 		system("/sbin/update.sh getfilelist");
-		skinname = "aafpanel_system_update_flash_online_menu";
+		skinname = "panel_system_update_flash_online_menu";
 		filemask = ostrcat(filemask, "*.img", 1, 0);
 		filepath = ostrcat(filepath, "/tmp/online", 1, 0);
 		type = ostrcat(type, "online", 1, 0);
 	} else if (mode == 1){
-		skinname = "aafpanel_system_update_flash_tmp_menu";
+		skinname = "panel_system_update_flash_tmp_menu";
 		filemask = ostrcat(filemask, "*.img", 1, 0);
 		filepath = ostrcat(filepath, "/tmp", 1, 0);
 		type = ostrcat(type, "tmp", 1, 0);
 	} else if (mode == 2){
 		system("/sbin/update.sh getfilelist");
-		skinname = "aafpanel_system_update_usb_online_menu";
+		skinname = "panel_system_update_usb_online_menu";
 		filemask = ostrcat(filemask, "*.tar.gz", 1, 0);
 		filepath = ostrcat(filepath, "/tmp/online", 1, 0);
 		type = ostrcat(type, "online", 1, 0);
 	} else if (mode == 3){
-		skinname = "aafpanel_system_update_usb_tmp_menu";
+		skinname = "panel_system_update_usb_tmp_menu";
 		filemask = ostrcat(filemask, "*.tar.gz", 1, 0);
 		filepath = ostrcat(filepath, "/tmp", 1, 0);
 		type = ostrcat(type, "tmp", 1, 0);
 	}
 
-	aafpanel_system = getscreen(skinname);
-	struct skin* filelistpath = getscreennode(aafpanel_system, "aafpanel_filelistpath");
-	struct skin* filelist = getscreennode(aafpanel_system, "aafpanel_filelist");
+	panel_system = getscreen(skinname);
+	struct skin* filelistpath = getscreennode(panel_system, "panel_filelistpath");
+	struct skin* filelist = getscreennode(panel_system, "panel_filelist");
 
-	struct skin* device = getscreennode(aafpanel_system, "device");
+	struct skin* device = getscreennode(panel_system, "device");
 
 	if (mode == 2 || mode == 3){
 
@@ -108,19 +108,19 @@ void screenaafpanel_system_update(int mode)
 
 	setchoiceboxselection(device, getconfig("device", NULL));
 
-	getfilelist(aafpanel_system, filelistpath, filelist, filepath, filemask, 1, NULL);
-	addscreenrc(aafpanel_system, filelist);
+	getfilelist(panel_system, filelistpath, filelist, filepath, filemask, 1, NULL);
+	addscreenrc(panel_system, filelist);
 	if(mode == 2 || mode == 3)
 	{
-		delrc(getrcconfigint("rcright", NULL), aafpanel_system, filelist);
-		delrc(getrcconfigint("rcleft", NULL), aafpanel_system, filelist);
-		addscreenrc(aafpanel_system, device);
+		delrc(getrcconfigint("rcright", NULL), panel_system, filelist);
+		delrc(getrcconfigint("rcleft", NULL), panel_system, filelist);
+		addscreenrc(panel_system, device);
 	}
 
 	while(1)
 	{
-		rcret = waitrc(aafpanel_system, 0, 0);
-		debug(40, "[aafpanel_system] while status");
+		rcret = waitrc(panel_system, 0, 0);
+		debug(40, "[panel_system] while status");
 
 
 		if(rcret == getrcconfigint("rcexit", NULL) || rcret == getrcconfigint("rcred", NULL)){
@@ -129,16 +129,16 @@ void screenaafpanel_system_update(int mode)
 			if (mode == 0 || mode == 2){
 				system("/sbin/update.sh getfilelist");
 			}
-			drawscreen(aafpanel_system, 0);
-			getfilelist(aafpanel_system, filelistpath, filelist, filepath, filemask, 1, NULL);
-			addscreenrc(aafpanel_system, filelist);
+			drawscreen(panel_system, 0);
+			getfilelist(panel_system, filelistpath, filelist, filepath, filemask, 1, NULL);
+			addscreenrc(panel_system, filelist);
 			continue;
 		} else if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcgreen", NULL)){
 			if(filelist->select != NULL && filelist->select->input != NULL){
 				continue;
 			} else if(filelist->select != NULL && filelist->select->input == NULL){
 				tmpstr = createpath(filelistpath->text, filelist->select->text);
-				debug(40, "[aafpanel_system] tmpstr: %s", tmpstr);
+				debug(40, "[panel_system] tmpstr: %s", tmpstr);
 
 				char* cmd = NULL;
 				cmd = ostrcat(cmd, "/sbin/update.sh ", 1, 0);
@@ -148,7 +148,7 @@ void screenaafpanel_system_update(int mode)
 				char* msgtxt = NULL;
 
 				if(file_exist("/tmp/.swapextensionsdev")){
-					printf("[AafPanel] Update: update with log\n");
+					printf("[Panel] Update: update with log\n");
 					if(string_find("_KERNEL_",filelist->select->text)){
 						cmd = ostrcat(cmd, "kernel ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
@@ -190,7 +190,7 @@ void screenaafpanel_system_update(int mode)
 						msgtxt = ostrcat(msgtxt, "Fullusb Update starten ?", 1, 0);
 					}
 				} else {
-					printf("[AafPanel] Update: update without log\n");
+					printf("[Panel] Update: update without log\n");
 
 					if(string_find("_KERNEL_",filelist->select->text)){
 						cmd = ostrcat(cmd, "kernel ", 1, 0);
@@ -226,23 +226,23 @@ void screenaafpanel_system_update(int mode)
 						msgtxt = ostrcat(msgtxt, "Fullusb Update starten ?", 1, 0);
 					}
 				}
-				clearscreen(aafpanel_system);
+				clearscreen(panel_system);
 				if(msgtxt == NULL){
 					textbox(_("Message"), _("Error file not supported"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
-					drawscreen(aafpanel_system, 0);
-					getfilelist(aafpanel_system, filelistpath, filelist, filepath, filemask, 1, NULL);
-					addscreenrc(aafpanel_system, filelist);
+					drawscreen(panel_system, 0);
+					getfilelist(panel_system, filelistpath, filelist, filepath, filemask, 1, NULL);
+					addscreenrc(panel_system, filelist);
 					continue;
 				}
 
 				if(textbox(_("Message"), _(msgtxt), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2){
-					debug(40, "[aafpanel_system] update started cmd: %s", cmd);
+					debug(40, "[panel_system] update started cmd: %s", cmd);
 					system(cmd);
 				} else {
-					debug(40, "[aafpanel_system] update canceled cmd: %s", cmd);
-					drawscreen(aafpanel_system, 0);
-					getfilelist(aafpanel_system, filelistpath, filelist, filepath, filemask, 1, NULL);
-					addscreenrc(aafpanel_system, filelist);
+					debug(40, "[panel_system] update canceled cmd: %s", cmd);
+					drawscreen(panel_system, 0);
+					getfilelist(panel_system, filelistpath, filelist, filepath, filemask, 1, NULL);
+					addscreenrc(panel_system, filelist);
 					continue;
 				}
 
@@ -253,14 +253,14 @@ void screenaafpanel_system_update(int mode)
 			}
 		}
 	}
-	delownerrc(aafpanel_system);
-	clearscreen(aafpanel_system);
+	delownerrc(panel_system);
+	clearscreen(panel_system);
 
-	delownerrc(aafpanel_system);
-	clearscreen(aafpanel_system);
+	delownerrc(panel_system);
+	clearscreen(panel_system);
 
 	status.hangtime = getconfigint("hangtime", NULL);
-	debug(40, "[screenaafpanel_system_update] closed:");
+	debug(40, "[screenpanel_system_update] closed:");
 }
 
 #endif

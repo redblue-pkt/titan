@@ -1,5 +1,5 @@
-#ifndef AAFPANEL_SETTINGS_AUTOSTART_H
-#define AAFPANEL_SETTINGS_AUTOSTART_H
+#ifndef PANEL_SETTINGS_AUTOSTART_H
+#define PANEL_SETTINGS_AUTOSTART_H
 
 // mode 0 = Defaults
 // mode 1 = Audio/Video/Sat
@@ -8,32 +8,32 @@
 // mode 4 = Network
 // mode 5 = Child safety
 
-void screenaafpanel_settings_autostart(int mode)
+void screenpanel_settings_autostart(int mode)
 {
 	int rcret = 0;
-	struct skin* aaf_config = getscreen("aafpanel_config");
-	struct skin* listbox = getscreennode(aaf_config, "listbox");
+	struct skin* panel_config = getscreen("panel_config");
+	struct skin* listbox = getscreennode(panel_config, "listbox");
 	struct skin* node = NULL;
 	struct skin* tmp = NULL;
 
-	addscreenrc(aaf_config, listbox);
+	addscreenrc(panel_config, listbox);
 	listbox->aktline = 1;
 	listbox->aktpage = 1;
 
 	if (mode == 0){
 		int i = 0;
 
-		changetitle(aaf_config, _("AAF autostart Defaults"));
+		changetitle(panel_config, _("Autostart Defaults"));
 
 		if(file_exist("/etc/.usbimage")){
-			node = addlistbox(aaf_config, listbox, node, 1);
+			node = addlistbox(panel_config, listbox, node, 1);
 			node->type = CHOICEBOX;
 			changetext(node, _("fsckroot")); changename(node, "fsckroot");
 			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 			setchoiceboxselection(node, getownconfig(node->name));
 		}
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("bootstop")); changename(node, "bootstop");
 		for(i=0; i <= 20; i++)
@@ -45,76 +45,76 @@ void screenaafpanel_settings_autostart(int mode)
 		}
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("debug")); changename(node, "debug");
 		addchoicebox(node, "high", _("high")); addchoicebox(node, "low", _("low"));
 		addchoicebox(node, "off", _("off"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("logto")); changename(node, "logto");
 		addchoicebox(node, "normal", _("normal")); addchoicebox(node, "hdd", _("hdd"));
 		addchoicebox(node, "swap", _("swap")); addchoicebox(node, "off", _("off"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("errorboot")); changename(node, "errorboot");
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("repairmodus")); changename(node, "repairmodus");
 		addchoicebox(node, "1", _("always")); addchoicebox(node, "0", _("off"));
 		addchoicebox(node, "2", _("at bootloop"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("rmcrashlog")); changename(node, "rmcrashlog");
 		addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("rmemthy")); changename(node, "rmemthy");
 		addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("plugload")); changename(node, "plugload");
 		addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("progressbar")); changename(node, "progressbar");
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("showip")); changename(node, "showip");
 		addchoicebox(node, "status", _("status")); addchoicebox(node, "ip", _("ip"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("showtvinfo")); changename(node, "showtvinfo");
 		addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("playlist")); changename(node, "playlist");
 		addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("updatelist")); changename(node, "updatelist");
 		for(i=0; i <= 20; i++)
@@ -129,59 +129,59 @@ void screenaafpanel_settings_autostart(int mode)
 
 	if (mode == 1){
 
-		changetitle(aaf_config, _("AAF autostart Defaults"));
+		changetitle(panel_config, _("Autostart Defaults"));
 
 		if(isfile("/var/bin/audio.elf") || isfile("/boot/audio.old.elf")){
-			node = addlistbox(aaf_config, listbox, node, 1);
+			node = addlistbox(panel_config, listbox, node, 1);
 			node->type = CHOICEBOX;
 			changetext(node, _("Old Audiofw")); changename(node, "oldaudiofw");
 			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 			setchoiceboxselection(node, getownconfig(node->name));
 		}
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("No Audiosync")); changename(node, "noaudiosync");
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("Boot Resolution")); changename(node, "BootResolution");
 		addchoicebox(node, "low", _("low")); addchoicebox(node, "high", _("high"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("Bootlogo")); changename(node, "bootlogo");
 		addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("Poweroff")); changename(node, "poweroff");
 		addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("Scart On Standby")); changename(node, "scartonstandby");
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("HighSR")); changename(node, "HighSR");
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("Tuner Sleep Off")); changename(node, "tuner_sleep_off");
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("Boot RGB Fix")); changename(node, "bootrgbfix");
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
@@ -192,26 +192,26 @@ void screenaafpanel_settings_autostart(int mode)
 		int i = 0;
 		int tmpsize = 0;
 
-		changetitle(aaf_config, _("AAF autostart USB"));
+		changetitle(panel_config, _("Autostart USB"));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("Load Partition")); changename(node, "loadpartition");
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("Fsck Record")); changename(node, "fsckrecord");
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("Swap")); changename(node, "swap");
 		addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
 		setchoiceboxselection(node, getownconfig(node->name));
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("Swap Size")); changename(node, "swapsize");
 		tmpsize = 16384;
@@ -225,13 +225,13 @@ void screenaafpanel_settings_autostart(int mode)
 		}
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("Fsck Swap")); changename(node, "fsckswap");
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("Record Max Sectors")); changename(node, "RecordMaxSectors");
 		tmpsize = 80;
@@ -245,7 +245,7 @@ void screenaafpanel_settings_autostart(int mode)
 		}
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("Swap Max Sectors")); changename(node, "SwapMaxSectors");
 		tmpsize = 80;
@@ -263,27 +263,27 @@ void screenaafpanel_settings_autostart(int mode)
 
 	if (mode == 3){
 
-		changetitle(aaf_config, _("AAF autostart EMU"));
+		changetitle(panel_config, _("Autostart EMU"));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("Emu Control")); changename(node, "emucontrol");
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("ftdi")); changename(node, "ftdi");
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("pl2303")); changename(node, "pl2303");
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("Nr Usbreaders")); changename(node, "nr_usbreaders");
 		addchoicebox(node, "2", _("2 readers")); addchoicebox(node, "3", _("3 readers"));
@@ -292,7 +292,7 @@ void screenaafpanel_settings_autostart(int mode)
 		addchoicebox(node, "0", _("not one")); addchoicebox(node, "1", _("1 reader"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("Iwatch")); changename(node, "iwatch");
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
@@ -301,21 +301,21 @@ void screenaafpanel_settings_autostart(int mode)
 
 	if (mode == 4){
 
-		changetitle(aaf_config, "AAF autostart NETWORK");
+		changetitle(panel_config, "Autostart NETWORK");
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("nfs server")); changename(node, "nfsserver");
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("samba server")); changename(node, "sambaserver");
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("scan wlan")); changename(node, "wlan");
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
@@ -324,15 +324,15 @@ void screenaafpanel_settings_autostart(int mode)
 
 	if (mode == 5){
 
-		changetitle(aaf_config, _("AAF autostart Child Safety"));
+		changetitle(panel_config, _("Autostart Child Safety"));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = CHOICEBOX;
 		changetext(node, _("Parental")); changename(node, "Parental");
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 
-		node = addlistbox(aaf_config, listbox, node, 1);
+		node = addlistbox(panel_config, listbox, node, 1);
 		node->type = INPUTBOXNUM;
 		changetext(node, _("Pin")); changename(node, "Pin");
 		addchoicebox(node, "n", _("no"));
@@ -343,13 +343,13 @@ void screenaafpanel_settings_autostart(int mode)
 
 	}
 
-	drawscreen(aaf_config, 0);
+	drawscreen(panel_config, 0);
 	tmp = listbox->select;
 
 	while(1)
 	{
-		addscreenrc(aaf_config, tmp);
-		rcret = waitrc(aaf_config, 0, 0);
+		addscreenrc(panel_config, tmp);
+		rcret = waitrc(panel_config, 0, 0);
 		tmp = listbox->select;
 
 		if(listbox->select != NULL)
@@ -369,9 +369,9 @@ void screenaafpanel_settings_autostart(int mode)
 	}
 
 	delownconfigtmpall();
-	delmarkedscreennodes(aaf_config, 1);
-	delownerrc(aaf_config);
-	clearscreen(aaf_config);
+	delmarkedscreennodes(panel_config, 1);
+	delownerrc(panel_config);
+	clearscreen(panel_config);
 }
 
 #endif

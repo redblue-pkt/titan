@@ -1,12 +1,12 @@
-#ifndef AAFPANEL_HEADER_H
-#define AAFPANEL_HEADER_H
+#ifndef PANEL_HEADER_H
+#define PANEL_HEADER_H
 
-// aafpanel_ipk.h
+// panel_ipk.h
 char* ipklistbox(char* defaultstr, char* str, char* skinname, char* skintitle, char* skinpath, int showpng);
 
 void screenplugin();
 
-// aafpanel_main.h
-int aafpanel_menucall(struct skin* aafpanel_menuentry);
+// panel_main.h
+int panel_menucall(struct skin* panel_menuentry);
 
 #endif

@@ -1,23 +1,23 @@
 #include "../titan/struct.h"
 #include "../titan/debug.h"
 #include "../titan/header.h"
-#include "aafpanel_header.h"
-#include "aafpanel_global.h"
-#include "aafpanel_softcam.h"
-#include "aafpanel_settings.h"
-#include "aafpanel_system.h"
-#include "aafpanel_extensions.h"
-#include "aafpanel_infos.h"
-#include "aafpanel_infos_sysinfo.h"
-#include "aafpanel_settings_bluebutton.h"
-#include "aafpanel_settings_redbutton.h"
-#include "aafpanel_settings_autostart.h"
-#include "aafpanel_settings_overclocking.h"
-#include "aafpanel_settings_fancontrol.h"
-#include "aafpanel_system_restore.h"
-#include "aafpanel_system_backup.h"
-#include "aafpanel_ipk.h"
-#include "aafpanel_main.h"
+#include "panel_header.h"
+#include "panel_global.h"
+#include "panel_softcam.h"
+#include "panel_settings.h"
+#include "panel_system.h"
+#include "panel_extensions.h"
+#include "panel_infos.h"
+#include "panel_infos_sysinfo.h"
+#include "panel_settings_bluebutton.h"
+#include "panel_settings_redbutton.h"
+#include "panel_settings_autostart.h"
+#include "panel_settings_overclocking.h"
+#include "panel_settings_fancontrol.h"
+#include "panel_system_restore.h"
+#include "panel_system_backup.h"
+#include "panel_ipk.h"
+#include "panel_main.h"
 
 char pluginname[] = "Panel";
 char plugindesc[] = "Extensions";
@@ -62,5 +62,5 @@ void deinit(void)
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {
-	aafpanel_main();
+	panel_main();
 }

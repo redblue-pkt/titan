@@ -1,5 +1,5 @@
-#ifndef AAFPANEL_IPK_H
-#define AAFPANEL_IPK_H
+#ifndef PANEL_IPK_H
+#define PANEL_IPK_H
 
 // showpng = 0 (no icon)
 // showpng = 1 (smal icon)
@@ -186,21 +186,21 @@ char* ipklistbox(char* defaultstr, char* str, char* skinname, char* skintitle, c
 						char* tmpstr6 = NULL;
 						tmpstr6 = ostrcat("", skinpath1, 0, 0);
 						ret6 = strsplit(tmpstr6, "%", &count6);
-						defaultdir = ostrcat(getconfig("skinpath", NULL), "/skin/aafpanel_", 0, 0);
+						defaultdir = ostrcat(getconfig("skinpath", NULL), "/skin/panel_", 0, 0);
 						defaultdir = ostrcat(defaultdir, (&ret1[i])->part, 1, 0);
 						defaultdir = ostrcat(defaultdir, ".png", 1, 0);
 
 						if(!file_exist(defaultdir))
 						{
 							defaultdir = ostrcat(getconfig("pluginpath", NULL), (&ret6[1])->part, 0, 0);
-							defaultdir = ostrcat(defaultdir, "aafpanel_", 0, 0);
+							defaultdir = ostrcat(defaultdir, "panel_", 0, 0);
 							defaultdir = ostrcat(defaultdir, (&ret1[i])->part, 1, 0);
 							defaultdir = ostrcat(defaultdir, ".png", 1, 0);
 						}
 						free(ret6), ret6 = NULL;
 					} else {
 						defaultdir = ostrcat(getconfig("skinpath", NULL), skinpath1, 0, 0);
-						defaultdir = ostrcat(defaultdir, "/skin/aafpanel_", 0, 0);
+						defaultdir = ostrcat(defaultdir, "/skin/panel_", 0, 0);
 						defaultdir = ostrcat(defaultdir, (&ret1[i])->part, 1, 0);
 						defaultdir = ostrcat(defaultdir, ".png", 1, 0);
 					}
@@ -214,7 +214,7 @@ char* ipklistbox(char* defaultstr, char* str, char* skinname, char* skintitle, c
 					}
 					else
 					{
-						tmpskinpath = ostrcat(skinpath1, "aafpanel_default.png", 0, 0);
+						tmpskinpath = ostrcat(skinpath1, "panel_default.png", 0, 0);
 						changepic(tmp, tmpskinpath);
 						free(tmpskinpath); tmpskinpath = NULL;
 					}
