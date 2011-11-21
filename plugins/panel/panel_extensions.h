@@ -72,8 +72,26 @@ void screenpanel_extensions(int mode)
 	}
 	else if (mode == 2)
 	{
-		if(textbox(_("Ipk Tmp Info"), _("Install ipg from /tmp ?"), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
-				textbox(_("Ipk Tmp Info"), _(get_ipk_tmpinstall()), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
+		tmpstr = get_ipk_tmplistinstall();
+		free(file); file = NULL;
+		file = ipklistbox(NULL, tmpstr, NULL, "Ipk Tmp Install - select file", "%pluginpath%/panel/skin/", 0);
+		free(tmpstr); tmpstr = NULL;
+		debug(60, "file: %s", file);
+		if(file != NULL)
+		{
+			char* tmpinfo = NULL;
+			tmpinfo = ostrcat(tmpinfo, "Install ", 1, 0);
+			tmpinfo = ostrcat(tmpinfo, file, 1, 0);
+			tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
+
+			if(textbox(_("Ipk Tmp Info"), _(tmpinfo), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+				textbox(_("Ipk Tmp Info"), _(get_ipk_tmpinstall(file)), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
+
+			free(tmpinfo); tmpinfo = NULL;
+			free(file); file = NULL;
+			screenpanel_extensions(2);
+		}
+		free(file); file = NULL;
 	}
 }
 

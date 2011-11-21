@@ -2374,7 +2374,7 @@ char* getvideomodechoices()
 		debug(1000, "out -> NULL detect");
 		return NULL;
 	}
-	
+
 	if(status.expertmodus == 0)
 	{
 		value = string_replace("1080p60", "", value, 1);
@@ -3008,7 +3008,7 @@ char* string_replace_remove_last_chars(char *search, char *replace, char *string
 	debug(1000, "in");
 	char* searchpos = NULL;
 	char* tmpstr = NULL;
-	
+
 	if(string == NULL || search == NULL)
 		return string;
 
@@ -3032,7 +3032,7 @@ char* string_replace(char *search, char *replace, char *string, int free1)
 	debug(1000, "in");
 	char* searchpos = NULL;
 	char* tmpstr = NULL;
-	
+
 	if(string == NULL || search == NULL)
 		return string;
 
@@ -3292,7 +3292,8 @@ char* get_ipk_tmpinstall()
 	debug(60, "in");
 
 	char* cmd = NULL, *tmpstr = NULL;
-	cmd = ostrcat(cmd, "ipkg install /tmp/*.ipk", 1, 0);
+	cmd = ostrcat(cmd, "ipkg install /tmp/", 1, 0);
+	cmd = ostrcat(cmd, ipk, 1, 0);
 
 	tmpstr = command(cmd);
 
@@ -3307,6 +3308,20 @@ char* get_ipk_listinstall()
 	char* cmd = NULL, *tmpstr = NULL;
 
 	cmd = ostrcat(cmd, "ipkg list_installed | awk '{ print $1 }' | sed 's/Successfully//' | sed 's/titan-plugin-//'", 1, 0);
+
+	tmpstr = command(cmd);
+
+	debug(60, "out %s",cmd);
+	free(cmd); cmd = NULL;
+	return tmpstr;
+}
+
+char* get_ipk_tmplistinstall()
+{
+	debug(60, "in");
+	char* cmd = NULL, *tmpstr = NULL;
+
+	cmd = ostrcat(cmd, "ls /tmp | grep '.ipk'", 1, 0);
 
 	tmpstr = command(cmd);
 
