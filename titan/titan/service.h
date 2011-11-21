@@ -142,15 +142,6 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 		}
 
 		status.aktservice->fedev = fenode;
-		
-		debug(200, "set ci slot %d to tuner %d\n", fenode->devnr, fenode->devnr);
-		switch(fenode->devnr)
-		{
-			case 0: setcisource(fenode->devnr, "A"); break;
-			case 1: setcisource(fenode->devnr, "B"); break;
-			case 2: setcisource(fenode->devnr, "C"); break;
-			case 3: setcisource(fenode->devnr, "D"); break;
-		}
 
 		//frontend tune
 		if(fenode->felasttransponder != tpnode)
