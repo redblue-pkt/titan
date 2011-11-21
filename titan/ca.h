@@ -573,19 +573,19 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 					{
 						int i = 0, len = 0, slen = 0, selnr = 0, cmp = 1;
 
-						if(tmpstr1 != NULL)
-							len = strlen(tmpstr1);
+						if(casession->mmitext != NULL)
+							len = strlen(casession->mmitext);
 						slen = strlen(mbox);
 						for(i = 0; i < len; i++)
 						{
 							if(cmp == 1)
 							{
 								cmp = 0;
-								if(ostrncmp(mbox, &tmpstr1[i], slen) == 0)
+								if(ostrncmp(mbox, &casession->mmitext[i], slen) == 0)
 									break;
 							}
 
-							if(tmpstr1[i] == '\n')
+							if(casession->mmitext[i] == '\n')
 							{
 								selnr++;
 								cmp = 1;
