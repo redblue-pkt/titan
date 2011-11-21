@@ -161,7 +161,7 @@ void screenlnb(char* feshortname, char* lnbnr)
 	addchoicebox(satcr, "8", "8");
 
 	changeinput(satcrfrequ1, NULL);
-	addchoicebox(satcrfrequ1, "1285", "1285");
+	addchoicebox(satcrfrequ1, "1284", "1284");
 	addchoicebox(satcrfrequ1, "1400", "1400");
 	addchoicebox(satcrfrequ1, "1516", "1516");
 	addchoicebox(satcrfrequ1, "1632", "1632");
