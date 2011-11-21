@@ -103,7 +103,6 @@
 <node type=MENU pic=%pluginpath%/panel/skin/panel_module.png textposx=120 valign=middle name=panel_sysinfos_module text="Module" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic="%pluginpath%/panel/skin/panel_devices_config.png" textposx=120 valign=middle name=panel_sysinfos_devices text="Devices" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_swap.png textposx=120 valign=middle name=panel_sysinfos_swap text="Swap" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic=%pluginpath%/panel/skin/panel_top.png textposx=120 valign=middle name=panel_sysinfos_top text="Top" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
