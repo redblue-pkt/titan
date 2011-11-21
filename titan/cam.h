@@ -235,6 +235,28 @@ void sendcapmt(struct service* node, int clear, int flag)
 		debug(620, "channel empty");
 		return;
 	}
+	if(node->fedev == NULL)
+	{
+		debug(620, "no frontend");
+		return;
+	}
+	
+	if(node->channel->crypt == 0)
+	{
+		debug(620, "channel not crypt");
+
+		debug(200, "set ci slot %d to tuner %d\n", node->fedev->devnr, node->fedev->devnr);
+		switch(node->fedev->devnr)
+		{
+			case 0: setcisource(node->fedev->devnr, "A"); break;
+			case 1: setcisource(node->fedev->devnr, "B"); break;
+			case 2: setcisource(node->fedev->devnr, "C"); break;
+			case 3: setcisource(node->fedev->devnr, "D"); break;
+		}
+		
+		return;
+	}
+	
 	if(node->channel->pmt == NULL)
 	{
 		debug(620, "pmt empty");
@@ -248,16 +270,6 @@ void sendcapmt(struct service* node, int clear, int flag)
 	if(node->channel->esinfo == NULL)
 	{
 		debug(620, "esinfo empty");
-		return;
-	}
-	if(node->fedev == NULL)
-	{
-		debug(620, "no frontend");
-		return;
-	}
-	if(node->channel->crypt == 0)
-	{
-		debug(620, "channel not crypt");
 		return;
 	}
 	if(node->fedev->type == FRONTENDDEVDUMMY)
