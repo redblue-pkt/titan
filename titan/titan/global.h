@@ -3287,7 +3287,7 @@ char* get_ipk_install(char* ipk)
 	return tmpstr;
 }
 
-char* get_ipk_tmpinstall()
+char* get_ipk_tmpinstall(char* ipk)
 {
 	debug(60, "in");
 
