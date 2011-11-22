@@ -28,8 +28,8 @@ void setdefaults()
 	addconfigdef("fbrightoffset", "0");
 	addconfigdef("fbtopoffset", "0");
 	addconfigdef("fbbottomoffset", "0");
-	addconfigdef("infobartimeout", "3");
-	addconfigdef("infobarsleep", "3");
+	addconfigdef("infobartimeout", "4");
+	addconfigdef("infobarsleep", "0");
 	addconfigdef("volbartimeout", "1");
 	addconfigdef("mc_videoplayerpath", "/media");
 	addconfigdef("vfdbrightness", "3");
