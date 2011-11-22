@@ -28,9 +28,6 @@ msgstr "A"
 msgid "A/V Settings"
 msgstr "Réglages Audio/Video"
 
-msgid "Beta Config"
-msgstr "Configuration Beta"
-
 msgid "Panel"
 msgstr "Panneau"
 
