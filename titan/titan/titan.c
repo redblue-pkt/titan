@@ -189,7 +189,7 @@ void oshutdown(int exitcode, int flag)
 		if(textbox(_("Message"), _("Found running Record.\nRealy shutdown ?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 1) == 1)
 			return;
 	}
-	
+
 	ret = servicestop(status.aktservice, 1, 0);
 	if(ret == 1) return;
 
@@ -329,7 +329,7 @@ int main(int argc, char *argv[])
 	readconfig(getconfig("rcconfig", NULL), rcconfig);
 	skincheck = checkskin();
 	readconfig(getconfig("skinconfig", NULL), skinconfig);
-	
+
 	setprogress(100);
 	setdefaults();
 	setdebuglevel();
@@ -338,12 +338,12 @@ int main(int argc, char *argv[])
 
 	if(checkbox("UFS922") == 1)
 		setfanspeed(-1, 0);
-			
+
 	if(getconfig("av_videomode_default", NULL) == NULL)
 		ret = setvideomode(getconfig("av_videomode", NULL));
 	else
 		ret = setvideomode(getconfig("av_videomode_default", NULL));
-		
+
 	ret = setpolicy(getconfig("av_policy", NULL));
 	ret = setaspect(getconfig("av_aspect", NULL));
 	ret = setcolorformat(getconfig("av_colorformat", NULL));
@@ -365,7 +365,7 @@ int main(int argc, char *argv[])
 	openfont(getconfig("fontfile3", NULL));
 	openfont(getconfig("fontfile4", NULL));
 	openfont(getconfig("fontfile5", NULL));
-	
+
 	//skin defined fonts
 	openfont(getskinconfig("fontfile1", NULL));
 	openfont(getskinconfig("fontfile2", NULL));
@@ -414,7 +414,7 @@ int main(int argc, char *argv[])
 
 	ret = createstartscreen();
 	if(ret != 0) return 100;
-	
+
 	//from here we can use starterror screen
 	ret = openrc();
 	if(ret != 0)
@@ -457,7 +457,7 @@ int main(int argc, char *argv[])
 	ret = cagetdev();
 	ret = cigetdev();
 	ret = dvrgetdev();
-	
+
 	//check skin
 	if(skincheck > 0)
 	{
@@ -472,7 +472,7 @@ int main(int argc, char *argv[])
 
 	status.aktservice = addservice(NULL);
 	status.lastservice = addservice(NULL);
-	
+
 	//check if startchannel defined
 	char* startchannellist = getconfig("startchannellist", NULL);
 	int startserviceid = getconfigint("startserviceid", NULL);
@@ -525,14 +525,15 @@ int main(int argc, char *argv[])
 	}
 
 	addtimer(&checkdate, START, 2000, -1, NULL, NULL, NULL);
-	addtimer(&updatevfd, START, 1000, -1, NULL, NULL, NULL);
+	if(checkbox("ATEMIO500") == 0)
+		addtimer(&updatevfd, START, 1000, -1, NULL, NULL, NULL);
 
 	//first wizzard
 	if(getconfigint("nofirstwizzard", NULL) == 0)
 	{
 		if(file_exist("/tmp/.scart"))
 		{
-			setvideomode("pal"); 
+			setvideomode("pal");
 			changefbresolution("pal");
 		}
 
@@ -544,7 +545,7 @@ firstwizzardstep1:
 			screenavsettings(1);
 			//this screen can reload the skin (on language change)
 			//all skin changes before here than are deleted
-			if(screenlanguage(2) == 2) return 100; 
+			if(screenlanguage(2) == 2) return 100;
 			screentunerconfig();
 			screennetwork_adapter();
 			writevfd("Setting OK ?");
@@ -564,7 +565,7 @@ firstwizzardstep1:
 		if(serviceret != 21) // no message if startchannel empty
 			servicecheckret(serviceret, 0);
 	}
-	
+
 	//start spinner thread
 	addtimer(&checkspinner, START, 2000, -1, NULL, NULL, NULL);
 	//start auto shutdown thread
@@ -599,12 +600,12 @@ firstwizzardstep1:
 
 	//start webserver
 	starthttpd(1);
-	
+
 	//init the player
 	playerinit(argc, argv);
 
 	system(getconfig("skriptaftertv", NULL));
-	
+
 	//must called direct befor screeninfobar
 	if(getconfigint("saverun", NULL) == 1)
 	{
@@ -644,7 +645,7 @@ firstwizzardstep1:
 	debug(1000, "out");
 	oshutdown(1, 1);
 	return 0;
-	
+
 starterror:
 	addscreen("<screen hspace=5 vspace=5 type=textbox name=starterror posx=center posy=center bordersize=2 bordercol=#ffffff fontsize=30 fontcol=#ffffff width=600 height=150/>", 0, 0);
 	struct skin *starterror = getscreen("starterror");
