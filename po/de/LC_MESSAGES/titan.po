@@ -1,2738 +1,1370 @@
 msgid "--- SD resolution"
-
 msgstr "--- SD Auflösung"
-
 msgid "--- Time to switch"
-
 msgstr "--- Zeit bis Umschalten"
-
 msgid "---"
-
 msgstr "---"
-
 msgid "???"
-
 msgstr "???"
-
 msgid "1500rpm"
-
 msgstr "1500 U/min"
-
 msgid "3D Mode"
-
 msgstr "3D Modus"
-
 msgid "500rpm"
-
 msgstr "500 U/min"
-
 msgid "a"
-
 msgstr "a"
-
 msgid "A"
-
 msgstr "A"
-
 msgid "A record hdd or a swapstick must be mounted!"
-
 msgstr "Es muss eine Festplatte oder ein USB-Stick eingebunden sein"
-
 msgid "A/V Settings"
-
 msgstr "Bild / Ton Einstellen"
-
 msgid "Panel"
-
 msgstr "Panel"
-
 msgid "Wizard"
-
 msgstr "Setup-Assistent"
-
 msgid "Aborting restoring..."
-
 msgstr "Die Rücksicherung der Daten wird beendet!"
-
 msgid "Aborting backup..."
-
 msgstr "Die Datensicherung wird beendet!"
-
 msgid "About"
-
 msgstr "Über"
-
 msgid "AC3 default"
-
 msgstr "AC3 standardmäßig"
-
 msgid "AC3 downmix"
-
 msgstr "AC3 downmix"
-
 msgid "AC3 Mode"
-
 msgstr "AC3 Modus"
-
 msgid "Action after"
-
 msgstr "Aktion danach"
-
 msgid "Activate"
-
 msgstr "Aktivieren"
-
 msgid "Adapter Settings"
-
 msgstr "IP-Addresse Einstellen"
-
 msgid "ADD ALL"
-
 msgstr "Alle hinzufügen"
-
 msgid "add service"
-
 msgstr "Sender hinzufügen"
-
 msgid "add recording (stop after current event)"
-
 msgstr "Aufnahme hinzufügen (diese Sendung)"
-
 msgid "add recording (indefinitely)"
-
 msgstr "Aufnahme hinzufügen (unbegrenzt)"
-
 msgid "add recording (enter duration)"
-
 msgstr "Aufnahme hinzufügen (Länge eingeben)"
-
 msgid "ADD"
-
 msgstr "Hinzufügen"
-
 msgid "Adjust"
-
 msgstr "System Einstellen"
-
 msgid "Auto Scan"
-
 msgstr "automatisch"
-
 msgid "all"
-
 msgstr "alle"
-
 msgid "ALL"
-
 msgstr "Alle"
-
 msgid "(ALL)"
-
 msgstr "(Alle)"
-
 msgid "All Channels"
-
 msgstr "Alle Sender"
-
 msgid "alpha"
-
 msgstr "alpha"
-
 msgid "alt file"
-
 msgstr "alternative Datei"
-
 msgid "Are you sure you want to restore settings?"
-
 msgstr "Sollen die Einstellungen wieder hergestellt werden?"
-
 msgid "Apple Trailer"
-
 msgstr "Apple Movie Trailer"
-
 msgid "Aspect Ratio:"
-
 msgstr "Seitenverhältnis:"
-
 msgid "Aspect Settings"
-
 msgstr "Bildverhältnis Einstellen"
 msgid "Aspect"
-
 msgstr "Seitenverhältnis"
-
 msgid "Audio / Video / Sat"
-
 msgstr "Audio / Video / Sat "
-
 msgid "Audio PID:"
-
 msgstr "Audio PID:"
-
 msgid "Audio Player"
-
 msgstr "Audio Player"
-
 msgid "AUDIO SETTINGS"
-
 msgstr "Audio Einstellungen"
-
 msgid "Audio Source"
-
 msgstr "Audio Quelle"
-
 msgid "Audio Tracks"
-
 msgstr "Tonspur wählen"
-
 msgid "AUDIO"
-
 msgstr "Audio"
-
 msgid "Audio/Subt."
-
 msgstr "Ton/Untertitel"
-
 msgid "Auto resolution"
-
 msgstr "Automatische Auflösung"
-
 msgid "Automatic Search"
-
 msgstr "Automatische Sendersuche"
-
 msgid "Automount"
-
 msgstr "Automatische Einbindung"
-
 msgid "Autostart"
-
 msgstr "Boot Optionen"
-
 msgid "A-Z (Text)"
-
 msgstr "A-Z (Text)"
-
 msgid "b"
-
 msgstr "b"
-
 msgid "B"
-
 msgstr "B"
-
 msgid "Backup / Restore Settings"
-
 msgstr "Einstellungen sichern/wiederherstellen"
-
 msgid "Backup"
-
 msgstr "Sicherung erstellen"
-
 msgid "BACKUP ERROR"
-
 msgstr "!!! Fehler beim Sichern der Daten !!!"
-
 msgid "Backup - Settings"
-
 msgstr "Einstellungen werden gesichert"
-
 msgid "Backup started\n\nPlease wait..."
-
 msgstr "Sicherung wurde gestartet\n\nBitte warten..."
-
 msgid "bbgain"
-
 msgstr "BBGain"
-
 msgid "BER:"
-
 msgstr "BER:"
-
 msgid "bestfit"
-
 msgstr "Auf Bildschirmgröße verbreitern"
-
 msgid "Beta Config"
-
 msgstr "Betatester Einstellungen"
-
 msgid "betapass"
-
 msgstr "Betatester Passwort"
-
 msgid "betauser"
-
 msgstr "Betatester Username"
-
 msgid "big"
-
 msgstr "groß"
-
 msgid "Blue Button"
-
 msgstr "Blaue Taste"
-
 msgid "bootlogos"
-
 msgstr "Bootlogos"
-
 msgid "bootlogo"
-
 msgstr "Bootlogo"
-
 msgid "Bootlogo"
-
 msgstr "Bootlogo"
-
 msgid "BootResolution"
-
 msgstr "Startauflösung"
-
 msgid "Boot Resolution"
-
 msgstr "Startauflösung"
-
 msgid "bootrgbfix"
-
 msgstr "RGB Korrektur beim Start"
-
 msgid "bootstop"
-
 msgstr "Startabbruch"
-
 msgid "Bouquet List"
-
 msgstr "Favoriten"
-
 msgid "Brightness"
-
 msgstr "Helligkeit"
-
 msgid "broadcast"
-
 msgstr "Sendung"
-
 msgid "browsers"
-
 msgstr "Internet Browser"
-
 msgid "c"
-
 msgstr "c"
-
 msgid "C"
-
 msgstr "C"
-
 msgid "Cam / Emu"
-
 msgstr "Cam / Emu"
-
 msgid "CAM PMT Mode"
-
 msgstr "CAM PMT Mode"
-
 msgid "Cancel Shutdown"
-
 msgstr "Ausschalttimer beenden"
-
 msgid "cancel"
-
 msgstr "beenden"
-
 msgid "Cancel"
-
 msgstr "Beenden"
-
 msgid "Can't get EPG time or EPG endtime not ok"
-
 msgstr "EPG Zeit kann nicht gefunden werden, oder ist nicht korrekt!"
-
 msgid "Can't start playback !"
-
 msgstr "Kann die Wiedergabe nicht starten!"
-
 msgid "Can't start timeshift play !"
-
 msgstr "Timeshift kann nicht gestartet werden"
-
 msgid "CHANGE"
-
 msgstr "Ändern"
-
 msgid "Channels A-Z"
-
 msgstr "Sender A-Z"
-
 msgid "Channel Edit"
-
 msgstr "Senderliste bearbeiten"
-
 msgid "Channel EPG"
-
 msgstr "Sender EPG"
-
 msgid "Channel Search"
-
 msgstr "Sender Suche"
-
 msgid "Channel Service"
-
 msgstr "Empfangseinstellungen"
-
 msgid "Channel Service..."
-
 msgstr "Kanalsuche"
-
 msgid "Channel"
-
 msgstr "Sender"
-
 msgid "channel"
-
 msgstr "Sendername"
-
 msgid "channel + time"
-
 msgstr "Sendername + Uhrzeit"
-
 msgid "Child Protection"
-
 msgstr "Jugendschutz"
-
 msgid "Child safety"
-
 msgstr "Jugendschutz"
-
 msgid "Clear before scan"
-
 msgstr "Vor der Suche löschen?"
-
 msgid "Color Format Scart"
-
 msgstr "Farbformat für Scart"
-
 msgid "Color Format"
-
 msgstr "Farbformat"
-
 msgid "comming soon"
-
 msgstr "folgt demnächst, das Team arbeitet dran"
-
 msgid "comming soon..."
-
 msgstr "folgt demnächst, das Team arbeitet dran"
-
 msgid "Committed command"
-
 msgstr "Committed command"
-
 msgid "Common Interface"
-
 msgstr "CI Module"
-
 msgid "Contrast"
-
 msgstr "Kontrast"
-
 msgid "Configure"
-
 msgstr "Festplatte konfigurieren"
-
 msgid "copy service"
-
 msgstr "Sender kopieren"
-
 msgid "CPU"
-
 msgstr "CPU"
-
 msgid "CPU frequency"
-
 msgstr "CPU Frequenz"
-
 msgid "Create Backup"
-
 msgstr "Datensicherung erstellen"
-
 msgid "d"
-
 msgstr "d"
-
 msgid "D"
-
 msgstr "D"
-
 msgid "date"
-
 msgstr "Datum"
-
 msgid "Day"
-
 msgstr "Tag"
-
 msgid "Deactivate"
-
 msgstr "Stoppen"
-
 msgid "debug"
-
 msgstr "Debug"
-
 msgid "default"
-
 msgstr "Default Infos"
-
 msgid "Default"
-
 msgstr "Voreinstellung"
-
 msgid "DEFAULT"
-
 msgstr "Voreinstellung"
-
 msgid "del startchannel"
-
 msgstr "lösche Startkanal"
-
 msgid "DEL"
-
 msgstr "Löschen"
-
 msgid "Delete EPG after read"
-
 msgstr "Lösche EPG nach dem einlesen"
-
 msgid "details"
-
 msgstr "details"
-
 msgid "Device:"
-
 msgstr "Gerät:"
-
 msgid "Devices"
-
 msgstr "Geräte"
-
 msgid "dhcp"
-
 msgstr "Automatisch (dhcp)"
-
 msgid "Dirsort"
-
 msgstr "Ordnersortierung"
-
 msgid "disable"
-
 msgstr "aus"
-
 msgid "DiSEqC Command Order"
-
 msgstr "DiSEqC Übertragungsart"
-
 msgid "DiSEqC Configuration"
-
 msgstr "DiSEqC Einstellen"
-
 msgid "DiSEqC Mode"
-
 msgstr "DiSEqC Modus"
-
 msgid "DiSEqC repeats"
-
 msgstr "DiSEqC Wiederholungen"
-
 msgid "Diseqc Settings"
-
 msgstr "DiSEqC Einstellungen"
-
 msgid "DiSEqC Sat Settings"
-
 msgstr "DiSEqC Satellite Einstellungen"
-
 msgid "DiSEqC"
-
 msgstr "DiSEqC"
-
 msgid "dnsserver 1"
-
 msgstr "DNS-Server 1"
-
 msgid "dnsserver 2"
-
 msgstr "DNS-Server 2"
-
 msgid "Do you really want to start the Wizard? The Box will reboot and the Wizard will be started!"
-
 msgstr "Soll der Assistent gestartet werden? Die Box wird neu gestartet und der Assistent wird ausgeführt"
-
 msgid "Don't clear TV on zap (only with fastzap)"
-
 msgstr "Wenn Fastzap aktiv TV Bild beim umschalten nicht löschen"
-
 msgid "download error"
-
 msgstr "Fehler beim Download"
-
 msgid "DVB-T not supportet at the moment !"
-
 msgstr "DVB-T wird zur Zeit nicht unterstützt"
-
 msgid "e"
-
 msgstr "e"
-
 msgid "E"
-
 msgstr "E"
-
 msgid "East / West"
-
 msgstr "Ost / West"
-
 msgid "emu"
-
 msgstr "Emu"
-
 msgid "emus"
-
 msgstr "Emus"
-
 msgid "emucontrol"
-
 msgstr "Emu Kontrolle"
-
 msgid "enable"
-
 msgstr "ein"
-
 msgid "End"
-
 msgstr "Ende"
-
 msgid "English"
-
 msgstr "Englisch"
-
 msgid "EPG Info"
-
 msgstr "EPG Info"
-
 msgid "Epg List Mode"
-
 msgstr "EPG Listenformat"
-
 msgid "EPG Path"
-
 msgstr "EPG Speicherpfad"
-
 msgid "Epg Refresh Time"
-
 msgstr "EPG Aktualisierungszeitraum"
-
 msgid "EPG Reset"
-
 msgstr "EPG löschen"
-
 msgid "EPG Settings"
-
 msgstr "EPG Einstellen"
-
 msgid "Epgfreespace (KB)"
-
 msgstr "Freier EPG Speicher"
-
 msgid "Error file not supported"
-
 msgstr "Fehler, Datei wird nicht unterstützt!"
-
 msgid "errorboot"
-
 msgstr "Errorboot"
-
 msgid "errorstop"
-
 msgstr "Errorstop"
-
 msgid "EXIT"
-
 msgstr "Exit"
-
 msgid "Exit"
-
 msgstr "Exit"
-
 msgid "Exit = abort restore"
-
 msgstr "Exit = Wiederherstellung beenden"
-
 msgid "Extensions Menu"
-
 msgstr "Erweiterungsmenü"
-
 msgid "Extensions"
-
 msgstr "Erweiterungen"
-
 msgid "Expert Sat Settings"
-
 msgstr "Experten Satellite Einstellung"
-
 msgid "f"
-
 msgstr "f"
-
 msgid "F"
-
 msgstr "F"
-
 msgid "Fancontrol"
-
 msgstr "Lüftersteuerung"
-
 msgid "Fast DiSEqC"
-
 msgstr "schnelles DiSEqC"
-
 msgid "Fast Text Render"
-
 msgstr "Schnelle Text Ausgabe"
-
 msgid "fast"
-
 msgstr "schnell"
-
 msgid "Faststop"
-
 msgstr "Schneller Titan neustart"
-
 msgid "Fastzap"
-
 msgstr "Schnelles Umschalten"
-
 msgid "Fav"
-
 msgstr "Bouquets"
-
 msgid "FEC"
-
 msgstr "FEC"
-
 msgid "FEC:"
-
 msgstr "FEC:"
-
 msgid "FDMA bypass"
-
 msgstr "FDMA bypass"
-
 msgid "File Browser"
-
 msgstr "Datei Browser"
-
 msgid "file"
-
 msgstr "Datei"
-
 msgid "filealtresult"
-
 msgstr "alternatives Datei Resultat"
-
 msgid "Filelist-Mode"
-
 msgstr "Dateilisten Modus"
-
 msgid "Filesystem Check"
-
 msgstr "Dateisystem prüfen"
-
 msgid "Flashupdate (online)"
-
 msgstr "FLASH Aktualisierung (internet)"
-
 msgid "Flashupdate (tmp)"
-
 msgstr "FLASH Aktualisierung (lokal)"
-
 msgid "fonts"
-
 msgstr "Schriftarten"
-
 msgid "Fontsize adjust in pixel"
-
 msgstr "Schriftgröße einstellen in Pixel"
-
 msgid "fontsize"
-
 msgstr "Schriftgröße"
-
 msgid "Format HDD"
-
 msgstr "Festplatte formatieren"
-
 msgid "Found Data:"
-
 msgstr "Gefundene - Daten:"
-
 msgid "Found Radio:"
-
 msgstr "Gefundene - Radio:"
-
 msgid "Found TV:"
-
 msgstr "Gefundene - TV:"
-
 msgid "French"
-
 msgstr "Französisch"
-
 msgid "free space"
-
 msgstr "Freier Speicher"
-
 msgid "Frequency"
-
 msgstr "Frequenz"
-
 msgid "Frequency:"
-
 msgstr "Frequenz:"
-
 msgid "Friday"
-
 msgstr "Freitag"
-
 msgid "fsckrecord"
-
 msgstr "Dateisystemprüfung Aufnahme-Partition"
-
 msgid "fsckroot"
-
 msgstr "Dateisystemprüfung Root-Partition"
-
 msgid "fsckswap"
-
 msgstr "Dateisystemprüfung SWAP-Partition"
-
 msgid "ftdi"
-
 msgstr "Aktiviere ftdi-Treiber"
-
 msgid "ftpd"
-
 msgstr "FTP Dienst"
-
 msgid "ftpport"
-
 msgstr "Ftp Port"
-
 msgid "fullcover"
-
 msgstr "Kompletter Hintergrund mit Cover"
-
 msgid "g"
-
 msgstr "g"
-
 msgid "G"
-
 msgstr "G"
-
 msgid "gateway"
-
 msgstr "Gateway"
-
 msgid "Germany"
-
 msgstr "Deutschland"
-
 msgid "Greek"
-
 msgstr "Griechisch"
-
 msgid "German"
-
 msgstr "Deutsch"
-
 msgid "h"
-
 msgstr "h"
-
 msgid "H"
-
 msgstr "H"
-
 msgid "Hangtime"
-
 msgstr "Hangtime"
-
 msgid "Harddisk Format - List Devices"
-
 msgstr "Festplatte formatieren - angeschl. Geräte"
-
 msgid "Harddisk Fsck - List Devices"
-
 msgstr "Dateisysten prüfen- angeschl. Geräte"
-
 msgid "Harddisk"
-
 msgstr "Festplatte"
-
 msgid "HDD not configured\ncan't find record path"
-
 msgstr "Festplatte nicht eingerichtet, kein Aufnahmepfad vorhanden !\nBitte Festplatte einrichten."
-
 msgid "hddreplacement"
-
 msgstr "Netzwerk Freigabe als Aufnahmeort"
-
 msgid "HighSR"
-
 msgstr "HighSR"
-
 msgid "How many days"
-
 msgstr "Wie viele Tage?"
-
 msgid "i"
-
 msgstr "i"
-
 msgid "I"
-
 msgstr "I"
-
 msgid "Image Information"
-
 msgstr "Image Informationen"
-
 msgid "Imdb Directory"
-
 msgstr "Imdb Verzeichnis"
-
 msgid "Increased Voltage"
-
 msgstr "erhöhte Spannung"
-
 msgid "Info"
-
 msgstr "Info"
-
 msgid "infos"
-
 msgstr "Infos"
-
 msgid "Infobar Auto hide on call"
-
 msgstr "Infobar automatisch ausblenden"
-
 msgid "Infobar Sleep"
-
 msgstr "Zeit bis Infobar erscheint (sek)"
-
 msgid "Infobar Timeout"
-
 msgstr "Zeit bis Infobar ausblendet (sek)"
-
 msgid "Information"
-
 msgstr "Information"
-
 msgid "Information..."
-
 msgstr "Informationen"
-
 msgid "Infos"
-
 msgstr "Infos"
-
 msgid "install"
-
 msgstr "installieren"
-
 msgid "Install"
-
 msgstr "Installieren"
-
 msgid "Internet Browser"
-
 msgstr "Internet Browser"
-
 msgid "internet"
-
 msgstr "Internet"
-
 msgid "Interval"
-
 msgstr "Intervall"
-
 msgid "Inversion"
-
 msgstr "Umkehrung"
-
 msgid "Inversion:"
-
 msgstr "Umkehrung:"
-
 msgid "ipaddresse"
-
 msgstr "IP Adresse"
-
 msgid "Ipk Install Info"
-
 msgstr "Info zur IPK installation"
-
 msgid "Ipk Install - select file"
-
 msgstr "IPK installieren - Datei wählen"
-
 msgid "IPK install (online)"
-
 msgstr "IPK online installieren"
-
 msgid "IPK remove"
-
 msgstr "IPK löschen"
-
 msgid "Ipk Remove Info"
-
 msgstr "Info zur IPK Deinstallation"
-
 msgid "IPK tmp (tmp)"
-
 msgstr "IPK installieren aus /tmp"
-
 msgid "Is this Videomode ok ?"
-
 msgstr "Ist dieser Videomodus ok?"
-
 msgid "Italian"
-
 msgstr "Italienisch"
-
 msgid "iwatch"
-
 msgstr "iWatch"
-
 msgid "j"
-
 msgstr "j"
-
 msgid "J"
-
 msgstr "J"
-
 msgid "k"
-
 msgstr "k"
-
 msgid "K"
-
 msgstr "K"
-
 msgid "Kernel"
-
 msgstr "Kernel"
-
 msgid "Keyboard"
-
 msgstr "Tastatur"
-
 msgid "keymaps"
-
 msgstr "Fernbedienungseinstellungen"
-
 msgid "l"
-
 msgstr "l"
-
 msgid "L"
-
 msgstr "L"
-
 msgid "lan"
-
 msgstr "lan"
-
 msgid "Language"
-
 msgstr "Sprache"
-
 msgid "Latitude"
-
 msgstr "Breitengrad"
-
 msgid "letterbox"
-
 msgstr "Breitbild schmal wiedergeben"
-
 msgid "Listbox Select"
-
 msgstr "Listbox Auswahl"
-
 msgid "LNB Configuration"
-
 msgstr "LNB Einstellen"
-
 msgid "LNB Settings"
-
 msgstr "LNB Einstellungen"
-
 msgid "LNB"
-
 msgstr "LNB"
-
 msgid "loadpartition"
-
 msgstr "Lade Partition"
-
 msgid "LOF"
-
 msgstr "LOF"
-
 msgid "LOF/H"
-
 msgstr "LOF/H"
-
 msgid "LOF/L"
-
 msgstr "LOF/L"
-
 msgid "LOG (Text)"
-
 msgstr "LOG (Text)"
-
 msgid "logto"
-
 msgstr "Logge in Datei"
-
 msgid "Longitude"
-
 msgstr "Längengrad"
-
 msgid "m"
-
 msgstr "m"
-
 msgid "M"
-
 msgstr "M"
-
 msgid "Main Menu"
-
 msgstr "Hauptmenü"
-
 msgid "Manual Search"
-
 msgstr "Manuelle Suche"
-
 msgid "Manuel Scan"
-
 msgstr "Sendersuchlauf"
-
 msgid "maxdelay"
-
 msgstr "Maximale Verzögerung"
-
 msgid "maxrate"
-
 msgstr "Maximae Rate"
-
 msgid "MC VideoPlayer Imdb Settings"
-
 msgstr "MC VideoPlayer Imdb Einstellungen"
-
 msgid "MC VideoPlayer Sort Settings"
-
 msgstr "MC VideoPlayer Sortierreihenfolge"
-
 msgid "MC VideoPlayer View Settings"
-
 msgstr "MC VideoPlayer Einstellungen anzeigen"
-
 msgid "Media Center"
-
 msgstr "Media Center"
-
 msgid "Memory"
-
 msgstr "Speicher"
-
 msgid "Menu Protect"
-
 msgstr "Menü schützen"
-
 msgid "Menulist"
-
 msgstr "Menüliste"
-
 msgid "MENUPROTECT"
-
 msgstr "Menüschutz"
-
 msgid "Message"
-
 msgstr "Mitteilung"
-
 msgid "Minutes"
-
 msgstr "Minuten"
-
 msgid "Minutes:"
-
 msgstr "Minuten:"
-
 msgid "Modulation"
-
 msgstr "Modulation"
-
 msgid "Modulation:"
-
 msgstr "Modulation:"
-
 msgid "Module"
-
 msgstr "Module"
-
 msgid "Monday"
-
 msgstr "Montag"
-
 msgid "Mounts"
-
 msgstr "Mounts"
-
 msgid "move service"
-
 msgstr "Sender verschieben"
-
 msgid "Moviepath"
-
 msgstr "Ordner für Filme"
-
 msgid "MTD"
-
 msgstr "MTD"
-
 msgid "Multi EPG"
-
 msgstr "Multi EPG"
-
 msgid "MULTI EPG - All Channels"
-
 msgstr "MULTI EPG - Alle Sender"
-
 msgid "mvid"
-
 msgstr "mvid"
-
 msgid "My Video"
-
 msgstr "My Video"
-
 msgid "n"
-
 msgstr "n"
-
 msgid "N"
-
 msgstr "N"
-
 msgid "Name"
-
 msgstr "Name"
-
 msgid "Name:"
-
 msgstr "Name:"
-
 msgid "netmask"
-
 msgstr "Netzmaske"
-
 msgid "Network Adapter Settings"
-
 msgstr "Netzwerkadapter Einstellungen"
-
 msgid "Network Adapter Test"
-
 msgstr "Netzwerkadapter Test"
-
 msgid "Network Assistant"
-
 msgstr "Netzwerk Assistent"
-
 msgid "Network Interfacelist"
-
 msgstr "Netzwerkadapterliste"
-
 msgid "Network Restart"
-
 msgstr "Netzwerk neu starten"
-
 msgid "Network Scan"
-
 msgstr "Netzwerk durchsuchen"
-
 msgid "Network Test"
-
 msgstr "Netzwerk testen"
-
 msgid "Network"
-
 msgstr "Netzwerk"
-
 msgid "Networkbrowser"
-
 msgstr "Netzwerk Browser"
-
 msgid "Next"
-
 msgstr "Weiter"
-
 msgid "Nfs Server Settings"
-
 msgstr "NFS Server Einstellungen"
-
 msgid "nfsserver"
-
 msgstr "NFS-Server"
-
 msgid "nfs server"
-
 msgstr "NFS-Server"
-
 msgid "No Live Stream running"
-
 msgstr "Kein Stream aktiv"
-
 msgid "No"
-
 msgstr "Nein"
-
 msgid "No backup folders found!!!"
-
 msgstr "Kein Ordner für Datensicherung gefunden"
-
 msgid "non"
-
 msgstr "Originalgröße"
-
 msgid "noaudiosync"
-
 msgstr "noaudiosync"
-
 msgid "North / South"
-
 msgstr "Norden / Süden"
-
 msgid "nr_usbreaders"
-
 msgstr "Anzahl USB-Kartenleser"
-
 msgid "o"
-
 msgstr "o"
-
 msgid "O"
-
 msgstr "O"
-
 msgid "off"
-
 msgstr "aus"
-
 msgid "OK"
-
 msgstr "Ok"
-
 msgid "OK = start restore"
-
 msgstr "Ok = Wiederherstellung starten"
-
 msgid "oldaudiofw"
-
 msgstr "Alte Audio Firmware"
-
 msgid "Old Audiofw"
-
 msgstr "Alte Audio Firmware"
-
 msgid "oldvideofw"
-
 msgstr "Alte Video Firmware"
-
 msgid "ONID:"
-
 msgstr "ONID:"
-
 msgid "Only free scan"
-
 msgstr "Nur unverschlüsselte Sender"
-
 msgid "Only free channel scan"
-
 msgstr "Nur freie Sender suchen"
-
 msgid "only_boot_overclock"
-
 msgstr "Nur beim Start übertakten"
-
 msgid "Only Boot Overclock"
-
 msgstr "Nur beim Start übertakten"
-
 msgid "options"
-
 msgstr "Optionen"
-
 msgid "Orbital Position:"
-
 msgstr "Orbital Position"
-
 msgid "OSD Bottom Overscan"
-
 msgstr "OSD unten verkleinern"
-
 msgid "OSD Left Overscan"
-
 msgstr "OSD links verkleinern"
-
 msgid "OSD Right Overscan"
-
 msgstr "OSD rechts verkleinern"
-
 msgid "OSD Top Overscan"
-
 msgstr "OSD oben verkleinern"
-
 msgid "OSD Transparent"
-
 msgstr "OSD Transparenz"
-
 msgid "OverClock Settings"
-
 msgstr "OverClock Einstellungen"
-
 msgid "Overclocking"
-
 msgstr "Übertakten"
-
 msgid "p"
-
 msgstr "p"
-
 msgid "P"
-
 msgstr "P"
-
 msgid "panscan"
-
 msgstr "Zoom mit Randbeschnitt"
-
 msgid "password"
-
 msgstr "Passwort"
-
 msgid "Password"
-
 msgstr "Passwort"
-
 msgid "PCR PID:"
-
 msgstr "PCR PID:"
-
 msgid "Piconpath"
-
 msgstr "Speicherpfad für Picons"
-
 msgid "picons"
-
 msgstr "Senderlogos"
-
 msgid "Picture Player"
-
 msgstr "Picture Player"
-
 msgid "PICTURE SETTINGS"
-
 msgstr "Bildereinstellungen"
-
 msgid "PICTURE"
-
 msgstr "BILD"
-
 msgid "PIDs"
-
 msgstr "PIDs"
-
 msgid "Pilot"
-
 msgstr "Pilot (für HD Empfang 'ja' auswählen)"
-
 msgid "Pin Code Channel"
-
 msgstr "PIN Schutz für Kanal"
-
 msgid "Pin Code menu"
-
 msgstr "PIN Schutz für Menü"
-
 msgid "PIN Settings"
-
 msgstr "PIN Einstellungen"
-
 msgid "Pin"
-
 msgstr "Pin"
-
 msgid "PIN:"
-
 msgstr "PIN:"
-
 msgid "pingserver"
-
 msgstr "Server anpingen"
-
 msgid "pingtimeout"
-
 msgstr "Ping Zeitüberschreitung"
-
 msgid "PinOn"
-
 msgstr "PIN auf"
-
 msgid "pl2303"
-
 msgstr "PL2303-Treiber"
-
 msgid "PlayList - select your playlist !"
-
 msgstr "PlayList - wähle deine Liste"
-
 msgid "Playlist-Mode"
-
 msgstr "Playlist-Modus"
-
 msgid "PlayList"
-
 msgstr "PlayList"
-
 msgid "playlist"
-
 msgstr "Playlist"
-
 msgid "pll0_ndiv_mdiv"
-
 msgstr "PLL0 ndiv mdiv"
-
 msgid "pll1_fdma_bypass"
-
 msgstr "PLL1 FDMA Bypass"
-
 msgid "pll1_ndiv_mdiv"
-
 msgstr "PLL1 ndiv mdiv"
-
 msgid "Plugins"
-
 msgstr "Zusatzprogramme"
-
 msgid "plugload"
-
 msgstr "PlugIn laden"
-
 msgid "PMT PID:"
-
 msgstr "PMT PID:"
-
 msgid "Polarization"
-
 msgstr "Polarisation"
-
 msgid "Polarization:"
-
 msgstr "Polarisation:"
-
 msgid "Policy"
-
 msgstr "Regelwerk"
-
 msgid "Polish"
-
 msgstr "Polnisch"
-
 msgid "portmap"
-
 msgstr "Port Weiterleitung"
-
 msgid "Power action"
-
 msgstr "Aktion bei Druck der Powertaste"
-
 msgid "Power Off Timer"
-
 msgstr "Ausschalttimer"
-
 msgid "Power Off"
-
 msgstr "Ausschalten"
-
 msgid "Poweroff Timer"
-
 msgstr "Ausschalttimer"
-
 msgid "Poweroff"
-
 msgstr "Ausschalten"
-
 msgid "poweroff"
-
 msgstr "Ausschalten"
-
 msgid "Prev"
-
 msgstr "Zurück"
-
 msgid "profile"
-
 msgstr "Profil"
-
 msgid "Program Info"
-
 msgstr "Programm Information"
-
 msgid "progressbar"
-
 msgstr "Fortschrittsbalken"
-
 msgid "Protect Channel"
-
 msgstr "Kanal mit PIN schützen"
-
 msgid "Protect Menu"
-
 msgstr "Menü mit PIN schützen"
-
 msgid "protect service"
-
 msgstr "Sender mit Pin schützen"
-
 msgid "protocol"
-
 msgstr "Protokoll"
-
 msgid "Prov"
-
 msgstr "Provider"
-
 msgid "Provider:"
-
 msgstr "Provider:"
-
 msgid "proxyauth"
-
 msgstr "Proxy Authentifizierung"
-
 msgid "proxyip"
-
 msgstr "IP für Proxyserver"
-
 msgid "proxypass"
-
 msgstr "Passwort für Proxyserver"
-
 msgid "proxyport"
-
 msgstr "Port für Proxyserver"
-
 msgid "proxyuser"
-
 msgstr "Benutzername für Proxyserver"
-
 msgid "q"
-
 msgstr "q"
-
 msgid "Q"
-
 msgstr "Q"
-
 msgid "r"
-
 msgstr "r"
-
 msgid "R"
-
 msgstr "R"
-
 msgid "Radio (Info)"
-
 msgstr "Radio (Info)"
-
 msgid "radiologos"
-
 msgstr "Radiologos"
-
 msgid "Radio Player"
-
 msgstr "Radio Player"
-
 msgid "Ram"
-
 msgstr "Ram"
-
 msgid "Random"
-
 msgstr "Zufällig"
-
 msgid "Random-On"
-
 msgstr "Zufällig-Ein"
-
 msgid "rcreboot"
-
 msgstr "RC Neustart"
-
 msgid "Realy Delete ?"
-
 msgstr "wirklich löschen?"
-
 msgid "Realy restore default settings ?"
-
 msgstr "auf Werkseinstellung zur�cksetzen"
-
 msgid "Record / Timeshift / Stream"
-
 msgstr "Aufnahme / Timeshift / Stream"
-
 msgid "Record Forerun (min)"
-
 msgstr "Vorlaufzeit (min)"
-
 msgid "Record Overrun (min)"
-
 msgstr "Nachlaufzeit (min)"
-
 msgid "Record Path"
-
 msgstr "Ordner für Aufnahme"
-
 msgid "Record Split Size"
-
 msgstr "Split Größe für Aufnahmen"
-
 msgid "Record Timer"
-
 msgstr "Aufnahme Timer"
-
 msgid "Records and EPG ..."
-
 msgstr "Aufnahme und EPG"
-
 msgid "record_max_sectors"
-
 msgstr "Max. Aufnahme Sektoren"
-
 msgid "record_split_size"
-
 msgstr "Größe der geteilten Dateien"
-
 msgid "record_split_type"
-
 msgstr "Typ der Aufnahmeteilung"
-
 msgid "Red Button"
-
 msgstr "Rote Taste"
-
 msgid "Reduce Standby frequency"
-
 msgstr "CPU Frequenz im Standby reduzieren"
-
 msgid "Repeat-On"
-
 msgstr "Repeat-Ein"
-
 msgid "RESET"
-
 msgstr "Reset"
-
 msgid "Restore default settings"
-
 msgstr "Werkseinstellung"
-
 msgid "RESTORE ERROR"
-
 msgstr "Fehler bei der Wiederherstellung!"
-
 msgid "Restore Settings"
-
 msgstr "Einstellungen wiederherstellen"
-
 msgid "Refresh"
-
 msgstr "Aktualisieren"
-
 msgid "RELOAD"
-
 msgstr "Neu laden"
-
 msgid "remove service"
-
 msgstr "Sender löschen"
-
 msgid "repairmodus"
-
 msgstr "Reparaturmodus"
-
 msgid "Repeat type"
-
 msgstr "Wiederholungsart"
-
 msgid "Repeat"
-
 msgstr "Wiederholen"
-
 msgid "Resolution (default)"
-
 msgstr "Auflösung (Standard)"
-
 msgid "Resolution Settings"
-
 msgstr "Auflösung"
-
 msgid "Resolution:"
-
 msgstr "Auflösung"
-
 msgid "Restart Network ?"
-
 msgstr "Netzwerk neu Starten?"
-
 msgid "Restart Network"
-
 msgstr "Netzwerk wird neu gestartet"
-
 msgid "Restart Titan"
-
 msgstr "Titan neu starten"
-
 msgid "Restart"
-
 msgstr "Neustart"
-
 msgid "Restore"
-
 msgstr "Wiederherstellung"
-
 msgid "reverse alpha"
-
 msgstr "Alpha zurücksetzen"
-
 msgid "reverse date"
-
 msgstr "Datum zurücksetzen"
-
 msgid "reverse size"
-
 msgstr "Größe zurücksetzen"
-
 msgid "rmcrashlog"
-
 msgstr "Crashlog l�schen"
-
 msgid "rmemthy"
-
 msgstr "lehre Verzeichnisse l�schen"
-
 msgid "Rolloff"
-
 msgstr "Abtastfrequenz"
-
 msgid "Rolloff:"
-
 msgstr "Abtastfrequenz:"
-
 msgid "Rotor Position"
-
 msgstr "Rotor Position"
-
 msgid "Rotor Settings"
-
 msgstr "Rotor Einstellungen"
-
 msgid "rsize"
-
 msgstr "rsize"
-
 msgid "Russian"
-
 msgstr "Russisch"
-
 msgid "s"
-
 msgstr "s"
-
 msgid "S"
-
 msgstr "S"
-
 msgid "Samba Server Settings"
-
 msgstr "Samba Server Einstellungen"
-
 msgid "sambaserver"
-
 msgstr "Samba Server"
-
 msgid "samba server"
-
 msgstr "Samba Server"
-
 msgid "Sat Config"
-
 msgstr "Satelliten Einstellung"
-
 msgid "Satelite Type"
-
 msgstr "Satelliten Auswahl"
-
 msgid "sat_single"
-
 msgstr "Einzel Satellit Einstellung"
-
 msgid "sat_diseqc_ab"
-
 msgstr "DiSEqC A/B Einstellung"
-
 msgid "sat_diseqc_abcd"
-
 msgstr "DiSEqC A/B/B/C Einstellung"
-
 msgid "sat_diseqc_abcdefgh"
-
 msgstr "DiSEqC A/B/B/C/E/F/G/H Einstellung"
-
 msgid "sat_expert"
-
 msgstr "Experten Satellit Einstellung"
-
 msgid "Sat Finder"
-
 msgstr "Satellitenfinder"
-
 msgid "SAT"
-
 msgstr "Single Satelite"
-
 msgid "Einzelner Satellite"
-
 msgstr "Satelliten"
-
 msgid "Satellite"
-
 msgstr "Satellit"
-
 msgid "Satellites"
-
 msgstr "Satelliten"
-
 msgid "Saturation"
-
 msgstr "Sättigung"
-
 msgid "Saturday"
-
 msgstr "Samstag"
-
 msgid "Save Settings"
-
 msgstr "Einstellungen speichern?"
-
 msgid "Save"
-
 msgstr "Speichern"
-
 msgid "SAVE"
-
 msgstr "Speichern"
-
 msgid "save network settings ?"
-
 msgstr "Netzwerkeinstellungen speichern?"
-
 msgid "Scan"
-
 msgstr "Suche"
-
 msgid "Scan is not allowed if record"
-
 msgstr "Während der Aufnahme ist keine Suche möglich"
-
 msgid "Scan Config"
-
 msgstr "Sendersuchlaufs Einstellungen"
-
 msgid "scan wlan"
-
 msgstr "Suche WLAN"
-
 msgid "scartonstandby"
-
 msgstr "Scart im Standby"
-
 msgid "Scart-Recorder"
-
 msgstr "Scart Eingang"
-
 msgid "Screensaver Adjust"
-
 msgstr "Bildschirmschoner Einstellungen"
-
 msgid "screensaver background"
-
 msgstr "Bildschirmschoner Hintergrund"
-
 msgid "screensaver delay"
-
 msgstr "Bildschirmschoner Verzögerung"
-
 msgid "screensaver interval"
-
 msgstr "Bildschirmschoner Intervall"
-
 msgid "screensaver pic"
-
 msgstr "Bildschirmschoner Bild"
-
 msgid "screensaver type"
-
 msgstr "Bildschirmschoner Typ"
-
 msgid "screensaver"
-
 msgstr "Bildschirmschoner"
-
 msgid "Screensaver"
-
 msgstr "Bildschirmschoner"
-
 msgid "Second Infobar"
-
 msgstr "Zweite Infobar"
-
 msgid "Select backup:"
-
 msgstr "Wiederherstellung auswählen"
-
 msgid "Select Path"
-
 msgstr "Pfadauswahl"
-
 msgid "Service"
-
 msgstr "Sender"
-
 msgid "Serviceinfo"
-
 msgstr "Senderinfo"
-
 msgid "set startchannel"
-
 msgstr "Startsender einstellen"
-
 msgid "Settings succesfull saved"
-
 msgstr "Einstellungen erfolgreich gespeichert"
-
 msgid "Settings backup/restore"
-
 msgstr "Einstellungen Sichern/Wiederherstellen"
-
 msgid "Settings"
-
 msgstr "Einstellungen"
-
 msgid "Settings..."
-
 msgstr "Einstellungen"
-
 msgid "Share Settings"
-
 msgstr "Freigabe Einstellungen"
-
 msgid "sharedir"
-
 msgstr "Speicherort auf entferntem Rechner"
-
 msgid "sharename"
-
 msgstr "Sharename"
-
 msgid "Should Timeshift File deleted ?"
-
 msgstr "Soll die Timeshift Datei gelöscht werden?"
-
 msgid "Show EPG screen (EPG button)"
-
 msgstr "Zeige EPG (EPG Taste)"
-
 msgid "Show in Standby"
-
 msgstr "Im Standby anzeigen"
-
 msgid "Show in VFD"
-
 msgstr "Im Display zeigen"
-
 msgid "showip"
-
 msgstr "Zeige IP Adresse"
-
 msgid "showtvinfo"
-
 msgstr "Zeige TV Info"
-
 msgid "SID:"
-
 msgstr "SID"
-
 msgid "Signal:"
-
 msgstr "Signal:"
-
 msgid "Single EPG"
-
 msgstr "Single EPG"
-
 msgid "size"
-
 msgstr "Größe"
-
 msgid "Skin Adjust"
-
 msgstr "Skin Einstellungen"
-
 msgid "Skin Select"
-
 msgstr "Skinauswahl"
-
 msgid "Skin"
-
 msgstr "Skin"
-
 msgid "skins"
-
 msgstr "Skins"
-
 msgid "Skip 1/3"
-
 msgstr "Sprungzeit auf den Tasten 1+3 in Sekunden"
-
 msgid "Skip 4/6"
-
 msgstr "Sprungzeit auf den Tasten 4+6 in Sekunden"
-
 msgid "Skip 7/9"
-
 msgstr "Sprungzeit auf den Tasten 7+9 in Sekunden"
-
 msgid "small"
-
 msgstr "klein"
-
 msgid "SNR:"
-
 msgstr "SNR:"
-
 msgid "Softcam Panel"
-
 msgstr "Softcam Einstellungen"
-
 msgid "Softcam selection"
-
 msgstr "Softcam auswählen:"
-
 msgid "Sort"
-
 msgstr "Sortieren"
-
 msgid "Sorting"
-
 msgstr "Sortierung"
-
 msgid "Sound"
-
 msgstr "Sound"
-
 msgid "Space"
-
 msgstr "Space"
-
 msgid "speed"
-
 msgstr "Geschwindigkeit"
-
 msgid "Spinnerspeed"
-
 msgstr "Spinnergeschwindigkeit"
-
 msgid "Spinnertime"
-
 msgstr "Spinnerzeit"
-
 msgid "ssl"
-
 msgstr "ssl"
-
 msgid "Standby / Poweroff"
-
 msgstr "Standby / Ausschalten"
-
 msgid "Standby / Poweroff..."
-
 msgstr "Standby / Ausschalten"
-
 msgid "Standby Brightness"
-
 msgstr "Standby Helligkeit"
-
 msgid "Standby Mode"
-
 msgstr "Standby Modus"
-
 msgid "Standby"
-
 msgstr "Standby"
-
 msgid "standby_freq"
-
 msgstr "Standby Frequenz"
-
 msgid "Standby frequency"
-
 msgstr "Eingestellte CPU Frequenz im Standby"
-
 msgid "standby_overclock"
-
 msgstr "Übertakten im Standby"
-
 msgid "Start HTTPD"
-
 msgstr "Starte HTTPD"
-
 msgid "Start"
-
 msgstr "Anfang"
-
 msgid "start QtBrowser now ?"
-
 msgstr "Soll der QtBrowser gestartet werden?"
-
 msgid "STOP/START"
-
 msgstr "STOP/START"
-
 msgid "stream is running !"
-
 msgstr "Aufnahme läuft !"
-
 msgid "Stream Path"
-
 msgstr "Ordner für Stream"
-
 msgid "Streaming"
-
 msgstr "Streaming"
-
 msgid "Style"
-
 msgstr "Style"
-
 msgid "Subtitle"
-
 msgstr "Untertitel"
-
 msgid "Sunday"
-
 msgstr "Sonntag"
-
 msgid "Swap"
-
 msgstr "Swap"
-
 msgid "swap"
-
 msgstr "Swap"
-
 msgid "swapemus"
-
 msgstr "Swap-Emus"
-
 msgid "swap_max_sectors"
-
 msgstr "max. Swap Sektoren"
-
 msgid "swapnetwork"
-
 msgstr "Swap-Netzwerk"
-
 msgid "swapscreensaver"
-
 msgstr "Swap-Bildschirmschoner"
-
 msgid "swapskins"
-
 msgstr "Swap-Skins"
-
 msgid "swapsystem"
-
 msgstr "Swap-System"
-
 msgid "swapsize"
-
 msgstr "Swap Größe"
-
 msgid "swapsystems"
-
 msgstr "Swap-System"
-
 msgid "Switch"
-
 msgstr "Umschalten"
-
 msgid "swts"
-
 msgstr "swts"
-
 msgid "Symbol rate:"
-
 msgstr "Symbolrate"
-
 msgid "Symbolrate"
-
 msgstr "Symbolrate"
-
 msgid "Sysinfo"
-
 msgstr "Systeminformation"
-
 msgid "System - Flashupdate (online)"
-
 msgstr "System - Flashupdate (Internet)"
-
 msgid "System - Flashupdate (tmp)"
-
 msgstr "System - Flashupdate (Lokal)"
-
 msgid "System - Usbupdate (online)"
-
 msgstr "System - USB-Update (Internet)"
-
 msgid "System - Usbupdate (tmp)"
-
 msgstr "System - USB-Update (Lokal)"
-
 msgid "System Info"
-
 msgstr "System Infos"
-
 msgid "System"
-
 msgstr "System"
-
 msgid "System..."
-
 msgstr "System"
-
 msgid "System:"
-
 msgstr "System:"
-
 msgid "szap"
-
 msgstr "sZap"
-
 msgid "szap_diseqc_repeat"
-
 msgstr "sZap DiSEqC Wiederholung"
-
 msgid "szap_emul"
-
 msgstr "sZap EMU"
-
 msgid "szap_frontend"
-
 msgstr "sZap Front-End"
-
 msgid "szaplong"
-
 msgstr "langer sZap "
-
 msgid "t"
-
 msgstr "t"
-
 msgid "T"
-
 msgstr "T"
-
 msgid "telnet"
-
 msgstr "Telnet"
-
 msgid "Test frequency"
-
 msgstr "Frequenz testen"
-
 msgid "TEST"
-
 msgstr "TEST"
-
 msgid "thereafter on this Channel:"
-
 msgstr "danach auf diesem Sender:"
-
 msgid "Threshold"
-
 msgstr "Grenzwert"
-
 msgid "Thursday"
-
 msgstr "Donnerstag"
-
 msgid "Time to sleep"
-
 msgstr "Festplattenstandby"
-
 msgid "Timer Record Path"
-
 msgstr "Ordner für Timeraufnahne"
-
 msgid "Timer"
-
 msgstr "Aufnahmemen�"
-
 msgid "time"
-
 msgstr "Uhrzeit"
-
 msgid "time + channel"
-
 msgstr "Uhrzeit + Sendername"
-
 msgid "Timeshift Path"
-
 msgstr "Ordner für Timeshift"
-
 msgid "Timeshift is running !!!\nStop it and switch ?"
-
 msgstr "Timeshift läuft !!!\nAusschalten und Umschalten ?"
-
 msgid "Timezone"
-
 msgstr "Zeitzone"
-
 msgid "Tint"
-
 msgstr "Sättigung"
-
 msgid "Tone Burst"
-
 msgstr "Tone Burst"
-
 msgid "Tone Mode"
-
 msgstr "Tone Modus"
-
 msgid "Top"
-
 msgstr "Top (Prozesse)"
-
 msgid "Transponder:"
-
 msgstr "Transponder:"
-
 msgid "TSID:"
-
 msgstr "TSID:"
-
 msgid "Tuesday"
-
 msgstr "Dienstag"
-
 msgid "Tuner Configuration"
-
 msgstr "Tuner Einstellen"
-
 msgid "Tuner Reception"
-
 msgstr "Tuner Empfang"
-
 msgid "Tuner"
-
 msgstr "Tuner"
-
 msgid "Tuner:"
-
 msgstr "Tuner:"
-
 msgid "tuner_sleep_off"
-
 msgstr "Tuner im Ruhezustand aus"
-
 msgid "Tunerconfig"
-
 msgstr "Tuner Einstellungen"
-
 msgid "tuxtxt_cpufrequ_workaround"
-
 msgstr "Teletext CPU Frequenz fix"
-
 msgid "TV (Info)"
-
 msgstr "TV (Info)"
-
 msgid "TXT PID:"
-
 msgstr "TXT PID:"
-
 msgid "Type of Scan"
-
 msgstr "Art des Suchlaufs"
-
 msgid "type"
-
 msgstr "tippen"
-
 msgid "Type"
-
 msgstr "Typ"
-
 msgid "Type:"
-
 msgstr "Typ:"
-
 msgid "u"
-
 msgstr "u"
-
 msgid "U"
-
 msgstr "U"
-
 msgid "UNC:"
-
 msgstr "UNC:"
-
 msgid "Uncommitted Diseqc command"
-
 msgstr "Fehlerhafter DiSEqC Befehl"
-
 msgid "Unicable Configuration"
-
 msgstr "Unicable Einstellen"
-
 msgid "unknown"
-
 msgstr "unbekannt"
-
 msgid "UNLOAD"
-
 msgstr "UNLOAD"
-
 msgid "update"
-
 msgstr "aktualisieren"
-
 msgid "Update"
-
 msgstr "Aktualisierung"
-
 msgid "updatelist"
-
 msgstr "Update Liste"
-
 msgid "Usb Device"
-
 msgstr "USB Geräte"
-
 msgid "Usbupdate (online)"
-
 msgstr "USB Aktualisierung (Internet)"
-
 msgid "Usbupdate (tmp)"
-
 msgstr "USB Aktualisierung (Lokal)"
-
 msgid "Use EPG Endtime"
-
 msgstr "Zum Sendungsende"
-
 msgid "Use Teletxt Workaround"
-
 msgstr "Workaround für Videotext nutzen"
-
 msgid "use ssl"
-
 msgstr "SSL Benutzen"
-
 msgid "useproxy"
-
 msgstr "Benutze Proxy"
-
 msgid "userauth"
-
 msgstr "Benutzer Authentifizierung"
-
 msgid "User"
-
 msgstr "Benutzer"
-
 msgid "username"
-
 msgstr "Benutzername"
-
 msgid "v"
-
 msgstr "v"
-
 msgid "V"
-
 msgstr "V"
-
 msgid "VFDisplay"
-
 msgstr "VFDisplay"
-
 msgid "Video PID:"
-
 msgstr "Video PID:"
-
 msgid "Video Player"
-
 msgstr "Video Player"
-
 msgid "Video Settings"
-
 msgstr "Bild Einstellungen"
-
 msgid "VIDEO SETTINGS"
-
 msgstr "BILD EINSTELLUNGEN"
-
 msgid "Video"
-
 msgstr "Bild"
-
 msgid "VIDEO"
-
 msgstr "BILD"
-
 msgid "VideoMode Aspect Settings"
-
 msgstr "Bild Seitenverhältnis Einstellungen"
-
 msgid "VideoMode Resolution Settings"
-
 msgstr "Bild Auflösung Einstellungen"
-
 msgid "VideoMode Settings"
-
 msgstr "Bild Einstellungen"
-
 msgid "Videotune"
-
 msgstr "Bild Einstellungen"
-
 msgid "View"
-
 msgstr "Zeige"
-
 msgid "Virtualzap Timeout"
-
 msgstr "Virtualzap Timeout"
-
 msgid "VLC Player"
-
 msgstr "VLC Player"
-
 msgid "Voltage Mode"
-
 msgstr "Spannung Modus"
-
 msgid "Volume off"
-
 msgstr "Lautstärke aus"
-
 msgid "Volumebar Timeout"
-
 msgstr "Lautstärkeanzeige ausblenden (sek)"
-
 msgid "w"
-
 msgstr "w"
-
 msgid "W"
-
 msgstr "W"
-
 msgid "Wait for channel scan end"
-
 msgstr "Sendersuchlauf, warte bis zum Ende."
-
 msgid "wait for stopping download"
-
 msgstr "Warten, Download wird gestoppt."
-
 msgid "Weather Info"
-
 msgstr "Wetter Infos"
-
 msgid "Web Radio Player"
-
 msgstr "Web Radio Player"
-
 msgid "webif"
-
 msgstr "Web Interface"
-
 msgid "Wednesday"
-
 msgstr "Mittwoch"
-
 msgid "wlan"
-
 msgstr "Wireless Lan"
-
 msgid "wsize"
-
 msgstr "wsize"
-
 msgid "x"
-
 msgstr "x"
-
 msgid "X"
-
 msgstr "X"
-
 msgid "y"
-
 msgstr "y"
-
 msgid "Y"
-
 msgstr "Y"
-
 msgid "z"
-
 msgstr "z"
-
 msgid "Z"
-
 msgstr "Z"
