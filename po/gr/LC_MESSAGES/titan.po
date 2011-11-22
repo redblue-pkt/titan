@@ -27,14 +27,6 @@ msgid "A"
 
 msgstr "A"
 
-msgid "Beta Config"
-
-msgstr "Beta Ρύθμιση"
-
-msgid "Info"
-
-msgstr "Πληροφορίες"
-
 msgid "Panel"
 
 msgstr "Panel"
