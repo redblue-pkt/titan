@@ -42,10 +42,6 @@ msgid "A/V Settings"
 
 msgstr "Bild / Ton Einstellen"
 
-msgid "Beta Config"
-
-msgstr "Beta Einstellen"
-
 msgid "Panel"
 
 msgstr "Panel"
