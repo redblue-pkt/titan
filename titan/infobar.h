@@ -173,6 +173,16 @@ void screeninfobar()
 			subtitlepause(0);
 			continue;
 		}
+		if(rcret == getrcconfigint("rcsubtitel", NULL))
+		{
+			subtitlepause(1);
+			status.infobar = 0;
+			clearscreen(infobar);
+			screensubtitle();
+			drawscreen(skin, 0);
+			subtitlepause(0);
+			continue;
+		}
 		if(rcret == getrcconfigint("rcyellow", NULL))
 		{
 			subtitlepause(1);
