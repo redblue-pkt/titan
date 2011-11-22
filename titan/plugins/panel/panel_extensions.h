@@ -15,6 +15,9 @@ void screenpanel_extensions(int mode)
 		free(section); section = NULL;
 //		char* section = ostrcat(section, ipklistbox(NULL, tmpstr, NULL, "Ipk Install - select section", "%pluginpath%/panel/skin/", 1), 1, 1);
 		section = ipklistbox(NULL, tmpstr, NULL, "Ipk Install - select section", "%pluginpath%/panel/skin/", 1);
+		if(tmpstr == NULL){
+			textbox(_("Ipk Install Info"), _("No section found"), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+		}
 		free(tmpstr); tmpstr = NULL;
 
 		debug(60, "section: %s", section);
@@ -75,6 +78,9 @@ void screenpanel_extensions(int mode)
 		tmpstr = get_ipk_tmplistinstall();
 		free(file); file = NULL;
 		file = ipklistbox(NULL, tmpstr, NULL, "Ipk Tmp Install - select file", "%pluginpath%/panel/skin/", 0);
+		if(tmpstr == NULL){
+			textbox(_("Ipk Tmp Info"), _("No IPK found in /tmp"), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+		}
 		free(tmpstr); tmpstr = NULL;
 		debug(60, "file: %s", file);
 		if(file != NULL)
