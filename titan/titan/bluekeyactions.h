@@ -12,7 +12,7 @@ void screenbluekeyactions()
 	bluekey = getconfig("bluekey", NULL);
 	if(bluekey == NULL)
 	{
-		bluekeyactions_setres();
+		screengmultiepg(NULL, NULL, 0);
 		return;
 	}
 	
@@ -31,7 +31,7 @@ void screenbluekeyactions()
 			return;
 		}
 	}
-	else if(ostrcmp(bluekey, "Auto Resolution (default)") == 0)
+	else if(ostrcmp(bluekey, "Auto Resolution") == 0)
 	{
 		bluekeyactions_setres();
 		return;

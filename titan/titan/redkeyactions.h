@@ -30,7 +30,7 @@ void screenredkeyactions()
 			return;
 		}
 	}
-	else if(ostrcmp(redkey, "Auto Resolution (default)") == 0)
+	else if(ostrcmp(redkey, "Auto Resolution") == 0)
 	{
 		bluekeyactions_setres();
 		return;

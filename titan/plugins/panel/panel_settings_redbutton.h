@@ -8,7 +8,7 @@ void screenpanel_settings_redbutton()
 	struct skin* plugin = getscreen("plugin");
 	struct skin* child = plugin->child;
 	char* tmpstr = NULL;
-	tmpstr = ostrcat(tmpstr, "Extentions List (default)\n", 1, 0);
+	tmpstr = ostrcat(tmpstr, "Extentions List\n", 1, 0);
 	if(checkemu() == 1)
 		tmpstr = ostrcat(tmpstr, "Softcam Panel\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, "Auto Resolution\n", 1, 0);
@@ -39,7 +39,7 @@ void screenpanel_settings_redbutton()
 	}
 	debug(60, "(new) Redkey=%s", mlistbox);
 
-	if(ostrcmp(mlistbox, "Extentions List (default)") == 0)
+	if(ostrcmp(mlistbox, "Extentions List") == 0)
 		delconfig("redkey");
 	else
 		addconfig("redkey", mlistbox);
