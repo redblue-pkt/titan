@@ -161,6 +161,10 @@ cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/rc_virtual."$TY
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/rc_virtual.*.html
 cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/index."$TYPE".html "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/index.html
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/index.*.html
+
+cp -a "$HOME"/flashimg/BUILD/titan/var/etc/titan/rcconfig."$TYPE" "$HOME"/flashimg/BUILD/titan/var/etc/titan/rcconfig
+rm -rf "$HOME"/flashimg/BUILD/titan/var/etc/titan/rcconfig.*
+
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type d -name "*.svn"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.h"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.c"`
