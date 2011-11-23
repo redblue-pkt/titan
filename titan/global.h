@@ -40,6 +40,8 @@ int checkmenuforbox(char *name)
 		if(ostrcmp("panel_system_update_usb_tmp", name) == 0) return 0;
 		if(ostrcmp("panel_extensions_menu", name) == 0) return 0;
 		if(ostrcmp("panel_system_backup", name) == 0) return 0;
+		if(ostrcmp("sambasettings", name) == 0) return 0;
+		if(ostrcmp("nfssettings", name) == 0) return 0;
 	}
 	return 1;
 }
