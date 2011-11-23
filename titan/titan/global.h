@@ -2382,8 +2382,6 @@ char* getvideomodechoices()
 		value = string_replace("  ", " ", value, 1);
 		value = string_replace("1080p59", "", value, 1);
 		value = string_replace("  ", " ", value, 1);
-		value = string_replace("1080p50", "", value, 1);
-		value = string_replace("  ", " ", value, 1);
 		value = string_replace("1080p30", "", value, 1);
 		value = string_replace("  ", " ", value, 1);
 		value = string_replace("1080p25", "", value, 1);
