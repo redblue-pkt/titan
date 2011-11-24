@@ -47,7 +47,18 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 	{
 		tmp->type = CHOICEBOX;
 		changetext(tmp, _("Satelite Type"));
-		changeinput(tmp, _("Single\nDiSEqC A/B\nDiSEqC A/B/C/D\nDiSEqC A/B/C/D/E/F/G/H\nExpert"));
+		
+		tmpstr = ostrcat(_("Single"), "\n", 0, 0);
+		tmpstr = ostrcat(tmpstr, _("DiSEqC A/B"), 1, 0);
+		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+		tmpstr = ostrcat(tmpstr, _("DiSEqC A/B/C/D"), 1, 0);
+		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+		tmpstr = ostrcat(tmpstr, _("DiSEqC A/B/C/D/E/F/G/H"), 1, 0);
+		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+		tmpstr = ostrcat(tmpstr, _("Expert"), 1, 0);
+//		changeinput(tmp, _("Single\nDiSEqC A/B\nDiSEqC A/B/C/D\nDiSEqC A/B/C/D/E/F/G/H\nExpert"));
+		changeinput(tmp, tmpstr);
+
 		changechoiceboxvalue(tmp, "0\n1\n2\n3\n4");
 		changename(tmp, "sat_type");
 
@@ -105,7 +116,9 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 			changetext(tmp, tmpstr);
 			free(tmpstr); tmpstr = NULL;
 
-			tmpstr = ostrcat(_("undefined\n"), satstring, 0, 0);
+			tmpstr = ostrcat(_("undefined"), "\n", 0, 0);
+			tmpstr = ostrcat(tmpstr, satstring, 1, 0);
+				
 			changeinput(tmp, tmpstr);
 			free(tmpstr); tmpstr = NULL;
 
@@ -129,8 +142,9 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 			if(tmp != NULL)
 			{
 				tmp->type = CHOICEBOX;
-				changetext(tmp, "DiSEqC");
-				tmpstr = ostrcat(_("no\n"), maxsatstring, 0, 0);
+				changetext(tmp, _("DiSEqC"));
+				tmpstr = ostrcat(_("no"), "\n", 0, 0);
+				tmpstr = ostrcat(tmpstr, maxsatstring, 1, 0);
 				tmpstr = stringreplacecharonce(tmpstr, '1', 'A');
 				tmpstr = stringreplacecharonce(tmpstr, '2', 'B');
 				changechoiceboxvalue(tmp, tmpstr);
@@ -157,8 +171,9 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 			if(tmp != NULL)
 			{
 				tmp->type = CHOICEBOX;
-				changetext(tmp, "DiSEqC");
-				tmpstr = ostrcat(_("no\n"), maxsatstring, 0, 0);
+				changetext(tmp, _("DiSEqC"));
+				tmpstr = ostrcat(_("no"), "\n", 0, 0);
+				tmpstr = ostrcat(tmpstr, maxsatstring, 1, 0);
 				tmpstr = stringreplacecharonce(tmpstr, '1', 'A');
 				tmpstr = stringreplacecharonce(tmpstr, '2', 'B');
 				tmpstr = stringreplacecharonce(tmpstr, '3', 'C');
@@ -187,8 +202,9 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 			if(tmp != NULL)
 			{
 				tmp->type = CHOICEBOX;
-				changetext(tmp, "DiSEqC");
-				tmpstr = ostrcat(_("no\n"), maxsatstring, 0, 0);
+				changetext(tmp, _("DiSEqC"));
+				tmpstr = ostrcat(_("no"), "\n", 0, 0);
+				tmpstr = ostrcat(tmpstr, maxsatstring, 1, 0);
 				tmpstr = stringreplacecharonce(tmpstr, '1', 'A');
 				tmpstr = stringreplacecharonce(tmpstr, '2', 'B');
 				tmpstr = stringreplacecharonce(tmpstr, '3', 'C');
@@ -219,8 +235,9 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 			if(tmp != NULL)
 			{
 				tmp->type = CHOICEBOX;
-				changetext(tmp, "DiSEqC");
-				tmpstr = ostrcat(_("no\n"), maxsatstring, 0, 0);
+				changetext(tmp, _("DiSEqC"));
+				tmpstr = ostrcat(_("no"), "\n", 0, 0);
+				tmpstr = ostrcat(tmpstr, maxsatstring, 1, 0);
 				changechoiceboxvalue(tmp, tmpstr);
 				changeinput(tmp, tmpstr);
 				free(tmpstr); tmpstr = NULL;
@@ -243,7 +260,7 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 		if(tmp != NULL)
 		{
 			tmp->type = CHOICEBOX;
-			changetext(tmp, "Lnb / Unicable");
+			changetext(tmp, _("Lnb / Unicable"));
 			changeinput(tmp, _("press ok"));
 			changechoiceboxvalue(tmp, _("press ok"));
 
@@ -257,7 +274,8 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 		{
 			tmp->type = CHOICEBOX;
 			changetext(tmp, _("Rotor Position"));
-			tmpstr = ostrcat(_("no\n"), maxsatstring, 0, 0);
+			tmpstr = ostrcat(_("no"), "\n", 0, 0);
+			tmpstr = ostrcat(tmpstr, maxsatstring, 1, 0);
 			changeinput(tmp, tmpstr);
 			free(tmpstr); tmpstr = NULL;
 		}
