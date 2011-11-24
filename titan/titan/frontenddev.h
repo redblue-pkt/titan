@@ -26,8 +26,8 @@ int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktnr, int 
 	tmpstr = ostrcat(node->feshortname, "_lnb_loftype", 0, 0);
 	loftype = getconfigint(tmpstr, feaktnr);
 	free(tmpstr); tmpstr = NULL;
-        switch(loftype)
-        {
+	switch(loftype)
+	{
 		case 1: //c-band
 			lofl = 5150 * 1000;
 			lofh = 5150 * 1000;
@@ -49,12 +49,15 @@ int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktnr, int 
 			tmpstr = ostrcat(node->feshortname, "_lnb_lofl", 0, 0);
 			lofl = getconfigint(tmpstr, feaktnr) * 1000;
 			free(tmpstr); tmpstr = NULL;
+			if(lofl == 0) lofl = 9750 * 1000;
 			tmpstr = ostrcat(node->feshortname, "_lnb_lofh", 0, 0);
 			lofh = getconfigint(tmpstr, feaktnr) * 1000;
 			free(tmpstr); tmpstr = NULL;
+			if(lofh == 0) lofh = 10600 * 1000;
 			tmpstr = ostrcat(node->feshortname, "_lnb_lofthreshold", 0, 0);
 			lofthreshold = getconfigint(tmpstr, feaktnr) * 1000;
 			free(tmpstr); tmpstr = NULL;
+			if(lofthreshold == 0) lofthreshold = 11700 * 1000;
 			tmpstr = ostrcat(node->feshortname, "_lnb_satcrfrequ", 0, 0);
 			satcrfrequ = getconfigint(tmpstr, feaktnr) * 1000;
 			free(tmpstr); tmpstr = NULL;
@@ -63,7 +66,7 @@ int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktnr, int 
 			lofl = 9750 * 1000;
 			lofh = 10600 * 1000;
 			lofthreshold = 11700 * 1000;
-        }
+	}
 
 	if(lofthreshold && lofh && frequency >= lofthreshold)
 	{
