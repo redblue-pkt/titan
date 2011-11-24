@@ -42,6 +42,7 @@ int checkmenuforbox(char *name)
 		if(ostrcmp("panel_system_backup", name) == 0) return 0;
 		if(ostrcmp("sambasettings", name) == 0) return 0;
 		if(ostrcmp("nfssettings", name) == 0) return 0;
+		if(ostrcmp("panel_infos_kernel", name) == 0) return 0;
 	}
 	return 1;
 }
