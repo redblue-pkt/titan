@@ -804,7 +804,8 @@ void fesetunicable(struct dvbdev* node)
 	}
 
 	tmpstr = ostrcat(node->feshortname, "_lnb_satcr", 0, 0);
-	int satcr = getconfigint(tmpstr, node->feaktnr);
+	int satcr = getconfigint(tmpstr, node->feaktnr) - 1;
+	if(satcr < 0) satcr = 0;
 	free(tmpstr); tmpstr = NULL;
 
 	tmpstr = ostrcat(node->feshortname, "_diseqc", 0, 0);
