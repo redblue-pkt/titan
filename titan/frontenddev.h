@@ -1246,7 +1246,12 @@ void fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 	}
 	
 	if(node->feunicable == 1)
+	{
 		fesetunicable(node);
+		char* tmpstr = ostrcat(node->feshortname, "_lnb_satcrfrequ", 0, 0);
+		node->feloffrequency = getconfigint(tmpstr, node->feaktnr) * 1000;
+		free(tmpstr); tmpstr = NULL;
+	}
 
 #if DVB_API_VERSION >= 5
 	struct dtv_property p[10];
