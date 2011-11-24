@@ -840,7 +840,7 @@ void fesetunicable(struct dvbdev* node)
 
 	debug(200, "send diseqc unicable cmd (%s)", node->feshortname);
 	fediseqcsendmastercmd(node, &cmd, 100);
-	//fesetvoltage(node, SEC_VOLTAGE_13, 15);
+	fesetvoltage(node, SEC_VOLTAGE_13, 15);
 }
 
 //TODO
@@ -1079,9 +1079,6 @@ void feset(struct dvbdev* node, struct transponder* tpnode)
 		}
 		dvbnode = dvbnode->next;
 	}
-	
-	if(node->feunicable == 1)
-		fesetunicable(node);
 
 	calclof(node, tpnode, NULL, 0);
 
@@ -1247,6 +1244,9 @@ void fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 		debug(1000, "out-> NULL detect");
 		return;
 	}
+	
+	if(node->feunicable == 1)
+		fesetunicable(node);
 
 #if DVB_API_VERSION >= 5
 	struct dtv_property p[10];
