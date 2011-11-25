@@ -175,6 +175,9 @@ int createstartscreen()
 //exitcode: 1 power off
 //exitcode: 2 restart
 //exitcode: 3 Gui restart
+//flag: 0 do not check record
+//flag: 1 check record
+//flag: 2 check record / do write config
 void oshutdown(int exitcode, int flag)
 {
 	debug(1000, "in");
@@ -213,7 +216,14 @@ void oshutdown(int exitcode, int flag)
 
 	status.sec = 0;
 
-	if(flag != 2) writeallconfig(0);
+	if(flag != 2)
+	{
+		int epgsave = getconfigint("epgsave", NULL);
+		if((epgsave == 1 && exitcode == 3) || epgsave == 2)
+			writeallconfig(1); //do not save epg
+		else
+			writeallconfig(0); //save epg
+	}
 
 	if(faststop == 0)
 	{
