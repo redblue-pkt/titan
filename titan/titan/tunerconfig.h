@@ -48,7 +48,7 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 		tmp->type = CHOICEBOX;
 		changetext(tmp, _("Satelite Type"));
 		
-		tmpstr = ostrcat(_("Single"), "\n", 0, 0);
+		tmpstr = ostrcat(_("Single LNB"), "\n", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("DiSEqC A/B"), 1, 0);
 		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 		tmpstr = ostrcat(tmpstr, _("DiSEqC A/B/C/D"), 1, 0);
