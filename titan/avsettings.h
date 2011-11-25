@@ -245,7 +245,7 @@ void screenavsettings(int flag)
 			{
 				ret = getmode3d();
 				if(ostrcmp(ret, mode3d->ret) != 0)
-					setmode3d(mode3d->ret); 
+					setmode3d(_(mode3d->ret)); 
 				free(ret); ret = NULL;
 			}
 			addconfigscreencheck("av_ac3default", ac3default, 0);
