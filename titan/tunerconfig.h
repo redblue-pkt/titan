@@ -553,7 +553,8 @@ void createloopstr(struct dvbdev* node, char** loopstr, char** loopstr1)
 	struct dvbdev* dvbnode = dvbdev;
 	char* tmpnr = NULL;
 
-	*loopstr = ostrcat(*loopstr, "direct connect\n", 1, 0);
+	*loopstr = ostrcat(*loopstr, _("direct connect"), 1, 0);
+	*loopstr = ostrcat(*loopstr, "\n", 1, 0);
 	*loopstr1 = ostrcat(*loopstr1, "0\n", 1, 0);
 
 	while(dvbnode != NULL)
@@ -563,7 +564,8 @@ void createloopstr(struct dvbdev* node, char** loopstr, char** loopstr1)
 			if(node->adapter != dvbnode->adapter || node->devnr != dvbnode->devnr)
 			{
 				tmpnr = oitoa(dvbnode->adapter);
-				*loopstr = ostrcat(*loopstr, "loop to Tuner ", 1, 0);
+				*loopstr = ostrcat(*loopstr, _("loop to Tuner"), 1, 0);
+				*loopstr = ostrcat(*loopstr, " ", 1, 0);
 				*loopstr = ostrcat(*loopstr, tmpnr, 1, 1);
 				*loopstr = ostrcat(*loopstr, "/", 1, 0);
 				tmpnr = oitoa(dvbnode->devnr);
