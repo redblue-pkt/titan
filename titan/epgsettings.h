@@ -17,6 +17,7 @@ void screenepgsettings()
 	struct skin* epgbutton = getscreennode(epgsettings, "epgbutton");
 	struct skin* epgzoom = getscreennode(epgsettings, "epgzoom");
 	struct skin* epgpicon = getscreennode(epgsettings, "epgpicon");
+	struct skin* epgsave = getscreennode(epgsettings, "epgsave");
 	struct skin* tmp = NULL;
 
 	changeinput(epgpath, getconfig("epg_path", NULL));
@@ -56,6 +57,11 @@ void screenepgsettings()
 	addchoicebox(epgpicon, "0", _("no"));
 	addchoicebox(epgpicon, "1", _("yes"));
 	setchoiceboxselection(epgpicon, getconfig("epgpicon", NULL));
+	
+	addchoicebox(epgsave, "0", _("always"));
+	addchoicebox(epgsave, "1", _("only on power off / restart"));
+	addchoicebox(epgsave, "2", _("never"));
+	setchoiceboxselection(epgsave, getconfig("epgsave", NULL));
 
 	drawscreen(epgsettings, 0);
 	addscreenrc(epgsettings, listbox);
@@ -82,6 +88,7 @@ void screenepgsettings()
 			addconfigscreencheck("epgbutton", epgbutton, "0");
 			addconfigscreen("gmultiepgzoom", epgzoom);
 			addconfigscreencheck("epgpicon", epgpicon, "0");
+			addconfigscreencheck("epgsave", epgsave, "0");
 			break;
 		}
 		if(rcret == getrcconfigint("rcok", NULL))
