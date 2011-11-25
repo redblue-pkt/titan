@@ -72,7 +72,7 @@
 <node type=MENU pic="%pluginpath%/panel/skin/panel_flash_tmp_updater.png" textposx=120 valign=middle name=panel_system_update_flash_tmp text="Flashupdate (tmp)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic="%pluginpath%/panel/skin/panel_usb_online_updater.png" textposx=120 valign=middle name=panel_system_update_usb_online text="Usbupdate (online)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic="%pluginpath%/panel/skin/panel_usb_tmp_updater.png" textposx=120 valign=middle name=panel_system_update_usb_tmp text="Usbupdate (tmp)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
+#<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
 <screen fontcol=fontcol title="Extensions" titlealign=center name=panel_extensions_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=65% bordercol=bordercol bordersize=2 bgcol=bgcol transparent=40>
