@@ -876,6 +876,7 @@ start:
 					ret = servicestart((struct channel*)listbox->select->handle, getconfig("channellist", NULL), NULL, 0);
 				else
 					ret = servicestart((struct channel*)listbox->select->handle, getconfig("rchannellist", NULL), NULL, 0);
+				if(ret == 20) writeconfigtmp();
 				servicecheckret(ret, 0);
 				break;
 			}
