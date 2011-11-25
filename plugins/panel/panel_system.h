@@ -11,10 +11,10 @@ void screenpanel_system_eraseswap()
 	}       
 }
 
-void screenpanel_system_aafwizard()
+void screenpanel_system_wizard()
 {
-	if(textbox(_("Message"), _("Do you really want to start the AAF-Wizard? The Box will reboot and the Wizard will be started!"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2){
-		debug(40, "[panel_system] (start) AAF-Wizzard");
+	if(textbox(_("Message"), _("Do you really want to start the Wizard? The Box will reboot and the Wizard will be started!"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2){
+		debug(40, "[panel_system] (start) Wizzard");
 		system("touch /var/etc/.firstszap");
 		system("touch /var/etc/.firstwizard");
 		sleep(4);
