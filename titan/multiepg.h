@@ -416,6 +416,7 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	int character = 0;
 	struct sat* satnode = NULL;
 	struct provider* providernode = NULL;
+	int nochanneltitle = getskinconfigint("nochanneltitle", NULL);
 
 	epgscreenconf = getconfigint("epg_screen", NULL);
 
@@ -432,7 +433,7 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			tmpstr1 = ostrcat(tmpstr1, _("MULTI EPG - Bouquets"), 0, 0);
 			tmpstr1 = ostrcat(tmpstr1, " - ", 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, tmpstr + 10, 1, 0);
-			changetitle(multiepg, tmpstr1);
+			if(nochanneltitle == 0) changetitle(multiepg, tmpstr1);
 			free(tmpstr1); tmpstr1 = NULL;
 			list = BOUQUETCHANNEL;
 			aktlist = (void*)mainbouquetnode;
@@ -445,7 +446,7 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		tmpstr1 = ostrcat(tmpstr1, _("MULTI EPG - Channel"), 0, 0);
 		tmpstr1 = ostrcat(tmpstr1, " - ", 1, 0);
 		tmpstr1 = ostrcat(tmpstr1, tmpstr + 6, 1, 0);
-		changetitle(multiepg, tmpstr1);
+		if(nochanneltitle == 0) changetitle(multiepg, tmpstr1);
 		free(tmpstr1); tmpstr1 = NULL;
 		list = AZCHANNEL;
 		character = (int)tmpstr[6];
@@ -458,7 +459,7 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		tmpstr1 = ostrcat(tmpstr1, _("MULTI EPG - Satellites"), 0, 0);
 		tmpstr1 = ostrcat(tmpstr1, " - ", 1, 0);
 		tmpstr1 = ostrcat(tmpstr1, tmpstr + 6, 1, 0);
-		changetitle(multiepg, tmpstr1);
+		if(nochanneltitle == 0) changetitle(multiepg, tmpstr1);
 		free(tmpstr1); tmpstr1 = NULL;
 		satnode = getsat(tmpstr + 6);
 		list = SATCHANNEL;
@@ -471,7 +472,7 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		tmpstr1 = ostrcat(tmpstr1, _("MULTI EPG - Provider"), 0, 0);
 		tmpstr1 = ostrcat(tmpstr1, " - ", 1, 0);
 		tmpstr1 = ostrcat(tmpstr1, tmpstr + 11, 1, 0);
-		changetitle(multiepg, tmpstr1);
+		if(nochanneltitle == 0) changetitle(multiepg, tmpstr1);
 		free(tmpstr1); tmpstr1 = NULL;
 		providernode = getproviderbyname(tmpstr + 11);
 		list = PROVIDERCHANNEL;
@@ -481,7 +482,7 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	}
 	else
 	{
-		changetitle(multiepg, _("MULTI EPG - All Channels"));
+		if(nochanneltitle == 0) changetitle(multiepg, _("MULTI EPG - All Channels"));
 		list = ALLCHANNEL;
 		showallmepgchannel(multiepg, listbox, epgnr);
 		selectchannelmepg(listbox);
