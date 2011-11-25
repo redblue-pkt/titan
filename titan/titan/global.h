@@ -43,7 +43,7 @@ int checkmenuforbox(char *name)
 		if(ostrcmp("sambasettings", name) == 0) return 0;
 		if(ostrcmp("nfssettings", name) == 0) return 0;
 		if(ostrcmp("panel_infos_kernel", name) == 0) return 0;
-		if(ostrcmp("panel_system_aafwizard", name) == 0) return 0;
+		if(ostrcmp("panel_system_wizard", name) == 0) return 0;
 	}
 	return 1;
 }
