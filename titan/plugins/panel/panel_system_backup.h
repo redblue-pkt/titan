@@ -24,7 +24,7 @@ void screenpanel_system_backup()
 
 	addscreenrc(panel_backup, listbox);
 
-	if(checkbox("UFS912") || checkbox("AT7500"))
+	if(checkbox("UFS912"))
 	{
 		changeinput(listfield, "kernel\nfw\nroot\nfull");
 	}
