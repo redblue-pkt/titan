@@ -96,8 +96,8 @@ int panel_menucall(struct skin* panel_menuentry)
 		panel_menu(screen);
 	} else if(ostrcmp("panel_system_eraseswap", panel_menuentry->name) == 0){
 		screenpanel_system_eraseswap();		
-	} else if(ostrcmp("panel_system_aafwizard", panel_menuentry->name) == 0){
-		screenpanel_system_aafwizard();
+	} else if(ostrcmp("panel_system_wizard", panel_menuentry->name) == 0){
+		screenpanel_system_wizard();
 	} else if(ostrcmp("panel_system_restore", panel_menuentry->name) == 0){
 		screenpanel_system_restore();
 	} else if(ostrcmp("panel_system_backup", panel_menuentry->name) == 0){
