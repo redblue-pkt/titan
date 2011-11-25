@@ -731,7 +731,7 @@ start:
 			drawchannellist(channellist, list, listbox);
 			continue;
 		}
-		if(rcret == getrcconfigint("rcblue", NULL))
+		if(rcret == getrcconfigint("rcblue", NULL) || rcret == getrcconfigint("rcfav", NULL))
 		{
 			list = MAINBOUQUETLIST;
 			if(nochanneltitle == 0) changetitle(channellist, _("Bouquets"));
