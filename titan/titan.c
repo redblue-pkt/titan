@@ -186,6 +186,7 @@ void oshutdown(int exitcode, int flag)
 	void* threadstatus;
 	int i = 0, faststop = 0, ret = 0;
 	char* tmpstr = NULL;
+	struct skin* logo = getscreen("logo");
 
 	//check if record running
 	if((flag == 1 || flag == 2) && status.recording > 0)
@@ -196,6 +197,22 @@ void oshutdown(int exitcode, int flag)
 
 	ret = servicestop(status.aktservice, 1, 0);
 	if(ret == 1) return;
+	
+	if(exitcode == 1)
+		tmpstr = getconfig("powerofflogo", NULL);
+	else if(exitcode == 2)
+		tmpstr = getconfig("restartlogo", NULL);
+	else if(exitcode == 3)
+		tmpstr = getconfig("guirestartlogo", NULL);
+		
+	if(tmpstr != NULL)
+	{
+		changepic(logo, tmpstr);
+		tmpstr = NULL;
+		drawscreen(logo, 0);
+	}
+	else
+		clearfball();
 
 	//stop all records
 	while(servicenode != NULL)
@@ -205,8 +222,6 @@ void oshutdown(int exitcode, int flag)
 	}
 
 	faststop = getconfigint("faststop", NULL);
-
-	clearfball();
 
 	// Free memory, semaphores, etc. and say goodbye
 	if(faststop == 0) cleanupvfd();
