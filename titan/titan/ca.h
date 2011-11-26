@@ -24,8 +24,8 @@ int getsysinfo()
 		tmpstr = ostrcat(tmpstr, info.release, 1, 0);
 		tmpstr = ostrcat(tmpstr, " ", 1, 0);
 		tmpstr = ostrcat(tmpstr, info.version, 1, 0);
-		tmpstr = ostrcat(tmpstr, " ", 1, 0);
-		tmpstr = ostrcat(tmpstr, info.machine, 1, 0);
+		//tmpstr = ostrcat(tmpstr, " ", 1, 0);
+		//tmpstr = ostrcat(tmpstr, info.machine, 1, 0);
 
 		if(tmpstr != NULL)
 		{
