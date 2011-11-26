@@ -141,9 +141,9 @@
 
 <screen fontcol=fontcol title="Backup / Restore Settings" titlealign=center name=panel_system_restore hspace=1 vspace=1 fontsize=30 posx=center posy=center width=90% height=90% bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node bordercol=bordercol scrollbar=auto wrap=yes type=textbox name=info width=100% height=90% posx=0% posy=10%>
-<node name=b1 text=Cancel halign=center valign=middle bordercol=red bordersize=4 bordertype=2 posx=18% posy=90% width=170 height=30/>
-<node name=b2 text=Restore halign=center valign=middle bordercol=green bordersize=4 bordertype=2 posx=39% posy=90% width=170 height=30/>
-<node name=b3 text=Backup halign=center valign=middle bordercol=yellow bordersize=4 bordertype=2 posx=60% posy=90% width=170 height=30/>
+<node name=b1 text=Cancel halign=center valign=middle bordercol=red bordersize=4 bordertype=2 posx=18% posy=90% width=185 height=30/>
+<node name=b2 text=Restore halign=center valign=middle bordercol=green bordersize=4 bordertype=2 posx=39% posy=90% width=185 height=30/>
+<node name=b3 text=Backup halign=center valign=middle bordercol=yellow bordersize=4 bordertype=2 posx=60% posy=90% width=185 height=30/>
 </screen>
 
 <screen fontcol=fontcol title="OverClock Settings" titlealign=center name=panel_settings_overclocking hspace=1 vspace=1 fontsize=30 posx=center posy=center width=90% height=90% bordercol=bordercol bordersize=2 bgcol=bgcol>
