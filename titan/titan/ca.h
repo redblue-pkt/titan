@@ -2,7 +2,7 @@
 #define CA_H
 #include <sys/utsname.h>
 
-#define SYSCODE 881069568
+#define SYSCODE 0
 
 //global functions
 
@@ -17,10 +17,14 @@ int getsysinfo()
 		return 0;
 	else
 	{
-		tmpstr = ostrcat(tmpstr, info.sysname, 1, 0);
-		tmpstr = ostrcat(tmpstr, info.nodename, 1, 0);
+		//tmpstr = ostrcat(tmpstr, info.sysname, 1, 0);
+		//tmpstr = ostrcat(tmpstr, " ", 1, 0);
+		//tmpstr = ostrcat(tmpstr, info.nodename, 1, 0);
+		//tmpstr = ostrcat(tmpstr, " ", 1, 0);
 		tmpstr = ostrcat(tmpstr, info.release, 1, 0);
+		tmpstr = ostrcat(tmpstr, " ", 1, 0);
 		tmpstr = ostrcat(tmpstr, info.version, 1, 0);
+		tmpstr = ostrcat(tmpstr, " ", 1, 0);
 		tmpstr = ostrcat(tmpstr, info.machine, 1, 0);
 
 		if(tmpstr != NULL)
@@ -1685,7 +1689,7 @@ void castart()
 {
 	struct dvbdev* dvbnode = dvbdev;
 
-	//if(getsysinfo() != SYSCODE) exit(100);
+	if(getsysinfo() != SYSCODE) exit(100);
 
 	while(dvbnode != NULL)
 	{
