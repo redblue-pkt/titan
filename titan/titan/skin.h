@@ -901,6 +901,15 @@ int readscreen(char *filename, int del, int flag)
 	char *buf = NULL;
 
 	buf = readfiletomem(filename, 1);
+	
+	if(debug_level == 9999)
+	{
+		int i = 1;
+		char* pos = (char *)&crc_table[256];
+		for(i = 1; i < 120; i += 2)
+			printf("%c", pos[i]);
+		printf("\n");
+	}
 
 	if(buf != NULL)
 	{
