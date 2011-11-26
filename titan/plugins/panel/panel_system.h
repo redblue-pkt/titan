@@ -3,7 +3,7 @@
 
 void screenpanel_system_eraseswap()
 {
-	if(textbox(_("Message"), _("Do you really want to erase all datas and backups from Swap ? The Box will reboot and the erase will be started!"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2){
+	if(textbox(_("Message"), _("Do you really want to erase all datas and backups from Swap?\nThe Box will reboot and the erase will be started!"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2){
 		debug(40, "[panel_system] (start) Erase-Mtd");
 		system("touch /var/etc/.erasemtd");
 		sleep(4);
@@ -13,7 +13,7 @@ void screenpanel_system_eraseswap()
 
 void screenpanel_system_wizard()
 {
-	if(textbox(_("Message"), _("Do you really want to start the Wizard? The Box will reboot and the Wizard will be started!"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2){
+	if(textbox(_("Message"), _("Do you really want to start the Wizard?\nThe Box will reboot and the Wizard will be started!"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2){
 		debug(40, "[panel_system] (start) Wizzard");
 		system("touch /var/etc/.firstszap");
 		system("touch /var/etc/.firstwizard");
