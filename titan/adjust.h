@@ -18,7 +18,6 @@ void screenadjust()
 	struct skin* faststop = getscreennode(adjust, "faststop");
 	struct skin* dirsort = getscreennode(adjust, "dirsort");
 	struct skin* poweraktion = getscreennode(adjust, "poweraktion");
-	struct skin* starthttp = getscreennode(adjust, "starthttp");
 	struct skin* virtualzap = getscreennode(adjust, "virtualzap");
 	struct skin* fasttextrender = getscreennode(adjust, "fasttextrender");
 	struct skin* recsplitsize = getscreennode(adjust, "recsplitsize");
@@ -79,10 +78,6 @@ void screenadjust()
 	addchoicebox(poweraktion, "3", _("Restart"));
 	addchoicebox(poweraktion, "4", _("Gui Restart"));
 	setchoiceboxselection(poweraktion, getconfig("poweraktion", NULL));
-	
-	addchoicebox(starthttp, "0", _("no"));
-	addchoicebox(starthttp, "1", _("yes"));
-	setchoiceboxselection(starthttp, getconfig("httpdstart", NULL));
 	
 	addchoicebox(virtualzap, "0", _("deaktiv"));
 	addchoicebox(virtualzap, "1", _("1 sec"));
@@ -146,17 +141,6 @@ void screenadjust()
 			addconfigscreencheck("poweraktion", poweraktion, "0");
 			addconfigscreencheck("recforerun", forerun, "0");
 			addconfigscreencheck("recoverrun", overrun, "0");
-			if(starthttp->ret != NULL)
-			{
-				if(ostrcmp(getconfig("httpdstart", NULL), starthttp->ret) != 0)
-				{
-					addconfigscreen("httpdstart", starthttp);
-					if(ostrcmp(starthttp->ret, "0") == 0)
-						starthttpd(0);
-					else
-						starthttpd(1);
-				}
-			}
 			addconfigscreencheck("virtualzap", virtualzap, "0");
 			if(fasttextrender->ret != NULL)
 			{
