@@ -25,13 +25,9 @@ void screenpanel_system_backup()
 	addscreenrc(panel_backup, listbox);
 
 	if(checkbox("UFS912"))
-	{
 		changeinput(listfield, "kernel\nfw\nroot\nfull");
-	}
 	else
-	{
 		changeinput(listfield, "kernel\nvar\nroot\nfull");
-	}
 
 	drawscreen(panel_backup, 0);
 	tmp = listbox->select;
@@ -41,11 +37,6 @@ void screenpanel_system_backup()
 		addscreenrc(panel_backup, tmp);
 		rcret = waitrc(panel_backup, 0, 0);
 		tmp = listbox->select;
-
-		if(listbox->select != NULL)
-		{
-			addownconfigscreentmp(listbox->select->name, listbox->select);
-		}
 		
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcred", NULL)) break;
@@ -56,13 +47,16 @@ void screenpanel_system_backup()
 			{
 				b_red->hidden = YES; b_green->hidden = YES;
 				drawscreen(panel_backup, 0);
-				tmpstr = ostrcat(tmpstr, "backup.sh ", 1, 0);
-				tmpstr = ostrcat(tmpstr, getownconfig(listbox->select->name), 1, 0);
-				system(tmpstr);
+				if(listbox->select != NULL && listbox->select->ret != NULL)
+				{
+					tmpstr = ostrcat(tmpstr, "backup.sh ", 1, 0);
+					tmpstr = ostrcat(tmpstr, listbox->select->ret, 1, 0);
+					system(tmpstr);
+					free(tmpstr); tmpstr = NULL;
+				}
 			}
 			break;
 		}
-
 	}
 
 	infotext = NULL;
