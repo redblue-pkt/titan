@@ -350,9 +350,9 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	struct skin* listbox = getscreennode(gmultiepg, "listbox");
 	struct skin* channellistbox = getscreennode(gmultiepg, "channellistbox");
 	struct skin* timeline = getscreennode(gmultiepg, "timeline");
-	struct skin* b1 = getscreennode(gmultiepg, "b1");
 	struct skin* b2 = getscreennode(gmultiepg, "b2");
 	struct skin* b3 = getscreennode(gmultiepg, "b3");
+	struct skin* b4 = getscreennode(gmultiepg, "b4");
 	
 	int list = ALLCHANNEL;
 	char* tmpstr = NULL, *tmpstr1 = NULL;
@@ -462,15 +462,15 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 
 	if(flag == 0 && epgscreenconf == 3)
 	{
-		b1->hidden = NO;
 		b2->hidden = NO;
 		b3->hidden = NO;
+		b4->hidden = NO;
 	}
 	else
 	{
-		b1->hidden = YES;
 		b2->hidden = YES;
 		b3->hidden = YES;
+		b4->hidden = YES;
 	}
 
 	tmpstr = NULL;
@@ -500,7 +500,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			break;
 		}
 		
-		if(flag == 0 && epgscreenconf == 3 && rcret == getrcconfigint("rcred", NULL))
+		if(flag == 0 && epgscreenconf == 3 && rcret == getrcconfigint("rcgreen", NULL))
 		{
 			if(listbox->select != NULL)
 			{
@@ -510,7 +510,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 				break;
 			}
 		}
-		if(flag == 0 && epgscreenconf == 3 && rcret == getrcconfigint("rcgreen", NULL))
+		if(flag == 0 && epgscreenconf == 3 && rcret == getrcconfigint("rcyellow", NULL))
 		{
 			if(listbox->select != NULL)
 			{
@@ -520,7 +520,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 				break;
 			}
 		}
-		if(flag == 0 && epgscreenconf == 3 && rcret == getrcconfigint("rcyellow", NULL))
+		if(flag == 0 && epgscreenconf == 3 && rcret == getrcconfigint("rcblue", NULL))
 		{
 			if(listbox->select != NULL)
 			{
@@ -619,7 +619,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			continue;
 		}
 
-		if(rcret == getrcconfigint("rcblue", NULL) && listbox->select != NULL)
+		if(rcret == getrcconfigint("rcred", NULL) && listbox->select != NULL)
 		{
 			clearscreen(gmultiepg);
 			ret = addrecepg((struct channel*)listbox->select->handle, (struct epg*)listbox->select->handle1, NULL);
