@@ -8,6 +8,7 @@ void screenpanel_settings_bluebutton()
 	struct skin* plugin = getscreen("plugin");
 	struct skin* child = plugin->child;
 	char* tmpstr = NULL;
+	tmpstr = ostrcat(tmpstr, "TV / Radio Switch\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, "Auto Resolution\n", 1, 0);
 	if(checkemu() == 1)
 		tmpstr = ostrcat(tmpstr, "Softcam Panel\n", 1, 0);
@@ -16,7 +17,6 @@ void screenpanel_settings_bluebutton()
 	tmpstr = ostrcat(tmpstr, "Graphic Multi EPG\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, "Sleep Timer\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, "Child Protection\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, "TV / Radio Switch\n", 1, 0);
 
 	char* bluekey = getconfig("bluekey", NULL);
 
@@ -41,7 +41,7 @@ void screenpanel_settings_bluebutton()
 	}
 	debug(60, "(new) Bluekey=%s", mlistbox);
 
-	if(ostrcmp(mlistbox, "Graphic Multi EPG") == 0)
+	if(ostrcmp(mlistbox, "TV / Radio Switch") == 0)
 		delconfig("bluekey");
 	else
 		addconfig("bluekey", mlistbox);

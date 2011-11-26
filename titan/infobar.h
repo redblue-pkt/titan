@@ -76,7 +76,7 @@ void screeninfobar()
 				continue;
 			}
 		}
-		if(rcret == getrcconfigint("rcblue", NULL) && ostrcmp(getconfig("bluekey", NULL), "TV / Radio Switch") == 0)
+		if(rcret == getrcconfigint("rcblue", NULL) && getconfig("bluekey", NULL) == NULL)
 			rcret = getrcconfigint("rctvradio", NULL);
 		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL) || rcret == getrcconfigint("rctvradio", NULL) || rcret == getrcconfigint("rcfav", NULL))
 		{
@@ -89,7 +89,6 @@ void screeninfobar()
 					status.servicetype = 1;
 				else
 					status.servicetype = 0;
-
 			}
 			drawscreen(skin, 0);
 			if(rcret == getrcconfigint("rcfav", NULL))	

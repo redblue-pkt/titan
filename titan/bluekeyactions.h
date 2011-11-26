@@ -11,10 +11,7 @@ void screenbluekeyactions()
 
 	bluekey = getconfig("bluekey", NULL);
 	if(bluekey == NULL)
-	{
-		screengmultiepg(NULL, NULL, 0);
 		return;
-	}
 	
 	debug(60, "bluekey=%s", bluekey);
 
