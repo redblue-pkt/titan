@@ -104,7 +104,7 @@ int caread(int fd, unsigned char* buf, int* len)
 
 	fds.fd = fd;
 	fds.events = POLLOUT | POLLPRI | POLLIN;
-      
+
 	ret = TEMP_FAILURE_RETRY(poll(&fds, 1, 300));
 
 	if(ret < 0)
@@ -117,11 +117,11 @@ int caread(int fd, unsigned char* buf, int* len)
 	else if(ret > 0)
 	{
 		if(fds.revents & POLLIN)
-		{ 
+		{
 			int readret = 0;
 retry:
 			readret = TEMP_FAILURE_RETRY(read(fd, buf, *len));
-          
+
 			if(readret > 0)
 			{
 				if(debug_level == 620)
@@ -174,7 +174,7 @@ int cawrite(struct dvbdev* dvbnode, int fd, unsigned char* buf, int count, int f
 		if(dvbnode->caslot != NULL && flag == 0) dvbnode->caslot->fastrun = 25;
 	}
 
-	ret = dvbwrite(fd, buf, count, tout); 
+	ret = dvbwrite(fd, buf, count, tout);
 	if(ret >= 0 && ret == count) dvbnode->caslot->poll = 0;
 	return ret;
 }
@@ -192,7 +192,7 @@ int casend(struct dvbdev* dvbnode, unsigned char* buf, int len)
 		err("no mem");
 		return 1;
 	}
-		
+
 	// should we send a data last ?
 	if(buf != NULL)
 	{
@@ -205,10 +205,10 @@ int casend(struct dvbdev* dvbnode, unsigned char* buf, int len)
 
 			tmpbuf[0] = dvbnode->devnr;
 			tmpbuf[1] = dvbnode->caslot->connid;
-			tmpbuf[2] = T_DATA_LAST; 	
-			tmpbuf[3] = len + 1; //len 
+			tmpbuf[2] = T_DATA_LAST;
+			tmpbuf[3] = len + 1; //len
 			tmpbuf[4] = dvbnode->caslot->connid; //transport connection identifier
-			len += 5;	
+			len += 5;
 		}
 	}
 	else
@@ -216,8 +216,8 @@ int casend(struct dvbdev* dvbnode, unsigned char* buf, int len)
 		//send a data last only
 		tmpbuf[0] = dvbnode->devnr;
 		tmpbuf[1] = dvbnode->caslot->connid;
-		tmpbuf[2] = T_DATA_LAST; 	
-		tmpbuf[3] = len + 1; //len 
+		tmpbuf[2] = T_DATA_LAST;
+		tmpbuf[3] = len + 1; //len
 		tmpbuf[4] = dvbnode->caslot->connid; //transport connection identifier
 		len = 5;
 		flag = 1;
@@ -225,8 +225,8 @@ int casend(struct dvbdev* dvbnode, unsigned char* buf, int len)
 
 	struct queue* qe = addqueue(dvbnode->devnr, tmpbuf, len, flag, NULL);
 	free(tmpbuf); tmpbuf = NULL;
-	if(qe == NULL) 
-	{ 
+	if(qe == NULL)
+	{
 		err("writing data to queue, slot %d", dvbnode->devnr);
 		return 1; //error
 	}
@@ -286,7 +286,7 @@ int parselenfield(unsigned char *buf, int* len)
 
 	*len = 0;
 
-	if(!(*buf & 0x80)) 
+	if(!(*buf & 0x80))
 	{
 		*len = *buf;
 		return 1;
@@ -351,7 +351,7 @@ int cammianswer(struct dvbdev* dvbnode, int sessionnr, int answer)
 	unsigned char data[] = {0x00};
 	data[0] = answer & 0xff;
 	sendAPDU(dvbnode, sessionnr, tag, data, 1);
-	
+
 	return 0;
 }
 
@@ -376,7 +376,7 @@ int cammicancelenq(struct dvbdev* dvbnode, int sessionnr)
 	unsigned char tag[] = {0x9f, 0x88, 0x08};
 	unsigned char data[] = {0x00}; // canceled
 	sendAPDU(dvbnode, sessionnr, tag, data, 1);
-	
+
 	return 0;
 }
 
@@ -447,40 +447,40 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 	{
 		switch(tag[2])
 		{
-			case 0x00: //close 
+			case 0x00: //close
 				cammistop(dvbnode, sessionnr);
 				break;
-			case 0x01: //display control 
+			case 0x01: //display control
 				casession[sessionnr].state = CAMMIDISPLAYREPLAY;
 				return 1;
 				break;
-			case 0x07: //menu enq 
+			case 0x07: //menu enq
 			{
 				unsigned char *tmpdata = data;
 				unsigned char *max = tmpdata + len;
 				int textlen = len - 2;
-		
+
 				if(tmpdata + 2 > max) break;
 				//int blind = *tmpdata++ & 1;
 				int alen = *tmpdata++;
-			
+
 				debug(620, "mmi manager text len: %d", textlen);
-		        
+
 				if(tmpdata + textlen > max) break;
-		
+
 				char* str = malloc(textlen + 1);
 				if(str == NULL)
 				{
 					cammicancelenq(dvbnode, sessionnr);
 					break;
 				}
-		        
+
 				memcpy(str, tmpdata, textlen);
 				str[textlen] = '\0';
 				str = string_newline(str);
-		        
+
 				debug(620, "mmi manager text: %s", str);
-		       
+
 				int i = 0;
 				for(i = 0; i < alen; i++) tmpstr1 = ostrcat(tmpstr1, "0", 1, 0);
 				tmpstr = textinput(str, tmpstr1);
@@ -496,8 +496,8 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 
 			}
 			break;
-			case 0x09: //menu last 
-			case 0x0c: //list last 
+			case 0x09: //menu last
+			case 0x0c: //list last
 			{
 				unsigned char *tmpdata = data;
 				unsigned char *max= tmpdata + len;
@@ -513,7 +513,7 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 				}
 
 				if(tmpdata > max) break;
-		       
+
 				int n = *tmpdata++;
 
 				if(n == 0xFF)
@@ -526,29 +526,29 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 				{
 					int textlen = 0;
 					if(tmpdata + 3 > max) break;
-			       
+
 					debug(620, "mmi text tag: %02x %02x %02x", tmpdata[0], tmpdata[1], tmpdata[2]);
 					tmpdata += 3;
 					tmpdata += parselenfield(tmpdata, &textlen);
-			       
+
 					debug(620, "mmi manager text len: %d", textlen);
 					if(tmpdata + textlen > max) break;
-			       
+
 					char* str = malloc(textlen + 1);
 					if(str == NULL) break;
 					memcpy(str, tmpdata, textlen);
 					str[textlen] = '\0';
 					str = string_newline(str);
-			       
+
 					int type = pos++;
-			       
-					if(type == 0) // title 
+
+					if(type == 0) // title
 						casession->mmititle = ostrcat(casession->mmititle, str, 1, 0);
-					else if(type == 1) // subtitle 
+					else if(type == 1) // subtitle
 						casession->mmisubtitle = ostrcat(casession->mmisubtitle, str, 1, 0);
-					else if(type == 2) // bottom 
+					else if(type == 2) // bottom
 						casession->mmibottom = ostrcat(casession->mmibottom, str, 1, 0);
-					else // text 
+					else // text
 					{
 						casession->mmitext = ostrcat(casession->mmitext, str, 1, 0);
 						casession->mmitext = ostrcat(casession->mmitext, "\n", 1, 0);
@@ -896,7 +896,7 @@ int caresAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 				debug(620, "unknown APDU tag 9F 80 %02x\n", tag[2]);
 		}
 	}
-	
+
 	return 0;
 }
 
@@ -929,7 +929,7 @@ int caappaction(struct dvbdev* dvbnode, int sessionnr)
 		{
 			debug(620, "state app sessionstart");
 			unsigned char tag[3] = {0x9F, 0x80, 0x20}; //app manager info
-    
+
 			sendAPDU(dvbnode, sessionnr, tag, NULL, 0);
 			casession[sessionnr].state = CASESSIONFINAL;
 			return 1;
@@ -1192,7 +1192,7 @@ struct casession* casessioncreate(struct dvbdev* dvbnode, unsigned char* resid, 
 		sendSPDU(dvbnode, 0x93, data, 4, sessionnr, NULL, 0);
 	}
 
-	return &casession[sessionnr];   
+	return &casession[sessionnr];
 }
 
 void casessionreceive(struct dvbdev* dvbnode, unsigned char *buf, size_t len)
@@ -1213,10 +1213,10 @@ void casessionreceive(struct dvbdev* dvbnode, unsigned char *buf, size_t len)
 			printf("%02x ", buf[i]);
 		printf("\n");
 	}
-	
+
 	llen = parselenfield(pkt, &hlen);
 	pkt += llen;
-	
+
 	if(tag == 0x91)
 	{
 		unsigned char status = 0;
@@ -1241,13 +1241,13 @@ void casessionreceive(struct dvbdev* dvbnode, unsigned char *buf, size_t len)
 		sessionnr = pkt[hlen - 2] << 8;
 		sessionnr |= pkt[hlen - 1] & 0xFF;
 		debug(620, "tag = %x, hlen = %d, session = %d", tag, hlen, sessionnr);
-		
+
 		if(sessionnr < 1 || sessionnr >= MAXCASESSION)
 		{
 			debug(620, "illegal session number %d", sessionnr);
 			return;
 		}
-		
+
 		casession = &dvbnode->caslot->casession[sessionnr];
 		if(casession->inuse == 0)
 		{
@@ -1332,7 +1332,7 @@ void casessionreceive(struct dvbdev* dvbnode, unsigned char *buf, size_t len)
 			pkt += alen;
 			len -= alen;
 		}
-		
+
 	}
 
 	if(len != 0)
@@ -1357,7 +1357,7 @@ int cacreatetc(struct dvbdev* dvbnode)
 	}
 
 	buf[0] = dvbnode->devnr;
-	buf[1] = dvbnode->caslot->connid; 
+	buf[1] = dvbnode->caslot->connid;
 	buf[2] = T_CREATE_T_C;
 	buf[3] = 1;
 	buf[4] = dvbnode->caslot->connid;
@@ -1391,7 +1391,7 @@ void processtpdu(struct dvbdev* dvbnode, unsigned char tpdutag, unsigned char* b
 	if(dvbdev == NULL) return;
 	canode = dvbnode->caslot;
 
-	switch(tpdutag) 
+	switch(tpdutag)
 	{
 		case T_C_T_C_REPLY:
 			debug(620, "got ctc replay (slot %d, conn %d)", dvbnode->devnr, canode->connid);
@@ -1414,7 +1414,7 @@ void processtpdu(struct dvbdev* dvbnode, unsigned char tpdutag, unsigned char* b
 			cawrite(dvbnode, dvbnode->fd, sendbuf, 5, 0, -1);
 			casessionfree(dvbnode);
 			caslotfree(dvbnode);
-	      
+
 			break;
 		case T_D_T_C_REPLY:
 
@@ -1441,19 +1441,19 @@ void processtpdu(struct dvbdev* dvbnode, unsigned char tpdutag, unsigned char* b
 				memcpy(canode->rbuf + canode->rlen, buf, asnlen);
 				canode->rlen = newbuflen;
 			}
-					
+
 			break;
 		}
 		case T_DATA_LAST:
 		{
-			if(canode->rbuf == NULL) 
+			if(canode->rbuf == NULL)
 			{
 				debug(620, "got data last single package (slot %d, conn %d)", dvbnode->devnr, canode->connid);
 
 				casessionreceive(dvbnode, buf, asnlen);
 				casessionpoll(dvbnode);
 			}
-			else 
+			else
 			{
 				debug(620, "got data last chained package (slot %d, conn %d)", dvbnode->devnr, canode->connid);
 				int newbuflen = canode->rlen + asnlen;
@@ -1480,7 +1480,7 @@ void processtpdu(struct dvbdev* dvbnode, unsigned char tpdutag, unsigned char* b
 			if(buf[0] & 0x80)
 			{
 				debug(620, "data ready (slot %d)", dvbnode->devnr);
-	
+
 				//send the RCV and ask for the data
 				unsigned char sendbuf[5];
 
@@ -1557,7 +1557,7 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 		break;
 		case 1: //active
 		case 2: //active (ca and app ready)
-		{ 
+		{
 			//debug(620, "status: wait, slot %d", dvbnode->devnr);
 			ret = caread(dvbnode->fd, buf, &len);
 			if(ret == 0) //ready
@@ -1690,7 +1690,7 @@ void castart()
 	struct dvbdev* dvbnode = dvbdev;
 
 #ifndef SIMULATE
-	if(getsysinfo() != SYSCODE) exit(100);
+	//if(getsysinfo() != SYSCODE) exit(100);
 #endif
 
 	while(dvbnode != NULL)
@@ -1728,7 +1728,7 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 			//check if crypt can onyl handle single service
 			tmpstr = ostrcat("camtype_", oitoa(dvbnode->devnr), 0, 1);
 			if(getconfigint(tmpstr, NULL) == 0 && getcaservicebyslot(dvbnode->caslot, 1) > -1)
-			{	
+			{
 				debug(620, "cam is singel and is in use");
 				free(tmpstr); tmpstr = NULL;
 				return 1;
@@ -1746,15 +1746,15 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 						setciinput(dvbnode->devnr, "A");
 						setcisource(dvbnode->devnr, "CI0");
 						break;
-					case 1: 
+					case 1:
 						setciinput(dvbnode->devnr, "B");
 						setcisource(dvbnode->devnr, "CI1");
 						break;
-					case 2: 
+					case 2:
 						setciinput(dvbnode->devnr, "C");
 						setcisource(dvbnode->devnr, "CI2");
 						break;
-					case 3: 
+					case 3:
 						setciinput(dvbnode->devnr, "D");
 						setcisource(dvbnode->devnr, "CI3");
 						break;
@@ -1762,10 +1762,10 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 			}
 
 			//got free camanager
-			if(caservice[caservicenr].camanager == -1) 
+			if(caservice[caservicenr].camanager == -1)
 				caservice[caservicenr].camanager = getfreecasession(dvbnode, 2, 2);
 
-			if(caservice[caservicenr].camanager > -1) 
+			if(caservice[caservicenr].camanager > -1)
 			{
 				sendSPDU(dvbnode, 0x90, NULL, 0, caservice[caservicenr].camanager, buf, len);
 				caservice[caservicenr].caslot = dvbnode->caslot;
