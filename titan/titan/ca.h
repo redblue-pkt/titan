@@ -1689,7 +1689,9 @@ void castart()
 {
 	struct dvbdev* dvbnode = dvbdev;
 
+#ifndef SIMULATE
 	if(getsysinfo() != SYSCODE) exit(100);
+#endif
 
 	while(dvbnode != NULL)
 	{
