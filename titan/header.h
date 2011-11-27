@@ -3,6 +3,7 @@
 
 //linkedchannel.h
 void screenlinkedchannel();
+struct linkedchannel* getlinkedchannel(struct channel* chnode, int serviceid, unsigned long transponderid);
 
 //httpdsettings.h
 void screenhttpdsettings();

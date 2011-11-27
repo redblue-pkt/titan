@@ -891,10 +891,12 @@ void linkagedesc(struct channel* chnode, struct epg* epgnode, void *buf)
 	
 	int tid = HILO(evtlink->transport_stream_id);
 	int onid = HILO(evtlink->original_network_id);
+	int serviceid = HILO(evtlink->service_id);
 	
 	transponderid = (onid << 16) | tid;
 	
-	addlinkedchannel(chnode, HILO(evtlink->service_id), transponderid, NULL);
+	if(getlinkedchannel(chnode, serviceid, transponderid) == NULL)
+		addlinkedchannel(chnode, serviceid, transponderid, NULL);
 }
 
 #if 0
