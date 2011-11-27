@@ -770,24 +770,24 @@ char* servicecheckret(int ret, int flag)
 		switch(ret)
 		{
 			case 1:
-				tmpstr = ostrcat("Can't find a Tuner.\nAlle Tuners in use or no Tuner defined.", "", 0, 0);
+				tmpstr = ostrcat(_("Can't find a Tuner.\nAlle Tuners in use or no Tuner defined."), "", 0, 0);
 				break;
 			case 2:
-				tmpstr = ostrcat("Tuning to Channel failed!", "", 0, 0);
+				tmpstr = ostrcat(_("Tuning to Channel failed!"), "", 0, 0);
 				break;
 			case 3:
-				tmpstr = ostrcat("Can't open frontend dev or Frontend Type unknown!", "", 0, 0);
+				tmpstr = ostrcat(_("Can't open frontend dev or Frontend Type unknown!"), "", 0, 0);
 				break;
 			case 20:
 				break;
 			case 21:
-				tmpstr = ostrcat("Channellist empty or corrupt (channel not found)!", "", 0, 0);
+				tmpstr = ostrcat(_("Channellist empty or corrupt (channel not found)!"), "", 0, 0);
 				break;
 			case 22:
 				break;
 		}
 		if(tmpstr != NULL)
-		textbox(_("Message"), _(tmpstr), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, timeout, 0);
+		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, timeout, 0);
 		}
 	if(flag != 1)
 	{

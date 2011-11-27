@@ -37,57 +37,57 @@ char* recordcheckret(struct stimerthread* timernode, int ret, int flag)
 		switch(ret)
 		{
 			case 1:
-				tmpstr = ostrcat("HDD not configured\ncan't find record path", "", 0, 0);
+				tmpstr = ostrcat(_("HDD not configured\ncan't find record path"), "", 0, 0);
 				break;
 			case 2:
-				tmpstr = ostrcat("Not enought space", "", 0, 0);
+				tmpstr = ostrcat(_("Not enought space"), "", 0, 0);
 				break;
 			case 3:
-				tmpstr = ostrcat("Error create filename", "", 0, 0);
+				tmpstr = ostrcat(_("Error create filename"), "", 0, 0);
 				break;
 			case 4:
-				tmpstr = ostrcat("Can't open file", "", 0, 0);
+				tmpstr = ostrcat(_("Can't open file"), "", 0, 0);
 				break;
 			case 5:
-				tmpstr = ostrcat("Can't open FRONTEND device", "", 0, 0);
+				tmpstr = ostrcat(_("Can't open FRONTEND device"), "", 0, 0);
 				break;
 			case 6:
-				tmpstr = ostrcat("Can't open DMX device", "", 0, 0);
+				tmpstr = ostrcat(_("Can't open DMX device"), "", 0, 0);
 				break;
 			case 7:
-				tmpstr = ostrcat("Pid's not ok", "", 0, 0);
+				tmpstr = ostrcat(_("Pid's not ok"), "", 0, 0);
 				break;
 			case 8:
-				tmpstr = ostrcat("Channel or Transponder is empty", "", 0, 0);
+				tmpstr = ostrcat(_("Channel or Transponder is empty"), "", 0, 0);
 				break;
 			case 9:
-				tmpstr = ostrcat("Write error", "", 0, 0);
+				tmpstr = ostrcat(_("Write error"), "", 0, 0);
 				break;
 			case 10:
-				tmpstr = ostrcat("No memory", "", 0, 0);
+				tmpstr = ostrcat(_("No memory"), "", 0, 0);
 				break;
 			case 11:
-				tmpstr = ostrcat("Failed open split file", "", 0, 0);
+				tmpstr = ostrcat(_("Failed open split file"), "", 0, 0);
 				break;
 			case 12:
-				tmpstr = ostrcat("Frontend type unknown", "", 0, 0);
+				tmpstr = ostrcat(_("Frontend type unknown"), "", 0, 0);
 				break;
 			case 13:
-				tmpstr = ostrcat("Tune to channel failed", "", 0, 0);
+				tmpstr = ostrcat(_("Tune to channel failed"), "", 0, 0);
 				break;
 			case 14:
 				break;
 			case 15:
-				tmpstr = ostrcat("To many read error or end of file", "", 0, 0);
+				tmpstr = ostrcat(_("To many read error or end of file"), "", 0, 0);
 				break;
 			case 16:
-				tmpstr = ostrcat("Can't create service", "", 0, 0);
+				tmpstr = ostrcat(_("Can't create service"), "", 0, 0);
 				break;
 		}
 		if(tmpstr != NULL)
 		{
 			if(checkbit(flag, 2) == 1) err("%s", tmpstr);
-			if(checkbit(flag, 1) == 1) textbox(_("Record / Timeshift / Stream"), _(tmpstr), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, timeout, 0);
+			if(checkbit(flag, 1) == 1) textbox(_("Record / Timeshift / Stream"), tmpstr, _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, timeout, 0);
 		}
 	}
 	if(checkbit(flag, 3) == 0)
