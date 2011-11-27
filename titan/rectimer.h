@@ -1218,13 +1218,25 @@ start:
 			}
 
 			if(rectimernode->status == 0)
-				tmpstr = ostrcat(tmpstr, _("\nwaiting"), 1, 0);
+			{
+				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+				tmpstr = ostrcat(tmpstr, _("waiting"), 1, 0);
+			}
 			else if(rectimernode->status == 1)
-				tmpstr = ostrcat(tmpstr, _("\nrunning"), 1, 0);
+			{
+				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+				tmpstr = ostrcat(tmpstr, _("running"), 1, 0);
+			}
 			else if(rectimernode->status == 2)
-				tmpstr = ostrcat(tmpstr, _("\nsuccess"), 1, 0);
+			{
+				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+				tmpstr = ostrcat(tmpstr, _("success"), 1, 0);
+			}
 			else if(rectimernode->status == 3)
-				tmpstr = ostrcat(tmpstr, _("\nerror"), 1, 0);
+			{
+				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+				tmpstr = ostrcat(tmpstr, _("error"), 1, 0);
+			}
 
 			if(flag == 1 && rectimernode->errstr != NULL && strlen(rectimernode->errstr) != 0)
 			{
