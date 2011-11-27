@@ -1,6 +1,25 @@
 #ifndef LINKEDCHANNEL_H
 #define LINKEDCHANNEL_H
 
+struct linkedchannel* getlinkedchannel(struct channel* chnode, int serviceid, unsigned long transponderid)
+{
+	m_lock(&status.linkedchannelmutex, 14);
+	struct channel* node = chnode;
+
+	while(node != NULL)
+	{
+		if(node->serviceid == serviceid && node->transponderid == transponderid)
+		{
+			m_unlock(&status.linkedchannelmutex, 14);
+			return node;
+		}
+		node = node->next;
+	}
+
+	m_unlock(&status.linkedchannelmutex, 14);
+	return NULL;
+}
+
 struct linkedchannel* checklinkedchannel(struct channel* chnode, struct linkedchannel* lchannel)
 {
 	struct linkedchannel* node = NULL;
