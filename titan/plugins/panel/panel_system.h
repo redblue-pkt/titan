@@ -186,28 +186,28 @@ void screenpanel_system_update(int mode)
 				if(file_exist("/tmp/.swapextensionsdev"))
 				{
 					printf("[Panel] Update: update with log\n");
-					if(string_find("_KERNEL_",filelist->select->text)) && (file_exist("/etc/.beta"))
+					if(string_find("_KERNEL_",filelist->select->text) && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "kernel ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, "Kernel Update starten ?", 1, 0);
 					}
-					else if(string_find("_FW_",filelist->select->text)) && (file_exist("/etc/.beta"))
+					else if(string_find("_FW_",filelist->select->text) && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "fw ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, "Fw Update starten ?", 1, 0);
 					}
-					else if(string_find("_ROOT_",filelist->select->text)) && (file_exist("/etc/.beta"))
+					else if(string_find("_ROOT_",filelist->select->text) && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "root ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, "Root Update starten ?", 1, 0);
 					}
-					else if(string_find("_VAR_",filelist->select->text)) && (file_exist("/etc/.beta"))
+					else if(string_find("_VAR_",filelist->select->text) && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "var ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
@@ -244,25 +244,25 @@ void screenpanel_system_update(int mode)
 				{
 					printf("[Panel] Update: update without log\n");
 
-					if(string_find("_KERNEL_",filelist->select->text)) && (file_exist("/etc/.beta"))
+					if(string_find("_KERNEL_",filelist->select->text) && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "kernel ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						msgtxt = ostrcat(msgtxt, "Kernel Update starten ?", 1, 0);
 					}
-					else if(string_find("_FW_",filelist->select->text)) && (file_exist("/etc/.beta"))
+					else if(string_find("_FW_",filelist->select->text) && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "fw ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						msgtxt = ostrcat(msgtxt, "Fw Update starten ?", 1, 0);
 					}
-					else if(string_find("_ROOT_",filelist->select->text)) && (file_exist("/etc/.beta"))
+					else if(string_find("_ROOT_",filelist->select->text) && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "root ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						msgtxt = ostrcat(msgtxt, "Root Update starten ?", 1, 0);
 					}
-					else if(string_find("_VAR_",filelist->select->text)) && (file_exist("/etc/.beta"))
+					else if(string_find("_VAR_",filelist->select->text) && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "var ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
