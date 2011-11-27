@@ -25,7 +25,7 @@ void screenstreaming()
 	if(tmpstr == NULL)
 		textbox(_("Message"), _("No Live Stream running"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 
-	mlistbox = menulistbox(NULL, tmpstr, "menulist", "Streaming", NULL, 0);
+	mlistbox = menulistbox(NULL, tmpstr, "menulist", "Streaming", NULL, 0, 0);
 	if(mlistbox != NULL && strstr(mlistbox, "stop") == mlistbox)
 	{
 		servicenode = getrecordbyname(mlistbox, RECORDSTREAM);

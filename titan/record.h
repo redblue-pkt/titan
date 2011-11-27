@@ -904,7 +904,7 @@ void screenrecorddirect()
 	//tmpstr = ostrcat(tmpstr, "add recording (stop after current event)\nadd recording (indefinitely)\nadd recording (enter duration)\nadd recording (enter endtime)", 1, 0);
 	tmpstr = ostrcat(tmpstr, "add recording (stop after current event)\nadd recording (indefinitely)\nadd recording (enter duration)", 1, 0);
 
-	mlistbox = menulistbox(NULL, tmpstr, "menulist", "Record", NULL, 0);
+	mlistbox = menulistbox(NULL, tmpstr, "menulist", "Record", NULL, 0, 0);
 	if(mlistbox != NULL && strstr(mlistbox, "stop") == mlistbox)
 	{
 		servicenode = getrecordbyname(mlistbox, RECORDDIRECT);

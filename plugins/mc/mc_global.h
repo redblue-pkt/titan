@@ -384,7 +384,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 		tmpstr = ostrcat(tmpstr, "Edit Playlist\n", 1, 0);
 		skinname = ostrcat("", "playlistmenu", 0, 0);
 
-		char* playlistmenu = menulistbox(NULL, tmpstr, skinname, NULL, "%pluginpath%/mc/skin/", 1);
+		char* playlistmenu = menulistbox(NULL, tmpstr, skinname, NULL, "%pluginpath%/mc/skin/", 1, 0);
 		free(tmpstr), tmpstr = NULL;
 		drawscreen(apskin, 0);
 

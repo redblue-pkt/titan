@@ -32,7 +32,7 @@ void screenpanel_settings_bluebutton()
 	}
 	debug(60, "Bluekey: %s (default)", bluekey);
 
-	char* mlistbox = menulistbox(bluekey, tmpstr, NULL, skintitle, NULL, 1);
+	char* mlistbox = menulistbox(bluekey, tmpstr, NULL, skintitle, NULL, 1, 0);
 
 	if(mlistbox == NULL)
 	{

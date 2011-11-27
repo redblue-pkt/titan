@@ -30,7 +30,7 @@ void screenpanel_settings_redbutton()
 	}
 	debug(60, "Redkey: %s (default)", redkey);
 
-	char* mlistbox = menulistbox(redkey, tmpstr, NULL, skintitle, NULL, 1);
+	char* mlistbox = menulistbox(redkey, tmpstr, NULL, skintitle, NULL, 1, 0);
 
 	if(mlistbox == NULL)
 	{
