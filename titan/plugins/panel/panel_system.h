@@ -3,7 +3,8 @@
 
 void screenpanel_system_eraseswap()
 {
-	if(textbox(_("Message"), _("Do you really want to erase all datas and backups from Swap?\nThe Box will reboot and the erase will be started!"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2){
+	if(textbox(_("Message"), _("Do you really want to erase all datas and backups from Swap?\nThe Box will reboot and the erase will be started!"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+	{
 		debug(40, "[panel_system] (start) Erase-Mtd");
 		system("touch /var/etc/.erasemtd");
 		sleep(4);
@@ -13,7 +14,8 @@ void screenpanel_system_eraseswap()
 
 void screenpanel_system_wizard()
 {
-	if(textbox(_("Message"), _("Do you really want to start the Wizard?\nThe Box will reboot and the Wizard will be started!"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2){
+	if(textbox(_("Message"), _("Do you really want to start the Wizard?\nThe Box will reboot and the Wizard will be started!"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+	{
 		debug(40, "[panel_system] (start) Wizzard");
 		system("touch /var/etc/.firstszap");
 		system("touch /var/etc/.firstwizard");
@@ -39,24 +41,31 @@ void screenpanel_system_update(int mode)
 	char* type = NULL;
 	char* cmd = NULL;
 	
-	if (mode == 0){
+	if (mode == 0)
+	{
 		system("/sbin/update.sh getfilelist");
 		skinname = "panel_system_update_flash_online_menu";
 		filemask = ostrcat(filemask, "*.img", 1, 0);
 		filepath = ostrcat(filepath, "/tmp/online", 1, 0);
 		type = ostrcat(type, "online", 1, 0);
-	} else if (mode == 1){
+	}
+	else if (mode == 1)
+	{
 		skinname = "panel_system_update_flash_tmp_menu";
 		filemask = ostrcat(filemask, "*.img", 1, 0);
 		filepath = ostrcat(filepath, "/tmp", 1, 0);
 		type = ostrcat(type, "tmp", 1, 0);
-	} else if (mode == 2){
+	}
+	else if (mode == 2)
+	{
 		system("/sbin/update.sh getfilelist");
 		skinname = "panel_system_update_usb_online_menu";
 		filemask = ostrcat(filemask, "*.tar.gz", 1, 0);
 		filepath = ostrcat(filepath, "/tmp/online", 1, 0);
 		type = ostrcat(type, "online", 1, 0);
-	} else if (mode == 3){
+	}
+	else if (mode == 3)
+	{
 		skinname = "panel_system_update_usb_tmp_menu";
 		filemask = ostrcat(filemask, "*.tar.gz", 1, 0);
 		filepath = ostrcat(filepath, "/tmp", 1, 0);
@@ -69,15 +78,16 @@ void screenpanel_system_update(int mode)
 
 	struct skin* device = getscreennode(panel_system, "device");
 
-	if (mode == 2 || mode == 3){
-
+	if(mode == 2 || mode == 3)
+	{
 		char* devicelist = command("cat /proc/diskstats | awk {'print $3'} | grep 'sd[a-z][0-9]'");
 		char* rootpart = command("cat /proc/cmdline | sed 's/^.*root=//;s/ .*$//' | sed 's!/dev/!!'");
 
-		if(file_exist("/var/baroot/ba/bainit")){
+		if(file_exist("/var/baroot/ba/bainit"))
 			addchoicebox(device,"BA-IMAGE","BA-IMAGE");
-		}	
-		if(devicelist != NULL && strlen(devicelist) != 0){
+
+		if(devicelist != NULL && strlen(devicelist) != 0)
+		{
 			char* pch;
 			char* label = NULL;
 			char* showname = NULL;
@@ -89,7 +99,8 @@ void screenpanel_system_update(int mode)
 				count += 1;
 				label = get_label(pch);
 
-				if(string_find("MINI",label)){
+				if(string_find("MINI",label))
+				{
 					cmd = ostrcat("cat /media/autofs/", pch, 0, 0);
 					cmd = ostrcat(cmd, "/etc/version", 1, 0);
 					version = command(cmd);
@@ -119,9 +130,9 @@ void screenpanel_system_update(int mode)
 			}
 			free(pch), pch = NULL;
 
-		} else {
-			addchoicebox(device, "no device found", "no device found");
 		}
+		else
+			addchoicebox(device, "no device found", "no device found");
 
 		free(devicelist), devicelist = NULL;
 		free(rootpart), rootpart = NULL;
@@ -144,20 +155,24 @@ void screenpanel_system_update(int mode)
 		debug(40, "[panel_system] while status");
 
 
-		if(rcret == getrcconfigint("rcexit", NULL) || rcret == getrcconfigint("rcred", NULL)){
+		if(rcret == getrcconfigint("rcexit", NULL) || rcret == getrcconfigint("rcred", NULL))
 			break;
-		} else if(rcret == getrcconfigint("rcyellow", NULL)){
-			if (mode == 0 || mode == 2){
+		else if(rcret == getrcconfigint("rcyellow", NULL))
+		{
+			if (mode == 0 || mode == 2)
 				system("/sbin/update.sh getfilelist");
-			}
+
 			drawscreen(panel_system, 0);
 			getfilelist(panel_system, filelistpath, filelist, filepath, filemask, 1, NULL);
 			addscreenrc(panel_system, filelist);
 			continue;
-		} else if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcgreen", NULL)){
-			if(filelist->select != NULL && filelist->select->input != NULL){
+		}
+		else if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcgreen", NULL))
+		{
+			if(filelist->select != NULL && filelist->select->input != NULL)
 				continue;
-			} else if(filelist->select != NULL && filelist->select->input == NULL){
+			else if(filelist->select != NULL && filelist->select->input == NULL)
+			{
 				tmpstr = createpath(filelistpath->text, filelist->select->text);
 				debug(40, "[panel_system] tmpstr: %s", tmpstr);
 
@@ -168,41 +183,55 @@ void screenpanel_system_update(int mode)
 
 				char* msgtxt = NULL;
 
-				if(file_exist("/tmp/.swapextensionsdev")){
+				if(file_exist("/tmp/.swapextensionsdev"))
+				{
 					printf("[Panel] Update: update with log\n");
-					if(string_find("_KERNEL_",filelist->select->text)){
+					if(string_find("_KERNEL_",filelist->select->text)) && (file_exist("/etc/.beta"))
+					{
 						cmd = ostrcat(cmd, "kernel ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, "Kernel Update starten ?", 1, 0);
-					} else if(string_find("_FW_",filelist->select->text)){
+					}
+					else if(string_find("_FW_",filelist->select->text)) && (file_exist("/etc/.beta"))
+					{
 						cmd = ostrcat(cmd, "fw ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, "Fw Update starten ?", 1, 0);
-					} else if(string_find("_ROOT_",filelist->select->text)){
+					}
+					else if(string_find("_ROOT_",filelist->select->text)) && (file_exist("/etc/.beta"))
+					{
 						cmd = ostrcat(cmd, "root ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, "Root Update starten ?", 1, 0);
-					} else if(string_find("_VAR_",filelist->select->text)){
+					}
+					else if(string_find("_VAR_",filelist->select->text)) && (file_exist("/etc/.beta"))
+					{
 						cmd = ostrcat(cmd, "var ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, "Var Update starten ?", 1, 0);
-					} else if(string_find("_FULL_",filelist->select->text)){
+					}
+					else if(string_find("_FULL_",filelist->select->text))
+					{
 						cmd = ostrcat(cmd, "full ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, "Full Update starten ?", 1, 0);
-					} else if(string_find("_USB_",filelist->select->text)){
+					}
+					else if(string_find("_USB_",filelist->select->text))
+					{
 						//char* device = getconfig("device", NULL);
 						cmd = ostrcat(cmd, device->ret, 1, 0);
 						cmd = ostrcat(cmd, " ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, "Usb Update starten ?", 1, 0);
-					} else if(string_find("_FULLUSB_",filelist->select->text)){
+					}
+					else if(string_find("_FULLUSB_",filelist->select->text))
+					{
 						//char* device = getconfig("device", NULL);
 						cmd = ostrcat(cmd, device->ret, 1, 0);
 						cmd = ostrcat(cmd, " ", 1, 0);
@@ -210,36 +239,51 @@ void screenpanel_system_update(int mode)
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, "Fullusb Update starten ?", 1, 0);
 					}
-				} else {
+				}
+				else
+				{
 					printf("[Panel] Update: update without log\n");
 
-					if(string_find("_KERNEL_",filelist->select->text)){
+					if(string_find("_KERNEL_",filelist->select->text)) && (file_exist("/etc/.beta"))
+					{
 						cmd = ostrcat(cmd, "kernel ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						msgtxt = ostrcat(msgtxt, "Kernel Update starten ?", 1, 0);
-					} else if(string_find("_FW_",filelist->select->text)){
+					}
+					else if(string_find("_FW_",filelist->select->text)) && (file_exist("/etc/.beta"))
+					{
 						cmd = ostrcat(cmd, "fw ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						msgtxt = ostrcat(msgtxt, "Fw Update starten ?", 1, 0);
-					} else if(string_find("_ROOT_",filelist->select->text)){
+					}
+					else if(string_find("_ROOT_",filelist->select->text)) && (file_exist("/etc/.beta"))
+					{
 						cmd = ostrcat(cmd, "root ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						msgtxt = ostrcat(msgtxt, "Root Update starten ?", 1, 0);
-					} else if(string_find("_VAR_",filelist->select->text)){
+					}
+					else if(string_find("_VAR_",filelist->select->text)) && (file_exist("/etc/.beta"))
+					{
 						cmd = ostrcat(cmd, "var ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						msgtxt = ostrcat(msgtxt, "Var Update starten ?", 1, 0);
-					} else if(string_find("_FULL_",filelist->select->text)){
+					}
+					else if(string_find("_FULL_",filelist->select->text))
+					{
 						cmd = ostrcat(cmd, "full ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						msgtxt = ostrcat(msgtxt, "Full Update starten ?", 1, 0);
-					} else if(string_find("_USB_",filelist->select->text)){
+					}
+					else if(string_find("_USB_",filelist->select->text))
+					{
 						//char* device = getconfig("device", NULL);
 						cmd = ostrcat(cmd, device->ret, 1, 0);
 						cmd = ostrcat(cmd, " ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						msgtxt = ostrcat(msgtxt, "Usb Update starten ?", 1, 0);
-					} else if(string_find("_FULLUSB_",filelist->select->text)){
+					}
+					else if(string_find("_FULLUSB_",filelist->select->text))
+					{
 						//char* device = getconfig("device", NULL);
 						cmd = ostrcat(cmd, device->ret, 1, 0);
 						cmd = ostrcat(cmd, " ", 1, 0);
@@ -248,7 +292,8 @@ void screenpanel_system_update(int mode)
 					}
 				}
 				clearscreen(panel_system);
-				if(msgtxt == NULL){
+				if(msgtxt == NULL)
+				{
 					textbox(_("Message"), _("Error file not supported"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 					drawscreen(panel_system, 0);
 					getfilelist(panel_system, filelistpath, filelist, filepath, filemask, 1, NULL);
@@ -256,10 +301,13 @@ void screenpanel_system_update(int mode)
 					continue;
 				}
 
-				if(textbox(_("Message"), _(msgtxt), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2){
+				if(textbox(_("Message"), _(msgtxt), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+				{
 					debug(40, "[panel_system] update started cmd: %s", cmd);
 					system(cmd);
-				} else {
+				}
+				else
+				{
 					debug(40, "[panel_system] update canceled cmd: %s", cmd);
 					drawscreen(panel_system, 0);
 					getfilelist(panel_system, filelistpath, filelist, filepath, filemask, 1, NULL);
