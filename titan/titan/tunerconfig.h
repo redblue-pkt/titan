@@ -301,7 +301,6 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 int screentunerreceptiondvbs(struct dvbdev* tuner)
 {
 	int rcret = 0, ret = 0, mode = 0, maxsat = 1;
-	int oldmaxsat = status.maxsat;
 	
 	struct skin* tunerreceptiondvbs = getscreen("tunerreceptiondvbs");
 	struct skin* listbox = getscreennode(tunerreceptiondvbs, "listbox");
@@ -323,11 +322,15 @@ int screentunerreceptiondvbs(struct dvbdev* tuner)
 	char* listmode = NULL;
 	listmode = ostrcat(tuner->feshortname, "_mode", 0, 0);
 	mode = getconfigint(listmode, NULL);
+	if(mode == NULL)
+		mode = 0;
 
 	char* listmax = NULL;
 	listmax = ostrcat(tuner->feshortname, "_max", 0, 0);
 	maxsat = getconfigint(listmax, NULL);
-		
+	if(maxsat == NULL)
+		maxsat = 1;
+
 start:
 	createsatlist(tuner, tunerreceptiondvbs, listbox, mode, maxsat);
 /*
@@ -350,7 +353,7 @@ start:
 
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
-			status.maxsat = oldmaxsat;
+			status.maxsat = getconfigint("maxsat", NULL);
 			break;
 		}
 		if(ostrcmp(listbox->select->name, "sat_type") == 0)
@@ -458,6 +461,8 @@ start:
 			writetunerconfig(tuner, tunerreceptiondvbs);
 			addconfigint(listmode, mode);
 			addconfigint(listmax, maxsat);
+			addconfigint("maxsat", status.maxsat);
+
 			free(listmode), listmode = NULL;
 			writeallconfig(0);
 			break;
