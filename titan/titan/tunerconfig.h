@@ -324,13 +324,11 @@ int screentunerreceptiondvbs(struct dvbdev* tuner)
 	char* listmode = NULL;
 	listmode = ostrcat(tuner->feshortname, "_mode", 0, 0);
 	mode = getconfigint(listmode, NULL);
-	if(mode == NULL)
-		mode = 0;
 
 	char* listmax = NULL;
 	listmax = ostrcat(tuner->feshortname, "_max", 0, 0);
 	maxsat = getconfigint(listmax, NULL);
-	if(maxsat == NULL)
+	if(maxsat == 0)
 		maxsat = 1;
 
 start:
