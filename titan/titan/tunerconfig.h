@@ -310,6 +310,8 @@ int screentunerreceptiondvbs(struct dvbdev* tuner)
 //	struct skin* north_south = getscreennode(tunerreceivedvbs, "north_south");
 	struct skin* tmp = NULL;
 
+	struct dvbdev* dvbnode = dvbdev;
+	
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
 
@@ -462,9 +464,25 @@ start:
 			addconfigint(listmode, mode);
 			addconfigint(listmax, maxsat);
 
-			if(getconfigint("maxsat", NULL) < maxsat)
-				addconfigint("maxsat", status.maxsat);
+			int checkmaxsat = 0;
+			while(dvbnode != NULL)
+			{
+				if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL)
+				{
+					listmax = ostrcat(tuner->feshortname, "_max", 0, 0);
+					maxsat = getconfigint(listmax, NULL);
+					if(checkmaxsat < maxsat)
+						checkmaxsat = maxsat;
+				}
+				dvbnode = dvbnode->next;
+			}
 
+			if(checkmaxsat != 0)
+			{
+				status.maxsat = checkmaxsat;
+				addconfigint("maxsat", status.maxsat);
+			}
+									 
 			free(listmode), listmode = NULL;
 			writeallconfig(0);
 			break;
