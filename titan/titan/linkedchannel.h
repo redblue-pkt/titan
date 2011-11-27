@@ -21,7 +21,7 @@ struct linkedchannel* checklinkedchannel(struct channel* chnode, struct linkedch
 void screenlinkedchannel()
 {
 	int rcret = 0;
-	struct skin* linkedchannel = getscreen("linkedchanel");
+	struct skin* linkedchannel = getscreen("linkedchannel");
 	struct skin* listbox = getscreennode(linkedchannel, "listbox");
 	struct skin* tmp = NULL;
 	struct linkedchannel* node = NULL;
