@@ -99,7 +99,7 @@ void redkeyactions_extensions()
 		child = child->next;
 	}
 
-	char* mlistbox = menulistbox(NULL, tmpstr, NULL, skintitle, NULL, 1);
+	char* mlistbox = menulistbox(NULL, tmpstr, NULL, skintitle, NULL, 1, 0);
 
 	if(ostrcmp(mlistbox, "Softcam Panel") == 0)
 	{

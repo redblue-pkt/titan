@@ -14,7 +14,7 @@ void screenvideomode()
 	tmpstr1 = ostrcat(tmpstr1, "\t\n", 1, 0);
 	tmpstr1 = ostrcat(tmpstr1, getpolicychoices(), 1, 1);
 
-	char* mbox = menulistbox(tmpstr, tmpstr1, skinname, NULL, NULL, 1);
+	char* mbox = menulistbox(tmpstr, tmpstr1, skinname, NULL, NULL, 1, 0);
 
 	free(tmpstr); tmpstr = NULL;
 	free(tmpstr1); tmpstr1 = NULL;
@@ -35,7 +35,7 @@ void screenvideomode()
 			free(mbox); mbox = NULL;
 			tmpstr = getvideomode();
 			tmpstr1 = getvideomodechoices();
-			mbox = menulistbox(tmpstr, tmpstr1, skinname, NULL, NULL, 1);
+			mbox = menulistbox(tmpstr, tmpstr1, skinname, NULL, NULL, 1, 0);
 			free(tmpstr1); tmpstr1 = NULL;
 			if(mbox != NULL && ostrcmp(tmpstr, mbox) != 0)
 			{
@@ -60,7 +60,7 @@ void screenvideomode()
 			free(mbox); mbox = NULL;
 			tmpstr = getaspect();
 			tmpstr1 = getaspectchoices();
-			mbox = menulistbox(tmpstr, tmpstr1, skinname, NULL, NULL, 1);
+			mbox = menulistbox(tmpstr, tmpstr1, skinname, NULL, NULL, 1, 0);
 			free(tmpstr); tmpstr = NULL;
 			free(tmpstr1); tmpstr1 = NULL;
 			if(mbox != NULL)
@@ -77,7 +77,7 @@ void screenvideomode()
 			free(mbox); mbox = NULL;
 			tmpstr = getaspect();
 			tmpstr1 = get3dchoices();
-			mbox = menulistbox(tmpstr, tmpstr1, skinname, NULL, NULL, NULL);
+			mbox = menulistbox(tmpstr, tmpstr1, skinname, NULL, NULL, 0, 0);
 			free(tmpstr); tmpstr = NULL;
 			free(tmpstr1); tmpstr1 = NULL;
 			if(mbox != NULL)

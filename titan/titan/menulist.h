@@ -4,7 +4,8 @@
 // showpng = 0 (no icon)
 // showpng = 1 (smal icon)
 
-char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, char* skinpath, int showpng)
+//flag 1: rcgreen = subchannel
+char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, char* skinpath, int showpng, int flag)
 {
 	debug(1000, "in");
 	char* skinname1 = NULL;
