@@ -143,8 +143,6 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Make Language Po files"
 echo "[titan]--------------------------------------------------------"
-"$HOME"/flashimg/source.titan/titan/tools/createpo.sh update
-
 "$HOME"/flashimg/source.titan/po/de/LC_MESSAGES/make.sh "$STM"
 "$HOME"/flashimg/source.titan/po/ru/LC_MESSAGES/make.sh "$STM"
 "$HOME"/flashimg/source.titan/po/pl/LC_MESSAGES/make.sh "$STM"
