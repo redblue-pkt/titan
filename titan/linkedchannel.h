@@ -3,8 +3,10 @@
 
 struct linkedchannel* getlinkedchannel(struct channel* chnode, int serviceid, unsigned long transponderid)
 {
+	if(chnode == NULL) return NULL;
+
 	m_lock(&status.linkedchannelmutex, 14);
-	struct channel* node = chnode;
+	struct linkedchannel* node = chnode->linkedchannel;
 
 	while(node != NULL)
 	{
@@ -72,10 +74,11 @@ void screenlinkedchannel()
 					}
 					changetext(tmp, tmpstr);
 					free(tmpstr); tmpstr = NULL;
+					tmp->handle = (char*)node;
+					tmp->handle1 = (char*)chnode;
+
 /*
 					tmp->type = CHOICEBOX;
-					tmp->handle = (char*)node;
-
 					if(status.aktservice->channel->audiopid == node->audiopid)
 						changeinput(tmp, _("running"));
 					else
@@ -101,7 +104,8 @@ void screenlinkedchannel()
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
 				m_lock(&status.linkedchannelmutex, 14);
-				//zap
+				if(checklinkedchannel(status.aktservice->channel, (struct linkedchannel*)listbox->select->handle) != NULL)
+					servicecheckret(servicestart((struct channel*)listbox->select->handle1, NULL, NULL, 0), 0);
 				m_unlock(&status.linkedchannelmutex, 14);
 			}
 			break;
