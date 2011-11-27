@@ -131,6 +131,7 @@ struct caservice caservice[MAXCASERVICE];
 #include "recordpath.h"
 #include "subtitle.h"
 #include "audiotrack.h"
+#include "linkedchannel.h"
 #include "powerofftimer.h"
 #include "skinselector.h"
 #include "play.h"

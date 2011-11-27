@@ -381,6 +381,10 @@ void freesubtitle(struct channel* chnode);
 int subtitlestop(int flag);
 int subtitlepause(int flag);
 
+//linkedchannel.h
+struct linkedchannel* addlinkedchannel(struct channel* chnode, int serviceid, unsigned long transponderid, struct linkedchannel* last);
+void freelinkedchannel(struct channel* chnode);
+
 //zap.h
 void zapup();
 void zapdown();

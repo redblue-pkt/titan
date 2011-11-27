@@ -27,6 +27,7 @@ void serviceresetchannelinfo(struct channel* chnode)
 {
 	freeaudiotrack(chnode);
 	freesubtitle(chnode);
+	freelinkedchannel(chnode);
 	freepmt(chnode);
 	freecadesc(chnode);
 	freeesinfo(chnode);

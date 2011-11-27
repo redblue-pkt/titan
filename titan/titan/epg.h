@@ -884,14 +884,17 @@ void ratingdescr(struct epg* epgnode, unsigned char *buf)
 }
 
 // Parse 0x4A Linkage Descriptor
-void linkagedesc(struct epg* epgnode, void *buf)
+void linkagedesc(struct channel* chnode, struct epg* epgnode, void *buf)
 {
 	struct eitlinkage *evtlink = buf;
-	printf("linkage desc\n");
-
-	printf("tsid = %d\n", HILO(evtlink->transport_stream_id));
-	printf("onid = %d\n", HILO(evtlink->original_network_id));
-	printf("sid = %d\n", HILO(evtlink->service_id));
+	unsigned long transponderid = 0;
+	
+	int tid = HILO(evtlink->transport_stream_id);
+	int onid = HILO(evtlink->original_network_id);
+	
+	transponderid = (onid << 16) | tid;
+	
+	addlinkedchannel(chnode, HILO(evtlink->service_id), transponderid, NULL);
 }
 
 #if 0
@@ -1024,7 +1027,7 @@ void contentidentifierdesc(struct epg* epgnode, unsigned char *buf)
 #endif
 
 //Parse Descriptor
-void parseeitdesc(struct epg* epgnode, unsigned char *buf, int len)
+void parseeitdesc(struct channel* chnode, struct epg* epgnode, unsigned char *buf, int len)
 {
 	//int pds = 0;
 
@@ -1036,7 +1039,7 @@ void parseeitdesc(struct epg* epgnode, unsigned char *buf, int len)
 			case 0:
 				break;
 			case 0x4A:
-				linkagedesc(epgnode, p);
+				linkagedesc(chnode, epgnode, p);
 				break;
 			case 0x4D:
 				eventdesc(epgnode, p);
@@ -1179,7 +1182,7 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 		//1 Airing, 2 Starts in a few seconds, 3 Pausing, 4 About to air
 		//printf("RunningStatus %d\n", evt->running_status);
 
-		parseeitdesc(epgnode, (unsigned char*)&evt->data, eitlen);
+		parseeitdesc(tmpchnode, epgnode, (unsigned char*)&evt->data, eitlen);
 		//compress long desc
 		if(epgnode->desc != NULL)
 		{
