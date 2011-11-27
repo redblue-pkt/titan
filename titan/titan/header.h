@@ -1,6 +1,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//linkedchannel.h
+void screenlinkedchannel();
+
 //httpdsettings.h
 void screenhttpdsettings();
 
