@@ -109,7 +109,7 @@ char* transpondergetguardintervalstr(struct transponder* node, int flag)
 	else if(flag == 1)
 	{
 		text = ostrcat(text, "1/32\n1/16\n1/8\n1/4\n", 1, 0);
-		text = ostrcat(text, _("AUTO"), 1, 0);
+		text = ostrcat(text, _("auto"), 1, 0);
 	}
 	else if(flag == 2)
 		text = ostrcat(text, "0\n1\n2\n3\n4", 1, 0);
@@ -143,7 +143,7 @@ char* transpondergethieratchystr(struct transponder* node, int flag)
 	{
 		text = ostrcat(text, _("none"), 1, 0);
 		text = ostrcat(text, "\n1\n2\n4\n", 1, 0);
-		text = ostrcat(text, _("AUTO"), 1, 0);
+		text = ostrcat(text, _("auto"), 1, 0);
 	}		
 	else if(flag == 2)
 		text = ostrcat(text, "0\n1\n2\n3\n4", 1, 0);
