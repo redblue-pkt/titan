@@ -461,7 +461,9 @@ start:
 			writetunerconfig(tuner, tunerreceptiondvbs);
 			addconfigint(listmode, mode);
 			addconfigint(listmax, maxsat);
-			addconfigint("maxsat", status.maxsat);
+
+			if(getconfigint("maxsat", NULL) < maxsat)
+				addconfigint("maxsat", status.maxsat);
 
 			free(listmode), listmode = NULL;
 			writeallconfig(0);
