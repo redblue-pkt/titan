@@ -1,7 +1,7 @@
 #!/bin/sh
 KERNELDIR=$1
 
-cd tools
+cd "$HOME"/flashimg/source.titan/titan/tools
 
 rm tmp
 rm tmp.gz
@@ -15,4 +15,3 @@ echo "[gettitancode.sh] $str -> $code"
 
 cat ../ca.h | sed s/"^#define SYSCODE .*"/"#define SYSCODE $code"/ > ca.h.tmp
 mv ca.h.tmp ../ca.h
-cd ..
