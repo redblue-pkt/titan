@@ -173,7 +173,7 @@ void screenconfigurehdd(char* dev)
 	delmarkedscreennodes(screen, 1);
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
-	changetitle(screen, "Harddisk Configure");
+	changetitle(screen, _("Harddisk Configure"));
 
 	if(status.expertmodus == 0) y = 1;
 	for(i = 0; i < y; i++)
@@ -183,42 +183,42 @@ void screenconfigurehdd(char* dev)
 		{
 			if(i == 0)
 			{
-				tmpstr = "use medium for record";
+				tmpstr = _("use medium for record");
 				tmpstr1 = "addrecord";
 			}
 			else if(i == 1)
 			{
-				tmpstr = "use medium for extension";
+				tmpstr = _("use medium for extension");
 				tmpstr1 = "addext";
 			}
 			else if(i == 2)
 			{
-				tmpstr = "use medium for swap";
+				tmpstr = _("use medium for swap");
 				tmpstr1 = "addswap";
 			}
 			else if(i == 3)
 			{
-				tmpstr = "use medium for backup";
+				tmpstr = _("use medium for backup");
 				tmpstr1 = "addbackup";
 			}
 			else if(i == 4)
 			{
-				tmpstr = "del medium for record";
+				tmpstr = _("del medium for record");
 				tmpstr1 = "delrecord";
 			}
 			else if(i == 5)
 			{
-				tmpstr = "del medium for extension";
+				tmpstr = _("del medium for extension");
 				tmpstr1 = "delext";
 			}
 			else if(i == 6)
 			{
-				tmpstr = "del medium for swap";
+				tmpstr = _("del medium for swap");
 				tmpstr1 = "delswap";
 			}
 			else if(i == 7)
 			{
-				tmpstr = "del medium for backup";
+				tmpstr = _("del medium for backup");
 				tmpstr1 = "delbackup";
 			}
 			tmpstr2 = ostrcat(tmpstr2, getconfig("skinpath", NULL), 1, 0);
@@ -236,7 +236,7 @@ void screenconfigurehdd(char* dev)
 			changepic(tmp, tmpstr2);
 			free(tmpstr2); tmpstr2 = NULL;
 
-			changetext(tmp, _(tmpstr));
+			changetext(tmp, tmpstr);
 			changename(tmp, tmpstr1);
 			tmp->textposx = 120;
 			tmp->height = 50;
@@ -354,11 +354,11 @@ start:
 	status.hangtime = tmphangtime;
 	delmarkedscreennodes(screen, 1);
 	if(mode == 0)
-		changetitle(screen, "Harddisk Format - List Devices");
+		changetitle(screen, _("Harddisk Format - List Devices"));
 	else if(mode == 1)
-		changetitle(screen, "Harddisk Fsck - List Devices");
+		changetitle(screen, _("Harddisk Fsck - List Devices"));
 	else if(mode == 2)
-		changetitle(screen, "Harddisk Configure - List Devices");
+		changetitle(screen, _("Harddisk Configure - List Devices"));
 	
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
@@ -375,13 +375,13 @@ start:
 		{
 			if(hddnode->removable == 0)
 			{
-				tmpstr = ostrcat(tmpstr, "HDD ", 1, 0);
+				tmpstr = ostrcat(tmpstr, _("HDD "), 1, 0);
 				tmpstr1 = ostrcat(tmpstr1, getconfig("skinpath", NULL), 1, 0);
 				tmpstr1 = ostrcat(tmpstr1, "/skin/hdd.png", 1, 0);
 			}
 			else
 			{
-				tmpstr = ostrcat(tmpstr, "STICK ", 1, 0);
+				tmpstr = ostrcat(tmpstr, _("STICK "), 1, 0);
 				tmpstr1 = ostrcat(tmpstr1, getconfig("skinpath", NULL), 1, 0);
 				tmpstr1 = ostrcat(tmpstr1, "/skin/stick.png", 1, 0);
 			}
@@ -398,7 +398,10 @@ start:
 				path = ostrcat(path, "/", 1, 0);
 				path = ostrcat(path, "swapextensions", 1, 0);
 				if(file_exist(path) == 1)
-					tmpstr = ostrcat(tmpstr, " - ext", 1, 0);
+				{
+					tmpstr = ostrcat(tmpstr, " - ", 1, 0);
+					tmpstr = ostrcat(tmpstr, _("ext"), 1, 0);
+				}
 				free(path); path = NULL;
 
 				path = getconfig("mountpath", NULL);
@@ -407,7 +410,10 @@ start:
 				path = ostrcat(path, "/", 1, 0);
 				path = ostrcat(path, "swapdir", 1, 0);
 				if(file_exist(path) == 1)
-					tmpstr = ostrcat(tmpstr, " - swap", 1, 0);
+				{
+					tmpstr = ostrcat(tmpstr, " - ", 1, 0);
+					tmpstr = ostrcat(tmpstr, _("swap"), 1, 0);
+				}
 				free(path); path = NULL;
 
 				path = getconfig("mountpath", NULL);
@@ -416,7 +422,10 @@ start:
 				path = ostrcat(path, "/", 1, 0);
 				path = ostrcat(path, "backup", 1, 0);
 				if(file_exist(path) == 1)
-					tmpstr = ostrcat(tmpstr, " - backup", 1, 0);
+				{
+					tmpstr = ostrcat(tmpstr, " - ", 1, 0);
+					tmpstr = ostrcat(tmpstr, _("backup"), 1, 0);
+				}
 				free(path); path = NULL;
 
 				path = getconfig("mountpath", NULL);
@@ -425,7 +434,10 @@ start:
 				path = ostrcat(path, "/", 1, 0);
 				path = ostrcat(path, "movie", 1, 0);
 				if(file_exist(path) == 1)
-					tmpstr = ostrcat(tmpstr, " - record", 1, 0);
+				{
+					tmpstr = ostrcat(tmpstr, " - ", 1, 0);
+					tmpstr = ostrcat(tmpstr, _("record"), 1, 0);
+				}
 				free(path); path = NULL;
 			}
 			else

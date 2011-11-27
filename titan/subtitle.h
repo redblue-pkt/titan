@@ -1685,12 +1685,19 @@ struct subtitle* addsubtitle(struct channel* chnode, int subtype, char* langdesc
 	tmpstr = ostrcat(tmpstr, langdesc, 1, 0);
 	if(subtype == 1)
 	{
-		tmpstr = ostrcat(tmpstr, " (TXT Subtitle - ", 1, 0);
+		tmpstr = ostrcat(tmpstr, " (", 1, 0);
+		tmpstr = ostrcat(tmpstr, "TXT Subtitle", 1, 0);
+		tmpstr = ostrcat(tmpstr, " - ", 1, 0);
 		tmpnr = oitoa(id2);
 		tmpstr = ostrcat(tmpstr, tmpnr, 1, 1);
 		tmpstr = ostrcat(tmpstr, ")", 1, 0);
 	}
-	if(subtype == 2) tmpstr = ostrcat(tmpstr, " (DVB Subtitle)", 1, 0);
+	if(subtype == 2) 
+	{
+		tmpstr = ostrcat(tmpstr, " (", 1, 0);
+		tmpstr = ostrcat(tmpstr, "DVB Subtitle", 1, 0);
+		tmpstr = ostrcat(tmpstr, ")", 1, 0);
+	}
 	newnode->name = tmpstr;
 
 	m_lock(&status.subtitlemutex, 8);
