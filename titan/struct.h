@@ -681,7 +681,7 @@ struct linkedchannel
 	unsigned long transponderid;
 	int serviceid;
 	struct linkedchannel* next;
-}
+};
 
 //there are a createchannel function
 //if you change this struct you must change the function
