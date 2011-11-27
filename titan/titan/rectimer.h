@@ -18,32 +18,32 @@ int checkrectimeradd(struct rectimer* recnode, char** ret)
 
 	if(recnode == NULL)
 	{
-		*ret = "undefined error";
+		*ret = _("undefined error");
 		return 1;
 	}
 	if(recnode->begin == 0 || recnode->end == 0)
 	{
-		*ret = "Timer starttime or endtime not ok";
+		*ret = _("Timer starttime or endtime not ok");
 		return 1;
 	}
 	if(recnode->end <= time(NULL))
 	{
-		*ret = "Timer endtime shorter than aktual time";
+		*ret = _("Timer endtime shorter than aktual time");
 		return 1;
 	}
 	if(recnode->end <= recnode->begin)
 	{
-		*ret = "Timer endtime shorter than start time";
+		*ret = _("Timer endtime shorter than start time");
 		return 1;
 	}
 	if(recnode->serviceid < 1)
 	{
-		*ret = "Timer service ID not ok";
+		*ret = _("Timer service ID not ok");
 		return 1;
 	}
 	if(recnode->transponderid < 1)
 	{
-		*ret = "Timer transponder ID not ok";
+		*ret = _("Timer transponder ID not ok");
 		return 1;
 	}
 
@@ -344,7 +344,7 @@ void checkrectimer()
 		{
 			node->status = 3;
 			free(node->errstr);
-			node->errstr = ostrcat("not started akttime greater timer endtime", "", 0, 0);
+			node->errstr = ostrcat(_("not started akttime greater timer endtime"), "", 0, 0);
 			status.writerectimer = 1;
 		}
 		node = node->next;
@@ -452,7 +452,7 @@ void delrectimer(struct rectimer* rectimernode, int write, int flag)
 			{
 				node->status = 2;
 				free(node->errstr);
-				node->errstr = ostrcat("stopped from user", "", 0, 0);
+				node->errstr = ostrcat(_("stopped from user"), "", 0, 0);
 				//stop recording
 				node->servicenode->recendtime = 1;
 				if(flag == 0)
@@ -1105,7 +1105,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 			{
 				if(ret == 2)
 				{
-					ret = textbox(_("Message"), _(checkret), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+					ret = textbox(_("Message"), checkret, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 					if(ret == 2)
 						ret = 99;
 					else
@@ -1117,7 +1117,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 					free(node->errstr); node->errstr = NULL;
 					node->errstr = ostrcat(checkret, NULL, 0, 0);
 					stringreplacecharonce(node->errstr, '\n', '\0');
-					if(ret == 1) textbox(_("Message"), _(checkret), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+					if(ret == 1) textbox(_("Message"), checkret, _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 				}
 			}
 				
@@ -1184,20 +1184,24 @@ start:
 				loctime = localtime(&rectimernode->end);
 				strftime(buf, MINMALLOC, "%d-%m-%Y %H:%M", loctime);
 				tmpstr = ostrcat(tmpstr, buf, 1, 0);
-				tmpstr = ostrcat(tmpstr, " (rec - ", 1, 0);
+				tmpstr = ostrcat(tmpstr, " (", 1, 0);
+				tmpstr = ostrcat(tmpstr, _("rec"), 1, 0);
+				tmpstr = ostrcat(tmpstr, " - ", 1, 0);
 				if(rectimernode->repeate == 0)
-					tmpstr = ostrcat(tmpstr, "once", 1, 0);
+					tmpstr = ostrcat(tmpstr, _("once"), 1, 0);
 				else
-					tmpstr = ostrcat(tmpstr, "repeate", 1, 0);
+					tmpstr = ostrcat(tmpstr, _("repeate"), 1, 0);
 				tmpstr = ostrcat(tmpstr, ")", 1, 0);
 			}
 			else
 			{
-				tmpstr = ostrcat(tmpstr, " (switch - ", 1, 0);
+				tmpstr = ostrcat(tmpstr, " (", 1, 0);
+				tmpstr = ostrcat(tmpstr, _("switch"), 1, 0);
+				tmpstr = ostrcat(tmpstr, " - ", 1, 0);
 				if(rectimernode->repeate == 0)
-					tmpstr = ostrcat(tmpstr, "once", 1, 0);
+					tmpstr = ostrcat(tmpstr, _("once"), 1, 0);
 				else
-					tmpstr = ostrcat(tmpstr, "repeate", 1, 0);
+					tmpstr = ostrcat(tmpstr, _("repeate"), 1, 0);
 				tmpstr = ostrcat(tmpstr, ")", 1, 0);
 			}
 
