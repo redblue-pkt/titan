@@ -73,7 +73,7 @@ echo "[titan]--------------------------------------------------------"
 #echo "[titan] Make Securety"
 #echo "[titan]--------------------------------------------------------"
 
-#"$HOME"/flashimg/source.titan/titan/tools/gettitancode.sh $KERNELDIR
+"$HOME"/flashimg/source.titan/titan/tools/gettitancode.sh $KERNELDIR
 
 #echo "[titan]--------------------------------------------------------"
 #echo "[titan] Security done"
