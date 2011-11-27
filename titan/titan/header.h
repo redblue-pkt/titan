@@ -221,7 +221,7 @@ void delownconfigtmpall();
 void fillinfobar();
 
 //menulist.h
-char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, char* skinpath, int showpng, inf flag);
+char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, char* skinpath, int showpng, int flag);
 
 //skinfunc.h
 char* gettime(char* format);
