@@ -140,8 +140,8 @@ void screenlnb(char* feshortname, char* lnbnr)
 
 	changeinput(tonemode, NULL);
 	addchoicebox(tonemode, "0", _("Band"));
-	addchoicebox(tonemode, "1", _("On"));
-	addchoicebox(tonemode, "2", _("Off"));
+	addchoicebox(tonemode, "1", _("on"));
+	addchoicebox(tonemode, "2", _("off"));
 
 	changeinput(loftype, NULL);
 	addchoicebox(loftype, "0", _("universal"));
