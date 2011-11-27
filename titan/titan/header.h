@@ -1,6 +1,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//httpdsettings.h
+void screenhttpdsettings();
+
 //ca.h
 int getfreecasession(struct dvbdev* dvbnode, int type, int value);
 
