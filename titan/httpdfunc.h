@@ -1775,20 +1775,68 @@ char* webgetrectimer(char* param, int flag)
 
 char* webaddrectimer(char* param)
 {
-	char* buf = NULL;
-	int maxlen = 0, pos = 0;
+	char* buf = NULL, *buf1 = NULL, *buf2 = NULL;
+	int maxlen = 0, pos = 0, tmpservicetype = 0;
+	struct tm* loctime = NULL;
+	time_t akttime = time(NULL);
+		
+	ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"titan.css\"></head>", &maxlen, &pos);
+	ostrcatbig(&buf, "<body class=body ><center>", &maxlen, &pos);
+	ostrcatbig(&buf, "<form name=F1 action=query method=get><br><br>", &maxlen, &pos);
+	ostrcatbig(&buf, "<input type=\"hidden\" name=\"rectimersend&node\" value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, "0", &maxlen, &pos);
+	ostrcatbig(&buf, "\">", &maxlen, &pos);
+	ostrcatbig(&buf, "<table border=\"0\"><tr>", &maxlen, &pos);
+	ostrcatbig(&buf, "<td><font class=label>Name:&nbsp;</font></td>", &maxlen, &pos);
+	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"name\" value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, " ", &maxlen, &pos);
+	ostrcatbig(&buf, "\" /></td></tr>", &maxlen, &pos);
+	ostrcatbig(&buf, "<td><font class=label>Type:&nbsp;</font></td>", &maxlen, &pos);
+	ostrcatbig(&buf, "<td><select name=\"type\" border=0><option selected>", &maxlen, &pos);
+	ostrcatbig(&buf, "record", &maxlen, &pos);
+	ostrcatbig(&buf, "<option>record<option>switch channel</select></td></tr>", &maxlen, &pos);
+
+	buf2 = malloc(MINMALLOC);
+	loctime = localtime(&akttime);
+	strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
+	buf1 = ostrcat(buf2, "", 0, 0);
+	ostrcatbig(&buf, "<td><font class=label>Begin:&nbsp;</font></td>", &maxlen, &pos);
+	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"begin\" value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, buf1, &maxlen, &pos);
+	ostrcatbig(&buf, "\" /></td></tr>", &maxlen, &pos);
+	free(buf1); buf1 = NULL;
 	
-	ostrcatbig(&buf, param, &maxlen, &pos);
+	loctime = localtime(&akttime);
+	strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
+	buf1 = ostrcat(buf2, "", 0, 0);
+	ostrcatbig(&buf, "<td><font class=label>End:&nbsp;</font></td>", &maxlen, &pos);
+	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"end\" value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, buf1, &maxlen, &pos);
+	ostrcatbig(&buf, "\" /></td></tr>", &maxlen, &pos);
+	free(buf1); buf1 = NULL;
+	free(buf2); buf2 = NULL;
+
+	ostrcatbig(&buf, "<td><font class=label>Channel:&nbsp;</font></td>", &maxlen, &pos);
+	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"channel\" value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, status.aktservice->channel->name, &maxlen, &pos);
+	ostrcatbig(&buf, "\" /></td></tr>", &maxlen, &pos);
+	free(buf1); buf1 = NULL;
+	
+	ostrcatbig(&buf, "</table><br><br><input class=button type=submit name=send value=\"Send\" onClick=\"return checkdaytime(begin.value, end.value)\"></input>&nbsp;<input class=button type=reset name=reset value=\"Reset\"></input></form></center></body></html>", &maxlen, &pos);
+
+	//ostrcatbig(&buf, param, &maxlen, &pos);
 	return buf;
 }
 
 char* webrectimersend(char* param)
 {
-	char* buf = NULL, *string = NULL, *name = NULL, *begin = NULL, *end = NULL, *type = NULL, *anode = NULL;
-	int maxlen = 0, pos = 0;
+	char* buf = NULL, *string = NULL, *name = NULL, *begin = NULL, *end = NULL, *type = NULL, *anode = NULL, *channelname = NULL;
+	int maxlen = 0, pos = 0, channelfind = 0, tmpservicetype = 0;
 	struct rectimer *node = NULL;
-	char* tmpstr = NULL;
+	char* tmpstr = NULL, *tmpchannellist = NULL;
 	struct tm* loctime = NULL;
+	struct channel *channel1;
+	struct service *service1;
 
 	anode=strstr(param, "node=");
 	if(anode != NULL)
@@ -1805,6 +1853,9 @@ char* webrectimersend(char* param)
 	type=strstr(param, "type=");
 	if(type != NULL)
 		type = type + 5;
+	channelname=strstr(param, "channel=");
+	if(channelname != NULL)
+		channelname = channelname + 8;
 	
 	string = param;	
 	while(string != NULL) {	
@@ -1813,14 +1864,74 @@ char* webrectimersend(char* param)
 			*string++ = '\0';
 	} 
 	
-	node = atoi(anode);
-	
+	string = channelname;	
+	while(string != NULL) {	
+		string = strchr(string, '+');
+		if(string != NULL)
+			*string++ = ' ';
+	} 
 	string = name;	
 	while(string != NULL) {	
 		string = strchr(string, '+');
 		if(string != NULL)
 			*string++ = ' ';
 	} 
+	
+	node = atoi(anode);
+	if(node == 0) {
+		node = addrectimernode(NULL, NULL);
+		node->pincode = ostrcat("0000", NULL, 0, 0);
+		node->recpath = ostrcat(NULL, getconfig("rec_path", NULL), 0, 0);
+		node->afterevent = 0;
+		node->repeate = 0;
+		
+		tmpservicetype = status.servicetype;
+		if(tmpservicetype == 0)
+			tmpchannellist = ostrcat(getconfig("channellist", NULL), "", 0, 0);
+		else
+			tmpchannellist = ostrcat(getconfig("rchannellist", NULL), "", 0, 0);
+	}
+
+	if(channelname != NULL) {
+		channelfind = 0;
+		channel1=channel;
+		while(channel1->next != NULL) {
+			if(ostrcmp(channel1->name, channelname) == 0) {
+				channelfind = 1;
+				break;
+			}
+			channel1=channel1->next;
+		}
+		if(channelfind == 0) {
+			channel1=channel;		
+			while(channel1->next != NULL) {
+				if(strstr(channel1->name, channelname) != NULL) {
+					channelfind = 1;
+					break;
+				}
+				channel1=channel1->next;
+			}
+		}
+		if(channelfind == 0) {
+			buf = ostrcat(buf, "channel not found", 1, 0);	
+			return buf;
+		}
+		else {
+			node->serviceid = channel1->serviceid;
+			node->servicetype = channel1->servicetype;
+			node->transponderid = channel1->transponderid;
+			/*service1 = service;
+			while(service1->next != NULL) {
+				if(service1->channel == channel1) {
+					free(node->channellist); node->channellist = NULL;
+					node->channellist = ostrcat(service1->channellist, "", 0, 0);
+					break;
+				}
+				channel1=channel1->next;
+			}*/
+		}
+	}
+	
 	free(node->name); node->name = NULL;
 	node->name = ostrcat(name, "", 0, 0);
 	
@@ -1922,7 +2033,6 @@ char* webeditrectimer(char* param)
 	ostrcatbig(&buf, buf1, &maxlen, &pos);
 	ostrcatbig(&buf, "\" /></td></tr>", &maxlen, &pos);
 	free(buf1); buf1 = NULL;
-	
 	free(buf2); buf2 = NULL;
 	
 	ostrcatbig(&buf, "</table><br><br><input class=button type=submit name=send value=\"Send\" onClick=\"return checkdaytime(begin.value, end.value)\"></input>&nbsp;<input class=button type=reset name=reset value=\"Reset\"></input></form></center></body></html>", &maxlen, &pos);
