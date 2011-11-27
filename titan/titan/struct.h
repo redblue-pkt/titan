@@ -676,6 +676,13 @@ struct audiotrack
 	struct audiotrack* next;
 };
 
+struct linkedchannel
+{
+	unsigned long transponderid;
+	int serviceid;
+	struct linkedchannel* next;
+}
+
 //there are a createchannel function
 //if you change this struct you must change the function
 struct channel
@@ -700,6 +707,7 @@ struct channel
 	struct provider *provider;
 	struct audiotrack *audiotrack;
 	struct subtitle *subtitle;
+	struct linkedchannel *linkedchannel;
 	struct pmt *pmt;
 	struct cadesc *cadesc;
 	struct esinfo *esinfo;
