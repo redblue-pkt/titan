@@ -831,6 +831,7 @@ struct status
 	pthread_mutex_t timerthreadmutex;
 	pthread_mutex_t audiotrackmutex;
 	pthread_mutex_t subtitlemutex;
+	pthread_mutex_t linkedchannelmutex;
 	pthread_mutex_t dmxdevmutex;
 	pthread_mutex_t rcmutex;
 	pthread_mutex_t queuemutex;

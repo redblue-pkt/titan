@@ -362,6 +362,10 @@ int delchannel(int serviceid, int transponderid, int flag)
 			freesubtitle(node);
 			free(node->subtitle);
 			node->subtitle = NULL;
+			
+			freelinkedchannel(node);
+			free(node->linkedchannel);
+			node->linkedchannel = NULL;
 
 			freepmt(node);
 			free(node->pmt);
