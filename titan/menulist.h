@@ -18,7 +18,10 @@ char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 	if(str == NULL) return 0;
 
 	if(pthread_self() != status.mainthread)
+	{
 		fromthread = 1;
+		flag = 0; //in thread modus only flag 0 alowed (flag 1 not thread save)
+	}
 
 	if(skinname == NULL)
 	{
@@ -201,7 +204,13 @@ char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 	{
 		rcret = waitrc(screen, 0, 0);
 
-		if(rcret==getrcconfigint("rcexit",NULL)) break;
+		if(rcret==getrcconfigint("rcexit", NULL)) break;
+		if(flag == 1 && rcret==getrcconfigint("rcgreen", NULL))
+		{
+			clearscreen(screen);
+			screenlinkedchannel();
+			break;
+		}
 		if(listbox->select != NULL && rcret==getrcconfigint("rcok",NULL))
 		{
 			tmpstr = ostrcat(tmpstr, listbox->select->name, 1, 0);

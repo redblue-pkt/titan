@@ -14,7 +14,7 @@ void screenvideomode()
 	tmpstr1 = ostrcat(tmpstr1, "\t\n", 1, 0);
 	tmpstr1 = ostrcat(tmpstr1, getpolicychoices(), 1, 1);
 
-	char* mbox = menulistbox(tmpstr, tmpstr1, skinname, NULL, NULL, 1, 0);
+	char* mbox = menulistbox(tmpstr, tmpstr1, skinname, NULL, NULL, 1, 1);
 
 	free(tmpstr); tmpstr = NULL;
 	free(tmpstr1); tmpstr1 = NULL;
