@@ -69,7 +69,15 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] cleanup done"
 echo "[titan]--------------------------------------------------------"
 
-KERNELDIR
+echo "[titan]--------------------------------------------------------"
+echo "[titan] Make Securety"
+echo "[titan]--------------------------------------------------------"
+
+"$HOME"/flashimg/source.titan/titan/tools/gettitancode.sh $KERNELDIR
+
+echo "[titan]--------------------------------------------------------"
+echo "[titan] Security done"
+echo "[titan]--------------------------------------------------------"
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Make titan"
