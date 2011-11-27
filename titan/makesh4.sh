@@ -4,34 +4,40 @@ MEDIAFW=$3
 SVNUSER=$4
 SVNPASS=$5
 SVNURL=$6
+KERNELDIR=$7
 
 if [ -z "$TYPE" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir>"
 	exit 1
 fi
 
 if [ -z "$STM" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir>"
 	exit 1
 fi
 
 if [ -z "$MEDIAFW" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir>"
 	exit 1
 fi
 
 if [ -z "$SVNUSER" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir>"
 	exit 1
 fi
 
 if [ -z "$SVNPASS" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir>"
 	exit 1
 fi
 
 if [ -z "$SVNURL" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir>"
+	exit 1
+fi
+
+if [ -z "$KERNELDIR" ]; then
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir>"
 	exit 1
 fi
 
@@ -62,6 +68,8 @@ rm -rf `find "$HOME"/flashimg/source.titan/plugins -type f -name "*.so"`
 echo "[titan]--------------------------------------------------------"
 echo "[titan] cleanup done"
 echo "[titan]--------------------------------------------------------"
+
+KERNELDIR
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Make titan"
