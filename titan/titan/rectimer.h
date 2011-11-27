@@ -847,38 +847,38 @@ void screenrectimerext(struct rectimer* node, int flag)
 	changeret(day, NULL);
 	setchoiceboxselection(day, "0");
 
-	addchoicebox(mon, "0", _("No"));
-	addchoicebox(mon, "1", _("Yes"));
+	addchoicebox(mon, "0", _("no"));
+	addchoicebox(mon, "1", _("yes"));
 	changeret(mon, NULL);
 	setchoiceboxselection(mon, "0");
 
-	addchoicebox(tue, "0", _("No"));
-	addchoicebox(tue, "1", _("Yes"));
+	addchoicebox(tue, "0", _("no"));
+	addchoicebox(tue, "1", _("yes"));
 	changeret(tue, NULL);
 	setchoiceboxselection(tue, "0");
 
-	addchoicebox(wed, "0", _("No"));
-	addchoicebox(wed, "1", _("Yes"));
+	addchoicebox(wed, "0", _("no"));
+	addchoicebox(wed, "1", _("yes"));
 	changeret(wed, NULL);
 	setchoiceboxselection(wed, "0");
 
-	addchoicebox(thur, "0", _("No"));
-	addchoicebox(thur, "1", _("Yes"));
+	addchoicebox(thur, "0", _("no"));
+	addchoicebox(thur, "1", _("yes"));
 	changeret(thur, NULL);
 	setchoiceboxselection(thur, "0");
 
-	addchoicebox(fri, "0", _("No"));
-	addchoicebox(fri, "1", _("Yes"));
+	addchoicebox(fri, "0", _("no"));
+	addchoicebox(fri, "1", _("yes"));
 	changeret(fri, NULL);
 	setchoiceboxselection(fri, "0");
 
-	addchoicebox(sat, "0", _("No"));
-	addchoicebox(sat, "1", _("Yes"));
+	addchoicebox(sat, "0", _("no"));
+	addchoicebox(sat, "1", _("yes"));
 	changeret(sat, NULL);
 	setchoiceboxselection(sat, "0");
 
-	addchoicebox(sun, "0", _("No"));
-	addchoicebox(sun, "1", _("Yes"));
+	addchoicebox(sun, "0", _("no"));
+	addchoicebox(sun, "1", _("yes"));
 	changeret(sun, NULL);
 	setchoiceboxselection(sun, "0");
 

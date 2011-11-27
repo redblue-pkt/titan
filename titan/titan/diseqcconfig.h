@@ -127,12 +127,12 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 	addchoicebox(diseqcmode, "100", _("Tonburst A/B"));
 
 	changeinput(toneburst, NULL);
-	addchoicebox(toneburst, "0", _("None"));
+	addchoicebox(toneburst, "0", _("none"));
 	addchoicebox(toneburst, "1", _("A"));
 	addchoicebox(toneburst, "2", _("B"));
 
 	changeinput(committedcmd, NULL);
-	addchoicebox(committedcmd, "0", _("None"));
+	addchoicebox(committedcmd, "0", _("none"));
 	addchoicebox(committedcmd, "1", _("Input 1"));
 	addchoicebox(committedcmd, "2", _("Input 2"));
 	addchoicebox(committedcmd, "3", _("Input 3"));
@@ -151,7 +151,7 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 	addchoicebox(committedcmd, "16", _("Input 16"));
 
 	changeinput(uncommittedcmd, NULL);
-	addchoicebox(uncommittedcmd, "0", _("None"));
+	addchoicebox(uncommittedcmd, "0", _("none"));
 	addchoicebox(uncommittedcmd, "1", _("Input 1"));
 	addchoicebox(uncommittedcmd, "2", _("Input 2"));
 	addchoicebox(uncommittedcmd, "3", _("Input 3"));
