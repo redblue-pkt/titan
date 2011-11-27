@@ -26,6 +26,8 @@ void screenlinkedchannel()
 	struct skin* tmp = NULL;
 	struct linkedchannel* node = NULL;
 	struct channel* chnode = NULL;
+	struct epg* epgnode = NULL;
+	char* tmpstr = NULL;
 
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
@@ -42,7 +44,15 @@ void screenlinkedchannel()
 				tmp = addlistbox(linkedchannel, listbox, tmp, 1);
 				if(tmp != NULL)
 				{
-					changetext(tmp, chnode->name);
+					tmpstr = ostrcat(tmpstr, chnode->name, 1, 0);
+					epgnode = getepgakt(chnode);
+					if(epgnode != NULL)
+					{
+						tmpstr = ostrcat(tmpstr, " - ", 1, 0);
+						tmpstr = ostrcat(tmpstr, epgnode->title, 1, 0);
+					}
+					changetext(tmp, tmpstr);
+					free(tmpstr); tmpstr = NULL;
 /*
 					tmp->type = CHOICEBOX;
 					tmp->handle = (char*)node;
