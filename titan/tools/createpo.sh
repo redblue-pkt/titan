@@ -27,5 +27,6 @@ for ROUND in $POLIST; do
 	fi
 done
 
-cd "$HOME"/flashimg/source.titan
-svn commit "autoupdate po files" "$HOME"/flashimg/source.titan/po
+cd "$HOME"/flashimg/source.titan/po
+svn commit -m "[titan] autoupdate po files"
+svn commit "$HOME"/flashimg/source.titan/po
