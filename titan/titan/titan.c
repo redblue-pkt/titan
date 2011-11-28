@@ -154,7 +154,7 @@ struct caservice caservice[MAXCASERVICE];
 
 #define TIMECODE 0
 
-int gettimeinfo()
+char* gettimeinfo()
 {
 	return command("cat /etc/image-version | cut -d= -f2");
 }
@@ -327,7 +327,7 @@ void oshutdown(int exitcode, int flag)
 int main(int argc, char *argv[])
 {
 #ifndef SIMULATE
-	if(gettimeinfo() != TIMECODE) exit(100);
+	if(gettimeinfo() != oitoa(TIMECODE)) exit(100);
 #endif
 	debug(1000, "in");
 	int ret = 0, serviceret = 0, skincheck = 0;
