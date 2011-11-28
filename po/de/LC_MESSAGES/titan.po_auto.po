@@ -52,7 +52,7 @@ msgstr ""
 #: skins_mboxinfo_skin.xml.h:1 skins_mc_skin.xml.h:15
 #: skins_networkbrowser_skin.xml.h:2 skins_panel_skin.xml.h:38 spinner.h:18
 #: stream.h:26 timeshift.h:41 timeshift.h:68 tunerconfig.h:733 videomode.h:44
-#: skin_default_skin.xml.h:168
+#: skin_default_skin.xml.h:168 httpdfunc.h:2061
 msgid "EXIT"
 msgstr ""
 
