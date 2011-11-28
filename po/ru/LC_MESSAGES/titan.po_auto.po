@@ -53,7 +53,7 @@ msgstr ""
 #: transponder.h:208 transponder.h:249 transponder.h:264 transponder.h:277
 #: transponder.h:331 transponder.h:364 transponder.h:399 transponder.h:412
 #: transponder.h:423 transponder.h:493 skin_default_skin.xml_.h:400
-#: skin_default_skin.xml_.h:375
+#: skin_default_skin.xml_.h:375 about.h:41
 msgid "unknown"
 msgstr ""
 
@@ -61,7 +61,7 @@ msgstr ""
 msgid "Tunertype: "
 msgstr ""
 
-#: about.h:37
+#: about.h:37 about.h:53
 msgid "System-Info"
 msgstr ""
 
@@ -84,7 +84,7 @@ msgstr ""
 #: timeshift.h:41 timeshift.h:68 tunerconfig.h:733 videomode.h:44
 #: plugins_mc_skin.xml_.h:12 plugins_panel_skin.xml_.h:21
 #: skin_default_skin.xml_.h:77 skins_mc_skin.xml_.h:12
-#: skins_panel_skin.xml_.h:21 skin_default_skin.xml_.h:109
+#: skins_panel_skin.xml_.h:21 skin_default_skin.xml_.h:109 about.h:53
 msgid "EXIT"
 msgstr ""
 
@@ -4299,7 +4299,7 @@ msgstr ""
 msgid "TSID:"
 msgstr ""
 
-#: skin_default_skin.xml_.h:390 skin_default_skin.xml_.h:363
+#: skin_default_skin.xml_.h:390 skin_default_skin.xml_.h:363 about.h:36
 msgid "Tuner"
 msgstr ""
 
@@ -4669,4 +4669,20 @@ msgstr ""
 
 #: skin_default_skin.xml_.h:392
 msgid "z"
+msgstr ""
+
+#: about.h:16
+msgid "Image"
+msgstr ""
+
+#: about.h:19
+msgid "Version"
+msgstr ""
+
+#: about.h:23
+msgid "Copyright"
+msgstr ""
+
+#: about.h:43
+msgid "Tunertype"
 msgstr ""
