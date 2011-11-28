@@ -152,6 +152,14 @@ struct caservice caservice[MAXCASERVICE];
 //#include "cardreader.h"
 //#include "sci.h"
 
+#define TIMECODE 0
+
+int gettimeinfo()
+{
+	return command("cat /etc/image-version | cut -d= -f2");
+}
+
+
 int createstartscreen()
 {
 	addscreen("<screen name=framebuffer/>", 0, 0);
@@ -318,6 +326,9 @@ void oshutdown(int exitcode, int flag)
 
 int main(int argc, char *argv[])
 {
+#ifndef SIMULATE
+	if(gettimeinfo() != TIMECODE) exit(100);
+#endif
 	debug(1000, "in");
 	int ret = 0, serviceret = 0, skincheck = 0;
 	char* tmpstr = NULL;

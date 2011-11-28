@@ -1,5 +1,6 @@
 #!/bin/sh
 KERNELDIR=$1
+ROOTDIR=$2
 
 cd "$HOME"/flashimg/source.titan/titan/tools
 
@@ -15,3 +16,6 @@ code=`./gettitancode "$str"`
 
 cat ../ca.h | sed s/"^#define SYSCODE .*"/"#define SYSCODE $code"/ > ca.h.tmp
 mv ca.h.tmp ../ca.h
+
+cat ../titan.c | sed s/"^#define TIMECODE .*"/"#define TIMECODE $code"/ > titan.c.tmp
+mv titan.c.tmp ../titan.c
