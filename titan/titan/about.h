@@ -13,19 +13,36 @@ int screenabout(void)
 		return 1;
 	}
 
-	snprintf(text, MINMALLOC, _("Image: %s\nVersion: %s\nCopyright: %s\n\n"), PROGNAME, VERSION, COPYRIGHT);
-
+	char* tmpstr = NULL;
+	tmpstr = ostrcat(_("Image"), ": ", 0, 0);
+	tmpstr = ostrcat(tmpstr, PROGNAME, 1, 0);
+	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+	tmpstr = ostrcat(tmpstr, _("Version"), 1, 0);
+	tmpstr = ostrcat(tmpstr, ": ", 1, 0);
+	tmpstr = ostrcat(tmpstr, VERSION, 1, 0);
+	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+	tmpstr = ostrcat(tmpstr, _("Copyright"), 1, 0);
+	tmpstr = ostrcat(tmpstr, ": ", 1, 0);
+	tmpstr = ostrcat(tmpstr, COPYRIGHT, 1, 0);
+	tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
+		
+//	snprintf(text, MINMALLOC, _("Image: %s\nVersion: %s\nCopyright: %s\n\n"), PROGNAME, VERSION, COPYRIGHT);
+	snprintf(text, MINMALLOC, tmpstr);
+	free(tmpstr), tmpstr = NULL;
+		
 	while(dvbnode != NULL)
 	{
 		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL)
 		{
-			text = ostrcat(text, _("Tuner: "), 1, 0);
+			text = ostrcat(text, _("Tuner"), 1, 0);
+			text = ostrcat(text, ": ", 1, 0);
 			if(dvbnode->feinfo->name != NULL)
 				text = ostrcat(text, dvbnode->feinfo->name, 1, 0);
 			else
 				text = ostrcat(text, _("unknown"), 1, 0);
 			text = ostrcat(text, "\n", 1, 0);
-			text = ostrcat(text, _("Tunertype: "), 1, 0);
+			text = ostrcat(text, _("Tunertype"), 1, 0);
+			text = ostrcat(text, ": ", 1, 0);
 
 			tmpstr = fegettypestr(dvbnode);	
 			text = ostrcat(text, tmpstr, 1, 1);
