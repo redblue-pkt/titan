@@ -1,5 +1,5 @@
 <screen fontcol=fontcol valign=bottom titlealign=center name="mboxinfo" hspace=5 vspace=5 fontsize=30 title="" posx=center posy=center width=30% height=60% bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox textposx=105 posy=5 width=100% height=-35>
-<node name=b1 text=OK halign=center valign=middle bordercol=white bordersize=4 bordertype=2 posx=20 posy=0 width=150 height=30/>
-<node name=b2 text=EXIT halign=center valign=middle bordercol=white bordersize=4 bordertype=2 posx=180 posy=0 width=150 height=30/>
+<node name=b1 text="OK" halign=center valign=middle bordercol=white bordersize=4 bordertype=2 posx=20 posy=0 width=150 height=30/>
+<node name=b2 text="EXIT" halign=center valign=middle bordercol=white bordersize=4 bordertype=2 posx=180 posy=0 width=150 height=30/>
 </screen>
