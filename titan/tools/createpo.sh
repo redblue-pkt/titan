@@ -20,13 +20,12 @@ cd "$HOME"/flashimg/source.titan/titan/tools/tmp
 
 for ROUND in $SKINLIST; do
 	echo "[create.skin] update $ROUND"
-	cp "$HOME"/flashimg/source.titan/titan/tools/dummy "$HOME"/flashimg/source.titan/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
 	NAME=`echo $ROUND | tr "/" "\n" | tail -n1`
 	SECTION1=`echo $ROUND | tr "/" "\n" | tail -n3 | head -n1`
 	SECTION2=`echo $ROUND | tr "/" "\n" | tail -n2 | head -n1`
-	echo SECTION1 $SECTION1
-	echo SECTION2 $SECTION2
-	echo NAME $NAME
+
+	echo "[create.skin] $SECTION1_$SECTION2_$NAME.h"
+	cp "$HOME"/flashimg/source.titan/titan/tools/dummy "$HOME"/flashimg/source.titan/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
 
 	cat $ROUND | grep title= | sed 's/title=/\ntitle=/' | grep ^title= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
 	cat $ROUND | grep text= | sed 's/text=/\ntext=/' | grep ^text= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
