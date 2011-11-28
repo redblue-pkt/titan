@@ -53,6 +53,10 @@ void screenlinkedchannel()
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
 
+	addscreenrc(linkedchannel, listbox);
+start:
+	tmp = NULL;
+	delmarkedscreennodes(linkedchannel, 1);
 	if(status.aktservice->channel != NULL)
 	{
 		m_lock(&status.linkedchannelmutex, 14);
@@ -62,11 +66,17 @@ void screenlinkedchannel()
 			chnode = getchannel(node->serviceid, node->transponderid);
 			if(chnode != NULL)
 			{
+				epgnode = getepgakt(chnode);
+				//don't show linked channel with start/end 1day
+				if(epgnode != NULL && epgnode->endtime - epgnode->starttime >= 86400)
+				{
+					node = node->next;
+					continue;
+				}
 				tmp = addlistbox(linkedchannel, listbox, tmp, 1);
 				if(tmp != NULL)
 				{
 					tmpstr = ostrcat(tmpstr, chnode->name, 1, 0);
-					epgnode = getepgakt(chnode);
 					if(epgnode != NULL)
 					{
 						tmpstr = ostrcat(tmpstr, " - ", 1, 0);
@@ -76,14 +86,6 @@ void screenlinkedchannel()
 					free(tmpstr); tmpstr = NULL;
 					tmp->handle = (char*)node;
 					tmp->handle1 = (char*)chnode;
-
-/*
-					tmp->type = CHOICEBOX;
-					if(status.aktservice->channel->audiopid == node->audiopid)
-						changeinput(tmp, _("running"));
-					else
-						changeinput(tmp, "");
-*/
 				}
 			}
 			node = node->next;
@@ -92,11 +94,12 @@ void screenlinkedchannel()
 	}
 
 	drawscreen(linkedchannel, 0);
-	addscreenrc(linkedchannel, listbox);
 
 	while(1)
 	{
-		rcret = waitrc(linkedchannel, 0, 0);
+		rcret = waitrc(linkedchannel, 2000, 0);
+	
+		if(rcret == RCTIMEOUT) goto start;
 	
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
@@ -105,8 +108,12 @@ void screenlinkedchannel()
 			{
 				m_lock(&status.linkedchannelmutex, 14);
 				if(checklinkedchannel(status.aktservice->channel, (struct linkedchannel*)listbox->select->handle) != NULL)
+				{
+					m_unlock(&status.linkedchannelmutex, 14);
 					servicecheckret(servicestart((struct channel*)listbox->select->handle1, NULL, NULL, 0), 0);
-				m_unlock(&status.linkedchannelmutex, 14);
+				}
+				else
+					m_unlock(&status.linkedchannelmutex, 14);
 			}
 			break;
 		}
