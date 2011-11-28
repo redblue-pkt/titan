@@ -1,0 +1,2122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#: mc_imdb.h:78 mc_imdb.h:79 mc_imdb.h:80 mc_imdb.h:81 mc_imdb.h:82
+#: mc_sort.h:19 mc_sort.h:20 mc_sort.h:21 mc_sort.h:22 mc_sort.h:23
+#: mc_sort.h:24 mc_view.h:17 mc_view.h:18 mc_view.h:19 mc_view.h:20
+#: mc_view.h:21 mc_view.h:22
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-28 03:57+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: about.h:16
+#, c-format
+msgid ""
+"Image: %s\n"
+"Version: %s\n"
+"Copyright: %s\n"
+"\n"
+msgstr ""
+
+#: about.h:22
+msgid "Tuner: "
+msgstr ""
+
+#: about.h:26 moduleconfig.h:37 skinselector.h:138 transponder.h:172
+#: transponder.h:208 transponder.h:249 transponder.h:264 transponder.h:277
+#: transponder.h:331 transponder.h:364 transponder.h:399 transponder.h:412
+#: transponder.h:423 transponder.h:493
+msgid "unknown"
+msgstr ""
+
+#: about.h:28
+msgid "Tunertype: "
+msgstr ""
+
+#: about.h:37
+msgid "System-Info"
+msgstr ""
+
+#: about.h:37 avsettings.h:188 bluekeyactions.h:123 epgsettings.h:110
+#: global.h:3609 harddisk.h:350 harddisk.h:524 harddisk.h:538 harddisk.h:566
+#: httpdfunc.h:803 httpdfunc.h:2066 mc_audioplayer.h:311 mc_audioplayer.h:400
+#: mc_global.h:496 mc_global.h:721 mc_main.h:43 mc_main.h:48 mc_main.h:53
+#: mc_main.h:58 mc_main.h:65 mc_main.h:70 mc_main.h:75 mc_main.h:80
+#: mc_main.h:85 mc_main.h:175 mc_pictureplayer.h:73 mc_pictureplayer.h:188
+#: mc_pictureplayer.h:294 mc_pictureplayer.h:383 mc_videoplayer.h:347
+#: mc_videoplayer.h:432 menu.h:64 menu.h:387 menu.h:389 networkbrowser.h:75
+#: networkbrowser.h:954 networkbrowser.h:1185 networkbrowser.h:1198
+#: network.h:148 network.h:155 network.h:159 network.h:255 panel_main.h:35
+#: panel_main.h:241 panel_system.h:6 panel_system.h:17 panel_system.h:297
+#: panel_system.h:304 panel_system_restore.h:31 panel_system_restore.h:47
+#: panel_system_restore.h:78 play.h:405 play.h:413 play.h:482 record.h:90
+#: record.h:634 record.h:797 record.h:932 rectimer.h:1108 rectimer.h:1120
+#: restoredefault.h:9 scan.h:768 scan.h:840 scan.h:1046 scart.h:13 scart.h:26
+#: service.h:556 service.h:790 skinselector.h:210 spinner.h:18 stream.h:26
+#: timeshift.h:41 timeshift.h:68 tunerconfig.h:733 videomode.h:44
+msgid "EXIT"
+msgstr ""
+
+#: adjust.h:41 adjust.h:55 adjust.h:59 adjust.h:63 adjust.h:88
+#: avsettings.h:110 epgsettings.h:28 epgsettings.h:57 httpdsettings.h:17
+#: networkbrowser.h:492 networkbrowser.h:496 networkbrowser.h:500
+#: networkbrowser.h:532 panel_settings_autostart.h:32
+#: panel_settings_autostart.h:65 panel_settings_autostart.h:78
+#: panel_settings_autostart.h:84 panel_settings_autostart.h:90
+#: panel_settings_autostart.h:96 panel_settings_autostart.h:108
+#: panel_settings_autostart.h:114 panel_settings_autostart.h:138
+#: panel_settings_autostart.h:145 panel_settings_autostart.h:157
+#: panel_settings_autostart.h:163 panel_settings_autostart.h:169
+#: panel_settings_autostart.h:175 panel_settings_autostart.h:181
+#: panel_settings_autostart.h:187 panel_settings_autostart.h:200
+#: panel_settings_autostart.h:206 panel_settings_autostart.h:212
+#: panel_settings_autostart.h:231 panel_settings_autostart.h:271
+#: panel_settings_autostart.h:277 panel_settings_autostart.h:283
+#: panel_settings_autostart.h:298 panel_settings_autostart.h:309
+#: panel_settings_autostart.h:315 panel_settings_autostart.h:321
+#: panel_settings_autostart.h:332 panel_settings_autostart.h:338
+#: panel_settings.h:56 panel_settings_overclocking.h:194
+#: panel_settings_overclocking.h:214 panel_settings_overclocking.h:224
+#: pin.h:81 pin.h:153 pin.h:157 pin.h:171 rectimer.h:850 rectimer.h:855
+#: rectimer.h:860 rectimer.h:865 rectimer.h:870 rectimer.h:875 rectimer.h:880
+#: scan.h:700 scan.h:986 scan.h:990 scan.h:994 screensaveradjust.h:19
+#: tunerconfig.h:146 tunerconfig.h:175 tunerconfig.h:206 tunerconfig.h:239
+#: tunerconfig.h:535
+msgid "no"
+msgstr ""
+
+#: adjust.h:42
+msgid "infobar"
+msgstr ""
+
+#: adjust.h:43
+msgid "epg"
+msgstr ""
+
+#: adjust.h:56 adjust.h:60 adjust.h:64 adjust.h:89 avsettings.h:111
+#: epgsettings.h:29 epgsettings.h:58 httpdsettings.h:18 networkbrowser.h:493
+#: networkbrowser.h:497 networkbrowser.h:501 networkbrowser.h:505
+#: networkbrowser.h:533 panel_settings_autostart.h:32
+#: panel_settings_autostart.h:65 panel_settings_autostart.h:78
+#: panel_settings_autostart.h:84 panel_settings_autostart.h:90
+#: panel_settings_autostart.h:96 panel_settings_autostart.h:108
+#: panel_settings_autostart.h:114 panel_settings_autostart.h:138
+#: panel_settings_autostart.h:145 panel_settings_autostart.h:157
+#: panel_settings_autostart.h:163 panel_settings_autostart.h:169
+#: panel_settings_autostart.h:175 panel_settings_autostart.h:181
+#: panel_settings_autostart.h:187 panel_settings_autostart.h:200
+#: panel_settings_autostart.h:206 panel_settings_autostart.h:212
+#: panel_settings_autostart.h:231 panel_settings_autostart.h:271
+#: panel_settings_autostart.h:277 panel_settings_autostart.h:283
+#: panel_settings_autostart.h:298 panel_settings_autostart.h:309
+#: panel_settings_autostart.h:315 panel_settings_autostart.h:321
+#: panel_settings_autostart.h:332 panel_settings.h:57
+#: panel_settings_overclocking.h:194 panel_settings_overclocking.h:214
+#: panel_settings_overclocking.h:224 pin.h:82 pin.h:154 pin.h:172
+#: rectimer.h:851 rectimer.h:856 rectimer.h:861 rectimer.h:866 rectimer.h:871
+#: rectimer.h:876 rectimer.h:881 scan.h:701 scan.h:987 scan.h:991 scan.h:995
+#: screensaveradjust.h:20 tunerconfig.h:534
+msgid "yes"
+msgstr ""
+
+#: adjust.h:67 mc_audioplayer_settings.h:19 mc_pictureplayer_settings.h:16
+#: mc_videoplayer_settings.h:15
+msgid "alpha"
+msgstr ""
+
+#: adjust.h:68 mc_audioplayer_settings.h:20 mc_pictureplayer_settings.h:17
+#: mc_videoplayer_settings.h:16
+msgid "reverse alpha"
+msgstr ""
+
+#: adjust.h:69 mc_audioplayer_settings.h:21 mc_pictureplayer_settings.h:18
+#: mc_videoplayer_settings.h:17
+msgid "size"
+msgstr ""
+
+#: adjust.h:70 mc_audioplayer_settings.h:22 mc_pictureplayer_settings.h:19
+#: mc_videoplayer_settings.h:18
+msgid "reverse size"
+msgstr ""
+
+#: adjust.h:71 mc_audioplayer_settings.h:23 mc_pictureplayer_settings.h:20
+#: mc_videoplayer_settings.h:19
+msgid "date"
+msgstr ""
+
+#: adjust.h:72 mc_audioplayer_settings.h:24 mc_pictureplayer_settings.h:21
+#: mc_videoplayer_settings.h:20
+msgid "reverse date"
+msgstr ""
+
+#: adjust.h:75
+msgid "Power Menu"
+msgstr ""
+
+#: adjust.h:76
+msgid "Power Off"
+msgstr ""
+
+#: adjust.h:77 powerofftimer.h:67 powerofftimer.h:71
+msgid "Standby"
+msgstr ""
+
+#: adjust.h:78 panel_softcam.h:243
+msgid "Restart"
+msgstr ""
+
+#: adjust.h:79
+msgid "Gui Restart"
+msgstr ""
+
+#: adjust.h:82 adjust.h:92 epgsettings.h:41
+msgid "deaktiv"
+msgstr ""
+
+#: adjust.h:83
+msgid "1 sec"
+msgstr ""
+
+#: adjust.h:84 avsettings.h:65
+msgid "2 sec"
+msgstr ""
+
+#: adjust.h:85 pin.h:165
+msgid "endless"
+msgstr ""
+
+#: adjust.h:93
+msgid "1 GB"
+msgstr ""
+
+#: adjust.h:94
+msgid "2 GB"
+msgstr ""
+
+#: adjust.h:95
+msgid "3 GB"
+msgstr ""
+
+#: adjust.h:96
+msgid "4 GB"
+msgstr ""
+
+#: audiotrack.h:47 rectimer.h:1232
+msgid "running"
+msgstr ""
+
+#: avsettings.h:56 harddisk.h:613 lnbconfig.h:144
+#: mc_pictureplayer_settings.h:39 panel_settings_autostart.h:52
+#: panel_settings_autostart.h:59 panel_settings_autostart.h:71
+#: panel_settings_overclocking.h:256 transponder.h:169 transponder.h:177
+#: transponder.h:328 transponder.h:336 vfdisplay.h:34
+msgid "off"
+msgstr ""
+
+#: avsettings.h:57 rectimer.h:941 transponder.h:171 transponder.h:181
+#: transponder.h:207 transponder.h:214 transponder.h:238 transponder.h:256
+#: transponder.h:276 transponder.h:285 transponder.h:291 transponder.h:298
+#: transponder.h:330 transponder.h:340 transponder.h:395 transponder.h:431
+msgid "auto"
+msgstr ""
+
+#: avsettings.h:58
+msgid "blueKey"
+msgstr ""
+
+#: avsettings.h:60
+msgid "576i"
+msgstr ""
+
+#: avsettings.h:61
+msgid "576p"
+msgstr ""
+
+#: avsettings.h:62
+msgid "720p"
+msgstr ""
+
+#: avsettings.h:63
+msgid "1080i"
+msgstr ""
+
+#: avsettings.h:66
+msgid "4 sec"
+msgstr ""
+
+#: avsettings.h:67
+msgid "6 sec"
+msgstr ""
+
+#: avsettings.h:68
+msgid "8 sec"
+msgstr ""
+
+#: avsettings.h:69
+msgid "10 sec"
+msgstr ""
+
+#: avsettings.h:188 bluekeyactions.h:123 epgsettings.h:110 global.h:3609
+#: harddisk.h:524 harddisk.h:538 harddisk.h:566 httpdfunc.h:803 language.h:50
+#: mc_audioplayer.h:311 mc_audioplayer.h:400 mc_global.h:496 mc_global.h:721
+#: mc_main.h:43 mc_main.h:48 mc_main.h:53 mc_main.h:58 mc_main.h:65
+#: mc_main.h:70 mc_main.h:75 mc_main.h:80 mc_main.h:85 mc_main.h:175
+#: mc_pictureplayer.h:73 mc_pictureplayer.h:188 mc_pictureplayer.h:294
+#: mc_pictureplayer.h:383 mc_videoplayer.h:347 mc_videoplayer.h:432 menu.h:64
+#: networkbrowser.h:75 networkbrowser.h:954 networkbrowser.h:1185
+#: networkbrowser.h:1198 network.h:255 panel_main.h:35 panel_main.h:241
+#: panel_system.h:6 panel_system.h:17 panel_system.h:297 panel_system.h:304
+#: play.h:482 record.h:634 record.h:797 record.h:932 rectimer.h:1108
+#: rectimer.h:1120 restoredefault.h:9 restoredefault.h:17 restoredefault.h:21
+#: scan.h:614 scan.h:768 scan.h:840 scan.h:1046 scart.h:13 scart.h:26
+#: service.h:556 service.h:790 skinselector.h:210 spinner.h:18 stream.h:26
+#: timeshift.h:41 timeshift.h:68 tunerconfig.h:733 videomode.h:44
+msgid "Message"
+msgstr ""
+
+#: avsettings.h:188 videomode.h:44
+msgid "Is this Videomode ok ?"
+msgstr ""
+
+#: avsettings.h:188 harddisk.h:350 harddisk.h:524 harddisk.h:538
+#: harddisk.h:566 language.h:50 mc_main.h:65 networkbrowser.h:954
+#: networkbrowser.h:1185 networkbrowser.h:1198 network.h:148 network.h:155
+#: network.h:159 network.h:255 panel_system.h:6 panel_system.h:17
+#: panel_system.h:304 panel_system_restore.h:31 play.h:413 record.h:634
+#: rectimer.h:1108 restoredefault.h:9 restoredefault.h:17 restoredefault.h:21
+#: service.h:556 service.h:790 timeshift.h:41 videomode.h:44
+msgid "OK"
+msgstr ""
+
+#: bluekeyactions.h:123 global.h:3609
+msgid "ERROR cant read res"
+msgstr ""
+
+#: channellist.h:404 channellist.h:737 channellist.h:922
+msgid "Bouquets"
+msgstr ""
+
+#: channellist.h:417 channellist.h:1039
+msgid "Channel"
+msgstr ""
+
+#: channellist.h:429 channellist.h:767 channellist.h:979
+msgid "Satellites"
+msgstr ""
+
+#: channellist.h:442 channellist.h:827 channellist.h:1096 tunerconfig.h:521
+msgid "Provider"
+msgstr ""
+
+#: channellist.h:455 channellist.h:725
+msgid "All Channels"
+msgstr ""
+
+#: channellist.h:797
+msgid "Channels A-Z"
+msgstr ""
+
+#: channellist.h:1158
+msgid "TV (Info)"
+msgstr ""
+
+#: channellist.h:1163
+msgid "Radio (Info)"
+msgstr ""
+
+#: dir.h:64 dir.h:70 dir.h:76 dir.h:82
+msgid "---"
+msgstr ""
+
+#: diseqcconfig.h:9 diseqcconfig.h:16
+msgid "committed, toneburst"
+msgstr ""
+
+#: diseqcconfig.h:10 diseqcconfig.h:17
+msgid "toneburst, committed"
+msgstr ""
+
+#: diseqcconfig.h:18
+msgid "committed, uncommitted, toneburst"
+msgstr ""
+
+#: diseqcconfig.h:19
+msgid "toneburst, committed, uncommitted"
+msgstr ""
+
+#: diseqcconfig.h:20
+msgid "uncommitted, committed, toneburst"
+msgstr ""
+
+#: diseqcconfig.h:21
+msgid "toneburst, uncommitted, committed"
+msgstr ""
+
+#: diseqcconfig.h:124
+msgid "DiSEqC 1.0"
+msgstr ""
+
+#: diseqcconfig.h:125
+msgid "DiSEqC 1.1"
+msgstr ""
+
+#: diseqcconfig.h:127
+msgid "Tonburst A/B"
+msgstr ""
+
+#: diseqcconfig.h:130 diseqcconfig.h:135 diseqcconfig.h:154 transponder.h:248
+#: transponder.h:263 transponder.h:287 transponder.h:293
+msgid "none"
+msgstr ""
+
+#: diseqcconfig.h:131
+msgid "A"
+msgstr ""
+
+#: diseqcconfig.h:132
+msgid "B"
+msgstr ""
+
+#: diseqcconfig.h:136 diseqcconfig.h:155
+msgid "Input 1"
+msgstr ""
+
+#: diseqcconfig.h:137 diseqcconfig.h:156
+msgid "Input 2"
+msgstr ""
+
+#: diseqcconfig.h:138 diseqcconfig.h:157
+msgid "Input 3"
+msgstr ""
+
+#: diseqcconfig.h:139 diseqcconfig.h:158
+msgid "Input 4"
+msgstr ""
+
+#: diseqcconfig.h:140 diseqcconfig.h:159
+msgid "Input 5"
+msgstr ""
+
+#: diseqcconfig.h:141 diseqcconfig.h:160
+msgid "Input 6"
+msgstr ""
+
+#: diseqcconfig.h:142 diseqcconfig.h:161
+msgid "Input 7"
+msgstr ""
+
+#: diseqcconfig.h:143 diseqcconfig.h:162
+msgid "Input 8"
+msgstr ""
+
+#: diseqcconfig.h:144 diseqcconfig.h:163
+msgid "Input 9"
+msgstr ""
+
+#: diseqcconfig.h:145 diseqcconfig.h:164
+msgid "Input 10"
+msgstr ""
+
+#: diseqcconfig.h:146 diseqcconfig.h:165
+msgid "Input 11"
+msgstr ""
+
+#: diseqcconfig.h:147 diseqcconfig.h:166
+msgid "Input 12"
+msgstr ""
+
+#: diseqcconfig.h:148 diseqcconfig.h:167
+msgid "Input 13"
+msgstr ""
+
+#: diseqcconfig.h:149 diseqcconfig.h:168
+msgid "Input 14"
+msgstr ""
+
+#: diseqcconfig.h:150 diseqcconfig.h:169
+msgid "Input 15"
+msgstr ""
+
+#: diseqcconfig.h:151 diseqcconfig.h:170
+msgid "Input 16"
+msgstr ""
+
+#: download.h:71
+msgid "Filesize (KB): "
+msgstr ""
+
+#: download.h:75 download.h:85
+msgid "Download (KB): "
+msgstr ""
+
+#: download.h:94
+msgid "download error"
+msgstr ""
+
+#: download.h:96
+msgid "wait for stopping download"
+msgstr ""
+
+#: epg.h:178
+msgid "Single (EPG)"
+msgstr ""
+
+#: epg.h:180
+msgid "Multi (EPG)"
+msgstr ""
+
+#: epgsettings.h:32
+msgid "Channel EPG"
+msgstr ""
+
+#: epgsettings.h:33 epgsettings.h:50
+msgid "Single EPG"
+msgstr ""
+
+#: epgsettings.h:34 epgsettings.h:51
+msgid "Multi EPG"
+msgstr ""
+
+#: epgsettings.h:35
+msgid "Graphic Multi EPG"
+msgstr ""
+
+#: epgsettings.h:42
+msgid "scan"
+msgstr ""
+
+#: epgsettings.h:43
+msgid "whitelist"
+msgstr ""
+
+#: epgsettings.h:44
+msgid "scan and whitelist"
+msgstr ""
+
+#: epgsettings.h:61 panel_settings_autostart.h:71
+msgid "always"
+msgstr ""
+
+#: epgsettings.h:62
+msgid "only on power off / restart"
+msgstr ""
+
+#: epgsettings.h:63
+msgid "never"
+msgstr ""
+
+#: epgsettings.h:110
+msgid "EPG resetet and now clear."
+msgstr ""
+
+#: gmultiepg.h:405
+msgid "GRAPHIC MULTI EPG - Bouquets"
+msgstr ""
+
+#: gmultiepg.h:418
+msgid "GRAPHIC MULTI EPG - Channel"
+msgstr ""
+
+#: gmultiepg.h:431
+msgid "GRAPHIC MULTI EPG - Satellites"
+msgstr ""
+
+#: gmultiepg.h:444
+msgid "GRAPHIC MULTI EPG - Provider"
+msgstr ""
+
+#: gmultiepg.h:457
+msgid "GRAPHIC MULTI EPG - All Channels"
+msgstr ""
+
+#: harddisk.h:176
+msgid "Harddisk Configure"
+msgstr ""
+
+#: harddisk.h:186
+msgid "use medium for record"
+msgstr ""
+
+#: harddisk.h:191
+msgid "use medium for extension"
+msgstr ""
+
+#: harddisk.h:196
+msgid "use medium for swap"
+msgstr ""
+
+#: harddisk.h:201
+msgid "use medium for backup"
+msgstr ""
+
+#: harddisk.h:206
+msgid "del medium for record"
+msgstr ""
+
+#: harddisk.h:211
+msgid "del medium for extension"
+msgstr ""
+
+#: harddisk.h:216
+msgid "del medium for swap"
+msgstr ""
+
+#: harddisk.h:221
+msgid "del medium for backup"
+msgstr ""
+
+#: harddisk.h:307
+msgid "Are you sure you want to delete this directory?"
+msgstr ""
+
+#: harddisk.h:317
+msgid "can't create or delete directory"
+msgstr ""
+
+#: harddisk.h:321
+msgid "succesfull create or delelete directory"
+msgstr ""
+
+#: harddisk.h:350
+msgid "Harddisk"
+msgstr ""
+
+#: harddisk.h:350
+msgid "sorry found no harddisk"
+msgstr ""
+
+#: harddisk.h:357
+msgid "Harddisk Format - List Devices"
+msgstr ""
+
+#: harddisk.h:359
+msgid "Harddisk Fsck - List Devices"
+msgstr ""
+
+#: harddisk.h:361
+msgid "Harddisk Configure - List Devices"
+msgstr ""
+
+#: harddisk.h:378
+msgid "HDD "
+msgstr ""
+
+#: harddisk.h:384
+msgid "STICK "
+msgstr ""
+
+#: harddisk.h:403
+msgid "ext"
+msgstr ""
+
+#: harddisk.h:415 panel_settings_autostart.h:59
+msgid "swap"
+msgstr ""
+
+#: harddisk.h:427
+msgid "backup"
+msgstr ""
+
+#: harddisk.h:439 rectimer.h:809
+msgid "record"
+msgstr ""
+
+#: harddisk.h:524
+msgid ""
+"Are you sure you want to remove all Partitions\n"
+"on this device and create a new Partition 1?\n"
+"Box reboots after format"
+msgstr ""
+
+#: harddisk.h:538
+msgid ""
+"Are you sure you want to format this Partition?\n"
+"Box reboots after format"
+msgstr ""
+
+#: harddisk.h:566
+msgid ""
+"Are you sure you want to check this Partition?\n"
+"Box reboots after check"
+msgstr ""
+
+#: harddisk.h:612
+msgid "Time to sleep"
+msgstr ""
+
+#: harddisk.h:614
+msgid "5 min"
+msgstr ""
+
+#: harddisk.h:614
+msgid "10 min"
+msgstr ""
+
+#: harddisk.h:615
+msgid "15 min"
+msgstr ""
+
+#: harddisk.h:615
+msgid "60 min"
+msgstr ""
+
+#: language.h:50
+msgid "Change language needs reboot"
+msgstr ""
+
+#: lnbconfig.h:137
+msgid "Polarization"
+msgstr ""
+
+#: lnbconfig.h:138
+msgid "13V"
+msgstr ""
+
+#: lnbconfig.h:139
+msgid "18V"
+msgstr ""
+
+#: lnbconfig.h:142
+msgid "Band"
+msgstr ""
+
+#: lnbconfig.h:143 transponder.h:170 transponder.h:179 transponder.h:329
+#: transponder.h:338
+msgid "on"
+msgstr ""
+
+#: lnbconfig.h:147
+msgid "universal"
+msgstr ""
+
+#: lnbconfig.h:148
+msgid "C-Band"
+msgstr ""
+
+#: lnbconfig.h:149 rectimer.h:836
+msgid "user defined"
+msgstr ""
+
+#: lnbconfig.h:150
+msgid "unicable"
+msgstr ""
+
+#: lnbconfig.h:151
+msgid "user unicable"
+msgstr ""
+
+#: mc_audioplayer.h:174 mc_pictureplayer.h:117 mc_videoplayer.h:167
+msgid "Repeat-On"
+msgstr ""
+
+#: mc_audioplayer.h:181 mc_audioplayer.h:275 mc_pictureplayer.h:124
+#: mc_pictureplayer.h:251 mc_videoplayer.h:174 mc_videoplayer.h:297
+msgid "Repeat"
+msgstr ""
+
+#: mc_audioplayer.h:242 mc_audioplayer.h:273 mc_audioplayer.h:379
+#: mc_global.h:141 mc_global.h:197 mc_pictureplayer.h:211
+#: mc_pictureplayer.h:249 mc_pictureplayer.h:352 mc_videoplayer.h:258
+#: mc_videoplayer.h:295 mc_videoplayer.h:406
+msgid "Filelist-Mode"
+msgstr ""
+
+#: mc_audioplayer.h:274 mc_global.h:333 mc_global.h:361 mc_pictureplayer.h:250
+#: mc_videoplayer.h:296
+msgid "Random"
+msgstr ""
+
+#: mc_audioplayer.h:292 mc_global.h:79 mc_global.h:476 mc_global.h:674
+#: mc_global.h:688 mc_pictureplayer.h:268 mc_videoplayer.h:320
+msgid "Playlist-Mode"
+msgstr ""
+
+#: mc_audioplayer.h:311 mc_audioplayer.h:400 mc_global.h:496 mc_global.h:721
+#: mc_pictureplayer.h:73 mc_pictureplayer.h:188 mc_pictureplayer.h:294
+#: mc_pictureplayer.h:383 mc_videoplayer.h:347 mc_videoplayer.h:432 play.h:482
+msgid "Can't start playback !"
+msgstr ""
+
+#: mc_audioplayer_settings.h:27 mc_pictureplayer_settings.h:24
+#: mc_videoplayer_settings.h:23
+msgid "default"
+msgstr ""
+
+#: mc_audioplayer_settings.h:28 mc_pictureplayer_settings.h:25
+#: mc_videoplayer_settings.h:24
+msgid "big"
+msgstr ""
+
+#: mc_audioplayer_settings.h:29 mc_pictureplayer_settings.h:26
+#: mc_videoplayer_settings.h:25
+msgid "fullcover"
+msgstr ""
+
+#: mc_audioplayer_settings.h:30 mc_pictureplayer_settings.h:27
+#: mc_videoplayer_settings.h:26
+msgid "details"
+msgstr ""
+
+#: mc_audioplayer_settings.h:31 mc_pictureplayer_settings.h:28
+#: mc_videoplayer_settings.h:27
+msgid "smal"
+msgstr ""
+
+#: mc_audioplayer_settings.h:32 mc_pictureplayer_settings.h:29
+#: mc_videoplayer_settings.h:28
+msgid "fast"
+msgstr ""
+
+#: mc_global.h:322 mc_global.h:350
+msgid "Random-On"
+msgstr ""
+
+#: mc_main.h:43 mc_main.h:48 mc_main.h:53 mc_main.h:58 mc_main.h:75
+#: mc_main.h:80 mc_main.h:85
+msgid "comming soon"
+msgstr ""
+
+#: mc_main.h:65
+msgid "start QtBrowser now ?"
+msgstr ""
+
+#: mc_main.h:70
+msgid "Install QtBrowser Ipk first !"
+msgstr ""
+
+#: mc_main.h:175 menu.h:64 panel_main.h:35 panel_main.h:241
+msgid "Menu not implemented !"
+msgstr ""
+
+#: mc_pictureplayer_settings.h:32
+msgid "MTH House"
+msgstr ""
+
+#: mc_pictureplayer_settings.h:33
+msgid "Radio Funclub"
+msgstr ""
+
+#: mc_pictureplayer_settings.h:34
+msgid "Radio Funclub 80s"
+msgstr ""
+
+#: mc_pictureplayer_settings.h:35
+msgid "Antenne Kaernten"
+msgstr ""
+
+#: mc_pictureplayer_settings.h:36
+msgid "Onkelz Rock Radio"
+msgstr ""
+
+#: mc_pictureplayer_settings.h:37
+msgid "Jump"
+msgstr ""
+
+#: mc_pictureplayer_settings.h:38
+msgid "Raute Musik FM"
+msgstr ""
+
+#: mc_settings.h:13
+msgid "transparent (mvi)"
+msgstr ""
+
+#: mc_settings.h:14
+msgid "skin (picmem jpg)"
+msgstr ""
+
+#: menu.h:387 menu.h:389
+msgid "Save Settings"
+msgstr ""
+
+#: menu.h:387
+msgid "Error in Save Settings"
+msgstr ""
+
+#: menu.h:389
+msgid "Settings succesfull saved"
+msgstr ""
+
+#: moduleconfig.h:30
+msgid "Slot "
+msgstr ""
+
+#: moduleconfig.h:42
+msgid "Status: "
+msgstr ""
+
+#: moduleconfig.h:46
+msgid "empty"
+msgstr ""
+
+#: moduleconfig.h:48
+msgid "initializing"
+msgstr ""
+
+#: moduleconfig.h:50
+msgid "ready"
+msgstr ""
+
+#: moduleconfig.h:65
+msgid "Single Service"
+msgstr ""
+
+#: moduleconfig.h:66
+msgid "Multiple Service"
+msgstr ""
+
+#: multiepg.h:433
+msgid "MULTI EPG - Bouquets"
+msgstr ""
+
+#: multiepg.h:446
+msgid "MULTI EPG - Channel"
+msgstr ""
+
+#: multiepg.h:459
+msgid "MULTI EPG - Satellites"
+msgstr ""
+
+#: multiepg.h:472
+msgid "MULTI EPG - Provider"
+msgstr ""
+
+#: multiepg.h:485
+msgid "MULTI EPG - All Channels"
+msgstr ""
+
+#: networkbrowser.h:75
+msgid "Can't get Network Infos"
+msgstr ""
+
+#: networkbrowser.h:442
+msgid "cifs"
+msgstr ""
+
+#: networkbrowser.h:443
+msgid "nfs"
+msgstr ""
+
+#: networkbrowser.h:444
+msgid "ftpfs"
+msgstr ""
+
+#: networkbrowser.h:482
+msgid "ssl_try"
+msgstr ""
+
+#: networkbrowser.h:483
+msgid "ssl_control"
+msgstr ""
+
+#: networkbrowser.h:484
+msgid "ssl"
+msgstr ""
+
+#: networkbrowser.h:487
+msgid "socks5"
+msgstr ""
+
+#: networkbrowser.h:488
+msgid "socks4"
+msgstr ""
+
+#: networkbrowser.h:489
+msgid "html"
+msgstr ""
+
+#: networkbrowser.h:536
+msgid "udp"
+msgstr ""
+
+#: networkbrowser.h:537
+msgid "tcp"
+msgstr ""
+
+#: networkbrowser.h:540
+msgid "rw,nolock"
+msgstr ""
+
+#: networkbrowser.h:541
+msgid "ro,nolock"
+msgstr ""
+
+#: networkbrowser.h:544
+msgid "allow_other"
+msgstr ""
+
+#: networkbrowser.h:547
+msgid "nonempty"
+msgstr ""
+
+#: networkbrowser.h:552 networkbrowser.h:759
+msgid "Add Cifs Network Share"
+msgstr ""
+
+#: networkbrowser.h:579 networkbrowser.h:786
+msgid "Add Nfs Network Share"
+msgstr ""
+
+#: networkbrowser.h:813
+msgid "Add Ftpfs Network Share"
+msgstr ""
+
+#: networkbrowser.h:954
+msgid "Are you sure you want to save this network mount?"
+msgstr ""
+
+#: networkbrowser.h:1185
+msgid ""
+"A mount entry with this name already exists!\n"
+"Update existing entry and continue?"
+msgstr ""
+
+#: networkbrowser.h:1198
+msgid "Are you sure you want remove this share?"
+msgstr ""
+
+#: network.h:148 network.h:155 panel_infos.h:95
+msgid "Network"
+msgstr ""
+
+#: network.h:148
+msgid "comming soon..."
+msgstr ""
+
+#: network.h:155
+msgid "Restart Network ?"
+msgstr ""
+
+#: network.h:159
+msgid "Restart Network"
+msgstr ""
+
+#: network.h:222 network.h:230
+msgid "enable"
+msgstr ""
+
+#: network.h:223 network.h:229 panel_settings.h:43
+msgid "disable"
+msgstr ""
+
+#: network.h:255
+msgid "save network settings ?"
+msgstr ""
+
+#: panel_extensions.h:19 panel_extensions.h:42 panel_extensions.h:43
+msgid "Ipk Install Info"
+msgstr ""
+
+#: panel_extensions.h:19
+msgid "No section found"
+msgstr ""
+
+#: panel_extensions.h:67 panel_extensions.h:68
+msgid "Ipk Remove Info"
+msgstr ""
+
+#: panel_extensions.h:82 panel_extensions.h:93 panel_extensions.h:94
+msgid "Ipk Tmp Info"
+msgstr ""
+
+#: panel_extensions.h:82
+msgid "No IPK found in /tmp"
+msgstr ""
+
+#: panel_infos.h:17
+msgid "Infos"
+msgstr ""
+
+#: panel_infos.h:35
+msgid "Default"
+msgstr ""
+
+#: panel_infos.h:66
+msgid "Free Space"
+msgstr ""
+
+#: panel_infos.h:75
+msgid "Kernel"
+msgstr ""
+
+#: panel_infos.h:84
+msgid "Mounts"
+msgstr ""
+
+#: panel_infos.h:106
+msgid "Ram"
+msgstr ""
+
+#: panel_infos_sysinfo.h:15
+msgid "CPU info"
+msgstr ""
+
+#: panel_infos_sysinfo.h:24
+msgid "Memory info"
+msgstr ""
+
+#: panel_infos_sysinfo.h:33
+msgid "MTD info"
+msgstr ""
+
+#: panel_infos_sysinfo.h:42
+msgid "Module info"
+msgstr ""
+
+#: panel_infos_sysinfo.h:51
+msgid "Devices"
+msgstr ""
+
+#: panel_infos_sysinfo.h:64
+msgid "Swap info"
+msgstr ""
+
+#: panel_infos_sysinfo.h:101
+msgid "Top Info"
+msgstr ""
+
+#: panel_settings_autostart.h:26 panel_settings_autostart.h:132
+msgid "Autostart Defaults"
+msgstr ""
+
+#: panel_settings_autostart.h:31
+msgid "fsckroot"
+msgstr ""
+
+#: panel_settings_autostart.h:38
+msgid "bootstop"
+msgstr ""
+
+#: panel_settings_autostart.h:50
+msgid "debug"
+msgstr ""
+
+#: panel_settings_autostart.h:51 panel_settings_autostart.h:151
+msgid "high"
+msgstr ""
+
+#: panel_settings_autostart.h:51 panel_settings_autostart.h:151
+msgid "low"
+msgstr ""
+
+#: panel_settings_autostart.h:57
+msgid "logto"
+msgstr ""
+
+#: panel_settings_autostart.h:58
+msgid "normal"
+msgstr ""
+
+#: panel_settings_autostart.h:58
+msgid "hdd"
+msgstr ""
+
+#: panel_settings_autostart.h:64
+msgid "errorboot"
+msgstr ""
+
+#: panel_settings_autostart.h:70
+msgid "repairmodus"
+msgstr ""
+
+#: panel_settings_autostart.h:72
+msgid "at bootloop"
+msgstr ""
+
+#: panel_settings_autostart.h:77
+msgid "rmcrashlog"
+msgstr ""
+
+#: panel_settings_autostart.h:83
+msgid "rmemthy"
+msgstr ""
+
+#: panel_settings_autostart.h:89
+msgid "plugload"
+msgstr ""
+
+#: panel_settings_autostart.h:95
+msgid "progressbar"
+msgstr ""
+
+#: panel_settings_autostart.h:101
+msgid "showip"
+msgstr ""
+
+#: panel_settings_autostart.h:102
+msgid "status"
+msgstr ""
+
+#: panel_settings_autostart.h:102
+msgid "ip"
+msgstr ""
+
+#: panel_settings_autostart.h:107
+msgid "showtvinfo"
+msgstr ""
+
+#: panel_settings_autostart.h:113
+msgid "playlist"
+msgstr ""
+
+#: panel_settings_autostart.h:119
+msgid "updatelist"
+msgstr ""
+
+#: panel_settings_autostart.h:137
+msgid "Old Audiofw"
+msgstr ""
+
+#: panel_settings_autostart.h:144
+msgid "No Audiosync"
+msgstr ""
+
+#: panel_settings_autostart.h:150
+msgid "Boot Resolution"
+msgstr ""
+
+#: panel_settings_autostart.h:156
+msgid "Bootlogo"
+msgstr ""
+
+#: panel_settings_autostart.h:162
+msgid "Poweroff"
+msgstr ""
+
+#: panel_settings_autostart.h:168
+msgid "Scart On Standby"
+msgstr ""
+
+#: panel_settings_autostart.h:174
+msgid "HighSR"
+msgstr ""
+
+#: panel_settings_autostart.h:180
+msgid "Tuner Sleep Off"
+msgstr ""
+
+#: panel_settings_autostart.h:186
+msgid "Boot RGB Fix"
+msgstr ""
+
+#: panel_settings_autostart.h:195
+msgid "Autostart USB"
+msgstr ""
+
+#: panel_settings_autostart.h:199
+msgid "Load Partition"
+msgstr ""
+
+#: panel_settings_autostart.h:205
+msgid "Fsck Record"
+msgstr ""
+
+#: panel_settings_autostart.h:211
+msgid "Swap"
+msgstr ""
+
+#: panel_settings_autostart.h:216
+msgid "Swap Size"
+msgstr ""
+
+#: panel_settings_autostart.h:230
+msgid "Fsck Swap"
+msgstr ""
+
+#: panel_settings_autostart.h:236
+msgid "Record Max Sectors"
+msgstr ""
+
+#: panel_settings_autostart.h:250
+msgid "Swap Max Sectors"
+msgstr ""
+
+#: panel_settings_autostart.h:266
+msgid "Autostart EMU"
+msgstr ""
+
+#: panel_settings_autostart.h:270
+msgid "Emu Control"
+msgstr ""
+
+#: panel_settings_autostart.h:276
+msgid "ftdi"
+msgstr ""
+
+#: panel_settings_autostart.h:282
+msgid "pl2303"
+msgstr ""
+
+#: panel_settings_autostart.h:288
+msgid "Nr Usbreaders"
+msgstr ""
+
+#: panel_settings_autostart.h:289
+msgid "2 readers"
+msgstr ""
+
+#: panel_settings_autostart.h:289
+msgid "3 readers"
+msgstr ""
+
+#: panel_settings_autostart.h:290
+msgid "4 readers"
+msgstr ""
+
+#: panel_settings_autostart.h:290
+msgid "5 readers"
+msgstr ""
+
+#: panel_settings_autostart.h:291
+msgid "6 readers"
+msgstr ""
+
+#: panel_settings_autostart.h:291
+msgid "7 readers"
+msgstr ""
+
+#: panel_settings_autostart.h:292
+msgid "not one"
+msgstr ""
+
+#: panel_settings_autostart.h:292
+msgid "1 reader"
+msgstr ""
+
+#: panel_settings_autostart.h:297
+msgid "Iwatch"
+msgstr ""
+
+#: panel_settings_autostart.h:308
+msgid "nfs server"
+msgstr ""
+
+#: panel_settings_autostart.h:314
+msgid "samba server"
+msgstr ""
+
+#: panel_settings_autostart.h:320
+msgid "scan wlan"
+msgstr ""
+
+#: panel_settings_autostart.h:327
+msgid "Autostart Child Safety"
+msgstr ""
+
+#: panel_settings_autostart.h:331
+msgid "Parental"
+msgstr ""
+
+#: panel_settings_autostart.h:337
+msgid "Pin"
+msgstr ""
+
+#: panel_settings.h:21
+msgid "Beta Config"
+msgstr ""
+
+#: panel_settings.h:25
+msgid "User"
+msgstr ""
+
+#: panel_settings.h:31
+msgid "Password"
+msgstr ""
+
+#: panel_settings.h:37
+msgid "Automount Config"
+msgstr ""
+
+#: panel_settings.h:41
+msgid "Ntfs Write"
+msgstr ""
+
+#: panel_settings.h:44
+msgid "ntfs-3g"
+msgstr ""
+
+#: panel_settings.h:45
+msgid "ntfsmount"
+msgstr ""
+
+#: panel_settings.h:50
+msgid "Red Button Config"
+msgstr ""
+
+#: panel_settings.h:54
+msgid "Open Panel when pressing red button:"
+msgstr ""
+
+#: panel_settings_overclocking.h:193
+msgid "Only Boot Overclock"
+msgstr ""
+
+#: panel_settings_overclocking.h:202
+msgid "CPU frequency"
+msgstr ""
+
+#: panel_settings_overclocking.h:213
+msgid "FDMA bypass"
+msgstr ""
+
+#: panel_settings_overclocking.h:223
+msgid "Reduce Standby frequency"
+msgstr ""
+
+#: panel_settings_overclocking.h:233 panel_settings_overclocking.h:299
+msgid "Standby frequency"
+msgstr ""
+
+#: panel_settings_overclocking.h:255
+msgid "Use Teletxt Workaround"
+msgstr ""
+
+#: panel_settings_overclocking.h:256
+msgid "frequency"
+msgstr ""
+
+#: panel_settings_overclocking.h:256
+msgid "videmode"
+msgstr ""
+
+#: panel_softcam.h:241
+msgid "Softcam selection:"
+msgstr ""
+
+#: panel_softcam.h:242
+msgid "Deactivate"
+msgstr ""
+
+#: panel_softcam.h:244
+msgid "Refresh"
+msgstr ""
+
+#: panel_softcam.h:245
+msgid "Activate"
+msgstr ""
+
+#: panel_system_backup.h:19
+msgid "Cancel"
+msgstr ""
+
+#: panel_system_backup.h:20
+msgid "Backup"
+msgstr ""
+
+#: panel_system_backup.h:23
+msgid "Create Backup"
+msgstr ""
+
+#: panel_system.h:6
+msgid ""
+"Do you really want to erase all datas and backups from Swap?\n"
+"The Box will reboot and the erase will be started!"
+msgstr ""
+
+#: panel_system.h:17
+msgid ""
+"Do you really want to start the Wizard?\n"
+"The Box will reboot and the Wizard will be started!"
+msgstr ""
+
+#: panel_system.h:113
+msgid "non-version"
+msgstr ""
+
+#: panel_system.h:297
+msgid "Error file not supported"
+msgstr ""
+
+#: panel_system_restore.h:17 panel_system_restore.h:69
+msgid "Backup / Restore Settings"
+msgstr ""
+
+#: panel_system_restore.h:31
+msgid "Restore Settings"
+msgstr ""
+
+#: panel_system_restore.h:31
+msgid ""
+"Are you sure you want to restore settings?\n"
+"\n"
+"OK = start restore\n"
+"EXIT = abort restore\n"
+"\n"
+msgstr ""
+
+#: panel_system_restore.h:47
+msgid "RESTORE ERROR"
+msgstr ""
+
+#: panel_system_restore.h:47
+msgid ""
+"No backup folders found!!!\n"
+"\n"
+"Aborting restoring..."
+msgstr ""
+
+#: panel_system_restore.h:59
+msgid "Backup - Settings"
+msgstr ""
+
+#: panel_system_restore.h:60
+msgid ""
+"Backup started\n"
+"\n"
+"Please wait..."
+msgstr ""
+
+#: panel_system_restore.h:78
+msgid "BACKUP ERROR"
+msgstr ""
+
+#: panel_system_restore.h:78
+msgid ""
+"A record hdd or a swapstick must be mounted!\n"
+"\n"
+"Aborting backup..."
+msgstr ""
+
+#: pin.h:83
+msgid "hidden"
+msgstr ""
+
+#: play.h:405
+msgid "EPG Info"
+msgstr ""
+
+#: play.h:413
+msgid "Realy Delete ?"
+msgstr ""
+
+#: possetup.h:8
+msgid "move west"
+msgstr ""
+
+#: possetup.h:9
+msgid "search west"
+msgstr ""
+
+#: possetup.h:10
+msgid "search east"
+msgstr ""
+
+#: possetup.h:11
+msgid "move east"
+msgstr ""
+
+#: possetup.h:16
+msgid "step west"
+msgstr ""
+
+#: possetup.h:17
+msgid "step east"
+msgstr ""
+
+#: possetup.h:22
+msgid "limits off"
+msgstr ""
+
+#: possetup.h:23
+msgid "limit west"
+msgstr ""
+
+#: possetup.h:24
+msgid "limit east"
+msgstr ""
+
+#: possetup.h:25
+msgid "limits on"
+msgstr ""
+
+#: possetup.h:30
+msgid "store position"
+msgstr ""
+
+#: possetup.h:31
+msgid "goto position"
+msgstr ""
+
+#: possetup.h:36
+msgid "startposition"
+msgstr ""
+
+#: powerofftimer.h:66 powerofftimer.h:72
+msgid "DeepStandby"
+msgstr ""
+
+#: record.h:40
+msgid ""
+"HDD not configured\n"
+"can't find record path"
+msgstr ""
+
+#: record.h:43
+msgid "Not enought space"
+msgstr ""
+
+#: record.h:46
+msgid "Error create filename"
+msgstr ""
+
+#: record.h:49
+msgid "Can't open file"
+msgstr ""
+
+#: record.h:52
+msgid "Can't open FRONTEND device"
+msgstr ""
+
+#: record.h:55
+msgid "Can't open DMX device"
+msgstr ""
+
+#: record.h:58
+msgid "Pid's not ok"
+msgstr ""
+
+#: record.h:61
+msgid "Channel or Transponder is empty"
+msgstr ""
+
+#: record.h:64
+msgid "Write error"
+msgstr ""
+
+#: record.h:67
+msgid "No memory"
+msgstr ""
+
+#: record.h:70
+msgid "Failed open split file"
+msgstr ""
+
+#: record.h:73
+msgid "Frontend type unknown"
+msgstr ""
+
+#: record.h:76
+msgid "Tune to channel failed"
+msgstr ""
+
+#: record.h:81
+msgid "To many read error or end of file"
+msgstr ""
+
+#: record.h:84
+msgid "Can't create service"
+msgstr ""
+
+#: record.h:90
+msgid "Record / Timeshift / Stream"
+msgstr ""
+
+#: record.h:634
+msgid ""
+"Can't find free Tuner for Record.\n"
+"Switch to Recording/Timeshift Channel ?"
+msgstr ""
+
+#: record.h:796
+msgid "Timer Record start !\n"
+msgstr ""
+
+#: record.h:932
+msgid "Can't get EPG time or EPG endtime not ok"
+msgstr ""
+
+#: rectimer.h:21
+msgid "undefined error"
+msgstr ""
+
+#: rectimer.h:26
+msgid "Timer starttime or endtime not ok"
+msgstr ""
+
+#: rectimer.h:31
+msgid "Timer endtime shorter than aktual time"
+msgstr ""
+
+#: rectimer.h:36
+msgid "Timer endtime shorter than start time"
+msgstr ""
+
+#: rectimer.h:41
+msgid "Timer service ID not ok"
+msgstr ""
+
+#: rectimer.h:46
+msgid "Timer transponder ID not ok"
+msgstr ""
+
+#: rectimer.h:347
+msgid "not started akttime greater timer endtime"
+msgstr ""
+
+#: rectimer.h:455
+msgid "stopped from user"
+msgstr ""
+
+#: rectimer.h:810
+msgid "switch channel"
+msgstr ""
+
+#: rectimer.h:820 rectimer.h:1191 rectimer.h:1202
+msgid "once"
+msgstr ""
+
+#: rectimer.h:821 rectimer.h:1193 rectimer.h:1204
+msgid "repeate"
+msgstr ""
+
+#: rectimer.h:833
+msgid "daily"
+msgstr ""
+
+#: rectimer.h:834
+msgid "weekly"
+msgstr ""
+
+#: rectimer.h:835
+msgid "workdays"
+msgstr ""
+
+#: rectimer.h:840
+msgid "Monday"
+msgstr ""
+
+#: rectimer.h:841
+msgid "Tuesday"
+msgstr ""
+
+#: rectimer.h:842
+msgid "Wednesday"
+msgstr ""
+
+#: rectimer.h:843
+msgid "Thursday"
+msgstr ""
+
+#: rectimer.h:844
+msgid "Friday"
+msgstr ""
+
+#: rectimer.h:845
+msgid "Saturday"
+msgstr ""
+
+#: rectimer.h:846
+msgid "Sunday"
+msgstr ""
+
+#: rectimer.h:942
+msgid "nothing"
+msgstr ""
+
+#: rectimer.h:943
+msgid "standby"
+msgstr ""
+
+#: rectimer.h:944
+msgid "power off"
+msgstr ""
+
+#: rectimer.h:1188
+msgid "rec"
+msgstr ""
+
+#: rectimer.h:1199
+msgid "switch"
+msgstr ""
+
+#: rectimer.h:1227
+msgid "waiting"
+msgstr ""
+
+#: rectimer.h:1237
+msgid "success"
+msgstr ""
+
+#: rectimer.h:1242
+msgid "error"
+msgstr ""
+
+#: restoredefault.h:9
+msgid "Realy restore default settings ?"
+msgstr ""
+
+#: restoredefault.h:17
+msgid "Receiver now reboot !!!"
+msgstr ""
+
+#: restoredefault.h:21
+msgid "Can't restore settings"
+msgstr ""
+
+#: scan.h:206
+msgid "TV"
+msgstr ""
+
+#: scan.h:208
+msgid "Radio"
+msgstr ""
+
+#: scan.h:210
+msgid "Data"
+msgstr ""
+
+#: scan.h:563
+msgid "Sat: "
+msgstr ""
+
+#: scan.h:569
+msgid "Transponder: "
+msgstr ""
+
+#: scan.h:577
+msgid "TV: "
+msgstr ""
+
+#: scan.h:585
+msgid "Radio: "
+msgstr ""
+
+#: scan.h:593
+msgid "Data: "
+msgstr ""
+
+#: scan.h:614
+msgid "Wait for channel scan end"
+msgstr ""
+
+#: scan.h:768
+msgid ""
+"Scan is not allowed if record\n"
+"or stream is running !"
+msgstr ""
+
+#: scan.h:840
+msgid "No Tuner configured"
+msgstr ""
+
+#: scan.h:853
+msgid "Single Transponder"
+msgstr ""
+
+#: scan.h:854
+msgid "Single Sat"
+msgstr ""
+
+#: scan.h:855
+msgid "Multi Sat"
+msgstr ""
+
+#: scan.h:860
+msgid "Auto Scan"
+msgstr ""
+
+#: scan.h:1046
+msgid "Transponder changed"
+msgstr ""
+
+#: scart.h:13
+msgid "Change to scart"
+msgstr ""
+
+#: scart.h:26
+msgid "Videomode must be 576i for Scart"
+msgstr ""
+
+#: screensaveradjust.h:29
+msgid "black"
+msgstr ""
+
+#: screensaveradjust.h:30
+msgid "blue"
+msgstr ""
+
+#: screensaveradjust.h:31
+msgid "red"
+msgstr ""
+
+#: screensaveradjust.h:32
+msgid "orange"
+msgstr ""
+
+#: screensaveradjust.h:33
+msgid "yellow"
+msgstr ""
+
+#: screensaveradjust.h:34
+msgid "white"
+msgstr ""
+
+#: screensaveradjust.h:35
+msgid "grey"
+msgstr ""
+
+#: screensaveradjust.h:36
+msgid "burlywood1"
+msgstr ""
+
+#: screensaveradjust.h:37
+msgid "lila"
+msgstr ""
+
+#: screensaveradjust.h:38
+msgid "mixed mode"
+msgstr ""
+
+#: screensaveradjust.h:41
+msgid "Play Icon"
+msgstr ""
+
+#: screensaveradjust.h:42
+msgid "Default Icon"
+msgstr ""
+
+#: screensaveradjust.h:43
+msgid "MediaCenter Icon"
+msgstr ""
+
+#: screensaveradjust.h:44
+msgid "Test Icon"
+msgstr ""
+
+#: screensaveradjust.h:47
+msgid "Song TitleText"
+msgstr ""
+
+#: screensaveradjust.h:48
+msgid "Logo 1"
+msgstr ""
+
+#: screensaveradjust.h:49
+msgid "Logo 2"
+msgstr ""
+
+#: screensaveradjust.h:59
+msgid "imdb mvis (network/hdd)"
+msgstr ""
+
+#: service.h:556
+msgid ""
+"Timeshift is running !!!\n"
+"Stop it and switch ?"
+msgstr ""
+
+#: service.h:773
+msgid ""
+"Can't find a Tuner.\n"
+"Alle Tuners in use or no Tuner defined."
+msgstr ""
+
+#: service.h:776
+msgid "Tuning to Channel failed!"
+msgstr ""
+
+#: service.h:779
+msgid "Can't open frontend dev or Frontend Type unknown!"
+msgstr ""
+
+#: service.h:784
+msgid "Channellist empty or corrupt (channel not found)!"
+msgstr ""
+
+#: skinadjust.h:23
+msgid "border"
+msgstr ""
+
+#: skinadjust.h:24
+msgid "bar"
+msgstr ""
+
+#: skinadjust.h:25
+msgid "text"
+msgstr ""
+
+#: skinselector.h:210
+msgid ""
+"No skinconfig found in skin.\n"
+"Can't chage to selected skin."
+msgstr ""
+
+#: spinner.h:18
+msgid ""
+"Detect hanging System !!!\n"
+"\n"
+"KILL = Red\n"
+"BOOT = Power"
+msgstr ""
+
+#: spinner.h:18
+msgid "KILL"
+msgstr ""
+
+#: spinner.h:18
+msgid "BOOT"
+msgstr ""
+
+#: stream.h:26
+msgid "No Live Stream running"
+msgstr ""
+
+#: timeshift.h:41
+msgid "Should Timeshift File deleted ?"
+msgstr ""
+
+#: timeshift.h:68
+msgid "Can't start timeshift play !"
+msgstr ""
+
+#: transponder.h:362 transponder.h:369
+msgid "Horizontal"
+msgstr ""
+
+#: transponder.h:363 transponder.h:371
+msgid "Vertikal"
+msgstr ""
+
+#: transponder.h:396 transponder.h:419 transponder.h:433 transponder.h:455
+msgid "QPSK"
+msgstr ""
+
+#: transponder.h:397 transponder.h:435
+msgid "PSK 8"
+msgstr ""
+
+#: transponder.h:398 transponder.h:407 transponder.h:420 transponder.h:437
+#: transponder.h:443 transponder.h:457
+msgid "QAM 16"
+msgstr ""
+
+#: transponder.h:406 transponder.h:422 transponder.h:441 transponder.h:461
+msgid "QAM AUTO"
+msgstr ""
+
+#: transponder.h:408 transponder.h:445
+msgid "QAM 32"
+msgstr ""
+
+#: transponder.h:409 transponder.h:421 transponder.h:447 transponder.h:459
+msgid "QAM 64"
+msgstr ""
+
+#: transponder.h:410 transponder.h:449
+msgid "QAM 128"
+msgstr ""
+
+#: transponder.h:411 transponder.h:451
+msgid "QAM 256"
+msgstr ""
+
+#: transponder.h:491 transponder.h:498
+msgid "DVBS"
+msgstr ""
+
+#: transponder.h:492 transponder.h:500
+msgid "DVBS2"
+msgstr ""
+
+#: tunerconfig.h:49
+msgid "Satelite Type"
+msgstr ""
+
+#: tunerconfig.h:51
+msgid "Single LNB"
+msgstr ""
+
+#: tunerconfig.h:52
+msgid "DiSEqC A/B"
+msgstr ""
+
+#: tunerconfig.h:54
+msgid "DiSEqC A/B/C/D"
+msgstr ""
+
+#: tunerconfig.h:56
+msgid "DiSEqC A/B/C/D/E/F/G/H"
+msgstr ""
+
+#: tunerconfig.h:58
+msgid "Expert"
+msgstr ""
+
+#: tunerconfig.h:86
+msgid "Satelite Entrys"
+msgstr ""
+
+#: tunerconfig.h:119
+msgid "undefined"
+msgstr ""
+
+#: tunerconfig.h:145 tunerconfig.h:174 tunerconfig.h:205 tunerconfig.h:238
+msgid "DiSEqC"
+msgstr ""
+
+#: tunerconfig.h:263
+msgid "Lnb / Unicable"
+msgstr ""
+
+#: tunerconfig.h:264 tunerconfig.h:265
+msgid "press ok"
+msgstr ""
+
+#: tunerconfig.h:519
+msgid "type of channelsearch"
+msgstr ""
+
+#: tunerconfig.h:522
+msgid "Freqiency"
+msgstr ""
+
+#: tunerconfig.h:532
+msgid "search EU VHF I"
+msgstr ""
+
+#: tunerconfig.h:579
+msgid "direct connect"
+msgstr ""
+
+#: tunerconfig.h:590
+msgid "loop to Tuner"
+msgstr ""
+
+#: tunerconfig.h:675
+msgid "Tuner "
+msgstr ""
+
+#: tunerconfig.h:733
+msgid "DVB-T not supportet at the moment !"
+msgstr ""
+
+#: vfdisplay.h:26
+msgid "channel"
+msgstr ""
+
+#: vfdisplay.h:27
+msgid "channel + time"
+msgstr ""
+
+#: vfdisplay.h:28
+msgid "time + channel"
+msgstr ""
+
+#: vfdisplay.h:29 vfdisplay.h:33
+msgid "time"
+msgstr ""
+
+#: vfdisplay.h:30
+msgid "time small"
+msgstr ""
