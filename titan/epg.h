@@ -894,7 +894,7 @@ void linkagedesc(struct channel* chnode, struct epg* epgnode, void *buf)
 	int serviceid = HILO(evtlink->service_id);
 	
 	transponderid = (onid << 16) | tid;
-	
+
 	if(getlinkedchannel(chnode, serviceid, transponderid) == NULL)
 		addlinkedchannel(chnode, serviceid, transponderid, NULL);
 }
@@ -1029,13 +1029,12 @@ void contentidentifierdesc(struct epg* epgnode, unsigned char *buf)
 #endif
 
 //Parse Descriptor
-void parseeitdesc(struct channel* chnode, struct epg* epgnode, unsigned char *buf, int len)
+void parseeitdesc(struct channel* chnode, struct epg* epgnode, unsigned char *buf, int len, int onlylinkedchannel)
 {
-	//int pds = 0;
-
 	unsigned char *p;
 	for(p = buf; p < buf + len; p += 2 + p[1])
 	{
+		if(onlylinkedchannel == 1 && (int)p[0] != 0x4A) continue;
 		switch((int)p[0])
 		{
 			case 0:
@@ -1109,6 +1108,7 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 	time_t epgmaxsec = status.epgdays * 24 * 60 * 60;
 	unsigned long transponderid = 0;
 	int serviceid = 0, eventid = 0;
+	int onlylinkedchannel = 0;
 
 	len -= 4; //remove CRC
 	if(chnode == NULL) chnode = status.aktservice->channel;
@@ -1116,6 +1116,7 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 	// For each event listing
 	for (p = (unsigned char*)&eit->data; p < buf + len; p += EITEVENTLEN + GETEITDESCLEN(p))
 	{
+		onlylinkedchannel = 0;
 		struct eitevent* evt = (struct eitevent*)p;
 
 		// No program info at end! Just skip it
@@ -1150,9 +1151,10 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 			if(epgnode->version <= eit->version_number)
 			{
 				m_unlock(&status.epgmutex, 4);
-				continue;
+				onlylinkedchannel = 1;
 			}
-			delepg(tmpchnode, eventid, 1);
+			else
+				delepg(tmpchnode, eventid, 1);
 		}
 
 		dvbtime = dvbconvertdate(&evt->mjd_hi, 0);
@@ -1173,20 +1175,23 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 		}
 #endif
 
-		epgnode = addepg(tmpchnode, eventid, eit->version_number, starttime, endtime, NULL, 1);
-		if(epgnode == NULL)
+		if(onlylinkedchannel == 0)
 		{
-			debug(1000, "out -> NULL detect");
-			m_unlock(&status.epgmutex, 4);
-			continue;
+			epgnode = addepg(tmpchnode, eventid, eit->version_number, starttime, endtime, NULL, 1);
+			if(epgnode == NULL)
+			{
+				debug(1000, "out -> NULL detect");
+				m_unlock(&status.epgmutex, 4);
+				continue;
+			}
 		}
 
 		//1 Airing, 2 Starts in a few seconds, 3 Pausing, 4 About to air
 		//printf("RunningStatus %d\n", evt->running_status);
 
-		parseeitdesc(tmpchnode, epgnode, (unsigned char*)&evt->data, eitlen);
+		parseeitdesc(tmpchnode, epgnode, (unsigned char*)&evt->data, eitlen, onlylinkedchannel);
 		//compress long desc
-		if(epgnode->desc != NULL)
+		if(onlylinkedchannel == 0 && epgnode->desc != NULL)
 		{
 			ret = zip(epgnode->desc, strlen(epgnode->desc) + 1, &zbuf, &zlen, 1);
 			if(ret == 0)
