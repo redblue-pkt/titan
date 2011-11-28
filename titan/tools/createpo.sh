@@ -1,7 +1,14 @@
 #!/bin/sh
 
+SVNUSER=$1
+
 if [ -z "$1" ]; then
-	echo "usage: createpo.sh <update|new>"
+	echo "usage: createpo.sh <svnuser> <update|new>"
+	exit
+fi
+
+if [ -z "$2" ]; then
+	echo "usage: createpo.sh <svnuser> <update|new>"
 	exit
 fi
 
@@ -33,7 +40,7 @@ done
 
 for ROUND in $POLIST; do
 	echo "[create.po] update $ROUND"
-	if [ "$1" == "update" ]; then
+	if [ "$2" == "update" ]; then
 		xgettext --omit-header -j -k_ *.h -o $ROUND
 	else
 		xgettext --omit-header -k_ *.h -o $ROUND
@@ -41,5 +48,7 @@ for ROUND in $POLIST; do
 done
 
 cd "$HOME"/flashimg/source.titan/po
-svn commit -m "[titan] autoupdate po files"
-svn commit "$HOME"/flashimg/source.titan/po
+if [ $SVNUSER = "aafsvn" ];then
+	svn commit -m "[titan] autoupdate po files"
+	svn commit "$HOME"/flashimg/source.titan/po
+fi
