@@ -381,7 +381,7 @@ start:
 				clearscreen(tunerreceptiondvbs);
 				mode = 1;
 				maxsat = 2;
-				if(status.maxsat <= maxsat)
+//				if(status.maxsat <= maxsat)
 					status.maxsat = maxsat;
 				goto start;
 			}
@@ -394,7 +394,7 @@ start:
 				clearscreen(tunerreceptiondvbs);
 				mode = 2;
 				maxsat = 4;
-				if(status.maxsat <= maxsat)
+//				if(status.maxsat <= maxsat)
 					status.maxsat = maxsat;
 				goto start;
 			}
@@ -407,7 +407,7 @@ start:
 				clearscreen(tunerreceptiondvbs);
 				mode = 3;
 				maxsat = 8;
-				if(status.maxsat <= maxsat)
+//				if(status.maxsat <= maxsat)
 					status.maxsat = maxsat;
 				goto start;
 			}
