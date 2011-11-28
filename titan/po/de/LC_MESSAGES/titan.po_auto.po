@@ -4171,3 +4171,15 @@ msgstr ""
 #: vfdisplay.h:30
 msgid "time small"
 msgstr ""
+
+#: skin_default_skin.xml.h:388
+msgid ""
+"text=EXIT halign=center valign=middle bordercol=exitcol bordersize=6 "
+"bordertype=2 posx=180 posy=0 width=150 height=30/>"
+msgstr ""
+
+#: skin_default_skin.xml.h:394
+msgid ""
+"text=SAVE halign=center valign=middle bordercol=green bordersize=6 "
+"bordertype=2 posx=20 posy=0 width=150 height=30/>"
+msgstr ""
