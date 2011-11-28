@@ -1,7 +1,7 @@
 <screen fontcol=fontcol title="Networkbrowser" valign=bottom titlealign=center name=networkbrowser hspace=15 vspace=15 fontsize=30 posx=center posy=center width=80% height=60% bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node pic=dummy_dont_change_or_add_png_file fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox  posx=center posy=center width=80% height=90% />
-<node name=b1 text="OK" halign=center valign=middle bordercol=okcol bordersize=4 bordertype=2 posx=0 posy=0 width=150 height=30/>
-<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=4 bordertype=2 posx=160 posy=0 width=150 height=30/>
+<node name=b1 text="OK" halign=center valign=middle bordercol=okcol bordersize=6 bordertype=2 posx=0 posy=0 width=150 height=30/>
+<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=6 bordertype=2 posx=160 posy=0 width=150 height=30/>
 </screen>
 
 <screen fontcol=fontcol valign=bottom titlealign=center name="networkbrowser_main" hspace=15 vspace=15 fontsize=30 title="" posx=center posy=center width=80% height=60% bordercol=bordercol bordersize=2 bgcol=bgcol>
@@ -10,8 +10,8 @@
 
 <screen fontcol=fontcol valign=bottom titlealign=center name="networkbrowser_shares" hspace=15 vspace=15 fontsize=30 title="" posx=center posy=center width=80% height=60% bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox posy=10 width=100% height=-35>
-<node name=b1 text="OK" halign=center valign=middle bordercol=okcol bordersize=4 bordertype=2 posx=0 posy=0 width=150 height=30/>
-<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=4 bordertype=2 posx=160 posy=0 width=150 height=30/>
+<node name=b1 text="OK" halign=center valign=middle bordercol=okcol bordersize=6 bordertype=2 posx=0 posy=0 width=150 height=30/>
+<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=6 bordertype=2 posx=160 posy=0 width=150 height=30/>
 </screen>
 
 <screen fontcol=fontcol valign=bottom titlealign=center name="networkbrowser_add_share" hspace=15 vspace=15 fontsize=30 title="" posx=center posy=center width=80% height=60% bordercol=bordercol bordersize=2 bgcol=bgcol>
@@ -37,6 +37,6 @@
 <node name=skin_proxyuser type=inputbox parent=listbox valign=middle posx=0 text="proxyuser" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=skin_proxypass type=inputbox parent=listbox valign=middle posx=0 text="proxypass" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=skin_hddreplacement type=choicebox parent=listbox valign=middle posx=0 text="hddreplacement" bordercol=bordercol bordersize=2 width=100% height=25>
-<node name=b1 text="OK" halign=center valign=middle bordercol=okcol bordersize=4 bordertype=2 posx=0 posy=0 width=150 height=30/>
-<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=4 bordertype=2 posx=160 posy=0 width=150 height=30/>
+<node name=b1 text="OK" halign=center valign=middle bordercol=okcol bordersize=6 bordertype=2 posx=0 posy=0 width=150 height=30/>
+<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=6 bordertype=2 posx=160 posy=0 width=150 height=30/>
 </screen>
