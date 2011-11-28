@@ -9,7 +9,7 @@ rm -rf "$HOME"/flashimg/source.titan/titan/tools/tmp
 mkdir -p "$HOME"/flashimg/source.titan/titan/tools/tmp
 
 LIST=`find "$HOME"/flashimg/source.titan -type f -name "*.h"`
-POLIST=`find "$HOME"/flashimg/source.titan/po -type f -name "*.po"`
+POLIST=`find "$HOME"/flashimg/source.titan/po -type f -name "*_auto.po"`
 
 
 
@@ -21,9 +21,9 @@ cd "$HOME"/flashimg/source.titan/titan/tools/tmp
 for ROUND in $POLIST; do
 	echo "[create.po] update $ROUND"
 	if [ "$1" == "update" ]; then
-		xgettext -j -k_ *.h -o $ROUND_auto.po
+		xgettext -j -k_ *.h -o $ROUND
 	else
-		xgettext -k_ *.h -o "$ROUND"_auto.po
+		xgettext -k_ *.h -o $ROUND
 	fi
 done
 
