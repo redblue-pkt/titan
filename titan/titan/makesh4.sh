@@ -5,39 +5,45 @@ SVNUSER=$4
 SVNPASS=$5
 SVNURL=$6
 KERNELDIR=$7
+ROOTDIR=$8
 
 if [ -z "$TYPE" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir>"
 	exit 1
 fi
 
 if [ -z "$STM" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir>"
 	exit 1
 fi
 
 if [ -z "$MEDIAFW" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir>"
 	exit 1
 fi
 
 if [ -z "$SVNUSER" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir>"
 	exit 1
 fi
 
 if [ -z "$SVNPASS" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir>"
 	exit 1
 fi
 
 if [ -z "$SVNURL" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir>"
 	exit 1
 fi
 
 if [ -z "$KERNELDIR" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir>"
+	exit 1
+fi
+
+if [ -z "$ROOTDIR" ]; then
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir>"
 	exit 1
 fi
 
@@ -73,7 +79,7 @@ echo "[titan]--------------------------------------------------------"
 #echo "[titan] Make Securety"
 #echo "[titan]--------------------------------------------------------"
 
-"$HOME"/flashimg/source.titan/titan/tools/gettitancode.sh $KERNELDIR
+"$HOME"/flashimg/source.titan/titan/tools/gettitancode.sh $KERNELDIR $ROOTDIR
 
 #echo "[titan]--------------------------------------------------------"
 #echo "[titan] Security done"

@@ -17,5 +17,6 @@ code=`./gettitancode "$str"`
 cat ../ca.h | sed s/"^#define SYSCODE .*"/"#define SYSCODE $code"/ > ca.h.tmp
 mv ca.h.tmp ../ca.h
 
+code=`cat $ROOTDIR/etc/image-version | cut -d= -f2`
 cat ../titan.c | sed s/"^#define TIMECODE .*"/"#define TIMECODE $code"/ > titan.c.tmp
 mv titan.c.tmp ../titan.c
