@@ -35,7 +35,7 @@ void screenredkeyactions()
 		bluekeyactions_setres();
 		return;
 	}
-	else if(ostrcmp(redkey, "Extentions List") == 0)
+	else if(ostrcmp(redkey, "Extensions List") == 0)
 	{
 		redkeyactions_extensions();
 		return;
