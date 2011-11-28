@@ -14,7 +14,7 @@ str=`strings tmp | grep "Linux version 2.6" | sed 's/Linux version //' | sed 's/
 code=`./gettitancode "$str"`
 #echo "[gettitancode.sh] $str -> $code"
 
-cat ../ca.h | sed s/"^#define SYSCODE .*"/"#define SYSCODE $code"/ > ca.h.tmp
+cat ../ca.h | sed s/"^#define SYSCODE .*"/"#define SYSCODE \"$code\""/ > ca.h.tmp
 mv ca.h.tmp ../ca.h
 
 code=`cat $ROOTDIR/etc/image-version | cut -d= -f2`
