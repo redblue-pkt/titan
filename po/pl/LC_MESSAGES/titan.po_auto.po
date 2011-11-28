@@ -32,7 +32,8 @@
 #: plugins_mc_skin.xml.h:54 plugins_networkbrowser_skin.xml.h:26
 #: plugins_panel_skin.xml.h:82 skin_default_skin.xml.h:445
 #: skins_mboxinfo_skin.xml.h:4 skins_mc_skin.xml.h:54
-#: skins_networkbrowser_skin.xml.h:26 skins_panel_skin.xml.h:82
+#: skins_networkbrowser_skin.xml.h:26 skins_panel_skin.xml.h:82 __.h:1
+#: skins_mboxinfo_skin.xml.h:3
 #, fuzzy
 msgid ""
 msgstr ""
@@ -371,7 +372,7 @@ msgstr ""
 #: plugins_mboxinfo_skin.xml.h:3 plugins_mc_skin.xml.h:29
 #: plugins_networkbrowser_skin.xml.h:7 skin_default_skin.xml.h:255
 #: skins_mboxinfo_skin.xml.h:3 skins_mc_skin.xml.h:29
-#: skins_networkbrowser_skin.xml.h:7
+#: skins_networkbrowser_skin.xml.h:7 skins_mboxinfo_skin.xml.h:2
 msgid "OK"
 msgstr ""
 
