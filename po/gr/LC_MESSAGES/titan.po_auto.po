@@ -6,7 +6,10 @@
 #: mc_imdb.h:78 mc_imdb.h:79 mc_imdb.h:80 mc_imdb.h:81 mc_imdb.h:82
 #: mc_sort.h:19 mc_sort.h:20 mc_sort.h:21 mc_sort.h:22 mc_sort.h:23
 #: mc_sort.h:24 mc_view.h:17 mc_view.h:18 mc_view.h:19 mc_view.h:20
-#: mc_view.h:21 mc_view.h:22
+#: mc_view.h:21 mc_view.h:22 default_skin.xml.h:53 default_skin.xml.h:1
+#: mboxinfo_skin.xml.h:1 mc_skin.xml.h:5 mc_skin.xml.h:1
+#: networkbrowser_skin.xml.h:3 networkbrowser_skin.xml.h:1 panel_skin.xml.h:19
+#: panel_skin.xml.h:1
 #, fuzzy
 msgid ""
 msgstr ""
@@ -589,7 +592,7 @@ msgstr ""
 msgid "succesfull create or delelete directory"
 msgstr ""
 
-#: harddisk.h:350
+#: harddisk.h:350 default_skin.xml.h:10
 msgid "Harddisk"
 msgstr ""
 
@@ -986,7 +989,7 @@ msgstr ""
 msgid "Are you sure you want remove this share?"
 msgstr ""
 
-#: network.h:148 network.h:155 panel_infos.h:95
+#: network.h:148 network.h:155 panel_infos.h:95 default_skin.xml.h:20
 msgid "Network"
 msgstr ""
 
@@ -1414,7 +1417,7 @@ msgstr ""
 msgid "Backup"
 msgstr ""
 
-#: panel_system_backup.h:23
+#: panel_system_backup.h:23 panel_skin.xml.h:4
 msgid "Create Backup"
 msgstr ""
 
@@ -1438,7 +1441,7 @@ msgstr ""
 msgid "Error file not supported"
 msgstr ""
 
-#: panel_system_restore.h:17 panel_system_restore.h:69
+#: panel_system_restore.h:17 panel_system_restore.h:69 panel_skin.xml.h:3
 msgid "Backup / Restore Settings"
 msgstr ""
 
@@ -2119,4 +2122,252 @@ msgstr ""
 
 #: vfdisplay.h:30
 msgid "time small"
+msgstr ""
+
+#: default_skin.xml.h:3
+msgid "Audio Tracks"
+msgstr ""
+
+#: default_skin.xml.h:4
+msgid "A/V Settings"
+msgstr ""
+
+#: default_skin.xml.h:5
+msgid "Bouquet List"
+msgstr ""
+
+#: default_skin.xml.h:6
+msgid "Channel Edit"
+msgstr ""
+
+#: default_skin.xml.h:7
+msgid "Channel Search"
+msgstr ""
+
+#: default_skin.xml.h:8
+msgid "Diseqc Settings"
+msgstr ""
+
+#: default_skin.xml.h:9
+msgid "EPG Settings"
+msgstr ""
+
+#: default_skin.xml.h:11
+msgid "Help"
+msgstr ""
+
+#: default_skin.xml.h:12
+msgid "HTTP Settings"
+msgstr ""
+
+#: default_skin.xml.h:13
+msgid "Information"
+msgstr ""
+
+#: default_skin.xml.h:14
+msgid "Language"
+msgstr ""
+
+#: default_skin.xml.h:15
+msgid "LNB Settings"
+msgstr ""
+
+#: default_skin.xml.h:16
+msgid "Main Menu"
+msgstr ""
+
+#: default_skin.xml.h:17
+msgid "Menulist"
+msgstr ""
+
+#: default_skin.xml.h:18
+msgid "Menu Protect"
+msgstr ""
+
+#: default_skin.xml.h:19
+msgid "Module Config"
+msgstr ""
+
+#: default_skin.xml.h:21
+msgid "Network Adapter Settings"
+msgstr ""
+
+#: default_skin.xml.h:22
+msgid "Network Adapter Test"
+msgstr ""
+
+#: default_skin.xml.h:23
+msgid "Network Interfacelist"
+msgstr ""
+
+#: default_skin.xml.h:24
+msgid "PIN Settings"
+msgstr ""
+
+#: default_skin.xml.h:25
+msgid "PlayList"
+msgstr ""
+
+#: default_skin.xml.h:26
+msgid "PlayList - select your playlist !"
+msgstr ""
+
+#: default_skin.xml.h:27
+msgid "Plugins"
+msgstr ""
+
+#: default_skin.xml.h:28
+msgid "Positioner Setup"
+msgstr ""
+
+#: default_skin.xml.h:29
+msgid "Poweroff Timer"
+msgstr ""
+
+#: default_skin.xml.h:30
+msgid "Record Path"
+msgstr ""
+
+#: default_skin.xml.h:31
+msgid "Records and EPG"
+msgstr ""
+
+#: default_skin.xml.h:32
+msgid "Record Timer"
+msgstr ""
+
+#: default_skin.xml.h:33
+msgid "Scan"
+msgstr ""
+
+#: default_skin.xml.h:34
+msgid "Scan Config"
+msgstr ""
+
+#: default_skin.xml.h:35
+msgid "Screensaver Adjust"
+msgstr ""
+
+#: default_skin.xml.h:36
+msgid "Select Path"
+msgstr ""
+
+#: default_skin.xml.h:37
+msgid "Serviceinfo"
+msgstr ""
+
+#: default_skin.xml.h:38 panel_skin.xml.h:11
+msgid "Settings"
+msgstr ""
+
+#: default_skin.xml.h:39
+msgid "Skin Adjust"
+msgstr ""
+
+#: default_skin.xml.h:40
+msgid "Skin Select"
+msgstr ""
+
+#: default_skin.xml.h:41
+msgid "Standby / Poweroff"
+msgstr ""
+
+#: default_skin.xml.h:42
+msgid "Subservices"
+msgstr ""
+
+#: default_skin.xml.h:43
+msgid "Subtitle"
+msgstr ""
+
+#: default_skin.xml.h:44 panel_skin.xml.h:14
+msgid "System"
+msgstr ""
+
+#: default_skin.xml.h:45
+msgid "Timezone"
+msgstr ""
+
+#: default_skin.xml.h:46
+msgid "Tunerconfig"
+msgstr ""
+
+#: default_skin.xml.h:47
+msgid "Tuner Reception"
+msgstr ""
+
+#: default_skin.xml.h:48
+msgid "VFDisplay"
+msgstr ""
+
+#: default_skin.xml.h:49
+msgid "VideoMode Aspect Settings"
+msgstr ""
+
+#: default_skin.xml.h:50
+msgid "VideoMode Resolution Settings"
+msgstr ""
+
+#: default_skin.xml.h:51
+msgid "VideoMode Settings"
+msgstr ""
+
+#: default_skin.xml.h:52
+msgid "Video Settings"
+msgstr ""
+
+#: mc_skin.xml.h:3
+msgid "MC VideoPlayer Sort Settings"
+msgstr ""
+
+#: mc_skin.xml.h:4
+msgid "MC VideoPlayer View Settings"
+msgstr ""
+
+#: panel_skin.xml.h:5
+msgid "Extensions"
+msgstr ""
+
+#: panel_skin.xml.h:6
+msgid "FanControl"
+msgstr ""
+
+#: panel_skin.xml.h:7
+msgid "Info"
+msgstr ""
+
+#: panel_skin.xml.h:8
+msgid "Ipk Install - select file"
+msgstr ""
+
+#: panel_skin.xml.h:9
+msgid "OverClock Settings"
+msgstr ""
+
+#: panel_skin.xml.h:10
+msgid "Panel"
+msgstr ""
+
+#: panel_skin.xml.h:12
+msgid "Softcam Panel"
+msgstr ""
+
+#: panel_skin.xml.h:13
+msgid "Sysinfo"
+msgstr ""
+
+#: panel_skin.xml.h:15
+msgid "System - Flashupdate (online)"
+msgstr ""
+
+#: panel_skin.xml.h:16
+msgid "System - Flashupdate (tmp)"
+msgstr ""
+
+#: panel_skin.xml.h:17
+msgid "System - Usbupdate (online)"
+msgstr ""
+
+#: panel_skin.xml.h:18
+msgid "System - Usbupdate (tmp)"
 msgstr ""
