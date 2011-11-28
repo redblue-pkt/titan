@@ -22,6 +22,7 @@
 #: skins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:1
 #: skins_panel_skin.xml_.h:64 skins_panel_skin.xml.h:19
 #: skins_panel_skin.xml.h:1 skin_default_skin.xml_.h:393
+#: plugins_networkbrowser_skin.xml_.h:24 skins_networkbrowser_skin.xml_.h:24
 #, fuzzy
 msgid ""
 msgstr ""
@@ -2630,26 +2631,32 @@ msgid "sharename"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml_.h:22 skins_networkbrowser_skin.xml_.h:22
+#: plugins_networkbrowser_skin.xml_.h:18 skins_networkbrowser_skin.xml_.h:18
 msgid "type"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml_.h:23 skins_networkbrowser_skin.xml_.h:23
+#: plugins_networkbrowser_skin.xml_.h:19 skins_networkbrowser_skin.xml_.h:19
 msgid "useproxy"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml_.h:24 skins_networkbrowser_skin.xml_.h:24
+#: plugins_networkbrowser_skin.xml_.h:20 skins_networkbrowser_skin.xml_.h:20
 msgid "userauth"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml_.h:25 skins_networkbrowser_skin.xml_.h:25
+#: plugins_networkbrowser_skin.xml_.h:21 skins_networkbrowser_skin.xml_.h:21
 msgid "username"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml_.h:26 skins_networkbrowser_skin.xml_.h:26
+#: plugins_networkbrowser_skin.xml_.h:22 skins_networkbrowser_skin.xml_.h:22
 msgid "usessl"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml_.h:27 skins_networkbrowser_skin.xml_.h:27
+#: plugins_networkbrowser_skin.xml_.h:23 skins_networkbrowser_skin.xml_.h:23
 msgid "wsize"
 msgstr ""
 
