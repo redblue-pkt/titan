@@ -21,9 +21,9 @@ cd "$HOME"/flashimg/source.titan/titan/tools/tmp
 for ROUND in $POLIST; do
 	echo "[create.po] update $ROUND"
 	if [ "$1" == "update" ]; then
-		xgettext -j -k_ *.h -o $ROUND
+		xgettext --omit-header -j -k_ *.h -o $ROUND
 	else
-		xgettext -k_ *.h -o $ROUND
+		xgettext --omit-header -k_ *.h -o $ROUND
 	fi
 done
 
