@@ -13,7 +13,6 @@ int screenabout(void)
 		return 1;
 	}
 
-	char* tmpstr = NULL;
 	tmpstr = ostrcat(_("Image"), ": ", 0, 0);
 	tmpstr = ostrcat(tmpstr, PROGNAME, 1, 0);
 	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
