@@ -1831,9 +1831,9 @@ char* webaddrectimer(char* param)
 char* webrectimersend(char* param)
 {
 	char* buf = NULL, *string = NULL, *name = NULL, *begin = NULL, *end = NULL, *type = NULL, *anode = NULL, *channelname = NULL;
-	int maxlen = 0, pos = 0, channelfind = 0, tmpservicetype = 0;
+	int maxlen = 0, pos = 0, newnode = 0, channelfind = 0;
 	struct rectimer *node = NULL;
-	char* tmpstr = NULL, *tmpchannellist = NULL;
+	char* tmpstr = NULL;
 	struct tm* loctime = NULL;
 	struct channel *channel1;
 	struct service *service1;
@@ -1877,37 +1877,26 @@ char* webrectimersend(char* param)
 			*string++ = ' ';
 	} 
 	
-	node = atoi(anode);
-	if(node == 0) {
-		node = addrectimernode(NULL, NULL);
-		node->pincode = ostrcat("0000", NULL, 0, 0);
-		node->recpath = ostrcat(NULL, getconfig("rec_path", NULL), 0, 0);
-		node->afterevent = 0;
-		node->repeate = 0;
-		
-		tmpservicetype = status.servicetype;
-		if(tmpservicetype == 0)
-			tmpchannellist = ostrcat(getconfig("channellist", NULL), "", 0, 0);
-		else
-			tmpchannellist = ostrcat(getconfig("rchannellist", NULL), "", 0, 0);
-	}
-
 	if(channelname != NULL) {
 		channelfind = 0;
 		channel1=channel;
 		while(channel1->next != NULL) {
-			if(ostrcmp(channel1->name, channelname) == 0) {
-				channelfind = 1;
-				break;
+			if(ostrcmp(channel1->name, channelname) == 0 && channel1->servicetype == 0) {
+				if(channelnottunable(channel1) == 0) {
+					channelfind = 1;
+					break;
+				}
 			}
 			channel1=channel1->next;
 		}
 		if(channelfind == 0) {
 			channel1=channel;		
 			while(channel1->next != NULL) {
-				if(strstr(channel1->name, channelname) != NULL) {
-					channelfind = 1;
-					break;
+				if(strstr(channel1->name, channelname) != NULL && channel1->servicetype == 0) {
+					if(channelnottunable(channel1) == 0) {
+						channelfind = 1;
+						break;
+					}
 				}
 				channel1=channel1->next;
 			}
@@ -1916,20 +1905,23 @@ char* webrectimersend(char* param)
 			buf = ostrcat(buf, "channel not found", 1, 0);	
 			return buf;
 		}
-		else {
-			node->serviceid = channel1->serviceid;
-			node->servicetype = channel1->servicetype;
-			node->transponderid = channel1->transponderid;
-			/*service1 = service;
-			while(service1->next != NULL) {
-				if(service1->channel == channel1) {
-					free(node->channellist); node->channellist = NULL;
-					node->channellist = ostrcat(service1->channellist, "", 0, 0);
-					break;
-				}
-				channel1=channel1->next;
-			}*/
-		}
+	}
+	
+	newnode = 0;
+	node = atoi(anode);
+	if(node == 0) {
+		node = addrectimernode(NULL, NULL);
+		newnode = 1;
+		node->pincode = ostrcat("0000", NULL, 0, 0);
+		node->recpath = ostrcat(NULL, getconfig("rec_path", NULL), 0, 0);
+		node->afterevent = 0;
+		node->repeate = 0;
+	}
+	
+	if(channelfind == 1) {
+		node->serviceid = channel1->serviceid;
+		node->servicetype = channel1->servicetype;
+		node->transponderid = channel1->transponderid;
 	}
 	
 	free(node->name); node->name = NULL;
@@ -1954,6 +1946,9 @@ char* webrectimersend(char* param)
 	node->end -= (node->end % 60);
 	tmpstr=NULL;
 
+	if(newnode == 1)
+		node->disabled = 0;
+	
 	status.writerectimer = 1;
 	writerectimer(getconfig("rectimerfile", NULL), 0);
 		
