@@ -48,10 +48,13 @@ void screenlinkedchannel()
 	struct linkedchannel* node = NULL;
 	struct channel* chnode = NULL;
 	struct epg* epgnode = NULL;
-	char* tmpstr = NULL;
+	char* tmpstr = NULL, *buf = NULL;;
+	struct tm *loctime = NULL;
 
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
+
+	buf = malloc(7);
 
 	addscreenrc(linkedchannel, listbox);
 start:
@@ -80,6 +83,13 @@ start:
 					if(epgnode != NULL)
 					{
 						tmpstr = ostrcat(tmpstr, " - ", 1, 0);
+						if(buf != NULL)
+						{
+							loctime = olocaltime(&epgnode->starttime);
+							ostrftime(buf, MINMALLOC, "%H:%M ", loctime);
+							free(loctime); loctime = NULL;
+							tmpstr = ostrcat(tmpstr, buf, 1, 0);
+						}
 						tmpstr = ostrcat(tmpstr, epgnode->title, 1, 0);
 					}
 					changetext(tmp, tmpstr);
@@ -119,6 +129,7 @@ start:
 		}
 	}
 
+	free(buf);
 	delmarkedscreennodes(linkedchannel, 1);
 	delownerrc(linkedchannel);
 	clearscreen(linkedchannel);
