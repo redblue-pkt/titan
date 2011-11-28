@@ -3903,7 +3903,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:416
 msgid "Tuner Configuration"
-msgstr ""
+msgstr "Tuner Einstellen"
 
 #: skin_default_skin.xml.h:417
 msgid "TXT PID:"
