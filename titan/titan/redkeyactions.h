@@ -116,7 +116,7 @@ void redkeyactions_extensions()
 			return;
 		}
 	}
-	else if(ostrcmp(bluekey, "Subchannel") == 0)
+	else if(ostrcmp(redkey, "Subchannel") == 0)
 	{
 		screenlinkedchannel();
 		return;
