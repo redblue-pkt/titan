@@ -77,7 +77,7 @@ void screenvideomode()
 			free(mbox); mbox = NULL;
 			tmpstr = getmode3d();
 			tmpstr1 = getmode3dchoices();
-			mbox = menulistbox(tmpstr, tmpstr1, skinname, NULL, NULL, 0, 0);
+			mbox = menulistbox(tmpstr, tmpstr1, skinname, NULL, NULL, 1, 0);
 			free(tmpstr); tmpstr = NULL;
 			free(tmpstr1); tmpstr1 = NULL;
 			if(mbox != NULL)
