@@ -1830,7 +1830,7 @@ char* webaddrectimer(char* param)
 
 char* webrectimersend(char* param)
 {
-	char* buf = NULL, *string = NULL, *name = NULL, *begin = NULL, *end = NULL, *type = NULL, *anode = NULL, *channelname = NULL;
+	char* buf = NULL, *string = NULL, *name = NULL, *begin = NULL, *end = NULL, *type = NULL, *anode = NULL, *channelname = NULL, *sid = NULL, *tid = NULL, *ext = NULL;
 	int maxlen = 0, pos = 0, newnode = 0, channelfind = 0;
 	struct rectimer *node = NULL;
 	char* tmpstr = NULL;
@@ -1856,6 +1856,15 @@ char* webrectimersend(char* param)
 	channelname=strstr(param, "channel=");
 	if(channelname != NULL)
 		channelname = channelname + 8;
+	sid=strstr(param, "sid=");
+	if(sid != NULL)
+		sid = sid + 4;
+	tid=strstr(param, "tid=");
+	if(tid != NULL)
+		tid = tid + 4;
+	ext=strstr(param, "ext=");
+	if(ext != NULL)
+		ext = ext + 4;
 	
 	string = param;	
 	while(string != NULL) {	
@@ -1902,7 +1911,7 @@ char* webrectimersend(char* param)
 			}
 		}
 		if(channelfind == 0) {
-			buf = ostrcat(buf, "channel not found", 1, 0);	
+			buf = ostrcat(buf, "ERROR: channel not found", 1, 0);	
 			return buf;
 		}
 	}
@@ -1952,7 +1961,15 @@ char* webrectimersend(char* param)
 	status.writerectimer = 1;
 	writerectimer(getconfig("rectimerfile", NULL), 0);
 		
-	buf = webgetrectimer(NULL, 0);
+	if(ext == NULL)
+		buf = webgetrectimer(NULL, 0);
+	else {
+		string = NULL;
+		string = oitoa(node);
+		buf = ostrcat(buf, "ok -> TimerID=", 1, 0);
+		buf = ostrcat(buf, string, 1, 0);
+		free(string);string=NULL;
+	}
 	//ostrcatbig(&buf, param, &maxlen, &pos);
 
 	return buf;
