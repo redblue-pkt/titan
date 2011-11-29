@@ -27,20 +27,20 @@ char* transpondergetbandwidthstr(struct transponder* node, int flag)
 
 		switch(node->bandwidth)
 		{	
-			case 0: text = ostrcat(text, _("8 MHZ"), 1, 0); break;
-			case 1: text = ostrcat(text, _("7 MHZ"), 1, 0); break;
-			case 2: text = ostrcat(text, _("6 MHZ"), 1, 0); break;
+			case 0: text = ostrcat(text, _("8 Mhz"), 1, 0); break;
+			case 1: text = ostrcat(text, _("7 Mhz"), 1, 0); break;
+			case 2: text = ostrcat(text, _("6 Mhz"), 1, 0); break;
 			case 3: text = ostrcat(text, _("auto"), 1, 0); break;
 			default: text = ostrcat(text, _("unknown"), 1, 0);
 		}
 	}
 	else if(flag == 1)
 	{
-		text = ostrcat(text, _("8 MHZ"), 1, 0);
+		text = ostrcat(text, _("8 Mhz"), 1, 0);
 		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, _("7 MHZ"), 1, 0);
+		text = ostrcat(text, _("7 Mhz"), 1, 0);
 		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, _("6 MHZ"), 1, 0);				
+		text = ostrcat(text, _("6 Mhz"), 1, 0);				
 		text = ostrcat(text, "\n", 1, 0);
 		text = ostrcat(text, _("auto"), 1, 0);				
 	}
@@ -64,17 +64,17 @@ char* transpondergettransmissionstr(struct transponder* node, int flag)
 
 		switch(node->transmission)
 		{	
-			case 0: text = ostrcat(text, _("2 K"), 1, 0); break;
-			case 1: text = ostrcat(text, _("8 K"), 1, 0); break;
+			case 0: text = ostrcat(text, _("2 Khz"), 1, 0); break;
+			case 1: text = ostrcat(text, _("8 Khz"), 1, 0); break;
 			case 2: text = ostrcat(text, _("auto"), 1, 0); break;
 			default: text = ostrcat(text, _("unknown"), 1, 0);
 		}
 	}
 	else if(flag == 1)
 	{
-		text = ostrcat(text, _("2 K"), 1, 0);
+		text = ostrcat(text, _("2 Khz"), 1, 0);
 		text = ostrcat(text, "\n", 1, 0);
-		text = ostrcat(text, _("8 K"), 1, 0);
+		text = ostrcat(text, _("8 Khz"), 1, 0);
 		text = ostrcat(text, "\n", 1, 0);
 		text = ostrcat(text, _("auto"), 1, 0);						
 	}
@@ -403,7 +403,7 @@ char* transpondergetmodulationstr(struct transponder* node, int flag)
 		{
 			switch(node->modulation)
 			{
-				case 0: text = ostrcat(text, _("QAM AUTO"), 1, 0); break;
+				case 0: text = ostrcat(text, _("QAM auto"), 1, 0); break;
 				case 1: text = ostrcat(text, _("QAM 16"), 1, 0); break;
 				case 2: text = ostrcat(text, _("QAM 32"), 1, 0); break;
 				case 3: text = ostrcat(text, _("QAM 64"), 1, 0); break;
@@ -419,7 +419,7 @@ char* transpondergetmodulationstr(struct transponder* node, int flag)
 				case 0: text = ostrcat(text, _("QPSK"), 1, 0); break;
 				case 1: text = ostrcat(text, _("QAM 16"), 1, 0); break;
 				case 2: text = ostrcat(text, _("QAM 64"), 1, 0); break;
-				case 3: text = ostrcat(text, _("QAM AUTO"), 1, 0); break;
+				case 3: text = ostrcat(text, _("QAM auto"), 1, 0); break;
 				default: text = ostrcat(text, _("unknown"), 1, 0);
 			}
 		}
@@ -438,7 +438,7 @@ char* transpondergetmodulationstr(struct transponder* node, int flag)
 		}
 		else if(node->fetype == FE_QAM)
 		{
-			text = ostrcat(text, _("QAM AUTO"), 1, 0);
+			text = ostrcat(text, _("QAM auto"), 1, 0);
 			text = ostrcat(text, "\n", 1, 0);
 			text = ostrcat(text, _("QAM 16"), 1, 0);
 			text = ostrcat(text, "\n", 1, 0);
@@ -458,7 +458,7 @@ char* transpondergetmodulationstr(struct transponder* node, int flag)
 			text = ostrcat(text, "\n", 1, 0);
 			text = ostrcat(text, _("QAM 64"), 1, 0);
 			text = ostrcat(text, "\n", 1, 0);
-			text = ostrcat(text, _("QAM AUTO"), 1, 0);
+			text = ostrcat(text, _("QAM auto"), 1, 0);
 		}
 	}
 	else if(flag == 2)
