@@ -9,6 +9,8 @@ void screenvideomode()
 
 	tmpstr = getpolicy();
 
+	tmpstr1 = ostrcat(tmpstr1, "Subchannel\n", 1, 0);
+	tmpstr1 = ostrcat(tmpstr1, "\t\n", 1, 0);
 	tmpstr1 = ostrcat(tmpstr1, "Resolution Settings\n", 1, 0);
 	tmpstr1 = ostrcat(tmpstr1, "Aspect Settings\n", 1, 0);
 	tmpstr1 = ostrcat(tmpstr1, "\t\n", 1, 0);
@@ -29,7 +31,19 @@ void screenvideomode()
 
 	if(mbox != NULL)
 	{
-		if(!strncmp("Resolution Settings", mbox, 19))
+//		if(!strncmp("Subchannel", mbox, 15))
+		if(ostrcmp(mbox, "Subchannel") == 0)
+		{
+			free(mbox); mbox = NULL;
+			screenlinkedchannel();
+			return;
+		}
+	}
+
+	if(mbox != NULL)
+	{
+//		if(!strncmp("Resolution Settings", mbox, 19))
+		if(ostrcmp(mbox, "Resolution Settings") == 0)
 		{
 			skinname = "resolutionsettings";
 			free(mbox); mbox = NULL;
@@ -54,7 +68,8 @@ void screenvideomode()
 
 	if(mbox != NULL)
 	{
-		if(!strncmp("Aspect Settings", mbox, 15))
+//		if(!strncmp("Aspect Settings", mbox, 15))
+		if(ostrcmp(mbox, "Aspect Settings") == 0)
 		{
 			skinname = "aspectsettings";
 			free(mbox); mbox = NULL;
@@ -71,7 +86,8 @@ void screenvideomode()
 /*
 	if(mbox != NULL)
 	{
-		if(!strncmp("3d Settings", mbox, 11))
+//		if(!strncmp("3d Settings", mbox, 11))
+		if(ostrcmp(mbox, "3d Settings") == 0)
 		{
 			skinname = "3dsettings";
 			free(mbox); mbox = NULL;
