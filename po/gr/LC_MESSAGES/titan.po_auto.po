@@ -52,7 +52,8 @@ msgstr ""
 #: skins_mboxinfo_skin.xml.h:1 skins_mc_skin.xml.h:15
 #: skins_networkbrowser_skin.xml.h:2 skins_panel_skin.xml.h:38 spinner.h:18
 #: stream.h:26 timeshift.h:41 timeshift.h:68 tunerconfig.h:733 videomode.h:44
-#: skin_default_skin.xml.h:168 httpdfunc.h:2061
+#: skin_default_skin.xml.h:168 httpdfunc.h:2061 bluekeyactions.h:128
+#: scan.h:779 scan.h:851 scan.h:1057
 msgid "EXIT"
 msgstr ""
 
@@ -80,7 +81,7 @@ msgstr ""
 #: rectimer.h:860 rectimer.h:865 rectimer.h:870 rectimer.h:875 rectimer.h:880
 #: scan.h:700 scan.h:986 scan.h:990 scan.h:994 screensaveradjust.h:19
 #: tunerconfig.h:146 tunerconfig.h:175 tunerconfig.h:206 tunerconfig.h:239
-#: tunerconfig.h:535
+#: tunerconfig.h:535 scan.h:711 scan.h:997 scan.h:1001 scan.h:1005
 msgid "no"
 msgstr ""
 
@@ -114,7 +115,8 @@ msgstr ""
 #: panel_settings_overclocking.h:224 pin.h:82 pin.h:154 pin.h:172
 #: rectimer.h:851 rectimer.h:856 rectimer.h:861 rectimer.h:866 rectimer.h:871
 #: rectimer.h:876 rectimer.h:881 scan.h:701 scan.h:987 scan.h:991 scan.h:995
-#: screensaveradjust.h:20 tunerconfig.h:534
+#: screensaveradjust.h:20 tunerconfig.h:534 scan.h:712 scan.h:998 scan.h:1002
+#: scan.h:1006
 msgid "yes"
 msgstr ""
 
@@ -278,6 +280,7 @@ msgstr ""
 #: scan.h:614 scan.h:768 scan.h:840 scan.h:1046 scart.h:13 scart.h:26
 #: service.h:556 service.h:790 skinselector.h:210 spinner.h:18 stream.h:26
 #: timeshift.h:41 timeshift.h:68 tunerconfig.h:733 videomode.h:44
+#: bluekeyactions.h:128 scan.h:625 scan.h:779 scan.h:851 scan.h:1057
 msgid "Message"
 msgstr ""
 
@@ -299,7 +302,7 @@ msgstr ""
 msgid "OK"
 msgstr ""
 
-#: bluekeyactions.h:123 global.h:3609
+#: bluekeyactions.h:123 global.h:3609 bluekeyactions.h:128
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -2259,69 +2262,69 @@ msgstr ""
 msgid "Can't restore settings"
 msgstr ""
 
-#: scan.h:206
+#: scan.h:206 scan.h:211
 msgid "TV"
 msgstr ""
 
-#: scan.h:208
+#: scan.h:208 scan.h:213
 msgid "Radio"
 msgstr ""
 
-#: scan.h:210
+#: scan.h:210 scan.h:215
 msgid "Data"
 msgstr ""
 
-#: scan.h:563
+#: scan.h:563 scan.h:574
 msgid "Sat: "
 msgstr ""
 
-#: scan.h:569
+#: scan.h:569 scan.h:580
 msgid "Transponder: "
 msgstr ""
 
-#: scan.h:577
+#: scan.h:577 scan.h:588
 msgid "TV: "
 msgstr ""
 
-#: scan.h:585
+#: scan.h:585 scan.h:596
 msgid "Radio: "
 msgstr ""
 
-#: scan.h:593
+#: scan.h:593 scan.h:604
 msgid "Data: "
 msgstr ""
 
-#: scan.h:614
+#: scan.h:614 scan.h:625
 msgid "Wait for channel scan end"
 msgstr ""
 
-#: scan.h:768
+#: scan.h:768 scan.h:779
 msgid ""
 "Scan is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 
-#: scan.h:840
+#: scan.h:840 scan.h:851
 msgid "No Tuner configured"
 msgstr ""
 
-#: scan.h:853
+#: scan.h:853 scan.h:864
 msgid "Single Transponder"
 msgstr ""
 
-#: scan.h:854
+#: scan.h:854 scan.h:865
 msgid "Single Sat"
 msgstr ""
 
-#: scan.h:855
+#: scan.h:855 scan.h:866
 msgid "Multi Sat"
 msgstr ""
 
-#: scan.h:860
+#: scan.h:860 scan.h:871
 msgid "Auto Scan"
 msgstr ""
 
-#: scan.h:1046
+#: scan.h:1046 scan.h:1057
 msgid "Transponder changed"
 msgstr ""
 
@@ -4283,4 +4286,8 @@ msgstr ""
 
 #: skin_default_skin.xml.h:437
 msgid "Z"
+msgstr ""
+
+#: transponder.h:406 transponder.h:422 transponder.h:441 transponder.h:461
+msgid "QAM auto"
 msgstr ""
