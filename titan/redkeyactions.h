@@ -87,6 +87,7 @@ void redkeyactions_extensions()
 	tmpstr = ostrcat(tmpstr, "Multi EPG\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, "Sleep Timer\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, "Child Protection\n", 1, 0);
+	tmpstr = ostrcat(tmpstr, "Subchannel\n", 1, 0);
 				
 	while(child != NULL)
 	{
@@ -114,6 +115,11 @@ void redkeyactions_extensions()
 			free(mlistbox); mlistbox = NULL;
 			return;
 		}
+	}
+	else if(ostrcmp(bluekey, "Subchannel") == 0)
+	{
+		screenlinkedchannel();
+		return;
 	}
 	else if(ostrcmp(mlistbox, "Auto Resolution") == 0)
 	{

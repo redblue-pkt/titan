@@ -28,6 +28,11 @@ void screenbluekeyactions()
 			return;
 		}
 	}
+	else if(ostrcmp(bluekey, "Subchannel") == 0)
+	{
+		screenlinkedchannel();
+		return;
+	}
 	else if(ostrcmp(bluekey, "Auto Resolution") == 0)
 	{
 		bluekeyactions_setres();
