@@ -46,7 +46,7 @@ void screenlinkedchannel()
 	struct skin* listbox = getscreennode(linkedchannel, "listbox");
 	struct skin* tmp = NULL;
 	struct linkedchannel* node = NULL;
-	struct channel* chnode = NULL;
+	struct channel* chnode = channel;
 	struct epg* epgnode = NULL;
 	char* tmpstr = NULL, *buf = NULL;;
 	struct tm *loctime = NULL;
@@ -62,8 +62,28 @@ start:
 	delmarkedscreennodes(linkedchannel, 1);
 	if(status.aktservice->channel != NULL)
 	{
+		if(status.aktservice->channel->linkedchannel == NULL)
+		{
+			while(chnode != NULL)
+			{
+				node = chnode->linkedchannel;
+				while(node != NULL)
+				{
+					if(node->serviceid == status.aktservice->channel->serviceid && node->transponderid == status.aktservice->channel->transponderid)
+					{
+						node = chnode->linkedchannel;
+						break;
+					}
+					node = node->next;
+				}
+				if(node != NULL) break;
+				chnode = chnode->next;
+			}
+		}
+
 		m_lock(&status.linkedchannelmutex, 14);
-		node = status.aktservice->channel->linkedchannel;
+		if(node == NULL)
+			node = status.aktservice->channel->linkedchannel;
 		while(node != NULL)
 		{
 			chnode = getchannel(node->serviceid, node->transponderid);
