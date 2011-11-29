@@ -1886,7 +1886,13 @@ char* webrectimersend(char* param)
 			*string++ = ' ';
 	} 
 	
-	if(channelname != NULL) {
+	if((sid == NULL && tid != NULL) || (sid != NULL && tid == NULL)) {
+		buf = ostrcat(buf, "ERROR: sid and tid required or only channel", 1, 0);	
+		return buf;
+	}
+		
+	
+	if(channelname != NULL && sid == NULL) {
 		channelfind = 0;
 		channel1=channel;
 		while(channel1->next != NULL) {
@@ -1931,6 +1937,12 @@ char* webrectimersend(char* param)
 		node->serviceid = channel1->serviceid;
 		node->servicetype = channel1->servicetype;
 		node->transponderid = channel1->transponderid;
+	}
+	
+	if(sid != NULL && tid != NULL) {
+		node->serviceid = atoi(sid);
+		node->transponderid = atoi(tid);
+		node->servicetype = 0;
 	}
 	
 	free(node->name); node->name = NULL;
