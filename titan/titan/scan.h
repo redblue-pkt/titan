@@ -114,7 +114,9 @@ end:
 	return ret;
 }
 
-int findchannel(unsigned char *buf, unsigned long transponderid, uint8_t* lastsecnr, struct skin* scan, struct skin* listbox)
+//flag 0: from scan
+//flag 1: from update channelname / providername
+int findchannel(unsigned char *buf, unsigned long transponderid, uint8_t* lastsecnr, struct skin* scan, struct skin* listbox, int flag)
 {
 	int ret = -1;
 	struct skin* node = NULL;
@@ -156,7 +158,7 @@ int findchannel(unsigned char *buf, unsigned long transponderid, uint8_t* lastse
 		running = buf[pos + 3] & 0xE0;
 		camode = buf[pos + 3] & 0x10;
 		desclooplen = ((buf[pos + 3] & 0x0F) << 8) | buf[pos + 4];
-		if(scaninfo.onlyfree == 1 && camode > 0) continue;
+		if(flag == 0 && scaninfo.onlyfree == 1 && camode > 0) continue;
 
 		for(pos2 = pos + 5; pos2 < pos + desclooplen + 5; pos2 += buf[pos2 + 1] + 2)
 		{
@@ -178,8 +180,11 @@ int findchannel(unsigned char *buf, unsigned long transponderid, uint8_t* lastse
 					tmpstr2 = stringreplacechar(tmpstr2, '#', '_');
 
 					//add to listbox
-					chnode = getchannel(serviceid, transponderid);
-					node = addlistbox(scan, listbox, node, 1);
+					if(flag == 0)
+					{
+						chnode = getchannel(serviceid, transponderid);
+						node = addlistbox(scan, listbox, node, 1);
+					}
 					if(node != NULL)
 					{
 						if(chnode != NULL)
@@ -228,7 +233,6 @@ int findchannel(unsigned char *buf, unsigned long transponderid, uint8_t* lastse
 
 					ret = 0;
 					break;
-
 			}
 		}
 	}
@@ -344,7 +348,7 @@ void doscan(struct stimerthread* timernode)
 				if(timernode->aktion != START) break;
 				buf = dvbgetsdt(fenode, secnr, scaninfo.timeout);
 				if(buf != NULL)
-					findchannel(buf, tpnode->id, &lastsecnr, scaninfo.scanscreen, scaninfo.listbox);
+					findchannel(buf, tpnode->id, &lastsecnr, scaninfo.scanscreen, scaninfo.listbox, 0);
 				else
 					break;
 				free(buf); buf = NULL;
