@@ -55,7 +55,7 @@ msgstr ""
 #: stream.h:26 timeshift.h:41 timeshift.h:68 tunerconfig.h:733 videomode.h:44
 #: skin_default_skin.xml.h:168 httpdfunc.h:2061 bluekeyactions.h:128
 #: scan.h:779 scan.h:851 scan.h:1057 videomode.h:58 videomode.h:53
-#: skin_default_skin.xml.h:169 global.h:3610 httpdfunc.h:2078
+#: skin_default_skin.xml.h:169 global.h:3610 httpdfunc.h:2078 httpdfunc.h:2090
 msgid "EXIT"
 msgstr ""
 
