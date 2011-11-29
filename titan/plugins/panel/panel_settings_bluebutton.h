@@ -17,6 +17,7 @@ void screenpanel_settings_bluebutton()
 	tmpstr = ostrcat(tmpstr, "Graphic Multi EPG\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, "Sleep Timer\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, "Child Protection\n", 1, 0);
+	tmpstr = ostrcat(tmpstr, "Subchannel\n", 1, 0);
 
 	char* bluekey = getconfig("bluekey", NULL);
 
