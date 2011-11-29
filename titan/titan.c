@@ -328,8 +328,12 @@ int main(int argc, char *argv[])
 {
 #ifndef SIMULATE
 	printf("a: %s\n",strstrip(gettimeinfo()));
-	printf("b: %s\n",TIMECODE);	
+	printf("b: %s\n",string_newline(gettimeinfo()));
+	printf("c: %s\n",TIMECODE);	
+	if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1) exit(100);
+	printf("d:\n");
 	if(ostrcmp(strstrip(gettimeinfo()), TIMECODE) == 1) exit(100);
+	printf("e:\n");
 #endif
 	debug(1000, "in");
 	int ret = 0, serviceret = 0, skincheck = 0;
