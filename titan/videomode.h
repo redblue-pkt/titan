@@ -81,7 +81,7 @@ void screenvideomode()
 			free(tmpstr); tmpstr = NULL;
 			free(tmpstr1); tmpstr1 = NULL;
 			if(mbox != NULL)
-				set3d(mbox);
+				setmode3d(mbox);
 		}
 	}
 
