@@ -327,7 +327,9 @@ void oshutdown(int exitcode, int flag)
 int main(int argc, char *argv[])
 {
 #ifndef SIMULATE
-	//if(ostrcmp(gettimeinfo(), TIMECODE) == 1) exit(100);
+	printf("a: %s\n",strstrip(gettimeinfo()));
+	printf("b: %s\n",TIMECODE);	
+	if(ostrcmp(strstrip(gettimeinfo()), TIMECODE) == 1) exit(100);
 #endif
 	debug(1000, "in");
 	int ret = 0, serviceret = 0, skincheck = 0;
