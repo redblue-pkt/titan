@@ -115,7 +115,7 @@ end:
 }
 
 //flag 0: from scan
-//flag 1: from update channelname / providername
+//flag 1: from update channelname
 int findchannel(unsigned char *buf, unsigned long transponderid, uint8_t* lastsecnr, struct skin* scan, struct skin* listbox, int flag)
 {
 	int ret = -1;
@@ -168,7 +168,10 @@ int findchannel(unsigned char *buf, unsigned long transponderid, uint8_t* lastse
 					servicetype = buf[pos2 + 2];
 					servicetype = changeservicetype(servicetype);
 					providerlen = buf[pos2 + 3];
+					
+					//providername
 					tmpstr1 = strndup((char*)&(buf[pos2 + 4]), providerlen);
+					//channelname
 					tmpstr2 = strndup((char*)&(buf[pos2 + 4 + providerlen + 1]), (2 + buf[pos2 + 1]) - (4 + providerlen + 1));
 
 					if(tmpstr1 == NULL || strlen(tmpstr1) == 0) tmpstr1 = ostrcat(tmpstr1, "unknown", 1, 0);
@@ -180,11 +183,8 @@ int findchannel(unsigned char *buf, unsigned long transponderid, uint8_t* lastse
 					tmpstr2 = stringreplacechar(tmpstr2, '#', '_');
 
 					//add to listbox
-					if(flag == 0)
-					{
-						chnode = getchannel(serviceid, transponderid);
-						node = addlistbox(scan, listbox, node, 1);
-					}
+					chnode = getchannel(serviceid, transponderid);
+					if(flag == 0) node = addlistbox(scan, listbox, node, 1);
 					if(node != NULL)
 					{
 						if(chnode != NULL)
@@ -227,6 +227,13 @@ int findchannel(unsigned char *buf, unsigned long transponderid, uint8_t* lastse
 						free(node->name);
 						node->name = (char*)tmplong;
 					}
+					
+					if(flag == 1 && chnode != NULL && ostrcmp(chnode->name, tmpstr2) != 0)
+					{
+						free(chnode->name);
+						chnode->name = ostrcat(tmpstr2, NULL, 0, 0);
+					}
+					
 					free(tmpstr); tmpstr = NULL;
 					free(tmpstr1); tmpstr1 = NULL;
 					free(tmpstr2); tmpstr2 = NULL;
