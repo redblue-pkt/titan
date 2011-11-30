@@ -1011,7 +1011,7 @@ msgstr ""
 msgid "Add Nfs Network Share"
 msgstr ""
 
-#: networkbrowser.h:813
+#: networkbrowser.h:813 networkbrowser.h:606
 msgid "Add Ftpfs Network Share"
 msgstr ""
 
@@ -4593,4 +4593,44 @@ msgstr ""
 
 #: skin_default_skin.xml.h:1
 msgid "3D-Mode Settings"
+msgstr ""
+
+#: networkbrowser.h:23
+msgid "Scanning Network Shares, please wait !!"
+msgstr ""
+
+#: networkbrowser.h:32
+msgid "Networkbrowser - show scanned DNS-Shares"
+msgstr ""
+
+#: networkbrowser.h:49
+msgid "Networkbrowser - show scanned cifs/nfs-Shares"
+msgstr ""
+
+#: networkbrowser.h:1103
+msgid "add new share"
+msgstr ""
+
+#: networkbrowser.h:1105
+msgid "add cifs share"
+msgstr ""
+
+#: networkbrowser.h:1107
+msgid "add nfs share"
+msgstr ""
+
+#: networkbrowser.h:1109
+msgid "add ftp share"
+msgstr ""
+
+#: networkbrowser.h:1111
+msgid "edit share"
+msgstr ""
+
+#: networkbrowser.h:1113
+msgid "remove share"
+msgstr ""
+
+#: networkbrowser.h:1583
+msgid "Networkbrowser - show Shares"
 msgstr ""
