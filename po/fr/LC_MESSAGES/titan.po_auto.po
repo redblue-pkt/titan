@@ -57,6 +57,7 @@ msgstr ""
 #: skin_default_skin.xml.h:168 httpdfunc.h:2061 bluekeyactions.h:128
 #: scan.h:779 scan.h:851 scan.h:1057 videomode.h:58 videomode.h:53
 #: skin_default_skin.xml.h:169 global.h:3610 httpdfunc.h:2078 httpdfunc.h:2090
+#: global.h:3630 scan.h:781 scan.h:853 scan.h:1059 service.h:560 service.h:794
 msgid "EXIT"
 msgstr ""
 
@@ -85,15 +86,17 @@ msgstr ""
 #: scan.h:700 scan.h:986 scan.h:990 scan.h:994 screensaveradjust.h:19
 #: tunerconfig.h:146 tunerconfig.h:175 tunerconfig.h:206 tunerconfig.h:239
 #: tunerconfig.h:535 scan.h:711 scan.h:997 scan.h:1001 scan.h:1005 adjust.h:42
-#: adjust.h:56 adjust.h:60 adjust.h:64 adjust.h:89 adjust.h:116
+#: adjust.h:56 adjust.h:60 adjust.h:64 adjust.h:89 adjust.h:116 adjust.h:43
+#: adjust.h:57 adjust.h:61 adjust.h:65 adjust.h:90 adjust.h:117 adjust.h:120
+#: scan.h:713 scan.h:999 scan.h:1003 scan.h:1007
 msgid "no"
 msgstr ""
 
-#: adjust.h:42 adjust.h:43
+#: adjust.h:42 adjust.h:43 adjust.h:44
 msgid "infobar"
 msgstr ""
 
-#: adjust.h:43 adjust.h:44
+#: adjust.h:43 adjust.h:44 adjust.h:45
 msgid "epg"
 msgstr ""
 
@@ -121,99 +124,104 @@ msgstr ""
 #: rectimer.h:876 rectimer.h:881 scan.h:701 scan.h:987 scan.h:991 scan.h:995
 #: screensaveradjust.h:20 tunerconfig.h:534 scan.h:712 scan.h:998 scan.h:1002
 #: scan.h:1006 adjust.h:57 adjust.h:61 adjust.h:65 adjust.h:90 adjust.h:115
+#: adjust.h:58 adjust.h:62 adjust.h:66 adjust.h:91 adjust.h:116 adjust.h:121
+#: scan.h:714 scan.h:1000 scan.h:1004 scan.h:1008
 msgid "yes"
 msgstr ""
 
 #: adjust.h:67 mc_audioplayer_settings.h:19 mc_pictureplayer_settings.h:16
 #: mc_videoplayer_settings.h:15 plugins_mc_skin.xml.h:5 skins_mc_skin.xml.h:5
-#: adjust.h:68
+#: adjust.h:68 adjust.h:69
 msgid "alpha"
 msgstr ""
 
 #: adjust.h:68 mc_audioplayer_settings.h:20 mc_pictureplayer_settings.h:17
 #: mc_videoplayer_settings.h:16 plugins_mc_skin.xml.h:35
-#: skins_mc_skin.xml.h:35 adjust.h:69
+#: skins_mc_skin.xml.h:35 adjust.h:69 adjust.h:70
 msgid "reverse alpha"
 msgstr ""
 
 #: adjust.h:69 mc_audioplayer_settings.h:21 mc_pictureplayer_settings.h:18
 #: mc_videoplayer_settings.h:17 plugins_mc_skin.xml.h:40
-#: skins_mc_skin.xml.h:40 adjust.h:70
+#: skins_mc_skin.xml.h:40 adjust.h:70 adjust.h:71
 msgid "size"
 msgstr ""
 
 #: adjust.h:70 mc_audioplayer_settings.h:22 mc_pictureplayer_settings.h:19
 #: mc_videoplayer_settings.h:18 plugins_mc_skin.xml.h:37
-#: skins_mc_skin.xml.h:37 adjust.h:71
+#: skins_mc_skin.xml.h:37 adjust.h:71 adjust.h:72
 msgid "reverse size"
 msgstr ""
 
 #: adjust.h:71 mc_audioplayer_settings.h:23 mc_pictureplayer_settings.h:20
 #: mc_videoplayer_settings.h:19 plugins_mc_skin.xml.h:11
-#: skins_mc_skin.xml.h:11 adjust.h:72
+#: skins_mc_skin.xml.h:11 adjust.h:72 adjust.h:73
 msgid "date"
 msgstr ""
 
 #: adjust.h:72 mc_audioplayer_settings.h:24 mc_pictureplayer_settings.h:21
 #: mc_videoplayer_settings.h:20 plugins_mc_skin.xml.h:36
-#: skins_mc_skin.xml.h:36 adjust.h:73
+#: skins_mc_skin.xml.h:36 adjust.h:73 adjust.h:74
 msgid "reverse date"
 msgstr ""
 
-#: adjust.h:75 adjust.h:76
+#: adjust.h:75 adjust.h:76 adjust.h:77
 msgid "Power Menu"
 msgstr ""
 
 #: adjust.h:76 skin_default_skin.xml.h:283 skin_default_skin.xml.h:291
-#: skin_default_skin.xml.h:292 adjust.h:77
+#: skin_default_skin.xml.h:292 adjust.h:77 adjust.h:78
 msgid "Power Off"
 msgstr ""
 
 #: adjust.h:77 powerofftimer.h:67 powerofftimer.h:71
 #: skin_default_skin.xml.h:360 skin_default_skin.xml.h:368
 #: skin_default_skin.xml.h:369 adjust.h:78 skin_default_skin.xml.h:370
+#: adjust.h:79
 msgid "Standby"
 msgstr ""
 
 #: adjust.h:78 panel_softcam.h:243 plugins_panel_skin.xml.h:61
 #: skin_default_skin.xml.h:310 skins_panel_skin.xml.h:61
 #: skin_default_skin.xml.h:318 skin_default_skin.xml.h:319 adjust.h:79
+#: adjust.h:80
 msgid "Restart"
 msgstr ""
 
-#: adjust.h:79 adjust.h:80
+#: adjust.h:79 adjust.h:80 adjust.h:81
 msgid "Gui Restart"
 msgstr ""
 
 #: adjust.h:82 adjust.h:92 epgsettings.h:41 adjust.h:83 adjust.h:93
+#: adjust.h:84 adjust.h:94
 msgid "deaktiv"
 msgstr ""
 
-#: adjust.h:83 adjust.h:84
+#: adjust.h:83 adjust.h:84 adjust.h:85
 msgid "1 sec"
 msgstr ""
 
-#: adjust.h:84 avsettings.h:65 adjust.h:85
+#: adjust.h:84 avsettings.h:65 adjust.h:85 adjust.h:86
 msgid "2 sec"
 msgstr ""
 
-#: adjust.h:85 pin.h:165 adjust.h:86
+#: adjust.h:85 pin.h:165 adjust.h:86 adjust.h:87
 msgid "endless"
 msgstr ""
 
-#: adjust.h:93 adjust.h:94
+#: adjust.h:93 adjust.h:94 adjust.h:95
 msgid "1 GB"
 msgstr ""
 
-#: adjust.h:94 adjust.h:95
+#: adjust.h:94 adjust.h:95 adjust.h:96
 msgid "2 GB"
 msgstr ""
 
-#: adjust.h:95 adjust.h:96
+#: adjust.h:95 adjust.h:96 adjust.h:97
 msgid "3 GB"
 msgstr ""
 
-#: adjust.h:96 adjust.h:97
+#: adjust.h:96 adjust.h:97 adjust.h:98
 msgid "4 GB"
 msgstr ""
 
@@ -288,7 +296,8 @@ msgstr ""
 #: service.h:556 service.h:790 skinselector.h:210 spinner.h:18 stream.h:26
 #: timeshift.h:41 timeshift.h:68 tunerconfig.h:733 videomode.h:44
 #: bluekeyactions.h:128 scan.h:625 scan.h:779 scan.h:851 scan.h:1057
-#: videomode.h:58 videomode.h:53 global.h:3610
+#: videomode.h:58 videomode.h:53 global.h:3610 global.h:3630 scan.h:627
+#: scan.h:781 scan.h:853 scan.h:1059 service.h:560 service.h:794
 msgid "Message"
 msgstr ""
 
@@ -307,11 +316,12 @@ msgstr ""
 #: service.h:790 skin_default_skin.xml.h:254 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:28 skins_networkbrowser_skin.xml.h:6 timeshift.h:41
 #: videomode.h:44 skin_default_skin.xml.h:262 videomode.h:58 videomode.h:53
-#: skin_default_skin.xml.h:263
+#: skin_default_skin.xml.h:263 service.h:560 service.h:794
 msgid "OK"
 msgstr ""
 
 #: bluekeyactions.h:123 global.h:3609 bluekeyactions.h:128 global.h:3610
+#: global.h:3630
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -2297,69 +2307,69 @@ msgstr ""
 msgid "Can't restore settings"
 msgstr ""
 
-#: scan.h:206 scan.h:211
+#: scan.h:206 scan.h:211 scan.h:212
 msgid "TV"
 msgstr ""
 
-#: scan.h:208 scan.h:213
+#: scan.h:208 scan.h:213 scan.h:214
 msgid "Radio"
 msgstr ""
 
-#: scan.h:210 scan.h:215
+#: scan.h:210 scan.h:215 scan.h:216
 msgid "Data"
 msgstr ""
 
-#: scan.h:563 scan.h:574
+#: scan.h:563 scan.h:574 scan.h:576
 msgid "Sat: "
 msgstr ""
 
-#: scan.h:569 scan.h:580
+#: scan.h:569 scan.h:580 scan.h:582
 msgid "Transponder: "
 msgstr ""
 
-#: scan.h:577 scan.h:588
+#: scan.h:577 scan.h:588 scan.h:590
 msgid "TV: "
 msgstr ""
 
-#: scan.h:585 scan.h:596
+#: scan.h:585 scan.h:596 scan.h:598
 msgid "Radio: "
 msgstr ""
 
-#: scan.h:593 scan.h:604
+#: scan.h:593 scan.h:604 scan.h:606
 msgid "Data: "
 msgstr ""
 
-#: scan.h:614 scan.h:625
+#: scan.h:614 scan.h:625 scan.h:627
 msgid "Wait for channel scan end"
 msgstr ""
 
-#: scan.h:768 scan.h:779
+#: scan.h:768 scan.h:779 scan.h:781
 msgid ""
 "Scan is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 
-#: scan.h:840 scan.h:851
+#: scan.h:840 scan.h:851 scan.h:853
 msgid "No Tuner configured"
 msgstr ""
 
-#: scan.h:853 scan.h:864
+#: scan.h:853 scan.h:864 scan.h:866
 msgid "Single Transponder"
 msgstr ""
 
-#: scan.h:854 scan.h:865
+#: scan.h:854 scan.h:865 scan.h:867
 msgid "Single Sat"
 msgstr ""
 
-#: scan.h:855 scan.h:866
+#: scan.h:855 scan.h:866 scan.h:868
 msgid "Multi Sat"
 msgstr ""
 
-#: scan.h:860 scan.h:871
+#: scan.h:860 scan.h:871 scan.h:873
 msgid "Auto Scan"
 msgstr ""
 
-#: scan.h:1046 scan.h:1057
+#: scan.h:1046 scan.h:1057 scan.h:1059
 msgid "Transponder changed"
 msgstr ""
 
@@ -2443,27 +2453,27 @@ msgstr ""
 msgid "imdb mvis (network/hdd)"
 msgstr ""
 
-#: service.h:556
+#: service.h:556 service.h:560
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
 msgstr ""
 
-#: service.h:773
+#: service.h:773 service.h:777
 msgid ""
 "Can't find a Tuner.\n"
 "Alle Tuners in use or no Tuner defined."
 msgstr ""
 
-#: service.h:776
+#: service.h:776 service.h:780
 msgid "Tuning to Channel failed!"
 msgstr ""
 
-#: service.h:779
+#: service.h:779 service.h:783
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 
-#: service.h:784
+#: service.h:784 service.h:788
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
