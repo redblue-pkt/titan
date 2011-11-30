@@ -26,6 +26,7 @@ void screenadjust()
 	struct skin* skip13 = getscreennode(adjust, "skip13");
 	struct skin* skip46 = getscreennode(adjust, "skip46");
 	struct skin* skip79 = getscreennode(adjust, "skip79");
+	struct skin* nocamsg = getscreennode(adjust, "nocamsg");
 	
 	struct skin* tmp = NULL;
 
@@ -110,6 +111,10 @@ void screenadjust()
 
 	changeinput(skip79, "15\n20\n30\n45\n60\n90\n120\n180\n300\n600\n900\n1200");
 	setchoiceboxselection(skip79, getconfig("skip79", NULL));
+	
+	addchoicebox(nocamsg, "0", _("yes"));
+	addchoicebox(nocamsg, "1", _("no"));
+	setchoiceboxselection(nocamsg, getconfig("nocamsg", NULL));
 
 	drawscreen(adjust, 0);
 	addscreenrc(adjust, listbox);
@@ -156,7 +161,7 @@ void screenadjust()
 			addconfigscreen("skip13", skip13);
 			addconfigscreen("skip46", skip46);
 			addconfigscreen("skip79", skip79);
-
+			addconfigscreencheck("nocamsg", nocamsg, "0");
 
 			break;
 		}
