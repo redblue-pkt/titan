@@ -59,7 +59,7 @@ msgstr ""
 #: scan.h:779 scan.h:851 scan.h:1057 videomode.h:58 videomode.h:53
 #: skin_default_skin.xml.h:169 global.h:3610 httpdfunc.h:2078 httpdfunc.h:2090
 #: global.h:3630 scan.h:781 scan.h:853 scan.h:1059 service.h:560 service.h:794
-#: skin_default_skin.xml.h:170
+#: skin_default_skin.xml.h:170 skinselector.h:218
 msgid "EXIT"
 msgstr ""
 
@@ -301,6 +301,7 @@ msgstr ""
 #: bluekeyactions.h:128 scan.h:625 scan.h:779 scan.h:851 scan.h:1057
 #: videomode.h:58 videomode.h:53 global.h:3610 global.h:3630 scan.h:627
 #: scan.h:781 scan.h:853 scan.h:1059 service.h:560 service.h:794
+#: skinselector.h:218
 msgid "Message"
 msgstr ""
 
@@ -4462,7 +4463,7 @@ msgstr ""
 msgid "\");"
 msgstr ""
 
-#: skinselector.h:210
+#: skinselector.h:210 skinselector.h:218
 msgid ""
 "No skinconfig found in skin.\n"
 "Can't chage to selected skin."
