@@ -227,7 +227,7 @@ void checkquery(int* connfd, char* query, int auth)
 	if(query != NULL && strstr(query, "standby") == query)
 	{
 		status.standby = 2;
-		screenstandby();
+		addtimer(&screenstandby, START, 1000, 1, NULL, NULL, NULL);
 	}
 	if(query != NULL && strstr(query, "boxstatus") == query)
 	{
