@@ -27,6 +27,7 @@ void screenadjust()
 	struct skin* skip46 = getscreennode(adjust, "skip46");
 	struct skin* skip79 = getscreennode(adjust, "skip79");
 	struct skin* nocamsg = getscreennode(adjust, "nocamsg");
+	struct skin* autochangechannelname = getscreennode(adjust, "autochangechannelname");
 	
 	struct skin* tmp = NULL;
 
@@ -115,6 +116,10 @@ void screenadjust()
 	addchoicebox(nocamsg, "0", _("yes"));
 	addchoicebox(nocamsg, "1", _("no"));
 	setchoiceboxselection(nocamsg, getconfig("nocamsg", NULL));
+	
+	addchoicebox(autochangechannelname, "0", _("no"));
+	addchoicebox(autochangechannelname, "1", _("yes"));
+	setchoiceboxselection(autochangechannelname, getconfig("autochangechannelname", NULL));
 
 	drawscreen(adjust, 0);
 	addscreenrc(adjust, listbox);
@@ -162,6 +167,7 @@ void screenadjust()
 			addconfigscreen("skip46", skip46);
 			addconfigscreen("skip79", skip79);
 			addconfigscreencheck("nocamsg", nocamsg, "0");
+			addconfigscreencheck("autochangechannelname", autochangechannelname, "0");
 
 			break;
 		}
