@@ -620,7 +620,8 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 						tmpstr1 = ostrcat(tmpstr1, "\n\n", 1, 0);
 					}
 					tmpstr1 = ostrcat(tmpstr1, casession->mmibottom, 1, 0);
-					textbox(_(tmpstr), _(tmpstr1), NULL, getrcconfigint("rcok", NULL), NULL, getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 300, 7, 0);
+					if(getconfigint("nocamsg", NULL) == 0)
+						textbox(_(tmpstr), _(tmpstr1), NULL, getrcconfigint("rcok", NULL), NULL, getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 300, 7, 0);
 					free(tmpstr); tmpstr = NULL;
 					free(tmpstr1); tmpstr1 = NULL;
 					free(casession->mmititle); casession->mmititle = NULL;
