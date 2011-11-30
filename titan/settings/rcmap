@@ -1,6 +1,6 @@
-channellist#rcpup#rcup
-channellist#rcpdown#rcdown
-infobar#rcpup#rcup
-infobar#rcpdown#rcdown
-listbox#rcpup#rcup
-listbox#rcpdown#rcdown
+channellist#rcpup#rcleft
+channellist#rcpdown#rcright
+infobar#rcpup#rcleft
+infobar#rcpdown#rcright
+listbox#rcpup#rcleft
+listbox#rcpdown#rcright
