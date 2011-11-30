@@ -85,6 +85,7 @@ char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 
 		stringreplacechar(tmppng, ' ', '_');
 		stringreplacechar(tmppng, ':', '_');
+		stringreplacechar(tmppng, '/', '_');
 		string_tolower(tmppng);
 		
 		tmp = addlistbox(screen, listbox, tmp, 1);
