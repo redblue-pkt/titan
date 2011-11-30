@@ -41,14 +41,14 @@ struct linkedchannel* checklinkedchannel(struct channel* chnode, struct linkedch
 
 void screenlinkedchannel()
 {
-	int rcret = 0;
+	int rcret = 0, treffer = 0;
 	struct skin* linkedchannel = getscreen("linkedchannel");
 	struct skin* listbox = getscreennode(linkedchannel, "listbox");
 	struct skin* tmp = NULL;
 	struct linkedchannel* node = NULL;
 	struct channel* chnode = channel;
 	struct epg* epgnode = NULL;
-	char* tmpstr = NULL, *buf = NULL;;
+	char* tmpstr = NULL, *buf = NULL;
 	struct tm *loctime = NULL;
 
 	listbox->aktline = 1;
@@ -59,6 +59,7 @@ void screenlinkedchannel()
 	addscreenrc(linkedchannel, listbox);
 start:
 	tmp = NULL;
+	chnode = channel;
 	delmarkedscreennodes(linkedchannel, 1);
 	if(status.aktservice->channel != NULL)
 	{
@@ -99,6 +100,10 @@ start:
 				tmp = addlistbox(linkedchannel, listbox, tmp, 1);
 				if(tmp != NULL)
 				{
+					if(chnode == status.aktservice->channel)
+						treffer = 1;
+					if(treffer == 0)
+						listbox->aktline++;
 					tmpstr = ostrcat(tmpstr, chnode->name, 1, 0);
 					if(epgnode != NULL)
 					{
@@ -114,14 +119,15 @@ start:
 					}
 					changetext(tmp, tmpstr);
 					free(tmpstr); tmpstr = NULL;
-					tmp->handle = (char*)node;
-					tmp->handle1 = (char*)chnode;
+					tmp->handle = (char*)chnode;
 				}
 			}
 			node = node->next;
 		}	
 		m_unlock(&status.linkedchannelmutex, 14);
 	}
+
+	if(treffer == 0) listbox->aktline = 1;
 
 	drawscreen(linkedchannel, 0);
 
@@ -135,16 +141,7 @@ start:
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
-			{
-				m_lock(&status.linkedchannelmutex, 14);
-				if(checklinkedchannel(status.aktservice->channel, (struct linkedchannel*)listbox->select->handle) != NULL)
-				{
-					m_unlock(&status.linkedchannelmutex, 14);
-					servicecheckret(servicestart((struct channel*)listbox->select->handle1, NULL, NULL, 0), 0);
-				}
-				else
-					m_unlock(&status.linkedchannelmutex, 14);
-			}
+				servicecheckret(servicestart((struct channel*)listbox->select->handle, NULL, NULL, 0), 0);
 			break;
 		}
 	}
