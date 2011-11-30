@@ -41,16 +41,9 @@ char **str_split(char *string, char *delim) {
 
 int checkbeta(void)
 {
-	char* tmpstr = NULL;
-	int betasvn = 0;
+	if(isfile("/etc/.beta") == 0) return 0;
 
-	tmpstr = command("cat /var/etc/ipkg/official-feed.conf | cut -d '/' -f5");
-
-	if(strstr(tmpstr, "svn") != 0) betasvn = 1;
-	free(tmpstr);
-
-	return betasvn;
-
+	return 1;
 }
 
 #endif
