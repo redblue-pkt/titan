@@ -189,6 +189,14 @@ void screenskinselect(void)
 				debug(10,"skin file selected: %s", selection->name);
 				if(selection->is_cur) break; //same file chosen again
 				
+				//write old skinconfig on change and set write flag to 0
+				//so new skinconfig is not overwritten with old
+				if(status.writeskinconfig == 1)
+				{
+					writeskinconfig(getconfig("skinconfig", NULL));
+					status.writeskinconfig = 0;
+				}
+				
 				struct splitstr* ret1 = NULL;
 				int count1 = 0;
 				char* tmpstr1 = NULL;
