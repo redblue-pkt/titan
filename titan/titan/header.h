@@ -163,6 +163,7 @@ void delrectimer(struct rectimer* rectimernode, int write, int flag);
 int rectimergetaktday();
 
 //dvb.h
+unsigned char* dvbgetsdt(struct dvbdev* fenode, int secnr, int timeout);
 int dvbreadfd(int fd, unsigned char *buf, int pos, int count, int tout);
 int dvbwrite(int fd, unsigned char* buf, int count, int tout);
 int dvbgetdate(time_t* time, int timeout);

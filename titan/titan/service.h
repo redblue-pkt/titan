@@ -463,6 +463,10 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 	status.videosizevalid = time(NULL);
 	m_unlock(&status.servicemutex, 2);
 	
+	//auto change channel name
+	if(flag == 0 && getconfigint("autochangechannelname", NULL) == 1)
+		addtimer(&autochangechannelname, START, 1000, 1, NULL, NULL, NULL);
+	
 	//autoresolution
 	if(ostrcmp(getconfig("av_videomode_autores", NULL), "auto") == 0)
 	{

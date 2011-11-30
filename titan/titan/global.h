@@ -1,6 +1,26 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+void autochangechannelname()
+{
+	int lastsecnr = 0xff;
+	int secnr = 0;
+	char* buf = NULL;
+
+	if(status.aktservice->fedev == NULL) return;
+
+	while(secnr <= lastsecnr && secnr <= 256)
+	{
+		buf = dvbgetsdt(status.aktservice->fedev, secnr, 2000000);
+		if(buf != NULL)
+			findchannel(buf, &lastsecnr, NULL, NULL, 1);
+		else
+			break;
+		free(buf); buf = NULL;
+		secnr++;
+	}
+}
+
 //check if emu ist installed, if not it hiddes the menu
 int checkemu()
 {
