@@ -20,8 +20,8 @@ void screennetworkbrowser()
 
 	struct skin* net_addshare = getscreen("networkbrowser_main");
 	char* title = NULL;
-	title = ostrcat(title , "Scanning Network Shares, please wait !!", 1, 0);
-	changetitle(net_addshare, _(title));
+	title = ostrcat(title , _("Scanning Network Shares, please wait !!"), 1, 0);
+	changetitle(net_addshare, title);
 
 	int tmphangtime = 999999;
 	status.hangtime = tmphangtime;
@@ -29,7 +29,7 @@ start:
 	drawscreen(net_addshare, 0);
 
 	char* skinname = "networkbrowser";
-	char* skintitle = "Networkbrowser - show scanned DNS-Shares";
+	char* skintitle = _("Networkbrowser - show scanned DNS-Shares");
 
 	char* tmpdns = NULL;
 	char* tmpcifs = NULL;
@@ -46,7 +46,7 @@ start:
 		ret = strsplit(dns, " ()", &count);
 		char* user = "user";
 		char* pass = "pass";
-		skintitle = ostrcat("", "Networkbrowser - show scanned cifs/nfs-Shares", 0, 0);
+		skintitle = ostrcat("", _("Networkbrowser - show scanned cifs/nfs-Shares"), 0, 0);
 		tmpcifs = getnetworkbrowser_cifs((&ret[1])->part, (&ret[0])->part, user, pass);
 		tmpnfs = getnetworkbrowser_nfs((&ret[1])->part, (&ret[0])->part);
 		tmpshares = ostrcat(tmpcifs, tmpnfs, 1, 1);
@@ -603,7 +603,7 @@ void screennetworkbrowser_addshare(int mode, char* sharename, char* ipaddresse, 
 		skin_usessl->hidden = YES;
 	} else if (mode == 2){
 		char* title = NULL;
-		title = ostrcat(title , "Add Ftpfs Network Share", 1, 0);
+		title = ostrcat(title , _("Add Ftpfs Network Share"), 1, 0);
 		title = ostrcat(title , " (", 1, 0);
 		title = ostrcat(title , strstrip(sharename), 1, 0);
 		title = ostrcat(title , ")", 1, 0);
@@ -1100,17 +1100,17 @@ void screennetworkbrowser_readshare(int mode, char* input_sharename, char* input
 	char* menu_changeshare = NULL;
 
 	char* text1 = NULL;
-	text1 = ostrcat(text1, "add new share", 1, 0);
+	text1 = ostrcat(text1, _("add new share"), 1, 0);
 	char* text2 = NULL;
-	text2 = ostrcat(text2, "add cifs share", 1, 0);
+	text2 = ostrcat(text2, _("add cifs share"), 1, 0);
 	char* text3 = NULL;
-	text3 = ostrcat(text3, "add nfs share", 1, 0);
+	text3 = ostrcat(text3, _("add nfs share"), 1, 0);
 	char* text4 = NULL;
-	text4 = ostrcat(text4, "add ftp share", 1, 0);
+	text4 = ostrcat(text4, _("add ftp share"), 1, 0);
 	char* text5 = NULL;
-	text5 = ostrcat(text5, "edit share", 1, 0);
+	text5 = ostrcat(text5, _("edit share"), 1, 0);
 	char* text6 = NULL;
-	text6 = ostrcat(text6, "remove share", 1, 0);
+	text6 = ostrcat(text6, _("remove share"), 1, 0);
 
 	char* sharetypes = NULL;
 	sharetypes = ostrcat(sharetypes, text2, 1, 0);
@@ -1580,7 +1580,7 @@ void screennetworkbrowser_readshare(int mode, char* input_sharename, char* input
 
 	if(mode == 0){
 		char* skinname = "networkbrowser_shares";
-		char* skintitle = "Networkbrowser - show Shares";
+		char* skintitle = _("Networkbrowser - show Shares");
 		menu_sharelist = networkbrowser_listbox(NULL, sharelist, skinname, skintitle, "%pluginpath%/networkbrowser/skin/", 4);
 		if(menu_sharelist != NULL){
 			if(ostrcmp(menu_sharelist, text1) == 0){
