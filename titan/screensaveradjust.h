@@ -41,7 +41,7 @@ void screenscreensaveradjust()
 	addchoicebox(screensaver_pic, "/var/usr/local/share/titan/skin/default/skin/play.png", _("Play Icon"));
 	addchoicebox(screensaver_pic, "/var/usr/local/share/titan/skin/default/skin/default.png", _("Default Icon"));
 	addchoicebox(screensaver_pic, "/var/usr/local/share/titan/skin/default/skin/mediacenter.png", _("MediaCenter Icon"));
-	addchoicebox(screensaver_pic, "skin/play.png", _("Test Icon"));
+//	addchoicebox(screensaver_pic, "skin/play.png", _("Test Icon"));
 	setchoiceboxselection(screensaver_pic, getconfig("screensaver_pic", NULL));
 
 	addchoicebox(screensaver_type, "0000000000", _("Song TitleText"));
