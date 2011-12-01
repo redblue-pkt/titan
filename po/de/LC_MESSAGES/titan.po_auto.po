@@ -59,7 +59,7 @@ msgstr ""
 #: scan.h:779 scan.h:851 scan.h:1057 videomode.h:58 videomode.h:53
 #: skin_default_skin.xml.h:169 global.h:3610 httpdfunc.h:2078 httpdfunc.h:2090
 #: global.h:3630 scan.h:781 scan.h:853 scan.h:1059 service.h:560 service.h:794
-#: skin_default_skin.xml.h:170 skinselector.h:218
+#: skin_default_skin.xml.h:170 skinselector.h:218 epgsettings.h:114
 msgid "EXIT"
 msgstr ""
 
@@ -90,7 +90,7 @@ msgstr ""
 #: tunerconfig.h:535 scan.h:711 scan.h:997 scan.h:1001 scan.h:1005 adjust.h:42
 #: adjust.h:56 adjust.h:60 adjust.h:64 adjust.h:89 adjust.h:116 adjust.h:43
 #: adjust.h:57 adjust.h:61 adjust.h:65 adjust.h:90 adjust.h:117 adjust.h:120
-#: scan.h:713 scan.h:999 scan.h:1003 scan.h:1007
+#: scan.h:713 scan.h:999 scan.h:1003 scan.h:1007 epgsettings.h:61
 msgid "no"
 msgstr ""
 
@@ -127,7 +127,7 @@ msgstr ""
 #: screensaveradjust.h:20 tunerconfig.h:534 scan.h:712 scan.h:998 scan.h:1002
 #: scan.h:1006 adjust.h:57 adjust.h:61 adjust.h:65 adjust.h:90 adjust.h:115
 #: adjust.h:58 adjust.h:62 adjust.h:66 adjust.h:91 adjust.h:116 adjust.h:121
-#: scan.h:714 scan.h:1000 scan.h:1004 scan.h:1008
+#: scan.h:714 scan.h:1000 scan.h:1004 scan.h:1008 epgsettings.h:62
 msgid "yes"
 msgstr ""
 
@@ -196,7 +196,7 @@ msgid "Gui Restart"
 msgstr ""
 
 #: adjust.h:82 adjust.h:92 epgsettings.h:41 adjust.h:83 adjust.h:93
-#: adjust.h:84 adjust.h:94
+#: adjust.h:84 adjust.h:94 epgsettings.h:48
 msgid "deaktiv"
 msgstr ""
 
@@ -301,7 +301,7 @@ msgstr ""
 #: bluekeyactions.h:128 scan.h:625 scan.h:779 scan.h:851 scan.h:1057
 #: videomode.h:58 videomode.h:53 global.h:3610 global.h:3630 scan.h:627
 #: scan.h:781 scan.h:853 scan.h:1059 service.h:560 service.h:794
-#: skinselector.h:218
+#: skinselector.h:218 epgsettings.h:114
 msgid "Message"
 msgstr ""
 
@@ -517,13 +517,13 @@ msgstr ""
 
 #: epgsettings.h:33 epgsettings.h:50 skin_default_skin.xml.h:349
 #: skin_default_skin.xml.h:357 skin_default_skin.xml.h:358
-#: skin_default_skin.xml.h:359 skin_default_skin.xml.h:360
+#: skin_default_skin.xml.h:359 skin_default_skin.xml.h:360 epgsettings.h:54
 msgid "Single EPG"
 msgstr ""
 
 #: epgsettings.h:34 epgsettings.h:51 skin_default_skin.xml.h:239
 #: skin_default_skin.xml.h:247 skin_default_skin.xml.h:248
-#: skin_default_skin.xml.h:249
+#: skin_default_skin.xml.h:249 epgsettings.h:55
 msgid "Multi EPG"
 msgstr ""
 
@@ -543,19 +543,19 @@ msgstr ""
 msgid "scan and whitelist"
 msgstr ""
 
-#: epgsettings.h:61 panel_settings_autostart.h:71
+#: epgsettings.h:61 panel_settings_autostart.h:71 epgsettings.h:65
 msgid "always"
 msgstr ""
 
-#: epgsettings.h:62
+#: epgsettings.h:62 epgsettings.h:66
 msgid "only on power off / restart"
 msgstr ""
 
-#: epgsettings.h:63
+#: epgsettings.h:63 epgsettings.h:67
 msgid "never"
 msgstr ""
 
-#: epgsettings.h:110
+#: epgsettings.h:110 epgsettings.h:114
 msgid "EPG resetet and now clear."
 msgstr ""
 
