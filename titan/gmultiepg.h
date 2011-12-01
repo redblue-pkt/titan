@@ -83,7 +83,7 @@ int selectchannelgmepg(struct skin* listbox)
 }
 
 
-int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, int zoom, time_t akttime, struct channel* aktchannel, int linecol1, int linecol2, int* aktline, struct skin** pchnode, struct skin** pchnode1, int height)
+int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, int zoom, time_t akttime, struct channel* aktchannel, int linecol1, int linecol2, int* aktline, struct skin** pchnode, struct skin** pchnode1, int height, int picheight)
 {
 	int treffer = 0, gridbr = 0, aktcol = 0, nottuneable = 0;
 	struct epg* epgnode = NULL;
@@ -100,12 +100,17 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 		if(chnode != NULL)
 		{
 			chnode->bgspace = 1;
-			chnode->height = height;
 			tmpstr = createpiconpath(tmpchannel);
 			if(epgpicon == 1 && tmpstr != NULL && strstr(tmpstr, "default.png") == NULL)
+			{
 				changepic(chnode, tmpstr);
+				chnode->height = picheight;
+			}
 			else
+			{
 				changetext(chnode, tmpchannel->name);
+				chnode->height = height;
+			}
 			free(tmpstr); tmpstr = NULL;
 
 			epgnode = getepgakt(tmpchannel);
@@ -139,7 +144,7 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 					chnode1->wrap = YES;
 					gridbr = 1;
 					treffer = 1;
-					chnode1->height = height;
+					chnode1->height = chnode->height;
 					chnode1->width = ((epgnode->endtime - epgnode->starttime) / 60) * zoom;
 					chnode1->posx = ((epgnode->starttime - akttime) / 60) * zoom;
 					if(chnode1->posx < 0)
@@ -186,7 +191,7 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 						listbox->aktline = *aktline;
 					if(gridbr == 0) chnode1->type = GRIDBR;
 					gridbr = 1;
-					chnode1->height = height;
+					chnode1->height = chnode->height;
 					chnode1->handle = (char*)tmpchannel;
 					chnode1->bgspace = 1;
 					if(nottuneable == 1)
@@ -204,21 +209,24 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 
 int showallgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, int zoom, time_t akttime, struct channel* aktchannel)
 {
-	int treffer = 0, linecol1 = 0, linecol2 = 0, aktline = 0, height = 0;
+	int treffer = 0, aktline = 0;
 	struct skin* chnode = NULL, *chnode1 = NULL;
 	struct channel* tmpchannel = channel;
 
-	linecol1 = convertcol("epgcol1");
-	linecol2 = convertcol("epgcol2");
-	height = getskinconfigint("epgheight", NULL);
-	if(height == 0) height = 35;
+	int linecol1 = convertcol("epgcol1");
+	int linecol2 = convertcol("epgcol2");
+	int height = getskinconfigint("epgheight", NULL);
+	int picheight = getskinconfigint("epgpicheight", NULL);
+
+	if(height < 1) height = 35;
+	if(picheight < 1) picheight = 35;
 
 	if(gmultiepg != NULL) delmarkedscreennodes(gmultiepg, 1);
 	if(listbox != NULL) listbox->aktline = 1;
 
 	while(tmpchannel != NULL)
 	{ 
-		if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, &aktline, &chnode, &chnode1, height) == 1)
+		if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, &aktline, &chnode, &chnode1, height, picheight) == 1)
 			treffer = 1;
 		tmpchannel = tmpchannel->next;
 	}
@@ -227,21 +235,24 @@ int showallgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, str
 
 int showbouquetgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, struct bouquet* firstbouquet, int zoom, time_t akttime, struct channel* aktchannel)
 {
-	int treffer = 0, linecol1 = 0, linecol2 = 0, aktline = 0, height = 0;
+	int treffer = 0, aktline = 0;
 	struct skin* chnode = NULL, *chnode1 = NULL;
 	struct bouquet* tmpbouquet = firstbouquet;
 
-	linecol1 = convertcol("epgcol1");
-	linecol2 = convertcol("epgcol2");
-	height = getskinconfigint("epgheight", NULL);
-        if(height == 0) height = 35;
+	int linecol1 = convertcol("epgcol1");
+	int linecol2 = convertcol("epgcol2");
+	int height = getskinconfigint("epgheight", NULL);
+	int picheight = getskinconfigint("epgpicheight", NULL);
+
+	if(height < 1) height = 35;
+	if(picheight < 1) picheight = 35;
 
 	if(gmultiepg != NULL) delmarkedscreennodes(gmultiepg, 1);
 	if(listbox != NULL) listbox->aktline = 1;
 
 	while(tmpbouquet != NULL)
 	{
-		if(calcgmultiepg(tmpbouquet->channel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, &aktline, &chnode, &chnode1, height) == 1)
+		if(calcgmultiepg(tmpbouquet->channel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, &aktline, &chnode, &chnode1, height, picheight) == 1)
 			treffer = 1;
 		tmpbouquet = tmpbouquet->next;
 	}
@@ -250,14 +261,17 @@ int showbouquetgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox,
 
 int showprovidergmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, struct provider* providernode, int zoom, time_t akttime, struct channel* aktchannel)
 {
-	int treffer = 0, linecol1 = 0, linecol2 = 0, aktline = 0, height = 0;
+	int treffer = 0, aktline = 0;
 	struct skin* chnode = NULL, *chnode1 = NULL;
 	struct channel* tmpchannel = channel;
 
-	linecol1 = convertcol("epgcol1");
-	linecol2 = convertcol("epgcol2");
-	height = getskinconfigint("epgheight", NULL);
-	if(height == 0) height = 35;
+	int linecol1 = convertcol("epgcol1");
+	int linecol2 = convertcol("epgcol2");
+	int height = getskinconfigint("epgheight", NULL);
+	int picheight = getskinconfigint("epgpicheight", NULL);
+
+	if(height < 1) height = 35;
+	if(picheight < 1) picheight = 35;
 
 	if(gmultiepg != NULL) delmarkedscreennodes(gmultiepg, 1);
 
@@ -265,7 +279,7 @@ int showprovidergmepgchannel(struct skin* gmultiepg, struct skin* channellistbox
 	{
 		if(tmpchannel->provider == providernode)
 		{
-			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, &aktline, &chnode, &chnode1, height) == 1)
+			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, &aktline, &chnode, &chnode1, height, picheight) == 1)
 				treffer = 1;
 		}
 		tmpchannel = tmpchannel->next;
@@ -275,16 +289,19 @@ int showprovidergmepgchannel(struct skin* gmultiepg, struct skin* channellistbox
 
 int showsatgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, struct sat* satnode, int zoom, time_t akttime, struct channel* aktchannel)
 {
-	int treffer = 0, linecol1 = 0, linecol2 = 0, aktline = 0, height = 0;
+	int treffer = 0, aktline = 0;
 	struct skin* chnode = NULL, *chnode1 = NULL;
 	struct channel* tmpchannel = channel;
 	
 	if(satnode == NULL) return 1;
 
-	linecol1 = convertcol("epgcol1");
-	linecol2 = convertcol("epgcol2");
-	height = getskinconfigint("epgheight", NULL);
-	if(height == 0) height = 35;
+	int linecol1 = convertcol("epgcol1");
+	int linecol2 = convertcol("epgcol2");
+	int height = getskinconfigint("epgheight", NULL);
+	int picheight = getskinconfigint("epgpicheight", NULL);
+
+	if(height < 1) height = 35;
+	if(picheight < 1) picheight = 35;
 
 	if(gmultiepg != NULL) delmarkedscreennodes(gmultiepg, 1);
 
@@ -292,7 +309,7 @@ int showsatgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, str
 	{
 		if(tmpchannel->transponder != NULL && tmpchannel->transponder->orbitalpos == satnode->orbitalpos)
 		{
-			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, &aktline, &chnode, &chnode1, height) == 1)
+			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, &aktline, &chnode, &chnode1, height, picheight) == 1)
 				treffer = 1;
 		}
 		tmpchannel = tmpchannel->next;
@@ -302,14 +319,17 @@ int showsatgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, str
 
 int showazgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, int character, int zoom, time_t akttime, struct channel* aktchannel)
 {
-	int treffer = 0, linecol1 = 0, linecol2 = 0, aktline = 0, height = 0;
+	int treffer = 0, aktline = 0;
 	struct skin* chnode = NULL, *chnode1 = NULL;
 	struct channel* tmpchannel = channel;
 
-	linecol1 = convertcol("epgcol1");
-	linecol2 = convertcol("epgcol2");
-	height = getskinconfigint("epgheight", NULL);
-	if(height == 0) height = 35;
+	int linecol1 = convertcol("epgcol1");
+	int linecol2 = convertcol("epgcol2");
+	int height = getskinconfigint("epgheight", NULL);
+	int picheight = getskinconfigint("epgpicheight", NULL);
+
+	if(height < 1) height = 35;
+	if(picheight < 1) picheight = 35;
 
 	if(gmultiepg != NULL) delmarkedscreennodes(gmultiepg, 1);
 
@@ -317,7 +337,7 @@ int showazgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, stru
 	{
 		if(tmpchannel->name != NULL && (tmpchannel->name[0] == character || tmpchannel->name[0] == character + 32))
 		{
-			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, &aktline, &chnode, &chnode1, height) == 1)
+			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, &aktline, &chnode, &chnode1, height, picheight) == 1)
 				treffer = 1;
 		}
 		tmpchannel = tmpchannel->next;
