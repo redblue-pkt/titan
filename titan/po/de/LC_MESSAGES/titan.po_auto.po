@@ -559,23 +559,23 @@ msgstr ""
 msgid "EPG resetet and now clear."
 msgstr ""
 
-#: gmultiepg.h:405
+#: gmultiepg.h:405 gmultiepg.h:425
 msgid "GRAPHIC MULTI EPG - Bouquets"
 msgstr ""
 
-#: gmultiepg.h:418
+#: gmultiepg.h:418 gmultiepg.h:438
 msgid "GRAPHIC MULTI EPG - Channel"
 msgstr ""
 
-#: gmultiepg.h:431
+#: gmultiepg.h:431 gmultiepg.h:451
 msgid "GRAPHIC MULTI EPG - Satellites"
 msgstr ""
 
-#: gmultiepg.h:444
+#: gmultiepg.h:444 gmultiepg.h:464
 msgid "GRAPHIC MULTI EPG - Provider"
 msgstr ""
 
-#: gmultiepg.h:457
+#: gmultiepg.h:457 gmultiepg.h:477
 msgid "GRAPHIC MULTI EPG - All Channels"
 msgstr ""
 
