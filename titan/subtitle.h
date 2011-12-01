@@ -1584,7 +1584,7 @@ struct subtitle* checksubtitle(struct channel* chnode, struct subtitle* strack)
 
 void screensubtitle()
 {
-	int rcret = 0;
+	int rcret = 0, treffer = 0;
 	struct skin* subtitle = getscreen("subtitle");
 	struct skin* listbox = getscreennode(subtitle, "listbox");
 	struct skin* tmp = NULL;
@@ -1608,14 +1608,21 @@ void screensubtitle()
 				tmp->handle = (char*)node;
 
 				if(node->pid == status.subthreadpid)
+				{
 					changeinput(tmp, "running");
+					treffer = 1;
+				}
 				else
 					changeinput(tmp, "");
+
+				if(treffer == 0) listbox->aktline++;
 			}
 			node = node->next;
 		}	
 		m_unlock(&status.subtitlemutex, 8);
 	}
+
+	if(treffer == 0) listbox->aktline = 1;
 
 	drawscreen(subtitle, 0);
 	addscreenrc(subtitle, listbox);
