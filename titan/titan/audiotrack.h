@@ -20,7 +20,7 @@ struct audiotrack* checkaudiotrack(struct channel* chnode, struct audiotrack* at
 
 void screenaudiotrack()
 {
-	int rcret = 0;
+	int rcret = 0, treffer = 0;
 	struct skin* audiotrack = getscreen("audiotrack");
 	struct skin* listbox = getscreennode(audiotrack, "listbox");
 	struct skin* tmp = NULL;
@@ -44,14 +44,21 @@ void screenaudiotrack()
 				tmp->handle = (char*)node;
 
 				if(status.aktservice->channel->audiopid == node->audiopid)
+				{
 					changeinput(tmp, _("running"));
+					treffer = 1;
+				}
 				else
 					changeinput(tmp, "");
+
+				if(treffer == 0) listbox->aktline++;
 			}
 			node = node->next;
 		}	
 		m_unlock(&status.audiotrackmutex, 7);
 	}
+
+	if(treffer == 0) listbox->aktline = 1;
 
 	drawscreen(audiotrack, 0);
 	addscreenrc(audiotrack, listbox);
