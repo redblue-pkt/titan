@@ -44,9 +44,13 @@ void screenepgsettings()
 	addchoicebox(epglistmode, "2", _("scan and whitelist"));
 	setchoiceboxselection(epglistmode, getconfig("epg_listmode", NULL));
 
-	changeinput(epgrefresh, "deaktiv\n01:00\n02:00\n03:00\n04:00\n05:00\n06:00\n07:00\n08:00\n09:00\n10:00\n11:00\n12:00\n13:00\n14:00\n15:00\n16:00\n17:00\n18:00\n19:00\n20:00\n21:00\n22:00\n23:00\n24:00");
+	char* tmpstr = NULL;
+	tmpstr = ostrcat(_("deaktiv"), "\n", 1, 0);
+	tmpstr = ostrcat(tmpstr, "deaktiv\n01:00\n02:00\n03:00\n04:00\n05:00\n06:00\n07:00\n08:00\n09:00\n10:00\n11:00\n12:00\n13:00\n14:00\n15:00\n16:00\n17:00\n18:00\n19:00\n20:00\n21:00\n22:00\n23:00\n24:00", 1, 0);		
+	changeinput(epgrefresh, tmpstr);
+	free(tmpstr), tmpstr = NULL;
 	setchoiceboxselection(epgrefresh, getconfig("epg_refreshtime", NULL));
-	
+		
 	addchoicebox(epgbutton, "0", _("Single EPG")); 	 	 
 	addchoicebox(epgbutton, "1", _("Multi EPG")); 	 	 
 	setchoiceboxselection(epgbutton, getconfig("epgbutton", NULL));
