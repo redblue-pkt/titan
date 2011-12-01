@@ -228,7 +228,7 @@ msgstr ""
 msgid "4 GB"
 msgstr ""
 
-#: audiotrack.h:47 rectimer.h:1232
+#: audiotrack.h:47 rectimer.h:1232 audiotrack.h:48
 msgid "running"
 msgstr ""
 
