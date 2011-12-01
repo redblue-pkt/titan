@@ -464,7 +464,7 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 				int blind = *tmpdata++ & 1;
 				int alen = *tmpdata++;
 
-				debug(620, "mmi manager text len: %d", textlen);
+				debug(620, "mmi manager text len: %d, blind: %d", textlen, blind);
 
 				if(tmpdata + textlen > max) break;
 

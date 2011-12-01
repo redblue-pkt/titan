@@ -5,7 +5,7 @@ void autochangechannelname()
 {
 	int lastsecnr = 0xff;
 	int secnr = 0;
-	char* buf = NULL;
+	unsigned char* buf = NULL;
 
 	if(status.aktservice->fedev == NULL) return;
 

@@ -3,7 +3,7 @@
 
 void screeninfobar()
 {
-	int rcret = 0, ret = 0, infobartimeout = 0;
+	int rcret = 0, ret = 0, infobartimeout = 0, rcwait = 1000, count = 0;
 	struct skin* infobar1 = getscreen("infobar");
 	struct skin* infobar2 = getscreen("infobar2");
 	struct skin* infobar = infobar1;
@@ -44,7 +44,21 @@ void screeninfobar()
 		}
 		else
 		{
-			rcret = waitrc(infobar, 0, 0);
+			rcret = 0; count = 0, rcwait = 1000;
+			if(status.servicetype == 1 && getconfigint("screensaver", NULL) == 1)
+				initscreensaver();
+			if(screensaver == NULL) rcwait = 0;
+			while(rcret == 0 || rcret == RCTIMEOUT)
+			{
+				rcret = waitrc(infobar, rcwait, 0);
+				count++;
+				if(rcret == RCTIMEOUT && screensaver != NULL && count > getconfigint("screensaver_delay", NULL))
+				{
+					showscreensaver();
+					rcwait = screensaver->speed;
+				}
+			}
+			deinitscreensaver();
 			infobartimeout = 0;
 		}
 
