@@ -627,12 +627,12 @@ firstwizzardstep1:
 	//start epg scanlist
 	status.epgscanlistthread = addtimer(&epgscanlistthread, START, 1000, 1, NULL, NULL, NULL);
 	//get pmt
-	//addtimer(&dvbgetpmtthread, START, 2000, -1, NULL, NULL, NULL);
+	addtimer(&dvbgetpmtthread, START, 2000, -1, NULL, NULL, NULL);
 	//check hdd
 	status.addhddall = addtimer(&addhddall, START, 6000, -1, NULL, NULL, NULL);
 #ifdef CAMSUPP
 	//start ca slot watching threads
-	//castart();
+	castart();
 #endif
 
 	//start webserver
