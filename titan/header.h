@@ -43,8 +43,9 @@ void screenautores(char* text, int timeout, int flag);
 // timeshift.h
 void timeshiftstop(int flag);
 
-// redkeyaktions.h
-void redkeyactions_extensions();
+// keyaktions.h
+void keyactions(int key, int flag);
+void keyactions_setres();
 
 //dmxdev.h
 struct dvbdev* dmxgetlast(int adapter);
@@ -86,9 +87,6 @@ int screendownload(char* title, char* host, char* page, int port, char* filename
 
 // epgrecord.h
 void freeepgrecord(struct epgrecord** first);
-
-// bluekeactions.h
-void bluekeyactions_setres();
 
 //titan.c
 void oshutdown(int exitcode, int flag);
