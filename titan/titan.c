@@ -632,7 +632,7 @@ firstwizzardstep1:
 	status.addhddall = addtimer(&addhddall, START, 6000, -1, NULL, NULL, NULL);
 #ifdef CAMSUPP
 	//start ca slot watching threads
-	castart();
+	//castart();
 #endif
 
 	//start webserver
