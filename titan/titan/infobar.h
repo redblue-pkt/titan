@@ -171,7 +171,7 @@ void screeninfobar()
 			subtitlepause(1);
 			status.infobar = 0;
 			clearscreen(infobar);
-			screenredkeyactions();
+			screenkeyactions(1, 0);
 			status.updatevfd = START;
 			drawscreen(skin, 0);
 			subtitlepause(0);
@@ -222,7 +222,7 @@ void screeninfobar()
 			subtitlepause(1);
 			status.infobar = 0;
 			clearscreen(infobar);
-			screenbluekeyactions();
+			screenkeyactions(0, 0);
 			status.updatevfd = START;
 			drawscreen(skin, 0);
 			subtitlepause(0);
