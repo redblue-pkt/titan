@@ -12,7 +12,7 @@ void screenkeyactions(int key, int flag)
 	char* keyconf = NULL;
 	struct skin* pluginnode = NULL;
 	void (*startplugin)(void);
-	char* tmpstr = NULL;
+	char* tmpstr = NULL, *mlistbox = NULL;
 	struct skin* plugin = getscreen("plugin");
 	struct skin* child = plugin->child;
 	
@@ -45,7 +45,7 @@ void screenkeyactions(int key, int flag)
 		tmpstr = ostrcat(tmpstr, "Child Protection\n", 1, 0);
 		tmpstr = ostrcat(tmpstr, "Subchannel\n", 1, 0);
 	
-		char* mlistbox = menulistbox(NULL, tmpstr, NULL, skintitle, NULL, 1, 0);
+		mlistbox = menulistbox(NULL, tmpstr, NULL, skintitle, NULL, 1, 0);
 		free(tmpstr); tmpstr = NULL;
 	}
 
