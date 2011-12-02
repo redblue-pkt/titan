@@ -318,8 +318,8 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 			//channel has only ac3 audio
 			audiosetbypassmode(audionode, chnode->audiocodec);
 			audioplay(audionode);
-			audiostop(audionode);
-			audioplay(audionode);
+			//audiostop(audionode);
+			//audioplay(audionode);
 		}
 		else
 			err("can't get free audio dev");
