@@ -561,6 +561,11 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 							printf("%c", *tmpdata++);
 						printf("\n");
 					}
+					else
+					{
+						while(textlen--)
+							*tmpdata++;
+					}
 
 				}
 
