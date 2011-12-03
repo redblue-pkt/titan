@@ -578,16 +578,22 @@ int servicestop(struct service *node, int clear, int flag)
 
 		audiostop(node->audiodev);
 		videostop(node->videodev, clear);
+		
+		int fastzap = getconfigint("fastzap", NULL);
 
-		if(flag == 1 || (flag == 0 && getconfigint("fastzap", NULL) == 0))
+		if(flag == 1 || (flag == 0 && (fastzap == 0 || fastzap == 2)))
 		{
 			audioclose(node->audiodev, -1);
 			node->audiodev = NULL;
-			videoclose(node->videodev, -1);
-			node->videodev = NULL;
 			dmxstop(node->dmxaudiodev);
 			dmxclose(node->dmxaudiodev, -1);
 			node->dmxaudiodev = NULL;
+		}
+		
+		if(flag == 1 || (flag == 0 && fastzap == 0))
+		{
+			videoclose(node->videodev, -1);
+			node->videodev = NULL;
 			dmxstop(node->dmxvideodev);
 			dmxclose(node->dmxvideodev, -1);
 			node->dmxvideodev = NULL;
