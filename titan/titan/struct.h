@@ -390,6 +390,7 @@ struct bitstream
 struct rectimer
 {
 	char* name;
+	char* timestamp;
 	time_t begin;
 	time_t end;
 	int repeate;

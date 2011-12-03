@@ -122,6 +122,7 @@ int checkrectimertime(struct rectimer* node)
 
 void copyrectimer(struct rectimer* src, struct rectimer* dst)
 {
+	dst->timestamp = src->timestamp;
 	dst->name = ostrcat(src->name, "", 0, 0);
 	dst->begin = src->begin;
 	dst->end = src->end;
@@ -141,7 +142,7 @@ struct rectimer* addrectimernode(char* line, struct rectimer* last)
 	debug(1000, "in");
 	char *ret = NULL;
 	struct rectimer *newnode = NULL, *prev = NULL, *node = rectimer;
-
+	
 	newnode = (struct rectimer*)malloc(sizeof(struct rectimer));
 	if(newnode == NULL)
 	{
@@ -151,6 +152,7 @@ struct rectimer* addrectimernode(char* line, struct rectimer* last)
 
 	memset(newnode, 0, sizeof(struct rectimer));
 	status.writerectimer = 1;
+	newnode->timestamp = NULL;
 
 	if(line != NULL)
 	{
@@ -212,6 +214,11 @@ struct rectimer* addrectimernode(char* line, struct rectimer* last)
 			if(newnode->status == 1) newnode->status = 0;
 			free(ret);
 		}
+		ret = getxmlentry(line, " timestamp=");
+		if(ret != NULL)
+		{
+			newnode->timestamp = ret;
+		}
 		ret = getxmlentry(line, " name=");
 		if(ret != NULL)
 			newnode->name = ret;
@@ -233,7 +240,10 @@ struct rectimer* addrectimernode(char* line, struct rectimer* last)
 	}
 	else
 		newnode->disabled = 1;
-
+	
+	if(newnode->timestamp == NULL) 
+		newnode->timestamp = gettimestamp();
+	
 	if(last == NULL)
 	{
 		while(node != NULL && newnode->begin <= node->begin)
@@ -475,6 +485,9 @@ void delrectimer(struct rectimer* rectimernode, int write, int flag)
 
 			free(node->name);
 			node->name = NULL;
+			
+			free(node->timestamp);
+			node->timestamp = NULL;
 
 			free(node->recpath);
 			node->recpath = NULL;
@@ -578,7 +591,7 @@ int writerectimer(const char *filename, int flag)
 		else
 			type = "log";
 
-		ret = fprintf(fd, "<%s begin=\"%lu\" end=\"%lu\" serviceid=\"%d\" transponderid=\"%lu\" channellist=\"%s\" repeated=\"%d\" name=\"%s\" afterevent=\"%d\" pincode=\"%s\" disabled=\"%d\" justplay=\"%d\", recpath=\"%s\", status=\"%d\" errstr=\"%s\">\n</%s>\n", type, node->begin, node->end, node->serviceid, node->transponderid, node->channellist, node->repeate, node->name, node->afterevent, node->pincode, node->disabled, node->justplay, node->recpath, node->status, node->errstr, type);
+		ret = fprintf(fd, "<%s begin=\"%lu\" end=\"%lu\" serviceid=\"%d\" transponderid=\"%lu\" channellist=\"%s\" repeated=\"%d\" name=\"%s\" afterevent=\"%d\" pincode=\"%s\" disabled=\"%d\" justplay=\"%d\", recpath=\"%s\", timestamp=\"%s\", status=\"%d\" errstr=\"%s\">\n</%s>\n", type, node->begin, node->end, node->serviceid, node->transponderid, node->channellist, node->repeate, node->name, node->afterevent, node->pincode, node->disabled, node->justplay, node->recpath, node->timestamp, node->status, node->errstr, type);
 
 		if(ret < 0)
 		{
