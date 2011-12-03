@@ -201,9 +201,14 @@ int readprovider(const char* filename)
 {
 	debug(1000, "in");
 	FILE *fd = NULL;
-	char *fileline = NULL;
-	int linecount = 0;
+	char *fileline = NULL, *tmpstr = NULL, *tmpstr0 = NULL, *tmpstr1 = NULL;
+	int linecount = 0, treffer0 = 1, treffer1 = 1;
 	struct provider* last = NULL, *tmplast = NULL;
+	
+	tmpstr0 = getconfig("channellist", NULL);
+	tmpstr1 = getconfig("rchannellist", NULL);
+	if(ostrncmp("(PROVIDER)-", tmpstr0, 11) == 0) treffer0 = 0;
+	if(ostrncmp("(PROVIDER)-", tmpstr1, 11) == 0) treffer1 = 0;
 
 	fileline = malloc(MINMALLOC);
 	if(fileline == NULL)
@@ -233,8 +238,21 @@ int readprovider(const char* filename)
 
 		if(last == NULL) last = tmplast;
 		last = addprovider(fileline, linecount, last);
-		if(last != NULL) tmplast = last;
+		if(last != NULL) 
+		{
+			tmplast = last;
+			tmpstr = ostrcat("(PROVIDER)-", last->name, 0, 0);
+
+			if(treffer0 == 0 && ostrcmp(tmpstr, tmpstr0) == 0)
+				treffer0 = 1;
+			if(treffer1 == 0 && ostrcmp(tmpstr, tmpstr1) == 0)
+				treffer1 = 1;
+			free(tmpstr); tmpstr = NULL;
+		}
 	}
+	
+	if(treffer0 == 0) delconfig("channellist");
+	if(treffer1 == 0) delconfig("rchannellist");
 
 	status.writeprovider = 0;
 	free(fileline);
