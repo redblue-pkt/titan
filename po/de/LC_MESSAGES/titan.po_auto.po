@@ -4751,11 +4751,11 @@ msgstr ""
 msgid "Show Module Messages"
 msgstr ""
 
-#: skin_default_skin.xml.h:126
+#: skin_default_skin.xml.h:126 skin_default_skin.xml.h:124
 msgid "Change Channelname auto."
 msgstr ""
 
-#: skin_default_skin.xml.h:357
+#: skin_default_skin.xml.h:357 skin_default_skin.xml.h:355
 msgid "Show Modules"
 msgstr ""
 
