@@ -60,7 +60,7 @@ msgstr ""
 #: skin_default_skin.xml.h:169 global.h:3610 httpdfunc.h:2078 httpdfunc.h:2090
 #: global.h:3630 scan.h:781 scan.h:853 scan.h:1059 service.h:560 service.h:794
 #: skin_default_skin.xml.h:170 skinselector.h:218 epgsettings.h:114
-#: keyactions.h:183 service.h:800
+#: keyactions.h:183 service.h:800 rectimer.h:1121 rectimer.h:1133
 msgid "EXIT"
 msgstr ""
 
@@ -92,7 +92,8 @@ msgstr ""
 #: adjust.h:56 adjust.h:60 adjust.h:64 adjust.h:89 adjust.h:116 adjust.h:43
 #: adjust.h:57 adjust.h:61 adjust.h:65 adjust.h:90 adjust.h:117 adjust.h:120
 #: scan.h:713 scan.h:999 scan.h:1003 scan.h:1007 epgsettings.h:61 adjust.h:66
-#: adjust.h:91 adjust.h:118 adjust.h:121
+#: adjust.h:91 adjust.h:118 adjust.h:121 rectimer.h:863 rectimer.h:868
+#: rectimer.h:873 rectimer.h:878 rectimer.h:883 rectimer.h:888 rectimer.h:893
 msgid "no"
 msgstr ""
 
@@ -130,7 +131,8 @@ msgstr ""
 #: scan.h:1006 adjust.h:57 adjust.h:61 adjust.h:65 adjust.h:90 adjust.h:115
 #: adjust.h:58 adjust.h:62 adjust.h:66 adjust.h:91 adjust.h:116 adjust.h:121
 #: scan.h:714 scan.h:1000 scan.h:1004 scan.h:1008 epgsettings.h:62 adjust.h:67
-#: adjust.h:92 adjust.h:117 adjust.h:122
+#: adjust.h:92 adjust.h:117 adjust.h:122 rectimer.h:864 rectimer.h:869
+#: rectimer.h:874 rectimer.h:879 rectimer.h:884 rectimer.h:889 rectimer.h:894
 msgid "yes"
 msgstr ""
 
@@ -231,7 +233,7 @@ msgstr ""
 msgid "4 GB"
 msgstr ""
 
-#: audiotrack.h:47 rectimer.h:1232 audiotrack.h:48
+#: audiotrack.h:47 rectimer.h:1232 audiotrack.h:48 rectimer.h:1245
 msgid "running"
 msgstr ""
 
@@ -247,6 +249,7 @@ msgstr ""
 #: transponder.h:207 transponder.h:214 transponder.h:238 transponder.h:256
 #: transponder.h:276 transponder.h:285 transponder.h:291 transponder.h:298
 #: transponder.h:330 transponder.h:340 transponder.h:395 transponder.h:431
+#: rectimer.h:954
 msgid "auto"
 msgstr ""
 
@@ -305,6 +308,7 @@ msgstr ""
 #: videomode.h:58 videomode.h:53 global.h:3610 global.h:3630 scan.h:627
 #: scan.h:781 scan.h:853 scan.h:1059 service.h:560 service.h:794
 #: skinselector.h:218 epgsettings.h:114 keyactions.h:183 service.h:800
+#: rectimer.h:1121 rectimer.h:1133
 msgid "Message"
 msgstr ""
 
@@ -324,7 +328,7 @@ msgstr ""
 #: skins_mc_skin.xml.h:28 skins_networkbrowser_skin.xml.h:6 timeshift.h:41
 #: videomode.h:44 skin_default_skin.xml.h:262 videomode.h:58 videomode.h:53
 #: skin_default_skin.xml.h:263 service.h:560 service.h:794
-#: skin_default_skin.xml.h:264 service.h:800
+#: skin_default_skin.xml.h:264 service.h:800 rectimer.h:1121
 msgid "OK"
 msgstr ""
 
@@ -672,7 +676,7 @@ msgstr ""
 msgid "backup"
 msgstr ""
 
-#: harddisk.h:439 rectimer.h:809
+#: harddisk.h:439 rectimer.h:809 rectimer.h:822
 msgid "record"
 msgstr ""
 
@@ -751,7 +755,7 @@ msgstr ""
 msgid "C-Band"
 msgstr ""
 
-#: lnbconfig.h:149 rectimer.h:836
+#: lnbconfig.h:149 rectimer.h:836 rectimer.h:849
 msgid "user defined"
 msgstr ""
 
@@ -2208,106 +2212,108 @@ msgstr ""
 msgid "Timer transponder ID not ok"
 msgstr ""
 
-#: rectimer.h:347
+#: rectimer.h:347 rectimer.h:357
 msgid "not started akttime greater timer endtime"
 msgstr ""
 
-#: rectimer.h:455
+#: rectimer.h:455 rectimer.h:465
 msgid "stopped from user"
 msgstr ""
 
-#: rectimer.h:810
+#: rectimer.h:810 rectimer.h:823
 msgid "switch channel"
 msgstr ""
 
-#: rectimer.h:820 rectimer.h:1191 rectimer.h:1202
+#: rectimer.h:820 rectimer.h:1191 rectimer.h:1202 rectimer.h:833
+#: rectimer.h:1204 rectimer.h:1215
 msgid "once"
 msgstr ""
 
-#: rectimer.h:821 rectimer.h:1193 rectimer.h:1204
+#: rectimer.h:821 rectimer.h:1193 rectimer.h:1204 rectimer.h:834
+#: rectimer.h:1206 rectimer.h:1217
 msgid "repeate"
 msgstr ""
 
-#: rectimer.h:833
+#: rectimer.h:833 rectimer.h:846
 msgid "daily"
 msgstr ""
 
-#: rectimer.h:834
+#: rectimer.h:834 rectimer.h:847
 msgid "weekly"
 msgstr ""
 
-#: rectimer.h:835
+#: rectimer.h:835 rectimer.h:848
 msgid "workdays"
 msgstr ""
 
 #: rectimer.h:840 skin_default_skin.xml.h:235 skin_default_skin.xml.h:243
-#: skin_default_skin.xml.h:244 skin_default_skin.xml.h:245
+#: skin_default_skin.xml.h:244 skin_default_skin.xml.h:245 rectimer.h:853
 msgid "Monday"
 msgstr ""
 
 #: rectimer.h:841 skin_default_skin.xml.h:413 skin_default_skin.xml.h:411
 #: skin_default_skin.xml.h:403 skin_default_skin.xml.h:404
-#: skin_default_skin.xml.h:405 skin_default_skin.xml.h:406
+#: skin_default_skin.xml.h:405 skin_default_skin.xml.h:406 rectimer.h:854
 msgid "Tuesday"
 msgstr ""
 
 #: rectimer.h:842 skin_default_skin.xml.h:440 skin_default_skin.xml.h:438
 #: skin_default_skin.xml.h:431 skin_default_skin.xml.h:432
-#: skin_default_skin.xml.h:433 skin_default_skin.xml.h:434
+#: skin_default_skin.xml.h:433 skin_default_skin.xml.h:434 rectimer.h:855
 msgid "Wednesday"
 msgstr ""
 
 #: rectimer.h:843 skin_default_skin.xml.h:402 skin_default_skin.xml.h:400
 #: skin_default_skin.xml.h:392 skin_default_skin.xml.h:393
-#: skin_default_skin.xml.h:394 skin_default_skin.xml.h:395
+#: skin_default_skin.xml.h:394 skin_default_skin.xml.h:395 rectimer.h:856
 msgid "Thursday"
 msgstr ""
 
 #: rectimer.h:844 skin_default_skin.xml.h:176 skin_default_skin.xml.h:184
-#: skin_default_skin.xml.h:185 skin_default_skin.xml.h:186
+#: skin_default_skin.xml.h:185 skin_default_skin.xml.h:186 rectimer.h:857
 msgid "Friday"
 msgstr ""
 
 #: rectimer.h:845 skin_default_skin.xml.h:327 skin_default_skin.xml.h:335
-#: skin_default_skin.xml.h:336 skin_default_skin.xml.h:337
+#: skin_default_skin.xml.h:336 skin_default_skin.xml.h:337 rectimer.h:858
 msgid "Saturday"
 msgstr ""
 
 #: rectimer.h:846 skin_default_skin.xml.h:370 skin_default_skin.xml.h:378
 #: skin_default_skin.xml.h:379 skin_default_skin.xml.h:380
-#: skin_default_skin.xml.h:381
+#: skin_default_skin.xml.h:381 rectimer.h:859
 msgid "Sunday"
 msgstr ""
 
-#: rectimer.h:942
+#: rectimer.h:942 rectimer.h:955
 msgid "nothing"
 msgstr ""
 
-#: rectimer.h:943
+#: rectimer.h:943 rectimer.h:956
 msgid "standby"
 msgstr ""
 
-#: rectimer.h:944
+#: rectimer.h:944 rectimer.h:957
 msgid "power off"
 msgstr ""
 
-#: rectimer.h:1188
+#: rectimer.h:1188 rectimer.h:1201
 msgid "rec"
 msgstr ""
 
-#: rectimer.h:1199
+#: rectimer.h:1199 rectimer.h:1212
 msgid "switch"
 msgstr ""
 
-#: rectimer.h:1227
+#: rectimer.h:1227 rectimer.h:1240
 msgid "waiting"
 msgstr ""
 
-#: rectimer.h:1237
+#: rectimer.h:1237 rectimer.h:1250
 msgid "success"
 msgstr ""
 
-#: rectimer.h:1242
+#: rectimer.h:1242 rectimer.h:1255
 msgid "error"
 msgstr ""
 
