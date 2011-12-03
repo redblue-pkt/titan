@@ -55,11 +55,17 @@ void screeninfobar()
 				count++;
 				if(rcret == RCTIMEOUT && screensaver != NULL && count > screensaver_delay)
 				{
+					if(status.aktservice->channel != NULL)
+						screensaver->value = ostrcat(status.aktservice->channel->name, NULL, 0, 0); 
+					else
+						screensaver->value = ostrcat("Radio", NULL, 0, 0); 
 					showscreensaver();
+					free(screensaver->value);
 					rcwait = screensaver->speed;
 				}
 			}
 			deinitscreensaver();
+			drawscreen(skin, 0);
 			infobartimeout = 0;
 		}
 
