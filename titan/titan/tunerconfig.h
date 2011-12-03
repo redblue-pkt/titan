@@ -454,7 +454,7 @@ start:
 				drawscreen(tunerreceptiondvbs, 0);
 			}
 		}
-		else if(rcret == getrcconfigint("rcgreen", NULL))
+		else if(rcret == getrcconfigint("rcred", NULL))
 		{
 			ret = 1;
 			deltranspondertunablestatus();
@@ -735,7 +735,7 @@ void screentunerconfig()
 				}
 			}
 		}
-		if(rcret == getrcconfigint("rcgreen", NULL))
+		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			ret = 1;
 			deltranspondertunablestatus();
