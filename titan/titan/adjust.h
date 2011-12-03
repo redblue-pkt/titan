@@ -59,7 +59,8 @@ void screenadjust()
 	setchoiceboxselection(nozapclear, getconfig("nozapclear", NULL));
 
 	addchoicebox(fastzap, "0", _("no"));
-	addchoicebox(fastzap, "1", _("yes"));
+	addchoicebox(fastzap, "2", _("medium"));
+	addchoicebox(fastzap, "1", _("fast"));
 	setchoiceboxselection(fastzap, getconfig("fastzap", NULL));
 
 	addchoicebox(faststop, "0", _("no"));
