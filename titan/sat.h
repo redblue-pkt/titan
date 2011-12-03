@@ -297,9 +297,14 @@ int readsat(const char* filename)
 {
 	debug(1000, "in");
 	FILE *fd = NULL;
-	char *fileline = NULL;
-	int linecount = 0;
+	char *fileline = NULL, *tmpstr = NULL, *tmpstr0 = NULL, *tmpstr1 = NULL;
+	int linecount = 0, treffer0 = 1, treffer1 = 1;
 	struct sat* last = NULL, *tmplast = NULL;
+	
+	tmpstr0 = getconfig("channellist", NULL);
+	tmpstr1 = getconfig("rchannellist", NULL);
+	if(ostrncmp("(SAT)-", tmpstr0, 6) == 0) treffer0 = 0;
+	if(ostrncmp("(SAT)-", tmpstr1, 6) == 0) treffer1 = 0;
 
 	fileline = malloc(MINMALLOC);
 	if(fileline == NULL)
@@ -329,8 +334,21 @@ int readsat(const char* filename)
 
 		if(last == NULL) last = tmplast;
 		last = addsat(fileline, linecount, last);
-		if(last != NULL) tmplast = last;
+		if(last != NULL) 
+		{
+			tmplast = last;
+			tmpstr = ostrcat("(SAT)-", last->name, 0, 0);
+
+			if(treffer0 == 0 && ostrcmp(tmpstr, tmpstr0) == 0)
+				treffer0 = 1;
+			if(treffer1 == 0 && ostrcmp(tmpstr, tmpstr1) == 0)
+				treffer1 = 1;
+			free(tmpstr); tmpstr = NULL;
+		}
 	}
+	
+	if(treffer0 == 0) delconfig("channellist");
+	if(treffer1 == 0) delconfig("rchannellist");
 
 	status.writesat = 0;
 	free(fileline);

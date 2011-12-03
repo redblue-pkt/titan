@@ -251,9 +251,14 @@ int readmainbouquet(char* filename)
 {
 	debug(1000, "in");
 	FILE *fd = NULL;
-	char *fileline = NULL, *tmpstr = NULL;
-	int linecount = 0, treffer0 = 0, treffer1 = 0;
+	char *fileline = NULL, *tmpstr = NULL, *tmpstr0 = NULL, *tmpstr1 = NULL;
+	int linecount = 0, treffer0 = 1, treffer1 = 1;
 	struct mainbouquet* last = NULL, *tmplast = NULL;
+	
+	tmpstr0 = getconfig("channellist", NULL);
+	tmpstr1 = getconfig("rchannellist", NULL);
+	if(ostrncmp("(BOUQUET)-", tmpstr0, 10) == 0) treffer0 = 0;
+	if(ostrncmp("(BOUQUET)-", tmpstr1, 10) == 0) treffer1 = 0;
 
 	fileline = malloc(MINMALLOC);
 	if(fileline == NULL)
@@ -288,9 +293,9 @@ int readmainbouquet(char* filename)
 			tmplast = last;
 			tmpstr = ostrcat("(BOUQUET)-", last->name, 0, 0);
 
-			if(last->type == 0 && ostrcmp(tmpstr, getconfig("channellist", NULL)) == 0)
+			if(treffer0 == 0 && last->type == 0 && ostrcmp(tmpstr, tmpstr0) == 0)
 				treffer0 = 1;
-			if(last->type == 1 && ostrcmp(tmpstr, getconfig("rchannellist", NULL)) == 0)
+			if(treffer1 == 0 && last->type == 1 && ostrcmp(tmpstr, tmpstr1) == 0)
 				treffer1 = 1;
 			free(tmpstr); tmpstr = NULL;
 		}
