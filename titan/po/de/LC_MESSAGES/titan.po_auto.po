@@ -60,7 +60,7 @@ msgstr ""
 #: skin_default_skin.xml.h:169 global.h:3610 httpdfunc.h:2078 httpdfunc.h:2090
 #: global.h:3630 scan.h:781 scan.h:853 scan.h:1059 service.h:560 service.h:794
 #: skin_default_skin.xml.h:170 skinselector.h:218 epgsettings.h:114
-#: keyactions.h:183
+#: keyactions.h:183 service.h:800
 msgid "EXIT"
 msgstr ""
 
@@ -91,7 +91,8 @@ msgstr ""
 #: tunerconfig.h:535 scan.h:711 scan.h:997 scan.h:1001 scan.h:1005 adjust.h:42
 #: adjust.h:56 adjust.h:60 adjust.h:64 adjust.h:89 adjust.h:116 adjust.h:43
 #: adjust.h:57 adjust.h:61 adjust.h:65 adjust.h:90 adjust.h:117 adjust.h:120
-#: scan.h:713 scan.h:999 scan.h:1003 scan.h:1007 epgsettings.h:61
+#: scan.h:713 scan.h:999 scan.h:1003 scan.h:1007 epgsettings.h:61 adjust.h:66
+#: adjust.h:91 adjust.h:118 adjust.h:121
 msgid "no"
 msgstr ""
 
@@ -128,104 +129,105 @@ msgstr ""
 #: screensaveradjust.h:20 tunerconfig.h:534 scan.h:712 scan.h:998 scan.h:1002
 #: scan.h:1006 adjust.h:57 adjust.h:61 adjust.h:65 adjust.h:90 adjust.h:115
 #: adjust.h:58 adjust.h:62 adjust.h:66 adjust.h:91 adjust.h:116 adjust.h:121
-#: scan.h:714 scan.h:1000 scan.h:1004 scan.h:1008 epgsettings.h:62
+#: scan.h:714 scan.h:1000 scan.h:1004 scan.h:1008 epgsettings.h:62 adjust.h:67
+#: adjust.h:92 adjust.h:117 adjust.h:122
 msgid "yes"
 msgstr ""
 
 #: adjust.h:67 mc_audioplayer_settings.h:19 mc_pictureplayer_settings.h:16
 #: mc_videoplayer_settings.h:15 plugins_mc_skin.xml.h:5 skins_mc_skin.xml.h:5
-#: adjust.h:68 adjust.h:69
+#: adjust.h:68 adjust.h:69 adjust.h:70
 msgid "alpha"
 msgstr ""
 
 #: adjust.h:68 mc_audioplayer_settings.h:20 mc_pictureplayer_settings.h:17
 #: mc_videoplayer_settings.h:16 plugins_mc_skin.xml.h:35
-#: skins_mc_skin.xml.h:35 adjust.h:69 adjust.h:70
+#: skins_mc_skin.xml.h:35 adjust.h:69 adjust.h:70 adjust.h:71
 msgid "reverse alpha"
 msgstr ""
 
 #: adjust.h:69 mc_audioplayer_settings.h:21 mc_pictureplayer_settings.h:18
 #: mc_videoplayer_settings.h:17 plugins_mc_skin.xml.h:40
-#: skins_mc_skin.xml.h:40 adjust.h:70 adjust.h:71
+#: skins_mc_skin.xml.h:40 adjust.h:70 adjust.h:71 adjust.h:72
 msgid "size"
 msgstr ""
 
 #: adjust.h:70 mc_audioplayer_settings.h:22 mc_pictureplayer_settings.h:19
 #: mc_videoplayer_settings.h:18 plugins_mc_skin.xml.h:37
-#: skins_mc_skin.xml.h:37 adjust.h:71 adjust.h:72
+#: skins_mc_skin.xml.h:37 adjust.h:71 adjust.h:72 adjust.h:73
 msgid "reverse size"
 msgstr ""
 
 #: adjust.h:71 mc_audioplayer_settings.h:23 mc_pictureplayer_settings.h:20
 #: mc_videoplayer_settings.h:19 plugins_mc_skin.xml.h:11
-#: skins_mc_skin.xml.h:11 adjust.h:72 adjust.h:73
+#: skins_mc_skin.xml.h:11 adjust.h:72 adjust.h:73 adjust.h:74
 msgid "date"
 msgstr ""
 
 #: adjust.h:72 mc_audioplayer_settings.h:24 mc_pictureplayer_settings.h:21
 #: mc_videoplayer_settings.h:20 plugins_mc_skin.xml.h:36
-#: skins_mc_skin.xml.h:36 adjust.h:73 adjust.h:74
+#: skins_mc_skin.xml.h:36 adjust.h:73 adjust.h:74 adjust.h:75
 msgid "reverse date"
 msgstr ""
 
-#: adjust.h:75 adjust.h:76 adjust.h:77
+#: adjust.h:75 adjust.h:76 adjust.h:77 adjust.h:78
 msgid "Power Menu"
 msgstr ""
 
 #: adjust.h:76 skin_default_skin.xml.h:283 skin_default_skin.xml.h:291
 #: skin_default_skin.xml.h:292 adjust.h:77 adjust.h:78
-#: skin_default_skin.xml.h:293
+#: skin_default_skin.xml.h:293 adjust.h:79
 msgid "Power Off"
 msgstr ""
 
 #: adjust.h:77 powerofftimer.h:67 powerofftimer.h:71
 #: skin_default_skin.xml.h:360 skin_default_skin.xml.h:368
 #: skin_default_skin.xml.h:369 adjust.h:78 skin_default_skin.xml.h:370
-#: adjust.h:79 skin_default_skin.xml.h:371
+#: adjust.h:79 skin_default_skin.xml.h:371 adjust.h:80
 msgid "Standby"
 msgstr ""
 
 #: adjust.h:78 panel_softcam.h:243 plugins_panel_skin.xml.h:61
 #: skin_default_skin.xml.h:310 skins_panel_skin.xml.h:61
 #: skin_default_skin.xml.h:318 skin_default_skin.xml.h:319 adjust.h:79
-#: adjust.h:80 skin_default_skin.xml.h:320
+#: adjust.h:80 skin_default_skin.xml.h:320 adjust.h:81
 msgid "Restart"
 msgstr ""
 
-#: adjust.h:79 adjust.h:80 adjust.h:81
+#: adjust.h:79 adjust.h:80 adjust.h:81 adjust.h:82
 msgid "Gui Restart"
 msgstr ""
 
 #: adjust.h:82 adjust.h:92 epgsettings.h:41 adjust.h:83 adjust.h:93
-#: adjust.h:84 adjust.h:94 epgsettings.h:48
+#: adjust.h:84 adjust.h:94 epgsettings.h:48 adjust.h:85 adjust.h:95
 msgid "deaktiv"
 msgstr ""
 
-#: adjust.h:83 adjust.h:84 adjust.h:85
+#: adjust.h:83 adjust.h:84 adjust.h:85 adjust.h:86
 msgid "1 sec"
 msgstr ""
 
-#: adjust.h:84 avsettings.h:65 adjust.h:85 adjust.h:86
+#: adjust.h:84 avsettings.h:65 adjust.h:85 adjust.h:86 adjust.h:87
 msgid "2 sec"
 msgstr ""
 
-#: adjust.h:85 pin.h:165 adjust.h:86 adjust.h:87
+#: adjust.h:85 pin.h:165 adjust.h:86 adjust.h:87 adjust.h:88
 msgid "endless"
 msgstr ""
 
-#: adjust.h:93 adjust.h:94 adjust.h:95
+#: adjust.h:93 adjust.h:94 adjust.h:95 adjust.h:96
 msgid "1 GB"
 msgstr ""
 
-#: adjust.h:94 adjust.h:95 adjust.h:96
+#: adjust.h:94 adjust.h:95 adjust.h:96 adjust.h:97
 msgid "2 GB"
 msgstr ""
 
-#: adjust.h:95 adjust.h:96 adjust.h:97
+#: adjust.h:95 adjust.h:96 adjust.h:97 adjust.h:98
 msgid "3 GB"
 msgstr ""
 
-#: adjust.h:96 adjust.h:97 adjust.h:98
+#: adjust.h:96 adjust.h:97 adjust.h:98 adjust.h:99
 msgid "4 GB"
 msgstr ""
 
@@ -302,7 +304,7 @@ msgstr ""
 #: bluekeyactions.h:128 scan.h:625 scan.h:779 scan.h:851 scan.h:1057
 #: videomode.h:58 videomode.h:53 global.h:3610 global.h:3630 scan.h:627
 #: scan.h:781 scan.h:853 scan.h:1059 service.h:560 service.h:794
-#: skinselector.h:218 epgsettings.h:114 keyactions.h:183
+#: skinselector.h:218 epgsettings.h:114 keyactions.h:183 service.h:800
 msgid "Message"
 msgstr ""
 
@@ -322,7 +324,7 @@ msgstr ""
 #: skins_mc_skin.xml.h:28 skins_networkbrowser_skin.xml.h:6 timeshift.h:41
 #: videomode.h:44 skin_default_skin.xml.h:262 videomode.h:58 videomode.h:53
 #: skin_default_skin.xml.h:263 service.h:560 service.h:794
-#: skin_default_skin.xml.h:264
+#: skin_default_skin.xml.h:264 service.h:800
 msgid "OK"
 msgstr ""
 
@@ -827,7 +829,7 @@ msgstr ""
 
 #: mc_audioplayer_settings.h:32 mc_pictureplayer_settings.h:29
 #: mc_videoplayer_settings.h:28 plugins_mc_skin.xml.h:16
-#: skins_mc_skin.xml.h:16
+#: skins_mc_skin.xml.h:16 adjust.h:63
 msgid "fast"
 msgstr ""
 
@@ -2473,21 +2475,21 @@ msgid ""
 "Stop it and switch ?"
 msgstr ""
 
-#: service.h:773 service.h:777
+#: service.h:773 service.h:777 service.h:783
 msgid ""
 "Can't find a Tuner.\n"
 "Alle Tuners in use or no Tuner defined."
 msgstr ""
 
-#: service.h:776 service.h:780
+#: service.h:776 service.h:780 service.h:786
 msgid "Tuning to Channel failed!"
 msgstr ""
 
-#: service.h:779 service.h:783
+#: service.h:779 service.h:783 service.h:789
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 
-#: service.h:784 service.h:788
+#: service.h:784 service.h:788 service.h:794
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
@@ -4749,4 +4751,8 @@ msgstr ""
 
 #: skin_default_skin.xml.h:357
 msgid "Show Modules"
+msgstr ""
+
+#: adjust.h:62
+msgid "medium"
 msgstr ""
