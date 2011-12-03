@@ -3635,4 +3635,17 @@ void setaktres()
 	return;
 }
 
+char* gettimestamp()
+{
+	char* timestamp = NULL;
+  struct timeval numtime;
+		
+ 	gettimeofday(&numtime, 0);
+ 	timestamp = ostrcat(timestamp, olutoa(numtime.tv_sec), 1, 0);
+ 	timestamp = ostrcat(timestamp, olutoa(numtime.tv_usec), 1, 0);
+
+	return timestamp;
+} 
+
+
 #endif
