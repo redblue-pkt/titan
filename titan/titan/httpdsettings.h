@@ -3,7 +3,7 @@
 
 void screenhttpdsettings()
 {
-	int rcret = 0;
+	int rcret = 0, i = 0;
 	struct skin* httpdsettings = getscreen("httpdsettings");
 	struct skin* listbox = getscreennode(httpdsettings, "listbox");
 	struct skin* httpdstart = getscreennode(httpdsettings, "httpdstart");
@@ -15,8 +15,8 @@ void screenhttpdsettings()
 	char* tmpstr = NULL, *pos = NULL;
 
 	addchoicebox(httpdstart, "0", _("no"));
-        addchoicebox(httpdstart, "1", _("yes"));
-        setchoiceboxselection(httpdstart, getconfig("httpdstart", NULL));
+	addchoicebox(httpdstart, "1", _("yes"));
+	setchoiceboxselection(httpdstart, getconfig("httpdstart", NULL));
 
 	tmpstr = ostrcat(getconfig("httpauth", NULL), NULL, 0, 0);
 	if(tmpstr != NULL)
@@ -32,11 +32,22 @@ void screenhttpdsettings()
 	}
 	free(tmpstr); tmpstr = NULL;
 
-        changemask(httpdport, "00000");
-        changeinput(httpdport, getconfig("httpdport", NULL));
+	changemask(httpdport, "00000");
+	changeinput(httpdport, getconfig("httpdport", NULL));
+	if(httpdport->input != NULL)
+	{
+		for(i = 0; i < 6 - strlen(httpdport->input); i++)
+			httpdport->input = ostrcat("0", httpdport->input, 0, 1);
+	}
 
-        changemask(streamport, "00000");
-        changeinput(streamport, getconfig("streamport", NULL));
+	changemask(streamport, "00000");
+	changeinput(streamport, getconfig("streamport", NULL));
+	if(streamport->input != NULL)
+	{
+		for(i = 0; i < 6 - strlen(streamport->input); i++)
+			streamport->input = ostrcat("0", streamport->input, 0, 1);
+	}
+
 
 	drawscreen(httpdsettings, 0);
 	addscreenrc(httpdsettings, listbox);
@@ -74,8 +85,18 @@ void screenhttpdsettings()
 				delconfig("httpauth");
 			free(status.httpauth);
 			status.httpauth = ostrcat(getconfig("httpauth", NULL), NULL, 0, 0);
-			addconfigscreencheck("httpdport", httpdport, "80");
-			addconfigscreencheck("streamport", streamport, "22222");
+			if(httpdport->ret != NULL)
+			{
+				int hport = atoi(httpdport->ret);
+				if(hport != 80)
+					addconfigint("httpdport", hport);
+			}
+			if(streamport->ret != NULL)
+			{
+				int sport = atoi(streamport->ret);
+				if(sport != 22222)
+					addconfigint("streamport", sport);
+			}
 			break;
 		}
 	}
