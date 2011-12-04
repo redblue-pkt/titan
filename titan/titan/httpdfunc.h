@@ -1941,7 +1941,7 @@ char* webrectimersend(char* param)
 	
 	if(sid != NULL && tid != NULL) {
 		node->serviceid = atoi(sid);
-		node->transponderid = atoi(tid);
+		node->transponderid = atol(tid);
 		node->servicetype = 0;
 	}
 	
@@ -1976,11 +1976,8 @@ char* webrectimersend(char* param)
 	if(ext == NULL)
 		buf = webgetrectimer(NULL, 0);
 	else {
-		string = NULL;
-		string = oitoa(node);
 		buf = ostrcat(buf, "ok -> TimerID=", 1, 0);
-		buf = ostrcat(buf, string, 1, 0);
-		free(string);string=NULL;
+		buf = ostrcat(buf, node->timestamp, 1, 0);
 	}
 	//ostrcatbig(&buf, param, &maxlen, &pos);
 
@@ -2067,13 +2064,46 @@ char* webeditrectimer(char* param)
 
 char* webdelrectimer(char* param)
 {
-	char* buf = NULL;
+	char* buf = NULL, *string = NULL, *timerid = NULL;
 	struct rectimer *node = NULL;
-	//int maxlen = 0, pos = 0;
-	//ostrcatbig(&buf, param, &maxlen, &pos);
-	node = atoi(param);
+	int ext = 0;
+	
+	timerid=strstr(param, "timerid=");
+	if(timerid != NULL) {
+		timerid = timerid + 8;
+		ext = 1;
+	}
+	node = NULL;
+	if(ext == 1) {
+		string = param;	
+		while(string != NULL) {	
+			string = strchr(string, '&');
+			if(string != NULL)
+				*string++ = '\0';
+		}
+		if(timerid != NULL) {
+			node = rectimer;
+			while(node != NULL) {
+				if(ostrcmp(node->timestamp, timerid) == 0)
+					break;
+				node = node->next;
+			}
+		}
+	}
+	else {
+		node = atoi(param);
+	}
+	if(node == NULL) {
+		buf = ostrcat(buf, "ERROR: timer not found", 1, 0);	
+		return buf;
+	}
+	
 	delrectimer(node, 1, 0);
-	buf = webgetrectimer(NULL, 0);
+	
+	if(ext == 1) 
+		buf = ostrcat(buf, "ok -> timer deleted", 1, 0);
+	else
+		buf = webgetrectimer(NULL, 0);
 	
 	return buf;
 }
