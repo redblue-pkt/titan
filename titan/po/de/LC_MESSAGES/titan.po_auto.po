@@ -4762,3 +4762,19 @@ msgstr ""
 #: adjust.h:62
 msgid "medium"
 msgstr ""
+
+#: screensaveradjust.h:41
+msgid "Icon 1"
+msgstr ""
+
+#: screensaveradjust.h:42
+msgid "Icon 2"
+msgstr ""
+
+#: screensaveradjust.h:43
+msgid "Icon 3"
+msgstr ""
+
+#: screensaveradjust.h:44
+msgid "Icon 4"
+msgstr ""
