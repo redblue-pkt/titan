@@ -1047,6 +1047,49 @@ int setbrightness(int value)
 	return 0;
 }
 
+int settsmuxleft(struct dvbdev* node, int value, int flag)
+{
+	debug(1000, "in");
+	char* tsmuxdev = NULL, *tmpstr = NULL;
+	int ret = 0;
+
+	if(node == NULL) return 1;
+	if(flag == 0) tsmuxdev = getconfig("tsmuxleftdev", NULL);
+	if(flag == 1) tsmuxdev = getconfig("tsmuxtopdev", NULL);
+	if(flag == 2) tsmuxdev = getconfig("tsmuxwidthdev", NULL);
+	if(flag == 3) tsmuxdev = getconfig("tsmuxheightdev", NULL);
+
+	if(tsmuxdev != NULL)
+	{
+		buf = malloc(MINMALLOC);
+		if(buf == NULL)
+		{
+			err("no mem");
+			return 1;
+		}
+		
+		tmpstr = malloc(10);
+		if(tmpstr == NULL)
+		{
+			err("no mem");
+			free(buf);
+			return 1;
+		}
+		
+		spnrintf(buf, MINMALLOC, tsmuxdev, node->devnr);
+		spnrintf(tmpstr, 10, "%x", value);
+		debug(100, "set %s to %s", buf, tmpstr);
+		ret = writesys(buf, tmpstr, 1);
+		
+		free(tmpstr);
+		free(buf);
+		return ret;
+	}
+
+	debug(1000, "out");
+	return 0;
+}
+
 int setcontrast(int value)
 {
 	debug(1000, "in");
@@ -1911,6 +1954,8 @@ char* readsys(const char *filename, int line)
 	return buf1;
 }
 
+//flag 0: without \n
+//flag 1: with \n
 int writesys(const char *filename, char *value, int flag)
 {
 	debug(1000, "in");
@@ -3638,11 +3683,11 @@ void setaktres()
 char* gettimestamp()
 {
 	char* timestamp = NULL;
-  struct timeval numtime;
+	struct timeval numtime;
 		
- 	gettimeofday(&numtime, 0);
- 	timestamp = ostrcat(timestamp, olutoa(numtime.tv_sec), 1, 0);
- 	timestamp = ostrcat(timestamp, olutoa(numtime.tv_usec), 1, 0);
+	gettimeofday(&numtime, 0);
+	timestamp = ostrcat(timestamp, olutoa(numtime.tv_sec), 1, 0);
+	timestamp = ostrcat(timestamp, olutoa(numtime.tv_usec), 1, 0);
 
 	return timestamp;
 } 
