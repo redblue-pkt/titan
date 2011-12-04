@@ -752,6 +752,14 @@ void fediseqcrotor(struct dvbdev* node, int pos, int oldpos, int flag)
 			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x6B; cmd.msg[3] = pos; cmd.msg_len = 4;
 			debug(200, "DISEQC Rotorpos goto pos (%s)", node->feshortname);
 			break;
+		case 9: //step xx pos east
+			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x68; cmd.msg[3] = 256 - pos; cmd.msg_len = 4;
+			debug(200, "DISEQC Rotorpos step east (%s)", node->feshortname);
+			break;
+		case 10: //step xx pos west
+			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x69; cmd.msg[3] = 256 - pos; cmd.msg_len = 4;
+			debug(200, "DISEQC Rotorpos step west (%s)", node->feshortname);
+			break;
 	}
 
 	if(flag >= 0 && flag < 7)

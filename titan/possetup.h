@@ -63,6 +63,8 @@ void screenpossetup()
 	struct skin* b4 = getscreennode(possetup, "b4");
 	struct skin* tmp = NULL;
 	char* tmpnr = NULL;
+	//TODO: select tuner
+	struct dvbdev* dvbnode = status.aktservice->fedev;
 
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
@@ -102,8 +104,59 @@ void screenpossetup()
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
+			fediseqcrotor(dvbnode, 0, 1, 0);
+		if(listbox->select != NULL)
 		{
-			break;
+			if(rcret == getrcconfigint("rcred", NULL))
+			{
+				if(ostrcmp(listbox->select->name, "move") == 0)
+					fediseqcrotor(dvbnode, 0, 0, 6);
+				if(ostrcmp(listbox->select->name, "limit") == 0)
+					fediseqcrotor(dvbnode, 0, 0, 1);
+				if(ostrcmp(listbox->select->name, "goto0") == 0)
+					fediseqcrotor(dvbnode, 1, 0, 8);
+			}
+			if(rcret == getrcconfigint("rcgreen", NULL))
+			{
+				if(ostrcmp(listbox->select->name, "move") == 0)
+					fediseqcrotor(dvbnode, 0, 0, 6); //TODO
+				if(ostrcmp(listbox->select->name, "finemove") == 0)
+					fediseqcrotor(dvbnode, 1, 0, 9);
+				if(ostrcmp(listbox->select->name, "limit") == 0)
+					fediseqcrotor(dvbnode, 0, 0, 4);
+				if(ostrcmp(listbox->select->name, "storagepos") == 0)
+				{
+					if(listbox->select->ret != NULL)
+					{
+						int pos = atoi(listbox->select->ret);
+						fediseqcrotor(dvbnode, pos, 0, 7);
+					}
+				}
+			}
+			if(rcret == getrcconfigint("rcyellow", NULL))
+			{
+				if(ostrcmp(listbox->select->name, "move") == 0)
+					fediseqcrotor(dvbnode, 0, 0, 5); //TODO
+				if(ostrcmp(listbox->select->name, "finemove") == 0)
+					fediseqcrotor(dvbnode, 1, 0, 10);
+				if(ostrcmp(listbox->select->name, "limit") == 0)
+					fediseqcrotor(dvbnode, 0, 0, 3);
+				if(ostrcmp(listbox->select->name, "storagepos") == 0)
+				{
+					if(listbox->select->ret != NULL)
+					{
+						int pos = atoi(listbox->select->ret);
+						fediseqcrotor(dvbnode, pos, 0, 8);
+					}
+				}
+			}
+			if(rcret == getrcconfigint("rcblue", NULL))
+			{
+				if(ostrcmp(listbox->select->name, "move") == 0)
+					fediseqcrotor(dvbnode, 0, 0, 5);
+				if(ostrcmp(listbox->select->name, "limit") == 0)
+					fediseqcrotor(dvbnode, 0, 0, 2);
+			}
 		}
 
 		drawscreen(possetup, 0);
