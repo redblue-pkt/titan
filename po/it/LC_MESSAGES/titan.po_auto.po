@@ -4778,3 +4778,15 @@ msgstr ""
 #: screensaveradjust.h:44
 msgid "Icon 4"
 msgstr ""
+
+#: skin_default_skin.xml.h:389
+msgid ""
+"text=EXIT halign=center valign=center bordercol=exitcol bordersize=4 "
+"bordertype=2 posx=180 posy=0 width=150 height=30/>"
+msgstr ""
+
+#: skin_default_skin.xml.h:390
+msgid ""
+"text=OK halign=center valign=center bordercol=okcol bordersize=4 "
+"bordertype=2 posx=20 posy=0 width=150 height=30/>"
+msgstr ""
