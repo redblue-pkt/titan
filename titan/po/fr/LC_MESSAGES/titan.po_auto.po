@@ -61,6 +61,7 @@ msgstr ""
 #: global.h:3630 scan.h:781 scan.h:853 scan.h:1059 service.h:560 service.h:794
 #: skin_default_skin.xml.h:170 skinselector.h:218 epgsettings.h:114
 #: keyactions.h:183 service.h:800 rectimer.h:1121 rectimer.h:1133
+#: httpdfunc.h:2120
 msgid "EXIT"
 msgstr ""
 
