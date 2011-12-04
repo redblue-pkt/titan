@@ -3347,13 +3347,13 @@ int setnodeattr(struct skin* node, struct skin* parent)
 	if(node->rposx + node->rwidth + shadowrx > parent->iposx + parent->iwidth)
 	{
 		err("node (%s posxx=%d) out of parent (%s posxx=%d)", node->name, node->rposx + node->rwidth + shadowrx, parent->name, parent->iposx + parent->iwidth);
-		node->rwidth = parent->iwidth - node->rposx;
+		node->rwidth = parent->iwidth - node->rposx - shadowrx;
 		//return 1;
 	}
 	if(node->rposy + node->rheight + shadowuy > parent->iposy + parent->iheight)
 	{
 		err("node (%s posyy=%d) out of parent (%s posyy=%d)", node->name, node->rposy + node->rheight + shadowuy, parent->name, parent->iposy + parent->iheight);
-		node->rheight = parent->iheight - node->rposy;
+		node->rheight = parent->iheight - node->rposy - shadowuy;
 		//return 1;
 	}
 
