@@ -3335,22 +3335,26 @@ int setnodeattr(struct skin* node, struct skin* parent)
 	if(node->rposx - shadowlx < parent->iposx)
 	{
 		err("node (%s posx=%d) out of parent (%s posx=%d)", node->name, node->rposx - shadowlx, parent->name, parent->iposx);
-		return 1;
+		node->rposx = parent->iposx + shadowlx;
+		//return 1;
 	}
 	if(node->rposy - shadowoy < parent->iposy)
 	{
 		err("node (%s posy=%d) out of parent (%s posy=%d)", node->name, node->rposy - shadowoy, parent->name, parent->iposy);
-		return 1;
+		node->rposy = parent->iposy + shadowoy;
+		//return 1;
 	}
-	if(node->rposx + node->rwidth + shadowrx > parent->iposx + parent->iwidth )
+	if(node->rposx + node->rwidth + shadowrx > parent->iposx + parent->iwidth)
 	{
 		err("node (%s posxx=%d) out of parent (%s posxx=%d)", node->name, node->rposx + node->rwidth + shadowrx, parent->name, parent->iposx + parent->iwidth);
-		return 1;
+		node->rwidth = parent->iwidth - node->rposx;
+		//return 1;
 	}
-	if(node->rposy + node->rheight + shadowuy > parent->iposy + parent->iheight )
+	if(node->rposy + node->rheight + shadowuy > parent->iposy + parent->iheight)
 	{
 		err("node (%s posyy=%d) out of parent (%s posyy=%d)", node->name, node->rposy + node->rheight + shadowuy, parent->name, parent->iposy + parent->iheight);
-		return 1;
+		node->rheight = parent->iheight - node->rposy;
+		//return 1;
 	}
 
 	if(node->font == NULL && parent->font != NULL)
