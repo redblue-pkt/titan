@@ -97,12 +97,14 @@ void careseting(struct stimerthread* self, struct dvbdev* dvbnode, int flag)
 }
 
 //wait for a while for some data und read it if some
-int caread(int fd, unsigned char* buf, int* len)
+int caread(struct dvbdev* dvbnode, unsigned char* buf, int* len)
 {
 	int ret = 0, c = 0;
 	struct pollfd fds;
 
-	fds.fd = fd;
+	if(dvbnode == NULL || dvbnode->fd < 0) return -1;
+
+	fds.fd = dvbnode->fd;
 	fds.events = POLLOUT | POLLPRI | POLLIN;
 
 	ret = TEMP_FAILURE_RETRY(poll(&fds, 1, 300));
@@ -120,14 +122,14 @@ int caread(int fd, unsigned char* buf, int* len)
 		{
 			int readret = 0;
 retry:
-			readret = TEMP_FAILURE_RETRY(read(fd, buf, *len));
+			readret = TEMP_FAILURE_RETRY(read(dvbnode->fd, buf, *len));
 
 			if(readret > 0)
 			{
 				if(debug_level == 620)
 				{
 					int i = 0;
-					printf("CA Read (fd %d): > ", fd);
+					printf("CA Read (fd %d): > ", dvbnode->fd);
 					for(i = 0; i < readret; i++)
 						printf("%02x ", buf[i]);
 					printf("\n");
@@ -143,6 +145,11 @@ retry:
 				goto retry;
 			}
 			*len = 0;
+			if(c == 10 && getqueue(dvbnode->devnr) != NULL)
+			{
+				perr("caread but queue not empty, so test a write, ret = %d", readret);
+				return 1;
+			}
 			perr("caread ret = %d", readret);
 			return -1; //error
 		}
@@ -1565,7 +1572,7 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 		case 2: //active (ca and app ready)
 		{
 			//debug(620, "status: wait, slot %d", dvbnode->devnr);
-			ret = caread(dvbnode->fd, buf, &len);
+			ret = caread(dvbnode, buf, &len);
 			if(ret == 0) //ready
 			{
 				//debug(620, "read, slot %d, ret %d", dvbnode->devnr, ret);
