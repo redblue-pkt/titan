@@ -145,7 +145,7 @@ retry:
 				goto retry;
 			}
 			*len = 0;
-			if(c == 10 && getqueue(dvbnode->devnr) != NULL)
+			if(fds.revents & POLLOUT && c == 10 && getqueue(dvbnode->devnr) != NULL)
 			{
 				perr("caread but queue not empty, so test a write, ret = %d", readret);
 				return 1;
