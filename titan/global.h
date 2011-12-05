@@ -1050,7 +1050,7 @@ int setbrightness(int value)
 int settsmuxleft(struct dvbdev* node, int value, int flag)
 {
 	debug(1000, "in");
-	char* tsmuxdev = NULL, *tmpstr = NULL;
+	char* tsmuxdev = NULL, *tmpstr = NULL, *buf = NULL;
 	int ret = 0;
 
 	if(node == NULL) return 1;
