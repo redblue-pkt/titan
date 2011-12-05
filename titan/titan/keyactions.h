@@ -34,11 +34,11 @@ void screenkeyactions(int key, int flag)
 			}
 		}
 	
-		tmpstr = ostrcat(tmpstr, "Extensions List\n", 1, 0);
+		//tmpstr = ostrcat(tmpstr, "Extensions List\n", 1, 0);
 		tmpstr = ostrcat(tmpstr, "Auto Resolution\n", 1, 0);
 		if(checkemu() == 1)
 			tmpstr = ostrcat(tmpstr, "Softcam Panel\n", 1, 0);
-		tmpstr = ostrcat(tmpstr, "TV / Radio Switch\n", 1, 0);
+		//tmpstr = ostrcat(tmpstr, "TV / Radio Switch\n", 1, 0);
 		tmpstr = ostrcat(tmpstr, "Multi EPG\n", 1, 0);
 		tmpstr = ostrcat(tmpstr, "Graphic Multi EPG\n", 1, 0);
 		tmpstr = ostrcat(tmpstr, "Sleep Timer\n", 1, 0);
@@ -46,12 +46,16 @@ void screenkeyactions(int key, int flag)
 		tmpstr = ostrcat(tmpstr, "Subchannel\n", 1, 0);
 	
 		mlistbox = menulistbox(NULL, tmpstr, NULL, skintitle, NULL, 1, 0);
+		keyconf = mlistbox;
 		free(tmpstr); tmpstr = NULL;
 	}
-
-	if (key == 0) keyconf = getconfig("bluekey", NULL);
-	if (key == 1) keyconf = getconfig("redkey", NULL);
-	if(keyconf == NULL)
+	else
+	{
+		if (key == 0) keyconf = getconfig("bluekey", NULL);
+		if (key == 1) keyconf = getconfig("redkey", NULL);
+	}
+	
+	if(flag == 0 && keyconf == NULL)
 	{
 		if(key == 1) screenkeyactions(1, 1);
 		free(mlistbox); mlistbox = NULL;
