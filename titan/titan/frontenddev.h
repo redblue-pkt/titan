@@ -769,7 +769,7 @@ void fediseqcrotor(struct dvbdev* node, int pos, int oldpos, int flag)
 		fediseqcsendmastercmd(node, &cmd, 100);
 	}
 
-	if(flag == 7 && pos != 0)
+	if((flag == 7 || flag == 9 || flag == 10) && pos != 0)
 	{
 		fesettone(node, SEC_VOLTAGE_18, 15);
 		fesettone(node, SEC_TONE_OFF, 15);
