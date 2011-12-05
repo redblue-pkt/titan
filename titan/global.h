@@ -1076,8 +1076,8 @@ int settsmuxleft(struct dvbdev* node, int value, int flag)
 			return 1;
 		}
 		
-		spnrintf(buf, MINMALLOC, tsmuxdev, node->devnr);
-		spnrintf(tmpstr, 10, "%x", value);
+		sprintf(buf, MINMALLOC, tsmuxdev, node->devnr);
+		sprintf(tmpstr, 10, "%x", value);
 		debug(100, "set %s to %s", buf, tmpstr);
 		ret = writesys(buf, tmpstr, 1);
 		
