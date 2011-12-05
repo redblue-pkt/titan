@@ -84,8 +84,13 @@ void screenpossetup()
 	tmp = listbox->select;
 	while(1)
 	{
-		addscreenrc(possetup, tmp);
-		rcret = waitrc(possetup, 0, 0);
+		if(rcret != RCTIMEOUT) addscreenrc(possetup, tmp);
+		rcret = waitrc(possetup, 1000, 0);
+		if(rcret == RCTIMEOUT)
+		{
+			drawscreen(possetup, 0);
+			continue;
+		}
 		tmp = listbox->select;
 
 		if(listbox->select != NULL)
