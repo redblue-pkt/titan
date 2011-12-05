@@ -62,7 +62,7 @@ msgstr ""
 #: global.h:3630 scan.h:781 scan.h:853 scan.h:1059 service.h:560 service.h:794
 #: skin_default_skin.xml.h:170 skinselector.h:218 epgsettings.h:114
 #: keyactions.h:183 service.h:800 rectimer.h:1121 rectimer.h:1133
-#: httpdfunc.h:2120
+#: httpdfunc.h:2120 global.h:3675
 msgid "EXIT"
 msgstr ""
 
@@ -310,7 +310,7 @@ msgstr ""
 #: videomode.h:58 videomode.h:53 global.h:3610 global.h:3630 scan.h:627
 #: scan.h:781 scan.h:853 scan.h:1059 service.h:560 service.h:794
 #: skinselector.h:218 epgsettings.h:114 keyactions.h:183 service.h:800
-#: rectimer.h:1121 rectimer.h:1133
+#: rectimer.h:1121 rectimer.h:1133 global.h:3675
 msgid "Message"
 msgstr ""
 
@@ -335,7 +335,7 @@ msgid "OK"
 msgstr ""
 
 #: bluekeyactions.h:123 global.h:3609 bluekeyactions.h:128 global.h:3610
-#: global.h:3630 keyactions.h:183
+#: global.h:3630 keyactions.h:183 global.h:3675
 msgid "ERROR cant read res"
 msgstr ""
 
