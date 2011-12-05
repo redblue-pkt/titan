@@ -26,7 +26,7 @@ int screenabout(void)
 	tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
 		
 //	snprintf(text, MINMALLOC, _("Image: %s\nVersion: %s\nCopyright: %s\n\n"), PROGNAME, VERSION, COPYRIGHT);
-	snprintf(text, MINMALLOC, tmpstr);
+	snprintf(text, MINMALLOC, "%s", tmpstr);
 	free(tmpstr), tmpstr = NULL;
 		
 	while(dvbnode != NULL)
