@@ -3,7 +3,7 @@
 
 void autochangechannelname()
 {
-	int lastsecnr = 0xff;
+	uint8_t lastsecnr = 0xff;
 	int secnr = 0;
 	unsigned char* buf = NULL;
 
