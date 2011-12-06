@@ -355,7 +355,9 @@ void playrcjumpf(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 
 		*playinfobarstatus = 1;
 		*playinfobarcount = 0;
+		status.play = 0;		
 		screenplayinfobar(file, 0, flag);
+		status.play = 1;
 	}
 }
 
@@ -366,7 +368,9 @@ void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 		playerseek(sec);
 		*playinfobarstatus = 1;
 		*playinfobarcount = 0;
+		status.play = 0;		
 		screenplayinfobar(file, 0, flag);
+		status.play = 1;
 	}
 }
 
@@ -493,6 +497,7 @@ playerstart:
 		//eplayer.
 		//playchangecodec();
 
+		status.play = 1;
 		while(1)
 		{
 			while(playerisplaying())
