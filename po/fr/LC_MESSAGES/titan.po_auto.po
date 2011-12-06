@@ -3088,7 +3088,7 @@ msgid "DEFAULT"
 msgstr ""
 
 #: skin_default_skin.xml.h:134 skin_default_skin.xml.h:142
-#: skin_default_skin.xml.h:143 skin_default_skin.xml.h:144
+#: skin_default_skin.xml.h:143 skin_default_skin.xml.h:144 play.h:464
 msgid "DEL"
 msgstr ""
 
@@ -4862,4 +4862,8 @@ msgstr ""
 
 #: skin_default_skin.xml.h:411
 msgid "Two step mute"
+msgstr ""
+
+#: play.h:464
+msgid "SELECT"
 msgstr ""
