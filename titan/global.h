@@ -2699,15 +2699,24 @@ int setmute(int value)
 {
 	debug(1000, "in");
 	char* mutedev;
+	int tmpvol;
 
-	mutedev = getconfig("mutedev", NULL);
-
-	if(mutedev != NULL)
+	if(value == 2)
 	{
-		debug(100, "set %s to %d", mutedev, value);
-		return writesysint(mutedev, value, 0);
-	}
+		tmpvol = getvol();
+		tmpvol = tmpvol*50/100;
+		setvol(tmpvol);
+	} 
+	else
+	{
+		mutedev = getconfig("mutedev", NULL);
 
+		if(mutedev != NULL)
+		{
+			debug(100, "set %s to %d", mutedev, value);
+			return writesysint(mutedev, value, 0);
+		}
+	}
 	debug(1000, "out");
 	return 0;
 }
@@ -2725,7 +2734,7 @@ int setvol(int value)
 		value = 63 - value * 63 / 100;
 		debug(100, "set %s to %d", voldev, value);
 		ret = writesysint(voldev, value, 0);
-		if(ret == 0) addconfigint("vol", tmpvol);
+		if(ret == 0 && status.mute != 2) addconfigint("vol", tmpvol);
 		return ret;
 	}
 
