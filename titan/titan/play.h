@@ -339,7 +339,7 @@ void playrcplay(char* file, int* playinfobarstatus, int* playinfobarcount, int f
 	screenplayinfobar(file, 0, flag);
 }
 
-void playrcjumpf(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int flag)
+void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int flag)
 {
 	unsigned long long int pos = 0;
 	
@@ -348,9 +348,14 @@ void playrcjumpf(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 		//a jump over the beginning of the
 		//file, freez the player
 		pos = playergetpts() / 90000;
+		if(pos <= 5)
+			pos = 0
+		else
+			pos = pos - 3;
+
 		if(pos > sec)
 			playerseek(sec * -1);
-		else
+		else if(pos > 0)
 			playerseek(pos * -1);
 
 		*playinfobarstatus = 1;
@@ -361,7 +366,7 @@ void playrcjumpf(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 	}
 }
 
-void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int flag)
+void playrcjumpf(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int flag)
 {
 	if(status.pause == 0 && status.playspeed == 0)
 	{
@@ -552,28 +557,28 @@ playerstart:
 					playrcplay(file, &playinfobarstatus, &playinfobarcount, flag);
 
 				if(rcret == getrcconfigint("rcleft", NULL))
-					playrcjumpf(file, 60, &playinfobarstatus, &playinfobarcount, flag);
-				
-				if(rcret == getrcconfigint("rc1", NULL))
-					playrcjumpf(file, skip13, &playinfobarstatus, &playinfobarcount, flag);
-				
-				if(rcret == getrcconfigint("rc4", NULL))
-					playrcjumpf(file, skip46, &playinfobarstatus, &playinfobarcount, flag);
-				
-				if(rcret == getrcconfigint("rc7", NULL))
-					playrcjumpf(file, skip79, &playinfobarstatus, &playinfobarcount, flag);
-				
-				if(rcret == getrcconfigint("rcright", NULL))
 					playrcjumpr(file, 60, &playinfobarstatus, &playinfobarcount, flag);
 				
-				if(rcret == getrcconfigint("rc3", NULL))
+				if(rcret == getrcconfigint("rc1", NULL))
 					playrcjumpr(file, skip13, &playinfobarstatus, &playinfobarcount, flag);
 				
-				if(rcret == getrcconfigint("rc6", NULL))
+				if(rcret == getrcconfigint("rc4", NULL))
 					playrcjumpr(file, skip46, &playinfobarstatus, &playinfobarcount, flag);
 				
-				if(rcret == getrcconfigint("rc9", NULL))
+				if(rcret == getrcconfigint("rc7", NULL))
 					playrcjumpr(file, skip79, &playinfobarstatus, &playinfobarcount, flag);
+				
+				if(rcret == getrcconfigint("rcright", NULL))
+					playrcjumpf(file, 60, &playinfobarstatus, &playinfobarcount, flag);
+				
+				if(rcret == getrcconfigint("rc3", NULL))
+					playrcjumpf(file, skip13, &playinfobarstatus, &playinfobarcount, flag);
+				
+				if(rcret == getrcconfigint("rc6", NULL))
+					playrcjumpf(file, skip46, &playinfobarstatus, &playinfobarcount, flag);
+				
+				if(rcret == getrcconfigint("rc9", NULL))
+					playrcjumpf(file, skip79, &playinfobarstatus, &playinfobarcount, flag);
 			}
 			//don't change this sleep, without this
 			//the player stops to fast, and a last seek can
