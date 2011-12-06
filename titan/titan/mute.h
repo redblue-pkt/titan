@@ -7,6 +7,9 @@ void screenmute(int flag)
 	struct skin* framebuffer = getscreen("framebuffer");
 	struct skin* mute = getscreen("mute");
 
+	if(getconfig("stepmute", NULL) == NULL)
+		addconfig("stepmute", "0");
+		
 	if(status.mute == 0 && atoi(getconfig("stepmute", NULL)) == 1)
 	{
 		err("************");
