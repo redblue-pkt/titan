@@ -64,7 +64,8 @@ msgstr ""
 #: skin_default_skin.xml.h:170 skinselector.h:218 epgsettings.h:114
 #: keyactions.h:183 service.h:800 rectimer.h:1121 rectimer.h:1133
 #: httpdfunc.h:2120 global.h:3675 keyactions.h:187 global.h:3684
-#: avsettings.h:192 play.h:409 play.h:417 play.h:486
+#: avsettings.h:192 play.h:409 play.h:417 play.h:486 play.h:414 play.h:422
+#: play.h:491
 msgid "EXIT"
 msgstr ""
 
@@ -317,7 +318,7 @@ msgstr ""
 #: scan.h:781 scan.h:853 scan.h:1059 service.h:560 service.h:794
 #: skinselector.h:218 epgsettings.h:114 keyactions.h:183 service.h:800
 #: rectimer.h:1121 rectimer.h:1133 global.h:3675 keyactions.h:187
-#: global.h:3684 avsettings.h:192 play.h:486
+#: global.h:3684 avsettings.h:192 play.h:486 play.h:491
 msgid "Message"
 msgstr ""
 
@@ -339,7 +340,7 @@ msgstr ""
 #: videomode.h:44 skin_default_skin.xml.h:262 videomode.h:58 videomode.h:53
 #: skin_default_skin.xml.h:263 service.h:560 service.h:794
 #: skin_default_skin.xml.h:264 service.h:800 rectimer.h:1121 avsettings.h:192
-#: play.h:417
+#: play.h:417 play.h:422
 msgid "OK"
 msgstr ""
 
@@ -810,7 +811,7 @@ msgstr ""
 #: mc_audioplayer.h:311 mc_audioplayer.h:400 mc_global.h:496 mc_global.h:721
 #: mc_pictureplayer.h:73 mc_pictureplayer.h:188 mc_pictureplayer.h:294
 #: mc_pictureplayer.h:383 mc_videoplayer.h:347 mc_videoplayer.h:432 play.h:482
-#: play.h:486
+#: play.h:486 play.h:491
 msgid "Can't start playback !"
 msgstr ""
 
@@ -1595,11 +1596,11 @@ msgstr ""
 msgid "hidden"
 msgstr ""
 
-#: play.h:405 play.h:409
+#: play.h:405 play.h:409 play.h:414
 msgid "EPG Info"
 msgstr ""
 
-#: play.h:413 play.h:417
+#: play.h:413 play.h:417 play.h:422
 msgid "Realy Delete ?"
 msgstr ""
 
@@ -3091,7 +3092,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:134 skin_default_skin.xml.h:142
 #: skin_default_skin.xml.h:143 skin_default_skin.xml.h:144 play.h:464
-#: play.h:468
+#: play.h:468 play.h:473
 msgid "DEL"
 msgstr ""
 
@@ -4867,6 +4868,6 @@ msgstr ""
 msgid "Two step mute"
 msgstr ""
 
-#: play.h:464 play.h:468
+#: play.h:464 play.h:468 play.h:473
 msgid "SELECT"
 msgstr ""
