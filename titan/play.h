@@ -243,7 +243,7 @@ void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int fla
 	if(status.pause == 0)
 	{
 		status.playspeed++;
-		if(status.playspeed > 7) status.playspeed = 7;
+		if(status.playspeed > 6) status.playspeed = 6;
 		if(status.playspeed > 0)
 		{
 			status.play = 0;
@@ -276,7 +276,7 @@ void playrcfr(char* file, int* playinfobarstatus, int* playinfobarcount, int fla
 	if(status.pause == 0)
 	{
 		status.playspeed--;
-		if(status.playspeed < -7) status.playspeed = -7;
+		if(status.playspeed < -6) status.playspeed = -6;
 		if(status.playspeed > 0)
 		{
 			status.play = 0;
