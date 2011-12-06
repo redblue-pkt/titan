@@ -13,6 +13,7 @@ void screenavsettings(int flag)
 	struct skin* autoresolution = getscreennode(avsettings, "autoresolution");
 	struct skin* autoressd = getscreennode(avsettings, "autoressd");
 	struct skin* autorests = getscreennode(avsettings, "autorests");
+	struct skin* stepmute = getscreennode(avsettings, "stepmute");
 	struct skin* policy = getscreennode(avsettings, "policy");
 	struct skin* aspect = getscreennode(avsettings, "aspect");
 	struct skin* colformat = getscreennode(avsettings, "colformat");
@@ -68,6 +69,9 @@ void screenavsettings(int flag)
 	addchoicebox(autorests, "8", _("8 sec"));
 	addchoicebox(autorests, "10", _("10 sec"));
 	setchoiceboxselection(autorests, getconfig("av_videomode_autores_ts", NULL));
+	addchoicebox(stepmute, "0", _("off"));
+	addchoicebox(stepmute, "1", _("on"));
+	setchoiceboxselection(stepmute, getconfig("stepmute", NULL));
 
 	ret = getpolicychoices();
 	changeinput(policy, ret);
@@ -204,6 +208,9 @@ void screenavsettings(int flag)
 				addconfig("av_videomode_autores_sd", autoressd->ret);
 				addconfig("av_videomode_autores_ts", autorests->ret);
 			}
+			
+			if(stepmute->ret != NULL)
+				addconfig("stepmute", stepmute->ret);
 				
 			if(policy->ret != NULL)
 			{
