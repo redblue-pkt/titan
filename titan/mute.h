@@ -12,16 +12,15 @@ void screenmute(int flag)
 		
 	if(status.mute == 0 && atoi(getconfig("stepmute", NULL)) == 1)
 	{
-		err("************");
 		status.mute = 2;
 		setmute(2);
 	}
 	else if(status.mute == 0 || status.mute == 2)
 	{
-		setmute(1);
 		if(status.mute == 2)
 			setvol(getconfigint("vol", NULL));
 		status.mute = 1;
+		setmute(1);
 		setnodeattr(mute, framebuffer);
 		if(status.drawallwaysbg[0] != NULL)
 			free(status.drawallwaysbg[0]);
