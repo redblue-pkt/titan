@@ -78,52 +78,52 @@ void screenmc_videoplayer()
 		if(rcret == getrcconfigint("rc1", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpf(filename, skip13, &playinfobarstatus, &playinfobarcount, flag);
+				playrcjumpr(filename, skip13, &playinfobarstatus, &playinfobarcount, flag);
 		}
 		else if(rcret == getrcconfigint("rc4", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpf(filename, skip46, &playinfobarstatus, &playinfobarcount, flag);
+				playrcjumpr(filename, skip46, &playinfobarstatus, &playinfobarcount, flag);
 		}
 		else if(rcret == getrcconfigint("rc7", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpf(filename, skip79, &playinfobarstatus, &playinfobarcount, flag);
+				playrcjumpr(filename, skip79, &playinfobarstatus, &playinfobarcount, flag);
 		}
 		else if(rcret == getrcconfigint("rc3", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpr(filename, skip13, &playinfobarstatus, &playinfobarcount, flag);
+				playrcjumpf(filename, skip13, &playinfobarstatus, &playinfobarcount, flag);
 		}
 		else if(rcret == getrcconfigint("rc6", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpr(filename, skip46, &playinfobarstatus, &playinfobarcount, flag);
+				playrcjumpf(filename, skip46, &playinfobarstatus, &playinfobarcount, flag);
 		}
 		else if(rcret == getrcconfigint("rc9", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpr(filename, skip79, &playinfobarstatus, &playinfobarcount, flag);
+				playrcjumpf(filename, skip79, &playinfobarstatus, &playinfobarcount, flag);
 		}
 		else if(rcret == getrcconfigint("rcleft", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpr(filename, -60, &playinfobarstatus, &playinfobarcount, flag);
+				playrcjumpr(filename, 60, &playinfobarstatus, &playinfobarcount, flag);
 		}
 		else if(rcret == getrcconfigint("rcright", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpr(filename, 60, &playinfobarstatus, &playinfobarcount, flag);
+				playrcjumpf(filename, 60, &playinfobarstatus, &playinfobarcount, flag);
 		}
 		else if(rcret == getrcconfigint("rcdown", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpr(filename, -600, &playinfobarstatus, &playinfobarcount, flag);
+				playrcjumpr(filename, 600, &playinfobarstatus, &playinfobarcount, flag);
 		}
 		else if(rcret == getrcconfigint("rcup", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpr(filename, 600, &playinfobarstatus, &playinfobarcount, flag);
+				playrcjumpf(filename, 600, &playinfobarstatus, &playinfobarcount, flag);
 		}
 
 		else if(rcret == getrcconfigint("rcff", NULL))
