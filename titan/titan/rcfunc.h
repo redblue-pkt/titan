@@ -988,7 +988,7 @@ int addscreenrc(struct skin* screen, struct skin* node)
 		addrc(getrcconfigint("rchelp", NULL), helpbox, screen, node);
 		if(node->type == INPUTBOX) addrc(getrcconfigint("rcff", NULL), inputboxff, screen, node);
 		if(node->type == INPUTBOX) addrc(getrcconfigint("rcfr", NULL), inputboxfr, screen, node);
-		if(node->type == INPUTBOX) addrc(getrcconfigint("rctxt", NULL), inputboxhelp, screen, node);
+		if(node->type == INPUTBOX) addrc(getrcconfigint("rctext", NULL), inputboxhelp, screen, node);
 	}
 	else if(node->type == TEXTBOX)
 	{
