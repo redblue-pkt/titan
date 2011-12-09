@@ -348,15 +348,14 @@ void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 		//a jump over the beginning of the
 		//file, freez the player
 		pos = playergetpts() / 90000;
-		if(pos <= 5)
-			pos = 0;
-		else
-			pos = pos - 3;
 
-		if(pos > sec)
+		if(pos + 5 > sec)
 			playerseek(sec * -1);
-		else if(pos > 0)
-			playerseek(pos * -1);
+		else
+		{
+			playerstop();
+			playerstart(file);
+		}
 
 		*playinfobarstatus = 1;
 		*playinfobarcount = 0;
