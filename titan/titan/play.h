@@ -339,20 +339,16 @@ void playrcplay(char* file, int* playinfobarstatus, int* playinfobarcount, int f
 	screenplayinfobar(file, 0, flag);
 }
 
-void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int* playrcjumprtime, int flag)
+void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int flag)
 {
 	unsigned long long int pos = 0;
-	time_t akttime = time(NULL);
-	
-	if(*playrcjumprtime + 1 > akttime) return;
 	
 	if(status.pause == 0 && status.playspeed == 0)
 	{
 		//a jump over the beginning of the
 		//file, freez the player
 		pos = playergetpts() / 90000;
-
-		*playrcjumprtime = akttime;		
+	
 		if(pos + 10 > sec)
 			playerseek(sec * -1);
 		else
@@ -366,6 +362,7 @@ void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 		status.play = 0;		
 		screenplayinfobar(file, 0, flag);
 		status.play = 1;
+		sleep(1);
 	}
 }
 
@@ -449,7 +446,7 @@ void playwritevfd(char* file)
 // flag 2 = playing
 void screenplay(int startfolder, int flag)
 {
-	int rcret = 0, playrcjumprtime = 0;
+	int rcret = 0;
 	char* file = NULL, *tmpstr = NULL;
 	char* tmppolicy = NULL, *startdir = NULL;
 	struct skin* playinfobar = getscreen("playinfobar");
@@ -560,16 +557,16 @@ playerstart:
 					playrcplay(file, &playinfobarstatus, &playinfobarcount, flag);
 
 				if(rcret == getrcconfigint("rcleft", NULL))
-					playrcjumpr(file, 60, &playinfobarstatus, &playinfobarcount, &playrcjumprtime, flag);
+					playrcjumpr(file, 60, &playinfobarstatus, &playinfobarcount, flag);
 				
 				if(rcret == getrcconfigint("rc1", NULL))
-					playrcjumpr(file, skip13, &playinfobarstatus, &playinfobarcount, &playrcjumprtime, flag);
+					playrcjumpr(file, skip13, &playinfobarstatus, &playinfobarcount, flag);
 				
 				if(rcret == getrcconfigint("rc4", NULL))
-					playrcjumpr(file, skip46, &playinfobarstatus, &playinfobarcount, &playrcjumprtime, flag);
+					playrcjumpr(file, skip46, &playinfobarstatus, &playinfobarcount, flag);
 				
 				if(rcret == getrcconfigint("rc7", NULL))
-					playrcjumpr(file, skip79, &playinfobarstatus, &playinfobarcount, &playrcjumprtime, flag);
+					playrcjumpr(file, skip79, &playinfobarstatus, &playinfobarcount, flag);
 				
 				if(rcret == getrcconfigint("rcright", NULL))
 					playrcjumpf(file, 60, &playinfobarstatus, &playinfobarcount, flag);
