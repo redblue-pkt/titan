@@ -59,7 +59,7 @@ void timeshiftplay()
 {
 	int ret = 1;
 	struct service* snode = getservice(RECORDTIMESHIFT, 0);
-
+	
 	if(status.playing == 0)
 	{
 		if(snode != NULL) ret = playerstartts(snode->recname, 1);
@@ -70,6 +70,13 @@ void timeshiftplay()
 	}
 	else
 		playercontinuets();
+}
+
+void timeshiftff()
+{
+	struct service* snode = getservice(RECORDPLAY, 0);
+	if(snode != 0)
+		recordskipplay(snode, 5);
 }
 
 #endif

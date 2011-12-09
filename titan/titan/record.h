@@ -953,4 +953,38 @@ void screenrecorddirect()
 	free(mlistbox); mlistbox = NULL;
 }
 
+int recordskipplay(struct service* servicenode, int sekunden)
+{
+	off_t offset;
+	int dupfd = -1;
+	int ret = 0;
+	unsigned long long pts = 0;
+	unsigned long long bitrate = 0;
+	
+	if(servicenode->recsrcfd < 0)
+	{
+		err("source fd not ok");
+		return 1;
+	}
+	//offset = lseek(servicenode->recsrcfd, 0, SEEK_CUR);
+	/*dupfd = fcntl(servicenode->recsrcfd, F_DUPFD, 0);
+	if(dupfd < 0)
+	{
+		err("copy source fd not ok");
+		return 1;
+	
+	if(gettsinfo(servicenode->recsrcfd, &pts, &bitrate) != 0)
+	{
+		err("cant read bitrate");
+		return 1;
+	}*/
+	ret = videoclearbuffer(status.aktservice->videodev);
+	ret = audioclearbuffer(status.aktservice->audiodev);
+	offset = lseek(servicenode->recsrcfd, RECPLAYBSIZE * 3, SEEK_CUR);
+	//offset = lseek(servicenode->recsrcfd, (bitrate / 8) * sekunden, SEEK_CUR);
+	//offset = lseek(servicenode->recsrcfd, offset + (bitrate / 8 * sekunden), SEEK_SET);
+	
+	return 0;
+}
+
 #endif
