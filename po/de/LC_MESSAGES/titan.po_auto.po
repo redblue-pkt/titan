@@ -71,7 +71,8 @@ msgstr ""
 #: scan.h:855 scan.h:1061 play.h:418 play.h:426 play.h:495 play.h:421
 #: play.h:429 play.h:498 play.h:430 play.h:499 play.h:490 record.h:934
 #: skin_default_skin.xml.h:171 play.h:420 play.h:428 play.h:497
-#: plugins_panel_skin.xml.h:39 skins_panel_skin.xml.h:39
+#: plugins_panel_skin.xml.h:39 skins_panel_skin.xml.h:39 global.h:2594
+#: global.h:3721
 msgid "EXIT"
 msgstr ""
 
@@ -329,12 +330,13 @@ msgstr ""
 #: rectimer.h:1121 rectimer.h:1133 global.h:3675 keyactions.h:187
 #: global.h:3684 avsettings.h:192 play.h:486 play.h:491 global.h:3688
 #: play.h:496 scan.h:629 scan.h:783 scan.h:855 scan.h:1061 play.h:495
-#: play.h:498 play.h:499 play.h:490 record.h:934 play.h:497
+#: play.h:498 play.h:499 play.h:490 record.h:934 play.h:497 global.h:2594
+#: global.h:3721
 msgid "Message"
 msgstr ""
 
 #: avsettings.h:188 videomode.h:44 videomode.h:58 videomode.h:53
-#: avsettings.h:192
+#: avsettings.h:192 global.h:2594
 msgid "Is this Videomode ok ?"
 msgstr ""
 
@@ -352,13 +354,13 @@ msgstr ""
 #: skin_default_skin.xml.h:263 service.h:560 service.h:794
 #: skin_default_skin.xml.h:264 service.h:800 rectimer.h:1121 avsettings.h:192
 #: play.h:417 play.h:422 play.h:427 play.h:426 play.h:429 play.h:430
-#: play.h:421 skin_default_skin.xml.h:265 play.h:428
+#: play.h:421 skin_default_skin.xml.h:265 play.h:428 global.h:2594
 msgid "OK"
 msgstr ""
 
 #: bluekeyactions.h:123 global.h:3609 bluekeyactions.h:128 global.h:3610
 #: global.h:3630 keyactions.h:183 global.h:3675 keyactions.h:187 global.h:3684
-#: global.h:3688
+#: global.h:3688 global.h:3721
 msgid "ERROR cant read res"
 msgstr ""
 
