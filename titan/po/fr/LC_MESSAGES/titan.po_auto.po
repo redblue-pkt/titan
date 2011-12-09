@@ -67,7 +67,7 @@ msgstr ""
 #: avsettings.h:192 play.h:409 play.h:417 play.h:486 play.h:414 play.h:422
 #: play.h:491 global.h:3688 play.h:419 play.h:427 play.h:496 scan.h:783
 #: scan.h:855 scan.h:1061 play.h:418 play.h:426 play.h:495 play.h:421
-#: play.h:429 play.h:498 play.h:430 play.h:499
+#: play.h:429 play.h:498 play.h:430 play.h:499 play.h:490
 msgid "EXIT"
 msgstr ""
 
@@ -322,7 +322,7 @@ msgstr ""
 #: rectimer.h:1121 rectimer.h:1133 global.h:3675 keyactions.h:187
 #: global.h:3684 avsettings.h:192 play.h:486 play.h:491 global.h:3688
 #: play.h:496 scan.h:629 scan.h:783 scan.h:855 scan.h:1061 play.h:495
-#: play.h:498 play.h:499
+#: play.h:498 play.h:499 play.h:490
 msgid "Message"
 msgstr ""
 
@@ -345,6 +345,7 @@ msgstr ""
 #: skin_default_skin.xml.h:263 service.h:560 service.h:794
 #: skin_default_skin.xml.h:264 service.h:800 rectimer.h:1121 avsettings.h:192
 #: play.h:417 play.h:422 play.h:427 play.h:426 play.h:429 play.h:430
+#: play.h:421
 msgid "OK"
 msgstr ""
 
@@ -817,6 +818,7 @@ msgstr ""
 #: mc_pictureplayer.h:73 mc_pictureplayer.h:188 mc_pictureplayer.h:294
 #: mc_pictureplayer.h:383 mc_videoplayer.h:347 mc_videoplayer.h:432 play.h:482
 #: play.h:486 play.h:491 play.h:496 play.h:495 play.h:498 play.h:499
+#: play.h:490
 msgid "Can't start playback !"
 msgstr ""
 
@@ -1603,12 +1605,12 @@ msgid "hidden"
 msgstr ""
 
 #: play.h:405 play.h:409 play.h:414 play.h:419 play.h:418 play.h:421
-#: play.h:422
+#: play.h:422 play.h:413
 msgid "EPG Info"
 msgstr ""
 
 #: play.h:413 play.h:417 play.h:422 play.h:427 play.h:426 play.h:429
-#: play.h:430
+#: play.h:430 play.h:421
 msgid "Realy Delete ?"
 msgstr ""
 
@@ -3104,6 +3106,7 @@ msgstr ""
 #: skin_default_skin.xml.h:134 skin_default_skin.xml.h:142
 #: skin_default_skin.xml.h:143 skin_default_skin.xml.h:144 play.h:464
 #: play.h:468 play.h:473 play.h:478 play.h:477 play.h:480 play.h:481
+#: play.h:472
 msgid "DEL"
 msgstr ""
 
@@ -4908,7 +4911,7 @@ msgid "Two step mute"
 msgstr ""
 
 #: play.h:464 play.h:468 play.h:473 play.h:478 play.h:477 play.h:480
-#: play.h:481
+#: play.h:481 play.h:472
 msgid "SELECT"
 msgstr ""
 
