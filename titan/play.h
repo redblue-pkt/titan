@@ -349,7 +349,7 @@ void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 		//file, freez the player
 		pos = playergetpts() / 90000;
 
-		if(pos + 5 > sec)
+		if(pos + 60 > sec)
 			playerseek(sec * -1);
 		else
 		{
