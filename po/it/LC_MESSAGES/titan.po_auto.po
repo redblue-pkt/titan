@@ -65,7 +65,8 @@ msgstr ""
 #: keyactions.h:183 service.h:800 rectimer.h:1121 rectimer.h:1133
 #: httpdfunc.h:2120 global.h:3675 keyactions.h:187 global.h:3684
 #: avsettings.h:192 play.h:409 play.h:417 play.h:486 play.h:414 play.h:422
-#: play.h:491
+#: play.h:491 global.h:3688 play.h:419 play.h:427 play.h:496 scan.h:783
+#: scan.h:855 scan.h:1061
 msgid "EXIT"
 msgstr ""
 
@@ -99,7 +100,7 @@ msgstr ""
 #: scan.h:713 scan.h:999 scan.h:1003 scan.h:1007 epgsettings.h:61 adjust.h:66
 #: adjust.h:91 adjust.h:118 adjust.h:121 rectimer.h:863 rectimer.h:868
 #: rectimer.h:873 rectimer.h:878 rectimer.h:883 rectimer.h:888 rectimer.h:893
-#: avsettings.h:114
+#: avsettings.h:114 scan.h:715 scan.h:1009
 msgid "no"
 msgstr ""
 
@@ -139,7 +140,7 @@ msgstr ""
 #: scan.h:714 scan.h:1000 scan.h:1004 scan.h:1008 epgsettings.h:62 adjust.h:67
 #: adjust.h:92 adjust.h:117 adjust.h:122 rectimer.h:864 rectimer.h:869
 #: rectimer.h:874 rectimer.h:879 rectimer.h:884 rectimer.h:889 rectimer.h:894
-#: avsettings.h:115
+#: avsettings.h:115 scan.h:716 scan.h:1010
 msgid "yes"
 msgstr ""
 
@@ -318,7 +319,8 @@ msgstr ""
 #: scan.h:781 scan.h:853 scan.h:1059 service.h:560 service.h:794
 #: skinselector.h:218 epgsettings.h:114 keyactions.h:183 service.h:800
 #: rectimer.h:1121 rectimer.h:1133 global.h:3675 keyactions.h:187
-#: global.h:3684 avsettings.h:192 play.h:486 play.h:491
+#: global.h:3684 avsettings.h:192 play.h:486 play.h:491 global.h:3688
+#: play.h:496 scan.h:629 scan.h:783 scan.h:855 scan.h:1061
 msgid "Message"
 msgstr ""
 
@@ -340,12 +342,13 @@ msgstr ""
 #: videomode.h:44 skin_default_skin.xml.h:262 videomode.h:58 videomode.h:53
 #: skin_default_skin.xml.h:263 service.h:560 service.h:794
 #: skin_default_skin.xml.h:264 service.h:800 rectimer.h:1121 avsettings.h:192
-#: play.h:417 play.h:422
+#: play.h:417 play.h:422 play.h:427
 msgid "OK"
 msgstr ""
 
 #: bluekeyactions.h:123 global.h:3609 bluekeyactions.h:128 global.h:3610
 #: global.h:3630 keyactions.h:183 global.h:3675 keyactions.h:187 global.h:3684
+#: global.h:3688
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -811,7 +814,7 @@ msgstr ""
 #: mc_audioplayer.h:311 mc_audioplayer.h:400 mc_global.h:496 mc_global.h:721
 #: mc_pictureplayer.h:73 mc_pictureplayer.h:188 mc_pictureplayer.h:294
 #: mc_pictureplayer.h:383 mc_videoplayer.h:347 mc_videoplayer.h:432 play.h:482
-#: play.h:486 play.h:491
+#: play.h:486 play.h:491 play.h:496
 msgid "Can't start playback !"
 msgstr ""
 
@@ -1597,11 +1600,11 @@ msgstr ""
 msgid "hidden"
 msgstr ""
 
-#: play.h:405 play.h:409 play.h:414
+#: play.h:405 play.h:409 play.h:414 play.h:419
 msgid "EPG Info"
 msgstr ""
 
-#: play.h:413 play.h:417 play.h:422
+#: play.h:413 play.h:417 play.h:422 play.h:427
 msgid "Realy Delete ?"
 msgstr ""
 
@@ -2361,57 +2364,57 @@ msgstr ""
 msgid "Data"
 msgstr ""
 
-#: scan.h:563 scan.h:574 scan.h:576
+#: scan.h:563 scan.h:574 scan.h:576 scan.h:578
 msgid "Sat: "
 msgstr ""
 
-#: scan.h:569 scan.h:580 scan.h:582
+#: scan.h:569 scan.h:580 scan.h:582 scan.h:584
 msgid "Transponder: "
 msgstr ""
 
-#: scan.h:577 scan.h:588 scan.h:590
+#: scan.h:577 scan.h:588 scan.h:590 scan.h:592
 msgid "TV: "
 msgstr ""
 
-#: scan.h:585 scan.h:596 scan.h:598
+#: scan.h:585 scan.h:596 scan.h:598 scan.h:600
 msgid "Radio: "
 msgstr ""
 
-#: scan.h:593 scan.h:604 scan.h:606
+#: scan.h:593 scan.h:604 scan.h:606 scan.h:608
 msgid "Data: "
 msgstr ""
 
-#: scan.h:614 scan.h:625 scan.h:627
+#: scan.h:614 scan.h:625 scan.h:627 scan.h:629
 msgid "Wait for channel scan end"
 msgstr ""
 
-#: scan.h:768 scan.h:779 scan.h:781
+#: scan.h:768 scan.h:779 scan.h:781 scan.h:783
 msgid ""
 "Scan is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 
-#: scan.h:840 scan.h:851 scan.h:853
+#: scan.h:840 scan.h:851 scan.h:853 scan.h:855
 msgid "No Tuner configured"
 msgstr ""
 
-#: scan.h:853 scan.h:864 scan.h:866
+#: scan.h:853 scan.h:864 scan.h:866 scan.h:868
 msgid "Single Transponder"
 msgstr ""
 
-#: scan.h:854 scan.h:865 scan.h:867
+#: scan.h:854 scan.h:865 scan.h:867 scan.h:869
 msgid "Single Sat"
 msgstr ""
 
-#: scan.h:855 scan.h:866 scan.h:868
+#: scan.h:855 scan.h:866 scan.h:868 scan.h:870
 msgid "Multi Sat"
 msgstr ""
 
-#: scan.h:860 scan.h:871 scan.h:873
+#: scan.h:860 scan.h:871 scan.h:873 scan.h:875
 msgid "Auto Scan"
 msgstr ""
 
-#: scan.h:1046 scan.h:1057 scan.h:1059
+#: scan.h:1046 scan.h:1057 scan.h:1059 scan.h:1061
 msgid "Transponder changed"
 msgstr ""
 
@@ -3096,7 +3099,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:134 skin_default_skin.xml.h:142
 #: skin_default_skin.xml.h:143 skin_default_skin.xml.h:144 play.h:464
-#: play.h:468 play.h:473
+#: play.h:468 play.h:473 play.h:478
 msgid "DEL"
 msgstr ""
 
@@ -4900,7 +4903,7 @@ msgstr ""
 msgid "Two step mute"
 msgstr ""
 
-#: play.h:464 play.h:468 play.h:473
+#: play.h:464 play.h:468 play.h:473 play.h:478
 msgid "SELECT"
 msgstr ""
 
