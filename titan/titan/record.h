@@ -959,9 +959,6 @@ int recordskipplay(struct service* servicenode, int sekunden)
 	unsigned long long pts = 0;
 	unsigned long long bitrate = 0;
 	
-	sekunden = -3;
-	
-	
 	if(servicenode->recsrcfd < 0)
 	{
 		err("source fd not ok");
