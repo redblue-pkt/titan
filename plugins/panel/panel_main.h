@@ -124,6 +124,8 @@ int panel_menucall(struct skin* panel_menuentry)
 		screenpanel_extensions(1);
 	} else if(ostrcmp("panel_extensions_tmpipkinstall", panel_menuentry->name) == 0){
 		screenpanel_extensions(2);
+	} else if(ostrcmp("panel_feed", panel_menuentry->name) == 0){
+		screenpanel_feed();
 // infos main
 	} else if(ostrcmp("panel_infos_main", panel_menuentry->name) == 0){
 		struct skin* screen = getscreen("panel_infos_main");
