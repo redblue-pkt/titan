@@ -2568,6 +2568,39 @@ char* getvideomode()
 	return value;
 }
 
+void switchvideomode()
+{
+	char* tmpstr = NULL;
+
+	tmpstr = getvideomode();
+
+	if(tmpstr != NULL)
+	{
+		if(ostrcmp("pal", tmpstr) == 0 || ostrncmp("576", tmpstr, 3) == 0)
+		{
+			setvideomode("720p50");
+			changefbresolution("720p50");
+		}
+		else if(ostrncmp("720", tmpstr, 3) == 0)
+		{
+			setvideomode("1080i50");
+			changefbresolution("1080i50");
+		}
+		else if(ostrncmp("1080", tmpstr, 4) == 0)
+		{
+			setvideomode("576i50");
+			changefbresolution("576i50");
+		}
+		int ret = textbox(_("Message"), _("Is this Videomode ok ?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+		if(ret == 0 || ret == 1)
+		{
+			setvideomode(tmpstr);
+			changefbresolution(tmpstr);
+		}
+	}
+	free(tmpstr);
+}
+
 int setvideomode(char* value)
 {
 	debug(1000, "in");

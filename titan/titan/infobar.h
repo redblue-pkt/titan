@@ -273,6 +273,16 @@ void screeninfobar()
 			subtitlepause(0);
 			continue;
 		}
+		if(rcret == getrcconfigint("rcresolution", NULL))
+		{
+			subtitlepause(1);
+			status.infobar = 0;
+			clearscreen(infobar);
+			switchvideomode();
+			drawscreen(skin, 0);
+			subtitlepause(0);
+			continue;
+		}
 		if(rcret == getrcconfigint("rcinfo", NULL))
 		{
 			if(status.infobar == 1)
