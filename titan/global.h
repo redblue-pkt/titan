@@ -2895,7 +2895,9 @@ char* command(char* input)
 {
 	debug(1000, "in");
 	char* tmpstr = NULL, *fileline = NULL;
-	FILE *iopipe;
+	FILE *iopipe = NULL;
+	
+	if(input == NULL) return NULL;
 
 	fileline = malloc(MINMALLOC);
 	if(fileline == NULL)
@@ -3501,8 +3503,10 @@ char* get_ipk_info(char* section)
 char* get_uuid(char* device)
 {
 	debug(60, "in %s", device);
-
 	char* cmd = NULL, *tmpstr = NULL;
+	
+	if(device == NULL) return NULL;
+	
 	cmd = ostrcat(cmd, "/bin/blkid -w /dev/null -c /dev/null -s UUID /dev/", 1, 0);
 	cmd = ostrcat(cmd, device, 1, 0);
 	cmd = ostrcat(cmd, " | cut -d'\"' -f2", 1, 0);
@@ -3695,8 +3699,8 @@ char* gettimestamp()
 	struct timeval numtime;
 		
 	gettimeofday(&numtime, 0);
-	timestamp = ostrcat(timestamp, olutoa(numtime.tv_sec), 1, 0);
-	timestamp = ostrcat(timestamp, olutoa(numtime.tv_usec), 1, 0);
+	timestamp = ostrcat(timestamp, olutoa(numtime.tv_sec), 1, 1);
+	timestamp = ostrcat(timestamp, olutoa(numtime.tv_usec), 1, 1);
 
 	return timestamp;
 } 

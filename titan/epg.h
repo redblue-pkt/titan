@@ -1351,7 +1351,7 @@ int readepg(const char* filename)
 int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fenode, int flag)
 {
 	int readlen = 0, pos = 0, len = 0, count = 0;
-	unsigned char *buf = NULL, *head = buf;
+	unsigned char *buf = NULL, *head = NULL;
 	struct dvbdev* dmxnode;
 	struct eit* eit = NULL;
 	unsigned long seen[16] = {0};
@@ -1365,6 +1365,7 @@ int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 		err("no memory");
 		return 1;
 	}
+	head = buf;
 
 	if(fenode == NULL) fenode = status.aktservice->fedev;
 	if(fenode == NULL)
