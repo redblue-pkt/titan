@@ -341,12 +341,14 @@ void doscan(struct stimerthread* timernode)
 			//del channels from transponder if selected
 			if(scaninfo.clear == 1)
 			{
+				struct channel* tmpchannel = NULL;
 				chnode = channel;
 				while(chnode != NULL)
 				{
+					tmpchannel = chnode->next;
 					if(chnode->transponder == tpnode)
 						delchannel(chnode->serviceid, chnode->transponderid, 1);
-					chnode = chnode->next;
+					chnode = tmpchannel;
 				}
 			}
 
