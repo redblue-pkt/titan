@@ -891,12 +891,10 @@ void screenrecorddirect()
 	{
 		if(servicenode->type == RECORDDIRECT && servicenode->recname != NULL)
 		{
-			tmpstr = ostrcat(tmpstr, _("stop"), 1, 0);
-			tmpstr = ostrcat(tmpstr, " (", 1, 0);
+			tmpstr = ostrcat(tmpstr, "stop (", 1, 0);
 			tmpstr = ostrcat(tmpstr, servicenode->recname, 1, 0);
 			tmpstr = ostrcat(tmpstr, ")\n", 1, 0);
-			tmpstr = ostrcat(tmpstr, _("change"), 1, 0);
-			tmpstr = ostrcat(tmpstr, " (", 1, 0);
+			tmpstr = ostrcat(tmpstr, "change (", 1, 0);
 			tmpstr = ostrcat(tmpstr, servicenode->recname, 1, 0);
 			tmpstr = ostrcat(tmpstr, ")\n", 1, 0);
 		}
@@ -906,7 +904,7 @@ void screenrecorddirect()
 	//tmpstr = ostrcat(tmpstr, "add recording (stop after current event)\nadd recording (indefinitely)\nadd recording (enter duration)\nadd recording (enter endtime)", 1, 0);
 	tmpstr = ostrcat(tmpstr, "add recording (stop after current event)\nadd recording (indefinitely)\nadd recording (enter duration)", 1, 0);
 
-	mlistbox = menulistbox(NULL, tmpstr, "recordlist", "Record", NULL, 0, 0);
+	mlistbox = menulistbox(NULL, tmpstr, "menulist", "Record", NULL, 0, 0);
 	if(mlistbox != NULL && strstr(mlistbox, "stop") == mlistbox)
 	{
 		servicenode = getrecordbyname(mlistbox, RECORDDIRECT);
@@ -961,6 +959,9 @@ int recordskipplay(struct service* servicenode, int sekunden)
 	unsigned long long pts = 0;
 	unsigned long long bitrate = 0;
 	
+	sekunden = -3;
+	
+	
 	if(servicenode->recsrcfd < 0)
 	{
 		err("source fd not ok");
@@ -980,10 +981,15 @@ int recordskipplay(struct service* servicenode, int sekunden)
 	}*/
 	ret = videoclearbuffer(status.aktservice->videodev);
 	ret = audioclearbuffer(status.aktservice->audiodev);
-	offset = lseek(servicenode->recsrcfd, RECPLAYBSIZE * 3, SEEK_CUR);
+	if(sekunden > 0 )  
+		offset = lseek(servicenode->recsrcfd, RECPLAYBSIZE * 3, SEEK_CUR);
 	//offset = lseek(servicenode->recsrcfd, (bitrate / 8) * sekunden, SEEK_CUR);
 	//offset = lseek(servicenode->recsrcfd, offset + (bitrate / 8 * sekunden), SEEK_SET);
-	
+	else
+	{
+		offset = lseek(servicenode->recsrcfd, 0, SEEK_CUR);
+		offset = lseek(servicenode->recsrcfd, offset - RECPLAYBSIZE * 3, SEEK_SET);
+	}
 	return 0;
 }
 
