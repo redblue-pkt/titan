@@ -73,7 +73,7 @@ msgstr ""
 #: skin_default_skin.xml.h:171 play.h:420 play.h:428 play.h:497
 #: plugins_panel_skin.xml.h:39 skins_panel_skin.xml.h:39 global.h:2594
 #: global.h:3721 mc_videoplayer.h:355 mc_videoplayer.h:440 panel_main.h:243
-#: play.h:425 play.h:494
+#: play.h:425 play.h:494 global.h:3723
 msgid "EXIT"
 msgstr ""
 
@@ -334,7 +334,7 @@ msgstr ""
 #: play.h:496 scan.h:629 scan.h:783 scan.h:855 scan.h:1061 play.h:495
 #: play.h:498 play.h:499 play.h:490 record.h:934 play.h:497 global.h:2594
 #: global.h:3721 mc_videoplayer.h:355 mc_videoplayer.h:440 panel_main.h:243
-#: play.h:494
+#: play.h:494 global.h:3723
 msgid "Message"
 msgstr ""
 
@@ -363,7 +363,7 @@ msgstr ""
 
 #: bluekeyactions.h:123 global.h:3609 bluekeyactions.h:128 global.h:3610
 #: global.h:3630 keyactions.h:183 global.h:3675 keyactions.h:187 global.h:3684
-#: global.h:3688 global.h:3721
+#: global.h:3688 global.h:3721 global.h:3723
 msgid "ERROR cant read res"
 msgstr ""
 
