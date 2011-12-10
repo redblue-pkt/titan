@@ -313,6 +313,14 @@ void screenmc_videoplayer()
 				continue;
 			}
 
+			playinfobarcount = 0;
+			playinfobarstatus = 1;
+			status.playspeed = 0;
+			status.pause = 0;
+			status.play = 0;
+			playlist = 0;
+			playinfobarcount = 0;
+
 			if(playlist == 1 && listbox->select != NULL)
 			{
 				filename = ostrcat("", listbox->select->name, 0, 0);
