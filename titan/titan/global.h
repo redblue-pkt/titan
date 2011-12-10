@@ -1654,13 +1654,16 @@ int delchar(char** text, int pos)
 {
 	debug(1000, "in");
 	char *tmptext = NULL;
-	int i, y = 0;
+	int i = 0, y = 0, len = 0;
 
-	if(*text == NULL)
+	if(text == NULL || *text == NULL)
 	{
 		debug(1000, "out -> NULL detect");
 		return pos;
 	}
+
+	len = strlen(*text);
+	if(len == 0) return pos;
 
 	tmptext = malloc(strlen(*text));
 	if(tmptext == NULL)
@@ -1678,7 +1681,7 @@ int delchar(char** text, int pos)
 		y++;
 	}
 
-	tmptext[i] = '\0';
+	if(i > 0) tmptext[i - 1] = '\0';
 	if(pos >= strlen(tmptext)) pos = strlen(tmptext);
 
 	free(*text);
@@ -1694,7 +1697,7 @@ int insertchar(char** text, char zeichen, int pos)
 	char *tmptext = NULL;
 	int i, y = 0;
 
-	if(*text == NULL)
+	if(text == NULL || *text == NULL)
 	{
 		debug(1000, "out -> NULL detect");
 		return pos;
