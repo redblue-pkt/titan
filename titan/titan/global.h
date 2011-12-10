@@ -2591,12 +2591,14 @@ void switchvideomode()
 			setvideomode("576i50");
 			changefbresolution("576i50");
 		}
+		/*
 		int ret = textbox(_("Message"), _("Is this Videomode ok ?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 		if(ret == 0 || ret == 1)
 		{
 			setvideomode(tmpstr);
 			changefbresolution(tmpstr);
 		}
+		*/
 	}
 	free(tmpstr);
 }
