@@ -754,10 +754,12 @@ struct hdd* addhdd(char* device, int partition, unsigned long size, int removabl
 	return newnode;
 }
 
-void freehdd()
+//flag = 0: mutex lock
+//flag = 1: no mutex lock
+void freehdd(int flag)
 {
 	debug(1000, "in");
-	m_lock(&status.hddmutex, 13);
+	if(flag == 0) m_lock(&status.hddmutex, 13);
 	struct hdd *node = hdd, *prev = hdd;
 
 	while(node != NULL)
@@ -768,7 +770,7 @@ void freehdd()
 			delhdd(prev->device, 1);
 	}
 	debug(1000, "out");
-	m_unlock(&status.hddmutex, 13);
+	if(flag == 0) m_unlock(&status.hddmutex, 13);
 }
 
 int addhddall()
@@ -880,6 +882,12 @@ int addhddall()
 			delhdd(node->device, 1);
 		}
 		node = node->next;
+	}
+
+	if(node != NULL && tmpstr == NULL)
+	{
+		debug(80, "remove all");
+		freehdd(1);
 	}
 
 	free(tmpstr);

@@ -299,7 +299,7 @@ void oshutdown(int exitcode, int flag)
 		freercconfig();
 		freeskinconfig();
 		freequeue();
-		freehdd();
+		freehdd(0);
 
 		free(status.configfile);
 		freeconfig();
