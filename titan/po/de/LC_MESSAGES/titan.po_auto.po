@@ -5002,7 +5002,7 @@ msgstr ""
 msgid "Satelite Entrys"
 msgstr ""
 
-#: tunerconfig.h:119
+#: tunerconfig.h:119 audiotrack.h:119
 msgid "undefined"
 msgstr ""
 
