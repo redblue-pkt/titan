@@ -891,10 +891,12 @@ void screenrecorddirect()
 	{
 		if(servicenode->type == RECORDDIRECT && servicenode->recname != NULL)
 		{
-			tmpstr = ostrcat(tmpstr, "stop (", 1, 0);
+			tmpstr = ostrcat(tmpstr, _("stop"), 1, 0);
+			tmpstr = ostrcat(tmpstr, " (", 1, 0);
 			tmpstr = ostrcat(tmpstr, servicenode->recname, 1, 0);
 			tmpstr = ostrcat(tmpstr, ")\n", 1, 0);
-			tmpstr = ostrcat(tmpstr, "change (", 1, 0);
+			tmpstr = ostrcat(tmpstr, _("change"), 1, 0);
+			tmpstr = ostrcat(tmpstr, " (", 1, 0);
 			tmpstr = ostrcat(tmpstr, servicenode->recname, 1, 0);
 			tmpstr = ostrcat(tmpstr, ")\n", 1, 0);
 		}
@@ -904,7 +906,7 @@ void screenrecorddirect()
 	//tmpstr = ostrcat(tmpstr, "add recording (stop after current event)\nadd recording (indefinitely)\nadd recording (enter duration)\nadd recording (enter endtime)", 1, 0);
 	tmpstr = ostrcat(tmpstr, "add recording (stop after current event)\nadd recording (indefinitely)\nadd recording (enter duration)", 1, 0);
 
-	mlistbox = menulistbox(NULL, tmpstr, "menulist", "Record", NULL, 0, 0);
+	mlistbox = menulistbox(NULL, tmpstr, "recordlist", "Record", NULL, 0, 0);
 	if(mlistbox != NULL && strstr(mlistbox, "stop") == mlistbox)
 	{
 		servicenode = getrecordbyname(mlistbox, RECORDDIRECT);
