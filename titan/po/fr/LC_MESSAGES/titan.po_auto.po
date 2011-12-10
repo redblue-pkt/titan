@@ -252,6 +252,7 @@ msgid "4 GB"
 msgstr ""
 
 #: audiotrack.h:47 rectimer.h:1232 audiotrack.h:48 rectimer.h:1245
+#: subtitle.h:1612
 msgid "running"
 msgstr ""
 
@@ -5002,7 +5003,7 @@ msgstr ""
 msgid "Satelite Entrys"
 msgstr ""
 
-#: tunerconfig.h:119 audiotrack.h:119
+#: tunerconfig.h:119 audiotrack.h:119 subtitle.h:1693
 msgid "undefined"
 msgstr ""
 
