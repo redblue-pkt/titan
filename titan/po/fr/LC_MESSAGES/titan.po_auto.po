@@ -72,7 +72,7 @@ msgstr ""
 #: play.h:429 play.h:498 play.h:430 play.h:499 play.h:490 record.h:934
 #: skin_default_skin.xml.h:171 play.h:420 play.h:428 play.h:497
 #: plugins_panel_skin.xml.h:39 skins_panel_skin.xml.h:39 global.h:2594
-#: global.h:3721 mc_videoplayer.h:355 mc_videoplayer.h:440
+#: global.h:3721 mc_videoplayer.h:355 mc_videoplayer.h:440 panel_main.h:243
 msgid "EXIT"
 msgstr ""
 
@@ -331,7 +331,7 @@ msgstr ""
 #: global.h:3684 avsettings.h:192 play.h:486 play.h:491 global.h:3688
 #: play.h:496 scan.h:629 scan.h:783 scan.h:855 scan.h:1061 play.h:495
 #: play.h:498 play.h:499 play.h:490 record.h:934 play.h:497 global.h:2594
-#: global.h:3721 mc_videoplayer.h:355 mc_videoplayer.h:440
+#: global.h:3721 mc_videoplayer.h:355 mc_videoplayer.h:440 panel_main.h:243
 msgid "Message"
 msgstr ""
 
@@ -907,7 +907,7 @@ msgstr ""
 msgid "Install QtBrowser Ipk first !"
 msgstr ""
 
-#: mc_main.h:175 menu.h:64 panel_main.h:35 panel_main.h:241
+#: mc_main.h:175 menu.h:64 panel_main.h:35 panel_main.h:241 panel_main.h:243
 msgid "Menu not implemented !"
 msgstr ""
 
