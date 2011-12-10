@@ -339,7 +339,7 @@ void doscan(struct stimerthread* timernode)
 			}
 
 			//del channels from transponder if selected
-			if(scaninfo.clear == 1)
+			if(scaninfo.scantype != 3 && scaninfo.clear == 1)
 			{
 				struct channel* tmpchannel = NULL;
 				chnode = channel;
@@ -357,7 +357,9 @@ void doscan(struct stimerthread* timernode)
 			while(secnr <= lastsecnr && secnr <= 256)
 			{
 				if(timernode->aktion != START) break;
+#ifndef SIMULATE
 				buf = dvbgetsdt(fenode, secnr, scaninfo.timeout);
+#endif
 				if(buf != NULL)
 					findchannel(buf, &lastsecnr, scaninfo.scanscreen, scaninfo.listbox, 0);
 				else
@@ -431,12 +433,30 @@ void scanaddchannel(struct skin* node, int scantype, struct transponder* tp1)
 
 void scansetallsat(int fetype)
 {
-	struct sat* satnode = sat;
+	int i = 0, orbitalpos = 0;
+	struct sat* satnode = NULL;
+	struct dvbdev* dvbnode = dvbdev;
+	char* tmpstr = NULL, *tmpnr = NULL;
 
-	while(satnode != NULL)
+	while(dvbnode != NULL)
 	{
-		if(fetype == satnode->fetype) satnode->scan = 1;
-		satnode = satnode->next;
+		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL && dvbnode->felock < 1 && dvbnode->feinfo->type == FE_QPSK)
+		{
+
+			tmpstr = ostrcat(dvbnode->feshortname, "_sat", 0, 0);
+			for(i = 1; i <= status.maxsat; i++)
+			{
+				tmpnr = oitoa(i);
+				orbitalpos = getconfigint(tmpstr, tmpnr);
+				free(tmpnr); tmpnr = NULL;
+
+				satnode = getsatbyorbitalpos(orbitalpos);
+				if(satnode != NULL && satnode->fetype == FE_QPSK)
+					satnode->scan = 1;
+			}
+			free(tmpstr); tmpstr = NULL;
+		}
+		dvbnode = dvbnode->next;
 	}
 }
 
@@ -459,7 +479,7 @@ void scansetmultisat(struct skin* scan)
 
 void screenscan(struct transponder* transpondernode, struct skin* mscan, char* tuner, int scantype, int orbitalpos, int frequency, int inversion, int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int networkscan, int onlyfree, int clear, int system, int timeout)
 {
-	int rcret = 0, tpmax = 0, i = 0;
+	int rcret = 0, tpmax = 0, i = 0, alladded = 0;
 	struct skin* scan = getscreen("scan");
 	struct skin* progress = getscreennode(scan, "progress");
 	struct skin* listbox = getscreennode(scan, "listbox");
@@ -468,6 +488,8 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	struct skin* foundtv = getscreennode(scan, "foundtv");
 	struct skin* foundradio = getscreennode(scan, "foundradio");
 	struct skin* founddata = getscreennode(scan, "founddata");
+	struct skin* b2 = getscreennode(scan, "b2");
+	struct skin* b3 = getscreennode(scan, "b3");
 	struct transponder* tpnode = NULL;
 	struct dvbdev* fenode = NULL, *dvbnode = dvbdev;
 	struct stimerthread* timernode = NULL;
@@ -479,6 +501,9 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	listbox->aktpage = -1;
 	progress->progresssize = 0;
 	memset(&scaninfo, 0, sizeof(struct scaninfo));
+
+	b2->hidden = NO;
+	b3->hidden = NO;
 
 	addscreenrc(scan, listbox);
 	if(scantype != 3)
@@ -542,7 +567,14 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	else if(scantype == 2 || scantype == 3) //2: multi sat, 3: all
 	{
 		if(scantype == 2) scansetmultisat(mscan);
-		if(scantype == 3) scansetallsat(FE_QPSK);
+		if(scantype == 3)
+		{
+			scansetallsat(FE_QPSK);
+			b2->hidden = YES;
+			b3->hidden = YES;
+			//del all channel for auto. search
+			if(clear == 1) freechannel();
+		}
 		satnode = sat;
 		while(satnode != NULL)
 		{
@@ -619,6 +651,29 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 
 		drawscreen(scan, 0);
 		rcret = waitrc(scan, 1000, 0);
+
+		if(scantype != 3 && rcret == getrcconfigint("rcred", NULL))
+			scanaddchannel(listbox->select, scantype, tpnode);
+
+		if((scantype != 3 && rcret == getrcconfigint("rcgreen", NULL)) || (scantype == 3 && scaninfo.threadend == 1 && alladded < 2))
+		{
+			struct skin* lnode = listbox;
+			long deaktivcol = convertcol("deaktivcol");
+			if(alladded == 0)
+			{
+				alladded = 1;
+				continue;
+			}
+			alladded = 2;
+			while(lnode != NULL)
+			{
+				if(lnode->fontcol != deaktivcol && lnode->del == 1)
+					scanaddchannel(lnode, scantype, tpnode);
+				lnode = lnode->next;
+			}
+			textbox(_("Message"), _("All new channel added!"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+		}
+
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
 			if(timernode != NULL && scaninfo.threadend == 0)
@@ -631,19 +686,6 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 				}
 			}
 			break;
-		}
-		if(rcret == getrcconfigint("rcok", NULL))
-			scanaddchannel(listbox->select, scantype, tpnode);
-		if(rcret == getrcconfigint("rcred", NULL))
-		{
-			struct skin* lnode = listbox;
-			long deaktivcol = convertcol("deaktivcol");
-			while(lnode != NULL)
-			{
-				if(lnode->fontcol != deaktivcol && lnode->del == 1)
-					scanaddchannel(lnode, scantype, tpnode);
-				lnode = lnode->next;
-			}
 		}
 	}
 
