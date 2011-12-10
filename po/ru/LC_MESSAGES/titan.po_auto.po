@@ -72,7 +72,7 @@ msgstr ""
 #: play.h:429 play.h:498 play.h:430 play.h:499 play.h:490 record.h:934
 #: skin_default_skin.xml.h:171 play.h:420 play.h:428 play.h:497
 #: plugins_panel_skin.xml.h:39 skins_panel_skin.xml.h:39 global.h:2594
-#: global.h:3721
+#: global.h:3721 mc_videoplayer.h:355 mc_videoplayer.h:440
 msgid "EXIT"
 msgstr ""
 
@@ -331,7 +331,7 @@ msgstr ""
 #: global.h:3684 avsettings.h:192 play.h:486 play.h:491 global.h:3688
 #: play.h:496 scan.h:629 scan.h:783 scan.h:855 scan.h:1061 play.h:495
 #: play.h:498 play.h:499 play.h:490 record.h:934 play.h:497 global.h:2594
-#: global.h:3721
+#: global.h:3721 mc_videoplayer.h:355 mc_videoplayer.h:440
 msgid "Message"
 msgstr ""
 
@@ -814,7 +814,7 @@ msgstr ""
 #: mc_global.h:141 mc_global.h:197 mc_pictureplayer.h:211
 #: mc_pictureplayer.h:249 mc_pictureplayer.h:352 mc_videoplayer.h:258
 #: mc_videoplayer.h:295 mc_videoplayer.h:406 plugins_mc_skin.xml.h:20
-#: skins_mc_skin.xml.h:20
+#: skins_mc_skin.xml.h:20 mc_videoplayer.h:414
 msgid "Filelist-Mode"
 msgstr ""
 
@@ -825,6 +825,7 @@ msgstr ""
 
 #: mc_audioplayer.h:292 mc_global.h:79 mc_global.h:476 mc_global.h:674
 #: mc_global.h:688 mc_pictureplayer.h:268 mc_videoplayer.h:320
+#: mc_videoplayer.h:328
 msgid "Playlist-Mode"
 msgstr ""
 
@@ -832,7 +833,7 @@ msgstr ""
 #: mc_pictureplayer.h:73 mc_pictureplayer.h:188 mc_pictureplayer.h:294
 #: mc_pictureplayer.h:383 mc_videoplayer.h:347 mc_videoplayer.h:432 play.h:482
 #: play.h:486 play.h:491 play.h:496 play.h:495 play.h:498 play.h:499
-#: play.h:490 play.h:497
+#: play.h:490 play.h:497 mc_videoplayer.h:355 mc_videoplayer.h:440
 msgid "Can't start playback !"
 msgstr ""
 
