@@ -966,29 +966,31 @@ int recordskipplay(struct service* servicenode, int sekunden)
 		err("source fd not ok");
 		return 1;
 	}
+	dupfd = open(servicenode->recname, O_RDONLY | O_LARGEFILE);
 	//offset = lseek(servicenode->recsrcfd, 0, SEEK_CUR);
-	/*dupfd = fcntl(servicenode->recsrcfd, F_DUPFD, 0);
+	//dupfd = fcntl(servicenode->recsrcfd, F_DUPFD, 0);
 	if(dupfd < 0)
 	{
 		err("copy source fd not ok");
 		return 1;
-	
-	if(gettsinfo(servicenode->recsrcfd, &pts, &bitrate) != 0)
+	}
+	if(gettsinfo(dupfd, &pts, &bitrate) != 0)
 	{
 		err("cant read bitrate");
 		return 1;
-	}*/
+	}
 	ret = videoclearbuffer(status.aktservice->videodev);
 	ret = audioclearbuffer(status.aktservice->audiodev);
 	if(sekunden > 0 )  
-		offset = lseek(servicenode->recsrcfd, RECPLAYBSIZE * 3, SEEK_CUR);
-	//offset = lseek(servicenode->recsrcfd, (bitrate / 8) * sekunden, SEEK_CUR);
+	//offset = lseek(servicenode->recsrcfd, RECPLAYBSIZE * 3, SEEK_CUR);
+	offset = lseek(servicenode->recsrcfd, (bitrate / 8) * sekunden, SEEK_CUR);
 	//offset = lseek(servicenode->recsrcfd, offset + (bitrate / 8 * sekunden), SEEK_SET);
 	else
 	{
 		offset = lseek(servicenode->recsrcfd, 0, SEEK_CUR);
 		offset = lseek(servicenode->recsrcfd, offset - RECPLAYBSIZE * 3, SEEK_SET);
 	}
+	close(dupfd); 
 	return 0;
 }
 
