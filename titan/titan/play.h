@@ -105,11 +105,14 @@ void screenplaytracklist(int mode, int flag)
 			tmp = addlistbox(track, listbox, tmp, 1);
 			if(tmp != NULL)
 			{
-				tmpstr = ostrcat(tmpstr, tracklist[i], 1, 0);
+				if(ostrcmp(tracklist[i], "und") == 0)
+					tmpstr = ostrcat(tmpstr, _("undefined"), 1, 0);
+				else
+					tmpstr = ostrcat(tmpstr, _(tracklist[i]), 1, 0);
 				tmpstr = ostrcat(tmpstr, " (", 1, 0);
 				tmpstr = ostrcat(tmpstr, tracklist[i + 1], 1, 0);
 				tmpstr = ostrcat(tmpstr, ")", 1, 0);
-				changetext(tmp, _(tmpstr));
+				changetext(tmp, tmpstr);
 				free(tmpstr); tmpstr = NULL;
 				tmp->type = CHOICEBOX;
 				tmp->del = 1;
@@ -118,7 +121,7 @@ void screenplaytracklist(int mode, int flag)
 				if(ostrcmp(curtrackname, tracklist[i]) == 0 && ostrcmp(curtrackencoding, tracklist[i + 1]) == 0)
 				{
 					tmp->handle1 = (char*)(i / 2);
-					changeinput(tmp, "running");
+					changeinput(tmp, _("running"));
 				}
 				else
 					changeinput(tmp, "");
