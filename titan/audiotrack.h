@@ -115,8 +115,10 @@ struct audiotrack* addaudiotrack(struct channel* chnode, char* langdesc, int pid
 
 	newnode->audiopid = pid;
 	newnode->audiocodec = audiocodec;
-
-	tmpstr = ostrcat(tmpstr, langdesc, 1, 0);
+	if(ostrcmp(langdesc, "und") = 0)
+		tmpstr = ostrcat(tmpstr, "undefined", 1, 0);
+	else
+		tmpstr = ostrcat(tmpstr, langdesc, 1, 0);
 	switch(audiocodec)
 	{
 		case AC3: tmpstr = ostrcat(tmpstr, " (DOLBY DIGITAL)", 1, 0); break;
