@@ -38,7 +38,7 @@ void screenaudiotrack()
 			tmp = addlistbox(audiotrack, listbox, tmp, 1);
 			if(tmp != NULL)
 			{
-				changetext(tmp, _(node->name));
+				changetext(tmp, node->name);
 				tmp->type = CHOICEBOX;
 				tmp->del = 1;
 				tmp->handle = (char*)node;
@@ -115,10 +115,10 @@ struct audiotrack* addaudiotrack(struct channel* chnode, char* langdesc, int pid
 
 	newnode->audiopid = pid;
 	newnode->audiocodec = audiocodec;
-	if(ostrcmp(langdesc, "und") = 0)
-		tmpstr = ostrcat(tmpstr, "undefined", 1, 0);
+	if(ostrcmp(langdesc, "und") == 0)
+		tmpstr = ostrcat(tmpstr, _("undefined"), 1, 0);
 	else
-		tmpstr = ostrcat(tmpstr, langdesc, 1, 0);
+		tmpstr = ostrcat(tmpstr, _(langdesc), 1, 0);
 	switch(audiocodec)
 	{
 		case AC3: tmpstr = ostrcat(tmpstr, " (DOLBY DIGITAL)", 1, 0); break;
