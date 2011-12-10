@@ -73,6 +73,7 @@ msgstr ""
 #: skin_default_skin.xml.h:171 play.h:420 play.h:428 play.h:497
 #: plugins_panel_skin.xml.h:39 skins_panel_skin.xml.h:39 global.h:2594
 #: global.h:3721 mc_videoplayer.h:355 mc_videoplayer.h:440 panel_main.h:243
+#: play.h:425 play.h:494
 msgid "EXIT"
 msgstr ""
 
@@ -252,7 +253,7 @@ msgid "4 GB"
 msgstr ""
 
 #: audiotrack.h:47 rectimer.h:1232 audiotrack.h:48 rectimer.h:1245
-#: subtitle.h:1612
+#: subtitle.h:1612 play.h:124
 msgid "running"
 msgstr ""
 
@@ -333,6 +334,7 @@ msgstr ""
 #: play.h:496 scan.h:629 scan.h:783 scan.h:855 scan.h:1061 play.h:495
 #: play.h:498 play.h:499 play.h:490 record.h:934 play.h:497 global.h:2594
 #: global.h:3721 mc_videoplayer.h:355 mc_videoplayer.h:440 panel_main.h:243
+#: play.h:494
 msgid "Message"
 msgstr ""
 
@@ -355,7 +357,7 @@ msgstr ""
 #: skin_default_skin.xml.h:263 service.h:560 service.h:794
 #: skin_default_skin.xml.h:264 service.h:800 rectimer.h:1121 avsettings.h:192
 #: play.h:417 play.h:422 play.h:427 play.h:426 play.h:429 play.h:430
-#: play.h:421 skin_default_skin.xml.h:265 play.h:428 global.h:2594
+#: play.h:421 skin_default_skin.xml.h:265 play.h:428 global.h:2594 play.h:425
 msgid "OK"
 msgstr ""
 
@@ -834,7 +836,7 @@ msgstr ""
 #: mc_pictureplayer.h:73 mc_pictureplayer.h:188 mc_pictureplayer.h:294
 #: mc_pictureplayer.h:383 mc_videoplayer.h:347 mc_videoplayer.h:432 play.h:482
 #: play.h:486 play.h:491 play.h:496 play.h:495 play.h:498 play.h:499
-#: play.h:490 play.h:497 mc_videoplayer.h:355 mc_videoplayer.h:440
+#: play.h:490 play.h:497 mc_videoplayer.h:355 mc_videoplayer.h:440 play.h:494
 msgid "Can't start playback !"
 msgstr ""
 
@@ -1635,12 +1637,12 @@ msgid "hidden"
 msgstr ""
 
 #: play.h:405 play.h:409 play.h:414 play.h:419 play.h:418 play.h:421
-#: play.h:422 play.h:413 play.h:420
+#: play.h:422 play.h:413 play.h:420 play.h:417
 msgid "EPG Info"
 msgstr ""
 
 #: play.h:413 play.h:417 play.h:422 play.h:427 play.h:426 play.h:429
-#: play.h:430 play.h:421 play.h:428
+#: play.h:430 play.h:421 play.h:428 play.h:425
 msgid "Realy Delete ?"
 msgstr ""
 
@@ -3234,7 +3236,7 @@ msgstr ""
 #: skin_default_skin.xml.h:134 skin_default_skin.xml.h:142
 #: skin_default_skin.xml.h:143 skin_default_skin.xml.h:144 play.h:464
 #: play.h:468 play.h:473 play.h:478 play.h:477 play.h:480 play.h:481
-#: play.h:472 skin_default_skin.xml.h:145 play.h:479
+#: play.h:472 skin_default_skin.xml.h:145 play.h:479 play.h:476
 msgid "DEL"
 msgstr ""
 
@@ -5003,7 +5005,7 @@ msgstr ""
 msgid "Satelite Entrys"
 msgstr ""
 
-#: tunerconfig.h:119 audiotrack.h:119 subtitle.h:1693
+#: tunerconfig.h:119 audiotrack.h:119 subtitle.h:1693 play.h:109
 msgid "undefined"
 msgstr ""
 
@@ -5252,7 +5254,7 @@ msgid "Two step mute"
 msgstr ""
 
 #: play.h:464 play.h:468 play.h:473 play.h:478 play.h:477 play.h:480
-#: play.h:481 play.h:472 play.h:479
+#: play.h:481 play.h:472 play.h:479 play.h:476
 msgid "SELECT"
 msgstr ""
 
