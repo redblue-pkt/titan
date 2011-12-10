@@ -1609,7 +1609,7 @@ void screensubtitle()
 
 				if(node->pid == status.subthreadpid)
 				{
-					changeinput(tmp, "running");
+					changeinput(tmp, _("running"));
 					treffer = 1;
 				}
 				else
@@ -1689,7 +1689,10 @@ struct subtitle* addsubtitle(struct channel* chnode, int subtype, char* langdesc
 	newnode->id1 = id1;
 	newnode->id2 = id2;
 
-	tmpstr = ostrcat(tmpstr, langdesc, 1, 0);
+	if(ostrcmp(langdesc, "und") == 0)
+		tmpstr = ostrcat(tmpstr, _("undefined"), 1, 0);
+	else
+		tmpstr = ostrcat(tmpstr, _(langdesc), 1, 0);
 	if(subtype == 1)
 	{
 		tmpstr = ostrcat(tmpstr, " (", 1, 0);
