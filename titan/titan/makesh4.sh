@@ -48,7 +48,7 @@ if [ -z "$ROOTDIR" ]; then
 fi
 
 echo "[titan]--------------------------------------------------------"
-echo "[titan] get titan skin"
+echo "[titan] get skin"
 echo "[titan]--------------------------------------------------------"
 
 rm -rf "$HOME"/flashimg/source.titan/skin
@@ -56,17 +56,17 @@ mkdir "$HOME"/flashimg/source.titan/skin
 svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source.sh4/titanskins_default/var/usr/local/share/titan/skin/default "$HOME"/flashimg/source.titan/skin/default
 
 echo "[titan]--------------------------------------------------------"
-echo "[titan] get plugin skins"
+echo "[titan] get skin done"
 echo "[titan]--------------------------------------------------------"
 
 echo "[titan]--------------------------------------------------------"
-echo "[titan] get titan settings"
+echo "[titan] get settings"
 echo "[titan]--------------------------------------------------------"
 rm -rf "$HOME"/flashimg/source.titan/settings.svn
 svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/trac/browser/ipk/source.sh4/titansettings_default_sat_1_0/var/etc/titan "$HOME"/flashimg/source.titan/settings.svn
 mv -f "$HOME"/flashimg/source.titan/settings.svn/* "$HOME"/flashimg/source.titan/settings 
 echo "[titan]--------------------------------------------------------"
-echo "[titan] get plugin settings"
+echo "[titan] get settings done"
 echo "[titan]--------------------------------------------------------"
 
 cp -a "$HOME"/flashimg/source.titan/skins/[^.]* "$HOME"/flashimg/source.titan/plugins
