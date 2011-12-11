@@ -48,12 +48,12 @@ void screenvideomode()
 			free(tmpstr1); tmpstr1 = NULL;
 			if(mbox != NULL && ostrcmp(tmpstr, mbox) != 0)
 			{
-				setvideomode(mbox);
+				setvideomode(mbox, 0);
 				changefbresolution(mbox);
 				int tret = textbox(_("Message"), _("Is this Videomode ok ?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 				if(tret == 0 || tret == 1)
 				{
-					setvideomode(tmpstr); 
+					setvideomode(tmpstr, 0); 
 					changefbresolution(tmpstr);
 				}
 			}

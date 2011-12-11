@@ -536,13 +536,13 @@ int autoresolution()
 
 	if(value[0] == 'y')
 	{
-		setvideomode("720p50");
+		setvideomode("720p50", 0);
 		changefbresolution("720p50");
 		setcolorformat("hdmi_rgb");
 	}
 	else
 	{
-		setvideomode("576i50");
+		setvideomode("576i50", 0);
 		changefbresolution("576i50");
 		setcolorformat("rgb");
 	}
@@ -2581,24 +2581,24 @@ void switchvideomode()
 	{
 		if(ostrcmp("pal", tmpstr) == 0 || ostrncmp("576", tmpstr, 3) == 0)
 		{
-			setvideomode("720p50");
+			setvideomode("720p50", 0);
 			changefbresolution("720p50");
 		}
 		else if(ostrncmp("720", tmpstr, 3) == 0)
 		{
-			setvideomode("1080i50");
+			setvideomode("1080i50", 0);
 			changefbresolution("1080i50");
 		}
 		else if(ostrncmp("1080", tmpstr, 4) == 0)
 		{
-			setvideomode("576i50");
+			setvideomode("576i50", 0);
 			changefbresolution("576i50");
 		}
 		/*
 		int ret = textbox(_("Message"), _("Is this Videomode ok ?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 		if(ret == 0 || ret == 1)
 		{
-			setvideomode(tmpstr);
+			setvideomode(tmpstr, 0);
 			changefbresolution(tmpstr);
 		}
 		*/
@@ -2606,7 +2606,9 @@ void switchvideomode()
 	free(tmpstr);
 }
 
-int setvideomode(char* value)
+//flag 0: write videomode to config
+//flag 1: don't write videomode to config
+int setvideomode(char* value, int flag)
 {
 	debug(1000, "in");
 	char* videomodedev;
@@ -2618,7 +2620,7 @@ int setvideomode(char* value)
 	{
 		debug(100, "set %s to %s", videomodedev, value);
 		ret = writesys(videomodedev, value, 0);
-		if(ret == 0) addconfig("av_videomode", value);
+		if(ret == 0 && flag == 0) addconfig("av_videomode", value);
 		return ret;
 	}
 
@@ -3715,7 +3717,7 @@ void setaktres()
 			res_akt = getvideomode();
 			if (ostrcmp(res_akt, res) != 0)
 			{
-				setvideomode(res);
+				setvideomode(res, 1);
 	  		changefbresolution(res);
 				sleep(1);
 				screenautores(res, 5, 0);

@@ -10,6 +10,7 @@ void screenavsettings(int flag)
 	struct skin* avsettings = getscreen("avsettings");
 	struct skin* listbox = getscreennode(avsettings, "listbox");
 	struct skin* resolution = getscreennode(avsettings, "resolution");
+	struct skin* aktresolution = getscreennode(avsettings, "aktresolution");
 	struct skin* autoresolution = getscreennode(avsettings, "autoresolution");
 	struct skin* autoressd = getscreennode(avsettings, "autoressd");
 	struct skin* autorests = getscreennode(avsettings, "autorests");
@@ -28,16 +29,19 @@ void screenavsettings(int flag)
 	changeinput(resolution, ret);
 	free(ret); ret = NULL;
 
-	ret = getconfig("av_videomode_default", NULL);
+	ret = getconfig("av_videomode", NULL);
 	if(ret == NULL) 
 	{
 		ret = getvideomode();
-		addconfig("av_videomode_default", ret);
 		setchoiceboxselection(resolution, ret);
 		free(ret); ret = NULL;
 	}
 	else
 		setchoiceboxselection(resolution, ret);
+		
+	ret = getvideomode();
+	changeinput(aktresolution, ret);
+	free(ret); ret = NULL;
 	
 	autoressd->hidden=YES;
 	autorests->hidden=YES;
@@ -184,17 +188,15 @@ void screenavsettings(int flag)
 				ret = getvideomode();
 				if(ostrcmp(ret, resolution->ret) != 0)
 				{
-					setvideomode(resolution->ret); 
+					setvideomode(resolution->ret, 0); 
 					changefbresolution(resolution->ret);
-					addconfig("av_videomode_default", resolution->ret);
 					if(flag == 0)
 					{
 						int tret = textbox(_("Message"), _("Is this Videomode ok ?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 						if(tret == 0 || tret == 1)
 						{
-							setvideomode(ret); 
+							setvideomode(ret, 0); 
 							changefbresolution(ret);
-							addconfig("av_videomode_default", ret);
 						}
 
 					}
