@@ -116,7 +116,7 @@ end:
 
 //flag 0: from scan
 //flag 1: from update channelname
-int findchannel(unsigned char *buf, uint8_t* lastsecnr, struct skin* scan, struct skin* listbox, int flag)
+int findchannel(struct transponder* tpnode, unsigned char *buf, uint8_t* lastsecnr, struct skin* scan, struct skin* listbox, int flag)
 {
 	int ret = -1;
 	unsigned long transponderid = 0;
@@ -149,6 +149,12 @@ int findchannel(unsigned char *buf, uint8_t* lastsecnr, struct skin* scan, struc
 	onid = (buf[8] << 8) | buf[9];
 	
 	transponderid = (onid << 16) | tid;
+	if(tpnode != NULL && tpnode->id != transponderid)
+	{
+		tpnode->id = transponderid;
+		status.writetransponder = 1;
+	}
+
 	debug(500, "SDT nr: %d, lastnr: %d, len: %d, tid: %d, onid: %d, transponderid: %lu", secnr, *lastsecnr, seclen, tid, onid, transponderid);
 
 	for(pos = 11; pos < seclen - 1; pos += desclooplen + 5)
@@ -361,7 +367,7 @@ void doscan(struct stimerthread* timernode)
 				buf = dvbgetsdt(fenode, secnr, scaninfo.timeout);
 #endif
 				if(buf != NULL)
-					findchannel(buf, &lastsecnr, scaninfo.scanscreen, scaninfo.listbox, 0);
+					findchannel(tpnode, buf, &lastsecnr, scaninfo.scanscreen, scaninfo.listbox, 0);
 				else
 					break;
 				free(buf); buf = NULL;
