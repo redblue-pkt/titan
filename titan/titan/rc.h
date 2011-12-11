@@ -104,6 +104,18 @@ void closerc()
 	debug(1000, "out");
 }
 
+int islongkey(int keycode)
+{
+	int i = 0;
+
+	for(i = 0; i < MAXLONGKEY; i++)
+	{
+		if(status.longkeycode[i] == keycode)
+			return 1;
+	}
+	return 0;
+}
+
 int writerc(int keycode)
 {
 	struct input_event rcdata;
@@ -175,7 +187,7 @@ int waitrc(struct skin* owner, unsigned int timeout, int flag)
 				continue;
 			}
 
-			if(rcdata.code == 113)
+			if(islongkey(rcdata.code))
 			{
 				longpress = rcdata.code;
 				longpresscount++;

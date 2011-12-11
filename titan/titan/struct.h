@@ -111,6 +111,7 @@
 #define LISTHASHSIZE 27
 #define MAXCASESSION 16
 #define MAXCASERVICE 20
+#define MAXLONGKEY 10
 
 //CA Defines
 #define T_SB 0x80		//sb (h<--m)
@@ -790,6 +791,7 @@ struct hddparm
 
 struct status
 {
+	int longkeycode[MAXLONGKEY];
 	//aktivate extra featers
 	int expertmodus;
 	//http user:passwd
