@@ -24,7 +24,7 @@ void setdefaults()
 	addconfigdef("epg_del", "0");
 	addconfigdef("spinnerspeed", "12");
 	addconfigdef("spinnertime", "5");
-	addconfigdef("hangtime", "15");
+	addconfigdef("hangtime", "60");
 	addconfigdef("skinfbwidth", "1280");
 	addconfigdef("skinfbheight", "720");
 	addconfigdef("fbleftoffset", "0");
