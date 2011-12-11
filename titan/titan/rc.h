@@ -211,6 +211,7 @@ int waitrc(struct skin* owner, unsigned int timeout, int flag)
 		}
 		else if((fromthread == 0 && ret == 0 && status.rckey == 0) || (fromthread == 1 && ret == 0)) //timeout
 		{
+			rcdata.code = 0;
 			if(longpress > 0)
 			{
 				rcdata.code = longpress;
@@ -219,7 +220,7 @@ int waitrc(struct skin* owner, unsigned int timeout, int flag)
 			treffer = 1;
 			rcdata.code = maprc(rcdata.code, owner);
 
-			node = getrc(0, NULL);
+			node = getrc(rcdata.code, NULL);
 			if(node != NULL && node->rcfunc != NULL) 
 			{
 				if(fromthread == 0)
