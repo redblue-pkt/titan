@@ -314,7 +314,7 @@ char* fixip(char* ipinput, int flag);
 void m_lock(pthread_mutex_t *mutex, int flag);
 void m_unlock(pthread_mutex_t *mutex, int flag);
 int setcolorformat(char* value);
-int setvideomode(char* value);
+int setvideomode(char* value, int flag);
 char* convert_timesec(int sec);
 int writesys(const char *filename, char *value, int flag);
 int setsystime(time_t* newtime);

@@ -376,10 +376,7 @@ int main(int argc, char *argv[])
 	if(checkbox("UFS922") == 1)
 		setfanspeed(-1, 0);
 
-	if(getconfig("av_videomode_default", NULL) == NULL)
-		ret = setvideomode(getconfig("av_videomode", NULL));
-	else
-		ret = setvideomode(getconfig("av_videomode_default", NULL));
+	ret = setvideomode(getconfig("av_videomode", NULL), 0);
 
 	ret = setpolicy(getconfig("av_policy", NULL));
 	ret = setaspect(getconfig("av_aspect", NULL));
@@ -570,7 +567,7 @@ int main(int argc, char *argv[])
 	{
 		if(file_exist("/tmp/.scart"))
 		{
-			setvideomode("pal");
+			setvideomode("pal", 0);
 			changefbresolution("pal");
 		}
 

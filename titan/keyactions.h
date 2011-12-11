@@ -165,17 +165,17 @@ void keyactions_setres()
 			res_act = getvideomode();
 			if(ostrcmp(res_act, res) == 0) 
 			{
-				res_def = getconfig("av_videomode_default", NULL);
+				res_def = getconfig("av_videomode", NULL);
 				if(res_def == NULL)
 					 res_def = res_act;
-				setvideomode(res_def);
+				setvideomode(res_def, 1);
 				changefbresolution(res_def);
 				sleep(2);
 				screenautores(res_def, 5, 0);		 	
 			}
 			else
 			{
-				setvideomode(res);
+				setvideomode(res, 1);
 				changefbresolution(res);
 				sleep(2);
 				screenautores(res, 5, 0);
