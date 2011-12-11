@@ -1,6 +1,27 @@
 #ifndef POSSETUP_H
 #define POSSETUP_H
 
+void possearch(struct skin* possetup, struct dvbdev* dvbnode, int dir)
+{
+	int rcret = 0;
+	uint16_t signal = 0;
+
+	while(1)
+	{
+		rcret = waitrc(possetup, 500, 0);
+		if(rcret == getconfigint("rcok", NULL)) break;
+
+		if(dir == 0)
+			fediseqcrotor(dvbnode, 1, 0, 10);
+		else
+			fediseqcrotor(dvbnode, 1, 0, 9);
+
+		usleep(300000);
+		signal = fereadsignalstrength(status.aktservice->fedev);
+		if(signal > 0) break;
+	}
+}
+
 void poschangebutton(int type, struct skin* b1, struct skin* b2, struct skin* b3, struct skin* b4)
 {
 	if(type == 0)
@@ -124,7 +145,7 @@ void screenpossetup()
 			if(rcret == getrcconfigint("rcgreen", NULL))
 			{
 				if(ostrcmp(listbox->select->name, "move") == 0)
-					fediseqcrotor(dvbnode, 0, 0, 6); //TODO
+					possearch(possetup, dvbnode, 0);
 				if(ostrcmp(listbox->select->name, "finemove") == 0)
 					fediseqcrotor(dvbnode, 1, 0, 10);
 				if(ostrcmp(listbox->select->name, "limit") == 0)
@@ -141,7 +162,7 @@ void screenpossetup()
 			if(rcret == getrcconfigint("rcyellow", NULL))
 			{
 				if(ostrcmp(listbox->select->name, "move") == 0)
-					fediseqcrotor(dvbnode, 0, 0, 5); //TODO
+					possearch(possetup, dvbnode, 1);
 				if(ostrcmp(listbox->select->name, "finemove") == 0)
 					fediseqcrotor(dvbnode, 1, 0, 9);
 				if(ostrcmp(listbox->select->name, "limit") == 0)
