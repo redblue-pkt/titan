@@ -192,7 +192,7 @@ int waitrc(struct skin* owner, unsigned int timeout, int flag)
 				longpress = rcdata.code;
 				longpresscount++;
 				timeout = 0;
-				rest = 200;
+				rest = 500;
 				usleep(10000);
 				continue;
 			}
