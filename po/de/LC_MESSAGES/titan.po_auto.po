@@ -74,7 +74,8 @@ msgstr ""
 #: plugins_panel_skin.xml.h:39 skins_panel_skin.xml.h:39 global.h:2594
 #: global.h:3721 mc_videoplayer.h:355 mc_videoplayer.h:440 panel_main.h:243
 #: play.h:425 play.h:494 global.h:3723 skin_default_skin.xml.h:173
-#: global.h:3726 scan.h:674 scan.h:825 scan.h:897 scan.h:1103
+#: global.h:3726 scan.h:674 scan.h:825 scan.h:897 scan.h:1103 scan.h:680
+#: scan.h:831 scan.h:903 scan.h:1109
 msgid "EXIT"
 msgstr ""
 
@@ -109,7 +110,7 @@ msgstr ""
 #: adjust.h:91 adjust.h:118 adjust.h:121 rectimer.h:863 rectimer.h:868
 #: rectimer.h:873 rectimer.h:878 rectimer.h:883 rectimer.h:888 rectimer.h:893
 #: avsettings.h:114 scan.h:715 scan.h:1009 scan.h:757 scan.h:1043 scan.h:1047
-#: scan.h:1051
+#: scan.h:1051 scan.h:763 scan.h:1049 scan.h:1053 scan.h:1057
 msgid "no"
 msgstr ""
 
@@ -150,7 +151,7 @@ msgstr ""
 #: adjust.h:92 adjust.h:117 adjust.h:122 rectimer.h:864 rectimer.h:869
 #: rectimer.h:874 rectimer.h:879 rectimer.h:884 rectimer.h:889 rectimer.h:894
 #: avsettings.h:115 scan.h:716 scan.h:1010 scan.h:758 scan.h:1044 scan.h:1048
-#: scan.h:1052
+#: scan.h:1052 scan.h:764 scan.h:1050 scan.h:1054 scan.h:1058
 msgid "yes"
 msgstr ""
 
@@ -339,7 +340,8 @@ msgstr ""
 #: play.h:498 play.h:499 play.h:490 record.h:934 play.h:497 global.h:2594
 #: global.h:3721 mc_videoplayer.h:355 mc_videoplayer.h:440 panel_main.h:243
 #: play.h:494 global.h:3723 global.h:3726 scan.h:674 scan.h:684 scan.h:825
-#: scan.h:897 scan.h:1103
+#: scan.h:897 scan.h:1103 scan.h:680 scan.h:690 scan.h:831 scan.h:903
+#: scan.h:1109
 msgid "Message"
 msgstr ""
 
@@ -2452,69 +2454,69 @@ msgstr ""
 msgid "Can't restore settings"
 msgstr ""
 
-#: scan.h:206 scan.h:211 scan.h:212
+#: scan.h:206 scan.h:211 scan.h:212 scan.h:218
 msgid "TV"
 msgstr ""
 
-#: scan.h:208 scan.h:213 scan.h:214
+#: scan.h:208 scan.h:213 scan.h:214 scan.h:220
 msgid "Radio"
 msgstr ""
 
-#: scan.h:210 scan.h:215 scan.h:216
+#: scan.h:210 scan.h:215 scan.h:216 scan.h:222
 msgid "Data"
 msgstr ""
 
-#: scan.h:563 scan.h:574 scan.h:576 scan.h:578 scan.h:610
+#: scan.h:563 scan.h:574 scan.h:576 scan.h:578 scan.h:610 scan.h:616
 msgid "Sat: "
 msgstr ""
 
-#: scan.h:569 scan.h:580 scan.h:582 scan.h:584 scan.h:616
+#: scan.h:569 scan.h:580 scan.h:582 scan.h:584 scan.h:616 scan.h:622
 msgid "Transponder: "
 msgstr ""
 
-#: scan.h:577 scan.h:588 scan.h:590 scan.h:592 scan.h:624
+#: scan.h:577 scan.h:588 scan.h:590 scan.h:592 scan.h:624 scan.h:630
 msgid "TV: "
 msgstr ""
 
-#: scan.h:585 scan.h:596 scan.h:598 scan.h:600 scan.h:632
+#: scan.h:585 scan.h:596 scan.h:598 scan.h:600 scan.h:632 scan.h:638
 msgid "Radio: "
 msgstr ""
 
-#: scan.h:593 scan.h:604 scan.h:606 scan.h:608 scan.h:640
+#: scan.h:593 scan.h:604 scan.h:606 scan.h:608 scan.h:640 scan.h:646
 msgid "Data: "
 msgstr ""
 
-#: scan.h:614 scan.h:625 scan.h:627 scan.h:629 scan.h:684
+#: scan.h:614 scan.h:625 scan.h:627 scan.h:629 scan.h:684 scan.h:690
 msgid "Wait for channel scan end"
 msgstr ""
 
-#: scan.h:768 scan.h:779 scan.h:781 scan.h:783 scan.h:825
+#: scan.h:768 scan.h:779 scan.h:781 scan.h:783 scan.h:825 scan.h:831
 msgid ""
 "Scan is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 
-#: scan.h:840 scan.h:851 scan.h:853 scan.h:855 scan.h:897
+#: scan.h:840 scan.h:851 scan.h:853 scan.h:855 scan.h:897 scan.h:903
 msgid "No Tuner configured"
 msgstr ""
 
-#: scan.h:853 scan.h:864 scan.h:866 scan.h:868 scan.h:910
+#: scan.h:853 scan.h:864 scan.h:866 scan.h:868 scan.h:910 scan.h:916
 msgid "Single Transponder"
 msgstr ""
 
-#: scan.h:854 scan.h:865 scan.h:867 scan.h:869 scan.h:911
+#: scan.h:854 scan.h:865 scan.h:867 scan.h:869 scan.h:911 scan.h:917
 msgid "Single Sat"
 msgstr ""
 
-#: scan.h:855 scan.h:866 scan.h:868 scan.h:870 scan.h:912
+#: scan.h:855 scan.h:866 scan.h:868 scan.h:870 scan.h:912 scan.h:918
 msgid "Multi Sat"
 msgstr ""
 
-#: scan.h:860 scan.h:871 scan.h:873 scan.h:875 scan.h:917
+#: scan.h:860 scan.h:871 scan.h:873 scan.h:875 scan.h:917 scan.h:923
 msgid "Auto Scan"
 msgstr ""
 
-#: scan.h:1046 scan.h:1057 scan.h:1059 scan.h:1061 scan.h:1103
+#: scan.h:1046 scan.h:1057 scan.h:1059 scan.h:1061 scan.h:1103 scan.h:1109
 msgid "Transponder changed"
 msgstr ""
 
@@ -5382,6 +5384,6 @@ msgstr ""
 msgid "ADD ONE"
 msgstr ""
 
-#: scan.h:674
+#: scan.h:674 scan.h:680
 msgid "All new channel added!"
 msgstr ""
