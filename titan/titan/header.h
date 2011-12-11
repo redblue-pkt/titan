@@ -57,7 +57,7 @@ char* harddisk_listbox(char* defaultstr, char* str, char* skinname, char* skinti
 int videoreadqwidth(struct dvbdev* node);
 
 // scan.h
-int findchannel(unsigned char *buf, uint8_t* lastsecnr, struct skin* scan, struct skin* listbox, int flag);
+int findchannel(struct transponder* tpnode, unsigned char *buf, uint8_t* lastsecnr, struct skin* scan, struct skin* listbox, int flag);
 void screenscanconfig(int flag);
 
 // mainplaylist.h
