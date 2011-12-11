@@ -69,9 +69,6 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] get plugin settings"
 echo "[titan]--------------------------------------------------------"
 
-
-
-
 cp -a "$HOME"/flashimg/source.titan/skins/[^.]* "$HOME"/flashimg/source.titan/plugins
 
 echo "[titan]--------------------------------------------------------"
