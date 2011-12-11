@@ -3,6 +3,9 @@
 
 void setdefaults()
 {
+	int i = 0;
+	char* tmpstr = NULL;
+
 	addconfigdef("vol", "30");
 	addconfigdef("maxsat", "4");
 	addconfigdef("dmxvideobuffersize", "1048576");
@@ -65,6 +68,13 @@ void setdefaults()
 	status.listboxselecttype = getskinconfigint("listboxselecttype", NULL);
 	status.borderradius = getskinconfigint("borderradius", NULL);
 	status.httpauth = ostrcat(getconfig("httpauth", NULL), NULL, 0, 0);
+
+	for(i = 0; i < MAXLONGKEY; i++)
+	{
+		tmpstr = ostrcat("longkey", oitoa(i), 0, 1);
+		status.longkeycode[i] = getrcconfigint(tmpstr, NULL);
+		free(tmpstr); tmpstr = NULL;
+	}
 }
 
 #endif
