@@ -126,7 +126,7 @@ int waitrc(struct skin* owner, unsigned int timeout, int flag)
 	struct timeval tv;
 	struct input_event rcdata;
 	int treffer = 0, rest = 0;
-	int ret = 0, len, fromthread = 0;
+	int ret = 0, len, fromthread = 0, longpress = 0, longpresscount = 0;
 	struct rc *node;
 
 	if(pthread_self() != status.mainthread)
@@ -169,11 +169,22 @@ int waitrc(struct skin* owner, unsigned int timeout, int flag)
 				usleep(10000);
 				continue;
 			}
-			if(rcdata.value == 0)
+			if(rcdata.value == 0) //release
 			{
 				usleep(10000);
 				continue;
 			}
+
+			if(rcdata.code == 113)
+			{
+				longpress = rcdata.code;
+				longpresscount++;
+				timeout = 0;
+				rest = 200;
+				usleep(10000);
+				continue;
+			}
+
 			if(time(NULL) - rcdata.time.tv_sec > 1)
 			{
 				usleep(10000);
@@ -200,6 +211,11 @@ int waitrc(struct skin* owner, unsigned int timeout, int flag)
 		}
 		else if((fromthread == 0 && ret == 0 && status.rckey == 0) || (fromthread == 1 && ret == 0)) //timeout
 		{
+			if(longpress > 0)
+			{
+				rcdata.code = longpress;
+				if(longpresscount > 5) rcdata.code = longpress + 3000;
+			}
 			treffer = 1;
 			rcdata.code = maprc(rcdata.code, owner);
 
@@ -211,7 +227,10 @@ int waitrc(struct skin* owner, unsigned int timeout, int flag)
 				else
  					node->rcfunc(node->screen, node->screennode, 2);
 			}
-			ret = RCTIMEOUT;
+			if(longpress > 0)
+				ret = rcdata.code;
+			else
+				ret = RCTIMEOUT;
 		}
 		else if(fromthread == 0 && status.rckey != 0)
 		{
