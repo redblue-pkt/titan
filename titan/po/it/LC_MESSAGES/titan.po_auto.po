@@ -77,7 +77,7 @@ msgstr ""
 #: play.h:425 play.h:494 global.h:3723 skin_default_skin.xml.h:173
 #: global.h:3726 scan.h:674 scan.h:825 scan.h:897 scan.h:1103 scan.h:680
 #: scan.h:831 scan.h:903 scan.h:1109 avsettings.h:195 global.h:3728
-#: harddisk.h:352 harddisk.h:526 harddisk.h:540 harddisk.h:568
+#: harddisk.h:352 harddisk.h:526 harddisk.h:540 harddisk.h:568 global.h:3738
 msgid "EXIT"
 msgstr ""
 
@@ -346,7 +346,7 @@ msgstr ""
 #: play.h:494 global.h:3723 global.h:3726 scan.h:674 scan.h:684 scan.h:825
 #: scan.h:897 scan.h:1103 scan.h:680 scan.h:690 scan.h:831 scan.h:903
 #: scan.h:1109 avsettings.h:195 global.h:3728 harddisk.h:526 harddisk.h:540
-#: harddisk.h:568
+#: harddisk.h:568 global.h:3738
 msgid "Message"
 msgstr ""
 
@@ -378,6 +378,7 @@ msgstr ""
 #: bluekeyactions.h:123 global.h:3609 bluekeyactions.h:128 global.h:3610
 #: global.h:3630 keyactions.h:183 global.h:3675 keyactions.h:187 global.h:3684
 #: global.h:3688 global.h:3721 global.h:3723 global.h:3726 global.h:3728
+#: global.h:3738
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -5493,4 +5494,16 @@ msgstr ""
 
 #: skin_default_skin.xml.h:319
 msgid "rename service"
+msgstr ""
+
+#: global.h:2587
+msgid "720p50"
+msgstr ""
+
+#: global.h:2593
+msgid "1080i50"
+msgstr ""
+
+#: global.h:2599
+msgid "576i50"
 msgstr ""
