@@ -98,7 +98,7 @@ int hddgetremovable(char* device)
 
 void screenfilesystem(char* dev)
 {
-	int i, rcret = 0;
+	int i, rcret = 0, count = 3;
 	struct skin* screen = getscreen("harddisk_main");
 	struct skin* listbox = getscreennode(screen, "listbox");
 	struct skin* tmp = NULL;
@@ -109,15 +109,17 @@ void screenfilesystem(char* dev)
 	listbox->aktline = 1;
 	changetitle(screen, "Harddisk Format - Filesystem");
 
-	for(i = 0; i < 4; i++)
+	if(status.expertmodus == 1) count = 4;
+
+	for(i = 0; i < count; i++)
 	{
 		tmp = addlistbox(screen, listbox, tmp, 1);
 		if(tmp != NULL)
 		{
 			if(i == 0) tmpstr = "ext2";
 			else if(i == 1) tmpstr = "ext3";
-			else if(i == 2) tmpstr = "vfat";
-			else if(i == 3) tmpstr = "jfs";
+			else if(i == 2) tmpstr = "jfs";
+			else if(i == 3) tmpstr = "vfat";
 			tmpstr1 = ostrcat(tmpstr1, getconfig("skinpath", NULL), 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, "/skin/ext2.png", 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, "/skin/", 1, 0);
