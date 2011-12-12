@@ -2574,10 +2574,8 @@ char* getvideomode()
 void switchvideomode()
 {
 	char* tmpstr = NULL;
-	struct skin* playpolicy = getscreen("playpolicy");
-
-start:
 	tmpstr = getvideomode();	
+	struct skin* playpolicy = getscreen("playpolicy");
 		
 	if(tmpstr != NULL)
 	{
