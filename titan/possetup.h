@@ -4,7 +4,7 @@
 void possearch(struct skin* possetup, struct dvbdev* dvbnode, int dir)
 {
 	int rcret = 0;
-	uint16_t signal = 0;
+	uint16_t snr = 0;
 
 	while(1)
 	{
@@ -17,8 +17,8 @@ void possearch(struct skin* possetup, struct dvbdev* dvbnode, int dir)
 			fediseqcrotor(dvbnode, 1, 0, 9);
 
 		usleep(300000);
-		signal = fereadsignalstrength(status.aktservice->fedev);
-		if(signal > 0) break;
+		snr = fereadsnr(status.aktservice->fedev);
+		if(snr > 0) break;
 	}
 }
 
