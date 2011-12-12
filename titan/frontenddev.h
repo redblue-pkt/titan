@@ -954,7 +954,7 @@ void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 {
 	debug(1000, "in");
 	char* tmpstr = NULL;
-	int toneburst = 0, cmdorder = 0, input = 0, uinput = 0, diseqmode = 0;
+	int toneburst = 0, cmdorder = 0, input = 0, uinput = 0, diseqmode = 0, rotorpos = 0;
 	fe_sec_mini_cmd_t mini = -1;
 	struct dvb_diseqc_master_cmd cmd = {{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0};
 	struct dvb_diseqc_master_cmd ucmd = {{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0};
@@ -975,6 +975,9 @@ void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 	free(tmpstr); tmpstr = NULL;
 	tmpstr = ostrcat(node->feshortname, "_diseqc_toneburst", 0, 0);
 	toneburst = getconfigint(tmpstr, node->feaktnr);
+	free(tmpstr); tmpstr = NULL;
+	tmpstr = ostrcat(node->feshortname, "_diseqc_rotorpos", 0, 0);
+	rotorpos = getconfigint(tmpstr, node->feaktnr);
 	free(tmpstr); tmpstr = NULL;
 
 	tmpstr = ostrcat(node->feshortname, "_diseqc", 0, 0);
@@ -1057,6 +1060,11 @@ void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 			fediseqcsendmastercmd(node, &cmd, 100);
 			if(mini != -1) fediseqcsendburst(node, mini, 15);
 			break;
+	}
+	
+	if(diseqmode == 2) // Diseqc 1.2
+	{
+		fediseqcrotor(node, rotorpos, 0, 8);
 	}
 
 	debug(1000, "out");
