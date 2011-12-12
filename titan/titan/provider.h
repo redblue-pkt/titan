@@ -297,6 +297,21 @@ void delprovider(int providerid)
 	debug(1000, "out");
 }
 
+void delprovidernotused(struct provider* node)
+{
+	struct channel* chnode = channel;
+
+	if(node == NULL) return;
+
+	while(chnode != NULL)
+	{
+		if(chnode->providerid == node->providerid)
+			return;
+		chnode = chnode->next;
+	}
+	delprovider(node->providerid);
+}
+
 struct provider* getproviderbyname(char* name)
 {
 	debug(1000, "in");
