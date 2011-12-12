@@ -1115,9 +1115,20 @@ void screenscanconfig(int flag)
 	delownerrc(scan);
 	clearscreen(scan);
 	resetsatscan();
-	tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
-	servicecheckret(servicestart(status.lastservice->channel, tmpstr, NULL, 0), 0);
-	free(tmpstr); tmpstr = NULL;
+
+	if(status.lastservice->channel == NULL)
+	{
+		if(status.servicetype == 0)
+			servicecheckret(servicestart(getchannel(getconfigint("serviceid", NULL), getconfiglu("transponderid", NULL)), getconfig("channellist", NULL), NULL, 0), 0);
+		else
+			servicecheckret(servicestart(getchannel(getconfigint("rserviceid", NULL), getconfiglu("rtransponderid", NULL)), getconfig("rchannellist", NULL),  NULL, 0), 0);
+	}
+	else
+	{
+		tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
+		servicecheckret(servicestart(status.lastservice->channel, tmpstr, NULL, 0), 0);
+		free(tmpstr); tmpstr = NULL;
+	}
 }
 
 #endif
