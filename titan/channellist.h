@@ -592,6 +592,27 @@ start:
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
 				drawscreen(channellist, 0);
 			}
+			if(listmode == EDITMODE && listbox->select != NULL && listbox->select->handle1 != NULL && rcret == getrcconfigint("rcok", NULL))
+			{
+				if(list == MAINBOUQUETLIST)
+				{
+					struct mainbouquet* oldentry = ((struct mainbouquet*)listbox->select->handle1);
+					char* newentry = textinput(NULL, oldentry->name);
+					if(newentry != NULL)
+					{
+						newentry = stringreplacechar(newentry, '#', '_');
+						free(oldentry->name);
+						oldentry->name = newentry;
+						status.writemainbouquet = 1;
+					}
+				}
+				delmarkedscreennodes(channellist, 1);
+				delmarkedscreennodes(channellist, 2);
+				status.markedchannel = NULL;
+				recalclist(list, aktlist, listmode, channellist, listbox);
+				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
+				drawscreen(channellist, 0);
+			}
 			if(listmode == RMMODE && listbox->select != NULL && listbox->select->handle1 != NULL && rcret == getrcconfigint("rcok", NULL))
 			{
 				if(list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL)
