@@ -2577,26 +2577,27 @@ void switchvideomode()
 	char* tmpstr = NULL;
 	tmpstr = getvideomode();	
 	struct skin* playpolicy = getscreen("playpolicy");
-		
+	char* tmpstr1 = NULL;
+			
 	if(tmpstr != NULL)
 	{
 		if(ostrcmp("pal", tmpstr) == 0 || ostrncmp("576", tmpstr, 3) == 0)
 		{
 			setvideomode("720p50", 0);
 			changefbresolution("720p50");
-			changetext(playpolicy, _("720p50"));
+			tmpstr1 = ostrcat(tmpstr1, "720p50", 1, 0);
 		}
 		else if(ostrncmp("720", tmpstr, 3) == 0)
 		{
 			setvideomode("1080i50", 0);
 			changefbresolution("1080i50");
-			changetext(playpolicy, _("1080i50"));
+			tmpstr1 = ostrcat(tmpstr1, "1080i50", 1, 0);
 		}
 		else if(ostrncmp("1080", tmpstr, 4) == 0)
 		{
 			setvideomode("576i50", 0);
 			changefbresolution("576i50");
-			changetext(playpolicy, _("576i50"));
+			tmpstr1 = ostrcat(tmpstr1, "576i50", 1, 0);
 		}
 		/*
 		int ret = textbox(_("Message"), _("Is this Videomode ok ?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
@@ -2607,11 +2608,13 @@ void switchvideomode()
 		}
 		*/
 		drawscreen(playpolicy, 0);
+		changetext(playpolicy, _(tmpstr1));
 		while(1)
 		{
 			rcret = waitrc(playpolicy, 5000, 0);
+			break;
 		}
-	
+		free(tmpstr1),tmpstr1 = NULL;
 		clearscreen(playpolicy);
 	}
 	free(tmpstr);
