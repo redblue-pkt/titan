@@ -400,6 +400,21 @@ int delchannel(int serviceid, int transponderid, int flag)
 	return ret;
 }
 
+void delchannelbytransponder(unsigned long transponderid)
+{
+	debug(1000, "in");
+	struct channel *node = channel, *prev = channel;
+
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+		if(prev != NULL && prev->transponderid == transponderid)
+			delchannel(prev->serviceid, prev->transponderid, 0);
+	}
+	debug(1000, "out");
+}
+
 void freechannel()
 {
 	debug(1000, "in");

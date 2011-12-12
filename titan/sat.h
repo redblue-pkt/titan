@@ -379,6 +379,8 @@ void delsat(char *name)
 					node->next->prev = prev;	
 			}
 
+			deltransponderbyorbitalpos(node->orbitalpos);
+
 			free(node->name);
 			node->name = NULL;
 
