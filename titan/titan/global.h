@@ -2577,7 +2577,8 @@ void switchvideomode()
 	struct skin* playpolicy = getscreen("playpolicy");
 
 	tmpstr = getvideomode();
-
+	drawscreen(playpolicy, 0);		
+		
 	if(tmpstr != NULL)
 	{
 		if(ostrcmp("pal", tmpstr) == 0 || ostrncmp("576", tmpstr, 3) == 0)
@@ -2606,7 +2607,6 @@ void switchvideomode()
 			changefbresolution(tmpstr);
 		}
 		*/
-		drawscreen(playpolicy, 0);		
 		sleep(5);
 		clearscreen(playpolicy);
 	}
