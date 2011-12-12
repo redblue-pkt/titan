@@ -2606,11 +2606,8 @@ void switchvideomode()
 			changefbresolution(tmpstr);
 		}
 		*/
-		while(1)
-		{
-			break;
-		}
-
+		drawscreen(playpolicy, 0);		
+		sleep(1);
 		clearscreen(playpolicy);
 	}
 	free(tmpstr);
