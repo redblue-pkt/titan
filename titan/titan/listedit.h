@@ -11,6 +11,7 @@ int screenlistedit(int list, struct channel* chnode)
 	struct skin* movemode = getscreennode(listedit, "movemode");
 	struct skin* protectmode = getscreennode(listedit, "protectmode");
 	struct skin* addmode = getscreennode(listedit, "addmode");
+	struct skin* editmode = getscreennode(listedit, "editmode");
 	struct skin* setstartchannel = getscreennode(listedit, "setstartchannel");
 	struct skin* delstartchannel = getscreennode(listedit, "delstartchannel");
 	char* newentry = NULL, *tmpstr = NULL, *tmpnr = NULL;
@@ -23,6 +24,7 @@ int screenlistedit(int list, struct channel* chnode)
 	movemode->hidden = NO;
 	protectmode->hidden = NO;
 	addmode->hidden = YES;
+	editmode->hidden = YES;
 	setstartchannel->hidden = YES;
 	delstartchannel->hidden = YES;
 
@@ -34,7 +36,10 @@ int screenlistedit(int list, struct channel* chnode)
 		protectmode->hidden = YES;
 	}
 	if(list == MAINBOUQUETLIST)
+	{
 		addmode->hidden = NO;
+		editmode->hidden = NO;
+	}
 
 	if(chnode != NULL && (list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL || list == BOUQUETCHANNEL))
 	{
@@ -61,6 +66,8 @@ int screenlistedit(int list, struct channel* chnode)
 				ret = CPMODE;
 			if(ostrcmp(listbox->select->name, "protectmode") == 0)
 				ret = PROTECTMODE;
+			if(ostrcmp(listbox->select->name, "editmode") == 0)
+				ret = EDITMODE;
 			if(ostrcmp(listbox->select->name, "addmode") == 0)
 			{
 				newentry = textinput(NULL, "bouquet");
