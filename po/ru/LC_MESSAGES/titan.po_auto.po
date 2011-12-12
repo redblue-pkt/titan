@@ -2176,55 +2176,55 @@ msgstr ""
 msgid "Wizard"
 msgstr ""
 
-#: possetup.h:8 possetup.h:29
+#: possetup.h:8 possetup.h:29 possetup.h:30
 msgid "move west"
 msgstr ""
 
-#: possetup.h:9 possetup.h:30
+#: possetup.h:9 possetup.h:30 possetup.h:31
 msgid "search west"
 msgstr ""
 
-#: possetup.h:10 possetup.h:31
+#: possetup.h:10 possetup.h:31 possetup.h:32
 msgid "search east"
 msgstr ""
 
-#: possetup.h:11 possetup.h:32
+#: possetup.h:11 possetup.h:32 possetup.h:33
 msgid "move east"
 msgstr ""
 
-#: possetup.h:16 possetup.h:37
+#: possetup.h:16 possetup.h:37 possetup.h:38
 msgid "step west"
 msgstr ""
 
-#: possetup.h:17 possetup.h:38
+#: possetup.h:17 possetup.h:38 possetup.h:39
 msgid "step east"
 msgstr ""
 
-#: possetup.h:22 possetup.h:43
+#: possetup.h:22 possetup.h:43 possetup.h:44
 msgid "limits off"
 msgstr ""
 
-#: possetup.h:23 possetup.h:44
+#: possetup.h:23 possetup.h:44 possetup.h:45
 msgid "limit west"
 msgstr ""
 
-#: possetup.h:24 possetup.h:45
+#: possetup.h:24 possetup.h:45 possetup.h:46
 msgid "limit east"
 msgstr ""
 
-#: possetup.h:25 possetup.h:46
+#: possetup.h:25 possetup.h:46 possetup.h:47
 msgid "limits on"
 msgstr ""
 
-#: possetup.h:30 possetup.h:51
+#: possetup.h:30 possetup.h:51 possetup.h:52
 msgid "store position"
 msgstr ""
 
-#: possetup.h:31 possetup.h:52
+#: possetup.h:31 possetup.h:52 possetup.h:53
 msgid "goto position"
 msgstr ""
 
-#: possetup.h:36 possetup.h:57
+#: possetup.h:36 possetup.h:57 possetup.h:58
 msgid "startposition"
 msgstr ""
 
