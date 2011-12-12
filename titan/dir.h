@@ -59,25 +59,25 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 
 	button = getscreennode(dir, "b1");
 	if(b1 != NULL)
-		changetext(button, b1);
+		changetext(button, _(b1));
 	else
 		changetext(button, _("---"));
 
 	button = getscreennode(dir, "b2");
 	if(b2 != NULL)
-		changetext(button, b2);
+		changetext(button, _(b2));
 	else
 		changetext(button, _("---"));
 
 	button = getscreennode(dir,  "b3");
 	if(b3 != NULL)
-		changetext(button, b3);
+		changetext(button, _(b3));
 	else
 		changetext(button, _("---"));
 
 	button = getscreennode(dir, "b4");
 	if(b4 != NULL)
-		changetext(button, b4);
+		changetext(button, _(b4));
 	else
 		changetext(button, _("---"));
 
