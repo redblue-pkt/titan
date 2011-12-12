@@ -5497,14 +5497,14 @@ msgstr ""
 msgid "rename service"
 msgstr ""
 
-#: global.h:2587
+#: global.h:2587 global.h:2588
 msgid "720p50"
 msgstr ""
 
-#: global.h:2593
+#: global.h:2593 global.h:2594
 msgid "1080i50"
 msgstr ""
 
-#: global.h:2599
+#: global.h:2599 global.h:2600
 msgid "576i50"
 msgstr ""
