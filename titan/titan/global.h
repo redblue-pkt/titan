@@ -2607,7 +2607,7 @@ void switchvideomode()
 		}
 		*/
 		drawscreen(playpolicy, 0);		
-		sleep(1);
+		sleep(5);
 		clearscreen(playpolicy);
 	}
 	free(tmpstr);
