@@ -18,7 +18,8 @@ void possearch(struct skin* possetup, struct dvbdev* dvbnode, int dir)
 
 		usleep(300000);
 		snr = fereadsnr(status.aktservice->fedev);
-		if(snr > 0) break;
+		snr = (snr * 100) / 0xffff;
+		if(snr > 50) break;
 	}
 }
 
