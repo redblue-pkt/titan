@@ -1725,3 +1725,6 @@ msgid "Protect Channel Freetime (min)"
 msgstr "Kanalschutzzeit aus (min)"
 msgid " SELECT"
 msgstr "alle hinzu"
+#: skin_default_skin.xml.h:319
+msgid "rename service"
+msgstr "Favoriten umbennen"
