@@ -2576,8 +2576,8 @@ void switchvideomode()
 	char* tmpstr = NULL;
 	struct skin* playpolicy = getscreen("playpolicy");
 
-	tmpstr = getvideomode();
-	drawscreen(playpolicy, 0);		
+start:
+	tmpstr = getvideomode();	
 		
 	if(tmpstr != NULL)
 	{
@@ -2607,7 +2607,12 @@ void switchvideomode()
 			changefbresolution(tmpstr);
 		}
 		*/
-		sleep(5);
+		drawscreen(playpolicy, 0);
+		while(1)
+		{
+			rcret = waitrc(playpolicy, 5000, 0);
+		}
+	
 		clearscreen(playpolicy);
 	}
 	free(tmpstr);
