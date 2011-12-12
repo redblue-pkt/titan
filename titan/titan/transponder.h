@@ -721,6 +721,8 @@ void deltransponder(unsigned long transponderid)
 				dvbnode = dvbnode->next;
 			}
 
+			if(transponderid != 0) delchannelbytransponder(node->id);
+
 			free(node);
 			node = NULL;
 			break;
@@ -749,6 +751,21 @@ struct transponder* gettransponder(unsigned long transponderid)
 	}
 	debug(100, "transponder not found (%lu)", transponderid);
 	return NULL;
+}
+
+void deltransponderbyorbitalpos(int orbitalpos)
+{
+	//debug(1000, "in");
+	struct transponder *node = transponder, *prev = transponder;
+
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+		if(prev != NULL && prev->orbitalpos == orbitalpos)
+			deltransponder(prev->id);
+	}
+	//debug(1000, "out");
 }
 
 void freetransponder()
