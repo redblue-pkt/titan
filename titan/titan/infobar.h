@@ -95,7 +95,7 @@ void screeninfobar()
 			}
 			if(rcret == getrcconfigint("rcfr", NULL))
 			{
-				timeshiftseek(-5);
+				//timeshiftseek(-5);
 				continue;
 			}
 		}
