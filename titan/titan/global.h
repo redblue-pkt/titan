@@ -3510,7 +3510,7 @@ char* get_ipk_update()
 		int max = count1;
 		int i = 0;
 		for( i = 0; i < max; i++){
-			system("rm -rf /tmp/Packages.preview.tar.gz");
+			unlink("/tmp/Packages.preview.tar.gz");
 			ip = ostrcat("", (&ret1[i])->part, 0, 0);
 			debug(60, "ip: %s", ip);
 			cmd = ostrcat("", "cat /var/etc/ipkg/official-feed.conf | grep ", 0, 0);
@@ -3538,9 +3538,9 @@ char* get_ipk_update()
 	}
 
 	debug(60, "remove /var/lib/ipkg/cross");
-	system("rm -rf /var/lib/ipkg/cross");
+	unlink("/var/lib/ipkg/cross");
 	debug(60, "remove /var/lib/ipkg/secret");
-	system("rm -rf /var/lib/ipkg/secret");	
+	unlink("/var/lib/ipkg/secret");	
 	debug(60, "out");
 	return command("ipkg update");
 }
