@@ -9,7 +9,7 @@ void possearch(struct skin* possetup, struct dvbdev* dvbnode, int dir)
 	while(1)
 	{
 		rcret = waitrc(possetup, 500, 0);
-		if(rcret == getconfigint("rcok", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL)) break;
 
 		if(dir == 0)
 			fediseqcrotor(dvbnode, 1, 0, 10);
