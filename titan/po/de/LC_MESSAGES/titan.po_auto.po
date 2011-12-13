@@ -78,7 +78,8 @@ msgstr ""
 #: global.h:3726 scan.h:674 scan.h:825 scan.h:897 scan.h:1103 scan.h:680
 #: scan.h:831 scan.h:903 scan.h:1109 avsettings.h:195 global.h:3728
 #: harddisk.h:352 harddisk.h:526 harddisk.h:540 harddisk.h:568 global.h:3738
-#: global.h:3735 global.h:3739 global.h:3742
+#: global.h:3735 global.h:3739 global.h:3742 global.h:3746 record.h:638
+#: record.h:801 record.h:938
 msgid "EXIT"
 msgstr ""
 
@@ -348,6 +349,7 @@ msgstr ""
 #: scan.h:897 scan.h:1103 scan.h:680 scan.h:690 scan.h:831 scan.h:903
 #: scan.h:1109 avsettings.h:195 global.h:3728 harddisk.h:526 harddisk.h:540
 #: harddisk.h:568 global.h:3738 global.h:3735 global.h:3739 global.h:3742
+#: global.h:3746 record.h:638 record.h:801 record.h:938
 msgid "Message"
 msgstr ""
 
@@ -372,14 +374,14 @@ msgstr ""
 #: play.h:417 play.h:422 play.h:427 play.h:426 play.h:429 play.h:430
 #: play.h:421 skin_default_skin.xml.h:265 play.h:428 global.h:2594 play.h:425
 #: skin_default_skin.xml.h:267 avsettings.h:195 harddisk.h:352 harddisk.h:526
-#: harddisk.h:540 harddisk.h:568
+#: harddisk.h:540 harddisk.h:568 record.h:638
 msgid "OK"
 msgstr ""
 
 #: bluekeyactions.h:123 global.h:3609 bluekeyactions.h:128 global.h:3610
 #: global.h:3630 keyactions.h:183 global.h:3675 keyactions.h:187 global.h:3684
 #: global.h:3688 global.h:3721 global.h:3723 global.h:3726 global.h:3728
-#: global.h:3738 global.h:3735 global.h:3739 global.h:3742
+#: global.h:3738 global.h:3735 global.h:3739 global.h:3742 global.h:3746
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -2306,17 +2308,17 @@ msgstr ""
 msgid "Record / Timeshift / Stream"
 msgstr ""
 
-#: record.h:634
+#: record.h:634 record.h:638
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
 msgstr ""
 
-#: record.h:796
+#: record.h:796 record.h:800
 msgid "Timer Record start !\n"
 msgstr ""
 
-#: record.h:932 record.h:934
+#: record.h:932 record.h:934 record.h:938
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr ""
 
@@ -5457,11 +5459,11 @@ msgstr ""
 msgid "ABC/abc"
 msgstr ""
 
-#: record.h:894
+#: record.h:894 record.h:898
 msgid "stop"
 msgstr ""
 
-#: record.h:898
+#: record.h:898 record.h:902
 msgid "change"
 msgstr ""
 
