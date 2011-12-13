@@ -186,6 +186,8 @@ void screeninfobar()
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
+			timeshiftff();
+			continue;
 			subtitlepause(1);
 			status.infobar = 0;
 			clearscreen(infobar);
