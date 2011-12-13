@@ -90,11 +90,12 @@ void screeninfobar()
 			//TODO: ff, fr, seek
 			if(rcret == getrcconfigint("rcff", NULL))
 			{
-				timeshiftff();
+				timeshiftseek(5);
 				continue;
 			}
 			if(rcret == getrcconfigint("rcfr", NULL))
 			{
+				timeshiftseek(-5);
 				continue;
 			}
 		}

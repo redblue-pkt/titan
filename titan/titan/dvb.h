@@ -744,9 +744,9 @@ int getpts(int fd, off64_t offset, int spid, int left, unsigned long long *pts, 
 		unsigned char packet[188];
 
 		if(dir > -1)
-			*findpos = llseek(fd, offset, SEEK_SET);
+			*findpos = lseek(fd, offset, SEEK_SET);
 		else
-			*findpos = llseek(fd, offset, SEEK_END);
+			*findpos = lseek(fd, offset, SEEK_END);
 
 		int ret = dvbreadfd(fd, packet, 0, 188, -1);
 		if(ret != 188)
