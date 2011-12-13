@@ -955,7 +955,7 @@ void screenrecorddirect()
 
 int recordskipplay(struct service* servicenode, int sekunden)
 {
-	off_t offset;
+	off64_t offset;
 	int dupfd = -1;
 	int ret = 0;
 	unsigned long long pts = 0;
@@ -982,14 +982,10 @@ int recordskipplay(struct service* servicenode, int sekunden)
 	ret = videoclearbuffer(status.aktservice->videodev);
 	ret = audioclearbuffer(status.aktservice->audiodev);
 	if(sekunden > 0 )  
-	//offset = lseek(servicenode->recsrcfd, RECPLAYBSIZE * 3, SEEK_CUR);
-	offset = lseek(servicenode->recsrcfd, (bitrate / 8) * sekunden, SEEK_CUR);
-	//offset = lseek(servicenode->recsrcfd, offset + (bitrate / 8 * sekunden), SEEK_SET);
+		offset = llseek(servicenode->recsrcfd, (bitrate / 8) * sekunden, SEEK_CUR);
 	else
-	{
-		offset = lseek(servicenode->recsrcfd, 0, SEEK_CUR);
-		offset = lseek(servicenode->recsrcfd, offset - RECPLAYBSIZE * 3, SEEK_SET);
-	}
+		offset = llseek(servicenode->recsrcfd, -((bitrate / 8) * sekunden), SEEK_CUR);
+	
 	close(dupfd); 
 	return 0;
 }
