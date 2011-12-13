@@ -3536,6 +3536,11 @@ char* get_ipk_update()
 		free(ip), ip = NULL;
 		free(path), path = NULL;
 	}
+
+	debug(60, "remove /var/lib/ipkg/cross");
+	system("rm -rf /var/lib/ipkg/cross");
+	debug(60, "remove /var/lib/ipkg/secret");
+	system("rm -rf /var/lib/ipkg/secret");	
 	debug(60, "out");
 	return command("ipkg update");
 }
