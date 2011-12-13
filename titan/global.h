@@ -361,6 +361,7 @@ void initmutex(int flag)
 		pthread_mutex_init(&status.clistmutex, NULL);
 		pthread_mutex_init(&status.hddmutex, NULL);
 		pthread_mutex_init(&status.linkedchannelmutex, NULL);
+		pthread_mutex_init(&status.tsseekmutex, NULL);
 	}
 	else
 	{
@@ -379,6 +380,7 @@ void initmutex(int flag)
 		pthread_mutex_destroy(&status.clistmutex);
 		pthread_mutex_destroy(&status.hddmutex);
 		pthread_mutex_destroy(&status.linkedchannelmutex);
+		pthread_mutex_destroy(&status.tsseekmutex);
 	}
 }
 
@@ -653,6 +655,7 @@ void m_lock(pthread_mutex_t *mutex, int flag)
 		case 12: debug(900, "clistmutex lock"); break;
 		case 13: debug(900, "hddmutex lock"); break;
 		case 14: debug(900, "linkedchannelmutex lock"); break;
+		case 15: debug(900, "tsseekmutex lock"); break;
 		default: debug(900, " unknown mutex lock"); break;
 	}
 	pthread_mutex_lock(mutex);
@@ -677,6 +680,7 @@ void m_unlock(pthread_mutex_t *mutex, int flag)
 		case 12: debug(900, "clistmutex unlock"); break;
 		case 13: debug(900, "hddmutex unlock"); break;
 		case 14: debug(900, "linkedchannelmutex unlock"); break;
+		case 15: debug(900, "tsseekmutex unlock"); break;
 		default: debug(900, " unknown mutex unlock"); break;
 	}
 	pthread_mutex_unlock(mutex);

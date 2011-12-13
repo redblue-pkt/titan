@@ -344,7 +344,11 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 		readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout);
 		usleep(1000);
 #else
+		if(servicenode->type == RECORDPLAY)
+			m_lock(&status.tsseekmutex, 15);
 		readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout);
+		if(servicenode->type == RECORDPLAY)
+			m_unlock(&status.tsseekmutex, 15);
 #endif
 		if(readret > 0)
 		{
@@ -980,12 +984,14 @@ int recordskipplay(struct service* servicenode, int sekunden)
 		err("cant read bitrate");
 		return 1;
 	}
+	close(dupfd); 
+	m_lock(&status.tsseekmutex, 15);
 	ret = videoclearbuffer(status.aktservice->videodev);
 	ret = audioclearbuffer(status.aktservice->audiodev);
 	offset = (bitrate / 8 * sekunden / 188) * 188;
 	offset = lseek64(servicenode->recsrcfd, offset, SEEK_CUR);
-	
-	close(dupfd); 
+	m_unlock(&status.tsseekmutex, 15);
+
 	return 0;
 }
 

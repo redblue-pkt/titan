@@ -840,6 +840,7 @@ struct status
 	pthread_mutex_t queuemutex;
 	pthread_mutex_t clistmutex;
 	pthread_mutex_t hddmutex;
+	pthread_mutex_t tsseekmutex;
 	// mutex for VFD handling
 	pthread_mutex_t vfdmutex;
 	off64_t recsplitsize;
