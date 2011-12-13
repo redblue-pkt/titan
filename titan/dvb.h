@@ -930,6 +930,7 @@ int gettsinfo(int fd, unsigned long long* pts, unsigned long long* bitrate)
 			end = fixuppts(start, end);
 			*pts = end - start;
 			*bitrate = gettsbitrate(start, end, startfindpos, endfindpos);
+			err("*****> bitrate %llu", *bitrate);
 		}
 	}
 
