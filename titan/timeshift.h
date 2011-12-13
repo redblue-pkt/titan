@@ -72,11 +72,11 @@ void timeshiftplay()
 		playercontinuets();
 }
 
-void timeshiftff()
+void timeshiftseek(int sekunden)
 {
 	struct service* snode = getservice(RECORDPLAY, 0);
 	if(snode != 0)
-		recordskipplay(snode, 5);
+		recordskipplay(snode, sekunden);
 }
 
 #endif

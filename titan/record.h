@@ -966,7 +966,8 @@ int recordskipplay(struct service* servicenode, int sekunden)
 		err("source fd not ok");
 		return 1;
 	}
-	dupfd = open(servicenode->recname, O_RDONLY | O_LARGEFILE);
+	struct service* snode = getservice(RECORDTIMESHIFT, 0);
+	dupfd = open(snode->recname, O_RDONLY | O_LARGEFILE);
 	//offset = lseek(servicenode->recsrcfd, 0, SEEK_CUR);
 	//dupfd = fcntl(servicenode->recsrcfd, F_DUPFD, 0);
 	if(dupfd < 0)
@@ -981,10 +982,8 @@ int recordskipplay(struct service* servicenode, int sekunden)
 	}
 	ret = videoclearbuffer(status.aktservice->videodev);
 	ret = audioclearbuffer(status.aktservice->audiodev);
-	if(sekunden > 0 )  
-		offset = llseek(servicenode->recsrcfd, (bitrate / 8) * sekunden, SEEK_CUR);
-	else
-		offset = llseek(servicenode->recsrcfd, -((bitrate / 8) * sekunden), SEEK_CUR);
+	offset = (bitrate / 8 * sekunden / 188) * 188;
+	offset = lseek64(servicenode->recsrcfd, offset, SEEK_CUR);
 	
 	close(dupfd); 
 	return 0;
