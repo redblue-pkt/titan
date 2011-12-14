@@ -3495,6 +3495,9 @@ char* get_ipk_update()
 
 	cmd = ostrcat(cmd, "cat /var/etc/ipkg/official-feed.conf | grep secret | wc -l", 1, 0);
 	debug(60, "cmd: %s", cmd);
+	cmd = strstrip(string_newline(command(cmd)));
+	debug(60, "cmd: %s", cmd);
+		
 	if(ostrcmp(cmd, "0") != 0)
 	{
 		cmd = ostrcat(cmd, "cat /var/etc/ipkg/official-feed.conf | grep secret | cut -d '/' -f4", 1, 0);
