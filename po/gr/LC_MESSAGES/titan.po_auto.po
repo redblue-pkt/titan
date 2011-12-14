@@ -5517,3 +5517,7 @@ msgstr ""
 #: global.h:3501 global.h:3503
 msgid "check your Secret Feed !"
 msgstr ""
+
+#: skin_default_skin.xml.h:434
+msgid "virtualbox (text)"
+msgstr ""
