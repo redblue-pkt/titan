@@ -29,7 +29,7 @@ char* ipklistbox(char* defaultstr, char* str, char* skinname, char* skintitle, c
 		skinname1 = ostrcat(skinname, "", 0, 0);
 	}
 
-	if(skinpath == NULL
+	if(skinpath == NULL)
 	{
 		debug(60, "skinpath default=skin/");
 		skinpath1 = ostrcat(skinpath, "skin/", 1, 0);
