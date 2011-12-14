@@ -15,21 +15,27 @@ char* ipklistbox(char* defaultstr, char* str, char* skinname, char* skintitle, c
 	char* tmpskinpath = NULL;
 	int rcret = 0;
 
-	if (str == NULL)
+	if(str == NULL)
 		return 0;
 
-	if (skinname == NULL){
+	if(skinname == NULL)
+	{
 		debug(60, "skinname default=menulist");
 		skinname1 = ostrcat(skinname, "menulist", 1, 0);
-	} else {
+	}
+	else
+	{
 		debug(60, "skinname changed=%s", skinname);
 		skinname1 = ostrcat(skinname, "", 0, 0);
 	}
 
-	if (skinpath == NULL){
+	if(skinpath == NULL
+	{
 		debug(60, "skinpath default=skin/");
 		skinpath1 = ostrcat(skinpath, "skin/", 1, 0);
-	} else {
+	}
+	else
+	{
 		debug(60, "skinpath changed=%s", skinpath);
 		skinpath1 = ostrcat(skinpath, "", 0, 0);
 	}
@@ -40,7 +46,8 @@ char* ipklistbox(char* defaultstr, char* str, char* skinname, char* skintitle, c
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
 
-	if(skintitle != NULL){
+	if(skintitle != NULL)
+	{
 		debug(60, "skintitle changed=%s", skintitle);
 		changetitle(screen, _(skintitle));
 	}
@@ -85,7 +92,8 @@ char* ipklistbox(char* defaultstr, char* str, char* skinname, char* skintitle, c
 			{
 				debug(60, "check1: (%d)-(%d) %s", i, a, (&ret3[a])->part);
 				debug(60, "check2: (%d)-(%d) %s", i, a, (&ret1[i])->part);
-				if(string_find((&ret3[a])->part,(&ret1[i])->part)){
+				if(string_find((&ret3[a])->part,(&ret1[i])->part))
+				{
 					debug(60, "set skiped=1");
 					skip = 1;
 					continue;
@@ -170,9 +178,7 @@ char* ipklistbox(char* defaultstr, char* str, char* skinname, char* skintitle, c
 				debug(60, "showpng changed=%d", showpng);
 			}
 			else
-			{
 				debug(60, "showpng default=%d", showpng);
-			}
 
 			if(ostrcmp((&ret1[i])->part, "\t") == 0)
 				tmp->deaktivcol = convertcol("deaktivcol");
@@ -180,7 +186,8 @@ char* ipklistbox(char* defaultstr, char* str, char* skinname, char* skintitle, c
 			{
 				if(showpng == 1)
 				{
-					if(string_find("%pluginpath%",skinpath1)){
+					if(string_find("%pluginpath%",skinpath1))
+					{
 						struct splitstr* ret6 = NULL;
 						int count6 = 0;
 						char* tmpstr6 = NULL;
@@ -198,7 +205,9 @@ char* ipklistbox(char* defaultstr, char* str, char* skinname, char* skintitle, c
 							defaultdir = ostrcat(defaultdir, ".png", 1, 0);
 						}
 						free(ret6), ret6 = NULL;
-					} else {
+					}
+					else
+					{
 						defaultdir = ostrcat(getconfig("skinpath", NULL), skinpath1, 0, 0);
 						defaultdir = ostrcat(defaultdir, "/skin/panel_", 0, 0);
 						defaultdir = ostrcat(defaultdir, (&ret1[i])->part, 1, 0);
@@ -267,10 +276,13 @@ char* ipklistbox(char* defaultstr, char* str, char* skinname, char* skintitle, c
 					ret5 = strsplit(tmpstr5, ")( ", &count5);
 					debug(60, "(&ret5[0])->part %s", (&ret5[0])->part);
 
-					if(ostrcmp((&ret5[0])->part, "add") == 0){
+					if(ostrcmp((&ret5[0])->part, "add") == 0)
+					{
 						defaultdir = ostrcat("", (&ret1[i])->part, 0, 0);
 						defaultdir = ostrcat(defaultdir, ".png", 1, 0);
-					} else {
+					}
+					else
+					{
 						defaultdir = ostrcat("", (&ret5[0])->part, 0, 0);
 						defaultdir = ostrcat(defaultdir, ".png", 1, 0);
 					}
