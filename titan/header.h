@@ -1,6 +1,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+// textinput.h
+char* textinput(char* title, char* text);
+
 //linkedchannel.h
 void screenlinkedchannel();
 struct linkedchannel* getlinkedchannel(struct channel* chnode, int serviceid, unsigned long transponderid);
