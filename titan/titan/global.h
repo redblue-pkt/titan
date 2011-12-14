@@ -3500,12 +3500,12 @@ char* get_ipk_update()
 		
 	if(ostrcmp(cmd, "0") != 0)
 	{
-		cmd = ostrcat(cmd, "cat /var/etc/ipkg/official-feed.conf | grep secret | cut -d '/' -f4", 1, 0);
+		cmd = ostrcat(cmd, "cat /var/etc/ipkg/official-feed.conf | grep secret | cut -d':' -f2", 1, 0);
 		debug(60, "cmd: %s", cmd);
 		cmd = strstrip(string_newline(command(cmd)));
 		debug(60, "cmd: %s", cmd);
 		
-		if(ostrcmp(cmd, "97.74.32.10") != 0)
+		if(ostrcmp(cmd, "//97.74.32.10/svn/atemio") != 0)
 		{
 			textbox(_("Message"), _("check your Secret Feed !"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
 			free(cmd), cmd = NULL;
