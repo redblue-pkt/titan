@@ -650,10 +650,10 @@ void deltunerconfig()
 
 void screentunerconfig()
 {
-	int rcret = 0, ret = 0, mode = 0;
+	int rcret = 0, ret = 0; //, mode = 0;
 	struct skin* tunerconfig = getscreen("tunerconfig");
 	struct skin* listbox = getscreennode(tunerconfig, "listbox");
-	struct skin* tunemode = getscreennode(tunerconfig, "mode");
+//	struct skin* tunemode = getscreennode(tunerconfig, "mode");
 	struct dvbdev* dvbnode = dvbdev;
 	struct skin* tunernode = NULL;
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpnr = NULL;
