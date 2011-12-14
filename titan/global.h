@@ -3500,7 +3500,7 @@ char* get_ipk_update()
 		
 	if(ostrcmp(cmd, "0") != 0)
 	{
-		cmd = ostrcat(cmd, "cat /var/etc/ipkg/official-feed.conf | grep secret | cut -d':' -f2", 1, 0);
+		cmd = ostrcat("", "cat /var/etc/ipkg/official-feed.conf | grep secret | cut -d':' -f2", 0, 0);
 		debug(60, "cmd: %s", cmd);
 		cmd = strstrip(string_newline(command(cmd)));
 		debug(60, "cmd: %s", cmd);
@@ -3560,7 +3560,8 @@ char* get_ipk_update()
 	debug(60, "remove /var/lib/ipkg/cross");
 	unlink("/var/lib/ipkg/cross");
 	debug(60, "remove /var/lib/ipkg/secret");
-	unlink("/var/lib/ipkg/secret");	
+	unlink("/var/lib/ipkg/secret");
+	sleep(1);	
 	debug(60, "out");
 	return command("ipkg update");
 }
