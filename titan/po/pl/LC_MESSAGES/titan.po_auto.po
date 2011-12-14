@@ -81,7 +81,7 @@ msgstr ""
 #: global.h:3735 global.h:3739 global.h:3742 global.h:3746 record.h:638
 #: record.h:801 record.h:938 global.h:3751 global.h:3501 global.h:3761
 #: global.h:3503 global.h:3763 global.h:3507 global.h:3768 global.h:3510
-#: global.h:3771 httpdfunc.h:2123
+#: global.h:3771 httpdfunc.h:2123 tunerconfig.h:734
 msgid "EXIT"
 msgstr ""
 
@@ -353,7 +353,7 @@ msgstr ""
 #: harddisk.h:568 global.h:3738 global.h:3735 global.h:3739 global.h:3742
 #: global.h:3746 record.h:638 record.h:801 record.h:938 global.h:3751
 #: global.h:3501 global.h:3761 global.h:3503 global.h:3763 global.h:3507
-#: global.h:3768 global.h:3510 global.h:3771
+#: global.h:3768 global.h:3510 global.h:3771 tunerconfig.h:734
 msgid "Message"
 msgstr ""
 
@@ -5226,11 +5226,11 @@ msgstr ""
 msgid "loop to Tuner"
 msgstr ""
 
-#: tunerconfig.h:675
+#: tunerconfig.h:675 tunerconfig.h:676
 msgid "Tuner "
 msgstr ""
 
-#: tunerconfig.h:733
+#: tunerconfig.h:733 tunerconfig.h:734
 msgid "DVB-T not supportet at the moment !"
 msgstr ""
 
