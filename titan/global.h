@@ -3495,7 +3495,9 @@ char* get_ipk_update()
 			
 	cmd = ostrcat(cmd, "cat /var/etc/ipkg/official-feed.conf | grep secret | cut -d '/' -f4", 1, 0);
 	debug(60, "cmd: %s", cmd);
-
+	cmd = strstrip(string_newline(command(cmd)));
+	debug(60, "cmd: %s", cmd);
+		
 	if(ostrcmp(cmd, "97.74.32.10") == 1)
 	{
 		textbox(_("Message"), _("check your Secret Feed !"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
