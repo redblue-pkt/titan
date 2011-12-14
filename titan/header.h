@@ -1,18 +1,22 @@
 #ifndef HEADER_H
 #define HEADER_H
 
-// textinput.h
-char* textinput(char* title, char* text);
+//frontenddev.h
+struct dvbdev* fegetdummy();
 
-//linkedchannel.h
-void screenlinkedchannel();
-struct linkedchannel* getlinkedchannel(struct channel* chnode, int serviceid, unsigned long transponderid);
+//dvrdev.h
+void dvrclose(struct dvbdev* node, int fd);
+struct dvbdev* dvropen(struct dvbdev* fenode);
+
+//audiodev.h
+int audiopause(struct dvbdev* node);
+int audioplay(struct dvbdev* node);
+
+//textinput.h
+char* textinput(char* title, char* text);
 
 //httpdsettings.h
 void screenhttpdsettings();
-
-//ca.h
-int getfreecasession(struct dvbdev* dvbnode, int type, int value);
 
 //help.h
 void screenhelp(struct skin* node);
@@ -21,6 +25,7 @@ void screenhelp(struct skin* node);
 void screenrestoredefault();
 
 //ca.h
+int getfreecasession(struct dvbdev* dvbnode, int type, int value);
 void caappmenu(struct dvbdev* dvbnode);
 
 //cam.h
@@ -58,6 +63,8 @@ char* harddisk_listbox(char* defaultstr, char* str, char* skinname, char* skinti
 
 // videodev.h
 int videoreadqwidth(struct dvbdev* node);
+int videofreeze(struct dvbdev* node);
+int videocontinue(struct dvbdev* node);
 
 // scan.h
 int findchannel(struct transponder* tpnode, unsigned char *buf, uint8_t* lastsecnr, struct skin* scan, struct skin* listbox, int flag);
@@ -113,10 +120,13 @@ void screennetwork_test();
 
 //channel.h
 int writechannel(const char *filename);
+struct channel* createchannel(char* name, unsigned long transponderid, int providerid, int serviceid, int servicetype, int flag, int videocodec, int audiocodec, int videopid, int audiopid, int protect);
+void delchannelbytransponder(unsigned long transponderid);
 
 //transponder.h
 struct transponder* gettransponder(unsigned long transponderid);
 int writetransponder(const char *filename);
+void deltransponderbyorbitalpos(int orbitalpos);
 
 //sat.h
 int writesat(const char *filename);
@@ -133,6 +143,7 @@ int getskinconfigint(char *key, char *ext);
 
 //record.h
 struct service* getrecordbyname(char* recname, int type);
+int recordskipplay(struct service* servicenode, int sekunden);
 
 // play.h
 void screenplay(int startfolder, int flag);
@@ -169,6 +180,7 @@ unsigned char* dvbgetsdt(struct dvbdev* fenode, int secnr, int timeout);
 int dvbreadfd(int fd, unsigned char *buf, int pos, int count, int tout);
 int dvbwrite(int fd, unsigned char* buf, int count, int tout);
 int dvbgetdate(time_t* time, int timeout);
+int dvbfindpmtpid(int fd, int16_t *pmtpid, int *serviceid);
 
 //pin.h
 int screenpincheck(int type, char* pin);
@@ -354,6 +366,8 @@ char* string_remove_whitechars(char *text);
 void setfanspeed(int speed, int aktion);
 int writeallconfig(int flag);
 int checkemu();
+int setvol(int value);
+int getvol();
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
@@ -367,6 +381,7 @@ void delservice(struct service* snode, int flag);
 int servicestop(struct service *node, int clear, int flag);
 int servicestart(struct channel* chnode, char* channellist, char* pin, int flag);
 void serviceresetchannelinfo(struct channel* chnode);
+struct service* getservice(int type, int flag);
 
 //mainbouquets.h
 int writemainbouquet(const char *filename);
@@ -394,6 +409,8 @@ int subtitlepause(int flag);
 //linkedchannel.h
 struct linkedchannel* addlinkedchannel(struct channel* chnode, int serviceid, unsigned long transponderid, struct linkedchannel* last);
 void freelinkedchannel(struct channel* chnode);
+void screenlinkedchannel();
+struct linkedchannel* getlinkedchannel(struct channel* chnode, int serviceid, unsigned long transponderid);
 
 //zap.h
 void zapup();
