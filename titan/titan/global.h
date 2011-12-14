@@ -3491,11 +3491,21 @@ char* get_ipk_update()
 {
 	debug(60, "in");
 	char* tmpstr1 = NULL;
+	char* cmd = NULL;
+			
+	cmd = ostrcat(cmd, "cat /var/etc/ipkg/official-feed.conf | grep secret | cut -d '/' -f4", 1, 0);
+	debug(60, "cmd: %s", cmd);
 
+	if(ostrcmp(cmd, "97.74.32.10") == 1)
+	{
+		textbox(_("Message"), _("check your Secret Feed !"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
+		free(cmd), cmd = NULL;
+		return cmd;
+	}
+		
 	if(!file_exist("/tmp/Packages.preview.tar.gz"))
 	{
 		char* ip = NULL;
-		char* cmd = NULL;
 		char* path = NULL;
 
 		cmd = ostrcat(cmd, "cat /var/etc/ipkg/official-feed.conf | cut -d '/' -f4", 1, 0);
@@ -3532,11 +3542,11 @@ char* get_ipk_update()
 
 		}
 
-		free(cmd), cmd = NULL;
 		free(ip), ip = NULL;
 		free(path), path = NULL;
 	}
 
+	free(cmd), cmd = NULL;
 	debug(60, "remove /var/lib/ipkg/cross");
 	unlink("/var/lib/ipkg/cross");
 	debug(60, "remove /var/lib/ipkg/secret");
