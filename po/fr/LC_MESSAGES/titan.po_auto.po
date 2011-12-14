@@ -79,7 +79,7 @@ msgstr ""
 #: scan.h:831 scan.h:903 scan.h:1109 avsettings.h:195 global.h:3728
 #: harddisk.h:352 harddisk.h:526 harddisk.h:540 harddisk.h:568 global.h:3738
 #: global.h:3735 global.h:3739 global.h:3742 global.h:3746 record.h:638
-#: record.h:801 record.h:938 global.h:3751
+#: record.h:801 record.h:938 global.h:3751 global.h:3501 global.h:3761
 msgid "EXIT"
 msgstr ""
 
@@ -350,6 +350,7 @@ msgstr ""
 #: scan.h:1109 avsettings.h:195 global.h:3728 harddisk.h:526 harddisk.h:540
 #: harddisk.h:568 global.h:3738 global.h:3735 global.h:3739 global.h:3742
 #: global.h:3746 record.h:638 record.h:801 record.h:938 global.h:3751
+#: global.h:3501 global.h:3761
 msgid "Message"
 msgstr ""
 
@@ -382,7 +383,7 @@ msgstr ""
 #: global.h:3630 keyactions.h:183 global.h:3675 keyactions.h:187 global.h:3684
 #: global.h:3688 global.h:3721 global.h:3723 global.h:3726 global.h:3728
 #: global.h:3738 global.h:3735 global.h:3739 global.h:3742 global.h:3746
-#: global.h:3751
+#: global.h:3751 global.h:3761
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -5510,4 +5511,8 @@ msgstr ""
 
 #: global.h:2599 global.h:2600
 msgid "576i50"
+msgstr ""
+
+#: global.h:3501
+msgid "check your Secret Feed !"
 msgstr ""
