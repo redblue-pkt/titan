@@ -960,10 +960,25 @@ void screenrecorddirect()
 int recordskipplay(struct service* servicenode, int sekunden)
 {
 	off64_t offset;
+	off64_t endoffile;
+	off64_t currentpos;
 	int dupfd = -1;
 	int ret = 0;
 	unsigned long long pts = 0;
 	unsigned long long bitrate = 0;
+	char* tmpstr = NULL;
+	
+	/*struct skin* framebuffer = getscreen("framebuffer");
+	struct skin* timeshift = getscreen("timeshift");
+	struct skin* seek = getscreennode(timeshift, "seek");
+	struct skin* timeshiftbar = getscreennode(timeshift, "timeshiftbar");
+	char* bg = NULL;
+	
+	timeshiftbar->progresssize = 0;
+	setnodeattr(timeshift, framebuffer);
+	bg = savescreen(timeshift);
+	*/
+	
 	
 	if(servicenode->recsrcfd < 0)
 	{
@@ -972,8 +987,6 @@ int recordskipplay(struct service* servicenode, int sekunden)
 	}
 	struct service* snode = getservice(RECORDTIMESHIFT, 0);
 	dupfd = open(snode->recname, O_RDONLY | O_LARGEFILE);
-	//offset = lseek(servicenode->recsrcfd, 0, SEEK_CUR);
-	//dupfd = fcntl(servicenode->recsrcfd, F_DUPFD, 0);
 	if(dupfd < 0)
 	{
 		err("copy source fd not ok");
@@ -984,13 +997,45 @@ int recordskipplay(struct service* servicenode, int sekunden)
 		err("cant read bitrate");
 		return 1;
 	}
+	endoffile = lseek64(dupfd , 0, SEEK_END);
+	endoffile = endoffile - RECPLAYBSIZE;
 	close(dupfd); 
 	m_lock(&status.tsseekmutex, 15);
 	ret = videoclearbuffer(status.aktservice->videodev);
 	ret = audioclearbuffer(status.aktservice->audiodev);
-	offset = (bitrate / 8 * sekunden / 188) * 188;
-	offset = lseek64(servicenode->recsrcfd, offset, SEEK_CUR);
+	currentpos = lseek64(servicenode->recsrcfd, 0, SEEK_CUR);
+	
+	//tmpstr = oitoa(sekunden);
+	//tmpstr = ostrcat(_("skip: "), tmpstr, 0, 1);
+	//tmpstr = ostrcat(tmpstr,_(" sec"), 1, 0);
+ 	//changetext(seek, tmpstr);
+ 	//free(tmpstr); tmpstr = NULL;
+	//timeshiftbar->progresssize = currentpos * 100 / endoffile;
+	//drawscreen(timeshift, 0);
+
+	if(sekunden >= 0) {
+		offset = (((bitrate / 8) * sekunden) / 188) * 188;
+		if(currentpos + offset > endoffile)
+			offset = ((endoffile - currentpos) / 188) * 188;
+	} else {
+		sekunden = sekunden * -1;
+		offset = (((bitrate / 8) * sekunden) / 188) * 188;
+		if(currentpos - offset < 0) {
+			offset = ((currentpos - RECPLAYBSIZE) / 188) * 188;
+			if(offset < 0)
+				offset = 0; 
+		}	
+		offset = offset * -1;
+	}
+	currentpos = lseek64(servicenode->recsrcfd, offset, SEEK_CUR);
+	
+	//timeshiftbar->progresssize = currentpos * 100 / endoffile;
+	//drawscreen(timeshift, 0);
+	
 	m_unlock(&status.tsseekmutex, 15);
+	
+	//restorescreen(bg, tiemeshift);
+	//blitfb();
 
 	return 0;
 }
