@@ -977,6 +977,7 @@ char* webgetsingleepg(char* param)
 			line = 0;
 		}
 
+
 		ostrcatbig(&buf, "<td nowrap><a target=main class=link href=query?getepg&", &maxlen, &pos);
 		tmpstr = oitoa(chnode->serviceid);
 		ostrcatbig(&buf, tmpstr, &maxlen, &pos);
@@ -1776,7 +1777,8 @@ char* webgetrectimer(char* param, int flag)
 char* webaddrectimer(char* param)
 {
 	char* buf = NULL, *buf1 = NULL, *buf2 = NULL;
-	int maxlen = 0, pos = 0, tmpservicetype = 0;
+//	int maxlen = 0, pos = 0, tmpservicetype = 0;
+	int maxlen = 0, pos = 0;
 	struct tm* loctime = NULL;
 	time_t akttime = time(NULL);
 		
@@ -1831,12 +1833,13 @@ char* webaddrectimer(char* param)
 char* webrectimersend(char* param)
 {
 	char* buf = NULL, *string = NULL, *name = NULL, *begin = NULL, *end = NULL, *type = NULL, *anode = NULL, *channelname = NULL, *sid = NULL, *tid = NULL, *ext = NULL;
-	int maxlen = 0, pos = 0, newnode = 0, channelfind = 0;
+//	int maxlen = 0, pos = 0, newnode = 0, channelfind = 0;
+	int newnode = 0, channelfind = 0;
 	struct rectimer *node = NULL;
 	char* tmpstr = NULL;
 	struct tm* loctime = NULL;
 	struct channel *channel1;
-	struct service *service1;
+//	struct service *service1;
 
 	anode=strstr(param, "node=");
 	if(anode != NULL)
