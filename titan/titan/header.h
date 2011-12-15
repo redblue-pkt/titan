@@ -301,6 +301,7 @@ int getconfigint(char *key, char* ext);
 void delconfig(char *key);
 void delconfigtmp(char *key);
 struct clist* addconfiginttmp(char *key, int value);
+int writeconfigtmp();
 
 //rc.h
 int waitrc(struct skin* owner, unsigned int timeout, int flag);
