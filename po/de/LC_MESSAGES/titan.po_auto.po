@@ -5524,3 +5524,7 @@ msgstr ""
 #: skin_default_skin.xml.h:434
 msgid "virtualbox (text)"
 msgstr ""
+
+#: panel_feed.h:20
+msgid "Feed"
+msgstr ""
