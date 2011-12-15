@@ -7,8 +7,16 @@ void screenpanel_feed()
 
 	line2 = readsys(getconfig("feed", NULL), 2);
 	line2 = string_replace("src/gz secret http://", "", line2, 1);
+
 	if(line2 == NULL)
 		line2 = ostrcat(line2, "11.22.33.44/svn/atemio", 1, 0);
+
+	if(ostrcmp(line2, "") == 0)
+		line2 = ostrcat(line2, "11.22.33.44/svn/atemio", 1, 0);
+
+	if(ostrcmp(line2, "\n") == 0)
+		line2 = ostrcat(line2, "11.22.33.44/svn/atemio", 1, 0);
+
 	line2 = textinput("Feed", line2);
 	
 	if(line2 != NULL)
@@ -32,6 +40,7 @@ void screenpanel_feed()
 
 		tmpstr = ostrcat(tmpstr, line2, 1, 0);
 		writesys(getconfig("feed", NULL), tmpstr, 0);
+		writeconfigtmp();
 	}
 
 	free(tmpstr);
