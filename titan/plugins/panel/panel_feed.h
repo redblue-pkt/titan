@@ -6,7 +6,9 @@ void screenpanel_feed()
 	char* tmpstr = NULL, *line1 = NULL, *line2 = NULL;
 
 	line2 = readsys(getconfig("feed", NULL), 2);
-	line2 =  string_replace("src/gz secret http://", "", line2, 1);
+	line2 = string_replace("src/gz secret http://", "", line2, 1);
+	if(line2 == NULL)
+		line2 = ostrcat(line2, "11.22.33.44/svn/atemio", 1, 0);
 	line2 = textinput("Feed", line2);
 	
 	if(line2 != NULL)
