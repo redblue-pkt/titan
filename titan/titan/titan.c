@@ -453,37 +453,37 @@ int main(int argc, char *argv[])
 	ret = openrc();
 	if(ret != 0)
 	{
-		tmpstr = ostrcat(tmpstr, "Error: open rc device !!", 1, 0);
+		tmpstr = ostrcat(tmpstr, _("Error: open rc device !!"), 1, 0);
 		goto starterror;
 	}
 	ret = openrcsim();
 	if(ret != 0)
 	{
-		tmpstr = ostrcat(tmpstr, "Error: open rcsim device !!", 1, 0);
+		tmpstr = ostrcat(tmpstr, _("Error: open rcsim device !!"), 1, 0);
 		goto starterror;
 	}
 
 	if(fegetdev() < 1)
 	{
-		tmpstr = ostrcat(tmpstr, "Error: no frontend device found !!", 1, 0);
+		tmpstr = ostrcat(tmpstr, _("Error: no frontend device found !!"), 1, 0);
 		err("no frontend device found");
 		goto starterror;
 	}
 	if(dmxgetdev() < 1)
 	{
-		tmpstr = ostrcat(tmpstr, "Error: no demux device found !!", 1, 0);
+		tmpstr = ostrcat(tmpstr, _("Error: no demux device found !!"), 1, 0);
 		err("no demux device found");
 		goto starterror;
 	}
 	if(videogetdev() < 1)
 	{
-		tmpstr = ostrcat(tmpstr, "Error: no video device found !!", 1, 0);
+		tmpstr = ostrcat(tmpstr, _("Error: no video device found !!"), 1, 0);
 		err("no video device found");
 		goto starterror;
 	}
 	if(audiogetdev() < 1)
 	{
-		tmpstr = ostrcat(tmpstr, "Error: no audio device found !!", 1, 0);
+		tmpstr = ostrcat(tmpstr, _("Error: no audio device found !!"), 1, 0);
 		err("no audio device found");
 		goto starterror;
 	}
@@ -495,7 +495,7 @@ int main(int argc, char *argv[])
 	//check skin
 	if(skincheck > 0)
 	{
-		tmpstr = ostrcat(tmpstr, "Error: skin not found !!", 1, 0);
+		tmpstr = ostrcat(tmpstr, _("Error: skin not found !!"), 1, 0);
 		goto starterror;
 	}
 
@@ -553,7 +553,7 @@ int main(int argc, char *argv[])
 	ret = pthread_create(&status.timerthread, &status.timerthreadattr, timerthreadfunc, NULL);
 	if(ret)
 	{
-		tmpstr = ostrcat(tmpstr, "Error: create timer thread !!", 1, 0);
+		tmpstr = ostrcat(tmpstr, _("Error: create timer thread !!"), 1, 0);
 		err("create timer thread");
 		goto starterror;
 	}
@@ -684,8 +684,9 @@ starterror:
 	addscreen("<screen hspace=5 vspace=5 type=textbox name=starterror posx=center posy=center bordersize=2 bordercol=#ffffff fontsize=30 fontcol=#ffffff width=600 height=150/>", 0, 0);
 	struct skin *starterror = getscreen("starterror");
 	if(tmpstr == NULL)
-		tmpstr = ostrcat(tmpstr, "Unknown Error.", 1, 0);
-	tmpstr = ostrcat(tmpstr, "\nAutomatic stop in 5 seconds.", 1, 0);
+		tmpstr = ostrcat(tmpstr, _("Unknown Error."), 1, 0);
+	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+	tmpstr = ostrcat(tmpstr, _("Automatic stop in 5 seconds."), 1, 0);
 	changetext(starterror, _(tmpstr));
 	drawscreen(starterror, 0);
 	sleep(5);
