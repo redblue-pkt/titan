@@ -17,7 +17,7 @@ void screenpanel_feed()
 	if(ostrcmp(line2, "\n") == 0)
 		line2 = ostrcat(line2, "11.22.33.44/svn/atemio", 1, 0);
 
-	line2 = textinput("Feed", line2);
+	line2 = textinput(_("Feed"), line2);
 	
 	if(line2 != NULL)
 	{
