@@ -3,17 +3,36 @@
 
 void screenstandby()
 {
-	int rcret = 0;
+	int rcret = 0, voltoff = 1;
 	struct skin* standbyscreen = getscreen("standby");
 	struct stimerthread *epgscan = NULL;
 	char* loctime = NULL, *tmpstr = NULL;
 	time_t lastrun = 0;
+	struct dvbdev* dvbnode = dvbdev;
 
 	rcret = servicestop(status.aktservice, 1, 0);
 	if(rcret == 1) 
 	{
 		status.standby = 0;
 		return;
+	}
+
+	//check if all tuner unlocked, if yes set all volt off
+	while(dvbnode != NULL)
+        {
+		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == QPSK && dvbnode->felock > 0)
+			voltoff = 0;
+		dvbnode = dvbnode->next;
+	}
+	if(voltoff == 1)
+	{
+		dvbnode = dvbdev;
+		while(dvbnode != NULL)
+        	{
+			if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == QPSK && dvbnode->felock > 0)
+				fesetvoltage(dvbnode, SEC_VOLTAGE_OFF, 15);
+			dvbnode = dvbnode->next;
+		}
 	}
 	
 	subtitlepause(1);
@@ -48,6 +67,14 @@ void screenstandby()
 	setoverclockfreq(1);
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	setvfdbrightness(getconfigint("vfdbrightness", NULL));
+
+	if(status.aktservice->fedev != NULL && voltoff == 1)
+	{
+		status.aktservice->fedev->felasttransponder = NULL;
+		status.aktservice->fedev->feaktpolarization = 0;
+		status.aktservice->fedev->feakttransponder = NULL;
+	}
+
 	tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
 	servicestart(status.lastservice->channel, tmpstr, NULL, 0);
 	free(tmpstr); tmpstr = NULL;
