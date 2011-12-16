@@ -5528,7 +5528,7 @@ msgstr ""
 msgid "virtualbox (text)"
 msgstr ""
 
-#: panel_feed.h:20
+#: panel_feed.h:20 panel_feed.h:14
 msgid "Feed"
 msgstr ""
 
