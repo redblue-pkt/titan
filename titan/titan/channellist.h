@@ -201,11 +201,40 @@ void showsatchannel(struct skin* channellist, struct skin* listbox, struct sat* 
 
 void showsat(struct skin* channellist, struct skin* listbox)
 {
+	int i = 0, y = 0, z = 0, treffer = 0;
 	struct sat *node = sat;
 	struct skin* satnode = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL;
 
 	while(node != NULL)
 	{
+		treffer = 0;
+		for(i = 0; i < MAXDVBADAPTER; i++)
+		{
+			for(y = 0; y < MAXFRONTENDDEV; y++)
+			{
+				tmpstr = ostrcat(tmpstr, "fe_", 1, 0);
+				tmpstr = ostrcat(tmpstr, oitoa(i), 1, 1);
+				tmpstr = ostrcat(tmpstr, oitoa(y), 1, 1);
+				tmpstr = ostrcat(tmpstr, "_sat", 1, 0);
+				for(z = 1; z <= status.maxsat; z++)
+				{
+					tmpstr1 = ostrcat(tmpstr, oitoa(z), 0, 1);
+					if(getconfigint(tmpstr1, NULL) == node->orbitalpos)
+						treffer = 1;
+					free(tmpstr1); tmpstr1 = NULL;
+				}
+				free(tmpstr); tmpstr = NULL;
+				free(tmpstr1); tmpstr1 = NULL;
+			}
+		}
+		free(tmpstr); tmpstr = NULL;
+		free(tmpstr1); tmpstr1 = NULL;
+		if(treffer == 0) 
+		{
+			node = node->next;
+			continue;
+		}
 		satnode = addlistbox(channellist, listbox, satnode, 2);
 		if(satnode != NULL)
 		{
