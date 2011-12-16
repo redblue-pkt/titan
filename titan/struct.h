@@ -74,7 +74,7 @@
 #endif
 
 #define VERSION "1.3"
-#define PROGNAME "TitanNit"
+#define PROGNAME "titan"
 #define COPYRIGHT "NIT"
 #define CRONTRIBUT "obi, black, dvboxer, oxygen, gost"
 
