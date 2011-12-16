@@ -3,7 +3,7 @@
 
 void screenstandby()
 {
-	int rcret = 0 /*, voltoff = 1*/;
+	int rcret = 0, voltoff = 1;
 	struct skin* standbyscreen = getscreen("standby");
 	struct stimerthread *epgscan = NULL;
 	char* loctime = NULL, *tmpstr = NULL;
@@ -17,26 +17,28 @@ void screenstandby()
 		return;
 	}
 
-	//streaming, and record on other chained receiver does not work if we power off the tuner
-	/*
 	//check if all tuner unlocked, if yes set all volt off
-	while(dvbnode != NULL)
-        {
-		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == QPSK && dvbnode->felock > 0)
-			voltoff = 0;
-		dvbnode = dvbnode->next;
-	}
-	if(voltoff == 1)
+	if(getconfigint("standbytuneroff", NULL) == 1)
 	{
-		dvbnode = dvbdev;
 		while(dvbnode != NULL)
-        	{
+		{
 			if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == QPSK && dvbnode->felock > 0)
-				fesetvoltage(dvbnode, SEC_VOLTAGE_OFF, 15);
+				voltoff = 0;
 			dvbnode = dvbnode->next;
 		}
+		if(voltoff == 1)
+		{
+			dvbnode = dvbdev;
+			while(dvbnode != NULL)
+			{
+				if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == QPSK && dvbnode->felock > 0)
+					fesetvoltage(dvbnode, SEC_VOLTAGE_OFF, 15);
+				dvbnode = dvbnode->next;
+			}
+		}
 	}
-	*/
+	else
+		voltoff = 0;
 	
 	subtitlepause(1);
 //	clearfb(skinfb);
@@ -71,15 +73,12 @@ void screenstandby()
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	setvfdbrightness(getconfigint("vfdbrightness", NULL));
 
-	/*
-	//
 	if(status.aktservice->fedev != NULL && voltoff == 1)
 	{
 		status.aktservice->fedev->felasttransponder = NULL;
 		status.aktservice->fedev->feaktpolarization = 0;
 		status.aktservice->fedev->feakttransponder = NULL;
 	}
-	*/
 
 	tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
 	servicestart(status.lastservice->channel, tmpstr, NULL, 0);
