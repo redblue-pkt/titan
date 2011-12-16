@@ -3,7 +3,7 @@
 
 void screenstandby()
 {
-	int rcret = 0, voltoff = 1;
+	int rcret = 0 /*, voltoff = 1*/;
 	struct skin* standbyscreen = getscreen("standby");
 	struct stimerthread *epgscan = NULL;
 	char* loctime = NULL, *tmpstr = NULL;
@@ -17,6 +17,8 @@ void screenstandby()
 		return;
 	}
 
+	//streaming, and record on other chained receiver does not work if we power off the tuner
+	/*
 	//check if all tuner unlocked, if yes set all volt off
 	while(dvbnode != NULL)
         {
@@ -34,6 +36,7 @@ void screenstandby()
 			dvbnode = dvbnode->next;
 		}
 	}
+	*/
 	
 	subtitlepause(1);
 //	clearfb(skinfb);
@@ -68,12 +71,15 @@ void screenstandby()
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	setvfdbrightness(getconfigint("vfdbrightness", NULL));
 
+	/*
+	//
 	if(status.aktservice->fedev != NULL && voltoff == 1)
 	{
 		status.aktservice->fedev->felasttransponder = NULL;
 		status.aktservice->fedev->feaktpolarization = 0;
 		status.aktservice->fedev->feakttransponder = NULL;
 	}
+	*/
 
 	tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
 	servicestart(status.lastservice->channel, tmpstr, NULL, 0);
