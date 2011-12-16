@@ -82,7 +82,7 @@ msgstr ""
 #: record.h:801 record.h:938 global.h:3751 global.h:3501 global.h:3761
 #: global.h:3503 global.h:3763 global.h:3507 global.h:3768 global.h:3510
 #: global.h:3771 httpdfunc.h:2123 tunerconfig.h:734 global.h:3772
-#: channellist.h:626
+#: channellist.h:626 channellist.h:655
 msgid "EXIT"
 msgstr ""
 
@@ -355,7 +355,7 @@ msgstr ""
 #: global.h:3746 record.h:638 record.h:801 record.h:938 global.h:3751
 #: global.h:3501 global.h:3761 global.h:3503 global.h:3763 global.h:3507
 #: global.h:3768 global.h:3510 global.h:3771 tunerconfig.h:734 global.h:3772
-#: channellist.h:626
+#: channellist.h:626 channellist.h:655
 msgid "Message"
 msgstr ""
 
@@ -394,7 +394,8 @@ msgid "ERROR cant read res"
 msgstr ""
 
 #: channellist.h:404 channellist.h:737 channellist.h:922 channellist.h:758
-#: channellist.h:943 channellist.h:760 channellist.h:945
+#: channellist.h:943 channellist.h:760 channellist.h:945 channellist.h:433
+#: channellist.h:789 channellist.h:974
 msgid "Bouquets"
 msgstr ""
 
@@ -402,35 +403,39 @@ msgstr ""
 #: skin_default_skin.xml.h:125 skin_default_skin.xml.h:126
 #: skin_default_skin.xml.h:127 skin_default_skin.xml.h:128
 #: skin_default_skin.xml.h:130 channellist.h:1060 channellist.h:1062
+#: channellist.h:446 channellist.h:1091
 msgid "Channel"
 msgstr ""
 
 #: channellist.h:429 channellist.h:767 channellist.h:979 channellist.h:788
-#: channellist.h:1000 channellist.h:790 channellist.h:1002
+#: channellist.h:1000 channellist.h:790 channellist.h:1002 channellist.h:458
+#: channellist.h:819 channellist.h:1031
 msgid "Satellites"
 msgstr ""
 
 #: channellist.h:442 channellist.h:827 channellist.h:1096 tunerconfig.h:521
 #: channellist.h:848 channellist.h:1117 channellist.h:850 channellist.h:1119
+#: channellist.h:471 channellist.h:879 channellist.h:1148
 msgid "Provider"
 msgstr ""
 
 #: channellist.h:455 channellist.h:725 channellist.h:746 channellist.h:748
+#: channellist.h:484 channellist.h:777
 msgid "All Channels"
 msgstr ""
 
-#: channellist.h:797 channellist.h:818 channellist.h:820
+#: channellist.h:797 channellist.h:818 channellist.h:820 channellist.h:849
 msgid "Channels A-Z"
 msgstr ""
 
-#: channellist.h:1158 channellist.h:1179 channellist.h:1181
+#: channellist.h:1158 channellist.h:1179 channellist.h:1181 channellist.h:1210
 msgid "TV (Info)"
 msgstr ""
 
 #: channellist.h:1163 skin_default_skin.xml.h:296 skin_default_skin.xml.h:304
 #: skin_default_skin.xml.h:305 skin_default_skin.xml.h:306
 #: skin_default_skin.xml.h:308 skin_default_skin.xml.h:310 channellist.h:1184
-#: channellist.h:1186
+#: channellist.h:1186 channellist.h:1215
 msgid "Radio (Info)"
 msgstr ""
 
@@ -5532,6 +5537,6 @@ msgstr ""
 msgid "Feed"
 msgstr ""
 
-#: channellist.h:626
+#: channellist.h:626 channellist.h:655
 msgid "Can't remove akive Service"
 msgstr ""
