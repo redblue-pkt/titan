@@ -90,23 +90,27 @@ void screeninfobar()
 			//TODO: ff, fr, seek
 			if(rcret == getrcconfigint("rcff", NULL))
 			{
-				if(status.timeshiftseek > 100) {
-					timeshiftseek((status.timeshiftseek - 100) * 2 + 100);
-				}
-				else
+				if(status.playing == 1) { 
+					if(status.timeshiftseek > 100) {
+						timeshiftseek((status.timeshiftseek - 100) * 2 + 100);
+					}
+					else
 					timeshiftseek(102);
+				}
 				continue;
 			}
 			if(rcret == getrcconfigint("rcfr", NULL))
 			{
-				if(status.timeshiftseek > 102) {
-					timeshiftseek((status.timeshiftseek - 100) / 2 + 100);
+				if(status.playing == 1) {
+					if(status.timeshiftseek > 102) {
+						timeshiftseek((status.timeshiftseek - 100) / 2 + 100);
+					}
+					else if(status.timeshiftseek == 102) {
+						timeshiftplay();
+					}
+					else
+						timeshiftseek(-10);
 				}
-				else if(status.timeshiftseek == 102) {
-					timeshiftplay();
-				}
-				else
-					timeshiftseek(-10);
 				continue;
 			}
 		}

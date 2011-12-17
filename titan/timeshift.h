@@ -34,6 +34,12 @@ void timeshiftstop(int flag)
 	char* file = NULL;
 	struct service* snode = getservice(RECORDTIMESHIFT, flag);
 
+	if(status.timeshiftseek != 0) { 
+		status.timeshiftseek = 0;
+		playerpausets();
+		playercontinuets();
+	}
+	
 	playerstopts(1, flag);
 
 	if(snode != NULL)
