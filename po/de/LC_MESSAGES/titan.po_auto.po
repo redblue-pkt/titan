@@ -5550,3 +5550,35 @@ msgstr ""
 #: timeshift.h:119 timeshift.h:125
 msgid "skip back"
 msgstr ""
+
+#: panel_system.h:194 panel_system.h:251
+msgid "starting Kernel Update ?"
+msgstr ""
+
+#: panel_system.h:201 panel_system.h:257
+msgid "starting Fw Update ?"
+msgstr ""
+
+#: panel_system.h:208
+msgid "starting Root Update ?"
+msgstr ""
+
+#: panel_system.h:215 panel_system.h:269
+msgid "starting Var Update ?"
+msgstr ""
+
+#: panel_system.h:222 panel_system.h:275
+msgid "starting Full Update ?"
+msgstr ""
+
+#: panel_system.h:231 panel_system.h:283
+msgid "starting Usb Update ?"
+msgstr ""
+
+#: panel_system.h:240 panel_system.h:291
+msgid "starting Fullusb Update ?"
+msgstr ""
+
+#: panel_system.h:263
+msgid "starting Root Update starten ?"
+msgstr ""
