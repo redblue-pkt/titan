@@ -191,35 +191,35 @@ void screenpanel_system_update(int mode)
 						cmd = ostrcat(cmd, "kernel ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
-						msgtxt = ostrcat(msgtxt, "Kernel Update starten ?", 1, 0);
+						msgtxt = ostrcat(msgtxt, _("starting Kernel Update ?"), 1, 0);
 					}
 					else if(string_find("_FW_",filelist->select->text) && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "fw ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
-						msgtxt = ostrcat(msgtxt, "Fw Update starten ?", 1, 0);
+						msgtxt = ostrcat(msgtxt, _("starting Fw Update ?"), 1, 0);
 					}
 					else if(string_find("_ROOT_",filelist->select->text) && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "root ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
-						msgtxt = ostrcat(msgtxt, "Root Update starten ?", 1, 0);
+						msgtxt = ostrcat(msgtxt, _("starting Root Update ?"), 1, 0);
 					}
 					else if(string_find("_VAR_",filelist->select->text) && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "var ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
-						msgtxt = ostrcat(msgtxt, "Var Update starten ?", 1, 0);
+						msgtxt = ostrcat(msgtxt, _("starting Var Update ?"), 1, 0);
 					}
 					else if(string_find("_FULL_",filelist->select->text))
 					{
 						cmd = ostrcat(cmd, "full ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
-						msgtxt = ostrcat(msgtxt, "Full Update starten ?", 1, 0);
+						msgtxt = ostrcat(msgtxt, _("starting Full Update ?"), 1, 0);
 					}
 					else if(string_find("_USB_",filelist->select->text))
 					{
@@ -228,7 +228,7 @@ void screenpanel_system_update(int mode)
 						cmd = ostrcat(cmd, " ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
-						msgtxt = ostrcat(msgtxt, "Usb Update starten ?", 1, 0);
+						msgtxt = ostrcat(msgtxt, _("starting Usb Update ?"), 1, 0);
 					}
 					else if(string_find("_FULLUSB_",filelist->select->text))
 					{
@@ -237,7 +237,7 @@ void screenpanel_system_update(int mode)
 						cmd = ostrcat(cmd, " ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
-						msgtxt = ostrcat(msgtxt, "Fullusb Update starten ?", 1, 0);
+						msgtxt = ostrcat(msgtxt, _("starting Fullusb Update ?"), 1, 0);
 					}
 				}
 				else
@@ -248,31 +248,31 @@ void screenpanel_system_update(int mode)
 					{
 						cmd = ostrcat(cmd, "kernel ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						msgtxt = ostrcat(msgtxt, "Kernel Update starten ?", 1, 0);
+						msgtxt = ostrcat(msgtxt, _("starting Kernel Update ?"), 1, 0);
 					}
 					else if(string_find("_FW_",filelist->select->text) && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "fw ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						msgtxt = ostrcat(msgtxt, "Fw Update starten ?", 1, 0);
+						msgtxt = ostrcat(msgtxt, _("starting Fw Update ?"), 1, 0);
 					}
 					else if(string_find("_ROOT_",filelist->select->text) && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "root ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						msgtxt = ostrcat(msgtxt, "Root Update starten ?", 1, 0);
+						msgtxt = ostrcat(msgtxt, _("starting Root Update starten ?", 1, 0);
 					}
 					else if(string_find("_VAR_",filelist->select->text) && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "var ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						msgtxt = ostrcat(msgtxt, "Var Update starten ?", 1, 0);
+						msgtxt = ostrcat(msgtxt, _("starting Var Update ?"), 1, 0);
 					}
 					else if(string_find("_FULL_",filelist->select->text))
 					{
 						cmd = ostrcat(cmd, "full ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						msgtxt = ostrcat(msgtxt, "Full Update starten ?", 1, 0);
+						msgtxt = ostrcat(msgtxt, _("starting Full Update ?"), 1, 0);
 					}
 					else if(string_find("_USB_",filelist->select->text))
 					{
@@ -280,7 +280,7 @@ void screenpanel_system_update(int mode)
 						cmd = ostrcat(cmd, device->ret, 1, 0);
 						cmd = ostrcat(cmd, " ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						msgtxt = ostrcat(msgtxt, "Usb Update starten ?", 1, 0);
+						msgtxt = ostrcat(msgtxt, _("starting Usb Update ?"), 1, 0);
 					}
 					else if(string_find("_FULLUSB_",filelist->select->text))
 					{
@@ -288,7 +288,7 @@ void screenpanel_system_update(int mode)
 						cmd = ostrcat(cmd, device->ret, 1, 0);
 						cmd = ostrcat(cmd, " ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						msgtxt = ostrcat(msgtxt, "Fullusb Update starten ?", 1, 0);
+						msgtxt = ostrcat(msgtxt, _("starting Fullusb Update ?"), 1, 0);
 					}
 				}
 				clearscreen(panel_system);
@@ -301,7 +301,7 @@ void screenpanel_system_update(int mode)
 					continue;
 				}
 
-				if(textbox(_("Message"), _(msgtxt), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+				if(textbox(_("Message"), msgtxt, _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
 				{
 					debug(40, "[panel_system] update started cmd: %s", cmd);
 					system(cmd);
