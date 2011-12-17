@@ -19,8 +19,11 @@ void timeshiftpause()
 			recordcheckret(NULL, ret, 6);
 		}
 	}
-	else
+	else {
+		if(status.timeshiftseek != 0) 
+			status.timeshiftseek = 0;
 		playerpausets();
+	}
 }
 
 //flag 0: stop from rcstop
@@ -68,15 +71,82 @@ void timeshiftplay()
 			textbox(_("Message"), _("Can't start timeshift play !"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 		}
 	}
-	else
+	else {
+		if(status.timeshiftseek != 0) {
+			status.timeshiftseek = 0;
+			playerpausets();
+		}
 		playercontinuets();
+	}
+}
+
+void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
+{
+	
+	off64_t endoffile;
+	off64_t currentpos;
+	char* tmpstr = NULL;
+	struct skin* framebuffer = getscreen("framebuffer");
+	struct skin* timeshift = getscreen("timeshift");
+	struct skin* seek = getscreennode(timeshift, "seek");
+	struct skin* timeshiftbar = getscreennode(timeshift, "timeshiftbar");
+	char* bg = NULL;
+	struct service* snode = getservice(RECORDTIMESHIFT, 0);
+	int fd = open(snode->recname, O_RDONLY | O_LARGEFILE);
+	
+	if(fd < 0)
+	{
+		err("timeshift fd not ok");
+		return 1;
+	}
+	
+	timeshiftbar->progresssize = 0;
+	setnodeattr(timeshift, framebuffer);
+	bg = savescreen(timeshift);
+	
+	while(status.timeshiftseek != 0) {
+		endoffile = lseek64(fd , 0, SEEK_END);
+		currentpos = lseek64(servicenode->recsrcfd, 0, SEEK_CUR);
+		timeshiftbar->progresssize = currentpos * 100 / endoffile;
+		if(status.timeshiftseek > 100) {
+			tmpstr = oitoa(status.timeshiftseek - 100);
+			tmpstr = ostrcat(_(">> "), tmpstr, 0, 1);
+			tmpstr = ostrcat(tmpstr,"x", 1, 0);
+ 			changetext(seek, tmpstr);
+ 			free(tmpstr); tmpstr = NULL;
+ 		}
+ 		if(status.timeshiftseek < 0) {
+ 			tmpstr = ostrcat(tmpstr,_("skip back"), 1, 0);
+ 			changetext(seek, tmpstr);
+ 			free(tmpstr); tmpstr = NULL;
+ 		}
+		drawscreen(timeshift, 0);
+		sleep (1);
+	}
+	restorescreen(bg, timeshift);
+	blitfb();
+	close(fd);
 }
 
 void timeshiftseek(int sekunden)
 {
 	struct service* snode = getservice(RECORDPLAY, 0);
-	if(snode != 0)
-		recordskipplay(snode, sekunden);
+	
+	if(status.timeshiftseek == 0)
+		 addtimer(&timeshiftscreen, START, 10000, 1, (void*)snode, NULL, NULL);
+	
+	status.timeshiftseek = sekunden;
+	if(snode != 0) {
+		if(sekunden > 100) {
+			status.timeshiftseek = sekunden;
+			sekunden = sekunden - 100;
+			recordffrwts(snode, sekunden);
+		}	
+		else {
+			recordskipplay(snode, sekunden);
+		}
+	}
 }
+
 
 #endif
