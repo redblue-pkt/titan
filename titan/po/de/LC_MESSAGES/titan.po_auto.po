@@ -82,7 +82,7 @@ msgstr ""
 #: record.h:801 record.h:938 global.h:3751 global.h:3501 global.h:3761
 #: global.h:3503 global.h:3763 global.h:3507 global.h:3768 global.h:3510
 #: global.h:3771 httpdfunc.h:2123 tunerconfig.h:734 global.h:3772
-#: channellist.h:626 channellist.h:655
+#: channellist.h:626 channellist.h:655 timeshift.h:44 timeshift.h:71
 msgid "EXIT"
 msgstr ""
 
@@ -355,7 +355,7 @@ msgstr ""
 #: global.h:3746 record.h:638 record.h:801 record.h:938 global.h:3751
 #: global.h:3501 global.h:3761 global.h:3503 global.h:3763 global.h:3507
 #: global.h:3768 global.h:3510 global.h:3771 tunerconfig.h:734 global.h:3772
-#: channellist.h:626 channellist.h:655
+#: channellist.h:626 channellist.h:655 timeshift.h:44 timeshift.h:71
 msgid "Message"
 msgstr ""
 
@@ -380,7 +380,7 @@ msgstr ""
 #: play.h:417 play.h:422 play.h:427 play.h:426 play.h:429 play.h:430
 #: play.h:421 skin_default_skin.xml.h:265 play.h:428 global.h:2594 play.h:425
 #: skin_default_skin.xml.h:267 avsettings.h:195 harddisk.h:352 harddisk.h:526
-#: harddisk.h:540 harddisk.h:568 record.h:638
+#: harddisk.h:540 harddisk.h:568 record.h:638 timeshift.h:44
 msgid "OK"
 msgstr ""
 
@@ -5114,11 +5114,11 @@ msgstr ""
 msgid "No Live Stream running"
 msgstr ""
 
-#: timeshift.h:41
+#: timeshift.h:41 timeshift.h:44
 msgid "Should Timeshift File deleted ?"
 msgstr ""
 
-#: timeshift.h:68
+#: timeshift.h:68 timeshift.h:71
 msgid "Can't start timeshift play !"
 msgstr ""
 
@@ -5539,4 +5539,12 @@ msgstr ""
 
 #: channellist.h:626 channellist.h:655
 msgid "Can't remove akive Service"
+msgstr ""
+
+#: timeshift.h:113
+msgid ">> "
+msgstr ""
+
+#: timeshift.h:119
+msgid "skip back"
 msgstr ""
