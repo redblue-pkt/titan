@@ -260,7 +260,7 @@ void screenpanel_system_update(int mode)
 					{
 						cmd = ostrcat(cmd, "root ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						msgtxt = ostrcat(msgtxt, _("starting Root Update starten ?", 1, 0);
+						msgtxt = ostrcat(msgtxt, _("starting Root Update starten ?"), 1, 0);
 					}
 					else if(string_find("_VAR_",filelist->select->text) && file_exist("/etc/.beta"))
 					{
