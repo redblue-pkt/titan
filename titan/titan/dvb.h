@@ -736,6 +736,8 @@ int dvbgetdate(time_t* time, int timeout)
 // getPTS extracts a pts value from any PID at a given offset.
 int getpts(int fd, off64_t offset, int spid, int left, unsigned long long *pts, off64_t *findpos, int dir)
 {
+	int first = 1;
+	
 	offset -= offset % 188;
 	if(dir < 0 && offset < 188) offset = 188;
 	if(dir < 0) offset *= -1;
@@ -746,7 +748,27 @@ int getpts(int fd, off64_t offset, int spid, int left, unsigned long long *pts, 
 		if(dir > -1)
 			*findpos = lseek(fd, offset, SEEK_SET);
 		else
-			*findpos = lseek(fd, offset, SEEK_END);
+		{
+			if(dir == -2) {
+				if(first == 1) {
+					first = 0;
+					offset *= -1;
+					*findpos = lseek(fd, offset, SEEK_SET);
+					offset = -188;
+				}
+				else 
+				{
+					if(offset % 188 != 0) {
+						*findpos = lseek(fd, (offset % 188) - 188, SEEK_CUR);
+						offset = -188;
+					}
+					else
+						*findpos = lseek(fd, -188*2, SEEK_CUR);
+				}
+			}
+			else
+				*findpos = lseek(fd, offset, SEEK_END);
+		}
 
 		int ret = dvbreadfd(fd, packet, 0, 188, -1);
 		if(ret != 188)
@@ -935,6 +957,17 @@ int gettsinfo(int fd, unsigned long long* pts, unsigned long long* bitrate)
 
 	if(*pts < 0) *pts = 0;
 	return ret;
+}
+
+int getptspos(int fd, off64_t startfind, unsigned long long* pts, off64_t* findpos, int dir)
+{
+	int ret = 0;
+	unsigned long long pts1 = 0;
+	off64_t findpos1;
+	
+	ret = getpts(fd, startfind, 0, 256 * 1024, &pts1, &findpos1, dir);
+	*pts = pts1;
+	*findpos = findpos1;
 }
 
 #endif
