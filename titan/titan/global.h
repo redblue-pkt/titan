@@ -37,7 +37,7 @@ int checkemu()
 int checkmenuforbox(char *name)
 {
 	if(status.expertmodus == 1) return 1;
-	if(checkbox("ATEMIO500") == 1)
+	if((checkbox("ATEMIO500") == 1) || (checkbox("ATEMIO510") == 1))
 	{
 		if(ostrcmp("vfdisplay", name) == 0) return 0;
 		if(ostrcmp("savesettings", name) == 0) return 0;

@@ -1,0 +1,211 @@
+<html>
+  <head>
+    <title>tiTan Web Control
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="titan.css">
+<script type="text/javascript">
+var firststart=true;
+function show(das) {
+  if (document.getElementById(das).style.display=='none') {
+    document.getElementById(das).style.display='block';
+  }
+  else {
+    document.getElementById(das).style.display='none';
+ }
+}
+function vertAl(){
+  breite = window.innerWidth;
+  if (breite <= 1140){
+    document.getElementById("eins").style.left = 680;
+    document.getElementById("eins").style.top = 140;
+    document.getElementById("zwei").style.left = 680;
+    document.getElementById("zwei").style.top = 140;
+  } else {
+    document.getElementById("eins").style.left = 1000;
+    document.getElementById("zwei").style.left = 1000;
+  }
+  if (breite > 1360){
+    divPos = ((breite)/2)-657;
+    webIFPos = ((breite)/2)-490;
+    document.getElementById("eins").style.left = divPos;
+    document.getElementById("zwei").style.left = divPos -40;
+    document.getElementById("webif").style.left = webIFPos;
+  }
+}
+function rcopen_virtual() {
+  pwin = window.open("rc_virtual.html","_blank","toolbar=0,status=0,scrollbars=0,resizable=0,width=220,height=575,top=50,left=50");
+  pwin.blur();
+  window.focus();
+  javascript:show('eins');
+}
+function saveLastIframe(actQuery){
+	if(firststart){
+	 showLastIframe();
+   firststart=false;
+  }else{
+    var temp;
+    try{
+      if(((temp=actQuery.href.toString()).indexOf('getepg'))<=0 && (temp.indexOf('query?get')>0)){
+        var lastQuery = actQuery.href.toString().split("/");
+  	    var a = new Date();
+        a = new Date(a.getTime() +1000*60*60*24*365);
+        document.cookie = 'tiTan2='+lastQuery[3]+'; expires='+a.toGMTString()+';';
+      }
+    }catch(err){
+          
+    }
+  } 
+}      
+
+function showLastIframe(){
+  var temp;
+  if((temp=GetCookie('tiTan2'))!=null){
+  document.getElementById('main').src=temp; }
+}
+function rcopen_org() {
+  pwin = window.open("rc.html","_blank","toolbar=0,status=0,scrollbars=0,resizable=0,width=220,height=775,top=50,left=50");
+  pwin.blur();
+  window.focus();
+  javascript:show('zwei');
+}
+function rcswitch() {
+cookiewert = GetCookie('tiTan');
+if(cookiewert == 'VirtualRemote')
+	{ 
+	var a = new Date();
+	a = new Date(a.getTime() +1000*60*60*24*365);
+	document.cookie = 'tiTan=OriginalRemote; expires='+a.toGMTString()+';'; 
+	javascript:show('eins');
+	javascript:show('zwei');
+    } else {
+	var a = new Date();
+	a = new Date(a.getTime() +1000*60*60*24*365);
+	document.cookie = 'tiTan=VirtualRemote; expires='+a.toGMTString()+';'; 
+	javascript:show('zwei');
+	javascript:show('eins');
+ }
+}
+function rcshow() {
+cookiewert = GetCookie('tiTan');
+if(cookiewert == 'VirtualRemote')
+	{ 
+	javascript:show('eins');
+    } else 	{ 	
+	javascript:show('zwei');
+    }
+}
+function GetCookie(sName)
+{
+  // cookies are separated by semicolons
+  var aCookie = document.cookie.split("; ");
+  for (var i=0; i < aCookie.length; i++)
+  {
+    // a name/value pair (a crumb) is separated by an equal sign
+    var aCrumb = aCookie[i].split("=");
+    if (sName == aCrumb[0]) 
+      return unescape(aCrumb[1]);
+  }
+  return null;
+}
+</script>
+  </head>
+  <body class=body onLoad="vertAl()">
+    <iframe name=nothing scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=0 height=0>
+    </iframe>
+    <table id="webif" style="position: absolute;" border=0 width=980 height=99% cellpadding=5 cellspacing=0> 
+      <tr> 
+        <!-- LINKLINE -->  
+        <td valign=bottom colspan=2>
+          <img src="img/titanweb.png"></td>  	
+        <td width=50% align=right valign=top height=20>	 
+          <table border=0 width=340>	  
+            <tr>	   
+              <td width=16 align=center>	   	
+                <a href="javascript:rcshow()">
+                  <img border=0 width=16 height=16 title="Show/Hide Remote Control" src="img/icon_rcopen.png"></a>  	   </td>	   
+              <td width=100 align=center>		
+                <form action=query method=get target=nothing style="height:18px; margin:auto;">		
+                  <input type=image name=poweroff title="Power Off" src="img/icon_poweroff.png" width=16 height=16/>		
+                  <input type=image name=restart title="Restart" src="img/icon_restart.png" width=16 height=16/>		
+                  <input type=image name=guirestart title="GUI Restart" src="img/icon_guirestart.png" width=16 height=16/>		
+                  <input type=image name=standby title="Standby" src="img/icon_standby.png" width=16 height=16/>		
+                </form>	   </td>	   
+              <td width=16 align=center>	   	
+                <iframe name=setmute scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=16 src=query?setmute onload="setTimeout(function(){setmute.document.location.href='query?setmute';}, 15000);">
+                </iframe>	 	   </td>	   
+              <td width=135 align=center>		
+                <iframe name=setvol scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=27 src=query?setvol onload="setTimeout(function(){setvol.document.location.href='query?setvol';}, 15000);">
+                </iframe>	   </td>		   
+              <td align=right>		
+                <a href=query?record target=main>
+                  <img border=0 src=img/record.png title="Start Record" alt=Record width=16 height=16></a>		
+                <a href=query?getsignal target=main>
+                  <img border=0 src=img/signal.png title="Show Signal Infos" alt=Signal width=16 height=16></a>	   </td>	  
+            </tr>	
+          </table>   </td> 
+      </tr> 
+      <tr>  
+        <td colspan=4>	
+          <table border=0 width=100%>	
+            <tr>	
+              <td valign=bottom>	
+                <a class=linelink target=leftpanel href=channellist.html>Channel List</a>	
+                <a class=linelink target=leftpanel href=boxcontrol.html>Boxcontrol</a>	
+                <a class=linelink target=main href=query?getmoviefilelist>Movies</a>	
+                <a class=linelink target=leftpanel href=timer.html>Timer</a>	</td>   
+              <td align=right>
+                <form target=main action=query method=get>
+                  <input class=inputbox type=text name=getepgsearch value="EPG Search" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
+                </form></td>  
+              <!-- LINKLINE END-->  
+            </tr>
+          </table></td>
+      </tr> 
+      <tr> 
+        <!-- BOXCONTROL -->  
+        <td colspan=4 valign=top height=40>	
+          <iframe name=leftpanel scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=100% src=channellist.html>
+          </iframe>  </td> 
+        <!-- BOXCONTROL END --> 
+      </tr>   
+      <tr> 
+        <!-- AKT SERVICE -->  
+        <td colspan=4 style="border-radius: 5px 5px 5px 5px">   
+          <iframe name=aktservice scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=35 src=query?getaktservice onload="setTimeout(function(){aktservice.document.location.href='query?getaktservice';}, 15000);">
+          </iframe>  </td> 
+        <!-- AKT SERVICE END --> 
+      </tr>   
+      <tr> 
+        <!-- MAIN -->  
+        <td colspan=4 valign=top width=100% height=100%>   
+          <iframe  id="main" onLoad="saveLastIframe(this.contentWindow.location)" name=main marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=100% src=query?getbouquet>
+          </iframe>  </td> 
+        <!-- MAIN END--> 
+      </tr>
+    </table>
+<div style="display: none; position: absolute; top:168; left:10; background-color:323232; padding:12px" id="eins" align="center" >
+<img src="img/rc_virtual.png" border="0" usemap="#rc">
+<map id="rc" name="rc">
+<area shape="rect" coords="50,241,87,264" href="query?sendrc&rcepg" alt="EPG" title="EPG" target="nothing"><area shape="rect" coords="3,448,27,471" href="query?sendrc&rcupup" alt="Page Up" title="Page Up" target="nothing"><area shape="rect" coords="38,448,62,471" href="query?sendrc&rcdowndown" alt="Page Down" title="Page Down" target="nothing"><area shape="rect" coords="110,448,134,471" href="query?sendrc&rcinfo" alt="Info" title="PiP Swap" target="nothing"><area shape="rect" coords="90,474,114,497" href="query?sendrc&rcpiplist" alt="PiP List" title="PiP Swap" target="nothing"><area shape="rect" coords="55,474,79,497" href="query?sendrc&rcpipswap" alt="PiP Swap" title="PiP Swap" target="nothing"><area shape="rect" coords="19,474,43,497" href="query?sendrc&rcpip" alt="PiP" title="PiP" target="nothing"><area shape="rect" coords="75,448,99,471" href="query?sendrc&rctvradio" alt="TV / Radio" title="TV / Radio" target="nothing"><area shape="rect" coords="101,399,132,417" href="query?sendrc&rcnext" alt="Next" title="Next" target="nothing"><area shape="rect" coords="5,399,36,417" href="query?sendrc&rclast" alt="Last" title="Last" target="nothing"><area shape="rect" coords="5,125,41,148" href="query?sendrc&rcsubtitel" alt="Subtitle" title="Subtitle" target="nothing"><area shape="rect" coords="95,270,132,293" href="query?sendrc&rcrecall" alt="Recall" title="Recall" target="nothing"><area shape="rect" coords="5,270,42,293" href="query?sendrc&rcfav" alt="FAV" title="FAV" target="nothing"><area shape="rect" coords="6,36,42,56" href="query?sendrc&rc1" alt="1" title="1" target="nothing"><area shape="rect" coords="50,36,86,56" href="query?sendrc&rc2" alt="2" title="2" target="nothing"><area shape="rect" coords="95,36,131,56" href="query?sendrc&rc3" alt="3" title="3" target="nothing"><area shape="rect" coords="6,66,42,86" href="query?sendrc&rc4" alt="4" title="4" target="nothing"><area shape="rect" coords="51,66,87,86" href="query?sendrc&rc5" alt="5" title="5" target="nothing"><area shape="rect" coords="95,66,131,86" href="query?sendrc&rc6" alt="6" title="6" target="nothing"><area shape="rect" coords="50,96,86,116" href="query?sendrc&rc8" alt="8" title="8" target="nothing"><area shape="rect" coords="5,96,41,116" href="query?sendrc&rc7" alt="7" title="7" target="nothing"><area shape="rect" coords="95,96,131,116" href="query?sendrc&rc9" alt="9" title="9" target="nothing"><area shape="rect" coords="50,126,86,146" href="query?sendrc&rc0" alt="0" title="0" target="nothing"><area shape="rect" coords="12,242,35,265" href="query?sendrc&rcmenu" alt="Menu" title="Menu" target="nothing"><area shape="rect" coords="96,126,131,149" href="query?sendrc&rctext" alt="Text" title="Text" target="nothing"><area shape="rect" coords="5,374,36,392" href="query?sendrc&rcfr" alt="Rewind" title="Rewind" target="nothing"><area shape="rect" coords="101,374,131,392" href="query?sendrc&rcff" alt="Fast Forward" title="Fast Forward" target="nothing"><area shape="rect" coords="53,374,85,391" href="query?sendrc&rcstop" alt="Stop" title="Stop" target="nothing"><area shape="rect" coords="55,340,82,364" href="query?sendrc&rcpause" alt="Pause" title="Pause" target="nothing"><area shape="rect" coords="55,300,82,326" href="query?sendrc&rcplay" alt="Play" title="Play" target="nothing"><area shape="rect" coords="54,399,84,417" href="query?sendrc&rcrecord" alt="Record" title="Record" target="nothing"><area shape="rect" coords="50,182,86,204" href="query?sendrc&rcok" alt="OK" title="OK" target="nothing"><area shape="rect" coords="5,183,41,205" href="query?sendrc&rcleft" alt="Left" title="Left" target="nothing"><area shape="rect" coords="96,182,132,204" href="query?sendrc&rcright" alt="Right" title="Right" target="nothing"><area shape="rect" coords="50,154,86,177" href="query?sendrc&rcup" alt="Up" title="Up" target="nothing"><area shape="rect" coords="50,212,86,235" href="query?sendrc&rcdown" alt="Down" title="Down" target="nothing"><area shape="rect" coords="3,422,27,445" href="query?sendrc&rcred" alt="Red" title="Red" target="nothing"><area shape="rect" coords="38,422,62,445" href="query?sendrc&rcgreen" alt="Green" title="Green" target="nothing"><area shape="rect" coords="75,422,99,445" href="query?sendrc&rcyellow" alt="Yellow" title="Yellow" target="nothing"><area shape="rect" coords="110,422,134,445" href="query?sendrc&rcblue" alt="Blue" title="Blue" target="nothing"><area shape="rect" coords="101,6,125,29" href="query?sendrc&rcmute" alt="Mute" title="Mute" target="nothing"><area shape="rect" coords="12,6,36,30" href="query?sendrc&rcpower" alt="Power" title="Power" target="nothing"><area shape="rect" coords="5,302,41,324" href="query?sendrc&rcvolup" alt="Volume Up" title="Volume Up" target="nothing"><area shape="rect" coords="5,341,42,362" href="query?sendrc&rcvoldown" alt="Volume Down" title="Volume Down" target="nothing"><area shape="rect" coords="95,301,132,323" href="query?sendrc&rcchup" alt="Channel Up" title="Channel Up" target="nothing"><area shape="rect" coords="95,341,131,363" href="query?sendrc&rcchdown" alt="Channel Down" title="Channel Down" target="nothing"><area shape="rect" coords="102,241,126,264" href="query?sendrc&rcexit" alt="Exit" title="Exit" target="nothing"><area shape="rect" coords="50,270,87,293" href="query?sendrc&rcepg" alt="EPG" title="EPG" target="nothing">
+</map> 
+<br><br>
+<a href="javascript:rcswitch()" title="Details on/off" class=openrctext>switch to original remote</a>
+<br>
+<a href="javascript:rcopen_virtual()" class=openrctext>open in new window</a>
+</div>
+
+<div style="display: none; position: absolute; top:168; left:10; background-color:323232; padding:12px" id="zwei" align="center" >
+<img src="img/rc.png" border="0" usemap="#rc_org">
+<map id="rc_org" name="rc_org">
+<map name="rc"><area shape="rect" coords="69,303,108,326" href="query?sendrc&rcmedia" alt="Media" title="Media" target="nothing"><area shape="rect" coords="25,533,49,556" href="query?sendrc&rcupup" alt="Page Up" title="Page Up" target="nothing"><area shape="rect" coords="59,533,83,556" href="query?sendrc&rcdowndown" alt="Page Down" title="Page Down" target="nothing"><area shape="rect" coords="126,533,150,556" href="query?sendrc&rcinfo" alt="Info" title="PiP Swap" target="nothing"><area shape="rect" coords="110,567,134,590" href="query?sendrc&rcpiplist" alt="PiP List" title="PiP Swap" target="nothing"><area shape="rect" coords="76,568,100,591" href="query?sendrc&rcpipswap" alt="PiP Swap" title="PiP Swap" target="nothing"><area shape="rect" coords="41,567,65,590" href="query?sendrc&rcpip" alt="PiP" title="PiP" target="nothing"><area shape="rect" coords="93,533,117,556" href="query?sendrc&rctvradio" alt="TV / Radio" title="TV / Radio" target="nothing"><area shape="rect" coords="119,469,155,489" href="query?sendrc&rcnext" alt="Next" title="Next" target="nothing"><area shape="rect" coords="21,469,56,489" href="query?sendrc&rclast" alt="Last" title="Last" target="nothing"><area shape="rect" coords="25,163,61,186" href="query?sendrc&rcsubtitel" alt="Subtitle" title="Subtitle" target="nothing"><area shape="rect" coords="120,332,157,355" href="query?sendrc&rcrecall" alt="Recall" title="Recall" target="nothing"><area shape="rect" coords="20,331,57,355" href="query?sendrc&rcfav" alt="FAV" title="FAV" target="nothing"><area shape="rect" coords="29,62,65,82" href="query?sendrc&rc1" alt="1" title="1" target="nothing"><area shape="rect" coords="71,62,107,82" href="query?sendrc&rc2" alt="2" title="2" target="nothing"><area shape="rect" coords="113,63,149,83" href="query?sendrc&rc3" alt="3" title="3" target="nothing"><area shape="rect" coords="28,96,64,116" href="query?sendrc&rc4" alt="4" title="4" target="nothing"><area shape="rect" coords="71,96,107,116" href="query?sendrc&rc5" alt="5" title="5" target="nothing"><area shape="rect" coords="115,96,151,116" href="query?sendrc&rc6" alt="6" title="6" target="nothing"><area shape="rect" coords="71,130,107,150" href="query?sendrc&rc8" alt="8" title="8" target="nothing"><area shape="rect" coords="25,130,61,150" href="query?sendrc&rc7" alt="7" title="7" target="nothing"><area shape="rect" coords="116,130,152,150" href="query?sendrc&rc9" alt="9" title="9" target="nothing"><area shape="rect" coords="71,163,107,186" href="query?sendrc&rc0" alt="0" title="0" target="nothing"><area shape="rect" coords="27,291,50,314" href="query?sendrc&rcmenu" alt="Menu" title="Menu" target="nothing"><area shape="rect" coords="117,163,152,186" href="query?sendrc&rctext" alt="Text" title="Text" target="nothing"><area shape="rect" coords="20,440,57,461" href="query?sendrc&rcfr" alt="Rewind" title="Rewind" target="nothing"><area shape="rect" coords="119,441,155,460" href="query?sendrc&rcff" alt="Fast Forward" title="Fast Forward" target="nothing"><area shape="rect" coords="68,441,109,460" href="query?sendrc&rcstop" alt="Stop" title="Stop" target="nothing"><area shape="rect" coords="75,406,102,430" href="query?sendrc&rcpause" alt="Pause" title="Pause" target="nothing"><area shape="rect" coords="75,364,102,390" href="query?sendrc&rcplay" alt="Play" title="Play" target="nothing"><area shape="rect" coords="68,469,108,490" href="query?sendrc&rcrecord" alt="Record" title="Record" target="nothing"><area shape="rect" coords="69,226,107,263" href="query?sendrc&rcok" alt="OK" title="OK" target="nothing"><area shape="rect" coords="37,216,64,272" href="query?sendrc&rcleft" alt="Left" title="Left" target="nothing"><area shape="rect" coords="110,216,137,273" href="query?sendrc&rcright" alt="Right" title="Right" target="nothing"><area shape="rect" coords="60,191,117,217" href="query?sendrc&rcup" alt="Up" title="Up" target="nothing"><area shape="rect" coords="61,268,113,294" href="query?sendrc&rcdown" alt="Down" title="Down" target="nothing"><area shape="rect" coords="24,499,48,522" href="query?sendrc&rcred" alt="Red" title="Red" target="nothing"><area shape="rect" coords="59,500,83,523" href="query?sendrc&rcgreen" alt="Green" title="Green" target="nothing"><area shape="rect" coords="93,500,117,523" href="query?sendrc&rcyellow" alt="Yellow" title="Yellow" target="nothing"><area shape="rect" coords="126,500,150,523" href="query?sendrc&rcblue" alt="Blue" title="Blue" target="nothing"><area shape="rect" coords="116,22,147,52" href="query?sendrc&rcmute" alt="Mute" title="Mute" target="nothing"><area shape="rect" coords="31,21,63,52" href="query?sendrc&rcpower" alt="Power" title="Power" target="nothing"><area shape="rect" coords="18,368,54,393" href="query?sendrc&rcvolup" alt="Volume Up" title="Volume Up" target="nothing"><area shape="rect" coords="18,404,55,427" href="query?sendrc&rcvoldown" alt="Volume Down" title="Volume Down" target="nothing"><area shape="rect" coords="122,368,159,393" href="query?sendrc&rcchup" alt="Channel Up" title="Channel Up" target="nothing"><area shape="rect" coords="121,404,157,429" href="query?sendrc&rcchdown" alt="Channel Down" title="Channel Down" target="nothing"><area shape="rect" coords="126,291,150,314" href="query?sendrc&rcexit" alt="Exit" title="Exit" target="nothing"><area shape="rect" coords="69,332,108,355" href="query?sendrc&rcepg" alt="EPG" title="EPG" target="nothing">
+</map> 
+<br><br>
+<a href="javascript:rcswitch()" title="Details on/off" class=openrctext>switch to virtual remote</a>
+<br>
+<a href="javascript:rcopen_org()" class=openrctext>open in new window</a>
+</div>
+
+</body>
+</html>
+
