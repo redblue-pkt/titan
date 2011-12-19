@@ -623,6 +623,18 @@ start:
 			}
 			if(listmode == EDITMODE && listbox->select != NULL && listbox->select->handle1 != NULL && rcret == getrcconfigint("rcok", NULL))
 			{
+				if(list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL)
+				{
+					struct channel* oldentry = ((struct channel*)listbox->select->handle1);
+					char* newentry = textinput(NULL, oldentry->name);
+					if(newentry != NULL)
+					{
+						newentry = stringreplacechar(newentry, '#', '_');
+						free(oldentry->name);
+						oldentry->name = newentry;
+						status.writechannel = 1;
+					}
+				}
 				if(list == MAINBOUQUETLIST)
 				{
 					struct mainbouquet* oldentry = ((struct mainbouquet*)listbox->select->handle1);
@@ -633,6 +645,21 @@ start:
 						free(oldentry->name);
 						oldentry->name = newentry;
 						status.writemainbouquet = 1;
+					}
+				}
+				if(list == BOUQUETCHANNEL)
+				{
+					struct channel* oldentry = getchannel(((struct bouquet*)listbox->select->handle1)->serviceid, ((struct bouquet*)listbox->select->handle1)->transponderid);
+					if(oldentry != NULL)
+					{
+						char* newentry = textinput(NULL, oldentry->name);
+						if(newentry != NULL)
+						{
+							newentry = stringreplacechar(newentry, '#', '_');
+							free(oldentry->name);
+							oldentry->name = newentry;
+							status.writechannel = 1;
+						}
 					}
 				}
 				delmarkedscreennodes(channellist, 1);
