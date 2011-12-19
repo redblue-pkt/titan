@@ -212,7 +212,7 @@ void screenlnb(char* feshortname, char* lnbnr)
 		drawscreen(lnbscreen, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcgreen", NULL))
+		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			writeconfigtmp();
 			break;
