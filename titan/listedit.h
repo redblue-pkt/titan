@@ -46,6 +46,7 @@ int screenlistedit(int list, struct channel* chnode)
 		startchannel = 1;
 		setstartchannel->hidden = NO;
 		delstartchannel->hidden = NO;
+		editmode->hidden = NO;
 	}
 
 	drawscreen(listedit, 0);
