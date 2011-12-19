@@ -559,7 +559,7 @@ int main(int argc, char *argv[])
 	}
 
 	addtimer(&checkdate, START, 2000, -1, NULL, NULL, NULL);
-	if(checkbox("ATEMIO500") == 0)
+	if((checkbox("ATEMIO500") == 0) && (checkbox("ATEMIO510") == 0))
 		addtimer(&updatevfd, START, 1000, -1, NULL, NULL, NULL);
 
 	//first wizzard
@@ -573,7 +573,7 @@ int main(int argc, char *argv[])
 
 		autoresolution();
 firstwizzardstep1:
-		if(checkbox("ATEMIO500") == 0)
+		if((checkbox("ATEMIO500") == 0) && (checkbox("ATEMIO510") == 0))
 		{
 			status.updatevfd = PAUSE;
 			screenavsettings(1);
