@@ -5590,3 +5590,11 @@ msgstr ""
 #: panel_system.h:263
 msgid "starting Root Update starten ?"
 msgstr ""
+
+#: panel_system_restore.h:31
+msgid ""
+"Are you sure you want to restore settings?\n"
+"\n"
+"OK = start restore\n"
+"EXIT = abort restore"
+msgstr ""
