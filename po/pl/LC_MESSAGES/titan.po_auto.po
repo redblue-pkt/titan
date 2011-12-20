@@ -479,95 +479,96 @@ msgstr ""
 msgid "toneburst, uncommitted, committed"
 msgstr ""
 
-#: diseqcconfig.h:124
+#: diseqcconfig.h:124 diseqcconfig.h:128
 msgid "DiSEqC 1.0"
 msgstr ""
 
-#: diseqcconfig.h:125
+#: diseqcconfig.h:125 diseqcconfig.h:129
 msgid "DiSEqC 1.1"
 msgstr ""
 
-#: diseqcconfig.h:127
+#: diseqcconfig.h:127 diseqcconfig.h:131
 msgid "Tonburst A/B"
 msgstr ""
 
 #: diseqcconfig.h:130 diseqcconfig.h:135 diseqcconfig.h:154 transponder.h:248
-#: transponder.h:263 transponder.h:287 transponder.h:293
+#: transponder.h:263 transponder.h:287 transponder.h:293 diseqcconfig.h:134
+#: diseqcconfig.h:139 diseqcconfig.h:158
 msgid "none"
 msgstr ""
 
 #: diseqcconfig.h:131 skin_default_skin.xml.h:86 skin_default_skin.xml.h:94
-#: skin_default_skin.xml.h:95 skin_default_skin.xml.h:97
+#: skin_default_skin.xml.h:95 skin_default_skin.xml.h:97 diseqcconfig.h:135
 msgid "A"
 msgstr ""
 
 #: diseqcconfig.h:132 skin_default_skin.xml.h:108 skin_default_skin.xml.h:116
 #: skin_default_skin.xml.h:117 skin_default_skin.xml.h:119
-#: skin_default_skin.xml.h:121
+#: skin_default_skin.xml.h:121 diseqcconfig.h:136
 msgid "B"
 msgstr ""
 
-#: diseqcconfig.h:136 diseqcconfig.h:155
+#: diseqcconfig.h:136 diseqcconfig.h:155 diseqcconfig.h:140 diseqcconfig.h:159
 msgid "Input 1"
 msgstr ""
 
-#: diseqcconfig.h:137 diseqcconfig.h:156
+#: diseqcconfig.h:137 diseqcconfig.h:156 diseqcconfig.h:141 diseqcconfig.h:160
 msgid "Input 2"
 msgstr ""
 
-#: diseqcconfig.h:138 diseqcconfig.h:157
+#: diseqcconfig.h:138 diseqcconfig.h:157 diseqcconfig.h:142 diseqcconfig.h:161
 msgid "Input 3"
 msgstr ""
 
-#: diseqcconfig.h:139 diseqcconfig.h:158
+#: diseqcconfig.h:139 diseqcconfig.h:158 diseqcconfig.h:143 diseqcconfig.h:162
 msgid "Input 4"
 msgstr ""
 
-#: diseqcconfig.h:140 diseqcconfig.h:159
+#: diseqcconfig.h:140 diseqcconfig.h:159 diseqcconfig.h:144 diseqcconfig.h:163
 msgid "Input 5"
 msgstr ""
 
-#: diseqcconfig.h:141 diseqcconfig.h:160
+#: diseqcconfig.h:141 diseqcconfig.h:160 diseqcconfig.h:145 diseqcconfig.h:164
 msgid "Input 6"
 msgstr ""
 
-#: diseqcconfig.h:142 diseqcconfig.h:161
+#: diseqcconfig.h:142 diseqcconfig.h:161 diseqcconfig.h:146 diseqcconfig.h:165
 msgid "Input 7"
 msgstr ""
 
-#: diseqcconfig.h:143 diseqcconfig.h:162
+#: diseqcconfig.h:143 diseqcconfig.h:162 diseqcconfig.h:147 diseqcconfig.h:166
 msgid "Input 8"
 msgstr ""
 
-#: diseqcconfig.h:144 diseqcconfig.h:163
+#: diseqcconfig.h:144 diseqcconfig.h:163 diseqcconfig.h:148 diseqcconfig.h:167
 msgid "Input 9"
 msgstr ""
 
-#: diseqcconfig.h:145 diseqcconfig.h:164
+#: diseqcconfig.h:145 diseqcconfig.h:164 diseqcconfig.h:149 diseqcconfig.h:168
 msgid "Input 10"
 msgstr ""
 
-#: diseqcconfig.h:146 diseqcconfig.h:165
+#: diseqcconfig.h:146 diseqcconfig.h:165 diseqcconfig.h:150 diseqcconfig.h:169
 msgid "Input 11"
 msgstr ""
 
-#: diseqcconfig.h:147 diseqcconfig.h:166
+#: diseqcconfig.h:147 diseqcconfig.h:166 diseqcconfig.h:151 diseqcconfig.h:170
 msgid "Input 12"
 msgstr ""
 
-#: diseqcconfig.h:148 diseqcconfig.h:167
+#: diseqcconfig.h:148 diseqcconfig.h:167 diseqcconfig.h:152 diseqcconfig.h:171
 msgid "Input 13"
 msgstr ""
 
-#: diseqcconfig.h:149 diseqcconfig.h:168
+#: diseqcconfig.h:149 diseqcconfig.h:168 diseqcconfig.h:153 diseqcconfig.h:172
 msgid "Input 14"
 msgstr ""
 
-#: diseqcconfig.h:150 diseqcconfig.h:169
+#: diseqcconfig.h:150 diseqcconfig.h:169 diseqcconfig.h:154 diseqcconfig.h:173
 msgid "Input 15"
 msgstr ""
 
-#: diseqcconfig.h:151 diseqcconfig.h:170
+#: diseqcconfig.h:151 diseqcconfig.h:170 diseqcconfig.h:155 diseqcconfig.h:174
 msgid "Input 16"
 msgstr ""
 
@@ -5612,4 +5613,8 @@ msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
 "reboot the box."
+msgstr ""
+
+#: diseqcconfig.h:130
+msgid "DiSEqC 1.2"
 msgstr ""
