@@ -28,7 +28,7 @@ void screenpanel_system_restore()
 		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			clearscreen(panel_restore);
-			if(textbox(_("Restore Settings"), _("Are you sure you want to restore settings?\n\nOK = start restore\nEXIT = abort restore\n\n"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 700, 250, 0, 0) == 2)
+			if(textbox(_("Restore Settings"), _("Are you sure you want to restore settings?\n\nOK = start restore\nEXIT = abort restore"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 700, 250, 0, 0) == 2)
 			{
 				if(isfile("/var/backup/.actbackup"))
 				{
