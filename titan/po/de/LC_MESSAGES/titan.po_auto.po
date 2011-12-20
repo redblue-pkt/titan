@@ -358,6 +358,7 @@ msgstr ""
 #: global.h:3768 global.h:3510 global.h:3771 tunerconfig.h:734 global.h:3772
 #: channellist.h:626 channellist.h:655 timeshift.h:44 timeshift.h:71
 #: timeshift.h:50 timeshift.h:77 channellist.h:682 channellist.h:688
+#: panel_extensions.h:45 panel_extensions.h:99
 msgid "Message"
 msgstr ""
 
@@ -1193,6 +1194,7 @@ msgid "save network settings ?"
 msgstr ""
 
 #: panel_extensions.h:19 panel_extensions.h:42 panel_extensions.h:43
+#: panel_extensions.h:44
 msgid "Ipk Install Info"
 msgstr ""
 
@@ -1200,15 +1202,17 @@ msgstr ""
 msgid "No section found"
 msgstr ""
 
-#: panel_extensions.h:67 panel_extensions.h:68
+#: panel_extensions.h:67 panel_extensions.h:68 panel_extensions.h:70
+#: panel_extensions.h:71
 msgid "Ipk Remove Info"
 msgstr ""
 
 #: panel_extensions.h:82 panel_extensions.h:93 panel_extensions.h:94
+#: panel_extensions.h:85 panel_extensions.h:96 panel_extensions.h:98
 msgid "Ipk Tmp Info"
 msgstr ""
 
-#: panel_extensions.h:82
+#: panel_extensions.h:82 panel_extensions.h:85
 msgid "No IPK found in /tmp"
 msgstr ""
 
@@ -5601,4 +5605,11 @@ msgstr ""
 
 #: timeshift.h:127
 msgid "skip "
+msgstr ""
+
+#: panel_extensions.h:45 panel_extensions.h:99
+msgid ""
+"Some plugins needs restart.\n"
+"If the plugin is not active\n"
+"reboot the box."
 msgstr ""
