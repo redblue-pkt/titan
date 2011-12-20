@@ -24,12 +24,12 @@ int changeuncommittedcmd(struct skin* cmdorder, char* type)
 
 }
 
-void changediseqcmode(struct skin* committedcmd, struct skin* cmdorder, struct skin* uncommittedcmd, /*struct skin* rotorpos,*/ struct skin* diseqcrepeat, char *type)
+void changediseqcmode(struct skin* committedcmd, struct skin* cmdorder, struct skin* uncommittedcmd, struct skin* rotorpos, struct skin* diseqcrepeat, char *type)
 {
 	committedcmd->hidden = YES;
 	cmdorder->hidden = YES;
 	uncommittedcmd->hidden = YES;
-	//rotorpos->hidden = YES;
+	rotorpos->hidden = YES;
 	diseqcrepeat->hidden = YES;
 
 	if(type == NULL || ostrcmp(type, "0") == 0 || ostrcmp(type, "1") == 0 || ostrcmp(type, "2") == 0)
@@ -40,14 +40,15 @@ void changediseqcmode(struct skin* committedcmd, struct skin* cmdorder, struct s
 
 		if(ostrcmp(type, "1") == 0 || ostrcmp(type, "2") == 0)
 			uncommittedcmd->hidden = NO;
-		//if(ostrcmp(type, "2") == 0)
-			//rotorpos->hidden = NO;
+		if(ostrcmp(type, "2") == 0)
+			rotorpos->hidden = NO;
 	}
 }
 
-void changediseqc(struct skin* diseqcmode, struct skin* toneburst, struct skin* committedcmd, struct skin* cmdorder, struct skin* uncommittedcmd, struct skin* diseqcrepeat, /*struct skin* rotorpos,*/ char* feshortname, char *diseqcnr)
+void changediseqc(struct skin* diseqcmode, struct skin* toneburst, struct skin* committedcmd, struct skin* cmdorder, struct skin* uncommittedcmd, struct skin* diseqcrepeat, struct skin* rotorpos, char* feshortname, char *diseqcnr)
 {
-	char* tmpstr = NULL;
+	char* tmpstr = NULL, *tmpnr = NULL;
+	int i = 0;
 
 	tmpstr = ostrcat(feshortname, "_diseqc_mode", 0, 0);
 	tmpstr = ostrcat(tmpstr, diseqcnr, 1, 0);
@@ -86,14 +87,17 @@ void changediseqc(struct skin* diseqcmode, struct skin* toneburst, struct skin* 
 	setchoiceboxselection(diseqcrepeat, getconfig(tmpstr, NULL));
 	free(tmpstr);
 
-/*
 	tmpstr = ostrcat(feshortname, "_diseqc_rotorpos", 0, 0);
 	tmpstr = ostrcat(tmpstr, diseqcnr, 1, 0);
 	changename(rotorpos, tmpstr);
-	changemask(rotorpos, "000");
-	changeinput(rotorpos, getconfig(tmpstr, NULL));
+	for(i = 1; i < 255; i++)
+	{
+		tmpnr = oitoa(i);
+		addchoicebox(rotorpos, tmpnr, tmpnr);
+		free(tmpnr); tmpnr = NULL;
+	}
+	setchoiceboxselection(rotorpos, getconfig(tmpstr, NULL));
 	free(tmpstr);
-*/
 }
 
 void screendiseqc(char* feshortname, char* diseqcnr)
@@ -108,7 +112,7 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 
 	struct skin* uncommittedcmd = getscreennode(diseqcscreen, "uncommittedcmd");
 	struct skin* diseqcrepeat = getscreennode(diseqcscreen, "diseqcrepeat");
-	//struct skin* rotorpos = getscreennode(diseqcscreen, "rotorpos");
+	struct skin* rotorpos = getscreennode(diseqcscreen, "rotorpos");
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL;
 
@@ -123,7 +127,7 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 	changeinput(diseqcmode, NULL);
 	addchoicebox(diseqcmode, "0", _("DiSEqC 1.0"));
 	addchoicebox(diseqcmode, "1", _("DiSEqC 1.1"));
-	//addchoicebox(diseqcmode, "2", _("DiSEqC 1.2"));
+	addchoicebox(diseqcmode, "2", _("DiSEqC 1.2"));
 	addchoicebox(diseqcmode, "100", _("Tonburst A/B"));
 
 	changeinput(toneburst, NULL);
@@ -171,10 +175,10 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 
 	changeinput(diseqcrepeat, "1\n2\n3\n4\n5\n6");
 
-	changediseqc(diseqcmode, toneburst, committedcmd, cmdorder, uncommittedcmd, diseqcrepeat, /*rotorpos,*/ feshortname, diseqcnr);
+	changediseqc(diseqcmode, toneburst, committedcmd, cmdorder, uncommittedcmd, diseqcrepeat, rotorpos, feshortname, diseqcnr);
 
 	tmpstr = ostrcat(feshortname, "_diseqc_mode", 0, 0);
-	changediseqcmode(committedcmd, cmdorder, uncommittedcmd, /*rotorpos,*/ diseqcrepeat, getconfig(tmpstr, diseqcnr));
+	changediseqcmode(committedcmd, cmdorder, uncommittedcmd, rotorpos, diseqcrepeat, getconfig(tmpstr, diseqcnr));
 	free(tmpstr); tmpstr = NULL;
 	free(diseqcnr); diseqcnr = NULL;
 
@@ -191,7 +195,7 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 
 		if(listbox->select != NULL && listbox->select->name != NULL && strstr(listbox->select->name, "diseqc_mode") != NULL && (rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)))
 		{
-			changediseqcmode(committedcmd, cmdorder, uncommittedcmd, /*rotorpos,*/ diseqcrepeat, diseqcmode->ret);
+			changediseqcmode(committedcmd, cmdorder, uncommittedcmd, rotorpos, diseqcrepeat, diseqcmode->ret);
 			changeuncommittedcmd(cmdorder, diseqcmode->ret);
 		}
 
@@ -201,7 +205,7 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 		addconfigscreentmpcheck(cmdorder->name, cmdorder, "0");
 		addconfigscreentmpcheck(diseqcrepeat->name, diseqcrepeat, "1");
 		addconfigscreentmpcheck(uncommittedcmd->name, uncommittedcmd, "0");
-		//addconfigscreentmpcheck(rotorpos->name, rotorpos, "000");
+		addconfigscreentmpcheck(rotorpos->name, rotorpos, "000");
 
 		status.screencalc = 0;
 		drawscreen(diseqcscreen, 0);
@@ -220,7 +224,7 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 	changename(cmdorder, "cmdorder");
 	changename(uncommittedcmd, "uncommittedcmd");
 	changename(diseqcrepeat, "diseqcrepeat");
-	//changename(rotorpos, "rotorpos");
+	changename(rotorpos, "rotorpos");
 
 	status.screencalc = 0;
 	delconfigtmpall();
