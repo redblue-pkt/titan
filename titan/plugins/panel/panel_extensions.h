@@ -40,7 +40,10 @@ void screenpanel_extensions(int mode)
 				tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 
 				if(textbox(_("Ipk Install Info"), _(tmpinfo), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+				{
 					textbox(_("Ipk Install Info"), _(get_ipk_install(tmpstr)), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+					textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				}
 				free(tmpinfo); tmpinfo = NULL;
 			}
 			free(section); section = NULL;
@@ -91,8 +94,10 @@ void screenpanel_extensions(int mode)
 			tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 
 			if(textbox(_("Ipk Tmp Info"), _(tmpinfo), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+			{
 				textbox(_("Ipk Tmp Info"), _(get_ipk_tmpinstall(file)), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
-
+				textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+			}
 			free(tmpinfo); tmpinfo = NULL;
 			free(file); file = NULL;
 			screenpanel_extensions(2);
