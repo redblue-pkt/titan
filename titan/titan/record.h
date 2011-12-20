@@ -960,6 +960,7 @@ void screenrecorddirect()
 int recordskipplay(struct service* servicenode, int sekunden)
 {
 	off64_t offset;
+	off64_t bufferoffset;
 	off64_t endoffile;
 	off64_t currentpos;
 	int dupfd = -1;
@@ -980,22 +981,22 @@ int recordskipplay(struct service* servicenode, int sekunden)
 		err("copy source fd not ok");
 		return 1;
 	}
+	
+	m_lock(&status.tsseekmutex, 15);
 	if(gettsinfo(dupfd, &pts, &bitrate) != 0)
 	{
 		err("cant read bitrate");
+		m_unlock(&status.tsseekmutex, 15);
 		return 1;
 	}
-
-	endoffile = lseek64(dupfd , 0, SEEK_END);
-	endoffile = endoffile - RECPLAYBSIZE;
-	close(dupfd); 
-	m_lock(&status.tsseekmutex, 15);
+	endoffile = lseek64(dupfd , -188*2, SEEK_END);
+	close(dupfd);
+	currentpos = lseek64(servicenode->recsrcfd, 0, SEEK_CUR);
 	ret = videoclearbuffer(status.aktservice->videodev);
 	ret = audioclearbuffer(status.aktservice->audiodev);
-	currentpos = lseek64(servicenode->recsrcfd, 0, SEEK_CUR);
-	
+
 	if(sekunden >= 0) {
-		offset = (bitrate / 8) * sekunden;
+		offset = (bitrate / 8) * sekunden - 5000000;
 		offset = offset - (offset % 188);
 		if(currentpos + offset > endoffile) {
 			offset = endoffile - currentpos;
@@ -1003,10 +1004,10 @@ int recordskipplay(struct service* servicenode, int sekunden)
 		}
 	} else {
 		sekunden = sekunden * -1;
-		offset = (bitrate / 8) * sekunden;
+		offset = (bitrate / 8) * sekunden + 5000000;
 		offset = offset - (offset % 188);
 		if(currentpos - offset < 0) {
-			offset = currentpos - RECPLAYBSIZE;
+			offset = currentpos - 188;
 			offset = offset - (offset % 188);
 			if(offset < 0)
 				offset = 0; 
@@ -1014,10 +1015,9 @@ int recordskipplay(struct service* servicenode, int sekunden)
 		offset = offset * -1;
 	}
 	currentpos = lseek64(servicenode->recsrcfd, offset, SEEK_CUR);
-	
 	m_unlock(&status.tsseekmutex, 15);
+	usleep(500000);
 	status.timeshiftseek = 0;
-
 	return 0;
 }
 
