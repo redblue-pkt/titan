@@ -421,9 +421,15 @@ start:
 	tmpstr = NULL, tmpstr1 = NULL, movesel = NULL, aktlist = NULL, tmpskin = NULL;
 
 	if(status.servicetype == 0)
+	{
 		tmpstr = getconfig("channellist", NULL);
+		changetext(b7, _("Radio (Info)"));
+	}
 	else
+	{
 		tmpstr = getconfig("rchannellist", NULL);
+		changetext(b7, _("TV (Info)"));
+	}
 	if(ostrncmp("(BOUQUET)-", tmpstr, 10) == 0 && strlen(tmpstr) > 10)
 	{
 		struct mainbouquet* mainbouquetnode = NULL;
