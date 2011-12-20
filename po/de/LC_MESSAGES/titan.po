@@ -1801,4 +1801,5 @@ msgid "No backup folders found!!!\n\nAborting restoring..."
 msgstr "Kein Backup Verzeichnis gefunden"
 msgid "A record hdd or a swapstick must be mounted!\n\nAborting backup..."
 msgstr "Kein Backup Verzeichnis gefunden"
-
+msgid "You find this Backup with timestamp on /tmp\nConnecting per ftp and copy this backup to your Pc !\nPlease Waiting 2 Min ... and relax\n \nNext infos on LCD Display!"
+msgstr "Backup wird in /tmp abgelegt\nBitte per FTP-Client kopieren und anschliessend löschen"
