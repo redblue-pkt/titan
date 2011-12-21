@@ -141,7 +141,7 @@ void screenpossetup()
 				if(ostrcmp(listbox->select->name, "limit") == 0)
 					fediseqcrotor(dvbnode, 0, 0, 1);
 				if(ostrcmp(listbox->select->name, "goto0") == 0)
-					fediseqcrotor(dvbnode, 1, 0, 8);
+					fediseqcrotor(dvbnode, 0, 0, 8);
 			}
 			if(rcret == getrcconfigint("rcgreen", NULL))
 			{
