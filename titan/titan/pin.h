@@ -102,7 +102,7 @@ void screenmenuprotect()
 		tmp = listbox->select;
 	
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcgreen", NULL))
+		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			node = menuprotect->child;
 			while(node != NULL)
@@ -183,13 +183,13 @@ void screenpin()
 		tmp = listbox->select;
 	
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcblue", NULL))
+		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			clearscreen(pin);
 			screenmenuprotect();
 			drawscreen(pin, 0);
 		}
-		if(rcret == getrcconfigint("rcgreen", NULL))
+		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			addconfigscreen("pincodemenu", pincodemenu);
 			addconfigscreen("pincode", pincode);
