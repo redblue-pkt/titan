@@ -108,6 +108,36 @@ void screeninfobar()
 				}
 				continue;
 			}
+			if(rcret == getrcconfigint("rc3", NULL))
+			{
+				timeshiftseek(60);
+				continue;
+			}
+			if(rcret == getrcconfigint("rc6", NULL))
+			{
+				timeshiftseek(300);
+				continue;
+			}
+			if(rcret == getrcconfigint("rc9", NULL))
+			{
+				timeshiftseek(600);
+				continue;
+			}	
+			if(rcret == getrcconfigint("rc1", NULL))
+			{
+				timeshiftseek(-60);
+				continue;
+			}
+			if(rcret == getrcconfigint("rc4", NULL))
+			{
+				timeshiftseek(-300);
+				continue;
+			}
+			if(rcret == getrcconfigint("rc7", NULL))
+			{
+				timeshiftseek(-600);
+				continue;
+			}	
 		}
 		if(rcret == getrcconfigint("rcblue", NULL) && getconfig("bluekey", NULL) == NULL)
 			rcret = getrcconfigint("rctvradio", NULL);
