@@ -291,7 +291,7 @@ void oshutdown(int exitcode, int flag)
 		freemainplaylist();
 		freeallbouquet();
 		freemainbouquet();
-		freechannel();
+		freechannel(0);
 		freetransponder();
 		freeprovider();
 		freeownconfig();
