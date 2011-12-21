@@ -74,6 +74,7 @@ compile "panel" "panel" ""
 compile "mc" "mc" ""
 compile "TopfieldVFD" "TopfieldVFD" ""
 compile "mboxinfo" "mboxinfo" ""
+compile "browser" "browser" ""
 #compile "callmonitor1" "callmonitor1" ""
 
 #rm -r networkbrowser/networkbrowser
