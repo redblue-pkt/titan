@@ -116,14 +116,14 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
 		currentpos = currentpos - 5000000;
 		endoffile = lseek64(fd , 0, SEEK_END);
 		timeshiftbar->progresssize = currentpos * 100 / endoffile;
-		if(status.timeshiftseek > 100) {
-			tmpstr = oitoa(status.timeshiftseek - 100);
+		if(status.timeshiftseek > 10000) {
+			tmpstr = oitoa(status.timeshiftseek - 10000);
 			tmpstr = ostrcat(_(">> "), tmpstr, 0, 1);
 			tmpstr = ostrcat(tmpstr,"x", 1, 0);
  			changetext(seek, tmpstr);
  			free(tmpstr); tmpstr = NULL;
  		}
- 		if(status.timeshiftseek < 100 && status.timeshiftseek > -100) {
+ 		if(status.timeshiftseek < 10000 && status.timeshiftseek > -10000) {
  			if(seeking == 0) {
  				seeking = status.timeshiftseek;
  				tmpstr = oitoa(status.timeshiftseek);
@@ -154,13 +154,13 @@ void timeshiftseek(int sekunden)
 	
 	status.timeshiftseek = sekunden;
 	if(snode != 0) {
-		if(sekunden > 100) {
-			if(sekunden >= 132) {
-				status.timeshiftseek = 116;
+		if(sekunden > 10000) {
+			if(sekunden >= 10032) {
+				status.timeshiftseek = 10016;
 				return;
 			}
 			status.timeshiftseek = sekunden;
-			sekunden = sekunden - 100;
+			sekunden = sekunden - 10000;
 			recordffrwts(snode, sekunden);
 		}	
 		else {

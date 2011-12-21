@@ -91,11 +91,11 @@ void screeninfobar()
 			if(rcret == getrcconfigint("rcff", NULL))
 			{
 				if(status.playing == 1) { 
-					if(status.timeshiftseek > 100) {
-						timeshiftseek((status.timeshiftseek - 100) * 2 + 100);
+					if(status.timeshiftseek > 10000) {
+						timeshiftseek((status.timeshiftseek - 10000) * 2 + 10000);
 					}
 					else
-					timeshiftseek(102);
+					timeshiftseek(10002);
 				}
 				continue;
 			}
