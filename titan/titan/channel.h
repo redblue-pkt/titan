@@ -419,7 +419,9 @@ void delchannelbytransponder(unsigned long transponderid)
 	debug(1000, "out");
 }
 
-void freechannel()
+//flag 0: del bouquet
+//flag 1: don't del bouquet
+void freechannel(int flag)
 {
 	debug(1000, "in");
 	struct channel *node = channel, *prev = channel;
@@ -429,7 +431,7 @@ void freechannel()
 		prev = node;
 		node = node->next;
 		if(prev != NULL)
-			delchannel(prev->serviceid, prev->transponderid, 0);
+			delchannel(prev->serviceid, prev->transponderid, flag);
 	}
 	debug(1000, "out");
 }

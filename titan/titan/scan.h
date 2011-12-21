@@ -579,7 +579,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 			b2->hidden = YES;
 			b3->hidden = YES;
 			//del all channel for auto. search
-			if(clear == 1) freechannel();
+			if(clear == 1) freechannel(1);
 		}
 		satnode = sat;
 		while(satnode != NULL)
