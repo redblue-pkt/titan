@@ -250,7 +250,7 @@ void screennetwork_adapterext(int mode, char* interface)
 		//printf("listbox->select->text: %s\n", listbox->select->text);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcgreen", NULL))
+		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			if(textbox(_("Message"), _("save network settings ?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
 			{
