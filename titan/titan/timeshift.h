@@ -97,6 +97,7 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
 	struct skin* seek = getscreennode(timeshift, "seek");
 	struct skin* timeshiftbar = getscreennode(timeshift, "timeshiftbar");
 	char* bg = NULL;
+	int seeking = 0;
 	struct service* snode = getservice(RECORDTIMESHIFT, 0);
 	int fd = open(snode->recname, O_RDONLY | O_LARGEFILE);
 	
@@ -110,10 +111,10 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
 	setnodeattr(timeshift, framebuffer);
 	bg = savescreen(timeshift);
 	
-	while(status.timeshiftseek != 0) {
-		endoffile = lseek64(fd , 0, SEEK_END);
+	while(status.timeshiftseek != 0 || seeking != 0) {
 		currentpos = lseek64(servicenode->recsrcfd, 0, SEEK_CUR);
 		currentpos = currentpos - 5000000;
+		endoffile = lseek64(fd , 0, SEEK_END);
 		timeshiftbar->progresssize = currentpos * 100 / endoffile;
 		if(status.timeshiftseek > 100) {
 			tmpstr = oitoa(status.timeshiftseek - 100);
@@ -123,13 +124,20 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
  			free(tmpstr); tmpstr = NULL;
  		}
  		if(status.timeshiftseek < 100 && status.timeshiftseek > -100) {
- 			tmpstr = oitoa(status.timeshiftseek);
+ 			if(seeking == 0) {
+ 				seeking = status.timeshiftseek;
+ 				tmpstr = oitoa(status.timeshiftseek);
+ 			} else {
+ 				tmpstr = oitoa(seeking);
+ 				seeking = 0;
+ 			}
  			tmpstr = ostrcat(_("skip "), tmpstr, 0, 1);
  			tmpstr = ostrcat(tmpstr," sec", 1, 0);
  			changetext(seek, tmpstr);
  			free(tmpstr); tmpstr = NULL;
  		}
 		drawscreen(timeshift, 0);
+		
 		sleep (1);
 	}
 	restorescreen(bg, timeshift);
