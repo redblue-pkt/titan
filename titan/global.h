@@ -1,6 +1,22 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+int getmaxsat(char* feshortname)
+{
+        char *tmpstr = NULL;
+	int maxsat = 1;
+
+        if(feshortname != NULL)
+        {
+                tmpstr = ostrcat(feshortname, "_maxsat", 0, 0);
+		maxsat = getconfigint(tmpstr, NULL);
+		free(tmpstr); tmpstr = NULL;
+	}
+	if(maxsat < 0) maxsat = 1;
+
+	return maxsat;
+}
+
 void autochangechannelname()
 {
 	uint8_t lastsecnr = 0xff;
@@ -1362,13 +1378,13 @@ int isdir(char* name)
 	return 0;
 }
 
-char* getmaxsatstring()
+char* getmaxsatstring(int maxsat)
 {
 	char* tmpstr = NULL, *tmpnr = NULL;
 	int i;
 
 	tmpstr = ostrcat(tmpstr, "1", 1, 0);
-	for(i = 2; i <= status.maxsat; i++)
+	for(i = 2; i <= maxsat; i++)
 	{
 		tmpnr = oitoa(i);
 		tmpstr = ostrcat(tmpstr, "\n", 1, 0);

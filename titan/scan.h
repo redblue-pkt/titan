@@ -450,7 +450,7 @@ void scansetallsat(int fetype)
 		{
 
 			tmpstr = ostrcat(dvbnode->feshortname, "_sat", 0, 0);
-			for(i = 1; i <= status.maxsat; i++)
+			for(i = 1; i <= getmaxsat(dvbnode->feshortname); i++)
 			{
 				tmpnr = oitoa(i);
 				orbitalpos = getconfigint(tmpstr, tmpnr);
@@ -743,7 +743,7 @@ void changescantype(char* scantype, struct skin* scan, struct skin* listbox, str
 		satellite->hidden = YES;
 
 		tmpstr = ostrcat(feshortname, "_sat", 0, 0);
-		for(i = 1; i <= status.maxsat; i++)
+		for(i = 1; i <= getmaxsat(feshortname); i++)
 		{
 			tmpnr = oitoa(i);
 			orbitalpos = getconfigint(tmpstr, tmpnr);
@@ -863,7 +863,7 @@ void screenscanconfig(int flag)
 			if(dvbnode->feshortname != NULL)
 			{
 				tmpstr = ostrcat(dvbnode->feshortname, "_sat", 0, 0);
-				for(i = 1; i <= status.maxsat; i++)
+				for(i = 1; i <= getmaxsat(dvbnode->feshortname); i++)
 				{
 					tmpnr = oitoa(i);
 					if(getconfigint(tmpstr, tmpnr) != 0)

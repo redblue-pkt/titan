@@ -112,6 +112,7 @@
 #define MAXCASESSION 16
 #define MAXCASERVICE 20
 #define MAXLONGKEY 10
+#define MAXSAT 64
 
 //CA Defines
 #define T_SB 0x80		//sb (h<--m)
@@ -860,7 +861,6 @@ struct status
 	int spinnerspeed;
 	int hangtime;
 	int timeupdatecount;
-	int maxsat;
 	int markmodus;
 	// 1 from main prog
 	// 2 from a thread
