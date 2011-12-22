@@ -84,6 +84,8 @@ msgstr ""
 #: global.h:3771 httpdfunc.h:2123 tunerconfig.h:734 global.h:3772
 #: channellist.h:626 channellist.h:655 timeshift.h:44 timeshift.h:71
 #: timeshift.h:50 timeshift.h:77 channellist.h:682 channellist.h:688
+#: harddisk.h:309 harddisk.h:319 harddisk.h:323 restoredefault.h:17
+#: restoredefault.h:21
 msgid "EXIT"
 msgstr ""
 
@@ -384,6 +386,11 @@ msgstr ""
 #: play.h:421 skin_default_skin.xml.h:265 play.h:428 global.h:2594 play.h:425
 #: skin_default_skin.xml.h:267 avsettings.h:195 harddisk.h:352 harddisk.h:526
 #: harddisk.h:540 harddisk.h:568 record.h:638 timeshift.h:44 timeshift.h:50
+#: channellist.h:688 epgsettings.h:114 global.h:3510 global.h:3772
+#: harddisk.h:309 harddisk.h:319 harddisk.h:323 httpdfunc.h:803
+#: httpdfunc.h:2123 keyactions.h:187 play.h:494 rectimer.h:1133 scan.h:680
+#: scan.h:831 scan.h:903 scan.h:1109 scart.h:13 scart.h:26 skinselector.h:218
+#: spinner.h:18 stream.h:26 timeshift.h:77 tunerconfig.h:734
 msgid "OK"
 msgstr ""
 
