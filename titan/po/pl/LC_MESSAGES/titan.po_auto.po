@@ -5557,6 +5557,7 @@ msgid "Can't remove akive Service"
 msgstr ""
 
 #: timeshift.h:113 timeshift.h:119 timeshift.h:120 timeshift.h:121
+#: timeshift.h:127
 msgid ">> "
 msgstr ""
 
@@ -5604,7 +5605,7 @@ msgid ""
 "EXIT = abort restore"
 msgstr ""
 
-#: timeshift.h:127 timeshift.h:134
+#: timeshift.h:127 timeshift.h:134 timeshift.h:140
 msgid "skip "
 msgstr ""
 
