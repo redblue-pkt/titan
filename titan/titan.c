@@ -199,7 +199,7 @@ void oshutdown(int exitcode, int flag)
 	//check if record running
 	if((flag == 1 || flag == 2) && status.recording > 0)
 	{
-		if(textbox(_("Message"), _("Found running Record.\nRealy shutdown ?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 1) == 1)
+		if(textbox(_("Message"), _("Found running Record.\nRealy shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 1) == 2)
 			return;
 	}
 
@@ -583,7 +583,7 @@ firstwizzardstep1:
 			screentunerconfig();
 			screennetwork_adapter();
 			writevfd("Setting OK ?");
-			if(textbox(_("First Wizzard"), _("Settings OK ?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+			if(textbox(_("First Wizzard"), _("Settings OK ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
 			{
 				goto firstwizzardstep1;
 			}

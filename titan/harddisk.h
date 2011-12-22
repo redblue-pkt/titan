@@ -306,7 +306,7 @@ void screenconfigurehdd(char* dev)
 			if(mode == 0) ret = mkdir(path, 777);
 			if(mode == 1)
 			{
-				if(textbox("Message", _("Are you sure you want to delete this directory?"), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+				if(textbox("Message", _("Are you sure you want to delete this directory?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 					ret = rmdir(path);
 				else
 					ret = 9999;
@@ -316,11 +316,11 @@ void screenconfigurehdd(char* dev)
 			{
 				if(mode == 0) perr("mkdir");
 				if(mode == 1) perr("rmdir");
-				textbox("Message", _("can't create or delete directory"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
+				textbox("Message", _("can't create or delete directory"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 			}
 			else if(ret != 9999)
 			{
-				textbox("Message", _("succesfull create or delelete directory"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
+				textbox("Message", _("succesfull create or delelete directory"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 				//mount hdd after create dir movie
 				if(ostrcmp(listbox->select->name, "addrecord") == 0)
 					system("hotplug.sh first");
@@ -349,7 +349,7 @@ start:
 
 	if(hdd == NULL)
 	{
-		textbox(_("Harddisk"), _("sorry found no harddisk"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
+		textbox(_("Harddisk"), _("sorry found no harddisk"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 		return;
 	}
 
@@ -523,7 +523,7 @@ void hddformat(char* dev, char* filesystem)
 
 	if(node->partition == 0)
 	{
-		if(textbox(_("Message"), _("Are you sure you want to remove all Partitions\non this device and create a new Partition 1?\nBox reboots after format"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 2)
+		if(textbox(_("Message"), _("Are you sure you want to remove all Partitions\non this device and create a new Partition 1?\nBox reboots after format"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 		{
 			cmd = ostrcat("/sbin/parter.sh /dev/" , dev, 0, 0);
 			cmd = ostrcat(cmd , " create 1", 1, 0);
@@ -537,7 +537,7 @@ void hddformat(char* dev, char* filesystem)
 	}
 	else
 	{
-		if(textbox(_("Message"), _("Are you sure you want to format this Partition?\nBox reboots after format"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 2)
+		if(textbox(_("Message"), _("Are you sure you want to format this Partition?\nBox reboots after format"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 			format = 1;
 	}
 
@@ -565,7 +565,7 @@ void hddfsck(char* dev)
 	char* cmd = NULL;
 	struct hdd* node = NULL;
 
-	if(textbox(_("Message"), _("Are you sure you want to check this Partition?\nBox reboots after check"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 2)
+	if(textbox(_("Message"), _("Are you sure you want to check this Partition?\nBox reboots after check"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 	{
 		node = gethdd(dev);
 		if(node == NULL) return;

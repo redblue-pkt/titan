@@ -800,7 +800,7 @@ char* webgetchannelpage(char* param)
 
 void webmessage(struct stimerthread* timernode, char* text, int flag)
 {
-	textbox(_("Message"), text, _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+	textbox(_("Message"), text, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 	free(text);
 }
 
@@ -2120,7 +2120,7 @@ void putxmessage(struct stimerthread* timernode, char* captiontime, char* body)
 	ret1 = strsplit(captiontime, "\t", &count1);
 	caption = ostrcat(caption, (&ret1[0])->part, 1, 0);
 	timeout = atoi((&ret1[1])->part);
-	textbox(caption, body, _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 280, timeout, 0);
+	textbox(caption, body, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 280, timeout, 0);
 	free(caption); free(body); free(captiontime); free(ret1);
 }
 

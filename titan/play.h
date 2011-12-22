@@ -414,7 +414,7 @@ int playcheckdirrcret(char* file, int dirrcret)
 
 		tmpstr = readfiletomem(epgfilename, 0);
 		if(tmpstr != NULL)
-			textbox(_("EPG Info"), tmpstr, _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 700, 600, 0, 2);
+			textbox(_("EPG Info"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 700, 600, 0, 2);
 
 		free(epgfilename); epgfilename = NULL;
 		free(tmpstr); tmpstr = NULL;
@@ -422,7 +422,7 @@ int playcheckdirrcret(char* file, int dirrcret)
 	}
 	if(dirrcret == 1)
 	{
-		if(textbox(_("Realy Delete ?"), file, _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+		if(textbox(_("Realy Delete ?"), file, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 		{
 			unlink(file);
 			epgfilename = changefilenameext(file, ".epg");
@@ -491,7 +491,7 @@ playerstart:
 #ifndef SIMULATE
 		if(rcret != 0)
 		{
-			textbox(_("Message"), _("Can't start playback !"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+			textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 			writevfd("Player");
 			goto playerstart;
 		}

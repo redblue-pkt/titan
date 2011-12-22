@@ -677,7 +677,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 					scanaddchannel(lnode, scantype, tpnode);
 				lnode = lnode->next;
 			}
-			textbox(_("Message"), _("All new channel added!"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+			textbox(_("Message"), _("All new channel added!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		}
 
 		if(rcret == getrcconfigint("rcexit", NULL))
@@ -828,7 +828,7 @@ void screenscanconfig(int flag)
 
 	if(status.recording > 0 || status.streaming > 0)
 	{
-		textbox(_("Message"), _("Scan is not allowed if record\nor stream is running !"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+		textbox(_("Message"), _("Scan is not allowed if record\nor stream is running !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		return;
 	}
 
@@ -900,7 +900,7 @@ void screenscanconfig(int flag)
 
 	if(tunercount < 1)
 	{
-		textbox(_("Message"), _("No Tuner configured"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+		textbox(_("Message"), _("No Tuner configured"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		return;
 	}
 
@@ -1106,7 +1106,7 @@ void screenscanconfig(int flag)
 			struct transponder* tp1 = createtransponder(0, tpnode->fetype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, isystem);
 			copytransponder(tp1, tpnode, 0);
 			deltransponder(0);
-			textbox(_("Message"), _("Transponder changed"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
+			textbox(_("Message"), _("Transponder changed"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 			drawscreen(scan, 0);
 		}
 	}
