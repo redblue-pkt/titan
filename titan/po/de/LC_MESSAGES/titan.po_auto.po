@@ -85,7 +85,10 @@ msgstr ""
 #: channellist.h:626 channellist.h:655 timeshift.h:44 timeshift.h:71
 #: timeshift.h:50 timeshift.h:77 channellist.h:682 channellist.h:688
 #: harddisk.h:309 harddisk.h:319 harddisk.h:323 restoredefault.h:17
-#: restoredefault.h:21
+#: restoredefault.h:21 panel_extensions.h:19 panel_extensions.h:42
+#: panel_extensions.h:44 panel_extensions.h:45 panel_extensions.h:70
+#: panel_extensions.h:71 panel_extensions.h:85 panel_extensions.h:96
+#: panel_extensions.h:98 panel_extensions.h:99
 msgid "EXIT"
 msgstr ""
 
@@ -391,6 +394,11 @@ msgstr ""
 #: httpdfunc.h:2123 keyactions.h:187 play.h:494 rectimer.h:1133 scan.h:680
 #: scan.h:831 scan.h:903 scan.h:1109 scart.h:13 scart.h:26 skinselector.h:218
 #: spinner.h:18 stream.h:26 timeshift.h:77 tunerconfig.h:734
+#: panel_extensions.h:19 panel_extensions.h:42 panel_extensions.h:44
+#: panel_extensions.h:45 panel_extensions.h:70 panel_extensions.h:71
+#: panel_extensions.h:85 panel_extensions.h:96 panel_extensions.h:98
+#: panel_extensions.h:99 panel_main.h:35 panel_main.h:243 panel_system.h:297
+#: panel_system_restore.h:47 panel_system_restore.h:78
 msgid "OK"
 msgstr ""
 
