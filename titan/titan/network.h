@@ -145,18 +145,18 @@ void screennetwork_test()
 
 void screennetwork(int mode)
 {
-	textbox(_("Network"), _("comming soon..."), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
+	textbox(_("Network"), _("comming soon..."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 }
 
 void screennetwork_restart()
 {
 	char* tmpstr = NULL;
 
-	if(textbox(_("Network"), _("Restart Network ?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+	if(textbox(_("Network"), _("Restart Network ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
 		debug(10, "restart network");
 		tmpstr = command("/etc/init.d/networking restart");
-		textbox(_("Restart Network"), tmpstr, _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
+		textbox(_("Restart Network"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 		free(tmpstr); tmpstr = NULL;
 	}
 }
@@ -252,7 +252,7 @@ void screennetwork_adapterext(int mode, char* interface)
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
-			if(textbox(_("Message"), _("save network settings ?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+			if(textbox(_("Message"), _("save network settings ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 			{
 				debug(10, "save network settings");
 				save = 1;

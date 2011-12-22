@@ -61,7 +61,7 @@ struct skin* menu(struct skin* menu)
 			if(status.standby == 1 || status.menurelease == 1) break;
 
 			if(ret != 0)
-				textbox(_("Message"), _("Menu not implemented !"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox(_("Message"), _("Menu not implemented !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 			drawscreen(menu, 0);
 		}
 		if(listbox->select != NULL)
@@ -384,9 +384,9 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		debug(10, "SAVING SETTINGS !!!");
 		if(writeallconfig(1) != 0)
-			textbox(_("Save Settings"), _("Error in Save Settings"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+			textbox(_("Save Settings"), _("Error in Save Settings"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		else
-			textbox(_("Save Settings"), _("Settings succesfull saved"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+			textbox(_("Save Settings"), _("Settings succesfull saved"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 	}
 	else
 		ret = 1;

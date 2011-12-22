@@ -685,7 +685,7 @@ start:
 						listbox->aktpage = -1;
 					}
 					else
-						textbox(_("Message"), _("Can't remove akive Service"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 7, 0);
+						textbox(_("Message"), _("Can't remove akive Service"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
 				}
 				if(list == SATLIST)
 				{

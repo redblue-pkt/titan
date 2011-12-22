@@ -15,10 +15,10 @@ void checkspinner()
 		if(status.sec != 0 && status.hangtime > 0 && sec - status.sec > status.spinnertime + status.hangtime && sec - status.sec < 86400)
 		{
 			status.sec = sec - status.spinnertime - 1;
-			rcret = textbox(_("Message"), _("Detect hanging System !!!\n\nKILL = Red\nBOOT = Power"), _("EXIT"), getrcconfigint("rcexit", NULL), _("KILL"), getrcconfigint("rcred", NULL), _("BOOT"), getrcconfigint("rcpower", NULL), NULL, 0, 600, 400, 0, 0);
-			if(rcret == 2)
-				system(KILLPROG);
+			rcret = textbox(_("Message"), _("Detect hanging System !!!\n\nKILL = Red\nBOOT = Power"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), _("KILL"), getrcconfigint("rcred", NULL), _("BOOT"), getrcconfigint("rcpower", NULL), 600, 400, 0, 0);
 			if(rcret == 3)
+				system(KILLPROG);
+			if(rcret == 4)
 				system(REBOOT);
 		}
 	}

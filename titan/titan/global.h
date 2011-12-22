@@ -2604,8 +2604,8 @@ void switchvideomode()
 			tmpstr1 = ostrcat(tmpstr1, "576i50", 1, 0);
 		}
 		/*
-		int ret = textbox(_("Message"), _("Is this Videomode ok ?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
-		if(ret == 0 || ret == 1)
+		int ret = textbox(_("Message"), _("Is this Videomode ok ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+		if(ret == 0 || ret == 2)
 		{
 			setvideomode(tmpstr, 0);
 			changefbresolution(tmpstr);
@@ -3507,7 +3507,7 @@ char* get_ipk_update()
 		
 		if(ostrcmp(cmd, "//97.74.32.10/svn/atemio") != 0)
 		{
-			textbox(_("Message"), _("check your Secret Feed !"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
+			textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 			free(cmd), cmd = NULL;
 			return cmd;
 		}
@@ -3769,7 +3769,7 @@ void setaktres()
 		}
 	}
 	else
-		textbox(_("Message"), _("ERROR cant read res"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
+		textbox(_("Message"), _("ERROR cant read res"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 
 	free(res);
 	res = NULL;

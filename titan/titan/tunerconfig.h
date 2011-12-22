@@ -731,7 +731,7 @@ void screentunerconfig()
 				if(((struct dvbdev*)listbox->select->handle)->feinfo->type == FE_OFDM)
 				{
 					clearscreen(tunerconfig);
-					textbox(_("Message"), _("DVB-T not supportet at the moment !"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+					textbox(_("Message"), _("DVB-T not supportet at the moment !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 					drawscreen(tunerconfig, 0);
 				}
 			}
