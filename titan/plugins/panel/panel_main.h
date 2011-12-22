@@ -32,7 +32,7 @@ struct skin* panel_menu(struct skin* panel_menu)
 			clearscreen(panel_menu);
 			ret = panel_menucall(listbox->select);
 			if(ret != 0)
-				textbox(_("Message"), _("Menu not implemented !"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox(_("Message"), _("Menu not implemented !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 			drawscreen(panel_menu, 0);
 		}
 	}
@@ -240,7 +240,7 @@ void panel_main()
 			clearscreen(panel_main);
 			ret = panel_menucall(listbox->select);
 			if(ret != 0)
-				textbox(_("Message"), _("Menu not implemented !"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox(_("Message"), _("Menu not implemented !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 			drawscreen(panel_main, 0);
 		}
 			debug(10, "[panal_main] (select) menu=%s", listbox->select->name);

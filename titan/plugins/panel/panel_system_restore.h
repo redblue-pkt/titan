@@ -28,7 +28,7 @@ void screenpanel_system_restore()
 		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			clearscreen(panel_restore);
-			if(textbox(_("Restore Settings"), _("Are you sure you want to restore settings?\n\nOK = start restore\nEXIT = abort restore"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 700, 250, 0, 0) == 2)
+			if(textbox(_("Restore Settings"), _("Are you sure you want to restore settings?\n\nOK = start restore\nEXIT = abort restore"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 700, 250, 0, 0) == 1)
 			{
 				if(isfile("/var/backup/.actbackup"))
 				{
@@ -44,7 +44,7 @@ void screenpanel_system_restore()
 				else
 				{
 					//clearscreen(panel_restore);
-					textbox(_("RESTORE ERROR"), _("No backup folders found!!!\n\nAborting restoring..."), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+					textbox(_("RESTORE ERROR"), _("No backup folders found!!!\n\nAborting restoring..."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 					drawscreen(panel_restore, 0);
 				}
 			}else
@@ -75,7 +75,7 @@ void screenpanel_system_restore()
 			else
 			{
 				clearscreen(panel_restore);
-				textbox(_("BACKUP ERROR"), _("A record hdd or a swapstick must be mounted!\n\nAborting backup..."), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox(_("BACKUP ERROR"), _("A record hdd or a swapstick must be mounted!\n\nAborting backup..."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 				drawscreen(panel_restore, 0);
 			}
 		}
