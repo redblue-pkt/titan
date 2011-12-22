@@ -241,7 +241,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			}
 
 			tmpstr = ostrcat(dvbnode->feshortname, "_sat", 0, 0);
-			for(i = 1; i <= status.maxsat; i++)
+			for(i = 1; i <= getmaxsat(dvbnode->feshortname); i++)
 			{
 				tmpnr = oitoa(i);
 
@@ -324,7 +324,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			}
 
 			tmpstr = ostrcat(tmpdvbnode->feshortname, "_sat", 0, 0);
-			for(i = 1; i <= status.maxsat; i++)
+			for(i = 1; i <= getmaxsat(tmpdvbnode->feshortname); i++)
 			{
 				tmpnr = oitoa(i);
 				orbitalpos = getconfigint(tmpstr, tmpnr);

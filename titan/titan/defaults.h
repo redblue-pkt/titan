@@ -7,7 +7,6 @@ void setdefaults()
 	char* tmpstr = NULL;
 
 	addconfigdef("vol", "30");
-	addconfigdef("maxsat", "4");
 	addconfigdef("dmxvideobuffersize", "1048576");
 	addconfigdef("dmxaudiobuffersize", "1048576");
 	addconfigdef("dmxepgbuffersize", "524288");
@@ -57,7 +56,6 @@ void setdefaults()
 	status.pmtmode = getconfigint("pmtmode", NULL);
 	status.usedirectfb = getconfigint("usedirectfb", NULL);
 	status.servicetype = getconfigint("servicetype", NULL);
-	status.maxsat = getconfigint("maxsat", NULL);
 	status.spinnertime = getconfigint("spinnertime", NULL);
 	status.spinnerspeed = getconfigint("spinnerspeed", NULL);
 	status.hangtime = getconfigint("hangtime", NULL);

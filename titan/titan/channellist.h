@@ -201,40 +201,43 @@ void showsatchannel(struct skin* channellist, struct skin* listbox, struct sat* 
 
 void showsat(struct skin* channellist, struct skin* listbox)
 {
-	int i = 0, y = 0, z = 0, treffer = 0;
+	int i = 0, treffer = 0;
 	struct sat *node = sat;
+	struct dvbdev *dvbnode = dvbdev;
 	struct skin* satnode = NULL;
-	char* tmpstr = NULL, *tmpstr1 = NULL;
+	char* tmpstr = NULL, *tmpnr = NULL;
 
 	while(node != NULL)
 	{
 		treffer = 0;
-		for(i = 0; i < MAXDVBADAPTER; i++)
+		while(dvbnode != NULL)
 		{
-			for(y = 0; y < MAXFRONTENDDEV; y++)
+			if(dvbnode->type == FRONTENDDEV && dvbnode->feshortname != NULL)
 			{
-				tmpstr = ostrcat(tmpstr, "fe_", 1, 0);
-				tmpstr = ostrcat(tmpstr, oitoa(i), 1, 1);
-				tmpstr = ostrcat(tmpstr, oitoa(y), 1, 1);
-				tmpstr = ostrcat(tmpstr, "_sat", 1, 0);
-				for(z = 1; z <= status.maxsat; z++)
+				tmpstr = ostrcat(dvbnode->feshortname, "_sat", 0, 0);
+				for(i = 1; i <= getmaxsat(dvbnode->feshortname); i++)
 				{
-					tmpstr1 = ostrcat(tmpstr, oitoa(z), 0, 1);
-					if(getconfigint(tmpstr1, NULL) == node->orbitalpos)
+					tmpnr = oitoa(i);
+					if(getconfigint(tmpstr, tmpnr) == node->orbitalpos)
+					{
+						free(tmpnr); tmpnr = NULL;
 						treffer = 1;
-					free(tmpstr1); tmpstr1 = NULL;
+						break;
+					}
+					free(tmpnr); tmpnr = NULL;
 				}
 				free(tmpstr); tmpstr = NULL;
-				free(tmpstr1); tmpstr1 = NULL;
 			}
+			if(treffer == 1) break;
+			dvbnode = dvbnode->next;
 		}
-		free(tmpstr); tmpstr = NULL;
-		free(tmpstr1); tmpstr1 = NULL;
+
 		if(treffer == 0) 
 		{
 			node = node->next;
 			continue;
 		}
+
 		satnode = addlistbox(channellist, listbox, satnode, 2);
 		if(satnode != NULL)
 		{

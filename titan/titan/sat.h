@@ -40,7 +40,7 @@ char* getorbitalposstring(char* feshortname)
 	if(feshortname != NULL)
 	{
 		tmpstr = ostrcat(feshortname, "_sat", 0, 0);
-		for(i = 1; i <= status.maxsat; i++)
+		for(i = 1; i <= getmaxsat(feshortname); i++)
 		{
 			tmpnr = oitoa(i);
 			orbitalpos = getconfigint(tmpstr, tmpnr);
@@ -83,7 +83,7 @@ char* getsatstring(char* feshortname)
 	if(feshortname != NULL)
 	{
 		tmpstr = ostrcat(feshortname, "_sat", 0, 0);
-		for(i = 1; i <= status.maxsat; i++)
+		for(i = 1; i <= getmaxsat(feshortname); i++)
 		{
 			tmpnr = oitoa(i);
 			orbitalpos = getconfigint(tmpstr, tmpnr);
