@@ -3,7 +3,7 @@
 
 void screenpanel_system_eraseswap()
 {
-	if(textbox(_("Message"), _("Do you really want to erase all datas and backups from Swap?\nThe Box will reboot and the erase will be started!"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+	if(textbox(_("Message"), _("Do you really want to erase all datas and backups from Swap?\nThe Box will reboot and the erase will be started!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
 		debug(40, "[panel_system] (start) Erase-Mtd");
 		system("touch /var/etc/.erasemtd");
@@ -14,7 +14,7 @@ void screenpanel_system_eraseswap()
 
 void screenpanel_system_wizard()
 {
-	if(textbox(_("Message"), _("Do you really want to start the Wizard?\nThe Box will reboot and the Wizard will be started!"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+	if(textbox(_("Message"), _("Do you really want to start the Wizard?\nThe Box will reboot and the Wizard will be started!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
 		debug(40, "[panel_system] (start) Wizzard");
 		system("touch /var/etc/.firstszap");
@@ -294,14 +294,14 @@ void screenpanel_system_update(int mode)
 				clearscreen(panel_system);
 				if(msgtxt == NULL)
 				{
-					textbox(_("Message"), _("Error file not supported"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+					textbox(_("Message"), _("Error file not supported"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 					drawscreen(panel_system, 0);
 					getfilelist(panel_system, filelistpath, filelist, filepath, filemask, 1, NULL);
 					addscreenrc(panel_system, filelist);
 					continue;
 				}
 
-				if(textbox(_("Message"), msgtxt, _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+				if(textbox(_("Message"), msgtxt, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 				{
 					debug(40, "[panel_system] update started cmd: %s", cmd);
 					system(cmd);
