@@ -88,7 +88,8 @@ msgstr ""
 #: restoredefault.h:21 panel_extensions.h:19 panel_extensions.h:42
 #: panel_extensions.h:44 panel_extensions.h:45 panel_extensions.h:70
 #: panel_extensions.h:71 panel_extensions.h:85 panel_extensions.h:96
-#: panel_extensions.h:98 panel_extensions.h:99
+#: panel_extensions.h:98 panel_extensions.h:99 panel_system.h:298
+#: panel_system.h:305
 msgid "EXIT"
 msgstr ""
 
@@ -363,7 +364,8 @@ msgstr ""
 #: global.h:3768 global.h:3510 global.h:3771 tunerconfig.h:734 global.h:3772
 #: channellist.h:626 channellist.h:655 timeshift.h:44 timeshift.h:71
 #: timeshift.h:50 timeshift.h:77 channellist.h:682 channellist.h:688
-#: panel_extensions.h:45 panel_extensions.h:99
+#: panel_extensions.h:45 panel_extensions.h:99 panel_system.h:298
+#: panel_system.h:305
 msgid "Message"
 msgstr ""
 
@@ -403,7 +405,8 @@ msgstr ""
 #: mc_main.h:43 mc_main.h:48 mc_main.h:53 mc_main.h:58 mc_main.h:70
 #: mc_main.h:75 mc_main.h:80 mc_main.h:85 mc_main.h:175 mc_pictureplayer.h:73
 #: mc_pictureplayer.h:188 mc_pictureplayer.h:294 mc_pictureplayer.h:383
-#: mc_videoplayer.h:355 mc_videoplayer.h:440
+#: mc_videoplayer.h:355 mc_videoplayer.h:440 panel_system.h:298
+#: panel_system.h:305
 msgid "OK"
 msgstr ""
 
@@ -1658,7 +1661,7 @@ msgstr ""
 msgid "non-version"
 msgstr ""
 
-#: panel_system.h:297
+#: panel_system.h:297 panel_system.h:298
 msgid "Error file not supported"
 msgstr ""
 
@@ -5585,35 +5588,35 @@ msgstr ""
 msgid "skip back"
 msgstr ""
 
-#: panel_system.h:194 panel_system.h:251
+#: panel_system.h:194 panel_system.h:251 panel_system.h:195 panel_system.h:252
 msgid "starting Kernel Update ?"
 msgstr ""
 
-#: panel_system.h:201 panel_system.h:257
+#: panel_system.h:201 panel_system.h:257 panel_system.h:202 panel_system.h:258
 msgid "starting Fw Update ?"
 msgstr ""
 
-#: panel_system.h:208
+#: panel_system.h:208 panel_system.h:209
 msgid "starting Root Update ?"
 msgstr ""
 
-#: panel_system.h:215 panel_system.h:269
+#: panel_system.h:215 panel_system.h:269 panel_system.h:216 panel_system.h:270
 msgid "starting Var Update ?"
 msgstr ""
 
-#: panel_system.h:222 panel_system.h:275
+#: panel_system.h:222 panel_system.h:275 panel_system.h:223 panel_system.h:276
 msgid "starting Full Update ?"
 msgstr ""
 
-#: panel_system.h:231 panel_system.h:283
+#: panel_system.h:231 panel_system.h:283 panel_system.h:232 panel_system.h:284
 msgid "starting Usb Update ?"
 msgstr ""
 
-#: panel_system.h:240 panel_system.h:291
+#: panel_system.h:240 panel_system.h:291 panel_system.h:241 panel_system.h:292
 msgid "starting Fullusb Update ?"
 msgstr ""
 
-#: panel_system.h:263
+#: panel_system.h:263 panel_system.h:264
 msgid "starting Root Update starten ?"
 msgstr ""
 
