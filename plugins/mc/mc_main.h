@@ -40,49 +40,49 @@ int mc_menucall(struct skin* menuentry)
 	} 
 	else if(ostrcmp("mc_appletrailer", menuentry->name) == 0)
 	{
-		textbox(_("Message"), _("comming soon"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+		textbox(_("Message"), _("comming soon"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		screenmc_appletrailer();
 	} 
 	else if(ostrcmp("mc_myvideo", menuentry->name) == 0)
 	{
-		textbox(_("Message"), _("comming soon"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+		textbox(_("Message"), _("comming soon"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		screenmc_myvideo();
 	}
 	else if(ostrcmp("mc_vlcplayer", menuentry->name) == 0)
 	{
-		textbox(_("Message"), _("comming soon"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+		textbox(_("Message"), _("comming soon"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		screenmc_vlcplayer();
 	}
 	else if(ostrcmp("mc_dateibrowser", menuentry->name) == 0)
 	{
-		textbox(_("Message"), _("comming soon"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);	
+		textbox(_("Message"), _("comming soon"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);	
 		screenmc_dateibrowser();
 	}
 	else if(ostrcmp("mc_internetbrowser", menuentry->name) == 0)
 	{
 		if(file_exist("/var/bin/browser/browser"))
 		{
-			if(textbox(_("Message"), _("start QtBrowser now ?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2){
+			if(textbox(_("Message"), _("start QtBrowser now ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1){
 				oshutdown(20, 1);
 			}
 		}
 		else
-			textbox(_("Message"), _("Install QtBrowser Ipk first !"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+			textbox(_("Message"), _("Install QtBrowser Ipk first !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 //		screenmc_internetbrowser();
 	}
 	else if(ostrcmp("mc_radio", menuentry->name) == 0)
 	{
-		textbox(_("Message"), _("comming soon"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);	
+		textbox(_("Message"), _("comming soon"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);	
 		screenmc_radio();
 	}
 	else if(ostrcmp("mc_webradio", menuentry->name) == 0)
 	{
-		textbox(_("Message"), _("comming soon"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);	
+		textbox(_("Message"), _("comming soon"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);	
 		screenmc_webradio();
 	}
 	else if(ostrcmp("mc_wetterinfo", menuentry->name) == 0)
 	{
-		textbox(_("Message"), _("comming soon"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+		textbox(_("Message"), _("comming soon"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		screenmc_wetterinfo();
 	}
 	else if(ostrcmp("mc_settings", menuentry->name) == 0)
@@ -172,7 +172,7 @@ void mc_main()
 			clearscreen(mc_main);
 			ret = mc_menucall(listbox->select);
 			if(ret != 0)
-				textbox(_("Message"), _("Menu not implemented !"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox(_("Message"), _("Menu not implemented !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 
 //			chk_style = getconfig("style", NULL);
 //			debug(50, "[mc_main] chk_style: %d", chk_style);

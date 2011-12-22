@@ -493,7 +493,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 						if(playerret != 0)
 						{
 
-							textbox(_("Message"), _("Can't start playback !"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+							textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 /*
 							writevfd("AudioPlayer Filelist-Mode");
 							if(flag == 1)
@@ -718,7 +718,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 			#ifndef SIMULATE
 				if(playerret != 0)
 				{
-					textbox(_("Message"), _("Can't start playback !"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+					textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 /*
 					writevfd("AudioPlayer Filelist-Mode");
 					if(flag == 1)
