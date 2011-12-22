@@ -982,7 +982,9 @@ int recordskipplay(struct service* servicenode, int sekunden)
 		return 1;
 	}
 	
+	usleep(500000);
 	m_lock(&status.tsseekmutex, 15);
+	usleep(500000);
 	if(gettsinfo(dupfd, &pts, &bitrate) != 0)
 	{
 		err("cant read bitrate");

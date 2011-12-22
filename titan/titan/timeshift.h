@@ -97,7 +97,7 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
 	struct skin* seek = getscreennode(timeshift, "seek");
 	struct skin* timeshiftbar = getscreennode(timeshift, "timeshiftbar");
 	char* bg = NULL;
-	int seeking = 0;
+	int seeking = 0, timeout = 0;
 	struct service* snode = getservice(RECORDTIMESHIFT, 0);
 	int fd = open(snode->recname, O_RDONLY | O_LARGEFILE);
 	
@@ -110,35 +110,46 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
 	timeshiftbar->progresssize = 0;
 	setnodeattr(timeshift, framebuffer);
 	bg = savescreen(timeshift);
-	
+	if(status.timeshiftseek == 999999) {
+		timeout = 5;
+		tmpstr = ostrcat(tmpstr," ", 1, 0);
+		changetext(seek, tmpstr);
+ 		free(tmpstr); tmpstr = NULL;
+ 	}
 	while(status.timeshiftseek != 0 || seeking != 0) {
 		currentpos = lseek64(servicenode->recsrcfd, 0, SEEK_CUR);
 		currentpos = currentpos - 5000000;
 		endoffile = lseek64(fd , 0, SEEK_END);
 		timeshiftbar->progresssize = currentpos * 100 / endoffile;
-		if(status.timeshiftseek > 10000) {
-			tmpstr = oitoa(status.timeshiftseek - 10000);
-			tmpstr = ostrcat(_(">> "), tmpstr, 0, 1);
-			tmpstr = ostrcat(tmpstr,"x", 1, 0);
- 			changetext(seek, tmpstr);
- 			free(tmpstr); tmpstr = NULL;
- 		}
- 		if(status.timeshiftseek < 10000 && status.timeshiftseek > -10000) {
- 			if(seeking == 0) {
- 				seeking = status.timeshiftseek;
- 				tmpstr = oitoa(status.timeshiftseek);
- 			} else {
- 				tmpstr = oitoa(seeking);
- 				seeking = 0;
+		if(status.timeshiftseek < 999999) {
+			if(status.timeshiftseek > 10000) {
+				tmpstr = oitoa(status.timeshiftseek - 10000);
+				tmpstr = ostrcat(_(">> "), tmpstr, 0, 1);
+				tmpstr = ostrcat(tmpstr,"x", 1, 0);
+ 				changetext(seek, tmpstr);
+ 				free(tmpstr); tmpstr = NULL;
  			}
- 			tmpstr = ostrcat(_("skip "), tmpstr, 0, 1);
- 			tmpstr = ostrcat(tmpstr," sec", 1, 0);
- 			changetext(seek, tmpstr);
- 			free(tmpstr); tmpstr = NULL;
- 		}
+ 			if(status.timeshiftseek < 10000 && status.timeshiftseek > -10000) {
+	 			if(seeking == 0) {
+	 				seeking = status.timeshiftseek;
+	 				tmpstr = oitoa(status.timeshiftseek);
+ 				} else {
+	 				tmpstr = oitoa(seeking);
+	 				seeking = 0;
+	 			}
+ 				tmpstr = ostrcat(_("skip "), tmpstr, 0, 1);
+ 				tmpstr = ostrcat(tmpstr," sec", 1, 0);
+ 				changetext(seek, tmpstr);
+ 				free(tmpstr); tmpstr = NULL;
+ 			}
+		}
 		drawscreen(timeshift, 0);
-		
 		sleep (1);
+		if(status.timeshiftseek == 999999) {
+			timeout = timeout - 1;
+			if(timeout == 0)
+				status.timeshiftseek = 0;
+		} 
 	}
 	restorescreen(bg, timeshift);
 	blitfb();
@@ -149,22 +160,26 @@ void timeshiftseek(int sekunden)
 {
 	struct service* snode = getservice(RECORDPLAY, 0);
 	
-	if(status.timeshiftseek == 0)
-		 addtimer(&timeshiftscreen, START, 10000, 1, (void*)snode, NULL, NULL);
+	if(status.timeshiftseek == 0) {
+		status.timeshiftseek = sekunden;
+		addtimer(&timeshiftscreen, START, 10000, 1, (void*)snode, NULL, NULL);
+	}
 	
-	status.timeshiftseek = sekunden;
-	if(snode != 0) {
-		if(sekunden > 10000) {
-			if(sekunden >= 10032) {
-				status.timeshiftseek = 10016;
-				return;
+	if(status.timeshiftseek < 999999) {
+		status.timeshiftseek = sekunden;
+		if(snode != 0) {
+			if(sekunden > 10000) {
+				if(sekunden >= 10032) {
+					status.timeshiftseek = 10016;
+					return;
+				}
+				status.timeshiftseek = sekunden;
+				sekunden = sekunden - 10000;
+				recordffrwts(snode, sekunden);
+			}	
+			else {
+				recordskipplay(snode, sekunden);
 			}
-			status.timeshiftseek = sekunden;
-			sekunden = sekunden - 10000;
-			recordffrwts(snode, sekunden);
-		}	
-		else {
-			recordskipplay(snode, sekunden);
 		}
 	}
 }

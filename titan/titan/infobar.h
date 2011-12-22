@@ -110,33 +110,56 @@ void screeninfobar()
 			}
 			if(rcret == getrcconfigint("rc3", NULL))
 			{
+				if(status.timeshiftseek > 102)
+						timeshiftplay();
 				timeshiftseek(60);
 				continue;
 			}
 			if(rcret == getrcconfigint("rc6", NULL))
 			{
+				if(status.timeshiftseek > 102)
+						timeshiftplay();
 				timeshiftseek(300);
 				continue;
 			}
 			if(rcret == getrcconfigint("rc9", NULL))
 			{
+				if(status.timeshiftseek > 102)
+						timeshiftplay();
 				timeshiftseek(600);
 				continue;
 			}	
 			if(rcret == getrcconfigint("rc1", NULL))
 			{
+				if(status.timeshiftseek > 102)
+						timeshiftplay();
 				timeshiftseek(-60);
 				continue;
 			}
 			if(rcret == getrcconfigint("rc4", NULL))
 			{
+				if(status.timeshiftseek > 102)
+						timeshiftplay();
 				timeshiftseek(-300);
 				continue;
 			}
 			if(rcret == getrcconfigint("rc7", NULL))
 			{
+				if(status.timeshiftseek > 102)
+						timeshiftplay();
 				timeshiftseek(-600);
 				continue;
+			}
+			if(rcret == getrcconfigint("rcinfo", NULL))
+			{
+				if(status.timeshiftseek > 102 && status.timeshiftseek < 999999)
+						timeshiftplay();
+				if(status.timeshiftseek == 999999)
+					status.timeshiftseek = 0;
+				else {	
+					timeshiftseek(999999);
+					continue;
+				}
 			}	
 		}
 		if(rcret == getrcconfigint("rcblue", NULL) && getconfig("bluekey", NULL) == NULL)
