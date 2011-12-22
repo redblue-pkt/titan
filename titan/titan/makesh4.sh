@@ -100,7 +100,7 @@ echo "[titan] netsurf"
 echo "[titan]--------------------------------------------------------"
 
 cd "$HOME"/flashimg/source.titan/netsurf
-./makesh4.sh stm24
+./makesh4.sh $STM
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] netsurf done"
