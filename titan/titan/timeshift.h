@@ -151,6 +151,8 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
 			tmpstr = ostrcat(tmpstr,"-", 1, 0);
 			tmpstr = ostrcat(tmpstr, oitoa(minuten), 1, 0);
 			tmpstr = ostrcat(tmpstr,":", 1, 0);
+			if(sekunden < 10)
+				tmpstr = ostrcat(tmpstr,"0", 1, 0);
 			tmpstr = ostrcat(tmpstr, oitoa(sekunden), 1, 0);
 			tmpstr = ostrcat(tmpstr," min", 1, 0);
 			changetext(seek, tmpstr);
