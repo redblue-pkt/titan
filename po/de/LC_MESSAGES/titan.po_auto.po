@@ -398,7 +398,7 @@ msgstr ""
 #: panel_extensions.h:45 panel_extensions.h:70 panel_extensions.h:71
 #: panel_extensions.h:85 panel_extensions.h:96 panel_extensions.h:98
 #: panel_extensions.h:99 panel_main.h:35 panel_main.h:243 panel_system.h:297
-#: panel_system_restore.h:47 panel_system_restore.h:78
+#: panel_system_restore.h:47 panel_system_restore.h:78 networkbrowser.h:75
 msgid "OK"
 msgstr ""
 
