@@ -63,10 +63,10 @@ void start(void)
 {
 	if(checkbox("TF7700"))
 	{
-		textbox(_("Message"), _("TopfieldVFD settings dialog not implemented yet!\n\nComing soon ..."), _("EXIT"), getrcconfigint("rcexit", NULL), '\0', 0, '\0', 0, '\0', 0, 600, 200, 0, 0);
+		textbox(_("Message"), _("TopfieldVFD settings dialog not implemented yet!\n\nComing soon ..."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), '\0', 0, '\0', 0, 600, 200, 0, 0);
 	}
 	else
 	{
-		textbox(_("Message"), _("TopfieldVFD plugin not available, wrong box!"), _("EXIT"), getrcconfigint("rcexit", NULL), '\0', 0, '\0', 0, '\0', 0, 600, 200, 0, 0);
+		textbox(_("Message"), _("TopfieldVFD plugin not available, wrong box!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), '\0', 0, '\0', 0, 600, 200, 0, 0);
 	}
 }
