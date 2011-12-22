@@ -399,6 +399,11 @@ msgstr ""
 #: panel_extensions.h:85 panel_extensions.h:96 panel_extensions.h:98
 #: panel_extensions.h:99 panel_main.h:35 panel_main.h:243 panel_system.h:297
 #: panel_system_restore.h:47 panel_system_restore.h:78 networkbrowser.h:75
+#: mc_audioplayer.h:311 mc_audioplayer.h:400 mc_global.h:496 mc_global.h:721
+#: mc_main.h:43 mc_main.h:48 mc_main.h:53 mc_main.h:58 mc_main.h:70
+#: mc_main.h:75 mc_main.h:80 mc_main.h:85 mc_main.h:175 mc_pictureplayer.h:73
+#: mc_pictureplayer.h:188 mc_pictureplayer.h:294 mc_pictureplayer.h:383
+#: mc_videoplayer.h:355 mc_videoplayer.h:440
 msgid "OK"
 msgstr ""
 
