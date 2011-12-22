@@ -46,7 +46,7 @@ int show_info(char *titelname, char *filename)
 	fd =  fopen(filename, "r");
 	if(fd == NULL)
 	{
-		textbox(_(titelname), _("File not found !!"), _("EXIT"), getrcconfigint("rcexit", NULL), '\0', 0, '\0', 0, '\0', 0, 600, 200, 0, 0);
+		textbox(_(titelname), _("File not found !!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), '\0', 0, '\0', 0, 600, 200, 0, 0);
 		free(fileline);
 		return 0;
 	}
@@ -70,11 +70,11 @@ int show_info(char *titelname, char *filename)
 
 	if(buf1 != NULL)
 	{
-		textbox(_(titelname), _(buf1), _("EXIT"), getrcconfigint("rcexit", NULL), '\0', 0, '\0', 0, '\0', 0, 900, 600, 0, 0);
+		textbox(_(titelname), _(buf1), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), '\0', 0, '\0', 0, 900, 600, 0, 0);
 	}
 	else
 	{
-		textbox(_(titelname), _(""), _("EXIT"), getrcconfigint("rcexit", NULL), '\0', 0, '\0', 0, '\0', 0, 600, 200, 0, 0);
+		textbox(_(titelname), _(""), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), '\0', 0, '\0', 0, 600, 200, 0, 0);
 	}
 
 	fclose(fd);
@@ -164,7 +164,7 @@ void start(void)
 			}
 			else if(ostrcmp("Info", listbox->select->name) == 0)
 			{
-				textbox(_(pluginname), _(plugindesc), _("EXIT"), getrcconfigint("rcexit", NULL), '\0', 0, '\0', 0, '\0', 0, 600, 200, 0, 0);
+				textbox(_(pluginname), _(plugindesc), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), '\0', 0, '\0', 0, 600, 200, 0, 0);
 			}
 
 			free(tmpstr); tmpstr = NULL;
