@@ -352,7 +352,7 @@ void screenmc_videoplayer()
 						status.play = 0;
 						playlist = 0;
 						status.playspeed = 0;
-						textbox(_("Message"), _("Can't start playback !"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+						textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 
 						changetext(filelistpath, _(getconfig("mc_videoplayerpath", NULL)));
 						filelist->hidden = NO;
@@ -437,7 +437,7 @@ void screenmc_videoplayer()
 						writevfd("VideoPlayer Filelist-Mode");
 						status.play = 0;
 						status.playspeed = 0;
-						textbox(_("Message"), _("Can't start playback !"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+						textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 						addscreenrc(apskin, filelist);
 //						drawscreen(apskin, 0);
 						continue;

@@ -308,7 +308,7 @@ void screenmc_audioplayer()
 				#ifndef SIMULATE
 					if(playerret != 0)
 					{
-						textbox(_("Message"), _("Can't start playback !"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+						textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 /*
 						writevfd("AudioPlayer Filelist-Mode");
 						status.play = 0;
@@ -397,7 +397,7 @@ void screenmc_audioplayer()
 						writevfd("AudioPlayer Filelist-Mode");
 						status.play = 0;
 						status.playspeed = 0;
-						textbox(_("Message"), _("Can't start playback !"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+						textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 						continue;
 					}
 				#endif
