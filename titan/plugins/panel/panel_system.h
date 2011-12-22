@@ -182,6 +182,7 @@ void screenpanel_system_update(int mode)
 				cmd = ostrcat(cmd, " ", 1, 0);
 
 				char* msgtxt = NULL;
+				writeallconfig(1);
 
 				if(file_exist("/tmp/.swapextensionsdev"))
 				{
