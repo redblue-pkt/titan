@@ -91,13 +91,15 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
 	
 	off64_t endoffile;
 	off64_t currentpos;
+	unsigned long long ptsend = 0;
+	unsigned long long ptscurrent = 0;
 	char* tmpstr = NULL;
 	struct skin* framebuffer = getscreen("framebuffer");
 	struct skin* timeshift = getscreen("timeshift");
 	struct skin* seek = getscreennode(timeshift, "seek");
 	struct skin* timeshiftbar = getscreennode(timeshift, "timeshiftbar");
 	char* bg = NULL;
-	int seeking = 0, timeout = 0;
+	int seeking = 0, timeout = 0, ret = 0, minuten = 0, sekunden = 0;
 	struct service* snode = getservice(RECORDTIMESHIFT, 0);
 	int fd = open(snode->recname, O_RDONLY | O_LARGEFILE);
 	
@@ -112,9 +114,6 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
 	bg = savescreen(timeshift);
 	if(status.timeshiftseek == 999999) {
 		timeout = 5;
-		tmpstr = ostrcat(tmpstr," ", 1, 0);
-		changetext(seek, tmpstr);
- 		free(tmpstr); tmpstr = NULL;
  	}
 	while(status.timeshiftseek != 0 || seeking != 0) {
 		currentpos = lseek64(servicenode->recsrcfd, 0, SEEK_CUR);
@@ -143,6 +142,21 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
  				free(tmpstr); tmpstr = NULL;
  			}
 		}
+		else {
+			ret = getptspos(fd, currentpos, &ptscurrent, &currentpos, 1);
+			ret = getpts(fd, 0, 0, 256 * 1024, &ptsend, &endoffile, -1);
+			sekunden = (ptsend - ptscurrent) / 90000;
+			minuten = sekunden / 60;
+			sekunden = sekunden % 60; 
+			tmpstr = ostrcat(tmpstr,"-", 1, 0);
+			tmpstr = ostrcat(tmpstr, oitoa(minuten), 1, 0);
+			tmpstr = ostrcat(tmpstr,":", 1, 0);
+			tmpstr = ostrcat(tmpstr, oitoa(sekunden), 1, 0);
+			tmpstr = ostrcat(tmpstr," min", 1, 0);
+			changetext(seek, tmpstr);
+ 			free(tmpstr); tmpstr = NULL;
+ 		}
+			
 		drawscreen(timeshift, 0);
 		sleep (1);
 		if(status.timeshiftseek == 999999) {

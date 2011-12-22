@@ -189,6 +189,8 @@ void screeninfobar()
 		}
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
+			if(status.timeshiftseek == 999999)
+					status.timeshiftseek = 0;
 			subtitlepause(1);
 			status.infobar = 0;
 			clearscreen(infobar);
