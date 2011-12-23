@@ -241,8 +241,8 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 		{
 			tmp->type = CHOICEBOX;
 			changetext(tmp, _("Lnb / Unicable"));
-			changeinput(tmp, _("press ok"));
-			changechoiceboxvalue(tmp, _("press ok"));
+			changeinput(tmp, _("press red"));
+			changechoiceboxvalue(tmp, _("press red"));
 
 			tmp->handle = (char*)i;
 			tmp->del = 1;
