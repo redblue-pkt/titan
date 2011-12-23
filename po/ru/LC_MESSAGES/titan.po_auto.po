@@ -89,7 +89,8 @@ msgstr ""
 #: panel_extensions.h:44 panel_extensions.h:45 panel_extensions.h:70
 #: panel_extensions.h:71 panel_extensions.h:85 panel_extensions.h:96
 #: panel_extensions.h:98 panel_extensions.h:99 panel_system.h:298
-#: panel_system.h:305
+#: panel_system.h:305 channellist.h:691 global.h:3526 global.h:3788
+#: tunerconfig.h:672
 msgid "EXIT"
 msgstr ""
 
@@ -125,6 +126,8 @@ msgstr ""
 #: rectimer.h:873 rectimer.h:878 rectimer.h:883 rectimer.h:888 rectimer.h:893
 #: avsettings.h:114 scan.h:715 scan.h:1009 scan.h:757 scan.h:1043 scan.h:1047
 #: scan.h:1051 scan.h:763 scan.h:1049 scan.h:1053 scan.h:1057 avsettings.h:118
+#: tunerconfig.h:126 tunerconfig.h:155 tunerconfig.h:186 tunerconfig.h:219
+#: tunerconfig.h:456
 msgid "no"
 msgstr ""
 
@@ -166,6 +169,7 @@ msgstr ""
 #: rectimer.h:874 rectimer.h:879 rectimer.h:884 rectimer.h:889 rectimer.h:894
 #: avsettings.h:115 scan.h:716 scan.h:1010 scan.h:758 scan.h:1044 scan.h:1048
 #: scan.h:1052 scan.h:764 scan.h:1050 scan.h:1054 scan.h:1058 avsettings.h:119
+#: tunerconfig.h:455
 msgid "yes"
 msgstr ""
 
@@ -365,7 +369,8 @@ msgstr ""
 #: channellist.h:626 channellist.h:655 timeshift.h:44 timeshift.h:71
 #: timeshift.h:50 timeshift.h:77 channellist.h:682 channellist.h:688
 #: panel_extensions.h:45 panel_extensions.h:99 panel_system.h:298
-#: panel_system.h:305
+#: panel_system.h:305 channellist.h:691 global.h:3526 global.h:3788
+#: tunerconfig.h:672
 msgid "Message"
 msgstr ""
 
@@ -406,7 +411,8 @@ msgstr ""
 #: mc_main.h:75 mc_main.h:80 mc_main.h:85 mc_main.h:175 mc_pictureplayer.h:73
 #: mc_pictureplayer.h:188 mc_pictureplayer.h:294 mc_pictureplayer.h:383
 #: mc_videoplayer.h:355 mc_videoplayer.h:440 panel_system.h:298
-#: panel_system.h:305
+#: panel_system.h:305 channellist.h:691 global.h:3526 global.h:3788
+#: tunerconfig.h:672
 msgid "OK"
 msgstr ""
 
@@ -415,14 +421,15 @@ msgstr ""
 #: global.h:3688 global.h:3721 global.h:3723 global.h:3726 global.h:3728
 #: global.h:3738 global.h:3735 global.h:3739 global.h:3742 global.h:3746
 #: global.h:3751 global.h:3761 global.h:3763 global.h:3768 global.h:3771
-#: global.h:3772
+#: global.h:3772 global.h:3788
 msgid "ERROR cant read res"
 msgstr ""
 
 #: channellist.h:404 channellist.h:737 channellist.h:922 channellist.h:758
 #: channellist.h:943 channellist.h:760 channellist.h:945 channellist.h:433
 #: channellist.h:789 channellist.h:974 channellist.h:816 channellist.h:1001
-#: channellist.h:439 channellist.h:822 channellist.h:1007
+#: channellist.h:439 channellist.h:822 channellist.h:1007 channellist.h:442
+#: channellist.h:825 channellist.h:1010
 msgid "Bouquets"
 msgstr ""
 
@@ -431,14 +438,15 @@ msgstr ""
 #: skin_default_skin.xml.h:127 skin_default_skin.xml.h:128
 #: skin_default_skin.xml.h:130 channellist.h:1060 channellist.h:1062
 #: channellist.h:446 channellist.h:1091 channellist.h:1118 channellist.h:452
-#: channellist.h:1124
+#: channellist.h:1124 channellist.h:455 channellist.h:1127
 msgid "Channel"
 msgstr ""
 
 #: channellist.h:429 channellist.h:767 channellist.h:979 channellist.h:788
 #: channellist.h:1000 channellist.h:790 channellist.h:1002 channellist.h:458
 #: channellist.h:819 channellist.h:1031 channellist.h:846 channellist.h:1058
-#: channellist.h:464 channellist.h:852 channellist.h:1064
+#: channellist.h:464 channellist.h:852 channellist.h:1064 channellist.h:467
+#: channellist.h:855 channellist.h:1067
 msgid "Satellites"
 msgstr ""
 
@@ -446,22 +454,24 @@ msgstr ""
 #: channellist.h:848 channellist.h:1117 channellist.h:850 channellist.h:1119
 #: channellist.h:471 channellist.h:879 channellist.h:1148 channellist.h:906
 #: channellist.h:1175 channellist.h:477 channellist.h:912 channellist.h:1181
+#: channellist.h:480 channellist.h:915 channellist.h:1184 tunerconfig.h:442
 msgid "Provider"
 msgstr ""
 
 #: channellist.h:455 channellist.h:725 channellist.h:746 channellist.h:748
 #: channellist.h:484 channellist.h:777 channellist.h:804 channellist.h:490
-#: channellist.h:810
+#: channellist.h:810 channellist.h:493 channellist.h:813
 msgid "All Channels"
 msgstr ""
 
 #: channellist.h:797 channellist.h:818 channellist.h:820 channellist.h:849
-#: channellist.h:876 channellist.h:882
+#: channellist.h:876 channellist.h:882 channellist.h:885
 msgid "Channels A-Z"
 msgstr ""
 
 #: channellist.h:1158 channellist.h:1179 channellist.h:1181 channellist.h:1210
-#: channellist.h:1237 channellist.h:431 channellist.h:1243
+#: channellist.h:1237 channellist.h:431 channellist.h:1243 channellist.h:434
+#: channellist.h:1246
 msgid "TV (Info)"
 msgstr ""
 
@@ -469,7 +479,7 @@ msgstr ""
 #: skin_default_skin.xml.h:305 skin_default_skin.xml.h:306
 #: skin_default_skin.xml.h:308 skin_default_skin.xml.h:310 channellist.h:1184
 #: channellist.h:1186 channellist.h:1215 channellist.h:1242 channellist.h:426
-#: channellist.h:1248
+#: channellist.h:1248 channellist.h:429 channellist.h:1251
 msgid "Radio (Info)"
 msgstr ""
 
@@ -2238,55 +2248,55 @@ msgstr ""
 msgid "Wizard"
 msgstr ""
 
-#: possetup.h:8 possetup.h:29 possetup.h:30
+#: possetup.h:8 possetup.h:29 possetup.h:30 possetup.h:34
 msgid "move west"
 msgstr ""
 
-#: possetup.h:9 possetup.h:30 possetup.h:31
+#: possetup.h:9 possetup.h:30 possetup.h:31 possetup.h:35
 msgid "search west"
 msgstr ""
 
-#: possetup.h:10 possetup.h:31 possetup.h:32
+#: possetup.h:10 possetup.h:31 possetup.h:32 possetup.h:36
 msgid "search east"
 msgstr ""
 
-#: possetup.h:11 possetup.h:32 possetup.h:33
+#: possetup.h:11 possetup.h:32 possetup.h:33 possetup.h:37
 msgid "move east"
 msgstr ""
 
-#: possetup.h:16 possetup.h:37 possetup.h:38
+#: possetup.h:16 possetup.h:37 possetup.h:38 possetup.h:42
 msgid "step west"
 msgstr ""
 
-#: possetup.h:17 possetup.h:38 possetup.h:39
+#: possetup.h:17 possetup.h:38 possetup.h:39 possetup.h:43
 msgid "step east"
 msgstr ""
 
-#: possetup.h:22 possetup.h:43 possetup.h:44
+#: possetup.h:22 possetup.h:43 possetup.h:44 possetup.h:48
 msgid "limits off"
 msgstr ""
 
-#: possetup.h:23 possetup.h:44 possetup.h:45
+#: possetup.h:23 possetup.h:44 possetup.h:45 possetup.h:49
 msgid "limit west"
 msgstr ""
 
-#: possetup.h:24 possetup.h:45 possetup.h:46
+#: possetup.h:24 possetup.h:45 possetup.h:46 possetup.h:50
 msgid "limit east"
 msgstr ""
 
-#: possetup.h:25 possetup.h:46 possetup.h:47
+#: possetup.h:25 possetup.h:46 possetup.h:47 possetup.h:51
 msgid "limits on"
 msgstr ""
 
-#: possetup.h:30 possetup.h:51 possetup.h:52
+#: possetup.h:30 possetup.h:51 possetup.h:52 possetup.h:56
 msgid "store position"
 msgstr ""
 
-#: possetup.h:31 possetup.h:52 possetup.h:53
+#: possetup.h:31 possetup.h:52 possetup.h:53 possetup.h:57
 msgid "goto position"
 msgstr ""
 
-#: possetup.h:36 possetup.h:57 possetup.h:58
+#: possetup.h:36 possetup.h:57 possetup.h:58 possetup.h:62
 msgid "startposition"
 msgstr ""
 
@@ -5238,46 +5248,48 @@ msgid "Satelite Entrys"
 msgstr ""
 
 #: tunerconfig.h:119 audiotrack.h:119 subtitle.h:1693 play.h:109
+#: tunerconfig.h:99
 msgid "undefined"
 msgstr ""
 
 #: tunerconfig.h:145 tunerconfig.h:174 tunerconfig.h:205 tunerconfig.h:238
+#: tunerconfig.h:125 tunerconfig.h:154 tunerconfig.h:185 tunerconfig.h:218
 msgid "DiSEqC"
 msgstr ""
 
-#: tunerconfig.h:263
+#: tunerconfig.h:263 tunerconfig.h:243
 msgid "Lnb / Unicable"
 msgstr ""
 
-#: tunerconfig.h:264 tunerconfig.h:265
+#: tunerconfig.h:264 tunerconfig.h:265 tunerconfig.h:244 tunerconfig.h:245
 msgid "press ok"
 msgstr ""
 
-#: tunerconfig.h:519
+#: tunerconfig.h:519 tunerconfig.h:440
 msgid "type of channelsearch"
 msgstr ""
 
-#: tunerconfig.h:522
+#: tunerconfig.h:522 tunerconfig.h:443
 msgid "Freqiency"
 msgstr ""
 
-#: tunerconfig.h:532
+#: tunerconfig.h:532 tunerconfig.h:453
 msgid "search EU VHF I"
 msgstr ""
 
-#: tunerconfig.h:579
+#: tunerconfig.h:579 tunerconfig.h:500
 msgid "direct connect"
 msgstr ""
 
-#: tunerconfig.h:590
+#: tunerconfig.h:590 tunerconfig.h:511
 msgid "loop to Tuner"
 msgstr ""
 
-#: tunerconfig.h:675 tunerconfig.h:676
+#: tunerconfig.h:675 tunerconfig.h:676 tunerconfig.h:614
 msgid "Tuner "
 msgstr ""
 
-#: tunerconfig.h:733 tunerconfig.h:734
+#: tunerconfig.h:733 tunerconfig.h:734 tunerconfig.h:672
 msgid "DVB-T not supportet at the moment !"
 msgstr ""
 
@@ -5563,7 +5575,7 @@ msgstr ""
 msgid "576i50"
 msgstr ""
 
-#: global.h:3501 global.h:3503 global.h:3507 global.h:3510
+#: global.h:3501 global.h:3503 global.h:3507 global.h:3510 global.h:3526
 msgid "check your Secret Feed !"
 msgstr ""
 
@@ -5576,6 +5588,7 @@ msgid "Feed"
 msgstr ""
 
 #: channellist.h:626 channellist.h:655 channellist.h:682 channellist.h:688
+#: channellist.h:691
 msgid "Can't remove akive Service"
 msgstr ""
 
