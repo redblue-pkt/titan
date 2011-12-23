@@ -987,6 +987,7 @@ msgstr ""
 #: skin_default_skin.xml.h:445 plugins_panel_skin.xml.h:82
 #: skins_panel_skin.xml.h:82 skin_default_skin.xml.h:447
 #: skin_default_skin.xml.h:448 skin_default_skin.xml.h:449
+#: plugins_keylock_skin.xml.h:1 skins_keylock_skin.xml.h:1
 msgid ""
 msgstr ""
 
