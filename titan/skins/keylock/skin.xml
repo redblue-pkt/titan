@@ -1,0 +1,2 @@
+<screen name=keylock posx=60 posy=60 width=50 height=50 valign=middle halign=center, pic="%pluginpath%/keylock/skin/key.png">
+</screen>

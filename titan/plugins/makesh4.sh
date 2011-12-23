@@ -75,6 +75,7 @@ compile "mc" "mc" ""
 compile "TopfieldVFD" "TopfieldVFD" ""
 compile "mboxinfo" "mboxinfo" ""
 compile "browser" "browser" ""
+compile "keylock" "keylock" ""
 #compile "callmonitor1" "callmonitor1" ""
 
 #rm -r networkbrowser/networkbrowser
