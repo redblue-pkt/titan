@@ -52,7 +52,7 @@ void screenvideosettings()
 		//isaturation = (int)ceil(((float)saturation->progresssize * 2.56));
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcgreen", NULL))
+		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			addconfigint("vs_brightness", ibrightness);
 			addconfigint("vs_contrast", icontrast);
@@ -60,7 +60,7 @@ void screenvideosettings()
 			//addconfigint("vs_saturation", isaturation);
 			break;
 		}
-		if(rcret == getrcconfigint("rcyellow", NULL))
+		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			ibrightness = 128;
 			icontrast = 128;

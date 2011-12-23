@@ -78,7 +78,7 @@ void screenepgsettings()
 		tmp = listbox->select;
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcgreen", NULL))
+		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			addconfigscreen("epg_path", epgpath);
 			addconfigscreen("epg_days", epgdays);
@@ -95,7 +95,7 @@ void screenepgsettings()
 			addconfigscreencheck("epgsave", epgsave, "0");
 			break;
 		}
-		if(rcret == getrcconfigint("rcok", NULL))
+		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "epgpath") == 0)
 			{

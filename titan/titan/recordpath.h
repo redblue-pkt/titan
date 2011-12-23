@@ -27,7 +27,7 @@ void screenrecordpath()
 		rcret = waitrc(recordpath, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcgreen", NULL))
+		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			addconfigscreen("rec_moviepath", moviepath);
 			addconfigscreen("rec_timerpath", timerpath);
@@ -36,7 +36,7 @@ void screenrecordpath()
 			addconfigscreen("rec_streampath", streampath);
 			break;
 		}
-		if(rcret == getrcconfigint("rcok", NULL))
+		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			if(listbox->select != NULL)
 			{

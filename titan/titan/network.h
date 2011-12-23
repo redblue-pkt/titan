@@ -118,7 +118,7 @@ void screennetwork_test()
 		rcret = waitrc(network, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcgreen", NULL))
+		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			tmpstr = ostrcat(tmpstr, "ping -c1 -W1 ", 1, 0);
 			tmpstr = ostrcat(tmpstr, fixip(status.gateway, 1), 1, 0);
@@ -250,7 +250,7 @@ void screennetwork_adapterext(int mode, char* interface)
 		//printf("listbox->select->text: %s\n", listbox->select->text);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcred", NULL))
+		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			if(textbox(_("Message"), _("save network settings ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 			{
@@ -392,7 +392,7 @@ start:
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(listbox->select != NULL)
 		{
-			if(rcret == getrcconfigint("rcok", NULL))
+			if(rcret == getrcconfigint("rcred", NULL))
 			{
 				clearscreen(interfacelist);
 				screennetwork_adapterext(mode, listbox->select->handle);
