@@ -17,10 +17,14 @@ void screenpanel_feed()
 	{
 		tmpstr = readsys(getconfig("feed", NULL), 1); //line1
 		if(tmpstr == NULL || (tmpstr != NULL && strlen(tmpstr) == 0)) 
-			line = ostrcat(line, "#\n", 1, 0);
+			line = ostrcat(line, "#", 1, 0);
 		else
 			line = ostrcat(line, tmpstr, 1, 0);
 		free(tmpstr); tmpstr = NULL;
+
+		if(line[strlen(line) - 1] != '\n')
+			line = ostrcat(line, "\n", 1, 0);
+printf("%s\n", line);
 		
 		tmpstr = readsys(getconfig("feed", NULL), 2); //line2
 		if(tmpstr == NULL || (tmpstr != NULL && strlen(tmpstr) == 0)) 
@@ -28,6 +32,8 @@ void screenpanel_feed()
 		else
 			line = ostrcat(line, tmpstr, 1, 0);
 		free(tmpstr); tmpstr = NULL;
+
+printf("%s\n", line);
 
 		if(line[strlen(line) - 1] == '\n')
 			tmpstr = ostrcat(line, "src/gz secret http://", 0, 0);
