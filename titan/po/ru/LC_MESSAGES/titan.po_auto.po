@@ -5856,3 +5856,7 @@ msgstr ""
 #: skin_default_skin.xml.h:346
 msgid "SCAN"
 msgstr ""
+
+#: tunerconfig.h:244 tunerconfig.h:245
+msgid "press red"
+msgstr ""
