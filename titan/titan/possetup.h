@@ -9,7 +9,11 @@ void possearch(struct skin* possetup, struct dvbdev* dvbnode, int dir)
 	while(1)
 	{
 		rcret = waitrc(possetup, 500, 0);
-		if(rcret == getrcconfigint("rcok", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			fediseqcrotor(dvbnode, 0, 1, 0);
+			break;
+		}
 
 		if(dir == 0)
 			fediseqcrotor(dvbnode, 1, 0, 10);
@@ -129,7 +133,11 @@ void screenpossetup()
 				poschangebutton(4, b1, b2, b3, b4);
 		}
 
-		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcexit", NULL))
+		{
+			fediseqcrotor(dvbnode, 0, 1, 0);
+			break;
+		}
 		if(rcret == getrcconfigint("rcok", NULL))
 			fediseqcrotor(dvbnode, 0, 1, 0);
 		if(listbox->select != NULL)
