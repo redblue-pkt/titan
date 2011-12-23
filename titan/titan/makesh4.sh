@@ -99,8 +99,8 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] netsurf"
 echo "[titan]--------------------------------------------------------"
 
-#cd "$HOME"/flashimg/source.titan/netsurf
-#./makesh4.sh $STM
+cd "$HOME"/flashimg/source.titan/netsurf
+./makesh4.sh $STM
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] netsurf done"
@@ -184,6 +184,8 @@ mkdir -p "$HOME"/flashimg/BUILD/titan/var/etc/titan
 mkdir -p "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins
 mkdir -p "$HOME"/flashimg/BUILD/titan/usr/local/bin
 mkdir -p "$HOME"/flashimg/BUILD/titan/sbin
+mkdir -p "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf
+mkdir -p "$HOME"/flashimg/BUILD/titan/usr/sbin
 
 PLIST=`ls -1 "$HOME"/flashimg/source.titan/plugins`
 
@@ -216,6 +218,11 @@ rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/index.*.html
 
 cp -a "$HOME"/flashimg/BUILD/titan/var/etc/titan/rcconfig."$TYPE" "$HOME"/flashimg/BUILD/titan/var/etc/titan/rcconfig
 rm -rf "$HOME"/flashimg/BUILD/titan/var/etc/titan/rcconfig.*
+
+cp -a "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/nsfb "$HOME"/flashimg/BUILD/titan/usr/sbin
+cp -a "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/framebuffer/res/config/Choices "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf
+cp -a "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/framebuffer/res/config/Aliases "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf
+cp -a "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/framebuffer/res/config/*.css "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf
 
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type d -name "*.svn"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.h"`
