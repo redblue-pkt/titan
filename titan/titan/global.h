@@ -61,7 +61,7 @@ int checkmenuforbox(char *name)
 		if(ostrcmp("videosettings", name) == 0) return 0;
 		if(ostrcmp("scartrecorder", name) == 0) return 0;
 		if(ostrcmp("information", name) == 0) return 0;
-		if(ostrcmp("plugins", name) == 0) return 0;
+		//if(ostrcmp("plugins", name) == 0) return 0;
 		if(ostrcmp("vfdisplay", name) == 0) return 0;
 		if(ostrcmp("rotorsettings", name) == 0) return 0;
 		if(ostrcmp("satconfig", name) == 0) return 0;
