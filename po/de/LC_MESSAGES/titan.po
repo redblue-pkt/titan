@@ -1805,3 +1805,7 @@ msgid "You find this Backup with timestamp on /tmp\nConnecting per ftp and copy 
 msgstr "Backup wird in /tmp abgelegt\nBitte per FTP-Client kopieren und anschliessend löschen"
 msgid "Some plugins needs restart.\nIf the plugin is not active\nreboot the box."
 msgstr "Einige Plugins benötigen einen Neustart.\nWenn das Plugin nicht verfügbar ist, bitte Neustarten"
+msgid "EDIT"
+msgstr "bearbeiten"
+msgid "SCAN"
+msgstr "starten"

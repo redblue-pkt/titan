@@ -85,7 +85,7 @@ void screenvfdisplay()
 				drawscreen(vfdisplay, 0);
 			}
 		}
-		if(rcret == getrcconfigint("rcgreen", NULL))
+		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			addconfigscreencheck("vfdisplay", vfdnotstandby, "0");
 			addconfigscreencheck("vfdisplaystandby", vfdstandby, "0");

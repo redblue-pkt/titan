@@ -380,7 +380,7 @@ start:
 				goto start;
 			}
 		}
-		if(rcret == getrcconfigint("rcok", NULL))
+		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			if(listbox->select != NULL && ostrcmp(listbox->select->text, "Lnb / Unicable") == 0 && listbox->select->ret != NULL && ostrcmp(listbox->select->ret, "0") != 0)
 			{
@@ -395,7 +395,7 @@ start:
 				drawscreen(tunerreceptiondvbs, 0);
 			}
 		}
-		else if(rcret == getrcconfigint("rcred", NULL))
+		else if(rcret == getrcconfigint("rcok", NULL))
 		{
 			ret = 1;
 			deltranspondertunablestatus();
@@ -474,7 +474,7 @@ int screentunerreceptiondvbc(struct dvbdev* tuner)
 		drawscreen(tunerreceptiondvbc, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcgreen", NULL))
+		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			ret = 1;
 			deltranspondertunablestatus();
@@ -650,7 +650,7 @@ void screentunerconfig()
 			addconfigscreentmpcheck(listbox->select->name, listbox->select, "0");
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcok", NULL))
+		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL && ostrcmp(listbox->select->ret, "0") == 0)
 			{
@@ -674,7 +674,7 @@ void screentunerconfig()
 				}
 			}
 		}
-		if(rcret == getrcconfigint("rcred", NULL))
+		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			ret = 1;
 			deltranspondertunablestatus();

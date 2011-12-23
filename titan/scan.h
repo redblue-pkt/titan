@@ -1095,13 +1095,13 @@ void screenscanconfig(int flag)
 			drawscreen(scan, 0);
 
 		}
-		if(rcret == getrcconfigint("rcok", NULL))
+		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			clearscreen(scan);
 			screenscan(tpnode, scan->child, tuner->ret, iscantype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, inetworkscan, ionlyfree, iclear, isystem, 5000000);
 			drawscreen(scan, 0);
 		}
-		if(rcret == getrcconfigint("rcred", NULL) && tpnode != NULL && iscantype == 0)
+		if(rcret == getrcconfigint("rcok", NULL) && tpnode != NULL && iscantype == 0)
 		{
 			struct transponder* tp1 = createtransponder(0, tpnode->fetype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, isystem);
 			copytransponder(tp1, tpnode, 0);

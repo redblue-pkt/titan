@@ -211,7 +211,7 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 		drawscreen(diseqcscreen, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcgreen", NULL))
+		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			writeconfigtmp();
 			break;
