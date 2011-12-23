@@ -131,7 +131,7 @@
 <node name=b2 text="OK" halign=center valign=center bordercol=green bordersize=2 posx=55% posy=95% width=150 height=2/>
 </screen>
 
-<screen fontcol=fontcol name=picscreen fontsize=30 posx=center posy=center width=100% height=100% bordersize=0>
+<screen fontcol=fontcol name=picscreen fontsize=30 posx=0 posy=0 width=100% height=100% bordersize=0>
 <node fontsize=30 bordercol=bordercol type=listbox name=listbox width=100% height=100% >
 <node name=picture picwidth=720 picheight=576 valign=middle halign=middle parent=listbox bordercol=bordercol bordersize=0 width=100% height=100%>
 <node textposx=100 name=picname posx=0 posy=30 width=100% height=30 fontcol=fontcol/>
