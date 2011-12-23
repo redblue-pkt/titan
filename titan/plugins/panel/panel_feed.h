@@ -3,43 +3,50 @@
 
 void screenpanel_feed()
 {
-	char* tmpstr = NULL, *line1 = NULL, *line2 = NULL;
+	char* tmpstr = NULL, *line = NULL, *lastline = NULL;
 
-	line2 = readsys(getconfig("feed", NULL), 2);
-	line2 = string_replace("src/gz secret http://", "", line2, 1);
+	lastline = readsys(getconfig("feed", NULL), 3); //line3
+	lastline = string_replace("src/gz secret http://", "", lastline, 1);
 
-	if(line2 == NULL || ostrcmp(line2, "") == 0 || ostrcmp(line2, "\n") == 0)
-		line2 = ostrcat(line2, "00.00.00.00/svn/atemio", 1, 0);
+	if(lastline == NULL || ostrcmp(lastline, "") == 0 || ostrcmp(lastline, "\n") == 0)
+		lastline = ostrcat(lastline, "00.00.00.00/svn/atemio", 1, 0);
 
-	line2 = textinput(_("Feed"), line2);
+	lastline = textinput(_("Feed"), lastline);
 	
-	if(line2 != NULL)
+	if(lastline != NULL)
 	{
-		line1 = readsys(getconfig("feed", NULL), 1);
-		if(line1 == NULL) line1 = ostrcat("#", NULL, 0, 0);
-
-		if(line1[strlen(line1) - 1] == '\n')
-			tmpstr = ostrcat(line1, "src/gz secret http://", 0, 0);
+		tmpstr = readsys(getconfig("feed", NULL), 1); //line1
+		if(tmpstr == NULL || (tmpstr != NULL && strlen(tmpstr) == 0)) 
+			line = ostrcat(line, "#\n", 1, 0);
 		else
-			tmpstr = ostrcat(line1, "\nsrc/gz secret http://", 0, 0);
-
-		if(tmpstr != NULL && tmpstr[0] == '\n')
-			tmpstr = ostrcat("#", tmpstr, 0, 1);
+			line = ostrcat(line, tmpstr, 1, 0);
+		free(tmpstr); tmpstr = NULL;
 		
-		if(strlen(line2) == 0)
+		tmpstr = readsys(getconfig("feed", NULL), 2); //line2
+		if(tmpstr == NULL || (tmpstr != NULL && strlen(tmpstr) == 0)) 
+			line = ostrcat(line, "#\n", 1, 0);
+		else
+			line = ostrcat(line, tmpstr, 1, 0);
+		free(tmpstr); tmpstr = NULL;
+
+		if(line[strlen(line) - 1] == '\n')
+			tmpstr = ostrcat(line, "src/gz secret http://", 0, 0);
+		else
+			tmpstr = ostrcat(line, "\nsrc/gz secret http://", 0, 0);
+		
+		if(strlen(lastline) == 0)
 		{
 			free(tmpstr);
-			tmpstr = ostrcat(line1, NULL, 0, 0);
+			tmpstr = ostrcat(line, NULL, 0, 0);
 		}
 
-		tmpstr = ostrcat(tmpstr, line2, 1, 0);
+		tmpstr = ostrcat(tmpstr, lastline, 1, 0);
 		writesys(getconfig("feed", NULL), tmpstr, 0);
-		writeconfigtmp();
 	}
 
 	free(tmpstr);
-	free(line1);
-	free(line2);
+	free(line);
+	free(lastline);
 }
 
 #endif
