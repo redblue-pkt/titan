@@ -9,7 +9,7 @@ void screenpanel_feed()
 	lastline = string_replace("src/gz secret http://", "", lastline, 1);
 
 	if(lastline == NULL || ostrcmp(lastline, "") == 0 || ostrcmp(lastline, "\n") == 0)
-		lastline = ostrcat(lastline, "00.00.00.00/svn/atemio", 1, 0);
+		lastline = ostrcat(lastline, "00.00.00.00/svn/ipk/sh4/titan", 1, 0);
 
 	lastline = textinput(_("Feed"), lastline);
 	
