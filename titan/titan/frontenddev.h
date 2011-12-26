@@ -676,31 +676,10 @@ void fesdiseqcstandby(struct dvbdev* node)
 	debug(1000, "out");
 }
 
-float ferotorangle(int pos)
-{
-	int val = 0, orbitalpos = 0;
-	char* tmpnr = NULL;
-	float angle = -1;
-
-	tmpnr = oitoa(pos);
-	val = getconfigint("rotorpos", tmpnr);
-	free(tmpnr); tmpnr = NULL;
-
-	if(val != 0)
-	{
-		orbitalpos = val & 0xffff;
-		if(((val >> 24) & 0xff) == 0) //west
-			angle = 360 - orbitalpos / 10;
-		else //east
-			angle = orbitalpos / 10;
-	}
-
-	return angle;
-}
-
-void fediseqcrotor(struct dvbdev* node, int pos, int oldpos, int flag)
+void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int flag)
 {
 	debug(1000, "in");
+	int orbitalpos = 0;
 	struct dvb_diseqc_master_cmd cmd = {{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0};
 	
 	if(node == NULL)
@@ -708,11 +687,15 @@ void fediseqcrotor(struct dvbdev* node, int pos, int oldpos, int flag)
 		debug(1000, "out-> NULL detect");
 		return;
 	}
+
+	if(tpnode == NULL)
+		orbitalpos = 0;
+	else
+		orbitalpos = tpnode->orbitalpos;
 	
-	//float speed13V = 1.5;
-	float speed18V = 2.4;
-	float degreesmov, a1, a2, waittime;
-	int i;
+	//float speed13V = 1.5; //1.5 Grad pro sec
+	float speed18V = 2.4; //2.4 Grad pro sek
+	float degreesmov, waittime;
 	
 	switch(flag)
 	{
@@ -776,25 +759,23 @@ void fediseqcrotor(struct dvbdev* node, int pos, int oldpos, int flag)
 		fediseqcsendmastercmd(node, &cmd, 100);
 	}
 
-	if(flag == 8 && pos != 0 && pos != oldpos)
+	if(flag == 8 && (orbitalpos == 0 || status.rotoroldorbitalpos == 0 || orbitalpos != status.rotoroldorbitalpos))
 	{
 		fesettone(node, SEC_VOLTAGE_18, 15);
 		fesettone(node, SEC_TONE_OFF, 15);
 		fediseqcsendmastercmd(node, &cmd, 100);
 
-		if(oldpos == 0)
+		status.rotoroldorbitalpos = orbitalpos;
+
+		if(status.rotoroldorbitalpos == 0)
 			waittime = 15;
 		else
 		{
-			a1 = ferotorangle(pos);
-			a2 = ferotorangle(oldpos);
-			degreesmov = abs(a1 - a2);
-			if(degreesmov > 180) degreesmov = 360 - degreesmov;
+			degreesmov = abs(orbitalpos - status.rotoroldorbitalpos) / 10;
 			waittime = degreesmov / speed18V;
 		}
 
-		for(i = 0; i < 10; i++)
-			usleep(waittime * 100000);
+		sleep(waittime);
 	}
 	debug(1000, "out");
 }
@@ -1064,7 +1045,7 @@ void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 	
 	if(diseqmode == 2) // Diseqc 1.2
 	{
-		fediseqcrotor(node, rotorpos, 0, 8);
+		fediseqcrotor(node, tpnode, rotorpos, 8);
 	}
 
 	debug(1000, "out");
