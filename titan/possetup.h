@@ -16,9 +16,9 @@ void possearch(struct skin* possetup, struct dvbdev* dvbnode, int dir)
 		}
 
 		if(dir == 0)
-			fediseqcrotor(dvbnode, 1, 0, 10);
+			fediseqcrotor(dvbnode, NULL, 1, 10);
 		else
-			fediseqcrotor(dvbnode, 1, 0, 9);
+			fediseqcrotor(dvbnode, NULL, 1, 9);
 
 		usleep(300000);
 		snr = fereadsnr(status.aktservice->fedev);
@@ -139,32 +139,32 @@ void screenpossetup()
 			break;
 		}
 		if(rcret == getrcconfigint("rcok", NULL))
-			fediseqcrotor(dvbnode, 0, 1, 0);
+			fediseqcrotor(dvbnode, NULL, 0, 0);
 		if(listbox->select != NULL)
 		{
 			if(rcret == getrcconfigint("rcred", NULL))
 			{
 				if(ostrcmp(listbox->select->name, "move") == 0)
-					fediseqcrotor(dvbnode, 0, 0, 6);
+					fediseqcrotor(dvbnode, NULL, 0, 6);
 				if(ostrcmp(listbox->select->name, "limit") == 0)
-					fediseqcrotor(dvbnode, 0, 0, 1);
+					fediseqcrotor(dvbnode, NULL, 0, 1);
 				if(ostrcmp(listbox->select->name, "goto0") == 0)
-					fediseqcrotor(dvbnode, 0, 0, 8);
+					fediseqcrotor(dvbnode, NULL, 0, 8);
 			}
 			if(rcret == getrcconfigint("rcgreen", NULL))
 			{
 				if(ostrcmp(listbox->select->name, "move") == 0)
 					possearch(possetup, dvbnode, 0);
 				if(ostrcmp(listbox->select->name, "finemove") == 0)
-					fediseqcrotor(dvbnode, 1, 0, 10);
+					fediseqcrotor(dvbnode, NULL, 1, 10);
 				if(ostrcmp(listbox->select->name, "limit") == 0)
-					fediseqcrotor(dvbnode, 0, 0, 4);
+					fediseqcrotor(dvbnode, NULL, 0, 4);
 				if(ostrcmp(listbox->select->name, "storagepos") == 0)
 				{
 					if(listbox->select->ret != NULL)
 					{
 						int pos = atoi(listbox->select->ret);
-						fediseqcrotor(dvbnode, pos, 0, 7);
+						fediseqcrotor(dvbnode, NULL, pos, 7);
 					}
 				}
 			}
@@ -173,24 +173,24 @@ void screenpossetup()
 				if(ostrcmp(listbox->select->name, "move") == 0)
 					possearch(possetup, dvbnode, 1);
 				if(ostrcmp(listbox->select->name, "finemove") == 0)
-					fediseqcrotor(dvbnode, 1, 0, 9);
+					fediseqcrotor(dvbnode, NULL, 1, 9);
 				if(ostrcmp(listbox->select->name, "limit") == 0)
-					fediseqcrotor(dvbnode, 0, 0, 3);
+					fediseqcrotor(dvbnode, NULL, 0, 3);
 				if(ostrcmp(listbox->select->name, "storagepos") == 0)
 				{
 					if(listbox->select->ret != NULL)
 					{
 						int pos = atoi(listbox->select->ret);
-						fediseqcrotor(dvbnode, pos, 0, 8);
+						fediseqcrotor(dvbnode, NULL, pos, 8);
 					}
 				}
 			}
 			if(rcret == getrcconfigint("rcblue", NULL))
 			{
 				if(ostrcmp(listbox->select->name, "move") == 0)
-					fediseqcrotor(dvbnode, 0, 0, 5);
+					fediseqcrotor(dvbnode, NULL, 0, 5);
 				if(ostrcmp(listbox->select->name, "limit") == 0)
-					fediseqcrotor(dvbnode, 0, 0, 2);
+					fediseqcrotor(dvbnode, NULL, 0, 2);
 			}
 		}
 

@@ -956,7 +956,8 @@ struct status
 	//spindown USB/HDD
 	struct hddparm hdd[3];
 	struct stimerthread* addhddall;
-
+	//save old rotor position
+	int rotoroldorbitalpos;
 } status;
 
 struct fb
