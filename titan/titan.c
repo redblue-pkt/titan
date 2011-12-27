@@ -50,6 +50,7 @@ struct caservice caservice[MAXCASERVICE];
 #include "global.h"
 #include "stream.h"
 #include "dvbdev.h"
+#include "rotorcalc.h"
 #include "frontenddev.h"
 #include "dmxdev.h"
 #include "videodev.h"
