@@ -694,7 +694,7 @@ void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int
 		orbitalpos = tpnode->orbitalpos;
 	
 	//float speed13V = 1.5; //1.5 Grad pro sec
-	float speed18V = 2.4; //2.4 Grad pro sek
+	float speed18V = 1.5; //2.4 Grad pro sek
 	float degreesmov, waittime;
 	
 	switch(flag)
