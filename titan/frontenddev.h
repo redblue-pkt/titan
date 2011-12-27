@@ -765,9 +765,7 @@ void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int
 		fesettone(node, SEC_TONE_OFF, 15);
 		fediseqcsendmastercmd(node, &cmd, 100);
 
-		status.rotoroldorbitalpos = orbitalpos;
-
-		if(status.rotoroldorbitalpos == 0)
+		if(status.rotoroldorbitalpos == 0 || orbitalpos == 0)
 			waittime = 15;
 		else
 		{
@@ -775,6 +773,7 @@ void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int
 			waittime = degreesmov / speed18V;
 		}
 
+		status.rotoroldorbitalpos = orbitalpos;
 		sleep(waittime);
 	}
 	debug(1000, "out");
