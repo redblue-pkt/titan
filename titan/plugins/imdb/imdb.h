@@ -69,7 +69,6 @@ int imdb(char* input)
 	char* cover = NULL;
 	char* cast = NULL;
 
-//Days+of+Summer&s=all
 	input = ostrcat("", "Days+of+Summer", 0, 0);
 	url = ostrcat(url, "german.imdb.com", 1, 0);
 
