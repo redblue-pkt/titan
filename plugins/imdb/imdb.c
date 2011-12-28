@@ -9,7 +9,7 @@ char pluginpic[] = "%pluginpath%/panel/plugin.png";
 
 int pluginaktiv = 0;
 struct skin* pluginmenu = NULL;
-int pluginflag = 1; //don't show the plugin in pluginmanager
+int pluginflag = 0; //don't show the plugin in pluginmanager
 
 //wird beim laden ausgefuehrt
 void init(void)

@@ -42,11 +42,40 @@ char* string_resub(char* str,char* str2, char* filename)
 	return filename;
 }
 
-
-int imdb(char* input)
+char* screensearch(char* input)
 {
+	char* lastline = NULL;
+	char* tmpstr = NULL;
+	if(input != NULL)
+		lastline = textinput(_("Imdb Suche"), input);
+	else
+		lastline = textinput(_("Imdb Suche"), "");
+
+	tmpstr = ostrcat(lastline, "", 0, 0);
+
+	free(lastline);
+	return tmpstr;
+}
+
+int imdb()
+{
+	// main screen
+	struct skin* imdbskin = getscreen("imdb");
+	struct skin* skin_plot = getscreennode(imdbskin, "plot");
+	struct skin* skin_title = getscreennode(imdbskin, "title");
+	struct skin* skin_director = getscreennode(imdbskin, "director");
+	struct skin* skin_writers = getscreennode(imdbskin, "writers");
+	struct skin* skin_genre = getscreennode(imdbskin, "genre");
+	struct skin* skin_tagline = getscreennode(imdbskin, "tagline");
+	struct skin* skin_releasetime = getscreennode(imdbskin, "releasetime");
+	struct skin* skin_bigcover = getscreennode(imdbskin, "bigcover");
+	struct skin* skin_cover = getscreennode(imdbskin, "cover");
+	struct skin* skin_cast = getscreennode(imdbskin, "cast");
+
 //if(ostrcmp("vfdisplay", name) == 0) return 0;
 //tmpstr = ostrcat(tmpstr, "", 1, 0);
+
+	char* input = NULL;
 
 	char* url = NULL;
 	char* apiSearchTV = NULL;
@@ -69,7 +98,12 @@ int imdb(char* input)
 	char* cover = NULL;
 	char* cast = NULL;
 
-	input = ostrcat("", "Days+of+Summer", 0, 0);
+	input = screensearch("Rambo");
+	printf("input: %s\n", input);
+
+drawscreen(imdbskin, 0);
+
+//	input = ostrcat("", "Days+of+Summer", 0, 0);
 	url = ostrcat(url, "german.imdb.com", 1, 0);
 
 	apiSearchTV = ostrcat("", "/search/title?title=<title>&title_type=tv_series", 0, 0);
@@ -107,6 +141,7 @@ int imdb(char* input)
 	string_resub("<title>","</title>",title);
 	strstrip(title);
 	printf("title: %s\n", title);
+changetext(skin_title, title);
 ////////////////////
 	director = ostrcat(tmpstr, "", 0, 0);
 //	string_resub("<div id=\"director-info\" class=\"info\">","</div>",director);
@@ -119,7 +154,7 @@ int imdb(char* input)
 	printf("director1: %s\n", (&ret2[4])->part);
 	strstrip(director);
 	printf("director: %s\n", director);
-
+changetext(skin_director, (&ret2[4])->part);
 ////////////////////
 
 	writers = ostrcat(tmpstr, "", 0, 0);
@@ -135,6 +170,7 @@ int imdb(char* input)
 //	printf("writers3: %s\n", (&ret2[10])->part);
 	strstrip(writers);
 	printf("writers: %s\n", writers);
+changetext(skin_writers, (&ret2[2])->part);
 ////////////////////
 
 	genre = ostrcat(tmpstr, "", 0, 0);
@@ -146,6 +182,7 @@ int imdb(char* input)
 	printf("genre2: %s\n", (&ret2[12])->part);
 	strstrip(genre);
 	printf("genre: %s\n", genre);
+changetext(skin_genre, (&ret2[4])->part);
 ////////////////////
 
 	tagline = ostrcat(tmpstr, "", 0, 0);
@@ -153,7 +190,7 @@ int imdb(char* input)
 
 	strstrip(tagline);
 	printf("tagline: %s\n", tagline);
-
+changetext(skin_tagline, tagline);
 ////////////////////
 
 	releasetime = ostrcat(tmpstr, "", 0, 0);
@@ -164,7 +201,7 @@ int imdb(char* input)
 	printf("releasetime1: %s\n", (&ret2[2])->part);
 	strstrip(releasetime);
 	printf("releasetime: %s\n", releasetime);
-
+changetext(skin_releasetime, releasetime);
 ////////////////////
 
 	cast = ostrcat(tmpstr, "", 0, 0);
@@ -177,7 +214,7 @@ int imdb(char* input)
 	printf("cast3: %s\n", (&ret2[10])->part);
 	strstrip(cast);
 	printf("cast: %s\n", cast);
-
+changetext(skin_cast, (&ret2[2])->part);
 ////////////////////
 
 	pagebigcover = ostrcat(tmpstr, "", 0, 0);
@@ -199,6 +236,11 @@ int imdb(char* input)
 	strstrip(cover);
 	printf("cover: %s\n", cover);
 
+char* filename = NULL;
+filename = ostrcat("wget ", cover, 0, 0);
+filename = ostrcat(filename, " -O /tmp/cover.jpg", 1, 0);
+system(filename);
+changepic(skin_cover, "/tmp/cover.jpg");
 ////////////////////
 	search = ostrcat("/media/rm", pagebigcover, 0, 0);
 	search = ostrcat(search, "/tt", 1, 0);
@@ -218,7 +260,10 @@ int imdb(char* input)
 	strstrip(bigcover);
 	printf("bigcover: %s\n", bigcover);
 
-
+filename = ostrcat("wget ", bigcover, 0, 0);
+filename = ostrcat(filename, " -O /tmp/bigcover.jpg", 1, 0);
+system(filename);
+changepic(skin_cover, "/tmp/bigcover.jpg");
 ////////////////////
 
 //	free(tmpstr), tmpstr = NULL;
@@ -239,7 +284,24 @@ int imdb(char* input)
 		string_resub("<p class=\"plotpar\">","<i>",plot);
 		strstrip(plot);
 		printf("plot: %s\n", plot);
+changetext(skin_plot, plot);
 	}
+drawscreen(imdbskin, 0);
+	int rcret = 0;
+	struct skin* tmp = NULL;
+	while(1)
+	{
+//		addscreenrc(mc_videoplayer_settings, tmp);
+		rcret = waitrc(imdbskin, 0, 0);
+//		tmp = listbox->select;
+	
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			break;
+		}
+  }
+
 
 	printf("done:\n");
 
