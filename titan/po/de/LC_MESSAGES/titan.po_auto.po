@@ -989,6 +989,7 @@ msgstr ""
 #: skin_default_skin.xml.h:448 skin_default_skin.xml.h:449
 #: plugins_keylock_skin.xml.h:1 skins_keylock_skin.xml.h:1
 #: plugins_permtime_skin.xml.h:1 skins_permtime_skin.xml.h:1
+#: plugins_imdb_skin.xml.h:18
 msgid ""
 msgstr ""
 
@@ -5866,4 +5867,72 @@ msgstr ""
 
 #: imdb.h:50 imdb.h:52
 msgid "Imdb Suche"
+msgstr ""
+
+#: plugins_imdb_skin.xml.h:1
+msgid "--cast--"
+msgstr ""
+
+#: plugins_imdb_skin.xml.h:2
+msgid "Cast:"
+msgstr ""
+
+#: plugins_imdb_skin.xml.h:3
+msgid "--director--"
+msgstr ""
+
+#: plugins_imdb_skin.xml.h:4
+msgid "Director:"
+msgstr ""
+
+#: plugins_imdb_skin.xml.h:5
+msgid "--genre--"
+msgstr ""
+
+#: plugins_imdb_skin.xml.h:6
+msgid "Genre:"
+msgstr ""
+
+#: plugins_imdb_skin.xml.h:7
+msgid "ImdB - Plugin"
+msgstr ""
+
+#: plugins_imdb_skin.xml.h:8
+msgid "--plot--"
+msgstr ""
+
+#: plugins_imdb_skin.xml.h:9
+msgid "Plot:"
+msgstr ""
+
+#: plugins_imdb_skin.xml.h:10
+msgid "Release:"
+msgstr ""
+
+#: plugins_imdb_skin.xml.h:11
+msgid "--releasetime--"
+msgstr ""
+
+#: plugins_imdb_skin.xml.h:12
+msgid "--tagline--"
+msgstr ""
+
+#: plugins_imdb_skin.xml.h:13
+msgid "Tagline:"
+msgstr ""
+
+#: plugins_imdb_skin.xml.h:14
+msgid "--title--"
+msgstr ""
+
+#: plugins_imdb_skin.xml.h:15
+msgid "Title:"
+msgstr ""
+
+#: plugins_imdb_skin.xml.h:16
+msgid "--writers--"
+msgstr ""
+
+#: plugins_imdb_skin.xml.h:17
+msgid "Writers:"
 msgstr ""
