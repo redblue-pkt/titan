@@ -59,6 +59,9 @@ char* screensearch(char* input)
 
 int imdb()
 {
+	setfbtransparent(255);
+	status.hangtime = 99999;
+
 	// main screen
 	struct skin* imdbskin = getscreen("imdb");
 	struct skin* skin_plot = getscreennode(imdbskin, "plot");
@@ -201,7 +204,7 @@ changetext(skin_tagline, tagline);
 	printf("releasetime1: %s\n", (&ret2[2])->part);
 	strstrip(releasetime);
 	printf("releasetime: %s\n", releasetime);
-changetext(skin_releasetime, releasetime);
+changetext(skin_releasetime, (&ret2[2])->part);
 ////////////////////
 
 	cast = ostrcat(tmpstr, "", 0, 0);
@@ -324,7 +327,7 @@ drawscreen(imdbskin, 0);
 	free(bigcover), bigcover = NULL;
 	free(cover), cover = NULL;
 	free(cast), cast = NULL;
-
+	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	return apiSearch;
 }
 
