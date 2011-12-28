@@ -5862,3 +5862,7 @@ msgstr ""
 #: tunerconfig.h:244 tunerconfig.h:245
 msgid "press red"
 msgstr ""
+
+#: imdb.h:50 imdb.h:52
+msgid "Imdb Suche"
+msgstr ""
