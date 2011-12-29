@@ -1,6 +1,47 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+int checkreseller()
+{
+	FILE* fd = NULL;
+	char mtd[10];
+	char* buf = NULL;
+
+	mtd[0] = 0x2f;
+	mtd[1] = 0x64;
+	mtd[2] = 0x65;
+	mtd[3] = 0x76;
+	mtd[4] = 0x2f;
+	mtd[5] = 0x6d;
+	mtd[6] = 0x74;
+	mtd[7] = 0x64;
+	mtd[8] = 0x30;
+	mtd[9] = '\0';
+
+	if((fd = fopen(mtd, "r")) == NULL)
+		return 1;
+
+	buf = malloc(1080);
+	if(buf == NULL)
+	{
+		fclose(fd);
+		return 1;
+	}
+
+	fread(buf, 1080, 1, fd);
+
+	if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x29 && (buf[1074] & 0xff) == 0x02 && (buf[1075] & 0xff) == 0xA0)
+	{
+		free(buf);
+		fclose(fd);
+		return 0;
+	}
+
+	free(buf);
+	fclose(fd);
+	return 1;
+}
+
 int getmaxsat(char* feshortname)
 {
         char *tmpstr = NULL;
