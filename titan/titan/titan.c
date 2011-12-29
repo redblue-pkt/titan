@@ -328,6 +328,7 @@ int main(int argc, char *argv[])
 {
 #ifndef SIMULATE
 	if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1) exit(100);
+	if(checkreseller() != 0) exit(100);
 #endif
 	debug(1000, "in");
 	int ret = 0, serviceret = 0, skincheck = 0;
