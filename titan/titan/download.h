@@ -25,6 +25,9 @@ int screendownload(char* title, char* host, char* page, int port, char* filename
 
 	changetitle(download, title);
 	changetext(file, filename);
+	progress->progresssize = 0;
+	changetext(maxkb, NULL);
+	changetext(aktkb, NULL);
 
 	if(fromthread == 1)
 	{
