@@ -10,6 +10,7 @@ int pluginaktiv = 0;
 //struct skin* pluginmenu = NULL;
 //int pluginflag = 1; //don't show the plugin in pluginmanager
 
+struct stimerthread* permtimethread = NULL;
 
 void permtime_thread()
 {
@@ -22,7 +23,7 @@ void permtime_thread()
 	setnodeattr(permtime, framebuffer);
 	bg = savescreen(permtime);
 	
-	while (system("ls /tmp/permtime.running") == 0) {
+	while (permtimethread->aktion != STOP) {
 		tmpstr = gettime("%H:%M"); 
 		changetext(permtime, tmpstr);
 		drawscreen(permtime, 0);
@@ -31,22 +32,19 @@ void permtime_thread()
 	}
  	restorescreen(bg, permtime);
 	blitfb();
+	permtimethread = NULL;
   return;
 }
 
 void permtime_main()
 {
-	int rc = 0;
-	
-	rc = system("ls /tmp/permtime.running");
-	if(rc != 0)
+	if(permtimethread == NULL)
 	{
-		rc = system("touch /tmp/permtime.running");
-		addtimer(&permtime_thread, START, 10000, 1, NULL, NULL, NULL);
+		permtimethread = addtimer(&permtime_thread, START, 10000, 1, NULL, NULL, NULL);
 	}
 	else
 	{
-		rc = system("rm /tmp/permtime.running");
+		permtimethread->aktion = STOP;
 	}
 }	
 			
