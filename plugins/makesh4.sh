@@ -77,6 +77,7 @@ compile "mboxinfo" "mboxinfo" ""
 compile "browser" "browser" ""
 compile "keylock" "keylock" ""
 compile "permtime" "permtime" ""
+compile "imdb" "imdb" ""
 #compile "callmonitor1" "callmonitor1" ""
 
 #rm -r networkbrowser/networkbrowser
