@@ -38,4 +38,5 @@ void start(void)
 	free(tmpstr);
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	servicestart(status.lastservice->channel, NULL, NULL, 0);
+	sleep(2);
 }
