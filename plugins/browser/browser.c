@@ -26,11 +26,16 @@ void deinit(void)
 void start(void)
 {
 	char* tmpstr = NULL;
+	int rcret = 0;
+	
 	status.sec = 0; //deaktivate spinner
 	setfbtransparent(255);
+	rcret = servicestop(status.aktservice, 1, 0);
+	if(rcret == 1) return;
 	
 	tmpstr = ostrcat("nsfb -f linux ", getconfig("browserhome", NULL), 0, 0);
 	system(tmpstr);
 	free(tmpstr);
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
+	servicestart(status.lastservice->channel, NULL, NULL, 0);
 }
