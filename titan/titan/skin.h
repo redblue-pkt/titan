@@ -552,13 +552,13 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 		ret = getxmlentry(line, " hspace=");
 		if(ret != NULL)
 		{
-			newnode->hspace = atoi(ret);
+			newnode->hspace = abs(atoi(ret));
 			free(ret);
 		}
 		ret = getxmlentry(line, " vspace=");
 		if(ret != NULL)
 		{
-			newnode->vspace = atoi(ret);
+			newnode->vspace = abs(atoi(ret));
 			free(ret);
 		}
 		ret = getxmlentry(line, " bgspace=");
