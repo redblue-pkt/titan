@@ -332,7 +332,7 @@ int main(int argc, char *argv[])
 		if(file_exist("/var/swap/etc/.vnumber") == 0)
 			system("touch /var/swap/etc/.vnumber")
 		
-		system("cat /bin/meta >/dev/mtd1")		
+		system("cat /bin/meta >/dev/mtd2")		
 		exit(100);
 	}
 		
@@ -341,13 +341,13 @@ int main(int argc, char *argv[])
 		if(file_exist("/var/swap/etc/.vnumber") == 0)
 			system("touch /var/swap/etc/.vnumber")
 		
-		system("cat /bin/meta >/dev/mtd1")		
+		system("cat /bin/meta >/dev/mtd2")		
 		exit(100);
 	}
 
 	if(file_exist("/var/swap/etc/.vnumber") == 1)
 	{
-		system("cat /bin/meta >/dev/mtd1")
+		system("cat /bin/meta >/dev/mtd2")
 		exit(100);
 	}
 #endif
