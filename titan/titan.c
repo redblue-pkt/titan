@@ -330,11 +330,11 @@ int main(int argc, char *argv[])
 	if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1) exit(100);
 	if(checkreseller() != 0)
 	{
-		if(textbox(_("Security Alarm"), _("Warning !!!!!!!\nYour Hardware has no License for this Software.\n\nAre you sure you want to use this ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-		{
-			textbox(_("Security Alarm"), _("Last Warning !!!!!!!\nUse Power off or destroy your Box !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
-			//flash_erase...
-		}
+//		if(textbox(_("Security Alarm"), _("Warning !!!!!!!\nYour Hardware has no License for this Software.\n\nAre you sure you want to use this ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+//		{
+//			textbox(_("Security Alarm"), _("Last Warning !!!!!!!\nUse Power off or destroy your Box !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+//			//flash_erase...
+//		}
 		exit(100);
 	}
 #endif
