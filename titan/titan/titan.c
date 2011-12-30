@@ -330,13 +330,13 @@ int main(int argc, char *argv[])
 	if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1) exit(100);
 	if(checkreseller() != 0)
 	{
-//		if(textbox(_("Security Alarm"), _("Warning !!!!!!!\nYour Hardware has no License for this Software.\n\nAre you sure you want to use this ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-//		{
-//			textbox(_("Security Alarm"), _("Last Warning !!!!!!!\nUse Power off or destroy your Box !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
-//			//flash_erase...
-//		}
+		if(file_exist("/var/swap/etc/.vnumber") == 0)
+			system("touch /var/swap/etc/.vnumber")
+
 		exit(100);
 	}
+	if(file_exist("/var/swap/etc/.vnumber") == 1)
+		exit(100);
 #endif
 	debug(1000, "in");
 	int ret = 0, serviceret = 0, skincheck = 0;
