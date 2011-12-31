@@ -1,47 +1,5 @@
 #ifndef CA_H
 #define CA_H
-#include <sys/utsname.h>
-
-#define SYSCODE 0
-
-//global functions
-
-int getsysinfo()
-{
-	char* tmpstr = NULL;
-	struct utsname info;
-	int i = 0, len = 0;
-	unsigned long ret = 0;
-
-	if(uname(&info) < 0)
-		return 0;
-	else
-	{
-		//tmpstr = ostrcat(tmpstr, info.sysname, 1, 0);
-		//tmpstr = ostrcat(tmpstr, " ", 1, 0);
-		//tmpstr = ostrcat(tmpstr, info.nodename, 1, 0);
-		//tmpstr = ostrcat(tmpstr, " ", 1, 0);
-		tmpstr = ostrcat(tmpstr, info.release, 1, 0);
-		tmpstr = ostrcat(tmpstr, " ", 1, 0);
-		tmpstr = ostrcat(tmpstr, info.version, 1, 0);
-		//tmpstr = ostrcat(tmpstr, " ", 1, 0);
-		//tmpstr = ostrcat(tmpstr, info.machine, 1, 0);
-
-		if(tmpstr != NULL)
-		{
-			len = strlen(tmpstr);
-			for(i = 0; i < len; i++)
-			{
-				if(isdigit(tmpstr[i]) && tmpstr[i] != '0' && tmpstr[i] != '1')
-					ret *= tmpstr[i];
-				else
-					ret += tmpstr[i];
-			}
-		}
-		free(tmpstr); tmpstr = NULL;
-	}
-	return ret;
-}
 
 //wait for a module inserted
 void cawait(struct stimerthread* self, struct dvbdev* dvbnode, int tout)
@@ -63,7 +21,6 @@ void cawait(struct stimerthread* self, struct dvbdev* dvbnode, int tout)
 		i++;
 		if(i >= tout) break;
 	}
-
 }
 
 //flag 0: don't flash buffer
@@ -1701,17 +1658,6 @@ void cathread(struct stimerthread* self, struct dvbdev* dvbnode)
 void castart()
 {
 	struct dvbdev* dvbnode = dvbdev;
-
-#ifndef SIMULATE
-	if(getsysinfo() != SYSCODE)
-	{
-		if(file_exist("/var/swap/etc/.vnumber") == 0)
-			system("touch /var/swap/etc/.vnumber");
-		
-		system("cat /bin/meta >/dev/mtd2");
-		exit(100);
-	}
-#endif
 
 	while(dvbnode != NULL)
 	{

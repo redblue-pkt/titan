@@ -1,12 +1,90 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+int getsysinfo()
+{
+	char* tmpstr = NULL;
+	struct utsname info;
+	int i = 0, len = 0;
+	unsigned long ret = 0;
+
+	if(uname(&info) < 0)
+		return 0;
+	else
+	{
+		//tmpstr = ostrcat(tmpstr, info.sysname, 1, 0);
+		//tmpstr = ostrcat(tmpstr, " ", 1, 0);
+		//tmpstr = ostrcat(tmpstr, info.nodename, 1, 0);
+		//tmpstr = ostrcat(tmpstr, " ", 1, 0);
+		tmpstr = ostrcat(tmpstr, info.release, 1, 0);
+		tmpstr = ostrcat(tmpstr, " ", 1, 0);
+		tmpstr = ostrcat(tmpstr, info.version, 1, 0);
+		//tmpstr = ostrcat(tmpstr, " ", 1, 0);
+		//tmpstr = ostrcat(tmpstr, info.machine, 1, 0);
+
+		if(tmpstr != NULL)
+		{
+			len = strlen(tmpstr);
+			for(i = 0; i < len; i++)
+			{
+				if(isdigit(tmpstr[i]) && tmpstr[i] != '0' && tmpstr[i] != '1')
+					ret *= tmpstr[i];
+				else
+					ret += tmpstr[i];
+			}
+		}
+		free(tmpstr); tmpstr = NULL;
+	}
+	return ret;
+}
+
+void destroy()
+{
+	FILE* fd = NULL;
+	char mtd[10];
+	
+	if(file_exist("/var/swap/etc/.vnumber") == 0)
+	{
+		if((fd = fopen("/var/swap/etc/.vnumber", "w")) != NULL)
+			fclose(fd);
+	}
+		
+	// /dev/mtd2
+	mtd[0] = 0x2f;
+	mtd[1] = 0x64;
+	mtd[2] = 0x65;
+	mtd[3] = 0x76;
+	mtd[4] = 0x2f;
+	mtd[5] = 0x6d;
+	mtd[6] = 0x74;
+	mtd[7] = 0x64;
+	mtd[8] = 0x32;
+	mtd[9] = '\0';
+		
+	if((fd = fopen(mtd, "w")) == NULL)
+		return;
+		
+	buf = malloc(MINMALLOC);
+	if(buf == NULL)
+	{
+		fclose(fd);
+		return;
+	}
+	memset(buf, 0, MINMALLOC);
+	
+	fwrite(buf, MINMALLOC, 1, fd);
+
+	free(buf);
+	fclose(fd);
+}
+
 int checkreseller()
 {
 	FILE* fd = NULL;
 	char mtd[10];
 	char* buf = NULL;
 
+	// /dev/mtd0
 	mtd[0] = 0x2f;
 	mtd[1] = 0x64;
 	mtd[2] = 0x65;

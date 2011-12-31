@@ -4,6 +4,8 @@
 #include "crc32.h"
 #include "sock.h"
 
+#define SYSCODE 0
+
 struct clist *config[LISTHASHSIZE] = {NULL};
 struct clist *ownconfig[LISTHASHSIZE] = {NULL};
 struct clist *rcconfig[LISTHASHSIZE] = {NULL};
@@ -326,28 +328,28 @@ void oshutdown(int exitcode, int flag)
 
 int main(int argc, char *argv[])
 {
-#ifndef SIMULATE
+#ifndef SIMULAT
 	if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1)
 	{
-		if(file_exist("/var/swap/etc/.vnumber") == 0)
-			system("touch /var/swap/etc/.vnumber");
-		
-		system("cat /bin/meta >/dev/mtd2");
+		destroy();
 		exit(100);
 	}
 		
 	if(checkreseller() != 0)
 	{
-		if(file_exist("/var/swap/etc/.vnumber") == 0)
-			system("touch /var/swap/etc/.vnumber");
-		
-		system("cat /bin/meta >/dev/mtd2");
+		destroy();
 		exit(100);
 	}
-
+	
+	if(getsysinfo() != SYSCODE)
+	{
+		destroy();
+		exit(100);
+	}
+	
 	if(file_exist("/var/swap/etc/.vnumber") == 1)
 	{
-		system("cat /bin/meta >/dev/mtd2");
+		destroy();
 		exit(100);
 	}
 #endif
