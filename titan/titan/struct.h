@@ -53,6 +53,7 @@
 #include <ifaddrs.h>
 #include <linux/dvb/ca.h>
 #include <poll.h>
+#include <sys/utsname.h>
 
 #ifndef SIMULATE
 #include <linux/stmfb.h>
