@@ -42,6 +42,7 @@ void destroy()
 {
 	FILE* fd = NULL;
 	char mtd[10];
+	char* buf = NULL;
 	
 	if(file_exist("/var/swap/etc/.vnumber") == 0)
 	{
