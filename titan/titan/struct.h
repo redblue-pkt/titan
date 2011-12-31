@@ -596,6 +596,8 @@ struct dvbdev
 	int feloffrequency;
 	int feaktband;
 	int feaktpolarization;
+	fe_sec_voltage_t feaktvolt;
+	fe_sec_tone_mode_t feakttone;
 	int fedmxsource;
 	char* feaktnr;
 	char* feshortname;

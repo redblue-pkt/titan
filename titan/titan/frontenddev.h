@@ -547,8 +547,14 @@ void fesettone(struct dvbdev* node, fe_sec_tone_mode_t tone, int wait)
 
 	debug(200, "FE_SET_TONE: %d (%s)", tone, node->feshortname);
 	if(ioctl(node->fd, FE_SET_TONE, tone) == -1)
+	{
 		perr("FE_SET_TONE");
-	usleep(wait * 1000);
+	}
+	else
+	{
+		node->feakttone = tone;
+		usleep(wait * 1000);
+	}
 	debug(1000, "out");
 }
 
@@ -563,8 +569,14 @@ void fesetvoltage(struct dvbdev* node, fe_sec_voltage_t volt, int wait)
 
 	debug(200, "FE_SET_VOLT: %d (%s)", volt, node->feshortname);
 	if(ioctl(node->fd, FE_SET_VOLTAGE, volt) == -1)
+	{
 		perr("FE_SET_VOLTAGE");
-	usleep(wait * 1000);
+	}
+	else
+	{
+		node->feaktvolt = volt;
+		usleep(wait * 1000);
+	}
 	debug(1000, "out");
 }
 
@@ -680,6 +692,8 @@ void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int
 {
 	debug(1000, "in");
 	int orbitalpos = 0;
+	fe_sec_voltage_t oldvolt = 0;
+	fe_sec_tone_mode_t oldtone = 0;
 	struct dvb_diseqc_master_cmd cmd = {{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0};
 	
 	if(node == NULL)
@@ -687,6 +701,9 @@ void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int
 		debug(1000, "out-> NULL detect");
 		return;
 	}
+	
+	oldvolt = node->feaktvolt;
+	oldtone = node->feakttone;
 
 	if(tpnode == NULL)
 		orbitalpos = 0;
@@ -747,21 +764,21 @@ void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int
 
 	if(flag >= 0 && flag < 7)
 	{
-		fesettone(node, SEC_VOLTAGE_18, 15);
+		fesetvoltage(node, SEC_VOLTAGE_18, 15);
 		fesettone(node, SEC_TONE_OFF, 15);
 		fediseqcsendmastercmd(node, &cmd, 100);
 	}
 
 	if((flag == 7 || flag == 9 || flag == 10) && pos != 0)
 	{
-		fesettone(node, SEC_VOLTAGE_18, 15);
+		fesetvoltage(node, SEC_VOLTAGE_18, 15);
 		fesettone(node, SEC_TONE_OFF, 15);
 		fediseqcsendmastercmd(node, &cmd, 100);
 	}
 
 	if(flag == 8 && (orbitalpos == 0 || status.rotoroldorbitalpos == 0 || orbitalpos != status.rotoroldorbitalpos))
 	{
-		fesettone(node, SEC_VOLTAGE_18, 15);
+		fesetvoltage(node, SEC_VOLTAGE_18, 15);
 		fesettone(node, SEC_TONE_OFF, 15);
 		fediseqcsendmastercmd(node, &cmd, 100);
 
@@ -776,6 +793,10 @@ void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int
 		status.rotoroldorbitalpos = orbitalpos;
 		sleep(waittime);
 	}
+	
+	fesetvoltage(node, oldvolt, 15);
+	fesettone(node, oldtone, 15);
+	
 	debug(1000, "out");
 }
 
