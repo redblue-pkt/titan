@@ -3638,7 +3638,7 @@ char* get_ipk_update()
 		cmd = strstrip(string_newline(command(cmd)));
 		debug(60, "cmd: %s", cmd);
 		
-		if(ostrcmp(cmd, "//97.74.32.10/svn/atemio") != 0)
+		if(ostrcmp(cmd, "//97.74.32.10/svn/ipk/sh4/titan") != 0)
 		{
 			textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 			free(cmd), cmd = NULL;
