@@ -99,9 +99,9 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] netsurf"
 echo "[titan]--------------------------------------------------------"
 
-cd "$HOME"/flashimg/source.titan/netsurf
-./makesh4.sh $STM
-cd "$HOME"/flashimg/source.titan/titan
+#cd "$HOME"/flashimg/source.titan/netsurf
+#./makesh4.sh $STM
+#cd "$HOME"/flashimg/source.titan/titan
 echo "[titan]--------------------------------------------------------"
 echo "[titan] netsurf done"
 echo "[titan]--------------------------------------------------------"
