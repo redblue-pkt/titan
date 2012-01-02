@@ -996,6 +996,7 @@ msgstr ""
 #: plugins_keylock_skin.xml.h:1 skins_keylock_skin.xml.h:1
 #: plugins_permtime_skin.xml.h:1 skins_permtime_skin.xml.h:1
 #: plugins_imdb_skin.xml.h:18 skins_imdb_skin.xml.h:18
+#: plugins_callmonitor1_skin.xml.h:17 skins_callmonitor1_skin.xml.h:17
 msgid ""
 msgstr ""
 
@@ -3273,7 +3274,8 @@ msgstr ""
 
 #: skin_default_skin.xml.h:112 skin_default_skin.xml.h:120
 #: skin_default_skin.xml.h:121 skin_default_skin.xml.h:123
-#: skin_default_skin.xml.h:125
+#: skin_default_skin.xml.h:125 plugins_callmonitor1_skin.xml.h:9
+#: skins_callmonitor1_skin.xml.h:9
 msgid "broadcast"
 msgstr ""
 
@@ -5941,4 +5943,70 @@ msgstr ""
 
 #: plugins_imdb_skin.xml.h:17 skins_imdb_skin.xml.h:17
 msgid "Writers:"
+msgstr ""
+
+#: plugins_callmonitor1_skin.xml.h:1 skins_callmonitor1_skin.xml.h:1
+msgid "CallMonitor Settings"
+msgstr ""
+
+#: plugins_callmonitor1_skin.xml.h:2 skins_callmonitor1_skin.xml.h:2
+msgid "1.Rufnummer"
+msgstr ""
+
+#: plugins_callmonitor1_skin.xml.h:3 skins_callmonitor1_skin.xml.h:3
+msgid "2.Rufnummer"
+msgstr ""
+
+#: plugins_callmonitor1_skin.xml.h:4 skins_callmonitor1_skin.xml.h:4
+msgid "Aktion wenn standby"
+msgstr ""
+
+#: plugins_callmonitor1_skin.xml.h:5 skins_callmonitor1_skin.xml.h:5
+msgid "alle Nummern"
+msgstr ""
+
+#: plugins_callmonitor1_skin.xml.h:6 skins_callmonitor1_skin.xml.h:6
+msgid "Anzeige in Sekunden"
+msgstr ""
+
+#: plugins_callmonitor1_skin.xml.h:7 skins_callmonitor1_skin.xml.h:7
+msgid "ausgehende Anrufe"
+msgstr ""
+
+#: plugins_callmonitor1_skin.xml.h:8 skins_callmonitor1_skin.xml.h:8
+msgid "bei Anruf stumm"
+msgstr ""
+
+#: plugins_callmonitor1_skin.xml.h:10 skins_callmonitor1_skin.xml.h:10
+msgid "eingehende Anrufe"
+msgstr ""
+
+#: plugins_callmonitor1_skin.xml.h:11 skins_callmonitor1_skin.xml.h:11
+msgid "FritzBook"
+msgstr ""
+
+#: plugins_callmonitor1_skin.xml.h:12 skins_callmonitor1_skin.xml.h:12
+msgid "IP-FritzBox"
+msgstr ""
+
+#: plugins_callmonitor1_skin.xml.h:13 skins_callmonitor1_skin.xml.h:13
+msgid "Passwort-FritzBox"
+msgstr ""
+
+#: plugins_callmonitor1_skin.xml.h:14 skins_callmonitor1_skin.xml.h:14
+msgid ""
+"text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 "
+"bordertype=2 posx=160 posy=0 width=150 height=30/>"
+msgstr ""
+
+#: plugins_callmonitor1_skin.xml.h:15 skins_callmonitor1_skin.xml.h:15
+msgid ""
+"text=LOAD-FritzBook halign=center valign=middle bordercol=blue bordersize=2 "
+"bordertype=2 posx=400 posy=0 width=200 height=30/>"
+msgstr ""
+
+#: plugins_callmonitor1_skin.xml.h:16 skins_callmonitor1_skin.xml.h:16
+msgid ""
+"text=SAVE halign=center valign=middle bordercol=green bordersize=2 "
+"bordertype=2 posx=0 posy=0 width=150 height=30/>"
 msgstr ""
