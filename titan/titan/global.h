@@ -3663,7 +3663,6 @@ char* get_ipk_update()
 		int max = count1;
 		int i = 0;
 		for( i = 0; i < max; i++){
-			system("rm -rf /tmp/Packages.preview.tar.gz");
 			unlink("/tmp/Packages.preview.tar.gz");
 			ip = ostrcat("", (&ret1[i])->part, 0, 0);
 			debug(60, "ip: %s", ip);
