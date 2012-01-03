@@ -333,9 +333,12 @@ char* createpiconpath(struct channel* chnode)
 	if(!isfile(tmpstr))
 	{
 		free(tmpstr); tmpstr = NULL;
-		tmpstr = ostrcat(tmpstr, getconfig("piconpath", NULL), 1, 0);
-		tmpstr = ostrcat(tmpstr, "/", 1, 0);
-		tmpstr = ostrcat(tmpstr, "default.png", 1, 0);
+		//tmpstr = ostrcat(tmpstr, getconfig("piconpath", NULL), 1, 0);
+		//tmpstr = ostrcat(tmpstr, "/", 1, 0);
+		//tmpstr = ostrcat(tmpstr, "default.png", 1, 0);
+		tmpstr = ostrcat(tmpstr, getconfig("defskinpath", NULL), 1, 0);
+		tmpstr = ostrcat(tmpstr, "/skin/", 1, 0);
+		tmpstr = ostrcat(tmpstr, "defpicon.png", 1, 0);
 	}
 
 	return tmpstr;
