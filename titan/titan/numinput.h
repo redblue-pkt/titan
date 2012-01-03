@@ -5,8 +5,8 @@ char* numinput(char* title, char* num, char* mask, int isip)
 {
 	debug(1000, "in");
 	int rcret = -1, tmpscreencalc = 0, fromthread = 0, height = 0;
-	struct skin* ipinput = getscreen("ipinput");
-	struct skin* input = getscreennode(ipinput, "input");
+	struct skin* numinput = getscreen("numinput");
+	struct skin* input = getscreennode(numinput, "input");
 	struct skin* framebuffer = getscreen("framebuffer");
 	char* ret = NULL, *bg = NULL;
 	char* numtmp = NULL;
@@ -14,10 +14,10 @@ char* numinput(char* title, char* num, char* mask, int isip)
 	if(pthread_self() != status.mainthread)
                 fromthread = 1;
 
-	changetitle(ipinput, title);
-	height = ipinput->height;
+	changetitle(numinput, title);
+	height = numinput->height;
 	if(title != NULL)
-		ipinput->height += ipinput->fontsize + 6 + (ipinput->bordersize * 2);
+		numinput->height += numinput->fontsize + 6 + (numinput->bordersize * 2);
 
 	if(isip == 1)
 		numtmp = fixip(num, 0);
@@ -33,21 +33,21 @@ char* numinput(char* title, char* num, char* mask, int isip)
 		m_lock(&status.drawingmutex, 0);
 		m_lock(&status.rcmutex, 10);
 		status.screencalc = 2;
-		setnodeattr(ipinput, framebuffer);
+		setnodeattr(numinput, framebuffer);
 		status.screencalc = 0;
-		status.rcowner = ipinput;
-		bg = savescreen(ipinput);
+		status.rcowner = numinput;
+		bg = savescreen(numinput);
 		tmpscreencalc = status.screencalc;
 		status.screencalc = 0;
-		drawscreen(ipinput, 2);
+		drawscreen(numinput, 2);
 	}
 	else
-		drawscreen(ipinput, 0);
-	addscreenrc(ipinput, input);
+		drawscreen(numinput, 0);
+	addscreenrc(numinput, input);
 
 	while(1)
 	{
-		rcret = waitrc(ipinput, 0, 0);
+		rcret = waitrc(numinput, 0, 0);
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
@@ -56,12 +56,12 @@ char* numinput(char* title, char* num, char* mask, int isip)
 		}
 	}
 
-	delownerrc(ipinput);
+	delownerrc(numinput);
 
 	if(fromthread == 1)
 	{
-		clearscreennolock(ipinput);
-		restorescreen(bg, ipinput);
+		clearscreennolock(numinput);
+		restorescreen(bg, numinput);
 		blitfb();
 		status.screencalc = tmpscreencalc;
 		sleep(1);
@@ -71,11 +71,11 @@ char* numinput(char* title, char* num, char* mask, int isip)
 	}
 	else
 	{
-		clearscreen(ipinput);
+		clearscreen(numinput);
 		drawscreen(skin, 0);
 	}
 
-	ipinput->height = height;
+	numinput->height = height;
 	debug(1000, "out");
 	return ret;
 }
