@@ -270,6 +270,16 @@ void screeninfobar()
 			subtitlepause(0);
 			continue;
 		}
+		if(rcret == getrcconfigint("rcsleep", NULL))
+		{
+			subtitlepause(1);
+			status.infobar = 0;
+			clearscreen(infobar);
+			screenpowerofftimer();
+			drawscreen(skin, 0);
+			subtitlepause(0);
+			continue;
+		}
 		if(rcret == getrcconfigint("rcsubtitel", NULL))
 		{
 			subtitlepause(1);
