@@ -93,7 +93,7 @@ msgstr ""
 #: panel_system.h:305 channellist.h:691 global.h:3526 global.h:3788
 #: tunerconfig.h:672 skin_default_skin.xml.h:174 global.h:3523 global.h:3785
 #: global.h:3564 global.h:3826 global.h:3643 global.h:3905 global.h:3908
-#: global.h:3907
+#: global.h:3907 global.h:3646 global.h:3910
 msgid "EXIT"
 msgstr ""
 
@@ -376,7 +376,8 @@ msgstr ""
 #: panel_extensions.h:45 panel_extensions.h:99 panel_system.h:298
 #: panel_system.h:305 channellist.h:691 global.h:3526 global.h:3788
 #: tunerconfig.h:672 global.h:3523 global.h:3785 global.h:3564 global.h:3826
-#: global.h:3643 global.h:3905 global.h:3908 global.h:3907
+#: global.h:3643 global.h:3905 global.h:3908 global.h:3907 global.h:3646
+#: global.h:3910
 msgid "Message"
 msgstr ""
 
@@ -420,7 +421,7 @@ msgstr ""
 #: panel_system.h:305 channellist.h:691 global.h:3526 global.h:3788
 #: tunerconfig.h:672 skin_default_skin.xml.h:268 global.h:3523 global.h:3785
 #: global.h:3564 global.h:3826 global.h:3643 global.h:3905 global.h:3908
-#: global.h:3907
+#: global.h:3907 global.h:3646 global.h:3910
 msgid "OK"
 msgstr ""
 
@@ -430,7 +431,7 @@ msgstr ""
 #: global.h:3738 global.h:3735 global.h:3739 global.h:3742 global.h:3746
 #: global.h:3751 global.h:3761 global.h:3763 global.h:3768 global.h:3771
 #: global.h:3772 global.h:3788 global.h:3785 global.h:3826 global.h:3905
-#: global.h:3908 global.h:3907
+#: global.h:3908 global.h:3907 global.h:3910
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -5821,7 +5822,7 @@ msgid "576i50"
 msgstr ""
 
 #: global.h:3501 global.h:3503 global.h:3507 global.h:3510 global.h:3526
-#: global.h:3523 global.h:3564 global.h:3643
+#: global.h:3523 global.h:3564 global.h:3643 global.h:3646
 msgid "check your Secret Feed !"
 msgstr ""
 
