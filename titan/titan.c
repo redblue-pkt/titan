@@ -328,7 +328,7 @@ void oshutdown(int exitcode, int flag)
 
 int main(int argc, char *argv[])
 {
-#ifndef SIMULAT
+#ifndef SIMULATE
 	if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1)
 	{
 		destroy();

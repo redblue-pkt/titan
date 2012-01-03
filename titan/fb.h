@@ -408,4 +408,18 @@ void setfbtransparent(int value)
 #endif
 }
 
+void pngforlcd()
+{
+	FILE *fd;
+  fd=fopen("/tmp/titanlcd.raw", "w");
+	int help = 0;
+	int i = 0;
+	while (i < 240) {
+		fwrite(skinfb->fb+help,320*4,1,fd);
+		help = help + (skinfb->width * 4);
+		i++;
+	}
+	fclose(fd);
+}
+
 #endif

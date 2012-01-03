@@ -3575,7 +3575,10 @@ int drawscreen(struct skin* node, int flag)
 		if(status.screencalc == 0)
 		{
 			drawscreenalways(node);
-			blitfb();
+			if(strstr(node->name, "LCD_") != NULL)
+				pngforlcd();
+			else	
+				blitfb();
 		}
 	}
 	if(flag == 0)
