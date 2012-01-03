@@ -41,6 +41,7 @@ struct caservice caservice[MAXCASERVICE];
 #include "queue.h"
 #include "channelcache.h"
 #include "strconvert.h"
+#include "numinput.h"
 #include "textinput.h"
 #include "radiotext.h"
 #include "list.h"
