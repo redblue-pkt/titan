@@ -41,6 +41,7 @@ void screensingleepg(struct channel* chnode, struct epg* epgnode, int flag)
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *buf = NULL;
 	struct tm *loctime = NULL;
+	struct epg* tmpepg = NULL;
 	
 	epgscreenconf = getconfigint("epg_screen", NULL);
 	listbox->aktline = 1;
@@ -49,18 +50,25 @@ void screensingleepg(struct channel* chnode, struct epg* epgnode, int flag)
 	if(chnode == NULL) chnode = status.aktservice->channel;
 	if(chnode == NULL) return;
 	if(epgnode == NULL) epgnode = getepgakt(chnode);
+	tmpepg = epgnode;
 
+	changetext(channelname, chnode->name);
+	tmpstr = epgdescunzip(epgnode);
+	changetext(epgdesc, tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	
+start:
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
 	{
 		err("no mem");
 		return;
 	}
-
-	changetext(channelname, chnode->name);
-	tmpstr = epgdescunzip(epgnode);
-	changetext(epgdesc, tmpstr);
-	free(tmpstr); tmpstr = NULL;
+	
+	tmp = NULL;
+	delmarkedscreennodes(singleepg, 1);
+	delownerrc(singleepg);
+	epgnode = tmpepg;
 
 	while(epgnode != NULL)
 	{
@@ -143,6 +151,7 @@ void screensingleepg(struct channel* chnode, struct epg* epgnode, int flag)
 			{
 				clearscreen(singleepg);
 				ret = addrecepg(chnode, (struct epg*)listbox->select->handle, NULL);
+				goto start;
 			}
 			drawscreen(singleepg, 0);
 		}
@@ -185,7 +194,7 @@ void screenepg(struct channel* chnode, struct epg* epgnode, int flag)
 
 	epgscreenconf = getconfigint("epg_screen", NULL);
 
-nextepg:
+start:
 	epgdesc->aktpage = 1;
 	freeepgrecord(&rectimeline->epgrecord);
 	changetext(channelname, NULL);
@@ -254,7 +263,7 @@ nextepg:
 		tmpstr = getchannelnr(chnode);
 		changetext(channelnr, tmpstr);
 		free(tmpstr); tmpstr = NULL;
-
+		
 		rectimeline->epgrecord = getepgrecord(chnode, epgnode);
 	}
 
@@ -275,13 +284,13 @@ nextepg:
 		{
 			if(epgnode != NULL && epgnode->next != NULL)
 				epgnode = epgnode->next;
-			goto nextepg;
+			goto start;
 		}
 		if(rcret == getrcconfigint("rcleft", NULL))
 		{
 			if(epgnode != NULL && epgnode->prev != NULL && epgnode->endtime > time(NULL))
 				epgnode = epgnode->prev;
-			goto nextepg;
+			goto start;
 		}
 		if(flag == 0 && epgscreenconf == 0 && rcret == getrcconfigint("rcgreen", NULL))
 		{
@@ -308,7 +317,8 @@ nextepg:
 		{
 			clearscreen(screenepg);
 			ret = addrecepg(chnode, epgnode, NULL);
-			drawscreen(screenepg, 0);
+			//drawscreen(screenepg, 0);
+			goto start;
 		}
 		if(rcret == getrcconfigint("rcepg", NULL))
 		{
