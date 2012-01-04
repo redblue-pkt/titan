@@ -15,7 +15,7 @@ void screenrestoredefault()
 		{
 			system(tmpstr);
 			textbox(_("Message"), _("Receiver now reboot !!!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
-			oshutdown(3, 2);
+			oshutdown(2, 2);;
 		}
 		else
 			textbox(_("Message"), _("Can't restore settings"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
