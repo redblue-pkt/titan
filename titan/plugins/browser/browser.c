@@ -2,6 +2,8 @@
 #include "../titan/debug.h"
 #include "../titan/header.h"
 
+extern struct skin* skin;
+
 char pluginname[] = "Internet Browser";
 char plugindesc[] = "Internet Browser";
 char pluginpic[] = "%pluginpath%/browser/plugin.png";
