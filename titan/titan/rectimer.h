@@ -298,6 +298,12 @@ void checkrectimer()
 	
 	while(node != NULL)
 	{
+		if(node->disabled != 0)
+		{
+			node = node->next;
+			continue;
+		}
+		
 		if(node->justplay == 1)
 		{
 			begin = node->begin;
@@ -362,7 +368,7 @@ void checkrectimer()
 
 	m_unlock(&status.rectimermutex, 1);
 
-	if(node != NULL)
+	if(node != NULL && node->disabled == 0)
 	{
 		if(node->justplay == 1)
 		{
