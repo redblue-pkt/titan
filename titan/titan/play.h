@@ -452,7 +452,14 @@ void screenplay(int startfolder, int flag)
 	int rcret = 0;
 	char* file = NULL, *tmpstr = NULL;
 	char* tmppolicy = NULL, *startdir = NULL;
+	char* formats = NULL;
 	struct skin* playinfobar = getscreen("playinfobar");
+	
+	// allowed from atemio avi mkv mpg4 xvid mpg1 mpg2 jpeg png
+	if(status.expertmodus == 1)
+		formats = ostrcat(formats, "*.flac *.ogg *.mp3 *.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", 1, 0);
+	else
+		formats = ostrcat(formats, "*.flac *.ogg *.mp3 *.avi *.mkv *.mpg *.mpeg *.ts", 1, 0);
 
 	int skip13 = getconfigint("skip13", NULL);
 	int skip46 = getconfigint("skip46", NULL);
@@ -473,8 +480,7 @@ playerstart:
 	int playinfobarcount = 0, playinfobarstatus = 1, dirrcret = 0;
 
 	tmpstr = ostrcat(file, "", 1, 0); file = NULL;
-	// allowed from atemio avi mkv mpg4 xvid mpg1 mpg2 jpeg png
-	file = screendir(startdir, "*.avi *.mkv *.xvid *.mpg *.mpeg *.ts *.xvid *.mp3 *.ogg *.flac", basename(tmpstr), &dirrcret, ".epg", _("DEL"), getrcconfigint("rcred", NULL), _("SELECT"), 0, "EPG", getrcconfigint("rcyellow", NULL), NULL, 0, 90, 1, 90, 1, 0);
+	file = screendir(startdir, formats, basename(tmpstr), &dirrcret, ".epg", _("DEL"), getrcconfigint("rcred", NULL), _("SELECT"), 0, "EPG", getrcconfigint("rcyellow", NULL), NULL, 0, 90, 1, 90, 1, 0);
 	free(tmpstr); tmpstr = NULL;
 
 	if(file != NULL)
@@ -610,6 +616,7 @@ playerstart:
 	status.pause = 0;
 	status.play = 0;
 	free(file);
+	free(formats);
 }
 
 #endif
