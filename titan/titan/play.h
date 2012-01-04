@@ -473,7 +473,7 @@ playerstart:
 	int playinfobarcount = 0, playinfobarstatus = 1, dirrcret = 0;
 
 	tmpstr = ostrcat(file, "", 1, 0); file = NULL;
-	file = screendir(startdir, "*.flac *.ogg *.mp3 *.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", basename(tmpstr), &dirrcret, ".epg", _("DEL"), getrcconfigint("rcred", NULL), _("SELECT"), 0, "EPG", getrcconfigint("rcyellow", NULL), NULL, 0, 90, 1, 90, 1, 0);
+	file = screendir(startdir, "*.mp3 *.avi *.divx *.xvid *.ts", basename(tmpstr), &dirrcret, ".epg", _("DEL"), getrcconfigint("rcred", NULL), _("SELECT"), 0, "EPG", getrcconfigint("rcyellow", NULL), NULL, 0, 90, 1, 90, 1, 0);
 	free(tmpstr); tmpstr = NULL;
 
 	if(file != NULL)
