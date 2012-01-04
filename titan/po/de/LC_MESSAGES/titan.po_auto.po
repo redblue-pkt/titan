@@ -94,6 +94,7 @@ msgstr ""
 #: tunerconfig.h:672 skin_default_skin.xml.h:174 global.h:3523 global.h:3785
 #: global.h:3564 global.h:3826 global.h:3643 global.h:3905 global.h:3908
 #: global.h:3907 global.h:3646 global.h:3910 rectimer.h:1127 rectimer.h:1139
+#: play.h:501
 msgid "EXIT"
 msgstr ""
 
@@ -379,7 +380,7 @@ msgstr ""
 #: panel_system.h:305 channellist.h:691 global.h:3526 global.h:3788
 #: tunerconfig.h:672 global.h:3523 global.h:3785 global.h:3564 global.h:3826
 #: global.h:3643 global.h:3905 global.h:3908 global.h:3907 global.h:3646
-#: global.h:3910 rectimer.h:1127 rectimer.h:1139
+#: global.h:3910 rectimer.h:1127 rectimer.h:1139 play.h:501
 msgid "Message"
 msgstr ""
 
@@ -424,7 +425,7 @@ msgstr ""
 #: tunerconfig.h:672 skin_default_skin.xml.h:268 global.h:3523 global.h:3785
 #: global.h:3564 global.h:3826 global.h:3643 global.h:3905 global.h:3908
 #: global.h:3907 global.h:3646 global.h:3910 play.h:495 rectimer.h:1127
-#: rectimer.h:1139
+#: rectimer.h:1139 play.h:501
 msgid "OK"
 msgstr ""
 
@@ -941,6 +942,7 @@ msgstr ""
 #: mc_pictureplayer.h:383 mc_videoplayer.h:347 mc_videoplayer.h:432 play.h:482
 #: play.h:486 play.h:491 play.h:496 play.h:495 play.h:498 play.h:499
 #: play.h:490 play.h:497 mc_videoplayer.h:355 mc_videoplayer.h:440 play.h:494
+#: play.h:501
 msgid "Can't start playback !"
 msgstr ""
 
@@ -3408,7 +3410,7 @@ msgstr ""
 #: skin_default_skin.xml.h:143 skin_default_skin.xml.h:144 play.h:464
 #: play.h:468 play.h:473 play.h:478 play.h:477 play.h:480 play.h:481
 #: play.h:472 skin_default_skin.xml.h:145 play.h:479 play.h:476
-#: skin_default_skin.xml.h:147
+#: skin_default_skin.xml.h:147 play.h:483
 msgid "DEL"
 msgstr ""
 
@@ -5765,7 +5767,7 @@ msgid "Two step mute"
 msgstr ""
 
 #: play.h:464 play.h:468 play.h:473 play.h:478 play.h:477 play.h:480
-#: play.h:481 play.h:472 play.h:479 play.h:476
+#: play.h:481 play.h:472 play.h:479 play.h:476 play.h:483
 msgid "SELECT"
 msgstr ""
 
