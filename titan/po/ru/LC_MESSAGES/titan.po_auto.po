@@ -639,11 +639,11 @@ msgstr ""
 #: skin_default_skin.xml.h:359 skin_default_skin.xml.h:360
 #: skin_default_skin.xml.h:361 skin_default_skin.xml.h:363
 #: skin_default_skin.xml.h:365 skin_default_skin.xml.h:366
-#: skin_default_skin.xml.h:367 skin_default_skin.xml.h:368
+#: skin_default_skin.xml.h:367 skin_default_skin.xml.h:368 epg.h:187
 msgid "Single (EPG)"
 msgstr ""
 
-#: epg.h:180
+#: epg.h:180 epg.h:189
 msgid "Multi (EPG)"
 msgstr ""
 
