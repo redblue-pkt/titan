@@ -184,7 +184,7 @@ void screenpanel_system_update(int mode)
 				char* msgtxt = NULL;
 				writeallconfig(1);
 
-				if(file_exist("/tmp/.swapextensionsdev"))
+				if(file_exist("/tmp/.swapextensionsdev") && file_exist("/etc/.beta"))
 				{
 					printf("[Panel] Update: update with log\n");
 					if(string_find("_KERNEL_",filelist->select->text) && file_exist("/etc/.beta"))
