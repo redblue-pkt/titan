@@ -421,7 +421,7 @@ msgstr ""
 #: panel_system.h:305 channellist.h:691 global.h:3526 global.h:3788
 #: tunerconfig.h:672 skin_default_skin.xml.h:268 global.h:3523 global.h:3785
 #: global.h:3564 global.h:3826 global.h:3643 global.h:3905 global.h:3908
-#: global.h:3907 global.h:3646 global.h:3910
+#: global.h:3907 global.h:3646 global.h:3910 play.h:495
 msgid "OK"
 msgstr ""
 
