@@ -473,7 +473,8 @@ playerstart:
 	int playinfobarcount = 0, playinfobarstatus = 1, dirrcret = 0;
 
 	tmpstr = ostrcat(file, "", 1, 0); file = NULL;
-	file = screendir(startdir, "*.mp3 *.avi *.divx *.xvid *.ts", basename(tmpstr), &dirrcret, ".epg", _("DEL"), getrcconfigint("rcred", NULL), _("SELECT"), 0, "EPG", getrcconfigint("rcyellow", NULL), NULL, 0, 90, 1, 90, 1, 0);
+	// allowed from atemio avi mkv mpg4 xvid mpg1 mpg2 jpeg png
+	file = screendir(startdir, "*.avi *.mkv *.xvid *.mpg *.mpeg *.ts *.xvid *.mp3 *.ogg *.flac", basename(tmpstr), &dirrcret, ".epg", _("DEL"), getrcconfigint("rcred", NULL), _("SELECT"), 0, "EPG", getrcconfigint("rcyellow", NULL), NULL, 0, 90, 1, 90, 1, 0);
 	free(tmpstr); tmpstr = NULL;
 
 	if(file != NULL)
