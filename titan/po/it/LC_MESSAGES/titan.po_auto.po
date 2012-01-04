@@ -5572,22 +5572,22 @@ msgid "2"
 msgstr ""
 
 #: skin_default_skin.xml.h:86 skin_default_skin.xml.h:87
-#: skin_default_skin.xml.h:88
+#: skin_default_skin.xml.h:88 callmon_main.h:84
 msgid "3"
 msgstr ""
 
 #: skin_default_skin.xml.h:88 skin_default_skin.xml.h:89
-#: skin_default_skin.xml.h:90
+#: skin_default_skin.xml.h:90 callmon_main.h:85
 msgid "4"
 msgstr ""
 
 #: skin_default_skin.xml.h:89 skin_default_skin.xml.h:90
-#: skin_default_skin.xml.h:91
+#: skin_default_skin.xml.h:91 callmon_main.h:86
 msgid "5"
 msgstr ""
 
 #: skin_default_skin.xml.h:90 skin_default_skin.xml.h:91
-#: skin_default_skin.xml.h:92
+#: skin_default_skin.xml.h:92 callmon_main.h:87
 msgid "6"
 msgstr ""
 
@@ -5791,7 +5791,7 @@ msgstr ""
 msgid "0"
 msgstr ""
 
-#: skin_default_skin.xml.h:94
+#: skin_default_skin.xml.h:94 callmon_main.h:88
 msgid "8"
 msgstr ""
 
@@ -6059,4 +6059,30 @@ msgstr ""
 msgid ""
 "text=SAVE halign=center valign=middle bordercol=green bordersize=2 "
 "bordertype=2 posx=0 posy=0 width=150 height=30/>"
+msgstr ""
+
+#: callmon_main.h:47 callmon_main.h:64 callmon_main.h:68 callmon_main.h:72
+#: callmon_main.h:76
+msgid "ja"
+msgstr ""
+
+#: callmon_main.h:48 callmon_main.h:65 callmon_main.h:69 callmon_main.h:73
+#: callmon_main.h:77
+msgid "nein"
+msgstr ""
+
+#: callmon_main.h:80
+msgid "puffern"
+msgstr ""
+
+#: callmon_main.h:81
+msgid "verwerfen"
+msgstr ""
+
+#: callmon_main.h:89
+msgid "10"
+msgstr ""
+
+#: callmon_main.h:90
+msgid "12"
 msgstr ""
