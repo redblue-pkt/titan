@@ -6,44 +6,50 @@ SVNPASS=$5
 SVNURL=$6
 KERNELDIR=$7
 ROOTDIR=$8
+IPKDIR=$9
 
 if [ -z "$TYPE" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir>"
 	exit 1
 fi
 
 if [ -z "$STM" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir>"
 	exit 1
 fi
 
 if [ -z "$MEDIAFW" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir>"
 	exit 1
 fi
 
 if [ -z "$SVNUSER" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir>"
 	exit 1
 fi
 
 if [ -z "$SVNPASS" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir>"
 	exit 1
 fi
 
 if [ -z "$SVNURL" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir>"
 	exit 1
 fi
 
 if [ -z "$KERNELDIR" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir>"
 	exit 1
 fi
 
 if [ -z "$ROOTDIR" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir>"
+	exit 1
+fi
+
+if [ -z "$IPKDIR" ]; then
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir>"
 	exit 1
 fi
 
@@ -94,6 +100,17 @@ echo "[titan]--------------------------------------------------------"
 #echo "[titan]--------------------------------------------------------"
 #echo "[titan] Security done"
 #echo "[titan]--------------------------------------------------------"
+
+echo "[titan]--------------------------------------------------------"
+echo "[titan] Make Ipkdir"
+echo "[titan]--------------------------------------------------------"
+
+"$HOME"/flashimg/source.titan/titan/tools/getipk.sh $IPKDIR
+
+echo "[titan]--------------------------------------------------------"
+echo "[titan] Ipkdir done"
+echo "[titan]--------------------------------------------------------"
+
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] netsurf"
