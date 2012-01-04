@@ -115,6 +115,8 @@ struct epgrecord* getepgrecord(struct channel* chnode, struct epg* epgnode)
 {
 	struct rectimer* rectimernode = rectimer;
 	struct epgrecord* first = NULL;
+	
+	if(epgnode == NULL) return NULL;
 
 	while(rectimernode != NULL)
 	{
