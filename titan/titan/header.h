@@ -1,6 +1,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//numinput.h
+char* numinput(char* title, char* num, char* mask, int isip)
+
 //frontenddev.h
 struct dvbdev* fegetdummy();
 
