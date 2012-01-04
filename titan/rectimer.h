@@ -49,7 +49,7 @@ int checkrectimeradd(struct rectimer* recnode, char** ret)
 
 	while(node != NULL)
 	{
-		if(recnode != node)
+		if(recnode != node && node->status < 2)
 		{
 			if((recnode->begin >= node->begin && recnode->begin < node->end) || (recnode->end >= node->begin && recnode->end < node->end))
 			{
