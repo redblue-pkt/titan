@@ -94,7 +94,8 @@ msgstr ""
 #: tunerconfig.h:672 skin_default_skin.xml.h:174 global.h:3523 global.h:3785
 #: global.h:3564 global.h:3826 global.h:3643 global.h:3905 global.h:3908
 #: global.h:3907 global.h:3646 global.h:3910 rectimer.h:1127 rectimer.h:1139
-#: play.h:501
+#: play.h:501 mc_main.h:66 mc_main.h:87 mc_main.h:92 mc_main.h:97
+#: mc_main.h:102 mc_main.h:192
 msgid "EXIT"
 msgstr ""
 
@@ -380,7 +381,8 @@ msgstr ""
 #: panel_system.h:305 channellist.h:691 global.h:3526 global.h:3788
 #: tunerconfig.h:672 global.h:3523 global.h:3785 global.h:3564 global.h:3826
 #: global.h:3643 global.h:3905 global.h:3908 global.h:3907 global.h:3646
-#: global.h:3910 rectimer.h:1127 rectimer.h:1139 play.h:501
+#: global.h:3910 rectimer.h:1127 rectimer.h:1139 play.h:501 mc_main.h:66
+#: mc_main.h:87 mc_main.h:92 mc_main.h:97 mc_main.h:102 mc_main.h:192
 msgid "Message"
 msgstr ""
 
@@ -425,7 +427,8 @@ msgstr ""
 #: tunerconfig.h:672 skin_default_skin.xml.h:268 global.h:3523 global.h:3785
 #: global.h:3564 global.h:3826 global.h:3643 global.h:3905 global.h:3908
 #: global.h:3907 global.h:3646 global.h:3910 play.h:495 rectimer.h:1127
-#: rectimer.h:1139 play.h:501
+#: rectimer.h:1139 play.h:501 mc_main.h:66 mc_main.h:87 mc_main.h:92
+#: mc_main.h:97 mc_main.h:102 mc_main.h:192
 msgid "OK"
 msgstr ""
 
@@ -1010,7 +1013,7 @@ msgid ""
 msgstr ""
 
 #: mc_main.h:43 mc_main.h:48 mc_main.h:53 mc_main.h:58 mc_main.h:75
-#: mc_main.h:80 mc_main.h:85
+#: mc_main.h:80 mc_main.h:85 mc_main.h:92 mc_main.h:97 mc_main.h:102
 msgid "comming soon"
 msgstr ""
 
@@ -1023,6 +1026,7 @@ msgid "Install QtBrowser Ipk first !"
 msgstr ""
 
 #: mc_main.h:175 menu.h:64 panel_main.h:35 panel_main.h:241 panel_main.h:243
+#: mc_main.h:192
 msgid "Menu not implemented !"
 msgstr ""
 
@@ -6085,4 +6089,12 @@ msgstr ""
 
 #: callmon_main.h:90
 msgid "12"
+msgstr ""
+
+#: mc_main.h:66
+msgid "start Internet browser now ?"
+msgstr ""
+
+#: mc_main.h:87
+msgid "Install netsurf Internetbrowser Ipk first !"
 msgstr ""
