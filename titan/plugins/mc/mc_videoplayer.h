@@ -37,7 +37,10 @@ void screenmc_videoplayer()
 	int skip79 = getconfigint("skip79", NULL);
 
 	// set allowed filemask
-	char* filemask = "*.m3u *.ifo *.rar *.iso *.img *.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.pls *.trp *.ts *.vdr *.vob *.wmv *.rm";
+	if(file_exist("/var/swap/etc/.fullmc"))
+		char* filemask = "*.m3u *.ifo *.rar *.iso *.img *.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.pls *.trp *.ts *.vdr *.vob *.wmv *.rm";
+	else
+		char* filemask = "*.avi *.mkv *.mpg *.mpeg *.ts";
 	
 	// disable global transparent/hangtime
 	setfbtransparent(255);
