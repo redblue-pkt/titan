@@ -109,7 +109,7 @@ void screenfilesystem(char* dev)
 	listbox->aktline = 1;
 	changetitle(screen, "Harddisk Format - Filesystem");
 
-	if(status.expertmodus == 1) count = 4;
+	if(status.expertmodus > 9) count = 4;
 
 	for(i = 0; i < count; i++)
 	{
@@ -177,7 +177,7 @@ void screenconfigurehdd(char* dev)
 	listbox->aktline = 1;
 	changetitle(screen, _("Harddisk Configure"));
 
-	if(status.expertmodus == 0) y = 1;
+	if(status.expertmodus < 10) y = 1;
 	for(i = 0; i < y; i++)
 	{
 		tmp = addlistbox(screen, listbox, tmp, 1);
