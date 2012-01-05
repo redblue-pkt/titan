@@ -43,7 +43,10 @@ void screenmc_audioplayer()
 	int screensaver_delay = getconfigint("screensaver_delay", NULL);
 
 	// set allowed filemask
-	char* filemask = "*.m3u *.pls *.mp3 *.flac *.ogg *.wma *.ra";
+	if(file_exist("/var/swap/etc/.fullmc"))
+		char* filemask = "*.m3u *.pls *.mp3 *.flac *.ogg *.wma *.ra";
+	else
+		char* filemask = "*.m3u *.pls *.mp3 *.flac *.ogg";
 	
 	// disable global transparent/hangtime
 	setfbtransparent(255);

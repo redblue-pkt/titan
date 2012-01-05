@@ -459,7 +459,7 @@ void screenplay(int startfolder, int flag)
 	if(status.expertmodus == 1)
 		formats = ostrcat(formats, "*.flac *.ogg *.mp3 *.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", 1, 0);
 	else
-		formats = ostrcat(formats, "*.flac *.ogg *.mp3 *.avi *.mkv *.mpg *.mpeg *.ts", 1, 0);
+		formats = ostrcat(formats, "*.ts", 1, 0);
 
 	int skip13 = getconfigint("skip13", NULL);
 	int skip46 = getconfigint("skip46", NULL);
