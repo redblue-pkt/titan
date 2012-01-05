@@ -38,6 +38,7 @@ struct hdd* hdd = NULL;
 struct queue* queue = NULL;
 struct caservice caservice[MAXCASERVICE];
 
+#include "ipkg.h"
 #include "queue.h"
 #include "channelcache.h"
 #include "strconvert.h"
