@@ -2,8 +2,8 @@
 #define IPKG_H
 
 #define IPKG_LIB
-#include "libipkg/libipkg.h"
-#include "libipkg/args.h"
+#include "../libipkg/libipkg.h"
+#include "../libipkg/args.h"
 
 int ipkg_list_cb(char *name, char *desc, char *version, pkg_state_status_t status, void *userdata)
 {
