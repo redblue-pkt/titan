@@ -123,6 +123,16 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] netsurf done"
 echo "[titan]--------------------------------------------------------"
 
+echo "[titan]--------------------------------------------------------"
+echo "[titan] libipkg"
+echo "[titan]--------------------------------------------------------"
+cd "$HOME"/flashimg/source.titan/libipkg
+./makesh4.sh $STM
+cd "$HOME"/flashimg/source.titan/titan
+echo "[titan]--------------------------------------------------------"
+echo "[titan] libipkg done"
+echo "[titan]--------------------------------------------------------"
+
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Make titan"
