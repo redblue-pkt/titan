@@ -24,6 +24,76 @@
 #include "file_util.h"
 #include "str_util.h"
 
+char* ostrcat(char* value1, char* value2, int free1, int free2)
+{
+	char* buf = NULL;
+
+	if(value1 == NULL && value2 == NULL) return NULL;
+
+	if(value2 == NULL)
+	{
+		value2 = malloc(1);
+		if(value2 == NULL)
+		{
+			err("no memory");
+			return NULL;
+		}
+		free2 = 1;
+		value2[0] = '\0';
+	}
+
+	if(value1 == NULL)
+	{
+		value1 = malloc(1);
+		if(value1 == NULL)
+		{
+			err("no memory");
+			return NULL;
+		}
+		free1 = 1;
+		value1[0] = '\0';
+	}
+
+	buf = malloc(strlen(value1) + strlen(value2) + 1);
+	if(buf == NULL)
+	{
+		err("no memory");
+		return NULL;
+	}
+
+	sprintf(buf, "%s%s", value1, value2);
+
+	if(free1 == 1) {free(value1); value1 = NULL;}
+	if(free2 == 1) {free(value2); value2 = NULL;}
+
+	return buf;
+}
+
+char* string_replace(char *search, char *replace, char *string, int free1)
+{
+	char* searchpos = NULL;
+	char* tmpstr = NULL;
+
+	if(string == NULL || search == NULL)
+		return string;
+
+	searchpos = strstr(string, search);
+
+	if(searchpos == NULL)
+		return string;
+
+	tmpstr = strndup(string, searchpos - string);
+	if(replace == NULL)
+		tmpstr = ostrcat(tmpstr, "", 1, 0);
+	else
+		tmpstr = ostrcat(tmpstr, replace, 1, 0);
+	tmpstr = ostrcat(tmpstr, string + (searchpos - string) + strlen(search), 1, 0);
+
+	if(free1 == 1) free(string);
+
+	return tmpstr;
+}
+
 int ipkg_download(ipkg_conf_t *conf, const char *src, const char *dest_file_name)
 {
     int err = 0;
@@ -69,6 +139,24 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *dest_file_name
     }
 
     /* XXX: BUG rewrite to use execvp or else busybox's internal wget -Jamey 7/23/2002 */ 
+
+//wget --passive-ftp -q -P /tmp/ipkg-elz5Lo http://97.74.32.10/svn/ipk/sh4/titan/titan-plugin-picons-black_1.3_sh
+
+//    printf("src: %s\n",src);
+    char* userauth = NULL;
+    userauth = string_replace("http://", "http://atemio:FHZVBGhnzfvEhFDFTGzuif5676zhjGTUGBNHjm@", src, 0);
+//    printf("userauth: %s\n",userauth);
+    sprintf_alloc(&cmd, "wget --passive-ftp %s %s%s %s%s %s -P %s %s",
+		  (conf->http_proxy || conf->ftp_proxy) ? "--proxy=on" : "",
+		  conf->proxy_user ? "--proxy-user=" : "",
+		  conf->proxy_user ? conf->proxy_user : "",
+		  conf->proxy_passwd ? "--proxy-passwd=" : "",
+		  conf->proxy_passwd ? conf->proxy_passwd : "",
+		  conf->verbose_wget ? "" : "-q",
+		  conf->tmp_dir,
+		  userauth);
+free(userauth), userauth = NULL;
+/*
     sprintf_alloc(&cmd, "wget --passive-ftp %s %s%s %s%s %s -P %s %s",
 		  (conf->http_proxy || conf->ftp_proxy) ? "--proxy=on" : "",
 		  conf->proxy_user ? "--proxy-user=" : "",
@@ -78,11 +166,12 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *dest_file_name
 		  conf->verbose_wget ? "" : "-q",
 		  conf->tmp_dir,
 		  src);
+*/
     err = xsystem(cmd);
     if (err) {
 	if (err != -1) {
-	    ipkg_message(conf,IPKG_ERROR, "%s: ERROR: Command failed with return value %d: `%s'\n",
-		    __FUNCTION__, err, cmd);
+	    ipkg_message(conf,IPKG_ERROR, "%s: ERROR: Command failed with return value %d: 'download error !!'\n",
+		    __FUNCTION__, err);
 	} 
 	unlink(tmp_file_location);
 	free(tmp_file_location);
