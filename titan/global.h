@@ -1317,7 +1317,7 @@ int zip(char* inbuf, int inlen, char** outbuf, int* outlen, int level)
 	return 0;
 }
 
-int unzip(char* inbuf, int inlen, char** outbuf, int* outlen)
+int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen)
 {
 	int ret = 0;
 	z_stream stream;
