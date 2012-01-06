@@ -3537,7 +3537,7 @@ char* get_ipk_install(char* ipk)
 	path = ostrcat(path, ipkname, 1, 0);
 	debug(60, "path: %s", path);
 
-	screendownload("Download", ip, path, 80, "/tmp/tmp.ipk", 0);
+	screendownload("Download", ip, path, 80, "/tmp/tmp.ipk", NULL, 0);
 
 	tmpstr = command("ipkg install /tmp/tmp.ipk");
 
@@ -3683,7 +3683,7 @@ char* get_ipk_update()
 			path = ostrcat(path, "/Packages.preview.tar.gz", 1, 0);
 			debug(60, "path: %s", path);
 
-			screendownload("Download", ip, path, 80, "/tmp/Packages.preview.tar.gz", 0);
+			screendownload("Download", ip, path, 80, "/tmp/Packages.preview.tar.gz", NULL, 0);
 
 			system("tar -zxvf /tmp/Packages.preview.tar.gz -C /tmp");
 

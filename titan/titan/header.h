@@ -96,7 +96,7 @@ struct mainplaylist* getmainplaylistbyplaylistpointer(struct playlist* playlistn
 void screensaveradjust();
 
 //download.h
-int screendownload(char* title, char* host, char* page, int port, char* filename, int flag);
+int screendownload(char* title, char* host, char* page, int port, char* filename, char* auth, int flag);
 
 // epgrecord.h
 void freeepgrecord(struct epgrecord** first);
