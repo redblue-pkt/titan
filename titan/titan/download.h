@@ -58,6 +58,7 @@ int screendownload(char* title, char* host, char* page, int port, char* filename
 	dnode->page = page;
 	dnode->port = port;
 	dnode->filename = filename;
+	dnode->auth = auth;
 	dnode->connfd = -1;
 	dnode->ret = -1;
 	
