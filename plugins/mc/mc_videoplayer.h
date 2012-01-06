@@ -37,10 +37,11 @@ void screenmc_videoplayer()
 	int skip79 = getconfigint("skip79", NULL);
 
 	// set allowed filemask
+	char* filemask = NULL;
 	if(status.expertmodus > 0)
-		char* filemask = "*.m3u *.ifo *.rar *.iso *.img *.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.pls *.trp *.ts *.vdr *.vob *.wmv *.rm";
+		filemask = ostrcat("*.m3u *.ifo *.rar *.iso *.img *.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.pls *.trp *.ts *.vdr *.vob *.wmv *.rm", NULL, 0, 0);
 	else
-		char* filemask = "*.avi *.mkv *.mpg *.mpeg *.ts";
+		filemask = ostrcat("*.avi *.mkv *.mpg *.mpeg *.ts", NULL, 0, 0);
 	
 	// disable global transparent/hangtime
 	setfbtransparent(255);
