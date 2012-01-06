@@ -196,11 +196,15 @@ int loadplugin()
 	struct dirent **filelist;
 	int count = 0;
 	char *pluginpath = NULL;
-	
-	if(getconfig("pluginpath", NULL) == NULL)
+	char *tmpstr = NULL;
+	char *tmppath = NULL;
+
+	tmppath = getconfig("pluginpath", NULL);
+
+	if(tmppath == NULL)
 		return 1;
 
-	count = scandir(getconfig("pluginpath", NULL), &filelist, 0, 0);
+	count = scandir(tmppath, &filelist, 0, 0);
 	if(count < 0)
 	{
 		perr("scandir");
@@ -209,9 +213,19 @@ int loadplugin()
 
 	while(count--)
 	{
+		//check if link is a dir
+		if(filelist[count]->d_type == DT_LNK || filelist[count]->d_type == DT_UNKNOWN)
+		{
+			tmpstr = createpath(tmppath, filelist[count]->d_name);
+			if(isdir(tmpstr) == 1)
+				filelist[count]->d_type = DT_DIR;
+
+			free(tmpstr); tmpstr = NULL;
+		}
+
 		if(filelist[count]->d_type == DT_DIR && ostrcmp(filelist[count]->d_name, ".") != 0 && ostrcmp(filelist[count]->d_name, "..") != 0)
 		{
-			pluginpath = createpath(getconfig("pluginpath", NULL), filelist[count]->d_name);
+			pluginpath = createpath(tmppath, filelist[count]->d_name);
 			readplugin(pluginpath);
 			free(pluginpath); pluginpath = NULL;
 
