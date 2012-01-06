@@ -43,10 +43,11 @@ void screenmc_audioplayer()
 	int screensaver_delay = getconfigint("screensaver_delay", NULL);
 
 	// set allowed filemask
+	char* filemask = NULL;
 	if(status.expertmodus > 0)
-		char* filemask = "*.m3u *.pls *.mp3 *.flac *.ogg *.wma *.ra";
+		filemask = ostrcat("*.m3u *.pls *.mp3 *.flac *.ogg *.wma *.ra", NULL, 0, 0);
 	else
-		char* filemask = "*.m3u *.pls *.mp3 *.flac *.ogg";
+		filemask = ostrcat("*.m3u *.pls *.mp3 *.flac *.ogg", NULL, 0, 0);
 	
 	// disable global transparent/hangtime
 	setfbtransparent(255);
