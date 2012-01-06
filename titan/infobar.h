@@ -162,6 +162,17 @@ void screeninfobar()
 				}
 			}	
 		}
+		if(rcret == getrcconfigint("rcstop", NULL))
+		{
+			subtitlepause(1);
+			status.infobar = 0;
+			clearscreen(infobar);
+			screenrecordstop();
+			status.updatevfd = START;
+			drawscreen(skin, 0);
+			subtitlepause(0);
+			continue;
+		}
 		if(rcret == getrcconfigint("rcblue", NULL) && getconfig("bluekey", NULL) == NULL)
 			rcret = getrcconfigint("rctvradio", NULL);
 		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL) || rcret == getrcconfigint("rctvradio", NULL) || rcret == getrcconfigint("rcfav", NULL))

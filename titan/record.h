@@ -883,6 +883,40 @@ int screenrecordduration(int minutes)
 		return ret;
 }
 
+void screenrecordstop()
+{
+	char* tmpstr = NULL, *mlistbox = NULL;
+	struct service* servicenode = service;
+
+	while(servicenode != NULL)
+	{
+		if((servicenode->type == RECORDDIRECT || servicenode->type == RECORDTIMER) && servicenode->recname != NULL)
+		{
+			tmpstr = ostrcat(tmpstr, _("stop"), 1, 0);
+			tmpstr = ostrcat(tmpstr, " (", 1, 0);
+			tmpstr = ostrcat(tmpstr, servicenode->recname, 1, 0);
+			tmpstr = ostrcat(tmpstr, ")", 1, 0);
+		}
+		servicenode = servicenode->next;
+	}
+
+	mlistbox = menulistbox(NULL, tmpstr, "recordlist", "Record", NULL, 0, 0);
+	if(mlistbox != NULL && strstr(mlistbox, "stop") == mlistbox)
+	{
+		servicenode = getrecordbyname(mlistbox, RECORDDIRECT);
+		if(servicenode != NULL)
+			servicenode->recendtime = 1;
+		else
+		{
+			servicenode = getrecordbyname(mlistbox, RECORDTIMER);
+			if(servicenode != NULL)
+				servicenode->recendtime = 1;
+		}
+	}
+
+	free(tmpstr); tmpstr = NULL;
+	free(mlistbox); mlistbox = NULL;
+}
 
 void screenrecorddirect()
 {
