@@ -3462,6 +3462,7 @@ char* string_shortname(char *tmpfilename, int mode)
 	return tmpfilename;
 }
 
+/*
 char* get_ipk_section()
 {
 	debug(60, "in");
@@ -3485,6 +3486,7 @@ char* get_ipk_list(char* section)
 	free(cmd); cmd = NULL;
 	return tmpstr;
 }
+*/
 
 /* disable cant handling 2 feeds....
 char* get_ipk_install(char* ipk)
