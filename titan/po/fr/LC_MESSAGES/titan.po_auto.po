@@ -98,7 +98,10 @@ msgstr ""
 #: mc_main.h:102 mc_main.h:192 global.h:3649 global.h:3913
 #: mc_audioplayer.h:314 mc_audioplayer.h:403 mc_videoplayer.h:358
 #: mc_videoplayer.h:443 mc_audioplayer.h:315 mc_audioplayer.h:404
-#: mc_videoplayer.h:359 mc_videoplayer.h:444
+#: mc_videoplayer.h:359 mc_videoplayer.h:444 panel_extensions.h:20
+#: panel_extensions.h:43 panel_extensions.h:46 panel_extensions.h:74
+#: panel_extensions.h:75 panel_extensions.h:89 panel_extensions.h:100
+#: panel_extensions.h:102 panel_extensions.h:103
 msgid "EXIT"
 msgstr ""
 
@@ -389,6 +392,7 @@ msgstr ""
 #: global.h:3649 global.h:3913 mc_audioplayer.h:314 mc_audioplayer.h:403
 #: mc_videoplayer.h:358 mc_videoplayer.h:443 mc_audioplayer.h:315
 #: mc_audioplayer.h:404 mc_videoplayer.h:359 mc_videoplayer.h:444
+#: panel_extensions.h:46 panel_extensions.h:103
 msgid "Message"
 msgstr ""
 
@@ -437,7 +441,10 @@ msgstr ""
 #: mc_main.h:97 mc_main.h:102 mc_main.h:192 global.h:3649 global.h:3913
 #: mc_audioplayer.h:314 mc_audioplayer.h:403 mc_videoplayer.h:358
 #: mc_videoplayer.h:443 mc_audioplayer.h:315 mc_audioplayer.h:404
-#: mc_videoplayer.h:359 mc_videoplayer.h:444
+#: mc_videoplayer.h:359 mc_videoplayer.h:444 panel_extensions.h:20
+#: panel_extensions.h:43 panel_extensions.h:46 panel_extensions.h:74
+#: panel_extensions.h:75 panel_extensions.h:89 panel_extensions.h:100
+#: panel_extensions.h:102 panel_extensions.h:103
 msgid "OK"
 msgstr ""
 
@@ -1280,25 +1287,26 @@ msgid "save network settings ?"
 msgstr ""
 
 #: panel_extensions.h:19 panel_extensions.h:42 panel_extensions.h:43
-#: panel_extensions.h:44
+#: panel_extensions.h:44 panel_extensions.h:20 panel_extensions.h:45
 msgid "Ipk Install Info"
 msgstr ""
 
-#: panel_extensions.h:19
+#: panel_extensions.h:19 panel_extensions.h:20
 msgid "No section found"
 msgstr ""
 
 #: panel_extensions.h:67 panel_extensions.h:68 panel_extensions.h:70
-#: panel_extensions.h:71
+#: panel_extensions.h:71 panel_extensions.h:74 panel_extensions.h:75
 msgid "Ipk Remove Info"
 msgstr ""
 
 #: panel_extensions.h:82 panel_extensions.h:93 panel_extensions.h:94
 #: panel_extensions.h:85 panel_extensions.h:96 panel_extensions.h:98
+#: panel_extensions.h:89 panel_extensions.h:100 panel_extensions.h:102
 msgid "Ipk Tmp Info"
 msgstr ""
 
-#: panel_extensions.h:82 panel_extensions.h:85
+#: panel_extensions.h:82 panel_extensions.h:85 panel_extensions.h:89
 msgid "No IPK found in /tmp"
 msgstr ""
 
@@ -5927,7 +5935,8 @@ msgstr ""
 msgid "skip "
 msgstr ""
 
-#: panel_extensions.h:45 panel_extensions.h:99
+#: panel_extensions.h:45 panel_extensions.h:99 panel_extensions.h:46
+#: panel_extensions.h:103
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
