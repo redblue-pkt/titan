@@ -103,6 +103,8 @@ msgstr ""
 #: panel_extensions.h:75 panel_extensions.h:89 panel_extensions.h:100
 #: panel_extensions.h:102 panel_extensions.h:103 panel_extensions.h:76
 #: panel_extensions.h:90 panel_extensions.h:101 panel_extensions.h:104
+#: panel_extensions.h:47 panel_extensions.h:77 panel_extensions.h:91
+#: panel_extensions.h:105
 msgid "EXIT"
 msgstr ""
 
@@ -394,6 +396,7 @@ msgstr ""
 #: mc_videoplayer.h:358 mc_videoplayer.h:443 mc_audioplayer.h:315
 #: mc_audioplayer.h:404 mc_videoplayer.h:359 mc_videoplayer.h:444
 #: panel_extensions.h:46 panel_extensions.h:103 panel_extensions.h:104
+#: panel_extensions.h:47 panel_extensions.h:105
 msgid "Message"
 msgstr ""
 
@@ -447,6 +450,8 @@ msgstr ""
 #: panel_extensions.h:75 panel_extensions.h:89 panel_extensions.h:100
 #: panel_extensions.h:102 panel_extensions.h:103 panel_extensions.h:76
 #: panel_extensions.h:90 panel_extensions.h:101 panel_extensions.h:104
+#: panel_extensions.h:47 panel_extensions.h:77 panel_extensions.h:91
+#: panel_extensions.h:105
 msgid "OK"
 msgstr ""
 
@@ -1290,6 +1295,7 @@ msgstr ""
 
 #: panel_extensions.h:19 panel_extensions.h:42 panel_extensions.h:43
 #: panel_extensions.h:44 panel_extensions.h:20 panel_extensions.h:45
+#: panel_extensions.h:46
 msgid "Ipk Install Info"
 msgstr ""
 
@@ -1299,7 +1305,7 @@ msgstr ""
 
 #: panel_extensions.h:67 panel_extensions.h:68 panel_extensions.h:70
 #: panel_extensions.h:71 panel_extensions.h:74 panel_extensions.h:75
-#: panel_extensions.h:76
+#: panel_extensions.h:76 panel_extensions.h:77
 msgid "Ipk Remove Info"
 msgstr ""
 
@@ -1307,11 +1313,12 @@ msgstr ""
 #: panel_extensions.h:85 panel_extensions.h:96 panel_extensions.h:98
 #: panel_extensions.h:89 panel_extensions.h:100 panel_extensions.h:102
 #: panel_extensions.h:90 panel_extensions.h:101 panel_extensions.h:103
+#: panel_extensions.h:91 panel_extensions.h:104
 msgid "Ipk Tmp Info"
 msgstr ""
 
 #: panel_extensions.h:82 panel_extensions.h:85 panel_extensions.h:89
-#: panel_extensions.h:90
+#: panel_extensions.h:90 panel_extensions.h:91
 msgid "No IPK found in /tmp"
 msgstr ""
 
@@ -5941,7 +5948,8 @@ msgid "skip "
 msgstr ""
 
 #: panel_extensions.h:45 panel_extensions.h:99 panel_extensions.h:46
-#: panel_extensions.h:103 panel_extensions.h:104
+#: panel_extensions.h:103 panel_extensions.h:104 panel_extensions.h:47
+#: panel_extensions.h:105
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
