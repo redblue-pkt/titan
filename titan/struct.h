@@ -290,6 +290,7 @@ struct download
 	char* page;
 	int port;
 	char* filename;
+	char* auth;
 	int connfd;
 	int proz;
 	unsigned int maxkb;

@@ -484,25 +484,29 @@ char *get_ip(char *host)
 	return ip;
 }
 
-char* createhttpheader(char *host, char *page)
+char* createhttpheader(char *host, char *page, char* auth)
 {
-	char *query;
+	char *query = NULL;
 	char *getpage = page;
-	char *tpl = "GET /%s HTTP/1.0\r\nHost: %s\r\nUser-Agent: %s\r\n\r\n";
 
-	if(getpage[0] == '/')
+	if(getpage[0] == '/') getpage = getpage + 1;
+
+	query = ostrcat("GET /", getpage, 0, 0);
+	query = ostrcat(query, " HTTP/1.0\r\nHost: ", 1, 0);
+	query = ostrcat(query, host, 1, 0);
+	query = ostrcat(query, "\r\nUser-Agent: ", 1, 0);
+	query = ostrcat(query, PROGNAME, 1, 0);
+	if(auth != NULL)
 	{
-		getpage = getpage + 1;
-		debug(1000 ,"removing leading \"/\", converting %s to %s\n", page, getpage);
+		query = ostrcat(query, "\r\nAuthorization: Basic ", 1, 0);
+		query = ostrcat(query, auth, 1, 0);
 	}
-	// -5 is to consider the %s %s %s in tpl and the ending \0
-	query = (char *)malloc(strlen(host) + strlen(getpage) + strlen(PROGNAME) + strlen(tpl) - 5);
-	sprintf(query, tpl, getpage, host, PROGNAME);
+	query = ostrcat(query, "\r\n\r\n", 1, 0);
 
 	return query;
 }
 
-char* gethttp(char* host, char* page, int port, char* filename, struct download* dnode)
+char* gethttp(char* host, char* page, int port, char* filename, char* auth, struct download* dnode)
 {
 	int sock = -1, ret = 0, count = 0;
 	unsigned int len = 0, maxret = 0;
@@ -552,7 +556,7 @@ char* gethttp(char* host, char* page, int port, char* filename, struct download*
 	free(ip);
 
 	if(dnode != NULL) dnode->connfd = sock;
-	header = createhttpheader(host, page);
+	header = createhttpheader(host, page, auth);
 
 	//Send the query to the server
 	ret = socksend(&sock, (unsigned char*)header, strlen(header), 5000 * 1000);
@@ -670,7 +674,7 @@ char* gethttp(char* host, char* page, int port, char* filename, struct download*
 void gethttpstruct(struct stimerthread* timernode, struct download* node, int flag)
 {
 	if(node != NULL)
-		gethttp(node->host, node->page, node->port, node->filename, node);
+		gethttp(node->host, node->page, node->port, node->filename, node->auth, node);
 }
 
 #endif
