@@ -52,6 +52,7 @@ void screenpanel_extensions(int mode)
 			free(tmpstr); tmpstr = NULL;
 			freeipkg();
 			screenpanel_extensions(0);
+		}
 		else
 			freeipkg();
 		
