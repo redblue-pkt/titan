@@ -7,10 +7,11 @@ void screenpanel_extensions(int mode)
 	char* section = NULL;
 	char* file = NULL;
 	char* tmpstr = NULL;
-
 	if (mode == 0)
 	{
-		free(get_ipk_update());
+//		free(get_ipk_update());
+		ipkg_update();
+		ipkg_list();
 		tmpstr = get_ipk_section();
 		free(section); section = NULL;
 //		char* section = ostrcat(section, ipklistbox(NULL, tmpstr, NULL, "Ipk Install - select section", "%pluginpath%/panel/skin/", 1), 1, 1);
@@ -49,8 +50,11 @@ void screenpanel_extensions(int mode)
 			free(section); section = NULL;
 			free(file); file = NULL;
 			free(tmpstr); tmpstr = NULL;
+			freeipkg();
 			screenpanel_extensions(0);
-		}
+		else
+			freeipkg();
+		
 	}
 	else if (mode == 1)
 	{
