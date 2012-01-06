@@ -95,7 +95,9 @@ msgstr ""
 #: global.h:3564 global.h:3826 global.h:3643 global.h:3905 global.h:3908
 #: global.h:3907 global.h:3646 global.h:3910 rectimer.h:1127 rectimer.h:1139
 #: play.h:501 mc_main.h:66 mc_main.h:87 mc_main.h:92 mc_main.h:97
-#: mc_main.h:102 mc_main.h:192
+#: mc_main.h:102 mc_main.h:192 global.h:3649 global.h:3913
+#: mc_audioplayer.h:314 mc_audioplayer.h:403 mc_videoplayer.h:358
+#: mc_videoplayer.h:443
 msgid "EXIT"
 msgstr ""
 
@@ -383,6 +385,8 @@ msgstr ""
 #: global.h:3643 global.h:3905 global.h:3908 global.h:3907 global.h:3646
 #: global.h:3910 rectimer.h:1127 rectimer.h:1139 play.h:501 mc_main.h:66
 #: mc_main.h:87 mc_main.h:92 mc_main.h:97 mc_main.h:102 mc_main.h:192
+#: global.h:3649 global.h:3913 mc_audioplayer.h:314 mc_audioplayer.h:403
+#: mc_videoplayer.h:358 mc_videoplayer.h:443
 msgid "Message"
 msgstr ""
 
@@ -428,7 +432,9 @@ msgstr ""
 #: global.h:3564 global.h:3826 global.h:3643 global.h:3905 global.h:3908
 #: global.h:3907 global.h:3646 global.h:3910 play.h:495 rectimer.h:1127
 #: rectimer.h:1139 play.h:501 mc_main.h:66 mc_main.h:87 mc_main.h:92
-#: mc_main.h:97 mc_main.h:102 mc_main.h:192
+#: mc_main.h:97 mc_main.h:102 mc_main.h:192 global.h:3649 global.h:3913
+#: mc_audioplayer.h:314 mc_audioplayer.h:403 mc_videoplayer.h:358
+#: mc_videoplayer.h:443
 msgid "OK"
 msgstr ""
 
@@ -438,7 +444,7 @@ msgstr ""
 #: global.h:3738 global.h:3735 global.h:3739 global.h:3742 global.h:3746
 #: global.h:3751 global.h:3761 global.h:3763 global.h:3768 global.h:3771
 #: global.h:3772 global.h:3788 global.h:3785 global.h:3826 global.h:3905
-#: global.h:3908 global.h:3907 global.h:3910
+#: global.h:3908 global.h:3907 global.h:3910 global.h:3913
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -912,12 +918,14 @@ msgid "user unicable"
 msgstr ""
 
 #: mc_audioplayer.h:174 mc_pictureplayer.h:117 mc_videoplayer.h:167
+#: mc_audioplayer.h:177 mc_videoplayer.h:170
 msgid "Repeat-On"
 msgstr ""
 
 #: mc_audioplayer.h:181 mc_audioplayer.h:275 mc_pictureplayer.h:124
 #: mc_pictureplayer.h:251 mc_videoplayer.h:174 mc_videoplayer.h:297
-#: plugins_mc_skin.xml.h:34 skins_mc_skin.xml.h:34
+#: plugins_mc_skin.xml.h:34 skins_mc_skin.xml.h:34 mc_audioplayer.h:184
+#: mc_audioplayer.h:278 mc_videoplayer.h:177 mc_videoplayer.h:300
 msgid "Repeat"
 msgstr ""
 
@@ -925,18 +933,21 @@ msgstr ""
 #: mc_global.h:141 mc_global.h:197 mc_pictureplayer.h:211
 #: mc_pictureplayer.h:249 mc_pictureplayer.h:352 mc_videoplayer.h:258
 #: mc_videoplayer.h:295 mc_videoplayer.h:406 plugins_mc_skin.xml.h:20
-#: skins_mc_skin.xml.h:20 mc_videoplayer.h:414
+#: skins_mc_skin.xml.h:20 mc_videoplayer.h:414 mc_audioplayer.h:245
+#: mc_audioplayer.h:276 mc_audioplayer.h:382 mc_videoplayer.h:261
+#: mc_videoplayer.h:298 mc_videoplayer.h:417
 msgid "Filelist-Mode"
 msgstr ""
 
 #: mc_audioplayer.h:274 mc_global.h:333 mc_global.h:361 mc_pictureplayer.h:250
 #: mc_videoplayer.h:296 plugins_mc_skin.xml.h:33 skins_mc_skin.xml.h:33
+#: mc_audioplayer.h:277 mc_videoplayer.h:299
 msgid "Random"
 msgstr ""
 
 #: mc_audioplayer.h:292 mc_global.h:79 mc_global.h:476 mc_global.h:674
 #: mc_global.h:688 mc_pictureplayer.h:268 mc_videoplayer.h:320
-#: mc_videoplayer.h:328
+#: mc_videoplayer.h:328 mc_audioplayer.h:295 mc_videoplayer.h:331
 msgid "Playlist-Mode"
 msgstr ""
 
@@ -945,7 +956,8 @@ msgstr ""
 #: mc_pictureplayer.h:383 mc_videoplayer.h:347 mc_videoplayer.h:432 play.h:482
 #: play.h:486 play.h:491 play.h:496 play.h:495 play.h:498 play.h:499
 #: play.h:490 play.h:497 mc_videoplayer.h:355 mc_videoplayer.h:440 play.h:494
-#: play.h:501
+#: play.h:501 mc_audioplayer.h:314 mc_audioplayer.h:403 mc_videoplayer.h:358
+#: mc_videoplayer.h:443
 msgid "Can't start playback !"
 msgstr ""
 
@@ -5833,7 +5845,7 @@ msgid "576i50"
 msgstr ""
 
 #: global.h:3501 global.h:3503 global.h:3507 global.h:3510 global.h:3526
-#: global.h:3523 global.h:3564 global.h:3643 global.h:3646
+#: global.h:3523 global.h:3564 global.h:3643 global.h:3646 global.h:3649
 msgid "check your Secret Feed !"
 msgstr ""
 
