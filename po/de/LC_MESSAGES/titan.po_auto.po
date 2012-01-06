@@ -104,7 +104,7 @@ msgstr ""
 #: panel_extensions.h:102 panel_extensions.h:103 panel_extensions.h:76
 #: panel_extensions.h:90 panel_extensions.h:101 panel_extensions.h:104
 #: panel_extensions.h:47 panel_extensions.h:77 panel_extensions.h:91
-#: panel_extensions.h:105
+#: panel_extensions.h:105 record.h:972
 msgid "EXIT"
 msgstr ""
 
@@ -396,7 +396,7 @@ msgstr ""
 #: mc_videoplayer.h:358 mc_videoplayer.h:443 mc_audioplayer.h:315
 #: mc_audioplayer.h:404 mc_videoplayer.h:359 mc_videoplayer.h:444
 #: panel_extensions.h:46 panel_extensions.h:103 panel_extensions.h:104
-#: panel_extensions.h:47 panel_extensions.h:105
+#: panel_extensions.h:47 panel_extensions.h:105 record.h:972
 msgid "Message"
 msgstr ""
 
@@ -2458,7 +2458,7 @@ msgstr ""
 msgid "Timer Record start !\n"
 msgstr ""
 
-#: record.h:932 record.h:934 record.h:938
+#: record.h:932 record.h:934 record.h:938 record.h:972
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr ""
 
@@ -5822,11 +5822,11 @@ msgstr ""
 msgid "ABC/abc"
 msgstr ""
 
-#: record.h:894 record.h:898
+#: record.h:894 record.h:898 record.h:895 record.h:932
 msgid "stop"
 msgstr ""
 
-#: record.h:898 record.h:902
+#: record.h:898 record.h:902 record.h:936
 msgid "change"
 msgstr ""
 
