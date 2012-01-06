@@ -1,7 +1,7 @@
 #ifndef DOWNLOAD_H
 #define DOWNLOAD_H
 
-int screendownload(char* title, char* host, char* page, int port, char* filename, int flag)
+int screendownload(char* title, char* host, char* page, int port, char* filename, char* auth, int flag)
 {
 	debug(1000, "in");
 	int rcret = -1, tmpscreencalc = 0, count = 0, ret = 0, fromthread = 0;
