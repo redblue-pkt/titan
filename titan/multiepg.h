@@ -522,6 +522,15 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			servicecheckret(servicestart((struct channel*)listbox->select->handle, NULL, NULL, 0), 0);
 			break;
 		}
+		if(rcret == getrcconfigint("rcepg", NULL))
+		{
+			if(listbox->select != NULL)
+			{
+				clearscreen(multiepg);
+				screenepg((struct channel*)listbox->select->handle, (struct epg*)listbox->select->handle1, 1);
+				drawscreen(multiepg, 0);
+			}
+		}
 		
 		if(flag == 0 && epgscreenconf == 2 && rcret == getrcconfigint("rcgreen", NULL))
 		{
