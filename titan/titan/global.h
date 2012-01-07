@@ -15,11 +15,11 @@ long getcpuid()
 //	printf("mac3: %s\n",mac);
 	mac = ostrcat("0x", mac, 0, 1);
 //	printf("mac4: %s\n",mac);
-	long mac_int = strtol(mac, NULL, 16);
+	long long mac_int = strtol(mac, NULL, 16);
 	free(mac),mac = NULL;
-//	printf("serial: %ld\n",mac_int + 7594107530);
-	long serial = mac_int + 7594107530;
-	printf("serial: %ld\n",serial);
+//	printf("serial: %lld\n",mac_int + 7594107530);
+	long long serial = mac_int + 7594107530;
+	printf("serial: %lld\n",serial);
 	return serial;
 }
 	
