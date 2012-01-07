@@ -1,7 +1,7 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-long getcpuid()
+long long getcpuid()
 {
 	struct inetwork* net = getinetworkbydevice("eth0");
 
