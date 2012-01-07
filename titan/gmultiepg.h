@@ -513,11 +513,20 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		channellistbox->aktpage = listbox->aktpage;
 
 		if((rcret == getrcconfigint("rcexit", NULL)) || (rcret == getrcconfigint("rcepg", NULL))) break;
-		if(rcret == getrcconfigint("rcinfo", NULL)) break;
+		//if(rcret == getrcconfigint("rcinfo", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			servicecheckret(servicestart((struct channel*)listbox->select->handle, NULL, NULL, 0), 0);
 			break;
+		}
+		if(rcret == getrcconfigint("rcinfo", NULL))
+		{
+			if(listbox->select != NULL)
+			{
+				clearscreen(gmultiepg);
+				screenepg((struct channel*)listbox->select->handle, (struct epg*)listbox->select->handle1, 1);
+				drawscreen(gmultiepg, 0);
+			}
 		}
 		
 		if(flag == 0 && epgscreenconf == 3 && rcret == getrcconfigint("rcgreen", NULL))

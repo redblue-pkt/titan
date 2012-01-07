@@ -516,13 +516,13 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		status.screencalc = 0;
 
 		if((rcret == getrcconfigint("rcexit", NULL)) || (rcret == getrcconfigint("rcepg", NULL))) break;
-		if(rcret == getrcconfigint("rcinfo", NULL)) break;
+		//if(rcret == getrcconfigint("rcinfo", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			servicecheckret(servicestart((struct channel*)listbox->select->handle, NULL, NULL, 0), 0);
 			break;
 		}
-		if(rcret == getrcconfigint("rcepg", NULL))
+		if(rcret == getrcconfigint("rcinfo", NULL))
 		{
 			if(listbox->select != NULL)
 			{
