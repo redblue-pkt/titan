@@ -8,7 +8,7 @@ long getcpuid()
 	struct skin* tmp = NULL;
 	char* mac = NULL;
 	if(net != NULL)
-		mac = ostrcat(mac, net->mac, 1 0);
+		mac = ostrcat(mac, net->mac, 1, 0);
 //	printf("mac1: %s\n",mac);
 	stringreplacechar(mac, ':', ' ');
 //	printf("mac2: %s\n",mac);
@@ -19,7 +19,7 @@ long getcpuid()
 	long mac_int = strtol(mac, NULL, 16);
 	free(mac),mac = NULL;
 //	printf("serial: %ld\n",mac_int + 7594107530);
-	mac_int = mac_int + 75941;
+	mac_int = mac_int + 7594107530;
 	printf("serial: %ld\n",mac_int);
 	return mac_int;
 }
