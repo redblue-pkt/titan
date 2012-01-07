@@ -1,26 +1,29 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-unsigned long long int getcpuid()
+char* getcpuid()
 {
 	struct inetwork* net = getinetworkbydevice("eth0");
 
-	char* mac = NULL;
+	char* tmpstr = NULL;
 	if(net != NULL)
-		mac = ostrcat(mac, net->mac, 1, 0);
-//	printf("mac1: %s\n",mac);
-	stringreplacechar(mac, ':', ' ');
-//	printf("mac2: %s\n",mac);
-	string_remove_whitechars(mac);
-//	printf("mac3: %s\n",mac);
-//	mac = ostrcat("0x", mac, 0, 1);
-//	printf("mac4: %s\n",mac);
-	unsigned long long int mac_int = strtol(mac, NULL, 16);
-	free(mac),mac = NULL;
-//	printf("serial: %llu\n",mac_int + 7594107530);
-	unsigned long long int serial = mac_int + 7594107530;
-	printf("serial: %llud\n",serial);
-	return serial;
+		tmpstr = ostrcat(tmpstr, net->mac, 1, 0);
+	stringreplacechar(tmpstr, ':', ' ');
+	string_remove_whitechars(tmpstr);
+	
+	int tmpstr_int = strtol(tmpstr , NULL, 16);
+	free(tmpstr), tmpstr = NULL;
+//	printf("tmpstr_int x:%x\n", tmpstr_int);
+//	printf("tmpstr_int X:%X\n", tmpstr_int);
+//	printf("tmpstr_int d:%d\n", tmpstr_int);
+//	printf("tmpstr_int ill:%ull\n", tmpstr_int);
+
+	int serial = tmpstr_int + 0x7594107530; //cpuid
+	char buffer [50];
+
+	sprintf(buffer,"%ull",serial);
+	printf("serial: %s\n", buffer);
+	return buffer;
 }
 	
 int getsysinfo()
