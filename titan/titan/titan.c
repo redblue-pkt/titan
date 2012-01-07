@@ -684,7 +684,8 @@ firstwizzardstep1:
 			err("set sigsegjump");
 		}
 	}
-
+	// for test
+	getcpuid();
 	screeninfobar();
 
 	//for testign screens
