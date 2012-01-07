@@ -108,7 +108,7 @@ msgstr ""
 #: panel_extensions.h:47 panel_extensions.h:77 panel_extensions.h:91
 #: panel_extensions.h:105 record.h:972 skin_default_skin.xml.h:176
 #: global.h:3671 global.h:3935 global.h:3674 global.h:3938 global.h:3939
-#: global.h:3682 global.h:3946
+#: global.h:3682 global.h:3946 global.h:3696 global.h:3960
 msgid "EXIT"
 msgstr ""
 
@@ -407,7 +407,7 @@ msgstr ""
 #: panel_extensions.h:46 panel_extensions.h:103 panel_extensions.h:104
 #: panel_extensions.h:47 panel_extensions.h:105 record.h:972 global.h:3671
 #: global.h:3935 global.h:3674 global.h:3938 global.h:3939 global.h:3682
-#: global.h:3946
+#: global.h:3946 global.h:3696 global.h:3960
 msgid "Message"
 msgstr ""
 
@@ -464,7 +464,7 @@ msgstr ""
 #: panel_extensions.h:47 panel_extensions.h:77 panel_extensions.h:91
 #: panel_extensions.h:105 skin_default_skin.xml.h:270 global.h:3671
 #: global.h:3935 global.h:3674 global.h:3938 global.h:3675 global.h:3939
-#: global.h:3682 global.h:3946
+#: global.h:3682 global.h:3946 global.h:3696 global.h:3960
 msgid "OK"
 msgstr ""
 
@@ -475,7 +475,7 @@ msgstr ""
 #: global.h:3751 global.h:3761 global.h:3763 global.h:3768 global.h:3771
 #: global.h:3772 global.h:3788 global.h:3785 global.h:3826 global.h:3905
 #: global.h:3908 global.h:3907 global.h:3910 global.h:3913 global.h:3935
-#: global.h:3938 global.h:3939 global.h:3946
+#: global.h:3938 global.h:3939 global.h:3946 global.h:3960
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -6055,7 +6055,7 @@ msgstr ""
 
 #: global.h:3501 global.h:3503 global.h:3507 global.h:3510 global.h:3526
 #: global.h:3523 global.h:3564 global.h:3643 global.h:3646 global.h:3649
-#: global.h:3671 global.h:3674 global.h:3675 global.h:3682
+#: global.h:3671 global.h:3674 global.h:3675 global.h:3682 global.h:3696
 msgid "check your Secret Feed !"
 msgstr ""
 
