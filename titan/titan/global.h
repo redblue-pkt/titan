@@ -11,17 +11,24 @@ char* getcpuid()
 	stringreplacechar(tmpstr, ':', ' ');
 	string_remove_whitechars(tmpstr);
 	tmpstr = ostrcat("0x", tmpstr, 0, 1);
-	
+	debug(11, "tmpstr_int s:%s", tmpstr);
+
 	int tmpstr_int = strtol(tmpstr , NULL, 16);
 	free(tmpstr), tmpstr = NULL;
+	debug(11, "tmpstr_int x:%x", tmpstr_int);
+	debug(11, "tmpstr_int X:%X", tmpstr_int);
+	debug(11, "tmpstr_int d:%d", tmpstr_int);
+	debug(11, "tmpstr_int ull:%ull", tmpstr_int);
+						
 //	printf("tmpstr_int x:%x\n", tmpstr_int);
 //	printf("tmpstr_int X:%X\n", tmpstr_int);
 //	printf("tmpstr_int d:%d\n", tmpstr_int);
 //	printf("tmpstr_int ill:%ull\n", tmpstr_int);
 
 	int serial = tmpstr_int + 0x7594107530; //cpuid
+	debug(11, "serial ull:%ull", serial);	
 	char buffer [50];
-
+	debug(11, "tmpstr_int ull:%ull", tmpstr_int);
 	sprintf(buffer,"%ull",serial);
 	printf("serial: %s\n", buffer);
 	return buffer;
