@@ -968,7 +968,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 		free(tmpstr); tmpstr = NULL;
 	}
 	else
-		setchoiceboxselection(after, "0");
+		setchoiceboxselection(after, getconfig("def_rectimer_after", NULL));
 		
 	changemask(pincode, "0000");
 	if(newnode == 0)
