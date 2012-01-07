@@ -185,7 +185,7 @@ int checkmenuforbox(char *name)
 		if(ostrcmp("vfdisplay", name) == 0) return 0;
 		//if(ostrcmp("rotorsettings", name) == 0) return 0;
 		if(ostrcmp("satconfig", name) == 0) return 0;
-		if(ostrcmp("satfinder", name) == 0) return 0;
+		//if(ostrcmp("satfinder", name) == 0) return 0;
 		if(ostrcmp("configurehdd", name) == 0) return 0;
 		if(ostrcmp("panel_settings_overclocking", name) == 0) return 0;
 		if(ostrcmp("panel_settings_fancontrol", name) == 0) return 0;
