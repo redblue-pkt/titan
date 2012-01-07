@@ -1,6 +1,28 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+long getcpuid()
+{
+	struct inetwork* net = getinetworkbydevice("eth0");
+
+	struct skin* tmp = NULL;
+	char* mac = NULL;
+	if(net != NULL)
+		mac = net->mac;
+//	printf("mac1: %s\n",mac);
+	stringreplacechar(mac, ':', ' ');
+//	printf("mac2: %s\n",mac);
+	string_remove_whitechars(mac);
+//	printf("mac3: %s\n",mac);
+	mac = ostrcat("0x", mac, 0, 1);
+//	printf("mac4: %s\n",mac);
+	long mac_int = strtol(mac, NULL, 16);
+//	printf("serial: %ld\n",mac_int + 7594107530);
+	mac_int = mac_int + 7594107530;
+	printf("serial: %ld\n",mac_int);
+	return mac_int;
+}
+	
 int getsysinfo()
 {
 	char* tmpstr = NULL;
