@@ -357,6 +357,11 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screenpossetup();
 	}
+	else if(ostrcmp("satfinder", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensatfinder();
+	}
 	else if(ostrcmp("cinterface", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
