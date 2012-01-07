@@ -6,24 +6,25 @@ void screenpanel_feed()
 	char* tmpstr = NULL, *line = NULL, *lastline = NULL;
 	char* pos = NULL;
 
-	lastline = readsys(getconfig("feed", NULL), 3); //line3
-	lastline = string_replace("src/gz secret http://", "", lastline, 1);
+	tmpstr = readsys(getconfig("feed", NULL), 3); //line3
+	tmpstr = string_replace("src/gz secret http://", "", tmpstr, 1);
 	
-	if(lastline != NULL)
-		pos = strchr(lastline, '/');
+	if(tmpstr != NULL)
+		pos = strchr(tmpstr, '/');
 	if(pos != NULL)
-	{
 		pos[0] = '\0';
-		lastline = ostrcat("", fixip(lastline, 0), 0, 1);
-	}
-	
-	if(lastline == NULL || ostrcmp(lastline, "") == 0 || ostrcmp(lastline, "\n") == 0)
-		lastline = ostrcat(lastline, "000.000.000.000", 1, 0);
-		
-	lastline = numinput(_("Feed"), lastline, "000.000.000.000", 1);
 
+	if(tmpstr == NULL || ostrcmp(tmpstr, "") == 0 || ostrcmp(tmpstr, "\n") == 0)
+		tmpstr = ostrcat(tmpstr, "000.000.000.000", 1, 0);
+		
+	lastline = numinput(_("Feed"), tmpstr, "000.000.000.000", 1);
+	
 	if(lastline != NULL)
 	{
+		free(tmpstr); tmpstr = NULL;
+		tmpstr = fixip(lastline, 1);
+		free(lastline); lastline = tmpstr;
+
 		tmpstr = readsys(getconfig("feed", NULL), 1); //line1
 		if(tmpstr == NULL || (tmpstr != NULL && strlen(tmpstr) == 0)) 
 			line = ostrcat(line, "#", 1, 0);
@@ -52,7 +53,7 @@ void screenpanel_feed()
 			tmpstr = ostrcat(line, NULL, 0, 0);
 		}
 
-		tmpstr = ostrcat(tmpstr, fixip(lastline, 1), 1, 0);
+		tmpstr = ostrcat(tmpstr, lastline, 1, 0);
 		tmpstr = ostrcat(tmpstr, "/svn/ipk/sh4/titan", 1, 0);
 		writesys(getconfig("feed", NULL), tmpstr, 0);
 	}
