@@ -18,7 +18,7 @@ unsigned long long getcpuid()
 	unsigned long long mac_int = strtol(mac, NULL, 16);
 	free(mac),mac = NULL;
 //	printf("serial: %llu\n",mac_int + 7594107530);
-	unsigned long long serial = mac_int + 7594107530;
+	unsigned long long serial = mac_int + 7594107530 / 2;
 	printf("serial: %llu\n",serial);
 	return serial;
 }
