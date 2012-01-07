@@ -139,6 +139,7 @@ struct caservice caservice[MAXCASERVICE];
 #include "powerofftimer.h"
 #include "skinselector.h"
 #include "play.h"
+#include "satfinder.h"
 #include "menu.h"
 #include "channelbynr.h"
 #include "infobar.h"
