@@ -8,7 +8,7 @@ long getcpuid()
 	struct skin* tmp = NULL;
 	char* mac = NULL;
 	if(net != NULL)
-		mac = net->mac;
+		mac = ostrcat(mac, net->mac, 1 0);
 //	printf("mac1: %s\n",mac);
 	stringreplacechar(mac, ':', ' ');
 //	printf("mac2: %s\n",mac);
@@ -17,6 +17,7 @@ long getcpuid()
 	mac = ostrcat("0x", mac, 0, 1);
 //	printf("mac4: %s\n",mac);
 	long mac_int = strtol(mac, NULL, 16);
+	free(mac),mac = NULL;
 //	printf("serial: %ld\n",mac_int + 7594107530);
 	mac_int = mac_int + 7594107530;
 	printf("serial: %ld\n",mac_int);
@@ -207,7 +208,7 @@ int checkmenuforbox(char *name)
 		if(ostrcmp("vfdisplay", name) == 0) return 0;
 		//if(ostrcmp("rotorsettings", name) == 0) return 0;
 		if(ostrcmp("satconfig", name) == 0) return 0;
-		//if(ostrcmp("satfinder", name) == 0) return 0;
+		if(ostrcmp("satfinder", name) == 0) return 0;
 		if(ostrcmp("configurehdd", name) == 0) return 0;
 		if(ostrcmp("panel_settings_overclocking", name) == 0) return 0;
 		if(ostrcmp("panel_settings_fancontrol", name) == 0) return 0;
