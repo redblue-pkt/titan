@@ -373,6 +373,7 @@ int writeallconfig(int flag);
 int checkemu();
 int setvol(int value);
 int getvol();
+char* stringreplacechar(char *str, char c1, char c2);
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);

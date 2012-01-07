@@ -13,12 +13,12 @@ unsigned long long int getcpuid()
 //	printf("mac2: %s\n",mac);
 	string_remove_whitechars(mac);
 //	printf("mac3: %s\n",mac);
-	mac = ostrcat("0x", mac, 0, 1);
+//	mac = ostrcat("0x", mac, 0, 1);
 //	printf("mac4: %s\n",mac);
 	unsigned long long int mac_int = strtol(mac, NULL, 16);
 	free(mac),mac = NULL;
 //	printf("serial: %llu\n",mac_int + 7594107530);
-	unsigned long long int serial = mac_int + 7594107530 / 2;
+	unsigned long long int serial = mac_int + 7594107530;
 	printf("serial: %llud\n",serial);
 	return serial;
 }
