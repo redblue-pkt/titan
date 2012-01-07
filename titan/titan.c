@@ -688,8 +688,7 @@ firstwizzardstep1:
 	char* cpu = NULL;
 	cpu = getcpuid();
 	char* msg = NULL;
-	msg = ostrcat("For next Update please contakt Atemio and send this Serial Number and your bill !!\n\nTunerID SerialNr: ", tmpstr, 0, 1);
-	msg = ostrcat(msg, cpu, 1, 0);
+	msg = ostrcat("For next Update please contakt Atemio and send this Serial Number and your bill !!\n\nTunerID SerialNr: ", cpu, 0, 0);
 	textbox(_("Info"), _(msg), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 400, 0, 0);
 	free(msg), msg = NULL;
 			
