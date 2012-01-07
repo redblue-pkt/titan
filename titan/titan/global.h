@@ -19,7 +19,7 @@ long getcpuid()
 	long mac_int = strtol(mac, NULL, 16);
 	free(mac),mac = NULL;
 //	printf("serial: %ld\n",mac_int + 7594107530);
-	mac_int = mac_int + 7594107530;
+	mac_int = mac_int + 75941;
 	printf("serial: %ld\n",mac_int);
 	return mac_int;
 }
