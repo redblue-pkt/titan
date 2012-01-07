@@ -28,6 +28,7 @@ void screenadjust()
 	struct skin* skip79 = getscreennode(adjust, "skip79");
 	struct skin* nocamsg = getscreennode(adjust, "nocamsg");
 	struct skin* autochangechannelname = getscreennode(adjust, "autochangechannelname");
+	struct skin* def_rectimer_after = getscreennode(adjust, "def_rectimer_after");
 	
 	struct skin* tmp = NULL;
 
@@ -122,6 +123,12 @@ void screenadjust()
 	addchoicebox(autochangechannelname, "1", _("yes"));
 	setchoiceboxselection(autochangechannelname, getconfig("autochangechannelname", NULL));
 
+	addchoicebox(def_rectimer_after, "0", _("auto"));
+	addchoicebox(def_rectimer_after, "1", _("nothing"));
+	addchoicebox(def_rectimer_after, "2", _("standby"));
+	addchoicebox(def_rectimer_after, "3", _("power off"));
+	setchoiceboxselection(def_rectimer_after, getconfig("def_rectimer_after", NULL));
+
 	drawscreen(adjust, 0);
 	addscreenrc(adjust, listbox);
 
@@ -142,7 +149,7 @@ void screenadjust()
 			addconfigscreen("spinnerspeed", spinnerspeed);
 			status.spinnerspeed = getconfigint("spinnerspeed", NULL);
 			addconfigscreen("spinnertime", spinnertime);
-		        status.spinnertime = getconfigint("spinnertime", NULL);
+			status.spinnertime = getconfigint("spinnertime", NULL);
 			addconfigscreen("hangtime", hangtime);
 			status.hangtime = getconfigint("hangtime", NULL);
 			addconfigscreencheck("nozapclear", nozapclear, "0");
@@ -169,6 +176,7 @@ void screenadjust()
 			addconfigscreen("skip79", skip79);
 			addconfigscreencheck("nocamsg", nocamsg, "0");
 			addconfigscreencheck("autochangechannelname", autochangechannelname, "0");
+			addconfigscreencheck("def_rectimer_after", def_rectimer_after, "0");
 
 			break;
 		}
