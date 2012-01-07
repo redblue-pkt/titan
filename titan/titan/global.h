@@ -10,6 +10,7 @@ char* getcpuid()
 		tmpstr = ostrcat(tmpstr, net->mac, 1, 0);
 	stringreplacechar(tmpstr, ':', ' ');
 	string_remove_whitechars(tmpstr);
+	tmpstr = ostrcat("0x", tmpstr, 0, 1);
 	
 	int tmpstr_int = strtol(tmpstr , NULL, 16);
 	free(tmpstr), tmpstr = NULL;
