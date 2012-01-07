@@ -5,7 +5,6 @@ long getcpuid()
 {
 	struct inetwork* net = getinetworkbydevice("eth0");
 
-	struct skin* tmp = NULL;
 	char* mac = NULL;
 	if(net != NULL)
 		mac = ostrcat(mac, net->mac, 1, 0);
