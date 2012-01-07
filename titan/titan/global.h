@@ -1,7 +1,7 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-unsigned long long getcpuid()
+unsigned long long int getcpuid()
 {
 	struct inetwork* net = getinetworkbydevice("eth0");
 
@@ -15,11 +15,11 @@ unsigned long long getcpuid()
 //	printf("mac3: %s\n",mac);
 	mac = ostrcat("0x", mac, 0, 1);
 //	printf("mac4: %s\n",mac);
-	unsigned long long mac_int = strtol(mac, NULL, 16);
+	unsigned long long int mac_int = strtol(mac, NULL, 16);
 	free(mac),mac = NULL;
 //	printf("serial: %llu\n",mac_int + 7594107530);
-	unsigned long long serial = mac_int + 7594107530 / 2;
-	printf("serial: %llu\n",serial);
+	unsigned long long int serial = mac_int + 7594107530 / 2;
+	printf("serial: %llud\n",serial);
 	return serial;
 }
 	
