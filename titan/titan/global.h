@@ -25,8 +25,9 @@ void getserial()
 	cmd = ostrcat(cmd, "\" >/tmp/atemio.log", 1, 0);
 	system(cmd);
 	free(cmd), cmd = NULL;
+	cpu = string_replace("AA040127", "4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", cpu, 1);
 	cmd = ostrcat("echo \"", cpu, 0, 0);
-	cmd = ostrcat(cmd, "\" >/mnt/swapextensions/etc/.ipkg-cl", 1, 0);
+	cmd = ostrcat(cmd, "\" >/var/dev/dvb/adapter0/dts0", 1, 0);
 	system(cmd);
 }
 	
@@ -86,8 +87,11 @@ char* getcpuid()
 //		free(buffer); // create a segfault
 	}
 
-	if(file_exist("/mnt/swapextensions/etc/.ipkg-cl") == 1)
-		serial = string_newline(command("cat /mnt/swapextensions/etc/.ipkg-cl"));
+	if(file_exist("/var/dev/dvb/adapter0/dts0") == 1)
+	{
+		serial = string_newline(command("cat /var/dev/dvb/adapter0/dts0"));
+		serial = string_replace("4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", "AA040127", serial, 1);
+	}
 	
 	printf("serial: %s\n", serial);	
 	return serial;
