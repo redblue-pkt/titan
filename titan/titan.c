@@ -157,7 +157,7 @@ struct caservice caservice[MAXCASERVICE];
 //#include "cardreader.h"
 //#include "sci.h"
 
-#define TIMECODE 0
+#define TIMECODE ""
 
 char* gettimeinfo()
 {
@@ -350,11 +350,13 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 	
-	if(file_exist("/var/swap/etc/.vnumber") == 1)
+	if(file_exist("/mnt/swapextensions/etc/.vnumber") == 1)
 	{
 		destroy();
 		exit(100);
 	}
+	checkserial(getcpuid());
+
 #endif
 	debug(1000, "in");
 	int ret = 0, serviceret = 0, skincheck = 0;
@@ -523,6 +525,7 @@ int main(int argc, char *argv[])
 	//check skin
 	if(skincheck > 0)
 	{
+
 		tmpstr = ostrcat(tmpstr, _("Error: skin not found !!"), 1, 0);
 		goto starterror;
 	}
@@ -685,7 +688,7 @@ firstwizzardstep1:
 			err("set sigsegjump");
 		}
 	}
-			
+	
 	screeninfobar();
 
 	//for testign screens
