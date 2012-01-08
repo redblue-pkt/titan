@@ -3793,7 +3793,7 @@ void get_ipk_update()
 		{
 			textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 			free(cmd), cmd = NULL;
-			return cmd;
+			return;
 		}
 	}
 	
