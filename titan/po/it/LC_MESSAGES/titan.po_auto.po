@@ -109,7 +109,13 @@ msgstr ""
 #: panel_extensions.h:105 record.h:972 skin_default_skin.xml.h:176
 #: global.h:3671 global.h:3935 global.h:3674 global.h:3938 global.h:3939
 #: global.h:3682 global.h:3946 global.h:3696 global.h:3960 global.h:3712
-#: global.h:3976
+#: global.h:3976 global.h:3713 global.h:3977 global.h:3715 global.h:3979
+#: global.h:4002 global.h:3740 global.h:4004 global.h:3741 global.h:4005
+#: global.h:3744 global.h:4008 global.h:3749 global.h:4013 global.h:3750
+#: global.h:4014 global.h:3754 global.h:4018 global.h:3756 global.h:4020
+#: global.h:3758 global.h:4022 global.h:3747 global.h:4011 global.h:21
+#: global.h:3999 panel_main.h:245 panel_system.h:11 panel_system.h:22
+#: panel_system.h:303 panel_system.h:310
 msgid "EXIT"
 msgstr ""
 
@@ -409,6 +415,12 @@ msgstr ""
 #: panel_extensions.h:47 panel_extensions.h:105 record.h:972 global.h:3671
 #: global.h:3935 global.h:3674 global.h:3938 global.h:3939 global.h:3682
 #: global.h:3946 global.h:3696 global.h:3960 global.h:3712 global.h:3976
+#: global.h:3713 global.h:3977 global.h:3715 global.h:3979 global.h:4002
+#: global.h:3740 global.h:4004 global.h:3741 global.h:4005 global.h:3744
+#: global.h:4008 global.h:3749 global.h:4013 global.h:3750 global.h:4014
+#: global.h:3754 global.h:4018 global.h:3756 global.h:4020 global.h:3758
+#: global.h:4022 global.h:3747 global.h:4011 global.h:3999 panel_main.h:245
+#: panel_system.h:11 panel_system.h:22 panel_system.h:303 panel_system.h:310
 msgid "Message"
 msgstr ""
 
@@ -466,7 +478,13 @@ msgstr ""
 #: panel_extensions.h:105 skin_default_skin.xml.h:270 global.h:3671
 #: global.h:3935 global.h:3674 global.h:3938 global.h:3675 global.h:3939
 #: global.h:3682 global.h:3946 global.h:3696 global.h:3960 global.h:3712
-#: global.h:3976
+#: global.h:3976 global.h:3713 global.h:3977 global.h:3715 global.h:3979
+#: global.h:3738 global.h:4002 global.h:3740 global.h:4004 global.h:3741
+#: global.h:4005 global.h:3744 global.h:4008 global.h:3749 global.h:4013
+#: global.h:3750 global.h:4014 global.h:3754 global.h:4018 global.h:3756
+#: global.h:4020 global.h:3758 global.h:4022 global.h:3747 global.h:4011
+#: global.h:21 global.h:3735 global.h:3999 panel_main.h:245 panel_system.h:11
+#: panel_system.h:22 panel_system.h:303 panel_system.h:310
 msgid "OK"
 msgstr ""
 
@@ -478,6 +496,9 @@ msgstr ""
 #: global.h:3772 global.h:3788 global.h:3785 global.h:3826 global.h:3905
 #: global.h:3908 global.h:3907 global.h:3910 global.h:3913 global.h:3935
 #: global.h:3938 global.h:3939 global.h:3946 global.h:3960 global.h:3976
+#: global.h:3977 global.h:3979 global.h:4002 global.h:4004 global.h:4005
+#: global.h:4008 global.h:4013 global.h:4014 global.h:4018 global.h:4020
+#: global.h:4022 global.h:4011 global.h:3999
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -1068,7 +1089,8 @@ msgstr ""
 #: plugins_imdb_skin.xml.h:18 skins_imdb_skin.xml.h:18
 #: plugins_callmonitor1_skin.xml.h:17 skins_callmonitor1_skin.xml.h:17
 #: skin_default_skin.xml.h:451 skin_default_skin.xml.h:456
-#: skin_default_skin.xml.h:457
+#: skin_default_skin.xml.h:457 plugins_panel_skin.xml.h:83
+#: skins_panel_skin.xml.h:83
 msgid ""
 msgstr ""
 
@@ -1086,7 +1108,7 @@ msgid "Install QtBrowser Ipk first !"
 msgstr ""
 
 #: mc_main.h:175 menu.h:64 panel_main.h:35 panel_main.h:241 panel_main.h:243
-#: mc_main.h:192
+#: mc_main.h:192 panel_main.h:245
 msgid "Menu not implemented !"
 msgstr ""
 
@@ -1543,7 +1565,8 @@ msgstr ""
 
 #: panel_settings_autostart.h:211 plugins_panel_skin.xml.h:71
 #: skins_panel_skin.xml.h:71 plugins_panel_skin.xml.h:72
-#: skins_panel_skin.xml.h:72
+#: skins_panel_skin.xml.h:72 plugins_panel_skin.xml.h:73
+#: skins_panel_skin.xml.h:73
 msgid "Swap"
 msgstr ""
 
@@ -1754,23 +1777,23 @@ msgstr ""
 msgid "Create Backup"
 msgstr ""
 
-#: panel_system.h:6
+#: panel_system.h:6 panel_system.h:11
 msgid ""
 "Do you really want to erase all datas and backups from Swap?\n"
 "The Box will reboot and the erase will be started!"
 msgstr ""
 
-#: panel_system.h:17
+#: panel_system.h:17 panel_system.h:22
 msgid ""
 "Do you really want to start the Wizard?\n"
 "The Box will reboot and the Wizard will be started!"
 msgstr ""
 
-#: panel_system.h:113
+#: panel_system.h:113 panel_system.h:118
 msgid "non-version"
 msgstr ""
 
-#: panel_system.h:297 panel_system.h:298
+#: panel_system.h:297 panel_system.h:298 panel_system.h:303
 msgid "Error file not supported"
 msgstr ""
 
@@ -1932,7 +1955,8 @@ msgstr ""
 #: skins_mc_skin.xml.h:39 skins_panel_skin.xml.h:10 skins_panel_skin.xml.h:66
 #: skin_default_skin.xml.h:38 skin_default_skin.xml.h:39
 #: plugins_panel_skin.xml.h:67 skins_panel_skin.xml.h:67
-#: skin_default_skin.xml.h:40
+#: skin_default_skin.xml.h:40 plugins_panel_skin.xml.h:68
+#: skins_panel_skin.xml.h:68
 msgid "Settings"
 msgstr ""
 
@@ -2091,7 +2115,7 @@ msgstr ""
 msgid "FanControl"
 msgstr ""
 
-#: plugins_panel_skin.xml.h:6 skins_panel_skin.xml.h:6
+#: plugins_panel_skin.xml.h:6 skins_panel_skin.xml.h:6 global.h:21
 msgid "Info"
 msgstr ""
 
@@ -2114,6 +2138,7 @@ msgstr ""
 #: plugins_panel_skin.xml.h:11 plugins_panel_skin.xml.h:69
 #: skins_panel_skin.xml.h:11 skins_panel_skin.xml.h:69
 #: plugins_panel_skin.xml.h:70 skins_panel_skin.xml.h:70
+#: plugins_panel_skin.xml.h:71 skins_panel_skin.xml.h:71
 msgid "Softcam Panel"
 msgstr ""
 
@@ -2132,6 +2157,7 @@ msgstr ""
 #: skin_default_skin.xml.h:389 skin_default_skin.xml.h:390
 #: skin_default_skin.xml.h:391 skin_default_skin.xml.h:46
 #: skin_default_skin.xml.h:395 skin_default_skin.xml.h:396
+#: plugins_panel_skin.xml.h:74 skins_panel_skin.xml.h:74
 msgid "System"
 msgstr ""
 
@@ -2300,56 +2326,67 @@ msgstr ""
 
 #: plugins_panel_skin.xml.h:67 skins_panel_skin.xml.h:67
 #: plugins_panel_skin.xml.h:68 skins_panel_skin.xml.h:68
+#: plugins_panel_skin.xml.h:69 skins_panel_skin.xml.h:69
 msgid "Settings backup/restore"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:68 skins_panel_skin.xml.h:68
 #: plugins_panel_skin.xml.h:69 skins_panel_skin.xml.h:69
+#: plugins_panel_skin.xml.h:70 skins_panel_skin.xml.h:70
 msgid "Softcam auswahl:"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:70 skins_panel_skin.xml.h:70
 #: plugins_panel_skin.xml.h:71 skins_panel_skin.xml.h:71
+#: plugins_panel_skin.xml.h:72 skins_panel_skin.xml.h:72
 msgid "speed"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:73 skins_panel_skin.xml.h:73
 #: plugins_panel_skin.xml.h:74 skins_panel_skin.xml.h:74
+#: plugins_panel_skin.xml.h:75 skins_panel_skin.xml.h:75
 msgid "System Infos"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:74 skins_panel_skin.xml.h:74
 #: plugins_panel_skin.xml.h:75 skins_panel_skin.xml.h:75
+#: plugins_panel_skin.xml.h:76 skins_panel_skin.xml.h:76
 msgid "Test"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:75 skins_panel_skin.xml.h:75
 #: plugins_panel_skin.xml.h:76 skins_panel_skin.xml.h:76
+#: plugins_panel_skin.xml.h:77 skins_panel_skin.xml.h:77
 msgid "update"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:76 skins_panel_skin.xml.h:76
 #: plugins_panel_skin.xml.h:77 skins_panel_skin.xml.h:77
+#: plugins_panel_skin.xml.h:78 skins_panel_skin.xml.h:78
 msgid "Usb Device"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:77 skins_panel_skin.xml.h:77
 #: plugins_panel_skin.xml.h:78 skins_panel_skin.xml.h:78
+#: plugins_panel_skin.xml.h:79 skins_panel_skin.xml.h:79
 msgid "Usbupdate (online)"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:78 skins_panel_skin.xml.h:78
 #: plugins_panel_skin.xml.h:79 skins_panel_skin.xml.h:79
+#: plugins_panel_skin.xml.h:80 skins_panel_skin.xml.h:80
 msgid "Usbupdate (tmp)"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:79 skins_panel_skin.xml.h:79
 #: plugins_panel_skin.xml.h:80 skins_panel_skin.xml.h:80
+#: plugins_panel_skin.xml.h:81 skins_panel_skin.xml.h:81
 msgid "Videotune"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:80 skins_panel_skin.xml.h:80
 #: plugins_panel_skin.xml.h:81 skins_panel_skin.xml.h:81
+#: plugins_panel_skin.xml.h:82 skins_panel_skin.xml.h:82
 msgid "Wizard"
 msgstr ""
 
@@ -6058,7 +6095,9 @@ msgstr ""
 #: global.h:3501 global.h:3503 global.h:3507 global.h:3510 global.h:3526
 #: global.h:3523 global.h:3564 global.h:3643 global.h:3646 global.h:3649
 #: global.h:3671 global.h:3674 global.h:3675 global.h:3682 global.h:3696
-#: global.h:3712
+#: global.h:3712 global.h:3713 global.h:3715 global.h:3738 global.h:3740
+#: global.h:3741 global.h:3744 global.h:3749 global.h:3750 global.h:3754
+#: global.h:3756 global.h:3758 global.h:3747 global.h:3735
 msgid "check your Secret Feed !"
 msgstr ""
 
@@ -6087,34 +6126,40 @@ msgid "skip back"
 msgstr ""
 
 #: panel_system.h:194 panel_system.h:251 panel_system.h:195 panel_system.h:252
+#: panel_system.h:200 panel_system.h:257
 msgid "starting Kernel Update ?"
 msgstr ""
 
 #: panel_system.h:201 panel_system.h:257 panel_system.h:202 panel_system.h:258
+#: panel_system.h:207 panel_system.h:263
 msgid "starting Fw Update ?"
 msgstr ""
 
-#: panel_system.h:208 panel_system.h:209
+#: panel_system.h:208 panel_system.h:209 panel_system.h:214
 msgid "starting Root Update ?"
 msgstr ""
 
 #: panel_system.h:215 panel_system.h:269 panel_system.h:216 panel_system.h:270
+#: panel_system.h:221 panel_system.h:275
 msgid "starting Var Update ?"
 msgstr ""
 
 #: panel_system.h:222 panel_system.h:275 panel_system.h:223 panel_system.h:276
+#: panel_system.h:228 panel_system.h:281
 msgid "starting Full Update ?"
 msgstr ""
 
 #: panel_system.h:231 panel_system.h:283 panel_system.h:232 panel_system.h:284
+#: panel_system.h:237 panel_system.h:289
 msgid "starting Usb Update ?"
 msgstr ""
 
 #: panel_system.h:240 panel_system.h:291 panel_system.h:241 panel_system.h:292
+#: panel_system.h:246 panel_system.h:297
 msgid "starting Fullusb Update ?"
 msgstr ""
 
-#: panel_system.h:263 panel_system.h:264
+#: panel_system.h:263 panel_system.h:264 panel_system.h:269
 msgid "starting Root Update starten ?"
 msgstr ""
 
@@ -6349,4 +6394,20 @@ msgstr ""
 
 #: skin_default_skin.xml.h:360
 msgid "Set action after rec"
+msgstr ""
+
+#: global.h:17
+msgid ""
+"For next Update please contakt Atemio and send this Serial Number and your "
+"bill !!\n"
+"\n"
+"TunerID SerialNr:"
+msgstr ""
+
+#: global.h:20
+msgid "Email  \t\tinfo@atemio.de"
+msgstr ""
+
+#: plugins_panel_skin.xml.h:67 skins_panel_skin.xml.h:67
+msgid "Serial Information"
 msgstr ""
