@@ -3851,7 +3851,7 @@ void get_ipk_update()
 	debug(60, "out");
 	ipkg_update();
 //	return command("ipkg update");
-	return
+	return;
 }
 
 char* get_ipk_info(char* section)
