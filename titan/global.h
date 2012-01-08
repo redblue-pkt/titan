@@ -19,7 +19,7 @@ void checkserial(char* input)
 	for( i = 0; i < max; i++){
 		int count1 = 0;
 		struct splitstr* ret1 = NULL;
-		ret1 = strsplit((&ret[i])->part), ",", &count1);	
+		ret1 = strsplit((&ret[i])->part, ",", &count1);	
 	
 		if(ostrcmp(input, (&ret1[0])->part) == 0)
 		{
