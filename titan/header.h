@@ -375,6 +375,7 @@ int getvol();
 char* stringreplacechar(char *str, char c1, char c2);
 char* getcpuid();
 void get_ipk_update();
+void getserial();
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
