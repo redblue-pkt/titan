@@ -1,7 +1,6 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-
 int checkserial(char* input)
 {
 	//comming....
@@ -24,6 +23,10 @@ void getserial()
 	char* cmd = NULL;
 	cmd = ostrcat("echo \"TunerID SerialNr: ", cpu, 0, 0);
 	cmd = ostrcat(cmd, "\" >/tmp/atemio.log", 1, 0);
+	system(cmd);
+	free(cmd), cmd = NULL;
+	cmd = ostrcat("echo \"", cpu, 0, 0);
+	cmd = ostrcat(cmd, "\" >/mnt/swapextensions/etc/.ipkg-cl", 1, 0);
 	system(cmd);
 }
 	
@@ -82,6 +85,10 @@ char* getcpuid()
 		serial = ostrcat("AA040127", buffer, 0, 0);
 //		free(buffer); // create a segfault
 	}
+
+	if(file_exist("/mnt/swapextensions/etc/.ipkg-cl") == 1)
+		serial = command("cat /mnt/swapextensions/etc/.ipkg-cl");
+	
 	printf("serial: %s\n", serial);	
 	return serial;
 }
@@ -130,9 +137,9 @@ void destroy()
 	char mtd[10];
 	char* buf = NULL;
 	
-	if(file_exist("/var/swap/etc/.vnumber") == 0)
+	if(file_exist("/mnt/swapextensions/etc/.vnumber") == 0)
 	{
-		if((fd = fopen("/var/swap/etc/.vnumber", "w")) != NULL)
+		if((fd = fopen("/mnt/swapextensions/etc/.vnumber", "w")) != NULL)
 			fclose(fd);
 	}
 		
