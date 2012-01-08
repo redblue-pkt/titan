@@ -1,10 +1,41 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-int checkserial(char* input)
+void checkserial(char* input)
 {
-	//comming....
-	return 1;
+	char* authfile = NULL;
+//	gethttp(get_ip("atemio.dyndns.tv"), "/svn/auth/trustlist", 80, "/tmp/.cachefile", "YXRlbWlvOkZIWlZCR2huemZ2RWhGREZUR3p1aWY1Njc2emhqR1RVR0JOSGpt", NULL);
+	gethttp("atemio.dyndns.tv", "/svn/auth/trustlist", 80, "/tmp/.cachefile", "YXRlbWlvOkZIWlZCR2huemZ2RWhGREZUR3p1aWY1Njc2emhqR1RVR0JOSGpt", NULL);
+
+	authfile = command("cat /tmp/.cachefile");
+	unlink("/tmp/.cachefile");
+//	printf("authfile: %s\n",authfile);
+//	printf("input: %s\n",input);
+
+	int count = 0;
+	int i;
+//	char* tmpstr = NULL;
+//	tmpstr = ostrcat("", authfile, 0, 0);
+	struct splitstr* ret = NULL;
+	ret = strsplit(authfile, "\n", &count);
+	int max = count;
+	status.securety = 0;
+
+	for( i = 0; i < max; i++){
+		if(ostrcmp(input, (&ret[i])->part) == 0)
+		{
+			printf("Serial check ok: disable securety\n");
+			status.securety = 1;
+			break;
+		}	
+	}
+//	if(string_find(input,authfile))
+//		printf("found serial in trustlist\n");
+//		return 0;
+//	else
+//		printf("error, not found serial in trustlist\n");
+//	//comming....
+//	return 1;
 }
 
 void getserial()
@@ -271,6 +302,27 @@ int checkemu()
 //can use to disable a menu for a box (node type must be MENU)
 int checkmenuforbox(char *name)
 {
+
+	if(status.securety == 0)
+	{
+		if(ostrcmp("panel_system_update_flash_online", name) == 0) return 0;
+		if(ostrcmp("panel_system_update_flash_tmp", name) == 0) return 0;
+		if(ostrcmp("panel_system_eraseswap", name) == 0) return 0;
+		if(ostrcmp("panel_extensions", name) == 0) return 0;
+		if(ostrcmp("mediacenter", name) == 0) return 0;
+		if(ostrcmp("browser", name) == 0) return 0;
+		if(ostrcmp("callmon_main", name) == 0) return 0;
+		if(ostrcmp("imdb", name) == 0) return 0;
+		if(ostrcmp("keylock", name) == 0) return 0;
+		if(ostrcmp("permtime", name) == 0) return 0;
+		if(ostrcmp("networkbrowser", name) == 0) return 0;
+		if(ostrcmp("mboxinfo", name) == 0) return 0;
+		if(ostrcmp("keylock", name) == 0) return 0;
+		if(ostrcmp("plugins", name) == 0) return 0;
+		if(ostrcmp("skinselect", name) == 0) return 0;
+		status.expertmodus = 0;
+	}		
+
 	if(status.expertmodus > 9) return 1;
 	if((checkbox("ATEMIO500") == 1) || (checkbox("ATEMIO510") == 1))
 	{
