@@ -4,7 +4,7 @@
 int checkserial(char* input)
 {
 	//comming....
-	return 1
+	return 1;
 {
 
 void getserial()
