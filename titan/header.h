@@ -374,6 +374,7 @@ int checkemu();
 int setvol(int value);
 int getvol();
 char* stringreplacechar(char *str, char c1, char c2);
+char* getcpuid();
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
