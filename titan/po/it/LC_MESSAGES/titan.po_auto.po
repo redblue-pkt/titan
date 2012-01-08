@@ -116,7 +116,8 @@ msgstr ""
 #: global.h:3758 global.h:4022 global.h:3747 global.h:4011 global.h:21
 #: global.h:3999 panel_main.h:245 panel_system.h:11 panel_system.h:22
 #: panel_system.h:303 panel_system.h:310 global.h:20 global.h:4006
-#: global.h:4010
+#: global.h:4010 global.h:3748 global.h:4012 panel_system.h:309
+#: panel_system.h:316
 msgid "EXIT"
 msgstr ""
 
@@ -422,7 +423,8 @@ msgstr ""
 #: global.h:3754 global.h:4018 global.h:3756 global.h:4020 global.h:3758
 #: global.h:4022 global.h:3747 global.h:4011 global.h:3999 panel_main.h:245
 #: panel_system.h:11 panel_system.h:22 panel_system.h:303 panel_system.h:310
-#: global.h:4006 global.h:4010
+#: global.h:4006 global.h:4010 global.h:3748 global.h:4012 panel_system.h:309
+#: panel_system.h:316
 msgid "Message"
 msgstr ""
 
@@ -487,7 +489,8 @@ msgstr ""
 #: global.h:4020 global.h:3758 global.h:4022 global.h:3747 global.h:4011
 #: global.h:21 global.h:3735 global.h:3999 panel_main.h:245 panel_system.h:11
 #: panel_system.h:22 panel_system.h:303 panel_system.h:310 global.h:20
-#: global.h:3742 global.h:4006 global.h:3746 global.h:4010
+#: global.h:3742 global.h:4006 global.h:3746 global.h:4010 global.h:3748
+#: global.h:4012 panel_system.h:309 panel_system.h:316
 msgid "OK"
 msgstr ""
 
@@ -502,6 +505,7 @@ msgstr ""
 #: global.h:3977 global.h:3979 global.h:4002 global.h:4004 global.h:4005
 #: global.h:4008 global.h:4013 global.h:4014 global.h:4018 global.h:4020
 #: global.h:4022 global.h:4011 global.h:3999 global.h:4006 global.h:4010
+#: global.h:4012
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -1792,11 +1796,11 @@ msgid ""
 "The Box will reboot and the Wizard will be started!"
 msgstr ""
 
-#: panel_system.h:113 panel_system.h:118
+#: panel_system.h:113 panel_system.h:118 panel_system.h:124
 msgid "non-version"
 msgstr ""
 
-#: panel_system.h:297 panel_system.h:298 panel_system.h:303
+#: panel_system.h:297 panel_system.h:298 panel_system.h:303 panel_system.h:309
 msgid "Error file not supported"
 msgstr ""
 
@@ -6101,7 +6105,7 @@ msgstr ""
 #: global.h:3712 global.h:3713 global.h:3715 global.h:3738 global.h:3740
 #: global.h:3741 global.h:3744 global.h:3749 global.h:3750 global.h:3754
 #: global.h:3756 global.h:3758 global.h:3747 global.h:3735 global.h:3742
-#: global.h:3746
+#: global.h:3746 global.h:3748
 msgid "check your Secret Feed !"
 msgstr ""
 
@@ -6130,40 +6134,40 @@ msgid "skip back"
 msgstr ""
 
 #: panel_system.h:194 panel_system.h:251 panel_system.h:195 panel_system.h:252
-#: panel_system.h:200 panel_system.h:257
+#: panel_system.h:200 panel_system.h:257 panel_system.h:206 panel_system.h:263
 msgid "starting Kernel Update ?"
 msgstr ""
 
 #: panel_system.h:201 panel_system.h:257 panel_system.h:202 panel_system.h:258
-#: panel_system.h:207 panel_system.h:263
+#: panel_system.h:207 panel_system.h:263 panel_system.h:213 panel_system.h:269
 msgid "starting Fw Update ?"
 msgstr ""
 
-#: panel_system.h:208 panel_system.h:209 panel_system.h:214
+#: panel_system.h:208 panel_system.h:209 panel_system.h:214 panel_system.h:220
 msgid "starting Root Update ?"
 msgstr ""
 
 #: panel_system.h:215 panel_system.h:269 panel_system.h:216 panel_system.h:270
-#: panel_system.h:221 panel_system.h:275
+#: panel_system.h:221 panel_system.h:275 panel_system.h:227 panel_system.h:281
 msgid "starting Var Update ?"
 msgstr ""
 
 #: panel_system.h:222 panel_system.h:275 panel_system.h:223 panel_system.h:276
-#: panel_system.h:228 panel_system.h:281
+#: panel_system.h:228 panel_system.h:281 panel_system.h:234 panel_system.h:287
 msgid "starting Full Update ?"
 msgstr ""
 
 #: panel_system.h:231 panel_system.h:283 panel_system.h:232 panel_system.h:284
-#: panel_system.h:237 panel_system.h:289
+#: panel_system.h:237 panel_system.h:289 panel_system.h:243 panel_system.h:295
 msgid "starting Usb Update ?"
 msgstr ""
 
 #: panel_system.h:240 panel_system.h:291 panel_system.h:241 panel_system.h:292
-#: panel_system.h:246 panel_system.h:297
+#: panel_system.h:246 panel_system.h:297 panel_system.h:252 panel_system.h:303
 msgid "starting Fullusb Update ?"
 msgstr ""
 
-#: panel_system.h:263 panel_system.h:264 panel_system.h:269
+#: panel_system.h:263 panel_system.h:264 panel_system.h:269 panel_system.h:275
 msgid "starting Root Update starten ?"
 msgstr ""
 
@@ -6414,4 +6418,12 @@ msgstr ""
 
 #: plugins_panel_skin.xml.h:67 skins_panel_skin.xml.h:67
 msgid "Serial Information"
+msgstr ""
+
+#: global.h:16
+msgid ""
+"For next Update please contact Atemio and send this Serial Number and your "
+"bill !!\n"
+"\n"
+"TunerID SerialNr:"
 msgstr ""
