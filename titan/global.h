@@ -17,12 +17,17 @@ void checkserial(char* input)
 	status.securety = 0;
 
 	for( i = 0; i < max; i++){
-		if(ostrcmp(input, (&ret[i])->part) == 0)
+		int count1 = 0;
+		struct splitstr* ret1 = NULL;
+		ret1 = strsplit((&ret[i])->part), ",", &count1);	
+	
+		if(ostrcmp(input, (&ret1[0])->part) == 0)
 		{
 			printf("Serial check ok: disable securety\n");
 			status.securety = 1;
 			break;
-		}	
+		}
+		free(ret1),ret1 = NULL;
 	}
 	free(ret),ret = NULL;
 }
