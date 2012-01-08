@@ -9,8 +9,9 @@ void screenpanel_extensions(int mode)
 	char* tmpstr = NULL;
 	if (mode == 0)
 	{
-//		free(get_ipk_update());
-		ipkg_update();
+		free(get_ipk_update());
+		get_ipk_update();
+//		ipkg_update();
 		ipkg_list();
 		tmpstr = get_ipk_section();
 		free(section); section = NULL;
