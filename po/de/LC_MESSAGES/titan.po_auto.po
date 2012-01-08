@@ -119,7 +119,7 @@ msgstr ""
 #: global.h:4010 global.h:3748 global.h:4012 panel_system.h:309
 #: panel_system.h:316 global.h:30 global.h:32 global.h:3760 global.h:4024
 #: global.h:50 global.h:3786 global.h:4050 global.h:51 global.h:3787
-#: global.h:4051
+#: global.h:4051 global.h:3799 global.h:4063
 msgid "EXIT"
 msgstr ""
 
@@ -427,7 +427,7 @@ msgstr ""
 #: panel_system.h:11 panel_system.h:22 panel_system.h:303 panel_system.h:310
 #: global.h:4006 global.h:4010 global.h:3748 global.h:4012 panel_system.h:309
 #: panel_system.h:316 global.h:3760 global.h:4024 global.h:3786 global.h:4050
-#: global.h:3787 global.h:4051
+#: global.h:3787 global.h:4051 global.h:3799 global.h:4063
 msgid "Message"
 msgstr ""
 
@@ -495,7 +495,7 @@ msgstr ""
 #: global.h:3742 global.h:4006 global.h:3746 global.h:4010 global.h:3748
 #: global.h:4012 panel_system.h:309 panel_system.h:316 global.h:30 global.h:32
 #: global.h:3760 global.h:4024 global.h:50 global.h:3786 global.h:4050
-#: global.h:51 global.h:3787 global.h:4051
+#: global.h:51 global.h:3787 global.h:4051 global.h:3799 global.h:4063
 msgid "OK"
 msgstr ""
 
@@ -510,7 +510,7 @@ msgstr ""
 #: global.h:3977 global.h:3979 global.h:4002 global.h:4004 global.h:4005
 #: global.h:4008 global.h:4013 global.h:4014 global.h:4018 global.h:4020
 #: global.h:4022 global.h:4011 global.h:3999 global.h:4006 global.h:4010
-#: global.h:4012 global.h:4024 global.h:4050 global.h:4051
+#: global.h:4012 global.h:4024 global.h:4050 global.h:4051 global.h:4063
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -6112,6 +6112,7 @@ msgstr ""
 #: global.h:3741 global.h:3744 global.h:3749 global.h:3750 global.h:3754
 #: global.h:3756 global.h:3758 global.h:3747 global.h:3735 global.h:3742
 #: global.h:3746 global.h:3748 global.h:3760 global.h:3786 global.h:3787
+#: global.h:3799
 msgid "check your Secret Feed !"
 msgstr ""
 
