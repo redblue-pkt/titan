@@ -47,8 +47,14 @@ void screenpanel_system_update(int mode)
 	char* cmd = NULL;
 	
 	if (mode == 0)
-	{
-		system("/sbin/update.sh getfilelist");
+	{	
+/*
+		char* lokalkey = NULL;
+		lokalkey = getcpuid();
+		atemiokeylist = wget http://gib-key-trustliste.de/keyliste
+		if(!string_find(lokalkey,atemiokeylist)) 
+*/
+			system("/sbin/update.sh getfilelist");
 		skinname = "panel_system_update_flash_online_menu";
 		filemask = ostrcat(filemask, "*.img", 1, 0);
 		filepath = ostrcat(filepath, "/tmp/online", 1, 0);
