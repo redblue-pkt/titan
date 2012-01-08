@@ -1,6 +1,7 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+
 int checkserial(char* input)
 {
 	//comming....
