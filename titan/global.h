@@ -3771,7 +3771,7 @@ char* get_ipk_remove(char* ipk)
 	return tmpstr;
 }
 
-char* get_ipk_update()
+void get_ipk_update()
 {
 	debug(60, "in");
 	char* tmpstr1 = NULL;
@@ -3841,15 +3841,17 @@ char* get_ipk_update()
 	}
 
 	free(cmd), cmd = NULL;
-	debug(60, "remove /var/lib/ipkg/cross");
-	unlink("/var/lib/ipkg/cross");
-	debug(60, "remove /var/lib/ipkg/secret");
-	unlink("/var/lib/ipkg/secret");
-	debug(60, "remove /var/lib/ipkg/titan");
-	unlink("/var/lib/ipkg/titan");
-	sleep(1);	
+//	debug(60, "remove /var/lib/ipkg/cross");
+//	unlink("/var/lib/ipkg/cross");
+//	debug(60, "remove /var/lib/ipkg/secret");
+//	unlink("/var/lib/ipkg/secret");
+//	debug(60, "remove /var/lib/ipkg/titan");
+//	unlink("/var/lib/ipkg/titan");
+//	sleep(1);	
 	debug(60, "out");
-	return command("ipkg update");
+	ipkg_update();
+//	return command("ipkg update");
+	return
 }
 
 char* get_ipk_info(char* section)
