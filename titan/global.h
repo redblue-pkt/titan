@@ -87,7 +87,7 @@ char* getcpuid()
 	}
 
 	if(file_exist("/mnt/swapextensions/etc/.ipkg-cl") == 1)
-		serial = command("cat /mnt/swapextensions/etc/.ipkg-cl");
+		serial = string_newline(command("cat /mnt/swapextensions/etc/.ipkg-cl"));
 	
 	printf("serial: %s\n", serial);	
 	return serial;
