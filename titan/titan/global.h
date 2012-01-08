@@ -4,18 +4,13 @@
 void checkserial(char* input)
 {
 	char* authfile = NULL;
-//	gethttp(get_ip("atemio.dyndns.tv"), "/svn/auth/trustlist", 80, "/tmp/.cachefile", "YXRlbWlvOkZIWlZCR2huemZ2RWhGREZUR3p1aWY1Njc2emhqR1RVR0JOSGpt", NULL);
 	gethttp("atemio.dyndns.tv", "/svn/auth/trustlist", 80, "/tmp/.cachefile", "YXRlbWlvOkZIWlZCR2huemZ2RWhGREZUR3p1aWY1Njc2emhqR1RVR0JOSGpt", NULL);
 
 	authfile = command("cat /tmp/.cachefile");
 	unlink("/tmp/.cachefile");
-//	printf("authfile: %s\n",authfile);
-//	printf("input: %s\n",input);
 
 	int count = 0;
 	int i;
-//	char* tmpstr = NULL;
-//	tmpstr = ostrcat("", authfile, 0, 0);
 	struct splitstr* ret = NULL;
 	ret = strsplit(authfile, "\n", &count);
 	int max = count;
@@ -29,13 +24,7 @@ void checkserial(char* input)
 			break;
 		}	
 	}
-//	if(string_find(input,authfile))
-//		printf("found serial in trustlist\n");
-//		return 0;
-//	else
-//		printf("error, not found serial in trustlist\n");
-//	//comming....
-//	return 1;
+	free(ret),ret = NULL;
 }
 
 void getserial()
