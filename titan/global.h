@@ -26,6 +26,7 @@ void getserial()
 	system(cmd);
 	free(cmd), cmd = NULL;
 	cpu = string_replace("AA040127", "4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", cpu, 1);
+	cpu = ostrcat(cpu, "5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662", 1, 0);
 	cmd = ostrcat("echo \"", cpu, 0, 0);
 	cmd = ostrcat(cmd, "\" >/var/dev/dvb/adapter0/dts0", 1, 0);
 	system(cmd);
@@ -91,10 +92,11 @@ char* getcpuid()
 	{
 		serial = string_newline(command("cat /var/dev/dvb/adapter0/dts0"));
 		serial = string_replace("4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", "AA040127", serial, 1);
+		serial = string_replace("5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662", "", serial, 1);
 	}
 	
 	printf("serial: %s\n", serial);	
-	return serial;
+	return string_newline(serial);
 }
 		
 
