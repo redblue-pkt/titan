@@ -6427,3 +6427,11 @@ msgid ""
 "\n"
 "TunerID SerialNr:"
 msgstr ""
+
+#: global.h:16
+msgid ""
+"For next Update please contact Atemio and send this Serial Number and your "
+"invoice !!\n"
+"\n"
+"TunerID SerialNr:"
+msgstr ""
