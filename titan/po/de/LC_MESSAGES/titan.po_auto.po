@@ -123,7 +123,7 @@ msgstr ""
 #: global.h:40 global.h:3789 global.h:4053 panel_main.h:244 global.h:45
 #: global.h:3794 global.h:4058 keyactions.h:202 global.h:4060
 #: panel_extensions.h:21 panel_extensions.h:48 panel_extensions.h:78
-#: panel_extensions.h:92 panel_extensions.h:106
+#: panel_extensions.h:92 panel_extensions.h:106 keyactions.h:221
 msgid "EXIT"
 msgstr ""
 
@@ -434,7 +434,7 @@ msgstr ""
 #: global.h:3787 global.h:4051 global.h:3799 global.h:4063 global.h:3800
 #: global.h:4064 global.h:3789 global.h:4053 panel_main.h:244 global.h:3794
 #: global.h:4058 keyactions.h:202 global.h:4060 panel_extensions.h:48
-#: panel_extensions.h:106
+#: panel_extensions.h:106 keyactions.h:221
 msgid "Message"
 msgstr ""
 
@@ -507,6 +507,7 @@ msgstr ""
 #: panel_main.h:244 global.h:45 global.h:3794 global.h:4058 keyactions.h:202
 #: global.h:4060 panel_extensions.h:21 panel_extensions.h:48
 #: panel_extensions.h:78 panel_extensions.h:92 panel_extensions.h:106
+#: keyactions.h:221
 msgid "OK"
 msgstr ""
 
@@ -523,6 +524,7 @@ msgstr ""
 #: global.h:4022 global.h:4011 global.h:3999 global.h:4006 global.h:4010
 #: global.h:4012 global.h:4024 global.h:4050 global.h:4051 global.h:4063
 #: global.h:4064 global.h:4053 global.h:4058 keyactions.h:202 global.h:4060
+#: keyactions.h:221
 msgid "ERROR cant read res"
 msgstr ""
 
