@@ -1,39 +1,90 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-char* getcpuid()
+int checkserial(char* input)
+	//comming....
+	return 1
 {
-	struct inetwork* net = getinetworkbydevice("eth0");
 
-	char* tmpstr = NULL;
-	if(net != NULL)
-		tmpstr = ostrcat(tmpstr, net->mac, 1, 0);
-	stringreplacechar(tmpstr, ':', ' ');
-	string_remove_whitechars(tmpstr);
-	tmpstr = ostrcat("0x", tmpstr, 0, 1);
-	debug(11, "tmpstr_int s:%s", tmpstr);
+void getserial()
+{
+	char* cpu = NULL;
+	cpu = getcpuid();
 
-	int tmpstr_int = strtol(tmpstr , NULL, 16);
-	free(tmpstr), tmpstr = NULL;
-	debug(11, "tmpstr_int x:%x", tmpstr_int);
-	debug(11, "tmpstr_int X:%X", tmpstr_int);
-	debug(11, "tmpstr_int d:%d", tmpstr_int);
-	debug(11, "tmpstr_int ull:%ull", tmpstr_int);
-						
-//	printf("tmpstr_int x:%x\n", tmpstr_int);
-//	printf("tmpstr_int X:%X\n", tmpstr_int);
-//	printf("tmpstr_int d:%d\n", tmpstr_int);
-//	printf("tmpstr_int ill:%ull\n", tmpstr_int);
-
-	int serial = tmpstr_int + 0x7594107530; //cpuid
-	debug(11, "serial ull:%ull", serial);	
-	char buffer [50];
-	debug(11, "tmpstr_int ull:%ull", tmpstr_int);
-	sprintf(buffer,"%ull",serial);
-	printf("serial: %s\n", buffer);
-	return buffer;
+	char* msg = NULL;
+	msg = ostrcat(_("For next Update please contakt Atemio and send this Serial Number and your bill !!\n\nTunerID SerialNr:"), " ", 0, 0);
+	msg = ostrcat(msg, cpu, 1, 0);
+	msg = ostrcat(msg, "\n\n", 1, 0);
+	msg = ostrcat(msg, _("Email  		info@atemio.de"), 1, 0);
+	textbox(_("Info"), _(msg), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 400, 0, 0);	
+	free(msg), msg = NULL;
+	
+	char* cmd = NULL;
+	cmd = ostrcat("echo \"TunerID SerialNr: ", cpu, 0, 0);
+	cmd = ostrcat(cmd, "\" >/tmp/atemio.log", 1, 0);
+	system(cmd);
 }
 	
+char* getcpuid()
+{
+	char* serial = NULL;
+	struct inetwork* net = getinetworkbydevice("eth0");
+
+	if(net != NULL)
+	{
+		int mac_int;
+		int mac1_int;
+		int mac2_int;
+	
+		char* mac = NULL;
+		mac = ostrcat(mac, net->mac, 1, 0);
+
+		int count = 0;
+		char* mac1 = NULL;
+		char* mac2 = NULL;
+		char* tmpstr = NULL;
+		tmpstr = ostrcat("", mac, 0, 0);
+		struct splitstr* ret = NULL;
+		ret = strsplit(tmpstr, ":", &count);
+
+		mac1 = ostrcat(mac1, (&ret[0])->part, 1, 0);
+		mac1 = ostrcat(mac1, (&ret[1])->part, 1, 0);
+		mac1 = ostrcat(mac1, (&ret[2])->part, 1, 0);
+		mac2 = ostrcat(mac2, (&ret[3])->part, 1, 0);
+		mac2 = ostrcat(mac2, (&ret[4])->part, 1, 0);
+		mac2 = ostrcat(mac2, (&ret[5])->part, 1, 0);
+
+		free(ret); ret = NULL;
+		
+		sscanf(mac1, "%X", &mac1_int);
+		debug(11, "mac1_int s:%s", mac1);
+		mac1_int = strtol(mac1 , NULL, 16);
+		free(mac1), mac1 = NULL;
+//		debug(11, "mac1_int d:%d", mac1_int);
+	
+		sscanf(mac2, "%X", &mac2_int);
+		debug(11, "mac2_int s:%s", mac2);
+		mac2_int = strtol(mac2 , NULL, 16);
+		free(mac2), mac2 = NULL;
+//		debug(11, "mac2_int d:%d", mac2_int);
+	
+		mac_int = mac1_int + mac2_int;
+		debug(11, "mac_int d:%d", mac_int);
+		int cpuid = 7594;
+//		int cpuid = 7594107530; // not working to big...
+		mac_int += cpuid;	
+//		debug(11, "mac_int d:%d", mac_int);
+	
+		char buffer [50];
+		sprintf(buffer,"%d",mac_int);
+		serial = ostrcat("AA040127", buffer, 0, 0);
+//		free(buffer); // create a segfault
+	}
+	printf("serial: %s\n", serial);	
+	return serial;
+}
+		
+
 int getsysinfo()
 {
 	char* tmpstr = NULL;
@@ -2822,7 +2873,7 @@ int setcolorformat(char* value)
 	char* colorformatdev;
 	int ret = 0;
 
-	colorformatdev = getconfig("colorformatdev", NULL);
+	colorformatdev = getconfig("colorformatdev", NULL); 
 
 	if(colorformatdev != NULL && value != NULL)
 	{
@@ -3052,7 +3103,7 @@ char* getxmlentry(char *line, char *searchstr)
 		if(buf2 == NULL)
 		{
 			buf2 = strstr(buf1, "/>");
-			if(buf2 == NULL)
+			if(buf2 == NULL) 
 			{
 				buf2 = strchr(buf1, '>');
 				if(buf2 == NULL)
@@ -3677,7 +3728,7 @@ char* get_ipk_update()
 		cmd = strstrip(string_newline(command(cmd)));
 		debug(60, "cmd: %s", cmd);
 		
-		if(ostrcmp(cmd, "//97.74.32.10/svn/ipk/sh4/titan") != 0)
+		if(ostrcmp(cmd, "//97.74.32.10/svn/atemio/atemio510-rev12940/sh4/titan") != 0)
 		{
 			textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 			free(cmd), cmd = NULL;

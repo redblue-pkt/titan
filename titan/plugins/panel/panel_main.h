@@ -104,6 +104,8 @@ int panel_menucall(struct skin* panel_menuentry)
 		screenpanel_system_backup();
 	} else if(ostrcmp("panel_system_imageinfo", panel_menuentry->name) == 0){
 		screenpanel_infos(0);
+	} else if(ostrcmp("panel_system_getserial", panel_menuentry->name) == 0){
+		screenpanel_system_getserial();
 	} else if(ostrcmp("panel_system_update_flash_online", panel_menuentry->name) == 0){
 		screenpanel_system_update(0);
 	} else if(ostrcmp("panel_system_update_flash_tmp", panel_menuentry->name) == 0){
