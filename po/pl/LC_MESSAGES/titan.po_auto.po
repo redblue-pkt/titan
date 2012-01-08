@@ -117,7 +117,7 @@ msgstr ""
 #: global.h:3999 panel_main.h:245 panel_system.h:11 panel_system.h:22
 #: panel_system.h:303 panel_system.h:310 global.h:20 global.h:4006
 #: global.h:4010 global.h:3748 global.h:4012 panel_system.h:309
-#: panel_system.h:316
+#: panel_system.h:316 global.h:30
 msgid "EXIT"
 msgstr ""
 
@@ -490,7 +490,7 @@ msgstr ""
 #: global.h:21 global.h:3735 global.h:3999 panel_main.h:245 panel_system.h:11
 #: panel_system.h:22 panel_system.h:303 panel_system.h:310 global.h:20
 #: global.h:3742 global.h:4006 global.h:3746 global.h:4010 global.h:3748
-#: global.h:4012 panel_system.h:309 panel_system.h:316
+#: global.h:4012 panel_system.h:309 panel_system.h:316 global.h:30
 msgid "OK"
 msgstr ""
 
@@ -2123,6 +2123,7 @@ msgid "FanControl"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:6 skins_panel_skin.xml.h:6 global.h:21 global.h:20
+#: global.h:30
 msgid "Info"
 msgstr ""
 
@@ -6412,7 +6413,7 @@ msgid ""
 "TunerID SerialNr:"
 msgstr ""
 
-#: global.h:20 global.h:19
+#: global.h:20 global.h:19 global.h:29
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
@@ -6428,7 +6429,7 @@ msgid ""
 "TunerID SerialNr:"
 msgstr ""
 
-#: global.h:16
+#: global.h:16 global.h:26
 msgid ""
 "For next Update please contact Atemio and send this Serial Number and your "
 "invoice !!\n"
