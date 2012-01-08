@@ -258,7 +258,6 @@ void restorescreen(char* buf, struct skin* node);
 char* changepicpath(char* picname);
 long convertcol(char *value);
 void delmarkedscreen(int del);
-char* get_ipk_update();
 void delscreen(struct skin *node);
 void delscreennode(struct skin *node, char* nodename);
 int readscreen(char *filename, int del, int flag);
@@ -375,6 +374,7 @@ int setvol(int value);
 int getvol();
 char* stringreplacechar(char *str, char c1, char c2);
 char* getcpuid();
+void get_ipk_update();
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
