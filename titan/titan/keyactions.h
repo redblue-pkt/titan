@@ -61,9 +61,24 @@ void screenkeyactions(int key, int flag)
 		free(mlistbox); mlistbox = NULL;
 		return;
 	}
-	
+
+	if(status.securety == 0)
+	{
+		if(ostrcmp(keyconf, "Softcam Panel") == 0) return;
+		if(ostrcmp(keyconf, "Media Center") == 0) return;
+		if(ostrcmp(keyconf, "Internet Browser") == 0) return;
+		if(ostrcmp(keyconf, "CallMonitor") == 0) return;
+		if(ostrcmp(keyconf, "Imdb") == 0) return;
+		if(ostrcmp(keyconf, "KeyLock") == 0) return;
+		if(ostrcmp(keyconf, "Mbox Info") == 0) return;
+		if(ostrcmp(keyconf, "Networkbrowser") == 0) return;
+		if(ostrcmp(keyconf, "Permanent Time") == 0) return;	
+		if(ostrcmp(keyconf, "TopfieldVFD") == 0) return;
+		if(ostrcmp(keyconf, "Hello") == 0) return;
+	}
+						
 	debug(60, "key=%s", keyconf);
-	if(ostrcmp(keyconf, "Softcam Panel") == 0)
+	if(ostrcmp(keyconf, "Softcam Panel") == 0 && status.securety == 1)
 	{
 		pluginnode = getplugin("Panel");
 		
