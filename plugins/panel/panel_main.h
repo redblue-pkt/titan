@@ -210,11 +210,10 @@ void panel_main()
 	while(child != NULL)
 	{
 		if(ostrcmp(child->name, "panel_softcam") == 0){
-			if(checkemu() == 0){
+			if((checkemu() == 0) || (status.securety == 0))
 				child->hidden = YES;
-			} else{
+			else
 				child->hidden = NO;
-			}
 			listbox->aktline = 1;
 			listbox->aktpage = -1;
 			break;
