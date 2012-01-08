@@ -15,7 +15,8 @@ void screenkeyactions(int key, int flag)
 	char* tmpstr = NULL, *mlistbox = NULL;
 	struct skin* plugin = getscreen("plugin");
 	struct skin* child = plugin->child;
-	
+	int skip = 0;
+						
 	if(flag == 1)
 	{
 		char* skintitle = "Key Action - Plugins";
@@ -25,10 +26,28 @@ void screenkeyactions(int key, int flag)
 			while(child != NULL)
 			{
 				if(child->del == PLUGINDELMARK)
-				{
-					tmpstr = ostrcat(tmpstr, child->name, 1, 0);
-					debug(60, "key: %s", child->name);
-					tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+				{	
+					if(status.securety == 0)
+					{
+						if(ostrcmp(child->name, "Softcam Panel") == 0) skip = 1;
+						if(ostrcmp(child->name, "Media Center") == 0) skip = 1;
+						if(ostrcmp(child->name, "Internet Browser") == 0) skip = 1;
+						if(ostrcmp(child->name, "CallMonitor") == 0) skip = 1;
+						if(ostrcmp(child->name, "Imdb") == 0) skip = 1;
+						if(ostrcmp(child->name, "KeyLock") == 0) skip = 1;
+						if(ostrcmp(child->name, "Mbox Info") == 0) skip = 1;
+						if(ostrcmp(child->name, "Networkbrowser") == 0) skip = 1;
+						if(ostrcmp(child->name, "Permanent Time") == 0) skip = 1;	
+						if(ostrcmp(child->name, "TopfieldVFD") == 0) skip = 1;
+						if(ostrcmp(child->name, "Hello") == 0) skip = 1;
+					}				
+					if(skip == 0)
+					{
+						tmpstr = ostrcat(tmpstr, child->name, 1, 0);
+						debug(60, "key: %s", child->name);
+						tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+					}
+					skip = 0;
 				}
 				child = child->next;
 			}
