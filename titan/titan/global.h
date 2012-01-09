@@ -4,17 +4,17 @@
 void checkserial(char* input)
 {
 	char* authfile = NULL;
-	gethttp("atemio.dyndns.tv", "/svn/auth/trustlist", 80, "/tmp/.cachefile", "YXRlbWlvOkZIWlZCR2huemZ2RWhGREZUR3p1aWY1Njc2emhqR1RVR0JOSGpt", NULL);
+	gethttp("atemio.dyndns.tv", "/svn/auth/trustlist", 80, "/var/etc/.cachefile", "YXRlbWlvOkZIWlZCR2huemZ2RWhGREZUR3p1aWY1Njc2emhqR1RVR0JOSGpt", NULL);
 
-	authfile = command("cat /tmp/.cachefile");
-	unlink("/tmp/.cachefile");
+	authfile = command("cat /var/etc/.cachefile");
+	unlink("/var/etc/.cachefile");
 
 	int count = 0;
 	int i;
 	struct splitstr* ret = NULL;
 	ret = strsplit(authfile, "\n", &count);
 	int max = count;
-	status.securety = 0;
+	status.security = 0;
 
 	for( i = 0; i < max; i++){
 		int count1 = 0;
@@ -23,8 +23,8 @@ void checkserial(char* input)
 	
 		if(ostrcmp(input, (&ret1[0])->part) == 0)
 		{
-			printf("Serial check ok: disable securety\n");
-			status.securety = 1;
+			printf("Serial check ok: disable security\n");
+			status.security = 1;
 			system("/usr/sbin/inetd");
 			if(!file_exist("/dev/ttyS0") == 1)
 				system("mknod -m 0666 /dev/ttyS0 c 204 40");
@@ -309,11 +309,12 @@ int checkemu()
 int checkmenuforbox(char *name)
 {
 
-	if(status.securety == 0)
+	if(status.security == 0)
 	{
 		if(ostrcmp("panel_system_update_flash_online", name) == 0) return 0;
 		if(ostrcmp("panel_system_update_flash_tmp", name) == 0) return 0;
 		if(ostrcmp("panel_system_eraseswap", name) == 0) return 0;
+		if(ostrcmp("panel_system_restore", name) == 0) return 0;
 		if(ostrcmp("panel_extensions", name) == 0) return 0;
 		if(ostrcmp("mediacenter", name) == 0) return 0;
 		if(ostrcmp("browser", name) == 0) return 0;
