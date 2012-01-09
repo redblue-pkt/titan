@@ -16,7 +16,6 @@
 #include "panel_settings_fancontrol.h"
 #include "panel_system_restore.h"
 #include "panel_system_backup.h"
-#include "panel_ipk.h"
 #include "panel_feed.h"
 #include "panel_main.h"
 
