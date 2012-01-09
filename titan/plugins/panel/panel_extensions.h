@@ -41,8 +41,7 @@ void screenpanel_extensions(int mode)
 				int count = 0;
 				int i = 0;
 				ret1 = strsplit(tmpstr, " ", &count);
-				installname = ostrcat("titan-plugin-", tmpstr, 0, 0);
-				installname = ostrcat(installname, (&ret1[0])->part, 1, 0);
+				installname = ostrcat("titan-plugin-", (&ret1[0])->part, 0, 0);
 		
 				if(textbox(_("Ipk Install Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 				{
@@ -85,8 +84,7 @@ void screenpanel_extensions(int mode)
 			int count = 0;
 			int i = 0;
 			ret1 = strsplit(tmpstr, " ", &count);
-			deinstallname = ostrcat("titan-plugin-", file, 0, 0);
-			deinstallname = ostrcat(deinstallname, (&ret1[0])->part, 1, 0);
+			deinstallname = ostrcat("titan-plugin-", (&ret1[0])->part, 0, 0);
 
 			if(ipk_remove(deinstallname,1) == 0)
 				textbox(_("Ipk Remove Info"), _("Remove OK"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);

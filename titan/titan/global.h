@@ -131,23 +131,15 @@ char* getcpuid()
 
 		serialck = string_replace("4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", "AA040127", serialck, 1);
 		serialck = string_replace("5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662", "", serialck, 1);
-		if(ostrcmp(serialck, serial) == 0)
+		if(ostrcmp(serialck, serial) == 1)
 		{
-			printf("serialck ok\n");
+			status.security = 0;
+			serial = ostrcat("ERROR", "", 0, 0);
+			//exit(100)
 		}
 //		printf("serial: %s\n",serial);
 //		printf("serialck: %s\n",serialck);
 		free(serialck), serialck = NULL;
-/*
-		int error = 1;
-		if(string_find("4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678",serial) && string_find("5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662",serial))
-			error = 0;
-		if(error == 1)
-		{
-			status.security = 0;
-			serial = ostrcat("ERROR", "", 0, 0);
-		}
-*/
 	}
 
 	return string_newline(serial);
