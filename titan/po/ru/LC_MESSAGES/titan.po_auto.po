@@ -448,6 +448,7 @@ msgstr ""
 #: global.h:3804 ipkg.h:304 global.h:3807 global.h:3808 panel_extensions.h:102
 #: global.h:3806 global.h:3812 global.h:3813 global.h:3814 global.h:3817
 #: global.h:3818 global.h:3820 panel_main.h:29 panel_extensions.h:53
+#: panel_extensions.h:126
 msgid "Message"
 msgstr ""
 
@@ -6243,7 +6244,7 @@ msgstr ""
 #: panel_extensions.h:103 panel_extensions.h:104 panel_extensions.h:47
 #: panel_extensions.h:105 panel_extensions.h:48 panel_extensions.h:106
 #: panel_extensions.h:42 panel_extensions.h:100 panel_extensions.h:102
-#: panel_extensions.h:53
+#: panel_extensions.h:53 panel_extensions.h:126
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
