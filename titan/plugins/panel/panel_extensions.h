@@ -57,8 +57,7 @@ void screenpanel_extensions(int mode)
 	{
 		tmpstr = get_ipk_listinstall();
 		free(file); file = NULL;
-//		file = ostrcat(file, ipklistbox(NULL, tmpstr, NULL, "Ipk Remove - select file", "%pluginpath%/panel/skin/", 1), 1, 1);
-		file = ipklistbox(NULL, tmpstr, NULL, "Ipk Remove - select file", "%pluginpath%/panel/skin/", 1);
+		file = ipk_listbox(NULL, tmpstr, NULL, "Ipk Remove - select file", "%pluginpath%/panel/skin/", 1);
 		free(tmpstr); tmpstr = NULL;
 		debug(60, "file: %s", file);
 		if(file != NULL)
@@ -69,7 +68,7 @@ void screenpanel_extensions(int mode)
 			tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 
 			if(textbox(_("Ipk Remove Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-				textbox(_("Ipk Remove Info"), _(get_ipk_remove(file)), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
+				textbox(_("Ipk Remove Info"), _(ipk_remove(file,1)), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 
 			free(tmpinfo); tmpinfo = NULL;
 			free(file); file = NULL;
@@ -81,7 +80,7 @@ void screenpanel_extensions(int mode)
 	{
 		tmpstr = get_ipk_tmplistinstall();
 		free(file); file = NULL;
-		file = ipklistbox(NULL, tmpstr, NULL, "Ipk Tmp Install - select file", "%pluginpath%/panel/skin/", 0);
+		file = ipk_listbox(NULL, tmpstr, NULL, "Ipk Tmp Install - select file", "%pluginpath%/panel/skin/", 1);
 		if(tmpstr == NULL){
 			textbox(_("Ipk Tmp Info"), _("No IPK found in /tmp"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		}
