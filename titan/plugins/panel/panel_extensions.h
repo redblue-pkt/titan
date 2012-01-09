@@ -36,14 +36,24 @@ void screenpanel_extensions(int mode)
 				tmpinfo = ostrcat(tmpinfo, tmpstr, 1, 0);
 				tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 
+				char* installname = NULL;
+				struct splitstr* ret1 = NULL;
+				int count = 0;
+				int i = 0;
+				ret1 = strsplit(tmpstr, " ", &count);
+				installname = ostrcat("titan-plugin-", tmpstr, 0, 0);
+				installname = ostrcat(installname, (&ret1[0])->part, 1, 0);
+		
 				if(textbox(_("Ipk Install Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 				{
-					if(ipkg_install(tmpstr) == 0)
+					if(ipkg_install(installname) == 0)
 						textbox(_("Ipk Install Info"), _("Install OK"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
 					else
 						textbox(_("Ipk Install Info"), _("Install ERROR"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
 					textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 				}
+				free(ret1); ret1 = NULL;
+				free(installname); installname = NULL;
 				free(tmpinfo); tmpinfo = NULL;
 			}
 			free(section); section = NULL;
@@ -70,9 +80,21 @@ void screenpanel_extensions(int mode)
 			tmpinfo = ostrcat(tmpinfo, file, 1, 0);
 			tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 
-			if(textbox(_("Ipk Remove Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-				textbox(_("Ipk Remove Info"), _(ipk_remove(file,1)), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
+			char* deinstallname = NULL;
+			struct splitstr* ret1 = NULL;
+			int count = 0;
+			int i = 0;
+			ret1 = strsplit(tmpstr, " ", &count);
+			deintallname = ostrcat("titan-plugin-", file, 0, 0);
+			deinstallname = ostrcat(deinstallname, (&ret1[0])->part, 1, 0);
 
+			if(ipk_remove(deinstallname,1) == 0)
+				textbox(_("Ipk Remove Info"), _("Remove OK"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+			else
+				textbox(_("Ipk Remove Info"), _("Remove ERROR"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+
+			free(ret1); ret1 = NULL;
+			free(installname); installname = NULL;
 			free(tmpinfo); tmpinfo = NULL;
 			free(file); file = NULL;
 			screenpanel_extensions(1);
@@ -96,11 +118,13 @@ void screenpanel_extensions(int mode)
 			tmpinfo = ostrcat(tmpinfo, file, 1, 0);
 			tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 
-			if(textbox(_("Ipk Tmp Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-			{
-				textbox(_("Ipk Tmp Info"), _(get_ipk_tmpinstall(file)), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
-				textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-			}
+			if(get_ipk_tmpinstall(file) == 0)
+				textbox(_("Ipk Tmp Info"), _("Install OK"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+			else
+				textbox(_("Ipk Tmp Info"), _("Install ERROR"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+
+			textbox(_("Ipk Tmp Info"), _(get_ipk_tmpinstall(file)), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
+
 			free(tmpinfo); tmpinfo = NULL;
 			free(file); file = NULL;
 			screenpanel_extensions(2);
