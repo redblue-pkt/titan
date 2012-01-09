@@ -87,6 +87,7 @@ char* getcpuid()
 		char* mac2 = NULL;
 		char* tmpstr = NULL;
 		tmpstr = ostrcat("", mac, 0, 0);
+
 		struct splitstr* ret = NULL;
 		ret = strsplit(tmpstr, ":", &count);
 
@@ -134,12 +135,9 @@ char* getcpuid()
 		}
 		printf("serial: %s\n",serial);
 		printf("serialck: %s\n",serialck);
+		free(serialck), serialck = NULL;
 	}
 
-	free(mac), mac = NULL;
-	free(serialck), serialck = NULL;
-	free(tmpstr), tmpstr = NULL;
-			
 	return string_newline(serial);
 }
 		
