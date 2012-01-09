@@ -299,7 +299,8 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 		if(ostrcmp("97.74.32.10", ip) == 0)
 		{
 			if(ostrcmp(path, "//97.74.32.10/svn/ipk/sh4/titan") != 0) 	 	 
-			{ 	 	 
+			{
+				printf("path: %s", path);
 				textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0); 	 	 
 				return;
 			}
