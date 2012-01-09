@@ -210,7 +210,7 @@ void panel_main()
 	while(child != NULL)
 	{
 		if(ostrcmp(child->name, "panel_softcam") == 0){
-			if((checkemu() == 0) || (status.securety == 0))
+			if((checkemu() == 0) || (status.security == 0))
 				child->hidden = YES;
 			else
 				child->hidden = NO;
