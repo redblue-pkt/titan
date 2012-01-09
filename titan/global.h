@@ -63,7 +63,10 @@ void getserial()
 	system(cmd);
 	free(cpu), cpu = NULL;
 	free(cmd), cmd = NULL;
-	checkserial(getcpuid());
+	char* tmpstr = NULL;
+	tmpstr = getcpuid();
+	checkserial(tmpstr);
+	free(tmpstr), tmpstr = NULL;
 }
 	
 char* getcpuid()
