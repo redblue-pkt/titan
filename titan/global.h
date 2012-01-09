@@ -125,11 +125,11 @@ char* getcpuid()
 		serialck = string_replace("5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662", "", serialck, 1);
 		if(ostrcmp(serialck, serial) == 0)
 		{
-			printf("serialck ok");
+			printf("serialck ok\n");
 //			serial = ostrcat("ERROR", "", 0, 0);;
 		}
-		printf("serial: %s",serial);
-		printf("serialck: %s",serialck);
+		printf("serial: %s\n",serial);
+		printf("serialck: %s\n",serialck);
 	}
 	
 //	printf("serial: %s\n", serial);	
