@@ -287,22 +287,26 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 	char* tmpstr1 = NULL;
 	tmpstr1 = ostrcat("", path, 0, 0);
 	ret1 = strsplit(tmpstr1, "/", &count1);
+	free(tmpstr1); tmpstr1 = NULL;
 	int max = count1;
 	int i = 0;
 	int withoutgui = 0;
-	for( i = 0; i < max; i++){
+	
+	for(i = 0; i < max; i++)
+	{
 		if(ostrcmp("Packages.gz", (&ret1[i])->part) == 0)
 			withoutgui = 1;
 	}
-	free(ret1),ret1 = NULL;
+	free(ret1); ret1 = NULL;
+	
 	if(withoutgui == 1)
 	{
 		if(ostrcmp("97.74.32.10", ip) == 0)
 		{
 			if(ostrcmp(path, "//97.74.32.10/svn/ipk/sh4/titan") != 0) 	 	 
 			{
-				printf("path: %s", path);
 				textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0); 	 	 
+				free(ip); ip = NULL;
 				return;
 			}
 		}
@@ -316,22 +320,19 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 			tmppath = ostrcat(tmppath, path, 1, 0);
 			tmppath = string_replace("Packages.gz", "Packages.preview.tar.gz", tmppath, 0);
 			gethttp(ip, tmppath, 80, "/tmp/Packages.preview.tar.gz", "YXRlbWlvOkZIWlZCR2huemZ2RWhGREZUR3p1aWY1Njc2emhqR1RVR0JOSGpt", NULL);
-			free(tmppath),tmppath = NULL;
+			free(tmppath); tmppath = NULL;
+			
 			system("tar -zxvf /tmp/Packages.preview.tar.gz -C /tmp");
 			unlink("/tmp/Packages.preview.tar.gz");
-			char* cmd = NULL;
-			cmd = ostrcat("touch ", checkfile, 0, 0);
-			system(cmd);
-			free(cmd),cmd = NULL;
+			writesys(checkfile, ".", 1);
 		}
-		free(checkfile),checkfile = NULL;		
+		free(checkfile); checkfile = NULL;		
 		err = gethttp(ip, path, 80, (char*)filename, "YXRlbWlvOkZIWlZCR2huemZ2RWhGREZUR3p1aWY1Njc2emhqR1RVR0JOSGpt", NULL);
 	}
 	else
 		err = screendownload("Download", ip, path, 80, (char*)filename, "YXRlbWlvOkZIWlZCR2huemZ2RWhGREZUR3p1aWY1Njc2emhqR1RVR0JOSGpt", 0);
 
 	free(ip); ip = NULL;
-	printf("out");
 	return err;
 }
 
