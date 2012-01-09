@@ -126,7 +126,8 @@ msgstr ""
 #: panel_extensions.h:92 panel_extensions.h:106 keyactions.h:221 global.h:3795
 #: panel_extensions.h:18 panel_extensions.h:39 panel_extensions.h:41
 #: panel_extensions.h:72 panel_extensions.h:86 panel_extensions.h:97
-#: ipkg.h:303 global.h:46 global.h:3796 global.h:3797 global.h:47
+#: ipkg.h:303 global.h:46 global.h:3796 global.h:3797 global.h:47 global.h:48
+#: global.h:3798
 msgid "EXIT"
 msgstr ""
 
@@ -438,7 +439,7 @@ msgstr ""
 #: global.h:4064 global.h:3789 global.h:4053 panel_main.h:244 global.h:3794
 #: global.h:4058 keyactions.h:202 global.h:4060 panel_extensions.h:48
 #: panel_extensions.h:106 keyactions.h:221 global.h:3795 panel_extensions.h:42
-#: panel_extensions.h:100 ipkg.h:303 global.h:3796 global.h:3797
+#: panel_extensions.h:100 ipkg.h:303 global.h:3796 global.h:3797 global.h:3798
 msgid "Message"
 msgstr ""
 
@@ -514,7 +515,7 @@ msgstr ""
 #: keyactions.h:221 global.h:3795 panel_extensions.h:18 panel_extensions.h:39
 #: panel_extensions.h:41 panel_extensions.h:72 panel_extensions.h:86
 #: panel_extensions.h:97 ipkg.h:303 global.h:46 global.h:3796 global.h:3797
-#: global.h:47
+#: global.h:47 global.h:48 global.h:3798
 msgid "OK"
 msgstr ""
 
@@ -531,7 +532,7 @@ msgstr ""
 #: global.h:4022 global.h:4011 global.h:3999 global.h:4006 global.h:4010
 #: global.h:4012 global.h:4024 global.h:4050 global.h:4051 global.h:4063
 #: global.h:4064 global.h:4053 global.h:4058 keyactions.h:202 global.h:4060
-#: keyactions.h:221 global.h:3795 global.h:3796 global.h:3797
+#: keyactions.h:221 global.h:3795 global.h:3796 global.h:3797 global.h:3798
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -2156,7 +2157,7 @@ msgstr ""
 
 #: plugins_panel_skin.xml.h:6 skins_panel_skin.xml.h:6 global.h:21 global.h:20
 #: global.h:30 global.h:32 global.h:50 global.h:51 global.h:40 global.h:45
-#: global.h:46 global.h:47
+#: global.h:46 global.h:47 global.h:48
 msgid "Info"
 msgstr ""
 
@@ -6449,7 +6450,7 @@ msgid ""
 msgstr ""
 
 #: global.h:20 global.h:19 global.h:29 global.h:31 global.h:49 global.h:50
-#: global.h:39 global.h:44 global.h:45 global.h:46
+#: global.h:39 global.h:44 global.h:45 global.h:46 global.h:47
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
@@ -6466,7 +6467,7 @@ msgid ""
 msgstr ""
 
 #: global.h:16 global.h:26 global.h:28 global.h:46 global.h:47 global.h:36
-#: global.h:41 global.h:42 global.h:43
+#: global.h:41 global.h:42 global.h:43 global.h:44
 msgid ""
 "For next Update please contact Atemio and send this Serial Number and your "
 "invoice !!\n"
