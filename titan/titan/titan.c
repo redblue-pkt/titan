@@ -355,7 +355,6 @@ int main(int argc, char *argv[])
 		destroy();
 		exit(100);
 	}
-	checkserial(getcpuid());
 
 #endif
 	debug(1000, "in");
@@ -688,7 +687,7 @@ firstwizzardstep1:
 			err("set sigsegjump");
 		}
 	}
-	
+	checkserial(getcpuid());
 	screeninfobar();
 
 	//for testign screens
