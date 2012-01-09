@@ -97,7 +97,7 @@ void screenkeyactions(int key, int flag)
 	}
 						
 	debug(60, "key=%s", keyconf);
-	if(ostrcmp(keyconf, "Softcam Panel") == 0 && status.securety == 1)
+	if(ostrcmp(keyconf, "Softcam Panel") == 0 && status.security == 1)
 	{
 		pluginnode = getplugin("Panel");
 		
