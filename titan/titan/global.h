@@ -53,22 +53,19 @@ void getserial()
 	textbox(_("Info"), _(msg), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 400, 0, 0);	
 	free(msg), msg = NULL;
 	
-	char* cmd = NULL;
-	cmd = ostrcat("echo \"TunerID SerialNr: ", cpu, 0, 0);
-	cmd = ostrcat(cmd, "\" >/tmp/atemio.log", 1, 0);
-	system(cmd);
-	free(cmd), cmd = NULL;
+	char* tmpstr = NULL;
+	tmpstr = ostrcat("TunerID SerialNr: ", cpu, 0, 0);
+	writesys("/tmp/atemio.log", tmpstr, 1);
+	free(tmpstr); tmpstr = NULL;
+	
 	cpu = string_replace("AA040127", "4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", cpu, 1);
 	cpu = ostrcat(cpu, "5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662", 1, 0);
-	cmd = ostrcat("echo \"", cpu, 0, 0);
-	cmd = ostrcat(cmd, "\" >/var/dev/dvb/adapter0/dts0", 1, 0);
-	system(cmd);
-	free(cpu), cpu = NULL;
-	free(cmd), cmd = NULL;
-	char* tmpstr = NULL;
+	writesys("/var/dev/dvb/adapter0/dts0", cpu, 1);
+	free(cpu); cpu = NULL;
+	
 	tmpstr = getcpuid();
 	checkserial(tmpstr);
-	free(tmpstr), tmpstr = NULL;
+	free(tmpstr); tmpstr = NULL;
 }
 	
 char* getcpuid()
