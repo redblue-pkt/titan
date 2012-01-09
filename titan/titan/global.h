@@ -320,6 +320,7 @@ int checkmenuforbox(char *name)
 
 	if(status.security == 0)
 	{
+		printf("stcheckmenuforbox in status.security=0 status.security: %d\n", status.security);
 		if(ostrcmp("panel_system_update_flash_online", name) == 0) return 0;
 		if(ostrcmp("panel_system_update_flash_tmp", name) == 0) return 0;
 		if(ostrcmp("panel_system_eraseswap", name) == 0) return 0;
