@@ -26,7 +26,8 @@ void checkserial(char* input)
 			printf("Serial check ok: disable securety\n");
 			status.securety = 1;
 			system("/usr/sbin/inetd");
-			system("mknod -m 0666 /dev/ttyS0 c 204 40");
+			if(!file_exist("/dev/ttyS0") == 1)
+				system("mknod -m 0666 /dev/ttyS0 c 204 40");
 			break;
 		}
 		free(ret1),ret1 = NULL;
