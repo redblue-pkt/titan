@@ -355,6 +355,10 @@ int main(int argc, char *argv[])
 		destroy();
 		exit(100);
 	}
+	char* tmpstr2 = NULL;
+	tmpstr2 = getcpuid();
+	checkserial(tmpstr2);
+	free(tmpstr2), tmpstr2 = NULL;
 #endif
 	debug(1000, "in");
 	int ret = 0, serviceret = 0, skincheck = 0;
@@ -687,11 +691,6 @@ firstwizzardstep1:
 			err("set sigsegjump");
 		}
 	}
-
-	char* tmpstr2 = NULL;
-	tmpstr2 = getcpuid();
-	checkserial(tmpstr2);
-	free(tmpstr2), tmpstr2 = NULL;
 
 	screeninfobar();
 
