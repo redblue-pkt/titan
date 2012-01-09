@@ -151,22 +151,19 @@ void freeipkg()
 int ipkg_list_cb(char *name, char *desc, char *version, pkg_state_status_t status, void *userdata)
 {
 	int count = 0;
-	char* showname = NULL;
-	char* section = NULL;
 	char* tmpstr = NULL;
-	tmpstr = ostrcat("", name, 0, 0);
 	struct splitstr* ret = NULL;
+	
+	tmpstr = ostrcat(name, NULL, 0, 0);
 	ret = strsplit(tmpstr, "-", &count);
-	section = ostrcat("", (&ret[2])->part, 0, 0);
-	showname = ostrcat("", (&ret[3])->part, 0, 0);
-	free(ret); ret = NULL;
+	free(tmpstr); tmpstr = NULL;
 
 	if(desc)
-		addipkg(name, desc, version, section, showname, NULL);
+		addipkg(name, desc, version, (&ret[2])->part, (&ret[3])->part, NULL);
 	else
-		addipkg(name, NULL, version, section, showname, NULL);
+		addipkg(name, NULL, version, (&ret[2])->part, (&ret[3])->part, NULL);
 
-	free(tmpstr), tmpstr = NULL;
+	free(ret); ret = NULL;
 
 	return 0;
 }
@@ -206,7 +203,7 @@ int ipkg_status(const char* package)
 	int err = 0;
 	args_t args;
 
-        args_init(&args);
+	args_init(&args);
 	err = ipkg_packages_status(&args, package, ipkg_status_cb, NULL);
 	args_deinit(&args);
 
@@ -267,8 +264,9 @@ int ipkg_upgrade(void)
 
 int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 {
-	int err = 0;
-	char* ip = NULL, *pos = NULL, *path = NULL;
+	int err = 0, count = 0, i = 0, withoutgui = 0;
+	char* ip = NULL, *pos = NULL, *path = NULL, *tmpstr = NULL;
+	struct splitstr* ret = NULL;
 
 	if(src == NULL) return 1;
 
@@ -282,22 +280,16 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 		path = pos + 1;
 	}
 
-	struct splitstr* ret1 = NULL;
-	int count1 = 0;
-	char* tmpstr1 = NULL;
-	tmpstr1 = ostrcat("", path, 0, 0);
-	ret1 = strsplit(tmpstr1, "/", &count1);
-	free(tmpstr1); tmpstr1 = NULL;
-	int max = count1;
-	int i = 0;
-	int withoutgui = 0;
+	tmpstr = ostrcat("", path, 0, 0);
+	ret = strsplit(tmpstr, "/", &count);
+	free(tmpstr); tmpstr = NULL;
 	
-	for(i = 0; i < max; i++)
+	for(i = 0; i < count; i++)
 	{
-		if(ostrcmp("Packages.gz", (&ret1[i])->part) == 0)
+		if(ostrcmp("Packages.gz", (&ret[i])->part) == 0)
 			withoutgui = 1;
 	}
-	free(ret1); ret1 = NULL;
+	free(ret); ret = NULL;
 	
 	if(withoutgui == 1)
 	{
@@ -318,7 +310,7 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 		{
 			char* tmppath = NULL;
 			tmppath = ostrcat(tmppath, path, 1, 0);
-			tmppath = string_replace("Packages.gz", "Packages.preview.tar.gz", tmppath, 0);
+			tmppath = string_replace("Packages.gz", "Packages.preview.tar.gz", tmppath, 1);
 			gethttp(ip, tmppath, 80, "/tmp/Packages.preview.tar.gz", "YXRlbWlvOkZIWlZCR2huemZ2RWhGREZUR3p1aWY1Njc2emhqR1RVR0JOSGpt", NULL);
 			free(tmppath); tmppath = NULL;
 			
