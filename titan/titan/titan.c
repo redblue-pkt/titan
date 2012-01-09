@@ -392,7 +392,7 @@ int main(int argc, char *argv[])
 		return 100;
 	readconfig(getconfig("ownconfig", NULL), ownconfig);
 	readconfig(getconfig("rcconfig", NULL), rcconfig);
-	checkserial(getcpuid());
+
 	skincheck = checkskin();
 	readconfig(getconfig("skinconfig", NULL), skinconfig);
 
@@ -687,6 +687,8 @@ firstwizzardstep1:
 			err("set sigsegjump");
 		}
 	}
+
+	checkserial(getcpuid());
 	screeninfobar();
 
 	//for testign screens
