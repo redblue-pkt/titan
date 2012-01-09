@@ -130,7 +130,7 @@ msgstr ""
 #: global.h:3798 global.h:3804 ipkg.h:304 global.h:3807 global.h:3808
 #: panel_extensions.h:73 panel_extensions.h:88 global.h:3806 global.h:3812
 #: global.h:3813 global.h:3814 global.h:3817 global.h:3818 global.h:53
-#: global.h:3820
+#: global.h:3820 panel_main.h:29
 msgid "EXIT"
 msgstr ""
 
@@ -445,7 +445,7 @@ msgstr ""
 #: panel_extensions.h:100 ipkg.h:303 global.h:3796 global.h:3797 global.h:3798
 #: global.h:3804 ipkg.h:304 global.h:3807 global.h:3808 panel_extensions.h:102
 #: global.h:3806 global.h:3812 global.h:3813 global.h:3814 global.h:3817
-#: global.h:3818 global.h:3820
+#: global.h:3818 global.h:3820 panel_main.h:29
 msgid "Message"
 msgstr ""
 
@@ -524,7 +524,7 @@ msgstr ""
 #: global.h:47 global.h:48 global.h:3798 global.h:3804 ipkg.h:304
 #: global.h:3807 global.h:3808 panel_extensions.h:73 panel_extensions.h:88
 #: global.h:3806 global.h:3812 global.h:3813 global.h:3814 global.h:3817
-#: global.h:3818 global.h:53 global.h:3820
+#: global.h:3818 global.h:53 global.h:3820 panel_main.h:29
 msgid "OK"
 msgstr ""
 
@@ -1153,7 +1153,7 @@ msgid "Install QtBrowser Ipk first !"
 msgstr ""
 
 #: mc_main.h:175 menu.h:64 panel_main.h:35 panel_main.h:241 panel_main.h:243
-#: mc_main.h:192 panel_main.h:245 panel_main.h:244
+#: mc_main.h:192 panel_main.h:245 panel_main.h:244 panel_main.h:29
 msgid "Menu not implemented !"
 msgstr ""
 
