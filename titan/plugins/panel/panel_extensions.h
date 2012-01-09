@@ -85,7 +85,7 @@ void screenpanel_extensions(int mode)
 			int count = 0;
 			int i = 0;
 			ret1 = strsplit(tmpstr, " ", &count);
-			deintallname = ostrcat("titan-plugin-", file, 0, 0);
+			deinstallname = ostrcat("titan-plugin-", file, 0, 0);
 			deinstallname = ostrcat(deinstallname, (&ret1[0])->part, 1, 0);
 
 			if(ipk_remove(deinstallname,1) == 0)
@@ -94,7 +94,7 @@ void screenpanel_extensions(int mode)
 				textbox(_("Ipk Remove Info"), _("Remove ERROR"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
 
 			free(ret1); ret1 = NULL;
-			free(installname); installname = NULL;
+			free(deinstallname); deinstallname = NULL;
 			free(tmpinfo); tmpinfo = NULL;
 			free(file); file = NULL;
 			screenpanel_extensions(1);
@@ -123,7 +123,7 @@ void screenpanel_extensions(int mode)
 			else
 				textbox(_("Ipk Tmp Info"), _("Install ERROR"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
 
-			textbox(_("Ipk Tmp Info"), _(get_ipk_tmpinstall(file)), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
+			textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 
 			free(tmpinfo); tmpinfo = NULL;
 			free(file); file = NULL;
