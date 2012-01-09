@@ -92,19 +92,19 @@ char* getcpuid()
 		free(ret); ret = NULL;
 		
 		sscanf(mac1, "%X", &mac1_int);
-		debug(11, "mac1_int s:%s", mac1);
+//		debug(11, "mac1_int s:%s", mac1);
 		mac1_int = strtol(mac1 , NULL, 16);
 		free(mac1), mac1 = NULL;
 //		debug(11, "mac1_int d:%d", mac1_int);
 	
 		sscanf(mac2, "%X", &mac2_int);
-		debug(11, "mac2_int s:%s", mac2);
+//		debug(11, "mac2_int s:%s", mac2);
 		mac2_int = strtol(mac2 , NULL, 16);
 		free(mac2), mac2 = NULL;
 //		debug(11, "mac2_int d:%d", mac2_int);
 	
 		mac_int = mac1_int + mac2_int;
-		debug(11, "mac_int d:%d", mac_int);
+//		debug(11, "mac_int d:%d", mac_int);
 		int cpuid = 7594;
 //		int cpuid = 7594107530; // not working to big...
 		mac_int += cpuid;	
@@ -129,7 +129,7 @@ char* getcpuid()
 		serial = string_replace("5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662", "", serial, 1);
 	}
 	
-	printf("serial: %s\n", serial);	
+//	printf("serial: %s\n", serial);	
 	return string_newline(serial);
 }
 		
