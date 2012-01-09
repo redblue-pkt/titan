@@ -7,13 +7,13 @@
 
 struct ipkg
 {
-        char* name;
-        char* desc;
-        char* version;
-        char* section;
-        char* showname;
-        struct ipkg* prev;
-        struct ipkg* next;
+	char* name;
+	char* desc;
+	char* version;
+	char* section;
+	char* showname;
+	struct ipkg* prev;
+	struct ipkg* next;
 };
 
 struct ipkg *ipkg = NULL;
@@ -193,6 +193,7 @@ int ipkg_list(void)
 {
 	int err = 0;
 	args_t args;
+	
 	args_init(&args);
 	err = ipkg_packages_list(&args, NULL, ipkg_list_cb, NULL);
 	args_deinit(&args);
@@ -217,7 +218,7 @@ int ipkg_info(const char* package)
 	int err = 0;
 	args_t args;
 
-        args_init(&args);
+	args_init(&args);
 	err = ipkg_packages_info(&args, package, ipkg_status_cb, NULL);
 	args_deinit(&args);
 
@@ -245,7 +246,7 @@ int ipkg_remove(const char* package, int purge)
 	int err = 0;
 	args_t args;
 
-        args_init(&args);
+	args_init(&args);
 	err = ipkg_packages_remove(&args, package, purge);
 	args_deinit(&args);
 
@@ -257,7 +258,7 @@ int ipkg_upgrade(void)
 	int err = 0;
 	args_t args;
 
-        args_init(&args);
+	args_init(&args);
 	err = ipkg_packages_upgrade(&args);
 	args_deinit(&args);
 
@@ -339,7 +340,7 @@ int ipkg_files(const char* package)
 	int err = 0;
 	args_t args;
 
-        args_init(&args);
+	args_init(&args);
 	err = ipkg_package_files(&args, package, ipkg_list_cb, NULL);
 	args_deinit(&args);
 
@@ -351,7 +352,7 @@ int ipkg_search(const char* package)
 	int err = 0;
 	args_t args;
 
-        args_init(&args);
+	args_init(&args);
 	err = ipkg_file_search(&args, package, ipkg_list_cb, NULL);
 	args_deinit(&args);
 
