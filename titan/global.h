@@ -138,7 +138,7 @@ char* getcpuid()
 //		printf("serial: %s\n",serial);
 //		printf("serialck: %s\n",serialck);
 		free(serialck), serialck = NULL;
-
+/*
 		int error = 1;
 		if(string_find("4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678",serial) && string_find("5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662",serial))
 			error = 0;
@@ -147,6 +147,7 @@ char* getcpuid()
 			status.security = 0;
 			serial = ostrcat("ERROR", "", 0, 0);
 		}
+*/
 	}
 
 	return string_newline(serial);
