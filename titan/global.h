@@ -6,8 +6,8 @@ void checkserial(char* input)
 	char* authfile = NULL;
 	gethttp("atemio.dyndns.tv", "/svn/auth/trustlist", 80, "/tmp/.cachefile", "YXRlbWlvOkZIWlZCR2huemZ2RWhGREZUR3p1aWY1Njc2emhqR1RVR0JOSGpt", NULL);
 
-	authfile = command("cat /tmp/.cachefile");
-	unlink("/tmp/.cachefile");
+	authfile = command("cat /var/.cachefile");
+	unlink("/var/.cachefile");
 
 	int count = 0;
 	int i;
