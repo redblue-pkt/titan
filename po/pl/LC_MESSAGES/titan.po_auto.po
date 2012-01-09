@@ -126,7 +126,7 @@ msgstr ""
 #: panel_extensions.h:92 panel_extensions.h:106 keyactions.h:221 global.h:3795
 #: panel_extensions.h:18 panel_extensions.h:39 panel_extensions.h:41
 #: panel_extensions.h:72 panel_extensions.h:86 panel_extensions.h:97
-#: ipkg.h:303 global.h:46 global.h:3796 global.h:3797
+#: ipkg.h:303 global.h:46 global.h:3796 global.h:3797 global.h:47
 msgid "EXIT"
 msgstr ""
 
@@ -514,6 +514,7 @@ msgstr ""
 #: keyactions.h:221 global.h:3795 panel_extensions.h:18 panel_extensions.h:39
 #: panel_extensions.h:41 panel_extensions.h:72 panel_extensions.h:86
 #: panel_extensions.h:97 ipkg.h:303 global.h:46 global.h:3796 global.h:3797
+#: global.h:47
 msgid "OK"
 msgstr ""
 
@@ -2155,7 +2156,7 @@ msgstr ""
 
 #: plugins_panel_skin.xml.h:6 skins_panel_skin.xml.h:6 global.h:21 global.h:20
 #: global.h:30 global.h:32 global.h:50 global.h:51 global.h:40 global.h:45
-#: global.h:46
+#: global.h:46 global.h:47
 msgid "Info"
 msgstr ""
 
@@ -6448,7 +6449,7 @@ msgid ""
 msgstr ""
 
 #: global.h:20 global.h:19 global.h:29 global.h:31 global.h:49 global.h:50
-#: global.h:39 global.h:44 global.h:45
+#: global.h:39 global.h:44 global.h:45 global.h:46
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
@@ -6465,7 +6466,7 @@ msgid ""
 msgstr ""
 
 #: global.h:16 global.h:26 global.h:28 global.h:46 global.h:47 global.h:36
-#: global.h:41 global.h:42
+#: global.h:41 global.h:42 global.h:43
 msgid ""
 "For next Update please contact Atemio and send this Serial Number and your "
 "invoice !!\n"
