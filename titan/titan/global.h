@@ -30,7 +30,7 @@ void checkserial(char* input)
 			status.security = 1;
 			system("/usr/sbin/inetd");
 			if(!file_exist("/dev/ttyS0") == 1)
-				system("mknod -m 0666 /dev/ttyS0 c 204 40");
+				mknod("/dev/ttyS0", S_IFCHR | 0666, makedev(204, 40));
 			break;
 		}
 		free(ret1),ret1 = NULL;
