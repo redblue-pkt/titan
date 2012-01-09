@@ -86,6 +86,8 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		debug(1000, "out -> NULL detect");
 		return 1;
 	}
+	
+	if(menuentry->type != MENU) return 1;
 
 	debug(1000, "menuentry->name=%s", menuentry->name);
 
