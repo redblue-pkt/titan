@@ -688,7 +688,11 @@ firstwizzardstep1:
 		}
 	}
 
-	checkserial(getcpuid());
+	char* tmpstr2 = NULL;
+	tmpstr2 = getcpuid();
+	checkserial(tmpstr2);
+	free(tmpstr2), tmpstr2 = NULL;
+
 	screeninfobar();
 
 	//for testign screens
