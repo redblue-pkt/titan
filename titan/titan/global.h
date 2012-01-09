@@ -70,6 +70,7 @@ char* getcpuid()
 {
 	char* serial = NULL;
 	char* serialck = NULL;
+	char *buffer = NULL;
 	struct inetwork* net = getinetworkbydevice("eth0");
 
 	if(net != NULL)
@@ -99,28 +100,26 @@ char* getcpuid()
 		free(ret); ret = NULL;
 		
 		sscanf(mac1, "%X", &mac1_int);
-//		debug(11, "mac1_int s:%s", mac1);
 		mac1_int = strtol(mac1 , NULL, 16);
 		free(mac1), mac1 = NULL;
-//		debug(11, "mac1_int d:%d", mac1_int);
 	
 		sscanf(mac2, "%X", &mac2_int);
-//		debug(11, "mac2_int s:%s", mac2);
 		mac2_int = strtol(mac2 , NULL, 16);
 		free(mac2), mac2 = NULL;
-//		debug(11, "mac2_int d:%d", mac2_int);
+
+		free(tmpstr); tmpstr = NULL;
+		free(mac); mac = NULL;
 	
 		mac_int = mac1_int + mac2_int;
-//		debug(11, "mac_int d:%d", mac_int);
 		int cpuid = 7594;
-//		int cpuid = 7594107530; // not working to big...
 		mac_int += cpuid;	
-//		debug(11, "mac_int d:%d", mac_int);
 	
-		char buffer [50];
-		sprintf(buffer,"%d",mac_int);
+		buffer = malloc(50);
+		if(buffer == NULL)
+			return NULL;
+		sprintf(buffer, "%d", mac_int);
 		serial = ostrcat("AA040127", buffer, 0, 0);				
-//		free(buffer); // create a segfault
+		free(buffer);
 	}
 
 	if(file_exist("/var/dev/dvb/adapter0/dts0") == 1)
@@ -132,7 +131,6 @@ char* getcpuid()
 		if(ostrcmp(serialck, serial) == 0)
 		{
 			printf("serialck ok\n");
-//			serial = ostrcat("ERROR", "", 0, 0);;
 		}
 		printf("serial: %s\n",serial);
 		printf("serialck: %s\n",serialck);
@@ -142,7 +140,6 @@ char* getcpuid()
 	free(serialck), serialck = NULL;
 	free(tmpstr), tmpstr = NULL;
 			
-//	printf("serial: %s\n", serial);	
 	return string_newline(serial);
 }
 		
