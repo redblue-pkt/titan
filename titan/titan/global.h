@@ -4,10 +4,7 @@
 void checkserial(char* input)
 {
 	char* authfile = NULL;
-	gethttp("atemio.dyndns.tv", "/svn/auth/trustlist", 80, "/var/etc/.cachefile", "YXRlbWlvOkZIWlZCR2huemZ2RWhGREZUR3p1aWY1Njc2emhqR1RVR0JOSGpt", NULL);
-
-	authfile = command("cat /var/etc/.cachefile");
-	unlink("/var/etc/.cachefile");
+	authfile = gethttp("atemio.dyndns.tv", "/svn/auth/trustlist", 80, NULL, "YXRlbWlvOkZIWlZCR2huemZ2RWhGREZUR3p1aWY1Njc2emhqR1RVR0JOSGpt", NULL);
 
 	int count = 0;
 	int i;
@@ -33,6 +30,7 @@ void checkserial(char* input)
 		free(ret1),ret1 = NULL;
 	}
 	free(ret),ret = NULL;
+	free(authfile);
 }
 
 void getserial()
