@@ -962,8 +962,8 @@ struct status
 	struct stimerthread* addhddall;
 	//save old rotor position
 	int rotoroldorbitalpos;
-	// securety check
-	int securety;
+	// security check
+	int security;
 } status;
 
 struct fb
