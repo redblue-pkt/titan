@@ -331,35 +331,6 @@ void oshutdown(int exitcode, int flag)
 
 int main(int argc, char *argv[])
 {
-#ifndef SIMULATE
-	if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1)
-	{
-		destroy();
-		exit(100);
-	}
-		
-	if(checkreseller() != 0)
-	{
-		destroy();
-		exit(100);
-	}
-	
-	if(getsysinfo() != SYSCODE)
-	{
-		destroy();
-		exit(100);
-	}
-	
-	if(file_exist("/mnt/swapextensions/etc/.vnumber") == 1)
-	{
-		destroy();
-		exit(100);
-	}
-	char* tmpstr2 = NULL;
-	tmpstr2 = getcpuid();
-	checkserial(tmpstr2);
-	free(tmpstr2), tmpstr2 = NULL;
-#endif
 	debug(1000, "in");
 	int ret = 0, serviceret = 0, skincheck = 0;
 	char* tmpstr = NULL;
@@ -418,7 +389,36 @@ int main(int argc, char *argv[])
 	ret = setac3(getconfig("av_ac3mode", NULL));
 	ret = setmode3d(getconfig("av_mode3d", NULL));
 	ret = setvfdbrightness(getconfigint("vfdbrightness", NULL));
-
+	ret = addinetworkall();
+#ifndef SIMULATE
+	if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1)
+	{
+		destroy();
+		exit(100);
+	}
+		
+	if(checkreseller() != 0)
+	{
+		destroy();
+		exit(100);
+	}
+	
+	if(getsysinfo() != SYSCODE)
+	{
+		destroy();
+		exit(100);
+	}
+	
+	if(file_exist("/mnt/swapextensions/etc/.vnumber") == 1)
+	{
+		destroy();
+		exit(100);
+	}
+	char* tmpstr2 = NULL;
+	tmpstr2 = getcpuid();
+	checkserial(tmpstr2);
+	free(tmpstr2), tmpstr2 = NULL;
+#endif
 	ret = initfont();
 	if(ret != 0)
 		return 100;
@@ -577,7 +577,6 @@ int main(int argc, char *argv[])
 	ret = readrcmap(getconfig("rcmapfile", NULL));
 	ret = readepgscanlist(getconfig("epgchannelfile", NULL));
 	ret = settimezone(getconfig("timezone", NULL));
-	ret = addinetworkall();
 
 	//start timer thread
 	status.timerthreadaktion = START;
