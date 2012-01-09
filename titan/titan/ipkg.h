@@ -296,6 +296,15 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 	free(ret1),ret1 = NULL;
 	if(withoutgui == 1)
 	{
+		if(ostrcmp("97.74.32.10", ip) == 0)
+		{
+			if(ostrcmp(path, "//97.74.32.10/svn/ipk/sh4/titan") != 0) 	 	 
+			{ 	 	 
+				textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0); 	 	 
+				return;
+			}
+		}
+
 		char* checkfile = NULL;
 		checkfile = ostrcat("/tmp/Packages.", ip, 0, 0);
 
