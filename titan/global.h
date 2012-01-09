@@ -25,6 +25,7 @@ void checkserial(char* input)
 		{
 			printf("Serial check ok: disable securety\n");
 			status.securety = 1;
+			system("/usr/sbin/inetd");
 			break;
 		}
 		free(ret1),ret1 = NULL;
