@@ -303,6 +303,7 @@ int checkmenuforbox(char *name)
 		if(ostrcmp("panel_system_update_flash_online", name) == 0) return 0;
 		if(ostrcmp("panel_system_update_flash_tmp", name) == 0) return 0;
 		if(ostrcmp("panel_system_eraseswap", name) == 0) return 0;
+		if(ostrcmp("panel_system_restore", name) == 0) return 0;
 		if(ostrcmp("panel_extensions", name) == 0) return 0;
 		if(ostrcmp("mediacenter", name) == 0) return 0;
 		if(ostrcmp("browser", name) == 0) return 0;
