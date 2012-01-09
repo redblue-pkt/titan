@@ -123,7 +123,9 @@ msgstr ""
 #: global.h:40 global.h:3789 global.h:4053 panel_main.h:244 global.h:45
 #: global.h:3794 global.h:4058 keyactions.h:202 global.h:4060
 #: panel_extensions.h:21 panel_extensions.h:48 panel_extensions.h:78
-#: panel_extensions.h:92 panel_extensions.h:106 keyactions.h:221
+#: panel_extensions.h:92 panel_extensions.h:106 keyactions.h:221 global.h:3795
+#: panel_extensions.h:18 panel_extensions.h:39 panel_extensions.h:41
+#: panel_extensions.h:72 panel_extensions.h:86 panel_extensions.h:97
 msgid "EXIT"
 msgstr ""
 
@@ -434,7 +436,8 @@ msgstr ""
 #: global.h:3787 global.h:4051 global.h:3799 global.h:4063 global.h:3800
 #: global.h:4064 global.h:3789 global.h:4053 panel_main.h:244 global.h:3794
 #: global.h:4058 keyactions.h:202 global.h:4060 panel_extensions.h:48
-#: panel_extensions.h:106 keyactions.h:221
+#: panel_extensions.h:106 keyactions.h:221 global.h:3795 panel_extensions.h:42
+#: panel_extensions.h:100
 msgid "Message"
 msgstr ""
 
@@ -507,7 +510,9 @@ msgstr ""
 #: panel_main.h:244 global.h:45 global.h:3794 global.h:4058 keyactions.h:202
 #: global.h:4060 panel_extensions.h:21 panel_extensions.h:48
 #: panel_extensions.h:78 panel_extensions.h:92 panel_extensions.h:106
-#: keyactions.h:221
+#: keyactions.h:221 global.h:3795 panel_extensions.h:18 panel_extensions.h:39
+#: panel_extensions.h:41 panel_extensions.h:72 panel_extensions.h:86
+#: panel_extensions.h:97
 msgid "OK"
 msgstr ""
 
@@ -524,7 +529,7 @@ msgstr ""
 #: global.h:4022 global.h:4011 global.h:3999 global.h:4006 global.h:4010
 #: global.h:4012 global.h:4024 global.h:4050 global.h:4051 global.h:4063
 #: global.h:4064 global.h:4053 global.h:4058 keyactions.h:202 global.h:4060
-#: keyactions.h:221
+#: keyactions.h:221 global.h:3795
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -1367,17 +1372,20 @@ msgstr ""
 
 #: panel_extensions.h:19 panel_extensions.h:42 panel_extensions.h:43
 #: panel_extensions.h:44 panel_extensions.h:20 panel_extensions.h:45
-#: panel_extensions.h:46 panel_extensions.h:21
+#: panel_extensions.h:46 panel_extensions.h:21 panel_extensions.h:18
+#: panel_extensions.h:39 panel_extensions.h:41
 msgid "Ipk Install Info"
 msgstr ""
 
 #: panel_extensions.h:19 panel_extensions.h:20 panel_extensions.h:21
+#: panel_extensions.h:18
 msgid "No section found"
 msgstr ""
 
 #: panel_extensions.h:67 panel_extensions.h:68 panel_extensions.h:70
 #: panel_extensions.h:71 panel_extensions.h:74 panel_extensions.h:75
 #: panel_extensions.h:76 panel_extensions.h:77 panel_extensions.h:78
+#: panel_extensions.h:72
 msgid "Ipk Remove Info"
 msgstr ""
 
@@ -1386,12 +1394,14 @@ msgstr ""
 #: panel_extensions.h:89 panel_extensions.h:100 panel_extensions.h:102
 #: panel_extensions.h:90 panel_extensions.h:101 panel_extensions.h:103
 #: panel_extensions.h:91 panel_extensions.h:104 panel_extensions.h:92
-#: panel_extensions.h:105
+#: panel_extensions.h:105 panel_extensions.h:86 panel_extensions.h:97
+#: panel_extensions.h:99
 msgid "Ipk Tmp Info"
 msgstr ""
 
 #: panel_extensions.h:82 panel_extensions.h:85 panel_extensions.h:89
 #: panel_extensions.h:90 panel_extensions.h:91 panel_extensions.h:92
+#: panel_extensions.h:86
 msgid "No IPK found in /tmp"
 msgstr ""
 
@@ -6208,6 +6218,7 @@ msgstr ""
 #: panel_extensions.h:45 panel_extensions.h:99 panel_extensions.h:46
 #: panel_extensions.h:103 panel_extensions.h:104 panel_extensions.h:47
 #: panel_extensions.h:105 panel_extensions.h:48 panel_extensions.h:106
+#: panel_extensions.h:42 panel_extensions.h:100
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
@@ -6458,4 +6469,8 @@ msgid ""
 "invoice !!\n"
 "\n"
 "TunerID SerialNr:"
+msgstr ""
+
+#: ipkg.h:644
+msgid "no description found"
 msgstr ""
