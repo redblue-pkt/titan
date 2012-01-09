@@ -117,7 +117,7 @@ char* getcpuid()
 	
 		char buffer [50];
 		sprintf(buffer,"%d",mac_int);
-		serial = ostrcat("AA040127", buffer, 0, 0);
+		serial = ostrcat("AA040127", buffer, 0, 0);				
 //		free(buffer); // create a segfault
 	}
 
@@ -135,7 +135,11 @@ char* getcpuid()
 		printf("serial: %s\n",serial);
 		printf("serialck: %s\n",serialck);
 	}
-	
+
+	free(mac), mac = NULL;
+	free(serialck), serialck = NULL;
+	free(tmpstr), tmpstr = NULL;
+			
 //	printf("serial: %s\n", serial);	
 	return string_newline(serial);
 }
