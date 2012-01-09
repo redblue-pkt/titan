@@ -126,7 +126,7 @@ msgstr ""
 #: panel_extensions.h:92 panel_extensions.h:106 keyactions.h:221 global.h:3795
 #: panel_extensions.h:18 panel_extensions.h:39 panel_extensions.h:41
 #: panel_extensions.h:72 panel_extensions.h:86 panel_extensions.h:97
-#: ipkg.h:303 global.h:46 global.h:3796
+#: ipkg.h:303 global.h:46 global.h:3796 global.h:3797
 msgid "EXIT"
 msgstr ""
 
@@ -438,7 +438,7 @@ msgstr ""
 #: global.h:4064 global.h:3789 global.h:4053 panel_main.h:244 global.h:3794
 #: global.h:4058 keyactions.h:202 global.h:4060 panel_extensions.h:48
 #: panel_extensions.h:106 keyactions.h:221 global.h:3795 panel_extensions.h:42
-#: panel_extensions.h:100 ipkg.h:303 global.h:3796
+#: panel_extensions.h:100 ipkg.h:303 global.h:3796 global.h:3797
 msgid "Message"
 msgstr ""
 
@@ -513,7 +513,7 @@ msgstr ""
 #: panel_extensions.h:78 panel_extensions.h:92 panel_extensions.h:106
 #: keyactions.h:221 global.h:3795 panel_extensions.h:18 panel_extensions.h:39
 #: panel_extensions.h:41 panel_extensions.h:72 panel_extensions.h:86
-#: panel_extensions.h:97 ipkg.h:303 global.h:46 global.h:3796
+#: panel_extensions.h:97 ipkg.h:303 global.h:46 global.h:3796 global.h:3797
 msgid "OK"
 msgstr ""
 
@@ -530,7 +530,7 @@ msgstr ""
 #: global.h:4022 global.h:4011 global.h:3999 global.h:4006 global.h:4010
 #: global.h:4012 global.h:4024 global.h:4050 global.h:4051 global.h:4063
 #: global.h:4064 global.h:4053 global.h:4058 keyactions.h:202 global.h:4060
-#: keyactions.h:221 global.h:3795 global.h:3796
+#: keyactions.h:221 global.h:3795 global.h:3796 global.h:3797
 msgid "ERROR cant read res"
 msgstr ""
 
