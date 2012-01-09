@@ -9,6 +9,8 @@ void checkserial(char* input)
 	int count = 0;
 	int i;
 	struct splitstr* ret = NULL;
+	printf("authfile: %s\n", authfile);
+
 	ret = strsplit(authfile, "\n", &count);
 	int max = count;
 	status.security = 0;
@@ -17,7 +19,9 @@ void checkserial(char* input)
 		int count1 = 0;
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit((&ret[i])->part, ",", &count1);	
-	
+
+	printf("input: %s\n", input);
+	printf("(&ret1[0])->part: %s\n", (&ret1[0])->part);		
 		if(ostrcmp(input, (&ret1[0])->part) == 0)
 		{
 			printf("Serial check ok: disable security\n");
@@ -57,6 +61,7 @@ void getserial()
 	cmd = ostrcat("echo \"", cpu, 0, 0);
 	cmd = ostrcat(cmd, "\" >/var/dev/dvb/adapter0/dts0", 1, 0);
 	system(cmd);
+	checkserial(getcpuid());
 }
 	
 char* getcpuid()
