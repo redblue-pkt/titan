@@ -11,7 +11,7 @@ void checkserial(char* input)
 	int count = 0;
 	int i;
 	struct splitstr* ret = NULL;
-	printf("authfile: %s\n", authfile);
+//	printf("authfile: %s\n", authfile);
 
 	ret = strsplit(authfile, "\n", &count);
 	int max = count;
@@ -22,11 +22,11 @@ void checkserial(char* input)
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit((&ret[i])->part, ",", &count1);	
 
-	printf("input: %s\n", input);
-	printf("(&ret1[0])->part: %s\n", (&ret1[0])->part);		
+//	printf("input: %s\n", input);
+//	printf("(&ret1[0])->part: %s\n", (&ret1[0])->part);		
 		if(ostrcmp(input, (&ret1[0])->part) == 0)
 		{
-			printf("Serial check ok: disable security\n");
+//			printf("Serial check ok: disable security\n");
 			status.security = 1;
 			system("/usr/sbin/inetd");
 			if(!file_exist("/dev/ttyS0") == 1)
@@ -35,7 +35,7 @@ void checkserial(char* input)
 		}
 		free(ret1),ret1 = NULL;
 	}
-	printf("check.serial status.security: %d\n", status.security);
+//	printf("check.serial status.security: %d\n", status.security);
 	free(ret),ret = NULL;
 	free(authfile);
 }
@@ -135,9 +135,18 @@ char* getcpuid()
 		{
 			printf("serialck ok\n");
 		}
-		printf("serial: %s\n",serial);
-		printf("serialck: %s\n",serialck);
+//		printf("serial: %s\n",serial);
+//		printf("serialck: %s\n",serialck);
 		free(serialck), serialck = NULL;
+
+		int error = 1;
+		if(string_find("4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678",serial) && string_find("5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662",serial))
+			error = 0;
+		if(error == 1)
+		{
+			status.security = 0;
+			serial = ostrcat("ERROR", "", 0, 0);
+		}
 	}
 
 	return string_newline(serial);
@@ -315,11 +324,11 @@ int checkemu()
 //can use to disable a menu for a box (node type must be MENU)
 int checkmenuforbox(char *name)
 {
-	printf("checkmenuforbox status.security: %d\n", status.security);
+//	printf("checkmenuforbox status.security: %d\n", status.security);
 
 	if(status.security == 0)
 	{
-		printf("stcheckmenuforbox in status.security=0 status.security: %d\n", status.security);
+//		printf("stcheckmenuforbox in status.security=0 status.security: %d\n", status.security);
 		if(ostrcmp("panel_system_update_flash_online", name) == 0) return 0;
 		if(ostrcmp("panel_system_update_flash_tmp", name) == 0) return 0;
 		if(ostrcmp("panel_system_eraseswap", name) == 0) return 0;
