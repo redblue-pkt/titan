@@ -29,6 +29,7 @@ void checkserial(char* input)
 		}
 		free(ret1),ret1 = NULL;
 	}
+	printf("check.serial status.security: %d\n", status.security);
 	free(ret),ret = NULL;
 	free(authfile);
 }
@@ -306,6 +307,7 @@ int checkemu()
 //can use to disable a menu for a box (node type must be MENU)
 int checkmenuforbox(char *name)
 {
+	printf("checkmenuforbox status.security: %d\n", status.security);
 
 	if(status.security == 0)
 	{
