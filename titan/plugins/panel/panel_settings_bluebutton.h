@@ -26,7 +26,7 @@ void screenpanel_settings_bluebutton()
 	{
 		if(child->del == PLUGINDELMARK)
 		{
-			if(status.securety == 0)
+			if(status.security == 0)
 			{
 				if(ostrcmp(child->name, "Softcam Panel") == 0) skip = 1;
 				if(ostrcmp(child->name, "Media Center") == 0) skip = 1;

@@ -322,7 +322,7 @@ void screeninfobar()
 			subtitlepause(0);
 			continue;
 		}
-		if(rcret == getrcconfigint("rcmedia", NULL) && status.securety == 1)
+		if(rcret == getrcconfigint("rcmedia", NULL) && status.security == 1)
 		{
 			struct skin* pluginnode = getplugin("Media Center");
 			void (*startplugin)(void);

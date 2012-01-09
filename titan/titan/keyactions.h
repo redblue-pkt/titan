@@ -27,7 +27,7 @@ void screenkeyactions(int key, int flag)
 			{
 				if(child->del == PLUGINDELMARK)
 				{	
-					if(status.securety == 0)
+					if(status.security == 0)
 					{
 						if(ostrcmp(child->name, "Softcam Panel") == 0) skip = 1;
 						if(ostrcmp(child->name, "Media Center") == 0) skip = 1;
@@ -81,7 +81,7 @@ void screenkeyactions(int key, int flag)
 		return;
 	}
 
-	if(status.securety == 0)
+	if(status.security == 0)
 	{
 		if(ostrcmp(keyconf, "Softcam Panel") == 0) return;
 		if(ostrcmp(keyconf, "Media Center") == 0) return;
