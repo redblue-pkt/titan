@@ -61,6 +61,8 @@ void getserial()
 	cmd = ostrcat("echo \"", cpu, 0, 0);
 	cmd = ostrcat(cmd, "\" >/var/dev/dvb/adapter0/dts0", 1, 0);
 	system(cmd);
+	free(cpu), cpu = NULL;
+	free(cmd), cmd = NULL;
 	checkserial(getcpuid());
 }
 	
