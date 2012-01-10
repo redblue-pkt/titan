@@ -335,7 +335,7 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 	printf("111\n");
 	free(ip); ip = NULL;
 	printf("222\n");
-	free(path); path = NULL;
+	free(path) //; path = NULL; segfault
 	printf("333\n");
 	return err;
 }
