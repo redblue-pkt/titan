@@ -291,6 +291,7 @@ msgstr ""
 #: skins_panel_skin.xml.h:62 skin_default_skin.xml.h:324
 #: skin_default_skin.xml.h:325 skin_default_skin.xml.h:326
 #: skin_default_skin.xml.h:327 skin_default_skin.xml.h:329 adjust.h:82
+#: plugins_panel_skin.xml.h:65 skins_panel_skin.xml.h:65
 msgid "Restart"
 msgstr ""
 
@@ -1156,7 +1157,8 @@ msgstr ""
 #: plugins_callmonitor1_skin.xml.h:17 skins_callmonitor1_skin.xml.h:17
 #: skin_default_skin.xml.h:451 skin_default_skin.xml.h:456
 #: skin_default_skin.xml.h:457 plugins_panel_skin.xml.h:83
-#: skins_panel_skin.xml.h:83
+#: skins_panel_skin.xml.h:83 plugins_panel_skin.xml.h:86
+#: skins_panel_skin.xml.h:86
 msgid ""
 msgstr ""
 
@@ -1378,7 +1380,8 @@ msgstr ""
 #: skin_default_skin.xml.h:255 skin_default_skin.xml.h:256
 #: plugins_panel_skin.xml.h:57 skins_panel_skin.xml.h:57
 #: skin_default_skin.xml.h:258 skin_default_skin.xml.h:259
-#: skin_default_skin.xml.h:261
+#: skin_default_skin.xml.h:261 plugins_panel_skin.xml.h:60
+#: skins_panel_skin.xml.h:60
 msgid "Network"
 msgstr ""
 
@@ -1466,16 +1469,19 @@ msgstr ""
 
 #: panel_infos.h:75 plugins_panel_skin.xml.h:51 skins_panel_skin.xml.h:51
 #: plugins_panel_skin.xml.h:52 skins_panel_skin.xml.h:52
+#: plugins_panel_skin.xml.h:55 skins_panel_skin.xml.h:55
 msgid "Kernel"
 msgstr ""
 
 #: panel_infos.h:84 plugins_panel_skin.xml.h:54 skins_panel_skin.xml.h:54
 #: plugins_panel_skin.xml.h:55 skins_panel_skin.xml.h:55
+#: plugins_panel_skin.xml.h:58 skins_panel_skin.xml.h:58
 msgid "Mounts"
 msgstr ""
 
 #: panel_infos.h:106 plugins_panel_skin.xml.h:58 skins_panel_skin.xml.h:58
 #: plugins_panel_skin.xml.h:59 skins_panel_skin.xml.h:59
+#: plugins_panel_skin.xml.h:62 skins_panel_skin.xml.h:62
 msgid "Ram"
 msgstr ""
 
@@ -1648,7 +1654,8 @@ msgstr ""
 #: panel_settings_autostart.h:211 plugins_panel_skin.xml.h:71
 #: skins_panel_skin.xml.h:71 plugins_panel_skin.xml.h:72
 #: skins_panel_skin.xml.h:72 plugins_panel_skin.xml.h:73
-#: skins_panel_skin.xml.h:73
+#: skins_panel_skin.xml.h:73 plugins_panel_skin.xml.h:76
+#: skins_panel_skin.xml.h:76
 msgid "Swap"
 msgstr ""
 
@@ -1837,6 +1844,7 @@ msgstr ""
 
 #: panel_softcam.h:244 plugins_panel_skin.xml.h:60 skins_panel_skin.xml.h:60
 #: plugins_panel_skin.xml.h:61 skins_panel_skin.xml.h:61
+#: plugins_panel_skin.xml.h:64 skins_panel_skin.xml.h:64
 msgid "Refresh"
 msgstr ""
 
@@ -2038,7 +2046,8 @@ msgstr ""
 #: skin_default_skin.xml.h:38 skin_default_skin.xml.h:39
 #: plugins_panel_skin.xml.h:67 skins_panel_skin.xml.h:67
 #: skin_default_skin.xml.h:40 plugins_panel_skin.xml.h:68
-#: skins_panel_skin.xml.h:68
+#: skins_panel_skin.xml.h:68 plugins_panel_skin.xml.h:71
+#: skins_panel_skin.xml.h:71
 msgid "Settings"
 msgstr ""
 
@@ -2223,6 +2232,7 @@ msgstr ""
 #: skins_panel_skin.xml.h:11 skins_panel_skin.xml.h:69
 #: plugins_panel_skin.xml.h:70 skins_panel_skin.xml.h:70
 #: plugins_panel_skin.xml.h:71 skins_panel_skin.xml.h:71
+#: plugins_panel_skin.xml.h:74 skins_panel_skin.xml.h:74
 msgid "Softcam Panel"
 msgstr ""
 
@@ -2242,6 +2252,7 @@ msgstr ""
 #: skin_default_skin.xml.h:391 skin_default_skin.xml.h:46
 #: skin_default_skin.xml.h:395 skin_default_skin.xml.h:396
 #: plugins_panel_skin.xml.h:74 skins_panel_skin.xml.h:74
+#: plugins_panel_skin.xml.h:77 skins_panel_skin.xml.h:77
 msgid "System"
 msgstr ""
 
@@ -2351,46 +2362,55 @@ msgstr ""
 
 #: plugins_panel_skin.xml.h:49 skins_panel_skin.xml.h:49
 #: plugins_panel_skin.xml.h:50 skins_panel_skin.xml.h:50
+#: plugins_panel_skin.xml.h:51 skins_panel_skin.xml.h:51
 msgid "IPK remove"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:50 skins_panel_skin.xml.h:50
 #: plugins_panel_skin.xml.h:51 skins_panel_skin.xml.h:51
+#: plugins_panel_skin.xml.h:53 skins_panel_skin.xml.h:53
 msgid "IPK tmp (tmp)"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:52 skins_panel_skin.xml.h:52
 #: plugins_panel_skin.xml.h:53 skins_panel_skin.xml.h:53
+#: plugins_panel_skin.xml.h:56 skins_panel_skin.xml.h:56
 msgid "Memory"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:53 skins_panel_skin.xml.h:53
 #: plugins_panel_skin.xml.h:54 skins_panel_skin.xml.h:54
+#: plugins_panel_skin.xml.h:57 skins_panel_skin.xml.h:57
 msgid "Module"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:55 skins_panel_skin.xml.h:55
 #: plugins_panel_skin.xml.h:56 skins_panel_skin.xml.h:56
+#: plugins_panel_skin.xml.h:59 skins_panel_skin.xml.h:59
 msgid "MTD"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:57 skins_panel_skin.xml.h:57
 #: plugins_panel_skin.xml.h:58 skins_panel_skin.xml.h:58
+#: plugins_panel_skin.xml.h:61 skins_panel_skin.xml.h:61
 msgid "Overclocking"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:59 skins_panel_skin.xml.h:59
 #: plugins_panel_skin.xml.h:60 skins_panel_skin.xml.h:60
+#: plugins_panel_skin.xml.h:63 skins_panel_skin.xml.h:63
 msgid "Red Button"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:62 skins_panel_skin.xml.h:62
 #: plugins_panel_skin.xml.h:63 skins_panel_skin.xml.h:63
+#: plugins_panel_skin.xml.h:66 skins_panel_skin.xml.h:66
 msgid "Restore"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:63 skins_panel_skin.xml.h:63
 #: plugins_panel_skin.xml.h:64 skins_panel_skin.xml.h:64
+#: plugins_panel_skin.xml.h:67 skins_panel_skin.xml.h:67
 msgid "Save"
 msgstr ""
 
@@ -2400,77 +2420,90 @@ msgstr ""
 #: skin_default_skin.xml.h:340 plugins_panel_skin.xml.h:65
 #: skins_panel_skin.xml.h:65 skin_default_skin.xml.h:342
 #: skin_default_skin.xml.h:343 skin_default_skin.xml.h:344
+#: plugins_panel_skin.xml.h:68 skins_panel_skin.xml.h:68
 msgid "SAVE"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:65 skins_panel_skin.xml.h:65
 #: plugins_panel_skin.xml.h:66 skins_panel_skin.xml.h:66
+#: plugins_panel_skin.xml.h:69 skins_panel_skin.xml.h:69
 msgid "Select backup: "
 msgstr ""
 
 #: plugins_panel_skin.xml.h:67 skins_panel_skin.xml.h:67
 #: plugins_panel_skin.xml.h:68 skins_panel_skin.xml.h:68
 #: plugins_panel_skin.xml.h:69 skins_panel_skin.xml.h:69
+#: plugins_panel_skin.xml.h:72 skins_panel_skin.xml.h:72
 msgid "Settings backup/restore"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:68 skins_panel_skin.xml.h:68
 #: plugins_panel_skin.xml.h:69 skins_panel_skin.xml.h:69
 #: plugins_panel_skin.xml.h:70 skins_panel_skin.xml.h:70
+#: plugins_panel_skin.xml.h:73 skins_panel_skin.xml.h:73
 msgid "Softcam auswahl:"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:70 skins_panel_skin.xml.h:70
 #: plugins_panel_skin.xml.h:71 skins_panel_skin.xml.h:71
 #: plugins_panel_skin.xml.h:72 skins_panel_skin.xml.h:72
+#: plugins_panel_skin.xml.h:75 skins_panel_skin.xml.h:75
 msgid "speed"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:73 skins_panel_skin.xml.h:73
 #: plugins_panel_skin.xml.h:74 skins_panel_skin.xml.h:74
 #: plugins_panel_skin.xml.h:75 skins_panel_skin.xml.h:75
+#: plugins_panel_skin.xml.h:78 skins_panel_skin.xml.h:78
 msgid "System Infos"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:74 skins_panel_skin.xml.h:74
 #: plugins_panel_skin.xml.h:75 skins_panel_skin.xml.h:75
 #: plugins_panel_skin.xml.h:76 skins_panel_skin.xml.h:76
+#: plugins_panel_skin.xml.h:79 skins_panel_skin.xml.h:79
 msgid "Test"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:75 skins_panel_skin.xml.h:75
 #: plugins_panel_skin.xml.h:76 skins_panel_skin.xml.h:76
 #: plugins_panel_skin.xml.h:77 skins_panel_skin.xml.h:77
+#: plugins_panel_skin.xml.h:80 skins_panel_skin.xml.h:80
 msgid "update"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:76 skins_panel_skin.xml.h:76
 #: plugins_panel_skin.xml.h:77 skins_panel_skin.xml.h:77
 #: plugins_panel_skin.xml.h:78 skins_panel_skin.xml.h:78
+#: plugins_panel_skin.xml.h:81 skins_panel_skin.xml.h:81
 msgid "Usb Device"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:77 skins_panel_skin.xml.h:77
 #: plugins_panel_skin.xml.h:78 skins_panel_skin.xml.h:78
 #: plugins_panel_skin.xml.h:79 skins_panel_skin.xml.h:79
+#: plugins_panel_skin.xml.h:82 skins_panel_skin.xml.h:82
 msgid "Usbupdate (online)"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:78 skins_panel_skin.xml.h:78
 #: plugins_panel_skin.xml.h:79 skins_panel_skin.xml.h:79
 #: plugins_panel_skin.xml.h:80 skins_panel_skin.xml.h:80
+#: plugins_panel_skin.xml.h:83 skins_panel_skin.xml.h:83
 msgid "Usbupdate (tmp)"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:79 skins_panel_skin.xml.h:79
 #: plugins_panel_skin.xml.h:80 skins_panel_skin.xml.h:80
 #: plugins_panel_skin.xml.h:81 skins_panel_skin.xml.h:81
+#: plugins_panel_skin.xml.h:84 skins_panel_skin.xml.h:84
 msgid "Videotune"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:80 skins_panel_skin.xml.h:80
 #: plugins_panel_skin.xml.h:81 skins_panel_skin.xml.h:81
 #: plugins_panel_skin.xml.h:82 skins_panel_skin.xml.h:82
+#: plugins_panel_skin.xml.h:85 skins_panel_skin.xml.h:85
 msgid "Wizard"
 msgstr ""
 
@@ -6500,6 +6533,7 @@ msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:67 skins_panel_skin.xml.h:67
+#: plugins_panel_skin.xml.h:70 skins_panel_skin.xml.h:70
 msgid "Serial Information"
 msgstr ""
 
@@ -6541,4 +6575,16 @@ msgstr ""
 
 #: panel_extensions.h:94 panel_extensions.h:92
 msgid "Remove ERROR"
+msgstr ""
+
+#: plugins_panel_skin.xml.h:50 skins_panel_skin.xml.h:50
+msgid "IPK install (online) old"
+msgstr ""
+
+#: plugins_panel_skin.xml.h:52 skins_panel_skin.xml.h:52
+msgid "IPK remove old"
+msgstr ""
+
+#: plugins_panel_skin.xml.h:54 skins_panel_skin.xml.h:54
+msgid "IPK tmp (tmp) old"
 msgstr ""
