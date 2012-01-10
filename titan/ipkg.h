@@ -227,17 +227,17 @@ int ipkg_info(const char* package)
 
 int ipkg_install(const char* package)
 {
-	printf("package: %s\n",package);
+	debug(130, "package: %s", package);
 
 	int err = 0;
 	args_t args;
 	args_init(&args);
 
-printf("4444444\n");
+	debug(130, "package1: %s", package);
 	err = ipkg_packages_install(&args, package);
-printf("5555555\n");
+	debug(130, "package2: %s", package);
 	args_deinit(&args);
-printf("6666666\n");
+	debug(130, "package3: %s", package);
 	return err;
 }
 
@@ -273,7 +273,7 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 
 	if(src == NULL) return 1;
 
-	printf("src = %s\n", src);
+	debug(130, "src: %s", src);
 	ip = string_replace("http://", "", src, 0);
 
 	if(ip != NULL)
@@ -295,9 +295,9 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 	free(ret); ret = NULL;
 	free(tmpstr); tmpstr = NULL;
 
-	printf("src = %s\n", src);
-	printf("ip = %s\n", ip);
-	printf("path = %s\n", path);	
+	debug(130, "src: %s", src);
+	debug(130, "ip: %s", ip);
+	debug(130, "path: %s", path);
 	
 	if(withoutgui == 1)
 	{
@@ -332,11 +332,8 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 	}
 	else
 		err = screendownload("Download", ip, path, 80, (char*)filename, "YXRlbWlvOkZIWlZCR2huemZ2RWhGREZUR3p1aWY1Njc2emhqR1RVR0JOSGpt", 0);
-	printf("111\n");
 	free(ip); ip = NULL;
-	printf("222\n");
 	//free(path);// path = NULL; segfault
-	printf("333\n");
 	return err;
 }
 
@@ -429,23 +426,23 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 
 	if(skinname == NULL)
 	{
-		debug(60, "skinname default=menulist");
+		debug(130, "skinname default=menulist");
 		skinname1 = ostrcat(skinname, "menulist", 1, 0);
 	}
 	else
 	{
-		debug(60, "skinname changed=%s", skinname);
+		debug(130, "skinname changed=%s", skinname);
 		skinname1 = ostrcat(skinname, "", 0, 0);
 	}
 
 	if(skinpath == NULL)
 	{
-		debug(60, "skinpath default=skin/");
+		debug(130, "skinpath default=skin/");
 		skinpath1 = ostrcat(skinpath, "skin/", 1, 0);
 	}
 	else
 	{
-		debug(60, "skinpath changed=%s", skinpath);
+		debug(130, "skinpath changed=%s", skinpath);
 		skinpath1 = ostrcat(skinpath, "", 0, 0);
 	}
 
@@ -457,7 +454,7 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 
 	if(skintitle != NULL)
 	{
-		debug(60, "skintitle changed=%s", skintitle);
+		debug(130, "skintitle changed=%s", skintitle);
 		changetitle(screen, _(skintitle));
 	}
 
@@ -503,7 +500,7 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 //				tmp->fontsize = 30;
 				tmp->valign = convertxmlentry("middle", 0);
 				tmp->hspace = 5;
-				debug(60, "showpng changed=%d", showpng);
+				debug(130, "showpng changed=%d", showpng);
 	
 				if(string_find("%pluginpath%",skinpath1))
 				{
@@ -533,7 +530,7 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 					defaultdir = ostrcat(defaultdir, ".png", 1, 0);
 				}
 
-				debug(60, "defaultdir %s", defaultdir);
+				debug(130, "defaultdir %s", defaultdir);
 				if(file_exist(defaultdir))
 				{
 					tmpskinpath = ostrcat("", defaultdir, 0, 0);
@@ -560,10 +557,10 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 		struct ipkg *node = ipkg;
 		while(node != NULL)
 		{
-			printf("name: %s\n", node->name);
-			printf("section: %s\n", node->section);
-			printf("showname: %s\n", node->showname);
-			printf("str: %s\n", str);
+			debug(130, "name: %s", node->name);
+			debug(130, "section: %s", node->section);
+			debug(130, "showname: %s", node->showname);
+			debug(130, "str: %s", str);
 									
 			if(node->section != NULL && ostrcmp(str, node->section) == 0)
 			{
@@ -582,7 +579,7 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 				int a = 0;
 				tmpstr1 = ostrcat("", tmpck, 0, 0);
 	
-				debug(60, "tmpck: (%d) %s", i, tmpstr1);
+				debug(130, "tmpck: (%d) %s", i, tmpstr1);
 	
 				ret3 = strsplit(tmpstr1, "\n", &count3);
 				int skip = 0;
@@ -590,7 +587,7 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 				{
 					if(ostrcmp((&ret3[a])->part, node->name) == 0)
 					{
-						debug(60, "set skiped=1");
+						debug(130, "set skiped=1");
 						skip = 1;
 						continue;
 					}
@@ -600,25 +597,24 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 					tmp = addlistbox(screen, listbox, tmp, 1);
 					tmp->del = 1;
 					tmp->valign = convertxmlentry("middle", 0);
-					printf("321111\n");
 					tmp->textposx = 250;
 					tmp->height = 170;
 	 				tmp->textposx2 = 270;
 					tmp->type=TEXTBOX;
 					tmp->wrap=YES;
 					tmp->hspace = 5;
-					debug(60, "showpng changed=%d", showpng);
+					debug(130, "showpng changed=%d", showpng);
 	
 					defaultdir = ostrcat("", skinpath1, 0, 0);
 					defaultdir = ostrcat(defaultdir, "titan-pluginpreview-", 1, 0);
 					defaultdir = ostrcat(defaultdir, showname, 1, 0);
 					defaultdir = ostrcat(defaultdir, ".png", 1, 0);
 	
-					debug(60, "defaultdir %s", defaultdir);
+					debug(130, "defaultdir %s", defaultdir);
 	
 					if(file_exist(defaultdir))
 					{
-						debug(60, "defaultdir found");
+						debug(130, "defaultdir found");
 						tmpskinpath = ostrcat(skinpath1, "titan-pluginpreview-", 0, 0);
 						tmpskinpath = ostrcat(tmpskinpath, showname, 1, 0);
 						tmpskinpath = ostrcat(tmpskinpath, ".png", 1, 0);
@@ -627,7 +623,7 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 					}	
 					else
 					{
-						debug(60, "defaultdir not found use default.png");
+						debug(130, "defaultdir not found use default.png");
 						tmpskinpath = ostrcat("", "skin/plugin.png", 0, 0);
 						changepic(tmp, tmpskinpath);
 						free(tmpskinpath); tmpskinpath = NULL;
@@ -691,7 +687,7 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 
 char* get_ipk_tmpinstall(char* ipk)
 {
-	debug(60, "in");
+	debug(130, "in");
 
 	unlink("/var/usr/lib/ipkg/cross");
 	unlink("/var/usr/lib/ipkg/secret");
@@ -703,42 +699,42 @@ char* get_ipk_tmpinstall(char* ipk)
 
 	tmpstr = command(cmd);
 
-	debug(60, "out %s",cmd);
+	debug(130, "out %s",cmd);
 	free(cmd); cmd = NULL;
 	return tmpstr;
 }
 
 char* get_ipk_listinstall()
 {
-	debug(60, "in");
+	debug(130, "in");
 	char* cmd = NULL, *tmpstr = NULL;
 
 	cmd = ostrcat(cmd, "ipkg list_installed | awk '{ print $1 }' | sed 's/Successfully//' | sed 's/titan-plugin-//'", 1, 0);
 
 	tmpstr = command(cmd);
 
-	debug(60, "out %s",cmd);
+	debug(130, "out %s",cmd);
 	free(cmd); cmd = NULL;
 	return tmpstr;
 }
 
 char* get_ipk_tmplistinstall()
 {
-	debug(60, "in");
+	debug(130, "in");
 	char* cmd = NULL, *tmpstr = NULL;
 
 	cmd = ostrcat(cmd, "ls /tmp | grep '.ipk'", 1, 0);
 
 	tmpstr = command(cmd);
 
-	debug(60, "out %s",cmd);
+	debug(130, "out %s",cmd);
 	free(cmd); cmd = NULL;
 	return tmpstr;
 }
 
 char* get_ipk_remove(char* ipk)
 {
-	debug(60, "in %s",ipk);
+	debug(130, "in %s",ipk);
 	char* cmd = NULL, *tmpstr = NULL;
 
 	if(ipk == NULL) return NULL;
@@ -748,14 +744,14 @@ char* get_ipk_remove(char* ipk)
 
 	tmpstr = command(cmd);
 
-	debug(60, "out");
+	debug(130, "out");
 	free(cmd); cmd = NULL;
 	return tmpstr;
 }
 
 char* get_ipk_info(char* section)
 {
-	debug(60, "in %s",section);
+	debug(130, "in %s",section);
 	char* cmd = NULL, *tmpstr = NULL;
 
 	if(section == NULL) return NULL;
@@ -766,14 +762,14 @@ char* get_ipk_info(char* section)
 
 	tmpstr = command(cmd);
 
-	debug(60, "out %s",cmd);
+	debug(130, "out %s",cmd);
 	free(cmd); cmd = NULL;
 	return tmpstr;
 }
 
 char* get_ipk_install(char* ipk)
 {
-	debug(60, "in %s",ipk);
+	debug(130, "in %s",ipk);
 
 	char* cmd = NULL, *tmpstr = NULL;
 	cmd = ostrcat(cmd, "ipkg install ", 1, 0);
@@ -781,7 +777,7 @@ char* get_ipk_install(char* ipk)
 
 	tmpstr = command(cmd);
 
-	debug(60, "out %s",cmd);
+	debug(130, "out %s",cmd);
 	free(cmd); cmd = NULL;
 	return tmpstr;
 }

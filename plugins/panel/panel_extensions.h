@@ -19,13 +19,13 @@ void screenpanel_extensions(int mode)
 		}
 		free(tmpstr); tmpstr = NULL;
 
-		debug(60, "section: %s", section);
+		debug(130, "section: %s", section);
 		if(section != NULL)
 		{
 			free(file); file = NULL;
 			file = ipk_listbox(NULL, section, "ipkinstall", "Ipk Install - select file", "/tmp/preview/", 2);
 			free(tmpstr); tmpstr = NULL;
-			debug(60, "file: %s", file);
+			debug(130, "file: %s", file);
 			if(file != NULL)
 			{
 				tmpstr = ostrcat(section, "-", 0, 0);
@@ -72,7 +72,7 @@ void screenpanel_extensions(int mode)
 		free(file); file = NULL;
 		file = ipk_listbox(NULL, tmpstr, NULL, "Ipk Remove - select file", "%pluginpath%/panel/skin/", 1);
 		free(tmpstr); tmpstr = NULL;
-		debug(60, "file: %s", file);
+		debug(130, "file: %s", file);
 		if(file != NULL)
 		{
 			char* tmpinfo = NULL;
@@ -106,7 +106,7 @@ void screenpanel_extensions(int mode)
 			textbox(_("Ipk Tmp Info"), _("No IPK found in /tmp"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		}
 		free(tmpstr); tmpstr = NULL;
-		debug(60, "file: %s", file);
+		debug(130, "file: %s", file);
 		if(file != NULL)
 		{
 			char* tmpinfo = NULL;
