@@ -80,18 +80,13 @@ void screenpanel_extensions(int mode)
 			tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 
 			char* deinstallname = NULL;
-			struct splitstr* ret1 = NULL;
-			int count = 0;
-			int i = 0;
-			ret1 = strsplit(tmpstr, " ", &count);
-			deinstallname = ostrcat("titan-plugin-", (&ret1[0])->part, 0, 0);
+			deinstallname = ostrcat("titan-plugin-", file, 0, 0);
 
 			if(ipk_remove(deinstallname,1) == 0)
 				textbox(_("Ipk Remove Info"), _("Remove OK"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
 			else
 				textbox(_("Ipk Remove Info"), _("Remove ERROR"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
 
-			free(ret1); ret1 = NULL;
 			free(deinstallname); deinstallname = NULL;
 			free(tmpinfo); tmpinfo = NULL;
 			free(file); file = NULL;
@@ -204,11 +199,7 @@ void screenpanel_extensions(int mode)
 			tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 
 			char* deinstallname = NULL;
-			struct splitstr* ret1 = NULL;
-			int count = 0;
-			int i = 0;
-			ret1 = strsplit(tmpstr, " ", &count);
-			deinstallname = ostrcat("titan-plugin-", (&ret1[0])->part, 0, 0);
+			deinstallname = ostrcat("titan-plugin-", file, 0, 0);
 
 //			if(ipk_remove(deinstallname,1) == 0)
 //				textbox(_("Ipk Remove Info"), _("Remove OK"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
@@ -217,7 +208,6 @@ void screenpanel_extensions(int mode)
  			if(textbox(_("Ipk Remove Info"), _(tmpinfo), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
 				textbox(_("Ipk Remove Info"), _(get_ipk_remove(deinstallname)), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 
-			free(ret1); ret1 = NULL;
 			free(deinstallname); deinstallname = NULL;
 			free(tmpinfo); tmpinfo = NULL;
 			free(file); file = NULL;
