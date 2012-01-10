@@ -313,7 +313,7 @@ void setskinnodeslocked(int flag)
 		child = node->child;
 		while(child != NULL)
 		{
-			printf("setskinnodeslocked: %s", child->name);
+			printf("setskinnodeslocked: %s\n", child->name);
 			if(ostrcmp("panel_system_update_flash_online", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("panel_system_update_flash_tmp", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("panel_system_eraseswap", child->name) == 0) child->locked = flag;
@@ -342,12 +342,12 @@ void ckeckskinnodeslockedthread()
 printf("start ckeckskinnodeslockedthread: %d\n",status.security);
 	while(status.security == 0)
 	{
-		sleep(60);
 		char* tmpstr2 = NULL;
 printf("end ckeckskinnodeslockedthread check serial %d\n",status.security);		
 		tmpstr2 = getcpuid();
 		checkserial(tmpstr2);
 		free(tmpstr2), tmpstr2 = NULL;
+		sleep(1);
 	}
 	if(status.security == 1)
 		setskinnodeslocked(0);
