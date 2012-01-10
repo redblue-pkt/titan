@@ -340,6 +340,10 @@ void ckeckskinnodeslockedthread()
 {
 	while(status.security == 0)
 	{
+		char* tmpstr2 = NULL;
+		tmpstr2 = getcpuid();
+		checkserial(tmpstr2);
+		free(tmpstr2), tmpstr2 = NULL;
 		sleep(1);
 	}
 	if(status.security == 1)
