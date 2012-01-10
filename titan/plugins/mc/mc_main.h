@@ -87,7 +87,7 @@ int mc_menucall(struct skin* menuentry)
 		}
 		else
 			textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-		ret 1;
+//		ret = 1;
 //		screenmc_internetbrowser();
 	}
 	else if(ostrcmp("mc_radio", menuentry->name) == 0)
