@@ -580,6 +580,11 @@ int main(int argc, char *argv[])
 	ret = readrcmap(getconfig("rcmapfile", NULL));
 	ret = readepgscanlist(getconfig("epgchannelfile", NULL));
 	ret = settimezone(getconfig("timezone", NULL));
+	
+	//set skinentrys locked
+#ifndef SIMULATE
+	if(status.security == 0) setskinnodeslocked(1);	
+#endif
 
 	//start timer thread
 	status.timerthreadaktion = START;
@@ -676,6 +681,8 @@ firstwizzardstep1:
 	//start ca slot watching threads
 	castart();
 #endif
+	//check skin nodes locked
+	addtimer(&ckeckskinnodeslockedthread, START, 1000, 1, NULL, NULL, NULL);
 
 	//start webserver
 	starthttpd(1);

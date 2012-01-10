@@ -2863,8 +2863,6 @@ void drawnode(struct skin* node, int flag)
 	char* bglt = NULL, *bglb = NULL, *bgrt = NULL, *bgrb = NULL;
 
 	debug(1000, "in");
-	
-	if(node->locked == YES) return;
 
 	if(node->bordersize > 0)
 	{
