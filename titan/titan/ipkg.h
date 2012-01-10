@@ -561,15 +561,15 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 									
 			if(node->section != NULL && ostrcmp(str, node->section) == 0)
 			{
-//				struct splitstr* ret1 = NULL;
-//				int count1 = 0;			
-//				tmpstr1 = ostrcat("", node->showname, 0, 0);
-//				ret1 = strsplit(tmpstr1, ".", &count1);
-//				int max = count1;
+				struct splitstr* ret1 = NULL;
+				int count1 = 0;			
+				tmpstr1 = ostrcat("", node->showname, 0, 0);
+				ret1 = strsplit(tmpstr1, ".", &count1);
+				int max = count1;
 				i += 1;
-//				showname = ostrcat("", (&ret1[0])->part, 0, 0);
-//				free(ret1),ret1 = NULL;
-				showname = ostrcat(node->showname, NULL, 0, 0);
+				showname = ostrcat("", (&ret1[0])->part, 0, 0);
+				free(ret1),ret1 = NULL;
+//				showname = ostrcat(node->showname, NULL, 0, 0);
 
 				struct splitstr* ret3 = NULL;
 				int count3 = 0;
@@ -634,7 +634,7 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 					//	if(ostrcmp(defaultstr, (&ret1[i])->part) == 0)
 					//		listbox->aktline = i + 1;
 					}
-					tmptitle = ostrcat(tmptitle, showname, 1, 0);
+					tmptitle = ostrcat(tmptitle, node->showname, 1, 0);
 					tmptitle = ostrcat(tmptitle, " v.", 1, 0);
 					tmptitle = ostrcat(tmptitle, node->version, 1, 0);
 					changetext(tmp, _(tmptitle));
