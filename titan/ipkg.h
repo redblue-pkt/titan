@@ -292,17 +292,18 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 		if(ostrcmp("Packages.gz", (&ret[i])->part) == 0)
 			withoutgui = 1;
 	}
-	
+	free(ret); ret = NULL;
+	free(tmpstr); tmpstr = NULL;
+
 	if(withoutgui == 1)
 	{
 		if(ostrcmp("97.74.32.10", ip) == 0)
 		{
-			printf("path: %s\n");
-			printf("src: %s\n");
 			if(ostrcmp(src, "//97.74.32.10/svn/ipk/sh4/titan") != 0) 	 	 
 			{
 				textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0); 	 	 
 				free(ip); ip = NULL;
+				free(path); path = NULL;
 				return;
 			}
 		}
@@ -328,9 +329,8 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 	else
 		err = screendownload("Download", ip, path, 80, (char*)filename, "YXRlbWlvOkZIWlZCR2huemZ2RWhGREZUR3p1aWY1Njc2emhqR1RVR0JOSGpt", 0);
 
-	free(ret); ret = NULL;
-	free(tmpstr); tmpstr = NULL;
 	free(ip); ip = NULL;
+	free(path); path = NULL;
 	return err;
 }
 
