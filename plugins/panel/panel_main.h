@@ -125,12 +125,6 @@ int panel_menucall(struct skin* panel_menuentry)
 		screenpanel_extensions(1);
 	else if(ostrcmp("panel_extensions_tmpipkinstall", panel_menuentry->name) == 0)
 		screenpanel_extensions(2);
-	else if(ostrcmp("panel_extensions_ipkinstall_old", panel_menuentry->name) == 0)
-		screenpanel_extensions(10);
-	else if(ostrcmp("panel_extensions_ipkremove_old", panel_menuentry->name) == 0)
-		screenpanel_extensions(11);
-	else if(ostrcmp("panel_extensions_tmpipkinstall_old", panel_menuentry->name) == 0)
-		screenpanel_extensions(12);
 	else if(ostrcmp("panel_feed", panel_menuentry->name) == 0)
 		screenpanel_feed();
 	else if(ostrcmp("panel_infos_main", panel_menuentry->name) == 0)
