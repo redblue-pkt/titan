@@ -301,62 +301,83 @@ int checkemu()
 	return 0;
 }
 
+//flag 0: unlock
+//flag 1: lock
+void setskinnodeslocked(int flag)
+{
+	struct skin* node = skin;
+	struct skin* child = NULL;
+
+	while(node != NULL)
+	{
+		child = node->child;
+		while(child != NULL)
+		{
+			if(ostrcmp("panel_system_update_flash_online", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("panel_system_update_flash_tmp", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("panel_system_eraseswap", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("panel_system_restore", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("panel_extensions", child->name) == 0) child->locked = flag;
+//		else if(ostrcmp("mediacenter", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("browser", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("callmon_main", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("imdb", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("keylock", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("permtime", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("networkbrowser", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("mboxinfo", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("keylock", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("plugins", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("skinselect", child->name) == 0) child->locked = flag;
+	
+			child = child->next;
+		}
+		node = node->next;
+	}
+}
+
+void ckeckskinnodeslockedthread()
+{
+	while(status.security == 0)
+	{
+		sleep(1);
+	}
+	if(status.security == 1)
+		setskinnodeslocked(0);
+}
+
 //can use to disable a menu for a box (node type must be MENU)
 int checkmenuforbox(char *name)
 {
-//	printf("checkmenuforbox status.security: %d\n", status.security);
-
-	if(status.security == 0)
-	{
-//		printf("stcheckmenuforbox in status.security=0 status.security: %d\n", status.security);
-		if(ostrcmp("panel_system_update_flash_online", name) == 0) return 0;;
-		if(ostrcmp("panel_system_update_flash_tmp", name) == 0) return 0;;
-		if(ostrcmp("panel_system_eraseswap", name) == 0) return 0;;
-		if(ostrcmp("panel_system_restore", name) == 0) return 0;;
-		if(ostrcmp("panel_extensions", name) == 0) return 0;;
-//		if(ostrcmp("mediacenter", name) == 0) return 0;;
-		if(ostrcmp("browser", name) == 0) return 0;;
-		if(ostrcmp("callmon_main", name) == 0) return 0;;
-		if(ostrcmp("imdb", name) == 0) return 0;;
-		if(ostrcmp("keylock", name) == 0) return 0;;
-		if(ostrcmp("permtime", name) == 0) return 0;;
-		if(ostrcmp("networkbrowser", name) == 0) return 0;;
-		if(ostrcmp("mboxinfo", name) == 0) return 0;;
-		if(ostrcmp("keylock", name) == 0) return 0;;
-		if(ostrcmp("plugins", name) == 0) return 0;;
-		if(ostrcmp("skinselect", name) == 0) return 0;;
-		status.expertmodus = 0;
-	}		
-
 	if(status.expertmodus > 9) return 1;
 	if((checkbox("ATEMIO500") == 1) || (checkbox("ATEMIO510") == 1))
 	{
-		if(ostrcmp("vfdisplay", name) == 0) return 0;;
-		if(ostrcmp("savesettings", name) == 0) return 0;;
-		if(ostrcmp("recordpath", name) == 0) return 0;;
-		if(ostrcmp("videosettings", name) == 0) return 0;;
-		if(ostrcmp("scartrecorder", name) == 0) return 0;;
-		if(ostrcmp("information", name) == 0) return 0;;
-		//if(ostrcmp("plugins", name) == 0) return 0;;
-		if(ostrcmp("vfdisplay", name) == 0) return 0;;
-		//if(ostrcmp("rotorsettings", name) == 0) return 0;;
-		if(ostrcmp("satconfig", name) == 0) return 0;;
-		if(ostrcmp("satfinder", name) == 0) return 0;;
-		if(ostrcmp("configurehdd", name) == 0) return 0;;
-		if(ostrcmp("panel_settings_overclocking", name) == 0) return 0;;
-		if(ostrcmp("panel_settings_fancontrol", name) == 0) return 0;;
-		if(ostrcmp("panel_settings_automount", name) == 0) return 0;;
-		if(ostrcmp("panel_settings_autostart", name) == 0) return 0;;
-		if(ostrcmp("panel_settings_videotune", name) == 0) return 0;;
-		if(ostrcmp("panel_system_update_usb_online", name) == 0) return 0;;
-		if(ostrcmp("panel_system_update_usb_tmp", name) == 0) return 0;;
-		if(ostrcmp("panel_extensions_menu", name) == 0) return 0;;
-		if(ostrcmp("panel_system_backup", name) == 0) return 0;;
-		if(ostrcmp("sambasettings", name) == 0) return 0;;
-		if(ostrcmp("nfssettings", name) == 0) return 0;;
-		if(ostrcmp("panel_infos_kernel", name) == 0) return 0;;
-		if(ostrcmp("panel_system_wizard", name) == 0) return 0;;
-		if(ostrcmp("panel_sysinfos_module", name) == 0) return 0;;
+		if(ostrcmp("vfdisplay", name) == 0) return 0;
+		if(ostrcmp("savesettings", name) == 0) return 0;
+		if(ostrcmp("recordpath", name) == 0) return 0;
+		if(ostrcmp("videosettings", name) == 0) return 0;
+		if(ostrcmp("scartrecorder", name) == 0) return 0;
+		if(ostrcmp("information", name) == 0) return 0;
+		//if(ostrcmp("plugins", name) == 0) return 0;
+		if(ostrcmp("vfdisplay", name) == 0) return 0;
+		//if(ostrcmp("rotorsettings", name) == 0) return 0;
+		if(ostrcmp("satconfig", name) == 0) return 0;
+		if(ostrcmp("satfinder", name) == 0) return 0;
+		if(ostrcmp("configurehdd", name) == 0) return 0;
+		if(ostrcmp("panel_settings_overclocking", name) == 0) return 0;
+		if(ostrcmp("panel_settings_fancontrol", name) == 0) return 0;
+		if(ostrcmp("panel_settings_automount", name) == 0) return 0;
+		if(ostrcmp("panel_settings_autostart", name) == 0) return 0;
+		if(ostrcmp("panel_settings_videotune", name) == 0) return 0;
+		if(ostrcmp("panel_system_update_usb_online", name) == 0) return 0;
+		if(ostrcmp("panel_system_update_usb_tmp", name) == 0) return 0;
+		if(ostrcmp("panel_extensions_menu", name) == 0) return 0;
+		if(ostrcmp("panel_system_backup", name) == 0) return 0;
+		if(ostrcmp("sambasettings", name) == 0) return 0;
+		if(ostrcmp("nfssettings", name) == 0) return 0;
+		if(ostrcmp("panel_infos_kernel", name) == 0) return 0;
+		if(ostrcmp("panel_system_wizard", name) == 0) return 0;
+		if(ostrcmp("panel_sysinfos_module", name) == 0) return 0;
 		if(ostrcmp("mediaplayer", name) == 0) return 0;
 	}
 	return 1;
