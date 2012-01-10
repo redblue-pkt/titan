@@ -341,12 +341,12 @@ void ckeckskinnodeslockedthread()
 printf("start ckeckskinnodeslockedthread: %d\n",status.security);
 	while(status.security == 0)
 	{
+		sleep(60);
 		char* tmpstr2 = NULL;
 printf("end ckeckskinnodeslockedthread check serial %d\n",status.security);		
 		tmpstr2 = getcpuid();
 		checkserial(tmpstr2);
 		free(tmpstr2), tmpstr2 = NULL;
-		sleep(1);
 	}
 	if(status.security == 1)
 		setskinnodeslocked(0);
