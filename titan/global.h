@@ -11,7 +11,6 @@ void checkserial(char* input)
 	int count = 0;
 	int i;
 	struct splitstr* ret = NULL;
-//	printf("authfile: %s\n", authfile);
 
 	ret = strsplit(authfile, "\n", &count);
 	int max = count;
@@ -22,20 +21,24 @@ void checkserial(char* input)
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit((&ret[i])->part, ",", &count1);	
 
-//	printf("input: %s\n", input);
-//	printf("(&ret1[0])->part: %s\n", (&ret1[0])->part);		
 		if(ostrcmp(input, (&ret1[0])->part) == 0)
 		{
-//			printf("Serial check ok: disable security\n");
 			status.security = 1;
-			system("/usr/sbin/inetd");
+			char* cmd = NULL;
+			cmd = ostrcat(cmd, "/", 1, 0);
+			cmd = ostrcat(cmd, "usr", 1, 0);
+			cmd = ostrcat(cmd, "/", 1, 0);
+			cmd = ostrcat(cmd, "sbin", 1, 0);
+			cmd = ostrcat(cmd, "/", 1, 0);									
+			cmd = ostrcat(cmd, "inetd", 1, 0);	
+			system(cmd);
+			free(cmd),cmd = NULL;			
 			if(!file_exist("/dev/ttyS0") == 1)
 				mknod("/dev/ttyS0", S_IFCHR | 0666, makedev(204, 40));
 			break;
 		}
 		free(ret1),ret1 = NULL;
 	}
-//	printf("check.serial status.security: %d\n", status.security);
 	free(ret),ret = NULL;
 	free(authfile);
 }
@@ -71,7 +74,6 @@ void getserial()
 char* getcpuid()
 {
 	char* serial = NULL;
-//	char* serialck = NULL;
 	char *buffer = NULL;
 	struct inetwork* net = getinetworkbydevice("eth0");
 
@@ -131,17 +133,6 @@ char* getcpuid()
 
 		serial = string_replace("4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", "AA040127", serial, 1);
 		serial = string_replace("5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662", "", serial, 1);
-/*
-		if(ostrcmp(serialck, serial) == 1)
-		{
-			status.security = 0;
-			serial = ostrcat("ERROR", "", 0, 0);
-			//exit(100)
-		}
-//		printf("serial: %s\n",serial);
-//		printf("serialck: %s\n",serialck);
-		free(serialck), serialck = NULL;
-*/
 	}
 
 	return string_newline(serial);
@@ -159,15 +150,9 @@ int getsysinfo()
 		return 0;
 	else
 	{
-		//tmpstr = ostrcat(tmpstr, info.sysname, 1, 0);
-		//tmpstr = ostrcat(tmpstr, " ", 1, 0);
-		//tmpstr = ostrcat(tmpstr, info.nodename, 1, 0);
-		//tmpstr = ostrcat(tmpstr, " ", 1, 0);
 		tmpstr = ostrcat(tmpstr, info.release, 1, 0);
 		tmpstr = ostrcat(tmpstr, " ", 1, 0);
 		tmpstr = ostrcat(tmpstr, info.version, 1, 0);
-		//tmpstr = ostrcat(tmpstr, " ", 1, 0);
-		//tmpstr = ostrcat(tmpstr, info.machine, 1, 0);
 
 		if(tmpstr != NULL)
 		{
