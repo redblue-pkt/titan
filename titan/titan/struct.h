@@ -556,6 +556,7 @@ struct skin
 	char* handle1;
 	struct epgrecord* epgrecord;
 	char* pluginhandle;
+	uint8_t locked;
 	struct skin *select;
 	struct skin *child;
 	struct skin *prev;

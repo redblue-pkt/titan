@@ -2863,6 +2863,8 @@ void drawnode(struct skin* node, int flag)
 	char* bglt = NULL, *bglb = NULL, *bgrt = NULL, *bgrb = NULL;
 
 	debug(1000, "in");
+	
+	if(node->locked == YES) return;
 
 	if(node->bordersize > 0)
 	{
@@ -3075,13 +3077,13 @@ int calclistbox(struct skin* node)
 				child = child->next;
 				continue;
 			}
-			else if(ostrcmp(child->parent, node->name) != 0 || child->hidden == YES)
+			else if(ostrcmp(child->parent, node->name) != 0 || child->hidden == YES || child->locked == YES)
 			{
 				child = child->next;
 				continue;
 			}
 		}
-		else if(child->parentpointer != node || child->hidden == YES)
+		else if(child->parentpointer != node || child->hidden == YES || child->locked == YES)
 		{
 			child = child->next;
 			continue;
@@ -3293,7 +3295,7 @@ int setnodeattr(struct skin* node, struct skin* parent)
 	}
 
 	if(status.screencalc != 2)
-		if(node->hidden == YES || parent->hidden == YES) return 1;
+		if(node->hidden == YES || parent->hidden == YES || node->locked == YES || parent->locked == YES) return 1;
 
 	calcrwidth(node, parent);
 	if(parent->type != LISTBOX && parent->type != FILELIST && parent->type != GRID)
