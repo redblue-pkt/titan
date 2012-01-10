@@ -140,7 +140,8 @@ msgstr ""
 #: panel_extensions.h:176 panel_extensions.h:234 panel_main.h:249 ipkg.h:302
 #: global.h:56 global.h:3822 panel_extensions.h:115 panel_extensions.h:117
 #: panel_extensions.h:119 panel_extensions.h:136 panel_extensions.h:164
-#: panel_extensions.h:171 panel_extensions.h:224
+#: panel_extensions.h:171 panel_extensions.h:224 mc_main.h:67 mc_main.h:86
+#: mc_main.h:88 mc_main.h:94 mc_main.h:99 mc_main.h:104 mc_main.h:194
 msgid "EXIT"
 msgstr ""
 
@@ -462,7 +463,8 @@ msgstr ""
 #: global.h:3835 global.h:3821 global.h:3837 keyactions.h:223
 #: panel_extensions.h:176 panel_extensions.h:248 panel_main.h:249 ipkg.h:302
 #: global.h:3822 panel_extensions.h:119 panel_extensions.h:171
-#: panel_extensions.h:238
+#: panel_extensions.h:238 mc_main.h:67 mc_main.h:86 mc_main.h:88 mc_main.h:94
+#: mc_main.h:99 mc_main.h:104 mc_main.h:194 panel_extensions.h:120
 msgid "Message"
 msgstr ""
 
@@ -552,7 +554,8 @@ msgstr ""
 #: panel_extensions.h:234 panel_main.h:249 ipkg.h:302 global.h:56
 #: global.h:3822 panel_extensions.h:115 panel_extensions.h:117
 #: panel_extensions.h:119 panel_extensions.h:136 panel_extensions.h:164
-#: panel_extensions.h:171 panel_extensions.h:224
+#: panel_extensions.h:171 panel_extensions.h:224 mc_main.h:67 mc_main.h:86
+#: mc_main.h:88 mc_main.h:94 mc_main.h:99 mc_main.h:104 mc_main.h:194
 msgid "OK"
 msgstr ""
 
@@ -1172,6 +1175,7 @@ msgstr ""
 
 #: mc_main.h:43 mc_main.h:48 mc_main.h:53 mc_main.h:58 mc_main.h:75
 #: mc_main.h:80 mc_main.h:85 mc_main.h:92 mc_main.h:97 mc_main.h:102
+#: mc_main.h:94 mc_main.h:99 mc_main.h:104
 msgid "comming soon"
 msgstr ""
 
@@ -1185,7 +1189,7 @@ msgstr ""
 
 #: mc_main.h:175 menu.h:64 panel_main.h:35 panel_main.h:241 panel_main.h:243
 #: mc_main.h:192 panel_main.h:245 panel_main.h:244 panel_main.h:29
-#: panel_main.h:249
+#: panel_main.h:249 mc_main.h:194
 msgid "Menu not implemented !"
 msgstr ""
 
@@ -1424,7 +1428,7 @@ msgstr ""
 #: panel_extensions.h:50 panel_extensions.h:52 panel_extensions.h:49
 #: panel_extensions.h:51 panel_extensions.h:141 panel_extensions.h:169
 #: panel_extensions.h:171 panel_extensions.h:136 panel_extensions.h:164
-#: panel_extensions.h:166
+#: panel_extensions.h:166 panel_extensions.h:48
 msgid "Ipk Install Info"
 msgstr ""
 
@@ -1439,7 +1443,7 @@ msgstr ""
 #: panel_extensions.h:72 panel_extensions.h:73 panel_extensions.h:92
 #: panel_extensions.h:94 panel_extensions.h:90 panel_extensions.h:217
 #: panel_extensions.h:218 panel_extensions.h:86 panel_extensions.h:88
-#: panel_extensions.h:208 panel_extensions.h:209
+#: panel_extensions.h:208 panel_extensions.h:209 panel_extensions.h:91
 msgid "Ipk Remove Info"
 msgstr ""
 
@@ -1454,7 +1458,7 @@ msgstr ""
 #: panel_extensions.h:108 panel_extensions.h:120 panel_extensions.h:234
 #: panel_extensions.h:245 panel_extensions.h:247 panel_extensions.h:115
 #: panel_extensions.h:117 panel_extensions.h:224 panel_extensions.h:235
-#: panel_extensions.h:237
+#: panel_extensions.h:237 panel_extensions.h:106 panel_extensions.h:119
 msgid "Ipk Tmp Info"
 msgstr ""
 
@@ -1462,7 +1466,7 @@ msgstr ""
 #: panel_extensions.h:90 panel_extensions.h:91 panel_extensions.h:92
 #: panel_extensions.h:86 panel_extensions.h:88 panel_extensions.h:110
 #: panel_extensions.h:108 panel_extensions.h:234 panel_extensions.h:103
-#: panel_extensions.h:224
+#: panel_extensions.h:224 panel_extensions.h:106
 msgid "No IPK found in /tmp"
 msgstr ""
 
@@ -6315,6 +6319,7 @@ msgstr ""
 #: panel_extensions.h:53 panel_extensions.h:126 panel_extensions.h:52
 #: panel_extensions.h:124 panel_extensions.h:176 panel_extensions.h:248
 #: panel_extensions.h:119 panel_extensions.h:171 panel_extensions.h:238
+#: panel_extensions.h:120
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
@@ -6501,11 +6506,11 @@ msgstr ""
 msgid "12"
 msgstr ""
 
-#: mc_main.h:66
+#: mc_main.h:66 mc_main.h:67
 msgid "start Internet browser now ?"
 msgstr ""
 
-#: mc_main.h:87
+#: mc_main.h:87 mc_main.h:86
 msgid "Install netsurf Internetbrowser Ipk first !"
 msgstr ""
 
@@ -6602,4 +6607,8 @@ msgstr ""
 
 #: plugins_panel_skin.xml.h:54 skins_panel_skin.xml.h:54
 msgid "IPK tmp (tmp) old"
+msgstr ""
+
+#: mc_main.h:88
+msgid "Registration needed, please contact Atemio !"
 msgstr ""
