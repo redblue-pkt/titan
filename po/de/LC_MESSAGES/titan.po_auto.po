@@ -1175,7 +1175,8 @@ msgstr ""
 #: skin_default_skin.xml.h:451 skin_default_skin.xml.h:456
 #: skin_default_skin.xml.h:457 plugins_panel_skin.xml.h:83
 #: skins_panel_skin.xml.h:83 plugins_panel_skin.xml.h:86
-#: skins_panel_skin.xml.h:86
+#: skins_panel_skin.xml.h:86 plugins_lcdpearl1_skin.xml.h:1
+#: skins_lcdpearl1_skin.xml.h:1
 msgid ""
 msgstr ""
 
