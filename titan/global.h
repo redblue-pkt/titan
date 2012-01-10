@@ -313,6 +313,7 @@ void setskinnodeslocked(int flag)
 		child = node->child;
 		while(child != NULL)
 		{
+			printf("setskinnodeslocked: %s", child->name);
 			if(ostrcmp("panel_system_update_flash_online", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("panel_system_update_flash_tmp", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("panel_system_eraseswap", child->name) == 0) child->locked = flag;
