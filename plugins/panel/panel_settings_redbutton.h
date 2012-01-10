@@ -29,7 +29,7 @@ void screenpanel_settings_redbutton()
 			if(status.security == 0)
 			{
 				if(ostrcmp(child->name, "Softcam Panel") == 0) skip = 1;
-				if(ostrcmp(child->name, "Media Center") == 0) skip = 1;
+//				if(ostrcmp(child->name, "Media Center") == 0) skip = 1;
 				if(ostrcmp(child->name, "Internet Browser") == 0) skip = 1;
 				if(ostrcmp(child->name, "CallMonitor") == 0) skip = 1;
 				if(ostrcmp(child->name, "Imdb") == 0) skip = 1;
@@ -39,6 +39,7 @@ void screenpanel_settings_redbutton()
 				if(ostrcmp(child->name, "Permanent Time") == 0) skip = 1;	
 				if(ostrcmp(child->name, "TopfieldVFD") == 0) skip = 1;
 				if(ostrcmp(child->name, "Hello") == 0) skip = 1;
+				if(ostrcmp(child->name, "LCD Pearl") == 0) skip = 1;
 			}
 			if(skip == 0)
 			{
