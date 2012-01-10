@@ -270,6 +270,7 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 
 	if(src == NULL) return 1;
 
+	printf("src = %s", src);
 	ip = string_replace("http://", "", src, 0);
 
 	if(ip != NULL)
@@ -282,7 +283,6 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 
 	tmpstr = ostrcat("", path, 0, 0);
 	ret = strsplit(tmpstr, "/", &count);
-	free(tmpstr); tmpstr = NULL;
 	
 	for(i = 0; i < count; i++)
 	{
@@ -290,6 +290,7 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 			withoutgui = 1;
 	}
 	free(ret); ret = NULL;
+	free(tmpstr); tmpstr = NULL;
 	
 	if(withoutgui == 1)
 	{
