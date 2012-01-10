@@ -136,6 +136,8 @@ msgstr ""
 #: global.h:3827 ipkg.h:305 ipkg.h:308 global.h:3819 ipkg.h:300
 #: panel_extensions.h:49 panel_extensions.h:51 panel_extensions.h:108
 #: panel_extensions.h:120 ipkg.h:301 global.h:3835 global.h:3821 global.h:3837
+#: keyactions.h:223 panel_extensions.h:141 panel_extensions.h:169
+#: panel_extensions.h:176 panel_extensions.h:234 panel_main.h:249
 msgid "EXIT"
 msgstr ""
 
@@ -453,7 +455,8 @@ msgstr ""
 #: global.h:3818 global.h:3820 panel_main.h:29 panel_extensions.h:53
 #: panel_extensions.h:126 global.h:3827 ipkg.h:305 ipkg.h:308 global.h:3819
 #: ipkg.h:300 panel_extensions.h:52 panel_extensions.h:124 ipkg.h:301
-#: global.h:3835 global.h:3821 global.h:3837
+#: global.h:3835 global.h:3821 global.h:3837 keyactions.h:223
+#: panel_extensions.h:176 panel_extensions.h:248 panel_main.h:249
 msgid "Message"
 msgstr ""
 
@@ -538,7 +541,9 @@ msgstr ""
 #: panel_extensions.h:124 panel_extensions.h:126 global.h:3827 ipkg.h:305
 #: ipkg.h:308 global.h:3819 ipkg.h:300 panel_extensions.h:49
 #: panel_extensions.h:51 panel_extensions.h:108 panel_extensions.h:120
-#: ipkg.h:301 global.h:3835 global.h:3821 global.h:3837
+#: ipkg.h:301 global.h:3835 global.h:3821 global.h:3837 keyactions.h:223
+#: panel_extensions.h:141 panel_extensions.h:169 panel_extensions.h:176
+#: panel_extensions.h:234 panel_main.h:249
 msgid "OK"
 msgstr ""
 
@@ -559,6 +564,7 @@ msgstr ""
 #: global.h:3804 global.h:3807 global.h:3808 global.h:3806 global.h:3812
 #: global.h:3813 global.h:3814 global.h:3817 global.h:3818 global.h:3820
 #: global.h:3827 global.h:3819 global.h:3835 global.h:3821 global.h:3837
+#: keyactions.h:223
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -1169,6 +1175,7 @@ msgstr ""
 
 #: mc_main.h:175 menu.h:64 panel_main.h:35 panel_main.h:241 panel_main.h:243
 #: mc_main.h:192 panel_main.h:245 panel_main.h:244 panel_main.h:29
+#: panel_main.h:249
 msgid "Menu not implemented !"
 msgstr ""
 
@@ -1404,12 +1411,13 @@ msgstr ""
 #: panel_extensions.h:46 panel_extensions.h:21 panel_extensions.h:18
 #: panel_extensions.h:39 panel_extensions.h:41 panel_extensions.h:47
 #: panel_extensions.h:50 panel_extensions.h:52 panel_extensions.h:49
-#: panel_extensions.h:51
+#: panel_extensions.h:51 panel_extensions.h:141 panel_extensions.h:169
+#: panel_extensions.h:171
 msgid "Ipk Install Info"
 msgstr ""
 
 #: panel_extensions.h:19 panel_extensions.h:20 panel_extensions.h:21
-#: panel_extensions.h:18
+#: panel_extensions.h:18 panel_extensions.h:141
 msgid "No section found"
 msgstr ""
 
@@ -1417,7 +1425,8 @@ msgstr ""
 #: panel_extensions.h:71 panel_extensions.h:74 panel_extensions.h:75
 #: panel_extensions.h:76 panel_extensions.h:77 panel_extensions.h:78
 #: panel_extensions.h:72 panel_extensions.h:73 panel_extensions.h:92
-#: panel_extensions.h:94 panel_extensions.h:90
+#: panel_extensions.h:94 panel_extensions.h:90 panel_extensions.h:217
+#: panel_extensions.h:218
 msgid "Ipk Remove Info"
 msgstr ""
 
@@ -1429,14 +1438,15 @@ msgstr ""
 #: panel_extensions.h:105 panel_extensions.h:86 panel_extensions.h:97
 #: panel_extensions.h:99 panel_extensions.h:88 panel_extensions.h:110
 #: panel_extensions.h:122 panel_extensions.h:124 panel_extensions.h:126
-#: panel_extensions.h:108 panel_extensions.h:120
+#: panel_extensions.h:108 panel_extensions.h:120 panel_extensions.h:234
+#: panel_extensions.h:245 panel_extensions.h:247
 msgid "Ipk Tmp Info"
 msgstr ""
 
 #: panel_extensions.h:82 panel_extensions.h:85 panel_extensions.h:89
 #: panel_extensions.h:90 panel_extensions.h:91 panel_extensions.h:92
 #: panel_extensions.h:86 panel_extensions.h:88 panel_extensions.h:110
-#: panel_extensions.h:108
+#: panel_extensions.h:108 panel_extensions.h:234
 msgid "No IPK found in /tmp"
 msgstr ""
 
@@ -6257,7 +6267,7 @@ msgstr ""
 #: panel_extensions.h:105 panel_extensions.h:48 panel_extensions.h:106
 #: panel_extensions.h:42 panel_extensions.h:100 panel_extensions.h:102
 #: panel_extensions.h:53 panel_extensions.h:126 panel_extensions.h:52
-#: panel_extensions.h:124
+#: panel_extensions.h:124 panel_extensions.h:176 panel_extensions.h:248
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
