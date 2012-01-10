@@ -494,63 +494,56 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 				tmp->del = 1;
 				tmp->textposx = 120;
 				tmp->height = 50;
-	//				tmp->fontsize = 30;
+//				tmp->fontsize = 30;
 				tmp->valign = convertxmlentry("middle", 0);
 				tmp->hspace = 5;
 				debug(60, "showpng changed=%d", showpng);
 	
-				if(showpng == 1)
+				if(string_find("%pluginpath%",skinpath1))
 				{
-					if(string_find("%pluginpath%",skinpath1))
+					struct splitstr* ret6 = NULL;
+					int count6 = 0;
+					char* tmpstr6 = NULL;
+					tmpstr6 = ostrcat("", skinpath1, 0, 0);
+					ret6 = strsplit(tmpstr6, "%", &count6);
+					defaultdir = ostrcat(getconfig("skinpath", NULL), "/skin/panel_", 0, 0);
+					defaultdir = ostrcat(defaultdir, (&ret1[i])->part, 1, 0);
+					defaultdir = ostrcat(defaultdir, ".png", 1, 0);
+
+					if(!file_exist(defaultdir))
 					{
-						struct splitstr* ret6 = NULL;
-						int count6 = 0;
-						char* tmpstr6 = NULL;
-						tmpstr6 = ostrcat("", skinpath1, 0, 0);
-						ret6 = strsplit(tmpstr6, "%", &count6);
-						defaultdir = ostrcat(getconfig("skinpath", NULL), "/skin/panel_", 0, 0);
-						defaultdir = ostrcat(defaultdir, (&ret1[i])->part, 1, 0);
-						defaultdir = ostrcat(defaultdir, ".png", 1, 0);
-	
-						if(!file_exist(defaultdir))
-						{
-							defaultdir = ostrcat(getconfig("pluginpath", NULL), (&ret6[1])->part, 0, 0);
-							defaultdir = ostrcat(defaultdir, "panel_", 0, 0);
-							defaultdir = ostrcat(defaultdir, (&ret1[i])->part, 1, 0);
-							defaultdir = ostrcat(defaultdir, ".png", 1, 0);
-						}
-						free(ret6), ret6 = NULL;
-					}
-					else
-					{
-						defaultdir = ostrcat(getconfig("skinpath", NULL), skinpath1, 0, 0);
-						defaultdir = ostrcat(defaultdir, "/skin/panel_", 0, 0);
+						defaultdir = ostrcat(getconfig("pluginpath", NULL), (&ret6[1])->part, 0, 0);
+						defaultdir = ostrcat(defaultdir, "panel_", 0, 0);
 						defaultdir = ostrcat(defaultdir, (&ret1[i])->part, 1, 0);
 						defaultdir = ostrcat(defaultdir, ".png", 1, 0);
 					}
-	
-					debug(60, "defaultdir %s", defaultdir);
-					if(file_exist(defaultdir))
-					{
-						tmpskinpath = ostrcat("", defaultdir, 0, 0);
-						changepic(tmp, tmpskinpath);
-						free(tmpskinpath); tmpskinpath = NULL;
-					}
-					else
-					{
-						tmpskinpath = ostrcat(skinpath1, "panel_default.png", 0, 0);
-						changepic(tmp, tmpskinpath);
-						free(tmpskinpath); tmpskinpath = NULL;
-					}
-					free(defaultdir); defaultdir = NULL;
+					free(ret6), ret6 = NULL;
 				}
+				else
+				{
+					defaultdir = ostrcat(getconfig("skinpath", NULL), skinpath1, 0, 0);
+					defaultdir = ostrcat(defaultdir, "/skin/panel_", 0, 0);
+					defaultdir = ostrcat(defaultdir, (&ret1[i])->part, 1, 0);
+					defaultdir = ostrcat(defaultdir, ".png", 1, 0);
+				}
+
+				debug(60, "defaultdir %s", defaultdir);
+				if(file_exist(defaultdir))
+				{
+					tmpskinpath = ostrcat("", defaultdir, 0, 0);
+					changepic(tmp, tmpskinpath);
+					free(tmpskinpath); tmpskinpath = NULL;
+				}
+				else
+				{
+					tmpskinpath = ostrcat(skinpath1, "panel_default.png", 0, 0);
+					changepic(tmp, tmpskinpath);
+					free(tmpskinpath); tmpskinpath = NULL;
+				}
+				free(defaultdir); defaultdir = NULL;
 	
 				if(defaultstr != NULL)
-				{
 					setlistboxselection(listbox, defaultstr);
-				//	if(ostrcmp(defaultstr, (&ret1[i])->part) == 0)
-				//		listbox->aktline = i + 1;
-				}
 			}
 		}
 	}
@@ -567,14 +560,14 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 									
 			if(node->section != NULL && ostrcmp(str, node->section) == 0)
 			{
-				struct splitstr* ret1 = NULL;
-				int count1 = 0;			
-				tmpstr1 = ostrcat("", node->showname, 0, 0);
-				ret1 = strsplit(tmpstr1, ".", &count1);
-				int max = count1;
-				int i = 0;
-				showname = ostrcat("", (&ret1[0])->part, 0, 0);
-				free(ret1),ret1 = NULL;
+//				struct splitstr* ret1 = NULL;
+//				int count1 = 0;			
+//				tmpstr1 = ostrcat("", node->showname, 0, 0);
+//				ret1 = strsplit(tmpstr1, ".", &count1);
+//				int max = count1;
+//				int i = 0;
+//				showname = ostrcat("", (&ret1[0])->part, 0, 0);
+//				free(ret1),ret1 = NULL;
 				
 				struct splitstr* ret3 = NULL;
 				int count3 = 0;
