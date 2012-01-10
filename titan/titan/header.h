@@ -447,5 +447,6 @@ int writevfd(char *value);
 
 //skinfunc.h
 char* getaktchannelname();
+char* getrec();
 
 #endif
