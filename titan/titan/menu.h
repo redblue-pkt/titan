@@ -24,43 +24,43 @@ struct skin* menu(struct skin* menu)
 			if(status.security == 0)
 			{
 				printf("menu.h checkmenuforbox in status.security=0 status.security: %d\n", status.security);
-				if(ostrcmp("panel_system_update_flash_online", child->name) == 0) child->hidden = YES;;
-				if(ostrcmp("panel_system_update_flash_tmp", child->name) == 0) child->hidden = YES;;
-				if(ostrcmp("panel_system_eraseswap", child->name) == 0) child->hidden = YES;;
-				if(ostrcmp("panel_system_restore", child->name) == 0) child->hidden = YES;;
-				if(ostrcmp("panel_extensions", child->name) == 0) child->hidden = YES;;
-		//		if(ostrcmp("mediacenter", child->name) == 0) child->hidden = YES;;
-				if(ostrcmp("browser", child->name) == 0) child->hidden = YES;;
-				if(ostrcmp("callmon_main", child->name) == 0) child->hidden = YES;;
-				if(ostrcmp("imdb", child->name) == 0) child->hidden = YES;;
-				if(ostrcmp("keylock", child->name) == 0) child->hidden = YES;;
-				if(ostrcmp("permtime", child->name) == 0) child->hidden = YES;;
-				if(ostrcmp("networkbrowser", child->name) == 0) child->hidden = YES;;
-				if(ostrcmp("mboxinfo", child->name) == 0) child->hidden = YES;;
-				if(ostrcmp("keylock", child->name) == 0) child->hidden = YES;;
-				if(ostrcmp("plugins", child->name) == 0) child->hidden = YES;;
-				if(ostrcmp("skinselect", child->name) == 0) child->hidden = YES;;
+				if(ostrcmp("panel_system_update_flash_online", child->name) == 0) child->hidden = YES;
+				if(ostrcmp("panel_system_update_flash_tmp", child->name) == 0) child->hidden = YES;
+				if(ostrcmp("panel_system_eraseswap", child->name) == 0) child->hidden = YES;
+				if(ostrcmp("panel_system_restore", child->name) == 0) child->hidden = YES;
+				if(ostrcmp("panel_extensions", child->name) == 0) child->hidden = YES;
+		//		if(ostrcmp("mediacenter", child->name) == 0) child->hidden = YES;
+				if(ostrcmp("browser", child->name) == 0) child->hidden = YES;
+				if(ostrcmp("callmon_main", child->name) == 0) child->hidden = YES;
+				if(ostrcmp("imdb", child->name) == 0) child->hidden = YES;
+				if(ostrcmp("keylock", child->name) == 0) child->hidden = YES;
+				if(ostrcmp("permtime", child->name) == 0) child->hidden = YES;
+				if(ostrcmp("networkbrowser", child->name) == 0) child->hidden = YES;
+				if(ostrcmp("mboxinfo", child->name) == 0) child->hidden = YES;
+				if(ostrcmp("keylock", child->name) == 0) child->hidden = YES;
+				if(ostrcmp("plugins", child->name) == 0) child->hidden = YES;
+				if(ostrcmp("skinselect", child->name) == 0) child->hidden = YES;
 				status.expertmodus = 0;
 			}
 			else
 			{
 				printf("menu.h checkmenuforbox in status.security=0 status.security: %d\n", status.security);
-				if(ostrcmp("panel_system_update_flash_online", child->name) == 0) child->hidden = NO;;
-				if(ostrcmp("panel_system_update_flash_tmp", child->name) == 0) child->hidden = NO;;
-				if(ostrcmp("panel_system_eraseswap", child->name) == 0) child->hidden = NO;;
-				if(ostrcmp("panel_system_restore", child->name) == 0) child->hidden = NO;;
-				if(ostrcmp("panel_extensions", child->name) == 0) child->hidden = NO;;
-		//		if(ostrcmp("mediacenter", child->name) == 0) child->hidden = NO;;
-				if(ostrcmp("browser", child->name) == 0) child->hidden = NO;;
-				if(ostrcmp("callmon_main", child->name) == 0) child->hidden = NO;;
-				if(ostrcmp("imdb", child->name) == 0) child->hidden = NO;;
-				if(ostrcmp("keylock", child->name) == 0) child->hidden = NO;;
-				if(ostrcmp("permtime", child->name) == 0) child->hidden = NO;;
-				if(ostrcmp("networkbrowser", child->name) == 0) child->hidden = NO;;
-				if(ostrcmp("mboxinfo", child->name) == 0) child->hidden = NO;;
-				if(ostrcmp("keylock", child->name) == 0) child->hidden = NO;;
-				if(ostrcmp("plugins", child->name) == 0) child->hidden = NO;;
-				if(ostrcmp("skinselect", child->name) == 0) child->hidden = NO;;
+				if(ostrcmp("panel_system_update_flash_online", child->name) == 0) child->hidden = NO;
+				if(ostrcmp("panel_system_update_flash_tmp", child->name) == 0) child->hidden = NO;
+				if(ostrcmp("panel_system_eraseswap", child->name) == 0) child->hidden = NO;
+				if(ostrcmp("panel_system_restore", child->name) == 0) child->hidden = NO;
+				if(ostrcmp("panel_extensions", child->name) == 0) child->hidden = NO;
+		//		if(ostrcmp("mediacenter", child->name) == 0) child->hidden = NO;
+				if(ostrcmp("browser", child->name) == 0) child->hidden = NO;
+				if(ostrcmp("callmon_main", child->name) == 0) child->hidden = NO;
+				if(ostrcmp("imdb", child->name) == 0) child->hidden = NO;
+				if(ostrcmp("keylock", child->name) == 0) child->hidden = NO;
+				if(ostrcmp("permtime", child->name) == 0) child->hidden = NO;
+				if(ostrcmp("networkbrowser", child->name) == 0) child->hidden = NO;
+				if(ostrcmp("mboxinfo", child->name) == 0) child->hidden = NO;
+				if(ostrcmp("keylock", child->name) == 0) child->hidden = NO;
+				if(ostrcmp("plugins", child->name) == 0) child->hidden = NO;
+				if(ostrcmp("skinselect", child->name) == 0) child->hidden = NO;
 				status.expertmodus = getconfigint("expertmodus", NULL);
 			}	
 			tmpstr = ostrcat("protect_", child->name, 0, 0);
