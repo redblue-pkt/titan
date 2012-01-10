@@ -549,6 +549,7 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 	}
 	else if(showpng == 2)
 	{
+		int i = 0;
 		tmpck = get_ipk_listinstall();
 		struct ipkg *node = ipkg;
 		while(node != NULL)
@@ -565,7 +566,7 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 //				tmpstr1 = ostrcat("", node->showname, 0, 0);
 //				ret1 = strsplit(tmpstr1, ".", &count1);
 //				int max = count1;
-//				int i = 0;
+				i += 1;
 //				showname = ostrcat("", (&ret1[0])->part, 0, 0);
 //				free(ret1),ret1 = NULL;
 				
