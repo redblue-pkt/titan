@@ -30,7 +30,7 @@ void screenkeyactions(int key, int flag)
 					if(status.security == 0)
 					{
 						if(ostrcmp(child->name, "Softcam Panel") == 0) skip = 1;
-						if(ostrcmp(child->name, "Media Center") == 0) skip = 1;
+//						if(ostrcmp(child->name, "Media Center") == 0) skip = 1;
 						if(ostrcmp(child->name, "Internet Browser") == 0) skip = 1;
 						if(ostrcmp(child->name, "CallMonitor") == 0) skip = 1;
 						if(ostrcmp(child->name, "Imdb") == 0) skip = 1;
@@ -40,6 +40,7 @@ void screenkeyactions(int key, int flag)
 						if(ostrcmp(child->name, "Permanent Time") == 0) skip = 1;	
 						if(ostrcmp(child->name, "TopfieldVFD") == 0) skip = 1;
 						if(ostrcmp(child->name, "Hello") == 0) skip = 1;
+						if(ostrcmp(child->name, "LCD Pearl") == 0) skip = 1;
 					}				
 					if(skip == 0)
 					{
@@ -84,7 +85,7 @@ void screenkeyactions(int key, int flag)
 	if(status.security == 0)
 	{
 		if(ostrcmp(keyconf, "Softcam Panel") == 0) return;
-		if(ostrcmp(keyconf, "Media Center") == 0) return;
+//		if(ostrcmp(keyconf, "Media Center") == 0) return;
 		if(ostrcmp(keyconf, "Internet Browser") == 0) return;
 		if(ostrcmp(keyconf, "CallMonitor") == 0) return;
 		if(ostrcmp(keyconf, "Imdb") == 0) return;
@@ -94,6 +95,7 @@ void screenkeyactions(int key, int flag)
 		if(ostrcmp(keyconf, "Permanent Time") == 0) return;	
 		if(ostrcmp(keyconf, "TopfieldVFD") == 0) return;
 		if(ostrcmp(keyconf, "Hello") == 0) return;
+		if(ostrcmp(keyconf, "LCD Pearl") == 0) return;
 	}
 						
 	debug(60, "key=%s", keyconf);

@@ -761,5 +761,20 @@ char* get_ipk_info(char* section)
 	return tmpstr;
 }
 
+char* get_ipk_install(char* ipk)
+{
+	debug(60, "in %s",ipk);
+
+	char* cmd = NULL, *tmpstr = NULL;
+	cmd = ostrcat(cmd, "ipkg install titan-plugin-", 1, 0);
+	cmd = ostrcat(cmd, ipk, 1, 0);
+
+	tmpstr = command(cmd);
+
+	debug(60, "out %s",cmd);
+	free(cmd); cmd = NULL;
+	return tmpstr;
+}
+
 #endif
 
