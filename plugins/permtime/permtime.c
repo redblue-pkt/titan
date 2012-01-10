@@ -1,5 +1,6 @@
 #include "../../titan/struct.h"
 #include "../../titan/debug.h"
+#include "../../titan/skinfunc.h"
 #include "../../titan/header.h"
 
 char pluginname[] = "Permanent Time";
