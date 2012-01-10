@@ -3458,12 +3458,20 @@ char* string_replace_remove_last_chars(char *search, char *replace, char *string
 	char* tmpstr = NULL;
 
 	if(string == NULL || search == NULL)
-		return string;
+	{
+		tmpstr = ostrcat(tmpstr, string, 1, 0);
+		if(free1 == 1) free(string);
+		return tmpstr;
+	}
 
 	searchpos = strstr(string, search);
 
 	if(searchpos == NULL)
-		return string;
+	{
+		tmpstr = ostrcat(tmpstr, string, 1, 0);
+		if(free1 == 1) free(string);
+		return tmpstr;
+	}
 
 	tmpstr = strndup(string, searchpos - string);
 	if(replace != NULL)
@@ -3482,12 +3490,20 @@ char* string_replace(char *search, char *replace, char *string, int free1)
 	char* tmpstr = NULL;
 
 	if(string == NULL || search == NULL)
-		return string;
+	{
+		tmpstr = ostrcat(tmpstr, string, 1, 0);
+		if(free1 == 1) free(string);
+		return tmpstr;
+	}
 
 	searchpos = strstr(string, search);
 
 	if(searchpos == NULL)
-		return string;
+	{
+		tmpstr = ostrcat(tmpstr, string, 1, 0);
+		if(free1 == 1) free(string);
+		return tmpstr;
+	}
 
 	tmpstr = strndup(string, searchpos - string);
 	if(replace == NULL)
