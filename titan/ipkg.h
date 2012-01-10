@@ -151,6 +151,7 @@ void freeipkg()
 int ipkg_list_cb(char *name, char *desc, char *version, pkg_state_status_t status, void *userdata)
 {
 	int count = 0;
+#ifndef SIMULATE	
 	char* tmpstr = NULL;
 	struct splitstr* ret = NULL;
 	
@@ -164,7 +165,7 @@ int ipkg_list_cb(char *name, char *desc, char *version, pkg_state_status_t statu
 
 	free(ret); ret = NULL;
 	free(tmpstr); tmpstr = NULL;
-
+#endif
 	return 0;
 }
 
@@ -180,48 +181,52 @@ int ipkg_update(void)
 	unlink("/var/usr/lib/ipkg/secret");
 	unlink("/var/usr/lib/ipkg/titan");		
 	int err = 0;
+#ifndef SIMULATE
 	args_t args; 
 
 	args_init(&args);
 	err = ipkg_lists_update(&args);
 	args_deinit(&args);
-
+#endif
 	return err;
 }
 
 int ipkg_list(void)
 {
 	int err = 0;
+#ifndef SIMULATE
 	args_t args;
 	
 	args_init(&args);
 	err = ipkg_packages_list(&args, NULL, ipkg_list_cb, NULL);
 	args_deinit(&args);
-
+#endif
 	return err;
 }
 
 int ipkg_status(const char* package)
 {
 	int err = 0;
+#ifndef SIMULATE
 	args_t args;
 
 	args_init(&args);
 	err = ipkg_packages_status(&args, package, ipkg_status_cb, NULL);
 	args_deinit(&args);
-
+#endif
 	return err;
 }
 
 int ipkg_info(const char* package)
 {
 	int err = 0;
+#ifndef SIMULATE
 	args_t args;
 
 	args_init(&args);
 	err = ipkg_packages_info(&args, package, ipkg_status_cb, NULL);
 	args_deinit(&args);
-
+#endif
 	return err;
 }
 
@@ -230,6 +235,7 @@ int ipkg_install(const char* package)
 	debug(130, "package: %s", package);
 
 	int err = 0;
+#ifndef SIMULATE	
 	args_t args;
 	args_init(&args);
 
@@ -238,30 +244,33 @@ int ipkg_install(const char* package)
 	debug(130, "package2: %s", package);
 	args_deinit(&args);
 	debug(130, "package3: %s", package);
+#endif	
 	return err;
 }
 
 int ipkg_remove(const char* package, int purge)
 {
 	int err = 0;
+#ifndef SIMULATE	
 	args_t args;
 
 	args_init(&args);
 	err = ipkg_packages_remove(&args, package, purge);
 	args_deinit(&args);
-
+#endif
 	return err;
 }
 
 int ipkg_upgrade(void)
 {
 	int err = 0;
+#ifndef SIMULATE	
 	args_t args;
 
 	args_init(&args);
 	err = ipkg_packages_upgrade(&args);
 	args_deinit(&args);
-
+#endif
 	return err;
 }
 
@@ -340,24 +349,26 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 int ipkg_files(const char* package)
 {
 	int err = 0;
+#ifndef SIMULATE
 	args_t args;
 
 	args_init(&args);
 	err = ipkg_package_files(&args, package, ipkg_list_cb, NULL);
 	args_deinit(&args);
-
+#endif
 	return err;
 }
 
 int ipkg_search(const char* package)
 {
 	int err = 0;
+#ifndef SIMULATE
 	args_t args;
 
 	args_init(&args);
 	err = ipkg_file_search(&args, package, ipkg_list_cb, NULL);
 	args_deinit(&args);
-
+#endif
 	return err;
 }
 
