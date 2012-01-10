@@ -295,6 +295,10 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 	free(ret); ret = NULL;
 	free(tmpstr); tmpstr = NULL;
 
+	printf("src = %s\n", src);
+	printf("ip = %s\n", ip);
+	printf("path = %s\n", path);	
+	
 	if(withoutgui == 1)
 	{
 		if(ostrcmp("97.74.32.10", ip) == 0)
@@ -328,9 +332,11 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 	}
 	else
 		err = screendownload("Download", ip, path, 80, (char*)filename, "YXRlbWlvOkZIWlZCR2huemZ2RWhGREZUR3p1aWY1Njc2emhqR1RVR0JOSGpt", 0);
-
+	printf("111\n");
 	free(ip); ip = NULL;
+	printf("222\n");
 	free(path); path = NULL;
+	printf("333\n");
 	return err;
 }
 
