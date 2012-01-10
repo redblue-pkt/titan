@@ -1,0 +1,7 @@
+<screen halign=center fontcol=fontcol fontsize=30 name=LCD_Pearl1 posx=0 posy=0 width=320 height=240 bgcol=bgcol>
+<node text="" func=getaktchannelname name=channelname posx=10 posy=10 width=300 height=30 fontcol=fontcol/>
+<node func=getpicon posx=110 posy=50 width=100 height=60/>
+<node halign=center func=getepgakttitle bordersize=0 bordercol=bordercol fontsize=20 posx=10 posy=125 width=300 height=20 fontcol=fontcol/>
+<node halign=center bordersize=2 progresscol=burlywood1 bgcol=white halign=left func=getepgakttimeline bordercol=bordercol name=epgline posy=155 posx=80 width=160 height=10/>
+<node halign=center text="" name=akttime posx=10 posy=220 width=150 height=20 fontcol=fontcol/>
+</screen>
