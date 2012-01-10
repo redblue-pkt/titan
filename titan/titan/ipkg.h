@@ -733,7 +733,7 @@ char* get_ipk_remove(char* ipk)
 
 	if(ipk == NULL) return NULL;
 
-	cmd = ostrcat(cmd, "ipkg remove titan-plugin-", 1, 0);
+	cmd = ostrcat(cmd, "ipkg remove ", 1, 0);
 	cmd = ostrcat(cmd, ipk, 1, 0);
 
 	tmpstr = command(cmd);
@@ -766,7 +766,7 @@ char* get_ipk_install(char* ipk)
 	debug(60, "in %s",ipk);
 
 	char* cmd = NULL, *tmpstr = NULL;
-	cmd = ostrcat(cmd, "ipkg install titan-plugin-", 1, 0);
+	cmd = ostrcat(cmd, "ipkg install ", 1, 0);
 	cmd = ostrcat(cmd, ipk, 1, 0);
 
 	tmpstr = command(cmd);
