@@ -569,7 +569,8 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 				i += 1;
 //				showname = ostrcat("", (&ret1[0])->part, 0, 0);
 //				free(ret1),ret1 = NULL;
-				
+				showname = ostrcat(node->showname, NULL, 0, 0);
+
 				struct splitstr* ret3 = NULL;
 				int count3 = 0;
 				int a = 0;
