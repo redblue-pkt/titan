@@ -105,7 +105,7 @@ void screenpowerofftimer(void)
 			fprintf(stderr,"found: time=%s, type=%s, secs=%lld, now=%ld\n",minutes->ret,mode->ret,status.sd_timer->shutdown_time,time(NULL));
 			break;
 		}
-		if(rcret==getrcconfigint("rcblue",NULL)) //blue means "use epg end time of current program"
+		if(rcret==getrcconfigint("rcgreen",NULL)) //blue means "use epg end time of current program"
 		{
 			struct epg* epgnode = getepgakt(status.aktservice->channel);
 			if(epgnode != NULL)
