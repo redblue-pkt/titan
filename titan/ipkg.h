@@ -307,7 +307,7 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 			{
 				textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0); 	 	 
 				free(ip); ip = NULL;
-				free(path); path = NULL;
+				free(path); //path = NULL;
 				return;
 			}
 		}
@@ -335,7 +335,7 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 	printf("111\n");
 	free(ip); ip = NULL;
 	printf("222\n");
-	free(path) //; path = NULL; segfault
+	free(path);// path = NULL; segfault
 	printf("333\n");
 	return err;
 }
