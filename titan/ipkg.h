@@ -176,6 +176,9 @@ int ipkg_status_cb(char *name, int istatus, char *desc, void *userdata)
 
 int ipkg_update(void)
 {
+	unlink("/var/usr/lib/ipkg/cross");
+	unlink("/var/usr/lib/ipkg/secret");
+	unlink("/var/usr/lib/ipkg/titan");		
 	int err = 0;
 	args_t args; 
 
@@ -687,6 +690,10 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 char* get_ipk_tmpinstall(char* ipk)
 {
 	debug(60, "in");
+
+	unlink("/var/usr/lib/ipkg/cross");
+	unlink("/var/usr/lib/ipkg/secret");
+	unlink("/var/usr/lib/ipkg/titan");	
 
 	char* cmd = NULL, *tmpstr = NULL;
 	cmd = ostrcat(cmd, "ipkg install /tmp/", 1, 0);
