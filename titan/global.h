@@ -71,7 +71,7 @@ void getserial()
 char* getcpuid()
 {
 	char* serial = NULL;
-	char* serialck = NULL;
+//	char* serialck = NULL;
 	char *buffer = NULL;
 	struct inetwork* net = getinetworkbydevice("eth0");
 
@@ -127,19 +127,21 @@ char* getcpuid()
 
 	if(file_exist("/var/dev/dvb/adapter0/dts0") == 1)
 	{
-		serialck = string_newline(command("cat /var/dev/dvb/adapter0/dts0"));
+		serial = string_newline(command("cat /var/dev/dvb/adapter0/dts0"));
 
-		serialck = string_replace("4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", "AA040127", serialck, 1);
-		serialck = string_replace("5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662", "", serialck, 1);
+		serial = string_replace("4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", "AA040127", serial, 1);
+		serial = string_replace("5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662", "", serial, 1);
+/*
 		if(ostrcmp(serialck, serial) == 1)
 		{
-			//status.security = 0;
-			serial = ostrcat(serialck, "", 0, 0);
+			status.security = 0;
+			serial = ostrcat("ERROR", "", 0, 0);
 			//exit(100)
 		}
 //		printf("serial: %s\n",serial);
 //		printf("serialck: %s\n",serialck);
 		free(serialck), serialck = NULL;
+*/
 	}
 
 	return string_newline(serial);
@@ -3456,20 +3458,12 @@ char* string_replace_remove_last_chars(char *search, char *replace, char *string
 	char* tmpstr = NULL;
 
 	if(string == NULL || search == NULL)
-	{
-		tmpstr = ostrcat(tmpstr, string, 1, 0);
-		if(free1 == 1) free(string);
-		return tmpstr;
-	}
+		return string;
 
 	searchpos = strstr(string, search);
 
 	if(searchpos == NULL)
-	{
-		tmpstr = ostrcat(tmpstr, string, 1, 0);
-		if(free1 == 1) free(string);
-		return tmpstr;
-	}
+		return string;
 
 	tmpstr = strndup(string, searchpos - string);
 	if(replace != NULL)
@@ -3488,20 +3482,12 @@ char* string_replace(char *search, char *replace, char *string, int free1)
 	char* tmpstr = NULL;
 
 	if(string == NULL || search == NULL)
-	{
-		tmpstr = ostrcat(tmpstr, string, 1, 0);
-		if(free1 == 1) free(string);
-		return tmpstr;
-	}
+		return string;
 
 	searchpos = strstr(string, search);
 
 	if(searchpos == NULL)
-	{
-		tmpstr = ostrcat(tmpstr, string, 1, 0);
-		if(free1 == 1) free(string);
-		return tmpstr;
-	}
+		return string;
 
 	tmpstr = strndup(string, searchpos - string);
 	if(replace == NULL)
