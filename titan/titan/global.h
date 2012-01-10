@@ -338,9 +338,11 @@ void setskinnodeslocked(int flag)
 
 void ckeckskinnodeslockedthread()
 {
+printf("start ckeckskinnodeslockedthread: %d\n",status.security);
 	while(status.security == 0)
 	{
 		char* tmpstr2 = NULL;
+printf("end ckeckskinnodeslockedthread check serial %d\n",status.security);		
 		tmpstr2 = getcpuid();
 		checkserial(tmpstr2);
 		free(tmpstr2), tmpstr2 = NULL;
@@ -348,6 +350,8 @@ void ckeckskinnodeslockedthread()
 	}
 	if(status.security == 1)
 		setskinnodeslocked(0);
+printf("end ckeckskinnodeslockedthread %d\n",status.security);
+
 }
 
 //can use to disable a menu for a box (node type must be MENU)
