@@ -142,6 +142,7 @@ msgstr ""
 #: panel_extensions.h:119 panel_extensions.h:136 panel_extensions.h:164
 #: panel_extensions.h:171 panel_extensions.h:224 mc_main.h:67 mc_main.h:86
 #: mc_main.h:88 mc_main.h:94 mc_main.h:99 mc_main.h:104 mc_main.h:194
+#: mc_main.h:89 mc_main.h:95 mc_main.h:100 mc_main.h:105 mc_main.h:195
 msgid "EXIT"
 msgstr ""
 
@@ -465,6 +466,7 @@ msgstr ""
 #: global.h:3822 panel_extensions.h:119 panel_extensions.h:171
 #: panel_extensions.h:238 mc_main.h:67 mc_main.h:86 mc_main.h:88 mc_main.h:94
 #: mc_main.h:99 mc_main.h:104 mc_main.h:194 panel_extensions.h:120
+#: mc_main.h:89 mc_main.h:95 mc_main.h:100 mc_main.h:105 mc_main.h:195
 msgid "Message"
 msgstr ""
 
@@ -556,6 +558,7 @@ msgstr ""
 #: panel_extensions.h:119 panel_extensions.h:136 panel_extensions.h:164
 #: panel_extensions.h:171 panel_extensions.h:224 mc_main.h:67 mc_main.h:86
 #: mc_main.h:88 mc_main.h:94 mc_main.h:99 mc_main.h:104 mc_main.h:194
+#: mc_main.h:89 mc_main.h:95 mc_main.h:100 mc_main.h:105 mc_main.h:195
 msgid "OK"
 msgstr ""
 
@@ -1175,7 +1178,8 @@ msgstr ""
 
 #: mc_main.h:43 mc_main.h:48 mc_main.h:53 mc_main.h:58 mc_main.h:75
 #: mc_main.h:80 mc_main.h:85 mc_main.h:92 mc_main.h:97 mc_main.h:102
-#: mc_main.h:94 mc_main.h:99 mc_main.h:104
+#: mc_main.h:94 mc_main.h:99 mc_main.h:104 mc_main.h:95 mc_main.h:100
+#: mc_main.h:105
 msgid "comming soon"
 msgstr ""
 
@@ -1189,7 +1193,7 @@ msgstr ""
 
 #: mc_main.h:175 menu.h:64 panel_main.h:35 panel_main.h:241 panel_main.h:243
 #: mc_main.h:192 panel_main.h:245 panel_main.h:244 panel_main.h:29
-#: panel_main.h:249 mc_main.h:194
+#: panel_main.h:249 mc_main.h:194 mc_main.h:195
 msgid "Menu not implemented !"
 msgstr ""
 
@@ -6609,6 +6613,6 @@ msgstr ""
 msgid "IPK tmp (tmp) old"
 msgstr ""
 
-#: mc_main.h:88
+#: mc_main.h:88 mc_main.h:89
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
