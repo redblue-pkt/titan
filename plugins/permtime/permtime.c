@@ -1,6 +1,6 @@
 #include "../../titan/struct.h"
 #include "../../titan/debug.h"
-##include "../../titan/header.h"
+#include "../../titan/header.h"
 
 char pluginname[] = "Permanent Time";
 char plugindesc[] = "Extensions";
