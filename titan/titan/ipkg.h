@@ -273,7 +273,7 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 
 	if(src == NULL) return 1;
 
-	printf("src = %s", src);
+	printf("src = %s\n", src);
 	ip = string_replace("http://", "", src, 0);
 
 	if(ip != NULL)
@@ -292,8 +292,6 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 		if(ostrcmp("Packages.gz", (&ret[i])->part) == 0)
 			withoutgui = 1;
 	}
-	free(ret); ret = NULL;
-	free(tmpstr); tmpstr = NULL;
 	
 	if(withoutgui == 1)
 	{
@@ -329,6 +327,8 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 	else
 		err = screendownload("Download", ip, path, 80, (char*)filename, "YXRlbWlvOkZIWlZCR2huemZ2RWhGREZUR3p1aWY1Njc2emhqR1RVR0JOSGpt", 0);
 
+	free(ret); ret = NULL;
+	free(tmpstr); tmpstr = NULL;
 	free(ip); ip = NULL;
 	return err;
 }
