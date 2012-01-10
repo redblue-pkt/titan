@@ -143,6 +143,7 @@ msgstr ""
 #: panel_extensions.h:171 panel_extensions.h:224 mc_main.h:67 mc_main.h:86
 #: mc_main.h:88 mc_main.h:94 mc_main.h:99 mc_main.h:104 mc_main.h:194
 #: mc_main.h:89 mc_main.h:95 mc_main.h:100 mc_main.h:105 mc_main.h:195
+#: ipkg.h:317
 msgid "EXIT"
 msgstr ""
 
@@ -467,6 +468,7 @@ msgstr ""
 #: panel_extensions.h:238 mc_main.h:67 mc_main.h:86 mc_main.h:88 mc_main.h:94
 #: mc_main.h:99 mc_main.h:104 mc_main.h:194 panel_extensions.h:120
 #: mc_main.h:89 mc_main.h:95 mc_main.h:100 mc_main.h:105 mc_main.h:195
+#: ipkg.h:317
 msgid "Message"
 msgstr ""
 
@@ -559,6 +561,7 @@ msgstr ""
 #: panel_extensions.h:171 panel_extensions.h:224 mc_main.h:67 mc_main.h:86
 #: mc_main.h:88 mc_main.h:94 mc_main.h:99 mc_main.h:104 mc_main.h:194
 #: mc_main.h:89 mc_main.h:95 mc_main.h:100 mc_main.h:105 mc_main.h:195
+#: ipkg.h:317
 msgid "OK"
 msgstr ""
 
@@ -6239,6 +6242,7 @@ msgstr ""
 #: global.h:3746 global.h:3748 global.h:3760 global.h:3786 global.h:3787
 #: global.h:3799 global.h:3800 global.h:3789 global.h:3794 ipkg.h:303
 #: ipkg.h:304 ipkg.h:305 ipkg.h:308 ipkg.h:300 ipkg.h:301 ipkg.h:302
+#: ipkg.h:317
 msgid "check your Secret Feed !"
 msgstr ""
 
@@ -6579,7 +6583,7 @@ msgid ""
 msgstr ""
 
 #: ipkg.h:644 ipkg.h:653 ipkg.h:654 ipkg.h:655 ipkg.h:656 ipkg.h:648
-#: ipkg.h:649 ipkg.h:650 ipkg.h:651
+#: ipkg.h:649 ipkg.h:650 ipkg.h:651 ipkg.h:662
 msgid "no description found"
 msgstr ""
 
