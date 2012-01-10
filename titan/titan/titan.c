@@ -390,6 +390,7 @@ int main(int argc, char *argv[])
 	ret = setmode3d(getconfig("av_mode3d", NULL));
 	ret = setvfdbrightness(getconfigint("vfdbrightness", NULL));
 	ret = addinetworkall();
+	
 #ifndef SIMULATE
 	if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1)
 	{
@@ -414,11 +415,13 @@ int main(int argc, char *argv[])
 		destroy();
 		exit(100);
 	}
+	
 	char* tmpstr2 = NULL;
 	tmpstr2 = getcpuid();
 	checkserial(tmpstr2);
 	free(tmpstr2), tmpstr2 = NULL;
 #endif
+
 	ret = initfont();
 	if(ret != 0)
 		return 100;
