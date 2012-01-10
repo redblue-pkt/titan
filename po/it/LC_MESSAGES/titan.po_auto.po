@@ -6621,3 +6621,10 @@ msgstr ""
 #: mc_main.h:88 mc_main.h:89
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
+
+#: global.h:52
+msgid ""
+"For next Update please contact Atemio and send this Serial Number and your "
+"invoice !!\n"
+"\\Board-ID SerialNr:"
+msgstr ""
