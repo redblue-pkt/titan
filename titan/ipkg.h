@@ -610,10 +610,9 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 					{
 						debug(130, "set skiped=1");
 						skip = 1;
-						continue;
+						break;
 					}
 					free(installed),installed = NULL;
-
 				}
 				debug(130, "check list_installed done");				
 				if(skip == 0)
