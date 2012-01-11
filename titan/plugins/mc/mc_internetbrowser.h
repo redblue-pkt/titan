@@ -3,7 +3,7 @@
 
 void screenmc_internetbrowser()
 {
-	if(status.security == 0)
+	if(status.security == 1)
 	{
 		if(file_exist("/usr/bin/nsfb"))
 		{
