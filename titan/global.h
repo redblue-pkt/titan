@@ -14,7 +14,6 @@ void checkserial(char* input)
 
 	ret = strsplit(authfile, "\n", &count);
 	int max = count;
-	status.security = 0;
 
 	for( i = 0; i < max; i++){
 		int count1 = 0;
@@ -39,6 +38,12 @@ void checkserial(char* input)
 		}
 		free(ret1),ret1 = NULL;
 	}
+
+	if(status.security == 1)
+		status.expertmodus = getconfigint("expertmodus", NULL);	
+	else
+		status.security = 0;	
+
 	free(ret),ret = NULL;
 	free(authfile);
 }
@@ -321,7 +326,7 @@ void setskinnodeslocked(int flag)
 			else if(ostrcmp("panel_system_eraseswap", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("panel_system_restore", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("panel_extensions", child->name) == 0) child->locked = flag;
-//		else if(ostrcmp("mediacenter", child->name) == 0) child->locked = flag;
+//			else if(ostrcmp("mediacenter", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("browser", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("callmon_main", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("imdb", child->name) == 0) child->locked = flag;
@@ -332,7 +337,46 @@ void setskinnodeslocked(int flag)
 			else if(ostrcmp("keylock", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("plugins", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("skinselect", child->name) == 0) child->locked = flag;
-	
+
+			if(status.expertmodus > 9)
+				tmpflag = 0;
+			else
+				tmpflag = 1;
+
+//	current... not needed 
+//			if((checkbox("ATEMIO500") == 1) || (checkbox("ATEMIO510") == 1))
+//			{
+				if(ostrcmp("vfdisplay", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("savesettings", child->name) == 0) child->locked = tmpflagag;
+				else (ostrcmp("recordpath", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("videosettings", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("scartrecorder", v) == 0) child->locked = tmpflag;
+				else (ostrcmp("information", child->name) == 0) child->locked = tmpflag;
+				//else (ostrcmp("plugins", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("vfdisplay", child->name) == 0) child->locked = tmpflag;
+				//else (ostrcmp("rotorsettings", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("satconfig", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("satfinder", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("configurehdd", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("panel_settings_overclocking", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("panel_settings_fancontrol", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("panel_settings_automount", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("panel_settings_autostart", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("panel_settings_videotune", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("panel_system_update_usb_online", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("panel_system_update_usb_tmp", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("panel_extensions_menu", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("panel_system_backup", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("sambasettings", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("nfssettings", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("panel_infos_kernel", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("panel_system_wizard", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("panel_sysinfos_module", child->name) == 0) child->locked = tmpflag;
+				else (ostrcmp("mediaplayer", child->name) == 0) child->locked = tmpflag;
+//			}
+			printf("flag=%d %s\n", flag, child->name);
+			printf("tmpflag=%d %s\n", tmpflag, child->name);
+			
 			child = child->next;
 		}
 		node = node->next;
@@ -341,25 +385,29 @@ void setskinnodeslocked(int flag)
 
 void ckeckskinnodeslockedthread()
 {
-printf("start ckeckskinnodeslockedthread: %d\n",status.security);
+	printf("start ckeckskinnodeslockedthread: %d\n",status.security);
 	while(status.security == 0)
 	{
+		sleep(60);
+		printf("while ckeckskinnodeslockedthread check serial status.security=%d\n",status.security);		
 		char* tmpstr2 = NULL;
-printf("end ckeckskinnodeslockedthread check serial %d\n",status.security);		
 		tmpstr2 = getcpuid();
 		checkserial(tmpstr2);
 		free(tmpstr2), tmpstr2 = NULL;
-		sleep(1);
+		printf("while ckeckskinnodeslockedthread check serial status.expertmodus=%d\n",status.expertmodus);	
 	}
 	if(status.security == 1)
+	{
+		printf("if ckeckskinnodeslockedthread status.security=%d\n",status.security);
 		setskinnodeslocked(0);
-printf("end ckeckskinnodeslockedthread %d\n",status.security);
-
+		printf("if ckeckskinnodeslockedthread check serial status.expertmodus=%d\n",status.expertmodus);	
+	}
 }
 
 //can use to disable a menu for a box (node type must be MENU)
 int checkmenuforbox(char *name)
 {
+/*
 	if(status.expertmodus > 9) return 1;
 	if((checkbox("ATEMIO500") == 1) || (checkbox("ATEMIO510") == 1))
 	{
@@ -391,6 +439,7 @@ int checkmenuforbox(char *name)
 		if(ostrcmp("panel_sysinfos_module", name) == 0) return 0;
 		if(ostrcmp("mediaplayer", name) == 0) return 0;
 	}
+*/
 	return 1;
 }
 
