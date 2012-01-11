@@ -36,7 +36,7 @@ void LCD_Pearl1_thread()
 	struct skin* akttime = getscreennode(LCD_Pearl1, "akttime");
 	int put = 0;
 	char* fbgrab = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/fbgrab -f /tmp/titanlcd.raw -w 320 -h 240 -b 32 -i /tmp/.titanlcd1.png > /dev/null", 0, 0);
-	
+	struct skin* tmp = NULL;	
 
 	while (LCD_Pearl1thread->aktion != STOP) {
 		put = 0;
@@ -62,6 +62,7 @@ void LCD_Pearl1_thread()
 			
 			if(put == 1)
 			{
+				drawscreen(skin, 0);
 				changetext(akttime, tmpstr);
 				drawscreen(LCD_Pearl1, 0);
 				system(fbgrab);
@@ -75,8 +76,6 @@ void LCD_Pearl1_thread()
 		free(tmpstr2); tmpstr2 = NULL;
 		free(tmpstr3); tmpstr3 = NULL;
 		sleep(1);
-		if(status.security == 1)
-			drawscreen(skin, 0); 
 	}
  	free(timemerk);timemerk=NULL;
  	free(sendermerk);sendermerk=NULL;
