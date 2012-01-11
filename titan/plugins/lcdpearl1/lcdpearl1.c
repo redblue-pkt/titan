@@ -42,7 +42,10 @@ void LCD_Pearl1_thread()
 		put = 0;
 		tmpstr = gettime("%H:%M"); 
 		tmpstr2 = getaktchannelname();
-						
+
+		if(status.security == 0)
+			LCD_Pearl1thread->aktion = STOP;
+
 		if(ostrcmp(tmpstr, timemerk) != 0)
 		{
 			free(timemerk);timemerk=NULL;
