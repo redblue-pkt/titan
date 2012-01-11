@@ -54,7 +54,7 @@ void getserial()
 	cpu = getcpuid();
 
 	char* msg = NULL;
-	msg = ostrcat(_("For next Update please contact Atemio and send this Serial Number and your invoice !!\n\nBoard-ID SerialNr:"), " ", 0, 0);
+	msg = ostrcat(_("For next OnlineUpdate please contact Atemio and send this Serial Number and your Atemio Serial Number !!\n\nBoard-ID SerialNr:"), " ", 0, 0);
 	msg = ostrcat(msg, cpu, 1, 0);
 	msg = ostrcat(msg, "\n\n", 1, 0);
 	msg = ostrcat(msg, _("Email  		info@atemio.de"), 1, 0);
