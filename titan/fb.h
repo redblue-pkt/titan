@@ -104,6 +104,10 @@ struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int
 		newnode->varfbsize = width * height * newnode->colbytes;
 	}
 
+	/*eigener Buffer zB fuer LCD*/
+	if(dev == 999)
+		return newnode; 
+	
 	if(node != NULL)
 	{
 		while(node->next != NULL)
@@ -112,7 +116,6 @@ struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int
 	}
 	else
 		fb = newnode;
-
 
 	ret = getfbsize(dev);
 	if(ret < 0)

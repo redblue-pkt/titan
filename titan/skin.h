@@ -3519,6 +3519,8 @@ int drawscreen(struct skin* node, int flag)
 	//flag 1: draw without allways
 	//flag 2: from thread (mutex is set in thread)
 
+	struct fb* merkskinfb = NULL;
+
 	debug(1000, "in");
 	int ret;
 	struct skin *child = NULL, *parent = NULL, *oldparent = NULL;
@@ -3542,13 +3544,17 @@ int drawscreen(struct skin* node, int flag)
 		debug(1000, "out -> setnodeattr ret = 1");
 		return 1;
 	}
+	
+	if(strstr(node->name, "LCD_") != NULL) {
+		merkskinfb = skinfb;
+		skinfb = lcdskinfb;
+	}
 
 	if(status.screencalc == 0)
 	{
 		if(flag == 0 || flag == 2) clearscreenalways();
 		drawnode(node, 0);
 	}
-
 	parent = node;
 	oldparent = node;
 	child = node->child;
@@ -3575,8 +3581,11 @@ int drawscreen(struct skin* node, int flag)
 		if(status.screencalc == 0)
 		{
 			drawscreenalways(node);
-			if(strstr(node->name, "LCD_") != NULL)
+			if(strstr(node->name, "LCD_") != NULL) {
 				pngforlcd();
+				skinfb = merkskinfb;
+				merkskinfb = NULL;
+			}
 			else	
 				blitfb();
 		}

@@ -15,6 +15,7 @@ struct fb *fb = NULL;
 struct fb* skinfb = NULL;
 struct fb* accelfb = NULL;
 struct fb* fb1 = NULL;
+struct fb* lcdskinfb = NULL;
 struct font *font = NULL;
 struct rc *rc = NULL;
 struct dvbdev *dvbdev = NULL;
@@ -340,7 +341,7 @@ int main(int argc, char *argv[])
 	// for mem leak debug
 	setenv("MALLOC_TRACE", "/home/nit/titan/m.txt", 1);
 	mtrace();
-	status.security =1;	
+	status.security =1;
 #endif
 
 	printf("[%s] copyright by %s - version %s\n", PROGNAME, COPYRIGHT, VERSION);
@@ -478,8 +479,15 @@ int main(int argc, char *argv[])
 	{
 		skinfb = fb;
 		ret = getfbsize(0);
-		if(ret > 0)
+		if(ret > 0) 
 			accelfb = addfb(ACCELFB, 0, ret / 4, 1, 4, fb->fd, skinfb->fb + skinfb->varfbsize, fb->fixfbsize);
+	}
+
+	if(lcdskinfb == NULL) {
+		unsigned char *mmapfb = malloc(4 * 320 * 240);
+		/* dev=999 ist LCD Buffer */
+		lcdskinfb = addfb("lcdskinfb", 999, 320, 240, 4, -1, mmapfb, 4 * 320 * 240);
+		mmapfb = NULL;
 	}
 
 	ret = createstartscreen();
