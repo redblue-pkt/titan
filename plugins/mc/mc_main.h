@@ -60,35 +60,11 @@ int mc_menucall(struct skin* menuentry)
 	}
 	else if(ostrcmp("mc_internetbrowser", menuentry->name) == 0)
 	{
-		if(status.security == 0)
-		{
-			if(file_exist("/usr/bin/nsfb"))
-			{
-				if(textbox(_("Message"), _("start Internet browser now ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1){	
-					char* tmpstr = NULL;
-					int rcret = 0;
-		
-					status.sec = 0; //deaktivate spinner
-					setfbtransparent(255);
-					rcret = servicestop(status.aktservice, 1, 0);
-					if(rcret == 1) return;
-		
-					tmpstr = ostrcat("nsfb -f linux ", getconfig("browserhome", NULL), 0, 0);
-					system(tmpstr);
-					free(tmpstr);
-					setosdtransparent(getskinconfigint("osdtransparent", NULL));
-					drawscreen(skin, 0);
-					servicestart(status.lastservice->channel, NULL, NULL, 0);
-					sleep(2);
-				}
-			}
-			else
-				textbox(_("Message"), _("Install netsurf Internetbrowser Ipk first !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
-		}
-		else
-			textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
-//		ret = 1;
-//		screenmc_internetbrowser();
+		drawscreen(skin, 0);
+		servicestop(status.aktservice, 1, 1);	
+		screenmc_browser(NULL);
+		if (style == 0)
+			singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgBrowser.mvi");
 	}
 	else if(ostrcmp("mc_radio", menuentry->name) == 0)
 	{
