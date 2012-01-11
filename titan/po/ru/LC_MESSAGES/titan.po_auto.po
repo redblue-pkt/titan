@@ -6638,3 +6638,11 @@ msgid ""
 "invoice !!\n"
 "\\Board-ID SerialNr:"
 msgstr ""
+
+#: global.h:57
+msgid ""
+"For next Update please contact Atemio and send this Serial Number and your "
+"invoice !!\n"
+"\n"
+"Board-ID SerialNr:"
+msgstr ""
