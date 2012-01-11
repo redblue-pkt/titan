@@ -600,13 +600,22 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 				{
 					debug(130, "node->name=%s", node->name);
 					debug(130, "(&ret3[a])->part=%s", (&ret3[a])->part);
-					if(ostrcmp((&ret3[a])->part, node->name) == 0)
+
+					char* installed = NULL;
+					installed = ostrcat(installed, node->section, 1, 0);
+					installed = ostrcat(installed, "-", 1, 0);
+					installed = ostrcat(installed, node->showname, 1, 0);
+
+					if(ostrcmp((&ret3[a])->part, installed) == 0)
 					{
 						debug(130, "set skiped=1");
 						skip = 1;
 						continue;
 					}
+					free(installed),installed = NULL;
+
 				}
+				debug(130, "check list_installed done");				
 				if(skip == 0)
 				{
 					tmp = addlistbox(screen, listbox, tmp, 1);
