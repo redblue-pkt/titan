@@ -64,10 +64,12 @@ void getserial()
 	cpu = string_replace("AA040127", "4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", cpu, 1);
 	cpu = ostrcat(cpu, "5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662", 1, 0);
 	writesys("/var/dev/dvb/adapter0/dts0", cpu, 1);
+
+	if(status.security == 0)
+	{
+		checkserial(cpu);
+	}
 	free(cpu); cpu = NULL;
-	
-	tmpstr = getcpuid();
-	checkserial(tmpstr);
 	free(tmpstr); tmpstr = NULL;
 }
 	

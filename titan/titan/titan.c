@@ -415,7 +415,6 @@ int main(int argc, char *argv[])
 		destroy();
 		exit(100);
 	}
-	
 	char* tmpstr2 = NULL;
 	tmpstr2 = getcpuid();
 	checkserial(tmpstr2);
