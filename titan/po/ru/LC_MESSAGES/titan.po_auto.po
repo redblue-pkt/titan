@@ -143,7 +143,8 @@ msgstr ""
 #: panel_extensions.h:171 panel_extensions.h:224 mc_main.h:67 mc_main.h:86
 #: mc_main.h:88 mc_main.h:94 mc_main.h:99 mc_main.h:104 mc_main.h:194
 #: mc_main.h:89 mc_main.h:95 mc_main.h:100 mc_main.h:105 mc_main.h:195
-#: ipkg.h:317 global.h:3843 global.h:3851 global.h:3852
+#: ipkg.h:317 global.h:3843 global.h:3851 global.h:3852 global.h:3854
+#: network.h:263
 msgid "EXIT"
 msgstr ""
 
@@ -468,7 +469,8 @@ msgstr ""
 #: panel_extensions.h:238 mc_main.h:67 mc_main.h:86 mc_main.h:88 mc_main.h:94
 #: mc_main.h:99 mc_main.h:104 mc_main.h:194 panel_extensions.h:120
 #: mc_main.h:89 mc_main.h:95 mc_main.h:100 mc_main.h:105 mc_main.h:195
-#: ipkg.h:317 global.h:3843 global.h:3851 global.h:3852
+#: ipkg.h:317 global.h:3843 global.h:3851 global.h:3852 global.h:3854
+#: network.h:263
 msgid "Message"
 msgstr ""
 
@@ -561,7 +563,8 @@ msgstr ""
 #: panel_extensions.h:171 panel_extensions.h:224 mc_main.h:67 mc_main.h:86
 #: mc_main.h:88 mc_main.h:94 mc_main.h:99 mc_main.h:104 mc_main.h:194
 #: mc_main.h:89 mc_main.h:95 mc_main.h:100 mc_main.h:105 mc_main.h:195
-#: ipkg.h:317 global.h:3843 global.h:3851 global.h:3852
+#: ipkg.h:317 global.h:3843 global.h:3851 global.h:3852 global.h:3854
+#: network.h:263
 msgid "OK"
 msgstr ""
 
@@ -583,6 +586,7 @@ msgstr ""
 #: global.h:3813 global.h:3814 global.h:3817 global.h:3818 global.h:3820
 #: global.h:3827 global.h:3819 global.h:3835 global.h:3821 global.h:3837
 #: keyactions.h:223 global.h:3822 global.h:3843 global.h:3851 global.h:3852
+#: global.h:3854
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -1417,15 +1421,15 @@ msgstr ""
 msgid "Restart Network"
 msgstr ""
 
-#: network.h:222 network.h:230
+#: network.h:222 network.h:230 network.h:238
 msgid "enable"
 msgstr ""
 
-#: network.h:223 network.h:229 panel_settings.h:43
+#: network.h:223 network.h:229 panel_settings.h:43 network.h:231 network.h:237
 msgid "disable"
 msgstr ""
 
-#: network.h:255
+#: network.h:255 network.h:263
 msgid "save network settings ?"
 msgstr ""
 
