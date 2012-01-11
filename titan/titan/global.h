@@ -54,7 +54,7 @@ void getserial()
 	cpu = getcpuid();
 
 	char* msg = NULL;
-	msg = ostrcat(_("For next Update please contact Atemio and send this Serial Number and your invoice !!\n\Board-ID SerialNr:"), " ", 0, 0);
+	msg = ostrcat(_("For next Update please contact Atemio and send this Serial Number and your invoice !!\n\nBoard-ID SerialNr:"), " ", 0, 0);
 	msg = ostrcat(msg, cpu, 1, 0);
 	msg = ostrcat(msg, "\n\n", 1, 0);
 	msg = ostrcat(msg, _("Email  		info@atemio.de"), 1, 0);
@@ -62,8 +62,9 @@ void getserial()
 	free(msg), msg = NULL;
 	
 	char* tmpstr = NULL;
-	tmpstr = ostrcat("TunerID SerialNr: ", cpu, 0, 0);
+	tmpstr = ostrcat("Board-ID SerialNr: ", cpu, 0, 0);
 	writesys("/tmp/atemio.log", tmpstr, 1);
+	writesys("/vat/swap/atemio.log", tmpstr, 1);
 	free(tmpstr); tmpstr = NULL;
 	
 	cpu = string_replace("AA040127", "4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", cpu, 1);
