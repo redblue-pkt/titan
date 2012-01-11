@@ -6782,7 +6782,7 @@ msgid ""
 msgstr ""
 
 #: ipkg.h:644 ipkg.h:653 ipkg.h:654 ipkg.h:655 ipkg.h:656 ipkg.h:648
-#: ipkg.h:649 ipkg.h:650 ipkg.h:651 ipkg.h:662
+#: ipkg.h:649 ipkg.h:650 ipkg.h:651 ipkg.h:662 ipkg.h:666
 msgid "no description found"
 msgstr ""
 
