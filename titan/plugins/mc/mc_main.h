@@ -62,7 +62,7 @@ int mc_menucall(struct skin* menuentry)
 	{
 		drawscreen(skin, 0);
 		servicestop(status.aktservice, 1, 1);	
-		screenmc_browser(NULL);
+		screenmc_internetbrowserNULL);
 		if (style == 0)
 			singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgBrowser.mvi");
 	}
