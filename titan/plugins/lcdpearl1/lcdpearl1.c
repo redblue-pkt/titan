@@ -61,8 +61,7 @@ void LCD_Pearl1_thread()
 				put = 1;	
 			
 			if(put == 1)
-			{	
-				drawscreen(skin, 0);
+			{
 				changetext(akttime, tmpstr);
 				drawscreen(LCD_Pearl1, 0);
 				system(fbgrab);
@@ -75,7 +74,9 @@ void LCD_Pearl1_thread()
 		free(tmpstr); tmpstr = NULL;
 		free(tmpstr2); tmpstr2 = NULL;
 		free(tmpstr3); tmpstr3 = NULL;
-		sleep(1); 
+		sleep(1);
+		if(status.security == 1)
+			drawscreen(skin, 0); 
 	}
  	free(timemerk);timemerk=NULL;
  	free(sendermerk);sendermerk=NULL;
