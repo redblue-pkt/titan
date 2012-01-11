@@ -384,7 +384,6 @@ void setskinnodeslocked(int flag)
 
 void ckeckskinnodeslockedthread()
 {
-	printf("start ckeckskinnodeslockedthread: %d\n",status.security);
 	while(status.security == 0)
 	{
 		sleep(60);
