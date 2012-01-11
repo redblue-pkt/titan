@@ -314,6 +314,7 @@ void setskinnodeslocked(int flag)
 {
 	struct skin* node = skin;
 	struct skin* child = NULL;
+	int tmpflag;
 
 	while(node != NULL)
 	{
