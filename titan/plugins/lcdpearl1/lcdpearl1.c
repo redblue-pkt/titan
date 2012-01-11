@@ -62,6 +62,7 @@ void LCD_Pearl1_thread()
 			
 			if(put == 1)
 			{	
+				drawscreen(skin, 0);
 				changetext(akttime, tmpstr);
 				drawscreen(LCD_Pearl1, 0);
 				system(fbgrab);
