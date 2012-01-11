@@ -64,8 +64,14 @@ void getserial()
 	char* tmpstr = NULL;
 	tmpstr = ostrcat("Board-ID SerialNr: ", cpu, 0, 0);
 	writesys("/tmp/atemio.log", tmpstr, 1);
-	writesys("/vat/swap/atemio.log", tmpstr, 1);
+	
+	char cmd = NULL;
+	cmd = ostrcat(cmd, "/var/swap/atemio.", 1, 0);
+	cmd = ostrcat(cmd, cpu, 1, 0);
+	cmd = ostrcat(cmd, ".log", 1, 0);
+	writesys(cmd, tmpstr, 1);
 	free(tmpstr); tmpstr = NULL;
+	free(cmd); cmd = NULL;	
 	
 	cpu = string_replace("AA040127", "4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", cpu, 1);
 	cpu = ostrcat(cpu, "5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662", 1, 0);
