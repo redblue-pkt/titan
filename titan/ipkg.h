@@ -559,7 +559,9 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 				if(defaultstr != NULL)
 					setlistboxselection(listbox, defaultstr);
 			}
+			free(ret2),ret2 = NULL;
 		}
+		free(ret1),ret1 = NULL;
 	}
 	else if(showpng == 2)
 	{
@@ -614,6 +616,7 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 					}
 					free(installed),installed = NULL;
 				}
+				free(ret3),ret3 = NULL;
 				debug(130, "check list_installed done");				
 				if(skip == 0)
 				{
@@ -679,6 +682,7 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 					free(tmpstr1);tmpstr1 = NULL;
 					free(showname);showname = NULL;	
 				}
+				free(ret1),ret1 = NULL;
 			}			
 			node = node->next;
 		}
