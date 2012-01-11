@@ -42,7 +42,7 @@ void checkserial(char* input)
 	if(status.security == 1)
 		status.expertmodus = getconfigint("expertmodus", NULL);	
 	else
-		status.security = 0;	
+		status.expertmodus = 0;	
 
 	free(ret),ret = NULL;
 	free(authfile);
