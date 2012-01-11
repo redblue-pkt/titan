@@ -43,33 +43,33 @@ void LCD_Pearl1_thread()
 		tmpstr = gettime("%H:%M"); 
 		tmpstr2 = getaktchannelname();
 
-		if(status.security == 0)
-			LCD_Pearl1thread->aktion = STOP;
-
-		if(ostrcmp(tmpstr, timemerk) != 0)
+		if(status.security == 1)
 		{
-			free(timemerk);timemerk=NULL;
-			timemerk = ostrcat(tmpstr, "", 0, 0);
-			put = 1;
-		} 
-		if(ostrcmp(tmpstr2, sendermerk) != 0)
-		{
-			free(sendermerk);sendermerk=NULL;
-			sendermerk = ostrcat(tmpstr2, "", 0, 0);
-			put = 1;
-		} 
-		if(getrec(NULL) != NULL)
-			put = 1;	
-		
-		if(put == 1)
-		{	
-			changetext(akttime, tmpstr);
-			drawscreen(LCD_Pearl1, 0);
-			system(fbgrab);
-			system("mv /tmp/.titanlcd1.png /tmp/titanlcd.png");
+			if(ostrcmp(tmpstr, timemerk) != 0)
+			{
+				free(timemerk);timemerk=NULL;
+				timemerk = ostrcat(tmpstr, "", 0, 0);
+				put = 1;
+			} 
+			if(ostrcmp(tmpstr2, sendermerk) != 0)
+			{
+				free(sendermerk);sendermerk=NULL;
+				sendermerk = ostrcat(tmpstr2, "", 0, 0);
+				put = 1;
+			} 
+			if(getrec(NULL) != NULL)
+				put = 1;	
 			
-			//system("/var/bin/fbgrab -f /tmp/titanlcd.raw -w 320 -h 240 -b 32 -i /tmp/titanlcd.png > /dev/null");
-			system("xloadimage /tmp/titanlcd.png > /dev/null &");
+			if(put == 1)
+			{	
+				changetext(akttime, tmpstr);
+				drawscreen(LCD_Pearl1, 0);
+				system(fbgrab);
+				system("mv /tmp/.titanlcd1.png /tmp/titanlcd.png");
+				
+				//system("/var/bin/fbgrab -f /tmp/titanlcd.raw -w 320 -h 240 -b 32 -i /tmp/titanlcd.png > /dev/null");
+				system("xloadimage /tmp/titanlcd.png > /dev/null &");
+			}
 		}
 		free(tmpstr); tmpstr = NULL;
 		free(tmpstr2); tmpstr2 = NULL;
