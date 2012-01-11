@@ -144,7 +144,7 @@ msgstr ""
 #: mc_main.h:88 mc_main.h:94 mc_main.h:99 mc_main.h:104 mc_main.h:194
 #: mc_main.h:89 mc_main.h:95 mc_main.h:100 mc_main.h:105 mc_main.h:195
 #: ipkg.h:317 global.h:3843 global.h:3851 global.h:3852 global.h:3854
-#: network.h:263
+#: network.h:263 global.h:61 global.h:3904
 msgid "EXIT"
 msgstr ""
 
@@ -470,7 +470,7 @@ msgstr ""
 #: mc_main.h:99 mc_main.h:104 mc_main.h:194 panel_extensions.h:120
 #: mc_main.h:89 mc_main.h:95 mc_main.h:100 mc_main.h:105 mc_main.h:195
 #: ipkg.h:317 global.h:3843 global.h:3851 global.h:3852 global.h:3854
-#: network.h:263
+#: network.h:263 global.h:3904
 msgid "Message"
 msgstr ""
 
@@ -564,7 +564,7 @@ msgstr ""
 #: mc_main.h:88 mc_main.h:94 mc_main.h:99 mc_main.h:104 mc_main.h:194
 #: mc_main.h:89 mc_main.h:95 mc_main.h:100 mc_main.h:105 mc_main.h:195
 #: ipkg.h:317 global.h:3843 global.h:3851 global.h:3852 global.h:3854
-#: network.h:263
+#: network.h:263 global.h:61 global.h:3904
 msgid "OK"
 msgstr ""
 
@@ -586,7 +586,7 @@ msgstr ""
 #: global.h:3813 global.h:3814 global.h:3817 global.h:3818 global.h:3820
 #: global.h:3827 global.h:3819 global.h:3835 global.h:3821 global.h:3837
 #: keyactions.h:223 global.h:3822 global.h:3843 global.h:3851 global.h:3852
-#: global.h:3854
+#: global.h:3854 global.h:3904
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -2237,7 +2237,7 @@ msgstr ""
 
 #: plugins_panel_skin.xml.h:6 skins_panel_skin.xml.h:6 global.h:21 global.h:20
 #: global.h:30 global.h:32 global.h:50 global.h:51 global.h:40 global.h:45
-#: global.h:46 global.h:47 global.h:48 global.h:53 global.h:56
+#: global.h:46 global.h:47 global.h:48 global.h:53 global.h:56 global.h:61
 msgid "Info"
 msgstr ""
 
@@ -6561,7 +6561,7 @@ msgstr ""
 
 #: global.h:20 global.h:19 global.h:29 global.h:31 global.h:49 global.h:50
 #: global.h:39 global.h:44 global.h:45 global.h:46 global.h:47 global.h:52
-#: global.h:55
+#: global.h:55 global.h:60
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
@@ -6626,7 +6626,7 @@ msgstr ""
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
-#: global.h:52
+#: global.h:52 global.h:57
 msgid ""
 "For next Update please contact Atemio and send this Serial Number and your "
 "invoice !!\n"
