@@ -322,7 +322,6 @@ void setskinnodeslocked(int flag)
 		child = node->child;
 		while(child != NULL)
 		{
-			printf("setskinnodeslocked: %s\n", child->name);
 			if(ostrcmp("panel_system_update_flash_online", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("panel_system_update_flash_tmp", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("panel_system_eraseswap", child->name) == 0) child->locked = flag;
@@ -376,8 +375,6 @@ void setskinnodeslocked(int flag)
 				else if(ostrcmp("panel_sysinfos_module", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("mediaplayer", child->name) == 0) child->locked = tmpflag;
 //			}
-			printf("flag=%d %s\n", flag, child->name);
-			printf("tmpflag=%d %s\n", tmpflag, child->name);
 			
 			child = child->next;
 		}
@@ -391,18 +388,14 @@ void ckeckskinnodeslockedthread()
 	while(status.security == 0)
 	{
 		sleep(60);
-		printf("while ckeckskinnodeslockedthread check serial status.security=%d\n",status.security);		
 		char* tmpstr2 = NULL;
 		tmpstr2 = getcpuid();
 		checkserial(tmpstr2);
 		free(tmpstr2), tmpstr2 = NULL;
-		printf("while ckeckskinnodeslockedthread check serial status.expertmodus=%d\n",status.expertmodus);	
 	}
 	if(status.security == 1)
 	{
-		printf("if ckeckskinnodeslockedthread status.security=%d\n",status.security);
 		setskinnodeslocked(0);
-		printf("if ckeckskinnodeslockedthread check serial status.expertmodus=%d\n",status.expertmodus);	
 	}
 }
 
