@@ -1894,7 +1894,7 @@ msgid "Activate"
 msgstr ""
 
 #: panel_system_backup.h:19 plugins_panel_skin.xml.h:29
-#: skins_panel_skin.xml.h:29
+#: skins_panel_skin.xml.h:29 skin_default_skin.xml.h:130
 msgid "Cancel"
 msgstr ""
 
