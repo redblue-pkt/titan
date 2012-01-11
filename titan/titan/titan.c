@@ -340,6 +340,7 @@ int main(int argc, char *argv[])
 	// for mem leak debug
 	setenv("MALLOC_TRACE", "/home/nit/titan/m.txt", 1);
 	mtrace();
+	status.security =1;	
 #endif
 
 	printf("[%s] copyright by %s - version %s\n", PROGNAME, COPYRIGHT, VERSION);
