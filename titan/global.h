@@ -363,7 +363,7 @@ void setskinnodeslocked(int flag)
 				else if(ostrcmp("vfdisplay", child->name) == 0) child->locked = tmpflag;
 				//else if(ostrcmp("rotorsettings", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("satconfig", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("satfinder", child->name) == 0) child->locked = tmpflag;
+				//else if(ostrcmp("satfinder", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("configurehdd", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("panel_settings_overclocking", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("panel_settings_fancontrol", child->name) == 0) child->locked = tmpflag;
