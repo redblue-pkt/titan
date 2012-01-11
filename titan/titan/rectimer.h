@@ -1076,7 +1076,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 				if(tmpstr != NULL)
 					node->begin = mktime(loctime);
 
-				if(newnode == 1 && node->justplay == 0)
+				if((flag == 1 || newnode == 1) && node->justplay == 0)
 					node->begin -= getconfigint("recforerun", NULL) * 60;
 				node->begin -= (node->begin % 60);
 				if(node->justplay == 1)
@@ -1089,7 +1089,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 				if(tmpstr != NULL)
 					node->end = mktime(loctime);
 
-				if(newnode == 1 && node->justplay == 0)
+				if((flag == 1 || newnode == 1) && node->justplay == 0)
 					node->end += getconfigint("recoverrun", NULL) * 60;
 				node->end -= (node->end % 60);
 			}
