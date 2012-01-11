@@ -348,7 +348,7 @@ void setskinnodeslocked(int flag)
 //			if((checkbox("ATEMIO500") == 1) || (checkbox("ATEMIO510") == 1))
 //			{
 				if(ostrcmp("vfdisplay", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("savesettings", child->name) == 0) child->locked = tmpflagag;
+				else if(ostrcmp("savesettings", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("recordpath", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("videosettings", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("scartrecorder", v) == 0) child->locked = tmpflag;
