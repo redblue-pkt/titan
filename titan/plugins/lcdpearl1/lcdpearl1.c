@@ -11,6 +11,7 @@ int pluginaktiv = 0;
 //int pluginflag = 1; //don't show the plugin in pluginmanager
 
 struct stimerthread* LCD_Pearl1thread = NULL;
+extern struct skin* skin;
 
 void LCD_start_lcd4linux()
 {
@@ -36,7 +37,6 @@ void LCD_Pearl1_thread()
 	struct skin* akttime = getscreennode(LCD_Pearl1, "akttime");
 	int put = 0;
 	char* fbgrab = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/fbgrab -f /tmp/titanlcd.raw -w 320 -h 240 -b 32 -i /tmp/.titanlcd1.png > /dev/null", 0, 0);
-	struct skin* tmp = NULL;	
 
 	while (LCD_Pearl1thread->aktion != STOP) {
 		put = 0;
