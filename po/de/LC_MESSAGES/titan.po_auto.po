@@ -6838,3 +6838,11 @@ msgstr ""
 #: skin_default_skin.xml.h:387
 msgid "STOP"
 msgstr ""
+
+#: global.h:57
+msgid ""
+"For next OnlineUpdate please contact Atemio and send this Serial Number and "
+"your Atemio Serial Number !!\n"
+"\n"
+"Board-ID SerialNr:"
+msgstr ""
