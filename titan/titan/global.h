@@ -336,7 +336,7 @@ void setskinnodeslocked(int flag)
 			else if(ostrcmp("networkbrowser", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("mboxinfo", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("keylock", child->name) == 0) child->locked = flag;
-//			else if(ostrcmp("plugins", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("plugins", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("skinselect", child->name) == 0) child->locked = flag;
 
 			if(status.expertmodus > 9 && status.security == 1)
