@@ -25,6 +25,7 @@
 #include "mc_audioplayer_settings.h"
 #include "mc_videoplayer_settings.h"
 #include "mc_pictureplayer_settings.h"
+#include "mc_browser.h"
 
 char pluginname[] = "Media Center";
 char plugindesc[] = "AAF Multi Mediacenter";
