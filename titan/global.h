@@ -339,7 +339,7 @@ void setskinnodeslocked(int flag)
 			else if(ostrcmp("plugins", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("skinselect", child->name) == 0) child->locked = flag;
 
-			if(status.expertmodus > 9)
+			if(status.expertmodus > 9 && status.security == 1)
 				tmpflag = 0;
 			else
 				tmpflag = 1;
