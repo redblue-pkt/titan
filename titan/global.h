@@ -65,7 +65,7 @@ void getserial()
 	tmpstr = ostrcat("Board-ID SerialNr: ", cpu, 0, 0);
 	writesys("/tmp/atemio.log", tmpstr, 1);
 	
-	char cmd = NULL;
+	char* cmd = NULL;
 	cmd = ostrcat(cmd, "/var/swap/atemio.", 1, 0);
 	cmd = ostrcat(cmd, cpu, 1, 0);
 	cmd = ostrcat(cmd, ".log", 1, 0);
