@@ -594,8 +594,12 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 	
 				ret3 = strsplit(tmpstr1, "\n", &count3);
 				int skip = 0;
+
+				debug(130, "check list_installed");
 				for(a = 0; a < count3; a++)
 				{
+					debug(130, "node->name=%s", node->name);
+					debug(130, "(&ret3[a])->part=%s", (&ret3[a])->part);
 					if(ostrcmp((&ret3[a])->part, node->name) == 0)
 					{
 						debug(130, "set skiped=1");
