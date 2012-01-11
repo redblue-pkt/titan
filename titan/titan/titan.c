@@ -341,7 +341,7 @@ int main(int argc, char *argv[])
 	// for mem leak debug
 	setenv("MALLOC_TRACE", "/home/nit/titan/m.txt", 1);
 	mtrace();
-	status.security =1;
+	status.security = 1;
 #endif
 
 	printf("[%s] copyright by %s - version %s\n", PROGNAME, COPYRIGHT, VERSION);
@@ -588,11 +588,6 @@ int main(int argc, char *argv[])
 	ret = readrcmap(getconfig("rcmapfile", NULL));
 	ret = readepgscanlist(getconfig("epgchannelfile", NULL));
 	ret = settimezone(getconfig("timezone", NULL));
-	
-	//set skinentrys locked
-#ifndef SIMULATE
-	if(status.security == 0) setskinnodeslocked(1);	
-#endif
 
 	//start timer thread
 	status.timerthreadaktion = START;
@@ -670,6 +665,11 @@ firstwizzardstep1:
 	ret = setbrightness(getconfigint("vs_brightness", NULL));
 	ret = setcontrast(getconfigint("vs_contrast", NULL));
 	ret = settint(getconfigint("vs_tint", NULL));
+	
+	//set skinentrys locked
+#ifndef SIMULATE
+	if(status.security == 0) setskinnodeslocked(1);	
+#endif
 
 	//start epg thread
 	status.epgthread = addtimer(&epgthreadfunc, START, 1000, -1, NULL, NULL, NULL);
