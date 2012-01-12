@@ -638,6 +638,15 @@ char* getepgmarkedlist(char* ccount)
 	return tmpstr;
 }
 
+char* getepgpicon()
+{
+	char* tmpstr = NULL;
+	
+	if(status.epgchannel != NULL)
+		tmpstr = createpiconpath(status.epgchannel);
+	return tmpstr;
+}
+
 char* getpicon()
 {
 	char* tmpstr = NULL;

@@ -51,6 +51,8 @@ void screensingleepg(struct channel* chnode, struct epg* epgnode, int flag)
 	if(chnode == NULL) return;
 	if(epgnode == NULL) epgnode = getepgakt(chnode);
 	tmpepg = epgnode;
+	
+	status.epgchannel = chnode;
 
 	changetext(channelname, chnode->name);
 	tmpstr = epgdescunzip(epgnode);
@@ -108,6 +110,7 @@ start:
 
 	while(1)
 	{
+		status.epgchannel = chnode;
 		status.screencalc = 1;
 		rcret = waitrc(singleepg, 0, 0);
 		status.screencalc = 0;
@@ -157,6 +160,7 @@ start:
 		}
 	}
 
+	status.epgchannel = NULL;
 	status.screencalc = 0;
 	delmarkedscreennodes(singleepg, 1);
 	delownerrc(singleepg);
@@ -192,6 +196,7 @@ void screenepg(struct channel* chnode, struct epg* epgnode, int flag)
 	if(chnode == NULL) return;
 	if(epgnode == NULL) epgnode = getepgakt(chnode);
 
+	status.epgchannel = chnode;
 	epgscreenconf = getconfigint("epg_screen", NULL);
 
 start:
@@ -272,6 +277,7 @@ start:
 
 	while(1)
 	{
+		status.epgchannel = chnode;
 		rcret = waitrc(screenepg, 0, 0);
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcinfo", NULL)) break;
@@ -339,6 +345,7 @@ start:
 		}
 	}	
 
+	status.epgchannel = NULL;
 	freeepgrecord(&rectimeline->epgrecord);
 	delownerrc(screenepg);
 	clearscreen(screenepg);

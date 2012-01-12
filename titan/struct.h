@@ -935,6 +935,8 @@ struct status
 	struct service* aktservice;
 	struct service* lastservice;
 	struct channel* markedchannel;
+	//if we are in a epg screen, this is the showen channel
+	struct channel* epgchannel;
 	char* configfile;
 	// for bouquet channel numbering
 	int bouquetnr[MAXSERVICETYPE];
