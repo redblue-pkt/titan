@@ -810,11 +810,11 @@ msgstr ""
 #: skin_default_skin.xml.h:361 skin_default_skin.xml.h:363
 #: skin_default_skin.xml.h:365 skin_default_skin.xml.h:366
 #: skin_default_skin.xml.h:367 skin_default_skin.xml.h:368 epg.h:187
-#: skin_default_skin.xml.h:371 skin_default_skin.xml.h:372
+#: skin_default_skin.xml.h:371 skin_default_skin.xml.h:372 epg.h:191
 msgid "Single (EPG)"
 msgstr ""
 
-#: epg.h:180 epg.h:189
+#: epg.h:180 epg.h:189 epg.h:193
 msgid "Multi (EPG)"
 msgstr ""
 
