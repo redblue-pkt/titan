@@ -84,7 +84,7 @@ void screenmc_videoplayer_settings()
 			addconfigscreencheck("imdb_directory", imdb_directory, NULL);
 			break;
 		}
-		else if(rcret == getrcconfigint("rcblue", NULL))
+		else if(rcret == getrcconfigint("rcred", NULL))
 		{
 			struct skin* screen = getscreen("networkmenu");
 			menu(screen);
