@@ -61,9 +61,9 @@ void screenmc_audioplayer_settings()
 		rcret = waitrc(mc_audioplayer_settings, 0, 0);
 		tmp = listbox->select;
 	
-		if((rcret == getrcconfigint("rcexit", NULL)) || (rcret == getrcconfigint("rcred", NULL)))  
+		if(rcret == getrcconfigint("rcexit", NULL))  
 			break;
-		else if((rcret == getrcconfigint("rcok", NULL)) || (rcret == getrcconfigint("rcgreen", NULL)))
+		else if(rcret == getrcconfigint("rcok", NULL))
 		{
 			addconfigscreencheck("dirsort", dirsort, NULL);
 			addconfigscreencheck("view", view, NULL);
