@@ -3547,7 +3547,8 @@ int drawscreen(struct skin* node, int flag)
 	
 	if(strstr(node->name, "LCD_") != NULL) {
 		merkskinfb = skinfb;
-		//skinfb = lcdskinfb;
+		memset(lcdskinfb->fb, 0, lcdskinfb->varfbsize);
+		skinfb = lcdskinfb;
 	}
 
 	if(status.screencalc == 0)
@@ -3581,14 +3582,15 @@ int drawscreen(struct skin* node, int flag)
 		if(status.screencalc == 0)
 		{
 			drawscreenalways(node);
-			if(strstr(node->name, "LCD_") != NULL) {
+			if(strstr(node->name, "LCD_") != NULL) 
 				pngforlcd();
-				skinfb = merkskinfb;
-				merkskinfb = NULL;
-			}
 			else	
 				blitfb();
 		}
+	}
+	if(strstr(node->name, "LCD_") != NULL) {
+		skinfb = merkskinfb;
+		merkskinfb = NULL;
 	}
 	if(flag == 0)
 		m_unlock(&status.drawingmutex, 0);
