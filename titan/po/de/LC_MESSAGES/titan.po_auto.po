@@ -148,7 +148,7 @@ msgstr ""
 #: mc_main.h:81 mc_main.h:171 mc_internetbrowser.h:10 mc_internetbrowser.h:29
 #: mc_internetbrowser.h:32 skin_default_skin.xml.h:175 global.h:3898
 #: global.h:3897 global.h:3903 global.h:62 panel_system.h:327
-#: panel_system.h:334
+#: panel_system.h:334 panel_system.h:337 panel_system.h:344
 msgid "EXIT"
 msgstr ""
 
@@ -478,7 +478,7 @@ msgstr ""
 #: network.h:263 global.h:3904 mc_main.h:71 mc_main.h:76 mc_main.h:81
 #: mc_main.h:171 mc_internetbrowser.h:10 mc_internetbrowser.h:29
 #: mc_internetbrowser.h:32 global.h:3898 global.h:3897 global.h:3903
-#: panel_system.h:327 panel_system.h:334
+#: panel_system.h:327 panel_system.h:334 panel_system.h:337 panel_system.h:344
 msgid "Message"
 msgstr ""
 
@@ -576,7 +576,7 @@ msgstr ""
 #: mc_main.h:81 mc_main.h:171 mc_internetbrowser.h:10 mc_internetbrowser.h:29
 #: mc_internetbrowser.h:32 skin_default_skin.xml.h:269 global.h:3898
 #: global.h:3897 global.h:3903 global.h:62 panel_system.h:327
-#: panel_system.h:334
+#: panel_system.h:334 panel_system.h:337 panel_system.h:344
 msgid "OK"
 msgstr ""
 
@@ -1925,12 +1925,12 @@ msgid ""
 "The Box will reboot and the Wizard will be started!"
 msgstr ""
 
-#: panel_system.h:113 panel_system.h:118 panel_system.h:124
+#: panel_system.h:113 panel_system.h:118 panel_system.h:124 panel_system.h:138
 msgid "non-version"
 msgstr ""
 
 #: panel_system.h:297 panel_system.h:298 panel_system.h:303 panel_system.h:309
-#: panel_system.h:327
+#: panel_system.h:327 panel_system.h:337
 msgid "Error file not supported"
 msgstr ""
 
@@ -6476,47 +6476,47 @@ msgstr ""
 
 #: panel_system.h:194 panel_system.h:251 panel_system.h:195 panel_system.h:252
 #: panel_system.h:200 panel_system.h:257 panel_system.h:206 panel_system.h:263
-#: panel_system.h:211 panel_system.h:275
+#: panel_system.h:211 panel_system.h:275 panel_system.h:221 panel_system.h:285
 msgid "starting Kernel Update ?"
 msgstr ""
 
 #: panel_system.h:201 panel_system.h:257 panel_system.h:202 panel_system.h:258
 #: panel_system.h:207 panel_system.h:263 panel_system.h:213 panel_system.h:269
-#: panel_system.h:219 panel_system.h:282
+#: panel_system.h:219 panel_system.h:282 panel_system.h:229 panel_system.h:292
 msgid "starting Fw Update ?"
 msgstr ""
 
 #: panel_system.h:208 panel_system.h:209 panel_system.h:214 panel_system.h:220
-#: panel_system.h:227
+#: panel_system.h:227 panel_system.h:237
 msgid "starting Root Update ?"
 msgstr ""
 
 #: panel_system.h:215 panel_system.h:269 panel_system.h:216 panel_system.h:270
 #: panel_system.h:221 panel_system.h:275 panel_system.h:227 panel_system.h:281
-#: panel_system.h:235 panel_system.h:296
+#: panel_system.h:235 panel_system.h:296 panel_system.h:245 panel_system.h:306
 msgid "starting Var Update ?"
 msgstr ""
 
 #: panel_system.h:222 panel_system.h:275 panel_system.h:223 panel_system.h:276
 #: panel_system.h:228 panel_system.h:281 panel_system.h:234 panel_system.h:287
-#: panel_system.h:243 panel_system.h:303
+#: panel_system.h:243 panel_system.h:303 panel_system.h:253 panel_system.h:313
 msgid "starting Full Update ?"
 msgstr ""
 
 #: panel_system.h:231 panel_system.h:283 panel_system.h:232 panel_system.h:284
 #: panel_system.h:237 panel_system.h:289 panel_system.h:243 panel_system.h:295
-#: panel_system.h:253 panel_system.h:312
+#: panel_system.h:253 panel_system.h:312 panel_system.h:263 panel_system.h:322
 msgid "starting Usb Update ?"
 msgstr ""
 
 #: panel_system.h:240 panel_system.h:291 panel_system.h:241 panel_system.h:292
 #: panel_system.h:246 panel_system.h:297 panel_system.h:252 panel_system.h:303
-#: panel_system.h:263 panel_system.h:321
+#: panel_system.h:263 panel_system.h:321 panel_system.h:273 panel_system.h:331
 msgid "starting Fullusb Update ?"
 msgstr ""
 
 #: panel_system.h:263 panel_system.h:264 panel_system.h:269 panel_system.h:275
-#: panel_system.h:289
+#: panel_system.h:289 panel_system.h:299
 msgid "starting Root Update starten ?"
 msgstr ""
 
