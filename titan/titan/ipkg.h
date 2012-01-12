@@ -283,7 +283,7 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 	if(src == NULL) return 1;
 
 	debug(130, "src: %s", src);
-	ip = string_replace("http://", "", src, 0);
+	ip = string_replace("http://", "", (char*)src, 0);
 
 	if(ip != NULL)
 		pos = strchr(ip, '/');
