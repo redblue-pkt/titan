@@ -50,12 +50,12 @@
 <node name=sort type=choicebox parent=listbox valign=middle posx=0 text="Sort" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=view type=choicebox parent=listbox valign=middle posx=0 text="View" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=imdb_directory type=choicebox parent=listbox valign=middle posx=0 text="Imdb Directory" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=b1 text="EXIT" halign=center valign=center bordercol=bgcol bordersize=0 posx=15% posy=90% width=150 height=30/>
-<node name=b1 text="EXIT" halign=center valign=center bordercol=red bordersize=2 posx=15% posy=95% width=150 height=2/>
-<node name=b2 text="OK" halign=center valign=center bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
-<node name=b2 text="OK" halign=center valign=center bordercol=green bordersize=2 posx=35% posy=95% width=150 height=2/>
-<node name=b4 text="Network" halign=center valign=center bordercol=bgcol bordersize=0 posx=55% posy=90% width=150 height=30/>
-<node name=b4 text="Network" halign=center valign=center bordercol=blue bordersize=2 posx=55% posy=95% width=150 height=2/>
+<node name=b1 text="OK" halign=center valign=center bordercol=bgcol bordersize=0 posx=20% posy=90% width=150 height=30/>
+<node name=b1 text="OK" halign=center valign=center bordercol=okcol bordersize=2 posx=20% posy=95% width=150 height=2/>
+<node name=b2 text="EXIT" halign=center valign=center bordercol=bgcol bordersize=0 posx=45% posy=90% width=150 height=30/>
+<node name=b2 text="EXIT" halign=center valign=center bordercol=exitcol bordersize=2 posx=45% posy=95% width=150 height=2/>
+<node name=b4 text="Network" halign=center valign=center bordercol=bgcol bordersize=0 posx=70% posy=90% width=150 height=30/>
+<node name=b4 text="Network" halign=center valign=center bordercol=red bordersize=2 posx=70% posy=95% width=150 height=2/>
 </screen>
 
 # audioplayer
@@ -80,14 +80,14 @@
 <node bordercol=bordercol scrollbar=auto type=listbox posy=150 posx=350 name=listbox width=45% height=60%>
 <node name=sort type=choicebox parent=listbox valign=middle posx=0 text="Sort" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=view type=choicebox parent=listbox valign=middle posx=0 text="View" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=b1 text="EXIT" halign=center valign=center bordercol=bgcol bordersize=0 posx=15% posy=90% width=150 height=30/>
-<node name=b1 text="EXIT" halign=center valign=center bordercol=red bordersize=2 posx=15% posy=95% width=150 height=2/>
-<node name=b2 text="OK" halign=center valign=center bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
-<node name=b2 text="OK" halign=center valign=center bordercol=green bordersize=2 posx=35% posy=95% width=150 height=2/>
+<node name=b1 text="OK" halign=center valign=center bordercol=bgcol bordersize=0 posx=15% posy=90% width=150 height=30/>
+<node name=b1 text="OK" halign=center valign=center bordercol=okcol bordersize=2 posx=15% posy=95% width=150 height=2/>
+<node name=b2 text="EXIT" halign=center valign=center bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
+<node name=b2 text="EXIT" halign=center valign=center bordercol=exitcol bordersize=2 posx=35% posy=95% width=150 height=2/>
 <node name=b3 text="Screensaver" halign=center valign=center bordercol=bgcol bordersize=0 posx=55% posy=90% width=150 height=30/>
-<node name=b3 text="Screensaver" halign=center valign=center bordercol=yellow bordersize=2 posx=55% posy=95% width=150 height=2/>
+<node name=b3 text="Screensaver" halign=center valign=center bordercol=red bordersize=2 posx=55% posy=95% width=150 height=2/>
 <node name=b4 text="Network" halign=center valign=center bordercol=bgcol bordersize=0 posx=75% posy=90% width=150 height=30/>
-<node name=b4 text="Network" halign=center valign=center bordercol=blue bordersize=2 posx=75% posy=95% width=150 height=2/>
+<node name=b4 text="Network" halign=center valign=center bordercol=green bordersize=2 posx=75% posy=95% width=150 height=2/>
 </screen>
 
 <screen name="mc_audioplayer_infobar" fontcol=fontcol fontsize=30 posx=center posy=83% width=100% height=50 bordersize=2 bgcol=0>
@@ -125,10 +125,10 @@
 <node name=view type=choicebox parent=listbox valign=middle posx=0 text="View" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=sound type=choicebox parent=listbox valign=middle posx=0 text="Sound" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=interval type=choicebox parent=listbox valign=middle posx=0 text="Interval" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=b1 text="EXIT" halign=center valign=center bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
-<node name=b1 text="EXIT" halign=center valign=center bordercol=red bordersize=2 posx=35% posy=95% width=150 height=2/>
-<node name=b2 text="OK" halign=center valign=center bordercol=bgcol bordersize=0 posx=55% posy=90% width=150 height=30/>
-<node name=b2 text="OK" halign=center valign=center bordercol=green bordersize=2 posx=55% posy=95% width=150 height=2/>
+<node name=b1 text="OK" halign=center valign=center bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
+<node name=b1 text="OK" halign=center valign=center bordercol=okcol bordersize=2 posx=35% posy=95% width=150 height=2/>
+<node name=b2 text="EXIT" halign=center valign=center bordercol=bgcol bordersize=0 posx=55% posy=90% width=150 height=30/>
+<node name=b2 text="EXIT" halign=center valign=center bordercol=exitcol bordersize=2 posx=55% posy=95% width=150 height=2/>
 </screen>
 
 <screen fontcol=fontcol name=picscreen fontsize=30 posx=0 posy=0 width=100% height=100% bordersize=0>
