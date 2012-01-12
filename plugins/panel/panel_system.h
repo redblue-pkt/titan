@@ -45,7 +45,11 @@ void screenpanel_system_update(int mode)
 	char* filepath = NULL;
 	char* type = NULL;
 	char* cmd = NULL;
-	
+		
+	char* auth = NULL;
+	auth = ostrcat(auth, " aUtzhFRTzuDFa", 1, 0);
+	auth = ostrcat(auth, " JNHZbghnjuz", 1, 0);	
+
 	if (mode == 0)
 	{	
 /*
@@ -54,7 +58,13 @@ void screenpanel_system_update(int mode)
 		atemiokeylist = wget http://gib-key-trustliste.de/keyliste
 		if(!string_find(lokalkey,atemiokeylist)) 
 */
-			system("/sbin/update.sh getfilelist");
+
+		char* cmd = NULL;
+		cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
+		cmd = ostrcat(cmd, auth, 1, 0);	
+		system(cmd);
+		free(cmd),cmd = NULL;
+
 		skinname = "panel_system_update_flash_online_menu";
 		filemask = ostrcat(filemask, "*.img", 1, 0);
 		filepath = ostrcat(filepath, "/tmp/online", 1, 0);
@@ -69,7 +79,11 @@ void screenpanel_system_update(int mode)
 	}
 	else if (mode == 2)
 	{
-		system("/sbin/update.sh getfilelist");
+		char* cmd = NULL;
+		cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
+		cmd = ostrcat(cmd, auth, 1, 0);	
+		system(cmd);
+		free(cmd),cmd = NULL;
 		skinname = "panel_system_update_usb_online_menu";
 		filemask = ostrcat(filemask, "*.tar.gz", 1, 0);
 		filepath = ostrcat(filepath, "/tmp/online", 1, 0);
@@ -191,10 +205,6 @@ void screenpanel_system_update(int mode)
 				cmd = ostrcat(cmd, "/sbin/update.sh ", 1, 0);
 				cmd = ostrcat(cmd, type, 1, 0);
 				cmd = ostrcat(cmd, " ", 1, 0);
-				
-				char* auth = NULL;
-				auth = ostrcat(auth, " aUtzhFRTzuDFa", 1, 0);
-				auth = ostrcat(auth, " JNHZbghnjuz", 1, 0);
 			
 				char* msgtxt = NULL;
 				writeallconfig(1);
@@ -345,7 +355,6 @@ void screenpanel_system_update(int mode)
 					continue;
 				}
 
-				free(auth); auth = NULL;
 				free(cmd); cmd = NULL;
 				free(msgtxt); msgtxt = NULL;
 				free(tmpstr); tmpstr = NULL;
@@ -353,6 +362,7 @@ void screenpanel_system_update(int mode)
 			}
 		}
 	}
+	free(auth); auth = NULL;
 	delownerrc(panel_system);
 	clearscreen(panel_system);
 
