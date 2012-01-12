@@ -147,7 +147,7 @@ msgstr ""
 #: network.h:263 global.h:61 global.h:3904 mc_main.h:71 mc_main.h:76
 #: mc_main.h:81 mc_main.h:171 mc_internetbrowser.h:10 mc_internetbrowser.h:29
 #: mc_internetbrowser.h:32 skin_default_skin.xml.h:175 global.h:3898
-#: global.h:3897 global.h:3903
+#: global.h:3897 global.h:3903 global.h:62
 msgid "EXIT"
 msgstr ""
 
@@ -573,7 +573,7 @@ msgstr ""
 #: network.h:263 global.h:61 global.h:3904 mc_main.h:71 mc_main.h:76
 #: mc_main.h:81 mc_main.h:171 mc_internetbrowser.h:10 mc_internetbrowser.h:29
 #: mc_internetbrowser.h:32 skin_default_skin.xml.h:269 global.h:3898
-#: global.h:3897 global.h:3903
+#: global.h:3897 global.h:3903 global.h:62
 msgid "OK"
 msgstr ""
 
@@ -2254,6 +2254,7 @@ msgstr ""
 #: plugins_panel_skin.xml.h:6 skins_panel_skin.xml.h:6 global.h:21 global.h:20
 #: global.h:30 global.h:32 global.h:50 global.h:51 global.h:40 global.h:45
 #: global.h:46 global.h:47 global.h:48 global.h:53 global.h:56 global.h:61
+#: global.h:62
 msgid "Info"
 msgstr ""
 
@@ -6757,7 +6758,7 @@ msgstr ""
 
 #: global.h:20 global.h:19 global.h:29 global.h:31 global.h:49 global.h:50
 #: global.h:39 global.h:44 global.h:45 global.h:46 global.h:47 global.h:52
-#: global.h:55 global.h:60
+#: global.h:55 global.h:60 global.h:61
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
@@ -6842,7 +6843,7 @@ msgstr ""
 msgid "STOP"
 msgstr ""
 
-#: global.h:57
+#: global.h:57 global.h:58
 msgid ""
 "For next OnlineUpdate please contact Atemio and send this Serial Number and "
 "your Atemio Serial Number !!\n"
