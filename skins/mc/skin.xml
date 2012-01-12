@@ -84,8 +84,8 @@
 <node name=b1 text="OK" halign=center valign=center bordercol=okcol bordersize=2 posx=15% posy=95% width=150 height=2/>
 <node name=b2 text="EXIT" halign=center valign=center bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
 <node name=b2 text="EXIT" halign=center valign=center bordercol=exitcol bordersize=2 posx=35% posy=95% width=150 height=2/>
-<node name=b3 text="Screensaver" halign=center valign=center bordercol=bgcol bordersize=0 posx=55% posy=90% width=150 height=30/>
-<node name=b3 text="Screensaver" halign=center valign=center bordercol=red bordersize=2 posx=55% posy=95% width=150 height=2/>
+<node name=b3 text="Screensaver" halign=center valign=center bordercol=bgcol bordersize=0 posx=51% posy=90% width=250 height=30/>
+<node name=b3 text="Screensaver" halign=center valign=center bordercol=red bordersize=2 posx=51% posy=95% width=250 height=2/>
 <node name=b4 text="Network" halign=center valign=center bordercol=bgcol bordersize=0 posx=75% posy=90% width=150 height=30/>
 <node name=b4 text="Network" halign=center valign=center bordercol=green bordersize=2 posx=75% posy=95% width=150 height=2/>
 </screen>
