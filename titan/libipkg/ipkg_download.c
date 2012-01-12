@@ -140,8 +140,8 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *dest_file_name
 
     /* XXX: BUG rewrite to use execvp or else busybox's internal wget -Jamey 7/23/2002 */ 
 
-    char* userauth = NULL;
-    userauth = string_replace("http://", "http://ipk-GZFh:FHZVBGhnzfvEhFDFTGzuif5676zhjGTUGBNHjm@", src, 0);
+    char* abc = NULL;
+    abc = string_replace("http://", "http://ipk-GZFh:FHZVBGhnzfvEhFDFTGzuif5676zhjGTUGBNHjm@", src, 0);
     sprintf_alloc(&cmd, "wget --passive-ftp %s %s%s %s%s %s -P %s %s",
 		  (conf->http_proxy || conf->ftp_proxy) ? "--proxy=on" : "",
 		  conf->proxy_user ? "--proxy-user=" : "",
@@ -150,8 +150,8 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *dest_file_name
 		  conf->proxy_passwd ? conf->proxy_passwd : "",
 		  conf->verbose_wget ? "" : "-q",
 		  conf->tmp_dir,
-		  userauth);
-free(userauth), userauth = NULL;
+		  abc);
+free(abc), abc = NULL;
 /*
     sprintf_alloc(&cmd, "wget --passive-ftp %s %s%s %s%s %s -P %s %s",
 		  (conf->http_proxy || conf->ftp_proxy) ? "--proxy=on" : "",
