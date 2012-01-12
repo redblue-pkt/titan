@@ -11,7 +11,6 @@ int pluginaktiv = 0;
 //int pluginflag = 1; //don't show the plugin in pluginmanager
 
 struct stimerthread* LCD_Pearl1thread = NULL;
-extern struct skin* skin;
 
 void LCD_start_lcd4linux()
 {
@@ -62,7 +61,6 @@ void LCD_Pearl1_thread()
 			
 			if(put == 1)
 			{
-				drawscreen(skin, 0);
 				changetext(akttime, tmpstr);
 				drawscreen(LCD_Pearl1, 0);
 				system(fbgrab);

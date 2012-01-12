@@ -3547,7 +3547,7 @@ int drawscreen(struct skin* node, int flag)
 	
 	if(strstr(node->name, "LCD_") != NULL) {
 		merkskinfb = skinfb;
-		skinfb = lcdskinfb;
+		//skinfb = lcdskinfb;
 	}
 
 	if(status.screencalc == 0)
