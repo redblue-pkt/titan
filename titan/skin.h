@@ -3547,8 +3547,8 @@ int drawscreen(struct skin* node, int flag)
 	
 	if(strstr(node->name, "LCD_") != NULL) {
 		merkskinfb = skinfb;
-		memset(lcdskinfb->fb, 0, lcdskinfb->varfbsize);
-		skinfb = lcdskinfb;
+		//memset(lcdskinfb->fb, 0, lcdskinfb->varfbsize);
+		//skinfb = lcdskinfb;
 	}
 
 	if(status.screencalc == 0)
