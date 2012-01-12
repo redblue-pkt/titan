@@ -140,12 +140,8 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *dest_file_name
 
     /* XXX: BUG rewrite to use execvp or else busybox's internal wget -Jamey 7/23/2002 */ 
 
-//wget --passive-ftp -q -P /tmp/ipkg-elz5Lo http://97.74.32.10/svn/ipk/sh4/titan/titan-plugin-picons-black_1.3_sh
-
-//    printf("src: %s\n",src);
     char* userauth = NULL;
-    userauth = string_replace("http://", "http://atemio:FHZVBGhnzfvEhFDFTGzuif5676zhjGTUGBNHjm@", src, 0);
-//    printf("userauth: %s\n",userauth);
+    userauth = string_replace("http://", "http://ipk-GZFh:FHZVBGhnzfvEhFDFTGzuif5676zhjGTUGBNHjm@", src, 0);
     sprintf_alloc(&cmd, "wget --passive-ftp %s %s%s %s%s %s -P %s %s",
 		  (conf->http_proxy || conf->ftp_proxy) ? "--proxy=on" : "",
 		  conf->proxy_user ? "--proxy-user=" : "",

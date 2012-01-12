@@ -34,6 +34,7 @@ void checkserial(char* input)
 			free(cmd),cmd = NULL;			
 			if(!file_exist("/dev/ttyS0") == 1)
 				mknod("/dev/ttyS0", S_IFCHR | 0666, makedev(204, 40));
+			free(ret1),ret1 = NULL;
 			break;
 		}
 		free(ret1),ret1 = NULL;
@@ -66,7 +67,7 @@ void getserial()
 	writesys("/tmp/atemio.log", tmpstr, 1);
 	
 	char* cmd = NULL;
-	cmd = ostrcat(cmd, "/var/swap/atemio.", 1, 0);
+	cmd = ostrcat(cmd, "/var/backup/atemio.", 1, 0);
 	cmd = ostrcat(cmd, cpu, 1, 0);
 	cmd = ostrcat(cmd, ".log", 1, 0);
 	writesys(cmd, tmpstr, 1);

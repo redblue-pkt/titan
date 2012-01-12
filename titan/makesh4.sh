@@ -107,6 +107,13 @@ echo "[titan]--------------------------------------------------------"
 
 "$HOME"/flashimg/source.titan/titan/tools/getipk.sh $IPKDIR
 
+if [ ! -e "$HOME"/flashimg/source.titan/libipkg/.libs/libipkg.so.0.0.0 ]; then
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] ipkg building error !!!"
+	echo "[titan] check your src"
+	echo "[titan]--------------------------------------------------------"
+	exit 1
+fi
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Ipkdir done"
 echo "[titan]--------------------------------------------------------"
@@ -119,6 +126,14 @@ echo "[titan]--------------------------------------------------------"
 #cd "$HOME"/flashimg/source.titan/netsurf
 #./makesh4.sh $STM
 #cd "$HOME"/flashimg/source.titan/titan
+if [ ! -e "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/nsfb ]; then
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] netsurf building error !!!"
+	echo "[titan] check your src"
+	echo "[titan]--------------------------------------------------------"
+	exit 1
+fi
+
 echo "[titan]--------------------------------------------------------"
 echo "[titan] netsurf done"
 echo "[titan]--------------------------------------------------------"
@@ -213,6 +228,7 @@ mkdir -p "$HOME"/flashimg/BUILD/titan/usr/local/bin
 mkdir -p "$HOME"/flashimg/BUILD/titan/sbin
 mkdir -p "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf
 mkdir -p "$HOME"/flashimg/BUILD/titan/usr/sbin
+mkdir -p "$HOME"/flashimg/BUILD/titan/usr/bin
 
 PLIST=`ls -1 "$HOME"/flashimg/source.titan/plugins`
 
@@ -266,6 +282,9 @@ cp -a "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/framebuffer/res/config/C
 cp -a "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/framebuffer/res/config/Aliases "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf
 cp -a "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/framebuffer/res/config/*.css "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf
 cp -a "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/framebuffer/res/config/messages "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf
+
+cp -a "$HOME"/flashimg/source.titan/libipkg/.libs/libipkg.so.0.0.0 "$HOME"/flashimg/BUILD/titan/lib/libipkg.so.0
+cp -a "$HOME"/flashimg/source.titan/libipkg/.libs/ipkg-cl "$HOME"/flashimg/BUILD/usr/bin/ipkg
 
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type d -name "*.svn"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.h"`
