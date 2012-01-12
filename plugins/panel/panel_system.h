@@ -191,7 +191,11 @@ void screenpanel_system_update(int mode)
 				cmd = ostrcat(cmd, "/sbin/update.sh ", 1, 0);
 				cmd = ostrcat(cmd, type, 1, 0);
 				cmd = ostrcat(cmd, " ", 1, 0);
-
+				
+				char* auth = NULL;
+				auth = ostrcat(auth, " aUtzhFRTzuDFa", 1, 0);
+				auth = ostrcat(auth, " JNHZbghnjuz", 1, 0);
+			
 				char* msgtxt = NULL;
 				writeallconfig(1);
 
@@ -202,6 +206,7 @@ void screenpanel_system_update(int mode)
 					{
 						cmd = ostrcat(cmd, "kernel ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
+						cmd = ostrcat(cmd, auth, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Kernel Update ?"), 1, 0);
 					}
@@ -209,6 +214,7 @@ void screenpanel_system_update(int mode)
 					{
 						cmd = ostrcat(cmd, "fw ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
+						cmd = ostrcat(cmd, auth, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Fw Update ?"), 1, 0);
 					}
@@ -216,6 +222,7 @@ void screenpanel_system_update(int mode)
 					{
 						cmd = ostrcat(cmd, "root ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
+						cmd = ostrcat(cmd, auth, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Root Update ?"), 1, 0);
 					}
@@ -223,6 +230,7 @@ void screenpanel_system_update(int mode)
 					{
 						cmd = ostrcat(cmd, "var ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
+						cmd = ostrcat(cmd, auth, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Var Update ?"), 1, 0);
 					}
@@ -230,6 +238,7 @@ void screenpanel_system_update(int mode)
 					{
 						cmd = ostrcat(cmd, "full ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
+						cmd = ostrcat(cmd, auth, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Full Update ?"), 1, 0);
 					}
@@ -239,6 +248,7 @@ void screenpanel_system_update(int mode)
 						cmd = ostrcat(cmd, device->ret, 1, 0);
 						cmd = ostrcat(cmd, " ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
+						cmd = ostrcat(cmd, auth, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Usb Update ?"), 1, 0);
 					}
@@ -248,6 +258,7 @@ void screenpanel_system_update(int mode)
 						cmd = ostrcat(cmd, device->ret, 1, 0);
 						cmd = ostrcat(cmd, " ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
+						cmd = ostrcat(cmd, auth, 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Fullusb Update ?"), 1, 0);
 					}
@@ -260,30 +271,35 @@ void screenpanel_system_update(int mode)
 					{
 						cmd = ostrcat(cmd, "kernel ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
+						cmd = ostrcat(cmd, auth, 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Kernel Update ?"), 1, 0);
 					}
 					else if(string_find("_FW_",filelist->select->text) && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "fw ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
+						cmd = ostrcat(cmd, auth, 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Fw Update ?"), 1, 0);
 					}
 					else if(string_find("_ROOT_",filelist->select->text) && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "root ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
+						cmd = ostrcat(cmd, auth, 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Root Update starten ?"), 1, 0);
 					}
 					else if(string_find("_VAR_",filelist->select->text) && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "var ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
+						cmd = ostrcat(cmd, auth, 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Var Update ?"), 1, 0);
 					}
 					else if(string_find("_FULL_",filelist->select->text))
 					{
 						cmd = ostrcat(cmd, "full ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
+						cmd = ostrcat(cmd, auth, 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Full Update ?"), 1, 0);
 					}
 					else if(string_find("_USB_",filelist->select->text))
@@ -292,6 +308,7 @@ void screenpanel_system_update(int mode)
 						cmd = ostrcat(cmd, device->ret, 1, 0);
 						cmd = ostrcat(cmd, " ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
+						cmd = ostrcat(cmd, auth, 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Usb Update ?"), 1, 0);
 					}
 					else if(string_find("_FULLUSB_",filelist->select->text))
@@ -300,6 +317,7 @@ void screenpanel_system_update(int mode)
 						cmd = ostrcat(cmd, device->ret, 1, 0);
 						cmd = ostrcat(cmd, " ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
+						cmd = ostrcat(cmd, auth, 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Fullusb Update ?"), 1, 0);
 					}
 				}
@@ -327,6 +345,7 @@ void screenpanel_system_update(int mode)
 					continue;
 				}
 
+				free(auth); auth = NULL;
 				free(cmd); cmd = NULL;
 				free(msgtxt); msgtxt = NULL;
 				free(tmpstr); tmpstr = NULL;
