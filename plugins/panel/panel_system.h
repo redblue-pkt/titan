@@ -185,7 +185,13 @@ void screenpanel_system_update(int mode)
 		else if(rcret == getrcconfigint("rcyellow", NULL))
 		{
 			if (mode == 0 || mode == 2)
-				system("/sbin/update.sh getfilelist");
+			{
+				char* cmd = NULL;
+				cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
+				cmd = ostrcat(cmd, auth, 1, 0);	
+				system(cmd);
+				free(cmd),cmd = NULL;
+			}
 
 			drawscreen(panel_system, 0);
 			getfilelist(panel_system, filelistpath, filelist, filepath, filemask, 1, NULL);
