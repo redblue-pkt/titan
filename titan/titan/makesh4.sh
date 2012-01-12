@@ -107,13 +107,6 @@ echo "[titan]--------------------------------------------------------"
 
 "$HOME"/flashimg/source.titan/titan/tools/getipk.sh $IPKDIR
 
-if [ ! -e "$HOME"/flashimg/source.titan/libipkg/.libs/libipkg.so.0.0.0 ]; then
-	echo "[titan]--------------------------------------------------------"
-	echo "[titan] ipkg building error !!!"
-	echo "[titan] check your src"
-	echo "[titan]--------------------------------------------------------"
-	exit 1
-fi
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Ipkdir done"
 echo "[titan]--------------------------------------------------------"
@@ -126,13 +119,13 @@ echo "[titan]--------------------------------------------------------"
 #cd "$HOME"/flashimg/source.titan/netsurf
 #./makesh4.sh $STM
 #cd "$HOME"/flashimg/source.titan/titan
-if [ ! -e "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/nsfb ]; then
-	echo "[titan]--------------------------------------------------------"
-	echo "[titan] netsurf building error !!!"
-	echo "[titan] check your src"
-	echo "[titan]--------------------------------------------------------"
-	exit 1
-fi
+#if [ ! -e "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/nsfb ]; then
+#	echo "[titan]--------------------------------------------------------"
+#	echo "[titan] netsurf building error !!!"
+#	echo "[titan] check your src"
+#	echo "[titan]--------------------------------------------------------"
+#	exit 1
+#fi
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] netsurf done"
@@ -144,6 +137,13 @@ echo "[titan]--------------------------------------------------------"
 cd "$HOME"/flashimg/source.titan/libipkg
 ./makesh4.sh $STM
 cd "$HOME"/flashimg/source.titan/titan
+if [ ! -e "$HOME"/flashimg/source.titan/libipkg/.libs/libipkg.so.0.0.0 ]; then
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] ipkg building error !!!"
+	echo "[titan] check your src"
+	echo "[titan]--------------------------------------------------------"
+	exit 1
+fi
 echo "[titan]--------------------------------------------------------"
 echo "[titan] libipkg done"
 echo "[titan]--------------------------------------------------------"
