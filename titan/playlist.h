@@ -398,6 +398,10 @@ start:
 			title = ostrcat("", (&ret1[i])->part, 0, 0);
 			changetext(tmp, title);
 */			
+
+			debug(50, "node->file: %s", node->file);
+			debug(50, "basename(node->file): %s", basename(node->file));
+						
 			changetext(tmp, basename(node->file));			
 //			changetext(tmp, node->file);
 			tmp->handle = (char*)node;
