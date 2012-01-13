@@ -53,14 +53,7 @@ void getserial()
 {
 	char* cpu = NULL;
 	cpu = getcpuid();
-
-	char* msg = NULL;
-	msg = ostrcat(_("For next OnlineUpdate please contact Atemio and send this Serial Number and your Atemio Serial Number !!\n\nBoard-ID SerialNr:"), " ", 0, 0);
-	msg = ostrcat(msg, cpu, 1, 0);
-	msg = ostrcat(msg, "\n\n", 1, 0);
-	msg = ostrcat(msg, _("Email  		info@atemio.de"), 1, 0);
-	textbox(_("Info"), _(msg), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 400, 0, 0);	
-	free(msg), msg = NULL;
+	if(cpu == NULL) return;
 	
 	char* tmpstr = NULL;
 	tmpstr = ostrcat("Board-ID SerialNr: ", cpu, 0, 0);
@@ -77,6 +70,14 @@ void getserial()
 	cpu = string_replace("AA040127", "4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", cpu, 1);
 	cpu = ostrcat(cpu, "5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662", 1, 0);
 	writesys("/var/dev/dvb/adapter0/dts0", cpu, 1);
+
+	char* msg = NULL;
+	msg = ostrcat(_("For next OnlineUpdate please contact Atemio and send this Serial Number and your Atemio Serial Number !!\n\nBoard-ID SerialNr:"), " ", 0, 0);
+	msg = ostrcat(msg, cpu, 1, 0);
+	msg = ostrcat(msg, "\n\n", 1, 0);
+	msg = ostrcat(msg, _("Email  		info@atemio.de"), 1, 0);
+	textbox(_("Info"), _(msg), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 400, 0, 0);	
+	free(msg), msg = NULL;
 
 	if(status.security == 0)
 	{
