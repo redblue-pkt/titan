@@ -151,7 +151,7 @@ msgstr ""
 #: panel_system.h:334 panel_system.h:337 panel_system.h:344 panel_system.h:343
 #: panel_system.h:350 plugins_mc_skin.xml.h:16 skins_mc_skin.xml.h:16
 #: mc_global.h:499 mc_global.h:725 mc_global.h:500 mc_global.h:726
-#: mc_global.h:728
+#: mc_global.h:728 mc_global.h:504 mc_global.h:736
 msgid "EXIT"
 msgstr ""
 
@@ -498,7 +498,8 @@ msgstr ""
 #: mc_internetbrowser.h:32 global.h:3898 global.h:3897 global.h:3903
 #: panel_system.h:327 panel_system.h:334 panel_system.h:337 panel_system.h:344
 #: panel_system.h:343 panel_system.h:350 mc_global.h:499 mc_global.h:725
-#: mc_global.h:500 mc_global.h:726 mc_global.h:728
+#: mc_global.h:500 mc_global.h:726 mc_global.h:728 mc_global.h:504
+#: mc_global.h:736
 msgid "Message"
 msgstr ""
 
@@ -599,7 +600,7 @@ msgstr ""
 #: panel_system.h:334 panel_system.h:337 panel_system.h:344 panel_system.h:343
 #: panel_system.h:350 plugins_mc_skin.xml.h:29 skins_mc_skin.xml.h:29
 #: mc_global.h:499 mc_global.h:725 mc_global.h:500 mc_global.h:726
-#: mc_global.h:728
+#: mc_global.h:728 mc_global.h:504 mc_global.h:736
 msgid "OK"
 msgstr ""
 
@@ -1144,7 +1145,8 @@ msgstr ""
 #: mc_global.h:688 mc_pictureplayer.h:268 mc_videoplayer.h:320
 #: mc_videoplayer.h:328 mc_audioplayer.h:295 mc_videoplayer.h:331
 #: mc_audioplayer.h:296 mc_videoplayer.h:332 mc_global.h:678 mc_global.h:692
-#: mc_global.h:477 mc_global.h:679 mc_global.h:693
+#: mc_global.h:477 mc_global.h:679 mc_global.h:693 mc_global.h:683
+#: mc_global.h:697
 msgid "Playlist-Mode"
 msgstr ""
 
@@ -1156,7 +1158,8 @@ msgstr ""
 #: play.h:501 mc_audioplayer.h:314 mc_audioplayer.h:403 mc_videoplayer.h:358
 #: mc_videoplayer.h:443 mc_audioplayer.h:315 mc_audioplayer.h:404
 #: mc_videoplayer.h:359 mc_videoplayer.h:444 mc_global.h:499 mc_global.h:725
-#: mc_global.h:500 mc_global.h:726 mc_global.h:728
+#: mc_global.h:500 mc_global.h:726 mc_global.h:728 mc_global.h:504
+#: mc_global.h:736
 msgid "Can't start playback !"
 msgstr ""
 
