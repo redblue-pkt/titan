@@ -153,6 +153,7 @@ msgstr ""
 #: mc_global.h:499 mc_global.h:725 mc_global.h:500 mc_global.h:726
 #: mc_global.h:728 mc_global.h:504 mc_global.h:736 mc_global.h:503
 #: mc_global.h:735 global.h:79 play.h:510 global.h:82 global.h:3909
+#: global.h:3930
 msgid "EXIT"
 msgstr ""
 
@@ -501,6 +502,7 @@ msgstr ""
 #: panel_system.h:343 panel_system.h:350 mc_global.h:499 mc_global.h:725
 #: mc_global.h:500 mc_global.h:726 mc_global.h:728 mc_global.h:504
 #: mc_global.h:736 mc_global.h:503 mc_global.h:735 play.h:510 global.h:3909
+#: global.h:3930
 msgid "Message"
 msgstr ""
 
@@ -603,6 +605,7 @@ msgstr ""
 #: mc_global.h:499 mc_global.h:725 mc_global.h:500 mc_global.h:726
 #: mc_global.h:728 mc_global.h:504 mc_global.h:736 mc_global.h:503
 #: mc_global.h:735 global.h:79 play.h:510 global.h:82 global.h:3909
+#: global.h:3930
 msgid "OK"
 msgstr ""
 
@@ -625,7 +628,7 @@ msgstr ""
 #: global.h:3827 global.h:3819 global.h:3835 global.h:3821 global.h:3837
 #: keyactions.h:223 global.h:3822 global.h:3843 global.h:3851 global.h:3852
 #: global.h:3854 global.h:3904 global.h:3898 global.h:3897 global.h:3903
-#: global.h:3909
+#: global.h:3909 global.h:3930
 msgid "ERROR cant read res"
 msgstr ""
 
