@@ -465,8 +465,11 @@ void screenplay(int startfolder, int flag)
 	int skip46 = getconfigint("skip46", NULL);
 	int skip79 = getconfigint("skip79", NULL);
 	
-	rcret = servicestop(status.aktservice, 1, 1);
-	if(rcret == 1) return;
+	if(startfolder == 0)
+	{
+		rcret = servicestop(status.aktservice, 1, 1);
+		if(rcret == 1) return;
+	}
 	status.updatevfd = PAUSE;
 	tmppolicy = getpolicy();
 
@@ -491,6 +494,12 @@ playerstart:
 		
 		if(playcheckdirrcret(file, dirrcret) == 1)
 			goto playerstart;
+
+		if(startfolder == 1)
+		{
+			rcret = servicestop(status.aktservice, 1, 1);
+			if(rcret == 1) return;
+		}
 
 		drawscreen(skin, 0);
 		playwritevfd(file);
@@ -551,6 +560,12 @@ playerstart:
 				if(rcret == getrcconfigint("rcstop", NULL))
 				{
 					playrcstop(flag);
+					if(startfolder == 1)
+					{
+						tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
+						servicecheckret(servicestart(status.lastservice->channel, tmpstr, NULL, 0), 0);
+						free(tmpstr); tmpstr = NULL;
+					}
 					goto playerstart;
 				}
 
@@ -601,9 +616,12 @@ playerstart:
 		}
 	}
 
-	tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
-	servicecheckret(servicestart(status.lastservice->channel, tmpstr, NULL, 0), 0);
-	free(tmpstr); tmpstr = NULL;
+	if(startfolder == 0)
+	{
+		tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
+		servicecheckret(servicestart(status.lastservice->channel, tmpstr, NULL, 0), 0);
+		free(tmpstr); tmpstr = NULL;
+	}
 	status.updatevfd = START;
 
 	if(tmppolicy != NULL)
