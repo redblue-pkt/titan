@@ -710,49 +710,52 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 				drawscreen(apskin, 0);
 			}
 
-			// show playlist end	
-			debug(50, "playerstart: %s", *filename);
-			playerret = playerstart(*filename);
-			playwritevfd(*filename);
-
-			free(fileline), fileline = NULL;
-			free(firstfile), firstfile = NULL;
-			free(firsttitle), firsttitle = NULL;
-
-			//playwritevfd(*filename);
-			#ifndef SIMULATE
-				if(playerret != 0)
-				{
-					textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-/*
-					writevfd("AudioPlayer Filelist-Mode");
-					if(flag == 1)
-						changetext(filelistpath, _(getconfig("mc_videoplayerpath", NULL)));
-					else if(flag == 2)
-						changetext(filelistpath, _(getconfig("mc_audioplayerpath", NULL)));
-
-					filelist->hidden = NO;
-					listbox->hidden = YES;
-
-					*playlist = 0;
-					status.playspeed = 0;
-					if(flag == 1)
+			// show playlist end
+			if(getconfigint("autostart_playlist", NULL) == 1 && status.play == 0)
+			{	
+				debug(50, "playerstart: %s", *filename);
+				playerret = playerstart(*filename);
+				playwritevfd(*filename);
+	
+				free(fileline), fileline = NULL;
+				free(firstfile), firstfile = NULL;
+				free(firsttitle), firsttitle = NULL;
+	
+				//playwritevfd(*filename);
+				#ifndef SIMULATE
+					if(playerret != 0)
 					{
-						addscreenrc(apskin, filelist);
-						drawscreen(apskin, 0);
+						textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+	/*
+						writevfd("AudioPlayer Filelist-Mode");
+						if(flag == 1)
+							changetext(filelistpath, _(getconfig("mc_videoplayerpath", NULL)));
+						else if(flag == 2)
+							changetext(filelistpath, _(getconfig("mc_audioplayerpath", NULL)));
+	
+						filelist->hidden = NO;
+						listbox->hidden = YES;
+	
+						*playlist = 0;
+						status.playspeed = 0;
+						if(flag == 1)
+						{
+							addscreenrc(apskin, filelist);
+							drawscreen(apskin, 0);
+						}
+						return;
+	*/
+	// test
+						*eof = 1;
+	// test
 					}
-					return;
-*/
-// test
-					*eof = 1;
-// test
-				}
-			#endif
-
-			status.play = 1;
-			*playlist = 1;
-			if(flag == 1)
-				screenplayinfobar(*filename, 0, 0);
+				#endif
+	
+				status.play = 1;
+				*playlist = 1;
+				if(flag == 1)
+					screenplayinfobar(*filename, 0, 0);
+			}
 		}
 		fclose(fd);
 	}
