@@ -432,7 +432,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 								if(count1 >= 1)
 									i = count1 - 1;
 								count ++;
-								debug(88, "addlistbox (%d) %s", count, playlistnode->file);
+								debug(50, "addlistbox (%d) %s", count, playlistnode->file);
 
 								title = ostrcat("(", oitoa(count), 0, 1);
 								if(count < 10)
@@ -484,9 +484,13 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 						drawscreen(apskin, 0);
 						// show playlist end	
 						sleep(1);
-						
+
+						debug(50, "check");
+						debug(50, "autostart_playlist: %d", getconfigint("autostart_playlist", NULL));
+						debug(50, "status.play: %d", status.play);
 						if(getconfigint("autostart_playlist", NULL) == 1 && status.play == 0)
 						{
+							debug(50, "check ok");
 							debug(50, "playerstart: %s", *filename);
 							playerret = playerstart(*filename);
 	
@@ -596,7 +600,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 				if(count1 >= 1)
 					i = count1 - 1;
 				count ++;
-				debug(88, "addlistbox (%d) %s", count, fileline);
+				debug(50, "addlistbox (%d) %s", count, fileline);
 
 				title = ostrcat("(", oitoa(count), 0, 1);
 				if(count < 10)
@@ -711,8 +715,12 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 			}
 
 			// show playlist end
+			debug(50, "check");
+			debug(50, "autostart_playlist: %d", getconfigint("autostart_playlist", NULL));
+			debug(50, "status.play: %d", status.play);
 			if(getconfigint("autostart_playlist", NULL) == 1 && status.play == 0)
-			{	
+			{
+				debug(50, "check ok");
 				debug(50, "playerstart: %s", *filename);
 				playerret = playerstart(*filename);
 				playwritevfd(*filename);
