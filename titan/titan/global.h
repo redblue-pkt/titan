@@ -1205,7 +1205,7 @@ void checkboxstartthread(struct stimerthread* self)
 
 	//wait for right time
 	while(self->aktion != STOP && time(NULL) < 1072224000) // 01.01.2004
-		usleep(1 * 1000000);
+		sleep(5);
 
 	while(node != NULL)
 	{
