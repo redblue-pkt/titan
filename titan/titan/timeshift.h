@@ -101,7 +101,16 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
 	char* bg = NULL;
 	int seeking = 0, timeout = 0, ret = 0, minuten = 0, sekunden = 0;
 	struct service* snode = getservice(RECORDTIMESHIFT, 0);
-	int fd = open(snode->recname, O_RDONLY | O_LARGEFILE);
+	int fd = -1;
+	
+	if(servicenode == NULL)
+	{
+		err("NULL detect");
+		return 1;
+	}
+	
+	if(snode != NULL)
+		open(snode->recname, O_RDONLY | O_LARGEFILE);
 	
 	if(fd < 0)
 	{
@@ -112,53 +121,67 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
 	timeshiftbar->progresssize = 0;
 	setnodeattr(timeshift, framebuffer);
 	bg = savescreen(timeshift);
-	if(status.timeshiftseek == 999999) {
+	if(status.timeshiftseek == 999999)
 		timeout = 5;
- 	}
-	while(status.timeshiftseek != 0 || seeking != 0) {
+ 	
+	while(status.timeshiftseek != 0 || seeking != 0)
+	{
 		currentpos = lseek64(servicenode->recsrcfd, 0, SEEK_CUR);
 		currentpos = currentpos - 5000000;
 		endoffile = lseek64(fd , 0, SEEK_END);
-		timeshiftbar->progresssize = currentpos * 100 / endoffile;
-		if(status.timeshiftseek < 999999) {
-			if(status.timeshiftseek > 10000) {
-				tmpstr = oitoa(status.timeshiftseek - 10000);
-				tmpstr = ostrcat(_(">> "), tmpstr, 0, 1);
-				tmpstr = ostrcat(tmpstr,"x", 1, 0);
- 				changetext(seek, tmpstr);
- 				free(tmpstr); tmpstr = NULL;
- 			}
- 			if(status.timeshiftseek < 10000 && status.timeshiftseek > -10000) {
-	 			if(seeking == 0) {
-	 				seeking = status.timeshiftseek;
-	 				tmpstr = oitoa(status.timeshiftseek);
- 				} else {
-	 				tmpstr = oitoa(seeking);
-	 				seeking = 0;
-	 			}
- 				tmpstr = ostrcat(_("skip "), tmpstr, 0, 1);
- 				tmpstr = ostrcat(tmpstr," sec", 1, 0);
- 				changetext(seek, tmpstr);
+		
+		if(endoffile != 0)
+		{
+			timeshiftbar->progresssize = currentpos * 100 / endoffile;
+			if(status.timeshiftseek < 999999)
+			{
+				if(status.timeshiftseek > 10000)
+				{
+					tmpstr = oitoa(status.timeshiftseek - 10000);
+					tmpstr = ostrcat(_(">> "), tmpstr, 0, 1);
+					tmpstr = ostrcat(tmpstr, "x", 1, 0);
+ 					changetext(seek, tmpstr);
+ 					free(tmpstr); tmpstr = NULL;
+ 				}
+ 				if(status.timeshiftseek < 10000 && status.timeshiftseek > -10000)
+				{
+	 				if(seeking == 0)
+					{
+	 					seeking = status.timeshiftseek;
+	 					tmpstr = oitoa(status.timeshiftseek);
+ 					}
+					else
+					{
+	 					tmpstr = oitoa(seeking);
+	 					seeking = 0;
+	 				}
+ 					tmpstr = ostrcat(_("skip "), tmpstr, 0, 1);
+ 					tmpstr = ostrcat(tmpstr, " sec", 1, 0);
+ 					changetext(seek, tmpstr);
+ 					free(tmpstr); tmpstr = NULL;
+ 				}
+			}
+			else
+			{
+				ret = getptspos(fd, currentpos, &ptscurrent, &currentpos, 1);
+				ret = getpts(fd, 0, 0, 256 * 1024, &ptsend, &endoffile, -1);
+				sekunden = (ptsend - ptscurrent) / 90000;
+				minuten = sekunden / 60;
+				sekunden = sekunden % 60; 
+				tmpstr = ostrcat(tmpstr, "-", 1, 0);
+				tmpstr = ostrcat(tmpstr, oitoa(minuten), 1, 1);
+				tmpstr = ostrcat(tmpstr, ":", 1, 0);
+				
+				if(sekunden < 10)
+					tmpstr = ostrcat(tmpstr, "0", 1, 0);
+					
+				tmpstr = ostrcat(tmpstr, oitoa(sekunden), 1, 1);
+				tmpstr = ostrcat(tmpstr, " min", 1, 0);
+				changetext(seek, tmpstr);
  				free(tmpstr); tmpstr = NULL;
  			}
 		}
-		else {
-			ret = getptspos(fd, currentpos, &ptscurrent, &currentpos, 1);
-			ret = getpts(fd, 0, 0, 256 * 1024, &ptsend, &endoffile, -1);
-			sekunden = (ptsend - ptscurrent) / 90000;
-			minuten = sekunden / 60;
-			sekunden = sekunden % 60; 
-			tmpstr = ostrcat(tmpstr,"-", 1, 0);
-			tmpstr = ostrcat(tmpstr, oitoa(minuten), 1, 0);
-			tmpstr = ostrcat(tmpstr,":", 1, 0);
-			if(sekunden < 10)
-				tmpstr = ostrcat(tmpstr,"0", 1, 0);
-			tmpstr = ostrcat(tmpstr, oitoa(sekunden), 1, 0);
-			tmpstr = ostrcat(tmpstr," min", 1, 0);
-			changetext(seek, tmpstr);
- 			free(tmpstr); tmpstr = NULL;
- 		}
-			
+		
 		drawscreen(timeshift, 0);
 		sleep (1);
 		if(status.timeshiftseek == 999999) {
@@ -167,6 +190,7 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
 				status.timeshiftseek = 0;
 		} 
 	}
+	
 	restorescreen(bg, timeshift);
 	blitfb();
 	close(fd);
