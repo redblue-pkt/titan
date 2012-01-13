@@ -81,7 +81,8 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 			if(screensaver != NULL && screensaver->type == 3 && flag == 2)
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi");
 
-			drawscreen(apskin, 0);
+			if(flag != 3)
+				drawscreen(apskin, 0);
 
 			if(status.random == 1 && status.repeat == 0)
 			{
