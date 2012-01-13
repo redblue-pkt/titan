@@ -800,7 +800,8 @@ void picplayer(struct skin* picscreen, struct skin* picture, struct skin* picnam
 	char* tmpstr = NULL;
 
 	tmpstr = ostrcat(filename, "", 0, 0);
-	if(tmpstr != NULL) changetext(picname,_((basename(tmpstr))));
+
+	if(getconfigint("showpictitle", NULL) == 1 && tmpstr != NULL) changetext(picname,_((basename(tmpstr))));
 	free(tmpstr); tmpstr = NULL;
 
 	changepic(picture, filename);
