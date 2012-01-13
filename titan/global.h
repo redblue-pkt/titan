@@ -51,10 +51,14 @@ void checkserial(char* input)
 
 void getserial()
 {
-	char* cpu = NULL;
+	char* cpuout = NULL;
+	char* cpu = NULL;	
 	cpu = getcpuid();
 	if(cpu == NULL) return;
 	
+	char* cpuout = NULL;
+	cpuout = ostrcat(cpuout, cpu, 1, 0);
+
 	char* tmpstr = NULL;
 	tmpstr = ostrcat("Board-ID SerialNr: ", cpu, 0, 0);
 	writesys("/tmp/atemio.log", tmpstr, 1);
@@ -73,7 +77,7 @@ void getserial()
 
 	char* msg = NULL;
 	msg = ostrcat(_("For next OnlineUpdate please contact Atemio and send this Serial Number and your Atemio Serial Number !!\n\nBoard-ID SerialNr:"), " ", 0, 0);
-	msg = ostrcat(msg, cpu, 1, 0);
+	msg = ostrcat(msg, cpuout, 1, 0);
 	msg = ostrcat(msg, "\n\n", 1, 0);
 	msg = ostrcat(msg, _("Email  		info@atemio.de"), 1, 0);
 	textbox(_("Info"), _(msg), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 400, 0, 0);	
@@ -83,6 +87,7 @@ void getserial()
 	{
 		checkserial(cpu);
 	}
+	free(cpuout); cpuout = NULL;
 	free(cpu); cpu = NULL;
 	free(tmpstr); tmpstr = NULL;
 }
