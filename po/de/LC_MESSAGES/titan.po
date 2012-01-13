@@ -1859,3 +1859,7 @@ msgid "no description found"
 msgstr "keine Beschreibung gefunden"
 msgid "EPG resetet and now clear."
 msgstr "EPG zurück gesetzt und gelöscht"
+msgid "Show Pictitle"
+msgstr "Zeige Bildname"
+
+

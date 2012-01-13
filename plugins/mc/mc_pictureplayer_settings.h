@@ -12,7 +12,12 @@ void screenmc_pictureplayer_settings()
 	struct skin* view = getscreennode(mc_pictureplayer_settings, "view");
 	struct skin* sound = getscreennode(mc_pictureplayer_settings, "sound");
 	struct skin* pp_interval = getscreennode(mc_pictureplayer_settings, "interval");
+	struct skin* showpictitle = getscreennode(mc_pictureplayer_settings, "showpictitle");
 
+	addchoicebox(showpictitle, "0", _("off"));	
+	addchoicebox(showpictitle, "1", _("on"));	
+	setchoiceboxselection(view, getconfig("showpictitle", NULL));
+	
 	addchoicebox(dirsort, "0", _("alpha"));	
 	addchoicebox(dirsort, "1", _("reverse alpha"));	
 	addchoicebox(dirsort, "2", _("size"));
@@ -59,6 +64,7 @@ void screenmc_pictureplayer_settings()
 			addconfigscreen("view", view);
 			addconfigscreen("sound", sound);
 			addconfigscreen("pp_interval", pp_interval);
+			addconfigscreen("showpictitle", showpictitle);
 			break;
 		}
   }
