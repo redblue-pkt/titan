@@ -152,7 +152,7 @@ msgstr ""
 #: panel_system.h:350 plugins_mc_skin.xml.h:16 skins_mc_skin.xml.h:16
 #: mc_global.h:499 mc_global.h:725 mc_global.h:500 mc_global.h:726
 #: mc_global.h:728 mc_global.h:504 mc_global.h:736 mc_global.h:503
-#: mc_global.h:735 global.h:79
+#: mc_global.h:735 global.h:79 play.h:510
 msgid "EXIT"
 msgstr ""
 
@@ -500,7 +500,7 @@ msgstr ""
 #: panel_system.h:327 panel_system.h:334 panel_system.h:337 panel_system.h:344
 #: panel_system.h:343 panel_system.h:350 mc_global.h:499 mc_global.h:725
 #: mc_global.h:500 mc_global.h:726 mc_global.h:728 mc_global.h:504
-#: mc_global.h:736 mc_global.h:503 mc_global.h:735
+#: mc_global.h:736 mc_global.h:503 mc_global.h:735 play.h:510
 msgid "Message"
 msgstr ""
 
@@ -602,7 +602,7 @@ msgstr ""
 #: panel_system.h:350 plugins_mc_skin.xml.h:29 skins_mc_skin.xml.h:29
 #: mc_global.h:499 mc_global.h:725 mc_global.h:500 mc_global.h:726
 #: mc_global.h:728 mc_global.h:504 mc_global.h:736 mc_global.h:503
-#: mc_global.h:735 global.h:79
+#: mc_global.h:735 global.h:79 play.h:510
 msgid "OK"
 msgstr ""
 
@@ -1161,7 +1161,7 @@ msgstr ""
 #: mc_videoplayer.h:443 mc_audioplayer.h:315 mc_audioplayer.h:404
 #: mc_videoplayer.h:359 mc_videoplayer.h:444 mc_global.h:499 mc_global.h:725
 #: mc_global.h:500 mc_global.h:726 mc_global.h:728 mc_global.h:504
-#: mc_global.h:736 mc_global.h:503 mc_global.h:735
+#: mc_global.h:736 mc_global.h:503 mc_global.h:735 play.h:510
 msgid "Can't start playback !"
 msgstr ""
 
@@ -3827,7 +3827,7 @@ msgstr ""
 #: play.h:468 play.h:473 play.h:478 play.h:477 play.h:480 play.h:481
 #: play.h:472 skin_default_skin.xml.h:145 play.h:479 play.h:476
 #: skin_default_skin.xml.h:147 play.h:483 skin_default_skin.xml.h:149
-#: skin_default_skin.xml.h:148
+#: skin_default_skin.xml.h:148 play.h:486
 msgid "DEL"
 msgstr ""
 
@@ -6445,7 +6445,7 @@ msgid "Two step mute"
 msgstr ""
 
 #: play.h:464 play.h:468 play.h:473 play.h:478 play.h:477 play.h:480
-#: play.h:481 play.h:472 play.h:479 play.h:476 play.h:483
+#: play.h:481 play.h:472 play.h:479 play.h:476 play.h:483 play.h:486
 msgid "SELECT"
 msgstr ""
 
