@@ -1180,11 +1180,36 @@ struct parentalrating
 
 struct parentalratingitem
 { 
-   u_char lang_code1                          /*:8*/;
-   u_char lang_code2                          /*:8*/;
-   u_char lang_code3                          /*:8*/;
-   u_char rating                              /*:8*/;
+	u_char lang_code1                    /*:8*/;
+	u_char lang_code2                    /*:8*/;
+	u_char lang_code3                    /*:8*/;
+	u_char rating                        /*:8*/;
 };
 #define PARENTALRATINGITEMLEN sizeof(struct parentalratingitem)
+
+struct rst //table id 0x71
+{ 
+	u_char table_id                     /*:8*/;
+	u_char section_syntax_indicator         :1;
+	u_char reserved_1                       :1;
+	u_char reserved_2                       :2;
+	u_int section_length                   :12;
+};
+#define RSTLEN sizeof(struct rst)
+
+struct rstitem
+{ 
+	u_char transponder_stream_id_hi     /*:8*/;
+	u_char transponder_stream_id_lo     /*:8*/;
+	u_char original_network_id_hi       /*:8*/;
+	u_char original_network_id_lo       /*:8*/;
+	u_char service_id_hi                /*:8*/;
+	u_char service_id_lo                /*:8*/;
+	u_char event_id_hi                  /*:8*/;
+	u_char event_id_lo                  /*:8*/;
+	u_char reserved_1                       :5;
+	u_char running_status                   :3;
+};
+#define RSTITEMLEN sizeof(struct rstitem)
 
 #endif
