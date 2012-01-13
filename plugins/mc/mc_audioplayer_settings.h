@@ -36,7 +36,7 @@ void screenmc_audioplayer_settings()
 
 	addchoicebox(autostart_playlist, "0", _("no"));	
 	addchoicebox(autostart_playlist, "1", _("yes"));
-	setchoiceboxselection(playlistautoplay, getconfig("autostart_playlist", NULL));
+	setchoiceboxselection(autostart_playlist, getconfig("autostart_playlist", NULL));
 
 //	addchoicebox(dimmer, "0", _("no"));	
 //	addchoicebox(dimmer, "1", _("yes"));

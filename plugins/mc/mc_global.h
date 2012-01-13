@@ -483,44 +483,48 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 						drawscreen(apskin, 0);
 						// show playlist end	
 						sleep(1);
-						debug(50, "playerstart: %s", *filename);
-						playerret = playerstart(*filename);
-
-						free(firsttitle), firsttitle = NULL;
-						playwritevfd(*filename);
-
-						#ifndef SIMULATE
-						if(playerret != 0)
+						
+						if(getconfigint("autostart_playlist", NULL) == 1 && status.play == 0)
 						{
-
-							textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-/*
-							writevfd("AudioPlayer Filelist-Mode");
-							if(flag == 1)
-								changetext(filelistpath, _(getconfig("mc_videoplayerpath", NULL)));
-							else if(flag == 2)
-								changetext(filelistpath, _(getconfig("mc_audioplayerpath", NULL)));
-
-							filelist->hidden = NO;
-							listbox->hidden = YES;
-							*playlist = 0;
-							status.playspeed = 0;
-
-							delownerrc(apskin);
-							addscreenrc(apskin, filelist);
-							drawscreen(apskin, 0);
-
-							free(skinname), skinname = NULL;
-							return;
-*/
-// test
-							*eof = 1;
-// test
+							debug(50, "playerstart: %s", *filename);
+							playerret = playerstart(*filename);
+	
+							free(firsttitle), firsttitle = NULL;
+							playwritevfd(*filename);
+	
+							#ifndef SIMULATE
+							if(playerret != 0)
+							{
+	
+								textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+	/*
+								writevfd("AudioPlayer Filelist-Mode");
+								if(flag == 1)
+									changetext(filelistpath, _(getconfig("mc_videoplayerpath", NULL)));
+								else if(flag == 2)
+									changetext(filelistpath, _(getconfig("mc_audioplayerpath", NULL)));
+	
+								filelist->hidden = NO;
+								listbox->hidden = YES;
+								*playlist = 0;
+								status.playspeed = 0;
+	
+								delownerrc(apskin);
+								addscreenrc(apskin, filelist);
+								drawscreen(apskin, 0);
+	
+								free(skinname), skinname = NULL;
+								return;
+	*/
+	// test
+								*eof = 1;
+	// test
+							}
+							#endif
+	
+							status.play = 1;
+							*playlist = 1;
 						}
-						#endif
-
-						status.play = 1;
-						*playlist = 1;
 					}
 				}
 			}
