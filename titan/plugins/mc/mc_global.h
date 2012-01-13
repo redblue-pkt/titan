@@ -528,8 +528,8 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 							#endif
 	
 							status.play = 1;
-							*playlist = 1;
 						}
+						*playlist = 1;
 					}
 				}
 			}
@@ -760,10 +760,10 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 				#endif
 	
 				status.play = 1;
-				*playlist = 1;
 				if(flag == 1)
 					screenplayinfobar(*filename, 0, 0);
 			}
+			*playlist = 1;
 		}
 		fclose(fd);
 	}
