@@ -1141,6 +1141,27 @@ int mountauto(const char *file, const char *dir, unsigned long int flag, const v
 	return ret;
 }
 
+int setwaswakuptimer(int value)
+{
+	debug(1000, "in");
+	char *waswakeuptimerdev = NULL, *tmpstr = NULL;
+	int ret = 0;
+
+	waswakeuptimerdev = getconfig("waswakeuptimerdev", NULL);
+
+	if(waswakeuptimerdev != NULL)
+	{
+		debug(100, "set %s to %d", waswakeuptimerdev, value);
+		tmpstr = oitoa(value);
+		ret = writesys(waswakeuptimerdev, tmpstr, 0);
+		free(tmpstr); tmpstr = NULL;
+		return ret;
+	}
+
+	debug(1000, "out");
+	return 0;
+}
+
 int getwaswakuptimer()
 {
 	debug(1000, "in");
