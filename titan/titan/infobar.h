@@ -159,10 +159,10 @@ void screeninfobar()
 						status.timeshiftseek = 0;
 					else {	
 						timeshiftseek(999999);
-						continue;
+					continue;
 					}
-				}
-			}	
+				}	
+			}
 		}
 		if(rcret == getrcconfigint("rcstop", NULL))
 		{
