@@ -268,6 +268,14 @@ int dmxsetfilter(struct dvbdev* node, int pid, int secnr, int flag)
 		sctflt.pid = pid;
 		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
 	}
+	if(flag == 13)  //rst filter (pid 0x13)
+	{
+		sctflt.filter.filter[0] = 0x13;
+		sctflt.filter.mask[0] = 0xff;
+		sctflt.timeout = 0;
+		sctflt.pid = pid;
+		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
+	}
 
 	debug(200, "DMX_SET_FILTER pid=%d, flag=%d", pid, flag);
 	if(ioctl(node->fd, DMX_SET_FILTER, &sctflt) < 0)
