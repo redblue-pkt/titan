@@ -152,13 +152,15 @@ void screeninfobar()
 			}
 			if(rcret == getrcconfigint("rcinfo", NULL))
 			{
-				if(status.timeshiftseek > 102 && status.timeshiftseek < 999999)
-						timeshiftplay();
-				if(status.timeshiftseek == 999999)
-					status.timeshiftseek = 0;
-				else {	
-					timeshiftseek(999999);
-					continue;
+				if(status.playing == 1) {
+					if(status.timeshiftseek > 102 && status.timeshiftseek < 999999)
+							timeshiftplay();
+					if(status.timeshiftseek == 999999)
+						status.timeshiftseek = 0;
+					else {	
+						timeshiftseek(999999);
+						continue;
+					}
 				}
 			}	
 		}
