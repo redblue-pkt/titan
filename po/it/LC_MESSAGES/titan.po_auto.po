@@ -149,7 +149,7 @@ msgstr ""
 #: mc_internetbrowser.h:32 skin_default_skin.xml.h:175 global.h:3898
 #: global.h:3897 global.h:3903 global.h:62 panel_system.h:327
 #: panel_system.h:334 panel_system.h:337 panel_system.h:344 panel_system.h:343
-#: panel_system.h:350
+#: panel_system.h:350 plugins_mc_skin.xml.h:16 skins_mc_skin.xml.h:16
 msgid "EXIT"
 msgstr ""
 
@@ -189,6 +189,7 @@ msgstr ""
 #: tunerconfig.h:456 rectimer.h:869 rectimer.h:874 rectimer.h:879
 #: rectimer.h:884 rectimer.h:889 rectimer.h:894 rectimer.h:899 adjust.h:44
 #: adjust.h:58 adjust.h:62 adjust.h:67 adjust.h:92 adjust.h:119 adjust.h:122
+#: mc_audioplayer_settings.h:37
 msgid "no"
 msgstr ""
 
@@ -233,20 +234,22 @@ msgstr ""
 #: tunerconfig.h:455 rectimer.h:870 rectimer.h:875 rectimer.h:880
 #: rectimer.h:885 rectimer.h:890 rectimer.h:895 rectimer.h:900 adjust.h:59
 #: adjust.h:68 adjust.h:93 adjust.h:118 adjust.h:123
+#: mc_audioplayer_settings.h:38
 msgid "yes"
 msgstr ""
 
 #: adjust.h:67 mc_audioplayer_settings.h:19 mc_pictureplayer_settings.h:16
 #: mc_videoplayer_settings.h:15 plugins_mc_skin.xml.h:5 skins_mc_skin.xml.h:5
 #: adjust.h:68 adjust.h:69 adjust.h:70 adjust.h:71
-#: mc_pictureplayer_settings.h:21
+#: mc_pictureplayer_settings.h:21 mc_audioplayer_settings.h:21
 msgid "alpha"
 msgstr ""
 
 #: adjust.h:68 mc_audioplayer_settings.h:20 mc_pictureplayer_settings.h:17
 #: mc_videoplayer_settings.h:16 plugins_mc_skin.xml.h:35
 #: skins_mc_skin.xml.h:35 adjust.h:69 adjust.h:70 adjust.h:71 adjust.h:72
-#: mc_pictureplayer_settings.h:22
+#: mc_pictureplayer_settings.h:22 mc_audioplayer_settings.h:22
+#: plugins_mc_skin.xml.h:36 skins_mc_skin.xml.h:36
 msgid "reverse alpha"
 msgstr ""
 
@@ -254,28 +257,32 @@ msgstr ""
 #: mc_videoplayer_settings.h:17 plugins_mc_skin.xml.h:40
 #: skins_mc_skin.xml.h:40 adjust.h:70 adjust.h:71 adjust.h:72 adjust.h:73
 #: mc_pictureplayer_settings.h:23 plugins_mc_skin.xml.h:41
-#: skins_mc_skin.xml.h:41
+#: skins_mc_skin.xml.h:41 mc_audioplayer_settings.h:23
+#: plugins_mc_skin.xml.h:42 skins_mc_skin.xml.h:42
 msgid "size"
 msgstr ""
 
 #: adjust.h:70 mc_audioplayer_settings.h:22 mc_pictureplayer_settings.h:19
 #: mc_videoplayer_settings.h:18 plugins_mc_skin.xml.h:37
 #: skins_mc_skin.xml.h:37 adjust.h:71 adjust.h:72 adjust.h:73 adjust.h:74
-#: mc_pictureplayer_settings.h:24
+#: mc_pictureplayer_settings.h:24 mc_audioplayer_settings.h:24
+#: plugins_mc_skin.xml.h:38 skins_mc_skin.xml.h:38
 msgid "reverse size"
 msgstr ""
 
 #: adjust.h:71 mc_audioplayer_settings.h:23 mc_pictureplayer_settings.h:20
 #: mc_videoplayer_settings.h:19 plugins_mc_skin.xml.h:11
 #: skins_mc_skin.xml.h:11 adjust.h:72 adjust.h:73 adjust.h:74 adjust.h:75
-#: mc_pictureplayer_settings.h:25
+#: mc_pictureplayer_settings.h:25 mc_audioplayer_settings.h:25
+#: plugins_mc_skin.xml.h:12 skins_mc_skin.xml.h:12
 msgid "date"
 msgstr ""
 
 #: adjust.h:72 mc_audioplayer_settings.h:24 mc_pictureplayer_settings.h:21
 #: mc_videoplayer_settings.h:20 plugins_mc_skin.xml.h:36
 #: skins_mc_skin.xml.h:36 adjust.h:73 adjust.h:74 adjust.h:75 adjust.h:76
-#: mc_pictureplayer_settings.h:26
+#: mc_pictureplayer_settings.h:26 mc_audioplayer_settings.h:26
+#: plugins_mc_skin.xml.h:37 skins_mc_skin.xml.h:37
 msgid "reverse date"
 msgstr ""
 
@@ -587,7 +594,7 @@ msgstr ""
 #: mc_internetbrowser.h:32 skin_default_skin.xml.h:269 global.h:3898
 #: global.h:3897 global.h:3903 global.h:62 panel_system.h:327
 #: panel_system.h:334 panel_system.h:337 panel_system.h:344 panel_system.h:343
-#: panel_system.h:350
+#: panel_system.h:350 plugins_mc_skin.xml.h:29 skins_mc_skin.xml.h:29
 msgid "OK"
 msgstr ""
 
@@ -1103,7 +1110,7 @@ msgstr ""
 #: plugins_mc_skin.xml.h:34 skins_mc_skin.xml.h:34 mc_audioplayer.h:184
 #: mc_audioplayer.h:278 mc_videoplayer.h:177 mc_videoplayer.h:300
 #: mc_audioplayer.h:185 mc_audioplayer.h:279 mc_videoplayer.h:178
-#: mc_videoplayer.h:301
+#: mc_videoplayer.h:301 plugins_mc_skin.xml.h:35 skins_mc_skin.xml.h:35
 msgid "Repeat"
 msgstr ""
 
@@ -1115,14 +1122,15 @@ msgstr ""
 #: mc_audioplayer.h:276 mc_audioplayer.h:382 mc_videoplayer.h:261
 #: mc_videoplayer.h:298 mc_videoplayer.h:417 mc_audioplayer.h:246
 #: mc_audioplayer.h:277 mc_audioplayer.h:383 mc_videoplayer.h:262
-#: mc_videoplayer.h:299 mc_videoplayer.h:418
+#: mc_videoplayer.h:299 mc_videoplayer.h:418 plugins_mc_skin.xml.h:21
+#: skins_mc_skin.xml.h:21
 msgid "Filelist-Mode"
 msgstr ""
 
 #: mc_audioplayer.h:274 mc_global.h:333 mc_global.h:361 mc_pictureplayer.h:250
 #: mc_videoplayer.h:296 plugins_mc_skin.xml.h:33 skins_mc_skin.xml.h:33
 #: mc_audioplayer.h:277 mc_videoplayer.h:299 mc_audioplayer.h:278
-#: mc_videoplayer.h:300
+#: mc_videoplayer.h:300 plugins_mc_skin.xml.h:34 skins_mc_skin.xml.h:34
 msgid "Random"
 msgstr ""
 
@@ -1149,36 +1157,46 @@ msgstr ""
 #: plugins_panel_skin.xml.h:33 skins_mc_skin.xml.h:13
 #: skins_panel_skin.xml.h:33 plugins_panel_skin.xml.h:34
 #: skins_panel_skin.xml.h:34 mc_pictureplayer_settings.h:29
+#: mc_audioplayer_settings.h:29 plugins_mc_skin.xml.h:14
+#: skins_mc_skin.xml.h:14
 msgid "default"
 msgstr ""
 
 #: mc_audioplayer_settings.h:28 mc_pictureplayer_settings.h:25
 #: mc_videoplayer_settings.h:24 plugins_mc_skin.xml.h:10
 #: skins_mc_skin.xml.h:10 mc_pictureplayer_settings.h:30
+#: mc_audioplayer_settings.h:30 plugins_mc_skin.xml.h:11
+#: skins_mc_skin.xml.h:11
 msgid "big"
 msgstr ""
 
 #: mc_audioplayer_settings.h:29 mc_pictureplayer_settings.h:26
 #: mc_videoplayer_settings.h:25 plugins_mc_skin.xml.h:21
 #: skins_mc_skin.xml.h:21 mc_pictureplayer_settings.h:31
+#: mc_audioplayer_settings.h:31 plugins_mc_skin.xml.h:22
+#: skins_mc_skin.xml.h:22
 msgid "fullcover"
 msgstr ""
 
 #: mc_audioplayer_settings.h:30 mc_pictureplayer_settings.h:27
 #: mc_videoplayer_settings.h:26 plugins_mc_skin.xml.h:14
 #: skins_mc_skin.xml.h:14 mc_pictureplayer_settings.h:32
+#: mc_audioplayer_settings.h:32 plugins_mc_skin.xml.h:15
+#: skins_mc_skin.xml.h:15
 msgid "details"
 msgstr ""
 
 #: mc_audioplayer_settings.h:31 mc_pictureplayer_settings.h:28
 #: mc_videoplayer_settings.h:27 mc_pictureplayer_settings.h:33
+#: mc_audioplayer_settings.h:33
 msgid "smal"
 msgstr ""
 
 #: mc_audioplayer_settings.h:32 mc_pictureplayer_settings.h:29
 #: mc_videoplayer_settings.h:28 plugins_mc_skin.xml.h:16
 #: skins_mc_skin.xml.h:16 adjust.h:63 adjust.h:64
-#: mc_pictureplayer_settings.h:34
+#: mc_pictureplayer_settings.h:34 mc_audioplayer_settings.h:34
+#: plugins_mc_skin.xml.h:17 skins_mc_skin.xml.h:17
 msgid "fast"
 msgstr ""
 
@@ -1209,7 +1227,7 @@ msgstr ""
 #: skins_panel_skin.xml.h:83 plugins_panel_skin.xml.h:86
 #: skins_panel_skin.xml.h:86 plugins_lcdpearl1_skin.xml.h:1
 #: skins_lcdpearl1_skin.xml.h:1 plugins_mc_skin.xml.h:54
-#: skins_mc_skin.xml.h:54
+#: skins_mc_skin.xml.h:54 plugins_mc_skin.xml.h:55 skins_mc_skin.xml.h:55
 msgid ""
 msgstr ""
 
@@ -1436,6 +1454,7 @@ msgstr ""
 #: skin_default_skin.xml.h:258 skin_default_skin.xml.h:259
 #: skin_default_skin.xml.h:261 plugins_panel_skin.xml.h:60
 #: skins_panel_skin.xml.h:60 skin_default_skin.xml.h:260
+#: plugins_mc_skin.xml.h:28 skins_mc_skin.xml.h:28
 msgid "Network"
 msgstr ""
 
@@ -2045,59 +2064,73 @@ msgstr ""
 msgid "AUDIO SETTINGS"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:12 skins_mc_skin.xml.h:12
+#: plugins_mc_skin.xml.h:12 skins_mc_skin.xml.h:12 plugins_mc_skin.xml.h:13
+#: skins_mc_skin.xml.h:13
 msgid "Datei Browser"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:17 skins_mc_skin.xml.h:17
+#: plugins_mc_skin.xml.h:17 skins_mc_skin.xml.h:17 plugins_mc_skin.xml.h:18
+#: skins_mc_skin.xml.h:18
 msgid "file"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:18 skins_mc_skin.xml.h:18
+#: plugins_mc_skin.xml.h:18 skins_mc_skin.xml.h:18 plugins_mc_skin.xml.h:19
+#: skins_mc_skin.xml.h:19
 msgid "filealt"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:19 skins_mc_skin.xml.h:19
+#: plugins_mc_skin.xml.h:19 skins_mc_skin.xml.h:19 plugins_mc_skin.xml.h:20
+#: skins_mc_skin.xml.h:20
 msgid "filealtresult"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:22 skins_mc_skin.xml.h:22
+#: plugins_mc_skin.xml.h:22 skins_mc_skin.xml.h:22 plugins_mc_skin.xml.h:23
+#: skins_mc_skin.xml.h:23
 msgid "Imdb Directory"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:23 skins_mc_skin.xml.h:23
+#: plugins_mc_skin.xml.h:23 skins_mc_skin.xml.h:23 plugins_mc_skin.xml.h:24
+#: skins_mc_skin.xml.h:24
 msgid "Internet Browser"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:24 skins_mc_skin.xml.h:24
+#: plugins_mc_skin.xml.h:24 skins_mc_skin.xml.h:24 plugins_mc_skin.xml.h:25
+#: skins_mc_skin.xml.h:25
 msgid "Interval"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:25 skins_mc_skin.xml.h:25
+#: plugins_mc_skin.xml.h:25 skins_mc_skin.xml.h:25 plugins_mc_skin.xml.h:26
+#: skins_mc_skin.xml.h:26
 msgid "mvid"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:26 skins_mc_skin.xml.h:26
+#: plugins_mc_skin.xml.h:26 skins_mc_skin.xml.h:26 plugins_mc_skin.xml.h:27
+#: skins_mc_skin.xml.h:27
 msgid "My Video"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:29 skins_mc_skin.xml.h:29
+#: plugins_mc_skin.xml.h:29 skins_mc_skin.xml.h:29 plugins_mc_skin.xml.h:30
+#: skins_mc_skin.xml.h:30
 msgid "PICTURE"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:30 skins_mc_skin.xml.h:30
+#: plugins_mc_skin.xml.h:30 skins_mc_skin.xml.h:30 plugins_mc_skin.xml.h:31
+#: skins_mc_skin.xml.h:31
 msgid "Picture Player"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:31 skins_mc_skin.xml.h:31
+#: plugins_mc_skin.xml.h:31 skins_mc_skin.xml.h:31 plugins_mc_skin.xml.h:32
+#: skins_mc_skin.xml.h:32
 msgid "PICTURE SETTINGS"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:32 skins_mc_skin.xml.h:32
+#: plugins_mc_skin.xml.h:32 skins_mc_skin.xml.h:32 plugins_mc_skin.xml.h:33
+#: skins_mc_skin.xml.h:33
 msgid "Radio Player"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:38 skins_mc_skin.xml.h:38
+#: plugins_mc_skin.xml.h:38 skins_mc_skin.xml.h:38 plugins_mc_skin.xml.h:39
+#: skins_mc_skin.xml.h:39
 msgid "Screensaver"
 msgstr ""
 
@@ -2108,67 +2141,67 @@ msgstr ""
 #: plugins_panel_skin.xml.h:67 skins_panel_skin.xml.h:67
 #: skin_default_skin.xml.h:40 plugins_panel_skin.xml.h:68
 #: skins_panel_skin.xml.h:68 plugins_panel_skin.xml.h:71
-#: skins_panel_skin.xml.h:71
+#: skins_panel_skin.xml.h:71 plugins_mc_skin.xml.h:40 skins_mc_skin.xml.h:40
 msgid "Settings"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:41 skins_mc_skin.xml.h:41 plugins_mc_skin.xml.h:42
-#: skins_mc_skin.xml.h:42
+#: skins_mc_skin.xml.h:42 plugins_mc_skin.xml.h:43 skins_mc_skin.xml.h:43
 msgid "small"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:42 skins_mc_skin.xml.h:42 plugins_mc_skin.xml.h:43
-#: skins_mc_skin.xml.h:43
+#: skins_mc_skin.xml.h:43 plugins_mc_skin.xml.h:44 skins_mc_skin.xml.h:44
 msgid "Sort"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:43 skins_mc_skin.xml.h:43 plugins_mc_skin.xml.h:44
-#: skins_mc_skin.xml.h:44
+#: skins_mc_skin.xml.h:44 plugins_mc_skin.xml.h:45 skins_mc_skin.xml.h:45
 msgid "Sorting"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:44 skins_mc_skin.xml.h:44 plugins_mc_skin.xml.h:45
-#: skins_mc_skin.xml.h:45
+#: skins_mc_skin.xml.h:45 plugins_mc_skin.xml.h:46 skins_mc_skin.xml.h:46
 msgid "Sound"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:45 skins_mc_skin.xml.h:45 plugins_mc_skin.xml.h:46
-#: skins_mc_skin.xml.h:46
+#: skins_mc_skin.xml.h:46 plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47
 msgid "Style"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:46 skins_mc_skin.xml.h:46 plugins_mc_skin.xml.h:47
-#: skins_mc_skin.xml.h:47
+#: skins_mc_skin.xml.h:47 plugins_mc_skin.xml.h:48 skins_mc_skin.xml.h:48
 msgid "VIDEO"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47 plugins_mc_skin.xml.h:48
-#: skins_mc_skin.xml.h:48
+#: skins_mc_skin.xml.h:48 plugins_mc_skin.xml.h:49 skins_mc_skin.xml.h:49
 msgid "Video Player"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:48 skins_mc_skin.xml.h:48 plugins_mc_skin.xml.h:49
-#: skins_mc_skin.xml.h:49
+#: skins_mc_skin.xml.h:49 plugins_mc_skin.xml.h:50 skins_mc_skin.xml.h:50
 msgid "VIDEO SETTINGS"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:49 skins_mc_skin.xml.h:49 plugins_mc_skin.xml.h:50
-#: skins_mc_skin.xml.h:50
+#: skins_mc_skin.xml.h:50 plugins_mc_skin.xml.h:51 skins_mc_skin.xml.h:51
 msgid "View"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:50 skins_mc_skin.xml.h:50 plugins_mc_skin.xml.h:51
-#: skins_mc_skin.xml.h:51
+#: skins_mc_skin.xml.h:51 plugins_mc_skin.xml.h:52 skins_mc_skin.xml.h:52
 msgid "VLC Player"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:51 skins_mc_skin.xml.h:51 plugins_mc_skin.xml.h:52
-#: skins_mc_skin.xml.h:52
+#: skins_mc_skin.xml.h:52 plugins_mc_skin.xml.h:53 skins_mc_skin.xml.h:53
 msgid "Weather Infos"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:52 skins_mc_skin.xml.h:52 plugins_mc_skin.xml.h:53
-#: skins_mc_skin.xml.h:53
+#: skins_mc_skin.xml.h:53 plugins_mc_skin.xml.h:54 skins_mc_skin.xml.h:54
 msgid "Web Radio Player"
 msgstr ""
 
@@ -6895,6 +6928,11 @@ msgid ""
 "Board-ID SerialNr:"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:40 skins_mc_skin.xml.h:40
+#: plugins_mc_skin.xml.h:40 skins_mc_skin.xml.h:40 plugins_mc_skin.xml.h:41
+#: skins_mc_skin.xml.h:41
 msgid "Show Pictitle"
+msgstr ""
+
+#: plugins_mc_skin.xml.h:10 skins_mc_skin.xml.h:10
+msgid "Autostart Playlist"
 msgstr ""
