@@ -51,7 +51,6 @@ void checkserial(char* input)
 
 void getserial()
 {
-	char* cpuout = NULL;
 	char* cpu = NULL;	
 	cpu = getcpuid();
 	if(cpu == NULL) return;
