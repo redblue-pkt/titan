@@ -84,7 +84,7 @@ void getserial()
 
 	if(status.security == 0)
 	{
-		checkserial(cpu);
+		checkserial(cpuout);
 	}
 	free(cpuout); cpuout = NULL;
 	free(cpu); cpu = NULL;
