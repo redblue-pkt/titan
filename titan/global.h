@@ -1192,6 +1192,38 @@ int getwaswakuptimer()
 	return ret;
 }
 
+void checkboxstartthread(struct stimerthread* self)
+{
+	struct rectimer* node = rectimer;
+	int timediff = getconfigint("rectimer_timediff", NULL);
+
+	if(timediff == 0) timediff = 180; // 2 minutes
+	
+	if(node == NULL) return; //no record
+
+	debug(400, "boxstart rectimer thread start");
+
+	//wait for right time
+	while(self->aktion != STOP && time(NULL) < 1072224000) // 01.01.2004
+		usleep(1 * 1000000);
+
+	while(node != NULL)
+	{
+		if(node->status < 2)
+		{
+			time_t akttime = time(NULL);
+			if(node->begin > akttime - timediff && node->begin < akttime + timediff)
+			{
+				debug(400, "found rectimer who has start the box");
+				setwaswakuptimer(1);
+			}
+		}
+		node = node->next;
+	}
+
+	debug(400, "boxstart rectimer thread end");
+}
+
 int setwakeuptimerdev(time_t value)
 {
 	debug(1000, "in");

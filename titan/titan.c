@@ -691,6 +691,8 @@ firstwizzardstep1:
 #endif
 	//check skin nodes locked
 	addtimer(&ckeckskinnodeslockedthread, START, 1000, 1, NULL, NULL, NULL);
+	//check if box starts from a record
+	addtimer(&checkboxstartthread, START, 1000, 1, NULL, NULL, NULL);
 
 	//start webserver
 	starthttpd(1);
