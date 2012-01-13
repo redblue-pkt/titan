@@ -206,6 +206,7 @@ struct playlist* addplaylist(struct playlist **firstnode, char *line, int count,
 		return NULL;
 	}
 
+	free(file);
 	newnode->file = ostrcat(line, NULL, 0, 0);
 
 	if(last == NULL)
