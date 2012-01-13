@@ -1861,5 +1861,5 @@ msgid "EPG resetet and now clear."
 msgstr "EPG zurück gesetzt und gelöscht"
 msgid "Show Pictitle"
 msgstr "Zeige Bildname"
-
-
+msgid "Autostart Playlist"
+msgstr "Playlist automatisch starten"
