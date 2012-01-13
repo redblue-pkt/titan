@@ -384,6 +384,7 @@ start:
 		tmp = addlistbox(playlist, listbox, tmp, 1);
 		if(tmp != NULL)
 		{
+/*
 			count ++;
 			char* tmpstr1 = NULL;
 			char* title = NULL;
@@ -396,12 +397,16 @@ start:
 				i = count1 - 1;
 			title = ostrcat("", (&ret1[i])->part, 0, 0);
 			changetext(tmp, title);
+*/			
+			changetext(tmp, basename(node->file));			
 //			changetext(tmp, node->file);
 			tmp->handle = (char*)node;
 			tmp->del = 1;
+/*
 			free(title), title = NULL;
 			free(ret1), ret1 = NULL;
 			free(tmpstr1), tmpstr1 = NULL;
+*/
 		}
 		node = node->next;
 	}
