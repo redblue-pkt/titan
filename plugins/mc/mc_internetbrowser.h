@@ -7,7 +7,7 @@ void screenmc_internetbrowser()
 	{
 		if(file_exist("/usr/bin/nsfb"))
 		{
-			if(textbox(_("Message"), _("start Internet browser now ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1){	
+//			if(textbox(_("Message"), _("start Internet browser now ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1){	
 				char* tmpstr = NULL;
 				int rcret = 0;
 	
@@ -23,7 +23,7 @@ void screenmc_internetbrowser()
 				drawscreen(skin, 0);
 				servicestart(status.lastservice->channel, NULL, NULL, 0);
 				sleep(2);
-			}
+//			}
 		}
 		else
 			textbox(_("Message"), _("Install netsurf Internetbrowser Ipk first !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
