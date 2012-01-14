@@ -32,7 +32,7 @@ void LCD_start_lcd4linux()
 void LCD_Pearl1_thread()
 {
 	
-	char* tmpstr = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *timemerk = NULL, *sendermerk = NULL;
+	char* tmpstr = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *timemerk = NULL, *sendermerk = NULL, *recmerk = NULL;
 	struct skin* LCD_Pearl1 = getscreen("LCD_Pearl1");
 	struct skin* akttime = getscreennode(LCD_Pearl1, "akttime");
 	int put = 0;
@@ -42,6 +42,7 @@ void LCD_Pearl1_thread()
 		put = 0;
 		tmpstr = gettime("%H:%M"); 
 		tmpstr2 = getaktchannelname();
+		tmpstr3 = getrec(NULL);
 
 		if(status.security == 1)
 		{
@@ -57,9 +58,14 @@ void LCD_Pearl1_thread()
 				sendermerk = ostrcat(tmpstr2, "", 0, 0);
 				put = 1;
 			} 
-			if(getrec(NULL) != NULL)
-				put = 1;	
 			
+			if(ostrcmp(tmpstr3, recmerk) != 0)
+			{
+				free(recmerk);recmerk=NULL;
+				recmerk = ostrcat(tmpstr3, "", 0, 0);
+				put = 1;
+			}
+
 			if(put == 1)
 			{
 				changetext(akttime, tmpstr);
@@ -78,6 +84,7 @@ void LCD_Pearl1_thread()
 	}
  	free(timemerk);timemerk=NULL;
  	free(sendermerk);sendermerk=NULL;
+ 	free(recmerk);recmerk=NULL;
  	free(fbgrab);fbgrab=NULL;
  	addconfig("lcd_pearl1_plugin_running", "no");
  	LCD_Pearl1thread = NULL;
