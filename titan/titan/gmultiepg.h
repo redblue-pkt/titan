@@ -83,7 +83,7 @@ int selectchannelgmepg(struct skin* listbox)
 }
 
 
-int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, int zoom, time_t akttime, struct channel* aktchannel, int linecol1, int linecol2, int* aktline, struct skin** pchnode, struct skin** pchnode1, int height, int picheight)
+int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, int zoom, time_t akttime, struct channel* aktchannel, int linecol1, int linecol2, int linecol3, int* aktline, struct skin** pchnode, struct skin** pchnode1, int height, int picheight)
 {
 	int treffer = 0, gridbr = 0, aktcol = 0, nottuneable = 0;
 	struct epg* epgnode = NULL;
@@ -157,6 +157,8 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 						aktcol = linecol2;
 					else
 						aktcol = linecol1;
+					if(akttime >= epgnode->starttime && akttime < epgnode->endtime)
+						aktcol = linecol3;
 					chnode1->bgcol = aktcol;
 					chnode1->bgspace = 1;
 					chnode1->vspace = 2;
@@ -215,6 +217,7 @@ int showallgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, str
 
 	int linecol1 = convertcol("epgcol1");
 	int linecol2 = convertcol("epgcol2");
+	int linecol3 = convertcol("epgcol3");
 	int height = getskinconfigint("epgheight", NULL);
 	int picheight = getskinconfigint("epgpicheight", NULL);
 
@@ -226,7 +229,7 @@ int showallgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, str
 
 	while(tmpchannel != NULL)
 	{ 
-		if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, &aktline, &chnode, &chnode1, height, picheight) == 1)
+		if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight) == 1)
 			treffer = 1;
 		tmpchannel = tmpchannel->next;
 	}
@@ -241,6 +244,7 @@ int showbouquetgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox,
 
 	int linecol1 = convertcol("epgcol1");
 	int linecol2 = convertcol("epgcol2");
+	int linecol3 = convertcol("epgcol3");
 	int height = getskinconfigint("epgheight", NULL);
 	int picheight = getskinconfigint("epgpicheight", NULL);
 
@@ -252,7 +256,7 @@ int showbouquetgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox,
 
 	while(tmpbouquet != NULL)
 	{
-		if(calcgmultiepg(tmpbouquet->channel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, &aktline, &chnode, &chnode1, height, picheight) == 1)
+		if(calcgmultiepg(tmpbouquet->channel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight) == 1)
 			treffer = 1;
 		tmpbouquet = tmpbouquet->next;
 	}
@@ -267,6 +271,7 @@ int showprovidergmepgchannel(struct skin* gmultiepg, struct skin* channellistbox
 
 	int linecol1 = convertcol("epgcol1");
 	int linecol2 = convertcol("epgcol2");
+	int linecol3 = convertcol("epgcol3");
 	int height = getskinconfigint("epgheight", NULL);
 	int picheight = getskinconfigint("epgpicheight", NULL);
 
@@ -279,7 +284,7 @@ int showprovidergmepgchannel(struct skin* gmultiepg, struct skin* channellistbox
 	{
 		if(tmpchannel->provider == providernode)
 		{
-			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, &aktline, &chnode, &chnode1, height, picheight) == 1)
+			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight) == 1)
 				treffer = 1;
 		}
 		tmpchannel = tmpchannel->next;
@@ -297,6 +302,7 @@ int showsatgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, str
 
 	int linecol1 = convertcol("epgcol1");
 	int linecol2 = convertcol("epgcol2");
+	int linecol3 = convertcol("epgcol3");
 	int height = getskinconfigint("epgheight", NULL);
 	int picheight = getskinconfigint("epgpicheight", NULL);
 
@@ -309,7 +315,7 @@ int showsatgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, str
 	{
 		if(tmpchannel->transponder != NULL && tmpchannel->transponder->orbitalpos == satnode->orbitalpos)
 		{
-			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, &aktline, &chnode, &chnode1, height, picheight) == 1)
+			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight) == 1)
 				treffer = 1;
 		}
 		tmpchannel = tmpchannel->next;
@@ -325,6 +331,7 @@ int showazgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, stru
 
 	int linecol1 = convertcol("epgcol1");
 	int linecol2 = convertcol("epgcol2");
+	int linecol3 = convertcol("epgcol3");
 	int height = getskinconfigint("epgheight", NULL);
 	int picheight = getskinconfigint("epgpicheight", NULL);
 
@@ -337,7 +344,7 @@ int showazgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, stru
 	{
 		if(tmpchannel->name != NULL && (tmpchannel->name[0] == character || tmpchannel->name[0] == character + 32))
 		{
-			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, &aktline, &chnode, &chnode1, height, picheight) == 1)
+			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight) == 1)
 				treffer = 1;
 		}
 		tmpchannel = tmpchannel->next;
@@ -384,10 +391,10 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	struct channel* aktchannel = NULL;
 #ifdef SIMULATE
 	time_t akttime = 1307871000;
-	//akttime = 1315614900;
-	//akttime = 1317926400;
+        //akttime = 1315614900;
+        //akttime = 1317926400;
 #else
-	time_t akttime = time(NULL);
+        time_t akttime = time(NULL);
 #endif
 	int zoom = getconfigint("gmultiepgzoom", NULL);
 	if(zoom < 1) zoom = 4;
@@ -400,8 +407,8 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	if(chnode == NULL) chnode = status.aktservice->channel;
 	if(epgnode == NULL) epgnode = getepgakt(chnode);
 	tmpstr2 = epgdescunzip(epgnode);
-	changetext(epgdesc, tmpstr2);
-	free(tmpstr2); tmpstr2 = NULL;
+        changetext(epgdesc, tmpstr2);
+        free(tmpstr2); tmpstr2 = NULL;
 
 	//chalc screen, so we have all infos
 	status.screencalc = 2;
