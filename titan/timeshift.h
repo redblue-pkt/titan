@@ -110,7 +110,7 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
 	}
 	
 	if(snode != NULL)
-		open(snode->recname, O_RDONLY | O_LARGEFILE);
+		fd = open(snode->recname, O_RDONLY | O_LARGEFILE);
 	
 	if(fd < 0)
 	{
