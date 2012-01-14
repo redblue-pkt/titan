@@ -1196,8 +1196,6 @@ void checkboxstartthread(struct stimerthread* self)
 {
 	struct rectimer* node = rectimer;
 	int timediff = getconfigint("rectimer_timediff", NULL);
-
-	if(timediff == 0) timediff = 180; // 2 minutes
 	
 	if(node == NULL) return; //no record
 
@@ -1212,7 +1210,8 @@ void checkboxstartthread(struct stimerthread* self)
 		if(node->status < 2)
 		{
 			time_t akttime = time(NULL);
-			if(node->begin > akttime - timediff && node->begin < akttime + timediff)
+			time_t begin = node->begin - getconfigint("wakeuptimerdevdiff", NULL);
+			if(begin > akttime - timediff && begin < akttime + timediff)
 			{
 				debug(400, "found rectimer who has start the box");
 				setwaswakuptimer(1);
@@ -1230,6 +1229,8 @@ int setwakeuptimerdev(time_t value)
 	char* wakeuptimerdev, *tmpstr = NULL;
 	int ret = 0;
 
+	if(value != 0x7FFFFFFF)
+		value -= getconfigint("wakeuptimerdevdiff", NULL);
 	wakeuptimerdev = getconfig("wakeuptimerdev", NULL);
 
 	if(wakeuptimerdev != NULL && value >= time(NULL))
