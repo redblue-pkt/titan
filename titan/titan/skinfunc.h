@@ -790,4 +790,29 @@ char* getpowerofftime(char* format)
 	return buf1;
 }
 
+char* gettvpic(char* pos)
+{
+	struct splitstr* ret = NULL;
+	int count = 0, left = 0, top = 0, width = 0;
+
+	if(pos != NULL)
+	{
+		ret = strsplit(pos, ":", &count);
+		if(count == 3)
+		{
+			if((&ret[0])->part != NULL)
+				left = atoi((&ret[0])->part);
+			if((&ret[1])->part != NULL)
+				top = atoi((&ret[1])->part);
+			if((&ret[2])->part != NULL)
+				width = atoi((&ret[2])->part);
+			
+			setvmpegrect(status.aktservice->videodev, left, top, width, 0);
+		}
+	}
+
+	free(ret); ret = NULL;
+	return NULL;
+}
+
 #endif
