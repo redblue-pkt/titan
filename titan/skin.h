@@ -103,6 +103,8 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPROGRESS;
 		return &getsignal;
 	}
+	if(ostrcmp("gettvpic", value) == 0)
+		return &gettvpic;
 	if(ostrcmp("getepgmarkeddesc", value) == 0)
 		return &getepgmarkeddesc;
 	if(ostrcmp("getepgaktdesc", value) == 0)
