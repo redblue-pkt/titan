@@ -1228,9 +1228,11 @@ int setwakeuptimerdev(time_t value)
 	debug(1000, "in");
 	char* wakeuptimerdev, *tmpstr = NULL;
 	int ret = 0;
+	int diff = getconfigint("wakeuptimerdevdiff", NULL);
 
-	if(value != 0x7FFFFFFF)
-		value -= getconfigint("wakeuptimerdevdiff", NULL);
+	if(value != 0x7FFFFFFF && value - diff > time(NULL))
+		value -= diff;
+	
 	wakeuptimerdev = getconfig("wakeuptimerdev", NULL);
 
 	if(wakeuptimerdev != NULL && value >= time(NULL))
