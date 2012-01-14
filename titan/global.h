@@ -1490,19 +1490,19 @@ int setbrightness(int value)
 	return 0;
 }
 
-int settsmuxleft(struct dvbdev* node, int value, int flag)
+int setvmpeg(struct dvbdev* node, int value, int flag)
 {
 	debug(1000, "in");
-	char* tsmuxdev = NULL, *tmpstr = NULL, *buf = NULL;
+	char* vmpegdev = NULL, *tmpstr = NULL, *buf = NULL;
 	int ret = 0;
 
 	if(node == NULL) return 1;
-	if(flag == 0) tsmuxdev = getconfig("tsmuxleftdev", NULL);
-	if(flag == 1) tsmuxdev = getconfig("tsmuxtopdev", NULL);
-	if(flag == 2) tsmuxdev = getconfig("tsmuxwidthdev", NULL);
-	if(flag == 3) tsmuxdev = getconfig("tsmuxheightdev", NULL);
+	if(flag == 0) vmpegdev = getconfig("vmpegleftdev", NULL);
+	if(flag == 1) vmpegdev = getconfig("vmpegtopdev", NULL);
+	if(flag == 2) vmpegdev = getconfig("vmpegwidthdev", NULL);
+	if(flag == 3) vmpegdev = getconfig("vmpegheightdev", NULL);
 
-	if(tsmuxdev != NULL)
+	if(vmpegdev != NULL)
 	{
 		buf = malloc(MINMALLOC);
 		if(buf == NULL)
@@ -1519,7 +1519,7 @@ int settsmuxleft(struct dvbdev* node, int value, int flag)
 			return 1;
 		}
 		
-		snprintf(buf, MINMALLOC, tsmuxdev, node->devnr);
+		snprintf(buf, MINMALLOC, vmpegdev, node->devnr);
 		snprintf(tmpstr, 10, "%x", value);
 		debug(100, "set %s to %s", buf, tmpstr);
 		ret = writesys(buf, tmpstr, 1);
