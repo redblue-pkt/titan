@@ -51,7 +51,7 @@ void setdefaults()
 	addconfigdef("skip46", "300");
 	addconfigdef("skip79", "900");
 	addconfigdef("gmultiepgzoom", "4");
-	addconfigdef("wakeuptimerdevdiff", "600");
+	addconfigdef("wakeuptimerdevdiff", "300");
 	addconfigdef("rectimer_timediff", "120");
 	
 	status.expertmodus = getconfigint("expertmodus", NULL);
