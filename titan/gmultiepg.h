@@ -369,23 +369,25 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	struct skin* gmultiepg = getscreen("gmultiepg");
 	struct skin* listbox = getscreennode(gmultiepg, "listbox");
 	struct skin* channellistbox = getscreennode(gmultiepg, "channellistbox");
+	struct skin* epgdesc = getscreennode(gmultiepg, "epgdesc");
 	struct skin* timeline = getscreennode(gmultiepg, "timeline");
 	struct skin* b2 = getscreennode(gmultiepg, "b2");
 	struct skin* b3 = getscreennode(gmultiepg, "b3");
 	struct skin* b4 = getscreennode(gmultiepg, "b4");
 	
 	int list = ALLCHANNEL;
-	char* tmpstr = NULL, *tmpstr1 = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
 	void* aktlist = NULL;
 	int character = 0;
 	struct sat* satnode = NULL;
 	struct provider* providernode = NULL;
 	struct channel* aktchannel = NULL;
 #ifdef SIMULATE
-        time_t akttime = 1315614900;
-        akttime = 1317926400;
+	time_t akttime = 1307871000;
+	//akttime = 1315614900;
+	//akttime = 1317926400;
 #else
-        time_t akttime = time(NULL);
+	time_t akttime = time(NULL);
 #endif
 	int zoom = getconfigint("gmultiepgzoom", NULL);
 	if(zoom < 1) zoom = 4;
@@ -394,6 +396,12 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	akttime -= (((akttime / 60) % 15) * 60);
 	akttime -= (((akttime) % 60));
 	time_t starttime = akttime;
+
+	if(chnode == NULL) chnode = status.aktservice->channel;
+	if(epgnode == NULL) epgnode = getepgakt(chnode);
+	tmpstr2 = epgdescunzip(epgnode);
+	changetext(epgdesc, tmpstr2);
+	free(tmpstr2); tmpstr2 = NULL;
 
 	//chalc screen, so we have all infos
 	status.screencalc = 2;
@@ -656,9 +664,15 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			continue;
 		}
 
-		drawscreen(gmultiepg, 0);
 		if(listbox->select != NULL)
+		{
+			tmpstr2 = epgdescunzip((struct epg*)listbox->select->handle1);
+			changetext(epgdesc, tmpstr2);
+			free(tmpstr2); tmpstr2 = NULL;
+
 			aktchannel = (struct channel*)listbox->select->handle;
+		}
+		drawscreen(gmultiepg, 0);
 	}
 
 	status.markedchannel = NULL;
