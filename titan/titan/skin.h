@@ -2369,6 +2369,45 @@ void restorescreen(char* buf, struct skin* node)
 	restorerect(buf, node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->rwidth + (node->shadowsize * 2), node->rheight + (node->shadowsize * 2));
 }
 
+//*************** GOST LCD
+void lcd_fillrect(int posx, int posy, int width, int height, long color, int transparent)
+{
+	debug(1000, "in");
+	int y, x;
+	unsigned long tmpcol;
+
+	if(posx < 0) posx = 0;
+	if(posy < 0) posy = 0;
+	if(posx + width > skinfb->width) posx = skinfb->width - width;
+	if(posy + height > skinfb->height) posy = skinfb->height - height;
+
+	if(width == 0 || height == 0) return;
+
+	transparent = (transparent - 255) * -1;
+	tmpcol = color | ((transparent & 0xff) << 24);
+
+	for(y = 0; y < height; y++)
+	{
+		for(x = 0; x < width; x++)
+		{
+			drawpixel(posx + x, posy + y, tmpcol);
+		}
+	}
+	debug(1000, "out");
+}
+
+void lcd_drawrect(int posx, int posy, int width, int height, long color, int transparent)
+{
+	debug(1000, "in");
+	fillrect(posx, posy, width, 1, color, transparent);
+	fillrect(posx, posy + height - 1, width, 1, color, transparent);
+	fillrect(posx, posy, 1, height, color, transparent);
+	fillrect(posx + width - 1, posy, 1, height, color, transparent);
+	debug(1000, "out");
+}
+//*************** GOST LCD
+
+
 #ifndef SIMULATE
 
 /*
@@ -2449,12 +2488,18 @@ void blitrect(int posx, int posy, int width, int height, long color, int transpa
 
 void fillrect(int posx, int posy, int width, int height, long color, int transparent)
 {
-	blitrect(posx, posy, width, height, color, transparent, 0);
+	if(skinfb != lcdskinfb)
+		blitrect(posx, posy, width, height, color, transparent, 0);
+	else
+		lcd_fillrect(posx, posy, width, height, color, transparent);
 }
 
 void drawrect(int posx, int posy, int width, int height, long color, int transparent)
 {
-	blitrect(posx, posy, width, height, color, transparent, 1);
+	if(skinfb != lcdskinfb)
+		blitrect(posx, posy, width, height, color, transparent, 1);
+	else
+		lcd_drawrect(posx, posy, width, height, color, transparent);
 }
 #else
 void fillrect(int posx, int posy, int width, int height, long color, int transparent)
@@ -3547,8 +3592,8 @@ int drawscreen(struct skin* node, int flag)
 	
 	if(strstr(node->name, "LCD_") != NULL) {
 		merkskinfb = skinfb;
-		//memset(lcdskinfb->fb, 0, lcdskinfb->varfbsize);
-		//skinfb = lcdskinfb;
+		memset(lcdskinfb->fb, 0, lcdskinfb->varfbsize);
+		skinfb = lcdskinfb;
 	}
 
 	if(status.screencalc == 0)
