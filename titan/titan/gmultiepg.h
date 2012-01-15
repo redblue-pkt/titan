@@ -9,7 +9,7 @@ time_t calcprimetime(time_t akttime)
 	loctime = olocaltime(&akttime);
 	if(loctime != NULL)
 	{
-		loctime->tm_hour = 4;
+		loctime->tm_hour = 20;
 		loctime->tm_min = 15;
 		ret = mktime(loctime);
 		if(ret < akttime) // add 1 day
