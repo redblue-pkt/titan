@@ -1,6 +1,33 @@
 #ifndef GMULTIEPG_H
 #define GMULTIEPG_H
 
+time_t calcprimetime(time_t akttime)
+{
+	struct tm *loctime = NULL;
+	time_t ret = NULL;
+
+	loctime = olocaltime(&akttime);
+	if(loctime != NULL)
+	{
+		loctime->tm_hour = 4;
+		loctime->tm_min = 15;
+		ret = mktime(loctime);
+		if(ret < akttime) // add 1 day
+		{
+			free(loctime);
+			ret += 86400;
+			loctime = olocaltime(&ret);
+			if(loctime != NULL)
+				ret = mktime(loctime);
+			else
+				ret = akttime;
+		}
+	}
+
+	free(loctime);
+	return ret;
+}
+
 void createtimeline(struct skin* gmultiepg, struct skin* timeline, time_t akttime, int zoom)
 {
 	struct skin* node = NULL;
@@ -575,15 +602,29 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			}
 		}
 
-		if(rcret == getrcconfigint("rcff", NULL))
+		if(rcret == getrcconfigint("rcff", NULL) || rcret == getrcconfigint("rcfav", NULL))
 		{
+			time_t tmptime = NULL;
+
+			if(rcret == getrcconfigint("rcfav", NULL))
+			{
+				tmptime = calcprimetime(akttime);
+				if(tmptime != NULL)
+				{
+					akttime = tmptime;
+					akttime -= addtime;
+				}
+			}
 			akttime += addtime;
 
 			if(list == BOUQUETCHANNEL)
 			{
 				if(showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, ((struct mainbouquet*)aktlist)->bouquet, zoom, akttime, aktchannel) == 0)
 				{
-					akttime -= addtime;
+					if(tmptime == NULL)
+						akttime -= addtime;
+					else
+						akttime = starttime;
 					if(akttime < starttime)
 						akttime = starttime;
 					else
@@ -594,7 +635,10 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			{
 				if(showallgmepgchannel(gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel) == 0)
 				{
-					akttime -= addtime;
+					if(tmptime == NULL)
+						akttime -= addtime;
+					else
+						akttime = starttime;
 					if(akttime < starttime)
 						akttime = starttime;
 					else
@@ -605,7 +649,10 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			{
 				if(showazgmepgchannel(gmultiepg, channellistbox, listbox, character, zoom, akttime, aktchannel) == 0)
 				{
-					akttime -= addtime;
+					if(tmptime == NULL)
+						akttime -= addtime;
+					else
+						akttime = starttime;
 					if(akttime < starttime)
 						akttime = starttime;
 					else
@@ -616,7 +663,10 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			{
 				if(showsatgmepgchannel(gmultiepg, channellistbox, listbox, satnode, zoom, akttime, aktchannel) == 0)
 				{
-					akttime -= addtime;
+					if(tmptime == NULL)
+						akttime -= addtime;
+					else
+						akttime = starttime;
 					if(akttime < starttime)
 						akttime = starttime;
 					else
@@ -627,7 +677,10 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			{
 				if(showprovidergmepgchannel(gmultiepg, channellistbox, listbox, providernode, zoom, akttime, aktchannel) == 0)
 				{
-					akttime -= addtime;
+					if(tmptime == NULL)
+						akttime -= addtime;
+					else
+						akttime = starttime;
 					if(akttime < starttime)
 						akttime = starttime;
 					else
