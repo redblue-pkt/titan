@@ -41,10 +41,12 @@ void permtime_main()
 	if(permtimethread == NULL)
 	{
 		permtimethread = addtimer(&permtime_thread, START, 10000, 1, NULL, NULL, NULL);
+		addconfig("permtime_plugin_running", "yes");
 	}
 	else
 	{
 		permtimethread->aktion = STOP;
+		addconfig("permtime_plugin_running", "no");
 	}
 }	
 			
@@ -57,6 +59,10 @@ void init(void)
 	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/permtime/skin.xml", 0, 0);
 	readscreen(tmpstr, 115, 1);
 	free(tmpstr); tmpstr = NULL;
+	tmpstr = getconfig("permtime_plugin_running", NULL);
+	if(ostrcmp(tmpstr, "yes") == 0)
+		permtime_main();
+	tmpstr=NULL;
 	
 	debug(10, "Permanent Time Plugin loadet !!!");
 }
