@@ -154,7 +154,7 @@ msgstr ""
 #: mc_global.h:728 mc_global.h:504 mc_global.h:736 mc_global.h:503
 #: mc_global.h:735 global.h:79 play.h:510 global.h:82 global.h:3909
 #: global.h:3930 global.h:3962 global.h:3963 global.h:3965 global.h:100
-#: global.h:3995
+#: global.h:3995 global.h:114 global.h:4009
 msgid "EXIT"
 msgstr ""
 
@@ -504,6 +504,7 @@ msgstr ""
 #: mc_global.h:500 mc_global.h:726 mc_global.h:728 mc_global.h:504
 #: mc_global.h:736 mc_global.h:503 mc_global.h:735 play.h:510 global.h:3909
 #: global.h:3930 global.h:3962 global.h:3963 global.h:3965 global.h:3995
+#: global.h:4009
 msgid "Message"
 msgstr ""
 
@@ -607,7 +608,7 @@ msgstr ""
 #: mc_global.h:728 mc_global.h:504 mc_global.h:736 mc_global.h:503
 #: mc_global.h:735 global.h:79 play.h:510 global.h:82 global.h:3909
 #: global.h:3930 global.h:3962 global.h:3963 global.h:3965 global.h:100
-#: global.h:3995
+#: global.h:3995 global.h:114 global.h:4009
 msgid "OK"
 msgstr ""
 
@@ -631,7 +632,7 @@ msgstr ""
 #: keyactions.h:223 global.h:3822 global.h:3843 global.h:3851 global.h:3852
 #: global.h:3854 global.h:3904 global.h:3898 global.h:3897 global.h:3903
 #: global.h:3909 global.h:3930 global.h:3962 global.h:3963 global.h:3965
-#: global.h:3995
+#: global.h:3995 global.h:4009
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -2342,7 +2343,7 @@ msgstr ""
 #: plugins_panel_skin.xml.h:6 skins_panel_skin.xml.h:6 global.h:21 global.h:20
 #: global.h:30 global.h:32 global.h:50 global.h:51 global.h:40 global.h:45
 #: global.h:46 global.h:47 global.h:48 global.h:53 global.h:56 global.h:61
-#: global.h:62 global.h:79 global.h:82 global.h:100
+#: global.h:62 global.h:79 global.h:82 global.h:100 global.h:114
 msgid "Info"
 msgstr ""
 
@@ -6862,6 +6863,7 @@ msgstr ""
 #: global.h:20 global.h:19 global.h:29 global.h:31 global.h:49 global.h:50
 #: global.h:39 global.h:44 global.h:45 global.h:46 global.h:47 global.h:52
 #: global.h:55 global.h:60 global.h:61 global.h:78 global.h:81 global.h:99
+#: global.h:113
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
@@ -6946,7 +6948,7 @@ msgstr ""
 msgid "STOP"
 msgstr ""
 
-#: global.h:57 global.h:58 global.h:75 global.h:78 global.h:96
+#: global.h:57 global.h:58 global.h:75 global.h:78 global.h:96 global.h:110
 msgid ""
 "For next OnlineUpdate please contact Atemio and send this Serial Number and "
 "your Atemio Serial Number !!\n"
