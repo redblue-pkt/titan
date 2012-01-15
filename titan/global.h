@@ -5,7 +5,7 @@ int checkflash()
 {
 	char* tmpstr = NULL;
 
-	tmpstr = string_newline(command("mount | grep /dev/mtdblock3 | grep /var | awk {'print $3'}));
+	tmpstr = string_newline(command("mount | grep /dev/mtdblock3 | grep /var | awk {'print $3'}"));
 	if(tmpstr == NULL)
 		return 0;
 
