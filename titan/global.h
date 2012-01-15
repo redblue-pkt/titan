@@ -4,8 +4,22 @@
 int checkflash()
 {
 	char* tmpstr = NULL;
+	char* cmd = NULL;
+	cmd = ostrcat(cmd, "mount", 1, 0);
+	cmd = ostrcat(cmd, " | ", 1, 0);
+	cmd = ostrcat(cmd, "grep", 1, 0);
+	cmd = ostrcat(cmd, " /dev/", 1, 0);
+	cmd = ostrcat(cmd, "mtdblock3", 1, 0);
+	cmd = ostrcat(cmd, " | ", 1, 0);
+	cmd = ostrcat(cmd, "grep", 1, 0);
+	cmd = ostrcat(cmd, " /", 1, 0);
+	cmd = ostrcat(cmd, "var", 1, 0);
+	cmd = ostrcat(cmd, " | ", 1, 0);
+	cmd = ostrcat(cmd, "awk {'print $3'}", 1, 0);
+							
+	tmpstr = string_newline(command(cmd));
+	free(cmd), cmd = NULL;
 
-	tmpstr = string_newline(command("mount | grep /dev/mtdblock3 | grep /var | awk {'print $3'}"));
 	if(tmpstr == NULL)
 		return 0;
 
