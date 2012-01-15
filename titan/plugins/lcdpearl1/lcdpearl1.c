@@ -62,12 +62,12 @@ void LCD_Pearl1_thread()
 				sendermerk = ostrcat(tmpstr2, "", 0, 0);
 				put = 1;
 			} 
-			if(ostrcmp(tmpstr3, recmerk) != 0)
+			/*if(ostrcmp(tmpstr3, recmerk) != 0)
 			{
 				free(recmerk);recmerk=NULL;
 				recmerk = ostrcat(tmpstr3, "", 0, 0);
 				put = 1;
-			}
+			}*/
 
 			if(put == 1)
 			{
