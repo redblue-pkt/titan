@@ -9,7 +9,7 @@ int checkflash()
 	if(tmpstr == NULL)
 		return 0;
 
-	if(ostrcmp(tmpstr, "/var" == 0)
+	if(ostrcmp(tmpstr, "/var") == 0)
 	{
 		free(tmpstr), tmpstr = NULL;
 		return 0;
