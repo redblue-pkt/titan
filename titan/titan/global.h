@@ -1,6 +1,24 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+int checkflash()
+{
+	char* tmpstr = NULL;
+
+	tmpstr = string_newline(command("mount | grep /dev/mtdblock3 | grep /var | awk {'print $3'}));
+	if(tmpstr == NULL)
+		return 0;
+
+	if(ostrcmp(tmpstr, "/var" == 0)
+	{
+		free(tmpstr), tmpstr = NULL;
+		return 0;
+	}
+
+	free(tmpstr), tmpstr = NULL;	
+	return 1;
+}
+
 void checkserial(char* input)
 {
 	if(input == NULL) return;
