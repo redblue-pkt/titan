@@ -418,10 +418,10 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	struct channel* aktchannel = NULL;
 #ifdef SIMULATE
 	time_t akttime = 1307871000;
-        //akttime = 1315614900;
-        //akttime = 1317926400;
+	//akttime = 1315614900;
+	//akttime = 1317926400;
 #else
-        time_t akttime = time(NULL);
+	time_t akttime = time(NULL);
 #endif
 	int zoom = getconfigint("gmultiepgzoom", NULL);
 	if(zoom < 1) zoom = 4;
@@ -434,8 +434,8 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	if(chnode == NULL) chnode = status.aktservice->channel;
 	if(epgnode == NULL) epgnode = getepgakt(chnode);
 	tmpstr2 = epgdescunzip(epgnode);
-        changetext(epgdesc, tmpstr2);
-        free(tmpstr2); tmpstr2 = NULL;
+	changetext(epgdesc, tmpstr2);
+	free(tmpstr2); tmpstr2 = NULL;
 
 	//chalc screen, so we have all infos
 	status.screencalc = 2;
@@ -450,12 +450,12 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	if(status.servicetype == 0)
 	{
 		tmpstr = getconfig("channellist", NULL);
-                aktchannel = getchannel(getconfigint("serviceid", NULL), getconfiglu("transponderid", NULL));
+		aktchannel = getchannel(getconfigint("serviceid", NULL), getconfiglu("transponderid", NULL));
 	}
 	else
 	{
 		tmpstr = getconfig("rchannellist", NULL);
-                aktchannel = getchannel(getconfigint("rserviceid", NULL), getconfiglu("rtransponderid", NULL));
+		aktchannel = getchannel(getconfigint("rserviceid", NULL), getconfiglu("rtransponderid", NULL));
 	}
 
 	if(ostrncmp("(BOUQUET)-", tmpstr, 10) == 0 && strlen(tmpstr) > 10)
