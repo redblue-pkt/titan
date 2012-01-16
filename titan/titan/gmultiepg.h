@@ -4,7 +4,7 @@
 time_t calcprimetime(time_t akttime)
 {
 	struct tm *loctime = NULL;
-	time_t ret = NULL;
+	time_t ret = 0;
 
 	loctime = olocaltime(&akttime);
 	if(loctime != NULL)
@@ -604,12 +604,12 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 
 		if(rcret == getrcconfigint("rcff", NULL) || rcret == getrcconfigint("rcfav", NULL))
 		{
-			time_t tmptime = NULL;
+			time_t tmptime = 0;
 
 			if(rcret == getrcconfigint("rcfav", NULL))
 			{
 				tmptime = calcprimetime(akttime);
-				if(tmptime != NULL)
+				if(tmptime != 0)
 				{
 					akttime = tmptime;
 					akttime -= addtime;
@@ -621,7 +621,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			{
 				if(showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, ((struct mainbouquet*)aktlist)->bouquet, zoom, akttime, aktchannel) == 0)
 				{
-					if(tmptime == NULL)
+					if(tmptime == 0)
 						akttime -= addtime;
 					else
 						akttime = starttime;
@@ -635,7 +635,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			{
 				if(showallgmepgchannel(gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel) == 0)
 				{
-					if(tmptime == NULL)
+					if(tmptime == 0)
 						akttime -= addtime;
 					else
 						akttime = starttime;
@@ -649,7 +649,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			{
 				if(showazgmepgchannel(gmultiepg, channellistbox, listbox, character, zoom, akttime, aktchannel) == 0)
 				{
-					if(tmptime == NULL)
+					if(tmptime == 0)
 						akttime -= addtime;
 					else
 						akttime = starttime;
@@ -663,7 +663,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			{
 				if(showsatgmepgchannel(gmultiepg, channellistbox, listbox, satnode, zoom, akttime, aktchannel) == 0)
 				{
-					if(tmptime == NULL)
+					if(tmptime == 0)
 						akttime -= addtime;
 					else
 						akttime = starttime;
@@ -677,7 +677,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			{
 				if(showprovidergmepgchannel(gmultiepg, channellistbox, listbox, providernode, zoom, akttime, aktchannel) == 0)
 				{
-					if(tmptime == NULL)
+					if(tmptime == 0)
 						akttime -= addtime;
 					else
 						akttime = starttime;
