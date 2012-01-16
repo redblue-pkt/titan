@@ -221,6 +221,17 @@ int getconfigint(char *key, char *ext)
 		return 0;
 }
 
+float getconfigfloat(char *key, char *ext)
+{
+	char *ret = NULL;
+
+	ret = getlist(config, key, ext);
+	if(ret != NULL)
+		return atof(ret);
+	else
+		return 0;
+}
+
 unsigned long getconfiglu(char *key, char *ext)
 {
 	char *ret = NULL;
