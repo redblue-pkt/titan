@@ -206,8 +206,8 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 
 	changeinput(diseqcrepeat, "1\n2\n3\n4\n5\n6");
 
-	changemask(latitude, "000");
-	changemask(longitude, "000");
+	changemask(latitude, "000.000");
+	changemask(longitude, "000.000");
 
 	changeinput(eastwest, NULL);
 	addchoicebox(eastwest, "0", _("east"));
