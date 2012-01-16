@@ -1002,6 +1002,8 @@ int recordskipplay(struct service* servicenode, int sekunden)
 	unsigned long long pts = 0;
 	unsigned long long bitrate = 0;
 	char* tmpstr = NULL;
+	
+	if(servicenode == NULL) return 1;
 
 	if(servicenode->recsrcfd < 0)
 	{
@@ -1009,6 +1011,9 @@ int recordskipplay(struct service* servicenode, int sekunden)
 		return 1;
 	}
 	struct service* snode = getservice(RECORDTIMESHIFT, 0);
+	
+	if(snode == NULL) return 1;
+	
 	dupfd = open(snode->recname, O_RDONLY | O_LARGEFILE);
 	if(dupfd < 0)
 	{
@@ -1025,24 +1030,29 @@ int recordskipplay(struct service* servicenode, int sekunden)
 		m_unlock(&status.tsseekmutex, 15);
 		return 1;
 	}
-	endoffile = lseek64(dupfd , -188*2, SEEK_END);
+	endoffile = lseek64(dupfd , -188 * 2, SEEK_END);
 	close(dupfd);
 	currentpos = lseek64(servicenode->recsrcfd, 0, SEEK_CUR);
 	ret = videoclearbuffer(status.aktservice->videodev);
 	ret = audioclearbuffer(status.aktservice->audiodev);
 
-	if(sekunden >= 0) {
+	if(sekunden >= 0)
+	{
 		offset = (bitrate / 8) * sekunden - 5000000;
 		offset = offset - (offset % 188);
-		if(currentpos + offset > endoffile) {
+		if(currentpos + offset > endoffile)
+		{
 			offset = endoffile - currentpos;
 			offset = offset - (offset % 188);
 		}
-	} else {
+	}
+	else
+	{
 		sekunden = sekunden * -1;
 		offset = (bitrate / 8) * sekunden + 5000000;
 		offset = offset - (offset % 188);
-		if(currentpos - offset < 0) {
+		if(currentpos - offset < 0)
+		{
 			offset = currentpos - 188;
 			offset = offset - (offset % 188);
 			if(offset < 0)
@@ -1059,10 +1069,12 @@ int recordskipplay(struct service* servicenode, int sekunden)
 
 void recordffrwts(struct service* servicenode, int speed)
 {
+	if(status.aktservice->videodev == NULL) return;
+	
 	if(ioctl(status.aktservice->videodev->fd, VIDEO_FAST_FORWARD, speed / 2) < 0)
-		{
-			perr("VIDEO_FAST_FORWARD");
-		}
+	{
+		perr("VIDEO_FAST_FORWARD");
+	}
 }
 
 #endif
