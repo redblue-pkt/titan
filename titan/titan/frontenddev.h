@@ -760,6 +760,10 @@ void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int
 			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x69; cmd.msg[3] = 256 - pos; cmd.msg_len = 4;
 			debug(200, "DISEQC Rotorpos step west (%s)", node->feshortname);
 			break;
+		case 11: //goto xx
+			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x6E; cmd.msg[3] = (pos > 8) & 0xff; cmd.msg[4] = pos & 0xff; cmd.msg_len = 5;
+			debug(200, "DISEQC Rotorpos goto xx (%s)", node->feshortname);
+			break;
 	}
 
 	if(flag >= 0 && flag < 7)
@@ -776,7 +780,7 @@ void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int
 		fediseqcsendmastercmd(node, &cmd, 100);
 	}
 
-	if(flag == 8 && (orbitalpos == 0 || status.rotoroldorbitalpos == 0 || orbitalpos != status.rotoroldorbitalpos))
+	if(flag == 8 || flag == 11) && (orbitalpos == 0 || status.rotoroldorbitalpos == 0 || orbitalpos != status.rotoroldorbitalpos))
 	{
 		fesetvoltage(node, SEC_VOLTAGE_18, 15);
 		fesettone(node, SEC_TONE_OFF, 15);
@@ -955,7 +959,8 @@ void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 {
 	debug(1000, "in");
 	char* tmpstr = NULL;
-	int toneburst = 0, cmdorder = 0, input = 0, uinput = 0, diseqmode = 0, rotorpos = 0;
+	int toneburst = 0, cmdorder = 0, input = 0, uinput = 0, diseqmode = 0, rotorpos = 0, latpos = 0, longpos = 0;
+	float latitude = 0, longitude = 0;
 	fe_sec_mini_cmd_t mini = -1;
 	struct dvb_diseqc_master_cmd cmd = {{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0};
 	struct dvb_diseqc_master_cmd ucmd = {{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0};
@@ -979,6 +984,18 @@ void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 	free(tmpstr); tmpstr = NULL;
 	tmpstr = ostrcat(node->feshortname, "_diseqc_rotorpos", 0, 0);
 	rotorpos = getconfigint(tmpstr, node->feaktnr);
+	free(tmpstr); tmpstr = NULL;
+	tmpstr = ostrcat(node->feshortname, "_diseqc_latitude", 0, 0);
+	latitude = getconfigfloat(tmpstr, node->feaktnr);
+	free(tmpstr); tmpstr = NULL;
+	tmpstr = ostrcat(node->feshortname, "_diseqc_longitude", 0, 0);
+	longitude = getconfigfloat(tmpstr, node->feaktnr);
+	free(tmpstr); tmpstr = NULL;
+	tmpstr = ostrcat(node->feshortname, "_diseqc_latpos", 0, 0);
+	latpos = getconfigint(tmpstr, node->feaktnr);
+	free(tmpstr); tmpstr = NULL;
+	tmpstr = ostrcat(node->feshortname, "_diseqc_longpos", 0, 0);
+	longpos = getconfigint(tmpstr, node->feaktnr);
 	free(tmpstr); tmpstr = NULL;
 
 	tmpstr = ostrcat(node->feshortname, "_diseqc", 0, 0);
@@ -1066,6 +1083,49 @@ void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 	if(diseqmode == 2) // Diseqc 1.2
 	{
 		fediseqcrotor(node, tpnode, rotorpos, 8);
+	}
+	
+	if(diseqmode == 3) // Diseqc 1.3 (USALS)
+	{
+		double	orbitalpos = abs(tpnode->orbitalpos) / 10.00;
+
+		if(latpos == 1) // south
+			latitude = -latitude;
+
+		if(longpos == 1) // west
+			longitude = 360 - longitude;
+
+		double satHourAngle = calcSatHourangle(orbitalpos, latitude, longitude);
+		int gotoXTable[10] = {0x00, 0x02, 0x03, 0x05, 0x06, 0x08, 0x0A, 0x0B, 0x0D, 0x0E};
+
+		if(latitude >= 0) // Northern Hemisphere
+		{
+			int tmp = (int)round(fabs(180 - satHourAngle) * 10.0);
+			rotorpos = (tmp / 10) * 0x10 + gotoXTable[tmp % 10];
+
+			if(satHourAngle < 180) // the east
+				rotorpos |= 0xE000;
+			else // west
+				rotorpos |= 0xD000;
+		}
+		else // Southern Hemisphere
+		{
+			if(satHourAngle < 180) // the east
+			{
+				int tmp = (int)round(fabs(satHourAngle) * 10.0);
+				rotorpos = (tmp / 10) * 0x10 + gotoXTable[tmp % 10];
+				rotorpos |= 0xD000;
+			}
+			else // west
+			{
+				int tmp = (int)round(fabs(360 - satHourAngle) * 10.0);
+				rotorpos = (tmp / 10) * 0x10 + gotoXTable[tmp % 10];
+				rotorpos |= 0xE000;
+			}
+		}
+		debug(200, "orbitalpos=%f, latitude=%f, longitude=%f, rotorpos=%04x", orbitalpos, latitude, longitude, rotorpos);
+
+		fediseqcrotor(node, tpnode, rotorpos, 11);
 	}
 
 	debug(1000, "out");
