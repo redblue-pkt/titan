@@ -34,7 +34,7 @@ void screenvolume(int direction)
 	delrc(getrcconfigint("rcmute", NULL), NULL, NULL);
 
 	if(status.mute == 1)
-		screenmute(1);
+		screenmute(NULL, NULL, 1);
 
 	changevolume(direction, volumebar);
 
