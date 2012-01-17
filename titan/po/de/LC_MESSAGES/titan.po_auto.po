@@ -157,7 +157,7 @@ msgstr ""
 #: global.h:3995 global.h:114 global.h:4009 mc_global.h:560 mc_global.h:793
 #: mc_videoplayer.h:368 mc_videoplayer.h:453 panel_system_restore.h:74
 #: panel_system_restore.h:79 panel_system_restore.h:84
-#: panel_system_restore.h:89 global.h:4032
+#: panel_system_restore.h:89 global.h:4032 global.h:4041
 msgid "EXIT"
 msgstr ""
 
@@ -515,7 +515,7 @@ msgstr ""
 #: global.h:3930 global.h:3962 global.h:3963 global.h:3965 global.h:3995
 #: global.h:4009 mc_global.h:560 mc_global.h:793 mc_videoplayer.h:368
 #: mc_videoplayer.h:453 panel_system_restore.h:74 panel_system_restore.h:84
-#: global.h:4032
+#: global.h:4032 global.h:4041
 msgid "Message"
 msgstr ""
 
@@ -622,7 +622,7 @@ msgstr ""
 #: global.h:3995 global.h:114 global.h:4009 mc_global.h:560 mc_global.h:793
 #: mc_videoplayer.h:368 mc_videoplayer.h:453 panel_system_restore.h:74
 #: panel_system_restore.h:79 panel_system_restore.h:84
-#: panel_system_restore.h:89 global.h:4032
+#: panel_system_restore.h:89 global.h:4032 global.h:4041
 msgid "OK"
 msgstr ""
 
@@ -646,7 +646,7 @@ msgstr ""
 #: keyactions.h:223 global.h:3822 global.h:3843 global.h:3851 global.h:3852
 #: global.h:3854 global.h:3904 global.h:3898 global.h:3897 global.h:3903
 #: global.h:3909 global.h:3930 global.h:3962 global.h:3963 global.h:3965
-#: global.h:3995 global.h:4009 global.h:4032
+#: global.h:3995 global.h:4009 global.h:4032 global.h:4041
 msgid "ERROR cant read res"
 msgstr ""
 
