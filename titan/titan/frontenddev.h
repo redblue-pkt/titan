@@ -761,7 +761,7 @@ void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int
 			debug(200, "DISEQC Rotorpos step west (%s)", node->feshortname);
 			break;
 		case 11: //goto xx
-			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x6E; cmd.msg[3] = (pos > 8) & 0xff; cmd.msg[4] = pos & 0xff; cmd.msg_len = 5;
+			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x6E; cmd.msg[3] = (pos >> 8) & 0xff; cmd.msg[4] = pos & 0xff; cmd.msg_len = 5;
 			debug(200, "DISEQC Rotorpos goto xx (%s)", node->feshortname);
 			break;
 	}
