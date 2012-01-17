@@ -154,7 +154,8 @@ msgstr ""
 #: mc_global.h:728 mc_global.h:504 mc_global.h:736 mc_global.h:503
 #: mc_global.h:735 global.h:79 play.h:510 global.h:82 global.h:3909
 #: global.h:3930 global.h:3962 global.h:3963 global.h:3965 global.h:100
-#: global.h:3995 global.h:114 global.h:4009
+#: global.h:3995 global.h:114 global.h:4009 mc_global.h:560 mc_global.h:793
+#: mc_videoplayer.h:368 mc_videoplayer.h:453
 msgid "EXIT"
 msgstr ""
 
@@ -194,7 +195,7 @@ msgstr ""
 #: tunerconfig.h:456 rectimer.h:869 rectimer.h:874 rectimer.h:879
 #: rectimer.h:884 rectimer.h:889 rectimer.h:894 rectimer.h:899 adjust.h:44
 #: adjust.h:58 adjust.h:62 adjust.h:67 adjust.h:92 adjust.h:119 adjust.h:122
-#: mc_audioplayer_settings.h:37
+#: mc_audioplayer_settings.h:37 mc_videoplayer_settings.h:32
 msgid "no"
 msgstr ""
 
@@ -239,7 +240,7 @@ msgstr ""
 #: tunerconfig.h:455 rectimer.h:870 rectimer.h:875 rectimer.h:880
 #: rectimer.h:885 rectimer.h:890 rectimer.h:895 rectimer.h:900 adjust.h:59
 #: adjust.h:68 adjust.h:93 adjust.h:118 adjust.h:123
-#: mc_audioplayer_settings.h:38
+#: mc_audioplayer_settings.h:38 mc_videoplayer_settings.h:33
 msgid "yes"
 msgstr ""
 
@@ -247,6 +248,7 @@ msgstr ""
 #: mc_videoplayer_settings.h:15 plugins_mc_skin.xml.h:5 skins_mc_skin.xml.h:5
 #: adjust.h:68 adjust.h:69 adjust.h:70 adjust.h:71
 #: mc_pictureplayer_settings.h:21 mc_audioplayer_settings.h:21
+#: mc_videoplayer_settings.h:16
 msgid "alpha"
 msgstr ""
 
@@ -255,6 +257,7 @@ msgstr ""
 #: skins_mc_skin.xml.h:35 adjust.h:69 adjust.h:70 adjust.h:71 adjust.h:72
 #: mc_pictureplayer_settings.h:22 mc_audioplayer_settings.h:22
 #: plugins_mc_skin.xml.h:36 skins_mc_skin.xml.h:36
+#: mc_videoplayer_settings.h:17
 msgid "reverse alpha"
 msgstr ""
 
@@ -264,6 +267,7 @@ msgstr ""
 #: mc_pictureplayer_settings.h:23 plugins_mc_skin.xml.h:41
 #: skins_mc_skin.xml.h:41 mc_audioplayer_settings.h:23
 #: plugins_mc_skin.xml.h:42 skins_mc_skin.xml.h:42
+#: mc_videoplayer_settings.h:18
 msgid "size"
 msgstr ""
 
@@ -272,6 +276,7 @@ msgstr ""
 #: skins_mc_skin.xml.h:37 adjust.h:71 adjust.h:72 adjust.h:73 adjust.h:74
 #: mc_pictureplayer_settings.h:24 mc_audioplayer_settings.h:24
 #: plugins_mc_skin.xml.h:38 skins_mc_skin.xml.h:38
+#: mc_videoplayer_settings.h:19
 msgid "reverse size"
 msgstr ""
 
@@ -280,6 +285,7 @@ msgstr ""
 #: skins_mc_skin.xml.h:11 adjust.h:72 adjust.h:73 adjust.h:74 adjust.h:75
 #: mc_pictureplayer_settings.h:25 mc_audioplayer_settings.h:25
 #: plugins_mc_skin.xml.h:12 skins_mc_skin.xml.h:12
+#: mc_videoplayer_settings.h:20
 msgid "date"
 msgstr ""
 
@@ -288,6 +294,7 @@ msgstr ""
 #: skins_mc_skin.xml.h:36 adjust.h:73 adjust.h:74 adjust.h:75 adjust.h:76
 #: mc_pictureplayer_settings.h:26 mc_audioplayer_settings.h:26
 #: plugins_mc_skin.xml.h:37 skins_mc_skin.xml.h:37
+#: mc_videoplayer_settings.h:21
 msgid "reverse date"
 msgstr ""
 
@@ -504,7 +511,8 @@ msgstr ""
 #: mc_global.h:500 mc_global.h:726 mc_global.h:728 mc_global.h:504
 #: mc_global.h:736 mc_global.h:503 mc_global.h:735 play.h:510 global.h:3909
 #: global.h:3930 global.h:3962 global.h:3963 global.h:3965 global.h:3995
-#: global.h:4009
+#: global.h:4009 mc_global.h:560 mc_global.h:793 mc_videoplayer.h:368
+#: mc_videoplayer.h:453
 msgid "Message"
 msgstr ""
 
@@ -608,7 +616,8 @@ msgstr ""
 #: mc_global.h:728 mc_global.h:504 mc_global.h:736 mc_global.h:503
 #: mc_global.h:735 global.h:79 play.h:510 global.h:82 global.h:3909
 #: global.h:3930 global.h:3962 global.h:3963 global.h:3965 global.h:100
-#: global.h:3995 global.h:114 global.h:4009
+#: global.h:3995 global.h:114 global.h:4009 mc_global.h:560 mc_global.h:793
+#: mc_videoplayer.h:368 mc_videoplayer.h:453
 msgid "OK"
 msgstr ""
 
@@ -1162,7 +1171,8 @@ msgstr ""
 #: mc_videoplayer.h:298 mc_videoplayer.h:417 mc_audioplayer.h:246
 #: mc_audioplayer.h:277 mc_audioplayer.h:383 mc_videoplayer.h:262
 #: mc_videoplayer.h:299 mc_videoplayer.h:418 plugins_mc_skin.xml.h:21
-#: skins_mc_skin.xml.h:21 mc_global.h:142 mc_global.h:198
+#: skins_mc_skin.xml.h:21 mc_global.h:142 mc_global.h:198 mc_global.h:147
+#: mc_global.h:219 mc_videoplayer.h:427
 msgid "Filelist-Mode"
 msgstr ""
 
@@ -1170,7 +1180,7 @@ msgstr ""
 #: mc_videoplayer.h:296 plugins_mc_skin.xml.h:33 skins_mc_skin.xml.h:33
 #: mc_audioplayer.h:277 mc_videoplayer.h:299 mc_audioplayer.h:278
 #: mc_videoplayer.h:300 plugins_mc_skin.xml.h:34 skins_mc_skin.xml.h:34
-#: mc_global.h:334 mc_global.h:362
+#: mc_global.h:334 mc_global.h:362 mc_global.h:355 mc_global.h:383
 msgid "Random"
 msgstr ""
 
@@ -1179,7 +1189,8 @@ msgstr ""
 #: mc_videoplayer.h:328 mc_audioplayer.h:295 mc_videoplayer.h:331
 #: mc_audioplayer.h:296 mc_videoplayer.h:332 mc_global.h:678 mc_global.h:692
 #: mc_global.h:477 mc_global.h:679 mc_global.h:693 mc_global.h:683
-#: mc_global.h:697 mc_global.h:682 mc_global.h:696
+#: mc_global.h:697 mc_global.h:682 mc_global.h:696 mc_global.h:498
+#: mc_global.h:719 mc_global.h:733 mc_videoplayer.h:333
 msgid "Playlist-Mode"
 msgstr ""
 
@@ -1192,7 +1203,8 @@ msgstr ""
 #: mc_videoplayer.h:443 mc_audioplayer.h:315 mc_audioplayer.h:404
 #: mc_videoplayer.h:359 mc_videoplayer.h:444 mc_global.h:499 mc_global.h:725
 #: mc_global.h:500 mc_global.h:726 mc_global.h:728 mc_global.h:504
-#: mc_global.h:736 mc_global.h:503 mc_global.h:735 play.h:510
+#: mc_global.h:736 mc_global.h:503 mc_global.h:735 play.h:510 mc_global.h:560
+#: mc_global.h:793 mc_videoplayer.h:368 mc_videoplayer.h:453
 msgid "Can't start playback !"
 msgstr ""
 
@@ -1202,7 +1214,7 @@ msgstr ""
 #: skins_panel_skin.xml.h:33 plugins_panel_skin.xml.h:34
 #: skins_panel_skin.xml.h:34 mc_pictureplayer_settings.h:29
 #: mc_audioplayer_settings.h:29 plugins_mc_skin.xml.h:14
-#: skins_mc_skin.xml.h:14
+#: skins_mc_skin.xml.h:14 mc_videoplayer_settings.h:24
 msgid "default"
 msgstr ""
 
@@ -1210,7 +1222,7 @@ msgstr ""
 #: mc_videoplayer_settings.h:24 plugins_mc_skin.xml.h:10
 #: skins_mc_skin.xml.h:10 mc_pictureplayer_settings.h:30
 #: mc_audioplayer_settings.h:30 plugins_mc_skin.xml.h:11
-#: skins_mc_skin.xml.h:11
+#: skins_mc_skin.xml.h:11 mc_videoplayer_settings.h:25
 msgid "big"
 msgstr ""
 
@@ -1218,7 +1230,7 @@ msgstr ""
 #: mc_videoplayer_settings.h:25 plugins_mc_skin.xml.h:21
 #: skins_mc_skin.xml.h:21 mc_pictureplayer_settings.h:31
 #: mc_audioplayer_settings.h:31 plugins_mc_skin.xml.h:22
-#: skins_mc_skin.xml.h:22
+#: skins_mc_skin.xml.h:22 mc_videoplayer_settings.h:26
 msgid "fullcover"
 msgstr ""
 
@@ -1226,13 +1238,13 @@ msgstr ""
 #: mc_videoplayer_settings.h:26 plugins_mc_skin.xml.h:14
 #: skins_mc_skin.xml.h:14 mc_pictureplayer_settings.h:32
 #: mc_audioplayer_settings.h:32 plugins_mc_skin.xml.h:15
-#: skins_mc_skin.xml.h:15
+#: skins_mc_skin.xml.h:15 mc_videoplayer_settings.h:27
 msgid "details"
 msgstr ""
 
 #: mc_audioplayer_settings.h:31 mc_pictureplayer_settings.h:28
 #: mc_videoplayer_settings.h:27 mc_pictureplayer_settings.h:33
-#: mc_audioplayer_settings.h:33
+#: mc_audioplayer_settings.h:33 mc_videoplayer_settings.h:28
 msgid "smal"
 msgstr ""
 
@@ -1241,10 +1253,12 @@ msgstr ""
 #: skins_mc_skin.xml.h:16 adjust.h:63 adjust.h:64
 #: mc_pictureplayer_settings.h:34 mc_audioplayer_settings.h:34
 #: plugins_mc_skin.xml.h:17 skins_mc_skin.xml.h:17
+#: mc_videoplayer_settings.h:29
 msgid "fast"
 msgstr ""
 
 #: mc_global.h:322 mc_global.h:350 mc_global.h:323 mc_global.h:351
+#: mc_global.h:344 mc_global.h:372
 msgid "Random-On"
 msgstr ""
 
