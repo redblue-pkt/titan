@@ -1600,6 +1600,15 @@ int resetvmpeg(struct dvbdev* node)
 	return ret;
 }
 
+void resettvpic()
+{
+	if(status.tvpic == 1 && status.aktservice != NULL)
+	{
+		status.tvpic = 0;
+		resetvmpeg(status.aktservice->videodev);
+	}
+}
+
 int setcontrast(int value)
 {
 	debug(1000, "in");

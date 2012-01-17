@@ -1267,6 +1267,7 @@ end:
 	clearscreen(channellist);
 	if(newmodus == 1) goto start;
 	status.channelswitch = 0;
+	resettvpic();
 	return ret;
 }
 

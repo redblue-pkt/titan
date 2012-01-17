@@ -960,13 +960,15 @@ struct status
 	struct skin* rcowner;
 	// timerstuktur fuer autores
 	struct stimerthread* restimer;
-	//spindown USB/HDD
+	// spindown USB/HDD
 	struct hddparm hdd[3];
 	struct stimerthread* addhddall;
-	//save old rotor position
+	// save old rotor position
 	int rotoroldorbitalpos;
 	// security check
 	int security;
+	// set to 1 if tvpic size is changed
+	int tvpic;
 } status;
 
 struct fb
