@@ -8,7 +8,7 @@ void screenmc_audioplayer_settings()
 	struct skin* listbox = getscreennode(mc_audioplayer_settings, "listbox");
 	struct skin* dirsort = getscreennode(mc_audioplayer_settings, "sort");
 	struct skin* view = getscreennode(mc_audioplayer_settings, "view");
-	struct skin* autostart_playlist = getscreennode(mc_audioplayer_settings, "autostart_playlist");
+	struct skin* ap_autostart_playlist = getscreennode(mc_audioplayer_settings, "autostart_playlist");
 	
 //	struct skin* dimmer = getscreennode(mc_audioplayer_settings, "dimmer");
 //	struct skin* dimmer_delay = getscreennode(mc_audioplayer_settings, "dimmer_delay");
@@ -34,9 +34,9 @@ void screenmc_audioplayer_settings()
 	addchoicebox(view, "5", _("fast"));
 	setchoiceboxselection(view, getconfig("view", NULL));
 
-	addchoicebox(autostart_playlist, "0", _("no"));	
-	addchoicebox(autostart_playlist, "1", _("yes"));
-	setchoiceboxselection(autostart_playlist, getconfig("autostart_playlist", NULL));
+	addchoicebox(ap_autostart_playlist, "0", _("no"));	
+	addchoicebox(ap_autostart_playlist, "1", _("yes"));
+	setchoiceboxselection(ap_autostart_playlist, getconfig("ap_autostart_playlist", NULL));
 
 //	addchoicebox(dimmer, "0", _("no"));	
 //	addchoicebox(dimmer, "1", _("yes"));
@@ -73,7 +73,7 @@ void screenmc_audioplayer_settings()
 		{
 			addconfigscreencheck("dirsort", dirsort, NULL);
 			addconfigscreencheck("view", view, NULL);
-			addconfigscreencheck("autostart_playlist", autostart_playlist, NULL);						
+			addconfigscreencheck("ap_autostart_playlist", ap_autostart_playlist, NULL);						
 //			addconfigscreencheck("dimmer", dimmer, NULL);
 //			addconfigscreencheck("dimmer_delay", dimmer_delay, NULL);
 //			addconfigscreencheck("autosleep", autosleep, NULL);
