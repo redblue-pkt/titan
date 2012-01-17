@@ -21,7 +21,8 @@ void changevolume(int direction, struct skin* volumebar)
 	}
 }
 
-void screenvolume(int direction)
+//flag 2 = no framebuffer lock
+void screenvolume(int direction, int flag)
 {
 	int rcret = 0, tmpscreencalc = 0;
 	struct skin* framebuffer = getscreen("framebuffer");
@@ -34,7 +35,12 @@ void screenvolume(int direction)
 	delrc(getrcconfigint("rcmute", NULL), NULL, NULL);
 
 	if(status.mute == 1)
-		screenmute(NULL, NULL, 1);
+	{
+		if(flag == 2)
+			screenmute(NULL, NULL, 3);
+		else
+			screenmute(NULL, NULL, 1);
+	}
 
 	changevolume(direction, volumebar);
 
@@ -43,12 +49,18 @@ void screenvolume(int direction)
 
 	tmpscreencalc = status.screencalc;
 	status.screencalc = 0;
-	drawscreen(volume, 0);
+	drawscreen(volume, flag);
 	status.screencalc = tmpscreencalc;
 
 	while(1)
 	{
-		rcret = waitrc(volume, getconfigint("volbartimeout", NULL) * 1000, 0);
+		if(flag == 2)
+		{
+			rcret = RCTIMEOUT;
+			usleep(300000);
+		}
+		else
+			rcret = waitrc(volume, getconfigint("volbartimeout", NULL) * 1000, 0);
 
 		if(rcret == RCTIMEOUT) break;
 		//if(rcret == getrcconfigint("rcexit", NULL)) break;
@@ -58,7 +70,7 @@ void screenvolume(int direction)
 			changevolume(0, volumebar);
 			tmpscreencalc = status.screencalc;
 			status.screencalc = 0;
-			drawscreen(volume, 0);
+			drawscreen(volume, flag);
 			status.screencalc = tmpscreencalc;
 			continue;
 		}
@@ -67,7 +79,7 @@ void screenvolume(int direction)
 			changevolume(1, volumebar);
 			tmpscreencalc = status.screencalc;
 			status.screencalc = 0;
-			drawscreen(volume, 0);
+			drawscreen(volume, flag);
 			status.screencalc = tmpscreencalc;
 			continue;
 		}
@@ -82,14 +94,18 @@ void screenvolume(int direction)
 	blitfb();
 }
 
-void screenvolumeup()
+//screen and node are needed if funktion is called from rc handle
+//flag 2 = no framebuffer lock
+void screenvolumeup(struct skin* screen, struct skin* node, int flag)
 {
-	screenvolume(0);
+	screenvolume(0, flag);
 }
 
-void screenvolumedown()
+//screen and node are needed if funktion is called from rc handle
+//flag 2 = no framebuffer lock
+void screenvolumedown(struct skin* screen, struct skin* node, int flag)
 {
-	screenvolume(1);
+	screenvolume(1, flag);
 }
 
 #endif
