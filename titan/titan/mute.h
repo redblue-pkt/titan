@@ -2,7 +2,9 @@
 #define MUTE_H
 
 //screen and node are needed if funktion is called from rc handle
+//flag 1 = no blit
 //flag 2 = no framebuffer lock
+//flag 3 = no framebuffer lock and no blit
 void screenmute(struct skin* screen, struct skin* node, int flag)
 {
 	int tmpscreencalc = 0;
@@ -29,7 +31,7 @@ void screenmute(struct skin* screen, struct skin* node, int flag)
 		status.drawallwaysbg[0] = savescreen(mute);
 		tmpscreencalc = status.screencalc;
 		status.screencalc = 0;
-		if(flag == 2)
+		if(flag == 2 || flag == 3)
 			drawscreen(mute, 2);
 		else
 			drawscreen(mute, 0);
@@ -41,7 +43,7 @@ void screenmute(struct skin* screen, struct skin* node, int flag)
 	{
 		status.mute = 0;
 		setmute(0);
-		if(flag == 2)
+		if(flag == 2 || flag == 3)
 			clearscreennolock(mute);
 		else
 			clearscreen(mute);
