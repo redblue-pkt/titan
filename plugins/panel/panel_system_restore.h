@@ -63,9 +63,19 @@ void screenpanel_system_restore()
 				drawscreen(panel_restore, 0);
 
 				writeallconfig(1);
-				tmpstr = command("/sbin/settings.sh titan backup");
-				free(tmpstr); tmpstr = NULL;
+				
+				char* version = NULL;
+				version = command("cat /etc/version");
 
+				char* cmd = NULL;
+				cmd = ostrcat(cmd, "/sbin/settings.sh titan backup update ", 1, 0);
+				cmd = ostrcat(cmd, version, 1, 0);
+											
+				tmpstr = command(cmd);
+				free(tmpstr); tmpstr = NULL;
+				free(version); version = NULL;
+				free(cmd); cmd = NULL;
+				
 				changetitle(panel_restore, _("Backup / Restore Settings"));
 				changetext(info, _(infotext));
 				info->textposx = 0;
