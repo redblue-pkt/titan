@@ -589,7 +589,7 @@ char* websetmute(char* param)
 	buf = ostrcat(buf, "</center></body></html>", 1, 0);
 
 	if(mute != status.mute)
-		screenmute(0);
+		screenmute(NULL, NULL, 0);
 	
 	return buf;
 }
@@ -651,7 +651,7 @@ char* websetvol(char* param)
 	{
 		setvol(vol);
 		if(status.mute == 1)
-			screenmute(0);
+			screenmute(NULL, NULL, 0);
 	}
 	return buf;
 }
