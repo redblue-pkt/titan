@@ -1569,12 +1569,35 @@ int setvmpeg(struct dvbdev* node, int value, int flag)
 //flag 1: wh = height
 int setvmpegrect(struct dvbdev* node, int left, int top, int wh, int flag)
 {
-	setvmpeg(node, left, 0);
-	setvmpeg(node, top, 1);
+	int ret = 0;
+	
 	if(flag == 0)
-		return setvmpeg(node, wh, 2);
+	{
+		ret = setvmpeg(node, wh, 2);
+		ret = setvmpeg(node, wh / 1.4, 3);
+	}
 	if(flag == 1)
-		return setvmpeg(node, wh, 3);
+	{
+		ret = setvmpeg(node, wh, 3);
+		ret = setvmpeg(node, wh * 1.3, 2);
+	}
+		
+	ret = setvmpeg(node, left, 0);
+	ret = setvmpeg(node, top, 1);
+	
+	return ret;
+}
+
+int resetvmpeg(struct dvbdev* node)
+{
+	int ret = 0;
+		
+	ret = setvmpeg(node, 0, 0);
+	ret = setvmpeg(node, 0, 1);
+	ret = setvmpeg(node, 0, 2);
+	ret = setvmpeg(node, 0, 3);
+	
+	return ret;
 }
 
 int setcontrast(int value)
