@@ -155,7 +155,8 @@ msgstr ""
 #: mc_global.h:735 global.h:79 play.h:510 global.h:82 global.h:3909
 #: global.h:3930 global.h:3962 global.h:3963 global.h:3965 global.h:100
 #: global.h:3995 global.h:114 global.h:4009 mc_global.h:560 mc_global.h:793
-#: mc_videoplayer.h:368 mc_videoplayer.h:453
+#: mc_videoplayer.h:368 mc_videoplayer.h:453 panel_system_restore.h:74
+#: panel_system_restore.h:79
 msgid "EXIT"
 msgstr ""
 
@@ -512,7 +513,7 @@ msgstr ""
 #: mc_global.h:736 mc_global.h:503 mc_global.h:735 play.h:510 global.h:3909
 #: global.h:3930 global.h:3962 global.h:3963 global.h:3965 global.h:3995
 #: global.h:4009 mc_global.h:560 mc_global.h:793 mc_videoplayer.h:368
-#: mc_videoplayer.h:453
+#: mc_videoplayer.h:453 panel_system_restore.h:74
 msgid "Message"
 msgstr ""
 
@@ -617,7 +618,8 @@ msgstr ""
 #: mc_global.h:735 global.h:79 play.h:510 global.h:82 global.h:3909
 #: global.h:3930 global.h:3962 global.h:3963 global.h:3965 global.h:100
 #: global.h:3995 global.h:114 global.h:4009 mc_global.h:560 mc_global.h:793
-#: mc_videoplayer.h:368 mc_videoplayer.h:453
+#: mc_videoplayer.h:368 mc_videoplayer.h:453 panel_system_restore.h:74
+#: panel_system_restore.h:79
 msgid "OK"
 msgstr ""
 
@@ -2065,11 +2067,11 @@ msgid ""
 "Please wait..."
 msgstr ""
 
-#: panel_system_restore.h:78
+#: panel_system_restore.h:78 panel_system_restore.h:79
 msgid "BACKUP ERROR"
 msgstr ""
 
-#: panel_system_restore.h:78
+#: panel_system_restore.h:78 panel_system_restore.h:79
 msgid ""
 "A record hdd or a swapstick must be mounted!\n"
 "\n"
@@ -7015,4 +7017,8 @@ msgstr ""
 
 #: diseqcconfig.h:223
 msgid "south"
+msgstr ""
+
+#: panel_system_restore.h:74
+msgid "Backup created successfully"
 msgstr ""
