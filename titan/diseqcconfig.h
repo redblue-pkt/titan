@@ -257,8 +257,8 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 		addconfigscreentmpcheck(diseqcrepeat->name, diseqcrepeat, "1");
 		addconfigscreentmpcheck(uncommittedcmd->name, uncommittedcmd, "0");
 		addconfigscreentmpcheck(rotorpos->name, rotorpos, "000");
-		addconfigscreentmpcheck(latitude->name, latitude, "000");
-		addconfigscreentmpcheck(longitude->name, longitude, "000");
+		addconfigscreentmpcheck(latitude->name, latitude, "000.000");
+		addconfigscreentmpcheck(longitude->name, longitude, "000.000");
 		addconfigscreentmpcheck(latpos->name, latpos, "0");
 		addconfigscreentmpcheck(longpos->name, longpos, "0");
 
