@@ -780,7 +780,7 @@ void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int
 		fediseqcsendmastercmd(node, &cmd, 100);
 	}
 
-	if(flag == 8 || flag == 11) && (orbitalpos == 0 || status.rotoroldorbitalpos == 0 || orbitalpos != status.rotoroldorbitalpos))
+	if((flag == 8 || flag == 11) && (orbitalpos == 0 || status.rotoroldorbitalpos == 0 || orbitalpos != status.rotoroldorbitalpos))
 	{
 		fesetvoltage(node, SEC_VOLTAGE_18, 15);
 		fesettone(node, SEC_TONE_OFF, 15);
