@@ -50,6 +50,7 @@
 <node name=sort type=choicebox parent=listbox valign=middle posx=0 text="Sort" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=view type=choicebox parent=listbox valign=middle posx=0 text="View" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=imdb_directory type=choicebox parent=listbox valign=middle posx=0 text="Imdb Directory" bordercol=bordercol bordersize=1 width=100% height=25>
+<node name=autostart_playlist type=choicebox parent=listbox valign=middle posx=0 text="Autostart Playlist" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=b1 text="OK" halign=center valign=center bordercol=bgcol bordersize=0 posx=20% posy=90% width=150 height=30/>
 <node name=b1 text="OK" halign=center valign=center bordercol=okcol bordersize=2 posx=20% posy=95% width=150 height=2/>
 <node name=b2 text="EXIT" halign=center valign=center bordercol=bgcol bordersize=0 posx=45% posy=90% width=150 height=30/>

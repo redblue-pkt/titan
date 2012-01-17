@@ -38,10 +38,10 @@ void screenmc_videoplayer()
 
 	// set allowed filemask
 	char* filemask = NULL;
-	if(status.expertmodus > 0)
-		filemask = ostrcat("*.m3u *.ifo *.rar *.iso *.img *.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.pls *.trp *.ts *.vdr *.vob *.wmv *.rm", NULL, 0, 0);
+	if((status.expertmodus > 0) || (file_exist("/var/swap/etc/.mcfull")))
+		filemask = ostrcat("*.m3u *.pls *.ifo *.rar *.iso *.img *.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", NULL, 0, 0);
 	else
-		filemask = ostrcat("*.avi *.mkv *.mpg *.mpeg *.ts", NULL, 0, 0);
+		filemask = ostrcat("*.m3u *.pls *.avi *.mkv *.mpg *.mpeg *.ts", NULL, 0, 0);
 	
 	// disable global transparent/hangtime
 	setfbtransparent(255);
@@ -63,7 +63,7 @@ void screenmc_videoplayer()
 	while(1)
 	{
 		rcret = waitrc(apskin, rcwait, 0);
-		debug(50, "while status play=%d", status.play);
+//		debug(50, "while status play=%d", status.play);
 
 		if((status.play == 1) || (status.playspeed != 0))
 		{
@@ -150,12 +150,12 @@ void screenmc_videoplayer()
 			if((status.play == 1) || (status.pause == 1))
 				playrcpause(filename, &playinfobarstatus, &playinfobarcount, flag);
 		}
-		else if((rcret == getrcconfigint("rcchdown", NULL)) || (rcret == getrcconfigint("rcprev", NULL)))
+		else if(rcret == getrcconfigint("rcnext", NULL))
 		{
 			if(status.play == 1)
 				eof = 1;
 		}
-		else if((rcret == getrcconfigint("rcchup", NULL)) || (rcret == getrcconfigint("rcnext", NULL)))
+		else if(rcret == getrcconfigint("rcprev", NULL))
 		{
 			if(status.play == 1)
 				eof = 2;
@@ -321,12 +321,13 @@ void screenmc_videoplayer()
 			playinfobarstatus = 1;
 			status.playspeed = 0;
 			status.pause = 0;
-			status.play = 0;
-			playlist = 0;
+//			status.play = 0;
+//			playlist = 0;
 			playinfobarcount = 0;
 
 			if(playlist == 1 && listbox->select != NULL)
 			{
+				debug(50, "listbox->select->name: %s", listbox->select->name);
 				filename = ostrcat("", listbox->select->name, 0, 0);
 
 				changetext(b2, _("Playlist-Mode"));
@@ -345,7 +346,15 @@ void screenmc_videoplayer()
 
 				delownerrc(apskin);
 				setfbtransparent(255);
-
+//////////
+				servicestop(status.aktservice, 1, 1);
+				drawscreen(skin, 0);
+				setfbtransparent(255);
+				debug(50, "check");
+				debug(50, "autostart_playlist: %d", getconfigint("vp_autostart_playlist", NULL));
+				debug(50, "status.play: %d", status.play);
+				debug(50, "flag: %d", flag);
+///////////				
 				playerret = playerstart(filename);
 				playwritevfd(filename);
 

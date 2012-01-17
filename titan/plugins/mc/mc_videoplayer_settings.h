@@ -11,6 +11,7 @@ void screenmc_videoplayer_settings()
 	struct skin* dirsort = getscreennode(mc_videoplayer_settings, "sort");
 	struct skin* view = getscreennode(mc_videoplayer_settings, "view");
 	struct skin* imdb_directory = getscreennode(mc_videoplayer_settings, "sound");
+	struct skin* vp_autostart_playlist = getscreennode(mc_videoplayer_settings, "autostart_playlist");
 
 	addchoicebox(dirsort, "0", _("alpha"));	
 	addchoicebox(dirsort, "1", _("reverse alpha"));	
@@ -27,6 +28,10 @@ void screenmc_videoplayer_settings()
 	addchoicebox(view, "4", _("smal"));
 	addchoicebox(view, "5", _("fast"));
 	setchoiceboxselection(view, getconfig("view", NULL));
+
+	addchoicebox(vp_autostart_playlist, "0", _("no"));	
+	addchoicebox(vp_autostart_playlist, "1", _("yes"));
+	setchoiceboxselection(vp_autostart_playlist, getconfig("vp_autostart_playlist", NULL));
 
 	system("ls -al /media/net ; ls -al /media/usb");
 
@@ -82,6 +87,7 @@ void screenmc_videoplayer_settings()
 			addconfigscreencheck("dirsort", dirsort, NULL);
 			addconfigscreencheck("view", view, NULL);
 			addconfigscreencheck("imdb_directory", imdb_directory, NULL);
+			addconfigscreencheck("vp_autostart_playlist", vp_autostart_playlist, NULL);		
 			break;
 		}
 		else if(rcret == getrcconfigint("rcred", NULL))

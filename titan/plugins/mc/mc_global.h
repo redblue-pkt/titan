@@ -83,6 +83,9 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 
 			drawscreen(apskin, 0);
 
+				
+			int switchtofilelist = 0;
+						
 			if(status.random == 1 && status.repeat == 0)
 			{
 				int maxdirs = 0, maxfiles = 0;
@@ -103,18 +106,21 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 
 					debug(50, "listbox->aktline: %d", listbox->aktline);
 					debug(50, "listbox->linecount: %d", listbox->linecount);
+					debug(50, "*eof: %d", *eof);
+					debug(50, "flag: %d", flag);
+			
 
 					if(*eof == 0)
 					{
 						if(listbox->aktline < listbox->linecount)
 						{
 							listbox->aktline ++;
-							if(flag == 1)
-							{
-								apskin->hidden = YES;
-								delownerrc(apskin);
-								drawscreen(skin, 0);
-							}
+//							if(flag == 1)
+//							{
+//								apskin->hidden = YES;
+//								delownerrc(apskin);
+//								drawscreen(skin, 0);
+//							}
 						}
 						else
 						{
@@ -139,12 +145,15 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 
 								singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi");
 								changetext(b2, _("Filelist-Mode"));
-
-								// switch filelist
-								delownerrc(apskin);
-								addscreenrc(apskin, filelist);
-
+								writevfd("Filelist-Mode");
+								switchtofilelist = 1;
+	
+								drawscreen(skin, 0);
+								
+								// show skin
 								setfbtransparent(255);
+
+								*playlist = 0;
 							}
 							else
 							{
@@ -158,6 +167,12 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 					{
 						if(listbox->aktline < listbox->linecount)
 							listbox->aktline ++;
+							if(flag == 1)
+							{
+								//apskin->hidden = YES;
+								//delownerrc(apskin);
+								drawscreen(skin, 0);
+							}
 						else
 						{
 							status.play = 1;
@@ -176,6 +191,12 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 						else
 						{
 							listbox->aktline --;
+							if(flag == 1)
+							{
+								//apskin->hidden = YES;
+								//delownerrc(apskin);
+								drawscreen(skin, 0);
+							}
 							// workaround dont open folder on rcchup
 							*skip = 1;
 						}
@@ -183,14 +204,15 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 
 					*eof = 0;
 
-					debug(50, "filelist->aktline: %d", filelist->aktline);
-					debug(50, "filelist->linecount: %d", filelist->linecount);
-
+					debug(50, "listbox->aktline: %d", listbox->aktline);
+					debug(50, "listbox->linecount: %d", listbox->linecount);
 				}
 			}
 			delownerrc(apskin);
-			addscreenrc(apskin, listbox);
-
+			if(switchtofilelist == 0)
+				addscreenrc(apskin, listbox);
+			else
+				addscreenrc(apskin, filelist);			
 		}
 		else
 		{
@@ -484,51 +506,66 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 						// show playlist end	
 						sleep(1);
 
-						debug(50, "check");
-						debug(50, "autostart_playlist: %d", getconfigint("autostart_playlist", NULL));
-						debug(50, "status.play: %d", status.play);
-						if(getconfigint("autostart_playlist", NULL) == 1 && status.play == 0)
+						if(flag == 1  && status.play == 1)
 						{
-							debug(50, "check ok");
+							servicestop(status.aktservice, 1, 1);
+							drawscreen(skin, 0);
+							setfbtransparent(255);
+							debug(50, "check");
+							debug(50, "autostart_playlist: %d", getconfigint("vp_autostart_playlist", NULL));
+							debug(50, "status.play: %d", status.play);
+							debug(50, "flag: %d", flag);
+						}
+						else if(flag == 2  && status.play == 1)
+						{
+							addscreenrc(apskin, listbox);
+							drawscreen(apskin, 0);
+							debug(50, "check");
+							debug(50, "autostart_playlist: %d", getconfigint("ap_autostart_playlist", NULL));
+							debug(50, "status.play: %d", status.play);				
+							debug(50, "flag: %d", flag);
+						}
+			
+						if((getconfigint("vp_autostart_playlist", NULL) == 1 && flag == 1 && status.play == 0) || (getconfigint("ap_autostart_playlist", NULL) == 1 && flag == 2 && status.play == 0))
+						{
+							debug(50, "-------------- check ok titan playlist pls --------------");
 							debug(50, "playerstart: %s", *filename);
+							debug(50, "flag: %d", flag);
+			
+							if(flag == 1)
+							{
+								servicestop(status.aktservice, 1, 1);
+								drawscreen(skin, 0);
+								setfbtransparent(255);
+								debug(50, "check");
+								debug(50, "autostart_playlist: %d", getconfigint("vp_autostart_playlist", NULL));
+								debug(50, "status.play: %d", status.play);
+							}
+							else if(flag == 2)
+							{
+								addscreenrc(apskin, listbox);
+								drawscreen(apskin, 0);
+								debug(50, "check");
+								debug(50, "autostart_playlist: %d", getconfigint("ap_autostart_playlist", NULL));
+								debug(50, "status.play: %d", status.play);				
+							}
+			
 							playerret = playerstart(*filename);
-	
-							free(firsttitle), firsttitle = NULL;
 							playwritevfd(*filename);
+				
 	
 							#ifndef SIMULATE
 							if(playerret != 0)
 							{
-	
 								textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-	/*
-								writevfd("AudioPlayer Filelist-Mode");
-								if(flag == 1)
-									changetext(filelistpath, _(getconfig("mc_videoplayerpath", NULL)));
-								else if(flag == 2)
-									changetext(filelistpath, _(getconfig("mc_audioplayerpath", NULL)));
-	
-								filelist->hidden = NO;
-								listbox->hidden = YES;
-								*playlist = 0;
-								status.playspeed = 0;
-	
-								delownerrc(apskin);
-								addscreenrc(apskin, filelist);
-								drawscreen(apskin, 0);
-	
-								free(skinname), skinname = NULL;
-								return;
-	*/
-	// test
 								*eof = 1;
-	// test
 							}
 							#endif
 	
 							status.play = 1;
 						}
 						*playlist = 1;
+						free(firsttitle), firsttitle = NULL;
 					}
 				}
 			}
@@ -700,69 +737,75 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 
 			sleep(1);
 
-			delownerrc(apskin);
-			if(flag == 1)
+			if(flag == 1  && status.play == 1)
 			{
 				servicestop(status.aktservice, 1, 1);
 				drawscreen(skin, 0);
 				setfbtransparent(255);
+				debug(50, "check");
+				debug(50, "autostart_playlist: %d", getconfigint("vp_autostart_playlist", NULL));
+				debug(50, "status.play: %d", status.play);
+				debug(50, "flag: %d", flag);
 			}
-			else
+			else if(flag == 2  && status.play == 1)
 			{
 				addscreenrc(apskin, listbox);
 				drawscreen(apskin, 0);
+				debug(50, "check");
+				debug(50, "autostart_playlist: %d", getconfigint("ap_autostart_playlist", NULL));
+				debug(50, "status.play: %d", status.play);				
+				debug(50, "flag: %d", flag);
 			}
 
 			// show playlist end
-			debug(50, "check");
-			debug(50, "autostart_playlist: %d", getconfigint("autostart_playlist", NULL));
-			debug(50, "status.play: %d", status.play);
-			if(getconfigint("autostart_playlist", NULL) == 1 && status.play == 0)
+			if((getconfigint("vp_autostart_playlist", NULL) == 1 && flag == 1 && status.play == 0) || (getconfigint("ap_autostart_playlist", NULL) == 1 && flag == 2 && status.play == 0))
 			{
-				debug(50, "check ok");
+				delownerrc(apskin);
+				debug(50, "-------------- check ok m3u --------------");
 				debug(50, "playerstart: %s", *filename);
+				debug(50, "flag: %d", flag);
+
+				if(flag == 1)
+				{
+					servicestop(status.aktservice, 1, 1);
+					drawscreen(skin, 0);
+					setfbtransparent(255);
+					debug(50, "check");
+					debug(50, "autostart_playlist: %d", getconfigint("vp_autostart_playlist", NULL));
+					debug(50, "status.play: %d", status.play);
+				}
+				else if(flag == 2)
+				{
+					addscreenrc(apskin, listbox);
+					drawscreen(apskin, 0);
+					debug(50, "check");
+					debug(50, "autostart_playlist: %d", getconfigint("ap_autostart_playlist", NULL));
+					debug(50, "status.play: %d", status.play);				
+				}
+
 				playerret = playerstart(*filename);
 				playwritevfd(*filename);
-	
-				free(fileline), fileline = NULL;
-				free(firstfile), firstfile = NULL;
-				free(firsttitle), firsttitle = NULL;
-	
+				
 				//playwritevfd(*filename);
 				#ifndef SIMULATE
 					if(playerret != 0)
 					{
 						textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-	/*
-						writevfd("AudioPlayer Filelist-Mode");
-						if(flag == 1)
-							changetext(filelistpath, _(getconfig("mc_videoplayerpath", NULL)));
-						else if(flag == 2)
-							changetext(filelistpath, _(getconfig("mc_audioplayerpath", NULL)));
-	
-						filelist->hidden = NO;
-						listbox->hidden = YES;
-	
-						*playlist = 0;
-						status.playspeed = 0;
-						if(flag == 1)
-						{
-							addscreenrc(apskin, filelist);
-							drawscreen(apskin, 0);
-						}
-						return;
-	*/
-	// test
+
 						*eof = 1;
-	// test
 					}
 				#endif
 	
 				status.play = 1;
 				if(flag == 1)
 					screenplayinfobar(*filename, 0, 0);
-			}
+			}				
+
 			*playlist = 1;
+
+			free(fileline), fileline = NULL;
+			free(firstfile), firstfile = NULL;
+			free(firsttitle), firsttitle = NULL;
 		}
 		fclose(fd);
 	}
