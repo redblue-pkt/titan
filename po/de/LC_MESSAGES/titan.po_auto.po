@@ -6867,7 +6867,7 @@ msgid "press red"
 msgstr ""
 
 #: imdb.h:50 imdb.h:52 imdb.h:106 imdb.h:108 imdb.h:84 imdb.h:86 imdb.h:134
-#: imdb.h:136
+#: imdb.h:136 imdb.h:83 imdb.h:85
 msgid "Imdb Suche"
 msgstr ""
 
