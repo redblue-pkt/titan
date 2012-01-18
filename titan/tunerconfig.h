@@ -674,6 +674,12 @@ void screentunerconfig()
 				}
 			}
 		}
+		if(rcret == getrcconfigint("rcgreen", NULL))
+		{
+			clearscreen(tunerconfig);
+			screenownpos();
+			drawscreen(tunerconfig, 0);
+		}
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			ret = 1;
