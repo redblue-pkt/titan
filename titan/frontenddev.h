@@ -985,18 +985,11 @@ void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 	tmpstr = ostrcat(node->feshortname, "_diseqc_rotorpos", 0, 0);
 	rotorpos = getconfigint(tmpstr, node->feaktnr);
 	free(tmpstr); tmpstr = NULL;
-	tmpstr = ostrcat(node->feshortname, "_diseqc_latitude", 0, 0);
-	latitude = getconfigfloat(tmpstr, node->feaktnr);
-	free(tmpstr); tmpstr = NULL;
-	tmpstr = ostrcat(node->feshortname, "_diseqc_longitude", 0, 0);
-	longitude = getconfigfloat(tmpstr, node->feaktnr);
-	free(tmpstr); tmpstr = NULL;
-	tmpstr = ostrcat(node->feshortname, "_diseqc_latpos", 0, 0);
-	latpos = getconfigint(tmpstr, node->feaktnr);
-	free(tmpstr); tmpstr = NULL;
-	tmpstr = ostrcat(node->feshortname, "_diseqc_longpos", 0, 0);
-	longpos = getconfigint(tmpstr, node->feaktnr);
-	free(tmpstr); tmpstr = NULL;
+	
+	latitude = getconfigfloat("latitude", NULL);
+	longitude = getconfigfloat("longitude", NULL);
+	latpos = getconfigint("latpos", NULL);
+	longpos = getconfigint("longpos", NULL);
 
 	tmpstr = ostrcat(node->feshortname, "_diseqc", 0, 0);
 	int aktdiseqc = getconfigint(tmpstr, node->feaktnr);
