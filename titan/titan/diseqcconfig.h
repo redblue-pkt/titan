@@ -24,17 +24,13 @@ int changeuncommittedcmd(struct skin* cmdorder, char* type)
 
 }
 
-void changediseqcmode(struct skin* committedcmd, struct skin* cmdorder, struct skin* uncommittedcmd, struct skin* rotorpos, struct skin* diseqcrepeat, struct skin* latitude, struct skin* longitude, struct skin* latpos, struct skin* longpos, char *type)
+void changediseqcmode(struct skin* committedcmd, struct skin* cmdorder, struct skin* uncommittedcmd, struct skin* rotorpos, struct skin* diseqcrepeat, char *type)
 {
 	committedcmd->hidden = YES;
 	cmdorder->hidden = YES;
 	uncommittedcmd->hidden = YES;
 	rotorpos->hidden = YES;
 	diseqcrepeat->hidden = YES;
-	latitude->hidden = YES;
-	longitude->hidden = YES;
-	latpos->hidden = YES;
-	longpos->hidden = YES;
 
 	if(type == NULL || ostrcmp(type, "0") == 0 || ostrcmp(type, "1") == 0 || ostrcmp(type, "2") == 0 || ostrcmp(type, "3") == 0)
 	{
@@ -46,17 +42,10 @@ void changediseqcmode(struct skin* committedcmd, struct skin* cmdorder, struct s
 			uncommittedcmd->hidden = NO;
 		if(ostrcmp(type, "2") == 0)
 			rotorpos->hidden = NO;
-		if(ostrcmp(type, "3") == 0)
-		{
-			latitude->hidden = NO;
-			longitude->hidden = NO;
-			latpos->hidden = NO;
-			longpos->hidden = NO;
-		}
 	}
 }
 
-void changediseqc(struct skin* diseqcmode, struct skin* toneburst, struct skin* committedcmd, struct skin* cmdorder, struct skin* uncommittedcmd, struct skin* diseqcrepeat, struct skin* rotorpos, struct skin* latitude, struct skin* longitude, struct skin* latpos, struct skin* longpos, char* feshortname, char *diseqcnr)
+void changediseqc(struct skin* diseqcmode, struct skin* toneburst, struct skin* committedcmd, struct skin* cmdorder, struct skin* uncommittedcmd, struct skin* diseqcrepeat, struct skin* rotorpos, char* feshortname, char *diseqcnr)
 {
 	char* tmpstr = NULL, *tmpnr = NULL;
 	int i = 0;
@@ -109,30 +98,6 @@ void changediseqc(struct skin* diseqcmode, struct skin* toneburst, struct skin* 
 	}
 	setchoiceboxselection(rotorpos, getconfig(tmpstr, NULL));
 	free(tmpstr);
-
-	tmpstr = ostrcat(feshortname, "_diseqc_latitude", 0, 0);
-	tmpstr = ostrcat(tmpstr, diseqcnr, 1, 0);
-	changename(latitude, tmpstr);
-	changeinput(latitude, getconfig(tmpstr, NULL));
-	free(tmpstr);
-
-	tmpstr = ostrcat(feshortname, "_diseqc_longitude", 0, 0);
-	tmpstr = ostrcat(tmpstr, diseqcnr, 1, 0);
-	changename(longitude, tmpstr);
-	changeinput(longitude, getconfig(tmpstr, NULL));
-	free(tmpstr);
-
-	tmpstr = ostrcat(feshortname, "_diseqc_latpos", 0, 0);
-	tmpstr = ostrcat(tmpstr, diseqcnr, 1, 0);
-	changename(latpos, tmpstr);
-	setchoiceboxselection(latpos, getconfig(tmpstr, NULL));
-	free(tmpstr);
-
-	tmpstr = ostrcat(feshortname, "_diseqc_longpos", 0, 0);
-	tmpstr = ostrcat(tmpstr, diseqcnr, 1, 0);
-	changename(longpos, tmpstr);
-	setchoiceboxselection(longpos, getconfig(tmpstr, NULL));
-	free(tmpstr);
 }
 
 void screendiseqc(char* feshortname, char* diseqcnr)
@@ -148,10 +113,6 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 	struct skin* uncommittedcmd = getscreennode(diseqcscreen, "uncommittedcmd");
 	struct skin* diseqcrepeat = getscreennode(diseqcscreen, "diseqcrepeat");
 	struct skin* rotorpos = getscreennode(diseqcscreen, "rotorpos");
-	struct skin* latitude = getscreennode(diseqcscreen, "latitude");
-	struct skin* longitude = getscreennode(diseqcscreen, "longitude");
-	struct skin* latpos = getscreennode(diseqcscreen, "latpos");
-	struct skin* longpos = getscreennode(diseqcscreen, "longpos");
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL;
 
@@ -215,21 +176,10 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 
 	changeinput(diseqcrepeat, "1\n2\n3\n4\n5\n6");
 
-	changemask(latitude, "000.000");
-	changemask(longitude, "000.000");
-
-	changeinput(latpos, NULL);
-	addchoicebox(latpos, "0", _("north"));
-	addchoicebox(latpos, "1", _("south"));
-
-	changeinput(longpos, NULL);
-	addchoicebox(longpos, "0", _("east"));
-	addchoicebox(longpos, "1", _("west"));
-
-	changediseqc(diseqcmode, toneburst, committedcmd, cmdorder, uncommittedcmd, diseqcrepeat, rotorpos, latitude, longitude, latpos, longpos, feshortname, diseqcnr);
+	changediseqc(diseqcmode, toneburst, committedcmd, cmdorder, uncommittedcmd, diseqcrepeat, rotorpos, feshortname, diseqcnr);
 
 	tmpstr = ostrcat(feshortname, "_diseqc_mode", 0, 0);
-	changediseqcmode(committedcmd, cmdorder, uncommittedcmd, rotorpos, diseqcrepeat, latitude, longitude, latpos, longpos, getconfig(tmpstr, diseqcnr));
+	changediseqcmode(committedcmd, cmdorder, uncommittedcmd, rotorpos, diseqcrepeat, getconfig(tmpstr, diseqcnr));
 	free(tmpstr); tmpstr = NULL;
 	free(diseqcnr); diseqcnr = NULL;
 
@@ -246,7 +196,7 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 
 		if(listbox->select != NULL && listbox->select->name != NULL && strstr(listbox->select->name, "diseqc_mode") != NULL && (rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)))
 		{
-			changediseqcmode(committedcmd, cmdorder, uncommittedcmd, rotorpos, diseqcrepeat, latitude, longitude, latpos, longpos, diseqcmode->ret);
+			changediseqcmode(committedcmd, cmdorder, uncommittedcmd, rotorpos, diseqcrepeat, diseqcmode->ret);
 			changeuncommittedcmd(cmdorder, diseqcmode->ret);
 		}
 
@@ -257,16 +207,12 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 		addconfigscreentmpcheck(diseqcrepeat->name, diseqcrepeat, "1");
 		addconfigscreentmpcheck(uncommittedcmd->name, uncommittedcmd, "0");
 		addconfigscreentmpcheck(rotorpos->name, rotorpos, "000");
-		addconfigscreentmpcheck(latitude->name, latitude, "000.000");
-		addconfigscreentmpcheck(longitude->name, longitude, "000.000");
-		addconfigscreentmpcheck(latpos->name, latpos, "0");
-		addconfigscreentmpcheck(longpos->name, longpos, "0");
 
 		status.screencalc = 0;
 		drawscreen(diseqcscreen, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcok", NULL))
+		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			writeconfigtmp();
 			break;
@@ -280,15 +226,66 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 	changename(uncommittedcmd, "uncommittedcmd");
 	changename(diseqcrepeat, "diseqcrepeat");
 	changename(rotorpos, "rotorpos");
-	changename(latitude, "latitude");
-	changename(longitude, "longitude");
-	changename(latpos, "latpos");
-	changename(longpos, "longpos");
 
 	status.screencalc = 0;
 	delconfigtmpall();
 	delownerrc(diseqcscreen);
 	clearscreen(diseqcscreen);
+}
+
+void screenownpos()
+{
+	int rcret = 0;
+	struct skin* ownpos = getscreen("ownpos");
+	struct skin* listbox = getscreennode(ownpos, "listbox");
+	struct skin* latitude = getscreennode(ownpos, "latitude");
+	struct skin* longitude = getscreennode(ownpos, "longitude");
+	struct skin* latpos = getscreennode(ownpos, "latpos");
+	struct skin* longpos = getscreennode(ownpos, "longpos");
+	struct skin* tmp = NULL;
+
+	listbox->aktline = 1;
+	listbox->aktpage = 1;
+
+	changemask(latitude, "000.000");
+	changeinput(latitude, getconfig("latitude", NULL));
+
+	changemask(longitude, "000.000");
+	changeinput(longitude, getconfig("longitude", NULL));
+
+	changeinput(latpos, NULL);
+	addchoicebox(latpos, "0", _("north"));
+	addchoicebox(latpos, "1", _("south"));
+	setchoiceboxselection(latpos, getconfig("latpos", NULL));
+
+	changeinput(longpos, NULL);
+	addchoicebox(longpos, "0", _("east"));
+	addchoicebox(longpos, "1", _("west"));
+	setchoiceboxselection(latpos, getconfig("longpos", NULL));
+
+	drawscreen(ownpos, 0);
+	addscreenrc(ownpos, listbox);
+
+	tmp = listbox->select;
+	while(1)
+	{
+		addscreenrc(ownpos, tmp);
+		rcret = waitrc(ownpos, 0, 0);
+		tmp = listbox->select;
+
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			addconfigscreencheck("latitude", latitude, "000.000");
+			addconfigscreencheck("longitude", longitude, "000.000");
+			addconfigscreencheck("latpos", latpos, "0");
+			addconfigscreencheck("longpos", longpos, "0");
+			break;
+		}
+	}
+
+	delownerrc(ownpos);
+	clearscreen(ownpos);
 }
 
 #endif
