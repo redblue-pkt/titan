@@ -64,7 +64,7 @@ void LCD_Pearl1_thread()
 			} 
 			if(tmpstr3 == NULL && recmerk != NULL)
 			{
-				put = 1
+				put = 1;
 				free(recmerk);recmerk=NULL;
 			}
 			else if(tmpstr3 != NULL && recmerk == NULL)
