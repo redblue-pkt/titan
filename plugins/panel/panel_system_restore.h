@@ -64,17 +64,8 @@ void screenpanel_system_restore()
 
 				writeallconfig(1);
 				
-				char* version = NULL;
-				version = command("cat /etc/version");
-
-				char* cmd = NULL;
-				cmd = ostrcat(cmd, "/sbin/settings.sh titan backup update ", 1, 0);
-				cmd = ostrcat(cmd, version, 1, 0);
-											
-				tmpstr = command(cmd);
+				tmpstr = command("/sbin/settings.sh titan backup");
 				free(tmpstr); tmpstr = NULL;
-				free(version); version = NULL;
-				free(cmd); cmd = NULL;
 				
 				changetitle(panel_restore, _("Backup / Restore Settings"));
 				changetext(info, _(infotext));
