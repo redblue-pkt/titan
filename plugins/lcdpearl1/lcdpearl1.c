@@ -67,7 +67,7 @@ void LCD_Pearl1_thread()
 				put = 1
 				free(recmerk);recmerk=NULL;
 			}
-			else if(ostrcmp(tmpstr3, recmerk) != 0)
+			else if(tmpstr3 != NULL && recmerk == NULL)
 			{
 				free(recmerk);recmerk=NULL;
 				recmerk = ostrcat(tmpstr3, "", 0, 0);
