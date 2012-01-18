@@ -3634,7 +3634,7 @@ char* string_strip_whitechars(char *text)
 		return NULL;
 	}
 
-	text = string_removechar(text);
+//	text = string_removechar(text);
 
 	for(i = 0; text[i] != '\0'; i++)
 	{
