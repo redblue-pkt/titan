@@ -158,6 +158,7 @@ msgstr ""
 #: mc_videoplayer.h:368 mc_videoplayer.h:453 panel_system_restore.h:74
 #: panel_system_restore.h:79 panel_system_restore.h:84
 #: panel_system_restore.h:89 global.h:4032 global.h:4041
+#: panel_system_restore.h:75 panel_system_restore.h:80
 msgid "EXIT"
 msgstr ""
 
@@ -515,7 +516,7 @@ msgstr ""
 #: global.h:3930 global.h:3962 global.h:3963 global.h:3965 global.h:3995
 #: global.h:4009 mc_global.h:560 mc_global.h:793 mc_videoplayer.h:368
 #: mc_videoplayer.h:453 panel_system_restore.h:74 panel_system_restore.h:84
-#: global.h:4032 global.h:4041
+#: global.h:4032 global.h:4041 panel_system_restore.h:75
 msgid "Message"
 msgstr ""
 
@@ -623,6 +624,7 @@ msgstr ""
 #: mc_videoplayer.h:368 mc_videoplayer.h:453 panel_system_restore.h:74
 #: panel_system_restore.h:79 panel_system_restore.h:84
 #: panel_system_restore.h:89 global.h:4032 global.h:4041
+#: panel_system_restore.h:75 panel_system_restore.h:80
 msgid "OK"
 msgstr ""
 
@@ -2032,7 +2034,7 @@ msgstr ""
 
 #: panel_system_restore.h:17 panel_system_restore.h:69
 #: plugins_panel_skin.xml.h:2 skins_panel_skin.xml.h:2
-#: panel_system_restore.h:79
+#: panel_system_restore.h:79 panel_system_restore.h:70
 msgid "Backup / Restore Settings"
 msgstr ""
 
@@ -2072,12 +2074,12 @@ msgid ""
 msgstr ""
 
 #: panel_system_restore.h:78 panel_system_restore.h:79
-#: panel_system_restore.h:89
+#: panel_system_restore.h:89 panel_system_restore.h:80
 msgid "BACKUP ERROR"
 msgstr ""
 
 #: panel_system_restore.h:78 panel_system_restore.h:79
-#: panel_system_restore.h:89
+#: panel_system_restore.h:89 panel_system_restore.h:80
 msgid ""
 "A record hdd or a swapstick must be mounted!\n"
 "\n"
@@ -6696,7 +6698,7 @@ msgstr ""
 msgid "press red"
 msgstr ""
 
-#: imdb.h:50 imdb.h:52 imdb.h:106 imdb.h:108
+#: imdb.h:50 imdb.h:52 imdb.h:106 imdb.h:108 imdb.h:84 imdb.h:86
 msgid "Imdb Suche"
 msgstr ""
 
@@ -7026,5 +7028,6 @@ msgid "south"
 msgstr ""
 
 #: panel_system_restore.h:74 panel_system_restore.h:84
+#: panel_system_restore.h:75
 msgid "Backup created successfully"
 msgstr ""
