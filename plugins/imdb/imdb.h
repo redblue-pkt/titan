@@ -2,7 +2,56 @@
 #define IMDB_H
 
 extern struct skin* skin;
+/*
+char* string_striptags(char* text, int flag)
+{
+	debug(1000, "in");
+	char* p1 = NULL;
+	char* p2 = NULL;
 
+	p1 = ostrcat(p1, text, 1, 0);
+	p2 = ostrcat(p2, text, 1, 0);
+
+	int skip = 0;
+
+	int count = 0;
+	int len_filename = strlen(p1);
+	int i;
+
+	for(i = 0; (i) < len_filename; i++)
+	{
+		if(p1[i] == '<')
+		{
+			printf("1111111: < (%d)\n", i);
+			skip = 1;
+			continue;
+		}
+		else if(p1[i] == '>')
+		{
+			printf("2222222: > (%d)\n", i);
+			skip = 0;
+			continue;
+		}
+		
+		if(skip == 0)
+		{
+			printf("save (%d)\n", i);
+			p2[i] = p1[i];	
+		}
+	}
+
+	if(flag == 1)
+		free(text),text = NULL;
+	free(p1),p1 = NULL;
+	
+	printf("p2 1: %s\n", p2);
+	p2 = ostrcat(p2, '\0', 1, 0);
+	printf("p2 2: %s\n", p2);
+
+	debug(1000, "out");
+	return p2;
+}
+*/
 char* string_striptags(char* filename)
 {
 	debug(1000, "in");
@@ -31,8 +80,9 @@ char* string_striptags(char* filename)
 	}	
 
 	debug(1000, "out");
-	return strstrip(string_strip_whitechars(filename));	
-//	return strstrip(filename);	
+//	return filename;	
+//	return strstrip(string_strip_whitechars(filename));	
+	return string_strip_whitechars(strstrip(filename));	
 }
 
 char* string_resub(char* str,char* str2, char* filename)
@@ -212,7 +262,10 @@ drawscreen(imdbskin, 0);
 //	string_resub("Director:","</div>",director);	
 	string_resub("Regisseur:","</div>",director);
 	string_striptags(director);
+//	string_strip_whitechars(director);
 	printf("director: %s\n", director);
+//	director = string_skipwhitechars(director, 1);
+//	printf("director2: %s\n", director);
 	changetext(skin_director, director);
 
 
