@@ -802,8 +802,11 @@ void eventdesc(struct epg* epgnode, void *buf)
 	epgnode->subtitle = strutf8(subtitle, dsclen, 0, 0, 1, 0);
 }
 
-void epgadddesc(struct epg* epgnode, char* desc, int len)
+void epgadddesc(struct epg* epgnode, char* desc)
 {
+	int len = 0;
+	
+	if(desc != NULL) len = strlen(desc);
 	epgnode->desclen += len;
 
 	epgnode->desc = realloc(epgnode->desc, epgnode->desclen + 1);
@@ -838,7 +841,7 @@ void longeventdesc(struct epg* epgnode, unsigned char *buf)
 		memcpy(desc, (char *)&name->data, namelen);
 		desc[namelen] = '\0';
 		desc = strutf8(desc, namelen, 0, 0, 1, 0);
-		epgadddesc(epgnode, desc, namelen);
+		epgadddesc(epgnode, desc);
 		free(desc); desc = NULL;
 		p += EITLONGEVENTITEMLEN + namelen;
 
@@ -853,7 +856,7 @@ void longeventdesc(struct epg* epgnode, unsigned char *buf)
 		memcpy(desc, (char *)&value->data, valuelen);
 		desc[valuelen] = '\0';
 		desc = strutf8(desc, valuelen, 0, 0, 1, 0);
-		epgadddesc(epgnode, desc, valuelen);
+		epgadddesc(epgnode, desc);
 		free(desc); desc = NULL;
 		p += EITLONGEVENTITEMLEN + valuelen;
 	}
@@ -871,7 +874,7 @@ void longeventdesc(struct epg* epgnode, unsigned char *buf)
 		memcpy(desc, (char *)&text->data, textlen);
 		desc[textlen] = '\0';
 		desc = strutf8(desc, textlen, 0, 0, 1, 0);
-		epgadddesc(epgnode, desc, textlen);
+		epgadddesc(epgnode, desc);
 		free(desc); desc = NULL;
 	}
 
