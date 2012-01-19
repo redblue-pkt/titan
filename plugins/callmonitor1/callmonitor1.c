@@ -1,7 +1,7 @@
-#include "../../struct.h"
-#include "../../debug.h"
-#include "../../header.h"
-#include "../../list.h"
+#include "../../titan/struct.h"
+#include "../../titan/debug.h"
+#include "../../titan/header.h"
+#include "../../titan/list.h"
 #include "callmon_main.h"
 
 
