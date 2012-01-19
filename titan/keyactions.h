@@ -55,7 +55,7 @@ void screenkeyactions(int key, int flag)
 		}
 	
 		//tmpstr = ostrcat(tmpstr, "Extensions List\n", 1, 0);
-		tmpstr = ostrcat(tmpstr, "Auto Resolution\n", 1, 0);
+		tmpstr = ostrcat(tmpstr, "Resolution .. (default <-> actual)\n", 1, 0);
 		if(checkemu() == 1)
 			tmpstr = ostrcat(tmpstr, "Softcam Panel\n", 1, 0);
 		//tmpstr = ostrcat(tmpstr, "TV / Radio Switch\n", 1, 0);
