@@ -122,7 +122,7 @@ int checkrectimertime(struct rectimer* node)
 
 void copyrectimer(struct rectimer* src, struct rectimer* dst)
 {
-	dst->timestamp = src->timestamp;
+	dst->timestamp = ostrcat(src->timestamp, "", 0, 0);
 	dst->name = ostrcat(src->name, "", 0, 0);
 	dst->begin = src->begin;
 	dst->end = src->end;
@@ -270,6 +270,21 @@ struct rectimer* addrectimernode(char* line, struct rectimer* last)
 
 	debug(1000, "out");
 	return newnode;
+}
+
+struct rectimer* getrectimerbytimestamp(char* timestamp)
+{
+	struct rectimer* node = rectimer;	
+
+	while(node != NULL)
+	{
+		if(ostrcmp(node->timestamp, timestamp) == 0)
+			return node;
+
+		node = node->next;
+	}
+
+	return NULL;
 }
 
 struct rectimer* getrectimerbyservice(struct service* servicenode)

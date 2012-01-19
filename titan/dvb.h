@@ -968,6 +968,8 @@ int getptspos(int fd, off64_t startfind, unsigned long long* pts, off64_t* findp
 	ret = getpts(fd, startfind, 0, 256 * 1024, &pts1, &findpos1, dir);
 	*pts = pts1;
 	*findpos = findpos1;
+	
+	return ret;		
 }
 
 #endif
