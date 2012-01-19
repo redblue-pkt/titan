@@ -204,8 +204,8 @@ void imdb()
 //	input = screensearch("Rambo");
 	printf("input: %s\n", input);
 //	stringreplacechar(input, ' ', '%20');
-//	input = string_replace(" ", "%20", input, 1);
-	htmlencode(input);
+	input = string_replace(" ", "%20", input, 1);
+//	htmlencode(input);
 	printf("input: %s\n", input);
 
 //drawscreen(imdbskin, 0);
