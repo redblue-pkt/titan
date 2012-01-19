@@ -236,13 +236,13 @@ void playerinit(int argc, char* argv[])
 int gstbuscall(GstBus *bus, GstMessage *msg)
 {
 	int ret = 1;
-	if(!msg) return;
-	if(!m_gst_playbin) return;
+	if(!msg) return ret;
+	if(!m_gst_playbin) return ret;
 
 	gchar *sourceName = NULL;
 	GstObject *source = GST_MESSAGE_SRC(msg);
 
-	if(!GST_IS_OBJECT(source)) return;
+	if(!GST_IS_OBJECT(source)) return ret;
 	sourceName = gst_object_get_name(source);
 
 	switch(GST_MESSAGE_TYPE(msg))
@@ -263,9 +263,9 @@ int gstbuscall(GstBus *bus, GstMessage *msg)
 		case GST_MESSAGE_TAG:
 			debug(150, "gst player tag");
 			break;
-		case GST_MESSAGE_ASYNC_DONE:
-			debug(150, "gst player async done");
-			break;
+		//case GST_MESSAGE_ASYNC_DONE:
+		//	debug(150, "gst player async done");
+		//	break;
 		case GST_MESSAGE_ELEMENT:
 			debug(150, "gst player element");
 			break;
@@ -304,7 +304,7 @@ int playerisplaying()
 		GstMessage *message = NULL;
 		while((message = gst_bus_pop(bus)))
 		{
-			ret = gstBusCall(bus, message);
+			ret = gstbuscall(bus, message);
 			gst_message_unref(message);
 		}
 	}
@@ -346,7 +346,7 @@ int playerstop()
 	if(m_gst_playbin)
 	{
 		gst_element_set_state(m_gst_playbin, GST_STATE_NULL);
-		gst_object_unref(GST_OBJECT(m_gst_playbin))
+		gst_object_unref(GST_OBJECT(m_gst_playbin));
 		m_gst_playbin = 0;
 	}
 #endif
