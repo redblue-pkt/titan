@@ -17,6 +17,27 @@ char* imdbhtml_decode(char* input, int free1)
 		printf("01 %s\n",input);	
 	}
 
+	while(string_find("&gt;",input))
+	{
+		printf("00 %s\n",input);	
+		input = string_replace("&gt;", ">", input, 1);
+		printf("01 %s\n",input);	
+	}
+
+	while(string_find("&lt;",input))
+	{
+		printf("00 %s\n",input);	
+		input = string_replace("&lt;", "<", input, 1);
+		printf("01 %s\n",input);	
+	}
+	
+	while(string_find("&quot;",input))
+	{
+		printf("00 %s\n",input);	
+		input = string_replace("&quot;", "\"", input, 1);
+		printf("01 %s\n",input);	
+	}
+
 	while(string_find("&#x",input))
 	{
 		printf("11 %s\n",input);	
