@@ -2,6 +2,46 @@
 #define IMDB_H
 
 extern struct skin* skin;
+	
+char* imdbhtml_decode(char* input, int free1)
+{
+	if(input == NULL)
+	{
+		return input;
+	}
+
+	while(string_find("&amp;",input))
+	{
+		printf("00 %s\n",input);	
+		input = string_replace("&amp;", "und", input, 1);
+		printf("01 %s\n",input);	
+	}
+
+	while(string_find("&#x",input))
+	{
+		printf("11 %s\n",input);	
+		input = string_replace("&#x", "%", input, 1);
+		printf("22 %s\n",input);	
+	}
+	while(string_find("&#",input))
+	{
+		printf("33 %s\n",input);	
+		input = string_replace("&#", "%", input, 1);
+		printf("44 %s\n",input);	
+	}
+	
+	htmldecode(input,input);
+
+	while(string_find(";",input))
+	{
+		printf("55 %s\n",input);	
+		input = string_replace(";", "", input, 1);
+		printf("66 %s\n",input);	
+	}
+
+	debug(1000, "out");
+	return input;
+}
 
 char* string_striptags(char* filename)
 {
@@ -143,9 +183,8 @@ void imdb()
 //	input = screensearch("Rambo");
 	printf("input: %s\n", input);
 //	stringreplacechar(input, ' ', '%20');
-	input = string_replace(" ", "%20", input, 1);
-
-
+//	input = string_replace(" ", "%20", input, 1);
+	htmlencode(input);
 	printf("input: %s\n", input);
 
 //drawscreen(imdbskin, 0);
@@ -159,6 +198,7 @@ void imdb()
 	localfile = ostrcat("", "/tmp/cache.getMovieByTitle.html", 0, 0);
 	printf("get_ip(url): %s\n", get_ip(url));
 	search = ostrcat(apiSearch, input, 0, 0);
+	printf("search: %s\n", search);
 	gethttp(get_ip(url), search, 80, localfile, NULL, NULL);
 //	gethttp(url, search, 80, localfile, NULL, NULL);
 
@@ -199,10 +239,10 @@ void imdb()
 //	tmpstr = string_strip_whitechars(readfiletomem(localfile, 1));
 	tmpstr = readfiletomem(localfile, 1);
 
-
 	title = ostrcat(tmpstr, "", 0, 0);
 	string_resub("<title>","</title>",title);
-	strstrip(title);
+	printf("title: %s\n", title);
+	title = imdbhtml_decode(title,1);
 	printf("title: %s\n", title);
 	changetext(skin_title, title);
 
@@ -211,10 +251,9 @@ void imdb()
 //	string_resub("Director:","</div>",director);	
 	string_resub("Regisseur:","</div>",director);
 	string_striptags(director);
-//	string_strip_whitechars(director);
 	printf("director: %s\n", director);
-//	director = string_skipwhitechars(director, 1);
-//	printf("director2: %s\n", director);
+	director = imdbhtml_decode(director,1);
+	printf("director: %s\n", director);
 	changetext(skin_director, director);
 
 
@@ -228,18 +267,35 @@ void imdb()
 	printf("writers2: %s\n", writers);
 
 	string_striptags(writers);
-	printf("writers: %s\n", writers);
+	printf("writers3: %s\n", writers);
+	writers = imdbhtml_decode(writers,1);
+	printf("writers: %s\n", writers);	
 	changetext(skin_writers, writers);
-	
 ////////////////////
 
 	genre = ostrcat(tmpstr, "", 0, 0);
 	string_resub("<h5>Genre:</h5>","</div>",genre);
 	printf("genre1: %s\n", genre);
 	string_striptags(genre);
+	printf("genre2: %s\n", genre);
+	genre = imdbhtml_decode(genre,1);
 	printf("genre: %s\n", genre);
 	changetext(skin_genre, genre);
 
+/*
+	genre = string_replace("&#x", "%", genre, 1);
+	printf("genre2222: %s\n", genre);
+	char* genre_tmp = NULL;
+	genre = string_replace(";", " ", genre, 1);
+	genre_tmp = ostrcat(genre_tmp, genre, 1, 0);
+	printf("genre333: %s\n", genre_tmp);		
+//	free(genre),genre = NULL;
+
+	htmldecode(genre,genre_tmp);
+	printf("genre444: %s\n", genre);
+//	free(genre_tmp),genre_tmp = NULL;		
+	changetext(skin_genre, genre);
+*/	
 ////////////////////
 
 /*
@@ -267,6 +323,8 @@ void imdb()
 	printf("releasetime1: %s\n", releasetime);
 
 	string_striptags(releasetime);
+	printf("releasetime2: %s\n", releasetime);
+	releasetime = imdbhtml_decode(releasetime,1);
 	printf("releasetime: %s\n", releasetime);
 	changetext(skin_releasetime, releasetime);
 
@@ -281,8 +339,9 @@ void imdb()
 	printf("cast1: %s\n", cast);
 
 	string_striptags(cast);
-	string_strip_whitechars(cast);	
-
+	string_strip_whitechars(cast);
+	printf("cast2: %s\n", cast);
+	cast = imdbhtml_decode(cast,1);
 	printf("cast: %s\n", cast);
 	changetext(skin_cast, cast);
 	
@@ -375,11 +434,11 @@ changepic(skin_cover, "/tmp/bigcover.jpg");
 	
 	
 	plot = readfiletomem(localfile, 1);
-//htmldecode(plot, plot);
-//htmlencode(plot);
 	string_resub("<div id=\"swiki.2.1\">","</div>",plot);
 	printf("plot1: %s\n", plot);
 	string_striptags(plot);
+	printf("plot: %s\n", plot);
+	plot = imdbhtml_decode(plot,1);
 	printf("plot: %s\n", plot);
 	changetext(skin_plot, plot);	
 	
