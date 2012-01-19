@@ -17,12 +17,12 @@ char* string_striptags(char* filename)
 	{
 		if(filename[i] == '<')
 		{
-			printf("found < in string\n");
+//			printf("found < in string\n");
 			skip = 1;
 		}
 		else if(filename[i] == '>')	
 		{
-			printf("found > in string\n");
+//			printf("found > in string\n");
 			skip = 0;
 			filename[i] = ' ';
 		}
@@ -72,7 +72,7 @@ char* string_resub(char* str,char* str2, char* filename)
 	}	
 
 	debug(1000, "out");
-	return filename;
+	return strstrip(filename);
 }
 
 char* screensearch(char* input)
@@ -148,8 +148,8 @@ void imdb()
 
 	printf("input: %s\n", input);
 
-drawscreen(imdbskin, 0);
-
+//drawscreen(imdbskin, 0);
+//imdbskin->hidden = YES;
 //	input = ostrcat("", "Days+of+Summer", 0, 0);
 	url = ostrcat(url, "www.imdb.de", 1, 0);
 
@@ -392,6 +392,7 @@ changepic(skin_cover, "/tmp/bigcover.jpg");
 //	}
 
 drawscreen(imdbskin, 0);
+//imdbskin->hidden = NO;
 	struct skin* tmp = NULL;
 	while(1)
 	{
