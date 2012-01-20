@@ -1642,7 +1642,7 @@ void websendrc(char* param)
 //flag 1: get old timer
 char* webgetrectimer(char* param, int flag)
 {
-	char* buf = NULL, *buf1 = NULL, *tmpnr = NULL;
+	char* buf = NULL, *buf1 = NULL;
 	struct rectimer* node = rectimer;
 	struct channel* chnode = NULL;
 	int line = 0, maxlen = 0, pos = 0;
@@ -1738,10 +1738,7 @@ char* webgetrectimer(char* param, int flag)
 			//edit png
 			ostrcatbig(&buf, "<a target=main href=\"query?editrectimer", &maxlen, &pos);
 			ostrcatbig(&buf, "&", &maxlen, &pos);
-			tmpnr = oitoa(node);
-			ostrcatbig(&buf, tmpnr, &maxlen, &pos);
-			free(tmpnr); tmpnr = NULL;
-			//ostrcatbig(&buf, node->text, &maxlen, &pos);
+			ostrcatbig(&buf, node->timestamp, &maxlen, &pos);
 			ostrcatbig(&buf, "\">", &maxlen, &pos);
 
 			ostrcatbig(&buf, "<img border=0 src=img/edit.png width=16 height=16 alt=\"Edit Timer\"></a>", &maxlen, &pos);
@@ -1750,10 +1747,8 @@ char* webgetrectimer(char* param, int flag)
 			ostrcatbig(&buf, "<img border=0 src=img/delete.png width=16 height=16 alt=Delete onclick='delquestion(\"", &maxlen, &pos);
 			ostrcatbig(&buf, "query?delrectimer", &maxlen, &pos);
 			ostrcatbig(&buf, "&", &maxlen, &pos);
-			tmpnr = oitoa(node);
-			ostrcatbig(&buf, tmpnr, &maxlen, &pos);
-			free(tmpnr); tmpnr = NULL;
-    	//ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
+			ostrcatbig(&buf, node->timestamp, &maxlen, &pos);
+			//ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
 			//ostrcatbig(&buf, "&", &maxlen, &pos);
 			//tmpnr = oitoa(page);
 			//ostrcatbig(&buf, tmpnr, &maxlen, &pos);
@@ -1799,8 +1794,10 @@ char* webaddrectimer(char* param)
 	ostrcatbig(&buf, "<option>record<option>switch channel</select></td></tr>", &maxlen, &pos);
 
 	buf2 = malloc(MINMALLOC);
-	loctime = localtime(&akttime);
+	loctime = olocaltime(&akttime);
 	strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
+	free(loctime); loctime = NULL;
+
 	buf1 = ostrcat(buf2, "", 0, 0);
 	ostrcatbig(&buf, "<td><font class=label>Begin:&nbsp;</font></td>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"begin\" value=\"", &maxlen, &pos);
@@ -1808,8 +1805,10 @@ char* webaddrectimer(char* param)
 	ostrcatbig(&buf, "\" /></td></tr>", &maxlen, &pos);
 	free(buf1); buf1 = NULL;
 	
-	loctime = localtime(&akttime);
+	loctime = olocaltime(&akttime);
 	strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
+	free(loctime); loctime = NULL;
+	
 	buf1 = ostrcat(buf2, "", 0, 0);
 	ostrcatbig(&buf, "<td><font class=label>End:&nbsp;</font></td>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"end\" value=\"", &maxlen, &pos);
@@ -1820,7 +1819,8 @@ char* webaddrectimer(char* param)
 
 	ostrcatbig(&buf, "<td><font class=label>Channel:&nbsp;</font></td>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"channel\" value=\"", &maxlen, &pos);
-	ostrcatbig(&buf, status.aktservice->channel->name, &maxlen, &pos);
+	if(status.aktservice->channel != NULL)
+		ostrcatbig(&buf, status.aktservice->channel->name, &maxlen, &pos);
 	ostrcatbig(&buf, "\" /></td></tr>", &maxlen, &pos);
 	free(buf1); buf1 = NULL;
 	
@@ -1841,167 +1841,195 @@ char* webrectimersend(char* param)
 	struct channel *channel1;
 //	struct service *service1;
 
-	anode=strstr(param, "node=");
+	anode = strstr(param, "node=");
 	if(anode != NULL)
 		anode = anode + 5;
-	name=strstr(param, "name=");
+	name = strstr(param, "name=");
 	if(name != NULL)
 		name = name + 5;
-	begin=strstr(param, "begin=");
+	begin = strstr(param, "begin=");
 	if(begin != NULL)
 		begin = begin + 6;
-	end=strstr(param, "end=");
+	end = strstr(param, "end=");
 	if(end != NULL)
 		end = end + 4;
-	type=strstr(param, "type=");
+	type = strstr(param, "type=");
 	if(type != NULL)
 		type = type + 5;
-	channelname=strstr(param, "channel=");
+	channelname = strstr(param, "channel=");
 	if(channelname != NULL)
 		channelname = channelname + 8;
-	sid=strstr(param, "sid=");
+	sid = strstr(param, "sid=");
 	if(sid != NULL)
 		sid = sid + 4;
-	tid=strstr(param, "tid=");
+	tid = strstr(param, "tid=");
 	if(tid != NULL)
 		tid = tid + 4;
-	ext=strstr(param, "ext=");
+	ext = strstr(param, "ext=");
 	if(ext != NULL)
 		ext = ext + 4;
 	
 	string = param;	
-	while(string != NULL) {	
+	while(string != NULL)
+	{	
 		string = strchr(string, '&');
 		if(string != NULL)
 			*string++ = '\0';
 	} 
 	
 	string = channelname;	
-	while(string != NULL) {	
+	while(string != NULL)
+	{	
 		string = strchr(string, '+');
 		if(string != NULL)
 			*string++ = ' ';
 	} 
+
 	string = name;	
-	while(string != NULL) {	
+	while(string != NULL)
+	{	
 		string = strchr(string, '+');
 		if(string != NULL)
 			*string++ = ' ';
 	} 
 	
-	if((sid == NULL && tid != NULL) || (sid != NULL && tid == NULL)) {
+	if((sid == NULL && tid != NULL) || (sid != NULL && tid == NULL))
+	{
 		buf = ostrcat(buf, "ERROR: sid and tid required or only channel", 1, 0);	
 		return buf;
 	}
 		
 	
-	if(channelname != NULL && sid == NULL) {
+	if(channelname != NULL && sid == NULL)
+	{
 		channelfind = 0;
-		channel1=channel;
-		while(channel1->next != NULL) {
+		channel1 = channel;
+		while(channel1->next != NULL)
+		{
 			if(ostrcmp(channel1->name, channelname) == 0 && channel1->servicetype == 0) {
-				if(channelnottunable(channel1) == 0) {
+				if(channelnottunable(channel1) == 0)
+				{
 					channelfind = 1;
 					break;
 				}
 			}
-			channel1=channel1->next;
+			channel1 = channel1->next;
 		}
-		if(channelfind == 0) {
-			channel1=channel;		
-			while(channel1->next != NULL) {
-				if(strstr(channel1->name, channelname) != NULL && channel1->servicetype == 0) {
-					if(channelnottunable(channel1) == 0) {
+		if(channelfind == 0)
+		{
+			channel1 = channel;		
+			while(channel1->next != NULL)
+			{
+				if(strstr(channel1->name, channelname) != NULL && channel1->servicetype == 0)
+				{
+					if(channelnottunable(channel1) == 0)
+					{
 						channelfind = 1;
 						break;
 					}
 				}
-				channel1=channel1->next;
+				channel1 = channel1->next;
 			}
 		}
-		if(channelfind == 0) {
+		if(channelfind == 0)
+		{
 			buf = ostrcat(buf, "ERROR: channel not found", 1, 0);	
 			return buf;
 		}
 	}
 	
 	newnode = 0;
-	node = atoi(anode);
-	if(node == 0) {
+	node = getrectimerbytimestamp(anode);
+	if(node == NULL)
+	{
 		node = addrectimernode(NULL, NULL);
-		newnode = 1;
-		node->pincode = ostrcat("0000", NULL, 0, 0);
-		node->recpath = ostrcat(NULL, getconfig("rec_path", NULL), 0, 0);
-		node->afterevent = 0;
-		node->repeate = 0;
+		if(node != NULL)
+		{
+			newnode = 1;
+			node->pincode = ostrcat("0000", NULL, 0, 0);
+			node->recpath = ostrcat(NULL, getconfig("rec_path", NULL), 0, 0);
+			node->afterevent = 0;
+			node->repeate = 0;
+		}
 	}
 	
-	if(channelfind == 1) {
-		node->serviceid = channel1->serviceid;
-		node->servicetype = channel1->servicetype;
-		node->transponderid = channel1->transponderid;
-	}
+	if(node != NULL)
+	{
+		if(channelfind == 1)
+		{
+			node->serviceid = channel1->serviceid;
+			node->servicetype = channel1->servicetype;
+			node->transponderid = channel1->transponderid;
+		}
 	
-	if(sid != NULL && tid != NULL) {
-		node->serviceid = atoi(sid);
-		node->transponderid = atol(tid);
-		node->servicetype = 0;
-	}
+		if(sid != NULL && tid != NULL)
+		{
+			node->serviceid = atoi(sid);
+			node->transponderid = atol(tid);
+			node->servicetype = 0;
+		}
 	
-	free(node->name); node->name = NULL;
-	node->name = ostrcat(name, "", 0, 0);
+		free(node->name); node->name = NULL;
+		node->name = ostrcat(name, "", 0, 0);
 	
-	if(ostrcmp(type, "record") == 0)
-		node->justplay = 0;
-	else
-		node->justplay = 1;
+		if(ostrcmp(type, "record") == 0)
+			node->justplay = 0;
+		else
+			node->justplay = 1;
 	
-	loctime = localtime(&node->begin);
-	tmpstr = strptime(begin, "%H:%M+%d-%m-%Y", loctime); 
-	if(tmpstr != NULL)
-		node->begin = mktime(loctime);
-	node->begin -= (node->begin % 60);
-	tmpstr=NULL;
+		loctime = olocaltime(&node->begin);
+		tmpstr = strptime(begin, "%H:%M+%d-%m-%Y", loctime); 
+		free(loctime); loctime = NULL;
 
-	loctime = localtime(&node->end);
-	tmpstr = strptime(end, "%H:%M+%d-%m-%Y", loctime); 
-	if(tmpstr != NULL)
-		node->end = mktime(loctime);
-	node->end -= (node->end % 60);
-	tmpstr=NULL;
+		if(tmpstr != NULL)
+			node->begin = mktime(loctime);
+		node->begin -= (node->begin % 60);
+		tmpstr = NULL;
 
-	if(newnode == 1)
-		node->disabled = 0;
+		loctime = olocaltime(&node->end);
+		tmpstr = strptime(end, "%H:%M+%d-%m-%Y", loctime); 
+		free(loctime); loctime = NULL;
+
+		if(tmpstr != NULL)
+			node->end = mktime(loctime);
+		node->end -= (node->end % 60);
+		tmpstr = NULL;
+
+		if(newnode == 1)
+			node->disabled = 0;
 	
-	status.writerectimer = 1;
-	writerectimer(getconfig("rectimerfile", NULL), 0);
+		status.writerectimer = 1;
+		writerectimer(getconfig("rectimerfile", NULL), 0);
 		
-	if(ext == NULL)
-		buf = webgetrectimer(NULL, 0);
-	else {
-		buf = ostrcat(buf, "ok -> TimerID=", 1, 0);
-		buf = ostrcat(buf, node->timestamp, 1, 0);
+		if(ext == NULL)
+			buf = webgetrectimer(NULL, 0);
+		else
+		{
+			buf = ostrcat(buf, "ok -> TimerID=", 1, 0);
+			buf = ostrcat(buf, node->timestamp, 1, 0);
+		}
 	}
-	//ostrcatbig(&buf, param, &maxlen, &pos);
+	else
+		buf = ostrcat(buf, "Timer not ok", 1, 0);
 
 	return buf;
 }
 
 char* webeditrectimer(char* param)
 {
-	char* buf = NULL, *buf1 = NULL, *buf2 = NULL, *tmpnr = NULL;
+	char* buf = NULL, *buf1 = NULL, *buf2 = NULL;
 	int maxlen = 0, pos = 0;
 	struct rectimer *node = NULL;
 	struct tm* loctime = NULL;
-	node = atoi(param);
+
+	node = getrectimerbytimestamp(param);
+	if(node == NULL) return NULL;
 		
 	ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"titan.css\"></head>", &maxlen, &pos);
 	ostrcatbig(&buf, "<body class=body ><center>", &maxlen, &pos);
 	ostrcatbig(&buf, "<form name=F1 action=query method=get><br><br>", &maxlen, &pos);
 	ostrcatbig(&buf, "<input type=\"hidden\" name=\"rectimersend&node\" value=\"", &maxlen, &pos);
-	tmpnr = oitoa(node);
-	ostrcatbig(&buf, tmpnr, &maxlen, &pos);
-	free(tmpnr); tmpnr = NULL;
+	ostrcatbig(&buf, node->timestamp, &maxlen, &pos);
 	ostrcatbig(&buf, "\">", &maxlen, &pos);
 	ostrcatbig(&buf, "<table border=\"0\"><tr>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><font class=label>Name:&nbsp;</font></td>", &maxlen, &pos);
@@ -2040,8 +2068,10 @@ char* webeditrectimer(char* param)
 	*/
 		
 	buf2 = malloc(MINMALLOC);
-	loctime = localtime(&node->begin);
+	loctime = olocaltime(&node->begin);
 	strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
+	free(loctime); loctime = NULL;
+
 	buf1 = ostrcat(buf2, "", 0, 0);
 	ostrcatbig(&buf, "<td><font class=label>Begin:&nbsp;</font></td>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"begin\" value=\"", &maxlen, &pos);
@@ -2049,8 +2079,10 @@ char* webeditrectimer(char* param)
 	ostrcatbig(&buf, "\" /></td></tr>", &maxlen, &pos);
 	free(buf1); buf1 = NULL;
 	
-	loctime = localtime(&node->end);
+	loctime = olocaltime(&node->end);
 	strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
+	free(loctime); loctime = NULL;
+
 	buf1 = ostrcat(buf2, "", 0, 0);
 	ostrcatbig(&buf, "<td><font class=label>End:&nbsp;</font></td>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"end\" value=\"", &maxlen, &pos);
@@ -2071,32 +2103,30 @@ char* webdelrectimer(char* param)
 	struct rectimer *node = NULL;
 	int ext = 0;
 	
-	timerid=strstr(param, "timerid=");
-	if(timerid != NULL) {
+	timerid = strstr(param, "timerid=");
+	if(timerid != NULL)
+	{
 		timerid = timerid + 8;
 		ext = 1;
 	}
+
 	node = NULL;
-	if(ext == 1) {
+	if(ext == 1)
+	{
 		string = param;	
-		while(string != NULL) {	
+		while(string != NULL)
+		{	
 			string = strchr(string, '&');
 			if(string != NULL)
 				*string++ = '\0';
 		}
-		if(timerid != NULL) {
-			node = rectimer;
-			while(node != NULL) {
-				if(ostrcmp(node->timestamp, timerid) == 0)
-					break;
-				node = node->next;
-			}
-		}
+		node = getrectimerbytimestamp(timerid);
 	}
-	else {
-		node = atoi(param);
-	}
-	if(node == NULL) {
+	else
+		node = getrectimerbytimestamp(param);
+
+	if(node == NULL)
+	{
 		buf = ostrcat(buf, "ERROR: timer not found", 1, 0);	
 		return buf;
 	}
@@ -2116,11 +2146,18 @@ void putxmessage(struct stimerthread* timernode, char* captiontime, char* body)
 	struct splitstr* ret1 = NULL;
 	char* caption = NULL;
 	int count1 = 0;
-	int timeout = 0;
+	int timeout = 5;
+
 	ret1 = strsplit(captiontime, "\t", &count1);
-	caption = ostrcat(caption, (&ret1[0])->part, 1, 0);
-	timeout = atoi((&ret1[1])->part);
-	textbox(caption, body, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 280, timeout, 0);
+
+	if(count1 >= 2)
+	{
+		caption = ostrcat(caption, (&ret1[0])->part, 1, 0);
+		if((&ret1[1])->part != NULL)
+			timeout = atoi((&ret1[1])->part);
+		textbox(caption, body, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 280, timeout, 0);
+	}
+
 	free(caption); free(body); free(captiontime); free(ret1);
 }
 
@@ -2129,45 +2166,51 @@ void xmessage(char* filename)
 	char* param=NULL, *param1 = NULL, *param2 = NULL, *param3 = NULL, *param4 = NULL;
 	char* caption=NULL, *body=NULL;
 	char* timeout=NULL;
+
 	param4 = strstr(filename, "icon=");
 	param3 = strstr(filename, "charset=");
 	param2 = strstr(filename, "timeout=");
 	param1 = strstr(filename, "caption=");
 	param = strstr(filename, "body=");
 
-	if(param4 != NULL) {
+	if(param4 != NULL)
+	{
 		param4 = param4 - 1;
 		*param4 = '\0';
 		param4 = param4 + 5;
 		*param4++ = '\0';
 	}
-	if(param3 != NULL) {
+	if(param3 != NULL)
+	{
 		param3 = param3 - 1;
 		*param3 = '\0';
 		param3 = param3 + 8;
 		*param3++ = '\0';
 	}
-	if(param2 != NULL) {
+	if(param2 != NULL)
+	{
 		param2 = param2 - 1;
 		*param2 = '\0';
 		param2 = param2 + 8;
 		*param2++ = '\0';
 	}
-	if(param1 != NULL) {
+	if(param1 != NULL)
+	{
 		param1 = param1 - 1;
 		*param1 = '\0';
 		param1 = param1 + 8;
 		*param1++ = '\0';
 	}
-	if(param != NULL) {
+	if(param != NULL)
+	{
 		param = param - 1;
 		*param = '\0';
 		param = param + 5;
 		*param++ = '\0';
-		body=ostrcat(body, param, 1, 0);
+		body = ostrcat(body, param, 1, 0);
 	}
 	else
-		body=ostrcat(body, " ", 1, 0);
+		body = ostrcat(body, " ", 1, 0);
 		
 	if(param2 != NULL)
 		timeout = ostrcat(timeout, param2, 1, 0);
@@ -2180,10 +2223,9 @@ void xmessage(char* filename)
 		caption = ostrcat(caption, "XMESSAGE", 1, 0);
 	
 	caption = ostrcat(caption, "\t", 1, 0);
-	caption = ostrcat(caption, timeout, 1, 0);
+	caption = ostrcat(caption, timeout, 1, 1);
 		
-	//addtimer(&putxmessage, START, 1000, 1, (void*)caption, (void*)body, (void*)timeout);
-	addtimer(&putxmessage, START, 1000, 1,(void*)caption, (void*)body, NULL);
+	addtimer(&putxmessage, START, 1000, 1, (void*)caption, (void*)body, NULL);
 	return;
 }
 
