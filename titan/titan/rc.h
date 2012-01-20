@@ -269,6 +269,7 @@ int waitrc(struct skin* owner, unsigned int timeout, int flag)
 	}
 
 	debug(1000, "out");
+	status.lastrcaction = time(NULL);
 	return ret;
 }
 

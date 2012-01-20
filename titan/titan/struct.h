@@ -969,6 +969,8 @@ struct status
 	int security;
 	// set to 1 if tvpic size is changed
 	int tvpic;
+	// timestamp for rc action
+	time_t lastrcaction;
 } status;
 
 struct fb
