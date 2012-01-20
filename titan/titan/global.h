@@ -1374,7 +1374,7 @@ char* changefilenameext(char* filename, char* ext)
 	if(zeichen != NULL)
 	{
 		zeichen[0] = '\0';
-		newfilename = ostrcat(newfilename, ".epg", 1, 0);
+		newfilename = ostrcat(newfilename, ext, 1, 0);
 	}
 
 	return newfilename;
