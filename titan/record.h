@@ -1001,7 +1001,6 @@ int recordskipplay(struct service* servicenode, int sekunden)
 	int ret = 0;
 	unsigned long long pts = 0;
 	unsigned long long bitrate = 0;
-	char* tmpstr = NULL;
 	
 	if(servicenode == NULL) return 1;
 

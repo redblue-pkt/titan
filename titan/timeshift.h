@@ -106,7 +106,7 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
 	if(servicenode == NULL)
 	{
 		err("NULL detect");
-		return 1;
+		return;
 	}
 	
 	if(snode != NULL)
@@ -115,7 +115,7 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
 	if(fd < 0)
 	{
 		err("timeshift fd not ok");
-		return 1;
+		return;
 	}
 	
 	timeshiftbar->progresssize = 0;
