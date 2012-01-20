@@ -215,10 +215,10 @@ void timeshiftseek(int sekunden)
 				}
 				status.timeshiftseek = sekunden;
 				sekunden = sekunden - 10000;
-				recordffrwts(snode, sekunden);
+				playerffts(snode, sekunden);
 			}	
 			else {
-				recordskipplay(snode, sekunden);
+				playerseekts(snode, sekunden);
 			}
 		}
 	}

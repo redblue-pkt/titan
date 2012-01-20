@@ -114,6 +114,8 @@
 #define MAXCASERVICE 20
 #define MAXLONGKEY 10
 #define MAXSAT 64
+#define RECBSIZE 1024 * 512
+#define RECPLAYBSIZE 188 * 512
 
 //CA Defines
 #define T_SB 0x80		//sb (h<--m)

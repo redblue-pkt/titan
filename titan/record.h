@@ -1,9 +1,6 @@
 #ifndef RECORD_H
 #define RECORD_H
 
-#define RECBSIZE 1024 * 512
-#define RECPLAYBSIZE 188 * 512
-
 int recordcheckcrypt(struct dvbdev* fenode, int servicetype)
 {
 	struct service* servicenode = service;
@@ -989,91 +986,6 @@ void screenrecorddirect()
 	recordcheckret(NULL, ret, 6);
 	free(tmpstr); tmpstr = NULL;
 	free(mlistbox); mlistbox = NULL;
-}
-
-int recordskipplay(struct service* servicenode, int sekunden)
-{
-	off64_t offset;
-	off64_t bufferoffset;
-	off64_t endoffile;
-	off64_t currentpos;
-	int dupfd = -1;
-	int ret = 0;
-	unsigned long long pts = 0;
-	unsigned long long bitrate = 0;
-	
-	if(servicenode == NULL) return 1;
-
-	if(servicenode->recsrcfd < 0)
-	{
-		err("source fd not ok");
-		return 1;
-	}
-	struct service* snode = getservice(RECORDTIMESHIFT, 0);
-	
-	if(snode == NULL) return 1;
-	
-	dupfd = open(snode->recname, O_RDONLY | O_LARGEFILE);
-	if(dupfd < 0)
-	{
-		err("copy source fd not ok");
-		return 1;
-	}
-	
-	usleep(500000);
-	m_lock(&status.tsseekmutex, 15);
-	usleep(500000);
-	if(gettsinfo(dupfd, &pts, &bitrate) != 0)
-	{
-		err("cant read bitrate");
-		m_unlock(&status.tsseekmutex, 15);
-		return 1;
-	}
-	endoffile = lseek64(dupfd , -188 * 2, SEEK_END);
-	close(dupfd);
-	currentpos = lseek64(servicenode->recsrcfd, 0, SEEK_CUR);
-	ret = videoclearbuffer(status.aktservice->videodev);
-	ret = audioclearbuffer(status.aktservice->audiodev);
-
-	if(sekunden >= 0)
-	{
-		offset = (bitrate / 8) * sekunden - 5000000;
-		offset = offset - (offset % 188);
-		if(currentpos + offset > endoffile)
-		{
-			offset = endoffile - currentpos;
-			offset = offset - (offset % 188);
-		}
-	}
-	else
-	{
-		sekunden = sekunden * -1;
-		offset = (bitrate / 8) * sekunden + 5000000;
-		offset = offset - (offset % 188);
-		if(currentpos - offset < 0)
-		{
-			offset = currentpos - 188;
-			offset = offset - (offset % 188);
-			if(offset < 0)
-				offset = 0; 
-		}	
-		offset = offset * -1;
-	}
-	currentpos = lseek64(servicenode->recsrcfd, offset, SEEK_CUR);
-	m_unlock(&status.tsseekmutex, 15);
-	usleep(500000);
-	status.timeshiftseek = 0;
-	return 0;
-}
-
-void recordffrwts(struct service* servicenode, int speed)
-{
-	if(status.aktservice->videodev == NULL) return;
-	
-	if(ioctl(status.aktservice->videodev->fd, VIDEO_FAST_FORWARD, speed / 2) < 0)
-	{
-		perr("VIDEO_FAST_FORWARD");
-	}
 }
 
 #endif
