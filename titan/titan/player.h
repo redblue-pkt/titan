@@ -596,7 +596,7 @@ unsigned long long int playergetpts()
 	
 	if(m_gst_playbin)
 	{
-		gst_element_query_position(m_gst_playbin, &fmt, &pts);
+		gst_element_query_position(m_gst_playbin, &fmt, (gint64*)&pts);
 		sec = pts / 1000000000.0;
     debug(150, "Pts = %02d:%02d:%02d (%llu.0000 sec)", (int)((sec / 60) / 60) % 60, (int)(sec / 60) % 60, (int)sec % 60, sec);
 	}
