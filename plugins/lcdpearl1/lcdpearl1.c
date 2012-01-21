@@ -129,7 +129,7 @@ void init(void)
 	firststart = 1;
 	
 	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/skin.xml", 0, 0);
-	readscreen(tmpstr, 115, 1);
+	readscreen(tmpstr, 116, 1);
 	free(tmpstr); tmpstr = NULL;
 	debug(10, "LCD Pearl loadet !!!");
 	tmpstr = getconfig("lcd_pearl1_plugin_running", NULL);
@@ -141,7 +141,7 @@ void init(void)
 //wird beim entladen ausgefuehrt
 void deinit(void)
 {
-	delmarkedscreen(115);
+	delmarkedscreen(116);
 	pluginaktiv = 0;
 	system("echo ende > /tmp/titanlcd.png");
 	sleep(1);
