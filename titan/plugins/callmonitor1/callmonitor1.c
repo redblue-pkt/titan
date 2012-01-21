@@ -31,7 +31,7 @@ void init(void)
 
 	pluginmenu = child;
 	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/callmonitor1/skin.xml", 0, 0);
-	readscreen(tmpstr, 100, 1);
+	readscreen(tmpstr, 121, 1);
 	free(tmpstr); tmpstr = NULL;
 	debug(10, "CallMonitor1 Plugin loadet !!!");
 	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/callmonitor1/fritzbox_msg_new.sh start", 0, 0);
@@ -49,6 +49,7 @@ void deinit(void)
 	pluginaktiv = 0;
 	debug(10, "CallMonitor1 removed !!!");
 	free(tmpstr); tmpstr = NULL;
+	delmarkedscreen(121);
 }
 
 	//wird in der Pluginverwaltung bzw Menue ausfeguehrt
