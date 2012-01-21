@@ -665,6 +665,7 @@ firstwizzardstep1:
 	//start auto shutdown thread
 	addtimer(&checkshutdowntimer, START, 2000, -1, NULL, NULL, NULL);
 
+	status.lastrcaction = time(NULL);
 	ret = loadplugin();
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	ret = readrectimer(getconfig("rectimerfile", NULL));
