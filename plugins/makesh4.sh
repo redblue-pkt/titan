@@ -80,5 +80,6 @@ compile "permtime" "permtime" ""
 compile "imdb" "imdb" ""
 compile "lcdpearl1" "lcdpearl1" ""
 compile "callmonitor1" "callmonitor1" ""
+compile "stopifnotused" "stopifnotused" ""
 
 #rm -r networkbrowser/networkbrowser
