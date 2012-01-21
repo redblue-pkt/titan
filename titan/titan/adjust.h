@@ -26,6 +26,7 @@ void screenadjust()
 	struct skin* skip13 = getscreennode(adjust, "skip13");
 	struct skin* skip46 = getscreennode(adjust, "skip46");
 	struct skin* skip79 = getscreennode(adjust, "skip79");
+	struct skin* playertype = getscreennode(adjust, "playertype");
 	struct skin* nocamsg = getscreennode(adjust, "nocamsg");
 	struct skin* autochangechannelname = getscreennode(adjust, "autochangechannelname");
 	struct skin* def_rectimer_after = getscreennode(adjust, "def_rectimer_after");
@@ -115,6 +116,10 @@ void screenadjust()
 	changeinput(skip79, "15\n20\n30\n45\n60\n90\n120\n180\n300\n600\n900\n1200");
 	setchoiceboxselection(skip79, getconfig("skip79", NULL));
 	
+	addchoicebox(playertype, "0", _("extern"));
+	addchoicebox(playertype, "1", _("intern"));
+	setchoiceboxselection(playertype, getconfig("playertype", NULL));
+	
 	addchoicebox(nocamsg, "0", _("yes"));
 	addchoicebox(nocamsg, "1", _("no"));
 	setchoiceboxselection(nocamsg, getconfig("nocamsg", NULL));
@@ -174,6 +179,7 @@ void screenadjust()
 			addconfigscreen("skip13", skip13);
 			addconfigscreen("skip46", skip46);
 			addconfigscreen("skip79", skip79);
+			addconfigscreencheck("playertype", playertype, "0");
 			addconfigscreencheck("nocamsg", nocamsg, "0");
 			addconfigscreencheck("autochangechannelname", autochangechannelname, "0");
 			addconfigscreencheck("def_rectimer_after", def_rectimer_after, "0");

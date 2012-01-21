@@ -53,8 +53,8 @@ int playerstartts(char* file, int flag)
 			dvrclose(dvrnode, -1);
 			return 1;
 		}
-		chnode->pmtpid = pmtpid;
 		chnode = createchannel("player", 0, 0, serviceid, 99, 0, -1, -1, -1, -1, 0);
+		if(chnode != NULL) chnode->pmtpid = pmtpid;
 	}
 	else
 		chnode = status.aktservice->channel;

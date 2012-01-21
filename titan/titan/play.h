@@ -585,7 +585,8 @@ playerstart:
 
 	if(file != NULL)
 	{
-		//if(cmpfilenameext(file, ".ts") == 0) playertype = 1;
+		if(getconfigint("playertype", NULL) == 1)
+			if(cmpfilenameext(file, ".ts") == 0) playertype = 1;
 		tmpstr = ostrcat(file, "", 0, 0);
 		if(tmpstr != NULL && startfolder == 0) addconfig("rec_moviepath", dirname(tmpstr));
 		free(tmpstr); tmpstr = NULL;
