@@ -139,7 +139,9 @@ void playerpausets()
 	audiopause(status.aktservice->audiodev);
 }
 
-int playerseekts(struct service* servicenode, int sekunden)
+//flag 0: from play
+//flag 1: from timeshift
+int playerseekts(struct service* servicenode, int sekunden, int flag)
 {
 	off64_t offset;
 	off64_t bufferoffset;
@@ -149,6 +151,7 @@ int playerseekts(struct service* servicenode, int sekunden)
 	int ret = 0;
 	unsigned long long pts = 0;
 	unsigned long long bitrate = 0;
+	struct service* snode = NULL;
 	
 	if(servicenode == NULL) return 1;
 
@@ -157,7 +160,10 @@ int playerseekts(struct service* servicenode, int sekunden)
 		err("source fd not ok");
 		return 1;
 	}
-	struct service* snode = getservice(RECORDTIMESHIFT, 0);
+	if(flag == 0)
+		snode = getservice(RECORDPLAY, 0);
+	else
+		snode = getservice(RECORDTIMESHIFT, 0);
 	
 	if(snode == NULL) return 1;
 	
@@ -173,7 +179,7 @@ int playerseekts(struct service* servicenode, int sekunden)
 	usleep(500000);
 	if(gettsinfo(dupfd, &pts, &bitrate) != 0)
 	{
-		err("cant read bitrate");
+		err("cant read endpts/bitrate");
 		m_unlock(&status.tsseekmutex, 15);
 		return 1;
 	}
@@ -225,12 +231,36 @@ void playerfrts(int speed)
 
 unsigned long long int playergetptsts()
 {
-	return 0;
+	uint64_t pts = 0;
+
+	videogetpts(status.aktservice->videodev, &pts);
+	return pts;
 }
 
 double playergetlengthts()
 {
-	return 0;
+	int dupfd = -1;
+	unsigned long long pts = 0;
+	unsigned long long bitrate = 0;
+	struct service* snode = getservice(RECORDPLAY, 0);
+	
+	if(snode == NULL) return 0;
+	
+	dupfd = open(snode->recname, O_RDONLY | O_LARGEFILE);
+	if(dupfd < 0)
+	{
+		err("copy source fd not ok");
+		return 0;
+	}
+
+	if(gettsinfo(dupfd, &pts, &bitrate) != 0)
+	{
+		err("cant read endpts/bitrate");
+		return 0;
+	}
+	
+	close(dupfd);
+	return (double)pts;
 }
 
 void playergetcurtracts()
