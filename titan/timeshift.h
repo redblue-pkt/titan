@@ -200,16 +200,21 @@ void timeshiftseek(int sekunden)
 {
 	struct service* snode = getservice(RECORDPLAY, 0);
 	
-	if(status.timeshiftseek == 0) {
+	if(status.timeshiftseek == 0)
+	{
 		status.timeshiftseek = sekunden;
 		addtimer(&timeshiftscreen, START, 10000, 1, (void*)snode, NULL, NULL);
 	}
 	
-	if(status.timeshiftseek < 999999) {
+	if(status.timeshiftseek < 999999)
+	{
 		status.timeshiftseek = sekunden;
-		if(snode != 0) {
-			if(sekunden > 10000) {
-				if(sekunden >= 10032) {
+		if(snode != 0)
+		{
+			if(sekunden > 10000)
+			{
+				if(sekunden >= 10032)
+				{
 					status.timeshiftseek = 10016;
 					return;
 				}
@@ -217,8 +222,9 @@ void timeshiftseek(int sekunden)
 				sekunden = sekunden - 10000;
 				playerffts(sekunden);
 			}	
-			else {
-				playerseekts(snode, sekunden);
+			else
+			{
+				playerseekts(snode, sekunden, 1);
 			}
 		}
 	}

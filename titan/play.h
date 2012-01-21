@@ -424,7 +424,7 @@ void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 		if(pos + 10 > sec)
 		{
 			if(playertype == 1)
-				playerseekts(getservice(RECORDPLAY, 0), sec * -1);
+				playerseekts(getservice(RECORDPLAY, 0), sec * -1, 0);
 			else
 				playerseek(sec * -1);
 		}
@@ -456,7 +456,7 @@ void playrcjumpf(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 	if(status.pause == 0 && status.playspeed == 0)
 	{
 		if(playertype == 1)
-			playerseekts(getservice(RECORDPLAY, 0), sec);
+			playerseekts(getservice(RECORDPLAY, 0), sec, 0);
 		else
 			playerseek(sec);
 		*playinfobarstatus = 1;
