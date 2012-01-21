@@ -18,7 +18,7 @@ void LCD_start_lcd4linux()
 	int count = 0;
 	char* startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/start.sh", 0, 0);
 	if(firststart == 1)
-		sleep(3);
+		sleep(10);
 	while (LCD_Pearl1thread->aktion != STOP && system("ps | grep -v grep | grep lcd4linux ") != 0) {
 		system(startlcd);
 		sleep(6);
@@ -111,7 +111,7 @@ void LCD_Pearl1_main()
 	}
 	else
 	{
-		if (getrcconfigint("rcok", NULL) ==  textbox(_("Message"), _("Stop LCD Pearl1 ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("exit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0));
+		if (textbox(_("Message"), _("Stop LCD Pearl1 ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("exit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) != 2);
 		{
 			LCD_Pearl1thread->aktion = STOP;
 			system("echo ende > /tmp/titanlcd.png");
