@@ -214,14 +214,53 @@ int playerseekts(struct service* servicenode, int sekunden)
 	return 0;
 }
 
-void playerffts(struct service* servicenode, int speed)
+void playerffts(int speed)
 {
-	if(status.aktservice->videodev == NULL) return;
-	
-	if(ioctl(status.aktservice->videodev->fd, VIDEO_FAST_FORWARD, speed / 2) < 0)
-	{
-		perr("VIDEO_FAST_FORWARD");
-	}
+		videofastforward(status.aktservice->videodev, speed / 2);
+}
+
+void playerfrts(int speed)
+{
+}
+
+unsigned long long int playergetptsts()
+{
+	return 0;
+}
+
+double playergetlengthts()
+{
+	return 0;
+}
+
+void playergetcurtracts()
+{
+}
+
+char** playergettracklistts()
+{
+	return NULL;
+}
+
+void playerfreetracklistts()
+{
+}
+
+void playerchangeaudiotrackts()
+{
+}
+
+void playerchangesubtitletrackts()
+{
+}
+
+int playerisplayingts()
+{
+	return 1;
+}
+
+void playerafterendts()
+{
 }
 
 //extern player
