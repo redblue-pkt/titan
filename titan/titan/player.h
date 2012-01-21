@@ -286,6 +286,10 @@ void playerchangesubtitletrackts()
 
 int playerisplayingts()
 {
+	struct service* snode = getservice(RECORDPLAY, 0);
+	
+	if(snode == NULL)
+		return 0;
 	return 1;
 }
 
