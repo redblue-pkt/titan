@@ -15,8 +15,7 @@ char* ipklistbox(char* defaultstr, char* str, char* skinname, char* skintitle, c
 	char* tmpskinpath = NULL;
 	int rcret = 0;
 
-	if(str == NULL)
-		return 0;
+	if(str == NULL) return NULL;
 
 	if(skinname == NULL)
 	{
@@ -74,17 +73,19 @@ char* ipklistbox(char* defaultstr, char* str, char* skinname, char* skintitle, c
 		tmpck = get_ipk_listinstall();
 //		tmpck = ostrcat(tmpck, get_ipk_listinstall(), 1, 0);
 
-	for( i = 0; i < count; i++)
+	for(i = 0; i < count; i++)
 	{
 		if(showpng == 2)
 		{
 			int count3 = 0;
 			int a = 0;
 
+			free(tmpstr1); tmpstr1 = NULL;
 			tmpstr1 = ostrcat("", tmpck, 0, 0);
 
 			debug(60, "tmpck: (%d) %s", i, tmpstr1);
 
+			free(ret3); ret3 = NULL;
 			ret3 = strsplit(tmpstr1, "\n", &count3);
 			int skip = 0;
 
@@ -172,8 +173,8 @@ char* ipklistbox(char* defaultstr, char* str, char* skinname, char* skintitle, c
 //				tmp->fontcol2 = convertcol("ff0000"); 
  				tmp->textposx2 = 270;
 //				tmp->fontsize2 = 22;
-				tmp->type=TEXTBOX;
-				tmp->wrap=YES;
+				tmp->type = TEXTBOX;
+				tmp->wrap = YES;
 				tmp->hspace = 5;
 				debug(60, "showpng changed=%d", showpng);
 			}
@@ -186,7 +187,7 @@ char* ipklistbox(char* defaultstr, char* str, char* skinname, char* skintitle, c
 			{
 				if(showpng == 1)
 				{
-					if(string_find("%pluginpath%",skinpath1))
+					if(string_find("%pluginpath%", skinpath1))
 					{
 						struct splitstr* ret6 = NULL;
 						int count6 = 0;
@@ -199,8 +200,9 @@ char* ipklistbox(char* defaultstr, char* str, char* skinname, char* skintitle, c
 
 						if(!file_exist(defaultdir))
 						{
+							free(defaultdir); defaultdir = NULL;
 							defaultdir = ostrcat(getconfig("pluginpath", NULL), (&ret6[1])->part, 0, 0);
-							defaultdir = ostrcat(defaultdir, "panel_", 0, 0);
+							defaultdir = ostrcat(defaultdir, "panel_", 1, 0);
 							defaultdir = ostrcat(defaultdir, (&ret1[i])->part, 1, 0);
 							defaultdir = ostrcat(defaultdir, ".png", 1, 0);
 						}
@@ -209,18 +211,14 @@ char* ipklistbox(char* defaultstr, char* str, char* skinname, char* skintitle, c
 					else
 					{
 						defaultdir = ostrcat(getconfig("skinpath", NULL), skinpath1, 0, 0);
-						defaultdir = ostrcat(defaultdir, "/skin/panel_", 0, 0);
+						defaultdir = ostrcat(defaultdir, "/skin/panel_", 1, 0);
 						defaultdir = ostrcat(defaultdir, (&ret1[i])->part, 1, 0);
 						defaultdir = ostrcat(defaultdir, ".png", 1, 0);
 					}
 
 					debug(60, "defaultdir %s", defaultdir);
 					if(file_exist(defaultdir))
-					{
-						tmpskinpath = ostrcat("", defaultdir, 0, 0);
-						changepic(tmp, tmpskinpath);
-						free(tmpskinpath); tmpskinpath = NULL;
-					}
+						changepic(tmp, defaultdir);
 					else
 					{
 						tmpskinpath = ostrcat(skinpath1, "panel_default.png", 0, 0);
@@ -255,9 +253,7 @@ char* ipklistbox(char* defaultstr, char* str, char* skinname, char* skintitle, c
 					else
 					{
 						debug(60, "defaultdir not found use default.png");
-						tmpskinpath = ostrcat("", "skin/plugin.png", 0, 0);
-						changepic(tmp, tmpskinpath);
-						free(tmpskinpath); tmpskinpath = NULL;
+						changepic(tmp, "skin/plugin.png");
 					}
 					free(defaultdir); defaultdir = NULL;
 					free(ret4), ret4 = NULL;
@@ -277,15 +273,9 @@ char* ipklistbox(char* defaultstr, char* str, char* skinname, char* skintitle, c
 					debug(60, "(&ret5[0])->part %s", (&ret5[0])->part);
 
 					if(ostrcmp((&ret5[0])->part, "add") == 0)
-					{
-						defaultdir = ostrcat("", (&ret1[i])->part, 0, 0);
-						defaultdir = ostrcat(defaultdir, ".png", 1, 0);
-					}
+						defaultdir = ostrcat((&ret1[i])->part, ".png", 0, 0);
 					else
-					{
-						defaultdir = ostrcat("", (&ret5[0])->part, 0, 0);
-						defaultdir = ostrcat(defaultdir, ".png", 1, 0);
-					}
+						defaultdir = ostrcat((&ret5[0])->part, ".png", 0, 0);
 
 					tmpskinpath = ostrcat(skinpath1, defaultdir, 0, 0);
 					changepic(tmp, tmpskinpath);
@@ -314,15 +304,15 @@ char* ipklistbox(char* defaultstr, char* str, char* skinname, char* skintitle, c
 
 	listbox->aktpage = -1;
 
-	drawscreen(screen,0);
+	drawscreen(screen, 0);
 	addscreenrc(screen, listbox);
 
 	while (1)
 	{
 		rcret = waitrc(screen, 0, 0);
 
-		if(rcret==getrcconfigint("rcexit",NULL)) break;
-		if(listbox->select != NULL && rcret==getrcconfigint("rcok",NULL))
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(listbox->select != NULL && rcret == getrcconfigint("rcok", NULL))
 		{
 			tmpstr = ostrcat(tmpstr, listbox->select->name, 1, 0);
 			break;
