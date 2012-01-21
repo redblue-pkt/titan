@@ -8,7 +8,7 @@ void screenmc_videoplayer()
 {
 	char* filename = NULL;
 	char* currentdirectory = NULL;
-	int rcret = 0, rcwait = 1000, playerret = 0, flag = 1, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 1, playlist = 0;
+	int rcret = 0, rcwait = 1000, playerret = 0, flag = 1, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 1, playlist = 0, playertype = 0;
 	// workaround for grey background mvi
 	struct skin* blackscreen = getscreen("blackscreen");
 	drawscreen(blackscreen, 0);
@@ -70,85 +70,85 @@ void screenmc_videoplayer()
 			playinfobarcount ++;
 			if(playinfobarstatus > 0)
 			{
-				screenplayinfobar(filename, 0, 0);
+				screenplayinfobar(filename, 0, playertype, 0);
 			}
 			if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL))
 			{
 				playinfobarstatus = 0;
-				screenplayinfobar(NULL, 1, 0);
+				screenplayinfobar(NULL, 1, playertype, 0);
 			}
 		}
 
 		if(rcret == getrcconfigint("rc1", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpr(filename, skip13, &playinfobarstatus, &playinfobarcount, flag);
+				playrcjumpr(filename, skip13, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rc4", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpr(filename, skip46, &playinfobarstatus, &playinfobarcount, flag);
+				playrcjumpr(filename, skip46, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rc7", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpr(filename, skip79, &playinfobarstatus, &playinfobarcount, flag);
+				playrcjumpr(filename, skip79, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rc3", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpf(filename, skip13, &playinfobarstatus, &playinfobarcount, flag);
+				playrcjumpf(filename, skip13, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rc6", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpf(filename, skip46, &playinfobarstatus, &playinfobarcount, flag);
+				playrcjumpf(filename, skip46, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rc9", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpf(filename, skip79, &playinfobarstatus, &playinfobarcount, flag);
+				playrcjumpf(filename, skip79, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rcleft", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpr(filename, 60, &playinfobarstatus, &playinfobarcount, flag);
+				playrcjumpr(filename, 60, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rcright", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpf(filename, 60, &playinfobarstatus, &playinfobarcount, flag);
+				playrcjumpf(filename, 60, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rcdown", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpr(filename, 600, &playinfobarstatus, &playinfobarcount, flag);
+				playrcjumpr(filename, 600, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rcup", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpf(filename, 600, &playinfobarstatus, &playinfobarcount, flag);
+				playrcjumpf(filename, 600, &playinfobarstatus, &playinfobarcount, playertype,ype flag);
 		}
 
 		else if(rcret == getrcconfigint("rcff", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcff(filename, &playinfobarstatus, &playinfobarcount, flag);
+				playrcff(filename, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}	
 		else if(rcret == getrcconfigint("rcfr", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcfr(filename, &playinfobarstatus, &playinfobarcount, flag);
+				playrcfr(filename, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rcplay", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcplay(filename, &playinfobarstatus, &playinfobarcount, flag);
+				playrcplay(filename, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rcpause", NULL))
 		{
 			if((status.play == 1) || (status.pause == 1))
-				playrcpause(filename, &playinfobarstatus, &playinfobarcount, flag);
+				playrcpause(filename, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rcnext", NULL))
 		{
@@ -163,7 +163,7 @@ void screenmc_videoplayer()
 		else if(rcret == getrcconfigint("rcblue", NULL))
 		{
 			if(status.play == 1)
-				playrcblue(filename, playinfobarstatus, flag);
+				playrcblue(filename, playinfobarstatus, playertype, flag);
 			else
 			{
 				if(status.repeat == 0)
@@ -184,7 +184,7 @@ void screenmc_videoplayer()
 		else if(rcret == getrcconfigint("rcyellow", NULL))
 		{
 			if(status.play == 1)
-				playrcyellow(filename, playinfobarstatus, flag);						
+				playrcyellow(filename, playinfobarstatus, playertype, flag);						
 			else
 				playerrandom(apskin, filelist, listbox, b3, playlist, flag);
 		}
@@ -208,7 +208,7 @@ void screenmc_videoplayer()
 		else if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			if(status.play == 1)
-				playrcgreen(filename, playinfobarstatus, flag);
+				playrcgreen(filename, playinfobarstatus, playertype, flag);
 			else
 			{
 				showplaylist(apskin, filelistpath, filelist, listbox, b2, 0, &playlist, &eof, &filename, &currentdirectory, flag);
@@ -219,7 +219,7 @@ void screenmc_videoplayer()
 		else if(rcret == getrcconfigint("rctext", NULL))
 		{		
 			if(status.play == 1)
-				playrctext(filename, playinfobarstatus, flag);	
+				playrctext(filename, playinfobarstatus, playertype, flag);	
 		}
 		else if(rcret == getrcconfigint("rcmenu", NULL))
 		{
@@ -313,7 +313,7 @@ void screenmc_videoplayer()
 		{
 			if((status.play == 1) || (status.playspeed != 0))
 			{
-				playrcok(filename, playinfobarstatus, flag);
+				playrcok(filename, playinfobarstatus, playertype, flag);
 				continue;
 			}
 
@@ -456,7 +456,7 @@ void screenmc_videoplayer()
 						continue;
 					}
 				#endif
-				screenplayinfobar(filename, 0, 0);
+				screenplayinfobar(filename, 0, playertype, 0);
 				status.play = 1;
 			}
 		}
