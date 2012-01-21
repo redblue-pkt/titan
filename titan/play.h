@@ -25,7 +25,7 @@ start:
 	clearscreen(playpolicy);
 }
 
-void screenplayinfobar(char* file, int mode, int flag)
+void screenplayinfobar(char* file, int mode, int playertype, int flag)
 {
 	if((flag == 2) || (flag == 3))
 	{
@@ -54,8 +54,16 @@ void screenplayinfobar(char* file, int mode, int flag)
 	changetext(title, basename(tmpstr));
 	free(tmpstr); tmpstr = NULL;
 
-	pos = playergetpts() / 90000;
-	len = playergetlength();
+	if(playertype == 1)
+	{
+		pos = playergetptsts() / 90000;
+		len = playergetlengthts();
+	}
+	else
+	{
+		pos = playergetpts() / 90000;
+		len = playergetlength();
+	}
 	reverse = len - pos;
 
 	if(len == 0)
@@ -79,7 +87,7 @@ void screenplayinfobar(char* file, int mode, int flag)
 	drawscreen(playinfobarpic, 0);
 }
 
-void screenplaytracklist(int mode, int flag)
+void screenplaytracklist(int mode, int playertype, int flag)
 {
 	//mode 1 = audiotracks
 	//mode 2 = subtitle tracks
@@ -96,8 +104,16 @@ void screenplaytracklist(int mode, int flag)
 	char* curtrackencoding = NULL, *curtrackname = NULL;
 	char* tmpstr = NULL;
 
-	playergetcurtrac(mode, &curtrackid, &curtrackencoding, &curtrackname);
-	tracklist = playergettracklist(mode);
+	if(playertype == 1)
+	{
+		playergetcurtracts();
+		tracklist = playergettracklistts();
+	}
+	else
+	{
+		playergetcurtrac(mode, &curtrackid, &curtrackencoding, &curtrackname);
+		tracklist = playergettracklist(mode);
+	}
 	if(tracklist != NULL)
 	{
 		while(tracklist[i] != NULL)
@@ -132,12 +148,16 @@ void screenplaytracklist(int mode, int flag)
 
 	free(curtrackencoding); curtrackencoding = NULL;
 	free(curtrackname); curtrackname = NULL;
-	playerfreetracklist(tracklist); tracklist = NULL;
+	if(playertype == 1)
+		playerfreetracklistts();
+	else
+		playerfreetracklist(tracklist);
+	tracklist = NULL;
 
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
 
-	screenplayinfobar(NULL, 1, flag);
+	screenplayinfobar(NULL, 1, playertype, flag);
 	drawscreen(track, 0);
 	addscreenrc(track, listbox);
 
@@ -151,13 +171,28 @@ void screenplaytracklist(int mode, int flag)
 			if(listbox->select != NULL)
 			{
 				if(mode == 1)
-					playerchangeaudiotrack((int)listbox->select->handle);
+				{
+					if(playertype == 1)
+						playerchangeaudiotrackts();
+					else
+						playerchangeaudiotrack((int)listbox->select->handle);
+				}
 				else if(mode == 2)
 				{
 					if(listbox->select->handle1 != NULL)
-						playerchangesubtitletrack(-1);
+					{
+						if(playertype == 1)
+							playerchangesubtitletrackts();
+						else
+							playerchangesubtitletrack(-1);
+					}
 					else	
-						playerchangesubtitletrack((int)listbox->select->handle);
+					{
+						if(playertype == 1)
+							playerchangesubtitletrackts();
+						else
+							playerchangesubtitletrack((int)listbox->select->handle);
+					}
 				}
 			}
 			break;
@@ -170,78 +205,82 @@ void screenplaytracklist(int mode, int flag)
 	blitfb();
 }
 
-void playrcyellow(char* file, int playinfobarstatus, int flag)
+void playrcyellow(char* file, int playinfobarstatus, int playertype, int flag)
 {
-	screenplaytracklist(1, flag);
+	screenplaytracklist(1, playertype, flag);
 	if(playinfobarstatus > 0)
-		screenplayinfobar(file, 0, flag);
+		screenplayinfobar(file, 0, playertype, flag);
 }
 
-void playrctext(char* file, int playinfobarstatus, int flag)
+void playrctext(char* file, int playinfobarstatus, int playertype, int flag)
 {
-	screenplaytracklist(2, flag);
+	screenplaytracklist(2, playertype, flag);
 	if(playinfobarstatus > 0)
-		screenplayinfobar(file, 0, flag);
+		screenplayinfobar(file, 0, playertype, flag);
 }
 
-void playrcgreen(char* file, int playinfobarstatus, int flag)
+void playrcgreen(char* file, int playinfobarstatus, int playertype, int flag)
 {
-	screenplayinfobar(file, 1, flag);
+	screenplayinfobar(file, 1, playertype, flag);
 	screenvideomode();
 	drawscreen(skin, 0);
 	if(playinfobarstatus > 0)
-		screenplayinfobar(file, 0, flag);
+		screenplayinfobar(file, 0, playertype, flag);
 }
 
-void playrcblue(char* file, int playinfobarstatus, int flag)
+void playrcblue(char* file, int playinfobarstatus, int playertype, int flag)
 {
-	screenplayinfobar(file, 1, flag);
+	screenplayinfobar(file, 1, playertype, flag);
 	screenpowerofftimer();
 	drawscreen(skin, 0);
 	if(playinfobarstatus > 0)
-		screenplayinfobar(file, 0, flag);
+		screenplayinfobar(file, 0, playertype, flag);
 }
 
-void playrcok(char* file, int playinfobarstatus, int flag)
+void playrcok(char* file, int playinfobarstatus, int playertype, int flag)
 {
 	screenplaypolicy(file, 1);
 	drawscreen(skin, 0);
 	if(playinfobarstatus > 0)
-		screenplayinfobar(file, 0, flag);
+		screenplayinfobar(file, 0, playertype, flag);
 }
 
-void playrcred(char* file, int playinfobarstatus, int flag)
+void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 {
-	screenplayinfobar(file, 1, flag);
+	screenplayinfobar(file, 1, playertype, flag);
 	screenvideosettings();
 	drawscreen(skin, 0);
 	if(playinfobarstatus > 0)
-		screenplayinfobar(file, 0, flag);
+		screenplayinfobar(file, 0, playertype, flag);
 }
 
-void playrcinfo(char* file, int* playinfobarstatus, int* playinfobarcount, int flag)
+void playrcinfo(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
 	if(*playinfobarstatus == 0)
 	{
 		*playinfobarstatus = 1;
 		*playinfobarcount = 0;
-		screenplayinfobar(file, 0, flag);
+		screenplayinfobar(file, 0, playertype, flag);
 	}
 	else if(*playinfobarstatus == 1)
 	{
 		*playinfobarstatus = 0;
-		screenplayinfobar(NULL, 1, flag);
+		screenplayinfobar(NULL, 1, playertype, flag);
 	}
 }
 
-void playrcstop(int flag)
+void playrcstop(int playertype, int flag)
 {
-	playerstop();
+	if(playertype == 1)
+		playerstopts(0, 0);
+	else
+		playerstop();
+
 	writevfd("Player");
-	screenplayinfobar(NULL, 1, flag);
+	screenplayinfobar(NULL, 1, playertype, flag);
 }
 
-void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int flag)
+void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
 	if(status.pause == 0)
 	{
@@ -250,31 +289,40 @@ void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int fla
 		if(status.playspeed > 0)
 		{
 			status.play = 0;
-			playerff(status.playspeed);
+			if(playertype == 1)
+				playerffts(status.playspeed);
+			else	
+				playerff(status.playspeed);
 			*playinfobarstatus = 2;
 			*playinfobarcount = 0;
-			screenplayinfobar(file, 0, flag);
+			screenplayinfobar(file, 0, playertype, flag);
 		}
 		if(status.playspeed < 0)
 		{
 			status.play = 0;
-			playerfr(status.playspeed);
+			if(playertype == 1)
+				playerfrts(status.playspeed);
+			else
+				playerfr(status.playspeed);
 			*playinfobarstatus = 2;
 			*playinfobarcount = 0;
-			screenplayinfobar(file, 0, flag);
+			screenplayinfobar(file, 0, playertype, flag);
 		}
 		if(status.playspeed == 0)
 		{
 			status.play = 1;
-			playercontinue();
+			if(playertype == 1)
+				playercontinuets();
+			else
+				playercontinue();
 			*playinfobarstatus = 1;
 			*playinfobarcount = 0;
-			screenplayinfobar(file, 0, flag);
+			screenplayinfobar(file, 0, playertype, flag);
 		}
 	}
 }
 
-void playrcfr(char* file, int* playinfobarstatus, int* playinfobarcount, int flag)
+void playrcfr(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
 	if(status.pause == 0)
 	{
@@ -283,66 +331,84 @@ void playrcfr(char* file, int* playinfobarstatus, int* playinfobarcount, int fla
 		if(status.playspeed > 0)
 		{
 			status.play = 0;
-			playerff(status.playspeed);
+			if(playertype == 1)
+				playerffts(status.playspeed);
+			else
+				playerff(status.playspeed);
 			*playinfobarstatus = 2;
 			*playinfobarcount = 0;
-			screenplayinfobar(file, 0, flag);
+			screenplayinfobar(file, 0, playertype, flag);
 		}
 		if(status.playspeed < 0)
 		{
 			status.play = 0;
-			playerfr(status.playspeed);
+			if(playertype == 1)
+				playerfrts(status.playspeed);
+			else
+				playerfr(status.playspeed);
 			*playinfobarstatus = 2;
 			*playinfobarcount = 0;
-			screenplayinfobar(file, 0, flag);
+			screenplayinfobar(file, 0, playertype, flag);
 		}
 		if(status.playspeed == 0)
 		{
 			status.play = 1;
-			playercontinue();
+			if(playertype == 1)
+				playercontinuets();
+			else
+				playercontinue();
 			*playinfobarstatus = 1;
 			*playinfobarcount = 0;
-			screenplayinfobar(file, 0, flag);
+			screenplayinfobar(file, 0, playertype, flag);
 		}
 	}
 }
 
-void playrcpause(char* file, int* playinfobarstatus, int* playinfobarcount, int flag)
+void playrcpause(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
 	if(status.pause == 1)
 	{
 		status.playspeed = 0;
 		status.play = 1;
 		status.pause = 0;
-		playercontinue();
+		if(playertype == 1)
+			playercontinuets();
+		else
+			playercontinue();
 		*playinfobarstatus = 1;
 		*playinfobarcount = 0;
-		screenplayinfobar(file, 0, flag);
+		screenplayinfobar(file, 0, playertype, flag);
 	}
 	else
 	{
 		status.playspeed = 0;
 		status.play = 0;
 		status.pause = 1;
-		playerpause();
+		if(playertype == 1)
+			playerpausets();
+		else
+			playerpause();
 		*playinfobarstatus = 2;
 		*playinfobarcount = 0;
-		screenplayinfobar(file, 0, flag);
+		screenplayinfobar(file, 0, playertype, flag);
 	}
 }
 
-void playrcplay(char* file, int* playinfobarstatus, int* playinfobarcount, int flag)
+void playrcplay(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
-	playercontinue();
+	if(playertype == 1)
+		playercontinuets();
+	else
+		playercontinue();
 	status.playspeed = 0;
 	status.pause = 0;
 	status.play = 1;
 	*playinfobarstatus = 1;
 	*playinfobarcount = 0;
-	screenplayinfobar(file, 0, flag);
+	screenplayinfobar(file, 0, playertype, flag);
 }
 
-void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int flag)
+void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
 	unsigned long long int pos = 0;
 	
@@ -350,56 +416,87 @@ void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 	{
 		//a jump over the beginning of the
 		//file, freez the player
-		pos = playergetpts() / 90000;
+		if(playertype == 1)
+			pos = playergetptsts() / 90000;
+		else
+			pos = playergetpts() / 90000;
 	
 		if(pos + 10 > sec)
-			playerseek(sec * -1);
+		{
+			if(playertype == 1)
+				playerseekts(getservice(RECORDPLAY, 0), sec * -1);
+			else
+				playerseek(sec * -1);
+		}
 		else
 		{
-			playerstop();
-			playerstart(file);
+			if(playertype == 1)
+			{
+				playerstopts(0, 0);
+				playerstartts(file, 0);
+			}
+			else
+			{
+				playerstop();
+				playerstart(file);
+			}
 		}
 
 		*playinfobarstatus = 1;
 		*playinfobarcount = 0;
 		status.play = 0;		
-		screenplayinfobar(file, 0, flag);
+		screenplayinfobar(file, 0, playertype, flag);
 		status.play = 1;
 		sleep(1);
 	}
 }
 
-void playrcjumpf(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int flag)
+void playrcjumpf(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
 	if(status.pause == 0 && status.playspeed == 0)
 	{
-		playerseek(sec);
+		if(playertype == 1)
+			playerseekts(getservice(RECORDPLAY, 0), sec);
+		else
+			playerseek(sec);
 		*playinfobarstatus = 1;
 		*playinfobarcount = 0;
 		status.play = 0;		
-		screenplayinfobar(file, 0, flag);
+		screenplayinfobar(file, 0, playertype, flag);
 		status.play = 1;
 	}
 }
 
-void playchangecodec()
+void playchangecodec(int playertype)
 {
 	char** tracklist = NULL;
 
 	if(getconfigint("av_ac3default", NULL) == 1)
 	{
 		int i = 0;
-		tracklist = playergettracklist(1);
+		if(playertype == 1)
+			tracklist = playergettracklistts();
+		else
+			tracklist = playergettracklist(1);
 		if(tracklist != NULL)
 		{
 			while(tracklist[i] != NULL)
 			{
 				if(ostrcmp(tracklist[i + 1], "A_AC3") == 0)
-					playerchangeaudiotrack(i / 2);
+				{
+					if(playertype == 1)
+						playerchangeaudiotrackts();
+					else
+						playerchangeaudiotrack(i / 2);
+				}
 				i += 2;
 			}
 		}
-		playerfreetracklist(tracklist); tracklist = NULL;
+		if(playertype == 1)
+			playerfreetracklistts();
+		else
+			playerfreetracklist(tracklist);
+		tracklist = NULL;
 	}
 }
 
@@ -449,7 +546,7 @@ void playwritevfd(char* file)
 // flag 2 = playing
 void screenplay(int startfolder, int flag)
 {
-	int rcret = 0;
+	int rcret = 0, playertype = 0;
 	char* file = NULL, *tmpstr = NULL;
 	char* tmppolicy = NULL, *startdir = NULL;
 	char* formats = NULL;
@@ -488,6 +585,7 @@ playerstart:
 
 	if(file != NULL)
 	{
+		//if(cmpfilenameext(file, ".ts") == 0) playertype = 1;
 		tmpstr = ostrcat(file, "", 0, 0);
 		if(tmpstr != NULL && startfolder == 0) addconfig("rec_moviepath", dirname(tmpstr));
 		free(tmpstr); tmpstr = NULL;
@@ -503,7 +601,10 @@ playerstart:
 
 		drawscreen(skin, 0);
 		playwritevfd(file);
-		rcret = playerstart(file);
+		if(playertype == 1)
+			rcret = playerstartts(file, 0);
+		else
+			rcret = playerstart(file);
 #ifndef SIMULATE
 		if(rcret != 0)
 		{
@@ -512,7 +613,7 @@ playerstart:
 			goto playerstart;
 		}
 #endif
-		screenplayinfobar(file, 0, flag);
+		screenplayinfobar(file, 0, playertype, flag);
 
 		//change codec if ac3default and video has ac3
 		//deaktivate, freeze player, makes a seek -5
@@ -524,42 +625,42 @@ playerstart:
 		status.play = 1;
 		while(1)
 		{
-			while(playerisplaying())
+			while((playertype == 0 && playerisplaying()) || (playertype == 1 && playerisplayingts()))
 			{
 				rcret = waitrc(playinfobar, 1000, 0);
 				playinfobarcount++;
 				if(playinfobarstatus > 0)
-					screenplayinfobar(file, 0, flag);
+					screenplayinfobar(file, 0, playertype, flag);
 				if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL))
 				{
 					playinfobarstatus = 0;
-					screenplayinfobar(NULL, 1, flag);
+					screenplayinfobar(NULL, 1, playertype, flag);
 				}
 
 				if(rcret == getrcconfigint("rcyellow", NULL))
-					playrcyellow(file, playinfobarstatus, flag);
+					playrcyellow(file, playinfobarstatus, playertype, flag);
 				
 				if(rcret == getrcconfigint("rctext", NULL))
-					playrctext(file, playinfobarstatus, flag);
+					playrctext(file, playinfobarstatus, playertype, flag);
 					
 				if(rcret == getrcconfigint("rcgreen", NULL))
-					playrcgreen(file, playinfobarstatus, flag);
+					playrcgreen(file, playinfobarstatus, playertype, flag);
 					
 				if(rcret == getrcconfigint("rcblue", NULL))
-					playrcblue(file, playinfobarstatus, flag);
+					playrcblue(file, playinfobarstatus, playertype, flag);
 					
 				if(rcret == getrcconfigint("rcok", NULL))
-					playrcok(file, playinfobarstatus, flag);
+					playrcok(file, playinfobarstatus, playertype, flag);
 				
 				if(rcret == getrcconfigint("rcred", NULL))
-					playrcred(file, playinfobarstatus, flag);
+					playrcred(file, playinfobarstatus, playertype, flag);
 
 				if(rcret == getrcconfigint("rcinfo", NULL))
-					playrcinfo(file, &playinfobarstatus, &playinfobarcount, flag);
+					playrcinfo(file, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
 				if(rcret == getrcconfigint("rcstop", NULL))
 				{
-					playrcstop(flag);
+					playrcstop(playertype, flag);
 					if(startfolder == 1)
 					{
 						tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
@@ -570,48 +671,51 @@ playerstart:
 				}
 
 				if(rcret == getrcconfigint("rcff", NULL))
-					playrcff(file, &playinfobarstatus, &playinfobarcount, flag);
+					playrcff(file, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
 				if(rcret == getrcconfigint("rcfr", NULL))
-					playrcfr(file, &playinfobarstatus, &playinfobarcount, flag);
+					playrcfr(file, &playinfobarstatus, &playinfobarcount, playertype, flag);
 
 				if(rcret == getrcconfigint("rcpause", NULL))
-					playrcpause(file, &playinfobarstatus, &playinfobarcount, flag);
+					playrcpause(file, &playinfobarstatus, &playinfobarcount, playertype, flag);
 
 				if(rcret == getrcconfigint("rcplay", NULL))
-					playrcplay(file, &playinfobarstatus, &playinfobarcount, flag);
+					playrcplay(file, &playinfobarstatus, &playinfobarcount, playertype, flag);
 
 				if(rcret == getrcconfigint("rcleft", NULL))
-					playrcjumpr(file, 60, &playinfobarstatus, &playinfobarcount, flag);
+					playrcjumpr(file, 60, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
 				if(rcret == getrcconfigint("rc1", NULL))
-					playrcjumpr(file, skip13, &playinfobarstatus, &playinfobarcount, flag);
+					playrcjumpr(file, skip13, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
 				if(rcret == getrcconfigint("rc4", NULL))
-					playrcjumpr(file, skip46, &playinfobarstatus, &playinfobarcount, flag);
+					playrcjumpr(file, skip46, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
 				if(rcret == getrcconfigint("rc7", NULL))
-					playrcjumpr(file, skip79, &playinfobarstatus, &playinfobarcount, flag);
+					playrcjumpr(file, skip79, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
 				if(rcret == getrcconfigint("rcright", NULL))
-					playrcjumpf(file, 60, &playinfobarstatus, &playinfobarcount, flag);
+					playrcjumpf(file, 60, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
 				if(rcret == getrcconfigint("rc3", NULL))
-					playrcjumpf(file, skip13, &playinfobarstatus, &playinfobarcount, flag);
+					playrcjumpf(file, skip13, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
 				if(rcret == getrcconfigint("rc6", NULL))
-					playrcjumpf(file, skip46, &playinfobarstatus, &playinfobarcount, flag);
+					playrcjumpf(file, skip46, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
 				if(rcret == getrcconfigint("rc9", NULL))
-					playrcjumpf(file, skip79, &playinfobarstatus, &playinfobarcount, flag);
+					playrcjumpf(file, skip79, &playinfobarstatus, &playinfobarcount, playertype, flag);
 			}
 			//don't change this sleep, without this
 			//the player stops to fast, and a last seek can
 			//produce a segfault
 			sleep(1);
-			playerafterend();
+			if(playertype == 1)
+				playerafterendts();
+			else
+				playerafterend();
 			writevfd("Player");
-			screenplayinfobar(file, 1, flag);
+			screenplayinfobar(file, 1, playertype, flag);
 			goto playerstart;
 		}
 	}

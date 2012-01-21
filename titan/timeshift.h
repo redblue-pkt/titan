@@ -215,7 +215,7 @@ void timeshiftseek(int sekunden)
 				}
 				status.timeshiftseek = sekunden;
 				sekunden = sekunden - 10000;
-				playerffts(snode, sekunden);
+				playerffts(sekunden);
 			}	
 			else {
 				playerseekts(snode, sekunden);

@@ -1380,6 +1380,21 @@ char* changefilenameext(char* filename, char* ext)
 	return newfilename;
 }
 
+int cmpfilenameext(char* filename, char* ext)
+{
+	char* zeichen = NULL;
+
+	if(filename == NULL) return 1;
+
+	zeichen = strrchr(filename, '.');
+	if(zeichen != NULL)
+	{
+		if(ostrcmp(zeichen, ext) == 0) return 0;
+	}
+
+	return 1;
+}
+
 char* convert_timesec(int sec)
 {
 	int hour = 0, min = 0, seconds = 0;
