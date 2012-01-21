@@ -1838,7 +1838,7 @@ char* webrectimersend(char* param)
 	struct rectimer *node = NULL;
 	char* tmpstr = NULL;
 	struct tm* loctime = NULL;
-	struct channel *channel1;
+	struct channel *channel1 = NULL;
 //	struct service *service1;
 
 	anode = strstr(param, "node=");
@@ -1904,7 +1904,7 @@ char* webrectimersend(char* param)
 	{
 		channelfind = 0;
 		channel1 = channel;
-		while(channel1->next != NULL)
+		while(channel1 != NULL)
 		{
 			if(ostrcmp(channel1->name, channelname) == 0 && channel1->servicetype == 0) {
 				if(channelnottunable(channel1) == 0)
@@ -1918,7 +1918,7 @@ char* webrectimersend(char* param)
 		if(channelfind == 0)
 		{
 			channel1 = channel;		
-			while(channel1->next != NULL)
+			while(channel1 != NULL)
 			{
 				if(strstr(channel1->name, channelname) != NULL && channel1->servicetype == 0)
 				{
@@ -1955,7 +1955,7 @@ char* webrectimersend(char* param)
 	
 	if(node != NULL)
 	{
-		if(channelfind == 1)
+		if(channelfind == 1 && channel1 != NULL)
 		{
 			node->serviceid = channel1->serviceid;
 			node->servicetype = channel1->servicetype;
