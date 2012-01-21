@@ -29,7 +29,7 @@ void init(void)
 
 	pluginmenu = child;
 	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/imdb/skin.xml", 0, 0);
-	readscreen(tmpstr, 100, 1);
+	readscreen(tmpstr, 201, 1);
 	free(tmpstr); tmpstr = NULL;
 	debug(10, "Panel Plugin loadet !!!");
 }
@@ -37,7 +37,7 @@ void init(void)
 //wird beim entladen ausgefuehrt
 void deinit(void)
 {
-	delmarkedscreen(100);
+	delmarkedscreen(201);
 	pluginaktiv = 0;
 	debug(10, "Imdb Plugin removed !!!");
 }
