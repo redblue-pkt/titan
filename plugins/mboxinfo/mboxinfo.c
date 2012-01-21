@@ -14,7 +14,7 @@ void init(void)
 	char* tmpstr = NULL;
 
 	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/mboxinfo/skin.xml", 0, 0);
-	readscreen(tmpstr, 100, 1);
+	readscreen(tmpstr, 194, 1);
 	free(tmpstr); tmpstr = NULL;
 
 	pluginaktiv = 1;
@@ -24,7 +24,7 @@ void init(void)
 //wird beim entladen ausgefuehrt
 void deinit(void)
 {
-	delmarkedscreen(100);
+	delmarkedscreen(194);
 	pluginaktiv = 0;
 	debug(10, "Mbox Info Plugin removed !!!");
 }
@@ -79,6 +79,7 @@ int show_info(char *titelname, char *filename)
 
 	fclose(fd);
 	free(fileline);
+	free(buf1);
 	return 1;
 }
 
@@ -91,56 +92,51 @@ void start(void)
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL;
 
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/mboxinfo/skin.xml", 0, 0);
-	readscreen(tmpstr, 100, 1);
-	free(tmpstr); tmpstr = NULL;
-
 	delmarkedscreennodes(screen, 1);
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
 	changetitle(screen, "Mbox Info");
 
 	tmp = addlistbox(screen, listbox, tmp, 1);
-		if(tmp != NULL)
-		{
-			changetext(tmp, "ECM Info");
-			changename(tmp, "ECM Info");
-		}
+	if(tmp != NULL)
+	{
+		changetext(tmp, "ECM Info");
+		changename(tmp, "ECM Info");
+	}
 	tmp = addlistbox(screen, listbox, tmp, 1);
-		if(tmp != NULL)
-		{
-			changetext(tmp, "Share Online");
-			changename(tmp, "Share Online");
-		}
+	if(tmp != NULL)
+	{
+		changetext(tmp, "Share Online");
+		changename(tmp, "Share Online");
+	}
 	tmp = addlistbox(screen, listbox, tmp, 1);
-		if(tmp != NULL)
-		{
-			changetext(tmp, "Share Info");
-			changename(tmp, "Share Info");
-		}
+	if(tmp != NULL)
+	{
+		changetext(tmp, "Share Info");
+		changename(tmp, "Share Info");
+	}
 	tmp = addlistbox(screen, listbox, tmp, 1);
-		if(tmp != NULL)
-		{
-			changetext(tmp, "Mbox Version");
-			changename(tmp, "Mbox Version");
-		}
+	if(tmp != NULL)
+	{
+		changetext(tmp, "Mbox Version");
+		changename(tmp, "Mbox Version");
+	}
 	tmp = addlistbox(screen, listbox, tmp, 1);
-		if(tmp != NULL)
-		{
-			changetext(tmp, "Info");
-			changename(tmp, "Info");
-		}
+	if(tmp != NULL)
+	{
+		changetext(tmp, "Info");
+		changename(tmp, "Info");
+	}
 
-
-	drawscreen(screen,0);
+	drawscreen(screen, 0);
 	addscreenrc(screen, listbox);
 
 	while (1)
 	{
 		rcret = waitrc(screen, 0, 0);
 
-		if(rcret==getrcconfigint("rcexit",NULL)) break;
-		if(listbox->select != NULL && rcret==getrcconfigint("rcok",NULL))
+		if(rcret ==g etrcconfigint("rcexit",NULL)) break;
+		if(listbox->select != NULL && rcret == getrcconfigint("rcok",NULL))
 		{
 			tmpstr = ostrcat(listbox->select->name, NULL, 0, 0);
 			debug(10, "[MBOX INFO] active menu = %s\n", tmpstr);
