@@ -145,10 +145,7 @@ char* screensearch(char* input)
 	else
 		lastline = textinput(_("Imdb Suche"), "");
 
-	tmpstr = ostrcat(lastline, "", 0, 0);
-
-	free(lastline);
-	return tmpstr;
+	return lastline;
 }
 
 void imdb()
@@ -156,6 +153,7 @@ void imdb()
 	int rcret = 0;
 	drawscreen(skin, 0);
 	setfbtransparent(255);
+//NIT: muﬂ wieder richtig gesetzt werden
 	status.hangtime = 99999;
 	struct skin* blackscreen = getscreen("blackscreen");
 	drawscreen(blackscreen, 0);
@@ -217,10 +215,12 @@ void imdb()
 	apiImdbLookup = ostrcat("", "/title/tt", 0, 0);
 	apiSearch = ostrcat("", "/find?s=tt;q=", 0, 0);
 	localfile = ostrcat("", "/tmp/cache.getMovieByTitle.html", 0, 0);
-	printf("get_ip(url): %s\n", get_ip(url));
 	search = ostrcat(apiSearch, input, 0, 0);
 	printf("search: %s\n", search);
-	gethttp(get_ip(url), search, 80, localfile, NULL, NULL);
+	tmpstr = get_ip(url);
+	printf("get_ip(url): %s\n", tmpstr);
+	gethttp(tmpstr, search, 80, localfile, NULL, NULL);
+	free(tmpstr); tmpstr = NULL;
 //	gethttp(url, search, 80, localfile, NULL, NULL);
 
 
@@ -413,7 +413,7 @@ changepic(skin_cover, "/tmp/cover.jpg");
 	printf("localfile: %s\n", localfile);
 
 
-
+//NIT: get_ip braucht ein free
 	gethttp(get_ip(url), search, 80, localfile, NULL, NULL);
 //	gethttp(url, search, 80, localfile, NULL, NULL);
 	bigcover = readfiletomem(localfile, 1);
