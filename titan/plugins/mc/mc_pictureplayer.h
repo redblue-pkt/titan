@@ -8,7 +8,7 @@ void screenmc_pictureplayer()
 {
 	char* filename = NULL;
 	char* currentdirectory = NULL;
-	int nextpic = 0, rcret = 0, rcwait = 1000, playerret = 0, flag = 3, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 1, playlist = 0;
+	int nextpic = 0, rcret = 0, rcwait = 1000, playerret = 0, flag = 3, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 1, playlist = 0, playertype = 0;
 	// workaround for grey background mvi
 	struct skin* blackscreen = getscreen("blackscreen");
 	drawscreen(blackscreen, 0);
@@ -93,12 +93,12 @@ void screenmc_pictureplayer()
 		if(rcret == getrcconfigint("rcplay", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcplay(filename, &playinfobarstatus, &playinfobarcount, flag);
+				playrcplay(filename, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rcpause", NULL))
 		{
 			if((status.play == 1) || (status.pause == 1))
-				playrcpause(filename, &playinfobarstatus, &playinfobarcount, flag);
+				playrcpause(filename, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if((rcret == getrcconfigint("rcchdown", NULL)) || (rcret == getrcconfigint("rcprev", NULL)))
 		{
@@ -160,7 +160,7 @@ void screenmc_pictureplayer()
 		else if(rcret == getrcconfigint("rctext", NULL))
 		{		
 			if(status.play == 1)
-				playrctext(filename, playinfobarstatus, flag);	
+				playrctext(filename, playinfobarstatus, playertype, flag);	
 		}
 		else if(rcret == getrcconfigint("rcmenu", NULL))
 		{
@@ -304,7 +304,7 @@ void screenmc_pictureplayer()
 					#endif
 				}
 
-				screenplayinfobar(filename, 0, 0);			
+				screenplayinfobar(filename, 0, playertype, 0);			
 				status.play = 1;
 			}
 			else if(filelist->select != NULL && filelist->select->input != NULL)
