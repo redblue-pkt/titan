@@ -376,9 +376,9 @@ void subcalc(int pageid, unsigned long long pts)
 						y -= 16;
 						cr -= 128;
 						cb -= 128;
-						reg->palette[i].r = MAX(MIN(((298 * y            + 460 * cr) / 256), 255), 0);
-						reg->palette[i].g = MAX(MIN(((298 * y -  55 * cb - 137 * cr) / 256), 255), 0);
-						reg->palette[i].b = MAX(MIN(((298 * y + 543 * cb           ) / 256), 255), 0);
+						reg->palette[i].r = OMAX(OMIN(((298 * y            + 460 * cr) / 256), 255), 0);
+						reg->palette[i].g = OMAX(OMIN(((298 * y -  55 * cb - 137 * cr) / 256), 255), 0);
+						reg->palette[i].b = OMAX(OMIN(((298 * y + 543 * cb           ) / 256), 255), 0);
 						//reg->palette[i].a = (entries[i].T) & 0xFF;
 						reg->palette[i].a = 0xFF;
 					}
