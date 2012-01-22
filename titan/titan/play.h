@@ -548,6 +548,16 @@ void playwritevfd(char* file)
 	free(tmpstr); tmpstr = NULL;
 }
 
+
+void playstartservice()
+{
+	char* tmpstr = NULL;
+
+	tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
+	servicecheckret(servicestart(status.lastservice->channel, tmpstr, NULL, 0), 0);
+	free(tmpstr); tmpstr = NULL;
+}
+
 // flag 0 = dirlist/playing/infobar
 // flag 1 = playing/infobar
 // flag 2 = playing
@@ -618,6 +628,8 @@ playerstart:
 		{
 			textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 			writevfd("Player");
+			
+			if(startfolder == 1) playstartservice();
 			goto playerstart;
 		}
 #endif
@@ -669,12 +681,7 @@ playerstart:
 				if(rcret == getrcconfigint("rcstop", NULL))
 				{
 					playrcstop(playertype, flag);
-					if(startfolder == 1)
-					{
-						tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
-						servicecheckret(servicestart(status.lastservice->channel, tmpstr, NULL, 0), 0);
-						free(tmpstr); tmpstr = NULL;
-					}
+					if(startfolder == 1) playstartservice();
 					goto playerstart;
 				}
 
@@ -724,16 +731,12 @@ playerstart:
 				playerafterend();
 			writevfd("Player");
 			screenplayinfobar(file, 1, playertype, flag);
+			if(startfolder == 1) playstartservice();
 			goto playerstart;
 		}
 	}
 
-	if(startfolder == 0)
-	{
-		tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
-		servicecheckret(servicestart(status.lastservice->channel, tmpstr, NULL, 0), 0);
-		free(tmpstr); tmpstr = NULL;
-	}
+	if(startfolder == 0) playstartservice();
 	status.updatevfd = START;
 
 	if(tmppolicy != NULL)
