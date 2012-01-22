@@ -94,6 +94,18 @@ void screenplaytracklist(int mode, int playertype, int flag)
 {
 	//mode 1 = audiotracks
 	//mode 2 = subtitle tracks
+
+	if(playertype == 1)
+	{
+		screenplayinfobar(NULL, 1, playertype, flag);
+		if(mode == 1)
+			playerchangeaudiotrackts();
+		else if(mode == 2)
+			playerchangesubtitletrackts();
+		blitfb();
+		return;
+	}
+
 	int i = 0;
 	int rcret = 0, curtrackid = 0;
 	struct skin* track = NULL;
@@ -107,16 +119,9 @@ void screenplaytracklist(int mode, int playertype, int flag)
 	char* curtrackencoding = NULL, *curtrackname = NULL;
 	char* tmpstr = NULL;
 
-	if(playertype == 1)
-	{
-		playergetcurtracts();
-		tracklist = playergettracklistts();
-	}
-	else
-	{
-		playergetcurtrac(mode, &curtrackid, &curtrackencoding, &curtrackname);
-		tracklist = playergettracklist(mode);
-	}
+	playergetcurtrac(mode, &curtrackid, &curtrackencoding, &curtrackname);
+	tracklist = playergettracklist(mode);
+
 	if(tracklist != NULL)
 	{
 		while(tracklist[i] != NULL)
@@ -151,10 +156,7 @@ void screenplaytracklist(int mode, int playertype, int flag)
 
 	free(curtrackencoding); curtrackencoding = NULL;
 	free(curtrackname); curtrackname = NULL;
-	if(playertype == 1)
-		playerfreetracklistts();
-	else
-		playerfreetracklist(tracklist);
+	playerfreetracklist(tracklist);
 	tracklist = NULL;
 
 	listbox->aktline = 1;
@@ -174,28 +176,13 @@ void screenplaytracklist(int mode, int playertype, int flag)
 			if(listbox->select != NULL)
 			{
 				if(mode == 1)
-				{
-					if(playertype == 1)
-						playerchangeaudiotrackts();
-					else
-						playerchangeaudiotrack((int)listbox->select->handle);
-				}
+					playerchangeaudiotrack((int)listbox->select->handle);
 				else if(mode == 2)
 				{
 					if(listbox->select->handle1 != NULL)
-					{
-						if(playertype == 1)
-							playerchangesubtitletrackts();
-						else
-							playerchangesubtitletrack(-1);
-					}
+						playerchangesubtitletrack(-1);
 					else	
-					{
-						if(playertype == 1)
-							playerchangesubtitletrackts();
-						else
-							playerchangesubtitletrack((int)listbox->select->handle);
-					}
+						playerchangesubtitletrack((int)listbox->select->handle);
 				}
 			}
 			break;
