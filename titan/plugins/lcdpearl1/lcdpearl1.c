@@ -11,7 +11,7 @@ int pluginaktiv = 0;
 //int pluginflag = 1; //don't show the plugin in pluginmanager
 
 struct stimerthread* LCD_Pearl1thread = NULL;
-int firststart = 1;
+int firststart = 0;
 
 void LCD_start_lcd4linux()
 {
@@ -19,6 +19,8 @@ void LCD_start_lcd4linux()
 	char* startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/start.sh", 0, 0);
 	if(firststart == 1)
 		sleep(10);
+	else
+		sleep(5);
 	while (LCD_Pearl1thread->aktion != STOP && system("ps | grep -v grep | grep lcd4linux ") != 0) {
 		system(startlcd);
 		sleep(6);
@@ -43,7 +45,7 @@ void LCD_Pearl1_thread()
 	char* startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/start.sh", 0, 0);
 
 	if(firststart == 1)
-		sleep(2);
+		sleep(5);
 	while (LCD_Pearl1thread->aktion != STOP) {
 		put = 0;
 		tmpstr = gettime("%H:%M"); 
@@ -124,6 +126,7 @@ void LCD_Pearl1_main()
 		addconfig("lcd_pearl1_plugin_running", "yes");
 		LCD_Pearl1thread = addtimer(&LCD_Pearl1_thread, START, 10000, 1, NULL, NULL, NULL);
 		addtimer(&LCD_start_lcd4linux, START, 10000, 1, NULL, NULL, NULL);
+		sleep(1);
 		firststart = 0;
 	}
 	else
@@ -152,6 +155,7 @@ void init(void)
 	tmpstr = getconfig("lcd_pearl1_plugin_running", NULL);
 	if(ostrcmp(tmpstr, "yes") == 0)
 		LCD_Pearl1_main();
+	firststart = 0;
 	tmpstr=NULL;
 }
 
