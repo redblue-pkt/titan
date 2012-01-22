@@ -130,7 +130,7 @@ void playerstopts(int flag, int flag1)
 		}
 		else
 			status.aktservice->channel = NULL;
-			
+
 		node = gettmpchannel();
 		if(node != NULL && ostrcmp(node->name, "player") == 0)
 			delchannel(node->serviceid, node->transponderid, 1);
@@ -239,38 +239,30 @@ void playerfrts(int speed)
 {
 }
 
-unsigned long long int playergetptsts()
-{
-	uint64_t pts = 0;
-
-	videogetpts(status.aktservice->videodev, &pts);
-	return pts;
-}
-
-double playergetlengthts()
+int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, unsigned long long* endpts, unsigned long long* aktpts, unsigned long long* bitrate)
 {
 	int dupfd = -1;
-	unsigned long long pts = 0;
-	unsigned long long bitrate = 0;
 	struct service* snode = getservice(RECORDPLAY, 0);
 	
-	if(snode == NULL) return 0;
+	if(snode == NULL) return 1;
 	
 	dupfd = open(snode->recname, O_RDONLY | O_LARGEFILE);
 	if(dupfd < 0)
 	{
 		err("copy source fd not ok");
-		return 0;
+		return 1;
 	}
 
-	if(gettsinfo(dupfd, &pts, &bitrate) != 0)
+	if(gettsinfo(dupfd, lenpts, startpts, endpts, bitrate) != 0)
 	{
 		err("cant read endpts/bitrate");
-		return 0;
+		return 1;
 	}
 	
 	close(dupfd);
-	return (double)pts;
+
+	videogetpts(status.aktservice->videodev, aktpts);
+	return 0;
 }
 
 void playergetcurtracts()

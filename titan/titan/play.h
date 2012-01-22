@@ -56,14 +56,17 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 
 	if(playertype == 1)
 	{
-		pos = playergetptsts() / 90000;
-		len = playergetlengthts() / 90000;
+		unsigned long long int startpos = 0;
+		playergetinfots(&len, &startpos, NULL, &pos, NULL);
+		len = len / 90000;
+		pos = (pos - startpos) / 90000;
 	}
 	else
 	{
 		pos = playergetpts() / 90000;
 		len = playergetlength();
 	}
+	if(pos < 0) pos = 0;
 	reverse = len - pos;
 
 	if(len == 0)
@@ -417,7 +420,11 @@ void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 		//a jump over the beginning of the
 		//file, freez the player
 		if(playertype == 1)
-			pos = playergetptsts() / 90000;
+		{
+			unsigned long long int startpos = 0;
+			playergetinfots(NULL, &startpos, NULL, &pos, NULL);
+			pos = (pos - startpos) / 90000;
+		}
 		else
 			pos = playergetpts() / 90000;
 	

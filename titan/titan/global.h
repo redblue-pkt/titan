@@ -1413,7 +1413,12 @@ char* convert_timesec(int sec)
 
 	if(seconds < 0) seconds = 0;
 	if(min < 0) min = 0;
-	if(hour < 0) hour = 0;
+	if(hour < 0 || hour > 23)
+	{
+		hour = 0;
+		min = 0;
+		seconds = 0;
+	}
 
 	snprintf(buf, 9, "%02d:%02d:%02d", hour, min, seconds);
 
