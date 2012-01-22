@@ -295,6 +295,7 @@ int playerisplayingts()
 
 void playerafterendts()
 {
+	playerffts(0);
 }
 
 //extern player
