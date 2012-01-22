@@ -1342,6 +1342,7 @@ msgstr ""
 #: skins_mc_skin.xml.h:54 plugins_mc_skin.xml.h:55 skins_mc_skin.xml.h:55
 #: skin_default_skin.xml.h:459 skin_default_skin.xml.h:460
 #: plugins_stopifnotused_skin.xml.h:7 skins_stopifnotused_skin.xml.h:7
+#: plugins_stopifnotused_skin.xml.h:8 skins_stopifnotused_skin.xml.h:8
 msgid ""
 msgstr ""
 
@@ -7121,6 +7122,7 @@ msgstr ""
 
 #: plugins_callmonitor1_skin.xml.h:14 skins_callmonitor1_skin.xml.h:14
 #: plugins_stopifnotused_skin.xml.h:4 skins_stopifnotused_skin.xml.h:4
+#: plugins_stopifnotused_skin.xml.h:5 skins_stopifnotused_skin.xml.h:5
 msgid ""
 "text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 "
 "bordertype=2 posx=160 posy=0 width=150 height=30/>"
@@ -7134,6 +7136,7 @@ msgstr ""
 
 #: plugins_callmonitor1_skin.xml.h:16 skins_callmonitor1_skin.xml.h:16
 #: plugins_stopifnotused_skin.xml.h:5 skins_stopifnotused_skin.xml.h:5
+#: plugins_stopifnotused_skin.xml.h:6 skins_stopifnotused_skin.xml.h:6
 msgid ""
 "text=SAVE halign=center valign=middle bordercol=green bordersize=2 "
 "bordertype=2 posx=0 posy=0 width=150 height=30/>"
@@ -7366,13 +7369,23 @@ msgid "NotUsed Settings"
 msgstr ""
 
 #: plugins_stopifnotused_skin.xml.h:2 skins_stopifnotused_skin.xml.h:2
+#: plugins_stopifnotused_skin.xml.h:3 skins_stopifnotused_skin.xml.h:3
 msgid "Auto start"
 msgstr ""
 
 #: plugins_stopifnotused_skin.xml.h:3 skins_stopifnotused_skin.xml.h:3
+#: plugins_stopifnotused_skin.xml.h:4 skins_stopifnotused_skin.xml.h:4
 msgid "start"
 msgstr ""
 
 #: plugins_stopifnotused_skin.xml.h:6 skins_stopifnotused_skin.xml.h:6
 msgid "Time to stop"
+msgstr ""
+
+#: plugins_stopifnotused_skin.xml.h:2 skins_stopifnotused_skin.xml.h:2
+msgid "Action"
+msgstr ""
+
+#: plugins_stopifnotused_skin.xml.h:7 skins_stopifnotused_skin.xml.h:7
+msgid "Time to stop "
 msgstr ""
