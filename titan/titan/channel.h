@@ -52,6 +52,24 @@ struct channel* getlastchannel(struct channel* node)
 	return prev;
 }
 
+struct channel* gettmpchannel()
+{
+	debug(1000, "in");
+	struct channel *node = channel;
+
+	m_lock(&status.channelmutex, 5);
+	while(node != NULL)
+	{
+		if(node->servicetype == 99)
+			break;
+		node = node->next;
+	}
+	m_unlock(&status.channelmutex, 5);
+
+	debug(1000, "out");
+	return node;
+}
+
 int movechanneldown(struct channel* node)
 {
 	struct channel* prev = NULL, *next = NULL;

@@ -113,17 +113,26 @@ void playerstopts(int flag, int flag1)
 {
 	int ret = 0;
 	struct service* snode = NULL;
+	struct channel* node = NULL;
 
 	snode = getservice(RECORDPLAY, flag1);
 	if(snode != NULL) snode->recendtime = 1;
 
 	if(flag == 0)
 	{
+		playerffts(0);
+
 		ret = servicestop(status.aktservice, 1, 1);
 		if(ret == 1)
 		{
 			debug(150, "can't stop ts playback service");	
 		}
+		else
+			status.aktservice->channel = NULL;
+			
+		node = gettmpchannel();
+		if(node != NULL && ostrcmp(node->name, "player") == 0)
+			delchannel(node->serviceid, node->transponderid, 1);
 	}
 }
 
@@ -287,7 +296,7 @@ void playerchangesubtitletrackts()
 int playerisplayingts()
 {
 	struct service* snode = getservice(RECORDPLAY, 0);
-	
+
 	if(snode == NULL)
 		return 0;
 	return 1;
@@ -295,7 +304,7 @@ int playerisplayingts()
 
 void playerafterendts()
 {
-	playerffts(0);
+	playerstopts(0, 0);
 }
 
 //extern player
