@@ -57,7 +57,7 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 	if(playertype == 1)
 	{
 		pos = playergetptsts() / 90000;
-		len = playergetlengthts();
+		len = playergetlengthts() / 90000;
 	}
 	else
 	{
