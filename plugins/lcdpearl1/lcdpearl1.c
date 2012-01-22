@@ -38,7 +38,9 @@ void LCD_Pearl1_thread()
 	struct skin* LCD_Pearl1 = getscreen("LCD_Pearl1");
 	struct skin* akttime = getscreennode(LCD_Pearl1, "akttime");
 	int put = 0;
+	int standby = 0;
 	char* fbgrab = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/fbgrab -f /tmp/titanlcd.raw -w 320 -h 240 -b 32 -i /tmp/.titanlcd1.png > /dev/null", 0, 0);
+	char* startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/start.sh", 0, 0);
 
 	if(firststart == 1)
 		sleep(2);
@@ -47,42 +49,56 @@ void LCD_Pearl1_thread()
 		tmpstr = gettime("%H:%M"); 
 		tmpstr2 = getaktchannelname();
 		tmpstr3 = getrec(NULL);
-
+	
 		if(status.security == 1)
 		{
-			if(ostrcmp(tmpstr, timemerk) != 0)
+			if(status.standby == 1 && standby == 0)
 			{
-				free(timemerk);timemerk=NULL;
-				timemerk = ostrcat(tmpstr, "", 0, 0);
-				put = 1;
-			} 
-			if(ostrcmp(tmpstr2, sendermerk) != 0)
-			{
-				free(sendermerk);sendermerk=NULL;
-				sendermerk = ostrcat(tmpstr2, "", 0, 0);
-				put = 1;
-			} 
-			if(tmpstr3 == NULL && recmerk != NULL)
-			{
-				put = 1;
-				free(recmerk);recmerk=NULL;
+				system("killall lcd4linux");
+				standby = 1;
 			}
-			else if(tmpstr3 != NULL && recmerk == NULL)
+			if(status.standby == 0 && standby == 1)
 			{
-				free(recmerk);recmerk=NULL;
-				recmerk = ostrcat(tmpstr3, "", 0, 0);
-				put = 1;
+				system(startlcd);
+				standby = 0;
 			}
+		
+			if(standby == 0)
+			{
+				if(ostrcmp(tmpstr, timemerk) != 0)
+				{
+					free(timemerk);timemerk=NULL;
+					timemerk = ostrcat(tmpstr, "", 0, 0);
+					put = 1;
+				} 
+				if(ostrcmp(tmpstr2, sendermerk) != 0)
+				{
+					free(sendermerk);sendermerk=NULL;
+					sendermerk = ostrcat(tmpstr2, "", 0, 0);
+					put = 1;
+				} 
+				if(tmpstr3 == NULL && recmerk != NULL)
+				{
+					put = 1;
+					free(recmerk);recmerk=NULL;
+				}
+				else if(tmpstr3 != NULL && recmerk == NULL)
+				{
+					free(recmerk);recmerk=NULL;
+					recmerk = ostrcat(tmpstr3, "", 0, 0);
+					put = 1;
+				}
 
-			if(put == 1)
-			{
-				changetext(akttime, tmpstr);
-				drawscreen(LCD_Pearl1, 0);
-				system(fbgrab);
-				system("mv /tmp/.titanlcd1.png /tmp/titanlcd.png");
+				if(put == 1)
+				{
+					changetext(akttime, tmpstr);
+					drawscreen(LCD_Pearl1, 0);
+					system(fbgrab);
+					system("mv /tmp/.titanlcd1.png /tmp/titanlcd.png");
 				
-				//system("/var/bin/fbgrab -f /tmp/titanlcd.raw -w 320 -h 240 -b 32 -i /tmp/titanlcd.png > /dev/null");
-				system("xloadimage /tmp/titanlcd.png > /dev/null &");
+					//system("/var/bin/fbgrab -f /tmp/titanlcd.raw -w 320 -h 240 -b 32 -i /tmp/titanlcd.png > /dev/null");
+					//system("xloadimage /tmp/titanlcd.png > /dev/null &");
+				}
 			}
 		}
 		free(tmpstr); tmpstr = NULL;
@@ -94,6 +110,7 @@ void LCD_Pearl1_thread()
  	free(sendermerk);sendermerk=NULL;
  	free(recmerk);recmerk=NULL;
  	free(fbgrab);fbgrab=NULL;
+ 	free(startlcd);startlcd=NULL;
  	addconfig("lcd_pearl1_plugin_running", "no");
  	LCD_Pearl1thread = NULL;
  	return;
