@@ -18,20 +18,33 @@ void StopIfNotUsed_thread()
 	int tostop = 0;
 	while (StopIfNotUsed->aktion != STOP)
 	{
-		if(getconfig("stopifnotused_timetostop", NULL) == NULL)
-			tostop = 120*60;
-		else
-			tostop = atoi(getconfig("stopifnotused_timetostop", NULL)) * 60;
-		
-		if((time(NULL) - status.lastrcaction) >= tostop && status.recording <= 0)
+		if(status.standby != 1)
 		{
-			if (textbox(_("Message"), _("You have executed a defined period of no function.\n\nStop the box??? "), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 650, 200,15, 0) != 2)
+			if(getconfig("stopifnotused_timetostop", NULL) == NULL)
+				tostop = 120*60;
+			else
+				tostop = atoi(getconfig("stopifnotused_timetostop", NULL)) * 60;
+		
+			if((time(NULL) - status.lastrcaction) >= tostop && status.recording <= 0)
 			{
-				oshutdown(1, 1);
-				break;
-			}
-		} 
-	sleep(10);	
+				if (textbox(_("Message"), _("You have executed a defined period of no function.\n\nStop the box??? "), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 650, 200,15, 0) != 2)
+				{
+					if(getconfig("stopifnotused_stopaction", NULL) == NULL)
+					{
+						oshutdown(1, 1);
+						break;
+					}
+					else if(atoi(getconfig("stopifnotused_stopaction", NULL)) == 1)
+					{
+						oshutdown(1, 1);
+						break;
+					}
+					else
+						status.standby = 1;
+				}
+			} 
+		}
+		sleep(10);
 	}
 	StopIfNotUsed = NULL;
 }
@@ -71,6 +84,7 @@ void start(void)
 	struct skin* listbox = getscreennode(notused_main, "listbox");
 	struct skin* autostart = getscreennode(notused_main, "autostart");
 	struct skin* timetostop = getscreennode(notused_main, "timetostop");
+	struct skin* stopaction = getscreennode(notused_main, "stopaction");
 	struct skin* startstop = getscreennode(notused_main, "b3");
 	struct skin* tmp = NULL;
 	
@@ -92,6 +106,13 @@ void start(void)
 		setchoiceboxselection(timetostop, "120");
 	else
 		setchoiceboxselection(timetostop, getconfig("stopifnotused_timetostop", NULL));
+	
+	addchoicebox(stopaction, "1", _("power off"));
+	addchoicebox(stopaction, "2", _("standby"));
+	if(getconfig("stopifnotused_stopaction", NULL) == NULL)
+		setchoiceboxselection(stopaction, "1");
+	else
+		setchoiceboxselection(stopaction, getconfig("stopifnotused_stopaction", NULL));
 	
 	if(StopIfNotUsed == NULL)
 		running = 0;
@@ -120,6 +141,7 @@ void start(void)
 		{
 			addconfig("stopifnotused_autostart", autostart->ret);
 			addconfig("stopifnotused_timetostop", timetostop->ret);
+			addconfig("stopifnotused_stopaction", stopaction->ret);
 			break;
 		}
 		if(rcret == getrcconfigint("rcblue", NULL))
