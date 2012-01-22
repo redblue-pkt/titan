@@ -290,7 +290,7 @@ void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int pla
 		{
 			status.play = 0;
 			if(playertype == 1)
-				playerffts(status.playspeed);
+				playerffts((int)pow(2, status.playspeed));
 			else	
 				playerff(status.playspeed);
 			*playinfobarstatus = 2;
@@ -332,7 +332,7 @@ void playrcfr(char* file, int* playinfobarstatus, int* playinfobarcount, int pla
 		{
 			status.play = 0;
 			if(playertype == 1)
-				playerffts(status.playspeed);
+				playerffts((int)pow(2, status.playspeed));
 			else
 				playerff(status.playspeed);
 			*playinfobarstatus = 2;
