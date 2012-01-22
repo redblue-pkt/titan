@@ -936,7 +936,7 @@ unsigned long long gettsbitrate(unsigned long long start, unsigned long long end
 		return bitrate;
 }
 
-int gettsinfo(int fd, unsigned long long* pts, unsigned long long* bitrate)
+int gettsinfo(int fd, unsigned long long* lenpts, unsigned long long* startpts, unsigned long long* endpts, unsigned long long* bitrate)
 {
 	int ret = 0;
 	unsigned long long start = 0, end = 0;
@@ -950,12 +950,16 @@ int gettsinfo(int fd, unsigned long long* pts, unsigned long long* bitrate)
 		if(ret == 0)
 		{
 			end = fixuppts(start, end);
-			*pts = end - start;
-			*bitrate = gettsbitrate(start, end, startfindpos, endfindpos);
+			if(lenpts != NULL) *lenpts = end - start;
+			if(startpts != NULL) *startpts = start;
+			if(endpts != NULL) *endpts = end;
+			if(bitrate != NULL) *bitrate = gettsbitrate(start, end, startfindpos, endfindpos);
 		}
 	}
 
-	if(*pts < 0) *pts = 0;
+	if(lenpts != NULL && *lenpts < 0) *lenpts = 0;
+	if(startpts != NULL && *startpts < 0) *startpts = 0;
+	if(endpts != NULL && *endpts < 0) *endpts = 0;
 	return ret;
 }
 
