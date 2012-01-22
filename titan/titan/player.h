@@ -187,7 +187,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	usleep(500000);
 	m_lock(&status.tsseekmutex, 15);
 	usleep(500000);
-	if(gettsinfo(dupfd, &pts, &bitrate) != 0)
+	if(gettsinfo(dupfd, &pts, NULL, NULL, &bitrate) != 0)
 	{
 		err("cant read endpts/bitrate");
 		m_unlock(&status.tsseekmutex, 15);
