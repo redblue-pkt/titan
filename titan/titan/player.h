@@ -90,11 +90,12 @@ int playerstartts(char* file, int flag)
 
 	if(flag == 0)
 	{
+		snode = getservice(RECORDPLAY, 0);
+		if(snode != NULL) snode->recname = ostrcat(file, NULL, 0, 0);
 		ret = servicestart(chnode, NULL, NULL, 1);
 		if(ret != 0)
 		{
 			err("start play");
-			snode = getservice(RECORDPLAY, 0);
 			if(snode != NULL) snode->recendtime = 1;
 			close(fd);
 			dvrclose(dvrnode, -1);
