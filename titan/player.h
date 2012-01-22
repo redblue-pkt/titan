@@ -265,25 +265,14 @@ int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, un
 	return 0;
 }
 
-void playergetcurtracts()
-{
-}
-
-char** playergettracklistts()
-{
-	return NULL;
-}
-
-void playerfreetracklistts()
-{
-}
-
 void playerchangeaudiotrackts()
 {
+	screenaudiotrack();
 }
 
 void playerchangesubtitletrackts()
 {
+	screensubtitle();
 }
 
 int playerisplayingts()
