@@ -191,7 +191,7 @@ void screenmc_videoplayer()
 		else if(rcret == getrcconfigint("rcred", NULL))
 		{
 			if(status.play == 1)
-				playrcred(filename, playinfobarstatus, flag);
+				playrcred(filename, playinfobarstatus, playertype, flag);
 			else
 			{
 				if(playlist == 0)
@@ -377,7 +377,7 @@ void screenmc_videoplayer()
 					}
 				#endif
 
-				screenplayinfobar(filename, 0, 0);			
+				screenplayinfobar(filename, 0, playertype, 0);			
 				status.play = 1;
 			}
 			else if(filelist->select != NULL && filelist->select->input != NULL)

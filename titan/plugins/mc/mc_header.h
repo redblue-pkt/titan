@@ -39,11 +39,11 @@ void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* fil
 struct skin* getfilelistrandom(struct skin* filelist, int maxdirs, int maxfiles);
 
 // play.h
-void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int flag);
-void playrcjumpf(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int flag);
-void playrcpause(char* file, int* playinfobarstatus, int* playinfobarcount, int flag);
-void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int flag);
-void playrcfr(char* file, int* playinfobarstatus, int* playinfobarcount, int flag);
+void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
+void playrcjumpf(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
+void playrcpause(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
+void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
+void playrcfr(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
 void playwritevfd(char* file);
 
 // rc.h
