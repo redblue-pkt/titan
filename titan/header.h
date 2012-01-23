@@ -1,11 +1,6 @@
 #ifndef HEADER_H
 #define HEADER_H
 
-
-//global.h
-void htmldecode(char* to, char* from);
-void setosdtransparent(int value);
-
 //videodev.h
 int videofastforward(struct dvbdev* node, int frames);
 
@@ -23,6 +18,12 @@ void screenaudiotrack();
 
 //numinput.h
 char* numinput(char* title, char* num, char* mask, int isip);
+
+//ipkg.h
+void freeipkg();
+int ipkg_update(void);
+int ipkg_list(void);
+char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, char* skinpath, int showpng);
 
 //frontenddev.h
 struct dvbdev* fegetdummy();
@@ -345,6 +346,8 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+void htmldecode(char* to, char* from);
+void setosdtransparent(int value);
 char* string_shortname(char *tmpfilename, int mode);
 off64_t getfilesize(char* name);
 struct splitstr* strsplit(char *str, char *tok, int* count);
