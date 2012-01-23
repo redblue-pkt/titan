@@ -132,7 +132,7 @@ void screenmc_pictureplayer()
 		else if(rcret == getrcconfigint("rcred", NULL))
 		{
 			if(status.play == 1)
-				playrcred(filename, playinfobarstatus, flag);
+				playrcred(filename, playinfobarstatus, playertype, flag);
 			else
 			{
 				if(playlist == 0)
@@ -149,7 +149,7 @@ void screenmc_pictureplayer()
 		else if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			if(status.play == 1)
-				playrcgreen(filename, playinfobarstatus, flag);
+				playrcgreen(filename, playinfobarstatus, playertype, flag);
 			else
 			{
 				showplaylist(apskin, filelistpath, filelist, listbox, b2, 0, &playlist, &eof, &filename, &currentdirectory, flag);
