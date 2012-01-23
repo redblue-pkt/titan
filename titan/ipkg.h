@@ -4,6 +4,7 @@
 #define IPKG_LIB
 #include "../libipkg/libipkg.h"
 #include "../libipkg/args.h"
+#include "../libipkg/ipkg_cmd.h"
 
 struct ipkg
 {
@@ -151,7 +152,7 @@ void freeipkg()
 int ipkg_list_cb(char *name, char *desc, char *version, pkg_state_status_t status, void *userdata)
 {
 	int count = 0;
-#ifndef SIMULATE	
+#ifndef SIMULATE
 	char* tmpstr = NULL;
 	struct splitstr* ret = NULL;
 	
@@ -166,6 +167,7 @@ int ipkg_list_cb(char *name, char *desc, char *version, pkg_state_status_t statu
 	free(ret); ret = NULL;
 	free(tmpstr); tmpstr = NULL;
 #endif
+
 	return 0;
 }
 
@@ -186,6 +188,46 @@ int ipkg_update(void)
 
 	args_init(&args);
 	err = ipkg_lists_update(&args);
+	args_deinit(&args);
+#endif
+	return err;
+}
+
+int ipkg_packages_list_installed(args_t *args, const char *packages, ipkg_list_callback cblist, void *userdata)
+{
+	int err = 0;
+#ifndef SIMULATE
+	ipkg_cmd_t *cmd;
+	ipkg_conf_t ipkg_conf;
+
+	err = ipkg_conf_init (&ipkg_conf, args);
+	if(err)
+	{
+		return err;
+	}
+
+	ipkg_cb_list = cblist;
+	/* we need to do this because of static declarations, 
+	 * maybe a good idea to change */
+	cmd = ipkg_cmd_find ("list_installed");
+	if(packages)
+		err = ipkg_cmd_exec(cmd, &ipkg_conf, 1, &packages, userdata);
+	else
+		err = ipkg_cmd_exec(cmd, &ipkg_conf, 0, NULL, userdata);
+	ipkg_cb_list = NULL;
+	ipkg_conf_deinit(&ipkg_conf);
+#endif
+	return(err);
+}
+
+int ipkg_list_installed(void)
+{
+	int err = 0;
+#ifndef SIMULATE
+	args_t args;
+	
+	args_init(&args);
+	err = ipkg_packages_list_installed(&args, NULL, ipkg_list_cb, NULL);
 	args_deinit(&args);
 #endif
 	return err;
@@ -235,7 +277,8 @@ int ipkg_install(const char* package)
 	debug(130, "package: %s", package);
 
 	int err = 0;
-#ifndef SIMULATE	
+#ifndef SIMULATE
+/*
 	args_t args;
 	args_init(&args);
 
@@ -244,6 +287,16 @@ int ipkg_install(const char* package)
 	debug(130, "package2: %s", package);
 	args_deinit(&args);
 	debug(130, "package3: %s", package);
+*/
+
+	if(package != NULL && strlen(package) > 0)
+	{
+		int argc = 3;
+		char *argv[] = { PROGNAME, "install" , package};
+		err = ipkg_op (argc, argv);
+	}
+	else 
+		err = 1;
 #endif	
 	return err;
 }
@@ -251,7 +304,7 @@ int ipkg_install(const char* package)
 int ipkg_remove(const char* package, int purge)
 {
 	int err = 0;
-#ifndef SIMULATE	
+#ifndef SIMULATE
 	args_t args;
 
 	args_init(&args);
@@ -264,7 +317,7 @@ int ipkg_remove(const char* package, int purge)
 int ipkg_upgrade(void)
 {
 	int err = 0;
-#ifndef SIMULATE	
+#ifndef SIMULATE
 	args_t args;
 
 	args_init(&args);
@@ -312,12 +365,12 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 	{
 		if(ostrcmp("97.74.32.10", ip) == 0)
 		{
-			if(ostrcmp(src, "//97.74.32.10/svn/ipk/sh4/titan") != 0) 	 	 
+			if(ostrcmp((char*)src, "//97.74.32.10/svn/ipk/sh4/titan") != 0) 	 	 
 			{
 				textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0); 	 	 
 				free(ip); ip = NULL;
 				//free(path); //path = NULL;
-				return;
+				return 1;
 			}
 		}
 
@@ -337,7 +390,7 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 			writesys(checkfile, ".", 1);
 		}
 		free(checkfile); checkfile = NULL;		
-		err = gethttp(ip, path, 80, (char*)filename, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", NULL);
+		gethttp(ip, path, 80, (char*)filename, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", NULL);
 	}
 	else
 		err = screendownload("Download", ip, path, 80, (char*)filename, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 0);
