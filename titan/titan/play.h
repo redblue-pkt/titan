@@ -468,28 +468,20 @@ void playchangecodec(int playertype)
 	if(getconfigint("av_ac3default", NULL) == 1)
 	{
 		int i = 0;
-		if(playertype == 1)
-			tracklist = playergettracklistts();
-		else
-			tracklist = playergettracklist(1);
+		
+		tracklist = playergettracklist(1);
 		if(tracklist != NULL)
 		{
 			while(tracklist[i] != NULL)
 			{
 				if(ostrcmp(tracklist[i + 1], "A_AC3") == 0)
 				{
-					if(playertype == 1)
-						playerchangeaudiotrackts();
-					else
-						playerchangeaudiotrack(i / 2);
+					playerchangeaudiotrack(i / 2);
 				}
 				i += 2;
 			}
 		}
-		if(playertype == 1)
-			playerfreetracklistts();
-		else
-			playerfreetracklist(tracklist);
+		playerfreetracklist(tracklist);
 		tracklist = NULL;
 	}
 }
