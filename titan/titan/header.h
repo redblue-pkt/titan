@@ -1,6 +1,14 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+
+//global.h
+void htmldecode(char* to, char* from);
+void setosdtransparent(int value);
+
+//videodev.h
+int videofastforward(struct dvbdev* node, int frames);
+
 //skin.h
 void fillrect(int posx, int posy, int width, int height, long color, int transparent);
 
