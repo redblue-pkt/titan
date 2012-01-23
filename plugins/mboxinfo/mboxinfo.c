@@ -135,7 +135,7 @@ void start(void)
 	{
 		rcret = waitrc(screen, 0, 0);
 
-		if(rcret ==g etrcconfigint("rcexit",NULL)) break;
+		if(rcret == getrcconfigint("rcexit",NULL)) break;
 		if(listbox->select != NULL && rcret == getrcconfigint("rcok",NULL))
 		{
 			tmpstr = ostrcat(listbox->select->name, NULL, 0, 0);

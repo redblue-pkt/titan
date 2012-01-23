@@ -1,6 +1,18 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//skin.h
+void fillrect(int posx, int posy, int width, int height, long color, int transparent);
+
+//play.h
+void playerffts(int speed);
+
+//subtitle.h
+void screensubtitle();
+
+//audiotrack.h
+void screenaudiotrack();
+
 //numinput.h
 char* numinput(char* title, char* num, char* mask, int isip);
 

@@ -8,14 +8,14 @@ struct clist* addconfigscreen(char *key, struct skin *node);
 void mc_audioplayer_infobar(struct skin* apskin, struct skin* infobar, struct skin* spos, struct skin* slen, struct skin* sreverse, struct skin* sprogress, char* filename);
 
 //void mc_videoplayer_infobar(struct skin* apskin, struct skin* infobar, struct skin* spos, struct skin* slen, struct skin* sreverse, struct skin* sprogress, char* filename);
-void screenplayinfobar(char* file, int mode, int flag);
-void playrcblue(char* file, int playinfobarstatus, int flag);
-void playrcyellow(char* file, int playinfobarstatus, int flag);
-void playrcred(char* file, int playinfobarstatus, int flag);
-void playrcgreen(char* file, int playinfobarstatus, int flag);
-void playrctext(char* file, int playinfobarstatus, int flag);
-void playrcok(char* file, int playinfobarstatus, int flag);
-void playrcplay(char* file, int* playinfobarstatus, int* playinfobarcount, int flag);
+void screenplayinfobar(char* file, int mode, int playertype, int flag);
+void playrcblue(char* file, int playinfobarstatus, int playertype, int flag);
+void playrcyellow(char* file, int playinfobarstatus, int playertype, int flag);
+void playrcred(char* file, int playinfobarstatus, int playertype, int flag);
+void playrcgreen(char* file, int playinfobarstatus, int playertype, int flag);
+void playrctext(char* file, int playinfobarstatus, int playertype, int flag);
+void playrcok(char* file, int playinfobarstatus, int playertype, int flag);
+void playrcplay(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
 
 //global.h
 void setosdtransparent(int value);

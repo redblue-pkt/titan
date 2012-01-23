@@ -127,7 +127,7 @@ void screenmc_videoplayer()
 		else if(rcret == getrcconfigint("rcup", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpf(filename, 600, &playinfobarstatus, &playinfobarcount, playertype,ype flag);
+				playrcjumpf(filename, 600, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 
 		else if(rcret == getrcconfigint("rcff", NULL))
