@@ -163,7 +163,8 @@ msgstr ""
 #: panel_system_restore.h:75 panel_system_restore.h:80
 #: skin_default_skin.xml.h:177 httpdfunc.h:2158 rectimer.h:1142
 #: rectimer.h:1154 global.h:4066 panel_extensions.h:58 play.h:514 play.h:522
-#: play.h:612 record.h:87 record.h:635 record.h:798 record.h:969
+#: play.h:612 record.h:87 record.h:635 record.h:798 record.h:969 global.h:4071
+#: play.h:500 play.h:508 play.h:608
 msgid "EXIT"
 msgstr ""
 
@@ -390,6 +391,7 @@ msgstr ""
 
 #: audiotrack.h:47 rectimer.h:1232 audiotrack.h:48 rectimer.h:1245
 #: subtitle.h:1612 play.h:124 rectimer.h:1251 rectimer.h:1266 play.h:140
+#: play.h:148
 msgid "running"
 msgstr ""
 
@@ -531,7 +533,7 @@ msgstr ""
 #: mc_videoplayer.h:453 panel_system_restore.h:74 panel_system_restore.h:84
 #: global.h:4032 global.h:4041 panel_system_restore.h:75 rectimer.h:1142
 #: rectimer.h:1154 global.h:4066 panel_extensions.h:58 panel_extensions.h:133
-#: play.h:612 record.h:635 record.h:798 record.h:969
+#: play.h:612 record.h:635 record.h:798 record.h:969 global.h:4071 play.h:608
 msgid "Message"
 msgstr ""
 
@@ -642,7 +644,7 @@ msgstr ""
 #: panel_system_restore.h:75 panel_system_restore.h:80
 #: skin_default_skin.xml.h:271 httpdfunc.h:2158 rectimer.h:1142
 #: rectimer.h:1154 global.h:4066 panel_extensions.h:58 play.h:514 play.h:522
-#: play.h:612 record.h:635
+#: play.h:612 record.h:635 global.h:4071 play.h:500 play.h:508 play.h:608
 msgid "OK"
 msgstr ""
 
@@ -667,6 +669,7 @@ msgstr ""
 #: global.h:3854 global.h:3904 global.h:3898 global.h:3897 global.h:3903
 #: global.h:3909 global.h:3930 global.h:3962 global.h:3963 global.h:3965
 #: global.h:3995 global.h:4009 global.h:4032 global.h:4041 global.h:4066
+#: global.h:4071
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -1259,6 +1262,7 @@ msgstr ""
 #: mc_global.h:500 mc_global.h:726 mc_global.h:728 mc_global.h:504
 #: mc_global.h:736 mc_global.h:503 mc_global.h:735 play.h:510 mc_global.h:560
 #: mc_global.h:793 mc_videoplayer.h:368 mc_videoplayer.h:453 play.h:612
+#: play.h:608
 msgid "Can't start playback !"
 msgstr ""
 
@@ -2146,12 +2150,12 @@ msgid "hidden"
 msgstr ""
 
 #: play.h:405 play.h:409 play.h:414 play.h:419 play.h:418 play.h:421
-#: play.h:422 play.h:413 play.h:420 play.h:417 play.h:514
+#: play.h:422 play.h:413 play.h:420 play.h:417 play.h:514 play.h:500
 msgid "EPG Info"
 msgstr ""
 
 #: play.h:413 play.h:417 play.h:422 play.h:427 play.h:426 play.h:429
-#: play.h:430 play.h:421 play.h:428 play.h:425 play.h:522
+#: play.h:430 play.h:421 play.h:428 play.h:425 play.h:522 play.h:508
 msgid "Realy Delete ?"
 msgstr ""
 
@@ -4022,7 +4026,7 @@ msgstr ""
 #: play.h:472 skin_default_skin.xml.h:145 play.h:479 play.h:476
 #: skin_default_skin.xml.h:147 play.h:483 skin_default_skin.xml.h:149
 #: skin_default_skin.xml.h:148 play.h:486 skin_default_skin.xml.h:150
-#: play.h:583
+#: play.h:583 play.h:579
 msgid "DEL"
 msgstr ""
 
@@ -6492,7 +6496,7 @@ msgid "Satelite Entrys"
 msgstr ""
 
 #: tunerconfig.h:119 audiotrack.h:119 subtitle.h:1693 play.h:109
-#: tunerconfig.h:99 play.h:125
+#: tunerconfig.h:99 play.h:125 play.h:133
 msgid "undefined"
 msgstr ""
 
@@ -6793,7 +6797,7 @@ msgstr ""
 
 #: play.h:464 play.h:468 play.h:473 play.h:478 play.h:477 play.h:480
 #: play.h:481 play.h:472 play.h:479 play.h:476 play.h:483 play.h:486
-#: play.h:583
+#: play.h:583 play.h:579
 msgid "SELECT"
 msgstr ""
 
@@ -7388,4 +7392,8 @@ msgstr ""
 
 #: plugins_stopifnotused_skin.xml.h:7 skins_stopifnotused_skin.xml.h:7
 msgid "Time to stop "
+msgstr ""
+
+#: skin_default_skin.xml.h:32
+msgid "Record Path settings"
 msgstr ""
