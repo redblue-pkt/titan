@@ -588,15 +588,17 @@ void changechannellist(struct channel* chnode, char* channellist)
 		}
 }
 
-char* createpiconpath(struct channel* chnode)
+char* createpiconpath(struct channel* chnode, int flag)
 {
 	char* tmpstr = NULL, *tmpnr = NULL;
 
 	if(chnode != NULL)
 	{
 		tmpstr = ostrcat(tmpstr, getconfig("piconpath", NULL), 1, 0);
-		tmpstr = ostrcat(tmpstr, "/", 1, 0);
-
+		if(flag==1)
+			tmpstr = ostrcat(tmpstr, "/alternate/", 1, 0);
+		else
+			tmpstr = ostrcat(tmpstr, "/", 1, 0);
 		tmpnr = oitoa(chnode->serviceid);
 		tmpstr = ostrcat(tmpstr, tmpnr, 1, 1);
 		tmpnr = NULL;
