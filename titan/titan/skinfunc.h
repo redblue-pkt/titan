@@ -643,14 +643,21 @@ char* getepgpicon()
 	char* tmpstr = NULL;
 	
 	if(status.epgchannel != NULL)
-		tmpstr = createpiconpath(status.epgchannel);
+		tmpstr = createpiconpath(status.epgchannel, 0);
 	return tmpstr;
 }
 
 char* getpicon()
 {
 	char* tmpstr = NULL;
-	tmpstr = createpiconpath(status.aktservice->channel);
+	tmpstr = createpiconpath(status.aktservice->channel, 0);
+	return tmpstr;
+}
+
+char* getalternatepicon()
+{
+	char* tmpstr = NULL;
+	tmpstr = createpiconpath(status.aktservice->channel, 1);
 	return tmpstr;
 }
 
