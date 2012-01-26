@@ -165,7 +165,7 @@ msgstr ""
 #: rectimer.h:1154 global.h:4066 panel_extensions.h:58 play.h:514 play.h:522
 #: play.h:612 record.h:87 record.h:635 record.h:798 record.h:969 global.h:4071
 #: play.h:500 play.h:508 play.h:608 ipkg.h:370 panel_extensions.h:55
-#: panel_extensions.h:57
+#: panel_extensions.h:57 global.h:4073
 msgid "EXIT"
 msgstr ""
 
@@ -535,7 +535,7 @@ msgstr ""
 #: global.h:4032 global.h:4041 panel_system_restore.h:75 rectimer.h:1142
 #: rectimer.h:1154 global.h:4066 panel_extensions.h:58 panel_extensions.h:133
 #: play.h:612 record.h:635 record.h:798 record.h:969 global.h:4071 play.h:608
-#: ipkg.h:370
+#: ipkg.h:370 global.h:4073
 msgid "Message"
 msgstr ""
 
@@ -647,7 +647,7 @@ msgstr ""
 #: skin_default_skin.xml.h:271 httpdfunc.h:2158 rectimer.h:1142
 #: rectimer.h:1154 global.h:4066 panel_extensions.h:58 play.h:514 play.h:522
 #: play.h:612 record.h:635 global.h:4071 play.h:500 play.h:508 play.h:608
-#: ipkg.h:370 panel_extensions.h:55 panel_extensions.h:57
+#: ipkg.h:370 panel_extensions.h:55 panel_extensions.h:57 global.h:4073
 msgid "OK"
 msgstr ""
 
@@ -672,7 +672,7 @@ msgstr ""
 #: global.h:3854 global.h:3904 global.h:3898 global.h:3897 global.h:3903
 #: global.h:3909 global.h:3930 global.h:3962 global.h:3963 global.h:3965
 #: global.h:3995 global.h:4009 global.h:4032 global.h:4041 global.h:4066
-#: global.h:4071
+#: global.h:4071 global.h:4073
 msgid "ERROR cant read res"
 msgstr ""
 
