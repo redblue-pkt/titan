@@ -239,7 +239,10 @@ struct rectimer* addrectimernode(char* line, struct rectimer* last)
 		}
 	}
 	else
+	{
 		newnode->disabled = 1;
+		newnode->afterevent = getconfigint("def_rectimer_after", NULL);
+	}
 	
 	if(newnode->timestamp == NULL) 
 		newnode->timestamp = gettimestamp();
@@ -998,8 +1001,6 @@ void screenrectimerext(struct rectimer* node, int flag)
 		setchoiceboxselection(after, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 	}
-	else
-		setchoiceboxselection(after, getconfig("def_rectimer_after", NULL));
 		
 	changemask(pincode, "0000");
 	if(newnode == 0)
