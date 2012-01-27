@@ -5,9 +5,9 @@ char* gettimeinfo()
 {
 	char* cmd = NULL;
 	cmd = ostrcat(cmd, "cat", 1, 0);
-	cmd = ostrcat(cmd, " / ", 1, 0);
+	cmd = ostrcat(cmd, " /", 1, 0);
 	cmd = ostrcat(cmd, "etc", 1, 0);
-	cmd = ostrcat(cmd, " / ", 1, 0);	
+	cmd = ostrcat(cmd, "/", 1, 0);	
 	cmd = ostrcat(cmd, "image-version", 1, 0);
 	cmd = ostrcat(cmd, " | ", 1, 0);	
 	cmd = ostrcat(cmd, "cut", 1, 0);
@@ -20,11 +20,11 @@ char* gettimeinfovar()
 {
 	char* cmd = NULL;
 	cmd = ostrcat(cmd, "cat", 1, 0);
-	cmd = ostrcat(cmd, " / ", 1, 0);
+	cmd = ostrcat(cmd, " /", 1, 0);
 	cmd = ostrcat(cmd, "var", 1, 0);
-	cmd = ostrcat(cmd, " / ", 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, "etc", 1, 0);
-	cmd = ostrcat(cmd, " / ", 1, 0);	
+	cmd = ostrcat(cmd, "/", 1, 0);	
 	cmd = ostrcat(cmd, ".image-version", 1, 0);
 	cmd = ostrcat(cmd, " | ", 1, 0);	
 	cmd = ostrcat(cmd, "cut", 1, 0);
