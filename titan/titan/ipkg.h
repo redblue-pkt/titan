@@ -278,25 +278,14 @@ int ipkg_install(const char* package)
 
 	int err = 0;
 #ifndef SIMULATE
-/*
 	args_t args;
+	
 	args_init(&args);
-
 	debug(130, "package1: %s", package);
 	err = ipkg_packages_install(&args, package);
 	debug(130, "package2: %s", package);
 	args_deinit(&args);
 	debug(130, "package3: %s", package);
-*/
-
-	if(package != NULL && strlen(package) > 0)
-	{
-		int argc = 3;
-		char *argv[] = { PROGNAME, "install" , package};
-		err = ipkg_op (argc, argv);
-	}
-	else 
-		err = 1;
 #endif	
 	return err;
 }
