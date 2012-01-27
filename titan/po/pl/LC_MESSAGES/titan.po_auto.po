@@ -167,7 +167,7 @@ msgstr ""
 #: play.h:500 play.h:508 play.h:608 ipkg.h:370 panel_extensions.h:55
 #: panel_extensions.h:57 global.h:4073 channellist.h:692 global.h:146
 #: global.h:4139 rectimer.h:1158 rectimer.h:1170 global.h:4144 ipkg.h:359
-#: global.h:4143
+#: global.h:4143 panel_extensions.h:93
 msgid "EXIT"
 msgstr ""
 
@@ -656,6 +656,7 @@ msgstr ""
 #: ipkg.h:370 panel_extensions.h:55 panel_extensions.h:57 global.h:4073
 #: channellist.h:692 global.h:146 global.h:4139 rectimer.h:1158
 #: rectimer.h:1170 global.h:4144 ipkg.h:359 callmon_main.h:37 global.h:4143
+#: panel_extensions.h:93
 msgid "OK"
 msgstr ""
 
@@ -1643,7 +1644,7 @@ msgstr ""
 #: panel_extensions.h:218 panel_extensions.h:86 panel_extensions.h:88
 #: panel_extensions.h:208 panel_extensions.h:209 panel_extensions.h:91
 #: panel_extensions.h:97 panel_extensions.h:100 panel_extensions.h:93
-#: panel_extensions.h:96
+#: panel_extensions.h:96 panel_extensions.h:99 panel_extensions.h:101
 msgid "Ipk Remove Info"
 msgstr ""
 
@@ -7297,10 +7298,12 @@ msgid "Install ERROR"
 msgstr ""
 
 #: panel_extensions.h:92 panel_extensions.h:90 panel_extensions.h:86
+#: panel_extensions.h:99
 msgid "Remove OK"
 msgstr ""
 
 #: panel_extensions.h:94 panel_extensions.h:92 panel_extensions.h:88
+#: panel_extensions.h:101
 msgid "Remove ERROR"
 msgstr ""
 
@@ -7437,4 +7440,8 @@ msgid ""
 "Callmon Timeout !!!\n"
 "\n"
 "check your parameter "
+msgstr ""
+
+#: panel_extensions.h:93
+msgid "Remove Info"
 msgstr ""
