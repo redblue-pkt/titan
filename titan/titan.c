@@ -206,11 +206,11 @@ void oshutdown(int exitcode, int flag)
 	struct skin* logo = getscreen("logo");
 
 	//check if record running
-	if((flag == 1 || flag == 2 || flag == 3) && status.recording > 0)
+	if((flag == 1 || flag == 2 || flag == 3) && (status.recording > 0 || getrectimerbytimediff(300) != NULL))
 	{
 		int timeout = 0;
 		if(flag == 3) timeout = 15;
-		if(textbox(_("Message"), _("Found running Record.\nRealy shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, timeout, 1) == 2)
+		if(textbox(_("Message"), _("Found running record\nor record is starting in next time.\nRealy shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, timeout, 1) == 2)
 			return;
 	}
 
