@@ -195,6 +195,7 @@ int createstartscreen()
 //flag: 0 do not check record
 //flag: 1 check record
 //flag: 2 check record / do write config
+//flag: 3 check record with timeout
 void oshutdown(int exitcode, int flag)
 {
 	debug(1000, "in");
@@ -205,9 +206,11 @@ void oshutdown(int exitcode, int flag)
 	struct skin* logo = getscreen("logo");
 
 	//check if record running
-	if((flag == 1 || flag == 2) && status.recording > 0)
+	if((flag == 1 || flag == 2 || flag == 3) && status.recording > 0)
 	{
-		if(textbox(_("Message"), _("Found running Record.\nRealy shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 1) == 2)
+		int timeout = 0;
+		if(flag == 3) timeout = 15;
+		if(textbox(_("Message"), _("Found running Record.\nRealy shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, timeout, 1) == 2)
 			return;
 	}
 

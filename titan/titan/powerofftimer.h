@@ -7,7 +7,7 @@ void checkshutdowntimer()
 	{
 		status.sd_timer->active = 0;
 		if(status.sd_timer->type == 0) 
-			oshutdown(1, 0); 
+			oshutdown(1, 3); 
 		else
 		{
 			status.standby = 2;
