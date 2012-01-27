@@ -214,8 +214,6 @@ char* getcpuid()
 	if(file_exist("/var/dev/dvb/adapter0/dts0") == 1)
 	{
 		char* serialtmp = NULL;
-		serialtmp = ostrcat(serialtmp, serial, 1, 0);
-		
 		serialtmp = string_newline(command("cat /var/dev/dvb/adapter0/dts0"));
 
 		serialtmp = string_replace("4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", "AA040127", serialtmp, 1);
@@ -231,7 +229,8 @@ char* getcpuid()
 			cmd = ostrcat(cmd, "etc", 1, 0);	
 			cmd = ostrcat(cmd, "/", 1, 0);
 			cmd = ostrcat(cmd, ".vnumber", 1, 0);
-/*
+			printf("destroy7\n");
+
 			if(file_exist(cmd) == 0)
 			{
 				FILE* fd = NULL;
@@ -241,8 +240,8 @@ char* getcpuid()
 			free(cmd),cmd = NULL;
 			free(serial),serial = NULL;
 			return string_newline(serialtmp);
-*/
-		printf("check nok");
+
+			printf("check nok");
 		}
 		printf("serial: %s", serial);
 		printf("serialtmp: %s", serialtmp);		
