@@ -1,6 +1,43 @@
 //#ifndef CALLMON_MAIN_H
 //#define CALLMON_MAIN_H
 
+struct stimerthread* CallmonStartThread = NULL;
+int coldstart = 0;
+
+void callmonstart()
+{
+	char* tmpstr = NULL;
+	
+	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/callmonitor1/fritzbox_msg_new.sh stop", 0, 0);
+	system(tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	
+	if(coldstart == 1)
+		sleep(10);
+	else
+		sleep(1); 
+	
+	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/callmonitor1/fritzbox_msg_new.sh start", 0, 0);
+	system(tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	coldstart = 0;
+	CallmonStartThread = NULL;
+}
+
+void callmontimeout()
+{
+	if(coldstart == 1)
+		sleep(25);
+	else
+		sleep(15);
+		
+	if(CallmonStartThread != NULL)
+	{
+		system("killall fritzbox_msg_new.sh");
+		textbox(_("Message"), _("Callmon Timeout !!!\n\ncheck your parameter "), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 650, 200,5, 0);
+	}
+}
+	
 
 void callmon_main()
 {
@@ -152,9 +189,11 @@ void callmon_main()
 				system(tmpstr);
 				free(tmpstr); tmpstr = NULL;
 			}
-			
-			tmpstr = ostrcat(getconfig("pluginpath", NULL), "/callmonitor1/fritzbox_msg_new.sh start", 0, 0);
-			system(tmpstr);
+			if(CallmonStartThread == NULL)
+			{
+				CallmonStartThread = addtimer(&callmonstart, START, 10000, 1, NULL, NULL, NULL);
+				addtimer(&callmontimeout, START, 10000, 1, NULL, NULL, NULL);
+			}
 			free(tmpstr); tmpstr = NULL;
 			
 			break;
