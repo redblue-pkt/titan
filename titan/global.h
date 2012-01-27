@@ -219,7 +219,7 @@ char* getcpuid()
 
 		serialtmp = string_replace("4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", "AA040127", serialtmp, 1);
 		serialtmp = string_replace("5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662", "", serialtmp, 1);
-		if(ostrcmp(serialtmp, serial) == 1)
+		if(ostrcmp(serialtmp, serial) != 0)
 		{
 			char* cmd = NULL;
 			cmd = ostrcat(cmd, "/", 1, 0);
@@ -237,8 +237,10 @@ char* getcpuid()
 					fclose(fd);
 			}
 			free(cmd),cmd = NULL;
+			free(serial),serial = NULL;
+			return string_newline(serialtmp);
+		}
 	}
-
 	return string_newline(serial);
 }
 		
