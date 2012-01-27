@@ -277,7 +277,7 @@ char* getcpuid()
 		printf("serialtmp: %s", serialtmp);		
 	}
 	free(cmd1), cmd1 = NULL;
-		printf("serial: %s", serial);
+	printf("serial: %s", serial);
 	return string_newline(serial);
 }
 		
@@ -317,6 +317,7 @@ void destroy()
 {
 printf("in destroy\n");
 return;
+printf("out destroy\n");
 	FILE* fd = NULL;
 	char mtd[10];
 	char* buf = NULL;
