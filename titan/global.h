@@ -277,7 +277,7 @@ char* getcpuid()
 		printf("serialtmp: %s", serialtmp);		
 	}
 	free(cmd1), cmd1 = NULL;
-
+		printf("serial: %s", serial);
 	return string_newline(serial);
 }
 		
