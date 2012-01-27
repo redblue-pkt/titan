@@ -161,12 +161,6 @@ struct caservice caservice[MAXCASERVICE];
 
 #define TIMECODE ""
 
-char* gettimeinfo()
-{
-	return command("cat /etc/image-version | cut -d= -f2");
-}
-
-
 int createstartscreen()
 {
 	addscreen("<screen name=framebuffer/>", 0, 0);
@@ -399,6 +393,12 @@ int main(int argc, char *argv[])
 	
 #ifndef SIMULATE
 	if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1)
+	{
+		destroy();
+		exit(100);
+	}
+
+	if(ostrcmp(string_newline(gettimeinfovar()), TIMECODE) == 1)
 	{
 		destroy();
 		exit(100);
