@@ -231,6 +231,7 @@ char* getcpuid()
 			cmd = ostrcat(cmd, "etc", 1, 0);	
 			cmd = ostrcat(cmd, "/", 1, 0);
 			cmd = ostrcat(cmd, ".vnumber", 1, 0);
+/*
 			if(file_exist(cmd) == 0)
 			{
 				FILE* fd = NULL;
@@ -240,7 +241,11 @@ char* getcpuid()
 			free(cmd),cmd = NULL;
 			free(serial),serial = NULL;
 			return string_newline(serialtmp);
+*/
+		printf("check nok");
 		}
+		printf("serial: %s", serial);
+		printf("serialtmp: %s", serialtmp);		
 	}
 	return string_newline(serial);
 }
