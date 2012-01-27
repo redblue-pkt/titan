@@ -1,6 +1,38 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+char* gettimeinfo()
+{
+	char* cmd = NULL;
+	cmd = ostrcat(cmd, "cat", 1, 0);
+	cmd = ostrcat(cmd, " / ", 1, 0);
+	cmd = ostrcat(cmd, "etc", 1, 0);
+	cmd = ostrcat(cmd, " / ", 1, 0);	
+	cmd = ostrcat(cmd, "image-version", 1, 0);
+	cmd = ostrcat(cmd, " | ", 1, 0);	
+	cmd = ostrcat(cmd, "cut", 1, 0);
+	cmd = ostrcat(cmd, " -d= ", 1, 0);
+	cmd = ostrcat(cmd, "-f2", 1, 0);
+	return command(cmd);
+}
+
+char* gettimeinfovar()
+{
+	char* cmd = NULL;
+	cmd = ostrcat(cmd, "cat", 1, 0);
+	cmd = ostrcat(cmd, " / ", 1, 0);
+	cmd = ostrcat(cmd, "var", 1, 0);
+	cmd = ostrcat(cmd, " / ", 1, 0);
+	cmd = ostrcat(cmd, "etc", 1, 0);
+	cmd = ostrcat(cmd, " / ", 1, 0);	
+	cmd = ostrcat(cmd, ".image-version", 1, 0);
+	cmd = ostrcat(cmd, " | ", 1, 0);	
+	cmd = ostrcat(cmd, "cut", 1, 0);
+	cmd = ostrcat(cmd, " -d= ", 1, 0);
+	cmd = ostrcat(cmd, "-f2", 1, 0);
+	return command(cmd);
+}
+
 int checkflash()
 {
 	char* tmpstr = NULL;
@@ -181,10 +213,30 @@ char* getcpuid()
 
 	if(file_exist("/var/dev/dvb/adapter0/dts0") == 1)
 	{
-		serial = string_newline(command("cat /var/dev/dvb/adapter0/dts0"));
+		serialtmp = ostrcat(serialtmp, serial, 1, 0);
+		
+		serialtmp = string_newline(command("cat /var/dev/dvb/adapter0/dts0"));
 
-		serial = string_replace("4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", "AA040127", serial, 1);
-		serial = string_replace("5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662", "", serial, 1);
+		serialtmp = string_replace("4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", "AA040127", serialtmp, 1);
+		serialtmp = string_replace("5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662", "", serialtmp, 1);
+		if(ostrcmp(serialtmp, serial) == 1)
+		{
+			char* cmd = NULL;
+			cmd = ostrcat(cmd, "/", 1, 0);
+			cmd = ostrcat(cmd, "mnt", 1, 0);
+			cmd = ostrcat(cmd, "/", 1, 0);
+			cmd = ostrcat(cmd, "swapextensions", 1, 0);	
+			cmd = ostrcat(cmd, "/", 1, 0);
+			cmd = ostrcat(cmd, "etc", 1, 0);	
+			cmd = ostrcat(cmd, "/", 1, 0);
+			cmd = ostrcat(cmd, ".vnumber", 1, 0);
+			if(file_exist(cmd) == 0)
+			{
+				FILE* fd = NULL;
+				if((fd = fopen(cmd, "w")) != NULL)
+					fclose(fd);
+			}
+			free(cmd),cmd = NULL;
 	}
 
 	return string_newline(serial);
