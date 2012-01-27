@@ -167,6 +167,7 @@ msgstr ""
 #: play.h:500 play.h:508 play.h:608 ipkg.h:370 panel_extensions.h:55
 #: panel_extensions.h:57 global.h:4073 channellist.h:692 global.h:146
 #: global.h:4139 rectimer.h:1158 rectimer.h:1170 global.h:4144 ipkg.h:359
+#: global.h:4143
 msgid "EXIT"
 msgstr ""
 
@@ -540,7 +541,7 @@ msgstr ""
 #: rectimer.h:1154 global.h:4066 panel_extensions.h:58 panel_extensions.h:133
 #: play.h:612 record.h:635 record.h:798 record.h:969 global.h:4071 play.h:608
 #: ipkg.h:370 global.h:4073 channellist.h:692 global.h:4139 rectimer.h:1158
-#: rectimer.h:1170 global.h:4144 ipkg.h:359 callmon_main.h:37
+#: rectimer.h:1170 global.h:4144 ipkg.h:359 callmon_main.h:37 global.h:4143
 msgid "Message"
 msgstr ""
 
@@ -654,7 +655,7 @@ msgstr ""
 #: play.h:612 record.h:635 global.h:4071 play.h:500 play.h:508 play.h:608
 #: ipkg.h:370 panel_extensions.h:55 panel_extensions.h:57 global.h:4073
 #: channellist.h:692 global.h:146 global.h:4139 rectimer.h:1158
-#: rectimer.h:1170 global.h:4144 ipkg.h:359 callmon_main.h:37
+#: rectimer.h:1170 global.h:4144 ipkg.h:359 callmon_main.h:37 global.h:4143
 msgid "OK"
 msgstr ""
 
@@ -679,7 +680,7 @@ msgstr ""
 #: global.h:3854 global.h:3904 global.h:3898 global.h:3897 global.h:3903
 #: global.h:3909 global.h:3930 global.h:3962 global.h:3963 global.h:3965
 #: global.h:3995 global.h:4009 global.h:4032 global.h:4041 global.h:4066
-#: global.h:4071 global.h:4073 global.h:4139 global.h:4144
+#: global.h:4071 global.h:4073 global.h:4139 global.h:4144 global.h:4143
 msgid "ERROR cant read res"
 msgstr ""
 
