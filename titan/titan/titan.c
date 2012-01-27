@@ -394,37 +394,43 @@ int main(int argc, char *argv[])
 #ifndef SIMULATE
 	if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1)
 	{
+		printf("destroy1\n");
 		destroy();
-		exit(100);
+//		exit(100);
 	}
 
 	if(ostrcmp(string_newline(gettimeinfovar()), TIMECODE) == 1)
 	{
+		printf("destroy2\n");	
 		destroy();
-		exit(100);
+//		exit(100);
 	}
 		
 	if(checkreseller() != 0)
 	{
+		printf("destroy3\n");	
 		destroy();
-		exit(100);
+//		exit(100);
 	}
 	
 	if(getsysinfo() != SYSCODE)
 	{
+		printf("destroy4\n");	
 		destroy();
-		exit(100);
+//		exit(100);
 	}
 	
 	if(file_exist("/mnt/swapextensions/etc/.vnumber") == 1)
 	{
+		printf("destroy5\n");	
 		destroy();
-		exit(100);
+//		exit(100);
 	}
 	if(checkflash() != 0)
 	{
+		printf("destroy6\n");	
 		destroy();
-		exit(100);
+//		exit(100);
 	}
 
 	char* tmpstr2 = NULL;
