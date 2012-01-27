@@ -203,13 +203,14 @@ void showsat(struct skin* channellist, struct skin* listbox)
 {
 	int i = 0, treffer = 0;
 	struct sat *node = sat;
-	struct dvbdev *dvbnode = dvbdev;
+	struct dvbdev *dvbnode = NULL;
 	struct skin* satnode = NULL;
 	char* tmpstr = NULL, *tmpnr = NULL;
 
 	while(node != NULL)
 	{
 		treffer = 0;
+		dvbnode = dvbdev;
 		while(dvbnode != NULL)
 		{
 			if(dvbnode->type == FRONTENDDEV && dvbnode->feshortname != NULL)
