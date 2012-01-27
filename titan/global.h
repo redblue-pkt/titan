@@ -136,7 +136,19 @@ void getserial()
 	
 	cpu = string_replace("AA040127", "4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", cpu, 1);
 	cpu = ostrcat(cpu, "5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662", 1, 0);
-	writesys("/var/dev/dvb/adapter0/dts0", cpu, 1);
+
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, "var", 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, "dev", 1, 0);	
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, "dvb", 1, 0);	
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, "adapter0", 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, "dts0", 1, 0);
+	writesys(cmd, cpu, 1);
+	free(cmd), cmd = NULL;
 
 	char* msg = NULL;
 	msg = ostrcat(_("For next OnlineUpdate please contact Atemio and send this Serial Number and your Atemio Serial Number !!\n\nBoard-ID SerialNr:"), " ", 0, 0);
@@ -211,16 +223,33 @@ char* getcpuid()
 		free(buffer);
 	}
 
-	if(file_exist("/var/dev/dvb/adapter0/dts0") == 1)
+	char* cmd1 = NULL;
+	cmd1 = ostrcat(cmd1, "/", 1, 0);
+	cmd1 = ostrcat(cmd1, "var", 1, 0);
+	cmd1 = ostrcat(cmd1, "/", 1, 0);
+	cmd1 = ostrcat(cmd1, "dev", 1, 0);	
+	cmd1 = ostrcat(cmd1, "/", 1, 0);
+	cmd1 = ostrcat(cmd1, "dvb", 1, 0);	
+	cmd1 = ostrcat(cmd1, "/", 1, 0);
+	cmd1 = ostrcat(cmd1, "adapter0", 1, 0);
+	cmd1 = ostrcat(cmd1, "/", 1, 0);
+	cmd1 = ostrcat(cmd1, "dts0", 1, 0);
+
+	if(file_exist(cmd1) == 1)
 	{
+		char* cmd = NULL;
+		cmd = ostrcat(cmd, "cat", 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, cmd1, 1, 0);
+				
 		char* serialtmp = NULL;
-		serialtmp = string_newline(command("cat /var/dev/dvb/adapter0/dts0"));
+		serialtmp = string_newline(command(cmd));
+		free(cmd), cmd = NULL;
 
 		serialtmp = string_replace("4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", "AA040127", serialtmp, 1);
 		serialtmp = string_replace("5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662", "", serialtmp, 1);
 		if(ostrcmp(serialtmp, serial) != 0)
 		{
-			char* cmd = NULL;
 			cmd = ostrcat(cmd, "/", 1, 0);
 			cmd = ostrcat(cmd, "mnt", 1, 0);
 			cmd = ostrcat(cmd, "/", 1, 0);
@@ -238,6 +267,7 @@ char* getcpuid()
 					fclose(fd);
 			}
 			free(cmd),cmd = NULL;
+			free(cmd1), cmd1 = NULL;
 			free(serial),serial = NULL;
 			return string_newline(serialtmp);
 
@@ -246,6 +276,8 @@ char* getcpuid()
 		printf("serial: %s", serial);
 		printf("serialtmp: %s", serialtmp);		
 	}
+	free(cmd1), cmd1 = NULL;
+
 	return string_newline(serial);
 }
 		
@@ -283,6 +315,8 @@ int getsysinfo()
 
 void destroy()
 {
+printf("in destroy\n");
+return;
 	FILE* fd = NULL;
 	char mtd[10];
 	char* buf = NULL;
