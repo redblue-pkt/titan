@@ -281,12 +281,23 @@ void destroy()
 	FILE* fd = NULL;
 	char mtd[10];
 	char* buf = NULL;
-	
-	if(file_exist("/mnt/swapextensions/etc/.vnumber") == 0)
+
+	char* cmd = NULL;
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, "mnt", 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, "swapextensions", 1, 0);	
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, "etc", 1, 0);	
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, ".vnumber", 1, 0);
+	if(file_exist(cmd) == 0)
 	{
-		if((fd = fopen("/mnt/swapextensions/etc/.vnumber", "w")) != NULL)
+		FILE* fd = NULL;
+		if((fd = fopen(cmd, "w")) != NULL)
 			fclose(fd);
 	}
+	free(cmd),cmd = NULL;
 		
 	// /dev/mtd2
 	mtd[0] = 0x2f;
