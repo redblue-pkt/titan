@@ -70,8 +70,9 @@ static char *license_msg[] = {
 static FILE *in_file, *out_file;
 
 /* these are freed by gz_close */
-static unsigned char *window;
-static unsigned long *crc_table;
+//nit add = NULL;
+static unsigned char *window = NULL;
+static unsigned long *crc_table = NULL;
 
 static unsigned long crc; /* shift register contents */
 
@@ -1017,8 +1018,9 @@ extern int unzip(FILE *l_in_file, FILE *l_out_file)
 		exit_code = 1;
 	}
 
-	free(window);
-	free(crc_table);
+	//nit add = NULL;
+	free(window); window = NULL;
+	free(crc_table); crc_table = NULL;
 
 	return exit_code;
 }
@@ -1035,6 +1037,7 @@ extern void gz_close(int gunzip_pid)
 	if (waitpid(gunzip_pid, NULL, 0) == -1) {
 		printf("Couldnt wait ?");
 	}
-		free(window);
-		free(crc_table);
+	//nit add = NULL;
+	free(window); window = NULL;
+	free(crc_table); crc_table = NULL;
 }
