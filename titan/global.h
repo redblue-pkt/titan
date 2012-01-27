@@ -213,6 +213,7 @@ char* getcpuid()
 
 	if(file_exist("/var/dev/dvb/adapter0/dts0") == 1)
 	{
+		char* serialtmp = NULL;
 		serialtmp = ostrcat(serialtmp, serial, 1, 0);
 		
 		serialtmp = string_newline(command("cat /var/dev/dvb/adapter0/dts0"));
