@@ -221,7 +221,7 @@ void recordstop(struct service* node)
 		if(afterevent == 3)
 		{
 			if(status.recording < 1)
-			oshutdown(1, 0);
+				oshutdown(1, 3);
 		}
 	}
 

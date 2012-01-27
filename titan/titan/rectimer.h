@@ -272,6 +272,22 @@ struct rectimer* addrectimernode(char* line, struct rectimer* last)
 	return newnode;
 }
 
+struct rectimer* getrectimerbytimediff(time_t timediff)
+{
+	struct rectimer* node = rectimer;	
+	time_t akttime = time(NULL);
+
+	while(node != NULL)
+	{
+		if(node->begin <= akttime + timediff)
+			return node;
+
+		node = node->next;
+	}
+
+	return NULL;
+}
+
 struct rectimer* getrectimerbytimestamp(char* timestamp)
 {
 	struct rectimer* node = rectimer;	
