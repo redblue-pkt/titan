@@ -1415,7 +1415,6 @@ int addrecepg(struct channel* chnode, struct epg* epgnode, char* channellist)
 		node->end = epgnode->endtime;
 
 		node->repeate = 0;
-		node->afterevent = 0;
 
 		node->recpath = ostrcat(getconfig("rec_path", NULL), "", 0, 0);
 		node->servicetype = status.servicetype;
