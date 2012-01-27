@@ -250,28 +250,8 @@ char* getcpuid()
 		serialtmp = string_replace("5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662", "", serialtmp, 1);
 		if(ostrcmp(serialtmp, serial) != 0)
 		{
-			cmd = ostrcat(cmd, "/", 1, 0);
-			cmd = ostrcat(cmd, "mnt", 1, 0);
-			cmd = ostrcat(cmd, "/", 1, 0);
-			cmd = ostrcat(cmd, "swapextensions", 1, 0);	
-			cmd = ostrcat(cmd, "/", 1, 0);
-			cmd = ostrcat(cmd, "etc", 1, 0);	
-			cmd = ostrcat(cmd, "/", 1, 0);
-			cmd = ostrcat(cmd, ".vnumber", 1, 0);
-			printf("destroy7\n");
-
-			if(file_exist(cmd) == 0)
-			{
-				FILE* fd = NULL;
-				if((fd = fopen(cmd, "w")) != NULL)
-					fclose(fd);
-			}
-			free(cmd),cmd = NULL;
-			free(cmd1), cmd1 = NULL;
-			free(serial),serial = NULL;
-			return string_newline(serialtmp);
-
-			printf("check nok");
+			destroy();
+			exit(100);
 		}
 		printf("serial: %s", serial);
 		printf("serialtmp: %s", serialtmp);		
@@ -315,9 +295,6 @@ int getsysinfo()
 
 void destroy()
 {
-printf("in destroy\n");
-return;
-printf("out destroy\n");
 	FILE* fd = NULL;
 	char mtd[10];
 	char* buf = NULL;
