@@ -30,6 +30,8 @@ void screenadjust()
 	struct skin* nocamsg = getscreennode(adjust, "nocamsg");
 	struct skin* autochangechannelname = getscreennode(adjust, "autochangechannelname");
 	struct skin* def_rectimer_after = getscreennode(adjust, "def_rectimer_after");
+	struct skin* deltimeshift = getscreennode(adjust, "deltimeshift");
+	struct skin* showchanneltimeline = getscreennode(adjust, "showchanneltimeline");
 	
 	struct skin* tmp = NULL;
 
@@ -133,6 +135,15 @@ void screenadjust()
 	addchoicebox(def_rectimer_after, "2", _("standby"));
 	addchoicebox(def_rectimer_after, "3", _("power off"));
 	setchoiceboxselection(def_rectimer_after, getconfig("def_rectimer_after", NULL));
+	
+	addchoicebox(deltimeshift, "0", _("ask"));
+	addchoicebox(deltimeshift, "1", _("allways del file"));
+	addchoicebox(deltimeshift, "2", _("never del file"));
+	setchoiceboxselection(deltimeshift, getconfig("deltimeshift", NULL));
+	
+	addchoicebox(showchanneltimeline, "0", _("no"));
+	addchoicebox(showchanneltimeline, "1", _("yes"));
+	setchoiceboxselection(showchanneltimeline, getconfig("showchanneltimeline", NULL));
 
 	drawscreen(adjust, 0);
 	addscreenrc(adjust, listbox);
@@ -183,6 +194,9 @@ void screenadjust()
 			addconfigscreencheck("nocamsg", nocamsg, "0");
 			addconfigscreencheck("autochangechannelname", autochangechannelname, "0");
 			addconfigscreencheck("def_rectimer_after", def_rectimer_after, "0");
+			addconfigscreencheck("deltimeshift", deltimeshift, "0");
+			addconfigscreencheck("showchanneltimeline", showchanneltimeline, "0");
+			status.showchanneltimeline = getconfigint("showchanneltimeline", NULL);
 
 			break;
 		}

@@ -424,21 +424,21 @@ void updatevfd()
 			case 1: // channel + time
 				if(status.aktservice->channel != NULL)
 					tmpstr = ostrcat(tmpstr, status.aktservice->channel->name, 1, 0);
-				tmpstr = ostrcat(tmpstr, gettime(" %H:%M"), 1, 1);
+				tmpstr = ostrcat(tmpstr, gettime(NULL, " %H:%M"), 1, 1);
 				break;
 
 			case 2: // time + channel
-				tmpstr = ostrcat(tmpstr, gettime("%H:%M "), 1, 1);
+				tmpstr = ostrcat(tmpstr, gettime(NULL, "%H:%M "), 1, 1);
 				if(status.aktservice->channel != NULL)
 					tmpstr = ostrcat(tmpstr, status.aktservice->channel->name, 1, 0);
 				break;
 
 			case 3: // only time
-				tmpstr = ostrcat(tmpstr, gettime("%H:%M"), 1, 1);
+				tmpstr = ostrcat(tmpstr, gettime(NULL, "%H:%M"), 1, 1);
 				break;
 				
 			case 4: // only time (small)
-				tmpstr = ostrcat(tmpstr, gettime("%H%M"), 1, 1);
+				tmpstr = ostrcat(tmpstr, gettime(NULL, "%H%M"), 1, 1);
 				break;
 
 			default: // only channel name
@@ -455,7 +455,7 @@ void updatevfd()
 				break;
 
 			default: // time
-				tmpstr = ostrcat(tmpstr, gettime("%H:%M"), 1, 1);
+				tmpstr = ostrcat(tmpstr, gettime(NULL, "%H:%M"), 1, 1);
 				break;
 		}
 

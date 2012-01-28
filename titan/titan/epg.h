@@ -265,7 +265,7 @@ start:
 
 		free(buf); buf = NULL;
 
-		tmpstr = getchannelnr(chnode);
+		tmpstr = getchannelnr(NULL, chnode);
 		changetext(channelnr, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 		

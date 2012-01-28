@@ -179,6 +179,7 @@ int createstartscreen()
 	skin->rheight = skinfb->height;
 	skin->bgcol = 0;
 	skin->transparent = 255;
+	skin->flag = 1;
 
 	return 0;
 }

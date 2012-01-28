@@ -503,7 +503,7 @@ struct skin
 	int16_t picheight;
 	uint16_t hspace;
 	uint16_t vspace;
-	char* (*skinfunc)(void*, void*);
+	char* (*skinfunc)(struct skin*, void*, void*);
 	char* param1;
 	char* param2;
 	char* parent;
@@ -559,6 +559,8 @@ struct skin
 	struct epgrecord* epgrecord;
 	char* pluginhandle;
 	uint8_t locked;
+	//bit 0: 1 = node is drawed
+	uint8_t flag;
 	struct skin *select;
 	struct skin *child;
 	struct skin *prev;
@@ -973,6 +975,8 @@ struct status
 	int tvpic;
 	// timestamp for rc action
 	time_t lastrcaction;
+	// show timeline in channellist for each channel
+	int showchanneltimeline;
 } status;
 
 struct fb

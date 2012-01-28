@@ -1,7 +1,7 @@
 #ifndef SKINFUNC_H
 #define SKINFUNC_H
 
-char* getplaytext(char* path)
+char* getplaytext(struct skin* node, char* path)
 {
 	char* tmpstr = NULL;
 
@@ -41,7 +41,7 @@ char* getplaytext(char* path)
 	return tmpstr;
 }
 
-char* getplaypic(char* path)
+char* getplaypic(struct skin* node, char* path)
 {
 	char* tmpstr = NULL;
 
@@ -88,7 +88,7 @@ char* getplaypic(char* path)
 	return tmpstr;
 }
 
-char* getreccount()
+char* getreccount(struct skin* node)
 {
 	char* tmpstr = NULL;
 
@@ -98,7 +98,7 @@ char* getreccount()
 	return tmpstr;
 }
 
-char* getrec(char* path)
+char* getrec(struct skin* node, char* path)
 {
 	char* tmpstr = NULL;
 
@@ -114,7 +114,7 @@ char* getrec(char* path)
 	return tmpstr;
 }
 
-char* getcrypt(char* path)
+char* getcrypt(struct skin* node, char* path)
 {
 	char* tmpstr = NULL;
 
@@ -133,7 +133,7 @@ char* getcrypt(char* path)
 	return tmpstr;
 }
 
-char* getaspectmode(char* path)
+char* getaspectmode(struct skin* node, char* path)
 {
 	char* tmpstr = NULL;
 
@@ -156,7 +156,7 @@ char* getaspectmode(char* path)
 	return tmpstr;
 }
 
-char* getsdhd(char* path)
+char* getsdhd(struct skin* node, char* path)
 {
 	char* tmpstr = NULL;
 
@@ -181,7 +181,7 @@ char* getsdhd(char* path)
 	return tmpstr;
 }
 	
-char* getresolution(char* path)
+char* getresolution(struct skin* node, char* path)
 {
 	char* tmpstr = NULL;
 
@@ -199,7 +199,7 @@ char* getresolution(char* path)
 	return tmpstr;
 }
 
-char* getteletext(char* path)
+char* getteletext(struct skin* node, char* path)
 {
 	char* tmpstr = NULL;
 
@@ -218,7 +218,7 @@ char* getteletext(char* path)
 	return tmpstr;
 }
 
-char* getsoundtype(char* path)
+char* getsoundtype(struct skin* node, char* path)
 {
 	char* tmpstr = NULL;
 
@@ -253,7 +253,7 @@ char* getsoundtype(char* path)
 	return tmpstr;
 }
 
-char* getprovidername()
+char* getprovidername(struct skin* node)
 {
 	char* tmpstr = NULL;
 
@@ -263,7 +263,7 @@ char* getprovidername()
 	return tmpstr;
 }
 
-char* getsatname()
+char* getsatname(struct skin* node)
 {
 	struct sat* satnode = NULL;
 	char* tmpstr = NULL;
@@ -278,7 +278,7 @@ char* getsatname()
 	return tmpstr;
 }
 
-char* getber(char* format)
+char* getber(struct skin* node, char* format)
 {
 	uint32_t ber = 0;
 	char* buf = NULL, *buf1 = NULL;
@@ -298,7 +298,7 @@ char* getber(char* format)
 	return buf1;
 }
 
-char* getsignal(char* format)
+char* getsignal(struct skin* node, char* format)
 {
 	uint16_t signal = 0;
 	char* buf = NULL, *buf1 = NULL;
@@ -319,7 +319,7 @@ char* getsignal(char* format)
 	return buf1;
 }
 
-char* getunc(char* format)
+char* getunc(struct skin* node, char* format)
 {
 	uint32_t unc = 0;
 	char* buf = NULL, *buf1 = NULL;
@@ -339,7 +339,7 @@ char* getunc(char* format)
 	return buf1;
 }
 
-char* getsnr(char* format)
+char* getsnr(struct skin* node, char* format)
 {
 	uint16_t snr = 0;
 	char* buf = NULL, *buf1 = NULL;
@@ -361,7 +361,7 @@ char* getsnr(char* format)
 	return buf1;
 }
 
-char* getepgtimeline(int akt)
+char* getepgtimeline(struct skin* node, int akt)
 {	
 	struct epg* epgnode = NULL;
 	struct channel* chnode = NULL;
@@ -369,7 +369,8 @@ char* getepgtimeline(int akt)
 	int proz = 0;
 
 	if(akt == 0) chnode = status.markedchannel;
-	if(akt != 0) chnode = status.aktservice->channel;
+	if(akt == 1) chnode = status.aktservice->channel;
+	if(akt == 2 && node != NULL) chnode = (struct channel*)node->handle;
 
 	if(chnode != NULL)
 	{
@@ -385,17 +386,22 @@ char* getepgtimeline(int akt)
 	return NULL;
 }
 
-char* getepgmarkedtimeline()
+char* getepgmarkedtimeline(struct skin* node)
 {
-	return getepgtimeline(0);
+	return getepgtimeline(node, 0);
 }
 
-char* getepgakttimeline()
+char* getepgakttimeline(struct skin* node)
 {
-	return getepgtimeline(1);
+	return getepgtimeline(node, 1);
 }
 
-char* getaktchannelname()
+char* getepgchanneltimeline(struct skin* node)
+{
+	return getepgtimeline(node, 2);
+}
+
+char* getaktchannelname(struct skin* node)
 {
 	char* tmpstr = NULL;
 
@@ -407,7 +413,7 @@ char* getaktchannelname()
 	return NULL;
 }
 
-char* getepgtime(char* format, int akt, int type)
+char* getepgtime(struct skin* node, char* format, int akt, int type)
 {
 	// akt 0 = marked channel
 	// akt 1 = akt channel now
@@ -481,47 +487,47 @@ char* getepgtime(char* format, int akt, int type)
 	return NULL;
 }
 
-char* getepgakttimeremaining(char* format)
+char* getepgakttimeremaining(struct skin* node, char* format)
 {
-	return getepgtime(format, 1, 2);
+	return getepgtime(node, format, 1, 2);
 }
 
-char* getepgnexttimeremaining(char* format)
+char* getepgnexttimeremaining(struct skin* node, char* format)
 {
-	return getepgtime(format, 2, 2);
+	return getepgtime(node, format, 2, 2);
 }
 
-char* getepgmarkedstart(char* format)
+char* getepgmarkedstart(struct skin* node, char* format)
 {
-	return getepgtime(format, 0, 0);
+	return getepgtime(node, format, 0, 0);
 }
 
-char* getepgmarkedend(char* format)
+char* getepgmarkedend(struct skin* node, char* format)
 {
-	return getepgtime(format, 0, 1);
+	return getepgtime(node, format, 0, 1);
 }
 
-char* getepgaktstart(char* format)
+char* getepgaktstart(struct skin* node, char* format)
 {
-	return getepgtime(format, 1, 0);
+	return getepgtime(node, format, 1, 0);
 }
 
-char* getepgaktend(char* format)
+char* getepgaktend(struct skin* node, char* format)
 {
-	return getepgtime(format, 1, 1);
+	return getepgtime(node, format, 1, 1);
 }
 
-char* getepgnextstart(char* format)
+char* getepgnextstart(struct skin* node, char* format)
 {
-	return getepgtime(format, 2, 0);
+	return getepgtime(node, format, 2, 0);
 }
 
-char* getepgnextend(char* format)
+char* getepgnextend(struct skin* node, char* format)
 {
-	return getepgtime(format, 2, 1);
+	return getepgtime(node, format, 2, 1);
 }
 
-char* getepgaktsubtitle()
+char* getepgaktsubtitle(struct skin* node)
 {
 	struct epg* epgnode = NULL;
 	char* tmpstr = NULL;
@@ -536,7 +542,7 @@ char* getepgaktsubtitle()
 	return NULL;
 }
 
-char* getepgakttitle()
+char* getepgakttitle(struct skin* node)
 {
 	struct epg* epgnode = NULL;
 	char* tmpstr = NULL;
@@ -551,7 +557,7 @@ char* getepgakttitle()
 	return NULL;
 }
 
-char* getepgnexttitle()
+char* getepgnexttitle(struct skin* node)
 {
 	struct epg* epgnode = NULL;
 	char* tmpstr = NULL;
@@ -570,7 +576,7 @@ char* getepgnexttitle()
 	return NULL;
 }
 
-char* getepgaktdesc()
+char* getepgaktdesc(struct skin* node)
 {
 	struct epg* epgnode = NULL;
 
@@ -584,7 +590,7 @@ char* getepgaktdesc()
 	return NULL;
 }
 
-char* getepgmarkeddesc()
+char* getepgmarkeddesc(struct skin* node)
 {
 	struct epg* epgnode = NULL;
 
@@ -598,7 +604,7 @@ char* getepgmarkeddesc()
 	return NULL;
 }
 
-char* getepgmarkedlist(char* ccount)
+char* getepgmarkedlist(struct skin* node, char* ccount)
 {
 	struct epg* epgnode = NULL;
 	char* tmpstr = NULL, *buf = NULL;
@@ -638,7 +644,7 @@ char* getepgmarkedlist(char* ccount)
 	return tmpstr;
 }
 
-char* getepgpicon()
+char* getepgpicon(struct skin* node)
 {
 	char* tmpstr = NULL;
 	
@@ -647,21 +653,21 @@ char* getepgpicon()
 	return tmpstr;
 }
 
-char* getpicon()
+char* getpicon(struct skin* node)
 {
 	char* tmpstr = NULL;
 	tmpstr = createpiconpath(status.aktservice->channel, 0);
 	return tmpstr;
 }
 
-char* getalternatepicon()
+char* getalternatepicon(struct skin* node)
 {
 	char* tmpstr = NULL;
 	tmpstr = createpiconpath(status.aktservice->channel, 1);
 	return tmpstr;
 }
 
-char* gettime(char* format)
+char* gettime(struct skin* node, char* format)
 {
 	debug(1000, "in");
 	time_t sec;
@@ -695,7 +701,7 @@ char* gettime(char* format)
 	return buf1;
 }
 
-char* getchannelnr(struct channel* chnode)
+char* getchannelnr(struct skin* node, struct channel* chnode)
 {
 	char *tmpstr = NULL, *tmpnr = NULL;
 
@@ -713,17 +719,17 @@ char* getchannelnr(struct channel* chnode)
 		mainbouquetnode = getmainbouquet(tmpstr + 10);
 		if(mainbouquetnode != NULL && mainbouquetnode->bouquet != NULL)
 		{
-			struct bouquet* node = mainbouquetnode->bouquet;
+			struct bouquet* bnode = mainbouquetnode->bouquet;
 
-			while(node != NULL)
+			while(bnode != NULL)
 			{
-				if(node->channel == chnode)
+				if(bnode->channel == chnode)
 				{
 					tmpnr = oitoa(mainbouquetnode->bouquet->nr + count);
 					return tmpnr;
 				}
 				count++;
-				node = node->next;
+				bnode = bnode->next;
 			}
 		}
 		return tmpnr;
@@ -732,7 +738,7 @@ char* getchannelnr(struct channel* chnode)
 		return tmpnr;
 }
 
-char* getakttuner()
+char* getakttuner(struct skin* node)
 {
 	char* tmpstr = NULL;
 
@@ -745,7 +751,7 @@ char* getakttuner()
 	return NULL;
 }
 
-char* getchannellistname()
+char* getchannellistname(struct skin* node)
 {
 	char* tmpstr = NULL, *tmpstr1 = NULL;
 
@@ -772,7 +778,7 @@ char* getchannellistname()
 	return tmpstr1;
 }
 
-char* getpowerofftime(char* format)
+char* getpowerofftime(struct skin* node, char* format)
 {
 	char* buf = NULL, *buf1 = NULL;
 	int resttime = 0;
@@ -797,7 +803,7 @@ char* getpowerofftime(char* format)
 	return buf1;
 }
 
-char* gettvpic(char* pos)
+char* gettvpic(struct skin* node, char* pos)
 {
 	struct splitstr* ret = NULL;
 	char* tmpstr = NULL;
