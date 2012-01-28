@@ -728,7 +728,7 @@ int recordstart(struct channel* chnode, int filefd, int recordfd, int type, time
 
 			free(pmtbuf); pmtbuf = NULL;
 			free(patbuf); patbuf = NULL;
-			if(chnode->audiopid < 1 || chnode->videopid < 1 || chnode->pmtpid < 1)
+			if((chnode->audiopid < 1 && chnode->videopid < 1) || chnode->pmtpid < 1)
 			{
 #ifndef SIMULATE
 				ret = 7;
@@ -736,8 +736,8 @@ int recordstart(struct channel* chnode, int filefd, int recordfd, int type, time
 				goto end;
 #endif
 			}
-			dmxaddpid(dmxnode, chnode->audiopid);
-			dmxaddpid(dmxnode, chnode->videopid);
+			if(chnode->audiopid > 0) dmxaddpid(dmxnode, chnode->audiopid);
+			if(chnode->videopid > 0) dmxaddpid(dmxnode, chnode->videopid);
 			dmxaddpid(dmxnode, chnode->pmtpid);
 			//dmxaddpid(dmxnode, chnode->pcrpid);
 			//add all audiotracks
