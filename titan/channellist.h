@@ -118,7 +118,7 @@ void showbouquetchannel(struct skin* channellist, struct skin* listbox, struct s
 						chnode1 = addlistbox(channellist, chnode, chnode, 1);
 						chnode1->progresscol = channeltimeline->progresscol;
 						chnode1->skinfunc = convertfunc("getepgchanneltimeline", &chnode1->funcrettype);
-						chnode1->handle = tmpbouquet->channel;
+						chnode1->handle = (char*)tmpbouquet->channel;
 						chnode1->posy = channeltimeline->posy;
 						chnode1->width = channeltimeline->width;
 						chnode1->height = channeltimeline->height;
