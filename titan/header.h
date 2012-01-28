@@ -1,21 +1,6 @@
 #ifndef HEADER_H
 #define HEADER_H
 
-//videodev.h
-int videofastforward(struct dvbdev* node, int frames);
-
-//skin.h
-void fillrect(int posx, int posy, int width, int height, long color, int transparent);
-
-//play.h
-void playerffts(int speed);
-
-//subtitle.h
-void screensubtitle();
-
-//audiotrack.h
-void screenaudiotrack();
-
 //numinput.h
 char* numinput(char* title, char* num, char* mask, int isip);
 
@@ -23,6 +8,8 @@ char* numinput(char* title, char* num, char* mask, int isip);
 void freeipkg();
 int ipkg_update(void);
 int ipkg_list(void);
+int ipkg_install(const char* package);
+int ipkg_remove(const char* package, int purge);
 char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, char* skinpath, int showpng);
 
 //frontenddev.h
@@ -35,6 +22,7 @@ struct dvbdev* dvropen(struct dvbdev* fenode);
 //audiodev.h
 int audiopause(struct dvbdev* node);
 int audioplay(struct dvbdev* node);
+int audioclearbuffer(struct dvbdev* node);
 
 //textinput.h
 char* textinput(char* title, char* text);
@@ -89,6 +77,9 @@ char* harddisk_listbox(char* defaultstr, char* str, char* skinname, char* skinti
 int videoreadqwidth(struct dvbdev* node);
 int videofreeze(struct dvbdev* node);
 int videocontinue(struct dvbdev* node);
+int videofastforward(struct dvbdev* node, int frames);
+int videoclearbuffer(struct dvbdev* node);
+int videogetpts(struct dvbdev* node, uint64_t* pts);
 
 // scan.h
 int findchannel(struct transponder* tpnode, unsigned char *buf, uint8_t* lastsecnr, struct skin* scan, struct skin* listbox, int flag);
@@ -146,6 +137,8 @@ void screennetwork_test();
 int writechannel(const char *filename);
 struct channel* createchannel(char* name, unsigned long transponderid, int providerid, int serviceid, int servicetype, int flag, int videocodec, int audiocodec, int videopid, int audiopid, int protect);
 void delchannelbytransponder(unsigned long transponderid);
+struct channel* gettmpchannel();
+int delchannel(int serviceid, int transponderid, int flag);
 
 //transponder.h
 struct transponder* gettransponder(unsigned long transponderid);
@@ -171,6 +164,7 @@ int recordskipplay(struct service* servicenode, int sekunden);
 void recordffrwts(struct service* servicenode, int speed);
 
 // play.h
+void playerffts(int speed);
 void screenplay(int startfolder, int flag);
 
 //inetwork.h
@@ -206,6 +200,7 @@ int dvbreadfd(int fd, unsigned char *buf, int pos, int count, int tout);
 int dvbwrite(int fd, unsigned char* buf, int count, int tout);
 int dvbgetdate(time_t* time, int timeout);
 int dvbfindpmtpid(int fd, int16_t *pmtpid, int *serviceid);
+int gettsinfo(int fd, unsigned long long* lenpts, unsigned long long* startpts, unsigned long long* endpts, unsigned long long* bitrate);
 
 //pin.h
 int screenpincheck(int type, char* pin);
@@ -271,6 +266,7 @@ char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 char* gettime(struct skin* node, char* format);
 
 //skin.h
+void fillrect(int posx, int posy, int width, int height, long color, int transparent);
 int setnodeattr(struct skin* node, struct skin* parent);
 void clearscreennolock(struct skin* node);
 void clearshadow(struct skin* node);
@@ -326,6 +322,7 @@ void delconfig(char *key);
 void delconfigtmp(char *key);
 struct clist* addconfiginttmp(char *key, int value);
 int writeconfigtmp();
+int readconfig(const char *filename, struct clist** tmpconfig);
 
 //rc.h
 int waitrc(struct skin* owner, unsigned int timeout, int flag);
@@ -346,6 +343,7 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+void destroy();
 void htmldecode(char* to, char* from);
 void setosdtransparent(int value);
 char* string_shortname(char *tmpfilename, int mode);
@@ -428,10 +426,12 @@ struct bouquet* getbouquetbychannelmain(int serviceid, int transponderid);
 void recalcbouquetnr();
 
 //audiotrack.h
+void screenaudiotrack();
 struct audiotrack* addaudiotrack(struct channel* chnode, char* langdesc, int pid, int audiocodec, struct audiotrack* last);
 void freeaudiotrack(struct channel* chnode);
 
 //subtitle.h
+void screensubtitle();
 struct subtitle* addsubtitle(struct channel* chnode, int subtype, char* langdesc, int pid, int type, int id1, int id2, struct subtitle* last);
 void freesubtitle(struct channel* chnode);
 int subtitlestop(int flag);
