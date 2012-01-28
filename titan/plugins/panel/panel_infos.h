@@ -35,11 +35,11 @@ void screenpanel_infos(int mode)
 		changetitle(panel_info, _("Default"));
 
 		tmpstr1 = ostrcat("Date = ", "", 0, 0);
-		tmpstr1 = ostrcat(tmpstr1, gettime("%d %B %Y"), 1, 1);
+		tmpstr1 = ostrcat(tmpstr1, gettime(NULL, "%d %B %Y"), 1, 1);
 		tmpstr = ostrcat(tmpstr, tmpstr1, 1, 1);
 
 		tmpstr1 = ostrcat("\nTime = ", "", 0, 0);
-		tmpstr1 = ostrcat(tmpstr1, gettime("%H:%M:%S"), 1, 1);
+		tmpstr1 = ostrcat(tmpstr1, gettime(NULL, "%H:%M:%S"), 1, 1);
 		tmpstr = ostrcat(tmpstr, tmpstr1, 1, 1);
 		
 		tmpstr1 = ostrcat("\nUptime = ", "", 0, 0);
