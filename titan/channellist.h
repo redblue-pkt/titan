@@ -79,7 +79,7 @@ void showallchannel(struct skin* channellist, struct skin* listbox, int mode)
 	}
 }
 
-void showbouquetchannel(struct skin* channellist, struct skin* listbox, struct bouquet* firstbouquet, int mode)
+void showbouquetchannel(struct skin* channellist, struct skin* listbox, struct skin* channeltimeline, struct bouquet* firstbouquet, int mode)
 {
 	struct skin* chnode = NULL;
 	struct bouquet* tmpbouquet = firstbouquet;
@@ -110,6 +110,22 @@ void showbouquetchannel(struct skin* channellist, struct skin* listbox, struct b
 					chnode->handle1 = (char*) tmpbouquet;
 					if(mode == 0 && channelnottunable(tmpbouquet->channel) == 1)
 						chnode->deaktivcol = deaktivcol;
+						
+					if(status.showchanneltimeline == 1 && channeltimeline != status.skinerr)
+					{
+						chnode->textposx = channeltimeline->width + 10;
+						struct skin* chnode1 = NULL;
+						chnode1 = addlistbox(channellist, chnode, chnode, 1);
+						chnode1->progresscol = channeltimeline->progresscol;
+						chnode1->skinfunc = convertfunc("getepgchanneltimeline", &chnode1->funcrettype);
+						chnode1->handle = tmpbouquet->channel;
+						chnode1->posy = channeltimeline->posy;
+						chnode1->width = channeltimeline->width;
+						chnode1->height = channeltimeline->height;
+						chnode1->bordersize = channeltimeline->bordersize;
+						chnode1->bordercol = channeltimeline->bordercol;
+						chnode1->prozwidth = 0;
+					}
 				}
 			}
 		}
@@ -348,7 +364,7 @@ void drawchannellist(struct skin* channellist, int list, struct skin* listbox)
 	drawscreen(channellist, 0);
 }
 
-void recalclist(int list, void* aktlist, int listmode, struct skin* channellist, struct skin* listbox)
+void recalclist(int list, void* aktlist, int listmode, struct skin* channellist, struct skin* listbox, struct skin* channeltimeline)
 {
 	if(list == ALLCHANNEL)
 		showallchannel(channellist, listbox, listmode);
@@ -359,7 +375,7 @@ void recalclist(int list, void* aktlist, int listmode, struct skin* channellist,
 	if(list == AZCHANNEL)
 		showazchannel(channellist, listbox, (int)aktlist, listmode);
 	if(list == BOUQUETCHANNEL)
-		showbouquetchannel(channellist, listbox, ((struct mainbouquet*)aktlist)->bouquet, listmode);
+		showbouquetchannel(channellist, listbox, channeltimeline, ((struct mainbouquet*)aktlist)->bouquet, listmode);
 	if(list == MAINBOUQUETLIST)
 		showmainbouquet(channellist, listbox);
 	if(list == SATLIST)
@@ -403,6 +419,7 @@ int screenchannellist(struct channel** retchannel, char** retchannellist, int fl
 {
 	struct skin* channellist = getscreen("channellist");
 	struct skin* listbox = getscreennode(channellist, "listbox");
+	struct skin* channeltimeline = getscreennode(channellist, "channeltimeline");
 	struct skin* b1 = getscreennode(channellist, "b1");
 	struct skin* b2 = getscreennode(channellist, "b2");
 	struct skin* b3 = getscreennode(channellist, "b3");
@@ -447,7 +464,7 @@ start:
 			free(tmpstr1); tmpstr1 = NULL;
 			list = BOUQUETCHANNEL;
 			aktlist = (void*)mainbouquetnode;
-			showbouquetchannel(channellist, listbox, mainbouquetnode->bouquet, flag);
+			showbouquetchannel(channellist, listbox, channeltimeline, mainbouquetnode->bouquet, flag);
 			selectchannel(listbox);
 		}
 	}
@@ -584,7 +601,7 @@ start:
 				if(listmode == NOMODE && flag == 3) flag = 0;
 				delmarkedscreennodes(channellist, 1);
 				delmarkedscreennodes(channellist, 2);
-				recalclist(list, aktlist, listmode, channellist, listbox);
+				recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
 				selectchannel(listbox);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
 				drawscreen(channellist, 0);
@@ -604,7 +621,7 @@ start:
 				}
 				delmarkedscreennodes(channellist, 1);
 				delmarkedscreennodes(channellist, 2);
-				recalclist(list, aktlist, listmode, channellist, listbox);
+				recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
 				drawscreen(channellist, 0);
 			}
@@ -625,7 +642,7 @@ start:
 					{
 						delmarkedscreennodes(channellist, 1);
 						delmarkedscreennodes(channellist, 2);
-						showbouquetchannel(channellist, listbox, ((struct mainbouquet*)aktlist)->bouquet, 1);
+						showbouquetchannel(channellist, listbox, channeltimeline, ((struct mainbouquet*)aktlist)->bouquet, 1);
 					}
 				}
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
@@ -675,7 +692,7 @@ start:
 				delmarkedscreennodes(channellist, 1);
 				delmarkedscreennodes(channellist, 2);
 				status.markedchannel = NULL;
-				recalclist(list, aktlist, listmode, channellist, listbox);
+				recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
 				drawscreen(channellist, 0);
 			}
@@ -720,7 +737,7 @@ start:
 				delmarkedscreennodes(channellist, 1);
 				delmarkedscreennodes(channellist, 2);
 				status.markedchannel = NULL;
-				recalclist(list, aktlist, listmode, channellist, listbox);
+				recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
 				drawscreen(channellist, 0);
 			}
@@ -797,7 +814,7 @@ start:
 				}
 				delmarkedscreennodes(channellist, 1);
 				delmarkedscreennodes(channellist, 2);
-				recalclist(list, aktlist, listmode, channellist, listbox);
+				recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
 				drawscreen(channellist, 0);
 			}
@@ -1021,7 +1038,7 @@ start:
 					addconfigtmp("rchannellist", tmpstr);
 				free(tmpstr); tmpstr = NULL;
 				aktlist = listbox->select->handle1;
-				showbouquetchannel(channellist, listbox, (struct bouquet*)listbox->select->handle, flag);
+				showbouquetchannel(channellist, listbox, channeltimeline, (struct bouquet*)listbox->select->handle, flag);
 				delmarkedscreennodes(channellist, 2);
 				selectchannel(listbox);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
@@ -1222,7 +1239,7 @@ start:
 			if(listmode == NOMODE && flag == 3) flag = 0;
 			delmarkedscreennodes(channellist, 1);
 			delmarkedscreennodes(channellist, 2);
-			recalclist(list, aktlist, listmode, channellist, listbox);
+			recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
 			selectchannel(listbox);
 			changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
 			drawscreen(channellist, 0);
