@@ -23,8 +23,6 @@ void screennetworkbrowser()
 	title = ostrcat(title , _("Scanning Network Shares, please wait !!"), 1, 0);
 	changetitle(net_addshare, title);
 
-	int tmphangtime = 999999;
-	status.hangtime = tmphangtime;
 start:
 	drawscreen(net_addshare, 0);
 

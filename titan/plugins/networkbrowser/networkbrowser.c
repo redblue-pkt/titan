@@ -48,6 +48,7 @@ void init(void)
 //wird beim entladen ausgefuehrt
 void deinit(void)
 {
+	delmarkedscreen(100);
 	pluginaktiv = 0;
 	debug(70, "Networkbrowser Plugin removed !!!");
 }

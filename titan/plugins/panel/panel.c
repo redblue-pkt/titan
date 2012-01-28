@@ -45,7 +45,7 @@ void init(void)
 
 	pluginmenu = child;
 	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/panel/skin.xml", 0, 0);
-	readscreen(tmpstr, 100, 1);
+	readscreen(tmpstr, 107, 1);
 	free(tmpstr); tmpstr = NULL;
 	debug(10, "Panel Plugin loadet !!!");
 }
@@ -53,7 +53,7 @@ void init(void)
 //wird beim entladen ausgefuehrt
 void deinit(void)
 {
-	delmarkedscreen(100);
+	delmarkedscreen(107);
 	pluginaktiv = 0;
 	debug(10, "Panel Plugin removed !!!");
 }
