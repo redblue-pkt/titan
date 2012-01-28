@@ -48,9 +48,9 @@ void LCD_Pearl1_thread()
 		sleep(5);
 	while (LCD_Pearl1thread->aktion != STOP) {
 		put = 0;
-		tmpstr = gettime("%H:%M"); 
-		tmpstr2 = getaktchannelname();
-		tmpstr3 = getrec(NULL);
+		tmpstr = gettime(NULL, "%H:%M"); 
+		tmpstr2 = getaktchannelname(NULL);
+		tmpstr3 = getrec(NULL, NULL);
 	
 		if(status.security == 1)
 		{
