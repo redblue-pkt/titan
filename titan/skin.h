@@ -83,6 +83,11 @@ void* convertfunc(char *value, uint8_t *rettype)
 	}
 	if(ostrcmp("getplaytext", value) == 0)
 		return &getplaytext;
+	if(ostrcmp("getepgchanneltimeline", value) == 0)
+	{
+		*rettype = FUNCPROGRESS;
+		return &getepgchanneltimeline;
+	}
 	if(ostrcmp("getepgmarkedtimeline", value) == 0)
 	{
 		*rettype = FUNCPROGRESS;
@@ -2915,6 +2920,8 @@ void drawnode(struct skin* node, int flag)
 	char* bglt = NULL, *bglb = NULL, *bgrt = NULL, *bgrb = NULL;
 
 	debug(1000, "in");
+	
+	node->flag = setbit(node->flag, 0);
 
 	if(node->bordersize > 0)
 	{
@@ -3307,6 +3314,7 @@ int calcrposy(struct skin* node, struct skin* parent)
 
 int setnodeattr(struct skin* node, struct skin* parent)
 {
+	if(node != skin) node->flag = clearbit(node->flag, 0);
 	if(parent->type == LISTBOX || parent->type == FILELIST || parent->type == GRID)
 		if(node->pagecount != parent->aktpage) return 1;
 
@@ -3322,12 +3330,12 @@ int setnodeattr(struct skin* node, struct skin* parent)
 	{
 		if(node->funcrettype == FUNCPIC)
 		{
-			tmpstr = node->skinfunc(node->param1, node->param2);
+			tmpstr = node->skinfunc(node, node->param1, node->param2);
 			changepic(node, tmpstr);
 		}
 		else if(node->funcrettype == FUNCPROGRESS)
 		{
-			tmpstr = node->skinfunc(node->param1, node->param2);
+			tmpstr = node->skinfunc(node, node->param1, node->param2);
 			if(tmpstr != NULL)
 			{
 				node->hidden = NO;
@@ -3338,14 +3346,17 @@ int setnodeattr(struct skin* node, struct skin* parent)
 		}
 		else
 		{
-			tmpstr = node->skinfunc(node->param1, node->param2);
+			tmpstr = node->skinfunc(node, node->param1, node->param2);
 			changetext(node, _(tmpstr));
 		}
 		free(tmpstr);
 	}
 
 	if(status.screencalc != 2)
+	{
 		if(node->hidden == YES || parent->hidden == YES || node->locked == YES || parent->locked == YES) return 1;
+		if(checkbit(parent->flag, 0) == 0) return 1;
+	}
 
 	calcrwidth(node, parent);
 	if(parent->type != LISTBOX && parent->type != FILELIST && parent->type != GRID)
@@ -3386,25 +3397,25 @@ int setnodeattr(struct skin* node, struct skin* parent)
 
 	if(node->rposx - shadowlx < parent->iposx)
 	{
-		err("node (%s posx=%d) out of parent (%s posx=%d)", node->name, node->rposx - shadowlx, parent->name, parent->iposx);
+		if(status.screencalc == 0) err("node (%s posx=%d) out of parent (%s posx=%d)", node->name, node->rposx - shadowlx, parent->name, parent->iposx);
 		node->rposx = parent->iposx + shadowlx;
 		//return 1;
 	}
 	if(node->rposy - shadowoy < parent->iposy)
 	{
-		err("node (%s posy=%d) out of parent (%s posy=%d)", node->name, node->rposy - shadowoy, parent->name, parent->iposy);
+		if(status.screencalc == 0) err("node (%s posy=%d) out of parent (%s posy=%d)", node->name, node->rposy - shadowoy, parent->name, parent->iposy);
 		node->rposy = parent->iposy + shadowoy;
 		//return 1;
 	}
 	if(node->rposx + node->rwidth + shadowrx > parent->iposx + parent->iwidth)
 	{
-		err("node (%s posxx=%d) out of parent (%s posxx=%d)", node->name, node->rposx + node->rwidth + shadowrx, parent->name, parent->iposx + parent->iwidth);
+		if(status.screencalc == 0) err("node (%s posxx=%d) out of parent (%s posxx=%d)", node->name, node->rposx + node->rwidth + shadowrx, parent->name, parent->iposx + parent->iwidth);
 		node->rwidth = parent->iwidth - node->rposx - shadowrx;
 		//return 1;
 	}
 	if(node->rposy + node->rheight + shadowuy > parent->iposy + parent->iheight)
 	{
-		err("node (%s posyy=%d) out of parent (%s posyy=%d)", node->name, node->rposy + node->rheight + shadowuy, parent->name, parent->iposy + parent->iheight);
+		if(status.screencalc == 0) err("node (%s posyy=%d) out of parent (%s posyy=%d)", node->name, node->rposy + node->rheight + shadowuy, parent->name, parent->iposy + parent->iheight);
 		node->rheight = parent->iheight - node->rposy - shadowuy;
 		//return 1;
 	}

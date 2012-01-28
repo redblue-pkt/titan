@@ -56,7 +56,7 @@ void screenstandby()
 		if(rcret == getrcconfigint("rcpower", NULL)) break;
 
 		//check for epg update
-		loctime = gettime("%H:%M");
+		loctime = gettime(NULL, "%H:%M");
 		if(lastrun + 300 < time(NULL) && ostrcmp(loctime, getconfig("epg_refreshtime", NULL)) == 0)
 		{
 			//start epg scanlist

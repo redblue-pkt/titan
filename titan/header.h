@@ -268,7 +268,7 @@ void fillinfobar();
 char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, char* skinpath, int showpng, int flag);
 
 //skinfunc.h
-char* gettime(char* format);
+char* gettime(struct skin* node, char* format);
 
 //skin.h
 int setnodeattr(struct skin* node, struct skin* parent);
