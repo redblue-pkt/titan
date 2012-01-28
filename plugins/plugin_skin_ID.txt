@@ -1,0 +1,12 @@
+lcdpearl1: 116
+callmonitor1: 121
+imdb: 201
+permtime: 115
+keylock: 117
+hello: ---
+mboxinfo: 194
+mc: 101
+networkbrowser: 100
+panel: 107
+TopfieldVFD: ---
+browser: ---
