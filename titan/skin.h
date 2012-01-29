@@ -34,7 +34,12 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPIC;
 		return &getpicon;
 	}
-	if(ostrcmp("getepgpicon", value) == 0)
+	if(ostrcmp("getalternatepicon", value) == 0)
+	{
+		*rettype = FUNCPIC;
+		return &getalternatepicon;
+	}
+		if(ostrcmp("getepgpicon", value) == 0)
 	{
 		*rettype = FUNCPIC;
 		return &getepgpicon;
