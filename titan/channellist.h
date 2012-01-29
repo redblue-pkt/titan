@@ -992,12 +992,27 @@ start:
 		{
 			struct mainbouquet* tmpaktlist = ((struct mainbouquet*)aktlist);
 
+			int round = 0;
 			while(tmpaktlist != NULL)
 			{
 				if(rcret == getrcconfigint("rcff", NULL))
+				{
 					tmpaktlist = tmpaktlist->next;
+					if(tmpaktlist == NULL && round == 0)	
+					{
+						round = 1;
+						tmpaktlist = mainbouquet;
+					}
+				}
 				else if(rcret == getrcconfigint("rcfr", NULL))
+				{
 					tmpaktlist = tmpaktlist->prev;
+					if(tmpaktlist == NULL && round == 0)	
+					{
+						round = 1;
+						tmpaktlist = getlastmainbouquet(mainbouquet);
+					}
+				}
 				if(tmpaktlist == NULL) break;
 				if(tmpaktlist->type != status.servicetype) continue;
 
@@ -1050,12 +1065,27 @@ start:
 		{
 			struct sat* tmpaktlist = ((struct sat*)aktlist);
 
+			int round = 0;
 			while(tmpaktlist != NULL)
 			{
 				if(rcret == getrcconfigint("rcff", NULL))
+				{
 					tmpaktlist = tmpaktlist->next;
+					if(tmpaktlist == NULL && round == 0)	
+					{
+						round = 1;
+						tmpaktlist = sat;
+					}
+				}
 				else if(rcret == getrcconfigint("rcfr", NULL))
+				{
 					tmpaktlist = tmpaktlist->prev;
+					if(tmpaktlist == NULL && round == 0)	
+					{
+						round = 1;
+						tmpaktlist = getlastsat(sat);
+					}
+				}
 				if(tmpaktlist == NULL) break;
 
 				delmarkedscreennodes(channellist, 1);
@@ -1108,11 +1138,15 @@ start:
 			int tmpaktlist = (int)aktlist;
 
 			if(rcret == getrcconfigint("rcff", NULL))
+			{
 				tmpaktlist++;
+				if(tmpaktlist > 90) tmpaktlist = 65;
+			}
 			else if(rcret == getrcconfigint("rcfr", NULL))
+			{
 				tmpaktlist--;
-			if(tmpaktlist < 65) tmpaktlist = 65;
-			if(tmpaktlist > 90) tmpaktlist = 90;
+				if(tmpaktlist < 65) tmpaktlist = 90;
+			}
 
 			delmarkedscreennodes(channellist, 1);
 			struct skin* tmpnode = addlistbox(channellist, listbox, NULL, 2);
@@ -1167,12 +1201,27 @@ start:
 		{
 			struct provider* tmpaktlist = ((struct provider*)aktlist);
 
+			int round = 0;
 			while(tmpaktlist != NULL)
 			{
 				if(rcret == getrcconfigint("rcff", NULL))
+				{
 					tmpaktlist = tmpaktlist->next;
+					if(tmpaktlist == NULL && round == 0)	
+					{
+						round = 1;
+						tmpaktlist = provider;
+					}
+				}
 				else if(rcret == getrcconfigint("rcfr", NULL))
+				{
 					tmpaktlist = tmpaktlist->prev;
+					if(tmpaktlist == NULL && round == 0)	
+					{
+						round = 1;
+						tmpaktlist = getlastprovider(provider);
+					}
+				}
 				if(tmpaktlist == NULL) break;
 
 				delmarkedscreennodes(channellist, 1);
