@@ -128,17 +128,19 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 	{
 		channellistbox->width = chboxwidth;
 		
-		int newlistboxwidth = gmultiepg->iwidth - (channellistbox->width + channellistbox->posx);
-		listbox->iwidth += listbox->width - newlistboxwidth;
-		listbox->width = newlistboxwidth;
+		listbox->width = gmultiepg->iwidth - (channellistbox->width + channellistbox->posx);
 		listbox->posx = channellistbox->width + channellistbox->posx;
 		listbox->prozwidth = 0;
+		status.screencalc = 2;
+		setnodeattr(listbox, gmultiepg);
+		status.screencalc = 0;
 
-		int newtimelinewidth = gmultiepg->iwidth - (channellistbox->width + channellistbox->posx);
-		timeline->iwidth += timeline->width - newtimelinewidth;
-		timeline->width = newtimelinewidth;
+		timeline->width = gmultiepg->iwidth - (channellistbox->width + channellistbox->posx);
 		timeline->posx = channellistbox->width + channellistbox->posx;
 		timeline->prozwidth = 0;
+		status.screencalc = 2;
+		setnodeattr(timeline, gmultiepg);
+		status.screencalc = 0;
 	}
 
 	if(tmpchannel != NULL && tmpchannel->servicetype == status.servicetype)
