@@ -110,7 +110,7 @@ int selectchannelgmepg(struct skin* listbox)
 }
 
 
-int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, int zoom, time_t akttime, struct channel* aktchannel, int linecol1, int linecol2, int linecol3, int* aktline, struct skin** pchnode, struct skin** pchnode1, int height, int picheight)
+int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, struct skin* timeline, int zoom, time_t akttime, struct channel* aktchannel, int linecol1, int linecol2, int linecol3, int* aktline, struct skin** pchnode, struct skin** pchnode1, int height, int picheight)
 {
 	int treffer = 0, gridbr = 0, aktcol = 0, nottuneable = 0;
 	struct epg* epgnode = NULL;
@@ -118,6 +118,20 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 	char* tmpstr = NULL;
 
 	int epgpicon = getconfigint("epgpicon", NULL);
+
+	if(channellistbox->width == 0)
+	{
+		if(epgpicon == 1)
+			channellistbox->width = 105;
+		else
+			channellistbox->width = 225;
+		listbox->posx = channellistbox->width;
+		listbox->width = gmultiepg->iwidth - channellistbox->width;
+		listbox->prozwidth = 0;
+		timeline->posx = channellistbox->width;
+		timeline->width = gmultiepg->iwidth - channellistbox->width;
+		timeline->prozwidth = 0;
+	}
 
 	if(tmpchannel != NULL && tmpchannel->servicetype == status.servicetype)
 	{
@@ -236,7 +250,7 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 	return treffer;
 }
 
-int showallgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, int zoom, time_t akttime, struct channel* aktchannel)
+int showallgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, struct skin* timeline, int zoom, time_t akttime, struct channel* aktchannel)
 {
 	int treffer = 0, aktline = 0;
 	struct skin* chnode = NULL, *chnode1 = NULL;
@@ -256,14 +270,14 @@ int showallgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, str
 
 	while(tmpchannel != NULL)
 	{ 
-		if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight) == 1)
+		if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, timeline, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight) == 1)
 			treffer = 1;
 		tmpchannel = tmpchannel->next;
 	}
 	return treffer;
 }
 
-int showbouquetgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, struct bouquet* firstbouquet, int zoom, time_t akttime, struct channel* aktchannel)
+int showbouquetgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, struct skin* timeline, struct bouquet* firstbouquet, int zoom, time_t akttime, struct channel* aktchannel)
 {
 	int treffer = 0, aktline = 0;
 	struct skin* chnode = NULL, *chnode1 = NULL;
@@ -283,14 +297,14 @@ int showbouquetgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox,
 
 	while(tmpbouquet != NULL)
 	{
-		if(calcgmultiepg(tmpbouquet->channel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight) == 1)
+		if(calcgmultiepg(tmpbouquet->channel, gmultiepg, channellistbox, listbox, timeline, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight) == 1)
 			treffer = 1;
 		tmpbouquet = tmpbouquet->next;
 	}
 	return treffer;
 }
 
-int showprovidergmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, struct provider* providernode, int zoom, time_t akttime, struct channel* aktchannel)
+int showprovidergmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, struct skin* timeline, struct provider* providernode, int zoom, time_t akttime, struct channel* aktchannel)
 {
 	int treffer = 0, aktline = 0;
 	struct skin* chnode = NULL, *chnode1 = NULL;
@@ -311,7 +325,7 @@ int showprovidergmepgchannel(struct skin* gmultiepg, struct skin* channellistbox
 	{
 		if(tmpchannel->provider == providernode)
 		{
-			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight) == 1)
+			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, timeline, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight) == 1)
 				treffer = 1;
 		}
 		tmpchannel = tmpchannel->next;
@@ -319,7 +333,7 @@ int showprovidergmepgchannel(struct skin* gmultiepg, struct skin* channellistbox
 	return treffer;
 }
 
-int showsatgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, struct sat* satnode, int zoom, time_t akttime, struct channel* aktchannel)
+int showsatgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, struct skin* timeline, struct sat* satnode, int zoom, time_t akttime, struct channel* aktchannel)
 {
 	int treffer = 0, aktline = 0;
 	struct skin* chnode = NULL, *chnode1 = NULL;
@@ -342,7 +356,7 @@ int showsatgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, str
 	{
 		if(tmpchannel->transponder != NULL && tmpchannel->transponder->orbitalpos == satnode->orbitalpos)
 		{
-			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight) == 1)
+			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, timeline, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight) == 1)
 				treffer = 1;
 		}
 		tmpchannel = tmpchannel->next;
@@ -350,7 +364,7 @@ int showsatgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, str
 	return treffer;
 }
 
-int showazgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, int character, int zoom, time_t akttime, struct channel* aktchannel)
+int showazgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, struct skin* timeline, int character, int zoom, time_t akttime, struct channel* aktchannel)
 {
 	int treffer = 0, aktline = 0;
 	struct skin* chnode = NULL, *chnode1 = NULL;
@@ -371,7 +385,7 @@ int showazgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, stru
 	{
 		if(tmpchannel->name != NULL && (tmpchannel->name[0] == character || tmpchannel->name[0] == character + 32))
 		{
-			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight) == 1)
+			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, timeline, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight) == 1)
 				treffer = 1;
 		}
 		tmpchannel = tmpchannel->next;
@@ -418,10 +432,10 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	struct channel* aktchannel = NULL;
 #ifdef SIMULATE
 	time_t akttime = 1307871000;
-	//akttime = 1315614900;
-	//akttime = 1317926400;
+        //akttime = 1315614900;
+        //akttime = 1317926400;
 #else
-	time_t akttime = time(NULL);
+        time_t akttime = time(NULL);
 #endif
 	int zoom = getconfigint("gmultiepgzoom", NULL);
 	if(zoom < 1) zoom = 4;
@@ -434,8 +448,8 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	if(chnode == NULL) chnode = status.aktservice->channel;
 	if(epgnode == NULL) epgnode = getepgakt(chnode);
 	tmpstr2 = epgdescunzip(epgnode);
-	changetext(epgdesc, tmpstr2);
-	free(tmpstr2); tmpstr2 = NULL;
+        changetext(epgdesc, tmpstr2);
+        free(tmpstr2); tmpstr2 = NULL;
 
 	//chalc screen, so we have all infos
 	status.screencalc = 2;
@@ -450,12 +464,12 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	if(status.servicetype == 0)
 	{
 		tmpstr = getconfig("channellist", NULL);
-		aktchannel = getchannel(getconfigint("serviceid", NULL), getconfiglu("transponderid", NULL));
+                aktchannel = getchannel(getconfigint("serviceid", NULL), getconfiglu("transponderid", NULL));
 	}
 	else
 	{
 		tmpstr = getconfig("rchannellist", NULL);
-		aktchannel = getchannel(getconfigint("rserviceid", NULL), getconfiglu("rtransponderid", NULL));
+                aktchannel = getchannel(getconfigint("rserviceid", NULL), getconfiglu("rtransponderid", NULL));
 	}
 
 	if(ostrncmp("(BOUQUET)-", tmpstr, 10) == 0 && strlen(tmpstr) > 10)
@@ -471,7 +485,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			free(tmpstr1); tmpstr1 = NULL;
 			list = BOUQUETCHANNEL;
 			aktlist = (void*)mainbouquetnode;
-			showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, mainbouquetnode->bouquet, zoom, akttime, aktchannel);
+			showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, timeline, mainbouquetnode->bouquet, zoom, akttime, aktchannel);
 			selectchannelgmepg(channellistbox);
 		}
 	}
@@ -485,7 +499,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		list = AZCHANNEL;
 		character = (int)tmpstr[6];
 		aktlist = (void*)(int)tmpstr[6];
-		showazgmepgchannel(gmultiepg, channellistbox, listbox, character, zoom, akttime, aktchannel);
+		showazgmepgchannel(gmultiepg, channellistbox, listbox, timeline, character, zoom, akttime, aktchannel);
 		selectchannelgmepg(channellistbox);
 	}
 	else if(ostrncmp("(SAT)-", tmpstr, 6) == 0 && strlen(tmpstr) > 6)
@@ -498,7 +512,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		satnode = getsat(tmpstr + 6);
 		list = SATCHANNEL;
 		aktlist = (void*)satnode;
-		showsatgmepgchannel(gmultiepg, channellistbox, listbox, satnode, zoom, akttime, aktchannel);
+		showsatgmepgchannel(gmultiepg, channellistbox, listbox, timeline, satnode, zoom, akttime, aktchannel);
 		selectchannelgmepg(channellistbox);
 	}
 	else if(ostrncmp("(PROVIDER)-", tmpstr, 11) == 0 && strlen(tmpstr) > 6)
@@ -511,14 +525,14 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		providernode = getproviderbyname(tmpstr + 11);
 		list = PROVIDERCHANNEL;
 		aktlist = (void*)providernode;
-		showprovidergmepgchannel(gmultiepg, channellistbox, listbox, providernode, zoom, akttime, aktchannel);
+		showprovidergmepgchannel(gmultiepg, channellistbox, listbox, timeline, providernode, zoom, akttime, aktchannel);
 		selectchannelgmepg(channellistbox);
 	}
 	else
 	{
 		if(nochanneltitle == 0) changetitle(gmultiepg, _("GRAPHIC MULTI EPG - All Channels"));
 		list = ALLCHANNEL;
-		showallgmepgchannel(gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel);
+		showallgmepgchannel(gmultiepg, channellistbox, listbox, timeline, zoom, akttime, aktchannel);
 		selectchannelgmepg(channellistbox);
 	}
 
@@ -619,7 +633,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 
 			if(list == BOUQUETCHANNEL)
 			{
-				if(showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, ((struct mainbouquet*)aktlist)->bouquet, zoom, akttime, aktchannel) == 0)
+				if(showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, timeline, ((struct mainbouquet*)aktlist)->bouquet, zoom, akttime, aktchannel) == 0)
 				{
 					if(tmptime == 0)
 						akttime -= addtime;
@@ -628,12 +642,12 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 					if(akttime < starttime)
 						akttime = starttime;
 					else
-						showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, ((struct mainbouquet*)aktlist)->bouquet, zoom, akttime, aktchannel);
+						showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, timeline, ((struct mainbouquet*)aktlist)->bouquet, zoom, akttime, aktchannel);
 				}
 			}
 			else if(list == ALLCHANNEL)
 			{
-				if(showallgmepgchannel(gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel) == 0)
+				if(showallgmepgchannel(gmultiepg, channellistbox, listbox, timeline, zoom, akttime, aktchannel) == 0)
 				{
 					if(tmptime == 0)
 						akttime -= addtime;
@@ -642,12 +656,12 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 					if(akttime < starttime)
 						akttime = starttime;
 					else
-						showallgmepgchannel(gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel);
+						showallgmepgchannel(gmultiepg, channellistbox, listbox, timeline, zoom, akttime, aktchannel);
 				}
 			}
 			else if(list == AZCHANNEL)
 			{
-				if(showazgmepgchannel(gmultiepg, channellistbox, listbox, character, zoom, akttime, aktchannel) == 0)
+				if(showazgmepgchannel(gmultiepg, channellistbox, listbox, timeline, character, zoom, akttime, aktchannel) == 0)
 				{
 					if(tmptime == 0)
 						akttime -= addtime;
@@ -656,12 +670,12 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 					if(akttime < starttime)
 						akttime = starttime;
 					else
-						showazgmepgchannel(gmultiepg, channellistbox, listbox, character, zoom, akttime, aktchannel);
+						showazgmepgchannel(gmultiepg, channellistbox, listbox, timeline, character, zoom, akttime, aktchannel);
 				}
 			}
 			else if(list == SATCHANNEL)
 			{
-				if(showsatgmepgchannel(gmultiepg, channellistbox, listbox, satnode, zoom, akttime, aktchannel) == 0)
+				if(showsatgmepgchannel(gmultiepg, channellistbox, listbox, timeline, satnode, zoom, akttime, aktchannel) == 0)
 				{
 					if(tmptime == 0)
 						akttime -= addtime;
@@ -670,12 +684,12 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 					if(akttime < starttime)
 						akttime = starttime;
 					else
-						showsatgmepgchannel(gmultiepg, channellistbox, listbox, satnode, zoom, akttime, aktchannel);
+						showsatgmepgchannel(gmultiepg, channellistbox, listbox, timeline, satnode, zoom, akttime, aktchannel);
 				}
 			}
 			else if(list == PROVIDERCHANNEL)
 			{
-				if(showprovidergmepgchannel(gmultiepg, channellistbox, listbox, providernode, zoom, akttime, aktchannel) == 0)
+				if(showprovidergmepgchannel(gmultiepg, channellistbox, listbox, timeline, providernode, zoom, akttime, aktchannel) == 0)
 				{
 					if(tmptime == 0)
 						akttime -= addtime;
@@ -684,7 +698,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 					if(akttime < starttime)
 						akttime = starttime;
 					else
-						showprovidergmepgchannel(gmultiepg, channellistbox, listbox, providernode, zoom, akttime, aktchannel);
+						showprovidergmepgchannel(gmultiepg, channellistbox, listbox, timeline, providernode, zoom, akttime, aktchannel);
 				}
 			}
 			createtimeline(gmultiepg, timeline, akttime, zoom);
@@ -700,15 +714,15 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			if(akttime < starttime) akttime = starttime;
 
 			if(list == BOUQUETCHANNEL)
-				showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, ((struct mainbouquet*)aktlist)->bouquet, zoom, akttime, aktchannel);
+				showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, timeline, ((struct mainbouquet*)aktlist)->bouquet, zoom, akttime, aktchannel);
 			else if(list == ALLCHANNEL)
-				showallgmepgchannel(gmultiepg, channellistbox, listbox, zoom, akttime, aktchannel);
+				showallgmepgchannel(gmultiepg, channellistbox, listbox, timeline, zoom, akttime, aktchannel);
 			else if(list == AZCHANNEL)
-				showazgmepgchannel(gmultiepg, channellistbox, listbox, character, zoom, akttime, aktchannel);
+				showazgmepgchannel(gmultiepg, channellistbox, listbox, timeline, character, zoom, akttime, aktchannel);
 			else if(list == SATCHANNEL)
-				showsatgmepgchannel(gmultiepg, channellistbox, listbox, satnode, zoom, akttime, aktchannel);
+				showsatgmepgchannel(gmultiepg, channellistbox, listbox, timeline, satnode, zoom, akttime, aktchannel);
 			else if(list == PROVIDERCHANNEL)
-				showprovidergmepgchannel(gmultiepg, channellistbox, listbox, providernode, zoom, akttime, aktchannel);
+				showprovidergmepgchannel(gmultiepg, channellistbox, listbox, timeline, providernode, zoom, akttime, aktchannel);
 			createtimeline(gmultiepg, timeline, akttime, zoom);
 			drawscreen(gmultiepg, 0);
 			if(listbox->select != NULL)
