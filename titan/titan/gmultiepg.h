@@ -122,9 +122,9 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 	if(channellistbox->width == 0)
 	{
 		if(epgpicon == 1)
-			channellistbox->width = 105;
+			channellistbox->width = getskinconfigint("epgchannelpiconwidth", NULL);
 		else
-			channellistbox->width = 225;
+			channellistbox->width = getskinconfigint("epgchannelwidth", NULL);
 		listbox->posx = channellistbox->width;
 		listbox->width = gmultiepg->iwidth - channellistbox->width;
 		listbox->prozwidth = 0;
