@@ -112,19 +112,21 @@ int selectchannelgmepg(struct skin* listbox)
 
 int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, struct skin* timeline, int zoom, time_t akttime, struct channel* aktchannel, int linecol1, int linecol2, int linecol3, int* aktline, struct skin** pchnode, struct skin** pchnode1, int height, int picheight)
 {
-	int treffer = 0, gridbr = 0, aktcol = 0, nottuneable = 0;
+	int treffer = 0, gridbr = 0, aktcol = 0, nottuneable = 0, chboxwidth = 0;
 	struct epg* epgnode = NULL;
 	struct skin* chnode = NULL, *chnode1 = NULL;
 	char* tmpstr = NULL;
 
 	int epgpicon = getconfigint("epgpicon", NULL);
 
-	if(channellistbox->width == 0)
+	if(epgpicon == 1)
+		chboxwidth = getskinconfigint("epgchannelpiconwidth", NULL);
+	else
+		chboxwidth = getskinconfigint("epgchannelwidth", NULL);
+			
+	if(chboxwidth != 0)
 	{
-		if(epgpicon == 1)
-			channellistbox->width = getskinconfigint("epgchannelpiconwidth", NULL);
-		else
-			channellistbox->width = getskinconfigint("epgchannelwidth", NULL);
+		channellistbox->width = chboxwidth;
 		listbox->posx = channellistbox->width;
 		listbox->width = gmultiepg->iwidth - channellistbox->width;
 		listbox->prozwidth = 0;
