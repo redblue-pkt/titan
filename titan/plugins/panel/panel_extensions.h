@@ -95,7 +95,7 @@ void screenpanel_extensions(int mode)
 //				char* ipkg_ret = get_ipk_remove(deinstallname);
 //				textbox(_("Ipk Remove Info"), _(ipkg_ret), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 //				free(ipkg_ret); ipkg_ret = NULL; 
-				if(ipk_remove(deinstallname,1) == 0)
+				if(ipkg_remove(deinstallname,1) == 0)
 					textbox(_("Ipk Remove Info"), _("Remove OK"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
 				else
 					textbox(_("Ipk Remove Info"), _("Remove ERROR"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
