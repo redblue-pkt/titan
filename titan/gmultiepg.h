@@ -127,11 +127,17 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 	if(chboxwidth != 0)
 	{
 		channellistbox->width = chboxwidth;
-		listbox->posx = channellistbox->width;
-		listbox->width = gmultiepg->iwidth - channellistbox->width;
+		
+		int newlistboxwidth = gmultiepg->iwidth - (channellistbox->width + channellistbox->posx);
+		listbox->iwidth += listbox->width - newlistboxwidth;
+		listbox->width = newlistboxwidth;
+		listbox->posx = channellistbox->width + channellistbox->posx;
 		listbox->prozwidth = 0;
-		timeline->posx = channellistbox->width;
-		timeline->width = gmultiepg->iwidth - channellistbox->width;
+
+		int newtimelinewidth = gmultiepg->iwidth - (channellistbox->width + channellistbox->posx);
+		timeline->iwidth += timeline->width - newtimelinewidth;
+		timeline->width = newtimelinewidth;
+		timeline->posx = channellistbox->width + channellistbox->posx;
 		timeline->prozwidth = 0;
 	}
 
