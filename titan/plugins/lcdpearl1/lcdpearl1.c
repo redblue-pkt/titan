@@ -25,6 +25,8 @@ void LCD_start_lcd4linux()
 		system(startlcd);
 		sleep(6);
 		count ++;
+		if(LCD_Pearl1thread == NULL)
+			break;
 		if(count == 101) {
 			textbox(_("Message"), _("ERROR cant start LCD driver"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
 			LCD_Pearl1thread->aktion = STOP;
