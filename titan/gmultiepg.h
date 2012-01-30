@@ -116,6 +116,7 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 	struct epg* epgnode = NULL;
 	struct skin* chnode = NULL, *chnode1 = NULL;
 	char* tmpstr = NULL;
+	time_t nowtime = time(NULL);
 
 	int epgpicon = getconfigint("epgpicon", NULL);
 
@@ -208,7 +209,7 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 						aktcol = linecol2;
 					else
 						aktcol = linecol1;
-					if(akttime >= epgnode->starttime && akttime < epgnode->endtime)
+					if(nowtime >= epgnode->starttime && nowtime < epgnode->endtime)
 						aktcol = linecol3;
 					chnode1->bgcol = aktcol;
 					chnode1->bgspace = 1;
