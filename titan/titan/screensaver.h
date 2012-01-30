@@ -73,7 +73,7 @@ int showscreensaver()
 
 	if(screensaver->type == 3)
 	{
-		if(file_exist(screensaver->value))
+		if(file_exist(screensaver->path))
 		{
 			char* path = NULL;
 		
@@ -83,7 +83,7 @@ int showscreensaver()
 			{
 				if(screensaver->aktnode->del == FILELISTDELMARK && screensaver->aktnode->text != NULL && screensaver->aktnode->input == 0)
 				{
-					path = ostrcat(path, screensaver->value, 1, 0);
+					path = ostrcat(path, screensaver->path, 1, 0);
 					path = ostrcat(path, "/", 1, 0);
 					path = ostrcat(path, screensaver->aktnode->text, 1, 0);
 					debug(90, "singlepicstart %s", path);
@@ -106,8 +106,8 @@ int deinitscreensaver()
 	{
 		changetext(screensaver->screennode, NULL);
 		changepicmem(screensaver->screennode, NULL, 0);
-		if(screensaver->type == 1 || screensaver->type == 2)
-			delpic(screensaver->value);
+		if((screensaver->type == 1 || screensaver->type == 2) && screensaver->pic != NULL)
+			delpic(screensaver->pic->name);
 		if(screensaver->type == 3)
 		{
 			delmarkedscreennodes(screensaver->screen, FILELISTDELMARK);
@@ -180,12 +180,12 @@ int initscreensaver()
 	{
 		screensaver->type = 3;
 		screensaver->speed = getconfigint("screensaver_interval", NULL) * 1000;
-		screensaver->value = getconfig("screensaver_type", NULL);
+		screensaver->path = getconfig("screensaver_type", NULL);
 		screensaver->screen = getscreen("screensaveradjust");
 		screensaver->filelist = getscreennode(screensaver->screen, "filelist");
 		delmarkedscreennodes(screensaver->screen, FILELISTDELMARK);
 		changemask(screensaver->filelist, "*.mvi");
-		changeinput(screensaver->filelist, screensaver->value);
+		changeinput(screensaver->filelist, screensaver->path);
 		createfilelist(screensaver->screen, screensaver->filelist);
 		
 	}

@@ -258,6 +258,7 @@ struct screensaver
 	struct skin* aktnode;
 	struct pic* pic;
 	char* value;
+	char* path;
 };
 
 struct playlist
