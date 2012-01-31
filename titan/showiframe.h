@@ -3,7 +3,7 @@
 
 //flag 0: stop service
 //flag 1: not stop service
-int singlepicstart(const char *filename)
+int singlepicstart(const char *filename, int flag)
 {
 	debug(1000, "in -> %s", filename);
 	int ret = 0;
