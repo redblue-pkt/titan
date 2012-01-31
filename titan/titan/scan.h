@@ -1129,6 +1129,8 @@ void screenscanconfig(int flag)
 		servicecheckret(servicestart(status.lastservice->channel, tmpstr, NULL, 0), 0);
 		free(tmpstr); tmpstr = NULL;
 	}
+	
+	writeallconfig(1);
 }
 
 #endif
