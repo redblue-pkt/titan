@@ -724,7 +724,7 @@ firstwizzardstep1:
 	}
 	
 	// workaround, remove bootlogo on startup
-	drawskin(skin,0);
+	drawscreen(skin, 0);
 	screeninfobar();
 
 	//for testign screens
