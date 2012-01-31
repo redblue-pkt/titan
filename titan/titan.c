@@ -722,7 +722,9 @@ firstwizzardstep1:
 			err("set sigsegjump");
 		}
 	}
-
+	
+	// workaround, remove bootlogo on startup
+	drawskin(skin,0);
 	screeninfobar();
 
 	//for testign screens
