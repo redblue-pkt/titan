@@ -13,6 +13,8 @@ int pluginaktiv = 0;
 struct stimerthread* LCD_Pearl1thread = NULL;
 int firststart = 0;
 
+#include "lcdpearl_grep.h"
+
 void LCD_start_lcd4linux()
 {
 	int count = 0;
@@ -48,6 +50,8 @@ void LCD_Pearl1_thread()
 
 	if(firststart == 1)
 		sleep(5);
+	addtimer(&lcd_raw_event, START, 10000, 1, NULL, NULL, NULL);	
+	firststart = 0;
 	while (LCD_Pearl1thread->aktion != STOP) {
 		put = 0;
 		tmpstr = gettime(NULL, "%H:%M"); 
@@ -97,8 +101,8 @@ void LCD_Pearl1_thread()
 				{
 					changetext(akttime, tmpstr);
 					drawscreen(LCD_Pearl1, 0);
-					system(fbgrab);
-					system("mv /tmp/.titanlcd1.png /tmp/titanlcd.png");
+					//system(fbgrab);
+					//system("mv /tmp/.titanlcd1.png /tmp/titanlcd.png");
 				
 					//system("/var/bin/fbgrab -f /tmp/titanlcd.raw -w 320 -h 240 -b 32 -i /tmp/titanlcd.png > /dev/null");
 					//system("xloadimage /tmp/titanlcd.png > /dev/null &");
@@ -117,6 +121,7 @@ void LCD_Pearl1_thread()
  	free(startlcd);startlcd=NULL;
  	addconfig("lcd_pearl1_plugin_running", "no");
  	LCD_Pearl1thread = NULL;
+ 	drawscreen(LCD_Pearl1, 0);
  	return;
 }
 
@@ -129,7 +134,6 @@ void LCD_Pearl1_main()
 		LCD_Pearl1thread = addtimer(&LCD_Pearl1_thread, START, 10000, 1, NULL, NULL, NULL);
 		addtimer(&LCD_start_lcd4linux, START, 10000, 1, NULL, NULL, NULL);
 		sleep(1);
-		firststart = 0;
 	}
 	else
 	{
@@ -157,7 +161,6 @@ void init(void)
 	tmpstr = getconfig("lcd_pearl1_plugin_running", NULL);
 	if(ostrcmp(tmpstr, "yes") == 0)
 		LCD_Pearl1_main();
-	firststart = 0;
 	tmpstr=NULL;
 }
 
