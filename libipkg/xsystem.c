@@ -38,7 +38,16 @@ int xsystem(const char *cmd)
 {
     int err;
 
-    err = system(cmd);
+    //NIT
+    char* buf = malloc(4096);
+    if(buf != NULL)
+    {
+       snprintf(buf, 4095, "%s >> /tmp/ipkg.log 2>&1", cmd);
+       err = system(buf);
+    }
+    else
+       err = system(cmd);
+    //NIT
 
     if (err == -1) {
 	fprintf(stderr, "%s: ERROR: fork failed before execution: `%s'\n",
