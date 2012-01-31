@@ -87,7 +87,10 @@ int showscreensaver()
 					path = ostrcat(path, "/", 1, 0);
 					path = ostrcat(path, screensaver->aktnode->text, 1, 0);
 					debug(90, "singlepicstart %s", path);
-					singlepicstart(path);
+					if(screensaver->flag == 0)
+						singlepicstart(path, 0);
+					else if(screensaver->flag == 1)
+						singlepicstart(path, 1);
 					free(path); path = NULL;
 					screensaver->aktnode = screensaver->aktnode->next;
 					break;

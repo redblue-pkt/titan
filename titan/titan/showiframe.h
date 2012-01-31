@@ -1,6 +1,8 @@
 #ifndef SHOWIFRAME_H
 #define SHOWIFRAME_H
 
+//flag 0: stop service
+//flag 1: not stop service
 int singlepicstart(const char *filename)
 {
 	debug(1000, "in -> %s", filename);
@@ -8,8 +10,11 @@ int singlepicstart(const char *filename)
 
 	if(status.aktservice->type != STILLPIC)
 	{
-		ret = servicestop(status.aktservice, 0, 1);
-		if(ret == 1) return 1;
+		if(flag == 0)
+		{
+			ret = servicestop(status.aktservice, 0, 1);
+			if(ret == 1) return 1;
+		}
 	}
 
 	int fd = open(filename, O_RDONLY);
