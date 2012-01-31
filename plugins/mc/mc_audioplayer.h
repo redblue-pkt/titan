@@ -56,7 +56,7 @@ void screenmc_audioplayer()
 
 	debug(50, "start screenmc_audioplayer style=%d, view=%d", style, view);
 
-	singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi");
+	singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 
 	if(getconfigint("screensaver", NULL) == 1)
 		initscreensaver();
@@ -84,7 +84,7 @@ void screenmc_audioplayer()
 				else
 				{
 					if(screensaver != NULL && screensaver->type == 3)
-						singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi");
+						singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 					drawscreen(apskin, 0);
 				}
 
@@ -153,7 +153,7 @@ void screenmc_audioplayer()
 			if(status.pause == 1)
 			{
 				if(screensaver != NULL && screensaver->type == 3)
-					singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi");
+					singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 				drawscreen(apskin, 0);
 			}
 			if((status.play == 1) || (status.pause == 1))
@@ -374,7 +374,7 @@ void screenmc_audioplayer()
 					mc_mounter_main(0,filename,filelistpath,filelist,apskin,filemask,tmpview,currentdirectory);
 					debug(50, "mc_mounter_main done");
 	
-					singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi");
+					singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 					continue;
 				}
 				else if(!strncmp(".m3u",filename+strlen(filename)-4,4) || !strncmp(".pls",filename+strlen(filename)-4,4)) 
@@ -412,7 +412,7 @@ void screenmc_audioplayer()
 
 				status.play = 1;
 
-				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi");
+				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 			}
 		}
 		if(eof >=1 || playerisplaying() == 0)
