@@ -47,7 +47,10 @@ void screeninfobar()
 			int screensaver_delay = getconfigint("screensaver_delay", NULL);
 			rcret = 0; count = 0; rcwait = 1000;
 			if(status.servicetype == 1 && getconfigint("screensaver", NULL) == 1)
+			{
 				initscreensaver();
+				if(screensaver != NULL) screensaver->flag = 1;
+			}
 			if(screensaver == NULL) rcwait = 0;
 			while(rcret == 0 || rcret == RCTIMEOUT)
 			{
@@ -64,6 +67,7 @@ void screeninfobar()
 					rcwait = screensaver->speed;
 				}
 			}
+			if(screensaver != NULL) screensaver->flag = 0;
 			deinitscreensaver();
 			drawscreen(skin, 0);
 			infobartimeout = 0;

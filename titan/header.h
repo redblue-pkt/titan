@@ -215,7 +215,7 @@ struct pic* getpic(char* name);
 void delmarkedpic(int del);
 
 //showiframe.h
-int singlepicstart(const char *filename);
+int singlepicstart(const char *filename, int flag);
 
 //player.h
 void playerff(int speed);

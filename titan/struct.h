@@ -252,6 +252,7 @@ struct screensaver
 	int speed;
 	int newposx;
 	int newposy;
+	int flag;
 	struct skin* screen;
 	struct skin* screennode;
 	struct skin* filelist;
