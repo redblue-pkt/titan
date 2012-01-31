@@ -217,6 +217,10 @@ void screenmc_audioplayer()
 				view = getconfigint("view", NULL);
 				mc_changeview(view, filelist);
 				screensaver_delay = getconfigint("screensaver_delay", NULL);
+				deinitscreensaver();
+				if(getconfigint("screensaver", NULL) == 1)
+					initscreensaver();
+
 				drawscreen(apskin, 0);
 			}
 		}
@@ -419,6 +423,7 @@ void screenmc_audioplayer()
 	}
 
 	deinitscreensaver();
+		
 	status.hangtime = getconfigint("hangtime", NULL);
 	delconfigtmp("dirsort");
 
