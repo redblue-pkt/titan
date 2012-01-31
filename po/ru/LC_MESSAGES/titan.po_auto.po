@@ -173,7 +173,8 @@ msgstr ""
 #: skin_default_skin.xml.h:178 timeshift.h:52 timeshift.h:79
 #: networkbrowser.h:73 networkbrowser.h:952 networkbrowser.h:1183
 #: networkbrowser.h:1196 channellist.h:709 mc_audioplayer.h:319
-#: mc_audioplayer.h:408 ipkg.h:362
+#: mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:63 panel_extensions.h:65
+#: panel_extensions.h:112 panel_extensions.h:137
 msgid "EXIT"
 msgstr ""
 
@@ -567,7 +568,8 @@ msgstr ""
 #: global.h:4177 global.h:4178 global.h:4155 rectimer.h:1159 rectimer.h:1171
 #: timeshift.h:52 timeshift.h:79 networkbrowser.h:73 networkbrowser.h:952
 #: networkbrowser.h:1183 networkbrowser.h:1196 channellist.h:709
-#: mc_audioplayer.h:319 mc_audioplayer.h:408 ipkg.h:362
+#: mc_audioplayer.h:319 mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:65
+#: panel_extensions.h:153
 msgid "Message"
 msgstr ""
 
@@ -686,7 +688,8 @@ msgstr ""
 #: global.h:4155 rectimer.h:1159 rectimer.h:1171 skin_default_skin.xml.h:272
 #: timeshift.h:52 timeshift.h:79 networkbrowser.h:73 networkbrowser.h:952
 #: networkbrowser.h:1183 networkbrowser.h:1196 channellist.h:709
-#: mc_audioplayer.h:319 mc_audioplayer.h:408 ipkg.h:362
+#: mc_audioplayer.h:319 mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:63
+#: panel_extensions.h:65 panel_extensions.h:112 panel_extensions.h:137
 msgid "OK"
 msgstr ""
 
@@ -1715,7 +1718,8 @@ msgstr ""
 #: panel_extensions.h:245 panel_extensions.h:247 panel_extensions.h:115
 #: panel_extensions.h:117 panel_extensions.h:224 panel_extensions.h:235
 #: panel_extensions.h:237 panel_extensions.h:106 panel_extensions.h:119
-#: panel_extensions.h:128 panel_extensions.h:131
+#: panel_extensions.h:128 panel_extensions.h:131 panel_extensions.h:137
+#: panel_extensions.h:148 panel_extensions.h:151
 msgid "Ipk Tmp Info"
 msgstr ""
 
@@ -1724,6 +1728,7 @@ msgstr ""
 #: panel_extensions.h:86 panel_extensions.h:88 panel_extensions.h:110
 #: panel_extensions.h:108 panel_extensions.h:234 panel_extensions.h:103
 #: panel_extensions.h:224 panel_extensions.h:106 panel_extensions.h:117
+#: panel_extensions.h:137
 msgid "No IPK found in /tmp"
 msgstr ""
 
@@ -7242,6 +7247,7 @@ msgstr ""
 #: panel_extensions.h:124 panel_extensions.h:176 panel_extensions.h:248
 #: panel_extensions.h:119 panel_extensions.h:171 panel_extensions.h:238
 #: panel_extensions.h:120 panel_extensions.h:58 panel_extensions.h:133
+#: panel_extensions.h:65 panel_extensions.h:153
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
@@ -7682,7 +7688,7 @@ msgid ""
 "check your parameter "
 msgstr ""
 
-#: panel_extensions.h:93
+#: panel_extensions.h:93 panel_extensions.h:102
 msgid "Remove Info"
 msgstr ""
 
@@ -7704,4 +7710,20 @@ msgstr ""
 
 #: skin_default_skin.xml.h:372
 msgid "Show Timeline in Channellist"
+msgstr ""
+
+#: panel_extensions.h:58
+msgid "Ipk Install Info - Install OK"
+msgstr ""
+
+#: panel_extensions.h:63
+msgid "Ipk Install Info - Install ERROR"
+msgstr ""
+
+#: panel_extensions.h:112
+msgid "Ipk Remove Info - Remove OK"
+msgstr ""
+
+#: panel_extensions.h:117
+msgid "Ipk Remove Info - Remove ERROR"
 msgstr ""
