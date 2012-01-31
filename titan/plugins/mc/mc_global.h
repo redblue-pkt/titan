@@ -79,7 +79,7 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 			changetext(b2, _("Playlist-Mode"));
 
 			if(screensaver != NULL && screensaver->type == 3 && flag == 2)
-				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi");
+				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 
 			drawscreen(apskin, 0);
 
@@ -143,7 +143,7 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 									clearscreen(picscreen);
 								}
 
-								singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi");
+								singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 								changetext(b2, _("Filelist-Mode"));
 								writevfd("Filelist-Mode");
 								switchtofilelist = 1;
@@ -158,7 +158,7 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 							else
 							{
 								if(screensaver != NULL && screensaver->type == 3 && flag == 2)
-									singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi");
+									singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 							}
 							skiprcok = 1;
 						}
@@ -185,7 +185,7 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 						{
 							status.play = 1;
 							if(screensaver != NULL && screensaver->type == 3 && flag == 2)
-								singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi");
+								singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 							skiprcok = 1;
 						}
 						else
@@ -219,7 +219,7 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 			changetext(b2, _("Filelist-Mode"));
 		
 			if(screensaver != NULL && screensaver->type == 3 && flag == 2)
-				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi");
+				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 
 			drawscreen(apskin, 0);
 
@@ -262,7 +262,7 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 									clearscreen(picscreen);
 								}
 
-								singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi");
+								singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 
 								apskin->hidden = NO;
 								filelist->hidden = NO;
@@ -277,7 +277,7 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 							else
 							{
 								if(screensaver != NULL && screensaver->type == 3 && flag == 2)
-									singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi");
+									singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 							}
 							skiprcok = 1;
 						}
@@ -299,7 +299,7 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 						{
 							status.play = 1;
 							if(screensaver != NULL && screensaver->type == 3 && flag == 2) 
-								singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi");
+								singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 							skiprcok = 1;
 						}
 						else
