@@ -659,6 +659,9 @@ firstwizzardstep1:
 	}
 	else
 	{
+		// workaround, remove bootlogo on startup
+		drawscreen(skin, 0);
+
 		//check servicestart
 		if(serviceret != 21) // no message if startchannel empty
 			servicecheckret(serviceret, 0);
@@ -722,9 +725,7 @@ firstwizzardstep1:
 			err("set sigsegjump");
 		}
 	}
-	
-	// workaround, remove bootlogo on startup
-	drawscreen(skin, 0);
+
 	screeninfobar();
 
 	//for testign screens
