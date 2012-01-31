@@ -51,11 +51,20 @@ void screenpanel_extensions(int mode)
 //						char* ipkg_ret = get_ipk_install(installname);
 //						textbox(_("Ipk Install Info"), _(ipkg_ret), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
 //						free(ipkg_ret); ipkg_ret = NULL;
+						char* log = NULL;
 						if(ipkg_install(installname) == 0)
-							textbox(_("Ipk Install Info"), _("Install OK"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+						{
+							log = command("cat /tmp/ipkg.log")
+							textbox(_("Ipk Install Info - Install OK"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+						}
 						else
-							textbox(_("Ipk Install Info"), _("Install ERROR"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+						{
+							log = command("cat /tmp/ipkg.log")						
+							textbox(_("Ipk Install Info - Install ERROR"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+						}
 						textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
+						free(log), log = NULL;
+						unlink("/tmp/ipkg.log");
 					}
 				}
 				free(ret1); ret1 = NULL;
@@ -95,10 +104,21 @@ void screenpanel_extensions(int mode)
 //				char* ipkg_ret = get_ipk_remove(deinstallname);
 //				textbox(_("Ipk Remove Info"), _(ipkg_ret), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 //				free(ipkg_ret); ipkg_ret = NULL; 
+
+				char* log = NULL;
 				if(ipkg_remove(deinstallname,1) == 0)
-					textbox(_("Ipk Remove Info"), _("Remove OK"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+				{
+					log = command("cat /tmp/ipkg.log")
+					textbox(_("Ipk Remove Info - Remove OK"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+				}
 				else
-					textbox(_("Ipk Remove Info"), _("Remove ERROR"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+				{
+					log = command("cat /tmp/ipkg.log")						
+					textbox(_("Ipk Remove Info - Remove ERROR"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+				}
+				textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
+				free(log), log = NULL;
+				unlink("/tmp/ipkg.log");
 			}
 
 			free(deinstallname); deinstallname = NULL;
