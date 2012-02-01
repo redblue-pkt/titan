@@ -368,6 +368,9 @@ int playerstart(char* file)
 		g_object_set(G_OBJECT (m_gst_playbin), "flags", flags, NULL);
 		g_free(uri);
 		
+		if(m_gst_playbin)
+			gst_element_set_state(m_gst_playbin, GST_STATE_PLAYING);
+		
 		return 0;
 #endif
 	}
