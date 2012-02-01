@@ -444,31 +444,6 @@ char* get_ipk_section()
 	return sectionlist;
 }
 
-/* not needed anymore
-char* get_ipk_list(char* section)
-{
-	struct ipkg *node = ipkg;
-	char* namelist = NULL;
-	char* tmpstr = NULL;
-	while(node != NULL)
-	{
-		if(node->name != NULL && node->version != NULL && section != NULL)
-		{
-			tmpstr = ostrcat("titan-plugin-", section, 0, 0);
-			tmpstr = ostrcat(tmpstr, "-", 1, 0);
-			if(string_find(tmpstr,node->name))
-			{
-				namelist = ostrcat(namelist, node->name, 1, 0);
-				namelist = ostrcat(namelist, "\n", 1, 0);
-			}
-			free(tmpstr), tmpstr = NULL;
-		}
-		node = node->next;
-	}
-	return namelist;
-}
-*/
-
 char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, char* skinpath, int showpng)
 {
 	debug(1000, "in");
@@ -612,6 +587,10 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 	{
 		int i = 0;
 		tmpck = get_ipk_listinstall();
+		
+		debug(130, "tmpck: %s", tmpck);
+		debug(130, "tmpck_new: %s", ipkg_list_installed());
+
 		struct ipkg *node = ipkg;
 		while(node != NULL)
 		{
@@ -796,56 +775,6 @@ char* get_ipk_tmplistinstall()
 	char* cmd = NULL, *tmpstr = NULL;
 
 	cmd = ostrcat(cmd, "ls /tmp | grep '.ipk'", 1, 0);
-
-	tmpstr = command(cmd);
-
-	debug(130, "out %s",cmd);
-	free(cmd); cmd = NULL;
-	return tmpstr;
-}
-
-char* get_ipk_remove(char* ipk)
-{
-	debug(130, "in %s",ipk);
-	char* cmd = NULL, *tmpstr = NULL;
-
-	if(ipk == NULL) return NULL;
-
-	cmd = ostrcat(cmd, "ipkg remove ", 1, 0);
-	cmd = ostrcat(cmd, ipk, 1, 0);
-
-	tmpstr = command(cmd);
-
-	debug(130, "out");
-	free(cmd); cmd = NULL;
-	return tmpstr;
-}
-
-char* get_ipk_info(char* section)
-{
-	debug(130, "in %s",section);
-	char* cmd = NULL, *tmpstr = NULL;
-
-	if(section == NULL) return NULL;
-
-	cmd = ostrcat(cmd, "ipkg list *-", 1, 0);
-	cmd = ostrcat(cmd, section, 1, 0);
-	cmd = ostrcat(cmd, " | cut -d'-' -f6 | sed 's/Successfully terminated.//'", 1, 0);
-
-	tmpstr = command(cmd);
-
-	debug(130, "out %s",cmd);
-	free(cmd); cmd = NULL;
-	return tmpstr;
-}
-
-char* get_ipk_install(char* ipk)
-{
-	debug(130, "in %s",ipk);
-
-	char* cmd = NULL, *tmpstr = NULL;
-	cmd = ostrcat(cmd, "ipkg install ", 1, 0);
-	cmd = ostrcat(cmd, ipk, 1, 0);
 
 	tmpstr = command(cmd);
 
