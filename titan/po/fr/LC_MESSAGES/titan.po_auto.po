@@ -174,7 +174,7 @@ msgstr ""
 #: networkbrowser.h:73 networkbrowser.h:952 networkbrowser.h:1183
 #: networkbrowser.h:1196 channellist.h:709 mc_audioplayer.h:319
 #: mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:63 panel_extensions.h:65
-#: panel_extensions.h:112 panel_extensions.h:137
+#: panel_extensions.h:112 panel_extensions.h:137 global.h:4152
 msgid "EXIT"
 msgstr ""
 
@@ -569,7 +569,7 @@ msgstr ""
 #: timeshift.h:52 timeshift.h:79 networkbrowser.h:73 networkbrowser.h:952
 #: networkbrowser.h:1183 networkbrowser.h:1196 channellist.h:709
 #: mc_audioplayer.h:319 mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:65
-#: panel_extensions.h:153
+#: panel_extensions.h:153 global.h:4152
 msgid "Message"
 msgstr ""
 
@@ -690,6 +690,7 @@ msgstr ""
 #: networkbrowser.h:1183 networkbrowser.h:1196 channellist.h:709
 #: mc_audioplayer.h:319 mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:63
 #: panel_extensions.h:65 panel_extensions.h:112 panel_extensions.h:137
+#: global.h:4152
 msgid "OK"
 msgstr ""
 
@@ -715,7 +716,7 @@ msgstr ""
 #: global.h:3909 global.h:3930 global.h:3962 global.h:3963 global.h:3965
 #: global.h:3995 global.h:4009 global.h:4032 global.h:4041 global.h:4066
 #: global.h:4071 global.h:4073 global.h:4139 global.h:4144 global.h:4143
-#: global.h:4177 global.h:4178 global.h:4155
+#: global.h:4177 global.h:4178 global.h:4155 global.h:4152
 msgid "ERROR cant read res"
 msgstr ""
 
