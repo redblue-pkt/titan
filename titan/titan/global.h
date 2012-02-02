@@ -253,11 +253,8 @@ char* getcpuid()
 			destroy();
 			exit(100);
 		}
-		printf("serial: %s", serial);
-		printf("serialtmp: %s", serialtmp);		
 	}
 	free(cmd1), cmd1 = NULL;
-	printf("serial: %s", serial);
 	return string_newline(serial);
 }
 		
