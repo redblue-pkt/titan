@@ -43,7 +43,7 @@ void LCD_Pearl1_thread()
 	char* tmpstr = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *timemerk = NULL, *sendermerk = NULL, *recmerk = NULL;
 	struct skin* LCD_Pearl1 = getscreen("LCD_Pearl1");
 	struct skin* akttime = getscreennode(LCD_Pearl1, "akttime");
-	int put = 0;
+	int put = 0, typemerk = 0, type = 0;
 	int standby = 0;
 	char* fbgrab = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/fbgrab -f /tmp/titanlcd.raw -w 320 -h 240 -b 32 -i /tmp/.titanlcd1.png > /dev/null", 0, 0);
 	char* startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/start.sh", 0, 0);
@@ -53,10 +53,30 @@ void LCD_Pearl1_thread()
 	addtimer(&lcd_raw_event, START, 10000, 1, NULL, NULL, NULL);	
 	firststart = 0;
 	while (LCD_Pearl1thread->aktion != STOP) {
-		put = 0;
-		tmpstr = gettime(NULL, "%H:%M"); 
-		tmpstr2 = getaktchannelname(NULL);
-		tmpstr3 = getrec(NULL, NULL);
+
+		if(status.infobar != 0 || status.recording != 0)
+		{ 
+			tmpstr = gettime(NULL, "%H:%M"); 
+			tmpstr2 = getaktchannelname(NULL);
+			tmpstr3 = getrec(NULL, NULL);
+			type = 1;
+		}
+		else
+		{
+			tmpstr = gettime(NULL, "%H:%M");
+			type = 999;
+		}
+		
+		if(typemerk != type)
+		{
+			put = 1;
+			typemerk = type;
+			free(sendermerk);sendermerk=NULL;
+			free(recmerk);recmerk=NULL;
+		}
+		else
+			put = 0;
+				
 	
 		if(status.security == 1)
 		{
@@ -79,24 +99,26 @@ void LCD_Pearl1_thread()
 					timemerk = ostrcat(tmpstr, "", 0, 0);
 					put = 1;
 				} 
-				if(ostrcmp(tmpstr2, sendermerk) != 0)
+				if(type == 1)
 				{
-					free(sendermerk);sendermerk=NULL;
-					sendermerk = ostrcat(tmpstr2, "", 0, 0);
-					put = 1;
-				} 
-				if(tmpstr3 == NULL && recmerk != NULL)
-				{
-					put = 1;
-					free(recmerk);recmerk=NULL;
+					if(ostrcmp(tmpstr2, sendermerk) != 0)
+					{
+						free(sendermerk);sendermerk=NULL;
+						sendermerk = ostrcat(tmpstr2, "", 0, 0);
+						put = 1;
+					} 
+					if(tmpstr3 == NULL && recmerk != NULL)
+					{
+						put = 1;
+						free(recmerk);recmerk=NULL;
+					}
+					else if(tmpstr3 != NULL && recmerk == NULL)
+					{
+						free(recmerk);recmerk=NULL;
+						recmerk = ostrcat(tmpstr3, "", 0, 0);
+						put = 1;
+					}
 				}
-				else if(tmpstr3 != NULL && recmerk == NULL)
-				{
-					free(recmerk);recmerk=NULL;
-					recmerk = ostrcat(tmpstr3, "", 0, 0);
-					put = 1;
-				}
-
 				if(put == 1)
 				{
 					changetext(akttime, tmpstr);
