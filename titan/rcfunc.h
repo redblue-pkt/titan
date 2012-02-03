@@ -598,6 +598,7 @@ void griddown(struct skin* screen, struct skin* grid, int flag)
 		node = grid->select;
 		while(node != NULL)
 		{
+			if(node->next == NULL && node != grid->select && (node->type == GRIDBR || node->type == TEXTBOXGRIDBR)) break;
 			if(node->next == NULL || node->deaktivcol != -1 || node->hidden == YES || (node->parentpointer != grid && ostrcmp(node->parent, grid->name) != 0))
 			{
 				node = node->next;
