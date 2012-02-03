@@ -144,8 +144,8 @@ unsigned short temp = ((unsigned short)(fg)*(unsigned short)(alpha) +   \
 (unsigned short)128);  \
 (composite) = (unsigned char)((temp + (temp >> 8)) >> 8); }
 
-enum {LEFT=20000, CENTER, RIGHT};
-enum {TOP=20000, MIDDLE, BOTTOM};
+enum {LEFT=20000, CENTER, RIGHT, TEXTCENTER, TEXTRIGHT};
+enum {TOP=20000, MIDDLE, BOTTOM, TEXTMIDDLE, TEXTBOTTOM};
 enum {BOTTOMLEFT, BOTTOMRIGHT, TOPLEFT, TOPRIGHT};
 enum {LEFTRIGHT=1, TOPBOTTOM, LEFTMIDDLE, TOPMIDDLE};
 enum {NO, YES, AUTONO, AUTOYES};
