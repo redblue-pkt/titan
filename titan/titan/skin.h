@@ -2157,10 +2157,12 @@ int calcstrhalign(struct font* aktfont, char *string, int posx, int mwidth, int 
 
 	switch(halign)
 	{
+		case TEXTCENTER:
 		case CENTER:
 			getstringwh(aktfont, string, &stringwidth, &stringheight, charspace);
 			if(stringwidth < mwidth) posx += (mwidth - stringwidth) / 2;
 			break;
+		case TEXTRIGHT:
 		case RIGHT:
 			getstringwh(aktfont, string, &stringwidth, &stringheight, charspace);
 			if(stringwidth < mwidth) posx += mwidth - stringwidth;
@@ -2175,10 +2177,12 @@ int calcstrvalign(char *string, int posy, int oldposy, int mheight, int fontsize
 
 	switch(valign)
 	{
+		case TEXTMIDDLE:
 		case MIDDLE:
 			posy += mheight / 2 - (fontsize * linecount) / 2;
 			if(posy < oldposy) posy = oldposy;
 			break;
+		case TEXTBOTTOM:
 		case BOTTOM:
 			posy += mheight - (fontsize * linecount);
 			if(posy < oldposy) posy = oldposy;
