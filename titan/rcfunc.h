@@ -659,7 +659,7 @@ void gridup(struct skin* screen, struct skin* grid, int flag)
 		node = grid->select;
 		while(node != NULL)
 		{
-			if(node->prev == grid || node->deaktivcol != -1 || node->hidden == YES || (node->parentpointer != grid && ostrcmp(node->parent, grid->name) != 0))
+			if(br == 0 && (node->prev == NULL || node->prev == grid || node->deaktivcol != -1 || node->hidden == YES || (node->prev->parentpointer != grid && ostrcmp(node->prev->parent, grid->name) != 0)))
 			{
 				node = node->prev;
 				if(node == grid && mark == 0)
