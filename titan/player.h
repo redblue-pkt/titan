@@ -554,6 +554,11 @@ void playerafterend()
 	if(player != NULL && player->playback != NULL)
 		playerstop();
 #endif
+
+#ifdef EPLAYER4
+	if(m_gst_playbin)
+		playerstop();
+#endif
 }
 
 void playerpause()
