@@ -12,21 +12,6 @@ struct tithek
 };
 struct tithek *tithek = NULL;
 
-struct tithek* getlasttithek(struct tithek* node)
-{
-	debug(1000, "in");
-	struct tithek *prev = NULL;
-
-	while(node != NULL)
-	{
-		prev = node;
-		node = node->next;
-	}
-
-	debug(1000, "out");
-	return prev;
-}
-
 struct tithek* addtithek(char *line, int count, struct tithek* last)
 {
 	//debug(1000, "in");
@@ -355,12 +340,13 @@ void screentithekplay(char* titheklink)
 
 	struct skin* grid = getscreen("titheklist");
 	struct skin* listbox = getscreennode(grid, "listbox");
-
+	struct skin* countlabel = getscreennode(grid, "countlabel");
 	struct skin* tmp = NULL;
-
 	char* tithekfile = NULL;
 	char* tithekpic = NULL;
+	char* tmpstr = NULL;
 	char* oldtitheklink = NULL;
+	
 start:
 	if(titheklink == NULL) return;
 
@@ -378,6 +364,7 @@ start:
 		tmp = addlistbox(grid, listbox, tmp, 1);
 		if(tmp != NULL)
 		{
+			sumcount++;
 			count++;
 			if(gridbr == 0)
 				tmp->type = GRIDBR;
@@ -410,6 +397,10 @@ start:
 		}
 		titheknode = titheknode->next;
 	}
+	
+	tmpstr = oitoa(sumcount);
+	changetext(countlabel, tmpstr);
+	free(tmpstr); tmpstr = NULL;
 
 	drawscreen(grid, 0);
 	addscreenrc(grid, listbox);
@@ -445,6 +436,7 @@ start:
 
 			drawscreen(grid, 0);
 		}
+		
 		rcret = waitrc(grid, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL))
@@ -541,7 +533,7 @@ start:
 					rcret = -1, gridbr = 0, posx = 0, count = 0;
 					goto start;
 			}
-       	}
+    }
 	}
 
 	free(tithekfile); tithekfile = NULL;
