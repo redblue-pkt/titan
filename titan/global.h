@@ -1665,6 +1665,7 @@ int setvmpeg(struct dvbdev* node, int value, int flag)
 		snprintf(buf, MINMALLOC, vmpegdev, node->devnr);
 		snprintf(tmpstr, 10, "%x", value);
 		debug(100, "set %s to %s", buf, tmpstr);
+		status.tvpic = 1;
 		ret = writesys(buf, tmpstr, 1);
 		
 		free(tmpstr);

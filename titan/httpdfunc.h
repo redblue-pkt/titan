@@ -32,10 +32,10 @@ time_t webcreatetimeline(char** buf, int* maxlen, int* pos)
 	for(i = 0; i < 96; i++)
 	{
 		loctime = olocaltime(&akttimeadd);
-                if(loctime != NULL)
-                        strftime(buf1, 6, "%H:%M", loctime);
+		if(loctime != NULL)
+			strftime(buf1, 6, "%H:%M", loctime);
 		else
-                        snprintf(buf1, 6, "00:00");
+ 			snprintf(buf1, 6, "00:00");
 		free(loctime); loctime = NULL;
 
 		ostrcatbig(buf, "<th class=gepgtimelinecell><div class=gepgcellborder>", maxlen, pos);
