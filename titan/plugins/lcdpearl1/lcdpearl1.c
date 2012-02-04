@@ -12,6 +12,7 @@ int pluginaktiv = 0;
 
 struct stimerthread* LCD_Pearl1thread = NULL;
 int firststart = 0;
+int draw = 0;
 
 #include "lcdpearl_grep.h"
 
@@ -19,10 +20,13 @@ void LCD_start_lcd4linux()
 {
 	int count = 0;
 	char* startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/start.sh", 0, 0);
-	if(firststart == 1)
-		sleep(10);
-	else
-		sleep(5);
+	while (draw == 0 && LCD_Pearl1thread != NULL)
+	{
+		sleep(1);
+	}
+	sleep(2);
+	if(LCD_Pearl1thread == NULL)
+		return;
 	while (LCD_Pearl1thread->aktion != STOP && system("ps | grep -v grep | grep lcd4linux ") != 0) {
 		system(startlcd);
 		sleep(6);
@@ -41,29 +45,47 @@ void LCD_Pearl1_thread()
 {
 	
 	char* tmpstr = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *timemerk = NULL, *sendermerk = NULL, *recmerk = NULL;
+	
 	struct skin* LCD_Pearl1 = getscreen("LCD_Pearl1");
 	struct skin* akttime = getscreennode(LCD_Pearl1, "akttime");
+	
+	struct skin* LCD_Play = getscreen("LCD_Play");
+	struct skin* akttimeplay = getscreennode(LCD_Play, "akttime");
+	struct skin* sprogress = getscreennode(LCD_Play, "progress");
+	struct skin* title = getscreennode(LCD_Play, "title");
+	
 	int put = 0, typemerk = 0, type = 0;
 	int standby = 0;
 	char* fbgrab = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/fbgrab -f /tmp/titanlcd.raw -w 320 -h 240 -b 32 -i /tmp/.titanlcd1.png > /dev/null", 0, 0);
 	char* startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/start.sh", 0, 0);
 
+	unsigned long long int pos = 0, len = 0, reverse = 0;
+	int playertype = 0;
+	int loopcount = 0;
+	
 	if(firststart == 1)
 		sleep(5);
 	addtimer(&lcd_raw_event, START, 10000, 1, NULL, NULL, NULL);	
 	firststart = 0;
+	draw = 0;
+	
 	while (LCD_Pearl1thread->aktion != STOP) {
 
-		if(status.infobar != 0 || status.recording != 0)
-		{ 
-			tmpstr = gettime(NULL, "%H:%M"); 
+		tmpstr = gettime(NULL, "%H:%M");
+		
+		if(status.infobaraktiv == 1)
+		{
 			tmpstr2 = getaktchannelname(NULL);
 			tmpstr3 = getrec(NULL, NULL);
 			type = 1;
 		}
+		else if(status.playspeed != 0 || status.play != 0 || status.pause != 0)
+		{
+			loopcount++ ;
+			type = 2;
+		}
 		else
 		{
-			tmpstr = gettime(NULL, "%H:%M");
 			type = 999;
 		}
 		
@@ -73,11 +95,14 @@ void LCD_Pearl1_thread()
 			typemerk = type;
 			free(sendermerk);sendermerk=NULL;
 			free(recmerk);recmerk=NULL;
+			loopcount = 0;
 		}
 		else
 			put = 0;
-				
-	
+		
+		if(draw == 0)
+			put = 1;
+		
 		if(status.security == 1)
 		{
 			if(status.standby == 1 && standby == 0)
@@ -119,15 +144,59 @@ void LCD_Pearl1_thread()
 						put = 1;
 					}
 				}
+				else if(type == 2)
+				{
+					if(loopcount >= 15)
+					{
+						put = 1;
+						loopcount = 0;
+					}
+				}	
+				
 				if(put == 1)
 				{
-					changetext(akttime, tmpstr);
-					drawscreen(LCD_Pearl1, 0);
-					//system(fbgrab);
-					//system("mv /tmp/.titanlcd1.png /tmp/titanlcd.png");
+					if(type == 1)
+					{
+						changetext(akttime, tmpstr);
+						if(drawscreen(LCD_Pearl1, 0) == 0)
+							draw = 1;
+						else
+							draw = 0;
+						//system(fbgrab);
+						//system("mv /tmp/.titanlcd1.png /tmp/titanlcd.png");
 				
-					//system("/var/bin/fbgrab -f /tmp/titanlcd.raw -w 320 -h 240 -b 32 -i /tmp/titanlcd.png > /dev/null");
-					//system("xloadimage /tmp/titanlcd.png > /dev/null &");
+						//system("/var/bin/fbgrab -f /tmp/titanlcd.raw -w 320 -h 240 -b 32 -i /tmp/titanlcd.png > /dev/null");
+						//system("xloadimage /tmp/titanlcd.png > /dev/null &");
+						
+					}
+					else if(type == 2)
+					{
+						playertype = (getconfigint("playertype", NULL) == 1);
+						if(playertype == 1)
+						{
+							unsigned long long int startpos = 0;
+							playergetinfots(&len, &startpos, NULL, &pos, NULL);
+							len = len / 90000;
+							pos = (pos - startpos) / 90000;
+						}
+						else
+						{
+							pos = playergetpts() / 90000;
+							len = playergetlength();
+						}
+						if(pos < 0) pos = 0;
+						reverse = len - pos;
+						if(len == 0)
+							sprogress->progresssize = 0;
+						else
+							sprogress->progresssize = pos * 100 / len;
+						changetext(akttimeplay, tmpstr);
+						changetext(title, basename(status.playfile));
+						if (drawscreen(LCD_Play, 0) == 0)
+							draw = 1;
+						else
+							draw = 0;	
+					} 
 				}
 			}
 		}
