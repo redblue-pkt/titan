@@ -389,7 +389,7 @@ void screentithekplay(char* titheklink)
 			tmp->width = 300;
 			tmp->prozwidth = 0;
 			tmp->bgcol = 0xffffff;
-			tmp->bgspace = 20
+			tmp->bgspace = 20;
 			tmp->vspace = 30;
 			tmp->hspace = 30;
 			tmp->posx = posx;
