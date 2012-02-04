@@ -176,6 +176,7 @@ msgstr ""
 #: mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:63 panel_extensions.h:65
 #: panel_extensions.h:112 panel_extensions.h:137 global.h:4152 tithek.h:532
 #: tithek.h:524 tithek.h:449 httpdfunc.h:2156 play.h:537 play.h:545 play.h:654
+#: global.h:4153
 msgid "EXIT"
 msgstr ""
 
@@ -571,7 +572,7 @@ msgstr ""
 #: networkbrowser.h:1183 networkbrowser.h:1196 channellist.h:709
 #: mc_audioplayer.h:319 mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:65
 #: panel_extensions.h:153 global.h:4152 tithek.h:532 tithek.h:524 tithek.h:449
-#: play.h:654
+#: play.h:654 global.h:4153
 msgid "Message"
 msgstr ""
 
@@ -693,7 +694,7 @@ msgstr ""
 #: mc_audioplayer.h:319 mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:63
 #: panel_extensions.h:65 panel_extensions.h:112 panel_extensions.h:137
 #: global.h:4152 tithek.h:532 tithek.h:524 tithek.h:449 httpdfunc.h:2156
-#: play.h:537 play.h:545 play.h:654
+#: play.h:537 play.h:545 play.h:654 global.h:4153
 msgid "OK"
 msgstr ""
 
@@ -719,7 +720,7 @@ msgstr ""
 #: global.h:3909 global.h:3930 global.h:3962 global.h:3963 global.h:3965
 #: global.h:3995 global.h:4009 global.h:4032 global.h:4041 global.h:4066
 #: global.h:4071 global.h:4073 global.h:4139 global.h:4144 global.h:4143
-#: global.h:4177 global.h:4178 global.h:4155 global.h:4152
+#: global.h:4177 global.h:4178 global.h:4155 global.h:4152 global.h:4153
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -729,7 +730,7 @@ msgstr ""
 #: channellist.h:439 channellist.h:822 channellist.h:1007 channellist.h:442
 #: channellist.h:825 channellist.h:1010 channellist.h:443 channellist.h:826
 #: channellist.h:1011 channellist.h:460 channellist.h:843 channellist.h:1028
-#: channellist.h:1043
+#: channellist.h:1043 channellist.h:1044
 msgid "Bouquets"
 msgstr ""
 
@@ -742,7 +743,7 @@ msgstr ""
 #: skin_default_skin.xml.h:132 skin_default_skin.xml.h:131
 #: skin_default_skin.xml.h:133 channellist.h:456 channellist.h:1128
 #: skin_default_skin.xml.h:134 channellist.h:473 channellist.h:1145
-#: channellist.h:1179
+#: channellist.h:1179 channellist.h:1180
 msgid "Channel"
 msgstr ""
 
@@ -752,7 +753,7 @@ msgstr ""
 #: channellist.h:464 channellist.h:852 channellist.h:1064 channellist.h:467
 #: channellist.h:855 channellist.h:1067 channellist.h:468 channellist.h:856
 #: channellist.h:1068 channellist.h:485 channellist.h:873 channellist.h:1085
-#: channellist.h:1115
+#: channellist.h:1115 channellist.h:1116
 msgid "Satellites"
 msgstr ""
 
@@ -762,7 +763,7 @@ msgstr ""
 #: channellist.h:1175 channellist.h:477 channellist.h:912 channellist.h:1181
 #: channellist.h:480 channellist.h:915 channellist.h:1184 tunerconfig.h:442
 #: channellist.h:481 channellist.h:916 channellist.h:1185 channellist.h:498
-#: channellist.h:933 channellist.h:1202 channellist.h:1251
+#: channellist.h:933 channellist.h:1202 channellist.h:1251 channellist.h:1252
 msgid "Provider"
 msgstr ""
 
@@ -782,7 +783,7 @@ msgstr ""
 #: channellist.h:1158 channellist.h:1179 channellist.h:1181 channellist.h:1210
 #: channellist.h:1237 channellist.h:431 channellist.h:1243 channellist.h:434
 #: channellist.h:1246 channellist.h:435 channellist.h:1247 channellist.h:452
-#: channellist.h:1264 channellist.h:1313
+#: channellist.h:1264 channellist.h:1313 channellist.h:1314
 msgid "TV (Info)"
 msgstr ""
 
@@ -795,7 +796,7 @@ msgstr ""
 #: skin_default_skin.xml.h:312 skin_default_skin.xml.h:315
 #: skin_default_skin.xml.h:316 channellist.h:430 channellist.h:1252
 #: skin_default_skin.xml.h:317 channellist.h:447 channellist.h:1269
-#: channellist.h:1318
+#: channellist.h:1318 channellist.h:1319
 msgid "Radio (Info)"
 msgstr ""
 
