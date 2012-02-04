@@ -463,39 +463,39 @@ start:
 				int i = 0;
 				char* tmpstr2 = NULL;
 				for( i = 0; i < max; i++){
-					printf("ret1(%d/%d)=%s\n", i, max, (&ret1[i])->part);
+					debug(170, "ret1 (1)-(%d/%d)=%s", i, max, (&ret1[i])->part);
 					if(max > 1)
 					{
-						printf("ret2(%d/%d)=%s\n", i, max, (&ret1[i])->part);
+						debug(170, "ret1 (2)-(%d/%d)=%s", i, max, (&ret1[i])->part);
 						tmpstr2 = ostrcat(tmpstr2, (&ret1[i])->part, 1, 0);
 					}
 					else if(max = 2)
 					{
-						printf("ret3(%d/%d)=%s\n", i, max, (&ret1[i])->part);
+						debug(170, "ret1 (3)-(%d/%d)=%s", i, max, (&ret1[i])->part);
 						titheklink = ostrcat((&ret1[i])->part, NULL, 0, 0);
 						break;
 					}
 					if(max > 2 && i<max-2)
 					{
-						printf("ret4(%d/%d)=%s\n", i, max, (&ret1[i])->part);
+						debug(170, "ret1 (4)-(%d/%d)=%s", i, max, (&ret1[i])->part);
 						tmpstr2 = ostrcat(tmpstr2, "#", 1, 0);
 					}
 					else
 					{
-						printf("ret5(%d/%d)=%s\n", i, max, (&ret1[i])->part);				
+						debug(170, "ret1 (5)-(%d/%d)=%s", i, max, (&ret1[i+1])->part);
 						titheklink = ostrcat((&ret1[i+1])->part, NULL, 0, 0);
 						break;
 					}
 				}
 
-				printf("oldtitheklink1=%s\n", oldtitheklink);
-				printf("oldtitheklink2=%s\n", tmpstr2);
+				debug(170, "oldtitheklink1=%s", oldtitheklink);
+				debug(170, "oldtitheklink2=%s", tmpstr2);						
 				
 				oldtitheklink = ostrcat(tmpstr2, NULL, 0, 0);
 
 				if(titheklink == NULL)
 				{
-					printf("oldtitheklink3=http://atemio.dyndns.tv/mediathek/mainmenu.list\n");
+					debug(170, "oldtitheklink3=http://atemio.dyndns.tv/mediathek/mainmenu.list");
 					titheklink = ostrcat("http://atemio.dyndns.tv/mediathek/mainmenu.list", NULL, 0, 0);
 				}
 
