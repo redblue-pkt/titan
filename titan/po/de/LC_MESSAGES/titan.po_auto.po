@@ -1418,7 +1418,8 @@ msgstr ""
 #: skin_default_skin.xml.h:459 skin_default_skin.xml.h:460
 #: plugins_stopifnotused_skin.xml.h:7 skins_stopifnotused_skin.xml.h:7
 #: plugins_stopifnotused_skin.xml.h:8 skins_stopifnotused_skin.xml.h:8
-#: skin_default_skin.xml.h:462
+#: skin_default_skin.xml.h:462 plugins_tithek_skin.xml.h:3
+#: skins_tithek_skin.xml.h:3
 msgid ""
 msgstr ""
 
@@ -7727,4 +7728,12 @@ msgstr ""
 
 #: panel_extensions.h:117
 msgid "Ipk Remove Info - Remove ERROR"
+msgstr ""
+
+#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1
+msgid "TiThek Menu"
+msgstr ""
+
+#: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
+msgid "TiThek PlayList"
 msgstr ""
