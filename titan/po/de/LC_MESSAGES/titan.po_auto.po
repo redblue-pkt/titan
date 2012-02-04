@@ -175,7 +175,7 @@ msgstr ""
 #: networkbrowser.h:1196 channellist.h:709 mc_audioplayer.h:319
 #: mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:63 panel_extensions.h:65
 #: panel_extensions.h:112 panel_extensions.h:137 global.h:4152 tithek.h:532
-#: tithek.h:524 tithek.h:449
+#: tithek.h:524 tithek.h:449 httpdfunc.h:2156 play.h:537 play.h:545 play.h:654
 msgid "EXIT"
 msgstr ""
 
@@ -421,7 +421,7 @@ msgstr ""
 
 #: audiotrack.h:47 rectimer.h:1232 audiotrack.h:48 rectimer.h:1245
 #: subtitle.h:1612 play.h:124 rectimer.h:1251 rectimer.h:1266 play.h:140
-#: play.h:148 rectimer.h:1282 rectimer.h:1283
+#: play.h:148 rectimer.h:1282 rectimer.h:1283 play.h:155
 msgid "running"
 msgstr ""
 
@@ -571,6 +571,7 @@ msgstr ""
 #: networkbrowser.h:1183 networkbrowser.h:1196 channellist.h:709
 #: mc_audioplayer.h:319 mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:65
 #: panel_extensions.h:153 global.h:4152 tithek.h:532 tithek.h:524 tithek.h:449
+#: play.h:654
 msgid "Message"
 msgstr ""
 
@@ -691,7 +692,8 @@ msgstr ""
 #: networkbrowser.h:1183 networkbrowser.h:1196 channellist.h:709
 #: mc_audioplayer.h:319 mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:63
 #: panel_extensions.h:65 panel_extensions.h:112 panel_extensions.h:137
-#: global.h:4152 tithek.h:532 tithek.h:524 tithek.h:449
+#: global.h:4152 tithek.h:532 tithek.h:524 tithek.h:449 httpdfunc.h:2156
+#: play.h:537 play.h:545 play.h:654
 msgid "OK"
 msgstr ""
 
@@ -1334,7 +1336,7 @@ msgstr ""
 #: mc_global.h:500 mc_global.h:726 mc_global.h:728 mc_global.h:504
 #: mc_global.h:736 mc_global.h:503 mc_global.h:735 play.h:510 mc_global.h:560
 #: mc_global.h:793 mc_videoplayer.h:368 mc_videoplayer.h:453 play.h:612
-#: play.h:608 mc_audioplayer.h:319 mc_audioplayer.h:408
+#: play.h:608 mc_audioplayer.h:319 mc_audioplayer.h:408 play.h:654
 msgid "Can't start playback !"
 msgstr ""
 
@@ -2234,11 +2236,13 @@ msgstr ""
 
 #: play.h:405 play.h:409 play.h:414 play.h:419 play.h:418 play.h:421
 #: play.h:422 play.h:413 play.h:420 play.h:417 play.h:514 play.h:500
+#: play.h:537
 msgid "EPG Info"
 msgstr ""
 
 #: play.h:413 play.h:417 play.h:422 play.h:427 play.h:426 play.h:429
 #: play.h:430 play.h:421 play.h:428 play.h:425 play.h:522 play.h:508
+#: play.h:545
 msgid "Realy Delete ?"
 msgstr ""
 
@@ -4143,7 +4147,7 @@ msgstr ""
 #: play.h:472 skin_default_skin.xml.h:145 play.h:479 play.h:476
 #: skin_default_skin.xml.h:147 play.h:483 skin_default_skin.xml.h:149
 #: skin_default_skin.xml.h:148 play.h:486 skin_default_skin.xml.h:150
-#: play.h:583 play.h:579 skin_default_skin.xml.h:151
+#: play.h:583 play.h:579 skin_default_skin.xml.h:151 play.h:618
 msgid "DEL"
 msgstr ""
 
@@ -6757,7 +6761,7 @@ msgid "Satelite Entrys"
 msgstr ""
 
 #: tunerconfig.h:119 audiotrack.h:119 subtitle.h:1693 play.h:109
-#: tunerconfig.h:99 play.h:125 play.h:133
+#: tunerconfig.h:99 play.h:125 play.h:133 play.h:140
 msgid "undefined"
 msgstr ""
 
@@ -7068,7 +7072,7 @@ msgstr ""
 
 #: play.h:464 play.h:468 play.h:473 play.h:478 play.h:477 play.h:480
 #: play.h:481 play.h:472 play.h:479 play.h:476 play.h:483 play.h:486
-#: play.h:583 play.h:579
+#: play.h:583 play.h:579 play.h:618
 msgid "SELECT"
 msgstr ""
 
@@ -7741,4 +7745,8 @@ msgstr ""
 
 #: tithek.h:532 tithek.h:524 tithek.h:449
 msgid "start, Playback"
+msgstr ""
+
+#: tithek.h:449
+msgid "Start Playback"
 msgstr ""
