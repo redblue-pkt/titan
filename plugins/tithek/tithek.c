@@ -33,6 +33,5 @@ void deinit(void)
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {
-//	screentithekmenu("http://atemio.dyndns.tv/mediathek/mainmenu.list");
-	screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.list");
+	screentithekmenu("http://atemio.dyndns.tv/mediathek/mainmenu.list");
 }
