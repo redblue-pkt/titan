@@ -319,10 +319,10 @@ void screentithekmenu(char* titheklink)
 				if(createtithekmenu(titheklink, menu, listbox) != 0) break;
 				listbox->aktpage = oaktpage;
 				listbox->aktline = oaktline;
-                        	drawscreen(menu, 0);
+				drawscreen(menu, 0);
 				addscreenrc(menu, listbox);
 			}
-                }
+		}
 	}
 
 	freetithek();
@@ -333,7 +333,7 @@ void screentithekmenu(char* titheklink)
 
 void screentithekplay(char* titheklink)
 {
-	int rcret = -1, gridbr = 0, posx = 0, count = 0;
+	int rcret = -1, gridbr = 0, posx = 0, count = 0, sumcount = 0;
 
 	rcret = servicestop(status.aktservice, 1, 0);
 	if(rcret == 1) return;
@@ -345,13 +345,11 @@ void screentithekplay(char* titheklink)
 	char* tithekfile = NULL;
 	char* tithekpic = NULL;
 	char* tmpstr = NULL;
-	char* oldtitheklink = NULL;
 	
-start:
 	if(titheklink == NULL) return;
 
 	listbox->aktpage = -1;
-        listbox->aktline = 1;
+	listbox->aktline = 1;
 
 	tithekfile = tithekdownload(titheklink);
 
@@ -439,99 +437,18 @@ start:
 		
 		rcret = waitrc(grid, 0, 0);
 
-		if(rcret == getrcconfigint("rcexit", NULL))
-		{
-			if(oldtitheklink == NULL)
-				break;
-			else
-			{
-				struct splitstr* ret1 = NULL;
-				int count1 = 0;
-				char* tmpstr1 = NULL;
-				tmpstr1 = ostrcat(tmpstr1, oldtitheklink, 1, 0);
-				ret1 = strsplit(tmpstr1, "#", &count1);
-				int max = count1;
-				int update = 1;
-				int i = 0;
-				char* tmpstr2 = NULL;
-				for( i = 0; i < max; i++){
-					debug(170, "ret1 (1)-(%d/%d)=%s", i, max, (&ret1[i])->part);
-					if(max > 1)
-					{
-						debug(170, "ret1 (2)-(%d/%d)=%s", i, max, (&ret1[i])->part);
-						tmpstr2 = ostrcat(tmpstr2, (&ret1[i])->part, 1, 0);
-					}
-					else if(max = 2)
-					{
-						debug(170, "ret1 (3)-(%d/%d)=%s", i, max, (&ret1[i])->part);
-						titheklink = ostrcat((&ret1[i])->part, NULL, 0, 0);
-						break;
-					}
-					if(max > 2 && i<max-2)
-					{
-						debug(170, "ret1 (4)-(%d/%d)=%s", i, max, (&ret1[i])->part);
-						tmpstr2 = ostrcat(tmpstr2, "#", 1, 0);
-					}
-					else
-					{
-						debug(170, "ret1 (5)-(%d/%d)=%s", i, max, (&ret1[i+1])->part);
-						titheklink = ostrcat((&ret1[i+1])->part, NULL, 0, 0);
-						break;
-					}
-				}
-
-				debug(170, "oldtitheklink1=%s", oldtitheklink);
-				debug(170, "oldtitheklink2=%s", tmpstr2);						
-				
-				oldtitheklink = ostrcat(tmpstr2, NULL, 0, 0);
-
-				if(titheklink == NULL)
-				{
-					debug(170, "oldtitheklink3=http://atemio.dyndns.tv/mediathek/mainmenu.list");
-					titheklink = ostrcat("http://atemio.dyndns.tv/mediathek/mainmenu.list", NULL, 0, 0);
-				}
-
-				free(ret1),ret1 = NULL;
-				free(tmpstr1),tmpstr1 = NULL;
-				free(tmpstr2),tmpstr2 = NULL;				
-				tmp = NULL;
-				free(tithekfile); tithekfile = NULL;
-				freetithek();
-				delmarkedscreennodes(grid, 1);
-				delownerrc(grid);
-				clearscreen(grid);
-				rcret = -1, gridbr = 0, posx = 0, count = 0;
-				goto start;
-			}
-		}
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
 
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
-					if(oldtitheklink == NULL)
-						oldtitheklink = ostrcat(oldtitheklink, titheklink, 1, 0);
-					else
-					{
-						oldtitheklink = ostrcat(oldtitheklink, "#", 1, 0);
-						oldtitheklink = ostrcat(oldtitheklink, titheklink, 1, 0);
-					}
-
-					titheklink = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-
-					if(((struct tithek*)listbox->select->handle)->flag == 2)
-					{
-						textbox(_("Message"), _("start, Playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 1);				
-					}
-					
-					tmp = NULL;
-					free(tithekfile); tithekfile = NULL;
-					freetithek();
-					delmarkedscreennodes(grid, 1);
-					delownerrc(grid);
+				if(((struct tithek*)listbox->select->handle)->flag == 2)
+				{
 					clearscreen(grid);
-					rcret = -1, gridbr = 0, posx = 0, count = 0;
-					goto start;
+					textbox(_("Message"), _("start, Playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 1);				
+					drawscreen(grid, 0);
+				}
 			}
     }
 	}
