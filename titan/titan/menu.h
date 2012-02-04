@@ -157,7 +157,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	else if(ostrcmp("mediaplayer", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screenplay(0, 0);
+		screenplay(NULL, 0, 0);
 	}
 	else if(ostrcmp("restoredefault", menuentry->name) == 0)
 	{
