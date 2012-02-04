@@ -979,6 +979,8 @@ struct status
 	time_t lastrcaction;
 	// show timeline in channellist for each channel
 	int showchanneltimeline;
+	// see player.h for details
+	int playercan;
 } status;
 
 struct fb

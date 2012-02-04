@@ -33,9 +33,10 @@ int screendownload(char* title, char* host, char* page, int port, char* filename
 	{
 		m_lock(&status.drawingmutex, 0);
 		m_lock(&status.rcmutex, 10);
+		tmpscreencalc = status.screencalc;
 		status.screencalc = 2;
 		setnodeattr(download, framebuffer);
-		status.screencalc = 0;
+		status.screencalc = tmpscreencalc;
 		status.rcowner = download;
 		bg = savescreen(download);
 		tmpscreencalc = status.screencalc;

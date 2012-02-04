@@ -18,9 +18,10 @@ void screenautores(char* text, int timeout, int flag)
 	{
 		m_lock(&status.drawingmutex, 0);
 		m_lock(&status.rcmutex, 10);
+		tmpscreencalc = status.screencalc;
 		status.screencalc = 2;
 		setnodeattr(autores, framebuffer);
-		status.screencalc = 0;
+		status.screencalc = tmpscreencalc;
 		status.rcowner = autores;
 		bg = savescreen(autores);
 		tmpscreencalc = status.screencalc;
