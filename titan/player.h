@@ -10,7 +10,7 @@ extern ManagerHandler_t ManagerHandler;
 #endif
 
 #ifdef EPLAYER4
-GstElement *m_gst_playbin;
+GstElement *m_gst_playbin = NULL;
 #endif
 
 //titan player
@@ -293,11 +293,12 @@ void playerafterendts()
 
 int playerstart(char* file)
 {
+	char * tmpfile = NULL;
+	
 	if(file != NULL)
 	{
 #ifdef EPLAYER3
 		//use eplayer
-		char * tmpfile = NULL;
 
 		if(player != NULL)
 		{
@@ -362,11 +363,22 @@ int playerstart(char* file)
 			playerstop();
 		}
 		
-		uri = g_filename_to_uri(file, NULL, NULL);
+		if(strstr(file, "://") == NULL)
+			tmpfile = ostrcat("file://", file, 0, 0);
+		else
+			tmpfile = ostrcat(file, "", 0, 0);
+
+		if(tmpfile == NULL)
+		{
+			err("no mem");
+			free(m_gst_playbin); m_gst_playbin = NULL;
+			return 1;
+		}
+		
 		m_gst_playbin = gst_element_factory_make("playbin2", "playbin");
-		g_object_set(G_OBJECT (m_gst_playbin), "uri", uri, NULL);
+		g_object_set(G_OBJECT (m_gst_playbin), "uri", tmpfile, NULL);
 		g_object_set(G_OBJECT (m_gst_playbin), "flags", flags, NULL);
-		g_free(uri);
+		free(tmpfile); tmpfile = NULL;
 		
 		if(m_gst_playbin)
 			gst_element_set_state(m_gst_playbin, GST_STATE_PLAYING);
@@ -500,7 +512,7 @@ int playerstop()
 	{
 		gst_element_set_state(m_gst_playbin, GST_STATE_NULL);
 		gst_object_unref(GST_OBJECT(m_gst_playbin));
-		m_gst_playbin = 0;
+		m_gst_playbin = NULL;
 	}
 #endif
 
