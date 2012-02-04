@@ -1,0 +1,37 @@
+#include "../titan/struct.h"
+#include "../titan/debug.h"
+#include "../titan/header.h"
+#include "tithek.h"
+
+char pluginname[] = "TiTan Mediathek";
+char plugindesc[] = "TiTan Mediathek";
+char pluginpic[] = "%pluginpath%/tithek/plugin.png";
+
+int pluginaktiv = 0;
+
+//wird beim laden ausgefuehrt
+void init(void)
+{
+	char* tmpstr = NULL;
+
+	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/tithek/skin.xml", 0, 0);
+	readscreen(tmpstr, 195, 1);
+	free(tmpstr); tmpstr = NULL;
+
+	pluginaktiv = 1;
+	debug(10, "TiThek Info Plugin loadet !!!");
+}
+
+//wird beim entladen ausgefuehrt
+void deinit(void)
+{
+	delmarkedscreen(195);
+	pluginaktiv = 0;
+	debug(10, "TiThek Plugin removed !!!");
+}
+
+//wird in der Pluginverwaltung bzw Menue ausfeguehrt
+void start(void)
+{
+	screentithekmenu("http://atemio.dyndns.tv/mediathek/mainmenu.list");
+}
