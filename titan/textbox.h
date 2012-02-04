@@ -69,9 +69,10 @@ int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char*
 	{
 		m_lock(&status.drawingmutex, 0);
 		m_lock(&status.rcmutex, 10);
+		tmpscreencalc = status.screencalc;
 		status.screencalc = 2;
 		setnodeattr(messagebox, framebuffer);
-		status.screencalc = 0;
+		status.screencalc = tmpscreencalc;
 		status.rcowner = messagebox;
 		bg = savescreen(messagebox);
 		tmpscreencalc = status.screencalc;

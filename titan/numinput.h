@@ -32,9 +32,10 @@ char* numinput(char* title, char* num, char* mask, int isip)
 	{
 		m_lock(&status.drawingmutex, 0);
 		m_lock(&status.rcmutex, 10);
+		tmpscreencalc = status.screencalc;
 		status.screencalc = 2;
 		setnodeattr(numinput, framebuffer);
-		status.screencalc = 0;
+		status.screencalc = tmpscreencalc;
 		status.rcowner = numinput;
 		bg = savescreen(numinput);
 		tmpscreencalc = status.screencalc;

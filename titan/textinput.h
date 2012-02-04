@@ -23,9 +23,10 @@ char* textinput(char* title, char* text)
 	{
 		m_lock(&status.drawingmutex, 0);
 		m_lock(&status.rcmutex, 10);
+		tmpscreencalc = status.screencalc;
 		status.screencalc = 2;
 		setnodeattr(textinput, framebuffer);
-		status.screencalc = 0;
+		status.screencalc = tmpscreencalc;
 		status.rcowner = textinput;
 		bg = savescreen(textinput);
 		tmpscreencalc = status.screencalc;

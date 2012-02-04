@@ -187,9 +187,10 @@ char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 	{
 		m_lock(&status.drawingmutex, 0);
 		m_lock(&status.rcmutex, 10);
+		tmpscreencalc = status.screencalc;
 		status.screencalc = 2;
 		setnodeattr(screen, framebuffer);
-		status.screencalc = 0;
+		status.screencalc = tmpscreencalc;
 		status.rcowner = screen;
 		bg = savescreen(screen);
 		tmpscreencalc = status.screencalc;
