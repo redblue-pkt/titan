@@ -1,10 +1,9 @@
 #ifndef PLAY_H
 #define PLAY_H
 
-//can bit 0
 void screenplaypolicy()
 {
-	//if(checkbit(status.playercan, 0) == 0) return;
+	if(checkbit(status.playercan, 0) == 0) return;
 
 	int rcret = 0;
 	struct skin* playpolicy = getscreen("playpolicy");
@@ -28,10 +27,9 @@ start:
 	clearscreen(playpolicy);
 }
 
-//can bit 16
 void screenplayinfobar(char* file, int mode, int playertype, int flag)
 {
-	//if(checkbit(status.playercan, 16) == 0) return;
+	if(checkbit(status.playercan, 14) == 0) return;
 
 	if((flag == 2) || (flag == 3))
 	{
@@ -100,6 +98,9 @@ void screenplaytracklist(int mode, int playertype, int flag)
 {
 	//mode 1 = audiotracks
 	//mode 2 = subtitle tracks
+
+	if(mode == 1 && checkbit(status.playercan, 1) == 0) return;
+	if(mode == 2 && checkbit(status.playercan, 2) == 0) return;
 
 	if(playertype == 1)
 	{
@@ -201,30 +202,27 @@ void screenplaytracklist(int mode, int playertype, int flag)
 	blitfb();
 }
 
-//can bit 1
 void playrcyellow(char* file, int playinfobarstatus, int playertype, int flag)
 {
-	//if(checkbit(status.playercan, 1) == 0) return;
+	if(checkbit(status.playercan, 1) == 0) return;
 
 	screenplaytracklist(1, playertype, flag);
 	if(playinfobarstatus > 0)
 		screenplayinfobar(file, 0, playertype, flag);
 }
 
-//can bit 2
 void playrctext(char* file, int playinfobarstatus, int playertype, int flag)
 {
-	//if(checkbit(status.playercan, 2) == 0) return;
+	if(checkbit(status.playercan, 2) == 0) return;
 
 	screenplaytracklist(2, playertype, flag);
 	if(playinfobarstatus > 0)
 		screenplayinfobar(file, 0, playertype, flag);
 }
 
-//can bit 3
 void playrcgreen(char* file, int playinfobarstatus, int playertype, int flag)
 {
-	//if(checkbit(status.playercan, 3) == 0) return;
+	if(checkbit(status.playercan, 3) == 0) return;
 
 	screenplayinfobar(file, 1, playertype, flag);
 	screenvideomode();
@@ -233,10 +231,9 @@ void playrcgreen(char* file, int playinfobarstatus, int playertype, int flag)
 		screenplayinfobar(file, 0, playertype, flag);
 }
 
-//can bit 4
 void playrcblue(char* file, int playinfobarstatus, int playertype, int flag)
 {
-	//if(checkbit(status.playercan, 4) == 0) return;
+	if(checkbit(status.playercan, 4) == 0) return;
 
 	screenplayinfobar(file, 1, playertype, flag);
 	screenpowerofftimer();
@@ -245,10 +242,9 @@ void playrcblue(char* file, int playinfobarstatus, int playertype, int flag)
 		screenplayinfobar(file, 0, playertype, flag);
 }
 
-//can bit 5
 void playrcok(char* file, int playinfobarstatus, int playertype, int flag)
 {
-	//if(checkbit(status.playercan, 5) == 0) return;
+	if(checkbit(status.playercan, 0) == 0) return;
 
 	screenplaypolicy(file, 1);
 	drawscreen(skin, 0);
@@ -256,10 +252,9 @@ void playrcok(char* file, int playinfobarstatus, int playertype, int flag)
 		screenplayinfobar(file, 0, playertype, flag);
 }
 
-//can bit 6
 void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 {
-	//if(checkbit(status.playercan, 6) == 0) return;
+	if(checkbit(status.playercan, 5) == 0) return;
 
 	screenplayinfobar(file, 1, playertype, flag);
 	screenvideosettings();
@@ -268,10 +263,9 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 		screenplayinfobar(file, 0, playertype, flag);
 }
 
-//can bit 7
 void playrcinfo(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
-	//if(checkbit(status.playercan, 7) == 0) return;
+	if(checkbit(status.playercan, 14) == 0) return;
 
 	if(*playinfobarstatus == 0)
 	{
@@ -286,10 +280,9 @@ void playrcinfo(char* file, int* playinfobarstatus, int* playinfobarcount, int p
 	}
 }
 
-//can bit 8
 void playrcstop(int playertype, int flag)
 {
-	//if(checkbit(status.playercan, 8) == 0) return;
+	if(checkbit(status.playercan, 6) == 0) return;
 
 	if(playertype == 1)
 		playerstopts(0, 0);
@@ -300,10 +293,9 @@ void playrcstop(int playertype, int flag)
 	screenplayinfobar(NULL, 1, playertype, flag);
 }
 
-//can bit 9
 void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
-	//if(checkbit(status.playercan, 9) == 0) return;
+	if(checkbit(status.playercan, 7) == 0) return;
 
 	if(status.pause == 0)
 	{
@@ -345,10 +337,9 @@ void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int pla
 	}
 }
 
-//can bit 10
 void playrcfr(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
-	//if(checkbit(status.playercan, 10) == 0) return;
+	if(checkbit(status.playercan, 8) == 0) return;
 
 	if(status.pause == 0)
 	{
@@ -390,10 +381,9 @@ void playrcfr(char* file, int* playinfobarstatus, int* playinfobarcount, int pla
 	}
 }
 
-//can bit 11
 void playrcpause(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
-	//if(checkbit(status.playercan, 11) == 0) return;
+	if(checkbit(status.playercan, 9) == 0) return;
 
 	if(status.pause == 1)
 	{
@@ -423,10 +413,9 @@ void playrcpause(char* file, int* playinfobarstatus, int* playinfobarcount, int 
 	}
 }
 
-//can bit 12
 void playrcplay(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
-	//if(checkbit(status.playercan, 12) == 0) return;
+	if(checkbit(status.playercan, 10) == 0) return;
 
 	if(playertype == 1)
 		playercontinuets();
@@ -440,10 +429,9 @@ void playrcplay(char* file, int* playinfobarstatus, int* playinfobarcount, int p
 	screenplayinfobar(file, 0, playertype, flag);
 }
 
-//can bit 13
 void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
-	//if(checkbit(status.playercan, 13) == 0) return;
+	if(checkbit(status.playercan, 11) == 0) return;
 
 	unsigned long long int pos = 0;
 	
@@ -490,10 +478,9 @@ void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 	}
 }
 
-//can bit 14
 void playrcjumpf(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
-	//if(checkbit(status.playercan, 14) == 0) return;
+	if(checkbit(status.playercan, 12) == 0) return;
 
 	if(status.pause == 0 && status.playspeed == 0)
 	{
@@ -509,10 +496,9 @@ void playrcjumpf(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 	}
 }
 
-//can bit 15
 void playchangecodec(int playertype)
 {
-	//if(checkbit(status.playercan, 15) == 0) return;
+	if(checkbit(status.playercan, 13) == 0) return;
 
 	char** tracklist = NULL;
 
@@ -639,8 +625,8 @@ playerstart:
 	{
 		if(startfile == NULL)
 		{
-			if(getconfigint("playertype", NULL) == 1)
-				if(cmpfilenameext(file, ".ts") == 0) playertype = 1;
+			if(getconfigint("playertype", NULL) == 1 && cmpfilenameext(file, ".ts") == 0)
+				playertype = 1;
 
 			tmpstr = ostrcat(file, "", 0, 0);
 			if(tmpstr != NULL && startfolder == 0) addconfig("rec_moviepath", dirname(tmpstr));
@@ -773,11 +759,13 @@ playerstart:
 			//don't change this sleep, without this
 			//the player stops to fast, and a last seek can
 			//produce a segfault
+playerend:
 			sleep(1);
 			if(playertype == 1)
 				playerafterendts();
 			else
 				playerafterend();
+
 			writevfd("Player");
 			screenplayinfobar(file, 1, playertype, flag);
 
@@ -787,11 +775,9 @@ playerstart:
 				goto playerstart;
 			}
 			else
-				goto playerend;
+				break;
 		}
 	}
-
-playerend:
 
 	if(startfolder == 0) playstartservice();
 	status.updatevfd = START;
