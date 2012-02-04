@@ -671,7 +671,8 @@ playerstart:
 		//the seek to the beginning of the file freez
 		//eplayer.
 		//playchangecodec();
-
+		free(status.playfile); status.playfile = NULL;
+		status.playfile = ostrcat(file, "", 0, 0);
 		status.play = 1;
 		while(1)
 		{
@@ -787,7 +788,8 @@ playerend:
 		setpolicy(tmppolicy);
 		free(tmppolicy);
 	}
-
+	
+	free(status.playfile); status.playfile = NULL; 
 	status.playspeed = 0;
 	status.pause = 0;
 	status.play = 0;
