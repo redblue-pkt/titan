@@ -71,8 +71,8 @@ void screenpanel_system_restore()
 				changetext(info, _(infotext));
 				info->textposx = 0;
 				b_red->hidden = NO; b_green->hidden = NO; b_yellow->hidden = NO;
+				textbox(_("Message"), _("Backup created successfully"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
 				drawscreen(panel_restore, 0);
-				textbox(_("Message"), _("Backup created successfully"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 3, 0);
 			}
 			else
 			{
