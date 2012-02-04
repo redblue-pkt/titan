@@ -326,7 +326,6 @@ void screentithekmenu(char* titheklink)
 				clearscreen(menu);
 				char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
 				if(((struct tithek*)listbox->select->handle)->flag == 1)
-
 					screentithekplay(tmpstr);
 				else
 					screentithekmenu(tmpstr);
@@ -356,10 +355,13 @@ void screentithekplay(char* titheklink)
 
 	struct skin* grid = getscreen("titheklist");
 	struct skin* listbox = getscreennode(grid, "listbox");
+
 	struct skin* tmp = NULL;
+
 	char* tithekfile = NULL;
 	char* tithekpic = NULL;
-
+	char* oldtitheklink = NULL;
+start:
 	if(titheklink == NULL) return;
 
 	listbox->aktpage = -1;
@@ -385,15 +387,15 @@ void screentithekplay(char* titheklink)
 			gridbr = 1;
 			tmp->wrap = YES;
 			
-			tmp->height = 250;
-			tmp->width = 300;
+			tmp->height = 280;
+			tmp->width = 390;
 			tmp->prozwidth = 0;
-			tmp->bgcol = 0xffffff;
-			tmp->bgspace = 20;
-			tmp->vspace = 30;
-			tmp->hspace = 30;
+			//tmp->bgcol = 0xffffff;
+			tmp->bgspace = 1;
+			tmp->vspace = 40;
+			tmp->hspace = 2;
 			tmp->posx = posx;
-			tmp->fontcol = 0x0000ff;
+			//tmp->fontcol = 0x0000ff;
 			tmp->halign = CENTER;
 			tmp->valign = TEXTBOTTOM;
 			changetext(tmp, titheknode->title);
@@ -445,7 +447,101 @@ void screentithekplay(char* titheklink)
 		}
 		rcret = waitrc(grid, 0, 0);
 
-		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcexit", NULL))
+		{
+			if(oldtitheklink == NULL)
+				break;
+			else
+			{
+				struct splitstr* ret1 = NULL;
+				int count1 = 0;
+				char* tmpstr1 = NULL;
+				tmpstr1 = ostrcat(tmpstr1, oldtitheklink, 1, 0);
+				ret1 = strsplit(tmpstr1, "#", &count1);
+				int max = count1;
+				int update = 1;
+				int i = 0;
+				char* tmpstr2 = NULL;
+				for( i = 0; i < max; i++){
+					printf("ret1(%d/%d)=%s\n", i, max, (&ret1[i])->part);
+					if(max > 1)
+					{
+						printf("ret2(%d/%d)=%s\n", i, max, (&ret1[i])->part);
+						tmpstr2 = ostrcat(tmpstr2, (&ret1[i])->part, 1, 0);
+					}
+					else if(max = 2)
+					{
+						printf("ret3(%d/%d)=%s\n", i, max, (&ret1[i])->part);
+						titheklink = ostrcat((&ret1[i])->part, NULL, 0, 0);
+						break;
+					}
+					if(max > 2 && i<max-2)
+					{
+						printf("ret4(%d/%d)=%s\n", i, max, (&ret1[i])->part);
+						tmpstr2 = ostrcat(tmpstr2, "#", 1, 0);
+					}
+					else
+					{
+						printf("ret5(%d/%d)=%s\n", i, max, (&ret1[i])->part);				
+						titheklink = ostrcat((&ret1[i+1])->part, NULL, 0, 0);
+						break;
+					}
+				}
+
+				printf("oldtitheklink1=%s\n", oldtitheklink);
+				printf("oldtitheklink2=%s\n", tmpstr2);
+				
+				oldtitheklink = ostrcat(tmpstr2, NULL, 0, 0);
+
+				if(titheklink == NULL)
+				{
+					printf("oldtitheklink3=http://atemio.dyndns.tv/mediathek/mainmenu.list\n");
+					titheklink = ostrcat("http://atemio.dyndns.tv/mediathek/mainmenu.list", NULL, 0, 0);
+				}
+
+				free(ret1),ret1 = NULL;
+				free(tmpstr1),tmpstr1 = NULL;
+				free(tmpstr2),tmpstr2 = NULL;				
+				tmp = NULL;
+				free(tithekfile); tithekfile = NULL;
+				freetithek();
+				delmarkedscreennodes(grid, 1);
+				delownerrc(grid);
+				clearscreen(grid);
+				rcret = -1, gridbr = 0, posx = 0, count = 0;
+				goto start;
+			}
+		}
+
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			if(listbox->select != NULL && listbox->select->handle != NULL)
+			{
+					if(oldtitheklink == NULL)
+						oldtitheklink = ostrcat(oldtitheklink, titheklink, 1, 0);
+					else
+					{
+						oldtitheklink = ostrcat(oldtitheklink, "#", 1, 0);
+						oldtitheklink = ostrcat(oldtitheklink, titheklink, 1, 0);
+					}
+
+					titheklink = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+
+					if(((struct tithek*)listbox->select->handle)->flag == 2)
+					{
+						textbox(_("Message"), _("start, Playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 1);				
+					}
+					
+					tmp = NULL;
+					free(tithekfile); tithekfile = NULL;
+					freetithek();
+					delmarkedscreennodes(grid, 1);
+					delownerrc(grid);
+					clearscreen(grid);
+					rcret = -1, gridbr = 0, posx = 0, count = 0;
+					goto start;
+			}
+       	}
 	}
 
 	free(tithekfile); tithekfile = NULL;
