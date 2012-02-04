@@ -1,6 +1,23 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+//playercan bits:
+// 0 policy
+// 1 auditraklist
+// 2 subtitle
+// 3 videomode
+// 4 powerofftimer
+// 5 videosettings
+// 6 stop
+// 7 ff
+// 8 fr
+// 9 pause
+// 10 play
+// 11 jump/seek reverse
+// 12 jump/seek forward
+// 13 changecodec
+// 14 infobar
+
 #ifdef EPLAYER3
 Context_t * player = NULL;
 extern OutputHandler_t OutputHandler;
@@ -101,6 +118,7 @@ int playerstartts(char* file, int flag)
 			dvrclose(dvrnode, -1);
 			return 1;
 		}
+		status.playercan = 0x7EFF;	
 	}
 
 	return 0;
@@ -326,6 +344,11 @@ int playerstart(char* file)
 			return 1;
 		}
 
+		if(strstr(tmpfile, "file://") == NULL)
+			status.playercan = 0x4650;
+		else
+			status.playercan = 0x7FFF;
+		
 		player->playback = &PlaybackHandler;
 		player->output = &OutputHandler;
 		player->container = &ContainerHandler;
@@ -374,6 +397,11 @@ int playerstart(char* file)
 			free(m_gst_playbin); m_gst_playbin = NULL;
 			return 1;
 		}
+
+		if(strstr(tmpfile, "file://") == NULL)
+			status.playercan = 0x4650;
+		else
+			status.playercan = 0x7FFF;
 		
 		m_gst_playbin = gst_element_factory_make("playbin2", "playbin");
 		g_object_set(G_OBJECT (m_gst_playbin), "uri", tmpfile, NULL);
