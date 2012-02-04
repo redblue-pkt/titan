@@ -175,6 +175,7 @@ msgstr ""
 #: networkbrowser.h:1196 channellist.h:709 mc_audioplayer.h:319
 #: mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:63 panel_extensions.h:65
 #: panel_extensions.h:112 panel_extensions.h:137 global.h:4152 tithek.h:532
+#: tithek.h:524
 msgid "EXIT"
 msgstr ""
 
@@ -569,7 +570,7 @@ msgstr ""
 #: timeshift.h:52 timeshift.h:79 networkbrowser.h:73 networkbrowser.h:952
 #: networkbrowser.h:1183 networkbrowser.h:1196 channellist.h:709
 #: mc_audioplayer.h:319 mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:65
-#: panel_extensions.h:153 global.h:4152 tithek.h:532
+#: panel_extensions.h:153 global.h:4152 tithek.h:532 tithek.h:524
 msgid "Message"
 msgstr ""
 
@@ -690,7 +691,7 @@ msgstr ""
 #: networkbrowser.h:1183 networkbrowser.h:1196 channellist.h:709
 #: mc_audioplayer.h:319 mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:63
 #: panel_extensions.h:65 panel_extensions.h:112 panel_extensions.h:137
-#: global.h:4152 tithek.h:532
+#: global.h:4152 tithek.h:532 tithek.h:524
 msgid "OK"
 msgstr ""
 
@@ -7738,6 +7739,6 @@ msgstr ""
 msgid "TiThek PlayList"
 msgstr ""
 
-#: tithek.h:532
+#: tithek.h:532 tithek.h:524
 msgid "start, Playback"
 msgstr ""
