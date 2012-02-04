@@ -446,7 +446,8 @@ void screentithekplay(char* titheklink)
 				if(((struct tithek*)listbox->select->handle)->flag == 2)
 				{
 					clearscreen(grid);
-					textbox(_("Message"), _("start, Playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 1);				
+					if(textbox(_("Message"), _("Start Playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 1) == 1)
+						screenplay((((struct tithek*)listbox->select->handle)->link), 0, 0);				
 					drawscreen(grid, 0);
 				}
 			}
