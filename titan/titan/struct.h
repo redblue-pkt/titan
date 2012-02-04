@@ -981,6 +981,10 @@ struct status
 	int showchanneltimeline;
 	// see player.h for details
 	int playercan;
+		//Code von infobar.h aktiv = 1
+	int infobaraktiv;
+	//Name der Datei die abgespielt wird
+	char* playfile;
 } status;
 
 struct fb

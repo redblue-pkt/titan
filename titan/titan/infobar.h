@@ -17,6 +17,8 @@ void screeninfobar()
 	addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
 	addrc(getrcconfigint("rcmute", NULL), screenmute, NULL, NULL);
 
+	status.infobaraktiv = 1;
+	
 	while(1)
 	{
 		if(status.standby == 1)
@@ -249,8 +251,10 @@ void screeninfobar()
 		{
 			subtitlepause(1);
 			status.infobar = 0;
+			status.infobaraktiv = 0;
 			clearscreen(infobar);
 			screenplay(NULL, 1, 0);
+			status.infobaraktiv = 1;
 			status.updatevfd = START;
 			drawscreen(skin, 0);
 			subtitlepause(0);
