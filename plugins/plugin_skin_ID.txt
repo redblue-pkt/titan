@@ -8,5 +8,6 @@ mboxinfo: 194
 mc: 101
 networkbrowser: 100
 panel: 107
+tithek: 195
 TopfieldVFD: ---
 browser: ---
