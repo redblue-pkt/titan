@@ -165,7 +165,7 @@ void recordffrwts(struct service* servicenode, int speed);
 
 // play.h
 void playerffts(int speed);
-void screenplay(int startfolder, int flag);
+void screenplay(char* startfile, int startfolder, int flag);
 
 //inetwork.h
 struct inetwork* getinetworkbydevice(char* device);

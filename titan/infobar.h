@@ -250,7 +250,7 @@ void screeninfobar()
 			subtitlepause(1);
 			status.infobar = 0;
 			clearscreen(infobar);
-			screenplay(1, 0);
+			screenplay(NULL, 1, 0);
 			status.updatevfd = START;
 			drawscreen(skin, 0);
 			subtitlepause(0);

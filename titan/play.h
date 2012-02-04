@@ -1,8 +1,11 @@
 #ifndef PLAY_H
 #define PLAY_H
 
+//can bit 0
 void screenplaypolicy()
 {
+	//if(checkbit(status.playercan, 0) == 0) return;
+
 	int rcret = 0;
 	struct skin* playpolicy = getscreen("playpolicy");
 	char* tmpstr = NULL;
@@ -25,8 +28,11 @@ start:
 	clearscreen(playpolicy);
 }
 
+//can bit 16
 void screenplayinfobar(char* file, int mode, int playertype, int flag)
 {
+	//if(checkbit(status.playercan, 16) == 0) return;
+
 	if((flag == 2) || (flag == 3))
 	{
 		return;
@@ -195,22 +201,31 @@ void screenplaytracklist(int mode, int playertype, int flag)
 	blitfb();
 }
 
+//can bit 1
 void playrcyellow(char* file, int playinfobarstatus, int playertype, int flag)
 {
+	//if(checkbit(status.playercan, 1) == 0) return;
+
 	screenplaytracklist(1, playertype, flag);
 	if(playinfobarstatus > 0)
 		screenplayinfobar(file, 0, playertype, flag);
 }
 
+//can bit 2
 void playrctext(char* file, int playinfobarstatus, int playertype, int flag)
 {
+	//if(checkbit(status.playercan, 2) == 0) return;
+
 	screenplaytracklist(2, playertype, flag);
 	if(playinfobarstatus > 0)
 		screenplayinfobar(file, 0, playertype, flag);
 }
 
+//can bit 3
 void playrcgreen(char* file, int playinfobarstatus, int playertype, int flag)
 {
+	//if(checkbit(status.playercan, 3) == 0) return;
+
 	screenplayinfobar(file, 1, playertype, flag);
 	screenvideomode();
 	drawscreen(skin, 0);
@@ -218,8 +233,11 @@ void playrcgreen(char* file, int playinfobarstatus, int playertype, int flag)
 		screenplayinfobar(file, 0, playertype, flag);
 }
 
+//can bit 4
 void playrcblue(char* file, int playinfobarstatus, int playertype, int flag)
 {
+	//if(checkbit(status.playercan, 4) == 0) return;
+
 	screenplayinfobar(file, 1, playertype, flag);
 	screenpowerofftimer();
 	drawscreen(skin, 0);
@@ -227,16 +245,22 @@ void playrcblue(char* file, int playinfobarstatus, int playertype, int flag)
 		screenplayinfobar(file, 0, playertype, flag);
 }
 
+//can bit 5
 void playrcok(char* file, int playinfobarstatus, int playertype, int flag)
 {
+	//if(checkbit(status.playercan, 5) == 0) return;
+
 	screenplaypolicy(file, 1);
 	drawscreen(skin, 0);
 	if(playinfobarstatus > 0)
 		screenplayinfobar(file, 0, playertype, flag);
 }
 
+//can bit 6
 void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 {
+	//if(checkbit(status.playercan, 6) == 0) return;
+
 	screenplayinfobar(file, 1, playertype, flag);
 	screenvideosettings();
 	drawscreen(skin, 0);
@@ -244,8 +268,11 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 		screenplayinfobar(file, 0, playertype, flag);
 }
 
+//can bit 7
 void playrcinfo(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
+	//if(checkbit(status.playercan, 7) == 0) return;
+
 	if(*playinfobarstatus == 0)
 	{
 		*playinfobarstatus = 1;
@@ -259,8 +286,11 @@ void playrcinfo(char* file, int* playinfobarstatus, int* playinfobarcount, int p
 	}
 }
 
+//can bit 8
 void playrcstop(int playertype, int flag)
 {
+	//if(checkbit(status.playercan, 8) == 0) return;
+
 	if(playertype == 1)
 		playerstopts(0, 0);
 	else
@@ -270,8 +300,11 @@ void playrcstop(int playertype, int flag)
 	screenplayinfobar(NULL, 1, playertype, flag);
 }
 
+//can bit 9
 void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
+	//if(checkbit(status.playercan, 9) == 0) return;
+
 	if(status.pause == 0)
 	{
 		status.playspeed++;
@@ -312,8 +345,11 @@ void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int pla
 	}
 }
 
+//can bit 10
 void playrcfr(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
+	//if(checkbit(status.playercan, 10) == 0) return;
+
 	if(status.pause == 0)
 	{
 		status.playspeed--;
@@ -354,8 +390,11 @@ void playrcfr(char* file, int* playinfobarstatus, int* playinfobarcount, int pla
 	}
 }
 
+//can bit 11
 void playrcpause(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
+	//if(checkbit(status.playercan, 11) == 0) return;
+
 	if(status.pause == 1)
 	{
 		status.playspeed = 0;
@@ -384,8 +423,11 @@ void playrcpause(char* file, int* playinfobarstatus, int* playinfobarcount, int 
 	}
 }
 
+//can bit 12
 void playrcplay(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
+	//if(checkbit(status.playercan, 12) == 0) return;
+
 	if(playertype == 1)
 		playercontinuets();
 	else
@@ -398,8 +440,11 @@ void playrcplay(char* file, int* playinfobarstatus, int* playinfobarcount, int p
 	screenplayinfobar(file, 0, playertype, flag);
 }
 
+//can bit 13
 void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
+	//if(checkbit(status.playercan, 13) == 0) return;
+
 	unsigned long long int pos = 0;
 	
 	if(status.pause == 0 && status.playspeed == 0)
@@ -445,8 +490,11 @@ void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 	}
 }
 
+//can bit 14
 void playrcjumpf(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
+	//if(checkbit(status.playercan, 14) == 0) return;
+
 	if(status.pause == 0 && status.playspeed == 0)
 	{
 		if(playertype == 1)
@@ -461,8 +509,11 @@ void playrcjumpf(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 	}
 }
 
+//can bit 15
 void playchangecodec(int playertype)
 {
+	//if(checkbit(status.playercan, 15) == 0) return;
+
 	char** tracklist = NULL;
 
 	if(getconfigint("av_ac3default", NULL) == 1)
@@ -540,7 +591,7 @@ void playstartservice()
 // flag 0 = dirlist/playing/infobar
 // flag 1 = playing/infobar
 // flag 2 = playing
-void screenplay(int startfolder, int flag)
+void screenplay(char* startfile, int startfolder, int flag)
 {
 	int rcret = 0, playertype = 0;
 	char* file = NULL, *tmpstr = NULL;
@@ -575,25 +626,34 @@ playerstart:
 	status.playspeed = 0, status.play = 0, status.pause = 0;
 	int playinfobarcount = 0, playinfobarstatus = 1, dirrcret = 0;
 
-	tmpstr = ostrcat(file, "", 1, 0); file = NULL;
-	file = screendir(startdir, formats, basename(tmpstr), &dirrcret, ".epg", _("DEL"), getrcconfigint("rcred", NULL), _("SELECT"), 0, "EPG", getrcconfigint("rcyellow", NULL), NULL, 0, 90, 1, 90, 1, 0);
-	free(tmpstr); tmpstr = NULL;
+	if(startfile == NULL)
+	{
+		tmpstr = ostrcat(file, "", 1, 0); file = NULL;
+		file = screendir(startdir, formats, basename(tmpstr), &dirrcret, ".epg", _("DEL"), getrcconfigint("rcred", NULL), _("SELECT"), 0, "EPG", getrcconfigint("rcyellow", NULL), NULL, 0, 90, 1, 90, 1, 0);
+		free(tmpstr); tmpstr = NULL;
+	}
+	else
+		file = ostrcat(startfile, "", 0, 0);
 
 	if(file != NULL)
 	{
-		if(getconfigint("playertype", NULL) == 1)
-			if(cmpfilenameext(file, ".ts") == 0) playertype = 1;
-		tmpstr = ostrcat(file, "", 0, 0);
-		if(tmpstr != NULL && startfolder == 0) addconfig("rec_moviepath", dirname(tmpstr));
-		free(tmpstr); tmpstr = NULL;
-		
-		if(playcheckdirrcret(file, dirrcret) == 1)
-			goto playerstart;
-
-		if(startfolder == 1)
+		if(startfile == NULL)
 		{
-			rcret = servicestop(status.aktservice, 1, 1);
-			if(rcret == 1) return;
+			if(getconfigint("playertype", NULL) == 1)
+				if(cmpfilenameext(file, ".ts") == 0) playertype = 1;
+
+			tmpstr = ostrcat(file, "", 0, 0);
+			if(tmpstr != NULL && startfolder == 0) addconfig("rec_moviepath", dirname(tmpstr));
+			free(tmpstr); tmpstr = NULL;
+		
+			if(playcheckdirrcret(file, dirrcret) == 1)
+				goto playerstart;
+
+			if(startfolder == 1)
+			{
+				rcret = servicestop(status.aktservice, 1, 1);
+				if(rcret == 1) return;
+			}
 		}
 
 		drawscreen(skin, 0);
@@ -608,8 +668,13 @@ playerstart:
 			textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 			writevfd("Player");
 			
-			if(startfolder == 1) playstartservice();
-			goto playerstart;
+			if(startfile == NULL)
+			{
+				if(startfolder == 1) playstartservice();
+				goto playerstart;
+			}
+			else
+				goto playerend;
 		}
 #endif
 		screenplayinfobar(file, 0, playertype, flag);
@@ -660,8 +725,13 @@ playerstart:
 				if(rcret == getrcconfigint("rcstop", NULL))
 				{
 					playrcstop(playertype, flag);
-					if(startfolder == 1) playstartservice();
-					goto playerstart;
+					if(startfile == NULL)
+					{
+						if(startfolder == 1) playstartservice();
+						goto playerstart;
+					}
+					else
+						goto playerend;
 				}
 
 				if(rcret == getrcconfigint("rcff", NULL))
@@ -710,10 +780,18 @@ playerstart:
 				playerafterend();
 			writevfd("Player");
 			screenplayinfobar(file, 1, playertype, flag);
-			if(startfolder == 1) playstartservice();
-			goto playerstart;
+
+			if(startfile == NULL)
+			{
+				if(startfolder == 1) playstartservice();
+				goto playerstart;
+			}
+			else
+				goto playerend;
 		}
 	}
+
+playerend:
 
 	if(startfolder == 0) playstartservice();
 	status.updatevfd = START;
