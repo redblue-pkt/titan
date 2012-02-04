@@ -298,6 +298,7 @@ int createtithekmenu(char* titheklink, struct skin* menu, struct skin* listbox)
 void screentithekmenu(char* titheklink)
 {
 	int rcret = -1, oaktline = 1, oaktpage = -1;
+
 	struct skin* menu = getscreen("tithekmenu");
 	struct skin* listbox = getscreennode(menu, "listbox");
 
@@ -349,6 +350,10 @@ void screentithekmenu(char* titheklink)
 void screentithekplay(char* titheklink)
 {
 	int rcret = -1, gridbr = 0, posx = 0, count = 0;
+
+	rcret = servicestop(status.aktservice, 1, 0);
+	if(rcret == 1) return;
+
 	struct skin* grid = getscreen("titheklist");
 	struct skin* listbox = getscreennode(grid, "listbox");
 	struct skin* tmp = NULL;
@@ -379,13 +384,14 @@ void screentithekplay(char* titheklink)
 				//tmp->type = TEXTBOX;
 			gridbr = 1;
 			tmp->wrap = YES;
-			tmp->height = 200;
-			tmp->width = 200;
+			
+			tmp->height = 250;
+			tmp->width = 300;
 			tmp->prozwidth = 0;
 			tmp->bgcol = 0xffffff;
-			tmp->bgspace = 1;
-			tmp->vspace = 2;
-			tmp->hspace = 2;
+			tmp->bgspace = 20
+			tmp->vspace = 30;
+			tmp->hspace = 30;
 			tmp->posx = posx;
 			tmp->fontcol = 0x0000ff;
 			tmp->halign = CENTER;
@@ -393,7 +399,7 @@ void screentithekplay(char* titheklink)
 			changetext(tmp, titheknode->title);
 			tmp->handle = (char*)titheknode;
 			posx += tmp->width;
-			if(count >= 4)
+			if(count >= 3)
 			{
 				count = 0;
 				posx = 0;
@@ -447,6 +453,8 @@ void screentithekplay(char* titheklink)
 	delmarkedscreennodes(grid, 1);
 	delownerrc(grid);
 	clearscreen(grid);
+
+	servicestart(status.lastservice->channel, NULL, NULL, 0);
 }
 
 #endif
