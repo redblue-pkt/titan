@@ -1,0 +1,7 @@
+<screen fontcol=fontcol title="TiThek Menu" titlealign=center name="tithekmenu" hspace=30 vspace=30 fontsize=30 posx=center posy=center width=50% height=75% bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=100%>
+</screen>
+
+<screen name="titheklist" fontcol=fontcol valign=bottom titlealign=center hspace=5 vspace=5 fontsize=30 title="TiThek PlayList" posx=center posy=center width=95% height=95% bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node fontcol=fontcol fontsize=20 bordersize=0 bordercol=bordercol scrollbar=yes type=grid name=listbox posx=0 posy=1 width=100% height=-35>
+</screen>
