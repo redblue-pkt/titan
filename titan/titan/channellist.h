@@ -977,6 +977,7 @@ start:
 
 				clearscreen(channellist);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
+				resettvpic();
 				drawscreen(skin, 0);
 				if(status.servicetype == 0)
 					ret = servicestart((struct channel*)listbox->select->handle, getconfig("channellist", NULL), NULL, 0);
