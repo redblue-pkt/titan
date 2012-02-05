@@ -28,6 +28,7 @@ extern ManagerHandler_t ManagerHandler;
 
 #ifdef EPLAYER4
 GstElement *m_gst_playbin = NULL;
+unsigned long long int m_gst_startpts = 0;
 #endif
 
 //titan player
@@ -378,7 +379,6 @@ int playerstart(char* file)
 
 #ifdef EPLAYER4
 		int flags = 0x47; //(GST_PLAY_FLAG_VIDEO | GST_PLAY_FLAG_AUDIO | GST_PLAY_FLAG_NATIVE_VIDEO | GST_PLAY_FLAG_TEXT);
-		gchar *uri;
 		
 		if(m_gst_playbin != NULL)
 		{
@@ -399,9 +399,9 @@ int playerstart(char* file)
 		}
 
 		if(strstr(tmpfile, "file://") == NULL)
-			status.playercan = 0x4650;
+			status.playercan = 0x7E7F;
 		else
-			status.playercan = 0x7FFF;
+			status.playercan = 0x7E7F;
 		
 		m_gst_playbin = gst_element_factory_make("playbin2", "playbin");
 		g_object_set(G_OBJECT (m_gst_playbin), "uri", tmpfile, NULL);
@@ -411,6 +411,14 @@ int playerstart(char* file)
 		if(m_gst_playbin)
 			gst_element_set_state(m_gst_playbin, GST_STATE_PLAYING);
 		
+		int count = 0;
+		m_gst_startpts = 0;
+		while(m_gst_startpts == 0 && count < 5)
+		{
+			count++;
+			sleep(1);
+			m_gst_startpts = playergetpts();
+		}
 		return 0;
 #endif
 	}
@@ -429,8 +437,8 @@ void playerinit(int argc, char* argv[])
 int gstbuscall(GstBus *bus, GstMessage *msg)
 {
 	int ret = 1;
+	if(!m_gst_playbin) return 0;
 	if(!msg) return ret;
-	if(!m_gst_playbin) return ret;
 
 	gchar *sourceName = NULL;
 	GstObject *source = GST_MESSAGE_SRC(msg);
@@ -445,13 +453,85 @@ int gstbuscall(GstBus *bus, GstMessage *msg)
 			ret = 0;
 			break;
 		case GST_MESSAGE_STATE_CHANGED:
-			debug(150, "gst player state changed");
+			if(GST_MESSAGE_SRC(msg) != GST_OBJECT(m_gst_playbin))
+				break;
+
+			GstState old_state, new_state;
+			gst_message_parse_state_changed(msg, &old_state, &new_state, NULL);
+		
+			if(old_state == new_state) break;
+	
+			debug(150, "gst state change %s -> %s", gst_element_state_get_name(old_state), gst_element_state_get_name(new_state));
+	
+			GstStateChange transition = (GstStateChange)GST_STATE_TRANSITION(old_state, new_state);
+	
+			switch(transition)
+			{
+				case GST_STATE_CHANGE_NULL_TO_READY:
+					break;
+				case GST_STATE_CHANGE_READY_TO_PAUSED:
+/*
+					GstElement *appsink = gst_bin_get_by_name(GST_BIN(m_gst_playbin), "subtitle_sink");
+ 					if(appsink)
+ 					{
+ 						g_object_set(G_OBJECT(appsink), "max-buffers", 2, NULL);
+ 						g_object_set(G_OBJECT(appsink), "sync", FALSE, NULL);
+ 						g_object_set(G_OBJECT(appsink), "emit-signals", TRUE, NULL);
+ 						gst_object_unref(appsink);
+ 					}
+*/
+					break;
+				case GST_STATE_CHANGE_PAUSED_TO_PLAYING:
+					//if(m_sourceinfo.is_streaming && m_streamingsrc_timeout )
+						//m_streamingsrc_timeout->stop();
+					break;
+				case GST_STATE_CHANGE_PLAYING_TO_PAUSED:
+					break;
+				case GST_STATE_CHANGE_PAUSED_TO_READY:
+					break;
+				case GST_STATE_CHANGE_READY_TO_NULL:
+					ret = 0;
+					break;
+			}
 			break;
 		case GST_MESSAGE_ERROR:
 			debug(150, "gst player error");
+
+			gchar *gdebug1;
+			GError *err;
+
+			gst_message_parse_error(msg, &err, &gdebug1);
+			g_free(gdebug1);
+
+			debug(150, "gst error: %s (%i) from %s", err->message, err->code, sourceName);
+			if(err->domain == GST_STREAM_ERROR)
+			{
+				if(err->code == GST_STREAM_ERROR_CODEC_NOT_FOUND )
+				{
+					//if(g_strrstr(sourceName, "videosink"))
+					//	m_event((iPlayableService*)this, evUser+11);
+					//else if ( g_strrstr(sourceName, "audiosink") )
+					//	m_event((iPlayableService*)this, evUser+10);
+				}
+			}
+			g_error_free(err);
 			break;
 		case GST_MESSAGE_INFO:
 			debug(150, "gst player info");
+
+/*
+			gchar *gdebug2;
+			GError *inf;
+	
+			gst_message_parse_info(msg, &inf, &gdebug2);
+			g_free(gdebug2);
+			if(inf->domain == GST_STREAM_ERROR && inf->code == GST_STREAM_ERROR_DECODE )
+			{
+				//if(g_strrstr(sourceName, "videosink"))
+				//	m_event((iPlayableService*)this, evUser+14);
+			}
+			g_error_free(inf);
+*/
 			break;
 		case GST_MESSAGE_TAG:
 			debug(150, "gst player tag");
@@ -464,9 +544,45 @@ int gstbuscall(GstBus *bus, GstMessage *msg)
 			break;
 		case GST_MESSAGE_BUFFERING:
 			debug(150, "gst player buffering");
+
+/*
+			GstBufferingMode mode;
+			gst_message_parse_buffering(msg, &(m_bufferInfo.bufferPercent));
+			gst_message_parse_buffering_stats(msg, &mode, &(m_bufferInfo.avgInRate), &(m_bufferInfo.avgOutRate), &(m_bufferInfo.bufferingLeft));
+			//m_event((iPlayableService*)this, evBuffering);
+*/
 			break;
 		case GST_MESSAGE_STREAM_STATUS:
 			debug(150, "gst player stream status");
+
+/*
+			GstStreamStatusType type;
+			GstElement *owner;
+
+			gst_message_parse_stream_status(msg, &type, &owner);
+			if(type == GST_STREAM_STATUS_TYPE_CREATE && m_sourceinfo.is_streaming)
+			{
+				if(GST_IS_PAD(source))
+					owner = gst_pad_get_parent_element(GST_PAD(source));
+				else if(GST_IS_ELEMENT(source))
+					owner = GST_ELEMENT(source);
+				else
+					owner = NULL;
+				if(owner)
+				{
+					GstElementFactory *factory = gst_element_get_factory(GST_ELEMENT(owner));
+					const gchar *name = gst_plugin_feature_get_name(GST_PLUGIN_FEATURE(factory));
+					if (!strcmp(name, "souphttpsrc"))
+					{
+						//m_streamingsrc_timeout->start(10 * 1000, true);
+						g_object_set(G_OBJECT(owner), "timeout", 10, NULL);
+					}
+					
+				}
+				if(GST_IS_PAD(source))
+					gst_object_unref(owner);
+			}
+*/
 			break;
 		default:
 			debug(150, "gst player unknown message");
@@ -501,6 +617,9 @@ int playerisplaying()
 			gst_message_unref(message);
 		}
 	}
+	else
+		ret = 0;
+
 	return ret;
 #endif
 	return 0;
@@ -511,6 +630,11 @@ void playerplay()
 #ifdef EPLAYER3
 	if(player && player->playback)
 		player->playback->Command(player, PLAYBACK_PLAY, NULL);
+#endif
+
+#ifdef EPLAYER4
+	if(m_gst_playbin)
+		gst_element_set_state(m_gst_playbin, GST_STATE_PLAYING);
 #endif
 }
 
@@ -643,16 +767,25 @@ void playerseek(float sec)
 #endif
 
 #ifdef EPLAYER4
-	gint64 time_nanoseconds;
-	gint64 pos;
+	gint64 nanos_pts = 0, nanos_len = 0;
+	gint64 pts = 0, len = 0;
 	GstFormat fmt = GST_FORMAT_TIME;
 		
 	if(m_gst_playbin)
 	{
-		gst_element_query_position(m_gst_playbin, &fmt, &pos);
-		time_nanoseconds = pos + (sec * 1000000000);
-		if(time_nanoseconds < 0) time_nanoseconds = 0;
-		gst_element_seek(m_gst_playbin, 1.0, GST_FORMAT_TIME, GST_SEEK_FLAG_FLUSH, GST_SEEK_TYPE_SET, time_nanoseconds, GST_SEEK_TYPE_NONE, GST_CLOCK_TIME_NONE);
+		len = playergetlength();
+		nanos_len = len * 1000000000;
+		if(nanos_len < 0) nanos_len = 0;
+
+		pts = playergetpts();
+		nanos_pts = pts * 11111;
+		nanos_pts = nanos_pts + (sec * 1000000000);
+		if(nanos_pts < 0) nanos_pts = 0;
+
+		if(nanos_pts >= nanos_len)
+			playerstop();
+		else
+			gst_element_seek(m_gst_playbin, 1.0, GST_FORMAT_TIME, GST_SEEK_FLAG_FLUSH, GST_SEEK_TYPE_SET, nanos_pts, GST_SEEK_TYPE_NONE, GST_CLOCK_TIME_NONE);
 	}
 #endif
 }
@@ -792,12 +925,43 @@ unsigned long long int playergetpts()
 #ifdef EPLAYER4
 	GstFormat fmt = GST_FORMAT_TIME; //Returns time in nanosecs
 	
+/*
 	if(m_gst_playbin)
 	{
 		gst_element_query_position(m_gst_playbin, &fmt, (gint64*)&pts);
 		sec = pts / 1000000000;
 		pts = sec * 90000;
 		debug(150, "Pts = %02d:%02d:%02d (%llu.0000 sec)", (int)((sec / 60) / 60) % 60, (int)(sec / 60) % 60, (int)sec % 60, sec);
+	}
+*/
+
+	if(m_gst_playbin)
+	{
+		gint64 pos;
+		GstElement *sink;
+		pts = 0;
+
+		g_object_get(G_OBJECT (m_gst_playbin), "audio-sink", &sink, NULL);
+
+		if(!sink) g_object_get (G_OBJECT (m_gst_playbin), "video-sink", &sink, NULL);
+		if(!sink) return 0;
+
+		gchar *name = gst_element_get_name(sink);
+		gboolean use_get_decoder_time = strstr(name, "dvbaudiosink") || strstr(name, "dvbvideosink");
+		g_free(name);
+
+		if(use_get_decoder_time) g_signal_emit_by_name(sink, "get-decoder-time", &pos);
+
+		gst_object_unref(sink);
+
+		if(!use_get_decoder_time && !gst_element_query_position(m_gst_playbin, &fmt, &pos))
+			return 0;
+
+		/* pos is in nanoseconds. we have 90 000 pts per second. */
+		pts = pos / 11111;
+		pts = pts - m_gst_startpts;
+		sec = pts / 90000;
+		debug(150, "StartPTS = %llu Pts = %02d:%02d:%02d (%llu.0000 sec)", m_gst_startpts, (int)((sec / 60) / 60) % 60, (int)(sec / 60) % 60, (int)sec % 60, sec);
 	}
 #endif
 
@@ -825,7 +989,7 @@ double playergetlength()
 	if(m_gst_playbin)
 	{
 		gst_element_query_duration(m_gst_playbin, &fmt, &len);
-		length = len / 1000000000.0;
+		length = len / 1000000000;
 		if(length < 0) length = 0;
 		debug(150, "Length = %02d:%02d:%02d (%.4f sec)", (int)((length / 60) / 60) % 60, (int)(length / 60) % 60, (int)length % 60, length);
 	}
