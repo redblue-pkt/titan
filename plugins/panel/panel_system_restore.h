@@ -30,6 +30,9 @@ void screenpanel_system_restore()
 			clearscreen(panel_restore);
 			if(textbox(_("Restore Settings"), _("Are you sure you want to restore settings?\n\nOK = start restore\nEXIT = abort restore"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 700, 250, 0, 0) == 1)
 			{
+				changetext(info, _("Please wait ...\n\nAll Settings are saved.\n\nBox will start in few seconds."));
+				drawscreen(panel_restore, 0);
+			
 				if(isfile("/var/backup/.actbackup"))
 				{
 					FILE *fd; fd=fopen("/var/backup/.firstrun", "w"); fclose(fd);
@@ -45,6 +48,7 @@ void screenpanel_system_restore()
 				{
 					//clearscreen(panel_restore);
 					textbox(_("RESTORE ERROR"), _("No backup folders found!!!\n\nAborting restoring..."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+					changetext(info, _(infotext));
 					drawscreen(panel_restore, 0);
 				}
 			}else
