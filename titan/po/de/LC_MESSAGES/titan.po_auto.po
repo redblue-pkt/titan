@@ -176,7 +176,7 @@ msgstr ""
 #: mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:63 panel_extensions.h:65
 #: panel_extensions.h:112 panel_extensions.h:137 global.h:4152 tithek.h:532
 #: tithek.h:524 tithek.h:449 httpdfunc.h:2156 play.h:537 play.h:545 play.h:654
-#: global.h:4153
+#: global.h:4153 mc_main.h:172 panel_system_restore.h:50
 msgid "EXIT"
 msgstr ""
 
@@ -572,7 +572,7 @@ msgstr ""
 #: networkbrowser.h:1183 networkbrowser.h:1196 channellist.h:709
 #: mc_audioplayer.h:319 mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:65
 #: panel_extensions.h:153 global.h:4152 tithek.h:532 tithek.h:524 tithek.h:449
-#: play.h:654 global.h:4153
+#: play.h:654 global.h:4153 mc_main.h:172 panel_system_restore.h:78
 msgid "Message"
 msgstr ""
 
@@ -694,7 +694,8 @@ msgstr ""
 #: mc_audioplayer.h:319 mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:63
 #: panel_extensions.h:65 panel_extensions.h:112 panel_extensions.h:137
 #: global.h:4152 tithek.h:532 tithek.h:524 tithek.h:449 httpdfunc.h:2156
-#: play.h:537 play.h:545 play.h:654 global.h:4153
+#: play.h:537 play.h:545 play.h:654 global.h:4153 mc_main.h:172
+#: panel_system_restore.h:50
 msgid "OK"
 msgstr ""
 
@@ -1444,7 +1445,7 @@ msgstr ""
 
 #: mc_main.h:175 menu.h:64 panel_main.h:35 panel_main.h:241 panel_main.h:243
 #: mc_main.h:192 panel_main.h:245 panel_main.h:244 panel_main.h:29
-#: panel_main.h:249 mc_main.h:194 mc_main.h:195 mc_main.h:171
+#: panel_main.h:249 mc_main.h:194 mc_main.h:195 mc_main.h:171 mc_main.h:172
 msgid "Menu not implemented !"
 msgstr ""
 
@@ -2180,6 +2181,7 @@ msgstr ""
 #: panel_system_restore.h:17 panel_system_restore.h:69
 #: plugins_panel_skin.xml.h:2 skins_panel_skin.xml.h:2
 #: panel_system_restore.h:79 panel_system_restore.h:70
+#: panel_system_restore.h:74
 msgid "Backup / Restore Settings"
 msgstr ""
 
@@ -2196,22 +2198,22 @@ msgid ""
 "\n"
 msgstr ""
 
-#: panel_system_restore.h:47
+#: panel_system_restore.h:47 panel_system_restore.h:50
 msgid "RESTORE ERROR"
 msgstr ""
 
-#: panel_system_restore.h:47
+#: panel_system_restore.h:47 panel_system_restore.h:50
 msgid ""
 "No backup folders found!!!\n"
 "\n"
 "Aborting restoring..."
 msgstr ""
 
-#: panel_system_restore.h:59
+#: panel_system_restore.h:59 panel_system_restore.h:63
 msgid "Backup - Settings"
 msgstr ""
 
-#: panel_system_restore.h:60
+#: panel_system_restore.h:60 panel_system_restore.h:64
 msgid ""
 "Backup started\n"
 "\n"
@@ -2220,11 +2222,13 @@ msgstr ""
 
 #: panel_system_restore.h:78 panel_system_restore.h:79
 #: panel_system_restore.h:89 panel_system_restore.h:80
+#: panel_system_restore.h:84
 msgid "BACKUP ERROR"
 msgstr ""
 
 #: panel_system_restore.h:78 panel_system_restore.h:79
 #: panel_system_restore.h:89 panel_system_restore.h:80
+#: panel_system_restore.h:84
 msgid ""
 "A record hdd or a swapstick must be mounted!\n"
 "\n"
@@ -7635,7 +7639,7 @@ msgid "south"
 msgstr ""
 
 #: panel_system_restore.h:74 panel_system_restore.h:84
-#: panel_system_restore.h:75
+#: panel_system_restore.h:75 panel_system_restore.h:78
 msgid "Backup created successfully"
 msgstr ""
 
@@ -7750,4 +7754,13 @@ msgstr ""
 
 #: tithek.h:449
 msgid "Start Playback"
+msgstr ""
+
+#: panel_system_restore.h:33
+msgid ""
+"Please wait ...\n"
+"\n"
+"All Settings are saved.\n"
+"\n"
+"Box will start in few seconds."
 msgstr ""
