@@ -176,7 +176,7 @@ msgstr ""
 #: mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:63 panel_extensions.h:65
 #: panel_extensions.h:112 panel_extensions.h:137 global.h:4152 tithek.h:532
 #: tithek.h:524 tithek.h:449 httpdfunc.h:2156 play.h:537 play.h:545 play.h:654
-#: global.h:4153 mc_main.h:172 panel_system_restore.h:50
+#: global.h:4153 mc_main.h:172 panel_system_restore.h:50 global.h:4168
 msgid "EXIT"
 msgstr ""
 
@@ -573,6 +573,7 @@ msgstr ""
 #: mc_audioplayer.h:319 mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:65
 #: panel_extensions.h:153 global.h:4152 tithek.h:532 tithek.h:524 tithek.h:449
 #: play.h:654 global.h:4153 mc_main.h:172 panel_system_restore.h:78
+#: global.h:4168
 msgid "Message"
 msgstr ""
 
@@ -695,7 +696,7 @@ msgstr ""
 #: panel_extensions.h:65 panel_extensions.h:112 panel_extensions.h:137
 #: global.h:4152 tithek.h:532 tithek.h:524 tithek.h:449 httpdfunc.h:2156
 #: play.h:537 play.h:545 play.h:654 global.h:4153 mc_main.h:172
-#: panel_system_restore.h:50
+#: panel_system_restore.h:50 global.h:4168
 msgid "OK"
 msgstr ""
 
@@ -722,6 +723,7 @@ msgstr ""
 #: global.h:3995 global.h:4009 global.h:4032 global.h:4041 global.h:4066
 #: global.h:4071 global.h:4073 global.h:4139 global.h:4144 global.h:4143
 #: global.h:4177 global.h:4178 global.h:4155 global.h:4152 global.h:4153
+#: global.h:4168
 msgid "ERROR cant read res"
 msgstr ""
 
