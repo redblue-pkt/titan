@@ -985,6 +985,8 @@ struct status
 	int infobaraktiv;
 	//Name der Datei die abgespielt wird
 	char* playfile;
+	//Code MC aktiv = 1
+	int mcaktiv;
 } status;
 
 struct fb

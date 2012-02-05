@@ -18,6 +18,7 @@ void screeninfobar()
 	addrc(getrcconfigint("rcmute", NULL), screenmute, NULL, NULL);
 
 	status.infobaraktiv = 1;
+	status.mcaktiv = 0;
 	
 	while(1)
 	{

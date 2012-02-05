@@ -98,6 +98,7 @@ int mc_menucall(struct skin* menuentry)
 
 void mc_main()
 {
+	status.mcaktiv = 1;
 	status.hangtime = 99999;
 	int rcret = 0, ret = 0;
 	writevfd("Mediacenter");
@@ -322,6 +323,7 @@ void mc_main()
 	debug(50, "set default osdtransparent");
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	status.hangtime = getconfigint("hangtime", NULL);
+	status.mcaktiv = 0;
 }
 
 #endif
