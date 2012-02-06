@@ -331,30 +331,20 @@ void screentithekmenu(char* titheklink)
 	clearscreen(menu);
 }
 
-void screentithekplay(char* titheklink)
+int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, struct skin* countlabel)
 {
-	int rcret = -1, gridbr = 0, posx = 0, count = 0, sumcount = 0;
-
-	rcret = servicestop(status.aktservice, 1, 0);
-	if(rcret == 1) return;
-
-	struct skin* grid = getscreen("titheklist");
-	struct skin* listbox = getscreennode(grid, "listbox");
-	struct skin* countlabel = getscreennode(grid, "countlabel");
+	int gridbr = 0, posx = 0, count = 0, sumcount = 0;
 	struct skin* tmp = NULL;
 	char* tithekfile = NULL;
 	char* tithekpic = NULL;
 	char* tmpstr = NULL;
-	
-	if(titheklink == NULL) return;
-
-	listbox->aktpage = -1;
-	listbox->aktline = 1;
 
 	tithekfile = tithekdownload(titheklink);
 
+	delmarkedscreennodes(grid, 1);
 	freetithek();
-	if(readtithek(tithekfile) != 0) return;
+	if(readtithek(tithekfile) != 0) return 1;
+
 	struct tithek* titheknode = tithek;
 
 	while(titheknode != NULL)
@@ -395,10 +385,39 @@ void screentithekplay(char* titheklink)
 		}
 		titheknode = titheknode->next;
 	}
-	
+
 	tmpstr = oitoa(sumcount);
 	changetext(countlabel, tmpstr);
 	free(tmpstr); tmpstr = NULL;
+
+	free(tithekfile); tithekfile = NULL;
+	return 0;
+}
+
+
+void screentithekplay(char* titheklink, int first)
+{
+	int rcret = -1, oaktline = 1, oaktpage = -1, ogridcol = 0;
+
+	if(first == 1)
+	{
+		rcret = servicestop(status.aktservice, 1, 0);
+		if(rcret == 1) return;
+	}
+
+	struct skin* grid = getscreen("titheklist");
+	struct skin* listbox = getscreennode(grid, "listbox");
+	struct skin* countlabel = getscreennode(grid, "countlabel");
+	struct skin* tmp = NULL;
+	char* tithekpic = NULL;
+	
+	if(titheklink == NULL) return;
+
+	listbox->aktpage = -1;
+	listbox->aktline = 1;
+	listbox->gridcol = 0;
+
+	if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) return;
 
 	drawscreen(grid, 0);
 	addscreenrc(grid, listbox);
@@ -443,24 +462,38 @@ void screentithekplay(char* titheklink)
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
+				clearscreen(grid);
 				if(((struct tithek*)listbox->select->handle)->flag == 2)
 				{
-					clearscreen(grid);
-					if(textbox(_("Message"), _("Start Playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 1) == 1)
-						screenplay((((struct tithek*)listbox->select->handle)->link), 0, 0);				
-					drawscreen(grid, 0);
+					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 1) == 1)
+						screenplay((((struct tithek*)listbox->select->handle)->link), 0, 0);
 				}
+				else
+				{
+					oaktpage = listbox->aktpage;
+					oaktline = listbox->aktline;
+					ogridcol = listbox->gridcol;
+					char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+					screentithekplay(tmpstr, 0);
+					free(tmpstr); tmpstr = NULL;
+					if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
+					listbox->aktpage = oaktpage;
+					listbox->aktline = oaktline;
+					listbox->gridcol = ogridcol;
+					addscreenrc(grid, listbox);
+				}
+				drawscreen(grid, 0);
 			}
-    }
+		}
 	}
 
-	free(tithekfile); tithekfile = NULL;
 	freetithek();
 	delmarkedscreennodes(grid, 1);
 	delownerrc(grid);
 	clearscreen(grid);
 
-	servicestart(status.lastservice->channel, NULL, NULL, 0);
+	if(first == 1)
+		servicestart(status.lastservice->channel, NULL, NULL, 0);
 }
 
 #endif
