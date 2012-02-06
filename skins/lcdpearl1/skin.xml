@@ -8,6 +8,9 @@
 </screen>
 <screen halign=center fontcol=fontcol fontsize=30 name=LCD_Play posx=0 posy=0 width=320 height=240 bgcol=bgcol>
 <node type=TEXTBOX wrap=yes fontsize=30 halign=center text="" name=title posx=5 posy=5 width=310 height=90 fontcol=fontcol/>
-<node halign=center bordersize=2 progresscol=bordercol name=progress bgcol=white halign=left bordercol=bordercol borderradius=5 posy=105 posx=center width=290 height=20/>
+<node text="---" name=len posx=center posy=110 width=100 height=20 fontcol=fontcol/>
+<node halign=center bordersize=2 progresscol=bordercol name=progress bgcol=white halign=left bordercol=bordercol borderradius=5 posy=135 posx=center width=290 height=20/>
+<node text="---" halign=right name=reverse posx=215 posy=160 width=100 height=20 fontcol=fontcol/>
+<node text="---" name=pos posx=10 posy=160 width=100 height=20 fontcol=fontcol/>
 <node halign=center text="" name=akttime fontsize=50 posx=center posy=170 width=320 height=50/>
 </screen>
