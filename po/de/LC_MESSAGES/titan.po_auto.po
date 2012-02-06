@@ -805,7 +805,8 @@ msgstr ""
 
 #: dir.h:64 dir.h:70 dir.h:76 dir.h:82 skin_default_skin.xml.h:61
 #: skin_default_skin.xml.h:62 skin_default_skin.xml.h:63
-#: skin_default_skin.xml.h:64
+#: skin_default_skin.xml.h:64 plugins_lcdpearl1_skin.xml.h:1
+#: skins_lcdpearl1_skin.xml.h:1
 msgid "---"
 msgstr ""
 
@@ -1426,7 +1427,8 @@ msgstr ""
 #: plugins_stopifnotused_skin.xml.h:7 skins_stopifnotused_skin.xml.h:7
 #: plugins_stopifnotused_skin.xml.h:8 skins_stopifnotused_skin.xml.h:8
 #: skin_default_skin.xml.h:462 plugins_tithek_skin.xml.h:3
-#: skins_tithek_skin.xml.h:3
+#: skins_tithek_skin.xml.h:3 plugins_lcdpearl1_skin.xml.h:2
+#: skins_lcdpearl1_skin.xml.h:2
 msgid ""
 msgstr ""
 
