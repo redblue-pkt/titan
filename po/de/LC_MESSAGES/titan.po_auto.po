@@ -177,6 +177,7 @@ msgstr ""
 #: panel_extensions.h:112 panel_extensions.h:137 global.h:4152 tithek.h:532
 #: tithek.h:524 tithek.h:449 httpdfunc.h:2156 play.h:537 play.h:545 play.h:654
 #: global.h:4153 mc_main.h:172 panel_system_restore.h:50 global.h:4168
+#: tithek.h:468
 msgid "EXIT"
 msgstr ""
 
@@ -573,7 +574,7 @@ msgstr ""
 #: mc_audioplayer.h:319 mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:65
 #: panel_extensions.h:153 global.h:4152 tithek.h:532 tithek.h:524 tithek.h:449
 #: play.h:654 global.h:4153 mc_main.h:172 panel_system_restore.h:78
-#: global.h:4168
+#: global.h:4168 tithek.h:468
 msgid "Message"
 msgstr ""
 
@@ -696,7 +697,7 @@ msgstr ""
 #: panel_extensions.h:65 panel_extensions.h:112 panel_extensions.h:137
 #: global.h:4152 tithek.h:532 tithek.h:524 tithek.h:449 httpdfunc.h:2156
 #: play.h:537 play.h:545 play.h:654 global.h:4153 mc_main.h:172
-#: panel_system_restore.h:50 global.h:4168
+#: panel_system_restore.h:50 global.h:4168 tithek.h:468
 msgid "OK"
 msgstr ""
 
@@ -7767,4 +7768,8 @@ msgid ""
 "All Settings are saved.\n"
 "\n"
 "Box will start in few seconds."
+msgstr ""
+
+#: tithek.h:468
+msgid "Start playback"
 msgstr ""
