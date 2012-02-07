@@ -284,6 +284,8 @@ void playrcstop(int playertype, int flag)
 {
 	if(checkbit(status.playercan, 6) == 0) return;
 
+	free(status.playfile); status.playfile = NULL;
+	
 	if(playertype == 1)
 		playerstopts(0, 0);
 	else
@@ -416,6 +418,9 @@ void playrcpause(char* file, int* playinfobarstatus, int* playinfobarcount, int 
 void playrcplay(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
 	if(checkbit(status.playercan, 10) == 0) return;
+
+	free(status.playfile); status.playfile = NULL;
+	status.playfile = ostrcat(file, "", 0, 0);
 
 	if(playertype == 1)
 		playercontinuets();
