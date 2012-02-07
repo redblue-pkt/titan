@@ -265,8 +265,10 @@ void screeninfobar()
 		{
 			subtitlepause(1);
 			status.infobar = 0;
+			status.infobaraktiv = 0;
 			clearscreen(infobar);
 			screenkeyactions(1, 0);
+			status.infobaraktiv = 1;
 			status.updatevfd = START;
 			drawscreen(skin, 0);
 			subtitlepause(0);
@@ -337,6 +339,7 @@ void screeninfobar()
 		{
 			struct skin* pluginnode = getplugin("Media Center");
 			void (*startplugin)(void);
+			status.infobaraktiv = 0;
 			subtitlepause(1);
 			status.infobar = 0;
 			clearscreen(infobar);
@@ -346,6 +349,7 @@ void screeninfobar()
 				if(startplugin != NULL)
 				startplugin();
 			}
+			status.infobaraktiv = 1;
 			drawscreen(skin, 0);
 			subtitlepause(0);
 			continue;
@@ -354,10 +358,12 @@ void screeninfobar()
 		{
 			subtitlepause(1);
 			status.infobar = 0;
+			status.infobaraktiv = 0;
 			clearscreen(infobar);
 			menu(getscreen("mainmenu"));
 			status.menurelease = 0;
 			status.updatevfd = START;
+			status.infobaraktiv = 1;
 			drawscreen(skin, 0);
 			subtitlepause(0);
 			continue;
