@@ -67,7 +67,7 @@ void LCD_Pearl1_thread()
 	int loopcount = 0;
 	
 	if(firststart == 1)
-		sleep(5);
+		sleep(8);
 	addtimer(&lcd_raw_event, START, 10000, 1, NULL, NULL, NULL);	
 	firststart = 0;
 	draw = 0;
