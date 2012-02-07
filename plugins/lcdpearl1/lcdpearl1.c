@@ -174,7 +174,11 @@ void LCD_Pearl1_thread()
 					}
 					else if(type == 2)
 					{
-						playertype = (getconfigint("playertype", NULL) == 1);
+						if(status.mcaktiv == 1)
+							playertype = 0;
+						else	
+							playertype = (getconfigint("playertype", NULL) == 1);
+			
 						if(playertype == 1)
 						{
 							unsigned long long int startpos = 0;
