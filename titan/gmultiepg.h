@@ -725,6 +725,9 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 				}
 			}
 			createtimeline(gmultiepg, timeline, akttime, zoom);
+			status.screencalc = 2;
+			drawscreen(gmultiepg, 0);
+			status.screencalc = 0;
 			gmultiepgfilldesc(listbox, epgdesc);
 			drawscreen(gmultiepg, 0);
 			if(listbox->select != NULL)
@@ -748,6 +751,9 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			else if(list == PROVIDERCHANNEL)
 				showprovidergmepgchannel(gmultiepg, channellistbox, listbox, timeline, providernode, zoom, akttime, aktchannel);
 			createtimeline(gmultiepg, timeline, akttime, zoom);
+			status.screencalc = 2;
+			drawscreen(gmultiepg, 0);
+			status.screencalc = 0;
 			gmultiepgfilldesc(listbox, epgdesc);
 			drawscreen(gmultiepg, 0);
 			if(listbox->select != NULL)
