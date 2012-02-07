@@ -585,6 +585,7 @@ void playstartservice()
 // flag 0 = dirlist/playing/infobar
 // flag 1 = playing/infobar
 // flag 2 = playing
+// startfolder 2 = do nothing with playstop/playstart
 void screenplay(char* startfile, int startfolder, int flag)
 {
 	int rcret = 0, playertype = 0;
