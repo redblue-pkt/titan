@@ -246,6 +246,9 @@ void playrcok(char* file, int playinfobarstatus, int playertype, int flag)
 {
 	if(checkbit(status.playercan, 0) == 0) return;
 
+	free(status.playfile); status.playfile = NULL;
+	status.playfile = ostrcat(file, "", 0, 0);
+
 	screenplaypolicy(file, 1);
 	drawscreen(skin, 0);
 	if(playinfobarstatus > 0)
