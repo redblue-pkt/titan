@@ -177,7 +177,7 @@ msgstr ""
 #: panel_extensions.h:112 panel_extensions.h:137 global.h:4152 tithek.h:532
 #: tithek.h:524 tithek.h:449 httpdfunc.h:2156 play.h:537 play.h:545 play.h:654
 #: global.h:4153 mc_main.h:172 panel_system_restore.h:50 global.h:4168
-#: tithek.h:468 play.h:542 play.h:550 play.h:659
+#: tithek.h:468 play.h:542 play.h:550 play.h:659 play.h:553 play.h:662
 msgid "EXIT"
 msgstr ""
 
@@ -574,7 +574,7 @@ msgstr ""
 #: mc_audioplayer.h:319 mc_audioplayer.h:408 ipkg.h:362 panel_extensions.h:65
 #: panel_extensions.h:153 global.h:4152 tithek.h:532 tithek.h:524 tithek.h:449
 #: play.h:654 global.h:4153 mc_main.h:172 panel_system_restore.h:78
-#: global.h:4168 tithek.h:468 play.h:659
+#: global.h:4168 tithek.h:468 play.h:659 play.h:662
 msgid "Message"
 msgstr ""
 
@@ -698,7 +698,7 @@ msgstr ""
 #: global.h:4152 tithek.h:532 tithek.h:524 tithek.h:449 httpdfunc.h:2156
 #: play.h:537 play.h:545 play.h:654 global.h:4153 mc_main.h:172
 #: panel_system_restore.h:50 global.h:4168 tithek.h:468 play.h:542 play.h:550
-#: play.h:659
+#: play.h:659 play.h:553 play.h:662
 msgid "OK"
 msgstr ""
 
@@ -1344,6 +1344,7 @@ msgstr ""
 #: mc_global.h:736 mc_global.h:503 mc_global.h:735 play.h:510 mc_global.h:560
 #: mc_global.h:793 mc_videoplayer.h:368 mc_videoplayer.h:453 play.h:612
 #: play.h:608 mc_audioplayer.h:319 mc_audioplayer.h:408 play.h:654 play.h:659
+#: play.h:662
 msgid "Can't start playback !"
 msgstr ""
 
@@ -2247,13 +2248,13 @@ msgstr ""
 
 #: play.h:405 play.h:409 play.h:414 play.h:419 play.h:418 play.h:421
 #: play.h:422 play.h:413 play.h:420 play.h:417 play.h:514 play.h:500
-#: play.h:537 play.h:542
+#: play.h:537 play.h:542 play.h:545
 msgid "EPG Info"
 msgstr ""
 
 #: play.h:413 play.h:417 play.h:422 play.h:427 play.h:426 play.h:429
 #: play.h:430 play.h:421 play.h:428 play.h:425 play.h:522 play.h:508
-#: play.h:545 play.h:550
+#: play.h:545 play.h:550 play.h:553
 msgid "Realy Delete ?"
 msgstr ""
 
@@ -4159,6 +4160,7 @@ msgstr ""
 #: skin_default_skin.xml.h:147 play.h:483 skin_default_skin.xml.h:149
 #: skin_default_skin.xml.h:148 play.h:486 skin_default_skin.xml.h:150
 #: play.h:583 play.h:579 skin_default_skin.xml.h:151 play.h:618 play.h:623
+#: play.h:626
 msgid "DEL"
 msgstr ""
 
@@ -7083,7 +7085,7 @@ msgstr ""
 
 #: play.h:464 play.h:468 play.h:473 play.h:478 play.h:477 play.h:480
 #: play.h:481 play.h:472 play.h:479 play.h:476 play.h:483 play.h:486
-#: play.h:583 play.h:579 play.h:618 play.h:623
+#: play.h:583 play.h:579 play.h:618 play.h:623 play.h:626
 msgid "SELECT"
 msgstr ""
 
