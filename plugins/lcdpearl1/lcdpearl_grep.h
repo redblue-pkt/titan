@@ -3,9 +3,10 @@
 
 void lcd_raw_update()
 {
-	char* fbgrab = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/fbgrab -f /tmp/titanlcd.raw -w 320 -h 240 -b 32 -i /tmp/.titanlcd1.png > /dev/null", 0, 0);
+	//char* fbgrab = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/fbgrab -f /tmp/titanlcd.raw -w 320 -h 240 -b 32 -i /tmp/.titanlcd1.png > /dev/null", 0, 0);
+	char* fbgrab = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/fbgrab -f /tmp/titanlcd.raw -w 320 -h 240 -b 32 -i /tmp/titanlcd.png > /dev/null", 0, 0);
 	system(fbgrab);
-	system("mv /tmp/.titanlcd1.png /tmp/titanlcd.png");
+	//system("mv /tmp/.titanlcd1.png /tmp/titanlcd.png");
 }
 
 
