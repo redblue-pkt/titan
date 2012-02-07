@@ -18,6 +18,7 @@ void init(void)
 	readscreen(tmpstr, 195, 1);
 	free(tmpstr); tmpstr = NULL;
 
+	mkdir("/tmp/tithek", 777);
 	pluginaktiv = 1;
 	debug(10, "TiThek Info Plugin loadet !!!");
 }
@@ -26,6 +27,7 @@ void init(void)
 void deinit(void)
 {
 	delmarkedscreen(195);
+	system("rm -r /tmp/tithek");
 	pluginaktiv = 0;
 	debug(10, "TiThek Plugin removed !!!");
 }

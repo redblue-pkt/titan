@@ -232,7 +232,7 @@ char* tithekdownload(char* link)
 	}
 
 	tmpstr = ostrcat(path, NULL, 0, 0);
-	localfile = ostrcat("/tmp/", basename(tmpstr), 0, 0);
+	localfile = ostrcat("/tmp/tithek/", basename(tmpstr), 0, 0);
 
 	if(! file_exists(localfile))
 		gethttp(ip, path, 80, localfile, NULL, NULL);
