@@ -57,7 +57,7 @@ void LCD_Pearl1_thread()
 	struct skin* slen = getscreennode(LCD_Play, "len");
 	struct skin* sreverse = getscreennode(LCD_Play, "reverse");
 	
-	struct skin* LCD_MC_Dummy = getscreen("LCD_MC_Menu");
+	struct skin* LCD_MC_Menu = getscreen("LCD_MC_Menu");
 	struct skin* akttimemc1 = getscreennode(LCD_MC_Menu, "akttime");
 		
 	int put = 0, typemerk = 0, type = 0;
