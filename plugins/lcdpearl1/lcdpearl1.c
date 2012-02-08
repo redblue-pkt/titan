@@ -177,7 +177,7 @@ void LCD_Pearl1_thread()
 						if(status.mcaktiv == 1)
 							playertype = 0;
 						else	
-							playertype = (getconfigint("playertype", NULL) == 1);
+							playertype = getconfigint("playertype", NULL);
 			
 						if(playertype == 1)
 						{
