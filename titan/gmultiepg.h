@@ -255,7 +255,10 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 
 			chnode->handle = (char*)tmpchannel;
 			if(nottuneable == 1)
+			{
 				chnode->deaktivcol = convertcol("deaktivcol");
+				(*aktline)--;
+			}
 		}
 	}
 	return treffer;
