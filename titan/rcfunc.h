@@ -660,8 +660,11 @@ void gridup(struct skin* screen, struct skin* grid, int flag)
 		node = grid->select;
 		while(node != NULL)
 		{
-			if(br == 0 && (node->prev == NULL || node->prev == grid || node->deaktivcol != -1 || node->hidden == YES || (node->prev->parentpointer != grid && ostrcmp(node->prev->parent, grid->name) != 0)))
+		
+			if(node->prev == NULL || node->prev == grid || node->deaktivcol != -1 || node->hidden == YES || (node->prev->parentpointer != grid && ostrcmp(node->prev->parent, grid->name) != 0))
 			{
+				if(br > 0 && (node->type == GRIDBR || node->type == TEXTBOXGRIDBR) && !(node->deaktivcol != -1 || node->hidden == YES)) break;
+
 				node = node->prev;
 				if(node == grid && mark == 0)
 				{
