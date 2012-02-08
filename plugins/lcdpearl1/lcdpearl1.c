@@ -57,6 +57,9 @@ void LCD_Pearl1_thread()
 	struct skin* slen = getscreennode(LCD_Play, "len");
 	struct skin* sreverse = getscreennode(LCD_Play, "reverse");
 	
+	struct skin* LCD_MC_Dummy = getscreen("LCD_MC_Menu");
+	struct skin* akttimemc1 = getscreennode(LCD_MC_Menu, "akttime");
+		
 	int put = 0, typemerk = 0, type = 0;
 	int standby = 0;
 	char* fbgrab = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/fbgrab -f /tmp/titanlcd.raw -w 320 -h 240 -b 32 -i /tmp/.titanlcd1.png > /dev/null", 0, 0);
@@ -216,7 +219,12 @@ void LCD_Pearl1_thread()
 							draw = 1;
 						else
 							draw = 0;	
-					} 
+					}
+					else if(type == 999 && status.mcaktiv == 1) 
+					{
+						changetext(akttimemc1, tmpstr);
+						drawscreen(LCD_MC_Menu, 0);
+					}
 				}
 			}
 		}
