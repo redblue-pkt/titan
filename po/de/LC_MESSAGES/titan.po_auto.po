@@ -1058,31 +1058,31 @@ msgstr ""
 
 #: gmultiepg.h:405 gmultiepg.h:425 gmultiepg.h:433 gmultiepg.h:440
 #: gmultiepg.h:467 gmultiepg.h:481 gmultiepg.h:483 gmultiepg.h:489
-#: gmultiepg.h:491 gmultiepg.h:492 gmultiepg.h:504
+#: gmultiepg.h:491 gmultiepg.h:492 gmultiepg.h:504 gmultiepg.h:507
 msgid "GRAPHIC MULTI EPG - Bouquets"
 msgstr ""
 
 #: gmultiepg.h:418 gmultiepg.h:438 gmultiepg.h:446 gmultiepg.h:453
 #: gmultiepg.h:480 gmultiepg.h:494 gmultiepg.h:496 gmultiepg.h:502
-#: gmultiepg.h:504 gmultiepg.h:505 gmultiepg.h:517
+#: gmultiepg.h:504 gmultiepg.h:505 gmultiepg.h:517 gmultiepg.h:520
 msgid "GRAPHIC MULTI EPG - Channel"
 msgstr ""
 
 #: gmultiepg.h:431 gmultiepg.h:451 gmultiepg.h:459 gmultiepg.h:466
 #: gmultiepg.h:493 gmultiepg.h:507 gmultiepg.h:509 gmultiepg.h:515
-#: gmultiepg.h:517 gmultiepg.h:518 gmultiepg.h:530
+#: gmultiepg.h:517 gmultiepg.h:518 gmultiepg.h:530 gmultiepg.h:533
 msgid "GRAPHIC MULTI EPG - Satellites"
 msgstr ""
 
 #: gmultiepg.h:444 gmultiepg.h:464 gmultiepg.h:472 gmultiepg.h:479
 #: gmultiepg.h:506 gmultiepg.h:520 gmultiepg.h:522 gmultiepg.h:528
-#: gmultiepg.h:530 gmultiepg.h:531 gmultiepg.h:543
+#: gmultiepg.h:530 gmultiepg.h:531 gmultiepg.h:543 gmultiepg.h:546
 msgid "GRAPHIC MULTI EPG - Provider"
 msgstr ""
 
 #: gmultiepg.h:457 gmultiepg.h:477 gmultiepg.h:485 gmultiepg.h:492
 #: gmultiepg.h:519 gmultiepg.h:533 gmultiepg.h:535 gmultiepg.h:541
-#: gmultiepg.h:543 gmultiepg.h:544 gmultiepg.h:556
+#: gmultiepg.h:543 gmultiepg.h:544 gmultiepg.h:556 gmultiepg.h:559
 msgid "GRAPHIC MULTI EPG - All Channels"
 msgstr ""
 
