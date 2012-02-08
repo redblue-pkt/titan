@@ -401,7 +401,7 @@ void screentithekplay(char* titheklink, int first)
 
 	if(first == 1)
 	{
-		rcret = servicestop(status.aktservice, 1, 0);
+		rcret = servicestop(status.aktservice, 1, 1);
 		if(rcret == 1) return;
 	}
 
