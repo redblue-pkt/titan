@@ -282,7 +282,7 @@ struct rectimer* getrectimerbytimediff(time_t timediff)
 
 	while(node != NULL)
 	{
-		if(node->begin <= akttime + timediff)
+		if(node->begin > akttime && node->begin <= akttime + timediff)
 			return node;
 
 		node = node->next;
