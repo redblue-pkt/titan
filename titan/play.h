@@ -332,7 +332,10 @@ void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int pla
 		{
 			status.play = 1;
 			if(playertype == 1)
+			{
+				playerpausets();
 				playercontinuets();
+			}
 			else
 				playercontinue();
 			*playinfobarstatus = 1;
@@ -426,7 +429,10 @@ void playrcplay(char* file, int* playinfobarstatus, int* playinfobarcount, int p
 	status.playfile = ostrcat(file, "", 0, 0);
 
 	if(playertype == 1)
+	{
+		playerpausets();
 		playercontinuets();
+	}
 	else
 		playercontinue();
 	status.playspeed = 0;
