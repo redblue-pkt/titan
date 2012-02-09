@@ -3604,7 +3604,7 @@ int drawscreen(struct skin* node, int flag)
 		return 1;
 	}
 
-	if(flag == 0)
+	if(flag == 0 || flag == 3)
 		m_lock(&status.drawingmutex, 0);
 
 	parent = skin;
@@ -3612,7 +3612,7 @@ int drawscreen(struct skin* node, int flag)
 	ret = setnodeattr(node, parent);
 	if(ret == 1)
 	{
-		if(flag == 0)
+		if(flag == 0 || flag == 3)
 			m_unlock(&status.drawingmutex, 0);
 		debug(1000, "out -> setnodeattr ret = 1");
 		return 1;
@@ -3626,7 +3626,7 @@ int drawscreen(struct skin* node, int flag)
 
 	if(status.screencalc == 0 || flag == 3)
 	{
-		if(flag == 0 || flag == 2) clearscreenalways();
+		if(flag == 0 || flag == 2 || flag == 3) clearscreenalways();
 		drawnode(node, 0);
 	}
 	parent = node;
@@ -3650,7 +3650,7 @@ int drawscreen(struct skin* node, int flag)
 		child = child->next;
 	}
 
-	if(flag == 0 || flag == 2)
+	if(flag == 0 || flag == 2 || flag == 3)
 	{
 		if(status.screencalc == 0 || flag == 3)
 		{
@@ -3668,7 +3668,7 @@ int drawscreen(struct skin* node, int flag)
 		skinfb = merkskinfb;
 		merkskinfb = NULL;
 	}
-	if(flag == 0)
+	if(flag == 0 || flag == 3)
 		m_unlock(&status.drawingmutex, 0);
 	debug(1000, "out");
 	return 0;
