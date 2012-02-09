@@ -786,6 +786,8 @@ struct stimerthread
 	pthread_t thread;
 	int status;
 	int aktion;
+	//bit 0: 1 = stop allwas on titan end
+	int flag;
 	void* param1;
 	void* param2;
 	void* (*func)(struct stimerthread*, void*, void*);

@@ -275,7 +275,7 @@ void oshutdown(int exitcode, int flag)
 		pthread_attr_destroy(&status.timerthreadattr);
 
 		// free timerthread struct and stop all timer sub threads
-		freetimer();
+		freetimer(0);
 
 		status.skinerr = NULL;
 		free(status.gateway);
@@ -321,6 +321,8 @@ void oshutdown(int exitcode, int flag)
 		free_shutdowntimervar();
 		freeinetwork();
 	}
+	else
+		freetimer(1);
 
 	initmutex(0);
 	starthttpd(0);
@@ -335,6 +337,7 @@ int main(int argc, char *argv[])
 	int ret = 0, serviceret = 0, skincheck = 0;
 	char* tmpstr = NULL;
 	struct sigaction sa;
+	struct stimerthread *tmpthread = NULL;
 
 #ifdef SIMULATE
 	// for mem leak debug
@@ -693,7 +696,12 @@ firstwizzardstep1:
 	//check if cam socket connected
 	addtimer(&checkcam, START, 3000, -1, NULL, NULL, NULL);
 	//start stream server
-	addtimer(&streamthreadfunc, START, 10000, -1, NULL, NULL, NULL);
+	tmpthread = addtimer(&streamthreadfunc, START, 10000, -1, NULL, NULL, NULL);
+	if(tmpthread != NULL)
+	{
+		tmpthread->flag = setbit(tmpthread->flag, 0);
+		tmpthread = NULL;
+	}
 	//start epg scanlist
 	status.epgscanlistthread = addtimer(&epgscanlistthread, START, 1000, 1, NULL, NULL, NULL);
 	//get pmt
