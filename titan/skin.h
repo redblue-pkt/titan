@@ -3590,6 +3590,7 @@ int drawscreen(struct skin* node, int flag)
 	//flag 0: draw normal with allways
 	//flag 1: draw without allways
 	//flag 2: from thread (mutex is set in thread)
+	//flag 3: same as 0 but don't use status.screencalc
 
 	struct fb* merkskinfb = NULL;
 
@@ -3623,7 +3624,7 @@ int drawscreen(struct skin* node, int flag)
 		skinfb = lcdskinfb;
 	}
 
-	if(status.screencalc == 0)
+	if(status.screencalc == 0 || flag == 3)
 	{
 		if(flag == 0 || flag == 2) clearscreenalways();
 		drawnode(node, 0);
@@ -3644,14 +3645,14 @@ int drawscreen(struct skin* node, int flag)
 		else
 			parent = oldparent;
 
-		if(setnodeattr(child, parent) == 0 && status.screencalc == 0)
+		if(setnodeattr(child, parent) == 0 && (status.screencalc == 0 || flag == 3))
 			drawnode(child, 1);
 		child = child->next;
 	}
 
 	if(flag == 0 || flag == 2)
 	{
-		if(status.screencalc == 0)
+		if(status.screencalc == 0 || flag == 3)
 		{
 			drawscreenalways(node);
 			//if(strstr(node->name, "LCD_") != NULL)
