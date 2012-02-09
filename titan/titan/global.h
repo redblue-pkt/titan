@@ -1551,6 +1551,8 @@ void starthttpd(flag)
 		if(getconfigint("httpdstart", NULL) == 1 && status.httpthread == NULL)
 		{
 			status.httpthread = addtimer(&httpdthreadfunc, START, 10000, -1, NULL, NULL, NULL);
+			if(status.httpthread != NULL)
+				status.httpthread->flag = setbit(status.httpthread->flag, 0);
 		}
 	}
 	else if(status.httpthread != NULL)
