@@ -116,7 +116,7 @@ void deltimer(struct stimerthread *tnode)
 
 //flag 0 = stop all
 //flag 1 = stop only threads with thread->flag bit 0 = 1
-void freetimer()
+void freetimer(int flag)
 {
 	debug(1000, "in");
 	struct stimerthread *node = stimerthread, *prev = stimerthread;
