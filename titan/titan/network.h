@@ -4,14 +4,29 @@
 int writewlan()
 {
 	char* savesettings = NULL;
+	int type = getconfigint("wlan_type", NULL);
+	
+	char* tmpstr = "\nkey_mgmt=NONE";
+	
+	if(type == 1) //WEP
+		tmpstr = "\nkey_mgmt=NONE\nwep_tx_keyidx=0\nwep_key0=";
+	if(type == 2) //WPA
+		tmpstr = "\nkey_mgmt=WPA-PSK\nproto=WPA\npsk=";
+	if(type == 3) //WPA2
+		tmpstr = "\nkey_mgmt=WPA-PSK\nproto=RSN\npsk=";
 
 	savesettings = ostrcat("network={\nssid=\"", NULL, 0, 0);
 	savesettings = ostrcat(savesettings, getconfig("wlan_ssid", NULL), 1, 0);
-	savesettings = ostrcat(savesettings, "\nkey_mgmt=", 1, 0);
-	savesettings = ostrcat(savesettings, getconfig("wlan_type", NULL), 1, 0);
-	savesettings = ostrcat(savesettings, "\npsk=\"", 1, 0);
-	savesettings = ostrcat(savesettings, getconfig("wlan_key", NULL), 1, 0);
-	savesettings = ostrcat(savesettings, "\"\n}", 1, 0);
+	savesettings = ostrcat(savesettings, tmpstr, 1, 0);
+	
+	if(type == 2 || type == 3)
+		savesettings = ostrcat(savesettings, "\"", 1, 0);
+	if(type == 1 || type == 2 || type == 3)
+		savesettings = ostrcat(savesettings, getconfig("wlan_key", NULL), 1, 0);
+	if(type == 2 || type == 3)
+		savesettings = ostrcat(savesettings, "\"", 1, 0);
+	
+	savesettings = ostrcat(savesettings, "\n}", 1, 0);
 
 	FILE* fd = fopen("/var/etc/network/wlan.cfg", "w");
 	if(fd)
@@ -451,9 +466,9 @@ void screennetwork_wlan()
 	changeinput(ssid, getconfig("wlan_ssid", NULL));
 
 	addchoicebox(type, "0", _("no keycode"));
-	addchoicebox(type, "WEP-PSK", _("WEP"));
-	addchoicebox(type, "WPA-PSK", _("WPA"));
-	addchoicebox(type, "WPA2-PSK", _("WPA2"));
+	addchoicebox(type, "1", _("WEP"));
+	addchoicebox(type, "2", _("WPA"));
+	addchoicebox(type, "3", _("WPA2"));
 	setchoiceboxselection(type, getconfig("wlan_type", NULL));
 
 	changeinput(key, getconfig("wlan_key", NULL));
