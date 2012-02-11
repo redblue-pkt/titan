@@ -180,7 +180,7 @@ msgstr ""
 #: tithek.h:468 play.h:542 play.h:550 play.h:659 play.h:553 play.h:662
 #: play.h:663 global.h:4170 play.h:551 play.h:559 play.h:669 network.h:186
 #: network.h:193 network.h:197 network.h:301 scan.h:692 scan.h:843 scan.h:915
-#: scan.h:1121 scan.h:846 scan.h:918 scan.h:1124
+#: scan.h:1121 scan.h:846 scan.h:918 scan.h:1124 timeshift.h:82
 msgid "EXIT"
 msgstr ""
 
@@ -581,7 +581,7 @@ msgstr ""
 #: play.h:654 global.h:4153 mc_main.h:172 panel_system_restore.h:78
 #: global.h:4168 tithek.h:468 play.h:659 play.h:662 play.h:663 global.h:4170
 #: play.h:669 network.h:301 scan.h:692 scan.h:702 scan.h:843 scan.h:915
-#: scan.h:1121 scan.h:846 scan.h:918 scan.h:1124
+#: scan.h:1121 scan.h:846 scan.h:918 scan.h:1124 timeshift.h:82
 msgid "Message"
 msgstr ""
 
@@ -708,7 +708,7 @@ msgstr ""
 #: play.h:659 play.h:553 play.h:662 play.h:663 global.h:4170 play.h:551
 #: play.h:559 play.h:669 network.h:186 network.h:193 network.h:197
 #: network.h:301 scan.h:692 scan.h:843 scan.h:915 scan.h:1121 scan.h:846
-#: scan.h:918 scan.h:1124
+#: scan.h:918 scan.h:1124 timeshift.h:82
 msgid "OK"
 msgstr ""
 
@@ -6717,7 +6717,7 @@ msgstr ""
 msgid "Should Timeshift File deleted ?"
 msgstr ""
 
-#: timeshift.h:68 timeshift.h:71 timeshift.h:77 timeshift.h:79
+#: timeshift.h:68 timeshift.h:71 timeshift.h:77 timeshift.h:79 timeshift.h:82
 msgid "Can't start timeshift play !"
 msgstr ""
 
@@ -7213,6 +7213,7 @@ msgstr ""
 
 #: timeshift.h:113 timeshift.h:119 timeshift.h:120 timeshift.h:121
 #: timeshift.h:127 timeshift.h:126 timeshift.h:141 timeshift.h:143
+#: timeshift.h:146
 msgid ">> "
 msgstr ""
 
@@ -7281,7 +7282,7 @@ msgid ""
 msgstr ""
 
 #: timeshift.h:127 timeshift.h:134 timeshift.h:140 timeshift.h:139
-#: timeshift.h:158 timeshift.h:160
+#: timeshift.h:158 timeshift.h:160 timeshift.h:163
 msgid "skip "
 msgstr ""
 
