@@ -235,6 +235,7 @@ struct scaninfo
 	int orbitalpos;
 	int timeout;
 	int onlyfree;
+	int networkscan;
 	int clear;
 	char* satname;
 	int tpcount;
