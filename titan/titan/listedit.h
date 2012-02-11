@@ -41,10 +41,13 @@ int screenlistedit(int list, struct channel* chnode)
 		editmode->hidden = NO;
 	}
 
-	if(chnode != NULL && (list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL || list == BOUQUETCHANNEL))
+	if(list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL || list == BOUQUETCHANNEL)
 	{
-		startchannel = 1;
-		setstartchannel->hidden = NO;
+		if(chnode != NULL)
+		{
+			startchannel = 1;
+			setstartchannel->hidden = NO;
+		}
 		delstartchannel->hidden = NO;
 		editmode->hidden = NO;
 	}
