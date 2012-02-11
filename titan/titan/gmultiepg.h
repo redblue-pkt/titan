@@ -112,37 +112,13 @@ int selectchannelgmepg(struct skin* listbox)
 
 int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, struct skin* timeline, int zoom, time_t akttime, struct channel* aktchannel, int linecol1, int linecol2, int linecol3, int* aktline, struct skin** pchnode, struct skin** pchnode1, int height, int picheight)
 {
-	int treffer = 0, gridbr = 0, aktcol = 0, nottuneable = 0, chboxwidth = 0;
+	int treffer = 0, gridbr = 0, aktcol = 0, nottuneable = 0;
 	struct epg* epgnode = NULL;
 	struct skin* chnode = NULL, *chnode1 = NULL;
 	char* tmpstr = NULL;
 	time_t nowtime = time(NULL);
 
 	int epgpicon = getconfigint("epgpicon", NULL);
-
-	if(epgpicon == 1)
-		chboxwidth = getskinconfigint("epgchannelpiconwidth", NULL);
-	else
-		chboxwidth = getskinconfigint("epgchannelwidth", NULL);
-			
-	if(chboxwidth != 0)
-	{
-		channellistbox->width = chboxwidth;
-		
-		listbox->width = gmultiepg->iwidth - (channellistbox->width + channellistbox->posx);
-		listbox->posx = channellistbox->width + channellistbox->posx;
-		listbox->prozwidth = 0;
-		status.screencalc = 2;
-		setnodeattr(listbox, gmultiepg);
-		status.screencalc = 0;
-
-		timeline->width = gmultiepg->iwidth - (channellistbox->width + channellistbox->posx);
-		timeline->posx = channellistbox->width + channellistbox->posx;
-		timeline->prozwidth = 0;
-		status.screencalc = 2;
-		setnodeattr(timeline, gmultiepg);
-		status.screencalc = 0;
-	}
 
 	if(tmpchannel != NULL && tmpchannel->servicetype == status.servicetype)
 	{
@@ -437,6 +413,31 @@ void gmultiepgfilldesc(struct skin* listbox, struct skin* epgdesc)
 	}
 }
 
+void gmultiepgchangesize(struct skin* gmultiepg, struct skin* listbox, struct skin* channellistbox, struct skin* timeline)
+{
+	int chboxwidth = 0;
+	int epgpicon = getconfigint("epgpicon", NULL);
+
+	if(epgpicon == 1)
+		chboxwidth = getskinconfigint("epgchannelpiconwidth", NULL);
+	else
+		chboxwidth = getskinconfigint("epgchannelwidth", NULL);
+			
+	if(chboxwidth != 0)
+	{
+		channellistbox->width = chboxwidth;
+		
+		listbox->width = gmultiepg->iwidth - (channellistbox->width + channellistbox->posx);
+		listbox->posx = channellistbox->width + channellistbox->posx;
+		listbox->prozwidth = 0;
+
+		timeline->width = gmultiepg->iwidth - (channellistbox->width + channellistbox->posx);
+		timeline->posx = channellistbox->width + channellistbox->posx;
+		timeline->prozwidth = 0;
+	}
+}
+
+
 void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 {
 	int rcret = 0, ret = 0, epgscreenconf = 0;
@@ -457,7 +458,8 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	struct provider* providernode = NULL;
 	struct channel* aktchannel = NULL;
 #ifdef SIMULATE
-	time_t akttime = 1307871000;
+	time_t akttime = time(NULL);
+	//time_t akttime = 1307871000;
 	//akttime = 1315614900;
 	//akttime = 1317926400;
 #else
@@ -574,6 +576,8 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		b3->hidden = YES;
 		b4->hidden = YES;
 	}
+
+	gmultiepgchangesize(gmultiepg, listbox, channellistbox, timeline);
 
 	tmpstr = NULL;
 	status.screencalc = 2;
