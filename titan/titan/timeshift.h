@@ -64,6 +64,9 @@ void timeshiftstop(int flag)
 		}
 		servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 3), 0);
 	}
+	
+	//if timeshift ends in pause status, we must reactivate continue in player driver
+	playercontinuets();
 }
 
 void timeshiftplay()
