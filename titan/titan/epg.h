@@ -1253,6 +1253,7 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 			updateepg(tmpchnode, epgnode, eventid, eit->version_number, starttime, endtime, 1);
 			if(epgnode->desc != NULL)
 				nolongdesc = 1;
+		}
 
 		if(epgnode == NULL)
 		{
