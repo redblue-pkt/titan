@@ -1439,7 +1439,8 @@ msgstr ""
 #: plugins_stopifnotused_skin.xml.h:8 skins_stopifnotused_skin.xml.h:8
 #: skin_default_skin.xml.h:462 plugins_tithek_skin.xml.h:3
 #: skins_tithek_skin.xml.h:3 plugins_lcdpearl1_skin.xml.h:2
-#: skins_lcdpearl1_skin.xml.h:2
+#: skins_lcdpearl1_skin.xml.h:2 plugins_lcdpearl1_skin.xml.h:3
+#: skins_lcdpearl1_skin.xml.h:3
 msgid ""
 msgstr ""
 
@@ -7814,4 +7815,8 @@ msgstr ""
 
 #: network.h:471
 msgid "WPA2"
+msgstr ""
+
+#: plugins_lcdpearl1_skin.xml.h:2 skins_lcdpearl1_skin.xml.h:2
+msgid "Auswahl"
 msgstr ""
