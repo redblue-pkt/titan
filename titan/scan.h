@@ -837,6 +837,9 @@ void screenscanconfig(int flag)
 	char* tmpstr = NULL, *tmpnr = NULL, *feshortname = NULL;
 	struct transponder* tpnode = NULL;
 	struct dvbdev* dvbnode = dvbdev;
+	
+	listbox->aktline = 1;
+	listbox->aktpage = -1;
 
 	if(status.recording > 0 || status.streaming > 0)
 	{
