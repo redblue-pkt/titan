@@ -21,6 +21,7 @@ void setdefaults()
 	addconfigdef("epg_path", "/media/hdd");
 	addconfigdef("epg_days", "14");
 	addconfigdef("epg_del", "0");
+	addconfigdef("tracelog", "/media/hdd");
 	addconfigdef("spinnerspeed", "12");
 	addconfigdef("spinnertime", "5");
 	addconfigdef("hangtime", "60");
