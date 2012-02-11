@@ -22,15 +22,19 @@ struct skin* menu(struct skin* menu)
 		if(child->type == MENU)
 		{	
 			tmpstr = ostrcat("protect_", child->name, 0, 0);
+			
 			if(getconfigint(tmpstr, NULL) == 2)
 				child->hidden = YES;	
 			else
+			{
 				child->hidden = NO;	
+				if(menucall(menu, child, 1) == 1)
+					child->hidden = YES;	
+				else
+					child->hidden = NO;	
+			}
+				
 			free(tmpstr); tmpstr = NULL;
-			if(menucall(menu, child, 1) == 1)
-				child->hidden = YES;	
-			else
-				child->hidden = NO;	
 		}
 		child = child->next;
 	}
