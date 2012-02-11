@@ -52,7 +52,7 @@ void LCD_Pearl1_thread()
 	struct skin* LCD_Play = getscreen("LCD_Play");
 	struct skin* akttimeplay = getscreennode(LCD_Play, "akttime");
 	struct skin* sprogress = getscreennode(LCD_Play, "progress");
-	struct skin* title = getscreennode(LCD_Play, "title");
+	struct skin* stitle = getscreennode(LCD_Play, "title1");
 	struct skin* spos = getscreennode(LCD_Play, "pos");
 	struct skin* slen = getscreennode(LCD_Play, "len");
 	struct skin* sreverse = getscreennode(LCD_Play, "reverse");
@@ -214,16 +214,17 @@ void LCD_Pearl1_thread()
 						free(tmpstr2); tmpstr2 = NULL;
 						
 						changetext(akttimeplay, tmpstr);
-						changetext(title, basename(status.playfile));
+						changetext(stitle, basename(status.playfile));
 						if (drawscreen(LCD_Play, 0) == 0)
 							draw = 1;
 						else
 							draw = 0;	
 					}
-					else if(type == 999 && status.mcaktiv == 1) 
+					//else if(type == 999 && status.mcaktiv == 1) 
+					else if(type == 999)	
 					{
 						changetext(akttimemc1, tmpstr);
-						drawscreen(LCD_MC_Menu, 0);
+						drawscreen(LCD_MC_Menu, 3);
 					}
 				}
 			}
