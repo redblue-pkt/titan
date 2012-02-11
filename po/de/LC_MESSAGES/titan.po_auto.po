@@ -180,7 +180,7 @@ msgstr ""
 #: tithek.h:468 play.h:542 play.h:550 play.h:659 play.h:553 play.h:662
 #: play.h:663 global.h:4170 play.h:551 play.h:559 play.h:669 network.h:186
 #: network.h:193 network.h:197 network.h:301 scan.h:692 scan.h:843 scan.h:915
-#: scan.h:1121
+#: scan.h:1121 scan.h:846 scan.h:918 scan.h:1124
 msgid "EXIT"
 msgstr ""
 
@@ -228,7 +228,7 @@ msgstr ""
 #: rectimer.h:933 adjust.h:47 adjust.h:70 adjust.h:95 adjust.h:126
 #: adjust.h:129 adjust.h:144 networkbrowser.h:490 networkbrowser.h:494
 #: networkbrowser.h:498 networkbrowser.h:530 scan.h:775 scan.h:1061
-#: scan.h:1065 scan.h:1069
+#: scan.h:1065 scan.h:1069 scan.h:1064 scan.h:1068 scan.h:1072
 msgid "no"
 msgstr ""
 
@@ -281,6 +281,7 @@ msgstr ""
 #: adjust.h:96 adjust.h:125 adjust.h:130 adjust.h:145 networkbrowser.h:491
 #: networkbrowser.h:495 networkbrowser.h:499 networkbrowser.h:503
 #: networkbrowser.h:531 scan.h:776 scan.h:1062 scan.h:1066 scan.h:1070
+#: scan.h:1065 scan.h:1069 scan.h:1073
 msgid "yes"
 msgstr ""
 
@@ -580,7 +581,7 @@ msgstr ""
 #: play.h:654 global.h:4153 mc_main.h:172 panel_system_restore.h:78
 #: global.h:4168 tithek.h:468 play.h:659 play.h:662 play.h:663 global.h:4170
 #: play.h:669 network.h:301 scan.h:692 scan.h:702 scan.h:843 scan.h:915
-#: scan.h:1121
+#: scan.h:1121 scan.h:846 scan.h:918 scan.h:1124
 msgid "Message"
 msgstr ""
 
@@ -706,7 +707,8 @@ msgstr ""
 #: panel_system_restore.h:50 global.h:4168 tithek.h:468 play.h:542 play.h:550
 #: play.h:659 play.h:553 play.h:662 play.h:663 global.h:4170 play.h:551
 #: play.h:559 play.h:669 network.h:186 network.h:193 network.h:197
-#: network.h:301 scan.h:692 scan.h:843 scan.h:915 scan.h:1121
+#: network.h:301 scan.h:692 scan.h:843 scan.h:915 scan.h:1121 scan.h:846
+#: scan.h:918 scan.h:1124
 msgid "OK"
 msgstr ""
 
@@ -3237,39 +3239,39 @@ msgid "Wait for channel scan end"
 msgstr ""
 
 #: scan.h:768 scan.h:779 scan.h:781 scan.h:783 scan.h:825 scan.h:831
-#: scan.h:843
+#: scan.h:843 scan.h:846
 msgid ""
 "Scan is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 
 #: scan.h:840 scan.h:851 scan.h:853 scan.h:855 scan.h:897 scan.h:903
-#: scan.h:915
+#: scan.h:915 scan.h:918
 msgid "No Tuner configured"
 msgstr ""
 
 #: scan.h:853 scan.h:864 scan.h:866 scan.h:868 scan.h:910 scan.h:916
-#: scan.h:928
+#: scan.h:928 scan.h:931
 msgid "Single Transponder"
 msgstr ""
 
 #: scan.h:854 scan.h:865 scan.h:867 scan.h:869 scan.h:911 scan.h:917
-#: scan.h:929
+#: scan.h:929 scan.h:932
 msgid "Single Sat"
 msgstr ""
 
 #: scan.h:855 scan.h:866 scan.h:868 scan.h:870 scan.h:912 scan.h:918
-#: scan.h:930
+#: scan.h:930 scan.h:933
 msgid "Multi Sat"
 msgstr ""
 
 #: scan.h:860 scan.h:871 scan.h:873 scan.h:875 scan.h:917 scan.h:923
-#: scan.h:935
+#: scan.h:935 scan.h:938
 msgid "Auto Scan"
 msgstr ""
 
 #: scan.h:1046 scan.h:1057 scan.h:1059 scan.h:1061 scan.h:1103 scan.h:1109
-#: scan.h:1121
+#: scan.h:1121 scan.h:1124
 msgid "Transponder changed"
 msgstr ""
 
