@@ -25,7 +25,7 @@ uint8_t changeservicetype(uint8_t type)
 	return ret;
 }
 
-int parsenit()
+int parsenit(char* buf)
 {
 	int ret = 0, i;
 	int secdone[255];
@@ -33,20 +33,20 @@ int parsenit()
 
 	for(i = 0; i < 255; i++) secdone[i] = 0;
 
-	unsigned char buf[MINMALLOC];
+	//unsigned char buf[MINMALLOC];
 
 	// position in buffer
-	unsigned short pos;
-	unsigned short pos2;
+	unsigned short pos = 0;
+	unsigned short pos2 = 0;
 
 	// network_information_section elements
-	unsigned short seclen;
-	unsigned short desclen;
-	unsigned short tdesclen;
-	unsigned short looplen;
-	unsigned long transponderid;
-	unsigned short onid;
-	unsigned short nid;
+	unsigned short seclen = 0;
+	unsigned short desclen = 0;
+	unsigned short tdesclen = 0;
+	unsigned short looplen = 0;
+	unsigned long transponderid = 0;
+	unsigned short onid = 0;
+	unsigned short nid = 0;
 
 	while(sectotal < buf[7])
 	{
@@ -60,6 +60,7 @@ int parsenit()
 		if(secdone[secnr] == 1) continue;
 		secdone[secnr] = 1;
 		sectotal++;
+		
 		for(pos = 10; pos < desclen + 10; pos += buf[pos + 1] + 2)
 		{
 			looplen = ((buf[pos] & 0x0F) << 8) | buf[pos + 1];
@@ -293,6 +294,16 @@ void doscan(struct stimerthread* timernode)
 			tpnode = transponder;
 			scaninfo.orbitalpos = satnode->orbitalpos;
 		}
+		
+		//get nit
+		/*
+		if(scaninfo.networkscan == 1)
+		{
+			buf = dvbgetnit(fenode, scaninfo.timeout);
+			parsenit(buf);
+			free(buf); buf = NULL;
+		}
+		*/
 
 		//transponder loop
 		while(tpnode != NULL && timernode->aktion == START)
@@ -607,6 +618,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	scaninfo.scantype = scantype;
 	scaninfo.orbitalpos = orbitalpos;
 	scaninfo.onlyfree = onlyfree;
+	scaninfo.networkscan = networkscan;
 	scaninfo.clear = clear;
 	timernode = addtimer(&doscan, START, 1000, 1, NULL, NULL, NULL);
 
