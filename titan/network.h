@@ -1,6 +1,29 @@
 #ifndef NETWORK_H
 #define NETWORK_H
 
+int writewlan()
+{
+	char* savesettings = NULL;
+
+	savesettings = ostrcat("network={\nssid=\"", NULL, 0, 0);
+	savesettings = ostrcat(savesettings, getconfig("wlan_ssid", NULL), 1, 0);
+	savesettings = ostrcat(savesettings, "\nkey_mgmt=", 1, 0);
+	savesettings = ostrcat(savesettings, getconfig("wlan_type", NULL), 1, 0);
+	savesettings = ostrcat(savesettings, "\npsk=\"", 1, 0);
+	savesettings = ostrcat(savesettings, getconfig("wlan_key", NULL), 1, 0);
+	savesettings = ostrcat(savesettings, "\"\n}", 1, 0);
+
+	FILE* fd = fopen("/var/etc/network/wlan.cfg", "w");
+	if(fd)
+	{
+		fprintf(fd, "%s\n", savesettings);
+		fclose(fd);
+	}
+	free(savesettings); savesettings = NULL;
+
+	return 0;
+}
+
 int writeinterfaces()
 {
 	char* savesettings = NULL;
@@ -413,6 +436,50 @@ start:
 	delmarkedscreennodes(interfacelist, 1);
 	delownerrc(interfacelist);
 	clearscreen(interfacelist);
+}
+
+void screennetwork_wlan()
+{
+	int rcret = -1;
+	struct skin* wlan = getscreen("wlan");
+	struct skin* listbox = getscreennode(wlan, "listbox");
+	struct skin* ssid = getscreennode(wlan, "ssid");
+	struct skin* type = getscreennode(wlan, "type");
+	struct skin* key = getscreennode(wlan, "key");
+	struct skin* tmp = NULL;
+
+	changeinput(ssid, getconfig("wlan_ssid", NULL));
+
+	addchoicebox(type, "0", _("no keycode"));
+	addchoicebox(type, "WEP-PSK", _("WEP"));
+	addchoicebox(type, "WPA-PSK", _("WPA"));
+	addchoicebox(type, "WPA2-PSK", _("WPA2"));
+	setchoiceboxselection(type, getconfig("wlan_type", NULL));
+
+	changeinput(key, getconfig("wlan_key", NULL));
+
+	drawscreen(wlan, 0);
+	addscreenrc(wlan, listbox);
+
+	tmp = listbox->select;
+	while(1)
+	{
+		addscreenrc(wlan, tmp);
+		rcret = waitrc(wlan, 0, 0);
+		tmp = listbox->select;
+
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			addconfigscreen("wlan_ssid", ssid);
+			addconfigscreen("wlan_type", type);
+			addconfigscreen("wlan_key", key);
+			writewlan();
+		}
+	}
+
+	delownerrc(wlan);
+	clearscreen(wlan);
 }
 
 #endif
