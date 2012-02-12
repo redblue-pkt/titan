@@ -182,7 +182,7 @@ msgstr ""
 #: network.h:193 network.h:197 network.h:301 scan.h:692 scan.h:843 scan.h:915
 #: scan.h:1121 scan.h:846 scan.h:918 scan.h:1124 timeshift.h:82
 #: panel_extensions.h:59 panel_extensions.h:67 panel_extensions.h:121
-#: panel_extensions.h:123
+#: panel_extensions.h:123 tithek.h:253 tithek.h:498
 msgid "EXIT"
 msgstr ""
 
@@ -585,6 +585,7 @@ msgstr ""
 #: play.h:669 network.h:301 scan.h:692 scan.h:702 scan.h:843 scan.h:915
 #: scan.h:1121 scan.h:846 scan.h:918 scan.h:1124 timeshift.h:82
 #: panel_extensions.h:67 panel_extensions.h:123 panel_extensions.h:157
+#: tithek.h:253 tithek.h:498
 msgid "Message"
 msgstr ""
 
@@ -713,6 +714,7 @@ msgstr ""
 #: network.h:301 scan.h:692 scan.h:843 scan.h:915 scan.h:1121 scan.h:846
 #: scan.h:918 scan.h:1124 timeshift.h:82 panel_extensions.h:59
 #: panel_extensions.h:67 panel_extensions.h:121 panel_extensions.h:123
+#: tithek.h:253 tithek.h:498
 msgid "OK"
 msgstr ""
 
@@ -7811,7 +7813,7 @@ msgid ""
 "Box will start in few seconds."
 msgstr ""
 
-#: tithek.h:468
+#: tithek.h:468 tithek.h:498
 msgid "Start playback"
 msgstr ""
 
@@ -7833,4 +7835,8 @@ msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:2 skins_lcdpearl1_skin.xml.h:2
 msgid "Auswahl"
+msgstr ""
+
+#: tithek.h:253
+msgid "File exist, overwrite?"
 msgstr ""
