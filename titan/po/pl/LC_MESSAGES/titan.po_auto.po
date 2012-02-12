@@ -8030,3 +8030,15 @@ msgstr ""
 #: skin_default_skin.xml.h:114
 msgid "Animated Screens"
 msgstr ""
+
+#: adjust.h:150
+msgid "anim. width"
+msgstr ""
+
+#: adjust.h:151
+msgid "anim. height"
+msgstr ""
+
+#: adjust.h:152
+msgid "anim. both"
+msgstr ""
