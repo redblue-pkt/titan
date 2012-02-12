@@ -1453,7 +1453,8 @@ msgstr ""
 #: skin_default_skin.xml.h:462 plugins_tithek_skin.xml.h:3
 #: skins_tithek_skin.xml.h:3 plugins_lcdpearl1_skin.xml.h:2
 #: skins_lcdpearl1_skin.xml.h:2 plugins_lcdpearl1_skin.xml.h:3
-#: skins_lcdpearl1_skin.xml.h:3
+#: skins_lcdpearl1_skin.xml.h:3 plugins_tithek_skin.xml.h:6
+#: skins_tithek_skin.xml.h:6
 msgid ""
 msgstr ""
 
@@ -2788,6 +2789,7 @@ msgstr ""
 #: skins_panel_skin.xml.h:65 skin_default_skin.xml.h:342
 #: skin_default_skin.xml.h:343 skin_default_skin.xml.h:344
 #: plugins_panel_skin.xml.h:68 skins_panel_skin.xml.h:68
+#: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3
 msgid "SAVE"
 msgstr ""
 
@@ -7068,7 +7070,8 @@ msgstr ""
 #: skin_default_skin.xml.h:396 skin_default_skin.xml.h:397
 #: skin_default_skin.xml.h:401 skin_default_skin.xml.h:402
 #: skin_default_skin.xml.h:404 skin_default_skin.xml.h:405
-#: skin_default_skin.xml.h:407
+#: skin_default_skin.xml.h:407 plugins_tithek_skin.xml.h:4
+#: skins_tithek_skin.xml.h:4
 msgid ""
 "text=EXIT halign=center valign=center bordercol=exitcol bordersize=4 "
 "bordertype=2 posx=180 posy=0 width=150 height=30/>"
@@ -7080,7 +7083,8 @@ msgstr ""
 #: skin_default_skin.xml.h:397 skin_default_skin.xml.h:398
 #: skin_default_skin.xml.h:402 skin_default_skin.xml.h:403
 #: skin_default_skin.xml.h:405 skin_default_skin.xml.h:406
-#: skin_default_skin.xml.h:408
+#: skin_default_skin.xml.h:408 plugins_tithek_skin.xml.h:5
+#: skins_tithek_skin.xml.h:5
 msgid ""
 "text=OK halign=center valign=center bordercol=okcol bordersize=4 "
 "bordertype=2 posx=20 posy=0 width=150 height=30/>"
