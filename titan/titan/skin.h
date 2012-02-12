@@ -3591,6 +3591,8 @@ int drawscreen(struct skin* node, int flag)
 	//flag 1: draw without allways
 	//flag 2: from thread (mutex is set in thread)
 	//flag 3: same as 0 but don't use status.screencalc
+	//flag 4: same as 0 but animate
+
 
 	struct fb* merkskinfb = NULL;
 
@@ -3604,7 +3606,7 @@ int drawscreen(struct skin* node, int flag)
 		return 1;
 	}
 
-	if(flag == 0 || flag == 3)
+	if(flag == 0 || flag == 3 || flag == 4)
 		m_lock(&status.drawingmutex, 0);
 
 	parent = skin;
@@ -3612,7 +3614,7 @@ int drawscreen(struct skin* node, int flag)
 	ret = setnodeattr(node, parent);
 	if(ret == 1)
 	{
-		if(flag == 0 || flag == 3)
+		if(flag == 0 || flag == 3 || flag == 4)
 			m_unlock(&status.drawingmutex, 0);
 		debug(1000, "out -> setnodeattr ret = 1");
 		return 1;
@@ -3624,9 +3626,9 @@ int drawscreen(struct skin* node, int flag)
 		skinfb = lcdskinfb;
 	}
 
-	if(status.screencalc == 0 || flag == 3)
+	if(status.screencalc == 0 || flag == 3 || flag == 4)
 	{
-		if(flag == 0 || flag == 2 || flag == 3) clearscreenalways();
+		if(flag == 0 || flag == 2 || flag == 3 || flag == 4) clearscreenalways();
 		drawnode(node, 0);
 	}
 	parent = node;
@@ -3650,7 +3652,7 @@ int drawscreen(struct skin* node, int flag)
 		child = child->next;
 	}
 
-	if(flag == 0 || flag == 2 || flag == 3)
+	if(flag == 0 || flag == 2 || flag == 3 || flag == 4)
 	{
 		if(status.screencalc == 0 || flag == 3)
 		{
@@ -3659,7 +3661,12 @@ int drawscreen(struct skin* node, int flag)
 			if(merkskinfb != NULL) 
 				pngforlcd();
 			else	
-				blitfb(0);
+			{
+				if(flag == 4)
+					blitfb(1);
+				else
+					blitfb(0);
+			}
 		}
 	}
 	//if(strstr(node->name, "LCD_") != NULL)
@@ -3668,7 +3675,7 @@ int drawscreen(struct skin* node, int flag)
 		skinfb = merkskinfb;
 		merkskinfb = NULL;
 	}
-	if(flag == 0 || flag == 3)
+	if(flag == 0 || flag == 3 || flag == 4)
 		m_unlock(&status.drawingmutex, 0);
 	debug(1000, "out");
 	return 0;

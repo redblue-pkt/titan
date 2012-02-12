@@ -990,6 +990,8 @@ struct status
 	char* playfile;
 	//Code MC aktiv = 1
 	int mcaktiv;
+	//greater 0 aktivate screen animation
+	int screenanim;
 } status;
 
 struct fb
