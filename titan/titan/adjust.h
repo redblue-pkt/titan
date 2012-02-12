@@ -147,7 +147,9 @@ void screenadjust()
 	setchoiceboxselection(showchanneltimeline, getconfig("showchanneltimeline", NULL));
 	
 	addchoicebox(screenanim, "0", _("no"));
-	addchoicebox(screenanim, "1", _("animation 1"));
+	addchoicebox(screenanim, "1", _("anim. width"));
+	addchoicebox(screenanim, "2", _("anim. height"));
+	addchoicebox(screenanim, "3", _("anim. both"));
 	setchoiceboxselection(screenanim, getconfig("screenanim", NULL));
 
 	drawscreen(adjust, 0);

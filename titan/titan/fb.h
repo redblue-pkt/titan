@@ -268,7 +268,7 @@ void clearfb(struct fb *node)
 //flag 1 = animation
 void blitfb(int flag)
 {
-	int i = 0, max = 1, step = 0;
+	int i = 0, max = 1, wstep = 0, hstep = 0;
 
 	if(skinfb == NULL) return;
 #ifndef NOHWBLIT
@@ -303,8 +303,8 @@ void blitfb(int flag)
 
 	bltData.dstOffset  = 0;
 	bltData.dstPitch   = fb->pitch;
-	bltData.dst_left   = 0 + leftoffset;
-	bltData.dst_top    = 0 + topoffset;
+	bltData.dst_left   = leftoffset;
+	bltData.dst_top    = topoffset;
 	if(mode3d == 1)
 		bltData.dst_right = (fb->width - rightoffset) / 2;
 	else
@@ -318,28 +318,51 @@ void blitfb(int flag)
 
 	if(flag == 1 && status.screenanim > 0 && mode3d == 0)
 	{
-		int width = (fb->width - rightoffset) - (0 + leftoffset);
+		int width = (fb->width - rightoffset) - leftoffset;
+		int height = (fb->height - topoffset) - bottomoffset;
 		max = 50;
-		bltData.dst_left = (width / 2) - 1;
-		bltData.dst_right = (width / 2) + 1;
-		step = width / 50;
+		if(status.screenanim == 1 || status.screenanim == 3)
+		{
+			bltData.dst_left = (width / 2) - 1;
+			bltData.dst_right = (width / 2) + 1;
+		}
+		if(status.screenanim == 2 || status.screenanim == 3)
+		{
+			bltData.dst_top = (height / 2) - 1;
+			bltData.dst_bottom = (height / 2) + 1;
+		}
+		wstep = width / 50;
+		hstep = height / 50;
 	}
 
 	for(i = 0; i < max; i++)
 	{
 
-		if(status.screenanim == 1)
+		if(status.screenanim == 1 || status.screenanim == 3)
 		{
-			int tmpleft = bltData.dst_left - step;
-			int tmpright = bltData.dst_right + step;
-			if(tmpleft < 0)
-				tmpleft = 0;
+			int tmpleft = bltData.dst_left - wstep;
+			int tmpright = bltData.dst_right + wstep;
+			if(tmpleft < leftoffset)
+				tmpleft = leftoffset;
 			if(tmpright > fb->width - rightoffset)
 				tmpright = fb->width - rightoffset;
 			bltData.dst_left = tmpleft;
 			bltData.dst_right = tmpright;
-			usleep(1000);
 		}
+
+		if(status.screenanim == 2 || status.screenanim == 3)
+		{
+			int tmptop = bltData.dst_top - hstep;
+			int tmpbottom = bltData.dst_bottom + hstep;
+			if(tmptop < topoffset)
+				tmptop = topoffset;
+			if(tmpbottom > fb->height - bottomoffset)
+				tmpbottom = fb->height - bottomoffset;
+			bltData.dst_top = tmptop;
+			bltData.dst_bottom = tmpbottom;
+		}
+
+		if(status.screenanim > 0) usleep(1000);
 
 		if (ioctl(fb->fd, STMFBIO_BLT, &bltData) < 0)
 		{
