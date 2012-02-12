@@ -32,6 +32,7 @@ void screenadjust()
 	struct skin* def_rectimer_after = getscreennode(adjust, "def_rectimer_after");
 	struct skin* deltimeshift = getscreennode(adjust, "deltimeshift");
 	struct skin* showchanneltimeline = getscreennode(adjust, "showchanneltimeline");
+	struct skin* screenanim = getscreennode(adjust, "screenanim");
 	
 	struct skin* tmp = NULL;
 
@@ -144,6 +145,10 @@ void screenadjust()
 	addchoicebox(showchanneltimeline, "0", _("no"));
 	addchoicebox(showchanneltimeline, "1", _("yes"));
 	setchoiceboxselection(showchanneltimeline, getconfig("showchanneltimeline", NULL));
+	
+	addchoicebox(screenanim, "0", _("no"));
+	addchoicebox(screenanim, "1", _("animation 1"));
+	setchoiceboxselection(screenanim, getconfig("screenanim", NULL));
 
 	drawscreen(adjust, 0);
 	addscreenrc(adjust, listbox);
@@ -197,6 +202,8 @@ void screenadjust()
 			addconfigscreencheck("deltimeshift", deltimeshift, "0");
 			addconfigscreencheck("showchanneltimeline", showchanneltimeline, "0");
 			status.showchanneltimeline = getconfigint("showchanneltimeline", NULL);
+			addconfigscreencheck("screenanim", screenanim, "0");
+			status.screenanim = getconfigint("screenanim", NULL);
 
 			break;
 		}

@@ -264,7 +264,8 @@ void clearfb(struct fb *node)
 		memset(node->fb, 0, node->varfbsize);
 }
 
-//flag > 0 = animation
+//flag 0 = no animation
+//flag 1 = animation
 void blitfb(int flag)
 {
 	int i = 0, max = 1, step = 0;
@@ -315,7 +316,7 @@ void blitfb(int flag)
 	bltData.dstFormat  = SURF_BGRA8888;
 	bltData.dstMemBase = STMFBGP_FRAMEBUFFER;
 
-	if(flag > 0 && mode3d == 0)
+	if(flag == 1 && status.screenanim > 0 && mode3d == 0)
 	{
 		int width = (fb->width - rightoffset) - (0 + leftoffset);
 		max = 50;
@@ -327,7 +328,7 @@ void blitfb(int flag)
 	for(i = 0; i < max; i++)
 	{
 
-		if(flag == 1)
+		if(status.screenanim == 1)
 		{
 			int tmpleft = bltData.dst_left - step;
 			int tmpright = bltData.dst_right + step;

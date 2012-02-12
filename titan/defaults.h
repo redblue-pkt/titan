@@ -70,6 +70,7 @@ void setdefaults()
 	status.borderradius = getskinconfigint("borderradius", NULL);
 	status.httpauth = ostrcat(getconfig("httpauth", NULL), NULL, 0, 0);
 	status.showchanneltimeline = getconfigint("showchanneltimeline", NULL);
+	status.screenanim = getconfigint("screenanim", NULL);
 
 	for(i = 0; i < MAXLONGKEY; i++)
 	{

@@ -434,6 +434,7 @@ int screenchannellist(struct channel** retchannel, char** retchannellist, int fl
 	char* tmpstr = NULL, *tmpstr1 = NULL;
 	void* movesel = NULL, *aktlist = NULL;
 	int nochanneltitle = getskinconfigint("nochanneltitle", NULL);
+	int firstdraw = 0;
 	
 	status.channelswitch = 1;
 
@@ -515,9 +516,17 @@ start:
 	}
 
 	tmpstr = NULL;
-	status.screencalc = 2;
-	drawscreen(channellist, 0);
-	status.screencalc = 0;
+	if(status.screenanim > 0 && firstdraw == 0)
+	{
+		firstdraw = 1;
+		drawscreen(channellist, 4);
+	}
+	else
+	{
+		status.screencalc = 2;
+		drawscreen(channellist, 0);
+		status.screencalc = 0;
+	}
 	addscreenrc(channellist, listbox);
 
 	if(flag == 3)
