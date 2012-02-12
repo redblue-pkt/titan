@@ -219,9 +219,9 @@ void imdb()
 	printf("search: %s\n", search);
 	tmpstr = get_ip(url);
 	printf("get_ip(url): %s\n", tmpstr);
-	gethttp(tmpstr, search, 80, localfile, NULL, NULL);
+	gethttp(tmpstr, search, 80, localfile, NULL, NULL, 0);
 	free(tmpstr); tmpstr = NULL;
-//	gethttp(url, search, 80, localfile, NULL, NULL);
+//	gethttp(url, search, 80, localfile, NULL, NULL, 0);
 
 
 	tmpstr = readfiletomem(localfile, 1);
@@ -244,8 +244,8 @@ void imdb()
 	printf("url: %s\n", get_ip(url));
 	printf("localfile: %s\n", localfile);
 
-//	gethttp(get_ip(url), search, 80, localfile, NULL, NULL);
-//	gethttp(url, search, 80, localfile, NULL, NULL);
+//	gethttp(get_ip(url), search, 80, localfile, NULL, NULL, 0);
+//	gethttp(url, search, 80, localfile, NULL, NULL, 0);
 	unlink(localfile);
 //cache.getMoviesByImdbId.html
 	char* cmd = NULL;
@@ -414,8 +414,8 @@ changepic(skin_cover, "/tmp/cover.jpg");
 
 
 //NIT: get_ip braucht ein free
-	gethttp(get_ip(url), search, 80, localfile, NULL, NULL);
-//	gethttp(url, search, 80, localfile, NULL, NULL);
+	gethttp(get_ip(url), search, 80, localfile, NULL, NULL, 0);
+//	gethttp(url, search, 80, localfile, NULL, NULL, 0);
 	bigcover = readfiletomem(localfile, 1);
 	string_resub("<link rel=\"image_src\" href=\"","\"",bigcover);
 	strstrip(bigcover);
@@ -440,8 +440,8 @@ changepic(skin_cover, "/tmp/bigcover.jpg");
 	printf("search: %s\n", search);
 	printf("url: %s\n", get_ip(url));
 	printf("localfile: %s\n", localfile);
-//	gethttp(get_ip(url), search, 80, localfile, NULL, NULL);
-//	gethttp(url, search, 80, localfile, NULL, NULL);
+//	gethttp(get_ip(url), search, 80, localfile, NULL, NULL, 0);
+//	gethttp(url, search, 80, localfile, NULL, NULL, 0);
 
 	unlink(localfile);
 	cmd = ostrcat(cmd, "wget http://", 1, 0);
