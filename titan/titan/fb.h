@@ -264,8 +264,11 @@ void clearfb(struct fb *node)
 		memset(node->fb, 0, node->varfbsize);
 }
 
-void blitfb()
+//flag > 0 = animation
+void blitfb(int flag)
 {
+	int i = 0, max = 1, step = 0;
+
 	if(skinfb == NULL) return;
 #ifndef NOHWBLIT
 	if(skinfb == fb) return;
@@ -304,7 +307,7 @@ void blitfb()
 	if(mode3d == 1)
 		bltData.dst_right = (fb->width - rightoffset) / 2;
 	else
-		bltData.dst_right  = fb->width - rightoffset;
+		bltData.dst_right = fb->width - rightoffset;
 	if(mode3d == 2)
 		bltData.dst_bottom = (fb->height - bottomoffset) / 2;
 	else
@@ -312,23 +315,30 @@ void blitfb()
 	bltData.dstFormat  = SURF_BGRA8888;
 	bltData.dstMemBase = STMFBGP_FRAMEBUFFER;
 
-	if (ioctl(fb->fd, STMFBIO_BLT, &bltData) < 0)
+	if(flag > 0 && mode3d == 0)
 	{
-		perr("ioctl STMFBIO_BLT");
-	}
-	if(ioctl(fb->fd, STMFBIO_SYNC_BLITTER) < 0)
-	{
-		perr("ioctl STMFBIO_SYNC_BLITTER");
+		int width = (fb->width - rightoffset) - (0 + leftoffset);
+		max = 50;
+		bltData.dst_left = (width / 2) - 1;
+		bltData.dst_right = (width / 2) + 1;
+		step = width / 50;
 	}
 
-	if(mode3d != 0)
+	for(i = 0; i < max; i++)
 	{
-		if(mode3d == 1)
-			bltData.dst_left   = 0 + leftoffset + ((fb->width - rightoffset) / 2);
-		if(mode3d == 2)
-			bltData.dst_top    = 0 + topoffset + ((fb->height - bottomoffset) / 2);
-		bltData.dst_right  = fb->width - rightoffset;
-		bltData.dst_bottom = fb->height - bottomoffset;
+
+		if(flag == 1)
+		{
+			int tmpleft = bltData.dst_left - step;
+			int tmpright = bltData.dst_right + step;
+			if(tmpleft < 0)
+				tmpleft = 0;
+			if(tmpright > fb->width - rightoffset)
+				tmpright = fb->width - rightoffset;
+			bltData.dst_left = tmpleft;
+			bltData.dst_right = tmpright;
+			usleep(1000);
+		}
 
 		if (ioctl(fb->fd, STMFBIO_BLT, &bltData) < 0)
 		{
@@ -337,6 +347,25 @@ void blitfb()
 		if(ioctl(fb->fd, STMFBIO_SYNC_BLITTER) < 0)
 		{
 			perr("ioctl STMFBIO_SYNC_BLITTER");
+		}
+
+		if(mode3d != 0)
+		{
+			if(mode3d == 1)
+				bltData.dst_left = 0 + leftoffset + ((fb->width - rightoffset) / 2);
+			if(mode3d == 2)
+				bltData.dst_top = 0 + topoffset + ((fb->height - bottomoffset) / 2);
+			bltData.dst_right  = fb->width - rightoffset;
+			bltData.dst_bottom = fb->height - bottomoffset;
+
+			if (ioctl(fb->fd, STMFBIO_BLT, &bltData) < 0)
+			{
+				perr("ioctl STMFBIO_BLT");
+			}
+			if(ioctl(fb->fd, STMFBIO_SYNC_BLITTER) < 0)
+			{
+				perr("ioctl STMFBIO_SYNC_BLITTER");
+			}
 		}
 	}
 #else
@@ -414,7 +443,7 @@ void setfbtransparent(int value)
 void pngforlcd()
 {
 	FILE *fd;
-  fd=fopen("/tmp/titanlcd.raw", "w");
+	fd=fopen("/tmp/titanlcd.raw", "w");
 	int help = 0;
 	int i = 0;
 	while (i < 240) {

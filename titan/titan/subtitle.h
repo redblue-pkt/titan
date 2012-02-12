@@ -97,7 +97,7 @@ void subclear(int ontimeout)
 			pageregnode = pageregnode->next;
 		}
 	
-		if(stat == 1) blitfb();
+		if(stat == 1) blitfb(0);
 		subfree(0);
 	}
 }
@@ -208,7 +208,7 @@ void subdraw(unsigned long long subpts, struct subpage* page)
 		}
 		pageregnode = pageregnode->next;
 	}
-	if(stat == 1) blitfb();
+	if(stat == 1) blitfb(0);
 }
 
 void subcalc(int pageid, unsigned long long pts)

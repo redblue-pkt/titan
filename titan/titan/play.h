@@ -109,7 +109,7 @@ void screenplaytracklist(int mode, int playertype, int flag)
 			playerchangeaudiotrackts();
 		else if(mode == 2)
 			playerchangesubtitletrackts();
-		blitfb();
+		blitfb(0);
 		return;
 	}
 
@@ -199,7 +199,7 @@ void screenplaytracklist(int mode, int playertype, int flag)
 	delmarkedscreennodes(track, 1);
 	delownerrc(track);
 	clearscreen(track);
-	blitfb();
+	blitfb(0);
 }
 
 void playrcyellow(char* file, int playinfobarstatus, int playertype, int flag)

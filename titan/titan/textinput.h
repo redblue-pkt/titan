@@ -54,7 +54,7 @@ char* textinput(char* title, char* text)
 	{
 		clearscreennolock(textinput);
 		restorescreen(bg, textinput);
-		blitfb();
+		blitfb(0);
 		status.screencalc = tmpscreencalc;
 		sleep(1);
 		status.rcowner = NULL;

@@ -171,7 +171,7 @@ void screenplay(char* startfile, int startfolder, int flag);
 struct inetwork* getinetworkbydevice(char* device);
 
 //fb.h
-void blitfb();
+void blitfb(int flag);
 void changefbresolution(char *value);
 void setfbtransparent(int value);
 

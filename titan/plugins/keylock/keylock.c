@@ -40,7 +40,7 @@ void keylock_main()
 	}
 	
 	restorescreen(bg, keylock);
-	blitfb();
+	blitfb(0);
 }
 			
 //wird beim laden ausgefuehrt

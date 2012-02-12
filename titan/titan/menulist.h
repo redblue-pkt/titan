@@ -229,7 +229,7 @@ char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 	{
 		clearscreennolock(screen);
 		restorescreen(bg, screen);
-		blitfb();
+		blitfb(0);
 		status.screencalc = tmpscreencalc;
 		sleep(1);
 		status.rcowner = NULL;

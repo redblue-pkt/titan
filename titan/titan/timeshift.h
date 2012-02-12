@@ -197,7 +197,7 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
 	}
 	
 	restorescreen(bg, timeshift);
-	blitfb();
+	blitfb(0);
 	close(fd);
 }
 
