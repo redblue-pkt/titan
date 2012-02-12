@@ -374,7 +374,7 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 			char* tmppath = NULL;
 			tmppath = ostrcat(tmppath, path, 1, 0);
 			tmppath = string_replace("Packages.gz", "Packages.preview.tar.gz", tmppath, 1);
-			gethttp(ip, tmppath, 80, "/tmp/Packages.preview.tar.gz", "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", NULL);
+			gethttp(ip, tmppath, 80, "/tmp/Packages.preview.tar.gz", "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", NULL, 0);
 			free(tmppath); tmppath = NULL;
 			
 			system("tar -zxvf /tmp/Packages.preview.tar.gz -C /tmp");
@@ -382,7 +382,7 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 			writesys(checkfile, ".", 1);
 		}
 		free(checkfile); checkfile = NULL;		
-		gethttp(ip, path, 80, (char*)filename, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", NULL);
+		gethttp(ip, path, 80, (char*)filename, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", NULL, 0);
 	}
 	else
 		err = screendownload("Download", ip, path, 80, (char*)filename, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 0);

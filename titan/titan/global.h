@@ -70,7 +70,7 @@ void checkserial(char* input)
 	if(input == NULL) return;
 	
 	char* authfile = NULL;
-	authfile = gethttp("atemio.dyndns.tv", "/svn/auth/trustlist", 80, NULL, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", NULL);
+	authfile = gethttp("atemio.dyndns.tv", "/svn/auth/trustlist", 80, NULL, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", NULL, 0);
 
 	int count = 0;
 	int i;

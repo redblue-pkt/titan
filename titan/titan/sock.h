@@ -506,13 +506,53 @@ char* createhttpheader(char *host, char *page, char* auth)
 	return query;
 }
 
-char* gethttp(char* host, char* page, int port, char* filename, char* auth, struct download* dnode)
+int checkhttpheader(char* tmpbuf, char** retstr)
 {
-	int sock = -1, ret = 0, count = 0;
+	int stat = 0;
+	char* tmppos = NULL, *tmpstr = NULL;
+
+	if(tmpbuf == NULL) return NULL;
+
+	tmpstr = malloc(MINMALLOC);
+	if(tmpstr == NULL)
+	{
+		err("no mem");
+		return 0;
+	}
+
+	tmppos = strstr(tmpbuf, "HTTP/1.1 ");
+	if(tmppos != NULL)
+	{
+		sscanf(tmppos, "HTTP/1.1 %s ", tmpstr);
+		if(tmpstr != NULL)
+		{
+			stat = atoi(tmpstr);
+			tmpstr[0] = '\0';
+		}
+	}
+
+	if(stat == 302) // Redirect
+	{
+		tmppos = strstr(tmpbuf, "Location: ");
+		if(tmppos != NULL)
+		{
+			sscanf(tmppos, "Location: %s", tmpstr);
+			if(tmpstr != NULL)
+				*retstr = ostrcat(tmpstr, NULL, 0, 0);
+		}
+	}
+
+	free(tmpstr); tmpstr = NULL;
+	return stat;
+}
+
+char* gethttp(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect)
+{
+	int sock = -1, ret = 0, count = 0, hret = 0;
 	unsigned int len = 0, maxret = 0;
 	char *ip = NULL, *header = NULL;
 	char *tmpbuf = NULL, *buf = NULL;
-	char *tmppage = "/";
+	char *tmppage = "/", *retstr = NULL;
 	FILE *fd = NULL;
 	
 	if(filename != NULL)
@@ -606,7 +646,11 @@ char* gethttp(char* host, char* page, int port, char* filename, char* auth, stru
 		*pbuf = c;
 
 		if(tmpbuf != NULL && (strstr(tmpbuf, "\n\n") != NULL || strstr(tmpbuf, "\r\n\r\n") != NULL))
+		{
+			hret = checkhttpheader(tmpbuf, &retstr);
+			if(hret == 302) goto end;
 			break;
+		}
 		pbuf++;
 	}
 
@@ -657,6 +701,7 @@ char* gethttp(char* host, char* page, int port, char* filename, char* auth, stru
 		return NULL;
 	}
 
+end:
 	free(tmpbuf);
 	if(fd != NULL) fclose(fd);
 	sockclose(&sock);
@@ -667,14 +712,39 @@ char* gethttp(char* host, char* page, int port, char* filename, char* auth, stru
 		buf[count] = '\0';
 	}
 
+	if(hret == 302 && retstr != NULL && redirect < 3) //redirect
+	{
+		char* pos = NULL, *rpage = NULL;
+        	char* rhost = string_replace("http://", "", retstr, 0);
+
+	    	if(rhost != NULL)
+			pos = strchr(rhost, '/');
+		if(pos != NULL)
+		{
+			pos[0] = '\0';
+			rpage = pos + 1;
+		}
+
+		if(dnode != NULL)
+		{
+			dnode->host = rhost;
+			dnode->page = rpage;
+		}
+
+		redirect++;
+		free(buf); buf = NULL;
+		buf = gethttp(rhost, rpage, port, filename, auth, dnode, redirect);
+	}
+
 	if(dnode != NULL) dnode->ret = 0;
+	free(retstr); retstr = NULL;
 	return buf;
 }
 
 void gethttpstruct(struct stimerthread* timernode, struct download* node, int flag)
 {
 	if(node != NULL)
-		gethttp(node->host, node->page, node->port, node->filename, node->auth, node);
+		gethttp(node->host, node->page, node->port, node->filename, node->auth, node, 0);
 }
 
 #endif
