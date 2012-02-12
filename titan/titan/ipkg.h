@@ -589,7 +589,7 @@ char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 		tmpck = get_ipk_listinstall();
 		
 		debug(130, "tmpck: %s", tmpck);
-		debug(130, "tmpck_new: %s", ipkg_list_installed());
+		debug(130, "tmpck list_installed ret: %d", ipkg_list_installed());
 
 		struct ipkg *node = ipkg;
 		while(node != NULL)
