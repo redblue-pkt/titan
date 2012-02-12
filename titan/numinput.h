@@ -63,7 +63,7 @@ char* numinput(char* title, char* num, char* mask, int isip)
 	{
 		clearscreennolock(numinput);
 		restorescreen(bg, numinput);
-		blitfb();
+		blitfb(0);
 		status.screencalc = tmpscreencalc;
 		sleep(1);
 		status.rcowner = NULL;

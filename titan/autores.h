@@ -42,7 +42,7 @@ void screenautores(char* text, int timeout, int flag)
 	{
 		clearscreennolock(autores);
 		restorescreen(bg, autores);
-		blitfb();
+		blitfb(0);
 		status.screencalc = tmpscreencalc;
 		sleep(1);
 		status.rcowner = NULL;

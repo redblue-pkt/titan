@@ -79,7 +79,7 @@ findspinner:
 
 	//restore bg
 	restorescreen(bg, spinner);
-	blitfb();
+	blitfb(0);
 	status.screencalc = tmpscreencalc;
 	m_unlock(&status.drawingmutex, 0);
 	usleep(1000);

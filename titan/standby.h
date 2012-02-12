@@ -42,7 +42,7 @@ void screenstandby()
 	
 	subtitlepause(1);
 //	clearfb(skinfb);
-//	blitfb();
+//	blitfb(0);
 	setfbtransparent(0);
 	setvfdbrightness(getconfigint("vfdstandbybrightness", NULL));
 	setoverclockfreq(0);

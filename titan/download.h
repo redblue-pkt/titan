@@ -115,7 +115,7 @@ int screendownload(char* title, char* host, char* page, int port, char* filename
 	{
 		clearscreennolock(download);
 		restorescreen(bg, download);
-		blitfb();
+		blitfb(0);
 		status.screencalc = tmpscreencalc;
 		sleep(1);
 		status.rcowner = NULL;

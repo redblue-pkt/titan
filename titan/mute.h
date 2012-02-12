@@ -54,7 +54,7 @@ void screenmute(struct skin* screen, struct skin* node, int flag)
 		}
 		status.drawallways[0] = NULL;
 		if(flag == 0 || flag == 2)
-			blitfb();
+			blitfb(0);
 	}
 }
 

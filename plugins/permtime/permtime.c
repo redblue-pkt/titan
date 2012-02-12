@@ -31,7 +31,7 @@ void permtime_thread()
 		sleep(1); 
 	}
  	restorescreen(bg, permtime);
-	blitfb();
+	blitfb(0);
 	permtimethread = NULL;
   return;
 }

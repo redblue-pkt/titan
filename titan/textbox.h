@@ -95,7 +95,7 @@ int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char*
 	{
 		clearscreennolock(messagebox);
 		restorescreen(bg, messagebox);
-		blitfb();
+		blitfb(0);
 		status.screencalc = tmpscreencalc;
 		sleep(1);
 		status.rcowner = NULL;

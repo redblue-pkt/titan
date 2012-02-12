@@ -91,7 +91,7 @@ void screenvolume(int direction, int flag)
 	addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
 	addrc(getrcconfigint("rcmute", NULL), screenmute, NULL, NULL);
 	restorescreen(bg, volume);
-	blitfb();
+	blitfb(0);
 }
 
 //screen and node are needed if funktion is called from rc handle
