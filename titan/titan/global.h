@@ -105,10 +105,26 @@ void checkserial(char* input)
 	}
 
 	if(status.security == 1)
-		status.expertmodus = getconfigint("expertmodus", NULL);	
+		status.expertmodus = getconfigint("expertmodus", NULL);
 	else
+	{
 		status.expertmodus = 0;	
-
+		char* cmd = NULL;
+		cmd = ostrcat(cmd, "killall", 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, "-9", 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, "inetd", 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, "telnetd", 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, "vsftpd", 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, "ftpd", 1, 0);		
+		system(cmd);
+		free(cmd),cmd = NULL;	
+	}
+	
 	free(ret),ret = NULL;
 	free(authfile);
 }
