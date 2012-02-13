@@ -1,7 +1,8 @@
 #ifndef MENU_H
 #define MENU_H
 
-struct skin* menu(struct skin* menu)
+//flag 1: fist call
+struct skin* menu(struct skin* menu, int flag)
 {
 	debug(1000, "in");
 	int rcret = 0, ret = 0;
@@ -39,7 +40,10 @@ struct skin* menu(struct skin* menu)
 		child = child->next;
 	}
 
-	drawscreen(menu, 0);
+	if(flag == 1)
+		drawscreen(menu, 4);
+	else
+		drawscreen(menu, 0);
 	addscreenrc(menu, listbox);
 	if(listbox->select != NULL)
 	{
@@ -109,49 +113,49 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	{
 		if(check == 1) return 0;
 		struct skin* screen = getscreen("settingsmenu");
-		menu(screen);
+		menu(screen, 0);
 	}
 	else if(ostrcmp("timermenu", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		struct skin* screen = getscreen("timermenu");
-		menu(screen);
+		menu(screen, 0);
 	}
 	else if(ostrcmp("information", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		struct skin* screen = getscreen("infomenu");
-		menu(screen);
+		menu(screen, 0);
 	}
 	else if(ostrcmp("channelservice", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		struct skin* screen = getscreen("channelmenu");
-		menu(screen);
+		menu(screen, 0);
 	}
 	else if(ostrcmp("system", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		struct skin* screen = getscreen("systemmenu");
-		menu(screen);
+		menu(screen, 0);
 	}
 	else if(ostrcmp("standby", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		struct skin* screen = getscreen("standbymenu");
-		menu(screen);
+		menu(screen, 0);
 	}
 	else if(ostrcmp("harddisk", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		struct skin* screen = getscreen("harddiskmenu");
-		menu(screen);
+		menu(screen, 0);
 	}
 	else if(ostrcmp("network", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		struct skin* screen = getscreen("networkmenu");
-		menu(screen);
+		menu(screen, 0);
 	}
 	else if(ostrcmp("httpdsettings", menuentry->name) == 0)
 	{
