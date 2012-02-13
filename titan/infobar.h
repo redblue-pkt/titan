@@ -360,7 +360,7 @@ void screeninfobar()
 			status.infobar = 0;
 			status.infobaraktiv = 0;
 			clearscreen(infobar);
-			menu(getscreen("mainmenu"));
+			menu(getscreen("mainmenu"), 1);
 			status.menurelease = 0;
 			status.updatevfd = START;
 			status.infobaraktiv = 1;
@@ -443,7 +443,7 @@ void screeninfobar()
 					break;
 				default:
 					standbymenu = getscreen("standbymenu");
-					menu(standbymenu);
+					menu(standbymenu, 1);
 					break;
 			}
 			status.updatevfd = START;
