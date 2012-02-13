@@ -39,7 +39,7 @@ void screeninfobar()
 			{
 				status.infobar = 1;
 				infobar = infobar1;
-				drawscreen(infobar, 0);
+				drawscreen(infobar, 4);
 				continue;
 			}
 			else
@@ -417,7 +417,7 @@ void screeninfobar()
 				subtitlepause(1);
 				status.infobar = 1;
 				infobar = infobar1;
-				drawscreen(infobar, 0);
+				drawscreen(infobar, 4);
 			}
 			continue;
 		}
@@ -463,9 +463,12 @@ void screeninfobar()
 				free(tmpstr); tmpstr = NULL;
 			}
 			infobartimeout = 0;
-			status.infobar = 1;
 			infobar = infobar1;
-			drawscreen(infobar, 0);
+			if(status.infobar == 0)
+				drawscreen(infobar, 4);
+			else
+				drawscreen(infobar, 0);
+			status.infobar = 1;
 			continue;
 		}
 		if(rcret == getrcconfigint("rcchup", NULL))
