@@ -397,6 +397,9 @@ char* stringreplacechar(char *str, char c1, char c2);
 char* getcpuid();
 void get_ipk_update();
 void getserial();
+char* string_decode(char* input, int flag);
+char* string_striptags(char* filename);
+char* string_resub(char* str, char* str2, char* filename);
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
