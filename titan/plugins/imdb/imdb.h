@@ -2,139 +2,6 @@
 #define IMDB_H
 
 extern struct skin* skin;
-	
-char* imdbhtml_decode(char* input, int free1)
-{
-	if(input == NULL)
-	{
-		return input;
-	}
-
-	while(string_find("&amp;",input))
-	{
-		printf("00 %s\n",input);	
-		input = string_replace("&amp;", "und", input, 1);
-		printf("01 %s\n",input);	
-	}
-
-	while(string_find("&gt;",input))
-	{
-		printf("00 %s\n",input);	
-		input = string_replace("&gt;", ">", input, 1);
-		printf("01 %s\n",input);	
-	}
-
-	while(string_find("&lt;",input))
-	{
-		printf("00 %s\n",input);	
-		input = string_replace("&lt;", "<", input, 1);
-		printf("01 %s\n",input);	
-	}
-	
-	while(string_find("&quot;",input))
-	{
-		printf("00 %s\n",input);	
-		input = string_replace("&quot;", "\"", input, 1);
-		printf("01 %s\n",input);	
-	}
-
-	while(string_find("&#x",input))
-	{
-		printf("11 %s\n",input);	
-		input = string_replace("&#x", "%", input, 1);
-		printf("22 %s\n",input);	
-	}
-	while(string_find("&#",input))
-	{
-		printf("33 %s\n",input);	
-		input = string_replace("&#", "%", input, 1);
-		printf("44 %s\n",input);	
-	}
-	
-	htmldecode(input,input);
-
-	while(string_find(";",input))
-	{
-		printf("55 %s\n",input);	
-		input = string_replace(";", "", input, 1);
-		printf("66 %s\n",input);	
-	}
-
-	debug(1000, "out");
-	return input;
-}
-
-char* string_striptags(char* filename)
-{
-	debug(1000, "in");
-	int i, len_filename;
-
-	if(filename == NULL) return 0;
-	
-	len_filename = strlen(filename);
-
-	int skip =0;
-	for(i = 0; (i) < len_filename; i++)
-	{
-		if(filename[i] == '<')
-		{
-//			printf("found < in string\n");
-			skip = 1;
-		}
-		else if(filename[i] == '>')	
-		{
-//			printf("found > in string\n");
-			skip = 0;
-			filename[i] = ' ';
-		}
-		if(skip == 1)
-			filename[i] = ' ';
-	}	
-
-	debug(1000, "out");
-	return strstrip(filename);	
-}
-
-char* string_resub(char* str,char* str2, char* filename)
-{
-	debug(1000, "in");
-	int i, len_str, len_filename;
-
-	if(str == NULL || str2 == NULL || filename == NULL) return 0;
-
-	len_str = strlen(str);
-	len_filename = strlen(filename);
-
-	int count = 0;
-	for(i = 0; (i + len_str) < len_filename; i++)
-	{
-		if(strncmp(filename + i, str, len_str) == 0 && count == 0)
-		{
-			count = i + len_str;
-			filename[i] = ' ';
-		}
-		else if(count == i && count != 0)
-		{
-			count = i - len_str;
-			break;
-		}
-		else
-			filename[i] = ' ';
-	}
-	len_str = strlen(str2);
-
-	for(i = 0; (i + len_str) < len_filename; i++)
-	{
-		if(strncmp(filename + i, str2, len_str) == 0 && i >= count)
-		{
-			filename[i] = '\0';
-			break;
-		}
-	}	
-
-	debug(1000, "out");
-	return strstrip(filename);
-}
 
 char* screensearch(char* input)
 {
@@ -263,7 +130,7 @@ void imdb()
 	title = ostrcat(tmpstr, "", 0, 0);
 	string_resub("<title>","</title>",title);
 	printf("title: %s\n", title);
-	title = imdbhtml_decode(title,1);
+	title = string_decode(title,1);
 	printf("title: %s\n", title);
 	changetext(skin_title, title);
 
@@ -273,7 +140,7 @@ void imdb()
 	string_resub("Regisseur:","</div>",director);
 	string_striptags(director);
 	printf("director: %s\n", director);
-	director = imdbhtml_decode(director,1);
+	director = string_decode(director,1);
 	printf("director: %s\n", director);
 	changetext(skin_director, director);
 
@@ -289,7 +156,7 @@ void imdb()
 
 	string_striptags(writers);
 	printf("writers3: %s\n", writers);
-	writers = imdbhtml_decode(writers,1);
+	writers = string_decode(writers,1);
 	printf("writers: %s\n", writers);	
 	changetext(skin_writers, writers);
 ////////////////////
@@ -299,7 +166,7 @@ void imdb()
 	printf("genre1: %s\n", genre);
 	string_striptags(genre);
 	printf("genre2: %s\n", genre);
-	genre = imdbhtml_decode(genre,1);
+	genre = string_decode(genre,1);
 	printf("genre: %s\n", genre);
 	changetext(skin_genre, genre);
 
@@ -345,7 +212,7 @@ void imdb()
 
 	string_striptags(releasetime);
 	printf("releasetime2: %s\n", releasetime);
-	releasetime = imdbhtml_decode(releasetime,1);
+	releasetime = string_decode(releasetime,1);
 	printf("releasetime: %s\n", releasetime);
 	changetext(skin_releasetime, releasetime);
 
@@ -362,7 +229,7 @@ void imdb()
 	string_striptags(cast);
 	string_strip_whitechars(cast);
 	printf("cast2: %s\n", cast);
-	cast = imdbhtml_decode(cast,1);
+	cast = string_decode(cast,1);
 	printf("cast: %s\n", cast);
 	changetext(skin_cast, cast);
 	
@@ -459,7 +326,7 @@ changepic(skin_cover, "/tmp/bigcover.jpg");
 	printf("plot1: %s\n", plot);
 	string_striptags(plot);
 	printf("plot: %s\n", plot);
-	plot = imdbhtml_decode(plot,1);
+	plot = string_decode(plot,1);
 	printf("plot: %s\n", plot);
 	changetext(skin_plot, plot);	
 	
