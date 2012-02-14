@@ -37,8 +37,8 @@ void deinit(void)
 void start(void)
 {
 	//with normal menu
-	//screentithekmenu("http://atemio.dyndns.tv/mediathek/mainmenu.list");
+	//screentithekmenu("http://atemio.dyndns.tv/mediathek/mainmenu.list", "mainmenu.list");
 	
 	//with grid menu
-	screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.list", 1);
+	screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.list", "mainmenu.list", 1);
 }

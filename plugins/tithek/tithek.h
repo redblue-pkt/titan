@@ -9,7 +9,7 @@ struct tithek
 	char* link;
 	char* pic;
 	int flag;
-	int changepicname;
+	char* localname;
 	struct tithek* prev;
 	struct tithek* next;
 };
@@ -19,7 +19,7 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 {
 	//debug(1000, "in");
 	struct tithek *newnode = NULL, *prev = NULL, *node = tithek;
-	char *link = NULL, *pic = NULL, *title = NULL;
+	char *link = NULL, *pic = NULL, *title = NULL, *localname = NULL;
 	int ret = 0;
 
 	if(line == NULL) return NULL;
@@ -58,9 +58,20 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 		return NULL;
 	}
 
+	localname = malloc(MINMALLOC);
+	if(localname == NULL)
+	{
+		err("no memory");
+		free(newnode);
+		free(link);
+		free(pic);
+		free(title);
+		return NULL;
+	}
+
 	memset(newnode, 0, sizeof(struct tithek));
 
-	ret = sscanf(line, "%[^#]#%[^#]#%[^#]#%d#%d", title, link, pic, &newnode->flag, &newnode->changepicname);
+	ret = sscanf(line, "%[^#]#%[^#]#%[^#]#%d#%[^#]", title, link, pic, &newnode->flag, localname);
 	if(ret != 5)
 	{
 		if(count > 0)
@@ -74,6 +85,7 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 		free(link);
 		free(pic);
 		free(title);
+		free(localname);
 		free(newnode);
 		return NULL;
 	}
@@ -81,6 +93,7 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 	newnode->link = ostrcat(link, "", 1, 0);
 	newnode->pic = ostrcat(pic, "", 1, 0);
 	newnode->title = ostrcat(title, "", 1, 0);
+	newnode->localname = ostrcat(localname, "", 1, 0);
 
 	if(last == NULL)
 	{
@@ -187,6 +200,9 @@ int deltithek(char* link)
 			free(node->title);
 			node->title = NULL;
 
+			free(node->localname);
+			node->localname = NULL;
+
 			free(node);
 			node = NULL;
 
@@ -216,7 +232,7 @@ void freetithek()
 	debug(1000, "out");
 }
 
-char* tithekdownload(char* link, int changepicname, int flag)
+char* tithekdownload(char* link, char* localname, int flag)
 {
 	int ret = 1;
 	char* ip = NULL, *pos = NULL, *path = NULL;
@@ -238,18 +254,13 @@ char* tithekdownload(char* link, int changepicname, int flag)
 
 	if(flag == 0)
 	{
-		if(changepicname == 1)
-			localfile = ostrcat(TITHEKPATH, gettimestamp(), 0, 1);
-		else
-			localfile = ostrcat(TITHEKPATH, basename(tmpstr), 0, 0);
+		localfile = ostrcat(TITHEKPATH, "/", 0, 0);
+		localfile = ostrcat(localfile, localname, 1, 0);
 	}
 	else
 	{
 		localfile = ostrcat(getconfig("rec_path", NULL), "/", 0, 0);
-		if(changepicname == 1)
-			localfile = ostrcat(localfile, gettimestamp(), 1, 1);
-		else
-			localfile = ostrcat(localfile, basename(tmpstr), 1, 0);
+		localfile = ostrcat(localfile, localname, 1, 0);
 	}
 
 	if(flag == 0)
@@ -272,13 +283,13 @@ char* tithekdownload(char* link, int changepicname, int flag)
 	return localfile;
 }
 
-int createtithekmenu(char* titheklink, struct skin* menu, struct skin* listbox)
+int createtithekmenu(char* titheklink, char* localname, struct skin* menu, struct skin* listbox)
 {
 	struct skin* tmp = NULL;
 	char* tithekfile = NULL;
 	char* tithekpic = NULL;
 
-	tithekfile = tithekdownload(titheklink, 0, 0);
+	tithekfile = tithekdownload(titheklink, localname, 0);
 
 	delmarkedscreennodes(menu, 1);
 	freetithek();
@@ -297,7 +308,7 @@ int createtithekmenu(char* titheklink, struct skin* menu, struct skin* listbox)
 			changetext(tmp, titheknode->title);
 			tmp->height = 200;
 			tmp->hspace = 5;
-			tithekpic = tithekdownload(titheknode->pic, titheknode->changepicname, 0);
+			tithekpic = tithekdownload(titheknode->pic, titheknode->localname, 0);
 			changepic(tmp, tithekpic);
 			free(tithekpic); tithekpic = NULL;
 			tmp->handle = (char*)titheknode;
@@ -309,19 +320,19 @@ int createtithekmenu(char* titheklink, struct skin* menu, struct skin* listbox)
 	return 0;
 }
 
-void screentithekmenu(char* titheklink)
+void screentithekmenu(char* titheklink, char* localname)
 {
 	int rcret = -1, oaktline = 1, oaktpage = -1;
 
 	struct skin* menu = getscreen("tithekmenu");
 	struct skin* listbox = getscreennode(menu, "listbox");
 
-	if(titheklink == NULL) return;
+	if(titheklink == NULL || localname == NULL) return;
 
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
 
-	if(createtithekmenu(titheklink, menu, listbox) != 0) return;
+	if(createtithekmenu(titheklink, localname, menu, listbox) != 0) return;
 	drawscreen(menu, 0);
 	addscreenrc(menu, listbox);
 
@@ -339,13 +350,15 @@ void screentithekmenu(char* titheklink)
 				oaktline = listbox->aktline;
 				clearscreen(menu);
 				char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+				char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->localname, NULL, 0, 0);
 				if(((struct tithek*)listbox->select->handle)->flag == 1) 
-					screentithekplay(tmpstr, 0); 
+					screentithekplay(tmpstr, tmpstr1, 0); 
 				else 
-					screentithekmenu(tmpstr);
+					screentithekmenu(tmpstr, tmpstr1);
 
 				free(tmpstr); tmpstr = NULL;
-				if(createtithekmenu(titheklink, menu, listbox) != 0) break;
+				free(tmpstr1); tmpstr1 = NULL;
+				if(createtithekmenu(titheklink, localname, menu, listbox) != 0) break;
 				listbox->aktpage = oaktpage;
 				listbox->aktline = oaktline;
 				drawscreen(menu, 0);
@@ -360,7 +373,7 @@ void screentithekmenu(char* titheklink)
 	clearscreen(menu);
 }
 
-int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, struct skin* countlabel)
+int createtithekplay(char* titheklink, char* localname, struct skin* grid, struct skin* listbox, struct skin* countlabel)
 {
 	int gridbr = 0, posx = 0, count = 0, sumcount = 0;
 	struct skin* tmp = NULL;
@@ -368,7 +381,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	char* tithekpic = NULL;
 	char* tmpstr = NULL;
 
-	tithekfile = tithekdownload(titheklink, 0, 0);
+	tithekfile = tithekdownload(titheklink, localname, 0);
 
 	delmarkedscreennodes(grid, 1);
 	freetithek();
@@ -423,7 +436,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	return 0;
 }
 
-void screentithekplay(char* titheklink, int first)
+void screentithekplay(char* titheklink, char* localname, int first)
 {
 	int rcret = -1, oaktline = 1, oaktpage = -1, ogridcol = 0;
 	
@@ -439,13 +452,13 @@ void screentithekplay(char* titheklink, int first)
 	struct skin* tmp = NULL;
 	char* tithekpic = NULL;
 	
-	if(titheklink == NULL) return;
+	if(titheklink == NULL || localname == NULL) return;
 
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
 	listbox->gridcol = 0;
 
-	if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) return;
+	if(createtithekplay(titheklink, localname, grid, listbox, countlabel) != 0) return;
 
 	drawscreen(grid, 0);
 	addscreenrc(grid, listbox);
@@ -460,7 +473,7 @@ void screentithekplay(char* titheklink, int first)
 				if(tmp->pagecount != listbox->aktpage) break;
 				if(tmp->handle != NULL)
 				{
-					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->changepicname, 0);
+					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, 0);
 					changepic(tmp, tithekpic);
 					free(tithekpic); tithekpic = NULL;
 				}
@@ -472,7 +485,7 @@ void screentithekplay(char* titheklink, int first)
 				if(tmp->pagecount != listbox->aktpage) break;
 				if(tmp->handle != NULL)
 				{
-					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->changepicname, 0);
+					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, 0);
 					changepic(tmp, tithekpic);
 					free(tithekpic); tithekpic = NULL;
 				}
@@ -496,7 +509,7 @@ void screentithekplay(char* titheklink, int first)
 			{
 				if(((struct tithek*)listbox->select->handle)->flag == 2)
 				{
-					tithekdownload((((struct tithek*)listbox->select->handle)->link), ((struct tithek*)tmp->handle)->changepicname, 1);
+					tithekdownload((((struct tithek*)listbox->select->handle)->link), ((struct tithek*)tmp->handle)->localname, 1);
 					drawscreen(grid, 0);
 				}
 			}
@@ -523,9 +536,11 @@ void screentithekplay(char* titheklink, int first)
 					oaktline = listbox->aktline;
 					ogridcol = listbox->gridcol;
 					char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-					screentithekplay(tmpstr, 0);
+					char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->localname, NULL, 0, 0);
+					screentithekplay(tmpstr, tmpstr1, 0);
 					free(tmpstr); tmpstr = NULL;
-					if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
+					free(tmpstr1); tmpstr1 = NULL;
+					if(createtithekplay(titheklink, localname, grid, listbox, countlabel) != 0) break;
 					listbox->aktpage = oaktpage;
 					listbox->aktline = oaktline;
 					listbox->gridcol = ogridcol;
