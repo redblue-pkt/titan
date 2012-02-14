@@ -4203,5 +4203,147 @@ char* gettimestamp()
 	return timestamp;
 } 
 
+char* string_decode(char* input, int flag)
+{
+	if(input == NULL)
+	{
+		return input;
+	}
+
+	while(string_find("\\u00",input))
+	{
+		debug(210, "input: %s", input);
+		input = string_replace("\\u00", "%", input, 1);
+		debug(210, "input: %s", input);
+	}
+
+	while(string_find("&amp;",input))
+	{
+		debug(210, "input: %s", input);
+		input = string_replace("&amp;", "und", input, 1);
+		debug(210, "input: %s", input);
+	}
+
+	while(string_find("&gt;",input))
+	{
+		debug(210, "input: %s", input);
+		input = string_replace("&gt;", ">", input, 1);
+		debug(210, "input: %s", input);
+	}
+
+	while(string_find("&lt;",input))
+	{
+		debug(210, "input: %s", input);
+		input = string_replace("&lt;", "<", input, 1);
+		debug(210, "input: %s", input);
+	}
+	
+	while(string_find("&quot;",input))
+	{
+		debug(210, "input: %s", input);
+		input = string_replace("&quot;", "\"", input, 1);
+		debug(210, "input: %s", input);
+	}
+
+	while(string_find("&#x",input))
+	{
+		debug(210, "out %s", input);
+		input = string_replace("&#x", "%", input, 1);
+		debug(210, "input: %s", input);
+	}
+	while(string_find("&#",input))
+	{
+		debug(210, "input: %s", input);
+		input = string_replace("&#", "%", input, 1);
+		debug(210, "input: %s", input);
+	}
+	
+	if(flag == 1)
+		htmldecode2(input,input);
+	else
+		htmldecode(input,input);
+			
+	while(string_find(";",input))
+	{
+		debug(210, "input: %s", input);
+		input = string_replace(";", "", input, 1);
+		debug(210, "input: %s", input);
+	}
+
+	debug(1000, "out");
+	return input;
+}
+
+char* string_striptags(char* filename)
+{
+	debug(1000, "in");
+	int i, len_filename;
+
+	if(filename == NULL) return 0;
+	
+	len_filename = strlen(filename);
+
+	int skip =0;
+	for(i = 0; (i) < len_filename; i++)
+	{
+		if(filename[i] == '<')
+		{
+			debug(210, "found < in string");
+			skip = 1;
+		}
+		else if(filename[i] == '>')	
+		{
+			debug(210, "found > in string");
+			skip = 0;
+			filename[i] = ' ';
+		}
+		if(skip == 1)
+			filename[i] = ' ';
+	}	
+
+	debug(1000, "out");
+	return strstrip(filename);	
+}
+
+char* string_resub(char* str,char* str2, char* filename)
+{
+	debug(1000, "in");
+	int i, len_str, len_filename;
+
+	if(str == NULL || str2 == NULL || filename == NULL) return 0;
+
+	len_str = strlen(str);
+	len_filename = strlen(filename);
+
+	int count = 0;
+	for(i = 0; (i + len_str) < len_filename; i++)
+	{
+		if(strncmp(filename + i, str, len_str) == 0 && count == 0)
+		{
+			count = i + len_str;
+			filename[i] = ' ';
+		}
+		else if(count == i && count != 0)
+		{
+			count = i - len_str;
+			break;
+		}
+		else
+			filename[i] = ' ';
+	}
+	len_str = strlen(str2);
+
+	for(i = 0; (i + len_str) < len_filename; i++)
+	{
+		if(strncmp(filename + i, str2, len_str) == 0 && i >= count)
+		{
+			filename[i] = '\0';
+			break;
+		}
+	}	
+
+	debug(1000, "out");
+	return strstrip(filename);
+}
 
 #endif

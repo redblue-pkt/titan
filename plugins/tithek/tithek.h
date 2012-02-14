@@ -498,6 +498,11 @@ void screentithekplay(char* titheklink, int first)
 					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 						screenplay((((struct tithek*)listbox->select->handle)->link), 2, 0);
 				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 4)
+				{
+					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+						screenplay(youtubedownload((((struct tithek*)listbox->select->handle)->link), 1), 2, 0);
+				}
 				else
 				{
 					oaktpage = listbox->aktpage;
@@ -524,6 +529,54 @@ void screentithekplay(char* titheklink, int first)
 
 	if(first == 1)
 		servicestart(status.lastservice->channel, NULL, NULL, 0);
+}
+
+char* getstreamurl(char* link, int flag)
+{
+	char* ip = NULL, *pos = NULL, *path = NULL;
+	ip = string_replace("http://", "", (char*)link, 0);
+
+	if(ip != NULL)
+		pos = strchr(ip, '/');
+	if(pos != NULL)
+	{
+		pos[0] = '\0';
+		path = pos + 1;
+	}
+	
+	char* tmpstr = NULL;
+	tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
+
+	string_resub("\": \"url=","\", \"",tmpstr);
+
+	while(string_find(",url=",tmpstr))
+	{
+		tmpstr = string_replace(",url=", "\nurl=", tmpstr, 1);
+	}
+
+	tmpstr = string_decode(tmpstr,0);
+
+	int count = 0;
+	int i = 0;
+	struct splitstr* ret1 = NULL;
+	ret1 = strsplit(tmpstr, "\n", &count);
+	int max = count;
+	char* streamurl = NULL;
+	for( i = 0; i < max; i++){
+		if(string_find("type=video/mp4",(&ret1[i])->part))
+		{
+			streamurl = ostrcat(streamurl, (&ret1[i])->part, 1, 0);
+			int count2 = 0;
+			struct splitstr* ret2 = NULL;
+			ret2 = strsplit((&ret1[i])->part, "+", &count2);
+			streamurl = ostrcat("", (&ret2[0])->part, 0, 0);
+			free(ret2), ret2 = NULL;
+		}
+	}
+	free(ret1), ret1 = NULL;
+			
+	streamurl = string_replace("url=", "", streamurl, 1);
+	return streamurl;
 }
 
 #endif
