@@ -329,11 +329,7 @@ void screentithekmenu(char* titheklink)
 				oaktline = listbox->aktline;
 				clearscreen(menu);
 				char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-				if(((struct tithek*)listbox->select->handle)->flag == 1)
-					screentithekplay(tmpstr, 0);
-				else
-					screentithekmenu(tmpstr, 0);
-
+				screentithekplay(tmpstr, 0);
 				free(tmpstr); tmpstr = NULL;
 				if(createtithekmenu(titheklink, menu, listbox) != 0) break;
 				listbox->aktpage = oaktpage;
