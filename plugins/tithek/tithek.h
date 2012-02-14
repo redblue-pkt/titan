@@ -244,12 +244,12 @@ char* tithekdownload(char* link, int flag)
 
 	if(flag == 0)
 	{
-		if(! file_exists(localfile))
+		if(!file_exist(localfile))
 			gethttp(ip, path, 80, localfile, NULL, NULL, 0);
 	}
 	else
 	{
-		if(file_exists(localfile))
+		if(file_exist(localfile))
 			ret = textbox(_("Message"), _("File exist, overwrite?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 
 		if(ret == 1)
@@ -330,9 +330,9 @@ void screentithekmenu(char* titheklink)
 				clearscreen(menu);
 				char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
 				if(((struct tithek*)listbox->select->handle)->flag == 1)
-					screentithekplay(tmpstr);
+					screentithekplay(tmpstr, 0);
 				else
-					screentithekmenu(tmpstr);
+					screentithekmenu(tmpstr, 0);
 
 				free(tmpstr); tmpstr = NULL;
 				if(createtithekmenu(titheklink, menu, listbox) != 0) break;
