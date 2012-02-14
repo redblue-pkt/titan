@@ -1,6 +1,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//sock.h
+char* gethttp(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect);
+
 //numinput.h
 char* numinput(char* title, char* num, char* mask, int isip);
 
