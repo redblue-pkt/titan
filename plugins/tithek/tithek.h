@@ -1,5 +1,6 @@
 #ifndef TITHEK_H
 #define TITHEK_H
+#define TITHEKPATH "/tmp/tithek"
 
 struct tithek
 {
@@ -235,7 +236,7 @@ char* tithekdownload(char* link, int flag)
 	tmpstr = ostrcat(path, NULL, 0, 0);
 
 	if(flag == 0)
-		localfile = ostrcat("/tmp/tithek/", basename(tmpstr), 0, 0);
+		localfile = ostrcat(TITHEKPATH, basename(tmpstr), 0, 0);
 	else
 	{
 		localfile = ostrcat(getconfig("rec_path", NULL), "/", 0, 0);
@@ -471,6 +472,10 @@ void screentithekplay(char* titheklink, int first)
 
 			drawscreen(grid, 0);
 		}
+		
+		int count = getfilecount(TITHEKPATH);
+		if(count > 500)
+			delallfiles(TITHEKPATH, ".jpg");
 		
 		rcret = waitrc(grid, 0, 0);
 
