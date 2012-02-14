@@ -185,7 +185,7 @@ msgstr ""
 #: panel_extensions.h:59 panel_extensions.h:67 panel_extensions.h:121
 #: panel_extensions.h:123 tithek.h:253 tithek.h:498 channellist.h:718
 #: skin_default_skin.xml.h:179 global.h:291 global.h:4303 global.h:298
-#: global.h:4310 global.h:174 global.h:4186
+#: global.h:4310 global.h:174 global.h:4186 tithek.h:503
 msgid "EXIT"
 msgstr ""
 
@@ -599,7 +599,7 @@ msgstr ""
 #: scan.h:1121 scan.h:846 scan.h:918 scan.h:1124 timeshift.h:82
 #: panel_extensions.h:67 panel_extensions.h:123 panel_extensions.h:157
 #: tithek.h:253 tithek.h:498 channellist.h:718 global.h:4303 global.h:4310
-#: global.h:4186
+#: global.h:4186 tithek.h:503
 msgid "Message"
 msgstr ""
 
@@ -730,7 +730,7 @@ msgstr ""
 #: panel_extensions.h:67 panel_extensions.h:121 panel_extensions.h:123
 #: tithek.h:253 tithek.h:498 channellist.h:718 skin_default_skin.xml.h:273
 #: global.h:291 global.h:4303 global.h:298 global.h:4310 global.h:174
-#: global.h:4186
+#: global.h:4186 tithek.h:503
 msgid "OK"
 msgstr ""
 
@@ -7519,7 +7519,7 @@ msgid "press red"
 msgstr ""
 
 #: imdb.h:50 imdb.h:52 imdb.h:106 imdb.h:108 imdb.h:84 imdb.h:86 imdb.h:134
-#: imdb.h:136 imdb.h:83 imdb.h:85 imdb.h:144 imdb.h:146
+#: imdb.h:136 imdb.h:83 imdb.h:85 imdb.h:144 imdb.h:146 imdb.h:11 imdb.h:13
 msgid "Imdb Suche"
 msgstr ""
 
@@ -8000,7 +8000,7 @@ msgid ""
 "Box will start in few seconds."
 msgstr ""
 
-#: tithek.h:468 tithek.h:498
+#: tithek.h:468 tithek.h:498 tithek.h:503
 msgid "Start playback"
 msgstr ""
 
