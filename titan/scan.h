@@ -25,7 +25,85 @@ uint8_t changeservicetype(uint8_t type)
 	return ret;
 }
 
-int parsenit(char* buf)
+struct transponder* satsystemdesc(char* buf, unsigned long transportid, unsigned short onid, int orbitalpos)
+{
+	int polarization = 0, modulation = 0, system = 0;
+	int rolloff = 0, fec = 0, symbolrate = 0;
+	unsigned int frequency = 0;
+	unsigned long id = 0;
+
+	frequency = (
+		((buf[2] >> 4) * 100000000) +
+		((buf[2] & 0x0F) * 10000000) +
+		((buf[3] >> 4) * 1000000) +
+		((buf[3] & 0x0F) * 100000) +
+		((buf[4] >> 4) * 10000) +
+		((buf[4] & 0x0F) * 1000) +
+		((buf[5] >> 4) * 100) +
+		((buf[5] & 0x0F) * 10)
+	);
+
+	rolloff = (buf[8] >> 4) & 0x03; //alpha_0_35, alpha_0_25, alpha_0_20, alpha_auto
+	system = (buf[8] >> 2) & 0x01; //1=DVB_S2
+	modulation = (buf[8]) & 0x03; //1=QPSK, 2=M8PSK
+
+	symbolrate = (
+		((buf[9] >> 4) * 100000000) +
+		((buf[9] & 0x0F) * 10000000) +
+		((buf[10] >> 4) * 1000000) +
+		((buf[10] & 0x0F) * 100000) +
+		((buf[11] >> 4) * 10000) +
+		((buf[11] & 0x0F) * 1000) +
+		((buf[12] >> 4) * 100)
+	);
+
+	switch(fec & 0x0F)
+	{
+		case 0x01:
+			fec = FEC_1_2;
+			break;
+		case 0x02:
+			fec = FEC_2_3;
+			break;
+		case 0x03:
+			fec = FEC_3_4;
+			break;
+		case 0x04:
+			fec = FEC_5_6;
+			break;
+		case 0x05:
+			fec = FEC_7_8;
+			break;
+		case 0x0F:
+			fec = FEC_NONE;
+			break;
+		default:
+			fec = FEC_AUTO;
+			break;
+	}
+
+	if(modulation == 2) fec += 9;
+
+	polarization = (buf[8] >> 5) & 0x03;
+
+	//workarounds for braindead broadcasters (e.g. on Telstar 12 at 15.0W)
+	if(frequency >= 100000000) frequency /= 10;
+	if(symbolrate >= 50000000) symbolrate /= 10;
+
+	frequency = (int) 1000 * (int) round ((double) frequency / (double) 1000);
+
+	if(frequency > 15000000)
+	{
+		debug(500, "nitscan: freq %d sr %d fec %d pol %d\n", frequency, symbolrate, fec, polarization);
+		return NULL;
+	}
+
+	id = (onid << 16) | transportid;
+
+	return createtransponder(id, FE_QPSK, orbitalpos, frequency, INVERSION_AUTO, symbolrate, polarization, fec, modulation, rolloff, 0, system);
+}
+
+int parsenit(char* buf, int orbitalpos)
 {
 	int ret = 0, i;
 	int secdone[255];
@@ -80,7 +158,7 @@ int parsenit(char* buf)
 								//servicelistdesc(buffer + pos2, transponderid, onid);
 								break;
 							case 0x43:
-								//if(satsystemdesc(buffer + pos2, transponderid, onid) < 0)
+								if(satsystemdesc(buf + pos2, transponderid, onid, orbitalpos) == NULL)
 								{
 									ret = -2;
 									goto end;
@@ -300,7 +378,7 @@ void doscan(struct stimerthread* timernode)
 		if(scaninfo.networkscan == 1)
 		{
 			buf = dvbgetnit(fenode, scaninfo.timeout);
-			parsenit(buf);
+			parsenit(buf, satnode->orbitalpos);
 			free(buf); buf = NULL;
 		}
 		*/
