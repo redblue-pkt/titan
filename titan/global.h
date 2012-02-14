@@ -1907,6 +1907,53 @@ int rcnumber(int rcret)
 		return -9999;
 }
 
+int delallfiles(char* dir, char* ext)
+{
+	struct dirent *dirent = NULL;
+	DIR *pdir = NULL;
+	char* tmpstr = NULL;
+
+	pdir = opendir(dir);
+	if(pdir != NULL)
+	{
+		while((dirent = readdir(pdir)) != NULL)
+		{
+			if(ostrcmp(".", dirent->d_name) != 0 && ostrcmp("..", dirent->d_name) != 0)
+			{
+				if(ext == NULL || strstr(dirent->d_name, ext) != NULL)
+				{
+					tmpstr = ostrcat(dir, "/", 0, 0);
+					tmpstr = ostrcat(tmpstr, dirent->d_name, 1, 0);
+					unlink(tmpstr);
+					free(tmpstr); tmpstr = NULL;
+				}
+			}
+		}
+
+		closedir(pdir);
+	}
+
+	return 0;
+}
+
+unsigned long getfilecount(char* dir)
+{
+	unsigned long count = 0;
+	struct dirent *dirent = NULL;
+	DIR *pdir = NULL;
+
+	pdir = opendir(dir);
+	if(pdir != NULL)
+	{
+		while((dirent = readdir(pdir)) != NULL)
+			count++;
+
+		closedir(pdir);
+	}
+
+	return count;
+}
+
 long long getfreespace(char* dir)
 {
 	struct statfs64 s;
