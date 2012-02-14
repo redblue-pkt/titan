@@ -8,6 +8,7 @@ struct tithek
 	char* link;
 	char* pic;
 	int flag;
+	int changepicname;
 	struct tithek* prev;
 	struct tithek* next;
 };
@@ -58,9 +59,8 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 
 	memset(newnode, 0, sizeof(struct tithek));
 
-	//TODO; change title#link#pic#flag
-	ret = sscanf(line, "%[^#]#%[^#]#%[^#]#%d", title, link, pic, &newnode->flag);
-	if(ret != 4)
+	ret = sscanf(line, "%[^#]#%[^#]#%[^#]#%d#%d", title, link, pic, &newnode->flag, &newnode->changepicname);
+	if(ret != 5)
 	{
 		if(count > 0)
 		{
