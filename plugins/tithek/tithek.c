@@ -28,7 +28,7 @@ void init(void)
 void deinit(void)
 {
 	delmarkedscreen(195);
-	system("rm -r /tmp/tithek");
+	delallfiles("/tmp/tithek", NULL);
 	pluginaktiv = 0;
 	debug(10, "TiThek Plugin removed !!!");
 }
