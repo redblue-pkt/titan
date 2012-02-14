@@ -155,31 +155,19 @@ int parsenit(char* buf, int orbitalpos)
 						switch(buf[pos2])
 						{
 							case 0x41:
-								//servicelistdesc(buffer + pos2, transponderid, onid);
+								//servicelistdesc(buf + pos2, transponderid, onid);
 								break;
 							case 0x43:
-								if(satsystemdesc(buf + pos2, transponderid, onid, orbitalpos) == NULL)
-								{
-									ret = -2;
-									goto end;
-								}
+								satsystemdesc(buf + pos2, transponderid, onid, orbitalpos);
 								break;
 							case 0x44:
-								//if(cablesystemdesc(buffer + pos2, transponderid, onid) < 0)
-								{
-									ret = -2;
-									goto end;
-								}
+								//cablesystemdesc(buf + pos2, transponderid, onid);
 								break;
 							case 0x5A:
-								//if(terrestrialsystemdesc(buffer + pos2) < 0)
-								{
-									ret = -2;
-									goto end;
-								}
+								//terrestrialsystemdesc(buf + pos2);
 								break;
 							case 0x62:
-								//frequencylistdesc(buffer + pos2);
+								//frequencylistdesc(buf + pos2);
 								break;
 
 						}
@@ -189,7 +177,6 @@ int parsenit(char* buf, int orbitalpos)
 		}
 	}
 
-end:
 	return ret;
 }
 
