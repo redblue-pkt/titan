@@ -1,6 +1,7 @@
 #include "../titan/struct.h"
 #include "../titan/debug.h"
 #include "../titan/header.h"
+#include "tithek_header.h"
 #include "tithek.h"
 
 char pluginname[] = "TiTan Mediathek";

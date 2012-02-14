@@ -501,7 +501,7 @@ void screentithekplay(char* titheklink, int first)
 				else if(((struct tithek*)listbox->select->handle)->flag == 4)
 				{
 					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-						screenplay(youtubedownload((((struct tithek*)listbox->select->handle)->link), 1), 2, 0);
+						screenplay(getstreamurl((((struct tithek*)listbox->select->handle)->link), 1), 2, 0);
 				}
 				else
 				{
