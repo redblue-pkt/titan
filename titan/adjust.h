@@ -56,7 +56,7 @@ void screenadjust()
 	changeinput(spinnertime, "1\n2\n3\n4\n5\n6\n7\n8\n10000");
 	setchoiceboxselection(spinnertime, getconfig("spinnertime", NULL));
 
-	changeinput(hangtime, "5\n10\n15\n20\n25\n10000");
+	changeinput(hangtime, "5\n10\n15\n30\n60\n120\n10000");
 	setchoiceboxselection(hangtime, getconfig("hangtime", NULL));
 
 	addchoicebox(nozapclear, "0", _("no"));
