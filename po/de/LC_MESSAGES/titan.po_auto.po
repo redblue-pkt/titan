@@ -185,7 +185,8 @@ msgstr ""
 #: panel_extensions.h:59 panel_extensions.h:67 panel_extensions.h:121
 #: panel_extensions.h:123 tithek.h:253 tithek.h:498 channellist.h:718
 #: skin_default_skin.xml.h:179 global.h:291 global.h:4303 global.h:298
-#: global.h:4310 global.h:174 global.h:4186 tithek.h:503
+#: global.h:4310 global.h:174 global.h:4186 tithek.h:503 global.h:175
+#: global.h:4187
 msgid "EXIT"
 msgstr ""
 
@@ -599,7 +600,7 @@ msgstr ""
 #: scan.h:1121 scan.h:846 scan.h:918 scan.h:1124 timeshift.h:82
 #: panel_extensions.h:67 panel_extensions.h:123 panel_extensions.h:157
 #: tithek.h:253 tithek.h:498 channellist.h:718 global.h:4303 global.h:4310
-#: global.h:4186 tithek.h:503
+#: global.h:4186 tithek.h:503 global.h:4187
 msgid "Message"
 msgstr ""
 
@@ -730,7 +731,7 @@ msgstr ""
 #: panel_extensions.h:67 panel_extensions.h:121 panel_extensions.h:123
 #: tithek.h:253 tithek.h:498 channellist.h:718 skin_default_skin.xml.h:273
 #: global.h:291 global.h:4303 global.h:298 global.h:4310 global.h:174
-#: global.h:4186 tithek.h:503
+#: global.h:4186 tithek.h:503 global.h:175 global.h:4187
 msgid "OK"
 msgstr ""
 
@@ -758,6 +759,7 @@ msgstr ""
 #: global.h:4071 global.h:4073 global.h:4139 global.h:4144 global.h:4143
 #: global.h:4177 global.h:4178 global.h:4155 global.h:4152 global.h:4153
 #: global.h:4168 global.h:4170 global.h:4303 global.h:4310 global.h:4186
+#: global.h:4187
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -2604,7 +2606,7 @@ msgstr ""
 #: global.h:30 global.h:32 global.h:50 global.h:51 global.h:40 global.h:45
 #: global.h:46 global.h:47 global.h:48 global.h:53 global.h:56 global.h:61
 #: global.h:62 global.h:79 global.h:82 global.h:100 global.h:114 global.h:146
-#: global.h:158 global.h:291 global.h:298 global.h:174
+#: global.h:158 global.h:291 global.h:298 global.h:174 global.h:175
 msgid "Info"
 msgstr ""
 
@@ -7744,7 +7746,7 @@ msgstr ""
 #: global.h:39 global.h:44 global.h:45 global.h:46 global.h:47 global.h:52
 #: global.h:55 global.h:60 global.h:61 global.h:78 global.h:81 global.h:99
 #: global.h:113 global.h:145 global.h:157 global.h:290 global.h:297
-#: global.h:173
+#: global.h:173 global.h:174
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
@@ -7835,6 +7837,7 @@ msgstr ""
 
 #: global.h:57 global.h:58 global.h:75 global.h:78 global.h:96 global.h:110
 #: global.h:142 global.h:154 global.h:287 global.h:294 global.h:170
+#: global.h:171
 msgid ""
 "For next OnlineUpdate please contact Atemio and send this Serial Number and "
 "your Atemio Serial Number !!\n"
