@@ -190,6 +190,7 @@ msgstr ""
 #: global.h:4187 global.h:4233 scan.h:757 scan.h:911 scan.h:983 scan.h:1189
 #: tithek.h:274 tithek.h:525 tithek.h:530 tithek.h:533 tithek.h:280
 #: tithek.h:538 skin_default_skin.xml.h:180 tithek.h:534 tithek.h:545
+#: tithek.h:541 tithek.h:544
 msgid "EXIT"
 msgstr ""
 
@@ -608,7 +609,7 @@ msgstr ""
 #: global.h:4186 tithek.h:503 global.h:4187 global.h:4233 scan.h:757
 #: scan.h:767 scan.h:911 scan.h:983 scan.h:1189 tithek.h:274 tithek.h:525
 #: tithek.h:530 tithek.h:533 tithek.h:280 tithek.h:538 tithek.h:534
-#: tithek.h:545
+#: tithek.h:545 tithek.h:541 tithek.h:544
 msgid "Message"
 msgstr ""
 
@@ -742,7 +743,8 @@ msgstr ""
 #: global.h:4186 tithek.h:503 global.h:175 global.h:4187 global.h:4233
 #: scan.h:757 scan.h:911 scan.h:983 scan.h:1189 tithek.h:274 tithek.h:525
 #: tithek.h:530 tithek.h:533 tithek.h:280 tithek.h:538
-#: skin_default_skin.xml.h:274 tithek.h:534 tithek.h:545
+#: skin_default_skin.xml.h:274 tithek.h:534 tithek.h:545 tithek.h:541
+#: tithek.h:544
 msgid "OK"
 msgstr ""
 
@@ -8196,7 +8198,7 @@ msgid ""
 msgstr ""
 
 #: tithek.h:468 tithek.h:498 tithek.h:503 tithek.h:525 tithek.h:530
-#: tithek.h:533 tithek.h:538 tithek.h:534 tithek.h:545
+#: tithek.h:533 tithek.h:538 tithek.h:534 tithek.h:545 tithek.h:541
 msgid "Start playback"
 msgstr ""
 
@@ -8248,4 +8250,8 @@ msgstr ""
 msgid ""
 "Before you can see Signal/SNR/Ber you must zap to a channel of the satellite "
 "you are searching."
+msgstr ""
+
+#: tithek.h:544
+msgid "Can't get Streamurl !"
 msgstr ""
