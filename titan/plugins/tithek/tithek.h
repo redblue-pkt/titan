@@ -520,15 +520,19 @@ void screentithekplay(char* titheklink, char* localname, int first)
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
 				clearscreen(grid);
-				if(((struct tithek*)listbox->select->handle)->flag == 2)
+				if(((struct tithek*)listbox->select->handle)->flag == 2 && status.security == 1)
 				{
 					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 						screenplay((((struct tithek*)listbox->select->handle)->link), 2, 0);
 				}
-				else if(((struct tithek*)listbox->select->handle)->flag == 4)
+				else if(((struct tithek*)listbox->select->handle)->flag == 4 && status.security == 1)
 				{
-					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-						screenplay(getstreamurl((((struct tithek*)listbox->select->handle)->link), 1), 2, 0);
+
+					char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+					if(tmpstr != NULL)
+						if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+							screenplay(getstreamurl((((struct tithek*)listbox->select->handle)->link), 1), 2, 0);
+						free(tmpstr); tmpstr = NULL;
 				}
 				else
 				{
@@ -603,7 +607,8 @@ char* getstreamurl(char* link, int flag)
 		}
 	}
 	free(ret1), ret1 = NULL;
-			
+	free(tmpstr), tmpstr = NULL;
+		
 	streamurl = string_replace("url=", "", streamurl, 1);
 	return streamurl;
 }
