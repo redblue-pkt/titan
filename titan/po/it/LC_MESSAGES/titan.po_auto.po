@@ -187,7 +187,8 @@ msgstr ""
 #: skin_default_skin.xml.h:179 global.h:291 global.h:4303 global.h:298
 #: global.h:4310 global.h:174 global.h:4186 tithek.h:503 global.h:175
 #: global.h:4187 global.h:4233 scan.h:757 scan.h:911 scan.h:983 scan.h:1189
-#: tithek.h:274 tithek.h:525 tithek.h:530 tithek.h:533
+#: tithek.h:274 tithek.h:525 tithek.h:530 tithek.h:533 tithek.h:280
+#: tithek.h:538
 msgid "EXIT"
 msgstr ""
 
@@ -605,7 +606,7 @@ msgstr ""
 #: tithek.h:253 tithek.h:498 channellist.h:718 global.h:4303 global.h:4310
 #: global.h:4186 tithek.h:503 global.h:4187 global.h:4233 scan.h:757
 #: scan.h:767 scan.h:911 scan.h:983 scan.h:1189 tithek.h:274 tithek.h:525
-#: tithek.h:530 tithek.h:533
+#: tithek.h:530 tithek.h:533 tithek.h:280 tithek.h:538
 msgid "Message"
 msgstr ""
 
@@ -738,7 +739,7 @@ msgstr ""
 #: global.h:291 global.h:4303 global.h:298 global.h:4310 global.h:174
 #: global.h:4186 tithek.h:503 global.h:175 global.h:4187 global.h:4233
 #: scan.h:757 scan.h:911 scan.h:983 scan.h:1189 tithek.h:274 tithek.h:525
-#: tithek.h:530 tithek.h:533
+#: tithek.h:530 tithek.h:533 tithek.h:280 tithek.h:538
 msgid "OK"
 msgstr ""
 
@@ -8011,7 +8012,7 @@ msgid ""
 msgstr ""
 
 #: tithek.h:468 tithek.h:498 tithek.h:503 tithek.h:525 tithek.h:530
-#: tithek.h:533
+#: tithek.h:533 tithek.h:538
 msgid "Start playback"
 msgstr ""
 
@@ -8035,7 +8036,7 @@ msgstr ""
 msgid "Auswahl"
 msgstr ""
 
-#: tithek.h:253 tithek.h:274
+#: tithek.h:253 tithek.h:274 tithek.h:280
 msgid "File exist, overwrite?"
 msgstr ""
 
