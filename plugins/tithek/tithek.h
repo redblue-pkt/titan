@@ -505,8 +505,11 @@ void screentithekplay(char* titheklink, int first)
 		
 		rcret = waitrc(grid, 0, 0);
 
-		if(rcret == getrcconfigint("rcexit", NULL)) break;
-
+		if(rcret == getrcconfigint("rcexit", NULL))
+		{
+			unlink("/tmp/tithek/*");		
+			break;
+		}
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
@@ -532,12 +535,16 @@ void screentithekplay(char* titheklink, int first)
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 4 && status.security == 1)
 				{
-
 					char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-					if(tmpstr != NULL)
+					char* tmpstr1 = NULL;
+					if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, 1);
+					free(tmpstr); tmpstr = NULL;
+						
+					if(tmpstr1 != NULL)
 						if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-							screenplay(getstreamurl(tmpstr, 1), 2, 0);
-						free(tmpstr); tmpstr = NULL;
+							screenplay(tmpstr1, 2, 0);
+					
+					free(tmpstr1); tmpstr1 = NULL;
 				}
 				else
 				{
