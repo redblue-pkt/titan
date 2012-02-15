@@ -446,6 +446,7 @@ void screentithekplay(char* titheklink, int first)
 	
 	if(first == 1)
 	{
+		mkdir("/tmp/tithek", 777);
 		rcret = servicestop(status.aktservice, 1, 1);
 		if(rcret == 1) return;
 	}
@@ -507,7 +508,7 @@ void screentithekplay(char* titheklink, int first)
 
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
-			unlink("/tmp/tithek/*");		
+			delallfiles("/tmp/tithek", NULL);		
 			break;
 		}
 		if(rcret == getrcconfigint("rcred", NULL))
