@@ -186,7 +186,8 @@ msgstr ""
 #: panel_extensions.h:123 tithek.h:253 tithek.h:498 channellist.h:718
 #: skin_default_skin.xml.h:179 global.h:291 global.h:4303 global.h:298
 #: global.h:4310 global.h:174 global.h:4186 tithek.h:503 global.h:175
-#: global.h:4187
+#: global.h:4187 global.h:4233 scan.h:757 scan.h:911 scan.h:983 scan.h:1189
+#: tithek.h:274 tithek.h:525 tithek.h:530
 msgid "EXIT"
 msgstr ""
 
@@ -235,7 +236,8 @@ msgstr ""
 #: adjust.h:129 adjust.h:144 networkbrowser.h:490 networkbrowser.h:494
 #: networkbrowser.h:498 networkbrowser.h:530 scan.h:775 scan.h:1061
 #: scan.h:1065 scan.h:1069 scan.h:1064 scan.h:1068 scan.h:1072 adjust.h:48
-#: adjust.h:71 adjust.h:96 adjust.h:130 adjust.h:145 adjust.h:149
+#: adjust.h:71 adjust.h:96 adjust.h:130 adjust.h:145 adjust.h:149 scan.h:840
+#: scan.h:1129 scan.h:1133 scan.h:1137
 msgid "no"
 msgstr ""
 
@@ -291,7 +293,8 @@ msgstr ""
 #: networkbrowser.h:495 networkbrowser.h:499 networkbrowser.h:503
 #: networkbrowser.h:531 scan.h:776 scan.h:1062 scan.h:1066 scan.h:1070
 #: scan.h:1065 scan.h:1069 scan.h:1073 adjust.h:63 adjust.h:72 adjust.h:97
-#: adjust.h:126 adjust.h:131 adjust.h:146
+#: adjust.h:126 adjust.h:131 adjust.h:146 scan.h:841 scan.h:1130 scan.h:1134
+#: scan.h:1138
 msgid "yes"
 msgstr ""
 
@@ -600,7 +603,9 @@ msgstr ""
 #: scan.h:1121 scan.h:846 scan.h:918 scan.h:1124 timeshift.h:82
 #: panel_extensions.h:67 panel_extensions.h:123 panel_extensions.h:157
 #: tithek.h:253 tithek.h:498 channellist.h:718 global.h:4303 global.h:4310
-#: global.h:4186 tithek.h:503 global.h:4187
+#: global.h:4186 tithek.h:503 global.h:4187 global.h:4233 scan.h:757
+#: scan.h:767 scan.h:911 scan.h:983 scan.h:1189 tithek.h:274 tithek.h:525
+#: tithek.h:530
 msgid "Message"
 msgstr ""
 
@@ -731,7 +736,9 @@ msgstr ""
 #: panel_extensions.h:67 panel_extensions.h:121 panel_extensions.h:123
 #: tithek.h:253 tithek.h:498 channellist.h:718 skin_default_skin.xml.h:273
 #: global.h:291 global.h:4303 global.h:298 global.h:4310 global.h:174
-#: global.h:4186 tithek.h:503 global.h:175 global.h:4187
+#: global.h:4186 tithek.h:503 global.h:175 global.h:4187 global.h:4233
+#: scan.h:757 scan.h:911 scan.h:983 scan.h:1189 tithek.h:274 tithek.h:525
+#: tithek.h:530
 msgid "OK"
 msgstr ""
 
@@ -759,7 +766,7 @@ msgstr ""
 #: global.h:4071 global.h:4073 global.h:4139 global.h:4144 global.h:4143
 #: global.h:4177 global.h:4178 global.h:4155 global.h:4152 global.h:4153
 #: global.h:4168 global.h:4170 global.h:4303 global.h:4310 global.h:4186
-#: global.h:4187
+#: global.h:4187 global.h:4233
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -3249,82 +3256,82 @@ msgstr ""
 msgid "Can't restore settings"
 msgstr ""
 
-#: scan.h:206 scan.h:211 scan.h:212 scan.h:218 scan.h:219
+#: scan.h:206 scan.h:211 scan.h:212 scan.h:218 scan.h:219 scan.h:284
 msgid "TV"
 msgstr ""
 
-#: scan.h:208 scan.h:213 scan.h:214 scan.h:220 scan.h:221
+#: scan.h:208 scan.h:213 scan.h:214 scan.h:220 scan.h:221 scan.h:286
 msgid "Radio"
 msgstr ""
 
-#: scan.h:210 scan.h:215 scan.h:216 scan.h:222 scan.h:223
+#: scan.h:210 scan.h:215 scan.h:216 scan.h:222 scan.h:223 scan.h:288
 msgid "Data"
 msgstr ""
 
 #: scan.h:563 scan.h:574 scan.h:576 scan.h:578 scan.h:610 scan.h:616
-#: scan.h:628
+#: scan.h:628 scan.h:693
 msgid "Sat: "
 msgstr ""
 
 #: scan.h:569 scan.h:580 scan.h:582 scan.h:584 scan.h:616 scan.h:622
-#: scan.h:634
+#: scan.h:634 scan.h:699
 msgid "Transponder: "
 msgstr ""
 
 #: scan.h:577 scan.h:588 scan.h:590 scan.h:592 scan.h:624 scan.h:630
-#: scan.h:642
+#: scan.h:642 scan.h:707
 msgid "TV: "
 msgstr ""
 
 #: scan.h:585 scan.h:596 scan.h:598 scan.h:600 scan.h:632 scan.h:638
-#: scan.h:650
+#: scan.h:650 scan.h:715
 msgid "Radio: "
 msgstr ""
 
 #: scan.h:593 scan.h:604 scan.h:606 scan.h:608 scan.h:640 scan.h:646
-#: scan.h:658
+#: scan.h:658 scan.h:723
 msgid "Data: "
 msgstr ""
 
 #: scan.h:614 scan.h:625 scan.h:627 scan.h:629 scan.h:684 scan.h:690
-#: scan.h:702
+#: scan.h:702 scan.h:767
 msgid "Wait for channel scan end"
 msgstr ""
 
 #: scan.h:768 scan.h:779 scan.h:781 scan.h:783 scan.h:825 scan.h:831
-#: scan.h:843 scan.h:846
+#: scan.h:843 scan.h:846 scan.h:911
 msgid ""
 "Scan is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 
 #: scan.h:840 scan.h:851 scan.h:853 scan.h:855 scan.h:897 scan.h:903
-#: scan.h:915 scan.h:918
+#: scan.h:915 scan.h:918 scan.h:983
 msgid "No Tuner configured"
 msgstr ""
 
 #: scan.h:853 scan.h:864 scan.h:866 scan.h:868 scan.h:910 scan.h:916
-#: scan.h:928 scan.h:931
+#: scan.h:928 scan.h:931 scan.h:996
 msgid "Single Transponder"
 msgstr ""
 
 #: scan.h:854 scan.h:865 scan.h:867 scan.h:869 scan.h:911 scan.h:917
-#: scan.h:929 scan.h:932
+#: scan.h:929 scan.h:932 scan.h:997
 msgid "Single Sat"
 msgstr ""
 
 #: scan.h:855 scan.h:866 scan.h:868 scan.h:870 scan.h:912 scan.h:918
-#: scan.h:930 scan.h:933
+#: scan.h:930 scan.h:933 scan.h:998
 msgid "Multi Sat"
 msgstr ""
 
 #: scan.h:860 scan.h:871 scan.h:873 scan.h:875 scan.h:917 scan.h:923
-#: scan.h:935 scan.h:938
+#: scan.h:935 scan.h:938 scan.h:1003
 msgid "Auto Scan"
 msgstr ""
 
 #: scan.h:1046 scan.h:1057 scan.h:1059 scan.h:1061 scan.h:1103 scan.h:1109
-#: scan.h:1121 scan.h:1124
+#: scan.h:1121 scan.h:1124 scan.h:1189
 msgid "Transponder changed"
 msgstr ""
 
@@ -7347,7 +7354,7 @@ msgstr ""
 msgid "ADD ONE"
 msgstr ""
 
-#: scan.h:674 scan.h:680 scan.h:692
+#: scan.h:674 scan.h:680 scan.h:692 scan.h:757
 msgid "All new channel added!"
 msgstr ""
 
@@ -8003,7 +8010,7 @@ msgid ""
 "Box will start in few seconds."
 msgstr ""
 
-#: tithek.h:468 tithek.h:498 tithek.h:503
+#: tithek.h:468 tithek.h:498 tithek.h:503 tithek.h:525 tithek.h:530
 msgid "Start playback"
 msgstr ""
 
@@ -8027,7 +8034,7 @@ msgstr ""
 msgid "Auswahl"
 msgstr ""
 
-#: tithek.h:253
+#: tithek.h:253 tithek.h:274
 msgid "File exist, overwrite?"
 msgstr ""
 
