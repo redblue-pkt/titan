@@ -768,21 +768,21 @@ void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int
 
 	if(flag >= 0 && flag < 7)
 	{
-		fesetvoltage(node, SEC_VOLTAGE_18, 15);
+		//fesetvoltage(node, SEC_VOLTAGE_18, 15);
 		fesettone(node, SEC_TONE_OFF, 15);
 		fediseqcsendmastercmd(node, &cmd, 100);
 	}
 
 	if((flag == 7 || flag == 9 || flag == 10) && pos != 0)
 	{
-		fesetvoltage(node, SEC_VOLTAGE_18, 15);
+		//fesetvoltage(node, SEC_VOLTAGE_18, 15);
 		fesettone(node, SEC_TONE_OFF, 15);
 		fediseqcsendmastercmd(node, &cmd, 100);
 	}
 
 	if((flag == 8 || flag == 11) && (orbitalpos == 0 || status.rotoroldorbitalpos == 0 || orbitalpos != status.rotoroldorbitalpos))
 	{
-		fesetvoltage(node, SEC_VOLTAGE_18, 15);
+		//fesetvoltage(node, SEC_VOLTAGE_18, 15);
 		fesettone(node, SEC_TONE_OFF, 15);
 		fediseqcsendmastercmd(node, &cmd, 100);
 
@@ -798,7 +798,7 @@ void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int
 		sleep(waittime);
 	}
 	
-	fesetvoltage(node, oldvolt, 15);
+	//fesetvoltage(node, oldvolt, 15);
 	fesettone(node, oldtone, 15);
 	
 	debug(1000, "out");
