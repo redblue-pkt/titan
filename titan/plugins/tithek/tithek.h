@@ -446,7 +446,6 @@ void screentithekplay(char* titheklink, int first)
 	
 	if(first == 1)
 	{
-		mkdir("/tmp/tithek", 777);
 		rcret = servicestop(status.aktservice, 1, 1);
 		if(rcret == 1) return;
 	}
@@ -506,11 +505,8 @@ void screentithekplay(char* titheklink, int first)
 		
 		rcret = waitrc(grid, 0, 0);
 
-		if(rcret == getrcconfigint("rcexit", NULL))
-		{
-			delallfiles("/tmp/tithek", NULL);		
-			break;
-		}
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
@@ -544,7 +540,9 @@ void screentithekplay(char* titheklink, int first)
 					if(tmpstr1 != NULL)
 						if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 							screenplay(tmpstr1, 2, 0);
-					
+					else
+						textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0)
+												
 					free(tmpstr1); tmpstr1 = NULL;
 				}
 				else
