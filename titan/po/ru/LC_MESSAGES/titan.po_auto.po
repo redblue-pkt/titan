@@ -191,7 +191,7 @@ msgstr ""
 #: tithek.h:274 tithek.h:525 tithek.h:530 tithek.h:533 tithek.h:280
 #: tithek.h:538 skin_default_skin.xml.h:180 tithek.h:534 tithek.h:545
 #: tithek.h:541 tithek.h:544 tithek.h:542 tithek.h:546 mc_videoplayer.h:373
-#: mc_videoplayer.h:458
+#: mc_videoplayer.h:458 tithek.h:298 tithek.h:464 tithek.h:476 tithek.h:480
 msgid "EXIT"
 msgstr ""
 
@@ -611,7 +611,8 @@ msgstr ""
 #: scan.h:767 scan.h:911 scan.h:983 scan.h:1189 tithek.h:274 tithek.h:525
 #: tithek.h:530 tithek.h:533 tithek.h:280 tithek.h:538 tithek.h:534
 #: tithek.h:545 tithek.h:541 tithek.h:544 tithek.h:542 tithek.h:546
-#: mc_videoplayer.h:373 mc_videoplayer.h:458
+#: mc_videoplayer.h:373 mc_videoplayer.h:458 tithek.h:298 tithek.h:464
+#: tithek.h:476 tithek.h:480
 msgid "Message"
 msgstr ""
 
@@ -747,7 +748,7 @@ msgstr ""
 #: tithek.h:530 tithek.h:533 tithek.h:280 tithek.h:538
 #: skin_default_skin.xml.h:274 tithek.h:534 tithek.h:545 tithek.h:541
 #: tithek.h:544 tithek.h:542 tithek.h:546 mc_videoplayer.h:373
-#: mc_videoplayer.h:458
+#: mc_videoplayer.h:458 tithek.h:298 tithek.h:464 tithek.h:476 tithek.h:480
 msgid "OK"
 msgstr ""
 
@@ -8203,7 +8204,7 @@ msgstr ""
 
 #: tithek.h:468 tithek.h:498 tithek.h:503 tithek.h:525 tithek.h:530
 #: tithek.h:533 tithek.h:538 tithek.h:534 tithek.h:545 tithek.h:541
-#: tithek.h:542
+#: tithek.h:542 tithek.h:464 tithek.h:476
 msgid "Start playback"
 msgstr ""
 
@@ -8227,7 +8228,7 @@ msgstr ""
 msgid "Auswahl"
 msgstr ""
 
-#: tithek.h:253 tithek.h:274 tithek.h:280
+#: tithek.h:253 tithek.h:274 tithek.h:280 tithek.h:298
 msgid "File exist, overwrite?"
 msgstr ""
 
@@ -8257,6 +8258,6 @@ msgid ""
 "you are searching."
 msgstr ""
 
-#: tithek.h:544 tithek.h:546
+#: tithek.h:544 tithek.h:546 tithek.h:480
 msgid "Can't get Streamurl !"
 msgstr ""
