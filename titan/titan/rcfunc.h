@@ -722,9 +722,9 @@ void gridleft(struct skin* screen, struct skin* grid, int flag)
 	debug(1000, "in");
 	struct skin* node = NULL;
 
-	node = grid->select;
 	if(grid != NULL)
 	{
+		node = grid->select;
 		if(node != NULL && (node->type == GRIDBR || node->type == TEXTBOXGRIDBR))
 		{
 			grid->aktpage = -1;
@@ -760,9 +760,9 @@ void gridright(struct skin* screen, struct skin* grid, int flag)
 	debug(1000, "in");
 	struct skin* node = NULL;
 
-	node = grid->select;
 	if(grid != NULL)
 	{
+		node = grid->select;
 		if((node != NULL && node->next != NULL && (node->next->type == GRIDBR || node->next->type == TEXTBOXGRIDBR)) || grid->aktline == grid->linecount)
 		{
 			grid->aktpage = -1;

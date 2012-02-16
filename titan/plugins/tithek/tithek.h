@@ -394,6 +394,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
 	listbox->gridcol = 0;
+	listbox->select = NULL;
 
 	if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) return;
 				
