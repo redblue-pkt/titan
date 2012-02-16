@@ -190,7 +190,8 @@ msgstr ""
 #: global.h:4187 global.h:4233 scan.h:757 scan.h:911 scan.h:983 scan.h:1189
 #: tithek.h:274 tithek.h:525 tithek.h:530 tithek.h:533 tithek.h:280
 #: tithek.h:538 skin_default_skin.xml.h:180 tithek.h:534 tithek.h:545
-#: tithek.h:541 tithek.h:544 tithek.h:542 tithek.h:546
+#: tithek.h:541 tithek.h:544 tithek.h:542 tithek.h:546 mc_videoplayer.h:373
+#: mc_videoplayer.h:458
 msgid "EXIT"
 msgstr ""
 
@@ -610,6 +611,7 @@ msgstr ""
 #: scan.h:767 scan.h:911 scan.h:983 scan.h:1189 tithek.h:274 tithek.h:525
 #: tithek.h:530 tithek.h:533 tithek.h:280 tithek.h:538 tithek.h:534
 #: tithek.h:545 tithek.h:541 tithek.h:544 tithek.h:542 tithek.h:546
+#: mc_videoplayer.h:373 mc_videoplayer.h:458
 msgid "Message"
 msgstr ""
 
@@ -744,7 +746,8 @@ msgstr ""
 #: scan.h:757 scan.h:911 scan.h:983 scan.h:1189 tithek.h:274 tithek.h:525
 #: tithek.h:530 tithek.h:533 tithek.h:280 tithek.h:538
 #: skin_default_skin.xml.h:274 tithek.h:534 tithek.h:545 tithek.h:541
-#: tithek.h:544 tithek.h:542 tithek.h:546
+#: tithek.h:544 tithek.h:542 tithek.h:546 mc_videoplayer.h:373
+#: mc_videoplayer.h:458
 msgid "OK"
 msgstr ""
 
@@ -1375,7 +1378,7 @@ msgstr ""
 #: mc_videoplayer.h:299 mc_videoplayer.h:418 plugins_mc_skin.xml.h:21
 #: skins_mc_skin.xml.h:21 mc_global.h:142 mc_global.h:198 mc_global.h:147
 #: mc_global.h:219 mc_videoplayer.h:427 mc_audioplayer.h:250
-#: mc_audioplayer.h:281 mc_audioplayer.h:387
+#: mc_audioplayer.h:281 mc_audioplayer.h:387 mc_videoplayer.h:432
 msgid "Filelist-Mode"
 msgstr ""
 
@@ -1395,6 +1398,7 @@ msgstr ""
 #: mc_global.h:477 mc_global.h:679 mc_global.h:693 mc_global.h:683
 #: mc_global.h:697 mc_global.h:682 mc_global.h:696 mc_global.h:498
 #: mc_global.h:719 mc_global.h:733 mc_videoplayer.h:333 mc_audioplayer.h:300
+#: mc_videoplayer.h:338
 msgid "Playlist-Mode"
 msgstr ""
 
@@ -1410,7 +1414,7 @@ msgstr ""
 #: mc_global.h:736 mc_global.h:503 mc_global.h:735 play.h:510 mc_global.h:560
 #: mc_global.h:793 mc_videoplayer.h:368 mc_videoplayer.h:453 play.h:612
 #: play.h:608 mc_audioplayer.h:319 mc_audioplayer.h:408 play.h:654 play.h:659
-#: play.h:662 play.h:663 play.h:669
+#: play.h:662 play.h:663 play.h:669 mc_videoplayer.h:373 mc_videoplayer.h:458
 msgid "Can't start playback !"
 msgstr ""
 
