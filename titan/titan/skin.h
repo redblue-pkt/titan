@@ -1058,6 +1058,7 @@ void delmarkedscreennodes(struct skin* node, int mark)
 {
 	debug(1000, "in");
 	struct skin *prev = NULL, *screen = node;
+	struct skin* sel = NULL, *tmp = NULL;
 
 	if(node != NULL)
 	{
@@ -1067,6 +1068,12 @@ void delmarkedscreennodes(struct skin* node, int mark)
 
 	while(node != NULL)
 	{
+		if(node->select != NULL)
+		{
+			tmp = node->select;
+			sel = node;
+		}
+
 		if(node->del == mark)
                 {
 			if(node == screen->child)
@@ -1077,17 +1084,35 @@ void delmarkedscreennodes(struct skin* node, int mark)
 				if(screen->child != NULL)
 					screen->child->prev = NULL;
 
+				if(node == tmp)
+				{
+					sel->select = NULL;
+					tmp = NULL;
+					sel = NULL;
+				}
+
 				freenodecontent(node);
+
 				free(node);
 				node = prev;
 				continue;
 			}
 			else
-                        {
-                                prev->next = node->next;
+			{
+				prev->next = node->next;
 
-                                if(prev->next != NULL)
-                                        prev->next->prev = prev;
+				if(prev->next != NULL)
+					prev->next->prev = prev;
+
+				if(node == tmp)
+				{
+					sel->select = NULL;
+					tmp = NULL;
+					sel = NULL;
+				}
+
+				freenodecontent(node);
+
 
 				freenodecontent(node);
 				free(node);
