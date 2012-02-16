@@ -311,6 +311,11 @@ void screenmc_videoplayer()
 		}
 		else if(rcret == getrcconfigint("rcok", NULL))
 		{
+			if(getconfigint("playertype", NULL) == 1 && cmpfilenameext(filename, ".ts") == 0)
+				playertype = 1;
+			else
+				playertype = 0;
+
 			if((status.play == 1) || (status.playspeed != 0))
 			{
 				playrcok(filename, playinfobarstatus, playertype, flag);
