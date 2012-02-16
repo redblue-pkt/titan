@@ -111,7 +111,7 @@ start:
 	while(1)
 	{
 		status.epgchannel = chnode;
-		status.screencalc = 1;
+		status.screencalc = 2;
 		rcret = waitrc(singleepg, 0, 0);
 		status.screencalc = 0;
 		if((rcret == getrcconfigint("rcexit", NULL)) || (rcret == getrcconfigint("rcepg", NULL))) break;
