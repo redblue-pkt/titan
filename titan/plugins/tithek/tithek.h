@@ -8,8 +8,9 @@ struct tithek
 	char* title;
 	char* link;
 	char* pic;
-	int flag;
 	char* localname;
+	char* menutitle;	
+	int flag;
 	struct tithek* prev;
 	struct tithek* next;
 };
@@ -19,7 +20,7 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 {
 	//debug(1000, "in");
 	struct tithek *newnode = NULL, *prev = NULL, *node = tithek;
-	char *link = NULL, *pic = NULL, *title = NULL, *localname = NULL;
+	char *link = NULL, *pic = NULL, *title = NULL, *localname = NULL, *menutitle = NULL;
 	int ret = 0;
 
 	if(line == NULL) return NULL;
@@ -69,10 +70,22 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 		return NULL;
 	}
 
+	menutitle = malloc(MINMALLOC);
+	if(menutitle == NULL)
+	{
+		err("no memory");
+		free(newnode);
+		free(link);
+		free(pic);
+		free(title);
+		free(localname);		
+		return NULL;
+	}
+
 	memset(newnode, 0, sizeof(struct tithek));
 
-	ret = sscanf(line, "%[^#]#%[^#]#%[^#]#%d#%[^#]", title, link, pic, &newnode->flag, localname);
-	if(ret != 5)
+	ret = sscanf(line, "%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%d", title, link, pic, localname, menutitle, &newnode->flag);
+	if(ret != 6)
 	{
 		if(count > 0)
 		{
@@ -86,6 +99,7 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 		free(pic);
 		free(title);
 		free(localname);
+		free(menutitle);
 		free(newnode);
 		return NULL;
 	}
@@ -94,6 +108,7 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 	newnode->pic = ostrcat(pic, "", 1, 0);
 	newnode->title = ostrcat(title, "", 1, 0);
 	newnode->localname = ostrcat(localname, "", 1, 0);
+	newnode->menutitle = ostrcat(menutitle, "", 1, 0);
 
 	if(last == NULL)
 	{
@@ -203,6 +218,9 @@ int deltithek(char* link)
 			free(node->localname);
 			node->localname = NULL;
 
+			free(node->menutitle);
+			node->menutitle = NULL;
+
 			free(node);
 			node = NULL;
 
@@ -289,94 +307,6 @@ char* tithekdownload(char* link, char* localname, int flag)
 	return localfile;
 }
 
-int createtithekmenu(char* titheklink, struct skin* menu, struct skin* listbox)
-{
-	struct skin* tmp = NULL;
-	char* tithekfile = NULL;
-	char* tithekpic = NULL;
-
-	tithekfile = tithekdownload(titheklink, NULL, 0);
-
-	delmarkedscreennodes(menu, 1);
-	freetithek();
-	if(readtithek(tithekfile) != 0) return 1;
-
-	struct tithek* titheknode = tithek;
-
-	while(titheknode != NULL)
-	{
-		tmp = addlistbox(menu, listbox, tmp, 1);
-		if(tmp != NULL)
-		{
-			tmp->type = MENU;
-			tmp->textposx = 200;
-			tmp->valign = MIDDLE;
-			changetext(tmp, titheknode->title);
-			tmp->height = 200;
-			tmp->hspace = 5;
-			tithekpic = tithekdownload(titheknode->pic, titheknode->localname, 0);
-			changepic(tmp, tithekpic);
-			free(tithekpic); tithekpic = NULL;
-			tmp->handle = (char*)titheknode;
-		}
-		titheknode = titheknode->next;
-	}
-
-	free(tithekfile); tithekfile = NULL;
-	return 0;
-}
-
-void screentithekmenu(char* titheklink)
-{
-	int rcret = -1, oaktline = 1, oaktpage = -1;
-
-	struct skin* menu = getscreen("tithekmenu");
-	struct skin* listbox = getscreennode(menu, "listbox");
-
-	if(titheklink == NULL) return;
-
-	listbox->aktpage = -1;
-	listbox->aktline = 1;
-
-	if(createtithekmenu(titheklink, menu, listbox) != 0) return;
-	drawscreen(menu, 0);
-	addscreenrc(menu, listbox);
-
-	while(1)
-	{
-		rcret = waitrc(menu, 0, 0);
-
-		if(rcret == getrcconfigint("rcexit", NULL)) break;
-
-		if(rcret == getrcconfigint("rcok", NULL))
-		{
-			if(listbox->select != NULL && listbox->select->handle != NULL)
-			{
-				oaktpage = listbox->aktpage;
-				oaktline = listbox->aktline;
-				clearscreen(menu);
-				char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-				if(((struct tithek*)listbox->select->handle)->flag == 1) 
-					screentithekplay(tmpstr, 0); 
-				else 
-					screentithekmenu(tmpstr);
-
-				free(tmpstr); tmpstr = NULL;
-				if(createtithekmenu(titheklink, menu, listbox) != 0) break;
-				listbox->aktpage = oaktpage;
-				listbox->aktline = oaktline;
-				drawscreen(menu, 0);
-				addscreenrc(menu, listbox);
-			}
-		}
-	}
-
-	freetithek();
-	delmarkedscreennodes(menu, 1);
-	delownerrc(menu);
-	clearscreen(menu);
-}
-
 int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, struct skin* countlabel)
 {
 	int gridbr = 0, posx = 0, count = 0, sumcount = 0;
@@ -407,9 +337,6 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 				//tmp->type = TEXTBOX;
 			gridbr = 1;
 			tmp->wrap = YES;
-			
-//			tmp->picheight = 260;
-//			tmp->picwidth = 346;
 
 			tmp->picheight = 230;
 			tmp->picwidth = 370;
@@ -446,7 +373,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	return 0;
 }
 
-void screentithekplay(char* titheklink, int first)
+void screentithekplay(char* titheklink, char* title, int first)
 {
 	int rcret = -1, oaktline = 1, oaktpage = -1, ogridcol = 0;
 	
@@ -463,18 +390,19 @@ void screentithekplay(char* titheklink, int first)
 	char* tithekpic = NULL;
 	
 	if(titheklink == NULL) return;
-
+	
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
 	listbox->gridcol = 0;
 
 	if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) return;
-
+				
 	drawscreen(grid, 0);
 	addscreenrc(grid, listbox);
-
+				
 	while(1)
 	{
+		changetitle(grid, _(title));
 		if(listbox->select != NULL && listbox->select->handle != NULL)
 		{
 			tmp = listbox->select;
@@ -559,16 +487,19 @@ void screentithekplay(char* titheklink, int first)
 					oaktline = listbox->aktline;
 					ogridcol = listbox->gridcol;
 					char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-					screentithekplay(tmpstr, 0);
+					char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);					
+					char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
+					screentithekplay(tmpstr, tmpstr2, 0);
 					free(tmpstr); tmpstr = NULL;
+					free(tmpstr2); tmpstr2 = NULL;					
 					if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
 					listbox->aktpage = oaktpage;
 					listbox->aktline = oaktline;
 					listbox->gridcol = ogridcol;
 					addscreenrc(grid, listbox);
 				}
-				drawscreen(grid, 0);
-			}
+				drawscreen(grid, 0);			
+			}			
 		}
 	}
 
