@@ -11,7 +11,7 @@ void possearch(struct skin* possetup, struct dvbdev* dvbnode, int dir)
 		rcret = waitrc(possetup, 500, 0);
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
-			fediseqcrotor(dvbnode, 0, 1, 0);
+			fediseqcrotor(dvbnode, NULL, 0, 0);
 			break;
 		}
 
@@ -21,6 +21,7 @@ void possearch(struct skin* possetup, struct dvbdev* dvbnode, int dir)
 			fediseqcrotor(dvbnode, NULL, 1, 9);
 
 		usleep(300000);
+		drawscreen(possetup, 0);
 		snr = fereadsnr(status.aktservice->fedev);
 		snr = (snr * 100) / 0xffff;
 		if(snr > 50) break;
@@ -135,7 +136,7 @@ void screenpossetup()
 
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
-			fediseqcrotor(dvbnode, 0, 1, 0);
+			fediseqcrotor(dvbnode, NULL, 0, 0);
 			break;
 		}
 		if(rcret == getrcconfigint("rcok", NULL))
@@ -145,7 +146,10 @@ void screenpossetup()
 			if(rcret == getrcconfigint("rcred", NULL))
 			{
 				if(ostrcmp(listbox->select->name, "move") == 0)
+				{
 					fediseqcrotor(dvbnode, NULL, 0, 6);
+					fediseqcrotor(dvbnode, NULL, 0, 0);
+				}
 				if(ostrcmp(listbox->select->name, "limit") == 0)
 					fediseqcrotor(dvbnode, NULL, 0, 1);
 				if(ostrcmp(listbox->select->name, "goto0") == 0)
@@ -188,7 +192,10 @@ void screenpossetup()
 			if(rcret == getrcconfigint("rcblue", NULL))
 			{
 				if(ostrcmp(listbox->select->name, "move") == 0)
+				{
 					fediseqcrotor(dvbnode, NULL, 0, 5);
+					fediseqcrotor(dvbnode, NULL, 0, 0);
+				}
 				if(ostrcmp(listbox->select->name, "limit") == 0)
 					fediseqcrotor(dvbnode, NULL, 0, 2);
 			}
