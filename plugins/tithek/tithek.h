@@ -483,20 +483,26 @@ void screentithekplay(char* titheklink, char* title, int first)
 				}
 				else
 				{
-					oaktpage = listbox->aktpage;
-					oaktline = listbox->aktline;
-					ogridcol = listbox->gridcol;
-					char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-					char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);					
-					char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-					screentithekplay(tmpstr, tmpstr2, 0);
-					free(tmpstr); tmpstr = NULL;
-					free(tmpstr2); tmpstr2 = NULL;					
-					if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
-					listbox->aktpage = oaktpage;
-					listbox->aktline = oaktline;
-					listbox->gridcol = ogridcol;
-					addscreenrc(grid, listbox);
+					int pincheck = 0;
+					if(((struct tithek*)listbox->select->handle)->flag == 1000)
+						pincheck = screenpincheck(0, NULL);
+					if(pincheck == 0)
+					{
+						oaktpage = listbox->aktpage;
+						oaktline = listbox->aktline;
+						ogridcol = listbox->gridcol;
+						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);					
+						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
+						screentithekplay(tmpstr, tmpstr2, 0);
+						free(tmpstr); tmpstr = NULL;
+						free(tmpstr2); tmpstr2 = NULL;					
+						if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
+						listbox->aktpage = oaktpage;
+						listbox->aktline = oaktline;
+						listbox->gridcol = ogridcol;
+						addscreenrc(grid, listbox);
+					}
 				}
 				drawscreen(grid, 0);			
 			}			
