@@ -408,13 +408,19 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 			gridbr = 1;
 			tmp->wrap = YES;
 			
+//			tmp->picheight = 260;
+//			tmp->picwidth = 346;
+
+			tmp->picheight = 230;
+			tmp->picwidth = 370;
+
 			tmp->height = 280;
 			tmp->width = 390;
 			tmp->prozwidth = 0;
 			//tmp->bgcol = 0xffffff;
 			tmp->bgspace = 1;
-			tmp->vspace = 40;
-			tmp->hspace = 2;
+			tmp->vspace = 10;
+			tmp->hspace = 10;
 			tmp->posx = posx;
 			//tmp->fontcol = 0x0000ff;
 			tmp->halign = CENTER;
