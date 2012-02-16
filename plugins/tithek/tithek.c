@@ -40,5 +40,5 @@ void start(void)
 	//screentithekmenu("http://atemio.dyndns.tv/mediathek/mainmenu.list");
 	
 	//with grid menu
-	screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.list", 1);
+	screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.list", "Tithek - Mainmenu", 1);
 }
