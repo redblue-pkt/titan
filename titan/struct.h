@@ -74,7 +74,7 @@
 #include <gst/pbutils/missing-plugins.h>
 #endif
 
-#define VERSION "1.10"
+#define VERSION "1.11"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
 #define CRONTRIBUT "obi, black, dvboxer, oxygen, gost"
