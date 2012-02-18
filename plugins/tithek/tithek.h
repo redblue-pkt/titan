@@ -460,10 +460,15 @@ void screentithekplay(char* titheklink, char* title, int first)
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
 				clearscreen(grid);
-				if(((struct tithek*)listbox->select->handle)->flag == 2 && status.security == 1)
+				if(((struct tithek*)listbox->select->handle)->flag == 2)
 				{
-					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-						screenplay((((struct tithek*)listbox->select->handle)->link), 2, 0);
+					if(status.security == 1)
+					{
+						if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+							screenplay((((struct tithek*)listbox->select->handle)->link), 2, 0);				
+					}
+					else
+						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 4 && status.security == 1)
 				{
@@ -474,8 +479,13 @@ void screentithekplay(char* titheklink, char* title, int first)
 						
 					if(tmpstr1 != NULL)
 					{
-						if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-							screenplay(tmpstr1, 2, 0);
+						if(status.security == 1)
+						{
+							if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+								screenplay((((struct tithek*)listbox->select->handle)->link), 2, 0);				
+						}
+						else
+							textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 					}
 					else
 						textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
