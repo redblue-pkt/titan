@@ -192,7 +192,8 @@ msgstr ""
 #: tithek.h:538 skin_default_skin.xml.h:180 tithek.h:534 tithek.h:545
 #: tithek.h:541 tithek.h:544 tithek.h:542 tithek.h:546 mc_videoplayer.h:373
 #: mc_videoplayer.h:458 tithek.h:298 tithek.h:464 tithek.h:476 tithek.h:480
-#: tithek.h:465 tithek.h:477 tithek.h:481
+#: tithek.h:465 tithek.h:477 tithek.h:481 mc_global.h:582 mc_global.h:826
+#: mc_pictureplayer.h:381 mc_videoplayer.h:388 mc_videoplayer.h:487
 msgid "EXIT"
 msgstr ""
 
@@ -614,6 +615,8 @@ msgstr ""
 #: tithek.h:545 tithek.h:541 tithek.h:544 tithek.h:542 tithek.h:546
 #: mc_videoplayer.h:373 mc_videoplayer.h:458 tithek.h:298 tithek.h:464
 #: tithek.h:476 tithek.h:480 tithek.h:465 tithek.h:477 tithek.h:481
+#: mc_global.h:582 mc_global.h:826 mc_pictureplayer.h:381 mc_videoplayer.h:388
+#: mc_videoplayer.h:487
 msgid "Message"
 msgstr ""
 
@@ -750,7 +753,8 @@ msgstr ""
 #: skin_default_skin.xml.h:274 tithek.h:534 tithek.h:545 tithek.h:541
 #: tithek.h:544 tithek.h:542 tithek.h:546 mc_videoplayer.h:373
 #: mc_videoplayer.h:458 tithek.h:298 tithek.h:464 tithek.h:476 tithek.h:480
-#: tithek.h:465 tithek.h:477 tithek.h:481
+#: tithek.h:465 tithek.h:477 tithek.h:481 mc_global.h:582 mc_global.h:826
+#: mc_pictureplayer.h:381 mc_videoplayer.h:388 mc_videoplayer.h:487
 msgid "OK"
 msgstr ""
 
@@ -1356,7 +1360,7 @@ msgstr ""
 
 #: mc_audioplayer.h:174 mc_pictureplayer.h:117 mc_videoplayer.h:167
 #: mc_audioplayer.h:177 mc_videoplayer.h:170 mc_audioplayer.h:178
-#: mc_videoplayer.h:171
+#: mc_videoplayer.h:171 mc_videoplayer.h:175
 msgid "Repeat-On"
 msgstr ""
 
@@ -1366,7 +1370,7 @@ msgstr ""
 #: mc_audioplayer.h:278 mc_videoplayer.h:177 mc_videoplayer.h:300
 #: mc_audioplayer.h:185 mc_audioplayer.h:279 mc_videoplayer.h:178
 #: mc_videoplayer.h:301 plugins_mc_skin.xml.h:35 skins_mc_skin.xml.h:35
-#: mc_audioplayer.h:283
+#: mc_audioplayer.h:283 mc_videoplayer.h:182 mc_videoplayer.h:311
 msgid "Repeat"
 msgstr ""
 
@@ -1382,6 +1386,8 @@ msgstr ""
 #: skins_mc_skin.xml.h:21 mc_global.h:142 mc_global.h:198 mc_global.h:147
 #: mc_global.h:219 mc_videoplayer.h:427 mc_audioplayer.h:250
 #: mc_audioplayer.h:281 mc_audioplayer.h:387 mc_videoplayer.h:432
+#: mc_global.h:146 mc_global.h:218 mc_videoplayer.h:266 mc_videoplayer.h:309
+#: mc_videoplayer.h:455
 msgid "Filelist-Mode"
 msgstr ""
 
@@ -1390,7 +1396,7 @@ msgstr ""
 #: mc_audioplayer.h:277 mc_videoplayer.h:299 mc_audioplayer.h:278
 #: mc_videoplayer.h:300 plugins_mc_skin.xml.h:34 skins_mc_skin.xml.h:34
 #: mc_global.h:334 mc_global.h:362 mc_global.h:355 mc_global.h:383
-#: mc_audioplayer.h:282
+#: mc_audioplayer.h:282 mc_global.h:366 mc_global.h:394 mc_videoplayer.h:310
 msgid "Random"
 msgstr ""
 
@@ -1401,7 +1407,8 @@ msgstr ""
 #: mc_global.h:477 mc_global.h:679 mc_global.h:693 mc_global.h:683
 #: mc_global.h:697 mc_global.h:682 mc_global.h:696 mc_global.h:498
 #: mc_global.h:719 mc_global.h:733 mc_videoplayer.h:333 mc_audioplayer.h:300
-#: mc_videoplayer.h:338
+#: mc_videoplayer.h:338 mc_global.h:509 mc_global.h:741 mc_global.h:755
+#: mc_videoplayer.h:348
 msgid "Playlist-Mode"
 msgstr ""
 
@@ -1418,6 +1425,8 @@ msgstr ""
 #: mc_global.h:793 mc_videoplayer.h:368 mc_videoplayer.h:453 play.h:612
 #: play.h:608 mc_audioplayer.h:319 mc_audioplayer.h:408 play.h:654 play.h:659
 #: play.h:662 play.h:663 play.h:669 mc_videoplayer.h:373 mc_videoplayer.h:458
+#: mc_global.h:582 mc_global.h:826 mc_pictureplayer.h:381 mc_videoplayer.h:388
+#: mc_videoplayer.h:487
 msgid "Can't start playback !"
 msgstr ""
 
@@ -1471,7 +1480,7 @@ msgid "fast"
 msgstr ""
 
 #: mc_global.h:322 mc_global.h:350 mc_global.h:323 mc_global.h:351
-#: mc_global.h:344 mc_global.h:372
+#: mc_global.h:344 mc_global.h:372 mc_global.h:355 mc_global.h:383
 msgid "Random-On"
 msgstr ""
 
