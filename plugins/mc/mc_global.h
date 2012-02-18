@@ -900,6 +900,6 @@ void picplayer(struct skin* picscreen, struct skin* picture, struct skin* picnam
 //	picture->picwidth = 720;
 //	picture->picheight = 576;
 
-	drawscreen(picscreen, 0);
+	drawscreen(picscreen, 4);
 }
 #endif
