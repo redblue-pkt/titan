@@ -40,21 +40,25 @@ int checkflash()
 	char* dev = NULL;
 	char* dir = NULL;
 	
-	if((checkbox("UFS910") == 0) || (checkbox("UFS922") == 0) || (checkbox("AT700") == 0) || (checkbox("AT7000") == 0) || (checkbox("ATEMIO500") == 0))
+	if((checkbox("UFS910") == 1) || (checkbox("UFS922") == 1) || (checkbox("AT700") == 1) || (checkbox("AT7000") == 1) || (checkbox("ATEMIO500") == 1))
 	{
 		dev = ostrcat(dev, "3", 1, 0);
 		dir = ostrcat(dir, "var", 1, 0);		
 	}
-	else if((checkbox("ATEMIO500") == 0) || (checkbox("ATEMIO510") == 0) || (checkbox("IPBOX91") == 0) || (checkbox("IPBOX900") == 0) || (checkbox("IPBOX910") == 0) || (checkbox("IPBOX9000") == 0))
+	else if((checkbox("ATEMIO500") == 1) || (checkbox("ATEMIO510") == 1) || (checkbox("IPBOX91") == 1) || (checkbox("IPBOX900") == 1) || (checkbox("IPBOX910") == 1) || (checkbox("IPBOX9000") == 1))
 	{
 		dev = ostrcat(dev, "4", 1, 0);
 		dir = ostrcat(dir, "var", 1, 0);
 	}
-	else if(checkbox("SKYSAT") == 0)
+	else if(checkbox("SKYSAT") == 1)
 	{
 		dev = ostrcat(dev, "2", 1, 0);
 		dir = ostrcat(dir, "boot", 1, 0);
 	}
+	else
+		dev = ostrcat(dev, "9", 1, 0);
+		dir = ostrcat(dir, "var", 1, 0);
+	}	
 						
 	cmd = ostrcat(cmd, "mount", 1, 0);
 	cmd = ostrcat(cmd, " | ", 1, 0);
@@ -90,12 +94,6 @@ int checkflash()
 void checkserial(char* input)
 {
 	if(input == NULL) return;
-	if(checkbox("ATEMIO510") == 0)
-	{
-		status.security = 0;
-		status.expertmodus = 0;
-		return;
-	}
 	
 	char* authfile = NULL;
 	authfile = gethttp("atemio.dyndns.tv", "/svn/auth/trustlist", 80, NULL, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", NULL, 0);
@@ -222,7 +220,15 @@ void getserial()
 char* getcpuid()
 {
 	char* serial = NULL;
-	char *buffer = NULL;
+
+	if(checkbox("ATEMIO510") == 0)
+	{
+		status.security = 0;
+		status.expertmodus = 0;
+		return serial;
+	}
+
+	char* buffer = NULL;
 	struct inetwork* net = getinetworkbydevice("eth0");
 
 	if(net != NULL)
