@@ -90,7 +90,7 @@ int checkflash()
 void checkserial(char* input)
 {
 	if(input == NULL) return;
-	if((checkbox("ATEMIO500") == 0) && (checkbox("ATEMIO510") == 0))
+	if(checkbox("ATEMIO510") == 0)
 	{
 		status.security = 0;
 		status.expertmodus = 0;
@@ -159,7 +159,7 @@ void checkserial(char* input)
 
 void getserial()
 {
-	if((checkbox("ATEMIO500") == 0) && (checkbox("ATEMIO510") == 0))
+	if(checkbox("ATEMIO510") == 0)
 	{
 		status.security = 0;
 		status.expertmodus = 0;
