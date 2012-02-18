@@ -16,6 +16,8 @@ struct stimerthread* StopIfNotUsed = NULL;
 void StopIfNotUsed_thread()
 {
 	int tostop = 0;
+	sleep(30);
+	status.lastrcaction = time(NULL);
 	while (StopIfNotUsed->aktion != STOP)
 	{
 		if(status.standby != 1)
