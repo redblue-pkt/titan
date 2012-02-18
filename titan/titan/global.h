@@ -61,9 +61,10 @@ int checkflash()
 		dir = ostrcat(dir, "boot", 1, 0);
 	}
 	else
+	{
 		dev = ostrcat(dev, "9", 1, 0);
 		dir = ostrcat(dir, "var", 1, 0);
-	}	
+	}
 						
 	cmd = ostrcat(cmd, "mount", 1, 0);
 	cmd = ostrcat(cmd, " | ", 1, 0);
