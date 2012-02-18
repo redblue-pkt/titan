@@ -37,15 +37,35 @@ int checkflash()
 {
 	char* tmpstr = NULL;
 	char* cmd = NULL;
+	char* dev = NULL;
+	char* dir = NULL;
+	
+	if((checkbox("UFS910") == 0) || (checkbox("UFS922") == 0) || (checkbox("AT700") == 0) || (checkbox("AT7000") == 0) || (checkbox("ATEMIO500") == 0))
+	{
+		dev = ostrcat(dev, "3", 1, 0);
+		dir = ostrcat(dir, "var", 1, 0);		
+	}
+	else if((checkbox("ATEMIO500") == 0) || (checkbox("ATEMIO510") == 0) || (checkbox("IPBOX91") == 0) || (checkbox("IPBOX900") == 0) || (checkbox("IPBOX910") == 0) || (checkbox("IPBOX9000") == 0))
+	{
+		dev = ostrcat(dev, "4", 1, 0);
+		dir = ostrcat(dir, "var", 1, 0);
+	}
+	else if(checkbox("SKYSAT") == 0)
+	{
+		dev = ostrcat(dev, "2", 1, 0);
+		dir = ostrcat(dir, "boot", 1, 0);
+	}
+						
 	cmd = ostrcat(cmd, "mount", 1, 0);
 	cmd = ostrcat(cmd, " | ", 1, 0);
 	cmd = ostrcat(cmd, "grep", 1, 0);
 	cmd = ostrcat(cmd, " /dev/", 1, 0);
-	cmd = ostrcat(cmd, "mtdblock3", 1, 0);
+	cmd = ostrcat(cmd, "mtdblock", 1, 0);
+	cmd = ostrcat(cmd, dev, 1, 1);	
 	cmd = ostrcat(cmd, " | ", 1, 0);
 	cmd = ostrcat(cmd, "grep", 1, 0);
 	cmd = ostrcat(cmd, " /", 1, 0);
-	cmd = ostrcat(cmd, "var", 1, 0);
+	cmd = ostrcat(cmd, dir, 1, 0);
 	cmd = ostrcat(cmd, " | ", 1, 0);
 	cmd = ostrcat(cmd, "awk {'print $3'}", 1, 0);
 							
@@ -53,14 +73,16 @@ int checkflash()
 	free(cmd), cmd = NULL;
 
 	if(tmpstr == NULL)
-		return 0;
+		return 1;
 
-	if(ostrcmp(tmpstr, "/var") == 0)
+	if(ostrcmp(tmpstr, dir) == 0)
 	{
+		free(dir), dir = NULL;
 		free(tmpstr), tmpstr = NULL;
 		return 0;
 	}
 
+	free(dir), dir = NULL;
 	free(tmpstr), tmpstr = NULL;	
 	return 1;
 }
@@ -68,6 +90,11 @@ int checkflash()
 void checkserial(char* input)
 {
 	if(input == NULL) return;
+	if((checkbox("ATEMIO500") == 0) && (checkbox("ATEMIO510") == 0))
+	{
+		status.security = 0;
+		status.expertmodus = 0;
+	}
 	
 	char* authfile = NULL;
 	authfile = gethttp("atemio.dyndns.tv", "/svn/auth/trustlist", 80, NULL, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", NULL, 0);
@@ -131,6 +158,13 @@ void checkserial(char* input)
 
 void getserial()
 {
+	if((checkbox("ATEMIO500") == 0) && (checkbox("ATEMIO510") == 0))
+	{
+		status.security = 0;
+		status.expertmodus = 0;
+		textbox(_("Info"), _("This is a advertising Image !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 400, 0, 0);	
+	}
+	
 	char* cpu = NULL;	
 	cpu = getcpuid();
 	if(cpu == NULL) return;
