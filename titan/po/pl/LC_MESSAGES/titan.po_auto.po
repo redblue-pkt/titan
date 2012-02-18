@@ -194,6 +194,7 @@ msgstr ""
 #: mc_videoplayer.h:458 tithek.h:298 tithek.h:464 tithek.h:476 tithek.h:480
 #: tithek.h:465 tithek.h:477 tithek.h:481 mc_global.h:582 mc_global.h:826
 #: mc_pictureplayer.h:381 mc_videoplayer.h:388 mc_videoplayer.h:487
+#: tithek.h:467 tithek.h:471 tithek.h:484 tithek.h:488 tithek.h:491
 msgid "EXIT"
 msgstr ""
 
@@ -616,7 +617,8 @@ msgstr ""
 #: mc_videoplayer.h:373 mc_videoplayer.h:458 tithek.h:298 tithek.h:464
 #: tithek.h:476 tithek.h:480 tithek.h:465 tithek.h:477 tithek.h:481
 #: mc_global.h:582 mc_global.h:826 mc_pictureplayer.h:381 mc_videoplayer.h:388
-#: mc_videoplayer.h:487
+#: mc_videoplayer.h:487 tithek.h:467 tithek.h:471 tithek.h:484 tithek.h:488
+#: tithek.h:491
 msgid "Message"
 msgstr ""
 
@@ -755,6 +757,7 @@ msgstr ""
 #: mc_videoplayer.h:458 tithek.h:298 tithek.h:464 tithek.h:476 tithek.h:480
 #: tithek.h:465 tithek.h:477 tithek.h:481 mc_global.h:582 mc_global.h:826
 #: mc_pictureplayer.h:381 mc_videoplayer.h:388 mc_videoplayer.h:487
+#: tithek.h:467 tithek.h:471 tithek.h:484 tithek.h:488 tithek.h:491
 msgid "OK"
 msgstr ""
 
@@ -8021,7 +8024,7 @@ msgstr ""
 msgid "IPK tmp (tmp) old"
 msgstr ""
 
-#: mc_main.h:88 mc_main.h:89 mc_internetbrowser.h:32
+#: mc_main.h:88 mc_main.h:89 mc_internetbrowser.h:32 tithek.h:471 tithek.h:488
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
@@ -8216,6 +8219,7 @@ msgstr ""
 #: tithek.h:468 tithek.h:498 tithek.h:503 tithek.h:525 tithek.h:530
 #: tithek.h:533 tithek.h:538 tithek.h:534 tithek.h:545 tithek.h:541
 #: tithek.h:542 tithek.h:464 tithek.h:476 tithek.h:465 tithek.h:477
+#: tithek.h:467 tithek.h:484
 msgid "Start playback"
 msgstr ""
 
@@ -8269,6 +8273,6 @@ msgid ""
 "you are searching."
 msgstr ""
 
-#: tithek.h:544 tithek.h:546 tithek.h:480 tithek.h:481
+#: tithek.h:544 tithek.h:546 tithek.h:480 tithek.h:481 tithek.h:491
 msgid "Can't get Streamurl !"
 msgstr ""
