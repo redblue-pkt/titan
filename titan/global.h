@@ -40,7 +40,7 @@ int checkflash()
 	char* dev = NULL;
 	char* dir = NULL;
 	
-	if((checkbox("UFS910") == 1) || (checkbox("UFS922") == 1) || (checkbox("AT700") == 1) || (checkbox("AT7000") == 1) || (checkbox("ATEMIO500") == 1))
+	if((checkbox("UFS910") == 1) || (checkbox("UFS922") == 1) || (checkbox("AT700") == 1) || (checkbox("AT7000") == 1))
 	{
 		dev = ostrcat(dev, "3", 1, 0);
 		dir = ostrcat(dir, "var", 1, 0);		
@@ -78,13 +78,15 @@ int checkflash()
 	cmd = ostrcat(cmd, dir, 1, 0);
 	cmd = ostrcat(cmd, " | ", 1, 0);
 	cmd = ostrcat(cmd, "awk {'print $3'}", 1, 0);
-							
+
+printf("cmd: %s\n", cmd);							
 	tmpstr = string_newline(command(cmd));
 	free(cmd), cmd = NULL;
-
+printf("tmp: %s\n", tmpstr);
 	if(tmpstr == NULL)
 		return 1;
-
+printf("tmpstr: %s\n", tmpstr);
+printf("dir: %s\n", dir);
 	if(ostrcmp(tmpstr, dir) == 0)
 	{
 		free(dir), dir = NULL;
