@@ -80,10 +80,9 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 
 			if(screensaver != NULL && screensaver->type == 3 && flag == 2)
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
-
+		
 			drawscreen(apskin, 0);
-
-				
+		
 			int switchtofilelist = 0;
 						
 			if(status.random == 1 && status.repeat == 0)
@@ -221,7 +220,8 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 			if(screensaver != NULL && screensaver->type == 3 && flag == 2)
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 
-			drawscreen(apskin, 0);
+			if(flag != 3)
+				drawscreen(apskin, 0);
 
 			if(status.random == 1 && status.repeat == 0)
 			{
@@ -320,7 +320,18 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 			addscreenrc(apskin, filelist);
 		}
 
-		drawscreen(apskin, 0);
+		debug(50, "flag: %d", flag);
+		debug(50, "skiprcok: %d", skiprcok);					
+
+		if(flag == 3 && skiprcok == 0)
+		{
+			status.screencalc=2;
+			drawscreen(apskin, 0);
+			status.screencalc=0;
+		}
+		else
+			drawscreen(apskin, 0);
+			
 		if(skiprcok == 0)
 			writerc(getrcconfigint("rcok", NULL));
 }
