@@ -94,6 +94,7 @@ void checkserial(char* input)
 	{
 		status.security = 0;
 		status.expertmodus = 0;
+		return;
 	}
 	
 	char* authfile = NULL;
@@ -163,6 +164,7 @@ void getserial()
 		status.security = 0;
 		status.expertmodus = 0;
 		textbox(_("Info"), _("This is a advertising Image !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 400, 0, 0);	
+		return;
 	}
 	
 	char* cpu = NULL;	
