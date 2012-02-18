@@ -55,6 +55,11 @@ int checkflash()
 		dev = ostrcat(dev, "2", 1, 0);
 		dir = ostrcat(dir, "boot", 1, 0);
 	}
+	else if(checkbox("UFS912") == 1)
+	{
+		dev = ostrcat(dev, "3", 1, 0);
+		dir = ostrcat(dir, "boot", 1, 0);
+	}
 	else
 		dev = ostrcat(dev, "9", 1, 0);
 		dir = ostrcat(dir, "var", 1, 0);
@@ -430,13 +435,21 @@ int checkreseller()
 
 	fread(buf, 1080, 1, fd);
 
-	if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x29 && (buf[1074] & 0xff) == 0x02 && (buf[1075] & 0xff) == 0xA0)
+	if(checkbox("ATEMIO510") == 1)
 	{
-		free(buf);
-		fclose(fd);
+		if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x29 && (buf[1074] & 0xff) == 0x02 && (buf[1075] & 0xff) == 0xA0)
+		{
+			free(buf);
+			fclose(fd);
+			return 0;
+		}
+	}
+	else
+	{
+		// dummy fpr other boxes
 		return 0;
 	}
-
+		
 	free(buf);
 	fclose(fd);
 	return 1;
