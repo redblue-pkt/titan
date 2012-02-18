@@ -196,7 +196,8 @@ msgstr ""
 #: mc_pictureplayer.h:381 mc_videoplayer.h:388 mc_videoplayer.h:487
 #: tithek.h:467 tithek.h:471 tithek.h:484 tithek.h:488 tithek.h:491
 #: global.h:165 global.h:208 global.h:4267 global.h:166 global.h:210
-#: global.h:4269 global.h:170 global.h:214 global.h:4289
+#: global.h:4269 global.h:170 global.h:214 global.h:4289 global.h:172
+#: global.h:216 global.h:4291
 msgid "EXIT"
 msgstr ""
 
@@ -620,7 +621,7 @@ msgstr ""
 #: tithek.h:476 tithek.h:480 tithek.h:465 tithek.h:477 tithek.h:481
 #: mc_global.h:582 mc_global.h:826 mc_pictureplayer.h:381 mc_videoplayer.h:388
 #: mc_videoplayer.h:487 tithek.h:467 tithek.h:471 tithek.h:484 tithek.h:488
-#: tithek.h:491 global.h:4267 global.h:4269 global.h:4289
+#: tithek.h:491 global.h:4267 global.h:4269 global.h:4289 global.h:4291
 msgid "Message"
 msgstr ""
 
@@ -761,7 +762,8 @@ msgstr ""
 #: mc_pictureplayer.h:381 mc_videoplayer.h:388 mc_videoplayer.h:487
 #: tithek.h:467 tithek.h:471 tithek.h:484 tithek.h:488 tithek.h:491
 #: global.h:165 global.h:208 global.h:4267 global.h:166 global.h:210
-#: global.h:4269 global.h:170 global.h:214 global.h:4289
+#: global.h:4269 global.h:170 global.h:214 global.h:4289 global.h:172
+#: global.h:216 global.h:4291
 msgid "OK"
 msgstr ""
 
@@ -790,6 +792,7 @@ msgstr ""
 #: global.h:4177 global.h:4178 global.h:4155 global.h:4152 global.h:4153
 #: global.h:4168 global.h:4170 global.h:4303 global.h:4310 global.h:4186
 #: global.h:4187 global.h:4233 global.h:4267 global.h:4269 global.h:4289
+#: global.h:4291
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -2650,7 +2653,7 @@ msgstr ""
 #: global.h:62 global.h:79 global.h:82 global.h:100 global.h:114 global.h:146
 #: global.h:158 global.h:291 global.h:298 global.h:174 global.h:175
 #: global.h:165 global.h:208 global.h:166 global.h:210 global.h:170
-#: global.h:214
+#: global.h:214 global.h:172 global.h:216
 msgid "Info"
 msgstr ""
 
@@ -7965,6 +7968,7 @@ msgstr ""
 #: global.h:55 global.h:60 global.h:61 global.h:78 global.h:81 global.h:99
 #: global.h:113 global.h:145 global.h:157 global.h:290 global.h:297
 #: global.h:173 global.h:174 global.h:207 global.h:209 global.h:213
+#: global.h:215
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
@@ -8055,7 +8059,7 @@ msgstr ""
 
 #: global.h:57 global.h:58 global.h:75 global.h:78 global.h:96 global.h:110
 #: global.h:142 global.h:154 global.h:287 global.h:294 global.h:170
-#: global.h:171 global.h:204 global.h:206 global.h:210
+#: global.h:171 global.h:204 global.h:206 global.h:210 global.h:212
 msgid ""
 "For next OnlineUpdate please contact Atemio and send this Serial Number and "
 "your Atemio Serial Number !!\n"
@@ -8283,6 +8287,6 @@ msgstr ""
 msgid "Can't get Streamurl !"
 msgstr ""
 
-#: global.h:165 global.h:166 global.h:170
+#: global.h:165 global.h:166 global.h:170 global.h:172
 msgid "This is a advertising Image !"
 msgstr ""
