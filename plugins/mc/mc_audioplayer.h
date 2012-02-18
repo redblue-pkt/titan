@@ -204,7 +204,7 @@ void screenmc_audioplayer()
 		}
 		else if(rcret == getrcconfigint("rcgreen", NULL))
 		{
-			showplaylist(apskin, filelistpath, filelist, listbox, b2, 0, &playlist, &eof, &filename, &currentdirectory, flag);
+			showplaylist(apskin, filelistpath, filelist, listbox, b2, 0, &playlist, &eof, &filename, &currentdirectory, &playertype, flag);
 			drawscreen(apskin, 0);
 		}
 		else if(rcret == getrcconfigint("rcmenu", NULL))
@@ -379,7 +379,7 @@ void screenmc_audioplayer()
 				}
 				else if(!strncmp(".m3u",filename+strlen(filename)-4,4) || !strncmp(".pls",filename+strlen(filename)-4,4)) 
 				{
-					showplaylist(apskin, filelistpath, filelist, listbox, b2, 1, &playlist, &eof, &filename, &currentdirectory, flag);
+					showplaylist(apskin, filelistpath, filelist, listbox, b2, 1, &playlist, &eof, &filename, &currentdirectory, &playertype, flag);
 					drawscreen(apskin, 0);
 					continue;
 				}
@@ -418,7 +418,7 @@ void screenmc_audioplayer()
 		if(eof >=1 || playerisplaying() == 0)
 		{
 			if(status.play == 1)
-				playereof(apskin, filelist, listbox, filelistpath, b2, NULL, NULL, NULL, &skip, &eof, &playlist, flag);
+				playereof(apskin, filelist, listbox, filelistpath, b2, NULL, NULL, NULL, &skip, &eof, &playlist, playertype, flag);
 		}
 	}
 
