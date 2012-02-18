@@ -152,7 +152,7 @@ void screenmc_pictureplayer()
 				playrcgreen(filename, playinfobarstatus, playertype, flag);
 			else
 			{
-				showplaylist(apskin, filelistpath, filelist, listbox, b2, 0, &playlist, &eof, &filename, &currentdirectory, flag);
+				showplaylist(apskin, filelistpath, filelist, listbox, b2, 0, &playlist, &eof, &filename, &currentdirectory, &playertype, flag);
 				drawscreen(apskin, 0);
 			}
 
@@ -345,7 +345,7 @@ void screenmc_pictureplayer()
 				}
 				else if(!strncmp(".m3u",filename+strlen(filename)-4,4) || !strncmp(".pls",filename+strlen(filename)-4,4)) 
 				{
-					showplaylist(apskin, filelistpath, filelist, listbox, b2, 1, &playlist, &eof, &filename, &currentdirectory, flag);
+					showplaylist(apskin, filelistpath, filelist, listbox, b2, 1, &playlist, &eof, &filename, &currentdirectory, &playertype, flag);
 					continue;
 				}
 
@@ -390,7 +390,7 @@ void screenmc_pictureplayer()
 //				setfbtransparent(0);
 //				apskin->hidden = NO;
 //				drawscreen(skin, 0);
-				playereof(apskin, filelist, listbox, filelistpath, picscreen, picture, picname, b2, &skip, &eof, &playlist, flag);
+				playereof(apskin, filelist, listbox, filelistpath, picscreen, picture, picname, b2, &skip, &eof, &playlist, playertype, flag);
 			}
 		}
 	}

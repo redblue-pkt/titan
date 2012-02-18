@@ -65,7 +65,7 @@ int mc_changeratio()
 extern struct skin* skin;
 extern struct screensaver* screensaver;
 
-void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox, struct skin* filelistpath, struct skin* b2, struct skin* picscreen, struct skin* picture, struct skin* picname, int* skip, int* eof, int* playlist, int flag)
+void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox, struct skin* filelistpath, struct skin* b2, struct skin* picscreen, struct skin* picture, struct skin* picname, int* skip, int* eof, int* playlist, int playertype, int flag)
 {
 		debug(50, "--------------eof-------------");
 		status.playspeed = 0;
@@ -124,7 +124,7 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 						else
 						{
 							if(flag != 3)
-								playerstop();
+								playrcstop(playertype, flag);
 							if((flag == 1) || (flag == 3))
 							{
 								apskin->hidden = NO;
@@ -253,7 +253,7 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 						else
 						{							
 							if(flag != 3)
-								playerstop();
+								playrcstop(playertype, flag);
 							if((flag == 1) || (flag == 3)) 
 							{
 								if(flag == 3)
@@ -397,7 +397,7 @@ void playerrandom(struct skin* apskin, struct skin* filelist, struct skin* listb
 	}
 }
 
-void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* filelist, struct skin* listbox, struct skin* b2, int mode, int* playlist, int* eof, char** filename, char** currentdirectory, int flag)
+void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* filelist, struct skin* listbox, struct skin* b2, int mode, int* playlist, int* eof, char** filename, char** currentdirectory, int* playertype, int flag)
 {
 	int playerret = 0;
 	struct skin* tmp = NULL;
@@ -441,7 +441,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 					if(playlistnode->file != NULL)
 					{
 						*filename = ostrcat("", playlistnode->file, 0, 0);
-						playerstop();
+						playrcstop(*playertype, flag);
 
 						count = 0;
 
@@ -542,7 +542,8 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 							debug(50, "-------------- check ok titan playlist pls --------------");
 							debug(50, "playerstart: %s", *filename);
 							debug(50, "flag: %d", flag);
-			
+							debug(50, "playertype: %d", *playertype);	
+											
 							if(flag == 1)
 							{
 								servicestop(status.aktservice, 1, 1);
@@ -561,7 +562,17 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 								debug(50, "status.play: %d", status.play);				
 							}
 			
-							playerret = playerstart(*filename);
+//							playerret = playerstart(*filename);
+							if(getconfigint("playertype", NULL) == 1 && cmpfilenameext(*filename, ".ts") == 0)
+								*playertype = 1;
+							else
+								*playertype = 0;
+					
+							if(*playertype == 1)
+								playerret = playerstartts(*filename, 0);
+							else
+								playerret = playerstart(*filename);
+					
 							playwritevfd(*filename);
 				
 	
@@ -735,7 +746,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 
 		if(firstfile != NULL)
 		{
-			playerstop();
+			playrcstop(*playertype, flag);
 			setlistboxselection(listbox, *filename);
 			*filename = ostrcat("", firstfile, 0, 0);
 			title = ostrcat("", firsttitle, 0, 0);
@@ -775,6 +786,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 				debug(50, "-------------- check ok m3u --------------");
 				debug(50, "playerstart: %s", *filename);
 				debug(50, "flag: %d", flag);
+				debug(50, "playertype: %d", *playertype);
 
 				if(flag == 1)
 				{
@@ -794,7 +806,17 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 					debug(50, "status.play: %d", status.play);				
 				}
 
-				playerret = playerstart(*filename);
+//				playerret = playerstart(*filename);
+				if(getconfigint("playertype", NULL) == 1 && cmpfilenameext(*filename, ".ts") == 0)
+					*playertype = 1;
+				else
+					*playertype = 0;
+		
+				if(*playertype == 1)
+					playerret = playerstartts(*filename, 0);
+				else
+					playerret = playerstart(*filename);
+
 				playwritevfd(*filename);
 				
 				//playwritevfd(*filename);

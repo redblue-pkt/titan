@@ -169,6 +169,7 @@ void recordffrwts(struct service* servicenode, int speed);
 // play.h
 void playerffts(int speed);
 void screenplay(char* startfile, int startfolder, int flag);
+void playrcstop(int playertype, int flag);
 
 //inetwork.h
 struct inetwork* getinetworkbydevice(char* device);
@@ -403,6 +404,7 @@ void getserial();
 char* string_decode(char* input, int flag);
 char* string_striptags(char* filename);
 char* string_resub(char* str, char* str2, char* filename);
+int cmpfilenameext(char* filename, char* ext);
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);

@@ -7,6 +7,7 @@ extern struct screensaver* screensaver;
 void screenmc_videoplayer()
 {
 	char* filename = NULL;
+	char* tmppolicy = NULL;
 	char* currentdirectory = NULL;
 	int rcret = 0, rcwait = 1000, playerret = 0, flag = 1, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 1, playlist = 0, playertype = 0;
 	// workaround for grey background mvi
@@ -36,6 +37,9 @@ void screenmc_videoplayer()
 	int skip46 = getconfigint("skip46", NULL);
 	int skip79 = getconfigint("skip79", NULL);
 
+	// save policy
+	tmppolicy = getpolicy();
+	
 	// set allowed filemask
 	char* filemask = NULL;
 	if((status.expertmodus > 0) || (file_exist("/var/swap/etc/.mcfull")))
@@ -211,7 +215,7 @@ void screenmc_videoplayer()
 				playrcgreen(filename, playinfobarstatus, playertype, flag);
 			else
 			{
-				showplaylist(apskin, filelistpath, filelist, listbox, b2, 0, &playlist, &eof, &filename, &currentdirectory, flag);
+				showplaylist(apskin, filelistpath, filelist, listbox, b2, 0, &playlist, &eof, &filename, &currentdirectory, &playertype, flag);
 				drawscreen(apskin, 0);
 				continue;			
 			}
@@ -252,7 +256,7 @@ void screenmc_videoplayer()
 //			if((status.play == 1) || (status.pause == 1))
 //			{
 				debug(50, "rcstop: stopplayback");
-				playerstop();
+				playrcstop(playertype, flag);
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 	
 				apskin->hidden = NO;
@@ -277,6 +281,12 @@ void screenmc_videoplayer()
 				status.play = 0;
 				playlist = 0;
 				playinfobarcount = 0;
+				
+				if(playertype == 1)
+					playerafterendts();
+				else
+					playerafterend();
+			
 				writevfd("VideoPlayer Filelist-Mode");
 //			}
 		}
@@ -289,7 +299,7 @@ void screenmc_videoplayer()
 					addconfig("mc_videoplayerpath", filelistpath->text);
 			}
 
-			playerstop();
+			playrcstop(playertype, flag);
 			// show skin
 			setfbtransparent(255);
 			sleep(1);
@@ -311,11 +321,6 @@ void screenmc_videoplayer()
 		}
 		else if(rcret == getrcconfigint("rcok", NULL))
 		{
-			if(getconfigint("playertype", NULL) == 1 && cmpfilenameext(filename, ".ts") == 0)
-				playertype = 1;
-			else
-				playertype = 0;
-
 			if((status.play == 1) || (status.playspeed != 0))
 			{
 				playrcok(filename, playinfobarstatus, playertype, flag);
@@ -335,6 +340,11 @@ void screenmc_videoplayer()
 				debug(50, "listbox->select->name: %s", listbox->select->name);
 				filename = ostrcat("", listbox->select->name, 0, 0);
 
+				if(getconfigint("playertype", NULL) == 1 && cmpfilenameext(filename, ".ts") == 0)
+					playertype = 1;
+				else
+					playertype = 0;
+
 				changetext(b2, _("Playlist-Mode"));
 			
 				debug(50, "screensaver title: %s", listbox->select->text);
@@ -342,7 +352,7 @@ void screenmc_videoplayer()
 					screensaver->value = listbox->select->text;
 
 				debug(50, "playerstop");
-				playerstop();
+				playrcstop(playertype, flag);
 //				sleep(1);
 //				drawscreen(infobar, 0);
 
@@ -359,8 +369,13 @@ void screenmc_videoplayer()
 				debug(50, "autostart_playlist: %d", getconfigint("vp_autostart_playlist", NULL));
 				debug(50, "status.play: %d", status.play);
 				debug(50, "flag: %d", flag);
-///////////				
-				playerret = playerstart(filename);
+///////////
+				debug(50, "playertype: %d", playertype);
+				if(playertype == 1)
+					playerret = playerstartts(filename, 0);
+				else
+					playerret = playerstart(filename);
+
 				playwritevfd(filename);
 
 				#ifndef SIMULATE
@@ -384,6 +399,9 @@ void screenmc_videoplayer()
 
 				screenplayinfobar(filename, 0, playertype, 0);			
 				status.play = 1;
+				
+				free(status.playfile); status.playfile = NULL;
+				status.playfile = ostrcat(filename, "", 0, 0);
 			}
 			else if(filelist->select != NULL && filelist->select->input != NULL)
 			{
@@ -409,6 +427,11 @@ void screenmc_videoplayer()
 				debug(50, "filelist->select->text: %s", filelist->select->text);
 				filename = createpath(filelistpath->text, filelist->select->text);
 
+				if(getconfigint("playertype", NULL) == 1 && cmpfilenameext(filename, ".ts") == 0)
+					playertype = 1;
+				else
+					playertype = 0;
+
 				if(!strncmp(".rar",filename+strlen(filename)-4,4) || !strncmp(".iso",filename+strlen(filename)-4,4) || !strncmp(".img",filename+strlen(filename)-4,4))
 				{
 					debug(50, "mc_mounter_main filename: %s", filename);
@@ -423,7 +446,7 @@ void screenmc_videoplayer()
 				}
 				else if(!strncmp(".m3u",filename+strlen(filename)-4,4) || !strncmp(".pls",filename+strlen(filename)-4,4)) 
 				{
-					showplaylist(apskin, filelistpath, filelist, listbox, b2, 1, &playlist, &eof, &filename, &currentdirectory, flag);
+					showplaylist(apskin, filelistpath, filelist, listbox, b2, 1, &playlist, &eof, &filename, &currentdirectory, &playertype, flag);
 //					drawscreen(apskin, 0);
 					continue;
 
@@ -435,7 +458,7 @@ void screenmc_videoplayer()
 					screensaver->value = (void*)filelist->select->text;
 
 				debug(50, "playerstop");
-				playerstop();
+				playrcstop(playertype, flag);
 //				sleep(1);
 
 				servicestop(status.aktservice, 1, 1);
@@ -446,7 +469,13 @@ void screenmc_videoplayer()
 
 				debug(50, "playerstart: %s", filename);
 				eof = 0;
-				playerret = playerstart(filename);
+
+				debug(50, "playertype: %d", playertype);
+				if(playertype == 1)
+					playerret = playerstartts(filename, 0);
+				else
+					playerret = playerstart(filename);
+
 				playwritevfd(filename);
 
 				#ifndef SIMULATE
@@ -463,17 +492,20 @@ void screenmc_videoplayer()
 				#endif
 				screenplayinfobar(filename, 0, playertype, 0);
 				status.play = 1;
+
+				free(status.playfile); status.playfile = NULL;
+				status.playfile = ostrcat(filename, "", 0, 0);
 			}
 		}
 
-		if(eof >=1 || playerisplaying() == 0)
+		if(eof >=1 || (playertype == 0 && playerisplaying() == 0) || (playertype == 1 && playerisplayingts() == 0))
 		{
 			if(status.play == 1)
 			{
 				setfbtransparent(0);
 				apskin->hidden = NO;
 				drawscreen(skin, 0);
-				playereof(apskin, filelist, listbox, filelistpath, b2, NULL, NULL, NULL, &skip, &eof, &playlist, flag);
+				playereof(apskin, filelist, listbox, filelistpath, b2, NULL, NULL, NULL, &skip, &eof, &playlist, playertype, flag);
 			}
 		}
 	}
@@ -496,6 +528,19 @@ void screenmc_videoplayer()
 	free(filename), filename = NULL;
 	free(currentdirectory), currentdirectory = NULL;
 
+	free(status.playfile); status.playfile = NULL;
+	if(tmppolicy != NULL)
+	{
+		setpolicy(tmppolicy);
+		free(tmppolicy);
+	}
+
+	if(playertype == 1)
+		playerafterendts();
+	else
+		playerafterend();
+
+			
 	writevfd("Mediacenter");
 	debug(50, "closed");
 }
