@@ -86,7 +86,7 @@ void screenmc_pictureplayer()
 			playinfobarcount ++;
 		else if(status.play == 1)
 		{
-			picplayer(picscreen, picture, picname, NULL, 0);	
+//			picplayer(picscreen, picture, picname, NULL, 0);	
 			nextpic = 1;
 		}
 
@@ -354,17 +354,15 @@ void screenmc_pictureplayer()
 				if(screensaver != NULL && screensaver->type == 0)
 					screensaver->value = (void*)filelist->select->text;
 
-				servicestop(status.aktservice, 1, 1);
-				drawscreen(skin, 0);
-
 				delownerrc(apskin);
-				setfbtransparent(255);
+//				setfbtransparent(255);
 
 				debug(50, "playerstart: %s", filename);
 				eof = 0;
 
 				playinfobarcount = 0, playinfobarstatus = 1;
 				picplayer(picscreen, picture, picname, filename, 1);
+				servicestop(status.aktservice, 1, 1);
 
 				status.play = 1;
 			}
@@ -389,9 +387,9 @@ void screenmc_pictureplayer()
 		{
 			if(status.play == 1)
 			{
-				setfbtransparent(0);
-				apskin->hidden = NO;
-				drawscreen(skin, 0);
+//				setfbtransparent(0);
+//				apskin->hidden = NO;
+//				drawscreen(skin, 0);
 				playereof(apskin, filelist, listbox, filelistpath, picscreen, picture, picname, b2, &skip, &eof, &playlist, flag);
 			}
 		}
