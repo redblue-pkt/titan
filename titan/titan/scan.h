@@ -31,6 +31,7 @@ struct transponder* satsystemdesc(char* buf, unsigned long transportid, unsigned
 	int rolloff = 0, fec = 0, symbolrate = 0;
 	unsigned int frequency = 0;
 	unsigned long id = 0;
+	struct transponder *tpnode = NULL;
 
 	frequency = (
 		((buf[2] >> 4) * 100000000) +
@@ -100,7 +101,12 @@ struct transponder* satsystemdesc(char* buf, unsigned long transportid, unsigned
 
 	id = (onid << 16) | transportid;
 
-	return createtransponder(id, FE_QPSK, orbitalpos, frequency, INVERSION_AUTO, symbolrate, polarization, fec, modulation, rolloff, 0, system);
+	if(gettransponder(id) == NULL)
+	{
+		tpnode = createtransponder(id, FE_QPSK, orbitalpos, frequency, INVERSION_AUTO, symbolrate, polarization, fec, modulation, rolloff, 0, system);
+		status.writetransponder = 1;
+	}
+	return tpnode;
 }
 
 int parsenit(char* buf, int orbitalpos)
