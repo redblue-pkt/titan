@@ -157,10 +157,7 @@ void screenpossetup()
 				if(ostrcmp(listbox->select->name, "move") == 0)
 					possearch(possetup, dvbnode, 0);
 				if(ostrcmp(listbox->select->name, "finemove") == 0)
-				{
 					fediseqcrotor(dvbnode, NULL, 1, 10);
-					fediseqcrotor(dvbnode, NULL, 0, 0);
-				}
 				if(ostrcmp(listbox->select->name, "limit") == 0)
 					fediseqcrotor(dvbnode, NULL, 0, 4);
 				if(ostrcmp(listbox->select->name, "storagepos") == 0)
@@ -177,10 +174,7 @@ void screenpossetup()
 				if(ostrcmp(listbox->select->name, "move") == 0)
 					possearch(possetup, dvbnode, 1);
 				if(ostrcmp(listbox->select->name, "finemove") == 0)
-				{
 					fediseqcrotor(dvbnode, NULL, 1, 9);
-					fediseqcrotor(dvbnode, NULL, 0, 0);
-				}
 				if(ostrcmp(listbox->select->name, "limit") == 0)
 					fediseqcrotor(dvbnode, NULL, 0, 3);
 				if(ostrcmp(listbox->select->name, "storagepos") == 0)
