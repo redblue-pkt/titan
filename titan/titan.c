@@ -396,40 +396,48 @@ int main(int argc, char *argv[])
 	ret = addinetworkall();
 	
 #ifndef SIMULATE
+printf("111\n");
 	if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1)
 	{	
 		destroy();
 		exit(100);
 	}
+printf("222\n");
 	if(ostrcmp(string_newline(gettimeinfovar()), TIMECODE) == 1)
 	{
 		destroy();
 		exit(100);
 	}
+printf("333\n");		
 	if(checkreseller() != 0)
 	{
 		destroy();
 		exit(100);
 	}
+printf("444\n");	
 	if(getsysinfo() != SYSCODE)
 	{
 		destroy();
 		exit(100);
 	}
+printf("555\n");	
 	if(file_exist("/mnt/swapextensions/etc/.vnumber") == 1)
 	{
 		destroy();
 		exit(100);
 	}
+printf("666\n");
 	if(checkflash() != 0)
 	{
 		destroy();
 		exit(100);
 	}
+printf("777\n");
 	char* tmpstr2 = NULL;
 	tmpstr2 = getcpuid();
 	checkserial(tmpstr2);
 	free(tmpstr2), tmpstr2 = NULL;
+printf("888\n");
 #endif
 
 	ret = initfont();
@@ -626,7 +634,7 @@ int main(int argc, char *argv[])
 
 		autoresolution();
 firstwizzardstep1:
-		if(checkbox("ATEMIO510") == 0)
+		if(checkbox("ATEMIO500") == 0)
 		{
 			status.updatevfd = PAUSE;
 			screenavsettings(1);
