@@ -3524,7 +3524,7 @@ int setmute(int value)
 	if(value == 2)
 	{
 		tmpvol = getvol();
-		tmpvol = tmpvol*50/100;
+		tmpvol = tmpvol * 50 / 100;
 		setvol(tmpvol);
 	} 
 	else
@@ -3551,6 +3551,8 @@ int setvol(int value)
 
 	if(voldev != NULL)
 	{
+		if(value > 100) value = 100;
+		if(value < 0) value = 0;
 		value = 63 - value * 63 / 100;
 		debug(100, "set %s to %d", voldev, value);
 		ret = writesysint(voldev, value, 0);
