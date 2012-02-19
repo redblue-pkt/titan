@@ -358,6 +358,7 @@ int getsysinfo()
 
 void destroy()
 {
+printf("destroy\n");	
 	FILE* fd = NULL;
 	char mtd[10];
 	char* buf = NULL;
@@ -438,21 +439,26 @@ int checkreseller()
 
 	fread(buf, 1080, 1, fd);
 
+printf("reseller1\n");	
 	if(checkbox("ATEMIO510") == 1)
 	{
+printf("reseller2\n");	
 		if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x29 && (buf[1074] & 0xff) == 0x02 && (buf[1075] & 0xff) == 0xA0)
 		{
+printf("reseller3\n");		
 			free(buf);
 			fclose(fd);
 			return 0;
 		}
+printf("reseller4\n");
 	}
 	else
 	{
+printf("reseller5\n");
 		// dummy fpr other boxes
 		return 0;
 	}
-		
+printf("reseller6\n");
 	free(buf);
 	fclose(fd);
 	return 1;
