@@ -992,6 +992,9 @@ struct status
 	int mcaktiv;
 	//greater 0 aktivate screen animation
 	int screenanim;
+	//for auto increase audio vol
+	int volautochange;
+	int volautochangevalue;
 } status;
 
 struct fb
