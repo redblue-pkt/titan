@@ -262,6 +262,8 @@ int convertxmlentry(char *value, uint8_t *proz)
 		ret = TOPMIDDLE;
 	else if(strcasecmp(value, "leftmiddle") == 0)
 		ret = LEFTMIDDLE;
+	else if(strcasecmp(value, "textbottom") == 0)
+		ret = TEXTBOTTOM;
 
 	if(proz != NULL && ret == -1)
 	{
