@@ -198,6 +198,7 @@ msgstr ""
 #: global.h:165 global.h:208 global.h:4267 global.h:166 global.h:210
 #: global.h:4269 global.h:170 global.h:214 global.h:4289 global.h:172
 #: global.h:216 global.h:4291 scan.h:763 scan.h:917 scan.h:989 scan.h:1195
+#: avsettings.h:199
 msgid "EXIT"
 msgstr ""
 
@@ -248,7 +249,7 @@ msgstr ""
 #: scan.h:1065 scan.h:1069 scan.h:1064 scan.h:1068 scan.h:1072 adjust.h:48
 #: adjust.h:71 adjust.h:96 adjust.h:130 adjust.h:145 adjust.h:149 scan.h:840
 #: scan.h:1129 scan.h:1133 scan.h:1137 scan.h:846 scan.h:1135 scan.h:1139
-#: scan.h:1143
+#: scan.h:1143 avsettings.h:119
 msgid "no"
 msgstr ""
 
@@ -305,7 +306,7 @@ msgstr ""
 #: networkbrowser.h:531 scan.h:776 scan.h:1062 scan.h:1066 scan.h:1070
 #: scan.h:1065 scan.h:1069 scan.h:1073 adjust.h:63 adjust.h:72 adjust.h:97
 #: adjust.h:126 adjust.h:131 adjust.h:146 scan.h:841 scan.h:1130 scan.h:1134
-#: scan.h:1138 scan.h:847 scan.h:1136 scan.h:1140 scan.h:1144
+#: scan.h:1138 scan.h:847 scan.h:1136 scan.h:1140 scan.h:1144 avsettings.h:120
 msgid "yes"
 msgstr ""
 
@@ -426,7 +427,7 @@ msgstr ""
 
 #: adjust.h:84 avsettings.h:65 adjust.h:85 adjust.h:86 adjust.h:87
 #: avsettings.h:66 avsettings.h:70 adjust.h:88 adjust.h:89 adjust.h:91
-#: adjust.h:92
+#: adjust.h:92 avsettings.h:71
 msgid "2 sec"
 msgstr ""
 
@@ -468,6 +469,7 @@ msgstr ""
 #: transponder.h:328 transponder.h:336 vfdisplay.h:34 avsettings.h:57
 #: avsettings.h:72 avsettings.h:61 avsettings.h:76 harddisk.h:615
 #: mc_pictureplayer_settings.h:17 mc_pictureplayer_settings.h:44
+#: avsettings.h:62 avsettings.h:77
 msgid "off"
 msgstr ""
 
@@ -477,43 +479,43 @@ msgstr ""
 #: transponder.h:330 transponder.h:340 transponder.h:395 transponder.h:431
 #: rectimer.h:954 avsettings.h:58 avsettings.h:62 rectimer.h:960 adjust.h:126
 #: rectimer.h:975 adjust.h:131 rectimer.h:991 rectimer.h:994 adjust.h:133
-#: adjust.h:134
+#: adjust.h:134 avsettings.h:63
 msgid "auto"
 msgstr ""
 
-#: avsettings.h:58 avsettings.h:59 avsettings.h:63
+#: avsettings.h:58 avsettings.h:59 avsettings.h:63 avsettings.h:64
 msgid "blueKey"
 msgstr ""
 
-#: avsettings.h:60 avsettings.h:61 avsettings.h:65
+#: avsettings.h:60 avsettings.h:61 avsettings.h:65 avsettings.h:66
 msgid "576i"
 msgstr ""
 
-#: avsettings.h:61 avsettings.h:62 avsettings.h:66
+#: avsettings.h:61 avsettings.h:62 avsettings.h:66 avsettings.h:67
 msgid "576p"
 msgstr ""
 
-#: avsettings.h:62 avsettings.h:63 avsettings.h:67
+#: avsettings.h:62 avsettings.h:63 avsettings.h:67 avsettings.h:68
 msgid "720p"
 msgstr ""
 
-#: avsettings.h:63 avsettings.h:64 avsettings.h:68
+#: avsettings.h:63 avsettings.h:64 avsettings.h:68 avsettings.h:69
 msgid "1080i"
 msgstr ""
 
-#: avsettings.h:66 avsettings.h:67 avsettings.h:71
+#: avsettings.h:66 avsettings.h:67 avsettings.h:71 avsettings.h:72
 msgid "4 sec"
 msgstr ""
 
-#: avsettings.h:67 avsettings.h:68 avsettings.h:72
+#: avsettings.h:67 avsettings.h:68 avsettings.h:72 avsettings.h:73
 msgid "6 sec"
 msgstr ""
 
-#: avsettings.h:68 avsettings.h:69 avsettings.h:73
+#: avsettings.h:68 avsettings.h:69 avsettings.h:73 avsettings.h:74
 msgid "8 sec"
 msgstr ""
 
-#: avsettings.h:69 avsettings.h:70 avsettings.h:74
+#: avsettings.h:69 avsettings.h:70 avsettings.h:74 avsettings.h:75
 msgid "10 sec"
 msgstr ""
 
@@ -623,12 +625,12 @@ msgstr ""
 #: mc_global.h:582 mc_global.h:826 mc_pictureplayer.h:381 mc_videoplayer.h:388
 #: mc_videoplayer.h:487 tithek.h:467 tithek.h:471 tithek.h:484 tithek.h:488
 #: tithek.h:491 global.h:4267 global.h:4269 global.h:4289 global.h:4291
-#: scan.h:763 scan.h:773 scan.h:917 scan.h:989 scan.h:1195
+#: scan.h:763 scan.h:773 scan.h:917 scan.h:989 scan.h:1195 avsettings.h:199
 msgid "Message"
 msgstr ""
 
 #: avsettings.h:188 videomode.h:44 videomode.h:58 videomode.h:53
-#: avsettings.h:192 global.h:2594 avsettings.h:195
+#: avsettings.h:192 global.h:2594 avsettings.h:195 avsettings.h:199
 msgid "Is this Videomode ok ?"
 msgstr ""
 
@@ -766,6 +768,7 @@ msgstr ""
 #: global.h:165 global.h:208 global.h:4267 global.h:166 global.h:210
 #: global.h:4269 global.h:170 global.h:214 global.h:4289 global.h:172
 #: global.h:216 global.h:4291 scan.h:763 scan.h:917 scan.h:989 scan.h:1195
+#: avsettings.h:199
 msgid "OK"
 msgstr ""
 
@@ -1345,7 +1348,7 @@ msgstr ""
 
 #: lnbconfig.h:143 transponder.h:170 transponder.h:179 transponder.h:329
 #: transponder.h:338 avsettings.h:73 avsettings.h:77
-#: mc_pictureplayer_settings.h:18
+#: mc_pictureplayer_settings.h:18 avsettings.h:78
 msgid "on"
 msgstr ""
 
