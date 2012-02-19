@@ -199,7 +199,7 @@ msgstr ""
 #: global.h:165 global.h:208 global.h:4267 global.h:166 global.h:210
 #: global.h:4269 global.h:170 global.h:214 global.h:4289 global.h:172
 #: global.h:216 global.h:4291 scan.h:763 scan.h:917 scan.h:989 scan.h:1195
-#: avsettings.h:199 global.h:4293
+#: avsettings.h:199 global.h:4293 global.h:4299
 msgid "EXIT"
 msgstr ""
 
@@ -630,7 +630,7 @@ msgstr ""
 #: mc_videoplayer.h:487 tithek.h:467 tithek.h:471 tithek.h:484 tithek.h:488
 #: tithek.h:491 global.h:4267 global.h:4269 global.h:4289 global.h:4291
 #: scan.h:763 scan.h:773 scan.h:917 scan.h:989 scan.h:1195 avsettings.h:199
-#: global.h:4293
+#: global.h:4293 global.h:4299
 msgid "Message"
 msgstr ""
 
@@ -773,7 +773,7 @@ msgstr ""
 #: global.h:165 global.h:208 global.h:4267 global.h:166 global.h:210
 #: global.h:4269 global.h:170 global.h:214 global.h:4289 global.h:172
 #: global.h:216 global.h:4291 scan.h:763 scan.h:917 scan.h:989 scan.h:1195
-#: avsettings.h:199 skin_default_skin.xml.h:275 global.h:4293
+#: avsettings.h:199 skin_default_skin.xml.h:275 global.h:4293 global.h:4299
 msgid "OK"
 msgstr ""
 
@@ -802,7 +802,7 @@ msgstr ""
 #: global.h:4177 global.h:4178 global.h:4155 global.h:4152 global.h:4153
 #: global.h:4168 global.h:4170 global.h:4303 global.h:4310 global.h:4186
 #: global.h:4187 global.h:4233 global.h:4267 global.h:4269 global.h:4289
-#: global.h:4291 global.h:4293
+#: global.h:4291 global.h:4293 global.h:4299
 msgid "ERROR cant read res"
 msgstr ""
 
