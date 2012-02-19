@@ -22,6 +22,7 @@ void screenavsettings(int flag)
 	struct skin* audiosource = getscreennode(avsettings, "audiosource");
 	struct skin* ac3default = getscreennode(avsettings, "ac3default");
 	struct skin* ac3mode = getscreennode(avsettings, "ac3mode");
+	struct skin* volautochangevalue = getscreennode(avsettings, "volautochangevalue");
 	struct skin* mode3d = getscreennode(avsettings, "mode3d");
 	struct skin* tmp = NULL;
 
@@ -125,6 +126,9 @@ void screenavsettings(int flag)
 	ret = getac3();
 	setchoiceboxselection(ac3mode, ret);
 	free(ret); ret = NULL;
+	
+	changeinput(volautochangevalue, "0\n5\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60\n65\n70\n75\n80\n85\n90\n95\n100");
+	setchoiceboxselection(volautochangevalue, getconfig("volautochangevalue", NULL));
 
 	ret = getmode3dchoices();
 	changeinput(mode3d, ret);
@@ -257,6 +261,8 @@ void screenavsettings(int flag)
 					setmode3d(mode3d->ret); 
 				free(ret); ret = NULL;
 			}
+			addconfigscreencheck("volautochangevalue", volautochangevalue, 0);
+			status.volautochangevalue = getconfigint("volautochangevalue", NULL);
 			addconfigscreencheck("av_ac3default", ac3default, 0);
 			if(rcret == getrcconfigint("rcok", NULL)) break;
 		}
