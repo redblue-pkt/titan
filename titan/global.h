@@ -87,6 +87,9 @@ printf("tmp: %s\n", tmpstr);
 		return 1;
 printf("tmpstr: %s\n", tmpstr);
 printf("dir: %s\n", dir);
+
+	dir = ostrcat("/", dir, 0, 1);
+printf("dir2: %s\n", dir);
 	if(ostrcmp(tmpstr, dir) == 0)
 	{
 		free(dir), dir = NULL;
