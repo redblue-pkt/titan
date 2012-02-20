@@ -20,7 +20,7 @@ struct skin* menu(struct skin* menu, int flag)
 	child = menu->child;
 	while(child != NULL)
 	{
-		if(child->type == MENU)
+		if(child->type & MENU)
 		{	
 			tmpstr = ostrcat("protect_", child->name, 0, 0);
 			
@@ -95,7 +95,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		return 1;
 	}
 	
-	if(menuentry->type != MENU) return 1;
+	if(!(menuentry->type & MENU)) return 1;
 
 	debug(1000, "menuentry->name=%s", menuentry->name);
 

@@ -68,7 +68,7 @@ void screenmenuprotect()
 		child = node->child;
 		while(child != NULL)
 		{
-			if(child->type == MENU)
+			if(child->type & MENU)
 			{
 				tmp = addlistbox(menuprotect, listbox, tmp, 1);
 				if(tmp != NULL)

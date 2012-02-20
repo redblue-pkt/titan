@@ -160,7 +160,7 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 					(*aktline)++;
 					if(gridbr == 0)
 					{
-						chnode1->type = TEXTBOXGRIDBR;
+						chnode1->type = TEXTBOX | GRIDBR;
 						if(tmpchannel == aktchannel)
 						{
 							listbox->aktline = *aktline;
