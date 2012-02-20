@@ -634,7 +634,7 @@ printf("888\n");
 
 		autoresolution();
 firstwizzardstep1:
-		if(checkbox("ATEMIO500") == 0)
+		if(checkbox("ATEMIO510") == 0)
 		{
 			status.updatevfd = PAUSE;
 			screenavsettings(1);
