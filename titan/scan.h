@@ -25,7 +25,7 @@ uint8_t changeservicetype(uint8_t type)
 	return ret;
 }
 
-struct transponder* satsystemdesc(char* buf, unsigned long transportid, unsigned short onid, int orbitalpos)
+struct transponder* satsystemdesc(unsigned char* buf, unsigned long transportid, unsigned short onid, int orbitalpos)
 {
 	int polarization = 0, modulation = 0, system = 0;
 	int rolloff = 0, fec = 0, symbolrate = 0;
@@ -83,7 +83,7 @@ struct transponder* satsystemdesc(char* buf, unsigned long transportid, unsigned
 			break;
 	}
 
-	if(modulation == 2) fec += 9;
+	//if(modulation == 2) fec += 9;
 
 	polarization = (buf[8] >> 5) & 0x03;
 
@@ -93,11 +93,7 @@ struct transponder* satsystemdesc(char* buf, unsigned long transportid, unsigned
 
 	frequency = (int) 1000 * (int) round ((double) frequency / (double) 1000);
 
-	if(frequency > 15000000)
-	{
-		debug(500, "nitscan: freq %d sr %d fec %d pol %d\n", frequency, symbolrate, fec, polarization);
-		return NULL;
-	}
+	if(frequency > 15000000) return NULL;
 
 	id = (onid << 16) | transportid;
 
@@ -106,16 +102,17 @@ struct transponder* satsystemdesc(char* buf, unsigned long transportid, unsigned
 		tpnode = createtransponder(id, FE_QPSK, orbitalpos, frequency, INVERSION_AUTO, symbolrate, polarization, fec, modulation, rolloff, 0, system);
 		status.writetransponder = 1;
 	}
+
+	debug(500, "nitscan: id=%lu freq=%d sr=%d fec=%d pol=%d modulation=%d system=%d, tpnode=%p", id, frequency, symbolrate, fec, polarization, modulation, system, tpnode);
+
 	return tpnode;
 }
 
-int parsenit(char* buf, int orbitalpos)
+int parsenit(unsigned char* buf, uint8_t* lastsecnr, int orbitalpos)
 {
 	int ret = 0, i;
-	int secdone[255];
-	int sectotal = -1;
 
-	for(i = 0; i < 255; i++) secdone[i] = 0;
+	if(buf == NULL) return ret;
 
 	//unsigned char buf[MINMALLOC];
 
@@ -131,54 +128,69 @@ int parsenit(char* buf, int orbitalpos)
 	unsigned long transponderid = 0;
 	unsigned short onid = 0;
 	unsigned short nid = 0;
+	unsigned char secnr = 0;
 
-	while(sectotal < buf[7])
+	seclen = ((buf[1] & 0x0F) << 8) + buf[2];
+	nid = ((buf[3] << 8)| buf[4]);
+	desclen = ((buf[8] & 0x0F) << 8) | buf[9];
+	secnr = buf[6];
+	*lastsecnr = buf[7];
+	debug(500, "nitscan: section %d last %d nid %d", secnr, *lastsecnr, nid);
+
+	for(pos = 10; pos < desclen + 10; pos += buf[pos + 1] + 2)
 	{
-		seclen = ((buf[1] & 0x0F) << 8) + buf[2];
-		nid = ((buf[3] << 8)| buf[4]);
-		desclen = ((buf[8] & 0x0F) << 8) | buf[9];
-		unsigned char secnr = buf[6];
-
-//printf("[NIT] section %X last %X network_id 0x%x -> %s\n", secnum, buffer[7], network_id, secdone[secnum] ? "skip" : "use");
-
-		if(secdone[secnr] == 1) continue;
-		secdone[secnr] = 1;
-		sectotal++;
-		
-		for(pos = 10; pos < desclen + 10; pos += buf[pos + 1] + 2)
+		switch(buf[pos])
 		{
-			looplen = ((buf[pos] & 0x0F) << 8) | buf[pos + 1];
-			if (!looplen) continue;
+			case 0x0F:
+				//private_data_indicator_desc(buf + pos);
+				break;
+			case 0x40:
+				//network_name_desc(buf + pos);
+				break;
+			case 0x4A:
+				//linkage_desc(buf + pos);
+				break;
+			case 0x5B:
+				//multilingual_networkname_desc(buf + pos);
+				break;
+			case 0x5F:
+				//private_data_specifier_desc(buf + pos);
+				break;
+			case 0x80:
+				break;
+			case 0x90:
+				break;
+		}
+	}
 
-			for(pos += 2; pos < seclen - 3; pos += tdesclen + 6)
+	looplen = ((buf[pos] & 0x0F) << 8) | buf[pos + 1];
+	if (!looplen) return ret;
+
+	for(pos += 2; pos < seclen - 3; pos += tdesclen + 6)
+	{
+		transponderid = (buf[pos] << 8) | buf[pos + 1];
+		onid = (buf[pos + 2] << 8) | buf[pos + 3];
+		tdesclen = ((buf[pos + 4] & 0x0F) << 8) | buf[pos + 5];
+
+		for(pos2 = pos + 6; pos2 < pos + tdesclen + 6; pos2 += buf[pos2 + 1] + 2)
+		{
+			switch(buf[pos2])
 			{
-				transponderid = (buf[pos] << 8) | buf[pos + 1];
-				onid = (buf[pos + 2] << 8) | buf[pos + 3];
-				tdesclen = ((buf[pos + 4] & 0x0F) << 8) | buf[pos + 5];
-				{
-					for(pos2 = pos + 6; pos2 < pos + tdesclen + 6; pos2 += buf[pos2 + 1] + 2)
-					{
-						switch(buf[pos2])
-						{
-							case 0x41:
-								//servicelistdesc(buf + pos2, transponderid, onid);
-								break;
-							case 0x43:
-								satsystemdesc(buf + pos2, transponderid, onid, orbitalpos);
-								break;
-							case 0x44:
-								//cablesystemdesc(buf + pos2, transponderid, onid);
-								break;
-							case 0x5A:
-								//terrestrialsystemdesc(buf + pos2);
-								break;
-							case 0x62:
-								//frequencylistdesc(buf + pos2);
-								break;
-
-						}
-					}
-				}
+				case 0x41:
+					//servicelistdesc(buf + pos2, transponderid, onid);
+					break;
+				case 0x43:
+					satsystemdesc(buf + pos2, transponderid, onid, orbitalpos);
+					break;
+				case 0x44:
+					//cablesystemdesc(buf + pos2, transponderid, onid) < 0)
+					break;
+				case 0x5A:
+					//terrestrialsystemdesc(buf + pos2);
+					break;
+				case 0x62:
+					//frequencylistdesc(buf + pos2);
+					break;
 			}
 		}
 	}
@@ -336,6 +348,7 @@ void doscan(struct stimerthread* timernode)
 	struct dvbdev* fenode = NULL;
 	struct channel* chnode = NULL;
 	struct sat* satnode = sat;
+	int nitscan = 1;
 
 	if(scaninfo.fenode == NULL || scaninfo.tpnode == NULL || timernode == NULL)
 	{
@@ -366,16 +379,7 @@ void doscan(struct stimerthread* timernode)
 			scaninfo.orbitalpos = satnode->orbitalpos;
 		}
 		
-		//get nit
-		/*
-		if(scaninfo.networkscan == 1)
-		{
-			buf = dvbgetnit(fenode, scaninfo.timeout);
-			parsenit(buf, satnode->orbitalpos);
-			free(buf); buf = NULL;
-		}
-		*/
-
+		nitscan = 1;
 		//transponder loop
 		while(tpnode != NULL && timernode->aktion == START)
 		{
@@ -437,6 +441,27 @@ void doscan(struct stimerthread* timernode)
 					if(chnode->transponder == tpnode)
 						delchannel(chnode->serviceid, chnode->transponderid, 1);
 					chnode = tmpchannel;
+				}
+			}
+
+			//get nit
+			if(scaninfo.networkscan == 1 && nitscan == 1)
+			{
+				lastsecnr = 0xff;
+				secnr = 0;
+				while(secnr <= lastsecnr && secnr <= 256)
+				{
+					if(timernode->aktion != START) break;
+					buf = dvbgetnit(fenode, secnr, scaninfo.timeout);
+					if(buf != NULL)
+					{
+						parsenit(buf, &lastsecnr, satnode->orbitalpos);
+						nitscan = 0;
+					}
+					else
+						break;
+					free(buf); buf = NULL;
+					secnr++;
 				}
 			}
 

@@ -184,6 +184,14 @@ int dmxsetfilter(struct dvbdev* node, int pid, int secnr, int flag)
 	{
 		sctflt.filter.filter[0] = 0x40;
 		sctflt.filter.mask[0] = 0xff;
+		sctflt.filter.filter[1] = 0x00;
+		sctflt.filter.mask[1] = 0x00;
+		sctflt.filter.filter[2] = 0x00;
+		sctflt.filter.mask[2] = 0x00;
+		sctflt.filter.filter[3] = 0x00;
+		sctflt.filter.mask[3] = 0x00;
+		sctflt.filter.filter[4] = secnr;
+		sctflt.filter.mask[4] = 0xff;
 		sctflt.timeout = 0;
 		sctflt.pid = pid;
 		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
