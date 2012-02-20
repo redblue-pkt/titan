@@ -200,6 +200,7 @@ msgstr ""
 #: global.h:4269 global.h:170 global.h:214 global.h:4289 global.h:172
 #: global.h:216 global.h:4291 scan.h:763 scan.h:917 scan.h:989 scan.h:1195
 #: avsettings.h:199 global.h:4293 global.h:4299 global.h:219 global.h:4302
+#: tithek.h:485
 msgid "EXIT"
 msgstr ""
 
@@ -630,7 +631,7 @@ msgstr ""
 #: mc_videoplayer.h:487 tithek.h:467 tithek.h:471 tithek.h:484 tithek.h:488
 #: tithek.h:491 global.h:4267 global.h:4269 global.h:4289 global.h:4291
 #: scan.h:763 scan.h:773 scan.h:917 scan.h:989 scan.h:1195 avsettings.h:199
-#: global.h:4293 global.h:4299 global.h:4302
+#: global.h:4293 global.h:4299 global.h:4302 tithek.h:485
 msgid "Message"
 msgstr ""
 
@@ -774,7 +775,7 @@ msgstr ""
 #: global.h:4269 global.h:170 global.h:214 global.h:4289 global.h:172
 #: global.h:216 global.h:4291 scan.h:763 scan.h:917 scan.h:989 scan.h:1195
 #: avsettings.h:199 skin_default_skin.xml.h:275 global.h:4293 global.h:4299
-#: global.h:219 global.h:4302
+#: global.h:219 global.h:4302 tithek.h:485
 msgid "OK"
 msgstr ""
 
@@ -8159,6 +8160,7 @@ msgid "IPK tmp (tmp) old"
 msgstr ""
 
 #: mc_main.h:88 mc_main.h:89 mc_internetbrowser.h:32 tithek.h:471 tithek.h:488
+#: tithek.h:468 tithek.h:485
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
@@ -8356,7 +8358,7 @@ msgstr ""
 #: tithek.h:468 tithek.h:498 tithek.h:503 tithek.h:525 tithek.h:530
 #: tithek.h:533 tithek.h:538 tithek.h:534 tithek.h:545 tithek.h:541
 #: tithek.h:542 tithek.h:464 tithek.h:476 tithek.h:465 tithek.h:477
-#: tithek.h:467 tithek.h:484
+#: tithek.h:467 tithek.h:484 tithek.h:481
 msgid "Start playback"
 msgstr ""
 
@@ -8411,6 +8413,7 @@ msgid ""
 msgstr ""
 
 #: tithek.h:544 tithek.h:546 tithek.h:480 tithek.h:481 tithek.h:491
+#: tithek.h:488
 msgid "Can't get Streamurl !"
 msgstr ""
 
