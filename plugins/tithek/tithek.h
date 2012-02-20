@@ -470,7 +470,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 					else
 						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 				}
-				else if(((struct tithek*)listbox->select->handle)->flag == 4 && status.security == 1)
+				else if(((struct tithek*)listbox->select->handle)->flag == 4)
 				{
 					char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
 					char* tmpstr1 = NULL;
