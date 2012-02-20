@@ -7,6 +7,7 @@ cd "$HOME"/flashimg/source.titan/titan/tools
 
 rm tmp
 rm tmp.gz
+rm tmp.lzma
 
 if [ $TYPE == "ufs910" ];then
 	dd if=$KERNELDIR of=tmp.lzma bs=1 skip=64
