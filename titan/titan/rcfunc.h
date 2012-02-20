@@ -100,7 +100,7 @@ void inputboxhelp(struct skin* screen, struct skin* inputbox, int flag)
 {
 	char* tmpstr = NULL;
 
-	if(inputbox != NULL && inputbox->type == INPUTBOX && flag == 0)
+	if(inputbox != NULL && (inputbox->type & INPUTBOX) && flag == 0)
 	{
 		tmpstr = screeninputhelp(inputbox->input, flag);
 		changeinput(inputbox, tmpstr);
@@ -153,7 +153,7 @@ void checkinputboxnumright(struct skin* inputbox)
 	debug(1000, "in");
 	int count = 0;
 
-	if(inputbox != NULL && inputbox->input != NULL && inputbox->type == INPUTBOXNUM)
+	if(inputbox != NULL && inputbox->input != NULL && (inputbox->type & INPUTBOXNUM))
 	{
 		while(isdigit(inputbox->input[inputbox->aktpage - 1]) == 0)
 		{
@@ -178,7 +178,7 @@ void checkinputboxnumleft(struct skin* inputbox)
 	debug(1000, "in");
 	int count = 0;
 
-	if(inputbox != NULL && inputbox->input != NULL && inputbox->type == INPUTBOXNUM)
+	if(inputbox != NULL && inputbox->input != NULL && (inputbox->type & INPUTBOXNUM))
 	{
 		while(isdigit(inputbox->input[inputbox->aktpage - 1]) == 0)
 		{
@@ -234,7 +234,7 @@ void inputbox0(struct skin* screen, struct skin* inputbox, int flag)
 	{
 		int aktpage = inputbox->aktpage - 1;
 
-		if(inputbox->type == INPUTBOX)
+		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '0')
 				inputboxchar(screen, inputbox, ' ', flag);
@@ -261,7 +261,7 @@ void inputbox1(struct skin* screen, struct skin* inputbox, int flag)
 	{
 		int aktpage = inputbox->aktpage - 1;
 
-		if(inputbox->type == INPUTBOX)
+		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '1')
 				inputboxchar(screen, inputbox, '.', flag);
@@ -302,7 +302,7 @@ void inputbox2(struct skin* screen, struct skin* inputbox, int flag)
 	{
 		int aktpage = inputbox->aktpage - 1;
 
-		if(inputbox->type == INPUTBOX)
+		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '2')
 				inputboxchar(screen, inputbox, 'a', flag);
@@ -333,7 +333,7 @@ void inputbox3(struct skin* screen, struct skin* inputbox, int flag)
 	{
 		int aktpage = inputbox->aktpage - 1;
 
-		if(inputbox->type == INPUTBOX)
+		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '3')
 				inputboxchar(screen, inputbox, 'd', flag);
@@ -364,7 +364,7 @@ void inputbox4(struct skin* screen, struct skin* inputbox, int flag)
 	{
 		int aktpage = inputbox->aktpage - 1;
 
-		if(inputbox->type == INPUTBOX)
+		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '4')
 				inputboxchar(screen, inputbox, 'g', flag);
@@ -395,7 +395,7 @@ void inputbox5(struct skin* screen, struct skin* inputbox, int flag)
 	{
 		int aktpage = inputbox->aktpage - 1;
 
-		if(inputbox->type == INPUTBOX)
+		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '5')
 				inputboxchar(screen, inputbox, 'j', flag);
@@ -427,7 +427,7 @@ void inputbox6(struct skin* screen, struct skin* inputbox, int flag)
 	{
 		int aktpage = inputbox->aktpage - 1;
 
-		if(inputbox->type == INPUTBOX)
+		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '6')
 				inputboxchar(screen, inputbox, 'm', flag);
@@ -458,7 +458,7 @@ void inputbox7(struct skin* screen, struct skin* inputbox, int flag)
 	{
 		int aktpage = inputbox->aktpage - 1;
 
-		if(inputbox->type == INPUTBOX)
+		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '7')
 				inputboxchar(screen, inputbox, 'p', flag);
@@ -493,7 +493,7 @@ void inputbox8(struct skin* screen, struct skin* inputbox, int flag)
 	{
 		int aktpage = inputbox->aktpage - 1;
 
-		if(inputbox->type == INPUTBOX)
+		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '8')
 				inputboxchar(screen, inputbox, 't', flag);
@@ -524,7 +524,7 @@ void inputbox9(struct skin* screen, struct skin* inputbox, int flag)
 	{
 		int aktpage = inputbox->aktpage - 1;
 
-		if(inputbox->type == INPUTBOX)
+		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '9')
 				inputboxchar(screen, inputbox, 'w', flag);
@@ -598,7 +598,7 @@ void griddown(struct skin* screen, struct skin* grid, int flag)
 		node = grid->select;
 		while(node != NULL)
 		{
-			if(node->next == NULL && node != grid->select && (node->type == GRIDBR || node->type == TEXTBOXGRIDBR)) break;
+			if(node->next == NULL && node != grid->select && ((node->type & GRIDBR))) break;
 			if(node->next == NULL || node->deaktivcol != -1 || node->hidden == YES || (node->parentpointer != grid && ostrcmp(node->parent, grid->name) != 0))
 			{
 				node = node->next;
@@ -612,7 +612,7 @@ void griddown(struct skin* screen, struct skin* grid, int flag)
 				continue;
 			}
 
-			if((node->type == GRIDBR || node->type == TEXTBOXGRIDBR) && node != grid->select) br++;
+			if((node->type & GRIDBR) && node != grid->select) br++;
 			if(br > 1)
 			{
 				grid->aktline--;
@@ -663,7 +663,7 @@ void gridup(struct skin* screen, struct skin* grid, int flag)
 		
 			if(node->prev == NULL || node->prev == grid || node->deaktivcol != -1 || node->hidden == YES || (node->prev->parentpointer != grid && ostrcmp(node->prev->parent, grid->name) != 0))
 			{
-				if(br > 0 && (node->type == GRIDBR || node->type == TEXTBOXGRIDBR) && !(node->deaktivcol != -1 || node->hidden == YES)) break;
+				if(br > 0 && (node->type & GRIDBR) && !(node->deaktivcol != -1 || node->hidden == YES)) break;
 
 				node = node->prev;
 				if(node == grid && mark == 0)
@@ -700,7 +700,7 @@ void gridup(struct skin* screen, struct skin* grid, int flag)
 				break;
 			}
 
-			if(node->type == GRIDBR || node->type == TEXTBOXGRIDBR) br++;
+			if(node->type & GRIDBR) br++;
 
 			grid->aktline--;
 			node = node->prev;
@@ -725,14 +725,14 @@ void gridleft(struct skin* screen, struct skin* grid, int flag)
 	if(grid != NULL)
 	{
 		node = grid->select;
-		if(node != NULL && (node->type == GRIDBR || node->type == TEXTBOXGRIDBR))
+		if(node != NULL && (node->type & GRIDBR))
 		{
 			grid->aktpage = -1;
 			while(node != NULL)
 			{
 				if(node->parentpointer == grid || ostrcmp(node->parent, grid->name) == 0)
 				{
-					if(node->next == NULL || node->next->type == GRIDBR || node->next->type == TEXTBOXGRIDBR)
+					if(node->next == NULL || (node->next->type & GRIDBR))
 						break;
 					else
 						grid->aktline++;
@@ -763,14 +763,14 @@ void gridright(struct skin* screen, struct skin* grid, int flag)
 	if(grid != NULL)
 	{
 		node = grid->select;
-		if((node != NULL && node->next != NULL && (node->next->type == GRIDBR || node->next->type == TEXTBOXGRIDBR)) || grid->aktline == grid->linecount)
+		if((node != NULL && node->next != NULL && (node->next->type & GRIDBR)) || grid->aktline == grid->linecount)
 		{
 			grid->aktpage = -1;
 			while(node != NULL)
 			{
 				if(node->parentpointer == grid || ostrcmp(node->parent, grid->name) == 0)
 				{
-					if(node == NULL || node->type == GRIDBR || node->type == TEXTBOXGRIDBR)
+					if(node == NULL || (node->type & GRIDBR))
 						break;
 					else
 						grid->aktline--;
@@ -949,7 +949,7 @@ int addscreenrc(struct skin* screen, struct skin* node)
 		return 1;
 	}
 
-	if(node->type == GRID)
+	if(node->type & GRID)
 	{
 		addrc(getrcconfigint("rcright", NULL), gridright, screen, node);
 		addrc(getrcconfigint("rcleft", NULL), gridleft, screen, node);
@@ -959,7 +959,7 @@ int addscreenrc(struct skin* screen, struct skin* node)
 		addrc(getrcconfigint("rcchdown", NULL), gridchdown, screen, node);
 		addrc(getrcconfigint("rchelp", NULL), helpbox, screen, node);
 	}
-	else if(node->type == LISTBOX)
+	else if(node->type & LISTBOX)
 	{
 		addrc(getrcconfigint("rcup", NULL), listboxup, screen, node);
 		addrc(getrcconfigint("rcdown", NULL), listboxdown, screen, node);
@@ -969,13 +969,13 @@ int addscreenrc(struct skin* screen, struct skin* node)
 		addrc(getrcconfigint("rcchdown", NULL), listboxleft, screen, node);
 		addrc(getrcconfigint("rchelp", NULL), helpbox, screen, node);
 	}
-	else if(node->type == CHOICEBOX)
+	else if(node->type & CHOICEBOX)
 	{
 		addrc(getrcconfigint("rcleft", NULL), choiceboxleft, screen, node);
 		addrc(getrcconfigint("rcright", NULL), choiceboxright, screen, node);
 		addrc(getrcconfigint("rchelp", NULL), helpbox, screen, node);
 	}
-	else if(node->type == INPUTBOX || node->type == INPUTBOXNUM)
+	else if((node->type & INPUTBOX) || (node->type & INPUTBOXNUM))
 	{
 		addrc(getrcconfigint("rc0", NULL), inputbox0, screen, node);
 		addrc(getrcconfigint("rc1", NULL), inputbox1, screen, node);
@@ -990,11 +990,11 @@ int addscreenrc(struct skin* screen, struct skin* node)
 		addrc(getrcconfigint("rcright", NULL), inputboxright, screen, node);
 		addrc(getrcconfigint("rcleft", NULL), inputboxleft, screen, node);
 		addrc(getrcconfigint("rchelp", NULL), helpbox, screen, node);
-		if(node->type == INPUTBOX) addrc(getrcconfigint("rcff", NULL), inputboxff, screen, node);
-		if(node->type == INPUTBOX) addrc(getrcconfigint("rcfr", NULL), inputboxfr, screen, node);
-		if(node->type == INPUTBOX) addrc(getrcconfigint("rctext", NULL), inputboxhelp, screen, node);
+		if(node->type & INPUTBOX) addrc(getrcconfigint("rcff", NULL), inputboxff, screen, node);
+		if(node->type & INPUTBOX) addrc(getrcconfigint("rcfr", NULL), inputboxfr, screen, node);
+		if(node->type & INPUTBOX) addrc(getrcconfigint("rctext", NULL), inputboxhelp, screen, node);
 	}
-	else if(node->type == TEXTBOX)
+	else if(node->type & TEXTBOX)
 	{
 		addrc(getrcconfigint("rcup", NULL), textboxup, screen, node);
 		addrc(getrcconfigint("rcdown", NULL), textboxdown, screen, node);
@@ -1002,7 +1002,7 @@ int addscreenrc(struct skin* screen, struct skin* node)
 		addrc(getrcconfigint("rcchdown", NULL), textboxdown, screen, node);
 		addrc(getrcconfigint("rchelp", NULL), helpbox, screen, node);
 	}
-	else if(node->type == FILELIST)
+	else if(node->type & FILELIST)
 	{
 		addrc(getrcconfigint("rcup", NULL), listboxup, screen, node);
 		addrc(getrcconfigint("rcdown", NULL), listboxdown, screen, node);
@@ -1013,7 +1013,7 @@ int addscreenrc(struct skin* screen, struct skin* node)
 		addrc(getrcconfigint("rcchdown", NULL), listboxleft, screen, node);
 		addrc(getrcconfigint("rchelp", NULL), helpbox, screen, node);
 	}
-	else if(node->type == PROGRESSBAR)
+	else if(node->type & PROGRESSBAR)
 	{
 		addrc(getrcconfigint("rcleft", NULL), progressbarleft, screen, node);
 		addrc(getrcconfigint("rcright", NULL), progressbarright, screen, node);
@@ -1034,7 +1034,7 @@ int delscreenrc(struct skin* screen, struct skin* node)
 		return 1;
 	}
 
-	if(node->type == GRID)
+	if(node->type & GRID)
 	{
 		delrc(getrcconfigint("rcright", NULL), screen, node);
 		delrc(getrcconfigint("rcleft", NULL), screen, node);
@@ -1044,7 +1044,7 @@ int delscreenrc(struct skin* screen, struct skin* node)
 		delrc(getrcconfigint("rcchdown", NULL), screen, node);
 		delrc(getrcconfigint("rchelp", NULL), screen, node);
 	}
-	if(node->type == LISTBOX)
+	if(node->type & LISTBOX)
 	{
 		delrc(getrcconfigint("rcup", NULL), screen, node);
 		delrc(getrcconfigint("rcdown", NULL), screen, node);
@@ -1054,13 +1054,13 @@ int delscreenrc(struct skin* screen, struct skin* node)
 		delrc(getrcconfigint("rcchdown", NULL), screen, node);
 		delrc(getrcconfigint("rchelp", NULL), screen, node);
 	}
-	else if(node->type == CHOICEBOX)
+	else if(node->type & CHOICEBOX)
 	{
 		delrc(getrcconfigint("rcleft", NULL), screen, node);
 		delrc(getrcconfigint("rcright", NULL), screen, node);
 		delrc(getrcconfigint("rchelp", NULL), screen, node);
 	}
-	else if(node->type == INPUTBOX || node->type == INPUTBOXNUM)
+	else if((node->type & INPUTBOX) || (node->type & INPUTBOXNUM))
 	{
 		delrc(getrcconfigint("rc0", NULL), screen, node);
 		delrc(getrcconfigint("rc1", NULL), screen, node);
@@ -1075,11 +1075,11 @@ int delscreenrc(struct skin* screen, struct skin* node)
 		delrc(getrcconfigint("rcright", NULL), screen, node);
 		delrc(getrcconfigint("rcleft", NULL), screen, node);
 		delrc(getrcconfigint("rchelp", NULL), screen, node);
-		if(node->type == INPUTBOX) delrc(getrcconfigint("rcff", NULL), screen, node);
-		if(node->type == INPUTBOX) delrc(getrcconfigint("rcfr", NULL), screen, node);
-		if(node->type == INPUTBOX) delrc(getrcconfigint("rchelp", NULL), screen, node);
+		if(node->type & INPUTBOX) delrc(getrcconfigint("rcff", NULL), screen, node);
+		if(node->type & INPUTBOX) delrc(getrcconfigint("rcfr", NULL), screen, node);
+		if(node->type & INPUTBOX) delrc(getrcconfigint("rchelp", NULL), screen, node);
 	}
-	else if(node->type == TEXTBOX)
+	else if(node->type & TEXTBOX)
 	{
 		delrc(getrcconfigint("rcup", NULL), screen, node);
 		delrc(getrcconfigint("rcdown", NULL), screen, node);
@@ -1087,7 +1087,7 @@ int delscreenrc(struct skin* screen, struct skin* node)
 		delrc(getrcconfigint("rcchdown", NULL), screen, node);
 		delrc(getrcconfigint("rchelp", NULL), screen, node);
 	}
-	else if(node->type == FILELIST)
+	else if(node->type & FILELIST)
 	{
 		delrc(getrcconfigint("rcup", NULL), screen, node);
 		delrc(getrcconfigint("rcdown", NULL), screen, node);
@@ -1098,7 +1098,7 @@ int delscreenrc(struct skin* screen, struct skin* node)
 		delrc(getrcconfigint("rcchdown", NULL), screen, node);
 		delrc(getrcconfigint("rchelp", NULL), screen, node);
 	}
-	else if(node->type == PROGRESSBAR)
+	else if(node->type & PROGRESSBAR)
 	{
 		delrc(getrcconfigint("rcleft", NULL), screen, node);
 		delrc(getrcconfigint("rcright", NULL), screen, node);

@@ -84,7 +84,7 @@ start:
 	tmp = listbox->select;
 	while(1)
 	{
-		if(listbox->select != NULL && listbox->select->type == CHOICEBOX)
+		if(listbox->select != NULL && (listbox->select->type & CHOICEBOX))
 			addscreenrc(moduleconfig, tmp);
 		rcret = waitrc(moduleconfig, 2000, 0);
 		tmp = listbox->select;

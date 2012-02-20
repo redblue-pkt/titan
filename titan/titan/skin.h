@@ -236,10 +236,12 @@ int convertxmlentry(char *value, uint8_t *proz)
 		ret = GRID;
 	else if(strcasecmp(value, "gridbr") == 0)
 		ret = GRIDBR;
+	else if(strcasecmp(value, "gridbrmenu") == 0)
+		ret = GRIDBR | MENU;
 	else if(strcasecmp(value, "textbox") == 0)
 		ret = TEXTBOX;
 	else if(strcasecmp(value, "textboxgridbr") == 0)
-		ret = TEXTBOXGRIDBR;
+		ret = TEXTBOX | GRIDBR;
 	else if(strcasecmp(value, "choicebox") == 0)
 		ret = CHOICEBOX;
 	else if(strcasecmp(value, "inputbox") == 0)
@@ -485,7 +487,7 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 		if(ret != NULL)
 		{
 			newnode->type = convertxmlentry(ret, NULL);
-			if(newnode->type == MENU)
+			if(newnode->type & MENU)
 			{
 				if(checkmenuforbox(newnode->name) == 0)
 				{
@@ -845,7 +847,7 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 	}
 */
 
-	if(newnode->type == FILELIST)
+	if(newnode->type & FILELIST)
 		createfilelist(tmpnode, newnode);
 
 	//debug(1000, "out");
@@ -1120,7 +1122,7 @@ void delmarkedscreennodes(struct skin* node, int mark)
 				free(node);
 				node = prev->next;
 				continue;
-                        }
+			}
 		}
 
 		prev = node;
@@ -3013,20 +3015,20 @@ void drawnode(struct skin* node, int flag)
 		drawtitlebggradient(node);
 	if(node->progresssize > 0)
 		drawprogressbar(node);
-	if(node->type == MULTIPROGRESSBAR)
+	if(node->type & MULTIPROGRESSBAR)
 		drawmultiprogressbar(node);
-	if(node->pic != NULL && node->type != FILELIST)
+	if(node->pic != NULL && !(node->type & FILELIST))
 		drawpic(node->pic, node->iposx, node->iposy, node->rpicwidth, node->rpicheight, node->iwidth, node->iheight, node->halign, node->valign);
 	if(node->input != NULL)
 	{
-		if(node->type == CHOICEBOX)
+		if(node->type & CHOICEBOX)
 			drawstring(node->input, 1, node->poscount, -1, node->iposx, node->iposy, node->iwidth, node->iheight, RIGHT, node->valign, node->font, node->fontsize, color, node->transparent, 0, NULL, NULL, &len, node->charspace);
-		if(node->type == INPUTBOX || node->type == INPUTBOXNUM)
+		if((node->type & INPUTBOX) || (node->type & INPUTBOXNUM))
 			drawstring(node->input, 1, node->poscount, node->aktpage, node->iposx, node->iposy, node->iwidth, node->iheight, RIGHT, node->valign, node->font, node->fontsize, color, node->transparent, 0, NULL, NULL, &len, node->charspace);
 	}
 	if(node->text != NULL)
 	{
-		if(node->type == TEXTBOX || node->type == TEXTBOXGRIDBR)
+		if(node->type & TEXTBOX)
 		{
 			int lastposy = 0;
 			drawstring(node->text, node->linecount, node->poscount, -1, node->iposx + node->textposx, node->iposy, node->iwidth - node->textposx, node->iheight, node->halign, node->valign, node->font, node->fontsize, color, node->transparent, node->wrap, NULL, &lastposy, NULL, node->charspace);
@@ -3137,14 +3139,14 @@ void calcscrollbar(struct skin* node)
 
 void calclistboxchild(struct skin* node, struct skin* parent)
 {
-	if(parent->type == GRID && (node->type == GRIDBR || node->type == TEXTBOXGRIDBR))
+	if((parent->type & GRID) && (node->type & GRIDBR))
 	{
 		if(parent->poscount > 0) parent->poscount += node->rheight;
 		if(parent->poscount == 0) parent->poscount = 1;
 	}
 	node->rposy = node->rposy + parent->poscount;
 	node->iposy = node->iposy + parent->poscount;
-	if(parent->type == LISTBOX || parent->type == FILELIST)
+	if((parent->type & LISTBOX) || (parent->type & FILELIST))
 		parent->poscount += node->rheight;
 }
 
@@ -3184,7 +3186,7 @@ int calclistbox(struct skin* node)
 
 		calcrheight(child, node);
 
-		if(node->type == LISTBOX || node->type == FILELIST || (node->type == GRID && (child->type == GRIDBR || child->type == TEXTBOXGRIDBR)))
+		if((node->type & LISTBOX) || (node->type & FILELIST) || ((node->type & GRID) && (child->type & GRIDBR)))
 			node->poscount = node->poscount + child->posy + child->rheight;
 
 		if(node->poscount > node->iheight)
@@ -3351,7 +3353,7 @@ int calcrposy(struct skin* node, struct skin* parent)
 int setnodeattr(struct skin* node, struct skin* parent)
 {
 	if(node != skin) node->flag = clearbit(node->flag, 0);
-	if(parent->type == LISTBOX || parent->type == FILELIST || parent->type == GRID)
+	if((parent->type & LISTBOX) || (parent->type & FILELIST) || (parent->type & GRID))
 		if(node->pagecount != parent->aktpage) return 1;
 
 	debug(1000, "in");
@@ -3395,7 +3397,7 @@ int setnodeattr(struct skin* node, struct skin* parent)
 	}
 
 	calcrwidth(node, parent);
-	if(parent->type != LISTBOX && parent->type != FILELIST && parent->type != GRID)
+	if(!(parent->type & LISTBOX) && !(parent->type & FILELIST) && !(parent->type & GRID))
 		calcrheight(node, parent);
 	calcrposx(node, parent);
 	calcrposy(node, parent);
@@ -3418,7 +3420,7 @@ int setnodeattr(struct skin* node, struct skin* parent)
 		default: shadowrx = shadowoy = node->shadowsize; break;
 	}
 
-	if(parent->type == LISTBOX || parent->type == FILELIST || parent->type == GRID)
+	if((parent->type & LISTBOX) || (parent->type & FILELIST) || (parent->type & GRID))
 		calclistboxchild(node, parent);
 
 	if(node->picprozwidth == 1)
@@ -3472,21 +3474,21 @@ int setnodeattr(struct skin* node, struct skin* parent)
 	if(node->fontcol == 0) node->fontcol = parent->fontcol;
 	if(node->fontcol2 == 0) node->fontcol2 = parent->fontcol2;
 
-	if(node->type == INPUTBOX || node->type == INPUTBOXNUM)
+	if((node->type & INPUTBOX) || (node->type & INPUTBOXNUM))
 	{
 		if(node->aktpage < 1) node->aktpage = 1;
 		checkinputboxnumright(node);
 		changeret(node, node->input);
 	}
 
-	if(node->type == LISTBOX || node->type == FILELIST || node->type == GRID)
+	if((node->type & LISTBOX) || (node->type & FILELIST) || (node->type & GRID))
 	{
 		if(node->aktpage == 0) node->aktpage = 1;
 		calclistbox(node);
 		if(node->scrollbar != NO)
 			calcscrollbar(node);
 	}
-	if(node->type == TEXTBOX || node->type == TEXTBOXGRIDBR)
+	if(node->type & TEXTBOX)
 	{
 		if(node->aktpage < 1) node->aktpage = 1;
 		if(node->text == NULL && node->text2 == NULL)
@@ -3502,7 +3504,7 @@ int setnodeattr(struct skin* node, struct skin* parent)
 			calcscrollbar(node);
 	}
 
-	if(node->type == CHOICEBOX && node->input != NULL)
+	if((node->type & CHOICEBOX) && node->input != NULL)
 	{
 		char* pos = NULL;
 		calctext(node->input, NULL, &node->linecount, &node->pagecount, &node->poscount, 1, node->aktpage);
@@ -3736,14 +3738,14 @@ int changeinput(struct skin* node, char* text)
 		free(node->input);
 		if(text != NULL)
 		{
-			if(node->type == INPUTBOXNUM && node->mask != NULL && strlen(text) == 0)
+			if((node->type & INPUTBOXNUM) && node->mask != NULL && strlen(text) == 0)
 				node->input = strdup(node->mask);
 			else
 				node->input = strdup(text);
 		}
 		else
 		{
-			if(node->type == INPUTBOXNUM && node->mask != NULL)
+			if((node->type & INPUTBOXNUM) && node->mask != NULL)
 				node->input = strdup(node->mask);
 			else
 				node->input = text;
@@ -3900,7 +3902,7 @@ int changemask(struct skin* node, char* text)
 		free(node->mask);
 		if(text != NULL)
 		{
-			if(node->type == INPUTBOXNUM && (node->input == NULL || strlen(node->input) == 0))
+			if((node->type & INPUTBOXNUM) && (node->input == NULL || strlen(node->input) == 0))
 			{
 				node->mask = strdup(text);
 				free(node->input);
