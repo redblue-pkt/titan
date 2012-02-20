@@ -332,9 +332,6 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 			count++;
 			if(gridbr == 0)
 				tmp->type = GRIDBR;
-				//tmp->type = TEXTBOXGRIDBR;
-			//else
-				//tmp->type = TEXTBOX;
 			gridbr = 1;
 			tmp->wrap = YES;
 
