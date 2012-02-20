@@ -49,7 +49,7 @@ int panel_menucall(struct skin* panel_menuentry)
 		return 1;
 	}
 	
-	if(panel_menuentry->type != MENU) return 1;
+	if(!(panel_menuentry->type & MENU)) return 1;
 
 	printf("MENU: %s\n", panel_menuentry->name);	// must be removed later
 
