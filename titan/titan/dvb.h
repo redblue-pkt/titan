@@ -266,9 +266,9 @@ unsigned char* dvbgetpat(struct dvbdev* fenode, int timeout)
 	return dvbget(fenode, 0, 1, 0, timeout);
 }
 
-unsigned char* dvbgetnit(struct dvbdev* fenode, int timeout)
+unsigned char* dvbgetnit(struct dvbdev* fenode, int secnr, int timeout)
 {
-	return dvbget(fenode, 0x10, 4, 0, timeout);
+	return dvbget(fenode, 0x10, 4, secnr, timeout);
 }
 
 //flag 0: with pat
