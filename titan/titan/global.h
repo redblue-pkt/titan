@@ -1,36 +1,74 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-char* gettimeinfo()
+int checkreseller()
 {
-	char* cmd = NULL;
-	cmd = ostrcat(cmd, "cat", 1, 0);
-	cmd = ostrcat(cmd, " /", 1, 0);
-	cmd = ostrcat(cmd, "etc", 1, 0);
-	cmd = ostrcat(cmd, "/", 1, 0);	
-	cmd = ostrcat(cmd, "image-version", 1, 0);
-	cmd = ostrcat(cmd, " | ", 1, 0);	
-	cmd = ostrcat(cmd, "cut", 1, 0);
-	cmd = ostrcat(cmd, " -d= ", 1, 0);
-	cmd = ostrcat(cmd, "-f2", 1, 0);
-	return command(cmd);
-}
+	FILE* fd = NULL;
+	char mtd[10];
+	char* buf = NULL;
 
-char* gettimeinfovar()
-{
-	char* cmd = NULL;
-	cmd = ostrcat(cmd, "cat", 1, 0);
-	cmd = ostrcat(cmd, " /", 1, 0);
-	cmd = ostrcat(cmd, "var", 1, 0);
-	cmd = ostrcat(cmd, "/", 1, 0);
-	cmd = ostrcat(cmd, "etc", 1, 0);
-	cmd = ostrcat(cmd, "/", 1, 0);	
-	cmd = ostrcat(cmd, ".image-version", 1, 0);
-	cmd = ostrcat(cmd, " | ", 1, 0);	
-	cmd = ostrcat(cmd, "cut", 1, 0);
-	cmd = ostrcat(cmd, " -d= ", 1, 0);
-	cmd = ostrcat(cmd, "-f2", 1, 0);
-	return command(cmd);
+	// /dev/mtd0
+	mtd[0] = 0x2f;
+	mtd[1] = 0x64;
+	mtd[2] = 0x65;
+	mtd[3] = 0x76;
+	mtd[4] = 0x2f;
+	mtd[5] = 0x6d;
+	mtd[6] = 0x74;
+	mtd[7] = 0x64;
+	mtd[8] = 0x30;
+	mtd[9] = '\0';
+
+	if((fd = fopen(mtd, "r")) == NULL)
+		return 1;
+
+	buf = malloc(1080);
+	if(buf == NULL)
+	{
+		fclose(fd);
+		return 1;
+	}
+
+	fread(buf, 1080, 1, fd);
+
+	if(checkbox("ATEMIO510") == 1)
+	{
+		if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x29 && (buf[1074] & 0xff) == 0x02 && (buf[1075] & 0xff) == 0xA0)
+		{
+			free(buf);
+			fclose(fd);
+			return 0;
+		}
+	}
+	else if(checkbox("UFS912") == 1)
+	{
+		/* 	reseller
+			read: 2d 	41 		4 		ffffffd2
+			used: 0x2d 	0x41 	0x04 	0xd2
+		*/
+		if((buf[1072] & 0xff) == 0x2d && (buf[1073] & 0xff) == 0x41 && (buf[1074] & 0xff) == 0x04 && (buf[1075] & 0xff) == 0xd2)
+		{
+			printf("ResellerId: found (ufs912) reseller !\n");
+			free(buf);
+			fclose(fd);
+			return 0;
+		}
+	}
+	else
+	{
+		// dummy fpr other boxes
+		printf("ResellerId: check\n");
+		printf("ResellerId1: %x\n", buf[1072]);
+		printf("ResellerId2: %x\n", buf[1073]);
+		printf("ResellerId3: %x\n", buf[1074]);
+		printf("ResellerId4: %x\n", buf[1075]);
+		printf("ResellerId: %x %x %x %x\n", buf[1072], buf[1073], buf[1074], buf[1075]);
+		return 0;
+	}
+
+	free(buf);
+	fclose(fd);
+	return 1;
 }
 
 int checkflash()
@@ -97,70 +135,6 @@ int checkflash()
 	free(dir), dir = NULL;
 	free(tmpstr), tmpstr = NULL;	
 	return 1;
-}
-
-void checkserial(char* input)
-{
-	if(input == NULL) return;
-	
-	char* authfile = NULL;
-	authfile = gethttp("atemio.dyndns.tv", "/svn/auth/trustlist", 80, NULL, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", NULL, 0);
-
-	int count = 0;
-	int i;
-	struct splitstr* ret = NULL;
-
-	ret = strsplit(authfile, "\n", &count);
-	int max = count;
-
-	for( i = 0; i < max; i++){
-		int count1 = 0;
-		struct splitstr* ret1 = NULL;
-		ret1 = strsplit((&ret[i])->part, ",", &count1);	
-
-		if(ostrcmp(input, (&ret1[0])->part) == 0)
-		{
-			status.security = 1;
-			char* cmd = NULL;
-			cmd = ostrcat(cmd, "/", 1, 0);
-			cmd = ostrcat(cmd, "usr", 1, 0);
-			cmd = ostrcat(cmd, "/", 1, 0);
-			cmd = ostrcat(cmd, "sbin", 1, 0);
-			cmd = ostrcat(cmd, "/", 1, 0);									
-			cmd = ostrcat(cmd, "inetd", 1, 0);	
-			system(cmd);
-			free(cmd),cmd = NULL;			
-			if(!file_exist("/dev/ttyS0") == 1)
-				mknod("/dev/ttyS0", S_IFCHR | 0666, makedev(204, 40));
-			free(ret1),ret1 = NULL;
-			break;
-		}
-		free(ret1),ret1 = NULL;
-	}
-
-	if(status.security == 1)
-		status.expertmodus = getconfigint("expertmodus", NULL);
-	else
-	{
-		status.expertmodus = 0;	
-		char* cmd = NULL;
-		cmd = ostrcat(cmd, "killall", 1, 0);
-		cmd = ostrcat(cmd, " ", 1, 0);
-		cmd = ostrcat(cmd, "-9", 1, 0);
-		cmd = ostrcat(cmd, " ", 1, 0);
-		cmd = ostrcat(cmd, "inetd", 1, 0);
-		cmd = ostrcat(cmd, " ", 1, 0);
-		cmd = ostrcat(cmd, "telnetd", 1, 0);
-		cmd = ostrcat(cmd, " ", 1, 0);
-		cmd = ostrcat(cmd, "vsftpd", 1, 0);
-		cmd = ostrcat(cmd, " ", 1, 0);
-		cmd = ostrcat(cmd, "ftpd", 1, 0);		
-		system(cmd);
-		free(cmd),cmd = NULL;	
-	}
-	
-	free(ret),ret = NULL;
-	free(authfile);
 }
 
 void getserial()
@@ -323,7 +297,102 @@ char* getcpuid()
 	free(cmd1), cmd1 = NULL;
 	return string_newline(serial);
 }
-		
+
+char* gettimeinfo()
+{
+	char* cmd = NULL;
+	cmd = ostrcat(cmd, "cat", 1, 0);
+	cmd = ostrcat(cmd, " /", 1, 0);
+	cmd = ostrcat(cmd, "etc", 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);	
+	cmd = ostrcat(cmd, "image-version", 1, 0);
+	cmd = ostrcat(cmd, " | ", 1, 0);	
+	cmd = ostrcat(cmd, "cut", 1, 0);
+	cmd = ostrcat(cmd, " -d= ", 1, 0);
+	cmd = ostrcat(cmd, "-f2", 1, 0);
+	return command(cmd);
+}
+
+char* gettimeinfovar()
+{
+	char* cmd = NULL;
+	cmd = ostrcat(cmd, "cat", 1, 0);
+	cmd = ostrcat(cmd, " /", 1, 0);
+	cmd = ostrcat(cmd, "var", 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, "etc", 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);	
+	cmd = ostrcat(cmd, ".image-version", 1, 0);
+	cmd = ostrcat(cmd, " | ", 1, 0);	
+	cmd = ostrcat(cmd, "cut", 1, 0);
+	cmd = ostrcat(cmd, " -d= ", 1, 0);
+	cmd = ostrcat(cmd, "-f2", 1, 0);
+	return command(cmd);
+}
+
+void checkserial(char* input)
+{
+	if(input == NULL) return;
+	
+	char* authfile = NULL;
+	authfile = gethttp("atemio.dyndns.tv", "/svn/auth/trustlist", 80, NULL, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", NULL, 0);
+
+	int count = 0;
+	int i;
+	struct splitstr* ret = NULL;
+
+	ret = strsplit(authfile, "\n", &count);
+	int max = count;
+
+	for( i = 0; i < max; i++){
+		int count1 = 0;
+		struct splitstr* ret1 = NULL;
+		ret1 = strsplit((&ret[i])->part, ",", &count1);	
+
+		if(ostrcmp(input, (&ret1[0])->part) == 0)
+		{
+			status.security = 1;
+			char* cmd = NULL;
+			cmd = ostrcat(cmd, "/", 1, 0);
+			cmd = ostrcat(cmd, "usr", 1, 0);
+			cmd = ostrcat(cmd, "/", 1, 0);
+			cmd = ostrcat(cmd, "sbin", 1, 0);
+			cmd = ostrcat(cmd, "/", 1, 0);									
+			cmd = ostrcat(cmd, "inetd", 1, 0);	
+			system(cmd);
+			free(cmd),cmd = NULL;			
+			if(!file_exist("/dev/ttyS0") == 1)
+				mknod("/dev/ttyS0", S_IFCHR | 0666, makedev(204, 40));
+			free(ret1),ret1 = NULL;
+			break;
+		}
+		free(ret1),ret1 = NULL;
+	}
+
+	if(status.security == 1)
+		status.expertmodus = getconfigint("expertmodus", NULL);
+	else
+	{
+		status.expertmodus = 0;	
+		char* cmd = NULL;
+		cmd = ostrcat(cmd, "killall", 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, "-9", 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, "inetd", 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, "telnetd", 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, "vsftpd", 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, "ftpd", 1, 0);		
+		system(cmd);
+		free(cmd),cmd = NULL;	
+	}
+	
+	free(ret),ret = NULL;
+	free(authfile);
+}
 
 int getsysinfo()
 {
@@ -406,56 +475,6 @@ void destroy()
 
 	free(buf);
 	fclose(fd);
-}
-
-int checkreseller()
-{
-	FILE* fd = NULL;
-	char mtd[10];
-	char* buf = NULL;
-
-	// /dev/mtd0
-	mtd[0] = 0x2f;
-	mtd[1] = 0x64;
-	mtd[2] = 0x65;
-	mtd[3] = 0x76;
-	mtd[4] = 0x2f;
-	mtd[5] = 0x6d;
-	mtd[6] = 0x74;
-	mtd[7] = 0x64;
-	mtd[8] = 0x30;
-	mtd[9] = '\0';
-
-	if((fd = fopen(mtd, "r")) == NULL)
-		return 1;
-
-	buf = malloc(1080);
-	if(buf == NULL)
-	{
-		fclose(fd);
-		return 1;
-	}
-
-	fread(buf, 1080, 1, fd);
-
-	if(checkbox("ATEMIO510") == 1)
-	{
-		if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x29 && (buf[1074] & 0xff) == 0x02 && (buf[1075] & 0xff) == 0xA0)
-		{
-			free(buf);
-			fclose(fd);
-			return 0;
-		}
-	}
-	else
-	{
-		// dummy fpr other boxes
-		return 0;
-	}
-
-	free(buf);
-	fclose(fd);
-	return 1;
 }
 
 int getmaxsat(char* feshortname)
