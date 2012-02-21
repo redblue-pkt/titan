@@ -180,7 +180,11 @@ int parsenit(unsigned char* buf, uint8_t* lastsecnr, int orbitalpos)
 					//servicelistdesc(buf + pos2, transponderid, onid);
 					break;
 				case 0x43:
-					satsystemdesc(buf + pos2, transponderid, onid, orbitalpos);
+					if(satsystemdesc(buf + pos2, transponderid, onid, orbitalpos) != NULL)
+					{
+						if(scaninfo.scantype != 0)
+							scaninfo.tpmax++;
+					}
 					break;
 				case 0x44:
 					//cablesystemdesc(buf + pos2, transponderid, onid) < 0)
@@ -531,7 +535,7 @@ void scanaddchannel(struct skin* node, int scantype, struct transponder* tp1)
 			if(tp2 == NULL) //create new transponder
 				copytransponder(tp1, tp2, transponderid);
 			else //change transponder
-				copytransponder(tp1, tp2, 0);
+				copytransponder(tp1, tp2, 99);
 		}
 
 		if(servicetype != 0 && servicetype != 1)
@@ -655,7 +659,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 			}
 
 			debug(500, "fetype=%d, orbitalpos=%d, frequ=%d, inverion=%d, symbolrate=%d, polarization=%d, fec=%d, modulation=%d, rolloff=%d, pilot=%d, system=%d", fenode->feinfo->type, orbitalpos, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, system);
-			tpnode = createtransponder(0, fenode->feinfo->type, orbitalpos, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, system);
+			tpnode = createtransponder(99, fenode->feinfo->type, orbitalpos, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, system);
 		}
 		if(tpnode != NULL)
 		{
@@ -716,6 +720,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	scaninfo.onlyfree = onlyfree;
 	scaninfo.networkscan = networkscan;
 	scaninfo.clear = clear;
+	scaninfo.tpmax = tpmax;
 	timernode = addtimer(&doscan, START, 1000, 1, NULL, NULL, NULL);
 
 	while(1)
@@ -730,7 +735,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 		tmpstr = ostrcat(tmpstr, _("Transponder: "), 1, 0);
 		tmpstr = ostrcat(tmpstr, oitoa(scaninfo.tpcount), 1, 1);
 		tmpstr = ostrcat(tmpstr, " / ", 1, 0);
-		tmpstr = ostrcat(tmpstr, oitoa(tpmax), 1, 1);
+		tmpstr = ostrcat(tmpstr, oitoa(scaninfo.tpmax), 1, 1);
 		changetext(tpcount, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 
@@ -758,10 +763,10 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 		changetext(founddata, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 
-		if(tpmax == 0)
+		if(scaninfo.tpmax == 0)
 			progress->progresssize = 100;
 		else
-			progress->progresssize = (100 / (float)tpmax) * scaninfo.tpcount;
+			progress->progresssize = (100 / (float)scaninfo.tpmax) * scaninfo.tpcount;
 
 		drawscreen(scan, 0);
 		rcret = waitrc(scan, 1000, 0);
@@ -803,7 +808,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 		}
 	}
 
-	if(scantype == 0) deltransponder(0);
+	if(scantype == 0) deltransponder(99);
 	if(clear == 1) delunusedbouquetchannels();
 	delmarkedscreennodes(scan, 1);
 	delownerrc(scan);
@@ -1214,9 +1219,9 @@ void screenscanconfig(int flag)
 		}
 		if(rcret == getrcconfigint("rcok", NULL) && tpnode != NULL && iscantype == 0)
 		{
-			struct transponder* tp1 = createtransponder(0, tpnode->fetype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, isystem);
-			copytransponder(tp1, tpnode, 0);
-			deltransponder(0);
+			struct transponder* tp1 = createtransponder(99, tpnode->fetype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, isystem);
+			copytransponder(tp1, tpnode, 99);
+			deltransponder(99);
 			textbox(_("Message"), _("Transponder changed"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 			drawscreen(scan, 0);
 		}

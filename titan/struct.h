@@ -239,6 +239,7 @@ struct scaninfo
 	int clear;
 	char* satname;
 	int tpcount;
+	int tpmax;
 	int tvcount;
 	int newtvcount;
 	int radiocount;

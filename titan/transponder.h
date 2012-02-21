@@ -552,11 +552,12 @@ struct transponder* addtransponder(char* line, int count, struct transponder* la
 		return NULL;
 	}
 
-	if(newnode->id != 0) status.writetransponder = 1;
+	if(newnode->id != 99) status.writetransponder = 1;
 
 	if(last == NULL)
 	{
-		while(node != NULL && newnode->id > node->id)
+		//while(node != NULL && newnode->id > node->id)
+		while(node != NULL)
 		{
 			prev = node;
 			node = node->next;
@@ -618,7 +619,7 @@ int copytransponder(struct transponder* tp1, struct transponder* tp2, unsigned l
 {
 	int ret = 1;
 
-	if(tp1 != NULL && tp2 != NULL && transponderid == 0)
+	if(tp1 != NULL && tp2 != NULL && transponderid == 99)
 	{
 		tp2->fetype = tp1->fetype;
 		tp2->polarization = tp1->polarization;
@@ -635,7 +636,7 @@ int copytransponder(struct transponder* tp1, struct transponder* tp2, unsigned l
 		status.writetransponder = 1;
 		ret = 0;
 	}
-	else if(tp1 != NULL && tp2 == NULL && transponderid != 0)
+	else if(tp1 != NULL && tp2 == NULL && transponderid != 99)
 	{
 		if(gettransponder(transponderid) == NULL && createtransponder(transponderid, tp1->fetype, tp1->orbitalpos, tp1->frequency, tp1->inversion, tp1->symbolrate, tp1->polarization, tp1->fec, tp1->modulation, tp1->rolloff, tp1->pilot, tp1->system) != NULL)
 		{
@@ -702,7 +703,7 @@ void deltransponder(unsigned long transponderid)
 	{
 		if(node->id == transponderid)
 		{
-			if(transponderid != 0) status.writetransponder = 1;
+			if(transponderid != 99) status.writetransponder = 1;
 			if(node == transponder)
 				transponder = node->next;
 			else
@@ -721,7 +722,7 @@ void deltransponder(unsigned long transponderid)
 				dvbnode = dvbnode->next;
 			}
 
-			if(transponderid != 0) delchannelbytransponder(node->id);
+			if(transponderid != 99) delchannelbytransponder(node->id);
 
 			free(node);
 			node = NULL;
@@ -799,7 +800,7 @@ int writetransponder(const char *filename)
 
 	while(node != NULL)
 	{
-		if(node->id == 0)
+		if(node->id == 99)
 		{
 			node = node->next;
 			continue;
