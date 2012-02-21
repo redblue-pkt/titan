@@ -1,6 +1,9 @@
 #include "../titan/struct.h"
 #include "../titan/debug.h"
 #include "../titan/header.h"
+
+extern struct fb* fb;
+
 #include "../titan/player.h"
 #include "mc_header.h"
 #include "mc_global.h"
