@@ -369,6 +369,7 @@ int playerstart(char* file)
 		subout.screen_height = fb->height;
 		subout.framebufferFD = fb->fd;
 		subout.destination = fb->fb;
+		subout.destStride = fb->pitch;
 		subout.shareFramebuffer = 1;
 
 		player->output->subtitle->Command(player, (OutputCmd_t)OUTPUT_SET_SUBTITLE_OUTPUT, (void*)&subout);
