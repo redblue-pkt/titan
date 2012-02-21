@@ -54,6 +54,7 @@ void setdefaults()
 	addconfigdef("gmultiepgzoom", "4");
 	addconfigdef("wakeuptimerdevdiff", "300");
 	addconfigdef("rectimer_timediff", "120");
+	addconfigdef("screenanimspeed", "2");
 	
 	status.expertmodus = getconfigint("expertmodus", NULL);
 	status.pmtmode = getconfigint("pmtmode", NULL);
@@ -71,6 +72,7 @@ void setdefaults()
 	status.httpauth = ostrcat(getconfig("httpauth", NULL), NULL, 0, 0);
 	status.showchanneltimeline = getconfigint("showchanneltimeline", NULL);
 	status.screenanim = getconfigint("screenanim", NULL);
+	status.screenanimspeed = getconfigint("screenanimspeed", NULL);
 
 	for(i = 0; i < MAXLONGKEY; i++)
 	{

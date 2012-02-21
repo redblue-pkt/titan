@@ -362,7 +362,7 @@ void blitfb(int flag)
 			bltData.dst_bottom = tmpbottom;
 		}
 
-		if(status.screenanim > 0) usleep(1000);
+		if(status.screenanim > 0) usleep(status.screenanimspeed * 500);
 
 		if (ioctl(fb->fd, STMFBIO_BLT, &bltData) < 0)
 		{
