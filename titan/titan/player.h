@@ -362,6 +362,17 @@ int playerstart(char* file)
 		player->output->Command(player, OUTPUT_ADD, "video");
 		player->output->Command(player, OUTPUT_ADD, "subtitle");
 
+		//for subtitle
+		SubtitleOutputDef_t subout;
+
+		subout.screen_width = fb->width;
+		subout.screen_height = fb->height;
+		subout.framebufferFD = fb->fd;
+		subout.destination = fb->fb;
+		subout.shareFramebuffer = 1;
+
+		player->output->subtitle->Command(player, (OutputCmd_t)OUTPUT_SET_SUBTITLE_OUTPUT, (void*)&subout);
+
 		if(player->playback->Command(player, PLAYBACK_OPEN, tmpfile) < 0)
 		{
 			free(player); player = NULL;

@@ -67,6 +67,7 @@
 //for eplayer
 #ifdef EPLAYER3
 #include <common.h>
+#include <subtitle.h>
 #endif
 
 #ifdef EPLAYER4
