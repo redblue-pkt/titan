@@ -203,6 +203,7 @@ msgstr ""
 #: avsettings.h:199 global.h:4293 global.h:4299 global.h:219 global.h:4302
 #: tithek.h:485 scan.h:788 scan.h:942 scan.h:1014 scan.h:1220 scan.h:793
 #: scan.h:947 scan.h:1019 scan.h:1225 skin_default_skin.xml.h:181
+#: global.h:4296
 msgid "EXIT"
 msgstr ""
 
@@ -646,7 +647,7 @@ msgstr ""
 #: scan.h:763 scan.h:773 scan.h:917 scan.h:989 scan.h:1195 avsettings.h:199
 #: global.h:4293 global.h:4299 global.h:4302 tithek.h:485 scan.h:788
 #: scan.h:798 scan.h:942 scan.h:1014 scan.h:1220 scan.h:793 scan.h:803
-#: scan.h:947 scan.h:1019 scan.h:1225
+#: scan.h:947 scan.h:1019 scan.h:1225 global.h:4296
 msgid "Message"
 msgstr ""
 
@@ -792,7 +793,7 @@ msgstr ""
 #: avsettings.h:199 skin_default_skin.xml.h:275 global.h:4293 global.h:4299
 #: global.h:219 global.h:4302 tithek.h:485 scan.h:788 scan.h:942 scan.h:1014
 #: scan.h:1220 scan.h:793 scan.h:947 scan.h:1019 scan.h:1225
-#: skin_default_skin.xml.h:276
+#: skin_default_skin.xml.h:276 global.h:4296
 msgid "OK"
 msgstr ""
 
@@ -821,7 +822,7 @@ msgstr ""
 #: global.h:4177 global.h:4178 global.h:4155 global.h:4152 global.h:4153
 #: global.h:4168 global.h:4170 global.h:4303 global.h:4310 global.h:4186
 #: global.h:4187 global.h:4233 global.h:4267 global.h:4269 global.h:4289
-#: global.h:4291 global.h:4293 global.h:4299 global.h:4302
+#: global.h:4291 global.h:4293 global.h:4299 global.h:4302 global.h:4296
 msgid "ERROR cant read res"
 msgstr ""
 
