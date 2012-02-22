@@ -799,8 +799,8 @@ void recrepeatehidden(int repeate, struct skin* repeatetype, struct skin* day, s
 	if(checkbit(repeate, 6) == 1) setchoiceboxselection(sun, "1");
 }
 
-//flag 0: don't del timer on exit
-//flag 1: del timer on exit
+//flag 0: called from menu (manuel timer)
+//flag 1: call from epg timer
 void screenrectimerext(struct rectimer* node, int flag)
 {
 	int ret = 0, rcret = 0, edaylight = 0, bdaylight = 0, newnode = 0, tmpservicetype = 0, tmprepeate = 0;
@@ -969,6 +969,11 @@ void screenrectimerext(struct rectimer* node, int flag)
 	buf1 = ostrcat(buf, "", 1, 0);
 	changeinput(end, buf1);
 	free(buf1); buf1 = NULL;
+
+	if(flag == 1)
+		recchannel->hidden = YES;
+	else
+		recchannel->hidden = NO;
 
 	changeinput(recchannel, NULL);
 	if(newnode == 0)
