@@ -307,7 +307,7 @@ msgstr ""
 #: tithek.h:298 tithek.h:464 tithek.h:468 tithek.h:481 tithek.h:485
 #: tithek.h:488 tunerconfig.h:672 videomode.h:53 tithek.h:455 tithek.h:473
 #: tithek.h:477 tithek.h:491 tithek.h:495 tithek.h:508 tithek.h:512
-#: tithek.h:516
+#: tithek.h:516 global.h:4317
 msgid "Message"
 msgstr ""
 
@@ -343,7 +343,7 @@ msgstr ""
 #: timeshift.h:82 tithek.h:298 tithek.h:464 tithek.h:468 tithek.h:481
 #: tithek.h:485 tithek.h:488 tunerconfig.h:672 videomode.h:53 tithek.h:455
 #: tithek.h:473 tithek.h:477 tithek.h:491 tithek.h:495 tithek.h:508
-#: tithek.h:512 tithek.h:516
+#: tithek.h:512 tithek.h:516 global.h:151 global.h:195 global.h:4317
 msgid "OK"
 msgstr ""
 
@@ -376,7 +376,8 @@ msgstr ""
 #: stream.h:26 timeshift.h:52 timeshift.h:82 tithek.h:298 tithek.h:464
 #: tithek.h:468 tithek.h:481 tithek.h:485 tithek.h:488 tunerconfig.h:672
 #: videomode.h:53 tithek.h:455 tithek.h:473 tithek.h:477 tithek.h:491
-#: tithek.h:495 tithek.h:508 tithek.h:512 tithek.h:516
+#: tithek.h:495 tithek.h:508 tithek.h:512 tithek.h:516 global.h:151
+#: global.h:195 global.h:4317
 msgid "EXIT"
 msgstr ""
 
@@ -664,15 +665,15 @@ msgid "EPG resetet and now clear."
 msgstr ""
 
 #: global.h:146 global.h:190 plugins_panel_skin.xml.h:6
-#: skins_panel_skin.xml.h:6
+#: skins_panel_skin.xml.h:6 global.h:151 global.h:195
 msgid "Info"
 msgstr ""
 
-#: global.h:146
+#: global.h:146 global.h:151
 msgid "This is a advertising Image !"
 msgstr ""
 
-#: global.h:186
+#: global.h:186 global.h:191
 msgid ""
 "For next OnlineUpdate please contact Atemio and send this Serial Number and "
 "your Atemio Serial Number !!\n"
@@ -680,11 +681,11 @@ msgid ""
 "Board-ID SerialNr:"
 msgstr ""
 
-#: global.h:189
+#: global.h:189 global.h:194
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
-#: global.h:4312 keyactions.h:223
+#: global.h:4312 keyactions.h:223 global.h:4317
 msgid "ERROR cant read res"
 msgstr ""
 
