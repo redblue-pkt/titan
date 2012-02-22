@@ -173,19 +173,19 @@ msgstr ""
 #: transponder.h:181 transponder.h:207 transponder.h:214 transponder.h:238
 #: transponder.h:256 transponder.h:276 transponder.h:285 transponder.h:291
 #: transponder.h:298 transponder.h:330 transponder.h:340 transponder.h:395
-#: transponder.h:431
+#: transponder.h:431 rectimer.h:999
 msgid "auto"
 msgstr ""
 
-#: adjust.h:136 rectimer.h:995
+#: adjust.h:136 rectimer.h:995 rectimer.h:1000
 msgid "nothing"
 msgstr ""
 
-#: adjust.h:137 rectimer.h:996
+#: adjust.h:137 rectimer.h:996 rectimer.h:1001
 msgid "standby"
 msgstr ""
 
-#: adjust.h:138 rectimer.h:997
+#: adjust.h:138 rectimer.h:997 rectimer.h:1002
 msgid "power off"
 msgstr ""
 
@@ -229,7 +229,7 @@ msgstr ""
 msgid "very slow"
 msgstr ""
 
-#: audiotrack.h:48 play.h:155 rectimer.h:1283 subtitle.h:1612
+#: audiotrack.h:48 play.h:155 rectimer.h:1283 subtitle.h:1612 rectimer.h:1288
 msgid "running"
 msgstr ""
 
@@ -307,7 +307,7 @@ msgstr ""
 #: tithek.h:298 tithek.h:464 tithek.h:468 tithek.h:481 tithek.h:485
 #: tithek.h:488 tunerconfig.h:672 videomode.h:53 tithek.h:455 tithek.h:473
 #: tithek.h:477 tithek.h:491 tithek.h:495 tithek.h:508 tithek.h:512
-#: tithek.h:516 global.h:4317
+#: tithek.h:516 global.h:4317 rectimer.h:1164 rectimer.h:1176
 msgid "Message"
 msgstr ""
 
@@ -344,6 +344,7 @@ msgstr ""
 #: tithek.h:485 tithek.h:488 tunerconfig.h:672 videomode.h:53 tithek.h:455
 #: tithek.h:473 tithek.h:477 tithek.h:491 tithek.h:495 tithek.h:508
 #: tithek.h:512 tithek.h:516 global.h:151 global.h:195 global.h:4317
+#: rectimer.h:1164 rectimer.h:1176
 msgid "OK"
 msgstr ""
 
@@ -377,7 +378,7 @@ msgstr ""
 #: tithek.h:468 tithek.h:481 tithek.h:485 tithek.h:488 tunerconfig.h:672
 #: videomode.h:53 tithek.h:455 tithek.h:473 tithek.h:477 tithek.h:491
 #: tithek.h:495 tithek.h:508 tithek.h:512 tithek.h:516 global.h:151
-#: global.h:195 global.h:4317
+#: global.h:195 global.h:4317 rectimer.h:1164 rectimer.h:1176
 msgid "EXIT"
 msgstr ""
 
@@ -2662,11 +2663,13 @@ msgstr ""
 msgid "switch channel"
 msgstr ""
 
-#: rectimer.h:873 rectimer.h:1242 rectimer.h:1253
+#: rectimer.h:873 rectimer.h:1242 rectimer.h:1253 rectimer.h:1247
+#: rectimer.h:1258
 msgid "once"
 msgstr ""
 
-#: rectimer.h:874 rectimer.h:1244 rectimer.h:1255
+#: rectimer.h:874 rectimer.h:1244 rectimer.h:1255 rectimer.h:1249
+#: rectimer.h:1260
 msgid "repeate"
 msgstr ""
 
@@ -2710,23 +2713,23 @@ msgstr ""
 msgid "Sunday"
 msgstr ""
 
-#: rectimer.h:1239
+#: rectimer.h:1239 rectimer.h:1244
 msgid "rec"
 msgstr ""
 
-#: rectimer.h:1250
+#: rectimer.h:1250 rectimer.h:1255
 msgid "switch"
 msgstr ""
 
-#: rectimer.h:1278
+#: rectimer.h:1278 rectimer.h:1283
 msgid "waiting"
 msgstr ""
 
-#: rectimer.h:1288
+#: rectimer.h:1288 rectimer.h:1293
 msgid "success"
 msgstr ""
 
-#: rectimer.h:1293
+#: rectimer.h:1293 rectimer.h:1298
 msgid "error"
 msgstr ""
 
