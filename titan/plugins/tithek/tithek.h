@@ -445,9 +445,36 @@ void screentithekplay(char* titheklink, char* title, int first)
 			{
 				if(((struct tithek*)listbox->select->handle)->flag == 2)
 				{
-					char* tmpstr = tithekdownload((((struct tithek*)listbox->select->handle)->link), ((struct tithek*)tmp->handle)->localname, 1);
-					free(tmpstr); tmpstr = NULL;
-					drawscreen(grid, 0);
+					if(status.security == 1)
+					{
+						char* tmpstr = tithekdownload((((struct tithek*)listbox->select->handle)->link), ((struct tithek*)tmp->handle)->localname, 1);
+						free(tmpstr); tmpstr = NULL;
+						drawscreen(grid, 0);
+					}
+					else
+						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 4)
+				{
+					if(status.security == 1)
+					{
+						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+						char* tmpstr1 = NULL;
+						if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, 1);
+						free(tmpstr); tmpstr = NULL;
+							
+						if(tmpstr1 != NULL)
+						{
+							char* tmpstr = tithekdownload(tmpstr1, ((struct tithek*)tmp->handle)->localname, 1);
+							free(tmpstr); tmpstr = NULL;
+							drawscreen(grid, 0);
+						}
+						else
+							textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+						free(tmpstr1); tmpstr1 = NULL;
+					}
+					else
+						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 				}
 			}
 		}
@@ -469,26 +496,24 @@ void screentithekplay(char* titheklink, char* title, int first)
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 4)
 				{
-					char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-					char* tmpstr1 = NULL;
-					if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, 1);
-					free(tmpstr); tmpstr = NULL;
-						
-					if(tmpstr1 != NULL)
+					if(status.security == 1)
 					{
-						if(status.security == 1)
+						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+						char* tmpstr1 = NULL;
+						if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, 1);
+						free(tmpstr); tmpstr = NULL;
+							
+						if(tmpstr1 != NULL)
 						{
 							if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-								screenplay((((struct tithek*)listbox->select->handle)->link), 2, 0);				
+								screenplay(tmpstr1, 2, 0);				
 						}
 						else
-							textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
+							textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+						free(tmpstr1); tmpstr1 = NULL;
 					}
 					else
-						textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-												
-					free(tmpstr1); tmpstr1 = NULL;
-				}
+						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);			
 				else
 				{
 					int pincheck = 0;
