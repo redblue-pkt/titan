@@ -3132,7 +3132,7 @@ void calcscrollbar(struct skin* node)
 		if(node->iposy + node->scrollbarpos > node->iposy + node->iheight) node->scrollbarpos = node->iposy + node->iheight;
 		if(node->scrollbarpos < 0) node->scrollbarpos = 0;
 		if(node->iposy + node->scrollbarpos + node->scrollbarheight > node->iposy + node->iheight) node->scrollbarheight = node->iheight - node->scrollbarpos;
-		if(node->scrollbarheight < 0) node->scrollbarheight = 0;
+		if(node->scrollbarheight < 1) node->scrollbarheight = 1;
 	}
 	debug(1000, "out");
 }
