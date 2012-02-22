@@ -82,6 +82,10 @@ int movemainbouquetdown(struct mainbouquet* node)
 		debug(1000, "NULL detect");
 		return 1;
 	}
+	
+	//only one node
+	if(node->prev == NULL && node->next == NULL)
+		return 0;
 
 	//last node
 	if(node->next == NULL)
@@ -127,6 +131,10 @@ int movemainbouquetup(struct mainbouquet* node)
 		debug(1000, "NULL detect");
 		return 1;
 	}
+	
+	//only one node
+	if(node->prev == NULL && node->next == NULL)
+		return 0;
 
 	//first node
 	if(node->prev == NULL)
