@@ -98,6 +98,11 @@ int checkflash()
 		dev = ostrcat(dev, "3", 1, 0);
 		dir = ostrcat(dir, "boot", 1, 0);
 	}
+	else if(checkbox("AT7500") == 1)
+	{
+		dev = ostrcat(dev, "3", 1, 0);
+		dir = ostrcat(dir, "var", 1, 0);
+	}
 	else
 	{
 		dev = ostrcat(dev, "9", 1, 0);
