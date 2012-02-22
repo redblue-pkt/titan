@@ -305,7 +305,9 @@ msgstr ""
 #: scan.h:1225 scart.h:13 scart.h:26 service.h:560 service.h:800
 #: skinselector.h:218 spinner.h:18 stream.h:26 timeshift.h:52 timeshift.h:82
 #: tithek.h:298 tithek.h:464 tithek.h:468 tithek.h:481 tithek.h:485
-#: tithek.h:488 tunerconfig.h:672 videomode.h:53
+#: tithek.h:488 tunerconfig.h:672 videomode.h:53 tithek.h:455 tithek.h:473
+#: tithek.h:477 tithek.h:491 tithek.h:495 tithek.h:508 tithek.h:512
+#: tithek.h:516
 msgid "Message"
 msgstr ""
 
@@ -339,7 +341,9 @@ msgstr ""
 #: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:29
 #: skins_networkbrowser_skin.xml.h:6 spinner.h:18 stream.h:26 timeshift.h:52
 #: timeshift.h:82 tithek.h:298 tithek.h:464 tithek.h:468 tithek.h:481
-#: tithek.h:485 tithek.h:488 tunerconfig.h:672 videomode.h:53
+#: tithek.h:485 tithek.h:488 tunerconfig.h:672 videomode.h:53 tithek.h:455
+#: tithek.h:473 tithek.h:477 tithek.h:491 tithek.h:495 tithek.h:508
+#: tithek.h:512 tithek.h:516
 msgid "OK"
 msgstr ""
 
@@ -371,7 +375,8 @@ msgstr ""
 #: skins_networkbrowser_skin.xml.h:2 skins_panel_skin.xml.h:39 spinner.h:18
 #: stream.h:26 timeshift.h:52 timeshift.h:82 tithek.h:298 tithek.h:464
 #: tithek.h:468 tithek.h:481 tithek.h:485 tithek.h:488 tunerconfig.h:672
-#: videomode.h:53
+#: videomode.h:53 tithek.h:455 tithek.h:473 tithek.h:477 tithek.h:491
+#: tithek.h:495 tithek.h:508 tithek.h:512 tithek.h:516
 msgid "EXIT"
 msgstr ""
 
@@ -972,7 +977,8 @@ msgstr ""
 msgid "Install netsurf Internetbrowser Ipk first !"
 msgstr ""
 
-#: mc_internetbrowser.h:32 tithek.h:468 tithek.h:485
+#: mc_internetbrowser.h:32 tithek.h:468 tithek.h:485 tithek.h:455 tithek.h:477
+#: tithek.h:495 tithek.h:516
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
@@ -4601,11 +4607,11 @@ msgstr ""
 msgid "File exist, overwrite?"
 msgstr ""
 
-#: tithek.h:464 tithek.h:481
+#: tithek.h:464 tithek.h:481 tithek.h:491 tithek.h:508
 msgid "Start playback"
 msgstr ""
 
-#: tithek.h:488
+#: tithek.h:488 tithek.h:473 tithek.h:512
 msgid "Can't get Streamurl !"
 msgstr ""
 
