@@ -209,7 +209,7 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Update Language Po files"
 echo "[titan]--------------------------------------------------------"
-"$HOME"/flashimg/source.titan/titan/tools/createpo.sh "$SVNUSER" update
+"$HOME"/flashimg/source.titan/titan/tools/createpo.sh "$SVNUSER" new
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Update Language Po files done"
 echo "[titan]--------------------------------------------------------"
