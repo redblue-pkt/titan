@@ -126,7 +126,10 @@ int checkflash()
 	free(cmd), cmd = NULL;
 
 	if(tmpstr == NULL)
+	{
+		free(dir), dir = NULL;
 		return 1;
+	}
 
 	dir = ostrcat("/", dir, 0, 1);
 
