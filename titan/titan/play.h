@@ -187,7 +187,7 @@ void screenplaytracklist(int mode, int playertype, int flag)
 				else if(mode == 2)
 				{
 					if(listbox->select->handle1 != NULL)
-						playerchangesubtitletrack(-1);
+						playerstopsubtitletrack();
 					else	
 						playerchangesubtitletrack((int)listbox->select->handle);
 				}

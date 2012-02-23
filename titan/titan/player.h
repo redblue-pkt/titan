@@ -1064,4 +1064,13 @@ void playerchangesubtitletrack(int num)
 #endif
 }
 
+void playerstopsubtitletrack()
+{
+#ifdef EPLAYER3
+	if(player && player->output && player->output->subtitle)
+		player->output->subtitle->Command(player, (OutputCmd_t)OUTPUT_STOP, NULL);
+
+#endif
+}
+
 #endif
