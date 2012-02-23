@@ -998,6 +998,8 @@ struct status
 	//for auto increase audio vol
 	int volautochange;
 	int volautochangevalue;
+	//for powerofftimer
+	time_t fixpowerofftime;
 } status;
 
 struct fb
