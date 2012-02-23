@@ -98,8 +98,8 @@ void screenpowerofftimer(void)
 	addchoicebox(shutdowntimetype, "1", _("Standby"));
 	setchoiceboxselection(shutdowntimetype, getconfig("shutdowntimetype", NULL));
 
-	changeinput(fixshutdowntime, "deaktiv\n10:00\n10:15\n10:30\n10:45\n11:00\n11:15\n11:30\n11:45\n00:00\n00:15\n00:30\n00:45\n01:00\n01:15\n01:30\n01:45\n02:00\n02:15\n02:30\n02:45\n03:00\n03:15\n03:30\n03:45\n04:00");
-	changechoiceboxvalue(fixshutdowntime, "0\n10:00\n10:15\n10:30\n10:45\n11:00\n11:15\n11:30\n11:45\n00:00\n00:15\n00:30\n00:45\n01:00\n01:15\n01:30\n01:45\n02:00\n02:15\n02:30\n02:45\n03:00\n03:15\n03:30\n03:45\n04:00");
+	changeinput(fixshutdowntime, "deaktiv\n22:00\n22:15\n22:30\n22:45\n23:00\n23:15\n23:30\n23:45\n00:00\n00:15\n00:30\n00:45\n01:00\n01:15\n01:30\n01:45\n02:00\n02:15\n02:30\n02:45\n03:00\n03:15\n03:30\n03:45\n04:00");
+	changechoiceboxvalue(fixshutdowntime, "0\n22:00\n22:15\n22:30\n22:45\n23:00\n23:15\n23:30\n23:45\n00:00\n00:15\n00:30\n00:45\n01:00\n01:15\n01:30\n01:45\n02:00\n02:15\n02:30\n02:45\n03:00\n03:15\n03:30\n03:45\n04:00");
 	setchoiceboxselection(fixshutdowntime, getconfig("fixshutdowntime", NULL));
 
 	listbox->aktline = 1;
