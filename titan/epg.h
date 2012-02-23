@@ -1413,10 +1413,11 @@ int readepg(const char* filename)
 		epgnode->desc = desc;
 	}
 
+	fclose(fd);
+
 	if(getconfigint("epg_del", NULL) == 1)
 		unlink(filename);
 
-	fclose(fd);
 	debug(1000, "out");
 	return 0;
 }
