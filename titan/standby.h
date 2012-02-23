@@ -49,6 +49,8 @@ void screenstandby()
 
 	status.protecttime = 0;
 	status.rcowner = standbyscreen;
+	
+	system("vdstandby -a");
 	while(1)
 	{
 		rcret = waitrc(standbyscreen, 10000, 0);
@@ -65,6 +67,7 @@ void screenstandby()
 		}
 		free(loctime); loctime = 0;
 	}
+	system("vdstandby -d");
 
 	if(gettimer(epgscan) != NULL)
 		epgscan->aktion = STOP;
