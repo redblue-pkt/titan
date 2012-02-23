@@ -54,7 +54,7 @@ void setdefaults()
 	addconfigdef("gmultiepgzoom", "4");
 	addconfigdef("wakeuptimerdevdiff", "300");
 	addconfigdef("rectimer_timediff", "120");
-	addconfigdef("screenanimspeed", "2");
+	addconfigdef("screenanimspeed", "1");
 	
 	status.expertmodus = getconfigint("expertmodus", NULL);
 	status.pmtmode = getconfigint("pmtmode", NULL);

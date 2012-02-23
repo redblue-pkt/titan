@@ -154,10 +154,10 @@ void screenadjust()
 	setchoiceboxselection(screenanim, getconfig("screenanim", NULL));
 	
 	addchoicebox(screenanimspeed, "1", _("very fast"));
-	addchoicebox(screenanimspeed, "2", _("fast"));
-	addchoicebox(screenanimspeed, "3", _("normal"));
-	addchoicebox(screenanimspeed, "4", _("slow"));
-	addchoicebox(screenanimspeed, "5", _("very slow"));
+	addchoicebox(screenanimspeed, "5", _("fast"));
+	addchoicebox(screenanimspeed, "10", _("normal"));
+	addchoicebox(screenanimspeed, "15", _("slow"));
+	addchoicebox(screenanimspeed, "20", _("very slow"));
 	setchoiceboxselection(screenanimspeed, getconfig("screenanimspeed", NULL));
 
 	drawscreen(adjust, 0);
@@ -214,7 +214,7 @@ void screenadjust()
 			status.showchanneltimeline = getconfigint("showchanneltimeline", NULL);
 			addconfigscreencheck("screenanim", screenanim, "0");
 			status.screenanim = getconfigint("screenanim", NULL);
-			addconfigscreencheck("screenanimspeed", screenanimspeed, "2");
+			addconfigscreencheck("screenanimspeed", screenanimspeed, "1");
 			status.screenanimspeed = getconfigint("screenanimspeed", NULL);
 
 			break;
