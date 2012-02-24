@@ -29,6 +29,7 @@ void calcfixpowerofftime()
 
 void checkshutdowntimer()
 {
+	int mode = 0;
 	if(status.standby != 0) return;
 
 	if(status.fixpowerofftime == 0)
@@ -36,14 +37,32 @@ void checkshutdowntimer()
 
 	time_t akttime = time(NULL);
 
-	if((status.sd_timer != NULL && status.sd_timer->active && status.sd_timer->shutdown_time < akttime) || (status.fixpowerofftime > 1 && status.fixpowerofftime > akttime - 180 && status.fixpowerofftime < akttime))
+	if(status.sd_timer != NULL && status.sd_timer->active && status.sd_timer->shutdown_time < akttime)
+		mode = 1;
+		
+	if(status.fixpowerofftime > 1 && status.fixpowerofftime > akttime - 180 && status.fixpowerofftime < akttime)
+		mode = 2;
+		
+	if(mode > 0)
 	{
-		status.fixpowerofftime += 86400;
+		if(status.fixpowerofftime > 1) status.fixpowerofftime += 86400;
 		status.sd_timer->active = 0;
 		if(getconfigint("shutdowntimetype", NULL) == 0)
-			oshutdown(1, 3); 
+		{
+			if(mode == 2)
+			{
+				mode = 0;
+				oshutdown(1, 4);
+			}
+			else
+			{
+				mode = 0;
+				oshutdown(1, 3);
+			} 
+		}
 		else
 		{
+			mode = 0;
 			status.standby = 2;
 			screenstandby();
 		}
