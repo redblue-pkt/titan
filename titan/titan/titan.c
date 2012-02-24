@@ -340,6 +340,10 @@ void oshutdown(int exitcode, int flag)
 int main(int argc, char *argv[])
 {
 	debug(1000, "in");
+	status.security = 0;
+	if(checkbox("ATEMIO510") == 1)
+		killnet();
+
 	int ret = 0, serviceret = 0, skincheck = 0;
 	char* tmpstr = NULL;
 	struct sigaction sa;
