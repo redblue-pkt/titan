@@ -447,7 +447,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 				{
 					if(status.security == 1)
 					{
-						char* tmpstr = tithekdownload((((struct tithek*)listbox->select->handle)->link), ((struct tithek*)tmp->handle)->localname, 1);
+						char* tmpstr = tithekdownload((((struct tithek*)listbox->select->handle)->link), NULL, 1);
 						free(tmpstr); tmpstr = NULL;
 						drawscreen(grid, 0);
 					}
@@ -465,7 +465,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 							
 						if(tmpstr1 != NULL)
 						{
-							char* tmpstr = tithekdownload(tmpstr1, ((struct tithek*)tmp->handle)->localname, 1);
+							char* tmpstr = tithekdownload(tmpstr1, NULL, 1);
 							free(tmpstr); tmpstr = NULL;
 							drawscreen(grid, 0);
 						}
