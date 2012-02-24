@@ -117,6 +117,7 @@ msgstr ""
 
 #: adjust.h:86 powerofftimer.h:67 powerofftimer.h:71
 #: skin_default_skin.xml.h:392 powerofftimer.h:98 skin_default_skin.xml.h:393
+#: powerofftimer.h:117
 msgid "Standby"
 msgstr ""
 
@@ -2551,6 +2552,7 @@ msgid "startposition"
 msgstr ""
 
 #: powerofftimer.h:66 powerofftimer.h:72 powerofftimer.h:97
+#: powerofftimer.h:116
 msgid "DeepStandby"
 msgstr ""
 
