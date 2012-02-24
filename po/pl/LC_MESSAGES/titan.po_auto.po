@@ -310,7 +310,9 @@ msgstr ""
 #: tithek.h:488 tunerconfig.h:672 videomode.h:53 tithek.h:455 tithek.h:473
 #: tithek.h:477 tithek.h:491 tithek.h:495 tithek.h:508 tithek.h:512
 #: tithek.h:516 global.h:4317 rectimer.h:1164 rectimer.h:1176 global.h:4320
-#: global.h:4358 global.h:4359
+#: global.h:4358 global.h:4359 tithek.h:303 tithek.h:460 tithek.h:478
+#: tithek.h:482 tithek.h:496 tithek.h:500 tithek.h:513 tithek.h:517
+#: tithek.h:521
 msgid "Message"
 msgstr ""
 
@@ -349,7 +351,9 @@ msgstr ""
 #: tithek.h:512 tithek.h:516 global.h:151 global.h:195 global.h:4317
 #: rectimer.h:1164 rectimer.h:1176 global.h:154 global.h:198 global.h:4320
 #: skin_default_skin.xml.h:277 global.h:192 global.h:236 global.h:4358
-#: global.h:193 global.h:237 global.h:4359
+#: global.h:193 global.h:237 global.h:4359 tithek.h:303 tithek.h:460
+#: tithek.h:478 tithek.h:482 tithek.h:496 tithek.h:500 tithek.h:513
+#: tithek.h:517 tithek.h:521
 msgid "OK"
 msgstr ""
 
@@ -385,7 +389,9 @@ msgstr ""
 #: tithek.h:495 tithek.h:508 tithek.h:512 tithek.h:516 global.h:151
 #: global.h:195 global.h:4317 rectimer.h:1164 rectimer.h:1176 global.h:154
 #: global.h:198 global.h:4320 global.h:192 global.h:236 global.h:4358
-#: global.h:193 global.h:237 global.h:4359
+#: global.h:193 global.h:237 global.h:4359 tithek.h:303 tithek.h:460
+#: tithek.h:478 tithek.h:482 tithek.h:496 tithek.h:500 tithek.h:513
+#: tithek.h:517 tithek.h:521
 msgid "EXIT"
 msgstr ""
 
@@ -994,7 +1000,8 @@ msgid "Install netsurf Internetbrowser Ipk first !"
 msgstr ""
 
 #: mc_internetbrowser.h:32 tithek.h:468 tithek.h:485 tithek.h:455 tithek.h:477
-#: tithek.h:495 tithek.h:516
+#: tithek.h:495 tithek.h:516 tithek.h:460 tithek.h:482 tithek.h:500
+#: tithek.h:521
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
@@ -4632,15 +4639,16 @@ msgstr ""
 msgid "skip "
 msgstr ""
 
-#: tithek.h:298
+#: tithek.h:298 tithek.h:303
 msgid "File exist, overwrite?"
 msgstr ""
 
-#: tithek.h:464 tithek.h:481 tithek.h:491 tithek.h:508
+#: tithek.h:464 tithek.h:481 tithek.h:491 tithek.h:508 tithek.h:496
+#: tithek.h:513
 msgid "Start playback"
 msgstr ""
 
-#: tithek.h:488 tithek.h:473 tithek.h:512
+#: tithek.h:488 tithek.h:473 tithek.h:512 tithek.h:478 tithek.h:517
 msgid "Can't get Streamurl !"
 msgstr ""
 
