@@ -4,7 +4,7 @@
 int screendownload(char* title, char* host, char* page, int port, char* filename, char* auth, int flag)
 {
 	debug(1000, "in");
-	int rcret = -1, tmpscreencalc = 0, count = 0, ret = 0, fromthread = 0;
+	int rcret = -1, tmpscreencalc = 0, count = 0, ret = 0, fromthread = 0, sleeptime = 2;
 	struct skin* download = getscreen("download");
 	struct skin* progress = getscreennode(download, "progress");
 	struct skin* file = getscreennode(download, "file");
@@ -96,12 +96,15 @@ int screendownload(char* title, char* host, char* page, int port, char* filename
 	}
 
 	if(dnode->ret > 0 && rcret != getrcconfigint("rcexit", NULL))
+	{
 		changetext(file, _("download error"));
+		sleeptime = 5;
+	}
 	else
 		changetext(file, _("wait for stopping download"));
 	drawscreen(download, 0);
 	sockclose(&dnode->connfd);
-	sleep(2);
+	sleep(sleeptime);
 	count = 0;
 	while(dnode->ret < 0 && count < 10)
 	{
