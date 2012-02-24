@@ -463,20 +463,22 @@ void screentithekplay(char* titheklink, char* title, int first)
 				{
 					if(status.security == 1)
 					{
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = NULL;
+						char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
+						tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
 						if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, 1);
+						tmpstr2 = changefilenameext(tmpstr, ".mp4")
 						free(tmpstr); tmpstr = NULL;
 							
 						if(tmpstr1 != NULL)
 						{
-							char* tmpstr = tithekdownload(tmpstr1, NULL, 1);
+							char* tmpstr = tithekdownload(tmpstr1, tmpstr2, 1);
 							free(tmpstr); tmpstr = NULL;
 							drawscreen(grid, 0);
 						}
 						else
 							textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 						free(tmpstr1); tmpstr1 = NULL;
+						free(tmpstr2); tmpstr2 = NULL;
 					}
 					else
 						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
