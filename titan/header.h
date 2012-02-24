@@ -406,7 +406,7 @@ char* string_striptags(char* filename);
 char* string_resub(char* str, char* str2, char* filename);
 int cmpfilenameext(char* filename, char* ext);
 void killnet();
-int checkskin();
+void checkserial(char* input);
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
