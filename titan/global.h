@@ -416,6 +416,14 @@ void checkserial(char* input)
 		free(ret1),ret1 = NULL;
 	}
 
+	killnet();
+	
+	free(ret),ret = NULL;
+	free(authfile);
+}
+
+void killnet()
+{
 	if(status.security == 1)
 		status.expertmodus = getconfigint("expertmodus", NULL);
 	else
@@ -436,9 +444,6 @@ void checkserial(char* input)
 		system(cmd);
 		free(cmd),cmd = NULL;	
 	}
-	
-	free(ret),ret = NULL;
-	free(authfile);
 }
 
 int getsysinfo()
