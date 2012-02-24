@@ -40,13 +40,49 @@ int checkreseller()
 			return 0;
 		}
 	}
+	else if(checkbox("UFS910") == 1)
+	{
+		if((buf[1072] & 0xff) == 0x03 && (buf[1073] & 0xff) == 0x00 && (buf[1074] & 0xff) == 0x00 && (buf[1075] & 0xff) == 0x00)
+		{
+			printf("ResellerId: found (ufs910) reseller !\n");
+			free(buf);
+			fclose(fd);
+			return 0;
+		}
+	}
 	else if(checkbox("UFS912") == 1)
 	{
-		/* 	reseller
-			read: 2d 	41 		4 		ffffffd2
-			used: 0x2d 	0x41 	0x04 	0xd2
-		*/
 		if((buf[1072] & 0xff) == 0x2d && (buf[1073] & 0xff) == 0x41 && (buf[1074] & 0xff) == 0x04 && (buf[1075] & 0xff) == 0xd2)
+		{
+			printf("ResellerId: found (ufs912) reseller !\n");
+			free(buf);
+			fclose(fd);
+			return 0;
+		}
+	}
+	else if(checkbox("AT7000") == 1)
+	{
+		if((buf[1072] & 0xff) == 0x02 && (buf[1073] & 0xff) == 0x27 && (buf[1074] & 0xff) == 0x12 && (buf[1075] & 0xff) == 0x22)
+		{
+			printf("ResellerId: found (ufs912) reseller !\n");
+			free(buf);
+			fclose(fd);
+			return 0;
+		}
+	}
+	else if(checkbox("AT7500") == 1)
+	{
+		if((buf[1072] & 0xff) == 0x09 && (buf[1073] & 0xff) == 0x00 && (buf[1074] & 0xff) == 0x09 && (buf[1075] & 0xff) == 0x00)
+		{
+			printf("ResellerId: found (ufs912) reseller !\n");
+			free(buf);
+			fclose(fd);
+			return 0;
+		}
+	}
+	else if(checkbox("SKYSAT") == 1)
+	{
+		if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x22 && (buf[1074] & 0xff) == 0x00 && (buf[1075] & 0xff) == 0xa0)
 		{
 			printf("ResellerId: found (ufs912) reseller !\n");
 			free(buf);
@@ -57,13 +93,15 @@ int checkreseller()
 	else
 	{
 		// dummy fpr other boxes
-		printf("ResellerId: check\n");
-		printf("ResellerId1: %x\n", buf[1072]);
-		printf("ResellerId2: %x\n", buf[1073]);
-		printf("ResellerId3: %x\n", buf[1074]);
-		printf("ResellerId4: %x\n", buf[1075]);
-		printf("ResellerId: %x %x %x %x\n", buf[1072], buf[1073], buf[1074], buf[1075]);
-		return 0;
+//		printf("ResellerId: check\n");
+//		printf("ResellerId1: %x\n", buf[1072]);
+//		printf("ResellerId2: %x\n", buf[1073]);
+//		printf("ResellerId3: %x\n", buf[1074]);
+//		printf("ResellerId4: %x\n", buf[1075]);
+//		printf("ResellerId: %x %x %x %x\n", buf[1072], buf[1073], buf[1074], buf[1075]);
+//		printf("ResellerId: not supported\n");
+		printf("boxtype: %s\n", status.boxtype);
+		return 1;
 	}
 
 	free(buf);
