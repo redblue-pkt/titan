@@ -191,7 +191,6 @@ int createstartscreen()
 //flag: 1 check record
 //flag: 2 check record / do write config
 //flag: 3 check record with timeout
-//flag: 4 check record with increase fixpowerofftime
 void oshutdown(int exitcode, int flag)
 {
 	debug(1000, "in");
@@ -202,15 +201,10 @@ void oshutdown(int exitcode, int flag)
 	struct skin* logo = getscreen("logo");
 
 	//check if record running
-	if((flag == 1 || flag == 2 || flag == 3 || flag == 4) && (status.recording > 0 || getrectimerbytimediff(300) != NULL))
+	if((flag == 1 || flag == 2 || flag == 3) && (status.recording > 0 || getrectimerbytimediff(300) != NULL))
 	{
-		if(flag == 4 && status.fixpowerofftime > 1)
-		{
-				status.fixpowerofftime = time(NULL) + 900; //check powerofftimer again in 15min
-				return;
-		}
 		int timeout = 0;
-		if(flag == 3 || flag == 4) timeout = 15;
+		if(flag == 3) timeout = 15;
 		if(textbox(_("Message"), _("Found running record\nor record is starting in next time.\nRealy shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, timeout, 1) == 2)
 			return;
 	}
@@ -340,10 +334,6 @@ void oshutdown(int exitcode, int flag)
 int main(int argc, char *argv[])
 {
 	debug(1000, "in");
-	status.security = 0;
-	if(checkbox("ATEMIO510") == 1)
-		killnet();
-
 	int ret = 0, serviceret = 0, skincheck = 0;
 	char* tmpstr = NULL;
 	struct sigaction sa;
@@ -736,6 +726,8 @@ firstwizzardstep1:
 		}
 	}
 
+//	if(checkbox("ATEMIO510") == 1)
+		killnet();
 	screeninfobar();
 
 	//for testign screens
