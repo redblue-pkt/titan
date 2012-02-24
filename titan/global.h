@@ -35,6 +35,7 @@ int checkreseller()
 	{
 		if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x29 && (buf[1074] & 0xff) == 0x02 && (buf[1075] & 0xff) == 0xA0)
 		{
+			printf("ResellerId: found (%s) reseller !\n", status.boxtype);
 			free(buf);
 			fclose(fd);
 			return 0;
@@ -44,7 +45,7 @@ int checkreseller()
 	{
 		if((buf[1072] & 0xff) == 0x03 && (buf[1073] & 0xff) == 0x00 && (buf[1074] & 0xff) == 0x00 && (buf[1075] & 0xff) == 0x00)
 		{
-			printf("ResellerId: found (ufs910) reseller !\n");
+			printf("ResellerId: found (%s) reseller !\n", status.boxtype);
 			free(buf);
 			fclose(fd);
 			return 0;
@@ -54,7 +55,7 @@ int checkreseller()
 	{
 		if((buf[1072] & 0xff) == 0x2d && (buf[1073] & 0xff) == 0x41 && (buf[1074] & 0xff) == 0x04 && (buf[1075] & 0xff) == 0xd2)
 		{
-			printf("ResellerId: found (ufs912) reseller !\n");
+			printf("ResellerId: found (%s) reseller !\n", status.boxtype);
 			free(buf);
 			fclose(fd);
 			return 0;
@@ -64,7 +65,7 @@ int checkreseller()
 	{
 		if((buf[1072] & 0xff) == 0x02 && (buf[1073] & 0xff) == 0x27 && (buf[1074] & 0xff) == 0x12 && (buf[1075] & 0xff) == 0x22)
 		{
-			printf("ResellerId: found (ufs912) reseller !\n");
+			printf("ResellerId: found (%s) reseller !\n", status.boxtype);
 			free(buf);
 			fclose(fd);
 			return 0;
@@ -74,7 +75,7 @@ int checkreseller()
 	{
 		if((buf[1072] & 0xff) == 0x09 && (buf[1073] & 0xff) == 0x00 && (buf[1074] & 0xff) == 0x09 && (buf[1075] & 0xff) == 0x00)
 		{
-			printf("ResellerId: found (ufs912) reseller !\n");
+			printf("ResellerId: found (%s) reseller !\n", status.boxtype);
 			free(buf);
 			fclose(fd);
 			return 0;
@@ -84,7 +85,7 @@ int checkreseller()
 	{
 		if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x22 && (buf[1074] & 0xff) == 0x00 && (buf[1075] & 0xff) == 0xa0)
 		{
-			printf("ResellerId: found (ufs912) reseller !\n");
+			printf("ResellerId: found (%s) reseller !\n", status.boxtype);
 			free(buf);
 			fclose(fd);
 			return 0;
