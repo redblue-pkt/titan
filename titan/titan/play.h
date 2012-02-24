@@ -706,7 +706,7 @@ playerstart:
 				if(rcret == getrcconfigint("rcyellow", NULL))
 					playrcyellow(file, playinfobarstatus, playertype, flag);
 				
-				if(rcret == getrcconfigint("rctext", NULL))
+				if(rcret == getrcconfigint("rctext", NULL) || rcret == getrcconfigint("rcsubtitel", NULL))
 					playrctext(file, playinfobarstatus, playertype, flag);
 					
 				if(rcret == getrcconfigint("rcgreen", NULL))
