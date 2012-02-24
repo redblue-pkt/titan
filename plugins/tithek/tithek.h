@@ -255,7 +255,7 @@ void freetithek()
 	debug(1000, "out");
 }
 
-char* tithekdownload(char* link, char* localname, int flag)
+char* tithekdownload(char* link, char* localname, char* pw, int flag)
 {
 	int ret = 1;
 	char* ip = NULL, *pos = NULL, *path = NULL;
@@ -295,7 +295,7 @@ char* tithekdownload(char* link, char* localname, int flag)
 	if(flag == 0)
 	{
 		if(!file_exist(localfile))
-			gethttp(ip, path, 80, localfile, NULL, NULL, 0);
+			gethttp(ip, path, 80, localfile, pw, NULL, 0);
 	}
 	else
 	{
@@ -303,7 +303,7 @@ char* tithekdownload(char* link, char* localname, int flag)
 			ret = textbox(_("Message"), _("File exist, overwrite?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 
 		if(ret == 1)
-			screendownload("Download", ip, path, 80, localfile, NULL, 0);
+			screendownload("Download", ip, path, 80, localfile, pw, 0);
 	}
 
 	free(ip); ip = NULL;
@@ -320,7 +320,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	char* tithekpic = NULL;
 	char* tmpstr = NULL;
 
-	tithekfile = tithekdownload(titheklink, NULL, 0);
+	tithekfile = tithekdownload(titheklink, NULL, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 0);
 
 	delmarkedscreennodes(grid, 1);
 	freetithek();
@@ -414,7 +414,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 				if(tmp->pagecount != listbox->aktpage) break;
 				if(tmp->handle != NULL)
 				{
-					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, 0);
+					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 0);
 					changepic(tmp, tithekpic);
 					free(tithekpic); tithekpic = NULL;
 				}
@@ -426,7 +426,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 				if(tmp->pagecount != listbox->aktpage) break;
 				if(tmp->handle != NULL)
 				{
-					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, 0);
+					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 0);
 					changepic(tmp, tithekpic);
 					free(tithekpic); tithekpic = NULL;
 				}
@@ -452,7 +452,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 				{
 					if(status.security == 1)
 					{
-						char* tmpstr = tithekdownload((((struct tithek*)listbox->select->handle)->link), NULL, 1);
+						char* tmpstr = tithekdownload((((struct tithek*)listbox->select->handle)->link), NULL, NULL, 1);
 						free(tmpstr); tmpstr = NULL;
 						drawscreen(grid, 0);
 					}
@@ -471,7 +471,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 							
 						if(tmpstr1 != NULL)
 						{
-							char* tmpstr = tithekdownload(tmpstr1, tmpstr2, 1);
+							char* tmpstr = tithekdownload(tmpstr1, tmpstr2, NULL, 1);
 							free(tmpstr); tmpstr = NULL;
 							drawscreen(grid, 0);
 						}
