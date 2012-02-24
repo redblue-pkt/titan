@@ -3,6 +3,11 @@
 
 #define TITHEKPATH "/tmp/tithek"
 
+//flag 0: not used
+//flag 1: not used
+//flag 2: streamlink allgemein
+//flag 4: streamlink youtube
+//flag 1000: menu with pin
 struct tithek
 {
 	char* title;
