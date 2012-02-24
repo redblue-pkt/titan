@@ -220,7 +220,7 @@ void screenmc_videoplayer()
 				continue;			
 			}
 		}
-		else if(rcret == getrcconfigint("rctext", NULL))
+		else if(rcret == getrcconfigint("rctext", NULL) || rcret == getrcconfigint("rcsubtitel", NULL))
 		{		
 			if(status.play == 1)
 				playrctext(filename, playinfobarstatus, playertype, flag);	
