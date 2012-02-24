@@ -466,7 +466,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 						char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
 						tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
 						if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, 1);
-						tmpstr2 = changefilenameext(tmpstr, ".mp4")
+						tmpstr2 = changefilenameext(tmpstr, ".mp4");
 						free(tmpstr); tmpstr = NULL;
 							
 						if(tmpstr1 != NULL)
