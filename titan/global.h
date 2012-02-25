@@ -5,7 +5,7 @@ void ckeckkillnetthread()
 {
 //	if(checkbox("ATEMIO510") == 1)
 //	{
-		count = 0;
+		int count = 0;
 		while(count > 12)
 		{
 			count++
