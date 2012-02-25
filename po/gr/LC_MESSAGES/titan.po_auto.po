@@ -314,6 +314,7 @@ msgstr ""
 #: tithek.h:482 tithek.h:496 tithek.h:500 tithek.h:513 tithek.h:517
 #: tithek.h:521 tithek.h:479 tithek.h:484 tithek.h:498 tithek.h:502
 #: tithek.h:515 tithek.h:519 tithek.h:523 global.h:4364 global.h:4377
+#: global.h:4378
 msgid "Message"
 msgstr ""
 
@@ -356,7 +357,7 @@ msgstr ""
 #: tithek.h:478 tithek.h:482 tithek.h:496 tithek.h:500 tithek.h:513
 #: tithek.h:517 tithek.h:521 tithek.h:479 tithek.h:484 tithek.h:498
 #: tithek.h:502 tithek.h:515 tithek.h:519 tithek.h:523 global.h:4364
-#: global.h:4377
+#: global.h:4377 global.h:4378
 msgid "OK"
 msgstr ""
 
@@ -396,7 +397,7 @@ msgstr ""
 #: tithek.h:478 tithek.h:482 tithek.h:496 tithek.h:500 tithek.h:513
 #: tithek.h:517 tithek.h:521 tithek.h:479 tithek.h:484 tithek.h:498
 #: tithek.h:502 tithek.h:515 tithek.h:519 tithek.h:523 global.h:4364
-#: global.h:4377
+#: global.h:4377 global.h:4378
 msgid "EXIT"
 msgstr ""
 
@@ -709,7 +710,7 @@ msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
 #: global.h:4312 keyactions.h:223 global.h:4317 global.h:4320 global.h:4358
-#: global.h:4359 global.h:4364 global.h:4377
+#: global.h:4359 global.h:4364 global.h:4377 global.h:4378
 msgid "ERROR cant read res"
 msgstr ""
 
