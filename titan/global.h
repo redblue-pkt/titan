@@ -417,8 +417,9 @@ void checkserial(char* input)
 		}
 		free(ret1),ret1 = NULL;
 	}
-
-	killnet(0);
+	
+//	if(checkbox("ATEMIO510") == 1)
+		killnet(0);
 	
 	free(ret),ret = NULL;
 	free(authfile);
@@ -436,7 +437,7 @@ void killnet(int time)
 		{
 			cmd = ostrcat(cmd, "sleep", 1, 0);
 			cmd = ostrcat(cmd, " ", 1, 0);
-			cmd = ostrcat(cmd, "5", 1, 0);
+			cmd = ostrcat(cmd, "15", 1, 0);
 			cmd = ostrcat(cmd, " ", 1, 0);
 			cmd = ostrcat(cmd, ";", 1, 0);
 			cmd = ostrcat(cmd, " ", 1, 0);
