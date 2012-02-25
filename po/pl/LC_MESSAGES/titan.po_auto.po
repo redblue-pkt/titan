@@ -314,7 +314,7 @@ msgstr ""
 #: tithek.h:482 tithek.h:496 tithek.h:500 tithek.h:513 tithek.h:517
 #: tithek.h:521 tithek.h:479 tithek.h:484 tithek.h:498 tithek.h:502
 #: tithek.h:515 tithek.h:519 tithek.h:523 global.h:4364 global.h:4377
-#: global.h:4378 global.h:4390
+#: global.h:4378 global.h:4390 global.h:4386
 msgid "Message"
 msgstr ""
 
@@ -358,6 +358,7 @@ msgstr ""
 #: tithek.h:517 tithek.h:521 tithek.h:479 tithek.h:484 tithek.h:498
 #: tithek.h:502 tithek.h:515 tithek.h:519 tithek.h:523 global.h:4364
 #: global.h:4377 global.h:4378 global.h:205 global.h:249 global.h:4390
+#: global.h:210 global.h:254 global.h:4386
 msgid "OK"
 msgstr ""
 
@@ -398,6 +399,7 @@ msgstr ""
 #: tithek.h:517 tithek.h:521 tithek.h:479 tithek.h:484 tithek.h:498
 #: tithek.h:502 tithek.h:515 tithek.h:519 tithek.h:523 global.h:4364
 #: global.h:4377 global.h:4378 global.h:205 global.h:249 global.h:4390
+#: global.h:210 global.h:254 global.h:4386
 msgid "EXIT"
 msgstr ""
 
@@ -690,17 +692,17 @@ msgstr ""
 #: global.h:146 global.h:190 plugins_panel_skin.xml.h:6
 #: skins_panel_skin.xml.h:6 global.h:151 global.h:195 global.h:154
 #: global.h:198 global.h:192 global.h:236 global.h:193 global.h:237
-#: global.h:205 global.h:249
+#: global.h:205 global.h:249 global.h:210 global.h:254
 msgid "Info"
 msgstr ""
 
 #: global.h:146 global.h:151 global.h:154 global.h:192 global.h:193
-#: global.h:205
+#: global.h:205 global.h:210
 msgid "This is a advertising Image !"
 msgstr ""
 
 #: global.h:186 global.h:191 global.h:194 global.h:232 global.h:233
-#: global.h:245
+#: global.h:245 global.h:250
 msgid ""
 "For next OnlineUpdate please contact Atemio and send this Serial Number and "
 "your Atemio Serial Number !!\n"
@@ -709,12 +711,13 @@ msgid ""
 msgstr ""
 
 #: global.h:189 global.h:194 global.h:197 global.h:235 global.h:236
-#: global.h:248
+#: global.h:248 global.h:253
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
 #: global.h:4312 keyactions.h:223 global.h:4317 global.h:4320 global.h:4358
 #: global.h:4359 global.h:4364 global.h:4377 global.h:4378 global.h:4390
+#: global.h:4386
 msgid "ERROR cant read res"
 msgstr ""
 
