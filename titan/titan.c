@@ -727,7 +727,7 @@ firstwizzardstep1:
 	}
 
 //	if(checkbox("ATEMIO510") == 1)
-		killnet();
+		killnet(1);
 	screeninfobar();
 
 	//for testign screens

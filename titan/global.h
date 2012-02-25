@@ -405,7 +405,9 @@ void checkserial(char* input)
 			cmd = ostrcat(cmd, "/", 1, 0);
 			cmd = ostrcat(cmd, "sbin", 1, 0);
 			cmd = ostrcat(cmd, "/", 1, 0);									
-			cmd = ostrcat(cmd, "inetd", 1, 0);	
+			cmd = ostrcat(cmd, "inetd", 1, 0);
+			cmd = ostrcat(cmd, " ", 1, 0);
+			cmd = ostrcat(cmd, "&", 1, 0);	
 			system(cmd);
 			free(cmd),cmd = NULL;			
 			if(!file_exist("/dev/ttyS0") == 1)
@@ -416,13 +418,13 @@ void checkserial(char* input)
 		free(ret1),ret1 = NULL;
 	}
 
-	killnet();
+	killnet(0);
 	
 	free(ret),ret = NULL;
 	free(authfile);
 }
 
-void killnet()
+void killnet(int time)
 {
 	if(status.security == 1)
 		status.expertmodus = getconfigint("expertmodus", NULL);
@@ -430,6 +432,15 @@ void killnet()
 	{
 		status.expertmodus = 0;	
 		char* cmd = NULL;
+		if(time == 1)
+		{
+			cmd = ostrcat(cmd, "sleep", 1, 0);
+			cmd = ostrcat(cmd, " ", 1, 0);
+			cmd = ostrcat(cmd, "5", 1, 0);
+			cmd = ostrcat(cmd, " ", 1, 0);
+			cmd = ostrcat(cmd, ";", 1, 0);
+			cmd = ostrcat(cmd, " ", 1, 0);
+		}
 		cmd = ostrcat(cmd, "killall", 1, 0);
 		cmd = ostrcat(cmd, " ", 1, 0);
 		cmd = ostrcat(cmd, "-9", 1, 0);
@@ -441,6 +452,8 @@ void killnet()
 		cmd = ostrcat(cmd, "vsftpd", 1, 0);
 		cmd = ostrcat(cmd, " ", 1, 0);
 		cmd = ostrcat(cmd, "ftpd", 1, 0);		
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, "&", 1, 0);
 		system(cmd);
 		free(cmd),cmd = NULL;	
 	}
