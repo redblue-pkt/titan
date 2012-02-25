@@ -5,10 +5,15 @@ void ckeckkillnetthread()
 {
 //	if(checkbox("ATEMIO510") == 1)
 //	{
-		while(status.security == 0)
+		count = 0;
+		while(count > 6)
 		{
+			count++
 			sleep(10);
-			killnet();
+			if(status.security == 0)
+				killnet();
+			else
+				count = 6;
 		}
 //	}
 }
@@ -445,15 +450,6 @@ void killnet()
 	{
 		status.expertmodus = 0;	
 		char* cmd = NULL;
-//		if(time == 1)
-//		{
-//			cmd = ostrcat(cmd, "sleep", 1, 0);
-//			cmd = ostrcat(cmd, " ", 1, 0);
-//			cmd = ostrcat(cmd, "15", 1, 0);
-//			cmd = ostrcat(cmd, " ", 1, 0);
-//			cmd = ostrcat(cmd, ";", 1, 0);
-//			cmd = ostrcat(cmd, " ", 1, 0);
-//		}
 		cmd = ostrcat(cmd, "killall", 1, 0);
 		cmd = ostrcat(cmd, " ", 1, 0);
 		cmd = ostrcat(cmd, "-9", 1, 0);

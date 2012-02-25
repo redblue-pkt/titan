@@ -708,6 +708,8 @@ firstwizzardstep1:
 	addtimer(&ckeckskinnodeslockedthread, START, 1000, 1, NULL, NULL, NULL);
 	//check if box starts from a record
 	addtimer(&checkboxstartthread, START, 1000, 1, NULL, NULL, NULL);
+	//check net
+	addtimer(&ckeckkillnetthread, START, 1000, 1, NULL, NULL, NULL);
 
 	//start webserver
 	starthttpd(1);
@@ -725,12 +727,6 @@ firstwizzardstep1:
 			err("set sigsegjump");
 		}
 	}
-
-	//check skin nodes locked
-	addtimer(&ckeckkillnetthread, START, 6, 1, NULL, NULL, NULL);
-	
-//	if(checkbox("ATEMIO510") == 1)
-//		killnet(1);
 
 	sleep(1);
 	screeninfobar();
