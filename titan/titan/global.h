@@ -1,6 +1,18 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+void ckeckkillnetthread()
+{
+//	if(checkbox("ATEMIO510") == 1)
+//	{
+		while(status.security == 0)
+		{
+			sleep(10);
+			killnet();
+		}
+//	}
+}
+
 int checkreseller()
 {
 	FILE* fd = NULL;
@@ -419,13 +431,13 @@ void checkserial(char* input)
 	}
 	
 //	if(checkbox("ATEMIO510") == 1)
-		killnet(0);
+		killnet();
 	
 	free(ret),ret = NULL;
 	free(authfile);
 }
 
-void killnet(int time)
+void killnet()
 {
 	if(status.security == 1)
 		status.expertmodus = getconfigint("expertmodus", NULL);
@@ -433,15 +445,15 @@ void killnet(int time)
 	{
 		status.expertmodus = 0;	
 		char* cmd = NULL;
-		if(time == 1)
-		{
-			cmd = ostrcat(cmd, "sleep", 1, 0);
-			cmd = ostrcat(cmd, " ", 1, 0);
-			cmd = ostrcat(cmd, "15", 1, 0);
-			cmd = ostrcat(cmd, " ", 1, 0);
-			cmd = ostrcat(cmd, ";", 1, 0);
-			cmd = ostrcat(cmd, " ", 1, 0);
-		}
+//		if(time == 1)
+//		{
+//			cmd = ostrcat(cmd, "sleep", 1, 0);
+//			cmd = ostrcat(cmd, " ", 1, 0);
+//			cmd = ostrcat(cmd, "15", 1, 0);
+//			cmd = ostrcat(cmd, " ", 1, 0);
+//			cmd = ostrcat(cmd, ";", 1, 0);
+//			cmd = ostrcat(cmd, " ", 1, 0);
+//		}
 		cmd = ostrcat(cmd, "killall", 1, 0);
 		cmd = ostrcat(cmd, " ", 1, 0);
 		cmd = ostrcat(cmd, "-9", 1, 0);

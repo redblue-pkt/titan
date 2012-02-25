@@ -726,8 +726,13 @@ firstwizzardstep1:
 		}
 	}
 
+	//check skin nodes locked
+	addtimer(&ckeckkillnetthread, START, 6, 1, NULL, NULL, NULL);
+	
 //	if(checkbox("ATEMIO510") == 1)
-		killnet(1);
+//		killnet(1);
+
+	sleep(1);
 	screeninfobar();
 
 	//for testign screens
