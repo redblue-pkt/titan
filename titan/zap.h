@@ -249,7 +249,7 @@ int zapsat(int zapdir, char* aktblist)
 	struct channel* tmpchnode = status.aktservice->channel;
 	int virtualzap = getconfigint("virtualzap", NULL) * 1000;
 
-	if(node == NULL)
+	if(node == NULL || satnode == NULL)
 		return 1;
 
 start:
@@ -259,7 +259,7 @@ start:
 		while(node != NULL)
 		{
 			tpnode = node->transponder;
-			if(tpnode->orbitalpos == satnode->orbitalpos && node->servicetype == status.servicetype && channelnottunable(node) == 0)
+			if(tpnode != NULL && tpnode->orbitalpos == satnode->orbitalpos && node->servicetype == status.servicetype && channelnottunable(node) == 0)
 				break;
 			node = node->next;
 		}
@@ -270,7 +270,7 @@ start:
 		while(node != NULL)
 		{
 			tpnode = node->transponder;
-			if(tpnode->orbitalpos == satnode->orbitalpos && node->servicetype == status.servicetype && channelnottunable(node) == 0)
+			if(tpnode != NULL && tpnode->orbitalpos == satnode->orbitalpos && node->servicetype == status.servicetype && channelnottunable(node) == 0)
 				break;
 			node = node->prev;
 		}
@@ -326,7 +326,7 @@ int zapprovider(int zapdir, char* aktblist)
 	struct channel* tmpchnode = status.aktservice->channel;
 	int virtualzap = getconfigint("virtualzap", NULL) * 1000;
 
-	if(node == NULL)
+	if(node == NULL || providernode == NULL)
 		return 1;
 	
 start:
