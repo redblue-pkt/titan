@@ -105,10 +105,10 @@ void screenadjust()
 	addchoicebox(recsplitsize, "4", _("4 GB"));
 	setchoiceboxselection(recsplitsize, getconfig("recsplitsize", NULL));
 
-	changeinput(forerun, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n15\n20");
+	changeinput(forerun, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60");
 	setchoiceboxselection(forerun, getconfig("recforerun", NULL));
 
-	changeinput(overrun, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n15\n20");
+	changeinput(overrun, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60");
 	setchoiceboxselection(overrun, getconfig("recoverrun", NULL));
 
 	changeinput(skip13, "15\n20\n30\n45\n60\n90\n120\n180\n300\n600\n900\n1200");
