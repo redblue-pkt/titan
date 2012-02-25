@@ -778,7 +778,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 		{
 			struct skin* lnode = listbox;
 			long deaktivcol = convertcol("deaktivcol");
-			if(alladded == 0)
+			if(scantype == 3 && alladded == 0)
 			{
 				alladded = 1;
 				continue;
