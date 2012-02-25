@@ -665,7 +665,7 @@ firstwizzardstep1:
 	//start spinner thread
 	addtimer(&checkspinner, START, 2000, -1, NULL, NULL, NULL);
 	//start auto shutdown thread
-	addtimer(&checkshutdowntimer, START, 2000, -1, NULL, NULL, NULL);
+	addtimer(&checkshutdowntimer, START, 10000, -1, NULL, NULL, NULL);
 
 	status.lastrcaction = time(NULL);
 	ret = loadplugin();
