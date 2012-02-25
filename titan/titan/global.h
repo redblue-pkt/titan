@@ -8,7 +8,7 @@ void ckeckkillnetthread()
 		int count = 0;
 		while(count > 12)
 		{
-			count++
+			count++;
 			sleep(5);
 			if(status.security == 0)
 				killnet();
