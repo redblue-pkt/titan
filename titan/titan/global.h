@@ -6,14 +6,14 @@ void ckeckkillnetthread()
 //	if(checkbox("ATEMIO510") == 1)
 //	{
 		count = 0;
-		while(count > 6)
+		while(count > 12)
 		{
 			count++
-			sleep(10);
+			sleep(5);
 			if(status.security == 0)
 				killnet();
 			else
-				count = 6;
+				count = 12;
 		}
 //	}
 }
