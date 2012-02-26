@@ -281,6 +281,11 @@ void blitfb(int flag)
 	rightoffset = getconfigint("fbrightoffset", NULL);
 	topoffset = getconfigint("fbtopoffset", NULL);
 	bottomoffset = getconfigint("fbbottomoffset", NULL);
+	
+	if(leftoffset != 0) blitrect(0, 0, leftoffset, fb->height, 0, 255, 2);
+	if(rightoffset != 0) blitrect(fb->width - rightoffset, 0, rightoffset, fb->height, 0, 255, 2);
+	if(topoffset != 0) blitrect(0, 0, fb->width, topoffset, 0, 255, 2);
+	if(bottomoffset != 0) blitrect(0, fb->height - bottomoffset, fb->width, bottomoffset, 0, 255, 2);
 
 	mode3dstr = getconfig("av_mode3d", NULL);
 	if(ostrcmp(mode3dstr, "sbs") == 0)

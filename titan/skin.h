@@ -2489,6 +2489,11 @@ void drawrect(int posx, int posy, int width, int height, long color, int transpa
 	primary->Flip(primary, NULL, DSFLIP_WAITFORSYNC);
 }
 */
+
+//mode 0: with fill (draw to skinfb)
+//mode 1: without fill (draw to skinfb)
+//mode 2: with fill (draw to fb)
+//mode 3: without fill (draw to fb)
 void blitrect(int posx, int posy, int width, int height, long color, int transparent, int mode)
 {
 	unsigned long tmpcol;
@@ -2501,14 +2506,22 @@ void blitrect(int posx, int posy, int width, int height, long color, int transpa
 
 	if(posx < 0) posx = 0;
 	if(posy < 0) posy = 0;
-	if(posx + width > skinfb->width) posx = skinfb->width - width;
-	if(posy + height > skinfb->height) posy = skinfb->height - height;
+	if(mode < 2)
+	{
+		if(posx + width > skinfb->width) posx = skinfb->width - width;
+		if(posy + height > skinfb->height) posy = skinfb->height - height;
+	}
+	else
+	{
+		if(posx + width > fb->width) posx = fb->width - width;
+		if(posy + height > fb->height) posy = fb->height - height;
+	}
 
 	if(width == 0 || height == 0) return;
 
-	if(mode == 0)
+	if(mode == 0 || mode == 2)
 		bltData.operation  = BLT_OP_FILL;
-	else if(mode == 1)
+	else if(mode == 1 || mode == 3)
 		bltData.operation  = BLT_OP_DRAW_RECTANGLE;
 	bltData.colour     = tmpcol;
 	bltData.srcFormat  = SURF_ARGB8888;
@@ -2517,8 +2530,16 @@ void blitrect(int posx, int posy, int width, int height, long color, int transpa
 	if(status.usedirectfb == 1)
 		bltData.dstOffset  = 0;
 	else
-		bltData.dstOffset  = fb->varfbsize;
-	bltData.dstPitch   = skinfb->pitch;
+	{
+		if(mode < 2)
+			bltData.dstOffset  = fb->varfbsize;
+		else
+			bltData.dstOffset  = 0;
+	}
+	if(mode < 2)
+		bltData.dstPitch   = skinfb->pitch;
+	else
+		bltData.dstPitch   = fb->pitch;
 	bltData.dst_top    = posy;
 	bltData.dst_left   = posx;
 	bltData.dst_bottom = posy + height;
@@ -3614,15 +3635,13 @@ int drawscreennodebyname(char* screenname, char* nodename)
 	return 0;
 }
 
+//flag 0: draw normal with allways
+//flag 1: draw without allways
+//flag 2: from thread (mutex is set in thread)
+//flag 3: same as 0 but don't use status.screencalc
+//flag 4: same as 0 but animate
 int drawscreen(struct skin* node, int flag)
 {
-	//flag 0: draw normal with allways
-	//flag 1: draw without allways
-	//flag 2: from thread (mutex is set in thread)
-	//flag 3: same as 0 but don't use status.screencalc
-	//flag 4: same as 0 but animate
-
-
 	struct fb* merkskinfb = NULL;
 
 	debug(1000, "in");
