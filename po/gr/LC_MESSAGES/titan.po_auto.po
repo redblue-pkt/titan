@@ -23,7 +23,8 @@
 #: rectimer.h:913 rectimer.h:918 rectimer.h:923 rectimer.h:928 rectimer.h:933
 #: scan.h:876 scan.h:1165 scan.h:1169 scan.h:1173 screensaveradjust.h:19
 #: tunerconfig.h:126 tunerconfig.h:155 tunerconfig.h:186 tunerconfig.h:219
-#: tunerconfig.h:456 scan.h:880 scan.h:1177
+#: tunerconfig.h:456 scan.h:880 scan.h:1177 scan.h:883 scan.h:1172 scan.h:1176
+#: scan.h:1180
 msgid "no"
 msgstr ""
 
@@ -59,6 +60,7 @@ msgstr ""
 #: rectimer.h:904 rectimer.h:909 rectimer.h:914 rectimer.h:919 rectimer.h:924
 #: rectimer.h:929 rectimer.h:934 scan.h:877 scan.h:1166 scan.h:1170
 #: scan.h:1174 screensaveradjust.h:20 tunerconfig.h:455 scan.h:881 scan.h:1178
+#: scan.h:884 scan.h:1173 scan.h:1177 scan.h:1181
 msgid "yes"
 msgstr ""
 
@@ -315,7 +317,7 @@ msgstr ""
 #: tithek.h:521 tithek.h:479 tithek.h:484 tithek.h:498 tithek.h:502
 #: tithek.h:515 tithek.h:519 tithek.h:523 global.h:4364 global.h:4377
 #: global.h:4378 global.h:4390 global.h:4386 global.h:4389 scan.h:814
-#: scan.h:951 scan.h:1023 scan.h:1229
+#: scan.h:951 scan.h:1023 scan.h:1229 scan.h:954 scan.h:1026 scan.h:1232
 msgid "Message"
 msgstr ""
 
@@ -360,7 +362,8 @@ msgstr ""
 #: tithek.h:502 tithek.h:515 tithek.h:519 tithek.h:523 global.h:4364
 #: global.h:4377 global.h:4378 global.h:205 global.h:249 global.h:4390
 #: global.h:210 global.h:254 global.h:4386 global.h:213 global.h:257
-#: global.h:4389 scan.h:814 scan.h:951 scan.h:1023 scan.h:1229
+#: global.h:4389 scan.h:814 scan.h:951 scan.h:1023 scan.h:1229 scan.h:954
+#: scan.h:1026 scan.h:1232
 msgid "OK"
 msgstr ""
 
@@ -402,7 +405,8 @@ msgstr ""
 #: tithek.h:502 tithek.h:515 tithek.h:519 tithek.h:523 global.h:4364
 #: global.h:4377 global.h:4378 global.h:205 global.h:249 global.h:4390
 #: global.h:210 global.h:254 global.h:4386 global.h:213 global.h:257
-#: global.h:4389 scan.h:814 scan.h:951 scan.h:1023 scan.h:1229
+#: global.h:4389 scan.h:814 scan.h:951 scan.h:1023 scan.h:1229 scan.h:954
+#: scan.h:1026 scan.h:1232
 msgid "EXIT"
 msgstr ""
 
@@ -2826,33 +2830,33 @@ msgstr ""
 msgid "Wait for channel scan end"
 msgstr ""
 
-#: scan.h:947 scan.h:951
+#: scan.h:947 scan.h:951 scan.h:954
 msgid ""
 "Scan is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 
-#: scan.h:1019 scan.h:1023
+#: scan.h:1019 scan.h:1023 scan.h:1026
 msgid "No Tuner configured"
 msgstr ""
 
-#: scan.h:1032 scan.h:1036
+#: scan.h:1032 scan.h:1036 scan.h:1039
 msgid "Single Transponder"
 msgstr ""
 
-#: scan.h:1033 scan.h:1037
+#: scan.h:1033 scan.h:1037 scan.h:1040
 msgid "Single Sat"
 msgstr ""
 
-#: scan.h:1034 scan.h:1038
+#: scan.h:1034 scan.h:1038 scan.h:1041
 msgid "Multi Sat"
 msgstr ""
 
-#: scan.h:1039 scan.h:1043
+#: scan.h:1039 scan.h:1043 scan.h:1046
 msgid "Auto Scan"
 msgstr ""
 
-#: scan.h:1225 scan.h:1229
+#: scan.h:1225 scan.h:1229 scan.h:1232
 msgid "Transponder changed"
 msgstr ""
 
