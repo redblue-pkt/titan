@@ -3,7 +3,7 @@
 
 void screenskinadjust()
 {
-	int rcret = 0;
+	int rcret = 0, oleftoffset = 0, orightoffset = 0, otopoffset = 0, obottomoffset = 0;
 	struct skin* skinadjust = getscreen("skinadjust");
 	struct skin* listbox = getscreennode(skinadjust, "listbox");
 	struct skin* fontsizeadjust = getscreennode(skinadjust, "fontsizeadjust");
@@ -42,6 +42,11 @@ void screenskinadjust()
 
 	changeinput(piconpath, getconfig("piconpath", NULL));
 
+	oleftoffset = getconfigint("fbleftoffset", NULL);
+	orightoffset = getconfigint("fbrightoffset", NULL); 
+	otopoffset = getconfigint("fbtopoffset", NULL);
+	obottomoffset = getconfigint("fbbottomoffset", NULL);
+
 	drawscreen(skinadjust, 0);
 	addscreenrc(skinadjust, listbox);
 
@@ -52,7 +57,21 @@ void screenskinadjust()
 		rcret = waitrc(skinadjust, 0, 0);
 		tmp = listbox->select;
 
-		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		addconfigscreencheck("fbleftoffset", leftoffset, "0");
+		addconfigscreencheck("fbrightoffset", rightoffset, "0");
+		addconfigscreencheck("fbtopoffset", topoffset, "0");
+		addconfigscreencheck("fbbottomoffset", bottomoffset, "0");
+		drawscreen(skinadjust, 0);
+
+		if(rcret == getrcconfigint("rcexit", NULL))
+		{
+			addconfigint("fbleftoffset", oleftoffset);
+			addconfigint("fbrightoffset", orightoffset);
+			addconfigint("fbtopoffset", otopoffset);
+			addconfigint("fbbottomoffset", obottomoffset);
+			break;
+		}
+
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			addskinconfigscreencheck("fontsizeadjust", fontsizeadjust, "0");
@@ -60,10 +79,6 @@ void screenskinadjust()
 			status.listboxselecttype = getskinconfigint("listboxselecttype", NULL);
 			addskinconfigscreencheck("osdtransparent", osdtransparent, "0");
 			setosdtransparent(getskinconfigint("osdtransparent", NULL));
-			addconfigscreencheck("fbleftoffset", leftoffset, "0");
-			addconfigscreencheck("fbrightoffset", rightoffset, "0");
-			addconfigscreencheck("fbtopoffset", topoffset, "0");
-			addconfigscreencheck("fbbottomoffset", bottomoffset, "0");
 			addconfigscreen("piconpath", piconpath);
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "piconpath") == 0)
