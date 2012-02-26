@@ -367,10 +367,7 @@ int delchannel(int serviceid, int transponderid, int flag)
 			if(flag == 0)
 				delbouquetbychannel(node->serviceid, node->transponderid);
 			else
-			{
-				struct bouquet* bouquetnode = getbouquetbychannelmain(node->serviceid, node->transponderid);
-				if(bouquetnode != NULL) bouquetnode->channel = NULL;
-			}
+				setbouquetchanneltonullmain(node->serviceid, node->transponderid);
 
 			providernode = node->provider;
 			delchannelcache(node->serviceid, node->transponderid);

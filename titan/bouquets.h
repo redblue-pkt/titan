@@ -52,7 +52,7 @@ int movebouquetdown(struct bouquet* node)
 		err("NULL detect");
 		return 1;
 	}
-	
+
 	//only one node
 	if(node->prev == NULL && node->next == NULL)
 		return 0;
@@ -109,7 +109,7 @@ int movebouquetup(struct bouquet* node)
 		debug(1000, "NULL detect");
 		return 1;
 	}
-	
+
 	//only one node
 	if(node->prev == NULL && node->next == NULL)
 		return 0;
@@ -360,21 +360,22 @@ void delbouquet(int serviceid, int transponderid, struct bouquet** firstnode)
 	debug(1000, "out");
 }
 
-struct bouquet* getbouquetbychannelmain(int serviceid, int transponderid)
+void setbouquetchanneltonullmain(int serviceid, int transponderid)
 {
 	struct mainbouquet* node = mainbouquet;
 	struct bouquet* bouquetnode = NULL;
 
 	while(node != NULL)
 	{
-		if(node->bouquet != NULL)
+		bouquetnode = node->bouquet;
+		while(bouquetnode != NULL)
 		{
-			bouquetnode = getbouquetbychannel(node->bouquet, serviceid, transponderid);
-			if(bouquetnode != NULL) return bouquetnode;
+			if(bouquetnode->channel != NULL && bouquetnode->channel->serviceid == serviceid && bouquetnode->channel->transponderid == transponderid)
+				bouquetnode->channel = NULL;
+			bouquetnode = bouquetnode->next;
 		}
 		node = node->next;
 	}
-	return NULL;
 }
 
 void delbouquetbychannel(int serviceid, int transponderid)
@@ -389,7 +390,9 @@ void delbouquetbychannel(int serviceid, int transponderid)
 	}
 }
 
-void delunusedbouquetchannels()
+//flag: 0 = del bouquet
+//flag: 1 = do not del bouquet
+void delunusedbouquetchannels(int flag)
 {
 	struct mainbouquet* mainbouquetnode = mainbouquet;
 	struct bouquet *node = NULL, *prev = NULL;
@@ -404,7 +407,7 @@ void delunusedbouquetchannels()
 			prev = node;
 			node = node->next;
 			chnode = getchannel(prev->serviceid, prev->transponderid);
-			if(chnode == NULL)
+			if(chnode == NULL && flag == 0)
 				delbouquet(prev->serviceid, prev->transponderid, &mainbouquetnode->bouquet);
 			else
 				prev->channel = chnode;
