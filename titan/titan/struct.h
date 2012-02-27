@@ -114,8 +114,6 @@
 #define MAXCASERVICE 20
 #define MAXLONGKEY 10
 #define MAXSAT 64
-#define RECBSIZE 188 * 2730
-#define RECPLAYBSIZE 188 * 512
 
 //CA Defines
 #define T_SB 0x80		//sb (h<--m)
@@ -765,6 +763,7 @@ struct service
 	size_t reclastsync;
 	off64_t rectotal;
 	int reccount;
+	int tssize;
 	char* recname;
 	struct service *next;
 };

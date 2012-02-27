@@ -648,6 +648,7 @@ struct service* addservice(struct service* last)
 	memset(newnode, 0, sizeof(struct service));
 	newnode->recdstfd = -1;
 	newnode->recsrcfd = -1;
+	newnode->tssize = 188;
 
 	m_lock(&status.servicemutex, 2);
 	node = service;

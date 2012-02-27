@@ -272,7 +272,7 @@ int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, un
 		return 1;
 	}
 
-	if(gettsinfo(dupfd, lenpts, startpts, endpts, bitrate, 188) != 0)
+	if(gettsinfo(dupfd, lenpts, startpts, endpts, bitrate, snode->tssize) != 0)
 	{
 		err("cant read endpts/bitrate");
 		return 1;
