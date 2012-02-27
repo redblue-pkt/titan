@@ -340,7 +340,7 @@ void screenmc_videoplayer()
 				debug(50, "listbox->select->name: %s", listbox->select->name);
 				filename = ostrcat("", listbox->select->name, 0, 0);
 
-				if(getconfigint("playertype", NULL) == 1 && cmpfilenameext(filename, ".ts") == 0)
+				if(getconfigint("playertype", NULL) == 1 && (cmpfilenameext(filename, ".ts") == 0 || cmpfilenameext(filename, ".mts") == 0 || cmpfilenameext(filename, ".m2ts") == 0))
 					playertype = 1;
 				else
 					playertype = 0;
