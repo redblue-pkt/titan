@@ -206,13 +206,13 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	usleep(500000);
 	m_lock(&status.tsseekmutex, 15);
 	usleep(500000);
-	if(gettsinfo(dupfd, &pts, NULL, NULL, &bitrate, 188) != 0)
+	if(gettsinfo(dupfd, &pts, NULL, NULL, &bitrate, servicenode->tssize) != 0)
 	{
 		err("cant read endpts/bitrate");
 		m_unlock(&status.tsseekmutex, 15);
 		return 1;
 	}
-	endoffile = lseek64(dupfd , -188 * 2, SEEK_END);
+	endoffile = lseek64(dupfd , -servicenode->tssize * 2, SEEK_END);
 	close(dupfd);
 	currentpos = lseek64(servicenode->recsrcfd, 0, SEEK_CUR);
 	ret = videoclearbuffer(status.aktservice->videodev);
@@ -221,22 +221,22 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	if(sekunden >= 0)
 	{
 		offset = (bitrate / 8) * sekunden - 5000000;
-		offset = offset - (offset % 188);
+		offset = offset - (offset % servicenode->tssize);
 		if(currentpos + offset > endoffile)
 		{
 			offset = endoffile - currentpos;
-			offset = offset - (offset % 188);
+			offset = offset - (offset % servicenode->tssize);
 		}
 	}
 	else
 	{
 		sekunden = sekunden * -1;
 		offset = (bitrate / 8) * sekunden + 5000000;
-		offset = offset - (offset % 188);
+		offset = offset - (offset % servicenode->tssize);
 		if(currentpos - offset < 0)
 		{
-			offset = currentpos - 188;
-			offset = offset - (offset % 188);
+			offset = currentpos - servicenode->tssize;
+			offset = offset - (offset % servicenode->tssize);
 			if(offset < 0)
 				offset = 0; 
 		}	

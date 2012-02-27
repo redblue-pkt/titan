@@ -168,8 +168,8 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
 			}
 			else
 			{
-				ret = getptspos(fd, currentpos, &ptscurrent, &currentpos, 1, 188);
-				ret = getpts(fd, 0, 0, 256 * 1024, &ptsend, &endoffile, -1, 188);
+				ret = getptspos(fd, currentpos, &ptscurrent, &currentpos, 1, servicenode->tssize);
+				ret = getpts(fd, 0, 0, 256 * 1024, &ptsend, &endoffile, -1, servicenode->tssize);
 				sekunden = (ptsend - ptscurrent) / 90000;
 				minuten = sekunden / 60;
 				sekunden = sekunden % 60; 
