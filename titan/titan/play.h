@@ -646,7 +646,7 @@ playerstart:
 	{
 		if(startfile == NULL)
 		{
-			if(getconfigint("playertype", NULL) == 1 && cmpfilenameext(file, ".ts") == 0)
+			if(getconfigint("playertype", NULL) == 1 && (cmpfilenameext(file, ".ts") == 0 || cmpfilenameext(file, ".mts") == 0 || cmpfilenameext(file, ".m2ts") == 0))
 				playertype = 1;
 
 			tmpstr = ostrcat(file, "", 0, 0);
