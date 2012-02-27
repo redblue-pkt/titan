@@ -121,31 +121,31 @@ int dvbread(struct dvbdev* node, unsigned char *buf, int pos, int count, int tou
 	return dvbreadfd(node->fd, buf, pos, count, tout);
 }
 
-int dvbfindpmtpid(int fd, int16_t *pmtpid, int *serviceid)
+int dvbfindpmtpid(int fd, int16_t *pmtpid, int *serviceid, int tssize)
 {
 	off_t pos = 0;
-	int left = 5*1024*1024;
+	int left = 5 * 1024 * 1024;
 
 	if(fd < 0) return 1;
 
-	while(left >= 188)
+	while(left >= tssize)
 	{
-		unsigned char packet[188];
+		unsigned char packet[tssize];
 
 		lseek(fd, pos, SEEK_SET);
-		int ret = dvbreadfd(fd, packet, 0, 188, -1);
-		if(ret != 188)
+		int ret = dvbreadfd(fd, packet, 0, tssize, -1);
+		if(ret != tssize)
 		{
 			err("read error");
 			break;
 		}
-		left -= 188;
-		pos += 188;
+		left -= tssize;
+		pos += tssize;
 
 		if(packet[0] != 0x47)
 		{
 			int i = 0;
-			while(i < 188)
+			while(i < tssize)
 			{
 				if(packet[i] == 0x47) break;
 				--pos;
@@ -734,16 +734,16 @@ int dvbgetdate(time_t* time, int timeout)
 }
 
 // getPTS extracts a pts value from any PID at a given offset.
-int getpts(int fd, off64_t offset, int spid, int left, unsigned long long *pts, off64_t *findpos, int dir)
+int getpts(int fd, off64_t offset, int spid, int left, unsigned long long *pts, off64_t *findpos, int dir, int tssize)
 {
 	int first = 1;
 	
-	offset -= offset % 188;
-	if(dir < 0 && offset < 188) offset = 188;
+	offset -= offset % tssize;
+	if(dir < 0 && offset < tssize) offset = tssize;
 	if(dir < 0) offset *= -1;
-	while(left >= 188)
+	while(left >= tssize)
 	{
-		unsigned char packet[188];
+		unsigned char packet[tssize];
 
 		if(dir > -1)
 			*findpos = lseek(fd, offset, SEEK_SET);
@@ -754,24 +754,24 @@ int getpts(int fd, off64_t offset, int spid, int left, unsigned long long *pts, 
 					first = 0;
 					offset *= -1;
 					*findpos = lseek(fd, offset, SEEK_SET);
-					offset = -188;
+					offset = -tssize;
 				}
 				else 
 				{
-					if(offset % 188 != 0) {
-						*findpos = lseek(fd, (offset % 188) - 188, SEEK_CUR);
-						offset = -188;
+					if(offset % tssize != 0) {
+						*findpos = lseek(fd, (offset % tssize) - tssize, SEEK_CUR);
+						offset = -tssize;
 					}
 					else
-						*findpos = lseek(fd, -188*2, SEEK_CUR);
+						*findpos = lseek(fd, -tssize * 2, SEEK_CUR);
 				}
 			}
 			else
 				*findpos = lseek(fd, offset, SEEK_END);
 		}
 
-		int ret = dvbreadfd(fd, packet, 0, 188, -1);
-		if(ret != 188)
+		int ret = dvbreadfd(fd, packet, 0, tssize, -1);
+		if(ret != tssize)
 		{
 			err("read error");
 			break;
@@ -781,7 +781,7 @@ int getpts(int fd, off64_t offset, int spid, int left, unsigned long long *pts, 
 		{
 			debug(200, "resync");
 			int i = 0;
-			while(i < 188)
+			while(i < tssize)
 			{
 				if(packet[i] == 0x47) break;
 				i++;
@@ -790,11 +790,11 @@ int getpts(int fd, off64_t offset, int spid, int left, unsigned long long *pts, 
 			continue;
 		}
 
-		left -= 188;
+		left -= tssize;
 		if(dir > -1)
-			offset += 188;
+			offset += tssize;
 		else
-			offset -= 188;
+			offset -= tssize;
 		
 		int pid = ((packet[1] << 8) | packet[2]) & 0x1FFF;
 		int pusi = !!(packet[1] & 0x40);
@@ -818,8 +818,8 @@ int getpts(int fd, off64_t offset, int spid, int left, unsigned long long *pts, 
 					*pts |= ((unsigned long long)(packet[10] & 0x80)) >> 7;
 					if(dir > -1)
 					{
-						offset -= 188;
-						*findpos -= 188;
+						offset -= tssize;
+						*findpos -= tssize;
 					}
 					debug(200, "PCR %16llx found at %lld pid %02x (%02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x)", *pts, offset, pid, packet[0], packet[1], packet[2], packet[3], packet[4], packet[5], packet[10], packet[9], packet[8], packet[7], packet[6]);
 					return 0;
@@ -901,8 +901,8 @@ int getpts(int fd, off64_t offset, int spid, int left, unsigned long long *pts, 
 
 			if(dir > -1)
 			{
-				offset -= 188;
-				*findpos -= 188;
+				offset -= tssize;
+				*findpos -= tssize;
 			}
 			debug(200, "PTS %16llx found at %lld pid %02x stream: %02x", *pts, offset, pid, payload[3]);
 
@@ -936,17 +936,17 @@ unsigned long long gettsbitrate(unsigned long long start, unsigned long long end
 		return bitrate;
 }
 
-int gettsinfo(int fd, unsigned long long* lenpts, unsigned long long* startpts, unsigned long long* endpts, unsigned long long* bitrate)
+int gettsinfo(int fd, unsigned long long* lenpts, unsigned long long* startpts, unsigned long long* endpts, unsigned long long* bitrate, int tssize)
 {
 	int ret = 0;
 	unsigned long long start = 0, end = 0;
 	off64_t startfindpos = 0, endfindpos = 0;
 
 	//TODO: save startpts in service struct so we can use it faster
-	ret = getpts(fd, 0, 0, 256 * 1024, &start, &startfindpos, 1);
+	ret = getpts(fd, 0, 0, 256 * 1024, &start, &startfindpos, 1, tssize);
 	if(ret == 0)
 	{
-		ret = getpts(fd, 0, 0, 256 * 1024, &end, &endfindpos, -1);
+		ret = getpts(fd, 0, 0, 256 * 1024, &end, &endfindpos, -1, tssize);
 		if(ret == 0)
 		{
 			end = fixuppts(start, end);
@@ -963,13 +963,13 @@ int gettsinfo(int fd, unsigned long long* lenpts, unsigned long long* startpts, 
 	return ret;
 }
 
-int getptspos(int fd, off64_t startfind, unsigned long long* pts, off64_t* findpos, int dir)
+int getptspos(int fd, off64_t startfind, unsigned long long* pts, off64_t* findpos, int dir, int tssize)
 {
 	int ret = 0;
 	unsigned long long pts1 = 0;
 	off64_t findpos1;
 	
-	ret = getpts(fd, startfind, 0, 256 * 1024, &pts1, &findpos1, dir);
+	ret = getpts(fd, startfind, 0, 256 * 1024, &pts1, &findpos1, dir, tssize);
 	*pts = pts1;
 	*findpos = findpos1;
 	
