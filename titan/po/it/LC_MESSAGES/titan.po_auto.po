@@ -318,7 +318,7 @@ msgstr ""
 #: tithek.h:515 tithek.h:519 tithek.h:523 global.h:4364 global.h:4377
 #: global.h:4378 global.h:4390 global.h:4386 global.h:4389 scan.h:814
 #: scan.h:951 scan.h:1023 scan.h:1229 scan.h:954 scan.h:1026 scan.h:1232
-#: global.h:4398 global.h:4528 play.h:675
+#: global.h:4398 global.h:4528 play.h:675 service.h:801
 msgid "Message"
 msgstr ""
 
@@ -365,7 +365,7 @@ msgstr ""
 #: global.h:210 global.h:254 global.h:4386 global.h:213 global.h:257
 #: global.h:4389 scan.h:814 scan.h:951 scan.h:1023 scan.h:1229 scan.h:954
 #: scan.h:1026 scan.h:1232 global.h:4398 global.h:4528 play.h:557 play.h:565
-#: play.h:675
+#: play.h:675 service.h:801
 msgid "OK"
 msgstr ""
 
@@ -409,7 +409,7 @@ msgstr ""
 #: global.h:210 global.h:254 global.h:4386 global.h:213 global.h:257
 #: global.h:4389 scan.h:814 scan.h:951 scan.h:1023 scan.h:1229 scan.h:954
 #: scan.h:1026 scan.h:1232 global.h:4398 global.h:4528 play.h:557 play.h:565
-#: play.h:675
+#: play.h:675 service.h:801
 msgid "EXIT"
 msgstr ""
 
@@ -2951,21 +2951,21 @@ msgid ""
 "Stop it and switch ?"
 msgstr ""
 
-#: service.h:783
+#: service.h:783 service.h:784
 msgid ""
 "Can't find a Tuner.\n"
 "Alle Tuners in use or no Tuner defined."
 msgstr ""
 
-#: service.h:786
+#: service.h:786 service.h:787
 msgid "Tuning to Channel failed!"
 msgstr ""
 
-#: service.h:789
+#: service.h:789 service.h:790
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 
-#: service.h:794
+#: service.h:794 service.h:795
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
