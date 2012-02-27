@@ -203,8 +203,8 @@ unsigned char* dvbgetsdt(struct dvbdev* fenode, int secnr, int timeout);
 int dvbreadfd(int fd, unsigned char *buf, int pos, int count, int tout);
 int dvbwrite(int fd, unsigned char* buf, int count, int tout);
 int dvbgetdate(time_t* time, int timeout);
-int dvbfindpmtpid(int fd, int16_t *pmtpid, int *serviceid);
-int gettsinfo(int fd, unsigned long long* lenpts, unsigned long long* startpts, unsigned long long* endpts, unsigned long long* bitrate);
+int dvbfindpmtpid(int fd, int16_t *pmtpid, int *serviceid, int tssize);
+int gettsinfo(int fd, unsigned long long* lenpts, unsigned long long* startpts, unsigned long long* endpts, unsigned long long* bitrate, int tssize);
 
 //pin.h
 int screenpincheck(int type, char* pin);

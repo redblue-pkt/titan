@@ -63,7 +63,7 @@ int playerstartts(char* file, int flag)
 
 	if(flag == 0)
 	{
-		ret = dvbfindpmtpid(fd, &pmtpid, &serviceid);
+		ret = dvbfindpmtpid(fd, &pmtpid, &serviceid, 188);
 		if(ret == 1)
 		{
 			err("find sid/pmt pid");
@@ -206,7 +206,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	usleep(500000);
 	m_lock(&status.tsseekmutex, 15);
 	usleep(500000);
-	if(gettsinfo(dupfd, &pts, NULL, NULL, &bitrate) != 0)
+	if(gettsinfo(dupfd, &pts, NULL, NULL, &bitrate, 188) != 0)
 	{
 		err("cant read endpts/bitrate");
 		m_unlock(&status.tsseekmutex, 15);
@@ -272,7 +272,7 @@ int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, un
 		return 1;
 	}
 
-	if(gettsinfo(dupfd, lenpts, startpts, endpts, bitrate) != 0)
+	if(gettsinfo(dupfd, lenpts, startpts, endpts, bitrate, 188) != 0)
 	{
 		err("cant read endpts/bitrate");
 		return 1;
