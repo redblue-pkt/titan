@@ -294,7 +294,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 
 	if(servicenode->type == RECORDDIRECT || servicenode->type == RECORDTIMER || servicenode->type == RECORDTIMESHIFT)
 	{
-		recbsize = RECBSIZE;
+		recbsize = servicenode->tssize * 2788;
 		readtimeout = 5000000;
 		writetimeout = 5000000; //5 sec
 	}
@@ -306,8 +306,8 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			err("destination fd not ok")
 			return 1;
 		}
-		if(servicenode->type == RECORDPLAY) recbsize = RECPLAYBSIZE;
-		if(servicenode->type == RECORDSTREAM) recbsize = RECBSIZE;
+		if(servicenode->type == RECORDPLAY) recbsize = servicenode->tssize * 512;
+		if(servicenode->type == RECORDSTREAM) recbsize = servicenode->tssize * 2788;
 		readtimeout = 5000000;
 		writetimeout = 5000000;
 	}
