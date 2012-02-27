@@ -7,6 +7,13 @@ void readlabelext(struct skin* label, char* filename, char* ext)
 
 	tmpstr = changefilenameext(filename, ext);
 	tmpstr1 = readfiletomem(tmpstr, 0);
+	if(tmpstr1 == NULL && ostrcmp(ext, ".epg") == 0)
+	{
+		free(tmpstr); tmpstr = NULL;
+		tmpstr = changefilenameext(filename, ".eit");
+		tmpstr1 = readeittomem(tmpstr);
+	}
+	
 	changetext(label, tmpstr1);
 
 	free(tmpstr); tmpstr = NULL;

@@ -3818,6 +3818,136 @@ char* readfiletomem(const char* filename, int flag)
 	return buf1;
 }
 
+char* readeittomem(const char* filename)
+{
+	unsigned char byte;
+	FILE *fil = NULL;
+	char *zeichen = NULL, *buf = NULL, *buf1 = NULL;
+	int buf1size = 0, buf1oldsize = 0;
+	int Beschreibung;
+  int len;
+
+	zeichen = malloc(255);
+	if(zeichen == NULL)
+	{
+		err("no memory");
+		return NULL;
+	}
+	buf = malloc(255);
+	if(buf == NULL)
+	{
+		free(zeichen);
+		err("no memory");
+		return NULL;
+	}
+
+	fil = fopen(filename, "r");
+	if(fil == NULL)
+	{
+		err("can't open %s", filename);
+		free(zeichen);
+		free(buf);
+		return NULL;
+	}
+	Beschreibung = 0;
+	fseek(fil, 12, SEEK_SET); //ersten 12 Byte nicht relevant
+	while(!feof(fil)) {
+		byte=fgetc(fil);
+      
+		if (byte == 0x4D) {
+			fseek(fil, 4,SEEK_CUR);
+			byte=fgetc(fil);
+			len = byte + 0;
+      byte=fgetc(fil);
+      fgets(zeichen,len,fil);
+			if (byte != 0x05)
+				sprintf(buf,"%c%s\n", byte,zeichen);
+			else
+				sprintf(buf,"%s\n", zeichen);
+
+			buf1oldsize = buf1size;
+			buf1size += strlen(buf);
+			buf1 = realloc(buf1, buf1size + 1);
+			if(buf1 == NULL)
+			{
+				err("no memory");
+				free(zeichen);
+				free(buf);
+				fclose(fil);
+				return NULL;
+			}
+     	sprintf(buf1 + buf1oldsize, "%s", buf);
+       	
+ 			//printf("T %s\n", zeichen);
+			byte=fgetc(fil);
+			len = byte + 0;
+			byte=fgetc(fil);
+			fgets(zeichen,len,fil);
+			if (byte != 0x05)
+				sprintf(buf,"%c%s\n\n", byte,zeichen);
+			else
+				sprintf(buf,"%s\n\n", zeichen);
+				
+			buf1oldsize = buf1size;
+			buf1size += strlen(buf);
+			buf1 = realloc(buf1, buf1size + 1);
+			if(buf1 == NULL)
+			{
+				err("no memory");
+				free(zeichen);
+				free(buf);
+				fclose(fil);
+				return NULL;
+			}
+     	sprintf(buf1 + buf1oldsize, "%s", buf);
+
+		}
+		else if (byte == 0x4E) {
+			fseek(fil, 6,SEEK_CUR);
+			byte=fgetc(fil);
+			len = byte;
+			byte=fgetc(fil);
+			fgets(zeichen,len,fil);
+			if (Beschreibung == 0) {
+				if (byte != 0x05)
+					sprintf(buf,"%c%s", byte,zeichen);
+				else
+					sprintf(buf,"%s", zeichen);
+				Beschreibung = 1;
+			}
+ 			else {
+ 				if (byte != 0x05)
+					sprintf(buf,"%c%s", byte,zeichen);
+				else
+					sprintf(buf,"%s", zeichen);
+			}	
+
+			buf1oldsize = buf1size;
+			buf1size += strlen(buf);
+			buf1 = realloc(buf1, buf1size + 1);
+			if(buf1 == NULL)
+			{
+				err("no memory");
+				free(zeichen);
+				free(buf);
+				fclose(fil);
+				return NULL;
+			}
+     	sprintf(buf1 + buf1oldsize, "%s", buf);      
+        	  
+		}  
+		else {
+			byte=fgetc(fil);
+			len= byte;
+			fgets(zeichen,len+1,fil);
+		}  
+	}
+	free(zeichen);
+	free(buf);
+	fclose(fil);
+	return buf1;
+}
+
 char* command(char* input)
 {
 	debug(1000, "in");
