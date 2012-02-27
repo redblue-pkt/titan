@@ -490,7 +490,7 @@ char* recordcreatefilename(char* path, char* channelname, char* moviename, int t
 	return tmpstr;
 }
 
-int recordstart(struct channel* chnode, int filefd, int recordfd, int type, time_t endtime, struct rectimer* rectimernode)
+int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, time_t endtime, struct rectimer* rectimernode, int tssize)
 {
 	int ret = 0, fd = -1, servicetype = RECORDDIRECT, festatus = 0;
 	char* path = NULL, *chname = NULL, *filename = NULL, *moviename = NULL;
@@ -615,6 +615,7 @@ int recordstart(struct channel* chnode, int filefd, int recordfd, int type, time
 		ret = 16;
 		goto end;
 	}
+	servicenode->tssize = tssize;
 	servicenode->recdstfd = fd;
 	servicenode->channel = chnode;
 	servicenode->transponder = tpnode;
@@ -812,6 +813,11 @@ end:
 	}
 	free(filename); filename = NULL;
 	return ret;
+}
+
+int recordstart(struct channel* chnode, int filefd, int recordfd, int type, time_t endtime, struct rectimer* rectimernode)
+{
+	return recordstartreal(chnode, filefd, recordfd, type, endtime, rectimernode, 188);
 }
 
 struct service* getrecordbyname(char* recname, int type)

@@ -37,7 +37,7 @@ unsigned long long int m_gst_startpts = 0;
 //flag 1: from timeshift
 int playerstartts(char* file, int flag)
 {
-	int fd = -1, ret = 0;
+	int fd = -1, ret = 0, tssize = 188;
 	int16_t pmtpid = 0;
 	int serviceid = 0;
 	struct channel* chnode = NULL;
@@ -63,7 +63,10 @@ int playerstartts(char* file, int flag)
 
 	if(flag == 0)
 	{
-		ret = dvbfindpmtpid(fd, &pmtpid, &serviceid, 188);
+		//TODO: funktion to get tssize from file content
+		if(cmpfilenameext(file, ".mts") == 0) tssize = 192;
+		if(cmpfilenameext(file, ".m2ts") == 0) tssize = 192;
+		ret = dvbfindpmtpid(fd, &pmtpid, &serviceid, tssize);
 		if(ret == 1)
 		{
 			err("find sid/pmt pid");
@@ -97,7 +100,7 @@ int playerstartts(char* file, int flag)
 		}
 	}
 
-	ret = recordstart(NULL, fd, dvrnode->fd, RECPLAY, 0, NULL);
+	ret = recordstartreal(NULL, fd, dvrnode->fd, RECPLAY, 0, NULL, tssize);
 	if(ret != 0)
 	{
 		err("start play thread");
