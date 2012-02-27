@@ -1652,7 +1652,7 @@ int cmpfilenameext(char* filename, char* ext)
 	zeichen = strrchr(filename, '.');
 	if(zeichen != NULL)
 	{
-		if(ostrcmp(zeichen, ext) == 0) return 0;
+		if(ostrcasecmp(zeichen, ext) == 0) return 0;
 	}
 
 	return 1;
@@ -2424,6 +2424,18 @@ int ostrcmp(char* value1, char* value2)
 
 	if(value1 != NULL && value2 != NULL)
 		ret = strcmp(value1, value2);
+
+//	debug(1000, "out");
+	return ret;
+}
+
+int ostrcasecmp(char* value1, char* value2)
+{
+//	debug(1000, "in");
+	int ret = 1;
+
+	if(value1 != NULL && value2 != NULL)
+		ret = strcasecmp(value1, value2);
 
 //	debug(1000, "out");
 	return ret;
