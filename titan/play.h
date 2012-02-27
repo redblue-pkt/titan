@@ -549,7 +549,13 @@ int playcheckdirrcret(char* file, int dirrcret)
 		tmpstr = readfiletomem(epgfilename, 0);
 		if(tmpstr != NULL)
 			textbox(_("EPG Info"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 700, 600, 0, 2);
-
+		else {
+			free(epgfilename); epgfilename = NULL;
+			epgfilename = changefilenameext(file, ".eit");
+			tmpstr = readeittomem(epgfilename);
+			if(tmpstr != NULL)
+				textbox(_("EPG Info"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 700, 600, 0, 2);
+		}
 		free(epgfilename); epgfilename = NULL;
 		free(tmpstr); tmpstr = NULL;
 		ret = 1;
