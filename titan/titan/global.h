@@ -1369,7 +1369,7 @@ void m_unlock(pthread_mutex_t *mutex, int flag)
 		case 13: debug(900, "hddmutex unlock"); break;
 		case 14: debug(900, "linkedchannelmutex unlock"); break;
 		case 15: debug(900, "tsseekmutex unlock"); break;
-		default: debug(900, " unknown mutex unlock"); break;
+		default: debug(900, "unknown mutex unlock"); break;
 	}
 	pthread_mutex_unlock(mutex);
 }
