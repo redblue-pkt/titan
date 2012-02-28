@@ -132,7 +132,7 @@ int dvbfindpmtpid(int fd, int16_t *pmtpid, int *serviceid, int tssize)
 	{
 		unsigned char packet[tssize];
 
-		lseek(fd, pos, SEEK_SET);
+		lseek64(fd, pos, SEEK_SET);
 		int ret = dvbreadfd(fd, packet, 0, tssize, -1);
 		if(ret != tssize)
 		{
@@ -179,12 +179,12 @@ int dvbfindpmtpid(int fd, int16_t *pmtpid, int *serviceid, int tssize)
 		{
 			*pmtpid = pid;
 			*serviceid = (sec[4] << 8) | sec[5];
-			lseek(fd, 0, SEEK_SET);
+			lseek64(fd, 0, SEEK_SET);
 			return 0;
 		}
 	}
 	
-	lseek(fd, 0, SEEK_SET);
+	lseek64(fd, 0, SEEK_SET);
 	return 1;
 }
 
@@ -746,28 +746,28 @@ int getpts(int fd, off64_t offset, int spid, int left, unsigned long long *pts, 
 		unsigned char packet[tssize];
 
 		if(dir > -1)
-			*findpos = lseek(fd, offset, SEEK_SET);
+			*findpos = lseek64(fd, offset, SEEK_SET);
 		else
 		{
 			if(dir == -2) {
 				if(first == 1) {
 					first = 0;
 					offset *= -1;
-					*findpos = lseek(fd, offset, SEEK_SET);
+					*findpos = lseek64(fd, offset, SEEK_SET);
 					offset = -tssize;
 				}
 				else 
 				{
 					if(offset % tssize != 0) {
-						*findpos = lseek(fd, (offset % tssize) - tssize, SEEK_CUR);
+						*findpos = lseek64(fd, (offset % tssize) - tssize, SEEK_CUR);
 						offset = -tssize;
 					}
 					else
-						*findpos = lseek(fd, -tssize * 2, SEEK_CUR);
+						*findpos = lseek64(fd, -tssize * 2, SEEK_CUR);
 				}
 			}
 			else
-				*findpos = lseek(fd, offset, SEEK_END);
+				*findpos = lseek64(fd, offset, SEEK_END);
 		}
 
 		int ret = dvbreadfd(fd, packet, 0, tssize, -1);
