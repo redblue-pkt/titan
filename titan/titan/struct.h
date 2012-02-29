@@ -424,13 +424,13 @@ struct rectimer
 
 struct inetwork
 {
-	int id;
 	char* device;
 	char* ip;
 	char* netmask;
 	char* mac;
 	char* broadcast;
 	int dhcp;
+	int found;
 	struct inetwork *prev;
 	struct inetwork *next;
 };
