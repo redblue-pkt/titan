@@ -399,7 +399,7 @@ int main(int argc, char *argv[])
 	ret = setac3(getconfig("av_ac3mode", NULL));
 	ret = setmode3d(getconfig("av_mode3d", NULL));
 	ret = setvfdbrightness(getconfigint("vfdbrightness", NULL));
-	ret = addinetworkall();
+	ret = addinetworkall(NULL);
 	
 #ifndef SIMULATE
 	if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1)
@@ -706,6 +706,8 @@ firstwizzardstep1:
 	addtimer(&dvbgetpmtthread, START, 2000, -1, NULL, NULL, NULL);
 	//check hdd
 	status.addhddall = addtimer(&addhddall, START, 6000, -1, NULL, NULL, NULL);
+	//check net
+	addtimer(&addinetworkall, START, 15000, -1, NULL, NULL, NULL);
 #ifdef CAMSUPP
 	//start ca slot watching threads
 	castart();
