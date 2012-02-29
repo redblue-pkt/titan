@@ -18,11 +18,11 @@ void LCD_start_lcd4linux()
 {
 	int count = 0;
 	char* startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/start.sh", 0, 0);
-	while (draw == 0 && LCD_Pearl1thread != NULL)
+/*	while (draw == 0 && LCD_Pearl1thread != NULL)
 	{
 		sleep(1);
 	}
-	sleep(2);
+	sleep(2);*/
 	if(LCD_Pearl1thread == NULL)
 		return;
 	while (LCD_Pearl1thread->aktion != STOP && system("ps | grep -v grep | grep lcd4linux ") != 0) {
