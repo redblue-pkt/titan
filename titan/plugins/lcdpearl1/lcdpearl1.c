@@ -14,8 +14,6 @@ struct stimerthread* LCD_Pearl1thread = NULL;
 int firststart = 0;
 int draw = 0;
 
-#include "lcdpearl_grep.h"
-
 void LCD_start_lcd4linux()
 {
 	int count = 0;
@@ -71,7 +69,6 @@ void LCD_Pearl1_thread()
 	
 	if(firststart == 1)
 		sleep(8);
-	addtimer(&lcd_raw_event, START, 10000, 1, NULL, NULL, NULL);	
 	firststart = 0;
 	draw = 0;
 	
@@ -232,7 +229,8 @@ void LCD_Pearl1_thread()
 		free(tmpstr); tmpstr = NULL;
 		free(tmpstr2); tmpstr2 = NULL;
 		free(tmpstr3); tmpstr3 = NULL;
-		sleep(1);
+		//sleep(1);
+		usleep(500000);
 	}
  	free(timemerk);timemerk=NULL;
  	free(sendermerk);sendermerk=NULL;
@@ -249,6 +247,12 @@ void LCD_Pearl1_main()
 {
 	if(LCD_Pearl1thread == NULL)
 	{
+		char* tmpstr = NULL;
+		tmpstr = ostrcat("cp ", getconfig("pluginpath", NULL), 0, 0);
+		tmpstr = ostrcat(tmpstr, "/lcdpearl1/start.png", 1, 0);
+		tmpstr = ostrcat(tmpstr, " /tmp/titanlcd.png", 1, 0);
+		system(tmpstr);
+		free(tmpstr); tmpstr=NULL;
 		textbox(_("Message"), _("LCD Pearl1 starts ..."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
 		addconfig("lcd_pearl1_plugin_running", "yes");
 		LCD_Pearl1thread = addtimer(&LCD_Pearl1_thread, START, 10000, 1, NULL, NULL, NULL);
