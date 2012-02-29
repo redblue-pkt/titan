@@ -469,9 +469,104 @@ void setfbtransparent(int value)
 #endif
 }
 
+static void write_PNG(unsigned char *outbuffer, char *filename, 
+				int width, int height, int interlace)
+{
+ 	int i;
+	int bit_depth=0, color_type;
+	png_bytep row_pointers[height];
+	png_structp png_ptr;
+	png_infop info_ptr;
+	FILE *outfile = fopen(filename, "wb");
+
+	for (i=0; i<height; i++)
+		row_pointers[i] = outbuffer + i * 4 * width;
+		
+	if (!outfile)
+	{
+		fprintf (stderr, "Error: Couldn't fopen %s.\n", filename);
+		exit(EXIT_FAILURE);
+	}
+    
+	png_ptr = png_create_write_struct(PNG_LIBPNG_VER_STRING, 
+	(png_voidp) NULL, (png_error_ptr) NULL, (png_error_ptr) NULL);
+    
+	if (!png_ptr)
+		err("Error: Couldn't create PNG write struct.");
+    
+	info_ptr = png_create_info_struct(png_ptr);
+	if (!info_ptr)
+	{
+		png_destroy_write_struct(&png_ptr, (png_infopp) NULL);
+		err("Error: Couldn't create PNG info struct.");
+	}
+    
+	png_init_io(png_ptr, outfile);
+    
+	png_set_compression_level(png_ptr, Z_BEST_COMPRESSION);
+    
+	bit_depth = 8;
+	color_type = PNG_COLOR_TYPE_RGB_ALPHA;
+	//color_type = PNG_COLOR_TYPE_RGB;
+	png_set_invert_alpha(png_ptr);
+	png_set_bgr(png_ptr);
+
+	png_set_IHDR(png_ptr, info_ptr, width, height, 
+	bit_depth, color_type, interlace, 
+	PNG_COMPRESSION_TYPE_DEFAULT, PNG_FILTER_TYPE_DEFAULT);
+    
+	png_write_info(png_ptr, info_ptr);
+    
+	printf ("Now writing PNG file\n");
+    
+	png_write_image(png_ptr, row_pointers);
+    
+	png_write_end(png_ptr, info_ptr);
+	/* puh, done, now freeing memory... */
+	png_destroy_write_struct(&png_ptr, &info_ptr);
+    
+	if (outfile != NULL)
+		(void) fclose(outfile);
+} 
+
+static void convert_and_write(unsigned char *inbuffer, char *filename, 
+				int width, int height, int bits, int interlace)
+{
+	size_t bufsize = (size_t) width * height * 4;
+
+	unsigned char *outbuffer = malloc(bufsize);
+
+	if (outbuffer == NULL)
+		err("Not enough memory");
+	
+	memset(outbuffer, 0, bufsize);
+	write_PNG(inbuffer, filename, width, height, interlace);
+	(void) free(outbuffer);
+}
+
+static int fb2png(unsigned char *buf_p, int width, int height, char *outfile)
+{
+	int interlace = PNG_INTERLACE_ADAM7;
+	int bitdepth = 32;
+		
+	size_t help = 0;
+	while(help <= (width * height * 4))
+	{
+		buf_p[help+3] = 0x00;
+		help = help + 4;
+	}
+		
+	convert_and_write(buf_p, outfile, width, height, bitdepth, interlace);
+   
+
+    return 0;
+}
+
 void pngforlcd()
 {
-	FILE *fd;
+	fb2png(skinfb->fb, 320, 240, "/tmp/titanlcd.png");
+	
+/*	FILE *fd;
 	fd=fopen("/tmp/titanlcd.raw", "w");
 	int help = 0;
 	int i = 0;
@@ -480,7 +575,7 @@ void pngforlcd()
 		help = help + (skinfb->width * 4);
 		i++;
 	}
-	fclose(fd);
+	fclose(fd);*/
 }
 
 #endif
