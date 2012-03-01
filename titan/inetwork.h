@@ -228,6 +228,8 @@ int addinetworkall(struct stimerthread* self)
 		char* tmp_device = NULL;
 		int tmp_dhcp = 0;
 
+		if(tmpifa->ifa_addr == NULL)
+			continue;
 
 		//Don't add IPV6 ot other
 		if(tmpifa->ifa_addr->sa_family != AF_INET && tmpifa->ifa_addr->sa_family != AF_PACKET)
