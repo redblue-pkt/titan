@@ -278,9 +278,9 @@ int recordsplit(struct service* servicenode)
 
 int readwritethread(struct stimerthread* stimer, struct service* servicenode, int flag)
 {
-	int readret = 0, writeret = 0, ret = 0, recbsize = 0;
+	int readret = 0, writeret = 0, ret = 0, recbsize = 0, tmprecbsize = 0, i = 0, pktcount = 0;
 	int readtimeout = -1, writetimeout = -1;
-	unsigned char* buf = NULL;
+	unsigned char* buf = NULL, *tmpbuf = NULL;
 	char* retstr = NULL;
 	//off64_t pos = 0;
 
@@ -306,7 +306,11 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			err("destination fd not ok")
 			return 1;
 		}
-		if(servicenode->type == RECORDPLAY) recbsize = servicenode->tssize * 512;
+		if(servicenode->type == RECORDPLAY)
+		{
+			recbsize = servicenode->tssize * 512;
+			tmprecbsize = 188 * 512;
+		}
 		if(servicenode->type == RECORDSTREAM) recbsize = servicenode->tssize * 2788;
 		readtimeout = 5000000;
 		writetimeout = 5000000;
@@ -326,6 +330,16 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 	{
 		err("no mem");
 		return 1;
+	}
+	
+	if(servicenode->type == RECORDPLAY && servicenode->tssize == 192)
+	{
+		tmpbuf = malloc(tmprecbsize);
+		if(tmpbuf == NULL)
+		{
+			err("no mem");
+			return 1;
+		}
 	}
 	
 	if(servicenode->recdmxstart == 0)
@@ -353,7 +367,19 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			if(servicenode->type == RECORDSTREAM)
 				writeret = sockwrite(servicenode->recdstfd, buf, readret, writetimeout);
 			else
-				writeret = dvbwrite(servicenode->recdstfd, buf, readret, writetimeout);
+			{
+				if(servicenode->type == RECORDPLAY && servicenode->tssize == 192)
+				{
+					// remove 4 bytes per paket from mts and m2ts streams
+					pktcount = readret / 192;
+					for(i = 0; i < pktcount; i++)
+						memcpy(tmpbuf + (i * 188), buf + (i * 192) + 4, 188);
+					writeret = dvbwrite(servicenode->recdstfd, tmpbuf, pktcount * 188, writetimeout);
+					writeret = writeret + (pktcount * 4);
+				}
+				else
+					writeret = dvbwrite(servicenode->recdstfd, buf, readret, writetimeout);
+			}
 			//else if(servicenode->type == RECORDPLAY)
 			//	writeret = dvbwrite(servicenode->recdstfd, buf, readret, writetimeout);
 			//else if(servicenode->type == RECORDDIRECT || servicenode->type == RECORDTIMER || servicenode->type == RECORDTIMESHIFT)
@@ -441,6 +467,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 	close(fd);
 #endif
 	if(buf != NULL) free(buf);
+	if(tmpbuf != NULL) free(tmpbuf);
 	debug(250, "stop read-write thread");
 	return 0;
 }
