@@ -319,7 +319,7 @@ msgstr ""
 #: global.h:4378 global.h:4390 global.h:4386 global.h:4389 scan.h:814
 #: scan.h:951 scan.h:1023 scan.h:1229 scan.h:954 scan.h:1026 scan.h:1232
 #: global.h:4398 global.h:4528 play.h:675 service.h:801 record.h:636
-#: record.h:799 record.h:975
+#: record.h:799 record.h:975 record.h:663 record.h:826 record.h:1002
 msgid "Message"
 msgstr ""
 
@@ -366,7 +366,7 @@ msgstr ""
 #: global.h:210 global.h:254 global.h:4386 global.h:213 global.h:257
 #: global.h:4389 scan.h:814 scan.h:951 scan.h:1023 scan.h:1229 scan.h:954
 #: scan.h:1026 scan.h:1232 global.h:4398 global.h:4528 play.h:557 play.h:565
-#: play.h:675 service.h:801 record.h:636
+#: play.h:675 service.h:801 record.h:636 record.h:663
 msgid "OK"
 msgstr ""
 
@@ -411,6 +411,7 @@ msgstr ""
 #: global.h:4389 scan.h:814 scan.h:951 scan.h:1023 scan.h:1229 scan.h:954
 #: scan.h:1026 scan.h:1232 global.h:4398 global.h:4528 play.h:557 play.h:565
 #: play.h:675 service.h:801 record.h:636 record.h:799 record.h:975
+#: record.h:663 record.h:826 record.h:1002
 msgid "EXIT"
 msgstr ""
 
@@ -2656,25 +2657,26 @@ msgstr ""
 msgid "Record / Timeshift / Stream"
 msgstr ""
 
-#: record.h:635 record.h:636
+#: record.h:635 record.h:636 record.h:663
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
 msgstr ""
 
-#: record.h:797 record.h:798
+#: record.h:797 record.h:798 record.h:825
 msgid "Timer Record start !\n"
 msgstr ""
 
-#: record.h:892 record.h:929 record.h:898 record.h:935
+#: record.h:892 record.h:929 record.h:898 record.h:935 record.h:925
+#: record.h:962
 msgid "stop"
 msgstr ""
 
-#: record.h:933 record.h:939
+#: record.h:933 record.h:939 record.h:966
 msgid "change"
 msgstr ""
 
-#: record.h:969 record.h:975
+#: record.h:969 record.h:975 record.h:1002
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr ""
 
