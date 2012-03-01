@@ -607,6 +607,9 @@ void fediseqcsendmastercmd(struct dvbdev* node, struct dvb_diseqc_master_cmd *cm
 		debug(1000, "out-> NULL detect");
 		return;
 	}
+	
+	if(cmd == NULL) return;
+	if(cmd->msg_len == 0) return;
 
 	tmpstr = ostrcat(node->feshortname, "_diseqc_repeat", 0, 0);
 	repeat = getconfigint(tmpstr, node->feaktnr); 
