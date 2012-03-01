@@ -771,7 +771,7 @@ int getpts(int fd, off64_t offset, int spid, int left, unsigned long long *pts, 
 		}
 
 		int ret = dvbreadfd(fd, packet, 0, tssize, -1);
-		if(ret != tssize)
+		if(ret != tssize && ret != 188)
 		{
 			err("read error");
 			break;
