@@ -705,6 +705,8 @@ void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int
 		return;
 	}
 	
+	fesdiseqcpoweron(node);
+	
 	oldvolt = node->feaktvolt;
 	oldtone = node->feakttone;
 
@@ -749,23 +751,23 @@ void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int
 			break;
 		case 7: //store pos
 			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x6A; cmd.msg[3] = pos; cmd.msg_len = 4;
-			debug(200, "DISEQC Rotorpos store pos (%s)", node->feshortname);
+			debug(200, "DISEQC Rotorpos store pos=%d (%s)", pos, node->feshortname);
 			break;
 		case 8: //goto pos
 			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x6B; cmd.msg[3] = pos; cmd.msg_len = 4;
-			debug(200, "DISEQC Rotorpos goto pos (%s)", node->feshortname);
+			debug(200, "DISEQC Rotorpos goto pos=%d (%s)", pos, node->feshortname);
 			break;
 		case 9: //step xx pos east
 			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x68; cmd.msg[3] = 256 - pos; cmd.msg_len = 4;
-			debug(200, "DISEQC Rotorpos step east (%s)", node->feshortname);
+			debug(200, "DISEQC Rotorpos step east pos=%d (%s)", pos, node->feshortname);
 			break;
 		case 10: //step xx pos west
 			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x69; cmd.msg[3] = 256 - pos; cmd.msg_len = 4;
-			debug(200, "DISEQC Rotorpos step west (%s)", node->feshortname);
+			debug(200, "DISEQC Rotorpos step west pos=%d (%s)", pos, node->feshortname);
 			break;
 		case 11: //goto xx
 			cmd.msg[0] = 0xE0; cmd.msg[1] = 0x31; cmd.msg[2] = 0x6E; cmd.msg[3] = (pos >> 8) & 0xff; cmd.msg[4] = pos & 0xff; cmd.msg_len = 5;
-			debug(200, "DISEQC Rotorpos goto xx (%s)", node->feshortname);
+			debug(200, "DISEQC Rotorpos goto xx pos=%d (%s)", pos, node->feshortname);
 			break;
 	}
 
@@ -1019,6 +1021,7 @@ void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 	if(diseqmode == 0 || diseqmode == 1) // Diseqc 1.0 + 1.1
 	{
 		debug(200, "set committed switch (%s)", node->feshortname);
+		fesdiseqcpoweron(node);
 		cmd.msg[0] = 0xE0;
 		cmd.msg[1] = 0x10;
 		cmd.msg[2] = 0x38;
@@ -1036,6 +1039,7 @@ void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 		if(uinput > 0)
 		{
 			debug(200, "set uncommitted switch (%s)", node->feshortname);
+			fesdiseqcpoweron(node);
 			ucmd.msg[0] = 0xE0;
 			ucmd.msg[1] = 0x10;
 			ucmd.msg[2] = 0x39;
