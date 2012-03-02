@@ -320,7 +320,8 @@ msgstr ""
 #: scan.h:951 scan.h:1023 scan.h:1229 scan.h:954 scan.h:1026 scan.h:1232
 #: global.h:4398 global.h:4528 play.h:675 service.h:801 record.h:636
 #: record.h:799 record.h:975 record.h:663 record.h:826 record.h:1002
-#: global.h:4535
+#: global.h:4535 networkbrowser.h:954 networkbrowser.h:1185
+#: networkbrowser.h:1198 service.h:566 service.h:807
 msgid "Message"
 msgstr ""
 
@@ -368,6 +369,8 @@ msgstr ""
 #: global.h:4389 scan.h:814 scan.h:951 scan.h:1023 scan.h:1229 scan.h:954
 #: scan.h:1026 scan.h:1232 global.h:4398 global.h:4528 play.h:557 play.h:565
 #: play.h:675 service.h:801 record.h:636 record.h:663 global.h:4535
+#: networkbrowser.h:954 networkbrowser.h:1185 networkbrowser.h:1198
+#: service.h:566 service.h:807
 msgid "OK"
 msgstr ""
 
@@ -412,7 +415,8 @@ msgstr ""
 #: global.h:4389 scan.h:814 scan.h:951 scan.h:1023 scan.h:1229 scan.h:954
 #: scan.h:1026 scan.h:1232 global.h:4398 global.h:4528 play.h:557 play.h:565
 #: play.h:675 service.h:801 record.h:636 record.h:799 record.h:975
-#: record.h:663 record.h:826 record.h:1002 global.h:4535
+#: record.h:663 record.h:826 record.h:1002 global.h:4535 networkbrowser.h:954
+#: networkbrowser.h:1185 networkbrowser.h:1198 service.h:566 service.h:807
 msgid "EXIT"
 msgstr ""
 
@@ -1212,57 +1216,57 @@ msgstr ""
 msgid "nonempty"
 msgstr ""
 
-#: networkbrowser.h:550 networkbrowser.h:757
+#: networkbrowser.h:550 networkbrowser.h:757 networkbrowser.h:759
 msgid "Add Cifs Network Share"
 msgstr ""
 
-#: networkbrowser.h:577 networkbrowser.h:784
+#: networkbrowser.h:577 networkbrowser.h:784 networkbrowser.h:786
 msgid "Add Nfs Network Share"
 msgstr ""
 
-#: networkbrowser.h:604 networkbrowser.h:811
+#: networkbrowser.h:604 networkbrowser.h:811 networkbrowser.h:813
 msgid "Add Ftpfs Network Share"
 msgstr ""
 
-#: networkbrowser.h:952
+#: networkbrowser.h:952 networkbrowser.h:954
 msgid "Are you sure you want to save this network mount?"
 msgstr ""
 
-#: networkbrowser.h:1101
+#: networkbrowser.h:1101 networkbrowser.h:1103
 msgid "add new share"
 msgstr ""
 
-#: networkbrowser.h:1103
+#: networkbrowser.h:1103 networkbrowser.h:1105
 msgid "add cifs share"
 msgstr ""
 
-#: networkbrowser.h:1105
+#: networkbrowser.h:1105 networkbrowser.h:1107
 msgid "add nfs share"
 msgstr ""
 
-#: networkbrowser.h:1107
+#: networkbrowser.h:1107 networkbrowser.h:1109
 msgid "add ftp share"
 msgstr ""
 
-#: networkbrowser.h:1109
+#: networkbrowser.h:1109 networkbrowser.h:1111
 msgid "edit share"
 msgstr ""
 
-#: networkbrowser.h:1111
+#: networkbrowser.h:1111 networkbrowser.h:1113
 msgid "remove share"
 msgstr ""
 
-#: networkbrowser.h:1183
+#: networkbrowser.h:1183 networkbrowser.h:1185
 msgid ""
 "A mount entry with this name already exists!\n"
 "Update existing entry and continue?"
 msgstr ""
 
-#: networkbrowser.h:1196
+#: networkbrowser.h:1196 networkbrowser.h:1198
 msgid "Are you sure you want remove this share?"
 msgstr ""
 
-#: networkbrowser.h:1581
+#: networkbrowser.h:1581 networkbrowser.h:1583
 msgid "Networkbrowser - show Shares"
 msgstr ""
 
@@ -2949,27 +2953,27 @@ msgstr ""
 msgid "imdb mvis (network/hdd)"
 msgstr ""
 
-#: service.h:560
+#: service.h:560 service.h:566
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
 msgstr ""
 
-#: service.h:783 service.h:784
+#: service.h:783 service.h:784 service.h:790
 msgid ""
 "Can't find a Tuner.\n"
 "Alle Tuners in use or no Tuner defined."
 msgstr ""
 
-#: service.h:786 service.h:787
+#: service.h:786 service.h:787 service.h:793
 msgid "Tuning to Channel failed!"
 msgstr ""
 
-#: service.h:789 service.h:790
+#: service.h:789 service.h:790 service.h:796
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 
-#: service.h:794 service.h:795
+#: service.h:794 service.h:795 service.h:801
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
