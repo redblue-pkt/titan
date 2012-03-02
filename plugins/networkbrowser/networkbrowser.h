@@ -310,7 +310,8 @@ void screennetworkbrowser_addshare(int mode, char* sharename, char* ipaddresse, 
 		} else if ( mode == 1 ){
 			sharedir = ostrcat(sharedir, "/sharedir", 1, 0);
 		} else if ( mode == 2 ){
-			sharedir = ostrcat(sharedir, "sharedir", 1, 0);
+// work
+//			sharedir = ostrcat(sharedir, "sharedir", 1, 0);
 		}
 	}
 
@@ -323,66 +324,48 @@ void screennetworkbrowser_addshare(int mode, char* sharename, char* ipaddresse, 
 			}
 		}
 	}
-	if (ipaddresse == NULL){
-		ipaddresse = ostrcat(ipaddresse, "192.168.0.1", 1, 0);
-	}
-	if (username == NULL){
+	if (ipaddresse == NULL)
+		ipaddresse = ostrcat(ipaddresse, "192.168.178.1", 1, 0);
+	if (ftpport == NULL)
+		ftpport = ostrcat(ftpport, "21", 1, 0);
+	if (username == NULL)
 		username = ostrcat(username, "username", 1, 0);
-	}
-	if (password == NULL){
+	if (password == NULL)
 		password = ostrcat(password, "password", 1, 0);
-	}
-	if (protocol == NULL){
+	if (protocol == NULL)
 		protocol = ostrcat(protocol, "udp", 1, 0);
-	}
-	if (rsize == NULL){
+	if (rsize == NULL)
 		rsize = ostrcat(rsize, "32768", 1, 0);
-	}
-	if (wsize == NULL){
+	if (wsize == NULL)
 		wsize = ostrcat(wsize, "32768", 1, 0);
-	}
-	if (options == NULL){
+	if (options == NULL)
 		options = ostrcat(options, "rw,nolock", 1, 0);
-	}
-	if (hddreplacement == NULL){
+	if (hddreplacement == NULL)
 		hddreplacement = ostrcat(hddreplacement, "0", 1, 0);
-	}
- 	if (options1 == NULL){
+ 	if (options1 == NULL)
 		options1 = ostrcat(options1, "allow_other", 1, 0);
-	}
-	if (options2 == NULL){
+	if (options2 == NULL)
 		options2 = ostrcat(options2, "nonempty", 1, 0);
-	}
-	if (proxy == NULL){
+	if (proxy == NULL)
 		proxy = ostrcat(proxy, "socks5", 1, 0);
-	}
-	if (proxyip == NULL){
-		proxyip = ostrcat(proxyip, "proxyip", 1, 0);
-	}
-	if (proxyport == NULL){
-		proxyport = ostrcat(proxyport, "proxyport", 1, 0);
-	}
-	if (proxyuser == NULL){
+	if (proxyip == NULL)
+		proxyip = ostrcat(proxyip, "12.23.45.67", 1, 0);
+	if (proxyport == NULL)
+		proxyport = ostrcat(proxyport, "8080", 1, 0);
+	if (proxyuser == NULL)
 		proxyuser = ostrcat(proxyuser, "proxyuser", 1, 0);
-	}
-	if (proxypass == NULL){
+	if (proxypass == NULL)
 		proxypass = ostrcat(proxypass, "proxypass", 1, 0);
-	}
-	if (ssl == NULL){
+	if (ssl == NULL)
 		ssl = ostrcat(ssl, "ssl_try", 1, 0);
-	}
-	if (proxyauth == NULL){
+	if (proxyauth == NULL)
 		proxyauth = ostrcat(proxyauth, "0", 1, 0);
-	}
-	if (userauth == NULL){
+	if (userauth == NULL)
 		userauth = ostrcat(userauth, "0", 1, 0);
-	}
-	if (usessl == NULL){
+	if (usessl == NULL)
 		usessl = ostrcat(usessl, "0", 1, 0);
-	}
-	if (useproxy == NULL){
+	if (useproxy == NULL)
 		useproxy = ostrcat(useproxy, "0", 1, 0);
-	}
 
 	tmp_wsize = ostrcat(tmp_wsize, wsize, 1, 0);
 	tmp_rsize = ostrcat(tmp_rsize, rsize, 1, 0);
@@ -499,7 +482,7 @@ void screennetworkbrowser_addshare(int mode, char* sharename, char* ipaddresse, 
 	addchoicebox(skin_userauth, "1", _("yes"));
 	setchoiceboxselection(skin_userauth, userauth);
 
-	addchoicebox(skin_proxyauth, "0", "0");
+	addchoicebox(skin_proxyauth, "0", _("no"));
 	addchoicebox(skin_proxyauth, "1", _("yes"));
 	setchoiceboxselection(skin_proxyauth, proxyauth);
 
@@ -1422,8 +1405,10 @@ void screennetworkbrowser_readshare(int mode, char* input_sharename, char* input
 					int count5 = 0;
 					tmpstr5 = ostrcat("", tmp_check, 0, 0);
 					ret5 = strsplit(tmpstr5, "\\:", &count5);
-					tmp_proxyip = ostrcat("", (&ret5[0])->part, 0, 0);
-					tmp_proxyport = ostrcat("", (&ret5[1])->part, 0, 0);
+					if(count5 > 0)
+						tmp_proxyip = ostrcat("", (&ret5[0])->part, 0, 0);
+					if(count5 > 1)
+						tmp_proxyport = ostrcat("", (&ret5[1])->part, 0, 0);
 					free(ret5); ret5 = NULL;
 
 					tmp_options1 = ostrcat("", (&ret3[4])->part, 0, 0);
@@ -1473,21 +1458,24 @@ void screennetworkbrowser_readshare(int mode, char* input_sharename, char* input
 							free(ret7); ret7 = NULL;
 							tmp_options2 = ostrcat("", (&ret3[7])->part, 0, 0);
 
-							if(string_find(",nonempty,ssl_try",(&ret2[1])->part)){
-								tmp_ssl = ostrcat("", (&ret3[8])->part, 0, 0);
+							if(count2 > 1 && string_find(",nonempty,ssl_try",(&ret2[1])->part)){
+								if(count3 > 8)
+									tmp_ssl = ostrcat("", (&ret3[8])->part, 0, 0);
 								tmp_usessl = ostrcat("", "1", 0, 0);
-							} else if(string_find(",nonempty,ssl_control",(&ret2[1])->part)){
-								tmp_ssl = ostrcat("", (&ret3[8])->part, 0, 0);
+							} else if(count2 > 1 && string_find(",nonempty,ssl_control",(&ret2[1])->part)){
+								if(count3 > 8)
+									tmp_ssl = ostrcat("", (&ret3[8])->part, 0, 0);
 								tmp_usessl = ostrcat("", "1", 0, 0);
-							} else if(string_find(",nonempty,ssl",(&ret2[1])->part)){
-								tmp_ssl = ostrcat("", (&ret3[8])->part, 0, 0);
+							} else if(count2 > 1 && string_find(",nonempty,ssl",(&ret2[1])->part)){
+								if(count3 > 8)
+									tmp_ssl = ostrcat("", (&ret3[8])->part, 0, 0);
 								tmp_usessl = ostrcat("", "1", 0, 0);
 							}
 						}
 					}
 				}
 
-				if(string_find("@",(&ret2[2])->part)){
+				if(count2 > 2 && string_find("@",(&ret2[2])->part)){
 					tmp_userauth = ostrcat("", "1", 0, 0);
 					debug(70, "foundf ftpuser with userauth");
 					struct splitstr* ret8 = NULL;
@@ -1499,42 +1487,49 @@ void screennetworkbrowser_readshare(int mode, char* input_sharename, char* input
 					int count9 = 0;
 					tmpstr9 = ostrcat("", (&ret8[0])->part, 0, 0);
 					ret9 = strsplit(tmpstr9, "/\\:", &count9);
-					tmp_user = ostrcat("", (&ret9[1])->part, 0, 0);
-					tmp_pass = ostrcat("", (&ret9[2])->part, 0, 0);
+					if(count9 > 1)
+						tmp_user = ostrcat("", (&ret9[1])->part, 0, 0);
+					if(count9 > 2)
+						tmp_pass = ostrcat("", (&ret9[2])->part, 0, 0);
 
 					tmp_check = ostrcat("", (&ret8[1])->part, 0, 0);
 					struct splitstr* ret10 = NULL;
 					int count10 = 0;
 					tmpstr10 = ostrcat("", tmp_check, 0, 0);
 					ret10 = strsplit(tmpstr10, "\\:", &count10);
-					tmp_ipaddresse = ostrcat("", (&ret10[0])->part, 0, 0);
+					if(count10 > 0)
+						tmp_ipaddresse = ostrcat("", (&ret10[0])->part, 0, 0);
 
 					struct splitstr* ret11 = NULL;
 					int count11 = 0;
 					tmpstr11 = ostrcat("", (&ret10[1])->part, 0, 0);
 					ret11 = strsplit(tmpstr11, "/", &count11);
-					tmp_ftpport = ostrcat("", (&ret11[0])->part, 0, 0);
-					tmp_sharedir = ostrcat("", (&ret11[1])->part, 0, 0);
+					if(count11 > 0)
+						tmp_ftpport = ostrcat("", (&ret11[0])->part, 0, 0);
+					if(count11 > 1)
+						tmp_sharedir = ostrcat("", (&ret11[1])->part, 0, 0);
 
 					free(ret9); ret9 = NULL;
 					free(ret10); ret10 = NULL;
 					free(ret11); ret11 = NULL;
 				} else {
-					debug(70, "foundf ftpuser without userauth");
+					debug(70, "found ftpuser without userauth");
 					struct splitstr* ret12 = NULL;
 					int count12 = 0;
 					tmpstr12 = ostrcat("", (&ret2[2])->part, 0, 0);
-					ret12= strsplit(tmpstr12, "/\\:", &count12);
-
-					tmp_ipaddresse = ostrcat("", (&ret12[1])->part, 0, 0);
-					tmp_ftpport = ostrcat("", (&ret12[2])->part, 0, 0);
-					tmp_sharedir = ostrcat("", (&ret12[3])->part, 0, 0);
+					ret12= strsplit(tmpstr12, "/\\:", &count12);;
+					if(count12 > 1)
+						tmp_ipaddresse = ostrcat("", (&ret12[1])->part, 0, 0);
+					if(count12 > 2)
+						tmp_ftpport = ostrcat("", (&ret12[2])->part, 0, 0);
+					if(count12 > 3)
+						tmp_sharedir = ostrcat("", (&ret12[3])->part, 0, 0);
 					free(ret12); ret12 = NULL;
 				}
 
 				tmp_sharename = ostrcat("", (&ret2[0])->part, 0, 0);
 
-				if(ostrcmp((&ret2[0])->part, input_sharename) == 0){
+				if(count2 > 0 && ostrcmp((&ret2[0])->part, input_sharename) == 0){
 					update = 0;
 				} else {
 					outline = ostrcat(outline, (&ret1[i])->part, 1, 0);
@@ -1545,7 +1540,9 @@ void screennetworkbrowser_readshare(int mode, char* input_sharename, char* input
 				sharelist = ostrcat(sharelist, (&ret2[0])->part, 1, 0);
 				sharelist = ostrcat(sharelist, " (", 1, 0);
 				sharelist = ostrcat(sharelist, tmp_ipaddresse, 1, 0);
-				sharelist = ostrcat(sharelist, ": /", 1, 0);
+				sharelist = ostrcat(sharelist, ":", 1, 0);
+				sharelist = ostrcat(sharelist, tmp_ftpport, 1, 0);
+				sharelist = ostrcat(sharelist, "/", 1, 0);
 				sharelist = ostrcat(sharelist, tmp_sharedir, 1, 0);
 				sharelist = ostrcat(sharelist, ")\n", 1, 0);
 				debug(70, "sharelist: (%d) %s", i, sharelist);
