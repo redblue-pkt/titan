@@ -4414,11 +4414,18 @@ char* get_filesystem(char* device)
 char* fixip(char* ipinput, int flag)
 {
 	debug(60, "in %s", ipinput);
+	int ret = 0;
 	char* ipout = NULL;
 	unsigned char ip[4];
+	
+	ip[0] = 0;
+	ip[1] = 0;
+	ip[2] = 0;
+	ip[3] = 0;
 
-	if(ipinput == NULL)	return NULL;
-	sscanf(ipinput, "%hhu.%hhu.%hhu.%hhu", &ip[0], &ip[1], &ip[2], &ip[3]);
+	if(ipinput == NULL) return NULL;
+	ret = sscanf(ipinput, "%hhu.%hhu.%hhu.%hhu", &ip[0], &ip[1], &ip[2], &ip[3]);
+	if(ret != 4) return NULL;
 
 	ipout = malloc(16);
 	if(ipout == NULL)
