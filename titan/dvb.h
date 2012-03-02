@@ -494,11 +494,14 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 			case 0x01: // Mpeg1 Video (6)
 			case 0x02: // Mpeg2 Video (0)
 			case 0x10: // Mpeg4 Part2 Video (4)
-						case 0x1b: // H264 (1)
+			case 0x1b: // H264 (1)
+			case 0xea: // vc1 (10)
 				if(streamtype == 0x1b)
 					videocodec = H264;
 				else if(streamtype == 0x10)
 					videocodec = MPEG4V;
+				else if(streamtype == 0xea)
+					videocodec = VC1;
 				else
 					videocodec = MPEGV;
 

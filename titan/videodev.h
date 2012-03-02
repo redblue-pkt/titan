@@ -1,6 +1,10 @@
 #ifndef VIDEODEV_H
 #define VIDEODEV_H
 
+#ifndef VIDEO_SET_ENCODING
+#define VIDEO_SET_ENCODING              _IO('o',  81)
+#endif
+
 struct dvbdev* videoopen(int adapter)
 {
 	debug(1000, "in");
@@ -302,6 +306,24 @@ int videosetstreamtype(struct dvbdev* node, int type)
 	if(ioctl(node->fd, VIDEO_SET_STREAMTYPE, type) < 0)
 	{
 		perr("video VIDEO_SET_STREAMTYPE");
+		return 1;
+	}
+	
+	return 0;
+}
+
+int videosetencoding(struct dvbdev* node, int type)
+{
+	if(node == NULL)
+	{
+		debug(1000, "out-> NULL detect");
+		return 1;
+	}
+
+	debug(200, "VIDEO_SET_ENCODING=%d", type);
+	if(ioctl(node->fd, VIDEO_SET_ENCODING, type) < 0)
+	{
+		perr("video VIDEO_SET_ENCODING");
 		return 1;
 	}
 	

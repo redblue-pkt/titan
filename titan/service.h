@@ -339,7 +339,13 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 		if(videonode != NULL)
 		{
 			videoselectsource(videonode, VIDEO_SOURCE_DEMUX);
-			videosetstreamtype(videonode, chnode->videocodec);
+			if(chnode->videocodec == VC1)
+			{
+				videosetstreamtype(videonode, 1); //transportstream
+				videosetencoding(videonode, chnode->videocodec);
+			}
+			else
+				videosetstreamtype(videonode, chnode->videocodec);
 			videoplay(videonode);
 		}
 		else
