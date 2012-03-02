@@ -932,7 +932,7 @@ void screennetworkbrowser_addshare(int mode, char* sharename, char* ipaddresse, 
 		 		savesettings = ostrcat(savesettings, tmp_ssl, 1, 0);
 			}
 
-			savesettings = ostrcat(savesettings, "\t:ftp\\://g", 1, 0);
+			savesettings = ostrcat(savesettings, "\t:ftp\\://", 1, 0);
 			if(ostrcmp(tmp_userauth, "1") == 0){
 		 		savesettings = ostrcat(savesettings, tmp_username, 1, 0);
 				savesettings = ostrcat(savesettings, "\\:", 1, 0);
