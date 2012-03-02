@@ -180,6 +180,10 @@ char* networkbrowser_listbox(char* defaultstr, char* str, char* skinname, char* 
 					tmpstr6 = ostrcat("", skinpath1, 0, 0);
 					ret6 = strsplit(tmpstr6, "%", &count6);
 
+					printf("1111: %s\n",(&ret1[i])->part);
+					printf("21111: %s\n",(&ret5[0])->part);
+
+
 					if(ostrcmp((&ret5[0])->part, "add") == 0){
 						tmppic = ostrcat((&ret1[i])->part, ".png", 0, 0);
 					} else {

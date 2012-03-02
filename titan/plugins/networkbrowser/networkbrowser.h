@@ -70,7 +70,7 @@ start:
 		}
 		free(shares); shares = NULL;
 	} else {
-		textbox(_("Message"), _("Can't get Network Infos"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+		textbox(_("Message"), _("Can't get Network Infos"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 	}
 
 	free(dns); dns = NULL;
@@ -934,7 +934,7 @@ void screennetworkbrowser_addshare(int mode, char* sharename, char* ipaddresse, 
 		}
 		clearscreen(net_addshare);
 
-		if(textbox(_("Message"), _("Are you sure you want to save this network mount?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1){
+		if(textbox(_("Message"), _("Are you sure you want to save this network mount?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1){
 			debug(70, "-----------------------------");
 			debug(70, "tmp_sharename: %s", tmp_sharename);
 			debug(70, "tmp_sharedir: %s", tmp_sharedir);
@@ -1082,18 +1082,19 @@ void screennetworkbrowser_readshare(int mode, char* input_sharename, char* input
 	char* menu_sharetypes = NULL;
 	char* menu_changeshare = NULL;
 
+	// translate via netbrowser_menulist
 	char* text1 = NULL;
-	text1 = ostrcat(text1, _("add new share"), 1, 0);
+	text1 = ostrcat(text1, "add new share", 1, 0);
 	char* text2 = NULL;
-	text2 = ostrcat(text2, _("add cifs share"), 1, 0);
+	text2 = ostrcat(text2, "add cifs share", 1, 0);
 	char* text3 = NULL;
-	text3 = ostrcat(text3, _("add nfs share"), 1, 0);
+	text3 = ostrcat(text3, "add nfs share", 1, 0);
 	char* text4 = NULL;
-	text4 = ostrcat(text4, _("add ftp share"), 1, 0);
+	text4 = ostrcat(text4, "add ftp share", 1, 0);
 	char* text5 = NULL;
-	text5 = ostrcat(text5, _("edit share"), 1, 0);
+	text5 = ostrcat(text5, "edit share", 1, 0);
 	char* text6 = NULL;
-	text6 = ostrcat(text6, _("remove share"), 1, 0);
+	text6 = ostrcat(text6, "remove share", 1, 0);
 
 	char* sharetypes = NULL;
 	sharetypes = ostrcat(sharetypes, text2, 1, 0);
@@ -1165,7 +1166,7 @@ void screennetworkbrowser_readshare(int mode, char* input_sharename, char* input
 		ret2 = strsplit(tmpstr2, "\t", &count2);
 
 		if((mode == 1) && (ostrcmp((&ret2[0])->part, input_sharename) == 0)){
-			if(textbox(_("Message"), _("A mount entry with this name already exists!\nUpdate existing entry and continue?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1){
+			if(textbox(_("Message"), _("A mount entry with this name already exists!\nUpdate existing entry and continue?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1){
 				debug(70, "add share - continue set update=0 (%d) %s=%s mode=%d", i, (&ret2[0])->part, input_sharename, mode);
 				debug(70, "add share - continue set update=0 (%d) %s", i, input_shareline);
 				update = 0;
@@ -1178,7 +1179,7 @@ void screennetworkbrowser_readshare(int mode, char* input_sharename, char* input
 			}
 			mode = 5;
 		} else if((mode == 2) && (ostrcmp((&ret2[0])->part, input_sharename) == 0)){
-			if(textbox(_("Message"), _("Are you sure you want remove this share?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1){
+			if(textbox(_("Message"), _("Are you sure you want remove this share?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1){
 				debug(70, "remove share - continue: (%d) %s=%s mode=%d", i, (&ret2[0])->part, input_sharename, mode);
 				debug(70, "remove share - continue: (%d) %s", i, input_shareline);
 				mode = 4;
