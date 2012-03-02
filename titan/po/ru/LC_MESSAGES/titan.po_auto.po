@@ -320,6 +320,7 @@ msgstr ""
 #: scan.h:951 scan.h:1023 scan.h:1229 scan.h:954 scan.h:1026 scan.h:1232
 #: global.h:4398 global.h:4528 play.h:675 service.h:801 record.h:636
 #: record.h:799 record.h:975 record.h:663 record.h:826 record.h:1002
+#: global.h:4535
 msgid "Message"
 msgstr ""
 
@@ -366,7 +367,7 @@ msgstr ""
 #: global.h:210 global.h:254 global.h:4386 global.h:213 global.h:257
 #: global.h:4389 scan.h:814 scan.h:951 scan.h:1023 scan.h:1229 scan.h:954
 #: scan.h:1026 scan.h:1232 global.h:4398 global.h:4528 play.h:557 play.h:565
-#: play.h:675 service.h:801 record.h:636 record.h:663
+#: play.h:675 service.h:801 record.h:636 record.h:663 global.h:4535
 msgid "OK"
 msgstr ""
 
@@ -411,7 +412,7 @@ msgstr ""
 #: global.h:4389 scan.h:814 scan.h:951 scan.h:1023 scan.h:1229 scan.h:954
 #: scan.h:1026 scan.h:1232 global.h:4398 global.h:4528 play.h:557 play.h:565
 #: play.h:675 service.h:801 record.h:636 record.h:799 record.h:975
-#: record.h:663 record.h:826 record.h:1002
+#: record.h:663 record.h:826 record.h:1002 global.h:4535
 msgid "EXIT"
 msgstr ""
 
@@ -731,7 +732,7 @@ msgstr ""
 
 #: global.h:4312 keyactions.h:223 global.h:4317 global.h:4320 global.h:4358
 #: global.h:4359 global.h:4364 global.h:4377 global.h:4378 global.h:4390
-#: global.h:4386 global.h:4389 global.h:4398 global.h:4528
+#: global.h:4386 global.h:4389 global.h:4398 global.h:4528 global.h:4535
 msgid "ERROR cant read res"
 msgstr ""
 
