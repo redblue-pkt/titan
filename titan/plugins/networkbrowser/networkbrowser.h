@@ -667,6 +667,8 @@ void screennetworkbrowser_addshare(int mode, char* sharename, char* ipaddresse, 
 				tmp_sharename = ostrcat("", listbox->select->ret, 0, 0);
 			} else if(ostrcmp(listbox->select->name, "skin_ipaddresse") == 0){
 				tmp_ipaddresse = ostrcat("", listbox->select->ret, 0, 0);
+			} else if(ostrcmp(listbox->select->name, "skin_ftpport") == 0){
+				tmp_ftpport = ostrcat("", listbox->select->ret, 0, 0);
 			} else if(ostrcmp(listbox->select->name, "skin_sharedir") == 0){
 				tmp_sharedir = ostrcat("", listbox->select->ret, 0, 0);
 			} else if(ostrcmp(listbox->select->name, "skin_username") == 0){
