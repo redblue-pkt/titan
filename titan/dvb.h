@@ -560,8 +560,6 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 					firstaudiopid = pid;
 					firstaudiocodec = audiocodec;
 				}
-				if(chnode->audiopid == pid && chnode->audiocodec == audiocodec)
-					audiochange = 0;
 
 				if(getconfigint("av_ac3default", NULL) == YES && audiocodec == AC3 && chnode->audiocodec != AC3)
 				{
@@ -571,6 +569,9 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 					debug(200, "ac3default -> set audiopid to %d", pid);
 					debug(200, "ac3default -> set audiocode to %d (pid=%d)", chnode->audiocodec, pid);
 				}
+				
+				if(chnode->audiopid == pid && chnode->audiocodec == audiocodec)
+					audiochange = 0;
 
 				addaudiotrack(chnode, langdesc, pid, audiocodec, NULL);
 				break;
