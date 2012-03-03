@@ -25,7 +25,9 @@
 #: tunerconfig.h:126 tunerconfig.h:155 tunerconfig.h:186 tunerconfig.h:219
 #: tunerconfig.h:456 scan.h:880 scan.h:1177 scan.h:883 scan.h:1172 scan.h:1176
 #: scan.h:1180 networkbrowser.h:473 networkbrowser.h:477 networkbrowser.h:481
-#: networkbrowser.h:485 networkbrowser.h:513
+#: networkbrowser.h:485 networkbrowser.h:513 networkbrowser.h:483
+#: networkbrowser.h:487 networkbrowser.h:491 networkbrowser.h:495
+#: networkbrowser.h:523
 msgid "no"
 msgstr ""
 
@@ -63,7 +65,8 @@ msgstr ""
 #: scan.h:1174 screensaveradjust.h:20 tunerconfig.h:455 scan.h:881 scan.h:1178
 #: scan.h:884 scan.h:1173 scan.h:1177 scan.h:1181 networkbrowser.h:474
 #: networkbrowser.h:478 networkbrowser.h:482 networkbrowser.h:486
-#: networkbrowser.h:514
+#: networkbrowser.h:514 networkbrowser.h:484 networkbrowser.h:488
+#: networkbrowser.h:492 networkbrowser.h:496 networkbrowser.h:524
 msgid "yes"
 msgstr ""
 
@@ -326,6 +329,8 @@ msgstr ""
 #: global.h:4535 networkbrowser.h:954 networkbrowser.h:1185
 #: networkbrowser.h:1198 service.h:566 service.h:807 mc_videoplayer.h:489
 #: networkbrowser.h:937 networkbrowser.h:1169 networkbrowser.h:1182
+#: networkbrowser.h:84 networkbrowser.h:1007 networkbrowser.h:1242
+#: networkbrowser.h:1258
 msgid "Message"
 msgstr ""
 
@@ -375,7 +380,8 @@ msgstr ""
 #: play.h:675 service.h:801 record.h:636 record.h:663 global.h:4535
 #: networkbrowser.h:954 networkbrowser.h:1185 networkbrowser.h:1198
 #: service.h:566 service.h:807 mc_videoplayer.h:489 networkbrowser.h:937
-#: networkbrowser.h:1169 networkbrowser.h:1182
+#: networkbrowser.h:1169 networkbrowser.h:1182 networkbrowser.h:84
+#: networkbrowser.h:1007 networkbrowser.h:1242 networkbrowser.h:1258
 msgid "OK"
 msgstr ""
 
@@ -423,7 +429,8 @@ msgstr ""
 #: record.h:663 record.h:826 record.h:1002 global.h:4535 networkbrowser.h:954
 #: networkbrowser.h:1185 networkbrowser.h:1198 service.h:566 service.h:807
 #: mc_videoplayer.h:489 networkbrowser.h:937 networkbrowser.h:1169
-#: networkbrowser.h:1182
+#: networkbrowser.h:1182 networkbrowser.h:84 networkbrowser.h:1007
+#: networkbrowser.h:1242 networkbrowser.h:1258
 msgid "EXIT"
 msgstr ""
 
@@ -1158,87 +1165,92 @@ msgstr ""
 msgid "Networkbrowser - show scanned cifs/nfs-Shares"
 msgstr ""
 
-#: networkbrowser.h:73
+#: networkbrowser.h:73 networkbrowser.h:84
 msgid "Can't get Network Infos"
 msgstr ""
 
-#: networkbrowser.h:440 networkbrowser.h:423
+#: networkbrowser.h:440 networkbrowser.h:423 networkbrowser.h:433
 msgid "cifs"
 msgstr ""
 
-#: networkbrowser.h:441 networkbrowser.h:424
+#: networkbrowser.h:441 networkbrowser.h:424 networkbrowser.h:434
 msgid "nfs"
 msgstr ""
 
-#: networkbrowser.h:442 networkbrowser.h:425
+#: networkbrowser.h:442 networkbrowser.h:425 networkbrowser.h:435
 msgid "ftpfs"
 msgstr ""
 
-#: networkbrowser.h:480 networkbrowser.h:463
+#: networkbrowser.h:480 networkbrowser.h:463 networkbrowser.h:473
 msgid "ssl_try"
 msgstr ""
 
-#: networkbrowser.h:481 networkbrowser.h:464
+#: networkbrowser.h:481 networkbrowser.h:464 networkbrowser.h:474
 msgid "ssl_control"
 msgstr ""
 
 #: networkbrowser.h:482 plugins_networkbrowser_skin.xml.h:18
 #: skins_networkbrowser_skin.xml.h:18 networkbrowser.h:465
+#: networkbrowser.h:475
 msgid "ssl"
 msgstr ""
 
-#: networkbrowser.h:485 networkbrowser.h:468
+#: networkbrowser.h:485 networkbrowser.h:468 networkbrowser.h:478
 msgid "socks5"
 msgstr ""
 
-#: networkbrowser.h:486 networkbrowser.h:469
+#: networkbrowser.h:486 networkbrowser.h:469 networkbrowser.h:479
 msgid "socks4"
 msgstr ""
 
-#: networkbrowser.h:487 networkbrowser.h:470
+#: networkbrowser.h:487 networkbrowser.h:470 networkbrowser.h:480
 msgid "html"
 msgstr ""
 
-#: networkbrowser.h:534 networkbrowser.h:517
+#: networkbrowser.h:534 networkbrowser.h:517 networkbrowser.h:527
 msgid "udp"
 msgstr ""
 
-#: networkbrowser.h:535 networkbrowser.h:518
+#: networkbrowser.h:535 networkbrowser.h:518 networkbrowser.h:528
 msgid "tcp"
 msgstr ""
 
-#: networkbrowser.h:538 networkbrowser.h:521
+#: networkbrowser.h:538 networkbrowser.h:521 networkbrowser.h:531
 msgid "rw,nolock"
 msgstr ""
 
-#: networkbrowser.h:539 networkbrowser.h:522
+#: networkbrowser.h:539 networkbrowser.h:522 networkbrowser.h:532
 msgid "ro,nolock"
 msgstr ""
 
-#: networkbrowser.h:542 networkbrowser.h:525
+#: networkbrowser.h:542 networkbrowser.h:525 networkbrowser.h:535
 msgid "allow_other"
 msgstr ""
 
-#: networkbrowser.h:545 networkbrowser.h:528
+#: networkbrowser.h:545 networkbrowser.h:528 networkbrowser.h:538
 msgid "nonempty"
 msgstr ""
 
 #: networkbrowser.h:550 networkbrowser.h:757 networkbrowser.h:759
-#: networkbrowser.h:533 networkbrowser.h:742
+#: networkbrowser.h:533 networkbrowser.h:742 networkbrowser.h:544
+#: networkbrowser.h:788
 msgid "Add Cifs Network Share"
 msgstr ""
 
 #: networkbrowser.h:577 networkbrowser.h:784 networkbrowser.h:786
-#: networkbrowser.h:560 networkbrowser.h:769
+#: networkbrowser.h:560 networkbrowser.h:769 networkbrowser.h:573
+#: networkbrowser.h:817
 msgid "Add Nfs Network Share"
 msgstr ""
 
 #: networkbrowser.h:604 networkbrowser.h:811 networkbrowser.h:813
-#: networkbrowser.h:587 networkbrowser.h:796
+#: networkbrowser.h:587 networkbrowser.h:796 networkbrowser.h:602
+#: networkbrowser.h:846
 msgid "Add Ftpfs Network Share"
 msgstr ""
 
 #: networkbrowser.h:952 networkbrowser.h:954 networkbrowser.h:937
+#: networkbrowser.h:1007
 msgid "Are you sure you want to save this network mount?"
 msgstr ""
 
@@ -1267,16 +1279,18 @@ msgid "remove share"
 msgstr ""
 
 #: networkbrowser.h:1183 networkbrowser.h:1185 networkbrowser.h:1169
+#: networkbrowser.h:1242
 msgid ""
 "A mount entry with this name already exists!\n"
 "Update existing entry and continue?"
 msgstr ""
 
 #: networkbrowser.h:1196 networkbrowser.h:1198 networkbrowser.h:1182
+#: networkbrowser.h:1258
 msgid "Are you sure you want remove this share?"
 msgstr ""
 
-#: networkbrowser.h:1581 networkbrowser.h:1583
+#: networkbrowser.h:1581 networkbrowser.h:1583 networkbrowser.h:1751
 msgid "Networkbrowser - show Shares"
 msgstr ""
 
