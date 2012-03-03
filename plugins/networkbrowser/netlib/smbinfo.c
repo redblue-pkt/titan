@@ -1525,7 +1525,8 @@ int open_socket_out(struct in_addr *addr, int port )
 			timeout.tv_sec = 5; // 5sek timeout
 			timeout.tv_usec = 0;
 			
-			ret = TEMP_FAILURE_RETRY(select(res + 1, NULL, &wfds, NULL, &timeout));
+			//ret = TEMP_FAILURE_RETRY(select(res + 1, NULL, &wfds, NULL, &timeout));
+			ret = select(res + 1, NULL, &wfds, NULL, &timeout);
 
 			if(ret == 1 && FD_ISSET(res, &wfds))
 			{
