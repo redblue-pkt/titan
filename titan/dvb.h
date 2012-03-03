@@ -626,7 +626,9 @@ void dvbgetpmtthread()
 	{
 		serviceresetchannelinfo(status.aktservice->channel);
 		status.aktservice->channel->audiopid = -1;
+		status.aktservice->channel->audiocodec = -1;
 		status.aktservice->channel->videopid = -1;
+		status.aktservice->channel->videocodec = -1;
 		status.aktservice->channel->pmtpid = pmtpid;
 		dvbgetinfo(pmtbuf, status.aktservice->channel);
 		free(status.aktservice->pmtbuf);
