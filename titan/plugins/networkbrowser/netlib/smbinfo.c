@@ -1487,8 +1487,9 @@ create an outgoing socket
 ****************************************************************************/
 int open_socket_out(struct in_addr *addr, int port )
 {
+	struct timeval timeout;
   struct sockaddr_in sock_out;
-  int res;
+  int res, ret = 0;
 
   /* create a socket to write to */
   res = socket(PF_INET, SOCK_STREAM, 0);
@@ -1507,17 +1508,54 @@ int open_socket_out(struct in_addr *addr, int port )
   sock_out.sin_family = PF_INET;
 #if DEBUG
   printf("Connecting to %s at port %d\n",inet_ntoa(*addr),port);
-  #endif
-  /* and connect it to the destination */
-  if (connect(res,(struct sockaddr *)&sock_out,sizeof(sock_out))<0)
-	{ 
-#if DEBUG
-		printf("connect error: %s\n",strerror(errno)); 
 #endif
-		close(res); 
-		return -1; 
+
+	fcntl(res, F_SETFL, fcntl(res, F_GETFL) | O_NONBLOCK);
+	fd_set wfds;
+
+  /* and connect it to the destination */
+  ret = connect(res,(struct sockaddr *)&sock_out,sizeof(sock_out));
+  if(ret < 0)
+	{
+		if(errno == EINTR || errno == EINPROGRESS)
+		{
+			FD_ZERO(&wfds);
+			FD_SET(res, &wfds);
+
+			timeout.tv_sec = 5; // 5sek timeout
+			timeout.tv_usec = 0;
+			
+			ret = TEMP_FAILURE_RETRY(select(res + 1, NULL, &wfds, NULL, &timeout));
+
+			if(ret == 1 && FD_ISSET(res, &wfds))
+			{
+				/*
+				ret = getsockopt(*fd, SOL_SOCKET, SO_ERROR, &optval, &optlen);
+				if(ret == -1)	
+				{
+					close(res);
+					return -1;
+				}
+				if(optval == 0) return 0;
+				close(res);
+				return -1;
+				*/
+				fcntl(res, F_SETFL, fcntl(res, F_GETFL) & ~O_NONBLOCK);
+				return res;
+			}
+		}
+			
+		if(ret <= 0)
+		{
+#if DEBUG
+				printf("connect error: %s\n",strerror(errno)); 
+#endif
+			close(res); 
+			return -1; 
+		}
 	}
 
+	fcntl(res, F_SETFL, fcntl(res, F_GETFL) & ~O_NONBLOCK);
   return res;
 }
 /*******************************************************************
