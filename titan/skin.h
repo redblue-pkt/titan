@@ -1388,12 +1388,13 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 	if(scaleheight == 0) scaleheight = height;
 
 	if(posx < 0) posx = 0;
+	if(posx > skinfb->width) posx = skinfb->width;
 	if(posy < 0) posy = 0;
-	if(scalewidth > skinfb->width) scalewidth = skinfb->width;
-	if(scaleheight > skinfb->height) scaleheight = skinfb->height;
-	if(posx + scalewidth > skinfb->width) posx = skinfb->width - scalewidth;
-	if(posy + scaleheight > skinfb->height) posy = skinfb->height - scaleheight;
-	if(width == 0 || height == 0) return;
+	if(posy > skinfb->height) posy = skinfb->height;
+	if(posx + scalewidth > skinfb->width) scalewidth = skinfb->width - posx;
+	if(posy + scaleheight > skinfb->height) scaleheight = skinfb->height - posy;
+	
+	if(width <= 0 || height <= 0 || scalewidth <= 0 || scaleheight <= 0) return;
 
 	blt_data.operation  = BLT_OP_COPY;
 	if(status.usedirectfb == 1)
@@ -1409,7 +1410,7 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 	blt_data.srcMemBase = STMFBGP_FRAMEBUFFER;
 	
 	if(status.usedirectfb == 1)
-                blt_data.dstOffset  = 0;
+		blt_data.dstOffset  = 0;
 	else
 		blt_data.dstOffset  = fb->varfbsize;
 	blt_data.dstPitch   = skinfb->pitch;
@@ -2427,11 +2428,13 @@ void lcd_fillrect(int posx, int posy, int width, int height, long color, int tra
 	unsigned long tmpcol;
 
 	if(posx < 0) posx = 0;
+	if(posx > skinfb->width) posx = skinfb->width;
 	if(posy < 0) posy = 0;
-	if(posx + width > skinfb->width) posx = skinfb->width - width;
-	if(posy + height > skinfb->height) posy = skinfb->height - height;
+	if(posy > skinfb->height) posy = skinfb->height;
+	if(posx + width > skinfb->width) width = skinfb->width - posx;
+	if(posy + height > skinfb->height) height = skinfb->height - posy;
 
-	if(width == 0 || height == 0) return;
+	if(width <= 0 || height <= 0) return;
 
 	transparent = (transparent - 255) * -1;
 	tmpcol = color | ((transparent & 0xff) << 24);
@@ -2508,16 +2511,20 @@ void blitrect(int posx, int posy, int width, int height, long color, int transpa
 	if(posy < 0) posy = 0;
 	if(mode < 2)
 	{
-		if(posx + width > skinfb->width) posx = skinfb->width - width;
-		if(posy + height > skinfb->height) posy = skinfb->height - height;
+		if(posx > skinfb->width) posx = skinfb->width;
+		if(posy > skinfb->height) posy = skinfb->height;
+		if(posx + width > skinfb->width) width = skinfb->width - posx;
+		if(posy + height > skinfb->height) height = skinfb->height - posy;
 	}
 	else
 	{
-		if(posx + width > fb->width) posx = fb->width - width;
-		if(posy + height > fb->height) posy = fb->height - height;
+		if(posx > fb->width) posx = fb->width;
+		if(posy > fb->height) posy = fb->height;
+		if(posx + width > fb->width) width = fb->width - posx;
+		if(posy + height > fb->height) height = fb->height - posy;
 	}
 
-	if(width == 0 || height == 0) return;
+	if(width <= 0 || height <= 0) return;
 
 	if(mode == 0 || mode == 2)
 		bltData.operation  = BLT_OP_FILL;
@@ -2578,13 +2585,15 @@ void fillrect(int posx, int posy, int width, int height, long color, int transpa
 	debug(1000, "in");
 	int y, x;
 	unsigned long tmpcol;
-
+	
 	if(posx < 0) posx = 0;
+	if(posx > skinfb->width) posx = skinfb->width;
 	if(posy < 0) posy = 0;
-	if(posx + width > skinfb->width) posx = skinfb->width - width;
-	if(posy + height > skinfb->height) posy = skinfb->height - height;
+	if(posy > skinfb->height) posy = skinfb->height;
+	if(posx + width > skinfb->width) width = skinfb->width - posx;
+	if(posy + height > skinfb->height) height = skinfb->height - posy;
 
-	if(width == 0 || height == 0) return;
+	if(width <= 0 || height <= 0) return;
 
 	transparent = (transparent - 255) * -1;
 	tmpcol = color | ((transparent & 0xff) << 24);
