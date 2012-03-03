@@ -447,7 +447,9 @@ void screenmc_videoplayer()
 				else if(!strncmp(".m3u",filename+strlen(filename)-4,4) || !strncmp(".pls",filename+strlen(filename)-4,4)) 
 				{
 					showplaylist(apskin, filelistpath, filelist, listbox, b2, 1, &playlist, &eof, &filename, &currentdirectory, &playertype, flag);
-//					drawscreen(apskin, 0);
+
+					if(getconfigint("vp_autostart_playlist", NULL) == 0)
+						drawscreen(apskin, 0);
 					continue;
 
 				}
