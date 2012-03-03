@@ -427,7 +427,7 @@ void screenmc_videoplayer()
 				debug(50, "filelist->select->text: %s", filelist->select->text);
 				filename = createpath(filelistpath->text, filelist->select->text);
 
-				if(getconfigint("playertype", NULL) == 1 && cmpfilenameext(filename, ".ts") == 0)
+				if(getconfigint("playertype", NULL) == 1 && (cmpfilenameext(filename, ".ts") == 0 || cmpfilenameext(filename, ".mts") == 0 || cmpfilenameext(filename, ".m2ts") == 0))		
 					playertype = 1;
 				else
 					playertype = 0;
