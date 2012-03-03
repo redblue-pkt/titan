@@ -334,7 +334,7 @@ void browse_host(shareinfo *sInfo)
   SSVAL(outbuf,smb_vwv10,PTR_DIFF(params,outbuf)-4); /* psoff */
 
   send_smb(outbuf);
-  receive_smb(inbuf,0);
+  receive_smb(inbuf,5000);
 
   if (CVAL(inbuf,smb_rcls) == 0)
     {
@@ -536,7 +536,7 @@ BOOL send_login(char *inbuf,char *outbuf,BOOL use_setup)
 
   send_smb(outbuf);
 
-  receive_smb(inbuf,0);
+  receive_smb(inbuf,5000);
  
   if (CVAL(inbuf,0) != 0x82)
     {
@@ -611,7 +611,7 @@ BOOL send_login(char *inbuf,char *outbuf,BOOL use_setup)
   CVAL(smb_buf(outbuf),0) = 2;
 
   send_smb(outbuf);
-  receive_smb(inbuf,0);
+  receive_smb(inbuf,5000);
 
   if (CVAL(inbuf,smb_rcls) != 0 || ((int)SVAL(inbuf,smb_vwv0) >= numprots))
     {
@@ -677,7 +677,7 @@ BOOL send_login(char *inbuf,char *outbuf,BOOL use_setup)
       strcpy(p,username);
 
       send_smb(outbuf);
-      receive_smb(inbuf,0);      
+      receive_smb(inbuf,5000);      
 
       if (CVAL(inbuf,smb_rcls) != 0)
 	{
@@ -730,7 +730,7 @@ BOOL send_login(char *inbuf,char *outbuf,BOOL use_setup)
   strcpy(p,dev);
 
   send_smb(outbuf);
-  receive_smb(inbuf,0);
+  receive_smb(inbuf,5000);
 
   /* trying again with a blank password */
   if (CVAL(inbuf,smb_rcls) != 0 && 
@@ -961,7 +961,7 @@ void send_logout(char *inbuf,char *outbuf )
   setup_pkt(outbuf);
 
   send_smb(outbuf);
-  receive_smb(inbuf,0);
+  receive_smb(inbuf,5000);
 #if DEBUG
   if (CVAL(inbuf,smb_rcls) != 0)
     {
