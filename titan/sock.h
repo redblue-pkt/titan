@@ -168,7 +168,7 @@ int sockportopen(int *fd, char* ip, int port, int tout)
 	else if(ret == 0)
 	{
 		sockclose(fd);
-		err("%s is not a valid IP address\n", ip);
+		err("%s is not a valid IP address", ip);
 		return 1;
 	}
 
@@ -560,7 +560,7 @@ char* gethttp(char* host, char* page, int port, char* filename, char* auth, stru
 		fd = fopen(filename, "wb");
 		if(fd == NULL)
 		{
-			err("can't open file %s\n", filename);
+			err("can't open file %s", filename);
 			if(dnode != NULL) dnode->ret = 1;
 			return NULL;
 		}
@@ -571,7 +571,7 @@ char* gethttp(char* host, char* page, int port, char* filename, char* auth, stru
 	ip = get_ip(host);
 	if(ip == NULL)
 	{
-		err("can't get ip\n");
+		err("can't get ip");
 		if(fd != NULL)
 		{
 			fclose(fd);
