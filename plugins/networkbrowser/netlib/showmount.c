@@ -93,7 +93,7 @@ int dump_cmp(char **p, char **q);
 int sockportopen(char* ip, int port, int tout)
 {
 	int fd = -1;
-	int ret = 0, rest = 0, optval;
+	int ret = 0, rest = 0;
 	struct timeval timeout;
 	struct sockaddr_in cliaddr;
 
