@@ -171,9 +171,6 @@ char* getnetworkbrowser_nfs(char* s, char* r)
 {
 	char* tmpstr = NULL;
 	
-	// disable for release
-	return tmpstr;
-	
 	nfsinfo *nfsInfo;
 	int i;
 	int err = 0;
