@@ -313,7 +313,7 @@ int showNfsShare(char *pythonIp, nfsinfo *nfsInfo)
 	if(mclient == NULL) return(1);
 
 	mclient->cl_auth = authunix_create_default();
-	total_timeout.tv_sec = 3;
+	total_timeout.tv_sec = 30;
 	total_timeout.tv_usec = 0;
 
 		memset(&exportlist, '\0', sizeof(exportlist));
