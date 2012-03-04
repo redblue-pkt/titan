@@ -94,7 +94,6 @@ int sockportopen(char* ip, int port, int tout)
 {
 	int fd = -1;
 	int ret = 0, rest = 0, optval;
-	socklen_t optlen = sizeof(optval);
 	struct timeval timeout;
 	struct sockaddr_in cliaddr;
 
@@ -257,7 +256,7 @@ int showNfsShare(char *pythonIp, nfsinfo *nfsInfo)
 	int msock;
 	struct timeval total_timeout;
 	struct timeval pertry_timeout;
-	CLIENT *mclient;
+	CLIENT *mclient = NULL;
 	groups grouplist;
 	exports exportlist; // exl;
 	//int n;
