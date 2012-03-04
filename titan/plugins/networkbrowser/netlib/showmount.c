@@ -96,6 +96,8 @@ int sockportopen(char* ip, int port, int tout)
 	int ret = 0, rest = 0;
 	struct timeval timeout;
 	struct sockaddr_in cliaddr;
+	
+	if(ip == NULL) return 0;
 
 	memset(&cliaddr, 0, sizeof(struct sockaddr_in));
 	cliaddr.sin_family = AF_INET;
