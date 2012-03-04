@@ -37,6 +37,7 @@
 #include <errno.h>
 #include <getopt.h>
 #include <unistd.h>
+#include <sys/fcntl.h>
 
 #include "showmount.h"
 
@@ -88,6 +89,78 @@ bool_t xdr_groupnode (XDR *xdrs, groupnode *objp);
 int dump_cmp(char **p, char **q);
 
 #define MAXHOSTLEN 256
+
+int sockportopen(char* ip, int port, int tout)
+{
+	int fd = -1;
+	int ret = 0, rest = 0, optval;
+	socklen_t optlen = sizeof(optval);
+	struct timeval timeout;
+	struct sockaddr_in cliaddr;
+
+	memset(&cliaddr, 0, sizeof(struct sockaddr_in));
+	cliaddr.sin_family = AF_INET;
+	cliaddr.sin_port = htons(port);
+
+	fd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+	if(fd < 0)
+	{
+		printf("can't open port socket\n");
+		return 0;
+	}
+
+	ret = inet_pton(AF_INET, ip, (void *)(&(cliaddr.sin_addr.s_addr)));
+	if(ret < 0)
+	{
+		close(fd);
+		printf("Can't set remote->sin_addr.s_addr\n");
+		return 0;
+	}
+	else if(ret == 0)
+	{
+		close(fd);
+		printf("%s is not a valid IP address\n", ip);
+		return 0;
+	}
+
+	fcntl(fd, F_SETFL, fcntl(fd, F_GETFL) | O_NONBLOCK);
+
+	if(tout == -1) tout = 3000 * 1000;
+	rest = tout % 1000000;
+	tout = (tout - rest) / 1000000;
+
+	fd_set wfds;
+
+	ret = connect(fd, (struct sockaddr*) &cliaddr, sizeof(struct sockaddr));
+	if(ret < 0)
+	{
+		if(errno == EINTR || errno == EINPROGRESS)
+		{
+			FD_ZERO(&wfds);
+			FD_SET(fd, &wfds);
+
+			timeout.tv_sec = tout;
+			timeout.tv_usec = rest;
+			
+			//ret = TEMP_FAILURE_RETRY(select(fd + 1, NULL, &wfds, NULL, &timeout));
+			ret = select(fd + 1, NULL, &wfds, NULL, &timeout);
+			if(ret == 1 && FD_ISSET(fd, &wfds))
+			{
+				close(fd);
+				return 1;
+			}
+		}
+			
+		if(ret <= 0)
+		{
+			printf("can't connect\n");
+			close(fd);
+			return 0;
+		}
+	}
+	close(fd);
+	return 1;
+}
 
 int dump_cmp(char **p, char **q)
 {
@@ -210,13 +283,20 @@ int showNfsShare(char *pythonIp, nfsinfo *nfsInfo)
 		server_addr.sin_family = AF_INET;
 		memcpy(&server_addr.sin_addr, hp->h_addr, hp->h_length);
 	}
+	
+	//check port tcp
+	int port111 = 0;
+	port111 = sockportopen(hostname, 111, -1);
 
 	/* create mount deamon client */
-
 	server_addr.sin_port = 0;
 	msock = RPC_ANYSOCK;
-	if ((mclient = clnttcp_create(&server_addr,
-	    MOUNTPROG, MOUNTVERS, &msock, 0, 0)) == NULL) {
+	
+	if(port111 == 1)
+		mclient = clnttcp_create(&server_addr, MOUNTPROG, MOUNTVERS, &msock, 0, 0);
+
+	if(port111 == 1 && mclient == NULL)
+	{
 		server_addr.sin_port = 0;
 		msock = RPC_ANYSOCK;
 		pertry_timeout.tv_sec = 3;
@@ -228,6 +308,9 @@ int showNfsShare(char *pythonIp, nfsinfo *nfsInfo)
 			return(1);
 		}
 	}
+
+	if(mclient == NULL) return(1);
+
 	mclient->cl_auth = authunix_create_default();
 	total_timeout.tv_sec = 3;
 	total_timeout.tv_usec = 0;
