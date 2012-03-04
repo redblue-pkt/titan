@@ -90,7 +90,7 @@ int dump_cmp(char **p, char **q);
 
 #define MAXHOSTLEN 256
 
-int sockportopen(char* ip, int port, int tout)
+int netbrowsersockportopen(char* ip, int port, int tout)
 {
 	int fd = -1;
 	int ret = 0, rest = 0;
@@ -287,7 +287,7 @@ int showNfsShare(char *pythonIp, nfsinfo *nfsInfo)
 	
 	//check port tcp
 	int port111 = 0;
-	port111 = sockportopen(hostname, 111, -1);
+	port111 = netbrowsersockportopen(hostname, 111, -1);
 
 	/* create mount deamon client */
 	server_addr.sin_port = 0;
