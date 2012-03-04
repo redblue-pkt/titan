@@ -142,11 +142,13 @@ int sockcheck(int *fd)
 
 int sockportopen(int *fd, char* ip, int port, int tout)
 {
-	sockclose(fd);
 	int ret = 0, rest = 0, optval;
 	socklen_t optlen = sizeof(optval);
 	struct timeval timeout;
 	struct sockaddr_in cliaddr;
+	
+	if(ip == NULL) return 1;
+	sockclose(fd);
 
 	memset(&cliaddr, 0, sizeof(struct sockaddr_in));
 	cliaddr.sin_family = AF_INET;
