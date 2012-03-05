@@ -337,7 +337,7 @@ msgstr ""
 #: networkbrowser.h:84 networkbrowser.h:1007 networkbrowser.h:1242
 #: networkbrowser.h:1258 networkbrowser.h:1011 networkbrowser.h:1246
 #: networkbrowser.h:1262 networkbrowser.h:1008 networkbrowser.h:1243
-#: networkbrowser.h:1259
+#: networkbrowser.h:1259 mc_videoplayer.h:393 mc_videoplayer.h:494 play.h:681
 msgid "Message"
 msgstr ""
 
@@ -391,6 +391,7 @@ msgstr ""
 #: networkbrowser.h:1007 networkbrowser.h:1242 networkbrowser.h:1258
 #: networkbrowser.h:1011 networkbrowser.h:1246 networkbrowser.h:1262
 #: networkbrowser.h:1008 networkbrowser.h:1243 networkbrowser.h:1259
+#: mc_videoplayer.h:393 mc_videoplayer.h:494 play.h:563 play.h:571 play.h:681
 msgid "OK"
 msgstr ""
 
@@ -441,7 +442,8 @@ msgstr ""
 #: networkbrowser.h:1182 networkbrowser.h:84 networkbrowser.h:1007
 #: networkbrowser.h:1242 networkbrowser.h:1258 networkbrowser.h:1011
 #: networkbrowser.h:1246 networkbrowser.h:1262 networkbrowser.h:1008
-#: networkbrowser.h:1243 networkbrowser.h:1259
+#: networkbrowser.h:1243 networkbrowser.h:1259 mc_videoplayer.h:393
+#: mc_videoplayer.h:494 play.h:563 play.h:571 play.h:681
 msgid "EXIT"
 msgstr ""
 
@@ -966,12 +968,14 @@ msgid "user unicable"
 msgstr ""
 
 #: mc_audioplayer.h:178 mc_pictureplayer.h:117 mc_videoplayer.h:175
+#: mc_videoplayer.h:180
 msgid "Repeat-On"
 msgstr ""
 
 #: mc_audioplayer.h:185 mc_audioplayer.h:283 mc_pictureplayer.h:124
 #: mc_pictureplayer.h:251 mc_videoplayer.h:182 mc_videoplayer.h:311
-#: plugins_mc_skin.xml.h:35 skins_mc_skin.xml.h:35
+#: plugins_mc_skin.xml.h:35 skins_mc_skin.xml.h:35 mc_videoplayer.h:187
+#: mc_videoplayer.h:316
 msgid "Repeat"
 msgstr ""
 
@@ -979,24 +983,28 @@ msgstr ""
 #: mc_global.h:146 mc_global.h:218 mc_pictureplayer.h:211
 #: mc_pictureplayer.h:249 mc_pictureplayer.h:352 mc_videoplayer.h:266
 #: mc_videoplayer.h:309 mc_videoplayer.h:455 plugins_mc_skin.xml.h:21
-#: skins_mc_skin.xml.h:21 mc_videoplayer.h:457
+#: skins_mc_skin.xml.h:21 mc_videoplayer.h:457 mc_videoplayer.h:271
+#: mc_videoplayer.h:314 mc_videoplayer.h:462
 msgid "Filelist-Mode"
 msgstr ""
 
 #: mc_audioplayer.h:282 mc_global.h:366 mc_global.h:394 mc_pictureplayer.h:250
 #: mc_videoplayer.h:310 plugins_mc_skin.xml.h:34 skins_mc_skin.xml.h:34
+#: mc_videoplayer.h:315
 msgid "Random"
 msgstr ""
 
 #: mc_audioplayer.h:300 mc_global.h:79 mc_global.h:509 mc_global.h:741
 #: mc_global.h:755 mc_pictureplayer.h:268 mc_videoplayer.h:348
+#: mc_videoplayer.h:353
 msgid "Playlist-Mode"
 msgstr ""
 
 #: mc_audioplayer.h:319 mc_audioplayer.h:408 mc_global.h:582 mc_global.h:826
 #: mc_pictureplayer.h:73 mc_pictureplayer.h:188 mc_pictureplayer.h:294
 #: mc_pictureplayer.h:381 mc_videoplayer.h:388 mc_videoplayer.h:487 play.h:669
-#: play.h:675 mc_videoplayer.h:489
+#: play.h:675 mc_videoplayer.h:489 mc_videoplayer.h:393 mc_videoplayer.h:494
+#: play.h:681
 msgid "Can't start playback !"
 msgstr ""
 
@@ -1921,19 +1929,19 @@ msgstr ""
 msgid "hidden"
 msgstr ""
 
-#: play.h:551 play.h:557
+#: play.h:551 play.h:557 play.h:563
 msgid "EPG Info"
 msgstr ""
 
-#: play.h:559 play.h:565
+#: play.h:559 play.h:565 play.h:571
 msgid "Realy Delete ?"
 msgstr ""
 
-#: play.h:633 skin_default_skin.xml.h:154 play.h:639
+#: play.h:633 skin_default_skin.xml.h:154 play.h:639 play.h:645
 msgid "DEL"
 msgstr ""
 
-#: play.h:633 play.h:639
+#: play.h:633 play.h:639 play.h:645
 msgid "SELECT"
 msgstr ""
 
