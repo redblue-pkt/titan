@@ -156,6 +156,7 @@ struct caservice caservice[MAXCASERVICE];
 #include "restoredefault.h"
 #include "help.h"
 #include "httpdsettings.h"
+#include "epgsearch.h"
 //#include "cardreader.h"
 //#include "sci.h"
 
