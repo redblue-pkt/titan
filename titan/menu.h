@@ -377,6 +377,11 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screenmoduleconfig();
 	}
+	else if(ostrcmp("epgsearch", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screenepgsearch();
+	}
 	else if(ostrcmp("channeledit", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
