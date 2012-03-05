@@ -445,7 +445,7 @@ void playrcplay(char* file, int* playinfobarstatus, int* playinfobarcount, int p
 
 void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
-	if(checkbit(status.playercan, 11) == 0) return;
+//	if(checkbit(status.playercan, 11) == 0) return;
 
 	unsigned long long int pos = 0;
 	
@@ -494,7 +494,7 @@ void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 
 void playrcjumpf(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
-	if(checkbit(status.playercan, 12) == 0) return;
+//	if(checkbit(status.playercan, 12) == 0) return;
 
 	if(status.pause == 0 && status.playspeed == 0)
 	{
