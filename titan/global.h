@@ -4695,4 +4695,20 @@ char* string_resub(char* str, char* str2, char* filename)
 	return strstrip(filename);
 }
 
+char* ostrstrcase(char* str, char* sub)
+{
+	size_t len = 0;
+
+	if(str == NULL || sub == NULL) return NULL;
+
+	len = strlen(sub);
+	while(*str)
+	{
+		if(toupper(*str) == toupper(*sub) && strncasecmp(str, sub, len) == 0)
+			return str;	
+		++str;
+	}
+	return NULL;
+}
+
 #endif
