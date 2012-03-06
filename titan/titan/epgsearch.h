@@ -31,14 +31,14 @@ int searchepg(char* search, int searchtype, struct skin* epgsearch, struct skin*
 			if(searchtype == 0 || searchtype == 2)
 			{
 				if(epgnode->title != NULL)
-					result = strstr(epgnode->title, search);
+					result = ostrstrcase(epgnode->title, search);
 			}
 			if((searchtype == 1 || searchtype == 2) && result == NULL)
 			{
 				epgdesc = epgdescunzip(epgnode);
 				if(epgdesc != NULL)
 				{
-					result = strstr(epgdesc, search);
+					result = ostrstrcase(epgdesc, search);
 					free(epgdesc); epgdesc = NULL;
 				}
 			}
