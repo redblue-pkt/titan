@@ -981,7 +981,7 @@ char* webgetsingleepg(char* param)
 		ostrcatbig(&buf, "<td nowrap><a target=main class=link href=query?getepg&", &maxlen, &pos);
 		tmpstr = oitoa(chnode->serviceid);
 		ostrcatbig(&buf, tmpstr, &maxlen, &pos);
-		buf2 = ostrcat("<td nowrap><a target=main class=link href=query?setepgtimer&",tmpstr, 0, 0);
+		buf2 = ostrcat("<td nowrap><a target=main class=link href=query?addrectimer&",tmpstr, 0, 0);
 		buf2 = ostrcat(buf2, "&", 0, 0);
 		free(tmpstr); tmpstr = NULL;
 		ostrcatbig(&buf, "&", &maxlen, &pos);
@@ -1781,11 +1781,33 @@ char* webgetrectimer(char* param, int flag)
 
 char* webaddrectimer(char* param)
 {
-	char* buf = NULL, *buf1 = NULL, *buf2 = NULL;
+	char* buf = NULL, *buf1 = NULL, *buf2 = NULL, *param1 = NULL, *param2 = NULL;
+	struct channel* chnode = NULL;
+	struct epg* epgnode = NULL;
 //	int maxlen = 0, pos = 0, tmpservicetype = 0;
 	int maxlen = 0, pos = 0;
 	struct tm* loctime = NULL;
 	time_t akttime = time(NULL);
+	
+	if(param != NULL)
+	{
+		//create param1 + 2
+		param1 = strchr(param, '&');
+		if(param1 != NULL)
+		{
+			*param1++ = '\0';
+			param2 = strchr(param1, '&');
+			if(param2 != NULL)
+				*param2++ = '\0';
+		}
+		if(param1 == NULL || param2 == NULL) return NULL;
+		chnode = getchannel(atoi(param), atoi(param1));
+		if(chnode == NULL) return NULL;
+
+		epgnode = getepg(chnode, atoi(param2), 0);
+		if(epgnode == NULL) return NULL;
+	}
+
 		
 	ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"titan.css\"></head>", &maxlen, &pos);
 	ostrcatbig(&buf, "<body class=body ><center>", &maxlen, &pos);
@@ -1829,7 +1851,9 @@ char* webaddrectimer(char* param)
 
 	ostrcatbig(&buf, "<td><font class=label>Channel:&nbsp;</font></td>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"channel\" value=\"", &maxlen, &pos);
-	if(status.aktservice->channel != NULL)
+	if(chnode != NULL)
+		ostrcatbig(&buf, chnode->name, &maxlen, &pos);
+	else if(status.aktservice->channel != NULL)
 		ostrcatbig(&buf, status.aktservice->channel->name, &maxlen, &pos);
 	ostrcatbig(&buf, "\" /></td></tr>", &maxlen, &pos);
 	free(buf1); buf1 = NULL;
