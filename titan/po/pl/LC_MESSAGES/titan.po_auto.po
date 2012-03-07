@@ -397,7 +397,7 @@ msgstr ""
 #: mc_videoplayer.h:393 mc_videoplayer.h:494 play.h:563 play.h:571 play.h:681
 #: skin_default_skin.xml.h:280 network.h:187 network.h:194 network.h:198
 #: network.h:302 network.h:554 network.h:556 network.h:604
-#: skin_default_skin.xml.h:282
+#: skin_default_skin.xml.h:282 httpdfunc.h:2190
 msgid "OK"
 msgstr ""
 
@@ -452,7 +452,7 @@ msgstr ""
 #: mc_videoplayer.h:494 play.h:563 play.h:571 play.h:681
 #: skin_default_skin.xml.h:184 network.h:187 network.h:194 network.h:198
 #: network.h:302 network.h:554 network.h:556 network.h:604
-#: skin_default_skin.xml.h:185
+#: skin_default_skin.xml.h:185 httpdfunc.h:2190
 msgid "EXIT"
 msgstr ""
 
