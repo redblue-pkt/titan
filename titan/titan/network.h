@@ -1,10 +1,87 @@
 #ifndef NETWORK_H
 #define NETWORK_H
 
-int writewlan()
+int readwlan(const char* filename, char** type, char** ssid, char** key)
+{
+	debug(1000, "in");
+	FILE *fd = NULL;
+	char *fileline = NULL, *tmpstr = NULL;
+
+	fileline = malloc(MINMALLOC);
+	if(fileline == NULL)
+	{
+		err("no memory");
+		return 1;
+	}
+
+	fd = fopen(filename, "r");
+	if(fd == NULL)
+	{
+		perr("can't open %s", filename);
+		free(fileline);
+		return 1;
+	}
+
+	while(fgets(fileline, MINMALLOC, fd) != NULL)
+	{
+		if(fileline[0] == '#' || fileline[0] == '\n')
+			continue;
+		if(fileline[strlen(fileline) - 1] == '\n')
+			fileline[strlen(fileline) - 1] = '\0';
+		if(fileline[strlen(fileline) - 1] == '\r')
+			fileline[strlen(fileline) - 1] = '\0';
+
+		tmpstr = ostrstrcase(fileline, "proto=");
+		if(tmpstr != NULL)
+		{
+			tmpstr += 6;
+			if(ostrcmp(tmpstr, "WPA") == 0)
+			{
+				free(*type); *type = NULL;
+				*type = ostrcat("2", NULL, 0, 0);
+			}
+			if(ostrcmp(tmpstr, "RSN") == 0)
+			{
+				free(*type); *type = NULL;
+				*type = ostrcat("3", NULL, 0, 0);
+			}
+		}
+		tmpstr = ostrstrcase(fileline, "ssid=\"");
+		if(tmpstr != NULL)
+		{
+			tmpstr += 6;
+			tmpstr[strlen(tmpstr) -1] = '\0';
+			free(*ssid); *ssid = NULL;
+			*ssid = ostrcat(tmpstr, NULL, 0, 0);
+		}
+		tmpstr = ostrstrcase(fileline, "psk=\"");
+		if(tmpstr != NULL)
+		{
+			tmpstr += 5;
+			tmpstr[strlen(tmpstr) -1] = '\0';
+			free(*key); *key = NULL;
+			*key = ostrcat(tmpstr, NULL, 0, 0);
+		}
+		tmpstr = ostrstrcase(fileline, "wep_key=");
+		if(tmpstr != NULL)
+		{
+			tmpstr += 8;
+			tmpstr[strlen(tmpstr) -1] = '\0';
+			free(*key); *key = NULL;
+			*key = ostrcat(tmpstr, NULL, 0, 0);
+			free(type); type = NULL;
+			*type = ostrcat("1", NULL, 0, 0);
+		}
+	}
+
+	free(fileline);
+	fclose(fd);
+	return 0;
+}
+
+int writewlan(const char* filename, int type, char* ssid, char* key)
 {
 	char* savesettings = NULL;
-	int type = getconfigint("wlan_type", NULL);
 	
 	char* tmpstr = "\nkey_mgmt=NONE\nscan_ssid=1";
 	
@@ -16,20 +93,20 @@ int writewlan()
 		tmpstr = "\nkey_mgmt=WPA-PSK\nscan_ssid=1\nproto=RSN\npsk=";
 
 	savesettings = ostrcat("network={\nssid=\"", NULL, 0, 0);
-	savesettings = ostrcat(savesettings, getconfig("wlan_ssid", NULL), 1, 0);
+	savesettings = ostrcat(savesettings, ssid, 1, 0);
 	savesettings = ostrcat(savesettings, "\"", 1, 0);
 	savesettings = ostrcat(savesettings, tmpstr, 1, 0);
 	
 	if(type == 2 || type == 3)
 		savesettings = ostrcat(savesettings, "\"", 1, 0);
 	if(type == 1 || type == 2 || type == 3)
-		savesettings = ostrcat(savesettings, getconfig("wlan_key", NULL), 1, 0);
+		savesettings = ostrcat(savesettings, key, 1, 0);
 	if(type == 2 || type == 3)
 		savesettings = ostrcat(savesettings, "\"", 1, 0);
 	
 	savesettings = ostrcat(savesettings, "\n}", 1, 0);
 
-	FILE* fd = fopen("/var/etc/wpa_supplicant.conf", "w");
+	FILE* fd = fopen(filename, "w");
 	if(fd)
 	{
 		fprintf(fd, "%s\n", savesettings);
@@ -457,7 +534,7 @@ start:
 void screennetwork_wlan()
 {
 	int rcret = -1, scan = 0, ret = 0;
-	struct skin* wlan = getscreen("wlansettings");
+	struct skin* wlan = getscreen("wlan");
 	struct skin* listbox = getscreennode(wlan, "listbox");
 	struct skin* ssid = getscreennode(wlan, "ssid");
 	struct skin* type = getscreennode(wlan, "type");
@@ -468,15 +545,22 @@ void screennetwork_wlan()
 	struct skin* tmp = NULL, *tmp1 = NULL, *tmp2 = NULL;
 	char* tmpstr = NULL;
 
-	changeinput(ssid, getconfig("wlan_ssid", NULL));
+	char* wtype = NULL, *wssid = NULL, *wkey = NULL;
+
+	readwlan("/var/etc/wpa_supplicant.conf", &wtype, &wssid, &wkey);
+
+	changeinput(ssid, wssid);
+	free(wssid); wssid = NULL;
 
 	addchoicebox(type, "0", _("NONE"));
 	addchoicebox(type, "1", _("WEP"));
 	addchoicebox(type, "2", _("WPA"));
 	addchoicebox(type, "3", _("WPA2"));
-	setchoiceboxselection(type, getconfig("wlan_type", NULL));
+	setchoiceboxselection(type, wtype);
+	free(wtype); wtype = NULL;
 
-	changeinput(key, getconfig("wlan_key", NULL));
+	changeinput(key, wkey);
+	free(wkey); wkey = NULL;
 
 	drawscreen(wlan, 0);
 	addscreenrc(wlan, listbox);
@@ -540,10 +624,9 @@ void screennetwork_wlan()
 			}
 			else
 			{
-				addconfigscreen("wlan_ssid", ssid);
-				addconfigscreen("wlan_type", type);
-				addconfigscreen("wlan_key", key);
-				writewlan();
+				int tmptype = 0;
+				if(type->ret != NULL) tmptype = atoi(type->ret);
+				writewlan("/var/etc/wpa_supplicant.conf", tmptype, ssid->ret, key->ret);
 				if(rcret == getrcconfigint("rcok", NULL)) break;
 			}
 			if(rcret == getrcconfigint("rcgreen", NULL))
