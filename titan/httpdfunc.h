@@ -907,9 +907,7 @@ char* webgetepg(char* param)
 		buf = ostrcat(buf, " (", 1, 0);
 		loctime = olocaltime(&epgnode->starttime);
 		if(loctime != NULL)
-			%H:%M %d-%m-%Y
-			strftime(buf1, MINMALLOC, "%d-%m -> %H:%M -", loctime);
-			//strftime(buf1, MINMALLOC, "%H:%M -", loctime);
+			strftime(buf1, MINMALLOC, "%H:%M -", loctime);
 		free(loctime); loctime = NULL;
 		loctime = olocaltime(&epgnode->endtime);
 		if(loctime != NULL)
