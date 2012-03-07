@@ -1818,7 +1818,10 @@ char* webaddrectimer(char* param)
 	ostrcatbig(&buf, "<table border=\"0\"><tr>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><font class=label>Name:&nbsp;</font></td>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"name\" value=\"", &maxlen, &pos);
-	ostrcatbig(&buf, " ", &maxlen, &pos);
+	if(epgnode != NULL)
+		ostrcatbig(&buf, epgnode->title, &maxlen, &pos);
+	else	
+		ostrcatbig(&buf, " ", &maxlen, &pos);
 	ostrcatbig(&buf, "\" /></td></tr>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><font class=label>Type:&nbsp;</font></td>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><select name=\"type\" border=0><option selected>", &maxlen, &pos);
@@ -1826,7 +1829,10 @@ char* webaddrectimer(char* param)
 	ostrcatbig(&buf, "<option>record<option>switch channel</select></td></tr>", &maxlen, &pos);
 
 	buf2 = malloc(MINMALLOC);
-	loctime = olocaltime(&akttime);
+	if(epgnode != NULL)
+		loctime =	olocaltime(&epgnode->starttime);
+	else
+		loctime = olocaltime(&akttime);
 	strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
 	free(loctime); loctime = NULL;
 
@@ -1837,7 +1843,10 @@ char* webaddrectimer(char* param)
 	ostrcatbig(&buf, "\" /></td></tr>", &maxlen, &pos);
 	free(buf1); buf1 = NULL;
 	
-	loctime = olocaltime(&akttime);
+	if(epgnode != NULL)
+		loctime =	olocaltime(&epgnode->endtime);
+	else
+		loctime = olocaltime(&akttime);
 	strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
 	free(loctime); loctime = NULL;
 	
