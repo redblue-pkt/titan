@@ -340,7 +340,9 @@ msgstr ""
 #: networkbrowser.h:1258 networkbrowser.h:1011 networkbrowser.h:1246
 #: networkbrowser.h:1262 networkbrowser.h:1008 networkbrowser.h:1243
 #: networkbrowser.h:1259 mc_videoplayer.h:393 mc_videoplayer.h:494 play.h:681
-#: network.h:302 network.h:554 network.h:556 network.h:604
+#: network.h:302 network.h:554 network.h:556 network.h:604 inadyn.h:138
+#: inadyn.h:140 inadyn.h:148 network.h:379 network.h:637 network.h:639
+#: network.h:687
 msgid "Message"
 msgstr ""
 
@@ -398,6 +400,9 @@ msgstr ""
 #: skin_default_skin.xml.h:280 network.h:187 network.h:194 network.h:198
 #: network.h:302 network.h:554 network.h:556 network.h:604
 #: skin_default_skin.xml.h:282 httpdfunc.h:2190 httpdfunc.h:2209
+#: httpdfunc.h:2211 inadyn.h:138 inadyn.h:140 inadyn.h:148 network.h:264
+#: network.h:271 network.h:275 network.h:379 network.h:637 network.h:639
+#: network.h:687
 msgid "OK"
 msgstr ""
 
@@ -453,6 +458,9 @@ msgstr ""
 #: skin_default_skin.xml.h:184 network.h:187 network.h:194 network.h:198
 #: network.h:302 network.h:554 network.h:556 network.h:604
 #: skin_default_skin.xml.h:185 httpdfunc.h:2190 httpdfunc.h:2209
+#: httpdfunc.h:2211 inadyn.h:138 inadyn.h:140 inadyn.h:148 network.h:264
+#: network.h:271 network.h:275 network.h:379 network.h:637 network.h:639
+#: network.h:687
 msgid "EXIT"
 msgstr ""
 
@@ -1362,31 +1370,33 @@ msgstr ""
 #: skin_default_skin.xml.h:267 skins_mc_skin.xml.h:28
 #: skins_panel_skin.xml.h:57 skin_default_skin.xml.h:268
 #: skin_default_skin.xml.h:21 skin_default_skin.xml.h:271 network.h:187
-#: network.h:194 skin_default_skin.xml.h:273
+#: network.h:194 skin_default_skin.xml.h:273 network.h:264 network.h:271
 msgid "Network"
 msgstr ""
 
-#: network.h:186 network.h:187
+#: network.h:186 network.h:187 network.h:264
 msgid "comming soon..."
 msgstr ""
 
-#: network.h:193 network.h:194
+#: network.h:193 network.h:194 network.h:271
 msgid "Restart Network ?"
 msgstr ""
 
-#: network.h:197 network.h:198
+#: network.h:197 network.h:198 network.h:275
 msgid "Restart Network"
 msgstr ""
 
-#: network.h:268 network.h:276 network.h:269 network.h:277
+#: network.h:268 network.h:276 network.h:269 network.h:277 network.h:346
+#: network.h:354
 msgid "enable"
 msgstr ""
 
 #: network.h:269 network.h:275 panel_settings.h:43 network.h:270 network.h:276
+#: network.h:347 network.h:353
 msgid "disable"
 msgstr ""
 
-#: network.h:301 network.h:302
+#: network.h:301 network.h:302 network.h:379
 msgid "save network settings ?"
 msgstr ""
 
@@ -1394,15 +1404,15 @@ msgstr ""
 msgid "no keycode"
 msgstr ""
 
-#: network.h:469 network.h:474
+#: network.h:469 network.h:474 network.h:556
 msgid "WEP"
 msgstr ""
 
-#: network.h:470 network.h:475
+#: network.h:470 network.h:475 network.h:557
 msgid "WPA"
 msgstr ""
 
-#: network.h:471 network.h:476
+#: network.h:471 network.h:476 network.h:558
 msgid "WPA2"
 msgstr ""
 
@@ -5324,27 +5334,27 @@ msgstr ""
 msgid "TITLE"
 msgstr ""
 
-#: network.h:473
+#: network.h:473 network.h:555
 msgid "NONE"
 msgstr ""
 
-#: network.h:554
+#: network.h:554 network.h:637
 msgid ""
 "WLAN started.\n"
 " You can now configure the new interface."
 msgstr ""
 
-#: network.h:556
+#: network.h:556 network.h:639
 msgid ""
 "WLAN not started,\n"
 "Please check your config."
 msgstr ""
 
-#: network.h:576
+#: network.h:576 network.h:659
 msgid "searching..."
 msgstr ""
 
-#: network.h:604
+#: network.h:604 network.h:687
 msgid "WLAN now stopped"
 msgstr ""
 
@@ -5366,4 +5376,18 @@ msgstr ""
 
 #: skin_default_skin.xml.h:405
 msgid "STOP"
+msgstr ""
+
+#: inadyn.h:138
+msgid "DYNDNS started."
+msgstr ""
+
+#: inadyn.h:140
+msgid ""
+"DYNDNS not started,\n"
+"Please check your config."
+msgstr ""
+
+#: inadyn.h:148
+msgid "DYNDNS now stopped"
 msgstr ""
