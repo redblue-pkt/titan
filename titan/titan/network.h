@@ -534,7 +534,7 @@ start:
 void screennetwork_wlan()
 {
 	int rcret = -1, scan = 0, ret = 0;
-	struct skin* wlan = getscreen("wlan");
+	struct skin* wlan = getscreen("wlansettings");
 	struct skin* listbox = getscreennode(wlan, "listbox");
 	struct skin* ssid = getscreennode(wlan, "ssid");
 	struct skin* type = getscreennode(wlan, "type");
