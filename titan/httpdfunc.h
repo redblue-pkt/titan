@@ -1232,7 +1232,7 @@ void webgetshoot(char* param)
 char* webgetepgsearch(char* query, char* param)
 {
 	int line = 0, maxlen = 0, pos = 0, maxcount = 0, page = 1;
-	char* buf = NULL, *buf1 = NULL, *tmpstr = NULL, *tmpnr = NULL, * param1 = NULL;
+	char* buf = NULL, *buf1 = NULL, *buf2 = NULL, *tmpstr = NULL, *tmpnr = NULL, * param1 = NULL;
 	struct channel* chnode = channel;
 	struct epg* epgnode = NULL;
 	struct tm *loctime = NULL;
@@ -1297,15 +1297,21 @@ char* webgetepgsearch(char* query, char* param)
 
 				ostrcatbig(&buf, "<td nowrap><a target=main class=link href=query?getepg&", &maxlen, &pos);
 				tmpstr = oitoa(chnode->serviceid);
+				buf2 = ostrcat("<td nowrap><a target=main class=link href=query?addrectimer&",tmpstr, 0, 0);
+				buf2 = ostrcat(buf2, "&", 0, 0);
 				ostrcatbig(&buf, tmpstr, &maxlen, &pos);
 				free(tmpstr); tmpstr = NULL;
 				ostrcatbig(&buf, "&", &maxlen, &pos);
 				tmpstr = olutoa(chnode->transponderid);
 				ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+				buf2 = ostrcat(buf2, tmpstr, 0, 0);
+				buf2 = ostrcat(buf2, "&", 0, 0);
 				free(tmpstr); tmpstr = NULL;
 				ostrcatbig(&buf, "&", &maxlen, &pos);
 				tmpstr = oitoa(epgnode->eventid);
 				ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+				buf2 = ostrcat(buf2, tmpstr, 0, 0);
+				buf2 = ostrcat(buf2, ">", 0, 0);
 				free(tmpstr); tmpstr = NULL;
 				ostrcatbig(&buf, ">", &maxlen, &pos);
 	
@@ -1327,11 +1333,15 @@ char* webgetepgsearch(char* query, char* param)
 					ostrcatbig(&buf, chnode->name, &maxlen, &pos);
 					ostrcatbig(&buf, ")", &maxlen, &pos);
 				}
+				ostrcatbig(&buf, "</a></td>", &maxlen, &pos);
+				ostrcatbig(&buf, buf2, &maxlen, &pos);
+				ostrcatbig(&buf, "<img border=0 width=16 height=16 src=img/timer.png alt=\"set timer\"/>", &maxlen, &pos);
 				ostrcatbig(&buf, "</a><br><font class=smalllabel1>", &maxlen, &pos);
 				ostrcatbig(&buf, epgnode->subtitle, &maxlen, &pos);
 				ostrcatbig(&buf, "</font></td></tr>", &maxlen, &pos);
 			}
 			epgnode = epgnode->next;
+			free(buf2); buf2 = NULL;
 		}
 		chnode = chnode->next;
 	}
