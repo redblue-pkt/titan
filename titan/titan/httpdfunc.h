@@ -939,7 +939,7 @@ char* webgetepg(char* param)
 char* webgetsingleepg(char* param)
 {
 	int line = 0, maxlen = 0, pos = 0;
-	char* buf = NULL, *buf1 = NULL, *param1 = NULL, *tmpstr = NULL;
+	char* buf = NULL, *buf1 = NULL, *buf2 = NULL, *param1 = NULL, *tmpstr = NULL;
 	struct epg* epgnode = NULL;
 	struct channel* chnode = NULL;
 	struct tm *loctime = NULL;
@@ -981,14 +981,20 @@ char* webgetsingleepg(char* param)
 		ostrcatbig(&buf, "<td nowrap><a target=main class=link href=query?getepg&", &maxlen, &pos);
 		tmpstr = oitoa(chnode->serviceid);
 		ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+		buf2 = ostrcat("<td nowrap><a target=main class=link href=query?setepgtimer&",tmpstr, 0, 0);
+		buf2 = ostrcat(buf2, "&", 0, 0);
 		free(tmpstr); tmpstr = NULL;
 		ostrcatbig(&buf, "&", &maxlen, &pos);
 		tmpstr = olutoa(chnode->transponderid);
 		ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+		buf2 = ostrcat(buf2, tmpstr, 0, 0);
+		buf2 = ostrcat(buf2, "&", 0, 0);
 		free(tmpstr); tmpstr = NULL;
 		ostrcatbig(&buf, "&", &maxlen, &pos);
 		tmpstr = oitoa(epgnode->eventid);
 		ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+		buf2 = ostrcat(buf2, tmpstr, 0, 0);
+		buf2 = ostrcat(buf2, ">", 0, 0);
 		free(tmpstr); tmpstr = NULL;
 		ostrcatbig(&buf, ">", &maxlen, &pos);
 
@@ -1009,9 +1015,13 @@ char* webgetsingleepg(char* param)
 			ostrcatbig(&buf, epgnode->subtitle, &maxlen, &pos);
 			ostrcatbig(&buf, ")", &maxlen, &pos);
 		}
+		ostrcatbig(&buf, "</a></td>", &maxlen, &pos);
+		ostrcatbig(&buf, buf2, &maxlen, &pos);
+		ostrcatbig(&buf, "<img border=0 width=16 height=16 src=img/timer.png alt=\"set timer\"/>", &maxlen, &pos);
 		ostrcatbig(&buf, "</a></td></tr>", &maxlen, &pos);
 	
 		epgnode = epgnode->next;
+		free(buf2); buf2 = NULL;
 	}
 
 	webcreatetailbig(&buf, &maxlen, &pos, 0);
