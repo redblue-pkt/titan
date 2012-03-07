@@ -1333,12 +1333,12 @@ char* webgetepgsearch(char* query, char* param)
 					ostrcatbig(&buf, chnode->name, &maxlen, &pos);
 					ostrcatbig(&buf, ")", &maxlen, &pos);
 				}
-				ostrcatbig(&buf, "</a></td>", &maxlen, &pos);
-				ostrcatbig(&buf, buf2, &maxlen, &pos);
-				ostrcatbig(&buf, "<img border=0 width=16 height=16 src=img/timer.png alt=\"set timer\"/>", &maxlen, &pos);
 				ostrcatbig(&buf, "</a><br><font class=smalllabel1>", &maxlen, &pos);
 				ostrcatbig(&buf, epgnode->subtitle, &maxlen, &pos);
-				ostrcatbig(&buf, "</font></td></tr>", &maxlen, &pos);
+				ostrcatbig(&buf, "</font></td>", &maxlen, &pos);
+				ostrcatbig(&buf, buf2, &maxlen, &pos);
+				ostrcatbig(&buf, "<img border=0 width=16 height=16 src=img/timer.png alt=\"set timer\"/>", &maxlen, &pos);
+				ostrcatbig(&buf, "</a></td></tr>", &maxlen, &pos);
 			}
 			epgnode = epgnode->next;
 			free(buf2); buf2 = NULL;
