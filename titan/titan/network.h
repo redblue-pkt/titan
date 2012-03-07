@@ -6,17 +6,18 @@ int writewlan()
 	char* savesettings = NULL;
 	int type = getconfigint("wlan_type", NULL);
 	
-	char* tmpstr = "\nkey_mgmt=NONE";
+	char* tmpstr = "\nkey_mgmt=NONE\nscan_ssid=1";
 	
 	if(type == 1) //WEP
-		tmpstr = "\nkey_mgmt=NONE\nwep_tx_keyidx=0\nwep_key0=";
+		tmpstr = "\nkey_mgmt=NONE\nscan_ssid=1\nwep_tx_keyidx=0\nwep_key0=";
 	if(type == 2) //WPA
-		tmpstr = "\nkey_mgmt=WPA-PSK\nproto=WPA\npsk=";
+		tmpstr = "\nkey_mgmt=WPA-PSK\nscan_ssid=1\nproto=WPA\npsk=";
 	if(type == 3) //WPA2
-		tmpstr = "\nkey_mgmt=WPA-PSK\nproto=RSN\npsk=";
+		tmpstr = "\nkey_mgmt=WPA-PSK\nscan_ssid=1\nproto=RSN\npsk=";
 
 	savesettings = ostrcat("network={\nssid=\"", NULL, 0, 0);
 	savesettings = ostrcat(savesettings, getconfig("wlan_ssid", NULL), 1, 0);
+	savesettings = ostrcat(savesettings, "\"", 1, 0);
 	savesettings = ostrcat(savesettings, tmpstr, 1, 0);
 	
 	if(type == 2 || type == 3)
@@ -28,7 +29,7 @@ int writewlan()
 	
 	savesettings = ostrcat(savesettings, "\n}", 1, 0);
 
-	FILE* fd = fopen("/var/etc/network/wlan.cfg", "w");
+	FILE* fd = fopen("/var/etc/wpa_supplicant.conf", "w");
 	if(fd)
 	{
 		fprintf(fd, "%s\n", savesettings);
@@ -455,17 +456,21 @@ start:
 
 void screennetwork_wlan()
 {
-	int rcret = -1;
-	struct skin* wlan = getscreen("wlan");
+	int rcret = -1, scan = 0, ret = 0;
+	struct skin* wlan = getscreen("wlansettings");
 	struct skin* listbox = getscreennode(wlan, "listbox");
 	struct skin* ssid = getscreennode(wlan, "ssid");
 	struct skin* type = getscreennode(wlan, "type");
 	struct skin* key = getscreennode(wlan, "key");
-	struct skin* tmp = NULL;
+	struct skin* b3 = getscreennode(wlan, "b3");
+	struct skin* b4 = getscreennode(wlan, "b4");
+	struct skin* b5 = getscreennode(wlan, "b5");
+	struct skin* tmp = NULL, *tmp1 = NULL, *tmp2 = NULL;
+	char* tmpstr = NULL;
 
 	changeinput(ssid, getconfig("wlan_ssid", NULL));
 
-	addchoicebox(type, "0", _("no keycode"));
+	addchoicebox(type, "0", _("NONE"));
 	addchoicebox(type, "1", _("WEP"));
 	addchoicebox(type, "2", _("WPA"));
 	addchoicebox(type, "3", _("WPA2"));
@@ -477,22 +482,131 @@ void screennetwork_wlan()
 	addscreenrc(wlan, listbox);
 
 	tmp = listbox->select;
+	tmp2 = listbox->select;
 	while(1)
 	{
-		addscreenrc(wlan, tmp);
+		if(scan == 0) addscreenrc(wlan, tmp);
 		rcret = waitrc(wlan, 0, 0);
-		tmp = listbox->select;
+		if(scan == 0) tmp = listbox->select;
 
-		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcok", NULL))
+		if(rcret == getrcconfigint("rcexit", NULL))
 		{
-			addconfigscreen("wlan_ssid", ssid);
-			addconfigscreen("wlan_type", type);
-			addconfigscreen("wlan_key", key);
-			writewlan();
+			if(scan == 1)
+			{
+				scan = 0;
+				delmarkedscreennodes(wlan, 1);
+				ssid->hidden = NO;
+				type->hidden = NO;
+				key->hidden = NO;
+				b3->hidden = NO;
+				b4->hidden = NO;
+				b5->hidden = NO;
+				listbox->select = NULL;
+				listbox->aktline = 1;
+				listbox->aktpage = -1;
+				tmp = tmp2;
+				drawscreen(wlan, 0);
+			}
+			else
+				break;
+		}
+
+		if(rcret == getrcconfigint("rcok", NULL) || (scan == 0 && rcret == getrcconfigint("rcgreen", NULL)))
+		{
+			if(scan == 1)
+			{
+				if(listbox->select != NULL)
+				{	
+					ssid->linecount = 0;
+					ssid->pagecount = 0;
+					ssid->poscount = 0;
+					ssid->aktpage = 0;
+					ssid->aktline = 0;
+					changeinput(ssid, listbox->select->text);
+				}
+				scan = 0;
+				delmarkedscreennodes(wlan, 1);
+				ssid->hidden = NO;
+				type->hidden = NO;
+				key->hidden = NO;
+				b3->hidden = NO;
+				b4->hidden = NO;
+				b5->hidden = NO;
+				listbox->select = NULL;
+				listbox->aktline = 1;
+				listbox->aktpage = -1;
+				tmp = tmp2;
+				drawscreen(wlan, 0);
+			}
+			else
+			{
+				addconfigscreen("wlan_ssid", ssid);
+				addconfigscreen("wlan_type", type);
+				addconfigscreen("wlan_key", key);
+				writewlan();
+				if(rcret == getrcconfigint("rcok", NULL)) break;
+			}
+			if(rcret == getrcconfigint("rcgreen", NULL))
+			{
+				system("killall wpa_suplicant; sleep 2; killall -9 wpa_suplicant");
+				ret = system("wlan.sh");
+				if(ret == 0)
+					textbox(_("Message"), _("WLAN started.\n You can now configure the new interface."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+				else
+					textbox(_("Message"), _("WLAN not started,\nPlease check your config."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+				drawscreen(wlan, 0);
+			}
+		}
+
+		if(rcret == getrcconfigint("rcred", NULL))
+		{
+			tmp1 = NULL;
+			scan = 1;
+			ssid->hidden = YES;
+			type->hidden = YES;
+			key->hidden = YES;
+			b3->hidden = YES;
+			b4->hidden = YES;
+			b5->hidden = YES;
+			listbox->select = NULL;
+			listbox->aktline = 1;
+			listbox->aktpage = -1;
+			tmp1 = addlistbox(wlan, listbox, tmp1, 1);
+			if(tmp1 != NULL)
+				changetext(tmp1, _("searching..."));
+			drawscreen(wlan, 0);
+
+			tmpstr = command("iwlist scanning | grep 'ESSID:' | sed 's/ESSID:\\\"\\\"/ESSID:\\\"unknown\\\"/' | sed 's/[ ]*ESSID://' | tr -d \\\"");
+
+			tmp1 = NULL;
+			delmarkedscreennodes(wlan, 1);
+			if(tmpstr != NULL)
+			{
+				int count = 0, i = 0;
+				struct splitstr* splitret = NULL;
+
+				splitret = strsplit(tmpstr, "\n", &count);
+				for(i = 0; i < count; i++)
+				{
+					tmp1 = addlistbox(wlan, listbox, tmp1, 1);
+					if(tmp1 != NULL)
+						changetext(tmp1, (&splitret[i])->part);
+				}
+				free(splitret); splitret = NULL;
+				free(tmpstr); tmpstr = NULL;
+			}
+			drawscreen(wlan, 0);
+		}
+
+		if(rcret == getrcconfigint("rcyellow", NULL))
+		{
+			system("killall wpa_suplicant; sleep 2; killall -9 wpa_suplicant");
+			textbox(_("Message"), _("WLAN now stopped"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+			drawscreen(wlan, 0);
 		}
 	}
 
+	delmarkedscreennodes(wlan, 1);
 	delownerrc(wlan);
 	clearscreen(wlan);
 }
