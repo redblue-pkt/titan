@@ -533,7 +533,7 @@ int checkhttpheader(char* tmpbuf, char** retstr)
 		}
 	}
 
-	if(stat == 302) // Redirect
+	if(stat == 301 || stat == 302) // Redirect
 	{
 		tmppos = strstr(tmpbuf, "Location: ");
 		if(tmppos != NULL)
@@ -650,7 +650,7 @@ char* gethttp(char* host, char* page, int port, char* filename, char* auth, stru
 		if(tmpbuf != NULL && (strstr(tmpbuf, "\n\n") != NULL || strstr(tmpbuf, "\r\n\r\n") != NULL))
 		{
 			hret = checkhttpheader(tmpbuf, &retstr);
-			if(hret == 302) goto end;
+			if(hret == 301 || hret == 302) goto end;
 			break;
 		}
 		pbuf++;
@@ -714,7 +714,7 @@ end:
 		buf[count] = '\0';
 	}
 
-	if(hret == 302 && retstr != NULL && redirect < 3) //redirect
+	if((hret == 301 || hret == 302) && retstr != NULL && redirect < 3) //redirect
 	{
 		char* pos = NULL, *rpage = NULL;
         	char* rhost = string_replace("http://", "", retstr, 0);
