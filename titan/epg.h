@@ -528,7 +528,8 @@ struct epg* getepgakt(struct channel* chnode)
 #ifdef SIMULATE
 	time_t akttime = 1307871000;
 	//akttime = 1315614900;
-	akttime = 1317927300;
+	//akttime = 1317927300;
+	//akttime = 1307971000;
 #else
 	time_t akttime = time(NULL);
 #endif
