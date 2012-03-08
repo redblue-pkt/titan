@@ -536,6 +536,7 @@ void screennetwork_wlan()
 	int rcret = -1, scan = 0, ret = 0;
 	struct skin* wlan = getscreen("wlansettings");
 	struct skin* listbox = getscreennode(wlan, "listbox");
+	struct skin* startmode = getscreennode(wlan, "startmode");
 	struct skin* ssid = getscreennode(wlan, "ssid");
 	struct skin* type = getscreennode(wlan, "type");
 	struct skin* key = getscreennode(wlan, "key");
@@ -548,6 +549,10 @@ void screennetwork_wlan()
 	char* wtype = NULL, *wssid = NULL, *wkey = NULL;
 
 	readwlan("/var/etc/wpa_supplicant.conf", &wtype, &wssid, &wkey);
+
+	addchoicebox(startmode, "y", _("yes"));
+	addchoicebox(startmode, "n", _("no"));
+	setchoiceboxselection(startmode, getownconfig("wlan"));
 
 	changeinput(ssid, wssid);
 	free(wssid); wssid = NULL;
@@ -627,6 +632,7 @@ void screennetwork_wlan()
 				int tmptype = 0;
 				if(type->ret != NULL) tmptype = atoi(type->ret);
 				writewlan("/var/etc/wpa_supplicant.conf", tmptype, ssid->ret, key->ret);
+				if(startmode->ret != NULL) addownconfig("wlan", startmode->ret);
 				if(rcret == getrcconfigint("rcok", NULL)) break;
 			}
 			if(rcret == getrcconfigint("rcgreen", NULL))
