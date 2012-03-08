@@ -25,7 +25,7 @@ for SEARCH in $SEARCHLIST; do
 																					
 	rm cache.top_rated.list
 	wget --no-check-certificate "http://gdata.youtube.com/feeds/api/$SEARCH&max-results=50" -O cache.$filename.list
-	LIST=`./urldecode.sh cache.$filename.list | tr '><' '>\n<'| grep url | grep "http://i.ytimg.com/vi/" | grep "width='480'" | cut -d "/" -f5`
+	LIST=`cat cache.$filename.list | tr '><' '>\n<'| grep url | grep "http://i.ytimg.com/vi/" | grep "width='480'" | cut -d "/" -f5`
 	
 	for ROUND in $LIST; do
 		echo round=$ROUND
@@ -34,7 +34,7 @@ for SEARCH in $SEARCHLIST; do
 		piccount=`expr $piccount + 1`
 	
 		wget --no-check-certificate http://www.youtube.com/watch?v=$ROUND -O cache.$filename.title.list
-		TITLE=`./urldecode.sh cache.$filename.title.list | grep '<meta name="title" content="' | sed 's/      <meta name="title" content="//' | sed 's/">//' | tr '&#' '%' | tr -d ';'`
+		TITLE=`cat cache.$filename.title.list | grep '<meta name="title" content="' | sed 's/      <meta name="title" content="//' | sed 's/">//' | tr '&#' '%' | tr -d ';'`
 		if [ -z "$TITLE" ]; then
 			TITLE="not found"
 		fi
@@ -60,7 +60,7 @@ for SEARCH in $SEARCHLIST; do
 	echo SEARCH=$SEARCH
 	filename=`echo $SEARCH | tr 'A-Z' 'a-z'`																		
 	wget --no-check-certificate "http://gdata.youtube.com/feeds/api/standardfeeds/DE/top_rated_$SEARCH?v=2&max-results=50" -O cache.$filename.list
-	LIST=`./urldecode.sh cache.$filename.list | tr '><' '>\n<'| grep url | grep "http://i.ytimg.com/vi/" | grep "width='480'" | cut -d "/" -f5`
+	LIST=`cat cache.$filename.list | tr '><' '>\n<'| grep url | grep "http://i.ytimg.com/vi/" | grep "width='480'" | cut -d "/" -f5`
 	
 	for ROUND in $LIST; do
 		echo round=$ROUND
@@ -69,7 +69,7 @@ for SEARCH in $SEARCHLIST; do
 		piccount=`expr $piccount + 1`
 	
 		wget --no-check-certificate http://www.youtube.com/watch?v=$ROUND -O cache.$filename.title.list
-		TITLE=`./urldecode.sh cache.$filename.title.list | grep '<meta name="title" content="' | sed 's/      <meta name="title" content="//' | sed 's/">//' | tr '&#' '%' | tr -d ';'`
+		TITLE=`cat cache.$filename.title.list | grep '<meta name="title" content="' | sed 's/      <meta name="title" content="//' | sed 's/">//' | tr '&#' '%' | tr -d ';'`
 		if [ -z "$TITLE" ]; then
 			TITLE="not found"
 		fi
