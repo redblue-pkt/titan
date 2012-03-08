@@ -22,8 +22,10 @@ void screennetworkbrowser()
 	char* title = NULL;
 	title = ostrcat(title , _("Scanning Network Shares, please wait !!"), 1, 0);
 	changetitle(net_addshare, title);
+	struct inetwork *net = inetwork;
 
 start:
+	net = inetwork;
 	drawscreen(net_addshare, 0);
 
 	char* skinname = "networkbrowser";
@@ -34,7 +36,12 @@ start:
 	char* tmpnfs = NULL;
 	char* tmpshares = NULL;
 
-	tmpdns = getnetworkbrowser_dns();
+	while(net != NULL)
+	{
+		if(net->flag == 1)
+			tmpdns = ostrcat(tmpdns, getnetworkbrowser_dns(net), 1, 1);
+		net = net->next;
+	}
 	char* dns = networkbrowser_listbox(NULL, tmpdns, skinname, skintitle, "%pluginpath%/networkbrowser/skin/", 3);
 
 	if(dns != NULL)
@@ -91,9 +98,8 @@ start:
 	status.hangtime = getconfigint("hangtime", NULL);
 }
 
-char* getnetworkbrowser_dns()
+char* getnetworkbrowser_dns(struct inetwork* net)
 {
-	struct inetwork* net = getinetworkbydevice("eth0");
 	char* tmpstr = NULL;
 	netinfo *nInfo;
 	char *s = NULL;
