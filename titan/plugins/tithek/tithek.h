@@ -582,6 +582,9 @@ void screentithekplay(char* titheklink, char* title, int first)
 		servicestart(status.lastservice->channel, NULL, NULL, 0);
 }
 
+// flag 1 = youtube streamlink
+// flag 2 = rtlnow streamlinksrc
+// flag 3 = rtlnow streamlink
 char* getstreamurl(char* link, int flag)
 {
 	debug(99, "link(%d): %s", flag, link);
@@ -643,9 +646,9 @@ char* getstreamurl(char* link, int flag)
 		streamurl = ostrcat("http://rtl2now.rtl2.de", tmpstr, 0, 0);
 		free(tmpstr), tmpstr = NULL;
 		debug(99, "streamurl: %s", streamurl);
-		streamurl = getstreamurl(streamurl, 4);
+		streamurl = getstreamurl(streamurl, 3);
 	}		
-	else if(flag == 4)
+	else if(flag == 3)
 	{
 		string_resub("<filename><![CDATA[","]]></filename>",tmpstr);
 		debug(99, "tmpstr: %s", tmpstr);
