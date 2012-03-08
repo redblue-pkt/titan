@@ -659,7 +659,9 @@ char* getstreamurl(char* link, int flag)
 		for( i = 0; i < max; i++){
 			if(i < 3)
 			{
-				link = ostrcat(link, (&ret1[i])->part, 1, 0);
+				if(count > i)
+					link = ostrcat(link, (&ret1[i])->part, 1, 0);
+
 				if(i == 0)
 					link = ostrcat(link, "//", 1, 0);
 				else
@@ -667,11 +669,14 @@ char* getstreamurl(char* link, int flag)
 			}
 			else
 			{
-				path = ostrcat(path, (&ret1[i])->part, 1, 0);
+				if(count > i)
+					path = ostrcat(path, (&ret1[i])->part, 1, 0);
 				if(i != max-1)
 					path = ostrcat(path, "/", 1, 0);
 			}
 		}
+		free(ret1), ret1 = NULL;
+		free(tmpstr), tmpstr = NULL;
 
 		streamurl = ostrcat(link, " swfVfy=1 playpath=mp4:", 0, 0);
 		streamurl = ostrcat(streamurl, path, 1, 0);
