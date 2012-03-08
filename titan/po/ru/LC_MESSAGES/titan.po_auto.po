@@ -342,7 +342,7 @@ msgstr ""
 #: networkbrowser.h:1259 mc_videoplayer.h:393 mc_videoplayer.h:494 play.h:681
 #: network.h:302 network.h:554 network.h:556 network.h:604 inadyn.h:138
 #: inadyn.h:140 inadyn.h:148 network.h:379 network.h:637 network.h:639
-#: network.h:687 global.h:4539
+#: network.h:687 global.h:4539 tithek.h:536 tithek.h:540 tithek.h:544
 msgid "Message"
 msgstr ""
 
@@ -402,7 +402,7 @@ msgstr ""
 #: skin_default_skin.xml.h:282 httpdfunc.h:2190 httpdfunc.h:2209
 #: httpdfunc.h:2211 inadyn.h:138 inadyn.h:140 inadyn.h:148 network.h:264
 #: network.h:271 network.h:275 network.h:379 network.h:637 network.h:639
-#: network.h:687 global.h:4539
+#: network.h:687 global.h:4539 tithek.h:536 tithek.h:540 tithek.h:544
 msgid "OK"
 msgstr ""
 
@@ -460,7 +460,7 @@ msgstr ""
 #: skin_default_skin.xml.h:185 httpdfunc.h:2190 httpdfunc.h:2209
 #: httpdfunc.h:2211 inadyn.h:138 inadyn.h:140 inadyn.h:148 network.h:264
 #: network.h:271 network.h:275 network.h:379 network.h:637 network.h:639
-#: network.h:687 global.h:4539
+#: network.h:687 global.h:4539 tithek.h:536 tithek.h:540 tithek.h:544
 msgid "EXIT"
 msgstr ""
 
@@ -1101,7 +1101,7 @@ msgstr ""
 
 #: mc_internetbrowser.h:32 tithek.h:468 tithek.h:485 tithek.h:455 tithek.h:477
 #: tithek.h:495 tithek.h:516 tithek.h:460 tithek.h:482 tithek.h:500
-#: tithek.h:521 tithek.h:484 tithek.h:502 tithek.h:523
+#: tithek.h:521 tithek.h:484 tithek.h:502 tithek.h:523 tithek.h:544
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
@@ -5167,12 +5167,12 @@ msgid "File exist, overwrite?"
 msgstr ""
 
 #: tithek.h:464 tithek.h:481 tithek.h:491 tithek.h:508 tithek.h:496
-#: tithek.h:513 tithek.h:498 tithek.h:515
+#: tithek.h:513 tithek.h:498 tithek.h:515 tithek.h:536
 msgid "Start playback"
 msgstr ""
 
 #: tithek.h:488 tithek.h:473 tithek.h:512 tithek.h:478 tithek.h:517
-#: tithek.h:479 tithek.h:519
+#: tithek.h:479 tithek.h:519 tithek.h:540
 msgid "Can't get Streamurl !"
 msgstr ""
 
