@@ -96,6 +96,7 @@ void screennetwork_inadyn()
 	int rcret = -1, ret = 0;
 	struct skin* inadyn = getscreen("inadynsettings");
 	struct skin* listbox = getscreennode(inadyn, "listbox");
+	struct skin* startmode = getscreennode(inadyn, "startmode");
 	struct skin* user = getscreennode(inadyn, "user");
 	struct skin* pw = getscreennode(inadyn, "pw");
 	struct skin* host = getscreennode(inadyn, "host");
@@ -104,6 +105,10 @@ void screennetwork_inadyn()
 	char* iuser = NULL, *ipw = NULL, *ihost = NULL;
 
 	readinadyn("/var/etc/inadyn.conf", &iuser, &ipw, &ihost);
+	
+	addchoicebox(startmode, "y", _("yes"));
+	addchoicebox(startmode, "n", _("no"));
+	setchoiceboxselection(startmode, getownconfig("inadyn"));
 
 	changeinput(user, iuser);
 	free(iuser); iuser = NULL;
@@ -129,6 +134,7 @@ void screennetwork_inadyn()
 		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcgreen", NULL))
 		{
 			writeinadyn("/var/etc/inadyn.conf", user->ret, pw->ret, host->ret);
+			if(startmode->ret != NULL) addownconfig("inadyn", startmode->ret);
 			if(rcret == getrcconfigint("rcok", NULL)) break;
 			if(rcret == getrcconfigint("rcgreen", NULL))
 			{
