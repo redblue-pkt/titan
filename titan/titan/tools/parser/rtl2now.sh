@@ -30,15 +30,22 @@ for SEARCH in $SEARCHLIST; do
 		piccount=`expr $piccount + 1`
 		count=`expr $count + 1`		
 		echo wget
-		echo wget --no-check-certificate $URL/$ROUND -O cache.$SEARCH.$count.list
+		DURL=$SITEURL/`echo $ROUND | sed 's/amp;//'`
+		echo DURL: $DURL
+		echo $DURL | sed 's/amp;//'
 
-		wget --no-check-certificate $SITEURL/$ROUND -O cache.$SEARCH.$count.list
+		DURL=`echo $DURL | sed 's/amp;//'`
+		echo DURL: $DURL
+		
+		echo wget --no-check-certificate "$DURL" -O cache.$SEARCH.$count.list
+		wget --no-check-certificate "$DURL" -O cache.$SEARCH.$count.list
+
 		PIC=`cat cache.$SEARCH.$count.list | grep jpg | grep '<meta property="og:image"' | cut -d'"' -f4`
 #		TITLE=`./urldecode.sh cache.$SEARCH.$count.list | grep og:title  | cut -d'"' -f4 | sed 's/ - /#/' | cut -d"#" -f2`
 		TITLE=`cat cache.$SEARCH.$count.list | grep og:title  | cut -d'"' -f4 | sed 's/ - /#/' | cut -d"#" -f2 | sed 's/ - /#/' | cut -d"#" -f2`
-		
 		URL=$SITEURL/$ROUND
-		LINE="$TITLE#$URL#$PIC#rtl2now_$piccount.jpg#Rtl2Now#1"
+
+		LINE="$TITLE#$DURL#$PIC#rtl2now_$piccount.jpg#Rtl2Now#5"
 		echo line: $LINE
 		echo "$LINE" >> cache.rtl2now.`echo "$SEARCH" | tr 'A-Z' 'a-z'`.titanlist
 		echo $LINE >> cache.rtl2now.all.titanlist
