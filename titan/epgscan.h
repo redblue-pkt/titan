@@ -106,6 +106,10 @@ void epgscanlistthread(struct stimerthread* self)
 
 end:
 	status.epgscanlistthread = NULL;
+	
+	//write only epg
+	writeallconfig(2);
+	
 	debug(400, "epgscan thread end");
 }
 

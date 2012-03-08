@@ -373,11 +373,14 @@ int writeepg(const char* filename)
 	struct channel *chnode = channel;
 	struct epg* epgnode = NULL;
 	int ret, len = 0, count;
+	
+	m_lock(&status.epgmutex, 4);
 
 	fd = fopen(filename, "wbt");
 	if(fd == NULL)
 	{
 		perr("can't open %s", filename);
+		m_unlock(&status.epgmutex, 4);
 		return 1;
 	}
 
@@ -468,6 +471,7 @@ int writeepg(const char* filename)
 
 	fclose(fd);
 	debug(1000, "out");
+	m_unlock(&status.epgmutex, 4);
 	return 0;
 }
 

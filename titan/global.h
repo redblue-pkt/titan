@@ -943,55 +943,59 @@ int ostrftime(char* buf, int count, char* format, struct tm* t)
 
 //flag 0 = write all
 //flag 1 = don't write epg
+//flag 2 = only write epg
 int writeallconfig(int flag)
 {
 	debug(1000, "in");
 	char* tmpstr = NULL;
 	int ret = 0;
 
-	if(status.writerectimer == 1)
-		if(writerectimer(getconfig("rectimerfile", NULL), 0) != 0)
-			ret = 1;
-	if(status.writesat == 1)
-		if(writesat(getconfig("satfile", NULL)) != 0)
-			ret = 1;
-	if(status.writeplaylist == 1)
-		if(writeallplaylist() != 0)
-			ret = 1;
-	if(status.writemainplaylist == 1)
-		if(writemainplaylist(getconfig("playlistfile", NULL)) != 0)
-			ret = 1;
-	if(status.writebouquet == 1)
-		if(writeallbouquet() != 0)
-			ret = 1;
-	if(status.writemainbouquet == 1)
-		if(writemainbouquet(getconfig("bouquetfile", NULL)) != 0)
-			ret = 1;
-	if(status.writechannel == 1)
-		if(writechannel(getconfig("channelfile", NULL)) != 0)
-			ret = 1;
-	if(status.writetransponder == 1)
-		if(writetransponder(getconfig("transponderfile", NULL)) != 0)
-			ret = 1;
-	if(status.writeprovider == 1)
-		if(writeprovider(getconfig("providerfile", NULL)) != 0)
-			ret = 1;
-	if(status.writeownconfig == 1)
-		if(writeownconfig(getconfig("ownconfig", NULL)) != 0)
-			ret = 1;
-	if(status.writeepgscanlist == 1)
-		if(writeepgscanlist(getconfig("epgchannelfile", NULL)) != 0)
-			ret = 1;
-	if(status.writercconfig == 1)
-		if(writercconfig(getconfig("rcconfig", NULL)) != 0)
-			ret = 1;
-	if(status.writeskinconfig == 1)
-		if(writeskinconfig(getconfig("skinconfig", NULL)) != 0)
-			ret = 1;
-	if(status.writeconfig == 1)
-		if(writeconfig(status.configfile) != 0)
-			ret = 1;
-	if(flag == 0 && time(NULL) > 1072224000) // 01.01.2004
+	if(flag != 2)
+	{
+		if(status.writerectimer == 1)
+			if(writerectimer(getconfig("rectimerfile", NULL), 0) != 0)
+				ret = 1;
+		if(status.writesat == 1)
+			if(writesat(getconfig("satfile", NULL)) != 0)
+				ret = 1;
+		if(status.writeplaylist == 1)
+			if(writeallplaylist() != 0)
+				ret = 1;
+		if(status.writemainplaylist == 1)
+			if(writemainplaylist(getconfig("playlistfile", NULL)) != 0)
+				ret = 1;
+		if(status.writebouquet == 1)
+			if(writeallbouquet() != 0)
+				ret = 1;
+		if(status.writemainbouquet == 1)
+			if(writemainbouquet(getconfig("bouquetfile", NULL)) != 0)
+				ret = 1;
+		if(status.writechannel == 1)
+			if(writechannel(getconfig("channelfile", NULL)) != 0)
+				ret = 1;
+		if(status.writetransponder == 1)
+			if(writetransponder(getconfig("transponderfile", NULL)) != 0)
+				ret = 1;
+		if(status.writeprovider == 1)
+			if(writeprovider(getconfig("providerfile", NULL)) != 0)
+				ret = 1;
+		if(status.writeownconfig == 1)
+			if(writeownconfig(getconfig("ownconfig", NULL)) != 0)
+				ret = 1;
+		if(status.writeepgscanlist == 1)
+			if(writeepgscanlist(getconfig("epgchannelfile", NULL)) != 0)
+				ret = 1;
+		if(status.writercconfig == 1)
+			if(writercconfig(getconfig("rcconfig", NULL)) != 0)
+				ret = 1;
+		if(status.writeskinconfig == 1)
+			if(writeskinconfig(getconfig("skinconfig", NULL)) != 0)
+				ret = 1;
+		if(status.writeconfig == 1)
+			if(writeconfig(status.configfile) != 0)
+				ret = 1;
+	}
+	if((flag == 0 || flag == 2) && time(NULL) > 1072224000) // 01.01.2004
 	{
 		tmpstr = createpath(getconfig("epg_path", NULL), "epg.dat");
 		if(writeepg(tmpstr) != 0)
