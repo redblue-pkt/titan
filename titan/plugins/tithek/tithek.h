@@ -685,6 +685,9 @@ char* getstreamurl(char* link, int flag)
 		streamurl = ostrcat(streamurl, link, 1, 0);
 		streamurl = ostrcat(streamurl, " swfUrl=http://rtl2now.rtl2.de/includes/vodplayer.swf", 1, 0);
 
+		free(link), link = NULL;
+		free(path), path = NULL;
+		
 		debug(99, "link: %s", link);
 		debug(99, "path: %s", path);		
 		debug(99, "streamurl: %s", streamurl);
