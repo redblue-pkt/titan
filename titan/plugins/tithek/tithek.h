@@ -522,6 +522,27 @@ void screentithekplay(char* titheklink, char* title, int first)
 					else
 						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);			
 				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 5)
+				{
+					if(status.security == 1)
+					{
+						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+						char* tmpstr1 = NULL;
+						if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, 2);
+						free(tmpstr); tmpstr = NULL;
+							
+						if(tmpstr1 != NULL)
+						{
+							if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+								screenplay(tmpstr1, 2, 0);				
+						}
+						else
+							textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+						free(tmpstr1); tmpstr1 = NULL;
+					}
+					else
+						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);			
+				}
 				else
 				{
 					int pincheck = 0;
@@ -561,6 +582,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 
 char* getstreamurl(char* link, int flag)
 {
+	debug(99, "link(%d): %s", flag, link);
 	char* ip = NULL, *pos = NULL, *path = NULL;
 	ip = string_replace("http://", "", (char*)link, 0);
 
@@ -571,40 +593,94 @@ char* getstreamurl(char* link, int flag)
 		pos[0] = '\0';
 		path = pos + 1;
 	}
-	
+
 	char* tmpstr = NULL;
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
-
-	string_resub("\": \"url=","\", \"",tmpstr);
-
-	while(string_find(",url=",tmpstr))
-	{
-		tmpstr = string_replace(",url=", "\nurl=", tmpstr, 1);
-	}
-
-	tmpstr = string_decode(tmpstr,0);
-
-	int count = 0;
-	int i = 0;
-	struct splitstr* ret1 = NULL;
-	ret1 = strsplit(tmpstr, "\n", &count);
-	int max = count;
 	char* streamurl = NULL;
-	for( i = 0; i < max; i++){
-		if(string_find("type=video/mp4",(&ret1[i])->part))
-		{
-			streamurl = ostrcat(streamurl, (&ret1[i])->part, 1, 0);
-			int count2 = 0;
-			struct splitstr* ret2 = NULL;
-			ret2 = strsplit((&ret1[i])->part, "+", &count2);
-			streamurl = ostrcat("", (&ret2[0])->part, 0, 0);
-			free(ret2), ret2 = NULL;
-		}
-	}
-	free(ret1), ret1 = NULL;
-	free(tmpstr), tmpstr = NULL;
 		
-	streamurl = string_replace("url=", "", streamurl, 1);
+	if(flag == 1)
+	{
+		string_resub("\": \"url=","\", \"",tmpstr);
+	
+		while(string_find(",url=",tmpstr))
+		{
+			tmpstr = string_replace(",url=", "\nurl=", tmpstr, 1);
+		}
+	
+		tmpstr = string_decode(tmpstr,0);
+	
+		int count = 0;
+		int i = 0;
+		struct splitstr* ret1 = NULL;
+		ret1 = strsplit(tmpstr, "\n", &count);
+		int max = count;
+		for( i = 0; i < max; i++){
+			if(string_find("type=video/mp4",(&ret1[i])->part))
+			{
+				streamurl = ostrcat(streamurl, (&ret1[i])->part, 1, 0);
+				int count2 = 0;
+				struct splitstr* ret2 = NULL;
+				ret2 = strsplit((&ret1[i])->part, "+", &count2);
+				streamurl = ostrcat("", (&ret2[0])->part, 0, 0);
+				free(ret2), ret2 = NULL;
+			}
+		}
+		free(ret1), ret1 = NULL;
+		free(tmpstr), tmpstr = NULL;
+			
+		streamurl = string_replace("url=", "", streamurl, 1);
+	}
+	else if(flag == 2)
+	{
+		string_resub("data:'","',",tmpstr);
+		debug(99, "tmpstr: %s", tmpstr);
+
+		char* tmpstr_tmp = NULL;
+		tmpstr_tmp = ostrcat(tmpstr_tmp, tmpstr, 1, 0);
+		htmldecode(tmpstr,tmpstr_tmp);
+		streamurl = ostrcat("http://rtl2now.rtl2.de", tmpstr, 0, 0);
+		debug(99, "streamurl: %s", streamurl);
+		streamurl = getstreamurl(streamurl, 4);
+	}		
+	else if(flag == 4)
+	{
+		string_resub("<filename><![CDATA[","]]></filename>",tmpstr);
+		debug(99, "tmpstr: %s", tmpstr);
+
+		int count = 0;
+		int i = 0;
+		struct splitstr* ret1 = NULL;
+		ret1 = strsplit(tmpstr, "/", &count);
+		int max = count;
+		char* link = NULL;
+		char* path = NULL;
+		for( i = 0; i < max; i++){
+			if(i < 3)
+			{
+				link = ostrcat(link, (&ret1[i])->part, 1, 0);
+				if(i == 0)
+					link = ostrcat(link, "//", 1, 0);
+				else
+					link = ostrcat(link, "/", 1, 0);
+			}
+			else
+			{
+				path = ostrcat(path, (&ret1[i])->part, 1, 0);
+				if(i != max-1)
+					path = ostrcat(path, "/", 1, 0);
+			}
+		}
+
+		streamurl = ostrcat(link, " swfVfy=1 playpath=mp4:", 0, 0);
+		streamurl = ostrcat(streamurl, path, 1, 0);
+		streamurl = ostrcat(streamurl, " app=rtl2now/_definst_ pageUrl=http://rtl2now.rtl2.de/p/ tcUrl=", 1, 0);
+		streamurl = ostrcat(streamurl, link, 1, 0);
+		streamurl = ostrcat(streamurl, " swfUrl=http://rtl2now.rtl2.de/includes/vodplayer.swf", 1, 0);
+
+		debug(99, "link: %s", link);
+		debug(99, "path: %s", path);		
+		debug(99, "streamurl: %s", streamurl);
+	}
 	return streamurl;
 }
 
