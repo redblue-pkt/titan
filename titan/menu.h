@@ -392,6 +392,11 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screennetwork_wlan();
 	}
+	else if(ostrcmp("inadynsettings", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screennetwork_inadyn();
+	}
 	else if(menuentry->pluginhandle != NULL)
 	{
 		if(menuentry->input != NULL)
