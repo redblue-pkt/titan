@@ -431,6 +431,8 @@ struct inetwork
 	char* broadcast;
 	int dhcp;
 	int found;
+	//flag 1 = used in titan
+	int flag;
 	struct inetwork *prev;
 	struct inetwork *next;
 };

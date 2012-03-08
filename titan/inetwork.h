@@ -154,6 +154,11 @@ struct inetwork* addinetwork(char* device, char* ip, char* netmask, char* mac, c
 	newnode->dhcp = dhcp;
 	newnode->found = 1;
 	
+	if(ostrcmp(device, "eth0") == 0)
+		newnode->flag = 1;
+	if(ostrcmp(device, "ra0") == 0)
+		newnode->flag = 1;
+	
 	debug(50,"[NETWORK] device: %s", device);
 	debug(50,"[NETWORK] ip: %s", ip);
 	debug(50,"[NETWORK] netmask: %s", netmask);
