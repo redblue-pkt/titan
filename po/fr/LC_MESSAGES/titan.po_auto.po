@@ -30,6 +30,7 @@
 #: networkbrowser.h:523 networkbrowser.h:499 networkbrowser.h:527
 #: networkbrowser.h:484 networkbrowser.h:488 networkbrowser.h:492
 #: networkbrowser.h:496 networkbrowser.h:524 inadyn.h:110 network.h:554
+#: network.h:578
 msgid "no"
 msgstr ""
 
@@ -71,7 +72,7 @@ msgstr ""
 #: networkbrowser.h:492 networkbrowser.h:496 networkbrowser.h:524
 #: networkbrowser.h:500 networkbrowser.h:528 networkbrowser.h:485
 #: networkbrowser.h:489 networkbrowser.h:493 networkbrowser.h:497
-#: networkbrowser.h:525 inadyn.h:109 network.h:553
+#: networkbrowser.h:525 inadyn.h:109 network.h:553 network.h:577
 msgid "yes"
 msgstr ""
 
@@ -344,7 +345,7 @@ msgstr ""
 #: inadyn.h:140 inadyn.h:148 network.h:379 network.h:637 network.h:639
 #: network.h:687 global.h:4539 tithek.h:536 tithek.h:540 tithek.h:544
 #: inadyn.h:144 inadyn.h:146 inadyn.h:154 network.h:643 network.h:645
-#: network.h:693
+#: network.h:693 network.h:403 network.h:667 network.h:669 network.h:717
 msgid "Message"
 msgstr ""
 
@@ -406,7 +407,8 @@ msgstr ""
 #: network.h:271 network.h:275 network.h:379 network.h:637 network.h:639
 #: network.h:687 global.h:4539 tithek.h:536 tithek.h:540 tithek.h:544
 #: inadyn.h:144 inadyn.h:146 inadyn.h:154 network.h:643 network.h:645
-#: network.h:693
+#: network.h:693 network.h:299 network.h:403 network.h:667 network.h:669
+#: network.h:717
 msgid "OK"
 msgstr ""
 
@@ -466,7 +468,8 @@ msgstr ""
 #: network.h:271 network.h:275 network.h:379 network.h:637 network.h:639
 #: network.h:687 global.h:4539 tithek.h:536 tithek.h:540 tithek.h:544
 #: inadyn.h:144 inadyn.h:146 inadyn.h:154 network.h:643 network.h:645
-#: network.h:693
+#: network.h:693 network.h:299 network.h:403 network.h:667 network.h:669
+#: network.h:717
 msgid "EXIT"
 msgstr ""
 
@@ -1390,21 +1393,21 @@ msgstr ""
 msgid "Restart Network ?"
 msgstr ""
 
-#: network.h:197 network.h:198 network.h:275
+#: network.h:197 network.h:198 network.h:275 network.h:299
 msgid "Restart Network"
 msgstr ""
 
 #: network.h:268 network.h:276 network.h:269 network.h:277 network.h:346
-#: network.h:354
+#: network.h:354 network.h:370 network.h:378
 msgid "enable"
 msgstr ""
 
 #: network.h:269 network.h:275 panel_settings.h:43 network.h:270 network.h:276
-#: network.h:347 network.h:353
+#: network.h:347 network.h:353 network.h:371 network.h:377
 msgid "disable"
 msgstr ""
 
-#: network.h:301 network.h:302 network.h:379
+#: network.h:301 network.h:302 network.h:379 network.h:403
 msgid "save network settings ?"
 msgstr ""
 
@@ -1412,15 +1415,15 @@ msgstr ""
 msgid "no keycode"
 msgstr ""
 
-#: network.h:469 network.h:474 network.h:556 network.h:561
+#: network.h:469 network.h:474 network.h:556 network.h:561 network.h:585
 msgid "WEP"
 msgstr ""
 
-#: network.h:470 network.h:475 network.h:557 network.h:562
+#: network.h:470 network.h:475 network.h:557 network.h:562 network.h:586
 msgid "WPA"
 msgstr ""
 
-#: network.h:471 network.h:476 network.h:558 network.h:563
+#: network.h:471 network.h:476 network.h:558 network.h:563 network.h:587
 msgid "WPA2"
 msgstr ""
 
@@ -5411,27 +5414,27 @@ msgstr ""
 msgid "TITLE"
 msgstr ""
 
-#: network.h:473 network.h:555 network.h:560
+#: network.h:473 network.h:555 network.h:560 network.h:584
 msgid "NONE"
 msgstr ""
 
-#: network.h:554 network.h:637 network.h:643
+#: network.h:554 network.h:637 network.h:643 network.h:667
 msgid ""
 "WLAN started.\n"
 " You can now configure the new interface."
 msgstr ""
 
-#: network.h:556 network.h:639 network.h:645
+#: network.h:556 network.h:639 network.h:645 network.h:669
 msgid ""
 "WLAN not started,\n"
 "Please check your config."
 msgstr ""
 
-#: network.h:576 network.h:659 network.h:665
+#: network.h:576 network.h:659 network.h:665 network.h:689
 msgid "searching..."
 msgstr ""
 
-#: network.h:604 network.h:687 network.h:693
+#: network.h:604 network.h:687 network.h:693 network.h:717
 msgid "WLAN now stopped"
 msgstr ""
 
