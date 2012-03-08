@@ -10,6 +10,8 @@
 #ifndef NETWORKBROWSER_H
 #define NETWORKBROWSER_H
 
+extern struct inetwork* inetwork;
+
 void screennetworkbrowser()
 {
 	status.hangtime = 99999;
