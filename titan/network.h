@@ -661,7 +661,7 @@ void screennetwork_wlan()
 			}
 			if(rcret == getrcconfigint("rcgreen", NULL))
 			{
-				system("killall wpa_suplicant; sleep 2; killall -9 wpa_suplicant");
+				system("killall wpa_supplicant; sleep 2; killall -9 wpa_supplicant");
 				ret = system("wlan.sh");
 				if(ret == 0)
 					textbox(_("Message"), _("WLAN started.\n You can now configure the new interface."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
@@ -713,7 +713,7 @@ void screennetwork_wlan()
 
 		if(rcret == getrcconfigint("rcyellow", NULL))
 		{
-			system("killall wpa_suplicant; sleep 2; killall -9 wpa_suplicant");
+			system("killall wpa_supplicant; sleep 2; killall -9 wpa_supplicant");
 			textbox(_("Message"), _("WLAN now stopped"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 			drawscreen(wlan, 0);
 		}
