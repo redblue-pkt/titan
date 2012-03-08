@@ -679,17 +679,21 @@ char* getstreamurl(char* link, int flag)
 		free(ret1), ret1 = NULL;
 		free(tmpstr), tmpstr = NULL;
 
+		debug(99, "link: %s", link);
+		debug(99, "path: %s", path);
+
 		streamurl = ostrcat(link, " swfVfy=1 playpath=mp4:", 0, 0);
 		streamurl = ostrcat(streamurl, path, 1, 0);
 		streamurl = ostrcat(streamurl, " app=rtl2now/_definst_ pageUrl=http://rtl2now.rtl2.de/p/ tcUrl=", 1, 0);
 		streamurl = ostrcat(streamurl, link, 1, 0);
 		streamurl = ostrcat(streamurl, " swfUrl=http://rtl2now.rtl2.de/includes/vodplayer.swf", 1, 0);
 
-		free(link), link = NULL;
-		free(path), path = NULL;
+		if(link != NULL)
+			free(link), link = NULL;
+
+		if(path != NULL)
+			free(path), path = NULL;
 		
-		debug(99, "link: %s", link);
-		debug(99, "path: %s", path);		
 		debug(99, "streamurl: %s", streamurl);
 	}
 	return streamurl;
