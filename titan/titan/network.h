@@ -92,7 +92,7 @@ int writewlan(const char* filename, int type, char* ssid, char* key)
 	if(type == 3) //WPA2
 		tmpstr = "\nkey_mgmt=WPA-PSK\nscan_ssid=1\nproto=RSN\npsk=";
 
-	savesettings = ostrcat("network={\nssid=\"", NULL, 0, 0);
+	savesettings = ostrcat("ctrl_interface=DIR=/var/run/wpa_supplicant\nnetwork={\nssid=\"", NULL, 0, 0);
 	savesettings = ostrcat(savesettings, ssid, 1, 0);
 	savesettings = ostrcat(savesettings, "\"", 1, 0);
 	savesettings = ostrcat(savesettings, tmpstr, 1, 0);
