@@ -575,6 +575,8 @@ void screentithekplay(char* titheklink, char* title, int first)
 	delmarkedscreennodes(grid, 1);
 	delownerrc(grid);
 	clearscreen(grid);
+	
+	delallfiles("/tmp/tithek", ".list");
 
 	if(first == 1)
 		servicestart(status.lastservice->channel, NULL, NULL, 0);
