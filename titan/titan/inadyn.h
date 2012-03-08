@@ -132,8 +132,8 @@ void screennetwork_inadyn()
 			if(rcret == getrcconfigint("rcok", NULL)) break;
 			if(rcret == getrcconfigint("rcgreen", NULL))
 			{
-				system("killall inydyn; sleep 2; killall -9 inadyn");
-				ret = system("inadyn.sh");
+				system("killall inadyn; sleep 2; killall -9 inadyn");
+				ret = system("inadyn --input_file /var/etc/inadyn.conf &");
 				if(ret == 0)
 					textbox(_("Message"), _("DYNDNS started."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 				else
@@ -144,7 +144,7 @@ void screennetwork_inadyn()
 
 		if(rcret == getrcconfigint("rcyellow", NULL))
 		{
-			system("killall inydyn; sleep 2; killall -9 inydyn");
+			system("killall inadyn; sleep 2; killall -9 inadyn");
 			textbox(_("Message"), _("DYNDNS now stopped"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 			drawscreen(inadyn, 0);
 		}
