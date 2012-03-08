@@ -221,7 +221,7 @@ void LCD_Pearl1_thread()
 					else if(type == 999)	
 					{
 						changetext(akttimemc1, tmpstr);
-						drawscreen(LCD_MC_Menu, 3);
+						//drawscreen(LCD_MC_Menu, 3);
 					}
 				}
 			}
