@@ -133,7 +133,7 @@ void screenharddisksleep();
 // network.h
 void screennetwork(int mode);
 void screennetwork_adapter();
-void screennetwork_restart();
+void screennetwork_restart(struct inetwork* net);
 void screennetwork_test();
 
 //channel.h

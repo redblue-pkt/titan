@@ -220,7 +220,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	else if(ostrcmp("networkrestart", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screennetwork_restart();
+		screennetwork_restart(NULL);
 	}
 	else if(ostrcmp("sambasettings", menuentry->name) == 0)
 	{

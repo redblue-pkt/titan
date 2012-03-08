@@ -264,14 +264,38 @@ void screennetwork(int mode)
 	textbox(_("Network"), _("comming soon..."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 }
 
-void screennetwork_restart()
+void screennetwork_restart(struct inetwork *net)
 {
-	char* tmpstr = NULL;
+	char* tmpstr = NULL, *cmd = NULL;
 
 	if(textbox(_("Network"), _("Restart Network ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
 		debug(10, "restart network");
-		tmpstr = command("/etc/init.d/networking restart");
+		if(net == NULL)
+		{
+			net = inetwork;
+			while(net != NULL)
+			{
+				if(net->flag == 1)
+				{
+					cmd = ostrcat(cmd, "/etc/init.d/networking -i ", 1, 0);
+					cmd = ostrcat(cmd, net->device, 1, 0);
+					cmd = ostrcat(cmd, " restart", 1, 0);
+					tmpstr = ostrcat(tmpstr, command(cmd), 1, 1);
+					tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
+					free(cmd); cmd = NULL;
+				}
+				net = net->next;
+			}
+		}
+		else
+		{
+			cmd = ostrcat(cmd, "/etc/init.d/networking -i ", 1, 0);
+			cmd = ostrcat(cmd, net->device, 1, 0);
+			cmd = ostrcat(cmd, " restart", 1, 0);
+			tmpstr = ostrcat(tmpstr, command(cmd), 1, 1);
+			free(cmd); cmd = NULL;
+		}
 		textbox(_("Restart Network"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 		free(tmpstr); tmpstr = NULL;
 
@@ -460,7 +484,7 @@ void screennetwork_adapterext(int mode, char* interface)
 		net->dhcp = tmp_dhcp;
 
 		writeinterfaces();
-		screennetwork_restart();
+		screennetwork_restart(net);
 	}
 
 	delownerrc(network);
