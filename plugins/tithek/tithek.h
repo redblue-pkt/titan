@@ -641,6 +641,7 @@ char* getstreamurl(char* link, int flag)
 		tmpstr_tmp = ostrcat(tmpstr_tmp, tmpstr, 1, 0);
 		htmldecode(tmpstr,tmpstr_tmp);
 		streamurl = ostrcat("http://rtl2now.rtl2.de", tmpstr, 0, 0);
+		free(tmpstr), tmpstr = NULL;
 		debug(99, "streamurl: %s", streamurl);
 		streamurl = getstreamurl(streamurl, 4);
 	}		
