@@ -1,9 +1,9 @@
-DOMAIN=rtl2.de
-SUBDOMAIN=rtl2now
-SHOWNAME=Rtl2Now
+SUBDOMAIN=rtl-now
+DOMAIN=rtl.de
+SHOWNAME=RTL-Now
 MEDIAURL=atemio.dyndns.tv
 MEDIAPATH=mediathek
-STREAMTYPE=5
+STREAMTYPE=7
 
 rm cache.*
 rm -rf _full
@@ -21,9 +21,9 @@ for SEARCH in $SEARCHLIST; do
 	piccount=`expr $piccount + 1`	
 	URL="$SITEURL"/"$SEARCH".php
 	wget --no-check-certificate $URL -O cache.$SEARCH.list
-	PIC=`cat cache.$SEARCH.list | grep .jpg | grep _logo_ | sed 's!src="!\n!' | sed 's/">//' | grep ^http:// | tail -n1`
+	PIC=`cat cache.$SEARCH.list | grep .jpg  | sed 's!src="!\n!' | tr '"' '\n' | grep ^http:// | tail -n1`
 	if [ -z $PIC ]; then
-		PIC=`cat cache.$SEARCH.list | grep .jpg  | sed 's!src="!\n!' | tr '"' '\n' | grep ^http:// | tail -n1`
+		PIC=`cat cache.$SEARCH.list | grep jpg | grep _logo_ | sed 's!src="!\n!' | sed 's/">//' | grep ^http:// | tail -n1`
 	fi
 	if [ -z $PIC ]; then
 		PIC=http://$MEDIAURL/$MEDIAPATH/menu/`echo "$SEARCH" | tr 'A-Z' 'a-z'`.jpg
