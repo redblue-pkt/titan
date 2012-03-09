@@ -1,16 +1,16 @@
-DOMAIN=rtl2.de
-SUBDOMAIN=rtl2now
-SHOWNAME=Rtl2Now
+SUBDOMAIN=voxnow
+DOMAIN=de
+SHOWNAME=VOX-Now
 MEDIAURL=atemio.dyndns.tv
 MEDIAPATH=mediathek
-STREAMTYPE=5
+STREAMTYPE=8
 
 rm cache.*
 rm -rf _full
 mkdir -p _full/$SUBDOMAIN/streams
 piccount=0
 
-SITEURL=http://$SUBDOMAIN.$DOMAIN
+SITEURL=http://www.$SUBDOMAIN.$DOMAIN
 wget --no-check-certificate $SITEURL -O cache.$SUBDOMAIN.list
 
 SEARCHLIST=`cat cache.$SUBDOMAIN.list | grep '<a class="menu' | grep -v '&paytype=ppv' | sed 's/href="/\nlink=/' | sed 's/.php/\n/' | grep ^link=  | sed 's!link=/!!'`
@@ -21,9 +21,9 @@ for SEARCH in $SEARCHLIST; do
 	piccount=`expr $piccount + 1`	
 	URL="$SITEURL"/"$SEARCH".php
 	wget --no-check-certificate $URL -O cache.$SEARCH.list
-	PIC=`cat cache.$SEARCH.list | grep .jpg | grep _logo_ | sed 's!src="!\n!' | sed 's/">//' | grep ^http:// | tail -n1`
+	PIC=`cat cache.$SEARCH.list | grep .jpg  | sed 's!src="!\n!' | tr '"' '\n' | grep ^http:// | tail -n1`
 	if [ -z $PIC ]; then
-		PIC=`cat cache.$SEARCH.list | grep .jpg  | sed 's!src="!\n!' | tr '"' '\n' | grep ^http:// | tail -n1`
+		PIC=`cat cache.$SEARCH.list | grep jpg | grep _logo_ | sed 's!src="!\n!' | sed 's/">//' | grep ^http:// | tail -n1`
 	fi
 	if [ -z $PIC ]; then
 		PIC=http://$MEDIAURL/$MEDIAPATH/menu/`echo "$SEARCH" | tr 'A-Z' 'a-z'`.jpg
