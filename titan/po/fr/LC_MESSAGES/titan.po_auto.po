@@ -351,7 +351,7 @@ msgstr ""
 #: inadyn.h:144 inadyn.h:146 inadyn.h:154 network.h:643 network.h:645
 #: network.h:693 network.h:403 network.h:667 network.h:669 network.h:717
 #: networkbrowser.h:93 networkbrowser.h:1016 networkbrowser.h:1251
-#: networkbrowser.h:1267
+#: networkbrowser.h:1267 network.h:671 network.h:720
 msgid "Message"
 msgstr ""
 
@@ -416,6 +416,7 @@ msgstr ""
 #: network.h:693 network.h:299 network.h:403 network.h:667 network.h:669
 #: network.h:717 networkbrowser.h:93 networkbrowser.h:1016
 #: networkbrowser.h:1251 networkbrowser.h:1267 skin_default_skin.xml.h:285
+#: network.h:671 network.h:720
 msgid "OK"
 msgstr ""
 
@@ -478,6 +479,7 @@ msgstr ""
 #: network.h:693 network.h:299 network.h:403 network.h:667 network.h:669
 #: network.h:717 networkbrowser.h:93 networkbrowser.h:1016
 #: networkbrowser.h:1251 networkbrowser.h:1267 skin_default_skin.xml.h:188
+#: network.h:671 network.h:720
 msgid "EXIT"
 msgstr ""
 
@@ -5680,23 +5682,23 @@ msgstr ""
 msgid "NONE"
 msgstr ""
 
-#: network.h:554 network.h:637 network.h:643 network.h:667
+#: network.h:554 network.h:637 network.h:643 network.h:667 network.h:669
 msgid ""
 "WLAN started.\n"
 " You can now configure the new interface."
 msgstr ""
 
-#: network.h:556 network.h:639 network.h:645 network.h:669
+#: network.h:556 network.h:639 network.h:645 network.h:669 network.h:671
 msgid ""
 "WLAN not started,\n"
 "Please check your config."
 msgstr ""
 
-#: network.h:576 network.h:659 network.h:665 network.h:689
+#: network.h:576 network.h:659 network.h:665 network.h:689 network.h:692
 msgid "searching..."
 msgstr ""
 
-#: network.h:604 network.h:687 network.h:693 network.h:717
+#: network.h:604 network.h:687 network.h:693 network.h:717 network.h:720
 msgid "WLAN now stopped"
 msgstr ""
 
