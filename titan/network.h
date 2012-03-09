@@ -608,6 +608,7 @@ void screennetwork_wlan()
 			{
 				scan = 0;
 				delmarkedscreennodes(wlan, 1);
+				startmode->hidden = NO;
 				ssid->hidden = NO;
 				type->hidden = NO;
 				key->hidden = NO;
@@ -639,6 +640,7 @@ void screennetwork_wlan()
 				}
 				scan = 0;
 				delmarkedscreennodes(wlan, 1);
+				startmode->hidden = NO;
 				ssid->hidden = NO;
 				type->hidden = NO;
 				key->hidden = NO;
@@ -675,6 +677,7 @@ void screennetwork_wlan()
 		{
 			tmp1 = NULL;
 			scan = 1;
+			startmode->hidden = YES;
 			ssid->hidden = YES;
 			type->hidden = YES;
 			key->hidden = YES;
