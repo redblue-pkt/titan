@@ -31,7 +31,7 @@
 #: networkbrowser.h:484 networkbrowser.h:488 networkbrowser.h:492
 #: networkbrowser.h:496 networkbrowser.h:524 inadyn.h:110 network.h:554
 #: network.h:578 networkbrowser.h:500 networkbrowser.h:504
-#: networkbrowser.h:532
+#: networkbrowser.h:532 scan.h:972 scan.h:1261 scan.h:1265 scan.h:1269
 msgid "no"
 msgstr ""
 
@@ -74,7 +74,8 @@ msgstr ""
 #: networkbrowser.h:500 networkbrowser.h:528 networkbrowser.h:485
 #: networkbrowser.h:489 networkbrowser.h:493 networkbrowser.h:497
 #: networkbrowser.h:525 inadyn.h:109 network.h:553 network.h:577
-#: networkbrowser.h:501 networkbrowser.h:505 networkbrowser.h:533
+#: networkbrowser.h:501 networkbrowser.h:505 networkbrowser.h:533 scan.h:973
+#: scan.h:1262 scan.h:1266 scan.h:1270
 msgid "yes"
 msgstr ""
 
@@ -351,7 +352,8 @@ msgstr ""
 #: inadyn.h:144 inadyn.h:146 inadyn.h:154 network.h:643 network.h:645
 #: network.h:693 network.h:403 network.h:667 network.h:669 network.h:717
 #: networkbrowser.h:93 networkbrowser.h:1016 networkbrowser.h:1251
-#: networkbrowser.h:1267 network.h:671 network.h:720
+#: networkbrowser.h:1267 network.h:671 network.h:720 scan.h:882 scan.h:892
+#: scan.h:903 scan.h:1043 scan.h:1115 scan.h:1321
 msgid "Message"
 msgstr ""
 
@@ -416,7 +418,8 @@ msgstr ""
 #: network.h:693 network.h:299 network.h:403 network.h:667 network.h:669
 #: network.h:717 networkbrowser.h:93 networkbrowser.h:1016
 #: networkbrowser.h:1251 networkbrowser.h:1267 skin_default_skin.xml.h:285
-#: network.h:671 network.h:720
+#: network.h:671 network.h:720 scan.h:882 scan.h:903 scan.h:1043 scan.h:1115
+#: scan.h:1321
 msgid "OK"
 msgstr ""
 
@@ -479,7 +482,8 @@ msgstr ""
 #: network.h:693 network.h:299 network.h:403 network.h:667 network.h:669
 #: network.h:717 networkbrowser.h:93 networkbrowser.h:1016
 #: networkbrowser.h:1251 networkbrowser.h:1267 skin_default_skin.xml.h:188
-#: network.h:671 network.h:720
+#: network.h:671 network.h:720 scan.h:882 scan.h:903 scan.h:1043 scan.h:1115
+#: scan.h:1321
 msgid "EXIT"
 msgstr ""
 
@@ -2974,73 +2978,73 @@ msgstr ""
 msgid "Can't restore settings"
 msgstr ""
 
-#: scan.h:306
+#: scan.h:306 scan.h:308
 msgid "TV"
 msgstr ""
 
-#: scan.h:308
+#: scan.h:308 scan.h:310
 msgid "Radio"
 msgstr ""
 
-#: scan.h:310
+#: scan.h:310 scan.h:312
 msgid "Data"
 msgstr ""
 
-#: scan.h:729
+#: scan.h:729 scan.h:818
 msgid "Sat: "
 msgstr ""
 
-#: scan.h:735
+#: scan.h:735 scan.h:824
 msgid "Transponder: "
 msgstr ""
 
-#: scan.h:743
+#: scan.h:743 scan.h:832
 msgid "TV: "
 msgstr ""
 
-#: scan.h:751
+#: scan.h:751 scan.h:840
 msgid "Radio: "
 msgstr ""
 
-#: scan.h:759
+#: scan.h:759 scan.h:848
 msgid "Data: "
 msgstr ""
 
-#: scan.h:793
+#: scan.h:793 scan.h:882
 msgid "All new channel added!"
 msgstr ""
 
-#: scan.h:803
+#: scan.h:803 scan.h:892
 msgid "Wait for channel scan end"
 msgstr ""
 
-#: scan.h:947 scan.h:951 scan.h:954
+#: scan.h:947 scan.h:951 scan.h:954 scan.h:1043
 msgid ""
 "Scan is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 
-#: scan.h:1019 scan.h:1023 scan.h:1026
+#: scan.h:1019 scan.h:1023 scan.h:1026 scan.h:1115
 msgid "No Tuner configured"
 msgstr ""
 
-#: scan.h:1032 scan.h:1036 scan.h:1039
+#: scan.h:1032 scan.h:1036 scan.h:1039 scan.h:1128
 msgid "Single Transponder"
 msgstr ""
 
-#: scan.h:1033 scan.h:1037 scan.h:1040
+#: scan.h:1033 scan.h:1037 scan.h:1040 scan.h:1129
 msgid "Single Sat"
 msgstr ""
 
-#: scan.h:1034 scan.h:1038 scan.h:1041
+#: scan.h:1034 scan.h:1038 scan.h:1041 scan.h:1130
 msgid "Multi Sat"
 msgstr ""
 
-#: scan.h:1039 scan.h:1043 scan.h:1046
+#: scan.h:1039 scan.h:1043 scan.h:1046 scan.h:1135
 msgid "Auto Scan"
 msgstr ""
 
-#: scan.h:1225 scan.h:1229 scan.h:1232
+#: scan.h:1225 scan.h:1229 scan.h:1232 scan.h:1321
 msgid "Transponder changed"
 msgstr ""
 
@@ -5653,7 +5657,7 @@ msgstr ""
 msgid "Fix Shutdown Time"
 msgstr ""
 
-#: scan.h:814
+#: scan.h:814 scan.h:903
 msgid "Does you want delete all unused Bouquets?"
 msgstr ""
 
