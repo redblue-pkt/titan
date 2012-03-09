@@ -110,7 +110,7 @@ struct transponder* satsystemdesc(unsigned char* buf, unsigned long transportid,
 
 int parsenit(unsigned char* buf, uint8_t* lastsecnr, int orbitalpos)
 {
-	int ret = 0, i;
+	int ret = 0;
 
 	if(buf == NULL) return ret;
 
@@ -230,6 +230,8 @@ int findchannel(struct transponder* tpnode, unsigned char *buf, uint8_t* lastsec
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
 	unsigned long* tmplong = NULL;
 
+	if(buf == NULL) return ret;
+
 	seclen = ((buf[1] & 0x0F) << 8) | buf[2];
 	secnr = buf[6];
 	*lastsecnr = buf[7];
@@ -343,6 +345,91 @@ int findchannel(struct transponder* tpnode, unsigned char *buf, uint8_t* lastsec
 	return ret;
 }
 
+unsigned long findtransponderid(unsigned char *buf)
+{
+	unsigned long transponderid = 0;
+	unsigned short onid, tid;
+
+	if(buf == NULL) return 0;
+
+	tid = (buf[3] << 8) | buf[4];
+	onid = (buf[8] << 8) | buf[9];
+	
+	transponderid = (onid << 16) | tid;
+
+	debug(500, "found SDT transponderid: %lu", transponderid);
+
+	return transponderid;
+}
+
+void blindscan()
+{
+	int festatus = 0, i = 0;
+	unsigned long transponderid = 0;
+	unsigned char* buf = NULL;
+	struct dvbdev* fenode = NULL;
+	struct transponder* tpnode = NULL;
+
+	if(scaninfo.fenode == NULL) return;
+
+	for(i = 0; i < 10; i++)
+	{
+		//tpnode = createtransponder(99, fenode->feinfo->type, orbitalpos, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, system);
+
+		if(tpnode != NULL)
+        	{
+
+			fenode = fegetfree(tpnode, 0, scaninfo.fenode);
+			if(fenode == NULL )
+			{
+				debug(500, "Frontend for scan not free");
+				continue;
+			}
+
+			//frontend tune
+			if(fenode->feinfo->type == FE_QPSK)
+			{
+				feset(fenode, tpnode);
+				fetunedvbs(fenode, tpnode);
+			}
+			else if(fenode->feinfo->type == FE_QAM)
+				fetunedvbc(fenode, tpnode);
+			else if(fenode->feinfo->type == FE_OFDM)
+				fetunedvbt(fenode, tpnode);
+			else
+			{
+				debug(500, "Frontend type unknown");
+				continue;
+			}
+
+			festatus = fewait(fenode);
+			if(debug_level == 200) fereadstatus(fenode);
+			if(festatus != 0)
+			{
+				debug(500, "tuning failed");
+				continue;
+			}
+
+			buf = dvbgetsdt(fenode, 0, scaninfo.timeout);
+			transponderid = findtransponderid(buf);
+			free(buf); buf = NULL;
+
+			if(transponderid == 0 || gettransponder(transponderid) != NULL)
+			{
+				deltransponder(99);
+				continue;
+			}
+
+			if(tpnode->id != transponderid)
+			{
+				tpnode->id = transponderid;
+				status.writetransponder = 1;
+			}
+		}
+		deltransponder(99);
+	}
+}
+
 void doscan(struct stimerthread* timernode)
 {
 	int festatus = 0, secnr = 0;
@@ -382,6 +469,8 @@ void doscan(struct stimerthread* timernode)
 			tpnode = transponder;
 			scaninfo.orbitalpos = satnode->orbitalpos;
 		}
+
+		//blindscan();
 		
 		nitscan = 1;
 		//transponder loop
