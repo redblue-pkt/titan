@@ -692,7 +692,8 @@ void screennetwork_wlan()
 				changetext(tmp1, _("searching..."));
 			drawscreen(wlan, 0);
 
-			tmpstr = command("wlan.sh scan");
+			system("wlan.sh notstart");
+			tmpstr = command("iwlist scanning | grep 'ESSID:' | sed 's/ESSID:\\\"\\\"/ESSID:\\\"unknown\\\"/' | sed 's/[ ]*ESSID://' | tr -d \\\"");
 
 			tmp1 = NULL;
 			delmarkedscreennodes(wlan, 1);
