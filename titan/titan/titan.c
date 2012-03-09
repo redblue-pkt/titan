@@ -737,6 +737,12 @@ firstwizzardstep1:
 			err("set sigsegjump");
 		}
 	}
+	
+	//check free space in /var
+	if(getfreespace("/var") / 1024 < 5) //5kb
+	{
+		textbox(_("Message"), _("Free space in /var to little!\nThis can make problems!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
+	}
 
 	sleep(1);
 	screeninfobar();
