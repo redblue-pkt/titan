@@ -575,11 +575,12 @@ void screentithekplay(char* titheklink, char* title, int first)
 	delmarkedscreennodes(grid, 1);
 	delownerrc(grid);
 	clearscreen(grid);
-	
-	delallfiles("/tmp/tithek", ".list");
 
 	if(first == 1)
+	{
+		delallfiles("/tmp/tithek", ".list");
 		servicestart(status.lastservice->channel, NULL, NULL, 0);
+	}
 }
 
 // flag 1 = youtube streamlink
