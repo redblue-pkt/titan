@@ -235,6 +235,7 @@ struct scaninfo
 	int onlyfree;
 	int networkscan;
 	int clear;
+	int blindscan;
 	char* satname;
 	int tpcount;
 	int tpmax;
