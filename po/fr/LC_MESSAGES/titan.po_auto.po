@@ -419,7 +419,8 @@ msgstr ""
 #: network.h:717 networkbrowser.h:93 networkbrowser.h:1016
 #: networkbrowser.h:1251 networkbrowser.h:1267 skin_default_skin.xml.h:285
 #: network.h:671 network.h:720 scan.h:882 scan.h:903 scan.h:1043 scan.h:1115
-#: scan.h:1321 network.h:721
+#: scan.h:1321 network.h:721 plugins_wins3_skin.xml.h:3
+#: skins_wins3_skin.xml.h:3
 msgid "OK"
 msgstr ""
 
@@ -483,7 +484,8 @@ msgstr ""
 #: network.h:717 networkbrowser.h:93 networkbrowser.h:1016
 #: networkbrowser.h:1251 networkbrowser.h:1267 skin_default_skin.xml.h:188
 #: network.h:671 network.h:720 scan.h:882 scan.h:903 scan.h:1043 scan.h:1115
-#: scan.h:1321 network.h:721
+#: scan.h:1321 network.h:721 plugins_wins3_skin.xml.h:1
+#: skins_wins3_skin.xml.h:1
 msgid "EXIT"
 msgstr ""
 
@@ -1121,7 +1123,8 @@ msgstr ""
 #: skins_stopifnotused_skin.xml.h:8 skins_tithek_skin.xml.h:6
 #: skin_default_skin.xml.h:467 skin_default_skin.xml.h:472
 #: skin_default_skin.xml.h:478 skin_default_skin.xml.h:479
-#: skin_default_skin.xml.h:482
+#: skin_default_skin.xml.h:482 plugins_wins3_skin.xml.h:4
+#: skins_wins3_skin.xml.h:4
 msgid ""
 msgstr ""
 
@@ -5754,4 +5757,8 @@ msgstr ""
 
 #: skin_default_skin.xml.h:166
 msgid "DNS Name"
+msgstr ""
+
+#: plugins_wins3_skin.xml.h:2 skins_wins3_skin.xml.h:2
+msgid "NEW"
 msgstr ""
