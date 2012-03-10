@@ -46,7 +46,7 @@ struct transponder* satsystemdesc(unsigned char* buf, unsigned long transportid,
 
 	rolloff = (buf[8] >> 4) & 0x03; //alpha_0_35, alpha_0_25, alpha_0_20, alpha_auto
 	system = (buf[8] >> 2) & 0x01; //1=DVB_S2
-	modulation = (buf[8]) & 0x03; //1=QPSK, 2=M8PSK
+	modulation = (buf[8]) & 0x03; //1=QPSK, 2=8PSK
 
 	symbolrate = (
 		((buf[9] >> 4) * 100000000) +
@@ -364,69 +364,88 @@ unsigned long findtransponderid(unsigned char *buf)
 
 void blindscan()
 {
-	int festatus = 0, i = 0;
+	int festatus = 0, round = 0;
 	unsigned long transponderid = 0;
 	unsigned char* buf = NULL;
 	struct dvbdev* fenode = NULL;
 	struct transponder* tpnode = NULL;
 
+	int frequency = 0, polarization = 0, modulation = 0, system = 0;
+
 	if(scaninfo.fenode == NULL) return;
 
-	for(i = 0; i < 10; i++)
+	for(frequency = 0; frequency < 10; frequency += 20000)
 	{
-		//tpnode = createtransponder(99, fenode->feinfo->type, orbitalpos, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, system);
 
-		if(tpnode != NULL)
-        	{
+		for(round = 0; round < 10; round++)
+		{
 
-			fenode = fegetfree(tpnode, 0, scaninfo.fenode);
-			if(fenode == NULL )
+			switch(round)
 			{
-				debug(500, "Frontend for scan not free");
-				continue;
+				case 0:
+					polarization = 0;
+					//modulation = QPSK; system = 0;
+					break;
+				case 1:
+					polarization = 0;
+					//modulation = 8PSK; system = 0;
+					break;
 			}
 
-			//frontend tune
-			if(fenode->feinfo->type == FE_QPSK)
-			{
-				feset(fenode, tpnode);
-				fetunedvbs(fenode, tpnode);
-			}
-			else if(fenode->feinfo->type == FE_QAM)
-				fetunedvbc(fenode, tpnode);
-			else if(fenode->feinfo->type == FE_OFDM)
-				fetunedvbt(fenode, tpnode);
-			else
-			{
-				debug(500, "Frontend type unknown");
-				continue;
-			}
+			//tpnode = createtransponder(99, scaninfo.fenode->feinfo->type, orbitalpos, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, system);
 
-			festatus = fewait(fenode);
-			if(debug_level == 200) fereadstatus(fenode);
-			if(festatus != 0)
+			if(tpnode != NULL)
 			{
-				debug(500, "tuning failed");
-				continue;
-			}
 
-			buf = dvbgetsdt(fenode, 0, scaninfo.timeout);
-			transponderid = findtransponderid(buf);
-			free(buf); buf = NULL;
+				fenode = fegetfree(tpnode, 0, scaninfo.fenode);
+				if(fenode == NULL )
+				{
+					debug(500, "Frontend for scan not free");
+					continue;
+				}
 
-			if(transponderid == 0 || gettransponder(transponderid) != NULL)
-			{
-				deltransponder(99);
-				continue;
-			}
+				//frontend tune
+				if(fenode->feinfo->type == FE_QPSK)
+				{
+					feset(fenode, tpnode);
+					fetunedvbs(fenode, tpnode);
+				}
+				else if(fenode->feinfo->type == FE_QAM)
+					fetunedvbc(fenode, tpnode);
+				else if(fenode->feinfo->type == FE_OFDM)
+					fetunedvbt(fenode, tpnode);
+				else
+				{
+					debug(500, "Frontend type unknown");
+					continue;
+				}
 
-			if(tpnode->id != transponderid)
-			{
-				tpnode->id = transponderid;
-				status.writetransponder = 1;
+				festatus = fewait(fenode);
+				if(debug_level == 200) fereadstatus(fenode);
+				if(festatus != 0)
+				{
+					debug(500, "tuning failed");
+					continue;
+				}
+
+				buf = dvbgetsdt(fenode, 0, scaninfo.timeout);
+				transponderid = findtransponderid(buf);
+				free(buf); buf = NULL;
+
+				if(transponderid == 0 || gettransponder(transponderid) != NULL)
+				{
+					deltransponder(99);
+					continue;
+				}
+
+				if(tpnode->id != transponderid)
+				{
+					tpnode->id = transponderid;
+					status.writetransponder = 1;
+				}
 			}
+			deltransponder(99);
 		}
-		deltransponder(99);
 	}
 }
 
@@ -470,7 +489,7 @@ void doscan(struct stimerthread* timernode)
 			scaninfo.orbitalpos = satnode->orbitalpos;
 		}
 
-		//blindscan();
+		//if(scaninfo.blindscan == 1) blindscan();
 		
 		nitscan = 1;
 		//transponder loop
@@ -683,7 +702,7 @@ void scansetmultisat(struct skin* scan)
 	}
 }
 
-void screenscan(struct transponder* transpondernode, struct skin* mscan, char* tuner, int scantype, int orbitalpos, int frequency, int inversion, int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int networkscan, int onlyfree, int clear, int system, int timeout)
+void screenscan(struct transponder* transpondernode, struct skin* mscan, char* tuner, int scantype, int orbitalpos, int frequency, int inversion, int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int networkscan, int onlyfree, int clear, int blindscan, int system, int timeout)
 {
 	int rcret = 0, tpmax = 0, i = 0, alladded = 0;
 	struct skin* scan = getscreen("scan");
@@ -808,6 +827,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	scaninfo.orbitalpos = orbitalpos;
 	scaninfo.onlyfree = onlyfree;
 	scaninfo.networkscan = networkscan;
+	scaninfo.blindscan = blindscan;
 	scaninfo.clear = clear;
 	scaninfo.tpmax = tpmax;
 	timernode = addtimer(&doscan, START, 1000, 1, NULL, NULL, NULL);
@@ -1010,8 +1030,8 @@ void screenscanconfig(int flag)
 	int rcret = 0;
 	int iscantype = -1, isat = -1, ifrequency = -1;
 	int iinversion = -1, isymbolrate = -1, ipolarization = -1;
-	int ifec = -1, imodulation = -1, irolloff = -1, ipilot = -1;
-	int isystem = -1, inetworkscan = -1, ionlyfree = -1, iclear = -1;
+	int ifec = -1, imodulation = -1, irolloff = -1, ipilot = -1, isystem = -1;
+	int inetworkscan = -1, ionlyfree = -1, iclear = -1, iblindscan = -1;
 	int i = 0, treffer = 0, tunercount = 0;
 	struct skin* scan = getscreen("manualscan");
 	struct skin* listbox = getscreennode(scan, "listbox");
@@ -1030,6 +1050,7 @@ void screenscanconfig(int flag)
 	struct skin* networkscan = getscreennode(scan, "networkscan");
 	struct skin* clear = getscreennode(scan, "clear");
 	struct skin* onlyfree = getscreennode(scan, "onlyfree");
+	struct skin* blindscan = getscreennode(scan, "blindscan");
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *tmpnr = NULL, *feshortname = NULL;
 	struct transponder* tpnode = NULL;
@@ -1269,6 +1290,10 @@ void screenscanconfig(int flag)
 	addchoicebox(onlyfree, "0", _("no"));
 	addchoicebox(onlyfree, "1", _("yes"));
 
+	//blindscan
+	addchoicebox(blindscan, "0", _("no"));
+	addchoicebox(blindscan, "1", _("yes"));
+
 	drawscreen(scan, 0);
 	addscreenrc(scan, listbox);
 
@@ -1293,6 +1318,7 @@ void screenscanconfig(int flag)
 		if(networkscan->ret != NULL) inetworkscan = atoi(networkscan->ret);
 		if(onlyfree->ret != NULL) ionlyfree = atoi(onlyfree->ret);
 		if(clear->ret != NULL) iclear = atoi(clear->ret);
+		if(blindscan->ret != NULL) iblindscan = atoi(blindscan->ret);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(listbox->select != NULL && ostrcmp(listbox->select->name, "tuner") == 0)
@@ -1310,7 +1336,7 @@ void screenscanconfig(int flag)
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			clearscreen(scan);
-			screenscan(tpnode, scan->child, tuner->ret, iscantype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, inetworkscan, ionlyfree, iclear, isystem, 5000000);
+			screenscan(tpnode, scan->child, tuner->ret, iscantype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, inetworkscan, ionlyfree, iclear, iblindscan, isystem, 5000000);
 			drawscreen(scan, 0);
 		}
 		if(rcret == getrcconfigint("rcok", NULL) && tpnode != NULL && iscantype == 0)
