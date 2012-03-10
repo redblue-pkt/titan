@@ -82,5 +82,6 @@ compile "lcdpearl1" "lcdpearl1" ""
 compile "callmonitor1" "callmonitor1" ""
 compile "stopifnotused" "stopifnotused" ""
 compile "tithek" "tithek" ""
+compile "wins3" "wins3" ""
 
 #rm -r networkbrowser/networkbrowser

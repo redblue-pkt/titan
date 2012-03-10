@@ -21,7 +21,7 @@ void init(void)
 
 	mkdir("/tmp/tithek", 777);
 	pluginaktiv = 1;
-	debug(10, "TiThek Info Plugin loadet !!!");
+	debug(10, "TiThek Plugin loadet !!!");
 }
 
 //wird beim entladen ausgefuehrt
