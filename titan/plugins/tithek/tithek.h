@@ -465,7 +465,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 					{
 						char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
 						tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, 1);
+						if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, NULL, NULL, 1);
 						tmpstr2 = changefilenameext(((struct tithek*)tmp->handle)->localname, ".mp4");
 						free(tmpstr); tmpstr = NULL;
 							
@@ -507,7 +507,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 					{
 						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
 						char* tmpstr1 = NULL;
-						if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, 1);
+						if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, NULL, NULL, 1);
 						free(tmpstr); tmpstr = NULL;
 							
 						if(tmpstr1 != NULL)
@@ -522,13 +522,21 @@ void screentithekplay(char* titheklink, char* title, int first)
 					else
 						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);			
 				}
-				else if(((struct tithek*)listbox->select->handle)->flag == 5)
+				else if((((struct tithek*)listbox->select->handle)->flag == 5) || (((struct tithek*)listbox->select->handle)->flag == 6) || (((struct tithek*)listbox->select->handle)->flag == 7) || (((struct tithek*)listbox->select->handle)->flag == 8))
 				{
 					if(status.security == 1)
 					{
 						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
 						char* tmpstr1 = NULL;
-						if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, 2);
+						if(((struct tithek*)listbox->select->handle)->flag == 5)
+							if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, "http://rtl2now.rtl2.de", "rtl2now", 2);
+						else if(((struct tithek*)listbox->select->handle)->flag == 6)
+							if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, "http://www.superrtlnow.de", "superrtlnow", 2);
+						else if(((struct tithek*)listbox->select->handle)->flag == 7)
+							if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, "http://rtl-now.rtl.de", "rtlnow", 2);
+						else if(((struct tithek*)listbox->select->handle)->flag == 8)
+							if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, "http://www.voxnow.de", "voxnow", 2);
+	
 						free(tmpstr); tmpstr = NULL;
 							
 						if(tmpstr1 != NULL)
@@ -586,7 +594,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 // flag 1 = youtube streamlink
 // flag 2 = rtlnow streamlinksrc
 // flag 3 = rtlnow streamlink
-char* getstreamurl(char* link, int flag)
+char* getstreamurl(char* link, char* url, char* name, int flag)
 {
 	debug(99, "link(%d): %s", flag, link);
 	char* ip = NULL, *pos = NULL, *path = NULL;
@@ -644,10 +652,10 @@ char* getstreamurl(char* link, int flag)
 		char* tmpstr_tmp = NULL;
 		tmpstr_tmp = ostrcat(tmpstr_tmp, tmpstr, 1, 0);
 		htmldecode(tmpstr,tmpstr_tmp);
-		streamurl = ostrcat("http://rtl2now.rtl2.de", tmpstr, 0, 0);
+		streamurl = ostrcat(url, tmpstr, 0, 0);
 		free(tmpstr), tmpstr = NULL;
 		debug(99, "streamurl: %s", streamurl);
-		streamurl = getstreamurl(streamurl, 3);
+		streamurl = getstreamurl(streamurl, url, name, 3);
 	}		
 	else if(flag == 3)
 	{
@@ -688,9 +696,15 @@ char* getstreamurl(char* link, int flag)
 
 		streamurl = ostrcat(link, " swfVfy=1 playpath=mp4:", 0, 0);
 		streamurl = ostrcat(streamurl, path, 1, 0);
-		streamurl = ostrcat(streamurl, " app=rtl2now/_definst_ pageUrl=http://rtl2now.rtl2.de/p/ tcUrl=", 1, 0);
+		streamurl = ostrcat(streamurl, " app=", 1, 0);
+		streamurl = ostrcat(streamurl, name, 1, 0);
+		streamurl = ostrcat(streamurl, "/_definst_ pageUrl=", 1, 0);
+		streamurl = ostrcat(streamurl, url, 1, 0);
+		streamurl = ostrcat(streamurl, "/p/ tcUrl=", 1, 0);
 		streamurl = ostrcat(streamurl, link, 1, 0);
-		streamurl = ostrcat(streamurl, " swfUrl=http://rtl2now.rtl2.de/includes/vodplayer.swf", 1, 0);
+		streamurl = ostrcat(streamurl, " swfUrl=", 1, 0);
+		streamurl = ostrcat(streamurl, url, 1, 0);
+		streamurl = ostrcat(streamurl, "/includes/vodplayer.swf", 1, 0);		
 
 		if(link != NULL)
 			free(link), link = NULL;
