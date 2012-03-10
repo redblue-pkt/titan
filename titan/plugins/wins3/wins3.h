@@ -16,7 +16,7 @@ void wins3new(struct skin* wins3)
 
 void wins3changetitle(struct skin* wins3, int player)
 {
-	char* title = "3 WINS Player ";
+	char* title = "3 WINS - Player ";
 	char* tmpstr = NULL, *tmpnr = NULL;
 
 	tmpnr = oitoa(player);
