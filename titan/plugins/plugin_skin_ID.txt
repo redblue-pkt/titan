@@ -9,5 +9,6 @@ mc: 101
 networkbrowser: 100
 panel: 107
 tithek: 195
+wins3: 196
 TopfieldVFD: ---
 browser: ---
