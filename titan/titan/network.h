@@ -567,6 +567,7 @@ void screennetwork_wlan()
 	struct skin* b3 = getscreennode(wlan, "b3");
 	struct skin* b4 = getscreennode(wlan, "b4");
 	struct skin* b5 = getscreennode(wlan, "b5");
+	struct skin* b6 = getscreennode(wlan, "b6");
 	struct skin* tmp = NULL, *tmp1 = NULL, *tmp2 = NULL;
 	char* tmpstr = NULL;
 
@@ -615,6 +616,7 @@ void screennetwork_wlan()
 				b3->hidden = NO;
 				b4->hidden = NO;
 				b5->hidden = NO;
+				b6->hidden = NO;
 				listbox->select = NULL;
 				listbox->aktline = 1;
 				listbox->aktpage = -1;
@@ -647,6 +649,7 @@ void screennetwork_wlan()
 				b3->hidden = NO;
 				b4->hidden = NO;
 				b5->hidden = NO;
+				b6->hidden = NO;
 				listbox->select = NULL;
 				listbox->aktline = 1;
 				listbox->aktpage = -1;
@@ -673,7 +676,7 @@ void screennetwork_wlan()
 			}
 		}
 
-		if(rcret == getrcconfigint("rcred", NULL))
+		if(rcret == getrcconfigint("rcred", NULL) && scan == 0)
 		{
 			tmp1 = NULL;
 			scan = 1;
@@ -684,6 +687,7 @@ void screennetwork_wlan()
 			b3->hidden = YES;
 			b4->hidden = YES;
 			b5->hidden = YES;
+			b6->hidden = YES;
 			listbox->select = NULL;
 			listbox->aktline = 1;
 			listbox->aktpage = -1;
@@ -715,14 +719,14 @@ void screennetwork_wlan()
 			drawscreen(wlan, 0);
 		}
 
-		if(rcret == getrcconfigint("rcyellow", NULL))
+		if(rcret == getrcconfigint("rcyellow", NULL) && scan == 0)
 		{
 			system("killall wpa_supplicant; sleep 2; killall -9 wpa_supplicant");
 			textbox(_("Message"), _("WLAN now stopped"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 			drawscreen(wlan, 0);
 		}
 		
-		if(rcret == getrcconfigint("rcblue", NULL))
+		if(rcret == getrcconfigint("rcblue", NULL) && scan == 0)
 		{
 			tmpstr = readfiletomem("/tmp/wlan.log", 0);
 			textbox(_("WLAN LOG"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 800, 0, 0);
