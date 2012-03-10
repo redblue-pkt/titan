@@ -1,0 +1,15 @@
+<screen fontcol=fontcol bgcol=bgcol titlealign=center name="wins3" valign=bottom hspace=30 vspace=30 fontsize=30 posx=center posy=center width=670 height=500 bgcol=bgcol bordercol=bordercol bordersize=2>
+<node type=grid name=grid fontsize=25 posx=0 posy=1 width=100% height=-35 bordercol=bordercol bordersize=0 scrollbar=no>
+<node type=gridbr parent=grid bgspace=6 bgcol=green fontsize=80  posx=0 width=200 height=100 halign=center valign=middle>
+<node parent=grid bgspace=6 bgcol=green fontsize=80 posx=200 width=200 height=100 halign=center valign=middle>
+<node parent=grid bgspace=6 bgcol=green fontsize=80 posx=400 width=200 height=100 halign=center valign=middle>
+<node type=gridbr bgspace=6 bgcol=green fontsize=80 parent=grid posx=0 width=200 height=100 halign=center valign=middle>
+<node parent=grid bgspace=6 bgcol=green fontsize=80 posx=200 width=200 height=100 halign=center valign=middle>
+<node parent=grid bgspace=6 bgcol=green fontsize=80 posx=400 width=200 height=100 halign=center valign=middle>
+<node type=gridbr bgspace=6 bgcol=green fontsize=80 parent=grid posx=0 width=200 height=100 halign=center valign=middle>
+<node parent=grid bgspace=6 bgcol=green fontsize=80 posx=200 width=200 height=100 halign=center valign=middle>
+<node parent=grid bgspace=6 bgcol=green fontsize=80 posx=400 width=200 height=100 halign=center valign=middle>
+<node name=b1 text="OK" halign=center valign=middle posx=20 posy=0 width=150 height=30 bordercol=okcol bordersize=4 bordertype=2>
+<node name=b2 text="EXIT" halign=center valign=middle posx=190 posy=0 width=150 height=30 bordercol=exitcol bordersize=4 bordertype=2>
+<node name=b3 text="NEW" halign=center valign=middle posx=360 posy=0 width=150 height=30 bordercol=red bordersize=4 bordertype=2>
+</screen>
