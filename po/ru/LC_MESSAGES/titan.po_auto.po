@@ -358,7 +358,7 @@ msgstr ""
 #: networkbrowser.h:1267 network.h:671 network.h:720 scan.h:882 scan.h:892
 #: scan.h:903 scan.h:1043 scan.h:1115 scan.h:1321 network.h:721 scan.h:902
 #: scan.h:912 scan.h:923 scan.h:1064 scan.h:1136 scan.h:1347 network.h:672
-#: network.h:674 network.h:725
+#: network.h:674 network.h:725 tithek.h:548 tithek.h:552
 msgid "Message"
 msgstr ""
 
@@ -427,7 +427,7 @@ msgstr ""
 #: scan.h:1321 network.h:721 plugins_wins3_skin.xml.h:3
 #: skins_wins3_skin.xml.h:3 scan.h:902 scan.h:923 scan.h:1064 scan.h:1136
 #: scan.h:1347 skin_default_skin.xml.h:286 network.h:728 network.h:672
-#: network.h:674 network.h:725 network.h:732
+#: network.h:674 network.h:725 network.h:732 tithek.h:548 tithek.h:552
 msgid "OK"
 msgstr ""
 
@@ -494,7 +494,7 @@ msgstr ""
 #: scan.h:1321 network.h:721 plugins_wins3_skin.xml.h:1
 #: skins_wins3_skin.xml.h:1 scan.h:902 scan.h:923 scan.h:1064 scan.h:1136
 #: scan.h:1347 skin_default_skin.xml.h:189 network.h:728 network.h:672
-#: network.h:674 network.h:725 network.h:732
+#: network.h:674 network.h:725 network.h:732 tithek.h:548 tithek.h:552
 msgid "EXIT"
 msgstr ""
 
@@ -1149,6 +1149,7 @@ msgstr ""
 #: mc_internetbrowser.h:32 tithek.h:468 tithek.h:485 tithek.h:455 tithek.h:477
 #: tithek.h:495 tithek.h:516 tithek.h:460 tithek.h:482 tithek.h:500
 #: tithek.h:521 tithek.h:484 tithek.h:502 tithek.h:523 tithek.h:544
+#: tithek.h:552
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
@@ -5654,12 +5655,12 @@ msgid "File exist, overwrite?"
 msgstr ""
 
 #: tithek.h:464 tithek.h:481 tithek.h:491 tithek.h:508 tithek.h:496
-#: tithek.h:513 tithek.h:498 tithek.h:515 tithek.h:536
+#: tithek.h:513 tithek.h:498 tithek.h:515 tithek.h:536 tithek.h:544
 msgid "Start playback"
 msgstr ""
 
 #: tithek.h:488 tithek.h:473 tithek.h:512 tithek.h:478 tithek.h:517
-#: tithek.h:479 tithek.h:519 tithek.h:540
+#: tithek.h:479 tithek.h:519 tithek.h:540 tithek.h:548
 msgid "Can't get Streamurl !"
 msgstr ""
 
