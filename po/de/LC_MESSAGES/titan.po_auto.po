@@ -32,7 +32,7 @@
 #: networkbrowser.h:496 networkbrowser.h:524 inadyn.h:110 network.h:554
 #: network.h:578 networkbrowser.h:500 networkbrowser.h:504
 #: networkbrowser.h:532 scan.h:972 scan.h:1261 scan.h:1265 scan.h:1269
-#: scan.h:992 scan.h:1282 scan.h:1286 scan.h:1290 scan.h:1294
+#: scan.h:992 scan.h:1282 scan.h:1286 scan.h:1290 scan.h:1294 network.h:579
 msgid "no"
 msgstr ""
 
@@ -77,7 +77,7 @@ msgstr ""
 #: networkbrowser.h:525 inadyn.h:109 network.h:553 network.h:577
 #: networkbrowser.h:501 networkbrowser.h:505 networkbrowser.h:533 scan.h:973
 #: scan.h:1262 scan.h:1266 scan.h:1270 scan.h:993 scan.h:1283 scan.h:1287
-#: scan.h:1291 scan.h:1295
+#: scan.h:1291 scan.h:1295 network.h:578
 msgid "yes"
 msgstr ""
 
@@ -357,7 +357,8 @@ msgstr ""
 #: networkbrowser.h:93 networkbrowser.h:1016 networkbrowser.h:1251
 #: networkbrowser.h:1267 network.h:671 network.h:720 scan.h:882 scan.h:892
 #: scan.h:903 scan.h:1043 scan.h:1115 scan.h:1321 network.h:721 scan.h:902
-#: scan.h:912 scan.h:923 scan.h:1064 scan.h:1136 scan.h:1347
+#: scan.h:912 scan.h:923 scan.h:1064 scan.h:1136 scan.h:1347 network.h:672
+#: network.h:674 network.h:725
 msgid "Message"
 msgstr ""
 
@@ -425,7 +426,8 @@ msgstr ""
 #: network.h:671 network.h:720 scan.h:882 scan.h:903 scan.h:1043 scan.h:1115
 #: scan.h:1321 network.h:721 plugins_wins3_skin.xml.h:3
 #: skins_wins3_skin.xml.h:3 scan.h:902 scan.h:923 scan.h:1064 scan.h:1136
-#: scan.h:1347 skin_default_skin.xml.h:286 network.h:728
+#: scan.h:1347 skin_default_skin.xml.h:286 network.h:728 network.h:672
+#: network.h:674 network.h:725 network.h:732
 msgid "OK"
 msgstr ""
 
@@ -491,7 +493,8 @@ msgstr ""
 #: network.h:671 network.h:720 scan.h:882 scan.h:903 scan.h:1043 scan.h:1115
 #: scan.h:1321 network.h:721 plugins_wins3_skin.xml.h:1
 #: skins_wins3_skin.xml.h:1 scan.h:902 scan.h:923 scan.h:1064 scan.h:1136
-#: scan.h:1347 skin_default_skin.xml.h:189 network.h:728
+#: scan.h:1347 skin_default_skin.xml.h:189 network.h:728 network.h:672
+#: network.h:674 network.h:725 network.h:732
 msgid "EXIT"
 msgstr ""
 
@@ -1459,14 +1462,17 @@ msgid "no keycode"
 msgstr ""
 
 #: network.h:469 network.h:474 network.h:556 network.h:561 network.h:585
+#: network.h:586
 msgid "WEP"
 msgstr ""
 
 #: network.h:470 network.h:475 network.h:557 network.h:562 network.h:586
+#: network.h:587
 msgid "WPA"
 msgstr ""
 
 #: network.h:471 network.h:476 network.h:558 network.h:563 network.h:587
+#: network.h:588
 msgid "WPA2"
 msgstr ""
 
@@ -5823,28 +5829,31 @@ msgstr ""
 msgid "TITLE"
 msgstr ""
 
-#: network.h:473 network.h:555 network.h:560 network.h:584
+#: network.h:473 network.h:555 network.h:560 network.h:584 network.h:585
 msgid "NONE"
 msgstr ""
 
 #: network.h:554 network.h:637 network.h:643 network.h:667 network.h:669
+#: network.h:672
 msgid ""
 "WLAN started.\n"
 " You can now configure the new interface."
 msgstr ""
 
 #: network.h:556 network.h:639 network.h:645 network.h:669 network.h:671
+#: network.h:674
 msgid ""
 "WLAN not started,\n"
 "Please check your config."
 msgstr ""
 
 #: network.h:576 network.h:659 network.h:665 network.h:689 network.h:692
+#: network.h:696
 msgid "searching..."
 msgstr ""
 
 #: network.h:604 network.h:687 network.h:693 network.h:717 network.h:720
-#: network.h:721
+#: network.h:721 network.h:725
 msgid "WLAN now stopped"
 msgstr ""
 
@@ -5910,6 +5919,6 @@ msgstr ""
 msgid "Blindscan"
 msgstr ""
 
-#: network.h:728
+#: network.h:728 network.h:732
 msgid "WLAN LOG"
 msgstr ""
