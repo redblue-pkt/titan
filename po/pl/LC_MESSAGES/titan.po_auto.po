@@ -425,7 +425,7 @@ msgstr ""
 #: network.h:671 network.h:720 scan.h:882 scan.h:903 scan.h:1043 scan.h:1115
 #: scan.h:1321 network.h:721 plugins_wins3_skin.xml.h:3
 #: skins_wins3_skin.xml.h:3 scan.h:902 scan.h:923 scan.h:1064 scan.h:1136
-#: scan.h:1347 skin_default_skin.xml.h:286
+#: scan.h:1347 skin_default_skin.xml.h:286 network.h:728
 msgid "OK"
 msgstr ""
 
@@ -491,7 +491,7 @@ msgstr ""
 #: network.h:671 network.h:720 scan.h:882 scan.h:903 scan.h:1043 scan.h:1115
 #: scan.h:1321 network.h:721 plugins_wins3_skin.xml.h:1
 #: skins_wins3_skin.xml.h:1 scan.h:902 scan.h:923 scan.h:1064 scan.h:1136
-#: scan.h:1347 skin_default_skin.xml.h:189
+#: scan.h:1347 skin_default_skin.xml.h:189 network.h:728
 msgid "EXIT"
 msgstr ""
 
@@ -5908,4 +5908,8 @@ msgstr ""
 
 #: skin_default_skin.xml.h:134
 msgid "Blindscan"
+msgstr ""
+
+#: network.h:728
+msgid "WLAN LOG"
 msgstr ""
