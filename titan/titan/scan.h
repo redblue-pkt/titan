@@ -370,81 +370,106 @@ void blindscan()
 	struct dvbdev* fenode = NULL;
 	struct transponder* tpnode = NULL;
 
-	int frequency = 0, polarization = 0, modulation = 0, system = 0;
+	int frequency = 0, symbolrate = 0, polarization = 0, modulation = 0, system = 0;
 
 	if(scaninfo.fenode == NULL) return;
 
-	for(frequency = 0; frequency < 10; frequency += 20000)
+	for(frequency = 950000; frequency < 1450000; frequency += 20000)
 	{
 
-		for(round = 0; round < 10; round++)
+		int csymbolrate = 0;
+		for(csymbolrate = 0; csymbolrate < 1; csymbolrate++)
 		{
-
-			switch(round)
+			switch(csymbolrate)
 			{
 				case 0:
-					polarization = 0;
-					//modulation = QPSK; system = 0;
+					symbolrate = 22000000;
 					break;
 				case 1:
-					polarization = 0;
-					//modulation = 8PSK; system = 0;
+					symbolrate = 27500000;
 					break;
 			}
 
-			//tpnode = createtransponder(99, scaninfo.fenode->feinfo->type, orbitalpos, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, system);
-
-			if(tpnode != NULL)
+			for(modulation = 0; modulation < 2; modulation++)
 			{
 
-				fenode = fegetfree(tpnode, 0, scaninfo.fenode);
-				if(fenode == NULL )
+				int cpolarization = 0;
+				for(cpolarization = 0; cpolarization < 1; cpolarization++)
 				{
-					debug(500, "Frontend for scan not free");
-					continue;
-				}
+					switch(cpolarization)
+					{
+						case 0:
+							polarization = SEC_VOLTAGE_13; 
+							break;
+						case 1:
+							polarization = SEC_VOLTAGE_18;
+							break;
+					}
 
-				//frontend tune
-				if(fenode->feinfo->type == FE_QPSK)
-				{
-					feset(fenode, tpnode);
-					fetunedvbs(fenode, tpnode);
-				}
-				else if(fenode->feinfo->type == FE_QAM)
-					fetunedvbc(fenode, tpnode);
-				else if(fenode->feinfo->type == FE_OFDM)
-					fetunedvbt(fenode, tpnode);
-				else
-				{
-					debug(500, "Frontend type unknown");
-					continue;
-				}
+					for(system = 0; system < 1; system++)
+					{
 
-				festatus = fewait(fenode);
-				if(debug_level == 200) fereadstatus(fenode);
-				if(festatus != 0)
-				{
-					debug(500, "tuning failed");
-					continue;
-				}
+						tpnode = createtransponder(99, scaninfo.fenode->feinfo->type, scaninfo.orbitalpos, frequency, INVERSION_AUTO, symbolrate, polarization, FEC_AUTO, modulation, 0, 0, system);
 
-				buf = dvbgetsdt(fenode, 0, scaninfo.timeout);
-				transponderid = findtransponderid(buf);
-				free(buf); buf = NULL;
+						debug(500, "blindscan: frequ=%d, sr=%d, modulation=%d, system=%d, orbitalpos=%d", frequency, symbolrate, modulation, system, scaninfo.orbitalpos);
 
-				if(transponderid == 0 || gettransponder(transponderid) != NULL)
-				{
-					deltransponder(99);
-					continue;
-				}
+						if(tpnode != NULL)
+						{
 
-				if(tpnode->id != transponderid)
-				{
-					tpnode->id = transponderid;
-					status.writetransponder = 1;
+							fenode = fegetfree(tpnode, 0, scaninfo.fenode);
+							if(fenode == NULL )
+							{
+								debug(500, "Frontend for scan not free");
+								deltransponder(99);
+								continue;
+							}
+
+							//frontend tune
+							if(fenode->feinfo->type == FE_QPSK)
+							{
+								feset(fenode, tpnode);
+								fetunedvbs(fenode, tpnode);
+							}
+							else if(fenode->feinfo->type == FE_QAM)
+								fetunedvbc(fenode, tpnode);
+							else if(fenode->feinfo->type == FE_OFDM)
+								fetunedvbt(fenode, tpnode);
+							else
+							{
+								debug(500, "Frontend type unknown");
+								deltransponder(99);
+								continue;
+							}
+
+							festatus = fewait(fenode);
+							if(debug_level == 200) fereadstatus(fenode);
+							if(festatus != 0)
+							{
+								debug(500, "tuning failed");
+								deltransponder(99);
+								continue;
+							}
+
+							buf = dvbgetsdt(fenode, 0, scaninfo.timeout);
+							transponderid = findtransponderid(buf);
+							free(buf); buf = NULL;
+
+							if(transponderid == 0 || gettransponder(transponderid) != NULL)
+							{
+								deltransponder(99);
+								continue;
+							}
+
+							if(tpnode->id != transponderid)
+							{
+								tpnode->id = transponderid;
+								status.writetransponder = 1;
+							}
+						}
+						deltransponder(99);
+					}
 				}
 			}
-			deltransponder(99);
 		}
 	}
 }
