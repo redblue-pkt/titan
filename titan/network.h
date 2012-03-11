@@ -575,8 +575,8 @@ void screennetwork_wlan()
 
 	readwlan("/var/etc/wpa_supplicant.conf", &wtype, &wssid, &wkey);
 
-	addchoicebox(startmode, "y", _("yes"));
 	addchoicebox(startmode, "n", _("no"));
+	addchoicebox(startmode, "y", _("yes"));
 	setchoiceboxselection(startmode, getownconfig("wlan"));
 
 	changeinput(ssid, wssid);

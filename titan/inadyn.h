@@ -106,8 +106,8 @@ void screennetwork_inadyn()
 
 	readinadyn("/var/etc/inadyn.conf", &iuser, &ipw, &ihost);
 	
-	addchoicebox(startmode, "y", _("yes"));
 	addchoicebox(startmode, "n", _("no"));
+	addchoicebox(startmode, "y", _("yes"));
 	setchoiceboxselection(startmode, getownconfig("inadyn"));
 
 	changeinput(user, iuser);
