@@ -317,7 +317,6 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	int gridbr = 0, posx = 0, count = 0, sumcount = 0;
 	struct skin* tmp = NULL;
 	char* tithekfile = NULL;
-	char* tithekpic = NULL;
 	char* tmpstr = NULL;
 
 	tithekfile = tithekdownload(titheklink, NULL, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 0);
@@ -528,14 +527,23 @@ void screentithekplay(char* titheklink, char* title, int first)
 					{
 						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
 						char* tmpstr1 = NULL;
+						
 						if(((struct tithek*)listbox->select->handle)->flag == 5)
+						{
 							if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, "http://rtl2now.rtl2.de", "rtl2now", 2);
+						}
 						else if(((struct tithek*)listbox->select->handle)->flag == 6)
+						{
 							if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, "http://www.superrtlnow.de", "superrtlnow", 2);
+						}
 						else if(((struct tithek*)listbox->select->handle)->flag == 7)
+						{
 							if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, "http://rtl-now.rtl.de", "rtlnow", 2);
+						}
 						else if(((struct tithek*)listbox->select->handle)->flag == 8)
+						{
 							if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, "http://www.voxnow.de", "voxnow", 2);
+						}
 	
 						free(tmpstr); tmpstr = NULL;
 							
