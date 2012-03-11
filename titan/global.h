@@ -251,7 +251,7 @@ void getserial()
 	msg = ostrcat(msg, cpuout, 1, 0);
 	msg = ostrcat(msg, "\n\n", 1, 0);
 	msg = ostrcat(msg, _("Email  		info@atemio.de"), 1, 0);
-	textbox(_("Info"), _(msg), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 400, 0, 0);	
+	textbox(_("Info"), _(msg), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 400, 0, 1);	
 	free(msg), msg = NULL;
 
 	if(status.security == 0)
