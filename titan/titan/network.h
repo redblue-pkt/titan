@@ -50,27 +50,36 @@ int readwlan(const char* filename, char** type, char** ssid, char** key)
 		if(tmpstr != NULL)
 		{
 			tmpstr += 6;
-			tmpstr[strlen(tmpstr) -1] = '\0';
-			free(*ssid); *ssid = NULL;
-			*ssid = ostrcat(tmpstr, NULL, 0, 0);
+			if(tmpstr != NULL)
+			{
+				tmpstr[strlen(tmpstr) -1] = '\0';
+				free(*ssid); *ssid = NULL;
+				*ssid = ostrcat(tmpstr, NULL, 0, 0);
+			}				
 		}
 		tmpstr = ostrstrcase(fileline, "psk=\"");
 		if(tmpstr != NULL)
 		{
 			tmpstr += 5;
-			tmpstr[strlen(tmpstr) -1] = '\0';
-			free(*key); *key = NULL;
-			*key = ostrcat(tmpstr, NULL, 0, 0);
+			if(tmpstr != NULL)
+			{
+				tmpstr[strlen(tmpstr) -1] = '\0';
+				free(*key); *key = NULL;
+				*key = ostrcat(tmpstr, NULL, 0, 0);
+			}				
 		}
 		tmpstr = ostrstrcase(fileline, "wep_key0=");
 		if(tmpstr != NULL)
 		{
 			tmpstr += 8;
-			tmpstr[strlen(tmpstr) -1] = '\0';
-			free(*key); *key = NULL;
-			*key = ostrcat(tmpstr, NULL, 0, 0);
-			free(type); type = NULL;
-			*type = ostrcat("1", NULL, 0, 0);
+			if(tmpstr != NULL)
+			{
+				tmpstr[strlen(tmpstr)] = '\0';
+				free(*key); *key = NULL;
+				*key = ostrcat(tmpstr, NULL, 0, 0);
+				free(type); type = NULL;
+				*type = ostrcat("1", NULL, 0, 0);
+			}				
 		}
 	}
 
