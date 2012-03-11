@@ -62,7 +62,7 @@ int readwlan(const char* filename, char** type, char** ssid, char** key)
 			free(*key); *key = NULL;
 			*key = ostrcat(tmpstr, NULL, 0, 0);
 		}
-		tmpstr = ostrstrcase(fileline, "wep_key=");
+		tmpstr = ostrstrcase(fileline, "wep_key0=");
 		if(tmpstr != NULL)
 		{
 			tmpstr += 8;
