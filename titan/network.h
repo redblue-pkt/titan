@@ -71,13 +71,13 @@ int readwlan(const char* filename, char** type, char** ssid, char** key)
 		tmpstr = ostrstrcase(fileline, "wep_key0=");
 		if(tmpstr != NULL)
 		{
-			tmpstr += 8;
+			tmpstr += 9;
 			if(tmpstr != NULL)
 			{
 				tmpstr[strlen(tmpstr)] = '\0';
 				free(*key); *key = NULL;
 				*key = ostrcat(tmpstr, NULL, 0, 0);
-				free(type); type = NULL;
+				free(*type); *type = NULL;
 				*type = ostrcat("1", NULL, 0, 0);
 			}				
 		}
