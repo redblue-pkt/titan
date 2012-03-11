@@ -362,9 +362,9 @@ unsigned long findtransponderid(unsigned char *buf)
 	return transponderid;
 }
 
-void blindscan()
+void blindscan(struct stimerthread* timernode)
 {
-	int festatus = 0, round = 0;
+	int festatus = 0;
 	unsigned long transponderid = 0;
 	unsigned char* buf = NULL;
 	struct dvbdev* fenode = NULL;
@@ -372,13 +372,28 @@ void blindscan()
 
 	int frequency = 0, symbolrate = 0, polarization = 0, modulation = 0, system = 0;
 
-	if(scaninfo.fenode == NULL) return;
+	int minfrequency = 950000, maxfrequency = 1450000, stepfrequency = 20000;
+	int minsymbolrate = 0, maxsymbolrate = 1, stepsymbolrate = 1;
+	int minmodulation = 0, maxmodulation = 2, stepmodulation = 1;
+	int minpolarization = 0, maxpolarization = 1, steppolarization = 1;
+	int minsystem = 0, maxsystem = 1, stepsystem = 1;
 
-	for(frequency = 950000; frequency < 1450000; frequency += 20000)
+	if(scaninfo.fenode == NULL || timernode == NULL) return;
+
+	int countfrequency = ((maxfrequency + stepfrequency) - minfrequency) / stepfrequency;
+	int countsymbolrate = ((maxsymbolrate + stepsymbolrate) - minsymbolrate) / stepsymbolrate;
+	int countmodulation = ((maxmodulation + stepmodulation) - minmodulation) / stepmodulation;
+	int countpolarization = ((maxpolarization + steppolarization) - minpolarization) / steppolarization;
+	int systemcount= ((maxsystem + stepsystem) - minsystem) / stepsystem;
+
+
+	scaninfo.blindmax += systemcount * countpolarization * countmodulation * countsymbolrate * countfrequency;
+
+	for(frequency = minfrequency; frequency <= maxfrequency; frequency += stepfrequency)
 	{
 
 		int csymbolrate = 0;
-		for(csymbolrate = 0; csymbolrate < 1; csymbolrate++)
+		for(csymbolrate = minsymbolrate; csymbolrate <= maxsymbolrate; csymbolrate += stepsymbolrate)
 		{
 			switch(csymbolrate)
 			{
@@ -390,11 +405,11 @@ void blindscan()
 					break;
 			}
 
-			for(modulation = 0; modulation < 2; modulation++)
+			for(modulation = minmodulation; modulation <= maxmodulation; modulation += stepmodulation)
 			{
 
 				int cpolarization = 0;
-				for(cpolarization = 0; cpolarization < 1; cpolarization++)
+				for(cpolarization = minpolarization; cpolarization <= maxpolarization; cpolarization += steppolarization)
 				{
 					switch(cpolarization)
 					{
@@ -406,8 +421,9 @@ void blindscan()
 							break;
 					}
 
-					for(system = 0; system < 1; system++)
+					for(system = minsystem; system <= maxsystem; system += stepsystem)
 					{
+						scaninfo.blindcount++;
 
 						tpnode = createtransponder(99, scaninfo.fenode->feinfo->type, scaninfo.orbitalpos, frequency, INVERSION_AUTO, symbolrate, polarization, FEC_AUTO, modulation, 0, 0, system);
 
@@ -462,15 +478,21 @@ void blindscan()
 
 							if(tpnode->id != transponderid)
 							{
+								scaninfo.newblindcount++;
 								tpnode->id = transponderid;
 								status.writetransponder = 1;
 							}
 						}
 						deltransponder(99);
+						if(timernode->aktion != START) break;
 					}
+					if(timernode->aktion != START) break;
 				}
+				if(timernode->aktion != START) break;
 			}
+			if(timernode->aktion != START) break;
 		}
+		if(timernode->aktion != START) break;
 	}
 }
 
@@ -514,7 +536,7 @@ void doscan(struct stimerthread* timernode)
 			scaninfo.orbitalpos = satnode->orbitalpos;
 		}
 
-		//if(scaninfo.blindscan == 1) blindscan();
+		if(scaninfo.blindscan == 1) blindscan(timernode);
 		
 		nitscan = 1;
 		//transponder loop
@@ -738,6 +760,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	struct skin* foundtv = getscreennode(scan, "foundtv");
 	struct skin* foundradio = getscreennode(scan, "foundradio");
 	struct skin* founddata = getscreennode(scan, "founddata");
+	struct skin* foundblind = getscreennode(scan, "foundblind");
 	struct skin* b2 = getscreennode(scan, "b2");
 	struct skin* b3 = getscreennode(scan, "b3");
 	struct transponder* tpnode = NULL;
@@ -895,6 +918,16 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 		tmpstr = ostrcat(tmpstr, " / ", 1, 0);
 		tmpstr = ostrcat(tmpstr, oitoa(scaninfo.datacount), 1, 1);
 		changetext(founddata, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		//blindcount
+		tmpstr = ostrcat(tmpstr, _("Blindscan: "), 1, 0);
+		tmpstr = ostrcat(tmpstr, oitoa(scaninfo.newblindcount), 1, 1);
+		tmpstr = ostrcat(tmpstr, " / ", 1, 0);
+		tmpstr = ostrcat(tmpstr, oitoa(scaninfo.blindcount), 1, 1);
+		tmpstr = ostrcat(tmpstr, " / ", 1, 0);
+		tmpstr = ostrcat(tmpstr, oitoa(scaninfo.blindmax), 1, 1);
+		changetext(foundblind, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 
 		if(scaninfo.tpmax == 0)
