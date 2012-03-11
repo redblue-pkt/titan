@@ -1,7 +1,7 @@
 #ifndef TEXTBOX_H
 #define TEXTBOX_H
 
-//flag 1: unused
+//flag 1: for barcode show
 //flag 2: enable wrap
 
 int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char* b3, int rc3, char* b4, int rc4, int width, int height, int timeout, int flag)
@@ -16,6 +16,28 @@ int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char*
 
 	if(pthread_self() != status.mainthread)
 		fromthread = 1;
+
+	//show barcode for cpuid
+	if(flag == 1)
+	{
+		struct skin* tmp = addscreennode(messagebox, NULL, NULL);
+		if(tmp != NULL)
+		{
+			char* tmpstr = NULL;
+			
+			tmpstr = ostrcat("*", getcpuid(), 0, 1);
+			tmpstr = ostrcat(tmpstr, "*", 1, 0);
+			changetext(tmp, tmpstr);
+			free(tmpstr); tmpstr = NULL;
+			tmp->fontsize = 40;
+			tmp->halign = RIGHT;
+			changefont(tmp, "free3of9x");
+			tmp->width = 100;
+			tmp->prozwidth = 1;
+			tmp->height = 40;
+			tmp->del = 1;
+		}
+	}
 
 	if(flag == 2)
 		textbox->wrap = YES;
@@ -107,6 +129,8 @@ int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char*
 		clearscreen(messagebox);
 		drawscreen(skin, 0);
 	}
+
+	if(flag == 1) delmarkedscreennodes(messagebox, 1);
 
 	debug(1000, "out");
 
