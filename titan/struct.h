@@ -245,6 +245,9 @@ struct scaninfo
 	int newradiocount;
 	int datacount;
 	int newdatacount;
+	int blindcount;
+	int newblindcount;
+	int blindmax;
 } scaninfo;
 
 struct screensaver
