@@ -1,6 +1,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//epgsearch.h
+void screenepgsearch();
+
 //sock.h
 char* gethttp(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect);
 
@@ -115,6 +118,7 @@ int screendownload(char* title, char* host, char* page, int port, char* filename
 
 // epgrecord.h
 void freeepgrecord(struct epgrecord** first);
+int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, time_t endtime, struct rectimer* rectimernode, int tssize);
 
 //titan.c
 void oshutdown(int exitcode, int flag);
@@ -135,6 +139,7 @@ void screennetwork(int mode);
 void screennetwork_adapter();
 void screennetwork_restart(struct inetwork* net);
 void screennetwork_test();
+void screennetwork_wlan();
 
 //channel.h
 int writechannel(const char *filename);
@@ -270,6 +275,7 @@ char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 char* gettime(struct skin* node, char* format);
 
 //skin.h
+void blitrect(int posx, int posy, int width, int height, long color, int transparent, int mode);
 void fillrect(int posx, int posy, int width, int height, long color, int transparent);
 int setnodeattr(struct skin* node, struct skin* parent);
 void clearscreennolock(struct skin* node);
@@ -347,6 +353,8 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+int setbit(int value, int bitpos);
+char* changefilenameext(char* filename, char* ext);
 void destroy();
 void htmldecode(char* to, char* from);
 void setosdtransparent(int value);
@@ -435,6 +443,7 @@ struct skin* addlistbox(struct skin* screen, struct skin* listbox, struct skin* 
 void delbouquetbychannel(int serviceid, int transponderid);
 struct bouquet* getbouquetbychannelmain(int serviceid, int transponderid);
 void recalcbouquetnr();
+void setbouquetchanneltonullmain(int serviceid, int transponderid);
 
 //audiotrack.h
 void screenaudiotrack();

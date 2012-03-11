@@ -513,7 +513,7 @@ int checkhttpheader(char* tmpbuf, char** retstr)
 	int stat = 0;
 	char* tmppos = NULL, *tmpstr = NULL;
 
-	if(tmpbuf == NULL) return NULL;
+	if(tmpbuf == NULL) return 0;
 
 	tmpstr = malloc(MINMALLOC);
 	if(tmpstr == NULL)
