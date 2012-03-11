@@ -184,17 +184,20 @@ int writeinterfaces()
 			savesettings = ostrcat(savesettings, "\n", 1, 0);
 		}
 
+		int dnscount = 0;
 		if(net->dhcp == 0)
 		{
 			char* savedns = NULL;
 			if(status.dnsserver1 != NULL && ostrcmp(status.dnsserver1, "000.000.000.000") != 0)
 			{
+				dnscount = 1;
 				savedns = ostrcat(savedns, "nameserver ", 1, 0);
 				savedns = ostrcat(savedns, fixip(status.dnsserver1, 1), 1, 1);
 			}
 
 			if(status.dnsserver2 != NULL && ostrcmp(status.dnsserver2, "000.000.000.000") != 0)
 			{
+				dnscount = 2;
 				savedns = ostrcat(savedns, "\n", 1, 0);
 				savedns = ostrcat(savedns, "nameserver ", 1, 0);
 				savedns = ostrcat(savedns, fixip(status.dnsserver2, 1), 1, 1);
@@ -203,6 +206,14 @@ int writeinterfaces()
 			if(savedns != NULL)
 			{
 				debug(50, "[NETWORK] save resolv.conf: %s\n", savedns);
+				
+				savedns = ostrcat(savedns, "\n", 1, 0);
+				if(dnscount == 1)
+					savedns = ostrcat(savedns, "options timeout:3 attempts:1", 1, 0);
+				else
+					savedns = ostrcat(savedns, "options timeout:2 attempts:1", 1, 0);
+
+				
 				FILE* fd1 = fopen("/var/etc/resolv.conf", "w");
 				if(fd1)
 				{
