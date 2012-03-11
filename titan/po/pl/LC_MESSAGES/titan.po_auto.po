@@ -33,6 +33,7 @@
 #: network.h:578 networkbrowser.h:500 networkbrowser.h:504
 #: networkbrowser.h:532 scan.h:972 scan.h:1261 scan.h:1265 scan.h:1269
 #: scan.h:992 scan.h:1282 scan.h:1286 scan.h:1290 scan.h:1294 network.h:579
+#: scan.h:1017 scan.h:1307 scan.h:1311 scan.h:1315 scan.h:1319
 msgid "no"
 msgstr ""
 
@@ -77,7 +78,8 @@ msgstr ""
 #: networkbrowser.h:525 inadyn.h:109 network.h:553 network.h:577
 #: networkbrowser.h:501 networkbrowser.h:505 networkbrowser.h:533 scan.h:973
 #: scan.h:1262 scan.h:1266 scan.h:1270 scan.h:993 scan.h:1283 scan.h:1287
-#: scan.h:1291 scan.h:1295 network.h:578
+#: scan.h:1291 scan.h:1295 network.h:578 scan.h:1018 scan.h:1308 scan.h:1312
+#: scan.h:1316 scan.h:1320
 msgid "yes"
 msgstr ""
 
@@ -360,7 +362,8 @@ msgstr ""
 #: scan.h:912 scan.h:923 scan.h:1064 scan.h:1136 scan.h:1347 network.h:672
 #: network.h:674 network.h:725 tithek.h:548 tithek.h:552 tithek.h:459
 #: tithek.h:483 tithek.h:497 tithek.h:501 tithek.h:514 tithek.h:518
-#: tithek.h:522 tithek.h:556 tithek.h:560
+#: tithek.h:522 tithek.h:556 tithek.h:560 scan.h:927 scan.h:937 scan.h:948
+#: scan.h:1089 scan.h:1161 scan.h:1372
 msgid "Message"
 msgstr ""
 
@@ -431,7 +434,8 @@ msgstr ""
 #: scan.h:1347 skin_default_skin.xml.h:286 network.h:728 network.h:672
 #: network.h:674 network.h:725 network.h:732 tithek.h:548 tithek.h:552
 #: tithek.h:459 tithek.h:483 tithek.h:497 tithek.h:501 tithek.h:514
-#: tithek.h:518 tithek.h:522 tithek.h:556 tithek.h:560
+#: tithek.h:518 tithek.h:522 tithek.h:556 tithek.h:560 scan.h:927 scan.h:948
+#: scan.h:1089 scan.h:1161 scan.h:1372
 msgid "OK"
 msgstr ""
 
@@ -500,7 +504,8 @@ msgstr ""
 #: scan.h:1347 skin_default_skin.xml.h:189 network.h:728 network.h:672
 #: network.h:674 network.h:725 network.h:732 tithek.h:548 tithek.h:552
 #: tithek.h:459 tithek.h:483 tithek.h:497 tithek.h:501 tithek.h:514
-#: tithek.h:518 tithek.h:522 tithek.h:556 tithek.h:560
+#: tithek.h:518 tithek.h:522 tithek.h:556 tithek.h:560 scan.h:927 scan.h:948
+#: scan.h:1089 scan.h:1161 scan.h:1372
 msgid "EXIT"
 msgstr ""
 
@@ -3027,61 +3032,61 @@ msgstr ""
 msgid "Data"
 msgstr ""
 
-#: scan.h:729 scan.h:818 scan.h:838
+#: scan.h:729 scan.h:818 scan.h:838 scan.h:863
 msgid "Sat: "
 msgstr ""
 
-#: scan.h:735 scan.h:824 scan.h:844
+#: scan.h:735 scan.h:824 scan.h:844 scan.h:869
 msgid "Transponder: "
 msgstr ""
 
-#: scan.h:743 scan.h:832 scan.h:852
+#: scan.h:743 scan.h:832 scan.h:852 scan.h:877
 msgid "TV: "
 msgstr ""
 
-#: scan.h:751 scan.h:840 scan.h:860
+#: scan.h:751 scan.h:840 scan.h:860 scan.h:885
 msgid "Radio: "
 msgstr ""
 
-#: scan.h:759 scan.h:848 scan.h:868
+#: scan.h:759 scan.h:848 scan.h:868 scan.h:893
 msgid "Data: "
 msgstr ""
 
-#: scan.h:793 scan.h:882 scan.h:902
+#: scan.h:793 scan.h:882 scan.h:902 scan.h:927
 msgid "All new channel added!"
 msgstr ""
 
-#: scan.h:803 scan.h:892 scan.h:912
+#: scan.h:803 scan.h:892 scan.h:912 scan.h:937
 msgid "Wait for channel scan end"
 msgstr ""
 
-#: scan.h:947 scan.h:951 scan.h:954 scan.h:1043 scan.h:1064
+#: scan.h:947 scan.h:951 scan.h:954 scan.h:1043 scan.h:1064 scan.h:1089
 msgid ""
 "Scan is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 
-#: scan.h:1019 scan.h:1023 scan.h:1026 scan.h:1115 scan.h:1136
+#: scan.h:1019 scan.h:1023 scan.h:1026 scan.h:1115 scan.h:1136 scan.h:1161
 msgid "No Tuner configured"
 msgstr ""
 
-#: scan.h:1032 scan.h:1036 scan.h:1039 scan.h:1128 scan.h:1149
+#: scan.h:1032 scan.h:1036 scan.h:1039 scan.h:1128 scan.h:1149 scan.h:1174
 msgid "Single Transponder"
 msgstr ""
 
-#: scan.h:1033 scan.h:1037 scan.h:1040 scan.h:1129 scan.h:1150
+#: scan.h:1033 scan.h:1037 scan.h:1040 scan.h:1129 scan.h:1150 scan.h:1175
 msgid "Single Sat"
 msgstr ""
 
-#: scan.h:1034 scan.h:1038 scan.h:1041 scan.h:1130 scan.h:1151
+#: scan.h:1034 scan.h:1038 scan.h:1041 scan.h:1130 scan.h:1151 scan.h:1176
 msgid "Multi Sat"
 msgstr ""
 
-#: scan.h:1039 scan.h:1043 scan.h:1046 scan.h:1135 scan.h:1156
+#: scan.h:1039 scan.h:1043 scan.h:1046 scan.h:1135 scan.h:1156 scan.h:1181
 msgid "Auto Scan"
 msgstr ""
 
-#: scan.h:1225 scan.h:1229 scan.h:1232 scan.h:1321 scan.h:1347
+#: scan.h:1225 scan.h:1229 scan.h:1232 scan.h:1321 scan.h:1347 scan.h:1372
 msgid "Transponder changed"
 msgstr ""
 
@@ -5812,7 +5817,7 @@ msgstr ""
 msgid "Fix Shutdown Time"
 msgstr ""
 
-#: scan.h:814 scan.h:903 scan.h:923
+#: scan.h:814 scan.h:903 scan.h:923 scan.h:948
 msgid "Does you want delete all unused Bouquets?"
 msgstr ""
 
