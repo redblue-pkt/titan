@@ -1,11 +1,15 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//inadyn.h
+void screennetwork_inadyn();
+
 //epgsearch.h
 void screenepgsearch();
 
 //sock.h
 char* gethttp(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect);
+char *get_ip(char *host);
 
 //numinput.h
 char* numinput(char* title, char* num, char* mask, int isip);
@@ -236,6 +240,7 @@ void playerseek(float sec);
 int playerstart(char* file);
 unsigned long long int playergetpts();
 double playergetlength();
+int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, unsigned long long* endpts, unsigned long long* aktpts, unsigned long long* bitrate);
 
 //filelist.h
 //void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* filelist, char* path, char* filemask, int tmpview);
@@ -273,6 +278,7 @@ char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 
 //skinfunc.h
 char* gettime(struct skin* node, char* format);
+char* getepgakttitle(struct skin* node);
 
 //skin.h
 void blitrect(int posx, int posy, int width, int height, long color, int transparent, int mode);
@@ -353,6 +359,9 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+int delallfiles(char* dir, char* ext);
+unsigned long getfilecount(char* dir);
+char* readfiletomem(const char* filename, int flag);
 int setbit(int value, int bitpos);
 char* changefilenameext(char* filename, char* ext);
 void destroy();

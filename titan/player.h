@@ -176,7 +176,6 @@ void playerpausets()
 int playerseekts(struct service* servicenode, int sekunden, int flag)
 {
 	off64_t offset;
-	off64_t bufferoffset;
 	off64_t endoffile;
 	off64_t currentpos;
 	int dupfd = -1;
