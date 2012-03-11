@@ -11,7 +11,6 @@ void delinetworkfound()
 		node->found = 0;
 		node = node->next;
 	}
-	return NULL;
 }
 
 struct inetwork* getinetworkbydevice(char* device)
