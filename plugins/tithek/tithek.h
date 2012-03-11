@@ -319,7 +319,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	char* tithekfile = NULL;
 	char* tmpstr = NULL;
 
-	tithekfile = tithekdownload(titheklink, NULL, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 0);
+	tithekfile = tithekdownload(titheklink, NULL, HTTPAUTH, 0);
 
 	delmarkedscreennodes(grid, 1);
 	freetithek();

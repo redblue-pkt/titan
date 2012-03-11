@@ -115,6 +115,8 @@
 #define MAXLONGKEY 10
 #define MAXSAT 64
 
+#define HTTPAUTH "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0="
+
 //CA Defines
 #define T_SB 0x80		//sb (h<--m)
 #define T_RCV 0x81		//receive (h-->m)
