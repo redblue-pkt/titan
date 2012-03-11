@@ -39,7 +39,7 @@ void screenpanel_extensions(int mode)
 				char* installname = NULL;
 				struct splitstr* ret1 = NULL;
 				int count = 0;
-				int i = 0;
+
 				ret1 = strsplit(tmpstr, " ", &count);
 				
 				if(ret1 != NULL)
