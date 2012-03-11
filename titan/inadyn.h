@@ -35,25 +35,34 @@ int readinadyn(const char* filename, char** user, char** pw, char** host)
 		if(tmpstr != NULL)
 		{
 			tmpstr += 11;
-			tmpstr[strlen(tmpstr) -1] = '\0';
-			free(*user); *user = NULL;
-			*user = ostrcat(tmpstr, NULL, 0, 0);
+			if(tmpstr != NULL)
+			{
+				tmpstr[strlen(tmpstr)] = '\0';
+				free(*user); *user = NULL;
+				*user = ostrcat(tmpstr, NULL, 0, 0);
+			}				
 		}
 		tmpstr = ostrstrcase(fileline, "--password ");
 		if(tmpstr != NULL)
 		{
 			tmpstr += 11;
-			tmpstr[strlen(tmpstr) -1] = '\0';
-			free(*pw); *pw = NULL;
-			*pw = ostrcat(tmpstr, NULL, 0, 0);
+			if(tmpstr != NULL)
+			{
+				tmpstr[strlen(tmpstr)] = '\0';
+				free(*pw); *pw = NULL;
+				*pw = ostrcat(tmpstr, NULL, 0, 0);
+			}				
 		}
 		tmpstr = ostrstrcase(fileline, "--alias ");
 		if(tmpstr != NULL)
 		{
 			tmpstr += 8;
-			tmpstr[strlen(tmpstr) -1] = '\0';
-			free(*host); *host = NULL;
-			*host = ostrcat(tmpstr, NULL, 0, 0);
+			if(tmpstr != NULL)
+			{
+				tmpstr[strlen(tmpstr)] = '\0';
+				free(*host); *host = NULL;
+				*host = ostrcat(tmpstr, NULL, 0, 0);
+			}				
 		}
 	}
 
