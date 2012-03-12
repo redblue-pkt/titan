@@ -6,7 +6,7 @@ MEDIAPATH=mediathek
 STREAMTYPE=7
 
 rm cache.*
-rm -rf _full
+rm -rf _full/$SUBDOMAIN
 mkdir -p _full/$SUBDOMAIN/streams
 piccount=0
 
@@ -48,9 +48,9 @@ for SEARCH in $SEARCHLIST; do
 		echo DURL: $DURL
 		echo $DURL | sed 's/amp;//'
 
-		DURL=`echo $DURL | sed 's/amp;//'`
+		DURL=`echo $DURL | sed 's/amp;//' | sed 's/productdetail=/player=/'`
 		echo DURL: $DURL
-		
+
 		echo wget --no-check-certificate "$DURL" -O cache.$SEARCH.$count.list
 		wget --no-check-certificate "$DURL" -O cache.$SEARCH.$count.list
 
@@ -78,4 +78,4 @@ for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X
 	fi
 done
 
-rm cache.*
+#rm cache.*
