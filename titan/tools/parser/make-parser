@@ -5,7 +5,7 @@ TMP=.tmp
 ls -1 "$HOMEDIR"/*.sh > tmp.txt
 LINE=`cat tmp.txt`
 for TYPE in $LINE; do
-	./$TYPE
+	$TYPE
 	echo "[make-parser] make $TYPE"
 done
 
