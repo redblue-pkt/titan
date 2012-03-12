@@ -369,7 +369,8 @@ msgstr ""
 #: scan.h:1089 scan.h:1161 scan.h:1372 inadyn.h:153 inadyn.h:155 inadyn.h:163
 #: network.h:412 network.h:681 network.h:683 network.h:734 scan.h:960
 #: scan.h:970 scan.h:981 scan.h:1122 scan.h:1194 scan.h:1405 network.h:423
-#: network.h:692 network.h:694 network.h:745
+#: network.h:692 network.h:694 network.h:745 tunerconfig.h:606
+#: tunerconfig.h:678
 msgid "Message"
 msgstr ""
 
@@ -446,6 +447,7 @@ msgstr ""
 #: network.h:683 network.h:734 network.h:741 scan.h:960 scan.h:981 scan.h:1122
 #: scan.h:1194 scan.h:1405 network.h:284 network.h:291 network.h:319
 #: network.h:423 network.h:692 network.h:694 network.h:745 network.h:752
+#: tunerconfig.h:606 tunerconfig.h:678
 msgid "OK"
 msgstr ""
 
@@ -520,6 +522,7 @@ msgstr ""
 #: network.h:683 network.h:734 network.h:741 scan.h:960 scan.h:981 scan.h:1122
 #: scan.h:1194 scan.h:1405 network.h:284 network.h:291 network.h:319
 #: network.h:423 network.h:692 network.h:694 network.h:745 network.h:752
+#: tunerconfig.h:606 tunerconfig.h:678
 msgid "EXIT"
 msgstr ""
 
@@ -3080,7 +3083,7 @@ msgid "Wait for channel scan end"
 msgstr ""
 
 #: scan.h:947 scan.h:951 scan.h:954 scan.h:1043 scan.h:1064 scan.h:1089
-#: scan.h:1122
+#: scan.h:1122 tunerconfig.h:606
 msgid ""
 "Scan is not allowed if record\n"
 "or stream is running !"
@@ -5809,11 +5812,11 @@ msgstr ""
 msgid "loop to Tuner"
 msgstr ""
 
-#: tunerconfig.h:614
+#: tunerconfig.h:614 tunerconfig.h:620
 msgid "Tuner "
 msgstr ""
 
-#: tunerconfig.h:672
+#: tunerconfig.h:672 tunerconfig.h:678
 msgid "DVB-T not supportet at the moment !"
 msgstr ""
 
