@@ -3,8 +3,34 @@ SVNUSER=$1
 SVNPASS=$2
 SVNURL=$3
 
+if [ $# -ne 3 ]; then
+	echo "|---------------------------------------------------------------------------------------------|"
+	echo "|                                                                                             |"
+	echo "| Parser Make Script                                                                          |"
+	echo "|                                                                                             |"
+	echo '| use ./make-ipk <svnuser> <svnpass> <svnurl>                                                 |'
+	echo "|                                                                                             |"
+	echo "| for svnuser <your>                                                                          |"
+	echo "| for svnpass <your>                                                                          |"
+	echo "| for svnurl <your>                                                                           |"
+	echo "|                                                                                             |"
+	echo "|---------------------------------------------------------------------------------------------|"
+	echo "|                                                                            v2.1@dev-team    |"
+	echo "|---------------------------------------------------------------------------------------------|"
+	exit 1
+fi
+
 HOMEDIR=`pwd`
 TMP=.tmp
+
+rm -rf /var/www/atemio/web/mediathek/menu
+rm -rf /var/www/atemio/web/mediathek/*.list
+
+rm -rf mediathek
+svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/titan/tools/tithekmainmenu $HOMEDIR/mediathek
+svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/skins/tithek/menu $HOMEDIR/mediathek/menu
+rm -rf `find $HOMEDIR/mediathek -type d -name "*.svn"`
+mv mediathek/* /var/www/atemio/web/mediathek
 
 ls -1 "$HOMEDIR"/*.sh > tmp.txt
 LINE=`cat tmp.txt`
@@ -26,12 +52,3 @@ for TYPE in $LINE; do
 	echo "[make-parser] ln -s $TYPE_$TIME $TYPE"
 	ln -s "$TYPE"_"$TIME" $TYPE
 done
-
-rm -rf /var/www/atemio/web/mediathek/menu
-rm -rf /var/www/atemio/web/mediathek/*.list
-
-rm -rf mediathek
-svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/titan/tools/tithekmainmenu $HOMEDIR/mediathek
-svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/skins/tithek/menu $HOMEDIR/mediathek/menu
-
-mv mediathek/* /var/www/atemio/web/mediathek
