@@ -1,4 +1,8 @@
 #!/bin/sh
+SVNUSER=$1
+SVNPASS=$2
+SVNURL=$3
+
 HOMEDIR=`pwd`
 TMP=.tmp
 
@@ -7,5 +11,27 @@ LINE=`cat tmp.txt`
 for TYPE in $LINE; do
 	$TYPE
 	echo "[make-parser] make $TYPE"
+	STARTTIME=`date +"%Y.%m.%d_%H.%M.%S"`
 done
 
+cd _full
+LINE=`ls`
+TIME=`date +"%Y.%m.%d_%H.%M.%S"`
+
+for TYPE in $LINE; do
+	mv $TYPE /var/www/atemio/web/mediathek/"$TYPE"_"$TIME"
+	echo "[make-parser] mv $TYPE > /var/www/atemio/web/mediathek/$TYPE_$TIME"
+	rm -rf /var/www/atemio/web/mediathek/$TYPE
+	cd /var/www/atemio/web/mediathek
+	echo "[make-parser] ln -s $TYPE_$TIME $TYPE"
+	ln -s "$TYPE"_"$TIME" $TYPE
+done
+
+rm -rf /var/www/atemio/web/mediathek/menu
+rm -rf /var/www/atemio/web/mediathek/*.list
+
+rm -rf mediathek
+svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/titan/tools/tithekmainmenu $HOMEDIR/mediathek
+svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/plugins/tithek/menu $HOMEDIR/mediathek/menu
+
+mv mediathek/* /var/www/atemio/web/mediathek
