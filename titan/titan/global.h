@@ -254,10 +254,10 @@ void getserial()
 	textbox(_("Info"), _(msg), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 400, 0, 1);	
 	free(msg), msg = NULL;
 
-	if(status.security == 0)
-	{
-		checkserial(cpuout);
-	}
+	//if(status.security == 0)
+	//{
+	//	checkserial(cpuout);
+	//}
 	free(cpuout); cpuout = NULL;
 	free(cpu); cpu = NULL;
 	free(tmpstr); tmpstr = NULL;
