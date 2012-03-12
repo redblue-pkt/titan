@@ -454,9 +454,10 @@ int sockreceive(int *fd, unsigned char* data, int count, int timeout)
 
 char *get_ip(char *host)
 {
-	struct hostent *hent;
-	int iplen = 16;
-	char *ip = NULL;
+	struct hostent hent;
+	struct hostent *result = NULL;
+	int ret = 0, err = 0, iplen = 16;
+	char *ip = NULL, *buf = NULL;
 
 	if(host == NULL) return NULL;
 
@@ -468,21 +469,38 @@ char *get_ip(char *host)
 	}
 	memset(ip, 0, iplen);
 
-	if((hent = gethostbyname(host)) == NULL)
+	buf = malloc(MINMALLOC);
+	if(buf == NULL)
+	{
+		err("no mem");
+		free(ip);
+		return NULL;
+	}
+	memset(buf, 0, MINMALLOC);
+
+	ret = gethostbyname_r(host, &hent, buf, MINMALLOC, &result, &err);
+	//if((hent = gethostbyname(host)) == NULL)
+	if(ret != 0 || result == NULL)
 	{
 		free(ip);
+		free(buf);
 		perr("can't get ip");
 		return NULL;
 	}
 
 	//snprintf(ip, iplen, "%s", inet_ntoa(*((struct in_addr*)hent->h_addr)));
-	if(inet_ntop(AF_INET, (void *)hent->h_addr_list[0], ip, iplen) == NULL)
+	//snprintf(ip, iplen, "%s", inet_ntoa(*((struct in_addr*)result->h_addr)));
+	
+	//if(inet_ntop(AF_INET, (void *)hent->h_addr_list[0], ip, iplen) == NULL)
+	if(inet_ntop(AF_INET, (void *)result->h_addr_list[0], ip, iplen) == NULL)
 	{
 		free(ip);
+		free(buf);
 		perr("can't resolve host");
 		return NULL;
 	}
 
+	free(buf);
 	return ip;
 }
 
