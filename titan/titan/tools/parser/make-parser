@@ -32,6 +32,6 @@ rm -rf /var/www/atemio/web/mediathek/*.list
 
 rm -rf mediathek
 svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/titan/tools/tithekmainmenu $HOMEDIR/mediathek
-svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/plugins/tithek/menu $HOMEDIR/mediathek/menu
+svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/skins/tithek/menu $HOMEDIR/mediathek/menu
 
 mv mediathek/* /var/www/atemio/web/mediathek
