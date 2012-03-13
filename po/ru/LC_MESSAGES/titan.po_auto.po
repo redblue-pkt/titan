@@ -370,7 +370,7 @@ msgstr ""
 #: network.h:412 network.h:681 network.h:683 network.h:734 scan.h:960
 #: scan.h:970 scan.h:981 scan.h:1122 scan.h:1194 scan.h:1405 network.h:423
 #: network.h:692 network.h:694 network.h:745 tunerconfig.h:606
-#: tunerconfig.h:678
+#: tunerconfig.h:678 record.h:829 record.h:1005 service.h:571 service.h:812
 msgid "Message"
 msgstr ""
 
@@ -447,7 +447,8 @@ msgstr ""
 #: network.h:683 network.h:734 network.h:741 scan.h:960 scan.h:981 scan.h:1122
 #: scan.h:1194 scan.h:1405 network.h:284 network.h:291 network.h:319
 #: network.h:423 network.h:692 network.h:694 network.h:745 network.h:752
-#: tunerconfig.h:606 tunerconfig.h:678
+#: tunerconfig.h:606 tunerconfig.h:678 httpdfunc.h:2220 service.h:571
+#: service.h:812
 msgid "OK"
 msgstr ""
 
@@ -522,7 +523,8 @@ msgstr ""
 #: network.h:683 network.h:734 network.h:741 scan.h:960 scan.h:981 scan.h:1122
 #: scan.h:1194 scan.h:1405 network.h:284 network.h:291 network.h:319
 #: network.h:423 network.h:692 network.h:694 network.h:745 network.h:752
-#: tunerconfig.h:606 tunerconfig.h:678
+#: tunerconfig.h:606 tunerconfig.h:678 httpdfunc.h:2220 record.h:829
+#: record.h:1005 service.h:571 service.h:812
 msgid "EXIT"
 msgstr ""
 
@@ -2889,20 +2891,20 @@ msgid ""
 "Switch to Recording/Timeshift Channel ?"
 msgstr ""
 
-#: record.h:797 record.h:798 record.h:825
+#: record.h:797 record.h:798 record.h:825 record.h:828
 msgid "Timer Record start !\n"
 msgstr ""
 
 #: record.h:892 record.h:929 record.h:898 record.h:935 record.h:925
-#: record.h:962
+#: record.h:962 record.h:928 record.h:965
 msgid "stop"
 msgstr ""
 
-#: record.h:933 record.h:939 record.h:966
+#: record.h:933 record.h:939 record.h:966 record.h:969
 msgid "change"
 msgstr ""
 
-#: record.h:969 record.h:975 record.h:1002
+#: record.h:969 record.h:975 record.h:1002 record.h:1005
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr ""
 
@@ -3199,27 +3201,27 @@ msgstr ""
 msgid "imdb mvis (network/hdd)"
 msgstr ""
 
-#: service.h:560 service.h:566
+#: service.h:560 service.h:566 service.h:571
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
 msgstr ""
 
-#: service.h:783 service.h:784 service.h:790
+#: service.h:783 service.h:784 service.h:790 service.h:795
 msgid ""
 "Can't find a Tuner.\n"
 "Alle Tuners in use or no Tuner defined."
 msgstr ""
 
-#: service.h:786 service.h:787 service.h:793
+#: service.h:786 service.h:787 service.h:793 service.h:798
 msgid "Tuning to Channel failed!"
 msgstr ""
 
-#: service.h:789 service.h:790 service.h:796
+#: service.h:789 service.h:790 service.h:796 service.h:801
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 
-#: service.h:794 service.h:795 service.h:801
+#: service.h:794 service.h:795 service.h:801 service.h:806
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
