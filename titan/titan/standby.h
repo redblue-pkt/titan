@@ -61,7 +61,6 @@ void screenstandby()
 		loctime = gettime(NULL, "%H:%M");
 		if(lastrun + 300 < time(NULL) && ostrcmp(loctime, getconfig("epg_refreshtime", NULL)) == 0)
 		{
-			//TODO: check if volt is off
 			//start epg scanlist
 			lastrun = time(NULL);
        			epgscan = addtimer(&epgscanlistthread, START, 1000, 1, NULL, NULL, NULL);
