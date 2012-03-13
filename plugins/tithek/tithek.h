@@ -595,7 +595,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 	if(first == 1)
 	{
 		delallfiles("/tmp/tithek", ".list");
-		servicestart(status.lastservice->channel, NULL, NULL, 0);
+		servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 	}
 }
 
