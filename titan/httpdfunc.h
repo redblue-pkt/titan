@@ -1516,6 +1516,15 @@ char* webgetfilelist(char* param, char* link, char* dellink, char* path, char* m
 					ostrcatbig(&buf, "\">", &maxlen, &pos);
 
 					ostrcatbig(&buf, "<img border=0 src=img/webstream.png width=16 height=16 alt=WebStream></a>", &maxlen, &pos);
+					//
+					//
+					ostrcatbig(&buf, "<a target=_blank href=\"", &maxlen, &pos);
+					ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
+					ostrcatbig(&buf, "/", &maxlen, &pos);
+					ostrcatbig(&buf, node->text, &maxlen, &pos);
+					ostrcatbig(&buf, "\">", &maxlen, &pos);
+
+					ostrcatbig(&buf, "<img border=0 src=img/icon_restart.png width=16 height=16 alt=Download></a>", &maxlen, &pos);
 				}
 			}
 			ostrcatbig(&buf, "</td>", &maxlen, &pos);

@@ -29,6 +29,8 @@ char* getmimetype(char* name, char* mime)
 		return "video/quicktime";
 	if(strcmp(dot, ".mpeg") == 0 || strcmp(dot, ".mpe" ) == 0)
 		return "video/mpeg";
+	if(strcmp(dot, ".ts") == 0)
+		return "video/MP2T";	
 	if(strcmp(dot, ".vrml") == 0 || strcmp(dot, ".wrl" ) == 0)
 		return "model/vrml";
 	if(strcmp(dot, ".midi") == 0 || strcmp(dot, ".mid" ) == 0)
@@ -375,7 +377,10 @@ void gotdata(int* connfd)
 
 			debug(250, "httpd filename=%s", filename);
 
-			fullfilename = ostrcat(getconfig("httpdpath", NULL), filename, 0, 0);
+			if(strstr(filename, "/movie/") != NULL) 
+				fullfilename = ostrcat(filename,"", 0, 0);
+			else
+				fullfilename = ostrcat(getconfig("httpdpath", NULL), filename, 0, 0);
 			filefd = open(fullfilename, O_RDONLY | O_LARGEFILE);
 			if(filefd < 0)
 			{
