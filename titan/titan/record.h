@@ -671,6 +671,9 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 						servicestart(chnode, rectimernode->channellist, rectimernode->pincode, 0);
 					else
 						servicestart(chnode, NULL, NULL, 0);
+					
+					if(status.standby > 0) servicestop(status.aktservice, 1, 0);	
+					
 					fenode = fegetfree(tpnode, 2, NULL);
 					if(fenode == NULL)
 					{
@@ -683,7 +686,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 		if(type != RECTIMESHIFT) fenode->felock++;
 
 		//frontend tune
-		if(fenode != status.aktservice->fedev)
+		if(fenode != status.aktservice->fedev || (status.standby > 0 && getconfigint("standbytuneroff", NULL) == 1))
 		{
 			if(fenode->feinfo->type == FE_QPSK)
 			{
