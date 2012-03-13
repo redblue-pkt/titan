@@ -61,6 +61,7 @@ void screenstandby()
 		loctime = gettime(NULL, "%H:%M");
 		if(lastrun + 300 < time(NULL) && ostrcmp(loctime, getconfig("epg_refreshtime", NULL)) == 0)
 		{
+			//TODO: check if volt is off
 			//start epg scanlist
 			lastrun = time(NULL);
        			epgscan = addtimer(&epgscanlistthread, START, 1000, 1, NULL, NULL, NULL);
@@ -76,16 +77,13 @@ void screenstandby()
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	setvfdbrightness(getconfigint("vfdbrightness", NULL));
 
-	if(status.aktservice->fedev != NULL && voltoff == 1)
-	{
-		status.aktservice->fedev->felasttransponder = NULL;
-		status.aktservice->fedev->feaktpolarization = 0;
-		status.aktservice->fedev->feakttransponder = NULL;
-	}
-
 	tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
-	servicestart(status.lastservice->channel, tmpstr, NULL, 0);
+	if(voltoff == 1)
+		servicestart(status.lastservice->channel, tmpstr, NULL, 4);
+	else
+		servicestart(status.lastservice->channel, tmpstr, NULL, 0);
 	free(tmpstr); tmpstr = NULL;
+
 	subtitlepause(0);
 	status.standby = 0;
 	status.startmode = 2;

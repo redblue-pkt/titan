@@ -57,6 +57,8 @@ void akttolast()
 //flag 1: playback
 //flag 2: timeshift
 //flag 3: same as 0 but don't check chnode
+//flag 4: same as 0 but new tuning
+//flag 5: same as 3 but new tuning
 int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 {
 	debug(1000, "in");
@@ -69,17 +71,20 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 	struct dvbdev *videonode = NULL;
 	int ret = 0, festatus = 1;
 	unsigned char *patbuf = NULL;
-	int checkpmt = 0, pincheck = 0, stopflag = 0, ageprotect = 0;
+	int checkpmt = 0, pincheck = 0, stopflag = 0, ageprotect = 0, tune = 0;
 	struct epg* epgnode = NULL;
 
 	m_lock(&status.servicemutex, 2);
+
+	if(flag == 4 || flag == 5) tune = 1;
+	if(flag == 4) flag == 0;
 
 	if(flag == 0 && status.aktservice->type == CHANNEL && status.aktservice->channel != NULL && chnode == status.aktservice->channel)
 	{
 		m_unlock(&status.servicemutex, 2);
 		return 20;
 	}
-	if(flag == 3) flag = 0;
+	if(flag == 3 || flag == 5) flag = 0;
 
 	if(chnode == NULL)
 	{
@@ -145,7 +150,7 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 		status.aktservice->fedev = fenode;
 
 		//frontend tune
-		if(fenode->felasttransponder != tpnode)
+		if(fenode->felasttransponder != tpnode || tune == 1)
 		{
 			if(fenode->feinfo->type == FE_QPSK)
 			{

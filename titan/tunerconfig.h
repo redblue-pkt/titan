@@ -706,17 +706,11 @@ void screentunerconfig()
 	if(ret == 1)
 	{
 		drawscreen(skin, 0);
-		if(status.aktservice->fedev != NULL)
-		{
-			status.aktservice->fedev->felasttransponder = NULL;
-			status.aktservice->fedev->feaktpolarization = 0;
-			status.aktservice->fedev->feakttransponder = NULL;
-		}
 		ret = servicestop(status.aktservice, 1, 1);
 		if(ret == 0)
 		{
 			status.aktservice->transponder = NULL;
-			servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 3), 0);
+			servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 5), 0);
 		}
 	}
 }
