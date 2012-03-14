@@ -103,12 +103,12 @@ void epgscanlistthread(struct stimerthread* self)
 
 		node = node->next;
 	}
-
-end:
-	status.epgscanlistthread = NULL;
 	
 	//write only epg
 	writeallconfig(2);
+
+end:
+	status.epgscanlistthread = NULL;
 	
 	debug(400, "epgscan thread end");
 }
