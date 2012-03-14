@@ -3,8 +3,6 @@
 #include "../titan/header.h"
 #include "rgui.h"
 
-extern struct skin* skin;
-
 char pluginname[] = "RGUI";
 char plugindesc[] = "Remote GUI";
 char pluginpic[] = "%pluginpath%/rgui/plugin.png";
