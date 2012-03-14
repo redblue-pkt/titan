@@ -47,6 +47,7 @@ void setdefaults()
 	addconfigdef("httpdstart", "0");
 	addconfigdef("httpdport", "80");
 	addconfigdef("streamport", "22222");
+	addconfigdef("rguidport", "22233");
 	addconfigdef("recordfreespace", "1000");
 	addconfigdef("skip13", "120");
 	addconfigdef("skip46", "300");
