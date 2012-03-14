@@ -1,6 +1,8 @@
 #ifndef RGUI_H
 #define RGUI_H
 
+extern struct skin* skin;
+
 int screenrgui(char* ip)
 {
 	int rcret = -1, sock = -1, ret = 0;
