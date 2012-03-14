@@ -1733,6 +1733,24 @@ void starthttpd(flag)
 	}
 }
 
+void startrguid(flag)
+{
+	if(flag == 1)
+	{
+		if(getconfigint("rguidstart", NULL) == 1 && status.rguithread == NULL)
+		{
+			status.rguithread = addtimer(&rguidthreadfunc, START, 10000, -1, NULL, NULL, NULL);
+			if(status.rguithread != NULL)
+				status.rguithread->flag = setbit(status.rguithread->flag, 0);
+		}
+	}
+	else if(status.rguithread != NULL)
+	{
+		status.rguithread->aktion = STOP;
+		status.rguithread = NULL;
+	}
+}
+
 int checkbox(char* box)
 {
 	char* boxversion = NULL;

@@ -266,13 +266,19 @@ void clearfb(struct fb *node)
 
 //flag 0 = no animation
 //flag 1 = animation
-void blitfb(int flag)
+void blitfb2(struct fb* fbnode, int flag)
 {
 	int i = 0, max = 1, wstep = 0, hstep = 0;
 
-	if(skinfb == NULL) return;
+	if(fbnode == NULL) return;
 #ifndef NOHWBLIT
-	if(skinfb == fb) return;
+	if(fbnode == fb) return;
+
+	if(status.rguidfd > -1)
+	{
+		blitscale(0, 0, fbnode->width, fbnode->height, 320, 240, 1);
+		socksend(&status.rguidfd, accelfb->fb, 320 * 240 * 4, 5000 * 1000);
+	}
 
 	int mode3d = 0, leftoffset = 0, rightoffset = 0, topoffset = 0, bottomoffset = 0;
 	char* mode3dstr = NULL;
@@ -281,7 +287,7 @@ void blitfb(int flag)
 	rightoffset = getconfigint("fbrightoffset", NULL);
 	topoffset = getconfigint("fbtopoffset", NULL);
 	bottomoffset = getconfigint("fbbottomoffset", NULL);
-	
+
 	if(leftoffset != 0) blitrect(0, 0, leftoffset, fb->height, 0, 255, 2);
 	if(rightoffset != 0) blitrect(fb->width - rightoffset, 0, rightoffset, fb->height, 0, 255, 2);
 	if(topoffset != 0) blitrect(0, 0, fb->width, topoffset, 0, 255, 2);
@@ -298,11 +304,11 @@ void blitfb(int flag)
 
 	bltData.operation  = BLT_OP_COPY;
 	bltData.srcOffset  = fb->varfbsize;
-	bltData.srcPitch   = skinfb->pitch;
+	bltData.srcPitch   = fbnode->pitch;
 	bltData.src_top    = 0;
 	bltData.src_left   = 0;
-	bltData.src_right  = skinfb->width;
-	bltData.src_bottom = skinfb->height;
+	bltData.src_right  = fbnode->width;
+	bltData.src_bottom = fbnode->height;
 	bltData.srcFormat  = SURF_BGRA8888;
 	bltData.srcMemBase = STMFBGP_FRAMEBUFFER;
 
@@ -399,19 +405,40 @@ void blitfb(int flag)
 	}
 #else
 #ifdef NOFB
-	if(skinfb != fb)
-		memcpy(fb->fb, skinfb->fb, skinfb->varfbsize);
+	if(status.rguidfd > -1)
+	{
+		char* buf = NULL;
+		buf = scale(fbnode->fb, fbnode->width, fbnode->height, 4, 320, 240, 0);
+		if(buf != NULL)
+		{
+			socksend(&status.rguidfd, (unsigned char*)buf, 320 * 240 * 4, 5000 * 1000);
+			free(buf); buf = NULL;
+		}
+	}
+
+	if(fbnode != fb)
+	{
+		for(i = 0; i < fbnode->height; i++)
+		{
+			memcpy(fb->fb + (i * fb->pitch), fbnode->fb + (i * fbnode->pitch), fbnode->width * fbnode->colbytes);
+		}
+	}
 	system("killall -9 xloadimage");
 
 	FILE *fd;
 	fd=fopen("titan.png", "w");
-	fwrite(fb->fb,fb->varfbsize,1,fd);
+	fwrite(fb->fb, fb->varfbsize, 1, fd);
 	fclose(fd);
 
 	system("fbgrab -f titan.png -w 1280 -h 720 -b 32 titan1.png > /dev/null");
 	system("xloadimage titan1.png > /dev/null &");
 #endif
 #endif
+}
+
+void blitfb(int flag)
+{
+	blitfb2(skinfb, flag);
 }
 
 void changefbresolution(char *value)

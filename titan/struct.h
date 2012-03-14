@@ -949,6 +949,10 @@ struct status
 	struct stimerthread* epgscanlistthread;
 	// httpd thread pointer
 	struct stimerthread* httpthread;
+	// rguid thread pointer
+	struct stimerthread* rguithread
+	// rguid sock filedescriptor for rguid
+	int rguidfd;
 	struct service* aktservice;
 	struct service* lastservice;
 	struct channel* markedchannel;
