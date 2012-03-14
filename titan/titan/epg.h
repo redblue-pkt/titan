@@ -1302,6 +1302,8 @@ int readepg(const char* filename)
 		perr("can't open %s", filename);
 		return 1;
 	}
+	
+	m_lock(&status.epgmutex, 4);
 
 	while(!feof(fd))
 	{
@@ -1328,6 +1330,7 @@ int readepg(const char* filename)
 			{
 				err("title no mem %d", len);
 				fclose(fd);
+				m_unlock(&status.epgmutex, 4);
 				return 1;
 			}
 			ret = fread(title, len, 1, fd);
@@ -1344,6 +1347,7 @@ int readepg(const char* filename)
 				err("subtitle no mem %d", len);
 				free(title); title = NULL;
 				fclose(fd);
+				m_unlock(&status.epgmutex, 4);
 				return 1;
 			}
 			ret = fread(subtitle, len, 1, fd);
@@ -1368,6 +1372,7 @@ int readepg(const char* filename)
 				free(title); title = NULL;
 				free(subtitle); subtitle = NULL;
 				fclose(fd);
+				m_unlock(&status.epgmutex, 4);
 				return 1;
 			}
 			ret = fread(desc, len, 1, fd);
@@ -1402,7 +1407,7 @@ int readepg(const char* filename)
 		}
 #endif
 
-		epgnode = addepg(chnode, eventid, version, starttime, endtime, epgnode, 0);
+		epgnode = addepg(chnode, eventid, version, starttime, endtime, epgnode, 1);
 		if(epgnode == NULL)
 		{
 			debug(1000, "out -> NULL detect");
@@ -1423,6 +1428,8 @@ int readepg(const char* filename)
 
 	if(getconfigint("epg_del", NULL) == 1)
 		unlink(filename);
+		
+	m_unlock(&status.epgmutex, 4);
 
 	debug(1000, "out");
 	return 0;
