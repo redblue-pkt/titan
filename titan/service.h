@@ -77,7 +77,7 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 	m_lock(&status.servicemutex, 2);
 
 	if(flag == 4 || flag == 5) tune = 1;
-	if(flag == 4) flag == 0;
+	if(flag == 4) flag = 0;
 
 	if(flag == 0 && status.aktservice->type == CHANNEL && status.aktservice->channel != NULL && chnode == status.aktservice->channel)
 	{
