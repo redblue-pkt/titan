@@ -281,6 +281,7 @@ char* gettime(struct skin* node, char* format);
 char* getepgakttitle(struct skin* node);
 
 //skin.h
+unsigned char* scale(unsigned char* buf, int width, int height, int channels, int newwidth, int newheight, int free1);
 void blitrect(int posx, int posy, int width, int height, long color, int transparent, int mode);
 void fillrect(int posx, int posy, int width, int height, long color, int transparent);
 int setnodeattr(struct skin* node, struct skin* parent);
