@@ -691,7 +691,7 @@ struct epg* addepg(struct channel* chnode, int eventid, int version, time_t star
 
 //flag 0: lock
 //flag 1: nolock
-void delepg(struct channel* chnode, int eventid, int flag)
+void delepg(struct channel* chnode, struct epg* epgnode, int flag)
 {
 	debug(1000, "in");
 
@@ -707,7 +707,7 @@ void delepg(struct channel* chnode, int eventid, int flag)
 
 	while(node != NULL)
 	{
-		if(node->eventid == eventid)
+		if(node == epgnode)
 		{
 			if(node == chnode->epg)
 			{
@@ -759,7 +759,7 @@ void freeepg(struct channel* chnode)
 		prev = node;
 		node = node->next;
 		if(prev != NULL)
-			delepg(chnode, prev->eventid, 1);
+			delepg(chnode, prev, 1);
 	}
 	m_unlock(&status.epgmutex, 4);
 	debug(1000, "out");
@@ -809,7 +809,7 @@ void deloldepg()
 			while(epgnode != NULL)
 			{
 				if(epgnode->endtime + 60 < time(NULL))
-					delepg(chnode, epgnode->eventid, 1);
+					delepg(chnode, epgnode, 1);
 				epgnode = epgnode->next;
 			}
 		}
