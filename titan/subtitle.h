@@ -173,7 +173,7 @@ void subdraw(unsigned long long subpts, struct subpage* page)
 							drawpixelfb(accelfb, (regnode->width * y) + x, 0, 0);
 					}
 				}
-				blitscale(posx, posy, regnode->width, regnode->height, regnode->scalewidth, regnode->scaleheight);
+				blitscale(posx, posy, regnode->width, regnode->height, regnode->scalewidth, regnode->scaleheight, 0);
 			}
 			else
 			{

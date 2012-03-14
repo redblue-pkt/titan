@@ -1378,7 +1378,9 @@ struct jpgerror
         jmp_buf setjmpbuf;
 };
 
-void blitscale(int posx, int posy, int width, int height, int scalewidth, int scaleheight)
+//flag 0: blit from accelfb to skinfb
+//flag 1: blit from skinfb to accelfb
+void blitscale(int posx, int posy, int width, int height, int scalewidth, int scaleheight, int flag)
 {
 #ifndef SIMULATE
 	STMFBIO_BLT_DATA  blt_data;
@@ -1397,10 +1399,22 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 	if(width <= 0 || height <= 0 || scalewidth <= 0 || scaleheight <= 0) return;
 
 	blt_data.operation  = BLT_OP_COPY;
-	if(status.usedirectfb == 1)
-		blt_data.srcOffset  = fb->varfbsize;
+	
+	if(flag == 0)
+	{
+		if(status.usedirectfb == 1)
+			blt_data.srcOffset  = fb->varfbsize;
+		else
+			blt_data.srcOffset  = fb->varfbsize + skinfb->varfbsize;
+	}
 	else
-		blt_data.srcOffset  = fb->varfbsize + skinfb->varfbsize;
+	{
+		if(status.usedirectfb == 1)
+			blt_data.srcOffset  = 0;
+		else
+			blt_data.srcOffset  = fb->varfbsize;
+	}
+	
 	blt_data.srcPitch   = width * 4;
 	blt_data.src_top    = 0;
 	blt_data.src_left   = 0;
@@ -1409,11 +1423,33 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 	blt_data.srcFormat  = SURF_ARGB8888;
 	blt_data.srcMemBase = STMFBGP_FRAMEBUFFER;
 	
-	if(status.usedirectfb == 1)
-		blt_data.dstOffset  = 0;
+	if(flag == 0)
+	{
+		if(status.usedirectfb == 1)
+		{
+			blt_data.dstOffset  = 0;
+			blt_data.dstPitch   = fb->pitch;
+		}
+		else
+		{
+			blt_data.dstOffset  = fb->varfbsize;
+			blt_data.dstPitch   = skinfb->pitch;
+		}
+	}
 	else
-		blt_data.dstOffset  = fb->varfbsize;
-	blt_data.dstPitch   = skinfb->pitch;
+	{
+		if(status.usedirectfb == 1)
+		{
+			blt_data.dstOffset  = fb->varfbsize;
+			blt_data.dstPitch   = skinfb->pitch;
+		}
+		else
+		{
+			blt_data.dstOffset  = fb->varfbsize + skinfb->varfbsize;
+			blt_data.dstPitch   = scalewidth * 4;
+		}
+	}
+	
 	blt_data.dst_left   = posx;
 	blt_data.dst_top    = posy;
 	blt_data.dst_right  = posx + scalewidth;
@@ -1554,7 +1590,7 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 					if(tmp > 0)
 					{
 						tmp = (float)py / tmp;
-						blitscale(posx, nposy, width, py, scalewidth, (int)tmp);
+						blitscale(posx, nposy, width, py, scalewidth, (int)tmp, 0);
 						nposy += tmp;
 					}
 				}
@@ -1568,7 +1604,7 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 			if(tmp > 0)
 			{
 				tmp = (float)py / tmp;
-				blitscale(posx, nposy, width, py, scalewidth, (int)tmp);
+				blitscale(posx, nposy, width, py, scalewidth, (int)tmp, 0);
 			}
 		}
 	}
