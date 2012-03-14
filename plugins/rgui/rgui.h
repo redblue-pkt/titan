@@ -2,6 +2,7 @@
 #define RGUI_H
 
 extern struct skin* skin;
+extern struct fb* skinfb;
 
 int screenrgui(char* ip)
 {
