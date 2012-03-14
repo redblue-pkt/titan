@@ -11,6 +11,8 @@ void screenhttpdsettings()
 	struct skin* password = getscreennode(httpdsettings, "password");
 	struct skin* httpdport = getscreennode(httpdsettings, "httpdport");
 	struct skin* streamport = getscreennode(httpdsettings, "streamport");
+	struct skin* rguidstart = getscreennode(httpdsettings, "rguidstart");
+	struct skin* rguidport = getscreennode(httpdsettings, "rguidport");
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *pos = NULL;
 
@@ -47,7 +49,18 @@ void screenhttpdsettings()
 		for(i = 0; i < 6 - strlen(streamport->input); i++)
 			streamport->input = ostrcat("0", streamport->input, 0, 1);
 	}
+	
+	addchoicebox(rguidstart, "0", _("no"));
+	addchoicebox(rguidstart, "1", _("yes"));
+	setchoiceboxselection(rguidstart, getconfig("rguidstart", NULL));
 
+	changemask(rguidport, "00000");
+	changeinput(rguidport, getconfig("rguidport", NULL));
+	if(rguidport->input != NULL)
+	{
+		for(i = 0; i < 6 - strlen(rguidport->input); i++)
+			rguidport->input = ostrcat("0", rguidport->input, 0, 1);
+	}
 
 	drawscreen(httpdsettings, 0);
 	addscreenrc(httpdsettings, listbox);
@@ -96,6 +109,23 @@ void screenhttpdsettings()
 				int sport = atoi(streamport->ret);
 				if(sport != 22222)
 					addconfigint("streamport", sport);
+			}
+			if(rguidstart->ret != NULL)
+			{
+				if(ostrcmp(getconfig("rguidstart", NULL), rguidstart->ret) != 0)
+				{
+					addconfigscreen("rguidstart", rguidstart);
+					if(ostrcmp(rguidstart->ret, "0") == 0)
+						startrguid(0);
+					else
+						startrguid(1);
+				}
+			}
+			if(rguidport->ret != NULL)
+			{
+				int rport = atoi(rguidport->ret);
+				if(rport != 22233)
+					addconfigint("rguidport", rport);
 			}
 			break;
 		}
