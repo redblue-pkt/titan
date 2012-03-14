@@ -726,7 +726,7 @@ firstwizzardstep1:
 	starthttpd(1);
 	
 	//start rguid
-	rguidfd = -1;
+	status.rguidfd = -1;
 	startrguid(1);
 
 	//init the player
