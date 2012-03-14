@@ -83,5 +83,6 @@ compile "callmonitor1" "callmonitor1" ""
 compile "stopifnotused" "stopifnotused" ""
 compile "tithek" "tithek" ""
 compile "wins3" "wins3" ""
+compile "rgui" "rgui" ""
 
 #rm -r networkbrowser/networkbrowser

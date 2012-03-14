@@ -10,5 +10,6 @@ networkbrowser: 100
 panel: 107
 tithek: 195
 wins3: 196
+rgui: 197
 TopfieldVFD: ---
 browser: ---
