@@ -713,7 +713,7 @@ void delepg(struct channel* chnode, int eventid, int flag)
 			{
 				chnode->epg = node->next;
 				if(chnode->epg != NULL)
-					chnode->prev = NULL;
+					chnode->epg->prev = NULL;
 			}
 			else
 			{
