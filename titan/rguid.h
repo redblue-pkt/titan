@@ -1,8 +1,6 @@
 #ifndef RGUID_H
 #define RGUID_H
 
-#define MAXRGUIDCONN 1
-
 void rguidgotdata(struct stimerthread* timernode, int* connfd)
 {
 	int ret = 0, keycode = 0;
