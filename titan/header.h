@@ -1,6 +1,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//rguid.h
+void rguidthreadfunc(struct stimerthread* timernode);
+
 //inadyn.h
 void screennetwork_inadyn();
 
@@ -281,6 +284,7 @@ char* gettime(struct skin* node, char* format);
 char* getepgakttitle(struct skin* node);
 
 //skin.h
+void blitscale(int posx, int posy, int width, int height, int scalewidth, int scaleheight, int flag);
 unsigned char* scale(unsigned char* buf, int width, int height, int channels, int newwidth, int newheight, int free1);
 void blitrect(int posx, int posy, int width, int height, long color, int transparent, int mode);
 void fillrect(int posx, int posy, int width, int height, long color, int transparent);
