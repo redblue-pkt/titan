@@ -158,6 +158,7 @@ struct caservice caservice[MAXCASERVICE];
 #include "httpdsettings.h"
 #include "epgsearch.h"
 #include "inadyn.h"
+#include "rguid.h"
 //#include "cardreader.h"
 //#include "sci.h"
 
@@ -723,6 +724,10 @@ firstwizzardstep1:
 
 	//start webserver
 	starthttpd(1);
+	
+	//start rguid
+	rguidfd = -1;
+	startrguid(1);
 
 	//init the player
 	playerinit(argc, argv);
