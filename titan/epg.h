@@ -796,7 +796,6 @@ void resetepg()
 
 void deloldepg()
 {
-	return;
 	struct channel* chnode = channel;
 	struct epg* epgnode = NULL;
 
