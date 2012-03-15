@@ -3768,6 +3768,10 @@ int drawscreen(struct skin* node, int flag)
 		skinfb = merkskinfb;
 		merkskinfb = NULL;
 	}
+	else {
+		if(ostrcmp(getconfig("write_fb_to_jpeg", NULL), "yes") == 0)
+			write_FB_to_JPEG_file(skinfb->fb, skinfb->width, skinfb->height, "/tmp/fb.jpg", 3);
+	}
 	if(flag == 0 || flag == 3 || flag == 4)
 		m_unlock(&status.drawingmutex, 0);
 	debug(1000, "out");
