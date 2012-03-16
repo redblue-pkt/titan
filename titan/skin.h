@@ -1397,6 +1397,12 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 	if(posy + scaleheight > skinfb->height) scaleheight = skinfb->height - posy;
 	
 	if(width <= 0 || height <= 0 || scalewidth <= 0 || scaleheight <= 0) return;
+	
+	if(flag == 1 && (scalewidth * scaleheight * 4) > accelfb->fbvarsize)
+	{
+		err("accelfb to small %d -> %d ", scalewidth * scaleheight * 4, ccelfb->fbvarsize);
+		return;
+	}
 
 	blt_data.operation  = BLT_OP_COPY;
 	
