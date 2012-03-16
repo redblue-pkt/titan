@@ -276,8 +276,10 @@ void blitfb2(struct fb* fbnode, int flag)
 
 	if(status.rguidfd > -1)
 	{
+		m_lock(&status.accelfbmutex, 16);
 		blitscale(0, 0, fbnode->width, fbnode->height, 320, 240, 1);
 		socksend(&status.rguidfd, accelfb->fb, 320 * 240 * 4, 5000 * 1000);
+		m_unlock(&status.accelfbmutex, 16);
 	}
 
 	int mode3d = 0, leftoffset = 0, rightoffset = 0, topoffset = 0, bottomoffset = 0;
