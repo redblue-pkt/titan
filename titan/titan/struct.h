@@ -1012,6 +1012,9 @@ struct status
 	int volautochangevalue;
 	//for powerofftimer
 	time_t fixpowerofftime;
+	//for write FB in File
+	int write_png;
+	int write_jpg;
 } status;
 
 struct fb
