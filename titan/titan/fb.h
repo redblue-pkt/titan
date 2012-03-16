@@ -425,6 +425,16 @@ void blitfb2(struct fb* fbnode, int flag)
 			free(buf); buf = NULL;
 		}
 	}
+	if(status.write_png == 1)
+	{
+		char* buf = NULL;
+		buf = scale(fbnode->fb, fbnode->width, fbnode->height, 4, 320, 240, 0);
+		if(buf != NULL)
+		{
+			fb2png((unsigned char*)buf, 320, 240, "/tmp/titanlcd.png");
+			free(buf); buf = NULL;
+		}
+	}
 
 	if(fbnode != fb)
 	{
@@ -581,7 +591,7 @@ static void convert_and_write(unsigned char *inbuffer, char *filename,
 	(void) free(outbuffer);
 }
 
-static int fb2png(unsigned char *buf_p, int width, int height, char *outfile)
+int fb2png(unsigned char *buf_p, int width, int height, char *outfile)
 {
 	int interlace = PNG_INTERLACE_ADAM7;
 	int bitdepth = 32;
