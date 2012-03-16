@@ -865,6 +865,7 @@ struct status
 	pthread_mutex_t clistmutex;
 	pthread_mutex_t hddmutex;
 	pthread_mutex_t tsseekmutex;
+	pthread_mutex_t accelfbmutex;
 	// mutex for VFD handling
 	pthread_mutex_t vfdmutex;
 	off64_t recsplitsize;
