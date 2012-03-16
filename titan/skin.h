@@ -1398,9 +1398,9 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 	
 	if(width <= 0 || height <= 0 || scalewidth <= 0 || scaleheight <= 0) return;
 	
-	if(flag == 1 && (scalewidth * scaleheight * 4) > accelfb->fbvarsize)
+	if(flag == 1 && (scalewidth * scaleheight * 4) > accelfb->varfbsize)
 	{
-		err("accelfb to small %d -> %d ", scalewidth * scaleheight * 4, ccelfb->fbvarsize);
+		err("accelfb to small %d -> %d ", scalewidth * scaleheight * 4, accelfb->varfbsize);
 		return;
 	}
 
