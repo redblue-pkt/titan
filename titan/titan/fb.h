@@ -282,7 +282,7 @@ void blitfb2(struct fb* fbnode, int flag)
 		m_unlock(&status.accelfbmutex, 16);
 	}
 
-	if(status.write_png == 1)
+	if(status.write_png == 1 && status.infobaraktiv == 0)
 	{
 		m_lock(&status.accelfbmutex, 16);
 		blitscale(0, 0, fbnode->width, fbnode->height, 320, 240, 1);
@@ -425,7 +425,7 @@ void blitfb2(struct fb* fbnode, int flag)
 			free(buf); buf = NULL;
 		}
 	}
-	if(status.write_png == 1)
+	if(status.write_png == 1 && status.infobaraktiv == 0)
 	{
 		char* buf = NULL;
 		buf = scale(fbnode->fb, fbnode->width, fbnode->height, 4, 320, 240, 0);
