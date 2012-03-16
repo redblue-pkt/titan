@@ -282,6 +282,14 @@ void blitfb2(struct fb* fbnode, int flag)
 		m_unlock(&status.accelfbmutex, 16);
 	}
 
+	if(status.write_png == 1)
+	{
+		m_lock(&status.accelfbmutex, 16);
+		blitscale(0, 0, fbnode->width, fbnode->height, 320, 240, 1);
+		fb2png(accelfb->fb, 320, 240, "/tmp/titanlcd.png");
+		m_unlock(&status.accelfbmutex, 16);
+	}
+
 	int mode3d = 0, leftoffset = 0, rightoffset = 0, topoffset = 0, bottomoffset = 0;
 	char* mode3dstr = NULL;
 

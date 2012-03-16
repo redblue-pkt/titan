@@ -348,6 +348,9 @@ int main(int argc, char *argv[])
 	struct sigaction sa;
 	struct stimerthread *tmpthread = NULL;
 
+	status.write_png = 0;
+	status.write_jpg = 0;
+
 #ifdef SIMULATE
 	// for mem leak debug
 	setenv("MALLOC_TRACE", "/home/nit/titan/m.txt", 1);
