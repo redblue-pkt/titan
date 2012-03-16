@@ -163,6 +163,7 @@ void subdraw(unsigned long long subpts, struct subpage* page)
 			if(accelfb != NULL && accelfb->varfbsize >= regnode->width * regnode->height * 4)
 			{
 
+				m_lock(&status.accelfbmutex, 16);
 				for(y = 0; y < regnode->height; y++)
 				{
 					for(x = 0; x < regnode->width; x++)
@@ -174,6 +175,7 @@ void subdraw(unsigned long long subpts, struct subpage* page)
 					}
 				}
 				blitscale(posx, posy, regnode->width, regnode->height, regnode->scalewidth, regnode->scaleheight, 0);
+				m_unlock(&status.accelfbmutex, 16);
 			}
 			else
 			{

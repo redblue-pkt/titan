@@ -1568,6 +1568,7 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 		if(scaleheight == 0) scaleheight = height;
 		py = -1;
 
+		m_lock(&status.accelfbmutex, 16);
 		while(cinfo.output_scanline < height)
 		{
 			jpeg_read_scanlines(&cinfo, buffer, 1);
@@ -1613,6 +1614,7 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 				blitscale(posx, nposy, width, py, scalewidth, (int)tmp, 0);
 			}
 		}
+		m_unlock(&status.accelfbmutex, 16);
 	}
 	else
 	{
