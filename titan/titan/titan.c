@@ -93,6 +93,7 @@ struct caservice caservice[MAXCASERVICE];
 #include "timerthread.h"
 #include "service.h"
 #include "player.h"
+#include "dvdplayer.h"
 #include "timeshift.h"
 #include "record.h"
 #include "zap.h"

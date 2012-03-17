@@ -170,14 +170,15 @@ else
 	eplayerlib=gstreamer-0.10
 fi
 
-"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -DCAMSUPP -D$eplayer -Os -export-dynamic -Wall \
+"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -DCAMSUPP -D$eplayer -DDVDPLAYER -Os -export-dynamic -Wall \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/include/freetype2 \
 	-I $eplayerinclude \
+	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/apps/misc/tools/libdreamdvd \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/driver/bpamem \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/apps/misc/tools/libmmeimage \
 	-c titan.c
 	
-"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -Os -export-dynamic -lpthread -ldl -lpng -lfreetype -l$eplayerlib -ljpeg -lmmeimage -lmme_host -lipkg -Wall \
+"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -Os -export-dynamic -lpthread -ldl -lpng -lfreetype -l$eplayerlib -ldreamdvd -ljpeg -lmmeimage -lmme_host -lipkg -Wall \
 	titan.o \
 	-o titan
 	

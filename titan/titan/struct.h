@@ -75,6 +75,10 @@
 #include <gst/pbutils/missing-plugins.h>
 #endif
 
+#ifdef DVDPLAYER
+#include <ddvdlib.h>
+#endif
+
 #define VERSION "1.11a"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
