@@ -6,7 +6,7 @@ extern struct fb* skinfb;
 
 int screenrgui(char* ip)
 {
-	int rcret = -1, sock = -1, ret = 0;
+	int rcret = -1, sock = -1, ret = 0, zlen = 0;
 	unsigned char* tmpstr = NULL, *buf = NULL;
 
 	if(ip == NULL || ostrcmp(ip, "000.000.000.000") == 0) return 1;
@@ -26,13 +26,13 @@ int screenrgui(char* ip)
 		return 1;
 	}
 
-	buf = malloc(6);
+	buf = malloc(10);
 	if(buf == NULL)
 	{
 		sockclose(&sock);
 		return 1;
 	}
-	memset(buf, 0, 6);
+	memset(buf, 0, 10);
 
 	status.spinnertime = 99999999;
 
@@ -53,7 +53,7 @@ int screenrgui(char* ip)
 				memcpy(buf, tmpstr, strlen((char*)tmpstr));
 				ret = socksend(&sock, buf, 6, 1000 * 1000);
 				free(tmpstr); tmpstr = NULL;
-				memset(buf, 0, 6);
+				memset(buf, 0, 10);
 				if(ret != 0)
 				{
 					err("lost connection");
@@ -63,9 +63,28 @@ int screenrgui(char* ip)
 		}
 		else
 		{
-			ret = sockread(sock, rguiskinfb->fb, 0, rguiskinfb->varfbsize, 500 * 1000, 1);
+			ret = sockread(sock, buf, 0, 10, 500 * 1000, 1);
+			
+			if(ret >= 0)
+			{
+				int count = atoi((char*)buf);
+				memset(buf, 0, 10);
+				if(count <= rguiskinfb->varfbsize)
+				{
+					ret = sockread(sock, rguiskinfb->fb + rguiskinfb->varfbsize, 0, count, 500 * 1000, 1);
+					if(ret >= 0)
+					{
+						char* zbuf = (char*)rguiskinfb->fb;
+						ret = ounzip((char*)rguiskinfb->fb + rguiskinfb->varfbsize, count, &zbuf, &zlen, rguiskinfb->varfbsize, 1);
+						if(ret == 0)
+							blitfb2(rguiskinfb, 0);
 
-			if(ret >= 0) blitfb2(rguiskinfb, 0);
+						zlen = 0;
+					}
+				}
+				else
+					ret = -1;
+			}
 
 			if(ret < 0)
 			{
