@@ -187,6 +187,7 @@ void screeninfobar()
 		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL) || rcret == getrcconfigint("rctvradio", NULL) || rcret == getrcconfigint("rcfav", NULL))
 		{
 			int tmpservicetype = status.servicetype;
+			status.infobaraktiv = 0;
 			subtitlepause(1);
 			clearscreen(infobar);
 			if(rcret == getrcconfigint("rctvradio", NULL))
@@ -204,6 +205,7 @@ void screeninfobar()
 			if(ret >= 20 || ret < 0)
 				status.servicetype = tmpservicetype;
 			drawscreen(skin, 0);
+			status.infobaraktiv = 1;
 			status.infobar = 2;
 			continue;
 		}
@@ -372,9 +374,11 @@ void screeninfobar()
 		{
 			subtitlepause(1);
 			status.infobar = 0;
+			status.infobaraktiv = 0;
 			clearscreen(infobar);
 			epgchoice(NULL);
 			drawscreen(skin, 0);
+			status.infobaraktiv = 1;
 			subtitlepause(0);
 			continue;
 		}
@@ -425,6 +429,7 @@ void screeninfobar()
 		{
 			subtitlepause(1);
 			status.infobar = 0;
+			status.infobaraktiv = 0;
 			clearscreen(infobar);
 			drawscreen(skin, 0);
 			switch(getconfigint("poweraktion", NULL))
@@ -448,6 +453,7 @@ void screeninfobar()
 			}
 			status.updatevfd = START;
 			drawscreen(skin, 0);
+			status.infobaraktiv = 1;
 			subtitlepause(0);
 			continue;
 		}
