@@ -2013,7 +2013,7 @@ int zip(char* inbuf, int inlen, char** outbuf, int* outlen, int level)
 
 //flag 0: malloc mem
 //flag 1: don't malloc mem
-int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, inf flag)
+int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int flag)
 {
 	int ret = 0;
 	z_stream stream;

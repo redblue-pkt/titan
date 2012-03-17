@@ -1103,6 +1103,15 @@ struct font
 	struct font *next;
 };
 
+//structure for write fb to File
+struct writeFBfile
+{
+	unsigned char* ActBuf;
+	unsigned char* buf1;
+	unsigned char* buf2;
+} writeFBfile;
+	
+	
 #define HILO(x) (x##_hi << 8 | x##_lo)
 
 /*
