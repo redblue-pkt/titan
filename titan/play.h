@@ -65,6 +65,11 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 		len = len / 90000;
 		pos = (pos - startpos) / 90000;
 	}
+	if(playertype == 2)
+	{
+		pos = dvdgetpts() / 90000;
+		len = dvdgetlength();
+	}
 	else
 	{
 		pos = playergetpts() / 90000;
@@ -291,6 +296,8 @@ void playrcstop(int playertype, int flag)
 	
 	if(playertype == 1)
 		playerstopts(0, 0);
+	else if(playertype == 2)
+		dvdstop();
 	else
 		playerstop();
 
@@ -311,6 +318,8 @@ void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int pla
 			status.play = 0;
 			if(playertype == 1)
 				playerffts((int)pow(2, status.playspeed));
+			else if(playertype == 2)
+				dvdff(status.playspeed);
 			else	
 				playerff(status.playspeed);
 			*playinfobarstatus = 2;
@@ -322,6 +331,8 @@ void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int pla
 			status.play = 0;
 			if(playertype == 1)
 				playerfrts(status.playspeed);
+			if(playertype == 2)
+				dvdfr(status.playspeed);
 			else
 				playerfr(status.playspeed);
 			*playinfobarstatus = 2;
@@ -336,6 +347,8 @@ void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int pla
 				playerpausets();
 				playercontinuets();
 			}
+			else if(playertype == 2)
+				dvdcontinue();
 			else
 				playercontinue();
 			*playinfobarstatus = 1;
@@ -358,6 +371,8 @@ void playrcfr(char* file, int* playinfobarstatus, int* playinfobarcount, int pla
 			status.play = 0;
 			if(playertype == 1)
 				playerffts((int)pow(2, status.playspeed));
+			else if(playertype == 1)
+				dvdff(status.playspeed);
 			else
 				playerff(status.playspeed);
 			*playinfobarstatus = 2;
@@ -369,6 +384,8 @@ void playrcfr(char* file, int* playinfobarstatus, int* playinfobarcount, int pla
 			status.play = 0;
 			if(playertype == 1)
 				playerfrts(status.playspeed);
+			else if(playertype == 2)
+				dvdfr(status.playspeed);
 			else
 				playerfr(status.playspeed);
 			*playinfobarstatus = 2;
@@ -380,6 +397,8 @@ void playrcfr(char* file, int* playinfobarstatus, int* playinfobarcount, int pla
 			status.play = 1;
 			if(playertype == 1)
 				playercontinuets();
+			else if(playertype == 2)
+				dvdcontinue();
 			else
 				playercontinue();
 			*playinfobarstatus = 1;
@@ -400,6 +419,8 @@ void playrcpause(char* file, int* playinfobarstatus, int* playinfobarcount, int 
 		status.pause = 0;
 		if(playertype == 1)
 			playercontinuets();
+		else if(playertype == 2)
+			dvdcontinue();
 		else
 			playercontinue();
 		*playinfobarstatus = 1;
@@ -413,6 +434,8 @@ void playrcpause(char* file, int* playinfobarstatus, int* playinfobarcount, int 
 		status.pause = 1;
 		if(playertype == 1)
 			playerpausets();
+		else if(playertype == 2)
+			dvdpause();
 		else
 			playerpause();
 		*playinfobarstatus = 2;
@@ -433,6 +456,8 @@ void playrcplay(char* file, int* playinfobarstatus, int* playinfobarcount, int p
 		playerpausets();
 		playercontinuets();
 	}
+	else if(playertype == 2)
+		dvdcontinue();
 	else
 		playercontinue();
 	status.playspeed = 0;
@@ -459,6 +484,8 @@ void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 			playergetinfots(NULL, &startpos, NULL, &pos, NULL);
 			pos = (pos - startpos) / 90000;
 		}
+		else if(playertype == 2)
+			pos = dvdgetpts() / 90000;
 		else
 			pos = playergetpts() / 90000;
 	
@@ -466,6 +493,8 @@ void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 		{
 			if(playertype == 1)
 				playerseekts(getservice(RECORDPLAY, 0), sec * -1, 0);
+			else if(playertype == 2)
+				dvdseek(sec * -1);
 			else
 				playerseek(sec * -1);
 		}
@@ -475,6 +504,11 @@ void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 			{
 				playerstopts(0, 0);
 				playerstartts(file, 0);
+			}
+			else if(playertype == 2)
+			{
+				dvdstop();
+				dvdstart(file);
 			}
 			else
 			{
@@ -500,6 +534,8 @@ void playrcjumpf(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 	{
 		if(playertype == 1)
 			playerseekts(getservice(RECORDPLAY, 0), sec, 0);
+		else if(playertype == 2)
+			dvdseek(sec);
 		else
 			playerseek(sec);
 		*playinfobarstatus = 1;
