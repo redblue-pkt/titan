@@ -349,6 +349,10 @@ int main(int argc, char *argv[])
 	struct sigaction sa;
 	struct stimerthread *tmpthread = NULL;
 
+	writeFBfile.ActBuf = NULL;
+	writeFBfile.buf1 = NULL;
+	writeFBfile.buf2 = NULL;
+
 	status.write_png = 0;
 	status.write_jpg = 0;
 

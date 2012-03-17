@@ -131,6 +131,23 @@ struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int
 	return newnode;
 }
 
+void fb2png_thread()
+{
+	while (writeFBfile.buf1 != NULL || writeFBfile.buf2 != NULL) {
+		if(writeFBfile.buf1 != NULL) {
+			writeFBfile.ActBuf = writeFBfile.buf1;
+			fb2png(writeFBfile.buf1, 320, 240, "/tmp/titanlcd.png");
+			free(writeFBfile.buf1); writeFBfile.buf1 = NULL;
+		}
+		else if(writeFBfile.buf2 != NULL) {
+			writeFBfile.ActBuf = writeFBfile.buf2;
+			fb2png(writeFBfile.buf2, 320, 240, "/tmp/titanlcd.png");
+			free(writeFBfile.buf2); writeFBfile.buf2 = NULL;
+		}
+	}
+	writeFBfile.ActBuf = NULL;
+}
+
 void delfb(char *name)
 {
 	debug(1000, "in");
@@ -303,7 +320,25 @@ void blitfb2(struct fb* fbnode, int flag)
 	{
 		m_lock(&status.accelfbmutex, 16);
 		blitscale(0, 0, fbnode->width, fbnode->height, 320, 240, 1);
-		fb2png(accelfb->fb, 320, 240, "/tmp/titanlcd.png");
+		if(writeFBfile.ActBuf == NULL)
+		{
+			writeFBfile.buf1 = malloc(4 * 320 * 240);
+			writeFBfile.ActBuf = writeFBfile.buf1;
+			memcpy(writeFBfile.buf1, accelfb->fb, 4 * 320 * 240); 
+			addtimer(&fb2png_thread, START, 10000, 1, NULL, NULL, NULL);
+		}
+		else if(writeFBfile.buf1 == writeFBfile.ActBuf)
+		{
+			if(writeFBfile.buf2 == NULL)
+				writeFBfile.buf2 = malloc(4 * 320 * 240);
+			memcpy(writeFBfile.buf2, accelfb->fb, 4 * 320 * 240);
+		}
+		else if(writeFBfile.buf2 == writeFBfile.ActBuf)
+		{
+			if(writeFBfile.buf1 == NULL)
+				writeFBfile.buf1 = malloc(4 * 320 * 240);
+			memcpy(writeFBfile.buf1, accelfb->fb, 4 * 320 * 240);
+		}
 		m_unlock(&status.accelfbmutex, 16);
 	}
 
@@ -448,8 +483,27 @@ void blitfb2(struct fb* fbnode, int flag)
 		buf = scale(fbnode->fb, fbnode->width, fbnode->height, 4, 320, 240, 0);
 		if(buf != NULL)
 		{
-			fb2png((unsigned char*)buf, 320, 240, "/tmp/titanlcd.png");
-			free(buf); buf = NULL;
+			if(writeFBfile.ActBuf == NULL)
+			{
+				writeFBfile.buf1 = malloc(4 * 320 * 240);
+				writeFBfile.ActBuf = writeFBfile.buf1;
+				memcpy(writeFBfile.buf1, (unsigned char*)buf, 4 * 320 * 240); 
+				addtimer(&fb2png_thread, START, 10000, 1, NULL, NULL, NULL);
+			}
+			else if(writeFBfile.buf1 == writeFBfile.ActBuf)
+			{
+				if(writeFBfile.buf2 == NULL)
+					writeFBfile.buf2 = malloc(4 * 320 * 240);
+				memcpy(writeFBfile.buf2, (unsigned char*)buf, 4 * 320 * 240);
+			}
+			else if(writeFBfile.buf2 == writeFBfile.ActBuf)
+			{
+				if(writeFBfile.buf1 == NULL)
+					writeFBfile.buf1 = malloc(4 * 320 * 240);
+				memcpy(writeFBfile.buf1, (unsigned char*)buf, 4 * 320 * 240);
+			}
+			//fb2png((unsigned char*)buf, 320, 240, "/tmp/titanlcd.png");
+			//free(buf); buf = NULL;
 		}
 	}
 
