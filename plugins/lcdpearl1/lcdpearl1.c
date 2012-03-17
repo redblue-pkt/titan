@@ -71,6 +71,7 @@ void LCD_Pearl1_thread()
 		sleep(8);
 	firststart = 0;
 	draw = 0;
+	status.write_png = 1;
 	
 	while (LCD_Pearl1thread->aktion != STOP) {
 
@@ -78,17 +79,20 @@ void LCD_Pearl1_thread()
 		
 		if(status.infobaraktiv == 1)
 		{
+			status.write_png = 1;
 			tmpstr2 = getaktchannelname(NULL);
 			tmpstr3 = getrec(NULL, NULL);
 			type = 1;
 		}
 		else if(status.playspeed != 0 || status.play != 0 || status.pause != 0)
 		{
+			status.write_png = 0;
 			loopcount++ ;
 			type = 2;
 		}
 		else
 		{
+			status.write_png = 1;
 			type = 999;
 		}
 		
@@ -218,11 +222,11 @@ void LCD_Pearl1_thread()
 							draw = 0;	
 					}
 					//else if(type == 999 && status.mcaktiv == 1) 
-					else if(type == 999)	
-					{
-						changetext(akttimemc1, tmpstr);
+					//else if(type == 999)	
+					//{
+						//changetext(akttimemc1, tmpstr);
 						//drawscreen(LCD_MC_Menu, 3);
-					}
+					//}
 				}
 			}
 		}
@@ -240,6 +244,7 @@ void LCD_Pearl1_thread()
  	addconfig("lcd_pearl1_plugin_running", "no");
  	LCD_Pearl1thread = NULL;
  	drawscreen(LCD_Pearl1, 0);
+ 	status.write_png = 0
  	return;
 }
 
