@@ -489,7 +489,7 @@ char* epgdescunzip(struct epg* epgnode)
 	if(epgnode->desccomplen < 1)
 		return ostrcat(epgnode->desc, "", 0, 0);
 
-	ret = ounzip(epgnode->desc, epgnode->desccomplen, &zbuf, &zlen);
+	ret = ounzip(epgnode->desc, epgnode->desccomplen, &zbuf, &zlen, MINMALLOC);
 	if(ret == 0)
 		return zbuf;
 
