@@ -36,6 +36,8 @@ int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char*
 			tmp->prozwidth = 1;
 			tmp->height = 40;
 			tmp->del = 1;
+			
+			messagebox->hspace = 30;
 		}
 	}
 
