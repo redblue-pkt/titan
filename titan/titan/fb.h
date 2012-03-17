@@ -503,7 +503,7 @@ void blitfb2(struct fb* fbnode, int flag)
 				memcpy(writeFBfile.buf1, (unsigned char*)buf, 4 * 320 * 240);
 			}
 			//fb2png((unsigned char*)buf, 320, 240, "/tmp/titanlcd.png");
-			//free(buf); buf = NULL;
+			free(buf); buf = NULL;
 		}
 	}
 
