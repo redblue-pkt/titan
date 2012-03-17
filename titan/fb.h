@@ -268,7 +268,8 @@ void clearfb(struct fb *node)
 //flag 1 = animation
 void blitfb2(struct fb* fbnode, int flag)
 {
-	int i = 0, max = 1, wstep = 0, hstep = 0;
+	int i = 0, max = 1, wstep = 0, hstep = 0, ret = 0;
+	unsigned char* buf[10];
 
 	if(fbnode == NULL) return;
 #ifndef NOHWBLIT
@@ -277,8 +278,24 @@ void blitfb2(struct fb* fbnode, int flag)
 	if(status.rguidfd > -1)
 	{
 		m_lock(&status.accelfbmutex, 16);
+		
+		int zlen = 0;
+		char* zbuf = NULL;
 		blitscale(0, 0, fbnode->width, fbnode->height, 320, 240, 1);
-		socksend(&status.rguidfd, accelfb->fb, 320 * 240 * 4, 5000 * 1000);
+		ret = zip((char*)accelfb->fb, 320 * 240 * 4, &zbuf, &zlen, 1);
+
+		if(ret == 0)
+		{
+			memset(buf, 0, 10);
+			char* tmpnr = oitoa(zlen);
+			memcpy(buf, tmpnr, strlen(tmpnr));
+			free(tmpnr); tmpnr = NULL;
+			socksend(&status.rguidfd, (char*)buf, 10, 5000 * 1000);
+			socksend(&status.rguidfd, zbuf, zlen, 5000 * 1000);
+		}
+		free(zbuf); zbuf = NULL;
+		zlen = 0;
+
 		m_unlock(&status.accelfbmutex, 16);
 	}
 

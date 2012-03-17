@@ -1970,9 +1970,6 @@ int zip(char* inbuf, int inlen, char** outbuf, int* outlen, int level)
 	int ret = 0;
 	z_stream stream;
 
-	if(inlen > MINMALLOC)
-		return 1;
-
 	stream.zalloc = Z_NULL;
 	stream.zfree = Z_NULL;
 	stream.opaque = Z_NULL;
@@ -2014,7 +2011,9 @@ int zip(char* inbuf, int inlen, char** outbuf, int* outlen, int level)
 	return 0;
 }
 
-int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf)
+//flag 0: malloc mem
+//flag 1: don't malloc mem
+int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, inf flag)
 {
 	int ret = 0;
 	z_stream stream;
@@ -2029,12 +2028,15 @@ int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf)
 	if(ret != Z_OK)
 		return 1;
 
-	*outbuf = malloc(maxbuf);
-	if(*outbuf == NULL)
+	if(flag == 0)
 	{
-		err("no mem");
-		(void)inflateEnd(&stream);
-		return 1;
+		*outbuf = malloc(maxbuf);
+		if(*outbuf == NULL)
+		{
+			err("no mem");
+			(void)inflateEnd(&stream);
+			return 1;
+		}
 	}
 
 	stream.avail_in = inlen;
@@ -2056,7 +2058,7 @@ int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf)
 	}
 	while(stream.avail_out == 0);
 	*outlen = maxbuf - stream.avail_out;
-	*outbuf = realloc(*outbuf, *outlen);
+	if(flag == 0) *outbuf = realloc(*outbuf, *outlen);
 
 	(void)inflateEnd(&stream);
 	return 0;
