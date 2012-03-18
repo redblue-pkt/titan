@@ -131,8 +131,8 @@ void epgscanlistthread(struct stimerthread* self)
 
 			if(chnode->name != NULL)
 			{
-				debug(400, "epgscan scanning channel=%s, frontend=%s", chnode->name, fenode->feshortname);
-				if(fd != NULL) fprintf(fd, "epgscan scanning channel=%s, frontend=%s\n", chnode->name, fenode->feshortname);
+				debug(400, "epgscan scanning channel=%s, sid=%d, tid=%lu, frontend=%s", chnode->name, chnode->serviceid, chnode->transponderid, fenode->feshortname);
+				if(fd != NULL) fprintf(fd, "epgscan scanning channel=%s, sid=%d, tid=%lu, frontend=%s\n", chnode->name, chnode->serviceid, chnode->transponderid, fenode->feshortname);
 			}
 			readeit(self, chnode, fenode, 1);
 			node->scantime = time(NULL);
