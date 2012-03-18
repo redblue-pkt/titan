@@ -194,11 +194,13 @@ int ralphasort64(const void* v1, const void* v2)
 	return 0;
 }
 
+//flag 0: listbox view
+//flag 1: grid view
 int createfilelist(struct skin* screen, struct skin* node, int flag)
 {
 	debug(1000, "in");
 	struct dirent64 **filelist;
-	int count, tmpcount, i = 0;
+	int count, tmpcount, i = 0, gridbr = 0, posx = 0;
 	struct skin *child = node, *oldchild = NULL, *parentdir = NULL;
 	char *tmpstr = NULL;
 	char *rpath = NULL;
@@ -213,6 +215,8 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 		debug(1000, "out -> NULL detect");
 		return 1;
 	}
+
+	if(flag == 1) node->type |= GRID;
 
 	status.tmp = node->input;
 	switch(getconfigint("dirsort", NULL))
@@ -271,12 +275,31 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 				child = addscreennode(screen, NULL, child);
 			if(child != NULL)
 			{
+				if(flag == 1)
+				{
+					if(gridbr == 0) child->type = GRIDBR;
+
+					child->width = 200;
+					child->posx = posx;
+					posx += child->width;
+
+					gridbr++;
+					if(gridbr >= 3)
+					{
+						gridbr = 0;
+						posx = 0;
+					}
+				}
+
 				if(node->pic != NULL)
 					changepic(child, node->pic);
 				child->valign = MIDDLE;
 				child->bordercol = node->bordercol;
-				child->width = 100;
-				child->prozwidth = 1;
+				if(flag == 0)
+				{
+					child->width = 100;
+					child->prozwidth = 1;
+				}
 				child->height = node->fontsize + 2 + (node->bordersize * 2);
 				changetext(child, filelist[i]->d_name);
 				changename(child, filelist[i]->d_name);
@@ -346,9 +369,28 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 				child = addscreennode(screen, NULL, child);
 				if(child != NULL)
 				{
+					if(flag == 1)
+					{
+						if(gridbr == 0) child->type = GRIDBR;
+
+						child->width = 200;
+						child->posx = posx;
+						posx += child->width;
+
+						gridbr++;
+						if(gridbr >= 3)
+						{
+							gridbr = 0;
+							posx = 0;
+						}
+					}
+
 					child->bordercol = node->bordercol;
-					child->width = 100;
-					child->prozwidth = 1;
+					if(flag == 0)
+					{
+						child->width = 100;
+						child->prozwidth = 1;
+					}
 					child->height = node->fontsize + 2 + (node->bordersize * 2);
 					changetext(child, filelist[i]->d_name);
 					changename(child, filelist[i]->d_name);
