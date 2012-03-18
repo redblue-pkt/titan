@@ -848,7 +848,7 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 */
 
 	if(newnode->type & FILELIST)
-		createfilelist(tmpnode, newnode);
+		createfilelist(tmpnode, newnode, 0);
 
 	//debug(1000, "out");
 	return newnode;
