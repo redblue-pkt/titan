@@ -71,6 +71,7 @@ void screenstandby()
 
 	if(gettimer(epgscan) != NULL)
 	{
+		int i = 0;
 		epgscan->aktion = STOP;
 		while(gettimer(epgscan) != NULL && epgscan->status != DEACTIVE)
 		{
