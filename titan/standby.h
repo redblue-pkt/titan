@@ -61,16 +61,25 @@ void screenstandby()
 		loctime = gettime(NULL, "%H:%M");
 		if(lastrun + 300 < time(NULL) && ostrcmp(loctime, getconfig("epg_refreshtime", NULL)) == 0)
 		{
+			voltoff = 1; //is not a real voltoff, but after standby this makes a new channel tuning
 			//start epg scanlist
 			lastrun = time(NULL);
-       			epgscan = addtimer(&epgscanlistthread, START, 1000, 1, NULL, NULL, NULL);
+			epgscan = addtimer(&epgscanlistthread, START, 1000, 1, NULL, NULL, NULL);
 		}
 		free(loctime); loctime = 0;
 	}
-	system("vdstandby -d");
 
 	if(gettimer(epgscan) != NULL)
+	{
 		epgscan->aktion = STOP;
+		while(gettimer(epgscan) != NULL && epgscan->status != DEACTIVE)
+		{
+			usleep(100000);
+			i++; if(i > 50) break;
+		}
+	}
+	
+	system("vdstandby -d");
 
 	setoverclockfreq(1);
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));

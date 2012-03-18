@@ -68,7 +68,7 @@ void epgscanlistthread(struct stimerthread* self)
 	debug(400, "epgscan time ok");
 	if(fd != NULL) fprintf(fd, "epgscan time ok\n");
 
-	while(node != NULL)
+	while(node != NULL && self->aktion != STOP)
 	{
 		chnode = getchannel(node->serviceid, node->transponderid);
 		if(chnode == NULL || chnode == status.aktservice->channel)
