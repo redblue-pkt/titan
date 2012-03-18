@@ -1,7 +1,18 @@
 #ifndef EPGSCAN_H
 #define EPGSCAN_H
 
-struct epgscanlist* getepgscanlistbytransponder(int transponderid)
+void epgscanlistclearscantime()
+{
+	struct epgscanlist *node = epgscanlist;
+
+	while(node != NULL)
+	{
+		node->scantime = 0;
+		node = node->next;
+	}
+}
+
+struct epgscanlist* getepgscanlistbytransponder(unsigned long transponderid)
 {
 	//debug(1000, "in");
 	struct epgscanlist *node = epgscanlist;
@@ -16,7 +27,7 @@ struct epgscanlist* getepgscanlistbytransponder(int transponderid)
 
 		node = node->next;
 	}
-	debug(100, "epgscanlist not found (transponderid=%d)", transponderid);
+	debug(100, "epgscanlist not found (transponderid=%lu)", transponderid);
 	return NULL;
 }
 
@@ -25,20 +36,37 @@ void epgscanlistthread(struct stimerthread* self)
 	struct epgscanlist* node = epgscanlist, *tmpepgscannode = NULL;
 	struct dvbdev* fenode = NULL;
 	struct channel* chnode = NULL;
+	FILE* fd = NULL;
 	
 	debug(400, "epgscan thread start");
+	
+	fd = fopen(EPGSCANLOG, "w");
+	if(fd == NULL)
+	{
+		perr("can't open %s", EPGSCANLOG);
+	}
+	if(fd != NULL) fprintf(fd, "epgscan thread start\n");
 
 	if(status.standby == 0)
 	{
 		if(status.epglistmode == 0 || status.epglistmode == 2)
+		{
+			if(fd != NULL) fprintf(fd, "epgscan not configured to scan idle tuner\n");
 			goto end;
+		}
 	}
 	else if(getconfig("epg_refreshtime", NULL) == NULL)
-			goto end;
+	{
+		if(fd != NULL) fprintf(fd, "epgscan not configured to scan in standby\n");
+		goto end;
+	}
 
 	//wait for right time
 	while(self->aktion != STOP && time(NULL) < 1072224000) // 01.01.2004
 		usleep(1 * 1000000);
+		
+	debug(400, "epgscan time ok");
+	if(fd != NULL) fprintf(fd, "epgscan time ok\n");
 
 	while(node != NULL)
 	{
@@ -46,7 +74,8 @@ void epgscanlistthread(struct stimerthread* self)
 		if(chnode == NULL || chnode == status.aktservice->channel)
 		{
 			node = node->next;
-			debug(400, "epgscan channel not found");
+			debug(400, "epgscan channel not found sid=%d, tid=%lu", node->serviceid, node->transponderid);
+			if(fd != NULL) fprintf(fd, "epgscan channel not found sid=%d, tid=%lu\n", node->serviceid, node->transponderid);
 			continue;
 		}
 
@@ -54,7 +83,8 @@ void epgscanlistthread(struct stimerthread* self)
 		if(tmpepgscannode != NULL && tmpepgscannode->scantime != 0)
 		{
 			node = node->next;
-			debug(400, "epgscan transponer already scanned");
+			debug(400, "epgscan transponer already scanned tid=%lu", node->transponderid);
+			if(fd != NULL) fprintf(fd, "epgscan transponer already scanned tid=%lu\n", node->transponderid);
 			continue;
 		}
 
@@ -66,6 +96,7 @@ void epgscanlistthread(struct stimerthread* self)
 		{
 			node = node->next;
 			debug(400, "epgscan no free frontend found");
+			if(fd != NULL) fprintf(fd, "epgscan no free frontend found\n");
 			continue;
 		}
 
@@ -84,6 +115,8 @@ void epgscanlistthread(struct stimerthread* self)
 			else
 			{
 				node = node->next;
+				debug(400, "epgscan unknown frontend");
+				if(fd != NULL) fprintf(fd, "epgscan unknown frontend\n");
 				continue;
 			}
 
@@ -92,13 +125,22 @@ void epgscanlistthread(struct stimerthread* self)
 			{
 				node = node->next;
 				debug(400, "epgscan frontend tune failed");
+				if(fd != NULL) fprintf(fd, "epgscan frontend tune failed\n");
 				continue;
 			}
 
 			if(chnode->name != NULL)
+			{
 				debug(400, "epgscan scanning channel=%s, frontend=%s", chnode->name, fenode->feshortname);
+				if(fd != NULL) fprintf(fd, "epgscan scanning channel=%s, frontend=%s\n", chnode->name, fenode->feshortname);
+			}
 			readeit(self, chnode, fenode, 1);
 			node->scantime = time(NULL);
+		}
+		else
+		{
+			debug(400, "epgscan frontend locked frontend=%s", fenode->feshortname);
+			if(fd != NULL) fprintf(fd, "epgscan frontend locked frontend=%s\n", fenode->feshortname);
 		}
 
 		node = node->next;
@@ -109,7 +151,13 @@ void epgscanlistthread(struct stimerthread* self)
 
 end:
 	status.epgscanlistthread = NULL;
+	epgscanlistclearscantime();
 	
+	if(fd != NULL)
+	{
+		fprintf(fd, "epgscan thread end\n");
+		fclose(fd);
+	}
 	debug(400, "epgscan thread end");
 }
 
@@ -224,7 +272,7 @@ int readepgscanlist(const char* filename)
 	return 0;
 }
 
-int delepgscanlist(int serviceid, int transponderid)
+int delepgscanlist(int serviceid, unsigned long transponderid)
 {
 	debug(1000, "in");
 	int ret = 1;
@@ -261,7 +309,7 @@ int delepgscanlist(int serviceid, int transponderid)
 	return ret;
 }
 
-struct epgscanlist* getepgscanlist(int serviceid, int transponderid)
+struct epgscanlist* getepgscanlist(int serviceid, unsigned long transponderid)
 {
 	//debug(1000, "in");
 	struct epgscanlist *node = epgscanlist;
@@ -276,7 +324,7 @@ struct epgscanlist* getepgscanlist(int serviceid, int transponderid)
 
 		node = node->next;
 	}
-	debug(100, "epgscanlist not found (serviceid=%d, transponderid=%d)", serviceid, transponderid);
+	debug(100, "epgscanlist not found (serviceid=%d, transponderid=%lu)", serviceid, transponderid);
 	return NULL;
 }
 

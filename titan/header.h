@@ -157,7 +157,7 @@ int writechannel(const char *filename);
 struct channel* createchannel(char* name, unsigned long transponderid, int providerid, int serviceid, int servicetype, int flag, int videocodec, int audiocodec, int videopid, int audiopid, int protect);
 void delchannelbytransponder(unsigned long transponderid);
 struct channel* gettmpchannel();
-int delchannel(int serviceid, int transponderid, int flag);
+int delchannel(int serviceid, unsigned long transponderid, int flag);
 
 //transponder.h
 struct transponder* gettransponder(unsigned long transponderid);
@@ -203,7 +203,7 @@ struct stimerthread* addtimer(void* func, int aktion, int delay, int count, void
 void deltimer(struct stimerthread *tnode);
 
 //epgscanlist.h
-struct epgscanlist* getepgscanlist(int serviceid, int transponderid);
+struct epgscanlist* getepgscanlist(int serviceid, unsigned long transponderid);
 int writeepgscanlist(const char *filename);
 
 //rectimer.h
@@ -464,10 +464,10 @@ struct mainbouquet* getmainbouquetbybouquetpointer(struct bouquet* bouquetnode);
 struct skin* addlistbox(struct skin* screen, struct skin* listbox, struct skin* last, int del);
 
 //bouquets.h
-void delbouquetbychannel(int serviceid, int transponderid);
-struct bouquet* getbouquetbychannelmain(int serviceid, int transponderid);
+void delbouquetbychannel(int serviceid, unsigned long transponderid);
+struct bouquet* getbouquetbychannelmain(int serviceid, unsigned long transponderid);
 void recalcbouquetnr();
-void setbouquetchanneltonullmain(int serviceid, int transponderid);
+void setbouquetchanneltonullmain(int serviceid, unsigned long transponderid);
 
 //audiotrack.h
 void screenaudiotrack();

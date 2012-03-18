@@ -119,6 +119,7 @@
 #define MAXCASERVICE 20
 #define MAXLONGKEY 10
 #define MAXSAT 64
+#define EPGSCANLOG "/tmp/epgscan.log"
 
 #define HTTPAUTH "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0="
 

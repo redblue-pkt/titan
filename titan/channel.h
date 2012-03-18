@@ -336,7 +336,7 @@ int readchannel(const char* filename)
 
 //flag 0: del bouquet
 //flag 1: don't del bouquet
-int delchannel(int serviceid, int transponderid, int flag)
+int delchannel(int serviceid, unsigned long transponderid, int flag)
 {
 	debug(1000, "in");
 	int ret = 1;
