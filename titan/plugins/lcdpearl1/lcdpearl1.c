@@ -244,7 +244,7 @@ void LCD_Pearl1_thread()
  	addconfig("lcd_pearl1_plugin_running", "no");
  	LCD_Pearl1thread = NULL;
  	drawscreen(LCD_Pearl1, 0);
- 	status.write_png = 0
+ 	status.write_png = 0;
  	return;
 }
 
