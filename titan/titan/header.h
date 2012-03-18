@@ -13,6 +13,10 @@ void screenepgsearch();
 //sock.h
 char* gethttp(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect);
 char *get_ip(char *host);
+int sockportopen(int *fd, char* ip, int port, int tout);
+void sockclose(int *fd);
+int socksend(int *fd, unsigned char* data, int count, int timeout);
+int sockread(int fd, unsigned char *buf, int pos, int count, int tout, int flag);
 
 //numinput.h
 char* numinput(char* title, char* num, char* mask, int isip);
@@ -190,6 +194,9 @@ struct inetwork* getinetworkbydevice(char* device);
 void blitfb(int flag);
 void changefbresolution(char *value);
 void setfbtransparent(int value);
+struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int fd, unsigned char* mmapfb, unsigned long fixfbsize);
+void blitfb2(struct fb* fbnode, int flag);
+void delfb(char *name);
 
 //timerthread.h
 struct stimerthread* addtimer(void* func, int aktion, int delay, int count, void* param1, void* param2, struct stimerthread* last);
@@ -364,6 +371,7 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int flag);
 int delallfiles(char* dir, char* ext);
 unsigned long getfilecount(char* dir);
 char* readfiletomem(const char* filename, int flag);
