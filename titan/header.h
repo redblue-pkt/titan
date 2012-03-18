@@ -371,6 +371,7 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+char* string_strip_whitechars(char *text);
 int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int flag);
 int delallfiles(char* dir, char* ext);
 unsigned long getfilecount(char* dir);
@@ -452,6 +453,7 @@ int servicestop(struct service *node, int clear, int flag);
 int servicestart(struct channel* chnode, char* channellist, char* pin, int flag);
 void serviceresetchannelinfo(struct channel* chnode);
 struct service* getservice(int type, int flag);
+char* servicecheckret(int ret, int flag);
 
 //mainbouquets.h
 int writemainbouquet(const char *filename);
