@@ -151,7 +151,7 @@ int movebouquetup(struct bouquet* node)
 	return 0;
 }
 
-struct bouquet* getbouquetbychannel(struct bouquet* node, int serviceid, int transponderid)
+struct bouquet* getbouquetbychannel(struct bouquet* node, int serviceid, unsigned long transponderid)
 {
 	while(node != NULL)
 	{
@@ -326,7 +326,7 @@ int readbouquet(char* filename, struct bouquet** firstnode, int type)
 	return 0;
 }
 
-void delbouquet(int serviceid, int transponderid, struct bouquet** firstnode)
+void delbouquet(int serviceid, unsigned long transponderid, struct bouquet** firstnode)
 {
 	debug(1000, "in");
 	struct bouquet *node = *firstnode, *prev = *firstnode;
@@ -360,7 +360,7 @@ void delbouquet(int serviceid, int transponderid, struct bouquet** firstnode)
 	debug(1000, "out");
 }
 
-void setbouquetchanneltonullmain(int serviceid, int transponderid)
+void setbouquetchanneltonullmain(int serviceid, unsigned long transponderid)
 {
 	struct mainbouquet* node = mainbouquet;
 	struct bouquet* bouquetnode = NULL;
@@ -378,7 +378,7 @@ void setbouquetchanneltonullmain(int serviceid, int transponderid)
 	}
 }
 
-void delbouquetbychannel(int serviceid, int transponderid)
+void delbouquetbychannel(int serviceid, unsigned long transponderid)
 {
 	struct mainbouquet* node = mainbouquet;
 
