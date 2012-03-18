@@ -1,5 +1,5 @@
-#ifndef IPKG_H
-#define IPKG_H
+#ifndef OIPKG_H
+#define OIPKG_H
 
 #define IPKG_LIB
 #include "../libipkg/libipkg.h"
