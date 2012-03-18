@@ -2,6 +2,7 @@
 #define OIPKG_H
 
 #define IPKG_LIB
+#include "../libipkg/config.h"
 #include "../libipkg/libipkg.h"
 #include "../libipkg/args.h"
 #include "../libipkg/ipkg_cmd.h"
