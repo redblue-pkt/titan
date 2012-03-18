@@ -4439,6 +4439,8 @@ char* get_filesystem(char* device)
 	return tmpstr;
 }
 
+//flag 0: convert ip to 000.000.000.000
+//flag 1: convert ip to 0.0.0.0
 char* fixip(char* ipinput, int flag)
 {
 	debug(60, "in %s", ipinput);
