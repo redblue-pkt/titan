@@ -1,6 +1,95 @@
 #ifndef EPGSETTINGS_H
 #define EPGSETTINGS_H
 
+void createepgscanlist(struct skin* scanlist, struct skin* listbox)
+{
+	struct epgscanlist *node = epgscanlist;
+	struct skin* tmp = NULL;
+
+	while(node != NULL)
+	{
+		struct channel* chnode = getchannel(node->serviceid, node->transponderid);
+		if(chnode != NULL)
+		{
+			tmp = addlistbox(scanlist, listbox, tmp, 1);
+			if(tmp != NULL)
+			{
+				changetext(tmp, chnode->name);
+				tmp->handle = (char*)node;
+			}
+		}
+		node = node->next;
+	}
+}
+
+void screenepgscanlist()
+{
+	int rcret = 0;
+	struct skin* scanlist = getscreen("epgscanlist");
+	struct skin* listbox = getscreennode(scanlist, "listbox");
+	char* tmpstr = NULL, *tmpchannellist = NULL;
+
+	if(status.servicetype == 0)
+		tmpchannellist = ostrcat(getconfig("channellist", NULL), "", 0, 0);
+	else
+		tmpchannellist = ostrcat(getconfig("rchannellist", NULL), "", 0, 0);
+
+	scanlist->aktline = 1;
+	scanlist->aktpage = -1;
+
+	createepgscanlist(scanlist, listbox);
+
+	drawscreen(scanlist, 0);
+	addscreenrc(scanlist, listbox);
+
+	while(1)
+	{
+		rcret = waitrc(scanlist, 0, 0);
+
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL)) break;
+		if(rcret == getrcconfigint("rcred", NULL) && listbox->select != NULL && listbox->select->handle != NULL)
+		{
+			if(delepgscanlist(((struct epgscanlist*)listbox->select->handle)->serviceid, ((struct epgscanlist*)listbox->select->handle)->transponderid) == 0)
+			{
+				listbox->aktline--;
+				listbox->aktpage = -1;
+				delmarkedscreennodes(scanlist, 1);
+				createepgscanlist(scanlist, listbox);
+				drawscreen(scanlist, 0);
+			}
+		}
+		if(rcret == getrcconfigint("rcgreen", NULL))
+		{
+
+			clearscreen(scanlist);
+			int saveservicetype = status.servicetype;
+			struct channel* tmpchnode = NULL;
+
+			screenchannellist(&tmpchnode, &tmpchannellist, 1);
+			status.servicetype = saveservicetype;
+
+			if(tmpchnode != NULL)
+			{
+				tmpstr = ostrcat(oitoa(tmpchnode->serviceid), "#", 1, 0);
+				tmpstr = ostrcat(tmpstr, oitoa(tmpchnode->transponderid), 1, 1);
+				if(addepgscanlist(tmpstr, 1, NULL) != NULL)
+				{
+					delmarkedscreennodes(scanlist, 1);
+					createepgscanlist(scanlist, listbox);
+				}
+				free(tmpstr); tmpstr = NULL;
+			}
+
+			drawscreen(scanlist, 0);
+		}
+	}
+
+	delmarkedscreennodes(scanlist, 1);
+	delownerrc(scanlist);
+	clearscreen(scanlist);
+}
+
 void screenepgsettings()
 {
 	int rcret = 0;
