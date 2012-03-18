@@ -46,7 +46,6 @@ void screenepgscanlist()
 	{
 		rcret = waitrc(scanlist, 0, 0);
 
-		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL)) break;
 		if(rcret == getrcconfigint("rcred", NULL) && listbox->select != NULL && listbox->select->handle != NULL)
 		{
