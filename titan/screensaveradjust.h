@@ -66,7 +66,7 @@ void screenscreensaveradjust()
 		char* path = NULL;
 		delmarkedscreennodes(screensaveradjust, FILELISTDELMARK);
 		changeinput(filelist, "/var/swap/saver");
-		createfilelist(screensaveradjust, filelist);
+		createfilelist(screensaveradjust, filelist, 0);
 		
 		node = filelist;
 		while(node != NULL)

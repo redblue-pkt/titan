@@ -194,7 +194,7 @@ int ralphasort64(const void* v1, const void* v2)
 	return 0;
 }
 
-int createfilelist(struct skin* screen, struct skin* node)
+int createfilelist(struct skin* screen, struct skin* node, int flag)
 {
 	debug(1000, "in");
 	struct dirent64 **filelist;
@@ -451,7 +451,7 @@ void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* fil
 	else
 		status.filelistextend=0;
 	
-	createfilelist(input, filelist);
+	createfilelist(input, filelist, 0);
 	drawscreen(input, 0);
 	debug(1000, "out");
 }

@@ -54,7 +54,7 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 
 	free(tmppath);
 	delmarkedscreennodes(dir, FILELISTDELMARK);
-	createfilelist(dir, filelist);
+	createfilelist(dir, filelist, 0);
 	setlistboxselection(filelist, selection);
 
 	if(ext != NULL)

@@ -189,7 +189,7 @@ int initscreensaver()
 		delmarkedscreennodes(screensaver->screen, FILELISTDELMARK);
 		changemask(screensaver->filelist, "*.mvi");
 		changeinput(screensaver->filelist, screensaver->path);
-		createfilelist(screensaver->screen, screensaver->filelist);
+		createfilelist(screensaver->screen, screensaver->filelist, 0);
 		
 	}
 
