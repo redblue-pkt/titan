@@ -461,7 +461,7 @@ msgstr ""
 #: service.h:812 global.h:4557 plugins_rgui_skin.xml.h:3 rgui.h:21 rgui.h:84
 #: skins_rgui_skin.xml.h:3 rgui.h:24 rgui.h:87 global.h:4561 global.h:4563
 #: play.h:587 play.h:593 play.h:601 play.h:711 rgui.h:106 epgsettings.h:202
-#: global.h:4565 ipkg.h:363 skin_default_skin.xml.h:287
+#: global.h:4565 ipkg.h:363 skin_default_skin.xml.h:287 epgsettings.h:216
 msgid "OK"
 msgstr ""
 
@@ -541,7 +541,7 @@ msgstr ""
 #: plugins_rgui_skin.xml.h:2 rgui.h:21 rgui.h:84 skins_rgui_skin.xml.h:2
 #: rgui.h:24 rgui.h:87 global.h:4561 global.h:4563 play.h:587 play.h:593
 #: play.h:601 play.h:711 rgui.h:106 epgsettings.h:202 global.h:4565 ipkg.h:363
-#: skin_default_skin.xml.h:190
+#: skin_default_skin.xml.h:190 epgsettings.h:216
 msgid "EXIT"
 msgstr ""
 
@@ -6408,4 +6408,8 @@ msgstr ""
 
 #: skin_default_skin.xml.h:369
 msgid "ScanList"
+msgstr ""
+
+#: epgsettings.h:216
+msgid "EGG Scan Log"
 msgstr ""
