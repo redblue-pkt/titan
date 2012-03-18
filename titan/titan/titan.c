@@ -349,12 +349,7 @@ int main(int argc, char *argv[])
 	struct sigaction sa;
 	struct stimerthread *tmpthread = NULL;
 
-	writeFBfile.ActBuf = NULL;
-	writeFBfile.buf1 = NULL;
-	writeFBfile.buf2 = NULL;
-
-	status.write_png = 0;
-	status.write_jpg = 0;
+	status.rguidfd = -1;
 
 #ifdef SIMULATE
 	// for mem leak debug
@@ -734,7 +729,6 @@ firstwizzardstep1:
 	starthttpd(1);
 	
 	//start rguid
-	status.rguidfd = -1;
 	startrguid(1);
 
 	//init the player
