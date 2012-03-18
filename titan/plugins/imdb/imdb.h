@@ -65,7 +65,7 @@ void imdb()
 	char* cast = NULL;
 
 
-	input = getepgakttitle();
+	input = getepgakttitle(NULL);
 //	input = screensearch("Rambo");
 	printf("input: %s\n", input);
 //	stringreplacechar(input, ' ', '%20');
