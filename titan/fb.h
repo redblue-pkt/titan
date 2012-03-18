@@ -138,11 +138,15 @@ void fb2png_thread()
 			writeFBfile.ActBuf = writeFBfile.buf1;
 			fb2png(writeFBfile.buf1, 320, 240, "/tmp/titanlcd.png");
 			free(writeFBfile.buf1); writeFBfile.buf1 = NULL;
+			if(writeFBfile.buf2 != NULL)
+				usleep(500000);
 		}
 		if(writeFBfile.buf2 != NULL) {
 			writeFBfile.ActBuf = writeFBfile.buf2;
 			fb2png(writeFBfile.buf2, 320, 240, "/tmp/titanlcd.png");
 			free(writeFBfile.buf2); writeFBfile.buf2 = NULL;
+			if(writeFBfile.buf1 != NULL)
+				usleep(500000);
 		}
 	}
 	writeFBfile.ActBuf = NULL;
