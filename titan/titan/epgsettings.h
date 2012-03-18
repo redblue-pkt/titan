@@ -208,6 +208,15 @@ void screenepgsettings()
 			screenepgscanlist();
 			drawscreen(epgsettings, 0);
 		}
+		if(rcret == getrcconfigint("rcblue", NULL))
+		{
+			clearscreen(epgsettings);
+			char* log = readfiletomem(EPGSCANLOG, 0);
+			if(log == NULL) log = ostrcat("No log infos available.", NULL, 0, 0);
+			textbox(_("EGG Scan Log"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+			free(log); log = NULL;
+			drawscreen(epgsettings, 0);
+		}
 	}
 
 	delownerrc(epgsettings);
