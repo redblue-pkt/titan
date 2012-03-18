@@ -3220,7 +3220,7 @@ void calclistboxchild(struct skin* node, struct skin* parent)
 	}
 	node->rposy = node->rposy + parent->poscount;
 	node->iposy = node->iposy + parent->poscount;
-	if((parent->type & LISTBOX) || (parent->type & FILELIST))
+	if((parent->type & LISTBOX) || ((parent->type & FILELIST) && !(parent->type & GRID)))
 		parent->poscount += node->rheight;
 }
 
@@ -3260,7 +3260,7 @@ int calclistbox(struct skin* node)
 
 		calcrheight(child, node);
 
-		if((node->type & LISTBOX) || (node->type & FILELIST) || ((node->type & GRID) && (child->type & GRIDBR)))
+		if((node->type & LISTBOX) || ((node->type & FILELIST) && !(node->type & GRID)) || ((node->type & GRID) && (child->type & GRIDBR)))
 			node->poscount = node->poscount + child->posy + child->rheight;
 
 		if(node->poscount > node->iheight)

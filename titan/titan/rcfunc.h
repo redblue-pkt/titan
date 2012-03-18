@@ -75,7 +75,10 @@ void filelistok(struct skin* screen, struct skin* filelist, int flag)
 				if(path != status.skinerr)
 					changetext(path, filelist->input);
 				delmarkedscreennodes(screen, FILELISTDELMARK);
-				createfilelist(screen, filelist, 0);
+				if(filelist->type & GRID)
+					createfilelist(screen, filelist, 1);
+				else
+					createfilelist(screen, filelist, 0);
 				setlistboxselection(filelist, plastdir);
 				free(lastdir); lastdir = NULL;
 				drawscreen(screen, flag);
@@ -958,6 +961,8 @@ int addscreenrc(struct skin* screen, struct skin* node)
 		addrc(getrcconfigint("rcchup", NULL), gridchup, screen, node);
 		addrc(getrcconfigint("rcchdown", NULL), gridchdown, screen, node);
 		addrc(getrcconfigint("rchelp", NULL), helpbox, screen, node);
+		if(node->type & FILELIST)
+			addrc(getrcconfigint("rcok", NULL), filelistok, screen, node);
 	}
 	else if(node->type & LISTBOX)
 	{
@@ -1043,8 +1048,10 @@ int delscreenrc(struct skin* screen, struct skin* node)
 		delrc(getrcconfigint("rcchup", NULL), screen, node);
 		delrc(getrcconfigint("rcchdown", NULL), screen, node);
 		delrc(getrcconfigint("rchelp", NULL), screen, node);
+		if(node->type & FILELIST)
+			delrc(getrcconfigint("rcok", NULL), screen, node);
 	}
-	if(node->type & LISTBOX)
+	else if(node->type & LISTBOX)
 	{
 		delrc(getrcconfigint("rcup", NULL), screen, node);
 		delrc(getrcconfigint("rcdown", NULL), screen, node);
