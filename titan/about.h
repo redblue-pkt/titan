@@ -18,14 +18,14 @@ int screenabout(void)
 	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, _("Version"), 1, 0);
 	tmpstr = ostrcat(tmpstr, ": ", 1, 0);
-	tmpstr = ostrcat(tmpstr, VERSION, 1, 0);
+	tmpstr = ostrcat(tmpstr, OVERSION, 1, 0);
 	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, _("Copyright"), 1, 0);
 	tmpstr = ostrcat(tmpstr, ": ", 1, 0);
 	tmpstr = ostrcat(tmpstr, COPYRIGHT, 1, 0);
 	tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
 		
-//	snprintf(text, MINMALLOC, _("Image: %s\nVersion: %s\nCopyright: %s\n\n"), PROGNAME, VERSION, COPYRIGHT);
+//	snprintf(text, MINMALLOC, _("Image: %s\nVersion: %s\nCopyright: %s\n\n"), PROGNAME, OVERSION, COPYRIGHT);
 	snprintf(text, MINMALLOC, "%s", tmpstr);
 	free(tmpstr), tmpstr = NULL;
 		

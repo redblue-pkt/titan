@@ -79,7 +79,7 @@
 #include <ddvdlib.h>
 #endif
 
-#define VERSION "1.11a"
+#define OVERSION "1.11a"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
 #define CRONTRIBUT "obi, black, dvboxer, oxygen, gost"
