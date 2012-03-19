@@ -36,6 +36,7 @@ void epgscanlistthread(struct stimerthread* self)
 	struct epgscanlist* node = epgscanlist, *tmpepgscannode = NULL;
 	struct dvbdev* fenode = NULL;
 	struct channel* chnode = NULL;
+	char* tmpstr = NULL;
 	FILE* fd = NULL;
 	
 	debug(400, "epgscan thread start");
@@ -45,7 +46,13 @@ void epgscanlistthread(struct stimerthread* self)
 	{
 		perr("can't open %s", EPGSCANLOG);
 	}
-	if(fd != NULL) fprintf(fd, "epgscan thread start\n");
+	else
+	{ 
+		tmpstr = ostrcat("epgscan thread start ", gettime(NULL, "%d-%m-%Y %H:%M"), 0, 1);
+		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+		if(tmpstr != NULL) fprintf(fd, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
 
 	if(status.standby == 0)
 	{
