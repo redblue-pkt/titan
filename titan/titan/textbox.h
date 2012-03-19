@@ -30,14 +30,16 @@ int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char*
 			changetext(tmp, tmpstr);
 			free(tmpstr); tmpstr = NULL;
 			tmp->fontsize = 40;
-			tmp->halign = RIGHT;
+			tmp->halign = MIDDLE;
+			tmp->valign = CENTER;
+
 			changefont(tmp, "free3of9x");
-			tmp->width = 100;
-			tmp->prozwidth = 1;
-			tmp->height = 40;
+			tmp->width = 150;
+			tmp->height = 50;
+			tmp->bgcol = 0xffffff;
+			tmp->fontcol = 0x000001;
+			tmp->posx = 900;
 			tmp->del = 1;
-			
-			messagebox->hspace = 30;
 		}
 	}
 
