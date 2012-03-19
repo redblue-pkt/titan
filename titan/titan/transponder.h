@@ -580,7 +580,7 @@ struct transponder* addtransponder(char* line, int count, struct transponder* la
 	return newnode;
 }
 
-struct transponder* createtransponder(unsigned long id, int fetype, int orbitalpos, int frequency, int inversion, int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int system)
+struct transponder* createtransponder(unsigned long id, int fetype, int orbitalpos, unsigned int frequency, int inversion, unsigned int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int system)
 {
 	struct transponder* tpnode = NULL;
 	char* tmpstr = NULL;

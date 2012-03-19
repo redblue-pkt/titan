@@ -28,8 +28,8 @@ uint8_t changeservicetype(uint8_t type)
 struct transponder* satsystemdesc(unsigned char* buf, unsigned long transportid, unsigned short onid, int orbitalpos)
 {
 	int polarization = 0, modulation = 0, system = 0;
-	int rolloff = 0, fec = 0, symbolrate = 0;
-	unsigned int frequency = 0;
+	int rolloff = 0, fec = 0;
+	unsigned int frequency = 0, symbolrate = 0;
 	unsigned long id = 0;
 	struct transponder *tpnode = NULL;
 
@@ -370,10 +370,11 @@ void blindscan(struct stimerthread* timernode)
 	struct dvbdev* fenode = NULL;
 	struct transponder* tpnode = NULL;
 
-	int frequency = 0, symbolrate = 0, polarization = 0, modulation = 0, system = 0;
+	unsigned int frequency = 0, symbolrate = 0
+	int polarization = 0, modulation = 0, system = 0;
 
-	int minfrequency = 950000, maxfrequency = 1450000, stepfrequency = 20000;
-	int minsymbolrate = 0, maxsymbolrate = 1, stepsymbolrate = 1;
+	unsigned int minfrequency = 9500000, maxfrequency = 14500000, stepfrequency = 20000;
+	unsigned int minsymbolrate = 0, maxsymbolrate = 1, stepsymbolrate = 1;
 	int minmodulation = 0, maxmodulation = 2, stepmodulation = 1;
 	int minpolarization = 0, maxpolarization = 1, steppolarization = 1;
 	int minsystem = 0, maxsystem = 1, stepsystem = 1;
@@ -384,7 +385,7 @@ void blindscan(struct stimerthread* timernode)
 	int countsymbolrate = ((maxsymbolrate + stepsymbolrate) - minsymbolrate) / stepsymbolrate;
 	int countmodulation = ((maxmodulation + stepmodulation) - minmodulation) / stepmodulation;
 	int countpolarization = ((maxpolarization + steppolarization) - minpolarization) / steppolarization;
-	int systemcount= ((maxsystem + stepsystem) - minsystem) / stepsystem;
+	int systemcount = ((maxsystem + stepsystem) - minsystem) / stepsystem;
 
 
 	scaninfo.blindmax += systemcount * countpolarization * countmodulation * countsymbolrate * countfrequency;
@@ -749,7 +750,7 @@ void scansetmultisat(struct skin* scan)
 	}
 }
 
-void screenscan(struct transponder* transpondernode, struct skin* mscan, char* tuner, int scantype, int orbitalpos, int frequency, int inversion, int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int networkscan, int onlyfree, int clear, int blindscan, int system, int timeout)
+void screenscan(struct transponder* transpondernode, struct skin* mscan, char* tuner, int scantype, int orbitalpos, unsigned int frequency, int inversion, unsigned int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int networkscan, int onlyfree, int clear, int blindscan, int system, int timeout)
 {
 	int rcret = 0, tpmax = 0, i = 0, alladded = 0;
 	struct skin* scan = getscreen("scan");
@@ -1086,8 +1087,9 @@ void scanchangesat(struct skin* sat, struct transponder* tpnode, char* feshortna
 void screenscanconfig(int flag)
 {
 	int rcret = 0;
-	int iscantype = -1, isat = -1, ifrequency = -1;
-	int iinversion = -1, isymbolrate = -1, ipolarization = -1;
+	unsigned int ifrequency = -1, isymbolrate = -1;
+	int iscantype = -1, isat = -1;
+	int iinversion = -1, ipolarization = -1;
 	int ifec = -1, imodulation = -1, irolloff = -1, ipilot = -1, isystem = -1;
 	int inetworkscan = -1, ionlyfree = -1, iclear = -1, iblindscan = -1;
 	int i = 0, treffer = 0, tunercount = 0;

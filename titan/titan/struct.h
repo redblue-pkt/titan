@@ -616,7 +616,7 @@ struct dvbdev
 	struct transponder* felasttransponder;
 	struct transponder* feakttransponder;
 	int feunicable;
-	int feloffrequency;
+	unsigned int feloffrequency;
 	int feaktband;
 	int feaktpolarization;
 	fe_sec_voltage_t feaktvolt;
@@ -649,7 +649,7 @@ struct transponder
 	uint8_t tunablestatus;
 	int orbitalpos;
 	unsigned int frequency;
-	int symbolrate;
+	unsigned int symbolrate;
 	struct transponder *next;
 };
 
