@@ -18,7 +18,7 @@ int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktnr, int 
 	if(node->feinfo->type != FE_QPSK)
 		return 0;
 
-	int frequency = tpnode->frequency;
+	unsigned int frequency = tpnode->frequency;
 	node->feunicable = 0;
 
 	if(feaktnr == NULL) feaktnr = node->feaktnr;
@@ -94,7 +94,7 @@ int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktnr, int 
 	else
 	{
 		int lof = (node->feaktband & 1) ? lofh : lofl;
-		int tmp = (frequency - lof) + satcrfrequ;
+		unsigned int tmp = (frequency - lof) + satcrfrequ;
 		node->feloffrequency = (tmp / 4) - 350000;
 		node->feunicable = 1;
 	}
