@@ -479,7 +479,7 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 		addtimer(&autochangechannelname, START, 1000, 1, NULL, NULL, NULL);
 	
 	//autoresolution
-	if(ostrcmp(getconfig("av_videomode_autores", NULL), "auto") == 0)
+	if(flag == 0 && ostrcmp(getconfig("av_videomode_autores", NULL), "auto") == 0)
 	{
 		int sec = 7;
 		if(getconfig("av_videomode_autores_ts", NULL) != NULL)
