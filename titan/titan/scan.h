@@ -674,7 +674,7 @@ void scanaddchannel(struct skin* node, int scantype, struct transponder* tp1)
 			providerid = providernode->providerid;
 		else
 		{
-			providerid = getlastproviderid();
+			providerid = getlastproviderid() + 1;
 			tmpstr = ostrcat(tmpstr, oitoa(providerid), 1, 1);
 			tmpstr = ostrcat(tmpstr, "#", 1, 0);
 			tmpstr = ostrcat(tmpstr, node->param1, 1, 0);
