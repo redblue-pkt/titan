@@ -370,11 +370,16 @@ void blindscan(struct stimerthread* timernode)
 	struct dvbdev* fenode = NULL;
 	struct transponder* tpnode = NULL;
 
-	unsigned int frequency = 0, symbolrate = 0
+	unsigned int frequency = 0, symbolrate = 0;
 	int polarization = 0, modulation = 0, system = 0;
 
-	unsigned int minfrequency = 9500000, maxfrequency = 14500000, stepfrequency = 20000;
-	unsigned int minsymbolrate = 0, maxsymbolrate = 1, stepsymbolrate = 1;
+	unsigned int minfrequency = getconfigint("blindminfrequency", NULL) * 1000;
+	unsigned int maxfrequency = getconfigint("blindmaxfrequency", NULL) * 1000;
+	unsigned int stepfrequency = getconfigint("blindstepfrequency", NULL) * 1000;
+	unsigned int minsymbolrate = getconfigint("blindminsignalrate", NULL) * 1000;
+	unsigned int maxsymbolrate = getconfigint("blindmaxsignalrate", NULL) * 1000;
+	unsigned int stepsymbolrate = getconfigint("blindstepsignalrate", NULL) * 1000;
+	
 	int minmodulation = 0, maxmodulation = 2, stepmodulation = 1;
 	int minpolarization = 0, maxpolarization = 1, steppolarization = 1;
 	int minsystem = 0, maxsystem = 1, stepsystem = 1;
@@ -393,18 +398,8 @@ void blindscan(struct stimerthread* timernode)
 	for(frequency = minfrequency; frequency <= maxfrequency; frequency += stepfrequency)
 	{
 
-		int csymbolrate = 0;
-		for(csymbolrate = minsymbolrate; csymbolrate <= maxsymbolrate; csymbolrate += stepsymbolrate)
+		for(symbolrate = minsymbolrate; symbolrate <= maxsymbolrate; symbolrate += stepsymbolrate)
 		{
-			switch(csymbolrate)
-			{
-				case 0:
-					symbolrate = 22000000;
-					break;
-				case 1:
-					symbolrate = 27500000;
-					break;
-			}
 
 			for(modulation = minmodulation; modulation <= maxmodulation; modulation += stepmodulation)
 			{

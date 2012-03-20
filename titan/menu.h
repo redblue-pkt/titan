@@ -397,6 +397,11 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screennetwork_inadyn();
 	}
+	else if(ostrcmp("blindscanadjust", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screenblindscanadjust();
+	}
 	else if(menuentry->pluginhandle != NULL)
 	{
 		if(menuentry->input != NULL)

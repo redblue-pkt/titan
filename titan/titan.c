@@ -130,6 +130,7 @@ struct caservice caservice[MAXCASERVICE];
 #include "timezone.h"
 #include "adjust.h"
 #include "skinadjust.h"
+#include "blindscanadjust.h"
 #include "moduleconfig.h"
 #include "possetup.h"
 #include "rectimer.h"
