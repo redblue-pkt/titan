@@ -56,6 +56,12 @@ void setdefaults()
 	addconfigdef("wakeuptimerdevdiff", "300");
 	addconfigdef("rectimer_timediff", "120");
 	addconfigdef("screenanimspeed", "1");
+	addconfigdef("blindminfrequency", "9500");
+	addconfigdef("blindmaxfrequency", "14500");
+	addconfigdef("blindstepfrequency", "20");
+	addconfigdef("blindminsignalrate", "20000");
+	addconfigdef("blindmaxsignalrate", "30000");
+	addconfigdef("blindstepsignalrate", "20");
 	
 	status.expertmodus = getconfigint("expertmodus", NULL);
 	status.pmtmode = getconfigint("pmtmode", NULL);
