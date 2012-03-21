@@ -650,6 +650,7 @@ struct transponder
 	int orbitalpos;
 	unsigned int frequency;
 	unsigned int symbolrate;
+	int encoding;
 	struct transponder *next;
 };
 

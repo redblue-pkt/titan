@@ -693,6 +693,52 @@ int readtransponder(const char* filename)
 	return 0;
 }
 
+int readtransponderencoding(const char* filename)
+{
+	debug(1000, "in");
+	FILE *fd = NULL;
+	char *fileline = NULL;
+	int linecount = 0;
+	struct transponder* tpnode = NULL;
+
+	fd = fopen(filename, "r");
+	if(fd == NULL)
+	{
+		perr("can't open %s", filename);
+		free(fileline);
+		return 1;
+	}
+
+	while(fgets(fileline, MINMALLOC, fd) != NULL)
+	{
+		if(fileline[0] == '#' || fileline[0] == '\n')
+			continue;
+		if(fileline[strlen(fileline) - 1] == '\n')
+			fileline[strlen(fileline) - 1] = '\0';
+		if(fileline[strlen(fileline) - 1] == '\r')
+			fileline[strlen(fileline) - 1] = '\0';
+
+		linecount++;
+		tpnode = NULL;
+
+		unsigned int tsid = 0, onid = 0, encoding = 0;
+		if(sscanf(fileline, "%d %d", &tsid, &onid) == 2)
+		{
+			//two char mapping
+			tpnode = gettransponder((tsid << 16) | onid);
+			if(tpnode != NULL) tpnode->encoding = 10002;
+		}
+		else
+		{
+			err("encoding line %d not ok", linecount);
+		}
+	}
+
+	free(fileline);
+	fclose(fd);
+	return 0;
+}
+
 void deltransponder(unsigned long transponderid)
 {
 	debug(1000, "in");
