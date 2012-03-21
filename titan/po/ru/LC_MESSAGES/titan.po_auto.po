@@ -36,7 +36,8 @@
 #: scan.h:1017 scan.h:1307 scan.h:1311 scan.h:1315 scan.h:1319 inadyn.h:118
 #: network.h:587 scan.h:1050 scan.h:1340 scan.h:1344 scan.h:1348 scan.h:1352
 #: network.h:598 httpdsettings.h:19 httpdsettings.h:53 epgsettings.h:116
-#: epgsettings.h:149
+#: epgsettings.h:149 scan.h:1046 scan.h:1337 scan.h:1341 scan.h:1345
+#: scan.h:1349
 msgid "no"
 msgstr ""
 
@@ -84,7 +85,8 @@ msgstr ""
 #: scan.h:1291 scan.h:1295 network.h:578 scan.h:1018 scan.h:1308 scan.h:1312
 #: scan.h:1316 scan.h:1320 inadyn.h:119 network.h:588 scan.h:1051 scan.h:1341
 #: scan.h:1345 scan.h:1349 scan.h:1353 network.h:599 httpdsettings.h:20
-#: httpdsettings.h:54 epgsettings.h:117 epgsettings.h:150
+#: httpdsettings.h:54 epgsettings.h:117 epgsettings.h:150 scan.h:1047
+#: scan.h:1338 scan.h:1342 scan.h:1346 scan.h:1350
 msgid "yes"
 msgstr ""
 
@@ -140,7 +142,7 @@ msgstr ""
 #: adjust.h:85 skin_default_skin.xml.h:308 skin_default_skin.xml.h:309
 #: skin_default_skin.xml.h:312 skin_default_skin.xml.h:314
 #: skin_default_skin.xml.h:317 skin_default_skin.xml.h:318
-#: skin_default_skin.xml.h:319
+#: skin_default_skin.xml.h:319 skin_default_skin.xml.h:325
 msgid "Power Off"
 msgstr ""
 
@@ -149,6 +151,7 @@ msgstr ""
 #: powerofftimer.h:117 skin_default_skin.xml.h:396 skin_default_skin.xml.h:399
 #: skin_default_skin.xml.h:402 skin_default_skin.xml.h:403
 #: skin_default_skin.xml.h:404 skin_default_skin.xml.h:406
+#: skin_default_skin.xml.h:412
 msgid "Standby"
 msgstr ""
 
@@ -157,6 +160,7 @@ msgstr ""
 #: skin_default_skin.xml.h:338 skin_default_skin.xml.h:341
 #: skin_default_skin.xml.h:343 skin_default_skin.xml.h:346
 #: skin_default_skin.xml.h:347 skin_default_skin.xml.h:348
+#: skin_default_skin.xml.h:354
 msgid "Restart"
 msgstr ""
 
@@ -380,7 +384,8 @@ msgstr ""
 #: tunerconfig.h:678 record.h:829 record.h:1005 service.h:571 service.h:812
 #: global.h:4557 rgui.h:21 rgui.h:84 rgui.h:24 rgui.h:87 global.h:4561
 #: global.h:4563 play.h:711 rgui.h:106 epgsettings.h:202 global.h:4565
-#: ipkg.h:363
+#: ipkg.h:363 scan.h:956 scan.h:966 scan.h:977 scan.h:1119 scan.h:1191
+#: scan.h:1402
 msgid "Message"
 msgstr ""
 
@@ -462,6 +467,8 @@ msgstr ""
 #: skins_rgui_skin.xml.h:3 rgui.h:24 rgui.h:87 global.h:4561 global.h:4563
 #: play.h:587 play.h:593 play.h:601 play.h:711 rgui.h:106 epgsettings.h:202
 #: global.h:4565 ipkg.h:363 skin_default_skin.xml.h:287 epgsettings.h:216
+#: scan.h:956 scan.h:977 scan.h:1119 scan.h:1191 scan.h:1402
+#: skin_default_skin.xml.h:293
 msgid "OK"
 msgstr ""
 
@@ -541,7 +548,8 @@ msgstr ""
 #: plugins_rgui_skin.xml.h:2 rgui.h:21 rgui.h:84 skins_rgui_skin.xml.h:2
 #: rgui.h:24 rgui.h:87 global.h:4561 global.h:4563 play.h:587 play.h:593
 #: play.h:601 play.h:711 rgui.h:106 epgsettings.h:202 global.h:4565 ipkg.h:363
-#: skin_default_skin.xml.h:190 epgsettings.h:216
+#: skin_default_skin.xml.h:190 epgsettings.h:216 scan.h:956 scan.h:977
+#: scan.h:1119 scan.h:1191 scan.h:1402 skin_default_skin.xml.h:192
 msgid "EXIT"
 msgstr ""
 
@@ -572,31 +580,31 @@ msgstr ""
 
 #: callmon_main.h:123 skin_default_skin.xml.h:90 skin_default_skin.xml.h:91
 #: skin_default_skin.xml.h:92 skin_default_skin.xml.h:93
-#: skin_default_skin.xml.h:94
+#: skin_default_skin.xml.h:94 skin_default_skin.xml.h:95
 msgid "3"
 msgstr ""
 
 #: callmon_main.h:124 skin_default_skin.xml.h:92 skin_default_skin.xml.h:93
 #: skin_default_skin.xml.h:94 skin_default_skin.xml.h:95
-#: skin_default_skin.xml.h:96
+#: skin_default_skin.xml.h:96 skin_default_skin.xml.h:97
 msgid "4"
 msgstr ""
 
 #: callmon_main.h:125 skin_default_skin.xml.h:93 skin_default_skin.xml.h:94
 #: skin_default_skin.xml.h:95 skin_default_skin.xml.h:96
-#: skin_default_skin.xml.h:97
+#: skin_default_skin.xml.h:97 skin_default_skin.xml.h:98
 msgid "5"
 msgstr ""
 
 #: callmon_main.h:126 skin_default_skin.xml.h:94 skin_default_skin.xml.h:95
 #: skin_default_skin.xml.h:96 skin_default_skin.xml.h:97
-#: skin_default_skin.xml.h:98
+#: skin_default_skin.xml.h:98 skin_default_skin.xml.h:99
 msgid "6"
 msgstr ""
 
 #: callmon_main.h:127 skin_default_skin.xml.h:96 skin_default_skin.xml.h:97
 #: skin_default_skin.xml.h:98 skin_default_skin.xml.h:99
-#: skin_default_skin.xml.h:100
+#: skin_default_skin.xml.h:100 skin_default_skin.xml.h:101
 msgid "8"
 msgstr ""
 
@@ -612,6 +620,7 @@ msgstr ""
 #: skin_default_skin.xml.h:322 skin_default_skin.xml.h:325
 #: skin_default_skin.xml.h:327 skin_default_skin.xml.h:330
 #: skin_default_skin.xml.h:331 skin_default_skin.xml.h:332
+#: skin_default_skin.xml.h:338
 msgid "Radio (Info)"
 msgstr ""
 
@@ -626,7 +635,7 @@ msgstr ""
 #: channellist.h:474 channellist.h:1189 skin_default_skin.xml.h:137
 #: skin_default_skin.xml.h:138 skin_default_skin.xml.h:139
 #: skin_default_skin.xml.h:140 skin_default_skin.xml.h:141
-#: skin_default_skin.xml.h:142
+#: skin_default_skin.xml.h:142 skin_default_skin.xml.h:144
 msgid "Channel"
 msgstr ""
 
@@ -654,6 +663,7 @@ msgstr ""
 #: skin_default_skin.xml.h:64 skins_lcdpearl1_skin.xml.h:1 dir.h:71 dir.h:77
 #: dir.h:83 dir.h:89 skin_default_skin.xml.h:65 skin_default_skin.xml.h:66
 #: skin_default_skin.xml.h:67 skin_default_skin.xml.h:68
+#: skin_default_skin.xml.h:69
 msgid "---"
 msgstr ""
 
@@ -708,13 +718,13 @@ msgstr ""
 
 #: diseqcconfig.h:136 skin_default_skin.xml.h:99 skin_default_skin.xml.h:100
 #: skin_default_skin.xml.h:101 skin_default_skin.xml.h:102
-#: skin_default_skin.xml.h:103
+#: skin_default_skin.xml.h:103 skin_default_skin.xml.h:104
 msgid "A"
 msgstr ""
 
 #: diseqcconfig.h:137 skin_default_skin.xml.h:126 skin_default_skin.xml.h:127
 #: skin_default_skin.xml.h:128 skin_default_skin.xml.h:129
-#: skin_default_skin.xml.h:130
+#: skin_default_skin.xml.h:130 skin_default_skin.xml.h:131
 msgid "B"
 msgstr ""
 
@@ -802,6 +812,7 @@ msgstr ""
 #: skin_default_skin.xml.h:385 skin_default_skin.xml.h:387
 #: skin_default_skin.xml.h:390 skin_default_skin.xml.h:391
 #: skin_default_skin.xml.h:392 skin_default_skin.xml.h:394
+#: skin_default_skin.xml.h:400
 msgid "Single (EPG)"
 msgstr ""
 
@@ -817,7 +828,7 @@ msgstr ""
 #: skin_default_skin.xml.h:381 skin_default_skin.xml.h:384
 #: skin_default_skin.xml.h:386 skin_default_skin.xml.h:389
 #: skin_default_skin.xml.h:390 skin_default_skin.xml.h:391 epgsettings.h:121
-#: epgsettings.h:142 skin_default_skin.xml.h:393
+#: epgsettings.h:142 skin_default_skin.xml.h:393 skin_default_skin.xml.h:399
 msgid "Single EPG"
 msgstr ""
 
@@ -825,7 +836,7 @@ msgstr ""
 #: skin_default_skin.xml.h:262 skin_default_skin.xml.h:265
 #: skin_default_skin.xml.h:267 skin_default_skin.xml.h:270
 #: skin_default_skin.xml.h:271 epgsettings.h:122 epgsettings.h:143
-#: skin_default_skin.xml.h:272
+#: skin_default_skin.xml.h:272 skin_default_skin.xml.h:278
 msgid "Multi EPG"
 msgstr ""
 
@@ -968,7 +979,8 @@ msgstr ""
 #: skin_default_skin.xml.h:216 skin_default_skin.xml.h:217
 #: skin_default_skin.xml.h:12 skin_default_skin.xml.h:220
 #: skin_default_skin.xml.h:221 skin_default_skin.xml.h:13
-#: skin_default_skin.xml.h:222
+#: skin_default_skin.xml.h:222 skin_default_skin.xml.h:14
+#: skin_default_skin.xml.h:224
 msgid "Harddisk"
 msgstr ""
 
@@ -1035,7 +1047,7 @@ msgstr ""
 #: skin_default_skin.xml.h:426 skin_default_skin.xml.h:431
 #: skin_default_skin.xml.h:432 skin_default_skin.xml.h:435
 #: skin_default_skin.xml.h:436 skin_default_skin.xml.h:438
-#: skin_default_skin.xml.h:440
+#: skin_default_skin.xml.h:440 skin_default_skin.xml.h:450
 msgid "Time to sleep"
 msgstr ""
 
@@ -1070,7 +1082,7 @@ msgstr ""
 #: lnbconfig.h:137 skin_default_skin.xml.h:303 skin_default_skin.xml.h:304
 #: skin_default_skin.xml.h:307 skin_default_skin.xml.h:309
 #: skin_default_skin.xml.h:312 skin_default_skin.xml.h:313
-#: skin_default_skin.xml.h:314
+#: skin_default_skin.xml.h:314 skin_default_skin.xml.h:320
 msgid "Polarization"
 msgstr ""
 
@@ -1202,6 +1214,7 @@ msgstr ""
 #: skins_wins3_skin.xml.h:4 skin_default_skin.xml.h:483
 #: plugins_rgui_skin.xml.h:9 skins_rgui_skin.xml.h:9
 #: skin_default_skin.xml.h:485 skin_default_skin.xml.h:487
+#: skin_default_skin.xml.h:497
 msgid ""
 msgstr ""
 
@@ -1274,6 +1287,7 @@ msgstr ""
 #: skin_default_skin.xml.h:454 skin_default_skin.xml.h:455
 #: skin_default_skin.xml.h:458 skin_default_skin.xml.h:459
 #: skin_default_skin.xml.h:461 skin_default_skin.xml.h:463
+#: skin_default_skin.xml.h:473
 msgid "unknown"
 msgstr ""
 
@@ -1495,6 +1509,7 @@ msgstr ""
 #: skin_default_skin.xml.h:22 skin_default_skin.xml.h:276
 #: skin_default_skin.xml.h:277 network.h:273 network.h:280 network.h:284
 #: network.h:291 skin_default_skin.xml.h:23 skin_default_skin.xml.h:278
+#: skin_default_skin.xml.h:24 skin_default_skin.xml.h:284
 msgid "Network"
 msgstr ""
 
@@ -1888,14 +1903,14 @@ msgstr ""
 #: skin_default_skin.xml.h:452 skin_default_skin.xml.h:457
 #: skin_default_skin.xml.h:458 skin_default_skin.xml.h:461
 #: skin_default_skin.xml.h:462 skin_default_skin.xml.h:464
-#: skin_default_skin.xml.h:466
+#: skin_default_skin.xml.h:466 skin_default_skin.xml.h:476
 msgid "User"
 msgstr ""
 
 #: panel_settings.h:31 skin_default_skin.xml.h:290 skin_default_skin.xml.h:291
 #: skin_default_skin.xml.h:294 skin_default_skin.xml.h:296
 #: skin_default_skin.xml.h:299 skin_default_skin.xml.h:300
-#: skin_default_skin.xml.h:301
+#: skin_default_skin.xml.h:301 skin_default_skin.xml.h:307
 msgid "Password"
 msgstr ""
 
@@ -1975,7 +1990,7 @@ msgstr ""
 #: skin_default_skin.xml.h:135 skins_panel_skin.xml.h:29
 #: skin_default_skin.xml.h:136 skin_default_skin.xml.h:137
 #: skin_default_skin.xml.h:138 skin_default_skin.xml.h:139
-#: skin_default_skin.xml.h:140
+#: skin_default_skin.xml.h:140 skin_default_skin.xml.h:142
 msgid "Cancel"
 msgstr ""
 
@@ -2119,7 +2134,7 @@ msgstr ""
 #: play.h:633 skin_default_skin.xml.h:154 play.h:639 play.h:645
 #: skin_default_skin.xml.h:155 skin_default_skin.xml.h:156
 #: skin_default_skin.xml.h:157 skin_default_skin.xml.h:158 play.h:675
-#: skin_default_skin.xml.h:159
+#: skin_default_skin.xml.h:159 skin_default_skin.xml.h:161
 msgid "DEL"
 msgstr ""
 
@@ -2163,6 +2178,7 @@ msgstr ""
 #: skins_callmonitor1_skin.xml.h:9 skin_default_skin.xml.h:133
 #: skin_default_skin.xml.h:134 skin_default_skin.xml.h:135
 #: skin_default_skin.xml.h:136 skin_default_skin.xml.h:137
+#: skin_default_skin.xml.h:139
 msgid "broadcast"
 msgstr ""
 
@@ -2370,7 +2386,7 @@ msgstr ""
 #: plugins_panel_skin.xml.h:68 skin_default_skin.xml.h:41
 #: skins_mc_skin.xml.h:40 skins_panel_skin.xml.h:10 skins_panel_skin.xml.h:68
 #: skin_default_skin.xml.h:42 skin_default_skin.xml.h:43
-#: skin_default_skin.xml.h:44
+#: skin_default_skin.xml.h:44 skin_default_skin.xml.h:45
 msgid "Settings"
 msgstr ""
 
@@ -2430,7 +2446,7 @@ msgstr ""
 #: skins_networkbrowser_skin.xml.h:1 skin_default_skin.xml.h:269
 #: skin_default_skin.xml.h:272 skin_default_skin.xml.h:274
 #: skin_default_skin.xml.h:277 skin_default_skin.xml.h:278
-#: skin_default_skin.xml.h:279
+#: skin_default_skin.xml.h:279 skin_default_skin.xml.h:285
 msgid "Networkbrowser"
 msgstr ""
 
@@ -2446,7 +2462,7 @@ msgstr ""
 #: skins_networkbrowser_skin.xml.h:5 skin_default_skin.xml.h:227
 #: skin_default_skin.xml.h:230 skin_default_skin.xml.h:231
 #: skin_default_skin.xml.h:234 skin_default_skin.xml.h:235
-#: skin_default_skin.xml.h:236
+#: skin_default_skin.xml.h:236 skin_default_skin.xml.h:238
 msgid "ipaddresse"
 msgstr ""
 
@@ -2544,7 +2560,7 @@ msgstr ""
 #: skins_panel_skin.xml.h:9 skin_default_skin.xml.h:290
 #: skin_default_skin.xml.h:293 skin_default_skin.xml.h:295
 #: skin_default_skin.xml.h:298 skin_default_skin.xml.h:299
-#: skin_default_skin.xml.h:300
+#: skin_default_skin.xml.h:300 skin_default_skin.xml.h:306
 msgid "Panel"
 msgstr ""
 
@@ -2565,7 +2581,8 @@ msgstr ""
 #: skin_default_skin.xml.h:415 skin_default_skin.xml.h:49
 #: skin_default_skin.xml.h:418 skin_default_skin.xml.h:419
 #: skin_default_skin.xml.h:421 skin_default_skin.xml.h:50
-#: skin_default_skin.xml.h:423
+#: skin_default_skin.xml.h:423 skin_default_skin.xml.h:51
+#: skin_default_skin.xml.h:431
 msgid "System"
 msgstr ""
 
@@ -2791,7 +2808,7 @@ msgstr ""
 #: skin_default_skin.xml.h:415 skin_default_skin.xml.h:420
 #: skin_default_skin.xml.h:421 skin_default_skin.xml.h:424
 #: skin_default_skin.xml.h:425 skin_default_skin.xml.h:427
-#: skin_default_skin.xml.h:429
+#: skin_default_skin.xml.h:429 skin_default_skin.xml.h:437
 msgid ""
 "text=EXIT halign=center valign=center bordercol=exitcol bordersize=4 "
 "bordertype=2 posx=180 posy=0 width=150 height=30/>"
@@ -2802,7 +2819,7 @@ msgstr ""
 #: skin_default_skin.xml.h:416 skin_default_skin.xml.h:421
 #: skin_default_skin.xml.h:422 skin_default_skin.xml.h:425
 #: skin_default_skin.xml.h:426 skin_default_skin.xml.h:428
-#: skin_default_skin.xml.h:430
+#: skin_default_skin.xml.h:430 skin_default_skin.xml.h:439
 msgid ""
 "text=OK halign=center valign=center bordercol=okcol bordersize=4 "
 "bordertype=2 posx=20 posy=0 width=150 height=30/>"
@@ -3015,7 +3032,7 @@ msgstr ""
 #: rectimer.h:893 skin_default_skin.xml.h:257 skin_default_skin.xml.h:258
 #: skin_default_skin.xml.h:261 skin_default_skin.xml.h:263
 #: skin_default_skin.xml.h:266 skin_default_skin.xml.h:267
-#: skin_default_skin.xml.h:268
+#: skin_default_skin.xml.h:268 skin_default_skin.xml.h:274
 msgid "Monday"
 msgstr ""
 
@@ -3023,7 +3040,7 @@ msgstr ""
 #: skin_default_skin.xml.h:434 skin_default_skin.xml.h:439
 #: skin_default_skin.xml.h:440 skin_default_skin.xml.h:443
 #: skin_default_skin.xml.h:444 skin_default_skin.xml.h:446
-#: skin_default_skin.xml.h:448
+#: skin_default_skin.xml.h:448 skin_default_skin.xml.h:458
 msgid "Tuesday"
 msgstr ""
 
@@ -3031,7 +3048,7 @@ msgstr ""
 #: skin_default_skin.xml.h:465 skin_default_skin.xml.h:470
 #: skin_default_skin.xml.h:471 skin_default_skin.xml.h:474
 #: skin_default_skin.xml.h:475 skin_default_skin.xml.h:477
-#: skin_default_skin.xml.h:479
+#: skin_default_skin.xml.h:479 skin_default_skin.xml.h:489
 msgid "Wednesday"
 msgstr ""
 
@@ -3039,14 +3056,14 @@ msgstr ""
 #: skin_default_skin.xml.h:421 skin_default_skin.xml.h:426
 #: skin_default_skin.xml.h:427 skin_default_skin.xml.h:430
 #: skin_default_skin.xml.h:431 skin_default_skin.xml.h:433
-#: skin_default_skin.xml.h:435
+#: skin_default_skin.xml.h:435 skin_default_skin.xml.h:445
 msgid "Thursday"
 msgstr ""
 
 #: rectimer.h:897 skin_default_skin.xml.h:197 skin_default_skin.xml.h:198
 #: skin_default_skin.xml.h:201 skin_default_skin.xml.h:202
 #: skin_default_skin.xml.h:205 skin_default_skin.xml.h:206
-#: skin_default_skin.xml.h:207
+#: skin_default_skin.xml.h:207 skin_default_skin.xml.h:209
 msgid "Friday"
 msgstr ""
 
@@ -3054,6 +3071,7 @@ msgstr ""
 #: skin_default_skin.xml.h:358 skin_default_skin.xml.h:360
 #: skin_default_skin.xml.h:363 skin_default_skin.xml.h:364
 #: skin_default_skin.xml.h:365 skin_default_skin.xml.h:366
+#: skin_default_skin.xml.h:372
 msgid "Saturday"
 msgstr ""
 
@@ -3061,7 +3079,7 @@ msgstr ""
 #: skin_default_skin.xml.h:406 skin_default_skin.xml.h:411
 #: skin_default_skin.xml.h:412 skin_default_skin.xml.h:415
 #: skin_default_skin.xml.h:416 skin_default_skin.xml.h:418
-#: skin_default_skin.xml.h:420
+#: skin_default_skin.xml.h:420 skin_default_skin.xml.h:428
 msgid "Sunday"
 msgstr ""
 
@@ -3109,68 +3127,68 @@ msgstr ""
 msgid "Data"
 msgstr ""
 
-#: scan.h:729 scan.h:818 scan.h:838 scan.h:863 scan.h:886
+#: scan.h:729 scan.h:818 scan.h:838 scan.h:863 scan.h:886 scan.h:882
 msgid "Sat: "
 msgstr ""
 
-#: scan.h:735 scan.h:824 scan.h:844 scan.h:869 scan.h:892
+#: scan.h:735 scan.h:824 scan.h:844 scan.h:869 scan.h:892 scan.h:888
 msgid "Transponder: "
 msgstr ""
 
-#: scan.h:743 scan.h:832 scan.h:852 scan.h:877 scan.h:900
+#: scan.h:743 scan.h:832 scan.h:852 scan.h:877 scan.h:900 scan.h:896
 msgid "TV: "
 msgstr ""
 
-#: scan.h:751 scan.h:840 scan.h:860 scan.h:885 scan.h:908
+#: scan.h:751 scan.h:840 scan.h:860 scan.h:885 scan.h:908 scan.h:904
 msgid "Radio: "
 msgstr ""
 
-#: scan.h:759 scan.h:848 scan.h:868 scan.h:893 scan.h:916
+#: scan.h:759 scan.h:848 scan.h:868 scan.h:893 scan.h:916 scan.h:912
 msgid "Data: "
 msgstr ""
 
-#: scan.h:793 scan.h:882 scan.h:902 scan.h:927 scan.h:960
+#: scan.h:793 scan.h:882 scan.h:902 scan.h:927 scan.h:960 scan.h:956
 msgid "All new channel added!"
 msgstr ""
 
-#: scan.h:803 scan.h:892 scan.h:912 scan.h:937 scan.h:970
+#: scan.h:803 scan.h:892 scan.h:912 scan.h:937 scan.h:970 scan.h:966
 msgid "Wait for channel scan end"
 msgstr ""
 
 #: scan.h:947 scan.h:951 scan.h:954 scan.h:1043 scan.h:1064 scan.h:1089
-#: scan.h:1122 tunerconfig.h:606
+#: scan.h:1122 tunerconfig.h:606 scan.h:1119
 msgid ""
 "Scan is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 
 #: scan.h:1019 scan.h:1023 scan.h:1026 scan.h:1115 scan.h:1136 scan.h:1161
-#: scan.h:1194
+#: scan.h:1194 scan.h:1191
 msgid "No Tuner configured"
 msgstr ""
 
 #: scan.h:1032 scan.h:1036 scan.h:1039 scan.h:1128 scan.h:1149 scan.h:1174
-#: scan.h:1207
+#: scan.h:1207 scan.h:1204
 msgid "Single Transponder"
 msgstr ""
 
 #: scan.h:1033 scan.h:1037 scan.h:1040 scan.h:1129 scan.h:1150 scan.h:1175
-#: scan.h:1208
+#: scan.h:1208 scan.h:1205
 msgid "Single Sat"
 msgstr ""
 
 #: scan.h:1034 scan.h:1038 scan.h:1041 scan.h:1130 scan.h:1151 scan.h:1176
-#: scan.h:1209
+#: scan.h:1209 scan.h:1206
 msgid "Multi Sat"
 msgstr ""
 
 #: scan.h:1039 scan.h:1043 scan.h:1046 scan.h:1135 scan.h:1156 scan.h:1181
-#: scan.h:1214
+#: scan.h:1214 scan.h:1211
 msgid "Auto Scan"
 msgstr ""
 
 #: scan.h:1225 scan.h:1229 scan.h:1232 scan.h:1321 scan.h:1347 scan.h:1372
-#: scan.h:1405
+#: scan.h:1405 scan.h:1402
 msgid "Transponder changed"
 msgstr ""
 
@@ -3297,6 +3315,7 @@ msgstr ""
 #: skin_default_skin.xml.h:2 skin_default_skin.xml.h:109
 #: skin_default_skin.xml.h:110 skin_default_skin.xml.h:111
 #: skin_default_skin.xml.h:112 skin_default_skin.xml.h:113
+#: skin_default_skin.xml.h:114
 msgid "Adjust"
 msgstr ""
 
@@ -3307,25 +3326,27 @@ msgstr ""
 #: skin_default_skin.xml.h:4 skin_default_skin.xml.h:123
 #: skin_default_skin.xml.h:124 skin_default_skin.xml.h:125
 #: skin_default_skin.xml.h:126 skin_default_skin.xml.h:127
+#: skin_default_skin.xml.h:128
 msgid "A/V Settings"
 msgstr ""
 
-#: skin_default_skin.xml.h:5
+#: skin_default_skin.xml.h:5 skin_default_skin.xml.h:6
 msgid "Bouquet List"
 msgstr ""
 
 #: skin_default_skin.xml.h:6 skin_default_skin.xml.h:138
 #: skin_default_skin.xml.h:139 skin_default_skin.xml.h:140
 #: skin_default_skin.xml.h:141 skin_default_skin.xml.h:142
-#: skin_default_skin.xml.h:143
+#: skin_default_skin.xml.h:143 skin_default_skin.xml.h:7
+#: skin_default_skin.xml.h:145
 msgid "Channel Edit"
 msgstr ""
 
-#: skin_default_skin.xml.h:7
+#: skin_default_skin.xml.h:7 skin_default_skin.xml.h:8
 msgid "Channel Search"
 msgstr ""
 
-#: skin_default_skin.xml.h:8
+#: skin_default_skin.xml.h:8 skin_default_skin.xml.h:9
 msgid "Diseqc Settings"
 msgstr ""
 
@@ -3334,11 +3355,13 @@ msgstr ""
 #: skin_default_skin.xml.h:184 skin_default_skin.xml.h:11
 #: skin_default_skin.xml.h:187 skin_default_skin.xml.h:188
 #: skin_default_skin.xml.h:12 skin_default_skin.xml.h:189
+#: skin_default_skin.xml.h:13 skin_default_skin.xml.h:191
 msgid "EPG Settings"
 msgstr ""
 
 #: skin_default_skin.xml.h:11 skin_default_skin.xml.h:12
 #: skin_default_skin.xml.h:13 skin_default_skin.xml.h:14
+#: skin_default_skin.xml.h:15
 msgid "Help"
 msgstr ""
 
@@ -3347,12 +3370,14 @@ msgstr ""
 #: skin_default_skin.xml.h:219 skin_default_skin.xml.h:220
 #: skin_default_skin.xml.h:14 skin_default_skin.xml.h:223
 #: skin_default_skin.xml.h:224 skin_default_skin.xml.h:15
-#: skin_default_skin.xml.h:225
+#: skin_default_skin.xml.h:225 skin_default_skin.xml.h:16
+#: skin_default_skin.xml.h:227
 msgid "HTTP Settings"
 msgstr ""
 
 #: skin_default_skin.xml.h:13 skin_default_skin.xml.h:14
 #: skin_default_skin.xml.h:15 skin_default_skin.xml.h:16
+#: skin_default_skin.xml.h:17
 msgid "Information"
 msgstr ""
 
@@ -3361,67 +3386,80 @@ msgstr ""
 #: skin_default_skin.xml.h:240 skin_default_skin.xml.h:242
 #: skin_default_skin.xml.h:16 skin_default_skin.xml.h:245
 #: skin_default_skin.xml.h:246 skin_default_skin.xml.h:17
-#: skin_default_skin.xml.h:247
+#: skin_default_skin.xml.h:247 skin_default_skin.xml.h:18
+#: skin_default_skin.xml.h:249
 msgid "Language"
 msgstr ""
 
 #: skin_default_skin.xml.h:15 skin_default_skin.xml.h:16
 #: skin_default_skin.xml.h:17 skin_default_skin.xml.h:18
+#: skin_default_skin.xml.h:19
 msgid "LNB Settings"
 msgstr ""
 
 #: skin_default_skin.xml.h:16 skin_default_skin.xml.h:17
 #: skin_default_skin.xml.h:18 skin_default_skin.xml.h:19
+#: skin_default_skin.xml.h:20
 msgid "Main Menu"
 msgstr ""
 
 #: skin_default_skin.xml.h:17 skin_default_skin.xml.h:18
 #: skin_default_skin.xml.h:19 skin_default_skin.xml.h:20
+#: skin_default_skin.xml.h:21
 msgid "Menulist"
 msgstr ""
 
 #: skin_default_skin.xml.h:18 skin_default_skin.xml.h:19
 #: skin_default_skin.xml.h:20 skin_default_skin.xml.h:21
+#: skin_default_skin.xml.h:22
 msgid "Menu Protect"
 msgstr ""
 
 #: skin_default_skin.xml.h:19 skin_default_skin.xml.h:20
 #: skin_default_skin.xml.h:21 skin_default_skin.xml.h:22
+#: skin_default_skin.xml.h:23
 msgid "Module Config"
 msgstr ""
 
 #: skin_default_skin.xml.h:21 skin_default_skin.xml.h:22
 #: skin_default_skin.xml.h:23 skin_default_skin.xml.h:24
+#: skin_default_skin.xml.h:25
 msgid "Network Adapter Settings"
 msgstr ""
 
 #: skin_default_skin.xml.h:22 skin_default_skin.xml.h:23
 #: skin_default_skin.xml.h:24 skin_default_skin.xml.h:25
+#: skin_default_skin.xml.h:26
 msgid "Network Adapter Test"
 msgstr ""
 
 #: skin_default_skin.xml.h:23 skin_default_skin.xml.h:24
 #: skin_default_skin.xml.h:25 skin_default_skin.xml.h:26
+#: skin_default_skin.xml.h:27
 msgid "Network Interfacelist"
 msgstr ""
 
 #: skin_default_skin.xml.h:24 skin_default_skin.xml.h:25
 #: skin_default_skin.xml.h:26 skin_default_skin.xml.h:27
+#: skin_default_skin.xml.h:28
 msgid "Own Position"
 msgstr ""
 
 #: skin_default_skin.xml.h:25 skin_default_skin.xml.h:26
 #: skin_default_skin.xml.h:27 skin_default_skin.xml.h:28
+#: skin_default_skin.xml.h:29
 msgid "PIN Settings"
 msgstr ""
 
 #: skin_default_skin.xml.h:26 skin_default_skin.xml.h:27
 #: skin_default_skin.xml.h:28 skin_default_skin.xml.h:29
+#: skin_default_skin.xml.h:30
 msgid "PlayList"
 msgstr ""
 
 #: skin_default_skin.xml.h:27 skin_default_skin.xml.h:28
 #: skin_default_skin.xml.h:29 skin_default_skin.xml.h:30
+#: skin_default_skin.xml.h:31
 msgid "PlayList - select your playlist !"
 msgstr ""
 
@@ -3430,52 +3468,62 @@ msgstr ""
 #: skin_default_skin.xml.h:305 skin_default_skin.xml.h:307
 #: skin_default_skin.xml.h:30 skin_default_skin.xml.h:310
 #: skin_default_skin.xml.h:311 skin_default_skin.xml.h:31
-#: skin_default_skin.xml.h:312
+#: skin_default_skin.xml.h:312 skin_default_skin.xml.h:32
+#: skin_default_skin.xml.h:318
 msgid "Plugins"
 msgstr ""
 
 #: skin_default_skin.xml.h:29 skin_default_skin.xml.h:30
 #: skin_default_skin.xml.h:31 skin_default_skin.xml.h:32
+#: skin_default_skin.xml.h:33
 msgid "Positioner Setup"
 msgstr ""
 
 #: skin_default_skin.xml.h:30 skin_default_skin.xml.h:31
 #: skin_default_skin.xml.h:32 skin_default_skin.xml.h:33
+#: skin_default_skin.xml.h:34
 msgid "Poweroff Timer"
 msgstr ""
 
 #: skin_default_skin.xml.h:31 skin_default_skin.xml.h:32
 #: skin_default_skin.xml.h:33 skin_default_skin.xml.h:34
+#: skin_default_skin.xml.h:35
 msgid "Recordlist"
 msgstr ""
 
 #: skin_default_skin.xml.h:32 skin_default_skin.xml.h:33
 #: skin_default_skin.xml.h:34 skin_default_skin.xml.h:35
+#: skin_default_skin.xml.h:36
 msgid "Record Path settings"
 msgstr ""
 
 #: skin_default_skin.xml.h:33 skin_default_skin.xml.h:34
 #: skin_default_skin.xml.h:35 skin_default_skin.xml.h:36
+#: skin_default_skin.xml.h:37
 msgid "Records and EPG"
 msgstr ""
 
 #: skin_default_skin.xml.h:34 skin_default_skin.xml.h:35
 #: skin_default_skin.xml.h:36 skin_default_skin.xml.h:37
+#: skin_default_skin.xml.h:38
 msgid "Record Timer"
 msgstr ""
 
 #: skin_default_skin.xml.h:35 skin_default_skin.xml.h:36
 #: skin_default_skin.xml.h:37 skin_default_skin.xml.h:38
+#: skin_default_skin.xml.h:39
 msgid "Satfinder"
 msgstr ""
 
 #: skin_default_skin.xml.h:36 skin_default_skin.xml.h:37
 #: skin_default_skin.xml.h:38 skin_default_skin.xml.h:39
+#: skin_default_skin.xml.h:40
 msgid "Scan"
 msgstr ""
 
 #: skin_default_skin.xml.h:37 skin_default_skin.xml.h:38
 #: skin_default_skin.xml.h:39 skin_default_skin.xml.h:40
+#: skin_default_skin.xml.h:41
 msgid "Scan Config"
 msgstr ""
 
@@ -3485,16 +3533,19 @@ msgstr ""
 #: skin_default_skin.xml.h:40 skin_default_skin.xml.h:368
 #: skin_default_skin.xml.h:369 skin_default_skin.xml.h:370
 #: skin_default_skin.xml.h:41 skin_default_skin.xml.h:372
+#: skin_default_skin.xml.h:42 skin_default_skin.xml.h:378
 msgid "Screensaver Adjust"
 msgstr ""
 
 #: skin_default_skin.xml.h:39 skin_default_skin.xml.h:40
 #: skin_default_skin.xml.h:41 skin_default_skin.xml.h:42
+#: skin_default_skin.xml.h:43
 msgid "Select Path"
 msgstr ""
 
 #: skin_default_skin.xml.h:40 skin_default_skin.xml.h:41
 #: skin_default_skin.xml.h:42 skin_default_skin.xml.h:43
+#: skin_default_skin.xml.h:44
 msgid "Serviceinfo"
 msgstr ""
 
@@ -3504,26 +3555,31 @@ msgstr ""
 #: skin_default_skin.xml.h:44 skin_default_skin.xml.h:392
 #: skin_default_skin.xml.h:393 skin_default_skin.xml.h:394
 #: skin_default_skin.xml.h:45 skin_default_skin.xml.h:396
+#: skin_default_skin.xml.h:46 skin_default_skin.xml.h:402
 msgid "Skin Adjust"
 msgstr ""
 
 #: skin_default_skin.xml.h:43 skin_default_skin.xml.h:44
 #: skin_default_skin.xml.h:45 skin_default_skin.xml.h:46
+#: skin_default_skin.xml.h:47
 msgid "Skin Select"
 msgstr ""
 
 #: skin_default_skin.xml.h:44 skin_default_skin.xml.h:45
 #: skin_default_skin.xml.h:46 skin_default_skin.xml.h:47
+#: skin_default_skin.xml.h:48
 msgid "Standby / Poweroff"
 msgstr ""
 
 #: skin_default_skin.xml.h:45 skin_default_skin.xml.h:46
 #: skin_default_skin.xml.h:47 skin_default_skin.xml.h:48
+#: skin_default_skin.xml.h:49
 msgid "Subservices"
 msgstr ""
 
 #: skin_default_skin.xml.h:46 skin_default_skin.xml.h:47
 #: skin_default_skin.xml.h:48 skin_default_skin.xml.h:49
+#: skin_default_skin.xml.h:50
 msgid "Subtitle"
 msgstr ""
 
@@ -3533,17 +3589,20 @@ msgstr ""
 #: skin_default_skin.xml.h:434 skin_default_skin.xml.h:50
 #: skin_default_skin.xml.h:437 skin_default_skin.xml.h:438
 #: skin_default_skin.xml.h:440 skin_default_skin.xml.h:51
-#: skin_default_skin.xml.h:442
+#: skin_default_skin.xml.h:442 skin_default_skin.xml.h:52
+#: skin_default_skin.xml.h:452
 msgid "Timezone"
 msgstr ""
 
 #: skin_default_skin.xml.h:49 skin_default_skin.xml.h:50
 #: skin_default_skin.xml.h:51 skin_default_skin.xml.h:52
+#: skin_default_skin.xml.h:53
 msgid "Tunerconfig"
 msgstr ""
 
 #: skin_default_skin.xml.h:50 skin_default_skin.xml.h:51
 #: skin_default_skin.xml.h:52 skin_default_skin.xml.h:53
+#: skin_default_skin.xml.h:54
 msgid "Tuner Reception"
 msgstr ""
 
@@ -3553,22 +3612,26 @@ msgstr ""
 #: skin_default_skin.xml.h:460 skin_default_skin.xml.h:53
 #: skin_default_skin.xml.h:463 skin_default_skin.xml.h:464
 #: skin_default_skin.xml.h:466 skin_default_skin.xml.h:54
-#: skin_default_skin.xml.h:468
+#: skin_default_skin.xml.h:468 skin_default_skin.xml.h:55
+#: skin_default_skin.xml.h:478
 msgid "VFDisplay"
 msgstr ""
 
 #: skin_default_skin.xml.h:52 skin_default_skin.xml.h:53
 #: skin_default_skin.xml.h:54 skin_default_skin.xml.h:55
+#: skin_default_skin.xml.h:56
 msgid "VideoMode Aspect Settings"
 msgstr ""
 
 #: skin_default_skin.xml.h:53 skin_default_skin.xml.h:54
 #: skin_default_skin.xml.h:55 skin_default_skin.xml.h:56
+#: skin_default_skin.xml.h:57
 msgid "VideoMode Resolution Settings"
 msgstr ""
 
 #: skin_default_skin.xml.h:54 skin_default_skin.xml.h:55
 #: skin_default_skin.xml.h:56 skin_default_skin.xml.h:57
+#: skin_default_skin.xml.h:58
 msgid "VideoMode Settings"
 msgstr ""
 
@@ -3578,373 +3641,374 @@ msgstr ""
 #: skin_default_skin.xml.h:463 skin_default_skin.xml.h:57
 #: skin_default_skin.xml.h:466 skin_default_skin.xml.h:467
 #: skin_default_skin.xml.h:469 skin_default_skin.xml.h:58
-#: skin_default_skin.xml.h:471
+#: skin_default_skin.xml.h:471 skin_default_skin.xml.h:59
+#: skin_default_skin.xml.h:481
 msgid "Video Settings"
 msgstr ""
 
 #: skin_default_skin.xml.h:56 skin_default_skin.xml.h:57
 #: skin_default_skin.xml.h:58 skin_default_skin.xml.h:59
-#: skin_default_skin.xml.h:60
+#: skin_default_skin.xml.h:60 skin_default_skin.xml.h:61
 msgid "^"
 msgstr ""
 
 #: skin_default_skin.xml.h:57 skin_default_skin.xml.h:58
 #: skin_default_skin.xml.h:59 skin_default_skin.xml.h:60
-#: skin_default_skin.xml.h:61
+#: skin_default_skin.xml.h:61 skin_default_skin.xml.h:62
 msgid "~"
 msgstr ""
 
 #: skin_default_skin.xml.h:58 skin_default_skin.xml.h:59
 #: skin_default_skin.xml.h:60 skin_default_skin.xml.h:61
-#: skin_default_skin.xml.h:62
+#: skin_default_skin.xml.h:62 skin_default_skin.xml.h:63
 msgid "<"
 msgstr ""
 
 #: skin_default_skin.xml.h:59 skin_default_skin.xml.h:60
 #: skin_default_skin.xml.h:61 skin_default_skin.xml.h:62
-#: skin_default_skin.xml.h:63
+#: skin_default_skin.xml.h:63 skin_default_skin.xml.h:64
 msgid "<-"
 msgstr ""
 
 #: skin_default_skin.xml.h:60 skin_default_skin.xml.h:61
 #: skin_default_skin.xml.h:62 skin_default_skin.xml.h:63
-#: skin_default_skin.xml.h:64
+#: skin_default_skin.xml.h:64 skin_default_skin.xml.h:65
 msgid ">"
 msgstr ""
 
 #: skin_default_skin.xml.h:61 skin_default_skin.xml.h:62
 #: skin_default_skin.xml.h:63 skin_default_skin.xml.h:64
-#: skin_default_skin.xml.h:65
+#: skin_default_skin.xml.h:65 skin_default_skin.xml.h:66
 msgid "_"
 msgstr ""
 
 #: skin_default_skin.xml.h:62 skin_default_skin.xml.h:63
 #: skin_default_skin.xml.h:64 skin_default_skin.xml.h:65
-#: skin_default_skin.xml.h:66
+#: skin_default_skin.xml.h:66 skin_default_skin.xml.h:67
 msgid "-"
 msgstr ""
 
 #: skin_default_skin.xml.h:63 skin_default_skin.xml.h:64
 #: skin_default_skin.xml.h:65 skin_default_skin.xml.h:66
-#: skin_default_skin.xml.h:67
+#: skin_default_skin.xml.h:67 skin_default_skin.xml.h:68
 msgid "->"
 msgstr ""
 
 #: skin_default_skin.xml.h:65 skin_default_skin.xml.h:66
 #: skin_default_skin.xml.h:67 skin_default_skin.xml.h:68
-#: skin_default_skin.xml.h:69
+#: skin_default_skin.xml.h:69 skin_default_skin.xml.h:70
 msgid ","
 msgstr ""
 
 #: skin_default_skin.xml.h:66 skin_default_skin.xml.h:67
 #: skin_default_skin.xml.h:68 skin_default_skin.xml.h:69
-#: skin_default_skin.xml.h:70
+#: skin_default_skin.xml.h:70 skin_default_skin.xml.h:71
 msgid ";"
 msgstr ""
 
 #: skin_default_skin.xml.h:67 skin_default_skin.xml.h:68
 #: skin_default_skin.xml.h:69 skin_default_skin.xml.h:70
-#: skin_default_skin.xml.h:71
+#: skin_default_skin.xml.h:71 skin_default_skin.xml.h:72
 msgid ":"
 msgstr ""
 
 #: skin_default_skin.xml.h:68 skin_default_skin.xml.h:69
 #: skin_default_skin.xml.h:70 skin_default_skin.xml.h:71
-#: skin_default_skin.xml.h:72
+#: skin_default_skin.xml.h:72 skin_default_skin.xml.h:73
 msgid "!"
 msgstr ""
 
 #: skin_default_skin.xml.h:69 skin_default_skin.xml.h:70
 #: skin_default_skin.xml.h:71 skin_default_skin.xml.h:72
-#: skin_default_skin.xml.h:73
+#: skin_default_skin.xml.h:73 skin_default_skin.xml.h:74
 msgid "?"
 msgstr ""
 
 #: skin_default_skin.xml.h:70 skin_default_skin.xml.h:71
 #: skin_default_skin.xml.h:72 skin_default_skin.xml.h:73
-#: skin_default_skin.xml.h:74
+#: skin_default_skin.xml.h:74 skin_default_skin.xml.h:75
 msgid "???"
 msgstr ""
 
 #: skin_default_skin.xml.h:71 skin_default_skin.xml.h:72
 #: skin_default_skin.xml.h:73 skin_default_skin.xml.h:74
-#: skin_default_skin.xml.h:75
+#: skin_default_skin.xml.h:75 skin_default_skin.xml.h:76
 msgid "/"
 msgstr ""
 
 #: skin_default_skin.xml.h:72 skin_default_skin.xml.h:73
 #: skin_default_skin.xml.h:74 skin_default_skin.xml.h:75
-#: skin_default_skin.xml.h:76
+#: skin_default_skin.xml.h:76 skin_default_skin.xml.h:77
 msgid "."
 msgstr ""
 
 #: skin_default_skin.xml.h:73 skin_default_skin.xml.h:74
 #: skin_default_skin.xml.h:75 skin_default_skin.xml.h:76
-#: skin_default_skin.xml.h:77
+#: skin_default_skin.xml.h:77 skin_default_skin.xml.h:78
 msgid "'"
 msgstr ""
 
 #: skin_default_skin.xml.h:74 skin_default_skin.xml.h:75
 #: skin_default_skin.xml.h:76 skin_default_skin.xml.h:77
-#: skin_default_skin.xml.h:78
+#: skin_default_skin.xml.h:78 skin_default_skin.xml.h:79
 msgid "("
 msgstr ""
 
 #: skin_default_skin.xml.h:75 skin_default_skin.xml.h:76
 #: skin_default_skin.xml.h:77 skin_default_skin.xml.h:78
-#: skin_default_skin.xml.h:79
+#: skin_default_skin.xml.h:79 skin_default_skin.xml.h:80
 msgid ")"
 msgstr ""
 
 #: skin_default_skin.xml.h:76 skin_default_skin.xml.h:77
 #: skin_default_skin.xml.h:78 skin_default_skin.xml.h:79
-#: skin_default_skin.xml.h:80
+#: skin_default_skin.xml.h:80 skin_default_skin.xml.h:81
 msgid "["
 msgstr ""
 
 #: skin_default_skin.xml.h:77 skin_default_skin.xml.h:78
 #: skin_default_skin.xml.h:79 skin_default_skin.xml.h:80
-#: skin_default_skin.xml.h:81
+#: skin_default_skin.xml.h:81 skin_default_skin.xml.h:82
 msgid "]"
 msgstr ""
 
 #: skin_default_skin.xml.h:78 skin_default_skin.xml.h:79
 #: skin_default_skin.xml.h:80 skin_default_skin.xml.h:81
-#: skin_default_skin.xml.h:82
+#: skin_default_skin.xml.h:82 skin_default_skin.xml.h:83
 msgid "{"
 msgstr ""
 
 #: skin_default_skin.xml.h:79 skin_default_skin.xml.h:80
 #: skin_default_skin.xml.h:81 skin_default_skin.xml.h:82
-#: skin_default_skin.xml.h:83
+#: skin_default_skin.xml.h:83 skin_default_skin.xml.h:84
 msgid "}"
 msgstr ""
 
 #: skin_default_skin.xml.h:80 skin_default_skin.xml.h:81
 #: skin_default_skin.xml.h:82 skin_default_skin.xml.h:83
-#: skin_default_skin.xml.h:84
+#: skin_default_skin.xml.h:84 skin_default_skin.xml.h:85
 msgid "@"
 msgstr ""
 
 #: skin_default_skin.xml.h:81 skin_default_skin.xml.h:82
 #: skin_default_skin.xml.h:83 skin_default_skin.xml.h:84
-#: skin_default_skin.xml.h:85
+#: skin_default_skin.xml.h:85 skin_default_skin.xml.h:86
 msgid "$"
 msgstr ""
 
 #: skin_default_skin.xml.h:82 skin_default_skin.xml.h:83
 #: skin_default_skin.xml.h:84 skin_default_skin.xml.h:85
-#: skin_default_skin.xml.h:86
+#: skin_default_skin.xml.h:86 skin_default_skin.xml.h:87
 msgid "*"
 msgstr ""
 
 #: skin_default_skin.xml.h:84 skin_default_skin.xml.h:85
 #: skin_default_skin.xml.h:86 skin_default_skin.xml.h:87
-#: skin_default_skin.xml.h:88
+#: skin_default_skin.xml.h:88 skin_default_skin.xml.h:89
 msgid "&"
 msgstr ""
 
 #: skin_default_skin.xml.h:85 skin_default_skin.xml.h:86
 #: skin_default_skin.xml.h:87 skin_default_skin.xml.h:88
-#: skin_default_skin.xml.h:89
+#: skin_default_skin.xml.h:89 skin_default_skin.xml.h:90
 msgid "%"
 msgstr ""
 
 #: skin_default_skin.xml.h:86 skin_default_skin.xml.h:87
 #: skin_default_skin.xml.h:88 skin_default_skin.xml.h:89
-#: skin_default_skin.xml.h:90
+#: skin_default_skin.xml.h:90 skin_default_skin.xml.h:91
 msgid "+"
 msgstr ""
 
 #: skin_default_skin.xml.h:87 skin_default_skin.xml.h:88
 #: skin_default_skin.xml.h:89 skin_default_skin.xml.h:90
-#: skin_default_skin.xml.h:91
+#: skin_default_skin.xml.h:91 skin_default_skin.xml.h:92
 msgid "0"
 msgstr ""
 
 #: skin_default_skin.xml.h:88 skin_default_skin.xml.h:89
 #: skin_default_skin.xml.h:90 skin_default_skin.xml.h:91
-#: skin_default_skin.xml.h:92
+#: skin_default_skin.xml.h:92 skin_default_skin.xml.h:93
 msgid "1"
 msgstr ""
 
 #: skin_default_skin.xml.h:89 skin_default_skin.xml.h:90
 #: skin_default_skin.xml.h:91 skin_default_skin.xml.h:92
-#: skin_default_skin.xml.h:93
+#: skin_default_skin.xml.h:93 skin_default_skin.xml.h:94
 msgid "2"
 msgstr ""
 
 #: skin_default_skin.xml.h:91 skin_default_skin.xml.h:92
 #: skin_default_skin.xml.h:93 skin_default_skin.xml.h:94
-#: skin_default_skin.xml.h:95
+#: skin_default_skin.xml.h:95 skin_default_skin.xml.h:96
 msgid "3D Mode"
 msgstr ""
 
 #: skin_default_skin.xml.h:95 skin_default_skin.xml.h:96
 #: skin_default_skin.xml.h:97 skin_default_skin.xml.h:98
-#: skin_default_skin.xml.h:99
+#: skin_default_skin.xml.h:99 skin_default_skin.xml.h:100
 msgid "7"
 msgstr ""
 
 #: skin_default_skin.xml.h:97 skin_default_skin.xml.h:98
 #: skin_default_skin.xml.h:99 skin_default_skin.xml.h:100
-#: skin_default_skin.xml.h:101
+#: skin_default_skin.xml.h:101 skin_default_skin.xml.h:102
 msgid "9"
 msgstr ""
 
 #: skin_default_skin.xml.h:98 skin_default_skin.xml.h:99
 #: skin_default_skin.xml.h:100 skin_default_skin.xml.h:101
-#: skin_default_skin.xml.h:102
+#: skin_default_skin.xml.h:102 skin_default_skin.xml.h:103
 msgid "a"
 msgstr ""
 
 #: skin_default_skin.xml.h:100 skin_default_skin.xml.h:101
 #: skin_default_skin.xml.h:102 skin_default_skin.xml.h:103
-#: skin_default_skin.xml.h:104
+#: skin_default_skin.xml.h:104 skin_default_skin.xml.h:105
 msgid "ABC/abc"
 msgstr ""
 
 #: skin_default_skin.xml.h:101 skin_default_skin.xml.h:102
 #: skin_default_skin.xml.h:103 skin_default_skin.xml.h:104
-#: skin_default_skin.xml.h:105
+#: skin_default_skin.xml.h:105 skin_default_skin.xml.h:106
 msgid "About"
 msgstr ""
 
 #: skin_default_skin.xml.h:102 skin_default_skin.xml.h:103
 #: skin_default_skin.xml.h:104 skin_default_skin.xml.h:105
-#: skin_default_skin.xml.h:106
+#: skin_default_skin.xml.h:106 skin_default_skin.xml.h:107
 msgid "AC3 default"
 msgstr ""
 
 #: skin_default_skin.xml.h:103 skin_default_skin.xml.h:104
 #: skin_default_skin.xml.h:105 skin_default_skin.xml.h:106
-#: skin_default_skin.xml.h:107
+#: skin_default_skin.xml.h:107 skin_default_skin.xml.h:108
 msgid "AC3 Mode"
 msgstr ""
 
 #: skin_default_skin.xml.h:104 skin_default_skin.xml.h:105
 #: skin_default_skin.xml.h:106 skin_default_skin.xml.h:107
-#: skin_default_skin.xml.h:108
+#: skin_default_skin.xml.h:108 skin_default_skin.xml.h:109
 msgid "Adapter Settings"
 msgstr ""
 
 #: skin_default_skin.xml.h:105 skin_default_skin.xml.h:106
 #: skin_default_skin.xml.h:107 skin_default_skin.xml.h:108
-#: skin_default_skin.xml.h:109
+#: skin_default_skin.xml.h:109 skin_default_skin.xml.h:110
 msgid "ADD"
 msgstr ""
 
 #: skin_default_skin.xml.h:106 skin_default_skin.xml.h:107
 #: skin_default_skin.xml.h:108 skin_default_skin.xml.h:109
-#: skin_default_skin.xml.h:110
+#: skin_default_skin.xml.h:110 skin_default_skin.xml.h:111
 msgid "ADD ALL"
 msgstr ""
 
 #: skin_default_skin.xml.h:107 skin_default_skin.xml.h:108
 #: skin_default_skin.xml.h:109 skin_default_skin.xml.h:110
-#: skin_default_skin.xml.h:111
+#: skin_default_skin.xml.h:111 skin_default_skin.xml.h:112
 msgid "ADD ONE"
 msgstr ""
 
 #: skin_default_skin.xml.h:108 skin_default_skin.xml.h:109
 #: skin_default_skin.xml.h:110 skin_default_skin.xml.h:111
-#: skin_default_skin.xml.h:112
+#: skin_default_skin.xml.h:112 skin_default_skin.xml.h:113
 msgid "add service"
 msgstr ""
 
 #: skin_default_skin.xml.h:110 skin_default_skin.xml.h:111
 #: skin_default_skin.xml.h:112 skin_default_skin.xml.h:113
-#: skin_default_skin.xml.h:114
+#: skin_default_skin.xml.h:114 skin_default_skin.xml.h:115
 msgid "After Timeshift"
 msgstr ""
 
 #: skin_default_skin.xml.h:111 skin_default_skin.xml.h:112
 #: skin_default_skin.xml.h:113 skin_default_skin.xml.h:114
-#: skin_default_skin.xml.h:115
+#: skin_default_skin.xml.h:115 skin_default_skin.xml.h:116
 msgid "Age Protect"
 msgstr ""
 
 #: skin_default_skin.xml.h:112 skin_default_skin.xml.h:113
 #: skin_default_skin.xml.h:114 skin_default_skin.xml.h:115
-#: skin_default_skin.xml.h:116
+#: skin_default_skin.xml.h:116 skin_default_skin.xml.h:117
 msgid "Aktion after"
 msgstr ""
 
 #: skin_default_skin.xml.h:113 skin_default_skin.xml.h:114
 #: skin_default_skin.xml.h:115 skin_default_skin.xml.h:116
-#: skin_default_skin.xml.h:117
+#: skin_default_skin.xml.h:117 skin_default_skin.xml.h:118
 msgid "ALL"
 msgstr ""
 
 #: skin_default_skin.xml.h:114 skin_default_skin.xml.h:115
 #: skin_default_skin.xml.h:116 skin_default_skin.xml.h:117
-#: skin_default_skin.xml.h:118
+#: skin_default_skin.xml.h:118 skin_default_skin.xml.h:119
 msgid "Animated Screens"
 msgstr ""
 
 #: skin_default_skin.xml.h:115 skin_default_skin.xml.h:116
 #: skin_default_skin.xml.h:117 skin_default_skin.xml.h:118
-#: skin_default_skin.xml.h:119
+#: skin_default_skin.xml.h:119 skin_default_skin.xml.h:120
 msgid "Animated Speed"
 msgstr ""
 
 #: skin_default_skin.xml.h:116 skin_default_skin.xml.h:117
 #: skin_default_skin.xml.h:118 skin_default_skin.xml.h:119
-#: skin_default_skin.xml.h:120
+#: skin_default_skin.xml.h:120 skin_default_skin.xml.h:121
 msgid "Aspect"
 msgstr ""
 
 #: skin_default_skin.xml.h:117 skin_default_skin.xml.h:118
 #: skin_default_skin.xml.h:119 skin_default_skin.xml.h:120
-#: skin_default_skin.xml.h:121
+#: skin_default_skin.xml.h:121 skin_default_skin.xml.h:122
 msgid "Aspect Ratio:"
 msgstr ""
 
 #: skin_default_skin.xml.h:118 skin_default_skin.xml.h:119
 #: skin_default_skin.xml.h:120 skin_default_skin.xml.h:121
-#: skin_default_skin.xml.h:122
+#: skin_default_skin.xml.h:122 skin_default_skin.xml.h:123
 msgid "Audio PID:"
 msgstr ""
 
 #: skin_default_skin.xml.h:119 skin_default_skin.xml.h:120
 #: skin_default_skin.xml.h:121 skin_default_skin.xml.h:122
-#: skin_default_skin.xml.h:123
+#: skin_default_skin.xml.h:123 skin_default_skin.xml.h:124
 msgid "Audio Source"
 msgstr ""
 
 #: skin_default_skin.xml.h:120 skin_default_skin.xml.h:121
 #: skin_default_skin.xml.h:122 skin_default_skin.xml.h:123
-#: skin_default_skin.xml.h:124
+#: skin_default_skin.xml.h:124 skin_default_skin.xml.h:125
 msgid "Audio/Subt."
 msgstr ""
 
 #: skin_default_skin.xml.h:121 skin_default_skin.xml.h:122
 #: skin_default_skin.xml.h:123 skin_default_skin.xml.h:124
-#: skin_default_skin.xml.h:125
+#: skin_default_skin.xml.h:125 skin_default_skin.xml.h:126
 msgid "Automatic Search"
 msgstr ""
 
 #: skin_default_skin.xml.h:122 skin_default_skin.xml.h:123
 #: skin_default_skin.xml.h:124 skin_default_skin.xml.h:125
-#: skin_default_skin.xml.h:126
+#: skin_default_skin.xml.h:126 skin_default_skin.xml.h:127
 msgid "Auto resolution"
 msgstr ""
 
 #: skin_default_skin.xml.h:124 skin_default_skin.xml.h:125
 #: skin_default_skin.xml.h:126 skin_default_skin.xml.h:127
-#: skin_default_skin.xml.h:128
+#: skin_default_skin.xml.h:128 skin_default_skin.xml.h:129
 msgid "A-Z (Text)"
 msgstr ""
 
 #: skin_default_skin.xml.h:125 skin_default_skin.xml.h:126
 #: skin_default_skin.xml.h:127 skin_default_skin.xml.h:128
-#: skin_default_skin.xml.h:129
+#: skin_default_skin.xml.h:129 skin_default_skin.xml.h:130
 msgid "b"
 msgstr ""
 
 #: skin_default_skin.xml.h:127 skin_default_skin.xml.h:128
 #: skin_default_skin.xml.h:129 skin_default_skin.xml.h:130
-#: skin_default_skin.xml.h:131
+#: skin_default_skin.xml.h:131 skin_default_skin.xml.h:132
 msgid ""
 "Before you can see Signal/SNR/Ber you must zap to a channel of the satellite "
 "you are searching."
@@ -3952,1253 +4016,1307 @@ msgstr ""
 
 #: skin_default_skin.xml.h:128 skin_default_skin.xml.h:129
 #: skin_default_skin.xml.h:130 skin_default_skin.xml.h:131
-#: skin_default_skin.xml.h:132
+#: skin_default_skin.xml.h:132 skin_default_skin.xml.h:133
 msgid "Begin"
 msgstr ""
 
 #: skin_default_skin.xml.h:129 skin_default_skin.xml.h:130
 #: skin_default_skin.xml.h:131 skin_default_skin.xml.h:132
-#: skin_default_skin.xml.h:133
+#: skin_default_skin.xml.h:133 skin_default_skin.xml.h:134
 msgid "BER"
 msgstr ""
 
 #: skin_default_skin.xml.h:130 skin_default_skin.xml.h:131
 #: skin_default_skin.xml.h:132 skin_default_skin.xml.h:133
-#: skin_default_skin.xml.h:134
+#: skin_default_skin.xml.h:134 skin_default_skin.xml.h:135
 msgid "BER:"
 msgstr ""
 
 #: skin_default_skin.xml.h:131 skin_default_skin.xml.h:132
 #: skin_default_skin.xml.h:133 skin_default_skin.xml.h:134
 #: skin_default_skin.xml.h:135 skin_default_skin.xml.h:136
+#: skin_default_skin.xml.h:138
 msgid "Brightness"
 msgstr ""
 
 #: skin_default_skin.xml.h:133 skin_default_skin.xml.h:134
 #: skin_default_skin.xml.h:135 skin_default_skin.xml.h:136
 #: skin_default_skin.xml.h:137 skin_default_skin.xml.h:138
+#: skin_default_skin.xml.h:140
 msgid "c"
 msgstr ""
 
 #: skin_default_skin.xml.h:134 skin_default_skin.xml.h:135
 #: skin_default_skin.xml.h:136 skin_default_skin.xml.h:137
 #: skin_default_skin.xml.h:138 skin_default_skin.xml.h:139
+#: skin_default_skin.xml.h:141
 msgid "C"
 msgstr ""
 
 #: skin_default_skin.xml.h:136 skin_default_skin.xml.h:137
 #: skin_default_skin.xml.h:138 skin_default_skin.xml.h:139
 #: skin_default_skin.xml.h:140 skin_default_skin.xml.h:141
+#: skin_default_skin.xml.h:143
 msgid "Change Channelname auto."
 msgstr ""
 
 #: skin_default_skin.xml.h:139 skin_default_skin.xml.h:140
 #: skin_default_skin.xml.h:141 skin_default_skin.xml.h:142
 #: skin_default_skin.xml.h:143 skin_default_skin.xml.h:144
+#: skin_default_skin.xml.h:146
 msgid "Channel Service..."
 msgstr ""
 
 #: skin_default_skin.xml.h:140 skin_default_skin.xml.h:141
 #: skin_default_skin.xml.h:142 skin_default_skin.xml.h:143
 #: skin_default_skin.xml.h:144 skin_default_skin.xml.h:145
+#: skin_default_skin.xml.h:147
 msgid "Child Protection"
 msgstr ""
 
 #: skin_default_skin.xml.h:141 skin_default_skin.xml.h:142
 #: skin_default_skin.xml.h:143 skin_default_skin.xml.h:144
 #: skin_default_skin.xml.h:145 skin_default_skin.xml.h:146
+#: skin_default_skin.xml.h:148
 msgid "Clear"
 msgstr ""
 
 #: skin_default_skin.xml.h:142 skin_default_skin.xml.h:143
 #: skin_default_skin.xml.h:144 skin_default_skin.xml.h:145
 #: skin_default_skin.xml.h:146 skin_default_skin.xml.h:147
+#: skin_default_skin.xml.h:149
 msgid "Clear before scan"
 msgstr ""
 
 #: skin_default_skin.xml.h:143 skin_default_skin.xml.h:144
 #: skin_default_skin.xml.h:145 skin_default_skin.xml.h:146
 #: skin_default_skin.xml.h:147 skin_default_skin.xml.h:148
+#: skin_default_skin.xml.h:150
 msgid "Color Format"
 msgstr ""
 
 #: skin_default_skin.xml.h:144 skin_default_skin.xml.h:145
 #: skin_default_skin.xml.h:146 skin_default_skin.xml.h:147
 #: skin_default_skin.xml.h:148 skin_default_skin.xml.h:149
+#: skin_default_skin.xml.h:151
 msgid "Color Format Scart"
 msgstr ""
 
 #: skin_default_skin.xml.h:145 skin_default_skin.xml.h:146
 #: skin_default_skin.xml.h:147 skin_default_skin.xml.h:148
 #: skin_default_skin.xml.h:149 skin_default_skin.xml.h:150
+#: skin_default_skin.xml.h:152
 msgid "Committed command"
 msgstr ""
 
 #: skin_default_skin.xml.h:146 skin_default_skin.xml.h:147
 #: skin_default_skin.xml.h:148 skin_default_skin.xml.h:149
 #: skin_default_skin.xml.h:150 skin_default_skin.xml.h:151
+#: skin_default_skin.xml.h:153
 msgid "Common Interface"
 msgstr ""
 
 #: skin_default_skin.xml.h:147 skin_default_skin.xml.h:148
 #: skin_default_skin.xml.h:149 skin_default_skin.xml.h:150
 #: skin_default_skin.xml.h:151 skin_default_skin.xml.h:152
+#: skin_default_skin.xml.h:154
 msgid "Configure"
 msgstr ""
 
 #: skin_default_skin.xml.h:148 skin_default_skin.xml.h:149
 #: skin_default_skin.xml.h:150 skin_default_skin.xml.h:151
 #: skin_default_skin.xml.h:152 skin_default_skin.xml.h:153
+#: skin_default_skin.xml.h:155
 msgid "Contrast"
 msgstr ""
 
 #: skin_default_skin.xml.h:149 skin_default_skin.xml.h:150
 #: skin_default_skin.xml.h:151 skin_default_skin.xml.h:152
 #: skin_default_skin.xml.h:153 skin_default_skin.xml.h:154
+#: skin_default_skin.xml.h:156
 msgid "copy service"
 msgstr ""
 
 #: skin_default_skin.xml.h:150 skin_default_skin.xml.h:151
 #: skin_default_skin.xml.h:152 skin_default_skin.xml.h:153
 #: skin_default_skin.xml.h:154 skin_default_skin.xml.h:155
+#: skin_default_skin.xml.h:157
 msgid "d"
 msgstr ""
 
 #: skin_default_skin.xml.h:151 skin_default_skin.xml.h:152
 #: skin_default_skin.xml.h:153 skin_default_skin.xml.h:154
 #: skin_default_skin.xml.h:155 skin_default_skin.xml.h:156
+#: skin_default_skin.xml.h:158
 msgid "D"
 msgstr ""
 
 #: skin_default_skin.xml.h:152 skin_default_skin.xml.h:153
 #: skin_default_skin.xml.h:154 skin_default_skin.xml.h:155
 #: skin_default_skin.xml.h:156 skin_default_skin.xml.h:157
+#: skin_default_skin.xml.h:159
 msgid "Day"
 msgstr ""
 
 #: skin_default_skin.xml.h:153 skin_default_skin.xml.h:154
 #: skin_default_skin.xml.h:155 skin_default_skin.xml.h:156
 #: skin_default_skin.xml.h:157 skin_default_skin.xml.h:158
+#: skin_default_skin.xml.h:160
 msgid "DEFAULT"
 msgstr ""
 
 #: skin_default_skin.xml.h:155 skin_default_skin.xml.h:156
 #: skin_default_skin.xml.h:157 skin_default_skin.xml.h:158
 #: skin_default_skin.xml.h:159 skin_default_skin.xml.h:160
+#: skin_default_skin.xml.h:162
 msgid "Delete EPG after read"
 msgstr ""
 
 #: skin_default_skin.xml.h:156 skin_default_skin.xml.h:157
 #: skin_default_skin.xml.h:158 skin_default_skin.xml.h:159
 #: skin_default_skin.xml.h:160 skin_default_skin.xml.h:161
+#: skin_default_skin.xml.h:163
 msgid "del startchannel"
 msgstr ""
 
 #: skin_default_skin.xml.h:157 skin_default_skin.xml.h:159
 #: skin_default_skin.xml.h:160 skin_default_skin.xml.h:161
 #: skin_default_skin.xml.h:162 skin_default_skin.xml.h:163
+#: skin_default_skin.xml.h:165
 msgid "dhcp"
 msgstr ""
 
 #: skin_default_skin.xml.h:158 skin_default_skin.xml.h:160
 #: skin_default_skin.xml.h:161 skin_default_skin.xml.h:162
 #: skin_default_skin.xml.h:163 skin_default_skin.xml.h:164
+#: skin_default_skin.xml.h:166
 msgid "Dirsort"
 msgstr ""
 
 #: skin_default_skin.xml.h:159 skin_default_skin.xml.h:161
 #: skin_default_skin.xml.h:162 skin_default_skin.xml.h:163
 #: skin_default_skin.xml.h:164 skin_default_skin.xml.h:165
+#: skin_default_skin.xml.h:167
 msgid "Diseqc Command Order"
 msgstr ""
 
 #: skin_default_skin.xml.h:160 skin_default_skin.xml.h:162
 #: skin_default_skin.xml.h:163 skin_default_skin.xml.h:164
 #: skin_default_skin.xml.h:165 skin_default_skin.xml.h:166
+#: skin_default_skin.xml.h:168
 msgid "DiSEqC Mode"
 msgstr ""
 
 #: skin_default_skin.xml.h:161 skin_default_skin.xml.h:163
 #: skin_default_skin.xml.h:164 skin_default_skin.xml.h:165
 #: skin_default_skin.xml.h:166 skin_default_skin.xml.h:167
+#: skin_default_skin.xml.h:169
 msgid "Diseqc repeats"
 msgstr ""
 
 #: skin_default_skin.xml.h:162 skin_default_skin.xml.h:164
 #: skin_default_skin.xml.h:165 skin_default_skin.xml.h:167
 #: skin_default_skin.xml.h:168 skin_default_skin.xml.h:169
+#: skin_default_skin.xml.h:171
 msgid "dnsserver 1"
 msgstr ""
 
 #: skin_default_skin.xml.h:163 skin_default_skin.xml.h:165
 #: skin_default_skin.xml.h:166 skin_default_skin.xml.h:168
 #: skin_default_skin.xml.h:169 skin_default_skin.xml.h:170
+#: skin_default_skin.xml.h:172
 msgid "dnsserver 2"
 msgstr ""
 
 #: skin_default_skin.xml.h:164 skin_default_skin.xml.h:166
 #: skin_default_skin.xml.h:167 skin_default_skin.xml.h:169
 #: skin_default_skin.xml.h:170 skin_default_skin.xml.h:171
+#: skin_default_skin.xml.h:173
 msgid "Don't clear TV on zap (only with fastzap)"
 msgstr ""
 
 #: skin_default_skin.xml.h:165 skin_default_skin.xml.h:167
 #: skin_default_skin.xml.h:168 skin_default_skin.xml.h:171
 #: skin_default_skin.xml.h:172 skin_default_skin.xml.h:173
+#: skin_default_skin.xml.h:175
 msgid "e"
 msgstr ""
 
 #: skin_default_skin.xml.h:166 skin_default_skin.xml.h:168
 #: skin_default_skin.xml.h:169 skin_default_skin.xml.h:172
 #: skin_default_skin.xml.h:173 skin_default_skin.xml.h:174
+#: skin_default_skin.xml.h:176
 msgid "E"
 msgstr ""
 
 #: skin_default_skin.xml.h:167 skin_default_skin.xml.h:169
 #: skin_default_skin.xml.h:170 skin_default_skin.xml.h:173
 #: skin_default_skin.xml.h:174 skin_default_skin.xml.h:175
+#: skin_default_skin.xml.h:177
 msgid "East / West"
 msgstr ""
 
 #: skin_default_skin.xml.h:168 skin_default_skin.xml.h:170
 #: skin_default_skin.xml.h:171 skin_default_skin.xml.h:174
 #: skin_default_skin.xml.h:175 skin_default_skin.xml.h:176
+#: skin_default_skin.xml.h:178
 msgid "EDIT"
 msgstr ""
 
 #: skin_default_skin.xml.h:169 skin_default_skin.xml.h:171
 #: skin_default_skin.xml.h:172 skin_default_skin.xml.h:175
 #: skin_default_skin.xml.h:176 skin_default_skin.xml.h:177
+#: skin_default_skin.xml.h:179
 msgid "End"
 msgstr ""
 
 #: skin_default_skin.xml.h:170 skin_default_skin.xml.h:172
 #: skin_default_skin.xml.h:173 skin_default_skin.xml.h:176
 #: skin_default_skin.xml.h:177 skin_default_skin.xml.h:178
+#: skin_default_skin.xml.h:180
 msgid "English"
 msgstr ""
 
 #: skin_default_skin.xml.h:171 skin_default_skin.xml.h:173
 #: skin_default_skin.xml.h:174 skin_default_skin.xml.h:177
 #: skin_default_skin.xml.h:178 skin_default_skin.xml.h:179
+#: skin_default_skin.xml.h:181
 msgid "EPG"
 msgstr ""
 
 #: skin_default_skin.xml.h:172 skin_default_skin.xml.h:174
 #: skin_default_skin.xml.h:175 skin_default_skin.xml.h:178
 #: skin_default_skin.xml.h:179 skin_default_skin.xml.h:180
+#: skin_default_skin.xml.h:182
 msgid "EPG button on EPG Screen"
 msgstr ""
 
 #: skin_default_skin.xml.h:173 skin_default_skin.xml.h:175
 #: skin_default_skin.xml.h:176 skin_default_skin.xml.h:179
 #: skin_default_skin.xml.h:180 skin_default_skin.xml.h:181
+#: skin_default_skin.xml.h:183
 msgid "EPG (epg)"
 msgstr ""
 
 #: skin_default_skin.xml.h:174 skin_default_skin.xml.h:176
 #: skin_default_skin.xml.h:177 skin_default_skin.xml.h:180
 #: skin_default_skin.xml.h:181 skin_default_skin.xml.h:182
+#: skin_default_skin.xml.h:184
 msgid "Epgfreespace (KB)"
 msgstr ""
 
 #: skin_default_skin.xml.h:175 skin_default_skin.xml.h:177
 #: skin_default_skin.xml.h:178 skin_default_skin.xml.h:181
 #: skin_default_skin.xml.h:182 skin_default_skin.xml.h:183
+#: skin_default_skin.xml.h:185
 msgid "Epg List Mode"
 msgstr ""
 
 #: skin_default_skin.xml.h:176 skin_default_skin.xml.h:178
 #: skin_default_skin.xml.h:179 skin_default_skin.xml.h:182
 #: skin_default_skin.xml.h:183 skin_default_skin.xml.h:184
+#: skin_default_skin.xml.h:186
 msgid "EPG Path"
 msgstr ""
 
 #: skin_default_skin.xml.h:177 skin_default_skin.xml.h:179
 #: skin_default_skin.xml.h:180 skin_default_skin.xml.h:183
 #: skin_default_skin.xml.h:184 skin_default_skin.xml.h:185
+#: skin_default_skin.xml.h:187
 msgid "Epg Refresh Time"
 msgstr ""
 
 #: skin_default_skin.xml.h:178 skin_default_skin.xml.h:180
 #: skin_default_skin.xml.h:181 skin_default_skin.xml.h:184
 #: skin_default_skin.xml.h:185 skin_default_skin.xml.h:186
+#: skin_default_skin.xml.h:188
 msgid "EPG Reset"
 msgstr ""
 
 #: skin_default_skin.xml.h:179 skin_default_skin.xml.h:181
 #: skin_default_skin.xml.h:182 skin_default_skin.xml.h:185
 #: skin_default_skin.xml.h:186 skin_default_skin.xml.h:187
+#: skin_default_skin.xml.h:189
 msgid "EPG Save Mode"
 msgstr ""
 
 #: skin_default_skin.xml.h:182 skin_default_skin.xml.h:185
 #: skin_default_skin.xml.h:186 skin_default_skin.xml.h:189
 #: skin_default_skin.xml.h:190 skin_default_skin.xml.h:191
+#: skin_default_skin.xml.h:193
 msgid "f"
 msgstr ""
 
 #: skin_default_skin.xml.h:183 skin_default_skin.xml.h:186
 #: skin_default_skin.xml.h:187 skin_default_skin.xml.h:190
 #: skin_default_skin.xml.h:191 skin_default_skin.xml.h:192
+#: skin_default_skin.xml.h:194
 msgid "F"
 msgstr ""
 
 #: skin_default_skin.xml.h:184 skin_default_skin.xml.h:187
 #: skin_default_skin.xml.h:188 skin_default_skin.xml.h:191
 #: skin_default_skin.xml.h:192 skin_default_skin.xml.h:193
+#: skin_default_skin.xml.h:195
 msgid "Faststop"
 msgstr ""
 
 #: skin_default_skin.xml.h:185 skin_default_skin.xml.h:188
 #: skin_default_skin.xml.h:189 skin_default_skin.xml.h:192
 #: skin_default_skin.xml.h:193 skin_default_skin.xml.h:194
+#: skin_default_skin.xml.h:196
 msgid "Fast Text Render"
 msgstr ""
 
 #: skin_default_skin.xml.h:186 skin_default_skin.xml.h:189
 #: skin_default_skin.xml.h:190 skin_default_skin.xml.h:193
 #: skin_default_skin.xml.h:194 skin_default_skin.xml.h:195
+#: skin_default_skin.xml.h:197
 msgid "Fastzap"
 msgstr ""
 
 #: skin_default_skin.xml.h:187 skin_default_skin.xml.h:190
 #: skin_default_skin.xml.h:191 skin_default_skin.xml.h:194
 #: skin_default_skin.xml.h:195 skin_default_skin.xml.h:196
+#: skin_default_skin.xml.h:198
 msgid "Fav"
 msgstr ""
 
 #: skin_default_skin.xml.h:188 skin_default_skin.xml.h:191
 #: skin_default_skin.xml.h:192 skin_default_skin.xml.h:195
 #: skin_default_skin.xml.h:196 skin_default_skin.xml.h:197
+#: skin_default_skin.xml.h:199
 msgid "FEC"
 msgstr ""
 
 #: skin_default_skin.xml.h:189 skin_default_skin.xml.h:192
 #: skin_default_skin.xml.h:193 skin_default_skin.xml.h:196
 #: skin_default_skin.xml.h:197 skin_default_skin.xml.h:198
+#: skin_default_skin.xml.h:200
 msgid "FEC:"
 msgstr ""
 
 #: skin_default_skin.xml.h:190 skin_default_skin.xml.h:193
 #: skin_default_skin.xml.h:194 skin_default_skin.xml.h:197
 #: skin_default_skin.xml.h:198 skin_default_skin.xml.h:199
+#: skin_default_skin.xml.h:201
 msgid "Filesystem Check"
 msgstr ""
 
 #: skin_default_skin.xml.h:191 skin_default_skin.xml.h:194
 #: skin_default_skin.xml.h:195 skin_default_skin.xml.h:198
 #: skin_default_skin.xml.h:199 skin_default_skin.xml.h:200
+#: skin_default_skin.xml.h:202
 msgid "Fine move"
 msgstr ""
 
 #: skin_default_skin.xml.h:192 skin_default_skin.xml.h:193
 #: skin_default_skin.xml.h:196 skin_default_skin.xml.h:197
 #: skin_default_skin.xml.h:200 skin_default_skin.xml.h:201
-#: skin_default_skin.xml.h:202
+#: skin_default_skin.xml.h:202 skin_default_skin.xml.h:204
 msgid "Fontsize adjust in pixel"
 msgstr ""
 
 #: skin_default_skin.xml.h:193 skin_default_skin.xml.h:194
 #: skin_default_skin.xml.h:197 skin_default_skin.xml.h:198
 #: skin_default_skin.xml.h:201 skin_default_skin.xml.h:202
-#: skin_default_skin.xml.h:203
+#: skin_default_skin.xml.h:203 skin_default_skin.xml.h:205
 msgid "Format HDD"
 msgstr ""
 
 #: skin_default_skin.xml.h:194 skin_default_skin.xml.h:195
 #: skin_default_skin.xml.h:198 skin_default_skin.xml.h:199
 #: skin_default_skin.xml.h:202 skin_default_skin.xml.h:203
-#: skin_default_skin.xml.h:204
+#: skin_default_skin.xml.h:204 skin_default_skin.xml.h:206
 msgid "French"
 msgstr ""
 
 #: skin_default_skin.xml.h:195 skin_default_skin.xml.h:196
 #: skin_default_skin.xml.h:199 skin_default_skin.xml.h:200
 #: skin_default_skin.xml.h:203 skin_default_skin.xml.h:204
-#: skin_default_skin.xml.h:205
+#: skin_default_skin.xml.h:205 skin_default_skin.xml.h:207
 msgid "Frequency"
 msgstr ""
 
 #: skin_default_skin.xml.h:196 skin_default_skin.xml.h:197
 #: skin_default_skin.xml.h:200 skin_default_skin.xml.h:201
 #: skin_default_skin.xml.h:204 skin_default_skin.xml.h:205
-#: skin_default_skin.xml.h:206
+#: skin_default_skin.xml.h:206 skin_default_skin.xml.h:208
 msgid "Frequency:"
 msgstr ""
 
 #: skin_default_skin.xml.h:198 skin_default_skin.xml.h:199
 #: skin_default_skin.xml.h:202 skin_default_skin.xml.h:203
 #: skin_default_skin.xml.h:206 skin_default_skin.xml.h:207
-#: skin_default_skin.xml.h:208
+#: skin_default_skin.xml.h:208 skin_default_skin.xml.h:210
 msgid "g"
 msgstr ""
 
 #: skin_default_skin.xml.h:199 skin_default_skin.xml.h:200
 #: skin_default_skin.xml.h:203 skin_default_skin.xml.h:204
 #: skin_default_skin.xml.h:207 skin_default_skin.xml.h:208
-#: skin_default_skin.xml.h:209
+#: skin_default_skin.xml.h:209 skin_default_skin.xml.h:211
 msgid "G"
 msgstr ""
 
 #: skin_default_skin.xml.h:200 skin_default_skin.xml.h:201
 #: skin_default_skin.xml.h:204 skin_default_skin.xml.h:205
 #: skin_default_skin.xml.h:208 skin_default_skin.xml.h:209
-#: skin_default_skin.xml.h:210
+#: skin_default_skin.xml.h:210 skin_default_skin.xml.h:212
 msgid "gateway"
 msgstr ""
 
 #: skin_default_skin.xml.h:201 skin_default_skin.xml.h:202
 #: skin_default_skin.xml.h:205 skin_default_skin.xml.h:206
 #: skin_default_skin.xml.h:209 skin_default_skin.xml.h:210
-#: skin_default_skin.xml.h:211
+#: skin_default_skin.xml.h:211 skin_default_skin.xml.h:213
 msgid "German"
 msgstr ""
 
 #: skin_default_skin.xml.h:202 skin_default_skin.xml.h:203
 #: skin_default_skin.xml.h:206 skin_default_skin.xml.h:207
 #: skin_default_skin.xml.h:210 skin_default_skin.xml.h:211
-#: skin_default_skin.xml.h:212
+#: skin_default_skin.xml.h:212 skin_default_skin.xml.h:214
 msgid "Go to startpos"
 msgstr ""
 
 #: skin_default_skin.xml.h:203 skin_default_skin.xml.h:204
 #: skin_default_skin.xml.h:207 skin_default_skin.xml.h:208
 #: skin_default_skin.xml.h:211 skin_default_skin.xml.h:212
-#: skin_default_skin.xml.h:213
+#: skin_default_skin.xml.h:213 skin_default_skin.xml.h:215
 msgid "Graph. EPG"
 msgstr ""
 
 #: skin_default_skin.xml.h:204 skin_default_skin.xml.h:205
 #: skin_default_skin.xml.h:208 skin_default_skin.xml.h:209
 #: skin_default_skin.xml.h:212 skin_default_skin.xml.h:213
-#: skin_default_skin.xml.h:214
+#: skin_default_skin.xml.h:214 skin_default_skin.xml.h:216
 msgid "Graphic EPG"
 msgstr ""
 
 #: skin_default_skin.xml.h:205 skin_default_skin.xml.h:206
 #: skin_default_skin.xml.h:209 skin_default_skin.xml.h:210
 #: skin_default_skin.xml.h:213 skin_default_skin.xml.h:214
-#: skin_default_skin.xml.h:215
+#: skin_default_skin.xml.h:215 skin_default_skin.xml.h:217
 msgid "Graphic EPG Picon"
 msgstr ""
 
 #: skin_default_skin.xml.h:206 skin_default_skin.xml.h:207
 #: skin_default_skin.xml.h:210 skin_default_skin.xml.h:211
 #: skin_default_skin.xml.h:214 skin_default_skin.xml.h:215
-#: skin_default_skin.xml.h:216
+#: skin_default_skin.xml.h:216 skin_default_skin.xml.h:218
 msgid "Graphic EPG Zoom"
 msgstr ""
 
 #: skin_default_skin.xml.h:207 skin_default_skin.xml.h:208
 #: skin_default_skin.xml.h:211 skin_default_skin.xml.h:212
 #: skin_default_skin.xml.h:215 skin_default_skin.xml.h:216
-#: skin_default_skin.xml.h:217
+#: skin_default_skin.xml.h:217 skin_default_skin.xml.h:219
 msgid "Greek"
 msgstr ""
 
 #: skin_default_skin.xml.h:208 skin_default_skin.xml.h:209
 #: skin_default_skin.xml.h:212 skin_default_skin.xml.h:213
 #: skin_default_skin.xml.h:216 skin_default_skin.xml.h:217
-#: skin_default_skin.xml.h:218
+#: skin_default_skin.xml.h:218 skin_default_skin.xml.h:220
 msgid "GUI Restart"
 msgstr ""
 
 #: skin_default_skin.xml.h:209 skin_default_skin.xml.h:210
 #: skin_default_skin.xml.h:213 skin_default_skin.xml.h:214
 #: skin_default_skin.xml.h:217 skin_default_skin.xml.h:218
-#: skin_default_skin.xml.h:219
+#: skin_default_skin.xml.h:219 skin_default_skin.xml.h:221
 msgid "h"
 msgstr ""
 
 #: skin_default_skin.xml.h:210 skin_default_skin.xml.h:211
 #: skin_default_skin.xml.h:214 skin_default_skin.xml.h:215
 #: skin_default_skin.xml.h:218 skin_default_skin.xml.h:219
-#: skin_default_skin.xml.h:220
+#: skin_default_skin.xml.h:220 skin_default_skin.xml.h:222
 msgid "H"
 msgstr ""
 
 #: skin_default_skin.xml.h:211 skin_default_skin.xml.h:212
 #: skin_default_skin.xml.h:215 skin_default_skin.xml.h:216
 #: skin_default_skin.xml.h:219 skin_default_skin.xml.h:220
-#: skin_default_skin.xml.h:221
+#: skin_default_skin.xml.h:221 skin_default_skin.xml.h:223
 msgid "Hangtime"
 msgstr ""
 
 #: skin_default_skin.xml.h:213 skin_default_skin.xml.h:214
 #: skin_default_skin.xml.h:217 skin_default_skin.xml.h:218
 #: skin_default_skin.xml.h:221 skin_default_skin.xml.h:222
-#: skin_default_skin.xml.h:223
+#: skin_default_skin.xml.h:223 skin_default_skin.xml.h:225
 msgid "How many days"
 msgstr ""
 
 #: skin_default_skin.xml.h:214 skin_default_skin.xml.h:215
 #: skin_default_skin.xml.h:218 skin_default_skin.xml.h:219
 #: skin_default_skin.xml.h:222 skin_default_skin.xml.h:223
-#: skin_default_skin.xml.h:224
+#: skin_default_skin.xml.h:224 skin_default_skin.xml.h:226
 msgid "HTTPD Port"
 msgstr ""
 
 #: skin_default_skin.xml.h:216 skin_default_skin.xml.h:217
 #: skin_default_skin.xml.h:220 skin_default_skin.xml.h:221
 #: skin_default_skin.xml.h:224 skin_default_skin.xml.h:225
-#: skin_default_skin.xml.h:226
+#: skin_default_skin.xml.h:226 skin_default_skin.xml.h:228
 msgid "i"
 msgstr ""
 
 #: skin_default_skin.xml.h:217 skin_default_skin.xml.h:218
 #: skin_default_skin.xml.h:221 skin_default_skin.xml.h:222
 #: skin_default_skin.xml.h:225 skin_default_skin.xml.h:226
-#: skin_default_skin.xml.h:227
+#: skin_default_skin.xml.h:227 skin_default_skin.xml.h:229
 msgid "I"
 msgstr ""
 
 #: skin_default_skin.xml.h:218 skin_default_skin.xml.h:219
 #: skin_default_skin.xml.h:222 skin_default_skin.xml.h:223
 #: skin_default_skin.xml.h:226 skin_default_skin.xml.h:227
-#: skin_default_skin.xml.h:228
+#: skin_default_skin.xml.h:228 skin_default_skin.xml.h:230
 msgid "ID:"
 msgstr ""
 
 #: skin_default_skin.xml.h:219 skin_default_skin.xml.h:220
 #: skin_default_skin.xml.h:223 skin_default_skin.xml.h:224
 #: skin_default_skin.xml.h:227 skin_default_skin.xml.h:228
-#: skin_default_skin.xml.h:229
+#: skin_default_skin.xml.h:229 skin_default_skin.xml.h:231
 msgid "Inc. AC3 Audio in %"
 msgstr ""
 
 #: skin_default_skin.xml.h:220 skin_default_skin.xml.h:221
 #: skin_default_skin.xml.h:224 skin_default_skin.xml.h:225
 #: skin_default_skin.xml.h:228 skin_default_skin.xml.h:229
-#: skin_default_skin.xml.h:230
+#: skin_default_skin.xml.h:230 skin_default_skin.xml.h:232
 msgid "Infobar Sleep"
 msgstr ""
 
 #: skin_default_skin.xml.h:221 skin_default_skin.xml.h:222
 #: skin_default_skin.xml.h:225 skin_default_skin.xml.h:226
 #: skin_default_skin.xml.h:229 skin_default_skin.xml.h:230
-#: skin_default_skin.xml.h:231
+#: skin_default_skin.xml.h:231 skin_default_skin.xml.h:233
 msgid "Infobar Timeout"
 msgstr ""
 
 #: skin_default_skin.xml.h:222 skin_default_skin.xml.h:223
 #: skin_default_skin.xml.h:226 skin_default_skin.xml.h:227
 #: skin_default_skin.xml.h:230 skin_default_skin.xml.h:231
-#: skin_default_skin.xml.h:232
+#: skin_default_skin.xml.h:232 skin_default_skin.xml.h:234
 msgid "Information..."
 msgstr ""
 
 #: skin_default_skin.xml.h:223 skin_default_skin.xml.h:224
 #: skin_default_skin.xml.h:227 skin_default_skin.xml.h:228
 #: skin_default_skin.xml.h:231 skin_default_skin.xml.h:232
-#: skin_default_skin.xml.h:233
+#: skin_default_skin.xml.h:233 skin_default_skin.xml.h:235
 msgid "internet"
 msgstr ""
 
 #: skin_default_skin.xml.h:224 skin_default_skin.xml.h:225
 #: skin_default_skin.xml.h:228 skin_default_skin.xml.h:229
 #: skin_default_skin.xml.h:232 skin_default_skin.xml.h:233
-#: skin_default_skin.xml.h:234
+#: skin_default_skin.xml.h:234 skin_default_skin.xml.h:236
 msgid "Inversion"
 msgstr ""
 
 #: skin_default_skin.xml.h:225 skin_default_skin.xml.h:226
 #: skin_default_skin.xml.h:229 skin_default_skin.xml.h:230
 #: skin_default_skin.xml.h:233 skin_default_skin.xml.h:234
-#: skin_default_skin.xml.h:235
+#: skin_default_skin.xml.h:235 skin_default_skin.xml.h:237
 msgid "Inversion:"
 msgstr ""
 
 #: skin_default_skin.xml.h:227 skin_default_skin.xml.h:228
 #: skin_default_skin.xml.h:231 skin_default_skin.xml.h:232
 #: skin_default_skin.xml.h:235 skin_default_skin.xml.h:236
-#: skin_default_skin.xml.h:237
+#: skin_default_skin.xml.h:237 skin_default_skin.xml.h:239
 msgid "Italian"
 msgstr ""
 
 #: skin_default_skin.xml.h:228 skin_default_skin.xml.h:229
 #: skin_default_skin.xml.h:232 skin_default_skin.xml.h:233
 #: skin_default_skin.xml.h:236 skin_default_skin.xml.h:237
-#: skin_default_skin.xml.h:238
+#: skin_default_skin.xml.h:238 skin_default_skin.xml.h:240
 msgid "j"
 msgstr ""
 
 #: skin_default_skin.xml.h:229 skin_default_skin.xml.h:230
 #: skin_default_skin.xml.h:233 skin_default_skin.xml.h:234
 #: skin_default_skin.xml.h:237 skin_default_skin.xml.h:238
-#: skin_default_skin.xml.h:239
+#: skin_default_skin.xml.h:239 skin_default_skin.xml.h:241
 msgid "J"
 msgstr ""
 
 #: skin_default_skin.xml.h:230 skin_default_skin.xml.h:231
 #: skin_default_skin.xml.h:234 skin_default_skin.xml.h:235
 #: skin_default_skin.xml.h:238 skin_default_skin.xml.h:239
-#: skin_default_skin.xml.h:240
+#: skin_default_skin.xml.h:240 skin_default_skin.xml.h:242
 msgid "k"
 msgstr ""
 
 #: skin_default_skin.xml.h:231 skin_default_skin.xml.h:232
 #: skin_default_skin.xml.h:235 skin_default_skin.xml.h:236
 #: skin_default_skin.xml.h:239 skin_default_skin.xml.h:240
-#: skin_default_skin.xml.h:241
+#: skin_default_skin.xml.h:241 skin_default_skin.xml.h:243
 msgid "K"
 msgstr ""
 
 #: skin_default_skin.xml.h:232 skin_default_skin.xml.h:233
 #: skin_default_skin.xml.h:236 skin_default_skin.xml.h:238
 #: skin_default_skin.xml.h:241 skin_default_skin.xml.h:242
-#: skin_default_skin.xml.h:243
+#: skin_default_skin.xml.h:243 skin_default_skin.xml.h:245
 msgid "Keyboard"
 msgstr ""
 
 #: skin_default_skin.xml.h:233 skin_default_skin.xml.h:234
 #: skin_default_skin.xml.h:237 skin_default_skin.xml.h:239
 #: skin_default_skin.xml.h:242 skin_default_skin.xml.h:243
-#: skin_default_skin.xml.h:244
+#: skin_default_skin.xml.h:244 skin_default_skin.xml.h:246
 msgid "l"
 msgstr ""
 
 #: skin_default_skin.xml.h:234 skin_default_skin.xml.h:235
 #: skin_default_skin.xml.h:238 skin_default_skin.xml.h:240
 #: skin_default_skin.xml.h:243 skin_default_skin.xml.h:244
-#: skin_default_skin.xml.h:245
+#: skin_default_skin.xml.h:245 skin_default_skin.xml.h:247
 msgid "L"
 msgstr ""
 
 #: skin_default_skin.xml.h:235 skin_default_skin.xml.h:236
 #: skin_default_skin.xml.h:239 skin_default_skin.xml.h:241
 #: skin_default_skin.xml.h:244 skin_default_skin.xml.h:245
-#: skin_default_skin.xml.h:246
+#: skin_default_skin.xml.h:246 skin_default_skin.xml.h:248
 msgid "lan"
 msgstr ""
 
 #: skin_default_skin.xml.h:237 skin_default_skin.xml.h:238
 #: skin_default_skin.xml.h:241 skin_default_skin.xml.h:243
 #: skin_default_skin.xml.h:246 skin_default_skin.xml.h:247
-#: skin_default_skin.xml.h:248
+#: skin_default_skin.xml.h:248 skin_default_skin.xml.h:250
 msgid "Latitude"
 msgstr ""
 
 #: skin_default_skin.xml.h:238 skin_default_skin.xml.h:239
 #: skin_default_skin.xml.h:242 skin_default_skin.xml.h:244
 #: skin_default_skin.xml.h:247 skin_default_skin.xml.h:248
-#: skin_default_skin.xml.h:249
+#: skin_default_skin.xml.h:249 skin_default_skin.xml.h:251
 msgid "Limit"
 msgstr ""
 
 #: skin_default_skin.xml.h:239 skin_default_skin.xml.h:240
 #: skin_default_skin.xml.h:243 skin_default_skin.xml.h:245
 #: skin_default_skin.xml.h:248 skin_default_skin.xml.h:249
-#: skin_default_skin.xml.h:250
+#: skin_default_skin.xml.h:250 skin_default_skin.xml.h:252
 msgid "Listbox Select"
 msgstr ""
 
 #: skin_default_skin.xml.h:240 skin_default_skin.xml.h:241
 #: skin_default_skin.xml.h:244 skin_default_skin.xml.h:246
 #: skin_default_skin.xml.h:249 skin_default_skin.xml.h:250
-#: skin_default_skin.xml.h:251
+#: skin_default_skin.xml.h:251 skin_default_skin.xml.h:253
 msgid "LOF/H"
 msgstr ""
 
 #: skin_default_skin.xml.h:241 skin_default_skin.xml.h:242
 #: skin_default_skin.xml.h:245 skin_default_skin.xml.h:247
 #: skin_default_skin.xml.h:250 skin_default_skin.xml.h:251
-#: skin_default_skin.xml.h:252
+#: skin_default_skin.xml.h:252 skin_default_skin.xml.h:254
 msgid "LOF/L"
 msgstr ""
 
 #: skin_default_skin.xml.h:242 skin_default_skin.xml.h:243
 #: skin_default_skin.xml.h:246 skin_default_skin.xml.h:248
 #: skin_default_skin.xml.h:251 skin_default_skin.xml.h:252
-#: skin_default_skin.xml.h:253
+#: skin_default_skin.xml.h:253 skin_default_skin.xml.h:255
 msgid "LOF / UNICABLE"
 msgstr ""
 
 #: skin_default_skin.xml.h:243 skin_default_skin.xml.h:244
 #: skin_default_skin.xml.h:247 skin_default_skin.xml.h:249
 #: skin_default_skin.xml.h:252 skin_default_skin.xml.h:253
-#: skin_default_skin.xml.h:254
+#: skin_default_skin.xml.h:254 skin_default_skin.xml.h:256
 msgid "LOG"
 msgstr ""
 
 #: skin_default_skin.xml.h:244 skin_default_skin.xml.h:245
 #: skin_default_skin.xml.h:248 skin_default_skin.xml.h:250
 #: skin_default_skin.xml.h:253 skin_default_skin.xml.h:254
-#: skin_default_skin.xml.h:255
+#: skin_default_skin.xml.h:255 skin_default_skin.xml.h:257
 msgid "Longitude"
 msgstr ""
 
 #: skin_default_skin.xml.h:245 skin_default_skin.xml.h:246
 #: skin_default_skin.xml.h:249 skin_default_skin.xml.h:251
 #: skin_default_skin.xml.h:254 skin_default_skin.xml.h:255
-#: skin_default_skin.xml.h:256
+#: skin_default_skin.xml.h:256 skin_default_skin.xml.h:258
 msgid "m"
 msgstr ""
 
 #: skin_default_skin.xml.h:246 skin_default_skin.xml.h:247
 #: skin_default_skin.xml.h:250 skin_default_skin.xml.h:252
 #: skin_default_skin.xml.h:255 skin_default_skin.xml.h:256
-#: skin_default_skin.xml.h:257
+#: skin_default_skin.xml.h:257 skin_default_skin.xml.h:259
 msgid "M"
 msgstr ""
 
 #: skin_default_skin.xml.h:247 skin_default_skin.xml.h:248
 #: skin_default_skin.xml.h:251 skin_default_skin.xml.h:253
 #: skin_default_skin.xml.h:256 skin_default_skin.xml.h:257
-#: skin_default_skin.xml.h:258
+#: skin_default_skin.xml.h:258 skin_default_skin.xml.h:260
 msgid "Manual Search"
 msgstr ""
 
 #: skin_default_skin.xml.h:248 skin_default_skin.xml.h:249
 #: skin_default_skin.xml.h:252 skin_default_skin.xml.h:254
 #: skin_default_skin.xml.h:257 skin_default_skin.xml.h:258
-#: skin_default_skin.xml.h:259
+#: skin_default_skin.xml.h:259 skin_default_skin.xml.h:263
 msgid "Media Center"
 msgstr ""
 
 #: skin_default_skin.xml.h:249 skin_default_skin.xml.h:250
 #: skin_default_skin.xml.h:253 skin_default_skin.xml.h:255
 #: skin_default_skin.xml.h:258 skin_default_skin.xml.h:259
-#: skin_default_skin.xml.h:260
+#: skin_default_skin.xml.h:260 skin_default_skin.xml.h:264
 msgid "Media Player"
 msgstr ""
 
 #: skin_default_skin.xml.h:250 skin_default_skin.xml.h:251
 #: skin_default_skin.xml.h:254 skin_default_skin.xml.h:256
 #: skin_default_skin.xml.h:259 skin_default_skin.xml.h:260
-#: skin_default_skin.xml.h:261
+#: skin_default_skin.xml.h:261 skin_default_skin.xml.h:265
 msgid "Menu"
 msgstr ""
 
 #: skin_default_skin.xml.h:251 skin_default_skin.xml.h:252
 #: skin_default_skin.xml.h:255 skin_default_skin.xml.h:257
 #: skin_default_skin.xml.h:260 skin_default_skin.xml.h:261
-#: skin_default_skin.xml.h:262
+#: skin_default_skin.xml.h:262 skin_default_skin.xml.h:266
 msgid "MENU"
 msgstr ""
 
 #: skin_default_skin.xml.h:252 skin_default_skin.xml.h:253
 #: skin_default_skin.xml.h:256 skin_default_skin.xml.h:258
 #: skin_default_skin.xml.h:261 skin_default_skin.xml.h:262
-#: skin_default_skin.xml.h:263
+#: skin_default_skin.xml.h:263 skin_default_skin.xml.h:267
 msgid "MENUPROTECT"
 msgstr ""
 
 #: skin_default_skin.xml.h:253 skin_default_skin.xml.h:254
 #: skin_default_skin.xml.h:257 skin_default_skin.xml.h:259
 #: skin_default_skin.xml.h:262 skin_default_skin.xml.h:263
-#: skin_default_skin.xml.h:264
+#: skin_default_skin.xml.h:264 skin_default_skin.xml.h:270
 msgid "Minutes"
 msgstr ""
 
 #: skin_default_skin.xml.h:254 skin_default_skin.xml.h:255
 #: skin_default_skin.xml.h:258 skin_default_skin.xml.h:260
 #: skin_default_skin.xml.h:263 skin_default_skin.xml.h:264
-#: skin_default_skin.xml.h:265
+#: skin_default_skin.xml.h:265 skin_default_skin.xml.h:271
 msgid "Minutes:"
 msgstr ""
 
 #: skin_default_skin.xml.h:255 skin_default_skin.xml.h:256
 #: skin_default_skin.xml.h:259 skin_default_skin.xml.h:261
 #: skin_default_skin.xml.h:264 skin_default_skin.xml.h:265
-#: skin_default_skin.xml.h:266
+#: skin_default_skin.xml.h:266 skin_default_skin.xml.h:272
 msgid "Modulation"
 msgstr ""
 
 #: skin_default_skin.xml.h:256 skin_default_skin.xml.h:257
 #: skin_default_skin.xml.h:260 skin_default_skin.xml.h:262
 #: skin_default_skin.xml.h:265 skin_default_skin.xml.h:266
-#: skin_default_skin.xml.h:267
+#: skin_default_skin.xml.h:267 skin_default_skin.xml.h:273
 msgid "Modulation:"
 msgstr ""
 
 #: skin_default_skin.xml.h:258 skin_default_skin.xml.h:259
 #: skin_default_skin.xml.h:262 skin_default_skin.xml.h:264
 #: skin_default_skin.xml.h:267 skin_default_skin.xml.h:268
-#: skin_default_skin.xml.h:269
+#: skin_default_skin.xml.h:269 skin_default_skin.xml.h:275
 msgid "Move"
 msgstr ""
 
 #: skin_default_skin.xml.h:259 skin_default_skin.xml.h:260
 #: skin_default_skin.xml.h:263 skin_default_skin.xml.h:265
 #: skin_default_skin.xml.h:268 skin_default_skin.xml.h:269
-#: skin_default_skin.xml.h:270
+#: skin_default_skin.xml.h:270 skin_default_skin.xml.h:276
 msgid "move service"
 msgstr ""
 
 #: skin_default_skin.xml.h:260 skin_default_skin.xml.h:261
 #: skin_default_skin.xml.h:264 skin_default_skin.xml.h:266
 #: skin_default_skin.xml.h:269 skin_default_skin.xml.h:270
-#: skin_default_skin.xml.h:271
+#: skin_default_skin.xml.h:271 skin_default_skin.xml.h:277
 msgid "Moviepath"
 msgstr ""
 
 #: skin_default_skin.xml.h:262 skin_default_skin.xml.h:263
 #: skin_default_skin.xml.h:266 skin_default_skin.xml.h:268
 #: skin_default_skin.xml.h:271 skin_default_skin.xml.h:272
-#: skin_default_skin.xml.h:273
+#: skin_default_skin.xml.h:273 skin_default_skin.xml.h:279
 msgid "n"
 msgstr ""
 
 #: skin_default_skin.xml.h:263 skin_default_skin.xml.h:264
 #: skin_default_skin.xml.h:267 skin_default_skin.xml.h:269
 #: skin_default_skin.xml.h:272 skin_default_skin.xml.h:273
-#: skin_default_skin.xml.h:274
+#: skin_default_skin.xml.h:274 skin_default_skin.xml.h:280
 msgid "N"
 msgstr ""
 
 #: skin_default_skin.xml.h:264 skin_default_skin.xml.h:265
 #: skin_default_skin.xml.h:268 skin_default_skin.xml.h:270
 #: skin_default_skin.xml.h:273 skin_default_skin.xml.h:274
-#: skin_default_skin.xml.h:275
+#: skin_default_skin.xml.h:275 skin_default_skin.xml.h:281
 msgid "Name"
 msgstr ""
 
 #: skin_default_skin.xml.h:265 skin_default_skin.xml.h:266
 #: skin_default_skin.xml.h:269 skin_default_skin.xml.h:271
 #: skin_default_skin.xml.h:274 skin_default_skin.xml.h:275
-#: skin_default_skin.xml.h:276
+#: skin_default_skin.xml.h:276 skin_default_skin.xml.h:282
 msgid "Name:"
 msgstr ""
 
 #: skin_default_skin.xml.h:266 skin_default_skin.xml.h:267
 #: skin_default_skin.xml.h:270 skin_default_skin.xml.h:272
 #: skin_default_skin.xml.h:275 skin_default_skin.xml.h:276
-#: skin_default_skin.xml.h:277
+#: skin_default_skin.xml.h:277 skin_default_skin.xml.h:283
 msgid "netmask"
 msgstr ""
 
 #: skin_default_skin.xml.h:269 skin_default_skin.xml.h:270
 #: skin_default_skin.xml.h:273 skin_default_skin.xml.h:275
 #: skin_default_skin.xml.h:278 skin_default_skin.xml.h:279
-#: skin_default_skin.xml.h:280
+#: skin_default_skin.xml.h:280 skin_default_skin.xml.h:286
 msgid "Network Restart"
 msgstr ""
 
 #: skin_default_skin.xml.h:270 skin_default_skin.xml.h:271
 #: skin_default_skin.xml.h:274 skin_default_skin.xml.h:276
 #: skin_default_skin.xml.h:279 skin_default_skin.xml.h:280
-#: skin_default_skin.xml.h:281
+#: skin_default_skin.xml.h:281 skin_default_skin.xml.h:287
 msgid "Network Scan"
 msgstr ""
 
 #: skin_default_skin.xml.h:271 skin_default_skin.xml.h:272
 #: skin_default_skin.xml.h:275 skin_default_skin.xml.h:277
 #: skin_default_skin.xml.h:280 skin_default_skin.xml.h:281
-#: skin_default_skin.xml.h:282
+#: skin_default_skin.xml.h:282 skin_default_skin.xml.h:288
 msgid "Network Test"
 msgstr ""
 
 #: skin_default_skin.xml.h:272 skin_default_skin.xml.h:273
 #: skin_default_skin.xml.h:276 skin_default_skin.xml.h:278
 #: skin_default_skin.xml.h:281 skin_default_skin.xml.h:282
-#: skin_default_skin.xml.h:283
+#: skin_default_skin.xml.h:283 skin_default_skin.xml.h:289
 msgid "Next"
 msgstr ""
 
 #: skin_default_skin.xml.h:273 skin_default_skin.xml.h:274
 #: skin_default_skin.xml.h:277 skin_default_skin.xml.h:279
 #: skin_default_skin.xml.h:282 skin_default_skin.xml.h:283
-#: skin_default_skin.xml.h:284
+#: skin_default_skin.xml.h:284 skin_default_skin.xml.h:290
 msgid "Nfs Server Settings"
 msgstr ""
 
 #: skin_default_skin.xml.h:274 skin_default_skin.xml.h:275
 #: skin_default_skin.xml.h:278 skin_default_skin.xml.h:280
 #: skin_default_skin.xml.h:283 skin_default_skin.xml.h:284
-#: skin_default_skin.xml.h:285
+#: skin_default_skin.xml.h:285 skin_default_skin.xml.h:291
 msgid "North / South"
 msgstr ""
 
 #: skin_default_skin.xml.h:275 skin_default_skin.xml.h:276
 #: skin_default_skin.xml.h:279 skin_default_skin.xml.h:281
 #: skin_default_skin.xml.h:284 skin_default_skin.xml.h:285
-#: skin_default_skin.xml.h:286
+#: skin_default_skin.xml.h:286 skin_default_skin.xml.h:292
 msgid "o"
 msgstr ""
 
 #: skin_default_skin.xml.h:277 skin_default_skin.xml.h:278
 #: skin_default_skin.xml.h:281 skin_default_skin.xml.h:283
 #: skin_default_skin.xml.h:286 skin_default_skin.xml.h:287
-#: skin_default_skin.xml.h:288
+#: skin_default_skin.xml.h:288 skin_default_skin.xml.h:294
 msgid "OK (Stop)"
 msgstr ""
 
 #: skin_default_skin.xml.h:278 skin_default_skin.xml.h:279
 #: skin_default_skin.xml.h:282 skin_default_skin.xml.h:284
 #: skin_default_skin.xml.h:287 skin_default_skin.xml.h:288
-#: skin_default_skin.xml.h:289
+#: skin_default_skin.xml.h:289 skin_default_skin.xml.h:295
 msgid "ONID:"
 msgstr ""
 
 #: skin_default_skin.xml.h:279 skin_default_skin.xml.h:280
 #: skin_default_skin.xml.h:283 skin_default_skin.xml.h:285
 #: skin_default_skin.xml.h:288 skin_default_skin.xml.h:289
-#: skin_default_skin.xml.h:290
+#: skin_default_skin.xml.h:290 skin_default_skin.xml.h:296
 msgid "Only free scan"
 msgstr ""
 
 #: skin_default_skin.xml.h:280 skin_default_skin.xml.h:281
 #: skin_default_skin.xml.h:284 skin_default_skin.xml.h:286
 #: skin_default_skin.xml.h:289 skin_default_skin.xml.h:290
-#: skin_default_skin.xml.h:291
+#: skin_default_skin.xml.h:291 skin_default_skin.xml.h:297
 msgid "Orbital Position:"
 msgstr ""
 
 #: skin_default_skin.xml.h:281 skin_default_skin.xml.h:282
 #: skin_default_skin.xml.h:285 skin_default_skin.xml.h:287
 #: skin_default_skin.xml.h:290 skin_default_skin.xml.h:291
-#: skin_default_skin.xml.h:292
+#: skin_default_skin.xml.h:292 skin_default_skin.xml.h:298
 msgid "OSD Bottom Overscan"
 msgstr ""
 
 #: skin_default_skin.xml.h:282 skin_default_skin.xml.h:283
 #: skin_default_skin.xml.h:286 skin_default_skin.xml.h:288
 #: skin_default_skin.xml.h:291 skin_default_skin.xml.h:292
-#: skin_default_skin.xml.h:293
+#: skin_default_skin.xml.h:293 skin_default_skin.xml.h:299
 msgid "OSD Left Overscan"
 msgstr ""
 
 #: skin_default_skin.xml.h:283 skin_default_skin.xml.h:284
 #: skin_default_skin.xml.h:287 skin_default_skin.xml.h:289
 #: skin_default_skin.xml.h:292 skin_default_skin.xml.h:293
-#: skin_default_skin.xml.h:294
+#: skin_default_skin.xml.h:294 skin_default_skin.xml.h:300
 msgid "OSD Right Overscan"
 msgstr ""
 
 #: skin_default_skin.xml.h:284 skin_default_skin.xml.h:285
 #: skin_default_skin.xml.h:288 skin_default_skin.xml.h:290
 #: skin_default_skin.xml.h:293 skin_default_skin.xml.h:294
-#: skin_default_skin.xml.h:295
+#: skin_default_skin.xml.h:295 skin_default_skin.xml.h:301
 msgid "OSD Top Overscan"
 msgstr ""
 
 #: skin_default_skin.xml.h:285 skin_default_skin.xml.h:286
 #: skin_default_skin.xml.h:289 skin_default_skin.xml.h:291
 #: skin_default_skin.xml.h:294 skin_default_skin.xml.h:295
-#: skin_default_skin.xml.h:296
+#: skin_default_skin.xml.h:296 skin_default_skin.xml.h:302
 msgid "OSD Transparent"
 msgstr ""
 
 #: skin_default_skin.xml.h:286 skin_default_skin.xml.h:287
 #: skin_default_skin.xml.h:290 skin_default_skin.xml.h:292
 #: skin_default_skin.xml.h:295 skin_default_skin.xml.h:296
-#: skin_default_skin.xml.h:297
+#: skin_default_skin.xml.h:297 skin_default_skin.xml.h:303
 msgid "OWN POS"
 msgstr ""
 
 #: skin_default_skin.xml.h:287 skin_default_skin.xml.h:288
 #: skin_default_skin.xml.h:291 skin_default_skin.xml.h:293
 #: skin_default_skin.xml.h:296 skin_default_skin.xml.h:297
-#: skin_default_skin.xml.h:298
+#: skin_default_skin.xml.h:298 skin_default_skin.xml.h:304
 msgid "p"
 msgstr ""
 
 #: skin_default_skin.xml.h:288 skin_default_skin.xml.h:289
 #: skin_default_skin.xml.h:292 skin_default_skin.xml.h:294
 #: skin_default_skin.xml.h:297 skin_default_skin.xml.h:298
-#: skin_default_skin.xml.h:299
+#: skin_default_skin.xml.h:299 skin_default_skin.xml.h:305
 msgid "P"
 msgstr ""
 
 #: skin_default_skin.xml.h:291 skin_default_skin.xml.h:292
 #: skin_default_skin.xml.h:295 skin_default_skin.xml.h:297
 #: skin_default_skin.xml.h:300 skin_default_skin.xml.h:301
-#: skin_default_skin.xml.h:302
+#: skin_default_skin.xml.h:302 skin_default_skin.xml.h:308
 msgid "PCR PID:"
 msgstr ""
 
 #: skin_default_skin.xml.h:292 skin_default_skin.xml.h:293
 #: skin_default_skin.xml.h:296 skin_default_skin.xml.h:298
 #: skin_default_skin.xml.h:301 skin_default_skin.xml.h:302
-#: skin_default_skin.xml.h:303
+#: skin_default_skin.xml.h:303 skin_default_skin.xml.h:309
 msgid "Piconpath"
 msgstr ""
 
 #: skin_default_skin.xml.h:293 skin_default_skin.xml.h:294
 #: skin_default_skin.xml.h:297 skin_default_skin.xml.h:299
 #: skin_default_skin.xml.h:302 skin_default_skin.xml.h:303
-#: skin_default_skin.xml.h:304
+#: skin_default_skin.xml.h:304 skin_default_skin.xml.h:310
 msgid "PIDs"
 msgstr ""
 
 #: skin_default_skin.xml.h:294 skin_default_skin.xml.h:295
 #: skin_default_skin.xml.h:298 skin_default_skin.xml.h:300
 #: skin_default_skin.xml.h:303 skin_default_skin.xml.h:304
-#: skin_default_skin.xml.h:305
+#: skin_default_skin.xml.h:305 skin_default_skin.xml.h:311
 msgid "Pilot"
 msgstr ""
 
 #: skin_default_skin.xml.h:295 skin_default_skin.xml.h:296
 #: skin_default_skin.xml.h:299 skin_default_skin.xml.h:301
 #: skin_default_skin.xml.h:304 skin_default_skin.xml.h:305
-#: skin_default_skin.xml.h:306
+#: skin_default_skin.xml.h:306 skin_default_skin.xml.h:312
 msgid "Pilot:"
 msgstr ""
 
 #: skin_default_skin.xml.h:296 skin_default_skin.xml.h:297
 #: skin_default_skin.xml.h:300 skin_default_skin.xml.h:302
 #: skin_default_skin.xml.h:305 skin_default_skin.xml.h:306
-#: skin_default_skin.xml.h:307
+#: skin_default_skin.xml.h:307 skin_default_skin.xml.h:313
 msgid "PIN:"
 msgstr ""
 
 #: skin_default_skin.xml.h:297 skin_default_skin.xml.h:298
 #: skin_default_skin.xml.h:301 skin_default_skin.xml.h:303
 #: skin_default_skin.xml.h:306 skin_default_skin.xml.h:307
-#: skin_default_skin.xml.h:308
+#: skin_default_skin.xml.h:308 skin_default_skin.xml.h:314
 msgid "Pin Code"
 msgstr ""
 
 #: skin_default_skin.xml.h:298 skin_default_skin.xml.h:299
 #: skin_default_skin.xml.h:302 skin_default_skin.xml.h:304
 #: skin_default_skin.xml.h:307 skin_default_skin.xml.h:308
-#: skin_default_skin.xml.h:309
+#: skin_default_skin.xml.h:309 skin_default_skin.xml.h:315
 msgid "Pin Code Channel"
 msgstr ""
 
 #: skin_default_skin.xml.h:299 skin_default_skin.xml.h:300
 #: skin_default_skin.xml.h:303 skin_default_skin.xml.h:305
 #: skin_default_skin.xml.h:308 skin_default_skin.xml.h:309
-#: skin_default_skin.xml.h:310
+#: skin_default_skin.xml.h:310 skin_default_skin.xml.h:316
 msgid "Pin Code menu"
 msgstr ""
 
 #: skin_default_skin.xml.h:300 skin_default_skin.xml.h:301
 #: skin_default_skin.xml.h:304 skin_default_skin.xml.h:306
 #: skin_default_skin.xml.h:309 skin_default_skin.xml.h:310
-#: skin_default_skin.xml.h:311
+#: skin_default_skin.xml.h:311 skin_default_skin.xml.h:317
 msgid "Player for .ts"
 msgstr ""
 
 #: skin_default_skin.xml.h:302 skin_default_skin.xml.h:303
 #: skin_default_skin.xml.h:306 skin_default_skin.xml.h:308
 #: skin_default_skin.xml.h:311 skin_default_skin.xml.h:312
-#: skin_default_skin.xml.h:313
+#: skin_default_skin.xml.h:313 skin_default_skin.xml.h:319
 msgid "PMT PID:"
 msgstr ""
 
 #: skin_default_skin.xml.h:304 skin_default_skin.xml.h:305
 #: skin_default_skin.xml.h:308 skin_default_skin.xml.h:310
 #: skin_default_skin.xml.h:313 skin_default_skin.xml.h:314
-#: skin_default_skin.xml.h:315
+#: skin_default_skin.xml.h:315 skin_default_skin.xml.h:321
 msgid "Polarization:"
 msgstr ""
 
 #: skin_default_skin.xml.h:305 skin_default_skin.xml.h:306
 #: skin_default_skin.xml.h:309 skin_default_skin.xml.h:311
 #: skin_default_skin.xml.h:314 skin_default_skin.xml.h:315
-#: skin_default_skin.xml.h:316
+#: skin_default_skin.xml.h:316 skin_default_skin.xml.h:322
 msgid "Policy"
 msgstr ""
 
 #: skin_default_skin.xml.h:306 skin_default_skin.xml.h:307
 #: skin_default_skin.xml.h:310 skin_default_skin.xml.h:312
 #: skin_default_skin.xml.h:315 skin_default_skin.xml.h:316
-#: skin_default_skin.xml.h:317
+#: skin_default_skin.xml.h:317 skin_default_skin.xml.h:323
 msgid "Polish"
 msgstr ""
 
 #: skin_default_skin.xml.h:307 skin_default_skin.xml.h:308
 #: skin_default_skin.xml.h:311 skin_default_skin.xml.h:313
 #: skin_default_skin.xml.h:316 skin_default_skin.xml.h:317
-#: skin_default_skin.xml.h:318
+#: skin_default_skin.xml.h:318 skin_default_skin.xml.h:324
 msgid "Power aktion"
 msgstr ""
 
 #: skin_default_skin.xml.h:309 skin_default_skin.xml.h:310
 #: skin_default_skin.xml.h:313 skin_default_skin.xml.h:315
 #: skin_default_skin.xml.h:318 skin_default_skin.xml.h:319
-#: skin_default_skin.xml.h:320
+#: skin_default_skin.xml.h:320 skin_default_skin.xml.h:326
 msgid "Power Off Timer"
 msgstr ""
 
 #: skin_default_skin.xml.h:310 skin_default_skin.xml.h:311
 #: skin_default_skin.xml.h:314 skin_default_skin.xml.h:316
 #: skin_default_skin.xml.h:319 skin_default_skin.xml.h:320
-#: skin_default_skin.xml.h:321
+#: skin_default_skin.xml.h:321 skin_default_skin.xml.h:327
 msgid "Program Info"
 msgstr ""
 
 #: skin_default_skin.xml.h:311 skin_default_skin.xml.h:312
 #: skin_default_skin.xml.h:315 skin_default_skin.xml.h:317
 #: skin_default_skin.xml.h:320 skin_default_skin.xml.h:321
-#: skin_default_skin.xml.h:322
+#: skin_default_skin.xml.h:322 skin_default_skin.xml.h:328
 msgid "Protect Channel"
 msgstr ""
 
 #: skin_default_skin.xml.h:312 skin_default_skin.xml.h:313
 #: skin_default_skin.xml.h:316 skin_default_skin.xml.h:318
 #: skin_default_skin.xml.h:321 skin_default_skin.xml.h:322
-#: skin_default_skin.xml.h:323
+#: skin_default_skin.xml.h:323 skin_default_skin.xml.h:329
 msgid "Protect Channel Freetime (min)"
 msgstr ""
 
 #: skin_default_skin.xml.h:313 skin_default_skin.xml.h:314
 #: skin_default_skin.xml.h:317 skin_default_skin.xml.h:319
 #: skin_default_skin.xml.h:322 skin_default_skin.xml.h:323
-#: skin_default_skin.xml.h:324
+#: skin_default_skin.xml.h:324 skin_default_skin.xml.h:330
 msgid "Protect Menu"
 msgstr ""
 
 #: skin_default_skin.xml.h:314 skin_default_skin.xml.h:315
 #: skin_default_skin.xml.h:318 skin_default_skin.xml.h:320
 #: skin_default_skin.xml.h:323 skin_default_skin.xml.h:324
-#: skin_default_skin.xml.h:325
+#: skin_default_skin.xml.h:325 skin_default_skin.xml.h:331
 msgid "protect service"
 msgstr ""
 
 #: skin_default_skin.xml.h:315 skin_default_skin.xml.h:316
 #: skin_default_skin.xml.h:319 skin_default_skin.xml.h:321
 #: skin_default_skin.xml.h:324 skin_default_skin.xml.h:325
-#: skin_default_skin.xml.h:326
+#: skin_default_skin.xml.h:326 skin_default_skin.xml.h:332
 msgid "Prov"
 msgstr ""
 
 #: skin_default_skin.xml.h:316 skin_default_skin.xml.h:317
 #: skin_default_skin.xml.h:320 skin_default_skin.xml.h:322
 #: skin_default_skin.xml.h:325 skin_default_skin.xml.h:326
-#: skin_default_skin.xml.h:327
+#: skin_default_skin.xml.h:327 skin_default_skin.xml.h:333
 msgid "Provider:"
 msgstr ""
 
 #: skin_default_skin.xml.h:317 skin_default_skin.xml.h:318
 #: skin_default_skin.xml.h:321 skin_default_skin.xml.h:323
 #: skin_default_skin.xml.h:326 skin_default_skin.xml.h:327
-#: skin_default_skin.xml.h:328
+#: skin_default_skin.xml.h:328 skin_default_skin.xml.h:334
 msgid "q"
 msgstr ""
 
 #: skin_default_skin.xml.h:318 skin_default_skin.xml.h:319
 #: skin_default_skin.xml.h:322 skin_default_skin.xml.h:324
 #: skin_default_skin.xml.h:327 skin_default_skin.xml.h:328
-#: skin_default_skin.xml.h:329
+#: skin_default_skin.xml.h:329 skin_default_skin.xml.h:335
 msgid "Q"
 msgstr ""
 
 #: skin_default_skin.xml.h:319 skin_default_skin.xml.h:320
 #: skin_default_skin.xml.h:323 skin_default_skin.xml.h:325
 #: skin_default_skin.xml.h:328 skin_default_skin.xml.h:329
-#: skin_default_skin.xml.h:330
+#: skin_default_skin.xml.h:330 skin_default_skin.xml.h:336
 msgid "r"
 msgstr ""
 
 #: skin_default_skin.xml.h:320 skin_default_skin.xml.h:321
 #: skin_default_skin.xml.h:324 skin_default_skin.xml.h:326
 #: skin_default_skin.xml.h:329 skin_default_skin.xml.h:330
-#: skin_default_skin.xml.h:331
+#: skin_default_skin.xml.h:331 skin_default_skin.xml.h:337
 msgid "R"
 msgstr ""
 
 #: skin_default_skin.xml.h:322 skin_default_skin.xml.h:323
 #: skin_default_skin.xml.h:326 skin_default_skin.xml.h:328
 #: skin_default_skin.xml.h:331 skin_default_skin.xml.h:332
-#: skin_default_skin.xml.h:333
+#: skin_default_skin.xml.h:333 skin_default_skin.xml.h:339
 msgid "Record Forerun (min)"
 msgstr ""
 
 #: skin_default_skin.xml.h:323 skin_default_skin.xml.h:324
 #: skin_default_skin.xml.h:327 skin_default_skin.xml.h:329
 #: skin_default_skin.xml.h:332 skin_default_skin.xml.h:333
-#: skin_default_skin.xml.h:334
+#: skin_default_skin.xml.h:334 skin_default_skin.xml.h:340
 msgid "Record Overrun (min)"
 msgstr ""
 
 #: skin_default_skin.xml.h:324 skin_default_skin.xml.h:325
 #: skin_default_skin.xml.h:328 skin_default_skin.xml.h:330
 #: skin_default_skin.xml.h:333 skin_default_skin.xml.h:334
-#: skin_default_skin.xml.h:335
+#: skin_default_skin.xml.h:335 skin_default_skin.xml.h:341
 msgid "Record Path"
 msgstr ""
 
 #: skin_default_skin.xml.h:325 skin_default_skin.xml.h:326
 #: skin_default_skin.xml.h:329 skin_default_skin.xml.h:331
 #: skin_default_skin.xml.h:334 skin_default_skin.xml.h:335
-#: skin_default_skin.xml.h:336
+#: skin_default_skin.xml.h:336 skin_default_skin.xml.h:342
 msgid "Records"
 msgstr ""
 
 #: skin_default_skin.xml.h:326 skin_default_skin.xml.h:327
 #: skin_default_skin.xml.h:330 skin_default_skin.xml.h:332
 #: skin_default_skin.xml.h:335 skin_default_skin.xml.h:336
-#: skin_default_skin.xml.h:337
+#: skin_default_skin.xml.h:337 skin_default_skin.xml.h:343
 msgid "Records and EPG ..."
 msgstr ""
 
 #: skin_default_skin.xml.h:327 skin_default_skin.xml.h:328
 #: skin_default_skin.xml.h:331 skin_default_skin.xml.h:333
 #: skin_default_skin.xml.h:336 skin_default_skin.xml.h:337
-#: skin_default_skin.xml.h:338
+#: skin_default_skin.xml.h:338 skin_default_skin.xml.h:344
 msgid "Record Split Size"
 msgstr ""
 
 #: skin_default_skin.xml.h:328 skin_default_skin.xml.h:329
 #: skin_default_skin.xml.h:332 skin_default_skin.xml.h:334
 #: skin_default_skin.xml.h:337 skin_default_skin.xml.h:338
-#: skin_default_skin.xml.h:339
+#: skin_default_skin.xml.h:339 skin_default_skin.xml.h:345
 msgid "RELOAD"
 msgstr ""
 
 #: skin_default_skin.xml.h:329 skin_default_skin.xml.h:330
 #: skin_default_skin.xml.h:333 skin_default_skin.xml.h:335
 #: skin_default_skin.xml.h:338 skin_default_skin.xml.h:339
-#: skin_default_skin.xml.h:340
+#: skin_default_skin.xml.h:340 skin_default_skin.xml.h:346
 msgid "remove service"
 msgstr ""
 
 #: skin_default_skin.xml.h:330 skin_default_skin.xml.h:331
 #: skin_default_skin.xml.h:334 skin_default_skin.xml.h:336
 #: skin_default_skin.xml.h:339 skin_default_skin.xml.h:340
-#: skin_default_skin.xml.h:341
+#: skin_default_skin.xml.h:341 skin_default_skin.xml.h:347
 msgid "rename service"
 msgstr ""
 
 #: skin_default_skin.xml.h:331 skin_default_skin.xml.h:332
 #: skin_default_skin.xml.h:335 skin_default_skin.xml.h:337
 #: skin_default_skin.xml.h:340 skin_default_skin.xml.h:341
-#: skin_default_skin.xml.h:342
+#: skin_default_skin.xml.h:342 skin_default_skin.xml.h:348
 msgid "Repeate"
 msgstr ""
 
 #: skin_default_skin.xml.h:332 skin_default_skin.xml.h:333
 #: skin_default_skin.xml.h:336 skin_default_skin.xml.h:338
 #: skin_default_skin.xml.h:341 skin_default_skin.xml.h:342
-#: skin_default_skin.xml.h:343
+#: skin_default_skin.xml.h:343 skin_default_skin.xml.h:349
 msgid "Repeate type"
 msgstr ""
 
 #: skin_default_skin.xml.h:333 skin_default_skin.xml.h:334
 #: skin_default_skin.xml.h:337 skin_default_skin.xml.h:339
 #: skin_default_skin.xml.h:342 skin_default_skin.xml.h:343
-#: skin_default_skin.xml.h:344
+#: skin_default_skin.xml.h:344 skin_default_skin.xml.h:350
 msgid "RESET"
 msgstr ""
 
 #: skin_default_skin.xml.h:334 skin_default_skin.xml.h:335
 #: skin_default_skin.xml.h:338 skin_default_skin.xml.h:340
 #: skin_default_skin.xml.h:343 skin_default_skin.xml.h:344
-#: skin_default_skin.xml.h:345
+#: skin_default_skin.xml.h:345 skin_default_skin.xml.h:351
 msgid "Resolution:"
 msgstr ""
 
 #: skin_default_skin.xml.h:335 skin_default_skin.xml.h:336
 #: skin_default_skin.xml.h:339 skin_default_skin.xml.h:341
 #: skin_default_skin.xml.h:344 skin_default_skin.xml.h:345
-#: skin_default_skin.xml.h:346
+#: skin_default_skin.xml.h:346 skin_default_skin.xml.h:352
 msgid "Resolution (current)"
 msgstr ""
 
 #: skin_default_skin.xml.h:336 skin_default_skin.xml.h:337
 #: skin_default_skin.xml.h:340 skin_default_skin.xml.h:342
 #: skin_default_skin.xml.h:345 skin_default_skin.xml.h:346
-#: skin_default_skin.xml.h:347
+#: skin_default_skin.xml.h:347 skin_default_skin.xml.h:353
 msgid "Resolution (default)"
 msgstr ""
 
 #: skin_default_skin.xml.h:338 skin_default_skin.xml.h:339
 #: skin_default_skin.xml.h:342 skin_default_skin.xml.h:344
 #: skin_default_skin.xml.h:347 skin_default_skin.xml.h:348
-#: skin_default_skin.xml.h:349
+#: skin_default_skin.xml.h:349 skin_default_skin.xml.h:355
 msgid "Restore default settings"
 msgstr ""
 
@@ -5206,6 +5324,7 @@ msgstr ""
 #: skin_default_skin.xml.h:343 skin_default_skin.xml.h:345
 #: skin_default_skin.xml.h:348 skin_default_skin.xml.h:349
 #: skin_default_skin.xml.h:350 skin_default_skin.xml.h:351
+#: skin_default_skin.xml.h:357
 msgid "Rolloff"
 msgstr ""
 
@@ -5213,6 +5332,7 @@ msgstr ""
 #: skin_default_skin.xml.h:344 skin_default_skin.xml.h:346
 #: skin_default_skin.xml.h:349 skin_default_skin.xml.h:350
 #: skin_default_skin.xml.h:351 skin_default_skin.xml.h:352
+#: skin_default_skin.xml.h:358
 msgid "Rolloff:"
 msgstr ""
 
@@ -5220,6 +5340,7 @@ msgstr ""
 #: skin_default_skin.xml.h:345 skin_default_skin.xml.h:347
 #: skin_default_skin.xml.h:350 skin_default_skin.xml.h:351
 #: skin_default_skin.xml.h:352 skin_default_skin.xml.h:353
+#: skin_default_skin.xml.h:359
 msgid "Rotor Position"
 msgstr ""
 
@@ -5227,6 +5348,7 @@ msgstr ""
 #: skin_default_skin.xml.h:346 skin_default_skin.xml.h:348
 #: skin_default_skin.xml.h:351 skin_default_skin.xml.h:352
 #: skin_default_skin.xml.h:353 skin_default_skin.xml.h:354
+#: skin_default_skin.xml.h:360
 msgid "Rotor Settings"
 msgstr ""
 
@@ -5234,6 +5356,7 @@ msgstr ""
 #: skin_default_skin.xml.h:347 skin_default_skin.xml.h:349
 #: skin_default_skin.xml.h:352 skin_default_skin.xml.h:353
 #: skin_default_skin.xml.h:354 skin_default_skin.xml.h:355
+#: skin_default_skin.xml.h:361
 msgid "Russian"
 msgstr ""
 
@@ -5241,6 +5364,7 @@ msgstr ""
 #: skin_default_skin.xml.h:348 skin_default_skin.xml.h:350
 #: skin_default_skin.xml.h:353 skin_default_skin.xml.h:354
 #: skin_default_skin.xml.h:355 skin_default_skin.xml.h:356
+#: skin_default_skin.xml.h:362
 msgid "s"
 msgstr ""
 
@@ -5248,6 +5372,7 @@ msgstr ""
 #: skin_default_skin.xml.h:349 skin_default_skin.xml.h:351
 #: skin_default_skin.xml.h:354 skin_default_skin.xml.h:355
 #: skin_default_skin.xml.h:356 skin_default_skin.xml.h:357
+#: skin_default_skin.xml.h:363
 msgid "S"
 msgstr ""
 
@@ -5255,6 +5380,7 @@ msgstr ""
 #: skin_default_skin.xml.h:350 skin_default_skin.xml.h:352
 #: skin_default_skin.xml.h:355 skin_default_skin.xml.h:356
 #: skin_default_skin.xml.h:357 skin_default_skin.xml.h:358
+#: skin_default_skin.xml.h:364
 msgid "Samba Server Settings"
 msgstr ""
 
@@ -5262,6 +5388,7 @@ msgstr ""
 #: skin_default_skin.xml.h:351 skin_default_skin.xml.h:353
 #: skin_default_skin.xml.h:356 skin_default_skin.xml.h:357
 #: skin_default_skin.xml.h:358 skin_default_skin.xml.h:359
+#: skin_default_skin.xml.h:365
 msgid "SAT"
 msgstr ""
 
@@ -5269,6 +5396,7 @@ msgstr ""
 #: skin_default_skin.xml.h:352 skin_default_skin.xml.h:354
 #: skin_default_skin.xml.h:357 skin_default_skin.xml.h:358
 #: skin_default_skin.xml.h:359 skin_default_skin.xml.h:360
+#: skin_default_skin.xml.h:366
 msgid "Sat Config"
 msgstr ""
 
@@ -5276,6 +5404,7 @@ msgstr ""
 #: skin_default_skin.xml.h:353 skin_default_skin.xml.h:355
 #: skin_default_skin.xml.h:358 skin_default_skin.xml.h:359
 #: skin_default_skin.xml.h:360 skin_default_skin.xml.h:361
+#: skin_default_skin.xml.h:367
 msgid "SATCR Frequency"
 msgstr ""
 
@@ -5283,6 +5412,7 @@ msgstr ""
 #: skin_default_skin.xml.h:354 skin_default_skin.xml.h:356
 #: skin_default_skin.xml.h:359 skin_default_skin.xml.h:360
 #: skin_default_skin.xml.h:361 skin_default_skin.xml.h:362
+#: skin_default_skin.xml.h:368
 msgid "SATCR Number"
 msgstr ""
 
@@ -5290,6 +5420,7 @@ msgstr ""
 #: skin_default_skin.xml.h:355 skin_default_skin.xml.h:357
 #: skin_default_skin.xml.h:360 skin_default_skin.xml.h:361
 #: skin_default_skin.xml.h:362 skin_default_skin.xml.h:363
+#: skin_default_skin.xml.h:369
 msgid "Satellite"
 msgstr ""
 
@@ -5297,6 +5428,7 @@ msgstr ""
 #: skin_default_skin.xml.h:356 skin_default_skin.xml.h:358
 #: skin_default_skin.xml.h:361 skin_default_skin.xml.h:362
 #: skin_default_skin.xml.h:363 skin_default_skin.xml.h:364
+#: skin_default_skin.xml.h:370
 msgid "Sat Finder"
 msgstr ""
 
@@ -5304,6 +5436,7 @@ msgstr ""
 #: skin_default_skin.xml.h:357 skin_default_skin.xml.h:359
 #: skin_default_skin.xml.h:362 skin_default_skin.xml.h:363
 #: skin_default_skin.xml.h:364 skin_default_skin.xml.h:365
+#: skin_default_skin.xml.h:371
 msgid "Saturation"
 msgstr ""
 
@@ -5311,6 +5444,7 @@ msgstr ""
 #: skin_default_skin.xml.h:359 skin_default_skin.xml.h:361
 #: skin_default_skin.xml.h:364 skin_default_skin.xml.h:365
 #: skin_default_skin.xml.h:366 skin_default_skin.xml.h:367
+#: skin_default_skin.xml.h:373
 msgid "Save Settings"
 msgstr ""
 
@@ -5318,6 +5452,7 @@ msgstr ""
 #: skin_default_skin.xml.h:360 skin_default_skin.xml.h:362
 #: skin_default_skin.xml.h:365 skin_default_skin.xml.h:366
 #: skin_default_skin.xml.h:367 skin_default_skin.xml.h:368
+#: skin_default_skin.xml.h:374
 msgid "SCAN"
 msgstr ""
 
@@ -5325,6 +5460,7 @@ msgstr ""
 #: skin_default_skin.xml.h:361 skin_default_skin.xml.h:363
 #: skin_default_skin.xml.h:366 skin_default_skin.xml.h:367
 #: skin_default_skin.xml.h:368 skin_default_skin.xml.h:370
+#: skin_default_skin.xml.h:376
 msgid "Scart-Recorder"
 msgstr ""
 
@@ -5332,6 +5468,7 @@ msgstr ""
 #: skin_default_skin.xml.h:362 skin_default_skin.xml.h:364
 #: skin_default_skin.xml.h:367 skin_default_skin.xml.h:368
 #: skin_default_skin.xml.h:369 skin_default_skin.xml.h:371
+#: skin_default_skin.xml.h:377
 msgid "screensaver"
 msgstr ""
 
@@ -5339,6 +5476,7 @@ msgstr ""
 #: skin_default_skin.xml.h:364 skin_default_skin.xml.h:366
 #: skin_default_skin.xml.h:369 skin_default_skin.xml.h:370
 #: skin_default_skin.xml.h:371 skin_default_skin.xml.h:373
+#: skin_default_skin.xml.h:379
 msgid "screensaver background"
 msgstr ""
 
@@ -5346,6 +5484,7 @@ msgstr ""
 #: skin_default_skin.xml.h:365 skin_default_skin.xml.h:367
 #: skin_default_skin.xml.h:370 skin_default_skin.xml.h:371
 #: skin_default_skin.xml.h:372 skin_default_skin.xml.h:374
+#: skin_default_skin.xml.h:380
 msgid "screensaver delay"
 msgstr ""
 
@@ -5353,6 +5492,7 @@ msgstr ""
 #: skin_default_skin.xml.h:366 skin_default_skin.xml.h:368
 #: skin_default_skin.xml.h:371 skin_default_skin.xml.h:372
 #: skin_default_skin.xml.h:373 skin_default_skin.xml.h:375
+#: skin_default_skin.xml.h:381
 msgid "screensaver interval"
 msgstr ""
 
@@ -5360,6 +5500,7 @@ msgstr ""
 #: skin_default_skin.xml.h:367 skin_default_skin.xml.h:369
 #: skin_default_skin.xml.h:372 skin_default_skin.xml.h:373
 #: skin_default_skin.xml.h:374 skin_default_skin.xml.h:376
+#: skin_default_skin.xml.h:382
 msgid "screensaver pic"
 msgstr ""
 
@@ -5367,6 +5508,7 @@ msgstr ""
 #: skin_default_skin.xml.h:368 skin_default_skin.xml.h:370
 #: skin_default_skin.xml.h:373 skin_default_skin.xml.h:374
 #: skin_default_skin.xml.h:375 skin_default_skin.xml.h:377
+#: skin_default_skin.xml.h:383
 msgid "screensaver type"
 msgstr ""
 
@@ -5374,6 +5516,7 @@ msgstr ""
 #: skin_default_skin.xml.h:369 skin_default_skin.xml.h:371
 #: skin_default_skin.xml.h:374 skin_default_skin.xml.h:375
 #: skin_default_skin.xml.h:376 skin_default_skin.xml.h:378
+#: skin_default_skin.xml.h:384
 msgid "--- SD resolution"
 msgstr ""
 
@@ -5381,6 +5524,7 @@ msgstr ""
 #: skin_default_skin.xml.h:370 skin_default_skin.xml.h:372
 #: skin_default_skin.xml.h:375 skin_default_skin.xml.h:376
 #: skin_default_skin.xml.h:377 skin_default_skin.xml.h:379
+#: skin_default_skin.xml.h:385
 msgid "Second Infobar"
 msgstr ""
 
@@ -5388,6 +5532,7 @@ msgstr ""
 #: skin_default_skin.xml.h:371 skin_default_skin.xml.h:373
 #: skin_default_skin.xml.h:376 skin_default_skin.xml.h:377
 #: skin_default_skin.xml.h:378 skin_default_skin.xml.h:380
+#: skin_default_skin.xml.h:386
 msgid "Service"
 msgstr ""
 
@@ -5395,6 +5540,7 @@ msgstr ""
 #: skin_default_skin.xml.h:372 skin_default_skin.xml.h:374
 #: skin_default_skin.xml.h:377 skin_default_skin.xml.h:378
 #: skin_default_skin.xml.h:379 skin_default_skin.xml.h:381
+#: skin_default_skin.xml.h:387
 msgid "Set action after rec"
 msgstr ""
 
@@ -5402,6 +5548,7 @@ msgstr ""
 #: skin_default_skin.xml.h:373 skin_default_skin.xml.h:375
 #: skin_default_skin.xml.h:378 skin_default_skin.xml.h:379
 #: skin_default_skin.xml.h:380 skin_default_skin.xml.h:382
+#: skin_default_skin.xml.h:388
 msgid "set startchannel"
 msgstr ""
 
@@ -5409,6 +5556,7 @@ msgstr ""
 #: skin_default_skin.xml.h:374 skin_default_skin.xml.h:376
 #: skin_default_skin.xml.h:379 skin_default_skin.xml.h:380
 #: skin_default_skin.xml.h:381 skin_default_skin.xml.h:383
+#: skin_default_skin.xml.h:389
 msgid "Settings..."
 msgstr ""
 
@@ -5416,6 +5564,7 @@ msgstr ""
 #: skin_default_skin.xml.h:375 skin_default_skin.xml.h:377
 #: skin_default_skin.xml.h:380 skin_default_skin.xml.h:381
 #: skin_default_skin.xml.h:382 skin_default_skin.xml.h:384
+#: skin_default_skin.xml.h:390
 msgid "Share Settings"
 msgstr ""
 
@@ -5423,6 +5572,7 @@ msgstr ""
 #: skin_default_skin.xml.h:376 skin_default_skin.xml.h:378
 #: skin_default_skin.xml.h:381 skin_default_skin.xml.h:382
 #: skin_default_skin.xml.h:383 skin_default_skin.xml.h:385
+#: skin_default_skin.xml.h:391
 msgid "Show EPG screen (EPG button)"
 msgstr ""
 
@@ -5430,6 +5580,7 @@ msgstr ""
 #: skin_default_skin.xml.h:377 skin_default_skin.xml.h:379
 #: skin_default_skin.xml.h:382 skin_default_skin.xml.h:383
 #: skin_default_skin.xml.h:384 skin_default_skin.xml.h:386
+#: skin_default_skin.xml.h:392
 msgid "Show in Standby"
 msgstr ""
 
@@ -5437,6 +5588,7 @@ msgstr ""
 #: skin_default_skin.xml.h:378 skin_default_skin.xml.h:380
 #: skin_default_skin.xml.h:383 skin_default_skin.xml.h:384
 #: skin_default_skin.xml.h:385 skin_default_skin.xml.h:387
+#: skin_default_skin.xml.h:393
 msgid "Show in VFD"
 msgstr ""
 
@@ -5444,6 +5596,7 @@ msgstr ""
 #: skin_default_skin.xml.h:379 skin_default_skin.xml.h:381
 #: skin_default_skin.xml.h:384 skin_default_skin.xml.h:385
 #: skin_default_skin.xml.h:386 skin_default_skin.xml.h:388
+#: skin_default_skin.xml.h:394
 msgid "Show Modules"
 msgstr ""
 
@@ -5451,6 +5604,7 @@ msgstr ""
 #: skin_default_skin.xml.h:380 skin_default_skin.xml.h:382
 #: skin_default_skin.xml.h:385 skin_default_skin.xml.h:386
 #: skin_default_skin.xml.h:387 skin_default_skin.xml.h:389
+#: skin_default_skin.xml.h:395
 msgid "Show Timeline in Channellist"
 msgstr ""
 
@@ -5458,6 +5612,7 @@ msgstr ""
 #: skin_default_skin.xml.h:381 skin_default_skin.xml.h:383
 #: skin_default_skin.xml.h:386 skin_default_skin.xml.h:387
 #: skin_default_skin.xml.h:388 skin_default_skin.xml.h:390
+#: skin_default_skin.xml.h:396
 msgid "SID:"
 msgstr ""
 
@@ -5465,6 +5620,7 @@ msgstr ""
 #: skin_default_skin.xml.h:382 skin_default_skin.xml.h:384
 #: skin_default_skin.xml.h:387 skin_default_skin.xml.h:388
 #: skin_default_skin.xml.h:389 skin_default_skin.xml.h:391
+#: skin_default_skin.xml.h:397
 msgid "Signal"
 msgstr ""
 
@@ -5472,6 +5628,7 @@ msgstr ""
 #: skin_default_skin.xml.h:383 skin_default_skin.xml.h:385
 #: skin_default_skin.xml.h:388 skin_default_skin.xml.h:389
 #: skin_default_skin.xml.h:390 skin_default_skin.xml.h:392
+#: skin_default_skin.xml.h:398
 msgid "Signal:"
 msgstr ""
 
@@ -5479,6 +5636,7 @@ msgstr ""
 #: skin_default_skin.xml.h:386 skin_default_skin.xml.h:388
 #: skin_default_skin.xml.h:391 skin_default_skin.xml.h:392
 #: skin_default_skin.xml.h:393 skin_default_skin.xml.h:395
+#: skin_default_skin.xml.h:401
 msgid "Skin"
 msgstr ""
 
@@ -5486,6 +5644,7 @@ msgstr ""
 #: skin_default_skin.xml.h:388 skin_default_skin.xml.h:390
 #: skin_default_skin.xml.h:393 skin_default_skin.xml.h:394
 #: skin_default_skin.xml.h:395 skin_default_skin.xml.h:397
+#: skin_default_skin.xml.h:403
 msgid "Skip 1/3"
 msgstr ""
 
@@ -5493,6 +5652,7 @@ msgstr ""
 #: skin_default_skin.xml.h:389 skin_default_skin.xml.h:391
 #: skin_default_skin.xml.h:394 skin_default_skin.xml.h:395
 #: skin_default_skin.xml.h:396 skin_default_skin.xml.h:398
+#: skin_default_skin.xml.h:404
 msgid "Skip 4/6"
 msgstr ""
 
@@ -5500,6 +5660,7 @@ msgstr ""
 #: skin_default_skin.xml.h:390 skin_default_skin.xml.h:392
 #: skin_default_skin.xml.h:395 skin_default_skin.xml.h:396
 #: skin_default_skin.xml.h:397 skin_default_skin.xml.h:399
+#: skin_default_skin.xml.h:405
 msgid "Skip 7/9"
 msgstr ""
 
@@ -5507,6 +5668,7 @@ msgstr ""
 #: skin_default_skin.xml.h:391 skin_default_skin.xml.h:393
 #: skin_default_skin.xml.h:396 skin_default_skin.xml.h:397
 #: skin_default_skin.xml.h:398 skin_default_skin.xml.h:400
+#: skin_default_skin.xml.h:406
 msgid "SNR"
 msgstr ""
 
@@ -5514,6 +5676,7 @@ msgstr ""
 #: skin_default_skin.xml.h:392 skin_default_skin.xml.h:394
 #: skin_default_skin.xml.h:397 skin_default_skin.xml.h:398
 #: skin_default_skin.xml.h:399 skin_default_skin.xml.h:401
+#: skin_default_skin.xml.h:407
 msgid "SNR:"
 msgstr ""
 
@@ -5521,6 +5684,7 @@ msgstr ""
 #: skin_default_skin.xml.h:393 skin_default_skin.xml.h:395
 #: skin_default_skin.xml.h:398 skin_default_skin.xml.h:399
 #: skin_default_skin.xml.h:400 skin_default_skin.xml.h:402
+#: skin_default_skin.xml.h:408
 msgid "Space"
 msgstr ""
 
@@ -5528,6 +5692,7 @@ msgstr ""
 #: skin_default_skin.xml.h:394 skin_default_skin.xml.h:396
 #: skin_default_skin.xml.h:399 skin_default_skin.xml.h:400
 #: skin_default_skin.xml.h:401 skin_default_skin.xml.h:403
+#: skin_default_skin.xml.h:409
 msgid "Spinnerspeed"
 msgstr ""
 
@@ -5535,6 +5700,7 @@ msgstr ""
 #: skin_default_skin.xml.h:395 skin_default_skin.xml.h:397
 #: skin_default_skin.xml.h:400 skin_default_skin.xml.h:401
 #: skin_default_skin.xml.h:402 skin_default_skin.xml.h:404
+#: skin_default_skin.xml.h:410
 msgid "Spinnertime"
 msgstr ""
 
@@ -5542,6 +5708,7 @@ msgstr ""
 #: skin_default_skin.xml.h:397 skin_default_skin.xml.h:400
 #: skin_default_skin.xml.h:403 skin_default_skin.xml.h:404
 #: skin_default_skin.xml.h:405 skin_default_skin.xml.h:407
+#: skin_default_skin.xml.h:413
 msgid "Standby Brightness"
 msgstr ""
 
@@ -5549,6 +5716,7 @@ msgstr ""
 #: skin_default_skin.xml.h:398 skin_default_skin.xml.h:401
 #: skin_default_skin.xml.h:404 skin_default_skin.xml.h:405
 #: skin_default_skin.xml.h:406 skin_default_skin.xml.h:408
+#: skin_default_skin.xml.h:414
 msgid "StandBy Mode"
 msgstr ""
 
@@ -5556,6 +5724,7 @@ msgstr ""
 #: skin_default_skin.xml.h:399 skin_default_skin.xml.h:402
 #: skin_default_skin.xml.h:405 skin_default_skin.xml.h:406
 #: skin_default_skin.xml.h:407 skin_default_skin.xml.h:409
+#: skin_default_skin.xml.h:415
 msgid "Standby / Poweroff..."
 msgstr ""
 
@@ -5563,6 +5732,7 @@ msgstr ""
 #: skin_default_skin.xml.h:400 skin_default_skin.xml.h:404
 #: skin_default_skin.xml.h:407 skin_default_skin.xml.h:408
 #: skin_default_skin.xml.h:409 skin_default_skin.xml.h:411
+#: skin_default_skin.xml.h:417
 msgid "Start HTTPD"
 msgstr ""
 
@@ -5570,7 +5740,7 @@ msgstr ""
 #: skin_default_skin.xml.h:401 skin_default_skin.xml.h:406
 #: skin_default_skin.xml.h:407 skin_default_skin.xml.h:410
 #: skin_default_skin.xml.h:411 skin_default_skin.xml.h:413
-#: skin_default_skin.xml.h:415
+#: skin_default_skin.xml.h:415 skin_default_skin.xml.h:423
 msgid "STOP/START"
 msgstr ""
 
@@ -5578,7 +5748,7 @@ msgstr ""
 #: skin_default_skin.xml.h:402 skin_default_skin.xml.h:407
 #: skin_default_skin.xml.h:408 skin_default_skin.xml.h:411
 #: skin_default_skin.xml.h:412 skin_default_skin.xml.h:414
-#: skin_default_skin.xml.h:416
+#: skin_default_skin.xml.h:416 skin_default_skin.xml.h:424
 msgid "Storage position"
 msgstr ""
 
@@ -5586,7 +5756,7 @@ msgstr ""
 #: skin_default_skin.xml.h:403 skin_default_skin.xml.h:408
 #: skin_default_skin.xml.h:409 skin_default_skin.xml.h:412
 #: skin_default_skin.xml.h:413 skin_default_skin.xml.h:415
-#: skin_default_skin.xml.h:417
+#: skin_default_skin.xml.h:417 skin_default_skin.xml.h:425
 msgid "Streaming"
 msgstr ""
 
@@ -5594,7 +5764,7 @@ msgstr ""
 #: skin_default_skin.xml.h:404 skin_default_skin.xml.h:409
 #: skin_default_skin.xml.h:410 skin_default_skin.xml.h:413
 #: skin_default_skin.xml.h:414 skin_default_skin.xml.h:416
-#: skin_default_skin.xml.h:418
+#: skin_default_skin.xml.h:418 skin_default_skin.xml.h:426
 msgid "Stream Path"
 msgstr ""
 
@@ -5602,7 +5772,7 @@ msgstr ""
 #: skin_default_skin.xml.h:405 skin_default_skin.xml.h:410
 #: skin_default_skin.xml.h:411 skin_default_skin.xml.h:414
 #: skin_default_skin.xml.h:415 skin_default_skin.xml.h:417
-#: skin_default_skin.xml.h:419
+#: skin_default_skin.xml.h:419 skin_default_skin.xml.h:427
 msgid "Stream Port"
 msgstr ""
 
@@ -5610,7 +5780,7 @@ msgstr ""
 #: skin_default_skin.xml.h:407 skin_default_skin.xml.h:412
 #: skin_default_skin.xml.h:413 skin_default_skin.xml.h:416
 #: skin_default_skin.xml.h:417 skin_default_skin.xml.h:419
-#: skin_default_skin.xml.h:421
+#: skin_default_skin.xml.h:421 skin_default_skin.xml.h:429
 msgid "Symbol rate:"
 msgstr ""
 
@@ -5618,7 +5788,7 @@ msgstr ""
 #: skin_default_skin.xml.h:408 skin_default_skin.xml.h:413
 #: skin_default_skin.xml.h:414 skin_default_skin.xml.h:417
 #: skin_default_skin.xml.h:418 skin_default_skin.xml.h:420
-#: skin_default_skin.xml.h:422
+#: skin_default_skin.xml.h:422 skin_default_skin.xml.h:430
 msgid "Symbolrate"
 msgstr ""
 
@@ -5626,7 +5796,7 @@ msgstr ""
 #: skin_default_skin.xml.h:410 skin_default_skin.xml.h:415
 #: skin_default_skin.xml.h:416 skin_default_skin.xml.h:419
 #: skin_default_skin.xml.h:420 skin_default_skin.xml.h:422
-#: skin_default_skin.xml.h:424
+#: skin_default_skin.xml.h:424 skin_default_skin.xml.h:432
 msgid "System:"
 msgstr ""
 
@@ -5634,7 +5804,7 @@ msgstr ""
 #: skin_default_skin.xml.h:411 skin_default_skin.xml.h:416
 #: skin_default_skin.xml.h:417 skin_default_skin.xml.h:420
 #: skin_default_skin.xml.h:421 skin_default_skin.xml.h:423
-#: skin_default_skin.xml.h:425
+#: skin_default_skin.xml.h:425 skin_default_skin.xml.h:433
 msgid "System..."
 msgstr ""
 
@@ -5642,7 +5812,7 @@ msgstr ""
 #: skin_default_skin.xml.h:412 skin_default_skin.xml.h:417
 #: skin_default_skin.xml.h:418 skin_default_skin.xml.h:421
 #: skin_default_skin.xml.h:422 skin_default_skin.xml.h:424
-#: skin_default_skin.xml.h:426
+#: skin_default_skin.xml.h:426 skin_default_skin.xml.h:434
 msgid "t"
 msgstr ""
 
@@ -5650,7 +5820,7 @@ msgstr ""
 #: skin_default_skin.xml.h:413 skin_default_skin.xml.h:418
 #: skin_default_skin.xml.h:419 skin_default_skin.xml.h:422
 #: skin_default_skin.xml.h:423 skin_default_skin.xml.h:425
-#: skin_default_skin.xml.h:427
+#: skin_default_skin.xml.h:427 skin_default_skin.xml.h:435
 msgid "T"
 msgstr ""
 
@@ -5658,7 +5828,7 @@ msgstr ""
 #: skin_default_skin.xml.h:414 skin_default_skin.xml.h:419
 #: skin_default_skin.xml.h:420 skin_default_skin.xml.h:423
 #: skin_default_skin.xml.h:424 skin_default_skin.xml.h:426
-#: skin_default_skin.xml.h:428
+#: skin_default_skin.xml.h:428 skin_default_skin.xml.h:436
 msgid "TEST"
 msgstr ""
 
@@ -5666,7 +5836,7 @@ msgstr ""
 #: skin_default_skin.xml.h:417 skin_default_skin.xml.h:422
 #: skin_default_skin.xml.h:423 skin_default_skin.xml.h:426
 #: skin_default_skin.xml.h:427 skin_default_skin.xml.h:429
-#: skin_default_skin.xml.h:431
+#: skin_default_skin.xml.h:431 skin_default_skin.xml.h:441
 msgid "text=O name=O>"
 msgstr ""
 
@@ -5674,7 +5844,7 @@ msgstr ""
 #: skin_default_skin.xml.h:418 skin_default_skin.xml.h:423
 #: skin_default_skin.xml.h:424 skin_default_skin.xml.h:427
 #: skin_default_skin.xml.h:428 skin_default_skin.xml.h:430
-#: skin_default_skin.xml.h:432
+#: skin_default_skin.xml.h:432 skin_default_skin.xml.h:442
 msgid "text=V name=V>"
 msgstr ""
 
@@ -5682,7 +5852,7 @@ msgstr ""
 #: skin_default_skin.xml.h:419 skin_default_skin.xml.h:424
 #: skin_default_skin.xml.h:425 skin_default_skin.xml.h:428
 #: skin_default_skin.xml.h:429 skin_default_skin.xml.h:431
-#: skin_default_skin.xml.h:433
+#: skin_default_skin.xml.h:433 skin_default_skin.xml.h:443
 msgid "thereafter on this Channel:"
 msgstr ""
 
@@ -5690,7 +5860,7 @@ msgstr ""
 #: skin_default_skin.xml.h:420 skin_default_skin.xml.h:425
 #: skin_default_skin.xml.h:426 skin_default_skin.xml.h:429
 #: skin_default_skin.xml.h:430 skin_default_skin.xml.h:432
-#: skin_default_skin.xml.h:434
+#: skin_default_skin.xml.h:434 skin_default_skin.xml.h:444
 msgid "Threshold"
 msgstr ""
 
@@ -5698,7 +5868,7 @@ msgstr ""
 #: skin_default_skin.xml.h:422 skin_default_skin.xml.h:427
 #: skin_default_skin.xml.h:428 skin_default_skin.xml.h:431
 #: skin_default_skin.xml.h:432 skin_default_skin.xml.h:434
-#: skin_default_skin.xml.h:436
+#: skin_default_skin.xml.h:436 skin_default_skin.xml.h:446
 msgid "Timer"
 msgstr ""
 
@@ -5706,7 +5876,7 @@ msgstr ""
 #: skin_default_skin.xml.h:424 skin_default_skin.xml.h:429
 #: skin_default_skin.xml.h:430 skin_default_skin.xml.h:433
 #: skin_default_skin.xml.h:434 skin_default_skin.xml.h:436
-#: skin_default_skin.xml.h:438
+#: skin_default_skin.xml.h:438 skin_default_skin.xml.h:448
 msgid "Timer Record Path"
 msgstr ""
 
@@ -5714,7 +5884,7 @@ msgstr ""
 #: skin_default_skin.xml.h:425 skin_default_skin.xml.h:430
 #: skin_default_skin.xml.h:431 skin_default_skin.xml.h:434
 #: skin_default_skin.xml.h:435 skin_default_skin.xml.h:437
-#: skin_default_skin.xml.h:439
+#: skin_default_skin.xml.h:439 skin_default_skin.xml.h:449
 msgid "Timeshift Path"
 msgstr ""
 
@@ -5722,7 +5892,7 @@ msgstr ""
 #: skin_default_skin.xml.h:427 skin_default_skin.xml.h:432
 #: skin_default_skin.xml.h:433 skin_default_skin.xml.h:436
 #: skin_default_skin.xml.h:437 skin_default_skin.xml.h:439
-#: skin_default_skin.xml.h:441
+#: skin_default_skin.xml.h:441 skin_default_skin.xml.h:451
 msgid "--- Time to switch"
 msgstr ""
 
@@ -5730,7 +5900,7 @@ msgstr ""
 #: skin_default_skin.xml.h:429 skin_default_skin.xml.h:434
 #: skin_default_skin.xml.h:435 skin_default_skin.xml.h:438
 #: skin_default_skin.xml.h:439 skin_default_skin.xml.h:441
-#: skin_default_skin.xml.h:443
+#: skin_default_skin.xml.h:443 skin_default_skin.xml.h:453
 msgid "Tint"
 msgstr ""
 
@@ -5738,7 +5908,7 @@ msgstr ""
 #: skin_default_skin.xml.h:431 skin_default_skin.xml.h:436
 #: skin_default_skin.xml.h:437 skin_default_skin.xml.h:440
 #: skin_default_skin.xml.h:441 skin_default_skin.xml.h:443
-#: skin_default_skin.xml.h:445
+#: skin_default_skin.xml.h:445 skin_default_skin.xml.h:455
 msgid "Tone Burst"
 msgstr ""
 
@@ -5746,7 +5916,7 @@ msgstr ""
 #: skin_default_skin.xml.h:432 skin_default_skin.xml.h:437
 #: skin_default_skin.xml.h:438 skin_default_skin.xml.h:441
 #: skin_default_skin.xml.h:442 skin_default_skin.xml.h:444
-#: skin_default_skin.xml.h:446
+#: skin_default_skin.xml.h:446 skin_default_skin.xml.h:456
 msgid "Tone Mode"
 msgstr ""
 
@@ -5754,7 +5924,7 @@ msgstr ""
 #: skin_default_skin.xml.h:433 skin_default_skin.xml.h:438
 #: skin_default_skin.xml.h:439 skin_default_skin.xml.h:442
 #: skin_default_skin.xml.h:443 skin_default_skin.xml.h:445
-#: skin_default_skin.xml.h:447
+#: skin_default_skin.xml.h:447 skin_default_skin.xml.h:457
 msgid "TSID:"
 msgstr ""
 
@@ -5762,7 +5932,7 @@ msgstr ""
 #: skin_default_skin.xml.h:435 skin_default_skin.xml.h:440
 #: skin_default_skin.xml.h:441 skin_default_skin.xml.h:444
 #: skin_default_skin.xml.h:445 skin_default_skin.xml.h:447
-#: skin_default_skin.xml.h:449
+#: skin_default_skin.xml.h:449 skin_default_skin.xml.h:459
 msgid "Tuner"
 msgstr ""
 
@@ -5770,7 +5940,7 @@ msgstr ""
 #: skin_default_skin.xml.h:436 skin_default_skin.xml.h:441
 #: skin_default_skin.xml.h:442 skin_default_skin.xml.h:445
 #: skin_default_skin.xml.h:446 skin_default_skin.xml.h:448
-#: skin_default_skin.xml.h:450
+#: skin_default_skin.xml.h:450 skin_default_skin.xml.h:460
 msgid "Tuner:"
 msgstr ""
 
@@ -5778,7 +5948,7 @@ msgstr ""
 #: skin_default_skin.xml.h:437 skin_default_skin.xml.h:442
 #: skin_default_skin.xml.h:443 skin_default_skin.xml.h:446
 #: skin_default_skin.xml.h:447 skin_default_skin.xml.h:449
-#: skin_default_skin.xml.h:451
+#: skin_default_skin.xml.h:451 skin_default_skin.xml.h:461
 msgid "Tuner Configuration"
 msgstr ""
 
@@ -5786,7 +5956,7 @@ msgstr ""
 #: skin_default_skin.xml.h:438 skin_default_skin.xml.h:443
 #: skin_default_skin.xml.h:444 skin_default_skin.xml.h:447
 #: skin_default_skin.xml.h:448 skin_default_skin.xml.h:450
-#: skin_default_skin.xml.h:452
+#: skin_default_skin.xml.h:452 skin_default_skin.xml.h:462
 msgid "Two step mute"
 msgstr ""
 
@@ -5794,7 +5964,7 @@ msgstr ""
 #: skin_default_skin.xml.h:439 skin_default_skin.xml.h:444
 #: skin_default_skin.xml.h:445 skin_default_skin.xml.h:448
 #: skin_default_skin.xml.h:449 skin_default_skin.xml.h:451
-#: skin_default_skin.xml.h:453
+#: skin_default_skin.xml.h:453 skin_default_skin.xml.h:463
 msgid "TXT PID:"
 msgstr ""
 
@@ -5802,7 +5972,7 @@ msgstr ""
 #: skin_default_skin.xml.h:440 skin_default_skin.xml.h:445
 #: skin_default_skin.xml.h:446 skin_default_skin.xml.h:449
 #: skin_default_skin.xml.h:450 skin_default_skin.xml.h:452
-#: skin_default_skin.xml.h:454
+#: skin_default_skin.xml.h:454 skin_default_skin.xml.h:464
 msgid "Type"
 msgstr ""
 
@@ -5810,7 +5980,7 @@ msgstr ""
 #: skin_default_skin.xml.h:441 skin_default_skin.xml.h:446
 #: skin_default_skin.xml.h:447 skin_default_skin.xml.h:450
 #: skin_default_skin.xml.h:451 skin_default_skin.xml.h:453
-#: skin_default_skin.xml.h:455
+#: skin_default_skin.xml.h:455 skin_default_skin.xml.h:465
 msgid "Type:"
 msgstr ""
 
@@ -5818,7 +5988,7 @@ msgstr ""
 #: skin_default_skin.xml.h:442 skin_default_skin.xml.h:447
 #: skin_default_skin.xml.h:448 skin_default_skin.xml.h:451
 #: skin_default_skin.xml.h:452 skin_default_skin.xml.h:454
-#: skin_default_skin.xml.h:456
+#: skin_default_skin.xml.h:456 skin_default_skin.xml.h:466
 msgid "Type of Scan"
 msgstr ""
 
@@ -5826,7 +5996,7 @@ msgstr ""
 #: skin_default_skin.xml.h:443 skin_default_skin.xml.h:448
 #: skin_default_skin.xml.h:449 skin_default_skin.xml.h:452
 #: skin_default_skin.xml.h:453 skin_default_skin.xml.h:455
-#: skin_default_skin.xml.h:457
+#: skin_default_skin.xml.h:457 skin_default_skin.xml.h:467
 msgid "u"
 msgstr ""
 
@@ -5834,7 +6004,7 @@ msgstr ""
 #: skin_default_skin.xml.h:444 skin_default_skin.xml.h:449
 #: skin_default_skin.xml.h:450 skin_default_skin.xml.h:453
 #: skin_default_skin.xml.h:454 skin_default_skin.xml.h:456
-#: skin_default_skin.xml.h:458
+#: skin_default_skin.xml.h:458 skin_default_skin.xml.h:468
 msgid "U"
 msgstr ""
 
@@ -5842,7 +6012,7 @@ msgstr ""
 #: skin_default_skin.xml.h:445 skin_default_skin.xml.h:450
 #: skin_default_skin.xml.h:451 skin_default_skin.xml.h:454
 #: skin_default_skin.xml.h:455 skin_default_skin.xml.h:457
-#: skin_default_skin.xml.h:459
+#: skin_default_skin.xml.h:459 skin_default_skin.xml.h:469
 msgid "UNC"
 msgstr ""
 
@@ -5850,7 +6020,7 @@ msgstr ""
 #: skin_default_skin.xml.h:446 skin_default_skin.xml.h:451
 #: skin_default_skin.xml.h:452 skin_default_skin.xml.h:455
 #: skin_default_skin.xml.h:456 skin_default_skin.xml.h:458
-#: skin_default_skin.xml.h:460
+#: skin_default_skin.xml.h:460 skin_default_skin.xml.h:470
 msgid "UNC:"
 msgstr ""
 
@@ -5858,7 +6028,7 @@ msgstr ""
 #: skin_default_skin.xml.h:447 skin_default_skin.xml.h:452
 #: skin_default_skin.xml.h:453 skin_default_skin.xml.h:456
 #: skin_default_skin.xml.h:457 skin_default_skin.xml.h:459
-#: skin_default_skin.xml.h:461
+#: skin_default_skin.xml.h:461 skin_default_skin.xml.h:471
 msgid "Uncommitted Diseqc command"
 msgstr ""
 
@@ -5866,7 +6036,7 @@ msgstr ""
 #: skin_default_skin.xml.h:448 skin_default_skin.xml.h:453
 #: skin_default_skin.xml.h:454 skin_default_skin.xml.h:457
 #: skin_default_skin.xml.h:458 skin_default_skin.xml.h:460
-#: skin_default_skin.xml.h:462
+#: skin_default_skin.xml.h:462 skin_default_skin.xml.h:472
 msgid "Unicable Configuration"
 msgstr ""
 
@@ -5874,7 +6044,7 @@ msgstr ""
 #: skin_default_skin.xml.h:450 skin_default_skin.xml.h:455
 #: skin_default_skin.xml.h:456 skin_default_skin.xml.h:459
 #: skin_default_skin.xml.h:460 skin_default_skin.xml.h:462
-#: skin_default_skin.xml.h:464
+#: skin_default_skin.xml.h:464 skin_default_skin.xml.h:474
 msgid "UNLOAD"
 msgstr ""
 
@@ -5882,7 +6052,7 @@ msgstr ""
 #: skin_default_skin.xml.h:451 skin_default_skin.xml.h:456
 #: skin_default_skin.xml.h:457 skin_default_skin.xml.h:460
 #: skin_default_skin.xml.h:461 skin_default_skin.xml.h:463
-#: skin_default_skin.xml.h:465
+#: skin_default_skin.xml.h:465 skin_default_skin.xml.h:475
 msgid "Use EPG Endtime"
 msgstr ""
 
@@ -5890,7 +6060,7 @@ msgstr ""
 #: skin_default_skin.xml.h:453 skin_default_skin.xml.h:458
 #: skin_default_skin.xml.h:459 skin_default_skin.xml.h:462
 #: skin_default_skin.xml.h:463 skin_default_skin.xml.h:465
-#: skin_default_skin.xml.h:467
+#: skin_default_skin.xml.h:467 skin_default_skin.xml.h:477
 msgid "v"
 msgstr ""
 
@@ -5898,7 +6068,7 @@ msgstr ""
 #: skin_default_skin.xml.h:455 skin_default_skin.xml.h:460
 #: skin_default_skin.xml.h:461 skin_default_skin.xml.h:464
 #: skin_default_skin.xml.h:465 skin_default_skin.xml.h:467
-#: skin_default_skin.xml.h:469
+#: skin_default_skin.xml.h:469 skin_default_skin.xml.h:479
 msgid "Video"
 msgstr ""
 
@@ -5906,7 +6076,7 @@ msgstr ""
 #: skin_default_skin.xml.h:456 skin_default_skin.xml.h:461
 #: skin_default_skin.xml.h:462 skin_default_skin.xml.h:465
 #: skin_default_skin.xml.h:466 skin_default_skin.xml.h:468
-#: skin_default_skin.xml.h:470
+#: skin_default_skin.xml.h:470 skin_default_skin.xml.h:480
 msgid "Video PID:"
 msgstr ""
 
@@ -5914,7 +6084,7 @@ msgstr ""
 #: skin_default_skin.xml.h:458 skin_default_skin.xml.h:463
 #: skin_default_skin.xml.h:464 skin_default_skin.xml.h:467
 #: skin_default_skin.xml.h:468 skin_default_skin.xml.h:470
-#: skin_default_skin.xml.h:472
+#: skin_default_skin.xml.h:472 skin_default_skin.xml.h:482
 msgid "virtualbox (text)"
 msgstr ""
 
@@ -5922,7 +6092,7 @@ msgstr ""
 #: skin_default_skin.xml.h:459 skin_default_skin.xml.h:464
 #: skin_default_skin.xml.h:465 skin_default_skin.xml.h:468
 #: skin_default_skin.xml.h:469 skin_default_skin.xml.h:471
-#: skin_default_skin.xml.h:473
+#: skin_default_skin.xml.h:473 skin_default_skin.xml.h:483
 msgid "Virtualzap Timeout"
 msgstr ""
 
@@ -5930,7 +6100,7 @@ msgstr ""
 #: skin_default_skin.xml.h:460 skin_default_skin.xml.h:465
 #: skin_default_skin.xml.h:466 skin_default_skin.xml.h:469
 #: skin_default_skin.xml.h:470 skin_default_skin.xml.h:472
-#: skin_default_skin.xml.h:474
+#: skin_default_skin.xml.h:474 skin_default_skin.xml.h:484
 msgid "Vol off"
 msgstr ""
 
@@ -5938,7 +6108,7 @@ msgstr ""
 #: skin_default_skin.xml.h:461 skin_default_skin.xml.h:466
 #: skin_default_skin.xml.h:467 skin_default_skin.xml.h:470
 #: skin_default_skin.xml.h:471 skin_default_skin.xml.h:473
-#: skin_default_skin.xml.h:475
+#: skin_default_skin.xml.h:475 skin_default_skin.xml.h:485
 msgid "Voltage Mode"
 msgstr ""
 
@@ -5946,7 +6116,7 @@ msgstr ""
 #: skin_default_skin.xml.h:462 skin_default_skin.xml.h:467
 #: skin_default_skin.xml.h:468 skin_default_skin.xml.h:471
 #: skin_default_skin.xml.h:472 skin_default_skin.xml.h:474
-#: skin_default_skin.xml.h:476
+#: skin_default_skin.xml.h:476 skin_default_skin.xml.h:486
 msgid "Volumebar Timeout"
 msgstr ""
 
@@ -5954,7 +6124,7 @@ msgstr ""
 #: skin_default_skin.xml.h:463 skin_default_skin.xml.h:468
 #: skin_default_skin.xml.h:469 skin_default_skin.xml.h:472
 #: skin_default_skin.xml.h:473 skin_default_skin.xml.h:475
-#: skin_default_skin.xml.h:477
+#: skin_default_skin.xml.h:477 skin_default_skin.xml.h:487
 msgid "w"
 msgstr ""
 
@@ -5962,7 +6132,7 @@ msgstr ""
 #: skin_default_skin.xml.h:464 skin_default_skin.xml.h:469
 #: skin_default_skin.xml.h:470 skin_default_skin.xml.h:473
 #: skin_default_skin.xml.h:474 skin_default_skin.xml.h:476
-#: skin_default_skin.xml.h:478
+#: skin_default_skin.xml.h:478 skin_default_skin.xml.h:488
 msgid "W"
 msgstr ""
 
@@ -5970,7 +6140,7 @@ msgstr ""
 #: skin_default_skin.xml.h:466 skin_default_skin.xml.h:472
 #: skin_default_skin.xml.h:473 skin_default_skin.xml.h:476
 #: skin_default_skin.xml.h:477 skin_default_skin.xml.h:479
-#: skin_default_skin.xml.h:481
+#: skin_default_skin.xml.h:481 skin_default_skin.xml.h:491
 msgid "x"
 msgstr ""
 
@@ -5978,7 +6148,7 @@ msgstr ""
 #: skin_default_skin.xml.h:467 skin_default_skin.xml.h:473
 #: skin_default_skin.xml.h:474 skin_default_skin.xml.h:477
 #: skin_default_skin.xml.h:478 skin_default_skin.xml.h:480
-#: skin_default_skin.xml.h:482
+#: skin_default_skin.xml.h:482 skin_default_skin.xml.h:492
 msgid "X"
 msgstr ""
 
@@ -5986,7 +6156,7 @@ msgstr ""
 #: skin_default_skin.xml.h:468 skin_default_skin.xml.h:474
 #: skin_default_skin.xml.h:475 skin_default_skin.xml.h:478
 #: skin_default_skin.xml.h:479 skin_default_skin.xml.h:481
-#: skin_default_skin.xml.h:483
+#: skin_default_skin.xml.h:483 skin_default_skin.xml.h:493
 msgid "y"
 msgstr ""
 
@@ -5994,7 +6164,7 @@ msgstr ""
 #: skin_default_skin.xml.h:469 skin_default_skin.xml.h:475
 #: skin_default_skin.xml.h:476 skin_default_skin.xml.h:479
 #: skin_default_skin.xml.h:480 skin_default_skin.xml.h:482
-#: skin_default_skin.xml.h:484
+#: skin_default_skin.xml.h:484 skin_default_skin.xml.h:494
 msgid "Y"
 msgstr ""
 
@@ -6002,7 +6172,7 @@ msgstr ""
 #: skin_default_skin.xml.h:470 skin_default_skin.xml.h:476
 #: skin_default_skin.xml.h:477 skin_default_skin.xml.h:480
 #: skin_default_skin.xml.h:481 skin_default_skin.xml.h:483
-#: skin_default_skin.xml.h:485
+#: skin_default_skin.xml.h:485 skin_default_skin.xml.h:495
 msgid "z"
 msgstr ""
 
@@ -6010,13 +6180,13 @@ msgstr ""
 #: skin_default_skin.xml.h:471 skin_default_skin.xml.h:477
 #: skin_default_skin.xml.h:478 skin_default_skin.xml.h:481
 #: skin_default_skin.xml.h:482 skin_default_skin.xml.h:484
-#: skin_default_skin.xml.h:486
+#: skin_default_skin.xml.h:486 skin_default_skin.xml.h:496
 msgid "Z"
 msgstr ""
 
 #: skin_default_skin.xml.h:83 skin_default_skin.xml.h:84
 #: skin_default_skin.xml.h:85 skin_default_skin.xml.h:86
-#: skin_default_skin.xml.h:87
+#: skin_default_skin.xml.h:87 skin_default_skin.xml.h:88
 msgid "\");"
 msgstr ""
 
@@ -6214,10 +6384,11 @@ msgstr ""
 #: skin_default_skin.xml.h:192 skin_default_skin.xml.h:195
 #: skin_default_skin.xml.h:196 skin_default_skin.xml.h:199
 #: skin_default_skin.xml.h:200 skin_default_skin.xml.h:201
+#: skin_default_skin.xml.h:203
 msgid "Fix Shutdown Time"
 msgstr ""
 
-#: scan.h:814 scan.h:903 scan.h:923 scan.h:948 scan.h:981
+#: scan.h:814 scan.h:903 scan.h:923 scan.h:948 scan.h:981 scan.h:977
 msgid "Does you want delete all unused Bouquets?"
 msgstr ""
 
@@ -6225,26 +6396,27 @@ msgstr ""
 #: skin_default_skin.xml.h:183 skin_default_skin.xml.h:10
 #: skin_default_skin.xml.h:186 skin_default_skin.xml.h:187
 #: skin_default_skin.xml.h:11 skin_default_skin.xml.h:188
+#: skin_default_skin.xml.h:12 skin_default_skin.xml.h:190
 msgid "EPG Search"
 msgstr ""
 
 #: skin_default_skin.xml.h:158 skin_default_skin.xml.h:159
 #: skin_default_skin.xml.h:160 skin_default_skin.xml.h:161
-#: skin_default_skin.xml.h:162
+#: skin_default_skin.xml.h:162 skin_default_skin.xml.h:164
 msgid "DESC"
 msgstr ""
 
 #: skin_default_skin.xml.h:423 skin_default_skin.xml.h:428
 #: skin_default_skin.xml.h:429 skin_default_skin.xml.h:432
 #: skin_default_skin.xml.h:433 skin_default_skin.xml.h:435
-#: skin_default_skin.xml.h:437
+#: skin_default_skin.xml.h:437 skin_default_skin.xml.h:447
 msgid "TIMER"
 msgstr ""
 
 #: skin_default_skin.xml.h:430 skin_default_skin.xml.h:435
 #: skin_default_skin.xml.h:436 skin_default_skin.xml.h:439
 #: skin_default_skin.xml.h:440 skin_default_skin.xml.h:442
-#: skin_default_skin.xml.h:444
+#: skin_default_skin.xml.h:444 skin_default_skin.xml.h:454
 msgid "TITLE"
 msgstr ""
 
@@ -6281,30 +6453,33 @@ msgstr ""
 #: skin_default_skin.xml.h:472 skin_default_skin.xml.h:58
 #: skin_default_skin.xml.h:475 skin_default_skin.xml.h:476
 #: skin_default_skin.xml.h:478 skin_default_skin.xml.h:59
-#: skin_default_skin.xml.h:480
+#: skin_default_skin.xml.h:480 skin_default_skin.xml.h:60
+#: skin_default_skin.xml.h:490
 msgid "WLAN Settings"
 msgstr ""
 
 #: skin_default_skin.xml.h:237 skin_default_skin.xml.h:240
 #: skin_default_skin.xml.h:241 skin_default_skin.xml.h:242
+#: skin_default_skin.xml.h:244
 msgid "Key"
 msgstr ""
 
 #: skin_default_skin.xml.h:398 skin_default_skin.xml.h:401
 #: skin_default_skin.xml.h:402 skin_default_skin.xml.h:403
-#: skin_default_skin.xml.h:405
+#: skin_default_skin.xml.h:405 skin_default_skin.xml.h:411
 msgid "SSID"
 msgstr ""
 
 #: skin_default_skin.xml.h:403 skin_default_skin.xml.h:406
 #: skin_default_skin.xml.h:407 skin_default_skin.xml.h:408
-#: skin_default_skin.xml.h:410
+#: skin_default_skin.xml.h:410 skin_default_skin.xml.h:416
 msgid "START"
 msgstr ""
 
 #: skin_default_skin.xml.h:405 skin_default_skin.xml.h:406
 #: skin_default_skin.xml.h:409 skin_default_skin.xml.h:410
 #: skin_default_skin.xml.h:412 skin_default_skin.xml.h:414
+#: skin_default_skin.xml.h:422
 msgid "STOP"
 msgstr ""
 
@@ -6324,17 +6499,18 @@ msgstr ""
 
 #: skin_default_skin.xml.h:405 skin_default_skin.xml.h:408
 #: skin_default_skin.xml.h:409 skin_default_skin.xml.h:410
-#: skin_default_skin.xml.h:412
+#: skin_default_skin.xml.h:412 skin_default_skin.xml.h:418
 msgid "Start on boot"
 msgstr ""
 
 #: skin_default_skin.xml.h:9 skin_default_skin.xml.h:170
 #: skin_default_skin.xml.h:171 skin_default_skin.xml.h:172
+#: skin_default_skin.xml.h:10 skin_default_skin.xml.h:174
 msgid "DYNDNS Settings"
 msgstr ""
 
 #: skin_default_skin.xml.h:166 skin_default_skin.xml.h:167
-#: skin_default_skin.xml.h:168
+#: skin_default_skin.xml.h:168 skin_default_skin.xml.h:170
 msgid "DNS Name"
 msgstr ""
 
@@ -6343,6 +6519,7 @@ msgid "NEW"
 msgstr ""
 
 #: skin_default_skin.xml.h:134 skin_default_skin.xml.h:135
+#: skin_default_skin.xml.h:136
 msgid "Blindscan"
 msgstr ""
 
@@ -6350,7 +6527,7 @@ msgstr ""
 msgid "WLAN LOG"
 msgstr ""
 
-#: scan.h:924
+#: scan.h:924 scan.h:920
 msgid "Blindscan: "
 msgstr ""
 
@@ -6387,10 +6564,12 @@ msgid "Connection to server lost !"
 msgstr ""
 
 #: skin_default_skin.xml.h:349 skin_default_skin.xml.h:350
+#: skin_default_skin.xml.h:356
 msgid "RGUID Port"
 msgstr ""
 
 #: skin_default_skin.xml.h:411 skin_default_skin.xml.h:413
+#: skin_default_skin.xml.h:419
 msgid "Start RGUID"
 msgstr ""
 
@@ -6402,14 +6581,62 @@ msgid ""
 "Board-ID SerialNr:"
 msgstr ""
 
-#: skin_default_skin.xml.h:10
+#: skin_default_skin.xml.h:10 skin_default_skin.xml.h:11
 msgid "EPG Scanlist"
 msgstr ""
 
-#: skin_default_skin.xml.h:369
+#: skin_default_skin.xml.h:369 skin_default_skin.xml.h:375
 msgid "ScanList"
 msgstr ""
 
 #: epgsettings.h:216
 msgid "EGG Scan Log"
+msgstr ""
+
+#: epgsettings.h:216
+msgid "EPG Scan Log"
+msgstr ""
+
+#: skin_default_skin.xml.h:5
+msgid "Blindscan Adjust"
+msgstr ""
+
+#: skin_default_skin.xml.h:137
+msgid "Blindscan Settings"
+msgstr ""
+
+#: skin_default_skin.xml.h:261
+msgid "Maximal frequency"
+msgstr ""
+
+#: skin_default_skin.xml.h:262
+msgid "Maximal signalrate"
+msgstr ""
+
+#: skin_default_skin.xml.h:268
+msgid "Minimal frequency"
+msgstr ""
+
+#: skin_default_skin.xml.h:269
+msgid "Minimal signalrate"
+msgstr ""
+
+#: skin_default_skin.xml.h:420
+msgid "Step frequency"
+msgstr ""
+
+#: skin_default_skin.xml.h:421
+msgid "Step signalrate"
+msgstr ""
+
+#: skin_default_skin.xml.h:438
+msgid ""
+"text=EXIT halign=center valign=middle bordercol=exitcol bordersize=4 "
+"bordertype=2 posx=180 posy=0 width=150 height=30/>"
+msgstr ""
+
+#: skin_default_skin.xml.h:440
+msgid ""
+"text=OK halign=center valign=middle bordercol=okcol bordersize=4 "
+"bordertype=2 posx=20 posy=0 width=150 height=30/>"
 msgstr ""
