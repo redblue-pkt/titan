@@ -570,6 +570,7 @@ int main(int argc, char *argv[])
 	ret = readtransponder(getconfig("transponderfile", NULL));
 	ret = readprovider(getconfig("providerfile", NULL));
 	ret = readchannel(getconfig("channelfile", NULL));
+	ret = readtransponderencoding(getconfig("transponderencodingfile", NULL));
 
 	status.aktservice = addservice(NULL);
 	status.lastservice = addservice(NULL);
