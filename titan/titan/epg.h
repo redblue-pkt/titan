@@ -833,14 +833,16 @@ char *eitlang(u_char *l)
 */
 
 //Parse 0x4D Short Event Descriptor
-void eventdesc(struct epg* epgnode, void *buf)
+void eventdesc(struct channel* chnode, struct epg* epgnode, void *buf)
 {
+	struct transponder* tpnode = NULL;
 	struct eitshortevent *evtdesc = buf;
 	char* title = NULL, *subtitle = NULL;
 	int evtlen = evtdesc->event_name_length;
 	int dsclen = 0;
 
 	if(!evtlen) return;
+	if(chnode != NULL) tpnode = chnode->transponder;
 
 	//title
 	title = malloc(evtlen + 1);
@@ -852,7 +854,7 @@ void eventdesc(struct epg* epgnode, void *buf)
 	memcpy(title, (char *)&evtdesc->data, evtlen);
 	title[evtlen] = '\0';
 	free(epgnode->title);
-	epgnode->title = strutf8(title, evtlen, 0, 0, 1, 0);
+	epgnode->title = strutf8(tpnode, title, evtlen, 0, 0, 1, 0);
 
 	//subtitle
 	dsclen = evtdesc->data[evtlen];
@@ -865,7 +867,7 @@ void eventdesc(struct epg* epgnode, void *buf)
 	memcpy(subtitle, (char *)&evtdesc->data[evtlen + 1], dsclen);
 	subtitle[dsclen] = '\0';
 	free(epgnode->subtitle);
-	epgnode->subtitle = strutf8(subtitle, dsclen, 0, 0, 1, 0);
+	epgnode->subtitle = strutf8(tpnode, subtitle, dsclen, 0, 0, 1, 0);
 }
 
 void epgadddesc(struct epg* epgnode, char* desc)
@@ -886,11 +888,13 @@ void epgadddesc(struct epg* epgnode, char* desc)
 }
 
 // Parse 0x4E Extended Event Descriptor
-void longeventdesc(struct epg* epgnode, unsigned char *buf)
+void longeventdesc(struct channel* chnode, struct epg* epgnode, unsigned char *buf)
 {
+	struct transponder* tpnode = NULL;
 	struct eitlongevent *levt = (struct eitlongevent*)buf;
 	char* desc = NULL;
 
+	if(chnode != NULL) tpnode = chnode->transponder;
 	int nonempty = (levt->descriptor_number || levt->last_descriptor_number || levt->length_of_items || levt->data[0]);
 
 	void *p = &levt->data;
@@ -906,7 +910,7 @@ void longeventdesc(struct epg* epgnode, unsigned char *buf)
 		}
 		memcpy(desc, (char *)&name->data, namelen);
 		desc[namelen] = '\0';
-		desc = strutf8(desc, namelen, 0, 0, 1, 0);
+		desc = strutf8(tpnode, desc, namelen, 0, 0, 1, 0);
 		epgadddesc(epgnode, desc);
 		free(desc); desc = NULL;
 		p += EITLONGEVENTITEMLEN + namelen;
@@ -921,7 +925,7 @@ void longeventdesc(struct epg* epgnode, unsigned char *buf)
 		}
 		memcpy(desc, (char *)&value->data, valuelen);
 		desc[valuelen] = '\0';
-		desc = strutf8(desc, valuelen, 0, 0, 1, 0);
+		desc = strutf8(tpnode, desc, valuelen, 0, 0, 1, 0);
 		epgadddesc(epgnode, desc);
 		free(desc); desc = NULL;
 		p += EITLONGEVENTITEMLEN + valuelen;
@@ -939,7 +943,7 @@ void longeventdesc(struct epg* epgnode, unsigned char *buf)
 		}
 		memcpy(desc, (char *)&text->data, textlen);
 		desc[textlen] = '\0';
-		desc = strutf8(desc, textlen, 0, 0, 1, 0);
+		desc = strutf8(tpnode, desc, textlen, 0, 0, 1, 0);
 		epgadddesc(epgnode, desc);
 		free(desc); desc = NULL;
 	}

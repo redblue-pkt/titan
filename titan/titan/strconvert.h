@@ -1,7 +1,6 @@
 #ifndef STRCONVERT_H
 #define STRCONVERT_H
 
-//#define USE_ICONV
 #ifndef USE_ICONV
 
 static unsigned long c88592[96] = {
@@ -474,7 +473,7 @@ static inline unsigned int recode(unsigned char d, int cp)
 
 //flag: 0 = standard
 //flag: 1 = only for channelname to remove 0x86 and 0x87 (for shortname)
-char* strutf8(char *data, int len, int table, unsigned long transponderid, int free1, int flag)
+char* strutf8(struct transponder* tpnode, char *data, int len, int table, unsigned long transponderid, int free1, int flag)
 {
 	int newtable = 0;
 	int twochar = 0;
@@ -482,7 +481,10 @@ char* strutf8(char *data, int len, int table, unsigned long transponderid, int f
 	unsigned char* res = NULL;
 
 	if(len == 0 || data == NULL) return data;
-	if(flag == 0 && data[0] > 31) return data;
+
+	if(tpnode != NULL && tpnode->encoding == 2)
+		twochar = 1;
+	else if(flag == 0 && data[0] > 31) return data;
 
 	res = malloc(MINMALLOC);
 	if(res == NULL)
@@ -594,10 +596,10 @@ char* strutf8(char *data, int len, int table, unsigned long transponderid, int f
 
 #include <iconv.h>
 
-static char buf[1024 * 6]; // UTF-8 needs up to 6 bytes
+static char iconvbuf[1024 * 6]; // UTF-8 needs up to 6 bytes
 
 //The spec says ISO-6937, but many stations get it wrong and use ISO-8859-1
-char *iso6937_encoding = "ISO6937";
+char *iso6937_encoding = "ISO-8859-1";
 
 int encoding_default(char *t, char **s, char *d)
 {
@@ -667,16 +669,18 @@ struct encoding
 };
 
 char cs_old[16];
-iconv_t cd;
+iconv_t cd = NULL;
 
 char* strutf8(char *data, int len, int table, unsigned long transponderid, int free1, int flag)
 {
 	char cs_new[16];
 
+	if(data == NULL) return data;
+
 	int i = (int)(unsigned char)data[0];
 	if(encoding[i].handler(cs_new, &data, encoding[i].data))
 		return data;
-	if(strncmp(cs_old, cs_new, 16))
+	if(strncmp(cs_old, cs_new, 16) != 0 || cd == NULL)
 	{
 		if(cd)
 		{
@@ -687,19 +691,19 @@ char* strutf8(char *data, int len, int table, unsigned long transponderid, int f
 		if(cd == (iconv_t)-1)
 		{
 			perr("iconv_open() failed");
+			cd = NULL;
 			return data;
 		}
-		strncpy(cs_old, cs_new, 16);
 	}
 
 	char *inbuf = (char*)data;
 	size_t inbytesleft = len;
-	char *outbuf = (char*)buf;
-	size_t outbytesleft = sizeof(buf);
+	char *outbuf = (char*)iconvbuf;
+	size_t outbytesleft = sizeof(iconvbuf);
 	size_t ret = iconv(cd, &inbuf, &inbytesleft, &outbuf, &outbytesleft);
 	// FIXME: handle errors
 
-	return buf;
+	return ostrcat(iconvbuf, NULL, 0, 0);
 }
 
 #endif

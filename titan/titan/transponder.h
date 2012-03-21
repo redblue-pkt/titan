@@ -700,6 +700,13 @@ int readtransponderencoding(const char* filename)
 	char *fileline = NULL;
 	int linecount = 0;
 	struct transponder* tpnode = NULL;
+	
+	fileline = malloc(MINMALLOC);
+	if(fileline == NULL)
+	{
+		err("no memory");
+		return 1;
+	}
 
 	fd = fopen(filename, "r");
 	if(fd == NULL)
@@ -721,12 +728,12 @@ int readtransponderencoding(const char* filename)
 		linecount++;
 		tpnode = NULL;
 
-		unsigned int tsid = 0, onid = 0, encoding = 0;
-		if(sscanf(fileline, "%d %d", &tsid, &onid) == 2)
+		unsigned long transponderid = 0;
+		int encoding = 0;
+		if(sscanf(fileline, "%lu#%d", &transponderid, &encoding) == 2)
 		{
-			//two char mapping
-			tpnode = gettransponder((tsid << 16) | onid);
-			if(tpnode != NULL) tpnode->encoding = 10002;
+			tpnode = gettransponder(transponderid);
+			if(tpnode != NULL) tpnode->encoding = encoding;
 		}
 		else
 		{
