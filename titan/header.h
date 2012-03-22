@@ -1,6 +1,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//channellist.h
+int screenchannellist(struct channel** retchannel, char** retchannellist, int flag);
+
 //rguid.h
 void rguidthreadfunc(struct stimerthread* timernode);
 
