@@ -311,8 +311,8 @@ void blitfb2(struct fb* fbnode, int flag)
 			char* tmpnr = oitoa(zlen);
 			memcpy(buf, tmpnr, strlen(tmpnr));
 			free(tmpnr); tmpnr = NULL;
-			socksend(&status.rguidfd, (char*)buf, 10, 5000 * 1000);
-			socksend(&status.rguidfd, zbuf, zlen, 5000 * 1000);
+			socksend(&status.rguidfd, buf, 10, 5000 * 1000);
+			socksend(&status.rguidfd, (unsigned char*)zbuf, zlen, 5000 * 1000);
 		}
 		free(zbuf); zbuf = NULL;
 		zlen = 0;
