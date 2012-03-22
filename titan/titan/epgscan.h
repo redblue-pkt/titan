@@ -79,18 +79,18 @@ void epgscanlistthread(struct stimerthread* self)
 		chnode = getchannel(node->serviceid, node->transponderid);
 		if(chnode == NULL || chnode == status.aktservice->channel)
 		{
-			node = node->next;
 			debug(400, "epgscan channel not found sid=%d, tid=%lu", node->serviceid, node->transponderid);
 			if(fd != NULL) fprintf(fd, "epgscan channel not found sid=%d, tid=%lu\n", node->serviceid, node->transponderid);
+			node = node->next;
 			continue;
 		}
 
 		tmpepgscannode = getepgscanlistbytransponder(node->transponderid);
 		if(tmpepgscannode != NULL && tmpepgscannode->scantime != 0)
 		{
-			node = node->next;
 			debug(400, "epgscan transponer already scanned tid=%lu", node->transponderid);
 			if(fd != NULL) fprintf(fd, "epgscan transponer already scanned tid=%lu\n", node->transponderid);
+			node = node->next;
 			continue;
 		}
 
@@ -100,9 +100,9 @@ void epgscanlistthread(struct stimerthread* self)
 			fenode = fegetfree(chnode->transponder, 2, NULL);
 		if(fenode == NULL || (status.standby == 0 && fenode == status.aktservice->fedev))
 		{
-			node = node->next;
 			debug(400, "epgscan no free frontend found");
 			if(fd != NULL) fprintf(fd, "epgscan no free frontend found\n");
+			node = node->next;
 			continue;
 		}
 
@@ -120,18 +120,18 @@ void epgscanlistthread(struct stimerthread* self)
 				fetunedvbt(fenode, chnode->transponder);
 			else
 			{
-				node = node->next;
 				debug(400, "epgscan unknown frontend");
 				if(fd != NULL) fprintf(fd, "epgscan unknown frontend\n");
+				node = node->next;
 				continue;
 			}
 
 			int festatus = fewait(fenode);
 			if(festatus != 0)
 			{
-				node = node->next;
 				debug(400, "epgscan frontend tune failed");
 				if(fd != NULL) fprintf(fd, "epgscan frontend tune failed\n");
+				node = node->next;
 				continue;
 			}
 
