@@ -1132,11 +1132,11 @@ void parseeitdesc(struct channel* chnode, struct epg* epgnode, unsigned char *bu
 				linkagedesc(chnode, epgnode, p);
 				break;
 			case 0x4D:
-				eventdesc(epgnode, p);
+				eventdesc(chnode, epgnode, p);
 				break;
 			case 0x4E:
 				if(nolongdesc == 0)
-					longeventdesc(epgnode, p);
+					longeventdesc(chnode, epgnode, p);
 				break;
 			case 0x55:
 				ratingdescr(epgnode, p);
