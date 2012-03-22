@@ -36,6 +36,7 @@ struct subpage* subpage = NULL, *oldsubpage = NULL;
 struct epgscanlist* epgscanlist = NULL;
 struct screensaver* screensaver = NULL;
 struct channelcache* channelcache[CHANNELCACHEMAX] = {NULL};
+//struct transpondercache* transpondercache[TRANSPONDERCACHEMAX] = {NULL};
 struct hdd* hdd = NULL;
 struct queue* queue = NULL;
 struct caservice caservice[MAXCASERVICE];
@@ -43,6 +44,7 @@ struct caservice caservice[MAXCASERVICE];
 #include "ipkg.h"
 #include "queue.h"
 #include "channelcache.h"
+//#include "transpondercache.h"
 #include "strconvert.h"
 #include "numinput.h"
 #include "textinput.h"

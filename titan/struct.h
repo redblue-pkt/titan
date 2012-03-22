@@ -111,6 +111,7 @@
 #define RCTHREADSTANDBY 999998
 #define MAXSERVICETYPE 10
 #define CHANNELCACHEMAX 1000
+#define TRANSPONDERCACHEMAX 500
 #define MAXHTTPDCONN 20
 #define MAXHTMLLINE 300
 #define MAXRGUIDCONN 1
@@ -468,6 +469,13 @@ struct channelcache
 	unsigned long transponderid;
 	struct channel* chnode;
 	struct channelcache* next;
+};
+
+struct transpondercache
+{
+	unsigned long transponderid;
+	struct transponder* tpnode;
+	struct transpondercache* next;
 };
 
 struct filelist
