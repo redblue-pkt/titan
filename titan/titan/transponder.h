@@ -553,6 +553,8 @@ struct transponder* addtransponder(char* line, int count, struct transponder* la
 	}
 
 	if(newnode->id != 99) status.writetransponder = 1;
+	
+	//modifytranspondercache(newnode->id, newnode);
 
 	if(last == NULL)
 	{
@@ -776,6 +778,7 @@ void deltransponder(unsigned long transponderid)
 			}
 
 			if(transponderid != 99) delchannelbytransponder(node->id);
+			//deltranspondercache(node->id);
 
 			free(node);
 			node = NULL;
