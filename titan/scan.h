@@ -274,9 +274,9 @@ int findchannel(struct transponder* tpnode, unsigned char *buf, uint8_t* lastsec
 					if(tmpstr1 == NULL || strlen(tmpstr1) == 0) tmpstr1 = ostrcat(tmpstr1, "unknown", 1, 0);
 					if(tmpstr2 == NULL || strlen(tmpstr2) == 0) tmpstr2 = ostrcat(tmpstr2, "unknown", 1, 0);
 
-					tmpstr1 = strutf8(tpnode, tmpstr1, strlen(tmpstr1), 0, 0, 1, 0);
+					tmpstr1 = strutf8(tpnode, tmpstr1, strlen(tmpstr1), 0, 1, 0);
 					tmpstr1 = stringreplacechar(tmpstr1, '#', '_');
-					tmpstr2 = strutf8(tpnode, tmpstr2, strlen(tmpstr2), 0, 0, 1, 1);
+					tmpstr2 = strutf8(tpnode, tmpstr2, strlen(tmpstr2), 0, 1, 1);
 					tmpstr2 = stringreplacechar(tmpstr2, '#', '_');
 
 					//add to listbox
