@@ -77,7 +77,7 @@ struct transpondercache* modifytranspondercache(unsigned long transponderid, str
 	return newnode;
 }
 
-void deltranspondercache(unsigned long transponderid)
+void deltranspondercache(unsigned long transponderid, struct transponder* tpnode)
 {
 	unsigned int hash; 
 	struct transpondercache *node = NULL, *prev = NULL;
@@ -89,7 +89,7 @@ void deltranspondercache(unsigned long transponderid)
 
 	while(node != NULL)
 	{
-		if(transponderid == node->transponderid)
+		if((tpnode == NULL && transponderid == node->transponderid) || (tpnode != NULL && tpnode == node->tpnode))
 		{
 			if(node == transpondercache[hash])
 				transpondercache[hash] = node->next;
