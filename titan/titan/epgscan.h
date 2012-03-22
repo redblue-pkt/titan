@@ -49,8 +49,7 @@ void epgscanlistthread(struct stimerthread* self)
 	else
 	{ 
 		tmpstr = ostrcat("epgscan thread start ", gettime(NULL, "%d-%m-%Y %H:%M"), 0, 1);
-		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-		if(tmpstr != NULL) fprintf(fd, tmpstr);
+		if(tmpstr != NULL) fprintf(fd, "%s\n", tmpstr);
 		free(tmpstr); tmpstr = NULL;
 	}
 
