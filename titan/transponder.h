@@ -4,7 +4,10 @@
 void changetransponderid(struct transponder* tpnode, unsigned long transponderid)
 {
 	if(tpnode == NULL) return;
+	
+	//deltranspondercache(tpnode->id, tpnode);
 	tpnode->id = transponderid;
+	//modifytranspondercache(tpnode->id, tpnode);
 }
 
 void deltranspondertunablestatus()
@@ -784,7 +787,7 @@ void deltransponder(unsigned long transponderid)
 			}
 
 			if(transponderid != 99) delchannelbytransponder(node->id);
-			//deltranspondercache(node->id);
+			//deltranspondercache(node->id, NULL);
 
 			free(node);
 			node = NULL;
