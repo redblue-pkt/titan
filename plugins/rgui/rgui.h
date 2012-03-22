@@ -14,7 +14,7 @@ int screenrgui(char* ip)
 	//clear screen
 	drawscreen(skin, 0);
 
-	struct fb* rguiskinfb = addfb("rguiskinfb", 1000, 320, 240, 4, -1, skinfb->fb, 320 * 240 * 4);
+	struct fb* rguiskinfb = addfb("rguiskinfb", 1000, 640, 480, 4, -1, skinfb->fb, 640 * 480 * 4);
 	if(rguiskinfb == NULL) return 1;
 
 
