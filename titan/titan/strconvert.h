@@ -473,7 +473,7 @@ static inline unsigned int recode(unsigned char d, int cp)
 
 //flag: 0 = standard
 //flag: 1 = only for channelname to remove 0x86 and 0x87 (for shortname)
-char* strutf8(struct transponder* tpnode, char *data, int len, int table, unsigned long transponderid, int free1, int flag)
+char* strutf8(struct transponder* tpnode, char *data, int len, int table, int free1, int flag)
 {
 	int newtable = 0;
 	int twochar = 0;
@@ -671,7 +671,7 @@ struct encoding
 char cs_old[16];
 iconv_t cd = NULL;
 
-char* strutf8(char *data, int len, int table, unsigned long transponderid, int free1, int flag)
+char* strutf8(struct transponder* tpnode, char *data, int len, int table, int free1, int flag)
 {
 	char cs_new[16];
 
