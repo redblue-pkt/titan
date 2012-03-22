@@ -241,7 +241,7 @@ int findchannel(struct transponder* tpnode, unsigned char *buf, uint8_t* lastsec
 	transponderid = (onid << 16) | tid;
 	if(tpnode != NULL && tpnode->id != transponderid)
 	{
-		tpnode->id = transponderid;
+		changetransponderid(tpnode, transponderid);
 		status.writetransponder = 1;
 	}
 
@@ -475,7 +475,7 @@ void blindscan(struct stimerthread* timernode)
 							if(tpnode->id != transponderid)
 							{
 								scaninfo.newblindcount++;
-								tpnode->id = transponderid;
+								changetransponderid(tpnode, transponderid);
 								status.writetransponder = 1;
 							}
 						}

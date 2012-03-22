@@ -1,6 +1,12 @@
 #ifndef TRANSPONDER_H
 #define TRANSPONDER_H
 
+void changetransponderid(struct transponder* tpnode, unsigned long transponderid)
+{
+	if(tpnode == NULL) return;
+	tpnode->id = transponderid;
+}
+
 void deltranspondertunablestatus()
 {
 	struct transponder* node = transponder;
