@@ -7,6 +7,18 @@ struct ddvd_resume resumeinfo;
 struct stimerthread* dvdtimerthread = NULL;
 #endif
 
+void dvdthread()
+{
+	debug(333, "dvd thread start");
+
+#ifdef DVDPLAYER
+	ddvd_run(ddvdconfig);
+	dvdtimerthread = NULL;
+#endif
+
+	debug(333, "dvd thread end");
+}
+
 int dvdstart(char* filename)
 {
 #ifdef DVDPLAYER
@@ -494,18 +506,6 @@ int dvdplay()
 int dvdcontinue()
 {
 	return dvdplay();
-}
-
-void dvdthread()
-{
-	debug(333, "dvd thread start");
-
-#ifdef DVDPLAYER
-	ddvd_run(ddvdconfig);
-	dvdtimerthread = NULL;
-#endif
-
-	debug(333, "dvd thread end");
 }
 
 int dvdgetinfo(int flag)
