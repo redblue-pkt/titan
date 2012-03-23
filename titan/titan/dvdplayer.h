@@ -4,6 +4,7 @@
 #ifdef DVDPLAYER
 struct ddvd *ddvdconfig = NULL;
 struct ddvd_resume resumeinfo;
+struct stimerthread* dvdtimerthread = NULL;
 #endif
 
 int dvdstart(char* filename)
@@ -56,24 +57,13 @@ int dvdstart(char* filename)
 #warning please update libdreamdvd for 16:10 scaling support!
 #endif
 
+	dvdtimerthread = addtimer(&dvdthread, START, 1000, 1, NULL, NULL, NULL);
+	usleep(100000);
 	dvdpause();
 	return 0;
 #endif
 	return 1;
 }
-
-/*
-void eServiceDVD::gotThreadMessage(const int &msg)
-{
-	switch(msg)
-	{
-	case 1: // thread stopped
-		m_state = stStopped;
-		m_event(this, evStopped);
-		break;
-	}
-}
-*/
 
 void dvdgotmessage()
 {
@@ -278,6 +268,19 @@ void dvdgotmessage()
 			break;
 	}
 #endif
+}
+
+int dvdisplaying()
+{
+#ifdef DVDPLAYER
+        if(dvdtimerthread == NULL)
+                return 0;
+#endif
+        return 1;
+}
+
+void dvdafterend()
+{
 }
 
 int dvdstop()
@@ -499,6 +502,7 @@ void dvdthread()
 
 #ifdef DVDPLAYER
 	ddvd_run(ddvdconfig);
+	dvdtimerthread = NULL;
 #endif
 
 	debug(333, "dvd thread end");
