@@ -213,7 +213,10 @@ msgstr ""
 #: transponder.h:181 transponder.h:207 transponder.h:214 transponder.h:238
 #: transponder.h:256 transponder.h:276 transponder.h:285 transponder.h:291
 #: transponder.h:298 transponder.h:330 transponder.h:340 transponder.h:395
-#: transponder.h:431 rectimer.h:999
+#: transponder.h:431 rectimer.h:999 transponder.h:180 transponder.h:190
+#: transponder.h:216 transponder.h:223 transponder.h:247 transponder.h:265
+#: transponder.h:294 transponder.h:300 transponder.h:307 transponder.h:339
+#: transponder.h:349 transponder.h:404 transponder.h:440
 msgid "auto"
 msgstr ""
 
@@ -284,7 +287,8 @@ msgstr ""
 #: panel_settings_autostart.h:52 panel_settings_autostart.h:59
 #: panel_settings_autostart.h:71 panel_settings_overclocking.h:256
 #: transponder.h:169 transponder.h:177 transponder.h:328 transponder.h:336
-#: vfdisplay.h:34
+#: vfdisplay.h:34 transponder.h:178 transponder.h:186 transponder.h:337
+#: transponder.h:345
 msgid "off"
 msgstr ""
 
@@ -326,6 +330,7 @@ msgstr ""
 
 #: avsettings.h:78 lnbconfig.h:143 mc_pictureplayer_settings.h:18
 #: transponder.h:170 transponder.h:179 transponder.h:329 transponder.h:338
+#: transponder.h:188 transponder.h:347
 msgid "on"
 msgstr ""
 
@@ -712,7 +717,8 @@ msgid "Tonburst A/B"
 msgstr ""
 
 #: diseqcconfig.h:135 diseqcconfig.h:140 diseqcconfig.h:159 transponder.h:248
-#: transponder.h:263 transponder.h:287 transponder.h:293
+#: transponder.h:263 transponder.h:287 transponder.h:293 transponder.h:257
+#: transponder.h:272 transponder.h:296 transponder.h:302
 msgid "none"
 msgstr ""
 
@@ -1287,7 +1293,10 @@ msgstr ""
 #: skin_default_skin.xml.h:454 skin_default_skin.xml.h:455
 #: skin_default_skin.xml.h:458 skin_default_skin.xml.h:459
 #: skin_default_skin.xml.h:461 skin_default_skin.xml.h:463
-#: skin_default_skin.xml.h:473
+#: skin_default_skin.xml.h:473 transponder.h:181 transponder.h:217
+#: transponder.h:258 transponder.h:273 transponder.h:286 transponder.h:340
+#: transponder.h:373 transponder.h:408 transponder.h:421 transponder.h:432
+#: transponder.h:502
 msgid "unknown"
 msgstr ""
 
@@ -6248,52 +6257,56 @@ msgstr ""
 msgid "Can't get Streamurl !"
 msgstr ""
 
-#: transponder.h:362 transponder.h:369
+#: transponder.h:362 transponder.h:369 transponder.h:371 transponder.h:378
 msgid "Horizontal"
 msgstr ""
 
-#: transponder.h:363 transponder.h:371
+#: transponder.h:363 transponder.h:371 transponder.h:372 transponder.h:380
 msgid "Vertikal"
 msgstr ""
 
 #: transponder.h:396 transponder.h:419 transponder.h:433 transponder.h:455
+#: transponder.h:405 transponder.h:428 transponder.h:442 transponder.h:464
 msgid "QPSK"
 msgstr ""
 
-#: transponder.h:397 transponder.h:435
+#: transponder.h:397 transponder.h:435 transponder.h:406 transponder.h:444
 msgid "PSK 8"
 msgstr ""
 
 #: transponder.h:398 transponder.h:407 transponder.h:420 transponder.h:437
-#: transponder.h:443 transponder.h:457
+#: transponder.h:443 transponder.h:457 transponder.h:416 transponder.h:429
+#: transponder.h:446 transponder.h:452 transponder.h:466
 msgid "QAM 16"
 msgstr ""
 
 #: transponder.h:406 transponder.h:422 transponder.h:441 transponder.h:461
+#: transponder.h:415 transponder.h:431 transponder.h:450 transponder.h:470
 msgid "QAM auto"
 msgstr ""
 
-#: transponder.h:408 transponder.h:445
+#: transponder.h:408 transponder.h:445 transponder.h:417 transponder.h:454
 msgid "QAM 32"
 msgstr ""
 
 #: transponder.h:409 transponder.h:421 transponder.h:447 transponder.h:459
+#: transponder.h:418 transponder.h:430 transponder.h:456 transponder.h:468
 msgid "QAM 64"
 msgstr ""
 
-#: transponder.h:410 transponder.h:449
+#: transponder.h:410 transponder.h:449 transponder.h:419 transponder.h:458
 msgid "QAM 128"
 msgstr ""
 
-#: transponder.h:411 transponder.h:451
+#: transponder.h:411 transponder.h:451 transponder.h:420 transponder.h:460
 msgid "QAM 256"
 msgstr ""
 
-#: transponder.h:491 transponder.h:498
+#: transponder.h:491 transponder.h:498 transponder.h:500 transponder.h:507
 msgid "DVBS"
 msgstr ""
 
-#: transponder.h:492 transponder.h:500
+#: transponder.h:492 transponder.h:500 transponder.h:501 transponder.h:509
 msgid "DVBS2"
 msgstr ""
 
