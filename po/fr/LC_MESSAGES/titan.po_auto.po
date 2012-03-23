@@ -390,7 +390,7 @@ msgstr ""
 #: global.h:4557 rgui.h:21 rgui.h:84 rgui.h:24 rgui.h:87 global.h:4561
 #: global.h:4563 play.h:711 rgui.h:106 epgsettings.h:202 global.h:4565
 #: ipkg.h:363 scan.h:956 scan.h:966 scan.h:977 scan.h:1119 scan.h:1191
-#: scan.h:1402
+#: scan.h:1402 play.h:718
 msgid "Message"
 msgstr ""
 
@@ -473,7 +473,7 @@ msgstr ""
 #: play.h:587 play.h:593 play.h:601 play.h:711 rgui.h:106 epgsettings.h:202
 #: global.h:4565 ipkg.h:363 skin_default_skin.xml.h:287 epgsettings.h:216
 #: scan.h:956 scan.h:977 scan.h:1119 scan.h:1191 scan.h:1402
-#: skin_default_skin.xml.h:293
+#: skin_default_skin.xml.h:293 play.h:718
 msgid "OK"
 msgstr ""
 
@@ -554,7 +554,7 @@ msgstr ""
 #: rgui.h:24 rgui.h:87 global.h:4561 global.h:4563 play.h:587 play.h:593
 #: play.h:601 play.h:711 rgui.h:106 epgsettings.h:202 global.h:4565 ipkg.h:363
 #: skin_default_skin.xml.h:190 epgsettings.h:216 scan.h:956 scan.h:977
-#: scan.h:1119 scan.h:1191 scan.h:1402 skin_default_skin.xml.h:192
+#: scan.h:1119 scan.h:1191 scan.h:1402 skin_default_skin.xml.h:192 play.h:718
 msgid "EXIT"
 msgstr ""
 
@@ -1161,7 +1161,7 @@ msgstr ""
 #: mc_pictureplayer.h:73 mc_pictureplayer.h:188 mc_pictureplayer.h:294
 #: mc_pictureplayer.h:381 mc_videoplayer.h:388 mc_videoplayer.h:487 play.h:669
 #: play.h:675 mc_videoplayer.h:489 mc_videoplayer.h:393 mc_videoplayer.h:494
-#: play.h:681 play.h:711
+#: play.h:681 play.h:711 play.h:718
 msgid "Can't start playback !"
 msgstr ""
 
@@ -2143,11 +2143,11 @@ msgstr ""
 #: play.h:633 skin_default_skin.xml.h:154 play.h:639 play.h:645
 #: skin_default_skin.xml.h:155 skin_default_skin.xml.h:156
 #: skin_default_skin.xml.h:157 skin_default_skin.xml.h:158 play.h:675
-#: skin_default_skin.xml.h:159 skin_default_skin.xml.h:161
+#: skin_default_skin.xml.h:159 skin_default_skin.xml.h:161 play.h:676
 msgid "DEL"
 msgstr ""
 
-#: play.h:633 play.h:639 play.h:645 play.h:675
+#: play.h:633 play.h:639 play.h:645 play.h:675 play.h:676
 msgid "SELECT"
 msgstr ""
 
