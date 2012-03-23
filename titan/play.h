@@ -641,12 +641,6 @@ void screenplay(char* startfile, int startfolder, int flag)
 	char* tmppolicy = NULL, *startdir = NULL;
 	char* formats = NULL;
 	struct skin* playinfobar = getscreen("playinfobar");
-	
-	// allowed from atemio avi mkv mpg4 xvid mpg1 mpg2 jpeg png
-	if(status.expertmodus > 0 && status.security == 1)
-		formats = ostrcat(formats, "*.flac *.ogg *.mp3 *.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", 1, 0);
-	else
-		formats = ostrcat(formats, "*.ts *.mts *.m2ts", 1, 0);
 
 	int skip13 = getconfigint("skip13", NULL);
 	int skip46 = getconfigint("skip46", NULL);
@@ -657,6 +651,13 @@ void screenplay(char* startfile, int startfolder, int flag)
 		rcret = servicestop(status.aktservice, 1, 1);
 		if(rcret == 1) return;
 	}
+	
+	// allowed from atemio avi mkv mpg4 xvid mpg1 mpg2 jpeg png
+	if(status.expertmodus > 0 && status.security == 1)
+		formats = ostrcat(formats, "*.flac *.ogg *.mp3 *.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", 1, 0);
+	else
+		formats = ostrcat(formats, "*.ts *.mts *.m2ts", 1, 0);
+	
 	status.updatevfd = PAUSE;
 	tmppolicy = getpolicy();
 
@@ -695,7 +696,13 @@ playerstart:
 			if(startfolder == 1)
 			{
 				rcret = servicestop(status.aktservice, 1, 1);
-				if(rcret == 1) return;
+				if(rcret == 1)
+				{
+					free(tmppolicy);
+					free(file);
+					free(formats);
+					return;
+				}
 			}
 		}
 
