@@ -154,6 +154,17 @@ echo "[titan]--------------------------------------------------------"
 
 
 echo "[titan]--------------------------------------------------------"
+echo "[titan] update git cdkroot"
+echo "[titan]--------------------------------------------------------"
+
+cp "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/apps/misc/tools/libdreamdvd/.libs/* $HOME/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib
+
+echo "[titan]--------------------------------------------------------"
+echo "[titan] update git cdkroot done"
+echo "[titan]--------------------------------------------------------"
+
+
+echo "[titan]--------------------------------------------------------"
 echo "[titan] Make titan"
 echo "[titan]--------------------------------------------------------"
 
