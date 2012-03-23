@@ -38,7 +38,7 @@ compile()
 	-I $eplayerinclude \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/driver/bpamem \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/apps/misc/tools/libmmeimage \
-	-c $1.c -o $1.o
+	-c $2.c -o $2.o
 
 	if [ ! -z $3 ]; then
 		$HOME/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -shared -W1,-soname,$2.so -o $2.so $2.o $3.a
@@ -68,6 +68,7 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] networkbrowser done"
 echo "[titan]--------------------------------------------------------"
 
+#dir, file, extralib
 compile "networkbrowser" "networkbrowser" "netlib/netlib"
 compile "hello" "hello" ""
 compile "panel" "panel" ""
@@ -84,5 +85,6 @@ compile "stopifnotused" "stopifnotused" ""
 compile "tithek" "tithek" ""
 compile "wins3" "wins3" ""
 compile "rgui" "rgui" ""
+compile "dvdplayer" "dvdplay" ""
 
 #rm -r networkbrowser/networkbrowser
