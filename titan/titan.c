@@ -40,6 +40,7 @@ struct channelcache* channelcache[CHANNELCACHEMAX] = {NULL};
 struct hdd* hdd = NULL;
 struct queue* queue = NULL;
 struct caservice caservice[MAXCASERVICE];
+struct channelhistory channelhistory[MAXCHANNELHISTORY];
 
 #include "ipkg.h"
 #include "queue.h"
@@ -163,6 +164,7 @@ struct caservice caservice[MAXCASERVICE];
 #include "epgsearch.h"
 #include "inadyn.h"
 #include "rguid.h"
+#include "channelhistroy.h"
 //#include "cardreader.h"
 //#include "sci.h"
 
@@ -305,6 +307,7 @@ void oshutdown(int exitcode, int flag)
 		deinitfont();
 
 		freerectimer();
+		freechannelhistory;
 		freesat();
 		freeallplaylist();
 		freemainplaylist();
