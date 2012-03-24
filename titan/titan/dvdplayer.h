@@ -5,6 +5,7 @@
 struct ddvd *ddvdconfig = NULL;
 struct ddvd_resume resumeinfo;
 struct stimerthread* dvdtimerthread = NULL;
+struct fb* dvdskinfb = NULL;
 #endif
 
 void dvdthread()
@@ -12,8 +13,18 @@ void dvdthread()
 	debug(333, "dvd thread start");
 
 #ifdef DVDPLAYER
-	ddvd_run(ddvdconfig);
+	if(ddvdconfig != NULL)
+	{
+		ddvd_run(ddvdconfig);
+		ddvd_close(ddvdconfig);
+	}
+	
+	ddvdconfig = NULL;
 	dvdtimerthread = NULL;
+	delfb("dvdskinfb");
+	dvdskinfb = NULL;
+	videocontinue(status.aktservice->videodev);
+	audioplay(status.aktservice->audiodev);
 #endif
 
 	debug(333, "dvd thread end");
@@ -27,9 +38,19 @@ int dvdstart(char* filename)
 	int policy2 = DDVD_PAN_SCAN;
 	char* tmpstr = NULL;
 
+	if(ddvdconfig != NULL)
+	{
+		debug(333, "dvdplayer allready running");
+		dvdstop();
+	}
+
 	if(filename == NULL) return 1;
+	
+	status.playercan = 0x7FFF;
 
 	ddvdconfig = ddvd_create();
+	if(ddvdconfig == NULL) return 1;
+	
 	ddvd_set_dvd_path(ddvdconfig, filename);
 	ddvd_set_ac3thru(ddvdconfig, 0);
 
@@ -38,6 +59,7 @@ int dvdstart(char* filename)
 	{
 		tmpstr += 3;
 		ddvd_set_language(ddvdconfig, tmpstr);
+		tmpstr -= 3;
 	}
 	free(tmpstr); tmpstr = NULL;
 
@@ -68,11 +90,21 @@ int dvdstart(char* filename)
 	ddvd_set_video(ddvdconfig, aspect, policy, DDVD_PAL);
 #warning please update libdreamdvd for 16:10 scaling support!
 #endif
+	ddvd_set_spu(ddvdconfig, -1);
+	if(dvdsetfb() != 0)
+	{
+		ddvd_close(ddvdconfig);
+		ddvdconfig = NULL;
+		err("can't set dvdskinfb");
+		return 1;
+	}
 
 	dvdtimerthread = addtimer(&dvdthread, START, 1000, 1, NULL, NULL, NULL);
-	usleep(100000);
-	dvdpause();
-	return 0;
+	sleep(1);
+	if(dvdtimerthread != NULL)
+		return 0;
+	else
+		return 1;
 #endif
 	return 1;
 }
@@ -80,7 +112,8 @@ int dvdstart(char* filename)
 void dvdgotmessage()
 {
 #ifdef DVDPLAYER
-	switch(ddvd_get_next_message(ddvdconfig, 1))
+	if(ddvdconfig == NULL) return;
+	switch(ddvd_get_next_message(ddvdconfig, 0))
 	{
 		case DDVD_COLORTABLE_UPDATE:
 		{
@@ -109,26 +142,27 @@ void dvdgotmessage()
 		case DDVD_SCREEN_UPDATE:
 		{
 			debug(333, "DVD_SCREEN_UPDATE");
-/*
-			if (m_subtitle_widget) {
+
+			if(dvdskinfb != NULL)
+			{
 				int x1 = 0, x2 = 0, y1 = 0, y2 = 0;
-				int x_offset = 0, y_offset = 0, width = 720, height = 576;
+				int x_offset = 0, y_offset = 0, width = dvdskinfb->width, height = dvdskinfb->height;
 				ddvd_get_last_blit_area(ddvdconfig, &x1, &x2, &y1, &y2);
 				
 #ifdef DDVD_SUPPORTS_GET_BLIT_DESTINATION
-				ddvd_get_blit_destination(ddvdconfig, &x_offset, &y_offset, &width, &height);
+				//ddvd_get_blit_destination(ddvdconfig, &x_offset, &y_offset, &width, &height);
 				debug(333, "values got from ddvd: %d %d %d %d", x_offset, y_offset, width, height);
 
 				y_offset = -y_offset;
 				width -= x_offset * 2;
 				height -= y_offset * 2;
 #endif
-				eRect dest(x_offset, y_offset, width, height);
+				blitfb2(dvdskinfb, 0);
+			//eRect dest(x_offset, y_offset, width, height);
 
-				if (dest.width() && dest.height())
-					m_subtitle_widget->setPixmap(m_pixmap, eRect(x1, y1, (x2-x1)+1, (y2-y1)+1), dest);
+			//if (dest.width() && dest.height())
+			//	m_subtitle_widget->setPixmap(m_pixmap, eRect(x1, y1, (x2-x1)+1, (y2-y1)+1), dest);
 			}
-*/
 			break;
 		}
 		case DDVD_SHOWOSD_STATE_PLAY:
@@ -303,8 +337,7 @@ int dvdstop()
 	if(ddvdconfig != NULL)
 	{
 		ddvd_send_key(ddvdconfig, DDVD_KEY_EXIT);
-		ddvd_close(ddvdconfig);
-		ddvdconfig = NULL;
+		sleep(1);
 	}
 #endif
 	return 0;
@@ -551,14 +584,20 @@ int dvdgetinfo(int flag)
 	return 0;
 }
 
-int dvbsetfb()
+int dvdsetfb()
 {
+	int width = 720, height = 576, colbytes = 4;
+
+	if(dvdskinfb == NULL)
+		dvdskinfb = addfb("dvdskinfb", 1001, width, height, colbytes, -1, skinfb->fb, width * height * colbytes);
+
+	if(dvdskinfb == NULL) return 1;
 #ifdef DVDPLAYER
 	if(ddvdconfig == NULL) return 1;
 #ifdef DDVD_SUPPORTS_GET_BLIT_DESTINATION
-	ddvd_set_lfb_ex(ddvdconfig, skinfb->fb, skinfb->width, skinfb->height, skinfb->colbytes, skinfb->pitch, 1);
+	ddvd_set_lfb_ex(ddvdconfig, dvdskinfb->fb, dvdskinfb->width, dvdskinfb->height, dvdskinfb->colbytes, dvdskinfb->pitch, 1);
 #else
-	ddvd_set_lfb(ddvdconfig, skinfb->fb, skinfb->width, skinfb->height, skinfb->colbytes, skinfb->pitch);
+	ddvd_set_lfb(ddvdconfig, dvdskinfb->fb, dvdskinfb->width, dvdskinfb->height, dvdskinfb->colbytes, dvdskinfb->pitch);
 #warning please update libdreamdvd for fast scaling
 #endif
 #endif
