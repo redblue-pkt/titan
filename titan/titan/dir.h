@@ -20,6 +20,7 @@ void readlabelext(struct skin* label, char* filename, char* ext)
 	free(tmpstr1); tmpstr1 = NULL;
 }
 
+//flag 1: add selected dir to path
 char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ext, char* b1, int rc1, char* b2, int rc2, char* b3, int rc3, char* b4, int rc4, int width, int prozwidth, int height, int prozheight, int flag)
 {
 	int rcret = 0;
@@ -151,7 +152,10 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 			{
 				if(filelist->mask == NULL || strlen(filelist->mask) == 0)
 				{
-					ret = createpath(filelistpath->text, "");
+					if(flag == 1)
+						ret = createpath(filelistpath->text, filelist->select->text);
+					else
+						ret = createpath(filelistpath->text, "");
 					if(dirrcret != NULL) *dirrcret = 2;
 					break;
 				}
