@@ -586,13 +586,13 @@ int dvdgetinfo(int flag)
 
 int dvdsetfb()
 {
+#ifdef DVDPLAYER
 	int width = 720, height = 576, colbytes = 4;
 
 	if(dvdskinfb == NULL)
 		dvdskinfb = addfb("dvdskinfb", 1001, width, height, colbytes, -1, skinfb->fb, width * height * colbytes);
 
 	if(dvdskinfb == NULL) return 1;
-#ifdef DVDPLAYER
 	if(ddvdconfig == NULL) return 1;
 #ifdef DDVD_SUPPORTS_GET_BLIT_DESTINATION
 	ddvd_set_lfb_ex(ddvdconfig, dvdskinfb->fb, dvdskinfb->width, dvdskinfb->height, dvdskinfb->colbytes, dvdskinfb->pitch, 1);
