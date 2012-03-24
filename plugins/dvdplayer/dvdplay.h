@@ -7,7 +7,7 @@ void screendvdplay(int flag)
 	char* tmpstr = NULL, *startdir = NULL;
 	char* file = NULL, *tmppolicy = NULL;
 	struct skin* playinfobar = getscreen("playinfobar");
-	
+
 	int skip13 = getconfigint("skip13", NULL);
 	int skip46 = getconfigint("skip46", NULL);
 	int skip79 = getconfigint("skip79", NULL);
@@ -24,7 +24,7 @@ playerstart:
 	int playinfobarcount = 0, playinfobarstatus = 1;
 
 	tmpstr = ostrcat(file, "", 1, 0); file = NULL;
-	file = screendir(startdir, NULL, basename(tmpstr), NULL, NULL, NULL, 0, _("SELECT"), 0, NULL, 0, NULL, 0, 90, 1, 90, 1, 0);
+	file = screendir(startdir, NULL, basename(tmpstr), NULL, NULL, NULL, 0, _("SELECT"), 0, NULL, 0, NULL, 0, 90, 1, 90, 1, 1);
 	free(tmpstr); tmpstr = NULL;
 
 	if(file != NULL)
@@ -70,15 +70,19 @@ playerstart:
 		{
 			while(dvdisplaying())
 			{
-				rcret = waitrc(playinfobar, 1000, 0);
+				dvdgotmessage();
+				rcret = waitrc(playinfobar, 100, 0);
+				dvdkeypress(rcret);
 				playinfobarcount++;
 				if(playinfobarstatus > 0)
 					screenplayinfobar(file, 0, playertype, flag);
-				if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL))
+				if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL) * 10)
 				{
 					playinfobarstatus = 0;
 					screenplayinfobar(NULL, 1, playertype, flag);
 				}
+
+				if(rcret == RCTIMEOUT) continue;
 
 				if(rcret == getrcconfigint("rcyellow", NULL))
 					playrcyellow(file, playinfobarstatus, playertype, flag);
@@ -92,8 +96,8 @@ playerstart:
 				if(rcret == getrcconfigint("rcblue", NULL))
 					playrcblue(file, playinfobarstatus, playertype, flag);
 					
-				if(rcret == getrcconfigint("rcok", NULL))
-					playrcok(file, playinfobarstatus, playertype, flag);
+				//if(rcret == getrcconfigint("rcok", NULL))
+				//	playrcok(file, playinfobarstatus, playertype, flag);
 				
 				if(rcret == getrcconfigint("rcred", NULL))
 					playrcred(file, playinfobarstatus, playertype, flag);
@@ -120,9 +124,6 @@ playerstart:
 				if(rcret == getrcconfigint("rcplay", NULL))
 					playrcplay(file, &playinfobarstatus, &playinfobarcount, playertype, flag);
 
-				if(rcret == getrcconfigint("rcleft", NULL))
-					playrcjumpr(file, 60, &playinfobarstatus, &playinfobarcount, playertype, flag);
-				
 				if(rcret == getrcconfigint("rc1", NULL))
 					playrcjumpr(file, skip13, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
@@ -131,9 +132,6 @@ playerstart:
 				
 				if(rcret == getrcconfigint("rc7", NULL))
 					playrcjumpr(file, skip79, &playinfobarstatus, &playinfobarcount, playertype, flag);
-				
-				if(rcret == getrcconfigint("rcright", NULL))
-					playrcjumpf(file, 60, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
 				if(rcret == getrcconfigint("rc3", NULL))
 					playrcjumpf(file, skip13, &playinfobarstatus, &playinfobarcount, playertype, flag);
