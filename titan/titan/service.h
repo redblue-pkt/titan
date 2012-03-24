@@ -452,6 +452,8 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 
 	if(flag == 0)
 	{
+		//add channel to history
+		addchannelhistory(chnode, channellist);
 		festatus = fewait(fenode);
 		if(festatus != 0)
 		{

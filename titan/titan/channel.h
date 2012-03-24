@@ -371,6 +371,7 @@ int delchannel(int serviceid, unsigned long transponderid, int flag)
 
 			providernode = node->provider;
 			delchannelcache(node->serviceid, node->transponderid);
+			delchannelhistory(node);
 
 			freeaudiotrack(node);
 			free(node->audiotrack);
