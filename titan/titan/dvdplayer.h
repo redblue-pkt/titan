@@ -23,8 +23,6 @@ void dvdthread()
 	dvdtimerthread = NULL;
 	delfb("dvdskinfb");
 	dvdskinfb = NULL;
-	videocontinue(status.aktservice->videodev);
-	audioplay(status.aktservice->audiodev);
 #endif
 
 	debug(333, "dvd thread end");
@@ -333,11 +331,17 @@ int dvdstop()
 {
 #ifdef DVDPLAYER
 	debug(333, "dvd stop");
+	int i = 0;
 
 	if(ddvdconfig != NULL)
 	{
 		ddvd_send_key(ddvdconfig, DDVD_KEY_EXIT);
-		sleep(1);
+		while(dvdtimerthread != NULL)
+		{
+			if(i >= 5) break;
+			sleep(1);
+			i++;
+		}
 	}
 #endif
 	return 0;
