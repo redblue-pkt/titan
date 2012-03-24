@@ -669,7 +669,7 @@ msgstr ""
 #: skin_default_skin.xml.h:64 skins_lcdpearl1_skin.xml.h:1 dir.h:71 dir.h:77
 #: dir.h:83 dir.h:89 skin_default_skin.xml.h:65 skin_default_skin.xml.h:66
 #: skin_default_skin.xml.h:67 skin_default_skin.xml.h:68
-#: skin_default_skin.xml.h:69
+#: skin_default_skin.xml.h:69 dir.h:72 dir.h:78 dir.h:84 dir.h:90
 msgid "---"
 msgstr ""
 
