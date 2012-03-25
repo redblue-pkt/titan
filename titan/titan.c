@@ -355,8 +355,6 @@ int main(int argc, char *argv[])
 	struct sigaction sa;
 	struct stimerthread *tmpthread = NULL;
 
-	status.rguidfd = -1;
-
 #ifdef SIMULATE
 	// for mem leak debug
 	setenv("MALLOC_TRACE", "/home/nit/titan/m.txt", 1);
@@ -375,6 +373,7 @@ int main(int argc, char *argv[])
 	sigaction(SIGBUS, &sa, NULL);
 	sigaction(SIGABRT, &sa, NULL);
 
+	status.rguidfd = -1;
 	status.sec = time(NULL);
 	status.mainthread = pthread_self();
 
