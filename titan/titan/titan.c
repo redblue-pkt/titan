@@ -307,7 +307,7 @@ void oshutdown(int exitcode, int flag)
 		deinitfont();
 
 		freerectimer();
-		freechannelhistory;
+		freechannelhistory();
 		freesat();
 		freeallplaylist();
 		freemainplaylist();
