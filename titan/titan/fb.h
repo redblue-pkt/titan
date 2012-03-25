@@ -290,7 +290,7 @@ void clearfb(struct fb *node)
 void blitfb2(struct fb* fbnode, int flag)
 {
 	int i = 0, max = 1, wstep = 0, hstep = 0, ret = 0;
-	unsigned char* buf[10];
+	unsigned char buf[10];
 
 	if(fbnode == NULL) return;
 #ifndef NOHWBLIT

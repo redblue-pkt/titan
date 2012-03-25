@@ -1,6 +1,15 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//dvdplayer.h
+int dvdstop();
+int dvdsetfb();
+
+//channelhistory.h
+void delchannelhistory(struct channel* chnode);
+void addchannelhistory(struct channel* chnode, char* channellist);
+void screenchannelhistory();
+
 //channellist.h
 int screenchannellist(struct channel** retchannel, char** retchannellist, int flag);
 
