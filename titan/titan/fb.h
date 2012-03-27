@@ -369,7 +369,7 @@ void blitfb2(struct fb* fbnode, int flag)
 	memset(&bltData, 0, sizeof(STMFBIO_BLT_DATA));
 
 	bltData.operation  = BLT_OP_COPY;
-	bltData.srcOffset  = fb->varfbsize;
+	bltData.srcOffset  = fbnode->fb - fb->fb;
 	bltData.srcPitch   = fbnode->pitch;
 	bltData.src_top    = 0;
 	bltData.src_left   = 0;
