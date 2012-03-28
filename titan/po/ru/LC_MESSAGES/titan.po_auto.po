@@ -392,6 +392,7 @@ msgstr ""
 #: global.h:4563 play.h:711 rgui.h:106 epgsettings.h:202 global.h:4565
 #: ipkg.h:363 scan.h:956 scan.h:966 scan.h:977 scan.h:1119 scan.h:1191
 #: scan.h:1402 play.h:718 dvdplay.h:51 service.h:573 service.h:814
+#: service.h:574 service.h:815
 msgid "Message"
 msgstr ""
 
@@ -475,7 +476,7 @@ msgstr ""
 #: global.h:4565 ipkg.h:363 skin_default_skin.xml.h:287 epgsettings.h:216
 #: scan.h:956 scan.h:977 scan.h:1119 scan.h:1191 scan.h:1402
 #: skin_default_skin.xml.h:293 play.h:718 dvdplay.h:51 service.h:573
-#: service.h:814 skin_default_skin.xml.h:294
+#: service.h:814 skin_default_skin.xml.h:294 service.h:574 service.h:815
 msgid "OK"
 msgstr ""
 
@@ -558,6 +559,7 @@ msgstr ""
 #: skin_default_skin.xml.h:190 epgsettings.h:216 scan.h:956 scan.h:977
 #: scan.h:1119 scan.h:1191 scan.h:1402 skin_default_skin.xml.h:192 play.h:718
 #: dvdplay.h:51 service.h:573 service.h:814 skin_default_skin.xml.h:193
+#: service.h:574 service.h:815
 msgid "EXIT"
 msgstr ""
 
@@ -3316,27 +3318,31 @@ msgstr ""
 msgid "imdb mvis (network/hdd)"
 msgstr ""
 
-#: service.h:560 service.h:566 service.h:571 service.h:573
+#: service.h:560 service.h:566 service.h:571 service.h:573 service.h:574
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
 msgstr ""
 
 #: service.h:783 service.h:784 service.h:790 service.h:795 service.h:797
+#: service.h:798
 msgid ""
 "Can't find a Tuner.\n"
 "Alle Tuners in use or no Tuner defined."
 msgstr ""
 
 #: service.h:786 service.h:787 service.h:793 service.h:798 service.h:800
+#: service.h:801
 msgid "Tuning to Channel failed!"
 msgstr ""
 
 #: service.h:789 service.h:790 service.h:796 service.h:801 service.h:803
+#: service.h:804
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 
 #: service.h:794 service.h:795 service.h:801 service.h:806 service.h:808
+#: service.h:809
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
