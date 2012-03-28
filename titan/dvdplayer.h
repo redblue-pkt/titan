@@ -6,7 +6,195 @@ struct ddvd *ddvdconfig = NULL;
 struct ddvd_resume resumeinfo;
 struct stimerthread* dvdtimerthread = NULL;
 struct fb* dvdskinfb = NULL;
+int tv_aspect = DDVD_16_9;
+int tv_policy = DDVD_PAN_SCAN;
+int tv_policy2 = DDVD_PAN_SCAN;
+char* tv_videomode = NULL;
+int dvdmenu = 0;
 #endif
+
+int dvd_calc_y_fbscreen()
+{
+	int y_offset = 0;
+	int dvd_aspect = 0;
+
+#ifdef DVDPLAYER
+	//0=4:3 2=16:9
+	//dvd_aspect = ddvd_get_dvd_aspect(ddvdconfig);
+
+	if(dvd_aspect == 0 && tv_policy == DDVD_PAN_SCAN)
+	{
+		switch(tv_aspect)
+		{
+			case DDVD_16_10:
+				y_offset = -(dvdskinfb->height * 15 / 12 - dvdskinfb->height) / 2;
+				break;
+			case DDVD_16_9:
+				y_offset = (dvdskinfb->height * 3 / 4 - dvdskinfb->height) / 2;
+				break;
+		}
+	}
+
+	if(dvd_aspect >= 2 && tv_aspect == DDVD_4_3 && tv_policy == DDVD_LETTERBOX)
+		y_offset = (fb->height - fb->height * 3 / 4) / 2;
+
+	if(dvd_aspect >= 2 && tv_aspect == DDVD_16_10 && tv_policy2 == DDVD_LETTERBOX)
+		y_offset = (fb->height - fb->height * 15 / 16) / 2;
+
+
+#endif
+	return y_offset;
+}
+
+int dvd_calc_x_fbscreen()
+{
+	int x_offset = 0;
+	int dvd_aspect = 0;
+
+#ifdef DVDPLAYER
+	//0=4:3 2=16:9
+	//dvd_aspect = ddvd_get_dvd_aspect(ddvdconfig);
+
+	if(dvd_aspect == 0 && tv_policy == DDVD_LETTERBOX)
+	{
+		switch(tv_aspect)
+		{
+			case DDVD_16_10:
+				x_offset = (fb->width - fb->width * 12 / 15) / 2;
+				break;
+			case DDVD_16_9:
+				x_offset = (fb->width - fb->width * 3 / 4) / 2;
+				break;
+		}
+	}
+
+	if(dvd_aspect >= 2 && tv_aspect == DDVD_4_3 && tv_policy == DDVD_PAN_SCAN)
+		x_offset = -(dvdskinfb->width * 4 / 3 - dvdskinfb->width) / 2;
+
+	if(dvd_aspect >= 2 && tv_aspect == DDVD_16_10 && tv_policy2 == DDVD_PAN_SCAN)
+		x_offset = -(dvdskinfb->width * 16 / 15 - dvdskinfb->width) / 2;
+
+
+#endif
+	return x_offset;
+}
+
+int dvdblit()
+{
+#ifdef DVDPLAYER
+	int x_offset = dvd_calc_x_fbscreen();
+	int y_offset = dvd_calc_y_fbscreen();
+
+	m_lock(&status.drawingmutex, 0);
+
+	int leftoffset = getconfigint("fbleftoffset", NULL);
+	int rightoffset = getconfigint("fbrightoffset", NULL);
+	int topoffset = getconfigint("fbtopoffset", NULL);
+	int bottomoffset = getconfigint("fbbottomoffset", NULL);
+
+	if(leftoffset != 0) addconfigint("fbleftoffset", 0);
+	if(rightoffset != 0) addconfigint("fbrightoffset", 0);
+	if(topoffset != 0) addconfigint("fbtopoffset", 0);
+	if(bottomoffset != 0) addconfigint("fbbottomoffset", 0);
+
+	unsigned char* fb = dvdskinfb->fb;
+	int width = dvdskinfb->width;
+	int height = dvdskinfb->height;
+
+	if(x_offset > 0)
+	{
+		addconfigint("fbleftoffset", x_offset);
+		addconfigint("fbrightoffset", x_offset);
+	}
+	if(x_offset < 0)
+	{
+		dvdskinfb->fb -= x_offset * dvdskinfb->colbytes;
+		dvdskinfb->width += (x_offset * 2);
+	}
+	if(y_offset > 0)
+	{
+		addconfigint("fbtopoffset", y_offset);
+		addconfigint("fbbottomoffset", y_offset);
+	}
+	if(y_offset < 0)
+	{
+		dvdskinfb->fb -= y_offset * dvdskinfb->pitch;
+		dvdskinfb->height += (y_offset * 2);
+	}
+
+	blitfb2(dvdskinfb, 0);
+
+	if(x_offset < 0)
+	{
+		dvdskinfb->fb = fb;
+		dvdskinfb->width = width;
+	}
+	if(y_offset < 0)
+	{
+		dvdskinfb->fb = fb;
+		dvdskinfb->height = height;
+	}
+
+	addconfigint("fbleftoffset", leftoffset);
+	addconfigint("fbrightoffset", rightoffset);
+	addconfigint("fbtopoffset", topoffset);
+	addconfigint("fbbottomoffset", bottomoffset);
+
+	m_unlock(&status.drawingmutex, 0);
+#endif
+
+	return 0;
+}
+
+void dvdchangevideo()
+{
+	char* tmpstr = NULL;
+
+	tmpstr = getaspect();
+	if(ostrncmp(tmpstr, "4:3", 3) == 0)
+		tv_aspect = DDVD_4_3;
+	else if(ostrncmp(tmpstr, "16:10", 5) == 0)
+		tv_aspect = DDVD_16_10;
+	else
+		tv_aspect = DDVD_16_9;
+	free(tmpstr); tmpstr = NULL;
+	
+	tmpstr = getpolicy();
+	if(ostrncmp(tmpstr, "bestfit", 7) == 0)
+		tv_policy = DDVD_JUSTSCALE;
+	else if(ostrncmp(tmpstr, "letterbox", 9) == 0)
+		tv_policy = DDVD_LETTERBOX;
+	else
+		tv_policy = DDVD_PAN_SCAN;
+	free(tmpstr); tmpstr = NULL;
+
+	//TODO:
+	//tmpstr = getpolicy2();
+	//if(ostrncmp(tmpstr, "bestfit", 7) == 0)
+	//	tv_policy2 = DDVD_JUSTSCALE;
+	//else if(ostrncmp(tmpstr, "letterbox", 9) == 0)
+	//	tv_policy2 = DDVD_LETTERBOX;
+	//else
+	//	tv_policy2 = DDVD_PANSCAN;
+	//free(tmpstr); tmpstr = NULL;
+	tv_policy2 = tv_policy;
+}
+
+void dvdcleanup()
+{
+#ifdef DVDPLAYER
+	ddvdconfig = NULL;
+	dvdtimerthread = NULL;
+	delfb("dvdskinfb");
+	dvdskinfb = NULL;
+	if(tv_videomode != NULL)
+	{
+		setvideomode(tv_videomode, 0);
+		changefbresolution(tv_videomode);
+		free(tv_videomode); tv_videomode = NULL;
+	}
+#endif
+}
 
 void dvdthread()
 {
@@ -19,10 +207,7 @@ void dvdthread()
 		ddvd_close(ddvdconfig);
 	}
 	
-	ddvdconfig = NULL;
-	dvdtimerthread = NULL;
-	delfb("dvdskinfb");
-	dvdskinfb = NULL;
+	dvdcleanup();
 #endif
 
 	debug(333, "dvd thread end");
@@ -31,9 +216,6 @@ void dvdthread()
 int dvdstart(char* filename)
 {
 #ifdef DVDPLAYER
-	int aspect = DDVD_16_9;
-	int policy = DDVD_PAN_SCAN;
-	int policy2 = DDVD_PAN_SCAN;
 	char* tmpstr = NULL;
 
 	if(ddvdconfig != NULL)
@@ -61,34 +243,14 @@ int dvdstart(char* filename)
 	}
 	free(tmpstr); tmpstr = NULL;
 
-	tmpstr = getaspect();
-	if(ostrncmp(tmpstr, "4:3", 3) == 0)
-		aspect = DDVD_4_3;
-	else if(ostrncmp(tmpstr, "16:10", 5) == 0)
-		aspect = DDVD_16_10;
-	free(tmpstr); tmpstr = NULL;
-	
-	tmpstr = getpolicy();
-	if(ostrncmp(tmpstr, "bestfit", 7) == 0)
-		policy = DDVD_JUSTSCALE;
-	else if(ostrncmp(tmpstr, "letterbox", 9) == 0)
-		policy = DDVD_LETTERBOX;
-	free(tmpstr); tmpstr = NULL;
+	dvdchangevideo();
 
 #ifdef DDVD_SUPPORTS_16_10_SCALING
-	//TODO: tmpstr = getpolicy2();
-	if(ostrncmp(tmpstr, "bestfit", 7) == 0)
-		policy2 = DDVD_JUSTSCALE;
-	else if(ostrncmp(tmpstr, "letterbox", 9) == 0)
-		policy2 = DDVD_LETTERBOX;
-	free(tmpstr); tmpstr = NULL;
-
-	ddvd_set_video_ex(ddvdconfig, aspect, policy, policy2, DDVD_PAL);
+	ddvd_set_video_ex(ddvdconfig, tv_aspect, tv_policy, tv_policy2, DDVD_PAL);
 #else
-	ddvd_set_video(ddvdconfig, aspect, policy, DDVD_PAL);
+	ddvd_set_video(ddvdconfig, tv_aspect, tv_policy, DDVD_PAL);
 #warning please update libdreamdvd for 16:10 scaling support!
 #endif
-	ddvd_set_spu(ddvdconfig, -1);
 	if(dvdsetfb() != 0)
 	{
 		ddvd_close(ddvdconfig);
@@ -97,14 +259,35 @@ int dvdstart(char* filename)
 		return 1;
 	}
 
+	free(tv_videomode); tv_videomode = NULL;
+	tv_videomode = getvideomode();
+
+	//change videomode if greater 720
+	if(ostrncmp("1080", tv_videomode, 4) == 0)
+	{
+		setvideomode("720p", 0);
+		changefbresolution("720p");
+	}
+	else 
+	{
+		free(tv_videomode);
+		tv_videomode = NULL;
+	}
+
+	ddvd_set_spu(ddvdconfig, -1);
 	dvdtimerthread = addtimer(&dvdthread, START, 1000, 1, NULL, NULL, NULL);
 	sleep(1);
 	if(dvdtimerthread != NULL)
 		return 0;
-	else
-		return 1;
+	
+	dvdcleanup();
 #endif
 	return 1;
+}
+
+int dvdmenuopen()
+{
+	return dvdmenu;
 }
 
 void dvdgotmessage()
@@ -144,22 +327,10 @@ void dvdgotmessage()
 			if(dvdskinfb != NULL)
 			{
 				int x1 = 0, x2 = 0, y1 = 0, y2 = 0;
-				int x_offset = 0, y_offset = 0, width = dvdskinfb->width, height = dvdskinfb->height;
 				ddvd_get_last_blit_area(ddvdconfig, &x1, &x2, &y1, &y2);
-				
-#ifdef DDVD_SUPPORTS_GET_BLIT_DESTINATION
-				//ddvd_get_blit_destination(ddvdconfig, &x_offset, &y_offset, &width, &height);
-				debug(333, "values got from ddvd: %d %d %d %d", x_offset, y_offset, width, height);
-
-				y_offset = -y_offset;
-				width -= x_offset * 2;
-				height -= y_offset * 2;
-#endif
-				blitfb2(dvdskinfb, 0);
-			//eRect dest(x_offset, y_offset, width, height);
-
-			//if (dest.width() && dest.height())
-			//	m_subtitle_widget->setPixmap(m_pixmap, eRect(x1, y1, (x2-x1)+1, (y2-y1)+1), dest);
+				debug(333, "ddvd blit area: %d %d %d %d", x1, y1, x2, y2);
+				if(x1 != 0 || x2 != 0 || y1 != 0 || y2 != 0)
+					dvdblit();
 			}
 			break;
 		}
@@ -256,21 +427,13 @@ void dvdgotmessage()
 		case DDVD_MENU_OPENED:
 		{
 			debug(333, "DVD_MENU_OPENED");
-/*
-			m_state = stMenu;
-			m_event(this, evSeekableStatusChanged);
-			m_event(this, evUser+11);
-*/
+			dvdmenu = 1;
 			break;
 		}
 		case DDVD_MENU_CLOSED:
 		{
 			debug(333, "DVD_MENU_CLOSED");
-/*
-			m_state = stRunning;
-			m_event(this, evSeekableStatusChanged);
-			m_event(this, evUser+12);
-*/
+			dvdmenu = 0;
 			break;
 		}
 #ifdef DDVD_SUPPORTS_PICTURE_INFO
@@ -594,52 +757,19 @@ int dvdsetfb()
 	int width = 720, height = 576, colbytes = 4;
 
 	if(dvdskinfb == NULL)
-		dvdskinfb = addfb("dvdskinfb", 1001, width, height, colbytes, -1, skinfb->fb, width * height * colbytes);
+		dvdskinfb = addfb("dvdskinfb", 1001, width, height, colbytes, -1, fb->fb + (fb->width * fb->height * fb->colbytes), width * height * colbytes);
 
 	if(dvdskinfb == NULL) return 1;
 	if(ddvdconfig == NULL) return 1;
-#ifdef DDVD_SUPPORTS_GET_BLIT_DESTINATION
+//#ifdef DDVD_SUPPORTS_GET_BLIT_DESTINATION
 	ddvd_set_lfb_ex(ddvdconfig, dvdskinfb->fb, dvdskinfb->width, dvdskinfb->height, dvdskinfb->colbytes, dvdskinfb->pitch, 1);
-#else
-	ddvd_set_lfb(ddvdconfig, dvdskinfb->fb, dvdskinfb->width, dvdskinfb->height, dvdskinfb->colbytes, dvdskinfb->pitch);
-#warning please update libdreamdvd for fast scaling
-#endif
+//#else
+//	ddvd_set_lfb(ddvdconfig, dvdskinfb->fb, dvdskinfb->width, dvdskinfb->height, dvdskinfb->colbytes, dvdskinfb->pitch);
+//#warning please update libdreamdvd for fast scaling
+//#endif
 #endif
 	return 0;
 }
-
-/*
-RESULT eServiceDVD::enableSubtitles(eWidget *parent, ePyObject tuple)
-{
-	eSize size = eSize(720, 576);
-
-	int pid = -1;
-
-	if ( tuple != Py_None )
-	{		
-		ePyObject entry;
-		int tuplesize = PyTuple_Size(tuple);
-		if (!PyTuple_Check(tuple))
-			goto error_out;
-		if (tuplesize < 1)
-			goto error_out;
-		entry = PyTuple_GET_ITEM(tuple, 1);
-		if (!PyInt_Check(entry))
-			goto error_out;
-		pid = PyInt_AsLong(entry)-1;
-
-		ddvd_set_spu(m_ddvdconfig, pid);
-		m_event(this, evUser+7);
-	}
-	eDebug("eServiceDVD::enableSubtitles %i", pid);
-
-	if (!m_pixmap)
-	{
-		run(); // start the thread
-	}
-
-}
-*/
 
 unsigned long long int dvdgetlength()
 {
@@ -758,23 +888,23 @@ int dvdkeypress(int key)
 		ddvd_send_key(ddvdconfig, DDVD_KEY_DOWN);
 	if(key == getrcconfigint("rcok", NULL))
 		ddvd_send_key(ddvdconfig, DDVD_KEY_OK);
-	if(key == getrcconfigint("rcblue", NULL))
-		ddvd_send_key(ddvdconfig, DDVD_KEY_AUDIO);
 	if(key == getrcconfigint("rcyellow", NULL))
+		ddvd_send_key(ddvdconfig, DDVD_KEY_AUDIO);
+	if(key == getrcconfigint("rctext", NULL) || key == getrcconfigint("rcsubtitel", NULL))
 		ddvd_send_key(ddvdconfig, DDVD_KEY_SUBTITLE);
 	if(key == getrcconfigint("rcyellow", NULL))
 		ddvd_send_key(ddvdconfig, DDVD_KEY_AUDIOMENU);
-	if(key == getrcconfigint("rcyellow", NULL))
+	if(key == getrcconfigint("rcnext", NULL))
 		ddvd_send_key(ddvdconfig, DDVD_KEY_NEXT_CHAPTER);
-	if(key == getrcconfigint("rcyellow", NULL))
+	if(key == getrcconfigint("rcprev", NULL))
 		ddvd_send_key(ddvdconfig, DDVD_KEY_PREV_CHAPTER);
-	if(key == getrcconfigint("rcyellow", NULL))
+	if(key == getrcconfigint("rcchup", NULL))
 		ddvd_send_key(ddvdconfig, DDVD_KEY_NEXT_TITLE);
-	if(key == getrcconfigint("rcyellow", NULL))
+	if(key == getrcconfigint("rcchdown", NULL))
 		ddvd_send_key(ddvdconfig, DDVD_KEY_PREV_TITLE);
 	if(key == getrcconfigint("rcmenu", NULL))
 		ddvd_send_key(ddvdconfig, DDVD_KEY_MENU);
-	if(key == getrcconfigint("rcmenu", NULL))
+	if(key == getrcconfigint("rcblue", NULL))
 		ddvd_send_key(ddvdconfig, DDVD_KEY_ANGLE);
 #endif
 

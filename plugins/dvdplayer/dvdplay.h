@@ -21,7 +21,7 @@ playerstart:
 		startdir = getconfig("rec_moviepath", NULL);
 
 	status.playspeed = 0, status.play = 0, status.pause = 0;
-	int playinfobarcount = 0, playinfobarstatus = 1;
+	int playinfobarcount = 0, playinfobarstatus = 0;
 
 	tmpstr = ostrcat(file, "", 1, 0); file = NULL;
 	file = screendir(startdir, NULL, basename(tmpstr), NULL, NULL, NULL, 0, _("SELECT"), 0, NULL, 0, NULL, 0, 90, 1, 90, 1, 1);
@@ -55,7 +55,8 @@ playerstart:
 			goto playerstart;
 		}
 #endif
-		screenplayinfobar(file, 0, playertype, flag);
+
+		//screenplayinfobar(file, 0, playertype, flag);
 
 		//change codec if ac3default and video has ac3
 		//deaktivate, freeze player, makes a seek -5
@@ -82,29 +83,6 @@ playerstart:
 					screenplayinfobar(NULL, 1, playertype, flag);
 				}
 
-				if(rcret == RCTIMEOUT) continue;
-
-				if(rcret == getrcconfigint("rcyellow", NULL))
-					playrcyellow(file, playinfobarstatus, playertype, flag);
-				
-				if(rcret == getrcconfigint("rctext", NULL) || rcret == getrcconfigint("rcsubtitel", NULL))
-					playrctext(file, playinfobarstatus, playertype, flag);
-					
-				if(rcret == getrcconfigint("rcgreen", NULL))
-					playrcgreen(file, playinfobarstatus, playertype, flag);
-					
-				if(rcret == getrcconfigint("rcblue", NULL))
-					playrcblue(file, playinfobarstatus, playertype, flag);
-					
-				//if(rcret == getrcconfigint("rcok", NULL))
-				//	playrcok(file, playinfobarstatus, playertype, flag);
-				
-				if(rcret == getrcconfigint("rcred", NULL))
-					playrcred(file, playinfobarstatus, playertype, flag);
-
-				if(rcret == getrcconfigint("rcinfo", NULL))
-					playrcinfo(file, &playinfobarstatus, &playinfobarcount, playertype, flag);
-				
 				if(rcret == getrcconfigint("rcstop", NULL))
 				{
 					playrcstop(playertype, flag);
@@ -112,6 +90,36 @@ playerstart:
 					goto playerstart;
 				}
 
+				if(dvdmenuopen() == 1)
+				{
+					if(playinfobarstatus == 1)
+					{
+						screenplayinfobar(NULL, 1, playertype, flag);
+						playinfobarstatus = 0;
+					}
+					continue;
+				}
+
+				if(rcret == RCTIMEOUT) continue;
+
+				//if(rcret == getrcconfigint("rcyellow", NULL))
+				//	playrcyellow(file, playinfobarstatus, playertype, flag);
+				
+				//if(rcret == getrcconfigint("rctext", NULL) || rcret == getrcconfigint("rcsubtitel", NULL))
+				//	playrctext(file, playinfobarstatus, playertype, flag);
+					
+				if(rcret == getrcconfigint("rcgreen", NULL))
+				{
+					playrcgreen(file, playinfobarstatus, playertype, flag);
+					dvdchangevideo();
+				}
+					
+				if(rcret == getrcconfigint("rcred", NULL))
+					playrcred(file, playinfobarstatus, playertype, flag);
+
+				if(rcret == getrcconfigint("rcinfo", NULL))
+					playrcinfo(file, &playinfobarstatus, &playinfobarcount, playertype, flag);
+				
 				if(rcret == getrcconfigint("rcff", NULL))
 					playrcff(file, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
@@ -145,7 +153,6 @@ playerstart:
 			//don't change this sleep, without this
 			//the player stops to fast, and a last seek can
 			//produce a segfault
-playerend:
 			sleep(1);
 			dvdafterend();
 
