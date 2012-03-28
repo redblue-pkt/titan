@@ -772,7 +772,7 @@ int dvdsetfb()
 
 unsigned long long int dvdgetlength()
 {
-	unsigned long long int pts = 0;
+	unsigned long long int len = 0;
 
 #ifdef DVDPLAYER
 	struct ddvd_time info;
@@ -781,14 +781,13 @@ unsigned long long int dvdgetlength()
 	{
 		ddvd_get_last_time(ddvdconfig, &info);
 
-		pts = info.end_hours * 3600;
-		pts += info.end_minutes * 60;
-		pts += info.end_seconds;
-		pts *= 90000;
+		len = info.end_hours * 3600;
+		len += info.end_minutes * 60;
+		len += info.end_seconds;
 	}
 #endif
 
-	return pts;
+	return len;
 }
 
 int dvdsetresume()
