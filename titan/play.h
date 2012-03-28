@@ -230,7 +230,10 @@ void playrcgreen(char* file, int playinfobarstatus, int playertype, int flag)
 	if(checkbit(status.playercan, 3) == 0) return;
 
 	screenplayinfobar(file, 1, playertype, flag);
-	screenvideomode();
+	if(playertype == 2)
+		screenvideomode(2);
+	else
+		screenvideomode(1);
 	drawscreen(skin, 0);
 	if(playinfobarstatus > 0)
 		screenplayinfobar(file, 0, playertype, flag);

@@ -281,7 +281,7 @@ void screeninfobar()
 			subtitlepause(1);
 			status.infobar = 0;
 			clearscreen(infobar);
-			screenvideomode();
+			screenvideomode(0);
 			drawscreen(skin, 0);
 			subtitlepause(0);
 			continue;
