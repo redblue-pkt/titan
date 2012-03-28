@@ -65,7 +65,7 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 		len = len / 90000;
 		pos = (pos - startpos) / 90000;
 	}
-	if(playertype == 2)
+	else if(playertype == 2)
 	{
 		pos = dvdgetpts() / 90000;
 		len = dvdgetlength();
@@ -331,7 +331,7 @@ void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int pla
 			status.play = 0;
 			if(playertype == 1)
 				playerfrts(status.playspeed);
-			if(playertype == 2)
+			else if(playertype == 2)
 				dvdfr(status.playspeed);
 			else
 				playerfr(status.playspeed);
@@ -371,7 +371,7 @@ void playrcfr(char* file, int* playinfobarstatus, int* playinfobarcount, int pla
 			status.play = 0;
 			if(playertype == 1)
 				playerffts((int)pow(2, status.playspeed));
-			else if(playertype == 1)
+			else if(playertype == 2)
 				dvdff(status.playspeed);
 			else
 				playerff(status.playspeed);
