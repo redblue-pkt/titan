@@ -19,54 +19,50 @@ void screenblindscanadjust()
 	changemask(minfrequency, "00000");
 	changeinput(minfrequency, getconfig("blindminfrequency", NULL));
 	if(minfrequency->input != NULL)
-        {
-                for(i = 0; i < 5 - strlen(minfrequency->input); i++)
-                        minfrequency->input = ostrcat("0", minfrequency->input, 0, 1);
-        }
+	{
+		for(i = 0; i < 5 - strlen(minfrequency->input); i++)
+			minfrequency->input = ostrcat("0", minfrequency->input, 0, 1);
+	}
   
 	changemask(maxfrequency, "00000");
 	changeinput(maxfrequency, getconfig("blindmaxfrequency", NULL));
 	if(maxfrequency->input != NULL)
-        {
-                for(i = 0; i < 5 - strlen(maxfrequency->input); i++)
-                        maxfrequency->input = ostrcat("0", maxfrequency->input, 0, 1);
-        }
+	{
+		for(i = 0; i < 5 - strlen(maxfrequency->input); i++)
+			maxfrequency->input = ostrcat("0", maxfrequency->input, 0, 1);
+	}
   
 	changeinput(stepfrequency, getconfig("blindstepfrequency", NULL));
 	changemask(stepfrequency, "00");
 	if(stepfrequency->input != NULL)
-        {
-                for(i = 0; i < 2 - strlen(stepfrequency->input); i++)
-                        stepfrequency->input = ostrcat("0", stepfrequency->input, 0, 1);
-        }
-  
+	{
+		for(i = 0; i < 2 - strlen(stepfrequency->input); i++)
+			stepfrequency->input = ostrcat("0", stepfrequency->input, 0, 1);
+	}
   
 	changeinput(minsignalrate, getconfig("blindminsignalrate", NULL));
 	changemask(minsignalrate, "00000");
 	if(minsignalrate->input != NULL)
-        {
-                for(i = 0; i < 5 - strlen(minsignalrate->input); i++)
-                        minsignalrate->input = ostrcat("0", minsignalrate->input, 0, 1);
-        }
-  
+	{
+		for(i = 0; i < 5 - strlen(minsignalrate->input); i++)
+			minsignalrate->input = ostrcat("0", minsignalrate->input, 0, 1);
+	}
   
 	changeinput(maxsignalrate, getconfig("blindmaxsignalrate", NULL));
 	changemask(maxsignalrate, "00000");
 	if(maxsignalrate->input != NULL)
-        {
-                for(i = 0; i < 5 - strlen(maxsignalrate->input); i++)
-                        maxsignalrate->input = ostrcat("0", maxsignalrate->input, 0, 1);
-        }
-  
+	{
+		for(i = 0; i < 5 - strlen(maxsignalrate->input); i++)
+			maxsignalrate->input = ostrcat("0", maxsignalrate->input, 0, 1);
+	}
   
 	changeinput(stepsignalrate, getconfig("blindstepsignalrate", NULL));
 	changemask(stepsignalrate, "00");
 	if(stepsignalrate->input != NULL)
-        {
-                for(i = 0; i < 2 - strlen(stepsignalrate->input); i++)
-                        stepsignalrate->input = ostrcat("0", stepsignalrate->input, 0, 1);
-        }
-  
+	{
+		for(i = 0; i < 2 - strlen(stepsignalrate->input); i++)
+			stepsignalrate->input = ostrcat("0", stepsignalrate->input, 0, 1);
+	}
 
 	drawscreen(blindscan, 0);
 	addscreenrc(blindscan, listbox);
@@ -88,6 +84,8 @@ void screenblindscanadjust()
 			addconfigscreencheck("blindminsignalrate", minsignalrate, "20000");
 			addconfigscreencheck("blindmaxsignalrate", maxsignalrate, "30000");
 			addconfigscreencheck("blindstepsignalrate", stepsignalrate, "20");
+			
+			break;
 		}
 	}
 
