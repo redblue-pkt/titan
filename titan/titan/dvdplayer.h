@@ -69,11 +69,10 @@ int dvd_calc_x_fbscreen()
 	}
 
 	if(dvd_aspect >= 2 && tv_aspect == DDVD_4_3 && tv_policy == DDVD_PAN_SCAN)
-		x_offset = -(dvdskinfb->width * 4 / 3 - dvdskinfb->width) / 2;
+		x_offset = (dvdskinfb->width * 3 / 4 - dvdskinfb->width) / 2;
 
 	if(dvd_aspect >= 2 && tv_aspect == DDVD_16_10 && tv_policy2 == DDVD_PAN_SCAN)
-		x_offset = -(dvdskinfb->width * 16 / 15 - dvdskinfb->width) / 2;
-
+		x_offset = (dvdskinfb->width * 15 / 16 - dvdskinfb->width) / 2;
 
 #endif
 	return x_offset;
