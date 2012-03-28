@@ -121,7 +121,7 @@
 #define MAXLONGKEY 10
 #define MAXSAT 64
 #define EPGSCANLOG "/tmp/epgscan.log"
-#define MAXCHANNELHISTORY 5
+#define MAXCHANNELHISTORY 6
 
 #define HTTPAUTH "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0="
 

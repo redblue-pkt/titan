@@ -60,9 +60,9 @@ void screenchannelhistory()
 	struct skin* tmp = NULL;
 
 	listbox->aktline = 1;
-        listbox->aktpage = -1;
+	listbox->aktpage = -1;
 
-	for(i = 0; i < MAXCHANNELHISTORY; i++)
+	for(i = 1; i < MAXCHANNELHISTORY; i++)
 	{
 		if(channelhistory[i].chnode != NULL && channelhistory[i].channellist != NULL)
 		{
