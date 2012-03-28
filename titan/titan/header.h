@@ -242,7 +242,7 @@ int screenpincheck(int type, char* pin);
 void screenpin();
 
 //videomode.h
-void screenvideomode();
+void screenvideomode(int flag);
 
 //pic.h
 void delpic(char* name);

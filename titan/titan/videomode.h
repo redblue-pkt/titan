@@ -1,22 +1,29 @@
 #ifndef VIDEOMODE_H
 #define VIDEOMODE_H
 
-void screenvideomode()
+//flag 0: show all
+//flag 1: no subchannel
+//flag 2: no subchannel, no resolution change
+void screenvideomode(int flag)
 {
 	char* skinname = "videomode";
 	char* tmpstr = NULL;
 	char* tmpstr1 = NULL;
+	char* mbox = NULL;
 
 	tmpstr = getpolicy();
 
-	tmpstr1 = ostrcat(tmpstr1, "Subchannel\n", 1, 0);
-	tmpstr1 = ostrcat(tmpstr1, "Resolution Settings\n", 1, 0);
+	if(flag == 0)	tmpstr1 = ostrcat(tmpstr1, "Subchannel\n", 1, 0);
+	if(flag == 0 || flag == 1) tmpstr1 = ostrcat(tmpstr1, "Resolution Settings\n", 1, 0);
 	tmpstr1 = ostrcat(tmpstr1, "Aspect Settings\n", 1, 0);
 	tmpstr1 = ostrcat(tmpstr1, "3D Mode\n", 1, 0);	
 	tmpstr1 = ostrcat(tmpstr1, "\t\n", 1, 0);
 	tmpstr1 = ostrcat(tmpstr1, getpolicychoices(), 1, 1);
 
-	char* mbox = menulistbox(tmpstr, tmpstr1, skinname, NULL, NULL, 1, 1);
+	if(flag == 0)
+		mbox = menulistbox(tmpstr, tmpstr1, skinname, NULL, NULL, 1, 1);
+	else
+		mbox = menulistbox(tmpstr, tmpstr1, skinname, NULL, NULL, 1, 0);
 
 	free(tmpstr); tmpstr = NULL;
 	free(tmpstr1); tmpstr1 = NULL;
