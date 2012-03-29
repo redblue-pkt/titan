@@ -1,6 +1,8 @@
 #ifndef DVDPLAY_H
 #define DVDPLAY_H
 
+extern struct skin* skin;
+
 void screendvdplay(int flag)
 {
 	int rcret = 0, playertype = 2;
