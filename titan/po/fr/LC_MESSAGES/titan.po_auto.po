@@ -392,11 +392,11 @@ msgstr ""
 #: global.h:4563 play.h:711 rgui.h:106 epgsettings.h:202 global.h:4565
 #: ipkg.h:363 scan.h:956 scan.h:966 scan.h:977 scan.h:1119 scan.h:1191
 #: scan.h:1402 play.h:718 dvdplay.h:51 service.h:573 service.h:814
-#: service.h:574 service.h:815
+#: service.h:574 service.h:815 play.h:721 videomode.h:60
 msgid "Message"
 msgstr ""
 
-#: avsettings.h:199 videomode.h:53
+#: avsettings.h:199 videomode.h:53 videomode.h:60
 msgid "Is this Videomode ok ?"
 msgstr ""
 
@@ -477,6 +477,7 @@ msgstr ""
 #: scan.h:956 scan.h:977 scan.h:1119 scan.h:1191 scan.h:1402
 #: skin_default_skin.xml.h:293 play.h:718 dvdplay.h:51 service.h:573
 #: service.h:814 skin_default_skin.xml.h:294 service.h:574 service.h:815
+#: play.h:590 play.h:596 play.h:604 play.h:721 videomode.h:60
 msgid "OK"
 msgstr ""
 
@@ -559,7 +560,8 @@ msgstr ""
 #: skin_default_skin.xml.h:190 epgsettings.h:216 scan.h:956 scan.h:977
 #: scan.h:1119 scan.h:1191 scan.h:1402 skin_default_skin.xml.h:192 play.h:718
 #: dvdplay.h:51 service.h:573 service.h:814 skin_default_skin.xml.h:193
-#: service.h:574 service.h:815
+#: service.h:574 service.h:815 play.h:590 play.h:596 play.h:604 play.h:721
+#: videomode.h:60
 msgid "EXIT"
 msgstr ""
 
@@ -1180,7 +1182,7 @@ msgstr ""
 #: mc_pictureplayer.h:73 mc_pictureplayer.h:188 mc_pictureplayer.h:294
 #: mc_pictureplayer.h:381 mc_videoplayer.h:388 mc_videoplayer.h:487 play.h:669
 #: play.h:675 mc_videoplayer.h:489 mc_videoplayer.h:393 mc_videoplayer.h:494
-#: play.h:681 play.h:711 play.h:718 dvdplay.h:51
+#: play.h:681 play.h:711 play.h:718 dvdplay.h:51 play.h:721
 msgid "Can't start playback !"
 msgstr ""
 
@@ -2155,11 +2157,12 @@ msgstr ""
 msgid "hidden"
 msgstr ""
 
-#: play.h:551 play.h:557 play.h:563 play.h:587 play.h:593
+#: play.h:551 play.h:557 play.h:563 play.h:587 play.h:593 play.h:590
+#: play.h:596
 msgid "EPG Info"
 msgstr ""
 
-#: play.h:559 play.h:565 play.h:571 play.h:601
+#: play.h:559 play.h:565 play.h:571 play.h:601 play.h:604
 msgid "Realy Delete ?"
 msgstr ""
 
@@ -2167,11 +2170,12 @@ msgstr ""
 #: skin_default_skin.xml.h:155 skin_default_skin.xml.h:156
 #: skin_default_skin.xml.h:157 skin_default_skin.xml.h:158 play.h:675
 #: skin_default_skin.xml.h:159 skin_default_skin.xml.h:161 play.h:676
-#: skin_default_skin.xml.h:162
+#: skin_default_skin.xml.h:162 play.h:679
 msgid "DEL"
 msgstr ""
 
 #: play.h:633 play.h:639 play.h:645 play.h:675 play.h:676 dvdplay.h:27
+#: play.h:679
 msgid "SELECT"
 msgstr ""
 
