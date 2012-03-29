@@ -20,7 +20,7 @@ int dvd_calc_y_fbscreen()
 
 #ifdef DVDPLAYER
 	//0=4:3 2=16:9
-	//dvd_aspect = ddvd_get_dvd_aspect(ddvdconfig);
+	dvd_aspect = ddvd_get_dvd_aspect(ddvdconfig);
 
 	if(dvd_aspect == 0 && tv_policy == DDVD_PAN_SCAN)
 	{
@@ -53,7 +53,7 @@ int dvd_calc_x_fbscreen()
 
 #ifdef DVDPLAYER
 	//0=4:3 2=16:9
-	//dvd_aspect = ddvd_get_dvd_aspect(ddvdconfig);
+	dvd_aspect = ddvd_get_dvd_aspect(ddvdconfig);
 
 	if(dvd_aspect == 0 && tv_policy == DDVD_LETTERBOX)
 	{
