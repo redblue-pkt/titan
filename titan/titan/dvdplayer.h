@@ -360,7 +360,6 @@ void dvdgotmessage()
 		case DDVD_SHOWOSD_STRING:
 		{
 			debug(333, "DVD_SHOWOSD_STRING");
-			//m_event(this, evUser+5);
 			break;
 		}
 		case DDVD_SHOWOSD_AUDIO:
@@ -395,32 +394,12 @@ void dvdgotmessage()
 		}
 		case DDVD_SHOWOSD_TIME:
 		{
-			static struct ddvd_time last_info;
-			struct ddvd_time info;
-
-//			debug(333, "DVD_SHOWOSD_TIME");
-			ddvd_get_last_time(ddvdconfig, &info);
-
-/*
-			if(info.pos_chapter != last_info.pos_chapter )
-				m_event(this, evUser+8); // chapterUpdated
-			if(info.pos_title != last_info.pos_title )
-				m_event(this, evUser+9); // titleUpdated
-
-			memcpy(&last_info, &info, sizeof(struct ddvd_time));
-*/
 			break;
 		}
 		case DDVD_SHOWOSD_TITLESTRING:
 		{
 //			ddvd_get_title_string(ddvdconfig, ddvd_titlestring);
 //			debug(333, "DDVD_SHOWOSD_TITLESTRING: %s", ddvd_titlestring);
-/*
-			loadCuesheet();
-			if (!m_cue_pts)
-				unpause();
-			m_event(this, evStart);
-*/
 			break;
 		}
 		case DDVD_MENU_OPENED:
@@ -442,8 +421,6 @@ void dvdgotmessage()
 /*
 			int changed = m_width != -1 && m_height != -1 && m_aspect != -1;
 			ddvd_get_last_size(ddvdconfig, &m_width, &m_height, &m_aspect);
-			if (changed)
-				m_event((iPlayableService*)this, evVideoSizeChanged);
 */
 			break;
 		}
@@ -453,8 +430,6 @@ void dvdgotmessage()
 /*
 			int changed = m_progressive != -1;
 			ddvd_get_last_progressive(ddvdconfig, &m_progressive);
-			if (changed)
-				m_event((iPlayableService*)this, evVideoProgressiveChanged);
 */
 			break;
 		}
@@ -464,8 +439,6 @@ void dvdgotmessage()
 /*
 			int changed = m_framerate != -1;
 			ddvd_get_last_framerate(m_ddvdconfig, &m_framerate);
-			if (changed)
-				m_event((iPlayableService*)this, evVideoFramerateChanged);
 */
 			break;
 		}
