@@ -397,7 +397,7 @@ void blitfb2(struct fb* fbnode, int flag)
 	{
 		int width = (fb->width - rightoffset) - leftoffset;
 		int height = (fb->height - topoffset) - bottomoffset;
-		max = 50;
+		max = 25;
 		if(status.screenanim == 1 || status.screenanim == 3)
 		{
 			bltData.dst_left = (width / 2) - 1;
@@ -408,8 +408,8 @@ void blitfb2(struct fb* fbnode, int flag)
 			bltData.dst_top = (height / 2) - 1;
 			bltData.dst_bottom = (height / 2) + 1;
 		}
-		wstep = width / 50;
-		hstep = height / 50;
+		wstep = width / max;
+		hstep = height / max;
 	}
 
 	for(i = 0; i < max; i++)
@@ -439,7 +439,7 @@ void blitfb2(struct fb* fbnode, int flag)
 			bltData.dst_bottom = tmpbottom;
 		}
 
-		if(status.screenanim > 0) usleep(status.screenanimspeed * 500);
+		if(status.screenanim > 0) usleep(status.screenanimspeed * 1000);
 
 		if (ioctl(fb->fd, STMFBIO_BLT, &bltData) < 0)
 		{
