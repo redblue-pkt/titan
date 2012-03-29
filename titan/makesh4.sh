@@ -152,12 +152,30 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] libipkg done"
 echo "[titan]--------------------------------------------------------"
 
+###
+echo "[titan]--------------------------------------------------------"
+echo "[titan] libdreamdvd"
+echo "[titan]--------------------------------------------------------"
+cd "$HOME"/flashimg/source.titan/libdreamdvd
+./makesh4.sh $STM
+cd "$HOME"/flashimg/source.titan/titan
+if [ ! -e "$HOME"/flashimg/source.titan/libdreamdvd/.libs/libdreamdvd.so.0.0.0 ]; then
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] libdreamdvd building error !!!"
+	echo "[titan] check your src"
+	echo "[titan]--------------------------------------------------------"
+	exit 1
+fi
+echo "[titan]--------------------------------------------------------"
+echo "[titan] libdreamdvd done"
+echo "[titan]--------------------------------------------------------"
+###
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] update git cdkroot"
 echo "[titan]--------------------------------------------------------"
 
-cp "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/apps/misc/tools/libdreamdvd/.libs/* $HOME/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib
+#cp "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/apps/misc/tools/libdreamdvd/.libs/* $HOME/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] update git cdkroot done"
@@ -184,7 +202,7 @@ fi
 "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -DCAMSUPP -D$eplayer -DDVDPLAYER -Os -export-dynamic -Wall \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/include/freetype2 \
 	-I $eplayerinclude \
-	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/apps/misc/tools/libdreamdvd \
+	-I "$HOME"/flashimg/source.titan/libdreamdvd \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/driver/bpamem \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/apps/misc/tools/libmmeimage \
 	-c titan.c
