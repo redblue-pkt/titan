@@ -166,6 +166,8 @@ if [ ! -e "$HOME"/flashimg/source.titan/libdreamdvd/.libs/libdreamdvd.so.0.0.0 ]
 	echo "[titan]--------------------------------------------------------"
 	exit 1
 fi
+cp "$HOME"/flashimg/source.titan/libdreamdvd/.libs/libdreamdvd.so.0.0.0 "$ROOTDIR"/lib
+
 echo "[titan]--------------------------------------------------------"
 echo "[titan] libdreamdvd done"
 echo "[titan]--------------------------------------------------------"
