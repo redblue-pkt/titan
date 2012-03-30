@@ -58,17 +58,26 @@ void screenskinadjust()
 		tmp = listbox->select;
 
 		addconfigscreencheck("fbleftoffset", leftoffset, "0");
+		status.leftoffset = getconfigint("fbleftoffset", NULL);
 		addconfigscreencheck("fbrightoffset", rightoffset, "0");
+		status.rightoffset = getconfigint("fbrightoffset", NULL);
 		addconfigscreencheck("fbtopoffset", topoffset, "0");
+		status.topoffset = getconfigint("fbtopoffset", NULL);
 		addconfigscreencheck("fbbottomoffset", bottomoffset, "0");
+		status.bottomoffset = getconfigint("fbbottomoffset", NULL);
+		
 		drawscreen(skinadjust, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
 			addconfigint("fbleftoffset", oleftoffset);
+			status.leftoffset = getconfigint("fbleftoffset", NULL);
 			addconfigint("fbrightoffset", orightoffset);
+			status.rightoffset = getconfigint("fbrightoffset", NULL);
 			addconfigint("fbtopoffset", otopoffset);
+			status.topoffset = getconfigint("fbtopoffset", NULL);
 			addconfigint("fbbottomoffset", obottomoffset);
+			status.bottomoffset = getconfigint("fbbottomoffset", NULL);
 			break;
 		}
 

@@ -349,15 +349,10 @@ void blitfb2(struct fb* fbnode, int flag)
 	int mode3d = 0, leftoffset = 0, rightoffset = 0, topoffset = 0, bottomoffset = 0;
 	char* mode3dstr = NULL;
 
-	leftoffset = getconfigint("fbleftoffset", NULL);
-	rightoffset = getconfigint("fbrightoffset", NULL);
-	topoffset = getconfigint("fbtopoffset", NULL);
-	bottomoffset = getconfigint("fbbottomoffset", NULL);
-
-	if(leftoffset != 0) blitrect(0, 0, leftoffset, fb->height, 0, 255, 2);
-	if(rightoffset != 0) blitrect(fb->width - rightoffset, 0, rightoffset, fb->height, 0, 255, 2);
-	if(topoffset != 0) blitrect(0, 0, fb->width, topoffset, 0, 255, 2);
-	if(bottomoffset != 0) blitrect(0, fb->height - bottomoffset, fb->width, bottomoffset, 0, 255, 2);
+	if(status.leftoffset != 0) blitrect(0, 0, status.leftoffset, fb->height, 0, 255, 2);
+	if(status.rightoffset != 0) blitrect(fb->width - status.rightoffset, 0, status.rightoffset, fb->height, 0, 255, 2);
+	if(status.topoffset != 0) blitrect(0, 0, fb->width, status.topoffset, 0, 255, 2);
+	if(status.bottomoffset != 0) blitrect(0, fb->height - status.bottomoffset, fb->width, status.bottomoffset, 0, 255, 2);
 
 	mode3dstr = getconfig("av_mode3d", NULL);
 	if(ostrcmp(mode3dstr, "sbs") == 0)
@@ -380,23 +375,23 @@ void blitfb2(struct fb* fbnode, int flag)
 
 	bltData.dstOffset  = 0;
 	bltData.dstPitch   = fb->pitch;
-	bltData.dst_left   = leftoffset;
-	bltData.dst_top    = topoffset;
+	bltData.dst_left   = status.leftoffset;
+	bltData.dst_top    = status.topoffset;
 	if(mode3d == 1)
-		bltData.dst_right = (fb->width - rightoffset) / 2;
+		bltData.dst_right = (fb->width - status.rightoffset) / 2;
 	else
-		bltData.dst_right = fb->width - rightoffset;
+		bltData.dst_right = fb->width - status.rightoffset;
 	if(mode3d == 2)
-		bltData.dst_bottom = (fb->height - bottomoffset) / 2;
+		bltData.dst_bottom = (fb->height - status.bottomoffset) / 2;
 	else
-		bltData.dst_bottom = fb->height - bottomoffset;
+		bltData.dst_bottom = fb->height - status.bottomoffset;
 	bltData.dstFormat  = SURF_BGRA8888;
 	bltData.dstMemBase = STMFBGP_FRAMEBUFFER;
 
 	if(flag == 1 && status.screenanim > 0 && mode3d == 0)
 	{
-		int width = (fb->width - rightoffset) - leftoffset;
-		int height = (fb->height - topoffset) - bottomoffset;
+		int width = (fb->width - status.rightoffset) - status.leftoffset;
+		int height = (fb->height - status.topoffset) - status.bottomoffset;
 		max = 25;
 		if(status.screenanim == 1 || status.screenanim == 3)
 		{
@@ -419,10 +414,10 @@ void blitfb2(struct fb* fbnode, int flag)
 		{
 			int tmpleft = bltData.dst_left - wstep;
 			int tmpright = bltData.dst_right + wstep;
-			if(tmpleft < leftoffset)
-				tmpleft = leftoffset;
-			if(tmpright > fb->width - rightoffset)
-				tmpright = fb->width - rightoffset;
+			if(tmpleft < status.leftoffset)
+				tmpleft = status.leftoffset;
+			if(tmpright > fb->width - status.rightoffset)
+				tmpright = fb->width - status.rightoffset;
 			bltData.dst_left = tmpleft;
 			bltData.dst_right = tmpright;
 		}
@@ -431,10 +426,10 @@ void blitfb2(struct fb* fbnode, int flag)
 		{
 			int tmptop = bltData.dst_top - hstep;
 			int tmpbottom = bltData.dst_bottom + hstep;
-			if(tmptop < topoffset)
-				tmptop = topoffset;
-			if(tmpbottom > fb->height - bottomoffset)
-				tmpbottom = fb->height - bottomoffset;
+			if(tmptop < status.topoffset)
+				tmptop = status.topoffset;
+			if(tmpbottom > fb->height - status.bottomoffset)
+				tmpbottom = fb->height - status.bottomoffset;
 			bltData.dst_top = tmptop;
 			bltData.dst_bottom = tmpbottom;
 		}
@@ -453,11 +448,11 @@ void blitfb2(struct fb* fbnode, int flag)
 		if(mode3d != 0)
 		{
 			if(mode3d == 1)
-				bltData.dst_left = 0 + leftoffset + ((fb->width - rightoffset) / 2);
+				bltData.dst_left = 0 + status.leftoffset + ((fb->width - status.rightoffset) / 2);
 			if(mode3d == 2)
-				bltData.dst_top = 0 + topoffset + ((fb->height - bottomoffset) / 2);
-			bltData.dst_right  = fb->width - rightoffset;
-			bltData.dst_bottom = fb->height - bottomoffset;
+				bltData.dst_top = 0 + status.topoffset + ((fb->height - status.bottomoffset) / 2);
+			bltData.dst_right  = fb->width - status.rightoffset;
+			bltData.dst_bottom = fb->height - status.bottomoffset;
 
 			if (ioctl(fb->fd, STMFBIO_BLT, &bltData) < 0)
 			{

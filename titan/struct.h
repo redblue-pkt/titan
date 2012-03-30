@@ -1036,6 +1036,11 @@ struct status
 	//for write FB in File
 	int write_png;
 	int write_jpg;
+	//holds oversize value for blitter
+	int leftoffset;
+	int rightoffset;
+	int topoffset;
+	int bottomoffset;
 } status;
 
 struct fb
