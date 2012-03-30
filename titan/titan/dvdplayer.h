@@ -86,15 +86,15 @@ int dvdblit()
 
 	m_lock(&status.drawingmutex, 0);
 
-	int leftoffset = getconfigint("fbleftoffset", NULL);
-	int rightoffset = getconfigint("fbrightoffset", NULL);
-	int topoffset = getconfigint("fbtopoffset", NULL);
-	int bottomoffset = getconfigint("fbbottomoffset", NULL);
+	int leftoffset = status.leftoffset;
+	int rightoffset = status.rightoffset;
+	int topoffset = status.topoffset;
+	int bottomoffset = status.bottomoffset;
 
-	if(leftoffset != 0) addconfigint("fbleftoffset", 0);
-	if(rightoffset != 0) addconfigint("fbrightoffset", 0);
-	if(topoffset != 0) addconfigint("fbtopoffset", 0);
-	if(bottomoffset != 0) addconfigint("fbbottomoffset", 0);
+	if(leftoffset != 0) status.leftoffset = 0;
+	if(rightoffset != 0) status.rightoffset = 0;
+	if(topoffset != 0) status.topoffset = 0;
+	if(bottomoffset != 0) status.bottomoffset = 0;
 
 	unsigned char* fb = dvdskinfb->fb;
 	int width = dvdskinfb->width;
@@ -102,8 +102,8 @@ int dvdblit()
 
 	if(x_offset > 0)
 	{
-		addconfigint("fbleftoffset", x_offset);
-		addconfigint("fbrightoffset", x_offset);
+		status.leftoffset = x_offset;
+		status.rightoffset = x_offset;
 	}
 	if(x_offset < 0)
 	{
@@ -112,8 +112,8 @@ int dvdblit()
 	}
 	if(y_offset > 0)
 	{
-		addconfigint("fbtopoffset", y_offset);
-		addconfigint("fbbottomoffset", y_offset);
+		status.topoffset = y_offset;
+		status.bottomoffset = y_offset;
 	}
 	if(y_offset < 0)
 	{
@@ -133,11 +133,11 @@ int dvdblit()
 		dvdskinfb->fb = fb;
 		dvdskinfb->height = height;
 	}
-
-	addconfigint("fbleftoffset", leftoffset);
-	addconfigint("fbrightoffset", rightoffset);
-	addconfigint("fbtopoffset", topoffset);
-	addconfigint("fbbottomoffset", bottomoffset);
+	
+	status.leftoffset = leftoffset;
+	status.rightoffset = rightoffset;
+	status.topoffset = topoffset;
+	status.bottomoffset = bottomoffset;
 
 	m_unlock(&status.drawingmutex, 0);
 #endif

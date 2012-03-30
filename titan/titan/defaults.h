@@ -80,6 +80,10 @@ void setdefaults()
 	status.showchanneltimeline = getconfigint("showchanneltimeline", NULL);
 	status.screenanim = getconfigint("screenanim", NULL);
 	status.screenanimspeed = getconfigint("screenanimspeed", NULL);
+	status.leftoffset = getconfigint("fbleftoffset", NULL);
+	status.rightoffset = getconfigint("fbrightoffset", NULL);
+	status.topoffset = getconfigint("fbtopoffset", NULL);
+	status.bottomoffset = getconfigint("fbbottomoffset", NULL);
 
 	for(i = 0; i < MAXLONGKEY; i++)
 	{
