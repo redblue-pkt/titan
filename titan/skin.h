@@ -1803,7 +1803,7 @@ unsigned char* readpng(const char* filename, unsigned long* width, unsigned long
 
 	//if(directbuf == NULL)
 	//{
-		for (y = 0;  y < (*height);  ++y)
+		for (y = 0; y < (*height); ++y)
 			row_pointers[y] = (png_bytep)buf + y * (*rowbytes);
 	//}
 	//else
@@ -2479,7 +2479,7 @@ void restorescreen(char* buf, struct skin* node)
 //*************** GOST LCD
 void lcd_fillrect(int posx, int posy, int width, int height, long color, int transparent)
 {
-	debug(1000, "in");
+	//debug(1000, "in");
 	int y, x;
 	unsigned long tmpcol;
 
@@ -2502,17 +2502,17 @@ void lcd_fillrect(int posx, int posy, int width, int height, long color, int tra
 			drawpixel(posx + x, posy + y, tmpcol);
 		}
 	}
-	debug(1000, "out");
+	//debug(1000, "out");
 }
 
 void lcd_drawrect(int posx, int posy, int width, int height, long color, int transparent)
 {
-	debug(1000, "in");
+	//debug(1000, "in");
 	fillrect(posx, posy, width, 1, color, transparent);
 	fillrect(posx, posy + height - 1, width, 1, color, transparent);
 	fillrect(posx, posy, 1, height, color, transparent);
 	fillrect(posx + width - 1, posy, 1, height, color, transparent);
-	debug(1000, "out");
+	//debug(1000, "out");
 }
 //*************** GOST LCD
 
@@ -3770,7 +3770,7 @@ int drawscreen(struct skin* node, int flag)
 		if(status.screencalc == 0 || flag == 3)
 		{
 			drawscreenalways(node);
-			//if(strstr(node->name, "LCD_") != NULL)
+
 			if(merkskinfb != NULL) 
 				pngforlcd();
 			else	
@@ -3782,7 +3782,7 @@ int drawscreen(struct skin* node, int flag)
 			}
 		}
 	}
-	//if(strstr(node->name, "LCD_") != NULL)
+
 	if(merkskinfb != NULL)
 	{
 		skinfb = merkskinfb;
