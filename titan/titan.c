@@ -340,8 +340,9 @@ void oshutdown(int exitcode, int flag)
 	else
 		freetimer(1);
 
-	initmutex(0);
 	starthttpd(0);
+	startrguid(0);
+	initmutex(0);
 
 	debug(1000, "out");
 	exit(exitcode);
