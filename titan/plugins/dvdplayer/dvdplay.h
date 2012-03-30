@@ -5,7 +5,7 @@ extern struct skin* skin;
 
 void screendvdplay(int flag)
 {
-	int rcret = 0, playertype = 2;
+	int rcret = 0, playertype = 2, dirrcret = 0;
 	char* tmpstr = NULL, *startdir = NULL;
 	char* file = NULL, *tmppolicy = NULL;
 	struct skin* playinfobar = getscreen("playinfobar");
@@ -26,8 +26,15 @@ playerstart:
 	int playinfobarcount = 0, playinfobarstatus = 0;
 
 	tmpstr = ostrcat(file, "", 1, 0); file = NULL;
-	file = screendir(startdir, NULL, basename(tmpstr), NULL, NULL, NULL, 0, _("SELECT"), 0, NULL, 0, NULL, 0, 90, 1, 90, 1, 1);
+	file = screendir(startdir, NULL, basename(tmpstr), &dirrcret, NULL, _("EJECT"), getrcconfigint("rcred", NULL), _("SELECT"), 0, NULL, 0, NULL, 0, 90, 1, 90, 1, 2);
 	free(tmpstr); tmpstr = NULL;
+	
+	if(dirrcret == 1)
+	{
+		system("umount /media/dvd");
+		system("eject /dev/sr0");
+		goto playerstart;
+	}
 
 	if(file != NULL)
 	{

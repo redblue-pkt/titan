@@ -147,6 +147,7 @@ int dvdblit()
 
 void dvdchangevideo()
 {
+#ifdef DVDPLAYER
 	char* tmpstr = NULL;
 
 	tmpstr = getaspect();
@@ -177,6 +178,7 @@ void dvdchangevideo()
 	//	tv_policy2 = DDVD_PANSCAN;
 	//free(tmpstr); tmpstr = NULL;
 	tv_policy2 = tv_policy;
+#endif
 }
 
 void dvdcleanup()
@@ -286,7 +288,11 @@ int dvdstart(char* filename)
 
 int dvdmenuopen()
 {
+#ifdef DVDPLAYER
 	return dvdmenu;
+#else
+	return 0;
+#endif
 }
 
 void dvdgotmessage()
