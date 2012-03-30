@@ -1917,24 +1917,36 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 
 	if(pictype == 0)
 	{
-		for (y = 0; y < height; ++y)
-		{
-			py = (posy + y) * skinfb->width;
-			src = buf + y * rowbytes;
-			for (x = 0; x < width; x++)
-			{
-				red = *src++;
-				green = *src++;
-				blue = *src++;
-				if(channels == 3)
-					alpha = 255;
-				else
-					alpha = *src++;
+		py = (posy * skinfb->width) + posx;
+		src = buf;
+		int diff = rowbytes - (width * 4);
 
-				if(alpha == 0) continue;
-				color = (alpha << 24) | (red << 16) | (green << 8) | blue;
-				//if(color & 0xff000000 == 0) continue;
-				drawpixelfast(posx + x, py, color);
+		if(channel == 3)
+		{
+			for(y = 0; y < height; ++y)
+			{
+				for(x = 0; x < width; x++)
+					skinfb->fblong[py + x] = (255 << 24) | (*src++ << 16) | (*src++ << 8) | *src++;
+
+				py += skinfb->width;
+				src += diff;
+			}
+		}
+		else
+		{
+			for(y = 0; y < height; ++y)
+			{
+				for(x = 0; x < width; x++)
+				{
+					if(src[3] < 10)
+					{
+						src += 4;
+						continue;
+					}
+					skinfb->fblong[py + x] = (*src++ << 24) | (*src++ << 16) | (*src++ << 8) | *src++;
+				}
+				py += skinfb->width;
+				src += diff;
 			}
 		}
 	}
