@@ -1917,6 +1917,7 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 
 	if(pictype == 0)
 	{
+/*
 		py = (posy * skinfb->width) + posx;
 		src = buf;
 		int diff = rowbytes - (width * 4);
@@ -1949,6 +1950,30 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 				src += diff;
 			}
 		}
+*/
+
+		for (y = 0; y < height; ++y)
+		{
+			py = (posy + y) * skinfb->width;
+			src = buf + y * rowbytes;
+			for (x = 0; x < width; x++)
+			{
+				red = *src++;
+				green = *src++;
+				blue = *src++;
+				if(channels == 3)
+					alpha = 255;
+				else
+					alpha = *src++;
+
+				if(alpha == 0) continue;
+				color = (alpha << 24) | (red << 16) | (green << 8) | blue;
+				//if(color & 0xff000000 == 0) continue;
+				drawpixelfast(posx + x, py, color);
+			}
+		}
+
+
 	}
 	else if(pictype == 1 && memfd > -1)
 		blitjpg(buf, posx, posy, width, height, scalewidth, scaleheight );
