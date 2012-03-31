@@ -749,7 +749,7 @@ void screennetwork_wlan()
 		if(rcret == getrcconfigint("rcblue", NULL) && scan == 0)
 		{
 			tmpstr = readfiletomem("/tmp/wlan.log", 0);
-			textbox(_("WLAN LOG"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 800, 0, 0);
+			textbox(_("WLAN LOG"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 			free(tmpstr); tmpstr = NULL;
 			drawscreen(wlan, 0);
 		}
