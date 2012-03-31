@@ -1079,7 +1079,7 @@ void delmarkedscreennodes(struct skin* node, int mark)
 		}
 
 		if(node->del == mark)
-                {
+		{
 			if(node == screen->child)
 			{
 				screen->child = node->next;
@@ -1384,7 +1384,7 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 {
 #ifndef SIMULATE
 	STMFBIO_BLT_DATA  blt_data;
-        memset(&blt_data, 0, sizeof(STMFBIO_BLT_DATA));
+	memset(&blt_data, 0, sizeof(STMFBIO_BLT_DATA));
 
 	if(scalewidth == 0) scalewidth = width;
 	if(scaleheight == 0) scaleheight = height;
@@ -1518,9 +1518,9 @@ void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int 
 
 void jpgswerror(j_common_ptr cinfo)
 {
-        struct jpgerror* jpgerr = (struct jpgerror*)cinfo->err;
-        (*cinfo->err->output_message) (cinfo);
-        longjmp(jpgerr->setjmpbuf, 1);
+	struct jpgerror* jpgerr = (struct jpgerror*)cinfo->err;
+	(*cinfo->err->output_message) (cinfo);
+	longjmp(jpgerr->setjmpbuf, 1);
 }
 
 int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight, int scalewidth, int scaleheight, int halign, int valign)
@@ -1698,7 +1698,7 @@ unsigned char* readpng(const char* filename, unsigned long* width, unsigned long
 	}
 
 	png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
-	if (png_ptr == NULL)
+	if(png_ptr == NULL)
 	{
 		err("%s no memory", filename);
 		free(sig);
@@ -1707,7 +1707,7 @@ unsigned char* readpng(const char* filename, unsigned long* width, unsigned long
 	}
 
 	info_ptr = png_create_info_struct(png_ptr);
-	if (info_ptr == NULL)
+	if(info_ptr == NULL)
 	{
 		png_destroy_read_struct(&png_ptr, NULL, NULL);
 		err("%s no memory", filename);
@@ -3228,7 +3228,7 @@ void calclistboxchild(struct skin* node, struct skin* parent)
 	if((parent->type & GRID) && (node->type & GRIDBR))
 	{
 		if(parent->poscount > 0) parent->poscount += node->rheight;
-		if(parent->poscount == 0) parent->poscount = 1;
+		else if(parent->poscount == 0) parent->poscount = 1;
 	}
 	node->rposy = node->rposy + parent->poscount;
 	node->iposy = node->iposy + parent->poscount;
@@ -3312,8 +3312,7 @@ int calclistbox(struct skin* node)
 		found = last;
 		node->aktline = node->linecount;
 	}
-
-	if(found != NULL)
+	else
 	{
 		if(node->aktline == -2) node->aktline = node->linecount;
 		if(status.listboxselecttype == 0)
@@ -3384,7 +3383,7 @@ int calcrheight(struct skin* node, struct skin* parent)
 		node->rheight = node->height;
 		if(node->fontsize == 0) node->fontsize = parent->fontsize;
 		if(node->fontsize == 0) node->fontsize = 1;
-                if(node->rheight == 0) node->rheight = node->fontsize + 2;
+		if(node->rheight == 0) node->rheight = node->fontsize + 2;
 	}
 
 	if(node->rheight < (node->bordersize * 2) + node->titlesize) node->rheight = (node->bordersize * 2) + node->titlesize;
