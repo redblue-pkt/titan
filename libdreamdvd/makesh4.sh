@@ -26,6 +26,6 @@ make clean
 --host=sh4-linux \
 --prefix=/usr && \
 make
-make install
+#make install
 
 cp .libs/* $HOME/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib
