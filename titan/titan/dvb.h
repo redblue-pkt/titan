@@ -351,7 +351,7 @@ unsigned char* dvbgetpmt(struct dvbdev* fenode, unsigned char* patbuf, int servi
 		}
 	}
 
-	err("find pmt\n");
+	err("find pmt");
 	dmxclose(dmxnode, -1);
 	free(buf);
 	if(flag == 0) *pmtpid = 0;
