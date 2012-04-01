@@ -8,7 +8,7 @@ if [ $# -ne 3 ]; then
 	echo "|                                                                                             |"
 	echo "| Parser Make Script                                                                          |"
 	echo "|                                                                                             |"
-	echo '| use ./make-ipk <svnuser> <svnpass> <svnurl>                                                 |'
+	echo '| use ./make-parser <svnuser> <svnpass> <svnurl>                                                 |'
 	echo "|                                                                                             |"
 	echo "| for svnuser <your>                                                                          |"
 	echo "| for svnpass <your>                                                                          |"
@@ -26,13 +26,14 @@ TMP=.tmp
 rm -rf /var/www/atemio/web/mediathek/menu
 rm -rf /var/www/atemio/web/mediathek/*.list
 
-rm -rf mediathek
-svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/titan/tools/tithekmainmenu $HOMEDIR/mediathek
-svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/skins/tithek/menu $HOMEDIR/mediathek/menu
-rm -rf `find $HOMEDIR/mediathek -type d -name "*.svn"`
-mv mediathek/* /var/www/atemio/web/mediathek
+rm -rf "$HOME"/flashimg/BUILD/mediathek
+svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/titan/tools/tithekmainmenu "$HOME"/flashimg/BUILD/mediathek
+svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/skins/tithek/menu "$HOME"/flashimg/BUILD/mediathek/menu
+rm -rf `find "$HOME"/flashimg/BUILD/mediathek -type d -name "*.svn"`
+mv "$HOME"/flashimg/BUILD/mediathek/* /var/www/atemio/web/mediathek
 
-ls -1 "$HOMEDIR"/*.sh > tmp.txt
+cd "$HOME"/flashimg/BUILD/mediathek
+ls -1 "$HOME"/flashimg/source.titan/titan/tools/parser/*.sh > tmp.txt
 LINE=`cat tmp.txt`
 for TYPE in $LINE; do
 	$TYPE
@@ -40,7 +41,7 @@ for TYPE in $LINE; do
 	STARTTIME=`date +"%Y.%m.%d_%H.%M.%S"`
 done
 
-cd _full
+cd "$HOME"/flashimg/BUILD/mediathek/_full
 LINE=`ls`
 TIME=`date +"%Y.%m.%d_%H.%M.%S"`
 
