@@ -49,7 +49,6 @@ for TYPE in $LINE; do
 	mv $TYPE /var/www/atemio/web/mediathek/"$TYPE"_"$TIME"
 	echo "[make-parser] mv $TYPE > /var/www/atemio/web/mediathek/$TYPE_$TIME"
 	rm -rf /var/www/atemio/web/mediathek/$TYPE
-	cd /var/www/atemio/web/mediathek
 	echo "[make-parser] ln -s $TYPE_$TIME $TYPE"
-	ln -s "$TYPE"_"$TIME" $TYPE
+	ln -s "$TYPE"_"$TIME" /var/www/atemio/web/mediathek/$TYPE
 done
