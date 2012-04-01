@@ -33,7 +33,7 @@ rm -rf `find "$HOME"/flashimg/BUILD/mediathek -type d -name "*.svn"`
 mv "$HOME"/flashimg/BUILD/mediathek/* /var/www/atemio/web/mediathek
 
 cd "$HOME"/flashimg/BUILD/mediathek
-ls -1 "$HOME"/flashimg/source.titan/titan/tools/parser/*.sh > tmp.txt
+ls -1 "$HOME"/flashimg/source.titan/titan/tools/parser/*.sh | sort -r > tmp.txt
 LINE=`cat tmp.txt`
 for TYPE in $LINE; do
 	$TYPE
@@ -47,7 +47,7 @@ TIME=`date +"%Y.%m.%d_%H.%M.%S"`
 
 for TYPE in $LINE; do
 	mv $TYPE /var/www/atemio/web/mediathek/"$TYPE"_"$TIME"
-	echo "[make-parser]" mv "$TYPE" > /var/www/atemio/web/mediathek/"$TYPE"_"$TIME"
+	echo "[make-parser]" mv "$TYPE" "> /var/www/atemio/web/mediathek/""$TYPE"_"$TIME"
 	rm -rf /var/www/atemio/web/mediathek/"$TYPE"
 	echo "[make-parser]" ln -s "$TYPE"_"$TIME" /var/www/atemio/web/mediathek/"$TYPE"
 	ln -s "$TYPE"_"$TIME" /var/www/atemio/web/mediathek/"$TYPE"
