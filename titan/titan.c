@@ -568,6 +568,7 @@ int main(int argc, char *argv[])
 	{
 
 		tmpstr = ostrcat(tmpstr, _("Error: skin not found !!"), 1, 0);
+		err("skin not found");
 		goto starterror;
 	}
 
