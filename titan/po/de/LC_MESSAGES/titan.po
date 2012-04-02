@@ -2040,7 +2040,7 @@ msgstr "Suchen"
 msgid "START"
 msgstr "Starten"
 msgid "STOP"
-msgstr "Stopen"
+msgstr "Stoppen"
 msgid "LOG"
 msgstr "Log"
 
