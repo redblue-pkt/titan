@@ -109,15 +109,21 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 		if(rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL) || rcret == getrcconfigint("rcright", NULL) || rcret == getrcconfigint("rcleft", NULL))
 		{
 			if(ext != NULL && filelist->select != NULL && filelist->select->input != NULL) //dir
+			{
 				changetext(label, NULL);
+				drawscreen(dir, 0);
+			}
 			else if(filelist->select != NULL && filelist->select->input == NULL) //file
 			{
 
 				ret = createpath(filelistpath->text, filelist->select->text);
-				if(ext != NULL) readlabelext(label, ret, ext);
+				if(ext != NULL)
+				{
+					readlabelext(label, ret, ext);
+					drawscreen(dir, 0);
+				}
 				free(ret); ret = NULL;
 			}
-			drawscreen(dir, 0);
 			continue;
 		}
 
