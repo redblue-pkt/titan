@@ -3253,7 +3253,7 @@ void calclistboxchild(struct skin* node, struct skin* parent)
 	if((parent->type & GRID) && (node->type & GRIDBR))
 	{
 		if(parent->poscount > 0) parent->poscount += node->rheight;
-		else if(parent->poscount == 0) parent->poscount = 1;
+		if(parent->poscount == 0) parent->poscount = 1;
 	}
 	node->rposy = node->rposy + parent->poscount;
 	node->iposy = node->iposy + parent->poscount;
@@ -3337,7 +3337,8 @@ int calclistbox(struct skin* node)
 		found = last;
 		node->aktline = node->linecount;
 	}
-	else
+	
+	if(found != NULL)
 	{
 		if(node->aktline == -2) node->aktline = node->linecount;
 		if(status.listboxselecttype == 0)
