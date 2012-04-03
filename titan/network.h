@@ -682,7 +682,11 @@ void screennetwork_wlan()
 				if(type->ret != NULL) tmptype = atoi(type->ret);
 				writewlan("/var/etc/wpa_supplicant.conf", tmptype, ssid->ret, key->ret);
 				if(startmode->ret != NULL) addownconfig("wlan", startmode->ret);
-				if(rcret == getrcconfigint("rcok", NULL)) break;
+				if(rcret == getrcconfigint("rcok", NULL))
+				{
+					screennetwork_restart(getinetworkfirstwlan());
+					break;
+				}
 			}
 			if(rcret == getrcconfigint("rcgreen", NULL))
 			{
