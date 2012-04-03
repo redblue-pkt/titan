@@ -37,7 +37,7 @@
 #: network.h:587 scan.h:1050 scan.h:1340 scan.h:1344 scan.h:1348 scan.h:1352
 #: network.h:598 httpdsettings.h:19 httpdsettings.h:53 epgsettings.h:116
 #: epgsettings.h:149 scan.h:1046 scan.h:1337 scan.h:1341 scan.h:1345
-#: scan.h:1349
+#: scan.h:1349 network.h:599
 msgid "no"
 msgstr ""
 
@@ -86,7 +86,7 @@ msgstr ""
 #: scan.h:1316 scan.h:1320 inadyn.h:119 network.h:588 scan.h:1051 scan.h:1341
 #: scan.h:1345 scan.h:1349 scan.h:1353 network.h:599 httpdsettings.h:20
 #: httpdsettings.h:54 epgsettings.h:117 epgsettings.h:150 scan.h:1047
-#: scan.h:1338 scan.h:1342 scan.h:1346 scan.h:1350
+#: scan.h:1338 scan.h:1342 scan.h:1346 scan.h:1350 network.h:600
 msgid "yes"
 msgstr ""
 
@@ -394,7 +394,7 @@ msgstr ""
 #: ipkg.h:363 scan.h:956 scan.h:966 scan.h:977 scan.h:1119 scan.h:1191
 #: scan.h:1402 play.h:718 dvdplay.h:51 service.h:573 service.h:814
 #: service.h:574 service.h:815 play.h:721 videomode.h:60 dvdplay.h:53
-#: dvdplay.h:60
+#: dvdplay.h:60 network.h:698 network.h:700 network.h:751
 msgid "Message"
 msgstr ""
 
@@ -480,7 +480,7 @@ msgstr ""
 #: skin_default_skin.xml.h:293 play.h:718 dvdplay.h:51 service.h:573
 #: service.h:814 skin_default_skin.xml.h:294 service.h:574 service.h:815
 #: play.h:590 play.h:596 play.h:604 play.h:721 videomode.h:60 dvdplay.h:53
-#: dvdplay.h:60
+#: dvdplay.h:60 network.h:698 network.h:700 network.h:751 network.h:758
 msgid "OK"
 msgstr ""
 
@@ -564,7 +564,8 @@ msgstr ""
 #: scan.h:1119 scan.h:1191 scan.h:1402 skin_default_skin.xml.h:192 play.h:718
 #: dvdplay.h:51 service.h:573 service.h:814 skin_default_skin.xml.h:193
 #: service.h:574 service.h:815 play.h:590 play.h:596 play.h:604 play.h:721
-#: videomode.h:60 dvdplay.h:53 dvdplay.h:60
+#: videomode.h:60 dvdplay.h:53 dvdplay.h:60 network.h:698 network.h:700
+#: network.h:751 network.h:758
 msgid "EXIT"
 msgstr ""
 
@@ -1585,17 +1586,17 @@ msgid "no keycode"
 msgstr ""
 
 #: network.h:469 network.h:474 network.h:556 network.h:561 network.h:585
-#: network.h:586 network.h:595 network.h:606
+#: network.h:586 network.h:595 network.h:606 network.h:607
 msgid "WEP"
 msgstr ""
 
 #: network.h:470 network.h:475 network.h:557 network.h:562 network.h:586
-#: network.h:587 network.h:596 network.h:607
+#: network.h:587 network.h:596 network.h:607 network.h:608
 msgid "WPA"
 msgstr ""
 
 #: network.h:471 network.h:476 network.h:558 network.h:563 network.h:587
-#: network.h:588 network.h:597 network.h:608
+#: network.h:588 network.h:597 network.h:608 network.h:609
 msgid "WPA2"
 msgstr ""
 
@@ -6779,31 +6780,31 @@ msgid "TITLE"
 msgstr ""
 
 #: network.h:473 network.h:555 network.h:560 network.h:584 network.h:585
-#: network.h:594 network.h:605
+#: network.h:594 network.h:605 network.h:606
 msgid "NONE"
 msgstr ""
 
 #: network.h:554 network.h:637 network.h:643 network.h:667 network.h:669
-#: network.h:672 network.h:681 network.h:692
+#: network.h:672 network.h:681 network.h:692 network.h:698
 msgid ""
 "WLAN started.\n"
 " You can now configure the new interface."
 msgstr ""
 
 #: network.h:556 network.h:639 network.h:645 network.h:669 network.h:671
-#: network.h:674 network.h:683 network.h:694
+#: network.h:674 network.h:683 network.h:694 network.h:700
 msgid ""
 "WLAN not started,\n"
 "Please check your config."
 msgstr ""
 
 #: network.h:576 network.h:659 network.h:665 network.h:689 network.h:692
-#: network.h:696 network.h:705 network.h:716
+#: network.h:696 network.h:705 network.h:716 network.h:722
 msgid "searching..."
 msgstr ""
 
 #: network.h:604 network.h:687 network.h:693 network.h:717 network.h:720
-#: network.h:721 network.h:725 network.h:734 network.h:745
+#: network.h:721 network.h:725 network.h:734 network.h:745 network.h:751
 msgid "WLAN now stopped"
 msgstr ""
 
@@ -6888,7 +6889,7 @@ msgstr ""
 msgid "Blindscan"
 msgstr ""
 
-#: network.h:728 network.h:732 network.h:741 network.h:752
+#: network.h:728 network.h:732 network.h:741 network.h:752 network.h:758
 msgid "WLAN LOG"
 msgstr ""
 
