@@ -20,12 +20,12 @@ struct inetwork* getinetworkfirstwlan()
 
 	while(node != NULL)
 	{
-		if(ostrcmp(device, "ra0") == 0)
+		if(ostrcmp(node->device, "ra0") == 0)
 		{
 			debug(1000, "out");
 			return node;
 		}
-		if(ostrcmp(device, "wlan0") == 0)
+		if(ostrcmp(node->device, "wlan0") == 0)
 		{
 			debug(1000, "out");
 			return node;
