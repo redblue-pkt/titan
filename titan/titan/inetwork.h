@@ -13,6 +13,29 @@ void delinetworkfound()
 	}
 }
 
+struct inetwork* getinetworkfirstwlan()
+{
+	debug(1000, "in");
+	struct inetwork *node = inetwork;
+
+	while(node != NULL)
+	{
+		if(ostrcmp(device, "ra0") == 0)
+		{
+			debug(1000, "out");
+			return node;
+		}
+		if(ostrcmp(device, "wlan0") == 0)
+		{
+			debug(1000, "out");
+			return node;
+		}
+
+		node = node->next;
+	}
+	return NULL;
+}
+
 struct inetwork* getinetworkbydevice(char* device)
 {
 	debug(1000, "in");
