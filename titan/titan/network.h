@@ -588,6 +588,7 @@ void screennetwork_wlan()
 	struct skin* b4 = getscreennode(wlan, "b4");
 	struct skin* b5 = getscreennode(wlan, "b5");
 	struct skin* b6 = getscreennode(wlan, "b6");
+	struct inetwork* net = NULL;
 	struct skin* tmp = NULL, *tmp1 = NULL, *tmp2 = NULL;
 	char* tmpstr = NULL;
 
@@ -684,7 +685,8 @@ void screennetwork_wlan()
 				if(startmode->ret != NULL) addownconfig("wlan", startmode->ret);
 				if(rcret == getrcconfigint("rcok", NULL))
 				{
-					screennetwork_restart(getinetworkfirstwlan());
+					net = getinetworkfirstwlan();
+					if(net != NULL) screennetwork_restart(net);
 					break;
 				}
 			}
