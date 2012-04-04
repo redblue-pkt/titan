@@ -87,5 +87,6 @@ compile "wins3" "wins3" ""
 compile "rgui" "rgui" ""
 compile "dvdplayer" "dvdplay" ""
 compile "scriptexec" "scriptexec" ""
+compile "optimize" "optimize" ""
 
 #rm -r networkbrowser/networkbrowser

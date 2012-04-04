@@ -3,7 +3,7 @@
 
 void screenscriptexec()
 {
-	int rcret = 0, dirrcret = 0;
+	int dirrcret = 0;
 	char* tmpstr = NULL, *startdir = NULL;
 	char* file = NULL, *ret = NULL;
 
@@ -26,7 +26,7 @@ start:
 		if(dirrcret == 1)
 		{
 			tmpstr = ostrcat(file, " &", 0, 0);
-			ret = system(tmpstr);
+			system(tmpstr);
 			free(tmpstr); tmpstr = NULL;
 		}
 
