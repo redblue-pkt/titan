@@ -365,7 +365,10 @@ int delchannel(int serviceid, unsigned long transponderid, int flag)
 			}
 
 			if(flag == 0)
+			{
 				delbouquetbychannel(node->serviceid, node->transponderid);
+				delepgscanlist(node->serviceid, node->transponderid);
+			}
 			else
 				setbouquetchanneltonullmain(node->serviceid, node->transponderid);
 

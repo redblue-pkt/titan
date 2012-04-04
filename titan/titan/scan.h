@@ -432,7 +432,7 @@ void blindscan(struct stimerthread* timernode)
 							if(fenode == NULL )
 							{
 								debug(500, "Frontend for scan not free");
-								deltransponder(99);
+								deltransponderbyid(99);
 								continue;
 							}
 
@@ -449,7 +449,7 @@ void blindscan(struct stimerthread* timernode)
 							else
 							{
 								debug(500, "Frontend type unknown");
-								deltransponder(99);
+								deltransponderbyid(99);
 								continue;
 							}
 
@@ -458,7 +458,7 @@ void blindscan(struct stimerthread* timernode)
 							if(festatus != 0)
 							{
 								debug(500, "tuning failed");
-								deltransponder(99);
+								deltransponderbyid(99);
 								continue;
 							}
 
@@ -468,7 +468,7 @@ void blindscan(struct stimerthread* timernode)
 
 							if(transponderid == 0 || gettransponder(transponderid) != NULL)
 							{
-								deltransponder(99);
+								deltransponderbyid(99);
 								continue;
 							}
 
@@ -479,7 +479,7 @@ void blindscan(struct stimerthread* timernode)
 								status.writetransponder = 1;
 							}
 						}
-						deltransponder(99);
+						deltransponderbyid(99);
 						if(timernode->aktion != START) break;
 					}
 					if(timernode->aktion != START) break;
@@ -971,7 +971,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 		}
 	}
 
-	if(scantype == 0) deltransponder(99);
+	if(scantype == 0) deltransponderbyid(99);
 	if(clear == 1)
 	{
 		if(textbox(_("Message"), _("Does you want delete all unused Bouquets?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
@@ -1398,7 +1398,7 @@ void screenscanconfig(int flag)
 		{
 			struct transponder* tp1 = createtransponder(99, tpnode->fetype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, isystem);
 			copytransponder(tp1, tpnode, 99);
-			deltransponder(99);
+			deltransponderbyid(99);
 			textbox(_("Message"), _("Transponder changed"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 			drawscreen(scan, 0);
 		}

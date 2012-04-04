@@ -43,7 +43,8 @@ struct channel* getchannel(int serviceid, unsigned long transponderid)
 struct channelcache* modifychannelcache(int serviceid, unsigned long transponderid, struct channel* chnode)
 {
 	unsigned int hash; 
-	struct channelcache* node = NULL, *prev = NULL, *newnode = NULL;
+	//struct channelcache* node = NULL, *prev = NULL, *newnode = NULL;
+	struct channelcache* node = NULL, *newnode = NULL;
 
 	hash = (transponderid + serviceid) % CHANNELCACHEMAX;
 	if(hash < 0 || hash >= CHANNELCACHEMAX) hash = 0;
@@ -61,6 +62,7 @@ struct channelcache* modifychannelcache(int serviceid, unsigned long transponder
 	newnode->chnode = chnode;
 
 	node = channelcache[hash];
+/*
 	prev = channelcache[hash];
 	
 	if(node != NULL)
@@ -74,6 +76,9 @@ struct channelcache* modifychannelcache(int serviceid, unsigned long transponder
 	}
 	else
 		channelcache[hash] = newnode;
+*/
+	channelcache[hash] = newnode;
+	newnode->next = node;
 
 	return newnode;
 }

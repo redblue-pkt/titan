@@ -43,7 +43,8 @@ struct transponder* gettransponder(unsigned long transponderid)
 struct transpondercache* modifytranspondercache(unsigned long transponderid, struct transponder* tpnode)
 {
 	unsigned int hash; 
-	struct transpondercache* node = NULL, *prev = NULL, *newnode = NULL;
+	//struct transpondercache* node = NULL, *prev = NULL, *newnode = NULL;
+	struct transpondercache* node = NULL, *newnode = NULL;
 
 	hash = (transponderid) % TRANSPONDERCACHEMAX;
 	if(hash < 0 || hash >= TRANSPONDERCACHEMAX) hash = 0;
@@ -60,6 +61,7 @@ struct transpondercache* modifytranspondercache(unsigned long transponderid, str
 	newnode->tpnode = tpnode;
 
 	node = transpondercache[hash];
+/*
 	prev = transpondercache[hash];
 	
 	if(node != NULL)
@@ -73,6 +75,9 @@ struct transpondercache* modifytranspondercache(unsigned long transponderid, str
 	}
 	else
 		transpondercache[hash] = newnode;
+*/
+	transpondercache[hash] = newnode;
+	newnode->next = node;
 
 	return newnode;
 }

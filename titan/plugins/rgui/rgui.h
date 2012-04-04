@@ -38,6 +38,17 @@ int screenrgui(char* ip)
 
 	//send 0 byte sequenc to server for connect
 	socksend(&sock, buf, 6, 1000 * 1000);
+	usleep(5000);
+	
+	//send rcpower to wakrup remote box
+	tmpstr = (unsigned char*)getrcconfig("rcpower", NULL);
+	if(tmpstr != NULL)
+	{
+		memcpy(buf, tmpstr, strlen((char*)tmpstr));
+		ret = socksend(&sock, buf, 6, 1000 * 1000);
+		free(tmpstr); tmpstr = NULL;
+		memset(buf, 0, 10);
+	}
 
 	while(1)
 	{
@@ -92,6 +103,19 @@ int screenrgui(char* ip)
 				break;
 			}
 
+		}
+	}
+	
+	if(textbox(_("Message"), _("Send remote box into standby ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+	{
+		tmpstr = (unsigned char*)getrcconfig("rcpower", NULL);
+		if(tmpstr != NULL)
+		{
+			memcpy(buf, tmpstr, strlen((char*)tmpstr));
+			ret = socksend(&sock, buf, 6, 1000 * 1000);
+			free(tmpstr); tmpstr = NULL;
+			memset(buf, 0, 10);
+			usleep(5000);
 		}
 	}
 

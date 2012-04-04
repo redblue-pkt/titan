@@ -5,9 +5,9 @@ void changetransponderid(struct transponder* tpnode, unsigned long transponderid
 {
 	if(tpnode == NULL) return;
 	
-	//deltranspondercache(tpnode->id, tpnode);
+	deltranspondercache(tpnode->id, tpnode);
 	tpnode->id = transponderid;
-	//modifytranspondercache(tpnode->id, tpnode);
+	modifytranspondercache(tpnode->id, tpnode);
 }
 
 void deltranspondertunablestatus()
@@ -563,7 +563,7 @@ struct transponder* addtransponder(char* line, int count, struct transponder* la
 
 	if(newnode->id != 99) status.writetransponder = 1;
 	
-	//modifytranspondercache(newnode->id, newnode);
+	modifytranspondercache(newnode->id, newnode);
 
 	if(last == NULL)
 	{
@@ -757,7 +757,7 @@ int readtransponderencoding(const char* filename)
 	return 0;
 }
 
-void deltransponder(unsigned long transponderid)
+void deltransponder(struct transponder* tpnode)
 {
 	debug(1000, "in");
 	struct dvbdev* dvbnode = dvbdev;
@@ -765,9 +765,9 @@ void deltransponder(unsigned long transponderid)
 
 	while(node != NULL)
 	{
-		if(node->id == transponderid)
+		if(node == tpnode)
 		{
-			if(transponderid != 99) status.writetransponder = 1;
+			if(node->id != 99) status.writetransponder = 1;
 			if(node == transponder)
 				transponder = node->next;
 			else
@@ -786,8 +786,8 @@ void deltransponder(unsigned long transponderid)
 				dvbnode = dvbnode->next;
 			}
 
-			if(transponderid != 99) delchannelbytransponder(node->id);
-			//deltranspondercache(node->id, NULL);
+			if(node->id != 99) delchannelbytransponder(node->id);
+			deltranspondercache(node->id, NULL);
 
 			free(node);
 			node = NULL;
@@ -800,6 +800,24 @@ void deltransponder(unsigned long transponderid)
 	debug(1000, "out");
 }
 
+void deltransponderbyid(unsigned long transponderid)
+{
+	struct transponder *node = transponder;
+	struct transponder *prev = NULL;
+
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+		if(node->id == transponderid)
+		{
+			deltransponder(prev);
+			break;
+		}
+	}
+}
+
+/*
 struct transponder* gettransponder(unsigned long transponderid)
 {
 	//debug(1000, "in");
@@ -818,6 +836,7 @@ struct transponder* gettransponder(unsigned long transponderid)
 	debug(100, "transponder not found (%lu)", transponderid);
 	return NULL;
 }
+*/
 
 void deltransponderbyorbitalpos(int orbitalpos)
 {
@@ -829,7 +848,7 @@ void deltransponderbyorbitalpos(int orbitalpos)
 		prev = node;
 		node = node->next;
 		if(prev != NULL && prev->orbitalpos == orbitalpos)
-			deltransponder(prev->id);
+			deltransponder(prev);
 	}
 	//debug(1000, "out");
 }
@@ -844,7 +863,7 @@ void freetransponder()
 		prev = node;
 		node = node->next;
 		if(prev != NULL)
-			deltransponder(prev->id);
+			deltransponder(prev);
 	}
 	debug(1000, "out");
 }
