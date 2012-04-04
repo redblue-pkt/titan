@@ -394,7 +394,8 @@ msgstr ""
 #: ipkg.h:363 scan.h:956 scan.h:966 scan.h:977 scan.h:1119 scan.h:1191
 #: scan.h:1402 play.h:718 dvdplay.h:51 service.h:573 service.h:814
 #: service.h:574 service.h:815 play.h:721 videomode.h:60 dvdplay.h:53
-#: dvdplay.h:60 network.h:698 network.h:700 network.h:751
+#: dvdplay.h:60 network.h:698 network.h:700 network.h:751 rgui.h:109
+#: rgui.h:130
 msgid "Message"
 msgstr ""
 
@@ -481,6 +482,7 @@ msgstr ""
 #: service.h:814 skin_default_skin.xml.h:294 service.h:574 service.h:815
 #: play.h:590 play.h:596 play.h:604 play.h:721 videomode.h:60 dvdplay.h:53
 #: dvdplay.h:60 network.h:698 network.h:700 network.h:751 network.h:758
+#: rgui.h:109 rgui.h:130 scriptexec.h:34
 msgid "OK"
 msgstr ""
 
@@ -565,7 +567,7 @@ msgstr ""
 #: dvdplay.h:51 service.h:573 service.h:814 skin_default_skin.xml.h:193
 #: service.h:574 service.h:815 play.h:590 play.h:596 play.h:604 play.h:721
 #: videomode.h:60 dvdplay.h:53 dvdplay.h:60 network.h:698 network.h:700
-#: network.h:751 network.h:758
+#: network.h:751 network.h:758 rgui.h:109 rgui.h:130 scriptexec.h:34
 msgid "EXIT"
 msgstr ""
 
@@ -1248,7 +1250,8 @@ msgstr ""
 #: plugins_rgui_skin.xml.h:9 skins_rgui_skin.xml.h:9
 #: skin_default_skin.xml.h:485 skin_default_skin.xml.h:487
 #: skin_default_skin.xml.h:497 skin_default_skin.xml.h:498
-#: skin_default_skin.xml.h:499
+#: skin_default_skin.xml.h:499 plugins_optimize_skin.xml.h:4
+#: skins_optimize_skin.xml.h:4
 msgid ""
 msgstr ""
 
@@ -3189,6 +3192,7 @@ msgid "Sat: "
 msgstr ""
 
 #: scan.h:735 scan.h:824 scan.h:844 scan.h:869 scan.h:892 scan.h:888
+#: optimize.h:265
 msgid "Transponder: "
 msgstr ""
 
@@ -6925,7 +6929,7 @@ msgstr ""
 msgid "Can't connect to server !"
 msgstr ""
 
-#: rgui.h:84 rgui.h:87 rgui.h:106
+#: rgui.h:84 rgui.h:87 rgui.h:106 rgui.h:130
 msgid "Connection to server lost !"
 msgstr ""
 
@@ -7001,14 +7005,16 @@ msgid "Step signalrate"
 msgstr ""
 
 #: skin_default_skin.xml.h:438 skin_default_skin.xml.h:439
-#: skin_default_skin.xml.h:440
+#: skin_default_skin.xml.h:440 plugins_optimize_skin.xml.h:2
+#: skins_optimize_skin.xml.h:2
 msgid ""
 "text=EXIT halign=center valign=middle bordercol=exitcol bordersize=4 "
 "bordertype=2 posx=180 posy=0 width=150 height=30/>"
 msgstr ""
 
 #: skin_default_skin.xml.h:440 skin_default_skin.xml.h:441
-#: skin_default_skin.xml.h:442
+#: skin_default_skin.xml.h:442 plugins_optimize_skin.xml.h:3
+#: skins_optimize_skin.xml.h:3
 msgid ""
 "text=OK halign=center valign=middle bordercol=okcol bordersize=4 "
 "bordertype=2 posx=20 posy=0 width=150 height=30/>"
@@ -7024,4 +7030,56 @@ msgstr ""
 
 #: skin_default_skin.xml.h:386
 msgid "SEARCH"
+msgstr ""
+
+#: optimize.h:246
+msgid "hold"
+msgstr ""
+
+#: optimize.h:247
+msgid "delete"
+msgstr ""
+
+#: optimize.h:257
+msgid "SatCount: "
+msgstr ""
+
+#: optimize.h:273
+msgid "ChannelCount: "
+msgstr ""
+
+#: optimize.h:281
+msgid "BouquetCount: "
+msgstr ""
+
+#: optimize.h:289
+msgid "BouquetEntrys: "
+msgstr ""
+
+#: optimize.h:297
+msgid "EpgChannels: "
+msgstr ""
+
+#: optimize.h:305
+msgid "ProviderCount: "
+msgstr ""
+
+#: plugins_optimize_skin.xml.h:1 skins_optimize_skin.xml.h:1
+msgid "Optimize"
+msgstr ""
+
+#: rgui.h:109
+msgid "Send remote box into standby ?"
+msgstr ""
+
+#: scriptexec.h:15
+msgid "BG-RUN"
+msgstr ""
+
+#: scriptexec.h:33
+msgid "Script has no output or started in background."
+msgstr ""
+
+#: scriptexec.h:34
+msgid "Script execute"
 msgstr ""
