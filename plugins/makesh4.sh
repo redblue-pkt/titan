@@ -86,5 +86,6 @@ compile "tithek" "tithek" ""
 compile "wins3" "wins3" ""
 compile "rgui" "rgui" ""
 compile "dvdplayer" "dvdplay" ""
+compile "scriptexec" "scriptexec" ""
 
 #rm -r networkbrowser/networkbrowser

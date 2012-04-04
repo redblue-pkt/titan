@@ -1835,7 +1835,7 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 {
 	debug(1000, "in");
 	unsigned char *buf = NULL, *scalebuf = NULL;
-	int memfd = -1, py = 0;
+	int memfd = -1, py = 0, pyh = 0, px = 0, pxw = 0, diff = 0;
 	unsigned long width, height, rowbytes;
 	int channels, length;
 	unsigned char *src, red, green, blue, alpha;
@@ -1917,41 +1917,41 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 
 	if(pictype == 0)
 	{
-/*
 		py = (posy * skinfb->width) + posx;
+		pyh = py + (height * skinfb->width);
 		src = buf;
-		int diff = rowbytes - (width * 4);
+		diff = rowbytes - (width * 4);
 
-		if(channel == 3)
+		if(channels == 3)
 		{
-			for(y = 0; y < height; ++y)
+			for(y = py; y < pyh; y += skinfb->width)
 			{
-				for(x = 0; x < width; x++)
-					skinfb->fblong[py + x] = (255 << 24) | (*src++ << 16) | (*src++ << 8) | *src++;
+				pxw = y + width;
+				for(x = y; x < pxw; x++)
+					skinfb->fblong[x] = (255 << 24) | (*src++ << 16) | (*src++ << 8) | *src++;
 
-				py += skinfb->width;
 				src += diff;
 			}
 		}
 		else
 		{
-			for(y = 0; y < height; ++y)
+			for(y = py; y < pyh; y += skinfb->width)
 			{
-				for(x = 0; x < width; x++)
+				pxw = y + width;
+				for(x = y; x < pxw; x++)
 				{
 					if(src[3] < 10)
 					{
 						src += 4;
 						continue;
 					}
-					skinfb->fblong[py + x] = (*src++ << 24) | (*src++ << 16) | (*src++ << 8) | *src++;
+					skinfb->fblong[x] = (src[3] << 24) | (src[0] << 16) | (src[1] << 8) | src[2];
+					src += 4;
 				}
-				py += skinfb->width;
 				src += diff;
 			}
 		}
-*/
-
+/*
 		for (y = 0; y < height; ++y)
 		{
 			py = (posy + y) * skinfb->width;
@@ -1972,8 +1972,7 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 				drawpixelfast(posx + x, py, color);
 			}
 		}
-
-
+*/
 	}
 	else if(pictype == 1 && memfd > -1)
 		blitjpg(buf, posx, posy, width, height, scalewidth, scaleheight );
@@ -3088,7 +3087,7 @@ void drawnode(struct skin* node, int flag)
 		}
 	}
 
-	if(flag == 0 && node->bgcol != -2)
+	if(flag == 0 && node->bgcol == -1)
 	{
 		if(node->child != NULL && status.picbordersize > 0)
 		{

@@ -38,7 +38,29 @@ void rguidgotdata(struct stimerthread* timernode, int* connfd)
 		{
 			keycode = atoi((char*)buf);
 			debug(250, "got keycode %d\n", keycode);
+			
+			if(status.standby == 0 && keycode == getrcconfigint("rcpower", NULL))
+			{
+				int i = 0;
+				
+				//leave all menüs and screens
+				for(i = 0; i < 10; i++)
+				{
+					writerc(getrcconfigint("rcexit", NULL));
+					usleep(5000);
+				}
+				
+				//send box into standby
+				int tmpaktion = getconfigint("poweraktion", NULL);
+				addconfigint("poweraktion", 2);
+				writerc(getrcconfigint("rcpower", NULL));
+				usleep(500000);
+				addconfigint("poweraktion", tmpaktion);
+				continue;
+			}
+			
 			writerc(keycode);
+				
 			memset(buf, 0, 6);
 		}
 	}
