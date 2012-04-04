@@ -194,10 +194,31 @@ struct service* getrecordbyname(char* recname, int type);
 int recordskipplay(struct service* servicenode, int sekunden);
 void recordffrwts(struct service* servicenode, int speed);
 
+//dvdplayer.h
+int dvdstart(char* filename);
+int dvdisplaying();
+void dvdgotmessage();
+int dvdkeypress(int key);
+int dvdmenuopen();
+void dvdchangevideo();
+void dvdafterend();
+
 // play.h
 void playerffts(int speed);
 void screenplay(char* startfile, int startfolder, int flag);
 void playrcstop(int playertype, int flag);
+void playwritevfd(char* file);
+void playstartservice();
+void screenplayinfobar(char* file, int mode, int playertype, int flag);
+void playrcgreen(char* file, int playinfobarstatus, int playertype, int flag);
+void playrcred(char* file, int playinfobarstatus, int playertype, int flag);
+void playrcinfo(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
+void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
+void playrcfr(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
+void playrcpause(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
+void playrcplay(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
+void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
+void playrcjumpf(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
 
 //inetwork.h
 struct inetwork* getinetworkbydevice(char* device);
@@ -217,6 +238,7 @@ void deltimer(struct stimerthread *tnode);
 //epgscanlist.h
 struct epgscanlist* getepgscanlist(int serviceid, unsigned long transponderid);
 int writeepgscanlist(const char *filename);
+int delepgscanlist(int serviceid, unsigned long transponderid);
 
 //rectimer.h
 int writerectimer(const char *filename, int flag);
@@ -454,6 +476,7 @@ void checkserial(char* input);
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
+char* getrcconfig(char *key, char *ext);
 
 //service.h
 struct service* getservicebyservice(struct service* node, int flag);

@@ -1835,11 +1835,11 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 {
 	debug(1000, "in");
 	unsigned char *buf = NULL, *scalebuf = NULL;
-	int memfd = -1, py = 0, pyh = 0, px = 0, pxw = 0, diff = 0;
+	int memfd = -1, py = 0, pyh = 0, pxw = 0, diff = 0; //px = 0
 	unsigned long width, height, rowbytes;
 	int channels, length;
-	unsigned char *src, red, green, blue, alpha;
-	unsigned long color;
+	unsigned char *src; // red, green, blue, alpha;
+	//unsigned long color;
 	png_uint_32 y, x;
 	struct pic* picnode = NULL;
 	int decoding = getconfigint("pichwdecode", NULL);
@@ -1928,7 +1928,7 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 			{
 				pxw = y + width;
 				for(x = y; x < pxw; x++)
-					skinfb->fblong[x] = (255 << 24) | (*src++ << 16) | (*src++ << 8) | *src++;
+					skinfb->fblong[x] = (255 << 24) | (src[0] << 16) | (src[1] << 8) | src[2];
 
 				src += diff;
 			}

@@ -346,7 +346,7 @@ void blitfb2(struct fb* fbnode, int flag)
 		m_unlock(&status.accelfbmutex, 16);
 	}
 
-	int mode3d = 0, leftoffset = 0, rightoffset = 0, topoffset = 0, bottomoffset = 0;
+	int mode3d = 0;
 	char* mode3dstr = NULL;
 
 	if(status.leftoffset != 0) blitrect(0, 0, status.leftoffset, fb->height, 0, 255, 2);
