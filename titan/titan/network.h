@@ -385,17 +385,18 @@ void screennetwork_adapterext(int mode, char* interface)
 	//changemask(broadcast, "000.000.000.000");
 	//changeinput(broadcast, net->broadcast);
 
+	addchoicebox(dhcp, "1", _("enable"));
+	addchoicebox(dhcp, "0", _("disable"));
+
 	if(net->dhcp)
 	{
-		addchoicebox(dhcp, "1", _("enable"));
-		addchoicebox(dhcp, "0", _("disable"));
+		setchoiceboxselection(dhcp, "1");
 		//nethidden(ipaddresse, netmask, gateway, dnsserver1, dnsserver2, broadcast, YES);
 		nethidden(ipaddresse, netmask, gateway, dnsserver1, dnsserver2, YES);
 	}
 	else
 	{
-		addchoicebox(dhcp, "0", _("disable"));
-		addchoicebox(dhcp, "1", _("enable"));
+		setchoiceboxselection(dhcp, "0");
 		//nethidden(ipaddresse, netmask, gateway, dnsserver1, dnsserver2, broadcast, NO);
 		nethidden(ipaddresse, netmask, gateway, dnsserver1, dnsserver2, NO);
 	}
