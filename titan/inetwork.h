@@ -353,7 +353,9 @@ int addinetworkall(struct stimerthread* self)
 			free(cmd); cmd = NULL;
 
 			// DHCP
-			cmd = ostrcat(cmd, "cat /var/etc/network/interfaces | grep dhcp | wc -l", 1, 0);
+			cmd = ostrcat(cmd, "cat /var/etc/network/interfaces | grep ", 1, 0);
+			cmd = ostrcat(cmd, tmp_device, 1, 0);
+			cmd = ostrcat(cmd, " | grep dhcp | wc -l", 1, 0);
 			tmpstr = command(cmd);
 			if(tmpstr != NULL)
 				tmp_dhcp = atoi(tmpstr);
