@@ -529,6 +529,7 @@ struct skin
 	long titlebgcol;
 	long titlebgcol2;
 	long progresscol;
+	char* selectpic;
 	char* pic;
 	int16_t picwidth;
 	int16_t picheight;

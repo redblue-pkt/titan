@@ -23,6 +23,7 @@ void screenskinadjust()
 	addchoicebox(listboxselecttype, "0", _("border"));
 	addchoicebox(listboxselecttype, "1", _("bar"));
 	addchoicebox(listboxselecttype, "2", _("text"));
+	addchoicebox(listboxselecttype, "3", _("picture"));
 	setchoiceboxselection(listboxselecttype, getskinconfig("listboxselecttype", NULL));
 	
 	changeinput(osdtransparent, "0\n5\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60\n65\n70");

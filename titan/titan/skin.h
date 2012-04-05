@@ -1021,6 +1021,9 @@ void freenodecontent(struct skin* node)
 
 	free(node->font);
 	node->font = NULL;
+	
+	free(node->selectpic);
+	node->selectpic = NULL;
 
 	free(node->pic);
 	node->pic = NULL;
@@ -3127,6 +3130,8 @@ void drawnode(struct skin* node, int flag)
 		drawprogressbar(node);
 	if(node->type & MULTIPROGRESSBAR)
 		drawmultiprogressbar(node);
+	if(node->selectpic != NULL && !(node->type & FILELIST))
+		drawpic(node->selectpic, node->iposx, node->iposy, node->rpicwidth, node->rpicheight, node->iwidth, node->iheight, CENTER, MIDDLE);
 	if(node->pic != NULL && !(node->type & FILELIST))
 		drawpic(node->pic, node->iposx, node->iposy, node->rpicwidth, node->rpicheight, node->iwidth, node->iheight, node->halign, node->valign);
 	if(node->input != NULL)
@@ -3266,6 +3271,7 @@ int calclistbox(struct skin* node)
 	struct skin* child = NULL, *last = NULL, *found = NULL;
 	int selcol = convertcol("listboxselect");
 	int markcol = convertcol("markcol");
+	char* selectpic = getskinconfig("selectpic", NULL);
 
 	node->poscount = 0;
 	if(node->aktline == 0) node->aktline = 1;
@@ -3323,6 +3329,12 @@ int calclistbox(struct skin* node)
 			found = child;
 
 		child->bordersize = 0;
+		if(status.listboxselecttype == 3)
+		{
+			changebgpic(child, NULL);
+			if(child->bgcol == markcol)
+				child->bgcol = child->bordercol;
+		}
 		if(child->bgcol == selcol) //&& status.listboxselecttype == 1)
 			child->bgcol = child->bordercol;
 		if(child->fontcol == selcol) //&& status.listboxselecttype == 2)
@@ -3365,6 +3377,14 @@ int calclistbox(struct skin* node)
 				found->fontcol = markcol;
 			else
 				found->fontcol = selcol;
+		}
+		else if(status.listboxselecttype == 3)
+		{
+			changebgpic(found, selectpic);
+			if(found->bgcol != markcol)
+				found->bordercol = found->bgcol;
+			if(status.markmodus > 0)
+				found->bgcol = markcol;
 		}
 
 		if(node->aktpage == -1)
@@ -3972,6 +3992,25 @@ int changepic(struct skin* node, char* text)
 			node->pic = changepicpath(text);
 		else
 			node->pic = text;
+		ret = 0;
+	}
+	debug(1000, "out");
+
+	return ret;
+}
+
+int changeselectpic(struct skin* node, char* text)
+{
+	debug(1000, "in");
+	int ret = 1;
+
+	if(node != NULL)
+	{
+		free(node->selectpic);
+		if(text != NULL)
+			node->selectpic = changepicpath(text);
+		else
+			node->selectpic = text;
 		ret = 0;
 	}
 	debug(1000, "out");
