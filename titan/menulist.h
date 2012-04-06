@@ -184,7 +184,7 @@ struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* 
 					tmppic = ostrcat(skinpath, "/", 0, 0);	
 					tmppic = ostrcat(tmppic, mlist->pic, 1, 0);
 					tmpstr = changepicpath(tmppic);
-					if(!file_exists(tmpstr))
+					if(!file_exist(tmpstr))
 					{
 						free(mlist->pic); mlist->pic = NULL;
 						free(tmppic); tmppic = NULL;
