@@ -1745,7 +1745,7 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 		py = (posy * skinfb->width) + posx;
 		pyh = py + (height * skinfb->width);
 		src = buf;
-		diff = rowbytes - (width * 4);
+		diff = rowbytes - (width * channels);
 
 		if(channels == 3)
 		{
@@ -1753,8 +1753,10 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 			{
 				pxw = y + width;
 				for(x = y; x < pxw; x++)
+				{
 					skinfb->fblong[x] = (255 << 24) | (src[0] << 16) | (src[1] << 8) | src[2];
-
+					src += 3;
+				}
 				src += diff;
 			}
 		}
