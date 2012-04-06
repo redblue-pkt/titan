@@ -17,10 +17,8 @@
 #include <linux/fb.h>
 #include <sys/ioctl.h>
 #include <sys/mman.h>
-#include <bpamem.h>
 #include <png.h>
 #include <jpeglib.h>
-#include <libmmeimage.h>
 #include <libintl.h>
 #include <locale.h>
 #include <math.h>
@@ -55,9 +53,11 @@
 #include <poll.h>
 #include <sys/utsname.h>
 
-#ifndef SIMULATE
-#include <linux/stmfb.h>
-#endif
+#define IPKG_LIB
+#include "libipkg/config.h"
+#include "libipkg/libipkg.h"
+#include "libipkg/args.h"
+#include "libipkg/ipkg_cmd.h"
 
 //for freetype
 #include <ft2build.h>

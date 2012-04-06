@@ -201,12 +201,13 @@ else
 	eplayerlib=gstreamer-0.10
 fi
 
-"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -DCAMSUPP -D$eplayer -DDVDPLAYER -Os -export-dynamic -Wall \
+"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -DSH4 -DCAMSUPP -D$eplayer -DDVDPLAYER -Os -export-dynamic -Wall \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/include/freetype2 \
 	-I $eplayerinclude \
 	-I "$HOME"/flashimg/source.titan/libdreamdvd \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/driver/bpamem \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/apps/misc/tools/libmmeimage \
+	-I "$HOME"/flashimg/source.titan \
 	-c titan.c
 	
 "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -Os -export-dynamic -lpthread -ldl -lpng -lfreetype -l$eplayerlib -ldreamdvd -ljpeg -lmmeimage -lmme_host -lipkg -Wall \

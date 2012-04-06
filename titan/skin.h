@@ -1335,189 +1335,11 @@ unsigned char* scale(unsigned char* buf, int width, int height, int channels, in
 	return newbuf;
 }
 
-int readjpg(const char* filename, unsigned long* width, unsigned long* height, unsigned long* rowbytes, int* channels, unsigned char **mem, int *memfd)
-{
-#ifndef SIMULATE
-	FILE *fp;
-	unsigned int temp1, temp2;
-
-	if(filename == NULL) return -1;
-
-	debug(200, "hardware decode picture (%s)...", filename);
-
-	if (!(fp = fopen(filename, "rb")))
-		return -1;
-	 
-	if(get_jpeg_img_size(fp, &temp1, &temp2) != LIBMMEIMG_SUCCESS)
-		return -1;
-	
-	*width = temp1;
-	*height = temp2;
-	*channels = 3;
-	*rowbytes = *channels * temp1;
-	
-	if(allocbpamem(temp1 * temp2 * (*channels), memfd, mem) != 0)
-	{
-		fclose(fp);
-		return -1;
-	}
-		
-	if(decode_jpeg_noalloc(fp, temp1, temp2, temp1, temp2, (char *)*mem, 1) == LIBMMEIMG_SUCCESS)
-	{
-		fclose(fp);
-		return 0;
-	}
-	
-	fclose(fp);
-	freebpamem(*memfd, *mem, temp1 * temp2 * (*channels));
-	err("hardware decode error");
-#endif
-	return -1;
-}
-
 struct jpgerror
 {
         struct jpeg_error_mgr jerr;
         jmp_buf setjmpbuf;
 };
-
-//flag 0: blit from accelfb to skinfb
-//flag 1: blit from skinfb to accelfb
-void blitscale(int posx, int posy, int width, int height, int scalewidth, int scaleheight, int flag)
-{
-#ifndef SIMULATE
-	STMFBIO_BLT_DATA  blt_data;
-	memset(&blt_data, 0, sizeof(STMFBIO_BLT_DATA));
-
-	if(scalewidth == 0) scalewidth = width;
-	if(scaleheight == 0) scaleheight = height;
-
-	if(posx < 0) posx = 0;
-	if(posx > skinfb->width) posx = skinfb->width;
-	if(posy < 0) posy = 0;
-	if(posy > skinfb->height) posy = skinfb->height;
-	if(posx + scalewidth > skinfb->width) scalewidth = skinfb->width - posx;
-	if(posy + scaleheight > skinfb->height) scaleheight = skinfb->height - posy;
-	
-	if(width <= 0 || height <= 0 || scalewidth <= 0 || scaleheight <= 0) return;
-	
-	if(flag == 1 && (scalewidth * scaleheight * 4) > accelfb->varfbsize)
-	{
-		err("accelfb to small %d -> %lu ", scalewidth * scaleheight * 4, accelfb->varfbsize);
-		return;
-	}
-
-	blt_data.operation  = BLT_OP_COPY;
-	
-	if(flag == 0)
-	{
-		if(status.usedirectfb == 1)
-			blt_data.srcOffset  = fb->varfbsize;
-		else
-			blt_data.srcOffset  = fb->varfbsize + skinfb->varfbsize;
-	}
-	else
-	{
-		if(status.usedirectfb == 1)
-			blt_data.srcOffset  = 0;
-		else
-			blt_data.srcOffset  = fb->varfbsize;
-	}
-	
-	blt_data.srcPitch   = width * 4;
-	blt_data.src_top    = 0;
-	blt_data.src_left   = 0;
-	blt_data.src_right  = width;
-	blt_data.src_bottom = height;
-	blt_data.srcFormat  = SURF_ARGB8888;
-	blt_data.srcMemBase = STMFBGP_FRAMEBUFFER;
-	
-	if(flag == 0)
-	{
-		if(status.usedirectfb == 1)
-		{
-			blt_data.dstOffset  = 0;
-			blt_data.dstPitch   = fb->pitch;
-		}
-		else
-		{
-			blt_data.dstOffset  = fb->varfbsize;
-			blt_data.dstPitch   = skinfb->pitch;
-		}
-	}
-	else
-	{
-		if(status.usedirectfb == 1)
-		{
-			blt_data.dstOffset  = fb->varfbsize;
-			blt_data.dstPitch   = skinfb->pitch;
-		}
-		else
-		{
-			blt_data.dstOffset  = fb->varfbsize + skinfb->varfbsize;
-			blt_data.dstPitch   = scalewidth * 4;
-		}
-	}
-	
-	blt_data.dst_left   = posx;
-	blt_data.dst_top    = posy;
-	blt_data.dst_right  = posx + scalewidth;
-	blt_data.dst_bottom = posy + scaleheight;
-	blt_data.dstFormat  = SURF_ARGB8888;
-	blt_data.dstMemBase = STMFBGP_FRAMEBUFFER;
-	
-	if (ioctl(fb->fd, STMFBIO_BLT, &blt_data) < 0)
-	{
-		perr("ioctl STMFBIO_BLT");
-	}
-	if(ioctl(fb->fd, STMFBIO_SYNC_BLITTER) < 0)
-	{
-		perr("ioctl STMFBIO_SYNC_BLITTER");
-	}
-#endif
-}
-
-void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int scalewidth, int scaleheight)
-{
-#ifndef SIMULATE
-	STMFBIO_BLT_EXTERN_DATA blt_data;
-	memset(&blt_data, 0, sizeof(STMFBIO_BLT_EXTERN_DATA));
-
-	blt_data.operation  = BLT_OP_COPY;
-	blt_data.ulFlags    = 0;
-	blt_data.srcOffset  = 0;
-	blt_data.srcPitch   = width * 3;
-	blt_data.dstOffset  = 0;
-	blt_data.dstPitch   = skinfb->pitch;
-	blt_data.src_top    = 0;
-	blt_data.src_left   = 0;
-	blt_data.src_right  = width;
-	blt_data.src_bottom = height;
-	blt_data.dst_left   = posx;
-	blt_data.dst_top    = posy;
-	
-	if(scalewidth == 0)  scalewidth = width;
-	if(scaleheight == 0) scaleheight = height;
-	
-	blt_data.dst_right  = posx + scalewidth;
-	blt_data.dst_bottom = posy + scaleheight;
-	blt_data.srcFormat  = SURF_BGR888;
-	blt_data.dstFormat  = SURF_ARGB8888;
-	blt_data.srcMemBase = (char *)buf;
-	blt_data.dstMemBase = (char *)skinfb->fb;
-	blt_data.srcMemSize = width * height * 3;
-	blt_data.dstMemSize = skinfb->pitch * skinfb->height;
-	
-	if(ioctl(skinfb->fd, STMFBIO_BLT_EXTERN, &blt_data) < 0)
-	{
-		err("ioctl STMFBIO_BLT_EXTERN");
-	}
-	if(ioctl(fb->fd, STMFBIO_SYNC_BLITTER) < 0)
-	{
-		perr("ioctl STMFBIO_SYNC_BLITTER");
-	}
-#endif
-}
 
 void jpgswerror(j_common_ptr cinfo)
 {
@@ -2519,9 +2341,6 @@ void lcd_drawrect(int posx, int posy, int width, int height, long color, int tra
 }
 //*************** GOST LCD
 
-
-#ifndef SIMULATE
-
 /*
 void fillrect(int posx, int posy, int width, int height, long color, int transparent)
 {
@@ -2552,77 +2371,6 @@ void drawrect(int posx, int posy, int width, int height, long color, int transpa
 }
 */
 
-//mode 0: with fill (draw to skinfb)
-//mode 1: without fill (draw to skinfb)
-//mode 2: with fill (draw to fb)
-//mode 3: without fill (draw to fb)
-void blitrect(int posx, int posy, int width, int height, long color, int transparent, int mode)
-{
-	unsigned long tmpcol;
-
-	transparent = (transparent - 255) * -1;
-	tmpcol = color | ((transparent & 0xff) << 24);
-
-	STMFBIO_BLT_DATA  bltData;
-	memset(&bltData, 0, sizeof(STMFBIO_BLT_DATA));
-
-	if(posx < 0) posx = 0;
-	if(posy < 0) posy = 0;
-	if(mode < 2)
-	{
-		if(posx > skinfb->width) posx = skinfb->width;
-		if(posy > skinfb->height) posy = skinfb->height;
-		if(posx + width > skinfb->width) width = skinfb->width - posx;
-		if(posy + height > skinfb->height) height = skinfb->height - posy;
-	}
-	else
-	{
-		if(posx > fb->width) posx = fb->width;
-		if(posy > fb->height) posy = fb->height;
-		if(posx + width > fb->width) width = fb->width - posx;
-		if(posy + height > fb->height) height = fb->height - posy;
-	}
-
-	if(width <= 0 || height <= 0) return;
-
-	if(mode == 0 || mode == 2)
-		bltData.operation  = BLT_OP_FILL;
-	else if(mode == 1 || mode == 3)
-		bltData.operation  = BLT_OP_DRAW_RECTANGLE;
-	bltData.colour     = tmpcol;
-	bltData.srcFormat  = SURF_ARGB8888;
-	bltData.srcMemBase = STMFBGP_FRAMEBUFFER;
-
-	if(status.usedirectfb == 1)
-		bltData.dstOffset  = 0;
-	else
-	{
-		if(mode < 2)
-			bltData.dstOffset  = fb->varfbsize;
-		else
-			bltData.dstOffset  = 0;
-	}
-	if(mode < 2)
-		bltData.dstPitch   = skinfb->pitch;
-	else
-		bltData.dstPitch   = fb->pitch;
-	bltData.dst_top    = posy;
-	bltData.dst_left   = posx;
-	bltData.dst_bottom = posy + height;
-	bltData.dst_right  = posx + width;
-	bltData.dstFormat  = SURF_ARGB8888;
-	bltData.dstMemBase = STMFBGP_FRAMEBUFFER;
-
-	if(ioctl(fb->fd, STMFBIO_BLT, &bltData) < 0)
-	{
-		perr("ioctl STMFBIO_BLT");
-	}
-	if(ioctl(fb->fd, STMFBIO_SYNC_BLITTER) < 0)
-	{
-		perr("ioctl STMFBIO_SYNC_BLITTER");
-	}
-}
-
 void fillrect(int posx, int posy, int width, int height, long color, int transparent)
 {
 	if(skinfb != lcdskinfb)
@@ -2638,45 +2386,6 @@ void drawrect(int posx, int posy, int width, int height, long color, int transpa
 	else
 		lcd_drawrect(posx, posy, width, height, color, transparent);
 }
-#else
-void fillrect(int posx, int posy, int width, int height, long color, int transparent)
-{
-	debug(1000, "in");
-	int y, x;
-	unsigned long tmpcol;
-	
-	if(posx < 0) posx = 0;
-	if(posx > skinfb->width) posx = skinfb->width;
-	if(posy < 0) posy = 0;
-	if(posy > skinfb->height) posy = skinfb->height;
-	if(posx + width > skinfb->width) width = skinfb->width - posx;
-	if(posy + height > skinfb->height) height = skinfb->height - posy;
-
-	if(width <= 0 || height <= 0) return;
-
-	transparent = (transparent - 255) * -1;
-	tmpcol = color | ((transparent & 0xff) << 24);
-
-	for(y = 0; y < height; y++)
-	{
-		for(x = 0; x < width; x++)
-		{
-			drawpixel(posx + x, posy + y, tmpcol);
-		}
-	}
-	debug(1000, "out");
-}
-
-void drawrect(int posx, int posy, int width, int height, long color, int transparent)
-{
-	debug(1000, "in");
-	fillrect(posx, posy, width, 1, color, transparent);
-	fillrect(posx, posy + height - 1, width, 1, color, transparent);
-	fillrect(posx, posy, 1, height, color, transparent);
-	fillrect(posx + width - 1, posy, 1, height, color, transparent);
-	debug(1000, "out");
-}
-#endif
 
 void clearrect(int posx, int posy, int width, int height)
 {

@@ -42,6 +42,18 @@ struct queue* queue = NULL;
 struct caservice caservice[MAXCASERVICE];
 struct channelhistory channelhistory[MAXCHANNELHISTORY];
 
+#ifdef SH4
+#include "sh4port.h"
+#endif
+
+#ifdef MIPSEL
+#include "mipselport.h"
+#endif
+
+#ifdef I386
+#include "i386port.h"
+#endif
+
 #include "ipkg.h"
 #include "queue.h"
 #include "channelcache.h"
@@ -480,6 +492,7 @@ int main(int argc, char *argv[])
 	if(fb == NULL)
 		return 100;
 	clearfball();
+	enablemanualblit();
 
 	tmpstr = getconfig("fb1dev", NULL);
 	if(tmpstr != NULL)
