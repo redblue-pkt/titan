@@ -445,6 +445,45 @@ char* get_ipk_section()
 	return sectionlist;
 }
 
+struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, int showpng, int flag)
+{
+	struct menulist* mlist = NULL, *mbox = NULL;
+	struct ipkg* node = ipkg;
+	char* tmpstr = NULL, *tmpinfo = NULL;
+	
+	if(ipkg_list_installed() != 0) return NULL;
+	
+	while(node != NULL)
+	{
+		tmpstr = ostrcat(tmpstr, node->showname, 1, 0);
+		tmpstr = ostrcat(tmpstr, " v.", 1, 0);
+		tmpstr = ostrcat(tmpstr, node->version, 1, 0);
+
+		tmpinfo = ostrcat(tmpinfo, "\nSection: ", 1, 0);
+		tmpinfo = ostrcat(tmpinfo, node->section, 1, 0);
+		tmpinfo = ostrcat(tmpinfo, "\nDescription:\n", 1, 0);
+		if(node->desc != NULL)
+			tmpinfo = ostrcat(tmpinfo, node->desc, 1, 0);
+		else
+			tmpinfo = ostrcat(tmpinfo, _("no description found"), 1, 0);				
+
+		addmenulist(&mlist, tmpstr, tmpinfo, NULL, 0, 0);
+		free(tmpstr); tmpstr = NULL;
+		free(tmpinfo); tmpinfo = NULL;
+		
+		node = node->next;
+	}
+	char* name;
+	char* desc;
+	char* version;
+	char* section;
+	char* showname;
+	addmenulist(&mlist, "Aspect Settings", NULL, NULL, 0, 0);
+
+	freeipkg();
+	return menulistbox(mlist, paramskinname, skintitle, paramskinpath, showpng, 0);
+}
+
 char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, char* skinpath, int showpng)
 {
 	debug(1000, "in");
