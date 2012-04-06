@@ -404,7 +404,6 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 	struct mainplaylist* mplaylist = NULL;
 	struct playlist* playlistnode = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;
-	char* tmpstr = NULL;
 	char* title = NULL;
 	int count = 0;
 
