@@ -396,10 +396,11 @@ msgstr ""
 #: service.h:574 service.h:815 play.h:721 videomode.h:60 dvdplay.h:53
 #: dvdplay.h:60 network.h:698 network.h:700 network.h:751 rgui.h:109
 #: rgui.h:130 network.h:424 network.h:699 network.h:701 network.h:752
+#: mc_global.h:580 mc_global.h:824 record.h:1019 stream.h:32 videomode.h:61
 msgid "Message"
 msgstr ""
 
-#: avsettings.h:199 videomode.h:53 videomode.h:60
+#: avsettings.h:199 videomode.h:53 videomode.h:60 videomode.h:61
 msgid "Is this Videomode ok ?"
 msgstr ""
 
@@ -483,7 +484,8 @@ msgstr ""
 #: play.h:590 play.h:596 play.h:604 play.h:721 videomode.h:60 dvdplay.h:53
 #: dvdplay.h:60 network.h:698 network.h:700 network.h:751 network.h:758
 #: rgui.h:109 rgui.h:130 scriptexec.h:34 network.h:424 network.h:699
-#: network.h:701 network.h:759
+#: network.h:701 network.h:759 mc_global.h:580 mc_global.h:824 stream.h:32
+#: videomode.h:61
 msgid "OK"
 msgstr ""
 
@@ -569,7 +571,8 @@ msgstr ""
 #: service.h:574 service.h:815 play.h:590 play.h:596 play.h:604 play.h:721
 #: videomode.h:60 dvdplay.h:53 dvdplay.h:60 network.h:698 network.h:700
 #: network.h:751 network.h:758 rgui.h:109 rgui.h:130 scriptexec.h:34
-#: network.h:424 network.h:699 network.h:701 network.h:759
+#: network.h:424 network.h:699 network.h:701 network.h:759 mc_global.h:580
+#: mc_global.h:824 record.h:1019 stream.h:32 videomode.h:61
 msgid "EXIT"
 msgstr ""
 
@@ -1110,7 +1113,7 @@ msgstr ""
 msgid "check your Secret Feed !"
 msgstr ""
 
-#: ipkg.h:701 ipkg.h:702
+#: ipkg.h:701 ipkg.h:702 ipkg.h:467 ipkg.h:733
 msgid "no description found"
 msgstr ""
 
@@ -1183,7 +1186,7 @@ msgstr ""
 
 #: mc_audioplayer.h:300 mc_global.h:79 mc_global.h:509 mc_global.h:741
 #: mc_global.h:755 mc_pictureplayer.h:268 mc_videoplayer.h:348
-#: mc_videoplayer.h:353
+#: mc_videoplayer.h:353 mc_global.h:507 mc_global.h:739 mc_global.h:753
 msgid "Playlist-Mode"
 msgstr ""
 
@@ -1192,7 +1195,7 @@ msgstr ""
 #: mc_pictureplayer.h:381 mc_videoplayer.h:388 mc_videoplayer.h:487 play.h:669
 #: play.h:675 mc_videoplayer.h:489 mc_videoplayer.h:393 mc_videoplayer.h:494
 #: play.h:681 play.h:711 play.h:718 dvdplay.h:51 play.h:721 dvdplay.h:53
-#: dvdplay.h:60
+#: dvdplay.h:60 mc_global.h:580 mc_global.h:824
 msgid "Can't start playback !"
 msgstr ""
 
@@ -3015,15 +3018,15 @@ msgid "Timer Record start !\n"
 msgstr ""
 
 #: record.h:892 record.h:929 record.h:898 record.h:935 record.h:925
-#: record.h:962 record.h:928 record.h:965
+#: record.h:962 record.h:928 record.h:965 record.h:970
 msgid "stop"
 msgstr ""
 
-#: record.h:933 record.h:939 record.h:966 record.h:969
+#: record.h:933 record.h:939 record.h:966 record.h:969 record.h:978
 msgid "change"
 msgstr ""
 
-#: record.h:969 record.h:975 record.h:1002 record.h:1005
+#: record.h:969 record.h:975 record.h:1002 record.h:1005 record.h:1019
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr ""
 
@@ -6569,7 +6572,7 @@ msgstr ""
 msgid "BOOT"
 msgstr ""
 
-#: stream.h:26
+#: stream.h:26 stream.h:32
 msgid "No Live Stream running"
 msgstr ""
 
@@ -7086,4 +7089,8 @@ msgstr ""
 
 #: scriptexec.h:34
 msgid "Script execute"
+msgstr ""
+
+#: skinadjust.h:26
+msgid "picture"
 msgstr ""
