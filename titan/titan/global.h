@@ -2639,49 +2639,6 @@ int insertchar(char** text, char zeichen, int pos)
 	return pos + 1;
 }
 
-void sighandler(int sig, struct sigcontext ctx)
-{
-	debug(1000, "in");
-	switch(sig)
-	{
-		case SIGUSR1:
-		{
-			//todo all configs
-			reloadconfig(status.configfile);
-			reloadconfig(getconfig("ownconfig", NULL));
-			break;
-		}
-		case SIGSEGV:
-		case SIGBUS:
-		case SIGABRT:
-		{
-#ifdef SIMULATE
-			//intel
-			debugstack((void *)ctx.eip, NULL);
-			err("got signal %d, fault address 0x%lx from 0x%lx", sig, ctx.cr2, ctx.eip);
-#else
-			/* sh4
-			unsigned long sc_regs[16];
-			unsigned long sc_pc; //programm counter register
-			unsigned long sc_pr; //procedure register
-			unsigned long sc_sr; //status register
-			unsigned long sc_gbr;
-			unsigned long sc_mach;
-			unsigned long sc_macl; */
-
-			debugstack((void *)ctx.sc_pr, (void *)ctx.sc_pc);
-			err("got signal %d, programm counter reg: 0x%lx,  procedure reg: 0x%lx", sig, ctx.sc_pc, ctx.sc_pr);
-#endif
-			if(getconfigint("saverun", NULL) == 1 && status.longjumpbuf != NULL)
-				siglongjmp(status.longjumpbuf, 1);
-			else
-				exit(100);
-			break;
-		}
-	}
-	debug(1000, "out");
-}
-
 void calctext(char* buf, char* buf1, unsigned int* linecount, unsigned int* pagecount, unsigned int* poscount, int pagelen, int page)
 {
 	debug(1000, "in");
