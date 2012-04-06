@@ -403,8 +403,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 	struct skin* tmp = NULL;
 	struct mainplaylist* mplaylist = NULL;
 	struct playlist* playlistnode = NULL;
-
-	char* skinname = NULL;
+	struct menulist* mlist = NULL, *mbox = NULL;
 	char* tmpstr = NULL;
 	char* title = NULL;
 	int count = 0;
@@ -413,17 +412,16 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 	{
 		debug(50, "rcgreenss: playlist menu");
 
-		tmpstr = ostrcat("", "Load Playlist\n", 0, 0);
-		tmpstr = ostrcat(tmpstr, "Edit Playlist\n", 1, 0);
-		skinname = ostrcat("", "playlistmenu", 0, 0);
+		addmenulist(&mlist, "Load Playlist", NULL, 0, 0);
+		addmenulist(&mlist, "Edit Playlist", NULL, 0, 0);
+		
+		mbox = menulistbox(mlist, "playlistmenu", NULL, "%pluginpath%/mc/skin/", 1, 0);
 
-		char* playlistmenu = menulistbox(NULL, tmpstr, skinname, NULL, "%pluginpath%/mc/skin/", 1, 0);
-		free(tmpstr), tmpstr = NULL;
 		drawscreen(apskin, 0);
 
-		if(playlistmenu != NULL)
+		if(mbox != NULL)
 		{
-			if(ostrcmp(playlistmenu, "Load Playlist") == 0){
+			if(ostrcmp(mbox->name, "Load Playlist") == 0){
 //				*count = 0;
 //				*rcwait = 1000;
 	
@@ -593,10 +591,10 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 			}
 			else
 			{
-				free(skinname), skinname = NULL;
 				screenmainplaylist(0);
 				drawscreen(apskin, 0);
 			}
+			freemenulist(mlist);
 		}
 	}
 	else
