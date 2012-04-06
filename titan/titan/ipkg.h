@@ -14,6 +14,7 @@ struct ipkg
 	char* version;
 	char* section;
 	char* showname;
+	int done;
 	struct ipkg* prev;
 	struct ipkg* next;
 };
@@ -204,7 +205,7 @@ int ipkg_packages_list_installed(args_t *args, const char *packages, ipkg_list_c
 	ipkg_cmd_t *cmd;
 	ipkg_conf_t ipkg_conf;
 
-	err = ipkg_conf_init (&ipkg_conf, args);
+	err = ipkg_conf_init(&ipkg_conf, args);
 	if(err)
 	{
 		return err;
@@ -213,7 +214,7 @@ int ipkg_packages_list_installed(args_t *args, const char *packages, ipkg_list_c
 	ipkg_cb_list = cblist;
 	/* we need to do this because of static declarations, 
 	 * maybe a good idea to change */
-	cmd = ipkg_cmd_find ("list_installed");
+	cmd = ipkg_cmd_find("list_installed");
 	if(packages)
 		err = ipkg_cmd_exec(cmd, &ipkg_conf, 1, &packages, userdata);
 	else
@@ -445,32 +446,102 @@ char* get_ipk_section()
 	return sectionlist;
 }
 
-struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, int showpng, int flag)
+int findsectiondone(char* section)
 {
 	struct ipkg* node = ipkg;
-	char* tmpstr = NULL, *tmpinfo = NULL;
 	
-	if(node == NULL) return NULL;
+	if(node == NULL || section == NULL) return 1;
 	
 	while(node != NULL)
 	{
-		tmpstr = ostrcat(tmpstr, node->showname, 1, 0);
-		tmpstr = ostrcat(tmpstr, " v.", 1, 0);
-		tmpstr = ostrcat(tmpstr, node->version, 1, 0);
+		if(node->done == 1 && ostrcmp(section, node->section) == 0)
+			return 1;
+		node = node->next;
+	}
 
-		tmpinfo = ostrcat(tmpinfo, "\nSection: ", 1, 0);
-		tmpinfo = ostrcat(tmpinfo, node->section, 1, 0);
-		tmpinfo = ostrcat(tmpinfo, "\nDescription:\n", 1, 0);
-		if(node->desc != NULL)
-			tmpinfo = ostrcat(tmpinfo, node->desc, 1, 0);
-		else
-			tmpinfo = ostrcat(tmpinfo, _("no description found"), 1, 0);				
+	return 0;
+}
 
-		addmenulist(&mlist, tmpstr, tmpinfo, NULL, 0, 0);
-		free(tmpstr); tmpstr = NULL;
-		free(tmpinfo); tmpinfo = NULL;
+//flag 0: show section
+//flag 1: show entrys
+struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, int showpng, int flag)
+{
+	struct ipkg* node = ipkg, *ipkg_installed = NULL, *node_installed = NULL;
+	char* tmpstr = NULL, *tmpinfo = NULL, *tmppic = NULL;
+	
+	if(node == NULL) return NULL;
+	
+	if(flag == 1)
+	{
+		ipkg = NULL;
+		ipkg_list_installed();
+		ipkg_installed = ipkg;
+		ipkg = node;
+	}
+	
+	while(node != NULL)
+	{
+		if(flag == 0)
+		{
+			//check if section have seen
+			if(findsectiondone(node->section) == 1)
+			{
+				node = node->next;
+				continue;
+			}
+		
+			tmppic = ostrcat(node->section, ".png", 0, 0);
+		
+			node->done = 1;
+			addmenulist(&mlist, node->section, NULL, tmppic, 0, 0);
+			free(tmppic); tmppic = NULL;
+		}
+		
+		if(flag == 1)
+		{
+		
+			//check if ipkg is installed
+			node_installed = ipkg_installed;
+			while(node_installed != NULL)
+			{
+				if(ostrcmp(node->section, node_installed->section) == 0 && ostrcmp(node->showname, node_installed->showname) == 0)
+				{
+					node = node->next;
+					continue;
+				}
+				node_installed = node_installed->next;
+			}
+		
+			tmpstr = ostrcat(tmpstr, node->showname, 1, 0);
+			tmpstr = ostrcat(tmpstr, " v.", 1, 0);
+			tmpstr = ostrcat(tmpstr, node->version, 1, 0);
+
+			tmpinfo = ostrcat(tmpinfo, "\nSection: ", 1, 0);
+			tmpinfo = ostrcat(tmpinfo, node->section, 1, 0);
+			tmpinfo = ostrcat(tmpinfo, "\nDescription:\n", 1, 0);
+			if(node->desc != NULL)
+				tmpinfo = ostrcat(tmpinfo, node->desc, 1, 0);
+			else
+				tmpinfo = ostrcat(tmpinfo, _("no description found"), 1, 0);
+			
+			tmppic = ostrcat("titan-pluginpreview-", node->showname, 0, 0);
+			tmppic = ostrcat(tmppic, ".png", 1, 0);	
+
+			addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 0, 0);
+			free(tmpstr); tmpstr = NULL;
+			free(tmpinfo); tmpinfo = NULL;
+			free(tmppic); tmppic = NULL;
+		}
 		
 		node = node->next;
+	}
+	
+	if(flag == 1)
+	{
+		node = ipkg;
+		ipkg = ipkg_installed;
+		freeipkg();
+		ipkg = node;
 	}
 
 	return menulistbox(mlist, paramskinname, skintitle, paramskinpath, showpng, 0);
