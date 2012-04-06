@@ -100,10 +100,11 @@ struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* 
 	struct skin* framebuffer = getscreen("framebuffer");
 	struct skin* tmp = NULL;
 	struct menulist* ret = NULL;
-        char* bg = NULL;
+	char* bg = NULL;
 	char* skinname = NULL;
 	char* skinpath = NULL;
 	char* tmppic = NULL;
+	char* tmpstr = NULL;
 
 	if(mlist == NULL) return 0;
 
@@ -157,13 +158,21 @@ struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* 
 					string_tolower(mlist->pic);
 				}
 
-				if(mlist->pic == NULL)
-					tmppic = ostrcat(skinpath, "/default.png", 0, 0);
-				else
+				if(mlist->pic != NULL)
 				{
 					tmppic = ostrcat(skinpath, "/", 0, 0);	
 					tmppic = ostrcat(tmppic, mlist->pic, 1, 0);
+					tmpstr = changepicpath(tmppic);
+					if(!file_exists(tmpstr))
+					{
+						free(mlist->pic); mlist->pic = NULL;
+						free(tmppic); tmppic = NULL;
+					}
+					free(tmpstr); tmpstr = NULL;
 				}
+
+				if(mlist->pic == NULL)
+					tmppic = ostrcat(skinpath, "/default.png", 0, 0);
 				
 				changepic(tmp, tmppic);
 				free(tmppic); tmppic = NULL;
