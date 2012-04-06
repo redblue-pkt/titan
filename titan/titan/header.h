@@ -230,6 +230,7 @@ void setfbtransparent(int value);
 struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int fd, unsigned char* mmapfb, unsigned long fixfbsize);
 void blitfb2(struct fb* fbnode, int flag);
 void delfb(char *name);
+void fb2png_thread();
 
 //timerthread.h
 struct stimerthread* addtimer(void* func, int aktion, int delay, int count, void* param1, void* param2, struct stimerthread* last);
@@ -409,6 +410,7 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+void debugstack(void* address, void* address1);
 char* string_strip_whitechars(char *text);
 int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int flag);
 int delallfiles(char* dir, char* ext);
@@ -481,6 +483,7 @@ void checkserial(char* input);
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
 char* getrcconfig(char *key, char *ext);
+int reloadconfig(char *filename);
 
 //service.h
 struct service* getservicebyservice(struct service* node, int flag);
