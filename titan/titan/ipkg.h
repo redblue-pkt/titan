@@ -447,11 +447,10 @@ char* get_ipk_section()
 
 struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, int showpng, int flag)
 {
-	struct menulist* mlist = NULL, *mbox = NULL;
 	struct ipkg* node = ipkg;
 	char* tmpstr = NULL, *tmpinfo = NULL;
 	
-	if(ipkg_list_installed() != 0) return NULL;
+	if(node == NULL) return NULL;
 	
 	while(node != NULL)
 	{
@@ -473,14 +472,7 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 		
 		node = node->next;
 	}
-	char* name;
-	char* desc;
-	char* version;
-	char* section;
-	char* showname;
-	addmenulist(&mlist, "Aspect Settings", NULL, NULL, 0, 0);
 
-	freeipkg();
 	return menulistbox(mlist, paramskinname, skintitle, paramskinpath, showpng, 0);
 }
 
