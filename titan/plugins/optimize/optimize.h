@@ -1,6 +1,13 @@
 #ifndef OPTIMIZE_H
 #define OPTIMIZE_H
 
+extern struct transponder* transponder;
+extern struct channel* channel;
+extern struct mainbouquet* mainbouquet;
+extern struct epgscanlist* epgscanlist;
+extern struct sat* sat;
+extern struct provider* provider;
+
 void delmarkedsat(struct skin* listbox)
 {
 	struct skin* node = listbox;
