@@ -3,8 +3,10 @@
 
 void screenstreaming()
 {
-	char* tmpstr = NULL, *mlistbox = NULL;
+	int count = 0;
+	char* tmpstr = NULL;
 	struct service* servicenode = service;
+	struct menulist* mlist = NULL, *mbox = NULL;
 
 	while(servicenode != NULL)
 	{
@@ -17,24 +19,27 @@ void screenstreaming()
 				tmpstr = ostrcat(tmpstr, servicenode->channel->name, 1, 0);
 			else
 				tmpstr = ostrcat(tmpstr, "unknown", 1, 0);
-			tmpstr = ostrcat(tmpstr, ")\n", 1, 0);
+			tmpstr = ostrcat(tmpstr, ")", 1, 0);
+
+			count++;
+			addmenulist(&mlist, tmpstr, NULL, 0, 0);
+			free(tmpstr); tmpstr = NULL;
 		}
 		servicenode = servicenode->next;
 	}
 
-	if(tmpstr == NULL)
+	if(count == 0)
 		textbox(_("Message"), _("No Live Stream running"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 
-	mlistbox = menulistbox(NULL, tmpstr, "menulist", "Streaming", NULL, 0, 0);
-	if(mlistbox != NULL && strstr(mlistbox, "stop") == mlistbox)
+	mbox = menulistbox(mlist, "menulist", "Streaming", NULL, 0, 0);
+	if(mbox != NULL && strstr(mbox->name, "stop") == mbox->name)
 	{
-		servicenode = getrecordbyname(mlistbox, RECORDSTREAM);
+		servicenode = getrecordbyname(mbox->name, RECORDSTREAM);
 		if(servicenode != NULL)
 			servicenode->recendtime = 1;
 	}
 
-	free(tmpstr); tmpstr = NULL;
-	free(mlistbox); mlistbox = NULL;
+	freemenulist(mlist); mlist = NULL;
 }
 
 void streamthreadfunc(struct stimerthread* timernode)

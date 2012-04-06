@@ -1,21 +1,101 @@
 #ifndef MENULIST_H
 #define MENULIST_H
 
-// showpng = 0 (no icon)
-// showpng = 1 (smal icon)
-
-//flag 1: rcgreen = subchannel
-char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, char* skinpath, int showpng, int flag)
+void freemenulist(struct menulist* mlist)
 {
 	debug(1000, "in");
-	char* skinname1 = NULL;
-	char* skinpath1 = NULL;
-	char* tmpskinpath = NULL;
+	struct menulist *node = mlist, *prev = mlist;
+
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+		if(prev != NULL)
+		{
+			free(prev->name);
+			prev->name = NULL;
+
+			free(prev->pic);
+			prev->pic = NULL;
+
+			free(prev);
+			prev = NULL;
+		}
+	}
+	debug(1000, "out");
+}
+
+void addmenulistall(struct menulist** mlist, char* allname, char* pic, int deaktiv, char* defaultentry)
+{
+	char* saveptr = NULL, *token = NULL, *tmpstr = NULL;
+
+	tmpstr = ostrcat(allname, NULL, 0, 0);
+	if(tmpstr == NULL) return;
+
+	token = strtok_r(tmpstr, "\n", &saveptr);
+	while(token != NULL)
+	{
+		if(ostrcmp(defaultentry, token) == 0)
+			addmenulist(mlist, token, pic, deaktiv, 1);
+		else
+			addmenulist(mlist, token, pic, deaktiv, 0);
+		token = strtok_r(NULL, "\n", &saveptr);
+	}
+
+	free(tmpstr); tmpstr = NULL;
+}
+
+struct menulist* addmenulist(struct menulist** mlist, char* name, char* pic, int deaktiv, int defaultentry)
+{
+	struct menulist *newnode = NULL, *prev = NULL, *node = *mlist;
+
+	if(mlist == NULL) return NULL;
+
+	newnode = (struct menulist*)malloc(sizeof(struct menulist));	
+	if(newnode == NULL)
+	{
+		err("no memory");
+		return NULL;
+	}
+
+	memset(newnode, 0, sizeof(struct menulist));
+
+	newnode->name = ostrcat(name, NULL, 0, 0);
+	newnode->pic = ostrcat(pic, NULL, 0, 0);
+	newnode->deaktiv = deaktiv;
+	newnode->defaultentry = defaultentry;
+
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+	}
+
+	if(prev == NULL)
+		*mlist = newnode;
+	else
+		prev->next = newnode;
+	newnode->next = node;
+
+	return newnode;
+}
+
+// showpng = 0 (no icon)
+// showpng = 1 (smal icon)
+//flag 1: rcgreen = subchannel
+struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, int showpng, int flag)
+{
+	debug(1000, "in");
 	int rcret = 0, tmpscreencalc = 0, fromthread = 0;
 	struct skin* framebuffer = getscreen("framebuffer");
+	struct skin* tmp = NULL;
+	struct menulist* ret = NULL;
         char* bg = NULL;
+	char* skinname = NULL;
+	char* skinpath = NULL;
+	char* tmppic = NULL;
 
-	if(str == NULL) return 0;
+	if(mlist == NULL) return 0;
 
 	if(pthread_self() != status.mainthread)
 	{
@@ -23,165 +103,71 @@ char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 		flag = 0; //in thread modus only flag 0 alowed (flag 1 not thread save)
 	}
 
-	if(skinname == NULL)
-	{
-		debug(60, "skinname default=menulist");
-		skinname1 = ostrcat(skinname, "menulist", 1, 0);
-	}
+	if(paramskinname == NULL)
+		skinname = ostrcat("menulist", NULL, 0, 0);
 	else
-	{
-		debug(60, "skinname changed=%s", skinname);
-		skinname1 = ostrcat(skinname, "", 0, 0);
-	}
+		skinname = ostrcat(paramskinname, NULL, 0, 0);
 
-	if(skinpath == NULL)
-	{
-		debug(60, "skinpath default=skin/");
-		skinpath1 = ostrcat(skinpath, "skin/", 1, 0);
-	}
+	if(paramskinpath == NULL)
+		skinpath = ostrcat("skin", NULL, 0, 0);
 	else
-	{
-		debug(60, "skinpath changed=%s", skinpath);
-		skinpath1 = ostrcat(skinpath, "", 0, 0);
-	}
+		skinpath = ostrcat(paramskinpath, NULL, 0, 0);
 
-	struct skin* screen = getscreen(skinname1);
+	struct skin* screen = getscreen(skinname);
 	struct skin* listbox = getscreennode(screen, "listbox");
 	
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
 
-	if(skintitle != NULL)
+	changetitle(screen, _(skintitle));
+
+	while(mlist != NULL)
 	{
-		debug(60, "skintitle changed=%s", skintitle);
-		changetitle(screen, _(skintitle));
-	}
-
-	struct skin* tmp = NULL;
-	char* tmpstr = NULL;
-	char* defaultdir = NULL;
-	char* tmpsplit = NULL;
-	char* tmpck = NULL;
-	char* tmpstr1 = NULL;
-	char* tmpstr4 = NULL;
-	char* tmpstr5 = NULL;
-	char* tmppng = NULL;
-
-	struct splitstr* ret1 = NULL;
-	struct splitstr* ret2 = NULL;
-	struct splitstr* ret3 = NULL;
-	int count = 0;
-	int i = 0;
-	ret1 = strsplit(str, "\n", &count);
-
-	for(i = 0; i < count; i++)
-	{
-		int count2 = 0;
-		tmpsplit = ostrcat(tmpsplit, (&ret1[i])->part, 1, 0);
-		free(ret2); ret2 = NULL;
-		ret2 = strsplit(tmpsplit, "-", &count2);
-
-		tmppng = ostrcat("", (&ret1[i])->part, 0, 0);
-
-		stringreplacechar(tmppng, ' ', '_');
-		stringreplacechar(tmppng, ':', '_');
-		stringreplacechar(tmppng, '/', '_');
-		string_tolower(tmppng);
-		
 		tmp = addlistbox(screen, listbox, tmp, 1);
 		
 		if(tmp != NULL)
 		{
-			changetext(tmp, _((&ret1[i])->part));
-			changename(tmp, (&ret1[i])->part);
+			changetext(tmp, _(mlist->name));
+			changename(tmp, mlist->name);
+			tmp->handle = (char*)mlist;
 
-			tmp->del = 1;
-			if(showpng == 1) 
+			if(showpng == 1 && mlist->name != NULL) 
 			{
 				tmp->textposx = 120;
 				tmp->height = 50;
-//				tmp->fontsize = 30;
 				tmp->valign = convertxmlentry("middle", 0);
 				tmp->hspace = 5;
-				debug(60, "showpng changed=%d", showpng);
-			}
-			else
-			{
-				debug(60, "showpng default=%d", showpng);
-			}
 
-			if(ostrcmp((&ret1[i])->part, "\t") == 0)
-				tmp->deaktivcol = convertcol("deaktivcol");
-			else
-			{
-				if(showpng == 1)
+				if(mlist->pic == NULL)
 				{
-					if(string_find("%pluginpath%",skinpath1)){
-						struct splitstr* ret6 = NULL;
-						int count6 = 0;
-						char* tmpstr6 = NULL;
-						tmpstr6 = ostrcat("", skinpath1, 0, 0);
-						ret6 = strsplit(tmpstr6, "%", &count6);
-
-						defaultdir = ostrcat(getconfig("skinpath", NULL), "/skin/", 0, 0);
-						defaultdir = ostrcat(defaultdir, tmppng, 1, 0);
-						defaultdir = ostrcat(defaultdir, ".png", 1, 0);
-						debug(60, "defaultdir1 %s", defaultdir);
-						if(!file_exist(defaultdir))
-						{
-							defaultdir = ostrcat(getconfig("pluginpath", NULL), (&ret6[1])->part, 0, 0);
-							defaultdir = ostrcat(defaultdir, tmppng, 1, 0);
-							defaultdir = ostrcat(defaultdir, ".png", 1, 0);
-						}
-
-						free(ret6), ret6 = NULL;
-						debug(60, "defaultdir2 %s", defaultdir);
-					}
-					else
-					{
-						defaultdir = ostrcat(getconfig("skinpath", NULL), "/", 0, 0);
-						defaultdir = ostrcat(defaultdir, skinpath1, 1, 0);
-						defaultdir = ostrcat(defaultdir, tmppng, 1, 0);
-						defaultdir = ostrcat(defaultdir, ".png", 1, 0);
-						debug(60, "defaultdir3 %s", defaultdir);
-					}
-
-					debug(60, "defaultdir4 %s", defaultdir);
-					if(file_exist(defaultdir))
-					{
-						tmpskinpath = ostrcat("", defaultdir, 0, 0);
-						changepic(tmp, tmpskinpath);
-						free(tmpskinpath); tmpskinpath = NULL;
-					}
-					else
-					{
-						tmpskinpath = ostrcat(skinpath1, "default.png", 0, 0);
-						changepic(tmp, tmpskinpath);
-						free(tmpskinpath); tmpskinpath = NULL;
-					}
-					free(defaultdir); defaultdir = NULL;
+					mlist->pic = ostrcat(mlist->name, ".png", 0, 0);	
+					stringreplacechar(mlist->pic, ' ', '_');
+					stringreplacechar(mlist->pic, ':', '_');
+					stringreplacechar(mlist->pic, '/', '_');
+					string_tolower(mlist->pic);
 				}
+
+				if(mlist->pic == NULL)
+					tmppic = ostrcat(skinpath, "/default.png", 0, 0);
+				else
+				{
+					tmppic = ostrcat(skinpath, "/", 0, 0);	
+					tmppic = ostrcat(tmppic, mlist->pic, 1, 0);
+				}
+				
+				changepic(tmp, tmppic);
+				free(tmppic); tmppic = NULL;
 			}
-			if(defaultstr != NULL)
-			{
-				setlistboxselection(listbox, defaultstr);
-			//	if(ostrcmp(defaultstr, (&ret1[i])->part) == 0)
-			//		listbox->aktline = i + 1;
-			}
+
+			if(mlist->deaktiv == 1)
+				tmp->deaktivcol = convertcol("deaktivcol");
 		}
-		free(tmppng); tmppng = NULL;
+
+		if(mlist->defaultentry == 1)
+			setlistboxselection(listbox, mlist->name);
+
+		mlist = mlist->next;
 	}
-
-	free(ret1); ret1 = NULL;
-	free(ret2); ret2 = NULL;
-	free(ret3); ret3 = NULL;
-	free(tmpck); tmpck = NULL;
-	free(tmpsplit); tmpsplit = NULL;
-	free(tmpstr1); tmpstr1 = NULL;
-	free(tmpstr4); tmpstr4 = NULL;
-	free(tmpstr5); tmpstr5 = NULL;
-
-	listbox->aktpage = -1;
 
 	if(fromthread == 1)
 	{
@@ -215,13 +201,13 @@ char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 		}
 		if(listbox->select != NULL && rcret==getrcconfigint("rcok",NULL))
 		{
-			tmpstr = ostrcat(tmpstr, listbox->select->name, 1, 0);
+			ret = (struct menulist*)listbox->select->handle;
 			break;
 		}
 	}
 
-	free(skinname1); skinname1 = NULL;
-	free(skinpath1); skinpath1 = NULL;
+	free(skinname); skinname = NULL;
+	free(skinpath); skinpath = NULL;
 	delownerrc(screen);
 	delmarkedscreennodes(screen, 1);
 
@@ -240,7 +226,7 @@ char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, 
 		clearscreen(screen);
 
 	debug(1000, "out");
-	return tmpstr;
+	return ret;
 }
 
 #endif

@@ -171,6 +171,15 @@ enum {DEACTIVE, ACTIVE, INPAUSE, ERROR};
 enum {FUNCTEXT, FUNCPIC, FUNCPROGRESS};
 enum {CASESSIONCREATE, CASESSIONBUSY, CASESSIONDEL, CASESSIONSTART, CASESSIONFINAL, CARESFIRSTENQUIRY, CARESCHANGE, CARESENQUIRY, CADATETIMESEND, CAMMIIDLE, CAMMIDISPLAYREPLAY, CAMMIFAKEOK};
 
+struct menulist
+{
+	char* name;
+	char* pic;
+	int deaktiv;
+	int defaultentry;
+	struct menulist* next;
+};
+
 struct channelhistory
 {
 	struct channel* chnode;

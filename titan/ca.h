@@ -392,6 +392,7 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 {
 	char* tmpstr = NULL, *tmpstr1 = NULL;
 	struct casession* casession = NULL;
+	struct menulist* mlist = NULL, *mbox = NULL;
 
 	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
 	casession = dvbnode->caslot->casession;
@@ -539,7 +540,9 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 					tmpstr = ostrcat(tmpstr, " - ", 1, 0);
 					tmpstr = ostrcat(tmpstr, casession->mmisubtitle, 1, 0);
 					tmpstr1 = ostrcat(tmpstr1, casession->mmitext, 1, 0);
-					char* mbox = menulistbox(NULL, tmpstr1, "menulist", tmpstr, NULL, 1, 0);
+					
+					addmenulistall(&mlist, tmpstr1, NULL, 0, NULL);
+					mbox = menulistbox(mlist, "menulist", tmpstr, NULL, 1, 0);
 					if(mbox == NULL) //exit
 						cammistop(dvbnode, sessionnr);
 					else //got selnr
@@ -567,7 +570,7 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 
 						cammianswer(dvbnode, sessionnr, selnr + 1);
 					}
-					free(mbox); mbox = NULL;
+					freemenulist(mlist); mlist = NULL;
 					free(tmpstr); tmpstr = NULL;
 					free(tmpstr1); tmpstr1 = NULL;
 					free(casession->mmititle); casession->mmititle = NULL;
