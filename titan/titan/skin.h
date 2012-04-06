@@ -2132,7 +2132,7 @@ void drawcircle(int x0, int y0, int radius, int startangle, int endangle, long c
 int drawchar(struct font* font, FT_ULong currentchar, int posx, int posy, int mwidth, int height, long color, int transparent, int charspace, int test)
 {
 //	debug(1000, "in");
-	int space = 0, row, pitch, bit, x = 0, px = 0, py = 0;
+	int space = 0, row, pitch, bit, y = 0, x = 0, px = 0, py = 0, pxw = 0, pyh = 0, max = 220, min = 35;
 	FT_UInt glyphindex;
 	FT_Vector kerning;
 	FT_Error ret;
@@ -2140,6 +2140,7 @@ int drawchar(struct font* font, FT_ULong currentchar, int posx, int posy, int mw
 	unsigned long tmpcol = 0, tmpcol1 = 0;
 	long buffercol = 0;
 	unsigned char red, green, blue, r, g, b;
+	unsigned char* src = NULL;
 
 	if(currentchar == 32) space = 1;
 
@@ -2179,66 +2180,41 @@ int drawchar(struct font* font, FT_ULong currentchar, int posx, int posy, int mw
 		return -1;
 	}
 
-	transparent = transparent & 0xff;
-	if(status.fasttextrender == 1)
-	{
-		posy = posy + height - sbit->top;
-		posx = posx + sbit->left + kerning.x;
-		tmpcol = color | transparent << 24;
-		for(row = 0; row < sbit->height; row++)
-		{
-			py = (row + posy) * skinfb->width;
-			for(pitch = 0; pitch < sbit->pitch; pitch++)
-			{
-				for(bit = 7; bit >= 0; bit--)
-				{
-					if(pitch * 8 + 7 - bit >= sbit->width)
-						break;
-					if((sbit->buffer[row * sbit->pitch + pitch]) & 1 << bit)
-					{
-						drawpixelfast(posx + x, py, tmpcol);
-					}
-					x++;
-				}
-			}
-			x = 0;
-		}
-	}
-	else
-	{
-		red = (color & 0xff0000) >> 16;
-		green = (color & 0x00ff00) >> 8;
-		blue = color & 0xff;
-		posy = posy + height - sbit->top;
-		posx = posx + sbit->left + kerning.x;
-		tmpcol = color | transparent << 24;
-		for(row = 0; row < sbit->height; row++)
-		{
-			py = (row + posy) * skinfb->width;
-			for(pitch = 0; pitch < sbit->pitch; pitch++)
-			{
-				buffercol = sbit->buffer[row * sbit->pitch + pitch];
-				if(buffercol)
-				{
-					//renderquality 255-0 = best
-					if(buffercol > 220)
-					{
-						tmpcol1 = tmpcol;
-						px = posx + pitch;
-					}
-					else if(buffercol < 35)
-						continue;
-					else
-					{
-						px = posx + pitch;
-						tmpcol1 = getpixelfast(px, py);
-						alpha_composite(r, red, buffercol, (tmpcol1 & 0xff0000) >> 16);
-						alpha_composite(g, green, buffercol, (tmpcol1 & 0x00ff00) >> 8);
-						alpha_composite(b, blue, buffercol, tmpcol1 & 0xff);
-						tmpcol1 = transparent << 24 | r << 16 | g << 8 | b;
-					}
+	if(status.fasttextrender == 1) max = min - 1;
 	
-					drawpixelfast(px, py, tmpcol1);
+	red = (color & 0xff0000) >> 16;
+	green = (color & 0x00ff00) >> 8;
+	blue = color & 0xff;
+	transparent = transparent & 0xff;
+	tmpcol = color | transparent << 24;
+	posy = posy + height - sbit->top;
+	posx = posx + sbit->left + kerning.x;
+		
+	py = (posy * skinfb->width) + posx;
+	pyh = py + (sbit->height * skinfb->width);
+	src = sbit->buffer;
+		
+	for(y = py; y < pyh; y += skinfb->width)
+	{
+		pxw = y + sbit->pitch;
+		for(x = y; x < pxw; x++)
+		{
+			buffercol = src[0];
+			src++;
+			if(buffercol)
+			{
+				//renderquality 255-0 = best
+				if(buffercol > max)
+					skinfb->fblong[x] = tmpcol;
+				else if(buffercol < min)
+					continue;
+				else
+				{
+					tmpcol1 = skinfb->fblong[x];
+					alpha_composite(r, red, buffercol, (tmpcol1 & 0xff0000) >> 16);
+					alpha_composite(g, green, buffercol, (tmpcol1 & 0x00ff00) >> 8);
+					alpha_composite(b, blue, buffercol, tmpcol1 & 0xff);
+					skinfb->fblong[x] = transparent << 24 | r << 16 | g << 8 | b;
 				}
 			}
 		}
