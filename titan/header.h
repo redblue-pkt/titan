@@ -318,7 +318,11 @@ void delownconfigtmpall();
 void fillinfobar();
 
 //menulist.h
-char* menulistbox(char* defaultstr, char* str, char* skinname, char* skintitle, char* skinpath, int showpng, int flag);
+void freemenulist(struct menulist* mlist);
+void addmenulistall(struct menulist** mlist, char* allname, char* pic, int deaktiv, char* defaultentry);
+struct menulist* addmenulist(struct menulist** mlist, char* name, char* pic, int deaktiv, int defaultentry);
+struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, int showpng, int flag);
+void setmenulistdefault(struct menulist* mlist, char* defaultentry);
 
 //skinfunc.h
 char* gettime(struct skin* node, char* format);

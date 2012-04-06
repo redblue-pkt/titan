@@ -25,6 +25,16 @@ void freemenulist(struct menulist* mlist)
 	debug(1000, "out");
 }
 
+void setmenulistdefault(struct menulist* mlist, char* defaultentry)
+{
+	while(mlist != NULL)
+	{
+		if(ostrcmp(defaultentry, mlist->name) == 0)
+			mlist->defaultentry = 1;
+		mlist = mlist->next;
+	}
+}
+
 void addmenulistall(struct menulist** mlist, char* allname, char* pic, int deaktiv, char* defaultentry)
 {
 	char* saveptr = NULL, *token = NULL, *tmpstr = NULL;

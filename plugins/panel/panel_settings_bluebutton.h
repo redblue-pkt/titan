@@ -8,18 +8,18 @@ void screenpanel_settings_bluebutton()
 	struct skin* plugin = getscreen("plugin");
 	struct skin* child = plugin->child;
 	char* tmpstr = NULL;
-	tmpstr = ostrcat(tmpstr, "TV / Radio Switch\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, "Auto Resolution\n", 1, 0);
+	struct menulist* mlist = NULL, *mbox = NULL;
+	
+	addmenulist(&mlist, "TV / Radio Switch", NULL, 0, 0);
 	if(checkemu() == 1)
-		tmpstr = ostrcat(tmpstr, "Softcam Panel\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, "Extensions List\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, "Multi EPG\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, "Graphic Multi EPG\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, "Sleep Timer\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, "Child Protection\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, "Subchannel\n", 1, 0);
+		addmenulist(&mlist, "Softcam Panel", NULL, 0, 0);
+	addmenulist(&mlist, "Extensions List", NULL, 0, 0);
+	addmenulist(&mlist, "Multi EPG", NULL, 0, 0);
+	addmenulist(&mlist, "Graphic Multi EPG", NULL, 0, 0);
+	addmenulist(&mlist, "Sleep Timer", NULL, 0, 0);
+	addmenulist(&mlist, "Child Protection", NULL, 0, 0);
+	addmenulist(&mlist, "Subchannel", NULL, 0, 0);
 
-	char* bluekey = getconfig("bluekey", NULL);
 	int skip = 0;
 
 	while(child != NULL)
@@ -43,31 +43,32 @@ void screenpanel_settings_bluebutton()
 			}				
 			if(skip == 0)
 			{
-				tmpstr = ostrcat(tmpstr, child->name, 1, 0);
-				debug(60, "Bluekey: %s", child->name);
-				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+				addmenulist(&mlist, child->name, NULL, 0, 0);
 			}
 			skip = 0;
 		}
 		child = child->next;
 	}
+	
+	char* bluekey = getconfig("bluekey", NULL);
 	debug(60, "Bluekey: %s (default)", bluekey);
 
-	char* mlistbox = menulistbox(bluekey, tmpstr, NULL, skintitle, NULL, 1, 0);
+	setmenulistdefault(mlist, bluekey);
+	mbox = menulistbox(mlist, NULL, skintitle, NULL, 1, 0);
 
-	if(mlistbox == NULL)
+	if(mbox == NULL)
 	{
 		free(tmpstr); tmpstr = NULL;
 		return;
 	}
-	debug(60, "(new) Bluekey=%s", mlistbox);
+	debug(60, "(new) Bluekey=%s", mbox->name);
 
-	if(ostrcmp(mlistbox, "TV / Radio Switch") == 0)
+	if(ostrcmp(mbox->name, "TV / Radio Switch") == 0)
 		delconfig("bluekey");
 	else
-		addconfig("bluekey", mlistbox);
+		addconfig("bluekey", mbox->name);
 
-	free(mlistbox); mlistbox = NULL;
+	free(mlist); mlist = NULL;
 	free(tmpstr); tmpstr = NULL;
 	debug(1000, "out");
 	return;

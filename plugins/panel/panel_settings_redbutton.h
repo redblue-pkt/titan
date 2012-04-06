@@ -8,18 +8,19 @@ void screenpanel_settings_redbutton()
 	struct skin* plugin = getscreen("plugin");
 	struct skin* child = plugin->child;
 	char* tmpstr = NULL;
-	tmpstr = ostrcat(tmpstr, "Extensions List\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, "Auto Resolution\n", 1, 0);
+	struct menulist* mlist = NULL, *mbox = NULL;
+	
+	addmenulist(&mlist, "Extensions List", NULL, 0, 0);
+	addmenulist(&mlist, "Auto Resolution", NULL, 0, 0);
 	if(checkemu() == 1)
-		tmpstr = ostrcat(tmpstr, "Softcam Panel\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, "TV / Radio Switch\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, "Multi EPG\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, "Graphic Multi EPG\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, "Sleep Timer\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, "Child Protection\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, "Subchannel\n", 1, 0);
+		addmenulist(&mlist, "Softcam Panel", NULL, 0, 0);
+	addmenulist(&mlist, "TV / Radio Switch", NULL, 0, 0);
+	addmenulist(&mlist, "Multi EPG", NULL, 0, 0);
+	addmenulist(&mlist, "Graphic Multi EPG", NULL, 0, 0);
+	addmenulist(&mlist, "Sleep Timer", NULL, 0, 0);
+	addmenulist(&mlist, "Child Protection", NULL, 0, 0);
+	addmenulist(&mlist, "Subchannel", NULL, 0, 0);
 
-	char* redkey = getconfig("redkey", NULL);
 	int skip = 0;
 
 	while(child != NULL)
@@ -43,31 +44,32 @@ void screenpanel_settings_redbutton()
 			}
 			if(skip == 0)
 			{
-				tmpstr = ostrcat(tmpstr, child->name, 1, 0);
-				debug(60, "Redkey: %s", child->name);
-				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+				addmenulist(&mlist, child->name, NULL, 0, 0);
 			}
 			skip = 0;
 		}
 		child = child->next;
 	}
+
+	char* redkey = getconfig("redkey", NULL);
 	debug(60, "Redkey: %s (default)", redkey);
+	
+	setmenulistdefault(mlist, redkey);
+	mbox = menulistbox(mlist, NULL, skintitle, NULL, 1, 0);
 
-	char* mlistbox = menulistbox(redkey, tmpstr, NULL, skintitle, NULL, 1, 0);
-
-	if(mlistbox == NULL)
+	if(mbox == NULL)
 	{
 		free(tmpstr); tmpstr = NULL;
 		return;
 	}
-	debug(60, "(new) Redkey=%s", mlistbox);
+	debug(60, "(new) Redkey=%s", mbox->name);
 
-	if(ostrcmp(mlistbox, "Extensions List") == 0)
+	if(ostrcmp(mbox->name, "Extensions List") == 0)
 		delconfig("redkey");
 	else
-		addconfig("redkey", mlistbox);
+		addconfig("redkey", mbox->name);
 
-	free(mlistbox); mlistbox = NULL;
+	freemenulist(mlist); mlist = NULL;
 	free(tmpstr); tmpstr = NULL;
 	debug(1000, "out");
 	return;
