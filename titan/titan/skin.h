@@ -3331,7 +3331,7 @@ int calclistbox(struct skin* node)
 		child->bordersize = 0;
 		if(status.listboxselecttype == 3)
 		{
-			changebgpic(child, NULL);
+			changeselectpic(child, NULL);
 			if(child->bgcol == markcol)
 				child->bgcol = child->bordercol;
 		}
@@ -3380,7 +3380,7 @@ int calclistbox(struct skin* node)
 		}
 		else if(status.listboxselecttype == 3)
 		{
-			changebgpic(found, selectpic);
+			changeselectpic(found, selectpic);
 			if(found->bgcol != markcol)
 				found->bordercol = found->bgcol;
 			if(status.markmodus > 0)
