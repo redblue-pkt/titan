@@ -412,8 +412,8 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 	{
 		debug(50, "rcgreenss: playlist menu");
 
-		addmenulist(&mlist, "Load Playlist", NULL, 0, 0);
-		addmenulist(&mlist, "Edit Playlist", NULL, 0, 0);
+		addmenulist(&mlist, "Load Playlist", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Edit Playlist", NULL, NULL, 0, 0);
 		
 		mbox = menulistbox(mlist, "playlistmenu", NULL, "%pluginpath%/mc/skin/", 1, 0);
 

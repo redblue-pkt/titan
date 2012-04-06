@@ -10,16 +10,16 @@ void screenpanel_settings_redbutton()
 	char* tmpstr = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;
 	
-	addmenulist(&mlist, "Extensions List", NULL, 0, 0);
-	addmenulist(&mlist, "Auto Resolution", NULL, 0, 0);
+	addmenulist(&mlist, "Extensions List", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Auto Resolution", NULL, NULL, 0, 0);
 	if(checkemu() == 1)
-		addmenulist(&mlist, "Softcam Panel", NULL, 0, 0);
-	addmenulist(&mlist, "TV / Radio Switch", NULL, 0, 0);
-	addmenulist(&mlist, "Multi EPG", NULL, 0, 0);
-	addmenulist(&mlist, "Graphic Multi EPG", NULL, 0, 0);
-	addmenulist(&mlist, "Sleep Timer", NULL, 0, 0);
-	addmenulist(&mlist, "Child Protection", NULL, 0, 0);
-	addmenulist(&mlist, "Subchannel", NULL, 0, 0);
+		addmenulist(&mlist, "Softcam Panel", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "TV / Radio Switch", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Multi EPG", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Graphic Multi EPG", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Sleep Timer", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Child Protection", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Subchannel", NULL, NULL, 0, 0);
 
 	int skip = 0;
 
@@ -44,7 +44,7 @@ void screenpanel_settings_redbutton()
 			}
 			if(skip == 0)
 			{
-				addmenulist(&mlist, child->name, NULL, 0, 0);
+				addmenulist(&mlist, child->name, NULL, NULL, 0, 0);
 			}
 			skip = 0;
 		}
