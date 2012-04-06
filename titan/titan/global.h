@@ -1442,12 +1442,12 @@ int mountauto(const char *file, const char *dir, unsigned long int flag, const v
 	filesystems = getconfig("filesystems", NULL);
 	tmpfilesystems = ostrcat(tmpfilesystems, filesystems, 0, 0);
 
-	token = strtok_r(tmpfilesystems, ";" , &saveptr);
+	token = strtok_r(tmpfilesystems, ";", &saveptr);
 	while(token != NULL)
 	{
 		ret = mount(file, dir, token, flag, data);
 		if(ret == 0) break;
-		token = strtok_r(NULL, ";" , &saveptr);
+		token = strtok_r(NULL, ";", &saveptr);
 	}
 
 	free(tmpfilesystems);

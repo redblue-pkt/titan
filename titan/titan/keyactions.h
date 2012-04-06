@@ -12,9 +12,10 @@ void screenkeyactions(int key, int flag)
 	char* keyconf = NULL;
 	struct skin* pluginnode = NULL;
 	void (*startplugin)(void);
-	char* tmpstr = NULL, *mlistbox = NULL;
+	char* tmpstr = NULL;
 	struct skin* plugin = getscreen("plugin");
 	struct skin* child = plugin->child;
+	struct menulist* mlist = NULL, *mbox = NULL;
 	int skip = 0;
 						
 	if(flag == 1)
@@ -44,9 +45,8 @@ void screenkeyactions(int key, int flag)
 					}				
 					if(skip == 0)
 					{
-						tmpstr = ostrcat(tmpstr, child->name, 1, 0);
+						addmenulist(&mlist, child->name, NULL, 0, 0);
 						debug(60, "key: %s", child->name);
-						tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 					}
 					skip = 0;
 				}
@@ -54,19 +54,19 @@ void screenkeyactions(int key, int flag)
 			}
 		}
 	
-		//tmpstr = ostrcat(tmpstr, "Extensions List\n", 1, 0);
-		tmpstr = ostrcat(tmpstr, "Resolution .. (default <-> actual)\n", 1, 0);
+		//addmenulist(&mlist, "Extensions List", NULL, 0, 0);
+		addmenulist(&mlist, "Resolution .. (default <-> actual)", NULL, 0, 0);
 		if(checkemu() == 1)
-			tmpstr = ostrcat(tmpstr, "Softcam Panel\n", 1, 0);
-		//tmpstr = ostrcat(tmpstr, "TV / Radio Switch\n", 1, 0);
-		tmpstr = ostrcat(tmpstr, "Multi EPG\n", 1, 0);
-		tmpstr = ostrcat(tmpstr, "Graphic Multi EPG\n", 1, 0);
-		tmpstr = ostrcat(tmpstr, "Sleep Timer\n", 1, 0);
-		tmpstr = ostrcat(tmpstr, "Child Protection\n", 1, 0);
-		tmpstr = ostrcat(tmpstr, "Subchannel\n", 1, 0);
+			addmenulist(&mlist, "Softcam Panel", NULL, 0, 0);
+		//addmenulist(&mlist, "TV / Radio Switch", NULL, 0, 0);
+		addmenulist(&mlist, "Multi EPG", NULL, 0, 0);
+		addmenulist(&mlist, "Graphic Multi EPG", NULL, 0, 0);
+		addmenulist(&mlist, "Sleep Timer", NULL, 0, 0);
+		addmenulist(&mlist, "Child Protection", NULL, 0, 0);
+		addmenulist(&mlist, "Subchannel", NULL, 0, 0);
 	
-		mlistbox = menulistbox(NULL, tmpstr, NULL, skintitle, NULL, 1, 0);
-		keyconf = mlistbox;
+		mbox = menulistbox(mlist, NULL, skintitle, NULL, 1, 0);
+		keyconf = mbox->name;
 		free(tmpstr); tmpstr = NULL;
 	}
 	else
@@ -78,7 +78,7 @@ void screenkeyactions(int key, int flag)
 	if(flag == 0 && keyconf == NULL)
 	{
 		if(key == 1) screenkeyactions(1, 1);
-		free(mlistbox); mlistbox = NULL;
+		freemenulist(mlist); mlist = NULL;
 		return;
 	}
 
@@ -109,50 +109,50 @@ void screenkeyactions(int key, int flag)
 			if(startplugin != NULL){
 				startplugin();
 			}
-			free(mlistbox); mlistbox = NULL;
+			freemenulist(mlist); mlist = NULL;
 			return;
 		}
 	}
 	else if(ostrcmp(keyconf, "Subchannel") == 0)
 	{
 		screenlinkedchannel();
-		free(mlistbox); mlistbox = NULL;
+		freemenulist(mlist); mlist = NULL;
 		return;
 	}
 	else if(ostrcmp(keyconf, "Auto Resolution") == 0)
 	{
 		keyactions_setres();
-		free(mlistbox); mlistbox = NULL;
+		freemenulist(mlist); mlist = NULL;
 		return;
 	}
 	else if(ostrcmp(keyconf, "Extensions List") == 0)
 	{
 		screenkeyactions(1, 1);
-		free(mlistbox); mlistbox = NULL;
+		freemenulist(mlist); mlist = NULL;
 		return;
 	}
 	else if(ostrcmp(keyconf, "Multi EPG") == 0)
 	{
 		screenmultiepg(NULL, NULL, 0);
-		free(mlistbox); mlistbox = NULL;
+		freemenulist(mlist); mlist = NULL;
 		return;
 	}
 	else if(ostrcmp(keyconf, "Graphic Multi EPG") == 0)
 	{
 		screengmultiepg(NULL, NULL, 0);
-		free(mlistbox); mlistbox = NULL;
+		freemenulist(mlist); mlist = NULL;
 		return;
 	}
 	else if(ostrcmp(keyconf, "Sleep Timer") == 0)
 	{
 		screenpowerofftimer();
-		free(mlistbox); mlistbox = NULL;
+		freemenulist(mlist); mlist = NULL;
 		return;
 	}
 	else if(ostrcmp(keyconf, "Child Protection") == 0)
 	{
 		screenpin();
-		free(mlistbox); mlistbox = NULL;
+		freemenulist(mlist); mlist = NULL;
 		return;
 	}
 			
@@ -165,7 +165,7 @@ void screenkeyactions(int key, int flag)
 			startplugin();
 	}
 
-	free(mlistbox); mlistbox = NULL;
+	freemenulist(mlist); mlist = NULL;
 	debug(1000, "out");
 	return;
 }
