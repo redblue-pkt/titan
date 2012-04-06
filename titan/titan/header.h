@@ -320,7 +320,7 @@ void fillinfobar();
 //menulist.h
 void freemenulist(struct menulist* mlist);
 void addmenulistall(struct menulist** mlist, char* allname, char* pic, int deaktiv, char* defaultentry);
-struct menulist* addmenulist(struct menulist** mlist, char* name, char* pic, int deaktiv, int defaultentry);
+struct menulist* addmenulist(struct menulist** mlist, char* name, char* text, char* pic, int deaktiv, int defaultentry);
 struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, int showpng, int flag);
 void setmenulistdefault(struct menulist* mlist, char* defaultentry);
 

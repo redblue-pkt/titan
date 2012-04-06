@@ -14,6 +14,9 @@ void freemenulist(struct menulist* mlist)
 		{
 			free(prev->name);
 			prev->name = NULL;
+			
+			free(prev->text);
+			prev->text = NULL;
 
 			free(prev->pic);
 			prev->pic = NULL;
@@ -46,16 +49,16 @@ void addmenulistall(struct menulist** mlist, char* allname, char* pic, int deakt
 	while(token != NULL)
 	{
 		if(ostrcmp(defaultentry, token) == 0)
-			addmenulist(mlist, token, pic, deaktiv, 1);
+			addmenulist(mlist, token, NULL, pic, deaktiv, 1);
 		else
-			addmenulist(mlist, token, pic, deaktiv, 0);
+			addmenulist(mlist, token, NULL, pic, deaktiv, 0);
 		token = strtok_r(NULL, "\n", &saveptr);
 	}
 
 	free(tmpstr); tmpstr = NULL;
 }
 
-struct menulist* addmenulist(struct menulist** mlist, char* name, char* pic, int deaktiv, int defaultentry)
+struct menulist* addmenulist(struct menulist** mlist, char* name, char* text, char* pic, int deaktiv, int defaultentry)
 {
 	struct menulist *newnode = NULL, *prev = NULL, *node = *mlist;
 
@@ -71,6 +74,7 @@ struct menulist* addmenulist(struct menulist** mlist, char* name, char* pic, int
 	memset(newnode, 0, sizeof(struct menulist));
 
 	newnode->name = ostrcat(name, NULL, 0, 0);
+	newnode->text = ostrcat(text, NULL, 0, 0);
 	newnode->pic = ostrcat(pic, NULL, 0, 0);
 	newnode->deaktiv = deaktiv;
 	newnode->defaultentry = defaultentry;
@@ -92,6 +96,7 @@ struct menulist* addmenulist(struct menulist** mlist, char* name, char* pic, int
 
 // showpng = 0 (no icon)
 // showpng = 1 (smal icon)
+// showpng = 2 (big icon)
 //flag 1: rcgreen = subchannel
 struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, int showpng, int flag)
 {
@@ -140,14 +145,30 @@ struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* 
 		{
 			changetext(tmp, _(mlist->name));
 			changename(tmp, mlist->name);
+			
+			if(mlist->text != NULL)
+			{
+				changetext2(tmp, _(mlist->text));
+				tmp->textposx2 = 270;
+				tmp->type = TEXTBOX;
+				tmp->wrap = YES;
+			}
+			
 			tmp->handle = (char*)mlist;
 
-			if(showpng == 1 && mlist->name != NULL) 
+			if(showpng > 0 && mlist->name != NULL) 
 			{
 				tmp->textposx = 120;
 				tmp->height = 50;
 				tmp->valign = convertxmlentry("middle", 0);
 				tmp->hspace = 5;
+				
+				if(showpng == 2)
+				{
+					tmp->valign = convertxmlentry("middle", 0);
+					tmp->textposx = 250;
+					tmp->height = 170;
+				}
 
 				if(mlist->pic == NULL)
 				{

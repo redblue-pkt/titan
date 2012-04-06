@@ -45,7 +45,7 @@ void screenkeyactions(int key, int flag)
 					}				
 					if(skip == 0)
 					{
-						addmenulist(&mlist, child->name, NULL, 0, 0);
+						addmenulist(&mlist, child->name, NULL, NULL, 0, 0);
 						debug(60, "key: %s", child->name);
 					}
 					skip = 0;
@@ -54,16 +54,16 @@ void screenkeyactions(int key, int flag)
 			}
 		}
 	
-		//addmenulist(&mlist, "Extensions List", NULL, 0, 0);
-		addmenulist(&mlist, "Resolution .. (default <-> actual)", NULL, 0, 0);
+		//addmenulist(&mlist, "Extensions List", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Resolution .. (default <-> actual)", NULL, NULL, 0, 0);
 		if(checkemu() == 1)
-			addmenulist(&mlist, "Softcam Panel", NULL, 0, 0);
-		//addmenulist(&mlist, "TV / Radio Switch", NULL, 0, 0);
-		addmenulist(&mlist, "Multi EPG", NULL, 0, 0);
-		addmenulist(&mlist, "Graphic Multi EPG", NULL, 0, 0);
-		addmenulist(&mlist, "Sleep Timer", NULL, 0, 0);
-		addmenulist(&mlist, "Child Protection", NULL, 0, 0);
-		addmenulist(&mlist, "Subchannel", NULL, 0, 0);
+			addmenulist(&mlist, "Softcam Panel", NULL, NULL, 0, 0);
+		//addmenulist(&mlist, "TV / Radio Switch", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Multi EPG", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Graphic Multi EPG", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Sleep Timer", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Child Protection", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Subchannel", NULL, NULL, 0, 0);
 	
 		mbox = menulistbox(mlist, NULL, skintitle, NULL, 1, 0);
 		keyconf = mbox->name;

@@ -931,7 +931,7 @@ void screenrecordstop()
 			tmpstr = ostrcat(tmpstr, servicenode->recname, 1, 0);
 			tmpstr = ostrcat(tmpstr, ")", 1, 0);
 			
-			addmenulist(&mlist, tmpstr, NULL, 0, 0);
+			addmenulist(&mlist, tmpstr, NULL, NULL, 0, 0);
 			free(tmpstr); tmpstr = NULL;
 		}
 		servicenode = servicenode->next;
@@ -972,7 +972,7 @@ void screenrecorddirect()
 			tmpstr = ostrcat(tmpstr, servicenode->recname, 1, 0);
 			tmpstr = ostrcat(tmpstr, ")", 1, 0);
 			
-			addmenulist(&mlist, tmpstr, NULL, 0, 0);
+			addmenulist(&mlist, tmpstr, NULL, NULL, 0, 0);
 			free(tmpstr); tmpstr = NULL;
 			
 			tmpstr = ostrcat(tmpstr, _("change"), 1, 0);
@@ -980,15 +980,15 @@ void screenrecorddirect()
 			tmpstr = ostrcat(tmpstr, servicenode->recname, 1, 0);
 			tmpstr = ostrcat(tmpstr, ")", 1, 0);
 			
-			addmenulist(&mlist, tmpstr, NULL, 0, 0);
+			addmenulist(&mlist, tmpstr, NULL, NULL, 0, 0);
 			free(tmpstr); tmpstr = NULL;
 		}
 		servicenode = servicenode->next;
 	}
 
-	addmenulist(&mlist, "add recording (stop after current event)", NULL, 0, 0);
-	addmenulist(&mlist, "add recording (indefinitely)", NULL, 0, 0);
-	addmenulist(&mlist, "add recording (enter duration)", NULL, 0, 0);
+	addmenulist(&mlist, "add recording (stop after current event)", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "add recording (indefinitely)", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "add recording (enter duration)", NULL, NULL, 0, 0);
 
 	mbox = menulistbox(mlist, "recordlist", "Record", NULL, 0, 0);
 	

@@ -14,11 +14,11 @@ void screenvideomode(int flag)
 	tmpstr = getpolicy();
 	tmpstr1 = ostrcat(tmpstr1, getpolicychoices(), 1, 1);
 
-	if(flag == 0) addmenulist(&mlist, "Subchannel", NULL, 0, 0);
-	if(flag == 0 || flag == 1) addmenulist(&mlist, "Resolution Settings", NULL, 0, 0);
-	addmenulist(&mlist, "Aspect Settings", NULL, 0, 0);
-	addmenulist(&mlist, "3D Mode", NULL, 0, 0);
-	addmenulist(&mlist, NULL, NULL, 1, 0);
+	if(flag == 0) addmenulist(&mlist, "Subchannel", NULL, NULL, 0, 0);
+	if(flag == 0 || flag == 1) addmenulist(&mlist, "Resolution Settings", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Aspect Settings", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "3D Mode", NULL, NULL, 0, 0);
+	addmenulist(&mlist, NULL, NULL, NULL, 1, 0);
 	addmenulistall(&mlist, tmpstr1, NULL, 0, tmpstr);
 
 	if(flag == 0)

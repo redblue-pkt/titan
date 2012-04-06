@@ -22,7 +22,7 @@ void screenstreaming()
 			tmpstr = ostrcat(tmpstr, ")", 1, 0);
 
 			count++;
-			addmenulist(&mlist, tmpstr, NULL, 0, 0);
+			addmenulist(&mlist, tmpstr, NULL, NULL, 0, 0);
 			free(tmpstr); tmpstr = NULL;
 		}
 		servicenode = servicenode->next;
