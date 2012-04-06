@@ -174,6 +174,7 @@ enum {CASESSIONCREATE, CASESSIONBUSY, CASESSIONDEL, CASESSIONSTART, CASESSIONFIN
 struct menulist
 {
 	char* name;
+	char* text;
 	char* pic;
 	int deaktiv;
 	int defaultentry;
