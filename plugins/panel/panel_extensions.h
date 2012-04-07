@@ -108,7 +108,7 @@ void screenpanel_extensions(int mode)
 		tmpstr = get_ipk_tmplistinstall();
 		addmenulistall(&mlist, tmpstr, NULL, 0, NULL);
 
-		mbox = menulistbox(mlist, NULL, "Ipk Tmp Install - select file", "%pluginpath%/panel/skin", 1, 0);
+		mbox = menulistbox(mlist, NULL, "Ipk Tmp Install - select file", "%pluginpath%/panel/skin", "/skin/plugin.png", 1, 0);
 		
 		free(tmpstr); tmpstr = NULL;
 		

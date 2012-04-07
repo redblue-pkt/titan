@@ -110,7 +110,7 @@ struct menulist* addmenulist(struct menulist** mlist, char* name, char* text, ch
 // showpng = 1 (smal icon)
 // showpng = 2 (big icon)
 //flag 1: rcgreen = subchannel
-struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, int showpng, int flag)
+struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* defaultpic, int showpng, int flag)
 {
 	debug(1000, "in");
 	int rcret = 0, tmpscreencalc = 0, fromthread = 0;
@@ -205,7 +205,12 @@ struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* 
 				}
 
 				if(mlist->pic == NULL)
-					tmppic = ostrcat(getconfig("skinpath", NULL), "/skin/default.png", 0, 0);
+				{
+					if(defaultpic == NULL)
+						tmppic = ostrcat(getconfig("skinpath", NULL), "/skin/default.png", 0, 0);
+					else
+						tmppic = ostrcat(getconfig("skinpath", NULL), defaultpic, 0, 0);
+				}
 				
 				changepic(tmp, tmppic);
 				free(tmppic); tmppic = NULL;
