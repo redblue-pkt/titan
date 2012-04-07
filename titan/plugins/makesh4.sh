@@ -38,6 +38,7 @@ compile()
 	-I $eplayerinclude \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/driver/bpamem \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/apps/misc/tools/libmmeimage \
+	-I "$HOME"/flashimg/source.titan \
 	-c $2.c -o $2.o
 
 	if [ ! -z $3 ]; then
