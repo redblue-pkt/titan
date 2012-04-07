@@ -831,4 +831,19 @@ char* gettvpic(struct skin* node, char* pos)
 	return NULL;
 }
 
+char* getrecfreesize(struct skin* node)
+{
+	int ret = 0;
+
+	long long full = getfullspace(getconfig("rec_path", NULL)) / (1024 * 1024);
+	long long free = getfreespace(getconfig("rec_path", NULL)) / (1024 * 1024);
+
+	if(full > 0 && full > free) ret = ((full - free) * 100) / full;
+
+	if(ret < 0) ret = 0;
+	if(ret > 100) ret = 100;
+
+	return oitoa(ret);
+}
+
 #endif

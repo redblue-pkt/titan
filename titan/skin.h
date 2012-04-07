@@ -88,6 +88,11 @@ void* convertfunc(char *value, uint8_t *rettype)
 	}
 	if(ostrcmp("getplaytext", value) == 0)
 		return &getplaytext;
+	if(ostrcmp("getrecfreesize", value) == 0)
+	{
+		*rettype = FUNCPROGRESS;
+		return &getrecfreesize;
+	}
 	if(ostrcmp("getepgchanneltimeline", value) == 0)
 	{
 		*rettype = FUNCPROGRESS;
