@@ -105,38 +105,34 @@ void screenpanel_extensions(int mode)
 	}
 	else if(mode == 2)
 	{
-/*
 		tmpstr = get_ipk_tmplistinstall();
-		file = ipk_listbox(NULL, tmpstr, NULL, "Ipk Tmp Install - select file", "%pluginpath%/panel/skin/", 1);
+		addmenulistall(&mlist, tmpstr, NULL, 0, NULL);
+
+		mbox = menulistbox(mlist, NULL, "Ipk Tmp Install - select file", "%pluginpath%/panel/skin", 1, 0);
 		
 		free(tmpstr); tmpstr = NULL;
 		
-		debug(130, "file: %s", file);
-		if(file != NULL)
+		if(mbox != NULL)
 		{
+			debug(130, "file: %s", mbox->name);
+
 			tmpinfo = ostrcat(tmpinfo, "Install ", 1, 0);
-			tmpinfo = ostrcat(tmpinfo, file, 1, 0);
+			tmpinfo = ostrcat(tmpinfo, mbox->name, 1, 0);
 			tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 
 			if(textbox(_("Ipk Tmp Info"), _(tmpinfo), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
 			{
-				char* ipkg_ret = get_ipk_tmpinstall(file);
-				textbox(_("Ipk Tmp Info"), _(ipkg_ret), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
-				free(ipkg_ret); ipkg_ret = NULL;
+				char* log = get_ipk_tmpinstall(mbox->name);
+				if(log == NULL) log = ostrcat("No output found !", NULL, 0, 0);
+				textbox(_("Ipk Tmp Info"), log, "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
+				free(log); log = NULL;
 				textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 			}
-//			if(get_ipk_tmpinstall(file) == 0)
-//				textbox(_("Ipk Tmp Info"), _("Install OK"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
-//			else
-//				textbox(_("Ipk Tmp Info"), _("Install ERROR"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
-//			textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
-
-			free(tmpinfo); tmpinfo = NULL;
-			free(file); file = NULL;
-			screenpanel_extensions(2);
 		}
-		free(file); file = NULL;
-*/
+		freemenulist(mlist); mlist = NULL;
+		free(tmpstr); tmpstr = NULL;
+		free(tmpinfo); tmpinfo = NULL;
+		if(mbox != NULL) screenpanel_extensions(2);
 	}
 }
 
