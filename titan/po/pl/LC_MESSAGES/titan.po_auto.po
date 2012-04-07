@@ -398,6 +398,7 @@ msgstr ""
 #: rgui.h:130 network.h:424 network.h:699 network.h:701 network.h:752
 #: mc_global.h:580 mc_global.h:824 record.h:1019 stream.h:32 videomode.h:61
 #: ipkg.h:364 mc_global.h:579 mc_global.h:823 global.h:4522 ipkg.h:358
+#: global.h:4536
 msgid "Message"
 msgstr ""
 
@@ -487,7 +488,7 @@ msgstr ""
 #: rgui.h:109 rgui.h:130 scriptexec.h:34 network.h:424 network.h:699
 #: network.h:701 network.h:759 mc_global.h:580 mc_global.h:824 stream.h:32
 #: videomode.h:61 ipkg.h:364 mc_global.h:579 mc_global.h:823 global.h:4522
-#: ipkg.h:358
+#: ipkg.h:358 global.h:4536
 msgid "OK"
 msgstr ""
 
@@ -575,7 +576,7 @@ msgstr ""
 #: network.h:751 network.h:758 rgui.h:109 rgui.h:130 scriptexec.h:34
 #: network.h:424 network.h:699 network.h:701 network.h:759 mc_global.h:580
 #: mc_global.h:824 record.h:1019 stream.h:32 videomode.h:61 ipkg.h:364
-#: mc_global.h:579 mc_global.h:823 global.h:4522 ipkg.h:358
+#: mc_global.h:579 mc_global.h:823 global.h:4522 ipkg.h:358 global.h:4536
 msgid "EXIT"
 msgstr ""
 
@@ -942,7 +943,7 @@ msgstr ""
 #: global.h:4359 global.h:4364 global.h:4377 global.h:4378 global.h:4390
 #: global.h:4386 global.h:4389 global.h:4398 global.h:4528 global.h:4535
 #: global.h:4539 global.h:4557 global.h:4561 global.h:4563 global.h:4565
-#: global.h:4522
+#: global.h:4522 global.h:4536
 msgid "ERROR cant read res"
 msgstr ""
 
