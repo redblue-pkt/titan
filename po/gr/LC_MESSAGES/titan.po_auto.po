@@ -399,6 +399,7 @@ msgstr ""
 #: mc_global.h:580 mc_global.h:824 record.h:1019 stream.h:32 videomode.h:61
 #: ipkg.h:364 mc_global.h:579 mc_global.h:823 global.h:4522 ipkg.h:358
 #: global.h:4536 panel_extensions.h:51 panel_extensions.h:95
+#: panel_extensions.h:129
 msgid "Message"
 msgstr ""
 
@@ -1638,7 +1639,7 @@ msgid "Ipk Install Info - Install ERROR"
 msgstr ""
 
 #: panel_extensions.h:67 panel_extensions.h:123 panel_extensions.h:157
-#: panel_extensions.h:51 panel_extensions.h:95
+#: panel_extensions.h:51 panel_extensions.h:95 panel_extensions.h:129
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
@@ -1658,6 +1659,7 @@ msgid "Ipk Remove Info - Remove ERROR"
 msgstr ""
 
 #: panel_extensions.h:141 panel_extensions.h:152 panel_extensions.h:155
+#: panel_extensions.h:123 panel_extensions.h:127
 msgid "Ipk Tmp Info"
 msgstr ""
 
