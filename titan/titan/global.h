@@ -2133,6 +2133,20 @@ unsigned long getfilecount(char* dir)
 	return count;
 }
 
+long long getfullspace(char* dir)
+{
+	struct statfs64 s;
+	long long fullsize = 0;
+
+	if(statfs64(dir, &s) >= 0)
+	{
+		fullsize = s.f_blocks;
+		fullsize *= s.f_bsize;
+	}
+
+	return fullsize;
+}
+
 long long getfreespace(char* dir)
 {
 	struct statfs64 s;
