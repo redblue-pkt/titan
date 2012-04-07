@@ -460,7 +460,9 @@ int findsectiondone(char* section)
 //flag 1: show entrys
 struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, int showpng, int flag)
 {
+	int skip = 0;
 	struct ipkg* node = ipkg, *ipkg_installed = NULL, *node_installed = NULL;
+	struct menulist* tmpmlist = NULL;
 	char* tmpstr = NULL, *tmpinfo = NULL, *tmppic = NULL;
 	
 	if(node == NULL) return NULL;
@@ -493,19 +495,22 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 		
 		if(flag == 1)
 		{
-		
 			//check if ipkg is installed
 			node_installed = ipkg_installed;
+			skip = 0;
 			while(node_installed != NULL)
 			{
 				if(ostrcmp(node->section, node_installed->section) == 0 && ostrcmp(node->showname, node_installed->showname) == 0)
-				{
-					node = node->next;
-					continue;
-				}
+					break;
 				node_installed = node_installed->next;
 			}
-		
+
+			if(skip == 1)
+			{
+				node = node->next;
+				continue;
+			}
+			
 			tmpstr = ostrcat(tmpstr, node->showname, 1, 0);
 			tmpstr = ostrcat(tmpstr, " v.", 1, 0);
 			tmpstr = ostrcat(tmpstr, node->version, 1, 0);
@@ -521,7 +526,8 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 			tmppic = ostrcat("titan-pluginpreview-", node->showname, 0, 0);
 			tmppic = ostrcat(tmppic, ".png", 1, 0);	
 
-			addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 0, 0);
+			tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 0, 0);
+			changemenulistparam(tmpmlist, node->showname);
 			free(tmpstr); tmpstr = NULL;
 			free(tmpinfo); tmpinfo = NULL;
 			free(tmppic); tmppic = NULL;
@@ -541,298 +547,6 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 	return menulistbox(mlist, paramskinname, skintitle, paramskinpath, showpng, 0);
 }
 
-char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, char* skinpath, int showpng)
-{
-	debug(1000, "in");
-	char* skinname1 = NULL;
-	char* skinpath1 = NULL;
-	char* tmpskinpath = NULL;
-	int rcret = 0;
-
-	if(str == NULL)
-		return 0;
-
-	if(skinname == NULL)
-	{
-		debug(130, "skinname default=menulist");
-		skinname1 = ostrcat(skinname, "menulist", 1, 0);
-	}
-	else
-	{
-		debug(130, "skinname changed=%s", skinname);
-		skinname1 = ostrcat(skinname, "", 0, 0);
-	}
-
-	if(skinpath == NULL)
-	{
-		debug(130, "skinpath default=skin/");
-		skinpath1 = ostrcat(skinpath, "skin/", 1, 0);
-	}
-	else
-	{
-		debug(130, "skinpath changed=%s", skinpath);
-		skinpath1 = ostrcat(skinpath, "", 0, 0);
-	}
-
-	struct skin* screen = getscreen(skinname1);
-	struct skin* listbox = getscreennode(screen, "listbox");
-	
-	listbox->aktpage = -1;
-	listbox->aktline = 1;
-
-	if(skintitle != NULL)
-	{
-		debug(130, "skintitle changed=%s", skintitle);
-		changetitle(screen, _(skintitle));
-	}
-
-	struct skin* tmp = NULL;
-	char* tmpstr = NULL;
-	char* defaultdir = NULL;
-	char* tmpinfo = NULL;
-	char* tmptitle = NULL;
-	char* showname = NULL;
-//	char* tmpstr1 = NULL;
-//	char* tmpck = NULL;
-	char* tmpsplit = NULL;
-	char* tmpck = NULL;
-	char* tmpstr1 = NULL;
-	char* tmpstr4 = NULL;
-	char* tmpstr5 = NULL;
-	if(showpng == 1)
-	{
-		struct splitstr* ret1 = NULL;
-		struct splitstr* ret2 = NULL;
-		struct splitstr* ret3 = NULL;
-		int count = 0;
-		int i = 0;
-		ret1 = strsplit(str, "\n", &count);
-	
-		for( i = 0; i < count; i++)
-		{
-			int count2 = 0;
-			tmpsplit = ostrcat(tmpsplit, (&ret1[i])->part, 1, 0);
-			free(ret2); ret2 = NULL;
-			ret2 = strsplit(tmpsplit, "-", &count2);
-	
-			tmp = addlistbox(screen, listbox, tmp, 1);
-			
-			if(tmp != NULL)
-			{
-				changetext(tmp, _((&ret1[i])->part));
-				changename(tmp, (&ret1[i])->part);
-	
-				tmp->del = 1;
-				tmp->textposx = 120;
-				tmp->height = 50;
-//				tmp->fontsize = 30;
-				tmp->valign = convertxmlentry("middle", 0);
-				tmp->hspace = 5;
-				debug(130, "showpng changed=%d", showpng);
-	
-				if(string_find("%pluginpath%",skinpath1))
-				{
-					struct splitstr* ret6 = NULL;
-					int count6 = 0;
-					char* tmpstr6 = NULL;
-					tmpstr6 = ostrcat("", skinpath1, 0, 0);
-					ret6 = strsplit(tmpstr6, "%", &count6);
-					defaultdir = ostrcat(getconfig("skinpath", NULL), "/skin/panel_", 0, 0);
-					defaultdir = ostrcat(defaultdir, (&ret1[i])->part, 1, 0);
-					defaultdir = ostrcat(defaultdir, ".png", 1, 0);
-
-					if(!file_exist(defaultdir))
-					{
-						defaultdir = ostrcat(getconfig("pluginpath", NULL), (&ret6[1])->part, 0, 0);
-						defaultdir = ostrcat(defaultdir, "panel_", 0, 0);
-						defaultdir = ostrcat(defaultdir, (&ret1[i])->part, 1, 0);
-						defaultdir = ostrcat(defaultdir, ".png", 1, 0);
-					}
-					free(ret6), ret6 = NULL;
-				}
-				else
-				{
-					defaultdir = ostrcat(getconfig("skinpath", NULL), skinpath1, 0, 0);
-					defaultdir = ostrcat(defaultdir, "/skin/panel_", 0, 0);
-					defaultdir = ostrcat(defaultdir, (&ret1[i])->part, 1, 0);
-					defaultdir = ostrcat(defaultdir, ".png", 1, 0);
-				}
-
-				debug(130, "defaultdir %s", defaultdir);
-				if(file_exist(defaultdir))
-				{
-					tmpskinpath = ostrcat("", defaultdir, 0, 0);
-					changepic(tmp, tmpskinpath);
-					free(tmpskinpath); tmpskinpath = NULL;
-				}
-				else
-				{
-					tmpskinpath = ostrcat(skinpath1, "panel_default.png", 0, 0);
-					changepic(tmp, tmpskinpath);
-					free(tmpskinpath); tmpskinpath = NULL;
-				}
-				free(defaultdir); defaultdir = NULL;
-	
-				if(defaultstr != NULL)
-					setlistboxselection(listbox, defaultstr);
-			}
-			free(ret2),ret2 = NULL;
-		}
-		free(ret1),ret1 = NULL;
-	}
-	else if(showpng == 2)
-	{
-		int i = 0;
-		tmpck = get_ipk_listinstall();
-		
-		debug(130, "tmpck: %s", tmpck);
-		debug(130, "tmpck list_installed ret: %d", ipkg_list_installed());
-
-		struct ipkg *node = ipkg;
-		while(node != NULL)
-		{
-			debug(130, "name: %s", node->name);
-			debug(130, "section: %s", node->section);
-			debug(130, "showname: %s", node->showname);
-			debug(130, "str: %s", str);
-									
-			if(node->section != NULL && ostrcmp(str, node->section) == 0)
-			{
-				struct splitstr* ret1 = NULL;
-				int count1 = 0;			
-				tmpstr1 = ostrcat("", node->showname, 0, 0);
-				ret1 = strsplit(tmpstr1, ".", &count1);
-				int max = count1;
-				i += 1;
-				showname = ostrcat("", (&ret1[0])->part, 0, 0);
-				free(ret1),ret1 = NULL;
-//				showname = ostrcat(node->showname, NULL, 0, 0);
-
-				struct splitstr* ret3 = NULL;
-				int count3 = 0;
-				int a = 0;
-				tmpstr1 = ostrcat("", tmpck, 0, 0);
-	
-				debug(130, "tmpck: (%d) %s", i, tmpstr1);
-	
-				ret3 = strsplit(tmpstr1, "\n", &count3);
-				int skip = 0;
-
-				debug(130, "check list_installed");
-				for(a = 0; a < count3; a++)
-				{
-					debug(130, "node->name=%s", node->name);
-					debug(130, "(&ret3[a])->part=%s", (&ret3[a])->part);
-
-					char* installed = NULL;
-					installed = ostrcat(installed, node->section, 1, 0);
-					installed = ostrcat(installed, "-", 1, 0);
-					installed = ostrcat(installed, node->showname, 1, 0);
-
-					if(ostrcmp((&ret3[a])->part, installed) == 0)
-					{
-						debug(130, "set skiped=1");
-						skip = 1;
-						break;
-					}
-					free(installed),installed = NULL;
-				}
-				free(ret3),ret3 = NULL;
-				debug(130, "check list_installed done");				
-				if(skip == 0)
-				{
-					tmp = addlistbox(screen, listbox, tmp, 1);
-					tmp->del = 1;
-					tmp->valign = convertxmlentry("middle", 0);
-					tmp->textposx = 250;
-					tmp->height = 170;
-	 				tmp->textposx2 = 270;
-					tmp->type=TEXTBOX;
-					tmp->wrap=YES;
-					tmp->hspace = 5;
-					debug(130, "showpng changed=%d", showpng);
-	
-					defaultdir = ostrcat("", skinpath1, 0, 0);
-					defaultdir = ostrcat(defaultdir, "titan-pluginpreview-", 1, 0);
-					defaultdir = ostrcat(defaultdir, showname, 1, 0);
-					defaultdir = ostrcat(defaultdir, ".png", 1, 0);
-	
-					debug(130, "defaultdir %s", defaultdir);
-	
-					if(file_exist(defaultdir))
-					{
-						debug(130, "defaultdir found");
-						tmpskinpath = ostrcat(skinpath1, "titan-pluginpreview-", 0, 0);
-						tmpskinpath = ostrcat(tmpskinpath, showname, 1, 0);
-						tmpskinpath = ostrcat(tmpskinpath, ".png", 1, 0);
-						changepic(tmp, tmpskinpath);
-						free(tmpskinpath); tmpskinpath = NULL;
-					}	
-					else
-					{
-						debug(130, "defaultdir not found use default.png");
-						tmpskinpath = ostrcat("", "skin/plugin.png", 0, 0);
-						changepic(tmp, tmpskinpath);
-						free(tmpskinpath); tmpskinpath = NULL;
-					}
-					free(defaultdir); defaultdir = NULL;
-	
-					if(defaultstr != NULL)
-					{
-						setlistboxselection(listbox, defaultstr);
-					//	if(ostrcmp(defaultstr, (&ret1[i])->part) == 0)
-					//		listbox->aktline = i + 1;
-					}
-					tmptitle = ostrcat(tmptitle, node->showname, 1, 0);
-					tmptitle = ostrcat(tmptitle, " v.", 1, 0);
-					tmptitle = ostrcat(tmptitle, node->version, 1, 0);
-					changetext(tmp, _(tmptitle));
-					changename(tmp, tmptitle);
-	
-					tmpinfo = ostrcat(tmpinfo, "\nSection: ", 1, 0);
-					tmpinfo = ostrcat(tmpinfo, node->section, 1, 0);
-					tmpinfo = ostrcat(tmpinfo, "\nDescription:\n", 1, 0);
-					if(node->desc != NULL)
-						tmpinfo = ostrcat(tmpinfo, node->desc, 1, 0);
-					else
-						tmpinfo = ostrcat(tmpinfo, _("no description found"), 1, 0);				
-					changetext2(tmp, _(tmpinfo));
-	
-					free(tmpinfo); tmpinfo = NULL;
-					free(tmptitle); tmptitle = NULL;
-					free(tmpstr1);tmpstr1 = NULL;
-					free(showname);showname = NULL;	
-				}
-				free(ret1),ret1 = NULL;
-			}			
-			node = node->next;
-		}
-	}
-	listbox->aktpage = -1;
-	drawscreen(screen,0);
-	addscreenrc(screen, listbox);
-
-	while (1)
-	{
-		rcret = waitrc(screen, 0, 0);
-
-		if(rcret==getrcconfigint("rcexit",NULL)) break;
-		if(listbox->select != NULL && rcret==getrcconfigint("rcok",NULL))
-		{
-			tmpstr = ostrcat(tmpstr, listbox->select->name, 1, 0);
-			break;
-		}
-	}
-	free(skinname1); skinname1 = NULL;
-	free(skinpath1); skinpath1 = NULL;
-	delownerrc(screen);
-	delmarkedscreennodes(screen, 1);
-	clearscreen(screen);
-	debug(1000, "out");
-	return tmpstr;
-
-}
-
 char* get_ipk_tmpinstall(char* ipk)
 {
 	debug(130, "in");
@@ -844,20 +558,6 @@ char* get_ipk_tmpinstall(char* ipk)
 	char* cmd = NULL, *tmpstr = NULL;
 	cmd = ostrcat(cmd, "ipkg install /tmp/", 1, 0);
 	cmd = ostrcat(cmd, ipk, 1, 0);
-
-	tmpstr = command(cmd);
-
-	debug(130, "out %s",cmd);
-	free(cmd); cmd = NULL;
-	return tmpstr;
-}
-
-char* get_ipk_listinstall()
-{
-	debug(130, "in");
-	char* cmd = NULL, *tmpstr = NULL;
-
-	cmd = ostrcat(cmd, "ipkg list_installed | awk '{ print $1 }' | sed 's/Successfully//' | sed 's/titan-plugin-//'", 1, 0);
 
 	tmpstr = command(cmd);
 

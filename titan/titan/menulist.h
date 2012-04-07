@@ -21,11 +21,23 @@ void freemenulist(struct menulist* mlist)
 			free(prev->pic);
 			prev->pic = NULL;
 
+			free(prev->param);
+			prev->param = NULL;
+
 			free(prev);
 			prev = NULL;
 		}
 	}
 	debug(1000, "out");
+}
+
+void changemenulistparam(struct menulist* mlist, char* param)
+{
+	if(mlist != NULL)
+	{
+		free(mlist->param);
+		mlist->param = ostrcat(param, NULL, 0, 0);
+	}
 }
 
 void setmenulistdefault(struct menulist* mlist, char* defaultentry)
