@@ -937,7 +937,7 @@ void screenrecordstop()
 		servicenode = servicenode->next;
 	}
 
-	mbox = menulistbox(mlist, "recordlist", "Record", NULL, 0, 0);
+	mbox = menulistbox(mlist, "recordlist", "Record", NULL, NULL, 0, 0);
 	
 	if(mbox != NULL && strstr(mbox->name, "stop") == mbox->name)
 	{
@@ -990,7 +990,7 @@ void screenrecorddirect()
 	addmenulist(&mlist, "add recording (indefinitely)", NULL, NULL, 0, 0);
 	addmenulist(&mlist, "add recording (enter duration)", NULL, NULL, 0, 0);
 
-	mbox = menulistbox(mlist, "recordlist", "Record", NULL, 0, 0);
+	mbox = menulistbox(mlist, "recordlist", "Record", NULL, NULL, 0, 0);
 	
 	if(mbox != NULL && strstr(mbox->name, "stop") == mbox->name)
 	{

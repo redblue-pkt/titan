@@ -54,7 +54,7 @@ void screenpanel_settings_bluebutton()
 	debug(60, "Bluekey: %s (default)", bluekey);
 
 	setmenulistdefault(mlist, bluekey);
-	mbox = menulistbox(mlist, NULL, skintitle, NULL, 1, 0);
+	mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
 
 	if(mbox == NULL)
 	{

@@ -65,7 +65,7 @@ void screenkeyactions(int key, int flag)
 		addmenulist(&mlist, "Child Protection", NULL, NULL, 0, 0);
 		addmenulist(&mlist, "Subchannel", NULL, NULL, 0, 0);
 	
-		mbox = menulistbox(mlist, NULL, skintitle, NULL, 1, 0);
+		mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
 		keyconf = mbox->name;
 		free(tmpstr); tmpstr = NULL;
 	}

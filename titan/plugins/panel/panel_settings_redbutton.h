@@ -55,7 +55,7 @@ void screenpanel_settings_redbutton()
 	debug(60, "Redkey: %s (default)", redkey);
 	
 	setmenulistdefault(mlist, redkey);
-	mbox = menulistbox(mlist, NULL, skintitle, NULL, 1, 0);
+	mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
 
 	if(mbox == NULL)
 	{

@@ -544,7 +544,7 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 		ipkg = node;
 	}
 
-	return menulistbox(mlist, paramskinname, skintitle, paramskinpath, showpng, 0);
+	return menulistbox(mlist, paramskinname, skintitle, paramskinpath, "/skin/plugin.png", showpng, 0);
 }
 
 char* get_ipk_tmpinstall(char* ipk)
