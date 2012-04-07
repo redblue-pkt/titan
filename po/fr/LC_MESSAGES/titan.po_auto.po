@@ -398,7 +398,7 @@ msgstr ""
 #: rgui.h:130 network.h:424 network.h:699 network.h:701 network.h:752
 #: mc_global.h:580 mc_global.h:824 record.h:1019 stream.h:32 videomode.h:61
 #: ipkg.h:364 mc_global.h:579 mc_global.h:823 global.h:4522 ipkg.h:358
-#: global.h:4536
+#: global.h:4536 panel_extensions.h:51 panel_extensions.h:95
 msgid "Message"
 msgstr ""
 
@@ -488,7 +488,9 @@ msgstr ""
 #: rgui.h:109 rgui.h:130 scriptexec.h:34 network.h:424 network.h:699
 #: network.h:701 network.h:759 mc_global.h:580 mc_global.h:824 stream.h:32
 #: videomode.h:61 ipkg.h:364 mc_global.h:579 mc_global.h:823 global.h:4522
-#: ipkg.h:358 global.h:4536
+#: ipkg.h:358 global.h:4536 panel_extensions.h:36 panel_extensions.h:43
+#: panel_extensions.h:51 panel_extensions.h:80 panel_extensions.h:87
+#: panel_extensions.h:93 panel_extensions.h:95
 msgid "OK"
 msgstr ""
 
@@ -577,6 +579,9 @@ msgstr ""
 #: network.h:424 network.h:699 network.h:701 network.h:759 mc_global.h:580
 #: mc_global.h:824 record.h:1019 stream.h:32 videomode.h:61 ipkg.h:364
 #: mc_global.h:579 mc_global.h:823 global.h:4522 ipkg.h:358 global.h:4536
+#: panel_extensions.h:36 panel_extensions.h:43 panel_extensions.h:51
+#: panel_extensions.h:80 panel_extensions.h:87 panel_extensions.h:93
+#: panel_extensions.h:95
 msgid "EXIT"
 msgstr ""
 
@@ -1119,7 +1124,7 @@ msgid "check your Secret Feed !"
 msgstr ""
 
 #: ipkg.h:701 ipkg.h:702 ipkg.h:467 ipkg.h:733 ipkg.h:525 ipkg.h:804
-#: ipkg.h:519 ipkg.h:798
+#: ipkg.h:519 ipkg.h:798 ipkg.h:524
 msgid "no description found"
 msgstr ""
 
@@ -1616,7 +1621,7 @@ msgstr ""
 msgid "WPA2"
 msgstr ""
 
-#: panel_extensions.h:19 panel_extensions.h:49
+#: panel_extensions.h:19 panel_extensions.h:49 panel_extensions.h:36
 msgid "Ipk Install Info"
 msgstr ""
 
@@ -1624,30 +1629,31 @@ msgstr ""
 msgid "No section found"
 msgstr ""
 
-#: panel_extensions.h:59
+#: panel_extensions.h:59 panel_extensions.h:43
 msgid "Ipk Install Info - Install OK"
 msgstr ""
 
-#: panel_extensions.h:65
+#: panel_extensions.h:65 panel_extensions.h:49
 msgid "Ipk Install Info - Install ERROR"
 msgstr ""
 
 #: panel_extensions.h:67 panel_extensions.h:123 panel_extensions.h:157
+#: panel_extensions.h:51 panel_extensions.h:95
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
 "reboot the box."
 msgstr ""
 
-#: panel_extensions.h:104
+#: panel_extensions.h:104 panel_extensions.h:80
 msgid "Remove Info"
 msgstr ""
 
-#: panel_extensions.h:115
+#: panel_extensions.h:115 panel_extensions.h:87
 msgid "Ipk Remove Info - Remove OK"
 msgstr ""
 
-#: panel_extensions.h:121
+#: panel_extensions.h:121 panel_extensions.h:93
 msgid "Ipk Remove Info - Remove ERROR"
 msgstr ""
 
