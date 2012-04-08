@@ -41,14 +41,14 @@ void screenvideomode(int flag)
 	{
 		if(ostrcmp(mbox->name, "Subchannel") == 0)
 		{
-			freemenulist(mlist); mlist = NULL;
+			freemenulist(mlist, 1); mlist = NULL;
 			screenlinkedchannel();
 			return;
 		}
 		else if(ostrcmp(mbox->name, "Resolution Settings") == 0)
 		{
 			skinname = "resolutionsettings";
-			freemenulist(mlist); mlist = NULL;
+			freemenulist(mlist, 1); mlist = NULL;
 			tmpstr = getvideomode();
 			tmpstr1 = getvideomodechoices();
 			addmenulistall(&mlist, tmpstr1, NULL, 0, tmpstr);
@@ -70,7 +70,7 @@ void screenvideomode(int flag)
 		else if(ostrcmp(mbox->name, "Aspect Settings") == 0)
 		{
 			skinname = "aspectsettings";
-			freemenulist(mlist); mlist = NULL;
+			freemenulist(mlist, 1); mlist = NULL;
 			tmpstr = getaspect();
 			tmpstr1 = getaspectchoices();
 			addmenulistall(&mlist, tmpstr1, NULL, 0, tmpstr);
@@ -83,7 +83,7 @@ void screenvideomode(int flag)
 		else if(ostrcmp(mbox->name, "3D Mode") == 0)
 		{
 			skinname = "3dsettings";
-			freemenulist(mlist); mlist = NULL;
+			freemenulist(mlist, 1); mlist = NULL;
 			tmpstr = getmode3d();
 			tmpstr1 = getmode3dchoices();
 			addmenulistall(&mlist, tmpstr1, NULL, 0, tmpstr);
@@ -95,7 +95,7 @@ void screenvideomode(int flag)
 		}
 	}
 
-	freemenulist(mlist); mlist = NULL;
+	freemenulist(mlist, 1); mlist = NULL;
 }
 
 #endif

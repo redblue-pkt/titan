@@ -593,7 +593,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 				screenmainplaylist(0);
 				drawscreen(apskin, 0);
 			}
-			freemenulist(mlist);
+			freemenulist(mlist, 1);
 		}
 	}
 	else

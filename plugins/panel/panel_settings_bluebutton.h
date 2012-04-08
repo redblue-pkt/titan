@@ -68,7 +68,7 @@ void screenpanel_settings_bluebutton()
 	else
 		addconfig("bluekey", mbox->name);
 
-	free(mlist); mlist = NULL;
+	freemenulist(mlist, 1); mlist = NULL;
 	free(tmpstr); tmpstr = NULL;
 	debug(1000, "out");
 	return;

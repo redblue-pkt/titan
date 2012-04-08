@@ -570,7 +570,7 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 
 						cammianswer(dvbnode, sessionnr, selnr + 1);
 					}
-					freemenulist(mlist); mlist = NULL;
+					freemenulist(mlist, 1); mlist = NULL;
 					free(tmpstr); tmpstr = NULL;
 					free(tmpstr1); tmpstr1 = NULL;
 					free(casession->mmititle); casession->mmititle = NULL;

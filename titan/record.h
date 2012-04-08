@@ -952,7 +952,7 @@ void screenrecordstop()
 		}
 	}
 	
-	freemenulist(mlist); mlist = NULL;
+	freemenulist(mlist, 1); mlist = NULL;
 }
 
 void screenrecorddirect()
@@ -1032,7 +1032,7 @@ void screenrecorddirect()
 	}
 
 	recordcheckret(NULL, ret, 6);
-	freemenulist(mlist); mlist = NULL;
+	freemenulist(mlist, 1); mlist = NULL;
 }
 
 #endif

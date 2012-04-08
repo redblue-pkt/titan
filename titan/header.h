@@ -319,7 +319,7 @@ void delownconfigtmpall();
 void fillinfobar();
 
 //menulist.h
-void freemenulist(struct menulist* mlist);
+void freemenulist(struct menulist* mlist, int delparam);
 void addmenulistall(struct menulist** mlist, char* allname, char* pic, int deaktiv, char* defaultentry);
 struct menulist* addmenulist(struct menulist** mlist, char* name, char* text, char* pic, int deaktiv, int defaultentry);
 struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* defaultpic, int showpng, int flag);
