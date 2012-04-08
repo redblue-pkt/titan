@@ -78,7 +78,7 @@ void screenkeyactions(int key, int flag)
 	if(flag == 0 && keyconf == NULL)
 	{
 		if(key == 1) screenkeyactions(1, 1);
-		freemenulist(mlist); mlist = NULL;
+		freemenulist(mlist, 1); mlist = NULL;
 		return;
 	}
 
@@ -109,50 +109,50 @@ void screenkeyactions(int key, int flag)
 			if(startplugin != NULL){
 				startplugin();
 			}
-			freemenulist(mlist); mlist = NULL;
+			freemenulist(mlist, 1); mlist = NULL;
 			return;
 		}
 	}
 	else if(ostrcmp(keyconf, "Subchannel") == 0)
 	{
 		screenlinkedchannel();
-		freemenulist(mlist); mlist = NULL;
+		freemenulist(mlist, 1); mlist = NULL;
 		return;
 	}
 	else if(ostrcmp(keyconf, "Auto Resolution") == 0)
 	{
 		keyactions_setres();
-		freemenulist(mlist); mlist = NULL;
+		freemenulist(mlist, 1); mlist = NULL;
 		return;
 	}
 	else if(ostrcmp(keyconf, "Extensions List") == 0)
 	{
 		screenkeyactions(1, 1);
-		freemenulist(mlist); mlist = NULL;
+		freemenulist(mlist, 1); mlist = NULL;
 		return;
 	}
 	else if(ostrcmp(keyconf, "Multi EPG") == 0)
 	{
 		screenmultiepg(NULL, NULL, 0);
-		freemenulist(mlist); mlist = NULL;
+		freemenulist(mlist, 1); mlist = NULL;
 		return;
 	}
 	else if(ostrcmp(keyconf, "Graphic Multi EPG") == 0)
 	{
 		screengmultiepg(NULL, NULL, 0);
-		freemenulist(mlist); mlist = NULL;
+		freemenulist(mlist, 1); mlist = NULL;
 		return;
 	}
 	else if(ostrcmp(keyconf, "Sleep Timer") == 0)
 	{
 		screenpowerofftimer();
-		freemenulist(mlist); mlist = NULL;
+		freemenulist(mlist, 1); mlist = NULL;
 		return;
 	}
 	else if(ostrcmp(keyconf, "Child Protection") == 0)
 	{
 		screenpin();
-		freemenulist(mlist); mlist = NULL;
+		freemenulist(mlist, 1); mlist = NULL;
 		return;
 	}
 			
@@ -165,7 +165,7 @@ void screenkeyactions(int key, int flag)
 			startplugin();
 	}
 
-	freemenulist(mlist); mlist = NULL;
+	freemenulist(mlist, 1); mlist = NULL;
 	debug(1000, "out");
 	return;
 }

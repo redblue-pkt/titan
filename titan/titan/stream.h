@@ -39,7 +39,7 @@ void screenstreaming()
 			servicenode->recendtime = 1;
 	}
 
-	freemenulist(mlist); mlist = NULL;
+	freemenulist(mlist, 1); mlist = NULL;
 }
 
 void streamthreadfunc(struct stimerthread* timernode)

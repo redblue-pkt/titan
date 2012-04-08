@@ -1,7 +1,7 @@
 #ifndef MENULIST_H
 #define MENULIST_H
 
-void freemenulist(struct menulist* mlist)
+void freemenulist(struct menulist* mlist, int delparam)
 {
 	debug(1000, "in");
 	struct menulist *node = mlist, *prev = mlist;
@@ -21,8 +21,11 @@ void freemenulist(struct menulist* mlist)
 			free(prev->pic);
 			prev->pic = NULL;
 
-			free(prev->param);
-			prev->param = NULL;
+			if(delparam == 1)
+			{
+				free(prev->param);
+				prev->param = NULL;
+			}
 
 			free(prev);
 			prev = NULL;

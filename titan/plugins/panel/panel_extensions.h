@@ -55,8 +55,8 @@ void screenpanel_extensions(int mode)
 			}
 		}
 			
-		freemenulist(mlist1); mlist1 = NULL;
-		freemenulist(mlist); mlist = NULL;
+		freemenulist(mlist1, 1); mlist1 = NULL;
+		freemenulist(mlist, 1); mlist = NULL;
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
 		freeipkg();
@@ -97,7 +97,7 @@ void screenpanel_extensions(int mode)
 				unlink("/tmp/ipkg.log");
 			}
 		}
-		freemenulist(mlist); mlist = NULL;
+		freemenulist(mlist, 1); mlist = NULL;
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
 		freeipkg();
@@ -129,7 +129,7 @@ void screenpanel_extensions(int mode)
 				textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 			}
 		}
-		freemenulist(mlist); mlist = NULL;
+		freemenulist(mlist, 1); mlist = NULL;
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
 		if(mbox != NULL) screenpanel_extensions(2);

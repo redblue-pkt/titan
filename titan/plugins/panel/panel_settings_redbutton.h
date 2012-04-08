@@ -69,7 +69,7 @@ void screenpanel_settings_redbutton()
 	else
 		addconfig("redkey", mbox->name);
 
-	freemenulist(mlist); mlist = NULL;
+	freemenulist(mlist, 1); mlist = NULL;
 	free(tmpstr); tmpstr = NULL;
 	debug(1000, "out");
 	return;
