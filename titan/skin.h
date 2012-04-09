@@ -1416,7 +1416,7 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 					green = red;
 					blue = red;
 				}
-				color = (0 << 24) | (red << 16) | (green << 8) | blue;
+				color = (255 << 24) | (red << 16) | (green << 8) | blue;
 				drawpixelfb(accelfb, (width * py) + x, 0, color);
 			}
 			if((py * width * 4) + (width * 8) >= accelfb->varfbsize)
@@ -1477,7 +1477,7 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 					green = red;
 					blue = red;
 				}
-				color = (0 << 24) | (red << 16) | (green << 8) | blue;
+				color = (255 << 24) | (red << 16) | (green << 8) | blue;
 				drawpixelfast(posx + x, py, color);
 			}
 		} 
