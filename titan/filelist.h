@@ -250,6 +250,15 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 
 	status.tmp = NULL;
 	parentdir = addscreennode(screen, NULL, child);
+	if(flag == 1 && parentdir != NULL)
+	{
+		parentdir->width = 200;
+		parentdir->posx = posx;
+		posx += parentdir->width;
+
+		parentdir->type = GRIDBR;
+		gridbr++;
+	}
 	child = parentdir;
 	tmpcount = count;
 	while(tmpcount--)
@@ -279,11 +288,14 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 				{
 					if(gridbr == 0) child->type = GRIDBR;
 
-					child->width = 200;
-					child->posx = posx;
-					posx += child->width;
+					if(child != parentdir)
+					{
+						child->width = 200;
+						child->posx = posx;
+						posx += child->width;
 
-					gridbr++;
+						gridbr++;
+					}
 					if(gridbr >= 3)
 					{
 						gridbr = 0;
