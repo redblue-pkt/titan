@@ -458,7 +458,7 @@ int findsectiondone(char* section)
 
 //flag 0: show section
 //flag 1: show entrys
-struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, int showpng, int flag)
+struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* section, int showpng, int flag)
 {
 	int skip = 0;
 	struct ipkg* node = ipkg, *ipkg_installed = NULL, *node_installed = NULL;
@@ -504,6 +504,10 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 					break;
 				node_installed = node_installed->next;
 			}
+			
+			//check if ipkg is in section
+			if(section != NULL && ostrcmp(node->section, section) != 0)
+				skip = 1;
 
 			if(skip == 1)
 			{
