@@ -377,6 +377,12 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						child->posx = posx;
 						posx += child->width;
 
+						tmpstr = ostrcat(tmpstr, "skin/ext_", 1, 0);
+						tmpstr = ostrcat(tmpstr, getfilenameext(filelist[i]->d_name), 1, 0);
+						tmpstr = ostrcat(tmpstr, ".png", 1, 0);
+						changepic(child, tmpstr);
+						free(tmpstr); tmpstr = NULL;
+
 						gridbr++;
 						if(gridbr >= 3)
 						{
