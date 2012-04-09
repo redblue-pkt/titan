@@ -1393,9 +1393,23 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 
 	if(accelfb != NULL && accelfb->varfbsize > width * 8 && (scalewidth != 0 || scaleheight != 0))
 	{
+		if(width > mwidth) width = mwidth;
+		if(height > mheight) height = mheight;
+
+		if(halign == CENTER)
+			posx += mwidth / 2 - width / 2;
+		else if(halign == RIGHT)
+			posx += mwidth - width;
+		if(valign == MIDDLE)
+			posy += mheight / 2 - height / 2;
+		else if(valign == BOTTOM)
+			posy += mheight - height;
+	
 		int nposy = posy;
 		if(scalewidth == 0) scalewidth = width;
 		if(scaleheight == 0) scaleheight = height;
+		if(scalewidth > mwidth) scalewidth = mwidth;
+		if(scaleheight > mheight) scaleheight = mheight;
 		py = -1;
 
 		m_lock(&status.accelfbmutex, 16);
