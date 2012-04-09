@@ -1666,6 +1666,21 @@ int cmpfilenameext(char* filename, char* ext)
 	return 1;
 }
 
+char* getfilenameext(char* filename)
+{
+	char* zeichen = NULL;
+
+	if(filename == NULL) return NULL;
+
+	zeichen = strrchr(filename, '.');
+	if(zeichen != NULL)
+	{
+		return ostrcat(zeichen + 1, NULL, 0, 0);
+	}
+
+	return NULL;
+}
+
 char* convert_timesec(int sec)
 {
 	int hour = 0, min = 0, seconds = 0;
