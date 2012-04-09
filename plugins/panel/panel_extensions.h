@@ -13,12 +13,12 @@ void screenpanel_extensions(int mode)
 		ipkg_update();
 		ipkg_list();
 
-		mbox = ipkmenulist(mlist, NULL, "Ipk Install - select section", "%pluginpath%/panel/skin", 1, 0);
+		mbox = ipkmenulist(mlist, NULL, "Ipk Install - select section", "%pluginpath%/panel/skin", NULL, 1, 0);
 
 		if(mbox != NULL)
 		{
 			debug(130, "section: %s", mbox->name);
-			mbox1 = ipkmenulist(mlist1, "ipkinstall", "Ipk Install - select file", "/tmp/preview", 2, 1);
+			mbox1 = ipkmenulist(mlist1, "ipkinstall", "Ipk Install - select file", "/tmp/preview", mbox->name, 2, 1);
 			
 			if(mbox1 != NULL)
 			{
@@ -65,7 +65,7 @@ void screenpanel_extensions(int mode)
 	else if(mode == 1)
 	{
 		ipkg_list_installed();
-		mbox = ipkmenulist(mlist, NULL, "Ipk Remove - select file", "%pluginpath%/panel/skin", 1, 0);
+		mbox = ipkmenulist(mlist, NULL, "Ipk Remove - select file", "%pluginpath%/panel/skin", NULL, 1, 0);
 		
 		if(mbox != NULL)
 		{
