@@ -4305,10 +4305,18 @@ char* string_shortname(char *tmpfilename, int mode)
 //	char replacelist[] = "avi mkv x264 se disc0 disc1 disc2 disc3 disc4 0disc 1disc 2disc 3disc 4disc season0 season1 season2 season3 season4 season5 season6 season7 season8 season9 hdtv 720p 1080i 1080p uncut cd0 cd1 cd2 cd3 cd4 cd5 cd6 cd7 cd8 cd9 dvd0 dvd1 dvd2 dvd3 dvd4 ac3d ac3 bdrip bluray cam camrip complete custom cut dc directors dl doku dts dvdr dvdrip dvdscr dvdscreener extended french finnish german hd hddvd hddvdrip hdtv int internal int ld limited multi multisubs nordic ntsc pal pl r1 r5 recut remastered repack rip screener se see special.edition sse stv subbed swedish staffel tc telecine telesync ts unrated ws xxx italian";
 	char* str = NULL;
 
-	if (mode==1){
-		char* replacelist = "avi mkv x264 se uncut ac3d ac3hd ac3 bdrip bluray cam camrip complete custom cut dc directors dl doku dts dvdr dvdrip dvdscr dvdscreener extended french finnish german hd hddvd hddvdrip hdtv int internal int ld limited multi multisubs nordic ntsc pal pl r1 r5 recut remastered repack rip screener se see special.edition sse stv subbed swedish staffel tc telecine telesync ts unrated ws xxx italian";
+	if (mode==1)
+	{
+		char* replacelist = "avi mkv x264 se uncut ac3d ac3hd ac3 bdrip bluray cam camrip complete custom cut dc directors dl doku dts dvdr dvdrip dvdscr dvdscreener ecc extended french finnish german hd hddvd hddvdrip hdtv int internal int ld limited multi multisubs nordic ntsc pal pl r1 r5 recut remastered repack rip screener se see special.edition sse stv subbed swedish staffel tc telecine telesync ts unrated ws xxx italian";
 		str = ostrcat(str, replacelist, 0, 0);
-	} else {
+	}
+	else if (mode==2)
+	{
+		char* replacelist = "avi mkv x264 se uncut ac3d ac3hd ac3 bdrip bluray cam camrip complete custom cut dc directors dl doku dts dvdr dvdrip dvdscr dvdscreener ecc extended french finnish german hd hddvd hddvdrip hdtv int internal int ld limited multi multisubs nordic ntsc pal pl r1 r5 recut remastered repack rip screener se see special.edition sse stv subbed swedish staffel tc telecine telesync ts unrated ws xxx italian disc0 disc1 disc2 disc3 disc4 0disc 1disc 2disc 3disc 4disc season0 season1 season2 season3 season4 season5 season6 season7 season8 season9 hdtv 720p 1080i 1080p cd0 cd1 cd2 cd3 cd4 cd5 cd6 cd7 cd8 cd9 dvd0 dvd1 dvd2 dvd3 dvd4";
+		str = ostrcat(str, replacelist, 0, 0);
+	}
+	else
+	{
 		char* replacelist = "disc0 disc1 disc2 disc3 disc4 0disc 1disc 2disc 3disc 4disc season0 season1 season2 season3 season4 season5 season6 season7 season8 season9 hdtv 720p 1080i 1080p cd0 cd1 cd2 cd3 cd4 cd5 cd6 cd7 cd8 cd9 dvd0 dvd1 dvd2 dvd3 dvd4";
 		str = ostrcat(str, replacelist, 0, 0);
 	}
@@ -4319,8 +4327,10 @@ char* string_shortname(char *tmpfilename, int mode)
 	int i = 0;
 	ret1 = strsplit(str, " ", &count);
 	int max = count - 1;
+	int first = 1;
 
-	for( i = 0; i < max; i++){
+	for( i = 0; i < max; i++)
+	{
 		struct splitstr* ret2 = NULL;
 		int count2 = 0;
 		int j = 0;
@@ -4328,22 +4338,47 @@ char* string_shortname(char *tmpfilename, int mode)
 		tmpstr = ostrcat(tmpstr, tmpfilename, 1, 0);
 		ret2 = strsplit(tmpstr, " ,.-_", &count2);
 
-		for( j = 0; j < count2; j++){
-			if(j > 0){
-				if(ostrcmp((&ret1[i])->part, (&ret2[j])->part) == 0){
-					if (mode==1){
+		for( j = 0; j < count2; j++)
+		{
+			if(j > 0)
+			{					
+				if(ostrcmp((&ret1[i])->part, (&ret2[j])->part) == 0)
+				{
+					if (mode==1)
+					{
 						tmpfilename = string_replace((&ret2[j])->part, replace, tmpfilename, 1);
 						continue;
-					} else {
-//						tmpfilename = string_replace_remove_last_chars((&ret2[j])->part, replace, tmpfilename, 1);
-//						break;
+					}
+					else if (mode==2)
+					{
+						tmpfilename = string_replace_remove_last_chars((&ret2[j])->part, replace, tmpfilename, 1);
+						break;
+					}
+					else
+					{
 						tmpfilename = string_replace((&ret2[j])->part, replace, tmpfilename, 1);
 						continue;
 					}
 				}
+				else if (first == 1 && mode == 2)
+				{
+//					printf("zahl: %s\n", (&ret2[j])->part);
+				 	int theCharacter = atoi((&ret2[j])->part);
+					if(theCharacter != 0)
+					{
+//						printf("found zahl: %s\n", (&ret2[j])->part);
+						if(theCharacter > 1800 && theCharacter < 2100)
+						{
+//							printf("found year: %s\n", (&ret2[j])->part);
+							tmpfilename = string_replace_remove_last_chars((&ret2[j])->part, "", tmpfilename, 1);
+							break;
+						}
+					}
+				}				
 			}
 		}
 		free(ret2); ret2 = NULL;
+		first = 0;
 	}
 
 	free(ret1); ret1 = NULL;
