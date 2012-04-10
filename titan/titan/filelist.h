@@ -250,6 +250,33 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 
 	status.tmp = NULL;
 	parentdir = addscreennode(screen, NULL, child);
+
+	if(flag == 1 && parentdir != NULL) 
+	{
+		parentdir->picheight = 180;
+		parentdir->picwidth = 180;				
+		parentdir->height = 230;
+		parentdir->width = 370;
+		parentdir->prozwidth = 0;
+		//parentdir->bgcol = 0xffffff;
+		parentdir->bgspace = 1;
+		parentdir->vspace = 10;
+		parentdir->hspace = 10;
+		parentdir->posx = posx;
+		//parentdir->fontcol = 0x0000ff;
+		parentdir->halign = CENTER;
+		parentdir->valign = TEXTBOTTOM;
+		parentdir->posx = posx;
+		posx += parentdir->width;
+
+		tmpstr = ostrcat(tmpstr, "skin/changedir_cover.png", 1, 0);
+		changepic(parentdir, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		parentdir->type = GRIDBR; 
+		gridbr++;
+	} 
+ 	
 	child = parentdir;
 	tmpcount = count;
 	while(tmpcount--)
@@ -279,95 +306,83 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 				{
 					if(gridbr == 0) child->type = GRIDBR;
 
-					child->picheight = 180;
-					child->picwidth = 180;
-							
-					child->height = 230;
-					child->width = 370;
-					child->prozwidth = 0;
-					//child->bgcol = 0xffffff;
-					child->bgspace = 1;
-					child->vspace = 10;
-					child->hspace = 10;
-					child->posx = posx;
-					//child->fontcol = 0x0000ff;
-					child->halign = CENTER;
-					child->valign = TEXTBOTTOM;
-
-					child->posx = posx;
-
-					posx += child->width;
-
-					if(ostrcmp(filelist[i]->d_name, "..") == 0)
+					if(child != parentdir) 
 					{
-						tmpstr = ostrcat(tmpstr, "skin/changedir_cover.png", 1, 0);
-						changepic(child, tmpstr);
-					}						
-					else if(ostrcmp(filelist[i]->d_name, "autofs") == 0)
-					{
-						tmpstr = ostrcat(tmpstr, "skin/autofs_cover.png", 1, 0);
-						changepic(child, tmpstr);
-					}
-					else if(ostrcmp(filelist[i]->d_name, "hdd") == 0)
-					{
-						tmpstr = ostrcat(tmpstr, "skin/harddisk_cover.png", 1, 0);
-						changepic(child, tmpstr);
-					}
-					else if(ostrcmp(filelist[i]->d_name, "usb") == 0)
-					{
-						tmpstr = ostrcat(tmpstr, "skin/usb_cover.png", 1, 0);
-						changepic(child, tmpstr);
-					}
-					else if(ostrcmp(filelist[i]->d_name, "net") == 0)
-					{
-						tmpstr = ostrcat(tmpstr, "skin/network_cover.png", 1, 0);
-						changepic(child, tmpstr);
-					}
-					else
-					{
-//						tmpstr = ostrcat(tmpstr, "/var/swap/imdbfolder/", 1, 0);
-						tmpstr = ostrcat(tmpstr, "/media/autofs/DEBIAN/autofs/xvid/imdbfolder/", 1, 0);
-						int fast = 0;
-						if(fast == 1)
-						{
-							tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);
-							tmpstr = ostrcat(tmpstr, ".png", 1, 0);
-						}
+	 					child->picheight = 180;
+						child->picwidth = 180;
+								
+						child->height = 230;
+						child->width = 370;
+						child->prozwidth = 0;
+						//child->bgcol = 0xffffff;
+						child->bgspace = 1;
+						child->vspace = 10;
+						child->hspace = 10;
+						child->posx = posx;
+						//child->fontcol = 0x0000ff;
+						child->halign = CENTER;
+						child->valign = TEXTBOTTOM;
+	
+						child->posx = posx;
+	
+						posx += child->width;
+	
+						if(ostrcmp(filelist[i]->d_name, "..") == 0)
+							tmpstr = ostrcat(tmpstr, "skin/changedir_cover.png", 1, 0);
+						else if(ostrcmp(filelist[i]->d_name, "autofs") == 0)
+							tmpstr = ostrcat(tmpstr, "skin/autofs_cover.png", 1, 0);
+						else if(ostrcmp(filelist[i]->d_name, "hdd") == 0)
+							tmpstr = ostrcat(tmpstr, "skin/harddisk_cover.png", 1, 0);
+						else if(ostrcmp(filelist[i]->d_name, "usb") == 0)
+							tmpstr = ostrcat(tmpstr, "skin/usb_cover.png", 1, 0);
+						else if(ostrcmp(filelist[i]->d_name, "net") == 0)
+							tmpstr = ostrcat(tmpstr, "skin/network_cover.png", 1, 0);
 						else
-						{	
-							char* filename = NULL;
-							filename = ostrcat(filename, strdup(filelist[i]->d_name), 1, 0);
-							debug(10, "[filelist] filename: %s", filename);
-							string_tolower(filename);
-							printf("1filename: %s\n",filename);
-
-							filename = string_shortname(filename,2);
-							printf("2filename: %s\n",filename);	
-						
-							string_removechar(filename);
-							printf("3filename: %s\n",filename);
-
-							string_remove_whitechars(filename);
-							printf("4filename: %s\n",filename);
-
-							tmpstr = ostrcat(tmpstr, filename, 1, 0);
-							free(filename); filename = NULL;
-							tmpstr = ostrcat(tmpstr, ".png", 1, 0);
-						}	
-													
-						if(!file_exist(tmpstr))
 						{
-							free(tmpstr); tmpstr = NULL;
-							tmpstr = ostrcat(tmpstr, "skin/directory_cover.png", 1, 0);
-						}
-					}
-					if(tmpstr != NULL)
-						changepic(child, tmpstr);
+	//						tmpstr = ostrcat(tmpstr, "/var/swap/imdbfolder/", 1, 0);
+							tmpstr = ostrcat(tmpstr, "/media/autofs/DEBIAN/autofs/xvid/imdbfolder/", 1, 0);
+							int fast = 0;
+							if(fast == 1)
+							{
+								tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);
+								tmpstr = ostrcat(tmpstr, ".png", 1, 0);
+							}
+							else
+							{	
+								char* filename = NULL;
+								filename = ostrcat(filename, strdup(filelist[i]->d_name), 1, 0);
+								debug(10, "[filelist] filename: %s", filename);
+								string_tolower(filename);
+//								printf("1filename: %s\n",filename);
+	
+								filename = string_shortname(filename,2);
+//								printf("2filename: %s\n",filename);	
 							
-//					printf("tmpstr: %s\n",tmpstr);
-					free(tmpstr); tmpstr = NULL;
-										
-					gridbr++;
+								string_removechar(filename);
+//								printf("3filename: %s\n",filename);
+	
+								string_remove_whitechars(filename);
+//								printf("4filename: %s\n",filename);
+	
+								tmpstr = ostrcat(tmpstr, filename, 1, 0);
+								free(filename); filename = NULL;
+								tmpstr = ostrcat(tmpstr, ".png", 1, 0);
+							}	
+														
+							if(!file_exist(tmpstr))
+							{
+								free(tmpstr); tmpstr = NULL;
+								tmpstr = ostrcat(tmpstr, "skin/directory_cover.png", 1, 0);
+							}
+						}
+						if(tmpstr != NULL)
+							changepic(child, tmpstr);
+								
+						printf("tmpstr: %s\n",tmpstr);
+						free(tmpstr); tmpstr = NULL;
+											
+						gridbr++;
+					}
 					if(gridbr >= 3)
 					{
 						gridbr = 0;
@@ -499,16 +514,16 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 								filename = ostrcat(filename, strdup(filelist[i]->d_name), 1, 0);
 								debug(10, "[filelist] filename: %s", filename);
 								string_tolower(filename);
-								printf("1filename: %s\n",filename);
+//								printf("1filename: %s\n",filename);
 
 								filename = string_shortname(filename,2);
-								printf("2filename: %s\n",filename);	
+//								printf("2filename: %s\n",filename);	
 							
 								string_removechar(filename);
-								printf("3filename: %s\n",filename);
+//								printf("3filename: %s\n",filename);
 
 								string_remove_whitechars(filename);
-								printf("4filename: %s\n",filename);
+//								printf("4filename: %s\n",filename);
 
 								tmpstr = ostrcat(tmpstr, "/media/autofs/DEBIAN/autofs/xvid/imdb/", 1, 0);
 								tmpstr = ostrcat(tmpstr, filename, 1, 0);
