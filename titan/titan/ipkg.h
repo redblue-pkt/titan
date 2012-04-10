@@ -458,6 +458,7 @@ int findsectiondone(char* section)
 
 //flag 0: show section
 //flag 1: show entrys
+//flag 2: show entrys for remove
 struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* section, int showpng, int flag)
 {
 	int skip = 0;
@@ -477,20 +478,36 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 	
 	while(node != NULL)
 	{
-		if(flag == 0)
+		if(flag == 0 || flag == 3)
 		{
-			//check if section have seen
-			if(findsectiondone(node->section) == 1)
+			if(flag == 0)
 			{
-				node = node->next;
-				continue;
+				//check if section have seen
+				if(findsectiondone(node->section) == 1)
+				{
+					node = node->next;
+					continue;
+				}
 			}
 		
 			tmppic = ostrcat("panel_", node->section, 0, 0);
 			tmppic = ostrcat(tmppic, ".png", 1, 0);
 		
-			node->done = 1;
-			addmenulist(&mlist, node->section, NULL, tmppic, 0, 0);
+			if(flag == 0)
+			{
+				node->done = 1;
+				addmenulist(&mlist, node->section, NULL, tmppic, 0, 0);
+			}
+			
+			if(flag == 3)
+			{
+				tmpstr = ostrcat(tmpstr, node->section, 1, 0);
+				tmpstr = ostrcat(tmpstr, "-", 1, 0);
+				tmpstr = ostrcat(tmpstr, node->showname, 1, 0);
+				addmenulist(&mlist, tmpstr, NULL, tmppic, 0, 0);
+				free(tmpstr); tmpstr = NULL;
+			}
+			
 			free(tmppic); tmppic = NULL;
 		}
 		
