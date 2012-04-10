@@ -66,13 +66,13 @@ void screenkeyactions(int key, int flag)
 		addmenulist(&mlist, "Subchannel", NULL, NULL, 0, 0);
 	
 		mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
-		keyconf = mbox->name;
+		if(mbox != NULL) keyconf = mbox->name;
 		free(tmpstr); tmpstr = NULL;
 	}
 	else
 	{
-		if (key == 0) keyconf = getconfig("bluekey", NULL);
-		if (key == 1) keyconf = getconfig("redkey", NULL);
+		if(key == 0) keyconf = getconfig("bluekey", NULL);
+		if(key == 1) keyconf = getconfig("redkey", NULL);
 	}
 	
 	if(flag == 0 && keyconf == NULL)
