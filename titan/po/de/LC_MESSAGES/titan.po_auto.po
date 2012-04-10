@@ -1125,7 +1125,7 @@ msgid "check your Secret Feed !"
 msgstr ""
 
 #: ipkg.h:701 ipkg.h:702 ipkg.h:467 ipkg.h:733 ipkg.h:525 ipkg.h:804
-#: ipkg.h:519 ipkg.h:798 ipkg.h:524 ipkg.h:528
+#: ipkg.h:519 ipkg.h:798 ipkg.h:524 ipkg.h:528 ipkg.h:549
 msgid "no description found"
 msgstr ""
 
