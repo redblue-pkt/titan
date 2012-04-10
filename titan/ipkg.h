@@ -502,7 +502,10 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 			while(node_installed != NULL)
 			{
 				if(ostrcmp(node->section, node_installed->section) == 0 && ostrcmp(node->showname, node_installed->showname) == 0)
+				{
+					skip = 1;
 					break;
+				}
 				node_installed = node_installed->next;
 			}
 			
