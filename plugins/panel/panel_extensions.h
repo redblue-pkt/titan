@@ -65,7 +65,7 @@ void screenpanel_extensions(int mode)
 	else if(mode == 1)
 	{
 		ipkg_list_installed();
-		mbox = ipkmenulist(mlist, NULL, "Ipk Remove - select file", "%pluginpath%/panel/skin", NULL, 1, 0);
+		mbox = ipkmenulist(mlist, NULL, "Ipk Remove - select file", "%pluginpath%/panel/skin", NULL, 1, 2);
 		
 		if(mbox != NULL)
 		{
