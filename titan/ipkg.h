@@ -486,7 +486,8 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 				continue;
 			}
 		
-			tmppic = ostrcat(node->section, ".png", 0, 0);
+			tmppic = ostrcat("panel_", node->section, 0, 0);
+			tmppic = ostrcat(tmppic, ".png", 1, 0);
 		
 			node->done = 1;
 			addmenulist(&mlist, node->section, NULL, tmppic, 0, 0);
