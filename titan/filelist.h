@@ -378,10 +378,10 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 							else
 							{	
 								char* filename = NULL;
-								filename = ostrcat(filename, strdup(filelist[i]->d_name), 1, 0);
+								filename = ostrcat(filename, filelist[i]->d_name, 1, 0);
 								debug(10, "[filelist] filename: %s", filename);
 								string_tolower(filename);
-								filename = string_shortname(filename,2);
+								filename = string_shortname(filename, 2);
 								string_removechar(filename);
 								string_remove_whitechars(filename);
 								tmpstr = ostrcat(tmpstr, filename, 1, 0);
@@ -455,15 +455,15 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 					if(status.filelistextend == 5)
 					{
 						char* filename = NULL;
-						filename = ostrcat(filename, strdup(filelist[i]->d_name), 1, 0);
-						debug(10, "[filelist] filename: %s", filename);
+						filename = ostrcat(filename, filelist[i]->d_name, 1, 0);
+						debug(10, "filename: %s", filename);
 						string_tolower(filename);
-						filename = string_shortname(filename,1);
+						filename = string_shortname(filename, 1);
 						string_removechar(filename);
 						string_toupper(filename);
 						changetext(child, filename);
 						string_tolower(filename);
-						filename = string_shortname(filename,2);								
+						filename = string_shortname(filename, 2);								
 						string_remove_whitechars(filename);
 						tmpstr = ostrcat(tmpstr, getconfig("imdb_directory", NULL), 1, 0);
 						tmpstr = ostrcat(tmpstr, "/imdb/", 1, 0);
@@ -538,10 +538,10 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 							else
 							{						
 								char* filename = NULL;
-								filename = ostrcat(filename, strdup(filelist[i]->d_name), 1, 0);
-								debug(10, "[filelist] filename: %s", filename);
+								filename = ostrcat(filename, filelist[i]->d_name, 1, 0);
+								debug(10, "filename: %s", filename);
 								string_tolower(filename);
-								filename = string_shortname(filename,2);
+								filename = string_shortname(filename, 2);
 								string_removechar(filename);
 								string_remove_whitechars(filename);
 								tmpstr = ostrcat(tmpstr, getconfig("imdb_directory", NULL), 1, 0);
@@ -621,15 +621,15 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						if(status.filelistextend == 5)
 						{
 							char* filename = NULL;
-							filename = ostrcat(filename, strdup(filelist[i]->d_name), 1, 0);
-							debug(10, "[filelist] filename: %s", filename);
+							filename = ostrcat(filename, filelist[i]->d_name, 1, 0);
+							debug(10, "filename: %s", filename);
 							string_tolower(filename);
-							filename = string_shortname(filename,1);
+							filename = string_shortname(filename, 1);
 							string_removechar(filename);
 							string_toupper(filename);
 							changetext(child, filename);
 							string_tolower(filename);
-							filename = string_shortname(filename,2);								
+							filename = string_shortname(filename, 2);								
 							string_remove_whitechars(filename);
 							tmpstr = ostrcat(tmpstr, getconfig("imdb_directory", NULL), 1, 0);
 							tmpstr = ostrcat(tmpstr, "/imdb/", 1, 0);
