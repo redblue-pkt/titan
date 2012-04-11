@@ -89,7 +89,11 @@ struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int
 	newnode->fixfbsize = fixfbsize;
 	
 	if(ostrcmp(name, FB) == 0)
+#ifdef NOHWBLIT
 		newnode->varfbsize = newnode->width * newnode->height * newnode->colbytes;
+#else
+		newnode->varfbsize = 1920 * 1080 * newnode->colbytes;
+#endif
 	else if(ostrcmp(name, FB1) == 0)
 		newnode->varfbsize = 720 * 576 * newnode->colbytes;
 	else
