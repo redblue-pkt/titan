@@ -91,19 +91,21 @@ void screenmc_videoplayer()
 //		else if(status.filelistextend == 5 && filelist->select != NULL && filelist->select->input == NULL)
 		else if(status.filelistextend == 5 && filelist->select != NULL)
 		{
-		printf("filelist->select->name %s\n",filelist->select->name);
+			printf("filelist->select->name %s\n",filelist->select->name);
+			printf("savecmd %s\n",savecmd);
 			char* cmd = NULL;
-			cmd = ostrcat(cmd, filelist->select->filelist->imdbpath, 0, 0);
-			cmd = ostrcat(cmd, ".backdrop.mvi", 0, 0);
+			cmd = ostrcat(cmd, filelist->select->filelist->imdbpath, 1, 0);
+			cmd = ostrcat(cmd, ".backdrop.mvi", 1, 0);
 
 			if(!file_exist(cmd)){
-				cmd = NULL;
-				cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0, 0);
+				free(cmd), cmd = NULL;
+				cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 1, 0);
 			}
 
 			if(savecmd == NULL)
 			{
 				singlepicstart(cmd, 0);
+				free(savecmd), savecmd = NULL;
 				savecmd = ostrcat("", cmd, 0, 0);
 			}
 			else
@@ -115,6 +117,7 @@ void screenmc_videoplayer()
 					savecmd = ostrcat("", cmd, 0, 0);
 				}
 			}
+			free(cmd), cmd = NULL;
 		}		
 
 		if(rcret == getrcconfigint("rc1", NULL))
