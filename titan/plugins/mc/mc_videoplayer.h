@@ -9,7 +9,7 @@ void screenmc_videoplayer()
 	char* filename = NULL;
 	char* tmppolicy = NULL;
 	char* currentdirectory = NULL;
-	int rcret = 0, rcwait = 1000, playerret = 0, flag = 1, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 1, playlist = 0, playertype = 0;
+	int rcret = 0, rcwait = 1000, playerret = 0, flag = 1, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0;
 	// workaround for grey background mvi
 	struct skin* blackscreen = getscreen("blackscreen");
 	drawscreen(blackscreen, 0);
@@ -59,8 +59,12 @@ void screenmc_videoplayer()
 	if(getconfigint("screensaver", NULL) == 1)
 		initscreensaver();
 
+	tmpview = view;
 	mc_changeview(view, filelist);
 
+	printf("111111111: view=%d tmpview=%d\n", view, tmpview);
+//	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, view, NULL);
+	filelist->fontsize = 25;
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, NULL);
 	addscreenrc(apskin, filelist);
 
@@ -204,8 +208,8 @@ void screenmc_videoplayer()
 					debug(50, "rcred: tmpsort=%d", sort);
 
 					addconfiginttmp("dirsort", sort);
-					mc_changeview(view, filelist);
-					getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
+//					mc_changeview(tmpview, filelist);
+					getfilelist(apskin, filelistpath, filelist, filelistpath->name, filemask, tmpview, filelist->select->name);
 				}
 			}
 		}
@@ -231,9 +235,26 @@ void screenmc_videoplayer()
 			{
 				debug(50, "rcmenu: settings");
 
-				screenmc_videoplayer_settings();
 				view = getconfigint("view", NULL);
+				screenmc_videoplayer_settings();
+				
+				if(view != getconfigint("view", NULL))
+				{
+					printf("view changed > change tmpview\n");
+					tmpview = getconfigint("view", NULL);
+				}
+
 				mc_changeview(view, filelist);
+
+//new
+//				clearscreen(apskin);
+
+
+				delownerrc(apskin);	
+				getfilelist(apskin, filelistpath, filelist, filelistpath->name, filemask, tmpview, filelist->select->name);
+				addscreenrc(apskin, filelist);
+				drawscreen(skin, 0);
+//				status.filelistextend = view;
 
 				drawscreen(apskin, 0);
 			}
@@ -292,11 +313,11 @@ void screenmc_videoplayer()
 		}
 		else if(rcret == getrcconfigint("rcexit", NULL))
 		{
-			debug(50, "exit - save mc_videoplayerpath: %s", filelistpath->text);
+			debug(50, "exit - save mc_videoplayerpath: %s", filelistpath->name);
 			if(playlist == 0)
 			{
-				if(ostrcmp(getconfig("mc_videoplayerpath", NULL), filelistpath->text) != 0)
-					addconfig("mc_videoplayerpath", filelistpath->text);
+				if(ostrcmp(getconfig("mc_videoplayerpath", NULL), filelistpath->name) != 0)
+					addconfig("mc_videoplayerpath", filelistpath->name);
 			}
 
 			playrcstop(playertype, flag);
@@ -317,6 +338,8 @@ void screenmc_videoplayer()
 			playlist = 0;
 			writevfd("Mediacenter");
 			playinfobarcount = 0;
+	printf("exit: view=%d tmpview=%d\n", view, tmpview);			
+			status.filelistextend = 0;
 			break;
 		}
 		else if(rcret == getrcconfigint("rcok", NULL))
@@ -421,11 +444,11 @@ void screenmc_videoplayer()
 			}
 			else if(filelist->select != NULL && filelist->select->input == NULL)
 			{
-				if(ostrcmp(getconfig("mc_videoplayerpath", NULL), filelistpath->text) != 0)
-					addconfig("mc_videoplayerpath", filelistpath->text);
+				if(ostrcmp(getconfig("mc_videoplayerpath", NULL), filelistpath->name) != 0)
+					addconfig("mc_videoplayerpath", filelistpath->name);
 
-				debug(50, "filelist->select->text: %s", filelist->select->text);
-				filename = createpath(filelistpath->text, filelist->select->text);
+				debug(50, "filelist->select->name: %s", filelist->select->name);
+				filename = createpath(filelistpath->name, filelist->select->name);
 
 				if(getconfigint("playertype", NULL) == 1 && (cmpfilenameext(filename, ".ts") == 0 || cmpfilenameext(filename, ".mts") == 0 || cmpfilenameext(filename, ".m2ts") == 0))		
 					playertype = 1;
@@ -435,7 +458,7 @@ void screenmc_videoplayer()
 				if(!strncmp(".rar",filename+strlen(filename)-4,4) || !strncmp(".iso",filename+strlen(filename)-4,4) || !strncmp(".img",filename+strlen(filename)-4,4))
 				{
 					debug(50, "mc_mounter_main filename: %s", filename);
-					//addconfig("mc_videoplayerpath", filelistpath->text);
+					//addconfig("mc_videoplayerpath", filelistpath->name);
 					currentdirectory = ostrcat("", getconfig("mc_videoplayerpath", NULL), 0, 0);
 
 					mc_mounter_main(0,filename,filelistpath,filelist,apskin,filemask,tmpview,currentdirectory);
@@ -457,7 +480,7 @@ void screenmc_videoplayer()
 				changetext(b2, _("Filelist-Mode"));
 			
 				if(screensaver != NULL && screensaver->type == 0)
-					screensaver->value = (void*)filelist->select->text;
+					screensaver->value = (void*)filelist->select->name;
 
 				debug(50, "playerstop");
 				playrcstop(playertype, flag);
