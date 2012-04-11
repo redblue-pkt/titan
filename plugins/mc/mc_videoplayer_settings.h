@@ -21,12 +21,13 @@ void screenmc_videoplayer_settings()
 	addchoicebox(dirsort, "5", _("reverse date"));
 	setchoiceboxselection(dirsort, getconfig("dirsort", NULL));
 
+	addchoicebox(view, "0", "fast");
+	addchoicebox(view, "1", "big");	
+	addchoicebox(view, "2", "cover");	
+	addchoicebox(view, "3", "default");
+	addchoicebox(view, "4", "details");
+	addchoicebox(view, "5", "fullcover");
 
-	addchoicebox(view, "0", "default");	
-	addchoicebox(view, "1", "cover");	
-	addchoicebox(view, "2", "size");
-	addchoicebox(view, "3", "details");
-	
 //	addchoicebox(view, "0", _("default"));	
 //	addchoicebox(view, "1", _("cover"));	
 //	addchoicebox(view, "2", _("size"));
