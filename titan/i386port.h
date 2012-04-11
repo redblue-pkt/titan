@@ -9,15 +9,14 @@ void enablemanualblit()
 //flag 1 = animation
 void blitfb2(struct fb* fbnode, int flag)
 {
-	int i = 0, max = 1, wstep = 0, hstep = 0, ret = 0;
-	unsigned char buf[10];
+	int i = 0;
 
 	if(fbnode == NULL) return;
 
 #ifdef NOFB
 	if(status.rguidfd > -1)
 	{
-		char* buf = NULL;
+		unsigned char* buf = NULL;
 		buf = scale(fbnode->fb, fbnode->width, fbnode->height, 4, 320, 240, 0);
 		if(buf != NULL)
 		{
@@ -27,7 +26,7 @@ void blitfb2(struct fb* fbnode, int flag)
 	}
 	if(status.write_png == 1 && status.infobaraktiv == 0)
 	{
-		char* buf = NULL;
+		unsigned char* buf = NULL;
 		buf = scale(fbnode->fb, fbnode->width, fbnode->height, 4, 320, 240, 0);
 		if(buf != NULL)
 		{
@@ -181,7 +180,6 @@ void sighandler(int sig, struct sigcontext ctx)
 		}
 	}
 	debug(1000, "out");
-*/
 }
 
 #endif
