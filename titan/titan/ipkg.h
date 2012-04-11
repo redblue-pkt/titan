@@ -353,7 +353,7 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 	{
 		if(ostrcmp("97.74.32.10", ip) == 0)
 		{
-			if(ostrcmp((char*)src, "//97.74.32.10/svn/ipk/sh4/titan") != 0) 	 	 
+			if(ostrcmp((char*)src, "http://97.74.32.10/svn/ipk/atemio510-rev12841/sh4/titan/Packages.gz") != 0) 	 	 
 			{
 				textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0); 	 	 
 				free(ip); ip = NULL;
@@ -478,7 +478,7 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 	
 	while(node != NULL)
 	{
-		if(flag == 0 || flag == 3)
+		if(flag == 0 || flag == 2)
 		{
 			if(flag == 0)
 			{
@@ -499,7 +499,7 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 				addmenulist(&mlist, node->section, NULL, tmppic, 0, 0);
 			}
 			
-			if(flag == 3)
+			if(flag == 2)
 			{
 				tmpstr = ostrcat(tmpstr, node->section, 1, 0);
 				tmpstr = ostrcat(tmpstr, "-", 1, 0);
