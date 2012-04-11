@@ -88,8 +88,10 @@ void screenmc_videoplayer()
 				screenplayinfobar(NULL, 1, playertype, 0);
 			}
 		}
-		else if(status.filelistextend == 5 && filelist->select != NULL && filelist->select->input == NULL)
+//		else if(status.filelistextend == 5 && filelist->select != NULL && filelist->select->input == NULL)
+		else if(status.filelistextend == 5 && filelist->select != NULL)
 		{
+		printf("filelist->select->name %s\n",filelist->select->name);
 			char* cmd = NULL;
 			cmd = ostrcat(cmd, filelist->select->filelist->imdbpath, 0, 0);
 			cmd = ostrcat(cmd, ".backdrop.mvi", 0, 0);
@@ -262,7 +264,7 @@ void screenmc_videoplayer()
 			if(status.play == 0 && status.pause == 0)
 			{
 				debug(50, "rcmenu: settings");
-
+				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 				view = getconfigint("view", NULL);
 				screenmc_videoplayer_settings();
 				
