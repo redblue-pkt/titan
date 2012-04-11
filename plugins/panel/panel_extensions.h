@@ -106,9 +106,16 @@ void screenpanel_extensions(int mode)
 	else if(mode == 2)
 	{
 		tmpstr = get_ipk_tmplistinstall();
-		addmenulistall(&mlist, tmpstr, NULL, 0, NULL);
-
-		mbox = menulistbox(mlist, NULL, "Ipk Tmp Install - select file", "%pluginpath%/panel/skin", "/skin/plugin.png", 1, 0);
+    
+    if(tmpstr == NULL || strlen(tmpstr) == 0)
+    {
+      textbox(_("Message"), _("No plugin found."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+    }
+    else
+    {
+		  addmenulistall(&mlist, tmpstr, NULL, 0, NULL);
+		  mbox = menulistbox(mlist, NULL, "Ipk Tmp Install - select file", "%pluginpath%/panel/skin", "/skin/plugin.png", 1, 0);
+    }
 		
 		free(tmpstr); tmpstr = NULL;
 		
