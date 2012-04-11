@@ -37,7 +37,7 @@
 #: network.h:587 scan.h:1050 scan.h:1340 scan.h:1344 scan.h:1348 scan.h:1352
 #: network.h:598 httpdsettings.h:19 httpdsettings.h:53 epgsettings.h:116
 #: epgsettings.h:149 scan.h:1046 scan.h:1337 scan.h:1341 scan.h:1345
-#: scan.h:1349 network.h:599 network.h:600
+#: scan.h:1349 network.h:599 network.h:600 mc_videoplayer_settings.h:39
 msgid "no"
 msgstr ""
 
@@ -87,6 +87,7 @@ msgstr ""
 #: scan.h:1345 scan.h:1349 scan.h:1353 network.h:599 httpdsettings.h:20
 #: httpdsettings.h:54 epgsettings.h:117 epgsettings.h:150 scan.h:1047
 #: scan.h:1338 scan.h:1342 scan.h:1346 scan.h:1350 network.h:600 network.h:601
+#: mc_videoplayer_settings.h:40
 msgid "yes"
 msgstr ""
 
@@ -401,7 +402,9 @@ msgstr ""
 #: global.h:4536 panel_extensions.h:51 panel_extensions.h:95
 #: panel_extensions.h:129 global.h:4551 global.h:4586 mc_videoplayer.h:390
 #: mc_videoplayer.h:491 mc_videoplayer.h:396 mc_videoplayer.h:497
-#: mc_videoplayer.h:397 mc_videoplayer.h:498
+#: mc_videoplayer.h:397 mc_videoplayer.h:498 mc_global.h:583 mc_global.h:827
+#: mc_videoplayer.h:439 mc_videoplayer.h:543 panel_extensions.h:112
+#: panel_extensions.h:136
 msgid "Message"
 msgstr ""
 
@@ -496,6 +499,8 @@ msgstr ""
 #: panel_extensions.h:93 panel_extensions.h:95 global.h:4551 global.h:4586
 #: mc_videoplayer.h:390 mc_videoplayer.h:491 mc_videoplayer.h:396
 #: mc_videoplayer.h:497 mc_videoplayer.h:397 mc_videoplayer.h:498
+#: mc_global.h:583 mc_global.h:827 mc_videoplayer.h:439 mc_videoplayer.h:543
+#: panel_extensions.h:112
 msgid "OK"
 msgstr ""
 
@@ -588,7 +593,8 @@ msgstr ""
 #: panel_extensions.h:80 panel_extensions.h:87 panel_extensions.h:93
 #: panel_extensions.h:95 global.h:4551 global.h:4586 mc_videoplayer.h:390
 #: mc_videoplayer.h:491 mc_videoplayer.h:396 mc_videoplayer.h:497
-#: mc_videoplayer.h:397 mc_videoplayer.h:498
+#: mc_videoplayer.h:397 mc_videoplayer.h:498 mc_global.h:583 mc_global.h:827
+#: mc_videoplayer.h:439 mc_videoplayer.h:543 panel_extensions.h:112
 msgid "EXIT"
 msgstr ""
 
@@ -1177,6 +1183,7 @@ msgstr ""
 
 #: mc_audioplayer.h:178 mc_pictureplayer.h:117 mc_videoplayer.h:175
 #: mc_videoplayer.h:180 mc_videoplayer.h:176 mc_videoplayer.h:177
+#: mc_videoplayer.h:207
 msgid "Repeat-On"
 msgstr ""
 
@@ -1185,6 +1192,7 @@ msgstr ""
 #: plugins_mc_skin.xml.h:35 skins_mc_skin.xml.h:35 mc_videoplayer.h:187
 #: mc_videoplayer.h:316 mc_videoplayer.h:313 mc_videoplayer.h:183
 #: mc_videoplayer.h:317 mc_videoplayer.h:184 mc_videoplayer.h:318
+#: mc_videoplayer.h:214 mc_videoplayer.h:360
 msgid "Repeat"
 msgstr ""
 
@@ -1196,14 +1204,15 @@ msgstr ""
 #: mc_videoplayer.h:314 mc_videoplayer.h:462 mc_videoplayer.h:268
 #: mc_videoplayer.h:311 mc_videoplayer.h:459 mc_videoplayer.h:272
 #: mc_videoplayer.h:315 mc_videoplayer.h:465 mc_videoplayer.h:273
-#: mc_videoplayer.h:316 mc_videoplayer.h:466
+#: mc_videoplayer.h:316 mc_videoplayer.h:466 mc_global.h:150 mc_global.h:222
+#: mc_videoplayer.h:358 mc_videoplayer.h:511
 msgid "Filelist-Mode"
 msgstr ""
 
 #: mc_audioplayer.h:282 mc_global.h:366 mc_global.h:394 mc_pictureplayer.h:250
 #: mc_videoplayer.h:310 plugins_mc_skin.xml.h:34 skins_mc_skin.xml.h:34
 #: mc_videoplayer.h:315 mc_videoplayer.h:312 mc_videoplayer.h:316
-#: mc_videoplayer.h:317
+#: mc_videoplayer.h:317 mc_global.h:370 mc_global.h:398 mc_videoplayer.h:359
 msgid "Random"
 msgstr ""
 
@@ -1211,7 +1220,8 @@ msgstr ""
 #: mc_global.h:755 mc_pictureplayer.h:268 mc_videoplayer.h:348
 #: mc_videoplayer.h:353 mc_global.h:507 mc_global.h:739 mc_global.h:753
 #: mc_global.h:506 mc_global.h:738 mc_global.h:752 mc_videoplayer.h:350
-#: mc_videoplayer.h:356 mc_videoplayer.h:357
+#: mc_videoplayer.h:356 mc_videoplayer.h:357 mc_global.h:83 mc_global.h:510
+#: mc_global.h:742 mc_global.h:756 mc_videoplayer.h:399
 msgid "Playlist-Mode"
 msgstr ""
 
@@ -1223,7 +1233,8 @@ msgstr ""
 #: dvdplay.h:60 mc_global.h:580 mc_global.h:824 mc_global.h:579
 #: mc_global.h:823 mc_videoplayer.h:390 mc_videoplayer.h:491
 #: mc_videoplayer.h:396 mc_videoplayer.h:497 mc_videoplayer.h:397
-#: mc_videoplayer.h:498
+#: mc_videoplayer.h:498 mc_global.h:583 mc_global.h:827 mc_videoplayer.h:439
+#: mc_videoplayer.h:543
 msgid "Can't start playback !"
 msgstr ""
 
@@ -1257,7 +1268,7 @@ msgstr ""
 msgid "smal"
 msgstr ""
 
-#: mc_global.h:355 mc_global.h:383
+#: mc_global.h:355 mc_global.h:383 mc_global.h:359 mc_global.h:387
 msgid "Random-On"
 msgstr ""
 
@@ -1654,6 +1665,7 @@ msgstr ""
 
 #: panel_extensions.h:67 panel_extensions.h:123 panel_extensions.h:157
 #: panel_extensions.h:51 panel_extensions.h:95 panel_extensions.h:129
+#: panel_extensions.h:136
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
@@ -1673,7 +1685,8 @@ msgid "Ipk Remove Info - Remove ERROR"
 msgstr ""
 
 #: panel_extensions.h:141 panel_extensions.h:152 panel_extensions.h:155
-#: panel_extensions.h:123 panel_extensions.h:127
+#: panel_extensions.h:123 panel_extensions.h:127 panel_extensions.h:130
+#: panel_extensions.h:134
 msgid "Ipk Tmp Info"
 msgstr ""
 
@@ -7127,4 +7140,8 @@ msgstr ""
 
 #: mc_videoplayer_settings.h:25
 msgid "cover"
+msgstr ""
+
+#: panel_extensions.h:112
+msgid "No plugin found."
 msgstr ""
