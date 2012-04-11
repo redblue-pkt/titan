@@ -18,7 +18,7 @@ int screenrgui(char* ip)
 	if(rguiskinfb == NULL) return 1;
 
 
-	ret = sockportopen(&sock, ip, getconfigint("rguidport", NULL), 5000 * 1000);
+	ret = sockportopen(&sock, fixip(ip, 0), getconfigint("rguidport", NULL), 5000 * 1000);
 	if(ret != 0)
 	{
 		textbox(_("Message"), _("Can't connect to server !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
