@@ -113,7 +113,7 @@ msgstr ""
 
 #: adjust.h:78 mc_audioplayer_settings.h:23 mc_pictureplayer_settings.h:23
 #: mc_videoplayer_settings.h:18 plugins_mc_skin.xml.h:42
-#: skins_mc_skin.xml.h:42
+#: skins_mc_skin.xml.h:42 mc_videoplayer_settings.h:26
 msgid "size"
 msgstr ""
 
