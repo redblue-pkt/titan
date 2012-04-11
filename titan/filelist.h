@@ -366,8 +366,9 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 							tmpstr = ostrcat(tmpstr, "skin/ext_grid_network.png", 1, 0);
 						else
 						{
-	//						tmpstr = ostrcat(tmpstr, "/var/swap/imdbfolder/", 1, 0);
-							tmpstr = ostrcat(tmpstr, "/media/autofs/DEBIAN/imdbfolder/", 1, 0);
+							tmpstr = ostrcat(tmpstr, getconfig("imdb_directory", NULL), 1, 0);
+							tmpstr = ostrcat(tmpstr, "/imdbfolder/", 1, 0);
+							
 							int fast = 0;
 							if(fast == 1)
 							{
@@ -380,17 +381,9 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 								filename = ostrcat(filename, strdup(filelist[i]->d_name), 1, 0);
 								debug(10, "[filelist] filename: %s", filename);
 								string_tolower(filename);
-//								printf("1filename: %s\n",filename);
-	
 								filename = string_shortname(filename,2);
-//								printf("2filename: %s\n",filename);	
-							
 								string_removechar(filename);
-//								printf("3filename: %s\n",filename);
-	
 								string_remove_whitechars(filename);
-//								printf("4filename: %s\n",filename);
-	
 								tmpstr = ostrcat(tmpstr, filename, 1, 0);
 								free(filename); filename = NULL;
 								tmpstr = ostrcat(tmpstr, ".png", 1, 0);
@@ -465,18 +458,18 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						filename = ostrcat(filename, strdup(filelist[i]->d_name), 1, 0);
 						debug(10, "[filelist] filename: %s", filename);
 						string_tolower(filename);
-						char* tmpfile = NULL;
-						tmpfile = string_shortname(filename,1);
-						string_removechar(tmpfile);
-						string_strip_whitechars(tmpfile);
-						char* shortname = NULL;
-						shortname = ostrcat(shortname, tmpfile, 1, 0);
-						string_toupper(shortname);
-						changetext(child, shortname);
-						char* tmpfile1;
-						tmpfile1 = string_shortname(tmpfile,0);
-						string_remove_whitechars(tmpfile1);
-						child->filelist->imdbpath = tmpfile1;
+						filename = string_shortname(filename,1);
+						string_removechar(filename);
+						string_toupper(filename);
+						changetext(child, filename);
+						string_tolower(filename);
+						filename = string_shortname(filename,2);								
+						string_remove_whitechars(filename);
+						tmpstr = ostrcat(tmpstr, getconfig("imdb_directory", NULL), 1, 0);
+						tmpstr = ostrcat(tmpstr, "/imdb/", 1, 0);
+						tmpstr = ostrcat(tmpstr, filename, 1, 0);
+						free(filename); filename = NULL;
+						child->filelist->imdbpath = tmpstr;								
 					}
 
 					tmpstr = createpath(node->input, filelist[i]->d_name);
@@ -548,18 +541,11 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 								filename = ostrcat(filename, strdup(filelist[i]->d_name), 1, 0);
 								debug(10, "[filelist] filename: %s", filename);
 								string_tolower(filename);
-//								printf("1filename: %s\n",filename);
-
 								filename = string_shortname(filename,2);
-//								printf("2filename: %s\n",filename);	
-							
 								string_removechar(filename);
-//								printf("3filename: %s\n",filename);
-
 								string_remove_whitechars(filename);
-//								printf("4filename: %s\n",filename);
-
-								tmpstr = ostrcat(tmpstr, "/media/autofs/DEBIAN/imdb/", 1, 0);
+								tmpstr = ostrcat(tmpstr, getconfig("imdb_directory", NULL), 1, 0);
+								tmpstr = ostrcat(tmpstr, "/imdb/", 1, 0);
 								tmpstr = ostrcat(tmpstr, filename, 1, 0);
 								free(filename); filename = NULL;
 								tmpstr = ostrcat(tmpstr, ".jpg", 1, 0);
@@ -634,50 +620,22 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 
 						if(status.filelistextend == 5)
 						{
-/*
 							char* filename = NULL;
 							filename = ostrcat(filename, strdup(filelist[i]->d_name), 1, 0);
 							debug(10, "[filelist] filename: %s", filename);
 							string_tolower(filename);
-							char* tmpfile = NULL;
-							tmpfile = string_shortname(filename,1);
-							string_removechar(tmpfile);
-							string_strip_whitechars(tmpfile);
-							char* shortname = NULL;
-							shortname = ostrcat(shortname, tmpfile, 1, 0);
-							string_toupper(shortname);
-							changetext(child, shortname);
-							char* tmpfile1;
-							tmpfile1 = string_shortname(tmpfile,0);
-							string_remove_whitechars(tmpfile1);
-							child->filelist->imdbpath = tmpfile1;
-*/
-								char* filename = NULL;
-								filename = ostrcat(filename, strdup(filelist[i]->d_name), 1, 0);
-								debug(10, "[filelist] filename: %s", filename);
-								string_tolower(filename);
-//								printf("1filename: %s\n",filename);
-
-								filename = string_shortname(filename,1);
-//								printf("2filename: %s\n",filename);	
-							
-								string_removechar(filename);
-//								printf("3filename: %s\n",filename);
-
-								string_toupper(filename);
-								changetext(child, filename);
-
-								string_tolower(filename);
-								filename = string_shortname(filename,2);
-								
-								string_remove_whitechars(filename);
-//								printf("4filename: %s\n",filename);
-
-								tmpstr = ostrcat(tmpstr, "/media/autofs/DEBIAN/imdb/", 1, 0);
-								tmpstr = ostrcat(tmpstr, filename, 1, 0);
-								free(filename); filename = NULL;
-//								tmpstr = ostrcat(tmpstr, ".imdb", 1, 0);
-								child->filelist->imdbpath = tmpstr;								
+							filename = string_shortname(filename,1);
+							string_removechar(filename);
+							string_toupper(filename);
+							changetext(child, filename);
+							string_tolower(filename);
+							filename = string_shortname(filename,2);								
+							string_remove_whitechars(filename);
+							tmpstr = ostrcat(tmpstr, getconfig("imdb_directory", NULL), 1, 0);
+							tmpstr = ostrcat(tmpstr, "/imdb/", 1, 0);
+							tmpstr = ostrcat(tmpstr, filename, 1, 0);
+							free(filename); filename = NULL;
+							child->filelist->imdbpath = tmpstr;								
 						}
 
 						tmpstr = createpath(node->input, filelist[i]->d_name);

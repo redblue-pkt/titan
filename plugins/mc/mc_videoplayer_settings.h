@@ -10,7 +10,7 @@ void screenmc_videoplayer_settings()
 	struct skin* listbox = getscreennode(mc_videoplayer_settings, "listbox");
 	struct skin* dirsort = getscreennode(mc_videoplayer_settings, "sort");
 	struct skin* view = getscreennode(mc_videoplayer_settings, "view");
-	struct skin* imdb_directory = getscreennode(mc_videoplayer_settings, "sound");
+	struct skin* imdb_directory = getscreennode(mc_videoplayer_settings, "imdb_directory");
 	struct skin* vp_autostart_playlist = getscreennode(mc_videoplayer_settings, "autostart_playlist");
 
 	addchoicebox(dirsort, "0", _("alpha"));	
