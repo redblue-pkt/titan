@@ -340,15 +340,15 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						posx += child->width;
 	
 						if(ostrcmp(filelist[i]->d_name, "..") == 0)
-							tmpstr = ostrcat(tmpstr, "skin/changedir_cover.png", 1, 0);
+							tmpstr = ostrcat(tmpstr, "skin/ext_grid_changedir.png", 1, 0);
 						else if(ostrcmp(filelist[i]->d_name, "autofs") == 0)
-							tmpstr = ostrcat(tmpstr, "skin/autofs_cover.png", 1, 0);
+							tmpstr = ostrcat(tmpstr, "skin/ext_grid_autofs.png", 1, 0);
 						else if(ostrcmp(filelist[i]->d_name, "hdd") == 0)
-							tmpstr = ostrcat(tmpstr, "skin/harddisk_cover.png", 1, 0);
+							tmpstr = ostrcat(tmpstr, "skin/ext_grid_harddisk.png", 1, 0);
 						else if(ostrcmp(filelist[i]->d_name, "usb") == 0)
-							tmpstr = ostrcat(tmpstr, "skin/usb_cover.png", 1, 0);
+							tmpstr = ostrcat(tmpstr, "skin/ext_grid_usb.png", 1, 0);
 						else if(ostrcmp(filelist[i]->d_name, "net") == 0)
-							tmpstr = ostrcat(tmpstr, "skin/network_cover.png", 1, 0);
+							tmpstr = ostrcat(tmpstr, "skin/ext_grid_network.png", 1, 0);
 						else
 						{
 	//						tmpstr = ostrcat(tmpstr, "/var/swap/imdbfolder/", 1, 0);
@@ -384,7 +384,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 							if(!file_exist(tmpstr))
 							{
 								free(tmpstr); tmpstr = NULL;
-								tmpstr = ostrcat(tmpstr, "skin/directory_cover.png", 1, 0);
+								tmpstr = ostrcat(tmpstr, "skin/ext_grid_directory.png", 1, 0);
 							}
 						}
 						if(tmpstr != NULL)
@@ -517,11 +517,11 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						posx += child->width;
 	
 						if(cmpfilenameext(filelist[i]->d_name, ".iso") == 0)
-							tmpstr = ostrcat(tmpstr, "skin/iso_cover.png", 1, 0);
+							tmpstr = ostrcat(tmpstr, "skin/ext_grid_iso.png", 1, 0);
 						else if(cmpfilenameext(filelist[i]->d_name, ".img") == 0)
-							tmpstr = ostrcat(tmpstr, "skin/img_cover.png", 1, 0);
+							tmpstr = ostrcat(tmpstr, "skin/ext_grid_img.png", 1, 0);
 						else if(cmpfilenameext(filelist[i]->d_name, ".rar") == 0)
-							tmpstr = ostrcat(tmpstr, "skin/rar_cover.png", 1, 0);
+							tmpstr = ostrcat(tmpstr, "skin/ext_grid_rar.png", 1, 0);
 						else
 						{
 							int fast = 0;
@@ -555,7 +555,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 								free(tmpstr); tmpstr = NULL;
 								child->picheight = 180;
 								child->picwidth = 180;
-								tmpstr = ostrcat(tmpstr, "skin/dummy.png", 1, 0);
+								tmpstr = ostrcat(tmpstr, "skin/ext_grid_dummy.png", 1, 0);
 							}
 						}
 						if(tmpstr != NULL)
