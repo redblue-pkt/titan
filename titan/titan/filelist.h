@@ -216,7 +216,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 		return 1;
 	}
 
-	if(status.filelistextend == 1) node->type |= GRID;
+	if(status.filelistextend == 2) node->type |= GRID;
 
 	status.tmp = node->input;
 	switch(getconfigint("dirsort", NULL))
@@ -262,8 +262,22 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 7 cover3 (list + imdb)
 8 fullcover (list)
 */
+	int fontsize = 20;
+	int fontspace = 2;
+//	if(status.filelistextend == 0)
+//		fontsize = 30, fontspace = 5;	
+	if(status.filelistextend == 1)
+		fontsize = 35, fontspace = 5;
+	else if(status.filelistextend == 2)
+		fontsize = 20, fontspace = 5;
+	else if(status.filelistextend == 3)
+		fontsize = 30, fontspace = 5;
+	else if(status.filelistextend == 4)
+		fontsize = 25, fontspace = 5;
+	else if(status.filelistextend == 5)
+		fontsize = 25, fontspace = 10;
 
-	if(status.filelistextend == 1 && parentdir != NULL) 
+	if(status.filelistextend == 2 && parentdir != NULL) 
 	{
 		parentdir->picheight = 180;
 		parentdir->picwidth = 180;				
@@ -279,9 +293,10 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 		parentdir->halign = CENTER;
 		parentdir->valign = TEXTBOTTOM;
 		parentdir->posx = posx;
+		parentdir->fontsize = fontsize;
 		posx += parentdir->width;
 
-		tmpstr = ostrcat(tmpstr, "skin/changedir_cover.png", 1, 0);
+		tmpstr = ostrcat(tmpstr, "skin/ext_grid_changedir.png", 1, 0);
 		changepic(parentdir, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 
@@ -314,7 +329,9 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 				child = addscreennode(screen, NULL, child);
 			if(child != NULL)
 			{
-				if(status.filelistextend == 1)
+				if(status.filelistextend != 0)
+					child->fontsize = fontsize;
+				if(status.filelistextend == 2)
 				{
 					if(gridbr == 0) child->type = GRIDBR;
 
@@ -339,9 +356,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 	
 						posx += child->width;
 	
-						if(ostrcmp(filelist[i]->d_name, "..") == 0)
-							tmpstr = ostrcat(tmpstr, "skin/ext_grid_changedir.png", 1, 0);
-						else if(ostrcmp(filelist[i]->d_name, "autofs") == 0)
+						if(ostrcmp(filelist[i]->d_name, "autofs") == 0)
 							tmpstr = ostrcat(tmpstr, "skin/ext_grid_autofs.png", 1, 0);
 						else if(ostrcmp(filelist[i]->d_name, "hdd") == 0)
 							tmpstr = ostrcat(tmpstr, "skin/ext_grid_harddisk.png", 1, 0);
@@ -401,28 +416,26 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						posx = 0;
 					}
 				}			
-
-				child->bordercol = node->bordercol;
-				
-				if(status.filelistextend != 1)
+				else				
 				{
 					if(node->pic != NULL)
 						changepic(child, node->pic);
-
-					child->valign = MIDDLE;
-					child->width = 200;
-					child->prozwidth = 1;
-					child->height = node->fontsize + 2 + (node->bordersize * 2);
 				}
 				changetext(child, filelist[i]->d_name);
 				changename(child, filelist[i]->d_name);
 				child->parentpointer = node;
+				child->bordercol = node->bordercol;
 
-				if(status.filelistextend != 1)
+				
+				if(status.filelistextend != 2)
 				{
+					child->valign = MIDDLE;
 					child->width = 100;
 					child->prozwidth = 1;
-					child->height = node->fontsize + 2 + (node->bordersize * 2);
+					if(status.filelistextend == 0)
+						child->height = node->fontsize + 2 + (node->bordersize * 2);
+					else	
+						child->height = child->fontsize + fontspace + (node->bordersize * 2);					
 					child->textposx = node->textposx;
 				}
 				else
@@ -433,7 +446,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 				changeinput(child, tmpstr);
 				free(tmpstr); tmpstr = NULL;
 
-				if(status.filelistextend > 1)
+				if(status.filelistextend > 2)
 				{
 					child->filelist = (struct filelist*)malloc(sizeof(struct filelist));
 					if(child->filelist == NULL)
@@ -446,7 +459,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 					child->filelist->name = ostrcat(filelist[i]->d_name, "", 0, 0);
 					child->filelist->path = createpath(node->input, "");
 
-					if(status.filelistextend == 4)
+					if(status.filelistextend == 5)
 					{
 						char* filename = NULL;
 						filename = ostrcat(filename, strdup(filelist[i]->d_name), 1, 0);
@@ -492,7 +505,9 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 				child = addscreennode(screen, NULL, child);
 				if(child != NULL)
 				{
-					if(status.filelistextend == 1)
+					if(status.filelistextend != 0)
+						child->fontsize = fontsize;
+					if(status.filelistextend == 2)
 					{
 						if(gridbr == 0) child->type = GRIDBR;
 	
@@ -582,11 +597,15 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 					}
 
 					child->bordercol = node->bordercol;
-					if(status.filelistextend != 1)
+					if(status.filelistextend != 2)
 					{
+						child->valign = MIDDLE;
 						child->width = 100;
 						child->prozwidth = 1;
-						child->height = node->fontsize + 2 + (node->bordersize * 2);
+						if(status.filelistextend == 0)
+							child->height = node->fontsize + 2 + (node->bordersize * 2);
+						else	
+							child->height = child->fontsize + fontspace + (node->bordersize * 2);
 						child->textposx = node->textposx;
 					}
 					else
@@ -600,7 +619,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 					child->del = FILELISTDELMARK;
 					changeinput(child, NULL);
 
-					if(status.filelistextend > 1)
+					if(status.filelistextend > 2)
 					{
 						child->filelist = (struct filelist*)malloc(sizeof(struct filelist));
 						if(child->filelist == NULL)
@@ -613,8 +632,9 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						child->filelist->name = ostrcat(filelist[i]->d_name, "", 0, 0);
 						child->filelist->path = createpath(node->input, "");
 
-						if(status.filelistextend == 4)
+						if(status.filelistextend == 5)
 						{
+/*
 							char* filename = NULL;
 							filename = ostrcat(filename, strdup(filelist[i]->d_name), 1, 0);
 							debug(10, "[filelist] filename: %s", filename);
@@ -631,6 +651,33 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 							tmpfile1 = string_shortname(tmpfile,0);
 							string_remove_whitechars(tmpfile1);
 							child->filelist->imdbpath = tmpfile1;
+*/
+								char* filename = NULL;
+								filename = ostrcat(filename, strdup(filelist[i]->d_name), 1, 0);
+								debug(10, "[filelist] filename: %s", filename);
+								string_tolower(filename);
+//								printf("1filename: %s\n",filename);
+
+								filename = string_shortname(filename,1);
+//								printf("2filename: %s\n",filename);	
+							
+								string_removechar(filename);
+//								printf("3filename: %s\n",filename);
+
+								string_toupper(filename);
+								changetext(child, filename);
+
+								string_tolower(filename);
+								filename = string_shortname(filename,2);
+								
+								string_remove_whitechars(filename);
+//								printf("4filename: %s\n",filename);
+
+								tmpstr = ostrcat(tmpstr, "/media/autofs/DEBIAN/imdb/", 1, 0);
+								tmpstr = ostrcat(tmpstr, filename, 1, 0);
+								free(filename); filename = NULL;
+//								tmpstr = ostrcat(tmpstr, ".imdb", 1, 0);
+								child->filelist->imdbpath = tmpstr;								
 						}
 
 						tmpstr = createpath(node->input, filelist[i]->d_name);

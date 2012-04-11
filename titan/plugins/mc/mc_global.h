@@ -20,14 +20,18 @@ void mc_changeview(int view, struct skin* filelist)
 		node = node->next;
 	}
 
-	if(view == 1)
+	if(view == 0)
+		filelist->fontsize = 25;	
+	else if(view == 1)
 		filelist->fontsize = 40;
 	else if(view == 3)
-		filelist->fontsize = 20;
+		filelist->fontsize = 25;
 	else if(view == 4)
 		filelist->fontsize = 20;
+	else if(view == 5)
+		filelist->fontsize = 25;
 	else
-		filelist->fontsize = 30;
+		filelist->fontsize = 25;
 }
 
 /*

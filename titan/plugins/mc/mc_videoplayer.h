@@ -60,14 +60,16 @@ void screenmc_videoplayer()
 		initscreensaver();
 
 	tmpview = view;
-	mc_changeview(view, filelist);
+//	mc_changeview(view, filelist);
 
 	printf("111111111: view=%d tmpview=%d\n", view, tmpview);
 //	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, view, NULL);
-	filelist->fontsize = 25;
+//	filelist->fontsize = 25;
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, NULL);
 	addscreenrc(apskin, filelist);
 
+	char* savecmd = NULL;
+			
 	while(1)
 	{
 		rcret = waitrc(apskin, rcwait, 0);
@@ -86,6 +88,32 @@ void screenmc_videoplayer()
 				screenplayinfobar(NULL, 1, playertype, 0);
 			}
 		}
+		else if(status.filelistextend == 5 && filelist->select != NULL && filelist->select->input == NULL)
+		{
+			char* cmd = NULL;
+			cmd = ostrcat(cmd, filelist->select->filelist->imdbpath, 0, 0);
+			cmd = ostrcat(cmd, ".backdrop.mvi", 0, 0);
+
+			if(!file_exist(cmd)){
+				cmd = NULL;
+				cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0, 0);
+			}
+
+			if(savecmd == NULL)
+			{
+				singlepicstart(cmd, 0);
+				savecmd = ostrcat("", cmd, 0, 0);
+			}
+			else
+			{
+				if(ostrcmp(savecmd, cmd) != 0)
+				{
+					singlepicstart(cmd, 0);
+					free(savecmd), savecmd = NULL;
+					savecmd = ostrcat("", cmd, 0, 0);
+				}
+			}
+		}		
 
 		if(rcret == getrcconfigint("rc1", NULL))
 		{
@@ -244,7 +272,7 @@ void screenmc_videoplayer()
 					tmpview = getconfigint("view", NULL);
 				}
 
-				mc_changeview(view, filelist);
+//				mc_changeview(view, filelist);
 
 //new
 //				clearscreen(apskin);
@@ -448,7 +476,10 @@ void screenmc_videoplayer()
 					addconfig("mc_videoplayerpath", filelistpath->text);
 
 				debug(50, "filelist->select->text: %s", filelist->select->text);
-				filename = createpath(filelistpath->text, filelist->select->text);
+				filename = createpath(filelistpath->text, filelist->select->name);
+				printf("name: %s\n",filelist->select->name);
+				printf("text: %s\n",filelist->select->text);
+
 
 				if(getconfigint("playertype", NULL) == 1 && (cmpfilenameext(filename, ".ts") == 0 || cmpfilenameext(filename, ".mts") == 0 || cmpfilenameext(filename, ".m2ts") == 0))		
 					playertype = 1;
