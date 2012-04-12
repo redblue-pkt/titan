@@ -91,22 +91,13 @@ void screenmc_videoplayer()
 				screenplayinfobar(NULL, 1, playertype, 0);
 			}
 		}
-//		else if(status.filelistextend == 5 && filelist->select != NULL && filelist->select->input == NULL)
 		else if(status.filelistextend == 5 && filelist->select != NULL)
 		{
-//			printf("filelist->select->name %s\n",filelist->select->name);
-//			printf("savecmd %s\n",savecmd);
-
-
 			char* cmd = NULL;
 			cmd = ostrcat(cmd, filelist->select->filelist->imdbpath, 1, 0);
-			cmd = ostrcat(cmd, ".jpg", 1, 0);
-			printf("cmd %s\n",cmd);
-			
+			cmd = ostrcat(cmd, ".jpg", 1, 0);			
 			changepic(skin_cover, cmd);
-//			skin_cover->hidden = NO;
-			printf("malen\n");
-drawscreen(apskin, 0);
+			drawscreen(apskin, 0);
 
 			free(cmd), cmd = NULL;
 			cmd = ostrcat(cmd, filelist->select->filelist->imdbpath, 1, 0);
