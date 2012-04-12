@@ -1681,6 +1681,21 @@ char* getfilenameext(char* filename)
 	return NULL;
 }
 
+char* getcurrentdir(char* path)
+{
+	char* zeichen = NULL;
+
+	if(path == NULL) return NULL;
+
+	zeichen = strrchr(path, '/');
+	if(zeichen != NULL)
+	{
+		return ostrcat(zeichen + 1, NULL, 0, 0);
+	}
+
+	return NULL;
+}
+
 char* convert_timesec(int sec)
 {
 	int hour = 0, min = 0, seconds = 0;
