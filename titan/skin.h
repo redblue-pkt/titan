@@ -1359,26 +1359,32 @@ void calcautoscale(int width, int height, int mwidth, int mheight, int* scalewid
 	{
 		*scaleheight = mheight;
 		*scalewidth = width * (mheight / height);
+		
+		if(*scalewidth > mwidth && width > 0)
+		{
+			*scalewidth = mwidth;
+			*scaleheight = height * (mwidth / width);
+		}				
 	}
-	else if(width < mwidth && height > mheight && height > 0 && mheight > 0)
+	else if(width < mwidth && height > mheight && mheight > 0 && (height / mheight) > 0)
 	{
 		*scaleheight = mheight;
 		*scalewidth = width / (height / mheight);
 	}
-	else if(width > mwidth && height < mheight && width > 0 && mwidth > 0)
+	else if(width > mwidth && height < mheight && mwidth > 0 && (width / mwidth) > 0)
 	{
 		*scalewidth = mwidth;
 		*scaleheight = height / (width / mwidth);
 	}
-	else if(width > mwidth && height > mheight && height > 0 && mwidth > 0)
+	else if(width > mwidth && height > mheight && mheight > 0 && (height / mheight) > 0)
 	{
-		*scalewidth = mwidth;
-		*scaleheight = height / (width / mwidth);
+		*scaleheight = mheight;
+		*scalewidth = width / (height / mheight);
 		
-		if(*scaleheight > mheight)
+		if(*scalewidth > mwidth && mwidth > 0 && (width / mwidth) > 0)
 		{
-			*scaleheight = mheight;
-			*scalewidth = width / (height / mheight);
+			*scalewidth = mwidth;
+			*scaleheight = height / (width / mwidth);
 		}
 	}
 }
