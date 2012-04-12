@@ -395,7 +395,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 							{
 								tmpstr = ostrcat(tmpstr, (filelist[i]->d_name), 1, 0);
 								string_tolower(tmpstr);
-								tmpstr = string_shortname(tmpstr,2);
+								tmpstr = string_shortname(tmpstr, 2);
 								string_removechar(tmpstr);
 								string_remove_whitechars(tmpstr);
 								tmpstr = ostrcat(tmpstr, ".png", 0, 0);
@@ -553,7 +553,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 								char* filename = NULL;
 								filename = ostrcat(filename, filelist[i]->d_name, 1, 0);
 								string_tolower(filename);
-								filename = string_shortname(filename,2);
+								filename = string_shortname(filename, 2);
 								string_removechar(filename);
 								string_remove_whitechars(filename);
 								
