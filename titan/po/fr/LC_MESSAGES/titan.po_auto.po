@@ -407,6 +407,9 @@ msgstr ""
 #: panel_extensions.h:136 global.h:4587 mc_videoplayer.h:450
 #: mc_videoplayer.h:554 global.h:4602 mc_pictureplayer.h:74
 #: mc_pictureplayer.h:195 mc_pictureplayer.h:307 mc_pictureplayer.h:394
+#: mc_global.h:640 mc_global.h:884 mc_pictureplayer.h:75
+#: mc_pictureplayer.h:196 mc_pictureplayer.h:309 mc_pictureplayer.h:396
+#: mc_videoplayer.h:454 mc_videoplayer.h:558
 msgid "Message"
 msgstr ""
 
@@ -505,6 +508,9 @@ msgstr ""
 #: panel_extensions.h:112 global.h:4587 mc_videoplayer.h:450
 #: mc_videoplayer.h:554 global.h:4602 mc_pictureplayer.h:74
 #: mc_pictureplayer.h:195 mc_pictureplayer.h:307 mc_pictureplayer.h:394
+#: mc_global.h:640 mc_global.h:884 mc_pictureplayer.h:75
+#: mc_pictureplayer.h:196 mc_pictureplayer.h:309 mc_pictureplayer.h:396
+#: mc_videoplayer.h:454 mc_videoplayer.h:558
 msgid "OK"
 msgstr ""
 
@@ -601,7 +607,9 @@ msgstr ""
 #: mc_videoplayer.h:439 mc_videoplayer.h:543 panel_extensions.h:112
 #: global.h:4587 mc_videoplayer.h:450 mc_videoplayer.h:554 global.h:4602
 #: mc_pictureplayer.h:74 mc_pictureplayer.h:195 mc_pictureplayer.h:307
-#: mc_pictureplayer.h:394
+#: mc_pictureplayer.h:394 mc_global.h:640 mc_global.h:884
+#: mc_pictureplayer.h:75 mc_pictureplayer.h:196 mc_pictureplayer.h:309
+#: mc_pictureplayer.h:396 mc_videoplayer.h:454 mc_videoplayer.h:558
 msgid "EXIT"
 msgstr ""
 
@@ -1192,6 +1200,7 @@ msgstr ""
 #: mc_audioplayer.h:178 mc_pictureplayer.h:117 mc_videoplayer.h:175
 #: mc_videoplayer.h:180 mc_videoplayer.h:176 mc_videoplayer.h:177
 #: mc_videoplayer.h:207 mc_videoplayer.h:218 mc_pictureplayer.h:118
+#: mc_pictureplayer.h:119 mc_videoplayer.h:220
 msgid "Repeat-On"
 msgstr ""
 
@@ -1202,6 +1211,8 @@ msgstr ""
 #: mc_videoplayer.h:317 mc_videoplayer.h:184 mc_videoplayer.h:318
 #: mc_videoplayer.h:214 mc_videoplayer.h:360 mc_videoplayer.h:225
 #: mc_videoplayer.h:371 mc_pictureplayer.h:125 mc_pictureplayer.h:263
+#: mc_pictureplayer.h:126 mc_pictureplayer.h:265 mc_videoplayer.h:227
+#: mc_videoplayer.h:375
 msgid "Repeat"
 msgstr ""
 
@@ -1216,7 +1227,10 @@ msgstr ""
 #: mc_videoplayer.h:316 mc_videoplayer.h:466 mc_global.h:150 mc_global.h:222
 #: mc_videoplayer.h:358 mc_videoplayer.h:511 mc_videoplayer.h:326
 #: mc_videoplayer.h:369 mc_videoplayer.h:522 mc_pictureplayer.h:223
-#: mc_pictureplayer.h:261 mc_pictureplayer.h:365
+#: mc_pictureplayer.h:261 mc_pictureplayer.h:365 mc_global.h:207
+#: mc_global.h:279 mc_pictureplayer.h:225 mc_pictureplayer.h:263
+#: mc_pictureplayer.h:367 mc_videoplayer.h:330 mc_videoplayer.h:373
+#: mc_videoplayer.h:526
 msgid "Filelist-Mode"
 msgstr ""
 
@@ -1224,7 +1238,8 @@ msgstr ""
 #: mc_videoplayer.h:310 plugins_mc_skin.xml.h:34 skins_mc_skin.xml.h:34
 #: mc_videoplayer.h:315 mc_videoplayer.h:312 mc_videoplayer.h:316
 #: mc_videoplayer.h:317 mc_global.h:370 mc_global.h:398 mc_videoplayer.h:359
-#: mc_videoplayer.h:370 mc_pictureplayer.h:262
+#: mc_videoplayer.h:370 mc_pictureplayer.h:262 mc_global.h:427 mc_global.h:455
+#: mc_pictureplayer.h:264 mc_videoplayer.h:374
 msgid "Random"
 msgstr ""
 
@@ -1234,7 +1249,8 @@ msgstr ""
 #: mc_global.h:506 mc_global.h:738 mc_global.h:752 mc_videoplayer.h:350
 #: mc_videoplayer.h:356 mc_videoplayer.h:357 mc_global.h:83 mc_global.h:510
 #: mc_global.h:742 mc_global.h:756 mc_videoplayer.h:399 mc_videoplayer.h:410
-#: mc_pictureplayer.h:281
+#: mc_pictureplayer.h:281 mc_global.h:140 mc_global.h:567 mc_global.h:799
+#: mc_global.h:813 mc_pictureplayer.h:283 mc_videoplayer.h:414
 msgid "Playlist-Mode"
 msgstr ""
 
@@ -1249,7 +1265,9 @@ msgstr ""
 #: mc_videoplayer.h:498 mc_global.h:583 mc_global.h:827 mc_videoplayer.h:439
 #: mc_videoplayer.h:543 mc_videoplayer.h:450 mc_videoplayer.h:554
 #: mc_pictureplayer.h:74 mc_pictureplayer.h:195 mc_pictureplayer.h:307
-#: mc_pictureplayer.h:394
+#: mc_pictureplayer.h:394 mc_global.h:640 mc_global.h:884
+#: mc_pictureplayer.h:75 mc_pictureplayer.h:196 mc_pictureplayer.h:309
+#: mc_pictureplayer.h:396 mc_videoplayer.h:454 mc_videoplayer.h:558
 msgid "Can't start playback !"
 msgstr ""
 
@@ -1284,6 +1302,7 @@ msgid "smal"
 msgstr ""
 
 #: mc_global.h:355 mc_global.h:383 mc_global.h:359 mc_global.h:387
+#: mc_global.h:416 mc_global.h:444
 msgid "Random-On"
 msgstr ""
 
