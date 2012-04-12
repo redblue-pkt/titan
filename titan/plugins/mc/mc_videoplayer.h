@@ -65,12 +65,7 @@ void screenmc_videoplayer()
 	tmpview = view;
 	mc_changeview(view, filelist);
 
-	printf("111111111: view=%d tmpview=%d\n", view, tmpview);
-//	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, view, NULL);
-//	filelist->fontsize = 25;
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, NULL);
-//	mc_changeview(view, filelist);
-	
 	addscreenrc(apskin, filelist);
 
 	char* savecmd = NULL;
@@ -284,20 +279,12 @@ void screenmc_videoplayer()
 					printf("view changed > change tmpview\n");
 					tmpview = getconfigint("view", NULL);
 				}
-
-				view = getconfigint("view", NULL);
 				
-				mc_changeview(view, filelist);
+				mc_changeview(tmpview, filelist);
 
 				delownerrc(apskin);	
-//				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
-				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, view, filelist->select->text);
+				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
 				addscreenrc(apskin, filelist);
-
-//				mc_changeview(view, filelist);
-								
-//				drawscreen(skin, 0);
-//				status.filelistextend = view;
 
 				drawscreen(apskin, 0);
 			}
