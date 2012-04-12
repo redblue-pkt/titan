@@ -404,7 +404,8 @@ msgstr ""
 #: mc_videoplayer.h:491 mc_videoplayer.h:396 mc_videoplayer.h:497
 #: mc_videoplayer.h:397 mc_videoplayer.h:498 mc_global.h:583 mc_global.h:827
 #: mc_videoplayer.h:439 mc_videoplayer.h:543 panel_extensions.h:112
-#: panel_extensions.h:136
+#: panel_extensions.h:136 global.h:4587 mc_videoplayer.h:450
+#: mc_videoplayer.h:554
 msgid "Message"
 msgstr ""
 
@@ -500,7 +501,8 @@ msgstr ""
 #: mc_videoplayer.h:390 mc_videoplayer.h:491 mc_videoplayer.h:396
 #: mc_videoplayer.h:497 mc_videoplayer.h:397 mc_videoplayer.h:498
 #: mc_global.h:583 mc_global.h:827 mc_videoplayer.h:439 mc_videoplayer.h:543
-#: panel_extensions.h:112
+#: panel_extensions.h:112 global.h:4587 mc_videoplayer.h:450
+#: mc_videoplayer.h:554
 msgid "OK"
 msgstr ""
 
@@ -595,6 +597,7 @@ msgstr ""
 #: mc_videoplayer.h:491 mc_videoplayer.h:396 mc_videoplayer.h:497
 #: mc_videoplayer.h:397 mc_videoplayer.h:498 mc_global.h:583 mc_global.h:827
 #: mc_videoplayer.h:439 mc_videoplayer.h:543 panel_extensions.h:112
+#: global.h:4587 mc_videoplayer.h:450 mc_videoplayer.h:554
 msgid "EXIT"
 msgstr ""
 
@@ -961,7 +964,7 @@ msgstr ""
 #: global.h:4359 global.h:4364 global.h:4377 global.h:4378 global.h:4390
 #: global.h:4386 global.h:4389 global.h:4398 global.h:4528 global.h:4535
 #: global.h:4539 global.h:4557 global.h:4561 global.h:4563 global.h:4565
-#: global.h:4522 global.h:4536 global.h:4551 global.h:4586
+#: global.h:4522 global.h:4536 global.h:4551 global.h:4586 global.h:4587
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -1183,7 +1186,7 @@ msgstr ""
 
 #: mc_audioplayer.h:178 mc_pictureplayer.h:117 mc_videoplayer.h:175
 #: mc_videoplayer.h:180 mc_videoplayer.h:176 mc_videoplayer.h:177
-#: mc_videoplayer.h:207
+#: mc_videoplayer.h:207 mc_videoplayer.h:218
 msgid "Repeat-On"
 msgstr ""
 
@@ -1192,7 +1195,8 @@ msgstr ""
 #: plugins_mc_skin.xml.h:35 skins_mc_skin.xml.h:35 mc_videoplayer.h:187
 #: mc_videoplayer.h:316 mc_videoplayer.h:313 mc_videoplayer.h:183
 #: mc_videoplayer.h:317 mc_videoplayer.h:184 mc_videoplayer.h:318
-#: mc_videoplayer.h:214 mc_videoplayer.h:360
+#: mc_videoplayer.h:214 mc_videoplayer.h:360 mc_videoplayer.h:225
+#: mc_videoplayer.h:371
 msgid "Repeat"
 msgstr ""
 
@@ -1205,7 +1209,8 @@ msgstr ""
 #: mc_videoplayer.h:311 mc_videoplayer.h:459 mc_videoplayer.h:272
 #: mc_videoplayer.h:315 mc_videoplayer.h:465 mc_videoplayer.h:273
 #: mc_videoplayer.h:316 mc_videoplayer.h:466 mc_global.h:150 mc_global.h:222
-#: mc_videoplayer.h:358 mc_videoplayer.h:511
+#: mc_videoplayer.h:358 mc_videoplayer.h:511 mc_videoplayer.h:326
+#: mc_videoplayer.h:369 mc_videoplayer.h:522
 msgid "Filelist-Mode"
 msgstr ""
 
@@ -1213,6 +1218,7 @@ msgstr ""
 #: mc_videoplayer.h:310 plugins_mc_skin.xml.h:34 skins_mc_skin.xml.h:34
 #: mc_videoplayer.h:315 mc_videoplayer.h:312 mc_videoplayer.h:316
 #: mc_videoplayer.h:317 mc_global.h:370 mc_global.h:398 mc_videoplayer.h:359
+#: mc_videoplayer.h:370
 msgid "Random"
 msgstr ""
 
@@ -1221,7 +1227,7 @@ msgstr ""
 #: mc_videoplayer.h:353 mc_global.h:507 mc_global.h:739 mc_global.h:753
 #: mc_global.h:506 mc_global.h:738 mc_global.h:752 mc_videoplayer.h:350
 #: mc_videoplayer.h:356 mc_videoplayer.h:357 mc_global.h:83 mc_global.h:510
-#: mc_global.h:742 mc_global.h:756 mc_videoplayer.h:399
+#: mc_global.h:742 mc_global.h:756 mc_videoplayer.h:399 mc_videoplayer.h:410
 msgid "Playlist-Mode"
 msgstr ""
 
@@ -1234,7 +1240,7 @@ msgstr ""
 #: mc_global.h:823 mc_videoplayer.h:390 mc_videoplayer.h:491
 #: mc_videoplayer.h:396 mc_videoplayer.h:497 mc_videoplayer.h:397
 #: mc_videoplayer.h:498 mc_global.h:583 mc_global.h:827 mc_videoplayer.h:439
-#: mc_videoplayer.h:543
+#: mc_videoplayer.h:543 mc_videoplayer.h:450 mc_videoplayer.h:554
 msgid "Can't start playback !"
 msgstr ""
 
