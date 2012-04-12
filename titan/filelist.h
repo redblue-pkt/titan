@@ -252,18 +252,22 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 	parentdir = addscreennode(screen, NULL, child);
 
 /*
-0 fast
-1 cover (grid)
-2 big (list)
-3 default (liste + grösse)
-4 details (liste + date)
-5 cover1 (list + imdb)
-6 cover2 (list + imdb)
-7 cover3 (list + imdb)
-8 fullcover (list)
+0: fast (list)
+1: big (list)
+2: cover (grid)
+3: default (liste + size)
+4: details (liste + date)
+5: fullcover (list)
+
+? cover1 (list + imdb)
+? cover2 (list + imdb)
+? cover3 (list + imdb)
 */
 	int fontsize = 20;
 	int fontspace = 2;
+	int width = 0;
+	int height = 0;
+		
 //	if(status.filelistextend == 0)
 //		fontsize = 30, fontspace = 5;	
 	if(status.filelistextend == 1)
@@ -275,7 +279,21 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 	else if(status.filelistextend == 4)
 		fontsize = 25, fontspace = 5;
 	else if(status.filelistextend == 5)
+	{
 		fontsize = 25, fontspace = 10;
+		width = 600;
+		height = 350;
+	}
+
+	if(status.filelistextend == 5)
+	{
+		node->height = height;
+		node->width = width;
+		node->bgcol = 0x474747;
+		node->transparent = 40;
+		node->prozwidth = 0;
+		node->posx = 20;
+	}
 
 	if(status.filelistextend == 2 && parentdir != NULL) 
 	{
@@ -292,10 +310,9 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 		//parentdir->fontcol = 0x0000ff;
 		parentdir->halign = CENTER;
 		parentdir->valign = TEXTBOTTOM;
-		parentdir->posx = posx;
 		parentdir->fontsize = fontsize;
 		posx += parentdir->width;
-
+		
 		tmpstr = ostrcat(tmpstr, "skin/ext_grid_changedir.png", 1, 0);
 		changepic(parentdir, tmpstr);
 		free(tmpstr); tmpstr = NULL;
@@ -337,6 +354,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 
 					if(child != parentdir) 
 					{
+						debug(10, "filename: %s", filelist[i]->d_name);
 	 					child->picheight = 180;
 						child->picwidth = 180;
 								
@@ -347,13 +365,11 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						child->bgspace = 1;
 						child->vspace = 10;
 						child->hspace = 10;
-						child->posx = posx;
 						//child->fontcol = 0x0000ff;
 						child->halign = CENTER;
 						child->valign = TEXTBOTTOM;
 	
 						child->posx = posx;
-	
 						posx += child->width;
 	
 						if(ostrcmp(filelist[i]->d_name, "autofs") == 0)
@@ -376,17 +392,13 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 								tmpstr = ostrcat(tmpstr, ".png", 1, 0);
 							}
 							else
-							{	
-								char* filename = NULL;
-								filename = ostrcat(filename, filelist[i]->d_name, 1, 0);
-								debug(10, "[filelist] filename: %s", filename);
-								string_tolower(filename);
-								filename = string_shortname(filename, 2);
-								string_removechar(filename);
-								string_remove_whitechars(filename);
-								tmpstr = ostrcat(tmpstr, filename, 1, 0);
-								free(filename); filename = NULL;
-								tmpstr = ostrcat(tmpstr, ".png", 1, 0);
+							{
+								tmpstr = ostrcat(tmpstr, (filelist[i]->d_name), 1, 0);
+								string_tolower(tmpstr);
+								tmpstr = string_shortname(tmpstr,2);
+								string_removechar(tmpstr);
+								string_remove_whitechars(tmpstr);
+								tmpstr = ostrcat(tmpstr, ".png", 0, 0);
 							}	
 														
 							if(!file_exist(tmpstr))
@@ -395,12 +407,12 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 								tmpstr = ostrcat(tmpstr, "skin/ext_grid_directory.png", 1, 0);
 							}
 						}
+
 						if(tmpstr != NULL)
+						{
 							changepic(child, tmpstr);
-								
-						printf("tmpstr: %s\n",tmpstr);
-						free(tmpstr); tmpstr = NULL;
-											
+							free(tmpstr); tmpstr = NULL;
+						}					
 						gridbr++;
 					}
 					if(gridbr >= 3)
@@ -423,13 +435,14 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 				if(status.filelistextend != 2)
 				{
 					child->valign = MIDDLE;
-					child->width = 100;
+					child->width = 100;																	
 					child->prozwidth = 1;
 					if(status.filelistextend == 0)
 						child->height = node->fontsize + 2 + (node->bordersize * 2);
-					else	
+					else
 						child->height = child->fontsize + fontspace + (node->bordersize * 2);					
-					child->textposx = node->textposx;
+
+					child->textposx = node->textposx;				
 				}
 				else
 					child->textposx = 1;
@@ -454,22 +467,25 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 
 					if(status.filelistextend == 5)
 					{
+
 						char* filename = NULL;
 						filename = ostrcat(filename, filelist[i]->d_name, 1, 0);
-						debug(10, "filename: %s", filename);
 						string_tolower(filename);
 						filename = string_shortname(filename, 1);
 						string_removechar(filename);
 						string_toupper(filename);
 						changetext(child, filename);
 						string_tolower(filename);
-						filename = string_shortname(filename, 2);								
+						filename = string_shortname(filename, 2);
 						string_remove_whitechars(filename);
+						
 						tmpstr = ostrcat(tmpstr, getconfig("imdb_directory", NULL), 1, 0);
 						tmpstr = ostrcat(tmpstr, "/imdb/", 1, 0);
 						tmpstr = ostrcat(tmpstr, filename, 1, 0);
 						free(filename); filename = NULL;
-						child->filelist->imdbpath = tmpstr;								
+						child->filelist->imdbpath = tmpstr;
+// double free error, why ?
+//						free(tmpstr); tmpstr = NULL;						
 					}
 
 					tmpstr = createpath(node->input, filelist[i]->d_name);
@@ -498,6 +514,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 				child = addscreennode(screen, NULL, child);
 				if(child != NULL)
 				{
+					debug(10, "filename: %s", filelist[i]->d_name);
 					if(status.filelistextend != 0)
 						child->fontsize = fontsize;
 					if(status.filelistextend == 2)
@@ -506,8 +523,6 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 	
 						child->picheight = 170;
 						child->picwidth = 140;
-	//					child->picwidth = 350;
-								
 						child->height = 230;
 						child->width = 370;
 						child->prozwidth = 0;
@@ -515,13 +530,11 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						child->bgspace = 1;
 						child->vspace = 10;
 						child->hspace = 10;
-						child->posx = posx;
 						//child->fontcol = 0x0000ff;
 						child->halign = CENTER;
 						child->valign = TEXTBOTTOM;
 	
 						child->posx = posx;
-	
 						posx += child->width;
 	
 						if(cmpfilenameext(filelist[i]->d_name, ".iso") == 0)
@@ -539,11 +552,11 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 							{						
 								char* filename = NULL;
 								filename = ostrcat(filename, filelist[i]->d_name, 1, 0);
-								debug(10, "filename: %s", filename);
 								string_tolower(filename);
-								filename = string_shortname(filename, 2);
+								filename = string_shortname(filename,2);
 								string_removechar(filename);
 								string_remove_whitechars(filename);
+								
 								tmpstr = ostrcat(tmpstr, getconfig("imdb_directory", NULL), 1, 0);
 								tmpstr = ostrcat(tmpstr, "/imdb/", 1, 0);
 								tmpstr = ostrcat(tmpstr, filename, 1, 0);
@@ -560,11 +573,11 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 							}
 						}
 						if(tmpstr != NULL)
+						{
 							changepic(child, tmpstr);
-								
-						printf("tmpstr: %s\n",tmpstr);
-						free(tmpstr); tmpstr = NULL;
-											
+							free(tmpstr); tmpstr = NULL;
+						}
+					
 						gridbr++;
 						if(gridbr >= 3)
 						{
@@ -592,7 +605,8 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 							child->height = node->fontsize + 2 + (node->bordersize * 2);
 						else	
 							child->height = child->fontsize + fontspace + (node->bordersize * 2);
-						child->textposx = node->textposx;
+
+						child->textposx = node->textposx;			
 					}
 					else
 						child->textposx = 1;
@@ -622,20 +636,23 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						{
 							char* filename = NULL;
 							filename = ostrcat(filename, filelist[i]->d_name, 1, 0);
-							debug(10, "filename: %s", filename);
 							string_tolower(filename);
 							filename = string_shortname(filename, 1);
 							string_removechar(filename);
 							string_toupper(filename);
+							string_strip_whitechars(filename);
 							changetext(child, filename);
 							string_tolower(filename);
-							filename = string_shortname(filename, 2);								
+							filename = string_shortname(filename, 2);					
 							string_remove_whitechars(filename);
+														
 							tmpstr = ostrcat(tmpstr, getconfig("imdb_directory", NULL), 1, 0);
 							tmpstr = ostrcat(tmpstr, "/imdb/", 1, 0);
 							tmpstr = ostrcat(tmpstr, filename, 1, 0);
 							free(filename); filename = NULL;
-							child->filelist->imdbpath = tmpstr;								
+							child->filelist->imdbpath = tmpstr;
+// double free error, why ?
+//							free(tmpstr); tmpstr = NULL;
 						}
 
 						tmpstr = createpath(node->input, filelist[i]->d_name);

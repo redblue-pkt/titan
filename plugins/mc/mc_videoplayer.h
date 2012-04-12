@@ -22,7 +22,10 @@ void screenmc_videoplayer()
 	struct skin* b2 = getscreennode(apskin, "b2");
 	struct skin* b3 = getscreennode(apskin, "b3");
 	struct skin* b4 = getscreennode(apskin, "b4");
-
+	
+	struct skin* skin_cover = getscreennode(apskin, "cover");
+//	skin_cover->hidden = YES;
+			
 	currentdirectory = ostrcat(currentdirectory, getconfig("mc_videoplayerpath", NULL), 1, 0);
 
 	// enable listbox and set hidden
@@ -91,9 +94,21 @@ void screenmc_videoplayer()
 //		else if(status.filelistextend == 5 && filelist->select != NULL && filelist->select->input == NULL)
 		else if(status.filelistextend == 5 && filelist->select != NULL)
 		{
-			printf("filelist->select->name %s\n",filelist->select->name);
-			printf("savecmd %s\n",savecmd);
+//			printf("filelist->select->name %s\n",filelist->select->name);
+//			printf("savecmd %s\n",savecmd);
+
+
 			char* cmd = NULL;
+			cmd = ostrcat(cmd, filelist->select->filelist->imdbpath, 1, 0);
+			cmd = ostrcat(cmd, ".jpg", 1, 0);
+			printf("cmd %s\n",cmd);
+			
+			changepic(skin_cover, cmd);
+//			skin_cover->hidden = NO;
+			printf("malen\n");
+drawscreen(apskin, 0);
+
+			free(cmd), cmd = NULL;
 			cmd = ostrcat(cmd, filelist->select->filelist->imdbpath, 1, 0);
 			cmd = ostrcat(cmd, ".backdrop.mvi", 1, 0);
 
@@ -106,7 +121,7 @@ void screenmc_videoplayer()
 			{
 				singlepicstart(cmd, 0);
 				free(savecmd), savecmd = NULL;
-				savecmd = ostrcat("", cmd, 0, 0);
+				savecmd = ostrcat(savecmd, cmd, 1, 0);
 			}
 			else
 			{
@@ -114,12 +129,12 @@ void screenmc_videoplayer()
 				{
 					singlepicstart(cmd, 0);
 					free(savecmd), savecmd = NULL;
-					savecmd = ostrcat("", cmd, 0, 0);
+					savecmd = ostrcat(savecmd, cmd, 1, 0);
 				}
 			}
 			free(cmd), cmd = NULL;
-		}		
-
+		}
+		
 		if(rcret == getrcconfigint("rc1", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
