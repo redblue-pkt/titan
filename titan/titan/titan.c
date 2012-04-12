@@ -426,40 +426,46 @@ int main(int argc, char *argv[])
 	ret = addinetworkall(NULL);
 	
 #ifndef SIMULATE
-	if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1)
-	{	
-		destroy();
-		exit(100);
-	}
-	if(ostrcmp(string_newline(gettimeinfovar()), TIMECODE) == 1)
+	int skipsecurety = 0;
+	if(skipsecurety == 0)
 	{
-		destroy();
-		exit(100);
+		if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1)
+		{	
+			destroy();
+			exit(100);
+		}
+		if(ostrcmp(string_newline(gettimeinfovar()), TIMECODE) == 1)
+		{
+			destroy();
+			exit(100);
+		}
+		if(checkreseller() != 0)
+		{
+			destroy();
+			exit(100);
+		}
+		if(getsysinfo() != SYSCODE)
+		{
+			destroy();
+			exit(100);
+		}
+		if(file_exist("/mnt/swapextensions/etc/.vnumber") == 1)
+		{
+			destroy();
+			exit(100);
+		}
+		if(checkflash() != 0)
+		{
+			destroy();
+			exit(100);
+		}
+		char* tmpstr2 = NULL;
+		tmpstr2 = getcpuid();
+		checkserial(tmpstr2);
+		free(tmpstr2), tmpstr2 = NULL;
 	}
-	if(checkreseller() != 0)
-	{
-		destroy();
-		exit(100);
-	}
-	if(getsysinfo() != SYSCODE)
-	{
-		destroy();
-		exit(100);
-	}
-	if(file_exist("/mnt/swapextensions/etc/.vnumber") == 1)
-	{
-		destroy();
-		exit(100);
-	}
-	if(checkflash() != 0)
-	{
-		destroy();
-		exit(100);
-	}
-	char* tmpstr2 = NULL;
-	tmpstr2 = getcpuid();
-	checkserial(tmpstr2);
-	free(tmpstr2), tmpstr2 = NULL;
+	else
+		status.security = 1;
 #endif
 
 	ret = initfont();
