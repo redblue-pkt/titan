@@ -1353,6 +1353,36 @@ void jpgswerror(j_common_ptr cinfo)
 	longjmp(jpgerr->setjmpbuf, 1);
 }
 
+void calcautoscale(int width, int height, int mwidth, int mheight, int* scalewidth, int* scaleheight)
+{
+	if(width < mwidth && height < mheight && height > 0)
+	{
+		*scaleheight = mheight;
+		*scalewidth = width * (mheight / height);
+	}
+	else if(width < mwidth && height > mheight && height > 0 && mheight > 0)
+	{
+		*scaleheight = mheight;
+		*scalewidth = width / (height / mheight);
+	}
+	else if(width > mwidth && height < mheight && width > 0 && mwidth > 0)
+	{
+		*scalewidth = mwidth;
+		*scaleheight = height / (width / mwidth);
+	}
+	else if(width > mwidth && height > mheight && height > 0 && mwidth > 0)
+	{
+		*scalewidth = mwidth;
+		*scaleheight = height / (width / mwidth);
+		
+		if(*scaleheight > mheight)
+		{
+			*scaleheight = mheight;
+			*scalewidth = width / (height / mheight);
+		}
+	}
+}
+
 int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight, int scalewidth, int scaleheight, int halign, int valign)
 {
 	struct jpeg_decompress_struct cinfo;
@@ -1395,34 +1425,7 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 	{
 		//auto scale to mwidth / mheight
 		if(scalewidth == 1 && scaleheight == 1)
-		{
-			if(width < mwidth && height < mheight && height > 0)
-			{
-				scaleheight = mheight;
-				scalewidth = width * (mheight / height);
-			}
-			else if(width < mwidth && height > mheight && height > 0 && mheight > 0)
-			{
-				scaleheight = mheight;
-				scalewidth = width / (height / mheight);
-			}
-			else if(width > mwidth && height < mheight && width > 0 && mwidth > 0)
-			{
-				scalewidth = mwidth;
-				scaleheight = height / (width / mwidth);
-			}
-			else if(width > mwidth && height > mheight && height > 0 && mwidth > 0)
-			{
-				scalewidth = mwidth;
-				scaleheight = height / (width / mwidth);
-				
-				if(scaleheight > mheight)
-				{
-					scaleheight = mheight;
-					scalewidth = width / (height / mheight);
-				}
-			}
-		}
+			calcautoscale(width, height, mwidth, mheight, &scalewidth, &scaleheight);
 		
 		if(scalewidth == 0) scalewidth = width;
 		if(scaleheight == 0) scaleheight = height;
@@ -1757,6 +1760,10 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 
 	if(pictype == 0 && (scalewidth != 0 || scaleheight != 0))
 	{
+		//auto scale to mwidth / mheight
+		if(scalewidth == 1 && scaleheight == 1)
+			calcautoscale(width, height, mwidth, mheight, &scalewidth, &scaleheight);
+	
 		if(scalewidth == 0) scalewidth = width;
 		if(scaleheight == 0) scaleheight = height;
 		if(picnode == NULL)
