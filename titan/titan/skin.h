@@ -1393,8 +1393,36 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 
 	if(accelfb != NULL && accelfb->varfbsize > width * 8 && (scalewidth != 0 || scaleheight != 0))
 	{
-		//if(width > mwidth) width = mwidth;
-		//if(height > mheight) height = mheight;
+		//auto scale to mwidth / mheight
+		if(scalewidth == 1 && scaleheight == 1)
+		{
+			if(width < mwidth && height < mheight && height > 0)
+			{
+				scaleheight = mheight;
+				scalewidth = width * (mheight / height);
+			}
+			else if(width < mwidth && height > mheight && height > 0 && mheight > 0)
+			{
+				scaleheight = mheight;
+				scalewidth = width / (height / mheight);
+			}
+			else if(width > mwidth && height < mheight && width > 0 && mwidth > 0)
+			{
+				scalewidth = mwidth;
+				scaleheight = height / (width / mwidth);
+			}
+			else if(width > mwidth && height > mheight && height > 0 && mwidth > 0)
+			{
+				scalewidth = mwidth;
+				scaleheight = height / (width / mwidth);
+				
+				if(scaleheight > mheight)
+				{
+					scaleheight = mheight;
+					scalewidth = width / (height / mheight);
+				}
+			}
+		}
 		
 		if(scalewidth == 0) scalewidth = width;
 		if(scaleheight == 0) scaleheight = height;
