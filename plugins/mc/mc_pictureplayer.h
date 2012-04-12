@@ -54,8 +54,8 @@ void screenmc_pictureplayer()
 	if(getconfigint("screensaver", NULL) == 1)
 		initscreensaver();
 
-//	mc_changeview(view, filelist);
 	tmpview = view;
+	mc_changeview(view, filelist);
 
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, NULL);
 	mc_changeview(view, filelist);
@@ -178,7 +178,7 @@ void screenmc_pictureplayer()
 					printf("view changed > change tmpview\n");
 					tmpview = getconfigint("view", NULL);
 				}
-//				mc_changeview(view, filelist);
+				mc_changeview(tmpview, filelist);
 
 				sound = getconfig("sound", NULL);
 
@@ -202,7 +202,6 @@ void screenmc_pictureplayer()
 				delownerrc(apskin);	
 				drawscreen(skin, 0);
 				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
-				mc_changeview(view, filelist);
 				addscreenrc(apskin, filelist);
 							
 				drawscreen(apskin, 0);
