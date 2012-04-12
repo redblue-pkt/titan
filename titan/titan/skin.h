@@ -1393,8 +1393,8 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 
 	if(accelfb != NULL && accelfb->varfbsize > width * 8 && (scalewidth != 0 || scaleheight != 0))
 	{
-		if(width > mwidth) width = mwidth;
-		if(height > mheight) height = mheight;
+		//if(width > mwidth) width = mwidth;
+		//if(height > mheight) height = mheight;
 		
 		if(scalewidth == 0) scalewidth = width;
 		if(scaleheight == 0) scaleheight = height;
