@@ -8,7 +8,7 @@ void screenmc_pictureplayer()
 {
 	char* filename = NULL;
 	char* currentdirectory = NULL;
-	int nextpic = 0, rcret = 0, rcwait = 1000, playerret = 0, flag = 3, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 1, playlist = 0, playertype = 0;
+	int nextpic = 0, rcret = 0, rcwait = 1000, playerret = 0, flag = 3, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0;
 	// workaround for grey background mvi
 	struct skin* blackscreen = getscreen("blackscreen");
 	drawscreen(blackscreen, 0);
@@ -54,7 +54,8 @@ void screenmc_pictureplayer()
 	if(getconfigint("screensaver", NULL) == 1)
 		initscreensaver();
 
-	mc_changeview(view, filelist);
+//	mc_changeview(view, filelist);
+	tmpview = view;
 
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, NULL);
 	addscreenrc(apskin, filelist);
@@ -168,9 +169,15 @@ void screenmc_pictureplayer()
 			{
 				debug(50, "rcmenu: settings");
 
-				screenmc_pictureplayer_settings();
 				view = getconfigint("view", NULL);
-				mc_changeview(view, filelist);
+				screenmc_pictureplayer_settings();
+				
+				if(view != getconfigint("view", NULL))
+				{
+					printf("view changed > change tmpview\n");
+					tmpview = getconfigint("view", NULL);
+				}
+//				mc_changeview(view, filelist);
 
 				sound = getconfig("sound", NULL);
 
@@ -190,7 +197,12 @@ void screenmc_pictureplayer()
 				}
 				else
 					playerstop();
-				
+
+				delownerrc(apskin);	
+				drawscreen(skin, 0);
+				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
+				addscreenrc(apskin, filelist);
+							
 				drawscreen(apskin, 0);
 			}
 		}
@@ -257,6 +269,7 @@ void screenmc_pictureplayer()
 			playlist = 0;
 			writevfd("Mediacenter");
 			playinfobarcount = 0;
+status.filelistextend = 0;
 			break;
 		}
 		else if(rcret == getrcconfigint("rcok", NULL))

@@ -314,6 +314,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 		posx += parentdir->width;
 		
 		tmpstr = ostrcat(tmpstr, "skin/ext_grid_changedir.png", 1, 0);
+		debug(10, "picpath: %s", tmpstr);
 		changepic(parentdir, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 
@@ -371,14 +372,14 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 	
 						child->posx = posx;
 						posx += child->width;
-	
+
 						if(ostrcmp(filelist[i]->d_name, "autofs") == 0)
 							tmpstr = ostrcat(tmpstr, "skin/ext_grid_autofs.png", 1, 0);
 						else if(ostrcmp(filelist[i]->d_name, "hdd") == 0)
 							tmpstr = ostrcat(tmpstr, "skin/ext_grid_harddisk.png", 1, 0);
-						else if(ostrcmp(filelist[i]->d_name, "usb") == 0)
+						else if((ostrcmp(filelist[i]->d_name, "usb") == 0) || (ostrcmp(getcurrentdir(node->input), "usb") == 0))
 							tmpstr = ostrcat(tmpstr, "skin/ext_grid_usb.png", 1, 0);
-						else if(ostrcmp(filelist[i]->d_name, "net") == 0)
+						else if((ostrcmp(filelist[i]->d_name, "net") == 0) || (ostrcmp(getcurrentdir(node->input), "net") == 0))
 							tmpstr = ostrcat(tmpstr, "skin/ext_grid_network.png", 1, 0);
 						else
 						{
@@ -410,6 +411,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 
 						if(tmpstr != NULL)
 						{
+							debug(10, "picpath: %s", tmpstr);
 							changepic(child, tmpstr);
 							free(tmpstr); tmpstr = NULL;
 						}					
@@ -423,6 +425,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 				}			
 				else				
 				{
+					debug(10, "picpath: %s", node->pic);
 					if(node->pic != NULL)
 						changepic(child, node->pic);
 				}
@@ -484,6 +487,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						tmpstr = ostrcat(tmpstr, filename, 1, 0);
 						free(filename); filename = NULL;
 						child->filelist->imdbpath = tmpstr;
+						debug(10, "imdbpath: %s", tmpstr);
 // double free error, why ?
 //						free(tmpstr); tmpstr = NULL;						
 					}
@@ -536,8 +540,14 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 	
 						child->posx = posx;
 						posx += child->width;
-	
-						if(cmpfilenameext(filelist[i]->d_name, ".iso") == 0)
+
+						if((cmpfilenameext(filelist[i]->d_name, ".jpg") == 0) || (cmpfilenameext(filelist[i]->d_name, ".png") == 0))
+						{
+							tmpstr = ostrcat(createpath(node->input, "/"), filelist[i]->d_name, 1, 0);
+							child->picheight = 210;
+							child->picwidth = 350;
+						}
+						else if(cmpfilenameext(filelist[i]->d_name, ".iso") == 0)
 							tmpstr = ostrcat(tmpstr, "skin/ext_grid_iso.png", 1, 0);
 						else if(cmpfilenameext(filelist[i]->d_name, ".img") == 0)
 							tmpstr = ostrcat(tmpstr, "skin/ext_grid_img.png", 1, 0);
@@ -572,6 +582,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 								tmpstr = ostrcat(tmpstr, "skin/ext_grid_dummy.png", 1, 0);
 							}
 						}
+						debug(10, "picpath: %s", tmpstr);
 						if(tmpstr != NULL)
 						{
 							changepic(child, tmpstr);
@@ -590,6 +601,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						tmpstr = ostrcat(tmpstr, "skin/ext_", 1, 0);
 						tmpstr = ostrcat(tmpstr, getfilenameext(filelist[i]->d_name), 1, 0);
 						tmpstr = ostrcat(tmpstr, ".png", 1, 0);
+						debug(10, "picpath: %s", tmpstr);
 						if(tmpstr != NULL)
 							changepic(child, tmpstr);
 						free(tmpstr); tmpstr = NULL;
@@ -650,6 +662,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 							tmpstr = ostrcat(tmpstr, "/imdb/", 1, 0);
 							tmpstr = ostrcat(tmpstr, filename, 1, 0);
 							free(filename); filename = NULL;
+							debug(10, "imdbpath: %s", tmpstr);
 							child->filelist->imdbpath = tmpstr;
 // double free error, why ?
 //							free(tmpstr); tmpstr = NULL;
