@@ -216,7 +216,11 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 		return 1;
 	}
 
-	if(status.filelistextend == 2) node->type |= GRID;
+	if(status.filelistextend == 2)
+		node->type |= GRID;
+	else
+		node->type &= ~(GRID);
+	
 
 	status.tmp = node->input;
 	switch(getconfigint("dirsort", NULL))
@@ -263,37 +267,6 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 ? cover2 (list + imdb)
 ? cover3 (list + imdb)
 */
-	int fontsize = 20;
-	int fontspace = 2;
-	int width = 0;
-	int height = 0;
-		
-//	if(status.filelistextend == 0)
-//		fontsize = 30, fontspace = 5;	
-	if(status.filelistextend == 1)
-		fontsize = 35, fontspace = 5;
-	else if(status.filelistextend == 2)
-		fontsize = 20, fontspace = 5;
-	else if(status.filelistextend == 3)
-		fontsize = 30, fontspace = 5;
-	else if(status.filelistextend == 4)
-		fontsize = 25, fontspace = 5;
-	else if(status.filelistextend == 5)
-	{
-		fontsize = 25, fontspace = 10;
-		width = 600;
-		height = 350;
-	}
-
-	if(status.filelistextend == 5)
-	{
-		node->height = height;
-		node->width = width;
-		node->bgcol = 0x474747;
-		node->transparent = 40;
-		node->prozwidth = 0;
-		node->posx = 20;
-	}
 
 	if(status.filelistextend == 2 && parentdir != NULL) 
 	{
@@ -310,7 +283,6 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 		//parentdir->fontcol = 0x0000ff;
 		parentdir->halign = CENTER;
 		parentdir->valign = TEXTBOTTOM;
-		parentdir->fontsize = fontsize;
 		posx += parentdir->width;
 		
 		tmpstr = ostrcat(tmpstr, "skin/ext_grid_changedir.png", 1, 0);
@@ -347,8 +319,6 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 				child = addscreennode(screen, NULL, child);
 			if(child != NULL)
 			{
-				if(status.filelistextend != 0)
-					child->fontsize = fontsize;
 				if(status.filelistextend == 2)
 				{
 					if(gridbr == 0) child->type = GRIDBR;
@@ -440,11 +410,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 					child->valign = MIDDLE;
 					child->width = 100;																	
 					child->prozwidth = 1;
-					if(status.filelistextend == 0)
-						child->height = node->fontsize + 2 + (node->bordersize * 2);
-					else
-						child->height = child->fontsize + fontspace + (node->bordersize * 2);					
-
+					child->height = node->fontsize + 2 + (node->bordersize * 2);
 					child->textposx = node->textposx;				
 				}
 				else
@@ -519,8 +485,6 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 				if(child != NULL)
 				{
 					debug(10, "filename: %s", filelist[i]->d_name);
-					if(status.filelistextend != 0)
-						child->fontsize = fontsize;
 					if(status.filelistextend == 2)
 					{
 						if(gridbr == 0) child->type = GRIDBR;
@@ -544,8 +508,10 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						if((cmpfilenameext(filelist[i]->d_name, ".jpg") == 0) || (cmpfilenameext(filelist[i]->d_name, ".png") == 0))
 						{
 							tmpstr = ostrcat(createpath(node->input, "/"), filelist[i]->d_name, 1, 0);
-							child->picheight = 210;
-							child->picwidth = 350;
+//							child->picheight = 210;
+//							child->picwidth = 350;
+							child->picwidth = 1;
+							child->picheight = 1;
 						}
 						else if(cmpfilenameext(filelist[i]->d_name, ".iso") == 0)
 							tmpstr = ostrcat(tmpstr, "skin/ext_grid_iso.png", 1, 0);
@@ -613,10 +579,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						child->valign = MIDDLE;
 						child->width = 100;
 						child->prozwidth = 1;
-						if(status.filelistextend == 0)
-							child->height = node->fontsize + 2 + (node->bordersize * 2);
-						else	
-							child->height = child->fontsize + fontspace + (node->bordersize * 2);
+						child->height = node->fontsize + 2 + (node->bordersize * 2);
 
 						child->textposx = node->textposx;			
 					}

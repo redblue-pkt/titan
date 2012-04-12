@@ -16,22 +16,79 @@ void mc_changeview(int view, struct skin* filelist)
 		{
 			node->fontsize = 0;
 			node->height = 0;
+			node->width = 0;
+			node->height = 0;
+			node->bgcol = 0;
+			node->transparent = 0;
+			node->prozwidth = 0;
+			node->posx = 0;
 		}
 		node = node->next;
 	}
 
 	if(view == 0)
-		filelist->fontsize = 25;	
+	{
+		filelist->fontsize = 25;//, fontspace = 5;
+		filelist->height = 480;
+		filelist->width = 1160;
+		filelist->prozwidth = 0;
+		filelist->posx = 40;
+		filelist->transparent = -1;
+		filelist->bgcol = -1;
+	}
 	else if(view == 1)
-		filelist->fontsize = 40;
+	{
+		filelist->fontsize = 35;//, fontspace = 5;
+		filelist->height = 480;
+		filelist->width = 1160;
+		filelist->prozwidth = 0;
+		filelist->posx = 40;
+		filelist->transparent = -1;
+		filelist->bgcol = -1;
+		filelist->prozwidth = 0;		
+	}
+	else if(view == 2)
+	{
+		filelist->fontsize = 20;//, fontspace = 5;
+		filelist->height = 480;
+		filelist->width = 1160;
+		filelist->prozwidth = 0;	
+		filelist->posx = 40;
+		filelist->transparent = -1;
+		filelist->bgcol = -1;	
+	}
 	else if(view == 3)
-		filelist->fontsize = 25;
+	{
+		filelist->fontsize = 30;//, fontspace = 5;
+		filelist->height = 480;
+		filelist->width = 1160;
+		filelist->prozwidth = 0;
+		filelist->posx = 40;
+		filelist->transparent = -1;
+		filelist->bgcol = -1;
+		filelist->prozwidth = 0;		
+	}
 	else if(view == 4)
-		filelist->fontsize = 20;
+	{
+		filelist->fontsize = 25;//, fontspace = 5;
+		filelist->height = 480;
+		filelist->width = 1160;
+		filelist->prozwidth = 0;
+		filelist->posx = 40;
+		filelist->transparent = -1;
+		filelist->bgcol = -1;
+		filelist->prozwidth = 0;	
+	}
 	else if(view == 5)
-		filelist->fontsize = 25;
-	else
-		filelist->fontsize = 25;
+	{
+		filelist->fontsize = 25;//, fontspace = 10;
+		filelist->height = 350;
+		filelist->width = 600;
+		filelist->prozwidth = 0;		
+		filelist->bgcol = 0x474747;
+		filelist->transparent = 40;
+		filelist->posx = 20;
+	}	
 }
 
 /*
