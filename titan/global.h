@@ -4379,6 +4379,7 @@ char* string_shortname(char *tmpfilename, int mode)
 		}
 		free(ret2); ret2 = NULL;
 		first = 0;
+		free(tmpstr); tmpstr = NULL
 	}
 
 	free(ret1); ret1 = NULL;
