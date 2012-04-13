@@ -1419,7 +1419,12 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 	jpeg_stdio_src(&cinfo, fd);
 	jpeg_read_header(&cinfo, TRUE);
 	cinfo.out_color_space = JCS_RGB;
-	cinfo.scale_denom = 1;
+	
+	if((scalewidth != 0 || scaleheight != 0) && (mwidth < 300 || mheight < 300))
+		cinfo.scale_denom = 8;
+	else
+		cinfo.scale_denom = 1;
+
 	jpeg_start_decompress(&cinfo);
 	width = cinfo.output_width;
 	height = cinfo.output_height;
