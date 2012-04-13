@@ -341,7 +341,7 @@ void blitrect(int posx, int posy, int width, int height, long color, int transpa
 int readjpg(const char* filename, unsigned long* width, unsigned long* height, unsigned long* rowbytes, int* channels, unsigned char **mem, int *memfd)
 {
 	FILE *fp;
-	unsigned int temp1, temp2;
+	unsigned int temp1, temp2, temp3, temp4;
 
 	if(filename == NULL) return -1;
 
@@ -363,6 +363,12 @@ int readjpg(const char* filename, unsigned long* width, unsigned long* height, u
 		fclose(fp);
 		return -1;
 	}
+	
+	temp3 = temp1;
+	temp4 = temp2;
+	
+	if(temp3 > skinfb->width) temp3 = skinfb->width;
+	if(temp4 > skinfb->height) temp4 = skinfb->height;
 		
 	if(decode_jpeg_noalloc(fp, temp1, temp2, temp1, temp2, (char *)*mem, 1) == LIBMMEIMG_SUCCESS)
 	{
