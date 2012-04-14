@@ -259,7 +259,7 @@ struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* 
 			screenlinkedchannel();
 			break;
 		}
-		if(listbox->select != NULL && rcret==getrcconfigint("rcok",NULL))
+		if(listbox->select != NULL && rcret==getrcconfigint("rcok", NULL))
 		{
 			ret = (struct menulist*)listbox->select->handle;
 			break;

@@ -477,10 +477,29 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 	}
 }
 
-void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int scalewidth, int scaleheight)
+void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int scalewidth, int scaleheight, int mwidth, int mheight, int halign, int valign)
 {
 	STMFBIO_BLT_EXTERN_DATA blt_data;
 	memset(&blt_data, 0, sizeof(STMFBIO_BLT_EXTERN_DATA));
+	
+	//auto scale to mwidth / mheight
+	if(scalewidth == 1 && scaleheight == 1)
+		calcautoscale(width, height, mwidth, mheight, &scalewidth, &scaleheight);
+		
+	if(scalewidth == 0)  scalewidth = width;
+	if(scaleheight == 0) scaleheight = height;
+
+	if(width > mwidth) scalewidth = mwidth;
+	if(height > mheight) scaleheight = mheight;
+
+	if(halign == CENTER)
+		posx += mwidth / 2 - width / 2;
+	else if(halign == RIGHT)
+		posx += mwidth - width;
+	if(valign == MIDDLE)
+		posy += mheight / 2 - height / 2;
+	else if(valign == BOTTOM)
+		posy += mheight - height;
 
 	blt_data.operation  = BLT_OP_COPY;
 	blt_data.ulFlags    = 0;
@@ -494,9 +513,6 @@ void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int 
 	blt_data.src_bottom = height;
 	blt_data.dst_left   = posx;
 	blt_data.dst_top    = posy;
-	
-	if(scalewidth == 0)  scalewidth = width;
-	if(scaleheight == 0) scaleheight = height;
 	
 	blt_data.dst_right  = posx + scalewidth;
 	blt_data.dst_bottom = posy + scaleheight;
