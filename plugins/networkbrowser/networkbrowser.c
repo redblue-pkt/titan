@@ -1,12 +1,10 @@
 #include "../titan/struct.h"
 #include "../titan/debug.h"
 #include "../titan/header.h"
-#include "networkbrowser_header.h"
 #include "netlib/nbtscan.h"
 #include "netlib/showmount.h"
 #include "netlib/smbinfo.h"
 #include "networkbrowser.h"
-#include "networkbrowser_menulist.h"
 
 char pluginname[] = "Networkbrowser";
 char plugindesc[] = "Networkbrowser";
