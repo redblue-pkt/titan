@@ -1557,7 +1557,6 @@ unsigned char* readpng(const char* filename, unsigned long* width, unsigned long
 	png_uint_32 y;
 	png_bytepp row_pointers = NULL;
 	png_bytep sig = NULL;
-	unsigned char* directbuf = NULL;
 
 	fd = fopen(filename, "rb");
 	if(fd == NULL)
@@ -1641,33 +1640,11 @@ unsigned char* readpng(const char* filename, unsigned long* width, unsigned long
 	if(png_get_gAMA(png_ptr, info_ptr, &gamma))
 		png_set_gamma(png_ptr, 2.2, gamma);
 
-/*
-	if(mwidth > 0 && mheight > 0 && *width <= mwidth && *height <= mheight)
-	{
-		if(halign == CENTER)
-			posx += mwidth / 2 - (*width) / 2;
-		else if(halign == RIGHT)
-			posx += mwidth - (*width);
-		if(valign == MIDDLE)
-			posy += mheight / 2 - (*height) / 2;
-		else if(valign == BOTTOM)
-			posy += mheight - (*height);
-		directbuf = skinfb->fb + (posy * skinfb->pitch) + (posx * skinfb->colbytes);
-		if(color_type == PNG_COLOR_TYPE_RGB)
-			png_set_filler(png_ptr, 0xff, PNG_FILLER_AFTER);
-		png_set_bgr(png_ptr);
-	}
-*/
-
 	png_read_update_info(png_ptr, info_ptr);
 	*rowbytes = png_get_rowbytes(png_ptr, info_ptr);
 	*channels = (int)png_get_channels(png_ptr, info_ptr);
 
-	//if(directbuf == NULL)
-		buf = malloc((*rowbytes) * (*height));
-	//else
-	//	buf = directbuf;
-
+	buf = malloc((*rowbytes) * (*height));
 	if(buf == NULL)
 	{
 		png_destroy_read_struct(&png_ptr, &info_ptr, NULL);
@@ -1683,21 +1660,12 @@ unsigned char* readpng(const char* filename, unsigned long* width, unsigned long
 		png_destroy_read_struct(&png_ptr, &info_ptr, NULL);
 		err("%s unknown error", filename);
 		free(sig);
-		if(directbuf == NULL) free(buf);
 		fclose(fd);
 		return NULL;
 	}
 
-	//if(directbuf == NULL)
-	//{
-		for (y = 0; y < (*height); ++y)
-			row_pointers[y] = (png_bytep)buf + y * (*rowbytes);
-	//}
-	//else
-	//{
-	//	for (y = 0;  y < (*height);  ++y)
-	//		row_pointers[y] = (png_bytep)buf + y * skinfb->pitch;
-	//}
+	for (y = 0; y < (*height); ++y)
+		row_pointers[y] = (png_bytep)buf + y * (*rowbytes);
 
 	png_read_image(png_ptr, row_pointers);
 	free(row_pointers);
@@ -1712,21 +1680,17 @@ unsigned char* readpng(const char* filename, unsigned long* width, unsigned long
 	debug(100, "png width=%ld height=%ld channels=%d rowbytes=%ld", *width, *height, *channels, *rowbytes);
 
 	debug(1000, "out");
-	//if(directbuf == NULL)
-		return buf;
-	//else
-	//	return NULL;
+	return buf;
 }
 
 void drawpic(const char* filename, int posx, int posy, int scalewidth, int scaleheight, int mwidth, int mheight, int halign, int valign)
 {
 	debug(1000, "in");
 	unsigned char *buf = NULL, *scalebuf = NULL;
-	int memfd = -1, py = 0, pyh = 0, pxw = 0, diff = 0; //px = 0
+	int memfd = -1, py = 0, pyh = 0, pxw = 0, diff = 0;
 	unsigned long width, height, rowbytes;
 	int channels, length;
-	unsigned char *src; // red, green, blue, alpha;
-	//unsigned long color;
+	unsigned char *src;
 	png_uint_32 y, x;
 	struct pic* picnode = NULL;
 	int decoding = getconfigint("pichwdecode", NULL);
@@ -1744,14 +1708,7 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 	if(picnode == NULL)
 	{
 		if(pictype == 0)
-		{
-			//deaktivate: draws transparent pixel
-			//read direkt into framebuffer
-			//if(scaleheight == 0 && scalewidth == 0)
-			//	buf = readpng(filename, &width, &height, &rowbytes, &channels, posx, posy, mwidth, mheight, halign, valign);
-			//else
 			buf = readpng(filename, &width, &height, &rowbytes, &channels, 0, 0, 0, 0, 0, 0);
-		}
 		else if(pictype == 1)
 			readjpg(filename, &width, &height, &rowbytes, &channels, &buf, &memfd);
 		else if(pictype == 2)
@@ -1794,20 +1751,20 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 		}
 	}
 
-	if(width > mwidth) width = mwidth;
-	if(height > mheight) height = mheight;
-
-	if(halign == CENTER)
-		posx += mwidth / 2 - width / 2;
-	else if(halign == RIGHT)
-		posx += mwidth - width;
-	if(valign == MIDDLE)
-		posy += mheight / 2 - height / 2;
-	else if(valign == BOTTOM)
-		posy += mheight - height;
-
 	if(pictype == 0)
 	{
+		if(width > mwidth) width = mwidth;
+		if(height > mheight) height = mheight;
+
+		if(halign == CENTER)
+			posx += mwidth / 2 - width / 2;
+		else if(halign == RIGHT)
+			posx += mwidth - width;
+		if(valign == MIDDLE)
+			posy += mheight / 2 - height / 2;
+		else if(valign == BOTTOM)
+			posy += mheight - height;
+
 		py = (posy * skinfb->width) + posx;
 		pyh = py + (height * skinfb->width);
 		src = buf;
@@ -1844,31 +1801,9 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 				src += diff;
 			}
 		}
-/*
-		for (y = 0; y < height; ++y)
-		{
-			py = (posy + y) * skinfb->width;
-			src = buf + y * rowbytes;
-			for (x = 0; x < width; x++)
-			{
-				red = *src++;
-				green = *src++;
-				blue = *src++;
-				if(channels == 3)
-					alpha = 255;
-				else
-					alpha = *src++;
-
-				if(alpha == 0) continue;
-				color = (alpha << 24) | (red << 16) | (green << 8) | blue;
-				//if(color & 0xff000000 == 0) continue;
-				drawpixelfast(posx + x, py, color);
-			}
-		}
-*/
 	}
 	else if(pictype == 1 && memfd > -1)
-		blitjpg(buf, posx, posy, width, height, scalewidth, scaleheight );
+		blitjpg(buf, posx, posy, width, height, scalewidth, scaleheight, mwidth, mheight, halign, valign);
 
 	if(picnode == NULL)
 	{
