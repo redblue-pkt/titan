@@ -13,7 +13,7 @@ char plugindesc[] = "Networkbrowser";
 char pluginpic[] = "%pluginpath%/networkbrowser/plugin.png";
 
 int pluginaktiv = 0;
-struct skin* pluginmenu = NULL, *pluginmenu1 = NULL;
+struct skin* pluginmenu = NULL;
 int pluginflag = 1; //don't show the plugin in pluginmanager
 
 //wird beim laden ausgefuehrt
@@ -32,11 +32,6 @@ void init(void)
 	if(child != NULL)
 		changeinput(child, "start");
 	pluginmenu = child;
-
-	child = getscreennode(networkmenu, "sharesettings");
-	if(child != NULL)
-		changeinput(child, "start1");
-	pluginmenu1 = child;
 
 	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/networkbrowser/skin.xml", 0, 0);
 	readscreen(tmpstr, 100, 1);
@@ -58,9 +53,4 @@ void deinit(void)
 void start(void)
 {
 	screennetworkbrowser();
-}
-
-void start1(void)
-{
-	screennetworkbrowser_readshare(0, NULL, NULL);
 }
