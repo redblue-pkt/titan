@@ -1421,7 +1421,7 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 	cinfo.out_color_space = JCS_RGB;
 	
 	if((scalewidth != 0 || scaleheight != 0) && (mwidth < 300 || mheight < 300))
-		cinfo.scale_denom = 8;
+		cinfo.scale_denom = 16;
 	else
 		cinfo.scale_denom = 1;
 
