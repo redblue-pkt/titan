@@ -954,9 +954,9 @@ void picplayer(struct skin* picscreen, struct skin* picture, struct skin* picnam
 	free(tmpstr); tmpstr = NULL;
 
 	changepic(picture, filename);
-//	changetext(picname, _(filename));
-//	picture->picwidth = 720;
-//	picture->picheight = 576;
+	picture->picwidth = 1;
+	picture->picheight = 1;
+	picture->bgcol = 0;
 
 	drawscreen(picscreen, 4);
 }
