@@ -177,6 +177,7 @@ struct menulist
 	char* text;
 	char* pic;
 	char* param;
+	char* param1;
 	int deaktiv;
 	int defaultentry;
 	struct menulist* next;
