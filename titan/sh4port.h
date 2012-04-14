@@ -486,11 +486,11 @@ void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int 
 	if(scalewidth == 1 && scaleheight == 1)
 		calcautoscale(width, height, mwidth, mheight, &scalewidth, &scaleheight);
 		
-	if(scalewidth == 0)  scalewidth = width;
+	if(scalewidth == 0) scalewidth = width;
 	if(scaleheight == 0) scaleheight = height;
 
-	if(width > mwidth) scalewidth = mwidth;
-	if(height > mheight) scaleheight = mheight;
+	if(scalewidth > mwidth) scalewidth = mwidth;
+	if(scaleheight > mheight) scaleheight = mheight;
 
 	if(halign == CENTER)
 		posx += mwidth / 2 - width / 2;
