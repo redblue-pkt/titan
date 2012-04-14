@@ -110,7 +110,7 @@ int selectchannelgmepg(struct skin* listbox)
 }
 
 
-int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, struct skin* timeline, int zoom, time_t akttime, struct channel* aktchannel, int linecol1, int linecol2, int linecol3, int* aktline, struct skin** pchnode, struct skin** pchnode1, int height, int picheight, int epgicon, long deaktivcol)
+int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, struct skin* timeline, int zoom, time_t akttime, struct channel* aktchannel, int linecol1, int linecol2, int linecol3, int* aktline, struct skin** pchnode, struct skin** pchnode1, int height, int picheight, int epgpicon, long deaktivcol)
 {
 	int treffer = 0, gridbr = 0, aktcol = 0, nottuneable = 0;
 	struct epg* epgnode = NULL;
@@ -261,7 +261,7 @@ int showallgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, str
 
 	while(tmpchannel != NULL)
 	{ 
-		if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, timeline, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight, epgicon, deaktivcol) == 1)
+		if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, timeline, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight, epgpicon, deaktivcol) == 1)
 			treffer = 1;
 		tmpchannel = tmpchannel->next;
 	}
@@ -290,7 +290,7 @@ int showbouquetgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox,
 
 	while(tmpbouquet != NULL)
 	{
-		if(calcgmultiepg(tmpbouquet->channel, gmultiepg, channellistbox, listbox, timeline, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight, epgicon, deaktivcol) == 1)
+		if(calcgmultiepg(tmpbouquet->channel, gmultiepg, channellistbox, listbox, timeline, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight, epgpicon, deaktivcol) == 1)
 			treffer = 1;
 		tmpbouquet = tmpbouquet->next;
 	}
@@ -320,7 +320,7 @@ int showprovidergmepgchannel(struct skin* gmultiepg, struct skin* channellistbox
 	{
 		if(tmpchannel->provider == providernode)
 		{
-			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, timeline, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight, epgicon, deaktivcol) == 1)
+			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, timeline, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight, epgpicon, deaktivcol) == 1)
 				treffer = 1;
 		}
 		tmpchannel = tmpchannel->next;
@@ -353,7 +353,7 @@ int showsatgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, str
 	{
 		if(tmpchannel->transponder != NULL && tmpchannel->transponder->orbitalpos == satnode->orbitalpos)
 		{
-			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, timeline, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight, epgicon, deaktivcol) == 1)
+			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, timeline, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight, epgpicon, deaktivcol) == 1)
 				treffer = 1;
 		}
 		tmpchannel = tmpchannel->next;
@@ -384,7 +384,7 @@ int showazgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, stru
 	{
 		if(tmpchannel->name != NULL && (tmpchannel->name[0] == character || tmpchannel->name[0] == character + 32))
 		{
-			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, timeline, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight, epgicon, deaktivcol) == 1)
+			if(calcgmultiepg(tmpchannel, gmultiepg, channellistbox, listbox, timeline, zoom, akttime, aktchannel, linecol1, linecol2, linecol3, &aktline, &chnode, &chnode1, height, picheight, epgpicon, deaktivcol) == 1)
 				treffer = 1;
 		}
 		tmpchannel = tmpchannel->next;
