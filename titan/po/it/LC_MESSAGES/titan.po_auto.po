@@ -985,23 +985,23 @@ msgstr ""
 msgid "ERROR cant read res"
 msgstr ""
 
-#: gmultiepg.h:509
+#: gmultiepg.h:509 gmultiepg.h:518
 msgid "GRAPHIC MULTI EPG - Bouquets"
 msgstr ""
 
-#: gmultiepg.h:522
+#: gmultiepg.h:522 gmultiepg.h:531
 msgid "GRAPHIC MULTI EPG - Channel"
 msgstr ""
 
-#: gmultiepg.h:535
+#: gmultiepg.h:535 gmultiepg.h:544
 msgid "GRAPHIC MULTI EPG - Satellites"
 msgstr ""
 
-#: gmultiepg.h:548
+#: gmultiepg.h:548 gmultiepg.h:557
 msgid "GRAPHIC MULTI EPG - Provider"
 msgstr ""
 
-#: gmultiepg.h:561
+#: gmultiepg.h:561 gmultiepg.h:570
 msgid "GRAPHIC MULTI EPG - All Channels"
 msgstr ""
 
