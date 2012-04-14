@@ -552,7 +552,7 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 			tmppic = ostrcat(tmppic, ".png", 1, 0);	
 
 			tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 0, 0);
-			changemenulistparam(tmpmlist, node->showname);
+			changemenulistparam(tmpmlist, node->showname, NULL);
 			free(tmpstr); tmpstr = NULL;
 			free(tmpinfo); tmpinfo = NULL;
 			free(tmppic); tmppic = NULL;

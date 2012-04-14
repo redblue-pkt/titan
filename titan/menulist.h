@@ -25,6 +25,9 @@ void freemenulist(struct menulist* mlist, int delparam)
 			{
 				free(prev->param);
 				prev->param = NULL;
+
+				free(prev->param1);
+				prev->param1 = NULL;
 			}
 
 			free(prev);
@@ -34,12 +37,15 @@ void freemenulist(struct menulist* mlist, int delparam)
 	debug(1000, "out");
 }
 
-void changemenulistparam(struct menulist* mlist, char* param)
+void changemenulistparam(struct menulist* mlist, char* param, char* param1)
 {
 	if(mlist != NULL)
 	{
 		free(mlist->param);
 		mlist->param = ostrcat(param, NULL, 0, 0);
+
+		free(mlist->param1);
+		mlist->param1 = ostrcat(param1, NULL, 0, 0);
 	}
 }
 
@@ -113,7 +119,7 @@ struct menulist* addmenulist(struct menulist** mlist, char* name, char* text, ch
 // showpng = 1 (smal icon)
 // showpng = 2 (big icon)
 //flag 1: rcgreen = subchannel
-struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* defaultpic, int showpng, int flag)
+struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* defaultpic, int showpng, int* rcreturn, int flag)
 {
 	debug(1000, "in");
 	int rcret = 0, tmpscreencalc = 0, fromthread = 0;
@@ -125,8 +131,6 @@ struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* 
 	char* skinpath = NULL;
 	char* tmppic = NULL;
 	char* tmpstr = NULL;
-
-	if(mlist == NULL) return 0;
 
 	if(pthread_self() != status.mainthread)
 	{
@@ -248,20 +252,25 @@ struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* 
 
 	addscreenrc(screen, listbox);
 
-	while (1)
+	while(1)
 	{
 		rcret = waitrc(screen, 0, 0);
+		if(rcreturn != NULL) *rcreturn = rcret;
 
-		if(rcret==getrcconfigint("rcexit", NULL)) break;
-		if(flag == 1 && rcret==getrcconfigint("rcgreen", NULL))
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(flag == 1 && rcret == getrcconfigint("rcgreen", NULL))
 		{
 			clearscreen(screen);
 			screenlinkedchannel();
 			break;
 		}
-		if(listbox->select != NULL && rcret==getrcconfigint("rcok", NULL))
+		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcred", NULL) || rcret == getrcconfigint("rcgreen", NULL) || rcret == getrcconfigint("rcyellow", NULL) || rcret == getrcconfigint("rcblue", NULL))
 		{
-			ret = (struct menulist*)listbox->select->handle;
+			if(rcreturn == NULL && rcret != getrcconfigint("rcok", NULL))
+				continue;
+
+			if(listbox->select != NULL)
+				ret = (struct menulist*)listbox->select->handle;
 			break;
 		}
 	}
@@ -289,4 +298,8 @@ struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* 
 	return ret;
 }
 
+struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* defaultpic, int showpng, int flag)
+{
+	return menulistboxext(mlist, paramskinname, skintitle, paramskinpath, defaultpic, showpng, NULL, flag);
+}
 #endif
