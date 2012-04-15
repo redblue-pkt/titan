@@ -129,6 +129,10 @@
 <node name=sound type=choicebox parent=listbox valign=middle posx=0 text="Sound" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=interval type=choicebox parent=listbox valign=middle posx=0 text="Interval" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=showpictitle type=choicebox parent=listbox valign=middle posx=0 text="Show Pictitle" bordercol=bordercol bordersize=1 width=100% height=25>
+
+<node name=picdenom type=choicebox parent=listbox valign=middle posx=0 text="Picdenom Mode" bordercol=bordercol bordersize=1 width=100% height=25>
+<node name=pichwdecode type=choicebox parent=listbox valign=middle posx=0 text="Pic HW-decode" bordercol=bordercol bordersize=1 width=100% height=25>
+
 <node name=b1 text="OK" halign=center valign=center bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
 <node name=b1 text="OK" halign=center valign=center bordercol=okcol bordersize=2 posx=35% posy=95% width=150 height=2/>
 <node name=b2 text="EXIT" halign=center valign=center bordercol=bgcol bordersize=0 posx=55% posy=90% width=150 height=30/>

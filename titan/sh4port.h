@@ -370,7 +370,7 @@ int readjpg(const char* filename, unsigned long* width, unsigned long* height, u
 	if(temp3 > skinfb->width) temp3 = skinfb->width;
 	if(temp4 > skinfb->height) temp4 = skinfb->height;
 		
-	if(decode_jpeg_noalloc(fp, temp1, temp2, temp1, temp2, (char *)*mem, 1) == LIBMMEIMG_SUCCESS)
+	if(decode_jpeg_noalloc(fp, temp1, temp2, 200, 200, (char *)*mem, 1) == LIBMMEIMG_SUCCESS)
 	{
 		fclose(fp);
 		return 0;
