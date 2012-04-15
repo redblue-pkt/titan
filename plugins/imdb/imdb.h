@@ -120,13 +120,15 @@ void screenimdb(char* title)
 	struct skin* skin_cover = getscreennode(imdbskin, "cover");
 	struct skin* skin_cast = getscreennode(imdbskin, "cast");
 	struct imdb* node = NULL;
+	char* search = NULL;
 
 	setfbtransparent(255);
 	status.hangtime = 99999;
 
-	if(title = NULL) title = getepgakttitle(NULL);
+	if(title == NULL) title = getepgakttitle(NULL);
 
 	node = getimdb(title);
+start:
 	if(node != NULL)
 	{
 		changetext(skin_plot, node->plot);
@@ -146,6 +148,20 @@ void screenimdb(char* title)
 	
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL)) break;
+
+		if(rcret == getrcconfigint("rcred", NULL))
+		{
+			search = textinput("Search", NULL);
+			if(search != NULL)
+			{
+				freeimdb(node); node = NULL;
+				node = getimdb(search);
+				free(search); search = NULL;
+				goto start;
+			}
+			drawscreen(imdbskin, 0);
+			continue;
+		}
 	}
 
 	freeimdb(node); node = NULL;
