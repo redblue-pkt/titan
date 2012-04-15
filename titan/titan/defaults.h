@@ -76,6 +76,7 @@ void setdefaults()
 	status.epglistmode = getconfigint("epg_listmode", NULL);
 	status.listboxselecttype = getskinconfigint("listboxselecttype", NULL);
 	status.borderradius = getskinconfigint("borderradius", NULL);
+	status.bgpic = getskinconfig("bgpic", NULL);
 	status.httpauth = ostrcat(getconfig("httpauth", NULL), NULL, 0, 0);
 	status.showchanneltimeline = getconfigint("showchanneltimeline", NULL);
 	status.screenanim = getconfigint("screenanim", NULL);
