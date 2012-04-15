@@ -177,6 +177,7 @@ struct channelhistory channelhistory[MAXCHANNELHISTORY];
 #include "inadyn.h"
 #include "rguid.h"
 #include "channelhistroy.h"
+#include "thump.h"
 //#include "cardreader.h"
 //#include "sci.h"
 
@@ -750,8 +751,11 @@ firstwizzardstep1:
 	addtimer(&ckeckskinnodeslockedthread, START, 1000, 1, NULL, NULL, NULL);
 	//check if box starts from a record
 	addtimer(&checkboxstartthread, START, 1000, 1, NULL, NULL, NULL);
-	//check net
+	//check kill net (security)
 	addtimer(&ckeckkillnetthread, START, 1000, 1, NULL, NULL, NULL);
+	//thump create thread
+	if(getconfigint("createthump", NULL) == 1)
+		addtimer(&thumpthread, START, 1000, 1, NULL, NULL, NULL);
 
 	//start webserver
 	starthttpd(1);

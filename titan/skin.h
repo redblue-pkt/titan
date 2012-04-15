@@ -1389,6 +1389,109 @@ void calcautoscale(int width, int height, int mwidth, int mheight, int* scalewid
 	}
 }
 
+unsigned char *loadjpg(char *filename, int *width, int *height, int denom)
+{
+	struct jpeg_decompress_struct cinfo;
+	struct jpeg_decompress_struct *ciptr = &cinfo;
+	struct jpgerror jerr;
+	FILE *fd = NULL;
+	unsigned char *buf = NULL;
+
+	fd = fopen(filename, "rb");
+	if(fd == NULL)
+	{
+		perr("open jpg file %s", filename);
+		return NULL;
+	}
+
+	ciptr->err = jpeg_std_error(&jerr.jerr);
+	jerr.jerr.error_exit = jpgswerror;
+	if(setjmp(jerr.setjmpbuf))
+	{
+		jpeg_destroy_decompress(ciptr);
+		fclose(fd);
+		return NULL;
+	}
+
+	jpeg_create_decompress(ciptr);
+	jpeg_stdio_src(ciptr, fd);
+	jpeg_read_header(ciptr, TRUE);
+	ciptr->out_color_space = JCS_RGB;
+	ciptr->scale_denom = denom;
+
+	jpeg_start_decompress(ciptr);
+	
+	*width = ciptr->output_width;
+	*height = ciptr->output_height;
+
+	if(ciptr->output_components == 3)
+	{
+		JSAMPLE *lb = (JSAMPLE *)(*ciptr->mem->alloc_small)((j_common_ptr) ciptr, JPOOL_PERMANENT, ciptr->output_width * ciptr->output_components);
+		buf = malloc(ciptr->output_height * ciptr->output_width * ciptr->output_components);
+		if(buf == NULL)
+		{
+			err("no mem");
+			jpeg_destroy_decompress(ciptr);
+			fclose(fd);
+			return NULL;
+		}
+
+		unsigned char *bp = buf;
+
+		while(ciptr->output_scanline < ciptr->output_height)
+		{
+			jpeg_read_scanlines(ciptr, &lb, 1);
+			memcpy(bp, lb, ciptr->output_width * ciptr->output_components);
+			bp += ciptr->output_width * ciptr->output_components;
+		}
+	}
+
+	jpeg_finish_decompress(ciptr);
+	jpeg_destroy_decompress(ciptr);
+	fclose(fd);
+	return(buf);
+}
+
+int savejpg(char * filename, int width, int height, unsigned char *buf)
+{
+ 	struct jpeg_compress_struct cinfo;
+ 	struct jpeg_error_mgr jerr;
+ 	FILE * outfile;		
+ 	JSAMPROW pointer[1];
+ 	int stride;		
+ 
+ 	cinfo.err = jpeg_std_error(&jerr);
+ 	jpeg_create_compress(&cinfo);
+ 
+ 	if((outfile = fopen(filename, "wb")) == NULL) 
+	{
+		perr("jpeg can't open %s", filename);
+		return 1;
+	}
+
+ 	jpeg_stdio_dest(&cinfo, outfile);
+ 
+ 	cinfo.image_width = width;
+ 	cinfo.image_height = height;
+ 	cinfo.input_components = 3;
+ 	cinfo.in_color_space = JCS_RGB;
+ 	jpeg_set_defaults(&cinfo);
+ 	jpeg_set_quality(&cinfo, 70, TRUE);
+ 	jpeg_start_compress(&cinfo, TRUE);
+ 	stride = width * 3;
+
+ 	while (cinfo.next_scanline < cinfo.image_height) 
+	{
+ 		pointer[0] = & buf[cinfo.next_scanline * stride];
+ 		jpeg_write_scanlines(&cinfo, pointer, 1);
+ 	}
+
+ 	jpeg_finish_compress(&cinfo);
+ 	fclose(outfile);
+ 	jpeg_destroy_compress(&cinfo);
+ 	return 0;
+}
+
 int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight, int scalewidth, int scaleheight, int halign, int valign)
 {
 	struct jpeg_decompress_struct cinfo;
@@ -1957,7 +2060,7 @@ void drawcircle(int x0, int y0, int radius, int startangle, int endangle, long c
 int drawchar(struct font* font, FT_ULong currentchar, int posx, int posy, int mwidth, int height, long color, int transparent, int charspace, int test)
 {
 //	debug(1000, "in");
-	int space = 0, row, pitch, bit, y = 0, x = 0, px = 0, py = 0, pxw = 0, pyh = 0, max = 220, min = 35;
+	int space = 0, y = 0, x = 0, py = 0, pxw = 0, pyh = 0, max = 220, min = 35;
 	FT_UInt glyphindex;
 	FT_Vector kerning;
 	FT_Error ret;
@@ -3522,7 +3625,8 @@ int drawscreen(struct skin* node, int flag)
 		skinfb = merkskinfb;
 		merkskinfb = NULL;
 	}
-	else {
+	else
+	{
 		if(ostrcmp(getconfig("write_fb_to_jpeg", NULL), "yes") == 0)
 			write_FB_to_JPEG_file(skinfb->fb, skinfb->width, skinfb->height, "/tmp/fb.jpg", 3);
 	}
