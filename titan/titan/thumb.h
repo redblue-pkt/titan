@@ -1,9 +1,15 @@
 #ifndef THUMB_H
 #define THUMB_H
 
-char* checkthumb(char* file)
+char* checkthumb(char* path, char* file)
 {
-	return ostrcat(file, ".thumb.jpg", 0, 0);
+	char* tmpstr = NULL;
+	
+	tmpstr = ostrcat(createpath(path, "/.Thumbnails/"), file, 1, 0);
+	if(file_exist(tmpstr))
+		return tmpstr;
+	
+	return NULL;
 }
 
 void thumbthread(struct stimerthread* self)
@@ -11,7 +17,7 @@ void thumbthread(struct stimerthread* self)
 	int width = 0, height = 0;
 	unsigned char* buf = NULL;
 	struct queue* qe = NULL;
-	char* thumbfile = NULL, *tmpstr = NULL;
+	char* thumbfile = NULL;
 
 	if(self == NULL) return;
 
@@ -30,13 +36,13 @@ void thumbthread(struct stimerthread* self)
 				buf = scale(buf, width, height, 3, 100, 100, 1);
 				if(buf != NULL)
 				{
-					tmpstr = ostrcat((char*)qe->data, NULL, 0, 0);
-					tmpstr = dirname(tmpstr);
-					tmpstr = ostrcat(tmpstr, "/.Thumbnails", 1, 0);
-					mkdir(tmpstr, 777);
-					free(tmpstr); tmpstr = NULL;
+					thumbfile = ostrcat(thumbfile, (char*)qe->data, 1, 0);
+					thumbfile = ostrcat(thumbfile, "/.Thumbnails", 1, 0);
+					mkdir(thumbfile, 777);
+					
+					thumbfile = ostrcat(thumbfile, "/", 1, 0);
+					thumbfile = ostrcat(thumbfile, (char*)qe->data1, 1, 0);
 
-					thumbfile = ostrcat((char*)qe->data, ".thumb.jpg", 1, 0);
 					debug(307, "create thumb: %s from %s", thumbfile, (char*)qe->data);
 					savejpg(thumbfile, 100, 100, buf);
 				}
@@ -45,7 +51,7 @@ void thumbthread(struct stimerthread* self)
 			free(buf); buf = NULL;
 			free(thumbfile); thumbfile = NULL;
 			delqueue(qe, 0);
-			qe = getqueue(dvbnode->devnr);
+			qe = getqueue(101);
 		}
 	}
 
