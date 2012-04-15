@@ -76,7 +76,6 @@ void setdefaults()
 	status.epglistmode = getconfigint("epg_listmode", NULL);
 	status.listboxselecttype = getskinconfigint("listboxselecttype", NULL);
 	status.borderradius = getskinconfigint("borderradius", NULL);
-	status.bgpic = getskinconfig("bgpic", NULL);
 	status.httpauth = ostrcat(getconfig("httpauth", NULL), NULL, 0, 0);
 	status.showchanneltimeline = getconfigint("showchanneltimeline", NULL);
 	status.screenanim = getconfigint("screenanim", NULL);
@@ -85,6 +84,23 @@ void setdefaults()
 	status.rightoffset = getconfigint("fbrightoffset", NULL);
 	status.topoffset = getconfigint("fbtopoffset", NULL);
 	status.bottomoffset = getconfigint("fbbottomoffset", NULL);
+	
+	status.bgpic = getskinconfig("bgpic", NULL);
+	if(status.bgpic != NULL)
+	{
+		unsigned long width = 0, height = 0, rowbytes = 0;
+		int channels = 0, memfd = -1, length = 0;
+		unsigned char* buf = NULL;
+		
+		status.bgpic = changepicpath(status.bgpic);
+		
+		length = strlen(status.bgpic);
+		if(status.bgpic[length - 1] == 'g' && status.bgpic[length - 2] == 'n' && status.bgpic[length - 3] == 'p')
+		{
+			buf = readpng(status.bgpic, &width, &height, &rowbytes, &channels, 0, 0, 0, 0, 0, 0);
+			addpic(status.bgpic, buf, memfd, width, height, rowbytes, channels, del, NULL);
+		}
+	}
 
 	for(i = 0; i < MAXLONGKEY; i++)
 	{
