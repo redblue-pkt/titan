@@ -1,6 +1,11 @@
 #ifndef TRANSPONDER_H
 #define TRANSPONDER_H
 
+char* checkthump(char* file)
+{
+	return ostrcat(file, ".thump", 0, 0);
+}
+
 void thumpthread(struct stimerthread* self)
 {
 	int width = 0, height = 0;
