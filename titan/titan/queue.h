@@ -12,14 +12,14 @@ void debugqueue()
 	}
 }
 
-struct queue* addqueue(int type, void* data, int len, int flag, struct queue* last)
+struct queue* addqueue(int type, void* data, int len, void* dat1, int len1, int flag, struct queue* last)
 {
 	//debug(1000, "in");
 
 	m_lock(&status.queuemutex, 11);
 
 	struct queue *newnode = NULL, *prev = NULL, *node = queue;
-	void* tmpdata = NULL;
+	void* tmpdata = NULL, *tmpdata1 = NULL;
 
 	newnode = (struct queue*)malloc(sizeof(struct queue));	
 	if(newnode == NULL)
@@ -29,20 +29,38 @@ struct queue* addqueue(int type, void* data, int len, int flag, struct queue* la
 		return NULL;
 	}
 
-	tmpdata = malloc(len);
-	if(tmpdata == NULL)
+	if(len > 0)
 	{
-		err("no memory");
-		free(newnode);
-		m_unlock(&status.queuemutex, 11);
-		return NULL;
+		tmpdata = malloc(len);
+		if(tmpdata == NULL)
+		{
+			err("no memory");
+			free(newnode);
+			m_unlock(&status.queuemutex, 11);
+			return NULL;
+		}
 	}
+	
+	if(len1 > 0)
+	{
+		tmpdata1 = malloc(len1);
+		if(tmpdata1 == NULL)
+		{
+			err("no memory");
+			free(tmpdata);
+			free(newnode);
+			m_unlock(&status.queuemutex, 11);
+			return NULL;
+		}
+	}
+	
 	memset(newnode, 0, sizeof(struct queue));
 
 	newnode->type = type;
 	newnode->len = len;
 	newnode->flag = flag;
-	newnode->data = memcpy(tmpdata, data, len);
+	if(len > 0) newnode->data = memcpy(tmpdata, data, len);
+	if(len1 > 0) newnode->data1 = memcpy(tmpdata1, data1, len1);
 
 	if(last == NULL)
 	{
@@ -100,6 +118,9 @@ void delqueue(struct queue* queuenode, int flag)
 
 			free(node->data);
 			node->data = NULL;
+			
+			free(node->data1);
+			node->data1 = NULL;
 
 			free(node);
 			node = NULL;
