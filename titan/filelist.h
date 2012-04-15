@@ -580,7 +580,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 										tmpstr = thumbfile;
 									}
 									else
-										addqueue(101, (void*)node->input, strlen(node->input) + 1, (void*)tmpstr, strlen(tmpstr) + 1, 0, NULL);
+										addqueue(101, ostrcat((void*)node->input, NULL, 0, 0), strlen(node->input) + 1, ostrcat((void*)tmpstr, NULL, 0, 0), strlen(tmpstr) + 1, 0, NULL);
 								}
 								changepic(child, tmpstr);
 							}
