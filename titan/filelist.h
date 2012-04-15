@@ -463,10 +463,9 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						tmpstr = ostrcat(tmpstr, "/imdb/", 1, 0);
 						tmpstr = ostrcat(tmpstr, filename, 1, 0);
 						free(filename); filename = NULL;
-						child->filelist->imdbpath = tmpstr;
 						debug(10, "imdbpath: %s", tmpstr);
-// double free error, why ?
-//						free(tmpstr); tmpstr = NULL;						
+						//tmpstr is freed with imdbpath
+						child->filelist->imdbpath = tmpstr;						
 					}
 
 					tmpstr = createpath(node->input, filelist[i]->d_name);
@@ -569,9 +568,22 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						{
 							debug(10, "files: change pic");
 							if(cmpfilenameext(filelist[i]->d_name, ".jpg") == 0)
+							{
+								char* thumpfile = NULL;
+								if(status.createthump == 1)
+								{
+									//check if thump exists
+									char* tmpfile = ostrcat(createpath(node->input, "/"), tmpstr, 1, 0);
+									thumpfile = checkthump(tmpfile);
+									if(thumpfile != NULL)
+									{
+										free(tmpstr);
+										tmpstr = thumpfile;
+									}
+									free(tmpfile); tmpfile = NULL;
+								}
 								changepic(child, tmpstr);
-							else
-								changepicmem(child, tmpstr,pagecount + 1000);
+							}
 							free(tmpstr); tmpstr = NULL;
 						}
 					
@@ -646,9 +658,8 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 							tmpstr = ostrcat(tmpstr, filename, 1, 0);
 							free(filename); filename = NULL;
 							debug(10, "imdbpath: %s", tmpstr);
+							//tmpstr is freed with imdbpath
 							child->filelist->imdbpath = tmpstr;
-// double free error, why ?
-//							free(tmpstr); tmpstr = NULL;
 						}
 
 						tmpstr = createpath(node->input, filelist[i]->d_name);
