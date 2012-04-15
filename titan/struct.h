@@ -192,7 +192,7 @@ struct channelhistory
 struct queue
 {
 	//0-99 for ca module
-	//101 for thump thread
+	//101 for thumb thread
 	int type;
 	int flag;
 	int len;
@@ -1057,8 +1057,8 @@ struct status
 	int bottomoffset;
 	//background picture for all screens
 	char* bgpic;
-	//should thump thread start
-	int createthump;
+	//should thumb thread start
+	int createthumb;
 } status;
 
 struct fb

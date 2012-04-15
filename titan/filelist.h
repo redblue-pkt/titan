@@ -569,16 +569,16 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 							debug(10, "files: change pic");
 							if(cmpfilenameext(filelist[i]->d_name, ".jpg") == 0)
 							{
-								char* thumpfile = NULL;
-								if(status.createthump == 1)
+								char* thumbfile = NULL;
+								if(status.createthumb == 1)
 								{
-									//check if thump exists
+									//check if thumb exists
 									char* tmpfile = ostrcat(createpath(node->input, "/"), tmpstr, 1, 0);
-									thumpfile = checkthump(tmpfile);
-									if(thumpfile != NULL)
+									thumbfile = checkthumb(tmpfile);
+									if(thumbfile != NULL)
 									{
 										free(tmpstr);
-										tmpstr = thumpfile;
+										tmpstr = thumbfile;
 									}
 									else if(tmpfile != NULL)
 										addqueue(101, (void*)tmpfile, strlen(tmpfile), 0, NULL);

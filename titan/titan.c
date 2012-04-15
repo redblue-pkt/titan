@@ -177,7 +177,7 @@ struct channelhistory channelhistory[MAXCHANNELHISTORY];
 #include "inadyn.h"
 #include "rguid.h"
 #include "channelhistroy.h"
-#include "thump.h"
+#include "thumb.h"
 //#include "cardreader.h"
 //#include "sci.h"
 
@@ -753,9 +753,9 @@ firstwizzardstep1:
 	addtimer(&checkboxstartthread, START, 1000, 1, NULL, NULL, NULL);
 	//check kill net (security)
 	addtimer(&ckeckkillnetthread, START, 1000, 1, NULL, NULL, NULL);
-	//thump create thread
-	if(getconfigint("createthump", NULL) == 1)
-		addtimer(&thumpthread, START, 1000, 1, NULL, NULL, NULL);
+	//thumb create thread
+	if(getconfigint("createthumb", NULL) == 1)
+		addtimer(&thumbthread, START, 1000, 1, NULL, NULL, NULL);
 
 	//start webserver
 	starthttpd(1);
