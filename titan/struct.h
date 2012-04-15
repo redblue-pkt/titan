@@ -197,6 +197,7 @@ struct queue
 	int flag;
 	int len;
 	void* data;
+	void* data1;
 	struct queue* prev;
 	struct queue* next;
 };

@@ -187,7 +187,7 @@ int casend(struct dvbdev* dvbnode, unsigned char* buf, int len)
 		flag = 1;
 	}
 
-	struct queue* qe = addqueue(dvbnode->devnr, tmpbuf, len, flag, NULL);
+	struct queue* qe = addqueue(dvbnode->devnr, tmpbuf, len, NULL, 0, flag, NULL);
 	free(tmpbuf); tmpbuf = NULL;
 	if(qe == NULL)
 	{
