@@ -343,6 +343,21 @@ start:
 				break;
 			}
 		}
+		if(rcret == getrcconfigint("rctext", NULL))
+		{
+			pluginnode = getplugin("Imdb");
+		
+			if(pluginnode != NULL)
+			{
+				startplugin = dlsym(pluginnode->pluginhandle, "screenimdb");
+				if(startplugin != NULL && epgnode != NULL)
+				{
+					clearscreen(screenepg);
+					startplugin(epgnode->title);
+					drawscreen(screenepg, 0);
+				}
+			}
+		}
 	}	
 
 	status.epgchannel = NULL;
