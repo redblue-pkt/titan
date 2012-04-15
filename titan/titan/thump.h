@@ -3,7 +3,7 @@
 
 char* checkthump(char* file)
 {
-	return ostrcat(file, ".thump", 0, 0);
+	return ostrcat(file, ".thump.jpg", 0, 0);
 }
 
 void thumpthread(struct stimerthread* self)
@@ -30,6 +30,7 @@ void thumpthread(struct stimerthread* self)
 				buf = scale(buf, width, height, 3, 100, 100, 1);
 				if(buf != NULL)
 				{
+					thumpfile = ostrcat(thumpfile, ".thump.jpg", 1, 0);
 					debug(307, "create thump: %s from %s", thumpfile, (char*)qe->data);
 					savejpg(thumpfile, 100, 100, buf);
 				}

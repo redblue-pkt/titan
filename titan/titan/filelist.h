@@ -580,6 +580,9 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 										free(tmpstr);
 										tmpstr = thumpfile;
 									}
+									else if(tmpfile != NULL)
+										addqueue(101, (void*)tmpfile, strlen(tmpfile), 0, NULL);
+										
 									free(tmpfile); tmpfile = NULL;
 								}
 								changepic(child, tmpstr);
