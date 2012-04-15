@@ -310,6 +310,7 @@ void oshutdown(int exitcode, int flag)
 		free(status.dnsserver2);
 		free(status.boxtype);
 		free(status.httpauth);
+		free(status.bgpic);
 
 		freeservice();
 
