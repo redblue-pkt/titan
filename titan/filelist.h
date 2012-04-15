@@ -573,17 +573,14 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 								if(status.createthumb == 1)
 								{
 									//check if thumb exists
-									char* tmpfile = ostrcat(createpath(node->input, "/"), tmpstr, 1, 0);
-									thumbfile = checkthumb(tmpfile);
+									thumbfile = checkthumb(node->input, tmpstr);
 									if(thumbfile != NULL)
 									{
 										free(tmpstr);
 										tmpstr = thumbfile;
 									}
-									else if(tmpfile != NULL)
-										addqueue(101, (void*)tmpfile, strlen(tmpfile), 0, NULL);
-										
-									free(tmpfile); tmpfile = NULL;
+									else
+										addqueue(101, (void*)node->input, strlen(node->input) + 1, (void*)tmpstr, strlen(tmpstr) + 1, 0, NULL);
 								}
 								changepic(child, tmpstr);
 							}
