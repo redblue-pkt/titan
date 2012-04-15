@@ -13,6 +13,15 @@ void screenmc_pictureplayer_settings()
 	struct skin* sound = getscreennode(mc_pictureplayer_settings, "sound");
 	struct skin* pp_interval = getscreennode(mc_pictureplayer_settings, "interval");
 	struct skin* showpictitle = getscreennode(mc_pictureplayer_settings, "showpictitle");
+	struct skin* picdenom = getscreennode(mc_pictureplayer_settings, "picdenom");
+	struct skin* pichwdecode = getscreennode(mc_pictureplayer_settings, "pichwdecode");
+
+	changeinput(picdenom, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16");
+	setchoiceboxselection(picdenom, getskinconfig("picdenom", NULL));
+
+	addchoicebox(pichwdecode, "0", _("off"));	
+	addchoicebox(pichwdecode, "1", _("on"));	
+	setchoiceboxselection(pichwdecode, getconfig("pichwdecode", NULL));
 
 	addchoicebox(showpictitle, "0", _("off"));	
 	addchoicebox(showpictitle, "1", _("on"));	
@@ -65,6 +74,8 @@ void screenmc_pictureplayer_settings()
 			addconfigscreen("sound", sound);
 			addconfigscreen("pp_interval", pp_interval);
 			addconfigscreen("showpictitle", showpictitle);
+			addconfigscreen("picdenom", picdenom);
+			addconfigscreen("pichwdecode", pichwdecode);
 			break;
 		}
   }

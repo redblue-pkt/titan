@@ -200,7 +200,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 {
 	debug(1000, "in");
 	struct dirent64 **filelist;
-	int count, tmpcount, i = 0, gridbr = 0, posx = 0;
+	int count, tmpcount, i = 0, gridbr = 0, posx = 0, pagecount = 0, sumcount = 0;
 	struct skin *child = node, *oldchild = NULL, *parentdir = NULL;
 	char *tmpstr = NULL;
 	char *rpath = NULL;
@@ -270,6 +270,11 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 
 	if(status.filelistextend == 2 && parentdir != NULL) 
 	{
+		sumcount++;
+		pagecount++;
+		debug(10, "pdir: pagecount: %d", pagecount);
+		debug(10, "pdir: sumcount: %d", sumcount);
+
 		parentdir->picheight = 180;
 		parentdir->picwidth = 180;				
 		parentdir->height = 230;
@@ -325,6 +330,11 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 
 					if(child != parentdir) 
 					{
+						sumcount++;
+						pagecount++;
+						debug(10, "dir: pagecount: %d", pagecount);
+						debug(10, "dir: sumcount: %d", sumcount);
+						
 						debug(10, "filename: %s", filelist[i]->d_name);
 	 					child->picheight = 180;
 						child->picwidth = 180;
@@ -382,6 +392,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						if(tmpstr != NULL)
 						{
 							debug(10, "picpath: %s", tmpstr);
+							debug(10, "dir: change pic");
 							changepic(child, tmpstr);
 							free(tmpstr); tmpstr = NULL;
 						}					
@@ -487,6 +498,11 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 					debug(10, "filename: %s", filelist[i]->d_name);
 					if(status.filelistextend == 2)
 					{
+						sumcount++;
+						pagecount++;
+						debug(10, "files: pagecount: %d", pagecount);
+						debug(10, "files: sumcount: %d", sumcount);
+
 						if(gridbr == 0) child->type = GRIDBR;
 	
 						child->picheight = 170;
@@ -551,7 +567,11 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						debug(10, "picpath: %s", tmpstr);
 						if(tmpstr != NULL)
 						{
-							changepic(child, tmpstr);
+							debug(10, "files: change pic");
+							if(cmpfilenameext(filelist[i]->d_name, ".jpg") == 0)
+								changepic(child, tmpstr);
+							else
+								changepicmem(child, tmpstr,pagecount + 1000);
 							free(tmpstr); tmpstr = NULL;
 						}
 					
@@ -644,7 +664,14 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 		free(filelist[i]);
 		i++;
 	}
-
+	
+/*
+	for (i = 0; i <= pagecount; i++)
+	{
+		printf("delmarkedpic=%d\n", i + 1000);
+		delmarkedpic(i + 1000);
+	}
+*/
 	free(filelist);
 	debug(1000, "out");
 	return 0;
