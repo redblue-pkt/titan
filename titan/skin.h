@@ -2808,6 +2808,8 @@ void drawnode(struct skin* node, int flag)
 		else
 			drawbgcol(node);
 	}
+	if(node->child != NULL && status.bgpic != NULL)
+		drawpic(status.bgpic, node->iposx, node->iposy, node->iwidth, node->iheight, node->iwidth, node->iheight, node->halign, node->valign);
 	if(node->gradient > 0)
 		drawbggradient(node);
 	if(node->titlebgcol > -1)

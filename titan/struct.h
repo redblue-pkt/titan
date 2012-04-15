@@ -1054,6 +1054,8 @@ struct status
 	int rightoffset;
 	int topoffset;
 	int bottomoffset;
+	//background picture for all screens
+	char* bgpic;
 } status;
 
 struct fb
