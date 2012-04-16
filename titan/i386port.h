@@ -163,6 +163,11 @@ void sighandler(int sig, struct sigcontext ctx)
 	debug(1000, "in");
 	switch(sig)
 	{
+		case SIGPIPE:
+		{
+			err("got signal sigpipe but ignore it");
+			break;
+		}
 		case SIGUSR1:
 		{
 			//todo all configs
