@@ -186,6 +186,7 @@ void screenepg(struct channel* chnode, struct epg* epgnode, int flag)
 	struct skin* b5 = getscreennode(screenepg, "b5");
 	struct tm* loctime = NULL;
 	char* tmpstr = NULL, *buf = NULL;
+	void (*startplugin)(void);
 	
 	if(getconfigint("epgbutton", NULL) == 0)
 		changetext(b5, _("Single (EPG)"));
