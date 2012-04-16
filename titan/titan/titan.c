@@ -387,6 +387,7 @@ int main(int argc, char *argv[])
 	sigaction(SIGSEGV, &sa, NULL);
 	sigaction(SIGBUS, &sa, NULL);
 	sigaction(SIGABRT, &sa, NULL);
+	sigaction(SIGPIPE, &sa, NULL);
 
 	status.rguidfd = -1;
 	status.sec = time(NULL);

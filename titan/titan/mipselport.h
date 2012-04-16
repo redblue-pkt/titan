@@ -658,10 +658,14 @@ void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int 
 
 void sighandler(int sig, struct sigcontext ctx)
 {
-/*
 	debug(1000, "in");
 	switch(sig)
 	{
+		case SIGPIPE:
+		{
+			err("got signal sigpipe but ignore it");
+			break;
+		}
 		case SIGUSR1:
 		{
 			//todo all configs
@@ -673,6 +677,7 @@ void sighandler(int sig, struct sigcontext ctx)
 		case SIGBUS:
 		case SIGABRT:
 		{
+/*
 #ifdef SIMULATE
 			//intel
 			debugstack((void *)ctx.eip, NULL);
@@ -690,6 +695,7 @@ void sighandler(int sig, struct sigcontext ctx)
 			debugstack((void *)ctx.sc_pr, (void *)ctx.sc_pc);
 			err("got signal %d, programm counter reg: 0x%lx,  procedure reg: 0x%lx", sig, ctx.sc_pc, ctx.sc_pr);
 #endif
+*/
 			if(getconfigint("saverun", NULL) == 1 && status.longjumpbuf != NULL)
 				siglongjmp(status.longjumpbuf, 1);
 			else
@@ -698,7 +704,6 @@ void sighandler(int sig, struct sigcontext ctx)
 		}
 	}
 	debug(1000, "out");
-*/
 }
 
 #endif
