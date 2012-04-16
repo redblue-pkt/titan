@@ -38,6 +38,8 @@
 #: network.h:598 httpdsettings.h:19 httpdsettings.h:53 epgsettings.h:116
 #: epgsettings.h:149 scan.h:1046 scan.h:1337 scan.h:1341 scan.h:1345
 #: scan.h:1349 network.h:599 network.h:600 mc_videoplayer_settings.h:39
+#: networkbrowser.h:1162 networkbrowser.h:1166 networkbrowser.h:1170
+#: networkbrowser.h:1174 networkbrowser.h:1200
 msgid "no"
 msgstr ""
 
@@ -87,7 +89,8 @@ msgstr ""
 #: scan.h:1345 scan.h:1349 scan.h:1353 network.h:599 httpdsettings.h:20
 #: httpdsettings.h:54 epgsettings.h:117 epgsettings.h:150 scan.h:1047
 #: scan.h:1338 scan.h:1342 scan.h:1346 scan.h:1350 network.h:600 network.h:601
-#: mc_videoplayer_settings.h:40
+#: mc_videoplayer_settings.h:40 networkbrowser.h:1163 networkbrowser.h:1167
+#: networkbrowser.h:1171 networkbrowser.h:1175 networkbrowser.h:1201
 msgid "yes"
 msgstr ""
 
@@ -103,36 +106,42 @@ msgstr ""
 
 #: adjust.h:76 mc_audioplayer_settings.h:21 mc_pictureplayer_settings.h:21
 #: mc_videoplayer_settings.h:16 plugins_mc_skin.xml.h:5 skins_mc_skin.xml.h:5
+#: mc_pictureplayer_settings.h:30
 msgid "alpha"
 msgstr ""
 
 #: adjust.h:77 mc_audioplayer_settings.h:22 mc_pictureplayer_settings.h:22
 #: mc_videoplayer_settings.h:17 plugins_mc_skin.xml.h:36
-#: skins_mc_skin.xml.h:36
+#: skins_mc_skin.xml.h:36 mc_pictureplayer_settings.h:31
+#: plugins_mc_skin.xml.h:38 skins_mc_skin.xml.h:38
 msgid "reverse alpha"
 msgstr ""
 
 #: adjust.h:78 mc_audioplayer_settings.h:23 mc_pictureplayer_settings.h:23
 #: mc_videoplayer_settings.h:18 plugins_mc_skin.xml.h:42
 #: skins_mc_skin.xml.h:42 mc_videoplayer_settings.h:26
+#: mc_pictureplayer_settings.h:32 plugins_mc_skin.xml.h:44
+#: skins_mc_skin.xml.h:44
 msgid "size"
 msgstr ""
 
 #: adjust.h:79 mc_audioplayer_settings.h:24 mc_pictureplayer_settings.h:24
 #: mc_videoplayer_settings.h:19 plugins_mc_skin.xml.h:38
-#: skins_mc_skin.xml.h:38
+#: skins_mc_skin.xml.h:38 mc_pictureplayer_settings.h:33
+#: plugins_mc_skin.xml.h:40 skins_mc_skin.xml.h:40
 msgid "reverse size"
 msgstr ""
 
 #: adjust.h:80 mc_audioplayer_settings.h:25 mc_pictureplayer_settings.h:25
 #: mc_videoplayer_settings.h:20 plugins_mc_skin.xml.h:12
-#: skins_mc_skin.xml.h:12
+#: skins_mc_skin.xml.h:12 mc_pictureplayer_settings.h:34
 msgid "date"
 msgstr ""
 
 #: adjust.h:81 mc_audioplayer_settings.h:26 mc_pictureplayer_settings.h:26
 #: mc_videoplayer_settings.h:21 plugins_mc_skin.xml.h:37
-#: skins_mc_skin.xml.h:37
+#: skins_mc_skin.xml.h:37 mc_pictureplayer_settings.h:35
+#: plugins_mc_skin.xml.h:39 skins_mc_skin.xml.h:39
 msgid "reverse date"
 msgstr ""
 
@@ -291,7 +300,8 @@ msgstr ""
 #: panel_settings_autostart.h:71 panel_settings_overclocking.h:256
 #: transponder.h:169 transponder.h:177 transponder.h:328 transponder.h:336
 #: vfdisplay.h:34 transponder.h:178 transponder.h:186 transponder.h:337
-#: transponder.h:345
+#: transponder.h:345 mc_pictureplayer_settings.h:22
+#: mc_pictureplayer_settings.h:26 mc_pictureplayer_settings.h:53
 msgid "off"
 msgstr ""
 
@@ -333,7 +343,8 @@ msgstr ""
 
 #: avsettings.h:78 lnbconfig.h:143 mc_pictureplayer_settings.h:18
 #: transponder.h:170 transponder.h:179 transponder.h:329 transponder.h:338
-#: transponder.h:188 transponder.h:347
+#: transponder.h:188 transponder.h:347 mc_pictureplayer_settings.h:23
+#: mc_pictureplayer_settings.h:27
 msgid "on"
 msgstr ""
 
@@ -411,7 +422,8 @@ msgstr ""
 #: mc_pictureplayer.h:196 mc_pictureplayer.h:309 mc_pictureplayer.h:396
 #: mc_videoplayer.h:454 mc_videoplayer.h:558 mc_pictureplayer.h:308
 #: mc_pictureplayer.h:395 mc_videoplayer.h:441 mc_videoplayer.h:545 rgui.h:23
-#: rgui.h:108 rgui.h:129
+#: rgui.h:108 rgui.h:129 global.h:4606 networkbrowser.h:1270
+#: networkbrowser.h:1282 networkbrowser.h:1364
 msgid "Message"
 msgstr ""
 
@@ -514,7 +526,9 @@ msgstr ""
 #: mc_pictureplayer.h:196 mc_pictureplayer.h:309 mc_pictureplayer.h:396
 #: mc_videoplayer.h:454 mc_videoplayer.h:558 mc_pictureplayer.h:308
 #: mc_pictureplayer.h:395 mc_videoplayer.h:441 mc_videoplayer.h:545 rgui.h:23
-#: rgui.h:108 rgui.h:129
+#: rgui.h:108 rgui.h:129 global.h:4606 networkbrowser.h:1270
+#: networkbrowser.h:1282 networkbrowser.h:1364
+#: plugins_networkbrowser_skin.xml.h:8 skins_networkbrowser_skin.xml.h:8
 msgid "OK"
 msgstr ""
 
@@ -615,7 +629,9 @@ msgstr ""
 #: mc_pictureplayer.h:75 mc_pictureplayer.h:196 mc_pictureplayer.h:309
 #: mc_pictureplayer.h:396 mc_videoplayer.h:454 mc_videoplayer.h:558
 #: mc_pictureplayer.h:308 mc_pictureplayer.h:395 mc_videoplayer.h:441
-#: mc_videoplayer.h:545 rgui.h:23 rgui.h:108 rgui.h:129
+#: mc_videoplayer.h:545 rgui.h:23 rgui.h:108 rgui.h:129 global.h:4606
+#: networkbrowser.h:1270 networkbrowser.h:1282 networkbrowser.h:1364
+#: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
 msgid "EXIT"
 msgstr ""
 
@@ -889,11 +905,11 @@ msgstr ""
 #: skin_default_skin.xml.h:390 skin_default_skin.xml.h:391
 #: skin_default_skin.xml.h:392 skin_default_skin.xml.h:394
 #: skin_default_skin.xml.h:400 skin_default_skin.xml.h:401
-#: skin_default_skin.xml.h:402
+#: skin_default_skin.xml.h:402 epg.h:192
 msgid "Single (EPG)"
 msgstr ""
 
-#: epg.h:193
+#: epg.h:193 epg.h:194
 msgid "Multi (EPG)"
 msgstr ""
 
@@ -983,7 +999,7 @@ msgstr ""
 #: global.h:4386 global.h:4389 global.h:4398 global.h:4528 global.h:4535
 #: global.h:4539 global.h:4557 global.h:4561 global.h:4563 global.h:4565
 #: global.h:4522 global.h:4536 global.h:4551 global.h:4586 global.h:4587
-#: global.h:4602
+#: global.h:4602 global.h:4606
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -1150,7 +1166,7 @@ msgstr ""
 msgid "60 min"
 msgstr ""
 
-#: imdb.h:11 imdb.h:13
+#: imdb.h:11 imdb.h:13 imdb_old.h:11 imdb_old.h:13
 msgid "Imdb Suche"
 msgstr ""
 
@@ -1219,7 +1235,7 @@ msgstr ""
 #: mc_videoplayer.h:371 mc_pictureplayer.h:125 mc_pictureplayer.h:263
 #: mc_pictureplayer.h:126 mc_pictureplayer.h:265 mc_videoplayer.h:227
 #: mc_videoplayer.h:375 mc_pictureplayer.h:264 mc_videoplayer.h:222
-#: mc_videoplayer.h:362
+#: mc_videoplayer.h:362 plugins_mc_skin.xml.h:37 skins_mc_skin.xml.h:37
 msgid "Repeat"
 msgstr ""
 
@@ -1249,7 +1265,7 @@ msgstr ""
 #: mc_videoplayer.h:317 mc_global.h:370 mc_global.h:398 mc_videoplayer.h:359
 #: mc_videoplayer.h:370 mc_pictureplayer.h:262 mc_global.h:427 mc_global.h:455
 #: mc_pictureplayer.h:264 mc_videoplayer.h:374 mc_pictureplayer.h:263
-#: mc_videoplayer.h:361
+#: mc_videoplayer.h:361 plugins_mc_skin.xml.h:36 skins_mc_skin.xml.h:36
 msgid "Random"
 msgstr ""
 
@@ -1342,7 +1358,10 @@ msgstr ""
 #: skin_default_skin.xml.h:485 skin_default_skin.xml.h:487
 #: skin_default_skin.xml.h:497 skin_default_skin.xml.h:498
 #: skin_default_skin.xml.h:499 plugins_optimize_skin.xml.h:4
-#: skins_optimize_skin.xml.h:4
+#: skins_optimize_skin.xml.h:4 plugins_imdb_skin.xml.h:17
+#: plugins_mc_skin.xml.h:57 plugins_networkbrowser_skin.xml.h:28
+#: skins_imdb_skin.xml.h:17 skins_mc_skin.xml.h:57
+#: skins_networkbrowser_skin.xml.h:28
 msgid ""
 msgstr ""
 
@@ -1367,31 +1386,31 @@ msgstr ""
 msgid "Menu not implemented !"
 msgstr ""
 
-#: mc_pictureplayer_settings.h:37
+#: mc_pictureplayer_settings.h:37 mc_pictureplayer_settings.h:46
 msgid "MTH House"
 msgstr ""
 
-#: mc_pictureplayer_settings.h:38
+#: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:47
 msgid "Radio Funclub"
 msgstr ""
 
-#: mc_pictureplayer_settings.h:39
+#: mc_pictureplayer_settings.h:39 mc_pictureplayer_settings.h:48
 msgid "Radio Funclub 80s"
 msgstr ""
 
-#: mc_pictureplayer_settings.h:40
+#: mc_pictureplayer_settings.h:40 mc_pictureplayer_settings.h:49
 msgid "Antenne Kaernten"
 msgstr ""
 
-#: mc_pictureplayer_settings.h:41
+#: mc_pictureplayer_settings.h:41 mc_pictureplayer_settings.h:50
 msgid "Onkelz Rock Radio"
 msgstr ""
 
-#: mc_pictureplayer_settings.h:42
+#: mc_pictureplayer_settings.h:42 mc_pictureplayer_settings.h:51
 msgid "Jump"
 msgstr ""
 
-#: mc_pictureplayer_settings.h:43
+#: mc_pictureplayer_settings.h:43 mc_pictureplayer_settings.h:52
 msgid "Raute Musik FM"
 msgstr ""
 
@@ -1466,15 +1485,15 @@ msgstr ""
 msgid "MULTI EPG - All Channels"
 msgstr ""
 
-#: networkbrowser.h:23 networkbrowser.h:25
+#: networkbrowser.h:23 networkbrowser.h:25 networkbrowser.h:788
 msgid "Scanning Network Shares, please wait !!"
 msgstr ""
 
-#: networkbrowser.h:30 networkbrowser.h:34
+#: networkbrowser.h:30 networkbrowser.h:34 networkbrowser.h:806
 msgid "Networkbrowser - show scanned DNS-Shares"
 msgstr ""
 
-#: networkbrowser.h:47 networkbrowser.h:56
+#: networkbrowser.h:47 networkbrowser.h:56 networkbrowser.h:813
 msgid "Networkbrowser - show scanned cifs/nfs-Shares"
 msgstr ""
 
@@ -1484,58 +1503,69 @@ msgstr ""
 
 #: networkbrowser.h:440 networkbrowser.h:423 networkbrowser.h:433
 #: networkbrowser.h:437 networkbrowser.h:434 networkbrowser.h:442
+#: networkbrowser.h:1117
 msgid "cifs"
 msgstr ""
 
 #: networkbrowser.h:441 networkbrowser.h:424 networkbrowser.h:434
 #: networkbrowser.h:438 networkbrowser.h:435 networkbrowser.h:443
+#: networkbrowser.h:1118
 msgid "nfs"
 msgstr ""
 
 #: networkbrowser.h:442 networkbrowser.h:425 networkbrowser.h:435
 #: networkbrowser.h:439 networkbrowser.h:436 networkbrowser.h:444
+#: networkbrowser.h:1119
 msgid "ftpfs"
 msgstr ""
 
 #: networkbrowser.h:480 networkbrowser.h:463 networkbrowser.h:473
 #: networkbrowser.h:477 networkbrowser.h:474 networkbrowser.h:482
+#: networkbrowser.h:1152
 msgid "ssl_try"
 msgstr ""
 
 #: networkbrowser.h:481 networkbrowser.h:464 networkbrowser.h:474
 #: networkbrowser.h:478 networkbrowser.h:475 networkbrowser.h:483
+#: networkbrowser.h:1153
 msgid "ssl_control"
 msgstr ""
 
 #: networkbrowser.h:482 plugins_networkbrowser_skin.xml.h:18
 #: skins_networkbrowser_skin.xml.h:18 networkbrowser.h:465
 #: networkbrowser.h:475 networkbrowser.h:479 networkbrowser.h:476
-#: networkbrowser.h:484
+#: networkbrowser.h:484 networkbrowser.h:1154
+#: plugins_networkbrowser_skin.xml.h:21 skins_networkbrowser_skin.xml.h:21
 msgid "ssl"
 msgstr ""
 
 #: networkbrowser.h:485 networkbrowser.h:468 networkbrowser.h:478
 #: networkbrowser.h:482 networkbrowser.h:479 networkbrowser.h:487
+#: networkbrowser.h:1157
 msgid "socks5"
 msgstr ""
 
 #: networkbrowser.h:486 networkbrowser.h:469 networkbrowser.h:479
 #: networkbrowser.h:483 networkbrowser.h:480 networkbrowser.h:488
+#: networkbrowser.h:1158
 msgid "socks4"
 msgstr ""
 
 #: networkbrowser.h:487 networkbrowser.h:470 networkbrowser.h:480
 #: networkbrowser.h:484 networkbrowser.h:481 networkbrowser.h:489
+#: networkbrowser.h:1159
 msgid "html"
 msgstr ""
 
 #: networkbrowser.h:534 networkbrowser.h:517 networkbrowser.h:527
 #: networkbrowser.h:531 networkbrowser.h:528 networkbrowser.h:536
+#: networkbrowser.h:1205
 msgid "udp"
 msgstr ""
 
 #: networkbrowser.h:535 networkbrowser.h:518 networkbrowser.h:528
 #: networkbrowser.h:532 networkbrowser.h:529 networkbrowser.h:537
+#: networkbrowser.h:1206
 msgid "tcp"
 msgstr ""
 
@@ -1563,7 +1593,7 @@ msgstr ""
 #: networkbrowser.h:533 networkbrowser.h:742 networkbrowser.h:544
 #: networkbrowser.h:788 networkbrowser.h:548 networkbrowser.h:792
 #: networkbrowser.h:545 networkbrowser.h:789 networkbrowser.h:553
-#: networkbrowser.h:797
+#: networkbrowser.h:797 networkbrowser.h:956
 msgid "Add Cifs Network Share"
 msgstr ""
 
@@ -1571,6 +1601,7 @@ msgstr ""
 #: networkbrowser.h:560 networkbrowser.h:769 networkbrowser.h:573
 #: networkbrowser.h:817 networkbrowser.h:821 networkbrowser.h:574
 #: networkbrowser.h:818 networkbrowser.h:582 networkbrowser.h:826
+#: networkbrowser.h:983
 msgid "Add Nfs Network Share"
 msgstr ""
 
@@ -1578,13 +1609,13 @@ msgstr ""
 #: networkbrowser.h:587 networkbrowser.h:796 networkbrowser.h:602
 #: networkbrowser.h:846 networkbrowser.h:606 networkbrowser.h:850
 #: networkbrowser.h:603 networkbrowser.h:847 networkbrowser.h:611
-#: networkbrowser.h:855
+#: networkbrowser.h:855 networkbrowser.h:1010
 msgid "Add Ftpfs Network Share"
 msgstr ""
 
 #: networkbrowser.h:952 networkbrowser.h:954 networkbrowser.h:937
 #: networkbrowser.h:1007 networkbrowser.h:1011 networkbrowser.h:1008
-#: networkbrowser.h:1016
+#: networkbrowser.h:1016 networkbrowser.h:1282
 msgid "Are you sure you want to save this network mount?"
 msgstr ""
 
@@ -1622,7 +1653,7 @@ msgstr ""
 
 #: networkbrowser.h:1196 networkbrowser.h:1198 networkbrowser.h:1182
 #: networkbrowser.h:1258 networkbrowser.h:1262 networkbrowser.h:1259
-#: networkbrowser.h:1267
+#: networkbrowser.h:1267 networkbrowser.h:1364
 msgid "Are you sure you want remove this share?"
 msgstr ""
 
@@ -2275,7 +2306,8 @@ msgstr ""
 #: skin_default_skin.xml.h:155 skin_default_skin.xml.h:156
 #: skin_default_skin.xml.h:157 skin_default_skin.xml.h:158 play.h:675
 #: skin_default_skin.xml.h:159 skin_default_skin.xml.h:161 play.h:676
-#: skin_default_skin.xml.h:162 play.h:679
+#: skin_default_skin.xml.h:162 play.h:679 plugins_networkbrowser_skin.xml.h:2
+#: skins_networkbrowser_skin.xml.h:2
 msgid "DEL"
 msgstr ""
 
@@ -2413,18 +2445,22 @@ msgid "Tagline:"
 msgstr ""
 
 #: plugins_imdb_skin.xml.h:14 skins_imdb_skin.xml.h:14
+#: plugins_imdb_skin.xml.h:13 skins_imdb_skin.xml.h:13
 msgid "--title--"
 msgstr ""
 
 #: plugins_imdb_skin.xml.h:15 skins_imdb_skin.xml.h:15
+#: plugins_imdb_skin.xml.h:14 skins_imdb_skin.xml.h:14
 msgid "Title:"
 msgstr ""
 
 #: plugins_imdb_skin.xml.h:16 skins_imdb_skin.xml.h:16
+#: plugins_imdb_skin.xml.h:15 skins_imdb_skin.xml.h:15
 msgid "--writers--"
 msgstr ""
 
 #: plugins_imdb_skin.xml.h:17 skins_imdb_skin.xml.h:17
+#: plugins_imdb_skin.xml.h:16 skins_imdb_skin.xml.h:16
 msgid "Writers:"
 msgstr ""
 
@@ -2504,23 +2540,28 @@ msgstr ""
 msgid "My Video"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:30 skins_mc_skin.xml.h:30
+#: plugins_mc_skin.xml.h:30 skins_mc_skin.xml.h:30 plugins_mc_skin.xml.h:32
+#: skins_mc_skin.xml.h:32
 msgid "PICTURE"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:31 skins_mc_skin.xml.h:31
+#: plugins_mc_skin.xml.h:31 skins_mc_skin.xml.h:31 plugins_mc_skin.xml.h:33
+#: skins_mc_skin.xml.h:33
 msgid "Picture Player"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:32 skins_mc_skin.xml.h:32
+#: plugins_mc_skin.xml.h:32 skins_mc_skin.xml.h:32 plugins_mc_skin.xml.h:34
+#: skins_mc_skin.xml.h:34
 msgid "PICTURE SETTINGS"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:33 skins_mc_skin.xml.h:33
+#: plugins_mc_skin.xml.h:33 skins_mc_skin.xml.h:33 plugins_mc_skin.xml.h:35
+#: skins_mc_skin.xml.h:35
 msgid "Radio Player"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:39 skins_mc_skin.xml.h:39
+#: plugins_mc_skin.xml.h:39 skins_mc_skin.xml.h:39 plugins_mc_skin.xml.h:41
+#: skins_mc_skin.xml.h:41
 msgid "Screensaver"
 msgstr ""
 
@@ -2529,59 +2570,72 @@ msgstr ""
 #: skins_mc_skin.xml.h:40 skins_panel_skin.xml.h:10 skins_panel_skin.xml.h:68
 #: skin_default_skin.xml.h:42 skin_default_skin.xml.h:43
 #: skin_default_skin.xml.h:44 skin_default_skin.xml.h:45
-#: skin_default_skin.xml.h:46
+#: skin_default_skin.xml.h:46 plugins_mc_skin.xml.h:42 skins_mc_skin.xml.h:42
 msgid "Settings"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:41 skins_mc_skin.xml.h:41
+#: plugins_mc_skin.xml.h:41 skins_mc_skin.xml.h:41 plugins_mc_skin.xml.h:43
+#: skins_mc_skin.xml.h:43
 msgid "Show Pictitle"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:43 skins_mc_skin.xml.h:43
+#: plugins_mc_skin.xml.h:43 skins_mc_skin.xml.h:43 plugins_mc_skin.xml.h:45
+#: skins_mc_skin.xml.h:45
 msgid "small"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:44 skins_mc_skin.xml.h:44
+#: plugins_mc_skin.xml.h:44 skins_mc_skin.xml.h:44 plugins_mc_skin.xml.h:46
+#: skins_mc_skin.xml.h:46
 msgid "Sort"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:45 skins_mc_skin.xml.h:45
+#: plugins_mc_skin.xml.h:45 skins_mc_skin.xml.h:45 plugins_mc_skin.xml.h:47
+#: skins_mc_skin.xml.h:47
 msgid "Sorting"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:46 skins_mc_skin.xml.h:46
+#: plugins_mc_skin.xml.h:46 skins_mc_skin.xml.h:46 plugins_mc_skin.xml.h:48
+#: skins_mc_skin.xml.h:48
 msgid "Sound"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47
+#: plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47 plugins_mc_skin.xml.h:49
+#: skins_mc_skin.xml.h:49
 msgid "Style"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:48 skins_mc_skin.xml.h:48
+#: plugins_mc_skin.xml.h:48 skins_mc_skin.xml.h:48 plugins_mc_skin.xml.h:50
+#: skins_mc_skin.xml.h:50
 msgid "VIDEO"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:49 skins_mc_skin.xml.h:49
+#: plugins_mc_skin.xml.h:49 skins_mc_skin.xml.h:49 plugins_mc_skin.xml.h:51
+#: skins_mc_skin.xml.h:51
 msgid "Video Player"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:50 skins_mc_skin.xml.h:50
+#: plugins_mc_skin.xml.h:50 skins_mc_skin.xml.h:50 plugins_mc_skin.xml.h:52
+#: skins_mc_skin.xml.h:52
 msgid "VIDEO SETTINGS"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:51 skins_mc_skin.xml.h:51
+#: plugins_mc_skin.xml.h:51 skins_mc_skin.xml.h:51 plugins_mc_skin.xml.h:53
+#: skins_mc_skin.xml.h:53
 msgid "View"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:52 skins_mc_skin.xml.h:52
+#: plugins_mc_skin.xml.h:52 skins_mc_skin.xml.h:52 plugins_mc_skin.xml.h:54
+#: skins_mc_skin.xml.h:54
 msgid "VLC Player"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:53 skins_mc_skin.xml.h:53
+#: plugins_mc_skin.xml.h:53 skins_mc_skin.xml.h:53 plugins_mc_skin.xml.h:55
+#: skins_mc_skin.xml.h:55
 msgid "Weather Infos"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:54 skins_mc_skin.xml.h:54
+#: plugins_mc_skin.xml.h:54 skins_mc_skin.xml.h:54 plugins_mc_skin.xml.h:56
+#: skins_mc_skin.xml.h:56
 msgid "Web Radio Player"
 msgstr ""
 
@@ -2595,10 +2649,12 @@ msgid "Networkbrowser"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
+#: plugins_networkbrowser_skin.xml.h:5 skins_networkbrowser_skin.xml.h:5
 msgid "ftpport"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
+#: plugins_networkbrowser_skin.xml.h:6 skins_networkbrowser_skin.xml.h:6
 msgid "hddreplacement"
 msgstr ""
 
@@ -2607,75 +2663,93 @@ msgstr ""
 #: skin_default_skin.xml.h:230 skin_default_skin.xml.h:231
 #: skin_default_skin.xml.h:234 skin_default_skin.xml.h:235
 #: skin_default_skin.xml.h:236 skin_default_skin.xml.h:238
-#: skin_default_skin.xml.h:239
+#: skin_default_skin.xml.h:239 plugins_networkbrowser_skin.xml.h:7
+#: skins_networkbrowser_skin.xml.h:7
 msgid "ipaddresse"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:7 skins_networkbrowser_skin.xml.h:7
+#: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
 msgid "options"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:8 skins_networkbrowser_skin.xml.h:8
+#: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
 msgid "password"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
+#: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
 msgid "protocol"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
+#: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
 msgid "proxyauth"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
+#: plugins_networkbrowser_skin.xml.h:13 skins_networkbrowser_skin.xml.h:13
 msgid "proxyip"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
+#: plugins_networkbrowser_skin.xml.h:14 skins_networkbrowser_skin.xml.h:14
 msgid "proxypass"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:13 skins_networkbrowser_skin.xml.h:13
+#: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
 msgid "proxyport"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:14 skins_networkbrowser_skin.xml.h:14
+#: plugins_networkbrowser_skin.xml.h:16 skins_networkbrowser_skin.xml.h:16
 msgid "proxyuser"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
+#: plugins_networkbrowser_skin.xml.h:17 skins_networkbrowser_skin.xml.h:17
 msgid "rsize"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:16 skins_networkbrowser_skin.xml.h:16
+#: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
 msgid "sharedir"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:17 skins_networkbrowser_skin.xml.h:17
+#: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
 msgid "sharename"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
+#: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
 msgid "type"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
+#: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
 msgid "useproxy"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:21 skins_networkbrowser_skin.xml.h:21
+#: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
 msgid "userauth"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
+#: plugins_networkbrowser_skin.xml.h:25 skins_networkbrowser_skin.xml.h:25
 msgid "username"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
+#: plugins_networkbrowser_skin.xml.h:26 skins_networkbrowser_skin.xml.h:26
 msgid "usessl"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
+#: plugins_networkbrowser_skin.xml.h:27 skins_networkbrowser_skin.xml.h:27
 msgid "wsize"
 msgstr ""
 
@@ -4108,7 +4182,8 @@ msgstr ""
 #: skin_default_skin.xml.h:105 skin_default_skin.xml.h:106
 #: skin_default_skin.xml.h:107 skin_default_skin.xml.h:108
 #: skin_default_skin.xml.h:109 skin_default_skin.xml.h:110
-#: skin_default_skin.xml.h:111
+#: skin_default_skin.xml.h:111 plugins_networkbrowser_skin.xml.h:1
+#: skins_networkbrowser_skin.xml.h:1
 msgid "ADD"
 msgstr ""
 
@@ -4496,6 +4571,7 @@ msgstr ""
 #: skin_default_skin.xml.h:171 skin_default_skin.xml.h:174
 #: skin_default_skin.xml.h:175 skin_default_skin.xml.h:176
 #: skin_default_skin.xml.h:178 skin_default_skin.xml.h:179
+#: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
 msgid "EDIT"
 msgstr ""
 
@@ -5819,6 +5895,7 @@ msgstr ""
 #: skin_default_skin.xml.h:365 skin_default_skin.xml.h:366
 #: skin_default_skin.xml.h:367 skin_default_skin.xml.h:368
 #: skin_default_skin.xml.h:374 skin_default_skin.xml.h:375
+#: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
 msgid "SCAN"
 msgstr ""
 
@@ -7125,7 +7202,8 @@ msgstr ""
 msgid "EJECT"
 msgstr ""
 
-#: skin_default_skin.xml.h:386
+#: skin_default_skin.xml.h:386 plugins_imdb_skin.xml.h:12
+#: skins_imdb_skin.xml.h:12
 msgid "SEARCH"
 msgstr ""
 
@@ -7191,4 +7269,36 @@ msgstr ""
 
 #: panel_extensions.h:112
 msgid "No plugin found."
+msgstr ""
+
+#: networkbrowser.h:1209
+msgid "rw"
+msgstr ""
+
+#: networkbrowser.h:1210
+msgid "ro"
+msgstr ""
+
+#: networkbrowser.h:1259
+msgid "Sharename can't be empty!"
+msgstr ""
+
+#: networkbrowser.h:1270
+msgid "A mount entry with this name already exists!"
+msgstr ""
+
+#: plugins_imdb_skin.xml.h:1 skins_imdb_skin.xml.h:1
+msgid "--actors--"
+msgstr ""
+
+#: plugins_imdb_skin.xml.h:2 skins_imdb_skin.xml.h:2
+msgid "Actors:"
+msgstr ""
+
+#: plugins_mc_skin.xml.h:30 skins_mc_skin.xml.h:30
+msgid "Picdenom Mode"
+msgstr ""
+
+#: plugins_mc_skin.xml.h:31 skins_mc_skin.xml.h:31
+msgid "Pic HW-decode"
 msgstr ""
