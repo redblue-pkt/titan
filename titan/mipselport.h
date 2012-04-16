@@ -6,6 +6,12 @@
 #define FBIO_BLIT 0x22
 #endif
 
+void setfbvarsize(struct fb* newnode)
+{
+	if(newnode != NULL)
+		newnode->varfbsize = 1920 * 1080 * newnode->colbytes;
+}
+
 void enablemanualblit()
 {
 	int mblit = 1;

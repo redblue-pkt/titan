@@ -5,6 +5,12 @@
 #include <libmmeimage.h>
 #include <linux/stmfb.h>
 
+void setfbvarsize(struct fb* newnode)
+{
+	if(newnode != NULL)
+		newnode->varfbsize = 1920 * 1080 * newnode->colbytes;
+}
+
 void enablemanualblit()
 {
 }

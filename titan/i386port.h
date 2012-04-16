@@ -1,6 +1,12 @@
 #ifndef I386PORT_H
 #define I386PORT_H
 
+void setfbvarsize(struct fb* newnode)
+{
+	if(newnode != NULL)
+		newnode->varfbsize = newnode->width * newnode->height * newnode->colbytes;
+}
+
 void enablemanualblit()
 {
 }
