@@ -30,7 +30,7 @@ void thumbthread(struct stimerthread* self)
 		qe = getqueue(101);
 		while(qe != NULL)
 		{
-			buf = loadjpg((char*)qe->data, int *width, int *height, 16);
+			buf = loadjpg((char*)qe->data, &width, &height, 16);
 			if(buf != NULL)
 			{
 				buf = scale(buf, width, height, 3, 100, 100, 1);
