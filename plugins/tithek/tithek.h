@@ -606,6 +606,7 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 {
 	debug(99, "link(%d): %s", flag, link);
 	char* ip = NULL, *pos = NULL, *path = NULL;
+	
 	ip = string_replace("http://", "", (char*)link, 0);
 
 	if(ip != NULL)
@@ -622,104 +623,111 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		
 	if(flag == 1)
 	{
-		string_resub("\": \"url=","\", \"",tmpstr);
+		string_resub("\": \"url=", "\", \"", tmpstr);
 	
-		while(string_find(",url=",tmpstr))
-		{
+		while(string_find(",url=", tmpstr))
 			tmpstr = string_replace(",url=", "\nurl=", tmpstr, 1);
-		}
 	
-		tmpstr = string_decode(tmpstr,0);
+		tmpstr = string_decode(tmpstr, 0);
 	
 		int count = 0;
 		int i = 0;
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "\n", &count);
-		int max = count;
-		for( i = 0; i < max; i++){
-			if(string_find("type=video/mp4",(&ret1[i])->part))
+		if(ret1 != NULL)
+		{
+			int max = count;
+			for(i = 0; i < max; i++)
 			{
-				streamurl = ostrcat(streamurl, (&ret1[i])->part, 1, 0);
-				int count2 = 0;
-				struct splitstr* ret2 = NULL;
-				ret2 = strsplit((&ret1[i])->part, "+", &count2);
-				streamurl = ostrcat("", (&ret2[0])->part, 0, 0);
-				free(ret2), ret2 = NULL;
+				if(string_find("type=video/mp4",(&ret1[i])->part))
+				{
+					streamurl = ostrcat(streamurl, (&ret1[i])->part, 1, 0);
+					int count2 = 0;
+					struct splitstr* ret2 = NULL;
+					ret2 = strsplit((&ret1[i])->part, "+", &count2);
+					if(ret2 != NULL)
+					{
+						free(streamurl);
+						streamurl = ostrcat("", (&ret2[0])->part, 0, 0);
+						free(ret2); ret2 = NULL;
+					}
+				}
 			}
-		}
-		free(ret1), ret1 = NULL;
-		free(tmpstr), tmpstr = NULL;
+			free(ret1); ret1 = NULL;
 			
-		streamurl = string_replace("url=", "", streamurl, 1);
+			streamurl = string_replace("url=", "", streamurl, 1);
+		}
+		free(tmpstr); tmpstr = NULL;
 	}
 	else if(flag == 2)
 	{
-		string_resub("data:'","',",tmpstr);
+		string_resub("data:'", "',", tmpstr);
 		debug(99, "tmpstr: %s", tmpstr);
 
-		char* tmpstr_tmp = NULL;
-		tmpstr_tmp = ostrcat(tmpstr_tmp, tmpstr, 1, 0);
-		htmldecode(tmpstr,tmpstr_tmp);
-		streamurl = ostrcat(url, tmpstr, 0, 0);
-		free(tmpstr), tmpstr = NULL;
-		debug(99, "streamurl: %s", streamurl);
-		streamurl = getstreamurl(streamurl, url, name, 3);
-	}		
+		htmldecode(tmpstr, tmpstr);
+		tmpstr = ostrcat(url, tmpstr, 0, 1);
+		debug(99, "streamurl: %s", tmpstr);
+		streamurl = getstreamurl(tmpstr, url, name, 3);
+		free(tmpstr); tmpstr = NULL;
+	}
 	else if(flag == 3)
 	{
-		string_resub("<filename><![CDATA[","]]></filename>",tmpstr);
+		string_resub("<filename><![CDATA[", "]]></filename>", tmpstr);
 		debug(99, "tmpstr: %s", tmpstr);
 
 		int count = 0;
 		int i = 0;
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "/", &count);
-		int max = count;
-		char* link = NULL;
-		char* path = NULL;
-		for( i = 0; i < max; i++){
-			if(i < 3)
+		if(ret1 != NULL)
+		{
+			int max = count;
+			char* link = NULL;
+			char* path = NULL;
+			for(i = 0; i < max; i++)
 			{
-				if(count > i)
-					link = ostrcat(link, (&ret1[i])->part, 1, 0);
+				if(i < 3)
+				{
+					if(count > i)
+						link = ostrcat(link, (&ret1[i])->part, 1, 0);
 
-				if(i == 0)
-					link = ostrcat(link, "//", 1, 0);
+					if(i == 0)
+						link = ostrcat(link, "//", 1, 0);
+					else
+						link = ostrcat(link, "/", 1, 0);
+				}
 				else
-					link = ostrcat(link, "/", 1, 0);
+				{
+					if(count > i)
+						path = ostrcat(path, (&ret1[i])->part, 1, 0);
+					if(i != max - 1)
+						path = ostrcat(path, "/", 1, 0);
+				}
 			}
-			else
-			{
-				if(count > i)
-					path = ostrcat(path, (&ret1[i])->part, 1, 0);
-				if(i != max-1)
-					path = ostrcat(path, "/", 1, 0);
-			}
+			free(ret1), ret1 = NULL;
+
+			debug(99, "link: %s", link);
+			debug(99, "path: %s", path);
+	
+			streamurl = ostrcat(link, " swfVfy=1 playpath=mp4:", 0, 0);
+			streamurl = ostrcat(streamurl, path, 1, 0);
+			streamurl = ostrcat(streamurl, " app=", 1, 0);
+			streamurl = ostrcat(streamurl, name, 1, 0);
+			streamurl = ostrcat(streamurl, "/_definst_ pageUrl=", 1, 0);
+			streamurl = ostrcat(streamurl, url, 1, 0);
+			streamurl = ostrcat(streamurl, "/p/ tcUrl=", 1, 0);
+			streamurl = ostrcat(streamurl, link, 1, 0);
+			streamurl = ostrcat(streamurl, " swfUrl=", 1, 0);
+			streamurl = ostrcat(streamurl, url, 1, 0);
+			streamurl = ostrcat(streamurl, "/includes/vodplayer.swf", 1, 0);		
+	
+			if(link != NULL)
+				free(link), link = NULL;
+	
+			if(path != NULL)
+				free(path), path = NULL;
 		}
-		free(ret1), ret1 = NULL;
-		free(tmpstr), tmpstr = NULL;
-
-		debug(99, "link: %s", link);
-		debug(99, "path: %s", path);
-
-		streamurl = ostrcat(link, " swfVfy=1 playpath=mp4:", 0, 0);
-		streamurl = ostrcat(streamurl, path, 1, 0);
-		streamurl = ostrcat(streamurl, " app=", 1, 0);
-		streamurl = ostrcat(streamurl, name, 1, 0);
-		streamurl = ostrcat(streamurl, "/_definst_ pageUrl=", 1, 0);
-		streamurl = ostrcat(streamurl, url, 1, 0);
-		streamurl = ostrcat(streamurl, "/p/ tcUrl=", 1, 0);
-		streamurl = ostrcat(streamurl, link, 1, 0);
-		streamurl = ostrcat(streamurl, " swfUrl=", 1, 0);
-		streamurl = ostrcat(streamurl, url, 1, 0);
-		streamurl = ostrcat(streamurl, "/includes/vodplayer.swf", 1, 0);		
-
-		if(link != NULL)
-			free(link), link = NULL;
-
-		if(path != NULL)
-			free(path), path = NULL;
-		
+		free(tmpstr); tmpstr = NULL;
 		debug(99, "streamurl: %s", streamurl);
 	}
 	return streamurl;

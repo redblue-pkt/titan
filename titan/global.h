@@ -1102,6 +1102,8 @@ char* htmlencode(char* from)
 
 void htmldecode(char* to, char* from)
 {
+	if(to == NULL || from == NULL) return;
+
 	for(; *from != '\0'; ++to, ++from)
 	{
 		if(from[0] == '%' && isxdigit(from[1]) && isxdigit(from[2]))
@@ -1117,6 +1119,8 @@ void htmldecode(char* to, char* from)
 
 void htmldecode2(char* to, char* from)
 {
+	if(to == NULL || from == NULL) return;
+
 	for(; *from != '\0'; ++to, ++from)
 	{
 		if(from[0] == '%' && isxdigit(from[1]) && isxdigit(from[2]) && isxdigit(from[3]) && isxdigit(from[4]))
@@ -4621,53 +4625,50 @@ char* gettimestamp()
 
 char* string_decode(char* input, int flag)
 {
-	if(input == NULL)
-	{
-		return input;
-	}
+	if(input == NULL) return input;
 
-	while(string_find("\\u00",input))
+	while(string_find("\\u00", input))
 	{
 		debug(210, "input: %s", input);
 		input = string_replace("\\u00", "%", input, 1);
 		debug(210, "input: %s", input);
 	}
 
-	while(string_find("&amp;",input))
+	while(string_find("&amp;", input))
 	{
 		debug(210, "input: %s", input);
 		input = string_replace("&amp;", "und", input, 1);
 		debug(210, "input: %s", input);
 	}
 
-	while(string_find("&gt;",input))
+	while(string_find("&gt;", input))
 	{
 		debug(210, "input: %s", input);
 		input = string_replace("&gt;", ">", input, 1);
 		debug(210, "input: %s", input);
 	}
 
-	while(string_find("&lt;",input))
+	while(string_find("&lt;", input))
 	{
 		debug(210, "input: %s", input);
 		input = string_replace("&lt;", "<", input, 1);
 		debug(210, "input: %s", input);
 	}
 	
-	while(string_find("&quot;",input))
+	while(string_find("&quot;", input))
 	{
 		debug(210, "input: %s", input);
 		input = string_replace("&quot;", "\"", input, 1);
 		debug(210, "input: %s", input);
 	}
 
-	while(string_find("&#x",input))
+	while(string_find("&#x", input))
 	{
 		debug(210, "out %s", input);
 		input = string_replace("&#x", "%", input, 1);
 		debug(210, "input: %s", input);
 	}
-	while(string_find("&#",input))
+	while(string_find("&#", input))
 	{
 		debug(210, "input: %s", input);
 		input = string_replace("&#", "%", input, 1);
@@ -4675,11 +4676,11 @@ char* string_decode(char* input, int flag)
 	}
 	
 	if(flag == 1)
-		htmldecode2(input,input);
+		htmldecode2(input, input);
 	else
-		htmldecode(input,input);
+		htmldecode(input, input);
 			
-	while(string_find(";",input))
+	while(string_find(";", input))
 	{
 		debug(210, "input: %s", input);
 		input = string_replace(";", "", input, 1);
