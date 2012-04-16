@@ -114,11 +114,10 @@ void screenimdb(char* title)
 	struct skin* skin_director = getscreennode(imdbskin, "director");
 	struct skin* skin_writers = getscreennode(imdbskin, "writers");
 	struct skin* skin_genre = getscreennode(imdbskin, "genre");
-	struct skin* skin_tagline = getscreennode(imdbskin, "tagline");
 	struct skin* skin_releasetime = getscreennode(imdbskin, "releasetime");
 	struct skin* skin_bigcover = getscreennode(imdbskin, "bigcover");
 	struct skin* skin_cover = getscreennode(imdbskin, "cover");
-	struct skin* skin_cast = getscreennode(imdbskin, "cast");
+	struct skin* skin_actors = getscreennode(imdbskin, "actors");
 	struct imdb* node = NULL;
 	char* search = NULL;
 
@@ -137,6 +136,7 @@ start:
 		changetext(skin_writers, node->writer);
 		changetext(skin_genre, node->genre);
 		changetext(skin_releasetime, node->released);
+		changetext(skin_actors, node->actors);
 		changepic(skin_cover, TMPIMDBPIC);
 	}
 
@@ -150,18 +150,18 @@ start:
 		if(rcret == getrcconfigint("rcok", NULL)) break;
 
 		if(rcret == getrcconfigint("rcred", NULL))
-		{
-			search = textinput("Search", NULL);
-			if(search != NULL)
-			{
+                {
+                        search = textinput("Search", NULL);
+                        if(search != NULL)
+                        {
 				freeimdb(node); node = NULL;
 				node = getimdb(search);
-				free(search); search = NULL;
+                                free(search); search = NULL;
 				goto start;
-			}
-			drawscreen(imdbskin, 0);
-			continue;
-		}
+                        }
+                        drawscreen(imdbskin, 0);
+                        continue;
+                }
 	}
 
 	freeimdb(node); node = NULL;
