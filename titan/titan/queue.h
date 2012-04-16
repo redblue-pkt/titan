@@ -12,7 +12,7 @@ void debugqueue()
 	}
 }
 
-struct queue* addqueue(int type, void* data, int len, void* dat1, int len1, int flag, struct queue* last)
+struct queue* addqueue(int type, void* data, int len, void* data1, int len1, int flag, struct queue* last)
 {
 	//debug(1000, "in");
 

@@ -188,6 +188,7 @@ void sendoktext(int* connfd, char* text, int auth);
 
 //skinconfig.h
 int getskinconfigint(char *key, char *ext);
+char* getskinconfig(char *key, char *ext);
 
 //record.h
 struct service* getrecordbyname(char* recname, int type);
