@@ -25,7 +25,7 @@ void thumbthread(struct stimerthread* self)
 
 	while(self->aktion != STOP)
 	{
-		sleep 5;
+		sleep(5);
 
 		qe = getqueue(101);
 		while(qe != NULL)
