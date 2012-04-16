@@ -272,6 +272,7 @@ void screenvideomode(int flag);
 void delpic(char* name);
 struct pic* getpic(char* name);
 void delmarkedpic(int del);
+struct pic* addpic(char *name, unsigned char* picbuf, int memfd, unsigned long width, unsigned long height, unsigned long rowbytes, int channels, int del, struct pic* last);
 
 //showiframe.h
 int singlepicstart(const char *filename, int flag);
