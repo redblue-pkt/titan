@@ -30,7 +30,7 @@ void thumbthread(struct stimerthread* self)
 		qe = getqueue(101);
 		while(qe != NULL)
 		{
-			buf = loadjpg((char*)qe->data, &width, &height, 16);
+			buf = loadjpg((char*)ostrcat(createpath(qe->data, "/"), qe->data1, 0, 0), &width, &height, 16);		
 			if(buf != NULL)
 			{
 				buf = scale(buf, width, height, 3, 100, 100, 1);
@@ -43,7 +43,7 @@ void thumbthread(struct stimerthread* self)
 					thumbfile = ostrcat(thumbfile, "/", 1, 0);
 					thumbfile = ostrcat(thumbfile, (char*)qe->data1, 1, 0);
 
-					debug(307, "create thumb: %s from %s", thumbfile, (char*)qe->data);
+					debug(307, "create thumb: %s from %s/%s", thumbfile, (char*)qe->data, (char*)qe->data1);
 					savejpg(thumbfile, 100, 100, buf);
 				}
 			}
