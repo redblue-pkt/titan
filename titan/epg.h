@@ -346,7 +346,7 @@ start:
 		}
 		if(rcret == getrcconfigint("rctext", NULL))
 		{
-			pluginnode = getplugin("Imdb");
+			struct skin* pluginnode = getplugin("Imdb");
 		
 			if(pluginnode != NULL)
 			{
