@@ -520,13 +520,33 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						child->posx = posx;
 						posx += child->width;
 
-						if((cmpfilenameext(filelist[i]->d_name, ".jpg") == 0) || (cmpfilenameext(filelist[i]->d_name, ".png") == 0))
+						if(cmpfilenameext(filelist[i]->d_name, ".png") == 0)
 						{
 							tmpstr = ostrcat(createpath(node->input, "/"), filelist[i]->d_name, 1, 0);
 //							child->picheight = 210;
 //							child->picwidth = 350;
 							child->picwidth = 1;
 							child->picheight = 1;
+						}
+						else if(cmpfilenameext(filelist[i]->d_name, ".jpg") == 0)
+						{
+							if(status.createthumb == 1)
+							{
+								//check if thumb exists
+								tmpstr = checkthumb(node->input, filelist[i]->d_name);
+								if(tmpstr == NULL)
+								{
+									addqueue(101, ostrcat((void*)node->input, NULL, 0, 0), strlen(node->input) + 1, ostrcat((void*)filelist[i]->d_name, NULL, 0, 0), strlen(filelist[i]->d_name) + 1, 0, NULL);
+									tmpstr = ostrcat(tmpstr, "skin/ext_grid_dummy.png", 1, 0);
+									child->picheight = 180;
+									child->picwidth = 180;
+								}
+								else
+								{
+									child->picwidth = 1;
+									child->picheight = 1;
+								}
+							}
 						}
 						else if(cmpfilenameext(filelist[i]->d_name, ".iso") == 0)
 							tmpstr = ostrcat(tmpstr, "skin/ext_grid_iso.png", 1, 0);
@@ -567,23 +587,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						if(tmpstr != NULL)
 						{
 							debug(10, "files: change pic");
-							if(cmpfilenameext(filelist[i]->d_name, ".jpg") == 0)
-							{
-								char* thumbfile = NULL;
-								if(status.createthumb == 1)
-								{
-									//check if thumb exists
-									thumbfile = checkthumb(node->input, tmpstr);
-									if(thumbfile != NULL)
-									{
-										free(tmpstr);
-										tmpstr = thumbfile;
-									}
-									else
-										addqueue(101, ostrcat((void*)node->input, NULL, 0, 0), strlen(node->input) + 1, ostrcat((void*)tmpstr, NULL, 0, 0), strlen(tmpstr) + 1, 0, NULL);
-								}
-								changepic(child, tmpstr);
-							}
+							changepic(child, tmpstr);
 							free(tmpstr); tmpstr = NULL;
 						}
 					
