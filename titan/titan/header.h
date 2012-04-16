@@ -1,6 +1,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//thumb.h
+char* checkthumb(char* path, char* file);
+
 //dvdplayer.h
 int dvdstop();
 int dvdsetfb();
