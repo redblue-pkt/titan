@@ -415,6 +415,7 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+char* getxmlentry(char *line, char *searchstr);
 void debugstack(void* address, void* address1);
 char* string_strip_whitechars(char *text);
 int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int flag);
