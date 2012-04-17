@@ -1999,7 +1999,7 @@ int settint(int value)
 	return 0;
 }
 
-int zip(char* inbuf, int inlen, char** outbuf, int* outlen, int level)
+int ozip(char* inbuf, int inlen, char** outbuf, int* outlen, int level)
 {
 	int ret = 0;
 	z_stream stream;

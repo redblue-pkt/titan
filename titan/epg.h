@@ -1294,7 +1294,7 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 		//compress long desc
 		if(nolongdesc == 0 && epgnode->desc != NULL)
 		{
-			ret = zip(epgnode->desc, strlen(epgnode->desc) + 1, &zbuf, &zlen, 1);
+			ret = ozip(epgnode->desc, strlen(epgnode->desc) + 1, &zbuf, &zlen, 1);
 			if(ret == 0)
 			{
 				free(epgnode->desc); epgnode->desc = NULL;
