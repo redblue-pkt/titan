@@ -42,7 +42,8 @@ int ipkg_update(void);
 int ipkg_list(void);
 int ipkg_install(const char* package);
 int ipkg_remove(const char* package, int purge);
-char* ipk_listbox(char* defaultstr, char* str, char* skinname, char* skintitle, char* skinpath, int showpng);
+struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* section, int showpng, int flag);
+int ipkg_list_installed(void);
 
 //frontenddev.h
 struct dvbdev* fegetdummy();
@@ -328,13 +329,16 @@ void freemenulist(struct menulist* mlist, int delparam);
 void addmenulistall(struct menulist** mlist, char* allname, char* pic, int deaktiv, char* defaultentry);
 struct menulist* addmenulist(struct menulist** mlist, char* name, char* text, char* pic, int deaktiv, int defaultentry);
 struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* defaultpic, int showpng, int flag);
+struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* defaultpic, int showpng, int* rcreturn, int flag);
 void setmenulistdefault(struct menulist* mlist, char* defaultentry);
+void changemenulistparam(struct menulist* mlist, char* param, char* param1);
 
 //skinfunc.h
 char* gettime(struct skin* node, char* format);
 char* getepgakttitle(struct skin* node);
 
 //skin.h
+void calcautoscale(int width, int height, int mwidth, int mheight, int* scalewidth, int* scaleheight);
 void blitscale(int posx, int posy, int width, int height, int scalewidth, int scaleheight, int flag);
 unsigned char* scale(unsigned char* buf, int width, int height, int channels, int newwidth, int newheight, int free1);
 void blitrect(int posx, int posy, int width, int height, long color, int transparent, int mode);
@@ -419,6 +423,7 @@ char* getxmlentry(char *line, char *searchstr);
 void debugstack(void* address, void* address1);
 char* string_strip_whitechars(char *text);
 int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int flag);
+int ozip(char* inbuf, int inlen, char** outbuf, int* outlen, int level);
 int delallfiles(char* dir, char* ext);
 unsigned long getfilecount(char* dir);
 char* readfiletomem(const char* filename, int flag);

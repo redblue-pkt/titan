@@ -663,10 +663,11 @@ char* readnetworkbrowser(char* filename, int flag)
 
 void getnetworkbrowser_dns(struct inetwork* net, struct menulist** mlist)
 {
+	int i = 0;
 	netinfo* nInfo;
 	char *tmpstr = NULL, *s = NULL;
 
-	if(net == NULL || mlist == NULL) return NULL;
+	if(net == NULL || mlist == NULL) return;
 
 	s = ostrcat(s, net->ip, 1, 0);
 	s = ostrcat(s, "/24", 1, 0);
@@ -703,6 +704,7 @@ void getnetworkbrowser_dns(struct inetwork* net, struct menulist** mlist)
 
 void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, char* p)
 {
+	int i = 0;
 	char* tmpstr = NULL;
 	shareinfo* sInfo;
 
@@ -740,7 +742,7 @@ void  getnetworkbrowser_nfs(struct menulist** mlist, char* s, char* r)
 {
 	char* tmpstr = NULL;
 	nfsinfo* nfsInfo;
-	int err = 0;
+	int i = 0, err = 0;
 
 	if(s == NULL || r == NULL || mlist == NULL) return;
 	

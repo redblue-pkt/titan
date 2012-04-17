@@ -32,7 +32,7 @@ void blitfb2(struct fb* fbnode, int flag)
 		int zlen = 0;
 		char* zbuf = NULL;
 		blitscale(0, 0, fbnode->width, fbnode->height, 440, 330, 1);
-		ret = zip((char*)accelfb->fb, 440 * 330 * 4, &zbuf, &zlen, 1);
+		ret = ozip((char*)accelfb->fb, 440 * 330 * 4, &zbuf, &zlen, 1);
 
 		if(ret == 0)
 		{
