@@ -345,8 +345,19 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 		{
 			treffer = 1;
 			newnode->mode = ostrcat("0", NULL, 0, 0);
-			ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->ip, newnode->sharedir);
-			if(ret != 8)
+			if(strstr(line, "user=") == NULL)
+			{
+				treffer = 6;
+				ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
+			}
+			else
+			{
+				treffer = 8;
+				free(newnode->userauth); newnode->userauth = NULL;
+				newnode->userauth = ostrcat(newnode->userauth, "1", 1, 0);
+				ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->ip, newnode->sharedir);
+			}
+			if(ret != treffer)
 			{
 				if(count > 0)
 				{
@@ -513,10 +524,15 @@ printf("%s\n", savesettings);
 	 		savesettings = ostrcat(savesettings, node->rsize, 1, 0);
 			savesettings = ostrcat(savesettings, ",wsize=", 1, 0);
  			savesettings = ostrcat(savesettings, node->wsize, 1, 0);
-			savesettings = ostrcat(savesettings, ",user=", 1, 0); 
-			savesettings = ostrcat(savesettings, node->username, 1, 0);
-			savesettings = ostrcat(savesettings, ",pass=", 1, 0);
- 			savesettings = ostrcat(savesettings, node->password, 1, 0);
+ 			
+ 			if(ostrcmp(node->userauth, "1") == 0)
+			{
+				savesettings = ostrcat(savesettings, ",user=", 1, 0); 
+				savesettings = ostrcat(savesettings, node->username, 1, 0);
+				savesettings = ostrcat(savesettings, ",pass=", 1, 0);
+ 				savesettings = ostrcat(savesettings, node->password, 1, 0);
+			}
+ 			
 			savesettings = ostrcat(savesettings, "\t://", 1, 0);
 			tmpstr = fixip(node->ip, 1);
 	 		savesettings = ostrcat(savesettings, tmpstr, 1, 0);
@@ -898,61 +914,6 @@ void changemodenetworkbrowser(struct networkbrowser* node, struct skin* net_adds
 	char* tmpstr = NULL;
 	if(node == NULL) return;
 
-	if(ostrcmp(node->userauth, "0") == 0)
-	{
-		skin_username->hidden = YES;
-		skin_password->hidden = YES;
-	}
-	else
-	{
-		skin_username->hidden = NO;
-		skin_password->hidden = NO;
-	}
-
-	if(ostrcmp(node->proxyauth, "0") == 0)
-	{
-		skin_proxyuser->hidden = YES;
-		skin_proxypass->hidden = YES;
-	}
-	else
-	{
-		skin_proxyuser->hidden = NO;
-		skin_proxypass->hidden = NO;
-	}
-
-	if(ostrcmp(node->useproxy, "0") == 0)
-	{
-		skin_proxy->hidden = YES;
-		skin_proxyip->hidden = YES;
-		skin_proxyport->hidden = YES;
-		skin_proxyuser->hidden = YES;
-		skin_proxypass->hidden = YES;
-		skin_proxyauth->hidden = YES;
-	}
-	else
-	{
-		skin_proxy->hidden = NO;
-		skin_proxyip->hidden = NO;
-		skin_proxyport->hidden = NO;
-		skin_proxyauth->hidden = NO;
-
-		if(ostrcmp(node->proxyauth, "0") == 0)
-		{
-			skin_proxyuser->hidden = YES;
-			skin_proxypass->hidden = YES;
-		}
-		else
-		{
-			skin_proxyuser->hidden = NO;
-			skin_proxypass->hidden = NO;
-		}
-	}
-
-	if(ostrcmp(node->usessl, "0") == 0)
-		skin_ssl->hidden = YES;
-	else
-		skin_ssl->hidden = NO;
-
 	if(ostrcmp(node->mode, "0") == 0)
 	{
 		tmpstr = ostrcat(tmpstr, _("Add Cifs Network Share"), 1, 0);
@@ -962,8 +923,6 @@ void changemodenetworkbrowser(struct networkbrowser* node, struct skin* net_adds
 		changetitle(net_addshare, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 
-		skin_username->hidden = NO;
-		skin_password->hidden = NO;
 		skin_protocol->hidden = YES;
 		skin_rsize->hidden = NO;
 		skin_wsize->hidden = NO;
@@ -975,10 +934,21 @@ void changemodenetworkbrowser(struct networkbrowser* node, struct skin* net_adds
 		skin_proxyuser->hidden = YES;
 		skin_proxypass->hidden = YES;
 		skin_ftpport->hidden = YES;
-		skin_userauth->hidden = YES;
+		skin_userauth->hidden = NO;
 		skin_proxyauth->hidden = YES;
 		skin_useproxy->hidden = YES;
 		skin_usessl->hidden = YES;
+		
+		if(ostrcmp(node->userauth, "0") == 0)
+		{
+			skin_username->hidden = YES;
+			skin_password->hidden = YES;
+		}
+		else
+		{
+			skin_username->hidden = NO;
+			skin_password->hidden = NO;
+		}
 	}
 	else if(ostrcmp(node->mode, "1") == 0)
 	{
