@@ -179,12 +179,16 @@ int delchannel(int serviceid, unsigned long transponderid, int flag);
 struct transponder* gettransponder(unsigned long transponderid);
 int writetransponder(const char *filename);
 void deltransponderbyorbitalpos(int orbitalpos);
+void deltransponder(struct transponder* tpnode);
 
 //sat.h
 int writesat(const char *filename);
+void delsat(char *name);
+struct sat* getsatbyorbitalpos(int orbitalpos);
 
 //provider.h
 int writeprovider(const char *filename);
+void delprovidernotused(struct provider* node);
 
 //httpd.h
 void httpdthreadfunc(struct stimerthread* timernode);
@@ -521,6 +525,7 @@ void delbouquetbychannel(int serviceid, unsigned long transponderid);
 struct bouquet* getbouquetbychannelmain(int serviceid, unsigned long transponderid);
 void recalcbouquetnr();
 void setbouquetchanneltonullmain(int serviceid, unsigned long transponderid);
+void delbouquet(int serviceid, unsigned long transponderid, struct bouquet** firstnode);
 
 //audiotrack.h
 void screenaudiotrack();
