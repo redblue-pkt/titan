@@ -1535,7 +1535,7 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 	row_stride = cinfo.output_width * cinfo.output_components;
 	buffer = (*cinfo.mem->alloc_sarray) ((j_common_ptr) &cinfo, JPOOL_IMAGE, row_stride, 1);
 
-	if(accelfb != NULL && accelfb->varfbsize > width * 8 && (scalewidth != 0 || scaleheight != 0))
+	if(accelfb != NULL && accelfb->varfbsize > width * 8 && (scalewidth != 0 || scaleheight != 0) && (scalewidth != width || scaleheight != height))
 	{
 		//auto scale to mwidth / mheight
 		if(scalewidth == 1 && scaleheight == 1)
@@ -1829,7 +1829,7 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 
 	if((pictype == 0 || pictype == 1) && buf == NULL) return;
 
-	if(pictype == 0 && (scalewidth != 0 || scaleheight != 0))
+	if(pictype == 0 && (scalewidth != 0 || scaleheight != 0) && (scalewidth != width || scaleheight != height))
 	{
 		//auto scale to mwidth / mheight
 		if(scalewidth == 1 && scaleheight == 1)
