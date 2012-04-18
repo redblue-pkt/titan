@@ -629,6 +629,33 @@ printf("%s\n", savesettings);
 	free(savesettings); savesettings = NULL;
 }
 
+void copynetworkbrowser(struct networkbrowser* from, struct networkbrowser* to, char* sharename)
+{
+	if(from == NULL || to == NULL) return;
+
+	to->mode = ostrcat(from->mode, NULL, 0, 0);
+	to->sharename = ostrcat(sharename, NULL, 0, 0);
+	to->ip = ostrcat(from->ip, NULL, 0, 0);
+	to->sharedir = ostrcat(from->sharedir, NULL, 0, 0);
+	to->username = ostrcat(from->username, NULL, 0, 0);
+	to->password = ostrcat(from->password, NULL, 0, 0);
+	to->rsize = ostrcat(from->rsize, NULL, 0, 0);
+	to->wsize = ostrcat(from->wsize, NULL, 0, 0);
+	to->protocol = ostrcat(from->protocol, NULL, 0, 0);
+	to->options = ostrcat(from->options, NULL, 0, 0);
+	to->ssl = ostrcat(from->ssl, NULL, 0, 0);
+	to->proxy = ostrcat(from->proxy, NULL, 0, 0);
+	to->proxyip = ostrcat(from->proxyip, NULL, 0, 0);
+	to->proxyport = ostrcat(from->proxyport, NULL, 0, 0);
+	to->proxyuser = ostrcat(from->proxyuser, NULL, 0, 0);
+	to->proxypass = ostrcat(from->proxypass, NULL, 0, 0);
+	to->ftpport = ostrcat(from->ftpport, NULL, 0, 0);
+	to->userauth = ostrcat(from->userauth, NULL, 0, 0);
+	to->proxyauth = ostrcat(from->proxyauth, NULL, 0, 0);
+	to->useproxy = ostrcat(from->useproxy, NULL, 0, 0);
+	to->usessl = ostrcat(from->usessl, NULL, 0, 0);
+}
+
 //flag 0: read and add to struct
 //flag 1: read and build string
 char* readnetworkbrowser(char* filename, int flag)
@@ -914,6 +941,22 @@ int checkhddreplacement(char* sharename)
 	return 0;
 }
 
+int checknetworkbrowserexist(struct networkbrowser* node)
+{
+	struct networkbrowser* tmpbrowser = networkbrowser;
+
+	if(node == NULL) return 0;
+
+	while(tmpbrowser != NULL)
+	{
+		if(tmpbrowser != node && ostrcmp(tmpbrowser->sharename, node->sharename) == 0)
+			return 1;
+		tmpbrowser = tmpbrowser->next;
+	}
+
+	return 0;
+}
+
 void changemodenetworkbrowser(struct networkbrowser* node, struct skin* net_addshare, struct skin* skin_username, struct skin* skin_password, struct skin* skin_protocol, struct skin* skin_rsize, struct skin* skin_wsize, struct skin* skin_options, struct skin* skin_ssl, struct skin* skin_proxy, struct skin* skin_proxyip, struct skin* skin_proxyport, struct skin* skin_proxyuser, struct skin* skin_proxypass, struct skin* skin_ftpport, struct skin* skin_userauth, struct skin* skin_proxyauth, struct skin* skin_useproxy, struct skin* skin_usessl)
 {
 	char* tmpstr = NULL;
@@ -1074,6 +1117,7 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 	struct skin* skin_userauth = getscreennode(net_addshare, "skin_userauth");
 	struct skin* skin_proxyauth = getscreennode(net_addshare, "skin_proxyauth");
 	struct skin* skin_mode = getscreennode(net_addshare, "skin_mode");
+	struct skin* b3 = getscreennode(net_addshare, "b3");
 	char* tmpstr = NULL;
 
 	listbox->aktline = 1;
@@ -1085,6 +1129,11 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 		newnode = 1;
 	}
 	if(node == NULL) return;
+	
+	if(newnode == 0)
+		b3->hidden = NO;
+	else
+		b3->hidden = YES;
 
 	setdefaultnetworkbrowser(node);
 	debug(70, "after set defaut");
@@ -1228,6 +1277,31 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 		}
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		
+		if(newnode == 0 && rcret == getrcconfigint("rcred", NULL) && checknetworkbrowserexist(node) == 0)
+		{
+			struct networkbrowser* newshare = addnetworkbrowser(NULL, 1, NULL);
+			if(newshare != NULL)
+			{
+				tmpstr = textinput(NULL, "SHARENAME");
+				if(tmpstr != NULL && strlen(tmpstr) != 0)
+				{
+					//set to default if field is empty
+					setdefaultnetworkbrowser(node);
+					copynetworkbrowser(node, newshare, tmpstr);
+					newnode = 1;
+					node = newshare;
+					changeinput(skin_sharename, node->sharename);
+					b3->hidden = YES;
+					changemodenetworkbrowser(node, net_addshare, skin_username, skin_password, skin_protocol, skin_rsize, skin_wsize, skin_options, skin_ssl, skin_proxy, skin_proxyip, skin_proxyport, skin_proxyuser, skin_proxypass, skin_ftpport, skin_userauth, skin_proxyauth, skin_useproxy, skin_usessl);
+				}
+				else
+					delnetworkbrowser(newshare);
+				free(tmpstr); tmpstr = NULL;
+				drawscreen(net_addshare, 0);
+			}
+			continue;
+		}
 
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
@@ -1238,20 +1312,9 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 				continue;
 			}
 
-			int skip = 0;
-			struct networkbrowser* tmpbrowser = networkbrowser;
-			while(tmpbrowser != NULL)
+			if(checknetworkbrowserexist(node) == 1)
 			{
-				if(tmpbrowser != node && ostrcmp(tmpbrowser->sharename, node->sharename) == 0)
-				{
-					textbox(_("Message"), _("A mount entry with this name already exists!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
-					skip = 1;
-					break;
-				}
-				tmpbrowser = tmpbrowser->next;
-			}
-			if(skip == 1)
-			{
+				textbox(_("Message"), _("A mount entry with this name already exists!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 				drawscreen(net_addshare, 0);
 				continue;
 			}
