@@ -77,6 +77,7 @@ void delnetworkbrowsercontent(struct networkbrowser* node)
 {
 	if(node == NULL) return;
 	
+	free(node->mode); node->mode = NULL;
 	free(node->sharename); node->sharename = NULL;
 	free(node->ip); node->ip = NULL;
 	free(node->sharedir); node->sharedir = NULL;
