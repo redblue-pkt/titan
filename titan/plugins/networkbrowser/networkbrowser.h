@@ -576,7 +576,9 @@ printf("%s\n", savesettings);
 			if(ostrcmp(node->useproxy, "1") == 0)
 			{
 				savesettings = ostrcat(savesettings, ",proxy=", 1, 0);
-		 		savesettings = ostrcat(savesettings, node->proxyip, 1, 0);
+				tmpstr = fixip(node->proxyip, 1);
+		 		savesettings = ostrcat(savesettings, tmpstr, 1, 0);
+		 		free(tmpstr); tmpstr = NULL;
 				savesettings = ostrcat(savesettings, "\\:", 1, 0);
 	 			savesettings = ostrcat(savesettings, node->proxyport, 1, 0);
 			}
