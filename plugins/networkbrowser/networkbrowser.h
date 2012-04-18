@@ -345,10 +345,10 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 		{
 			treffer = 1;
 			newnode->mode = ostrcat("0", NULL, 0, 0);
-			if(strstr(line, "user=") == NULL)
+			if(strstr(line, "user=,") != NULL)
 			{
 				treffer = 6;
-				ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
+				ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
 			}
 			else
 			{
@@ -532,6 +532,8 @@ printf("%s\n", savesettings);
 				savesettings = ostrcat(savesettings, ",pass=", 1, 0);
  				savesettings = ostrcat(savesettings, node->password, 1, 0);
 			}
+			else
+				savesettings = ostrcat(savesettings, ",user=,pass=", 1, 0); 
  			
 			savesettings = ostrcat(savesettings, "\t://", 1, 0);
 			tmpstr = fixip(node->ip, 1);
