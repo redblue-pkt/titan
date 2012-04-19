@@ -39,7 +39,7 @@ void rguidgotdata(struct stimerthread* timernode, int* connfd)
 			keycode = atoi((char*)buf);
 			debug(250, "got keycode %d\n", keycode);
 			
-			if(status.standby == 0 && keycode == getrcconfigint("rcpower", NULL))
+			if(status.standby == 0 && keycode == 98989)
 			{
 				int i = 0;
 				
