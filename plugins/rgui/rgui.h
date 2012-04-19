@@ -105,17 +105,14 @@ int screenrgui(char* ip)
 		}
 	}
 	
+	//clear screen
+	drawscreen(skin, 0);
 	if(textbox(_("Message"), _("Send remote box into standby ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
-		tmpstr = (unsigned char*)getrcconfig("rcpower", NULL);
-		if(tmpstr != NULL)
-		{
-			memcpy(buf, tmpstr, strlen((char*)tmpstr));
-			ret = socksend(&sock, buf, 6, 1000 * 1000);
-			free(tmpstr); tmpstr = NULL;
-			memset(buf, 0, 10);
-			usleep(5000);
-		}
+		memcpy(buf, "98989", 5);
+		ret = socksend(&sock, buf, 6, 1000 * 1000);
+		memset(buf, 0, 10);
+		usleep(5000);
 	}
 
 	sockclose(&sock);
