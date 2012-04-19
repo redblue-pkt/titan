@@ -115,7 +115,6 @@ void screenimdb(char* title)
 	struct skin* skin_writers = getscreennode(imdbskin, "writers");
 	struct skin* skin_genre = getscreennode(imdbskin, "genre");
 	struct skin* skin_releasetime = getscreennode(imdbskin, "releasetime");
-	struct skin* skin_bigcover = getscreennode(imdbskin, "bigcover");
 	struct skin* skin_cover = getscreennode(imdbskin, "cover");
 	struct skin* skin_actors = getscreennode(imdbskin, "actors");
 	struct imdb* node = NULL;
