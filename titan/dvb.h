@@ -700,6 +700,7 @@ int dvbgetdate(time_t* time, int timeout)
 	if(status.aktservice->fedev == NULL)
 	{
 		err("no frontend dev in aktservice");
+		free(buf);
 		return 1;
 	}
 
