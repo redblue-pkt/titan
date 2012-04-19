@@ -659,29 +659,40 @@ time_t dvbconvertdate(unsigned char *buf, int flag)
 {
 	int i = 0;
 	long mjd;
-	struct tm time;
+	struct tm *time = NULL;
+	time_t gmttime = 0;
+
+	time = (struct tm*)malloc(sizeof(struct tm));
+	if(time == NULL)
+	{
+		err("no mem");
+		return 0;
+	}
 
 	memset(&time, 0, sizeof(time));
 
 	mjd = ((buf[0] & 0xff) << 8) | (buf[1] & 0xff);
-	time.tm_hour = bcdtoint(buf[2] & 0xff);
-	time.tm_min = bcdtoint(buf[3] & 0xff);
-	time.tm_sec = bcdtoint(buf[4] & 0xff);
+	time->tm_hour = bcdtoint(buf[2] & 0xff);
+	time->tm_min = bcdtoint(buf[3] & 0xff);
+	time->tm_sec = bcdtoint(buf[4] & 0xff);
 
-	time.tm_year = (int) ((mjd - 15078.2) / 365.25);
-	time.tm_mon = (int) ((mjd - 14956.1 - (int) (time.tm_year * 365.25)) / 30.6001);
-	time.tm_mday = (int) mjd - 14956 - (int) (time.tm_year * 365.25) - (int) (time.tm_mon * 30.6001);
-	if(time.tm_mon == 14 || time.tm_mon == 15) i = 1;
-	time.tm_year += i;
-	time.tm_mon = time.tm_mon - 2 - i * 12;
+	time->tm_year = (int) ((mjd - 15078.2) / 365.25);
+	time->tm_mon = (int) ((mjd - 14956.1 - (int) (time->tm_year * 365.25)) / 30.6001);
+	time->tm_mday = (int) mjd - 14956 - (int) (time->tm_year * 365.25) - (int) (time->tm_mon * 30.6001);
+	if(time->tm_mon == 14 || time->tm_mon == 15) i = 1;
+	time->tm_year += i;
+	time->tm_mon = time->tm_mon - 2 - i * 12;
 
-	time.tm_isdst = 0;
-	time.tm_gmtoff = 0;
+	time->tm_isdst = 0;
+	time->tm_gmtoff = 0;
 
 	if(flag == 0)
-		return timegm(&time);
+		gmttime = timegm(time);
 	else
-		return mktime(&time);
+		gmttime = mktime(time);
+
+	free(time);
+	return gmttime;
 }
 
 int dvbgetdate(time_t* time, int timeout)
