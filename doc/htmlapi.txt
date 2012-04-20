@@ -1,0 +1,165 @@
+/*****************************************************/
+/* this file is part of the tiTan / tiTanNIT Project */
+/* and allowed only for use with this.               */
+/*                                                   */
+/* copyright by NIT                                  */
+/*****************************************************/
+
+query: sendrc
+desc: send rc code
+param: rc code
+
+query: getrectimer
+desc: get aktive record timer
+param: no
+
+query: addrectimer
+desc: add a record timer
+param: ?
+
+query: delrectimer
+desc: delete a record timer
+param: ?
+
+query: editrectimer
+desc: edit a record timer
+param: ?
+
+query: rectimersend
+desc: ?
+param: ?
+
+query: getrectimerarchive
+desc: get old record timer
+param: no
+
+query: setvol
+desc: set the volume
+param: 0-100
+
+query: setmute
+descr: set mute
+param: 0/1
+
+query: getbouquet
+desc: get a list of all bouquets
+param: no
+
+query: getsat
+desc: get a list of all sat
+param: no
+
+query: getprovider
+desc: get a list of all provoder
+param: no
+
+query: getaz
+desc: get chars A-Z
+param: no
+
+query: getchannelpage
+desc: get a channel page
+param: type (0 = all, 1 = sat, 2 = provider, 3 = A-Z)
+param: page nr
+
+query: getallchannel
+desc: get all channel
+param: no
+
+query: getbouquetchannel
+desc: get all channel from a bouquet
+param: bouquetname
+
+query: getsatchannel
+desc: get all channel from a sat
+param: orbitalposition
+
+query: getproviderchannel
+desc: get all channel from a provider
+param: providername
+
+query: getazchannel
+desc: get all channel from first char
+param: char (A-Z)
+
+query: switch
+desc: change channel
+param: channelid
+param: transponderid
+
+query: getaktservice
+desc: get akt service
+param: no
+
+query: getepg
+desc: get epg from a channel
+param: channelid
+param: transponderid
+param: epg event id
+
+query: getmovieepg
+desc: gets the epg to a recordet movie
+param: movie name (full path)
+
+query: getsingleepg
+desc: get all epg to a channel
+param: channelid
+param: transponderid
+
+query: getgmultiepg
+desc: get all epg from all channel in a bouquet
+param: bouquetname
+param: page nr
+
+query: getepgsearch
+desc: search epg entry
+param: ?
+
+query: getsignal
+desc: get tuner signals
+param: no
+
+query: getmoviefilelist
+desc: get a list of movies
+param: path
+param: page nr
+
+query: delmoviefile
+desc: delete a file
+param: ?
+
+query: getm3u
+desc: get m3u file from a movie
+param: moviename
+
+query: getvideo
+desc: get html inline code for playing movie
+param: moviename
+
+query: getshoot
+desc: get a screenshot
+param: type (gui, tv, gui + tv)
+
+query: poweroff
+desc: poweroff the box
+param: no
+
+query: restart
+desc: restart the box
+param: no
+
+query: guirestart
+desc: gui restart the box
+param: no
+
+query: standby
+desc: set box in standby
+param: no
+
+query: boxstatus
+desc: get boxstatus (running or standby)
+param: no
+
+query: message
+desc: shows the message on tv
+param; message
