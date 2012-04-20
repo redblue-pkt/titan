@@ -669,7 +669,7 @@ time_t dvbconvertdate(unsigned char *buf, int flag)
 		return 0;
 	}
 
-	memset(&time, 0, sizeof(time));
+	memset(time, 0, sizeof(struct tm));
 
 	mjd = ((buf[0] & 0xff) << 8) | (buf[1] & 0xff);
 	time->tm_hour = bcdtoint(buf[2] & 0xff);
