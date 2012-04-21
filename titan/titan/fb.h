@@ -94,10 +94,6 @@ struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int
 		newnode->varfbsize = 720 * 576 * newnode->colbytes;
 	else
 		newnode->varfbsize = width * height * newnode->colbytes;
-
-	/*eigener Buffer zB fuer LCD*/
-	if(dev == 999)
-		return newnode; 
 	
 	if(node != NULL)
 	{
@@ -107,11 +103,16 @@ struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int
 	}
 	else
 		fb = newnode;
+		
+	/*eigener Buffer zB fuer LCD*/
+	if(dev == 999)
+		return newnode; 
 
 	ret = getfbsize(dev);
 	if(ret < 0)
 	{
 		err("framebuffermem (%s) to small, needed = %ld", name, ret * -1);
+		free(name);
 		free(newnode);
 		if(newnode == fb) fb = NULL;
 		return NULL;
