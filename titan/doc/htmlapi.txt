@@ -5,6 +5,9 @@
 /* copyright by NIT                                  */
 /*****************************************************/
 
+use query?param&param&... for html output
+use queryraw?param&param&... for raw-struct output
+
 query: sendrc
 raw: nothing
 desc: send rc code
