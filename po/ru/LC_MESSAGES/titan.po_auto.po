@@ -437,6 +437,7 @@ msgstr ""
 #: networkbrowser.h:1254 networkbrowser.h:1336 networkbrowser.h:1236
 #: networkbrowser.h:1247 networkbrowser.h:1341 networkbrowser.h:1310
 #: networkbrowser.h:1317 networkbrowser.h:1322 networkbrowser.h:1404
+#: rgui.h:110 rgui.h:126
 msgid "Message"
 msgstr ""
 
@@ -546,7 +547,7 @@ msgstr ""
 #: networkbrowser.h:1236 networkbrowser.h:1247 networkbrowser.h:1341
 #: networkbrowser.h:1310 networkbrowser.h:1317 networkbrowser.h:1322
 #: networkbrowser.h:1404 plugins_networkbrowser_skin.xml.h:9
-#: skins_networkbrowser_skin.xml.h:9
+#: skins_networkbrowser_skin.xml.h:9 rgui.h:110 rgui.h:126
 msgid "OK"
 msgstr ""
 
@@ -654,7 +655,7 @@ msgstr ""
 #: networkbrowser.h:1236 networkbrowser.h:1247 networkbrowser.h:1341
 #: networkbrowser.h:1310 networkbrowser.h:1317 networkbrowser.h:1322
 #: networkbrowser.h:1404 plugins_networkbrowser_skin.xml.h:5
-#: skins_networkbrowser_skin.xml.h:5
+#: skins_networkbrowser_skin.xml.h:5 rgui.h:110 rgui.h:126
 msgid "EXIT"
 msgstr ""
 
@@ -1026,23 +1027,23 @@ msgstr ""
 msgid "ERROR cant read res"
 msgstr ""
 
-#: gmultiepg.h:509 gmultiepg.h:518
+#: gmultiepg.h:509 gmultiepg.h:518 gmultiepg.h:525
 msgid "GRAPHIC MULTI EPG - Bouquets"
 msgstr ""
 
-#: gmultiepg.h:522 gmultiepg.h:531
+#: gmultiepg.h:522 gmultiepg.h:531 gmultiepg.h:538
 msgid "GRAPHIC MULTI EPG - Channel"
 msgstr ""
 
-#: gmultiepg.h:535 gmultiepg.h:544
+#: gmultiepg.h:535 gmultiepg.h:544 gmultiepg.h:551
 msgid "GRAPHIC MULTI EPG - Satellites"
 msgstr ""
 
-#: gmultiepg.h:548 gmultiepg.h:557
+#: gmultiepg.h:548 gmultiepg.h:557 gmultiepg.h:564
 msgid "GRAPHIC MULTI EPG - Provider"
 msgstr ""
 
-#: gmultiepg.h:561 gmultiepg.h:570
+#: gmultiepg.h:561 gmultiepg.h:570 gmultiepg.h:577
 msgid "GRAPHIC MULTI EPG - All Channels"
 msgstr ""
 
@@ -7170,7 +7171,7 @@ msgstr ""
 msgid "Can't connect to server !"
 msgstr ""
 
-#: rgui.h:84 rgui.h:87 rgui.h:106 rgui.h:130 rgui.h:129
+#: rgui.h:84 rgui.h:87 rgui.h:106 rgui.h:130 rgui.h:129 rgui.h:126
 msgid "Connection to server lost !"
 msgstr ""
 
@@ -7310,7 +7311,7 @@ msgstr ""
 msgid "Optimize"
 msgstr ""
 
-#: rgui.h:109 rgui.h:108
+#: rgui.h:109 rgui.h:108 rgui.h:110
 msgid "Send remote box into standby ?"
 msgstr ""
 
