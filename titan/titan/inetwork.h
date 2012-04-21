@@ -120,24 +120,32 @@ struct inetwork* changeinetwork(char* device, char* ip, char* netmask, char* mac
 		free(node->device);
 		node->device = device;
 	}
+	else
+		free(device);
 
 	if(ostrcmp(node->ip, ip) != 0)
 	{
 		free(node->ip);
 		node->ip = ip;
 	}
+	else
+		free(ip);
 
 	if(ostrcmp(node->netmask, netmask) != 0)
 	{
 		free(node->netmask);
 		node->netmask = netmask;
 	}
+	else
+		free(netmask);
 
 	if(ostrcmp(node->broadcast, broadcast) != 0)
 	{
 		free(node->broadcast);
 		node->broadcast = broadcast;
 	}
+	else
+		free(broadcast);
 
 	if(flag == 0)
 	{
@@ -146,9 +154,14 @@ struct inetwork* changeinetwork(char* device, char* ip, char* netmask, char* mac
 			free(node->mac);
 			node->mac = mac;
 		}
+		else
+			free(mac);
 
 		node->dhcp = dhcp;
 	}
+	else
+		free(mac);
+	
 	node->found = 1;
 
 	return node;
@@ -345,8 +358,8 @@ int addinetworkall(struct stimerthread* self)
 				cmd = ostrcat(cmddev, cmd, 0, 1);
 				tmp_mac = command(cmd);
 		
-				if (tmp_mac != 0)
-					tmp_mac = string_newline(ostrcat(tmp_mac, "", 1, 0));
+				if(tmp_mac != NULL)
+					tmp_mac = string_newline(tmp_mac);
 				else
 					tmp_mac = ostrcat(tmp_mac, "00:00:00:00:00:00", 1, 0);
 			}
@@ -367,12 +380,12 @@ int addinetworkall(struct stimerthread* self)
 		if(tmpinetwork != NULL)
 		{
 			if(self == NULL)
-				node = changeinetwork(tmp_device, tmp_ipaddresse, tmp_netmask, tmp_mac,  tmp_broadcast, tmp_dhcp, tmpinetwork, 0);
+				node = changeinetwork(tmp_device, tmp_ipaddresse, tmp_netmask, tmp_mac, tmp_broadcast, tmp_dhcp, tmpinetwork, 0);
 			else
-				node = changeinetwork(tmp_device, tmp_ipaddresse, tmp_netmask, tmp_mac,  tmp_broadcast, tmp_dhcp, tmpinetwork, 1);
+				node = changeinetwork(tmp_device, tmp_ipaddresse, tmp_netmask, tmp_mac, tmp_broadcast, tmp_dhcp, tmpinetwork, 1);
 		}
 		else
-			node = addinetwork(tmp_device, tmp_ipaddresse, tmp_netmask, tmp_mac,  tmp_broadcast, tmp_dhcp, node);
+			node = addinetwork(tmp_device, tmp_ipaddresse, tmp_netmask, tmp_mac, tmp_broadcast, tmp_dhcp, node);
 
 		free(cmd); cmd = NULL;
 		free(cmddev); cmddev = NULL;
@@ -383,8 +396,9 @@ int addinetworkall(struct stimerthread* self)
 	// GATEWAY
 	if(self == NULL)
 	{
+		free(status.gateway); status.gateway = NULL;
 		tmp_gateway = getdefaultgw();
-		if (tmp_gateway != NULL)
+		if(tmp_gateway != NULL)
 		{
 			tmpstr = fixip(tmp_gateway, 0);
 			status.gateway = string_newline(ostrcat(tmpstr, "", 1, 0));
@@ -393,9 +407,10 @@ int addinetworkall(struct stimerthread* self)
 			status.gateway = ostrcat(tmp_gateway, "000.000.000.000", 1, 0);
 
 		// DNSSERVER1
+		free(status.dnsserver1); status.dnsserver1 = NULL;
 		cmd = ostrcat(cmd, "cat /var/etc/resolv.conf | grep nameserver | awk '{ print $2 }' | head -n1 | tail -n1", 1, 0);
 		tmp_dnsserver1 = ostrcat(tmp_dnsserver1 , command(cmd), 1, 1);
-		if (tmp_dnsserver1 != NULL)
+		if(tmp_dnsserver1 != NULL)
 		{
 			tmpstr = fixip(tmp_dnsserver1, 0);
 			free(tmp_dnsserver1); tmp_dnsserver1 = NULL;
@@ -406,9 +421,10 @@ int addinetworkall(struct stimerthread* self)
 		free(cmd); cmd = NULL;
 
 		// DNSSERVER2
+		free(status.dnsserver2); status.dnsserver2 = NULL;
 		cmd = ostrcat(cmd, "cat /var/etc/resolv.conf | grep nameserver | awk '{ print $2 }' | head -n2 | tail -n1", 1, 0);
 		tmp_dnsserver2 = ostrcat(tmp_dnsserver2 , command(cmd), 1, 1);
-		if (tmp_dnsserver2 != NULL)
+		if(tmp_dnsserver2 != NULL)
 		{
 			tmpstr = fixip(tmp_dnsserver2, 0);
 			free(tmp_dnsserver2); tmp_dnsserver2 = NULL;
