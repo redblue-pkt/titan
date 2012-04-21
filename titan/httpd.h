@@ -136,11 +136,11 @@ void senderror(int* connfd, char* title, char* text, int auth)
 	free(buf);
 }
 
-void checkquery(int* connfd, char* query, int auth)
+void checkquery(int* connfd, char* query, int auth, int fmt)
 {
 	char* buf = NULL, *header = NULL, *param = NULL;
 	char* ext = NULL, *mime = NULL;
-	int buflen = 0, onlyheader = 0, code = 200, fmt = 0;
+	int buflen = 0, onlyheader = 0, code = 200;
 
 	//create param
 	param = strchr(query, '&');
@@ -379,10 +379,20 @@ void gotdata(int* connfd)
 				debug(250, "httpd query=%s", query);
 			}
 
+			//queryraw
+			if(ostrcmp(filename, "/queryraw") == 0 && query != NULL)
+			{
+				checkquery(connfd, query, auth, 1);
+				free(buf); buf = NULL;
+				free(filename); filename = NULL;
+				tmpstr = NULL;
+				return;
+			}
+
 			//query
 			if(ostrcmp(filename, "/query") == 0 && query != NULL)
 			{
-				checkquery(connfd, query, auth);
+				checkquery(connfd, query, auth, 0);
 				free(buf); buf = NULL;
 				free(filename); filename = NULL;
 				tmpstr = NULL;
