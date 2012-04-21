@@ -298,7 +298,7 @@ void oshutdown(int exitcode, int flag)
 		{
 			err("detect hanging timer thread");
 		}
-		else
+		else if(status.timerthread != '\0')
 			pthread_join(status.timerthread, &threadstatus);
 		pthread_attr_destroy(&status.timerthreadattr);
 
