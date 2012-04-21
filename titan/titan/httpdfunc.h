@@ -1426,8 +1426,7 @@ char* webgetepgsearch(char* query, char* param, int fmt)
 		epgnode = getepgakt(chnode);
 		while(epgnode != NULL)
 		{
-			//TODO: case sensitiv search
-			if(epgnode->title != NULL && strstr(epgnode->title, param) != NULL)
+			if(epgnode->title != NULL && ostrstrcase(epgnode->title, param) != NULL)
 			{
 
 				maxcount++;
