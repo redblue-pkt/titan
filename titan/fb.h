@@ -259,14 +259,14 @@ void closefb()
 		if(fb->fd != -1)
 			close(fb->fd);
 #ifdef NOFB
-	free(fb->fb);
+		free(fb->fb);
 #endif
 	}
 }
 
 void clearfball()
 {
-	if(fb->fb != NULL)
+	if(fb != NULL && fb->fb != NULL)
 		memset(fb->fb, 0, fb->fixfbsize);
 }
 
