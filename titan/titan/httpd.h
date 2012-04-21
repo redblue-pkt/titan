@@ -140,7 +140,7 @@ void checkquery(int* connfd, char* query, int auth)
 {
 	char* buf = NULL, *header = NULL, *param = NULL;
 	char* ext = NULL, *mime = NULL;
-	int buflen = 0, onlyheader = 0, code = 200;
+	int buflen = 0, onlyheader = 0, code = 200, fmt = 0;
 
 	//create param
 	param = strchr(query, '&');
@@ -148,77 +148,85 @@ void checkquery(int* connfd, char* query, int auth)
 		*param++ = '\0';
 
 	if(ostrcmp(query, "sendrc") == 0)
-		websendrc(param);
+		websendrc(param, fmt);
 	if(ostrcmp(query, "getrectimer") == 0)
-		buf = webgetrectimer(param, 0);
+		buf = webgetrectimer(param, 0, fmt);
 	if(ostrcmp(query, "addrectimer") == 0)
-		buf = webaddrectimer(param);
+		buf = webaddrectimer(param, fmt);
 	if(ostrcmp(query, "delrectimer") == 0)
-		buf = webdelrectimer(param);
+		buf = webdelrectimer(param, fmt);
 	if(ostrcmp(query, "editrectimer") == 0)
-		buf = webeditrectimer(param);
+		buf = webeditrectimer(param, fmt);
 	if(ostrcmp(query, "rectimersend") == 0)
-		buf = webrectimersend(param);
+		buf = webrectimersend(param, fmt);
 	if(ostrcmp(query, "getrectimerarchive") == 0)
-		buf = webgetrectimer(param, 1);
+		buf = webgetrectimer(param, 1, fmt);
 	if(ostrcmp(query, "setvol") == 0)
-		buf = websetvol(param);
+		buf = websetvol(param, fmt);
 	if(ostrcmp(query, "setmute") == 0)
-		buf = websetmute(param);
+		buf = websetmute(param, fmt);
 	if(ostrcmp(query, "getbouquet") == 0)
-		buf = webgetbouquet();
+		buf = webgetbouquet(fmt);
 	if(ostrcmp(query, "getsat") == 0)
-		buf = webgetsat();
+		buf = webgetsat(fmt);
 	if(ostrcmp(query, "getprovider") == 0)
-		buf = webgetprovider();
+		buf = webgetprovider(fmt);
 	if(ostrcmp(query, "getaz") == 0)
-		buf = webgetaz();
+		buf = webgetaz(fmt);
 	if(ostrcmp(query, "getchannelpage") == 0)
-		buf = webgetchannelpage(param);
+		buf = webgetchannelpage(param, fmt);
 	if(ostrcmp(query, "getallchannel") == 0)
-		buf = webgetchannel(0, 0, 1);
+		buf = webgetchannel(0, 0, 1, fmt);
 	if(ostrcmp(query, "getbouquetchannel") == 0)
-		buf = webgetbouquetchannel(param);
+		buf = webgetbouquetchannel(param, fmt);
 	if(ostrcmp(query, "getsatchannel") == 0 && param != NULL)
-		buf = webgetchannel(atoi(param), 1, 1);
+		buf = webgetchannel(atoi(param), 1, 1, fmt);
 	if(ostrcmp(query, "getproviderchannel") == 0 && param != NULL)
-		buf = webgetchannel(atoi(param), 2, 1);
+		buf = webgetchannel(atoi(param), 2, 1, fmt);
 	if(ostrcmp(query, "getazchannel") == 0 && param != NULL)
-		buf = webgetchannel(atoi(param), 3, 1);
+		buf = webgetchannel(atoi(param), 3, 1, fmt);
 	if(ostrcmp(query, "switch") == 0)
-		buf = webswitch(param);
+		buf = webswitch(param, fmt);
 	if(ostrcmp(query, "getaktservice") == 0)
-		buf = webgetaktservice();
+		buf = webgetaktservice(fmt);
 	if(ostrcmp(query, "getepg") == 0)
-		buf = webgetepg(param);
+		buf = webgetepg(param, fmt);
 	if(ostrcmp(query, "getmovieepg") == 0)
-		buf = webgetmovieepg(param, getconfig("rec_streampath", NULL), 1);
+		buf = webgetmovieepg(param, getconfig("rec_streampath", NULL), 1, fmt);
 	if(ostrcmp(query, "getsingleepg") == 0)
-		buf = webgetsingleepg(param);
+		buf = webgetsingleepg(param, fmt);
 	if(ostrcmp(query, "getgmultiepg") == 0)
-		buf = webgetgmultiepg(param);
+		buf = webgetgmultiepg(param, fmt);
 	if(query != NULL && strstr(query, "getepgsearch") == query)
-		buf = webgetepgsearch(query, param);
+		buf = webgetepgsearch(query, param, fmt);
 	if(ostrcmp(query, "getsignal") == 0)
-		buf = webgetsignal();
+		buf = webgetsignal(fmt);
 	if(ostrcmp(query, "getmoviefilelist") == 0)
-		buf = webgetfilelist(param, "getmoviefilelist", "delmoviefile", getconfig("rec_streampath", NULL), "*.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", 31);
+		buf = webgetfilelist(param, "getmoviefilelist", "delmoviefile", getconfig("rec_streampath", NULL), "*.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", 31, fmt);
 	if(ostrcmp(query, "delmoviefile") == 0)
-		buf = webdelfile(param, "getmoviefilelist", "delmoviefile", getconfig("rec_streampath", NULL), "*.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", 31);
+		buf = webdelfile(param, "getmoviefilelist", "delmoviefile", getconfig("rec_streampath", NULL), "*.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", 31, fmt);
 	if(ostrcmp(query, "getm3u") == 0)
 	{
-		buf = webgetm3u(param, *connfd);
-		ext = "Content-Disposition: attachment; filename=stream.m3u";
-		mime = "text/plain";
+		buf = webgetm3u(param, *connfd, fmt);
+		if(fmt == 0)
+		{
+			ext = "Content-Disposition: attachment; filename=stream.m3u";
+			mime = "text/plain";
+		}
 	}
 	if(ostrcmp(query, "getvideo") == 0)
-		buf = webgetvideo(param, *connfd);
+		buf = webgetvideo(param, *connfd, fmt);
 	if(ostrcmp(query, "getshoot") == 0)
 	{
-		webgetshoot(param);
-		ext = "Location: shoot.html";
-		onlyheader = 1;
-		code = 302;
+		webgetshoot(param, fmt);
+		if(fmt == 0)
+		{
+			ext = "Location: shoot.html";
+			onlyheader = 1;
+			code = 302;
+		}
+		else
+			buf = ostrcat("shoot.html", NULL, 0, 0);
 	}
 	if(query != NULL && strstr(query, "poweroff") == query)
 		oshutdown(1, 1);
@@ -234,12 +242,22 @@ void checkquery(int* connfd, char* query, int auth)
 	if(query != NULL && strstr(query, "boxstatus") == query)
 	{
 		if(status.standby > 0)
-			sendoktext(connfd, "standby", auth);
+		{
+			if(fmt == 0)
+				sendoktext(connfd, "standby", auth);
+			else
+				buf = ostrcat("standby", NULL, 0, 0);
+		}
 		else
-			sendoktext(connfd, "running", auth);
+		{
+			if(fmt == 0)
+				sendoktext(connfd, "running", auth);
+			else
+				buf = ostrcat("running", NULL, 0, 0);
+		}
 	}
 	if(query != NULL && strstr(query, "message") == query)
-		buf = websendmessage(query);
+		buf = websendmessage(query, fmt);
 		
 	if(buf != NULL || onlyheader == 1)
 	{

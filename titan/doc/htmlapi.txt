@@ -6,160 +6,199 @@
 /*****************************************************/
 
 query: sendrc
+raw: nothing
 desc: send rc code
 param: rc code
 
 query: getrectimer
+raw: begin#end#justplay#repeate#name#serviceid#transpoderid#status#errstr#timestamp
 desc: get aktive record timer
 param: no
 
 query: addrectimer
+raw: ?
 desc: add a record timer
 param: ?
 
 query: delrectimer
+raw: ?
 desc: delete a record timer
 param: ?
 
 query: editrectimer
+raw: ?
 desc: edit a record timer
 param: ?
 
 query: rectimersend
+raw: ?
 desc: ?
 param: ?
 
 query: getrectimerarchive
+raw: begin#end#justplay#repeate#name#serviceid#transpoderid#status#errstr#timestamp
 desc: get old record timer
 param: no
 
 query: setvol
+raw: returns the aktive vol (0-100)
 desc: set the volume
 param: 0-100
 
 query: setmute
+raw: returns the aktive mute (0/1)
 descr: set mute
 param: 0/1
 
 query: getbouquet
+raw: bouquetname#type
 desc: get a list of all bouquets
 param: no
 
 query: getsat
+raw: satname#orbitalpos
 desc: get a list of all sat
 param: no
 
 query: getprovider
+raw: providername#number
 desc: get a list of all provoder
 param: no
 
 query: getaz
+raw: returns A-Z
 desc: get chars A-Z
 param: no
 
 query: getchannelpage
+raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid
 desc: get a channel page
+param: 0 = 0, 1 = orbitalpos, 2 = providername, 3 = A-Z
 param: type (0 = all, 1 = sat, 2 = provider, 3 = A-Z)
 param: page nr
 
 query: getallchannel
+raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid
 desc: get all channel
 param: no
 
 query: getbouquetchannel
+raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid
 desc: get all channel from a bouquet
 param: bouquetname
 
 query: getsatchannel
+raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid
 desc: get all channel from a sat
 param: orbitalposition
 
 query: getproviderchannel
+raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid
 desc: get all channel from a provider
 param: providername
 
 query: getazchannel
+raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid
 desc: get all channel from first char
 param: char (A-Z)
 
 query: switch
+raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid
 desc: change channel
 param: channelid
 param: transponderid
 
 query: getaktservice
+raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid
 desc: get akt service
 param: no
 
 query: getepg
+raw: epgshort#begin#end#subtitle#epglong
 desc: get epg from a channel
 param: channelid
 param: transponderid
 param: epg event id
 
 query: getmovieepg
+raw: returns .epg
 desc: gets the epg to a recordet movie
 param: movie name (full path)
 
 query: getsingleepg
+raw: epgshort#begin#end#subtitle
 desc: get all epg to a channel
 param: channelid
 param: transponderid
 
 query: getgmultiepg
+raw: ?
 desc: get all epg from all channel in a bouquet
 param: bouquetname
 param: page nr
 
 query: getepgsearch
+raw: ?
 desc: search epg entry
 param: ?
 
 query: getsignal
+raw: ber#unc#signal#snr
 desc: get tuner signals
 param: no
 
 query: getmoviefilelist
+raw: name#type (dir = 0, file = 1)
 desc: get a list of movies
-param: path
+param: empty or path
 param: page nr
 
 query: delmoviefile
+raw: ?
 desc: delete a file
 param: ?
 
 query: getm3u
+raw: m3u format
 desc: get m3u file from a movie
 param: moviename
 
 query: getvideo
+raw: http url string for video
 desc: get html inline code for playing movie
 param: moviename
 
 query: getshoot
+raw: fixtext shoot.html
 desc: get a screenshot
 param: type (gui, tv, gui + tv)
 
 query: poweroff
+raw: nothing
 desc: poweroff the box
 param: no
 
 query: restart
+raw: nothing
 desc: restart the box
 param: no
 
 query: guirestart
+raw: nothing
 desc: gui restart the box
 param: no
 
 query: standby
+raw: nothing
 desc: set box in standby
 param: no
 
 query: boxstatus
+raw: running or standby
 desc: get boxstatus (running or standby)
 param: no
 
 query: message
+raw: fixtext Message send
 desc: shows the message on tv
 param; message

@@ -86,7 +86,7 @@ char* webcreatehead(char* buf, char* meta, int flag)
 	return buf;
 }
 
-void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* channellist, int* maxlen, int* pos, int flag)
+void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* channellist, int* maxlen, int* pos, int flag, int fmt)
 {
 	char* tmpstr = NULL, *buf1 = NULL, *serviceid = NULL, *transponderid = NULL;
 	struct epg* epgnode = getepgakt(chnode);
@@ -104,11 +104,13 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 		return;
 	}
 
-	if(line == 0)
-		ostrcatbig(buf, "<tr class=line1>", maxlen, pos);
-	else
-		ostrcatbig(buf, "<tr class=line2>", maxlen, pos);
-
+	if(fmt == 0) 
+	{
+		if(line == 0)
+			ostrcatbig(buf, "<tr class=line1>", maxlen, pos);
+		else
+			ostrcatbig(buf, "<tr class=line2>", maxlen, pos);
+	}
 
 	if(epgnode != NULL)
 	{
@@ -117,16 +119,19 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 		if(proz < 0) proz = 0;
 	}
 
-	ostrcatbig(buf, "<td width=100% valign=middle nowrap class=link><div class=timelineborder><div class=timelinebar style=\"width: ", maxlen, pos);
-	tmpstr = oitoa(proz);
-	ostrcatbig(buf, tmpstr, maxlen, pos);
-	free(tmpstr); tmpstr = NULL;
-	ostrcatbig(buf, "%;\"> </div></div>", maxlen, pos);
+	if(fmt == 0) 
+	{
+		ostrcatbig(buf, "<td width=100% valign=middle nowrap class=link><div class=timelineborder><div class=timelinebar style=\"width: ", maxlen, pos);
+		tmpstr = oitoa(proz);
+		ostrcatbig(buf, tmpstr, maxlen, pos);
+		free(tmpstr); tmpstr = NULL;
+		ostrcatbig(buf, "%;\"> </div></div>", maxlen, pos);
+	}
 
 	serviceid = oitoa(chnode->serviceid);
 	transponderid = olutoa(chnode->transponderid);
 
-	if(ret == 0)
+	if(fmt == 0 && ret == 0)
 	{
 		ostrcatbig(buf, "<a target=aktservice class=link href=query?switch&", maxlen, pos);
 		ostrcatbig(buf, serviceid, maxlen, pos);
@@ -137,11 +142,35 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 		ostrcatbig(buf, ">", maxlen, pos);
 	}
 
-	ostrcatbig(buf, chnode->name, maxlen, pos);
-	if(ret == 0) ostrcatbig(buf, "</a>", maxlen, pos);
+	if(fmt == 0) 
+	{
+		ostrcatbig(buf, chnode->name, maxlen, pos);
+		if(ret == 0)
+			ostrcatbig(buf, "</a>", maxlen, pos);
+	}
+	else
+	{
+		*buf = ostrcat(*buf, chnode->name, 1, 0);
+		*buf = ostrcat(*buf, "#", 1, 0);
+		*buf = ostrcat(*buf, oitoa(proz), 1, 1);
+		*buf = ostrcat(*buf, "#", 1, 0);
+		*buf = ostrcat(*buf, serviceid, 1, 0);
+		*buf = ostrcat(*buf, "#", 1, 0);
+		*buf = ostrcat(*buf, transponderid, 1, 0);
+		*buf = ostrcat(*buf, "#", 1, 0);
+		*buf = ostrcat(*buf, channellist, 1, 0);
+		*buf = ostrcat(*buf, "#", 1, 0);
+		*buf = ostrcat(*buf, oitoa(chnode->servicetype), 1, 1);
+		*buf = ostrcat(*buf, "#", 1, 0);
+		if(epgnode != NULL)
+			*buf = ostrcat(*buf, oitoa(epgnode->eventid), 1, 1);
+		else
+			*buf = ostrcat(*buf, "0", 1, 0);
+		*buf = ostrcat(*buf, "\n", 1, 0);
+	}
 
 	//akt epg
-	if(epgnode != NULL)
+	if(fmt == 0 && epgnode != NULL)
 	{
 		if(flag == 0)
 			ostrcatbig(buf, "<br><a target=main class=smalllink href=query?getepg&", maxlen, pos);
@@ -208,43 +237,46 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 	}
 
 	//tv - radio
-	if(chnode->servicetype == 0)
-		ostrcatbig(buf, "</td><td width=100 align=right valign=middle nowrap><img style=\"margin-left: 5\" border=0 src=img/tv.png alt=TV width=16 height=16>", maxlen, pos);
-	else
-		ostrcatbig(buf, "</td><td width=100 align=right valign=middle nowrap><img style=\"margin-left: 5\" border=0 src=img/radio.png alt=Radio width=16 height=16>", maxlen, pos);
-
-	//single epg
-	ostrcatbig(buf, "<a target=main href=query?getsingleepg&", maxlen, pos);
-	ostrcatbig(buf, serviceid, maxlen, pos);
-	ostrcatbig(buf, "&", maxlen, pos);
-	ostrcatbig(buf, transponderid, maxlen, pos);
-	ostrcatbig(buf, "><img style=\"margin-left: 5\" border=0 src=img/singleepg.png alt=\"Single EPG\" width=16 height=16></a>", maxlen, pos);
-
-	//m3u stream + webstream
-	if(ret == 0)
+	if(fmt == 0) 
 	{
-		ostrcatbig(buf, "<a target=nothing href=query?getm3u&", maxlen, pos);
-		ostrcatbig(buf, serviceid, maxlen, pos);
-		ostrcatbig(buf, ",", maxlen, pos);
-		ostrcatbig(buf, transponderid, maxlen, pos);
-		ostrcatbig(buf, "><img style=\"margin-left: 5\" border=0 src=img/stream.png alt=Stream width=16 height=16></a>", maxlen, pos);
+		if(chnode->servicetype == 0)
+			ostrcatbig(buf, "</td><td width=100 align=right valign=middle nowrap><img style=\"margin-left: 5\" border=0 src=img/tv.png alt=TV width=16 height=16>", maxlen, pos);
+		else
+			ostrcatbig(buf, "</td><td width=100 align=right valign=middle nowrap><img style=\"margin-left: 5\" border=0 src=img/radio.png alt=Radio width=16 height=16>", maxlen, pos);
 
-		ostrcatbig(buf, "<a target=_blank href=query?getvideo&", maxlen, pos);
+		//single epg
+		ostrcatbig(buf, "<a target=main href=query?getsingleepg&", maxlen, pos);
 		ostrcatbig(buf, serviceid, maxlen, pos);
-		ostrcatbig(buf, ",", maxlen, pos);
+		ostrcatbig(buf, "&", maxlen, pos);
 		ostrcatbig(buf, transponderid, maxlen, pos);
-		ostrcatbig(buf, "><img style=\"margin-left: 5\" border=0 src=img/webstream.png alt=WebStream width=16 height=16></a>", maxlen, pos);
+		ostrcatbig(buf, "><img style=\"margin-left: 5\" border=0 src=img/singleepg.png alt=\"Single EPG\" width=16 height=16></a>", maxlen, pos);
+
+		//m3u stream + webstream
+		if(ret == 0)
+		{
+			ostrcatbig(buf, "<a target=nothing href=query?getm3u&", maxlen, pos);
+			ostrcatbig(buf, serviceid, maxlen, pos);
+			ostrcatbig(buf, ",", maxlen, pos);
+			ostrcatbig(buf, transponderid, maxlen, pos);
+			ostrcatbig(buf, "><img style=\"margin-left: 5\" border=0 src=img/stream.png alt=Stream width=16 height=16></a>", maxlen, pos);
+
+			ostrcatbig(buf, "<a target=_blank href=query?getvideo&", maxlen, pos);
+			ostrcatbig(buf, serviceid, maxlen, pos);
+			ostrcatbig(buf, ",", maxlen, pos);
+			ostrcatbig(buf, transponderid, maxlen, pos);
+			ostrcatbig(buf, "><img style=\"margin-left: 5\" border=0 src=img/webstream.png alt=WebStream width=16 height=16></a>", maxlen, pos);
+		}
+		else
+			ostrcatbig(buf, "<img style=\"margin-left: 5\" border=0 src=img/cross.png alt=\"Channel not availabel\" width=16 height=16>", maxlen, pos);
+		ostrcatbig(buf, "</td></tr>", maxlen, pos);
 	}
-	else
-		ostrcatbig(buf, "<img style=\"margin-left: 5\" border=0 src=img/cross.png alt=\"Channel not availabel\" width=16 height=16>", maxlen, pos);
-	ostrcatbig(buf, "</td></tr>", maxlen, pos);
 
 	free(buf1);
 	free(serviceid);
 	free(transponderid);
 }
 
-char* webgetbouquetchannel(char* param)
+char* webgetbouquetchannel(char* param, int fmt)
 {
 	char* buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
 	struct mainbouquet *mbouquet = NULL;
@@ -254,7 +286,7 @@ char* webgetbouquetchannel(char* param)
 
 	if(param == NULL) return NULL;
 
-	webcreateheadbig(&buf, &maxlen, "<meta http-equiv=refresh content=15>", &pos, 0);
+	if(fmt == 0) webcreateheadbig(&buf, &maxlen, "<meta http-equiv=refresh content=15>", &pos, 0);
 
 	mbouquet = getmainbouquet(param);
 	if(mbouquet != NULL)
@@ -269,7 +301,7 @@ char* webgetbouquetchannel(char* param)
 			chnode = getchannel(node->serviceid, node->transponderid);
 			if(chnode != NULL)
 			{
-				webcreatechannelbody(&buf, line, chnode, tmpstr1, &maxlen, &pos, 0);
+				webcreatechannelbody(&buf, line, chnode, tmpstr1, &maxlen, &pos, 0, fmt);
 				if(line == 0)
 					line = 1;
 				else
@@ -279,7 +311,7 @@ char* webgetbouquetchannel(char* param)
 		}
 		free(tmpstr1); tmpstr1 = NULL;
 	}
-	webcreatetailbig(&buf, &maxlen, &pos, 0);
+	if(fmt == 0) webcreatetailbig(&buf, &maxlen, &pos, 0);
 
 	return buf;
 }
@@ -288,13 +320,13 @@ char* webgetbouquetchannel(char* param)
 //flag 1: sat
 //flag 2: provider
 //flag 3: A-Z
-char* webgetchannel(int param, int flag, int page)
+char* webgetchannel(int param, int flag, int page, int fmt)
 {
 	char* buf = NULL, *tmpnr = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
 	struct channel* chnode = channel;
 	int line = 0, maxcount = 0, maxlen = 0, pos = 0;
 
-	webcreateheadbig(&buf, &maxlen, "<meta http-equiv=refresh content=15>", &pos, 0);
+	if(fmt == 0) webcreateheadbig(&buf, &maxlen, "<meta http-equiv=refresh content=15>", &pos, 0);
 
 	if(flag == 0) tmpstr1 = ostrcat(tmpstr1, "(ALL)", 1, 0);
 	if(flag == 1)
@@ -363,7 +395,7 @@ char* webgetchannel(int param, int flag, int page)
 			chnode = chnode->next;
 			continue;
 		}
-		webcreatechannelbody(&buf, line, chnode, tmpstr1, &maxlen, &pos, 0);
+		webcreatechannelbody(&buf, line, chnode, tmpstr1, &maxlen, &pos, 0, fmt);
 
 		if(line == 0)
 			line = 1;
@@ -374,7 +406,7 @@ char* webgetchannel(int param, int flag, int page)
 	}
 	free(tmpstr); tmpstr = NULL;
 
-	if(maxcount > MAXHTMLLINE)
+	if(fmt == 0 && maxcount > MAXHTMLLINE)
 	{
 		int i;
 		ostrcatbig(&buf, "<tr><td align=center><br>", &maxlen, &pos);
@@ -403,87 +435,107 @@ char* webgetchannel(int param, int flag, int page)
 		ostrcatbig(&buf, "</td></tr>", &maxlen, &pos);
 	}
 
-	webcreatetailbig(&buf, &maxlen, &pos, 0);
+	if(fmt == 0) webcreatetailbig(&buf, &maxlen, &pos, 0);
 	return buf;
 }
 
-char* webgetprovider()
+char* webgetprovider(int fmt)
 {
 	char* buf = NULL, *tmpstr = NULL;
 	struct provider* node = provider;
 	int line = 0, maxlen = 0, pos = 0;
 
-	webcreateheadbig(&buf, &maxlen, NULL, &pos, 0);
+	if(fmt == 0) webcreateheadbig(&buf, &maxlen, NULL, &pos, 0);
 
 	while(node != NULL)
 	{
-		if(line == 0)
+		if(fmt == 0) 
 		{
-			ostrcatbig(&buf, "<tr class=line1><td nowrap><a class=link href=\"query?getproviderchannel&", &maxlen, &pos);
-			tmpstr = oitoa(node->providerid);
-			ostrcatbig(&buf, tmpstr, &maxlen, &pos);
-			free(tmpstr); tmpstr = NULL;
-			ostrcatbig(&buf, "\">", &maxlen, &pos);
-			line = 1;
+			if(line == 0)
+			{
+				ostrcatbig(&buf, "<tr class=line1><td nowrap><a class=link href=\"query?getproviderchannel&", &maxlen, &pos);
+				tmpstr = oitoa(node->providerid);
+				ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+				free(tmpstr); tmpstr = NULL;
+				ostrcatbig(&buf, "\">", &maxlen, &pos);
+				line = 1;
+			}
+			else
+			{
+				ostrcatbig(&buf, "<tr class=line2><td nowrap><a class=link href=\"query?getproviderchannel&", &maxlen, &pos);
+				tmpstr = oitoa(node->providerid);
+				ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+				free(tmpstr); tmpstr = NULL;
+				ostrcatbig(&buf, "\">", &maxlen, &pos);
+				line = 0;
+			}
+			ostrcatbig(&buf, node->name, &maxlen, &pos);
+			ostrcatbig(&buf, "</td></tr>", &maxlen, &pos);
 		}
 		else
 		{
-			ostrcatbig(&buf, "<tr class=line2><td nowrap><a class=link href=\"query?getproviderchannel&", &maxlen, &pos);
-			tmpstr = oitoa(node->providerid);
-			ostrcatbig(&buf, tmpstr, &maxlen, &pos);
-			free(tmpstr); tmpstr = NULL;
-			ostrcatbig(&buf, "\">", &maxlen, &pos);
-			line = 0;
+			buf = ostrcat(buf, node->name, 1, 0);
+			buf = ostrcat(buf, "#", 1, 0);
+			buf = ostrcat(buf, oitoa(node->providerid), 1, 1);
+			buf = ostrcat(buf, "\n", 1, 0);
 		}
-		ostrcatbig(&buf, node->name, &maxlen, &pos);
-		ostrcatbig(&buf, "</td></tr>", &maxlen, &pos);
 
 		node = node->next;
 	}
 
-	webcreatetailbig(&buf, &maxlen, &pos, 0);
+	if(fmt == 0) webcreatetailbig(&buf, &maxlen, &pos, 0);
 	return buf;
 }
 
-char* webgetsat()
+char* webgetsat(int fmt)
 {
 	char* buf = NULL, *tmpstr = NULL;
 	struct sat* node = sat;
 	int line = 0, maxlen = 0, pos = 0;
 
-	webcreateheadbig(&buf, &maxlen, NULL, &pos, 0);
+	if(fmt == 0) webcreateheadbig(&buf, &maxlen, NULL, &pos, 0);
 
 	while(node != NULL)
 	{
-		if(line == 0)
+		if(fmt == 0)
 		{
-			ostrcatbig(&buf, "<tr class=line1><td nowrap><a class=link href=\"query?getsatchannel&", &maxlen, &pos);
-			tmpstr = oitoa(node->orbitalpos);
-			ostrcatbig(&buf, tmpstr, &maxlen, &pos);
-			free(tmpstr); tmpstr = NULL;
-			ostrcatbig(&buf, "\">", &maxlen, &pos);
-			line = 1;
+			if(line == 0)
+			{
+				ostrcatbig(&buf, "<tr class=line1><td nowrap><a class=link href=\"query?getsatchannel&", &maxlen, &pos);
+				tmpstr = oitoa(node->orbitalpos);
+				ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+				free(tmpstr); tmpstr = NULL;
+				ostrcatbig(&buf, "\">", &maxlen, &pos);
+				line = 1;
+			}
+			else
+			{
+				ostrcatbig(&buf, "<tr class=line2><td nowrap><a class=link href=\"query?getsatchannel&", &maxlen, &pos);
+				tmpstr = oitoa(node->orbitalpos);
+				ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+				free(tmpstr); tmpstr = NULL;
+				ostrcatbig(&buf, "\">", &maxlen, &pos);
+				line = 0;
+			}
+			ostrcatbig(&buf, node->name, &maxlen, &pos);
+			ostrcatbig(&buf, "</td></tr>", &maxlen, &pos);
 		}
 		else
 		{
-			ostrcatbig(&buf, "<tr class=line2><td nowrap><a class=link href=\"query?getsatchannel&", &maxlen, &pos);
-			tmpstr = oitoa(node->orbitalpos);
-			ostrcatbig(&buf, tmpstr, &maxlen, &pos);
-			free(tmpstr); tmpstr = NULL;
-			ostrcatbig(&buf, "\">", &maxlen, &pos);
-			line = 0;
+			buf = ostrcat(buf, node->name, 1, 0);
+			buf = ostrcat(buf, "#", 1, 0);
+			buf = ostrcat(buf, oitoa(node->orbitalpos), 1, 1);
+			buf = ostrcat(buf, "\n", 1, 0);
 		}
-		ostrcatbig(&buf, node->name, &maxlen, &pos);
-		ostrcatbig(&buf, "</td></tr>", &maxlen, &pos);
 
 		node = node->next;
 	}
 
-	webcreatetailbig(&buf, &maxlen, &pos, 0);
+	if(fmt == 0) webcreatetailbig(&buf, &maxlen, &pos, 0);
 	return buf;
 }
 
-char* webgetaz()
+char* webgetaz(int fmt)
 {
 	char* buf = NULL, *tmpstr = NULL, *tmpnr = NULL;
 	int line = 0, maxlen = 0, pos = 0, i;
@@ -495,85 +547,104 @@ char* webgetaz()
 		return NULL;
 	}
 
-	webcreateheadbig(&buf, &maxlen, NULL, &pos, 0);
+	if(fmt == 0) webcreateheadbig(&buf, &maxlen, NULL, &pos, 0);
 
 	for(i = 65; i < 91; i++)
 	{
-		if(line == 0)
+		if(fmt == 0)
 		{
-			ostrcatbig(&buf, "<tr class=line1><td nowrap><a class=link href=\"query?getazchannel&", &maxlen, &pos);
-			tmpnr = oitoa(i);
-			ostrcatbig(&buf, tmpnr, &maxlen, &pos);
-			free(tmpnr); tmpnr = NULL;
-			ostrcatbig(&buf, "\">", &maxlen, &pos);
-			line = 1;
+			if(line == 0)
+			{
+				ostrcatbig(&buf, "<tr class=line1><td nowrap><a class=link href=\"query?getazchannel&", &maxlen, &pos);
+				tmpnr = oitoa(i);
+				ostrcatbig(&buf, tmpnr, &maxlen, &pos);
+				free(tmpnr); tmpnr = NULL;
+				ostrcatbig(&buf, "\">", &maxlen, &pos);
+				line = 1;
+			}
+			else
+			{
+				ostrcatbig(&buf, "<tr class=line2><td nowrap><a class=link href=\"query?getazchannel&", &maxlen, &pos);
+				tmpnr = oitoa(i);
+				ostrcatbig(&buf, tmpnr, &maxlen, &pos);
+				free(tmpnr); tmpnr = NULL;
+				ostrcatbig(&buf, "\">", &maxlen, &pos);
+				line = 0;
+			}
+			snprintf(tmpstr, 2, "%c", i);
+			ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+			ostrcatbig(&buf, "</td></tr>", &maxlen, &pos);
 		}
 		else
 		{
-			ostrcatbig(&buf, "<tr class=line2><td nowrap><a class=link href=\"query?getazchannel&", &maxlen, &pos);
-			tmpnr = oitoa(i);
-			ostrcatbig(&buf, tmpnr, &maxlen, &pos);
-			free(tmpnr); tmpnr = NULL;
-			ostrcatbig(&buf, "\">", &maxlen, &pos);
-			line = 0;
+			snprintf(tmpstr, 2, "%c", i);
+			buf = ostrcat(buf, tmpstr, 1, 0);
+			buf = ostrcat(buf, "\n", 1, 0);
 		}
-		snprintf(tmpstr, 2, "%c", i);
-		ostrcatbig(&buf, tmpstr, &maxlen, &pos);
-		ostrcatbig(&buf, "</td></tr>", &maxlen, &pos);
 	}
 
-	webcreatetailbig(&buf, &maxlen, &pos, 0);
+	if(fmt == 0) webcreatetailbig(&buf, &maxlen, &pos, 0);
 	free(tmpstr);
 	return buf;
 }
 
-char* webgetbouquet()
+char* webgetbouquet(int fmt)
 {
 	char* buf = NULL;
 	struct mainbouquet* node = mainbouquet;
 	int line = 0, maxlen = 0, pos = 0;
 
-	webcreateheadbig(&buf, &maxlen, NULL, &pos, 0);
+	if(fmt == 0) webcreateheadbig(&buf, &maxlen, NULL, &pos, 0);
 
 	while(node != NULL)
 	{
-		if(line == 0)
+		if(fmt == 0)
 		{
-			ostrcatbig(&buf, "<tr class=line1><td width=100% nowrap><a class=link href=\"query?getbouquetchannel&", &maxlen, &pos);
+			if(line == 0)
+			{
+				ostrcatbig(&buf, "<tr class=line1><td width=100% nowrap><a class=link href=\"query?getbouquetchannel&", &maxlen, &pos);
+				ostrcatbig(&buf, node->name, &maxlen, &pos);
+				ostrcatbig(&buf, "\">", &maxlen, &pos);
+				line = 1;
+			}
+			else
+			{
+				ostrcatbig(&buf, "<tr class=line2><td width=100% nowrap><a class=link href=\"query?getbouquetchannel&", &maxlen, &pos);
+				ostrcatbig(&buf, node->name, &maxlen, &pos);
+				ostrcatbig(&buf, "\">", &maxlen, &pos);
+				line = 0;
+			}
+			ostrcatbig(&buf, node->name, &maxlen, &pos);
+			ostrcatbig(&buf, "</a></td>", &maxlen, &pos);
+
+			ostrcatbig(&buf, "<td width=50 nowrap align=right valign=middle><img style=\"margin-left: 5\" border=0 src=", &maxlen, &pos);
+
+			if(node->type == 0)
+				ostrcatbig(&buf, "img/tv.png width=16 height=16 alt=TV>", &maxlen, &pos);
+			else
+				ostrcatbig(&buf, "img/radio.png width=16 height=16 alt=Radio>", &maxlen, &pos);
+			ostrcatbig(&buf, "<a href=\"query?getgmultiepg&", &maxlen, &pos);
 			ostrcatbig(&buf, node->name, &maxlen, &pos);
 			ostrcatbig(&buf, "\">", &maxlen, &pos);
-			line = 1;
+			ostrcatbig(&buf, "<img style=\"margin-left: 5\" border=0 width=16 height=16 alt=\"Graphical Multi EPG\" src=img/gmultiepg.png></a>", &maxlen, &pos);
+			ostrcatbig(&buf, "</td></tr>", &maxlen, &pos);
 		}
 		else
 		{
-			ostrcatbig(&buf, "<tr class=line2><td width=100% nowrap><a class=link href=\"query?getbouquetchannel&", &maxlen, &pos);
-			ostrcatbig(&buf, node->name, &maxlen, &pos);
-			ostrcatbig(&buf, "\">", &maxlen, &pos);
-			line = 0;
+			buf = ostrcat(buf, node->name, 1, 0);
+			buf = ostrcat(buf, "#", 1, 0);
+			buf = ostrcat(buf, oitoa(node->type), 1, 1);
+			buf = ostrcat(buf, "\n", 1, 0);
 		}
-		ostrcatbig(&buf, node->name, &maxlen, &pos);
-		ostrcatbig(&buf, "</a></td>", &maxlen, &pos);
-
-		ostrcatbig(&buf, "<td width=50 nowrap align=right valign=middle><img style=\"margin-left: 5\" border=0 src=", &maxlen, &pos);
-
-		if(node->type == 0)
-			ostrcatbig(&buf, "img/tv.png width=16 height=16 alt=TV>", &maxlen, &pos);
-		else
-			ostrcatbig(&buf, "img/radio.png width=16 height=16 alt=Radio>", &maxlen, &pos);
-		ostrcatbig(&buf, "<a href=\"query?getgmultiepg&", &maxlen, &pos);
-		ostrcatbig(&buf, node->name, &maxlen, &pos);
-		ostrcatbig(&buf, "\">", &maxlen, &pos);
-		ostrcatbig(&buf, "<img style=\"margin-left: 5\" border=0 width=16 height=16 alt=\"Graphical Multi EPG\" src=img/gmultiepg.png></a>", &maxlen, &pos);
-		ostrcatbig(&buf, "</td></tr>", &maxlen, &pos);
 
 		node = node->next;
 	}
 
-	webcreatetailbig(&buf, &maxlen, &pos, 0);
+	if(fmt == 0) webcreatetailbig(&buf, &maxlen, &pos, 0);
 	return buf;
 }
 
-char* websetmute(char* param)
+char* websetmute(char* param, int fmt)
 {
 	char* buf = NULL;
 	int mute = status.mute;
@@ -581,12 +652,22 @@ char* websetmute(char* param)
 	if(param != NULL)
 		mute = atoi(param);
 
-	buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=stylesheet type=text/css href=titan.css></head><body class=body><center>", 1, 0);
-	if(mute == 0)
-		buf = ostrcat(buf, "<a href=query?setmute&1><img src=img/speak_on.png border=0 alt=\"Mute on\"></img></a>", 1, 0);
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=stylesheet type=text/css href=titan.css></head><body class=body><center>", 1, 0);
+		if(mute == 0)
+			buf = ostrcat(buf, "<a href=query?setmute&1><img src=img/speak_on.png border=0 alt=\"Mute on\"></img></a>", 1, 0);
+		else
+			buf = ostrcat(buf, "<a href=query?setmute&0><img src=img/speak_off.png border=0 alt=\"Mute off\"></img></a>", 1, 0);
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+	}
 	else
-		buf = ostrcat(buf, "<a href=query?setmute&0><img src=img/speak_off.png border=0 alt=\"Mute off\"></img></a>", 1, 0);
-	buf = ostrcat(buf, "</center></body></html>", 1, 0);
+	{
+		if(mute == 0)
+			buf = ostrcat(buf, "0", 1, 0);
+		else
+			buf = ostrcat(buf, "1", 1, 0);
+	}
 
 	if(mute != status.mute)
 		screenmute(NULL, NULL, 0);
@@ -594,7 +675,7 @@ char* websetmute(char* param)
 	return buf;
 }
 
-char* websetvol(char* param)
+char* websetvol(char* param, int fmt)
 {
 	char* buf = NULL;
 	int vol = 30;
@@ -604,48 +685,53 @@ char* websetvol(char* param)
 	else
 		vol = atoi(param);
 
-	buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=stylesheet type=text/css href=titan.css></head><body class=body><center>", 1, 0);
-	if(vol >=10)
-		buf = ostrcat(buf, "<a href=query?setvol&10><img src=img/led_on.png border=0></img></a> ", 1, 0);
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=stylesheet type=text/css href=titan.css></head><body class=body><center>", 1, 0);
+		if(vol >=10)
+			buf = ostrcat(buf, "<a href=query?setvol&10><img src=img/led_on.png border=0></img></a> ", 1, 0);
+		else
+			buf = ostrcat(buf, "<a href=query?setvol&10><img src=img/led_off.png border=0></img></a> ", 1, 0);
+		if(vol >=20)
+			buf = ostrcat(buf, "<a href=query?setvol&20><img src=img/led_on.png border=0></img></a> ", 1, 0);
+		else
+			buf = ostrcat(buf, "<a href=query?setvol&20><img src=img/led_off.png border=0></img></a> ", 1, 0);
+		if(vol >=30)
+			buf = ostrcat(buf, "<a href=query?setvol&30><img src=img/led_on.png border=0></img></a> ", 1, 0);
+		else
+			buf = ostrcat(buf, "<a href=query?setvol&30><img src=img/led_off.png border=0></img></a> ", 1, 0);
+		if(vol >=40)
+			buf = ostrcat(buf, "<a href=query?setvol&40><img src=img/led_on.png border=0></img></a> ", 1, 0);
+		else
+			buf = ostrcat(buf, "<a href=query?setvol&40><img src=img/led_off.png border=0></img></a> ", 1, 0);
+		if(vol >=50)
+			buf = ostrcat(buf, "<a href=query?setvol&50><img src=img/led_on.png border=0></img></a> ", 1, 0);
+		else
+			buf = ostrcat(buf, "<a href=query?setvol&50><img src=img/led_off.png border=0></img></a> ", 1, 0);
+		if(vol >=60)
+			buf = ostrcat(buf, "<a href=query?setvol&60><img src=img/led_on.png border=0></img></a> ", 1, 0);
+		else
+			buf = ostrcat(buf, "<a href=query?setvol&60><img src=img/led_off.png border=0></img></a> ", 1, 0);
+		if(vol >=70)
+			buf = ostrcat(buf, "<a href=query?setvol&70><img src=img/led_on.png border=0></img></a> ", 1, 0);
+		else
+			buf = ostrcat(buf, "<a href=query?setvol&70><img src=img/led_off.png border=0></img></a> ", 1, 0);
+		if(vol >=80)
+			buf = ostrcat(buf, "<a href=query?setvol&80><img src=img/led_on.png border=0></img></a> ", 1, 0);
+		else
+			buf = ostrcat(buf, "<a href=query?setvol&80><img src=img/led_off.png border=0></img></a> ", 1, 0);
+		if(vol >=90)
+			buf = ostrcat(buf, "<a href=query?setvol&90><img src=img/led_on.png border=0></img></a> ", 1, 0);
+		else
+			buf = ostrcat(buf, "<a href=query?setvol&90><img src=img/led_off.png border=0></img></a> ", 1, 0);
+		if(vol >=100)
+			buf = ostrcat(buf, "<a href=query?setvol&100><img src=img/led_on.png border=0></img></a> ", 1, 0);
+		else
+			buf = ostrcat(buf, "<a href=query?setvol&100><img src=img/led_off.png border=0></img></a> ", 1, 0);
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+	}
 	else
-		buf = ostrcat(buf, "<a href=query?setvol&10><img src=img/led_off.png border=0></img></a> ", 1, 0);
-	if(vol >=20)
-		buf = ostrcat(buf, "<a href=query?setvol&20><img src=img/led_on.png border=0></img></a> ", 1, 0);
-	else
-		buf = ostrcat(buf, "<a href=query?setvol&20><img src=img/led_off.png border=0></img></a> ", 1, 0);
-	if(vol >=30)
-		buf = ostrcat(buf, "<a href=query?setvol&30><img src=img/led_on.png border=0></img></a> ", 1, 0);
-	else
-		buf = ostrcat(buf, "<a href=query?setvol&30><img src=img/led_off.png border=0></img></a> ", 1, 0);
-	if(vol >=40)
-		buf = ostrcat(buf, "<a href=query?setvol&40><img src=img/led_on.png border=0></img></a> ", 1, 0);
-	else
-		buf = ostrcat(buf, "<a href=query?setvol&40><img src=img/led_off.png border=0></img></a> ", 1, 0);
-	if(vol >=50)
-		buf = ostrcat(buf, "<a href=query?setvol&50><img src=img/led_on.png border=0></img></a> ", 1, 0);
-	else
-		buf = ostrcat(buf, "<a href=query?setvol&50><img src=img/led_off.png border=0></img></a> ", 1, 0);
-	if(vol >=60)
-		buf = ostrcat(buf, "<a href=query?setvol&60><img src=img/led_on.png border=0></img></a> ", 1, 0);
-	else
-		buf = ostrcat(buf, "<a href=query?setvol&60><img src=img/led_off.png border=0></img></a> ", 1, 0);
-	if(vol >=70)
-		buf = ostrcat(buf, "<a href=query?setvol&70><img src=img/led_on.png border=0></img></a> ", 1, 0);
-	else
-		buf = ostrcat(buf, "<a href=query?setvol&70><img src=img/led_off.png border=0></img></a> ", 1, 0);
-	if(vol >=80)
-		buf = ostrcat(buf, "<a href=query?setvol&80><img src=img/led_on.png border=0></img></a> ", 1, 0);
-	else
-		buf = ostrcat(buf, "<a href=query?setvol&80><img src=img/led_off.png border=0></img></a> ", 1, 0);
-	if(vol >=90)
-		buf = ostrcat(buf, "<a href=query?setvol&90><img src=img/led_on.png border=0></img></a> ", 1, 0);
-	else
-		buf = ostrcat(buf, "<a href=query?setvol&90><img src=img/led_off.png border=0></img></a> ", 1, 0);
-	if(vol >=100)
-		buf = ostrcat(buf, "<a href=query?setvol&100><img src=img/led_on.png border=0></img></a> ", 1, 0);
-	else
-		buf = ostrcat(buf, "<a href=query?setvol&100><img src=img/led_off.png border=0></img></a> ", 1, 0);
-	buf = ostrcat(buf, "</center></body></html>", 1, 0);
+		buf = ostrcat(buf, oitoa(vol), 1, 1);
 
 	if(param != NULL)
 	{
@@ -656,20 +742,20 @@ char* websetvol(char* param)
 	return buf;
 }
 
-char* webgetaktservice()
+char* webgetaktservice(int fmt)
 {
 	char* buf = NULL;
 	struct channel* chnode = status.aktservice->channel;
 	int line = 0, maxlen = 0, pos = 0;
 
-	webcreateheadbig(&buf, &maxlen, NULL, &pos, 1);
-	webcreatechannelbody(&buf, line, chnode, getconfig("channellist", NULL), &maxlen, &pos ,1);
-	webcreatetailbig(&buf, &maxlen, &pos, 1);
+	if(fmt == 0) webcreateheadbig(&buf, &maxlen, NULL, &pos, 1);
+	webcreatechannelbody(&buf, line, chnode, getconfig("channellist", NULL), &maxlen, &pos ,1, fmt);
+	if(fmt == 0) webcreatetailbig(&buf, &maxlen, &pos, 1);
 
 	return buf;
 }
 
-char* webswitch(char* param)
+char* webswitch(char* param, int fmt)
 {
 	if(status.channelswitch == 1) goto end;
 
@@ -700,10 +786,10 @@ char* webswitch(char* param)
 	}
 
 end:
-	return webgetaktservice();
+	return webgetaktservice(fmt);
 }
 
-char* webgetm3u(char* param, int connfd)
+char* webgetm3u(char* param, int connfd, int fmt)
 {
 	char* buf = NULL, *ip = NULL, *tmpbuf = NULL;
 	struct sockaddr_in sin;
@@ -738,7 +824,7 @@ char* webgetm3u(char* param, int connfd)
 	return buf;
 }
 
-char* webgetvideo(char* param, int connfd)
+char* webgetvideo(char* param, int connfd, int fmt)
 {
 	char* buf = NULL, *ip = NULL, *tmpbuf = NULL;
 	struct sockaddr_in sin;
@@ -755,8 +841,14 @@ char* webgetvideo(char* param, int connfd)
 	ip = inet_ntoa(sin.sin_addr);
 	if(ip == NULL) return NULL;
 
-	buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=stylesheet type=text/css href=titan.css></head><body class=body><table border=0 width=100% height=100%><tr><td align=center valign=middle>", 1, 0);
-	buf = ostrcat(buf, "<embed width=100% height=100% type=application/x-vlc-plugin name=video autoplay=yes target=\"http://", 1, 0);
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=stylesheet type=text/css href=titan.css></head><body class=body><table border=0 width=100% height=100%><tr><td align=center valign=middle>", 1, 0);
+		buf = ostrcat(buf, "<embed width=100% height=100% type=application/x-vlc-plugin name=video autoplay=yes target=\"http://", 1, 0);
+	}
+	else
+		buf = ostrcat(buf, "http://", 1, 0);
+
 	buf = ostrcat(buf, ip, 1, 0);
 	buf = ostrcat(buf, ":", 1, 0);
 	buf = ostrcat(buf, getconfig("streamport", NULL), 1, 0);
@@ -768,16 +860,20 @@ char* webgetvideo(char* param, int connfd)
 
 	buf = ostrcat(buf, param, 1, 0);
 	free(tmpbuf); tmpbuf = NULL;
-	buf = ostrcat(buf, "\" />", 1, 0);
-	//buf = ostrcat(buf, "<a href=javascript:; onclick='document.video.play()'>Play</a>", 1, 0);
-	//buf = ostrcat(buf, "<a href=javascript:; onclick='document.video.stop()'>Stop</a>", 1, 0);
-	//buf = ostrcat(buf, "<a href=javascript:; onclick='document.video.fullscreen()'>Fullscreen</a>", 1, 0);
-	buf = ostrcat(buf, "</td></tr></body></html>", 1, 0);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "\" />", 1, 0);
+		//buf = ostrcat(buf, "<a href=javascript:; onclick='document.video.play()'>Play</a>", 1, 0);
+		//buf = ostrcat(buf, "<a href=javascript:; onclick='document.video.stop()'>Stop</a>", 1, 0);
+		//buf = ostrcat(buf, "<a href=javascript:; onclick='document.video.fullscreen()'>Fullscreen</a>", 1, 0);
+		buf = ostrcat(buf, "</td></tr></body></html>", 1, 0);
+	}
 
 	return buf;
 }
 
-char* webgetchannelpage(char* param)
+char* webgetchannelpage(char* param, int fmt)
 {
 	char* param1 = NULL, *param2 = NULL;
 
@@ -795,7 +891,7 @@ char* webgetchannelpage(char* param)
 
 	if(param1 == NULL || param2 == NULL) return NULL;
 
-	return webgetchannel(atoi(param), atoi(param1), atoi(param2));
+	return webgetchannel(atoi(param), atoi(param1), atoi(param2), fmt);
 }
 
 void webmessage(struct stimerthread* timernode, char* text, int flag)
@@ -804,7 +900,7 @@ void webmessage(struct stimerthread* timernode, char* text, int flag)
 	free(text);
 }
 
-char* websendmessage(char* param)
+char* websendmessage(char* param, int fmt)
 {
 	char* text = NULL, *buf = NULL;
 
@@ -818,14 +914,19 @@ char* websendmessage(char* param)
 	}
 	addtimer(&webmessage, START, 1000, 1, (void*)text, NULL, NULL);
 
-	buf = webcreatehead(buf, NULL, 1);
-	buf = ostrcat(buf, "<tr><td align=center valign=top><font class=biglabel><br><br>Message Send !!!</font></td></tr>", 1, 0);
-	buf = webcreatetail(buf, 1);
-
+	if(fmt == 0)
+	{
+		buf = webcreatehead(buf, NULL, 1);
+		buf = ostrcat(buf, "<tr><td align=center valign=top><font class=biglabel><br><br>Message Send !!!</font></td></tr>", 1, 0);
+		buf = webcreatetail(buf, 1);
+	}
+	else
+		buf = ostrcat(buf, "Message Send", 1, 0);
+		
 	return buf;
 }
 
-char* webgetsignal()
+char* webgetsignal(int fmt)
 {
 	char* buf = NULL, *tmpnr = NULL;
 	uint16_t snr = 0, signal = 0;
@@ -837,34 +938,48 @@ char* webgetsignal()
 	snr = fereadsnr(status.aktservice->fedev);
         snr = (snr * 100) / 0xffff;
 
-	buf = webcreatehead(buf, "<meta http-equiv=refresh content=1>", 0);
+	if(fmt == 0)
+	{
+		buf = webcreatehead(buf, "<meta http-equiv=refresh content=1>", 0);
 
-	buf = ostrcat(buf, "<tr><td align=center><font class=biglabel><br><br>BER: ", 1, 0);
-	tmpnr = oitoa(ber);
-	buf = ostrcat(buf, tmpnr, 1, 0);
-	free(tmpnr); tmpnr = NULL;
+		buf = ostrcat(buf, "<tr><td align=center><font class=biglabel><br><br>BER: ", 1, 0);
+		tmpnr = oitoa(ber);
+		buf = ostrcat(buf, tmpnr, 1, 0);
+		free(tmpnr); tmpnr = NULL;
 
-	buf = ostrcat(buf, "<br>UNC: ", 1, 0);
-	tmpnr = oitoa(unc);
-	buf = ostrcat(buf, tmpnr, 1, 0);
-	free(tmpnr); tmpnr = NULL;
+		buf = ostrcat(buf, "<br>UNC: ", 1, 0);
+		tmpnr = oitoa(unc);
+		buf = ostrcat(buf, tmpnr, 1, 0);
+		free(tmpnr); tmpnr = NULL;
 
-	buf = ostrcat(buf, "<br>SIG: ", 1, 0);
-	tmpnr = oitoa(signal);
-	buf = ostrcat(buf, tmpnr, 1, 0);
-	free(tmpnr); tmpnr = NULL;
+		buf = ostrcat(buf, "<br>SIG: ", 1, 0);
+		tmpnr = oitoa(signal);
+		buf = ostrcat(buf, tmpnr, 1, 0);
+		free(tmpnr); tmpnr = NULL;
 
-	buf = ostrcat(buf, "<br>SNR: ", 1, 0);
-	tmpnr = oitoa(snr);
-	buf = ostrcat(buf, tmpnr, 1, 0);
-	free(tmpnr); tmpnr = NULL;
+		buf = ostrcat(buf, "<br>SNR: ", 1, 0);
+		tmpnr = oitoa(snr);
+		buf = ostrcat(buf, tmpnr, 1, 0);
+		free(tmpnr); tmpnr = NULL;
 
-	buf = ostrcat(buf, "</font></td></tr>", 1, 0);
-	buf = webcreatetail(buf, 0);
+		buf = ostrcat(buf, "</font></td></tr>", 1, 0);
+		buf = webcreatetail(buf, 0);
+	}
+	else
+	{
+		buf = ostrcat(buf, oitoa(ber), 1, 1);
+		buf = ostrcat(buf, "#", 1, 0);
+		buf = ostrcat(buf, oitoa(unc), 1, 1);
+		buf = ostrcat(buf, "#", 1, 0);
+		buf = ostrcat(buf, oitoa(signal), 1, 1);
+		buf = ostrcat(buf, "#", 1, 0);
+		buf = ostrcat(buf, oitoa(snr), 1, 1);
+	}
+
 	return buf;
 }
 
-char* webgetepg(char* param)
+char* webgetepg(char* param, int fmt)
 {
 	char* buf = NULL, *buf1 = NULL, *tmpstr = NULL, *param1 = NULL, *param2 = NULL;
 	struct epg* epgnode = NULL;
@@ -891,7 +1006,7 @@ char* webgetepg(char* param)
 	epgnode = getepg(chnode, atoi(param2), 0);
 	if(epgnode == NULL) return NULL;
 
-	buf = webcreatehead(buf, NULL, 0);
+	if(fmt == 0) buf = webcreatehead(buf, NULL, 0);
 
 	buf1 = malloc(MINMALLOC);
 	if(buf1 == NULL)
@@ -900,43 +1015,66 @@ char* webgetepg(char* param)
 		return buf;
 	}
 
-	buf = ostrcat(buf, "<tr><td><font class=biglabel>", 1, 0);
+	if(fmt == 0) buf = ostrcat(buf, "<tr><td><font class=biglabel>", 1, 0);
 	if(epgnode->title != NULL)
 	{
 		buf = ostrcat(buf, epgnode->title, 1, 0);
-		buf = ostrcat(buf, " (", 1, 0);
-		loctime = olocaltime(&epgnode->starttime);
-		if(loctime != NULL)
-			strftime(buf1, MINMALLOC, "%H:%M -", loctime);
-		free(loctime); loctime = NULL;
-		loctime = olocaltime(&epgnode->endtime);
-		if(loctime != NULL)
-			strftime(&buf1[7], MINMALLOC - 8, " %H:%M", loctime);
-		free(loctime); loctime = NULL;
-		buf = ostrcat(buf, buf1, 1, 0);
-		buf = ostrcat(buf, ")", 1, 0);
+		if(fmt == 0)
+		{
+			buf = ostrcat(buf, " (", 1, 0);
+			loctime = olocaltime(&epgnode->starttime);
+			if(loctime != NULL)
+				strftime(buf1, MINMALLOC, "%H:%M -", loctime);
+			free(loctime); loctime = NULL;
+			loctime = olocaltime(&epgnode->endtime);
+			if(loctime != NULL)
+				strftime(&buf1[7], MINMALLOC - 8, " %H:%M", loctime);
+			free(loctime); loctime = NULL;
+			buf = ostrcat(buf, buf1, 1, 0);
+			buf = ostrcat(buf, ")", 1, 0);
+		}
 	}
-	buf = ostrcat(buf, "<br><br></font></td></tr>", 1, 0);
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "<br><br></font></td></tr>", 1, 0);
+		buf = ostrcat(buf, "<tr><td><font class=label>", 1, 0);
+	}
+	else
+	{
+		buf = ostrcat(buf, "#", 1, 0);
+		buf = ostrcat(buf, olutoa(epgnode->starttime), 1, 1);
+		buf = ostrcat(buf, "#", 1, 0);
+		buf = ostrcat(buf, olutoa(epgnode->endtime), 1, 1);
+		buf = ostrcat(buf, "#", 1, 0);
+	}
 
-	buf = ostrcat(buf, "<tr><td><font class=label>", 1, 0);
 	if(epgnode->subtitle != NULL)
 		buf = ostrcat(buf, epgnode->subtitle, 1, 0);
-	buf = ostrcat(buf, "<br><br></font></td></tr>", 1, 0);
 
-	buf = ostrcat(buf, "<tr><td><font class=label>", 1, 0);
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<br><br></font></td></tr>", 1, 0);
+		buf = ostrcat(buf, "<tr><td><font class=label>", 1, 0);
+	}
+	else
+		buf = ostrcat(buf, "#", 1, 0);
+
 	tmpstr = epgdescunzip(epgnode);
 	if(tmpstr != NULL)
 		buf = ostrcat(buf, tmpstr, 1, 0);
 	free(tmpstr); tmpstr = NULL;
-	buf = ostrcat(buf, "</font></td></tr>", 1, 0);
 
-	buf = webcreatetail(buf, 0);
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</font></td></tr>", 1, 0);
+		buf = webcreatetail(buf, 0);
+	}
 
 	free(buf1);
 	return buf;
 }
 
-char* webgetsingleepg(char* param)
+char* webgetsingleepg(char* param, int fmt)
 {
 	int line = 0, maxlen = 0, pos = 0;
 	char* buf = NULL, *buf1 = NULL, *buf2 = NULL, *param1 = NULL, *tmpstr = NULL;
@@ -955,7 +1093,7 @@ char* webgetsingleepg(char* param)
 	if(chnode == NULL) return NULL;
 	epgnode = getepgakt(chnode);;
 
-	webcreateheadbig(&buf, &maxlen, NULL, &pos, 0);
+	if(fmt == 0) webcreateheadbig(&buf, &maxlen, NULL, &pos, 0);
 
 	buf1 = malloc(MINMALLOC);
 	if(buf1 == NULL)
@@ -966,66 +1104,80 @@ char* webgetsingleepg(char* param)
 
 	while(epgnode != NULL)
 	{
-		if(line == 0)
+		if(fmt == 0)
 		{
-			ostrcatbig(&buf, "<tr class=line1>", &maxlen, &pos);
-			line = 1;
+			if(line == 0)
+			{
+				ostrcatbig(&buf, "<tr class=line1>", &maxlen, &pos);
+				line = 1;
+			}
+			else
+			{
+				ostrcatbig(&buf, "<tr class=line2>", &maxlen, &pos);
+				line = 0;
+			}
+
+			ostrcatbig(&buf, "<td nowrap><a target=main class=link href=query?getepg&", &maxlen, &pos);
+			tmpstr = oitoa(chnode->serviceid);
+			ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+			buf2 = ostrcat("<td nowrap><a target=main class=link href=query?addrectimer&",tmpstr, 0, 0);
+			buf2 = ostrcat(buf2, "&", 0, 0);
+			free(tmpstr); tmpstr = NULL;
+			ostrcatbig(&buf, "&", &maxlen, &pos);
+			tmpstr = olutoa(chnode->transponderid);
+			ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+			buf2 = ostrcat(buf2, tmpstr, 0, 0);
+			buf2 = ostrcat(buf2, "&", 0, 0);
+			free(tmpstr); tmpstr = NULL;
+			ostrcatbig(&buf, "&", &maxlen, &pos);
+			tmpstr = oitoa(epgnode->eventid);
+			ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+			buf2 = ostrcat(buf2, tmpstr, 0, 0);
+			buf2 = ostrcat(buf2, ">", 0, 0);
+			free(tmpstr); tmpstr = NULL;
+			ostrcatbig(&buf, ">", &maxlen, &pos);
+
+			loctime = olocaltime(&epgnode->starttime);
+			if(loctime != NULL)
+			strftime(buf1, MINMALLOC, "%d.%m _ %H:%M __ ", loctime);
+			//strftime(buf1, MINMALLOC, "%H:%M -", loctime);
+			free(loctime); loctime = NULL;
+			//loctime = olocaltime(&epgnode->endtime);
+			//if(loctime != NULL)
+			//	strftime(&buf1[7], MINMALLOC - 8, " %H:%M ", loctime);
+			//free(loctime); loctime = NULL;
+			ostrcatbig(&buf, buf1, &maxlen, &pos);
+			ostrcatbig(&buf, " ", &maxlen, &pos);
+			ostrcatbig(&buf, epgnode->title, &maxlen, &pos);
+			if(epgnode->subtitle != NULL)
+			{
+				ostrcatbig(&buf, " (", &maxlen, &pos);
+				ostrcatbig(&buf, epgnode->subtitle, &maxlen, &pos);
+				ostrcatbig(&buf, ")", &maxlen, &pos);
+			}
+
+			ostrcatbig(&buf, "</a></td>", &maxlen, &pos);
+			ostrcatbig(&buf, buf2, &maxlen, &pos);
+			ostrcatbig(&buf, "<img border=0 width=16 height=16 src=img/timer.png alt=\"set timer\"/>", &maxlen, &pos);
+			ostrcatbig(&buf, "</a></td></tr>", &maxlen, &pos);
 		}
 		else
 		{
-			ostrcatbig(&buf, "<tr class=line2>", &maxlen, &pos);
-			line = 0;
+			buf = ostrcat(buf, epgnode->title, 1, 0);
+			buf = ostrcat(buf, "#", 1, 0);
+			buf = ostrcat(buf, olutoa(epgnode->starttime), 1, 1);
+			buf = ostrcat(buf, "#", 1, 0);
+			buf = ostrcat(buf, olutoa(epgnode->endtime), 1, 1);
+			buf = ostrcat(buf, "#", 1, 0);
+			buf = ostrcat(buf, epgnode->subtitle, 1, 0);
+			buf = ostrcat(buf, "\n", 1, 0);
 		}
-
-
-		ostrcatbig(&buf, "<td nowrap><a target=main class=link href=query?getepg&", &maxlen, &pos);
-		tmpstr = oitoa(chnode->serviceid);
-		ostrcatbig(&buf, tmpstr, &maxlen, &pos);
-		buf2 = ostrcat("<td nowrap><a target=main class=link href=query?addrectimer&",tmpstr, 0, 0);
-		buf2 = ostrcat(buf2, "&", 0, 0);
-		free(tmpstr); tmpstr = NULL;
-		ostrcatbig(&buf, "&", &maxlen, &pos);
-		tmpstr = olutoa(chnode->transponderid);
-		ostrcatbig(&buf, tmpstr, &maxlen, &pos);
-		buf2 = ostrcat(buf2, tmpstr, 0, 0);
-		buf2 = ostrcat(buf2, "&", 0, 0);
-		free(tmpstr); tmpstr = NULL;
-		ostrcatbig(&buf, "&", &maxlen, &pos);
-		tmpstr = oitoa(epgnode->eventid);
-		ostrcatbig(&buf, tmpstr, &maxlen, &pos);
-		buf2 = ostrcat(buf2, tmpstr, 0, 0);
-		buf2 = ostrcat(buf2, ">", 0, 0);
-		free(tmpstr); tmpstr = NULL;
-		ostrcatbig(&buf, ">", &maxlen, &pos);
-
-		loctime = olocaltime(&epgnode->starttime);
-		if(loctime != NULL)
-			strftime(buf1, MINMALLOC, "%d.%m _ %H:%M __ ", loctime);
-			//strftime(buf1, MINMALLOC, "%H:%M -", loctime);
-		free(loctime); loctime = NULL;
-		//loctime = olocaltime(&epgnode->endtime);
-		//if(loctime != NULL)
-		//	strftime(&buf1[7], MINMALLOC - 8, " %H:%M ", loctime);
-		//free(loctime); loctime = NULL;
-		ostrcatbig(&buf, buf1, &maxlen, &pos);
-		ostrcatbig(&buf, " ", &maxlen, &pos);
-		ostrcatbig(&buf, epgnode->title, &maxlen, &pos);
-		if(epgnode->subtitle != NULL)
-		{
-			ostrcatbig(&buf, " (", &maxlen, &pos);
-			ostrcatbig(&buf, epgnode->subtitle, &maxlen, &pos);
-			ostrcatbig(&buf, ")", &maxlen, &pos);
-		}
-		ostrcatbig(&buf, "</a></td>", &maxlen, &pos);
-		ostrcatbig(&buf, buf2, &maxlen, &pos);
-		ostrcatbig(&buf, "<img border=0 width=16 height=16 src=img/timer.png alt=\"set timer\"/>", &maxlen, &pos);
-		ostrcatbig(&buf, "</a></td></tr>", &maxlen, &pos);
 	
 		epgnode = epgnode->next;
 		free(buf2); buf2 = NULL;
 	}
 
-	webcreatetailbig(&buf, &maxlen, &pos, 0);
+	if(fmt == 0) webcreatetailbig(&buf, &maxlen, &pos, 0);
 
 	free(buf1);
 	return buf;
@@ -1037,7 +1189,7 @@ void webcalcrecline(char** buf, int* maxlen, int* pos)
 	//ostrcatbig(buf, "<table border=0 cellpadding=0 cellspacing=0 style=\"table-layout: fixed\"><tr><td width=500 style=\"background-color: c0c0c0; height: 2; border-left: 2px solid #303030;\"></td></tr></table>", maxlen, pos);
 }
 
-char* webgetgmultiepg(char* param)
+char* webgetgmultiepg(char* param, int fmt)
 {
 	int page = 1, i, line = 0, treffer = 0, maxlen = 0, pos = 0;
 	char* buf = NULL, *tmpnr = NULL, *param1 = NULL;
@@ -1204,7 +1356,7 @@ char* webgetgmultiepg(char* param)
 	return buf;
 }
 
-void webgetshoot(char* param)
+void webgetshoot(char* param, int fmt)
 {
 	char* cmd = NULL, *tmpstr = NULL;
 
@@ -1230,7 +1382,7 @@ void webgetshoot(char* param)
 	free(cmd);
 }
 
-char* webgetepgsearch(char* query, char* param)
+char* webgetepgsearch(char* query, char* param, int fmt)
 {
 	int line = 0, maxlen = 0, pos = 0, maxcount = 0, page = 1;
 	char* buf = NULL, *buf1 = NULL, *buf2 = NULL, *tmpstr = NULL, *tmpnr = NULL, * param1 = NULL;
@@ -1268,7 +1420,7 @@ char* webgetepgsearch(char* query, char* param)
 		return buf;
 	}
 
-	webcreateheadbig(&buf, &maxlen, NULL, &pos, 0);
+	if(fmt == 0) webcreateheadbig(&buf, &maxlen, NULL, &pos, 0);
 	while(chnode != NULL)
 	{
 		epgnode = getepgakt(chnode);
@@ -1285,36 +1437,42 @@ char* webgetepgsearch(char* query, char* param)
 					continue;
 				}
 
-				if(line == 0)
+				if(fmt == 0)
 				{
-					ostrcatbig(&buf, "<tr class=line1>", &maxlen, &pos);
-					line = 1;
-				}
-				else
-				{
-					ostrcatbig(&buf, "<tr class=line2>", &maxlen, &pos);
-					line = 0;
+					if(line == 0)
+					{
+						ostrcatbig(&buf, "<tr class=line1>", &maxlen, &pos);
+						line = 1;
+					}
+					else
+					{
+						ostrcatbig(&buf, "<tr class=line2>", &maxlen, &pos);
+						line = 0;
+					}
 				}
 
-				ostrcatbig(&buf, "<td nowrap><a target=main class=link href=query?getepg&", &maxlen, &pos);
-				tmpstr = oitoa(chnode->serviceid);
-				buf2 = ostrcat("<td nowrap><a target=main class=link href=query?addrectimer&",tmpstr, 0, 0);
-				buf2 = ostrcat(buf2, "&", 0, 0);
-				ostrcatbig(&buf, tmpstr, &maxlen, &pos);
-				free(tmpstr); tmpstr = NULL;
-				ostrcatbig(&buf, "&", &maxlen, &pos);
-				tmpstr = olutoa(chnode->transponderid);
-				ostrcatbig(&buf, tmpstr, &maxlen, &pos);
-				buf2 = ostrcat(buf2, tmpstr, 0, 0);
-				buf2 = ostrcat(buf2, "&", 0, 0);
-				free(tmpstr); tmpstr = NULL;
-				ostrcatbig(&buf, "&", &maxlen, &pos);
-				tmpstr = oitoa(epgnode->eventid);
-				ostrcatbig(&buf, tmpstr, &maxlen, &pos);
-				buf2 = ostrcat(buf2, tmpstr, 0, 0);
-				buf2 = ostrcat(buf2, ">", 0, 0);
-				free(tmpstr); tmpstr = NULL;
-				ostrcatbig(&buf, ">", &maxlen, &pos);
+				if(fmt == 0)
+				{
+					ostrcatbig(&buf, "<td nowrap><a target=main class=link href=query?getepg&", &maxlen, &pos);
+					tmpstr = oitoa(chnode->serviceid);
+					buf2 = ostrcat("<td nowrap><a target=main class=link href=query?addrectimer&", tmpstr, 0, 0);
+					buf2 = ostrcat(buf2, "&", 0, 0);
+					ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+					free(tmpstr); tmpstr = NULL;
+					ostrcatbig(&buf, "&", &maxlen, &pos);
+					tmpstr = olutoa(chnode->transponderid);
+					ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+					buf2 = ostrcat(buf2, tmpstr, 0, 0);
+					buf2 = ostrcat(buf2, "&", 0, 0);
+					free(tmpstr); tmpstr = NULL;
+					ostrcatbig(&buf, "&", &maxlen, &pos);
+					tmpstr = oitoa(epgnode->eventid);
+					ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+					buf2 = ostrcat(buf2, tmpstr, 0, 0);
+					buf2 = ostrcat(buf2, ">", 0, 0);
+					free(tmpstr); tmpstr = NULL;
+					ostrcatbig(&buf, ">", &maxlen, &pos);
+				}
 	
 				loctime = olocaltime(&epgnode->starttime);
 				if(loctime != NULL)
@@ -1335,12 +1493,20 @@ char* webgetepgsearch(char* query, char* param)
 					ostrcatbig(&buf, chnode->name, &maxlen, &pos);
 					ostrcatbig(&buf, ")", &maxlen, &pos);
 				}
-				ostrcatbig(&buf, "</a><br><font class=smalllabel1>", &maxlen, &pos);
+				if(fmt == 0)
+					ostrcatbig(&buf, "</a><br><font class=smalllabel1>", &maxlen, &pos);
+				else
+					ostrcatbig(&buf, "#", &maxlen, &pos);
 				ostrcatbig(&buf, epgnode->subtitle, &maxlen, &pos);
-				ostrcatbig(&buf, "</font></td>", &maxlen, &pos);
-				ostrcatbig(&buf, buf2, &maxlen, &pos);
-				ostrcatbig(&buf, "<img border=0 width=16 height=16 src=img/timer.png alt=\"set timer\"/>", &maxlen, &pos);
-				ostrcatbig(&buf, "</a></td></tr>", &maxlen, &pos);
+				if(fmt == 0)
+				{
+					ostrcatbig(&buf, "</font></td>", &maxlen, &pos);
+					ostrcatbig(&buf, buf2, &maxlen, &pos);
+					ostrcatbig(&buf, "<img border=0 width=16 height=16 src=img/timer.png alt=\"set timer\"/>", &maxlen, &pos);
+					ostrcatbig(&buf, "</a></td></tr>", &maxlen, &pos);
+				}
+				else
+					ostrcatbig(&buf, "#", &maxlen, &pos);
 			}
 			epgnode = epgnode->next;
 			free(buf2); buf2 = NULL;
@@ -1348,7 +1514,7 @@ char* webgetepgsearch(char* query, char* param)
 		chnode = chnode->next;
 	}
 
-	if(maxcount > MAXHTMLLINE)
+	if(maxcount > MAXHTMLLINE && fmt == 0)
 	{
 		int i;
 		ostrcatbig(&buf, "<tr><td align=center><br>", &maxlen, &pos);
@@ -1372,7 +1538,7 @@ char* webgetepgsearch(char* query, char* param)
 		ostrcatbig(&buf, "</td></tr>", &maxlen, &pos);
 	}
 
-	webcreatetailbig(&buf, &maxlen, &pos, 0);
+	if(fmt == 0) webcreatetailbig(&buf, &maxlen, &pos, 0);
 	free(buf1);
 	return buf;
 }
@@ -1382,7 +1548,7 @@ char* webgetepgsearch(char* query, char* param)
 //flagbit 2: show delete icon
 //flagbit 3: show stream icon
 //flagbit 4: show websteam icon
-char* webgetfilelist(char* param, char* link, char* dellink, char* path, char* mask, int flag)
+char* webgetfilelist(char* param, char* link, char* dellink, char* path, char* mask, int flag, int fmt)
 {
 	char* buf = NULL, *tmppath = NULL, *tmpnr = NULL, *param1 = NULL;
 	int maxlen = 0, pos = 0, line = 0, maxcount = 0, page = 1;
@@ -1426,7 +1592,7 @@ char* webgetfilelist(char* param, char* link, char* dellink, char* path, char* m
 	delmarkedscreennodes(webdir, FILELISTDELMARK);
 	createfilelist(webdir, filelist, 0);
 
-	ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script></head><body class=body><center><table width=100%>", &maxlen, &pos);
+	if(fmt == 0) ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script></head><body class=body><center><table width=100%>", &maxlen, &pos);
 
 	node = filelist;
 	while(node != NULL)
@@ -1440,95 +1606,119 @@ char* webgetfilelist(char* param, char* link, char* dellink, char* path, char* m
 				continue;
 			}
 
-			if(line == 0)
+			if(fmt == 0)
 			{
-				ostrcatbig(&buf, "<tr class=line1>", &maxlen, &pos);
-				line = 1;
-			}
-			else
-			{
-				ostrcatbig(&buf, "<tr class=line2>", &maxlen, &pos);
-				line = 0;
-			}
+				if(line == 0)
+				{
+					ostrcatbig(&buf, "<tr class=line1>", &maxlen, &pos);
+					line = 1;
+				}
+				else
+				{
+					ostrcatbig(&buf, "<tr class=line2>", &maxlen, &pos);
+					line = 0;
+				}
 
-			ostrcatbig(&buf, "<td>", &maxlen, &pos);
+				ostrcatbig(&buf, "<td>", &maxlen, &pos);
+			}
 			if(node->input != NULL) //dir
 			{
-				ostrcatbig(&buf, "<img border=0 width=16 height=16 src=img/folder.png alt=Directory> <a class=link href=\"query?", &maxlen, &pos);
-				ostrcatbig(&buf, link, &maxlen, &pos);
-				ostrcatbig(&buf, "&", &maxlen, &pos);
-				ostrcatbig(&buf, node->input, &maxlen, &pos);
-				ostrcatbig(&buf, "\">", &maxlen, &pos);
-				ostrcatbig(&buf, node->text, &maxlen, &pos);
-				ostrcatbig(&buf, "</a><td> </td>", &maxlen, &pos);
+				if(fmt == 0)
+				{
+					ostrcatbig(&buf, "<img border=0 width=16 height=16 src=img/folder.png alt=Directory> <a class=link href=\"query?", &maxlen, &pos);
+					ostrcatbig(&buf, link, &maxlen, &pos);
+					ostrcatbig(&buf, "&", &maxlen, &pos);
+					ostrcatbig(&buf, node->input, &maxlen, &pos);
+					ostrcatbig(&buf, "\">", &maxlen, &pos);
+					ostrcatbig(&buf, node->text, &maxlen, &pos);
+					ostrcatbig(&buf, "</a><td> </td>", &maxlen, &pos);
+				}
+				else
+				{
+					ostrcatbig(&buf, node->text, &maxlen, &pos);
+					ostrcatbig(&buf, "#0", &maxlen, &pos);
+					ostrcatbig(&buf, "\n", &maxlen, &pos);
+				}
 			}
 			else
 			{
-				ostrcatbig(&buf, "<font class=label1>", &maxlen, &pos);
-				ostrcatbig(&buf, node->text, &maxlen, &pos);
-				ostrcatbig(&buf, "</font></td>", &maxlen, &pos);
-
-				ostrcatbig(&buf, "<td width=80 align=right>", &maxlen, &pos);
-				//epg png
-				if(checkbit(flag, 1) == 1)
+				if(fmt == 0)
 				{
-					ostrcatbig(&buf, "<a href=\"query?getmovieepg&", &maxlen, &pos);
-					ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
-					ostrcatbig(&buf, "/", &maxlen, &pos);
+					ostrcatbig(&buf, "<font class=label1>", &maxlen, &pos);
 					ostrcatbig(&buf, node->text, &maxlen, &pos);
-					ostrcatbig(&buf, "\">", &maxlen, &pos);
-					ostrcatbig(&buf, "<img border=0 src=img/movieepg.png width=16 height=16 alt=EPG></a>", &maxlen, &pos);
+					ostrcatbig(&buf, "</font></td>", &maxlen, &pos);
+
+					ostrcatbig(&buf, "<td width=80 align=right>", &maxlen, &pos);
+
+					//epg png
+					if(checkbit(flag, 1) == 1)
+					{
+						ostrcatbig(&buf, "<a href=\"query?getmovieepg&", &maxlen, &pos);
+						ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
+						ostrcatbig(&buf, "/", &maxlen, &pos);
+						ostrcatbig(&buf, node->text, &maxlen, &pos);
+						ostrcatbig(&buf, "\">", &maxlen, &pos);
+						ostrcatbig(&buf, "<img border=0 src=img/movieepg.png width=16 height=16 alt=EPG></a>", &maxlen, &pos);
+					}
+					//delete png
+					if(checkbit(flag, 2) == 1)
+					{
+						ostrcatbig(&buf, "<img border=0 src=img/delete.png width=16 height=16 alt=Delete onclick='delquestion(\"", &maxlen, &pos);
+						ostrcatbig(&buf, "query?", &maxlen, &pos);
+						ostrcatbig(&buf, dellink, &maxlen, &pos);
+						ostrcatbig(&buf, "&", &maxlen, &pos);
+						ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
+						ostrcatbig(&buf, "&", &maxlen, &pos);
+						tmpnr = oitoa(page);
+						ostrcatbig(&buf, tmpnr, &maxlen, &pos);
+						free(tmpnr); tmpnr = NULL;
+						ostrcatbig(&buf, "&", &maxlen, &pos);
+						ostrcatbig(&buf, node->text, &maxlen, &pos);
+						ostrcatbig(&buf, "\");'>", &maxlen, &pos);
+					}
+					//stream png
+					if(checkbit(flag, 3) == 1)
+					{
+						ostrcatbig(&buf, "<a target=nothing href=\"query?getm3u&0,0,", &maxlen, &pos);
+						ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
+						ostrcatbig(&buf, "/", &maxlen, &pos);
+						ostrcatbig(&buf, node->text, &maxlen, &pos);
+						ostrcatbig(&buf, "\">", &maxlen, &pos);
+
+						ostrcatbig(&buf, "<img border=0 src=img/stream.png width=16 height=16 alt=Stream></a>", &maxlen, &pos);
+					}
+					//webstream png
+					if(checkbit(flag, 4) == 1)
+					{
+						ostrcatbig(&buf, "<a target=_blank href=\"query?getvideo&0,0,", &maxlen, &pos);
+						ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
+						ostrcatbig(&buf, "/", &maxlen, &pos);
+						ostrcatbig(&buf, node->text, &maxlen, &pos);
+						ostrcatbig(&buf, "\">", &maxlen, &pos);
+
+						ostrcatbig(&buf, "<img border=0 src=img/webstream.png width=16 height=16 alt=WebStream></a>", &maxlen, &pos);
+
+						ostrcatbig(&buf, "<a target=_blank href=\"", &maxlen, &pos);
+						ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
+						ostrcatbig(&buf, "/", &maxlen, &pos);
+						ostrcatbig(&buf, node->text, &maxlen, &pos);
+						ostrcatbig(&buf, "\">", &maxlen, &pos);
+	
+						ostrcatbig(&buf, "<img border=0 src=img/icon_restart.png width=16 height=16 alt=Download></a>", &maxlen, &pos);
+					}
 				}
-				//delete png
-				if(checkbit(flag, 2) == 1)
+				else
 				{
-					ostrcatbig(&buf, "<img border=0 src=img/delete.png width=16 height=16 alt=Delete onclick='delquestion(\"", &maxlen, &pos);
-					ostrcatbig(&buf, "query?", &maxlen, &pos);
-					ostrcatbig(&buf, dellink, &maxlen, &pos);
-					ostrcatbig(&buf, "&", &maxlen, &pos);
-					ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
-					ostrcatbig(&buf, "&", &maxlen, &pos);
-					tmpnr = oitoa(page);
-					ostrcatbig(&buf, tmpnr, &maxlen, &pos);
-					free(tmpnr); tmpnr = NULL;
-					ostrcatbig(&buf, "&", &maxlen, &pos);
 					ostrcatbig(&buf, node->text, &maxlen, &pos);
-					ostrcatbig(&buf, "\");'>", &maxlen, &pos);
-				}
-				//stream png
-				if(checkbit(flag, 3) == 1)
-				{
-					ostrcatbig(&buf, "<a target=nothing href=\"query?getm3u&0,0,", &maxlen, &pos);
-					ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
-					ostrcatbig(&buf, "/", &maxlen, &pos);
-					ostrcatbig(&buf, node->text, &maxlen, &pos);
-					ostrcatbig(&buf, "\">", &maxlen, &pos);
-
-					ostrcatbig(&buf, "<img border=0 src=img/stream.png width=16 height=16 alt=Stream></a>", &maxlen, &pos);
-				}
-				//webstream png
-				if(checkbit(flag, 4) == 1)
-				{
-					ostrcatbig(&buf, "<a target=_blank href=\"query?getvideo&0,0,", &maxlen, &pos);
-					ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
-					ostrcatbig(&buf, "/", &maxlen, &pos);
-					ostrcatbig(&buf, node->text, &maxlen, &pos);
-					ostrcatbig(&buf, "\">", &maxlen, &pos);
-
-					ostrcatbig(&buf, "<img border=0 src=img/webstream.png width=16 height=16 alt=WebStream></a>", &maxlen, &pos);
-					//
-					//
-					ostrcatbig(&buf, "<a target=_blank href=\"", &maxlen, &pos);
-					ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
-					ostrcatbig(&buf, "/", &maxlen, &pos);
-					ostrcatbig(&buf, node->text, &maxlen, &pos);
-					ostrcatbig(&buf, "\">", &maxlen, &pos);
-
-					ostrcatbig(&buf, "<img border=0 src=img/icon_restart.png width=16 height=16 alt=Download></a>", &maxlen, &pos);
+					ostrcatbig(&buf, "#1", &maxlen, &pos);
+					ostrcatbig(&buf, "\n", &maxlen, &pos);
 				}
 			}
-			ostrcatbig(&buf, "</td>", &maxlen, &pos);
-			ostrcatbig(&buf, "</tr>", &maxlen, &pos);
+			if(fmt == 0)
+			{
+				ostrcatbig(&buf, "</td>", &maxlen, &pos);
+				ostrcatbig(&buf, "</tr>", &maxlen, &pos);
+			}
 		}
 
 		node = node->next;
@@ -1565,12 +1755,12 @@ char* webgetfilelist(char* param, char* link, char* dellink, char* path, char* m
 		ostrcatbig(&buf, "</td></tr>", &maxlen, &pos);
 	}
 
-	webcreatetailbig(&buf, &maxlen, &pos, 0);
+	if(fmt == 0) webcreatetailbig(&buf, &maxlen, &pos, 0);
 	delmarkedscreennodes(webdir, FILELISTDELMARK);
 	return buf;
 }
 
-char* webgetmovieepg(char* param, char* path, int flag)
+char* webgetmovieepg(char* param, char* path, int flag, int fmt)
 {
 	char* buf = NULL, *tmpstr = NULL;
 	char tstr[2];
@@ -1578,8 +1768,11 @@ char* webgetmovieepg(char* param, char* path, int flag)
 	int first = 1, maxlen = 0, pos = 0;
 	FILE* fd = NULL;
 
-	webcreateheadbig(&buf, &maxlen, NULL, &pos, 0);
-	ostrcatbig(&buf, "<tr><td><font class=biglabel>", &maxlen, &pos);
+	if(fmt == 0)
+	{
+		webcreateheadbig(&buf, &maxlen, NULL, &pos, 0);
+		ostrcatbig(&buf, "<tr><td><font class=biglabel>", &maxlen, &pos);
+	}
 
 	if(flag == 1)
 	{
@@ -1600,7 +1793,7 @@ char* webgetmovieepg(char* param, char* path, int flag)
 		while(c != EOF)
 		{
 			c = fgetc(fd);
-			if(c == '\n')
+			if(fmt == 0 && c == '\n')
 			{
 				if(first == 1)
 				{
@@ -1610,20 +1803,26 @@ char* webgetmovieepg(char* param, char* path, int flag)
 				ostrcatbig(&buf, "<br>", &maxlen, &pos);
 				continue;
 			}
-			sprintf(tstr, "%c", c);
-			ostrcatbig(&buf, tstr, &maxlen, &pos);
+			if(c != EOF)
+			{
+				sprintf(tstr, "%c", c);
+				ostrcatbig(&buf, tstr, &maxlen, &pos);
+			}
 		}
 		fclose(fd);
 	}
-	ostrcatbig(&buf, "</font></td></tr>", &maxlen, &pos);
 
-	webcreatetailbig(&buf, &maxlen, &pos, 0);
+	if(fmt == 0)
+	{
+		ostrcatbig(&buf, "</font></td></tr>", &maxlen, &pos);
+		webcreatetailbig(&buf, &maxlen, &pos, 0);
+	}
 
 	free(tmpstr); tmpstr = NULL;
 	return buf;
 }
 
-char* webdelfile(char* param, char* link, char* dellink, char* path, char* mask, int flag)
+char* webdelfile(char* param, char* link, char* dellink, char* path, char* mask, int flag, int fmt)
 {
 	char* buf = NULL, *param1 = NULL, *param2 = NULL, *tmpparam = NULL;
 
@@ -1656,12 +1855,12 @@ char* webdelfile(char* param, char* link, char* dellink, char* path, char* mask,
 	tmpparam = ostrcat(tmpparam, "&", 1, 0);
 	tmpparam = ostrcat(tmpparam, param1, 1, 0);
 
-	buf = webgetfilelist(tmpparam, link, dellink, path, mask, flag);
+	buf = webgetfilelist(tmpparam, link, dellink, path, mask, flag, fmt);
 	free(tmpparam); tmpparam = NULL;
 	return buf;
 }
 
-void websendrc(char* param)
+void websendrc(char* param, int fmt)
 {
 	int rccode = 0;
 
@@ -1671,7 +1870,7 @@ void websendrc(char* param)
 
 //flag 0: get aktiv timer
 //flag 1: get old timer
-char* webgetrectimer(char* param, int flag)
+char* webgetrectimer(char* param, int flag, int fmt)
 {
 	char* buf = NULL, *buf1 = NULL;
 	struct rectimer* node = rectimer;
@@ -1686,7 +1885,7 @@ char* webgetrectimer(char* param, int flag)
 		return NULL;
 	}
 
-	ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script></head><body class=body><center><table width=100%>", &maxlen, &pos);
+	if(fmt == 0) ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script></head><body class=body><center><table width=100%>", &maxlen, &pos);
 
 	while(node != NULL)
 	{
@@ -1695,112 +1894,138 @@ char* webgetrectimer(char* param, int flag)
 			node = node->next;
 			continue;
 		}
-		if(line == 0)
+		if(fmt == 0) 
 		{
-			ostrcatbig(&buf, "<tr class=line1><td>", &maxlen, &pos);
-			line = 1;
-		}
-		else
-		{
-			ostrcatbig(&buf, "<tr class=line2><td>", &maxlen, &pos);
-			line = 0;
-		}
+			if(line == 0)
+			{
+				ostrcatbig(&buf, "<tr class=line1><td>", &maxlen, &pos);
+				line = 1;
+			}
+			else
+			{
+				ostrcatbig(&buf, "<tr class=line2><td>", &maxlen, &pos);
+				line = 0;
+			}
 
-		loctime = olocaltime(&node->begin);
-		if(loctime != NULL)
-			strftime(buf1, MINMALLOC, "%d-%m-%Y %H:%M -", loctime);
-		free(loctime); loctime = NULL;
-		loctime = olocaltime(&node->end);
-		if(loctime != NULL)
-			strftime(&buf1[18], MINMALLOC - 19, " %H:%M ", loctime);
-		free(loctime); loctime = NULL;
+			loctime = olocaltime(&node->begin);
+			if(loctime != NULL)
+				strftime(buf1, MINMALLOC, "%d-%m-%Y %H:%M -", loctime);
+			free(loctime); loctime = NULL;
+			loctime = olocaltime(&node->end);
+			if(loctime != NULL)
+				strftime(&buf1[18], MINMALLOC - 19, " %H:%M ", loctime);
+			free(loctime); loctime = NULL;
+	
+			ostrcatbig(&buf, "<font class=label1>", &maxlen, &pos);
+			ostrcatbig(&buf, buf1, &maxlen, &pos);
 
-		ostrcatbig(&buf, "<font class=label1>", &maxlen, &pos);
-		ostrcatbig(&buf, buf1, &maxlen, &pos);
-
-		ostrcatbig(&buf, " (", &maxlen, &pos);
-		if(node->justplay == 0)
-			ostrcatbig(&buf, "rec - ", &maxlen, &pos);
-		else
-			ostrcatbig(&buf, "switch - ", &maxlen, &pos);
-		if(node->repeate == 0)
-			ostrcatbig(&buf, "once", &maxlen, &pos);
-		else
-			ostrcatbig(&buf, "repeate", &maxlen, &pos);
-
-		ostrcatbig(&buf, ")</font><br><font class=smalllabel1>", &maxlen, &pos);
-		if(node->name == NULL || strlen(node->name) == 0)
-			ostrcatbig(&buf, "---", &maxlen, &pos);
-		else
-			ostrcatbig(&buf, node->name, &maxlen, &pos);
-
-		chnode = getchannel(node->serviceid, node->transponderid);
-		if(chnode != NULL)
-		{
 			ostrcatbig(&buf, " (", &maxlen, &pos);
-			ostrcatbig(&buf, chnode->name, &maxlen, &pos);
-			ostrcatbig(&buf, ")", &maxlen, &pos);
-		}
-		ostrcatbig(&buf, "<br>", &maxlen, &pos);
+			if(node->justplay == 0)
+				ostrcatbig(&buf, "rec - ", &maxlen, &pos);
+			else
+				ostrcatbig(&buf, "switch - ", &maxlen, &pos);
+			if(node->repeate == 0)
+				ostrcatbig(&buf, "once", &maxlen, &pos);
+			else
+				ostrcatbig(&buf, "repeate", &maxlen, &pos);
 
-		if(node->status == 0)
-			ostrcatbig(&buf, "waiting", &maxlen, &pos);
-		else if(node->status == 1)
-			ostrcatbig(&buf, "running", &maxlen, &pos);
-		else if(node->status == 2)
-			ostrcatbig(&buf, "succes", &maxlen, &pos);
-		else if(node->status == 3)
-		{
-			ostrcatbig(&buf, "error", &maxlen, &pos);
-			if(node->errstr != NULL && strlen(node->errstr) > 0)
+			ostrcatbig(&buf, ")</font><br><font class=smalllabel1>", &maxlen, &pos);
+			if(node->name == NULL || strlen(node->name) == 0)
+				ostrcatbig(&buf, "---", &maxlen, &pos);
+			else
+				ostrcatbig(&buf, node->name, &maxlen, &pos);
+
+			chnode = getchannel(node->serviceid, node->transponderid);
+			if(chnode != NULL)
 			{
 				ostrcatbig(&buf, " (", &maxlen, &pos);
-				ostrcatbig(&buf, node->errstr, &maxlen, &pos);
+				ostrcatbig(&buf, chnode->name, &maxlen, &pos);
 				ostrcatbig(&buf, ")", &maxlen, &pos);
 			}
+			ostrcatbig(&buf, "<br>", &maxlen, &pos);
+
+			if(node->status == 0)
+				ostrcatbig(&buf, "waiting", &maxlen, &pos);
+			else if(node->status == 1)
+				ostrcatbig(&buf, "running", &maxlen, &pos);
+			else if(node->status == 2)
+				ostrcatbig(&buf, "succes", &maxlen, &pos);
+			else if(node->status == 3)
+			{
+				ostrcatbig(&buf, "error", &maxlen, &pos);
+				if(node->errstr != NULL && strlen(node->errstr) > 0)
+				{
+					ostrcatbig(&buf, " (", &maxlen, &pos);
+					ostrcatbig(&buf, node->errstr, &maxlen, &pos);
+					ostrcatbig(&buf, ")", &maxlen, &pos);
+				}
+			}
+
+			ostrcatbig(&buf, "</font>", &maxlen, &pos);
+
+			if(flag == 0)
+			{
+				ostrcatbig(&buf, "</td><td width=40 align=right>", &maxlen, &pos);
+
+				//edit png
+				ostrcatbig(&buf, "<a target=main href=\"query?editrectimer", &maxlen, &pos);
+				ostrcatbig(&buf, "&", &maxlen, &pos);
+				ostrcatbig(&buf, node->timestamp, &maxlen, &pos);
+				ostrcatbig(&buf, "\">", &maxlen, &pos);
+
+				ostrcatbig(&buf, "<img border=0 src=img/edit.png width=16 height=16 alt=\"Edit Timer\"></a>", &maxlen, &pos);
+
+				//delete png
+				ostrcatbig(&buf, "<img border=0 src=img/delete.png width=16 height=16 alt=Delete onclick='delquestion(\"", &maxlen, &pos);
+				ostrcatbig(&buf, "query?delrectimer", &maxlen, &pos);
+				ostrcatbig(&buf, "&", &maxlen, &pos);
+				ostrcatbig(&buf, node->timestamp, &maxlen, &pos);
+				//ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
+				//ostrcatbig(&buf, "&", &maxlen, &pos);
+				//tmpnr = oitoa(page);
+				//ostrcatbig(&buf, tmpnr, &maxlen, &pos);
+				//free(tmpnr); tmpnr = NULL;
+				//ostrcatbig(&buf, "&", &maxlen, &pos);
+				//ostrcatbig(&buf, node->text, &maxlen, &pos);
+				ostrcatbig(&buf, "\");'>", &maxlen, &pos);
+			}
+
+			ostrcatbig(&buf, "</td></tr>", &maxlen, &pos);
 		}
-
-		ostrcatbig(&buf, "</font>", &maxlen, &pos);
-
-		if(flag == 0)
+		else
 		{
-			ostrcatbig(&buf, "</td><td width=40 align=right>", &maxlen, &pos);
-
-			//edit png
-			ostrcatbig(&buf, "<a target=main href=\"query?editrectimer", &maxlen, &pos);
-			ostrcatbig(&buf, "&", &maxlen, &pos);
-			ostrcatbig(&buf, node->timestamp, &maxlen, &pos);
-			ostrcatbig(&buf, "\">", &maxlen, &pos);
-
-			ostrcatbig(&buf, "<img border=0 src=img/edit.png width=16 height=16 alt=\"Edit Timer\"></a>", &maxlen, &pos);
-
-			//delete png
-			ostrcatbig(&buf, "<img border=0 src=img/delete.png width=16 height=16 alt=Delete onclick='delquestion(\"", &maxlen, &pos);
-			ostrcatbig(&buf, "query?delrectimer", &maxlen, &pos);
-			ostrcatbig(&buf, "&", &maxlen, &pos);
-			ostrcatbig(&buf, node->timestamp, &maxlen, &pos);
-			//ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
-			//ostrcatbig(&buf, "&", &maxlen, &pos);
-			//tmpnr = oitoa(page);
-			//ostrcatbig(&buf, tmpnr, &maxlen, &pos);
-			//free(tmpnr); tmpnr = NULL;
-			//ostrcatbig(&buf, "&", &maxlen, &pos);
-			//ostrcatbig(&buf, node->text, &maxlen, &pos);
-			ostrcatbig(&buf, "\");'>", &maxlen, &pos);
+			buf = ostrcat(buf, olutoa(node->begin), 1, 1);
+			buf = ostrcat(buf, "#", 1, 0);
+			buf = ostrcat(buf, olutoa(node->end), 1, 1);
+			buf = ostrcat(buf, "#", 1, 0);
+			buf = ostrcat(buf, oitoa(node->justplay), 1, 1);
+			buf = ostrcat(buf, "#", 1, 0);
+			buf = ostrcat(buf, oitoa(node->repeate), 1, 1);
+			buf = ostrcat(buf, "#", 1, 0);
+			buf = ostrcat(buf, node->name, 1, 0);
+			buf = ostrcat(buf, "#", 1, 0);
+			buf = ostrcat(buf, oitoa(node->serviceid), 1, 1);
+			buf = ostrcat(buf, "#", 1, 0);
+			buf = ostrcat(buf, olutoa(node->transponderid), 1, 1);
+			buf = ostrcat(buf, "#", 1, 0);
+			buf = ostrcat(buf, oitoa(node->status), 1, 1);
+			buf = ostrcat(buf, "#", 1, 0);
+			buf = ostrcat(buf, node->errstr, 1, 0);
+			buf = ostrcat(buf, "#", 1, 0);
+			buf = ostrcat(buf, node->timestamp, 1, 1);
+			buf = ostrcat(buf, "\n", 1, 0);
 		}
-
-		ostrcatbig(&buf, "</td></tr>", &maxlen, &pos);
 
 		node = node->next;
 	}
 
-	webcreatetailbig(&buf, &maxlen, &pos, 0);
+	if(fmt == 0) webcreatetailbig(&buf, &maxlen, &pos, 0);
 
 	free(buf1);
 	return buf;
 }
 
-char* webaddrectimer(char* param)
+char* webaddrectimer(char* param, int fmt)
 {
 	char* buf = NULL, *buf1 = NULL, *buf2 = NULL, *param1 = NULL, *param2 = NULL;
 	struct channel* chnode = NULL;
@@ -1894,7 +2119,7 @@ char* webaddrectimer(char* param)
 	return buf;
 }
 
-char* webrectimersend(char* param)
+char* webrectimersend(char* param, int fmt)
 {
 	char* buf = NULL, *string = NULL, *name = NULL, *begin = NULL, *end = NULL, *type = NULL, *anode = NULL, *channelname = NULL, *sid = NULL, *tid = NULL, *ext = NULL;
 //	int maxlen = 0, pos = 0, newnode = 0, channelfind = 0;
@@ -2064,7 +2289,7 @@ char* webrectimersend(char* param)
 		writerectimer(getconfig("rectimerfile", NULL), 0);
 		
 		if(ext == NULL)
-			buf = webgetrectimer(NULL, 0);
+			buf = webgetrectimer(NULL, 0, fmt);
 		else
 		{
 			buf = ostrcat(buf, "ok -> TimerID=", 1, 0);
@@ -2077,7 +2302,7 @@ char* webrectimersend(char* param)
 	return buf;
 }
 
-char* webeditrectimer(char* param)
+char* webeditrectimer(char* param, int fmt)
 {
 	char* buf = NULL, *buf1 = NULL, *buf2 = NULL;
 	int maxlen = 0, pos = 0;
@@ -2159,7 +2384,7 @@ char* webeditrectimer(char* param)
 	return buf;
 }
 
-char* webdelrectimer(char* param)
+char* webdelrectimer(char* param, int fmt)
 {
 	char* buf = NULL, *string = NULL, *timerid = NULL;
 	struct rectimer *node = NULL;
@@ -2198,7 +2423,7 @@ char* webdelrectimer(char* param)
 	if(ext == 1) 
 		buf = ostrcat(buf, "ok -> timer deleted", 1, 0);
 	else
-		buf = webgetrectimer(NULL, 0);
+		buf = webgetrectimer(NULL, 0, fmt);
 	
 	return buf;
 }
