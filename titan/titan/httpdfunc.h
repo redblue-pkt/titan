@@ -2515,4 +2515,44 @@ void xmessage(char* filename)
 	return;
 }
 
+char* webgetvol(int fmt)
+{
+	char* buf = NULL;
+
+	buf = oitoa(getvol());
+	return buf;
+}
+
+char* webgetmute(int fmt)
+{
+	char* buf = NULL;
+
+	buf = oitoa(status.mute);
+	return buf;
+}
+
+char* webgetrccodes(int fmt)
+{
+	int i = 0;
+	char* buf = NULL;
+	struct clist **clist = rcconfig;
+	struct clist* node = NULL;
+
+	for(i = 0; i < LISTHASHSIZE; i++)
+	{
+		node = clist[i];
+
+		while(node != NULL)
+		{
+			buf = ostrcat(buf, node->key, 1, 0);
+			buf = ostrcat(buf, "#", 1, 0);
+			buf = ostrcat(buf, node->value, 1, 0);
+			buf = ostrcat(buf, "\n", 1, 0);
+			node = node->next;
+		}
+	}
+
+	return buf;
+}
+
 #endif

@@ -205,3 +205,23 @@ query: message
 raw: fixtext Message send
 desc: shows the message on tv
 param; message
+
+query: getvol
+raw: returns the aktive vol (0-100)
+desc: get the volume
+param: 0-100
+
+query: getmute
+raw: returns the aktive mute (0/1)
+descr: get mute
+param: no
+
+query: setvol
+raw: returns the aktive vol (0-100)
+desc: set the volume
+param: no
+
+query: getrccodes
+raw: name#code
+descr: gets all rccodes
+param: no
