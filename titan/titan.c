@@ -367,6 +367,7 @@ int main(int argc, char *argv[])
 	debug(1000, "in");
 	int ret = 0, serviceret = 0, skincheck = 0;
 	char* tmpstr = NULL;
+	unsigned char *mmapfb = NULL;
 	struct sigaction sa;
 	struct stimerthread *tmpthread = NULL;
 
@@ -533,10 +534,10 @@ int main(int argc, char *argv[])
 	}
 
 	if(lcdskinfb == NULL) {
-		unsigned char *mmapfb = malloc(4 * 320 * 240);
+		mmapfb = malloc(4 * 320 * 240);
 		/* dev=999 ist LCD Buffer */
 		lcdskinfb = addfb("lcdskinfb", 999, 320, 240, 4, -1, mmapfb, 4 * 320 * 240);
-		mmapfb = NULL;
+		// mmapfb = NULL;
 	}
 
 	ret = createstartscreen();
@@ -813,6 +814,9 @@ firstwizzardstep1:
 	//screenadjust();
 	//subtitlestart();
 
+	if(mmapfb != NULL) {
+		free(mmapfb); mmapfb=NULL;
+	}
 	debug(1000, "out");
 	oshutdown(1, 1);
 	return 0;
