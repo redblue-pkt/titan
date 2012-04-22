@@ -153,7 +153,7 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 {
 }
 
-void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int scalewidth, int scaleheight)
+void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int scalewidth, int scaleheight, int mwidth, int mheight, int halign, int valign)
 {
 }
 
