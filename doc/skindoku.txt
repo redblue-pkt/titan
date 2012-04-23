@@ -1,0 +1,162 @@
+/*****************************************************/
+/* this file is part of the tiTan / tiTanNIT Project */
+/* and allowed only for use with this.               */
+/*                                                   */
+/* copyright by NIT                                  */
+/*****************************************************/
+
+Aufbau eines screen:
+
+<screen parameter1 parameter2 ...>
+<node parameter2 parameter2 ...>
+<node parameter1 parameter2 ...>
+......
+</screen>
+
+parameter keywords:
+
+name= eindeutiger name
+parent= name eines parent nodes (die positionen werden dann vom parentnode gerechnet)
+type= listbox/textbox/choicebox/inputbox/inputboxnum/filelist/progressbar/....
+posx= x position
+posy= y position
+width= breite
+height= höhe
+picwidth= höhe des png (wird scaliert) 1 = autoscale
+picheight= breite des png (wird scaliert) 1 = autoscale
+textposx= wo soll der text begonnen werden zum zeichen (innerhalb des node)
+textposx2= wo soll der text begonnen werden zum zeichen (innerhalb des node) für einen 2. text
+halign= left/center/right
+valign= top/middle/bottom
+hidden= unsichtbar
+wrap= text umbrechen
+hspace= innerer randabstand (rechts links)
+vspace= innerer randabstand (oben/unten)
+bgspace = hintergrundfarbe abstand
+zorder= node in den vordergrund/hintergrund legen
+scrollbar= no / yes / auto
+bordersize= randbreite
+bordertype = wo soll der rahmen gezeichnet werden (rechts / links / oben / unten)
+bordercol= randfarbe (-2 = keinen hintergund zeichnen)
+deaktivcol= wenn nicht 0 dann wird der eintrag in dieser farbe dargestellt und kann nicht ausgewählt werden (listbox)
+progresscol= farbe eine progressbalken
+shadowsize= schatten breite
+shadowcol= schatten farbe
+shadowpos= bottomleft, bottomright, topleft, topright
+fontsize= schriftgrösse
+fontsize2= schriftgrösse 2. text
+fontcol= schriftfarbe
+fontcol2= schriftfarbe 2.text
+charspace= abstand zwischen den schriftzeichen
+borderradius= runder rahmen radius
+transparent= transparent 0-255 (0 = ohne, 255 = voll)
+font= schriftart
+title= titel text
+titlealign= ausrichtung titel (left/center/right)
+text= darzustellender text
+text2 = 2. text
+titlebgcol = title hintergrundfarbe
+titlebgcol2 = 2 title hintergrundfarbe für farbverlauf
+bgcol= hintergrundfarbe
+bgcol2= 2 hintergrundfarbe für farbverlauf
+gradient = farbverlauf
+titlegradient= farbverlauf für title
+picmem= path zum png (wird im mem gehalten)
+pic= path zum png (wird nicht im mem gehalten)
+func= ausführen einer funktion (z.B. getpicon)
+param1= parameter für funktion
+param2= parameter für funktion
+input= vordefinierter wert für inputbox/choicebox
+mask= maske für nummerische inputbox (z.B. 000.000.000) - alle nullen sind änderbar, rest wird nur dargestellt
+
+parameter values:
+
+yes
+no
+auto
+
+parameter values position:
+
+left
+center
+right
+top
+middle
+bottom
+bottomleft
+bottomright
+topleft
+topright
+leftright
+topbottom
+topmiddle
+leftmiddle
+textbottom
+
+parameter values node type:
+
+listbox
+grid
+gridbr
+gridbrmenu
+textbox
+textboxgridbr
+choicebox
+inputbox
+inputboxnum
+filelist
+progressbar
+multiprogressbar
+menu
+
+parameter function:
+FUNCPIC shows a picture
+FUNCPROGRESS shows a progress bar
+Rest shows text
+
+getpicon (FUNCPIC)
+getalternatepicon (FUNCPIC)
+getepgpicon (FUNCPIC)
+getsoundtype (FUNCPIC)
+getteletext (FUNCPIC)
+getcrypt (FUNCPIC)
+getresolution (FUNCPIC)
+getsdhd (FUNCPIC)
+getaspectmode (FUNCPIC)
+getreccount
+getrec (FUNCPIC)
+getplaypic (FUNCPIC)
+getplaytext
+getrecfreesize (FUNCPROGRESS)
+getepgchanneltimeline (FUNCPROGRESS)
+getepgmarkedtimeline (FUNCPROGRESS)
+getepgakttimeline (FUNCPROGRESS)
+getsnrline (FUNCPROGRESS)
+getsignalline (FUNCPROGRESS)
+gettvpic
+getepgmarkeddesc
+getepgaktdesc
+getaktchannelname
+getakttuner
+gettime
+getepgmarkedstart
+getepgmarkedend
+getepgaktstart
+getepgaktend
+getepgakttitle
+getepgmarkedlist
+getepgaktsubtitle
+getepgnexttitle
+getepgnextstart
+getepgnextend
+getepgakttimeremaining
+getepgnexttimeremaining
+getchannelnr
+getchannellistname
+getsnr
+getber
+getunc
+getsignal
+getsatname
+getprovidername
+getpowerofftime
