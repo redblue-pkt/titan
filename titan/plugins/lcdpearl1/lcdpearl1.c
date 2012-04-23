@@ -71,7 +71,9 @@ void LCD_Pearl1_thread()
 		sleep(8);
 	firststart = 0;
 	draw = 0;
-	status.write_png = 1;
+	status.write_png = 0;
+	if(ostrcmp(getconfig("write_fb_to_png", NULL), "yes") == 0)
+		status.write_png = 1;
 	
 	while (LCD_Pearl1thread->aktion != STOP) {
 
@@ -79,7 +81,8 @@ void LCD_Pearl1_thread()
 		
 		if(status.infobaraktiv == 1)
 		{
-			status.write_png = 1;
+			if(ostrcmp(getconfig("write_fb_to_png", NULL), "yes") == 0)
+				status.write_png = 1;
 			tmpstr2 = getaktchannelname(NULL);
 			tmpstr3 = getrec(NULL, NULL);
 			type = 1;
@@ -92,7 +95,8 @@ void LCD_Pearl1_thread()
 		}
 		else
 		{
-			status.write_png = 1;
+			if(ostrcmp(getconfig("write_fb_to_png", NULL), "yes") == 0)
+				status.write_png = 1;
 			type = 999;
 		}
 		
