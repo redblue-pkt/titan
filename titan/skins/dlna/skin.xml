@@ -1,0 +1,16 @@
+<screen fontcol=fontcol title="DLNA Settings" titlealign=center name="dlnasettings" hspace=30 vspace=30 valign=bottom fontsize=30 posx=center posy=center width=80% height=60% bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node fontsize=30 fontsize2=30 fontcol2=burlywood1 bordercol=bordercol bordersize=0 scrollbar=auto type=listbox name=listbox width=100% posx=0 posy=1 height=-35>
+<node name=startmode type=choicebox parent=listbox valign=middle posx=0 text="Start on boot" bordercol=bordercol width=100%>
+<node name=interface type=choicebox parent=listbox valign=middle posx=0 text="Interface" bordercol=bordercol width=100%>
+<node name=port type=inputboxnum parent=listbox valign=middle posx=0 text="Port" bordercol=bordercol width=100%>
+<node name=name type=inputbox parent=listbox valign=middle posx=0 text="Server Name" bordercol=bordercol width=100%>
+<node name=dir1 type=choicebox parent=listbox valign=middle posx=0 text="Medie Dir 1" bordercol=bordercol width=100%>
+<node name=dir2 type=choicebox parent=listbox valign=middle posx=0 text="Medie Dir 2" bordercol=bordercol width=100%>
+<node name=dir3 type=choicebox parent=listbox valign=middle posx=0 text="Medie Dir 3" bordercol=bordercol width=100%>
+<node name=dir4 type=choicebox parent=listbox valign=middle posx=0 text="Medie Dir 4" bordercol=bordercol width=100%>
+<node name=b1 text="OK" halign=center valign=middle posx=20 posy=0 width=150 height=30 bordercol=okcol bordersize=4 bordertype=2>
+<node name=b2 text="EXIT" halign=center valign=middle posx=190 posy=0 width=150 height=30 bordercol=exitcol bordersize=4 bordertype=2>
+<node name=b3 text="START" halign=center valign=middle posx=360 posy=0 width=150 height=30 bordercol=green bordersize=4 bordertype=2>
+<node name=b4 text="STOP" halign=center valign=middle posx=530 posy=0 width=150 height=30 bordercol=yellow bordersize=4 bordertype=2>
+<node name=b5 text="SELECT" halign=center valign=middle posx=700 posy=0 width=150 height=30 bordercol=blue bordersize=4 bordertype=2>
+</screen>
