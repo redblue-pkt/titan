@@ -89,5 +89,6 @@ compile "rgui" "rgui" ""
 compile "dvdplayer" "dvdplay" ""
 compile "scriptexec" "scriptexec" ""
 compile "optimize" "optimize" ""
+compile "weather" "weather" ""
 
 #rm -r networkbrowser/networkbrowser
