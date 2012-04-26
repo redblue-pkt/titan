@@ -13,5 +13,6 @@ wins3: 196
 rgui: 197
 optimize: 198
 dlna: 207
+weather: 208
 TopfieldVFD: ---
 browser: ---
