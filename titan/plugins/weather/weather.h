@@ -226,6 +226,44 @@ void changeweatherpic(struct skin* node, char* icon)
 		changepic(node, "%pluginpath%/weather/skin/sunny.png");
 	else if(strstr(icon, "/mostly_sunny.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/mostly_sunny.png");
+  else if(strstr(icon, "/chance_of_rain.gif") != NULL)
+		changepic(node, "%pluginpath%/weather/skin/chance_of_rain.png"); 
+  else if(strstr(icon, "/partly_cloudy.gif") != NULL)
+		changepic(node, "%pluginpath%/weather/skin/partly_cloudy.png");
+  else if(strstr(icon, "/mostly_cloudy.gif") != NULL)
+		changepic(node, "%pluginpath%/weather/skin/mostly_cloudy.png");
+  else if(strstr(icon, "/chance_of_storm.gif") != NULL)
+		changepic(node, "%pluginpath%/weather/skin/chance_of_storm.png");
+  else if(strstr(icon, "/showers.gif") != NULL)
+		changepic(node, "%pluginpath%/weather/skin/showers.png"); 
+  else if(strstr(icon, "/rain.gif") != NULL)
+		changepic(node, "%pluginpath%/weather/skin/rain.png");
+  else if(strstr(icon, "/chance_of_snow.gif") != NULL)
+		changepic(node, "%pluginpath%/weather/skin/chance_of_snow.png");
+  else if(strstr(icon, "/cloudy.gif") != NULL)
+		changepic(node, "%pluginpath%/weather/skin/cloudy.png");
+  else if(strstr(icon, "/storm.gif") != NULL)
+		changepic(node, "%pluginpath%/weather/skin/storm.png");
+  else if(strstr(icon, "/thunderstorm.gif") != NULL)
+		changepic(node, "%pluginpath%/weather/skin/thunderstorm.png");
+  else if(strstr(icon, "/chance_of_tstorm.gif") != NULL)
+		changepic(node, "%pluginpath%/weather/skin/chance_of_tstorm.png"); 
+  else if(strstr(icon, "/sleet.gif") != NULL)
+		changepic(node, "%pluginpath%/weather/skin/sleet.png");
+  else if(strstr(icon, "/snow.gif") != NULL)
+		changepic(node, "%pluginpath%/weather/skin/snow.png");
+  else if(strstr(icon, "/icy.gif") != NULL)
+		changepic(node, "%pluginpath%/weather/skin/icy.png");
+  else if(strstr(icon, "/dust.gif") != NULL)
+		changepic(node, "%pluginpath%/weather/skin/dust.png"); 
+  else if(strstr(icon, "/fog.gif") != NULL)
+		changepic(node, "%pluginpath%/weather/skin/fog.png");
+  else if(strstr(icon, "/smoke.gif") != NULL)
+		changepic(node, "%pluginpath%/weather/skin/smoke.png");
+  else if(strstr(icon, "/haze.gif") != NULL)
+		changepic(node, "%pluginpath%/weather/skin/haze.png");
+  else if(strstr(icon, "/flurries.gif") != NULL)
+		changepic(node, "%pluginpath%/weather/skin/flurries.png");
 }
 
 void screenweather()
