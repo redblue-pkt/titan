@@ -1,0 +1,380 @@
+#ifndef WEATHER_H
+#define WEATHER_H
+
+struct weather
+{
+	char* city;
+	char* date;
+	char* day0;
+	char* day0_low;
+	char* day0_high;
+	char* day0_condition;
+	char* day0_icon;
+	char* day0_temp;
+	char* day0_humidity;
+	char* day0_wind;
+	char* day1;
+	char* day1_low;
+	char* day1_high;
+	char* day1_condition;
+	char* day1_icon;
+	char* day2;
+	char* day2_low;
+	char* day2_high;
+	char* day2_condition;
+	char* day2_icon;
+	char* day3;
+	char* day3_low;
+	char* day3_high;
+	char* day3_condition;
+	char* day3_icon;
+};
+
+char* readweather(const char* filename, struct skin* weather, struct skin* listbox)
+{
+	debug(1000, "in");
+	FILE *fd = NULL;
+	char *fileline = NULL;
+	char *location = NULL;
+	struct skin* tmp = NULL;
+
+	if(weather == NULL || listbox == NULL) return NULL;
+
+	fileline = malloc(MINMALLOC);
+	if(fileline == NULL)
+	{
+		err("no memory");
+		return NULL;
+	}
+
+	fd = fopen(filename, "r");
+	if(fd == NULL)
+	{
+		perr("can't open %s", filename);
+		free(fileline);
+		return NULL;
+	}
+
+	while(fgets(fileline, MINMALLOC, fd) != NULL)
+	{
+		if(fileline[0] == '#' || fileline[0] == '\n')
+			continue;
+		if(fileline[strlen(fileline) - 1] == '\n')
+			fileline[strlen(fileline) - 1] = '\0';
+		if(fileline[strlen(fileline) - 1] == '\r')
+			fileline[strlen(fileline) - 1] = '\0';
+
+		tmp = addlistbox(weather, listbox, tmp, 1);
+		if(tmp != NULL)
+		{
+			changetext(tmp, fileline);
+			if(location == NULL)
+				location = ostrcat(location, fileline, 1, 0);
+		}
+
+	}
+
+	free(fileline);
+	fclose(fd);
+	return location;
+}
+
+void freeweather(struct weather* node)
+{
+	if(node == NULL) return;
+
+	free(node->city); node->city = NULL;
+	free(node->date); node->date = NULL;
+
+	free(node->day0); node->day0 = NULL;
+	free(node->day0_low); node->day0_low = NULL;
+	free(node->day0_high); node->day0_high = NULL;
+	free(node->day0_condition); node->day0_condition = NULL;
+	free(node->day0_icon); node->day0_icon = NULL;
+	free(node->day0_temp); node->day0_temp = NULL;
+	free(node->day0_humidity); node->day0_humidity = NULL;
+	free(node->day0_wind); node->day0_wind = NULL;
+
+	free(node->day1); node->day1 = NULL;
+	free(node->day1_low); node->day1_low = NULL;
+	free(node->day1_high); node->day1_high = NULL;
+	free(node->day1_condition); node->day1_condition = NULL;
+	free(node->day1_icon); node->day1_icon = NULL;
+
+	free(node->day2); node->day2 = NULL;
+	free(node->day2_low); node->day2_low = NULL;
+	free(node->day2_high); node->day2_high = NULL;
+	free(node->day2_condition); node->day2_condition = NULL;
+	free(node->day2_icon); node->day2_icon = NULL;
+
+	free(node->day3); node->day3 = NULL;
+	free(node->day3_low); node->day3_low = NULL;
+	free(node->day3_high); node->day3_high = NULL;
+	free(node->day3_condition); node->day3_condition = NULL;
+	free(node->day3_icon); node->day3_icon = NULL;
+
+	free(node); node = NULL;
+}
+
+struct weather* getweather(char* location)
+{
+	struct weather* weather = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
+	char* tmpsearch = NULL;
+
+	tmpsearch = ostrcat("ig/api?weather=", location, 0, 0);
+	//TODO: implement auto language (from titan.cfg)
+	tmpsearch = ostrcat(tmpsearch, "&hl=de", 1, 0);
+	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
+
+	tmpstr = gethttp("www.google.com", tmpsearch, 80, NULL, NULL, NULL, 0);
+
+	free(tmpsearch); tmpsearch = NULL;
+
+	if(tmpstr != NULL)
+	{
+		weather = (struct weather*)malloc(sizeof(struct weather));
+		if(weather == NULL)
+		{
+			err("no mem");
+			free(tmpstr); tmpstr = NULL;
+			return NULL;
+		}
+		memset(weather, 0, sizeof(struct weather));
+
+		tmpstr1 = tmpstr;
+		tmpstr2 = tmpstr;
+
+		tmpstr2 = strstr(tmpstr1, "<forecast_information>");
+		if(tmpstr2 != NULL)
+		{
+			tmpstr1 = tmpstr2 + 5;
+			weather->date = getxmlentry(tmpstr2, "forecast_date data=");
+			weather->city = getxmlentry(tmpstr2, "postal_code data=");
+		}
+
+		tmpstr2 = strstr(tmpstr1, "<current_conditions>");
+		if(tmpstr2 != NULL)
+		{
+			tmpstr1 = tmpstr2 + 5;
+			weather->day0_temp = getxmlentry(tmpstr2, "temp_c data=");
+			weather->day0_humidity = getxmlentry(tmpstr2, "humidity data=");
+			weather->day0_wind = getxmlentry(tmpstr2, "wind_condition data=");
+		}
+		
+		tmpstr2 = strstr(tmpstr1, "<forecast_conditions>");
+		if(tmpstr2 != NULL)
+		{
+			tmpstr1 = tmpstr2 + 5;
+			weather->day0 = getxmlentry(tmpstr2, "day_of_week data=");
+			weather->day0_low = getxmlentry(tmpstr2, "low data=");
+			weather->day0_high = getxmlentry(tmpstr2, "high data=");
+			weather->day0_condition = getxmlentry(tmpstr2, "condition data=");
+			weather->day0_icon = getxmlentry(tmpstr2, "icon data=");
+
+		}
+
+		tmpstr2 = strstr(tmpstr1, "<forecast_conditions>");
+		if(tmpstr2 != NULL)
+		{
+			tmpstr1 = tmpstr2 + 5;
+			weather->day1 = getxmlentry(tmpstr2, "day_of_week data=");
+			weather->day1_low = getxmlentry(tmpstr2, "low data=");
+			weather->day1_high = getxmlentry(tmpstr2, "high data=");
+			weather->day1_condition = getxmlentry(tmpstr2, "condition data=");
+			weather->day1_icon = getxmlentry(tmpstr2, "icon data=");
+
+		}
+
+		tmpstr2 = strstr(tmpstr1, "<forecast_conditions>");
+		if(tmpstr2 != NULL)
+		{
+			tmpstr1 = tmpstr2 + 5;
+			weather->day2 = getxmlentry(tmpstr2, "day_of_week data=");
+			weather->day2_low = getxmlentry(tmpstr2, "low data=");
+			weather->day2_high = getxmlentry(tmpstr2, "high data=");
+			weather->day2_condition = getxmlentry(tmpstr2, "condition data=");
+			weather->day2_icon = getxmlentry(tmpstr2, "icon data=");
+
+		}
+
+		tmpstr2 = strstr(tmpstr1, "<forecast_conditions>");
+		if(tmpstr2 != NULL)
+		{
+			tmpstr1 = tmpstr2 + 5;
+			weather->day3 = getxmlentry(tmpstr2, "day_of_week data=");
+			weather->day3_low = getxmlentry(tmpstr2, "low data=");
+			weather->day3_high = getxmlentry(tmpstr2, "high data=");
+			weather->day3_condition = getxmlentry(tmpstr2, "condition data=");
+			weather->day3_icon = getxmlentry(tmpstr2, "icon data=");
+
+		}
+
+		free(tmpstr); tmpstr = NULL;
+	}
+
+	return weather;
+}
+
+void changeweatherpic(struct skin* node, char* icon)
+{
+	if(node == NULL) return;
+
+	if(icon == NULL)
+		changepic(node, NULL);
+	else if(strstr(icon, "/sunny.gif") != NULL)
+		changepic(node, "%pluginpath%/weather/skin/sunny.png");
+	else if(strstr(icon, "/mostly_sunny.gif") != NULL)
+		changepic(node, "%pluginpath%/weather/skin/mostly_sunny.png");
+}
+
+void screenweather()
+{
+	int rcret = 0;
+	struct skin* weather = getscreen("weather");
+	struct skin* listbox = getscreennode(weather, "listbox");
+	struct skin* date = getscreennode(weather, "date");
+	struct skin* day0 = getscreennode(weather, "day0");
+	struct skin* day0_low = getscreennode(weather, "day0_low");
+	struct skin* day0_high = getscreennode(weather, "day0_high");
+	struct skin* day0_condition = getscreennode(weather, "day0_condition");
+	struct skin* day0_icon = getscreennode(weather, "day0_icon");
+	struct skin* day1 = getscreennode(weather, "day1");
+	struct skin* day1_low = getscreennode(weather, "day1_low");
+	struct skin* day1_high = getscreennode(weather, "day1_high");
+	struct skin* day1_condition = getscreennode(weather, "day1_condition");
+	struct skin* day1_icon = getscreennode(weather, "day1_icon");
+	struct skin* day2 = getscreennode(weather, "day2");
+	struct skin* day2_low = getscreennode(weather, "day2_low");
+	struct skin* day2_high = getscreennode(weather, "day2_high");
+	struct skin* day2_condition = getscreennode(weather, "day2_condition");
+	struct skin* day2_icon = getscreennode(weather, "day2_icon");
+	struct skin* day3 = getscreennode(weather, "day3");
+	struct skin* day3_low = getscreennode(weather, "day3_low");
+	struct skin* day3_high = getscreennode(weather, "day3_high");
+	struct skin* day3_condition = getscreennode(weather, "day3_condition");
+	struct skin* day3_icon = getscreennode(weather, "day3_icon");
+	struct weather* node = NULL;
+	char* tmpstr = NULL, *location = NULL;
+
+	location = readweather(getconfig("weatherfile", NULL), weather, listbox);
+
+start:
+	node = getweather(location);
+	free(location); location = NULL;
+
+	if(node != NULL)
+	{
+		changetext(date, node->date);
+
+		tmpstr = ostrcat(_("Day: "), node->day0, 0, 0);
+		changetext(day0, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Lowest temp: "), node->day0_low, 0, 0);
+		changetext(day0_low, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Highest temp: "), node->day0_high, 0, 0);
+		changetext(day0_high, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Condition: "), node->day0_condition, 0, 0);
+		changetext(day0_condition, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		changeweatherpic(day0_icon, node->day0_icon);
+
+		tmpstr = ostrcat(_("Day: "), node->day1, 0, 0);
+		changetext(day1, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Lowest temp: "), node->day1_low, 0, 0);
+		changetext(day1_low, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Highest temp: "), node->day1_high, 0, 0);
+		changetext(day1_high, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Condition: "), node->day1_condition, 0, 0);
+		changetext(day1_condition, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		changeweatherpic(day1_icon, node->day1_icon);
+
+		tmpstr = ostrcat(_("Day: "), node->day2, 0, 0);
+		changetext(day2, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Lowest temp: "), node->day2_low, 0, 0);
+		changetext(day2_low, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Highest temp: "), node->day2_high, 0, 0);
+		changetext(day2_high, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Condition: "), node->day2_condition, 0, 0);
+		changetext(day2_condition, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		changeweatherpic(day2_icon, node->day2_icon);
+
+		tmpstr = ostrcat(_("Day: "), node->day3, 0, 0);
+		changetext(day3, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Lowest temp: "), node->day3_low, 0, 0);
+		changetext(day3_low, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Highest temp: "), node->day3_high, 0, 0);
+		changetext(day3_high, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Condition: "), node->day3_condition, 0, 0);
+		changetext(day3_condition, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		changeweatherpic(day3_icon, node->day3_icon);
+	}
+
+	addscreenrc(weather, listbox);
+	drawscreen(weather, 0);
+
+	while(1)
+	{
+		rcret = waitrc(weather, 0, 0);
+	
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL)) break;
+
+		if(rcret == getrcconfigint("rcred", NULL))
+    {
+			free(location); location = NULL;
+			location = textinput("Location", NULL);
+      if(location != NULL)
+      {
+				freeweather(node); node = NULL;
+				goto start;
+      }
+      drawscreen(weather, 0);
+      continue;
+    }
+
+		if(listbox->select != NULL)
+		{
+			freeweather(node); node = NULL;
+			location = ostrcat(location, listbox->select->text, 1, 0);
+			goto start;
+		}
+	}
+
+	delownerrc(weather);
+	delmarkedscreennodes(weather, 1);
+	freeweather(node); node = NULL;
+	clearscreen(weather);
+}
+
+#endif
