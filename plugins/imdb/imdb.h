@@ -67,20 +67,20 @@ struct imdb* getimdb(char* title)
 		}
 		memset(imdb, 0, sizeof(struct imdb));
 
-		imdb->title = ostrcat(getxmlentry(tmpstr, "\"Title\":"), NULL, 0, 0);
-		imdb->year = ostrcat(getxmlentry(tmpstr, "\"Year\":"), NULL, 0, 0);
-		imdb->rated = ostrcat(getxmlentry(tmpstr, "\"Rated\":"), NULL, 0, 0);
-		imdb->released = ostrcat(getxmlentry(tmpstr, "\"Released\":"), NULL, 0, 0);
-		imdb->genre = ostrcat(getxmlentry(tmpstr, "\"Genre\":"), NULL, 0, 0);
-		imdb->director = ostrcat(getxmlentry(tmpstr, "\"Director\":"), NULL, 0, 0);
-		imdb->writer = ostrcat(getxmlentry(tmpstr, "\"Writer\":"), NULL, 0, 0);
-		imdb->actors = ostrcat(getxmlentry(tmpstr, "\"Actors\":"), NULL, 0, 0);
-		imdb->plot = ostrcat(getxmlentry(tmpstr, "\"Plot\":"), NULL, 0, 0);
-		imdb->poster = ostrcat(getxmlentry(tmpstr, "\"Poster\":"), NULL, 0, 0);
-		imdb->runtime = ostrcat(getxmlentry(tmpstr, "\"Runtime\":"), NULL, 0, 0);
-		imdb->rating = ostrcat(getxmlentry(tmpstr, "\"Rating\":"), NULL, 0, 0);
-		imdb->votes = ostrcat(getxmlentry(tmpstr, "\"Votes\":"), NULL, 0, 0);
-		imdb->id = ostrcat(getxmlentry(tmpstr, "\"ID\":"), NULL, 0, 0);
+		imdb->title = getxmlentry(tmpstr, "\"Title\":");
+		imdb->year = getxmlentry(tmpstr, "\"Year\":");
+		imdb->rated = getxmlentry(tmpstr, "\"Rated\":");
+		imdb->released = getxmlentry(tmpstr, "\"Released\":"), NULL, 0, 0);
+		imdb->genre = getxmlentry(tmpstr, "\"Genre\":");
+		imdb->director = getxmlentry(tmpstr, "\"Director\":");
+		imdb->writer = getxmlentry(tmpstr, "\"Writer\":");
+		imdb->actors = getxmlentry(tmpstr, "\"Actors\":");
+		imdb->plot = getxmlentry(tmpstr, "\"Plot\":");
+		imdb->poster = getxmlentry(tmpstr, "\"Poster\":");
+		imdb->runtime = getxmlentry(tmpstr, "\"Runtime\":");
+		imdb->rating = getxmlentry(tmpstr, "\"Rating\":");
+		imdb->votes = getxmlentry(tmpstr, "\"Votes\":");
+		imdb->id = getxmlentry(tmpstr, "\"ID\":");
 
 		if(imdb->poster != NULL)
 		{
