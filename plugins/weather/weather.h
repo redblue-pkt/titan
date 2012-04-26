@@ -231,7 +231,7 @@ void changeweatherpic(struct skin* node, char* icon)
   else if(strstr(icon, "/partly_cloudy.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/partly_cloudy.png");
   else if(strstr(icon, "/mostly_cloudy.gif") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/mostly_cloudy.png");
+		changepic(node, "%pluginpath%/weather/skin/cloudy.png");
   else if(strstr(icon, "/chance_of_storm.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/chance_of_storm.png");
   else if(strstr(icon, "/showers.gif") != NULL)
@@ -245,23 +245,23 @@ void changeweatherpic(struct skin* node, char* icon)
   else if(strstr(icon, "/storm.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/storm.png");
   else if(strstr(icon, "/thunderstorm.gif") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/thunderstorm.png");
+		changepic(node, "%pluginpath%/weather/skin/storm.png");
   else if(strstr(icon, "/chance_of_tstorm.gif") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/chance_of_tstorm.png"); 
+		changepic(node, "%pluginpath%/weather/skin/chance_of_storm.png"); 
   else if(strstr(icon, "/sleet.gif") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/sleet.png");
+		changepic(node, "%pluginpath%/weather/skin/snow.png");
   else if(strstr(icon, "/snow.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/snow.png");
   else if(strstr(icon, "/icy.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/icy.png");
   else if(strstr(icon, "/dust.gif") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/dust.png"); 
+		changepic(node, "%pluginpath%/weather/skin/fog.png"); 
   else if(strstr(icon, "/fog.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/fog.png");
   else if(strstr(icon, "/smoke.gif") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/smoke.png");
+		changepic(node, "%pluginpath%/weather/skin/fog.png");
   else if(strstr(icon, "/haze.gif") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/haze.png");
+		changepic(node, "%pluginpath%/weather/skin/fog.png");
   else if(strstr(icon, "/flurries.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/flurries.png");
 }
