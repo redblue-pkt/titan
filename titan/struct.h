@@ -122,8 +122,7 @@
 #define MAXSAT 64
 #define EPGSCANLOG "/tmp/epgscan.log"
 #define MAXCHANNELHISTORY 6
-
-#define HTTPAUTH "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0="
+#define HILO(x) (x##_hi << 8 | x##_lo)
 
 //CA Defines
 #define T_SB 0x80		//sb (h<--m)
@@ -1151,33 +1150,6 @@ struct writeFBfile
 	unsigned char* buf1;
 	unsigned char* buf2;
 } writeFBfile;
-	
-	
-#define HILO(x) (x##_hi << 8 | x##_lo)
-
-/*
-#define HILO2(x) (x##1 << 8 | x##2)
-#define HILO3(x) (x##1 << 16 | x##2 << 8 | x##3)
-#define HILO4(x) (x##4 << 24 | x##2 << 16 | x##3 << 8 | x##4)
-
-#define MjdToEpochTime(x) ((HILO(x)-40587)*86400)
-#define BcdTimeToSeconds(x) ((3600 * ((10*((x##_h & 0xF0)>>4)) + (x##_h & 0xF))) + \
-                             (60 * ((10*((x##_m & 0xF0)>>4)) + (x##_m & 0xF))) + \
-                             ((10*((x##_s & 0xF0)>>4)) + (x##_s & 0xF)))
-#define BcdTimeToMinutes(x) ((60 * ((10*((x##_h & 0xF0)>>4)) + (x##_h & 0xF))) + \
-                             (((10*((x##_m & 0xF0)>>4)) + (x##_m & 0xF))))
-#define BcdCharToInt(x) (10*((x & 0xF0)>>4) + (x & 0xF))
-#define CheckBcdChar(x) ((((x & 0xF0)>>4) <= 9) && \
-                         ((x & 0x0F) <= 9))
-#define CheckBcdSignedChar(x) ((((x & 0xF0)>>4) >= 0) && (((x & 0xF0)>>4) <= 9) && \
-                         ((x & 0x0F) >= 0) && ((x & 0x0F) <= 9))
-
-#define GetSectionLength(x) HILO(((si_tab_t *)(x))->section_length)
-#define GetServiceId(x) HILO(((eit_t *)(x))->service_id)
-#define GetLastTableId(x) ((eit_t *)(x))->segment_last_table_id
-#define GetSegmentLastSectionNumber(x) ((eit_t *)(x))->segment_last_section_number
-#define GetPrivateDataSpecifier(x) HILO4(((descr_private_data_specifier_t *)x)->private_data_specifier)
-*/
 
 struct eit
 {
