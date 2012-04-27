@@ -12,17 +12,12 @@ int pluginaktiv = 0;
 
 struct stimerthread* LCD_Pearl1thread = NULL;
 int firststart = 0;
-int draw = 0;
 
 void LCD_start_lcd4linux()
 {
 	int count = 0;
 	char* startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/start.sh", 0, 0);
-/*	while (draw == 0 && LCD_Pearl1thread != NULL)
-	{
-		sleep(1);
-	}
-	sleep(2);*/
+
 	if(LCD_Pearl1thread == NULL)
 		return;
 	while (LCD_Pearl1thread->aktion != STOP && system("ps | grep -v grep | grep lcd4linux ") != 0) {
@@ -70,7 +65,6 @@ void LCD_Pearl1_thread()
 	if(firststart == 1)
 		sleep(8);
 	firststart = 0;
-	draw = 0;
 	status.write_png = 0;
 	if(ostrcmp(getconfig("write_fb_to_png", NULL), "yes") == 0)
 		status.write_png = 1;
@@ -79,6 +73,7 @@ void LCD_Pearl1_thread()
 
 		tmpstr = gettime(NULL, "%H:%M");
 		
+		// TV Programm läuft
 		if(status.infobaraktiv == 1)
 		{
 			if(ostrcmp(getconfig("write_fb_to_png", NULL), "yes") == 0)
@@ -87,12 +82,14 @@ void LCD_Pearl1_thread()
 			tmpstr3 = getrec(NULL, NULL);
 			type = 1;
 		}
+		// Aufzeichnung wird abgespielt
 		else if(status.playspeed != 0 || status.play != 0 || status.pause != 0)
 		{
 			status.write_png = 0;
 			loopcount++ ;
 			type = 2;
 		}
+		// Sonstige Anzeigen
 		else
 		{
 			if(ostrcmp(getconfig("write_fb_to_png", NULL), "yes") == 0)
@@ -110,10 +107,7 @@ void LCD_Pearl1_thread()
 		}
 		else
 			put = 0;
-		
-		if(draw == 0)
-			put = 1;
-		
+
 		if(status.security == 1)
 		{
 			if(status.standby == 1 && standby == 0)
@@ -169,10 +163,8 @@ void LCD_Pearl1_thread()
 					if(type == 1)
 					{
 						changetext(akttime, tmpstr);
-						if(drawscreen(LCD_Pearl1, 0) == 0)
-							draw = 1;
-						else
-							draw = 0;
+						drawscreen(LCD_Pearl1, 0);
+
 						//system(fbgrab);
 						//system("mv /tmp/.titanlcd1.png /tmp/titanlcd.png");
 				
@@ -220,17 +212,15 @@ void LCD_Pearl1_thread()
 						
 						changetext(akttimeplay, tmpstr);
 						changetext(stitle, basename(status.playfile));
-						if (drawscreen(LCD_Play, 0) == 0)
-							draw = 1;
-						else
-							draw = 0;	
-					}
+						drawscreen(LCD_Play, 0);
+
 					//else if(type == 999 && status.mcaktiv == 1) 
 					//else if(type == 999)	
 					//{
 						//changetext(akttimemc1, tmpstr);
 						//drawscreen(LCD_MC_Menu, 3);
 					//}
+					}
 				}
 			}
 		}
@@ -262,7 +252,7 @@ void LCD_Pearl1_main()
 		tmpstr = ostrcat(tmpstr, " /tmp/titanlcd.png", 1, 0);
 		system(tmpstr);
 		free(tmpstr); tmpstr=NULL;
-		textbox(_("Message"), _("LCD Pearl1 starts ..."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
+		//textbox(_("Message"), _("LCD Pearl1 starts ..."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
 		addconfig("lcd_pearl1_plugin_running", "yes");
 		LCD_Pearl1thread = addtimer(&LCD_Pearl1_thread, START, 10000, 1, NULL, NULL, NULL);
 		addtimer(&LCD_start_lcd4linux, START, 10000, 1, NULL, NULL, NULL);
@@ -270,13 +260,13 @@ void LCD_Pearl1_main()
 	}
 	else
 	{
-		if (textbox(_("Message"), _("Stop LCD Pearl1 ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("exit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) != 2);
-		{
+		//if (textbox(_("Message"), _("Stop LCD Pearl1 ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("exit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) != 2);
+		//{
 			LCD_Pearl1thread->aktion = STOP;
 			system("echo ende > /tmp/titanlcd.png");
 			sleep(1);
 			system("killall lcd4linux");
-		}
+		//}
 	}
 }	
 			
@@ -312,5 +302,79 @@ void deinit(void)
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {
-	LCD_Pearl1_main();
+	struct skin* pearl1_main = getscreen("pearl1_main");
+	struct skin* listbox = getscreennode(pearl1_main, "listbox");
+	struct skin* allmenu = getscreennode(pearl1_main, "allmenu");
+	struct skin* b3 = getscreennode(pearl1_main, "b3");
+	struct skin* tmp = NULL;
+	
+	int rcret = 0;
+	int startstop = 0;
+	int restart = 0;
+	
+  addchoicebox(allmenu, "no", _("nein"));
+  addchoicebox(allmenu, "yes", _("ja"));
+	setchoiceboxselection(allmenu, getconfig("write_fb_to_png", NULL));
+	
+	if(LCD_Pearl1thread != NULL)
+		changetext(b3, "STOP");
+	else
+		changetext(b3, "START");
+		
+	drawscreen(pearl1_main, 0);
+	addscreenrc(pearl1_main, listbox);
+	tmp = listbox->select;
+	
+	while(1)
+	{
+		addscreenrc(pearl1_main, tmp);
+		rcret = waitrc(pearl1_main, 0, 0);
+		tmp = listbox->select;
+		
+		if(rcret == getrcconfigint("rcexit", NULL))
+			break;
+		if(rcret == getrcconfigint("rcgreen", NULL))
+		{
+			addconfig("write_fb_to_png", allmenu->ret);
+			restart = 1;
+			break;
+		}
+			
+		if(rcret == getrcconfigint("rcblue", NULL))
+		{
+			startstop = 1;
+			break;
+		}
+	}
+	delownerrc(pearl1_main);
+	clearscreen(pearl1_main);
+	
+	if(LCD_Pearl1thread != NULL && restart == 1)
+	{
+		LCD_Pearl1thread->aktion = STOP;
+		sleep(2);
+		LCD_Pearl1thread = addtimer(&LCD_Pearl1_thread, START, 10000, 1, NULL, NULL, NULL);
+		sleep(1);
+		return;
+	}
+	if(startstop == 1)
+	{
+		if(LCD_Pearl1thread != NULL)
+		{
+			addconfig("lcd_pearl1_plugin_running", "no");
+			LCD_Pearl1thread->aktion = STOP;
+			sleep(1);
+			system("killall lcd4linux");
+			debug(10, "LCD Pearl1 unloadet !!!");	
+			sleep(1);
+		}
+		else {
+			addconfig("lcd_pearl1_plugin_running", "yes");
+			LCD_Pearl1thread = addtimer(&LCD_Pearl1_thread, START, 10000, 1, NULL, NULL, NULL);
+			addtimer(&LCD_start_lcd4linux, START, 10000, 1, NULL, NULL, NULL);
+			sleep(1);
+		}
+	}
+	return;
 }
+
