@@ -44,7 +44,7 @@
 #: networkbrowser.h:1172 networkbrowser.h:1139 networkbrowser.h:1143
 #: networkbrowser.h:1147 networkbrowser.h:1151 networkbrowser.h:1177
 #: networkbrowser.h:1188 networkbrowser.h:1192 networkbrowser.h:1196
-#: networkbrowser.h:1226
+#: networkbrowser.h:1226 dlna.h:247
 msgid "no"
 msgstr ""
 
@@ -100,7 +100,7 @@ msgstr ""
 #: networkbrowser.h:1147 networkbrowser.h:1173 networkbrowser.h:1140
 #: networkbrowser.h:1144 networkbrowser.h:1148 networkbrowser.h:1152
 #: networkbrowser.h:1178 networkbrowser.h:1189 networkbrowser.h:1193
-#: networkbrowser.h:1197 networkbrowser.h:1227
+#: networkbrowser.h:1197 networkbrowser.h:1227 dlna.h:248
 msgid "yes"
 msgstr ""
 
@@ -437,7 +437,7 @@ msgstr ""
 #: networkbrowser.h:1254 networkbrowser.h:1336 networkbrowser.h:1236
 #: networkbrowser.h:1247 networkbrowser.h:1341 networkbrowser.h:1310
 #: networkbrowser.h:1317 networkbrowser.h:1322 networkbrowser.h:1404
-#: rgui.h:110 rgui.h:126
+#: rgui.h:110 rgui.h:126 dlna.h:307 dlna.h:309 dlna.h:317 httpdfunc.h:899
 msgid "Message"
 msgstr ""
 
@@ -547,7 +547,9 @@ msgstr ""
 #: networkbrowser.h:1236 networkbrowser.h:1247 networkbrowser.h:1341
 #: networkbrowser.h:1310 networkbrowser.h:1317 networkbrowser.h:1322
 #: networkbrowser.h:1404 plugins_networkbrowser_skin.xml.h:9
-#: skins_networkbrowser_skin.xml.h:9 rgui.h:110 rgui.h:126
+#: skins_networkbrowser_skin.xml.h:9 rgui.h:110 rgui.h:126 dlna.h:307
+#: dlna.h:309 dlna.h:317 httpdfunc.h:899 httpdfunc.h:2444
+#: plugins_dlna_skin.xml.h:8 skins_dlna_skin.xml.h:8
 msgid "OK"
 msgstr ""
 
@@ -655,7 +657,9 @@ msgstr ""
 #: networkbrowser.h:1236 networkbrowser.h:1247 networkbrowser.h:1341
 #: networkbrowser.h:1310 networkbrowser.h:1317 networkbrowser.h:1322
 #: networkbrowser.h:1404 plugins_networkbrowser_skin.xml.h:5
-#: skins_networkbrowser_skin.xml.h:5 rgui.h:110 rgui.h:126
+#: skins_networkbrowser_skin.xml.h:5 rgui.h:110 rgui.h:126 dlna.h:307
+#: dlna.h:309 dlna.h:317 httpdfunc.h:899 httpdfunc.h:2444
+#: plugins_dlna_skin.xml.h:2 skins_dlna_skin.xml.h:2
 msgid "EXIT"
 msgstr ""
 
@@ -1386,7 +1390,9 @@ msgstr ""
 #: plugins_mc_skin.xml.h:57 plugins_networkbrowser_skin.xml.h:28
 #: skins_imdb_skin.xml.h:17 skins_mc_skin.xml.h:57
 #: skins_networkbrowser_skin.xml.h:28 plugins_networkbrowser_skin.xml.h:29
-#: skins_networkbrowser_skin.xml.h:29
+#: skins_networkbrowser_skin.xml.h:29 plugins_dlna_skin.xml.h:15
+#: plugins_news_skin.xml.h:5 plugins_weather_skin.xml.h:3
+#: skins_dlna_skin.xml.h:15 skins_news_skin.xml.h:5 skins_weather_skin.xml.h:3
 msgid ""
 msgstr ""
 
@@ -2358,7 +2364,7 @@ msgid "DEL"
 msgstr ""
 
 #: play.h:633 play.h:639 play.h:645 play.h:675 play.h:676 dvdplay.h:27
-#: play.h:679 dvdplay.h:29
+#: play.h:679 dvdplay.h:29 plugins_dlna_skin.xml.h:10 skins_dlna_skin.xml.h:10
 msgid "SELECT"
 msgstr ""
 
@@ -7080,6 +7086,7 @@ msgstr ""
 #: skin_default_skin.xml.h:407 skin_default_skin.xml.h:408
 #: skin_default_skin.xml.h:410 skin_default_skin.xml.h:416
 #: skin_default_skin.xml.h:417 skin_default_skin.xml.h:418
+#: plugins_dlna_skin.xml.h:12 skins_dlna_skin.xml.h:12
 msgid "START"
 msgstr ""
 
@@ -7087,7 +7094,8 @@ msgstr ""
 #: skin_default_skin.xml.h:409 skin_default_skin.xml.h:410
 #: skin_default_skin.xml.h:412 skin_default_skin.xml.h:414
 #: skin_default_skin.xml.h:422 skin_default_skin.xml.h:423
-#: skin_default_skin.xml.h:424
+#: skin_default_skin.xml.h:424 plugins_dlna_skin.xml.h:14
+#: skins_dlna_skin.xml.h:14
 msgid "STOP"
 msgstr ""
 
@@ -7109,6 +7117,7 @@ msgstr ""
 #: skin_default_skin.xml.h:409 skin_default_skin.xml.h:410
 #: skin_default_skin.xml.h:412 skin_default_skin.xml.h:418
 #: skin_default_skin.xml.h:419 skin_default_skin.xml.h:420
+#: plugins_dlna_skin.xml.h:13 skins_dlna_skin.xml.h:13
 msgid "Start on boot"
 msgstr ""
 
@@ -7271,7 +7280,8 @@ msgid "EJECT"
 msgstr ""
 
 #: skin_default_skin.xml.h:386 plugins_imdb_skin.xml.h:12
-#: skins_imdb_skin.xml.h:12
+#: skins_imdb_skin.xml.h:12 plugins_weather_skin.xml.h:2
+#: skins_weather_skin.xml.h:2
 msgid "SEARCH"
 msgstr ""
 
@@ -7377,4 +7387,86 @@ msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:2 skins_networkbrowser_skin.xml.h:2
 msgid "COPY"
+msgstr ""
+
+#: dlna.h:307
+msgid "DLNA started."
+msgstr ""
+
+#: dlna.h:309
+msgid ""
+"DLNA not started,\n"
+"Please check your config."
+msgstr ""
+
+#: dlna.h:317
+msgid "DLNA now stopped"
+msgstr ""
+
+#: plugins_dlna_skin.xml.h:1 skins_dlna_skin.xml.h:1
+msgid "DLNA Settings"
+msgstr ""
+
+#: plugins_dlna_skin.xml.h:3 skins_dlna_skin.xml.h:3
+msgid "Interface"
+msgstr ""
+
+#: plugins_dlna_skin.xml.h:4 skins_dlna_skin.xml.h:4
+msgid "Medie Dir 1"
+msgstr ""
+
+#: plugins_dlna_skin.xml.h:5 skins_dlna_skin.xml.h:5
+msgid "Medie Dir 2"
+msgstr ""
+
+#: plugins_dlna_skin.xml.h:6 skins_dlna_skin.xml.h:6
+msgid "Medie Dir 3"
+msgstr ""
+
+#: plugins_dlna_skin.xml.h:7 skins_dlna_skin.xml.h:7
+msgid "Medie Dir 4"
+msgstr ""
+
+#: plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
+msgid "Port"
+msgstr ""
+
+#: plugins_dlna_skin.xml.h:11 skins_dlna_skin.xml.h:11
+msgid "Server Name"
+msgstr ""
+
+#: plugins_news_skin.xml.h:1 skins_news_skin.xml.h:1
+msgid "News"
+msgstr ""
+
+#: plugins_news_skin.xml.h:2 skins_news_skin.xml.h:2
+msgid "BROWSER"
+msgstr ""
+
+#: plugins_news_skin.xml.h:3 skins_news_skin.xml.h:3
+msgid "NEXT"
+msgstr ""
+
+#: plugins_news_skin.xml.h:4 skins_news_skin.xml.h:4
+msgid "PREV"
+msgstr ""
+
+#: plugins_weather_skin.xml.h:1 skins_weather_skin.xml.h:1
+msgid "Weather"
+msgstr ""
+
+#: weather.h:308 weather.h:326 weather.h:344 weather.h:362
+msgid "Day: "
+msgstr ""
+
+#: weather.h:312 weather.h:330 weather.h:348 weather.h:366
+msgid "Lowest temp: "
+msgstr ""
+
+#: weather.h:316 weather.h:334 weather.h:352 weather.h:370
+msgid "Highest temp: "
+msgstr ""
+
+#: weather.h:320 weather.h:338 weather.h:356 weather.h:374
+msgid "Condition: "
 msgstr ""
