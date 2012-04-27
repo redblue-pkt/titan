@@ -130,6 +130,7 @@
 #define EPGSCANLOG "/tmp/epgscan.log"
 #define MAXCHANNELHISTORY 6
 #define HILO(x) (x##_hi << 8 | x##_lo)
+#define HTTPAUTH "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0="
 
 //CA Defines
 #define T_SB 0x80		//sb (h<--m)
