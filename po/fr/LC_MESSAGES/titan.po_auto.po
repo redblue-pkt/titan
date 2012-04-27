@@ -7470,3 +7470,19 @@ msgstr ""
 #: weather.h:320 weather.h:338 weather.h:356 weather.h:374
 msgid "Condition: "
 msgstr ""
+
+#: plugins_dlna_skin.xml.h:4 skins_dlna_skin.xml.h:4
+msgid "Media Dir 1"
+msgstr ""
+
+#: plugins_dlna_skin.xml.h:5 skins_dlna_skin.xml.h:5
+msgid "Media Dir 2"
+msgstr ""
+
+#: plugins_dlna_skin.xml.h:6 skins_dlna_skin.xml.h:6
+msgid "Media Dir 3"
+msgstr ""
+
+#: plugins_dlna_skin.xml.h:7 skins_dlna_skin.xml.h:7
+msgid "Media Dir 4"
+msgstr ""
