@@ -70,7 +70,7 @@ struct imdb* getimdb(char* title)
 		imdb->title = getxmlentry(tmpstr, "\"Title\":");
 		imdb->year = getxmlentry(tmpstr, "\"Year\":");
 		imdb->rated = getxmlentry(tmpstr, "\"Rated\":");
-		imdb->released = getxmlentry(tmpstr, "\"Released\":"), NULL, 0, 0);
+		imdb->released = getxmlentry(tmpstr, "\"Released\":");
 		imdb->genre = getxmlentry(tmpstr, "\"Genre\":");
 		imdb->director = getxmlentry(tmpstr, "\"Director\":");
 		imdb->writer = getxmlentry(tmpstr, "\"Writer\":");
