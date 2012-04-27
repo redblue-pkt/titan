@@ -781,6 +781,7 @@ msgstr ""
 #: skin_default_skin.xml.h:67 skin_default_skin.xml.h:68
 #: skin_default_skin.xml.h:69 dir.h:72 dir.h:78 dir.h:84 dir.h:90
 #: skin_default_skin.xml.h:70 dir.h:73 dir.h:79 dir.h:85 dir.h:91
+#: plugins_lcdpearl1_skin.xml.h:2 skins_lcdpearl1_skin.xml.h:2
 msgid "---"
 msgstr ""
 
@@ -1393,6 +1394,7 @@ msgstr ""
 #: skins_networkbrowser_skin.xml.h:29 plugins_dlna_skin.xml.h:15
 #: plugins_news_skin.xml.h:5 plugins_weather_skin.xml.h:3
 #: skins_dlna_skin.xml.h:15 skins_news_skin.xml.h:5 skins_weather_skin.xml.h:3
+#: plugins_lcdpearl1_skin.xml.h:11 skins_lcdpearl1_skin.xml.h:11
 msgid ""
 msgstr ""
 
@@ -2517,6 +2519,7 @@ msgid "Writers:"
 msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:2 skins_lcdpearl1_skin.xml.h:2
+#: plugins_lcdpearl1_skin.xml.h:4 skins_lcdpearl1_skin.xml.h:4
 msgid "Auswahl"
 msgstr ""
 
@@ -7485,4 +7488,30 @@ msgstr ""
 
 #: plugins_dlna_skin.xml.h:7 skins_dlna_skin.xml.h:7
 msgid "Media Dir 4"
+msgstr ""
+
+#: plugins_lcdpearl1_skin.xml.h:1 skins_lcdpearl1_skin.xml.h:1
+msgid "Pearl LCD Settings"
+msgstr ""
+
+#: plugins_lcdpearl1_skin.xml.h:3 skins_lcdpearl1_skin.xml.h:3
+msgid "alle Menus anzeigen"
+msgstr ""
+
+#: plugins_lcdpearl1_skin.xml.h:9 skins_lcdpearl1_skin.xml.h:9
+msgid ""
+"text=START halign=center valign=middle bordercol=blue bordersize=2 "
+"bordertype=2 posx=400 posy=0 width=200 height=30/>);"
+msgstr ""
+
+#: plugins_lcdpearl1_skin.xml.h:7 skins_lcdpearl1_skin.xml.h:7
+msgid ""
+"text=SAVE halign=center valign=middle bordercol=green bordersize=2 "
+"bordertype=2 posx=0 posy=0 width=150 height=30/>);"
+msgstr ""
+
+#: plugins_lcdpearl1_skin.xml.h:5 skins_lcdpearl1_skin.xml.h:5
+msgid ""
+"text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 "
+"bordertype=2 posx=160 posy=0 width=150 height=30/>);"
 msgstr ""
