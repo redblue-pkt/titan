@@ -97,5 +97,6 @@ compile "dvdplayer" "dvdplay" ""
 compile "scriptexec" "scriptexec" ""
 compile "optimize" "optimize" ""
 compile "weather" "weather" ""
+compile "news" "news" ""
 
 #rm -r networkbrowser/networkbrowser
