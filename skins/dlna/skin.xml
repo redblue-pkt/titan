@@ -4,10 +4,10 @@
 <node name=interface type=choicebox parent=listbox valign=middle posx=0 text="Interface" bordercol=bordercol width=100%>
 <node name=port type=inputboxnum parent=listbox valign=middle posx=0 text="Port" bordercol=bordercol width=100%>
 <node name=name type=inputbox parent=listbox valign=middle posx=0 text="Server Name" bordercol=bordercol width=100%>
-<node name=dir1 type=choicebox parent=listbox valign=middle posx=0 text="Medie Dir 1" bordercol=bordercol width=100%>
-<node name=dir2 type=choicebox parent=listbox valign=middle posx=0 text="Medie Dir 2" bordercol=bordercol width=100%>
-<node name=dir3 type=choicebox parent=listbox valign=middle posx=0 text="Medie Dir 3" bordercol=bordercol width=100%>
-<node name=dir4 type=choicebox parent=listbox valign=middle posx=0 text="Medie Dir 4" bordercol=bordercol width=100%>
+<node name=dir1 type=choicebox parent=listbox valign=middle posx=0 text="Media Dir 1" bordercol=bordercol width=100%>
+<node name=dir2 type=choicebox parent=listbox valign=middle posx=0 text="Media Dir 2" bordercol=bordercol width=100%>
+<node name=dir3 type=choicebox parent=listbox valign=middle posx=0 text="Media Dir 3" bordercol=bordercol width=100%>
+<node name=dir4 type=choicebox parent=listbox valign=middle posx=0 text="Media Dir 4" bordercol=bordercol width=100%>
 <node name=b1 text="OK" halign=center valign=middle posx=20 posy=0 width=150 height=30 bordercol=okcol bordersize=4 bordertype=2>
 <node name=b2 text="EXIT" halign=center valign=middle posx=190 posy=0 width=150 height=30 bordercol=exitcol bordersize=4 bordertype=2>
 <node name=b3 text="START" halign=center valign=middle posx=360 posy=0 width=150 height=30 bordercol=green bordersize=4 bordertype=2>
