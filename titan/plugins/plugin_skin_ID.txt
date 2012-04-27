@@ -14,5 +14,6 @@ rgui: 197
 optimize: 198
 dlna: 207
 weather: 208
+news: 210
 TopfieldVFD: ---
 browser: ---

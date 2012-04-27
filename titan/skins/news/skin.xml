@@ -1,0 +1,9 @@
+<screen titlealign=center name=news hspace=5 vspace=5 fontcol=fontcol fontsize=30 title="News" posx=center posy=center width=700 height=700 bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node name=date posx=5 posy=0 width=680 height=30>
+<node name=source posx=5 posy=35 width=680 height=30>
+<node name=title type=textbox wrap=yes posx=5 posy=90 width=680 height=100>
+<node name=snippet type=textbox wrap=yes posx=5 posy=200 width=680 height=380>
+<node name=b1 text="PREV" halign=center valign=center bordercol=red bordersize=4 bordertype=2 posx=20 posy=610 width=150 height=30/>
+<node name=b2 text="NEXT" halign=center valign=center bordercol=green bordersize=4 bordertype=2 posx=180 posy=610 width=150 height=30/>
+<node name=b3 text="BROWSER" halign=center valign=center bordercol=yellow bordersize=4 bordertype=2 posx=340 posy=610 width=150 height=30/>
+</screen>
