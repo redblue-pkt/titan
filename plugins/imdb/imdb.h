@@ -149,18 +149,18 @@ start:
 		if(rcret == getrcconfigint("rcok", NULL)) break;
 
 		if(rcret == getrcconfigint("rcred", NULL))
-                {
-                        search = textinput("Search", NULL);
-                        if(search != NULL)
-                        {
+    {
+      search = textinput("Search", NULL);
+      if(search != NULL)
+      {
 				freeimdb(node); node = NULL;
 				node = getimdb(search);
-                                free(search); search = NULL;
+        free(search); search = NULL;
 				goto start;
-                        }
-                        drawscreen(imdbskin, 0);
-                        continue;
-                }
+      }
+      drawscreen(imdbskin, 0);
+      continue;
+    }
 	}
 
 	freeimdb(node); node = NULL;
