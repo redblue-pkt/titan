@@ -1355,37 +1355,18 @@ void jpgswerror(j_common_ptr cinfo)
 
 void calcautoscale(int width, int height, int mwidth, int mheight, int* scalewidth, int* scaleheight)
 {
-	if(width < mwidth && height < mheight && height > 0)
+	float srcRatio = (float)width / (float)height;
+	float dstRatio = (float)mwidth / (float)mheight;
+
+	if(dstRatio > srcRatio)
 	{
 		*scaleheight = mheight;
-		*scalewidth = width * (mheight / height);
-		
-		if(*scalewidth > mwidth && width > 0)
-		{
-			*scalewidth = mwidth;
-			*scaleheight = height * (mwidth / width);
-		}				
+		*scalewidth = mheight * srcRatio;
 	}
-	else if(width < mwidth && height > mheight && mheight > 0 && (height / mheight) > 0)
-	{
-		*scaleheight = mheight;
-		*scalewidth = width / (height / mheight);
-	}
-	else if(width > mwidth && height < mheight && mwidth > 0 && (width / mwidth) > 0)
+	else
 	{
 		*scalewidth = mwidth;
-		*scaleheight = height / (width / mwidth);
-	}
-	else if(width > mwidth && height > mheight && mheight > 0 && (height / mheight) > 0)
-	{
-		*scaleheight = mheight;
-		*scalewidth = width / (height / mheight);
-		
-		if(*scalewidth > mwidth && mwidth > 0 && (width / mwidth) > 0)
-		{
-			*scalewidth = mwidth;
-			*scaleheight = height / (width / mwidth);
-		}
+		*scaleheight = mwidth / srcRatio;
 	}
 }
 
