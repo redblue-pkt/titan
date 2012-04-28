@@ -37,6 +37,7 @@ void rguidgotdata(struct stimerthread* timernode, int* connfd)
 		if(buf != NULL && buf[0] != '\0')
 		{
 			keycode = atoi((char*)buf);
+      memset(buf, 0, 6);
 			debug(250, "got keycode %d\n", keycode);
 			
 			if(status.standby == 0 && keycode == 98989)
@@ -60,8 +61,6 @@ void rguidgotdata(struct stimerthread* timernode, int* connfd)
 			}
 			
 			writerc(keycode);
-				
-			memset(buf, 0, 6);
 		}
 	}
 
