@@ -13,7 +13,7 @@
 #<node valign=middle textposx=40 name=mc_webradio text="Web Radio Player" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 #<node valign=middle textposx=40 name=mc_wetterinfo text="Weather Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 #<node valign=middle textposx=40 name=mc_settings text="Settings" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
-<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=75% posy=2% width=280 height=30/>
+<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=middle posx=75% posy=2% width=280 height=30/>
 </screen>
 
 # main settings
@@ -34,15 +34,15 @@
 <node name=mc_filelistpath valign=middle bordersize=1 posx=center posy=100 width=95% height=30>
 <node hspace=10 picmem=skin/ext_directory.png textposx=30 fontsize=25 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=mc_filelist posx=center posy=140 width=92% height=480>
 <node name=cover posx=3% posy=70% width=124 height=171 picwidth=124 picheight=171>
-<node name=b1 text="Sorting" halign=center valign=center bordercol=bgcol bordersize=0 posx=15% posy=90% width=150 height=30/>
-<node name=b1 text="Sorting" halign=center valign=center bordercol=red bordersize=2 posx=15% posy=95% width=150 height=2/>
-<node name=b2 text="Filelist-Mode" halign=center valign=center bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
-<node name=b2 text="Filelist-Mode" halign=center valign=center bordercol=green bordersize=2 posx=35% posy=95% width=150 height=2/>
-<node name=b3 text="Random" halign=center valign=center bordercol=bgcol bordersize=0 posx=55% posy=90% width=150 height=30/>
-<node name=b3 text="Random" halign=center valign=center bordercol=yellow bordersize=2 posx=55% posy=95% width=150 height=2/>
-<node name=b4 text="Repeat" halign=center valign=center bordercol=bgcol bordersize=0 posx=75% posy=90% width=150 height=30/>
-<node name=b4 text="Repeat" halign=center valign=center bordercol=blue bordersize=2 posx=75% posy=95% width=150 height=2/>
-<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=75% posy=2% width=280 height=30/>
+<node name=b1 text="Sorting" halign=center valign=middle bordercol=bgcol bordersize=0 posx=15% posy=90% width=150 height=30/>
+<node name=b1 text="Sorting" halign=center valign=middle bordercol=red bordersize=2 posx=15% posy=95% width=150 height=2/>
+<node name=b2 text="Filelist-Mode" halign=center valign=middle bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
+<node name=b2 text="Filelist-Mode" halign=center valign=middle bordercol=green bordersize=2 posx=35% posy=95% width=150 height=2/>
+<node name=b3 text="Random" halign=center valign=middle bordercol=bgcol bordersize=0 posx=55% posy=90% width=150 height=30/>
+<node name=b3 text="Random" halign=center valign=middle bordercol=yellow bordersize=2 posx=55% posy=95% width=150 height=2/>
+<node name=b4 text="Repeat" halign=center valign=middle bordercol=bgcol bordersize=0 posx=75% posy=90% width=150 height=30/>
+<node name=b4 text="Repeat" halign=center valign=middle bordercol=blue bordersize=2 posx=75% posy=95% width=150 height=2/>
+<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=middle posx=75% posy=2% width=280 height=30/>
 </screen>
 
 <screen name="mc_videoplayer_settings" picmem=%pluginpath%/mc/skin/background5.png fontcol=fontcol valign=bottom fontsize=30 posx=center posy=center width=100% height=100% bordersize=0 bgcol=bgcol>
@@ -52,12 +52,12 @@
 <node name=view type=choicebox parent=listbox valign=middle posx=0 text="View" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=imdb_directory type=choicebox parent=listbox valign=middle posx=0 text="Imdb Directory" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=autostart_playlist type=choicebox parent=listbox valign=middle posx=0 text="Autostart Playlist" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=b1 text="OK" halign=center valign=center bordercol=bgcol bordersize=0 posx=20% posy=90% width=150 height=30/>
-<node name=b1 text="OK" halign=center valign=center bordercol=okcol bordersize=2 posx=20% posy=95% width=150 height=2/>
-<node name=b2 text="EXIT" halign=center valign=center bordercol=bgcol bordersize=0 posx=45% posy=90% width=150 height=30/>
-<node name=b2 text="EXIT" halign=center valign=center bordercol=exitcol bordersize=2 posx=45% posy=95% width=150 height=2/>
-<node name=b4 text="Network" halign=center valign=center bordercol=bgcol bordersize=0 posx=70% posy=90% width=150 height=30/>
-<node name=b4 text="Network" halign=center valign=center bordercol=red bordersize=2 posx=70% posy=95% width=150 height=2/>
+<node name=b1 text="OK" halign=center valign=middle bordercol=bgcol bordersize=0 posx=20% posy=90% width=150 height=30/>
+<node name=b1 text="OK" halign=center valign=middle bordercol=okcol bordersize=2 posx=20% posy=95% width=150 height=2/>
+<node name=b2 text="EXIT" halign=center valign=middle bordercol=bgcol bordersize=0 posx=45% posy=90% width=150 height=30/>
+<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=2 posx=45% posy=95% width=150 height=2/>
+<node name=b4 text="Network" halign=center valign=middle bordercol=bgcol bordersize=0 posx=70% posy=90% width=150 height=30/>
+<node name=b4 text="Network" halign=center valign=middle bordercol=red bordersize=2 posx=70% posy=95% width=150 height=2/>
 </screen>
 
 # audioplayer
@@ -66,15 +66,15 @@
 <node name=mc_filelistpath valign=middle bordersize=1 posx=center posy=100 width=95% height=30>
 <node fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox posx=center posy=140 width=92% height=50%>
 <node hspace=10 picmem=skin/folder.png textposx=30 fontsize=20 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=mc_filelist posx=center posy=140 width=92% height=50%>
-<node name=b1 text="Sorting" halign=center valign=center bordercol=bgcol bordersize=0 posx=15% posy=90% width=150 height=30/>
-<node name=b1 text="Sorting" halign=center valign=center bordercol=red bordersize=2 posx=15% posy=95% width=150 height=2/>
-<node name=b2 text="Filelist-Mode" halign=center valign=center bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
-<node name=b2 text="Filelist-Mode" halign=center valign=center bordercol=green bordersize=2 posx=35% posy=95% width=150 height=2/>
-<node name=b3 text="Random" halign=center valign=center bordercol=bgcol bordersize=0 posx=55% posy=90% width=150 height=30/>
-<node name=b3 text="Random" halign=center valign=center bordercol=yellow bordersize=2 posx=55% posy=95% width=150 height=2/>
-<node name=b4 text="Repeat" halign=center valign=center bordercol=bgcol bordersize=0 posx=75% posy=90% width=150 height=30/>
-<node name=b4 text="Repeat" halign=center valign=center bordercol=blue bordersize=2 posx=75% posy=95% width=150 height=2/>
-<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=75% posy=2% width=280 height=30/>
+<node name=b1 text="Sorting" halign=center valign=middle bordercol=bgcol bordersize=0 posx=15% posy=90% width=150 height=30/>
+<node name=b1 text="Sorting" halign=center valign=middle bordercol=red bordersize=2 posx=15% posy=95% width=150 height=2/>
+<node name=b2 text="Filelist-Mode" halign=center valign=middle bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
+<node name=b2 text="Filelist-Mode" halign=center valign=middle bordercol=green bordersize=2 posx=35% posy=95% width=150 height=2/>
+<node name=b3 text="Random" halign=center valign=middle bordercol=bgcol bordersize=0 posx=55% posy=90% width=150 height=30/>
+<node name=b3 text="Random" halign=center valign=middle bordercol=yellow bordersize=2 posx=55% posy=95% width=150 height=2/>
+<node name=b4 text="Repeat" halign=center valign=middle bordercol=bgcol bordersize=0 posx=75% posy=90% width=150 height=30/>
+<node name=b4 text="Repeat" halign=center valign=middle bordercol=blue bordersize=2 posx=75% posy=95% width=150 height=2/>
+<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=middle posx=75% posy=2% width=280 height=30/>
 </screen>
 
 <screen name="mc_audioplayer_settings" picmem=%pluginpath%/mc/skin/background5.png fontcol=fontcol valign=bottom fontsize=30 posx=center posy=center width=100% height=100% bordersize=0 bgcol=bgcol>
@@ -83,14 +83,14 @@
 <node name=sort type=choicebox parent=listbox valign=middle posx=0 text="Sort" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=view type=choicebox parent=listbox valign=middle posx=0 text="View" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=autostart_playlist type=choicebox parent=listbox valign=middle posx=0 text="Autostart Playlist" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=b1 text="OK" halign=center valign=center bordercol=bgcol bordersize=0 posx=15% posy=90% width=150 height=30/>
-<node name=b1 text="OK" halign=center valign=center bordercol=okcol bordersize=2 posx=15% posy=95% width=150 height=2/>
-<node name=b2 text="EXIT" halign=center valign=center bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
-<node name=b2 text="EXIT" halign=center valign=center bordercol=exitcol bordersize=2 posx=35% posy=95% width=150 height=2/>
-<node name=b3 text="Screensaver" halign=center valign=center bordercol=bgcol bordersize=0 posx=51% posy=90% width=250 height=30/>
-<node name=b3 text="Screensaver" halign=center valign=center bordercol=red bordersize=2 posx=51% posy=95% width=250 height=2/>
-<node name=b4 text="Network" halign=center valign=center bordercol=bgcol bordersize=0 posx=75% posy=90% width=150 height=30/>
-<node name=b4 text="Network" halign=center valign=center bordercol=green bordersize=2 posx=75% posy=95% width=150 height=2/>
+<node name=b1 text="OK" halign=center valign=middle bordercol=bgcol bordersize=0 posx=15% posy=90% width=150 height=30/>
+<node name=b1 text="OK" halign=center valign=middle bordercol=okcol bordersize=2 posx=15% posy=95% width=150 height=2/>
+<node name=b2 text="EXIT" halign=center valign=middle bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
+<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=2 posx=35% posy=95% width=150 height=2/>
+<node name=b3 text="Screensaver" halign=center valign=middle bordercol=bgcol bordersize=0 posx=51% posy=90% width=250 height=30/>
+<node name=b3 text="Screensaver" halign=center valign=middle bordercol=red bordersize=2 posx=51% posy=95% width=250 height=2/>
+<node name=b4 text="Network" halign=center valign=middle bordercol=bgcol bordersize=0 posx=75% posy=90% width=150 height=30/>
+<node name=b4 text="Network" halign=center valign=middle bordercol=green bordersize=2 posx=75% posy=95% width=150 height=2/>
 </screen>
 
 <screen name="mc_audioplayer_infobar" fontcol=fontcol fontsize=30 posx=center posy=83% width=100% height=50 bordersize=2 bgcol=0>
@@ -110,15 +110,15 @@
 <node fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox posx=center posy=140 width=92% height=480>
 <node name=mc_filelistpath valign=middle bordersize=1 posx=center posy=100 width=95% height=30>
 <node hspace=10 picmem=skin/folder.png textposx=30 fontsize=40 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=mc_filelist posx=center posy=140 width=92% height=480>
-<node name=b1 text="Sorting" halign=center valign=center bordercol=bgcol bordersize=0 posx=15% posy=90% width=150 height=30/>
-<node name=b1 text="Sorting" halign=center valign=center bordercol=red bordersize=2 posx=15% posy=95% width=150 height=2/>
-<node name=b2 text="Filelist-Mode" halign=center valign=center bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
-<node name=b2 text="Filelist-Mode" halign=center valign=center bordercol=green bordersize=2 posx=35% posy=95% width=150 height=2/>
-<node name=b3 text="Random" halign=center valign=center bordercol=bgcol bordersize=0 posx=55% posy=90% width=150 height=30/>
-<node name=b3 text="Random" halign=center valign=center bordercol=yellow bordersize=2 posx=55% posy=95% width=150 height=2/>
-<node name=b4 text="Repeat" halign=center valign=center bordercol=bgcol bordersize=0 posx=75% posy=90% width=150 height=30/>
-<node name=b4 text="Repeat" halign=center valign=center bordercol=blue bordersize=2 posx=75% posy=95% width=150 height=2/>
-<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=75% posy=2% width=280 height=30/>
+<node name=b1 text="Sorting" halign=center valign=middle bordercol=bgcol bordersize=0 posx=15% posy=90% width=150 height=30/>
+<node name=b1 text="Sorting" halign=center valign=middle bordercol=red bordersize=2 posx=15% posy=95% width=150 height=2/>
+<node name=b2 text="Filelist-Mode" halign=center valign=middle bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
+<node name=b2 text="Filelist-Mode" halign=center valign=middle bordercol=green bordersize=2 posx=35% posy=95% width=150 height=2/>
+<node name=b3 text="Random" halign=center valign=middle bordercol=bgcol bordersize=0 posx=55% posy=90% width=150 height=30/>
+<node name=b3 text="Random" halign=center valign=middle bordercol=yellow bordersize=2 posx=55% posy=95% width=150 height=2/>
+<node name=b4 text="Repeat" halign=center valign=middle bordercol=bgcol bordersize=0 posx=75% posy=90% width=150 height=30/>
+<node name=b4 text="Repeat" halign=center valign=middle bordercol=blue bordersize=2 posx=75% posy=95% width=150 height=2/>
+<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=middle posx=75% posy=2% width=280 height=30/>
 </screen>
 
 <screen name="mc_pictureplayer_settings" picmem=%pluginpath%/mc/skin/background5.png fontcol=fontcol valign=bottom fontsize=30 posx=center posy=center width=100% height=100% bordersize=0 bgcol=bgcol>
@@ -133,15 +133,15 @@
 <node name=picdenom type=choicebox parent=listbox valign=middle posx=0 text="Picdenom Mode" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=pichwdecode type=choicebox parent=listbox valign=middle posx=0 text="Pic HW-decode" bordercol=bordercol bordersize=1 width=100% height=25>
 
-<node name=b1 text="OK" halign=center valign=center bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
-<node name=b1 text="OK" halign=center valign=center bordercol=okcol bordersize=2 posx=35% posy=95% width=150 height=2/>
-<node name=b2 text="EXIT" halign=center valign=center bordercol=bgcol bordersize=0 posx=55% posy=90% width=150 height=30/>
-<node name=b2 text="EXIT" halign=center valign=center bordercol=exitcol bordersize=2 posx=55% posy=95% width=150 height=2/>
+<node name=b1 text="OK" halign=center valign=middle bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
+<node name=b1 text="OK" halign=center valign=middle bordercol=okcol bordersize=2 posx=35% posy=95% width=150 height=2/>
+<node name=b2 text="EXIT" halign=center valign=middle bordercol=bgcol bordersize=0 posx=55% posy=90% width=150 height=30/>
+<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=2 posx=55% posy=95% width=150 height=2/>
 </screen>
 
 <screen fontcol=fontcol name=picscreen fontsize=30 posx=0 posy=0 width=100% height=100% bordersize=0>
 <node fontsize=30 bordercol=bordercol type=listbox name=listbox width=100% height=100% >
-<node name=picture picwidth=1280 picheight=720 valign=middle halign=middle parent=listbox bordercol=bordercol bordersize=0 width=100% height=100%>
+<node name=picture picwidth=1280 picheight=720 valign=middle halign=center parent=listbox bordercol=bordercol bordersize=0 width=100% height=100%>
 <node textposx=100 name=picname posx=0 posy=30 width=100% height=30 fontcol=fontcol/>
 </screen>
 
