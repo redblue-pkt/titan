@@ -47,7 +47,6 @@ int screenrgui(char* ip)
 	{
 		memcpy(buf, tmpstr, strlen((char*)tmpstr));
 		ret = socksend(&sock, buf, 6, 1000 * 1000);
-		free(tmpstr); tmpstr = NULL;
 		memset(buf, 0, 10);
 	}
 
