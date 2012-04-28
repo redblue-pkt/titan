@@ -549,7 +549,7 @@ msgstr ""
 #: networkbrowser.h:1404 plugins_networkbrowser_skin.xml.h:9
 #: skins_networkbrowser_skin.xml.h:9 rgui.h:110 rgui.h:126 dlna.h:307
 #: dlna.h:309 dlna.h:317 httpdfunc.h:899 httpdfunc.h:2444
-#: plugins_dlna_skin.xml.h:8 skins_dlna_skin.xml.h:8
+#: plugins_dlna_skin.xml.h:8 skins_dlna_skin.xml.h:8 scriptexec.h:41
 msgid "OK"
 msgstr ""
 
@@ -659,7 +659,7 @@ msgstr ""
 #: networkbrowser.h:1404 plugins_networkbrowser_skin.xml.h:5
 #: skins_networkbrowser_skin.xml.h:5 rgui.h:110 rgui.h:126 dlna.h:307
 #: dlna.h:309 dlna.h:317 httpdfunc.h:899 httpdfunc.h:2444
-#: plugins_dlna_skin.xml.h:2 skins_dlna_skin.xml.h:2
+#: plugins_dlna_skin.xml.h:2 skins_dlna_skin.xml.h:2 scriptexec.h:41
 msgid "EXIT"
 msgstr ""
 
@@ -7328,15 +7328,15 @@ msgstr ""
 msgid "Send remote box into standby ?"
 msgstr ""
 
-#: scriptexec.h:15
+#: scriptexec.h:15 scriptexec.h:22
 msgid "BG-RUN"
 msgstr ""
 
-#: scriptexec.h:33
+#: scriptexec.h:33 scriptexec.h:40
 msgid "Script has no output or started in background."
 msgstr ""
 
-#: scriptexec.h:34
+#: scriptexec.h:34 scriptexec.h:41
 msgid "Script execute"
 msgstr ""
 
