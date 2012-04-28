@@ -4722,23 +4722,27 @@ char* string_striptags(char* filename)
 	return strstrip(filename);	
 }
 
-char* string_resub(char* str, char* str2, char* filename)
+char* string_resub(char* str, char* str2, char* data)
 {
 	debug(1000, "in");
-	int i, len_str, len_filename;
 
-	if(str == NULL || str2 == NULL || filename == NULL) return 0;
+	char* tmpstr = NULL;
+	tmpstr = ostrcat(tmpstr, data, 1, 0);
+		
+	int i, len_str, len_data;
+
+	if(str == NULL || str2 == NULL || tmpstr == NULL) return 0;
 
 	len_str = strlen(str);
-	len_filename = strlen(filename);
+	len_data = strlen(tmpstr);
 
 	int count = 0;
-	for(i = 0; (i + len_str) < len_filename; i++)
+	for(i = 0; (i + len_str) < len_data; i++)
 	{
-		if(strncmp(filename + i, str, len_str) == 0 && count == 0)
+		if(strncmp(tmpstr + i, str, len_str) == 0 && count == 0)
 		{
 			count = i + len_str;
-			filename[i] = ' ';
+			tmpstr[i] = ' ';
 		}
 		else if(count == i && count != 0)
 		{
@@ -4746,21 +4750,21 @@ char* string_resub(char* str, char* str2, char* filename)
 			break;
 		}
 		else
-			filename[i] = ' ';
+			tmpstr[i] = ' ';
 	}
 	len_str = strlen(str2);
 
-	for(i = 0; (i + len_str) < len_filename; i++)
+	for(i = 0; (i + len_str) < len_data; i++)
 	{
-		if(strncmp(filename + i, str2, len_str) == 0 && i >= count)
+		if(strncmp(tmpstr + i, str2, len_str) == 0 && i >= count)
 		{
-			filename[i] = '\0';
+			tmpstr[i] = '\0';
 			break;
 		}
 	}	
 
 	debug(1000, "out");
-	return strstrip(filename);
+	return strstrip(tmpstr);
 }
 
 char* ostrstrcase(char* str, char* sub)
