@@ -22,6 +22,7 @@ int screenrgui(char* ip)
 	{
 		textbox(_("Message"), _("Can't connect to server !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		sockclose(&sock);
+    delfb("rguiskinfb");
 		return 1;
 	}
 
@@ -29,6 +30,7 @@ int screenrgui(char* ip)
 	if(buf == NULL)
 	{
 		sockclose(&sock);
+    delfb("rguiskinfb");
 		return 1;
 	}
 	memset(buf, 0, 10);
