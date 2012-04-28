@@ -1,3 +1,10 @@
+/*****************************************************/
+/* this file is part of the tiTan / tiTanNIT Project */
+/* and allowed only for use with this.               */
+/*                                                   */
+/* copyright by NIT                                  */
+/*****************************************************/
+
 #ifndef SCRIPTEXEC_H
 #define SCRIPTEXEC_H
 
