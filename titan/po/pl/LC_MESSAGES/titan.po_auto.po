@@ -438,6 +438,7 @@ msgstr ""
 #: networkbrowser.h:1247 networkbrowser.h:1341 networkbrowser.h:1310
 #: networkbrowser.h:1317 networkbrowser.h:1322 networkbrowser.h:1404
 #: rgui.h:110 rgui.h:126 dlna.h:307 dlna.h:309 dlna.h:317 httpdfunc.h:899
+#: rgui.h:112 rgui.h:128
 msgid "Message"
 msgstr ""
 
@@ -550,6 +551,7 @@ msgstr ""
 #: skins_networkbrowser_skin.xml.h:9 rgui.h:110 rgui.h:126 dlna.h:307
 #: dlna.h:309 dlna.h:317 httpdfunc.h:899 httpdfunc.h:2444
 #: plugins_dlna_skin.xml.h:8 skins_dlna_skin.xml.h:8 scriptexec.h:41
+#: rgui.h:112 rgui.h:128
 msgid "OK"
 msgstr ""
 
@@ -660,6 +662,7 @@ msgstr ""
 #: skins_networkbrowser_skin.xml.h:5 rgui.h:110 rgui.h:126 dlna.h:307
 #: dlna.h:309 dlna.h:317 httpdfunc.h:899 httpdfunc.h:2444
 #: plugins_dlna_skin.xml.h:2 skins_dlna_skin.xml.h:2 scriptexec.h:41
+#: rgui.h:112 rgui.h:128
 msgid "EXIT"
 msgstr ""
 
@@ -7183,7 +7186,7 @@ msgstr ""
 msgid "Can't connect to server !"
 msgstr ""
 
-#: rgui.h:84 rgui.h:87 rgui.h:106 rgui.h:130 rgui.h:129 rgui.h:126
+#: rgui.h:84 rgui.h:87 rgui.h:106 rgui.h:130 rgui.h:129 rgui.h:126 rgui.h:128
 msgid "Connection to server lost !"
 msgstr ""
 
@@ -7324,7 +7327,7 @@ msgstr ""
 msgid "Optimize"
 msgstr ""
 
-#: rgui.h:109 rgui.h:108 rgui.h:110
+#: rgui.h:109 rgui.h:108 rgui.h:110 rgui.h:112
 msgid "Send remote box into standby ?"
 msgstr ""
 
