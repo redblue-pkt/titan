@@ -1398,6 +1398,7 @@ msgstr ""
 #: plugins_news_skin.xml.h:5 plugins_weather_skin.xml.h:3
 #: skins_dlna_skin.xml.h:15 skins_news_skin.xml.h:5 skins_weather_skin.xml.h:3
 #: plugins_lcdpearl1_skin.xml.h:11 skins_lcdpearl1_skin.xml.h:11
+#: plugins_tmdb_skin.xml.h:17
 msgid ""
 msgstr ""
 
@@ -2457,39 +2458,41 @@ msgstr ""
 msgid "Cast:"
 msgstr ""
 
-#: plugins_imdb_skin.xml.h:3 skins_imdb_skin.xml.h:3
+#: plugins_imdb_skin.xml.h:3 skins_imdb_skin.xml.h:3 plugins_tmdb_skin.xml.h:3
 msgid "--director--"
 msgstr ""
 
-#: plugins_imdb_skin.xml.h:4 skins_imdb_skin.xml.h:4
+#: plugins_imdb_skin.xml.h:4 skins_imdb_skin.xml.h:4 plugins_tmdb_skin.xml.h:4
 msgid "Director:"
 msgstr ""
 
-#: plugins_imdb_skin.xml.h:5 skins_imdb_skin.xml.h:5
+#: plugins_imdb_skin.xml.h:5 skins_imdb_skin.xml.h:5 plugins_tmdb_skin.xml.h:5
 msgid "--genre--"
 msgstr ""
 
-#: plugins_imdb_skin.xml.h:6 skins_imdb_skin.xml.h:6
+#: plugins_imdb_skin.xml.h:6 skins_imdb_skin.xml.h:6 plugins_tmdb_skin.xml.h:6
 msgid "Genre:"
 msgstr ""
 
-#: plugins_imdb_skin.xml.h:7 skins_imdb_skin.xml.h:7
+#: plugins_imdb_skin.xml.h:7 skins_imdb_skin.xml.h:7 plugins_tmdb_skin.xml.h:7
 msgid "ImdB - Plugin"
 msgstr ""
 
-#: plugins_imdb_skin.xml.h:8 skins_imdb_skin.xml.h:8
+#: plugins_imdb_skin.xml.h:8 skins_imdb_skin.xml.h:8 plugins_tmdb_skin.xml.h:8
 msgid "--plot--"
 msgstr ""
 
-#: plugins_imdb_skin.xml.h:9 skins_imdb_skin.xml.h:9
+#: plugins_imdb_skin.xml.h:9 skins_imdb_skin.xml.h:9 plugins_tmdb_skin.xml.h:9
 msgid "Plot:"
 msgstr ""
 
 #: plugins_imdb_skin.xml.h:10 skins_imdb_skin.xml.h:10
+#: plugins_tmdb_skin.xml.h:10
 msgid "Release:"
 msgstr ""
 
 #: plugins_imdb_skin.xml.h:11 skins_imdb_skin.xml.h:11
+#: plugins_tmdb_skin.xml.h:11
 msgid "--releasetime--"
 msgstr ""
 
@@ -2503,21 +2506,25 @@ msgstr ""
 
 #: plugins_imdb_skin.xml.h:14 skins_imdb_skin.xml.h:14
 #: plugins_imdb_skin.xml.h:13 skins_imdb_skin.xml.h:13
+#: plugins_tmdb_skin.xml.h:13
 msgid "--title--"
 msgstr ""
 
 #: plugins_imdb_skin.xml.h:15 skins_imdb_skin.xml.h:15
 #: plugins_imdb_skin.xml.h:14 skins_imdb_skin.xml.h:14
+#: plugins_tmdb_skin.xml.h:14
 msgid "Title:"
 msgstr ""
 
 #: plugins_imdb_skin.xml.h:16 skins_imdb_skin.xml.h:16
 #: plugins_imdb_skin.xml.h:15 skins_imdb_skin.xml.h:15
+#: plugins_tmdb_skin.xml.h:15
 msgid "--writers--"
 msgstr ""
 
 #: plugins_imdb_skin.xml.h:17 skins_imdb_skin.xml.h:17
 #: plugins_imdb_skin.xml.h:16 skins_imdb_skin.xml.h:16
+#: plugins_tmdb_skin.xml.h:16
 msgid "Writers:"
 msgstr ""
 
@@ -7287,7 +7294,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:386 plugins_imdb_skin.xml.h:12
 #: skins_imdb_skin.xml.h:12 plugins_weather_skin.xml.h:2
-#: skins_weather_skin.xml.h:2
+#: skins_weather_skin.xml.h:2 plugins_tmdb_skin.xml.h:12
 msgid "SEARCH"
 msgstr ""
 
@@ -7375,11 +7382,11 @@ msgstr ""
 msgid "A mount entry with this name already exists!"
 msgstr ""
 
-#: plugins_imdb_skin.xml.h:1 skins_imdb_skin.xml.h:1
+#: plugins_imdb_skin.xml.h:1 skins_imdb_skin.xml.h:1 plugins_tmdb_skin.xml.h:1
 msgid "--actors--"
 msgstr ""
 
-#: plugins_imdb_skin.xml.h:2 skins_imdb_skin.xml.h:2
+#: plugins_imdb_skin.xml.h:2 skins_imdb_skin.xml.h:2 plugins_tmdb_skin.xml.h:2
 msgid "Actors:"
 msgstr ""
 
