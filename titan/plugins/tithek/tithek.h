@@ -672,7 +672,7 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 	}
 	else if(flag == 3)
 	{
-		string_resub("<filename><![CDATA[", "]]></filename>", tmpstr);
+		string_resub("delivery=\"streaming\"><![CDATA[", "]]></filename>", tmpstr);
 		debug(99, "tmpstr: %s", tmpstr);
 
 		int count = 0;
