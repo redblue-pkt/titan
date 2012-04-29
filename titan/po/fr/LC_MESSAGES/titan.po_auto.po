@@ -438,7 +438,7 @@ msgstr ""
 #: networkbrowser.h:1247 networkbrowser.h:1341 networkbrowser.h:1310
 #: networkbrowser.h:1317 networkbrowser.h:1322 networkbrowser.h:1404
 #: rgui.h:110 rgui.h:126 dlna.h:307 dlna.h:309 dlna.h:317 httpdfunc.h:899
-#: rgui.h:112 rgui.h:128 rgui.h:111 rgui.h:127
+#: rgui.h:112 rgui.h:128 rgui.h:111 rgui.h:127 global.h:4607
 msgid "Message"
 msgstr ""
 
@@ -551,7 +551,7 @@ msgstr ""
 #: skins_networkbrowser_skin.xml.h:9 rgui.h:110 rgui.h:126 dlna.h:307
 #: dlna.h:309 dlna.h:317 httpdfunc.h:899 httpdfunc.h:2444
 #: plugins_dlna_skin.xml.h:8 skins_dlna_skin.xml.h:8 scriptexec.h:41
-#: rgui.h:112 rgui.h:128 rgui.h:111 rgui.h:127
+#: rgui.h:112 rgui.h:128 rgui.h:111 rgui.h:127 global.h:255 global.h:4607
 msgid "OK"
 msgstr ""
 
@@ -662,7 +662,7 @@ msgstr ""
 #: skins_networkbrowser_skin.xml.h:5 rgui.h:110 rgui.h:126 dlna.h:307
 #: dlna.h:309 dlna.h:317 httpdfunc.h:899 httpdfunc.h:2444
 #: plugins_dlna_skin.xml.h:2 skins_dlna_skin.xml.h:2 scriptexec.h:41
-#: rgui.h:112 rgui.h:128 rgui.h:111 rgui.h:127
+#: rgui.h:112 rgui.h:128 rgui.h:111 rgui.h:127 global.h:255 global.h:4607
 msgid "EXIT"
 msgstr ""
 
@@ -1003,7 +1003,7 @@ msgstr ""
 #: skins_panel_skin.xml.h:6 global.h:151 global.h:195 global.h:154
 #: global.h:198 global.h:192 global.h:236 global.h:193 global.h:237
 #: global.h:205 global.h:249 global.h:210 global.h:254 global.h:213
-#: global.h:257
+#: global.h:257 global.h:255
 msgid "Info"
 msgstr ""
 
@@ -1022,7 +1022,7 @@ msgid ""
 msgstr ""
 
 #: global.h:189 global.h:194 global.h:197 global.h:235 global.h:236
-#: global.h:248 global.h:253 global.h:256
+#: global.h:248 global.h:253 global.h:256 global.h:254
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
@@ -1031,7 +1031,7 @@ msgstr ""
 #: global.h:4386 global.h:4389 global.h:4398 global.h:4528 global.h:4535
 #: global.h:4539 global.h:4557 global.h:4561 global.h:4563 global.h:4565
 #: global.h:4522 global.h:4536 global.h:4551 global.h:4586 global.h:4587
-#: global.h:4602 global.h:4606
+#: global.h:4602 global.h:4606 global.h:4607
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -7216,7 +7216,7 @@ msgstr ""
 msgid "Start RGUID"
 msgstr ""
 
-#: global.h:250
+#: global.h:250 global.h:251
 msgid ""
 "For next OnlineUpdate please contact Atemio and send this Serial Number\n"
 "and your Atemio Serial Number !!\n"
