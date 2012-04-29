@@ -203,6 +203,7 @@ int checkflash()
 
 void getserial()
 {
+/*
 	if(checkbox("ATEMIO510") == 0)
 	{
 		status.security = 0;
@@ -210,7 +211,7 @@ void getserial()
 		textbox(_("Info"), _("This is a advertising Image !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 400, 0, 0);	
 		return;
 	}
-	
+*/	
 	char* cpu = NULL;	
 	cpu = getcpuid();
 	if(cpu == NULL) return;
@@ -266,14 +267,14 @@ void getserial()
 char* getcpuid()
 {
 	char* serial = NULL;
-
+/*
 	if(checkbox("ATEMIO510") == 0)
 	{
 		status.security = 0;
 		status.expertmodus = 0;
 		return serial;
 	}
-
+*/
 	char* buffer = NULL;
 	struct inetwork* net = getinetworkbydevice("eth0");
 
