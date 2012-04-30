@@ -33,5 +33,5 @@ void deinit(void)
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {
-	screenwins3();
+	screennews();
 }
