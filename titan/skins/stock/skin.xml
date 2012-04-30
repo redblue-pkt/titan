@@ -1,0 +1,23 @@
+<screen titlealign=center name=stock hspace=5 vspace=5 fontcol=fontcol fontsize=30 title="Stock" posx=center posy=center width=1085 height=700 bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node fontsize=30 bordercol=bordercol bordersize=2 scrollbar=auto type=listbox name=listbox posy=0 width=350 height=600>
+<node name=box1 fontsize=30 posy=0 posx=360 width=700 height=600>
+<node name=company parent=box1 posx=5 posy=0 width=690 height=30>
+<node name=exchange parent=box1 posx=5 posy=35 width=690 height=30>
+<node name=exchange_closing parent=box1 posx=5 posy=70 width=690 height=30>
+<node name=currency parent=box1 posx=5 posy=105 width=690 height=30>
+<node name=last parent=box1 posx=5 posy=140 width=690 height=30>
+<node name=high parent=box1 posx=5 posy=175 width=690 height=30>
+<node name=low parent=box1 posx=5 posy=210 width=690 height=30>
+<node name=volume parent=box1 posx=5 posy=245 width=690 height=30>
+<node name=avg_volume parent=box1 posx=5 posy=280 width=690 height=30>
+<node name=market_cap parent=box1 posx=5 posy=315 width=690 height=30>
+<node name=open parent=box1 posx=5 posy=350 width=690 height=30>
+<node name=y_close parent=box1 posx=5 posy=385 width=690 height=30>
+<node name=change parent=box1 posx=5 posy=420 width=690 height=30>
+<node name=perc_change parent=box1 posx=5 posy=455 width=690 height=30>
+<node name=trade_timestamp parent=box1 posx=5 posy=490 width=690 height=30>
+<node name=b1 text="SEARCH" halign=center valign=center bordercol=red bordersize=4 bordertype=2 posx=20 posy=610 width=150 height=30/>
+<node name=b2 text="BROWSER" halign=center valign=center bordercol=green bordersize=4 bordertype=2 posx=180 posy=610 width=150 height=30/>
+</screen>
+
+
