@@ -809,7 +809,7 @@ void deltransponderbyid(unsigned long transponderid)
 	{
 		prev = node;
 		node = node->next;
-		if(node->id == transponderid)
+		if(prev->id == transponderid)
 		{
 			deltransponder(prev);
 			break;
