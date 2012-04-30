@@ -15,5 +15,6 @@ optimize: 198
 dlna: 207
 weather: 208
 news: 210
+stock: 220
 TopfieldVFD: ---
 browser: ---

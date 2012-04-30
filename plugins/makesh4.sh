@@ -98,5 +98,6 @@ compile "scriptexec" "scriptexec" ""
 compile "optimize" "optimize" ""
 compile "weather" "weather" ""
 compile "news" "news" ""
+compile "stock" "stock" ""
 
 #rm -r networkbrowser/networkbrowser

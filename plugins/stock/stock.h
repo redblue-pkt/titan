@@ -1,0 +1,287 @@
+#ifndef STOCK_H
+#define STOCK_H
+
+extern struct skin* skin;
+
+struct stock
+{
+	char* symbol_lookup_url;
+	char* company;
+	char* exchange;
+	char* exchange_closing;
+	char* currency;
+	char* last;
+	char* high;
+	char* low;
+	char* volume;
+	char* avg_volume;
+	char* market_cap;
+	char* open;
+	char* y_close;
+	char* change;
+	char* perc_change;
+	char* trade_timestamp;
+};
+
+char* readstock(const char* filename, struct skin* stock, struct skin* listbox)
+{
+	debug(1000, "in");
+	FILE *fd = NULL;
+	char *fileline = NULL;
+	char *name = NULL;
+	struct skin* tmp = NULL;
+
+	if(stock == NULL || listbox == NULL) return NULL;
+
+	fileline = malloc(MINMALLOC);
+	if(fileline == NULL)
+	{
+		err("no memory");
+		return NULL;
+	}
+
+	fd = fopen(filename, "r");
+	if(fd == NULL)
+	{
+		perr("can't open %s", filename);
+		free(fileline);
+		return NULL;
+	}
+
+	while(fgets(fileline, MINMALLOC, fd) != NULL)
+	{
+		if(fileline[0] == '#' || fileline[0] == '\n')
+			continue;
+		if(fileline[strlen(fileline) - 1] == '\n')
+			fileline[strlen(fileline) - 1] = '\0';
+		if(fileline[strlen(fileline) - 1] == '\r')
+			fileline[strlen(fileline) - 1] = '\0';
+
+		tmp = addlistbox(stock, listbox, tmp, 1);
+		if(tmp != NULL)
+		{
+			changetext(tmp, fileline);
+			if(name == NULL)
+				name = ostrcat(name, fileline, 1, 0);
+		}
+
+	}
+
+	free(fileline);
+	fclose(fd);
+	return name;
+}
+
+void freestock(struct stock* node)
+{
+	if(node == NULL) return;
+
+	free(node->symbol_lookup_url); node->symbol_lookup_url = NULL;
+	free(node->company); node->company = NULL;
+	free(node->exchange); node->exchange = NULL;
+	free(node->exchange_closing); node->exchange_closing = NULL;
+	free(node->currency); node->currency = NULL;
+	free(node->last); node->last = NULL;
+	free(node->high); node->high = NULL;
+	free(node->low); node->low = NULL;
+	free(node->volume); node->volume = NULL;
+	free(node->avg_volume); node->avg_volume = NULL;
+	free(node->market_cap); node->market_cap = NULL;
+	free(node->open); node->open = NULL;
+	free(node->y_close); node->y_close = NULL;
+	free(node->change); node->change = NULL;
+	free(node->perc_change); node->perc_change = NULL;
+	free(node->trade_timestamp); node->trade_timestamp = NULL;
+
+	free(node); node = NULL;
+}
+
+struct stock* getstock(char* name)
+{
+	struct stock* stock = NULL;
+	char* tmpstr = NULL;
+	char* tmpsearch = NULL;
+
+	tmpsearch = ostrcat("ig/api?stock=", name, 0, 0);
+	//TODO: implement auto language (from titan.cfg)
+	tmpsearch = ostrcat(tmpsearch, "&hl=de", 1, 0);
+	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
+
+	tmpstr = gethttp("www.google.com", tmpsearch, 80, NULL, NULL, NULL, 0);
+
+	free(tmpsearch); tmpsearch = NULL;
+
+	if(tmpstr != NULL)
+	{
+		stock = (struct stock*)malloc(sizeof(struct stock));
+		if(stock == NULL)
+		{
+			err("no mem");
+			free(tmpstr); tmpstr = NULL;
+			return NULL;
+		}
+		memset(stock, 0, sizeof(struct stock));
+
+		stock->symbol_lookup_url = getxmlentry(tmpstr, "symbol_lookup_url data=");
+		stock->company = getxmlentry(tmpstr, "company data=");
+		stock->exchange = getxmlentry(tmpstr, "exchange data=");
+		stock->exchange_closing = getxmlentry(tmpstr, "exchange_closing data=");
+		stock->currency = getxmlentry(tmpstr, "currency data=");
+		stock->last = getxmlentry(tmpstr, "last data=");
+		stock->high = getxmlentry(tmpstr, "high data=");
+		stock->low = getxmlentry(tmpstr, "low data=");
+		stock->volume = getxmlentry(tmpstr, "volume data=");
+		stock->avg_volume = getxmlentry(tmpstr, "avg_volume data=");
+		stock->market_cap = getxmlentry(tmpstr, "market_cap data=");
+		stock->open = getxmlentry(tmpstr, "open data=");
+		stock->y_close = getxmlentry(tmpstr, "y_close data=");
+		stock->change = getxmlentry(tmpstr, "<change data=");
+		stock->perc_change = getxmlentry(tmpstr, "perc_change data=");
+		stock->trade_timestamp = getxmlentry(tmpstr, "trade_timestamp data=");
+		
+		free(tmpstr); tmpstr = NULL;
+	}
+
+	return stock;
+}
+
+void screenstock()
+{
+	int rcret = 0;
+	struct skin* stock = getscreen("stock");
+	struct skin* listbox = getscreennode(stock, "listbox"); 
+	struct skin* company = getscreennode(stock, "company");
+	struct skin* exchange = getscreennode(stock, "exchange");
+	struct skin* exchange_closing = getscreennode(stock, "exchange_closing");
+	struct skin* currency = getscreennode(stock, "currency");
+	struct skin* last = getscreennode(stock, "last");
+	struct skin* high = getscreennode(stock, "high");
+	struct skin* low = getscreennode(stock, "low");
+	struct skin* volume = getscreennode(stock, "volume");
+	struct skin* avg_volume = getscreennode(stock, "avg_volume");
+	struct skin* market_cap = getscreennode(stock, "market_cap");
+	struct skin* open = getscreennode(stock, "open");
+	struct skin* y_close = getscreennode(stock, "y_close");
+	struct skin* change = getscreennode(stock, "change");
+	struct skin* perc_change = getscreennode(stock, "perc_change");
+	struct skin* trade_timestamp = getscreennode(stock, "trade_timestamp");
+	struct stock* node = NULL;
+	char* tmpstr = NULL, *name = NULL;
+
+	name = readstock(getconfig("stockfile", NULL), stock, listbox);
+
+start:
+	node = getstock(name);
+	free(name); name = NULL;
+
+	if(node != NULL)
+	{
+		tmpstr = ostrcat(_("Company: "), node->company, 0, 0);
+		changetext(company, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Exchange: "), node->exchange, 0, 0);
+		changetext(exchange, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Exchange closing: "), node->exchange_closing, 0, 0);
+		changetext(exchange_closing, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Currency: "), node->currency, 0, 0);
+		changetext(currency, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Last: "), node->last, 0, 0);
+		changetext(last, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("High: "), node->high, 0, 0);
+		changetext(high, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Low: "), node->low, 0, 0);
+		changetext(low, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Volume: "), node->volume, 0, 0);
+		changetext(volume, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Avg volume: "), node->avg_volume, 0, 0);
+		changetext(avg_volume, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Market cap: "), node->market_cap, 0, 0);
+		changetext(market_cap, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Open: "), node->open, 0, 0);
+		changetext(open, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Close: "), node->y_close, 0, 0);
+		changetext(y_close, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Change: "), node->change, 0, 0);
+		changetext(change, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Change in %: "), node->perc_change, 0, 0);
+		changetext(perc_change, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(_("Trade time: "), node->trade_timestamp, 0, 0);
+		changetext(trade_timestamp, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
+
+	addscreenrc(stock, listbox);
+	drawscreen(stock, 0);
+
+	while(1)
+	{
+		rcret = waitrc(stock, 0, 0);
+	
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL)) break;
+
+		if(rcret == getrcconfigint("rcred", NULL))
+    {
+			free(name); name = NULL;
+			name = textinput("Name", NULL);
+      if(name != NULL)
+      {
+				freestock(node); node = NULL;
+				goto start;
+      }
+      drawscreen(stock, 0);
+      continue;
+    }
+    
+    if(rcret == getrcconfigint("rcgreen", NULL) && node->symbol_lookup_url != NULL)
+    {
+      drawscreen(skin, 0);
+      tmpstr = ostrcat("http://www.google.com", node->symbol_lookup_url, 0, 0);
+      //browser node->url
+      free(tmpstr); tmpstr = NULL;
+      drawscreen(stock, 0);
+      continue;
+    }
+
+		if(listbox->select != NULL)
+		{
+			freestock(node); node = NULL;
+			name = ostrcat(name, listbox->select->text, 1, 0);
+			goto start;
+		}
+	}
+
+	delownerrc(stock);
+	delmarkedscreennodes(stock, 1);
+	freestock(node); node = NULL;
+	clearscreen(stock);
+}
+
+#endif
