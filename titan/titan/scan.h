@@ -1376,6 +1376,7 @@ void screenscanconfig(int flag)
 		if(blindscan->ret != NULL) iblindscan = atoi(blindscan->ret);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
+    if(rcret == getrcconfigint("rcok", NULL)) break;
 		if(listbox->select != NULL && ostrcmp(listbox->select->name, "tuner") == 0)
 		{
 			scanchangesat(sat, tpnode, listbox->select->ret);
@@ -1394,7 +1395,7 @@ void screenscanconfig(int flag)
 			screenscan(tpnode, scan->child, tuner->ret, iscantype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, inetworkscan, ionlyfree, iclear, iblindscan, isystem, 5000000);
 			drawscreen(scan, 0);
 		}
-		if(rcret == getrcconfigint("rcok", NULL) && tpnode != NULL && iscantype == 0)
+		if(rcret == getrcconfigint("rcgreen", NULL) && tpnode != NULL && iscantype == 0)
 		{
 			struct transponder* tp1 = createtransponder(99, tpnode->fetype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, isystem);
 			copytransponder(tp1, tpnode, 99);
