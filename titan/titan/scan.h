@@ -239,7 +239,7 @@ int findchannel(struct transponder* tpnode, unsigned char *buf, uint8_t* lastsec
 	onid = (buf[8] << 8) | buf[9];
 	
 	transponderid = (onid << 16) | tid;
-	if(tpnode != NULL && tpnode->id != transponderid)
+	if(tpnode != NULL && tpnode->id != transponderid && tpnode->id != 99)
 	{
 		changetransponderid(tpnode, transponderid);
 		status.writetransponder = 1;
