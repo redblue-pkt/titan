@@ -1399,6 +1399,7 @@ msgstr ""
 #: skins_dlna_skin.xml.h:15 skins_news_skin.xml.h:5 skins_weather_skin.xml.h:3
 #: plugins_lcdpearl1_skin.xml.h:11 skins_lcdpearl1_skin.xml.h:11
 #: plugins_tmdb_skin.xml.h:17 skins_tmdb_skin.xml.h:17
+#: plugins_stock_skin.xml.h:4 skins_stock_skin.xml.h:4
 msgid ""
 msgstr ""
 
@@ -7303,7 +7304,8 @@ msgstr ""
 #: skin_default_skin.xml.h:386 plugins_imdb_skin.xml.h:12
 #: skins_imdb_skin.xml.h:12 plugins_weather_skin.xml.h:2
 #: skins_weather_skin.xml.h:2 plugins_tmdb_skin.xml.h:12
-#: skins_tmdb_skin.xml.h:12
+#: skins_tmdb_skin.xml.h:12 plugins_stock_skin.xml.h:3
+#: skins_stock_skin.xml.h:3
 msgid "SEARCH"
 msgstr ""
 
@@ -7464,6 +7466,7 @@ msgid "News"
 msgstr ""
 
 #: plugins_news_skin.xml.h:2 skins_news_skin.xml.h:2
+#: plugins_stock_skin.xml.h:2 skins_stock_skin.xml.h:2
 msgid "BROWSER"
 msgstr ""
 
@@ -7535,4 +7538,68 @@ msgstr ""
 msgid ""
 "text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 "
 "bordertype=2 posx=160 posy=0 width=150 height=30/>);"
+msgstr ""
+
+#: plugins_stock_skin.xml.h:1 skins_stock_skin.xml.h:1
+msgid "Stock"
+msgstr ""
+
+#: stock.h:179
+msgid "Company: "
+msgstr ""
+
+#: stock.h:183
+msgid "Exchange: "
+msgstr ""
+
+#: stock.h:187
+msgid "Exchange closing: "
+msgstr ""
+
+#: stock.h:191
+msgid "Currency: "
+msgstr ""
+
+#: stock.h:195
+msgid "Last: "
+msgstr ""
+
+#: stock.h:199
+msgid "High: "
+msgstr ""
+
+#: stock.h:203
+msgid "Low: "
+msgstr ""
+
+#: stock.h:207
+msgid "Volume: "
+msgstr ""
+
+#: stock.h:211
+msgid "Avg volume: "
+msgstr ""
+
+#: stock.h:215
+msgid "Market cap: "
+msgstr ""
+
+#: stock.h:219
+msgid "Open: "
+msgstr ""
+
+#: stock.h:223
+msgid "Close: "
+msgstr ""
+
+#: stock.h:227
+msgid "Change: "
+msgstr ""
+
+#: stock.h:231
+msgid "Change in %: "
+msgstr ""
+
+#: stock.h:235
+msgid "Trade time: "
 msgstr ""
