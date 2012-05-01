@@ -429,7 +429,7 @@ int main(int argc, char *argv[])
 	ret = addinetworkall(NULL);
 	
 #ifndef SIMULATE
-	int skipsecurety = 0;
+	int skipsecurety = 1;
 	if(skipsecurety == 0)
 	{
 		if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1)
