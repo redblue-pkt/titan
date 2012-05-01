@@ -13,6 +13,7 @@ int openrcsim()
 		return 1;
 	}
 
+  closeonexec(status.fdrcsim);
 	return 0;
 }
 
