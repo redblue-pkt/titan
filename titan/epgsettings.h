@@ -188,7 +188,7 @@ void screenepgsettings()
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "epgpath") == 0)
 			{
 				clearscreen(epgsettings);
-				ret = screendir(listbox->select->ret, "", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, 700, 0, 650, 0, 0);
+				ret = screendir(listbox->select->ret, "", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, 750, 0, 650, 0, 0);
 				if(ret != NULL)
 					changeinput(listbox->select, ret);
 				free(ret);
