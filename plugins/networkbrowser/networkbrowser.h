@@ -1347,7 +1347,7 @@ void screennetworkbrowser()
 	int rcret = 0;
 	struct networkbrowser* node = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;
-	char* tmpstr = NULL;
+	char* tmpstr = NULL, *tmppic = NULL;
 	
 	status.hangtime = 99999;
 
@@ -1359,11 +1359,20 @@ start:
 	while(node != NULL)
 	{
 		if(ostrcmp(node->mode, "0") == 0)
+    {
 			tmpstr = ostrcat(tmpstr, "(cifs) ", 1, 0);
-		if(ostrcmp(node->mode, "1") == 0)
+      tmppic = ostrcat("netbrowser_cifs.png", NULL, 0, 0);
+    ]
+		else if(ostrcmp(node->mode, "1") == 0)
+    {
 			tmpstr = ostrcat(tmpstr, "(nfs) ", 1, 0);
-		if(ostrcmp(node->mode, "2") == 0)
+      tmppic = ostrcat("netbrowser_nfs.png", NULL, 0, 0);
+    }
+		else if(ostrcmp(node->mode, "2") == 0)
+    {
 			tmpstr = ostrcat(tmpstr, "(ftpfs) ", 1, 0);
+      tmppic = ostrcat("netbrowser_ftpfs.png", NULL, 0, 0);
+    }
 
 		tmpstr = ostrcat(tmpstr, node->sharename, 1, 0);
 		tmpstr = ostrcat(tmpstr, " (", 1, 0);
@@ -1373,9 +1382,13 @@ start:
 		tmpstr = ostrcat(tmpstr, "/", 1, 0);
 		tmpstr = ostrcat(tmpstr, node->sharedir, 1, 0);
 		tmpstr = ostrcat(tmpstr, ")", 1, 0);
-		struct menulist* tmpmlist = addmenulist(&mlist, tmpstr, NULL, NULL, 0, 0);
+    
+    tmppic = ostrcat("netbrowser_cifs.png", NULL, 0, 0);
+    
+		struct menulist* tmpmlist = addmenulist(&mlist, tmpstr, NULL, tmppic, 0, 0);
 		if(tmpmlist != NULL) tmpmlist->param = (char*)node;
 		free(tmpstr); tmpstr = NULL;
+    free(tmppic); tmppic = NULL;
 		node = node->next;
 	}
 	
