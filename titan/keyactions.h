@@ -45,7 +45,7 @@ void screenkeyactions(int key, int flag)
 					}				
 					if(skip == 0)
 					{
-						addmenulist(&mlist, child->name, NULL, NULL, 0, 0);
+						addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
 						debug(60, "key: %s", child->name);
 					}
 					skip = 0;
