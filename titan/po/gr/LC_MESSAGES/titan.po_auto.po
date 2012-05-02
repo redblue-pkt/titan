@@ -445,7 +445,7 @@ msgstr ""
 #: rgui.h:110 rgui.h:126 dlna.h:307 dlna.h:309 dlna.h:317 httpdfunc.h:899
 #: rgui.h:112 rgui.h:128 rgui.h:111 rgui.h:127 global.h:4607 scan.h:1403
 #: networkbrowser.h:1312 networkbrowser.h:1319 networkbrowser.h:1324
-#: networkbrowser.h:1406
+#: networkbrowser.h:1406 channellist.h:766
 msgid "Message"
 msgstr ""
 
@@ -561,6 +561,7 @@ msgstr ""
 #: rgui.h:112 rgui.h:128 rgui.h:111 rgui.h:127 global.h:255 global.h:4607
 #: scan.h:1403 skin_default_skin.xml.h:295 networkbrowser.h:1312
 #: networkbrowser.h:1319 networkbrowser.h:1324 networkbrowser.h:1406
+#: channellist.h:766
 msgid "OK"
 msgstr ""
 
@@ -674,6 +675,7 @@ msgstr ""
 #: rgui.h:112 rgui.h:128 rgui.h:111 rgui.h:127 global.h:255 global.h:4607
 #: scan.h:1403 skin_default_skin.xml.h:194 networkbrowser.h:1312
 #: networkbrowser.h:1319 networkbrowser.h:1324 networkbrowser.h:1406
+#: channellist.h:766
 msgid "EXIT"
 msgstr ""
 
@@ -750,15 +752,16 @@ msgstr ""
 #: skin_default_skin.xml.h:327 skin_default_skin.xml.h:330
 #: skin_default_skin.xml.h:331 skin_default_skin.xml.h:332
 #: skin_default_skin.xml.h:338 skin_default_skin.xml.h:339
-#: skin_default_skin.xml.h:340
+#: skin_default_skin.xml.h:340 channellist.h:493 channellist.h:1379
 msgid "Radio (Info)"
 msgstr ""
 
-#: channellist.h:453 channellist.h:1323
+#: channellist.h:453 channellist.h:1323 channellist.h:498 channellist.h:1374
 msgid "TV (Info)"
 msgstr ""
 
-#: channellist.h:461 channellist.h:852 channellist.h:1053
+#: channellist.h:461 channellist.h:852 channellist.h:1053 channellist.h:506
+#: channellist.h:900 channellist.h:1101
 msgid "Bouquets"
 msgstr ""
 
@@ -766,27 +769,30 @@ msgstr ""
 #: skin_default_skin.xml.h:138 skin_default_skin.xml.h:139
 #: skin_default_skin.xml.h:140 skin_default_skin.xml.h:141
 #: skin_default_skin.xml.h:142 skin_default_skin.xml.h:144
-#: skin_default_skin.xml.h:145 skin_default_skin.xml.h:146
+#: skin_default_skin.xml.h:145 skin_default_skin.xml.h:146 channellist.h:519
+#: channellist.h:1237
 msgid "Channel"
 msgstr ""
 
-#: channellist.h:486 channellist.h:882 channellist.h:1125
+#: channellist.h:486 channellist.h:882 channellist.h:1125 channellist.h:531
+#: channellist.h:930 channellist.h:1173
 msgid "Satellites"
 msgstr ""
 
 #: channellist.h:499 channellist.h:942 channellist.h:1261 tunerconfig.h:442
+#: channellist.h:544 channellist.h:990 channellist.h:1309
 msgid "Provider"
 msgstr ""
 
-#: channellist.h:512 channellist.h:840
+#: channellist.h:512 channellist.h:840 channellist.h:557 channellist.h:888
 msgid "All Channels"
 msgstr ""
 
-#: channellist.h:718
+#: channellist.h:718 channellist.h:766
 msgid "Can't remove akive Service"
 msgstr ""
 
-#: channellist.h:912
+#: channellist.h:912 channellist.h:960
 msgid "Channels A-Z"
 msgstr ""
 
@@ -7712,4 +7718,24 @@ msgstr ""
 
 #: skin_default_skin.xml.h:144
 msgid "CHANGE"
+msgstr ""
+
+#: channellist.h:425
+msgid "Move mode"
+msgstr ""
+
+#: channellist.h:431
+msgid "Remove mode"
+msgstr ""
+
+#: channellist.h:437
+msgid "Copy mode"
+msgstr ""
+
+#: channellist.h:443
+msgid "Protect mode"
+msgstr ""
+
+#: channellist.h:449
+msgid "Edit mode"
 msgstr ""
