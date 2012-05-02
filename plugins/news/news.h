@@ -156,7 +156,7 @@ int getnews()
 
 void screennews()
 {
-	int rcret = 0;
+	int rcret = 0, ret = 0;
 	struct skin* skin_news = getscreen("news");
 	struct skin* title = getscreennode(skin_news, "title");
 	struct skin* snippet = getscreennode(skin_news, "snippet");
@@ -201,11 +201,22 @@ start:
     
 		if(rcret == getrcconfigint("rcyellow", NULL))
 		{
-			drawscreen(skin, 0);
-			tmpstr = ostrcat("nsfb -f linux ", node->url, 0, 0);
-			system(tmpstr);
-			free(tmpstr); tmpstr = NULL;
-			drawscreen(skin, 0);
+      ret = servicestop(status.aktservice, 1, 0);
+      if(ret == 1) goto start;
+      status.sec = 0; //deaktivate spinner
+      setfbtransparent(255);
+      
+      drawscreen(skin, 0);
+      tmpstr = ostrcat("nsfb -f linux ", node->url, 0, 0);
+      system(tmpstr);
+      free(tmpstr); tmpstr = NULL;
+      drawscreen(skin, 0);
+        
+      setosdtransparent(getskinconfigint("osdtransparent", NULL));
+      if(status.lastservice != NULL)
+        servicestart(status.lastservice->channel, NULL, NULL, 0);
+      sleep(2);
+      
 			goto start;
 		}
 	}

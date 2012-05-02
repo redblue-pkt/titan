@@ -147,7 +147,7 @@ struct stock* getstock(char* name)
 
 void screenstock()
 {
-	int rcret = 0;
+	int rcret = 0, ret = 0;
 	struct skin* stock = getscreen("stock");
 	struct skin* listbox = getscreennode(stock, "listbox"); 
 	struct skin* company = getscreennode(stock, "company");
@@ -262,10 +262,21 @@ start:
     
     if(rcret == getrcconfigint("rcgreen", NULL) && node->symbol_lookup_url != NULL)
     {
+      ret = servicestop(status.aktservice, 1, 0);
+      if(ret == 1) goto start;
+      status.sec = 0; //deaktivate spinner
+      setfbtransparent(255);
+      
       drawscreen(skin, 0);
       tmpstr = ostrcat("http://www.google.com", node->symbol_lookup_url, 0, 0);
-      //browser node->url
+      system(tmpstr);
       free(tmpstr); tmpstr = NULL;
+      
+      setosdtransparent(getskinconfigint("osdtransparent", NULL));
+      if(status.lastservice != NULL)
+        servicestart(status.lastservice->channel, NULL, NULL, 0);
+      sleep(2);
+      
       drawscreen(stock, 0);
       continue;
     }
