@@ -183,7 +183,6 @@ void screenbrowser()
 
 	ret = servicestop(status.aktservice, 1, 0);
 	if(ret == 1) return;
-	status.sec = 0; //deaktivate spinner
 	setfbtransparent(255);
 
 	readbrowserfav(getconfig("browserfavfile", NULL));
@@ -209,6 +208,7 @@ start:
 	{
 		if(mbox->param != NULL)
 		{
+      status.sec = 0; //deaktivate spinner
 			tmpstr = ostrcat("nsfb -f linux ", mbox->param, 0, 0);
 			system(tmpstr);
 			free(tmpstr); tmpstr = NULL;
