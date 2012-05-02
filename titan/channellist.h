@@ -412,6 +412,50 @@ void changebutton(int listmode, struct skin* b1, struct skin* b2, struct skin* b
 	}
 }
 
+void changechanneltitle(struct skin* channellist, int listmode, char** oldtitle)
+{
+	char* tmpstr = NULL;
+
+	if(*oldtitle == NULL)
+		*oldtitle = ostrcat(channellist->title, NULL, 0, 0);
+
+	if(listmode == MVMODE)
+	{
+		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
+		tmpstr = ostrcat(tmpstr, _("Move mode"), 1, 0);
+		changetitle(channellist, tmpstr);
+	}
+	else if(listmode == RMMODE)
+	{
+		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
+		tmpstr = ostrcat(tmpstr, _("Remove mode"), 1, 0);
+		changetitle(channellist, tmpstr);
+	}
+	else if(listmode == CPMODE)
+	{
+		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
+		tmpstr = ostrcat(tmpstr, _("Copy mode"), 1, 0);
+		changetitle(channellist, tmpstr);
+	}
+	else if(listmode == PROTECTMODE)
+	{
+		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
+		tmpstr = ostrcat(tmpstr, _("Protect mode"), 1, 0);
+		changetitle(channellist, tmpstr);
+	}
+	else if(listmode == EDITMODE)
+	{
+		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
+		tmpstr = ostrcat(tmpstr, _("Edit mode"), 1, 0);
+		changetitle(channellist, tmpstr);
+	}
+	else
+	{
+		changetitle(channellist, *oldtitle);
+		*oldtitle = NULL;
+	}
+}
+
 //flag 1: called from recordtimer screen
 //flag 2: rcfav (open bouquetlist)
 //flag 3: edit modus
@@ -431,7 +475,7 @@ int screenchannellist(struct channel** retchannel, char** retchannellist, int fl
 	struct skin* b9 = getscreennode(channellist, "b9");
 	struct skin* tmpskin;
 	int rcret, ret, listmode, newmodus, list;
-	char* tmpstr = NULL, *tmpstr1 = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL, *oldtitle = NULL;
 	void* movesel = NULL, *aktlist = NULL;
 	int nochanneltitle = getskinconfigint("nochanneltitle", NULL);
 	int firstdraw = 0;
@@ -441,6 +485,7 @@ int screenchannellist(struct channel** retchannel, char** retchannellist, int fl
 start:
 	rcret = 0, ret = -1, list = ALLCHANNEL, listmode = NOMODE, newmodus = 0;
 	tmpstr = NULL, tmpstr1 = NULL, movesel = NULL, aktlist = NULL, tmpskin = NULL;
+	if(nochanneltitle == 0) changetitle(channellist, "");
 
 	if(status.servicetype == 0)
 	{
@@ -534,6 +579,7 @@ start:
 		if(listbox->select != NULL)
 			listmode = screenlistedit(list, (struct channel*)listbox->select->handle);
 		if(listmode == NOMODE) goto end;
+		if(nochanneltitle == 0) changechanneltitle(channellist, listmode, &oldtitle);
 	}
 	if(flag != 2)
 	{
@@ -608,6 +654,8 @@ start:
 				else
 					addscreenrc(channellist, listbox);
 				if(listmode == NOMODE && flag == 3) flag = 0;
+				if(nochanneltitle == 0) changechanneltitle(channellist, listmode, &oldtitle);
+
 				delmarkedscreennodes(channellist, 1);
 				delmarkedscreennodes(channellist, 2);
 				recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
@@ -1295,6 +1343,9 @@ start:
 			}
 			else
 				addscreenrc(channellist, listbox);
+
+			if(nochanneltitle == 0) changechanneltitle(channellist, listmode, &oldtitle);
+
 			if(listmode == NOMODE && flag == 3) flag = 0;
 			delmarkedscreennodes(channellist, 1);
 			delmarkedscreennodes(channellist, 2);
@@ -1333,6 +1384,7 @@ start:
 	}
 
 end:
+	free(oldtitle);
 	status.markedchannel = NULL;
 	status.markmodus = 0;
 	status.screencalc = 0;
