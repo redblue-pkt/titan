@@ -788,7 +788,7 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 
 void  getnetworkbrowser_nfs(struct menulist** mlist, char* s, char* r)
 {
-	char* tmpstr = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL;
 	nfsinfo* nfsInfo;
 	int i = 0, err = 0;
 
@@ -816,7 +816,9 @@ void  getnetworkbrowser_nfs(struct menulist** mlist, char* s, char* r)
 				tmpstr = ostrcat(tmpstr , ": ", 1, 0);
 				tmpstr = ostrcat(tmpstr , strstrip(nfsInfo[i].share), 1, 0);
 				struct menulist* tmpmlist = addmenulist(mlist, tmpstr, NULL, NULL, 0, 0);
-				changemenulistparam(tmpmlist, nfsInfo[i].share, NULL);
+        tmpstr1 = nfsInfo[i].share;
+        if(tmpstr1 != NULL && strlen(tmpstr1) > 0) tmpstr1++;
+				changemenulistparam(tmpmlist, tmpstr1, NULL);
 				free(tmpstr); tmpstr = NULL;
 			}
 		}
