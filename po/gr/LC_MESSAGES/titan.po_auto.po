@@ -446,6 +446,7 @@ msgstr ""
 #: rgui.h:112 rgui.h:128 rgui.h:111 rgui.h:127 global.h:4607 scan.h:1403
 #: networkbrowser.h:1312 networkbrowser.h:1319 networkbrowser.h:1324
 #: networkbrowser.h:1406 channellist.h:766 networkbrowser.h:1419
+#: networkbrowser.h:1415
 msgid "Message"
 msgstr ""
 
@@ -561,7 +562,7 @@ msgstr ""
 #: rgui.h:112 rgui.h:128 rgui.h:111 rgui.h:127 global.h:255 global.h:4607
 #: scan.h:1403 skin_default_skin.xml.h:295 networkbrowser.h:1312
 #: networkbrowser.h:1319 networkbrowser.h:1324 networkbrowser.h:1406
-#: channellist.h:766 networkbrowser.h:1419
+#: channellist.h:766 networkbrowser.h:1419 networkbrowser.h:1415
 msgid "OK"
 msgstr ""
 
@@ -675,7 +676,7 @@ msgstr ""
 #: rgui.h:112 rgui.h:128 rgui.h:111 rgui.h:127 global.h:255 global.h:4607
 #: scan.h:1403 skin_default_skin.xml.h:194 networkbrowser.h:1312
 #: networkbrowser.h:1319 networkbrowser.h:1324 networkbrowser.h:1406
-#: channellist.h:766 networkbrowser.h:1419
+#: channellist.h:766 networkbrowser.h:1419 networkbrowser.h:1415
 msgid "EXIT"
 msgstr ""
 
@@ -1734,7 +1735,7 @@ msgstr ""
 #: networkbrowser.h:1258 networkbrowser.h:1262 networkbrowser.h:1259
 #: networkbrowser.h:1267 networkbrowser.h:1364 networkbrowser.h:1336
 #: networkbrowser.h:1341 networkbrowser.h:1404 networkbrowser.h:1406
-#: networkbrowser.h:1419
+#: networkbrowser.h:1419 networkbrowser.h:1415
 msgid "Are you sure you want remove this share?"
 msgstr ""
 
