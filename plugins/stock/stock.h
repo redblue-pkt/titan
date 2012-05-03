@@ -275,7 +275,7 @@ start:
       setosdtransparent(getskinconfigint("osdtransparent", NULL));
       if(status.lastservice != NULL)
         servicestart(status.lastservice->channel, NULL, NULL, 0);
-      sleep(2);
+      flushrc(500);
       
       drawscreen(stock, 0);
       continue;

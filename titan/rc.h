@@ -13,7 +13,7 @@ int openrcsim()
 		return 1;
 	}
 
-  closeonexec(status.fdrcsim);
+	closeonexec(status.fdrcsim);
 	return 0;
 }
 
@@ -132,6 +132,38 @@ int writerc(int keycode)
 	return  write(status.fdrcsim, &rcdata, sizeof(rcdata));
 }
 
+int flushrc(unsigned int timeout)
+{
+	fd_set rfds;
+	struct timeval tv;
+	struct input_event rcdata;
+	int rest = 0, count = 0;
+	int ret = 0, len = 0;
+
+	rest = timeout % 1000;
+	timeout = (timeout - rest) / 1000;
+
+	while(count < 10)
+	{
+		count++;
+		tv.tv_sec = timeout;
+		tv.tv_usec = rest * 1000;
+		FD_ZERO(&rfds);
+		FD_SET(status.fdrc, &rfds);
+
+		ret = TEMP_FAILURE_RETRY(select(status.fdrc + 1, &rfds, NULL, NULL, &tv));
+
+		if(ret < 1) break;
+		if(FD_ISSET(status.fdrc, &rfds))
+		{
+			count = 0;
+			len = TEMP_FAILURE_RETRY(read(status.fdrc, &rcdata, sizeof(struct input_event)));
+		}
+	}
+  
+  return 0;
+}
+
 int waitrc(struct skin* owner, unsigned int timeout, int flag)
 {
 	debug(1000, "in");
@@ -139,7 +171,7 @@ int waitrc(struct skin* owner, unsigned int timeout, int flag)
 	struct timeval tv;
 	struct input_event rcdata;
 	int treffer = 0, rest = 0;
-	int ret = 0, len, fromthread = 0, longpress = 0, longpresscount = 0;
+	int ret = 0, len = 0, fromthread = 0, longpress = 0, longpresscount = 0;
 	struct rc *node;
 
 	if(pthread_self() != status.mainthread)
