@@ -415,6 +415,7 @@ int readconfig(const char *filename, struct clist** tmpconfig);
 int waitrc(struct skin* owner, unsigned int timeout, int flag);
 void delownerrc(struct skin* owner);
 void delrc(int key, struct skin* owner, struct skin* screennode);
+int flushrc(unsigned int timeout);
 
 //rcfunc.h
 void inputboxchar(struct skin* screen, struct skin* inputbox, char zeichen, int flag);
