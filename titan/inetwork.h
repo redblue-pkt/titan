@@ -408,7 +408,7 @@ int addinetworkall(struct stimerthread* self)
 
 		// DNSSERVER1
 		free(status.dnsserver1); status.dnsserver1 = NULL;
-		cmd = ostrcat(cmd, "cat /var/etc/resolv.conf | grep nameserver | awk '{ print $2 }' | head -n1 | tail -n1", 1, 0);
+		cmd = ostrcat(cmd, "cat /var/etc/resolv.conf | grep nameserver | awk '{ print $2 }' | sed -n 1p", 1, 0);
 		tmp_dnsserver1 = ostrcat(tmp_dnsserver1 , command(cmd), 1, 1);
 		if(tmp_dnsserver1 != NULL)
 		{
@@ -422,7 +422,7 @@ int addinetworkall(struct stimerthread* self)
 
 		// DNSSERVER2
 		free(status.dnsserver2); status.dnsserver2 = NULL;
-		cmd = ostrcat(cmd, "cat /var/etc/resolv.conf | grep nameserver | awk '{ print $2 }' | head -n2 | tail -n1", 1, 0);
+		cmd = ostrcat(cmd, "cat /var/etc/resolv.conf | grep nameserver | awk '{ print $2 }' | sed -n 2p", 1, 0);
 		tmp_dnsserver2 = ostrcat(tmp_dnsserver2 , command(cmd), 1, 1);
 		if(tmp_dnsserver2 != NULL)
 		{
