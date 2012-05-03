@@ -108,7 +108,7 @@ int deinitscreensaver()
 	if(screensaver != NULL)
 	{
 		changetext(screensaver->screennode, NULL);
-		changepicmem(screensaver->screennode, NULL, 9999999, 0);
+		changepicmem(screensaver->screennode, NULL, 0, 0);
 		if((screensaver->type == 1 || screensaver->type == 2) && screensaver->pic != NULL)
 			delpic(screensaver->pic->name);
 		if(screensaver->type == 3)
@@ -146,7 +146,7 @@ int initscreensaver()
 		screensaver->screen = getscreen("screensaver");
 		screensaver->screennode = getscreennode(screensaver->screen, "picsaver");
 
-		changepicmem(screensaver->screennode, getconfig("screensaver_pic", NULL), 9999999, 0);
+		changepicmem(screensaver->screennode, getconfig("screensaver_pic", NULL), 0, 0);
 		screensaver->pic = getpic(getconfig("screensaver_pic", NULL));
 		if(screensaver->pic != NULL)
 		{
@@ -166,7 +166,7 @@ int initscreensaver()
 		screensaver->screen = getscreen("screensaver");
 		screensaver->screennode = getscreennode(screensaver->screen, "picsaver");
 
-		changepicmem(screensaver->screennode, getconfig("screensaver_pic", NULL), 9999999, 0);
+		changepicmem(screensaver->screennode, getconfig("screensaver_pic", NULL), 0, 0);
 		screensaver->pic = getpic(getconfig("screensaver_pic", NULL));
 		if(screensaver->pic != NULL)
 		{
