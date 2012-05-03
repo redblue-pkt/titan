@@ -349,6 +349,7 @@ char* gettime(struct skin* node, char* format);
 char* getepgakttitle(struct skin* node);
 
 //skin.h
+unsigned char *loadjpg(char *filename, unsigned long *width, unsigned long *height, unsigned long *rowbytes, int *channels, int denom);
 void calcautoscale(int width, int height, int mwidth, int mheight, int* scalewidth, int* scaleheight);
 void blitscale(int posx, int posy, int width, int height, int scalewidth, int scaleheight, int flag);
 unsigned char* scale(unsigned char* buf, int width, int height, int channels, int newwidth, int newheight, int free1);

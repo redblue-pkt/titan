@@ -143,7 +143,7 @@ void checkpictimeout()
   while(node != NULL)
   {
     if(node->timeout != 0 && node->lastaccess < akttime + node->timeout)
-      delpic(node->name)
+      delpic(node->name);
     node = node->next;
   }
 }
