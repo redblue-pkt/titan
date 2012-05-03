@@ -783,7 +783,7 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 					buf = readpng(newnode->pic, &width, &height, &rowbytes, &channels, 0, 0, 0, 0, 0, 0);
 				else if(getconfigint("pichwdecode", NULL) == 1)
 					readjpg(newnode->pic, &width, &height, &rowbytes, &channels, &buf, &memfd);
-				addpic(newnode->pic, buf, memfd, width, height, rowbytes, channels, 0, NULL);
+				addpic(newnode->pic, buf, memfd, width, height, rowbytes, channels, 0, 0, NULL);
 			}
 		}
 		ret = getxmlentry(line, " pic=");
@@ -3722,7 +3722,7 @@ int changename(struct skin* node, char* text)
 	return ret;
 }
 
-int changepicmem(struct skin* node, char* text, int del)
+int changepicmem(struct skin* node, char* text, int timeout, int del)
 {
 	debug(1000, "in");
 	unsigned long width = 0, height = 0, rowbytes = 0;
@@ -3743,7 +3743,7 @@ int changepicmem(struct skin* node, char* text, int del)
 					buf = readpng(node->pic, &width, &height, &rowbytes, &channels, 0, 0, 0, 0, 0, 0);
 				else if(getconfigint("pichwdecode", NULL) == 1)
 					readjpg(node->pic, &width, &height, &rowbytes, &channels, &buf, &memfd);
-				addpic(node->pic, buf, memfd, width, height, rowbytes, channels, del, NULL);
+				addpic(node->pic, buf, memfd, width, height, rowbytes, channels, timeout, del, NULL);
 			}
 		}
 		else

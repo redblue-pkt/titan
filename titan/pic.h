@@ -12,7 +12,7 @@ void debugpic()
 	}
 }
 
-struct pic* addpic(char *name, unsigned char* picbuf, int memfd, unsigned long width, unsigned long height, unsigned long rowbytes, int channels, int del, struct pic* last)
+struct pic* addpic(char *name, unsigned char* picbuf, int memfd, unsigned long width, unsigned long height, unsigned long rowbytes, int channels, int timeout, int del, struct pic* last)
 {
 	debug(1000, "in");
 	struct pic *newnode = NULL, *prev = NULL, *node = pic;
@@ -33,6 +33,8 @@ struct pic* addpic(char *name, unsigned char* picbuf, int memfd, unsigned long w
 	newnode->height = height;
 	newnode->rowbytes = rowbytes;
 	newnode->channels = channels;
+  if(timeout == 0) timeout = 9999999;
+  newnode->timeout = timeout;
 	newnode->del = del;
 
 	if(last == NULL)
