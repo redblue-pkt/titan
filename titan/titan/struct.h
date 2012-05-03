@@ -1134,6 +1134,7 @@ struct pic
 	unsigned long height;
 	unsigned long rowbytes;
 	int channels;
+  int timeout;
 	int del;
 	struct pic* next;
 };

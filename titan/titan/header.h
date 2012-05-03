@@ -287,7 +287,7 @@ void screenvideomode(int flag);
 void delpic(char* name);
 struct pic* getpic(char* name);
 void delmarkedpic(int del);
-struct pic* addpic(char *name, unsigned char* picbuf, int memfd, unsigned long width, unsigned long height, unsigned long rowbytes, int channels, int del, struct pic* last);
+struct pic* addpic(char *name, unsigned char* picbuf, int memfd, unsigned long width, unsigned long height, unsigned long rowbytes, int channels, int timeout, int del, struct pic* last);
 
 //showiframe.h
 int singlepicstart(const char *filename, int flag);
@@ -383,7 +383,7 @@ int changepic(struct skin* node, char* text);
 int changetitle(struct skin* node, char* text);
 int changefont(struct skin* node, char* text);
 int changemask(struct skin* node, char* text);
-int changepicmem(struct skin* node, char* text, int del);
+int changepicmem(struct skin* node, char* text, int timeout, int del);
 int convertxmlentry(char *value, uint8_t *proz);
 
 //volume.h

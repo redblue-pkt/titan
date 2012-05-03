@@ -99,7 +99,7 @@ void setdefaults()
 		if(status.bgpic[length - 1] == 'g' && status.bgpic[length - 2] == 'n' && status.bgpic[length - 3] == 'p')
 		{
 			buf = readpng(status.bgpic, &width, &height, &rowbytes, &channels, 0, 0, 0, 0, 0, 0);
-			addpic(status.bgpic, buf, memfd, width, height, rowbytes, channels, 0, NULL);
+			addpic(status.bgpic, buf, memfd, width, height, rowbytes, channels, 0, 0, NULL);
 		}
 	}
 
