@@ -1362,7 +1362,7 @@ start:
     {
 			tmpstr = ostrcat(tmpstr, "(cifs) ", 1, 0);
       tmppic = ostrcat("netbrowser_cifs.png", NULL, 0, 0);
-    ]
+    }
 		else if(ostrcmp(node->mode, "1") == 0)
     {
 			tmpstr = ostrcat(tmpstr, "(nfs) ", 1, 0);
