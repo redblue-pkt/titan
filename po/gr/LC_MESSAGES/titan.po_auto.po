@@ -446,7 +446,8 @@ msgstr ""
 #: rgui.h:112 rgui.h:128 rgui.h:111 rgui.h:127 global.h:4607 scan.h:1403
 #: networkbrowser.h:1312 networkbrowser.h:1319 networkbrowser.h:1324
 #: networkbrowser.h:1406 channellist.h:766 networkbrowser.h:1419
-#: networkbrowser.h:1415
+#: networkbrowser.h:1415 tithek.h:461 tithek.h:480 tithek.h:499 tithek.h:503
+#: tithek.h:520 tithek.h:524 tithek.h:554 tithek.h:558 tithek.h:562
 msgid "Message"
 msgstr ""
 
@@ -562,7 +563,9 @@ msgstr ""
 #: rgui.h:112 rgui.h:128 rgui.h:111 rgui.h:127 global.h:255 global.h:4607
 #: scan.h:1403 skin_default_skin.xml.h:295 networkbrowser.h:1312
 #: networkbrowser.h:1319 networkbrowser.h:1324 networkbrowser.h:1406
-#: channellist.h:766 networkbrowser.h:1419 networkbrowser.h:1415
+#: channellist.h:766 networkbrowser.h:1419 networkbrowser.h:1415 tithek.h:461
+#: tithek.h:480 tithek.h:499 tithek.h:503 tithek.h:520 tithek.h:524
+#: tithek.h:554 tithek.h:558 tithek.h:562
 msgid "OK"
 msgstr ""
 
@@ -676,7 +679,9 @@ msgstr ""
 #: rgui.h:112 rgui.h:128 rgui.h:111 rgui.h:127 global.h:255 global.h:4607
 #: scan.h:1403 skin_default_skin.xml.h:194 networkbrowser.h:1312
 #: networkbrowser.h:1319 networkbrowser.h:1324 networkbrowser.h:1406
-#: channellist.h:766 networkbrowser.h:1419 networkbrowser.h:1415
+#: channellist.h:766 networkbrowser.h:1419 networkbrowser.h:1415 tithek.h:461
+#: tithek.h:480 tithek.h:499 tithek.h:503 tithek.h:520 tithek.h:524
+#: tithek.h:554 tithek.h:558 tithek.h:562
 msgid "EXIT"
 msgstr ""
 
@@ -1430,7 +1435,7 @@ msgstr ""
 #: tithek.h:495 tithek.h:516 tithek.h:460 tithek.h:482 tithek.h:500
 #: tithek.h:521 tithek.h:484 tithek.h:502 tithek.h:523 tithek.h:544
 #: tithek.h:552 tithek.h:459 tithek.h:483 tithek.h:501 tithek.h:522
-#: tithek.h:560
+#: tithek.h:560 tithek.h:461 tithek.h:503 tithek.h:524 tithek.h:562
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
@@ -6965,13 +6970,14 @@ msgstr ""
 
 #: tithek.h:464 tithek.h:481 tithek.h:491 tithek.h:508 tithek.h:496
 #: tithek.h:513 tithek.h:498 tithek.h:515 tithek.h:536 tithek.h:544
-#: tithek.h:497 tithek.h:514 tithek.h:552
+#: tithek.h:497 tithek.h:514 tithek.h:552 tithek.h:499 tithek.h:516
+#: tithek.h:554
 msgid "Start playback"
 msgstr ""
 
 #: tithek.h:488 tithek.h:473 tithek.h:512 tithek.h:478 tithek.h:517
 #: tithek.h:479 tithek.h:519 tithek.h:540 tithek.h:548 tithek.h:518
-#: tithek.h:556
+#: tithek.h:556 tithek.h:480 tithek.h:520 tithek.h:558
 msgid "Can't get Streamurl !"
 msgstr ""
 
