@@ -1067,6 +1067,8 @@ struct status
 	char* bgpic;
 	//should thumb thread start
 	int createthumb;
+  //time for next picmem timeout check
+  time_t picmemtimeout;
 } status;
 
 struct fb
