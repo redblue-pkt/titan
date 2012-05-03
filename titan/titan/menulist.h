@@ -200,8 +200,14 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 
 				if(mlist->pic != NULL)
 				{
-					tmppic = ostrcat(skinpath, "/", 0, 0);	
-					tmppic = ostrcat(tmppic, mlist->pic, 1, 0);
+          if(mlist->pic[0] != '/')
+          {
+            tmppic = ostrcat(skinpath, "/", 0, 0);	
+            tmppic = ostrcat(tmppic, mlist->pic, 1, 0);
+          }
+          else
+            tmppic = ostrcat(mlist->pic, NULL, 0, 0);
+          
 					tmpstr = changepicpath(tmppic);
 					if(!file_exist(tmpstr))
 					{
