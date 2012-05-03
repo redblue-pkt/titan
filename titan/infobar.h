@@ -22,6 +22,13 @@ void screeninfobar()
 	
 	while(1)
 	{
+    //check if picmem times out and must freed
+    if(time(NULL) > status.picmemtimeout + 60)
+    {
+      checkpictimeout();
+      status.picmemtimeout = time(NULL);
+    }
+  
 		if(status.standby == 1)
 			screenstandby();
 		if(status.infobar == 1)
