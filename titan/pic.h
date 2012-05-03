@@ -33,7 +33,6 @@ struct pic* addpic(char *name, unsigned char* picbuf, int memfd, unsigned long w
 	newnode->height = height;
 	newnode->rowbytes = rowbytes;
 	newnode->channels = channels;
-  if(timeout == 0) timeout = 9999999;
   newnode->timeout = timeout;
 	newnode->del = del;
 
@@ -136,6 +135,19 @@ void delmarkedpic(int del)
 	debug(1000, "out");
 }
 
+void checkpictimeout()
+{
+  struct pic* node = pic;
+  time_t akttime = time(NULL);
+
+  while(node != NULL)
+  {
+    if(node->timeout != 0 && node->lastaccess < akttime + node->timeout)
+      delpic(node->name)
+    node = node->next;
+  }
+}
+
 struct pic* getpic(char* name)
 {
 	debug(1000, "in");
@@ -150,6 +162,7 @@ struct pic* getpic(char* name)
 		{
 			debug(1000, "out");
 			free(tmpstr);
+      node->lastaccess = time(NULL);
 			return node;
 		}
 
