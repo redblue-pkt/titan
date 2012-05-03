@@ -6,21 +6,25 @@ void screenpanel_feed()
 	char* tmpstr = NULL, *line = NULL, *lastline = NULL;
 	char* pos = NULL;
 
-	lastline = readsys(getconfig("feed", NULL), 3); //line3
-	lastline = string_replace("src/gz secret http://", "", tmpstr, 1);
+	tmpstr = readsys(getconfig("feed", NULL), 3); //line3
+	tmpstr = string_replace("src/gz secret http://", "", tmpstr, 1);
 	
-	if(lastline != NULL)
-		pos = strchr(lastline, '/');
+	if(tmpstr != NULL)
+		pos = strchr(tmpstr, '/');
 	if(pos != NULL)
 		pos[0] = '\0';
 
-	if(lastline == NULL || ostrcmp(lastline, "") == 0 || ostrcmp(lastline, "\n") == 0)
-		lastline = ostrcat(lastline, "titan.address.com", 1, 0);
-		
-	lastline = textinput(_("Feed"), lastline);
+	if(tmpstr == NULL || ostrcmp(tmpstr, "") == 0 || ostrcmp(tmpstr, "\n") == 0)
+		tmpstr = ostrcat(tmpstr, "titan.address.com", 1, 0);
+
+	lastline = textinput(_("Feed"), tmpstr);
 	
 	if(lastline != NULL)
 	{
+		free(tmpstr); tmpstr = NULL;
+		tmpstr = ostrcat(tmpstr, lastline, 1, 0);
+		free(lastline); lastline = tmpstr;
+
 		tmpstr = readsys(getconfig("feed", NULL), 1); //line1
 		if(tmpstr == NULL || (tmpstr != NULL && strlen(tmpstr) == 0)) 
 			line = ostrcat(line, "#", 1, 0);
