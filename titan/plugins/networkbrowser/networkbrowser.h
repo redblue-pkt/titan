@@ -506,17 +506,15 @@ void setdefaultnetworkbrowser(struct networkbrowser* node)
 
 void savenetworkbrowser(char* filename)
 {
-	int save = 0;
 	struct networkbrowser* node = networkbrowser;
 	char* tmpstr = NULL, *savesettings = NULL;
 
 	if(filename == NULL) return;
 
 	savesettings = readnetworkbrowser("/var/etc/automount/auto.misc", 1);
-printf("%s\n", savesettings);
+
 	while(node != NULL)
 	{
-		save = 1;
  		savesettings = ostrcat(savesettings, node->sharename, 1, 0);
 
 		if(ostrcmp(node->mode, "0") == 0)
@@ -1382,8 +1380,6 @@ start:
 		tmpstr = ostrcat(tmpstr, "/", 1, 0);
 		tmpstr = ostrcat(tmpstr, node->sharedir, 1, 0);
 		tmpstr = ostrcat(tmpstr, ")", 1, 0);
-    
-    tmppic = ostrcat("netbrowser_cifs.png", NULL, 0, 0);
     
 		struct menulist* tmpmlist = addmenulist(&mlist, tmpstr, NULL, tmppic, 0, 0);
 		if(tmpmlist != NULL) tmpmlist->param = (char*)node;
