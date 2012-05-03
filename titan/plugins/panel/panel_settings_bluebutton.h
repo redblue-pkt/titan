@@ -43,7 +43,7 @@ void screenpanel_settings_bluebutton()
 			}				
 			if(skip == 0)
 			{
-				addmenulist(&mlist, child->name, NULL, NULL, 0, 0);
+				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
 			}
 			skip = 0;
 		}
