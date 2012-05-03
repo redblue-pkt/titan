@@ -1,24 +1,24 @@
 <screen titlealign=center name=weather hspace=5 vspace=5 fontcol=fontcol fontsize=30 title="Weather" posx=center posy=center width=1085 height=660 bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node fontsize=30 bordercol=bordercol bordersize=2 scrollbar=auto type=listbox name=listbox posy=0 width=350 height=560>
-<node name=box1 fontsize=30 bordercol=bordercol bordersize=2 posy=0 posx=360 width=350 height=285>
+<node name=box1 fontsize=30 bordercol=bordercol bordersize=2 posy=0 posx=360 width=350 height=275>
 <node name=day0 parent=box1 posx=5 posy=0 width=340 height=30>
 <node name=day0_low parent=box1 posx=5 posy=35 width=340 height=30>
 <node name=day0_high parent=box1 posx=5 posy=70 width=340 height=30>
 <node name=day0_condition parent=box1 posx=5 posy=105 width=340 height=30>
 <node name=day0_icon parent=box1 posx=120 posy=170 width=100 height=100>
-<node name=box2 fontsize=30 bordercol=bordercol bordersize=2 posy=0 posx=720 width=350 height=285>
+<node name=box2 fontsize=30 bordercol=bordercol bordersize=2 posy=0 posx=720 width=350 height=275>
 <node name=day1 parent=box2 posx=5 posy=0 width=340 height=30>
 <node name=day1_low parent=box2 posx=5 posy=35 width=340 height=30>
 <node name=day1_high parent=box2 posx=5 posy=70 width=340 height=30>
 <node name=day1_condition parent=box2 posx=5 posy=105 width=340 height=30>
 <node name=day1_icon parent=box2 posx=120 posy=170 width=100 height=100>
-<node name=box3 fontsize=30 bordercol=bordercol bordersize=2 posy=295 posx=360 width=350 height=285>
+<node name=box3 fontsize=30 bordercol=bordercol bordersize=2 posy=285 posx=360 width=350 height=275>
 <node name=day2 parent=box3 posx=5 posy=0 width=340 height=30>
 <node name=day2_low parent=box3 posx=5 posy=35 width=340 height=30>
 <node name=day2_high parent=box3 posx=5 posy=70 width=340 height=30>
 <node name=day2_condition parent=box3 posx=5 posy=105 width=340 height=30>
 <node name=day2_icon parent=box3 posx=120 posy=170 width=100 height=100>
-<node name=box4 fontsize=30 bordercol=bordercol bordersize=2 posy=295 posx=720 width=350 height=285>
+<node name=box4 fontsize=30 bordercol=bordercol bordersize=2 posy=285 posx=720 width=350 height=275>
 <node name=day3 parent=box4 posx=5 posy=0 width=340 height=30>
 <node name=day3_low parent=box4 posx=5 posy=35 width=340 height=30>
 <node name=day3_high parent=box4 posx=5 posy=70 width=340 height=30>
