@@ -617,7 +617,7 @@ void savenetworkbrowser(char* filename)
 		node = node->next;
 	}
 
-	if(save == 1 && savesettings != NULL)
+	if(savesettings != NULL)
 		writesys("/var/etc/automount/auto.misc", savesettings, 0);
 
 	debugnetworkbrowser(node);
