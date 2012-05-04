@@ -14,7 +14,8 @@ char* checkthumb(char* path, char* file)
 
 void thumbthread(struct stimerthread* self)
 {
-	int width = 0, height = 0;
+	int channels = 0;
+	unsigned long width = 0, height = 0, rowbytes = 0;
 	unsigned char* buf = NULL;
 	struct queue* qe = NULL;
 	char* thumbfile = NULL;
@@ -30,7 +31,7 @@ void thumbthread(struct stimerthread* self)
 		qe = getqueue(101);
 		while(qe != NULL)
 		{
-			buf = loadjpg((char*)ostrcat(createpath(qe->data, "/"), qe->data1, 0, 0), &width, &height, 16);		
+			buf = loadjpg((char*)ostrcat(createpath(qe->data, "/"), qe->data1, 0, 0), &width, &height, &rowbytes, &channels, 16);		
 			if(buf != NULL)
 			{
 				buf = scale(buf, width, height, 3, 100, 100, 1);

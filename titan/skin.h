@@ -783,6 +783,8 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 					buf = readpng(newnode->pic, &width, &height, &rowbytes, &channels, 0, 0, 0, 0, 0, 0);
 				else if(getconfigint("pichwdecode", NULL) == 1)
 					readjpg(newnode->pic, &width, &height, &rowbytes, &channels, &buf, &memfd);
+				else
+					buf = loadjpg(newnode->pic, &width, &height, &rowbytes, &channels, 1);
 				addpic(newnode->pic, buf, memfd, width, height, rowbytes, channels, 0, 0, NULL);
 			}
 		}
@@ -1370,7 +1372,7 @@ void calcautoscale(int width, int height, int mwidth, int mheight, int* scalewid
 	}
 }
 
-unsigned char *loadjpg(char *filename, int *width, int *height, int denom)
+unsigned char *loadjpg(char *filename, unsigned long *width, unsigned long *height, unsigned long *rowbytes, int *channels, int denom)
 {
 	struct jpeg_decompress_struct cinfo;
 	struct jpeg_decompress_struct *ciptr = &cinfo;
@@ -1404,6 +1406,8 @@ unsigned char *loadjpg(char *filename, int *width, int *height, int denom)
 	
 	*width = ciptr->output_width;
 	*height = ciptr->output_height;
+	*channels = ciptr->output_components;
+	*rowbytes = ciptr->output_width * ciptr->output_components;    
 
 	if(ciptr->output_components == 3)
 	{
@@ -1433,7 +1437,7 @@ unsigned char *loadjpg(char *filename, int *width, int *height, int denom)
 	return(buf);
 }
 
-int savejpg(char * filename, int width, int height, unsigned char *buf)
+int savejpg(char* filename, int width, int height, unsigned char *buf)
 {
  	struct jpeg_compress_struct cinfo;
  	struct jpeg_error_mgr jerr;
@@ -1461,9 +1465,9 @@ int savejpg(char * filename, int width, int height, unsigned char *buf)
  	jpeg_start_compress(&cinfo, TRUE);
  	stride = width * 3;
 
- 	while (cinfo.next_scanline < cinfo.image_height) 
+ 	while(cinfo.next_scanline < cinfo.image_height) 
 	{
- 		pointer[0] = & buf[cinfo.next_scanline * stride];
+ 		pointer[0] = &buf[cinfo.next_scanline * stride];
  		jpeg_write_scanlines(&cinfo, pointer, 1);
  	}
 
@@ -1473,49 +1477,23 @@ int savejpg(char * filename, int width, int height, unsigned char *buf)
  	return 0;
 }
 
-int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight, int scalewidth, int scaleheight, int halign, int valign)
+int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx, int posy, int width, int height, int colbytes, int mwidth, int mheight, int scalewidth, int scaleheight, int halign, int valign)
 {
-	struct jpeg_decompress_struct cinfo;
-	struct jpgerror jerr;
-	JSAMPARRAY buffer;
-	FILE* fd = NULL;
-	int x = 0, row_stride = 0, py = 0, width = 0, height = 0;
+	int aktline = 0, x = 0, py = 0, row_stride = 0;
 	unsigned char red, green, blue;
 	unsigned long color;
-
-	fd = fopen(filename, "rb");
-	if(fd == NULL)
+	JSAMPARRAY buffer = NULL;
+  
+	if(cinfo == NULL && buf == NULL) return 1;
+  
+	if(cinfo != NULL)
 	{
-		perr("open jpg file %s", filename);
-		return 1;
+		row_stride = cinfo->output_width * cinfo->output_components;
+		buffer = (cinfo->mem->alloc_sarray) ((j_common_ptr) cinfo, JPOOL_IMAGE, row_stride, 1);
 	}
-
-	cinfo.err = jpeg_std_error(&jerr.jerr);
-	jerr.jerr.error_exit = jpgswerror;
-	if(setjmp(jerr.setjmpbuf))
-	{
-		jpeg_destroy_decompress(&cinfo);
-		fclose(fd);
-		return 1;
-	}
-
-	jpeg_create_decompress(&cinfo);
-	jpeg_stdio_src(&cinfo, fd);
-	jpeg_read_header(&cinfo, TRUE);
-	cinfo.out_color_space = JCS_RGB;
-	
-	if((scalewidth != 0 || scaleheight != 0) && (mwidth < 300 || mheight < 300))
-		cinfo.scale_denom = getconfigint("picdenom", NULL);
 	else
-		cinfo.scale_denom = 1;
-
-	jpeg_start_decompress(&cinfo);
-	width = cinfo.output_width;
-	height = cinfo.output_height;
-
-	row_stride = cinfo.output_width * cinfo.output_components;
-	buffer = (*cinfo.mem->alloc_sarray) ((j_common_ptr) &cinfo, JPOOL_IMAGE, row_stride, 1);
-
+		row_stride = width * colbytes; 
+  
 	if(accelfb != NULL && accelfb->varfbsize > width * 8 && (scalewidth != 0 || scaleheight != 0) && (scalewidth != width || scaleheight != height))
 	{
 		//auto scale to mwidth / mheight
@@ -1540,17 +1518,37 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 		py = -1;
 
 		m_lock(&status.accelfbmutex, 16);
-		while(cinfo.output_scanline < height)
+		if(cinfo != NULL) aktline = cinfo->output_scanline;
+		while(aktline < height)
 		{
-			jpeg_read_scanlines(&cinfo, buffer, 1);
+			if(cinfo != NULL)
+			{
+				jpeg_read_scanlines(cinfo, buffer, 1);
+				aktline = cinfo->output_scanline;
+			}
+			else
+				aktline++;
+      
 			py++;
 			for(x = 0; x < width; x++)
 			{
-				red = buffer[0][cinfo.output_components * x];
-				if(cinfo.output_components > 2)
+				if(cinfo != NULL)
+					red = buffer[0][colbytes * x];
+				else
+					red = buf[((aktline - 1) * row_stride) + (colbytes * x)];
+          
+				if(colbytes > 2)
 				{
-					green = buffer[0][cinfo.output_components * x + 1];
-					blue = buffer[0][cinfo.output_components * x + 2];
+					if(cinfo != NULL)
+					{
+						green = buffer[0][colbytes * x + 1];
+						blue = buffer[0][colbytes * x + 2];
+					}
+					else
+					{
+						green = buf[((aktline - 1) * row_stride) + (colbytes * x + 1)];
+						blue = buf[((aktline - 1) * row_stride) + (colbytes * x + 2)];
+					}
 				}
 				else
 				{
@@ -1601,17 +1599,37 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 		else if(valign == BOTTOM)
 			posy += mheight - height;
 
-		while(cinfo.output_scanline < height)
+		if(cinfo != NULL) aktline = cinfo->output_scanline;
+		while(aktline < height)
 		{
-			jpeg_read_scanlines(&cinfo, buffer, 1);
-			py = (posy + cinfo.output_scanline - 1) * skinfb->width;
+			if(cinfo != NULL)
+			{
+				jpeg_read_scanlines(cinfo, buffer, 1);
+				aktline = cinfo->output_scanline;
+			}
+			else
+				aktline++;
+
+			py = (posy + aktline - 1) * skinfb->width;
 			for(x = 0; x < width; x++)
 			{
-				red = buffer[0][cinfo.output_components * x];
-				if(cinfo.output_components > 2)
+				if(cinfo != NULL)
+					red = buffer[0][colbytes * x];
+				else
+					red = buf[((aktline - 1) * row_stride) + (colbytes * x)];
+ 
+				if(colbytes > 2)
 				{
-					green = buffer[0][cinfo.output_components * x + 1];
-					blue = buffer[0][cinfo.output_components * x + 2];
+					if(cinfo != NULL)
+					{
+						green = buffer[0][colbytes * x + 1];
+						blue = buffer[0][colbytes * x + 2];
+					}
+					else
+					{
+						green = buf[((aktline - 1) * row_stride) + (colbytes * x + 1)];
+						blue = buf[((aktline - 1) * row_stride) + (colbytes * x + 2)];
+					}
 				}
 				else
 				{
@@ -1623,6 +1641,49 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 			}
 		} 
 	}
+
+	return 0;
+}
+
+int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight, int scalewidth, int scaleheight, int halign, int valign)
+{
+	struct jpeg_decompress_struct cinfo;
+	struct jpgerror jerr;
+	FILE* fd = NULL;
+	int width = 0, height = 0;
+
+	fd = fopen(filename, "rb");
+	if(fd == NULL)
+	{
+		perr("open jpg file %s", filename);
+		return 1;
+	}
+
+	cinfo.err = jpeg_std_error(&jerr.jerr);
+	jerr.jerr.error_exit = jpgswerror;
+	if(setjmp(jerr.setjmpbuf))
+	{
+		jpeg_destroy_decompress(&cinfo);
+		fclose(fd);
+		return 1;
+	}
+
+	jpeg_create_decompress(&cinfo);
+	jpeg_stdio_src(&cinfo, fd);
+	jpeg_read_header(&cinfo, TRUE);
+	cinfo.out_color_space = JCS_RGB;
+	
+	if((scalewidth != 0 || scaleheight != 0) && (mwidth < 300 || mheight < 300))
+		cinfo.scale_denom = getconfigint("picdenom", NULL);
+	else
+		cinfo.scale_denom = 1;
+
+	jpeg_start_decompress(&cinfo);
+	width = cinfo.output_width;
+	height = cinfo.output_height;
+
+  drawjpgsw(&cinfo, NULL, posx, posy, width, height, cinfo.output_components, mwidth, mheight, scalewidth, scaleheight, halign, valign);
+
 	jpeg_finish_decompress(&cinfo);
 	jpeg_destroy_decompress(&cinfo);
 	fclose(fd);
@@ -1808,7 +1869,7 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 		memfd = picnode->memfd;
 	}
 
-	if((pictype == 0 || pictype == 1) && buf == NULL) return;
+	if(buf == NULL) return;
 
 	if(pictype == 0 && (scalewidth != 0 || scaleheight != 0) && (scalewidth != width || scaleheight != height))
 	{
@@ -1888,6 +1949,8 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 	}
 	else if(pictype == 1 && memfd > -1)
 		blitjpg(buf, posx, posy, width, height, scalewidth, scaleheight, mwidth, mheight, halign, valign);
+  else if(pictype == 2 && picnode != NULL)
+    drawjpgsw(NULL, buf, posx, posy, width, height, rowbytes / width, mwidth, mheight, scalewidth, scaleheight, halign, valign);
 
 	if(picnode == NULL)
 	{
@@ -3743,6 +3806,8 @@ int changepicmem(struct skin* node, char* text, int timeout, int del)
 					buf = readpng(node->pic, &width, &height, &rowbytes, &channels, 0, 0, 0, 0, 0, 0);
 				else if(getconfigint("pichwdecode", NULL) == 1)
 					readjpg(node->pic, &width, &height, &rowbytes, &channels, &buf, &memfd);
+				else
+					buf = loadjpg(node->pic, &width, &height, &rowbytes, &channels, 1);
 				addpic(node->pic, buf, memfd, width, height, rowbytes, channels, timeout, del, NULL);
 			}
 		}
