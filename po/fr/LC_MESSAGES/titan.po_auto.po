@@ -448,6 +448,8 @@ msgstr ""
 #: networkbrowser.h:1406 channellist.h:766 networkbrowser.h:1419
 #: networkbrowser.h:1415 tithek.h:461 tithek.h:480 tithek.h:499 tithek.h:503
 #: tithek.h:520 tithek.h:524 tithek.h:554 tithek.h:558 tithek.h:562
+#: mc_main.h:37 mc_main.h:42 mc_main.h:47 mc_main.h:52 mc_main.h:64
+#: mc_main.h:69 mc_main.h:74 mc_main.h:146
 msgid "Message"
 msgstr ""
 
@@ -565,7 +567,9 @@ msgstr ""
 #: networkbrowser.h:1319 networkbrowser.h:1324 networkbrowser.h:1406
 #: channellist.h:766 networkbrowser.h:1419 networkbrowser.h:1415 tithek.h:461
 #: tithek.h:480 tithek.h:499 tithek.h:503 tithek.h:520 tithek.h:524
-#: tithek.h:554 tithek.h:558 tithek.h:562
+#: tithek.h:554 tithek.h:558 tithek.h:562 mc_main.h:37 mc_main.h:42
+#: mc_main.h:47 mc_main.h:52 mc_main.h:64 mc_main.h:69 mc_main.h:74
+#: mc_main.h:146
 msgid "OK"
 msgstr ""
 
@@ -682,6 +686,8 @@ msgstr ""
 #: channellist.h:766 networkbrowser.h:1419 networkbrowser.h:1415 tithek.h:461
 #: tithek.h:480 tithek.h:499 tithek.h:503 tithek.h:520 tithek.h:524
 #: tithek.h:554 tithek.h:558 tithek.h:562 skin_default_skin.xml.h:195
+#: mc_main.h:37 mc_main.h:42 mc_main.h:47 mc_main.h:52 mc_main.h:64
+#: mc_main.h:69 mc_main.h:74 mc_main.h:146
 msgid "EXIT"
 msgstr ""
 
@@ -1442,11 +1448,12 @@ msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
 #: mc_main.h:43 mc_main.h:48 mc_main.h:53 mc_main.h:58 mc_main.h:71
-#: mc_main.h:76 mc_main.h:81
+#: mc_main.h:76 mc_main.h:81 mc_main.h:37 mc_main.h:42 mc_main.h:47
+#: mc_main.h:52 mc_main.h:64 mc_main.h:69 mc_main.h:74
 msgid "comming soon"
 msgstr ""
 
-#: mc_main.h:172 panel_main.h:29 panel_main.h:243
+#: mc_main.h:172 panel_main.h:29 panel_main.h:243 mc_main.h:146
 msgid "Menu not implemented !"
 msgstr ""
 
