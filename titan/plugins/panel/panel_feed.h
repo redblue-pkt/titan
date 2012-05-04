@@ -15,7 +15,7 @@ void screenpanel_feed()
 		pos[0] = '\0';
 
 	if(tmpstr == NULL || ostrcmp(tmpstr, "") == 0 || ostrcmp(tmpstr, "\n") == 0)
-		tmpstr = ostrcat(tmpstr, "titan.address.com", 1, 0);
+		tmpstr = ostrcat(tmpstr, "abcde.mynonpublic.com", 1, 0);
 
 	lastline = textinput(_("Feed"), tmpstr);
 	
