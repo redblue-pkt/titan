@@ -115,8 +115,6 @@ void mc_main()
 	free(tmpstr); tmpstr = NULL;
 	
 	struct skin* mc_main = NULL;
-
-	debug(50, "[mc_main] style: %d", style);
 	mc_main = getscreen("mc_main_mvi"); 
 		
 	struct skin* listbox = getscreennode(mc_main, "listbox");
