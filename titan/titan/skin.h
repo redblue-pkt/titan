@@ -1400,6 +1400,9 @@ unsigned char *loadjpg(char *filename, unsigned long *width, unsigned long *heig
 	jpeg_stdio_src(ciptr, fd);
 	jpeg_read_header(ciptr, TRUE);
 	ciptr->out_color_space = JCS_RGB;
+  
+  if(denom < 1) denom = 1;
+  if(denom > 16) denom = 16;
 	ciptr->scale_denom = denom;
 
 	jpeg_start_decompress(ciptr);
@@ -1673,8 +1676,12 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 	jpeg_read_header(&cinfo, TRUE);
 	cinfo.out_color_space = JCS_RGB;
 	
-	if((scalewidth != 0 || scaleheight != 0) && (mwidth < 300 || mheight < 300))
+	if((scalewidth != 0 || scaleheight != 0) && (mwidth < 400 || mheight < 300) && (cinfo.output_width > 100 || cinfo.output_height > 100))
+  {
 		cinfo.scale_denom = getconfigint("picdenom", NULL);
+    if(scale_denom < 1) scale_denom = 1;
+    if(scale_denom > 16) scale_denom = 16;
+  }
 	else
 		cinfo.scale_denom = 1;
 
