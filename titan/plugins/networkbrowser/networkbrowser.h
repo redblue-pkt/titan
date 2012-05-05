@@ -565,7 +565,7 @@ void savenetworkbrowser(char* filename)
 		{
 			savesettings = ostrcat(savesettings, "\t-fstype=ftpfs,", 1, 0);
  			savesettings = ostrcat(savesettings, node->options, 1, 0);
- 			savesettings = ostrcat(savesettings, ",nolock,allow_other,nonempty", 1, 0);
+ 			savesettings = ostrcat(savesettings, ",nolock,allow_other,nonempty,nodev,noatime,kernel_cache,auto_cache,disable_epsv,skip_pasv_ip,no_verify_peer,no_verify_hostname", 1, 0);
 			if(ostrcmp(node->usessl, "1") == 0)
 			{
 				savesettings = ostrcat(savesettings, ",", 1, 0);
