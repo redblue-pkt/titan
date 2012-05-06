@@ -27,11 +27,11 @@ void screenmc_audioplayer_settings()
 	setchoiceboxselection(dirsort, getconfig("dirsort", NULL));
 
 	addchoicebox(view, "0", _("default"));	
-	addchoicebox(view, "1", _("big"));	
-	addchoicebox(view, "2", _("fullcover"));
-	addchoicebox(view, "3", _("details"));
-	addchoicebox(view, "4", _("smal"));
-	addchoicebox(view, "5", _("fast"));
+//	addchoicebox(view, "1", _("big"));	
+//	addchoicebox(view, "2", _("fullcover"));
+//	addchoicebox(view, "3", _("details"));
+//	addchoicebox(view, "4", _("smal"));
+//	addchoicebox(view, "5", _("fast"));
 	setchoiceboxselection(view, getconfig("view", NULL));
 
 	addchoicebox(ap_autostart_playlist, "0", _("no"));	

@@ -36,11 +36,11 @@ void screenmc_pictureplayer_settings()
 	setchoiceboxselection(dirsort, getconfig("dirsort", NULL));
 
 	addchoicebox(view, "0", "fast");
-	addchoicebox(view, "1", "big");	
-	addchoicebox(view, "2", "cover");	
-	addchoicebox(view, "3", "default");
-	addchoicebox(view, "4", "details");
-//	addchoicebox(view, "5", "fullcover");
+//	addchoicebox(view, "1", "big");	
+//	addchoicebox(view, "2", "cover");	
+//	addchoicebox(view, "3", "default");
+//	addchoicebox(view, "4", "details");
+////	addchoicebox(view, "5", "fullcover");
 	setchoiceboxselection(view, getconfig("view", NULL));
 
 	addchoicebox(sound, "http://stream.mth-house.de:8500/", _("MTH House"));
