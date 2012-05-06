@@ -22,11 +22,11 @@ void screenmc_videoplayer_settings()
 	setchoiceboxselection(dirsort, getconfig("dirsort", NULL));
 
 	addchoicebox(view, "0", "fast");
-	addchoicebox(view, "1", "big");	
-	addchoicebox(view, "2", "cover");	
-	addchoicebox(view, "3", "default");
-	addchoicebox(view, "4", "details");
-	addchoicebox(view, "5", "fullcover");
+//	addchoicebox(view, "1", "big");	
+//	addchoicebox(view, "2", "cover");	
+//	addchoicebox(view, "3", "default");
+//	addchoicebox(view, "4", "details");
+//	addchoicebox(view, "5", "fullcover");
 
 //	addchoicebox(view, "0", _("default"));	
 //	addchoicebox(view, "1", _("cover"));	
