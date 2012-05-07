@@ -20,6 +20,13 @@ void ckeckkillnetthread()
 
 int checkreseller()
 {
+	if(checkbox("ATEMIO510") == 0)
+	{
+		printf("ResellerId: skipped\n");
+		printf("boxtype: %s\n", status.boxtype);	
+		return 0;
+	}
+	
 	FILE* fd = NULL;
 	char mtd[10];
 	char* buf = NULL;
