@@ -53,9 +53,9 @@ struct tmdb* gettmdb(char* title)
 	
 //http://api.themoviedb.org/2.1/Movie.search/de/xml/7bcd34bb47bc65d20a49b6b446a32866/Transformers
 	apikey = ostrcat(apikey, "7bcd34bb47bc65d20a49b6b446a32866", 1, 0);
-	tmpsearch = ostrcat("2.1/Movie.search/de/xml/", apikey, 0, 0);
+	tmpsearch = ostrcat("2.1/Movie.search/de/xml/", apikey, 0, 1);
 	tmpsearch = ostrcat(tmpsearch, "/", 1, 0);
-	tmpsearch = ostrcat(tmpsearch, title, 0, 0);
+	tmpsearch = ostrcat(tmpsearch, title, 1, 0);
 
 	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
 printf("tmpsearch: %s\n",tmpsearch);
