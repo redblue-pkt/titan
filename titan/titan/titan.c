@@ -432,32 +432,38 @@ int main(int argc, char *argv[])
 	if(getconfigint("ss", NULL) == 0)
 	{
 		if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1)
-		{	
+		{
+			printf("error: 1\n");
 			destroy();
 			exit(100);
 		}
 		if(ostrcmp(string_newline(gettimeinfovar()), TIMECODE) == 1)
 		{
+			printf("error: 2\n");		
 			destroy();
 			exit(100);
 		}
 		if(checkreseller() != 0)
 		{
+			printf("error: 3\n");		
 			destroy();
 			exit(100);
 		}
 		if(getsysinfo() != SYSCODE)
 		{
+			printf("error: 4\n");		
 			destroy();
 			exit(100);
 		}
 		if(file_exist("/mnt/swapextensions/etc/.vnumber") == 1)
 		{
+			printf("error: 5\n");		
 			destroy();
 			exit(100);
 		}
 		if(checkflash() != 0)
 		{
+			printf("error: 6\n");		
 			destroy();
 			exit(100);
 		}
