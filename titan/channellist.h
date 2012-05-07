@@ -63,7 +63,7 @@ void showallchannel(struct skin* channellist, struct skin* listbox, int mode)
 		if(tmpchannel->servicetype == status.servicetype)
 		{
 			chnode = addlistbox(channellist, listbox, chnode, 1);
-			if(chnode != NULL)
+			if(chnode != NULL && mode == 0 && channelnottunable(tmpchannel) == 1)
 			{
 				changechannelepg(tmpchannel, chnode);
 				if(tmpchannel->protect > 0)
@@ -93,7 +93,7 @@ void showbouquetchannel(struct skin* channellist, struct skin* listbox, struct s
 			if(tmpbouquet->channel->servicetype == status.servicetype)
 			{
 				chnode = addlistbox(channellist, listbox, chnode, 1);
-				if(chnode != NULL)
+				if(chnode != NULL && mode == 0 && channelnottunable(tmpbouquet->channel) == 1)
 				{
 					tmpnr = oitoa(tmpbouquet->nr);
 					changeret(chnode, tmpnr);
@@ -146,7 +146,7 @@ void showproviderchannel(struct skin* channellist, struct skin* listbox, struct 
 			if(tmpchannel->servicetype == status.servicetype)
 			{
 				chnode = addlistbox(channellist, listbox, chnode, 1);
-				if(chnode != NULL)
+				if(chnode != NULL && mode == 0 && channelnottunable(tmpchannel) == 1)
 				{
 					changechannelepg(tmpchannel, chnode);
 					changetext(chnode, tmpchannel->name);
@@ -198,7 +198,7 @@ void showsatchannel(struct skin* channellist, struct skin* listbox, struct sat* 
 			if(tmpchannel->servicetype == status.servicetype)
 			{
 				chnode = addlistbox(channellist, listbox, chnode, 1);
-				if(chnode != NULL)
+				if(chnode != NULL && mode == 0 && channelnottunable(tmpchannel) == 1)
 				{
 					changechannelepg(tmpchannel, chnode);
 					changetext(chnode, tmpchannel->name);
