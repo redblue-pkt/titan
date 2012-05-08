@@ -82,8 +82,11 @@ void showallchannel(struct skin* channellist, struct skin* listbox, int mode)
 				chnode->handle = (char*) tmpchannel;
 				chnode->handle1 = (char*) tmpchannel;
 				if(mode == 0 && channelnottunable(tmpchannel) == 1)
-					chnode->hidden = YES;
-//					chnode->deaktivcol = deaktivcol;
+        {
+          if(status.channellistview == 0)
+            chnode->hidden = YES;
+          else
+  					chnode->deaktivcol = deaktivcol;
 			}
 		}
 		tmpchannel = tmpchannel->next;
@@ -120,8 +123,12 @@ void showbouquetchannel(struct skin* channellist, struct skin* listbox, struct s
 					chnode->handle = (char*) tmpbouquet->channel;
 					chnode->handle1 = (char*) tmpbouquet;
 					if(mode == 0 && channelnottunable(tmpbouquet->channel) == 1)
-						chnode->hidden = YES;
-//						chnode->deaktivcol = deaktivcol;
+          {
+            if(status.channellistview == 0)
+              chnode->hidden = YES;
+            else
+  						chnode->deaktivcol = deaktivcol;
+          }
 						
 					if(status.showchanneltimeline == 1 && channeltimeline != status.skinerr)
 					{
@@ -167,8 +174,12 @@ void showproviderchannel(struct skin* channellist, struct skin* listbox, struct 
 					chnode->handle = (char*) tmpchannel;
 					chnode->handle1 = (char*) tmpchannel;
 					if(mode == 0 && channelnottunable(tmpchannel) == 1)
-						chnode->hidden = YES;
-//						chnode->deaktivcol = deaktivcol;
+          {
+            if(status.channellistview == 0)
+						  chnode->hidden = YES;
+            else
+  						chnode->deaktivcol = deaktivcol;
+          }
 				}
 			}
 		}
@@ -220,8 +231,12 @@ void showsatchannel(struct skin* channellist, struct skin* listbox, struct sat* 
 					chnode->handle = (char*) tmpchannel;
 					chnode->handle1 = (char*) tmpchannel;
 					if(mode == 0 && channelnottunable(tmpchannel) == 1)
-						chnode->hidden = YES;
-//						chnode->deaktivcol = deaktivcol;
+          {
+            if(status.channellistview == 0)
+						  chnode->hidden = YES;
+            else
+  						chnode->deaktivcol = deaktivcol;
+          }
 				}
 			}
 		}
@@ -303,8 +318,12 @@ void showazchannel(struct skin* channellist, struct skin* listbox, int character
 					chnode->handle = (char*) tmpchannel;
 					chnode->handle1 = (char*) tmpchannel;
 					if(mode == 0 && channelnottunable(tmpchannel) == 1)
-						chnode->hidden = YES;
-//						chnode->deaktivcol = deaktivcol;
+          {
+            if(status.channellistview == 0)
+              chnode->hidden = YES;
+            else
+  						chnode->deaktivcol = deaktivcol;
+          }
 				}
 			}
 		}
