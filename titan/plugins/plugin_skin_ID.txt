@@ -16,5 +16,6 @@ dlna: 207
 weather: 208
 news: 210
 stock: 220
+streaminfo: 225
 TopfieldVFD: ---
 browser: ---

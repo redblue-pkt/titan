@@ -99,5 +99,6 @@ compile "optimize" "optimize" ""
 compile "weather" "weather" ""
 compile "news" "news" ""
 compile "stock" "stock" ""
+compile "streaminfo" "streaminfo" ""
 
 #rm -r networkbrowser/networkbrowser
