@@ -123,12 +123,12 @@ void showbouquetchannel(struct skin* channellist, struct skin* listbox, struct s
 					chnode->handle = (char*) tmpbouquet->channel;
 					chnode->handle1 = (char*) tmpbouquet;
 					if(mode == 0 && channelnottunable(tmpbouquet->channel) == 1)
-					{
-						if(status.channellistview == 0)
-							chnode->hidden = YES;
-						else
-							chnode->deaktivcol = deaktivcol;
-					}
+          {
+            if(status.channellistview == 0)
+              chnode->hidden = YES;
+            else
+  						chnode->deaktivcol = deaktivcol;
+          }
 						
 					if(status.showchanneltimeline == 1 && channeltimeline != status.skinerr)
 					{
@@ -174,12 +174,12 @@ void showproviderchannel(struct skin* channellist, struct skin* listbox, struct 
 					chnode->handle = (char*) tmpchannel;
 					chnode->handle1 = (char*) tmpchannel;
 					if(mode == 0 && channelnottunable(tmpchannel) == 1)
-					{
-						if(status.channellistview == 0)
-							chnode->hidden = YES;
-						else
-							chnode->deaktivcol = deaktivcol;
-					}
+          {
+            if(status.channellistview == 0)
+						  chnode->hidden = YES;
+            else
+  						chnode->deaktivcol = deaktivcol;
+          }
 				}
 			}
 		}
@@ -231,12 +231,12 @@ void showsatchannel(struct skin* channellist, struct skin* listbox, struct sat* 
 					chnode->handle = (char*) tmpchannel;
 					chnode->handle1 = (char*) tmpchannel;
 					if(mode == 0 && channelnottunable(tmpchannel) == 1)
-					{
-						if(status.channellistview == 0)
-							chnode->hidden = YES;
-						else
-							chnode->deaktivcol = deaktivcol;
-					}
+          {
+            if(status.channellistview == 0)
+						  chnode->hidden = YES;
+            else
+  						chnode->deaktivcol = deaktivcol;
+          }
 				}
 			}
 		}
@@ -318,12 +318,12 @@ void showazchannel(struct skin* channellist, struct skin* listbox, int character
 					chnode->handle = (char*) tmpchannel;
 					chnode->handle1 = (char*) tmpchannel;
 					if(mode == 0 && channelnottunable(tmpchannel) == 1)
-					{
-						if(status.channellistview == 0)
-							chnode->hidden = YES;
-						else
-							chnode->deaktivcol = deaktivcol;
-					}
+          {
+            if(status.channellistview == 0)
+              chnode->hidden = YES;
+            else
+  						chnode->deaktivcol = deaktivcol;
+          }
 				}
 			}
 		}
@@ -446,7 +446,7 @@ void changebutton(int listmode, struct skin* b1, struct skin* b2, struct skin* b
 	}
 }
 
-void changechanneltitle(struct skin* channellist, int listmode, char** oldtitle)
+void changechanneltitle(struct skin* channellist, int listmode, char** oldtitle, long** oldcol)
 {
 	char* tmpstr = NULL;
 
@@ -458,40 +458,41 @@ void changechanneltitle(struct skin* channellist, int listmode, char** oldtitle)
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Move mode"), 1, 0);
 		changetitle(channellist, tmpstr);
-		channellist->color = convercol(getskinconfig("mvmode", NULL));
+		channellist->color = convercol("mvmode");
 	}
 	else if(listmode == RMMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Remove mode"), 1, 0);
 		changetitle(channellist, tmpstr);
-		channellist->color = convercol(getskinconfig("rmmode", NULL));
+		channellist->color = convercol("rmmode");
 	}
 	else if(listmode == CPMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Copy mode"), 1, 0);
 		changetitle(channellist, tmpstr);
-		channellist->color = convercol(getskinconfig("cpmode", NULL));		
+		channellist->color = convercol("cpmode");		
 	}
 	else if(listmode == PROTECTMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Protect mode"), 1, 0);
 		changetitle(channellist, tmpstr);
-		channellist->color = convercol(getskinconfig("protectmode", NULL));
+		channellist->color = convercol("protectmode");
 	}
 	else if(listmode == EDITMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Edit mode"), 1, 0);
 		changetitle(channellist, tmpstr);
-		channellist->color = convercol(getskinconfig("editmode", NULL));
+		channellist->color = convercol("editmode");
 	}
 	else
 	{	
 		changetitle(channellist, *oldtitle);
 		*oldtitle = NULL;
+		channellist->color = *oldcol;
 	}
 }
 
@@ -518,6 +519,7 @@ int screenchannellist(struct channel** retchannel, char** retchannellist, int fl
 	void* movesel = NULL, *aktlist = NULL;
 	int nochanneltitle = getskinconfigint("nochanneltitle", NULL);
 	int firstdraw = 0;
+	long oldcol = 0;
 	
 	status.channelswitch = 1;
 
@@ -618,7 +620,7 @@ start:
 		if(listbox->select != NULL)
 			listmode = screenlistedit(list, (struct channel*)listbox->select->handle);
 		if(listmode == NOMODE) goto end;
-		if(nochanneltitle == 0) changechanneltitle(channellist, listmode, &oldtitle);
+		if(nochanneltitle == 0) changechanneltitle(channellist, listmode, &oldtitle, &oldcol);
 	}
 	if(flag != 2)
 	{
@@ -702,7 +704,7 @@ start:
 					addscreenrc(channellist, listbox);
 				if(listmode == NOMODE && flag == 3) flag = 0;
 
-				if(nochanneltitle == 0) changechanneltitle(channellist, listmode, &oldtitle);
+				if(nochanneltitle == 0) changechanneltitle(channellist, listmode, &oldtitle, &oldcol);
 
 				delmarkedscreennodes(channellist, 1);
 				delmarkedscreennodes(channellist, 2);
@@ -1401,7 +1403,7 @@ start:
 			else
 				addscreenrc(channellist, listbox);
 
-			if(nochanneltitle == 0) changechanneltitle(channellist, listmode, &oldtitle);
+			if(nochanneltitle == 0) changechanneltitle(channellist, listmode, &oldtitle, &oldcol);
 
 			if(listmode == NOMODE && flag == 3) flag = 0;
 			delmarkedscreennodes(channellist, 1);
