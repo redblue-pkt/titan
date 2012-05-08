@@ -87,6 +87,7 @@ void showallchannel(struct skin* channellist, struct skin* listbox, int mode)
 						chnode->hidden = YES;
 					else
 						chnode->deaktivcol = deaktivcol;
+				}
 			}
 		}
 		tmpchannel = tmpchannel->next;
