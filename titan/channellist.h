@@ -453,79 +453,50 @@ void changechanneltitle(struct skin* channellist, int listmode, char** oldtitle,
 	if(*oldtitle == NULL)
 		*oldtitle = ostrcat(channellist->title, NULL, 0, 0);
 
-<<<<<<< .mine
 	if(*oldcol == -9999)
 		*oldcol = channellist->fontcol;
-=======
-	if(*oldcol == NULL)
-		*oldcol = channellist->bgcol;
->>>>>>> .r15584
 
 	if(listmode == MVMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Move mode"), 1, 0);
 		changetitle(channellist, tmpstr);
-<<<<<<< .mine
 		channellist->fontcol = convercol("mvmode");
-=======
-		channellist->bgcol = convercol("mvmode");
->>>>>>> .r15584
 	}
 	else if(listmode == RMMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Remove mode"), 1, 0);
 		changetitle(channellist, tmpstr);
-<<<<<<< .mine
 		channellist->fontcol = convercol("rmmode");
-=======
-		channellist->bgcol = convercol("rmmode");
->>>>>>> .r15584
 	}
 	else if(listmode == CPMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Copy mode"), 1, 0);
 		changetitle(channellist, tmpstr);
-<<<<<<< .mine
 		channellist->fontcol = convercol("cpmode");
-=======
-		channellist->bgcol = convercol("cpmode");		
->>>>>>> .r15584
 	}
 	else if(listmode == PROTECTMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Protect mode"), 1, 0);
 		changetitle(channellist, tmpstr);
-<<<<<<< .mine
 		channellist->fontcol = convercol("protectmode");
-=======
-		channellist->bgcol = convercol("protectmode");
->>>>>>> .r15584
 	}
 	else if(listmode == EDITMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Edit mode"), 1, 0);
 		changetitle(channellist, tmpstr);
-<<<<<<< .mine
 		channellist->fontcol = convercol("editmode");
-=======
-		channellist->bgcol = convercol("editmode");
->>>>>>> .r15584
 	}
 	else
 	{	
 		changetitle(channellist, *oldtitle);
 		*oldtitle = NULL;
-<<<<<<< .mine
 		channellist->fontcol = *oldcol;
 		*oldcol = -9999;
-=======
-		channellist->bgcol = *oldcol;
->>>>>>> .r15584
 	}
 }
 
