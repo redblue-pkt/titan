@@ -33,7 +33,7 @@ int selectchannel(struct skin* listbox, int sid, unsigned long tid)
 
 	while(node != NULL)
 	{
-		if(node->deaktivcol > -1)
+		if(node->deaktivcol > -1 || node->hidden == YES)
 		{
 			node = node->next;
 			continue;
