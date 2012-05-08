@@ -462,35 +462,35 @@ void changechanneltitle(struct skin* channellist, int listmode, char** oldtitle,
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Move mode"), 1, 0);
 		changetitle(channellist, tmpstr);
-		channellist->fontcol = convercol("mvmode");
+		channellist->fontcol = convertcol("mvmode");
 	}
 	else if(listmode == RMMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Remove mode"), 1, 0);
 		changetitle(channellist, tmpstr);
-		channellist->fontcol = convercol("rmmode");
+		channellist->fontcol = convertcol("rmmode");
 	}
 	else if(listmode == CPMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Copy mode"), 1, 0);
 		changetitle(channellist, tmpstr);
-		channellist->fontcol = convercol("cpmode");
+		channellist->fontcol = convertcol("cpmode");
 	}
 	else if(listmode == PROTECTMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Protect mode"), 1, 0);
 		changetitle(channellist, tmpstr);
-		channellist->fontcol = convercol("protectmode");
+		channellist->fontcol = convertcol("protectmode");
 	}
 	else if(listmode == EDITMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Edit mode"), 1, 0);
 		changetitle(channellist, tmpstr);
-		channellist->fontcol = convercol("editmode");
+		channellist->fontcol = convertcol("editmode");
 	}
 	else
 	{	
