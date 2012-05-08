@@ -34,6 +34,7 @@ void screenadjust()
 	struct skin* showchanneltimeline = getscreennode(adjust, "showchanneltimeline");
 	struct skin* screenanim = getscreennode(adjust, "screenanim");
 	struct skin* screenanimspeed = getscreennode(adjust, "screenanimspeed");
+  struct skin* channellistview = getscreennode(adjust, "channellistview");
 	
 	struct skin* tmp = NULL;
 
@@ -159,6 +160,10 @@ void screenadjust()
 	addchoicebox(screenanimspeed, "15", _("slow"));
 	addchoicebox(screenanimspeed, "20", _("very slow"));
 	setchoiceboxselection(screenanimspeed, getconfig("screenanimspeed", NULL));
+  
+  addchoicebox(channellistview, "0", _("hidden"));
+	addchoicebox(channellistview, "1", _("deactive"));
+	setchoiceboxselection(channellistview, getconfig("channellistview", NULL));
 
 	drawscreen(adjust, 0);
 	addscreenrc(adjust, listbox);
@@ -216,6 +221,8 @@ void screenadjust()
 			status.screenanim = getconfigint("screenanim", NULL);
 			addconfigscreencheck("screenanimspeed", screenanimspeed, "1");
 			status.screenanimspeed = getconfigint("screenanimspeed", NULL);
+      addconfigscreencheck("channellistview", channellistview, "0");
+			status.channellistview = getconfigint("channellistview", NULL);
 
 			break;
 		}
