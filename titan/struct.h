@@ -1067,10 +1067,10 @@ struct status
 	char* bgpic;
 	//should thumb thread start
 	int createthumb;
-  //time for next picmem timeout check
-  time_t picmemtimeout;
-  //show not tunable channel hidden (0)) or deaktive (1) in channellist
-  int channellistview;
+	//time for next picmem timeout check
+	time_t picmemtimeout;
+	//show not tunable channel hidden (0)) or deaktive (1) in channellist
+	int channellistview;
 } status;
 
 struct fb
