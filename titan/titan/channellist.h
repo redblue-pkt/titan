@@ -453,6 +453,9 @@ void changechanneltitle(struct skin* channellist, int listmode, char** oldtitle,
 	if(*oldtitle == NULL)
 		*oldtitle = ostrcat(channellist->title, NULL, 0, 0);
 
+	if(*oldcol == NULL)
+		*oldcol = channellist->color;
+
 	if(listmode == MVMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
