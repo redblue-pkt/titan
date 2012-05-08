@@ -458,33 +458,38 @@ void changechanneltitle(struct skin* channellist, int listmode, char** oldtitle)
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Move mode"), 1, 0);
 		changetitle(channellist, tmpstr);
+		channellist->color = convercol(getskinconfig("mvmode", NULL));
 	}
 	else if(listmode == RMMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Remove mode"), 1, 0);
 		changetitle(channellist, tmpstr);
+		channellist->color = convercol(getskinconfig("rmmode", NULL));
 	}
 	else if(listmode == CPMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Copy mode"), 1, 0);
 		changetitle(channellist, tmpstr);
+		channellist->color = convercol(getskinconfig("cpmode", NULL));		
 	}
 	else if(listmode == PROTECTMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Protect mode"), 1, 0);
 		changetitle(channellist, tmpstr);
+		channellist->color = convercol(getskinconfig("protectmode", NULL));
 	}
 	else if(listmode == EDITMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Edit mode"), 1, 0);
 		changetitle(channellist, tmpstr);
+		channellist->color = convercol(getskinconfig("editmode", NULL));
 	}
 	else
-	{
+	{	
 		changetitle(channellist, *oldtitle);
 		*oldtitle = NULL;
 	}
