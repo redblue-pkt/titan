@@ -350,7 +350,7 @@ char* getepgakttitle(struct skin* node);
 
 //skin.h
 unsigned char *loadjpg(char *filename, unsigned long *width, unsigned long *height, unsigned long *rowbytes, int *channels, int denom);
-
+int changeselectpic(struct skin* node, char* text);
 void calcautoscale(int width, int height, int mwidth, int mheight, int* scalewidth, int* scaleheight);
 void blitscale(int posx, int posy, int width, int height, int scalewidth, int scaleheight, int flag);
 unsigned char* scale(unsigned char* buf, int width, int height, int channels, int newwidth, int newheight, int free1);
@@ -433,6 +433,7 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+char* getdevcontent(char* devconfig);
 char* getxmlentry(char *line, char *searchstr);
 void debugstack(void* address, void* address1);
 char* string_strip_whitechars(char *text);
