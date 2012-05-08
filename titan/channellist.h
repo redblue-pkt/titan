@@ -1,7 +1,7 @@
 #ifndef CHANNELLIST_H
 #define CHANNELLIST_H
 
-int selectchannel(struct skin* listbox)
+int selectchannel(struct skin* listbox, int sid, unsigned long tid)
 {
 	struct skin* node = listbox;
 	struct channel* chnode = NULL;
@@ -11,9 +11,19 @@ int selectchannel(struct skin* listbox)
 	listbox->select = NULL;
 
 	if(status.servicetype == 0)
-		chnode = getchannel(getconfigint("serviceid", NULL), getconfiglu("transponderid", NULL));
+	{
+		if(sid != 0 && tid != 0)
+			chnode = getchannel(sid, tid);
+		else
+			chnode = getchannel(getconfigint("serviceid", NULL), getconfiglu("transponderid", NULL));
+	}
 	else
-		chnode = getchannel(getconfigint("rserviceid", NULL), getconfiglu("rtransponderid", NULL));
+	{
+		if(sid != 0 && tid != 0)
+			chnode = getchannel(sid, tid);
+		else
+			chnode = getchannel(getconfigint("rserviceid", NULL), getconfiglu("rtransponderid", NULL));
+	}
 
 	if(chnode == NULL)
 	{
@@ -516,7 +526,7 @@ start:
 			list = BOUQUETCHANNEL;
 			aktlist = (void*)mainbouquetnode;
 			showbouquetchannel(channellist, listbox, channeltimeline, mainbouquetnode->bouquet, flag);
-			selectchannel(listbox);
+			selectchannel(listbox, 0, 0);
 		}
 	}
 	else if(ostrncmp("(A-Z)-", tmpstr, 6) == 0 && strlen(tmpstr) > 6)
@@ -529,7 +539,7 @@ start:
 		list = AZCHANNEL;
 		aktlist = (void*)(int)tmpstr[6];
 		showazchannel(channellist, listbox, (int)tmpstr[6], flag);
-		selectchannel(listbox);
+		selectchannel(listbox, 0, 0);
 	}
 	else if(ostrncmp("(SAT)-", tmpstr, 6) == 0 && strlen(tmpstr) > 6)
 	{
@@ -542,7 +552,7 @@ start:
 		list = SATCHANNEL;
 		aktlist = (void*)satnode;
 		showsatchannel(channellist, listbox, satnode, flag);
-		selectchannel(listbox);
+		selectchannel(listbox, 0, 0);
 	}
 	else if(ostrncmp("(PROVIDER)-", tmpstr, 11) == 0 && strlen(tmpstr) > 6)
 	{
@@ -555,14 +565,14 @@ start:
 		list = PROVIDERCHANNEL;
 		aktlist = (void*)providernode;
 		showproviderchannel(channellist, listbox, providernode, flag);
-		selectchannel(listbox);
+		selectchannel(listbox, 0, 0);
 	}
 	else
 	{
 		if(nochanneltitle == 0) changetitle(channellist, _("All Channels"));
 		list = ALLCHANNEL;
 		showallchannel(channellist, listbox, flag);
-		selectchannel(listbox);
+		selectchannel(listbox, 0, 0);
 	}
 
 	tmpstr = NULL;
@@ -647,6 +657,14 @@ start:
 
 			if(rcret == getrcconfigint("rcmenu", NULL))
 			{
+				int sid = 0;
+				unsigned long tid = 0;
+				if((list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL || list == BOUQUETCHANNEL) && listbox->select->handle != NULL)
+				{
+					sid = ((struct channel*)listbox->select->handle)->serviceid;
+					tid = ((struct channel*)listbox->select->handle)->transponderid;
+				}
+
 				status.markmodus = 0;
 				movesel = NULL;
 				clearscreen(channellist);
@@ -659,12 +677,13 @@ start:
 				else
 					addscreenrc(channellist, listbox);
 				if(listmode == NOMODE && flag == 3) flag = 0;
+
 				if(nochanneltitle == 0) changechanneltitle(channellist, listmode, &oldtitle);
 
 				delmarkedscreennodes(channellist, 1);
 				delmarkedscreennodes(channellist, 2);
 				recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
-				selectchannel(listbox);
+				selectchannel(listbox, sid, tid);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
 				drawscreen(channellist, 0);
 			}
@@ -894,7 +913,7 @@ start:
 			delmarkedscreennodes(channellist, 1);
 			delmarkedscreennodes(channellist, 2);
 			showallchannel(channellist, listbox, flag);
-			selectchannel(listbox);
+			selectchannel(listbox, 0, 0);
 			changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
 			drawchannellist(channellist, list, listbox);
 			continue;
@@ -1118,7 +1137,7 @@ start:
 				aktlist = listbox->select->handle1;
 				showbouquetchannel(channellist, listbox, channeltimeline, (struct bouquet*)listbox->select->handle, flag);
 				delmarkedscreennodes(channellist, 2);
-				selectchannel(listbox);
+				selectchannel(listbox, 0, 0);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
 				drawchannellist(channellist, list, listbox);
 			}
@@ -1190,7 +1209,7 @@ start:
 				aktlist = listbox->select->handle;
 				showsatchannel(channellist, listbox, (struct sat*)listbox->select->handle, flag);
 				delmarkedscreennodes(channellist, 2);
-				selectchannel(listbox);
+				selectchannel(listbox, 0, 0);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
 				drawchannellist(channellist, list, listbox);
 			}
@@ -1254,7 +1273,7 @@ start:
 				aktlist = listbox->select->handle;
 				showazchannel(channellist, listbox, (int)listbox->select->handle, flag);
 				delmarkedscreennodes(channellist, 2);
-				selectchannel(listbox);
+				selectchannel(listbox, 0, 0);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
 				drawchannellist(channellist, list, listbox);
 			}
@@ -1326,7 +1345,7 @@ start:
 				aktlist = listbox->select->handle;
 				showproviderchannel(channellist, listbox, (struct provider*) listbox->select->handle, flag);
 				delmarkedscreennodes(channellist, 2);
-				selectchannel(listbox);
+				selectchannel(listbox, 0, 0);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
 				drawchannellist(channellist, list, listbox);
 			}
@@ -1335,6 +1354,15 @@ start:
 		if(flag == 0 && rcret == getrcconfigint("rcmenu", NULL))
 		{
 			if(list == AZLIST) continue;
+
+			int sid = 0;
+			unsigned long tid = 0;
+			if((list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL || list == BOUQUETCHANNEL) && listbox->select->handle != NULL)
+			{
+				sid = ((struct channel*)listbox->select->handle)->serviceid;
+				tid = ((struct channel*)listbox->select->handle)->transponderid;
+			}
+
 			clearscreen(channellist);
 			if(listbox->select != NULL)
 				listmode = screenlistedit(list, (struct channel*)listbox->select->handle);
@@ -1355,7 +1383,7 @@ start:
 			delmarkedscreennodes(channellist, 1);
 			delmarkedscreennodes(channellist, 2);
 			recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
-			selectchannel(listbox);
+			selectchannel(listbox, sid, tid);
 			changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
 			drawscreen(channellist, 0);
 			continue;
