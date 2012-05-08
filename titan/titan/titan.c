@@ -402,10 +402,10 @@ int main(int argc, char *argv[])
 	ret = readconfig(status.configfile, config);
 	if(ret != 0)
 		return 100;
-    
-  //change working dir to /tmp
-  //chdir("/tmp");
-    
+
+	//change working dir to /tmp
+	//chdir("/tmp");
+
 	readconfig(getconfig("ownconfig", NULL), ownconfig);
 	readconfig(getconfig("rcconfig", NULL), rcconfig);
 
