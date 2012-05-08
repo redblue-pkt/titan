@@ -49,15 +49,17 @@
 #: networkbrowser.h:1228 networkbrowser.h:1189 networkbrowser.h:1193
 #: networkbrowser.h:1197 networkbrowser.h:1201 networkbrowser.h:1227
 #: networkbrowser.h:1204 networkbrowser.h:1208 networkbrowser.h:1212
-#: networkbrowser.h:1216 networkbrowser.h:1242
+#: networkbrowser.h:1216 networkbrowser.h:1242 adjust.h:50 adjust.h:64
+#: adjust.h:68 adjust.h:73 adjust.h:98 adjust.h:129 adjust.h:132 adjust.h:147
+#: adjust.h:151
 msgid "no"
 msgstr ""
 
-#: adjust.h:50
+#: adjust.h:50 adjust.h:51
 msgid "infobar"
 msgstr ""
 
-#: adjust.h:51
+#: adjust.h:51 adjust.h:52
 msgid "epg"
 msgstr ""
 
@@ -111,29 +113,30 @@ msgstr ""
 #: networkbrowser.h:1194 networkbrowser.h:1198 networkbrowser.h:1202
 #: networkbrowser.h:1228 networkbrowser.h:1205 networkbrowser.h:1209
 #: networkbrowser.h:1213 networkbrowser.h:1217 networkbrowser.h:1243
+#: adjust.h:65 adjust.h:74 adjust.h:99 adjust.h:128 adjust.h:133 adjust.h:148
 msgid "yes"
 msgstr ""
 
-#: adjust.h:68
+#: adjust.h:68 adjust.h:69
 msgid "medium"
 msgstr ""
 
 #: adjust.h:69 adjust.h:157 mc_audioplayer_settings.h:34
 #: mc_pictureplayer_settings.h:34 mc_videoplayer_settings.h:29
-#: plugins_mc_skin.xml.h:17 skins_mc_skin.xml.h:17
+#: plugins_mc_skin.xml.h:17 skins_mc_skin.xml.h:17 adjust.h:70 adjust.h:158
 msgid "fast"
 msgstr ""
 
 #: adjust.h:76 mc_audioplayer_settings.h:21 mc_pictureplayer_settings.h:21
 #: mc_videoplayer_settings.h:16 plugins_mc_skin.xml.h:5 skins_mc_skin.xml.h:5
-#: mc_pictureplayer_settings.h:30
+#: mc_pictureplayer_settings.h:30 adjust.h:77
 msgid "alpha"
 msgstr ""
 
 #: adjust.h:77 mc_audioplayer_settings.h:22 mc_pictureplayer_settings.h:22
 #: mc_videoplayer_settings.h:17 plugins_mc_skin.xml.h:36
 #: skins_mc_skin.xml.h:36 mc_pictureplayer_settings.h:31
-#: plugins_mc_skin.xml.h:38 skins_mc_skin.xml.h:38
+#: plugins_mc_skin.xml.h:38 skins_mc_skin.xml.h:38 adjust.h:78
 msgid "reverse alpha"
 msgstr ""
 
@@ -141,31 +144,31 @@ msgstr ""
 #: mc_videoplayer_settings.h:18 plugins_mc_skin.xml.h:42
 #: skins_mc_skin.xml.h:42 mc_videoplayer_settings.h:26
 #: mc_pictureplayer_settings.h:32 plugins_mc_skin.xml.h:44
-#: skins_mc_skin.xml.h:44
+#: skins_mc_skin.xml.h:44 adjust.h:79
 msgid "size"
 msgstr ""
 
 #: adjust.h:79 mc_audioplayer_settings.h:24 mc_pictureplayer_settings.h:24
 #: mc_videoplayer_settings.h:19 plugins_mc_skin.xml.h:38
 #: skins_mc_skin.xml.h:38 mc_pictureplayer_settings.h:33
-#: plugins_mc_skin.xml.h:40 skins_mc_skin.xml.h:40
+#: plugins_mc_skin.xml.h:40 skins_mc_skin.xml.h:40 adjust.h:80
 msgid "reverse size"
 msgstr ""
 
 #: adjust.h:80 mc_audioplayer_settings.h:25 mc_pictureplayer_settings.h:25
 #: mc_videoplayer_settings.h:20 plugins_mc_skin.xml.h:12
-#: skins_mc_skin.xml.h:12 mc_pictureplayer_settings.h:34
+#: skins_mc_skin.xml.h:12 mc_pictureplayer_settings.h:34 adjust.h:81
 msgid "date"
 msgstr ""
 
 #: adjust.h:81 mc_audioplayer_settings.h:26 mc_pictureplayer_settings.h:26
 #: mc_videoplayer_settings.h:21 plugins_mc_skin.xml.h:37
 #: skins_mc_skin.xml.h:37 mc_pictureplayer_settings.h:35
-#: plugins_mc_skin.xml.h:39 skins_mc_skin.xml.h:39
+#: plugins_mc_skin.xml.h:39 skins_mc_skin.xml.h:39 adjust.h:82
 msgid "reverse date"
 msgstr ""
 
-#: adjust.h:84
+#: adjust.h:84 adjust.h:85
 msgid "Power Menu"
 msgstr ""
 
@@ -174,7 +177,7 @@ msgstr ""
 #: skin_default_skin.xml.h:317 skin_default_skin.xml.h:318
 #: skin_default_skin.xml.h:319 skin_default_skin.xml.h:325
 #: skin_default_skin.xml.h:326 skin_default_skin.xml.h:327
-#: skin_default_skin.xml.h:328
+#: skin_default_skin.xml.h:328 adjust.h:86
 msgid "Power Off"
 msgstr ""
 
@@ -184,7 +187,7 @@ msgstr ""
 #: skin_default_skin.xml.h:402 skin_default_skin.xml.h:403
 #: skin_default_skin.xml.h:404 skin_default_skin.xml.h:406
 #: skin_default_skin.xml.h:412 skin_default_skin.xml.h:413
-#: skin_default_skin.xml.h:414 skin_default_skin.xml.h:415
+#: skin_default_skin.xml.h:414 skin_default_skin.xml.h:415 adjust.h:87
 msgid "Standby"
 msgstr ""
 
@@ -194,52 +197,52 @@ msgstr ""
 #: skin_default_skin.xml.h:343 skin_default_skin.xml.h:346
 #: skin_default_skin.xml.h:347 skin_default_skin.xml.h:348
 #: skin_default_skin.xml.h:354 skin_default_skin.xml.h:355
-#: skin_default_skin.xml.h:356 skin_default_skin.xml.h:357
+#: skin_default_skin.xml.h:356 skin_default_skin.xml.h:357 adjust.h:88
 msgid "Restart"
 msgstr ""
 
-#: adjust.h:88
+#: adjust.h:88 adjust.h:89
 msgid "Gui Restart"
 msgstr ""
 
 #: adjust.h:91 adjust.h:101 epgsettings.h:41 epgsettings.h:48
-#: epgsettings.h:129 epgsettings.h:136
+#: epgsettings.h:129 epgsettings.h:136 adjust.h:92 adjust.h:102
 msgid "deaktiv"
 msgstr ""
 
-#: adjust.h:92
+#: adjust.h:92 adjust.h:93
 msgid "1 sec"
 msgstr ""
 
-#: adjust.h:93 avsettings.h:71
+#: adjust.h:93 avsettings.h:71 adjust.h:94
 msgid "2 sec"
 msgstr ""
 
-#: adjust.h:94 pin.h:165
+#: adjust.h:94 pin.h:165 adjust.h:95
 msgid "endless"
 msgstr ""
 
-#: adjust.h:102
+#: adjust.h:102 adjust.h:103
 msgid "1 GB"
 msgstr ""
 
-#: adjust.h:103
+#: adjust.h:103 adjust.h:104
 msgid "2 GB"
 msgstr ""
 
-#: adjust.h:104
+#: adjust.h:104 adjust.h:105
 msgid "3 GB"
 msgstr ""
 
-#: adjust.h:105
+#: adjust.h:105 adjust.h:106
 msgid "4 GB"
 msgstr ""
 
-#: adjust.h:123
+#: adjust.h:123 adjust.h:124
 msgid "extern"
 msgstr ""
 
-#: adjust.h:124
+#: adjust.h:124 adjust.h:125
 msgid "intern"
 msgstr ""
 
@@ -250,59 +253,59 @@ msgstr ""
 #: transponder.h:431 rectimer.h:999 transponder.h:180 transponder.h:190
 #: transponder.h:216 transponder.h:223 transponder.h:247 transponder.h:265
 #: transponder.h:294 transponder.h:300 transponder.h:307 transponder.h:339
-#: transponder.h:349 transponder.h:404 transponder.h:440
+#: transponder.h:349 transponder.h:404 transponder.h:440 adjust.h:136
 msgid "auto"
 msgstr ""
 
-#: adjust.h:136 rectimer.h:995 rectimer.h:1000
+#: adjust.h:136 rectimer.h:995 rectimer.h:1000 adjust.h:137
 msgid "nothing"
 msgstr ""
 
-#: adjust.h:137 rectimer.h:996 rectimer.h:1001
+#: adjust.h:137 rectimer.h:996 rectimer.h:1001 adjust.h:138
 msgid "standby"
 msgstr ""
 
-#: adjust.h:138 rectimer.h:997 rectimer.h:1002
+#: adjust.h:138 rectimer.h:997 rectimer.h:1002 adjust.h:139
 msgid "power off"
 msgstr ""
 
-#: adjust.h:141
+#: adjust.h:141 adjust.h:142
 msgid "ask"
 msgstr ""
 
-#: adjust.h:142
+#: adjust.h:142 adjust.h:143
 msgid "allways del file"
 msgstr ""
 
-#: adjust.h:143
+#: adjust.h:143 adjust.h:144
 msgid "never del file"
 msgstr ""
 
-#: adjust.h:151
+#: adjust.h:151 adjust.h:152
 msgid "anim. width"
 msgstr ""
 
-#: adjust.h:152
+#: adjust.h:152 adjust.h:153
 msgid "anim. height"
 msgstr ""
 
-#: adjust.h:153
+#: adjust.h:153 adjust.h:154
 msgid "anim. both"
 msgstr ""
 
-#: adjust.h:156
+#: adjust.h:156 adjust.h:157
 msgid "very fast"
 msgstr ""
 
-#: adjust.h:158 panel_settings_autostart.h:58
+#: adjust.h:158 panel_settings_autostart.h:58 adjust.h:159
 msgid "normal"
 msgstr ""
 
-#: adjust.h:159
+#: adjust.h:159 adjust.h:160
 msgid "slow"
 msgstr ""
 
-#: adjust.h:160
+#: adjust.h:160 adjust.h:161
 msgid "very slow"
 msgstr ""
 
@@ -460,7 +463,7 @@ msgstr ""
 #: networkbrowser.h:1318 networkbrowser.h:1323 networkbrowser.h:1416
 #: networkbrowser.h:1326 networkbrowser.h:1333 networkbrowser.h:1338
 #: networkbrowser.h:1431 global.h:4614 channellist.h:793 channellist.h:767
-#: channellist.h:771 global.h:4639 channellist.h:790
+#: channellist.h:771 global.h:4639 channellist.h:790 channellist.h:821
 msgid "Message"
 msgstr ""
 
@@ -585,7 +588,7 @@ msgstr ""
 #: networkbrowser.h:1333 networkbrowser.h:1338 networkbrowser.h:1431
 #: global.h:262 global.h:4614 channellist.h:793 channellist.h:767
 #: channellist.h:771 global.h:4639 channellist.h:790
-#: skin_default_skin.xml.h:296
+#: skin_default_skin.xml.h:296 channellist.h:821
 msgid "OK"
 msgstr ""
 
@@ -708,7 +711,7 @@ msgstr ""
 #: networkbrowser.h:1326 networkbrowser.h:1333 networkbrowser.h:1338
 #: networkbrowser.h:1431 global.h:262 global.h:4614 channellist.h:793
 #: channellist.h:767 channellist.h:771 global.h:4639 channellist.h:790
-#: skin_default_skin.xml.h:196
+#: skin_default_skin.xml.h:196 channellist.h:821
 msgid "EXIT"
 msgstr ""
 
@@ -788,13 +791,14 @@ msgstr ""
 #: skin_default_skin.xml.h:340 channellist.h:493 channellist.h:1379
 #: channellist.h:520 channellist.h:1406 channellist.h:494 channellist.h:1380
 #: channellist.h:498 channellist.h:1384 channellist.h:508 channellist.h:1412
-#: skin_default_skin.xml.h:341
+#: skin_default_skin.xml.h:341 channellist.h:539 channellist.h:1443
 msgid "Radio (Info)"
 msgstr ""
 
 #: channellist.h:453 channellist.h:1323 channellist.h:498 channellist.h:1374
 #: channellist.h:525 channellist.h:1401 channellist.h:499 channellist.h:1375
 #: channellist.h:503 channellist.h:1379 channellist.h:513 channellist.h:1407
+#: channellist.h:544 channellist.h:1438
 msgid "TV (Info)"
 msgstr ""
 
@@ -802,7 +806,8 @@ msgstr ""
 #: channellist.h:900 channellist.h:1101 channellist.h:533 channellist.h:927
 #: channellist.h:1128 channellist.h:507 channellist.h:901 channellist.h:1102
 #: channellist.h:511 channellist.h:905 channellist.h:1106 channellist.h:521
-#: channellist.h:924 channellist.h:1125
+#: channellist.h:924 channellist.h:1125 channellist.h:552 channellist.h:955
+#: channellist.h:1156
 msgid "Bouquets"
 msgstr ""
 
@@ -813,7 +818,8 @@ msgstr ""
 #: skin_default_skin.xml.h:145 skin_default_skin.xml.h:146 channellist.h:519
 #: channellist.h:1237 skin_default_skin.xml.h:147 channellist.h:546
 #: channellist.h:1264 channellist.h:520 channellist.h:1238 channellist.h:524
-#: channellist.h:1242 channellist.h:534 channellist.h:1261
+#: channellist.h:1242 channellist.h:534 channellist.h:1261 channellist.h:565
+#: channellist.h:1292
 msgid "Channel"
 msgstr ""
 
@@ -821,7 +827,8 @@ msgstr ""
 #: channellist.h:930 channellist.h:1173 channellist.h:558 channellist.h:957
 #: channellist.h:1200 channellist.h:532 channellist.h:931 channellist.h:1174
 #: channellist.h:536 channellist.h:935 channellist.h:1178 channellist.h:546
-#: channellist.h:954 channellist.h:1197
+#: channellist.h:954 channellist.h:1197 channellist.h:577 channellist.h:985
+#: channellist.h:1228
 msgid "Satellites"
 msgstr ""
 
@@ -829,23 +836,25 @@ msgstr ""
 #: channellist.h:544 channellist.h:990 channellist.h:1309 channellist.h:571
 #: channellist.h:1017 channellist.h:1336 channellist.h:545 channellist.h:991
 #: channellist.h:1310 channellist.h:549 channellist.h:995 channellist.h:1314
-#: channellist.h:559 channellist.h:1014 channellist.h:1333
+#: channellist.h:559 channellist.h:1014 channellist.h:1333 channellist.h:590
+#: channellist.h:1045 channellist.h:1364
 msgid "Provider"
 msgstr ""
 
 #: channellist.h:512 channellist.h:840 channellist.h:557 channellist.h:888
 #: channellist.h:584 channellist.h:915 channellist.h:558 channellist.h:889
 #: channellist.h:562 channellist.h:893 channellist.h:572 channellist.h:912
+#: channellist.h:603 channellist.h:943
 msgid "All Channels"
 msgstr ""
 
 #: channellist.h:718 channellist.h:766 channellist.h:793 channellist.h:767
-#: channellist.h:771 channellist.h:790
+#: channellist.h:771 channellist.h:790 channellist.h:821
 msgid "Can't remove akive Service"
 msgstr ""
 
 #: channellist.h:912 channellist.h:960 channellist.h:987 channellist.h:961
-#: channellist.h:965 channellist.h:984
+#: channellist.h:965 channellist.h:984 channellist.h:1015
 msgid "Channels A-Z"
 msgstr ""
 
@@ -2451,7 +2460,7 @@ msgid ""
 "Aborting backup..."
 msgstr ""
 
-#: pin.h:83
+#: pin.h:83 adjust.h:164
 msgid "hidden"
 msgstr ""
 
@@ -8094,27 +8103,27 @@ msgid "CHANGE"
 msgstr ""
 
 #: channellist.h:425 channellist.h:452 channellist.h:426 channellist.h:430
-#: channellist.h:440
+#: channellist.h:440 channellist.h:463
 msgid "Move mode"
 msgstr ""
 
 #: channellist.h:431 channellist.h:458 channellist.h:432 channellist.h:436
-#: channellist.h:446
+#: channellist.h:446 channellist.h:470
 msgid "Remove mode"
 msgstr ""
 
 #: channellist.h:437 channellist.h:464 channellist.h:438 channellist.h:442
-#: channellist.h:452
+#: channellist.h:452 channellist.h:477
 msgid "Copy mode"
 msgstr ""
 
 #: channellist.h:443 channellist.h:470 channellist.h:444 channellist.h:448
-#: channellist.h:458
+#: channellist.h:458 channellist.h:484
 msgid "Protect mode"
 msgstr ""
 
 #: channellist.h:449 channellist.h:476 channellist.h:450 channellist.h:454
-#: channellist.h:464
+#: channellist.h:464 channellist.h:491
 msgid "Edit mode"
 msgstr ""
 
@@ -8140,4 +8149,8 @@ msgstr ""
 
 #: skin_default_skin.xml.h:149
 msgid "Channellist view"
+msgstr ""
+
+#: adjust.h:165
+msgid "deactive"
 msgstr ""
