@@ -459,7 +459,7 @@ msgstr ""
 #: networkbrowser.h:1318 networkbrowser.h:1323 networkbrowser.h:1416
 #: networkbrowser.h:1326 networkbrowser.h:1333 networkbrowser.h:1338
 #: networkbrowser.h:1431 global.h:4614 channellist.h:793 channellist.h:767
-#: channellist.h:771
+#: channellist.h:771 global.h:4639
 msgid "Message"
 msgstr ""
 
@@ -583,7 +583,7 @@ msgstr ""
 #: networkbrowser.h:1323 networkbrowser.h:1416 networkbrowser.h:1326
 #: networkbrowser.h:1333 networkbrowser.h:1338 networkbrowser.h:1431
 #: global.h:262 global.h:4614 channellist.h:793 channellist.h:767
-#: channellist.h:771
+#: channellist.h:771 global.h:4639
 msgid "OK"
 msgstr ""
 
@@ -705,7 +705,7 @@ msgstr ""
 #: networkbrowser.h:1318 networkbrowser.h:1323 networkbrowser.h:1416
 #: networkbrowser.h:1326 networkbrowser.h:1333 networkbrowser.h:1338
 #: networkbrowser.h:1431 global.h:262 global.h:4614 channellist.h:793
-#: channellist.h:767 channellist.h:771
+#: channellist.h:767 channellist.h:771 global.h:4639
 msgid "EXIT"
 msgstr ""
 
@@ -1096,7 +1096,7 @@ msgstr ""
 #: global.h:4386 global.h:4389 global.h:4398 global.h:4528 global.h:4535
 #: global.h:4539 global.h:4557 global.h:4561 global.h:4563 global.h:4565
 #: global.h:4522 global.h:4536 global.h:4551 global.h:4586 global.h:4587
-#: global.h:4602 global.h:4606 global.h:4607 global.h:4614
+#: global.h:4602 global.h:4606 global.h:4607 global.h:4614 global.h:4639
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -1466,6 +1466,7 @@ msgstr ""
 #: plugins_lcdpearl1_skin.xml.h:11 skins_lcdpearl1_skin.xml.h:11
 #: plugins_tmdb_skin.xml.h:17 skins_tmdb_skin.xml.h:17
 #: plugins_stock_skin.xml.h:4 skins_stock_skin.xml.h:4
+#: plugins_streaminfo_skin.xml.h:6 skins_streaminfo_skin.xml.h:6
 msgid ""
 msgstr ""
 
@@ -4449,6 +4450,7 @@ msgstr ""
 #: skin_default_skin.xml.h:118 skin_default_skin.xml.h:119
 #: skin_default_skin.xml.h:120 skin_default_skin.xml.h:121
 #: skin_default_skin.xml.h:122 skin_default_skin.xml.h:123
+#: plugins_streaminfo_skin.xml.h:2 skins_streaminfo_skin.xml.h:2
 msgid "Aspect"
 msgstr ""
 
@@ -7900,4 +7902,20 @@ msgstr ""
 
 #: skin_default_skin.xml.h:107
 msgid "abc/ABC"
+msgstr ""
+
+#: plugins_streaminfo_skin.xml.h:1 skins_streaminfo_skin.xml.h:1
+msgid "Streaminfo"
+msgstr ""
+
+#: plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
+msgid "Framerate"
+msgstr ""
+
+#: plugins_streaminfo_skin.xml.h:4 skins_streaminfo_skin.xml.h:4
+msgid "X-Resolution"
+msgstr ""
+
+#: plugins_streaminfo_skin.xml.h:5 skins_streaminfo_skin.xml.h:5
+msgid "Y-Resolution"
 msgstr ""
