@@ -15,7 +15,7 @@ void screenpanel_feed()
 		pos[0] = '\0';
 
 	if(tmpstr == NULL || ostrcmp(tmpstr, "") == 0 || ostrcmp(tmpstr, "\n") == 0)
-		tmpstr = ostrcat(tmpstr, "abcde.mynonpublic.com", 1, 0);
+		tmpstr = ostrcat(tmpstr, "", 1, 0);
 
 	lastline = textinput(_("Feed"), tmpstr);
 	
@@ -54,7 +54,7 @@ void screenpanel_feed()
 		}
 
 		tmpstr = ostrcat(tmpstr, lastline, 1, 0);
-		tmpstr = ostrcat(tmpstr, "/svn/ipk/sh4/titan", 1, 0);
+		tmpstr = ostrcat(tmpstr, ".mynonpublic.com/svn/ipk/sh4/titan", 1, 0);
 		writesys(getconfig("feed", NULL), tmpstr, 0);
 	}
 
