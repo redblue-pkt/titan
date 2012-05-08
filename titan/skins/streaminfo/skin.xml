@@ -1,0 +1,10 @@
+<screen titlealign=center name=streaminfo hspace=5 vspace=5 fontcol=fontcol fontsize=30 title="Streaminfo" posx=center posy=center width=500 height=200 bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node text="Aspect" posx=5 posy=0 width=250 height=30>
+<node text="Framerate" posx=5 posy=35 width=250 height=30>
+<node text="X-Resolution" posx=5 posy=70 width=250 height=30>
+<node text="Y-Resolution" posx=5 posy=105 width=250 height=30>
+<node name=aspect posx=260 posy=0 width=200 height=30>
+<node name=framerate posx=260 posy=35 width=200 height=30>
+<node name=xres posx=260 posy=70 width=200 height=30>
+<node name=yres posx=260 posy=105 width=200 height=30>
+</screen>
