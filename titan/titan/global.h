@@ -2928,6 +2928,31 @@ int writesysint(const char *filename, int value, int flag)
 	return ret;
 }
 
+char* getdevcontent(char* devconfig)
+{
+	debug(1000, "in");
+	char *dev = NULL;
+	char *value = NULL;
+
+	dev = getconfig(devconfig, NULL);
+
+	if(dev == NULL)
+	{
+		debug(1000, "out -> NULL detect");
+		return NULL;
+	}
+
+	value = readsys(dev, 1);
+	if(value == NULL)
+	{
+		debug(1000, "out -> NULL detect");
+		return NULL;
+	}
+
+	debug(1000, "out");
+	return value;
+}
+
 char* convertspacetolf(char* value)
 {
 	debug(1000, "in");
