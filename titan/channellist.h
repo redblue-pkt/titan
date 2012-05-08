@@ -454,48 +454,48 @@ void changechanneltitle(struct skin* channellist, int listmode, char** oldtitle,
 		*oldtitle = ostrcat(channellist->title, NULL, 0, 0);
 
 	if(*oldcol == NULL)
-		*oldcol = channellist->color;
+		*oldcol = channellist->bgcol;
 
 	if(listmode == MVMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Move mode"), 1, 0);
 		changetitle(channellist, tmpstr);
-		channellist->color = convercol("mvmode");
+		channellist->bgcol = convercol("mvmode");
 	}
 	else if(listmode == RMMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Remove mode"), 1, 0);
 		changetitle(channellist, tmpstr);
-		channellist->color = convercol("rmmode");
+		channellist->bgcol = convercol("rmmode");
 	}
 	else if(listmode == CPMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Copy mode"), 1, 0);
 		changetitle(channellist, tmpstr);
-		channellist->color = convercol("cpmode");		
+		channellist->bgcol = convercol("cpmode");		
 	}
 	else if(listmode == PROTECTMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Protect mode"), 1, 0);
 		changetitle(channellist, tmpstr);
-		channellist->color = convercol("protectmode");
+		channellist->bgcol = convercol("protectmode");
 	}
 	else if(listmode == EDITMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Edit mode"), 1, 0);
 		changetitle(channellist, tmpstr);
-		channellist->color = convercol("editmode");
+		channellist->bgcol = convercol("editmode");
 	}
 	else
 	{	
 		changetitle(channellist, *oldtitle);
 		*oldtitle = NULL;
-		channellist->color = *oldcol;
+		channellist->bgcol = *oldcol;
 	}
 }
 
