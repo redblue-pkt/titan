@@ -464,7 +464,7 @@ msgstr ""
 #: networkbrowser.h:1326 networkbrowser.h:1333 networkbrowser.h:1338
 #: networkbrowser.h:1431 global.h:4614 channellist.h:793 channellist.h:767
 #: channellist.h:771 global.h:4639 channellist.h:790 channellist.h:821
-#: channellist.h:822
+#: channellist.h:822 channellist.h:823
 msgid "Message"
 msgstr ""
 
@@ -590,6 +590,7 @@ msgstr ""
 #: global.h:262 global.h:4614 channellist.h:793 channellist.h:767
 #: channellist.h:771 global.h:4639 channellist.h:790
 #: skin_default_skin.xml.h:296 channellist.h:821 channellist.h:822
+#: channellist.h:823
 msgid "OK"
 msgstr ""
 
@@ -713,6 +714,7 @@ msgstr ""
 #: networkbrowser.h:1431 global.h:262 global.h:4614 channellist.h:793
 #: channellist.h:767 channellist.h:771 global.h:4639 channellist.h:790
 #: skin_default_skin.xml.h:196 channellist.h:821 channellist.h:822
+#: channellist.h:823
 msgid "EXIT"
 msgstr ""
 
@@ -793,7 +795,7 @@ msgstr ""
 #: channellist.h:520 channellist.h:1406 channellist.h:494 channellist.h:1380
 #: channellist.h:498 channellist.h:1384 channellist.h:508 channellist.h:1412
 #: skin_default_skin.xml.h:341 channellist.h:539 channellist.h:1443
-#: channellist.h:540 channellist.h:1444
+#: channellist.h:540 channellist.h:1444 channellist.h:541 channellist.h:1445
 msgid "Radio (Info)"
 msgstr ""
 
@@ -801,6 +803,7 @@ msgstr ""
 #: channellist.h:525 channellist.h:1401 channellist.h:499 channellist.h:1375
 #: channellist.h:503 channellist.h:1379 channellist.h:513 channellist.h:1407
 #: channellist.h:544 channellist.h:1438 channellist.h:545 channellist.h:1439
+#: channellist.h:546 channellist.h:1440
 msgid "TV (Info)"
 msgstr ""
 
@@ -810,6 +813,7 @@ msgstr ""
 #: channellist.h:511 channellist.h:905 channellist.h:1106 channellist.h:521
 #: channellist.h:924 channellist.h:1125 channellist.h:552 channellist.h:955
 #: channellist.h:1156 channellist.h:553 channellist.h:956 channellist.h:1157
+#: channellist.h:554 channellist.h:957 channellist.h:1158
 msgid "Bouquets"
 msgstr ""
 
@@ -821,7 +825,8 @@ msgstr ""
 #: channellist.h:1237 skin_default_skin.xml.h:147 channellist.h:546
 #: channellist.h:1264 channellist.h:520 channellist.h:1238 channellist.h:524
 #: channellist.h:1242 channellist.h:534 channellist.h:1261 channellist.h:565
-#: channellist.h:1292 channellist.h:566 channellist.h:1293
+#: channellist.h:1292 channellist.h:566 channellist.h:1293 channellist.h:567
+#: channellist.h:1294
 msgid "Channel"
 msgstr ""
 
@@ -831,6 +836,7 @@ msgstr ""
 #: channellist.h:536 channellist.h:935 channellist.h:1178 channellist.h:546
 #: channellist.h:954 channellist.h:1197 channellist.h:577 channellist.h:985
 #: channellist.h:1228 channellist.h:578 channellist.h:986 channellist.h:1229
+#: channellist.h:579 channellist.h:987 channellist.h:1230
 msgid "Satellites"
 msgstr ""
 
@@ -840,7 +846,7 @@ msgstr ""
 #: channellist.h:1310 channellist.h:549 channellist.h:995 channellist.h:1314
 #: channellist.h:559 channellist.h:1014 channellist.h:1333 channellist.h:590
 #: channellist.h:1045 channellist.h:1364 channellist.h:591 channellist.h:1046
-#: channellist.h:1365
+#: channellist.h:1365 channellist.h:592 channellist.h:1047 channellist.h:1366
 msgid "Provider"
 msgstr ""
 
@@ -848,16 +854,19 @@ msgstr ""
 #: channellist.h:584 channellist.h:915 channellist.h:558 channellist.h:889
 #: channellist.h:562 channellist.h:893 channellist.h:572 channellist.h:912
 #: channellist.h:603 channellist.h:943 channellist.h:604 channellist.h:944
+#: channellist.h:605 channellist.h:945
 msgid "All Channels"
 msgstr ""
 
 #: channellist.h:718 channellist.h:766 channellist.h:793 channellist.h:767
 #: channellist.h:771 channellist.h:790 channellist.h:821 channellist.h:822
+#: channellist.h:823
 msgid "Can't remove akive Service"
 msgstr ""
 
 #: channellist.h:912 channellist.h:960 channellist.h:987 channellist.h:961
 #: channellist.h:965 channellist.h:984 channellist.h:1015 channellist.h:1016
+#: channellist.h:1017
 msgid "Channels A-Z"
 msgstr ""
 
