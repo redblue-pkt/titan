@@ -15,17 +15,17 @@ void screenpanel_feed()
 		pos[0] = '\0';
 
 //	if(tmpstr == NULL || ostrcmp(tmpstr, "") == 0 || ostrcmp(tmpstr, "\n") == 0)
-//		tmpstr = ostrcat(tmpstr, "000.000.000.000", 1, 0);
+//		tmpstr = ostrcat(tmpstr, "abcde.mynonpublic.com", 1, 0);
 
- 	lastline = textinput(_("Feed"), tmpstr);		
-//	lastline = numinput(_("Feed"), tmpstr, "000.000.000.000", 1);
+	lastline = textinput(_("Feed"), tmpstr);
+
 	if(lastline != NULL && strstr(lastline, ".mynonpublic.com") == NULL)
 		lastline = ostrcat(lastline, ".mynonpublic.com", 1, 0);
-
+     	
 	if(lastline != NULL)
 	{
 		free(tmpstr); tmpstr = NULL;
-		tmpstr = fixip(lastline, 1);
+		tmpstr = ostrcat(tmpstr, lastline, 1, 0);
 		free(lastline); lastline = tmpstr;
 
 		tmpstr = readsys(getconfig("feed", NULL), 1); //line1
