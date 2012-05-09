@@ -464,7 +464,8 @@ msgstr ""
 #: networkbrowser.h:1326 networkbrowser.h:1333 networkbrowser.h:1338
 #: networkbrowser.h:1431 global.h:4614 channellist.h:793 channellist.h:767
 #: channellist.h:771 global.h:4639 channellist.h:790 channellist.h:821
-#: channellist.h:822 channellist.h:823
+#: channellist.h:822 channellist.h:823 mc_videoplayer.h:440
+#: mc_videoplayer.h:544
 msgid "Message"
 msgstr ""
 
@@ -590,7 +591,7 @@ msgstr ""
 #: global.h:262 global.h:4614 channellist.h:793 channellist.h:767
 #: channellist.h:771 global.h:4639 channellist.h:790
 #: skin_default_skin.xml.h:296 channellist.h:821 channellist.h:822
-#: channellist.h:823
+#: channellist.h:823 mc_videoplayer.h:440 mc_videoplayer.h:544
 msgid "OK"
 msgstr ""
 
@@ -714,7 +715,7 @@ msgstr ""
 #: networkbrowser.h:1431 global.h:262 global.h:4614 channellist.h:793
 #: channellist.h:767 channellist.h:771 global.h:4639 channellist.h:790
 #: skin_default_skin.xml.h:196 channellist.h:821 channellist.h:822
-#: channellist.h:823
+#: channellist.h:823 mc_videoplayer.h:440 mc_videoplayer.h:544
 msgid "EXIT"
 msgstr ""
 
@@ -1352,6 +1353,7 @@ msgstr ""
 #: mc_videoplayer.h:180 mc_videoplayer.h:176 mc_videoplayer.h:177
 #: mc_videoplayer.h:207 mc_videoplayer.h:218 mc_pictureplayer.h:118
 #: mc_pictureplayer.h:119 mc_videoplayer.h:220 mc_videoplayer.h:215
+#: mc_videoplayer.h:214
 msgid "Repeat-On"
 msgstr ""
 
@@ -1365,6 +1367,7 @@ msgstr ""
 #: mc_pictureplayer.h:126 mc_pictureplayer.h:265 mc_videoplayer.h:227
 #: mc_videoplayer.h:375 mc_pictureplayer.h:264 mc_videoplayer.h:222
 #: mc_videoplayer.h:362 plugins_mc_skin.xml.h:37 skins_mc_skin.xml.h:37
+#: mc_videoplayer.h:221 mc_videoplayer.h:361
 msgid "Repeat"
 msgstr ""
 
@@ -1384,7 +1387,7 @@ msgstr ""
 #: mc_pictureplayer.h:367 mc_videoplayer.h:330 mc_videoplayer.h:373
 #: mc_videoplayer.h:526 mc_pictureplayer.h:224 mc_pictureplayer.h:262
 #: mc_pictureplayer.h:366 mc_videoplayer.h:317 mc_videoplayer.h:360
-#: mc_videoplayer.h:513
+#: mc_videoplayer.h:513 mc_videoplayer.h:359 mc_videoplayer.h:512
 msgid "Filelist-Mode"
 msgstr ""
 
@@ -1395,6 +1398,7 @@ msgstr ""
 #: mc_videoplayer.h:370 mc_pictureplayer.h:262 mc_global.h:427 mc_global.h:455
 #: mc_pictureplayer.h:264 mc_videoplayer.h:374 mc_pictureplayer.h:263
 #: mc_videoplayer.h:361 plugins_mc_skin.xml.h:36 skins_mc_skin.xml.h:36
+#: mc_videoplayer.h:360
 msgid "Random"
 msgstr ""
 
@@ -1406,7 +1410,7 @@ msgstr ""
 #: mc_global.h:742 mc_global.h:756 mc_videoplayer.h:399 mc_videoplayer.h:410
 #: mc_pictureplayer.h:281 mc_global.h:140 mc_global.h:567 mc_global.h:799
 #: mc_global.h:813 mc_pictureplayer.h:283 mc_videoplayer.h:414
-#: mc_pictureplayer.h:282 mc_videoplayer.h:401
+#: mc_pictureplayer.h:282 mc_videoplayer.h:401 mc_videoplayer.h:400
 msgid "Playlist-Mode"
 msgstr ""
 
@@ -1425,7 +1429,7 @@ msgstr ""
 #: mc_pictureplayer.h:75 mc_pictureplayer.h:196 mc_pictureplayer.h:309
 #: mc_pictureplayer.h:396 mc_videoplayer.h:454 mc_videoplayer.h:558
 #: mc_pictureplayer.h:308 mc_pictureplayer.h:395 mc_videoplayer.h:441
-#: mc_videoplayer.h:545
+#: mc_videoplayer.h:545 mc_videoplayer.h:440 mc_videoplayer.h:544
 msgid "Can't start playback !"
 msgstr ""
 
