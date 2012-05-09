@@ -15,14 +15,14 @@ void screenpanel_feed()
 		pos[0] = '\0';
 
 	if(tmpstr == NULL || ostrcmp(tmpstr, "") == 0 || ostrcmp(tmpstr, "\n") == 0)
-		tmpstr = ostrcat(tmpstr, "", 1, 0);
-
-	lastline = textinput(_("Feed"), tmpstr);
+		tmpstr = ostrcat(tmpstr, "000.000.000.000", 1, 0);
+		
+	lastline = numinput(_("Feed"), tmpstr, "000.000.000.000", 1);
 	
 	if(lastline != NULL)
 	{
 		free(tmpstr); tmpstr = NULL;
-		tmpstr = ostrcat(tmpstr, lastline, 1, 0);
+		tmpstr = fixip(lastline, 1);
 		free(lastline); lastline = tmpstr;
 
 		tmpstr = readsys(getconfig("feed", NULL), 1); //line1
@@ -54,7 +54,7 @@ void screenpanel_feed()
 		}
 
 		tmpstr = ostrcat(tmpstr, lastline, 1, 0);
-		tmpstr = ostrcat(tmpstr, ".mynonpublic.com/svn/ipk/sh4/titan", 1, 0);
+		tmpstr = ostrcat(tmpstr, "/svn/ipk/sh4/titan", 1, 0);
 		writesys(getconfig("feed", NULL), tmpstr, 0);
 	}
 
