@@ -499,6 +499,7 @@ void changechanneltitle(struct skin* channellist, int listmode, char** oldtitle,
 		channellist->fontcol = *oldcol;
 		*oldcol = -9999;
 	}
+	drawscreen(channellist, 0);
 }
 
 //flag 1: called from recordtimer screen
