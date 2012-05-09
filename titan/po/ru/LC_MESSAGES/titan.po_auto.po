@@ -471,7 +471,8 @@ msgstr ""
 #: mc_videoplayer.h:544 channellist.h:824 mc_audioplayer.h:338
 #: mc_audioplayer.h:427 mc_pictureplayer.h:72 mc_pictureplayer.h:194
 #: mc_videoplayer.h:448 mc_videoplayer.h:553 channellist.h:825
-#: channellist.h:826 channellist.h:833 channellist.h:838
+#: channellist.h:826 channellist.h:833 channellist.h:838 panel_extensions.h:96
+#: panel_extensions.h:113 panel_extensions.h:137
 msgid "Message"
 msgstr ""
 
@@ -601,7 +602,8 @@ msgstr ""
 #: channellist.h:824 mc_audioplayer.h:338 mc_audioplayer.h:427
 #: mc_pictureplayer.h:72 mc_pictureplayer.h:194 mc_videoplayer.h:448
 #: mc_videoplayer.h:553 channellist.h:825 channellist.h:826 channellist.h:833
-#: channellist.h:838
+#: channellist.h:838 panel_extensions.h:81 panel_extensions.h:88
+#: panel_extensions.h:94 panel_extensions.h:96 panel_extensions.h:113
 msgid "OK"
 msgstr ""
 
@@ -729,7 +731,8 @@ msgstr ""
 #: channellist.h:824 mc_audioplayer.h:338 mc_audioplayer.h:427
 #: mc_pictureplayer.h:72 mc_pictureplayer.h:194 mc_videoplayer.h:448
 #: mc_videoplayer.h:553 channellist.h:825 channellist.h:826 channellist.h:833
-#: channellist.h:838
+#: channellist.h:838 panel_extensions.h:81 panel_extensions.h:88
+#: panel_extensions.h:94 panel_extensions.h:96 panel_extensions.h:113
 msgid "EXIT"
 msgstr ""
 
@@ -1970,28 +1973,28 @@ msgstr ""
 
 #: panel_extensions.h:67 panel_extensions.h:123 panel_extensions.h:157
 #: panel_extensions.h:51 panel_extensions.h:95 panel_extensions.h:129
-#: panel_extensions.h:136
+#: panel_extensions.h:136 panel_extensions.h:96 panel_extensions.h:137
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
 "reboot the box."
 msgstr ""
 
-#: panel_extensions.h:104 panel_extensions.h:80
+#: panel_extensions.h:104 panel_extensions.h:80 panel_extensions.h:81
 msgid "Remove Info"
 msgstr ""
 
-#: panel_extensions.h:115 panel_extensions.h:87
+#: panel_extensions.h:115 panel_extensions.h:87 panel_extensions.h:88
 msgid "Ipk Remove Info - Remove OK"
 msgstr ""
 
-#: panel_extensions.h:121 panel_extensions.h:93
+#: panel_extensions.h:121 panel_extensions.h:93 panel_extensions.h:94
 msgid "Ipk Remove Info - Remove ERROR"
 msgstr ""
 
 #: panel_extensions.h:141 panel_extensions.h:152 panel_extensions.h:155
 #: panel_extensions.h:123 panel_extensions.h:127 panel_extensions.h:130
-#: panel_extensions.h:134
+#: panel_extensions.h:134 panel_extensions.h:131 panel_extensions.h:135
 msgid "Ipk Tmp Info"
 msgstr ""
 
@@ -7918,7 +7921,7 @@ msgstr ""
 msgid "cover"
 msgstr ""
 
-#: panel_extensions.h:112
+#: panel_extensions.h:112 panel_extensions.h:113
 msgid "No plugin found."
 msgstr ""
 
