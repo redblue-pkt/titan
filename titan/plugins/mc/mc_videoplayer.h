@@ -9,6 +9,7 @@ void screenmc_videoplayer()
 	char* filename = NULL;
 	char* tmppolicy = NULL;
 	char* currentdirectory = NULL;
+	char* selectedfile = NULL;
 	int rcret = 0, rcwait = 1000, playerret = 0, flag = 1, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0;
 	// workaround for grey background mvi
 	struct skin* blackscreen = getscreen("blackscreen");
@@ -27,6 +28,7 @@ void screenmc_videoplayer()
 //	skin_cover->hidden = YES;
 			
 	currentdirectory = ostrcat(currentdirectory, getconfig("mc_videoplayerpath", NULL), 1, 0);
+	selectedfile = ostrcat(selectedfile, getconfig("mc_selectedfile", NULL), 1, 0);
 
 	// enable listbox and set hidden
 	listbox->aktpage = -1;
@@ -34,8 +36,7 @@ void screenmc_videoplayer()
 	listbox->hidden = YES;
 
 	// read configs
-	int style = getconfigint("style", NULL);
-	int view = getconfigint("view", NULL);
+	int view = getconfigint("vp_view", NULL);
 	int skip13 = getconfigint("skip13", NULL);
 	int skip46 = getconfigint("skip46", NULL);
 	int skip79 = getconfigint("skip79", NULL);
@@ -55,7 +56,7 @@ void screenmc_videoplayer()
 	status.hangtime = 99999;
 	status.playspeed = 0, status.play = 0, status.pause = 0, status.random = 0;
 
-	debug(50, "start screenmc_videoplayer style=%d, view=%d", style, view);
+	debug(50, "start screenmc_videoplayer view=%d", view);
 
 	singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 
@@ -65,7 +66,7 @@ void screenmc_videoplayer()
 	tmpview = view;
 	mc_changeview(view, filelist);
 
-	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, NULL);
+	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
 	addscreenrc(apskin, filelist);
 
 	char* savecmd = NULL;
@@ -244,8 +245,12 @@ void screenmc_videoplayer()
 					debug(50, "rcred: tmpsort=%d", sort);
 
 					addconfiginttmp("dirsort", sort);
-//					mc_changeview(tmpview, filelist);
+					mc_changeview(tmpview, filelist);
+
+					delownerrc(apskin);	
 					getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
+					addscreenrc(apskin, filelist);
+					drawscreen(apskin, 0);
 				}
 			}
 		}
@@ -271,13 +276,13 @@ void screenmc_videoplayer()
 			{
 				debug(50, "rcmenu: settings");
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
-				view = getconfigint("view", NULL);
+				view = getconfigint("vp_view", NULL);
 				screenmc_videoplayer_settings();
 				
-				if(view != getconfigint("view", NULL))
+				if(view != getconfigint("vp_view", NULL))
 				{
 					printf("view changed > change tmpview\n");
-					tmpview = getconfigint("view", NULL);
+					tmpview = getconfigint("vp_view", NULL);
 				}
 				
 				mc_changeview(tmpview, filelist);
@@ -285,7 +290,6 @@ void screenmc_videoplayer()
 				delownerrc(apskin);	
 				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
 				addscreenrc(apskin, filelist);
-
 				drawscreen(apskin, 0);
 			}
 		}
@@ -348,6 +352,8 @@ void screenmc_videoplayer()
 			{
 				if(ostrcmp(getconfig("mc_videoplayerpath", NULL), filelistpath->text) != 0)
 					addconfig("mc_videoplayerpath", filelistpath->text);
+				if(ostrcmp(getconfig("mc_selectedfile", NULL), filelist->select->name) != 0)
+					addconfig("mc_selectedfile", filelist->select->name);
 			}
 
 			playrcstop(playertype, flag);
@@ -368,7 +374,8 @@ void screenmc_videoplayer()
 			playlist = 0;
 			writevfd("Mediacenter");
 			playinfobarcount = 0;
-	printf("exit: view=%d tmpview=%d\n", view, tmpview);			
+	
+			printf("exit: view=%d tmpview=%d\n", view, tmpview);			
 			status.filelistextend = 0;
 			break;
 		}
@@ -493,6 +500,7 @@ void screenmc_videoplayer()
 					debug(50, "mc_mounter_main filename: %s", filename);
 					//addconfig("mc_videoplayerpath", filelistpath->text);
 					currentdirectory = ostrcat("", getconfig("mc_videoplayerpath", NULL), 0, 0);
+					selectedfile = ostrcat(selectedfile, getconfig("mc_selectedfile", NULL), 0, 0);
 
 					mc_mounter_main(0,filename,filelistpath,filelist,apskin,filemask,tmpview,currentdirectory);
 					debug(50, "mc_mounter_main done");
@@ -575,16 +583,10 @@ void screenmc_videoplayer()
 	delmarkedscreennodes(apskin, FILELISTDELMARK);
 	delownerrc(apskin);
 	clearscreen(apskin);
-	if(style == 1)
-	{
-		delmarkedpic(1010);
-		delmarkedpic(1011);
-		delmarkedpic(1012);
-		delmarkedpic(1013);
-	}
 
 	free(filename), filename = NULL;
 	free(currentdirectory), currentdirectory = NULL;
+	free(selectedfile), selectedfile = NULL;
 
 	free(status.playfile); status.playfile = NULL;
 	if(tmppolicy != NULL)

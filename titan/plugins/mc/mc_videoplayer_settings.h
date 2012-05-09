@@ -21,20 +21,13 @@ void screenmc_videoplayer_settings()
 	addchoicebox(dirsort, "5", _("reverse date"));
 	setchoiceboxselection(dirsort, getconfig("dirsort", NULL));
 
-	addchoicebox(view, "0", "fast");
-//	addchoicebox(view, "1", "big");	
-//	addchoicebox(view, "2", "cover");	
-//	addchoicebox(view, "3", "default");
-//	addchoicebox(view, "4", "details");
-//	addchoicebox(view, "5", "fullcover");
-
-//	addchoicebox(view, "0", _("default"));	
-//	addchoicebox(view, "1", _("cover"));	
-//	addchoicebox(view, "2", _("size"));
-//	addchoicebox(view, "3", _("details"));
-//	addchoicebox(view, "4", _("smal"));
-//	addchoicebox(view, "5", _("fast"));
-	setchoiceboxselection(view, getconfig("view", NULL));
+	addchoicebox(view, "0", _("fast"));
+	addchoicebox(view, "1", _("big"));	
+	addchoicebox(view, "2", _("cover"));	
+	addchoicebox(view, "3", _("default"));
+	addchoicebox(view, "4", _("details"));
+	addchoicebox(view, "5", _("fullcover"));
+	setchoiceboxselection(view, getconfig("vp_view", NULL));
 
 	addchoicebox(vp_autostart_playlist, "0", _("no"));	
 	addchoicebox(vp_autostart_playlist, "1", _("yes"));
@@ -92,7 +85,7 @@ void screenmc_videoplayer_settings()
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			addconfigscreencheck("dirsort", dirsort, NULL);
-			addconfigscreencheck("view", view, NULL);
+			addconfigscreencheck("vp_view", view, NULL);
 			addconfigscreencheck("imdb_directory", imdb_directory, NULL);
 			addconfigscreencheck("vp_autostart_playlist", vp_autostart_playlist, NULL);		
 			break;

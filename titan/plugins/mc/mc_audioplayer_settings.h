@@ -26,13 +26,14 @@ void screenmc_audioplayer_settings()
 	addchoicebox(dirsort, "5", _("reverse date"));
 	setchoiceboxselection(dirsort, getconfig("dirsort", NULL));
 
-	addchoicebox(view, "0", _("default"));	
-//	addchoicebox(view, "1", _("big"));	
-//	addchoicebox(view, "2", _("fullcover"));
-//	addchoicebox(view, "3", _("details"));
-//	addchoicebox(view, "4", _("smal"));
-//	addchoicebox(view, "5", _("fast"));
-	setchoiceboxselection(view, getconfig("view", NULL));
+	addchoicebox(view, "0", _("fast"));
+	addchoicebox(view, "1", _("big"));	
+	addchoicebox(view, "2", _("cover"));	
+	addchoicebox(view, "3", _("default"));
+	addchoicebox(view, "4", _("details"));
+//	addchoicebox(view, "5", _("fullcover"));
+	setchoiceboxselection(view, getconfig("ap_view", NULL));
+
 
 	addchoicebox(ap_autostart_playlist, "0", _("no"));	
 	addchoicebox(ap_autostart_playlist, "1", _("yes"));
@@ -72,7 +73,7 @@ void screenmc_audioplayer_settings()
 		else if(rcret == getrcconfigint("rcok", NULL))
 		{
 			addconfigscreencheck("dirsort", dirsort, NULL);
-			addconfigscreencheck("view", view, NULL);
+			addconfigscreencheck("ap_view", view, NULL);
 			addconfigscreencheck("ap_autostart_playlist", ap_autostart_playlist, NULL);						
 //			addconfigscreencheck("dimmer", dimmer, NULL);
 //			addconfigscreencheck("dimmer_delay", dimmer_delay, NULL);

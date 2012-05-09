@@ -88,7 +88,7 @@ void mc_changeview(int view, struct skin* filelist)
 		filelist->bgcol = 0x474747;
 		filelist->transparent = 40;
 		filelist->posx = 20;
-	}	
+	}
 }
 
 /*

@@ -8,7 +8,7 @@ void screenmc_audioplayer()
 {
 	char* filename = NULL;
 	char* currentdirectory = NULL;
-	int rcret = 0, rcwait = 1000, playerret = 0, flag = 2, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, count = 0, tmpview = 1, playlist = 0, playertype = 0;
+	int rcret = 0, rcwait = 1000, playerret = 0, flag = 2, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, count = 0, tmpview = 0, playlist = 0, playertype = 0;
 
 	// workaround for grey background mvi
 	struct skin* blackscreen = getscreen("blackscreen");
@@ -38,8 +38,7 @@ void screenmc_audioplayer()
 	listbox->hidden = YES;
 
 	// read configs
-	int style = getconfigint("style", NULL);
-	int view = getconfigint("view", NULL);
+	int view = getconfigint("ap_view", NULL);
 	int screensaver_delay = getconfigint("screensaver_delay", NULL);
 
 	// set allowed filemask
@@ -54,13 +53,14 @@ void screenmc_audioplayer()
 	status.hangtime = 99999;
 	status.playspeed = 0, status.play = 0, status.pause = 0, status.random = 0;
 
-	debug(50, "start screenmc_audioplayer style=%d, view=%d", style, view);
+	debug(50, "start screenmc_audioplayer view=%d", view);
 
 	singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 
 	if(getconfigint("screensaver", NULL) == 1)
 		initscreensaver();
 
+	tmpview = view;
 	mc_changeview(view, filelist);
 
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, NULL);
@@ -198,8 +198,12 @@ void screenmc_audioplayer()
 				debug(50, "rcred: tmpsort=%d", sort);
 
 				addconfiginttmp("dirsort", sort);
-				mc_changeview(view, filelist);
+				mc_changeview(tmpview, filelist);
+
+				delownerrc(apskin);	
 				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
+				addscreenrc(apskin, filelist);
+				drawscreen(apskin, 0);			
 			}
 		}
 		else if(rcret == getrcconfigint("rcgreen", NULL))
@@ -213,9 +217,21 @@ void screenmc_audioplayer()
 			{
 				debug(50, "rcmenu: settings");
 
+				view = getconfigint("ap_view", NULL);
 				screenmc_audioplayer_settings();
-				view = getconfigint("view", NULL);
-				mc_changeview(view, filelist);
+				
+				if(view != getconfigint("ap_view", NULL))
+				{
+					printf("view changed > change tmpview\n");
+					tmpview = getconfigint("ap_view", NULL);
+				}
+				
+				mc_changeview(tmpview, filelist);
+
+				delownerrc(apskin);	
+				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
+				addscreenrc(apskin, filelist);
+
 				screensaver_delay = getconfigint("screensaver_delay", NULL);
 				deinitscreensaver();
 				if(getconfigint("screensaver", NULL) == 1)
@@ -288,6 +304,9 @@ void screenmc_audioplayer()
 			status.repeat = 0;
 			playlist = 0;
 			writevfd("Mediacenter");
+			
+			printf("exit: view=%d tmpview=%d\n", view, tmpview);			
+			status.filelistextend = 0;
 			break;
 		}
 		else if(rcret == getrcconfigint("rcok", NULL))
@@ -430,13 +449,6 @@ void screenmc_audioplayer()
 	delmarkedscreennodes(apskin, FILELISTDELMARK);
 	delownerrc(apskin);
 	clearscreen(apskin);
-	if(style == 1)
-	{
-		delmarkedpic(1010);
-		delmarkedpic(1011);
-		delmarkedpic(1012);
-		delmarkedpic(1013);
-	}
 
 	free(filename), filename = NULL;
 	free(currentdirectory), currentdirectory = NULL;

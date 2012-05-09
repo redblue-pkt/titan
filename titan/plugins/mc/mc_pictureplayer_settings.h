@@ -25,7 +25,7 @@ void screenmc_pictureplayer_settings()
 
 	addchoicebox(showpictitle, "0", _("off"));	
 	addchoicebox(showpictitle, "1", _("on"));	
-	setchoiceboxselection(view, getconfig("showpictitle", NULL));
+	setchoiceboxselection(showpictitle, getconfig("showpictitle", NULL));
 	
 	addchoicebox(dirsort, "0", _("alpha"));	
 	addchoicebox(dirsort, "1", _("reverse alpha"));	
@@ -35,13 +35,13 @@ void screenmc_pictureplayer_settings()
 	addchoicebox(dirsort, "5", _("reverse date"));
 	setchoiceboxselection(dirsort, getconfig("dirsort", NULL));
 
-	addchoicebox(view, "0", "fast");
-//	addchoicebox(view, "1", "big");	
-//	addchoicebox(view, "2", "cover");	
-//	addchoicebox(view, "3", "default");
-//	addchoicebox(view, "4", "details");
-////	addchoicebox(view, "5", "fullcover");
-	setchoiceboxselection(view, getconfig("view", NULL));
+	addchoicebox(view, "0", _("fast"));
+	addchoicebox(view, "1", _("big"));	
+	addchoicebox(view, "2", _("cover"));	
+	addchoicebox(view, "3", _("default"));
+	addchoicebox(view, "4", _("details"));
+//	addchoicebox(view, "5", _("fullcover"));
+	setchoiceboxselection(view, getconfig("pp_view", NULL));
 
 	addchoicebox(sound, "http://stream.mth-house.de:8500/", _("MTH House"));
 	addchoicebox(sound, "http://stream.laut.fm:80/radiofunclub", _("Radio Funclub"));
@@ -70,7 +70,7 @@ void screenmc_pictureplayer_settings()
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			addconfigscreen("dirsort", dirsort);
-			addconfigscreen("view", view);
+			addconfigscreen("pp_view", view);
 			addconfigscreen("sound", sound);
 			addconfigscreen("pp_interval", pp_interval);
 			addconfigscreen("showpictitle", showpictitle);
