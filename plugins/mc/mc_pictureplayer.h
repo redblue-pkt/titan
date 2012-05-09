@@ -35,8 +35,7 @@ void screenmc_pictureplayer()
 	listbox->hidden = YES;
 
 	// read configs
-	int style = getconfigint("style", NULL);
-	int view = getconfigint("view", NULL);
+	int view = getconfigint("pp_view", NULL);
 	char* sound = getconfig("sound", NULL);
 
 	// set allowed filemask
@@ -47,7 +46,7 @@ void screenmc_pictureplayer()
 	status.hangtime = 99999;
 	status.playspeed = 0, status.play = 0, status.pause = 0, status.random = 0;
 
-	debug(50, "start screenmc_pictureplayer style=%d, view=%d", style, view);
+	debug(50, "start screenmc_pictureplayer view=%d", view);
 
 	singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 
@@ -56,9 +55,7 @@ void screenmc_pictureplayer()
 
 	tmpview = view;
 	mc_changeview(view, filelist);
-
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, NULL);
-	mc_changeview(view, filelist);
 	addscreenrc(apskin, filelist);
 
 	// start radio musik on pictureplayer
@@ -141,10 +138,13 @@ void screenmc_pictureplayer()
 				{
 					int sort = screenmc_sort();
 					debug(50, "rcred: tmpsort=%d", sort);
-
 					addconfiginttmp("dirsort", sort);
+
 					mc_changeview(view, filelist);
+					delownerrc(apskin);
 					getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
+					addscreenrc(apskin, filelist);
+					drawscreen(apskin, 0);
 				}
 			}
 		}
@@ -170,15 +170,13 @@ void screenmc_pictureplayer()
 			{
 				debug(50, "rcmenu: settings");
 
-				view = getconfigint("view", NULL);
+				view = getconfigint("pp_view", NULL);
 				screenmc_pictureplayer_settings();
-				
-				if(view != getconfigint("view", NULL))
+				if(view != getconfigint("pp_view", NULL))
 				{
 					printf("view changed > change tmpview\n");
-					tmpview = getconfigint("view", NULL);
+					tmpview = getconfigint("pp_view", NULL);
 				}
-				mc_changeview(tmpview, filelist);
 
 				sound = getconfig("sound", NULL);
 
@@ -199,11 +197,12 @@ void screenmc_pictureplayer()
 				else
 					playerstop();
 
+				mc_changeview(tmpview, filelist);
+
 				delownerrc(apskin);	
-				drawscreen(skin, 0);
 				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
 				addscreenrc(apskin, filelist);
-							
+
 				drawscreen(apskin, 0);
 			}
 		}
@@ -270,7 +269,9 @@ void screenmc_pictureplayer()
 			playlist = 0;
 			writevfd("Mediacenter");
 			playinfobarcount = 0;
-status.filelistextend = 0;
+
+			printf("exit: view=%d tmpview=%d\n", view, tmpview);			
+			status.filelistextend = 0;
 			break;
 		}
 		else if(rcret == getrcconfigint("rcok", NULL))
@@ -417,13 +418,6 @@ status.filelistextend = 0;
 	delownerrc(apskin);
 	clearscreen(apskin);
 	clearscreen(picscreen);
-	if(style == 1)
-	{
-		delmarkedpic(1010);
-		delmarkedpic(1011);
-		delmarkedpic(1012);
-		delmarkedpic(1013);
-	}
 
 	free(track), track = NULL;
 	free(filename), filename = NULL;

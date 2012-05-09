@@ -65,7 +65,7 @@
 <node textposx=100 text="AUDIO" name=mc_audioplayer_name posx=0 posy=30 width=100% height=30 fontcol=fontcol/>
 <node name=mc_filelistpath valign=middle bordersize=1 posx=center posy=100 width=95% height=30>
 <node fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox posx=center posy=140 width=92% height=50%>
-<node hspace=10 picmem=skin/folder.png textposx=30 fontsize=20 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=mc_filelist posx=center posy=140 width=92% height=50%>
+<node hspace=10 picmem=skin/ext_directory.png textposx=30 fontsize=25 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=mc_filelist posx=center posy=140 width=92% height=480>
 <node name=b1 text="Sorting" halign=center valign=middle bordercol=bgcol bordersize=0 posx=15% posy=90% width=150 height=30/>
 <node name=b1 text="Sorting" halign=center valign=middle bordercol=red bordersize=2 posx=15% posy=95% width=150 height=2/>
 <node name=b2 text="Filelist-Mode" halign=center valign=middle bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
@@ -109,7 +109,7 @@
 <node textposx=100 text="PICTURE" name=mc_videoplayer_name posx=0 posy=30 width=100% height=30 fontcol=fontcol/>
 <node fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox posx=center posy=140 width=92% height=480>
 <node name=mc_filelistpath valign=middle bordersize=1 posx=center posy=100 width=95% height=30>
-<node hspace=10 picmem=skin/folder.png textposx=30 fontsize=40 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=mc_filelist posx=center posy=140 width=92% height=480>
+<node hspace=10 picmem=skin/ext_directory.png textposx=30 fontsize=40 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=mc_filelist posx=center posy=140 width=92% height=480>
 <node name=b1 text="Sorting" halign=center valign=middle bordercol=bgcol bordersize=0 posx=15% posy=90% width=150 height=30/>
 <node name=b1 text="Sorting" halign=center valign=middle bordercol=red bordersize=2 posx=15% posy=95% width=150 height=2/>
 <node name=b2 text="Filelist-Mode" halign=center valign=middle bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>

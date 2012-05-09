@@ -721,7 +721,7 @@ void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* fil
 
 	int view = 0;		
 	if (tmpview == -1)
-		view = getconfigint("view", NULL);
+		view = 0;
 	else
 		view = tmpview;
 
