@@ -2,6 +2,8 @@
 #include "../../titan/debug.h"
 #include "../../titan/header.h"
 
+#include "lcd_weather.h"
+
 char pluginname[] = "LCD Pearl";
 char plugindesc[] = "Extensions";
 char pluginpic[] = "%pluginpath%/lcdpearl1/lcdpearl.png";
@@ -11,7 +13,19 @@ int pluginaktiv = 0;
 //int pluginflag = 1; //don't show the plugin in pluginmanager
 
 struct stimerthread* LCD_Pearl1thread = NULL;
+
 int firststart = 0;
+
+void weather_getline(FILE* fd, char* fileline)
+{
+	fgets(fileline, 256, fd);
+	if(fileline[0] == '#' || fileline[0] == '\n')
+		return;
+	if(fileline[strlen(fileline) - 1] == '\n')
+		fileline[strlen(fileline) - 1] = '\0';
+	if(fileline[strlen(fileline) - 1] == '\r')
+		fileline[strlen(fileline) - 1] = '\0';
+}
 
 void LCD_start_lcd4linux()
 {
@@ -37,10 +51,40 @@ void LCD_start_lcd4linux()
 void LCD_Pearl1_thread()
 {
 	
-	char* tmpstr = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *timemerk = NULL, *sendermerk = NULL, *recmerk = NULL;
+	struct skin* LCD_Pearl1 = NULL;
+	struct skin* day0_t = NULL;
+	struct skin* day0_i = NULL;
+	struct skin* day1_t = NULL;
+	struct skin* day1_i = NULL;
+	struct skin* day2_t = NULL;
+	struct skin* day2_i = NULL;
+	struct skin* day3_t = NULL;
+	struct skin* day3_i = NULL;
+	struct skin* akttime = NULL;
 	
-	struct skin* LCD_Pearl1 = getscreen("LCD_Pearl1");
-	struct skin* akttime = getscreennode(LCD_Pearl1, "akttime");
+	
+	char* tmpstr = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *timemerk = NULL, *sendermerk = NULL, *recmerk = NULL;
+	FILE *fd = NULL;
+	char *fileline = NULL;
+	int weatherwrite = 0;
+	
+	if(ostrcmp(getconfig("lcd_pearl1_plugin_wetter", NULL), "yes") == 0)
+	{
+		LCD_Pearl1 = getscreen("LCD_Pearl1_Wetter");
+		day0_t = getscreennode(LCD_Pearl1, "day0_t");
+		day0_i = getscreennode(LCD_Pearl1, "day0_i");
+		day1_t = getscreennode(LCD_Pearl1, "day1_t");
+		day1_i = getscreennode(LCD_Pearl1, "day1_i");
+		day2_t = getscreennode(LCD_Pearl1, "day2_t");
+		day2_i = getscreennode(LCD_Pearl1, "day2_i");
+		day3_t = getscreennode(LCD_Pearl1, "day3_t");
+		day3_i = getscreennode(LCD_Pearl1, "day3_i");
+		if(file_exist("/tmp/lcdweather") == 1)
+			system("rm /tmp/lcdweather");
+	}
+	else
+		LCD_Pearl1 = getscreen("LCD_Pearl1");	
+	akttime = getscreennode(LCD_Pearl1, "akttime");
 	
 	struct skin* LCD_Play = getscreen("LCD_Play");
 	struct skin* akttimeplay = getscreennode(LCD_Play, "akttime");
@@ -50,8 +94,8 @@ void LCD_Pearl1_thread()
 	struct skin* slen = getscreennode(LCD_Play, "len");
 	struct skin* sreverse = getscreennode(LCD_Play, "reverse");
 	
-	struct skin* LCD_MC_Menu = getscreen("LCD_MC_Menu");
-	struct skin* akttimemc1 = getscreennode(LCD_MC_Menu, "akttime");
+	//struct skin* LCD_MC_Menu = getscreen("LCD_MC_Menu");
+	//struct skin* akttimemc1 = getscreennode(LCD_MC_Menu, "akttime");
 		
 	int put = 0, typemerk = 0, type = 0;
 	int standby = 0;
@@ -162,6 +206,60 @@ void LCD_Pearl1_thread()
 				{
 					if(type == 1)
 					{
+						// Wettervorhersage
+						if(ostrcmp(getconfig("lcd_pearl1_plugin_wetter", NULL), "yes") == 0)
+						{
+							if(weatherwrite == 0)
+							{
+								if(weatherthread == NULL)
+								{
+									if(file_exist("/tmp/lcdweather") == 0)
+										weatherthread = addtimer(&lcd_writeweather, START, 10000, 1, NULL, NULL, NULL);
+									else
+									{
+										fileline = malloc(256);
+										if(fileline != NULL)
+										{
+											fd = fopen("/tmp/lcdweather", "r");
+											if(fd != NULL)
+											{
+												weather_getline(fd, fileline);weather_getline(fd, fileline);weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changetext(day0_t, fileline);
+												weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changepic(day0_i, fileline);
+												
+												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changetext(day1_t, fileline);
+												weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changepic(day1_i, fileline);
+												
+												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changetext(day2_t, fileline);
+												weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changepic(day2_i, fileline);
+												
+												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changetext(day3_t, fileline);
+												weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changepic(day3_i, fileline);
+												fclose(fd);
+											}
+											free(fileline); fileline=NULL;
+										}
+										weatherwrite = 1;
+									}								
+								}
+							}		
+						}
+						
 						changetext(akttime, tmpstr);
 						drawscreen(LCD_Pearl1, 0);
 
@@ -305,6 +403,7 @@ void start(void)
 	struct skin* pearl1_main = getscreen("pearl1_main");
 	struct skin* listbox = getscreennode(pearl1_main, "listbox");
 	struct skin* allmenu = getscreennode(pearl1_main, "allmenu");
+	struct skin* wettervor = getscreennode(pearl1_main, "wettervor");
 	struct skin* b3 = getscreennode(pearl1_main, "b3");
 	struct skin* tmp = NULL;
 	
@@ -315,6 +414,10 @@ void start(void)
   addchoicebox(allmenu, "no", _("nein"));
   addchoicebox(allmenu, "yes", _("ja"));
 	setchoiceboxselection(allmenu, getconfig("write_fb_to_png", NULL));
+	
+	addchoicebox(wettervor, "no", _("nein"));
+  addchoicebox(wettervor, "yes", _("ja"));
+	setchoiceboxselection(wettervor, getconfig("lcd_pearl1_plugin_wetter", NULL));
 	
 	if(LCD_Pearl1thread != NULL)
 		changetext(b3, "STOP");
@@ -336,6 +439,8 @@ void start(void)
 		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			addconfig("write_fb_to_png", allmenu->ret);
+			addconfig("lcd_pearl1_plugin_wetter", wettervor->ret);
+			addconfig("lcd_pearl1_plugin_wetter_ort", "Berlin");
 			restart = 1;
 			break;
 		}
@@ -375,6 +480,4 @@ void start(void)
 			sleep(1);
 		}
 	}
-	return;
 }
-
