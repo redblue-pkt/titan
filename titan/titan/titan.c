@@ -450,7 +450,7 @@ int main(int argc, char *argv[])
 		if(checkreseller() != 0)
 		{
 			printf("error: 3\n");		
-			destroy();
+			//destroy();
 			exit(100);
 		}
 		if(getsysinfo() != SYSCODE)
