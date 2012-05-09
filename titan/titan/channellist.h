@@ -447,60 +447,69 @@ void changebutton(int listmode, struct skin* b1, struct skin* b2, struct skin* b
 	}
 }
 
-void changechanneltitle(struct skin* channellist, int listmode, char** oldtitle, long* oldcol)
+void changechanneltitle(struct skin* channellist, struct skin* listbox, int listmode, char** oldtitle, long* oldfontcol, long* oldbgcol)
 {
 	char* tmpstr = NULL;
 
 	if(*oldtitle == NULL)
 		*oldtitle = ostrcat(channellist->title, NULL, 0, 0);
 
-	if(*oldcol == -9999)
-		*oldcol = channellist->fontcol;
+	if(*oldfontcol == -9999)
+		*oldfontcol = channellist->fontcol;
+
+	if(*oldbgcol == -9999)
+		*oldbgcol = channellist->bgcol;
+
 
 	if(listmode == MVMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Move mode"), 1, 0);
+		listbox->bgcol = convertcol("mvmode_bgcol");
+		listbox->fontcol = convertcol("mvmode_fontcol");
 		changetitle(channellist, tmpstr);
-		channellist->fontcol = convertcol("mvmode");
 	}
 	else if(listmode == RMMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Remove mode"), 1, 0);
+		listbox->bgcol = convertcol("rmmode_bgcol");
+		listbox->fontcol = convertcol("rmmode_fontcol");
 		changetitle(channellist, tmpstr);
-		channellist->fontcol = convertcol("rmmode");
 	}
 	else if(listmode == CPMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Copy mode"), 1, 0);
+		listbox->bgcol = convertcol("cpmode_bgcol");
+		listbox->fontcol = convertcol("cpmode_fontcol");
 		changetitle(channellist, tmpstr);
-		channellist->fontcol = convertcol("cpmode");
 	}
 	else if(listmode == PROTECTMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Protect mode"), 1, 0);
+		listbox->bgcol = convertcol("protectmode_bgcol");
+		listbox->fontcol = convertcol("protectmode_fontcol");
 		changetitle(channellist, tmpstr);
-		channellist->fontcol = convertcol("protectmode");
 	}
 	else if(listmode == EDITMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Edit mode"), 1, 0);
+		listbox->bgcol = convertcol("editmode_bgcol");
+		listbox->fontcol = convertcol("editmode_fontcol");
 		changetitle(channellist, tmpstr);
-		channellist->fontcol = convertcol("editmode");
 	}
 	else
 	{	
 		changetitle(channellist, *oldtitle);
 		*oldtitle = NULL;
-		channellist->fontcol = *oldcol;
-		*oldcol = -9999;
+		listbox->fontcol = *oldfontcol;
+		*oldfontcol = -9999;
+		listbox->bgcol = *oldbgcol;
+		*oldbgcol = -9999;
 	}
-//  colormod not working
-//	drawscreen(channellist, 0);
 }
 
 //flag 1: called from recordtimer screen
@@ -526,14 +535,20 @@ int screenchannellist(struct channel** retchannel, char** retchannellist, int fl
 	void* movesel = NULL, *aktlist = NULL;
 	int nochanneltitle = getskinconfigint("nochanneltitle", NULL);
 	int firstdraw = 0;
-	long oldcol = -9999;
+	long oldfontcol = -9999;
+	long oldbgcol = -9999;
 	
 	status.channelswitch = 1;
 
 start:
 	rcret = 0, ret = -1, list = ALLCHANNEL, listmode = NOMODE, newmodus = 0;
 	tmpstr = NULL, tmpstr1 = NULL, movesel = NULL, aktlist = NULL, tmpskin = NULL;
-	if(nochanneltitle == 0) changetitle(channellist, "");
+	if(nochanneltitle == 0) 
+	{
+		changetitle(channellist, "");
+		listbox->bgcol = convertcol("bgcol");
+		listbox->fontcol = convertcol("fontcol");
+	}
 
 	if(status.servicetype == 0)
 	{
@@ -627,7 +642,7 @@ start:
 		if(listbox->select != NULL)
 			listmode = screenlistedit(list, (struct channel*)listbox->select->handle);
 		if(listmode == NOMODE) goto end;
-		if(nochanneltitle == 0) changechanneltitle(channellist, listmode, &oldtitle, &oldcol);
+		if(nochanneltitle == 0) changechanneltitle(channellist, listbox, listmode, &oldtitle, &oldfontcol, &oldbgcol);
 	}
 	if(flag != 2)
 	{
@@ -711,7 +726,7 @@ start:
 					addscreenrc(channellist, listbox);
 				if(listmode == NOMODE && flag == 3) flag = 0;
 
-				if(nochanneltitle == 0) changechanneltitle(channellist, listmode, &oldtitle, &oldcol);
+				if(nochanneltitle == 0) changechanneltitle(channellist, listbox, listmode, &oldtitle, &oldfontcol, &oldbgcol);
 
 				delmarkedscreennodes(channellist, 1);
 				delmarkedscreennodes(channellist, 2);
@@ -1410,7 +1425,7 @@ start:
 			else
 				addscreenrc(channellist, listbox);
 
-			if(nochanneltitle == 0) changechanneltitle(channellist, listmode, &oldtitle, &oldcol);
+			if(nochanneltitle == 0) changechanneltitle(channellist, listbox, listmode, &oldtitle, &oldfontcol, &oldbgcol);
 
 			if(listmode == NOMODE && flag == 3) flag = 0;
 			delmarkedscreennodes(channellist, 1);
