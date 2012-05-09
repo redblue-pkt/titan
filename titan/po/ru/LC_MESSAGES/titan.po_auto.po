@@ -1547,7 +1547,8 @@ msgstr ""
 #: plugins_tmdb_skin.xml.h:17 skins_tmdb_skin.xml.h:17
 #: plugins_stock_skin.xml.h:4 skins_stock_skin.xml.h:4
 #: plugins_streaminfo_skin.xml.h:6 skins_streaminfo_skin.xml.h:6
-#: skin_default_skin.xml.h:500
+#: skin_default_skin.xml.h:500 plugins_lcdpearl1_skin.xml.h:13
+#: skins_lcdpearl1_skin.xml.h:13
 msgid ""
 msgstr ""
 
@@ -2714,6 +2715,7 @@ msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:2 skins_lcdpearl1_skin.xml.h:2
 #: plugins_lcdpearl1_skin.xml.h:4 skins_lcdpearl1_skin.xml.h:4
+#: plugins_lcdpearl1_skin.xml.h:5 skins_lcdpearl1_skin.xml.h:5
 msgid "Auswahl"
 msgstr ""
 
@@ -8075,22 +8077,26 @@ msgid "Pearl LCD Settings"
 msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:3 skins_lcdpearl1_skin.xml.h:3
+#: plugins_lcdpearl1_skin.xml.h:4 skins_lcdpearl1_skin.xml.h:4
 msgid "alle Menus anzeigen"
 msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:9 skins_lcdpearl1_skin.xml.h:9
+#: plugins_lcdpearl1_skin.xml.h:10 skins_lcdpearl1_skin.xml.h:10
 msgid ""
 "text=START halign=center valign=middle bordercol=blue bordersize=2 "
 "bordertype=2 posx=400 posy=0 width=200 height=30/>);"
 msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:7 skins_lcdpearl1_skin.xml.h:7
+#: plugins_lcdpearl1_skin.xml.h:8 skins_lcdpearl1_skin.xml.h:8
 msgid ""
 "text=SAVE halign=center valign=middle bordercol=green bordersize=2 "
 "bordertype=2 posx=0 posy=0 width=150 height=30/>);"
 msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:5 skins_lcdpearl1_skin.xml.h:5
+#: plugins_lcdpearl1_skin.xml.h:6 skins_lcdpearl1_skin.xml.h:6
 msgid ""
 "text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 "
 "bordertype=2 posx=160 posy=0 width=150 height=30/>);"
@@ -8215,4 +8221,12 @@ msgstr ""
 
 #: adjust.h:165
 msgid "deactive"
+msgstr ""
+
+#: plugins_lcdpearl1_skin.xml.h:3 skins_lcdpearl1_skin.xml.h:3
+msgid "0 C"
+msgstr ""
+
+#: plugins_lcdpearl1_skin.xml.h:12 skins_lcdpearl1_skin.xml.h:12
+msgid "Wettervorhersage"
 msgstr ""
