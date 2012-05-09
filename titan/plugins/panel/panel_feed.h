@@ -14,11 +14,14 @@ void screenpanel_feed()
 	if(pos != NULL)
 		pos[0] = '\0';
 
-	if(tmpstr == NULL || ostrcmp(tmpstr, "") == 0 || ostrcmp(tmpstr, "\n") == 0)
-		tmpstr = ostrcat(tmpstr, "000.000.000.000", 1, 0);
-		
-	lastline = numinput(_("Feed"), tmpstr, "000.000.000.000", 1);
-	
+//	if(tmpstr == NULL || ostrcmp(tmpstr, "") == 0 || ostrcmp(tmpstr, "\n") == 0)
+//		tmpstr = ostrcat(tmpstr, "000.000.000.000", 1, 0);
+
+ 	lastline = textinput(_("Feed"), tmpstr);		
+//	lastline = numinput(_("Feed"), tmpstr, "000.000.000.000", 1);
+	if(lastline != NULL && strstr(lastline, ".mynonpublic.com") == NULL)
+		lastline = ostrcat(lastline, ".mynonpublic.com", 1, 0);
+
 	if(lastline != NULL)
 	{
 		free(tmpstr); tmpstr = NULL;
