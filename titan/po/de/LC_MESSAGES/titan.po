@@ -1814,7 +1814,7 @@ msgstr "Einige Plugins benötigen einen Neustart.\nWenn das Plugin nicht verfügba
 msgid "EDIT"
 msgstr "Bearbeiten"
 msgid "SCAN"
-msgstr "starten"
+msgstr "Suche"
 msgid "Install netsurf Internetbrowser Ipk first !"
 msgstr "Internetbrowser netsurf ist nicht installiert"
 msgid "start Internet browser now ?"
