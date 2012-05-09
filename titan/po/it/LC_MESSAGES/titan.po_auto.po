@@ -471,7 +471,7 @@ msgstr ""
 #: mc_videoplayer.h:544 channellist.h:824 mc_audioplayer.h:338
 #: mc_audioplayer.h:427 mc_pictureplayer.h:72 mc_pictureplayer.h:194
 #: mc_videoplayer.h:448 mc_videoplayer.h:553 channellist.h:825
-#: channellist.h:826 channellist.h:833
+#: channellist.h:826 channellist.h:833 channellist.h:838
 msgid "Message"
 msgstr ""
 
@@ -601,6 +601,7 @@ msgstr ""
 #: channellist.h:824 mc_audioplayer.h:338 mc_audioplayer.h:427
 #: mc_pictureplayer.h:72 mc_pictureplayer.h:194 mc_videoplayer.h:448
 #: mc_videoplayer.h:553 channellist.h:825 channellist.h:826 channellist.h:833
+#: channellist.h:838
 msgid "OK"
 msgstr ""
 
@@ -728,6 +729,7 @@ msgstr ""
 #: channellist.h:824 mc_audioplayer.h:338 mc_audioplayer.h:427
 #: mc_pictureplayer.h:72 mc_pictureplayer.h:194 mc_videoplayer.h:448
 #: mc_videoplayer.h:553 channellist.h:825 channellist.h:826 channellist.h:833
+#: channellist.h:838
 msgid "EXIT"
 msgstr ""
 
@@ -810,7 +812,7 @@ msgstr ""
 #: skin_default_skin.xml.h:341 channellist.h:539 channellist.h:1443
 #: channellist.h:540 channellist.h:1444 channellist.h:541 channellist.h:1445
 #: channellist.h:542 channellist.h:1446 channellist.h:1449 channellist.h:1450
-#: channellist.h:551 channellist.h:1455
+#: channellist.h:551 channellist.h:1455 channellist.h:556 channellist.h:1460
 msgid "Radio (Info)"
 msgstr ""
 
@@ -820,6 +822,7 @@ msgstr ""
 #: channellist.h:544 channellist.h:1438 channellist.h:545 channellist.h:1439
 #: channellist.h:546 channellist.h:1440 channellist.h:547 channellist.h:1441
 #: channellist.h:1444 channellist.h:1445 channellist.h:556 channellist.h:1450
+#: channellist.h:561 channellist.h:1455
 msgid "TV (Info)"
 msgstr ""
 
@@ -832,7 +835,7 @@ msgstr ""
 #: channellist.h:554 channellist.h:957 channellist.h:1158 channellist.h:555
 #: channellist.h:958 channellist.h:1159 channellist.h:959 channellist.h:1160
 #: channellist.h:960 channellist.h:1161 channellist.h:564 channellist.h:967
-#: channellist.h:1168
+#: channellist.h:1168 channellist.h:569 channellist.h:972 channellist.h:1173
 msgid "Bouquets"
 msgstr ""
 
@@ -846,7 +849,8 @@ msgstr ""
 #: channellist.h:1242 channellist.h:534 channellist.h:1261 channellist.h:565
 #: channellist.h:1292 channellist.h:566 channellist.h:1293 channellist.h:567
 #: channellist.h:1294 channellist.h:568 channellist.h:1295 channellist.h:1296
-#: channellist.h:1297 channellist.h:577 channellist.h:1304
+#: channellist.h:1297 channellist.h:577 channellist.h:1304 channellist.h:582
+#: channellist.h:1309
 msgid "Channel"
 msgstr ""
 
@@ -859,7 +863,7 @@ msgstr ""
 #: channellist.h:579 channellist.h:987 channellist.h:1230 channellist.h:580
 #: channellist.h:988 channellist.h:1231 channellist.h:989 channellist.h:1232
 #: channellist.h:990 channellist.h:1233 channellist.h:589 channellist.h:997
-#: channellist.h:1240
+#: channellist.h:1240 channellist.h:594 channellist.h:1002 channellist.h:1245
 msgid "Satellites"
 msgstr ""
 
@@ -872,7 +876,8 @@ msgstr ""
 #: channellist.h:1365 channellist.h:592 channellist.h:1047 channellist.h:1366
 #: channellist.h:593 channellist.h:1048 channellist.h:1367 channellist.h:1049
 #: channellist.h:1368 channellist.h:1050 channellist.h:1369 channellist.h:602
-#: channellist.h:1057 channellist.h:1376
+#: channellist.h:1057 channellist.h:1376 channellist.h:607 channellist.h:1062
+#: channellist.h:1381
 msgid "Provider"
 msgstr ""
 
@@ -882,20 +887,21 @@ msgstr ""
 #: channellist.h:603 channellist.h:943 channellist.h:604 channellist.h:944
 #: channellist.h:605 channellist.h:945 channellist.h:606 channellist.h:946
 #: channellist.h:947 channellist.h:948 channellist.h:615 channellist.h:955
+#: channellist.h:620 channellist.h:960
 msgid "All Channels"
 msgstr ""
 
 #: channellist.h:718 channellist.h:766 channellist.h:793 channellist.h:767
 #: channellist.h:771 channellist.h:790 channellist.h:821 channellist.h:822
 #: channellist.h:823 channellist.h:824 channellist.h:825 channellist.h:826
-#: channellist.h:833
+#: channellist.h:833 channellist.h:838
 msgid "Can't remove akive Service"
 msgstr ""
 
 #: channellist.h:912 channellist.h:960 channellist.h:987 channellist.h:961
 #: channellist.h:965 channellist.h:984 channellist.h:1015 channellist.h:1016
 #: channellist.h:1017 channellist.h:1018 channellist.h:1019 channellist.h:1020
-#: channellist.h:1027
+#: channellist.h:1027 channellist.h:1032
 msgid "Channels A-Z"
 msgstr ""
 
