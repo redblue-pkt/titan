@@ -51,7 +51,7 @@
 #: networkbrowser.h:1204 networkbrowser.h:1208 networkbrowser.h:1212
 #: networkbrowser.h:1216 networkbrowser.h:1242 adjust.h:50 adjust.h:64
 #: adjust.h:68 adjust.h:73 adjust.h:98 adjust.h:129 adjust.h:132 adjust.h:147
-#: adjust.h:151
+#: adjust.h:151 mc_audioplayer_settings.h:38
 msgid "no"
 msgstr ""
 
@@ -114,6 +114,7 @@ msgstr ""
 #: networkbrowser.h:1228 networkbrowser.h:1205 networkbrowser.h:1209
 #: networkbrowser.h:1213 networkbrowser.h:1217 networkbrowser.h:1243
 #: adjust.h:65 adjust.h:74 adjust.h:99 adjust.h:128 adjust.h:133 adjust.h:148
+#: mc_audioplayer_settings.h:39
 msgid "yes"
 msgstr ""
 
@@ -124,6 +125,8 @@ msgstr ""
 #: adjust.h:69 adjust.h:157 mc_audioplayer_settings.h:34
 #: mc_pictureplayer_settings.h:34 mc_videoplayer_settings.h:29
 #: plugins_mc_skin.xml.h:17 skins_mc_skin.xml.h:17 adjust.h:70 adjust.h:158
+#: mc_audioplayer_settings.h:29 mc_pictureplayer_settings.h:38
+#: mc_videoplayer_settings.h:24
 msgid "fast"
 msgstr ""
 
@@ -465,7 +468,9 @@ msgstr ""
 #: networkbrowser.h:1431 global.h:4614 channellist.h:793 channellist.h:767
 #: channellist.h:771 global.h:4639 channellist.h:790 channellist.h:821
 #: channellist.h:822 channellist.h:823 mc_videoplayer.h:440
-#: mc_videoplayer.h:544
+#: mc_videoplayer.h:544 channellist.h:824 mc_audioplayer.h:338
+#: mc_audioplayer.h:427 mc_pictureplayer.h:72 mc_pictureplayer.h:194
+#: mc_videoplayer.h:448 mc_videoplayer.h:553
 msgid "Message"
 msgstr ""
 
@@ -592,6 +597,9 @@ msgstr ""
 #: channellist.h:771 global.h:4639 channellist.h:790
 #: skin_default_skin.xml.h:296 channellist.h:821 channellist.h:822
 #: channellist.h:823 mc_videoplayer.h:440 mc_videoplayer.h:544
+#: channellist.h:824 mc_audioplayer.h:338 mc_audioplayer.h:427
+#: mc_pictureplayer.h:72 mc_pictureplayer.h:194 mc_videoplayer.h:448
+#: mc_videoplayer.h:553
 msgid "OK"
 msgstr ""
 
@@ -716,6 +724,9 @@ msgstr ""
 #: channellist.h:767 channellist.h:771 global.h:4639 channellist.h:790
 #: skin_default_skin.xml.h:196 channellist.h:821 channellist.h:822
 #: channellist.h:823 mc_videoplayer.h:440 mc_videoplayer.h:544
+#: channellist.h:824 mc_audioplayer.h:338 mc_audioplayer.h:427
+#: mc_pictureplayer.h:72 mc_pictureplayer.h:194 mc_videoplayer.h:448
+#: mc_videoplayer.h:553
 msgid "EXIT"
 msgstr ""
 
@@ -797,6 +808,7 @@ msgstr ""
 #: channellist.h:498 channellist.h:1384 channellist.h:508 channellist.h:1412
 #: skin_default_skin.xml.h:341 channellist.h:539 channellist.h:1443
 #: channellist.h:540 channellist.h:1444 channellist.h:541 channellist.h:1445
+#: channellist.h:542 channellist.h:1446
 msgid "Radio (Info)"
 msgstr ""
 
@@ -804,7 +816,7 @@ msgstr ""
 #: channellist.h:525 channellist.h:1401 channellist.h:499 channellist.h:1375
 #: channellist.h:503 channellist.h:1379 channellist.h:513 channellist.h:1407
 #: channellist.h:544 channellist.h:1438 channellist.h:545 channellist.h:1439
-#: channellist.h:546 channellist.h:1440
+#: channellist.h:546 channellist.h:1440 channellist.h:547 channellist.h:1441
 msgid "TV (Info)"
 msgstr ""
 
@@ -814,7 +826,8 @@ msgstr ""
 #: channellist.h:511 channellist.h:905 channellist.h:1106 channellist.h:521
 #: channellist.h:924 channellist.h:1125 channellist.h:552 channellist.h:955
 #: channellist.h:1156 channellist.h:553 channellist.h:956 channellist.h:1157
-#: channellist.h:554 channellist.h:957 channellist.h:1158
+#: channellist.h:554 channellist.h:957 channellist.h:1158 channellist.h:555
+#: channellist.h:958 channellist.h:1159
 msgid "Bouquets"
 msgstr ""
 
@@ -827,7 +840,7 @@ msgstr ""
 #: channellist.h:1264 channellist.h:520 channellist.h:1238 channellist.h:524
 #: channellist.h:1242 channellist.h:534 channellist.h:1261 channellist.h:565
 #: channellist.h:1292 channellist.h:566 channellist.h:1293 channellist.h:567
-#: channellist.h:1294
+#: channellist.h:1294 channellist.h:568 channellist.h:1295
 msgid "Channel"
 msgstr ""
 
@@ -837,7 +850,8 @@ msgstr ""
 #: channellist.h:536 channellist.h:935 channellist.h:1178 channellist.h:546
 #: channellist.h:954 channellist.h:1197 channellist.h:577 channellist.h:985
 #: channellist.h:1228 channellist.h:578 channellist.h:986 channellist.h:1229
-#: channellist.h:579 channellist.h:987 channellist.h:1230
+#: channellist.h:579 channellist.h:987 channellist.h:1230 channellist.h:580
+#: channellist.h:988 channellist.h:1231
 msgid "Satellites"
 msgstr ""
 
@@ -848,6 +862,7 @@ msgstr ""
 #: channellist.h:559 channellist.h:1014 channellist.h:1333 channellist.h:590
 #: channellist.h:1045 channellist.h:1364 channellist.h:591 channellist.h:1046
 #: channellist.h:1365 channellist.h:592 channellist.h:1047 channellist.h:1366
+#: channellist.h:593 channellist.h:1048 channellist.h:1367
 msgid "Provider"
 msgstr ""
 
@@ -855,19 +870,19 @@ msgstr ""
 #: channellist.h:584 channellist.h:915 channellist.h:558 channellist.h:889
 #: channellist.h:562 channellist.h:893 channellist.h:572 channellist.h:912
 #: channellist.h:603 channellist.h:943 channellist.h:604 channellist.h:944
-#: channellist.h:605 channellist.h:945
+#: channellist.h:605 channellist.h:945 channellist.h:606 channellist.h:946
 msgid "All Channels"
 msgstr ""
 
 #: channellist.h:718 channellist.h:766 channellist.h:793 channellist.h:767
 #: channellist.h:771 channellist.h:790 channellist.h:821 channellist.h:822
-#: channellist.h:823
+#: channellist.h:823 channellist.h:824
 msgid "Can't remove akive Service"
 msgstr ""
 
 #: channellist.h:912 channellist.h:960 channellist.h:987 channellist.h:961
 #: channellist.h:965 channellist.h:984 channellist.h:1015 channellist.h:1016
-#: channellist.h:1017
+#: channellist.h:1017 channellist.h:1018
 msgid "Channels A-Z"
 msgstr ""
 
@@ -1353,7 +1368,7 @@ msgstr ""
 #: mc_videoplayer.h:180 mc_videoplayer.h:176 mc_videoplayer.h:177
 #: mc_videoplayer.h:207 mc_videoplayer.h:218 mc_pictureplayer.h:118
 #: mc_pictureplayer.h:119 mc_videoplayer.h:220 mc_videoplayer.h:215
-#: mc_videoplayer.h:214
+#: mc_videoplayer.h:214 mc_pictureplayer.h:116 mc_videoplayer.h:216
 msgid "Repeat-On"
 msgstr ""
 
@@ -1367,7 +1382,8 @@ msgstr ""
 #: mc_pictureplayer.h:126 mc_pictureplayer.h:265 mc_videoplayer.h:227
 #: mc_videoplayer.h:375 mc_pictureplayer.h:264 mc_videoplayer.h:222
 #: mc_videoplayer.h:362 plugins_mc_skin.xml.h:37 skins_mc_skin.xml.h:37
-#: mc_videoplayer.h:221 mc_videoplayer.h:361
+#: mc_videoplayer.h:221 mc_videoplayer.h:361 mc_audioplayer.h:299
+#: mc_pictureplayer.h:123 mc_videoplayer.h:223 mc_videoplayer.h:368
 msgid "Repeat"
 msgstr ""
 
@@ -1388,6 +1404,8 @@ msgstr ""
 #: mc_videoplayer.h:526 mc_pictureplayer.h:224 mc_pictureplayer.h:262
 #: mc_pictureplayer.h:366 mc_videoplayer.h:317 mc_videoplayer.h:360
 #: mc_videoplayer.h:513 mc_videoplayer.h:359 mc_videoplayer.h:512
+#: mc_audioplayer.h:266 mc_audioplayer.h:297 mc_audioplayer.h:406
+#: mc_videoplayer.h:321 mc_videoplayer.h:366 mc_videoplayer.h:521
 msgid "Filelist-Mode"
 msgstr ""
 
@@ -1398,7 +1416,7 @@ msgstr ""
 #: mc_videoplayer.h:370 mc_pictureplayer.h:262 mc_global.h:427 mc_global.h:455
 #: mc_pictureplayer.h:264 mc_videoplayer.h:374 mc_pictureplayer.h:263
 #: mc_videoplayer.h:361 plugins_mc_skin.xml.h:36 skins_mc_skin.xml.h:36
-#: mc_videoplayer.h:360
+#: mc_videoplayer.h:360 mc_audioplayer.h:298 mc_videoplayer.h:367
 msgid "Random"
 msgstr ""
 
@@ -1411,6 +1429,7 @@ msgstr ""
 #: mc_pictureplayer.h:281 mc_global.h:140 mc_global.h:567 mc_global.h:799
 #: mc_global.h:813 mc_pictureplayer.h:283 mc_videoplayer.h:414
 #: mc_pictureplayer.h:282 mc_videoplayer.h:401 mc_videoplayer.h:400
+#: mc_audioplayer.h:319 mc_videoplayer.h:408
 msgid "Playlist-Mode"
 msgstr ""
 
@@ -1430,31 +1449,35 @@ msgstr ""
 #: mc_pictureplayer.h:396 mc_videoplayer.h:454 mc_videoplayer.h:558
 #: mc_pictureplayer.h:308 mc_pictureplayer.h:395 mc_videoplayer.h:441
 #: mc_videoplayer.h:545 mc_videoplayer.h:440 mc_videoplayer.h:544
+#: mc_audioplayer.h:338 mc_audioplayer.h:427 mc_pictureplayer.h:72
+#: mc_pictureplayer.h:194 mc_videoplayer.h:448 mc_videoplayer.h:553
 msgid "Can't start playback !"
 msgstr ""
 
 #: mc_audioplayer_settings.h:29 mc_pictureplayer_settings.h:29
 #: mc_videoplayer_settings.h:24 plugins_mc_skin.xml.h:14
 #: plugins_panel_skin.xml.h:34 skins_mc_skin.xml.h:14
-#: skins_panel_skin.xml.h:34
+#: skins_panel_skin.xml.h:34 mc_audioplayer_settings.h:32
+#: mc_pictureplayer_settings.h:41 mc_videoplayer_settings.h:27
 msgid "default"
 msgstr ""
 
 #: mc_audioplayer_settings.h:30 mc_pictureplayer_settings.h:30
 #: mc_videoplayer_settings.h:25 plugins_mc_skin.xml.h:11
-#: skins_mc_skin.xml.h:11
+#: skins_mc_skin.xml.h:11 mc_pictureplayer_settings.h:39
 msgid "big"
 msgstr ""
 
 #: mc_audioplayer_settings.h:31 mc_pictureplayer_settings.h:31
 #: mc_videoplayer_settings.h:26 plugins_mc_skin.xml.h:22
-#: skins_mc_skin.xml.h:22
+#: skins_mc_skin.xml.h:22 mc_videoplayer_settings.h:29
 msgid "fullcover"
 msgstr ""
 
 #: mc_audioplayer_settings.h:32 mc_pictureplayer_settings.h:32
 #: mc_videoplayer_settings.h:27 plugins_mc_skin.xml.h:15
-#: skins_mc_skin.xml.h:15
+#: skins_mc_skin.xml.h:15 mc_audioplayer_settings.h:33
+#: mc_pictureplayer_settings.h:42 mc_videoplayer_settings.h:28
 msgid "details"
 msgstr ""
 
@@ -7871,7 +7894,8 @@ msgstr ""
 msgid "picture"
 msgstr ""
 
-#: mc_videoplayer_settings.h:25
+#: mc_videoplayer_settings.h:25 mc_audioplayer_settings.h:31
+#: mc_pictureplayer_settings.h:40 mc_videoplayer_settings.h:26
 msgid "cover"
 msgstr ""
 
