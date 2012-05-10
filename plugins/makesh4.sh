@@ -100,5 +100,6 @@ compile "weather" "weather" ""
 compile "news" "news" ""
 compile "stock" "stock" ""
 compile "streaminfo" "streaminfo" ""
+compile "tmc" "tmc" ""
 
 #rm -r networkbrowser/networkbrowser
