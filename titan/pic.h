@@ -12,9 +12,26 @@ void debugpic()
 	}
 }
 
+void checkpictimeout()
+{
+  struct pic* node = pic;
+  time_t akttime = time(NULL);
+
+  while(node != NULL)
+  {
+    if(node->timeout != 0 && node->lastaccess + node->timeout < akttime)
+      delpic(node->name);
+    node = node->next;
+  }
+}
+
 struct pic* addpic(char *name, unsigned char* picbuf, int memfd, unsigned long width, unsigned long height, unsigned long rowbytes, int channels, int timeout, int del, struct pic* last)
 {
 	debug(1000, "in");
+
+	//chech if pic timed aut and can remove
+	checkpictimeout();
+
 	struct pic *newnode = NULL, *prev = NULL, *node = pic;
 
 	newnode = (struct pic*)malloc(sizeof(struct pic));	
@@ -133,19 +150,6 @@ void delmarkedpic(int del)
 		node = node->next;
 	}
 	debug(1000, "out");
-}
-
-void checkpictimeout()
-{
-  struct pic* node = pic;
-  time_t akttime = time(NULL);
-
-  while(node != NULL)
-  {
-    if(node->timeout != 0 && node->lastaccess + node->timeout < akttime)
-      delpic(node->name);
-    node = node->next;
-  }
 }
 
 struct pic* getpic(char* name)
