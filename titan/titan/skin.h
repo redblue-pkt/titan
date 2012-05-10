@@ -1363,12 +1363,12 @@ void calcautoscale(int width, int height, int mwidth, int mheight, int* scalewid
 	if(dstRatio > srcRatio)
 	{
 		*scaleheight = mheight;
-		*scalewidth = mheight * srcRatio;
+		*scalewidth = (mheight * srcRatio) + 0.5;
 	}
 	else
 	{
 		*scalewidth = mwidth;
-		*scaleheight = mwidth / srcRatio;
+		*scaleheight = (mwidth / srcRatio) + 0.5;
 	}
 }
 
