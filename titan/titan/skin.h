@@ -1569,7 +1569,7 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 					if(tmp > 0)
 					{
 						tmp = (float)py / tmp;
-						blitscale(posx, nposy, width, py, scalewidth, (int)tmp, 0);
+						blitscale(posx, nposy, width, py, scalewidth, (int)(tmp + 0.5), 0);
 						nposy += tmp;
 					}
 				}
@@ -1583,7 +1583,7 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 			if(tmp > 0)
 			{
 				tmp = (float)py / tmp;
-				blitscale(posx, nposy, width, py, scalewidth, (int)tmp, 0);
+				blitscale(posx, nposy, width, py, scalewidth, (int)(tmp + 0.5), 0);
 			}
 		}
 		m_unlock(&status.accelfbmutex, 16);
