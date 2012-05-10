@@ -17,5 +17,6 @@ weather: 208
 news: 210
 stock: 220
 streaminfo: 225
+tmc: 230
 TopfieldVFD: ---
 browser: ---
