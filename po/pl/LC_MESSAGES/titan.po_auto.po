@@ -1548,7 +1548,8 @@ msgstr ""
 #: plugins_stock_skin.xml.h:4 skins_stock_skin.xml.h:4
 #: plugins_streaminfo_skin.xml.h:6 skins_streaminfo_skin.xml.h:6
 #: skin_default_skin.xml.h:500 plugins_lcdpearl1_skin.xml.h:13
-#: skins_lcdpearl1_skin.xml.h:13
+#: skins_lcdpearl1_skin.xml.h:13 plugins_tmc_skin.xml.h:1
+#: skins_tmc_skin.xml.h:1
 msgid ""
 msgstr ""
 
