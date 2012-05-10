@@ -1,0 +1,17 @@
+<screen pic=skin/tmcbg.jpg name=tmcbg posx=0 posy=0 width=1240 height=720>
+</screen>
+
+<screen pic=skin/tmcsettings.png name=tmcmenu1 posx=170 posy=600 width=150 height=150>
+</screen>
+
+<screen pic=skin/tmcpicture.png name=tmcmenu2 posx=370 posy=550 width=150 height=150>
+</screen>
+
+<screen pic=skin/tmcvideo.png name=tmcmenu3 posx=570 posy=500 width=150 height=150>
+</screen>
+
+<screen pic=skin/tmcaudio.png name=tmcmenu4 posx=770 posy=550 width=150 height=150>
+</screen>
+
+<screen pic=skin/tmcsettings.png name=tmcmenu5 posx=970 posy=600 width=150 height=150>
+</screen>
