@@ -9,7 +9,7 @@
  
 NAME=minidlna
 DESC="MiniDLNA"
-DAEMON=/usr/sbin/minidlna
+DAEMON=/usr/bin/minidlna
 USER=root
 GROUP=root
  
