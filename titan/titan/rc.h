@@ -73,7 +73,7 @@ int openrc()
 	{
 		while(status.fdrc < 0 && i < 3)
 		{
-  			status.fdrc = open(rcdev, O_RDONLY);
+  			status.fdrc = open(rcdev, O_RDWR);
 			if(status.fdrc < 0) sleep(1);
 			i++;
 		}
@@ -128,8 +128,15 @@ int writerc(int keycode)
 	rcdata.type = EV_KEY;
 	rcdata.code = keycode;
 	rcdata.value = 1;
+	write(status.fdrc, &rcdata, sizeof(rcdata));
 	
-	return  write(status.fdrcsim, &rcdata, sizeof(rcdata));
+	rcdata.time = akttime;
+	rcdata.type = EV_KEY;
+	rcdata.code = keycode;
+	rcdata.value = 0;
+
+	//return write(status.fdrcsim, &rcdata, sizeof(rcdata));
+	return write(status.fdrc, &rcdata, sizeof(rcdata));
 }
 
 int flushrc(unsigned int timeout)
