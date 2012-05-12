@@ -472,7 +472,7 @@ msgstr ""
 #: mc_audioplayer.h:427 mc_pictureplayer.h:72 mc_pictureplayer.h:194
 #: mc_videoplayer.h:448 mc_videoplayer.h:553 channellist.h:825
 #: channellist.h:826 channellist.h:833 channellist.h:838 panel_extensions.h:96
-#: panel_extensions.h:113 panel_extensions.h:137
+#: panel_extensions.h:113 panel_extensions.h:137 global.h:4634
 msgid "Message"
 msgstr ""
 
@@ -604,6 +604,7 @@ msgstr ""
 #: mc_videoplayer.h:553 channellist.h:825 channellist.h:826 channellist.h:833
 #: channellist.h:838 panel_extensions.h:81 panel_extensions.h:88
 #: panel_extensions.h:94 panel_extensions.h:96 panel_extensions.h:113
+#: global.h:4634
 msgid "OK"
 msgstr ""
 
@@ -733,6 +734,7 @@ msgstr ""
 #: mc_videoplayer.h:553 channellist.h:825 channellist.h:826 channellist.h:833
 #: channellist.h:838 panel_extensions.h:81 panel_extensions.h:88
 #: panel_extensions.h:94 panel_extensions.h:96 panel_extensions.h:113
+#: global.h:4634
 msgid "EXIT"
 msgstr ""
 
@@ -1164,6 +1166,7 @@ msgstr ""
 #: global.h:4539 global.h:4557 global.h:4561 global.h:4563 global.h:4565
 #: global.h:4522 global.h:4536 global.h:4551 global.h:4586 global.h:4587
 #: global.h:4602 global.h:4606 global.h:4607 global.h:4614 global.h:4639
+#: global.h:4634
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -7760,7 +7763,7 @@ msgstr ""
 msgid "Start RGUID"
 msgstr ""
 
-#: global.h:250 global.h:251 global.h:258
+#: global.h:250 global.h:251 global.h:258 global.h:253
 msgid ""
 "For next OnlineUpdate please contact Atemio and send this Serial Number\n"
 "and your Atemio Serial Number !!\n"
