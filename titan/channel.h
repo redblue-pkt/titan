@@ -35,18 +35,20 @@ int channelnottunable(struct channel* node)
 	return 0;
 }
 
-struct channel* getlastchannel(struct channel* node)
+//flag 0: lock
+//flag 1: no lock
+struct channel* getlastchannel(struct channel* node, int flag)
 {
 	debug(1000, "in");
 	struct channel *prev = NULL;
 
-	m_lock(&status.channelmutex, 5);
+	if(flag == 0) m_lock(&status.channelmutex, 5);
 	while(node != NULL)
 	{
 		prev = node;
 		node = node->next;
 	}
-	m_unlock(&status.channelmutex, 5);
+	if(flag == 0) m_unlock(&status.channelmutex, 5);
 
 	debug(1000, "out");
 	return prev;
@@ -135,7 +137,7 @@ int movechannelup(struct channel* node)
 	//first node
 	if(node->prev == NULL)
 	{
-		last = getlastchannel(channel);
+		last = getlastchannel(channel, 1);
 
 		if(node->next != NULL)
 			node->next->prev = NULL;
