@@ -39,30 +39,30 @@ PNPX="#define PNPX 0"
 
 ${RM} ${CONFIGFILE}
 
-# Detect if there are missing headers
-# NOTE: This check only works with a normal distro
-[ ! -e "/usr/include/sqlite3.h" ] && MISSING="libsqlite3 $MISSING"
-[ ! -e "/usr/include/jpeglib.h" ] && MISSING="libjpeg $MISSING"
-[ ! -e "/usr/include/libexif/exif-loader.h" ] && MISSING="libexif $MISSING"
-[ ! -e "/usr/include/id3tag.h" ] && MISSING="libid3tag $MISSING"
-[ ! -e "/usr/include/ogg/ogg.h" ] && MISSING="libogg $MISSING"
-[ ! -e "/usr/include/vorbis/codec.h" ] && MISSING="libvorbis $MISSING"
-[ ! -e "/usr/include/FLAC/metadata.h" ] && MISSING="libflac $MISSING"
-[ ! -e "/usr/include/ffmpeg/avutil.h" -a \
-  ! -e "/usr/include/libavutil/avutil.h" -a \
-  ! -e "/usr/include/ffmpeg/libavutil/avutil.h" ] && MISSING="libavutil $MISSING"
-[ ! -e "/usr/include/ffmpeg/avformat.h" -a \
-  ! -e "/usr/include/libavformat/avformat.h" -a \
-  ! -e "/usr/include/ffmpeg/libavformat/avformat.h" ] && MISSING="libavformat $MISSING"
-[ ! -e "/usr/include/ffmpeg/avcodec.h" -a \
-  ! -e "/usr/include/libavcodec/avcodec.h" -a \
-  ! -e "/usr/include/ffmpeg/libavcodec/avcodec.h" ] && MISSING="libavcodec $MISSING"
-if [ -n "$MISSING" ]; then
-	echo -e "\nERROR!  Cannot continue."
-	echo -e "The following required libraries are either missing, or are missing development headers:\n"
-	echo -e "$MISSING\n"
-	exit 1
-fi
+## Detect if there are missing headers
+## NOTE: This check only works with a normal distro
+#[ ! -e "/usr/include/sqlite3.h" ] && MISSING="libsqlite3 $MISSING"
+#[ ! -e "/usr/include/jpeglib.h" ] && MISSING="libjpeg $MISSING"
+#[ ! -e "/usr/include/libexif/exif-loader.h" ] && MISSING="libexif $MISSING"
+#[ ! -e "/usr/include/id3tag.h" ] && MISSING="libid3tag $MISSING"
+#[ ! -e "/usr/include/ogg/ogg.h" ] && MISSING="libogg $MISSING"
+#[ ! -e "/usr/include/vorbis/codec.h" ] && MISSING="libvorbis $MISSING"
+#[ ! -e "/usr/include/FLAC/metadata.h" ] && MISSING="libflac $MISSING"
+#[ ! -e "/usr/include/ffmpeg/avutil.h" -a \
+#  ! -e "/usr/include/libavutil/avutil.h" -a \
+#  ! -e "/usr/include/ffmpeg/libavutil/avutil.h" ] && MISSING="libavutil $MISSING"
+#[ ! -e "/usr/include/ffmpeg/avformat.h" -a \
+#  ! -e "/usr/include/libavformat/avformat.h" -a \
+#  ! -e "/usr/include/ffmpeg/libavformat/avformat.h" ] && MISSING="libavformat $MISSING"
+#[ ! -e "/usr/include/ffmpeg/avcodec.h" -a \
+#  ! -e "/usr/include/libavcodec/avcodec.h" -a \
+#  ! -e "/usr/include/ffmpeg/libavcodec/avcodec.h" ] && MISSING="libavcodec $MISSING"
+#if [ -n "$MISSING" ]; then
+#	echo -e "\nERROR!  Cannot continue."
+#	echo -e "The following required libraries are either missing, or are missing development headers:\n"
+#	echo -e "$MISSING\n"
+#	exit 1
+#fi
 
 echo "/* MiniDLNA Project" >> ${CONFIGFILE}
 echo " * http://sourceforge.net/projects/minidlna/" >> ${CONFIGFILE}

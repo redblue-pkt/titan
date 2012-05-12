@@ -13,12 +13,14 @@
 #CFLAGS = -Wall -O -D_GNU_SOURCE -g -DDEBUG
 #CFLAGS = -Wall -g -Os -D_GNU_SOURCE
 CFLAGS = -Wall -g -O3 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 \
-	 -I/usr/include/ffmpeg \
-	 -I/usr/include/libavutil -I/usr/include/libavcodec -I/usr/include/libavformat \
-	 -I/usr/include/ffmpeg/libavutil -I/usr/include/ffmpeg/libavcodec -I/usr/include/ffmpeg/libavformat
+	 -I/home/gost4711/disc2/flashimg/BUILDGIT/checkout_stm23/tdt/tufsbox/devkit/sh4/usr/include \
+	 -I/home/gost4711/disc2/flashimg/BUILDGIT/checkout_stm23/tdt/cvs/cdk/ffmpeg-0.6.3 \
+	 -I/home/gost4711/disc2/flashimg/BUILDGIT/checkout_stm23/tdt/cvs/cdk/ffmpeg-0.6.3/libavutil -I/home/gost4711/disc2/flashimg/BUILDGIT/checkout_stm23/tdt/cvs/cdk/ffmpeg-0.6.3/libavcodec -I/home/gost4711/disc2/flashimg/BUILDGIT/checkout_stm23/tdt/cvs/cdk/ffmpeg-0.6.3/libavformat \
+	 -I/home/gost4711/disc2/flashimg/BUILDGIT/checkout_stm23/tdt/tufsbox/devkit/sh4/usr/include -L/home/gost4711/disc2/flashimg/BUILDGIT/checkout_stm23/tdt/tufsbox/devkit/sh4/usr/lib
 #STATIC_LINKING: CFLAGS += -DSTATIC
 #STATIC_LINKING: LDFLAGS = -static
-CC = gcc
+LDFLAGS = -L/home/gost4711/disc2/flashimg/BUILDGIT/checkout_stm23/tdt/tufsbox/devkit/sh4/usr/lib
+CC = /home/gost4711/disc2/flashimg/BUILDGIT/checkout_stm23/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc
 RM = rm -f
 INSTALL = install
 
@@ -62,7 +64,7 @@ install:	minidlna
 	$(INSTALL) -d $(ETCINSTALLDIR)
 	$(INSTALL) --mode=0644 minidlna.conf $(ETCINSTALLDIR)
 
-minidlna:	$(BASEOBJS) $(LNXOBJS) $(LIBS)
+minidlna:	$(BASEOBJS) $(LNXOBJS) 
 	@echo Linking $@
 	@$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(BASEOBJS) $(LNXOBJS) $(LIBS)
 
