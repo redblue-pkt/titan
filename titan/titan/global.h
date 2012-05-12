@@ -151,7 +151,7 @@ int checkflash()
 		dev = ostrcat(dev, "4", 1, 0);
 		dir = ostrcat(dir, "var", 1, 0);
 	}
-	else if(checkbox("SKYSAT") == 1) || (checkbox("AT7500") == 1))
+	else if((checkbox("SKYSAT") == 1) || (checkbox("AT7500") == 1))
 	{
 		dev = ostrcat(dev, "2", 1, 0);
 		dir = ostrcat(dir, "boot", 1, 0);
