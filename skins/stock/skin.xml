@@ -16,8 +16,10 @@
 <node name=change parent=box1 posx=5 posy=420 width=690 height=30>
 <node name=perc_change parent=box1 posx=5 posy=455 width=690 height=30>
 <node name=trade_timestamp parent=box1 posx=5 posy=490 width=690 height=30>
-<node name=b1 text="SEARCH" halign=center valign=center bordercol=red bordersize=4 bordertype=2 posx=20 posy=570 width=150 height=30/>
-<node name=b2 text="BROWSER" halign=center valign=center bordercol=green bordersize=4 bordertype=2 posx=180 posy=570 width=150 height=30/>
+<node name=b1 text="ADD" halign=center valign=center bordercol=red bordersize=4 bordertype=2 posx=20 posy=570 width=150 height=30/>
+<node name=b2 text="DEL" halign=center valign=center bordercol=green bordersize=4 bordertype=2 posx=180 posy=570 width=150 height=30/>
+<node name=b3 text="SAVE" halign=center valign=center bordercol=yellow bordersize=4 bordertype=2 posx=340 posy=570 width=150 height=30/>
+<node name=b4 text="BROWSER" halign=center valign=center bordercol=blue bordersize=4 bordertype=2 posx=500 posy=570 width=150 height=30/>
 </screen>
 
 
