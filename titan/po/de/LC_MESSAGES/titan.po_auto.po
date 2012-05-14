@@ -8041,26 +8041,31 @@ msgid "PREV"
 msgstr ""
 
 #: plugins_weather_skin.xml.h:1 skins_weather_skin.xml.h:1 weather.h:302
+#: weather.h:304
 msgid "Weather"
 msgstr ""
 
 #: weather.h:308 weather.h:326 weather.h:344 weather.h:362 weather.h:314
-#: weather.h:332 weather.h:350 weather.h:368
+#: weather.h:332 weather.h:350 weather.h:368 weather.h:316 weather.h:334
+#: weather.h:352 weather.h:370
 msgid "Day: "
 msgstr ""
 
 #: weather.h:312 weather.h:330 weather.h:348 weather.h:366 weather.h:318
-#: weather.h:336 weather.h:354 weather.h:372
+#: weather.h:336 weather.h:354 weather.h:372 weather.h:320 weather.h:338
+#: weather.h:356 weather.h:374
 msgid "Lowest temp: "
 msgstr ""
 
 #: weather.h:316 weather.h:334 weather.h:352 weather.h:370 weather.h:322
-#: weather.h:340 weather.h:358 weather.h:376
+#: weather.h:340 weather.h:358 weather.h:376 weather.h:324 weather.h:342
+#: weather.h:360 weather.h:378
 msgid "Highest temp: "
 msgstr ""
 
 #: weather.h:320 weather.h:338 weather.h:356 weather.h:374 weather.h:326
-#: weather.h:344 weather.h:362 weather.h:380
+#: weather.h:344 weather.h:362 weather.h:380 weather.h:328 weather.h:346
+#: weather.h:364 weather.h:382
 msgid "Condition: "
 msgstr ""
 
@@ -8110,67 +8115,67 @@ msgid ""
 "bordertype=2 posx=160 posy=0 width=150 height=30/>);"
 msgstr ""
 
-#: plugins_stock_skin.xml.h:1 skins_stock_skin.xml.h:1 stock.h:175
+#: plugins_stock_skin.xml.h:1 skins_stock_skin.xml.h:1 stock.h:175 stock.h:177
 msgid "Stock"
 msgstr ""
 
-#: stock.h:179 stock.h:185
+#: stock.h:179 stock.h:185 stock.h:187
 msgid "Company: "
 msgstr ""
 
-#: stock.h:183 stock.h:189
+#: stock.h:183 stock.h:189 stock.h:191
 msgid "Exchange: "
 msgstr ""
 
-#: stock.h:187 stock.h:193
+#: stock.h:187 stock.h:193 stock.h:195
 msgid "Exchange closing: "
 msgstr ""
 
-#: stock.h:191 stock.h:197
+#: stock.h:191 stock.h:197 stock.h:199
 msgid "Currency: "
 msgstr ""
 
-#: stock.h:195 stock.h:201
+#: stock.h:195 stock.h:201 stock.h:203
 msgid "Last: "
 msgstr ""
 
-#: stock.h:199 stock.h:205
+#: stock.h:199 stock.h:205 stock.h:207
 msgid "High: "
 msgstr ""
 
-#: stock.h:203 stock.h:209
+#: stock.h:203 stock.h:209 stock.h:211
 msgid "Low: "
 msgstr ""
 
-#: stock.h:207 stock.h:213
+#: stock.h:207 stock.h:213 stock.h:215
 msgid "Volume: "
 msgstr ""
 
-#: stock.h:211 stock.h:217
+#: stock.h:211 stock.h:217 stock.h:219
 msgid "Avg volume: "
 msgstr ""
 
-#: stock.h:215 stock.h:221
+#: stock.h:215 stock.h:221 stock.h:223
 msgid "Market cap: "
 msgstr ""
 
-#: stock.h:219 stock.h:225
+#: stock.h:219 stock.h:225 stock.h:227
 msgid "Open: "
 msgstr ""
 
-#: stock.h:223 stock.h:229
+#: stock.h:223 stock.h:229 stock.h:231
 msgid "Close: "
 msgstr ""
 
-#: stock.h:227 stock.h:233
+#: stock.h:227 stock.h:233 stock.h:235
 msgid "Change: "
 msgstr ""
 
-#: stock.h:231 stock.h:237
+#: stock.h:231 stock.h:237 stock.h:239
 msgid "Change in %: "
 msgstr ""
 
-#: stock.h:235 stock.h:241
+#: stock.h:235 stock.h:241 stock.h:243
 msgid "Trade time: "
 msgstr ""
 
