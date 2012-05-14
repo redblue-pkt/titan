@@ -285,7 +285,7 @@ start:
 			drawscreen(stock, 0);
 		}
     
-    if(rcret == getrcconfigint("rcgreen", NULL) && node->symbol_lookup_url != NULL)
+    if(rcret == getrcconfigint("rcblue", NULL) && node->symbol_lookup_url != NULL)
     {
       ret = servicestop(status.aktservice, 1, 0);
       if(ret == 1) goto start;
