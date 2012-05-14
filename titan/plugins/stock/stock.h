@@ -171,6 +171,12 @@ void screenstock()
 	name = readstock(getconfig("stockfile", NULL), stock, listbox);
 
 start:
+
+	tmpstr = ostrcat(_("Stock"), " - ", 0, 0);
+	tmpstr = ostrcat(tmpstr, name, 1, 0);
+	changetitle(stock, tmpstr);
+	free(tmpstr); tmpstr = NULL;
+
 	node = getstock(name);
 	free(name); name = NULL;
 
