@@ -263,8 +263,8 @@ start:
 				struct skin* tmp = addlistbox(stock, listbox, NULL, 1);
 				if(tmp != NULL)
 				{
-					changetext(tmp, location);
-					changename(tmp, location);
+					changetext(tmp, name);
+					changename(tmp, name);
 				}
       }
       drawscreen(stock, 0);
@@ -275,7 +275,7 @@ start:
 
 		if(rcret == getrcconfigint("rcyellow", NULL))
 		{
-			writestock(getconfig("stockfile", listbox);
+			writestock(getconfig("stockfile", NULL), listbox);
 			continue;
 		}
 
