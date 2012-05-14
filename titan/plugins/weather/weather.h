@@ -416,7 +416,7 @@ start:
 
 		if(rcret == getrcconfigint("rcyellow", NULL))
 		{
-			writeweather(getconfig("weatherfile", listbox);
+			writeweather(getconfig("weatherfile", NULL), listbox);
 			continue;
 		}
 
