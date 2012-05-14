@@ -1552,7 +1552,9 @@ msgstr ""
 #: plugins_streaminfo_skin.xml.h:6 skins_streaminfo_skin.xml.h:6
 #: skin_default_skin.xml.h:500 plugins_lcdpearl1_skin.xml.h:13
 #: skins_lcdpearl1_skin.xml.h:13 plugins_tmc_skin.xml.h:1
-#: skins_tmc_skin.xml.h:1
+#: skins_tmc_skin.xml.h:1 plugins_stock_skin.xml.h:6
+#: plugins_weather_skin.xml.h:5 skins_stock_skin.xml.h:6
+#: skins_weather_skin.xml.h:5
 msgid ""
 msgstr ""
 
@@ -2547,6 +2549,8 @@ msgstr ""
 #: skins_networkbrowser_skin.xml.h:2 plugins_networkbrowser_skin.xml.h:3
 #: skins_networkbrowser_skin.xml.h:3 skin_default_skin.xml.h:163
 #: skin_default_skin.xml.h:164 skin_default_skin.xml.h:165
+#: plugins_stock_skin.xml.h:4 plugins_weather_skin.xml.h:3
+#: skins_stock_skin.xml.h:4 skins_weather_skin.xml.h:3
 msgid "DEL"
 msgstr ""
 
@@ -3220,6 +3224,8 @@ msgstr ""
 
 #: plugins_panel_skin.xml.h:65 plugins_tithek_skin.xml.h:3
 #: skins_panel_skin.xml.h:65 skins_tithek_skin.xml.h:3
+#: plugins_stock_skin.xml.h:5 plugins_weather_skin.xml.h:4
+#: skins_stock_skin.xml.h:5 skins_weather_skin.xml.h:4
 msgid "SAVE"
 msgstr ""
 
@@ -4484,6 +4490,8 @@ msgstr ""
 #: skin_default_skin.xml.h:109 skin_default_skin.xml.h:110
 #: skin_default_skin.xml.h:111 plugins_networkbrowser_skin.xml.h:1
 #: skins_networkbrowser_skin.xml.h:1 skin_default_skin.xml.h:112
+#: plugins_stock_skin.xml.h:2 plugins_weather_skin.xml.h:2
+#: skins_stock_skin.xml.h:2 skins_weather_skin.xml.h:2
 msgid "ADD"
 msgstr ""
 
@@ -8029,6 +8037,7 @@ msgstr ""
 
 #: plugins_news_skin.xml.h:2 skins_news_skin.xml.h:2
 #: plugins_stock_skin.xml.h:2 skins_stock_skin.xml.h:2
+#: plugins_stock_skin.xml.h:3 skins_stock_skin.xml.h:3
 msgid "BROWSER"
 msgstr ""
 
