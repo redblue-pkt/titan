@@ -68,6 +68,7 @@ char* readweather(const char* filename, struct skin* weather, struct skin* listb
 		if(tmp != NULL)
 		{
 			changetext(tmp, fileline);
+			changename(tmp, fileline);
 			if(location == NULL)
 				location = ostrcat(location, fileline, 1, 0);
 		}
@@ -296,6 +297,7 @@ void screenweather()
 	char* tmpstr = NULL, *location = NULL;
 
 	location = readweather(getconfig("weatherfile", NULL), weather, listbox);
+	addscreenrc(weather, listbox);
 
 start:
 
@@ -384,7 +386,6 @@ start:
 		changeweatherpic(day3_icon, node->day3_icon);
 	}
 
-	addscreenrc(weather, listbox);
 	drawscreen(weather, 0);
 
 	while(1)
@@ -400,12 +401,30 @@ start:
 			location = textinput("Location", NULL);
       if(location != NULL)
       {
-				freeweather(node); node = NULL;
-				goto start;
+				struct skin* tmp = addlistbox(weather, listbox, NULL, 1);
+				if(tmp != NULL)
+				{
+					changetext(tmp, location);
+					changename(tmp, location);
+				}
       }
       drawscreen(weather, 0);
-      continue;
+			if(location == NULL)
+				continue;
+			free(location); location = NULL;
     }
+
+		if(rcret == getrcconfigint("rcyellow", NULL))
+		{
+			writeweather(getconfig("weatherfile", listbox);
+			continue;
+		}
+
+		if(listbox->select != NULL && rcret == getrcconfigint("rcgreen", NULL))
+		{
+			delscreennode(weather, listbox->select->name);
+			drawscreen(weather, 0);
+		}
 
 		if(listbox->select != NULL)
 		{
@@ -419,6 +438,38 @@ start:
 	delmarkedscreennodes(weather, 1);
 	freeweather(node); node = NULL;
 	clearscreen(weather);
+}
+
+int writeweather(const char *filename, struct skin* listbox)
+{
+	debug(1000, "in");
+	FILE *fd = NULL;
+	struct skin* node = listbox;
+	int ret = 0;
+
+	fd = fopen(filename, "w");
+	if(fd == NULL)
+	{
+		perr("can't open %s", filename);
+		return 1;
+	}
+
+	while(node != NULL)
+	{
+		if(node->del == 1)
+		{
+			ret = fprintf(fd, "%s\n", node->text);
+			if(ret < 0)
+			{
+				perr("writting file %s", filename);
+			}
+		}
+		node = node->next;
+	}
+
+	fclose(fd);
+	debug(1000, "out");
+	return 0;
 }
 
 #endif

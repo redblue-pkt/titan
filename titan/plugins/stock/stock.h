@@ -61,6 +61,7 @@ char* readstock(const char* filename, struct skin* stock, struct skin* listbox)
 		if(tmp != NULL)
 		{
 			changetext(tmp, fileline);
+			changename(tmp, fileline);
 			if(name == NULL)
 				name = ostrcat(name, fileline, 1, 0);
 		}
@@ -169,6 +170,7 @@ void screenstock()
 	char* tmpstr = NULL, *name = NULL;
 
 	name = readstock(getconfig("stockfile", NULL), stock, listbox);
+	addscreenrc(stock, listbox);
 
 start:
 
@@ -243,7 +245,6 @@ start:
 		free(tmpstr); tmpstr = NULL;
 	}
 
-	addscreenrc(stock, listbox);
 	drawscreen(stock, 0);
 
 	while(1)
@@ -259,12 +260,30 @@ start:
 			name = textinput("Name", NULL);
       if(name != NULL)
       {
-				freestock(node); node = NULL;
-				goto start;
+				struct skin* tmp = addlistbox(stock, listbox, NULL, 1);
+				if(tmp != NULL)
+				{
+					changetext(tmp, location);
+					changename(tmp, location);
+				}
       }
       drawscreen(stock, 0);
-      continue;
+			if(name == NULL)
+				continue;
+			free(name); name = NULL;
     }
+
+		if(rcret == getrcconfigint("rcyellow", NULL))
+		{
+			writestock(getconfig("stockfile", listbox);
+			continue;
+		}
+
+		if(listbox->select != NULL && rcret == getrcconfigint("rcgreen", NULL))
+		{
+			delscreennode(stock, listbox->select->name);
+			drawscreen(stock, 0);
+		}
     
     if(rcret == getrcconfigint("rcgreen", NULL) && node->symbol_lookup_url != NULL)
     {
@@ -299,6 +318,38 @@ start:
 	delmarkedscreennodes(stock, 1);
 	freestock(node); node = NULL;
 	clearscreen(stock);
+}
+
+int writestock(const char *filename, struct skin* listbox)
+{
+	debug(1000, "in");
+	FILE *fd = NULL;
+	struct skin* node = listbox;
+	int ret = 0;
+
+	fd = fopen(filename, "w");
+	if(fd == NULL)
+	{
+		perr("can't open %s", filename);
+		return 1;
+	}
+
+	while(node != NULL)
+	{
+		if(node->del == 1)
+		{
+			ret = fprintf(fd, "%s\n", node->text);
+			if(ret < 0)
+			{
+				perr("writting file %s", filename);
+			}
+		}
+		node = node->next;
+	}
+
+	fclose(fd);
+	debug(1000, "out");
+	return 0;
 }
 
 #endif
