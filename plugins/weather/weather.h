@@ -298,6 +298,12 @@ void screenweather()
 	location = readweather(getconfig("weatherfile", NULL), weather, listbox);
 
 start:
+
+	tmpstr = ostrcat(_("Weather"), " - ", 0, 0);
+	tmpstr = ostrcat(tmpstr, location, 1, 0);
+	changetitle(weather, tmpstr);
+	free(tmpstr); tmpstr = NULL;
+
 	node = getweather(location);
 	free(location); location = NULL;
 
