@@ -24,6 +24,8 @@
 <node name=day3_high parent=box4 posx=5 posy=70 width=340 height=30>
 <node name=day3_condition parent=box4 posx=5 posy=105 width=340 height=30>
 <node name=day3_icon parent=box4 posx=120 posy=170 width=100 height=100>
-<node name=b1 text="SEARCH" halign=center valign=center bordercol=red bordersize=4 bordertype=2 posx=20 posy=570 width=150 height=30/>
+<node name=b1 text="ADD" halign=center valign=center bordercol=red bordersize=4 bordertype=2 posx=20 posy=570 width=150 height=30/>
+<node name=b2 text="DEL" halign=center valign=center bordercol=green bordersize=4 bordertype=2 posx=180 posy=570 width=150 height=30/>
+<node name=b3 text="SAVE" halign=center valign=center bordercol=yellow bordersize=4 bordertype=2 posx=340 posy=570 width=150 height=30/>
 <node name=date halign=right valign=center posx=600 posy=570 width=470 height=30/>
 </screen>
