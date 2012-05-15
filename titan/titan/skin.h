@@ -928,6 +928,8 @@ int readscreen(char *filename, int del, int flag)
 	debug(1000, "in");
 	char *buf = NULL;
 
+	if(filename == NULL) return 1;
+
 	buf = readfiletomem(filename, 1);
 	
 	if(debug_level == 9999)
@@ -2975,7 +2977,7 @@ void drawnode(struct skin* node, int flag)
 	if(node->type & MULTIPROGRESSBAR)
 		drawmultiprogressbar(node);
 	if(node->selectpic != NULL && !(node->type & FILELIST))
-		drawpic(node->selectpic, node->iposx, node->iposy, node->rpicwidth, node->rpicheight, node->iwidth, node->iheight, CENTER, MIDDLE);
+		drawpic(node->selectpic, node->iposx, node->iposy, node->iwidth, node->iheight, node->iwidth, node->iheight, LEFT, TOP);
 	if(node->pic != NULL && !(node->type & FILELIST))
 		drawpic(node->pic, node->iposx, node->iposy, node->rpicwidth, node->rpicheight, node->iwidth, node->iheight, node->halign, node->valign);
 	if(node->input != NULL)
