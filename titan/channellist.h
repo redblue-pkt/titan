@@ -932,9 +932,12 @@ start:
 						moveproviderup(movesel);
 					if(list == MAINBOUQUETLIST)
 					{
-						movemainbouquetup(movesel);
-						while(((struct mainbouquet*)movesel)->next != NULL && ((struct mainbouquet*)movesel)->next->type != status.servicetype)
-							movemainbouquetup(movesel);
+						int ret = movemainbouquetblockup(movesel);
+						if(ret == 99) // wrap
+							listbox->aktline -= (status.moveblockcount);
+						//movemainbouquetup(movesel);
+						//while(((struct mainbouquet*)movesel)->next != NULL && ((struct mainbouquet*)movesel)->next->type != status.servicetype)
+						//	movemainbouquetup(movesel);
 						recalcbouquetnr();
 					}
 					if(list == BOUQUETCHANNEL)
@@ -968,9 +971,15 @@ start:
 						moveproviderdown(movesel);
 					if(list == MAINBOUQUETLIST)
 					{
-						movemainbouquetdown(movesel);
-						while(((struct mainbouquet*)movesel)->prev != NULL && ((struct mainbouquet*)movesel)->prev->type != status.servicetype)
-							movemainbouquetdown(movesel);
+						int ret = movemainbouquetblockdown(movesel);
+						if(ret == 99) // wrap
+						{
+							listbox->aktpage = -1;
+							listbox->aktline = 1;
+						}
+						//movemainbouquetdown(movesel);
+						//while(((struct mainbouquet*)movesel)->prev != NULL && ((struct mainbouquet*)movesel)->prev->type != status.servicetype)
+						//	movemainbouquetdown(movesel);
 						recalcbouquetnr();
 					}
 					if(list == BOUQUETCHANNEL)

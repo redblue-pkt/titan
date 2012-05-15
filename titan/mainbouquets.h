@@ -73,6 +73,81 @@ struct mainbouquet* getlastmainbouquet(struct mainbouquet* node)
 	return prev;
 }
 
+struct channel* getprevmainbouquetbyservicetype(struct mainbouquet* node)
+{
+	struct mainbouquet* prev = NULL;
+
+	if(node == NULL) node = mainbouquet;
+	if(node == NULL) return NULL;
+
+	prev = node->prev;
+	while(prev != NULL && prev->type != status.servicetype)
+		prev = prev->prev;
+	if(prev == NULL)
+	{
+		prev = getlastmainbouquet(mainbouquet);
+		while(prev != NULL && prev->type != status.servicetype)
+			prev = prev->prev;
+	}
+
+	return prev;
+}
+
+struct channel* getnextmainbouquetbyservicetype(struct mainbouquet* node)
+{
+	struct mainbouquet* next = NULL;
+
+	if(node == NULL) node = mainbouquet;
+	if(node == NULL) return NULL;
+
+	next = node->next;
+
+	while(next != NULL && next->type != status.servicetype)
+		next = next->next;
+	if(next == NULL)
+	{
+		next = mainbouquet;
+		while(next != NULL && next->type != status.servicetype)
+			next = next->next;
+	}
+
+	return next;
+}
+
+int movemainbouquetblockdown(struct mainbouquet* node)
+{
+	int i = 0, ret = 0;
+	struct mainbouquet* prev = NULL;
+
+	if(node == NULL || mainbouquet == NULL)
+	{
+		debug(1000, "NULL detect");
+		return 1;
+	}
+
+	for(i = 0; i < status.moveblockcount; i++)
+	{
+		if(node == NULL) break;
+		node = node->next;
+		while(node != NULL && node->type != status.servicetype)
+			node = node->next;
+	}
+
+	for(i = 0; i < status.moveblockcount + 1; i++)
+	{
+		if(node == NULL) break;
+		prev = getprevmainbouquetbyservicetype(node);
+		ret = movemainbouquetdown(node);
+
+		while(node->prev != NULL && node->prev->type != status.servicetype)
+			ret = movemainbouquetdown(node);
+
+		node = prev;
+	}
+
+	return ret;
+}
+
 int movemainbouquetdown(struct mainbouquet* node)
 {
 	struct mainbouquet* prev = NULL, *next = NULL;
@@ -96,7 +171,7 @@ int movemainbouquetdown(struct mainbouquet* node)
 		node->next = mainbouquet;
 		mainbouquet->prev = node;
 		mainbouquet = node;
-		return 0;
+		return 99;
 	}
 
 	//haenge node aus 
@@ -120,6 +195,32 @@ int movemainbouquetdown(struct mainbouquet* node)
 
 	status.writemainbouquet = 1;
 	return 0;
+}
+
+int movemainbouquetblockup(struct mainbouquet* node)
+{
+	int i = 0, ret = 0;
+	struct mainbouquet* next = NULL;
+
+	if(node == NULL || mainbouquet == NULL)
+	{
+		debug(1000, "NULL detect");
+		return 1;
+	}
+
+	for(i = 0; i < status.moveblockcount + 1; i++)
+	{
+		if(node == NULL) break;
+		next = getnextmainbouquetbyservicetype(node);
+		ret = movemainbouquetup(node);
+
+		while(node->next != NULL && node->next->type != status.servicetype)
+			ret = movemainbouquetup(node);
+
+		node = next;
+	}
+
+	return ret;
 }
 
 int movemainbouquetup(struct mainbouquet* node)
@@ -147,7 +248,7 @@ int movemainbouquetup(struct mainbouquet* node)
 		node->next = NULL;
 		last->next = node;
 		node->prev = last;
-		return 0;
+		return 99;
 	}
 
 	//haenge node aus 
