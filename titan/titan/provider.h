@@ -34,6 +34,34 @@ struct provider* getlastprovider(struct provider* node)
 	return prev;
 }
 
+int moveproviderblockdown(struct provider* node)
+{
+	int i = 0, ret = 0;
+	struct provider* prev = NULL;
+
+	if(node == NULL)
+	{
+		debug(1000, "NULL detect");
+		return 1;
+	}
+
+	for(i = 0; i < status.moveblockcount; i++)
+	{
+		if(node == NULL) break;
+		node = node->next;
+	}
+
+	for(i = 0; i < status.moveblockcount + 1; i++)
+	{
+		if(node == NULL) break;
+		prev = node->prev;
+		ret = moveproviderdown(node);
+		node = prev;
+	}
+
+	return ret;
+}
+
 int moveproviderdown(struct provider* node)
 {
 	struct provider* prev = NULL, *next = NULL;
@@ -57,7 +85,7 @@ int moveproviderdown(struct provider* node)
 		node->next = provider;
 		provider->prev = node;
 		provider = node;
-		return 0;
+		return 99;
 	}
 
 	//haenge node aus 
@@ -81,6 +109,28 @@ int moveproviderdown(struct provider* node)
 
 	status.writeprovider = 1;
 	return 0;
+}
+
+int moveproviderblockup(struct provider* node)
+{
+	int i = 0, ret = 0;
+	struct provider* next = NULL;
+
+	if(node == NULL)
+	{
+		debug(1000, "NULL detect");
+		return 1;
+	}
+
+	for(i = 0; i < status.moveblockcount + 1; i++)
+	{
+		if(node == NULL) break;
+		next = node->next;
+		ret = moveproviderup(node);
+		node = next;
+	}
+
+	return ret;
 }
 
 int moveproviderup(struct provider* node)
@@ -108,7 +158,7 @@ int moveproviderup(struct provider* node)
 		node->next = NULL;
 		last->next = node;
 		node->prev = last;
-		return 0;
+		return 99;
 	}
 
 	//haenge node aus 

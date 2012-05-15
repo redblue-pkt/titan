@@ -885,7 +885,7 @@ start:
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
 				drawscreen(channellist, 0);
 			}
-			if(listmode == MVMODE && listbox->select != NULL && movesel != NULL && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL) || rcret == getrcconfigint("rcchup", NULL) || rcret == getrcconfigint("rcchdown", NULL)))
+			if(listmode == MVMODE && listbox->select != NULL && movesel != NULL && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL) || rcret == getrcconfigint("rcchdown", NULL) || rcret == getrcconfigint("rcchup", NULL)))
 			{
 				if(rcret == getrcconfigint("rcchdown", NULL))
 				{
@@ -927,9 +927,19 @@ start:
 						//	movechannelup(movesel);
 					}
 					if(list == SATLIST)
-						movesatup(movesel);
+					{
+						int ret = movesatblockup(movesel);
+						if(ret == 99) // wrap
+							listbox->aktline -= (status.moveblockcount);
+						//movesatup(movesel);
+					}
 					if(list == PROVIDERLIST)
-						moveproviderup(movesel);
+					{
+						int ret = moveproviderblockup(movesel);
+						if(ret == 99) // wrap
+							listbox->aktline -= (status.moveblockcount);
+						//moveproviderup(movesel);
+					}
 					if(list == MAINBOUQUETLIST)
 					{
 						int ret = movemainbouquetblockup(movesel);
@@ -966,9 +976,25 @@ start:
 						//	movechanneldown(movesel);
 					}
 					if(list == SATLIST)
-						movesatdown(movesel);
+					{
+						int ret = movesatblockdown(movesel);
+						if(ret == 99) // wrap
+						{
+							listbox->aktpage = -1;
+							listbox->aktline = 1;
+						}
+						//movesatdown(movesel);
+					}
 					if(list == PROVIDERLIST)
-						moveproviderdown(movesel);
+					{
+						int ret = moveproviderblockdown(movesel);
+						if(ret == 99) // wrap
+						{
+							listbox->aktpage = -1;
+							listbox->aktline = 1;
+						}
+						//moveproviderdown(movesel);
+					}
 					if(list == MAINBOUQUETLIST)
 					{
 						int ret = movemainbouquetblockdown(movesel);

@@ -130,6 +130,34 @@ struct sat* getlastsat(struct sat* node)
 	return prev;
 }
 
+int movesatblockdown(struct sat* node)
+{
+	int i = 0, ret = 0;
+	struct sat* prev = NULL;
+
+	if(node == NULL)
+	{
+		debug(1000, "NULL detect");
+		return 1;
+	}
+
+	for(i = 0; i < status.moveblockcount; i++)
+	{
+		if(node == NULL) break;
+		node = node->next;
+	}
+
+	for(i = 0; i < status.moveblockcount + 1; i++)
+	{
+		if(node == NULL) break;
+		prev = node->prev;
+		ret = movesatdown(node);
+		node = prev;
+	}
+
+	return ret;
+}
+
 int movesatdown(struct sat* node)
 {
 	struct sat* prev = NULL, *next = NULL;
@@ -153,7 +181,7 @@ int movesatdown(struct sat* node)
 		node->next = sat;
 		sat->prev = node;
 		sat = node;
-		return 0;
+		return 99;
 	}
 
 	//haenge node aus 
@@ -177,6 +205,28 @@ int movesatdown(struct sat* node)
 
 	status.writesat = 1;
 	return 0;
+}
+
+int movesatblockup(struct sat* node)
+{
+	int i = 0, ret = 0;
+	struct sat* next = NULL;
+
+	if(node == NULL)
+	{
+		debug(1000, "NULL detect");
+		return 1;
+	}
+
+	for(i = 0; i < status.moveblockcount + 1; i++)
+	{
+		if(node == NULL) break;
+		next = node->next;
+		ret = movesatup(node);
+		node = next;
+	}
+
+	return ret;
 }
 
 int movesatup(struct sat* node)
@@ -204,7 +254,7 @@ int movesatup(struct sat* node)
 		node->next = NULL;
 		last->next = node;
 		node->prev = last;
-		return 0;
+		return 99;
 	}
 
 	//haenge node aus 
