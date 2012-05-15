@@ -939,9 +939,12 @@ start:
 					}
 					if(list == BOUQUETCHANNEL)
 					{
-						movebouquetup(movesel);
-						while(((struct bouquet*)movesel)->next != NULL && ((struct bouquet*)movesel)->next->channel != NULL && ((struct bouquet*)movesel)->next->channel->servicetype != status.servicetype)
-							movebouquetup(movesel);
+						int ret = movebouquetblockup(movesel);
+						if(ret == 99) // wrap
+							listbox->aktline -= (status.moveblockcount);
+						//movebouquetup(movesel);
+						//while(((struct bouquet*)movesel)->next != NULL && ((struct bouquet*)movesel)->next->channel != NULL && ((struct bouquet*)movesel)->next->channel->servicetype != status.servicetype)
+						//	movebouquetup(movesel);
 						recalcbouquetnr();
 					}
 				}
@@ -972,9 +975,15 @@ start:
 					}
 					if(list == BOUQUETCHANNEL)
 					{
-						movebouquetdown(movesel);
-						while(((struct bouquet*)movesel)->prev != NULL && ((struct bouquet*)movesel)->prev->channel != NULL && ((struct bouquet*)movesel)->prev->channel->servicetype != status.servicetype)
-							movebouquetdown(movesel);
+						int ret = movebouquetblockdown(movesel);
+						if(ret == 99) // wrap
+						{
+							listbox->aktpage = -1;
+							listbox->aktline = 1;
+						}
+						//movebouquetdown(movesel);
+						//while(((struct bouquet*)movesel)->prev != NULL && ((struct bouquet*)movesel)->prev->channel != NULL && ((struct bouquet*)movesel)->prev->channel->servicetype != status.servicetype)
+						//	movebouquetdown(movesel);
 						recalcbouquetnr();
 					}
 				}

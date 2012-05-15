@@ -34,6 +34,90 @@ struct bouquet* getlastbouquet(struct bouquet* node)
 	return prev;
 }
 
+struct channel* getprevbouquetbyservicetype(struct bouquet* first, struct bouquet* node)
+{
+	struct bouquet* prev = NULL;
+
+	if(node == NULL) node = first;
+	if(node == NULL) return NULL;
+
+	prev = node->prev;
+	while(prev != NULL && prev->channel != NULL && prev->channel->servicetype != status.servicetype)
+		prev = prev->prev;
+	if(prev == NULL)
+	{
+		prev = getlastbouquet(first);
+		while(prev != NULL && prev->channel != NULL && prev->channel->servicetype != status.servicetype)
+			prev = prev->prev;
+	}
+
+	return prev;
+}
+
+struct channel* getnextbouquetbyservicetype(struct bouquet* first, struct bouquet* node)
+{
+	struct bouquet* next = NULL;
+
+	if(node == NULL) node = first;
+	if(node == NULL) return NULL;
+
+	next = node->next;
+
+	while(next != NULL && next->channel != NULL && next->channel->servicetype != status.servicetype)
+		next = next->next;
+	if(next == NULL)
+	{
+		next = first;
+		while(next != NULL && next->channel != NULL && next->channel->servicetype != status.servicetype)
+			next = next->next;
+	}
+
+	return next;
+}
+
+int movebouquetblockdown(struct bouquet* node)
+{
+	int i = 0, ret = 0;
+	struct bouquet* prev = NULL;
+	struct mainbouquet* mainbouquetnode = NULL;
+
+	mainbouquetnode = getmainbouquetbybouquetpointer(node);
+	if(mainbouquetnode == NULL)
+	{
+		debug(1000, "NULL detect");
+		err("NULL detect");
+		return 1;
+	}
+
+	if(node == NULL)
+	{
+		debug(1000, "NULL detect");
+		return 1;
+	}
+
+	for(i = 0; i < status.moveblockcount; i++)
+	{
+		if(node == NULL) break;
+		node = node->next;
+		while(node->prev != NULL && node->prev->channel != NULL && node->prev->channel->servicetype != status.servicetype)
+			node = node->next;
+	}
+
+	for(i = 0; i < status.moveblockcount + 1; i++)
+	{
+		if(node == NULL) break;
+		prev = getprevbouquetbyservicetype(mainbouquetnode->bouquet, node);
+		ret = movebouquetdown(node);
+
+	while(node->prev != NULL && node->prev->channel != NULL && node->prev->channel->servicetype != status.servicetype)
+			ret = movebouquetdown(node);
+
+		node = prev;
+	}
+
+	return ret;
+}
+
 int movebouquetdown(struct bouquet* node)
 {
 	struct bouquet* prev = NULL, *next = NULL;
@@ -66,7 +150,7 @@ int movebouquetdown(struct bouquet* node)
 		node->next = mainbouquetnode->bouquet;
 		mainbouquetnode->bouquet->prev = node;
 		mainbouquetnode->bouquet = node;
-		return 0;
+		return 99;
 	}
 
 	//haenge node aus 
@@ -90,6 +174,40 @@ int movebouquetdown(struct bouquet* node)
 
 	status.writebouquet = 1;
 	return 0;
+}
+
+int movebouquetblockup(struct bouquet* node)
+{
+	int i = 0, ret = 0;
+	struct bouquet* next = NULL;
+	struct mainbouquet* mainbouquetnode = NULL;
+
+	mainbouquetnode = getmainbouquetbybouquetpointer(node);
+	if(mainbouquetnode == NULL)
+	{
+		debug(1000, "NULL detect");
+		return 1;
+	}
+
+	if(node == NULL)
+	{
+		debug(1000, "NULL detect");
+		return 1;
+	}
+
+	for(i = 0; i < status.moveblockcount + 1; i++)
+	{
+		if(node == NULL) break;
+		next = getnextbouquetbyservicetype(mainbouquetnode->bouquet, node);
+		ret = movebouquetup(node);
+
+		while(node->next != NULL && node->next->channel != NULL && node->next->channel->servicetype != status.servicetype)
+			ret = movebouquetup(node);
+
+		node = next;
+	}
+
+	return ret;
 }
 
 int movebouquetup(struct bouquet* node)
@@ -125,7 +243,7 @@ int movebouquetup(struct bouquet* node)
 		node->next = NULL;
 		last->next = node;
 		node->prev = last;
-		return 0;
+		return 99;
 	}
 
 	//haenge node aus 
