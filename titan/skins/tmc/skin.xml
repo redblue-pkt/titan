@@ -1,4 +1,4 @@
-<screen pic=skin/tmcbg.jpg name=tmcbg posx=0 posy=0 width=1240 height=720>
+<screen pic=skin/tmcbg.jpg name=tmcbg posx=0 posy=0 width=1280 height=720>
 </screen>
 
 <screen pic=skin/tmcsettings.png name=tmcmenu1 posx=170 posy=600 width=150 height=150>
