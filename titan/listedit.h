@@ -111,6 +111,8 @@ int screenlistedit(int list, struct channel* chnode)
 
 	delownerrc(listedit);
 	clearscreen(listedit);
+
+	if(ret == NOMODE) status.moveblockcount = 0;
 	return ret;
 }
 

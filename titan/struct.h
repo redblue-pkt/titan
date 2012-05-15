@@ -1071,6 +1071,8 @@ struct status
 	time_t picmemtimeout;
 	//show not tunable channel hidden (0)) or deaktive (1) in channellist
 	int channellistview;
+	//for blockmove in channellist
+	int moveblockcount;
 } status;
 
 struct fb
