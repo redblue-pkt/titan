@@ -885,15 +885,46 @@ start:
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
 				drawscreen(channellist, 0);
 			}
-			if(listmode == MVMODE && listbox->select != NULL && movesel != NULL && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL)))
+			if(listmode == MVMODE && listbox->select != NULL && movesel != NULL && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL) || rcret == getrcconfigint("rcchup", NULL) || rcret == getrcconfigint("rcchdown", NULL)))
 			{
+				if(rcret == getrcconfigint("rcchdown", NULL))
+				{
+					struct skin* tmp = listbox->select;
+					int i = 0, count = 0;
+					status.moveblockcount++;
+					for(i = 0; i < status.moveblockcount; i++)
+					{
+						tmp = tmp->next;
+						if(tmp == NULL)
+						{
+							status.moveblockcount = count;
+							break;
+						}
+						count++;
+					}
+					if(status.moveblockcount > 10)
+						status.moveblockcount = 10;
+					drawscreen(channellist, 0);
+					continue;
+				}
+				if(rcret == getrcconfigint("rcchup", NULL))
+				{
+					status.moveblockcount--;
+					if(status.moveblockcount < 0)
+						status.moveblockcount = 0;
+					drawscreen(channellist, 0);
+					continue;
+				}
 				if(rcret == getrcconfigint("rcup", NULL))
 				{
 					if(list == ALLCHANNEL)
 					{
-						movechannelup(movesel);
-						while(((struct channel*)movesel)->next != NULL && ((struct channel*)movesel)->next->servicetype != status.servicetype)
-							movechannelup(movesel);
+						int ret = movechannelblockup(movesel);
+						if(ret == 99) // wrap
+							listbox->aktline -= (status.moveblockcount);
+						//movechannelup(movesel);
+						//while(((struct channel*)movesel)->next != NULL && ((struct channel*)movesel)->next->servicetype != status.servicetype)
+						//	movechannelup(movesel);
 					}
 					if(list == SATLIST)
 						movesatup(movesel);
@@ -918,9 +949,15 @@ start:
 				{
 					if(list == ALLCHANNEL)
 					{
-						movechanneldown(movesel);
-						while(((struct channel*)movesel)->prev != NULL && ((struct channel*)movesel)->prev->servicetype != status.servicetype)
-							movechanneldown(movesel);
+						int ret = movechannelblockdown(movesel);
+						if(ret == 99) // wrap
+						{
+							listbox->aktpage = -1;
+							listbox->aktline = 1;
+						}
+						//movechanneldown(movesel);
+						//while(((struct channel*)movesel)->prev != NULL && ((struct channel*)movesel)->prev->servicetype != status.servicetype)
+						//	movechanneldown(movesel);
 					}
 					if(list == SATLIST)
 						movesatdown(movesel);
@@ -1465,6 +1502,7 @@ start:
 	}
 
 end:
+	status.moveblockcount = 0;
 	free(oldtitle);
 	status.markedchannel = NULL;
 	status.markmodus = 0;

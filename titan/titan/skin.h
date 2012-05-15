@@ -3181,9 +3181,9 @@ int calclistbox(struct skin* node)
 			if(child->bgcol == markcol)
 				child->bgcol = child->bordercol;
 		}
-		if(child->bgcol == selcol) //&& status.listboxselecttype == 1)
+		if(child->bgcol == selcol || child->bgcol == markcol) //&& status.listboxselecttype == 1)
 			child->bgcol = child->bordercol;
-		if(child->fontcol == selcol) //&& status.listboxselecttype == 2)
+		if(child->fontcol == selcol || child->fontcol == markcol) //&& status.listboxselecttype == 2)
 			child->fontcol = child->bordercol;
 
 		child = child->next;
@@ -3202,35 +3202,110 @@ int calclistbox(struct skin* node)
 		{
 			found->bordersize = 1;
 			if(status.markmodus > 0)
+			{
 				found->bordercol = markcol;
+				int i = 0;
+				struct skin* tmpskin = found;
+				for(i = 0; i < status.moveblockcount; i++)
+				{
+					tmpskin = tmpskin->next;
+					if(tmpskin != NULL)
+						tmpskin->bordercol = markcol;
+					else
+						break;
+				}
+			}
 			else
 				found->bordercol = selcol;
 		}
 		else if(status.listboxselecttype == 1)
 		{
 			if(found->bgcol != selcol && found->bgcol != markcol)
+			{
 				found->bordercol = found->bgcol;
+				int i = 0;
+				struct skin* tmpskin = found;
+				for(i = 0; i < status.moveblockcount; i++)
+				{
+					tmpskin = tmpskin->next;
+					if(tmpskin != NULL)
+						tmpskin->bordercol = found->bgcol;
+					else
+						break;
+				}
+			}
 			if(status.markmodus > 0)
+			{
 				found->bgcol = markcol;
+				int i = 0;
+				struct skin* tmpskin = found;
+				for(i = 0; i < status.moveblockcount; i++)
+				{
+					tmpskin = tmpskin->next;
+					if(tmpskin != NULL)
+						tmpskin->bgcol = markcol;
+					else
+						break;
+				}
+			}
 			else
 				found->bgcol = selcol;
 		}
 		else if(status.listboxselecttype == 2)
 		{
 			if(found->fontcol != selcol && found->fontcol != markcol)
+			{
 				found->bordercol = found->fontcol;
+				int i = 0;
+				struct skin* tmpskin = found;
+				for(i = 0; i < status.moveblockcount; i++)
+				{
+					tmpskin = tmpskin->next;
+					if(tmpskin != NULL)
+						tmpskin->bordercol = found->fontcol;
+					else
+						break;
+				}
+			}
 			if(status.markmodus > 0)
+			{
 				found->fontcol = markcol;
+				int i = 0;
+				struct skin* tmpskin = found;
+				for(i = 0; i < status.moveblockcount; i++)
+				{
+					tmpskin = tmpskin->next;
+					if(tmpskin != NULL)
+						tmpskin->fontcol = markcol;
+					else
+						break;
+				}
+			}
 			else
 				found->fontcol = selcol;
 		}
 		else if(status.listboxselecttype == 3)
 		{
-			changeselectpic(found, selectpic);
-			if(found->bgcol != markcol)
-				found->bordercol = found->bgcol;
 			if(status.markmodus > 0)
-				found->bgcol = markcol;
+			{
+				found->bordersize = 1;
+				found->bordercol = markcol;
+				int i = 0;
+				struct skin* tmpskin = found;
+				for(i = 0; i < status.moveblockcount; i++)
+				{
+					tmpskin = tmpskin->next;
+					if(tmpskin != NULL)
+					{
+						tmpskin->bordersize = 1;
+						tmpskin->bordercol = markcol;
+					}
+					else
+						break;
+				}
+			}
+			else
+				changeselectpic(found, selectpic);
 		}
 
 		if(node->aktpage == -1)

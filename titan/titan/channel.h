@@ -72,6 +72,81 @@ struct channel* gettmpchannel()
 	return node;
 }
 
+struct channel* getprevchannelbyservicetype(struct channel* node)
+{
+	struct channel* prev = NULL;
+
+	if(node == NULL) node = channel;
+	if(node == NULL) return NULL;
+
+	prev = node->prev;
+	while(prev != NULL && prev->servicetype != status.servicetype)
+		prev = prev->prev;
+	if(prev == NULL)
+	{
+		prev = getlastchannel(channel, 0);
+		while(prev != NULL && prev->servicetype != status.servicetype)
+			prev = prev->prev;
+	}
+
+	return prev;
+}
+
+struct channel* getnextchannelbyservicetype(struct channel* node)
+{
+	struct channel* next = NULL;
+
+	if(node == NULL) node = channel;
+	if(node == NULL) return NULL;
+
+	next = node->next;
+
+	while(next != NULL && next->servicetype != status.servicetype)
+		next = next->next;
+	if(next == NULL)
+	{
+		next = channel;
+		while(next != NULL && next->servicetype != status.servicetype)
+			next = next->next;
+	}
+
+	return next;
+}
+
+int movechannelblockdown(struct channel* node)
+{
+	int i = 0, ret = 0;
+	struct channel* prev = NULL;
+
+	if(node == NULL || channel == NULL)
+	{
+		debug(1000, "NULL detect");
+		return 1;
+	}
+
+	for(i = 0; i < status.moveblockcount; i++)
+	{
+		if(node == NULL) break;
+		node = node->next;
+		while(node != NULL && node->servicetype != status.servicetype)
+			node = node->next;
+	}
+
+	for(i = 0; i < status.moveblockcount + 1; i++)
+	{
+		if(node == NULL) break;
+		prev = getprevchannelbyservicetype(node);
+		ret = movechanneldown(node);
+
+		while(node->prev != NULL && node->prev->servicetype != status.servicetype)
+			ret = movechanneldown(node);
+
+		node = prev;
+	}
+
+	return ret;
+}
+
 int movechanneldown(struct channel* node)
 {
 	struct channel* prev = NULL, *next = NULL;
@@ -94,7 +169,7 @@ int movechanneldown(struct channel* node)
 		channel->prev = node;
 		channel = node;
 		m_unlock(&status.channelmutex, 5);
-		return 0;
+		return 99;
 	}
 
 	//haenge node aus 
@@ -122,6 +197,32 @@ int movechanneldown(struct channel* node)
 	return 0;
 }
 
+int movechannelblockup(struct channel* node)
+{
+	int i = 0, ret = 0;
+	struct channel* next = NULL;
+
+	if(node == NULL || channel == NULL)
+	{
+		debug(1000, "NULL detect");
+		return 1;
+	}
+
+	for(i = 0; i < status.moveblockcount + 1; i++)
+	{
+		if(node == NULL) break;
+		next = getnextchannelbyservicetype(node);
+		ret = movechannelup(node);
+
+		while(node->next != NULL && node->next->servicetype != status.servicetype)
+			ret = movechannelup(node);
+
+		node = next;
+	}
+
+	return ret;
+}
+
 int movechannelup(struct channel* node)
 {
 	struct channel* prev = NULL, *next = NULL, *last = NULL;
@@ -146,7 +247,7 @@ int movechannelup(struct channel* node)
 		last->next = node;
 		node->prev = last;
 		m_unlock(&status.channelmutex, 5);
-		return 0;
+		return 99;
 	}
 
 	//haenge node aus 
