@@ -101,5 +101,6 @@ compile "news" "news" ""
 compile "stock" "stock" ""
 compile "streaminfo" "streaminfo" ""
 compile "tmc" "tmc" ""
+compile "dlna" "dlna" ""
 
 #rm -r networkbrowser/networkbrowser
