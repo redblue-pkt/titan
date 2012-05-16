@@ -477,7 +477,7 @@ void killnet()
 		cmd = ostrcat(cmd, " ", 1, 0);
 		cmd = ostrcat(cmd, "&", 1, 0);
 		system(cmd);
-		free(cmd),cmd = NULL;	
+		free(cmd); cmd = NULL;
 	}
 }
 
