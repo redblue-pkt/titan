@@ -604,7 +604,7 @@ msgstr ""
 #: mc_videoplayer.h:553 channellist.h:825 channellist.h:826 channellist.h:833
 #: channellist.h:838 panel_extensions.h:81 panel_extensions.h:88
 #: panel_extensions.h:94 panel_extensions.h:96 panel_extensions.h:113
-#: global.h:4634 global.h:4645
+#: global.h:4634 global.h:4645 httpdfunc.h:2448
 msgid "OK"
 msgstr ""
 
@@ -734,7 +734,7 @@ msgstr ""
 #: mc_videoplayer.h:553 channellist.h:825 channellist.h:826 channellist.h:833
 #: channellist.h:838 panel_extensions.h:81 panel_extensions.h:88
 #: panel_extensions.h:94 panel_extensions.h:96 panel_extensions.h:113
-#: global.h:4634 global.h:4645
+#: global.h:4634 global.h:4645 httpdfunc.h:2448
 msgid "EXIT"
 msgstr ""
 
