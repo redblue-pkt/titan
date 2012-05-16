@@ -2267,16 +2267,20 @@ char* webrectimersend(char* param, int fmt)
 	
 		loctime = olocaltime(&node->begin);
 		tmpstr = strptime(begin, "%H:%M+%d-%m-%Y", loctime); 
-		if(tmpstr != NULL)
+		if(tmpstr != NULL) {
+			loctime->tm_isdst = -1;
 			node->begin = mktime(loctime);
+		}
 		node->begin -= (node->begin % 60);
 		tmpstr = NULL;
 		free(loctime); loctime = NULL;
 
 		loctime = olocaltime(&node->end);
 		tmpstr = strptime(end, "%H:%M+%d-%m-%Y", loctime); 
-		if(tmpstr != NULL)
+		if(tmpstr != NULL) {
+			loctime->tm_isdst = -1;
 			node->end = mktime(loctime);
+		}
 		node->end -= (node->end % 60);
 		tmpstr = NULL;
 		free(loctime); loctime = NULL;
