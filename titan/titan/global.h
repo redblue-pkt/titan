@@ -298,22 +298,31 @@ char* getcpuid()
 		struct splitstr* ret = NULL;
 		ret = strsplit(tmpstr, ":", &count);
 
-		mac1 = ostrcat(mac1, (&ret[0])->part, 1, 0);
-		mac1 = ostrcat(mac1, (&ret[1])->part, 1, 0);
-		mac1 = ostrcat(mac1, (&ret[2])->part, 1, 0);
-		mac2 = ostrcat(mac2, (&ret[3])->part, 1, 0);
-		mac2 = ostrcat(mac2, (&ret[4])->part, 1, 0);
-		mac2 = ostrcat(mac2, (&ret[5])->part, 1, 0);
+		if(ret != NULL && count == 6)
+		{
+			mac1 = ostrcat(mac1, (&ret[0])->part, 1, 0);
+			mac1 = ostrcat(mac1, (&ret[1])->part, 1, 0);
+			mac1 = ostrcat(mac1, (&ret[2])->part, 1, 0);
+			mac2 = ostrcat(mac2, (&ret[3])->part, 1, 0);
+			mac2 = ostrcat(mac2, (&ret[4])->part, 1, 0);
+			mac2 = ostrcat(mac2, (&ret[5])->part, 1, 0);
+		}
 
 		free(ret); ret = NULL;
 		
-		sscanf(mac1, "%X", &mac1_int);
-		mac1_int = strtol(mac1 , NULL, 16);
-		free(mac1), mac1 = NULL;
+		if(mac1 != NULL)
+		{
+			sscanf(mac1, "%X", &mac1_int);
+			mac1_int = strtol(mac1 , NULL, 16);
+			free(mac1), mac1 = NULL;
+		}
 	
-		sscanf(mac2, "%X", &mac2_int);
-		mac2_int = strtol(mac2 , NULL, 16);
-		free(mac2), mac2 = NULL;
+		if(mac2 != NULL)
+		{
+			sscanf(mac2, "%X", &mac2_int);
+			mac2_int = strtol(mac2 , NULL, 16);
+			free(mac2), mac2 = NULL;
+		}
 
 		free(tmpstr); tmpstr = NULL;
 		free(mac); mac = NULL;
@@ -351,7 +360,7 @@ char* getcpuid()
 				
 		char* serialtmp = NULL;
 		serialtmp = string_newline(command(cmd));
-		free(cmd), cmd = NULL;
+		free(cmd); cmd = NULL;
 
 		serialtmp = string_replace("4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", "AA040127", serialtmp, 1);
 		serialtmp = string_replace("5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662", "", serialtmp, 1);
@@ -361,7 +370,7 @@ char* getcpuid()
 			exit(100);
 		}
 	}
-	free(cmd1), cmd1 = NULL;
+	free(cmd1); cmd1 = NULL;
 	return string_newline(serial);
 }
 
@@ -411,12 +420,13 @@ void checkserial(char* input)
 	ret = strsplit(authfile, "\n", &count);
 	int max = count;
 
-	for( i = 0; i < max; i++){
+	for(i = 0; i < max; i++)
+	{
 		int count1 = 0;
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit((&ret[i])->part, ",", &count1);	
 
-		if(ostrcmp(input, (&ret1[0])->part) == 0)
+		if(ret1 != NULL && ostrcmp(input, (&ret1[0])->part) == 0)
 		{
 			status.security = 1;
 			char* cmd = NULL;
@@ -429,19 +439,19 @@ void checkserial(char* input)
 			cmd = ostrcat(cmd, " ", 1, 0);
 			cmd = ostrcat(cmd, "&", 1, 0);	
 			system(cmd);
-			free(cmd),cmd = NULL;			
+			free(cmd); cmd = NULL;
 			if(!file_exist("/dev/ttyS0") == 1)
 				mknod("/dev/ttyS0", S_IFCHR | 0666, makedev(204, 40));
-			free(ret1),ret1 = NULL;
+			free(ret1); ret1 = NULL;
 			break;
 		}
-		free(ret1),ret1 = NULL;
+		free(ret1); ret1 = NULL;
 	}
 	
 //	if(checkbox("ATEMIO510") == 1)
 		killnet();
 	
-	free(ret),ret = NULL;
+	free(ret); ret = NULL;
 	free(authfile);
 }
 
@@ -4328,7 +4338,7 @@ struct splitstr* strsplit(char *str, char *tok, int* count)
 	struct splitstr *tmparray = NULL;
 	*count = 0;
 
-	if(tok == NULL)
+	if(str == NULL || tok == NULL)
 		return NULL;
 
 	tmpstr = strtok(str, tok);
@@ -4341,6 +4351,7 @@ struct splitstr* strsplit(char *str, char *tok, int* count)
 		(&tmparray[(*count) - 1])->part = tmpstr;
 		tmpstr = strtok(NULL, tok);
 	}
+
 	debug(1000, "out");
 	return tmparray;
 }
