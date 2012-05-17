@@ -935,8 +935,8 @@ struct status
 	char* tmp;
 	// rc filedescriptor
 	int fdrc;
-	// rc filedescriptor for simulating keypress (fifo)
-	int fdrcsim;
+	// rc filedescriptor for tuxtxt
+	int fdrctxt;
 	int writeconfig;
 	int writeownconfig;
 	int writercconfig;
