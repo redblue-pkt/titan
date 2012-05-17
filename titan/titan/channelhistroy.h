@@ -31,17 +31,27 @@ void delchannelhistory(struct channel* chnode)
 
 void addchannelhistory(struct channel* chnode, char* channellist)
 {
-	int i = 0, treffer = 0;
+	int i = 0;
+	struct channel* tmpchannel = NULL;
+	char* tmpstr = NULL;
+
 	if(chnode == NULL || channellist == NULL) return;
 
 	for(i = 0; i < MAXCHANNELHISTORY - 1; i++)
 	{
 		if(channelhistory[i].chnode == chnode)		
-			treffer = 1;
+		{
+			tmpchannel = channelhistory[i].chnode;
+			tmpstr = channelhistory[i].channellist;
+			channelhistory[i].chnode = channelhistory[i + 1].chnode;
+			channelhistory[i].channellist = channelhistory[i + 1].channellist;
+			channelhistory[i + 1].chnode = tmpchannel;
+			channelhistory[i + 1].channellist = tmpstr;
+		}
 	}
 
-	if(treffer == 1) return;
-
+	free(channelhistory[MAXCHANNELHISTORY - 1].channellist);
+	channelhistory[MAXCHANNELHISTORY - 1].channellist = NULL;
 	for(i = MAXCHANNELHISTORY - 1; i > 0 ; i--)
 	{
 		channelhistory[i].chnode = channelhistory[i - 1].chnode;
