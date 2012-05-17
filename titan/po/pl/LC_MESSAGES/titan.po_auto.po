@@ -51,7 +51,7 @@
 #: networkbrowser.h:1204 networkbrowser.h:1208 networkbrowser.h:1212
 #: networkbrowser.h:1216 networkbrowser.h:1242 adjust.h:50 adjust.h:64
 #: adjust.h:68 adjust.h:73 adjust.h:98 adjust.h:129 adjust.h:132 adjust.h:147
-#: adjust.h:151 mc_audioplayer_settings.h:38
+#: adjust.h:151 mc_audioplayer_settings.h:38 dlna.h:249
 msgid "no"
 msgstr ""
 
@@ -114,7 +114,7 @@ msgstr ""
 #: networkbrowser.h:1228 networkbrowser.h:1205 networkbrowser.h:1209
 #: networkbrowser.h:1213 networkbrowser.h:1217 networkbrowser.h:1243
 #: adjust.h:65 adjust.h:74 adjust.h:99 adjust.h:128 adjust.h:133 adjust.h:148
-#: mc_audioplayer_settings.h:39
+#: mc_audioplayer_settings.h:39 dlna.h:250
 msgid "yes"
 msgstr ""
 
@@ -473,6 +473,7 @@ msgstr ""
 #: mc_videoplayer.h:448 mc_videoplayer.h:553 channellist.h:825
 #: channellist.h:826 channellist.h:833 channellist.h:838 panel_extensions.h:96
 #: panel_extensions.h:113 panel_extensions.h:137 global.h:4634 global.h:4645
+#: dlna.h:311 dlna.h:319
 msgid "Message"
 msgstr ""
 
@@ -604,7 +605,7 @@ msgstr ""
 #: mc_videoplayer.h:553 channellist.h:825 channellist.h:826 channellist.h:833
 #: channellist.h:838 panel_extensions.h:81 panel_extensions.h:88
 #: panel_extensions.h:94 panel_extensions.h:96 panel_extensions.h:113
-#: global.h:4634 global.h:4645 httpdfunc.h:2448
+#: global.h:4634 global.h:4645 httpdfunc.h:2448 dlna.h:311 dlna.h:319
 msgid "OK"
 msgstr ""
 
@@ -734,7 +735,7 @@ msgstr ""
 #: mc_videoplayer.h:553 channellist.h:825 channellist.h:826 channellist.h:833
 #: channellist.h:838 panel_extensions.h:81 panel_extensions.h:88
 #: panel_extensions.h:94 panel_extensions.h:96 panel_extensions.h:113
-#: global.h:4634 global.h:4645 httpdfunc.h:2448
+#: global.h:4634 global.h:4645 httpdfunc.h:2448 dlna.h:311 dlna.h:319
 msgid "EXIT"
 msgstr ""
 
@@ -7996,17 +7997,17 @@ msgstr ""
 msgid "COPY"
 msgstr ""
 
-#: dlna.h:307
+#: dlna.h:307 dlna.h:309
 msgid "DLNA started."
 msgstr ""
 
-#: dlna.h:309
+#: dlna.h:309 dlna.h:311
 msgid ""
 "DLNA not started,\n"
 "Please check your config."
 msgstr ""
 
-#: dlna.h:317
+#: dlna.h:317 dlna.h:319
 msgid "DLNA now stopped"
 msgstr ""
 
@@ -8061,31 +8062,35 @@ msgid "PREV"
 msgstr ""
 
 #: plugins_weather_skin.xml.h:1 skins_weather_skin.xml.h:1 weather.h:302
-#: weather.h:304
+#: weather.h:304 weather.h:306
 msgid "Weather"
 msgstr ""
 
 #: weather.h:308 weather.h:326 weather.h:344 weather.h:362 weather.h:314
 #: weather.h:332 weather.h:350 weather.h:368 weather.h:316 weather.h:334
-#: weather.h:352 weather.h:370
+#: weather.h:352 weather.h:370 weather.h:318 weather.h:336 weather.h:354
+#: weather.h:372
 msgid "Day: "
 msgstr ""
 
 #: weather.h:312 weather.h:330 weather.h:348 weather.h:366 weather.h:318
 #: weather.h:336 weather.h:354 weather.h:372 weather.h:320 weather.h:338
-#: weather.h:356 weather.h:374
+#: weather.h:356 weather.h:374 weather.h:322 weather.h:340 weather.h:358
+#: weather.h:376
 msgid "Lowest temp: "
 msgstr ""
 
 #: weather.h:316 weather.h:334 weather.h:352 weather.h:370 weather.h:322
 #: weather.h:340 weather.h:358 weather.h:376 weather.h:324 weather.h:342
-#: weather.h:360 weather.h:378
+#: weather.h:360 weather.h:378 weather.h:326 weather.h:344 weather.h:362
+#: weather.h:380
 msgid "Highest temp: "
 msgstr ""
 
 #: weather.h:320 weather.h:338 weather.h:356 weather.h:374 weather.h:326
 #: weather.h:344 weather.h:362 weather.h:380 weather.h:328 weather.h:346
-#: weather.h:364 weather.h:382
+#: weather.h:364 weather.h:382 weather.h:330 weather.h:348 weather.h:366
+#: weather.h:384
 msgid "Condition: "
 msgstr ""
 
@@ -8136,66 +8141,67 @@ msgid ""
 msgstr ""
 
 #: plugins_stock_skin.xml.h:1 skins_stock_skin.xml.h:1 stock.h:175 stock.h:177
+#: stock.h:179
 msgid "Stock"
 msgstr ""
 
-#: stock.h:179 stock.h:185 stock.h:187
+#: stock.h:179 stock.h:185 stock.h:187 stock.h:189
 msgid "Company: "
 msgstr ""
 
-#: stock.h:183 stock.h:189 stock.h:191
+#: stock.h:183 stock.h:189 stock.h:191 stock.h:193
 msgid "Exchange: "
 msgstr ""
 
-#: stock.h:187 stock.h:193 stock.h:195
+#: stock.h:187 stock.h:193 stock.h:195 stock.h:197
 msgid "Exchange closing: "
 msgstr ""
 
-#: stock.h:191 stock.h:197 stock.h:199
+#: stock.h:191 stock.h:197 stock.h:199 stock.h:201
 msgid "Currency: "
 msgstr ""
 
-#: stock.h:195 stock.h:201 stock.h:203
+#: stock.h:195 stock.h:201 stock.h:203 stock.h:205
 msgid "Last: "
 msgstr ""
 
-#: stock.h:199 stock.h:205 stock.h:207
+#: stock.h:199 stock.h:205 stock.h:207 stock.h:209
 msgid "High: "
 msgstr ""
 
-#: stock.h:203 stock.h:209 stock.h:211
+#: stock.h:203 stock.h:209 stock.h:211 stock.h:213
 msgid "Low: "
 msgstr ""
 
-#: stock.h:207 stock.h:213 stock.h:215
+#: stock.h:207 stock.h:213 stock.h:215 stock.h:217
 msgid "Volume: "
 msgstr ""
 
-#: stock.h:211 stock.h:217 stock.h:219
+#: stock.h:211 stock.h:217 stock.h:219 stock.h:221
 msgid "Avg volume: "
 msgstr ""
 
-#: stock.h:215 stock.h:221 stock.h:223
+#: stock.h:215 stock.h:221 stock.h:223 stock.h:225
 msgid "Market cap: "
 msgstr ""
 
-#: stock.h:219 stock.h:225 stock.h:227
+#: stock.h:219 stock.h:225 stock.h:227 stock.h:229
 msgid "Open: "
 msgstr ""
 
-#: stock.h:223 stock.h:229 stock.h:231
+#: stock.h:223 stock.h:229 stock.h:231 stock.h:233
 msgid "Close: "
 msgstr ""
 
-#: stock.h:227 stock.h:233 stock.h:235
+#: stock.h:227 stock.h:233 stock.h:235 stock.h:237
 msgid "Change: "
 msgstr ""
 
-#: stock.h:231 stock.h:237 stock.h:239
+#: stock.h:231 stock.h:237 stock.h:239 stock.h:241
 msgid "Change in %: "
 msgstr ""
 
-#: stock.h:235 stock.h:241 stock.h:243
+#: stock.h:235 stock.h:241 stock.h:243 stock.h:245
 msgid "Trade time: "
 msgstr ""
 
