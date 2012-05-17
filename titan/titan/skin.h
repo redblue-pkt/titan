@@ -1565,6 +1565,7 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 			}
 			if((py * width * 4) + (width * 8) >= accelfb->varfbsize)
 			{
+				py++;
 				if(scaleheight > 0)
 				{
 					float tmp = (float)height / (float)scaleheight;
@@ -1572,21 +1573,17 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 					{
 						tmp = (float)py / tmp;
 						blitscale(posx, nposy, width, py, scalewidth, (int)(tmp + 0.5), 0);
-						nposy += tmp;
+						nposy += (int)(tmp + 0.5);
 					}
 				}
 				py = -1;
 			}
 		} 
 		//blit the rest
-		if(scaleheight > 0 && py > 0)
+		if(scaleheight > 0 && py > -1)
 		{
-			float tmp = (float)height / (float)scaleheight;
-			if(tmp > 0)
-			{
-				tmp = (float)py / tmp;
-				blitscale(posx, nposy, width, py, scalewidth, (int)(tmp + 0.5), 0);
-			}
+			int tmp = scaleheight - nposy;
+			blitscale(posx, nposy, width, py, scalewidth, tmp, 0);
 		}
 		m_unlock(&status.accelfbmutex, 16);
 	}
