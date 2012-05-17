@@ -484,7 +484,7 @@ char* strutf8(struct transponder* tpnode, char *data, int len, int table, int fr
 
 	if(tpnode != NULL && tpnode->encoding == 2)
 		twochar = 1;
-	else if(flag == 0 && data[0] > 31) return data;
+	//else if(flag == 0 && data[0] > 31) return data;
 
 	res = malloc(MINMALLOC);
 	if(res == NULL)
