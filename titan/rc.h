@@ -1,19 +1,66 @@
 #ifndef RC_H
 #define RC_H
 
-int openrcsim()
+int sendtuxtxt(int code)
 {
-	status.fdrcsim = -1;
-
-	mkfifo("/tmp/rcsimpipe", 0666);
-	status.fdrcsim = open("/tmp/rcsimpipe", O_RDWR);
-	if(status.fdrcsim < 0)
+	int rc;
+    
+	if((rc = open("/tmp/block.tmp", O_RDONLY)) >= 0)
 	{
-		perr("open or create /tmp/rcsimpipe");
-		return 1;
+		close(rc);
+        
+		if(status.fdrctxt <= 0)
+		{
+			struct sockaddr_un vAddr;
+			vAddr.sun_family = AF_UNIX;
+			strcpy(vAddr.sun_path, "/tmp/rc.socket");
+			status.fdrctxt = socket(PF_UNIX, SOCK_STREAM, 0);
+        
+			if(status.fdrctxt <= 0)
+			{
+				err("open tuxtxt rc socket");
+				return 1;
+			};
+
+			if(connect(status.fdrctxt, (struct sockaddr *)&vAddr, sizeof(vAddr)) !=0)
+			{
+				close(status.fdrctxt);
+				status.fdrctxt = -1;
+				err("connect to tuxtxt rc socket");
+				return 1;
+			}
+		}
+        
+		if(status.fdrctxt > 0)
+		{
+			char* tmpstr = malloc(8);
+			if(tmpstr != NULL)
+			{
+				sprintf(tmpstr, "%08d", code);
+
+				if(write(status.fdrctxt, tmpstr, 8) <= 0)
+				{
+					err("forwarding to rc socket");
+					close(status.fdrctxt);
+					status.fdrctxt = -1;
+					free(tmpstr); tmpstr = NULL;
+					return 1;
+				}
+			}
+			free(tmpstr); tmpstr = NULL;
+		}
+		else
+		{
+			err("forwarding to rc socket");
+		}
+		return 0;
 	}
 
-	closeonexec(status.fdrcsim);
+	if(status.fdrctxt != -1)
+	{
+		close(status.fdrctxt);
+		status.fdrctxt = -1;
+	}
 	return 0;
 }
 
@@ -123,20 +170,20 @@ int writerc(int keycode)
 	struct timeval akttime;
 
 	gettimeofday(&akttime, 0);
-	
+	sendtuxtxt(keycode);
+
 	rcdata.time = akttime;
 	rcdata.type = EV_KEY;
 	rcdata.code = keycode;
 	rcdata.value = 1;
 	write(status.fdrc, &rcdata, sizeof(rcdata));
-	
+
 	rcdata.time = akttime;
 	rcdata.type = EV_KEY;
 	rcdata.code = keycode;
 	rcdata.value = 0;
-
-	//return write(status.fdrcsim, &rcdata, sizeof(rcdata));
-	return write(status.fdrc, &rcdata, sizeof(rcdata));
+	
+	return  write(status.fdrc, &rcdata, sizeof(rcdata));
 }
 
 int flushrc(unsigned int timeout)
@@ -167,8 +214,8 @@ int flushrc(unsigned int timeout)
 			len = TEMP_FAILURE_RETRY(read(status.fdrc, &rcdata, sizeof(struct input_event)));
 		}
 	}
-  
-  return 0;
+
+	return 0;
 }
 
 int waitrc(struct skin* owner, unsigned int timeout, int flag)
@@ -195,12 +242,11 @@ int waitrc(struct skin* owner, unsigned int timeout, int flag)
 		tv.tv_usec = rest * 1000;
 		FD_ZERO(&rfds);
 		FD_SET(status.fdrc, &rfds);
-		FD_SET(status.fdrcsim, &rfds);
 
 		if(fromthread == 0) status.sec = 0;
 		if((fromthread == 0 && status.rckey == 0) || fromthread == 1)
 		{
-			ret = TEMP_FAILURE_RETRY(select(status.fdrcsim + 1, &rfds, NULL, NULL, &tv));
+			ret = TEMP_FAILURE_RETRY(select(status.fdrc + 1, &rfds, NULL, NULL, &tv));
 			if(status.rcowner != NULL && status.rcowner != owner)
 			{
 				usleep(100000);
@@ -213,8 +259,6 @@ int waitrc(struct skin* owner, unsigned int timeout, int flag)
 		{
 			if(FD_ISSET(status.fdrc, &rfds))
 				len = TEMP_FAILURE_RETRY(read(status.fdrc, &rcdata, sizeof(struct input_event)));
-			if(FD_ISSET(status.fdrcsim, &rfds))
-				len = TEMP_FAILURE_RETRY(read(status.fdrcsim, &rcdata, sizeof(struct input_event)));
 
 			if(rcdata.type != EV_KEY)
 			{

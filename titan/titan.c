@@ -558,12 +558,6 @@ int main(int argc, char *argv[])
 		tmpstr = ostrcat(tmpstr, _("Error: open rc device !!"), 1, 0);
 		goto starterror;
 	}
-	ret = openrcsim();
-	if(ret != 0)
-	{
-		tmpstr = ostrcat(tmpstr, _("Error: open rcsim device !!"), 1, 0);
-		goto starterror;
-	}
 
 	if(fegetdev() < 1)
 	{
