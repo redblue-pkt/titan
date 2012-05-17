@@ -1,6 +1,8 @@
 #ifndef DLNA_H
 #define DLNA_H
 
+extern struct inetwork* inetwork;
+
 struct dlna
 {
 	char* interface;

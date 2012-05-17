@@ -181,6 +181,8 @@ struct channel* createchannel(char* name, unsigned long transponderid, int provi
 void delchannelbytransponder(unsigned long transponderid);
 struct channel* gettmpchannel();
 int delchannel(int serviceid, unsigned long transponderid, int flag);
+int movechanneldown(struct channel* node);
+int movechannelup(struct channel* node);
 
 //transponder.h
 struct transponder* gettransponder(unsigned long transponderid);
@@ -192,10 +194,14 @@ void deltransponder(struct transponder* tpnode);
 int writesat(const char *filename);
 void delsat(char *name);
 struct sat* getsatbyorbitalpos(int orbitalpos);
+int movesatdown(struct sat* node);
+int movesatup(struct sat* node);
 
 //provider.h
 int writeprovider(const char *filename);
 void delprovidernotused(struct provider* node);
+int moveproviderdown(struct provider* node);
+int moveproviderup(struct provider* node);
 
 //httpd.h
 void httpdthreadfunc(struct stimerthread* timernode);
@@ -310,6 +316,7 @@ void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* fil
 
 //plugin.h
 struct skin* getplugin(char* pluginname);
+int loadplugin();
 
 //listbox.h
 int setlistboxselection(struct skin* listbox, char* childname);
@@ -331,6 +338,7 @@ struct clist* addownconfigscreenqtmp(char *key, struct skin *node);
 struct clist* addownconfigscreentmpcheck(char *key, struct skin *node, char* check);
 int writeownconfigtmp();
 void delownconfigtmpall();
+struct clist* addownconfig(char *key, char *value);
 
 //infobar.h
 void fillinfobar();
@@ -433,6 +441,7 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+char* ostrstrcase(char* str, char* sub);
 char* getdevcontent(char* devconfig);
 char* getxmlentry(char *line, char *searchstr);
 void debugstack(void* address, void* address1);
@@ -527,6 +536,8 @@ char* servicecheckret(int ret, int flag);
 int writemainbouquet(const char *filename);
 int writeallbouquet();
 struct mainbouquet* getmainbouquetbybouquetpointer(struct bouquet* bouquetnode);
+int movemainbouquetdown(struct mainbouquet* node);
+int movemainbouquetup(struct mainbouquet* node);
 
 //listbox.h
 struct skin* addlistbox(struct skin* screen, struct skin* listbox, struct skin* last, int del);
@@ -537,6 +548,8 @@ struct bouquet* getbouquetbychannelmain(int serviceid, unsigned long transponder
 void recalcbouquetnr();
 void setbouquetchanneltonullmain(int serviceid, unsigned long transponderid);
 void delbouquet(int serviceid, unsigned long transponderid, struct bouquet** firstnode);
+int movebouquetdown(struct bouquet* node);
+int movebouquetup(struct bouquet* node);
 
 //audiotrack.h
 void screenaudiotrack();

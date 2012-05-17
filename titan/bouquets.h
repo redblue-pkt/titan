@@ -34,7 +34,7 @@ struct bouquet* getlastbouquet(struct bouquet* node)
 	return prev;
 }
 
-struct channel* getprevbouquetbyservicetype(struct bouquet* first, struct bouquet* node)
+struct bouquet* getprevbouquetbyservicetype(struct bouquet* first, struct bouquet* node)
 {
 	struct bouquet* prev = NULL;
 
@@ -54,7 +54,7 @@ struct channel* getprevbouquetbyservicetype(struct bouquet* first, struct bouque
 	return prev;
 }
 
-struct channel* getnextbouquetbyservicetype(struct bouquet* first, struct bouquet* node)
+struct bouquet* getnextbouquetbyservicetype(struct bouquet* first, struct bouquet* node)
 {
 	struct bouquet* next = NULL;
 

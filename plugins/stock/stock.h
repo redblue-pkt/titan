@@ -23,6 +23,8 @@ struct stock
 	char* trade_timestamp;
 };
 
+int writestock(const char *filename, struct skin* listbox);
+
 char* readstock(const char* filename, struct skin* stock, struct skin* listbox)
 {
 	debug(1000, "in");
