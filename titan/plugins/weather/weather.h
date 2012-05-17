@@ -30,6 +30,8 @@ struct weather
 	char* day3_icon;
 };
 
+int writeweather(const char *filename, struct skin* listbox);
+
 char* readweather(const char* filename, struct skin* weather, struct skin* listbox)
 {
 	debug(1000, "in");
