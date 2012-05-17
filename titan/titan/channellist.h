@@ -512,6 +512,14 @@ void changechanneltitle(struct skin* channellist, struct skin* listbox, int list
 	}
 }
 
+void addscreenrcchannellist(struct skin* channellist, struct skin* listbox)
+{
+	addscreenrc(channellist, listbox);
+
+	delrc(getrcconfigint("rcchup", NULL), channellist, listbox);
+	delrc(getrcconfigint("rcchdown", NULL), channellist, listbox);
+}
+
 //flag 1: called from recordtimer screen
 //flag 2: rcfav (open bouquetlist)
 //flag 3: edit modus
@@ -635,7 +643,7 @@ start:
 		drawscreen(channellist, 0);
 		status.screencalc = 0;
 	}
-	addscreenrc(channellist, listbox);
+	addscreenrcchannellist(channellist, listbox);
 
 	if(flag == 3)
 	{
@@ -723,7 +731,7 @@ start:
 					delrc(getrcconfigint("rcleft", NULL), channellist, listbox);
 				}
 				else
-					addscreenrc(channellist, listbox);
+					addscreenrcchannellist(channellist, listbox);
 				if(listmode == NOMODE && flag == 3) flag = 0;
 
 				if(nochanneltitle == 0) changechanneltitle(channellist, listbox, listmode, &oldtitle, &oldfontcol, &oldbgcol);
@@ -1504,7 +1512,7 @@ start:
 				delrc(getrcconfigint("rcleft", NULL), channellist, listbox);
 			}
 			else
-				addscreenrc(channellist, listbox);
+				addscreenrcchannellist(channellist, listbox);
 
 			if(nochanneltitle == 0) changechanneltitle(channellist, listbox, listmode, &oldtitle, &oldfontcol, &oldbgcol);
 
