@@ -104,46 +104,50 @@ int readdlna(const char* filename, struct dlna* node)
 		tmpstr = ostrstrcase(fileline, "media_dir=");
 		if(tmpstr != NULL && node->dir1 == NULL)
 		{
-			tmpstr += 5;
+			tmpstr += 10;
 			if(tmpstr != NULL)
 			{
 				tmpstr[strlen(tmpstr)] = '\0';
 				free(node->dir1);
 				node->dir1 = ostrcat(tmpstr, NULL, 0, 0);
-			}				
+			}
+			continue;
 		}
 		tmpstr = ostrstrcase(fileline, "media_dir=");
 		if(tmpstr != NULL && node->dir2 == NULL)
 		{
-			tmpstr += 5;
+			tmpstr += 10;
 			if(tmpstr != NULL)
 			{
 				tmpstr[strlen(tmpstr)] = '\0';
 				free(node->dir2);
 				node->dir2 = ostrcat(tmpstr, NULL, 0, 0);
-			}				
+			}
+			continue;
 		}
 		tmpstr = ostrstrcase(fileline, "media_dir=");
 		if(tmpstr != NULL && node->dir3 == NULL)
 		{
-			tmpstr += 5;
+			tmpstr += 10;
 			if(tmpstr != NULL)
 			{
 				tmpstr[strlen(tmpstr)] = '\0';
 				free(node->dir3);
 				node->dir3 = ostrcat(tmpstr, NULL, 0, 0);
-			}				
+			}
+			continue;
 		}
 		tmpstr = ostrstrcase(fileline, "media_dir=");
 		if(tmpstr != NULL && node->dir4 == NULL)
 		{
-			tmpstr += 5;
+			tmpstr += 10;
 			if(tmpstr != NULL)
 			{
 				tmpstr[strlen(tmpstr)] = '\0';
 				free(node->dir4);
 				node->dir4 = ostrcat(tmpstr, NULL, 0, 0);
-			}				
+			}
+			continue;
 		}
 	}
 
@@ -168,7 +172,7 @@ int writedlna(const char* filename, struct dlna* node)
 	if(node->port != NULL)
 	{
 		savesettings = ostrcat(savesettings, "port=", 1, 0);
-		savesettings = ostrcat(savesettings, node->port, 1, 0);
+		savesettings = ostrcat(savesettings, oitoa(atoi(node->port)), 1, 1);
 		savesettings = ostrcat(savesettings, "\n", 1, 0);
 	}
 
@@ -261,7 +265,7 @@ void screendlna()
 	changemask(port, "00000");
 	changeinput(port, node->port);
 	if(port->input != NULL)
-        {
+	{
 		for(i = 0; i < 6 - strlen(port->input); i++)
 			port->input = ostrcat("0", port->input, 0, 1);
 	}
@@ -332,7 +336,7 @@ void screendlna()
 
 				drawscreen(dlna, 0);
 			}
-                }
+		}
 
 	}
 
