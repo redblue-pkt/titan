@@ -51,7 +51,7 @@
 #: networkbrowser.h:1204 networkbrowser.h:1208 networkbrowser.h:1212
 #: networkbrowser.h:1216 networkbrowser.h:1242 adjust.h:50 adjust.h:64
 #: adjust.h:68 adjust.h:73 adjust.h:98 adjust.h:129 adjust.h:132 adjust.h:147
-#: adjust.h:151 mc_audioplayer_settings.h:38 dlna.h:249
+#: adjust.h:151 mc_audioplayer_settings.h:38 dlna.h:249 dlna.h:253
 msgid "no"
 msgstr ""
 
@@ -114,7 +114,7 @@ msgstr ""
 #: networkbrowser.h:1228 networkbrowser.h:1205 networkbrowser.h:1209
 #: networkbrowser.h:1213 networkbrowser.h:1217 networkbrowser.h:1243
 #: adjust.h:65 adjust.h:74 adjust.h:99 adjust.h:128 adjust.h:133 adjust.h:148
-#: mc_audioplayer_settings.h:39 dlna.h:250
+#: mc_audioplayer_settings.h:39 dlna.h:250 dlna.h:254
 msgid "yes"
 msgstr ""
 
@@ -473,7 +473,7 @@ msgstr ""
 #: mc_videoplayer.h:448 mc_videoplayer.h:553 channellist.h:825
 #: channellist.h:826 channellist.h:833 channellist.h:838 panel_extensions.h:96
 #: panel_extensions.h:113 panel_extensions.h:137 global.h:4634 global.h:4645
-#: dlna.h:311 dlna.h:319 channellist.h:846
+#: dlna.h:311 dlna.h:319 channellist.h:846 dlna.h:313 dlna.h:315 dlna.h:323
 msgid "Message"
 msgstr ""
 
@@ -606,7 +606,7 @@ msgstr ""
 #: channellist.h:838 panel_extensions.h:81 panel_extensions.h:88
 #: panel_extensions.h:94 panel_extensions.h:96 panel_extensions.h:113
 #: global.h:4634 global.h:4645 httpdfunc.h:2448 dlna.h:311 dlna.h:319
-#: channellist.h:846
+#: channellist.h:846 dlna.h:313 dlna.h:315 dlna.h:323
 msgid "OK"
 msgstr ""
 
@@ -737,7 +737,7 @@ msgstr ""
 #: channellist.h:838 panel_extensions.h:81 panel_extensions.h:88
 #: panel_extensions.h:94 panel_extensions.h:96 panel_extensions.h:113
 #: global.h:4634 global.h:4645 httpdfunc.h:2448 dlna.h:311 dlna.h:319
-#: channellist.h:846
+#: channellist.h:846 dlna.h:313 dlna.h:315 dlna.h:323
 msgid "EXIT"
 msgstr ""
 
@@ -8002,17 +8002,17 @@ msgstr ""
 msgid "COPY"
 msgstr ""
 
-#: dlna.h:307 dlna.h:309
+#: dlna.h:307 dlna.h:309 dlna.h:313
 msgid "DLNA started."
 msgstr ""
 
-#: dlna.h:309 dlna.h:311
+#: dlna.h:309 dlna.h:311 dlna.h:315
 msgid ""
 "DLNA not started,\n"
 "Please check your config."
 msgstr ""
 
-#: dlna.h:317 dlna.h:319
+#: dlna.h:317 dlna.h:319 dlna.h:323
 msgid "DLNA now stopped"
 msgstr ""
 
