@@ -12,6 +12,7 @@
 struct mostzap* createmostzap(int serviceid, unsigned long transponderid);
 int writemostzap(const char *filename);
 int delmostzap(int serviceid, unsigned long transponderid, int flag);
+void mostzaptobouquet(struct mainbouquet* mbouquet);
 
 //thumb.h
 char* checkthumb(char* path, char* file);
