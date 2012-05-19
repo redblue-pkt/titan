@@ -68,6 +68,8 @@ void screenchannelhistory()
 	struct skin* chistory = getscreen("channelhistory");
 	struct skin* listbox = getscreennode(chistory, "listbox");
 	struct skin* tmp = NULL;
+	struct epg* epgnode = NULL;
+	char* tmpstr = NULL;
 
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
@@ -80,6 +82,16 @@ void screenchannelhistory()
 			if(tmp != NULL)
 			{
 				changetext(tmp, channelhistory[i].chnode->name);
+
+				epgnode = getepgakt(channelhistory[i].chnode);
+				if(epgnode != NULL)
+				{
+					tmpstr = ostrcat(tmpstr, " - ", 1, 0);
+					tmpstr = ostrcat(tmpstr, epgnode->title, 1, 0);
+					changetext2(tmp, tmpstr);
+					free(tmpstr); tmpstr = NULL;
+				}
+
 				tmp->handle = (char*)channelhistory[i].chnode;
 				tmp->handle1 = channelhistory[i].channellist;
 			}
