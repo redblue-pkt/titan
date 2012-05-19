@@ -1007,6 +1007,9 @@ int writeallconfig(int flag)
 		if(status.writeconfig == 1)
 			if(writeconfig(status.configfile) != 0)
 				ret = 1;
+		if(status.writemostzap == 1)
+			if(writemostzap(getconfig("mostzapfile", NULL)) != 0)
+				ret = 1;
 	}
 	if((flag == 0 || flag == 2) && time(NULL) > 1072224000) // 01.01.2004
 	{

@@ -454,7 +454,11 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 	{
 		//add channel to history
 		if(status.aktservice->type == CHANNEL)
+		{
 			addchannelhistory(chnode, status.aktservice->channellist);
+			if(status.servicetype == 0) //only for tv
+				createmostzap(chnode->serviceid, chnode->transponderid);
+		}
 		festatus = fewait(fenode);
 		if(festatus != 0)
 		{

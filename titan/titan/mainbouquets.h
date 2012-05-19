@@ -426,8 +426,11 @@ int readallbouquet()
 
 	while(node != NULL)
 	{
-		if(readbouquet(node->filename, &node->bouquet, node->type) != 0)
-			ret = 1;
+		if(ostrcmp(node->filename, "0") != 0)
+		{
+			if(readbouquet(node->filename, &node->bouquet, node->type) != 0)
+				ret = 1;
+		}
 		node = node->next;
 	}
 	
@@ -455,6 +458,25 @@ struct mainbouquet* getmainbouquetbybouquetpointer(struct bouquet* bouquetnode)
 		node = node->next;
 	}
 	debug(100, "mainbouquet not found (%p)", bouquetnode);
+	return NULL;
+}
+
+struct mainbouquet* getmainbouquetbyfilename(char *filename)
+{
+	debug(1000, "in");
+	struct mainbouquet *node = mainbouquet;
+
+	while(node != NULL)
+	{
+		if(ostrcmp(node->filename, filename) == 0)
+		{
+			debug(1000, "out");
+			return node;
+		}
+
+		node = node->next;
+	}
+	debug(100, "mainbouquet not found (%s)", filename);
 	return NULL;
 }
 
@@ -579,8 +601,11 @@ int writeallbouquet()
 
 	while(node != NULL)
 	{
-		if(writebouquet(node->filename, node->bouquet) != 0)
-			ret = 1;
+		if(ostrcmp(node->filename, "0") != 0)
+		{
+			if(writebouquet(node->filename, node->bouquet) != 0)
+				ret = 1;
+		}
 		node = node->next;
 	}
 
