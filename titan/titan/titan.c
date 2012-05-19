@@ -40,7 +40,7 @@ struct hdd* hdd = NULL;
 struct queue* queue = NULL;
 struct caservice caservice[MAXCASERVICE];
 struct channelhistory channelhistory[MAXCHANNELHISTORY];
-struct mostzap* mostzap = NULL;
+//struct mostzap* mostzap = NULL;
 
 #ifdef SH4
 #include "sh4port.h"
@@ -178,7 +178,7 @@ struct mostzap* mostzap = NULL;
 #include "rguid.h"
 #include "channelhistroy.h"
 #include "thumb.h"
-#include "mostzap.h"
+//#include "mostzap.h"
 //#include "cardreader.h"
 //#include "sci.h"
 
@@ -322,7 +322,7 @@ void oshutdown(int exitcode, int flag)
 		deinitfont();
 
 		freerectimer();
-		freemostzap();
+//		freemostzap();
 		freechannelhistory();
 		freesat();
 		freeallplaylist();
@@ -605,7 +605,7 @@ int main(int argc, char *argv[])
 	ret = readprovider(getconfig("providerfile", NULL));
 	ret = readchannel(getconfig("channelfile", NULL));
 	ret = readtransponderencoding(getconfig("transponderencodingfile", NULL));
-	ret = readmostzap(getconfig("mostzapfile", NULL));
+//	ret = readmostzap(getconfig("mostzapfile", NULL));
 
 	status.aktservice = addservice(NULL);
 	status.lastservice = addservice(NULL);
