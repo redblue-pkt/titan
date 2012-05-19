@@ -380,7 +380,7 @@ void screenplaylist(struct mainplaylist* mplaylist)
 	struct playlist* movesel = NULL;
 	char* ret = NULL;
 	char* tmpstr = NULL;
-	int count = 0;
+	//int count = 0;
 
 	if(mplaylist == NULL) return;
 start:
