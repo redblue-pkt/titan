@@ -94,12 +94,18 @@ void showallchannel(struct skin* channellist, struct skin* listbox, int mode)
 	}
 }
 
-void showbouquetchannel(struct skin* channellist, struct skin* listbox, struct skin* channeltimeline, struct bouquet* firstbouquet, int mode)
+void showbouquetchannel(struct skin* channellist, struct skin* listbox, struct skin* channeltimeline, struct bouquet* firstbouquet, struct mainbouquet* mbouquet, int mode)
 {
 	struct skin* chnode = NULL;
 	struct bouquet* tmpbouquet = firstbouquet;
 	char* tmpstr = NULL, *tmpnr = NULL;
 	long long deaktivcol = convertcol("deaktivcol");
+
+	if(mbouquet != NULL && ostrcmp(mbouquet->filename, "0") == 0)
+	{
+		mostzaptobouquet(mbouquet);
+		tmpbouquet = mbouquet->bouquet;
+	}
 
 	while(tmpbouquet != NULL)
 	{
@@ -410,7 +416,7 @@ void recalclist(int list, void* aktlist, int listmode, struct skin* channellist,
 	if(list == AZCHANNEL)
 		showazchannel(channellist, listbox, (int)aktlist, listmode);
 	if(list == BOUQUETCHANNEL)
-		showbouquetchannel(channellist, listbox, channeltimeline, ((struct mainbouquet*)aktlist)->bouquet, listmode);
+		showbouquetchannel(channellist, listbox, channeltimeline, ((struct mainbouquet*)aktlist)->bouquet, (struct mainbouquet*)aktlist, listmode);
 	if(list == MAINBOUQUETLIST)
 		showmainbouquet(channellist, listbox);
 	if(list == SATLIST)
@@ -581,7 +587,7 @@ start:
 			free(tmpstr1); tmpstr1 = NULL;
 			list = BOUQUETCHANNEL;
 			aktlist = (void*)mainbouquetnode;
-			showbouquetchannel(channellist, listbox, channeltimeline, mainbouquetnode->bouquet, flag);
+			showbouquetchannel(channellist, listbox, channeltimeline, mainbouquetnode->bouquet, mainbouquetnode, flag);
 			selectchannel(listbox, 0, 0);
 		}
 	}
@@ -779,7 +785,7 @@ start:
 					{
 						delmarkedscreennodes(channellist, 1);
 						delmarkedscreennodes(channellist, 2);
-						showbouquetchannel(channellist, listbox, channeltimeline, ((struct mainbouquet*)aktlist)->bouquet, 1);
+						showbouquetchannel(channellist, listbox, channeltimeline, ((struct mainbouquet*)aktlist)->bouquet, (struct mainbouquet*)aktlist, 1);
 					}
 				}
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
@@ -1272,7 +1278,7 @@ start:
 					addconfigtmp("rchannellist", tmpstr);
 				free(tmpstr); tmpstr = NULL;
 				aktlist = listbox->select->handle1;
-				showbouquetchannel(channellist, listbox, channeltimeline, (struct bouquet*)listbox->select->handle, flag);
+				showbouquetchannel(channellist, listbox, channeltimeline, (struct bouquet*)listbox->select->handle, (struct mainbouquet*)aktlist, flag);
 				delmarkedscreennodes(channellist, 2);
 				selectchannel(listbox, 0, 0);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);

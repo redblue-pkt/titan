@@ -178,6 +178,15 @@ enum {DEACTIVE, ACTIVE, INPAUSE, ERROR};
 enum {FUNCTEXT, FUNCPIC, FUNCPROGRESS};
 enum {CASESSIONCREATE, CASESSIONBUSY, CASESSIONDEL, CASESSIONSTART, CASESSIONFINAL, CARESFIRSTENQUIRY, CARESCHANGE, CARESENQUIRY, CADATETIMESEND, CAMMIIDLE, CAMMIDISPLAYREPLAY, CAMMIFAKEOK};
 
+struct mostzap
+{
+	int serviceid;
+	unsigned long transponderid;
+	int count;
+	struct mostzap* prev;
+	struct mostzap* next;
+};
+
 struct menulist
 {
 	char* name;
@@ -951,6 +960,7 @@ struct status
 	int writesat;
 	int writerectimer;
 	int writeepgscanlist;
+	int writemostzap;
 	// 1 mute is aktiv
 	int mute;
 	// 1 spinner is aktiv

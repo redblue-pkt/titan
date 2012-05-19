@@ -275,7 +275,7 @@ int showallgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, str
 	return treffer;
 }
 
-int showbouquetgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, struct skin* timeline, struct bouquet* firstbouquet, int zoom, time_t akttime, struct channel* aktchannel, int marklast)
+int showbouquetgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox, struct skin* listbox, struct skin* timeline, struct bouquet* firstbouquet, struct mainbouquet* mbouquet, int zoom, time_t akttime, struct channel* aktchannel, int marklast)
 {
 	int treffer = 0, aktline = 0;
 	struct skin* chnode = NULL, *chnode1 = NULL;
@@ -294,6 +294,12 @@ int showbouquetgmepgchannel(struct skin* gmultiepg, struct skin* channellistbox,
 
 	if(gmultiepg != NULL) delmarkedscreennodes(gmultiepg, 1);
 	if(listbox != NULL) listbox->aktline = 1;
+
+	if(mbouquet != NULL && ostrcmp(mbouquet->filename, "0") == 0)
+	{
+		mostzaptobouquet(mbouquet);
+		tmpbouquet = mbouquet->bouquet;
+	}
 
 	while(tmpbouquet != NULL)
 	{
@@ -529,7 +535,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			free(tmpstr1); tmpstr1 = NULL;
 			list = BOUQUETCHANNEL;
 			aktlist = (void*)mainbouquetnode;
-			showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, timeline, mainbouquetnode->bouquet, zoom, akttime, aktchannel, 0);
+			showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, timeline, mainbouquetnode->bouquet, mainbouquetnode, zoom, akttime, aktchannel, 0);
 			selectchannelgmepg(channellistbox);
 		}
 	}
@@ -679,7 +685,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 
 			if(list == BOUQUETCHANNEL)
 			{
-				if(showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, timeline, ((struct mainbouquet*)aktlist)->bouquet, zoom, akttime, aktchannel, 0) == 0)
+				if(showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, timeline, ((struct mainbouquet*)aktlist)->bouquet, (struct mainbouquet*)aktlist, zoom, akttime, aktchannel, 0) == 0)
 				{
 					if(tmptime == 0)
 						akttime -= addtime;
@@ -688,7 +694,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 					if(akttime < starttime)
 						akttime = starttime;
 					else
-						showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, timeline, ((struct mainbouquet*)aktlist)->bouquet, zoom, akttime, aktchannel, 0);
+						showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, timeline, ((struct mainbouquet*)aktlist)->bouquet, (struct mainbouquet*)aktlist, zoom, akttime, aktchannel, 0);
 				}
 			}
 			else if(list == ALLCHANNEL)
@@ -767,7 +773,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			if(rcret == getrcconfigint("rcleft", NULL)) marklast = 1;
 
 			if(list == BOUQUETCHANNEL)
-				showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, timeline, ((struct mainbouquet*)aktlist)->bouquet, zoom, akttime, aktchannel, marklast);
+				showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, timeline, ((struct mainbouquet*)aktlist)->bouquet, (struct mainbouquet*)aktlist, zoom, akttime, aktchannel, marklast);
 			else if(list == ALLCHANNEL)
 				showallgmepgchannel(gmultiepg, channellistbox, listbox, timeline, zoom, akttime, aktchannel, marklast);
 			else if(list == AZCHANNEL)

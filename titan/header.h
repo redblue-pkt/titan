@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//mostzap.h
+struct mostzap* createmostzap(int serviceid, unsigned long transponderid);
+
 //thumb.h
 char* checkthumb(char* path, char* file);
 

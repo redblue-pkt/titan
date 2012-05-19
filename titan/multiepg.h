@@ -117,7 +117,7 @@ int showallmepgchannel(struct skin* multiepg, struct skin* listbox, int epgnr)
 	return treffer;
 }
 
-int showbouquetmepgchannel(struct skin* multiepg, struct skin* listbox, struct bouquet* firstbouquet, int epgnr)
+int showbouquetmepgchannel(struct skin* multiepg, struct skin* listbox, struct bouquet* firstbouquet, struct mainbouquet* mbouquet, int epgnr)
 {
 	int treffer = 0;
 	struct skin* chnode = NULL;
@@ -134,6 +134,12 @@ int showbouquetmepgchannel(struct skin* multiepg, struct skin* listbox, struct b
 	{
 		err("no mem");
 		return 1;
+	}
+
+	if(mbouquet != NULL && ostrcmp(mbouquet->filename, "0") == 0)
+	{
+		mostzaptobouquet(mbouquet);
+		tmpbouquet = mbouquet->bouquet;
 	}
 
 	while(tmpbouquet != NULL)
@@ -437,7 +443,7 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			free(tmpstr1); tmpstr1 = NULL;
 			list = BOUQUETCHANNEL;
 			aktlist = (void*)mainbouquetnode;
-			showbouquetmepgchannel(multiepg, listbox, mainbouquetnode->bouquet, epgnr);
+			showbouquetmepgchannel(multiepg, listbox, mainbouquetnode->bouquet, mainbouquetnode, epgnr);
 			selectchannelmepg(listbox);
 		}
 	}
@@ -569,13 +575,13 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 
 			if(list == BOUQUETCHANNEL)
 			{
-				if(showbouquetmepgchannel(multiepg, listbox, ((struct mainbouquet*)aktlist)->bouquet, epgnr) == 0)
+				if(showbouquetmepgchannel(multiepg, listbox, ((struct mainbouquet*)aktlist)->bouquet, (struct mainbouquet*)aktlist, epgnr) == 0)
 				{
 					epgnr--;
 					if(epgnr < 0)
 						epgnr = 0;
 					else
-						showbouquetmepgchannel(multiepg, listbox, ((struct mainbouquet*)aktlist)->bouquet, epgnr);
+						showbouquetmepgchannel(multiepg, listbox, ((struct mainbouquet*)aktlist)->bouquet, (struct mainbouquet*)aktlist, epgnr);
 
 				}
 			}
@@ -633,7 +639,7 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			if(epgnr < 0) epgnr = 0;
 
 			if(list == BOUQUETCHANNEL)
-				showbouquetmepgchannel(multiepg, listbox, ((struct mainbouquet*)aktlist)->bouquet, epgnr);
+				showbouquetmepgchannel(multiepg, listbox, ((struct mainbouquet*)aktlist)->bouquet, (struct mainbouquet*)aktlist, epgnr);
 			else if(list == ALLCHANNEL)
 				showallmepgchannel(multiepg, listbox, epgnr);
 			else if(list == AZCHANNEL)
