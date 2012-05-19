@@ -136,6 +136,27 @@ echo "[titan] netsurf done"
 echo "[titan]--------------------------------------------------------"
 
 echo "[titan]--------------------------------------------------------"
+echo "[titan] minidlna"
+echo "[titan]--------------------------------------------------------"
+
+cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
+echo make minidlna
+make minidlna
+cd "$HOME"/flashimg/source.titan/titan
+
+if [ ! -e "$HOME"/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk/minidlna-1.0.24/minidlna ]; then
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] minidlna building error !!!"
+	echo "[titan] check your src"
+	echo "[titan]--------------------------------------------------------"
+	exit 1
+fi
+
+echo "[titan]--------------------------------------------------------"
+echo "[titan] minidlna done"
+echo "[titan]--------------------------------------------------------"
+
+echo "[titan]--------------------------------------------------------"
 echo "[titan] libipkg"
 echo "[titan]--------------------------------------------------------"
 cd "$HOME"/flashimg/source.titan/libipkg
@@ -323,6 +344,8 @@ cp -a "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/framebuffer/res/config/m
 
 cp -a "$HOME"/flashimg/source.titan/libipkg/.libs/libipkg.so.0.0.0 "$HOME"/flashimg/BUILD/titan/lib/libipkg.so.0
 cp -a "$HOME"/flashimg/source.titan/libipkg/.libs/ipkg-cl "$HOME"/flashimg/BUILD/titan/usr/bin/ipkg
+
+cp "$HOME"/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk/minidlna-1.0.24/minidlna "$HOME"/flashimg/BUILD/titan/usr/bin
 
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type d -name "*.svn"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.h"`
