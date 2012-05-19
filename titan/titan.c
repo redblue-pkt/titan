@@ -322,7 +322,7 @@ void oshutdown(int exitcode, int flag)
 		deinitfont();
 
 		freerectimer();
-		freemostzap();
+		freemostzap(0);
 		freechannelhistory();
 		freesat();
 		freeallplaylist();
