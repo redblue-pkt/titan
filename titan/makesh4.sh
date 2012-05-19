@@ -147,6 +147,7 @@ echo make minidlna
 make minidlna
 cd "$HOME"/flashimg/source.titan/titan
 
+ls -al "$HOME"/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/sbin/minidlna
 if [ ! -e "$HOME"/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/sbin/minidlna ]; then
 	echo "[titan]--------------------------------------------------------"
 	echo "[titan] minidlna building error !!!"
