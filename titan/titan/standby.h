@@ -22,7 +22,7 @@ void screenstandby()
 	{
 		while(dvbnode != NULL)
 		{
-			if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == QPSK && dvbnode->felock > 0)
+			if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == FE_QPSK && dvbnode->felock > 0)
 				voltoff = 0;
 			dvbnode = dvbnode->next;
 		}
@@ -31,7 +31,7 @@ void screenstandby()
 			dvbnode = dvbdev;
 			while(dvbnode != NULL)
 			{
-				if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == QPSK && dvbnode->felock == 0)
+				if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == FE_QPSK && dvbnode->felock == 0)
 					fesetvoltage(dvbnode, SEC_VOLTAGE_OFF, 15);
 				dvbnode = dvbnode->next;
 			}

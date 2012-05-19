@@ -10,6 +10,8 @@
 
 //mostzap.h
 struct mostzap* createmostzap(int serviceid, unsigned long transponderid);
+int writemostzap(const char *filename);
+int delmostzap(int serviceid, unsigned long transponderid, int flag);
 
 //thumb.h
 char* checkthumb(char* path, char* file);
