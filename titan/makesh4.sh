@@ -140,6 +140,9 @@ echo "[titan] minidlna"
 echo "[titan]--------------------------------------------------------"
 
 cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
+echo make minidlna-clean
+make minidlna-clean
+rm .deps/minidlna.do_*
 echo make minidlna
 make minidlna
 cd "$HOME"/flashimg/source.titan/titan
