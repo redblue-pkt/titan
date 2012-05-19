@@ -417,7 +417,9 @@ void checkserial(char* input)
 	int i;
 	struct splitstr* ret = NULL;
 
-	ret = strsplit(authfile, "\n", &count);
+	if(authfile != NULL)
+		ret = strsplit(authfile, "\n", &count);
+
 	int max = count;
 
 	for(i = 0; i < max; i++)
