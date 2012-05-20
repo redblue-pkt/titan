@@ -142,7 +142,7 @@ void screenopera(char* url)
 
 	unlink(CONTROL_PIPE_W);
 	unlink(CONTROL_PIPE_R);
-	unlink(RC_TITAN);
+	//unlink(RC_TITAN);
 
 	mkfifo(CONTROL_PIPE_W, 0666);
 	mkfifo(CONTROL_PIPE_R, 0666);
