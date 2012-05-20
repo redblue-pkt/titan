@@ -3,40 +3,6 @@
 
 extern struct hdd* hdd;
 
-//flag 0: from start
-//flag 1: from menu
-void screenpanel_extensions_check(int flag)
-{
-	int i = 0, treffer = 0;
-	struct hdd *node = NULL;
-	char* tmpstr = NULL, *tmpstr1 = NULL;
-
-	if(status.security == 1)
-	{
-		addhddall();
-		node = hdd;
-
-		while(node != NULL)
-		{
-			tmpstr = ostrcat("/autofs/", node->device, 0, 0);
-			tmpstr1 = get_ipk_tmplistinstall(tmpstr);
-			free(tmpstr1); tmpstr1 = NULL;
-
-			if(tmpstr1 != NULL)
-			{
-				treffer = 1;
-				screenpanel_extensions(2, tmpstr);
-			}
-
-			free(tmpstr); tmpstr = NULL;
-			node = node->next;
-		}
-
-		if(flag == 1 && treffer == 0)
-			textbox(_("Ipk Install Info"), _("No IPK fount on media !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-	}
-}
-
 void screenpanel_extensions(int mode, char* path)
 {
 	char* tmpstr = NULL, *tmpinfo = NULL;
@@ -96,7 +62,7 @@ void screenpanel_extensions(int mode, char* path)
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
 		freeipkg();
-		if(mbox != NULL) screenpanel_extensions(0);
+		if(mbox != NULL) screenpanel_extensions(0, path);
 	}
 	else if(mode == 1)
 	{
@@ -137,7 +103,7 @@ void screenpanel_extensions(int mode, char* path)
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
 		freeipkg();
-		if(mbox != NULL) screenpanel_extensions(1);
+		if(mbox != NULL) screenpanel_extensions(1, path);
 	}
 	else if(mode == 2)
 	{
@@ -185,7 +151,41 @@ void screenpanel_extensions(int mode, char* path)
 		freemenulist(mlist, 1); mlist = NULL;
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
-		if(mbox != NULL) screenpanel_extensions(2);
+		if(mbox != NULL) screenpanel_extensions(2, path);
+	}
+}
+
+//flag 0: from start
+//flag 1: from menu
+void screenpanel_extensions_check(int flag)
+{
+	int treffer = 0;
+	struct hdd *node = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL;
+
+	if(status.security == 1)
+	{
+		addhddall();
+		node = hdd;
+
+		while(node != NULL)
+		{
+			tmpstr = ostrcat("/autofs/", node->device, 0, 0);
+			tmpstr1 = get_ipk_tmplistinstall(tmpstr);
+			free(tmpstr1); tmpstr1 = NULL;
+
+			if(tmpstr1 != NULL)
+			{
+				treffer = 1;
+				screenpanel_extensions(2, tmpstr);
+			}
+
+			free(tmpstr); tmpstr = NULL;
+			node = node->next;
+		}
+
+		if(flag == 1 && treffer == 0)
+			textbox(_("Ipk Install Info"), _("No IPK fount on media !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 	}
 }
 
