@@ -51,7 +51,7 @@ void operareceiverthread(struct stimerthread* self)
 	}
 
 	fcntl(control_w_fd, F_SETFL, fcntl(control_w_fd, F_GETFL) | O_NONBLOCK);
-	closeonexec(control_w_fd);
+	//closeonexec(control_w_fd);
 
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
@@ -157,7 +157,7 @@ void screenopera(char* url)
 
 	operarcthread_ok = 0;
 	operareceiverthread_ok = 0;
-	//addtimer(&operarcthread, START, 10, 1, NULL, NULL, NULL);
+	addtimer(&operarcthread, START, 10, 1, NULL, NULL, NULL);
 	operareceiver = addtimer(&operareceiverthread, START, 10, 1, NULL, NULL, NULL);
 
 	//wait for threads
