@@ -120,7 +120,7 @@ int openrc()
 	{
 		while(status.fdrc < 0 && i < 3)
 		{
-  			status.fdrc = open(rcdev, O_RDWR);
+			status.fdrc = open(rcdev, O_RDWR);
 			if(status.fdrc < 0) sleep(1);
 			i++;
 		}
