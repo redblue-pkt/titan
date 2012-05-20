@@ -258,6 +258,7 @@ void screenopera(char* url)
 	sockclose(&operarcconnfd);
 	close(control_r_fd);
 
+	unlink(RC_TITAN);
 	sleep(5);
 
 	debug(788, "kill opera");
