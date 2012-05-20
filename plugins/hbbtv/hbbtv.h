@@ -8,6 +8,8 @@
 #define OPERA_ROOT "/var/swap/titanplugins/hbbtv/opera"
 #define OPERA_BIN OPERA_ROOT"/bin/opera"
 
+extern struct skin* skin;
+
 void operareceivercb(char* cmd);
 
 int operarcsockfd = -1;
@@ -112,6 +114,8 @@ void screenopera(char* url)
 	char* tmpstr = NULL;
 	void* threadstatus;
 	struct stimerthread* operareceiver = NULL;
+
+	drawscreen(skin, 0);
 
 	debug(788, "step 1, set env");
 	//setenv("DFBARGS", "pixelformat=ARGB,no-cursor,bg-none,no-linux-input-grab,no-vt", 1);
@@ -227,12 +231,12 @@ void screenopera(char* url)
 	close(control_r_fd);
 	free(operaplayurl); operaplayurl = NULL;
 
-	tmpstr = ostrcat(tmpstr, "killall -9 ", 1, 0);
-	tmpstr = ostrcat(tmpstr, OPERA_BIN, 1, 0);
+	tmpstr = ostrcat(tmpstr, "killall -9 opera", 1, 0);
 	system(tmpstr);
 	free(tmpstr); tmpstr = NULL;
 
 	writesys("/proc/cpu/alignment", "1", 0);
+	drawscreen(skin, 0);
 }
 
 void operareceivercb(char* cmd)
