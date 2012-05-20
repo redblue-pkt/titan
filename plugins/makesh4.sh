@@ -102,6 +102,6 @@ compile "stock" "stock" ""
 compile "streaminfo" "streaminfo" ""
 compile "tmc" "tmc" ""
 compile "dlna" "dlna" ""
-compile "opera" "opera" ""
+compile "hbbtv" "hbbtv" ""
 
 #rm -r networkbrowser/networkbrowser
