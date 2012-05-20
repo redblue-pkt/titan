@@ -5,7 +5,7 @@
 #define CONTROL_PIPE_W "/tmp/"NAME"_control_w"
 #define CONTROL_PIPE_R "/tmp/"NAME"_control_r"
 #define RC_TITAN "/tmp/rc_enigma2"
-#define OPERA_ROOT "/usr/lib/enigma2/python/Plugins/Extensions/HbbTv2/opera"
+#define OPERA_ROOT "/var/swap/titanplugins/hbbtv/opera"
 #define OPERA_BIN OPERA_ROOT"/bin/opera"
 
 void operareceivercb(char* cmd);
