@@ -151,8 +151,8 @@ void screenopera(char* url)
 	debug(788, "step 2, start opera");
 	writesys("/proc/cpu/alignment", "0", 0);
 
-	addtimer(&operarcthread, START, 1000, 1, NULL, NULL, NULL);
-	operareceiver = addtimer(&operareceiverthread, START, 1000, 1, NULL, NULL, NULL);
+	addtimer(&operarcthread, START, 10, 1, NULL, NULL, NULL);
+	operareceiver = addtimer(&operareceiverthread, START, 10, 1, NULL, NULL, NULL);
 
 	//TODO change working dir to OPERA_ROOT
 	tmpstr = ostrcat(tmpstr, OPERA_BIN, 1, 0);
