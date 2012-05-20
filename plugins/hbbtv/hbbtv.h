@@ -16,7 +16,7 @@ int operarcsockfd = -1;
 int operarcconnfd = -1;
 int control_r_fd = -1;
 int operarcthread_ok = 0;
-int operareceiverthread = 0;
+int operareceiverthread_ok = 0;
 char* operaplayurl = NULL;
 
 void operarcthread()
@@ -162,7 +162,7 @@ void screenopera(char* url)
 
 	//wait for threads
 	int count = 0;
-	while(operarcthread_ok == 0 || operareceiverthread == 0)
+	while(operarcthread_ok == 0 || operareceiverthread_ok == 0)
 	{
 		usleep(100000);
 		count++;
