@@ -168,7 +168,8 @@ void screenopera(char* url)
 
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
-			operasendkey("ESC");
+			//operasendkey("ESC");
+			operasendkey("BACK");
 			break;
 		}
 			//TODO
@@ -245,8 +246,8 @@ void screenopera(char* url)
 
 	writesys("/proc/cpu/alignment", "1", 0);
 
-	setvideomode("720p50", 0);
-	changefbresolution("720p50");
+	//setvideomode("720p50", 0);
+	//changefbresolution("720p50");
 
 	drawscreen(skin, 0);
 }
