@@ -21,10 +21,14 @@ void operarcthread()
 {
 	int ret = 0;
 
+	debug(788, "opera create rc socket");
+
 	ret = sockcreate(&operarcsockfd, RC_TITAN, 1);
 	if(ret != 0) return;
 
+	debug(788, "opera wait for rc accept");
 	operarcconnfd = sockaccept(&operarcsockfd, 0);
+	debug(788, "opera got rc accept");
 }
 
 void operareceiverthread(struct stimerthread* self)
@@ -104,7 +108,7 @@ void operasendkey(char* rckey)
 		socksend(&operarcconnfd, (unsigned char*)rckey, strlen(rckey), -1);
 	else
 	{
-		err("no opera rc context");
+		err("no opera rc context sockfd=%d", operarcconnfd);
 	}
 }
 
