@@ -345,7 +345,6 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 	free(ret); ret = NULL;
 	free(tmpstr); tmpstr = NULL;
 
-	debug(130, "src: %s", src);
 	debug(130, "ip: %s", ip);
 	debug(130, "path: %s", path);
 	
