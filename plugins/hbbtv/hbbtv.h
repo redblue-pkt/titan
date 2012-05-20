@@ -166,7 +166,7 @@ void screenopera(char* url)
 	{
 		usleep(100000);
 		count++;
-		if(count > 10) break;
+		if(count > 20) break;
 	}
 
 	//TODO change working dir to OPERA_ROOT
