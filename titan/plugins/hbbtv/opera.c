@@ -26,5 +26,5 @@ void deinit(void)
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {
-	screenopera("http://www.orf.at");
+	screenopera("http://itv.mit-xperts.com/hbbtvtest/index.php");
 }
