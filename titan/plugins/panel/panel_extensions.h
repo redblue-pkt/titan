@@ -3,9 +3,11 @@
 
 extern struct hdd* hdd;
 
-void screenpanel_extensions_check()
+//flag 0: from start
+//flag 1: from menu
+void screenpanel_extensions_check(int flag)
 {
-	int i = 0;
+	int i = 0, treffer = 0;
 	struct hdd *node = NULL;
 	char* tmpstr = NULL, *tmpstr1 = NULL;
 
@@ -21,11 +23,17 @@ void screenpanel_extensions_check()
 			free(tmpstr1); tmpstr1 = NULL;
 
 			if(tmpstr1 != NULL)
+			{
+				treffer = 1;
 				screenpanel_extensions(2, tmpstr);
+			}
 
 			free(tmpstr); tmpstr = NULL;
 			node = node->next;
 		}
+
+		if(flag == 1 && treffer == 0)
+			textbox(_("Ipk Install Info"), _("No IPK fount on media !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 	}
 }
 

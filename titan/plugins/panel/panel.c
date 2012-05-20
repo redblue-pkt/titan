@@ -49,7 +49,7 @@ void init(void)
 	free(tmpstr); tmpstr = NULL;
 	debug(10, "Panel Plugin loadet !!!");
 
-	screenpanel_extensions_check ();
+	screenpanel_extensions_check(0);
 }
 
 //wird beim entladen ausgefuehrt
