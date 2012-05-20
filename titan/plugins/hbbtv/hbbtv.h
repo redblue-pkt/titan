@@ -155,6 +155,8 @@ void screenopera(char* url)
 	operareceiver = addtimer(&operareceiverthread, START, 10, 1, NULL, NULL, NULL);
 
 	//TODO change working dir to OPERA_ROOT
+	chdir(OPERA_ROOT);
+
 	tmpstr = ostrcat(tmpstr, OPERA_BIN, 1, 0);
 	tmpstr = ostrcat(tmpstr, " -u ", 1, 0);
 	tmpstr = ostrcat(tmpstr, url, 1, 0);
@@ -169,7 +171,6 @@ void screenopera(char* url)
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
 			//operasendkey("ESC");
-			operasendkey("BACK");
 			break;
 		}
 			//TODO
@@ -240,9 +241,9 @@ void screenopera(char* url)
 	close(control_r_fd);
 	free(operaplayurl); operaplayurl = NULL;
 
-	//tmpstr = ostrcat(tmpstr, "killall -9 opera", 1, 0);
-	//system(tmpstr);
-	//free(tmpstr); tmpstr = NULL;
+	tmpstr = ostrcat(tmpstr, "killall opera", 1, 0);
+	system(tmpstr);
+	free(tmpstr); tmpstr = NULL;
 
 	writesys("/proc/cpu/alignment", "1", 0);
 
