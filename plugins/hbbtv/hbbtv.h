@@ -244,6 +244,10 @@ void screenopera(char* url)
 	//free(tmpstr); tmpstr = NULL;
 
 	writesys("/proc/cpu/alignment", "1", 0);
+
+	setvideomode("720p50", 0);
+	changefbresolution("720p50");
+
 	drawscreen(skin, 0);
 }
 
