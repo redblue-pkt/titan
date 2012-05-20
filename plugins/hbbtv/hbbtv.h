@@ -162,49 +162,49 @@ void screenopera(char* url)
 	{
 		rcret = waitrc(NULL, 0, 0);
 
-		if(getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
 			//TODO
 			//operasendkey("BACK");
-		else if(getrcconfigint("rcred", NULL))
+		else if(rcret == getrcconfigint("rcred", NULL))
 			operasendkey("RED");
-		else if(getrcconfigint("rcgreen", NULL))
+		else if(rcret == getrcconfigint("rcgreen", NULL))
 			operasendkey("GREEN");
-		else if(getrcconfigint("rcyellow", NULL))
+		else if(rcret == getrcconfigint("rcyellow", NULL))
 			operasendkey("YELLOW");
-		else if(getrcconfigint("rcblue", NULL))
+		else if(rcret == getrcconfigint("rcblue", NULL))
 			operasendkey("BLUE");
-		else if(getrcconfigint("rcok", NULL))
+		else if(rcret == getrcconfigint("rcok", NULL))
 		{
 			operasendkey("OK");
 			operasendkey("ENTER");
 		}
-		else if(getrcconfigint("rcup", NULL))
+		else if(rcret == getrcconfigint("rcup", NULL))
 			operasendkey("UP");
-		else if(getrcconfigint("rcdown", NULL))
+		else if(rcret == getrcconfigint("rcdown", NULL))
 			operasendkey("DOWN");
-		else if(getrcconfigint("rcleft", NULL))
+		else if(rcret == getrcconfigint("rcleft", NULL))
 			operasendkey("LEFT");
-		else if(getrcconfigint("rcright", NULL))
+		else if(rcret == getrcconfigint("rcright", NULL))
 			operasendkey("RIGHT");
-		else if(getrcconfigint("rc1", NULL))
+		else if(rcret == getrcconfigint("rc1", NULL))
 			operasendkey("1");
-		else if(getrcconfigint("rc2", NULL))
+		else if(rcret == getrcconfigint("rc2", NULL))
 			operasendkey("2");
-		else if(getrcconfigint("rc3", NULL))
+		else if(rcret == getrcconfigint("rc3", NULL))
 			operasendkey("3");
-		else if(getrcconfigint("rc4", NULL))
+		else if(rcret == getrcconfigint("rc4", NULL))
 			operasendkey("4");
-		else if(getrcconfigint("rc5", NULL))
+		else if(rcret == getrcconfigint("rc5", NULL))
 			operasendkey("5");
-		else if(getrcconfigint("rc6", NULL))
+		else if(rcret == getrcconfigint("rc6", NULL))
 			operasendkey("6");
-		else if(getrcconfigint("rc7", NULL))
+		else if(rcret == getrcconfigint("rc7", NULL))
 			operasendkey("7");
-		else if(getrcconfigint("rc8", NULL))
+		else if(rcret == getrcconfigint("rc8", NULL))
 			operasendkey("8");
-		else if(getrcconfigint("rc9", NULL))
+		else if(rcret == getrcconfigint("rc9", NULL))
 			operasendkey("9");
-		else if(getrcconfigint("rc0", NULL))
+		else if(rcret == getrcconfigint("rc0", NULL))
 			operasendkey("0");
 	}
 
