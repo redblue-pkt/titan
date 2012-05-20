@@ -156,7 +156,7 @@ void screenopera(char* url)
 	writesys("/proc/cpu/alignment", "0", 0);
 
 	operarcthread_ok = 0;
-	operareceiverthread = 0;
+	operareceiverthread_ok = 0;
 	addtimer(&operarcthread, START, 10, 1, NULL, NULL, NULL);
 	operareceiver = addtimer(&operareceiverthread, START, 10, 1, NULL, NULL, NULL);
 
