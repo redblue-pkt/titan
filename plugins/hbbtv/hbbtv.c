@@ -1,11 +1,11 @@
 #include "../titan/struct.h"
 #include "../titan/debug.h"
 #include "../titan/header.h"
-#include "opera.h"
+#include "hbbtv.h"
 
-char pluginname[] = "Opera Browser";
-char plugindesc[] = "Opera Browser";
-char pluginpic[] = "%pluginpath%/opera/plugin.png";
+char pluginname[] = "hbbtv Browser";
+char plugindesc[] = "hbbtv Browser";
+char pluginpic[] = "%pluginpath%/hbbtv/plugin.png";
 
 int pluginaktiv = 0;
 
@@ -13,14 +13,14 @@ int pluginaktiv = 0;
 void init(void)
 {
 	pluginaktiv = 1;
-	debug(10, "Opera Plugin loadet !!!");
+	debug(10, "hbbtv Plugin loadet !!!");
 }
 
 //wird beim entladen ausgefuehrt
 void deinit(void)
 {
 	pluginaktiv = 0;
-	debug(10, "Opera Plugin removed !!!");
+	debug(10, "hbbtv Plugin removed !!!");
 }
 
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
