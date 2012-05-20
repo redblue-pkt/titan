@@ -166,7 +166,11 @@ void screenopera(char* url)
 	{
 		rcret = waitrc(NULL, 0, 0);
 
-		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcexit", NULL))
+		{
+			operasendkey("ESC");
+			break;
+		}
 			//TODO
 			//operasendkey("BACK");
 		else if(rcret == getrcconfigint("rcred", NULL))
@@ -235,9 +239,9 @@ void screenopera(char* url)
 	close(control_r_fd);
 	free(operaplayurl); operaplayurl = NULL;
 
-	tmpstr = ostrcat(tmpstr, "killall -9 opera", 1, 0);
-	system(tmpstr);
-	free(tmpstr); tmpstr = NULL;
+	//tmpstr = ostrcat(tmpstr, "killall -9 opera", 1, 0);
+	//system(tmpstr);
+	//free(tmpstr); tmpstr = NULL;
 
 	writesys("/proc/cpu/alignment", "1", 0);
 	drawscreen(skin, 0);
