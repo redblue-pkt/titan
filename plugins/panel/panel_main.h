@@ -120,11 +120,11 @@ int panel_menucall(struct skin* panel_menuentry)
 	else if(ostrcmp("panel_extensions_menu", panel_menuentry->name) == 0)
 		screenplugin();
 	else if(ostrcmp("panel_extensions_ipkinstall", panel_menuentry->name) == 0)
-		screenpanel_extensions(0);
+		screenpanel_extensions(0, NULL);
 	else if(ostrcmp("panel_extensions_ipkremove", panel_menuentry->name) == 0)
-		screenpanel_extensions(1);
+		screenpanel_extensions(1, NULL);
 	else if(ostrcmp("panel_extensions_tmpipkinstall", panel_menuentry->name) == 0)
-		screenpanel_extensions(2);
+		screenpanel_extensions(2, NULL);
 	else if(ostrcmp("panel_extensions_mediaipkinstall", panel_menuentry->name) == 0)
 		screenpanel_extensions_check(1);
 	else if(ostrcmp("panel_feed", panel_menuentry->name) == 0)
