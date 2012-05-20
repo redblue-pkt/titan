@@ -266,8 +266,8 @@ int dvdstart(char* filename)
 	//change videomode if greater 720
 	if(ostrncmp("1080", tv_videomode, 4) == 0)
 	{
-		setvideomode("720p", 0);
-		changefbresolution("720p");
+		setvideomode("720p50", 0);
+		changefbresolution("720p50");
 	}
 	else 
 	{
