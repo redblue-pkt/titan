@@ -42,7 +42,7 @@ struct mostzap* getmostzap(int serviceid, unsigned long transponderid)
 
 int movemostzapup(struct mostzap* node)
 {
-	struct mostzap* prev = NULL, *next = NULL, *last = NULL;
+	struct mostzap* prev = NULL, *next = NULL;
 
 	if(node == NULL || mostzap == NULL)
 	{
