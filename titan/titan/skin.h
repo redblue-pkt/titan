@@ -1766,7 +1766,7 @@ unsigned char* readpng(const char* filename, unsigned long* width, unsigned long
 	png_init_io(png_ptr, fd);
 	png_set_sig_bytes(png_ptr, 8);
 	png_read_info(png_ptr, info_ptr);
-	png_get_IHDR(png_ptr, info_ptr, (png_uint_32)width, (png_uint_32)height, &bit_depth, &color_type, NULL, NULL, NULL);
+	png_get_IHDR(png_ptr, info_ptr, (png_uint_32*)width, (png_uint_32*)height, &bit_depth, &color_type, NULL, NULL, NULL);
 
 	ret = setjmp(png_jmpbuf(png_ptr));
 	if(ret != 0)
