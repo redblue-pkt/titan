@@ -84,8 +84,8 @@ void operareceiverthread(struct stimerthread* self)
 				ret = read(control_w_fd, &c, 1);
 				if(ret == 1)
 				{
-					*pbuf = c;
 					if(c == '\n') break;
+					*pbuf = c;
 					pbuf++;
 				}
 			}
