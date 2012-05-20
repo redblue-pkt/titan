@@ -15,6 +15,8 @@ void operareceivercb(char* cmd);
 int operarcsockfd = -1;
 int operarcconnfd = -1;
 int control_r_fd = -1;
+int operarcthread_ok = 0;
+int operareceiverthread = 0;
 char* operaplayurl = NULL;
 
 void operarcthread()
@@ -27,6 +29,7 @@ void operarcthread()
 	if(ret != 0) return;
 
 	debug(788, "opera wait for rc accept");
+	operarcthread_ok = 1;
 	operarcconnfd = sockaccept(&operarcsockfd, 0);
 	debug(788, "opera got rc accept");
 }
@@ -60,6 +63,7 @@ void operareceiverthread(struct stimerthread* self)
 
 	debug(788, "opera receive thread start");
 
+	operareceiverthread_ok = 1;
 	while(self->aktion != STOP)
 	{
 		tv.tv_sec = 1;
@@ -151,10 +155,19 @@ void screenopera(char* url)
 	debug(788, "step 2, start opera");
 	writesys("/proc/cpu/alignment", "0", 0);
 
+	operarcthread_ok = 0;
+	operareceiverthread = 0;
 	addtimer(&operarcthread, START, 10, 1, NULL, NULL, NULL);
 	operareceiver = addtimer(&operareceiverthread, START, 10, 1, NULL, NULL, NULL);
 
-	usleep(100000);
+	//wait for threads
+	int count = 0;
+	while(operarcthread_ok == 0 || operareceiverthread == 0)
+	{
+		usleep(100000);
+		count++;
+		if(count > 10) break;
+	}
 
 	//TODO change working dir to OPERA_ROOT
 	chdir(OPERA_ROOT);
