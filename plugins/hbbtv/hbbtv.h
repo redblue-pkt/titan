@@ -28,6 +28,8 @@ void operarcthread()
 	ret = sockcreate(&operarcsockfd, RC_TITAN, 1);
 	if(ret != 0) return;
 
+	closeonexec(operarcsockfd);
+
 	debug(788, "opera wait for rc accept");
 	operarcthread_ok = 1;
 	operarcconnfd = sockaccept(&operarcsockfd, 0);
@@ -51,7 +53,7 @@ void operareceiverthread(struct stimerthread* self)
 	}
 
 	fcntl(control_w_fd, F_SETFL, fcntl(control_w_fd, F_GETFL) | O_NONBLOCK);
-	//closeonexec(control_w_fd);
+	closeonexec(control_w_fd);
 
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
