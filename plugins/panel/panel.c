@@ -48,6 +48,8 @@ void init(void)
 	readscreen(tmpstr, 107, 1);
 	free(tmpstr); tmpstr = NULL;
 	debug(10, "Panel Plugin loadet !!!");
+
+	screenpanel_extensions_check ();
 }
 
 //wird beim entladen ausgefuehrt

@@ -1,8 +1,35 @@
 #ifndef PANEL_EXTENSIONS_H
 #define PANEL_EXTENSIONS_H
 
+extern struct hdd* hdd;
 
-void screenpanel_extensions(int mode)
+void screenpanel_extensions_check()
+{
+	int i = 0;
+	struct hdd *node = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL;
+
+	if(status.security == 1)
+	{
+		addhddall();
+		node = hdd;
+
+		while(node != NULL)
+		{
+			tmpstr = ostrcat("/autofs/", node->device, 0, 0);
+			tmpstr1 = get_ipk_tmplistinstall(tmpstr);
+			free(tmpstr1); tmpstr1 = NULL;
+
+			if(tmpstr1 != NULL)
+				screenpanel_extensions(2, tmpstr);
+
+			free(tmpstr); tmpstr = NULL;
+			node = node->next;
+		}
+	}
+}
+
+void screenpanel_extensions(int mode, char* path)
 {
 	char* tmpstr = NULL, *tmpinfo = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;
@@ -106,7 +133,10 @@ void screenpanel_extensions(int mode)
 	}
 	else if(mode == 2)
 	{
-		tmpstr = get_ipk_tmplistinstall();
+		if(path == NULL)
+			tmpstr = get_ipk_tmplistinstall("/tmp");
+		else
+			tmpstr = get_ipk_tmplistinstall(path);
     
     if(tmpstr == NULL || strlen(tmpstr) == 0)
     {
@@ -130,7 +160,13 @@ void screenpanel_extensions(int mode)
 
 			if(textbox(_("Ipk Tmp Info"), _(tmpinfo), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
 			{
-				char* log = get_ipk_tmpinstall(mbox->name);
+				char* log = NULL;
+
+				if(path == NULL)
+					log = get_ipk_tmpinstall("/tmp", mbox->name);
+				else
+					log = get_ipk_tmpinstall(path, mbox->name);
+
 				if(log == NULL) log = ostrcat("No output found !", NULL, 0, 0);
 				textbox(_("Ipk Tmp Info"), log, "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 				free(log); log = NULL;
