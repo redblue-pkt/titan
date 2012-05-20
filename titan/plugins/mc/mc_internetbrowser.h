@@ -5,7 +5,7 @@ void screenmc_internetbrowser()
 {
 	if(status.security == 1)
 	{
-		if(file_exist("/usr/bin/nsfb"))
+		if(file_exist("/var/swap/bin/nsfb"))
 		{
 //			if(textbox(_("Message"), _("start Internet browser now ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1){	
 				char* tmpstr = NULL;
@@ -16,7 +16,7 @@ void screenmc_internetbrowser()
 				rcret = servicestop(status.aktservice, 1, 0);
 				if(rcret == 1) return;
 	
-				tmpstr = ostrcat("nsfb -f linux ", getconfig("browserhome", NULL), 0, 0);
+				tmpstr = ostrcat("/var/swap/bin/nsfb -f linux ", getconfig("browserhome", NULL), 0, 0);
 				system(tmpstr);
 				free(tmpstr);
 				setosdtransparent(getskinconfigint("osdtransparent", NULL));

@@ -209,7 +209,7 @@ start:
 		if(mbox->param != NULL)
 		{
       status.sec = 0; //deaktivate spinner
-			tmpstr = ostrcat("nsfb -f linux ", mbox->param, 0, 0);
+			tmpstr = ostrcat("/var/swap/bin/nsfb -f linux ", mbox->param, 0, 0);
 			system(tmpstr);
 			free(tmpstr); tmpstr = NULL;
 		}
