@@ -220,6 +220,10 @@ void screenopera(char* url)
 			operasendkey("0");
 	}
 
+	tmpstr = ostrcat(tmpstr, "killall opera", 1, 0);
+	system(tmpstr);
+	free(tmpstr); tmpstr = NULL;
+
 	if(operareceiver != NULL)
 	{
 		operareceiver->aktion = STOP;
@@ -242,10 +246,6 @@ void screenopera(char* url)
 	sockclose(&operarcconnfd);
 	close(control_r_fd);
 	free(operaplayurl); operaplayurl = NULL;
-
-	tmpstr = ostrcat(tmpstr, "killall opera", 1, 0);
-	system(tmpstr);
-	free(tmpstr); tmpstr = NULL;
 
 	writesys("/proc/cpu/alignment", "1", 0);
 
