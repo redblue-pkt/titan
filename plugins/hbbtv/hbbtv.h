@@ -287,8 +287,6 @@ void operareceivercb(char* cmd)
 	{
 		if(ostrcmp("HELLO", (&ret[0])->part) == 0)
 		{
-
-printf("xccccccccccccccccccccccccccccccccc");
 			control_r_fd = open(CONTROL_PIPE_R, O_WRONLY);
 			if(control_r_fd < 0)
 			{
