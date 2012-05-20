@@ -254,8 +254,8 @@ void screenopera(char* url)
 		pthread_attr_destroy(&operareceiver->attr);
 	}
 
-	sockclose(&operarcsockfd);
-	sockclose(&operarcconnfd);
+	//sockclose(&operarcsockfd);
+	//sockclose(&operarcconnfd);
 	close(control_r_fd);
 
 	unlink(RC_TITAN);
