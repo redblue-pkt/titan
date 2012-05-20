@@ -93,7 +93,7 @@ void operareceiverthread(struct stimerthread* self)
 		else //error
 		{
 			perr("select failed");
-			usleep(100000);
+			usleep(10000);
 		}
 	 }
 
@@ -223,6 +223,8 @@ void screenopera(char* url)
 	tmpstr = ostrcat(tmpstr, "killall opera", 1, 0);
 	system(tmpstr);
 	free(tmpstr); tmpstr = NULL;
+
+	sleep(5);
 
 	if(operareceiver != NULL)
 	{
