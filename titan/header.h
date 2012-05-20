@@ -485,7 +485,7 @@ int file_exist(char* filename);
 int string_find(char* str, char* filename);
 char* createpath(char* dir, char* file);
 char* get_ipk_install(char* ipk);
-char* get_ipk_tmpinstall(char* ipk);
+char* get_ipk_tmpinstall(char* path, char* ipk);
 char* get_ipk_listinstall();
 char* get_ipk_tmplistinstall();
 char* string_toupper(char *str);
