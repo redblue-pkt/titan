@@ -82,6 +82,7 @@
 <node type=MENU pic=%pluginpath%/panel/skin/panel_plugins.png textposx=120 valign=middle name=panel_extensions_menu text="Extensions Menu" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic="%pluginpath%/panel/skin/panel_online_ipk_install.png" textposx=120 valign=middle name=panel_extensions_ipkinstall text="IPK install (online)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic="%pluginpath%/panel/skin/panel_tmp_ipk_install.png" textposx=120 valign=middle name=panel_extensions_tmpipkinstall text="IPK tmp (tmp)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node type=MENU pic="%pluginpath%/panel/skin/panel_media_ipk_install.png" textposx=120 valign=middle name=panel_extensions_mediaipkinstall text="IPK media (media)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic="%pluginpath%/panel/skin/panel_tmp_ipk_remove.png" textposx=120 valign=middle name=panel_extensions_ipkremove text="IPK remove" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 #<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
