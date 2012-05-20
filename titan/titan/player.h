@@ -783,7 +783,7 @@ void playerseek(float sec)
 #ifdef EPLAYER4
 	gint64 nanos_pts = 0, nanos_len = 0;
 	gint64 pts = 0, len = 0;
-	GstFormat fmt = GST_FORMAT_TIME;
+	//GstFormat fmt = GST_FORMAT_TIME;
 		
 	if(m_gst_playbin)
 	{
