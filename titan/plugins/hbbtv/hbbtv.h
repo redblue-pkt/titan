@@ -154,6 +154,8 @@ void screenopera(char* url)
 	addtimer(&operarcthread, START, 10, 1, NULL, NULL, NULL);
 	operareceiver = addtimer(&operareceiverthread, START, 10, 1, NULL, NULL, NULL);
 
+	usleep(100000);
+
 	//TODO change working dir to OPERA_ROOT
 	chdir(OPERA_ROOT);
 
