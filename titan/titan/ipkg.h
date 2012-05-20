@@ -572,7 +572,7 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 	return menulistbox(mlist, paramskinname, skintitle, paramskinpath, "/skin/plugin.png", showpng, 0);
 }
 
-char* get_ipk_tmpinstall(char* ipk)
+char* get_ipk_tmpinstall(char* path, char* ipk)
 {
 	debug(130, "in");
 
@@ -581,7 +581,9 @@ char* get_ipk_tmpinstall(char* ipk)
 	unlink("/var/usr/lib/ipkg/titan");	
 
 	char* cmd = NULL, *tmpstr = NULL;
-	cmd = ostrcat(cmd, "ipkg install /tmp/", 1, 0);
+	cmd = ostrcat(cmd, "ipkg install ", 1, 0);
+	cmd = ostrcat(cmd, path, 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, ipk, 1, 0);
 
 	tmpstr = command(cmd);
@@ -591,12 +593,14 @@ char* get_ipk_tmpinstall(char* ipk)
 	return tmpstr;
 }
 
-char* get_ipk_tmplistinstall()
+char* get_ipk_tmplistinstall(char* path)
 {
 	debug(130, "in");
 	char* cmd = NULL, *tmpstr = NULL;
 
-	cmd = ostrcat(cmd, "ls /tmp | grep '.ipk'", 1, 0);
+	cmd = ostrcat(cmd, "ls ", 1, 0);
+	cmd = ostrcat(cmd, path, 1, 0);
+	cmd = ostrcat(cmd, " | grep '.ipk'", 1, 0);
 
 	tmpstr = command(cmd);
 

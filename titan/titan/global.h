@@ -1532,7 +1532,7 @@ void checkboxstartthread(struct stimerthread* self)
 	struct rectimer* node = rectimer;
 	int timediff = getconfigint("rectimer_timediff", NULL);
 	
-	if(node == NULL) return; //no record
+	if(self == NULL || node == NULL) return; //no record
 
 	debug(400, "boxstart rectimer thread start");
 
