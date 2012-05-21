@@ -413,6 +413,17 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 		free(patbuf);
 	}
 
+	//get ait and parse it for hbbtv url
+	if(channel->aitpid > 0)
+	{
+		unsigned char* aitbuf = NULL;
+		aitbuf = dvbgetait(fenode, channel->aitpid, 0, -1);
+
+		debug(200, "aitpuf %p", aitbuf);
+
+		free(aitbuf); aitbuf = NULL;
+	}
+
 	//demux pcr start
 	//i think this is not needed
 	/*

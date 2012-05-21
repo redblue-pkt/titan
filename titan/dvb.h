@@ -256,6 +256,11 @@ unsigned char* dvbget(struct dvbdev* fenode, int pid, int type, int secnr, int t
 	return buf;
 }
 
+unsigned char* dvbgetait(struct dvbdev* fenode, int pid, int secnr, int timeout)
+{
+	return dvbget(fenode, pid, 14, secnr, timeout);
+}
+
 unsigned char* dvbgetsdt(struct dvbdev* fenode, int secnr, int timeout)
 {
 	return dvbget(fenode, 0x11, 11, secnr, timeout);
