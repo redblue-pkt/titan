@@ -777,6 +777,7 @@ struct channel
 	int16_t txtpid;
 	int16_t pcrpid;
 	int16_t pmtpid;
+	int16_t aitpid;
 	uint8_t protect;
 	struct transponder *transponder;
 	struct provider *provider;

@@ -420,6 +420,13 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 			descriptorlength = tmpbuf[pos + 1];
 			switch (descriptortag)
 			{
+        case 0x6f: //get aitpid for hbbtv
+					if(streamtype == 0x05)
+          {
+            chnode->aitpid = pid;
+            debug(200, "add aitpid %d", pid);
+          }
+          break;
 				case 0x05:
 					if(descriptorlength >= 3)
 						if(!ostrncmp((char*)&tmpbuf[pos + 2], "DTS", 3))
