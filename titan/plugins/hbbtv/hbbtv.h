@@ -267,10 +267,10 @@ void screenopera(char* url)
 
 	writesys("/proc/cpu/alignment", "1", 0);
 
-	//setvideomode("720p50", 0);
-	//changefbresolution("720p50");
-
-	drawscreen(skin, 0);
+//	setvideomode("720p50", 0);
+//	changefbresolution("720p50");
+	oshutdown(0, 0);
+//	drawscreen(skin, 0);
 }
 
 void operareceivercb(char* cmd)
