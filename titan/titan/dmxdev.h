@@ -164,7 +164,7 @@ int dmxsetfilter(struct dvbdev* node, int pid, int secnr, int flag)
 		sctflt.pid = pid;
 		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
 	}
-	if(flag == 2)  //pmt filter
+	if(flag == 2) //pmt filter
 	{
 		sctflt.filter.filter[0] = 0x02;
 		sctflt.filter.mask[0] = 0xff;
@@ -172,7 +172,7 @@ int dmxsetfilter(struct dvbdev* node, int pid, int secnr, int flag)
 		sctflt.pid = pid;
 		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
 	}
-	if(flag == 3)  //date filter
+	if(flag == 3) //date filter
 	{
 		sctflt.filter.filter[0] = 0x70;
 		sctflt.filter.mask[0] = 0xff;
@@ -180,7 +180,7 @@ int dmxsetfilter(struct dvbdev* node, int pid, int secnr, int flag)
 		sctflt.pid = pid;
 		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
 	}
-	if(flag == 4)  //nit filter (pid 0x10)
+	if(flag == 4) //nit filter (pid 0x10)
 	{
 		sctflt.filter.filter[0] = 0x40;
 		sctflt.filter.mask[0] = 0xff;
@@ -196,7 +196,7 @@ int dmxsetfilter(struct dvbdev* node, int pid, int secnr, int flag)
 		sctflt.pid = pid;
 		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
 	}
-	if(flag == 5)  //eit all filter (pid 0x12)
+	if(flag == 5) //eit all filter (pid 0x12)
 	{
 		sctflt.filter.filter[0] = 0x40;
 		sctflt.filter.mask[0] = 0x40;
@@ -220,7 +220,7 @@ int dmxsetfilter(struct dvbdev* node, int pid, int secnr, int flag)
 		sctflt.pid = pid;
 		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
 	}
-	if(flag == 8)  //eit now/next only filter (pid 0x12)
+	if(flag == 8) //eit now/next only filter (pid 0x12)
 	{
 		sctflt.filter.filter[0] = 0x4e;
 		sctflt.filter.mask[0] = 0xfe;
@@ -228,7 +228,7 @@ int dmxsetfilter(struct dvbdev* node, int pid, int secnr, int flag)
 		sctflt.pid = pid;
 		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
 	}
-	if(flag == 9)  //eit now/next current multiplex (pid 0x12)
+	if(flag == 9) //eit now/next current multiplex (pid 0x12)
 	{
 		sctflt.filter.filter[0] = 0x4e;
 		sctflt.filter.mask[0] = 0xff;
@@ -236,7 +236,7 @@ int dmxsetfilter(struct dvbdev* node, int pid, int secnr, int flag)
 		sctflt.pid = pid;
 		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
 	}
-	if(flag == 10)  //eit now/next other multiplex (pid 0x12)
+	if(flag == 10) //eit now/next other multiplex (pid 0x12)
 	{
 		sctflt.filter.filter[0] = 0x4f;
 		sctflt.filter.mask[0] = 0xff;
@@ -244,7 +244,7 @@ int dmxsetfilter(struct dvbdev* node, int pid, int secnr, int flag)
 		sctflt.pid = pid;
 		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
 	}
-	if(flag == 11)  //sdt akt (pid 0x11)
+	if(flag == 11) //sdt akt (pid 0x11)
 	{
 		sctflt.filter.filter[0] = 0x42;
 		sctflt.filter.mask[0] = 0xff;
@@ -260,7 +260,7 @@ int dmxsetfilter(struct dvbdev* node, int pid, int secnr, int flag)
 		sctflt.pid = pid;
 		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
 	}
-	if(flag == 12)  //sdt other (pid 0x11)
+	if(flag == 12) //sdt other (pid 0x11)
 	{
 		sctflt.filter.filter[0] = 0x46;
 		sctflt.filter.mask[0] = 0xff;
@@ -276,9 +276,17 @@ int dmxsetfilter(struct dvbdev* node, int pid, int secnr, int flag)
 		sctflt.pid = pid;
 		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
 	}
-	if(flag == 13)  //rst filter (pid 0x13)
+	if(flag == 13) //rst filter (pid 0x13)
 	{
 		sctflt.filter.filter[0] = 0x13;
+		sctflt.filter.mask[0] = 0xff;
+		sctflt.timeout = 0;
+		sctflt.pid = pid;
+		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
+	}
+	if(flag == 14) //ait filter
+	{
+		sctflt.filter.filter[0] = 0x74;
 		sctflt.filter.mask[0] = 0xff;
 		sctflt.timeout = 0;
 		sctflt.pid = pid;
