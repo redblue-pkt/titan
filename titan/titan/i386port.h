@@ -1,6 +1,14 @@
 #ifndef I386PORT_H
 #define I386PORT_H
 
+void fbsave()
+{
+}
+
+void fbrestore()
+{
+}
+
 void setfbvarsize(struct fb* newnode)
 {
 	if(newnode != NULL)
