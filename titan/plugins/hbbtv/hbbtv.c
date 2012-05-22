@@ -28,9 +28,9 @@ void start(void)
 {
 //	screenopera("http://itv.mit-xperts.com/hbbtvtest/index.php");
 //	screenopera("http://itv.ard.de/ardstart/index.html");
-	if(aktservice->channel != NULL && aktservice->channel->hbbtvurl != NULL)
+	if(status.aktservice->channel != NULL && status.aktservice->channel->hbbtvurl != NULL)
 	{
-		debug(788, "hbbtvurl=%s", aktservice->channel->hbbtvurl);
-		screenopera(aktservice->channel->hbbtvurl);
+		debug(788, "hbbtvurl=%s", status.aktservice->channel->hbbtvurl);
+		screenopera(status.aktservice->channel->hbbtvurl);
 	}
 }
