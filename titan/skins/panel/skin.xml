@@ -1,5 +1,5 @@
 <screen fontcol=fontcol title="Ipk Install - select file" fontsize2=22 fontcol2=orange valign=bottom titlealign=center name=ipkinstall hspace=5 vspace=5 fontsize=30 posx=center posy=center width=90% height=90% bordercol=bordercol bordersize=2 bgcol=bgcol>
-<node pic=dummy_dont_change_or_add_png_file fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox  posx=center posy=center width=90% height=90% />
+<node fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox  posx=center posy=center width=90% height=90% />
 </screen>
 
 <screen fontcol=fontcol title="System - Flashupdate (online)" titlealign=center name=panel_system_update_flash_online_menu hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=98% height=90% bordercol=bordercol bordersize=2 bgcol=bgcol>
