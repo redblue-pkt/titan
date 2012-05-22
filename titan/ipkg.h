@@ -556,8 +556,14 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 			else
 				tmpinfo = ostrcat(tmpinfo, _("no description found"), 1, 0);
 			
-			tmppic = ostrcat("titan-pluginpreview-", node->showname, 0, 0);
-			tmppic = ostrcat(tmppic, ".png", 1, 0);	
+			tmppic = ostrcat(tmppic, node->showname, 1, 0);
+			if(tmppic != NULL)
+			{
+				char* pos = strchr(tmppic, '.');
+				if(pos != NULL) pos[0] = '\0';
+				tmppic = ostrcat("titan-pluginpreview-", tmppic, 0, 1);
+				tmppic = ostrcat(tmppic, ".png", 1, 0);
+			}
 
 			tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 0, 0);
 			changemenulistparam(tmpmlist, node->showname, NULL);
