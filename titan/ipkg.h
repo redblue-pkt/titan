@@ -364,6 +364,9 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 		char* checkfile = NULL;
 		checkfile = ostrcat("/tmp/Packages.", ip, 0, 0);
 
+		if(ostrcmp("97.74.32.10", ip) == 0)
+			free(ip); ip = ostrcat("atemio.dyndns.tv", NULL, 0, 0);
+
 		if(!file_exist(checkfile)) // +status.ipkg = date + 1day
 		{
 			char* tmppath = NULL;
@@ -380,7 +383,13 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 		gethttp(ip, path, 80, (char*)filename, HTTPAUTH, NULL, 0);
 	}
 	else
+	{
+		if(ostrcmp("97.74.32.10", ip) == 0)
+			free(ip); ip = ostrcat("atemio.dyndns.tv", NULL, 0, 0);
+	
 		err = screendownload("Download", ip, path, 80, (char*)filename, HTTPAUTH, 0);
+	}
+
 	free(ip); ip = NULL;
 	//free(path);// path = NULL; segfault
 	return err;
