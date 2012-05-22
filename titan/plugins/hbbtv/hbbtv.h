@@ -173,6 +173,8 @@ void screenopera(char* url)
 
 	chdir(OPERA_ROOT);
 
+	fbsave();
+
 	tmpstr = ostrcat(tmpstr, OPERA_BIN, 1, 0);
 	tmpstr = ostrcat(tmpstr, " -u ", 1, 0);
 	tmpstr = ostrcat(tmpstr, url, 1, 0);
@@ -267,10 +269,10 @@ void screenopera(char* url)
 
 	writesys("/proc/cpu/alignment", "1", 0);
 
-//	setvideomode("720p50", 0);
-//	changefbresolution("720p50");
-	oshutdown(0, 0);
-//	drawscreen(skin, 0);
+	setvideomode("720p50", 0);
+	changefbresolution("720p50");
+	sleep(3);
+	fbrestore();
 }
 
 void operareceivercb(char* cmd)
