@@ -850,9 +850,12 @@ char* gethbbtv(struct skin* node, char* path)
 {
 	char* tmpstr = NULL;
 
-	if(status.aktservice->channel != NULL && status.aktservice->channel->hbbtvurl != NULL)
+	if(status.aktservice->channel != NULL)
 	{
-		tmpstr = ostrcat("hbbtv.png", "", 0, 0);
+    if(status.aktservice->channel->hbbtvurl != NULL)
+      tmpstr = ostrcat("hbbtv_on.png", "", 0, 0);
+    else
+      tmpstr = ostrcat("hbbtv_off.png", "", 0, 0);
 
 		if(path != NULL)
 			tmpstr = ostrcat("/", tmpstr, 0, 1);
