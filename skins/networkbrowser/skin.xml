@@ -1,5 +1,5 @@
 <screen fontcol=fontcol valign=bottom titlealign=center name="networkbrowser_scan" hspace=15 vspace=15 fontsize=30 posx=center posy=center width=80% height=60% bordercol=bordercol bordersize=2 bgcol=bgcol>
-<node pic=dummy_dont_change_or_add_png_file fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox  posx=center posy=center width=80% height=90% />
+<node fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox  posx=center posy=center width=80% height=90% />
 <node name=b1 text="OK" halign=center valign=middle bordercol=okcol bordersize=6 bordertype=2 posx=0 posy=0 width=150 height=39/>
 <node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=6 bordertype=2 posx=160 posy=0 width=150 height=39/>
 </screen>
