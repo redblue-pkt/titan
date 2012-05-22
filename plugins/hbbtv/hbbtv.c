@@ -27,5 +27,9 @@ void deinit(void)
 void start(void)
 {
 //	screenopera("http://itv.mit-xperts.com/hbbtvtest/index.php");
-	screenopera("http://itv.ard.de/ardstart/index.html");
+//	screenopera("http://itv.ard.de/ardstart/index.html");
+	{
+		debug(788, "hbbtvurl=%s", aktservice->channel->hbbtvurl);
+		screenopera(aktservice->channel->hbbtvurl);
+	}
 }
