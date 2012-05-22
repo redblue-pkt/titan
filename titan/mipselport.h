@@ -6,6 +6,14 @@
 #define FBIO_BLIT 0x22
 #endif
 
+void fbsave()
+{
+}
+
+void fbrestore()
+{
+}
+
 void setfbvarsize(struct fb* newnode)
 {
 	if(newnode != NULL)

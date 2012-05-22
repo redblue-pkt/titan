@@ -5,6 +5,65 @@
 #include <libmmeimage.h>
 #include <linux/stmfb.h>
 
+struct stmfbio_output_configuration outcfg;
+struct stmfbio_outputinfo outinfo;
+struct stmfbio_planeinfo planemode;
+struct stmfbio_var_screeninfo_ex infoex;
+
+void fbsave()
+{
+  outcfg.outputid = STMFBIO_OUTPUTID_MAIN;
+  if(ioctl(fb->fd, STMFBIO_GET_OUTPUT_CONFIG, &outcfg) < 0)
+  {
+    perr("ioctl STMFBIO_GET_OUTPUT_CONFIG");
+  }
+
+	outinfo.outputid = STMFBIO_OUTPUTID_MAIN;
+	if(ioctl(fb->fd, STMFBIO_GET_OUTPUTINFO, &outinfo) < 0)
+  {
+		perr("ioctl STMFBIO_GET_OUTPUTINFO");
+  }
+
+	planemode.layerid = 0;
+	if(ioctl(fb->fd, STMFBIO_GET_PLANEMODE, &planemode) < 0)
+  {
+    perr("ioctl STMFBIO_GET_PLANEMODE");
+  }
+
+  if(ioctl(fb->fd, STMFBIO_GET_VAR_SCREENINFO_EX, &infoex) < 0)
+  {
+    perr("ioctl STMFBIO_GET_VAR_SCREENINFO_EX");
+  }
+}
+
+void fbrestore()
+{
+  if(ioctl(fb->fd, STMFBIO_SET_VAR_SCREENINFO_EX, &infoex) < 0)
+  {
+    perr("ioctl STMFBIO_SET_VAR_SCREENINFO_EX");
+  }
+
+	if(ioctl(fb->fd, STMFBIO_SET_PLANEMODE, &planemode) < 0)
+  {
+		perr("ioctl STMFBIO_SET_PLANEMODE");
+  }
+
+	if(ioctl(fb->fd, STMFBIO_SET_VAR_SCREENINFO_EX, &infoex) < 0)
+  {
+		perr("ioctl STMFBIO_SET_VAR_SCREENINFO_EX");
+  }
+
+	if(ioctl(fb->fd, STMFBIO_SET_OUTPUTINFO, &outinfo) < 0)
+  {
+		perr("ioctl STMFBIO_SET_OUTPUTINFO");
+  }
+
+	if(ioctl(fb->fd, STMFBIO_SET_OUTPUT_CONFIG, &outcfg) < 0)
+  {
+		perr("ioctl STMFBIO_SET_OUTPUT_CONFIG");
+  }
+}
+
 void setfbvarsize(struct fb* newnode)
 {
 	if(newnode != NULL)
