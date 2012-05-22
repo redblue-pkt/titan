@@ -170,10 +170,10 @@ int readplugin(char *dir)
 						initplugin();
 
 					pluginmenu = dlsym(pluginhandle, "pluginmenu");
-					if(pluginmenu != NULL)
+					if(pluginmenu != NULL && *pluginmenu != NULL)
 						((struct skin*)*pluginmenu)->pluginhandle = pluginhandle;
 					pluginmenu1 = dlsym(pluginhandle, "pluginmenu1");
-					if(pluginmenu1 != NULL)
+					if(pluginmenu1 != NULL && *pluginmenu1 != NULL)
 						((struct skin*)*pluginmenu1)->pluginhandle = pluginhandle;
 				}
 				else

@@ -8,8 +8,8 @@ char plugindesc[] = "Titan Media Center";
 char pluginpic[] = "%pluginpath%/tmc/plugin.png";
 
 int pluginaktiv = 0;
-struct skin* pluginmenu = NULL;
-int pluginflag = 0;
+//struct skin* pluginmenu = NULL;
+//int pluginflag = 0;
 
 //wird beim laden ausgefuehrt
 void init(void)
