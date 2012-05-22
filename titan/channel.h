@@ -509,6 +509,9 @@ int delchannel(int serviceid, unsigned long transponderid, int flag)
 
 			free(node->name);
 			node->name = NULL;
+      
+      free(node->hbbtvurl);
+      node->hbbtvurl = NULL;
 
 			free(node);
 			node = NULL;

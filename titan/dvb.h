@@ -212,6 +212,95 @@ int dvbgetpmtpid(unsigned char *buf, int serviceid)
 	return 0;
 }
 
+char* dvbgethbbtvurl(char* buf)
+{
+	//int seclen = 0;
+	int pos = 0;
+	int pos2 = 0;
+	int commondesclen = 0;
+	int applooplen = 0;
+	int appdesclen = 0;
+	int desclen = 0;
+	char* url = NULL;
+
+	if(buf == NULL) return NULL;
+
+	//seclen = ((buf[1] & 0x0F) << 8) + buf[2];
+	commondesclen = ((buf[8] & 0x0F) << 8) + buf[9];
+	pos = 10 + commondesclen;
+
+	applooplen = ((buf[pos] & 0x0F) << 8) + buf[pos + 1];
+	pos += 2;
+
+	for(pos; pos < applooplen; pos += appdesclen + 9)
+	{
+		//long orgid = (buf[pos] << 24) + (buf[pos + 1] << 16) + (buf[pos + 2] << 8) + buf[pos + 3];
+		//int appid = (buf[pos + 4] << 8) + buf[pos + 5];
+		int appcode = buf[pos + 6];
+		appdesclen = ((buf[pos + 7] & 0x0F) << 8) + buf[pos + 8];
+
+		if(appcode != 1) continue;
+
+		desclen = 0;
+		for(pos2 = pos + 9; pos2 < appdesclen + pos + 9; pos2 += desclen + 2)
+		{
+			int desctag = buf[pos2];
+			desclen = buf[pos2 + 1];
+
+			switch(desctag)
+			{
+				case 0x00: //application desc
+					break;
+				case 0x01: //application name desc
+					break;
+				case 0x02: //transport protocol desc
+				{
+					int protocolid = buf[pos2 + 2] +  buf[pos2 + 3];
+					switch(protocolid)
+					{
+						case 1: //object carousel
+							break;
+						case 2: //ip
+							break;
+						case 3: //interaction
+						{
+							free(url); url = NULL;
+							url = malloc(desclen - 4);
+							if(url != NULL)
+							{
+								strncpy(url, &buf[pos2 + 6], desclen - 5);
+								url[desclen - 5]='\0';
+							}
+							break;
+						}
+					}
+					break;
+				}
+				case 0x14: //graphics constraints desc
+					break;
+				case 0x15: //simple application location desc
+				{
+					if(url != NULL)
+					{
+						char* tmpurl = NULL;
+						tmpurl = malloc(desclen + 1);
+						strncpy(tmpurl, &buf[pos2 + 2], desclen);
+						tmpurl[desclen]='\0';
+						url = ostrcat(url, tmpurl, 1, 1);
+					}
+					break;
+				}
+				case 0x16: //application usage desc
+					break;
+				case 0x17: //simple application boundary desc
+					break;
+			}
+		}
+	}
+
+	return url;
+}
+
 unsigned char* dvbget(struct dvbdev* fenode, int pid, int type, int secnr, int timeout)
 {
 	int length = -1;
