@@ -382,6 +382,14 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 			unlink("/tmp/Packages.preview.tar.gz");
 			writesys(checkfile, ".", 1);
 		}
+
+		debug(130, "ip: %s", ip);
+		debug(130, "path: %s", path);
+		debug(130, "filename: %s", (char*)filename);
+		debug(130, "HTTPAUTH: %s", HTTPAUTH);
+		
+		debug(130, "link://: http://%s@%s%s%s", HTTPAUTH, ip, path, filename);
+
 		free(checkfile); checkfile = NULL;		
 		gethttp(ip, path, 80, (char*)filename, HTTPAUTH, NULL, 0);
 	}
@@ -393,6 +401,13 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 			ip = ostrcat("atemio.dyndns.tv", NULL, 0, 0);
 		}
 	
+		debug(130, "ip: %s", ip);
+		debug(130, "path: %s", path);
+		debug(130, "filename: %s", (char*)filename);
+		debug(130, "HTTPAUTH: %s", HTTPAUTH);
+		
+		debug(130, "link://: http://%s@%s%s%s", HTTPAUTH, ip, path, filename);
+		
 		err = screendownload("Download", ip, path, 80, (char*)filename, HTTPAUTH, 0);
 	}
 
