@@ -420,7 +420,7 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 		aitbuf = dvbgetait(fenode, chnode->aitpid, 0, -1);
     if(aitbuf != NULL)
     {
-      free(chnode->hbbtvurl); hbbtvurl = NULL;
+      free(chnode->hbbtvurl); chnode->hbbtvurl = NULL;
       chnode->hbbtvurl = dvbgethbbtvurl(aitbuf);
     }
 
