@@ -457,6 +457,8 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+void resettvpic();
+int resetvmpeg(struct dvbdev* node);
 unsigned long readsysul(const char *filename, int line);
 char* oitoax(int value);
 void closeonexec(fd);

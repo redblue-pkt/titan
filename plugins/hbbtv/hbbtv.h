@@ -308,6 +308,10 @@ void screenopera(char* url)
 		servicestart(status.lastservice->channel, tmpstr, NULL, 0);
 		free(tmpstr); tmpstr = NULL;
 	}
+
+	//reset tv pic size
+	status.tvpic = 1;
+	resettvpic();
 }
 
 void operareceivercb(char* cmd)
