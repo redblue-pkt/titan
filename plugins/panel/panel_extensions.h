@@ -163,6 +163,7 @@ void screenpanel_extensions(int mode, char* path)
 		ipkg_upgrade();
 		system("rm -rf /mnt/ipkg ; mkdir /mnt/ipkg; cp -a /var/usr/lib/ipkg/info /mnt/ipkg; cp /var/usr/lib/ipkg/status /mnt/ipkg");
 		freeipkg();
+		loadplugin();
 	}
 }
 
