@@ -14,9 +14,11 @@ void operareceivercb(char* cmd);
 
 int operarcsockfd = -1;
 int operarcconnfd = -1;
-int control_r_fd = -1;
+int opera_control_r_fd = -1;
 int operarcthread_ok = 0;
 int operareceiverthread_ok = 0;
+int operaserviceend = 0;
+int operaservicestate = 0;
 char* operaplayurl = NULL;
 
 void operarcthread()
@@ -121,7 +123,7 @@ void operasendkey(char* rckey)
 void screenopera(char* url)
 {
 	int rcret = 0, i = 0;
-	char* tmpstr = NULL;
+	char* tmpstr = NULL, *savedir = NULL, *dirbuf = NULL;;
 	void* threadstatus;
 	struct stimerthread* operareceiver = NULL;
 
@@ -171,7 +173,13 @@ void screenopera(char* url)
 		if(count > 20) break;
 	}
 
-	chdir(OPERA_ROOT);
+  //save working dir
+  dirbuf = malloc(PATH_MAX);
+  if(dirbuf != NULL)
+  {
+    savedir = getcwd(dirbuf, PATH_MAX)
+    chdir(OPERA_ROOT);
+  }
 
 	fbsave();
 
@@ -182,11 +190,22 @@ void screenopera(char* url)
 	system(tmpstr);
 	free(tmpstr); tmpstr = NULL;
 
-	//TODO reset working dir
+	//reset working dir
+  if(savedir != NULL)
+    chdir(dirbuf);
+  free(dirbuf); dirbuf = NULL;
+    
 
 	while(1)
 	{
-		rcret = waitrc(NULL, 0, 0);
+		rcret = waitrc(NULL, 1000, 0);
+    
+    //check for player EOF
+    if(operaservicestate = 1 && !playerisplaying())
+    {
+      playerafterend();
+      operaservicestate = 0;    
+    }
 
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
@@ -258,7 +277,7 @@ void screenopera(char* url)
 
 	sockclose(&operarcsockfd);
 	sockclose(&operarcconnfd);
-	close(control_r_fd);
+	close(opera_control_r_fd);
 
 	debug(788, "kill opera");
 	tmpstr = ostrcat(tmpstr, "killall opera", 1, 0);
@@ -290,8 +309,8 @@ void operareceivercb(char* cmd)
 	{
 		if(ostrcmp("HELLO", (&ret[0])->part) == 0)
 		{
-			control_r_fd = open(CONTROL_PIPE_R, O_WRONLY);
-			if(control_r_fd < 0)
+			opera_control_r_fd = open(CONTROL_PIPE_R, O_WRONLY);
+			if(opera_control_r_fd < 0)
 			{
 				perr("open or create "CONTROL_PIPE_R);
 			}
@@ -313,9 +332,16 @@ void operareceivercb(char* cmd)
 				w = 720;
 				h = 576;
 			}
+      
+      position = ostrcat(position, oitoax(x), 1, 1);
+      position = ostrcat(position, " ", 1, 1);
+      position = ostrcat(position, oitoax(y), 1, 1);
+      position = ostrcat(position, " ", 1, 1);
+      position = ostrcat(position, oitoax(w), 1, 1);
+      position = ostrcat(position, " ", 1, 1);
+      position = ostrcat(position, oitoax(h), 1, 1);
 
-			//TODO
-			//position = "%x %x %x %x" % (x, y, w, h)
+      debug(788, "change tv pic to: ", position);
 			writesys("/proc/stb/vmpeg/0/dst_all", position, 0);
 		}
 		else if(ostrcmp("AvGetFullScreen", (&ret[0])->part) == 0)
@@ -326,9 +352,9 @@ void operareceivercb(char* cmd)
 			h = readsys("/proc/stb/vmpeg/0/dst_height", 1);
 
 			if(ostrcmp(w, "2d0") == 0 && ostrcmp(h, "240") == 0)
-				write(control_r_fd, "AvGetFullScreen 1\n", 18);
+				write(opera_control_r_fd, "AvGetFullScreen 1\n", 18);
 			else
-				write(control_r_fd, "AvGetFullScreen 0\n", 18);
+				write(opera_control_r_fd, "AvGetFullScreen 0\n", 18);
 
 			free(w); w = NULL;
 			free(h); h = NULL;
@@ -338,9 +364,9 @@ void operareceivercb(char* cmd)
 			unsigned long val = readsysul("/proc/stb/video/alpha", 1);
 
 			if(val == 0)
-				write(control_r_fd, "AvGetVisible 1\n", 15);
+				write(opera_control_r_fd, "AvGetVisible 1\n", 15);
 			else
-				write(control_r_fd, "AvGetVisible 0\n", 15);
+				write(opera_control_r_fd, "AvGetVisible 0\n", 15);
 		}
 		/*
 		else if(ostrncmp("AvSetVisible", (&ret[0])->part) == 0)
@@ -355,83 +381,95 @@ void operareceivercb(char* cmd)
 		*/
 		else if(ostrcmp("AvPlay", (&ret[0])->part) == 0)
 		{
-			//TODO
 			if(count > 2)
 			{
 				if(ostrcmp("100", (&ret[2])->part) == 0) //PLAY OR RESUME
 				{
 					if(ostrcmp(operaplayurl, (&ret[1])->part) != 0) //DIFFERENT URI SO PLAY
 					{
+            //stop live tv service
+            if(operaserviceend == 0)
+            {
+              int ret = servicestop(status.aktservice, 1, 1);
+              if(ret == 1) return;
+              operaserviceend = 1;
+            }
+          
 						free(operaplayurl); operaplayurl = NULL;
 						operaplayurl = ostrcat((&ret[1])->part, NULL, 0, 0);
-						//self.mp.stopStream()
-						//self.mp.startStream(operaplayurl)
+            playerstop();
+            playerafterend();
+            playerstart(operaplayurl);
+            operaservicestate = 1;
 					}
 					else
-					{
-						//self.mp.resumeStream()
+          {
+            playercontinue();
+            operaservicestate = 1;
 					}
 				}
 				else if(ostrcmp("0", (&ret[2])->part) == 0) //PAUSE
 				{
-					//self.mp.pauseStream()
+          playerpause();
+          operaservicestate = 0;
 				}
 			}
 		}
 		else if(ostrcmp("AvStop", (&ret[0])->part) == 0)
 		{
-			//TODO
-			//self.mp.stopStream()
+      playerstop();
+      playerafterend();
+      operaservicestate = 0;
 		}
 		else if(ostrcmp("AvGetPos", (&ret[0])->part) == 0)
 		{
 			char* tmppos = NULL;
-			unsigned long long int pos = 0;
-			//TODO
-			//pos = self.mp.getPosition()
+			unsigned long pos = 0;
+			
+      pos = playergetpts() / 90000;
 
 			tmppos = ostrcat(tmppos, "AvGetPos ", 1, 0);
-			tmppos = ostrcat(tmppos, oitoa(pos), 1, 1);
+			tmppos = ostrcat(tmppos, olutoa(pos), 1, 1);
 			tmppos = ostrcat(tmppos, "\n", 1, 0);
 			if(tmppos != NULL)
-				write(control_r_fd, tmppos, strlen(tmppos));
+				write(opera_control_r_fd, tmppos, strlen(tmppos));
 			free(tmppos); tmppos = NULL;
 		}
 		else if(ostrcmp("AvGetDuration", (&ret[0])->part) == 0)
 		{
 			char* tmplen = NULL;
-			unsigned long long int  len = 0;
-			//TODO
-			//len = self.mp.getDuration()
+			unsigned long len = 0;
+      
+      len = playergetlength();
 
 			tmplen = ostrcat(tmplen, "AvGetDuration ", 1, 0);
-			tmplen = ostrcat(tmplen, oitoa(len), 1, 1);
+			tmplen = ostrcat(tmplen, olutoa(len), 1, 1);
 			tmplen = ostrcat(tmplen, "\n", 1, 0);
 			if(tmplen != NULL)
-				write(control_r_fd, tmplen, strlen(tmplen));
+				write(opera_control_r_fd, tmplen, strlen(tmplen));
 			free(tmplen); tmplen = NULL;
 		}
 		else if(ostrcmp("AvGetState", (&ret[0])->part) == 0)
 		{
 			char* tmpstate = NULL;
-			int state = 0;
-			//TODO
-			//state = self.mp.getState()
-
 			tmpstate = ostrcat(tmpstate, "AvGetState ", 1, 0);
-			tmpstate = ostrcat(tmpstate, oitoa(state), 1, 1);
+			tmpstate = ostrcat(tmpstate, oitoa(operaservicestate), 1, 1);
 			tmpstate = ostrcat(tmpstate, "\n", 1, 0);
 			if(tmpstate != NULL)
-				write(control_r_fd, tmpstate, strlen(tmpstate));
+				write(opera_control_r_fd, tmpstate, strlen(tmpstate));
 			free(tmpstate); tmpstate = NULL;
 		}
 		else if(ostrcmp("ReleaseHandle", (&ret[0])->part) == 0)
 		{
 			if(count > 1 && ostrcmp("1", (&ret[1])->part) == 0) //VOD
 			{
+        char* tmpstr = NULL;
 				//Switch back to live tv after vod session ended
-				//TODO
-				//gSession.nav.playService(self.service)
+        operaserviceend = 0;
+
+        tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
+        servicestart(status.lastservice->channel, tmpstr, NULL, 0);
+        free(tmpstr); tmpstr = NULL;
 			}
 		}
 	}
