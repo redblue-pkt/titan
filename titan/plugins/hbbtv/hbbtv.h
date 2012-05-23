@@ -334,11 +334,11 @@ void operareceivercb(char* cmd)
 			}
       
       position = ostrcat(position, oitoax(x), 1, 1);
-      position = ostrcat(position, " ", 1, 1);
+      position = ostrcat(position, " ", 1, 0);
       position = ostrcat(position, oitoax(y), 1, 1);
-      position = ostrcat(position, " ", 1, 1);
+      position = ostrcat(position, " ", 1, 0);
       position = ostrcat(position, oitoax(w), 1, 1);
-      position = ostrcat(position, " ", 1, 1);
+      position = ostrcat(position, " ", 1, 0);
       position = ostrcat(position, oitoax(h), 1, 1);
 
       debug(788, "change tv pic to: %s", position);
