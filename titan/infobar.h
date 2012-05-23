@@ -9,6 +9,8 @@ void screeninfobar()
 	struct skin* infobar = infobar1;
 	struct skin* standbymenu = NULL;
 	char* tmpstr = NULL; char* tmpnr = NULL;
+	struct skin* pluginnode = NULL;
+	void (*startplugin)(void);
 
 	status.mute = 0;
 	status.infobar = 2;
@@ -339,6 +341,25 @@ void screeninfobar()
 			status.infobar = 0;
 			clearscreen(infobar);
 			screenkeyactions(0, 0);
+			status.updatevfd = START;
+			drawscreen(skin, 0);
+			subtitlepause(0);
+			continue;
+		}
+		if(rcret == getrcconfigint("rchbbtv", NULL) && status.aktservice->channel != NULL && status.aktservice->channel->hbbtvurl != NULL)
+		{
+			subtitlepause(1);
+			status.infobar = 0;
+			clearscreen(infobar);
+
+			pluginnode = getplugin("hbbtv Browser");
+			if(pluginnode != NULL)
+			{
+				startplugin = dlsym(pluginnode->pluginhandle, "start");
+				if(startplugin != NULL)
+					startplugin();
+			}
+
 			status.updatevfd = START;
 			drawscreen(skin, 0);
 			subtitlepause(0);
