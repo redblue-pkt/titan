@@ -318,16 +318,16 @@ int ipkg_upgrade(void)
 int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 {
 	int err = 0, count = 0, i = 0, withoutgui = 0;
-	char* ip = NULL, *pos = NULL, *path = NULL, *tmpstr = NULL;
+	char* tmpip = NULL, *ip = NULL, *pos = NULL, *path = NULL, *tmpstr = NULL;
 	struct splitstr* ret = NULL;
 
 	if(src == NULL) return 1;
 
 	debug(130, "src: %s", src);
-	ip = string_replace("http://", "", (char*)src, 0);
+	tmpip = string_replace("http://", "", (char*)src, 0);
 
-	if(ip != NULL)
-		pos = strchr(ip, '/');
+	if(tmpip != NULL)
+		pos = strchr(tmpip, '/');
 	if(pos != NULL)
 	{
 		pos[0] = '\0';
@@ -345,6 +345,8 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 	free(ret); ret = NULL;
 	free(tmpstr); tmpstr = NULL;
 
+	ip = ostrcat(tmpip, NULL, 0, 0);
+
 	debug(130, "ip: %s", ip);
 	debug(130, "path: %s", path);
 	
@@ -355,8 +357,8 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 			if(ostrcmp((char*)src, "//97.74.32.10/svn/ipk/sh4/titan") != 0)	 	 
 			{
 				textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0); 	 	 
+				free(tmpip); tmpip = NULL;
 				free(ip); ip = NULL;
-				//free(path); //path = NULL;
 				return 1;
 			}
 		}
@@ -383,13 +385,6 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 			writesys(checkfile, ".", 1);
 		}
 
-		debug(130, "ip: %s", ip);
-		debug(130, "path: %s", path);
-		debug(130, "filename: %s", (char*)filename);
-		debug(130, "HTTPAUTH: %s", HTTPAUTH);
-		
-		debug(130, "link://: http://%s@%s/%s %s", HTTPAUTH, ip, path, filename);
-
 		free(checkfile); checkfile = NULL;		
 		gethttp(ip, path, 80, (char*)filename, HTTPAUTH, NULL, 0);
 	}
@@ -400,19 +395,13 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 			free(ip);
 			ip = ostrcat("atemio.dyndns.tv", NULL, 0, 0);
 		}
-	
-		debug(130, "ip: %s", ip);
-		debug(130, "path: %s", path);
-		debug(130, "filename: %s", (char*)filename);
-		debug(130, "HTTPAUTH: %s", HTTPAUTH);
-		
-		debug(130, "link://: http://%s@%s%s%s", HTTPAUTH, ip, path, filename);
 		
 		err = screendownload("Download", ip, path, 80, (char*)filename, HTTPAUTH, 0);
 	}
 
+	free(tmpip); tmpip = NULL;
 	free(ip); ip = NULL;
-	//free(path);// path = NULL; segfault
+
 	return err;
 }
 
