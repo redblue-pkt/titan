@@ -574,6 +574,8 @@ char* gethttp(char* host, char* page, int port, char* filename, char* auth, stru
 	char *tmpbuf = NULL, *buf = NULL;
 	char *tmppage = "/", *retstr = NULL;
 	FILE *fd = NULL;
+
+printf("http 1");
 	
 	if(filename != NULL)
 	{
@@ -585,6 +587,8 @@ char* gethttp(char* host, char* page, int port, char* filename, char* auth, stru
 			return NULL;
 		}
 	}
+
+printf("http 2");
 
 	if(page == NULL) page = tmppage;
 
@@ -600,8 +604,10 @@ char* gethttp(char* host, char* page, int port, char* filename, char* auth, stru
 		if(dnode != NULL) dnode->ret = 1;
 		return NULL;
 	}
+printf("http 3");
 
 	ret = sockportopen(&sock, ip, port, 5000 * 1000);
+printf("http 4");
 	if(ret != 0)
 	{
 		if(fd != NULL)
@@ -614,9 +620,12 @@ char* gethttp(char* host, char* page, int port, char* filename, char* auth, stru
 		return NULL;
 	}
 	free(ip);
+printf("http 5");
 
 	if(dnode != NULL) dnode->connfd = sock;
 	header = createhttpheader(host, page, auth);
+printf("http 6");
+printf("%s\n", header);
 
 	//Send the query to the server
 	ret = socksend(&sock, (unsigned char*)header, strlen(header), 5000 * 1000);
@@ -633,7 +642,7 @@ char* gethttp(char* host, char* page, int port, char* filename, char* auth, stru
 		return NULL;
 	}
 	free(header);
-
+printf("http 7");
 	//now it is time to receive the page
 	tmpbuf = malloc(MINMALLOC);
 	if(tmpbuf == NULL)
@@ -650,6 +659,7 @@ char* gethttp(char* host, char* page, int port, char* filename, char* auth, stru
 	}
 	memset(tmpbuf, 0, MINMALLOC);
 
+printf("http 8");
 	//read one line
 	char* pbuf = tmpbuf;
 	while(pbuf - tmpbuf < MINMALLOC)
@@ -667,6 +677,7 @@ char* gethttp(char* host, char* page, int port, char* filename, char* auth, stru
 
 		if(tmpbuf != NULL && (strstr(tmpbuf, "\n\n") != NULL || strstr(tmpbuf, "\r\n\r\n") != NULL))
 		{
+printf("http %s", tmpbuf);
 			hret = checkhttpheader(tmpbuf, &retstr);
 			if(hret == 301 || hret == 302) goto end;
 			break;
@@ -674,15 +685,18 @@ char* gethttp(char* host, char* page, int port, char* filename, char* auth, stru
 		pbuf++;
 	}
 
+printf("http 9\n");
+
 	//TODO: case-sens check
 	char* contentlen = strstr(tmpbuf, "Content-Length:");
+printf("content len %s\n", contentlen);
 	if(contentlen != NULL)
 	{
 		contentlen += 15;
 		len = strtoul(contentlen, NULL, 10);
 	}
 
-
+printf("http 10\n");
 	while((ret = sockread(sock, (unsigned char*)tmpbuf, 0, MINMALLOC, 5000 * 1000, 0)) > 0)
 	{
 		maxret += ret;
@@ -722,6 +736,7 @@ char* gethttp(char* host, char* page, int port, char* filename, char* auth, stru
 	}
 
 end:
+printf("http 11\n");
 	free(tmpbuf);
 	if(fd != NULL) fclose(fd);
 	sockclose(&sock);
