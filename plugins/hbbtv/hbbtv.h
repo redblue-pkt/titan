@@ -177,7 +177,7 @@ void screenopera(char* url)
   dirbuf = malloc(PATH_MAX);
   if(dirbuf != NULL)
   {
-    savedir = getcwd(dirbuf, PATH_MAX)
+    savedir = getcwd(dirbuf, PATH_MAX);
     chdir(OPERA_ROOT);
   }
 
@@ -201,7 +201,7 @@ void screenopera(char* url)
 		rcret = waitrc(NULL, 1000, 0);
     
     //check for player EOF
-    if(operaservicestate = 1 && !playerisplaying())
+    if(operaservicestate = 1 && (!playerisplaying()))
     {
       playerafterend();
       operaservicestate = 0;    
@@ -341,7 +341,7 @@ void operareceivercb(char* cmd)
       position = ostrcat(position, " ", 1, 1);
       position = ostrcat(position, oitoax(h), 1, 1);
 
-      debug(788, "change tv pic to: ", position);
+      debug(788, "change tv pic to: %s", position);
 			writesys("/proc/stb/vmpeg/0/dst_all", position, 0);
 		}
 		else if(ostrcmp("AvGetFullScreen", (&ret[0])->part) == 0)

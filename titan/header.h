@@ -8,6 +8,10 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//...port.h
+void fbsave();
+void fbrestore();
+
 //mostzap.h
 struct mostzap* createmostzap(int serviceid, unsigned long transponderid);
 int writemostzap(const char *filename);
@@ -45,6 +49,8 @@ int sockportopen(int *fd, char* ip, int port, int tout);
 void sockclose(int *fd);
 int socksend(int *fd, unsigned char* data, int count, int timeout);
 int sockread(int fd, unsigned char *buf, int pos, int count, int tout, int flag);
+int sockcreate(int *fd, char* sockname, int maxconn);
+int sockaccept(int *fd, int flag);
 
 //numinput.h
 char* numinput(char* title, char* num, char* mask, int isip);
@@ -317,6 +323,8 @@ int playerstart(char* file);
 unsigned long long int playergetpts();
 double playergetlength();
 int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, unsigned long long* endpts, unsigned long long* aktpts, unsigned long long* bitrate);
+int playerisplaying();
+void playerafterend();
 
 //filelist.h
 //void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* filelist, char* path, char* filemask, int tmpview);
@@ -449,6 +457,9 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+unsigned long readsysul(const char *filename, int line);
+char* oitoax(int value);
+void closeonexec(fd);
 char* ostrstrcase(char* str, char* sub);
 char* getdevcontent(char* devconfig);
 char* getxmlentry(char *line, char *searchstr);
