@@ -117,12 +117,12 @@ void screenpanel_extensions(int mode, char* path)
     
 	    if(tmpstr == NULL || strlen(tmpstr) == 0)
 	    {
-	      textbox(_("Message"), _("No plugin found."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+			textbox(_("Message"), _("No plugin found."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 	    }
 	    else
 	    {
-		  addmenulistall(&mlist, tmpstr, NULL, 0, NULL);
-		  mbox = menulistbox(mlist, NULL, "Ipk Tmp Install - select file", "%pluginpath%/panel/skin", "/skin/plugin.png", 1, 0);
+			addmenulistall(&mlist, tmpstr, NULL, 0, NULL);
+			mbox = menulistbox(mlist, NULL, "Ipk Tmp Install - select file", "%pluginpath%/panel/skin", "/skin/plugin.png", 1, 0);
 	    }
 		
 		free(tmpstr); tmpstr = NULL;
@@ -156,7 +156,7 @@ void screenpanel_extensions(int mode, char* path)
 		free(tmpinfo); tmpinfo = NULL;
 		if(mbox != NULL) screenpanel_extensions(2, path);
 	}
-	elif(mode == 3)
+	else if(mode == 3)
 	{
 		system("cp -a /mnt/ipkg/* /var/usr/lib/ipkg");
 		ipkg_update();
