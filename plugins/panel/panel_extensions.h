@@ -186,7 +186,6 @@ void screenpanel_extensions_check(int flag)
 			{
 				tmpstr = ostrcat("/autofs/", node->device, 0, 0);
 				tmpstr1 = get_ipk_tmplistinstall(tmpstr);
-				free(tmpstr1); tmpstr1 = NULL;
 
 				if(tmpstr1 != NULL)
 				{
@@ -195,6 +194,7 @@ void screenpanel_extensions_check(int flag)
 				}
 
 				free(tmpstr); tmpstr = NULL;
+				free(tmpstr1); tmpstr1 = NULL;
 			}
 			node = node->next;
 		}
