@@ -461,7 +461,7 @@ void resettvpic();
 int resetvmpeg(struct dvbdev* node);
 unsigned long readsysul(const char *filename, int line);
 char* oitoax(int value);
-void closeonexec(fd);
+void closeonexec(int fd);
 char* ostrstrcase(char* str, char* sub);
 char* getdevcontent(char* devconfig);
 char* getxmlentry(char *line, char *searchstr);

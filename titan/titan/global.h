@@ -1765,7 +1765,7 @@ int checkdate()
 	return 0;
 }
 
-void closeonexec(fd)
+void closeonexec(int fd)
 {
 	if(fd > -1)
 		fcntl(fd, F_SETFD, fcntl(fd, F_GETFD) | FD_CLOEXEC);
