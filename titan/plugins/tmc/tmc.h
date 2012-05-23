@@ -157,19 +157,19 @@ void tmcmenuscroll(int menuid, int active, struct skin* tmcmenutxt, struct skin*
 	id = *menupos;
 
 	if(id > max) id = 0;
-  tmpstr = ostrcat("%pluginpath%/", menu[id], 0, 0);
+  tmpstr = ostrcat("%pluginpath%/tmc/", menu[id], 0, 0);
 	changepic(tmcmenu1, menu[id]);
   free(tmpstr); tmpstr = NULL;
 	id++;
 
 	if(id > max) id = 0;
-  tmpstr = ostrcat("%pluginpath%/", menu[id], 0, 0);
+  tmpstr = ostrcat("%pluginpath%/tmc/", menu[id], 0, 0);
 	changepic(tmcmenu2, menu[id]);
   free(tmpstr); tmpstr = NULL;
 	id++;
 
 	if(id > max) id = 0;
-  tmpstr = ostrcat("%pluginpath%/", menu[id], 0, 0);
+  tmpstr = ostrcat("%pluginpath%/tmc/", menu[id], 0, 0);
 	changepic(tmcmenu3, menu[id]);
   free(tmpstr); tmpstr = NULL;
 	changetext(tmcmenutxt, _(menutxt[id]));
@@ -177,13 +177,13 @@ void tmcmenuscroll(int menuid, int active, struct skin* tmcmenutxt, struct skin*
 	id++;
 
 	if(id > max) id = 0;
-  tmpstr = ostrcat("%pluginpath%/", menu[id], 0, 0);
+  tmpstr = ostrcat("%pluginpath%/tmc/", menu[id], 0, 0);
 	changepic(tmcmenu4, menu[id]);
   free(tmpstr); tmpstr = NULL;
 	id++;
 
 	if(id > max) id = 0;
-  tmpstr = ostrcat("%pluginpath%/", menu[id], 0, 0);
+  tmpstr = ostrcat("%pluginpath%/tmc/", menu[id], 0, 0);
 	changepic(tmcmenu5, menu[id]);
   free(tmpstr); tmpstr = NULL;
 
