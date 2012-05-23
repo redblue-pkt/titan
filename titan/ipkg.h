@@ -388,7 +388,7 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 		debug(130, "filename: %s", (char*)filename);
 		debug(130, "HTTPAUTH: %s", HTTPAUTH);
 		
-		debug(130, "link://: http://%s@%s%s%s", HTTPAUTH, ip, path, filename);
+		debug(130, "link://: http://%s@%s/%s %s", HTTPAUTH, ip, path, filename);
 
 		free(checkfile); checkfile = NULL;		
 		gethttp(ip, path, 80, (char*)filename, HTTPAUTH, NULL, 0);
