@@ -9,8 +9,6 @@
 #include "panel_extensions.h"
 #include "panel_infos.h"
 #include "panel_infos_sysinfo.h"
-#include "panel_settings_bluebutton.h"
-#include "panel_settings_redbutton.h"
 #include "panel_settings_autostart.h"
 #include "panel_settings_overclocking.h"
 #include "panel_settings_fancontrol.h"
