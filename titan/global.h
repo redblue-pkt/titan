@@ -2437,6 +2437,25 @@ char* olutoa(unsigned long value)
 	return buf1;
 }
 
+char* oitoax(int value)
+{
+	debug(1000, "in");
+	char *buf = NULL, *buf1 = NULL;
+
+	buf = malloc(MINMALLOC);
+	if(buf == NULL)
+	{
+		err("no memory");
+		return NULL;
+	}
+
+	sprintf(buf, "%x", value);
+	buf1 = ostrcat(buf, "", 1, 0);
+
+	debug(1000, "out");
+	return buf1;
+}
+
 char* oitoa(int value)
 {
 	debug(1000, "in");

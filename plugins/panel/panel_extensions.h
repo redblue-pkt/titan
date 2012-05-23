@@ -199,7 +199,7 @@ void screenpanel_extensions_check(int flag)
 		}
 
 		if(flag == 1 && treffer == 0)
-			textbox(_("Ipk Install Info"), _("No IPK fount on media !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+			textbox(_("Ipk Install Info"), _("No plugin found."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 	}
 }
 
