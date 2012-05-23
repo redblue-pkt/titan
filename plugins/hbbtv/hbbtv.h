@@ -215,46 +215,46 @@ void screenopera(char* url)
 			//TODO
 			//operasendkey("BACK");
 		else if(rcret == getrcconfigint("rcred", NULL))
-			operasendkey("RED");
+			operasendkey("RED\n");
 		else if(rcret == getrcconfigint("rcgreen", NULL))
-			operasendkey("GREEN");
+			operasendkey("GREEN\n");
 		else if(rcret == getrcconfigint("rcyellow", NULL))
-			operasendkey("YELLOW");
+			operasendkey("YELLOW\n");
 		else if(rcret == getrcconfigint("rcblue", NULL))
-			operasendkey("BLUE");
+			operasendkey("BLUE\n");
 		else if(rcret == getrcconfigint("rcok", NULL))
 		{
-			operasendkey("OK");
-			operasendkey("ENTER");
+			operasendkey("OK\n");
+			operasendkey("ENTER\n");
 		}
 		else if(rcret == getrcconfigint("rcup", NULL))
-			operasendkey("UP");
+			operasendkey("UP\n");
 		else if(rcret == getrcconfigint("rcdown", NULL))
-			operasendkey("DOWN");
+			operasendkey("DOWN\n");
 		else if(rcret == getrcconfigint("rcleft", NULL))
-			operasendkey("LEFT");
+			operasendkey("LEFT\n");
 		else if(rcret == getrcconfigint("rcright", NULL))
-			operasendkey("RIGHT");
+			operasendkey("RIGHT\n");
 		else if(rcret == getrcconfigint("rc1", NULL))
-			operasendkey("1");
+			operasendkey("1\n");
 		else if(rcret == getrcconfigint("rc2", NULL))
-			operasendkey("2");
+			operasendkey("2\n");
 		else if(rcret == getrcconfigint("rc3", NULL))
-			operasendkey("3");
+			operasendkey("3\n");
 		else if(rcret == getrcconfigint("rc4", NULL))
-			operasendkey("4");
+			operasendkey("4\n");
 		else if(rcret == getrcconfigint("rc5", NULL))
-			operasendkey("5");
+			operasendkey("5\n");
 		else if(rcret == getrcconfigint("rc6", NULL))
-			operasendkey("6");
+			operasendkey("6\n");
 		else if(rcret == getrcconfigint("rc7", NULL))
-			operasendkey("7");
+			operasendkey("7\n");
 		else if(rcret == getrcconfigint("rc8", NULL))
-			operasendkey("8");
+			operasendkey("8\n");
 		else if(rcret == getrcconfigint("rc9", NULL))
-			operasendkey("9");
+			operasendkey("9\n");
 		else if(rcret == getrcconfigint("rc0", NULL))
-			operasendkey("0");
+			operasendkey("0\n");
 	}
 
 	if(operareceiver != NULL)
@@ -288,10 +288,26 @@ void screenopera(char* url)
 
 	writesys("/proc/cpu/alignment", "1", 0);
 
-	setvideomode("720p50", 0);
-	changefbresolution("720p50");
-	sleep(3);
+	//setvideomode("720p50", 0);
+	//changefbresolution("720p50");
+	//sleep(3);
 	fbrestore();
+
+	//stop player if running
+	if(operaservicestate = 1)
+	{
+		playerstop();
+		playerafterend();
+		operaservicestate = 0;
+	}
+
+	//start last service
+	if(operaserviceend = 1)
+	{
+		tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
+		servicestart(status.lastservice->channel, tmpstr, NULL, 0);
+		free(tmpstr); tmpstr = NULL;
+	}
 }
 
 void operareceivercb(char* cmd)
