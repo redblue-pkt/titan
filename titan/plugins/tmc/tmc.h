@@ -110,6 +110,7 @@ void tmcmenuscroll(int menuid, int active, struct skin* tmcmenutxt, struct skin*
 	int id = 0, max = 0;
 	char** menu = NULL, **menutxt = NULL;
 	int *menupos = 0;
+  char* tmpstr = NULL;
 
 	if(menuid == 0)
 	{
@@ -156,25 +157,35 @@ void tmcmenuscroll(int menuid, int active, struct skin* tmcmenutxt, struct skin*
 	id = *menupos;
 
 	if(id > max) id = 0;
+  tmpstr = ostrcat("%pluginpath%/", menu[id], 0, 0);
 	changepic(tmcmenu1, menu[id]);
+  free(tmpstr); tmpstr = NULL;
 	id++;
 
 	if(id > max) id = 0;
+  tmpstr = ostrcat("%pluginpath%/", menu[id], 0, 0);
 	changepic(tmcmenu2, menu[id]);
+  free(tmpstr); tmpstr = NULL;
 	id++;
 
 	if(id > max) id = 0;
+  tmpstr = ostrcat("%pluginpath%/", menu[id], 0, 0);
 	changepic(tmcmenu3, menu[id]);
+  free(tmpstr); tmpstr = NULL;
 	changetext(tmcmenutxt, _(menutxt[id]));
 	changename(tmcmenutxt, menutxt[id]);
 	id++;
 
 	if(id > max) id = 0;
+  tmpstr = ostrcat("%pluginpath%/", menu[id], 0, 0);
 	changepic(tmcmenu4, menu[id]);
+  free(tmpstr); tmpstr = NULL;
 	id++;
 
 	if(id > max) id = 0;
+  tmpstr = ostrcat("%pluginpath%/", menu[id], 0, 0);
 	changepic(tmcmenu5, menu[id]);
+  free(tmpstr); tmpstr = NULL;
 
 	if(active == 1)
 	{
