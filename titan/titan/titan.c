@@ -179,6 +179,8 @@ struct mostzap* mostzap = NULL;
 #include "channelhistroy.h"
 #include "thumb.h"
 #include "mostzap.h"
+#include "settings_redbutton.h"
+#include "settings_bluebutton.h"
 //#include "cardreader.h"
 //#include "sci.h"
 
