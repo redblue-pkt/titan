@@ -228,6 +228,12 @@ void screentmcmenu()
 	struct skin* tmcpic4 = getscreen("tmcpic4");
 	struct skin* tmcpic5 = getscreen("tmcpic5");
 
+	menu0pos = 0;
+	menu1pos = 0;
+	menu2pos = 0;
+	menu3pos = 0;
+	menu4pos = 0;
+
 	drawscreen(tmcbg, 1);
 	drawscreen(tmcpic1, 1);
 	drawscreen(tmcpic2, 1);
