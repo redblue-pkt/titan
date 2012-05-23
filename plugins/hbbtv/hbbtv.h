@@ -120,6 +120,20 @@ void operasendkey(char* rckey)
 	}
 }
 
+void operastartservice()
+{
+	char* tmpstr = NULL;
+
+	if(operaserviceend == 1)
+	{
+		tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
+		servicestart(status.lastservice->channel, tmpstr, NULL, 0);
+		free(tmpstr); tmpstr = NULL;
+		operaserviceend = 0;
+	}
+	free(operaplayurl); operaplayurl = NULL;
+}
+
 void screenopera(char* url)
 {
 	int rcret = 0, i = 0;
@@ -205,12 +219,8 @@ void screenopera(char* url)
     {
       playerafterend();
       operaservicestate = 0;
-			free(operaplayurl); operaplayurl = NULL;
 
-			tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
-			servicestart(status.lastservice->channel, tmpstr, NULL, 0);
-			free(tmpstr); tmpstr = NULL;
-			operaserviceend = 0;
+			operastartservice();
     }
 
 		if(rcret == getrcconfigint("rchbbtv", NULL))
@@ -308,14 +318,7 @@ void screenopera(char* url)
 	}
 
 	//start last service
-	if(operaserviceend = 1)
-	{
-		tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
-		servicestart(status.lastservice->channel, tmpstr, NULL, 0);
-		free(tmpstr); tmpstr = NULL;
-		operaserviceend = 0;
-	}
-	free(operaplayurl); operaplayurl = NULL;
+	operastartservice();
 
 	//reset tv pic size
 	status.tvpic = 1;
@@ -494,18 +497,9 @@ void operareceivercb(char* cmd)
 			if(count > 1 && ostrcmp("1", (&ret[1])->part) == 0) //VOD
 			{
         char* tmpstr = NULL;
+
 				//Switch back to live tv after vod session ended
-
-				if(operaserviceend == 1)
-				{
-	        operaserviceend = 0;
-
-	        tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
-	        servicestart(status.lastservice->channel, tmpstr, NULL, 0);
-	        free(tmpstr); tmpstr = NULL;
-				}
-
-				free(operaplayurl); operaplayurl = NULL;
+				operastartservice();
 			}
 		}
 	}
