@@ -320,6 +320,7 @@ void screenopera(char* url)
 	//reset tv pic size
 	status.tvpic = 1;
 	resettvpic();
+	clearfball();
 }
 
 void operareceivercb(char* cmd)
