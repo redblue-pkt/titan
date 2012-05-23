@@ -11,6 +11,7 @@ void screenpanel_extensions(int mode, char* path)
 	
 	if(mode == 0)
 	{
+		system("cp -a /mnt/ipkg/* /var/usr/lib/ipkg");
 		ipkg_update();
 		ipkg_list();
 
@@ -51,6 +52,7 @@ void screenpanel_extensions(int mode, char* path)
 					}
 					textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 					loadplugin();
+					system("rm -rf /mnt/ipkg ; mkdir /mnt/ipkg; cp -a /var/usr/lib/ipkg/info /mnt/ipkg; cp /var/usr/lib/ipkg/status /mnt/ipkg");
 					free(log), log = NULL;
 					unlink("/tmp/ipkg.log");
 				}
@@ -87,6 +89,7 @@ void screenpanel_extensions(int mode, char* path)
 					log = readfiletomem("/tmp/ipkg.log", 0);
 					if(log == NULL) log = ostrcat("Remove success", NULL, 0, 0);
 					textbox(_("Ipk Remove Info - Remove OK"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+					system("rm -rf /mnt/ipkg ; mkdir /mnt/ipkg; cp -a /var/usr/lib/ipkg/info /mnt/ipkg; cp /var/usr/lib/ipkg/status /mnt/ipkg");
 				}
 				else
 				{
@@ -112,15 +115,15 @@ void screenpanel_extensions(int mode, char* path)
 		else
 			tmpstr = get_ipk_tmplistinstall(path);
     
-    if(tmpstr == NULL || strlen(tmpstr) == 0)
-    {
-      textbox(_("Message"), _("No plugin found."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-    }
-    else
-    {
+	    if(tmpstr == NULL || strlen(tmpstr) == 0)
+	    {
+	      textbox(_("Message"), _("No plugin found."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+	    }
+	    else
+	    {
 		  addmenulistall(&mlist, tmpstr, NULL, 0, NULL);
 		  mbox = menulistbox(mlist, NULL, "Ipk Tmp Install - select file", "%pluginpath%/panel/skin", "/skin/plugin.png", 1, 0);
-    }
+	    }
 		
 		free(tmpstr); tmpstr = NULL;
 		
@@ -152,6 +155,14 @@ void screenpanel_extensions(int mode, char* path)
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
 		if(mbox != NULL) screenpanel_extensions(2, path);
+	}
+	elif(mode == 3)
+	{
+		system("cp -a /mnt/ipkg/* /var/usr/lib/ipkg");
+		ipkg_update();
+		ipkg_upgrade();
+		system("rm -rf /mnt/ipkg ; mkdir /mnt/ipkg; cp -a /var/usr/lib/ipkg/info /mnt/ipkg; cp /var/usr/lib/ipkg/status /mnt/ipkg");
+		freeipkg();
 	}
 }
 
