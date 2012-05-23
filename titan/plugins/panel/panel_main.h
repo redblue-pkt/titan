@@ -76,10 +76,6 @@ int panel_menucall(struct skin* panel_menuentry)
 		screenpanel_settings(0);
 	else if(ostrcmp("panel_settings_automount", panel_menuentry->name) == 0)
 		screenpanel_settings(1);
-	else if(ostrcmp("panel_settings_redbutton", panel_menuentry->name) == 0)
-		screenpanel_settings_redbutton();
-	else if(ostrcmp("panel_settings_bluebutton", panel_menuentry->name) == 0)
-		screenpanel_settings_bluebutton();
 	else if(ostrcmp("panel_settings_autostart", panel_menuentry->name) == 0)
 	{
 		struct skin* screen = getscreen("panel_autostart_main");

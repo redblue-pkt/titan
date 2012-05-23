@@ -402,6 +402,16 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screenblindscanadjust();
 	}
+	else if(ostrcmp("settings_redbutton", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screen_settings_redbutton();
+	}
+	else if(ostrcmp("settings_bluebutton", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screen_settings_bluebutton();
+	}
 	else if(menuentry->pluginhandle != NULL)
 	{
 		if(menuentry->input != NULL)
