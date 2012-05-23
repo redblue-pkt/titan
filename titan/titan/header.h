@@ -52,6 +52,7 @@ char* numinput(char* title, char* num, char* mask, int isip);
 //ipkg.h
 void freeipkg();
 int ipkg_update(void);
+int ipkg_upgrade(void);
 int ipkg_list(void);
 int ipkg_install(const char* package);
 int ipkg_remove(const char* package, int purge);
