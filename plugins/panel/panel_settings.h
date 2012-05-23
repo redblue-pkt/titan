@@ -18,22 +18,6 @@ void screenpanel_settings(int mode)
 	listbox->aktpage = 1;
 
 	if (mode == 0){
-		changetitle(config, _("Beta Config"));
-
-		node = addlistbox(config, listbox, node, 1);
-		node->type = INPUTBOX;
-		changetext(node, _("User"));
-		changename(node, "betauser");
-		changeinput(node, getownconfigq(node->name));
-
-		node = addlistbox(config, listbox, node, 1);
-		node->type = INPUTBOX;
-		changetext(node, _("Password"));
-		changename(node, "betapass");
-		changeinput(node, getownconfigq(node->name));
-	}
-
-	if (mode == 1){
 		changetitle(config, _("Automount Config"));
 
 		node = addlistbox(config, listbox, node, 1);
@@ -43,18 +27,6 @@ void screenpanel_settings(int mode)
 		addchoicebox(node, "0", _("disable"));
 		addchoicebox(node, "1", _("ntfs-3g"));
 		addchoicebox(node, "2", _("ntfsmount"));
-		setchoiceboxselection(node, getownconfig(node->name));
-	}
-
-	if (mode == 2){
-		changetitle(config, _("Red Button Config"));
-
-		node = addlistbox(config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("Open Panel when pressing red button:"));
-		changename(node, "redpanel");
-		addchoicebox(node, "0", _("no"));
-		addchoicebox(node, "1", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
 
