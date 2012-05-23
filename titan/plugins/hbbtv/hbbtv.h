@@ -207,13 +207,13 @@ void screenopera(char* url)
       operaservicestate = 0;    
     }
 
-		if(rcret == getrcconfigint("rcexit", NULL))
+		if(rcret == getrcconfigint("rchbbtv", NULL))
 		{
-			//operasendkey("ESC");
+			//operasendkey("ESC\n");
 			break;
 		}
-			//TODO
-			//operasendkey("BACK");
+		else if(rcret == getrcconfigint("rcexit", NULL))
+			operasendkey("BACK\n");
 		else if(rcret == getrcconfigint("rcred", NULL))
 			operasendkey("RED\n");
 		else if(rcret == getrcconfigint("rcgreen", NULL))
