@@ -5,7 +5,21 @@ void screenmc_internetbrowser()
 {
 	if(status.security == 1)
 	{
-		if(file_exist("/var/swap/bin/nsfb"))
+		int treffer = 0;
+		struct skin* plugin = getscreen("plugin");
+		struct skin* child = plugin->child;
+
+		while(child != NULL)
+		{
+			if(child->del == PLUGINDELMARK)
+			{
+				if(ostrcmp(child->name, "Internet Browser") == 0)
+					treffer = 1;
+				child = child->next;
+			}
+		}
+
+		if(treffer == 1)
 		{
 //			if(textbox(_("Message"), _("start Internet browser now ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1){	
 				char* tmpstr = NULL;
@@ -16,7 +30,7 @@ void screenmc_internetbrowser()
 				rcret = servicestop(status.aktservice, 1, 0);
 				if(rcret == 1) return;
 	
-				tmpstr = ostrcat("/var/swap/bin/nsfb -f linux ", getconfig("browserhome", NULL), 0, 0);
+				tmpstr = ostrcat("nsfb -f linux ", getconfig("browserhome", NULL), 0, 0);
 				system(tmpstr);
 				free(tmpstr);
 				setosdtransparent(getskinconfigint("osdtransparent", NULL));
