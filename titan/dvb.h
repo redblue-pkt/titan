@@ -212,7 +212,7 @@ int dvbgetpmtpid(unsigned char *buf, int serviceid)
 	return 0;
 }
 
-char* dvbgethbbtvurl(char* buf)
+char* dvbgethbbtvurl(unsigned char* buf)
 {
 	//int seclen = 0;
 	int pos = 0;
@@ -232,7 +232,7 @@ char* dvbgethbbtvurl(char* buf)
 	applooplen = ((buf[pos] & 0x0F) << 8) + buf[pos + 1];
 	pos += 2;
 
-	for(pos; pos < applooplen; pos += appdesclen + 9)
+	for(; pos < applooplen; pos += appdesclen + 9)
 	{
 		//long orgid = (buf[pos] << 24) + (buf[pos + 1] << 16) + (buf[pos + 2] << 8) + buf[pos + 3];
 		//int appid = (buf[pos + 4] << 8) + buf[pos + 5];
