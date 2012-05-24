@@ -1,7 +1,7 @@
 #ifndef SETTINGS_BLUEBUTTON_H
 #define SETTINGS_BLUEBUTTON_H
 
-void screen_settings_bluebutton()
+void screensettings_bluebutton()
 {
 	debug(1000, "in");
 	char* skintitle = "Blue Key Action - Setup";

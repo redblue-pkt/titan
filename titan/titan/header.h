@@ -10,21 +10,21 @@
 
 // info.h
 void screengetserial();
-void screensysteminfo(int mode);
+void screensystem_info(int mode);
 
 //systemupdate.h
-void screensystemupdate(int mode);
+void screensystem_update(int mode);
 
 //settings_bluebutton.h
-void screen_settings_bluebutton();
+void screensettings_bluebutton();
 
 //settings_redbutton.h
-void screen_settings_redbutton();
+void screensettings_redbutton();
 
 //extensions.h
-void screen_feed();
-void screen_extensions(int mode, char* path);
-void screen_extensions_check(int flag);
+void screenfeed();
+void screenextensions(int mode, char* path);
+void screenextensions_check(int flag);
 
 //...port.h
 void fbsave();
