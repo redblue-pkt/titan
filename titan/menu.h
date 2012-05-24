@@ -115,13 +115,13 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		struct skin* screen = getscreen("settingsmenu");
 		menu(screen, 0);
 	}
-	if(ostrcmp("extensionsmenu", menuentry->name) == 0)
+	else if(ostrcmp("extensionsmenu", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		struct skin* screen = getscreen("extensionsmenu");
 		menu(screen, 0);
 	}
-	if(ostrcmp("systemupdatemenu", menuentry->name) == 0)
+	else if(ostrcmp("systemupdatemenu", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		struct skin* screen = getscreen("systemupdatemenu");
