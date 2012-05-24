@@ -8,6 +8,10 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+// info.h
+void screengetserial();
+void screensysteminfo(int mode);
+
 //systemupdate.h
 void screensystemupdate(int mode);
 
