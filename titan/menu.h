@@ -20,15 +20,6 @@ struct skin* menu(struct skin* menu, int flag)
 	child = menu->child;
 	while(child != NULL)
 	{
-		// Hide SoftCam Panel when no Emu's installed
-		if(ostrcmp(child->name, "softcam") == 0)
-		{
-			if((checkemu() == 0) || (status.security == 0))
-				child->hidden = YES;
-			else
-				child->hidden = NO;
-		}
-
 		if(child->type & MENU)
 		{	
 			tmpstr = ostrcat("protect_", child->name, 0, 0);
@@ -46,6 +37,16 @@ struct skin* menu(struct skin* menu, int flag)
 				
 			free(tmpstr); tmpstr = NULL;
 		}
+
+		// Hide SoftCam Panel when no Emu's installed
+		if(ostrcmp(child->name, "softcam") == 0)
+		{
+			if((checkemu() == 0) || (status.security == 0))
+				child->hidden = YES;
+			else
+				child->hidden = NO;
+		}
+
 		child = child->next;
 	}
 
