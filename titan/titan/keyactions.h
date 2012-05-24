@@ -16,7 +16,6 @@ void screenkeyactions(int key, int flag)
 	struct skin* plugin = getscreen("plugin");
 	struct skin* child = plugin->child;
 	struct menulist* mlist = NULL, *mbox = NULL;
-	int skip = 0;
 						
 	if(flag == 1)
 	{
@@ -26,29 +25,10 @@ void screenkeyactions(int key, int flag)
 		{
 			while(child != NULL)
 			{
-				if(child->del == PLUGINDELMARK)
-				{	
-					if(status.security == 0)
-					{
-						if(ostrcmp(child->name, "Softcam Panel") == 0) skip = 1;
-//						if(ostrcmp(child->name, "Media Center") == 0) skip = 1;
-						if(ostrcmp(child->name, "Internet Browser") == 0) skip = 1;
-						if(ostrcmp(child->name, "CallMonitor") == 0) skip = 1;
-						if(ostrcmp(child->name, "Imdb") == 0) skip = 1;
-						if(ostrcmp(child->name, "KeyLock") == 0) skip = 1;
-						if(ostrcmp(child->name, "Mbox Info") == 0) skip = 1;
-						if(ostrcmp(child->name, "Networkbrowser") == 0) skip = 1;
-						if(ostrcmp(child->name, "Permanent Time") == 0) skip = 1;	
-						if(ostrcmp(child->name, "TopfieldVFD") == 0) skip = 1;
-						if(ostrcmp(child->name, "Hello") == 0) skip = 1;
-						if(ostrcmp(child->name, "LCD Pearl") == 0) skip = 1;
-					}				
-					if(skip == 0)
-					{
-						addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
-						debug(60, "key: %s", child->name);
-					}
-					skip = 0;
+				if(child->del == PLUGINDELMARK && status.security == 0 && checkpluginskip(child->name) == 0)
+				{
+					addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
+					debug(60, "key: %s", child->name);
 				}
 				child = child->next;
 			}
@@ -82,21 +62,7 @@ void screenkeyactions(int key, int flag)
 		return;
 	}
 
-	if(status.security == 0)
-	{
-		if(ostrcmp(keyconf, "Softcam Panel") == 0) return;
-//		if(ostrcmp(keyconf, "Media Center") == 0) return;
-		if(ostrcmp(keyconf, "Internet Browser") == 0) return;
-		if(ostrcmp(keyconf, "CallMonitor") == 0) return;
-		if(ostrcmp(keyconf, "Imdb") == 0) return;
-		if(ostrcmp(keyconf, "KeyLock") == 0) return;
-		if(ostrcmp(keyconf, "Mbox Info") == 0) return;
-		if(ostrcmp(keyconf, "Networkbrowser") == 0) return;
-		if(ostrcmp(keyconf, "Permanent Time") == 0) return;	
-		if(ostrcmp(keyconf, "TopfieldVFD") == 0) return;
-		if(ostrcmp(keyconf, "Hello") == 0) return;
-		if(ostrcmp(keyconf, "LCD Pearl") == 0) return;
-	}
+	if(status.security == 0 && checkpluginskip(keyconf) == 1) return;
 						
 	debug(60, "key=%s", keyconf);
 	if(ostrcmp(keyconf, "Softcam Panel") == 0 && status.security == 1)
