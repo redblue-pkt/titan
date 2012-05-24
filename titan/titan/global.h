@@ -667,7 +667,7 @@ void setskinnodeslocked(int flag)
 //			{
 				if(ostrcmp("vfdisplay", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("savesettings", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("recordpath", child->name) == 0) child->locked = tmpflag;
+//				else if(ostrcmp("recordpath", child->name) == 0) child->locked = tmpflag;
 //				else if(ostrcmp("videosettings", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("scartrecorder", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("vfdisplay", child->name) == 0) child->locked = tmpflag;
