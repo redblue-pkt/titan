@@ -669,7 +669,7 @@ void setskinnodeslocked(int flag)
 				else if(ostrcmp("sambasettings", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("nfssettings", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("panel_infos_kernel", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("panel_system_wizard", child->name) == 0) child->locked = tmpflag;
+				else if(ostrcmp("system_wizard", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("panel_sysinfos_module", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("mediaplayer", child->name) == 0) child->locked = tmpflag;
 //			}
