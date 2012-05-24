@@ -118,7 +118,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	if(ostrcmp("extensionsmenu", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		struct skin* screen = getscreen("extensionssmenu");
+		struct skin* screen = getscreen("extensionsmenu");
 		menu(screen, 0);
 	}
 	else if(ostrcmp("timermenu", menuentry->name) == 0)
