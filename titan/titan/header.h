@@ -8,6 +8,17 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//settings_bluebutton.h
+void screen_settings_bluebutton();
+
+//settings_redbutton.h
+void screen_settings_redbutton();
+
+//extensions.h
+void screen_feed();
+void screen_extensions(int mode, char* path);
+void screen_extensions_check(int flag);
+
 //...port.h
 void fbsave();
 void fbrestore();
