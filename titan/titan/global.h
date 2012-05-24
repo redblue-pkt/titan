@@ -616,18 +616,18 @@ int checkemu()
 
 int checkpluginskip(char* name)
 {
-	if(ostrcmp(child->name, "Softcam Panel") == 0) return 1;
-	//if(ostrcmp(child->name, "Media Center") == 0) return 1;
-	if(ostrcmp(child->name, "Internet Browser") == 0) return 1;
-	if(ostrcmp(child->name, "CallMonitor") == 0) return 1;
-	if(ostrcmp(child->name, "Imdb") == 0) return 1;
-	if(ostrcmp(child->name, "KeyLock") == 0) return 1;
-	if(ostrcmp(child->name, "Mbox Info") == 0) return 1;
-	if(ostrcmp(child->name, "Networkbrowser") == 0) return 1;
-	if(ostrcmp(child->name, "Permanent Time") == 0) return 1;
-	if(ostrcmp(child->name, "TopfieldVFD") == 0) return 1;
-	if(ostrcmp(child->name, "Hello") == 0) return 1;
-	if(ostrcmp(child->name, "LCD Pearl") == 0) return 1;
+	if(ostrcmp(name, "Softcam Panel") == 0) return 1;
+	//if(ostrcmp(name, "Media Center") == 0) return 1;
+	if(ostrcmp(name, "Internet Browser") == 0) return 1;
+	if(ostrcmp(name, "CallMonitor") == 0) return 1;
+	if(ostrcmp(name, "Imdb") == 0) return 1;
+	if(ostrcmp(name, "KeyLock") == 0) return 1;
+	if(ostrcmp(name, "Mbox Info") == 0) return 1;
+	if(ostrcmp(name, "Networkbrowser") == 0) return 1;
+	if(ostrcmp(name, "Permanent Time") == 0) return 1;
+	if(ostrcmp(name, "TopfieldVFD") == 0) return 1;
+	if(ostrcmp(name, "Hello") == 0) return 1;
+	if(ostrcmp(name, "LCD Pearl") == 0) return 1;
 
 	return 0;
 }
@@ -670,25 +670,13 @@ void setskinnodeslocked(int flag)
 				else if(ostrcmp("recordpath", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("videosettings", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("scartrecorder", child->name) == 0) child->locked = tmpflag;
-//				else if(ostrcmp("information", child->name) == 0) child->locked = tmpflag;
-				//else if(ostrcmp("plugins", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("vfdisplay", child->name) == 0) child->locked = tmpflag;
-				//else if(ostrcmp("rotorsettings", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("satconfig", child->name) == 0) child->locked = tmpflag;
-				//else if(ostrcmp("satfinder", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("configurehdd", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("panel_settings_overclocking", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("panel_settings_fancontrol", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("panel_settings_automount", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("panel_settings_autostart", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("panel_settings_videotune", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("system_update_usb_online", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("system_update_usb_tmp", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("sambasettings", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("nfssettings", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("panel_infos_kernel", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("system_wizard", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("panel_sysinfos_module", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("mediaplayer", child->name) == 0) child->locked = tmpflag;
 //			}
 			
@@ -712,45 +700,6 @@ void ckeckskinnodeslockedthread()
 	{
 		setskinnodeslocked(0);
 	}
-}
-
-//can use to disable a menu for a box (node type must be MENU)
-int checkmenuforbox(char *name)
-{
-/*
-	if(status.expertmodus > 9) return 1;
-	if((checkbox("ATEMIO500") == 1) || (checkbox("ATEMIO510") == 1))
-	{
-		if(ostrcmp("vfdisplay", name) == 0) return 0;
-		if(ostrcmp("savesettings", name) == 0) return 0;
-		if(ostrcmp("recordpath", name) == 0) return 0;
-		if(ostrcmp("videosettings", name) == 0) return 0;
-		if(ostrcmp("scartrecorder", name) == 0) return 0;
-		if(ostrcmp("information", name) == 0) return 0;
-		//if(ostrcmp("plugins", name) == 0) return 0;
-		if(ostrcmp("vfdisplay", name) == 0) return 0;
-		//if(ostrcmp("rotorsettings", name) == 0) return 0;
-		if(ostrcmp("satconfig", name) == 0) return 0;
-		//if(ostrcmp("satfinder", name) == 0) return 0;
-		if(ostrcmp("configurehdd", name) == 0) return 0;
-		if(ostrcmp("panel_settings_overclocking", name) == 0) return 0;
-		if(ostrcmp("panel_settings_fancontrol", name) == 0) return 0;
-		if(ostrcmp("panel_settings_automount", name) == 0) return 0;
-		if(ostrcmp("panel_settings_autostart", name) == 0) return 0;
-		if(ostrcmp("panel_settings_videotune", name) == 0) return 0;
-		if(ostrcmp("panel_system_update_usb_online", name) == 0) return 0;
-		if(ostrcmp("panel_system_update_usb_tmp", name) == 0) return 0;
-		if(ostrcmp("panel_extensions_menu", name) == 0) return 0;
-		if(ostrcmp("panel_system_backup", name) == 0) return 0;
-		if(ostrcmp("sambasettings", name) == 0) return 0;
-		if(ostrcmp("nfssettings", name) == 0) return 0;
-		if(ostrcmp("panel_infos_kernel", name) == 0) return 0;
-		if(ostrcmp("panel_system_wizard", name) == 0) return 0;
-		if(ostrcmp("panel_sysinfos_module", name) == 0) return 0;
-		if(ostrcmp("mediaplayer", name) == 0) return 0;
-	}
-*/
-	return 1;
 }
 
 int isbase64(char c)
