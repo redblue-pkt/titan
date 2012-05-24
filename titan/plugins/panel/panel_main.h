@@ -69,6 +69,8 @@ int panel_menucall(struct skin* panel_menuentry)
 		screenpanel_settings_overclocking();
 	else if(ostrcmp("panel_settings_automount", panel_menuentry->name) == 0)
 		screenpanel_settings(0);
+	else if(ostrcmp("panel_settings_wizzard", panel_menuentry->name) == 0)
+		screenpanel_wizard();
 	else if(ostrcmp("panel_settings_autostart", panel_menuentry->name) == 0)
 	{
 		struct skin* screen = getscreen("panel_autostart_main");
@@ -142,7 +144,6 @@ void panel_main()
 	struct skin* panel_main = getscreen("panel_main");
 	struct skin* listbox = getscreennode(panel_main, "listbox");
 	struct skin* panel_main_selected = getscreennode(panel_main, "panel_main_selected_pic");
-	struct skin* child = NULL;
 
 	addscreenrc(panel_main, listbox);
 
@@ -176,7 +177,7 @@ void panel_main()
 		if(listbox->select != NULL && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL)))
 		{
 			debug(10, "[panal_main] (select) menu=%s", listbox->select->name);
-			else if(ostrcmp(listbox->select->name, "panel_settings") == 0)
+			if(ostrcmp(listbox->select->name, "panel_settings") == 0)
 				changepic(panel_main_selected, "panel/skin/panel_settings.png");
 			else if(ostrcmp(listbox->select->name, "panel_infos") == 0)
 				changepic(panel_main_selected, "panel/skin/panel_infos.png");

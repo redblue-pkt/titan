@@ -12,6 +12,7 @@
 <node type=MENU pic=%pluginpath%/panel/skin/panel_overclock.png textposx=120 valign=middle name=panel_settings_overclocking text="Overclocking" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_videotune.png textposx=120 valign=middle name=panel_settings_videotune text="Videotune" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_fancontrol.png textposx=120 valign=middle name=panel_settings_fancontrol text="Fancontrol" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hidden=no hspace=5>
+<node type=MENU pic=%pluginpath%/panel/skin/panel_wizzard.png textposx=120 valign=middle name=panel_wizard text="Wizard" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 #<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
