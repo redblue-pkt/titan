@@ -446,7 +446,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	else if(ostrcmp("extensions_mediaipkinstall", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screenpanel_extensions_check(1);
+		screen_extensions_check(1);
 	}
 	else if(menuentry->pluginhandle != NULL)
 	{
