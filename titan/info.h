@@ -8,7 +8,6 @@ void screengetserial()
 
 void screensystem_info(int mode)
 {
-
 	char* tmpstr = NULL;
 	int rcret = 0;
 	struct skin* systeminfo = getscreen("systeminfo");
@@ -16,7 +15,7 @@ void screensystem_info(int mode)
 
 	addscreenrc(systeminfo, info);
 
-	if (mode == 0)
+	if(mode == 0)
   {
 		char* tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
 
@@ -46,7 +45,6 @@ void screensystem_info(int mode)
 
 	delownerrc(systeminfo);
 	clearscreen(systeminfo);
-	delscreen(systeminfo);
 }
 
 #endif
