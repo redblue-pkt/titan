@@ -614,6 +614,24 @@ int checkemu()
 	return 0;
 }
 
+int checkpluginskip(char* name)
+{
+	if(ostrcmp(child->name, "Softcam Panel") == 0) return 1;
+	//if(ostrcmp(child->name, "Media Center") == 0) return 1;
+	if(ostrcmp(child->name, "Internet Browser") == 0) return 1;
+	if(ostrcmp(child->name, "CallMonitor") == 0) return 1;
+	if(ostrcmp(child->name, "Imdb") == 0) return 1;
+	if(ostrcmp(child->name, "KeyLock") == 0) return 1;
+	if(ostrcmp(child->name, "Mbox Info") == 0) return 1;
+	if(ostrcmp(child->name, "Networkbrowser") == 0) return 1;
+	if(ostrcmp(child->name, "Permanent Time") == 0) return 1;
+	if(ostrcmp(child->name, "TopfieldVFD") == 0) return 1;
+	if(ostrcmp(child->name, "Hello") == 0) return 1;
+	if(ostrcmp(child->name, "LCD Pearl") == 0) return 1;
+
+	return 0;
+}
+
 //flag 0: unlock
 //flag 1: lock
 void setskinnodeslocked(int flag)

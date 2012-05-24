@@ -20,33 +20,10 @@ void screensettings_bluebutton()
 	addmenulist(&mlist, "Child Protection", NULL, NULL, 0, 0);
 	addmenulist(&mlist, "Subchannel", NULL, NULL, 0, 0);
 
-	int skip = 0;
-
 	while(child != NULL)
 	{
-		if(child->del == PLUGINDELMARK)
-		{
-			if(status.security == 0)
-			{
-				if(ostrcmp(child->name, "Softcam Panel") == 0) skip = 1;
-//				if(ostrcmp(child->name, "Media Center") == 0) skip = 1;
-				if(ostrcmp(child->name, "Internet Browser") == 0) skip = 1;
-				if(ostrcmp(child->name, "CallMonitor") == 0) skip = 1;
-				if(ostrcmp(child->name, "Imdb") == 0) skip = 1;
-				if(ostrcmp(child->name, "KeyLock") == 0) skip = 1;
-				if(ostrcmp(child->name, "Mbox Info") == 0) skip = 1;
-				if(ostrcmp(child->name, "Networkbrowser") == 0) skip = 1;
-				if(ostrcmp(child->name, "Permanent Time") == 0) skip = 1;	
-				if(ostrcmp(child->name, "TopfieldVFD") == 0) skip = 1;
-				if(ostrcmp(child->name, "Hello") == 0) skip = 1;
-				if(ostrcmp(child->name, "LCD Pearl") == 0) skip = 1;
-			}				
-			if(skip == 0)
-			{
-				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
-			}
-			skip = 0;
-		}
+		if(child->del == PLUGINDELMARK && status.security == 0 && checkpluginskip(child->name) == 0)
+			addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
 		child = child->next;
 	}
 	
