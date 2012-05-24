@@ -26,8 +26,6 @@
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=85%>
 <node type=MENU pic=%pluginpath%/panel/skin/panel.png textposx=120 valign=middle name=panel_system_wizard text="Wizard" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel.png textposx=120 valign=middle name=panel_system_eraseswap text="Erase Swap" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic=%pluginpath%/panel/skin/panel_info.png textposx=120 valign=middle name=panel_system_imageinfo text="Image Information" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic=%pluginpath%/panel/skin/panel_info.png textposx=120 valign=middle name=panel_system_getserial text="Serial Information" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_backup.png textposx=120 valign=middle name=panel_system_backup text="Backup" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_backup_and_restore_settings.png textposx=120 valign=middle name=panel_system_restore text="Settings backup/restore" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 #<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
