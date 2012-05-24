@@ -19,6 +19,9 @@ void screensystem_info(int mode);
 //system_update.h
 void screensystem_update(int mode);
 
+//system_backup.h
+void screensystem_backup();
+
 //system_backup_restore.h
 void screensystem_backup_restore();
 

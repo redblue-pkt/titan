@@ -1,7 +1,7 @@
 #ifndef SYSTEM_BACKUP_H
 #define SYSTEM_BACKUP_H
 
-void screenpanel_system_backup()
+void screensystem_backup()
 {
 	int rcret = 0;
 	struct skin* backup = getscreen("system_backup");
