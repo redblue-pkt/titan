@@ -627,13 +627,8 @@ void setskinnodeslocked(int flag)
 		child = node->child;
 		while(child != NULL)
 		{
-			if(ostrcmp("panel_system_update_flash_online", child->name) == 0) child->locked = flag;
-			else if(ostrcmp("panel_system_update_flash_tmp", child->name) == 0) child->locked = flag;
-			else if(ostrcmp("panel_system_eraseswap", child->name) == 0) child->locked = flag;
-			else if(ostrcmp("panel_system_restore", child->name) == 0) child->locked = flag;
-			else if(ostrcmp("panel_extensions", child->name) == 0) child->locked = flag;
+			if(ostrcmp("browser", child->name) == 0) child->locked = flag;
 //			else if(ostrcmp("mediacenter", child->name) == 0) child->locked = flag;
-			else if(ostrcmp("browser", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("callmon_main", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("imdb", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("keylock", child->name) == 0) child->locked = flag;
@@ -657,7 +652,7 @@ void setskinnodeslocked(int flag)
 				else if(ostrcmp("recordpath", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("videosettings", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("scartrecorder", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("information", child->name) == 0) child->locked = tmpflag;
+//				else if(ostrcmp("information", child->name) == 0) child->locked = tmpflag;
 				//else if(ostrcmp("plugins", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("vfdisplay", child->name) == 0) child->locked = tmpflag;
 				//else if(ostrcmp("rotorsettings", child->name) == 0) child->locked = tmpflag;
