@@ -98,14 +98,6 @@ int panel_menucall(struct skin* panel_menuentry)
 		screenpanel_infos(0);
 	else if(ostrcmp("panel_system_getserial", panel_menuentry->name) == 0)
 		screenpanel_system_getserial();
-	else if(ostrcmp("panel_system_update_flash_online", panel_menuentry->name) == 0)
-		screenpanel_system_update(0);
-	else if(ostrcmp("panel_system_update_flash_tmp", panel_menuentry->name) == 0)
-		screenpanel_system_update(1);
-	else if(ostrcmp("panel_system_update_usb_online", panel_menuentry->name) == 0)
-		screenpanel_system_update(2);
-	else if(ostrcmp("panel_system_update_usb_tmp", panel_menuentry->name) == 0)
-		screenpanel_system_update(3);
 	else if(ostrcmp("panel_extensions", panel_menuentry->name) == 0)
 	{
 		struct skin* screen = getscreen("panel_extensions_main");

@@ -2,42 +2,6 @@
 <node fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox  posx=center posy=center width=90% height=90% />
 </screen>
 
-<screen fontcol=fontcol title="System - Flashupdate (online)" titlealign=center name=panel_system_update_flash_online_menu hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=98% height=90% bordercol=bordercol bordersize=2 bgcol=bgcol>
-<node name=panel_filelistpath valign=middle posy=1 bordercol=bordercol bordersize=1 width=100% height=25>
-<node hspace=10 pic=skin/folder.png textposx=30 fontsize=30 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=panel_filelist posy=30 width=100% height=80%>
-<node name=b1 text="cancel" halign=center valign=center bordercol=red bordersize=6 bordertype=2 posx=20% posy=90% width=150 height=39/>
-<node name=b2 text="install" halign=center valign=center bordercol=green bordersize=6 bordertype=2 posx=40% posy=90% width=150 height=39/>
-<node name=b3 text="update" halign=center valign=center bordercol=yellow bordersize=6 bordertype=2 posx=60% posy=90% width=150 height=39/>
-</screen>
-
-<screen fontcol=fontcol title="System - Flashupdate (tmp)" titlealign=center name=panel_system_update_flash_tmp_menu hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=98% height=90% bordercol=bordercol bordersize=2 bgcol=bgcol>
-<node name=panel_filelistpath valign=middle posy=1 bordercol=bordercol bordersize=1 width=100% height=25>
-<node hspace=10 pic=skin/folder.png textposx=30 fontsize=30 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=panel_filelist posy=30 width=100% height=80%>
-<node name=b1 text="cancel" halign=center valign=center bordercol=red bordersize=6 bordertype=2 posx=20% posy=90% width=150 height=39/>
-<node name=b2 text="install" halign=center valign=center bordercol=green bordersize=6 bordertype=2 posx=40% posy=90% width=150 height=39/>
-<node name=b3 text="update" halign=center valign=center bordercol=yellow bordersize=6 bordertype=2 posx=60% posy=90% width=150 height=39/>
-</screen>
-
-<screen fontcol=fontcol title="System - Usbupdate (online)" titlealign=center name=panel_system_update_usb_online_menu hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=98% height=90% bordercol=bordercol bordersize=2 bgcol=bgcol>
-<node name=panel_filelistpath valign=middle posy=1 bordercol=bordercol bordersize=1 width=100% height=25>
-<node hspace=10 pic=skin/folder.png textposx=30 fontsize=30 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=panel_filelist posy=30 width=100% height=60%>
-<node bordercol=bordercol scrollbar=auto type=listbox posx=25% posy=75% name=listbox  width=50% height=40>
-<node name=device type=choicebox parent=listbox valign=middle posx=0 text="Device:" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=b1 text="cancel" halign=center valign=center bordercol=red bordersize=6 bordertype=2 posx=20% posy=90% width=150 height=39/>
-<node name=b2 text="install" halign=center valign=center bordercol=green bordersize=6 bordertype=2 posx=40% posy=90% width=150 height=39/>
-<node name=b3 text="update" halign=center valign=center bordercol=yellow bordersize=6 bordertype=2 posx=60% posy=90% width=150 height=39/>
-</screen>
-
-<screen fontcol=fontcol title="System - Usbupdate (tmp)" titlealign=center name=panel_system_update_usb_tmp_menu hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=98% height=90% bordercol=bordercol bordersize=2 bgcol=bgcol>
-<node name=panel_filelistpath valign=middle posy=1 bordercol=bordercol bordersize=1 width=100% height=25>
-<node hspace=10 pic=skin/folder.png textposx=30 fontsize=30 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=panel_filelist posy=30 width=100% height=60%>
-<node bordercol=bordercol scrollbar=auto type=listbox posx=25% posy=75% name=listbox  width=50% height=40>
-<node name=device type=choicebox parent=listbox valign=middle posx=0 text="Device:" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=b1 text="cancel" halign=center valign=center bordercol=red bordersize=6 bordertype=2 posx=20% posy=90% width=150 height=39/>
-<node name=b2 text="install" halign=center valign=center bordercol=green bordersize=6 bordertype=2 posx=40% posy=90% width=150 height=39/>
-<node name=b3 text="update" halign=center valign=center bordercol=yellow bordersize=6 bordertype=2 posx=60% posy=90% width=150 height=39/>
-</screen>
-
 <screen fontcol=fontcol title="Panel" titlealign=center name=panel_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=65% bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=100%>
 <node type=MENU pic="%pluginpath%/panel/skin/panel_softcam_panel.png" textposx=120 valign=middle name=panel_softcam text="Softcam Panel" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
@@ -66,10 +30,6 @@
 <node type=MENU pic=%pluginpath%/panel/skin/panel_info.png textposx=120 valign=middle name=panel_system_getserial text="Serial Information" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_backup.png textposx=120 valign=middle name=panel_system_backup text="Backup" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_backup_and_restore_settings.png textposx=120 valign=middle name=panel_system_restore text="Settings backup/restore" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic="%pluginpath%/panel/skin/panel_flash_online_updater.png" textposx=120 valign=middle name=panel_system_update_flash_online text="Flashupdate (online)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic="%pluginpath%/panel/skin/panel_flash_tmp_updater.png" textposx=120 valign=middle name=panel_system_update_flash_tmp text="Flashupdate (tmp)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic="%pluginpath%/panel/skin/panel_usb_online_updater.png" textposx=120 valign=middle name=panel_system_update_usb_online text="Usbupdate (online)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic="%pluginpath%/panel/skin/panel_usb_tmp_updater.png" textposx=120 valign=middle name=panel_system_update_usb_tmp text="Usbupdate (tmp)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 #<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
