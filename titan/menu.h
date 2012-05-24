@@ -127,7 +127,6 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		struct skin* screen = getscreen("systemupdatemenu");
 		menu(screen, 0);
 	}
-
 	if(ostrcmp("systeminfomenu", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
