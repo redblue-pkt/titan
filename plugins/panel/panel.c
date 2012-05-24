@@ -9,7 +9,7 @@
 #include "panel_settings_autostart.h"
 #include "panel_settings_overclocking.h"
 #include "panel_settings_fancontrol.h"
-#include "panel_settings_wizzard.h"
+#include "panel_settings_wizard.h"
 #include "panel_main.h"
 
 char pluginname[] = "Panel";
