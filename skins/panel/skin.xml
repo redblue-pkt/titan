@@ -6,7 +6,6 @@
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=100%>
 <node type=MENU pic="%pluginpath%/panel/skin/panel_softcam_panel.png" textposx=120 valign=middle name=panel_softcam text="Softcam Panel" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_setup.png textposx=120 valign=middle name=panel_settings text="Settings" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic=%pluginpath%/panel/skin/panel_system.png textposx=120 valign=middle name=panel_system text="System" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_infos.png textposx=120 valign=middle name=panel_infos_main text="Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 #<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
@@ -18,15 +17,6 @@
 <node type=MENU pic=%pluginpath%/panel/skin/panel_overclock.png textposx=120 valign=middle name=panel_settings_overclocking text="Overclocking" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_videotune.png textposx=120 valign=middle name=panel_settings_videotune text="Videotune" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_fancontrol.png textposx=120 valign=middle name=panel_settings_fancontrol text="Fancontrol" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hidden=no hspace=5>
-#<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
-</screen>
-
-<screen fontcol=fontcol title="System" titlealign=center name=panel_system_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=65% bordercol=bordercol bordersize=2 bgcol=bgcol>
-<node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=85%>
-<node type=MENU pic=%pluginpath%/panel/skin/panel.png textposx=120 valign=middle name=panel_system_wizard text="Wizard" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic=%pluginpath%/panel/skin/panel.png textposx=120 valign=middle name=panel_system_eraseswap text="Erase Swap" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic=%pluginpath%/panel/skin/panel_backup.png textposx=120 valign=middle name=panel_system_backup text="Backup" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic=%pluginpath%/panel/skin/panel_backup_and_restore_settings.png textposx=120 valign=middle name=panel_system_restore text="Settings backup/restore" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 #<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
@@ -85,27 +75,12 @@
 <node name=b2 text="EXIT" halign=center valign=middle bordercol=white bordersize=6 bordertype=2 posx=55% posy=90% width=150 height=39/>
 </screen>
 
-<screen fontcol=fontcol title="Backup / Restore Settings" titlealign=center name=panel_system_restore hspace=1 vspace=1 fontsize=30 posx=center posy=center width=90% height=90% bordercol=bordercol bordersize=2 bgcol=bgcol>
-<node bordercol=bordercol scrollbar=auto wrap=yes type=textbox name=info width=100% height=90% posx=0% posy=10%>
-<node name=b1 text="Cancel" halign=center valign=middle bordercol=red bordersize=6 bordertype=2 posx=18% posy=90% width=185 height=30/>
-<node name=b2 text="Restore" halign=center valign=middle bordercol=green bordersize=6 bordertype=2 posx=39% posy=90% width=185 height=30/>
-<node name=b3 text="Backup" halign=center valign=middle bordercol=yellow bordersize=6 bordertype=2 posx=60% posy=90% width=185 height=30/>
-</screen>
-
 <screen fontcol=fontcol title="OverClock Settings" titlealign=center name=panel_settings_overclocking hspace=1 vspace=1 fontsize=30 posx=center posy=center width=90% height=90% bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node fontsize=32 bordercol=bordercol scrollbar=auto type=listbox name=listbox posy=50 width=55% height=-35>
 <node bordercol=bordercol scrollbar=auto fontsize=25 fontcol=yellow type=textbox name=label1 width=40% height=90% posx=60% posy=10%>
 <node name=b1 text="Cancel" halign=center valign=middle bordercol=red bordersize=6 bordertype=2 posx=18% posy=90% width=150 height=39/>
 <node name=b2 text="Save" halign=center valign=middle bordercol=green bordersize=6 bordertype=2 posx=39% posy=90% width=150 height=39/>
 <node name=b3 text="Test" frequency halign=center valign=middle bordercol=yellow bordersize=6 bordertype=2 posx=60% posy=90% width=150 height=39/>
-</screen>
-
-<screen fontcol=fontcol title="Create Backup" titlealign=center name=panel_system_backup hspace=1 vspace=1 fontsize=30 posx=center posy=center width=90% height=90% bordercol=bordercol bordersize=2 bgcol=bgcol>
-<node bordercol=bordercol scrollbar=auto wrap=yes type=textbox name=info width=90% height=60% posx=10% posy=10%>
-<node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% posy=70% height=10%>
-<node name=listfield type=choicebox parent=listbox valign=middle posx=65% text="Select backup: " bordercol=bordercol bordersize=1 width=30% height=30>
-<node name=b1 text="Cancel" halign=center valign=middle bordercol=red bordersize=6 bordertype=2 posx=30% posy=90% width=150 height=39/>
-<node name=b2 text="Backup" halign=center valign=middle bordercol=green bordersize=6 bordertype=2 posx=55% posy=90% width=150 height=39/>
 </screen>
 
 <screen fontcol=fontcol valign=bottom titlealign=center name="panel_settings_fancontrol" hspace=15 vspace=15 fontsize=30 title="FanControl" posx=center posy=center width=60% height=30% bordercol=bordercol bordersize=2 bgcol=bgcol>
