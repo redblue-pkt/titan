@@ -417,62 +417,62 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	else if(ostrcmp("settings_redbutton", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screen_settings_redbutton();
+		screensettings_redbutton();
 	}
 	else if(ostrcmp("settings_bluebutton", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screen_settings_bluebutton();
+		screensettings_bluebutton();
 	}
 	else if(ostrcmp("feed", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screen_feed();
+		screenfeed();
 	}
 	else if(ostrcmp("extensions_ipkinstall", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screen_extensions(0, NULL);
+		screenextensions(0, NULL);
 	}
 	else if(ostrcmp("extensions_ipkremove", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screen_extensions(1, NULL);
+		screenextensions(1, NULL);
 	}
 	else if(ostrcmp("extensions_tmpipkinstall", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screen_extensions(2, NULL);
+		screenextensions(2, NULL);
 	}
 	else if(ostrcmp("extensions_ipkupgrade", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screen_extensions(3, NULL);
+		screenextensions(3, NULL);
 	}
 	else if(ostrcmp("extensions_mediaipkinstall", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screen_extensions_check(1);
+		screenextensions_check(1);
 	}
-	else if(ostrcmp("systemupdate_flash_online", menuentry->name) == 0)
+	else if(ostrcmp("system_update_flash_online", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screensystemupdate(0);
+		screensystem_update(0);
 	}
-	else if(ostrcmp("systemupdate_flash_tmp", menuentry->name) == 0)
+	else if(ostrcmp("system_update_flash_tmp", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screensystemupdate(1);
+		screensystem_update(1);
 	}
-	else if(ostrcmp("systemupdate_usb_online", menuentry->name) == 0)
+	else if(ostrcmp("system_update_usb_online", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screensystemupdate(2);
+		screensystem_update(2);
 	}
-	else if(ostrcmp("systemupdate_usb_tmp", menuentry->name) == 0)
+	else if(ostrcmp("system_update_usb_tmp", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screensystemupdate(3);
+		screensystem_update(3);
 	}
 	else if(ostrcmp("infos_serial", menuentry->name) == 0)
 	{
@@ -482,27 +482,27 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	else if(ostrcmp("infos_imageinfo", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screensysteminfo(0);
+		screensystem_info(0);
 	}
 	else if(ostrcmp("system_eraseswap", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screen_system_eraseswap();
+		screensystem_eraseswap();
 	}
 	else if(ostrcmp("system_wizard", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screen_system_wizard();
+		screensystem_wizard();
 	}
 	else if(ostrcmp("system_backup", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screen_system_backup();
+		screensystem_backup();
 	}
 	else if(ostrcmp("system_backup_restore", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screen_system_backup_restore();
+		screensystem_backup_restore();
 	}
 	else if(menuentry->pluginhandle != NULL)
 	{

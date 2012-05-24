@@ -6,7 +6,7 @@ void screengetserial()
 	getserial();
 }
 
-void screensysteminfo(int mode)
+void screensystem_info(int mode)
 {
 
 	char* tmpstr = NULL;

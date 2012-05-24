@@ -1,7 +1,7 @@
 #ifndef EXTENSIONS_H
 #define EXTENSIONS_H
 
-void screen_feed()
+void screenfeed()
 {
 	char* tmpstr = NULL, *line = NULL, *lastline = NULL;
 	char* pos = NULL;
@@ -63,7 +63,7 @@ void screen_feed()
 	free(lastline);
 }
 
-void screen_extensions(int mode, char* path)
+void screenextensions(int mode, char* path)
 {
 	char* tmpstr = NULL, *tmpinfo = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;

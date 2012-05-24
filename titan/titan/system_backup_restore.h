@@ -1,7 +1,7 @@
 #ifndef SYSTEM_BACKUP_RESTORE_H
 #define SYSTEM_BACKUP_RESTORE_H
 
-void screen_system_backup_restore()
+void screensystem_backup_restore()
 {
 	int rcret = 0;
 	struct skin* backup_restore = getscreen("system_backup_restore");

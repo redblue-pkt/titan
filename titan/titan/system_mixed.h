@@ -1,7 +1,7 @@
 #ifndef SYSTEM_MIXED_H
 #define SYSTEM_MIXED_H
 
-void screen_system_eraseswap()
+void screensystem_eraseswap()
 {
 	if(textbox(_("Message"), _("Do you really want to erase all datas and backups from Swap?\nThe Box will reboot and the erase will be started!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
@@ -12,7 +12,7 @@ void screen_system_eraseswap()
 	}       
 }
 
-void screen_system_wizard()
+void screensystem_wizard()
 {
 	if(textbox(_("Message"), _("Do you really want to start the Wizard?\nThe Box will reboot and the Wizard will be started!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
