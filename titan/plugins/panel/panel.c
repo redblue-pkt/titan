@@ -6,7 +6,6 @@
 #include "panel_softcam.h"
 #include "panel_settings.h"
 #include "panel_system.h"
-#include "panel_extensions.h"
 #include "panel_infos.h"
 #include "panel_infos_sysinfo.h"
 #include "panel_settings_autostart.h"
