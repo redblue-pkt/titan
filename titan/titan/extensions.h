@@ -227,8 +227,8 @@ void screen_extensions(int mode, char* path)
 	}
 }
 
-//flag 0: from start
-//flag 1: from menu
+//flag 0: without message
+//flag 1: with message
 void screen_extensions_check(int flag)
 {
 	int treffer = 0;
