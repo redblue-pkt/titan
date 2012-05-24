@@ -11,25 +11,8 @@ void screenpanel_infos(int mode)
 
 	addscreenrc(panel_info, info);
 
-	if (mode == 0){
-		char* tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
-
-		changetitle(panel_info, _("Infos"));
-
-		tmpstr1 = command("cat /etc/motd");
-		if(tmpstr1 != NULL) tmpstr2 = strstr(tmpstr1, "wElc0me");
-		tmpstr3 = command("cat /etc/imageinfo");
-		if(tmpstr2 == NULL)
-			tmpstr = ostrcat(tmpstr3, "", 1, 0);
-		else
-			tmpstr = ostrcat(tmpstr2, tmpstr3, 0, 1);
-		changetext(info, tmpstr);
-
-		free(tmpstr1); tmpstr1 = NULL;
-		free(tmpstr); tmpstr = NULL;
-	}
-
-	if (mode == 1){
+	if(mode == 0)
+  {
 		char* tmpstr1 = NULL, *tmpstr2 = NULL;
 
 		changetitle(panel_info, _("Default"));
@@ -62,7 +45,8 @@ void screenpanel_infos(int mode)
 		free(tmpstr); tmpstr = NULL;
 	}
 
-	if (mode == 2){
+	if(mode == 1)
+  {
 		changetitle(panel_info, _("Free Space"));
 
 		tmpstr = command("df -h");
@@ -71,7 +55,8 @@ void screenpanel_infos(int mode)
 		free(tmpstr); tmpstr = NULL;
 	}
 
-	if (mode == 3){
+	if(mode == 2)
+  {
 		changetitle(panel_info, _("Kernel"));
 
 		tmpstr = command("cat /proc/version");
@@ -80,7 +65,8 @@ void screenpanel_infos(int mode)
 		free(tmpstr); tmpstr = NULL;
 	}
 
-	if (mode == 4){
+	if(mode == 3)
+  {
 		changetitle(panel_info, _("Mounts"));
 
 		tmpstr = command("mount");
@@ -89,7 +75,8 @@ void screenpanel_infos(int mode)
 		free(tmpstr); tmpstr = NULL;
 	}
 
-	if (mode == 5){
+	if(mode == 4)
+  {
 		char* tmpstr1 = NULL, *tmpstr2 = NULL;
 
 		changetitle(panel_info, _("Network"));
@@ -102,7 +89,8 @@ void screenpanel_infos(int mode)
 		free(tmpstr2); tmpstr2 = NULL;
 	}
 
-	if (mode == 6){
+	if(mode == 5)
+  {
 		changetitle(panel_info, _("Ram"));
 
 		tmpstr = command("free");
