@@ -181,6 +181,7 @@ struct mostzap* mostzap = NULL;
 #include "mostzap.h"
 #include "settings_redbutton.h"
 #include "settings_bluebutton.h"
+#include "extensions.h"
 //#include "cardreader.h"
 //#include "sci.h"
 

@@ -1,9 +1,69 @@
-#ifndef PANEL_EXTENSIONS_H
-#define PANEL_EXTENSIONS_H
+#ifndef EXTENSIONS_H
+#define EXTENSIONS_H
 
-extern struct hdd* hdd;
+void screen_feed()
+{
+	char* tmpstr = NULL, *line = NULL, *lastline = NULL;
+	char* pos = NULL;
 
-void screenpanel_extensions(int mode, char* path)
+	tmpstr = readsys(getconfig("feed", NULL), 3); //line3
+	tmpstr = string_replace("src/gz secret http://", "", tmpstr, 1);
+
+	if(tmpstr != NULL)
+		pos = strchr(tmpstr, '/');
+	if(pos != NULL)
+		pos[0] = '\0';
+
+	if(tmpstr == NULL || ostrcmp(tmpstr, "") == 0 || ostrcmp(tmpstr, "\n") == 0)
+		tmpstr = ostrcat(tmpstr, "000.000.000.000", 1, 0);
+
+	lastline = numinput(_("Feed"), tmpstr, "000.000.000.000", 1);
+
+	if(lastline != NULL)
+	{
+		free(tmpstr); tmpstr = NULL;
+		tmpstr = fixip(lastline, 1);
+		free(lastline); lastline = tmpstr;
+
+		tmpstr = readsys(getconfig("feed", NULL), 1); //line1
+		if(tmpstr == NULL || (tmpstr != NULL && strlen(tmpstr) == 0))
+			line = ostrcat(line, "#", 1, 0);
+		else
+			line = ostrcat(line, tmpstr, 1, 0);
+		free(tmpstr); tmpstr = NULL;
+
+		if(line[strlen(line) - 1] != '\n')
+			line = ostrcat(line, "\n", 1, 0);
+
+		tmpstr = readsys(getconfig("feed", NULL), 2); //line2
+		if(tmpstr == NULL || (tmpstr != NULL && strlen(tmpstr) == 0))
+			line = ostrcat(line, "#\n", 1, 0);
+		else
+			line = ostrcat(line, tmpstr, 1, 0);
+		free(tmpstr); tmpstr = NULL;
+
+		if(line[strlen(line) - 1] == '\n')
+			tmpstr = ostrcat(line, "src/gz secret http://", 0, 0);
+		else
+			tmpstr = ostrcat(line, "\nsrc/gz secret http://", 0, 0);
+
+		if(strlen(lastline) == 0)
+		{
+			free(tmpstr);
+			tmpstr = ostrcat(line, NULL, 0, 0);
+		}
+
+		tmpstr = ostrcat(tmpstr, lastline, 1, 0);
+		tmpstr = ostrcat(tmpstr, "/svn/ipk/sh4/titan", 1, 0);
+		writesys(getconfig("feed", NULL), tmpstr, 0);
+	}
+
+	free(tmpstr);
+	free(line);
+	free(lastline);
+}
+
+void screen_extensions(int mode, char* path)
 {
 	char* tmpstr = NULL, *tmpinfo = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;
@@ -15,7 +75,7 @@ void screenpanel_extensions(int mode, char* path)
 		ipkg_update();
 		ipkg_list();
 
-		mbox = ipkmenulist(mlist, NULL, "Ipk Install - select section", "%pluginpath%/panel/skin", NULL, 1, 0);
+		mbox = ipkmenulist(mlist, NULL, "Ipk Install - select section", NULL, NULL, 1, 0);
 
 		if(mbox != NULL)
 		{
@@ -64,12 +124,12 @@ void screenpanel_extensions(int mode, char* path)
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
 		freeipkg();
-		if(mbox != NULL) screenpanel_extensions(0, path);
+		if(mbox != NULL) screen_extensions(0, path);
 	}
 	else if(mode == 1)
 	{
 		ipkg_list_installed();
-		mbox = ipkmenulist(mlist, NULL, "Ipk Remove - select file", "%pluginpath%/panel/skin", NULL, 1, 2);
+		mbox = ipkmenulist(mlist, NULL, "Ipk Remove - select file", NULL, NULL, 1, 2);
 		
 		if(mbox != NULL)
 		{
@@ -106,7 +166,7 @@ void screenpanel_extensions(int mode, char* path)
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
 		freeipkg();
-		if(mbox != NULL) screenpanel_extensions(1, path);
+		if(mbox != NULL) screen_extensions(1, path);
 	}
 	else if(mode == 2)
 	{
@@ -122,7 +182,7 @@ void screenpanel_extensions(int mode, char* path)
 	    else
 	    {
 			addmenulistall(&mlist, tmpstr, NULL, 0, NULL);
-			mbox = menulistbox(mlist, NULL, "Ipk Tmp Install - select file", "%pluginpath%/panel/skin", "/skin/plugin.png", 1, 0);
+			mbox = menulistbox(mlist, NULL, "Ipk Tmp Install - select file", NULL, "/skin/plugin.png", 1, 0);
 	    }
 		
 		free(tmpstr); tmpstr = NULL;
@@ -154,7 +214,7 @@ void screenpanel_extensions(int mode, char* path)
 		freemenulist(mlist, 1); mlist = NULL;
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
-		if(mbox != NULL) screenpanel_extensions(2, path);
+		if(mbox != NULL) screen_extensions(2, path);
 	}
 	else if(mode == 3)
 	{
@@ -169,7 +229,7 @@ void screenpanel_extensions(int mode, char* path)
 
 //flag 0: from start
 //flag 1: from menu
-void screenpanel_extensions_check(int flag)
+void screen_extensions_check(int flag)
 {
 	int treffer = 0;
 	struct hdd *node = NULL;
@@ -190,7 +250,7 @@ void screenpanel_extensions_check(int flag)
 				if(tmpstr1 != NULL)
 				{
 					treffer = 1;
-					screenpanel_extensions(2, tmpstr);
+					screen_extensions(2, tmpstr);
 				}
 
 				free(tmpstr); tmpstr = NULL;
