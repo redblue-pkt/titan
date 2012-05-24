@@ -121,6 +121,12 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		struct skin* screen = getscreen("extensionsmenu");
 		menu(screen, 0);
 	}
+	if(ostrcmp("systemupdatemenu", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		struct skin* screen = getscreen("systemupdatemenu");
+		menu(screen, 0);
+	}
 	else if(ostrcmp("timermenu", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
@@ -447,6 +453,26 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	{
 		if(check == 1) return 0;
 		screen_extensions_check(1);
+	}
+	else if(ostrcmp("systemupdate_flash_online", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensystemupdate(0);
+	}
+	else if(ostrcmp("systemupdate_flash_tmp", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensystemupdate(1);
+	}
+	else if(ostrcmp("systemupdate_usb_online", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensystemupdate(2);
+	}
+	else if(ostrcmp("systemupdate_usb_tmp", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensystemupdate(3);
 	}
 	else if(menuentry->pluginhandle != NULL)
 	{
