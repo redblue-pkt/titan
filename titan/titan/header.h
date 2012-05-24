@@ -8,6 +8,12 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//eraseswap.h
+void screeneraseswap();
+
+//softcam.h
+void screensoftcam();
+
 //system_mixed.h
 void screensystem_eraseswap();
 void screensystem_wizard();
