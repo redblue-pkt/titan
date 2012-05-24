@@ -5,14 +5,11 @@
 #include "panel_global.h"
 #include "panel_softcam.h"
 #include "panel_settings.h"
-#include "panel_system.h"
 #include "panel_infos.h"
 #include "panel_infos_sysinfo.h"
 #include "panel_settings_autostart.h"
 #include "panel_settings_overclocking.h"
 #include "panel_settings_fancontrol.h"
-#include "panel_system_restore.h"
-#include "panel_system_backup.h"
 #include "panel_main.h"
 
 char pluginname[] = "Panel";

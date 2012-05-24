@@ -1,15 +1,15 @@
-#ifndef PANEL_SYSTEM_BACKUP_H
-#define PANEL_SYSTEM_BACKUP_H
+#ifndef SYSTEM_BACKUP_H
+#define SYSTEM_BACKUP_H
 
 void screenpanel_system_backup()
 {
 	int rcret = 0;
-	struct skin* panel_backup = getscreen("panel_system_backup");
-	struct skin* listbox = getscreennode(panel_backup, "listbox");
-	struct skin *listfield = getscreennode(panel_backup, "listfield");
-	struct skin* b_red = getscreennode(panel_backup, "b1");
-	struct skin* b_green = getscreennode(panel_backup, "b2");
-	struct skin* info = getscreennode(panel_backup, "info");
+	struct skin* backup = getscreen("system_backup");
+	struct skin* listbox = getscreennode(backup, "listbox");
+	struct skin *listfield = getscreennode(backup, "listfield");
+	struct skin* b_red = getscreennode(backup, "b1");
+	struct skin* b_green = getscreennode(backup, "b2");
+	struct skin* info = getscreennode(backup, "info");
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *infotext = NULL;
 
@@ -20,22 +20,22 @@ void screenpanel_system_backup()
 	changetext(b_green, _("Backup"));
 	b_red->hidden = NO; b_green->hidden = NO;
 
-	changetitle(panel_backup, _("Create Backup"));
+	changetitle(backup, _("Create Backup"));
 
-	addscreenrc(panel_backup, listbox);
+	addscreenrc(backup, listbox);
 
 	if(checkbox("UFS912"))
 		changeinput(listfield, "kernel\nfw\nroot\nfull");
 	else
 		changeinput(listfield, "kernel\nvar\nroot\nfull");
 
-	drawscreen(panel_backup, 0);
+	drawscreen(backup, 0);
 	tmp = listbox->select;
 
 	while(1)
 	{
-		addscreenrc(panel_backup, tmp);
-		rcret = waitrc(panel_backup, 0, 0);
+		addscreenrc(backup, tmp);
+		rcret = waitrc(backup, 0, 0);
 		tmp = listbox->select;
 		
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
@@ -46,7 +46,7 @@ void screenpanel_system_backup()
 			if(isfile("/sbin/backup.sh"))
 			{
 				b_red->hidden = YES; b_green->hidden = YES;
-				drawscreen(panel_backup, 0);
+				drawscreen(backup, 0);
 				if(listbox->select != NULL && listbox->select->ret != NULL)
 				{
 					tmpstr = ostrcat(tmpstr, "backup.sh ", 1, 0);
@@ -60,8 +60,8 @@ void screenpanel_system_backup()
 	}
 
 	infotext = NULL;
-	delownerrc(panel_backup);
-	clearscreen(panel_backup);
+	delownerrc(backup);
+	clearscreen(backup);
 }
 
 #endif
