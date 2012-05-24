@@ -1,7 +1,7 @@
 #ifndef SETTINGS_REDBUTTON_H
 #define SETTINGS_REDBUTTON_H
 
-void screen_settings_redbutton()
+void screensettings_redbutton()
 {
 	debug(1000, "in");
 	char* skintitle = "Red Key Action - Setup";
