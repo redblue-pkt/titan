@@ -493,15 +493,10 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screensystem_info(0);
 	}
-	else if(ostrcmp("system_eraseswap", menuentry->name) == 0)
+	else if(ostrcmp("eraseswap", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screensystem_eraseswap();
-	}
-	else if(ostrcmp("system_wizard", menuentry->name) == 0)
-	{
-		if(check == 1) return 0;
-		screensystem_wizard();
+		screeneraseswap();
 	}
 	else if(ostrcmp("system_backup", menuentry->name) == 0)
 	{
