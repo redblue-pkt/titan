@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//systemupdate.h
+void screensystemupdate(int mode);
+
 //settings_bluebutton.h
 void screen_settings_bluebutton();
 
