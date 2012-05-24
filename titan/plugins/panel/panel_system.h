@@ -1,11 +1,6 @@
 #ifndef PANEL_SYSTEM_H
 #define PANEL_SYSTEM_H
 
-void screenpanel_system_getserial()
-{
-	getserial();
-}
-
 void screenpanel_system_eraseswap()
 {
 	if(textbox(_("Message"), _("Do you really want to erase all datas and backups from Swap?\nThe Box will reboot and the erase will be started!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
