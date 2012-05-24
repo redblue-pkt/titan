@@ -664,10 +664,8 @@ void setskinnodeslocked(int flag)
 				else if(ostrcmp("panel_settings_automount", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("panel_settings_autostart", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("panel_settings_videotune", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("panel_system_update_usb_online", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("panel_system_update_usb_tmp", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("panel_extensions_menu", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("panel_system_backup", child->name) == 0) child->locked = tmpflag;
+				else if(ostrcmp("system_update_usb_online", child->name) == 0) child->locked = tmpflag;
+				else if(ostrcmp("system_update_usb_tmp", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("sambasettings", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("nfssettings", child->name) == 0) child->locked = tmpflag;
 				else if(ostrcmp("panel_infos_kernel", child->name) == 0) child->locked = tmpflag;
