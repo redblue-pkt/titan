@@ -124,7 +124,7 @@ void screenextensions(int mode, char* path)
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
 		freeipkg();
-		if(mbox != NULL) screen_extensions(0, path);
+		if(mbox != NULL) screenextensions(0, path);
 	}
 	else if(mode == 1)
 	{
@@ -166,7 +166,7 @@ void screenextensions(int mode, char* path)
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
 		freeipkg();
-		if(mbox != NULL) screen_extensions(1, path);
+		if(mbox != NULL) screenextensions(1, path);
 	}
 	else if(mode == 2)
 	{
@@ -214,7 +214,7 @@ void screenextensions(int mode, char* path)
 		freemenulist(mlist, 1); mlist = NULL;
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
-		if(mbox != NULL) screen_extensions(2, path);
+		if(mbox != NULL) screenextensions(2, path);
 	}
 	else if(mode == 3)
 	{
@@ -229,7 +229,7 @@ void screenextensions(int mode, char* path)
 
 //flag 0: without message
 //flag 1: with message
-void screen_extensions_check(int flag)
+void screenextensions_check(int flag)
 {
 	int treffer = 0;
 	struct hdd *node = NULL;
@@ -250,7 +250,7 @@ void screen_extensions_check(int flag)
 				if(tmpstr1 != NULL)
 				{
 					treffer = 1;
-					screen_extensions(2, tmpstr);
+					screenextensions(2, tmpstr);
 				}
 
 				free(tmpstr); tmpstr = NULL;
