@@ -1,6 +1,5 @@
 <screen fontcol=fontcol title="Panel" titlealign=center name=panel_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=65% bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=100%>
-<node type=MENU pic="%pluginpath%/panel/skin/panel_softcam_panel.png" textposx=120 valign=middle name=panel_softcam text="Softcam Panel" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_setup.png textposx=120 valign=middle name=panel_settings text="Settings" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_infos.png textposx=120 valign=middle name=panel_infos_main text="Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 #<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
@@ -49,16 +48,6 @@
 <node type=MENU pic="%pluginpath%/panel/skin/panel_network.png" textposx=120 valign=middle name=panel_autostart_network text="Network" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_parental.png textposx=120 valign=middle name=panel_autostart_safety text="Child safety" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 #<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
-</screen>
-
-<screen fontcol=fontcol title="Softcam Panel" titlealign=center name=panel_softcam hspace=1 vspace=1 fontsize=30 title="" posx=center posy=center width=60% height=65% bordercol=bordercol bordersize=2 bgcol=bgcol>
-<node name=menutitle text="Softcam auswahl:" posx=1% posy=1% width=250 height=30 fontcol=fontcol/>
-<node name=ecminfo type=TEXTBOX wrap=yes posx=55% posy=40 width=340 height=300 bordercol=red bordersize=0 fontsize=30 fontcol=fontcol/>
-<node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=50% height=50% posx=1% posy=10%>
-<node name=b1 text="Deactivate" halign=center valign=middle bordercol=red bordersize=6 bordertype=2 posx=8% posy=89% width=150 height=39/>
-<node name=b2 text="Restart" halign=center valign=middle bordercol=green bordersize=6 bordertype=2 posx=29% posy=89% width=150 height=39/>
-<node name=b3 text="Refresh" halign=center valign=middle bordercol=yellow bordersize=6 bordertype=2 posx=50% posy=89% width=150 height=39/>
-<node name=b4 text="Activate" halign=center valign=middle bordercol=blue bordersize=6 bordertype=2 posx=71% posy=89% width=150 height=39/>
 </screen>
 
 <screen font=tuxtxt fontcol=fontcol title="" titlealign=center name=panel_infos hspace=30 vspace=30 fontsize=30 posx=center posy=center width=95% height=95% bordercol=bordercol bordersize=2 bgcol=bgcol>

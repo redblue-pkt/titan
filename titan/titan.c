@@ -187,6 +187,7 @@ struct mostzap* mostzap = NULL;
 #include "system_backup.h"
 #include "system_backup_restore.h"
 #include "info.h"
+#include "softcam.h"
 
 //#include "cardreader.h"
 //#include "sci.h"

@@ -1,5 +1,5 @@
-#ifndef PANEL_SOFTCAM_H
-#define PANEL_SOFTCAM_H
+#ifndef SOFTCAM_H
+#define SOFTCAM_H
 
 char* swhichcam = NULL;
 struct clist *emulist[LISTHASHSIZE] = {NULL};
@@ -65,7 +65,7 @@ void readmenu()
 			checkactive = string_newline(command(cmd));
 			free(cmd); cmd = NULL;
 			if(ostrcmp(emush, checkactive) == 0){
-				debug(100, "[SoftcamPanel] active emu = %s\n", emush);
+				debug(100, "active emu = %s\n", emush);
 				active = 1;
 			}
 
@@ -75,7 +75,7 @@ void readmenu()
 			checkstate = command(cmd);
 			free(cmd); cmd = NULL;
 			if(strstr(checkstate, "checkemu running") != 0){
-				debug(100, "[SoftcamPanel] running emu = %s\n", emush);
+				debug(100, "running emu = %s\n", emush);
 				check = 1;
 			}
 
@@ -87,7 +87,7 @@ void readmenu()
 			}else if(active == 1){
 				emuname = ostrcat(emuname, "  (active)", 1, 0);
 			}
-			debug(100, "[SoftcamPanel] emuname = %s\n", emuname);
+			debug(100, "emuname = %s\n", emuname);
 			addlist(emulist, emuname, emush);
 			free(emuname); emuname = NULL;
 			emush = strtok(NULL, "\n");
@@ -108,7 +108,7 @@ void readmenu()
 void fillmenubox()
 {
 	struct clist* elist = NULL;
-	struct skin* screen = getscreen("panel_softcam");
+	struct skin* screen = getscreen("softcam");
 	struct skin* listbox = getscreennode(screen, "listbox");
 	struct skin* node = NULL;
 	char* aktemu = NULL;
@@ -152,12 +152,12 @@ void fillmenubox()
 		}
 	}
 	setlistboxselection(listbox, aktemu);
-	debug(100, "[SoftcamPanel] SET SELECTION to %s\n", aktemu);
+	debug(100, "set selection to %s\n", aktemu);
 }
 
 void activate(char* emu)
 {
-	debug(100, "[SoftcamPanel] ACTIVATE EMU= %s\n",emu);
+	debug(100, "active emu= %s\n",emu);
 	char* cmd = NULL;
 	cmd = ostrcat(emu, "\"" , 0, 0);
 	cmd = ostrcat("emu.sh activate \"" , cmd, 0, 1);
@@ -169,7 +169,7 @@ void activate(char* emu)
 
 void deactivate(char* emu)
 {
-	debug(100, "[SoftcamPanel] DEACTIVATE EMU= %s\n",emu);
+	debug(100, "deaktivate emu= %s\n",emu);
 	char* cmd = NULL;
 	cmd = ostrcat(emu, "\"" , 0, 0);
 	cmd = ostrcat("emu.sh deactivate \"" , cmd, 0, 1);
@@ -181,7 +181,7 @@ void deactivate(char* emu)
 
 void startcam(char* emu)
 {
-	debug(100, "[SoftcamPanel] STARTCAM EMU= %s\n",emu);
+	debug(100, "startcam emu= %s\n",emu);
 	char* cmd = NULL;
 	cmd = ostrcat(emu, "\"" , 0, 0);
 	cmd = ostrcat("emu.sh start \"" , cmd, 0, 1);
@@ -193,7 +193,7 @@ void startcam(char* emu)
 
 void stopcam(char* emu)
 {
-	debug(100, "[SoftcamPanel] STOPCAM EMU= %s\n",emu);
+	debug(100, "stopcam emu= %s\n",emu);
 	char* cmd = NULL;
 	cmd = ostrcat(emu, "\"" , 0, 0);
 	cmd = ostrcat("emu.sh stop \"" , cmd, 0, 1);
@@ -205,7 +205,7 @@ void stopcam(char* emu)
 
 void restartcam(char* emu)
 {
-	debug(100, "[SoftcamPanel] RE-START EMU= %s\n",emu);
+	debug(100, "restart emu= %s\n",emu);
 	char* cmd = NULL;
 	cmd = ostrcat(emu, "\"" , 0, 0);
 	cmd = ostrcat("emu.sh restart \"" , cmd, 0, 1);
@@ -224,17 +224,17 @@ void readecminfo(struct skin* labelecminfo)
 	free(tmpstr);
 }
 
-void screenpanel_softcam()
+void screensoftcam()
 {
 	int rcret = 0;
-	struct skin* panel_softcam = getscreen("panel_softcam");
-	struct skin* listbox = getscreennode(panel_softcam, "listbox");
-	struct skin* labelecminfo = getscreennode(panel_softcam, "ecminfo");
-	struct skin* menutitle = getscreennode(panel_softcam, "menutitle");
-	struct skin* b_red = getscreennode(panel_softcam, "b1");
-	struct skin* b_green = getscreennode(panel_softcam, "b2");
-	struct skin* b_yellow = getscreennode(panel_softcam, "b3");
-	struct skin* b_blue = getscreennode(panel_softcam, "b4");
+	struct skin* softcam = getscreen("softcam");
+	struct skin* listbox = getscreennode(softcam, "listbox");
+	struct skin* labelecminfo = getscreennode(softcam, "ecminfo");
+	struct skin* menutitle = getscreennode(softcam, "menutitle");
+	struct skin* b_red = getscreennode(softcam, "b1");
+	struct skin* b_green = getscreennode(softcam, "b2");
+	struct skin* b_yellow = getscreennode(softcam, "b3");
+	struct skin* b_blue = getscreennode(softcam, "b4");
 	struct skin* tmp = NULL;
 
 	// show labels
@@ -253,39 +253,39 @@ void screenpanel_softcam()
 	// add emu's to selectionbox
 	fillmenubox();
 
-	drawscreen(panel_softcam, 0);
-	addscreenrc(panel_softcam, listbox);
+	drawscreen(softcam, 0);
+	addscreenrc(softcam, listbox);
 
 	tmp = listbox->select;
 
 	while(1)
 	{
-		addscreenrc(panel_softcam, tmp);
-		rcret = waitrc(panel_softcam, 4000, 0);
+		addscreenrc(softcam, tmp);
+		rcret = waitrc(softcam, 4000, 0);
 		tmp = listbox->select;
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcred", NULL)){
 			// deactivate emu
 			deactivate(tmp->name);
-			drawscreen(panel_softcam, 0);
+			drawscreen(softcam, 0);
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL)){
 			// restart emu
 			restartcam(tmp->name);
-			drawscreen(panel_softcam, 0);
+			drawscreen(softcam, 0);
 		}
 		if(rcret == getrcconfigint("rcyellow", NULL)){
 			// refrech screen
 			readecminfo(labelecminfo);
 			readmenu();
 			fillmenubox();
-			drawscreen(panel_softcam, 0);
+			drawscreen(softcam, 0);
 		}
 		if(rcret == getrcconfigint("rcblue", NULL)){
 			// activate emu
 			activate(tmp->name);
-			drawscreen(panel_softcam, 0);
+			drawscreen(softcam, 0);
 		}
 		if(rcret == getrcconfigint("rcok", NULL)){
 			// start/stop emu, depending if emu already runs
@@ -295,12 +295,12 @@ void screenpanel_softcam()
 			else{
 				startcam(tmp->name);
 			}
-			drawscreen(panel_softcam, 0);
+			drawscreen(softcam, 0);
 		}
 		if(rcret == RCTIMEOUT){
 			// update ecminfo
 			readecminfo(labelecminfo);
-			drawscreen(panel_softcam, 0);
+			drawscreen(softcam, 0);
 		}
         }
 
@@ -308,9 +308,9 @@ void screenpanel_softcam()
 		freelist(emulist);
 
 	free(swhichcam);
-	delmarkedscreennodes(panel_softcam, 1);
-	delownerrc(panel_softcam);
-	clearscreen(panel_softcam);
+	delmarkedscreennodes(softcam, 1);
+	delownerrc(softcam);
+	clearscreen(softcam);
 }
 
 #endif

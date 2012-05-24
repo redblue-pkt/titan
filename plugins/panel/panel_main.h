@@ -53,9 +53,7 @@ int panel_menucall(struct skin* panel_menuentry)
 
 	printf("MENU: %s\n", panel_menuentry->name);	// must be removed later
 
-	if(ostrcmp("panel_softcam", panel_menuentry->name) == 0)
-		screenpanel_softcam();
-	else if(ostrcmp("panel_settings", panel_menuentry->name) == 0)
+	if(ostrcmp("panel_settings", panel_menuentry->name) == 0)
 	{
 		struct skin* screen = getscreen("panel_settings_main");
 
@@ -143,31 +141,13 @@ void panel_main()
 
 	struct skin* panel_main = getscreen("panel_main");
 	struct skin* listbox = getscreennode(panel_main, "listbox");
-
 	struct skin* panel_main_selected = getscreennode(panel_main, "panel_main_selected_pic");
 	struct skin* child = NULL;
 
-	drawscreen(panel_main, 1);
 	addscreenrc(panel_main, listbox);
 
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
-	// Hide SoftCam Panel when no Emu's installed
-	child = listbox->next;
-	while(child != NULL)
-	{
-		if(ostrcmp(child->name, "panel_softcam") == 0)
-		{
-			if((checkemu() == 0) || (status.security == 0))
-				child->hidden = YES;
-			else
-				child->hidden = NO;
-			listbox->aktline = 1;
-			listbox->aktpage = -1;
-			break;
-		}
-		child = child->next;
-	}
 
 	drawscreen(panel_main, 0);
 	if(listbox->select != NULL)
@@ -196,8 +176,6 @@ void panel_main()
 		if(listbox->select != NULL && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL)))
 		{
 			debug(10, "[panal_main] (select) menu=%s", listbox->select->name);
-			if(ostrcmp(listbox->select->name, "panel_softcam") == 0)
-				changepic(panel_main_selected, "panel/skin/panel_softcam.png");
 			else if(ostrcmp(listbox->select->name, "panel_settings") == 0)
 				changepic(panel_main_selected, "panel/skin/panel_settings.png");
 			else if(ostrcmp(listbox->select->name, "panel_infos") == 0)
