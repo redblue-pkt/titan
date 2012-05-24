@@ -75,13 +75,7 @@
 
 <screen fontcol=fontcol title="Extensions" titlealign=center name=panel_extensions_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=65% bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=85%>
-<node type=MENU pic=%pluginpath%/panel/skin/panel_feed.png textposx=120 valign=middle name=panel_feed text="Change Feed" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_plugins.png textposx=120 valign=middle name=panel_extensions_menu text="Extensions Menu" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic="%pluginpath%/panel/skin/panel_tmp_ipk_install.png" textposx=120 valign=middle name=panel_extensions_ipkupgrade text="IPK upgrade (online)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic="%pluginpath%/panel/skin/panel_online_ipk_install.png" textposx=120 valign=middle name=panel_extensions_ipkinstall text="IPK install (online)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic="%pluginpath%/panel/skin/panel_tmp_ipk_install.png" textposx=120 valign=middle name=panel_extensions_tmpipkinstall text="IPK tmp (tmp)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic="%pluginpath%/panel/skin/panel_media_ipk_install.png" textposx=120 valign=middle name=panel_extensions_mediaipkinstall text="IPK media (media)" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic="%pluginpath%/panel/skin/panel_tmp_ipk_remove.png" textposx=120 valign=middle name=panel_extensions_ipkremove text="IPK remove" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 #<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
