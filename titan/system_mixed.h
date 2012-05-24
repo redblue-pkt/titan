@@ -1,5 +1,5 @@
-#ifndef SYSTEMMIXED_H
-#define SYSTEMMIXED_H
+#ifndef SYSTEM_MIXED_H
+#define SYSTEM_MIXED_H
 
 void screen_system_eraseswap()
 {

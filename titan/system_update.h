@@ -1,13 +1,13 @@
-#ifndef SYSTEMUPDATE_H
-#define SYSTEMUPDATE_H
+#ifndef SYSTEM_UPDATE_H
+#define SYSTEM_UPDATE_H
 
-void screensystemupdate(int mode)
+void screensystem_update(int mode)
 {
 	debug(50, "(start) mode=%d", mode);
 	int rcret = 0;
 
 	status.hangtime = 99999;
-	struct skin* systemupdate = getscreen("systemupdate");
+	struct skin* system_update = getscreen("system_update");
 	drawscreen(systemupdate, 0);
 
 	char* tmpstr = NULL;

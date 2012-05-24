@@ -494,10 +494,15 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screen_system_wizard();
 	}
-	else if(ostrcmp("system_restore", menuentry->name) == 0)
+	else if(ostrcmp("system_backup", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screen_system_restore();
+		screen_system_backup();
+	}
+	else if(ostrcmp("system_backup_restore", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screen_system_backup_restore();
 	}
 	else if(menuentry->pluginhandle != NULL)
 	{

@@ -39,11 +39,4 @@ char **str_split(char *string, char *delim) {
 	return tokens;
 }
 
-int checkbeta(void)
-{
-	if(isfile("/etc/.beta") == 0) return 0;
-
-	return 1;
-}
-
 #endif

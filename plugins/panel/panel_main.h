@@ -59,9 +59,6 @@ int panel_menucall(struct skin* panel_menuentry)
 	{
 		struct skin* screen = getscreen("panel_settings_main");
 
-		if(checkbeta() != 1)
-			delscreennode(screen, "panel_settings_betacfg");
-
 		if(checkbox("UFS922") != 1)
 			delscreennode(screen, "panel_settings_fancontrol");
 
@@ -81,19 +78,6 @@ int panel_menucall(struct skin* panel_menuentry)
 	}
 	else if(ostrcmp("panel_settings_fancontrol", panel_menuentry->name) == 0)
 		screenpanel_settings_fancontrol();
-	else if(ostrcmp("panel_system", panel_menuentry->name) == 0)
-	{
-		struct skin* screen = getscreen("panel_system_main");
-		panel_menu(screen);
-	}
-	else if(ostrcmp("panel_system_eraseswap", panel_menuentry->name) == 0)
-		screenpanel_system_eraseswap();		
-	else if(ostrcmp("panel_system_wizard", panel_menuentry->name) == 0)
-		screenpanel_system_wizard();
-	else if(ostrcmp("panel_system_restore", panel_menuentry->name) == 0)
-		screenpanel_system_restore();
-	else if(ostrcmp("panel_system_backup", panel_menuentry->name) == 0)
-		screenpanel_system_backup();
 	else if(ostrcmp("panel_infos_main", panel_menuentry->name) == 0)
 	{
 		struct skin* screen = getscreen("panel_infos_main");
@@ -216,8 +200,6 @@ void panel_main()
 				changepic(panel_main_selected, "panel/skin/panel_softcam.png");
 			else if(ostrcmp(listbox->select->name, "panel_settings") == 0)
 				changepic(panel_main_selected, "panel/skin/panel_settings.png");
-			else if(ostrcmp(listbox->select->name, "panel_system") == 0)
-				changepic(panel_main_selected, "panel/skin/panel_system.png");
 			else if(ostrcmp(listbox->select->name, "panel_infos") == 0)
 				changepic(panel_main_selected, "panel/skin/panel_infos.png");
 		}
