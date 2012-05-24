@@ -8,12 +8,19 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//system_mixed.h
+void screensystem_eraseswap();
+void screensystem_wizard();
+
 // info.h
 void screengetserial();
 void screensystem_info(int mode);
 
-//systemupdate.h
+//system_update.h
 void screensystem_update(int mode);
+
+//system_backup_restore.h
+void screensystem_backup_restore();
 
 //settings_bluebutton.h
 void screensettings_bluebutton();
