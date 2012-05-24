@@ -94,13 +94,6 @@ int panel_menucall(struct skin* panel_menuentry)
 		screenpanel_system_restore();
 	else if(ostrcmp("panel_system_backup", panel_menuentry->name) == 0)
 		screenpanel_system_backup();
-	else if(ostrcmp("panel_extensions", panel_menuentry->name) == 0)
-	{
-		struct skin* screen = getscreen("panel_extensions_main");
-		panel_menu(screen);
-	}
-	else if(ostrcmp("panel_extensions_menu", panel_menuentry->name) == 0)
-		screenplugin();
 	else if(ostrcmp("panel_infos_main", panel_menuentry->name) == 0)
 	{
 		struct skin* screen = getscreen("panel_infos_main");
@@ -225,8 +218,6 @@ void panel_main()
 				changepic(panel_main_selected, "panel/skin/panel_settings.png");
 			else if(ostrcmp(listbox->select->name, "panel_system") == 0)
 				changepic(panel_main_selected, "panel/skin/panel_system.png");
-			else if(ostrcmp(listbox->select->name, "panel_extensions") == 0)
-				changepic(panel_main_selected, "panel/skin/panel_extensions.png");
 			else if(ostrcmp(listbox->select->name, "panel_infos") == 0)
 				changepic(panel_main_selected, "panel/skin/panel_infos.png");
 		}
