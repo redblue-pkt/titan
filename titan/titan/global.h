@@ -467,7 +467,7 @@ int checkprozess(char* input)
 
 	cmd = ostrcat(cmd, "pidof ", 1, 0);
 	cmd = ostrcat(cmd, input, 1, 0);
-	cmd = ostrcat(cmd, " | wc -l", 1, 0);
+	cmd = ostrcat(cmd, " | sed '/^ *$/d' | wc -l", 1, 0);
 	printf("checkprozess: cmd=%s\n", cmd);
 
 	tmpstr = string_newline(command(cmd));
