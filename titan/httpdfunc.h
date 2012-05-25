@@ -163,9 +163,36 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 		*buf = ostrcat(*buf, oitoa(chnode->servicetype), 1, 1);
 		*buf = ostrcat(*buf, "#", 1, 0);
 		if(epgnode != NULL)
+		{
 			*buf = ostrcat(*buf, oitoa(epgnode->eventid), 1, 1);
+			*buf = ostrcat(*buf, "#", 1, 0);
+			*buf = ostrcat(*buf, olutoa(epgnode->starttime), 1, 1);
+			*buf = ostrcat(*buf, "#", 1, 0);
+			*buf = ostrcat(*buf, epgnode->title, 1, 0);
+			*buf = ostrcat(*buf, "#", 1, 0);
+			if(epgnode->next != NULL)
+			{
+				*buf = ostrcat(*buf, olutoa(epgnode->next->starttime), 1, 1);
+				*buf = ostrcat(*buf, "#", 1, 0);
+				*buf = ostrcat(*buf, olutoa(epgnode->next->starttime), 1, 1);
+				*buf = ostrcat(*buf, "#", 1, 0);
+				*buf = ostrcat(*buf, epgnode->next->title, 1, 0);
+			}
+			else
+			{
+				*buf = ostrcat(*buf, "#", 1, 0);
+				*buf = ostrcat(*buf, "#", 1, 0);
+			}
+		}
 		else
+		{
 			*buf = ostrcat(*buf, "0", 1, 0);
+			*buf = ostrcat(*buf, "#", 1, 0);
+			*buf = ostrcat(*buf, "#", 1, 0);
+			*buf = ostrcat(*buf, "#", 1, 0);
+			*buf = ostrcat(*buf, "#", 1, 0);
+			*buf = ostrcat(*buf, "#", 1, 0);
+		}
 		*buf = ostrcat(*buf, "\n", 1, 0);
 	}
 
@@ -1278,6 +1305,13 @@ char* webgetsingleepg(char* param, int fmt)
 			buf = ostrcat(buf, olutoa(epgnode->endtime), 1, 1);
 			buf = ostrcat(buf, "#", 1, 0);
 			buf = ostrcat(buf, epgnode->subtitle, 1, 0);
+			buf = ostrcat(buf, "#", 1, 0);
+			tmpstr = epgdescunzip(epgnode);
+			if(tmpstr != NULL)
+				buf = ostrcat(buf, tmpstr, 1, 0);
+			free(tmpstr); tmpstr = NULL;
+			buf = ostrcat(buf, "#", 1, 0);
+			buf = ostrcat(buf, epgnode->eventid, 1, 0);
 			buf = ostrcat(buf, "\n", 1, 0);
 		}
 	
@@ -2119,7 +2153,13 @@ char* webgetrectimer(char* param, int flag, int fmt)
 			buf = ostrcat(buf, "#", 1, 0);
 			buf = ostrcat(buf, node->errstr, 1, 0);
 			buf = ostrcat(buf, "#", 1, 0);
-			buf = ostrcat(buf, node->timestamp, 1, 1);
+			buf = ostrcat(buf, node->timestamp, 1, 0);
+			buf = ostrcat(buf, "#", 1, 0);
+			chnode = getchannel(node->serviceid, node->transponderid);
+			if(chnode != NULL)
+				buf = ostrcat(buf, chnode->name, 1, 0);
+			buf = ostrcat(buf, "#", 1, 0);
+			buf = ostrcat(buf, oitoa(node->afterevent), 1, 1);
 			buf = ostrcat(buf, "\n", 1, 0);
 		}
 
