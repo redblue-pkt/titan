@@ -672,7 +672,15 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 	}
 	else if(flag == 3)
 	{
-		string_resub("delivery=\"streaming\"><![CDATA[", "]]></filename>", tmpstr);
+//		string_resub("delivery=\"streaming\"><![CDATA[", "]]></filename>", tmpstr);
+		string_resub("rtmpe://", ".f4v", tmpstr);
+		char* tmpstr9 = NULL;
+		tmpstr9 = ostrcat(tmpstr9, tmpstr, 1, 0);
+		free(tmpstr), tmpstr = NULL;
+		tmpstr = ostrcat("rtmpe://", tmpstr9, 0, 0);
+		tmpstr = ostrcat(tmpstr, ".f4v", 1, 0);		
+		free(tmpstr9), tmpstr9 = NULL;
+
 		debug(99, "tmpstr: %s", tmpstr);
 
 		int count = 0;
