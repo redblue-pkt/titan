@@ -248,7 +248,7 @@ void screendlna()
 	memset(node, 0, sizeof(struct dlna));
 
 	dlnasetdefault(node);
-	readdlna("/var/etc/minidlna.conf", node);
+	readdlna("/var/swap/etc/minidlna.conf", node);
 	
 	addchoicebox(startmode, "n", _("no"));
 	addchoicebox(startmode, "y", _("yes"));
@@ -299,7 +299,7 @@ void screendlna()
 			node->dir2 = ostrcat(dir2->ret, NULL, 0, 0);
 			node->dir3 = ostrcat(dir3->ret, NULL, 0, 0);
 			node->dir4 = ostrcat(dir4->ret, NULL, 0, 0);
-			writedlna("/var/etc/minidlna.conf", node);
+			writedlna("/var/swap/etc/minidlna.conf", node);
 			freedlnacontent(node);
 			if(startmode->ret != NULL) addownconfig("dlna", startmode->ret);
 			
