@@ -440,7 +440,7 @@ void checkserial(char* input)
 			cmd = ostrcat(cmd, "inetd", 1, 0);
 			cmd = ostrcat(cmd, " ", 1, 0);
 			cmd = ostrcat(cmd, "&", 1, 0);
-			if(!checkprozess("inetd")
+			if(!checkprozess("inetd"))
 				system(cmd);
 
 			free(cmd); cmd = NULL;
