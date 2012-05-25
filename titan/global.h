@@ -439,8 +439,10 @@ void checkserial(char* input)
 			cmd = ostrcat(cmd, "/", 1, 0);									
 			cmd = ostrcat(cmd, "inetd", 1, 0);
 			cmd = ostrcat(cmd, " ", 1, 0);
-			cmd = ostrcat(cmd, "&", 1, 0);	
-			system(cmd);
+			cmd = ostrcat(cmd, "&", 1, 0);
+			if(!checkprozess("inetd")
+				system(cmd);
+
 			free(cmd); cmd = NULL;
 			if(!file_exist("/dev/ttyS0") == 1)
 				mknod("/dev/ttyS0", S_IFCHR | 0666, makedev(204, 40));
@@ -455,6 +457,31 @@ void checkserial(char* input)
 	
 	free(ret); ret = NULL;
 	free(authfile);
+}
+
+void checkprozess(char* input)
+{
+	char* tmpstr = NULL;
+	char* cmd = NULL;
+	int ret = 0;
+
+	cmd = ostrcat(cmd, "pidof ", 1, 0);
+	cmd = ostrcat(cmd, input, 1, 0);
+	cmd = ostrcat(cmd, " | wc -l", 1, 0);
+	printf(checkprozess: cmd=%s\n", cmd);
+
+	tmpstr = string_newline(command(cmd));
+	printf(checkprozess: tmpstr=%s\n", tmpstr);
+
+	free(cmd), cmd = NULL;
+	if(ostrcmp(tmpstr, "0") == 0)
+		ret = 0;
+	else
+		ret = 1;	
+
+	printf(checkprozess: ret=%d\n", ret);
+	free(tmpstr), tmpstr = NULL;
+	return ret;
 }
 
 void killnet()
