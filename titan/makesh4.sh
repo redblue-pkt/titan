@@ -350,12 +350,12 @@ cp -a "$HOME"/flashimg/source.titan/libipkg/.libs/ipkg-cl "$HOME"/flashimg/BUILD
 
 # minidlna
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/sbin/minidlna "$HOME"/flashimg/BUILD/titan/usr/bin
-#cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk/minidlna-1.0.24/minidlna.conf "$HOME"/flashimg/BUILD/titan/var/etc
-cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libavcodec* "$HOME"/flashimg/BUILD/titan/lib
-cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libavformat* "$HOME"/flashimg/BUILD/titan/lib
-cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libavutil* "$HOME"/flashimg/BUILD/titan/lib
-cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libexif* "$HOME"/flashimg/BUILD/titan/lib
-cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libvorbis* "$HOME"/flashimg/BUILD/titan/lib
+cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk/minidlna-1.0.24/minidlna.conf "$HOME"/flashimg/BUILD/titan/var/etc
+cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libavcodec.so* "$HOME"/flashimg/BUILD/titan/lib
+cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libavformat.so* "$HOME"/flashimg/BUILD/titan/lib
+cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libavutil.so* "$HOME"/flashimg/BUILD/titan/lib
+cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libexif.so* "$HOME"/flashimg/BUILD/titan/lib
+cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libvorbis.so* "$HOME"/flashimg/BUILD/titan/lib
 
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type d -name "*.svn"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.h"`
