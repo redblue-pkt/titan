@@ -14,7 +14,7 @@ desc: send rc code
 param: rc code
 
 query: getrectimer
-raw: begin#end#justplay#repeate#name#serviceid#transpoderid#status#errstr#timestamp
+raw: begin#end#justplay#repeate#name#serviceid#transpoderid#status#errstr#timestamp#channelname#afterevent
 desc: get aktive record timer
 param: no
 
@@ -39,7 +39,7 @@ desc: ?
 param: ?
 
 query: getrectimerarchive
-raw: begin#end#justplay#repeate#name#serviceid#transpoderid#status#errstr#timestamp
+raw: begin#end#justplay#repeate#name#serviceid#transpoderid#status#errstr#timestamp#channelname#afterevent
 desc: get old record timer
 param: no
 
@@ -74,45 +74,45 @@ desc: get chars A-Z
 param: no
 
 query: getchannelpage
-raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid
+raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort
 desc: get a channel page
 param: 0 = 0, 1 = orbitalpos, 2 = providername, 3 = A-Z
 param: type (0 = all, 1 = sat, 2 = provider, 3 = A-Z)
 param: page nr
 
 query: getallchannel
-raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid
+raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort
 desc: get all channel
 param: no
 
 query: getbouquetchannel
-raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid
+raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort
 desc: get all channel from a bouquet
 param: bouquetname
 
 query: getsatchannel
-raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid
+raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort
 desc: get all channel from a sat
 param: orbitalposition
 
 query: getproviderchannel
-raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid
+raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort
 desc: get all channel from a provider
 param: providername
 
 query: getazchannel
-raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid
+raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort
 desc: get all channel from first char
 param: char (A-Z)
 
 query: switch
-raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid
+raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort
 desc: change channel
 param: channelid
 param: transponderid
 
 query: getaktservice
-raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid
+raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort
 desc: get akt service
 param: no
 
@@ -129,7 +129,7 @@ desc: gets the epg to a recordet movie
 param: movie name (full path)
 
 query: getsingleepg
-raw: epgshort#begin#end#subtitle
+raw: epgshort#begin#end#subtitle#epglong#eventid
 desc: get all epg to a channel
 param: channelid
 param: transponderid
