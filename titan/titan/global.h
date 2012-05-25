@@ -459,7 +459,7 @@ void checkserial(char* input)
 	free(authfile);
 }
 
-void checkprozess(char* input)
+int checkprozess(char* input)
 {
 	char* tmpstr = NULL;
 	char* cmd = NULL;
