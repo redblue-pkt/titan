@@ -222,6 +222,8 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 	}
 	if(ostrcmp(query, "getvideo") == 0)
 		buf = webgetvideo(param, *connfd, fmt);
+  if(ostrcmp(query, "videoplay") == 0)
+		buf = webvideo(param, fmt);
 	if(ostrcmp(query, "getshoot") == 0)
 	{
 		webgetshoot(param, fmt);

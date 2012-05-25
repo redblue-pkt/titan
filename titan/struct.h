@@ -1085,6 +1085,8 @@ struct status
 	int channellistview;
 	//for blockmove in channellist
 	int moveblockcount;
+	//name ob file who played from webig
+	char* webplayfile;
 } status;
 
 struct fb
