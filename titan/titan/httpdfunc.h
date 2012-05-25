@@ -873,6 +873,114 @@ char* webgetvideo(char* param, int connfd, int fmt)
 	return buf;
 }
 
+char* webvideo(char* param, int fmt)
+{
+	char* buf = NULL, *param1 = NULL, *tmpbuf = NULL;
+
+	if(param == NULL) return NULL;
+  
+	//create param1
+	param1 = strchr(param, '&');
+	if(param1 != NULL)
+		*param1++ = '\0';
+
+	if(param1 == NULL) return NULL;
+
+	tmpbuf = htmlencode(param1);
+	if(tmpbuf != NULL)
+	{
+		if(status.play == 0 && status.webplayfile == NULL)
+			status.webplayfile = ostrcat(tmpbuf, NULL, 0, 0);
+		free(tmpbuf); tmpbuf = NULL;
+	}
+	tmpbuf = ostrcat("not in play mode", NULL, 0, 0);
+    
+	int count = 0;
+	if(status.play == 0 && ostrcmp("play", param) == 0)
+	{
+		int count = 0;
+
+		writerc(getrcconfigint("rcplay", NULL));
+		while(status.play == 0 && count < 30)
+		{
+			usleep(100000);
+			count++;
+		}
+	}
+	else
+		count = 31;
+
+	if(count >= 30)
+	{
+		free(status.webplayfile); status.webplayfile = NULL;
+		tmpbuf = ostrcat("can not start playback", NULL, 0, 0);
+	}
+
+	if(status.play == 1)
+	{
+		if(ostrcmp("stop", param) == 0)
+			writerc(getrcconfigint("rcstop", NULL));
+
+		if(ostrcmp("pause", param) == 0)
+			writerc(getrcconfigint("rcpause", NULL));
+    
+		if(ostrcmp("ff", param) == 0)
+			writerc(getrcconfigint("rcff", NULL));
+    
+		if(ostrcmp("fr", param) == 0)
+			writerc(getrcconfigint("rcfr", NULL));
+
+		free(tmpbuf); tmpbuf = NULL;
+		tmpbuf = ostrcat(param, NULL, 0, 0);
+
+		if(ostrcmp("getlen", param) == 0)
+		{
+			unsigned long len = 0;
+			free(tmpbuf); tmpbuf = NULL;
+    
+			len = playergetlength();
+			tmpbuf = ostrcat(buf, olutoa(len), 1, 1);
+		}
+  
+		if(ostrcmp("getpos", param) == 0)
+		{
+			unsigned long pos = 0;
+			free(tmpbuf); tmpbuf = NULL;
+    
+			pos = playergetpts() / 90000;
+			tmpbuf = ostrcat(buf, olutoa(pos), 1, 1);
+		}
+  
+		if(ostrcmp("getisplaying", param) == 0)
+		{
+			int playing = 0;
+			free(tmpbuf); tmpbuf = NULL;
+    
+			playing = playerisplaying();
+			tmpbuf = ostrcat(buf, oitoa(playing), 1, 1);
+		}
+  
+		if(ostrcmp("getplayercan", param) == 0)
+		{
+			free(tmpbuf); tmpbuf = NULL;
+			tmpbuf = ostrcat(buf, olutoa(status.playercan), 1, 1);
+		}
+	}
+
+	if(fmt == 0)
+	{
+		buf = webcreatehead(buf, NULL, 1);
+		buf = ostrcat(buf, "<tr><td align=center valign=top><font class=biglabel><br><br>Video ", 1, 0);
+		buf = ostrcat(buf, tmpbuf, 1, 1);
+		buf = ostrcat(buf, " !!!</font></td></tr>", 1, 0);
+		buf = webcreatetail(buf, 1);
+	}
+	else
+		buf = ostrcat(buf, tmpbuf, 1, 1);
+  
+	return buf;
+}
+
 char* webgetchannelpage(char* param, int fmt)
 {
 	char* param1 = NULL, *param2 = NULL;

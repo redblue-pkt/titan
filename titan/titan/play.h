@@ -654,6 +654,9 @@ void screenplay(char* startfile, int startfolder, int flag)
 		rcret = servicestop(status.aktservice, 1, 1);
 		if(rcret == 1) return;
 	}
+
+	if(status.webplayfile != NULL)
+		startfile = status.webplayfile;
 	
 	// allowed from atemio avi mkv mpg4 xvid mpg1 mpg2 jpeg png
 	if(status.expertmodus > 0 && status.security == 1)
@@ -856,6 +859,7 @@ playerend:
 		free(tmppolicy);
 	}
 	
+	free(status.webplayfile); status.webplayfile = NULL; 
 	free(status.playfile); status.playfile = NULL; 
 	status.playspeed = 0;
 	status.pause = 0;
