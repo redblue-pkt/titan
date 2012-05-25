@@ -569,7 +569,7 @@ char* string_resub(char* str, char* str2, char* filename);
 int cmpfilenameext(char* filename, char* ext);
 void killnet();
 void checkserial(char* input);
-void checkprozess(char* input);
+int checkprozess(char* input);
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
