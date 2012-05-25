@@ -468,10 +468,10 @@ int checkprozess(char* input)
 	cmd = ostrcat(cmd, "pidof ", 1, 0);
 	cmd = ostrcat(cmd, input, 1, 0);
 	cmd = ostrcat(cmd, " | wc -l", 1, 0);
-	printf(checkprozess: cmd=%s\n", cmd);
+	printf("checkprozess: cmd=%s\n", cmd);
 
 	tmpstr = string_newline(command(cmd));
-	printf(checkprozess: tmpstr=%s\n", tmpstr);
+	printf("checkprozess: tmpstr=%s\n", tmpstr);
 
 	free(cmd), cmd = NULL;
 	if(ostrcmp(tmpstr, "0") == 0)
@@ -479,7 +479,7 @@ int checkprozess(char* input)
 	else
 		ret = 1;	
 
-	printf(checkprozess: ret=%d\n", ret);
+	printf("checkprozess: ret=%d\n", ret);
 	free(tmpstr), tmpstr = NULL;
 	return ret;
 }
