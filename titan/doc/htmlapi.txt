@@ -225,3 +225,43 @@ query: getrccodes
 raw: name#code
 descr: gets all rccodes
 param: no
+
+query: webplay
+raw play: play (on error "can not start playback")
+raw stop: stop (on error "not in play mode")
+raw pause: pause (on error "not in play mode")
+raw ff: ff (on error "not in play mode")
+raw fr: fr (on error "not in play mode")
+raw getlen: len in sek (on error "not in play mode")
+raw getpos: pos in sek (on error "not in play mode")
+raw getisplaying: 0/1 (on error "not in play mode")
+raw getplayercan: playercan bits (on error "not in play mode")
+descr: play a stream
+param: play url
+param: stop url
+param: pause url
+param: ff url
+param: fr url
+param: getlen url
+param: getpos url
+param: getisplaying url
+param: getplayercan url
+
+***************************************
+
+playercan bits:
+0 policy
+1 auditraklist
+2 subtitle
+3 videomode
+4 powerofftimer
+5 videosettings
+6 stop
+7 ff
+8 fr
+9 pause
+10 play
+11 jump/seek reverse
+12 jump/seek forward
+13 changecodec
+14 infobar
