@@ -25,7 +25,7 @@ void screenkeyactions(int key, int flag)
 		{
 			while(child != NULL)
 			{
-				if(child->del == PLUGINDELMARK && status.security == 0 && checkpluginskip(child->name) == 0)
+				if(child->del == PLUGINDELMARK && (status.security == 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
 				{
 					addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
 					debug(60, "key: %s", child->name);
