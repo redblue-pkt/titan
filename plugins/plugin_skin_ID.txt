@@ -3,6 +3,7 @@ callmonitor1: 121
 imdb: 201
 permtime: 115
 keylock: 117
+IP-Kammera/instar 118
 hello: ---
 mboxinfo: 194
 mc: 101
