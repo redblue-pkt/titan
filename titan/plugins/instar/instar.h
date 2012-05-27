@@ -22,6 +22,8 @@ int show_control()
 	if(actcam == 2)
 		tempcam = cam2;
 	
+	setfbtransparent(255);
+	
 	while(1)
 	{
 		if(cam1 != NULL)
@@ -38,7 +40,7 @@ int show_control()
 		}
 		
 		drawscreen(instar_screen, 0);
-		rcret = waitrc(instar_screen, 0, 0);
+		rcret = waitrc(instar_screen, 500, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		
@@ -83,11 +85,11 @@ int show_control()
 			system(tmpstr);
 			free(tmpstr); tmpstr = NULL;	
 			free(position); position = NULL;
-			sleep(1);
 		}
 	}
 
 	clearscreen(instar_screen);
+	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	return rcode;
 }
 
@@ -196,19 +198,17 @@ void instar_main()
 	{
 		while(1)
 		{
-			cam1 = ostrcat(" wget --output-document=/tmp/instar1.jpg http://gost:goetz@10.0.0.201:8081", "", 0, 0);
-			/*
 			if(ostrcmp(getlist(ownconfig, "InstarCam1", NULL), "ein") == 0)
 			{
-				cam1 = ostrcat("wget --user=", getlist(ownconfig, "InstarCam1User", NULL), 0, 0);
-				cam1 = ostrcat(cam1, " --password=",1, 0);
+				cam1 = ostrcat("wget --output-document=/tmp/instar1.jpg http://", getlist(ownconfig, "InstarCam1User", NULL), 0, 0);
+				cam1 = ostrcat(cam1, ":",1, 0);
 				cam1 = ostrcat(cam1, getlist(ownconfig, "InstarCam1Pass", NULL), 1, 0);
-				cam1 = ostrcat(cam1, " --output-document=/tmp/instar1.jpg http://",1, 0);
+				cam1 = ostrcat(cam1, "@",1, 0);
 				cam1 = ostrcat(cam1, fixip(getlist(ownconfig, "InstarCam1IP", NULL)), 1, 0);
 				cam1 = ostrcat(cam1, ":",1, 0);
 				cam1 = ostrcat(cam1, getlist(ownconfig, "InstarCam1Port", NULL), 1, 0);
 			}
-			*/
+			
 		
 			/*
 			if(ostrcmp(getlist(ownconfig, "InstarCam2", NULL), "ein") == 0)
