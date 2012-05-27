@@ -103,5 +103,6 @@ compile "streaminfo" "streaminfo" ""
 compile "tmc" "tmc" ""
 compile "dlna" "dlna" ""
 compile "hbbtv" "hbbtv" ""
+compile "instar" "instar" ""
 
 #rm -r networkbrowser/networkbrowser
