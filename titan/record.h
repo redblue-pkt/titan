@@ -920,7 +920,7 @@ void screenrecordstop()
 {
 	char* tmpstr = NULL;
 	struct service* servicenode = service;
-	struct menulist* mlist = NULL, *mbox = NULL;
+	struct menulist* mlist = NULL, *mbox = NULL, *tmpmbox = NULL;
 
 	while(servicenode != NULL)
 	{
@@ -931,22 +931,29 @@ void screenrecordstop()
 			tmpstr = ostrcat(tmpstr, servicenode->recname, 1, 0);
 			tmpstr = ostrcat(tmpstr, ")", 1, 0);
 			
-			addmenulist(&mlist, tmpstr, NULL, NULL, 0, 0);
+			tmpmbox = addmenulist(&mlist, tmpstr, NULL, NULL, 0, 0);
 			free(tmpstr); tmpstr = NULL;
+			if(tmpmbox != NULL)
+			{
+				tmpmbox->param = ostrcat(tmpmbox->param, "stop", 1, 0);
+				tmpmbox->param = ostrcat(tmpmbox->param, " (", 1, 0);
+				tmpmbox->param = ostrcat(tmpmbox->param, servicenode->recname, 1, 0);
+				tmpmbox->param = ostrcat(tmpmbox->param, ")", 1, 0);
+			}
 		}
 		servicenode = servicenode->next;
 	}
 
 	mbox = menulistbox(mlist, "recordlist", "Record", NULL, NULL, 0, 0);
 	
-	if(mbox != NULL && strstr(mbox->name, "stop") == mbox->name)
+	if(mbox != NULL && mbox->param != NULL && strstr(mbox->param, "stop") == mbox->param)
 	{
-		servicenode = getrecordbyname(mbox->name, RECORDDIRECT);
+		servicenode = getrecordbyname(mbox->param, RECORDDIRECT);
 		if(servicenode != NULL)
 			servicenode->recendtime = 1;
 		else
 		{
-			servicenode = getrecordbyname(mbox->name, RECORDTIMER);
+			servicenode = getrecordbyname(mbox->param, RECORDTIMER);
 			if(servicenode != NULL)
 				servicenode->recendtime = 1;
 		}
@@ -961,7 +968,7 @@ void screenrecorddirect()
 	int ret = 0, ret1 = 0;
 	struct service* servicenode = service;
 	struct epg* epgnode = NULL;
-	struct menulist* mlist = NULL, *mbox = NULL;
+	struct menulist* mlist = NULL, *mbox = NULL, *tmpmbox = NULL;
 
 	while(servicenode != NULL)
 	{
@@ -972,16 +979,30 @@ void screenrecorddirect()
 			tmpstr = ostrcat(tmpstr, servicenode->recname, 1, 0);
 			tmpstr = ostrcat(tmpstr, ")", 1, 0);
 			
-			addmenulist(&mlist, tmpstr, NULL, NULL, 0, 0);
+			tmpmbox = addmenulist(&mlist, tmpstr, NULL, NULL, 0, 0);
 			free(tmpstr); tmpstr = NULL;
+			if(tmpmbox != NULL)
+			{
+				tmpmbox->param = ostrcat(tmpmbox->param, "stop", 1, 0);
+				tmpmbox->param = ostrcat(tmpmbox->param, " (", 1, 0);
+				tmpmbox->param = ostrcat(tmpmbox->param, servicenode->recname, 1, 0);
+				tmpmbox->param = ostrcat(tmpmbox->param, ")", 1, 0);
+			}
 			
 			tmpstr = ostrcat(tmpstr, _("change"), 1, 0);
 			tmpstr = ostrcat(tmpstr, " (", 1, 0);
 			tmpstr = ostrcat(tmpstr, servicenode->recname, 1, 0);
 			tmpstr = ostrcat(tmpstr, ")", 1, 0);
 			
-			addmenulist(&mlist, tmpstr, NULL, NULL, 0, 0);
+			tmpmbox = addmenulist(&mlist, tmpstr, NULL, NULL, 0, 0);
 			free(tmpstr); tmpstr = NULL;
+			if(tmpmbox != NULL)
+			{
+				tmpmbox->param = ostrcat(tmpmbox->param, "change", 1, 0);
+				tmpmbox->param = ostrcat(tmpmbox->param, " (", 1, 0);
+				tmpmbox->param = ostrcat(tmpmbox->param, servicenode->recname, 1, 0);
+				tmpmbox->param = ostrcat(tmpmbox->param, ")", 1, 0);
+			}
 		}
 		servicenode = servicenode->next;
 	}
@@ -992,46 +1013,49 @@ void screenrecorddirect()
 
 	mbox = menulistbox(mlist, "recordlist", "Record", NULL, NULL, 0, 0);
 	
-	if(mbox != NULL && strstr(mbox->name, "stop") == mbox->name)
+	if(mbox != NULL)
 	{
-		servicenode = getrecordbyname(mbox->name, RECORDDIRECT);
-		if(servicenode != NULL)
-			servicenode->recendtime = 1;
-	}
-	if(mbox != NULL && strstr(mbox->name, "change") == mbox->name)
-	{
-		servicenode = getrecordbyname(mbox->name, RECORDDIRECT);
-		if(servicenode != NULL)
+		if(mbox->param != NULL && strstr(mbox->param, "stop") == mbox->param)
 		{
-			ret1 = (servicenode->recendtime - time(NULL)) / 60;
-			ret1 = screenrecordduration(ret1);
-			if(ret1 > 0)
-				servicenode->recendtime = time(NULL) + (ret1 * 60);
+			servicenode = getrecordbyname(mbox->param, RECORDDIRECT);
+			if(servicenode != NULL)
+				servicenode->recendtime = 1;
 		}
-	}
-	if(ostrcmp(mbox->name, "add recording (stop after current event)") == 0)
-	{
-		epgnode = getepgbytime(status.aktservice->channel, time(NULL) + 60);
+		if(mbox->param != NULL && strstr(mbox->param, "change") == mbox->param)
+		{
+			servicenode = getrecordbyname(mbox->param, RECORDDIRECT);
+			if(servicenode != NULL)
+			{
+				ret1 = (servicenode->recendtime - time(NULL)) / 60;
+				ret1 = screenrecordduration(ret1);
+				if(ret1 > 0)
+					servicenode->recendtime = time(NULL) + (ret1 * 60);
+			}
+		}
+		if(ostrcmp(mbox->name, "add recording (stop after current event)") == 0)
+		{
+			epgnode = getepgbytime(status.aktservice->channel, time(NULL) + 60);
 #ifndef SIMULATE
-		if(epgnode != NULL && epgnode->endtime > time(NULL))
-			ret = recordstart(status.aktservice->channel, -1, 0, RECDIRECT, epgnode->endtime, NULL);
-		else
-			textbox(_("Message"), _("Can't get EPG time or EPG endtime not ok"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+			if(epgnode != NULL && epgnode->endtime > time(NULL))
+				ret = recordstart(status.aktservice->channel, -1, 0, RECDIRECT, epgnode->endtime, NULL);
+			else
+				textbox(_("Message"), _("Can't get EPG time or EPG endtime not ok"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 #else
-		ret = recordstart(status.aktservice->channel, -1,  0, RECDIRECT, time(NULL) + 5, NULL);
+			ret = recordstart(status.aktservice->channel, -1,  0, RECDIRECT, time(NULL) + 5, NULL);
 #endif
-	}
-	if(ostrcmp(mbox->name, "add recording (indefinitely)") == 0)
-		ret = recordstart(status.aktservice->channel, -1, 0, RECDIRECT, 0, NULL);
-	if(ostrcmp(mbox->name, "add recording (enter duration)") == 0)
-	{
-		ret1 = screenrecordduration(0);
+		}
+		if(ostrcmp(mbox->name, "add recording (indefinitely)") == 0)
+			ret = recordstart(status.aktservice->channel, -1, 0, RECDIRECT, 0, NULL);
+		if(ostrcmp(mbox->name, "add recording (enter duration)") == 0)
+		{
+			ret1 = screenrecordduration(0);
 
-		if(ret1 > 0)
-			ret = recordstart(status.aktservice->channel, -1, 0, RECDIRECT, time(NULL) + (ret1 * 60), NULL);
-	}
+			if(ret1 > 0)
+				ret = recordstart(status.aktservice->channel, -1, 0, RECDIRECT, time(NULL) + (ret1 * 60), NULL);
+		}
 
-	recordcheckret(NULL, ret, 6);
+		recordcheckret(NULL, ret, 6);
+	}
 	freemenulist(mlist, 1); mlist = NULL;
 }
 
