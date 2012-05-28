@@ -40,7 +40,7 @@ int show_control()
 		}
 		
 		drawscreen(instar_screen, 0);
-		rcret = waitrc(instar_screen, 500, 0);
+		rcret = waitrc(instar_screen, 250, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		

@@ -43,10 +43,10 @@ void callmon_main()
 {
 	char* tmpstr = NULL;
 	
-	struct clist *ownconfig[LISTHASHSIZE] = {NULL};
+	struct clist *myconfig[LISTHASHSIZE] = {NULL};
 	char* callconf = NULL;
 	callconf = ostrcat(getconfig("pluginpath", NULL), "/callmonitor1/callmon.conf", 0, 0);
-	readconfig(callconf, ownconfig);
+	readconfig(callconf, myconfig);
 		
 	debug(1000, "in");
 	status.hangtime = 99999;
@@ -70,10 +70,10 @@ void callmon_main()
 	struct skin* tmp = NULL;
 	
 	changemask(passwort, "abcdefghijklmnopqrstuvwxyz");
-	changeinput(passwort, getlist(ownconfig, "FritzPass", NULL));
+	changeinput(passwort, getlist(myconfig, "FritzPass", NULL));
 	
 	changemask(ipaddresse, "000.000.000.000");
-	tmpstr = fixip(getlist(ownconfig, "FRITZBOXIP", NULL), 0);
+	tmpstr = fixip(getlist(myconfig, "FRITZBOXIP", NULL), 0);
 	changeinput(ipaddresse, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	
@@ -84,7 +84,7 @@ void callmon_main()
 	
 	addchoicebox(allnum, "ja", _("ja"));
 	addchoicebox(allnum, "nein", _("nein"));
-	if(ostrcmp(getlist(ownconfig, "Alle", NULL), "1")  == 0)
+	if(ostrcmp(getlist(myconfig, "Alle", NULL), "1")  == 0)
 	{
 		setchoiceboxselection(allnum, "ja");
 		rufnummer1->hidden = YES;
@@ -96,29 +96,29 @@ void callmon_main()
 		rufnummer2->hidden = NO;
 	}
 	
-	//addlist(ownconfig, "key", Value));
-	//writelist(ownconfig, callconf);
-	//freelist(ownconfig);
+	//addlist(myconfig, "key", Value));
+	//writelist(myconfig, callconf);
+	//freelist(myconfig);
 	
 	addchoicebox(phonebook, "1", _("ja"));
 	addchoicebox(phonebook, "0", _("nein"));
-	setchoiceboxselection(phonebook, getlist(ownconfig, "usePhoneBook", NULL));
+	setchoiceboxselection(phonebook, getlist(myconfig, "usePhoneBook", NULL));
 	
 	addchoicebox(eingehend, "1", _("ja"));
 	addchoicebox(eingehend, "0", _("nein"));
-	setchoiceboxselection(eingehend, getlist(ownconfig, "monRing", NULL));
+	setchoiceboxselection(eingehend, getlist(myconfig, "monRing", NULL));
 	
 	addchoicebox(ausgehend, "1", _("ja"));
 	addchoicebox(ausgehend, "0", _("nein"));
-	setchoiceboxselection(ausgehend, getlist(ownconfig, "monCall", NULL));
+	setchoiceboxselection(ausgehend, getlist(myconfig, "monCall", NULL));
 	
 	addchoicebox(stumm, "1", _("ja"));
 	addchoicebox(stumm, "0", _("nein"));
-	setchoiceboxselection(ausgehend, getlist(ownconfig, "muteRing", NULL));
+	setchoiceboxselection(ausgehend, getlist(myconfig, "muteRing", NULL));
 	
 	addchoicebox(wennaus, "1", _("puffern"));
 	addchoicebox(wennaus, "0", _("verwerfen"));
-	setchoiceboxselection(wennaus, getlist(ownconfig, "anzeigewennaus", NULL));
+	setchoiceboxselection(wennaus, getlist(myconfig, "anzeigewennaus", NULL));
 	
 	addchoicebox(atimeout, "3", _("3"));
 	addchoicebox(atimeout, "4", _("4"));
@@ -127,7 +127,7 @@ void callmon_main()
 	addchoicebox(atimeout, "8", _("8"));
 	addchoicebox(atimeout, "10", _("10"));
 	addchoicebox(atimeout, "12", _("12"));
-	setchoiceboxselection(atimeout, getlist(ownconfig, "anzeigetimeout", NULL));
+	setchoiceboxselection(atimeout, getlist(myconfig, "anzeigetimeout", NULL));
 
 	drawscreen(callmon_main, 0);
 	addscreenrc(callmon_main, listbox);
@@ -167,23 +167,23 @@ void callmon_main()
 			free(tmpstr); tmpstr = NULL;
 			
 			tmpstr = fixip(ipaddresse->ret, 1);
-			addlist(ownconfig, "FRITZBOXIP", tmpstr);
+			addlist(myconfig, "FRITZBOXIP", tmpstr);
 			free(tmpstr); tmpstr = NULL;
-			addlist(ownconfig, "monRing", eingehend->ret);
-			addlist(ownconfig, "monCall", ausgehend->ret);
-			addlist(ownconfig, "muteRing", stumm->ret);
-			addlist(ownconfig, "anzeigewennaus", wennaus->ret);
-			addlist(ownconfig, "anzeigetimeout", atimeout->ret);
-			addlist(ownconfig, "usePhoneBook", phonebook->ret);
-			addlist(ownconfig, "FritzPass", passwort->ret);
+			addlist(myconfig, "monRing", eingehend->ret);
+			addlist(myconfig, "monCall", ausgehend->ret);
+			addlist(myconfig, "muteRing", stumm->ret);
+			addlist(myconfig, "anzeigewennaus", wennaus->ret);
+			addlist(myconfig, "anzeigetimeout", atimeout->ret);
+			addlist(myconfig, "usePhoneBook", phonebook->ret);
+			addlist(myconfig, "FritzPass", passwort->ret);
 			
 			if(ostrcmp(allnum->ret, "ja")  == 0)
-				addlist(ownconfig, "Alle", "1");
+				addlist(myconfig, "Alle", "1");
 			else
-				addlist(ownconfig, "Alle", "0");
-			writelist(ownconfig, callconf);
+				addlist(myconfig, "Alle", "0");
+			writelist(myconfig, callconf);
 			
-			if(hblue == 1 && ostrcmp(getlist(ownconfig, "usePhoneBook", NULL), "1")  == 0)
+			if(hblue == 1 && ostrcmp(getlist(myconfig, "usePhoneBook", NULL), "1")  == 0)
 			{
 				tmpstr = ostrcat(getconfig("pluginpath", NULL), "/callmonitor1/fritzbox_msg_new.sh loadPhoneBook", 0, 0);
 				system(tmpstr);
@@ -201,7 +201,7 @@ void callmon_main()
 	}
 	delownerrc(callmon_main);
 	clearscreen(callmon_main);
-	freelist(ownconfig);
+	freelist(myconfig);
 	free(callconf); callconf = NULL;
 	status.hangtime = getconfigint("hangtime", NULL);
 }
