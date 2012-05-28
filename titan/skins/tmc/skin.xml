@@ -4,19 +4,19 @@
 <screen name=tmcmenutxt posx=500 posy=620 width=230 height=40 fontsize=30 fontcol=green valign=middle halign=center>
 </screen>
 
-<screen name=tmcmenu1 posx=150 posy=570 width=128 height=128 fontcol=red fontsize=100 halign=center>
+<screen bgcol=-2 name=tmcmenu1 posx=150 posy=570 width=128 height=128 fontcol=red fontsize=100 halign=center>
 </screen>
 
-<screen name=tmcmenu2 posx=350 posy=520 width=128 height=128 fontcol=red fontsize=100 halign=center>
+<screen bgcol=-2 name=tmcmenu2 posx=350 posy=520 width=128 height=128 fontcol=red fontsize=100 halign=center>
 </screen>
 
-<screen name=tmcmenu3 posx=550 posy=470 width=128 height=128 fontcol=red fontsize=100 halign=center>
+<screen bgcol=-2 name=tmcmenu3 posx=550 posy=470 width=128 height=128 fontcol=red fontsize=100 halign=center>
 </screen>
 
-<screen name=tmcmenu4 posx=750 posy=520 width=128 height=128 fontcol=red fontsize=100 halign=center>
+<screen bgcol=-2 name=tmcmenu4 posx=750 posy=520 width=128 height=128 fontcol=red fontsize=100 halign=center>
 </screen>
 
-<screen name=tmcmenu5 posx=950 posy=570 width=128 height=128 fontcol=red fontsize=100 halign=center>
+<screen bgcol=-2 name=tmcmenu5 posx=950 posy=570 width=128 height=128 fontcol=red fontsize=100 halign=center>
 </screen>
 
 <screen bordersize=5 bordercol=red pic=%pluginpath%/tmc/skin/tmcbtn.png name=tmcpic1 picheight=210 picwidth=130 posx=170 posy=140 width=140 height=220>
