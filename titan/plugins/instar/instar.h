@@ -6,7 +6,7 @@ char* cam2 = NULL;
 struct skin* instar_screen = NULL; 
 int actcam = 1;
 
-struct clist *ownconfig[LISTHASHSIZE] = {NULL};
+struct clist *myconfig[LISTHASHSIZE] = {NULL};
 char* instarconf = NULL;
 
 int show_control()
@@ -46,7 +46,7 @@ int show_control()
 		
 		if(rcret == getrcconfigint("rcinfo", NULL))
 		{
-			addlist(ownconfig, "InstarCamAutostart", "nein");
+			addlist(myconfig, "InstarCamAutostart", "nein");
 			rcode = 1;
 			break;
 		}	
@@ -117,31 +117,31 @@ int instar_settings()
 
   addchoicebox(autoCam, "nein", _("nein"));
 	addchoicebox(autoCam, "ja", _("ja"));
-	setchoiceboxselection(autoCam, getlist(ownconfig, "InstarCamAutostart", NULL));
+	setchoiceboxselection(autoCam, getlist(myconfig, "InstarCamAutostart", NULL));
   
   addchoicebox(onCam1, "aus", _("aus"));
 	addchoicebox(onCam1, "ein", _("ein"));
-	setchoiceboxselection(onCam1, getlist(ownconfig, "InstarCam1", NULL));	
+	setchoiceboxselection(onCam1, getlist(myconfig, "InstarCam1", NULL));	
 	changemask(ipCam1, "abcdefghijklmnopqrstuvwxyz");
-  changeinput(ipCam1, getlist(ownconfig, "InstarCam1IP", NULL));
+  changeinput(ipCam1, getlist(myconfig, "InstarCam1IP", NULL));
   changemask(portCam1, "0000");
-  changeinput(portCam1, getlist(ownconfig, "InstarCam1Port", NULL));
+  changeinput(portCam1, getlist(myconfig, "InstarCam1Port", NULL));
   changemask(userCam1, "abcdefghijklmnopqrstuvwxyz");
-  changeinput(userCam1, getlist(ownconfig, "InstarCam1User", NULL));
+  changeinput(userCam1, getlist(myconfig, "InstarCam1User", NULL));
   changemask(passCam1, "abcdefghijklmnopqrstuvwxyz");
-  changeinput(passCam1, getlist(ownconfig, "InstarCam1Pass", NULL));
+  changeinput(passCam1, getlist(myconfig, "InstarCam1Pass", NULL));
   
   addchoicebox(onCam2, "aus", _("aus"));
 	addchoicebox(onCam2, "ein", _("ein"));
-	setchoiceboxselection(onCam2, getlist(ownconfig, "InstarCam2", NULL));	
+	setchoiceboxselection(onCam2, getlist(myconfig, "InstarCam2", NULL));	
 	changemask(ipCam2, "abcdefghijklmnopqrstuvwxyz");
-  changeinput(ipCam2, getlist(ownconfig, "InstarCam2IP", NULL));
+  changeinput(ipCam2, getlist(myconfig, "InstarCam2IP", NULL));
   changemask(portCam2, "0000");
-  changeinput(portCam2, getlist(ownconfig, "InstarCam2Port", NULL));
+  changeinput(portCam2, getlist(myconfig, "InstarCam2Port", NULL));
   changemask(userCam2, "abcdefghijklmnopqrstuvwxyz");
-  changeinput(userCam2, getlist(ownconfig, "InstarCam2User", NULL));
+  changeinput(userCam2, getlist(myconfig, "InstarCam2User", NULL));
   changemask(passCam2, "abcdefghijklmnopqrstuvwxyz");
-  changeinput(passCam2, getlist(ownconfig, "InstarCam2Pass", NULL));
+  changeinput(passCam2, getlist(myconfig, "InstarCam2Pass", NULL));
   
 	drawscreen(instar_einstellungen, 0);
 	addscreenrc(instar_einstellungen, listbox);
@@ -156,18 +156,18 @@ int instar_settings()
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcgreen", NULL) || rcret == getrcconfigint("rcblue", NULL))
 		{
-			addlist(ownconfig, "InstarCamAutostart", autoCam->ret);
-			addlist(ownconfig, "InstarCam1", onCam1->ret);
-			addlist(ownconfig, "InstarCam1IP", ipCam1->ret);
-			addlist(ownconfig, "InstarCam1Port", portCam1->ret);
-			addlist(ownconfig, "InstarCam1User", userCam1->ret);
-			addlist(ownconfig, "InstarCam1Pass", passCam1->ret);
-			addlist(ownconfig, "InstarCam2", onCam2->ret);
-			addlist(ownconfig, "InstarCam2IP", ipCam2->ret);
-			addlist(ownconfig, "InstarCam2Port", portCam2->ret);
-			addlist(ownconfig, "InstarCam2User", userCam2->ret);
-			addlist(ownconfig, "InstarCam2Pass", passCam2->ret);
-			writelist(ownconfig, instarconf);
+			addlist(myconfig, "InstarCamAutostart", autoCam->ret);
+			addlist(myconfig, "InstarCam1", onCam1->ret);
+			addlist(myconfig, "InstarCam1IP", ipCam1->ret);
+			addlist(myconfig, "InstarCam1Port", portCam1->ret);
+			addlist(myconfig, "InstarCam1User", userCam1->ret);
+			addlist(myconfig, "InstarCam1Pass", passCam1->ret);
+			addlist(myconfig, "InstarCam2", onCam2->ret);
+			addlist(myconfig, "InstarCam2IP", ipCam2->ret);
+			addlist(myconfig, "InstarCam2Port", portCam2->ret);
+			addlist(myconfig, "InstarCam2User", userCam2->ret);
+			addlist(myconfig, "InstarCam2Pass", passCam2->ret);
+			writelist(myconfig, instarconf);
 			if(rcret == getrcconfigint("rcblue", NULL))
 			{
 				rcode = 1;
@@ -187,9 +187,9 @@ void instar_main()
 	int rcode = 0;
 
 	instarconf = ostrcat(getconfig("pluginpath", NULL), "/instar/instar.conf", 0, 0);
-	readconfig(instarconf, ownconfig);
+	readconfig(instarconf, myconfig);
 	
-  if(ostrcmp(getlist(ownconfig, "InstarCamAutostart", NULL), "ja") == 0)
+  if(ostrcmp(getlist(myconfig, "InstarCamAutostart", NULL), "ja") == 0)
 		rcode = 1;
 	else
 		rcode = instar_settings();
@@ -198,28 +198,28 @@ void instar_main()
 	{
 		while(1)
 		{
-			if(ostrcmp(getlist(ownconfig, "InstarCam1", NULL), "ein") == 0)
+			if(ostrcmp(getlist(myconfig, "InstarCam1", NULL), "ein") == 0)
 			{
-				cam1 = ostrcat("wget --output-document=/tmp/instar1.jpg http://", getlist(ownconfig, "InstarCam1User", NULL), 0, 0);
+				cam1 = ostrcat("wget --output-document=/tmp/instar1.jpg http://", getlist(myconfig, "InstarCam1User", NULL), 0, 0);
 				cam1 = ostrcat(cam1, ":",1, 0);
-				cam1 = ostrcat(cam1, getlist(ownconfig, "InstarCam1Pass", NULL), 1, 0);
+				cam1 = ostrcat(cam1, getlist(myconfig, "InstarCam1Pass", NULL), 1, 0);
 				cam1 = ostrcat(cam1, "@",1, 0);
-				cam1 = ostrcat(cam1, fixip(getlist(ownconfig, "InstarCam1IP", NULL)), 1, 0);
+				cam1 = ostrcat(cam1, getlist(myconfig, "InstarCam1IP", NULL), 1, 0);
 				cam1 = ostrcat(cam1, ":",1, 0);
-				cam1 = ostrcat(cam1, getlist(ownconfig, "InstarCam1Port", NULL), 1, 0);
+				cam1 = ostrcat(cam1, getlist(myconfig, "InstarCam1Port", NULL), 1, 0);
 			}
 			
 		
 			/*
-			if(ostrcmp(getlist(ownconfig, "InstarCam2", NULL), "ein") == 0)
+			if(ostrcmp(getlist(myconfig, "InstarCam2", NULL), "ein") == 0)
 			{
-				cam2 = ostrcat("wget --user=", getlist(ownconfig, "InstarCam2User", NULL), 0, 0);
+				cam2 = ostrcat("wget --user=", getlist(myconfig, "InstarCam2User", NULL), 0, 0);
 				cam2 = ostrcat(cam2, " --password=",1, 0);
-				cam2 = ostrcat(cam2, getlist(ownconfig, "InstarCam2Pass", NULL), 1, 0);
+				cam2 = ostrcat(cam2, getlist(myconfig, "InstarCam2Pass", NULL), 1, 0);
 				cam2 = ostrcat(cam2, " --output-document=/tmp/instar2.jpg http://",1, 0);
-				cam2 = ostrcat(cam2, fixip(getlist(ownconfig, "InstarCam2IP", NULL)), 1, 0);
+				cam2 = ostrcat(cam2, fixip(getlist(myconfig, "InstarCam2IP", NULL)), 1, 0);
 				cam2 = ostrcat(cam2, ":", 1, 0);
-				cam2 = ostrcat(cam2, getlist(ownconfig, "InstarCam2Port", NULL), 1, 0);
+				cam2 = ostrcat(cam2, getlist(myconfig, "InstarCam2Port", NULL), 1, 0);
 			}
 			*/
 	
@@ -241,7 +241,7 @@ void instar_main()
 				break;
 		}
 	}
-	writelist(ownconfig, instarconf);
-	freelist(ownconfig);
+	writelist(myconfig, instarconf);
+	freelist(myconfig);
 	free(instarconf); instarconf = NULL;
 }
