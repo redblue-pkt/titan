@@ -12,13 +12,13 @@
 <node type=MENU pic=%pluginpath%/panel/skin/panel_overclock.png textposx=120 valign=middle name=panel_settings_overclocking text="Overclocking" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_videotune.png textposx=120 valign=middle name=panel_settings_videotune text="Videotune" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_fancontrol.png textposx=120 valign=middle name=panel_settings_fancontrol text="Fancontrol" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hidden=no hspace=5>
-<node type=MENU pic=%pluginpath%/panel/skin/panel_wizzard.png textposx=120 valign=middle name=panel_settings_wizzard text="Wizzard" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node type=MENU pic=%pluginpath%/panel/skin/panel_wizard.png textposx=120 valign=middle name=panel_settings_wizard text="Wizard" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 #<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
 <screen fontcol=fontcol title="Info" titlealign=center name=panel_infos_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=65% bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=85%>
-<node type=MENU pic=%pluginpath%/panel/skin/panel_infos.png textposx=120 valign=middle name=panel_infos text="Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+#<node type=MENU pic=%pluginpath%/panel/skin/panel_infos.png textposx=120 valign=middle name=panel_infos text="Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_default.png textposx=120 valign=middle name=panel_infos_default text="default" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_freespace.png textposx=120 valign=middle name=panel_infos_free text="free space" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_kernel.png textposx=120 valign=middle name=panel_infos_kernel text="Kernel" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
