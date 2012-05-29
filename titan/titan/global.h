@@ -643,18 +643,35 @@ int checkemu()
 
 int checkpluginskip(char* name)
 {
-	if(ostrcmp(name, "Softcam Panel") == 0) return 1;
-	//if(ostrcmp(name, "Media Center") == 0) return 1;
-	if(ostrcmp(name, "Internet Browser") == 0) return 1;
-	if(ostrcmp(name, "CallMonitor") == 0) return 1;
-	if(ostrcmp(name, "Imdb") == 0) return 1;
-	if(ostrcmp(name, "KeyLock") == 0) return 1;
-	if(ostrcmp(name, "Mbox Info") == 0) return 1;
-	if(ostrcmp(name, "Networkbrowser") == 0) return 1;
-	if(ostrcmp(name, "Permanent Time") == 0) return 1;
-	if(ostrcmp(name, "TopfieldVFD") == 0) return 1;
-	if(ostrcmp(name, "Hello") == 0) return 1;
-	if(ostrcmp(name, "LCD Pearl") == 0) return 1;
+	if(ostrcmp(name, "3 Wins") == 0) return 1;
+	else if(ostrcmp(name, "CallMonitor") == 0) return 1;
+	else if(ostrcmp(name, "Hello") == 0) return 1;
+	else if(ostrcmp(name, "DLNA") == 0) return 1;
+	else if(ostrcmp(name, "DVD Player") == 0) return 1;
+	else if(ostrcmp(name, "hbbtv Browser") == 0) return 1;		
+	else if(ostrcmp(name, "Imdb") == 0) return 1;
+	else if(ostrcmp(name, "INSTAR") == 0) return 1;
+	else if(ostrcmp(name, "Internet Browser") == 0) return 1;
+	else if(ostrcmp(name, "KeyLock") == 0) return 1;
+	else if(ostrcmp(name, "LCD Pearl") == 0) return 1;
+	else if(ostrcmp(name, "Mbox Info") == 0) return 1;
+	else if(ostrcmp(name, "Media Center") == 0) return 1;
+	else if(ostrcmp(name, "Networkbrowser") == 0) return 1;
+	else if(ostrcmp(name, "News") == 0) return 1;
+	else if(ostrcmp(name, "Optimize") == 0) return 1;
+	else if(ostrcmp(name, "Panel") == 0) return 1;
+	else if(ostrcmp(name, "Permanent Time") == 0) return 1;
+	else if(ostrcmp(name, "RGUI") == 0) return 1;
+	else if(ostrcmp(name, "Script execute") == 0) return 1;
+	else if(ostrcmp(name, "Softcam Panel") == 0) return 1;
+	else if(ostrcmp(name, "Stock") == 0) return 1;
+	else if(ostrcmp(name, "Stop if not used") == 0) return 1;
+	else if(ostrcmp(name, "Streaminfo") == 0) return 1;	
+	else if(ostrcmp(name, "TiTan Mediathek") == 0) return 1;
+	else if(ostrcmp(name, "Titan Media Center") == 0) return 1;
+	else if(ostrcmp(name, "TMDb") == 0) return 1;
+	else if(ostrcmp(name, "TopfieldVFD") == 0) return 1;
+	else if(ostrcmp(name, "Weather") == 0) return 1;
 
 	return 0;
 }
@@ -684,6 +701,7 @@ void setskinnodeslocked(int flag)
 			else if(ostrcmp("instar", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("keylock", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("lcdpearl1", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("mediacenter", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("mboxinfo", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("networkbrowser", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("news", child->name) == 0) child->locked = flag;
@@ -713,22 +731,16 @@ void setskinnodeslocked(int flag)
 			else
 				tmpflag = 1;
 
-//	current... not needed 
-//			if((checkbox("ATEMIO500") == 1) || (checkbox("ATEMIO510") == 1))
-//			{
-				if(ostrcmp("vfdisplay", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("savesettings", child->name) == 0) child->locked = tmpflag;
-//				else if(ostrcmp("recordpath", child->name) == 0) child->locked = tmpflag;
-//				else if(ostrcmp("videosettings", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("scartrecorder", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("vfdisplay", child->name) == 0) child->locked = tmpflag;
-//				else if(ostrcmp("configurehdd", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("system_update_usb_online", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("system_update_usb_tmp", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("sambasettings", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("nfssettings", child->name) == 0) child->locked = tmpflag;
-				else if(ostrcmp("mediaplayer", child->name) == 0) child->locked = tmpflag;
-//			}
+			// dont show this menus
+			if(ostrcmp("vfdisplay", child->name) == 0) child->locked = tmpflag;
+			else if(ostrcmp("savesettings", child->name) == 0) child->locked = tmpflag;
+			else if(ostrcmp("scartrecorder", child->name) == 0) child->locked = tmpflag;
+			else if(ostrcmp("vfdisplay", child->name) == 0) child->locked = tmpflag;
+			else if(ostrcmp("system_update_usb_online", child->name) == 0) child->locked = tmpflag;
+			else if(ostrcmp("system_update_usb_tmp", child->name) == 0) child->locked = tmpflag;
+			else if(ostrcmp("sambasettings", child->name) == 0) child->locked = tmpflag;
+			else if(ostrcmp("nfssettings", child->name) == 0) child->locked = tmpflag;
+			else if(ostrcmp("mediaplayer", child->name) == 0) child->locked = tmpflag;
 			
 			child = child->next;
 		}
