@@ -1,6 +1,7 @@
 #include "../titan/struct.h"
 #include "../titan/debug.h"
 #include "../titan/header.h"
+#include "mediadb.h"
 #include "tmc.h"
 
 char pluginname[] = "Titan Media Center";
