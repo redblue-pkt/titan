@@ -1578,7 +1578,7 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 		//blit the rest
 		if(scaleheight > 0 && py > -1)
 		{
-			int tmp = scaleheight - nposy;
+			int tmp = scaleheight - (nposy - posy);
 			blitscale(posx, nposy, width, py, scalewidth, tmp, 0);
 		}
 		m_unlock(&status.accelfbmutex, 16);
