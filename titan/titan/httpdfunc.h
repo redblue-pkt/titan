@@ -1311,7 +1311,7 @@ char* webgetsingleepg(char* param, int fmt)
 				buf = ostrcat(buf, tmpstr, 1, 0);
 			free(tmpstr); tmpstr = NULL;
 			buf = ostrcat(buf, "#", 1, 0);
-			buf = ostrcat(buf, epgnode->eventid, 1, 0);
+			buf = ostrcat(buf, oitoa(epgnode->eventid), 1, 1);
 			buf = ostrcat(buf, "\n", 1, 0);
 		}
 	
