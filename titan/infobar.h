@@ -355,7 +355,7 @@ void screeninfobar()
 			pluginnode = getplugin("hbbtv Browser");
 			if(pluginnode != NULL)
 			{
-				startplugin = dlsym(pluginnode->pluginhandle, "start");
+				startplugin = dlsym(pluginnode->pluginhandle, "starturl");
 				if(startplugin != NULL)
 					startplugin();
 			}
