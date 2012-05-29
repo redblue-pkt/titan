@@ -301,6 +301,7 @@ void blitfb2(struct fb* fbnode, int flag);
 void delfb(char *name);
 void fb2png_thread();
 int fb2png(unsigned char *buf_p, int width, int height, char *outfile);
+void clearfball();
 
 //timerthread.h
 struct stimerthread* addtimer(void* func, int aktion, int delay, int count, void* param1, void* param2, struct stimerthread* last);

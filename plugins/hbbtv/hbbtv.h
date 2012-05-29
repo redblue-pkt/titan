@@ -387,7 +387,7 @@ void screenopera(char* url)
 		rcret = waitrc(NULL, 1000, 0);
     
     //check for player EOF
-    if(operaservicestate = 1 && (!playerisplaying()))
+    if(operaservicestate == 1 && !playerisplaying())
     {
       playerafterend();
       operaservicestate = 0;
@@ -482,7 +482,7 @@ void screenopera(char* url)
 	fbrestore();
 
 	//stop player if running
-	if(operaservicestate = 1)
+	if(operaservicestate == 1)
 	{
 		playerstop();
 		playerafterend();
@@ -668,9 +668,7 @@ void operareceivercb(char* cmd)
 		{
 			if(count > 1 && ostrcmp("1", (&ret[1])->part) == 0) //VOD
 			{
-        char* tmpstr = NULL;
-
-				//Switch back to live tv after vod session ended
+      	//Switch back to live tv after vod session ended
 				operastartservice();
 			}
 		}
@@ -682,7 +680,7 @@ void operareceivercb(char* cmd)
 
 void screenoperafav()
 {
-	int ret = 0;
+	//int ret = 0;
 	struct menulist* mlist = NULL, *mbox = NULL, *tmpmbox = NULL;
 	struct hbbtvfav *node = NULL;
 
