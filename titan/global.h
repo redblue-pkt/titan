@@ -650,7 +650,7 @@ int checkpluginskip(char* name)
 	else if(ostrcmp(name, "DVD Player") == 0) return 1;
 	else if(ostrcmp(name, "hbbtv Browser") == 0) return 1;		
 	else if(ostrcmp(name, "Imdb") == 0) return 1;
-	else if(ostrcmp(name, "INSTAR") == 0) return 1;
+	else if(ostrcmp(name, "IP-Kammera") == 0) return 1;
 	else if(ostrcmp(name, "Internet Browser") == 0) return 1;
 	else if(ostrcmp(name, "KeyLock") == 0) return 1;
 	else if(ostrcmp(name, "LCD Pearl") == 0) return 1;
