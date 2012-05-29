@@ -268,7 +268,7 @@ char* dvbgethbbtvurl(unsigned char* buf)
 							url = malloc(desclen - 4);
 							if(url != NULL)
 							{
-								strncpy(url, &buf[pos2 + 6], desclen - 5);
+								strncpy(url, (char*)&buf[pos2 + 6], desclen - 5);
 								url[desclen - 5]='\0';
 							}
 							break;
