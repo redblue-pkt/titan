@@ -1,6 +1,15 @@
 #ifndef OPERA_H
 #define OPERA_H
 
+struct hbbtvfav
+{
+	char* name;
+	char* addr;
+	struct hbbtvfav* next;
+};
+
+struct hbbtvfav *hbbtvfav = NULL;
+
 #define NAME "YWNATIVE"
 #define CONTROL_PIPE_W "/tmp/"NAME"_control_w"
 #define CONTROL_PIPE_R "/tmp/"NAME"_control_r"
@@ -20,6 +29,169 @@ int operareceiverthread_ok = 0;
 int operaserviceend = 0;
 int operaservicestate = 0;
 char* operaplayurl = NULL;
+
+struct hbbtvfav* addhbbtvfav(char *line, int count, struct hbbtvfav* last)
+{
+	//debug(1000, "in");
+	struct hbbtvfav *newnode = NULL, *prev = NULL, *node = hbbtvfav;
+	int ret = 0;
+
+	newnode = (struct hbbtvfav*)malloc(sizeof(struct hbbtvfav));
+	if(newnode == NULL)
+	{
+		err("no memory");
+		return NULL;
+	}
+
+	memset(newnode, 0, sizeof(struct hbbtvfav));
+
+	newnode->name = malloc(1024);
+	if(newnode->name == NULL)
+	{
+		err("no mem");
+		free(newnode);
+		return NULL;
+	}
+
+	newnode->addr = malloc(1024);
+	if(newnode->addr == NULL)
+	{
+		err("no mem");
+		free(newnode->name);
+		free(newnode);
+		return NULL;
+	}
+
+	ret = sscanf(line, "%[^#]#%s", newnode->name, newnode->addr);
+	if(ret != 2)
+	{
+		if(count > 0)
+		{
+			err("hbbtvfav line %d not ok", count);
+		}
+		else
+		{
+			err("add hbbtvfav");
+		}
+		free(newnode->name);
+		free(newnode->addr);
+		free(newnode);
+		return NULL;
+	}
+
+	newnode->name = ostrcat(newnode->name, NULL, 1, 0);
+	newnode->addr = ostrcat(newnode->addr, NULL, 1, 0);
+
+	if(last == NULL)
+	{
+		while(node != NULL)
+		{
+			prev = node;
+			node = node->next;
+		}
+	}
+	else
+	{
+		prev = last;
+		node = last->next;
+	}
+
+	if(prev == NULL)
+		hbbtvfav = newnode;
+	else
+		prev->next = newnode;
+	newnode->next = node;
+
+	//debug(1000, "out");
+	return newnode;
+}
+
+int readhbbtvfav(const char* filename)
+{
+	debug(1000, "in");
+	FILE *fd = NULL;
+	char *fileline = NULL;
+	int linecount = 0;
+	struct hbbtvfav* last = NULL, *tmplast = NULL;
+
+	fileline = malloc(MINMALLOC);
+	if(fileline == NULL)
+	{
+		err("no memory");
+		return 1;
+	}
+
+	fd = fopen(filename, "r");
+	if(fd == NULL)
+	{
+		perr("can't open %s", filename);
+		free(fileline);
+		return 1;
+	}
+
+	while(fgets(fileline, MINMALLOC, fd) != NULL)
+	{
+		if(fileline[0] == '#' || fileline[0] == '\n')
+			continue;
+		if(fileline[strlen(fileline) - 1] == '\n')
+			fileline[strlen(fileline) - 1] = '\0';
+		if(fileline[strlen(fileline) - 1] == '\r')
+			fileline[strlen(fileline) - 1] = '\0';
+
+		linecount++;
+
+		if(last == NULL) last = tmplast;
+		last = addhbbtvfav(fileline, linecount, last);
+		if(last != NULL) tmplast = last;
+	}
+
+	free(fileline);
+	fclose(fd);
+	return 0;
+}
+
+int delhbbtvfav(char* name)
+{
+	debug(1000, "in");
+	int ret = 1;
+	struct hbbtvfav *node = hbbtvfav, *prev = hbbtvfav;
+
+	while(node != NULL)
+	{
+		if(ostrcmp(node->name, name) == 0)
+		{
+			if(node == hbbtvfav)
+				hbbtvfav = node->next;
+			else
+				prev->next = node->next;
+
+			free(node);
+			node = NULL;
+			ret = 0;
+			break;
+		}
+
+		prev = node;
+		node = node->next;
+	}
+	debug(1000, "out");
+	return ret;
+}
+
+void freehbbtvfav()
+{
+	debug(1000, "in");
+	struct hbbtvfav *node = hbbtvfav, *prev = hbbtvfav;
+
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+		if(prev != NULL)
+			delhbbtvfav(prev->name);
+	}
+	debug(1000, "out");
+}
 
 void operarcthread()
 {
@@ -506,6 +678,52 @@ void operareceivercb(char* cmd)
 
 	free(tmpstr); tmpstr = NULL;
 	free(ret); ret = NULL;
+}
+
+void screenoperafav()
+{
+	int ret = 0;
+	struct menulist* mlist = NULL, *mbox = NULL, *tmpmbox = NULL;
+	struct hbbtvfav *node = NULL;
+
+	//ret = servicestop(status.aktservice, 1, 0);
+	//if(ret == 1) return;
+	//setfbtransparent(255);
+
+	readhbbtvfav(getconfig("hbbtvfavfile", NULL));
+	node = hbbtvfav;
+
+	//tmpmbox = addmenulist(&mlist, "Home", NULL, NULL, 0, 0);
+	//if(tmpmbox != NULL)
+	//	tmpmbox->param = ostrcat(getconfig("hbbtvhome", NULL), NULL, 0, 0);
+
+	while(node != NULL)
+	{
+		tmpmbox = addmenulist(&mlist, node->name, NULL, NULL, 0, 0);
+		if(tmpmbox != NULL)
+			tmpmbox->param = ostrcat(node->addr, NULL, 0, 0);
+
+		node = node->next;
+	}
+
+start:
+	drawscreen(skin, 0);
+	mbox = menulistbox(mlist, "menulist", "HBBTV Favoriten", NULL, NULL, 0, 0);
+	if(mbox != NULL)
+	{
+		if(mbox->param != NULL)
+		{
+			screenopera(mbox->param);
+		}
+		goto start;
+	}
+
+	freemenulist(mlist, 1);
+	freehbbtvfav();
+	//setosdtransparent(getskinconfigint("osdtransparent", NULL));
+	//if(status.lastservice != NULL)
+	//	servicestart(status.lastservice->channel, NULL, NULL, 0);
+	//flushrc(500);
 }
 
 #endif

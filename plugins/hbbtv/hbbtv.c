@@ -26,8 +26,12 @@ void deinit(void)
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {
-//	screenopera("http://itv.mit-xperts.com/hbbtvtest/index.php");
-//	screenopera("http://itv.ard.de/ardstart/index.html");
+	screenoperafav();
+}
+
+//start from infobar
+void starturl(void)
+{
 	if(status.aktservice->channel != NULL && status.aktservice->channel->hbbtvurl != NULL)
 	{
 		debug(788, "hbbtvurl=%s", status.aktservice->channel->hbbtvurl);
