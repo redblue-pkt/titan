@@ -44,8 +44,8 @@ struct browserfav* addbrowserfav(char *line, int count, struct browserfav* last)
 	}
 
 	ret = sscanf(line, "%[^#]#%s", newnode->name, newnode->addr);
-        if(ret != 2)
-        {
+	if(ret != 2)
+	{
 		if(count > 0)
 		{
 			err("browserfav line %d not ok", count);
