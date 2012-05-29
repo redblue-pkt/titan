@@ -142,7 +142,6 @@ echo "[titan]--------------------------------------------------------"
 cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
 echo make minidlna-clean
 make minidlna-clean
-#rm .deps/minidlna.do_*
 echo make minidlna
 make minidlna
 cd "$HOME"/flashimg/source.titan/titan
@@ -158,6 +157,99 @@ fi
 echo "[titan]--------------------------------------------------------"
 echo "[titan] minidlna done"
 echo "[titan]--------------------------------------------------------"
+
+echo "[titan]--------------------------------------------------------"
+echo "[titan] curlftpfs"
+echo "[titan]--------------------------------------------------------"
+
+cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
+echo make curlftpfs-clean
+make curlftpfs-clean
+echo make curlftpfs
+make curlftpfs
+cd "$HOME"/flashimg/source.titan/titan
+
+if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/curlftpfs ]; then
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] curlftpfs building error !!!"
+	echo "[titan] check your src"
+	echo "[titan]--------------------------------------------------------"
+	exit 1
+fi
+
+echo "[titan]--------------------------------------------------------"
+echo "[titan] curlftpfs done"
+echo "[titan]--------------------------------------------------------"
+
+echo "[titan]--------------------------------------------------------"
+echo "[titan] djmount"
+echo "[titan]--------------------------------------------------------"
+
+cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
+echo make djmount-clean
+make djmount-clean
+echo make djmount
+make djmount
+cd "$HOME"/flashimg/source.titan/titan
+
+if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/djmount ]; then
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] djmount building error !!!"
+	echo "[titan] check your src"
+	echo "[titan]--------------------------------------------------------"
+	exit 1
+fi
+
+echo "[titan]--------------------------------------------------------"
+echo "[titan] djmount done"
+echo "[titan]--------------------------------------------------------"
+
+echo "[titan]--------------------------------------------------------"
+echo "[titan] sshfs"
+echo "[titan]--------------------------------------------------------"
+
+cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
+echo make sshfs-clean
+make sshfs-clean
+echo make sshfs
+make sshfs
+cd "$HOME"/flashimg/source.titan/titan
+
+if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/sshfs ]; then
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] sshfs building error !!!"
+	echo "[titan] check your src"
+	echo "[titan]--------------------------------------------------------"
+	exit 1
+fi
+
+echo "[titan]--------------------------------------------------------"
+echo "[titan] sshfs done"
+echo "[titan]--------------------------------------------------------"
+
+echo "[titan]--------------------------------------------------------"
+echo "[titan] rarfs"
+echo "[titan]--------------------------------------------------------"
+
+cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
+echo make rarfs-clean
+make rarfs-clean
+echo make rarfs
+make rarfs
+cd "$HOME"/flashimg/source.titan/titan
+
+if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/rarfs ]; then
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] sshfs building error !!!"
+	echo "[titan] check your src"
+	echo "[titan]--------------------------------------------------------"
+	exit 1
+fi
+
+echo "[titan]--------------------------------------------------------"
+echo "[titan] rarfs done"
+echo "[titan]--------------------------------------------------------"
+
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] libipkg"
@@ -356,6 +448,14 @@ cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/liba
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libavutil.so* "$HOME"/flashimg/BUILD/titan/lib
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libexif.so* "$HOME"/flashimg/BUILD/titan/lib
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libvorbis.so* "$HOME"/flashimg/BUILD/titan/lib
+
+#new net tools
+cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/djmount "$HOME"/flashimg/BUILD/titan/sbin
+cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/rarfs "$HOME"/flashimg/BUILD/titan/sbin
+cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/curlftpfs "$HOME"/flashimg/BUILD/titan/sbin
+cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/sshfs "$HOME"/flashimg/BUILD/titan/sbin
+cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libcurl.so* "$HOME"/flashimg/BUILD/titan/lib
+cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/libfuse.so* "$HOME"/flashimg/BUILD/titan/lib
 
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type d -name "*.svn"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.h"`
