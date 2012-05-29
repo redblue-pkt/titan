@@ -14,8 +14,10 @@ int show_control()
 	char* tmpstr = NULL;
 	char* tempcam = NULL;
 	char* position = NULL;
+	char* positionstop = NULL;
 	int rcret = 0;
 	int rcode = 0;
+	int ohnestop = 0;
 	
 	if(actcam == 1)
 		tempcam = cam1;
@@ -40,51 +42,105 @@ int show_control()
 		}
 		
 		drawscreen(instar_screen, 0);
-		rcret = waitrc(instar_screen, 250, 0);
+		rcret = waitrc(instar_screen, 100, 0);
+		ohnestop = 0;
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		
 		if(rcret == getrcconfigint("rcinfo", NULL))
 		{
-			addlist(myconfig, "InstarCamAutostart", "nein");
+			//addlist(myconfig, "InstarCamAutostart", "nein");
 			rcode = 1;
 			break;
 		}	
 			
-		if(rcret == getrcconfigint("rc1", NULL))
+		if(rcret == getrcconfigint("rc1", NULL)) {
 			position = ostrcat("/decoder_control.cgi?command=", "31", 0 , 0);
-		if(rcret == getrcconfigint("rc2", NULL))
+			ohnestop = 1;
+		}
+		if(rcret == getrcconfigint("rc2", NULL)) {
 			position = ostrcat("/decoder_control.cgi?command=", "33", 0 , 0);
-		if(rcret == getrcconfigint("rc3", NULL))
+			ohnestop = 1;
+		}
+		if(rcret == getrcconfigint("rc3", NULL)) {
 			position = ostrcat("/decoder_control.cgi?command=", "35", 0 , 0);
-		if(rcret == getrcconfigint("rc4", NULL))
+			ohnestop = 1;
+		}
+		if(rcret == getrcconfigint("rc4", NULL)) {
 			position = ostrcat("/decoder_control.cgi?command=", "37", 0 , 0);
-		if(rcret == getrcconfigint("rc5", NULL))
+			ohnestop = 1;
+		}
+		if(rcret == getrcconfigint("rc5", NULL)) { 
 			position = ostrcat("/decoder_control.cgi?command=", "39", 0 , 0);
-		if(rcret == getrcconfigint("rc6", NULL))
+			ohnestop = 1;
+		}
+		if(rcret == getrcconfigint("rc6", NULL)) {
 			position = ostrcat("/decoder_control.cgi?command=", "41", 0 , 0);
-		if(rcret == getrcconfigint("rc7", NULL))
+			ohnestop = 1;
+		}
+		if(rcret == getrcconfigint("rc7", NULL)) {
 			position = ostrcat("/decoder_control.cgi?command=", "43", 0 , 0);
-		if(rcret == getrcconfigint("rc8", NULL))
+			ohnestop = 1;
+		}
+		if(rcret == getrcconfigint("rc8", NULL)) {
 			position = ostrcat("/decoder_control.cgi?command=", "45", 0 , 0);
-		if(rcret == getrcconfigint("rc9", NULL))
+			ohnestop = 1;
+		}
+		if(rcret == getrcconfigint("rc9", NULL)) {
 			position = ostrcat("/decoder_control.cgi?command=", "47", 0 , 0);
-		if(rcret == getrcconfigint("rcup", NULL))
-			position = ostrcat("/decoder_control.cgi?command=", "0&onestep=1", 0 , 0);
-		if(rcret == getrcconfigint("rcdown", NULL))
-			position = ostrcat("/decoder_control.cgi?command=", "2&onestep=1", 0 , 0);
-		if(rcret == getrcconfigint("rcleft", NULL))
-			position = ostrcat("/decoder_control.cgi?command=", "4&onestep=1", 0 , 0);
-		if(rcret == getrcconfigint("rcright", NULL))
-			position = ostrcat("/decoder_control.cgi?command=", "6&onestep=1", 0 , 0);
-		
-		
-		if(position != NULL && tempcam != NULL)
+			ohnestop = 1;
+		}
+		if(positionstop == NULL) 
 		{
-			tmpstr = ostrcat(tempcam, position, 0, 0);
-			system(tmpstr);
-			free(tmpstr); tmpstr = NULL;	
-			free(position); position = NULL;
+			if(rcret == getrcconfigint("rcup", NULL)) {
+				position = ostrcat("/decoder_control.cgi?command=", "0", 0 , 0);
+				positionstop = ostrcat("/decoder_control.cgi?command=", "1", 0 , 0);
+			}
+			if(rcret == getrcconfigint("rcdown", NULL)) {
+				position = ostrcat("/decoder_control.cgi?command=", "2", 0 , 0);
+				positionstop = ostrcat("/decoder_control.cgi?command=", "3", 0 , 0);
+			}
+			if(rcret == getrcconfigint("rcleft", NULL)) {
+				position = ostrcat("/decoder_control.cgi?command=", "4", 0 , 0);
+				positionstop = ostrcat("/decoder_control.cgi?command=", "5", 0 , 0);
+			}
+			if(rcret == getrcconfigint("rcright", NULL)) {
+				position = ostrcat("/decoder_control.cgi?command=", "6", 0 , 0);
+				positionstop = ostrcat("/decoder_control.cgi?command=", "7", 0 , 0);
+			}
+			if(rcret == getrcconfigint("rcchup", NULL)) {
+				position = ostrcat("/decoder_control.cgi?command=", "16", 0 , 0);
+				positionstop = ostrcat("/decoder_control.cgi?command=", "17", 0 , 0);
+			}
+			if(rcret == getrcconfigint("rcchdown", NULL)) {
+				position = ostrcat("/decoder_control.cgi?command=", "18", 0 , 0);
+				positionstop = ostrcat("/decoder_control.cgi?command=", "19", 0 , 0);
+			}
+		}
+		
+		if(tempcam != NULL && rcret != RCTIMEOUT)
+		{
+			if(positionstop != NULL && ohnestop == 1)
+			{
+				tmpstr = ostrcat(tempcam, positionstop, 0, 0);
+				system(tmpstr);
+				free(tmpstr); tmpstr = NULL;	
+				free(positionstop); positionstop = NULL;
+			}
+			if(position != NULL)
+			{
+				tmpstr = ostrcat(tempcam, position, 0, 0);
+				system(tmpstr);
+				free(tmpstr); tmpstr = NULL;	
+				free(position); position = NULL;
+			}
+			else if(positionstop != NULL)
+			{
+				tmpstr = ostrcat(tempcam, positionstop, 0, 0);
+				system(tmpstr);
+				free(tmpstr); tmpstr = NULL;	
+				free(positionstop); positionstop = NULL;
+			}
 		}
 	}
 
@@ -213,12 +269,12 @@ void instar_main()
 			/*
 			if(ostrcmp(getlist(myconfig, "InstarCam2", NULL), "ein") == 0)
 			{
-				cam2 = ostrcat("wget --user=", getlist(myconfig, "InstarCam2User", NULL), 0, 0);
-				cam2 = ostrcat(cam2, " --password=",1, 0);
+				cam2 = ostrcat("wget --output-document=/tmp/instar2.jpg http://", getlist(myconfig, "InstarCam2User", NULL), 0, 0);
+				cam2 = ostrcat(cam2, ":",1, 0);
 				cam2 = ostrcat(cam2, getlist(myconfig, "InstarCam2Pass", NULL), 1, 0);
-				cam2 = ostrcat(cam2, " --output-document=/tmp/instar2.jpg http://",1, 0);
-				cam2 = ostrcat(cam2, fixip(getlist(myconfig, "InstarCam2IP", NULL)), 1, 0);
-				cam2 = ostrcat(cam2, ":", 1, 0);
+				cam2 = ostrcat(cam2, "@",1, 0);
+				cam2 = ostrcat(cam2, getlist(myconfig, "InstarCam2IP", NULL), 1, 0);
+				cam2 = ostrcat(cam2, ":",1, 0);
 				cam2 = ostrcat(cam2, getlist(myconfig, "InstarCam2Port", NULL), 1, 0);
 			}
 			*/

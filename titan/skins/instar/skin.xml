@@ -2,7 +2,7 @@
 <node pic=/tmp/instar1.jpg name=win1 width=320 height=240 picwidth=1 picheight=1/>
 </screen>
 
-<screen name="instar_einstellungen" title="INSTAR Kammera Einstellungen" titlealign=center fontcol=fontcol valign=bottom fontsize=30 posx=center posy=center width=50% height=70% bordercol=bordercol bordersize=2 bgcol=bgcol>
+<screen name="instar_einstellungen" title="IP-Kammera Einstellungen" titlealign=center fontcol=fontcol valign=bottom fontsize=30 posx=center posy=center width=50% height=70% bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node bordercol=bordercol scrollbar=auto type=listbox posy=center posx=center name=listbox width=85% height=70%>
 <node name=autoCam type=choicebox parent=listbox valign=top posx=0 text="direkter Start" bordercol=bordercol bordersize=2 width=100% height=30>
 <node name=onCam1 type=choicebox parent=listbox valign=middle posx=0 text="Kammera 1" bordercol=bordercol bordersize=2 width=100% height=25>
