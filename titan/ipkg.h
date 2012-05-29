@@ -623,7 +623,7 @@ char* get_ipk_tmplistinstall(char* path)
 
 	cmd = ostrcat(cmd, "ls ", 1, 0);
 	cmd = ostrcat(cmd, path, 1, 0);
-	cmd = ostrcat(cmd, " | grep '.ipk'", 1, 0);
+	cmd = ostrcat(cmd, " | grep '\.ipk'", 1, 0);
 
 	tmpstr = command(cmd);
 
