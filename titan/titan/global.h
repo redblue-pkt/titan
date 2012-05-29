@@ -673,16 +673,40 @@ void setskinnodeslocked(int flag)
 		while(child != NULL)
 		{
 			if(ostrcmp("browser", child->name) == 0) child->locked = flag;
-//			else if(ostrcmp("mediacenter", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("callmon_main", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("cinterface", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("dlna", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("dvdplayer", child->name) == 0) child->locked = flag;			
+			else if(ostrcmp("extensionsmenu", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("eraseswap", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("hbbtv", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("imdb", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("instar", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("keylock", child->name) == 0) child->locked = flag;
-			else if(ostrcmp("permtime", child->name) == 0) child->locked = flag;
-			else if(ostrcmp("networkbrowser", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("lcdpearl1", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("mboxinfo", child->name) == 0) child->locked = flag;
-			else if(ostrcmp("keylock", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("networkbrowser", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("news", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("optimize", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("panel", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("permtime", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("plugins", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("rgui", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("scriptexec", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("skinselect", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("softcam", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("stock", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("stopifnotused", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("streaminfo", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("system_backup", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("system_backup_restore", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("systemupdatemenu", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("tithek", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("tmc", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("tmdb", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("TopfieldVFD", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("weather", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("wins3", child->name) == 0) child->locked = flag;
 
 			if(status.expertmodus > 9 && status.security == 1)
 				tmpflag = 0;
