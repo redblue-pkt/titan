@@ -65,21 +65,7 @@ void screenkeyactions(int key, int flag)
 	if(status.security == 0 && checkpluginskip(keyconf) == 1) return;
 						
 	debug(60, "key=%s", keyconf);
-	if(ostrcmp(keyconf, "Softcam Panel") == 0 && status.security == 1)
-	{
-		pluginnode = getplugin("Panel");
-		
-		if(pluginnode != NULL)
-		{
-			startplugin = dlsym(pluginnode->pluginhandle, "screenpanel_softcam");
-			if(startplugin != NULL){
-				startplugin();
-			}
-			freemenulist(mlist, 1); mlist = NULL;
-			return;
-		}
-	}
-	else if(ostrcmp(keyconf, "Subchannel") == 0)
+	if(ostrcmp(keyconf, "Subchannel") == 0)
 	{
 		screenlinkedchannel();
 		freemenulist(mlist, 1); mlist = NULL;
