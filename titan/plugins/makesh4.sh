@@ -104,5 +104,6 @@ compile "tmc" "tmc" ""
 compile "dlna" "dlna" ""
 compile "hbbtv" "hbbtv" ""
 compile "instar" "instar" ""
+compile "tmdb" "tmdb" ""
 
 #rm -r networkbrowser/networkbrowser
