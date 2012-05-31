@@ -8,6 +8,14 @@ struct mediadbfilter
 	struct mediadbfilter* next;
 };
 
+struct mediadbcategory
+{
+	int type;
+	char* name;
+	struct mediadbcategory* prev;
+	struct mediadbcategory* next;
+};
+
 struct mediadb
 {
 	char* id;
@@ -25,12 +33,14 @@ struct mediadb
 	char* rating;
 	char* votes;
 	char* file;
+	char* category;
 	struct mediadb* prev;
 	struct mediadb* next;
 };
 
-struct mediadb *mediadb = NULL;
 struct mediadbfilter *mediadbfilter = NULL;
+struct mediadbcategory *mediadbcategory = NULL;
+struct mediadb *mediadb = NULL;
 
 struct mediadbfilter* getlastmediadbfilter(struct mediadbfilter* node)
 {
@@ -199,6 +209,84 @@ struct mediadbfilter* addmediadbfilter(struct mediadb* mnode, int count, struct 
 	return newnode;
 }
 
+struct mediadbcategory* addmediadbcategory(char* line, int type, int count, struct mediadbcategory* last)
+{
+	struct mediadbcategory *newnode = NULL, *prev = NULL, *node = mediadbcategory;
+	char* name = NULL;
+	int ret = 0;
+
+	if(line == NULL) return NULL;
+
+	newnode = (struct mediadbcategory*)malloc(sizeof(struct mediadbcategory));
+	if(newnode == NULL)
+	{
+		err("no memory");
+		return NULL;
+	}
+
+	memset(newnode, 0, sizeof(struct mediadbcategory));
+	
+	name = malloc(256);
+	if(name == NULL)
+	{
+		err("no memory");
+		free(newnode);
+		return NULL;
+	}
+	
+	ret = sscanf(line, "%d#%[^#]", &newnode->type, name);
+	if(ret != 2)
+	{
+		if(count > 0)
+		{
+			err("mediadbcategory line %d not ok or double", count);
+		}
+		else
+		{
+			err("add mediadbcategory");
+		}
+		free(name);
+		free(newnode);
+		return NULL;
+	}
+	
+	if(newnode->type != type)
+	{
+		free(name);
+		free(newnode);
+		return NULL;	
+	}
+
+	newnode->name = ostrcat(name, NULL, 1, 0);
+
+	if(last == NULL)
+	{
+		while(node != NULL && strcasecmp(newnode->name, node->name) > 0)
+		{
+			prev = node;
+			node = node->next;
+		}
+	}
+	else
+	{
+		prev = last;
+		node = last->next;
+	}
+
+	if(prev == NULL)
+		mediadbcategory = newnode;
+	else
+	{
+		prev->next = newnode;
+		newnode->prev = prev;
+	}
+	newnode->next = node;
+	if(node != NULL) node->prev = newnode;
+	
+	//debug(1000, "out");
+	return newnode;
+}
+
 struct mediadb* addmediadb(char *line, int count, struct mediadb* last)
 {
 	//debug(1000, "in");
@@ -206,7 +294,7 @@ struct mediadb* addmediadb(char *line, int count, struct mediadb* last)
 	char *id = NULL, *title = NULL, *year = NULL, *released = NULL;
 	char *runtime = NULL, *genre = NULL, *director = NULL, *writer = NULL;
 	char *actors = NULL, *plot = NULL, *poster = NULL, *rating = NULL;
-	char *votes = NULL, *file = NULL;
+	char *votes = NULL, *file = NULL, *category = NULL;
 	int ret = 0;
 
 	if(line == NULL) return NULL;
@@ -329,10 +417,18 @@ struct mediadb* addmediadb(char *line, int count, struct mediadb* last)
 		free(newnode);
 		return NULL;
 	}
+	category = malloc(256);
+	if(category == NULL)
+	{
+		err("no memory");
+		freemediadbcontent(newnode);
+		free(newnode);
+		return NULL;
+	}
 
 	memset(newnode, 0, sizeof(struct mediadb));
 
-	ret = sscanf(line, "%[^#]#%d#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]", id, &newnode->type, title, year, released, runtime, genre, director, writer, actors, plot, poster, rating, votes, file);
+	ret = sscanf(line, "%[^#]#%d#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]", id, &newnode->type, title, year, released, runtime, genre, director, writer, actors, plot, poster, rating, votes, file, category);
 	if(ret != 15)
 	{
 		if(count > 0)
@@ -362,6 +458,7 @@ struct mediadb* addmediadb(char *line, int count, struct mediadb* last)
 	newnode->rating = ostrcat(rating, NULL, 1, 0);
 	newnode->votes = ostrcat(votes, NULL, 1, 0);
 	newnode->file = ostrcat(file, NULL, 1, 0);
+	newnode->category = ostrcat(category, NULL, 1, 0);
 
 	//modifymediadbcache(newnode->serviceid, newnode->transponderid, newnode);
 
@@ -393,7 +490,7 @@ struct mediadb* addmediadb(char *line, int count, struct mediadb* last)
 	return newnode;
 }
 
-struct mediadb* createmediadb(char* id, int type, char* title, char* year, char* released, char* runtime, char* genre, char* director, char* writer, char* actors, char* plot, char* poster, char* rating, char* votes, char* file)
+struct mediadb* createmediadb(char* id, int type, char* title, char* year, char* released, char* runtime, char* genre, char* director, char* writer, char* actors, char* plot, char* poster, char* rating, char* votes, char* file, char* category)
 {
 	struct mediadb* mnode = NULL;
 	char* tmpstr = NULL;
@@ -427,6 +524,8 @@ struct mediadb* createmediadb(char* id, int type, char* title, char* year, char*
 	tmpstr = ostrcat(tmpstr, votes, 1, 0);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	tmpstr = ostrcat(tmpstr, file, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, category, 1, 0);
 
 	mnode = addmediadb(tmpstr, 1, NULL);
 
@@ -434,13 +533,16 @@ struct mediadb* createmediadb(char* id, int type, char* title, char* year, char*
 	return mnode;
 }
 
-int readmediadb(const char* filename)
+//flag 0: read mediadb
+//flag 1: read mediadbcategory
+int readmediadb(const char* filename, int type, int flag)
 {
 	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL;
 	int linecount = 0;
 	struct mediadb* last = NULL, *tmplast = NULL;
+	struct mediadbcategory* lastcategory = NULL, *tmplastcategory = NULL;
 
 	fileline = malloc(MINMALLOC);
 	if(fileline == NULL)
@@ -468,9 +570,18 @@ int readmediadb(const char* filename)
 
 		linecount++;
 
-		if(last == NULL) last = tmplast;
-		last = addmediadb(fileline, linecount, last);
-		if(last != NULL) tmplast = last;
+		if(flag == 0)
+		{
+			if(last == NULL) last = tmplast;
+			last = addmediadb(fileline, linecount, last);
+			if(last != NULL) tmplast = last;
+		}
+		else
+		{
+			if(lastcategory == NULL) lastcategory = tmplastcategory;
+			lastcategory = addmediadbcategory(fileline, type, linecount, lastcategory);
+			if(lastcategory != NULL) tmplastcategory = lastcategory;
+		}
 	}
 
 	//status.writemediadb = 0;
@@ -497,6 +608,7 @@ void freemediadbcontent(struct mediadb* node)
 	free(node->rating); node->rating = NULL;
 	free(node->votes); node->votes = NULL;
 	free(node->file); node->file = NULL;
+	free(node->category); node->category = NULL;
 }
 
 int delmediadbfilter(struct mediadbfilter* mnode, int flag)
@@ -522,6 +634,47 @@ int delmediadbfilter(struct mediadbfilter* mnode, int flag)
 				if(node->next != NULL)
 					node->next->prev = prev;
 			}
+
+			free(node);
+			node = NULL;
+
+			break;
+		}
+
+		prev = node;
+		node = node->next;
+	}
+
+	debug(1000, "out");
+	return ret;
+}
+
+int delmediadbcategory(struct mediadbcategory* mnode, int flag)
+{
+	debug(1000, "in");
+	int ret = 1;
+	struct mediadbcategory *node = mediadbcategory, *prev = mediadbcategory;
+
+	while(node != NULL)
+	{
+		if(node == mnode)
+		{
+			ret = 0;
+			if(node == mediadbcategory)
+			{
+				mediadbcategory = node->next;
+				if(mediadbcategory != NULL)
+					mediadbcategory->prev = NULL;
+			}
+			else
+			{
+				prev->next = node->next;
+				if(node->next != NULL)
+					node->next->prev = prev;
+			}
+			
+			free(node->name);
+			node->name = NULL;
 
 			free(node);
 			node = NULL;
@@ -593,6 +746,21 @@ void freemediadbfilter(int flag)
 	debug(1000, "out");
 }
 
+void freemediadbcategory(int flag)
+{
+	debug(1000, "in");
+	struct mediadbcategory *node = mediadbcategory, *prev = mediadbcategory;
+
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+		if(prev != NULL)
+			delmediadbcategory(prev, flag);
+	}
+	debug(1000, "out");
+}
+
 void freemediadb(int flag)
 {
 	debug(1000, "in");
@@ -624,7 +792,7 @@ int writemediadb(const char *filename)
 
 	while(node != NULL)
 	{
-		ret = fprintf(fd, "%s#%d#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s\n", node->id, node->type, node->title, node->year, node->released, node->runtime, node->genre, node->director, node->writer, node->actors, node->plot, node->poster, node->rating, node->votes, node->file);
+		ret = fprintf(fd, "%s#%d#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s\n", node->id, node->type, node->title, node->year, node->released, node->runtime, node->genre, node->director, node->writer, node->actors, node->plot, node->poster, node->rating, node->votes, node->file, node->category);
 		if(ret < 0)
 		{
 			perr("writting file %s", filename);
@@ -637,7 +805,14 @@ int writemediadb(const char *filename)
 	return 0;
 }
 
-void createmediadbfilter(int type, int sort)
+//flag 0: all
+//flag 1: year
+//flag 2: director
+//flag 3: actors
+//flag 4: category
+//flag 5: rating
+//flag 6: genre
+void createmediadbfilter(int type, char* search, int flag)
 {
 	struct mediadb* node = mediadb;
 
@@ -646,7 +821,20 @@ void createmediadbfilter(int type, int sort)
 	{
 		if(node->type == type)
 		{
-			addmediadbfilter(node, 1, NULL);
+			if(flag == 0)
+				addmediadbfilter(node, 1, NULL);
+			else if(flag == 1 && ostrstrcase(node->year, search) == 0)
+				addmediadbfilter(node, 1, NULL);
+			else if(flag == 2 && ostrstrcase(node->director, search) == 0)
+				addmediadbfilter(node, 1, NULL);
+			else if(flag == 3 && ostrstrcase(node->actors, search) == 0)
+				addmediadbfilter(node, 1, NULL);
+			else if(flag == 4 && ostrstrcase(node->category, search) == 0)
+				addmediadbfilter(node, 1, NULL);
+			else if(flag == 5 && ostrstrcase(node->rating, search) == 0)
+				addmediadbfilter(node, 1, NULL);
+			else if(flag == 6 && ostrstrcase(node->genre, search) == 0)
+				addmediadbfilter(node, 1, NULL);
 		}
 		node = node->next;
 	}
