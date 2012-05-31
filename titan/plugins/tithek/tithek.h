@@ -623,7 +623,7 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		
 	if(flag == 1)
 	{
-		string_resub("\": \"url=", "\", \"", tmpstr);
+		tmpstr = string_resub("\": \"url=", "\", \"", tmpstr);
 	
 		while(string_find(",url=", tmpstr))
 			tmpstr = string_replace(",url=", "\nurl=", tmpstr, 1);
@@ -661,7 +661,7 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 	}
 	else if(flag == 2)
 	{
-		string_resub("data:'", "',", tmpstr);
+		tmpstr = string_resub("data:'", "',", tmpstr);
 		debug(99, "tmpstr: %s", tmpstr);
 
 		htmldecode(tmpstr, tmpstr);
@@ -673,7 +673,7 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 	else if(flag == 3)
 	{
 //		string_resub("delivery=\"streaming\"><![CDATA[", "]]></filename>", tmpstr);
-		string_resub("rtmpe://", ".f4v", tmpstr);
+		tmpstr = string_resub("rtmpe://", ".f4v", tmpstr);
 		char* tmpstr9 = NULL;
 		tmpstr9 = ostrcat(tmpstr9, tmpstr, 1, 0);
 		free(tmpstr), tmpstr = NULL;
