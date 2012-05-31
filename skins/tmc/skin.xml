@@ -1,31 +1,19 @@
-<screen pic=%pluginpath%/tmc/skin/tmcbg.jpg name=tmcbg posx=0 posy=0 width=1280 height=720>
-</screen>
-
-<screen name=tmcmenutxt posx=500 posy=620 width=230 height=40 fontsize=30 fontcol=green valign=middle halign=center>
-</screen>
-
-<screen bgcol=-2 name=tmcmenu1 posx=150 posy=570 width=128 height=128 fontcol=red fontsize=100 halign=center>
-</screen>
-
-<screen bgcol=-2 name=tmcmenu2 posx=350 posy=520 width=128 height=128 fontcol=red fontsize=100 halign=center>
-</screen>
-
-<screen bgcol=-2 name=tmcmenu3 posx=550 posy=470 width=128 height=128 fontcol=red fontsize=100 halign=center>
-</screen>
-
-<screen bgcol=-2 name=tmcmenu4 posx=750 posy=520 width=128 height=128 fontcol=red fontsize=100 halign=center>
-</screen>
-
-<screen bgcol=-2 name=tmcmenu5 posx=950 posy=570 width=128 height=128 fontcol=red fontsize=100 halign=center>
-</screen>
-
-<screen bordersize=5 bordercol=red pic=%pluginpath%/tmc/skin/tmcbtn.png name=tmcpic1 picheight=210 picwidth=130 posx=170 posy=140 width=140 height=220>
-</screen>
-<screen bordersize=5 bordercol=red pic=%pluginpath%/tmc/skin/tmcbtn.png name=tmcpic2 picheight=250 picwidth=170 posx=310 posy=120 width=180 height=260>
-</screen>
-<screen bordersize=5 bordercol=red pic=%pluginpath%/tmc/skin/tmcbtn.png name=tmcpic3 picheight=290 picwidth=230 posx=490 posy=100 width=240 height=300>
-</screen>
-<screen bordersize=5 bordercol=red pic=%pluginpath%/tmc/skin/tmcbtn.png name=tmcpic4 picheight=250 picwidth=170 posx=730 posy=120 width=180 height=260>
-</screen>
-<screen bordersize=5 bordercol=red pic=%pluginpath%/tmc/skin/tmcbtn.png name=tmcpic5 picheight=210 picwidth=130 posx=910 posy=140 width=140 height=220>
+<screen fontcol=fontcol fontsize=20 titlealign=center name="tmdb" valign=bottom hspace=30 vspace=10 posx=center posy=center width=100% height=100% bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node name=text text="TMDb - Plugin" posx=20 posy=1 width=45% height=30 fontsize=35>
+<node name=titletext text="Title:" posx=20 posy=50 width=45% height=30 bordertype=2 bordersize=2 bordercol=bordercol/>
+<node name=title text="--title--" posx=150 posy=53 width=45% height=30/>
+<node name=genretext text="Genre:" posx=20 posy=100 width=45% height=30 bordertype=2 bordersize=2 bordercol=bordercol/>
+<node name=genre text="--genre--" posx=150 posy=103 width=45% height=30/>
+<node name=releasedtext text="Release:" posx=20 posy=150 width=45% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
+<node name=released text="--releasetime--" posx=150 posy=153 width=45% height=30/>
+<node name=ratingtext text="Rating:" posx=20 posy=200 width=45% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
+<node name=rating text="--rating--" posx=150 posy=203 width=45% height=30/>
+<node name=votestext text="Votes:" posx=20 posy=250 width=45% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
+<node name=votes text="--votes--" posx=150 posy=253 width=45% height=30/>
+<node name=orgnametext text="Orgname:" posx=20 posy=300 width=45% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
+<node name=orgname text="--orgname--" posx=150 posy=303 width=45% height=30/>
+<node name=plottext text="Plot:" posx=20 posy=350 width=45% bordertype=2 bordersize=2 bordercol=bordercol height=300/>
+<node name=plot text="--plot--" posx=20 posy=400 width=45% height=240 type=textbox wrap=yes/>
+<node name=cover valign=middle halign=middle parent=listbox posx=640 posy=0 width=640 height=720 picwidth=640 picheight=720/>
+<node name=b1 text="SEARCH" halign=center valign=middle bordercol=red bordersize=6 bordertype=2 posx=0 posy=0 width=150 height=39/>
 </screen>
