@@ -496,6 +496,20 @@ if [ $MEDIAFW = 2 ];then
 	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libavutil.so* "$HOME"/flashimg/BUILD/titan/lib
 	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libexif.so* "$HOME"/flashimg/BUILD/titan/lib
 	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libvorbis.so* "$HOME"/flashimg/BUILD/titan/lib
+else
+	#directfb
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/directfb-1.4-5 "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libdirectfb* "$HOME"/flashimg/BUILD/titan/usr/lib
+	
+	#gst
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/gstreamer-0.10 "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libgst* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libdirect* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libfusion* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libglib* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libgmodule* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libgobject* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libgthread* "$HOME"/flashimg/BUILD/titan/usr/lib
 fi
 
 #new net tools
@@ -506,19 +520,13 @@ cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/sshf
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libcurl.so* "$HOME"/flashimg/BUILD/titan/lib
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libfuse.so* "$HOME"/flashimg/BUILD/titan/lib
 
-#directfb
-cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/directfb-1.4-5 "$HOME"/flashimg/BUILD/titan/usr/lib
-cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libdirectfb* "$HOME"/flashimg/BUILD/titan/usr/lib
-
-#gst
-cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/gstreamer-0.10 "$HOME"/flashimg/BUILD/titan/usr/lib
-cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libgst* "$HOME"/flashimg/BUILD/titan/usr/lib
-
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type d -name "*.svn"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.h"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.c"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.o"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.po"`
+rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.a"`
+rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.la"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "make.sh"`
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/networkbrowser/netlib
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/tithek/menu
