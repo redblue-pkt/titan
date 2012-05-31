@@ -428,6 +428,7 @@ mkdir -p "$HOME"/flashimg/BUILD/titan/sbin
 mkdir -p "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf
 mkdir -p "$HOME"/flashimg/BUILD/titan/usr/sbin
 mkdir -p "$HOME"/flashimg/BUILD/titan/usr/bin
+mkdir -p "$HOME"/flashimg/BUILD/titan/usr/lib
 mkdir -p "$HOME"/flashimg/BUILD/titan/lib
 
 PLIST=`ls -1 "$HOME"/flashimg/source.titan/plugins`
