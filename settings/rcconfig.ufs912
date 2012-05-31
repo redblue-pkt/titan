@@ -31,6 +31,7 @@ rc0=11
 rcstop=128
 rcepg=365
 rcarchive=361
+rchbbtv=361
 rcmedia=226
 rcplay=207
 rcpause=119
