@@ -2431,7 +2431,9 @@ char* savescreen(struct skin* node)
 	return saverect(node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->rwidth + (node->shadowsize * 2), node->rheight + (node->shadowsize * 2));
 }
 
-void restorerect(char* buf, int posx, int posy, int width, int height)
+//flag 0: no free
+//flag 1: free
+void restorerectcheck(char* buf, int posx, int posy, int width, int height, int flag)
 {
 	debug(1000, "in");
 	int y;
@@ -2442,15 +2444,28 @@ void restorerect(char* buf, int posx, int posy, int width, int height)
 		{
 			memcpy(skinfb->fb + ((y + posy) * skinfb->pitch) + (posx * skinfb->colbytes), buf + width * skinfb->colbytes * y,  width * skinfb->colbytes);
 		}
-		free(buf);
-		buf = NULL;
+		if(flag == 1)
+		{
+			free(buf);
+			buf = NULL;
+		}
 	}
 	debug(1000, "out");
 }
 
+void restorerect(char* buf, int posx, int posy, int width, int height)
+{
+	restorerectcheck(buf, posx, posy, width, height, 1);
+}
+
 void restorescreen(char* buf, struct skin* node)
 {
-	restorerect(buf, node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->rwidth + (node->shadowsize * 2), node->rheight + (node->shadowsize * 2));
+	restorerectcheck(buf, node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->rwidth + (node->shadowsize * 2), node->rheight + (node->shadowsize * 2), 1);
+}
+
+void restorescreennofree(char* buf, struct skin* node)
+{
+	restorerectcheck(buf, node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->rwidth + (node->shadowsize * 2), node->rheight + (node->shadowsize * 2), 0);
 }
 
 //*************** GOST LCD
@@ -3691,7 +3706,8 @@ int drawscreen(struct skin* node, int flag)
 		return 1;
 	}
 	
-	if(strstr(node->name, "LCD_") != NULL) {
+	if(node->name != NULL && strstr(node->name, "LCD_") != NULL)
+	{
 		merkskinfb = skinfb;
 		memset(lcdskinfb->fb, 0, lcdskinfb->varfbsize);
 		skinfb = lcdskinfb;
@@ -3854,7 +3870,7 @@ int changename(struct skin* node, char* text)
 		if(text != NULL)
 			node->name = strdup(text);
 		else
-			node->name = text;
+			node->name = strdup("unknown");
 		ret = 0;
 	}
 	debug(1000, "out");
