@@ -53,7 +53,7 @@ struct imdb* getimdb(char* title)
 	tmpsearch = ostrcat("?i=&t=", title, 0, 0);
 	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
 
-	tmpstr = gethttp("get_ip("www.imdbapi.com")", tmpsearch, 80, NULL, NULL, NULL, 0);
+	tmpstr = gethttp("www.imdbapi.com", tmpsearch, 80, NULL, NULL, NULL, 0);
 	free(tmpsearch); tmpsearch = NULL;
 
 	if(tmpstr != NULL)
