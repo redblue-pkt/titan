@@ -140,11 +140,9 @@ start:
 			int count = 0;
 			while(string_find("<imdb_id>", tmpstr1))
 			{
-				tmpstr2 = ostrcat(tmpstr1, NULL, 0, 0);		
-				string_resub("<imdb_id>", "</imdb_id>", tmpstr2);				
-				tmpstr3 = ostrcat(tmpstr1, NULL, 0, 0);		
-				string_resub("<name>", "</name>", tmpstr3);
-				
+				tmpstr2 = string_resub("<imdb_id>", "</imdb_id>", tmpstr1);				
+				tmpstr3 = string_resub("<name>", "</name>", tmpstr1);
+
 				debug(133, "result(%d) %s - %s", count, tmpstr2, tmpstr3);
 				addmenulist(&mlist, tmpstr3, tmpstr2, NULL, 0, 0);
 				tmpstr1 = string_replace("<imdb_id>", " ", tmpstr1, 1);
@@ -175,130 +173,112 @@ start:
 	{
 		if(string_find("<name>", tmpstr))
 		{
-			tmdb->title = ostrcat(tmpstr, NULL, 0, 0);	
-			string_resub("<name>", "</name>", tmdb->title);
+			tmdb->title = string_resub("<name>", "</name>", tmpstr);
 		}
 
 		if(string_find("<language>", tmpstr))
 		{
-			tmdb->language = ostrcat(tmpstr, NULL, 0, 0);	
-			string_resub("<language>", "</language>", tmdb->language);
+			tmdb->language = string_resub("<language>", "</language>", tmpstr);
 		}
 
 		if(string_find("<type>", tmpstr))
 		{
-			tmdb->type = ostrcat(tmpstr, NULL, 0, 0);	
-			string_resub("<type>", "</type>", tmdb->type);
+			tmdb->type = string_resub("<type>", "</type>", tmpstr);
 		}
 
 		if(string_find("<original_name>", tmpstr))
 		{
-			tmdb->orgname = ostrcat(tmpstr, NULL, 0, 0);	
-			string_resub("<original_name>", "</original_name>", tmdb->orgname);
+			tmdb->orgname = string_resub("<original_name>", "</original_name>", tmpstr);
 		}
 
 		if(string_find("<score>", tmpstr))
 		{
-			tmdb->score = ostrcat(tmpstr, NULL, 0, 0);	
-			string_resub("<score>", "</score>", tmdb->score);
+			tmdb->score = string_resub("<score>", "</score>", tmpstr);
 		}
 
 		if(string_find("<rating>", tmpstr))
 		{
-			tmdb->rated = ostrcat(tmpstr, NULL, 0, 0);
-			string_resub("<rating>", "</rating>", tmdb->rated);
+			tmdb->rated = string_resub("<rating>", "</rating>", tmpstr);
 		}
 
 		if(string_find("<released>", tmpstr))
 		{
-			tmdb->released = ostrcat(tmpstr, NULL, 0, 0);
-			string_resub("<released>", "</released>", tmdb->released);
+			tmdb->released = string_resub("<released>", "</released>", tmpstr);
 		}
 
 		if(string_find("<categories>", tmpstr))
 		{
-			tmdb->genre = ostrcat(tmpstr, NULL, 0, 0);
-			string_resub("<category type=\"genre\" name=\"", "\" url=", tmdb->genre);
+			tmdb->genre = string_resub("<category type=\"genre\" name=\"", "\" url=", tmpstr);
 			while(string_find("<category type=", tmdb->genre))
 			{
-				string_resub("<category type=\"genre\" name=\"", "\" url=", tmdb->genre);
+				tmdb->genre = string_resub("<category type=\"genre\" name=\"", "\" url=", tmdb->genre);
 			}
 		}
 
 		if(string_find("<runtime>", tmpstr))
 		{
-			tmdb->runtime = ostrcat(tmpstr, NULL, 0, 0);
-			string_resub("<runtime>", "</runtime>", tmdb->runtime);
+			tmdb->runtime = string_resub("<runtime>", "</runtime>", tmpstr);
 		}
 
 		if(string_find("<overview>", tmpstr))
 		{
-			tmdb->plot = ostrcat(tmpstr, NULL, 0, 0);
-			string_resub("<overview>", "</overview>", tmdb->plot);
+			tmdb->plot = string_resub("<overview>", "</overview>", tmpstr);
 		}
 
 		if(string_find("type=\"poster\"", tmpstr))
 		{
-			tmdb->thumb = ostrcat(tmpstr, NULL, 0, 0);
-			string_resub("<image type=\"poster\" url=\"", "\" size=\"thumb\"", tmdb->thumb);
+			tmdb->thumb = string_resub("<image type=\"poster\" url=\"", "\" size=\"thumb\"", tmpstr);
 			while(string_find("<image type=", tmdb->thumb))
 			{
-				string_resub("<image type=\"poster\" url=\"", "\" size=\"thumb\"", tmdb->thumb);
+				tmdb->thumb = string_resub("<image type=\"poster\" url=\"", "\" size=\"thumb\"", tmdb->thumb);
 			}
 		}
 
 		if(string_find("type=\"poster\"", tmpstr))
 		{
-			tmdb->cover = ostrcat(tmpstr, NULL, 0, 0);
-			string_resub("<image type=\"poster\" url=\"", "\" size=\"cover\"", tmdb->cover);
+			tmdb->cover = string_resub("<image type=\"poster\" url=\"", "\" size=\"cover\"", tmpstr);
 			while(string_find("<image type=", tmdb->cover))
 			{
-				string_resub("<image type=\"poster\" url=\"", "\" size=\"cover\"", tmdb->cover);
+				tmdb->cover = string_resub("<image type=\"poster\" url=\"", "\" size=\"cover\"", tmdb->cover);
 			}
 		}
 
 		if(string_find("type=\"poster\"", tmpstr))
 		{
-			tmdb->poster = ostrcat(tmpstr, NULL, 0, 0);
-			string_resub("<image type=\"poster\" url=\"", "\" size=\"mid\"", tmdb->poster);
+			tmdb->poster = string_resub("<image type=\"poster\" url=\"", "\" size=\"mid\"", tmpstr);
 			while(string_find("<image type=", tmdb->poster))
 			{
-				string_resub("<image type=\"poster\" url=\"", "\" size=\"mid\"", tmdb->poster);
+				tmdb->poster = string_resub("<image type=\"poster\" url=\"", "\" size=\"mid\"", tmdb->poster);
 			}
 		}
 
 		if(string_find("type=\"backdrop\"", tmpstr))
 		{
-			tmdb->backdrop = ostrcat(tmpstr, NULL, 0, 0);		
-			string_resub("<image type=\"backdrop\" url=\"", "\" size=\"original\"", tmdb->backdrop);
+			tmdb->backdrop = string_resub("<image type=\"backdrop\" url=\"", "\" size=\"original\"", tmpstr);
 			while(string_find("<image type=", tmdb->backdrop))
 			{
-				string_resub("<image type=\"backdrop\" url=\"", "\" size=\"original\"", tmdb->backdrop);
+				tmdb->backdrop = string_resub("<image type=\"backdrop\" url=\"", "\" size=\"original\"", tmdb->backdrop);
 			}
 		}
 
 		if(string_find("<rating>", tmpstr))
 		{
-			tmdb->rating = ostrcat(tmpstr, NULL, 0, 0);
-			string_resub("<rating>", "</rating>", tmdb->rating);
+			tmdb->rating = string_resub("<rating>", "</rating>", tmpstr);
 		}
 
 		if(string_find("<votes>", tmpstr))
 		{
-			tmdb->votes = ostrcat(tmpstr, NULL, 0, 0);
-			string_resub("<votes>", "</votes>", tmdb->votes);
+			tmdb->votes = string_resub("<votes>", "</votes>", tmpstr);
 		}
 
 		if(string_find("<id>", tmpstr))
 		{
-			tmdb->id = ostrcat(tmpstr, NULL, 0, 0);
-			string_resub("<id>", "</id>", tmdb->id);
+			tmdb->id = string_resub("<id>", "</id>", tmpstr);
 		}
 
 		if(string_find("<imdb_id>", tmpstr))
 		{
-			tmdb->imdbid = ostrcat(tmpstr, NULL, 0, 0);
-			string_resub("<imdb_id>", "</imdb_id>", tmdb->imdbid);
+			tmdb->imdbid = string_resub("<imdb_id>", "</imdb_id>", tmpstr);
 		}
 		
 		if(tmdb->poster != NULL)

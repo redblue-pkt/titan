@@ -566,7 +566,7 @@ void get_ipk_update();
 void getserial();
 char* string_decode(char* input, int flag);
 char* string_striptags(char* filename);
-char* string_resub(char* str, char* str2, char* filename);
+char* string_resub(char* str, char* str2, char* input);
 int cmpfilenameext(char* filename, char* ext);
 void killnet();
 void checkserial(char* input);
