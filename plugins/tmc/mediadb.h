@@ -823,17 +823,17 @@ void createmediadbfilter(int type, char* search, int flag)
 		{
 			if(flag == 0)
 				addmediadbfilter(node, 1, NULL);
-			else if(flag == 1 && ostrstrcase(node->year, search) == 0)
+			else if(flag == 1 && ostrstrcase(node->year, search) != NULL)
 				addmediadbfilter(node, 1, NULL);
-			else if(flag == 2 && ostrstrcase(node->director, search) == 0)
+			else if(flag == 2 && ostrstrcase(node->director, search) != NULL)
 				addmediadbfilter(node, 1, NULL);
-			else if(flag == 3 && ostrstrcase(node->actors, search) == 0)
+			else if(flag == 3 && ostrstrcase(node->actors, search) != NULL)
 				addmediadbfilter(node, 1, NULL);
-			else if(flag == 4 && ostrstrcase(node->category, search) == 0)
+			else if(flag == 4 && ostrstrcase(node->category, search) != NULL)
 				addmediadbfilter(node, 1, NULL);
-			else if(flag == 5 && ostrstrcase(node->rating, search) == 0)
+			else if(flag == 5 && ostrstrcase(node->rating, search) != NULL)
 				addmediadbfilter(node, 1, NULL);
-			else if(flag == 6 && ostrstrcase(node->genre, search) == 0)
+			else if(flag == 6 && ostrstrcase(node->genre, search) != NULL)
 				addmediadbfilter(node, 1, NULL);
 		}
 		node = node->next;
