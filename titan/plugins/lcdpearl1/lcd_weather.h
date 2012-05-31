@@ -224,7 +224,9 @@ void lcd_writeweather()
 	char* location = NULL;
 	struct weather* node = NULL;
 	
-	location = ostrcat(location, getconfig("lcd_pearl1_plugin_wetter_ort", NULL), 0, 0);
+	location = ostrcat(location, getconfig("lcd_pearl1_plugin_wetterplz", NULL), 0, 0);
+	location = ostrcat(location, "-", 1, 0);
+	location = ostrcat(location, getconfig("lcd_pearl1_plugin_wetterland", NULL), 1, 0);
 
 	node = getweather(location);
 	free(location); location = NULL;

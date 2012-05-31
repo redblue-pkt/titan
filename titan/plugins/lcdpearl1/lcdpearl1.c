@@ -404,6 +404,8 @@ void start(void)
 	struct skin* listbox = getscreennode(pearl1_main, "listbox");
 	struct skin* allmenu = getscreennode(pearl1_main, "allmenu");
 	struct skin* wettervor = getscreennode(pearl1_main, "wettervor");
+	struct skin* wettervorplz = getscreennode(pearl1_main, "wettervorplz");
+	struct skin* wettervorland = getscreennode(pearl1_main, "wettervorland");
 	struct skin* b3 = getscreennode(pearl1_main, "b3");
 	struct skin* tmp = NULL;
 	
@@ -411,6 +413,12 @@ void start(void)
 	int startstop = 0;
 	int restart = 0;
 	
+  if(getconfig("lcd_pearl1_plugin_wetter", NULL) == NULL || ostrcmp(getconfig("lcd_pearl1_plugin_wetter", NULL), "no")  == 0)
+  {
+  	wettervorplz->hidden = YES;
+  	wettervorland->hidden = YES;
+  }
+    
   addchoicebox(allmenu, "no", _("nein"));
   addchoicebox(allmenu, "yes", _("ja"));
 	setchoiceboxselection(allmenu, getconfig("write_fb_to_png", NULL));
@@ -418,6 +426,19 @@ void start(void)
 	addchoicebox(wettervor, "no", _("nein"));
   addchoicebox(wettervor, "yes", _("ja"));
 	setchoiceboxselection(wettervor, getconfig("lcd_pearl1_plugin_wetter", NULL));
+	
+	changemask(wettervorplz, "0000");
+	if(getconfig("lcd_pearl1_plugin_wetterplz", NULL) == NULL)
+		changeinput(wettervorplz, "10407");
+	else
+		changeinput(wettervorplz, getconfig("lcd_pearl1_plugin_wetterplz", NULL));
+		
+	changemask(wettervorland, "abcdefghijklmnopqrstuvwxyz");
+	if(getconfig("lcd_pearl1_plugin_wetterland", NULL) == NULL)
+		changeinput(wettervorland, "Germany");
+	else
+		changeinput(wettervorland, getconfig("lcd_pearl1_plugin_wetterland", NULL));
+		
 	
 	if(LCD_Pearl1thread != NULL)
 		changetext(b3, "STOP");
@@ -434,13 +455,28 @@ void start(void)
 		rcret = waitrc(pearl1_main, 0, 0);
 		tmp = listbox->select;
 		
+		if((rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)) && listbox->select != NULL && ostrcmp(listbox->select->name, "wettervor") == 0)
+		{
+			if(ostrcmp(wettervor->ret, "yes") == 0)
+			{
+				wettervorplz->hidden = NO;
+  			wettervorland->hidden = NO;
+			} else {
+				wettervorplz->hidden = YES;
+  			wettervorland->hidden = YES;
+  		}
+			
+			drawscreen(pearl1_main, 0);
+		}
+					
 		if(rcret == getrcconfigint("rcexit", NULL))
 			break;
 		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			addconfig("write_fb_to_png", allmenu->ret);
 			addconfig("lcd_pearl1_plugin_wetter", wettervor->ret);
-			addconfig("lcd_pearl1_plugin_wetter_ort", "Berlin");
+			addconfig("lcd_pearl1_plugin_wetterplz", wettervorplz->ret);
+			addconfig("lcd_pearl1_plugin_wetterland", wettervorland->ret);
 			restart = 1;
 			break;
 		}
@@ -475,9 +511,11 @@ void start(void)
 		}
 		else {
 			addconfig("lcd_pearl1_plugin_running", "yes");
-			LCD_Pearl1thread = addtimer(&LCD_Pearl1_thread, START, 10000, 1, NULL, NULL, NULL);
-			addtimer(&LCD_start_lcd4linux, START, 10000, 1, NULL, NULL, NULL);
-			sleep(1);
+			firststart = 1;
+			LCD_Pearl1_main();
+			//LCD_Pearl1thread = addtimer(&LCD_Pearl1_thread, START, 10000, 1, NULL, NULL, NULL);
+			//addtimer(&LCD_start_lcd4linux, START, 10000, 1, NULL, NULL, NULL);
+			//sleep(1);
 		}
 	}
 }

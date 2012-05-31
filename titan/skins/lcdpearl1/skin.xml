@@ -2,6 +2,8 @@
 <node bordercol=bordercol scrollbar=auto type=listbox posy=center posx=center name=listbox width=85% height=70%>
 <node name=allmenu type=choicebox parent=listbox valign=middle posx=0 text="alle Menus anzeigen" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=wettervor type=choicebox parent=listbox valign=middle posx=0 text="Wettervorhersage" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=wettervorplz type=inputboxnum parent=listbox valign=middle posx=0 text="--- PLZ" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=wettervorland type=inputbox parent=listbox valign=middle posx=0 text="--- Land" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=b1 text=SAVE halign=center valign=middle bordercol=green bordersize=2 bordertype=2 posx=0 posy=0 width=150 height=30/>
 <node name=b2 text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 bordertype=2 posx=160 posy=0 width=150 height=30/>
 <node name=b3 text=START halign=center valign=middle bordercol=blue bordersize=2 bordertype=2 posx=400 posy=0 width=200 height=30/>
