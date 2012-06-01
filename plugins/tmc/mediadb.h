@@ -33,7 +33,6 @@ struct mediadb
 	char* rating;
 	char* votes;
 	char* file;
-	char* category;
 	struct mediadb* prev;
 	struct mediadb* next;
 };
@@ -294,7 +293,7 @@ struct mediadb* addmediadb(char *line, int count, struct mediadb* last)
 	char *id = NULL, *title = NULL, *year = NULL, *released = NULL;
 	char *runtime = NULL, *genre = NULL, *director = NULL, *writer = NULL;
 	char *actors = NULL, *plot = NULL, *poster = NULL, *rating = NULL;
-	char *votes = NULL, *file = NULL, *category = NULL;
+	char *votes = NULL, *file = NULL;
 	int ret = 0;
 
 	if(line == NULL) return NULL;
@@ -417,18 +416,10 @@ struct mediadb* addmediadb(char *line, int count, struct mediadb* last)
 		free(newnode);
 		return NULL;
 	}
-	category = malloc(256);
-	if(category == NULL)
-	{
-		err("no memory");
-		freemediadbcontent(newnode);
-		free(newnode);
-		return NULL;
-	}
 
 	memset(newnode, 0, sizeof(struct mediadb));
 
-	ret = sscanf(line, "%[^#]#%d#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]", id, &newnode->type, title, year, released, runtime, genre, director, writer, actors, plot, poster, rating, votes, file, category);
+	ret = sscanf(line, "%[^#]#%d#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]", id, &newnode->type, title, year, released, runtime, genre, director, writer, actors, plot, poster, rating, votes, file);
 	if(ret != 15)
 	{
 		if(count > 0)
@@ -458,7 +449,6 @@ struct mediadb* addmediadb(char *line, int count, struct mediadb* last)
 	newnode->rating = ostrcat(rating, NULL, 1, 0);
 	newnode->votes = ostrcat(votes, NULL, 1, 0);
 	newnode->file = ostrcat(file, NULL, 1, 0);
-	newnode->category = ostrcat(category, NULL, 1, 0);
 
 	//modifymediadbcache(newnode->serviceid, newnode->transponderid, newnode);
 
@@ -490,7 +480,7 @@ struct mediadb* addmediadb(char *line, int count, struct mediadb* last)
 	return newnode;
 }
 
-struct mediadb* createmediadb(char* id, int type, char* title, char* year, char* released, char* runtime, char* genre, char* director, char* writer, char* actors, char* plot, char* poster, char* rating, char* votes, char* file, char* category)
+struct mediadb* createmediadb(char* id, int type, char* title, char* year, char* released, char* runtime, char* genre, char* director, char* writer, char* actors, char* plot, char* poster, char* rating, char* votes, char* file)
 {
 	struct mediadb* mnode = NULL;
 	char* tmpstr = NULL;
@@ -524,8 +514,6 @@ struct mediadb* createmediadb(char* id, int type, char* title, char* year, char*
 	tmpstr = ostrcat(tmpstr, votes, 1, 0);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	tmpstr = ostrcat(tmpstr, file, 1, 0);
-	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, category, 1, 0);
 
 	mnode = addmediadb(tmpstr, 1, NULL);
 
@@ -608,7 +596,6 @@ void freemediadbcontent(struct mediadb* node)
 	free(node->rating); node->rating = NULL;
 	free(node->votes); node->votes = NULL;
 	free(node->file); node->file = NULL;
-	free(node->category); node->category = NULL;
 }
 
 int delmediadbfilter(struct mediadbfilter* mnode, int flag)
@@ -776,6 +763,35 @@ void freemediadb(int flag)
 	debug(1000, "out");
 }
 
+int writemediadbcategory(const char *filename)
+{
+	debug(1000, "in");
+	FILE *fd = NULL;
+	struct mediadbcategory *node = mediadbcategory;
+	int ret = 0;
+
+	fd = fopen(filename, "w");
+	if(fd == NULL)
+	{
+		perr("can't open %s", filename);
+		return 1;
+	}
+
+	while(node != NULL)
+	{
+		ret = fprintf(fd, "%d#%s\n", node->type, node->name);
+		if(ret < 0)
+		{
+			perr("writting file %s", filename);
+		}
+		node = node->next;
+	}
+
+	fclose(fd);
+	debug(1000, "out");
+	return 0;
+}
+
 int writemediadb(const char *filename)
 {
 	debug(1000, "in");
@@ -792,7 +808,7 @@ int writemediadb(const char *filename)
 
 	while(node != NULL)
 	{
-		ret = fprintf(fd, "%s#%d#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s\n", node->id, node->type, node->title, node->year, node->released, node->runtime, node->genre, node->director, node->writer, node->actors, node->plot, node->poster, node->rating, node->votes, node->file, node->category);
+		ret = fprintf(fd, "%s#%d#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s\n", node->id, node->type, node->title, node->year, node->released, node->runtime, node->genre, node->director, node->writer, node->actors, node->plot, node->poster, node->rating, node->votes, node->file);
 		if(ret < 0)
 		{
 			perr("writting file %s", filename);
@@ -829,7 +845,7 @@ void createmediadbfilter(int type, char* search, int flag)
 				addmediadbfilter(node, 1, NULL);
 			else if(flag == 3 && ostrstrcase(node->actors, search) != NULL)
 				addmediadbfilter(node, 1, NULL);
-			else if(flag == 4 && ostrstrcase(node->category, search) != NULL)
+			else if(flag == 4 && ostrstrcase(node->file, search) != NULL)
 				addmediadbfilter(node, 1, NULL);
 			else if(flag == 5 && ostrstrcase(node->rating, search) != NULL)
 				addmediadbfilter(node, 1, NULL);
@@ -838,6 +854,343 @@ void createmediadbfilter(int type, char* search, int flag)
 		}
 		node = node->next;
 	}
+}
+
+void mediadbscan()
+{
+	struct mediadb *node = mediadb, *prev = mediadb;
+	struct mediadbcategory *cnode = NULL;
+	struct splitstr* ret = NULL;
+	char* tmpstr = NULL, *tmpsplit = NULL;
+
+	//clear all other db in mem
+	freemediadbfilter(0);
+	freemediadbcategory(0);
+
+	//check mediadb for not exist file
+	/*
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+		if(!file_exist(prev->file))
+			delmediadb(prev, 0);
+	}
+	*/
+
+	//find media files
+	findfiles("/home/nit/titan/x", "*.avi"); //TODO
+
+	//create year
+	node = mediadb;
+	while(node != NULL)
+	{
+		int treffer = 1;
+		cnode = mediadbcategory;
+		while(cnode != NULL)
+		{
+			if(ostrcmp(cnode->name, node->year) == 0)
+				treffer = 0;
+			cnode = cnode->next;
+		}
+
+		if(treffer == 1)
+		{
+			tmpstr = ostrcat(oitoa(node->type), "#", 1, 0);
+			tmpstr = ostrcat(tmpstr, node->year, 1, 0);
+			debug(777, "add year %s", node->year);
+			addmediadbcategory(tmpstr, node->type, 1, NULL);
+			free(tmpstr); tmpstr = NULL;
+		}
+
+		node = node->next;
+	}
+	tmpstr = ostrcat(getconfig("mediadbfile", NULL), ".year", 0, 0);
+	writemediadbcategory(tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	freemediadbcategory(0);
+
+	//create director
+	node = mediadb;
+	while(node != NULL)
+	{
+		int treffer = 1;
+		cnode = mediadbcategory;
+		while(cnode != NULL)
+		{
+			if(ostrcmp(cnode->name, node->director) == 0)
+				treffer = 0;
+			cnode = cnode->next;
+		}
+
+		if(treffer == 1)
+		{
+			tmpstr = ostrcat(oitoa(node->type), "#", 1, 0);
+			tmpstr = ostrcat(tmpstr, node->director, 1, 0);
+			debug(777, "add director %s", node->director);
+			addmediadbcategory(tmpstr, node->type, 1, NULL);
+			free(tmpstr); tmpstr = NULL;
+		}
+
+		node = node->next;
+	}
+	tmpstr = ostrcat(getconfig("mediadbfile", NULL), ".director", 0, 0);
+	writemediadbcategory(tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	freemediadbcategory(0);
+
+	//create rating
+	node = mediadb;
+	while(node != NULL)
+	{
+		int treffer = 1;
+		cnode = mediadbcategory;
+		while(cnode != NULL)
+		{
+			if(ostrcmp(cnode->name, node->rating) == 0)
+				treffer = 0;
+			cnode = cnode->next;
+		}
+
+		if(treffer == 1)
+		{
+			tmpstr = ostrcat(oitoa(node->type), "#", 1, 0);
+			tmpstr = ostrcat(tmpstr, node->rating, 1, 0);
+			debug(777, "add rating %s", node->rating);
+			addmediadbcategory(tmpstr, node->type, 1, NULL);
+			free(tmpstr); tmpstr = NULL;
+		}
+
+		node = node->next;
+	}
+	tmpstr = ostrcat(getconfig("mediadbfile", NULL), ".rating", 0, 0);
+	writemediadbcategory(tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	freemediadbcategory(0);
+	
+	//create actors
+	node = mediadb;
+	while(node != NULL)
+	{
+		//split
+		int i = 0, count = 0;
+		tmpsplit = ostrcat(node->actors, NULL, 0, 0);
+		ret = strsplit(tmpsplit, ",", &count);
+		
+		if(ret != NULL)
+		{
+			for(i = 0; i < count; i++)
+			{
+				int treffer = 1;
+				strstrip((&ret[i])->part);
+				cnode = mediadbcategory;
+				while(cnode != NULL)
+				{
+					if(ostrcmp(cnode->name, (&ret[i])->part) == 0)
+						treffer = 0;
+					cnode = cnode->next;
+				}
+		
+				if(treffer == 1)
+				{
+					tmpstr = ostrcat(oitoa(node->type), "#", 1, 0);
+					tmpstr = ostrcat(tmpstr, (&ret[i])->part, 1, 0);
+					debug(777, "add actor %s", (&ret[i])->part);
+					addmediadbcategory(tmpstr, node->type, 1, NULL);
+					free(tmpstr); tmpstr = NULL;
+				}
+			}
+		}
+
+		free(tmpsplit); tmpsplit = NULL;
+		free(ret); ret = NULL;
+		node = node->next;
+	}
+	tmpstr = ostrcat(getconfig("mediadbfile", NULL), ".actors", 0, 0);
+	writemediadbcategory(tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	freemediadbcategory(0);
+	
+	//create category
+	node = mediadb;
+	while(node != NULL)
+	{
+		//split
+		int i = 0, count = 0;
+		tmpsplit = ostrcat(node->file, NULL, 0, 0);
+		ret = strsplit(tmpsplit, "/", &count);
+		
+		if(ret != NULL)
+		{
+			for(i = 0; i < count - 1; i++)
+			{
+				int treffer = 1;
+				strstrip((&ret[i])->part);
+				cnode = mediadbcategory;
+				while(cnode != NULL)
+				{
+					if(ostrcmp(cnode->name, (&ret[i])->part) == 0)
+						treffer = 0;
+					cnode = cnode->next;
+				}
+		
+				if(treffer == 1)
+				{
+					tmpstr = ostrcat(oitoa(node->type), "#", 1, 0);
+					tmpstr = ostrcat(tmpstr, (&ret[i])->part, 1, 0);
+					debug(777, "add category %s", (&ret[i])->part);
+					addmediadbcategory(tmpstr, node->type, 1, NULL);
+					free(tmpstr); tmpstr = NULL;
+				}
+			}
+		}
+
+		free(tmpsplit); tmpsplit = NULL;
+		free(ret); ret = NULL;
+		node = node->next;
+	}
+	tmpstr = ostrcat(getconfig("mediadbfile", NULL), ".category", 0, 0);
+	writemediadbcategory(tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	freemediadbcategory(0);
+
+	//create genre
+	node = mediadb;
+	while(node != NULL)
+	{
+		//split
+		int i = 0, count = 0;
+		tmpsplit = ostrcat(node->genre, NULL, 0, 0);
+		ret = strsplit(tmpsplit, ",", &count);
+		
+		if(ret != NULL)
+		{
+			for(i = 0; i < count; i++)
+			{		
+				int treffer = 1;
+				strstrip((&ret[i])->part);
+				cnode = mediadbcategory;
+				while(cnode != NULL)
+				{
+					if(ostrcmp(cnode->name, (&ret[i])->part) == 0)
+						treffer = 0;
+					cnode = cnode->next;
+				}
+		
+				if(treffer == 1)
+				{
+					tmpstr = ostrcat(oitoa(node->type), "#", 1, 0);
+					tmpstr = ostrcat(tmpstr, (&ret[i])->part, 1, 0);
+					debug(777, "add genre %s", (&ret[i])->part);
+					addmediadbcategory(tmpstr, node->type, 1, NULL);
+					free(tmpstr); tmpstr = NULL;
+				}
+			}
+		}
+
+		free(tmpsplit); tmpsplit = NULL;
+		free(ret); ret = NULL;
+		node = node->next;
+	}
+	tmpstr = ostrcat(getconfig("mediadbfile", NULL), ".genre", 0, 0);
+	writemediadbcategory(tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	freemediadbcategory(0);
+}
+
+void mediadbfindfilecb(char* path, char* file)
+{
+	int treffer = 0;
+	char* tmpstr = NULL;
+	struct mediadb *node = mediadb;
+	
+	//check if entry exist
+	while(node != NULL)
+	{
+		if(ostrcmp(node->file, file) == 0)
+			treffer = 1;
+		node = node->next;
+	}
+	
+	if(treffer == 0)
+	{
+		tmpstr = ostrcat(path, "/", 0, 0);
+		tmpstr = ostrcat(tmpstr, file, 1, 0);
+
+		char* shortname = ostrcat(file, NULL, 0, 0);
+		string_tolower(shortname);
+		shortname = string_shortname(shortname, 1);
+		shortname = string_shortname(shortname, 2);
+		string_removechar(shortname);
+
+		//TODO: create imdb search name
+		//TODO: got imdb infos
+
+		debug(777, "add file %s (short %s)", tmpstr, shortname);
+		free(shortname); shortname = NULL;
+
+		//createmediadb(inode->id, inode->type, inode->title, inode->year, inode->released, inode->runtime, inode->genre, inode->director, inode->writer, inode->actors, inode->plot, inode->poster, inode->rating, inode->votes, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
+}
+
+
+int findfiles(char* dirname, char* ext)
+{
+	DIR *d;
+
+	//Open the directory specified by dirname
+	d = opendir(dirname);
+
+	//Check it was opened
+	if(! d)
+	{
+		perr("Cannot open directory %s", dirname);
+		return 1;
+	}
+
+	while(1)
+	{
+		struct dirent* entry;
+		int path_length;
+		char path[PATH_MAX];
+
+		//Readdir gets subsequent entries from d
+		entry = readdir(d);
+		if(!entry) //There are no more entries in this directory, so break out of the while loop
+			break;
+
+		//See if entry is a subdirectory of d
+		if(entry->d_type & DT_DIR)
+		{
+			//Check that the directory is not d or d's parent
+			if(strcmp(entry->d_name, "..") != 0 && strcmp (entry->d_name, ".") != 0)
+			{
+				path_length = snprintf(path, PATH_MAX, "%s/%s", dirname, entry->d_name);
+				if(path_length >= PATH_MAX)
+				{
+					err("path length has got too long");
+					return 1;
+				}
+				//Recursively call list_dir with the new path
+				findfiles(path, ext);
+			}
+		}
+		else //File
+		{
+			if(!filelistflt(ext, entry->d_name))
+				mediadbfindfilecb(path, entry->d_name);
+		}
+	}
+
+	//After going through all the entries, close the directory
+	if(closedir(d))
+	{
+		perr("Could not close %s", dirname);
+		return 1;
+	}
+
+	return 0;
 }
 
 #endif

@@ -10,8 +10,8 @@ char* menu0txt[] = {"Settings", "Picture", "Video", "Audio", "Exit"};
 
 //Settings
 int menu1pos = 0;
-char* menu1[] = {"skin/tmcbtn.png", "skin/tmcdb.png", "skin/tmcsettings.png", "skin/tmcback.png", "skin/tmcbtn.png"};
-char* menu1txt[] = {"", "Database", "Main", "Back", ""};
+char* menu1[] = {"skin/tmcscan.png", "skin/tmcdb.png", "skin/tmcsettings.png", "skin/tmcback.png", "skin/tmcbtn.png"};
+char* menu1txt[] = {"Scan", "Database", "Main", "Back", ""};
 
 //Picture
 int menu2pos = 0;
@@ -427,6 +427,10 @@ void screentmcmenu()
 				{
 					menuid = 1;
 					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
+				}
+				else if(menuid == 1 && ostrcmp("Scan", tmcmenutxt->ret) == 0)
+				{
+					//TODO
 				}
 				else if(menuid == 1 && ostrcmp("Database", tmcmenutxt->ret) == 0)
 				{
