@@ -1,19 +1,16 @@
 #ifndef FILELIST_H
 #define FILELIST_H
 
-int filelistfilter(struct skin* node, char* name)
+int filelistflt(char* filter, char* name)
 {
 	int ret = 0, count = 0;
 
-	if(node == NULL)
-		return 1;
-
-	char* tmpmatch = node->mask;
-	char* tmpmatch1 = node->mask;
+	char* tmpmatch = filter;
+	char* tmpmatch1 = filter;
 
 	char* tmpchar = NULL;
 
-	if(node->mask != NULL)
+	if(filter != NULL)
 	{
 		tmpmatch--;
 		do
@@ -37,6 +34,13 @@ int filelistfilter(struct skin* node, char* name)
 	}
 
 	return 1;
+}
+
+int filelistfilter(struct skin* node, char* name)
+{
+	if(node == NULL) return 1;
+
+	return filelistflt(node->mask, name);
 }
 
 #ifdef SIMULATE
