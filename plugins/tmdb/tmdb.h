@@ -75,6 +75,8 @@ void freetmdb(struct tmdb* node)
 
 // flag 0 = title search
 // flag 1 = imdbid search
+// flag 2 = imdbid search and save
+
 struct tmdb* gettmdb(char* title, int flag)
 {
 	struct tmdb* tmdb = NULL;
@@ -294,10 +296,101 @@ start:
 				path = pos + 1;
 			}
 
-			gethttp(ip, path, 80, TMPTMDBPIC, NULL, NULL, 0);
-			free(ip); ip = NULL;
+			if(flag == 2)
+			{
+				char* savedir = NULL;
+				savedir = ostrcat(savedir, getconfig("mediadb", NULL), 1, 0);
+				savedir = ostrcat(savedir, "/", 1, 0);
+				savedir = ostrcat(savedir, imdb->id, 1, 0);
+				savedir = ostrcat(savedir, "_postermid.jpg", 1, 0);
+				if(!file_exist(savedir))
+					gethttp(ip, path, 80, savedir, NULL, NULL, 0);
+				free(savedir), savedir = NULL;
+			}
+			else
+				gethttp(ip, path, 80, TMPTMDBPIC, NULL, NULL, 0);
 
+			free(ip); ip = NULL;
 		}
+
+		if(tmdb->thumb != NULL && flag == 2)
+		{
+			char* ip = NULL, *pos = NULL, *path = NULL;
+			ip = string_replace("http://", "", tmdb->thumb, 0);
+
+			if(ip != NULL)
+				pos = strchr(ip, '/');
+			if(pos != NULL)
+			{
+				pos[0] = '\0';
+				path = pos + 1;
+			}
+
+			char* savedir = NULL;
+			savedir = ostrcat(savedir, getconfig("mediadb", NULL), 1, 0);
+			savedir = ostrcat(savedir, "/", 1, 0);
+			savedir = ostrcat(savedir, imdb->id, 1, 0);
+			savedir = ostrcat(savedir, "_thumb.jpg", 1, 0);
+
+			if(!file_exist(savedir))
+				gethttp(ip, path, 80, savedir, NULL, NULL, 0);
+
+			free(savedir), savedir = NULL;
+			free(ip); ip = NULL;
+		}
+
+		if(tmdb->cover != NULL && flag == 2)
+		{
+			char* ip = NULL, *pos = NULL, *path = NULL;
+			ip = string_replace("http://", "", tmdb->cover, 0);
+
+			if(ip != NULL)
+				pos = strchr(ip, '/');
+			if(pos != NULL)
+			{
+				pos[0] = '\0';
+				path = pos + 1;
+			}
+
+			char* savedir = NULL;
+			savedir = ostrcat(savedir, getconfig("mediadb", NULL), 1, 0);
+			savedir = ostrcat(savedir, "/", 1, 0);
+			savedir = ostrcat(savedir, imdb->id, 1, 0);
+			savedir = ostrcat(savedir, "_cover.jpg", 1, 0);
+
+			if(!file_exist(savedir))
+				gethttp(ip, path, 80, savedir, NULL, NULL, 0);
+
+			free(savedir), savedir = NULL;
+			free(ip); ip = NULL;
+		}
+
+		if(tmdb->backdrop != NULL && flag == 2)
+		{
+			char* ip = NULL, *pos = NULL, *path = NULL;
+			ip = string_replace("http://", "", tmdb->backdrop, 0);
+
+			if(ip != NULL)
+				pos = strchr(ip, '/');
+			if(pos != NULL)
+			{
+				pos[0] = '\0';
+				path = pos + 1;
+			}
+
+			char* savedir = NULL;
+			savedir = ostrcat(savedir, getconfig("mediadb", NULL), 1, 0);
+			savedir = ostrcat(savedir, "/", 1, 0);
+			savedir = ostrcat(savedir, imdb->id, 1, 0);
+			savedir = ostrcat(savedir, "_backdrop.jpg", 1, 0);
+
+			if(!file_exist(savedir))
+				gethttp(ip, path, 80, savedir, NULL, NULL, 0);
+
+			free(savedir), savedir = NULL;
+			free(ip); ip = NULL;
+		}
+
 		free(tmpstr); tmpstr = NULL;
 		debug(133, "title: %s", tmdb->title);
 		debug(133, "language: %s", tmdb->language);
