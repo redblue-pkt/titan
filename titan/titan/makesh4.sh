@@ -296,6 +296,28 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] directfb done"
 echo "[titan]--------------------------------------------------------"
 
+echo "[titan]--------------------------------------------------------"
+echo "[titan] gmediarender"
+echo "[titan]--------------------------------------------------------"
+
+cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
+echo make gmediarender-clean
+make gmediarender-clean
+echo make gmediarender
+make gmediarender
+cd "$HOME"/flashimg/source.titan/titan
+
+if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/gmediarender ]; then
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] gmediarender building error !!!"
+	echo "[titan] check your src"
+	echo "[titan]--------------------------------------------------------"
+	exit 1
+fi
+
+echo "[titan]--------------------------------------------------------"
+echo "[titan] gmediarender done"
+echo "[titan]--------------------------------------------------------"
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] libipkg"
@@ -510,7 +532,19 @@ else
 	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libgmodule* "$HOME"/flashimg/BUILD/titan/usr/lib
 	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libgobject* "$HOME"/flashimg/BUILD/titan/usr/lib
 	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libgthread* "$HOME"/flashimg/BUILD/titan/usr/lib
+
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libasound* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libFLAC* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libgio* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libogg* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libixml* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libsoup* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libthreadutil* "$HOME"/flashimg/BUILD/titan/usr/lib
 fi
+
+#gmediarender
+cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/gmediarender "$HOME"/flashimg/BUILD/titan/usr/bin
+cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libupnp* "$HOME"/flashimg/BUILD/titan/usr/lib
 
 #new net tools
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/djmount "$HOME"/flashimg/BUILD/titan/sbin
