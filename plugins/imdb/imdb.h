@@ -53,6 +53,11 @@ struct imdb* getimdb(char* title, int flag)
 	struct imdb* imdb = NULL;
 	char* tmpstr = NULL;
 	char* tmpsearch = NULL;
+	char* path = NULL;
+	char* savefile = NULL;
+	char* cmd = NULL;
+
+	int skip = 1;
 
 	if(flag == 0)
 		tmpsearch = ostrcat("?i=&t=", title, 0, 0);
@@ -90,6 +95,23 @@ struct imdb* getimdb(char* title, int flag)
 		imdb->votes = getxmlentry(tmpstr, "\"Votes\":");
 		imdb->id = getxmlentry(tmpstr, "\"ID\":");
 
+		if(flag == 2)
+		{
+			path = ostrcat(path, getconfig("mediadb", NULL), 1, 0);
+			if(path != NULL && file_exist(path))
+			{
+				path = ostrcat(path, "/mediadb", 1, 0);					
+				if(!file_exist(path))
+				{
+					cmd = ostrcat("mkdir ", path, 0, 0);
+					system(cmd);
+					free(cmd), cmd = NULL;
+				}
+				if(file_exist(path))
+					skip = 0;
+			}
+		}
+
 		if(imdb->poster != NULL)
 		{
 			char* ip = NULL, *pos = NULL, *path = NULL;
@@ -103,16 +125,14 @@ struct imdb* getimdb(char* title, int flag)
 				path = pos + 1;
 			}
 
-			if(flag == 2)
+			if(flag == 2 && skip == 0)
 			{
-				char* savedir = NULL;
-				savedir = ostrcat(savedir, getconfig("mediadb", NULL), 1, 0);
-				savedir = ostrcat(savedir, "/", 1, 0);
-				savedir = ostrcat(savedir, imdb->id, 1, 0);
-				savedir = ostrcat(savedir, "_poster.jpg", 1, 0);
-				if(!file_exist(savedir))
-					gethttp(ip, path, 80, savedir, NULL, NULL, 0);
-				free(savedir), savedir = NULL;
+				savefile = ostrcat(path, "/", 0, 0);
+				savefile = ostrcat(savefile, imdb->id, 1, 0);
+				savefile = ostrcat(savefile, "_poster.jpg", 1, 0);
+				if(!file_exist(savefile))
+					gethttp(ip, path, 80, savefile, NULL, NULL, 0);
+				free(savefile), savefile = NULL;
 			}
 			else
 				gethttp(ip, path, 80, TMPIMDBPIC, NULL, NULL, 0);
@@ -146,7 +166,7 @@ void screenimdb(char* title)
 
 	if(title == NULL) title = getepgakttitle(NULL);
 
-	node = getimdb(title);
+	node = getimdb(title, 0);
 start:
 	if(node != NULL)
 	{
