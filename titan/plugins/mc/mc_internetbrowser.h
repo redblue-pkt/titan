@@ -30,7 +30,7 @@ void screenmc_internetbrowser()
 				rcret = servicestop(status.aktservice, 1, 0);
 				if(rcret == 1) return;
 	
-				tmpstr = ostrcat("/var/swap/bin/nsfb -f linux ", getconfig("browserhome", NULL), 0, 0);
+				tmpstr = ostrcat("nsfb -f linux ", getconfig("browserhome", NULL), 0, 0);
 				system(tmpstr);
 				free(tmpstr);
 				setosdtransparent(getskinconfigint("osdtransparent", NULL));

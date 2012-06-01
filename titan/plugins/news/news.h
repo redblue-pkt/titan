@@ -207,7 +207,7 @@ start:
       setfbtransparent(255);
       
       drawscreen(skin, 0);
-      tmpstr = ostrcat("/var/swap/bin/nsfb -f linux ", node->url, 0, 0);
+      tmpstr = ostrcat("nsfb -f linux ", node->url, 0, 0);
       system(tmpstr);
       free(tmpstr); tmpstr = NULL;
       drawscreen(skin, 0);
