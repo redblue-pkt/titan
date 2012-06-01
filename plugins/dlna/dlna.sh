@@ -9,7 +9,7 @@
  
 NAME=minidlna
 DESC="MiniDLNA"
-DAEMON=/var/swap/bin/minidlna
+DAEMON=minidlna
 USER=root
 GROUP=root
  
@@ -17,10 +17,10 @@ params="-f /var/swap/etc/minidlna.conf -R"
  
 case $1 in
   start)
-    start-stop-daemon --verbose --start --exec /var/swap/bin/minidlna -- ${params}
+    start-stop-daemon --verbose --start --exec minidlna -- ${params}
   ;;
   stop)
-    start-stop-daemon --verbose --stop --exec /var/swap/bin/minidlna
+    start-stop-daemon --verbose --stop --exec minidlna
   ;;
   restart)
     $0 stop
