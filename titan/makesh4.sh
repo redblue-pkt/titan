@@ -512,13 +512,13 @@ cp -a "$HOME"/flashimg/source.titan/libipkg/.libs/ipkg-cl "$HOME"/flashimg/BUILD
 
 # minidlna
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/sbin/minidlna "$HOME"/flashimg/BUILD/titan/usr/bin
+cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libexif.so* "$HOME"/flashimg/BUILD/titan/lib
+cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libvorbis.so* "$HOME"/flashimg/BUILD/titan/lib
 
 if [ $MEDIAFW = 2 ];then
 	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libavcodec.so* "$HOME"/flashimg/BUILD/titan/lib
 	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libavformat.so* "$HOME"/flashimg/BUILD/titan/lib
 	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libavutil.so* "$HOME"/flashimg/BUILD/titan/lib
-	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libexif.so* "$HOME"/flashimg/BUILD/titan/lib
-	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libvorbis.so* "$HOME"/flashimg/BUILD/titan/lib
 else
 	#directfb
 	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/directfb-1.4-5 "$HOME"/flashimg/BUILD/titan/usr/lib
