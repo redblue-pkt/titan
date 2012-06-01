@@ -87,7 +87,9 @@ struct tmdb* gettmdb(char* title, int flag)
 	char* imdburl = NULL;
 	char* lang = NULL;
 	char* path = NULL;
+	char* savefile = NULL;
 	char* cmd = NULL;
+
 	int skip = 1;
 			
 	apikey = ostrcat(apikey, "7bcd34bb47bc65d20a49b6b446a32866", 1, 0);
@@ -299,7 +301,7 @@ start:
 					free(cmd), cmd = NULL;
 				}
 				if(file_exist(path))
-					skip = 0
+					skip = 0;
 			}
 		}
 						
@@ -316,7 +318,7 @@ start:
 				path = pos + 1;
 			}
 
-			if(flag == 2 && skip = 0)
+			if(flag == 2 && skip == 0)
 			{
 				savefile = ostrcat(path, "/", 0, 0);
 				savefile = ostrcat(savefile, tmdb->id, 1, 0);
@@ -417,7 +419,6 @@ start:
 						system(cmd);
 						free(cmd), cmd = NULL;
 					}
-				}
 				}
 				free(savefile), savefile = NULL;
 				free(ip); ip = NULL;
