@@ -451,6 +451,7 @@ mkdir -p "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf
 mkdir -p "$HOME"/flashimg/BUILD/titan/usr/sbin
 mkdir -p "$HOME"/flashimg/BUILD/titan/usr/bin
 mkdir -p "$HOME"/flashimg/BUILD/titan/usr/lib
+mkdir -p "$HOME"/flashimg/BUILD/titan/usr/share
 mkdir -p "$HOME"/flashimg/BUILD/titan/lib
 
 PLIST=`ls -1 "$HOME"/flashimg/source.titan/plugins`
@@ -545,6 +546,7 @@ fi
 #gmediarender
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/gmediarender "$HOME"/flashimg/BUILD/titan/usr/bin
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libupnp* "$HOME"/flashimg/BUILD/titan/usr/lib
+cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/share/gmediarender "$HOME"/flashimg/BUILD/titan/usr/share
 
 #new net tools
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/djmount "$HOME"/flashimg/BUILD/titan/sbin
