@@ -86,7 +86,10 @@ struct tmdb* gettmdb(char* title, int flag)
 	char* searchurl = NULL;
 	char* imdburl = NULL;
 	char* lang = NULL;
-
+	char* path = NULL;
+	char* cmd = NULL;
+	int skip = 1;
+			
 	apikey = ostrcat(apikey, "7bcd34bb47bc65d20a49b6b446a32866", 1, 0);
 	searchurl = ostrcat(searchurl, "Movie.search", 1, 0);
 	imdburl = ostrcat(imdburl, "Movie.imdbLookup", 1, 0);
@@ -282,7 +285,24 @@ start:
 		{
 			tmdb->imdbid = string_resub("<imdb_id>", "</imdb_id>", tmpstr);
 		}
-		
+
+		if(flag == 2)
+		{
+			path = ostrcat(path, getconfig("mediadb", NULL), 1, 0);
+			if(path != NULL && file_exist(path))
+			{
+				path = ostrcat(path, "/mediadb", 1, 0);					
+				if(!file_exist(path))
+				{
+					cmd = ostrcat("mkdir ", path, 0, 0);
+					system(cmd);
+					free(cmd), cmd = NULL;
+				}
+				if(file_exist(path))
+					skip = 0
+			}
+		}
+						
 		if(tmdb->poster != NULL)
 		{
 			char* ip = NULL, *pos = NULL, *path = NULL;
@@ -296,114 +316,112 @@ start:
 				path = pos + 1;
 			}
 
-			if(flag == 2)
+			if(flag == 2 && skip = 0)
 			{
-				char* savedir = NULL;
-				savedir = ostrcat(savedir, getconfig("mediadb", NULL), 1, 0);
-				savedir = ostrcat(savedir, "/", 1, 0);
-				savedir = ostrcat(savedir, tmdb->id, 1, 0);
-				savedir = ostrcat(savedir, "_poster_mid.jpg", 1, 0);
-				if(!file_exist(savedir))
-					gethttp(ip, path, 80, savedir, NULL, NULL, 0);
-				free(savedir), savedir = NULL;
+				savefile = ostrcat(path, "/", 0, 0);
+				savefile = ostrcat(savefile, tmdb->id, 1, 0);
+				savefile = ostrcat(savefile, "_poster_mid.jpg", 1, 0);
+				if(!file_exist(savefile))
+					gethttp(ip, path, 80, savefile, NULL, NULL, 0);
+				free(savefile), savefile = NULL;
 			}
 			else
 				gethttp(ip, path, 80, TMPTMDBPIC, NULL, NULL, 0);
 
 			free(ip); ip = NULL;
 		}
-
-		if(tmdb->thumb != NULL && flag == 2)
+		
+		if(flag == 2 && skip == 0)
 		{
-			char* ip = NULL, *pos = NULL, *path = NULL;
-			ip = string_replace("http://", "", tmdb->thumb, 0);
-
-			if(ip != NULL)
-				pos = strchr(ip, '/');
-			if(pos != NULL)
+			if(tmdb->thumb != NULL)
 			{
-				pos[0] = '\0';
-				path = pos + 1;
-			}
-
-			char* savedir = NULL;
-			savedir = ostrcat(savedir, getconfig("mediadb", NULL), 1, 0);
-			savedir = ostrcat(savedir, "/", 1, 0);
-			savedir = ostrcat(savedir, tmdb->id, 1, 0);
-			savedir = ostrcat(savedir, "_poster_thumb.jpg", 1, 0);
-
-			if(!file_exist(savedir))
-				gethttp(ip, path, 80, savedir, NULL, NULL, 0);
-
-			free(savedir), savedir = NULL;
-			free(ip); ip = NULL;
-		}
-
-		if(tmdb->cover != NULL && flag == 2)
-		{
-			char* ip = NULL, *pos = NULL, *path = NULL;
-			ip = string_replace("http://", "", tmdb->cover, 0);
-
-			if(ip != NULL)
-				pos = strchr(ip, '/');
-			if(pos != NULL)
-			{
-				pos[0] = '\0';
-				path = pos + 1;
-			}
-
-			char* savedir = NULL;
-			savedir = ostrcat(savedir, getconfig("mediadb", NULL), 1, 0);
-			savedir = ostrcat(savedir, "/", 1, 0);
-			savedir = ostrcat(savedir, tmdb->id, 1, 0);
-			savedir = ostrcat(savedir, "_poster_cover.jpg", 1, 0);
-
-			if(!file_exist(savedir))
-				gethttp(ip, path, 80, savedir, NULL, NULL, 0);
-
-			free(savedir), savedir = NULL;
-			free(ip); ip = NULL;
-		}
-
-		if(tmdb->backdrop != NULL && flag == 2)
-		{
-			char* ip = NULL, *pos = NULL, *path = NULL;
-			ip = string_replace("http://", "", tmdb->backdrop, 0);
-
-			if(ip != NULL)
-				pos = strchr(ip, '/');
-			if(pos != NULL)
-			{
-				pos[0] = '\0';
-				path = pos + 1;
-			}
-
-			char* savedir = NULL;
-			savedir = ostrcat(savedir, getconfig("mediadb", NULL), 1, 0);
-			savedir = ostrcat(savedir, "/", 1, 0);
-			savedir = ostrcat(savedir, tmdb->id, 1, 0);
-			savedir = ostrcat(savedir, "_backdrop.jpg", 1, 0);
-
-			if(!file_exist(savedir))
-			{
-				gethttp(ip, path, 80, savedir, NULL, NULL, 0);
-				if(file_exist(savedir))
+				char* ip = NULL, *pos = NULL, *path = NULL;
+				ip = string_replace("http://", "", tmdb->thumb, 0);
+	
+				if(ip != NULL)
+					pos = strchr(ip, '/');
+				if(pos != NULL)
 				{
-					char* cmd = NULL;
-					cmd = ostrcat(cmd, "jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
-					cmd = ostrcat(cmd, savedir, 1, 0);
-					system(savedir);
-					system('ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg');
-					free(cmd), cmd = NULL;
-					cmd = ostrcat(cmd, "mv /tmp/backdrop.resize.mpg ", 1, 0);
-					cmd = ostrcat(cmd, getconfig("mediadb", NULL), 1, 0);
-					cmd = ostrcat(cmd, tmdb->id, 1, 0);
-					cmd = ostrcat(cmd, "_backdrop.mvi", 1, 0);
-					free(cmd), cmd = NULL;
+					pos[0] = '\0';
+					path = pos + 1;
 				}
+	
+				savefile = ostrcat(path, "/", 0, 0);
+				savefile = ostrcat(savefile, tmdb->id, 1, 0);
+				savefile = ostrcat(savefile, "_poster_thumb.jpg", 1, 0);
+		
+				if(!file_exist(savefile))
+					gethttp(ip, path, 80, savefile, NULL, NULL, 0);
+	
+				free(savefile), savefile = NULL;
+				free(ip); ip = NULL;
 			}
-			free(savedir), savedir = NULL;
-			free(ip); ip = NULL;
+	
+			if(tmdb->cover != NULL && flag == 2)
+			{
+				char* ip = NULL, *pos = NULL, *path = NULL;
+				ip = string_replace("http://", "", tmdb->cover, 0);
+	
+				if(ip != NULL)
+					pos = strchr(ip, '/');
+				if(pos != NULL)
+				{
+					pos[0] = '\0';
+					path = pos + 1;
+				}
+	
+				savefile = ostrcat(path, "/", 0, 0);
+				savefile = ostrcat(savefile, "/", 1, 0);
+				savefile = ostrcat(savefile, tmdb->id, 1, 0);
+				savefile = ostrcat(savefile, "_poster_cover.jpg", 1, 0);
+		
+				if(!file_exist(savefile))
+					gethttp(ip, path, 80, savefile, NULL, NULL, 0);
+	
+				free(savefile), savefile = NULL;
+				free(ip); ip = NULL;
+			}
+	
+			if(tmdb->backdrop != NULL && flag == 2)
+			{
+				char* ip = NULL, *pos = NULL, *path = NULL;
+				ip = string_replace("http://", "", tmdb->backdrop, 0);
+	
+				if(ip != NULL)
+					pos = strchr(ip, '/');
+				if(pos != NULL)
+				{
+					pos[0] = '\0';
+					path = pos + 1;
+				}
+	
+				savefile = ostrcat(path, "/", 0, 0);
+				savefile = ostrcat(savefile, tmdb->id, 1, 0);
+				savefile = ostrcat(savefile, "_backdrop.jpg", 1, 0);
+		
+				if(!file_exist(savefile))
+				{
+					gethttp(ip, path, 80, savefile, NULL, NULL, 0);
+					if(file_exist(savefile))
+					{
+						cmd = ostrcat(cmd, "jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
+						cmd = ostrcat(cmd, savefile, 1, 0);
+						system(cmd);
+						free(cmd), cmd = NULL;
+						system('ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg');
+						cmd = ostrcat(cmd, "mv /tmp/backdrop.resize.mpg ", 1, 0);
+						cmd = ostrcat(cmd, path, 1, 0);
+						cmd = ostrcat(cmd, "/", 1, 0);
+						cmd = ostrcat(cmd, tmdb->id, 1, 0);
+						cmd = ostrcat(cmd, "_backdrop.mvi", 1, 0);
+						system(cmd);
+						free(cmd), cmd = NULL;
+					}
+				}
+				}
+				free(savefile), savefile = NULL;
+				free(ip); ip = NULL;
+			}
 		}
 
 		free(tmpstr); tmpstr = NULL;
