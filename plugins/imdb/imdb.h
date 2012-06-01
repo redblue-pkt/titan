@@ -44,13 +44,21 @@ void freeimdb(struct imdb* node)
 	free(node); node = NULL;
 }
 
-struct imdb* getimdb(char* title)
+// flag 0 = title search
+// flag 1 = imdbid search
+// flag 2 = imdbid search and save
+
+struct imdb* getimdb(char* title, int flag)
 {
 	struct imdb* imdb = NULL;
 	char* tmpstr = NULL;
 	char* tmpsearch = NULL;
 
-	tmpsearch = ostrcat("?i=&t=", title, 0, 0);
+	if(flag == 0)
+		tmpsearch = ostrcat("?i=&t=", title, 0, 0);
+	else
+		tmpsearch = ostrcat("?i=", title, 0, 0);
+
 	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
 
 	tmpstr = gethttp("www.imdbapi.com", tmpsearch, 80, NULL, NULL, NULL, 0);
@@ -95,7 +103,20 @@ struct imdb* getimdb(char* title)
 				path = pos + 1;
 			}
 
-			gethttp(ip, path, 80, TMPIMDBPIC, NULL, NULL, 0);
+			if(flag == 2)
+			{
+				char* savedir = NULL;
+				savedir = ostrcat(savedir, getconfig("mediadb", NULL), 1, 0);
+				savedir = ostrcat(savedir, "/", 1, 0);
+				savedir = ostrcat(savedir, imdb->id, 1, 0);
+				savedir = ostrcat(savedir, "_poster.jpg", 1, 0);
+				if(!file_exist(savedir))
+					gethttp(ip, path, 80, savedir, NULL, NULL, 0);
+				free(savedir), savedir = NULL;
+			}
+			else
+				gethttp(ip, path, 80, TMPIMDBPIC, NULL, NULL, 0);
+
 			free(ip); ip = NULL;
 
 		}
@@ -154,7 +175,7 @@ start:
       if(search != NULL)
       {
 				freeimdb(node); node = NULL;
-				node = getimdb(search);
+				node = getimdb(search, 0);
         free(search); search = NULL;
 				goto start;
       }
