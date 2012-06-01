@@ -410,7 +410,7 @@ start:
 						cmd = ostrcat(cmd, savefile, 1, 0);
 						system(cmd);
 						free(cmd), cmd = NULL;
-						system('ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg');
+						system("ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg");
 						cmd = ostrcat(cmd, "mv /tmp/backdrop.resize.mpg ", 1, 0);
 						cmd = ostrcat(cmd, path, 1, 0);
 						cmd = ostrcat(cmd, "/", 1, 0);
