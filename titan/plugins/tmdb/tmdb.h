@@ -302,7 +302,7 @@ start:
 				savedir = ostrcat(savedir, getconfig("mediadb", NULL), 1, 0);
 				savedir = ostrcat(savedir, "/", 1, 0);
 				savedir = ostrcat(savedir, tmdb->id, 1, 0);
-				savedir = ostrcat(savedir, "_postermid.jpg", 1, 0);
+				savedir = ostrcat(savedir, "_poster_mid.jpg", 1, 0);
 				if(!file_exist(savedir))
 					gethttp(ip, path, 80, savedir, NULL, NULL, 0);
 				free(savedir), savedir = NULL;
@@ -330,7 +330,7 @@ start:
 			savedir = ostrcat(savedir, getconfig("mediadb", NULL), 1, 0);
 			savedir = ostrcat(savedir, "/", 1, 0);
 			savedir = ostrcat(savedir, tmdb->id, 1, 0);
-			savedir = ostrcat(savedir, "_thumb.jpg", 1, 0);
+			savedir = ostrcat(savedir, "_poster_thumb.jpg", 1, 0);
 
 			if(!file_exist(savedir))
 				gethttp(ip, path, 80, savedir, NULL, NULL, 0);
@@ -356,7 +356,7 @@ start:
 			savedir = ostrcat(savedir, getconfig("mediadb", NULL), 1, 0);
 			savedir = ostrcat(savedir, "/", 1, 0);
 			savedir = ostrcat(savedir, tmdb->id, 1, 0);
-			savedir = ostrcat(savedir, "_cover.jpg", 1, 0);
+			savedir = ostrcat(savedir, "_poster_cover.jpg", 1, 0);
 
 			if(!file_exist(savedir))
 				gethttp(ip, path, 80, savedir, NULL, NULL, 0);
