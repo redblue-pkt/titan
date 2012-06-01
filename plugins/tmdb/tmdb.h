@@ -301,7 +301,7 @@ start:
 				char* savedir = NULL;
 				savedir = ostrcat(savedir, getconfig("mediadb", NULL), 1, 0);
 				savedir = ostrcat(savedir, "/", 1, 0);
-				savedir = ostrcat(savedir, imdb->id, 1, 0);
+				savedir = ostrcat(savedir, tmdb->id, 1, 0);
 				savedir = ostrcat(savedir, "_postermid.jpg", 1, 0);
 				if(!file_exist(savedir))
 					gethttp(ip, path, 80, savedir, NULL, NULL, 0);
@@ -329,7 +329,7 @@ start:
 			char* savedir = NULL;
 			savedir = ostrcat(savedir, getconfig("mediadb", NULL), 1, 0);
 			savedir = ostrcat(savedir, "/", 1, 0);
-			savedir = ostrcat(savedir, imdb->id, 1, 0);
+			savedir = ostrcat(savedir, tmdb->id, 1, 0);
 			savedir = ostrcat(savedir, "_thumb.jpg", 1, 0);
 
 			if(!file_exist(savedir))
@@ -355,7 +355,7 @@ start:
 			char* savedir = NULL;
 			savedir = ostrcat(savedir, getconfig("mediadb", NULL), 1, 0);
 			savedir = ostrcat(savedir, "/", 1, 0);
-			savedir = ostrcat(savedir, imdb->id, 1, 0);
+			savedir = ostrcat(savedir, tmdb->id, 1, 0);
 			savedir = ostrcat(savedir, "_cover.jpg", 1, 0);
 
 			if(!file_exist(savedir))
@@ -381,7 +381,7 @@ start:
 			char* savedir = NULL;
 			savedir = ostrcat(savedir, getconfig("mediadb", NULL), 1, 0);
 			savedir = ostrcat(savedir, "/", 1, 0);
-			savedir = ostrcat(savedir, imdb->id, 1, 0);
+			savedir = ostrcat(savedir, tmdb->id, 1, 0);
 			savedir = ostrcat(savedir, "_backdrop.jpg", 1, 0);
 
 			if(!file_exist(savedir))
@@ -397,7 +397,7 @@ start:
 					free(cmd), cmd = NULL;
 					cmd = ostrcat(cmd, "mv /tmp/backdrop.resize.mpg ", 1, 0);
 					cmd = ostrcat(cmd, getconfig("mediadb", NULL), 1, 0);
-					cmd = ostrcat(cmd, imdb->id, 1, 0);
+					cmd = ostrcat(cmd, tmdb->id, 1, 0);
 					cmd = ostrcat(cmd, "_backdrop.mvi", 1, 0);
 					free(cmd), cmd = NULL;
 				}
