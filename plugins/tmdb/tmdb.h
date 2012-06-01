@@ -385,8 +385,23 @@ start:
 			savedir = ostrcat(savedir, "_backdrop.jpg", 1, 0);
 
 			if(!file_exist(savedir))
+			{
 				gethttp(ip, path, 80, savedir, NULL, NULL, 0);
-
+				if(file_exist(savedir))
+				{
+					char* cmd = NULL;
+					cmd = ostrcat(cmd, "jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
+					cmd = ostrcat(cmd, savedir, 1, 0);
+					system(savedir);
+					system('ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg');
+					free(cmd), cmd = NULL;
+					cmd = ostrcat(cmd, "mv /tmp/backdrop.resize.mpg ", 1, 0);
+					cmd = ostrcat(cmd, getconfig("mediadb", NULL), 1, 0);
+					cmd = ostrcat(cmd, imdb->id, 1, 0);
+					cmd = ostrcat(cmd, "_backdrop.mvi", 1, 0);
+					free(cmd), cmd = NULL;
+				}
+			}
 			free(savedir), savedir = NULL;
 			free(ip); ip = NULL;
 		}
