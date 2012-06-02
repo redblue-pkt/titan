@@ -25,18 +25,18 @@
 <screen bgcol=-2 name=tmcmenu5 posx=950 posy=570 width=128 height=128 fontcol=red fontsize=100 halign=center>
 </screen>
 
-<screen bordersize=5 bordercol=red name=tmcpic1 posx=170 posy=100 width=140 height=220>
+<screen bordersize=5 bordercol=red name=tmcpic1 picwidth=140 picheight=220 posx=170 posy=100 width=140 height=220>
 </screen>
 
-<screen bordersize=5 bordercol=red name=tmcpic2 posx=310 posy=80 width=180 height=260>
+<screen bordersize=5 bordercol=red name=tmcpic2 picwidth=180 picheight=260 posx=310 posy=80 width=180 height=260>
 </screen>
 
-<screen bordersize=5 bordercol=red name=tmcpic3 posx=490 posy=60 width=240 height=300>
+<screen bordersize=5 bordercol=red name=tmcpic3 picwidth=240 picheight=300 posx=490 posy=60 width=240 height=300>
 <node fontsize=30 fontcol=red bordercol=bordercol bordersize=0 scrollbar=auto type=listbox name=listbox posy=0 width=100% height=100%>
 </screen>
 
-<screen bordersize=5 bordercol=red name=tmcpic4 posx=730 posy=80 width=180 height=260>
+<screen bordersize=5 bordercol=red name=tmcpic4 picwidth=180 picheight=260 posx=730 posy=80 width=180 height=260>
 </screen>
 
-<screen bordersize=5 bordercol=red name=tmcpic5 posx=910 posy=100 width=140 height=220>
+<screen bordersize=5 bordercol=red name=tmcpic5 picwidth=140 picheight=220 posx=910 posy=100 width=140 height=220>
 </screen>
