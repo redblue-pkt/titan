@@ -178,6 +178,48 @@ enum {DEACTIVE, ACTIVE, INPAUSE, ERROR};
 enum {FUNCTEXT, FUNCPIC, FUNCPROGRESS};
 enum {CASESSIONCREATE, CASESSIONBUSY, CASESSIONDEL, CASESSIONSTART, CASESSIONFINAL, CARESFIRSTENQUIRY, CARESCHANGE, CARESENQUIRY, CADATETIMESEND, CAMMIIDLE, CAMMIDISPLAYREPLAY, CAMMIFAKEOK};
 
+struct imdb
+{
+	char* title;
+	char* year;
+	char* rated;
+	char* released;
+	char* genre;
+	char* director;
+	char* writer;
+	char* actors;
+	char* plot;
+	char* poster;
+	char* runtime;
+	char* rating;
+	char* votes;
+	char* id;
+};
+
+struct tmdb
+{
+	char* title;
+	char* year;
+	char* rated;
+	char* released;
+	char* genre;
+	char* runtime;
+	char* plot;
+	char* poster;
+	char* rating;
+	char* votes;
+	char* id;
+	char* backdrop;
+	char* name;
+	char* imdbid;
+	char* orgname;
+	char* language;
+	char* type;
+	char* score;
+	char* cover;
+	char* thumb;
+};
+
 struct mediadbfilter
 {
 	struct mediadb* node;

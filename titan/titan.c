@@ -44,6 +44,8 @@ struct mostzap* mostzap = NULL;
 struct mediadbfilter* mediadbfilter = NULL;
 struct mediadbcategory* mediadbcategory = NULL;
 struct mediadb* mediadb = NULL;
+struct tmdb* tmdb = NULL;
+struct imdb* imdb = NULL;
 
 #ifdef SH4
 #include "sh4port.h"
