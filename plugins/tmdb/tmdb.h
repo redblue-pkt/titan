@@ -290,7 +290,7 @@ start:
 
 		if(flag == 2)
 		{
-			path = ostrcat(path, getconfig("mediadb", NULL), 1, 0);
+			path = ostrcat(path, getconfig("mediadbpath", NULL), 1, 0);
 			if(path != NULL && file_exist(path))
 			{
 				path = ostrcat(path, "/mediadb", 1, 0);					

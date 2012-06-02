@@ -108,7 +108,7 @@ struct imdb* getimdb(char* title, int flag, int flag1, int flag2)
 
 			if(flag1 == 1)
 			{
-				savefile = ostrcat(getconfig("mediadb", NULL), "/", 0, 0);
+				savefile = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 				savefile = ostrcat(savefile, imdb->id, 1, 0);
 				savefile = ostrcat(savefile, "_poster.jpg", 1, 0);
 				gethttp(ip, path, 80, savefile, NULL, NULL, 0);
