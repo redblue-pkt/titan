@@ -89,9 +89,9 @@ struct imdb* getimdb(char* title, int flag, int flag1, int flag2)
 		imdb->plot = getxmlentry(tmpstr, "\"Plot\":");
 		imdb->poster = getxmlentry(tmpstr, "\"Poster\":");
 		imdb->runtime = getxmlentry(tmpstr, "\"Runtime\":");
-		imdb->rating = getxmlentry(tmpstr, "\"Rating\":");
-		imdb->votes = getxmlentry(tmpstr, "\"Votes\":");
-		imdb->id = getxmlentry(tmpstr, "\"ID\":");
+		imdb->rating = getxmlentry(tmpstr, "\"imdbRating\":");
+		imdb->votes = getxmlentry(tmpstr, "\"imdbVotes\":");
+		imdb->id = getxmlentry(tmpstr, "\"imdbID\":");
 
 		if(imdb->poster != NULL && flag2 == 0)
 		{
