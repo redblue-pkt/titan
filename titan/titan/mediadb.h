@@ -1288,11 +1288,15 @@ void mediadbfindfilecb(char* path, char* file, int type)
 
 		//TODO: got imdb infos
 		struct imdb* imdb = NULL;
-		struct skin* pluginnode = NULL;
+		struct skin* imdbplugin = getplugin("Imdb");
 
-		pluginnode = getplugin("Imdb");
-		if(pluginnode != NULL)
-			imdb = getimdb(shortname, 0, 1, 0);
+		if(imdbplugin != NULL)
+		{
+			struct imdb* (*startplugin)(char*, int, int, int);
+			startplugin = dlsym(imdbplugin->pluginhandle, "getimdb");
+			if(startplugin != NULL)
+				imdb = startplugin(shortname, 0, 1, 0);
+		}
 
 		debug(777, "add file %s (%s)", tmpstr, shortname);
 		free(shortname); shortname = NULL;
@@ -1305,7 +1309,14 @@ void mediadbfindfilecb(char* path, char* file, int type)
 		else
 			createmediadb(node, "0", type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, tmpstr, file);
 
-		freeimdb(imdb); imdb = NULL;
+		if(imdbplugin != NULL)
+		{
+			void (*startplugin)(struct imdb*);
+			startplugin = dlsym(imdbplugin->pluginhandle, "freeimdb");
+			if(startplugin != NULL)
+				startplugin(imdb);
+		}
+		imdb = NULL;
 	}
 	free(tmpstr); tmpstr = NULL;
 }
