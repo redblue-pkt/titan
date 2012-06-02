@@ -1,49 +1,55 @@
 #ifndef MEDIADB_H
 #define MEDIADB_H
 
-struct mediadbfilter
-{
-	struct mediadb* node;
-	struct mediadbfilter* prev;
-	struct mediadbfilter* next;
-};
+int mediadbthread = 0;
 
-struct mediadbcategory
+int getmediadbfiltercount()
 {
-	int type;
-	char* name;
-	struct mediadbcategory* prev;
-	struct mediadbcategory* next;
-};
+	int count = 0;
 
-struct mediadb
+	m_lock(&status.mediadbmutex, 17);
+	struct mediadbfilter *node = mediadbfilter;
+
+	while(node != NULL)
+	{
+		count++;
+		node = node->next;
+	}
+
+	m_unlock(&status.mediadbmutex, 17);
+	return count;
+}
+
+struct mediadbfilter* getmediadbfilterrandom(int maxentry)
 {
-	char* id;
-	int type;
-	char* title;
-	char* year;
-	char* released;
-	char* runtime;
-	char* genre;
-	char* director;
-	char* writer;
-	char* actors;
-	char* plot;
-	char* poster;
-	char* rating;
-	char* votes;
-	char* file;
-	struct mediadb* prev;
-	struct mediadb* next;
-};
+	int count = 0;
 
-struct mediadbfilter *mediadbfilter = NULL;
-struct mediadbcategory *mediadbcategory = NULL;
-struct mediadb *mediadb = NULL;
+	if(maxentry < 1) return NULL;
 
-struct mediadbfilter* getlastmediadbfilter(struct mediadbfilter* node)
+	m_lock(&status.mediadbmutex, 17);
+	struct mediadbfilter *node = mediadbfilter;
+
+	srand(time(NULL));
+	int r = rand() % maxentry;
+	r++;
+
+	while(node != NULL)
+	{
+		count++;
+		if(count == r) break;
+
+		node = node->next;
+	}
+
+	m_unlock(&status.mediadbmutex, 17);
+	return node;
+}
+
+//flag 0: with lock
+//flag 1: without lock
+struct mediadbfilter* getlastmediadbfilter(struct mediadbfilter* node, int flag)
 {
-	debug(1000, "in");
+	if(flag == 0) m_lock(&status.mediadbmutex, 17);
 	struct mediadbfilter *prev = NULL;
 
 	while(node != NULL)
@@ -52,22 +58,44 @@ struct mediadbfilter* getlastmediadbfilter(struct mediadbfilter* node)
 		node = node->next;
 	}
 
-	debug(1000, "out");
+	if(flag == 0) m_unlock(&status.mediadbmutex, 17);
 	return prev;
 }
 
-struct mediadb* getlastmediadb(struct mediadb* node)
+void getmediadbcounts(int* video, int* audio, int* picture)
 {
-	debug(1000, "in");
+	m_lock(&status.mediadbmutex, 17);
+	struct mediadb* node = mediadb;
+
+	while(node != NULL)
+	{
+		if(node->type == 0)
+			(*video)++;
+		else if(node->type == 1)
+			(*audio)++;
+		else if(node->type == 2)
+			(*picture)++;
+
+		node = node->next;
+	}
+
+	m_unlock(&status.mediadbmutex, 17);
+}
+
+//flag 0: with lock
+//flag 1: without lock
+struct mediadb* getlastmediadb(struct mediadb* node, int flag)
+{
 	struct mediadb *prev = NULL;
 
+	if(flag == 0) m_lock(&status.mediadbmutex, 17);
 	while(node != NULL)
 	{
 		prev = node;
 		node = node->next;
 	}
 
-	debug(1000, "out");
+	if(flag == 0) m_unlock(&status.mediadbmutex, 17);
 	return prev;
 }
 
@@ -81,6 +109,8 @@ int movemediadbdown(struct mediadb* node)
 		return 1;
 	}
 
+	m_lock(&status.mediadbmutex, 17);
+
 	//last node
 	if(node->next == NULL)
 	{
@@ -90,6 +120,7 @@ int movemediadbdown(struct mediadb* node)
 		node->next = mediadb;
 		mediadb->prev = node;
 		mediadb = node;
+		m_unlock(&status.mediadbmutex, 17);
 		return 0;
 	}
 
@@ -112,6 +143,7 @@ int movemediadbdown(struct mediadb* node)
 		next->next->prev = node;
 	next->next = node;
 
+	m_unlock(&status.mediadbmutex, 17);
 	//status.writemediadb = 1;
 	return 0;
 }
@@ -126,10 +158,12 @@ int movemediadbup(struct mediadb* node)
 		return 1;
 	}
 
+	m_lock(&status.mediadbmutex, 17);
+
 	//first node
 	if(node->prev == NULL)
 	{
-		last = getlastmediadb(mediadb);
+		last = getlastmediadb(mediadb, 1);
 
 		if(node->next != NULL)
 			node->next->prev = NULL;
@@ -137,6 +171,7 @@ int movemediadbup(struct mediadb* node)
 		node->next = NULL;
 		last->next = node;
 		node->prev = last;
+		m_unlock(&status.mediadbmutex, 17);
 		return 0;
 	}
 
@@ -159,6 +194,7 @@ int movemediadbup(struct mediadb* node)
 		mediadb = node;
 	prev->prev = node;
 
+	m_unlock(&status.mediadbmutex, 17);
 	//status.writemediadb = 1;
 	return 0;
 }
@@ -177,8 +213,9 @@ struct mediadbfilter* addmediadbfilter(struct mediadb* mnode, int count, struct 
 	}
 
 	memset(newnode, 0, sizeof(struct mediadbfilter));
-
 	newnode->node = mnode;
+
+	m_lock(&status.mediadbmutex, 17);
 
 	if(last == NULL)
 	{
@@ -204,6 +241,7 @@ struct mediadbfilter* addmediadbfilter(struct mediadb* mnode, int count, struct 
 	newnode->next = node;
 	if(node != NULL) node->prev = newnode;
 	
+	m_unlock(&status.mediadbmutex, 17);
 	//debug(1000, "out");
 	return newnode;
 }
@@ -258,6 +296,8 @@ struct mediadbcategory* addmediadbcategory(char* line, int type, int count, stru
 
 	newnode->name = ostrcat(name, NULL, 1, 0);
 
+	m_lock(&status.mediadbmutex, 17);
+
 	if(last == NULL)
 	{
 		while(node != NULL && strcasecmp(newnode->name, node->name) > 0)
@@ -282,6 +322,7 @@ struct mediadbcategory* addmediadbcategory(char* line, int type, int count, stru
 	newnode->next = node;
 	if(node != NULL) node->prev = newnode;
 	
+	m_unlock(&status.mediadbmutex, 17);
 	//debug(1000, "out");
 	return newnode;
 }
@@ -450,6 +491,7 @@ struct mediadb* addmediadb(char *line, int count, struct mediadb* last)
 	newnode->votes = ostrcat(votes, NULL, 1, 0);
 	newnode->file = ostrcat(file, NULL, 1, 0);
 
+	m_lock(&status.mediadbmutex, 17);
 	//modifymediadbcache(newnode->serviceid, newnode->transponderid, newnode);
 
 	if(last == NULL)
@@ -476,6 +518,7 @@ struct mediadb* addmediadb(char *line, int count, struct mediadb* last)
 	newnode->next = node;
 	if(node != NULL) node->prev = newnode;
 	
+	m_unlock(&status.mediadbmutex, 17);
 	//debug(1000, "out");
 	return newnode;
 }
@@ -604,6 +647,8 @@ int delmediadbfilter(struct mediadbfilter* mnode, int flag)
 	int ret = 1;
 	struct mediadbfilter *node = mediadbfilter, *prev = mediadbfilter;
 
+	m_lock(&status.mediadbmutex, 17);
+
 	while(node != NULL)
 	{
 		if(node == mnode)
@@ -632,6 +677,7 @@ int delmediadbfilter(struct mediadbfilter* mnode, int flag)
 		node = node->next;
 	}
 
+	m_unlock(&status.mediadbmutex, 17);
 	debug(1000, "out");
 	return ret;
 }
@@ -641,6 +687,8 @@ int delmediadbcategory(struct mediadbcategory* mnode, int flag)
 	debug(1000, "in");
 	int ret = 1;
 	struct mediadbcategory *node = mediadbcategory, *prev = mediadbcategory;
+
+	m_lock(&status.mediadbmutex, 17);
 
 	while(node != NULL)
 	{
@@ -673,6 +721,7 @@ int delmediadbcategory(struct mediadbcategory* mnode, int flag)
 		node = node->next;
 	}
 
+	m_unlock(&status.mediadbmutex, 17);
 	debug(1000, "out");
 	return ret;
 }
@@ -682,6 +731,8 @@ int delmediadb(struct mediadb* mnode, int flag)
 	debug(1000, "in");
 	int ret = 1;
 	struct mediadb *node = mediadb, *prev = mediadb;
+
+	m_lock(&status.mediadbmutex, 17);
 
 	while(node != NULL)
 	{
@@ -714,6 +765,7 @@ int delmediadb(struct mediadb* mnode, int flag)
 		node = node->next;
 	}
 
+	m_unlock(&status.mediadbmutex, 17);
 	debug(1000, "out");
 	return ret;
 }
@@ -777,6 +829,8 @@ int writemediadbcategory(const char *filename)
 		return 1;
 	}
 
+	m_lock(&status.mediadbmutex, 17);
+
 	while(node != NULL)
 	{
 		ret = fprintf(fd, "%d#%s\n", node->type, node->name);
@@ -786,6 +840,8 @@ int writemediadbcategory(const char *filename)
 		}
 		node = node->next;
 	}
+
+	m_unlock(&status.mediadbmutex, 17);
 
 	fclose(fd);
 	debug(1000, "out");
@@ -806,6 +862,8 @@ int writemediadb(const char *filename)
 		return 1;
 	}
 
+	m_lock(&status.mediadbmutex, 17);
+
 	while(node != NULL)
 	{
 		ret = fprintf(fd, "%s#%d#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s#%s\n", node->id, node->type, node->title, node->year, node->released, node->runtime, node->genre, node->director, node->writer, node->actors, node->plot, node->poster, node->rating, node->votes, node->file);
@@ -815,6 +873,8 @@ int writemediadb(const char *filename)
 		}
 		node = node->next;
 	}
+
+	m_unlock(&status.mediadbmutex, 17);
 
 	fclose(fd);
 	debug(1000, "out");
@@ -860,12 +920,16 @@ void mediadbscan()
 {
 	struct mediadb *node = mediadb, *prev = mediadb;
 	struct mediadbcategory *cnode = NULL;
+	struct hdd *hddnode = NULL;
 	struct splitstr* ret = NULL;
 	char* tmpstr = NULL, *tmpsplit = NULL;
 
 	//clear all other db in mem
 	freemediadbfilter(0);
 	freemediadbcategory(0);
+
+	if(mediadb == NULL)
+		readmediadb(getconfig("mediadbfile", NULL), 0, 0);
 
 	//check mediadb for not exist file
 	/*
@@ -879,7 +943,20 @@ void mediadbscan()
 	*/
 
 	//find media files
-	findfiles("/home/nit/titan/x", "*.avi"); //TODO
+	addhddall();
+	hddnode = hdd;
+
+	while(hddnode != NULL)
+	{
+		if(hddnode->partition != 0)
+		{
+			tmpstr = ostrcat("/autofs/", hddnode->device, 0, 0);
+			findfiles(tmpstr);
+			free(tmpstr); tmpstr = NULL;
+		}
+		hddnode = hddnode->next;
+	}
+	writemediadbcategory(getconfig("mediadbfile", NULL));
 
 	//create year
 	node = mediadb;
@@ -1098,7 +1175,7 @@ void mediadbscan()
 	freemediadbcategory(0);
 }
 
-void mediadbfindfilecb(char* path, char* file)
+void mediadbfindfilecb(char* path, char* file, int type)
 {
 	int treffer = 0;
 	char* tmpstr = NULL;
@@ -1117,25 +1194,25 @@ void mediadbfindfilecb(char* path, char* file)
 		tmpstr = ostrcat(path, "/", 0, 0);
 		tmpstr = ostrcat(tmpstr, file, 1, 0);
 
+		//create imdb search name
 		char* shortname = ostrcat(file, NULL, 0, 0);
 		string_tolower(shortname);
 		shortname = string_shortname(shortname, 1);
 		shortname = string_shortname(shortname, 2);
 		string_removechar(shortname);
 
-		//TODO: create imdb search name
 		//TODO: got imdb infos
 
 		debug(777, "add file %s (short %s)", tmpstr, shortname);
 		free(shortname); shortname = NULL;
 
-		//createmediadb(inode->id, inode->type, inode->title, inode->year, inode->released, inode->runtime, inode->genre, inode->director, inode->writer, inode->actors, inode->plot, inode->poster, inode->rating, inode->votes, tmpstr);
+		//createmediadb(inode->id, type, inode->title, inode->year, inode->released, inode->runtime, inode->genre, inode->director, inode->writer, inode->actors, inode->plot, inode->poster, inode->rating, inode->votes, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 	}
 }
 
 
-int findfiles(char* dirname, char* ext)
+int findfiles(char* dirname)
 {
 	DIR *d;
 
@@ -1173,13 +1250,21 @@ int findfiles(char* dirname, char* ext)
 					return 1;
 				}
 				//Recursively call list_dir with the new path
-				findfiles(path, ext);
+				findfiles(path);
 			}
 		}
 		else //File
 		{
-			if(!filelistflt(ext, entry->d_name))
-				mediadbfindfilecb(path, entry->d_name);
+			//TODO: add extensions
+			//video
+			if(!filelistflt("*.avi", entry->d_name))
+				mediadbfindfilecb(path, entry->d_name, 0);
+			//audio
+			if(!filelistflt("*.mp3", entry->d_name))
+				mediadbfindfilecb(path, entry->d_name, 1);
+			//picture
+			if(!filelistflt("*.jpg", entry->d_name))
+				mediadbfindfilecb(path, entry->d_name, 2);
 		}
 	}
 
@@ -1191,6 +1276,17 @@ int findfiles(char* dirname, char* ext)
 	}
 
 	return 0;
+}
+
+void mediadbscanthread(struct stimerthread* self)
+{
+	if(status.mediadbthread != NULL) return;
+
+	debug(777, "mediadb scanthread start");
+	status.mediadbthread = self;
+	mediadbscan();
+	status.mediadbthread = NULL;
+	debug(777, "mediadb scanthread end");
 }
 
 #endif

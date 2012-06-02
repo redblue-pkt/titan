@@ -178,6 +178,42 @@ enum {DEACTIVE, ACTIVE, INPAUSE, ERROR};
 enum {FUNCTEXT, FUNCPIC, FUNCPROGRESS};
 enum {CASESSIONCREATE, CASESSIONBUSY, CASESSIONDEL, CASESSIONSTART, CASESSIONFINAL, CARESFIRSTENQUIRY, CARESCHANGE, CARESENQUIRY, CADATETIMESEND, CAMMIIDLE, CAMMIDISPLAYREPLAY, CAMMIFAKEOK};
 
+struct mediadbfilter
+{
+	struct mediadb* node;
+	struct mediadbfilter* prev;
+	struct mediadbfilter* next;
+};
+
+struct mediadbcategory
+{
+	int type;
+	char* name;
+	struct mediadbcategory* prev;
+	struct mediadbcategory* next;
+};
+
+struct mediadb
+{
+	char* id;
+	int type;
+	char* title;
+	char* year;
+	char* released;
+	char* runtime;
+	char* genre;
+	char* director;
+	char* writer;
+	char* actors;
+	char* plot;
+	char* poster;
+	char* rating;
+	char* votes;
+	char* file;
+	struct mediadb* prev;
+	struct mediadb* next;
+};
+
 struct mostzap
 {
 	int serviceid;
@@ -920,6 +956,7 @@ struct status
 	pthread_mutex_t hddmutex;
 	pthread_mutex_t tsseekmutex;
 	pthread_mutex_t accelfbmutex;
+	pthread_mutex_t mediadbmutex;
 	// mutex for VFD handling
 	pthread_mutex_t vfdmutex;
 	off64_t recsplitsize;
@@ -1008,6 +1045,8 @@ struct status
 	struct stimerthread* httpthread;
 	// rguid thread pointer
 	struct stimerthread* rguithread;
+	// mediadb thread pointer
+	struct stimerthread* mediadbhread;
 	// rguid sock filedescriptor for rguid
 	int rguidfd;
 	struct service* aktservice;

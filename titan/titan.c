@@ -41,6 +41,9 @@ struct queue* queue = NULL;
 struct caservice caservice[MAXCASERVICE];
 struct channelhistory channelhistory[MAXCHANNELHISTORY];
 struct mostzap* mostzap = NULL;
+struct mediadbfilter* mediadbfilter = NULL;
+struct mediadbcategory* mediadbcategory = NULL;
+struct mediadb* mediadb = NULL;
 
 #ifdef SH4
 #include "sh4port.h"
@@ -188,6 +191,7 @@ struct mostzap* mostzap = NULL;
 #include "system_backup_restore.h"
 #include "info.h"
 #include "softcam.h"
+#include "mediadb.h"
 
 //#include "cardreader.h"
 //#include "sci.h"
