@@ -2,24 +2,7 @@
 #define IMDB_H
 
 #define TMPIMDBPIC "/tmp/tmpimdb.jpg"
-
-struct imdb
-{
-	char* title;
-	char* year;
-	char* rated;
-	char* released;
-	char* genre;
-	char* director;
-	char* writer;
-	char* actors;
-	char* plot;
-	char* poster;
-	char* runtime;
-	char* rating;
-	char* votes;
-	char* id;
-};
+extern struct imdb* imdb;
 
 void freeimdb(struct imdb* node)
 {

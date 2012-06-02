@@ -2,6 +2,7 @@
 #define TMDB_H
 
 #define TMPTMDBPIC "/tmp/tmptmdb.jpg"
+extern struct tmdb* tmdb;
 
 char* convertreturntopspace(char* value)
 {
@@ -18,30 +19,6 @@ char* convertreturntopspace(char* value)
 	debug(1000, "out");
 	return value;
 }
-
-struct tmdb
-{
-	char* title;
-	char* year;
-	char* rated;
-	char* released;
-	char* genre;
-	char* runtime;
-	char* plot;
-	char* poster;
-	char* rating;
-	char* votes;
-	char* id;
-	char* backdrop;
-	char* name;
-	char* imdbid;
-	char* orgname;
-	char* language;
-	char* type;
-	char* score;
-	char* cover;
-	char* thumb;
-};
 
 void freetmdb(struct tmdb* node)
 {
