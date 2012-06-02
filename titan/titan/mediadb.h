@@ -1258,7 +1258,12 @@ void mediadbfindfilecb(char* path, char* file, int type)
 		strstrip(shortname);
 
 		//TODO: got imdb infos
-		struct imdb* imdb = getimdb(shortname, 0, 1, 0);
+		struct imdb* imdb = NULL;
+		struct skin pluginnode = NULL;
+
+		pluginnode = getplugin("Imdb");
+		if(pluginnode != NULL)
+			imdb = getimdb(shortname, 0, 1, 0);
 
 		debug(777, "add file %s (%s)", tmpstr, shortname);
 		free(shortname); shortname = NULL;
