@@ -595,17 +595,29 @@ void screentmcmenu()
 			
 			if(active == 0 && tmcpic3->ret != NULL)
 			{
-				if(menuid == 3 || menuid == 4)
+				if(menuid == 3)
 				{
 					drawscreen(skin, 0);
-					//TODO: play
+
+					screenplay(tmcpic3->ret, 0, 0);
+
+					tmcpicscroll(tmcpictitle, tmcpicstar, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, 0);
+					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
+				}
+				if(menuid == 4)
+				{
+					drawscreen(skin, 0);
+
+					//TODO: random / listplay
+					screenplay(tmcpic3->ret, 0, 0);
+
 					tmcpicscroll(tmcpictitle, tmcpicstar, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, 0);
 					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
 				}
 				else if(menuid == 2)
 				{
 					drawscreen(skin, 0);
-					//TODO: show pic
+					//TODO: show pic / random / listplay
 					tmcpicscroll(tmcpictitle, tmcpicstar, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, 0);
 					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
 				}
