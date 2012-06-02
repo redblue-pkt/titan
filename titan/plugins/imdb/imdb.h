@@ -44,20 +44,18 @@ void freeimdb(struct imdb* node)
 	free(node); node = NULL;
 }
 
-// flag 0 = title search
-// flag 1 = imdbid search
-// flag 2 = imdbid search and save
-
-struct imdb* getimdb(char* title, int flag)
+//flag 0 = title search
+//flag 1 = imdbid search
+//flag1 0 = save in tmp
+//flag1 1 = save in imdbpath
+//flag2 0 = get pic
+//flag2 1 = don't get pic
+struct imdb* getimdb(char* title, int flag, int flag1, int flag2)
 {
 	struct imdb* imdb = NULL;
 	char* tmpstr = NULL;
 	char* tmpsearch = NULL;
-	char* path = NULL;
 	char* savefile = NULL;
-	char* cmd = NULL;
-
-	int skip = 1;
 
 	if(flag == 0)
 		tmpsearch = ostrcat("?i=&t=", title, 0, 0);
@@ -95,24 +93,7 @@ struct imdb* getimdb(char* title, int flag)
 		imdb->votes = getxmlentry(tmpstr, "\"Votes\":");
 		imdb->id = getxmlentry(tmpstr, "\"ID\":");
 
-		if(flag == 2)
-		{
-			path = ostrcat(path, getconfig("mediadb", NULL), 1, 0);
-			if(path != NULL && file_exist(path))
-			{
-				path = ostrcat(path, "/mediadb", 1, 0);					
-				if(!file_exist(path))
-				{
-					cmd = ostrcat("mkdir ", path, 0, 0);
-					system(cmd);
-					free(cmd), cmd = NULL;
-				}
-				if(file_exist(path))
-					skip = 0;
-			}
-		}
-
-		if(imdb->poster != NULL)
+		if(imdb->poster != NULL && flag2 == 0)
 		{
 			char* ip = NULL, *pos = NULL, *path = NULL;
 			ip = string_replace("http://", "", imdb->poster, 0);
@@ -125,21 +106,30 @@ struct imdb* getimdb(char* title, int flag)
 				path = pos + 1;
 			}
 
-			if(flag == 2 && skip == 0)
+			if(flag1 == 1)
 			{
-				savefile = ostrcat(path, "/", 0, 0);
+				savefile = ostrcat(getconfig("mediadb", NULL), "/", 0, 0);
 				savefile = ostrcat(savefile, imdb->id, 1, 0);
 				savefile = ostrcat(savefile, "_poster.jpg", 1, 0);
-				if(!file_exist(savefile))
-					gethttp(ip, path, 80, savefile, NULL, NULL, 0);
-				free(savefile), savefile = NULL;
+				gethttp(ip, path, 80, savefile, NULL, NULL, 0);
+				free(imdb->poster);
+				imdb->poster = savefile;
 			}
 			else
+			{
 				gethttp(ip, path, 80, TMPIMDBPIC, NULL, NULL, 0);
+				free(imdb->poster);
+				imdb->poster = ostrcat(TMPIMDBPIC, NULL, 0, 0);
+			}
 
 			free(ip); ip = NULL;
-
 		}
+		else
+		{
+			free(imdb->poster);
+			imdb->poster = NULL;
+		}
+
 		free(tmpstr); tmpstr = NULL;
 	}
 
@@ -166,7 +156,7 @@ void screenimdb(char* title)
 
 	if(title == NULL) title = getepgakttitle(NULL);
 
-	node = getimdb(title, 0);
+	node = getimdb(title, 0, 0, 0);
 start:
 	if(node != NULL)
 	{
@@ -177,7 +167,7 @@ start:
 		changetext(skin_genre, node->genre);
 		changetext(skin_releasetime, node->released);
 		changetext(skin_actors, node->actors);
-		changepic(skin_cover, TMPIMDBPIC);
+		changepic(skin_cover, node->poster);
 	}
 
 	drawscreen(imdbskin, 0);
@@ -195,7 +185,7 @@ start:
       if(search != NULL)
       {
 				freeimdb(node); node = NULL;
-				node = getimdb(search, 0);
+				node = getimdb(search, 0, 0, 0);
         free(search); search = NULL;
 				goto start;
       }
