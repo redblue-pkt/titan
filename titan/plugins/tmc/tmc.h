@@ -80,9 +80,9 @@ void tmcpicscroll(struct skin* tmcpictitle, struct skin* tmcpicstar, struct skin
 		}
 		if(flag == 2 && count == 0)
 		{
-			if(node == NULL) node = getlastmediadbfilter(mediadbfilter);
+			if(node == NULL) node = getlastmediadbfilter(mediadbfilter, 0);
 			if(node != NULL) node = node->prev;
-			if(node == NULL) node = getlastmediadbfilter(mediadbfilter);
+			if(node == NULL) node = getlastmediadbfilter(mediadbfilter, 0);
 			mediadbfilterpos = node;
 		}
 		if(count != 0)
@@ -430,7 +430,7 @@ void screentmcmenu()
 				}
 				else if(menuid == 1 && ostrcmp("Scan", tmcmenutxt->ret) == 0)
 				{
-					//TODO
+					addtimer(&mediadbscanthread, START, 1000, 1, NULL, NULL, NULL);
 				}
 				else if(menuid == 1 && ostrcmp("Database", tmcmenutxt->ret) == 0)
 				{
