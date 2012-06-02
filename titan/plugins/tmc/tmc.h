@@ -94,13 +94,14 @@ void tmcpicscroll(struct skin* tmcpictitle, struct skin* tmcpicstar, struct skin
 
 		if(node != NULL && node->node != NULL)
 		{
-			tmpstr = ostrcat(getconfig("imdb_directory", NULL), "/", 0, 0);
+			tmpstr = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 			tmpstr = ostrcat(tmpstr, node->node->poster, 1, 0);
+			tmpstr = ostrcat(tmpstr, "_poster.jpg", 1, 0);
 			
 			if(!file_exist(tmpstr))
 			{
 				free(tmpstr);
-				tmpstr = ostrcat("%pluginpath%/tmc/tmcnopic.jpg", NULL, 0, 0);
+				tmpstr = ostrcat("%pluginpath%/tmc/skin/tmcnopic.jpg", NULL, 0, 0);
 			}
 			
 			if(count == 0) changepic(tmcpic1, tmpstr);
@@ -109,7 +110,7 @@ void tmcpicscroll(struct skin* tmcpictitle, struct skin* tmcpicstar, struct skin
 			{
 				changepic(tmcpic3, tmpstr);
 				changeret(tmcpic3, node->node->file);
-				changetext(tmcpictitle, node->node->file); //TODO:
+				changetext(tmcpictitle, node->node->title);
 				
 				//TODO RATING
 				double rating = 7.5;
@@ -133,8 +134,10 @@ void tmcpicscroll(struct skin* tmcpictitle, struct skin* tmcpicstar, struct skin
 					changepic(tmcpicstar, "%pluginpath%/tmc/skin/tmcstar1x.png");
 				else if(rating > 0.5)
 					changepic(tmcpicstar, "%pluginpath%/tmc/skin/tmcstar1.png");
-				else
+				else if(rating > 0)
 					changepic(tmcpicstar, "%pluginpath%/tmc/skin/tmcstar0x.png");
+				else
+					changepic(tmcpicstar, NULL);
 			}
 			if(count == 3) changepic(tmcpic4, tmpstr);
 			if(count == 4) changepic(tmcpic5, tmpstr);
@@ -430,7 +433,7 @@ void screentmcmenu()
 				}
 				else if(menuid == 1 && ostrcmp("Scan", tmcmenutxt->ret) == 0)
 				{
-					addtimer(&mediadbscanthread, START, 1000, 1, NULL, NULL, NULL);
+					mediadbscan();
 				}
 				else if(menuid == 1 && ostrcmp("Database", tmcmenutxt->ret) == 0)
 				{

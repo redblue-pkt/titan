@@ -210,6 +210,7 @@ struct mediadb
 	char* rating;
 	char* votes;
 	char* file;
+	time_t timestamp;
 	struct mediadb* prev;
 	struct mediadb* next;
 };
