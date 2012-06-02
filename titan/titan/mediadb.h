@@ -525,7 +525,7 @@ struct mediadb* addmediadb(char *line, int count, struct mediadb* last, int flag
 	return newnode;
 }
 
-struct mediadb* createmediadb(char* id, int type, char* title, char* year, char* released, char* runtime, char* genre, char* director, char* writer, char* actors, char* plot, char* poster, char* rating, char* votes, char* fullfile, char* file)
+struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* title, char* year, char* released, char* runtime, char* genre, char* director, char* writer, char* actors, char* plot, char* poster, char* rating, char* votes, char* fullfile, char* file)
 {
 	struct mediadb* mnode = NULL;
 	char* tmpstr = NULL;
@@ -562,39 +562,62 @@ struct mediadb* createmediadb(char* id, int type, char* title, char* year, char*
 	votes = stringreplacechar(votes, '#', ' ');
 	fullfile = stringreplacechar(fullfile, '#', ' ');
 
-	tmpstr = ostrcat(tmpstr, id, 1, 0);
-	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, oitoa(type), 1, 1);
-	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, title, 1, 0);
-	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, year, 1, 0);
-	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, released, 1, 0);
-	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, runtime, 1, 0);
-	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, genre, 1, 0);
-	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, director, 1, 0);
-	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, writer, 1, 0);
-	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, actors, 1, 0);
-	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, plot, 1, 0);
-	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, poster, 1, 0);
-	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, rating, 1, 0);
-	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, votes, 1, 0);
-	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, fullfile, 1, 0);
-	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, olutoa(time(NULL)), 1, 1);
+	if(update == NULL)
+	{
+		tmpstr = ostrcat(tmpstr, id, 1, 0);
+		tmpstr = ostrcat(tmpstr, "#", 1, 0);
+		tmpstr = ostrcat(tmpstr, oitoa(type), 1, 1);
+		tmpstr = ostrcat(tmpstr, "#", 1, 0);
+		tmpstr = ostrcat(tmpstr, title, 1, 0);
+		tmpstr = ostrcat(tmpstr, "#", 1, 0);
+		tmpstr = ostrcat(tmpstr, year, 1, 0);
+		tmpstr = ostrcat(tmpstr, "#", 1, 0);
+		tmpstr = ostrcat(tmpstr, released, 1, 0);
+		tmpstr = ostrcat(tmpstr, "#", 1, 0);
+		tmpstr = ostrcat(tmpstr, runtime, 1, 0);
+		tmpstr = ostrcat(tmpstr, "#", 1, 0);
+		tmpstr = ostrcat(tmpstr, genre, 1, 0);
+		tmpstr = ostrcat(tmpstr, "#", 1, 0);
+		tmpstr = ostrcat(tmpstr, director, 1, 0);
+		tmpstr = ostrcat(tmpstr, "#", 1, 0);
+		tmpstr = ostrcat(tmpstr, writer, 1, 0);
+		tmpstr = ostrcat(tmpstr, "#", 1, 0);
+		tmpstr = ostrcat(tmpstr, actors, 1, 0);
+		tmpstr = ostrcat(tmpstr, "#", 1, 0);
+		tmpstr = ostrcat(tmpstr, plot, 1, 0);
+		tmpstr = ostrcat(tmpstr, "#", 1, 0);
+		tmpstr = ostrcat(tmpstr, poster, 1, 0);
+		tmpstr = ostrcat(tmpstr, "#", 1, 0);
+		tmpstr = ostrcat(tmpstr, rating, 1, 0);
+		tmpstr = ostrcat(tmpstr, "#", 1, 0);
+		tmpstr = ostrcat(tmpstr, votes, 1, 0);
+		tmpstr = ostrcat(tmpstr, "#", 1, 0);
+		tmpstr = ostrcat(tmpstr, fullfile, 1, 0);
+		tmpstr = ostrcat(tmpstr, "#", 1, 0);
+		tmpstr = ostrcat(tmpstr, olutoa(time(NULL)), 1, 1);
 
-	mnode = addmediadb(tmpstr, 1, NULL, 0);
+		mnode = addmediadb(tmpstr, 1, NULL, 0);
+	}
+	else
+	{
+		freemediadbcontent(update);
+		update->id = ostrcat(id, NULL, 0, 0);
+		update->type = type;
+		update->title = ostrcat(title, NULL, 0, 0);
+		update->year = ostrcat(year, NULL, 0, 0);
+		update->released = ostrcat(released, NULL, 0, 0);
+		update->runtime = ostrcat(runtime, NULL, 0, 0);
+		update->genre = ostrcat(genre, NULL, 0, 0);
+		update->director = ostrcat(director, NULL, 0, 0);
+		update->writer = ostrcat(writer, NULL, 0, 0);
+		update->actors = ostrcat(actors, NULL, 0, 0);
+		update->plot = ostrcat(plot, NULL, 0, 0);
+		update->poster = ostrcat(poster, NULL, 0, 0);
+		update->rating = ostrcat(rating, NULL, 0, 0);
+		update->votes = ostrcat(votes, NULL, 0, 0);
+		update->file = ostrcat(file, NULL, 0, 0);
+		update->timestamp = time(NULL);
+	}
 
 	free(tmpstr);
 	return mnode;
@@ -982,8 +1005,11 @@ void mediadbscanthread(struct stimerthread* self)
 	if(mediadb == NULL)
 		readmediadb(getconfig("mediadbfile", NULL), 0, 0);
 
+	if(getconfigint("mediadbscantype", NULL) == 1)
+		freemediadb(0);
+
 	//check mediadb for not exist file
-	if(getconfigint("mediadbcheckdel", NULL) == 1)
+	if(getconfigint("mediadbdelnotfound", NULL) == 1)
 	{
 		while(node != NULL)
 		{
@@ -1243,11 +1269,14 @@ void mediadbfindfilecb(char* path, char* file, int type)
 	while(node != NULL)
 	{
 		if(ostrcmp(node->file, tmpstr) == 0)
+		{
 			treffer = 1;
+			break;
+		}
 		node = node->next;
 	}
-	
-	if(treffer == 0)
+
+	if(treffer == 0 || (treffer == 1 && getconfigint("mediadbscantype", NULL) == 2))
 	{
 		//create imdb search name
 		char* shortname = ostrcat(file, NULL, 0, 0);
@@ -1259,7 +1288,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 
 		//TODO: got imdb infos
 		struct imdb* imdb = NULL;
-		struct skin pluginnode = NULL;
+		struct skin* pluginnode = NULL;
 
 		pluginnode = getplugin("Imdb");
 		if(pluginnode != NULL)
@@ -1271,10 +1300,10 @@ void mediadbfindfilecb(char* path, char* file, int type)
 		if(imdb != NULL)
 		{
 			debug(777, "imdb id %s", imdb->id);
-			createmediadb(imdb->id, type, imdb->title, imdb->year, imdb->released, imdb->runtime, imdb->genre, imdb->director, imdb->writer, imdb->actors, imdb->plot, imdb->id, imdb->rating, imdb->votes, tmpstr, file);
+			createmediadb(node, imdb->id, type, imdb->title, imdb->year, imdb->released, imdb->runtime, imdb->genre, imdb->director, imdb->writer, imdb->actors, imdb->plot, imdb->id, imdb->rating, imdb->votes, tmpstr, file);
 		}
 		else
-			createmediadb("0", type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, tmpstr, file);
+			createmediadb(node, "0", type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, tmpstr, file);
 
 		freeimdb(imdb); imdb = NULL;
 	}
