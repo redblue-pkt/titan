@@ -606,6 +606,11 @@ void screenharddisksleep()
 	sleep_config->prozwidth = YES;
 	sleep_config->width = 40;
 	sleep_config->height = 30;*/
+
+	delmarkedscreennodes(sleep_config, 1);
+	listbox->aktpage = -1;
+	listbox->aktline = 1;
+	changetitle(sleep_config, "Harddisk Sleep");
 	
 	node = addlistbox(sleep_config, listbox, node, 1);
 	if(node != NULL)
