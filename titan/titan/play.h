@@ -637,9 +637,9 @@ void playstartservice()
 // flag 1 = playing/infobar
 // flag 2 = playing
 // startfolder 2 = do nothing with playstop/playstart
-void screenplay(char* startfile, int startfolder, int flag)
+int screenplay(char* startfile, int startfolder, int flag)
 {
-	int rcret = 0, playertype = 0;
+	int rcret = 0, playertype = 0, ret = 0;
 	char* file = NULL, *tmpstr = NULL;
 	char* tmppolicy = NULL, *startdir = NULL;
 	char* formats = NULL;
@@ -721,7 +721,7 @@ playerstart:
 #ifndef SIMULATE
 		if(rcret != 0)
 		{
-			textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+			textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
 			writevfd("Player");
 			
 			if(startfile == NULL)
@@ -788,7 +788,10 @@ playerstart:
 						goto playerstart;
 					}
 					else
+					{
+						ret = 1;
 						goto playerend;
+					}
 				}
 
 				if(rcret == getrcconfigint("rcff", NULL))
@@ -866,6 +869,8 @@ playerend:
 	status.play = 0;
 	free(file);
 	free(formats);
+
+	return ret;
 }
 
 #endif

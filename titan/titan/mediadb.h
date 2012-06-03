@@ -1005,11 +1005,11 @@ void mediadbscanthread(struct stimerthread* self)
 	if(mediadb == NULL)
 		readmediadb(getconfig("mediadbfile", NULL), 0, 0);
 
-	if(getconfigint("mediadbscantype", NULL) == 1)
+	if(getconfigint("mediadbscandelall", NULL) == 1)
 		freemediadb(0);
 
 	//check mediadb for not exist file
-	if(getconfigint("mediadbdelnotfound", NULL) == 1)
+	if(getconfigint("mediadbscandelnotfound", NULL) == 1)
 	{
 		while(node != NULL)
 		{
@@ -1024,6 +1024,9 @@ void mediadbscanthread(struct stimerthread* self)
 	addhddall();
 	hddnode = hdd;
 
+#ifdef SIMULATE
+	findfiles("/home/nit/titan/x");
+#else
 	while(hddnode != NULL)
 	{
 		if(hddnode->partition != 0)
@@ -1034,6 +1037,7 @@ void mediadbscanthread(struct stimerthread* self)
 		}
 		hddnode = hddnode->next;
 	}
+#endif
 	writemediadb(getconfig("mediadbfile", NULL));
 
 	//create year
@@ -1276,31 +1280,39 @@ void mediadbfindfilecb(char* path, char* file, int type)
 		node = node->next;
 	}
 
-	if(treffer == 0 || (treffer == 1 && getconfigint("mediadbscantype", NULL) == 2))
+	int tout = getconfigint("mediadbscantimeout", NULL);
+
+	if(treffer == 0 || (treffer == 1 && node != NULL && tout > 0 && time(NULL) > node->timestamp + (tout * 86400)))
 	{
-		//create imdb search name
-		char* shortname = ostrcat(file, NULL, 0, 0);
-		string_tolower(shortname);
-		shortname = string_shortname(shortname, 1);
-		shortname = string_shortname(shortname, 2);
-		string_removechar(shortname);
-		strstrip(shortname);
-
-		//TODO: got imdb infos
 		struct imdb* imdb = NULL;
-		struct skin* imdbplugin = getplugin("Imdb");
-
-		if(imdbplugin != NULL)
+		if(type == 0)
 		{
-			struct imdb* (*startplugin)(char*, int, int, int);
-			startplugin = dlsym(imdbplugin->pluginhandle, "getimdb");
-			if(startplugin != NULL)
-				imdb = startplugin(shortname, 0, 1, 0);
+			//create imdb search name
+			char* shortname = ostrcat(file, NULL, 0, 0);
+			string_tolower(shortname);
+			shortname = string_shortname(shortname, 1);
+			shortname = string_shortname(shortname, 2);
+			string_removechar(shortname);
+			strstrip(shortname);
+
+			//TODO: got imdb infos
+#ifdef SIMULATE
+			imdb = getimdb(shortname, 0, 1, 0);
+#else
+			struct skin* imdbplugin = getplugin("Imdb");
+			if(imdbplugin != NULL)
+			{
+				struct imdb* (*startplugin)(char*, int, int, int);
+				startplugin = dlsym(imdbplugin->pluginhandle, "getimdb");
+				if(startplugin != NULL)
+					imdb = startplugin(shortname, 0, 1, 0);
+			}
+#endif
+			debug(777, "shortname: %s", shortname);
+			free(shortname); shortname = NULL;
 		}
 
-		debug(777, "add file %s (%s)", tmpstr, shortname);
-		free(shortname); shortname = NULL;
-
+		debug(777, "add file: %s", tmpstr);
 		if(imdb != NULL)
 		{
 			debug(777, "imdb id %s", imdb->id);
@@ -1309,14 +1321,21 @@ void mediadbfindfilecb(char* path, char* file, int type)
 		else
 			createmediadb(node, "0", type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, tmpstr, file);
 
-		if(imdbplugin != NULL)
+		if(type == 0)
 		{
-			void (*startplugin)(struct imdb*);
-			startplugin = dlsym(imdbplugin->pluginhandle, "freeimdb");
-			if(startplugin != NULL)
-				startplugin(imdb);
+#ifdef SIMULATE
+			freeimdb(imdb);
+#else
+			if(imdbplugin != NULL)
+			{
+				void (*startplugin)(struct imdb*);
+				startplugin = dlsym(imdbplugin->pluginhandle, "freeimdb");
+				if(startplugin != NULL)
+					startplugin(imdb);
+			}
+#endif
+			imdb = NULL;
 		}
-		imdb = NULL;
 	}
 	free(tmpstr); tmpstr = NULL;
 }

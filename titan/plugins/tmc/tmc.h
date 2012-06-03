@@ -11,7 +11,7 @@ char* menu0txt[] = {"Settings", "Picture", "Video", "Audio", "Exit"};
 //Settings
 int menu1pos = 0;
 char* menu1[] = {"skin/tmcscan.png", "skin/tmcdb.png", "skin/tmcsettings.png", "skin/tmcback.png", "skin/tmcbtn.png"};
-char* menu1txt[] = {"Scan", "Database", "Main", "Back", ""};
+char* menu1txt[] = {"Scan", "Database Info", "Main", "Back", ""};
 
 //Picture
 int menu2pos = 0;
@@ -265,6 +265,77 @@ void tmcmenuscroll(int menuid, int active, struct skin* tmcmenutxt, struct skin*
 	drawscreen(tmcmenu5, 0);
 }
 
+void screentmcdb()
+{
+	int rcret = 0, videocount = 0, audiocount = 0, picturecount = 0;
+	struct skin* tmcpic3 = getscreen("tmcpic3");
+	struct skin* listbox = getscreennode(tmcpic3, "listbox");
+	struct skin* tmp = NULL;
+	char* tmpstr = NULL, *tmppic = NULL;
+
+	tmppic = ostrcat(tmcpic3->pic, NULL, 0, 0);
+	changepic(tmcpic3, NULL);
+
+	getmediadbcounts(&videocount, &audiocount, &picturecount);
+
+	tmp = addlistbox(tmcpic3, listbox, tmp, 1);
+	if(tmp != NULL)
+	{
+		tmpstr = ostrcat(_("Status"), ": ", 0, 0);
+		if(status.mediadbthread != NULL)
+			tmpstr = ostrcat(tmpstr, _("scan"), 1, 0);
+		else
+			tmpstr = ostrcat(tmpstr, _("idle"), 1, 0);
+		changetext(tmp, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
+
+	tmp = addlistbox(tmcpic3, listbox, tmp, 1);
+	if(tmp != NULL)
+	{
+		tmpstr = ostrcat(_("Video"), ": ", 0, 0);
+		tmpstr = ostrcat(tmpstr, oitoa(videocount), 1, 1);
+		changetext(tmp, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
+
+	tmp = addlistbox(tmcpic3, listbox, tmp, 1);
+	if(tmp != NULL)
+	{
+		tmpstr = ostrcat(_("Audio"), ": ", 0, 0);
+		tmpstr = ostrcat(tmpstr, oitoa(audiocount), 1, 1);
+		changetext(tmp, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
+
+	tmp = addlistbox(tmcpic3, listbox, tmp, 1);
+	if(tmp != NULL)
+	{
+		tmpstr = ostrcat(_("Picture"), ": ", 0, 0);
+		tmpstr = ostrcat(tmpstr, oitoa(picturecount), 1, 1);
+		changetext(tmp, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
+
+	addscreenrc(tmcpic3, listbox);
+	drawscreen(tmcpic3, 0);
+
+	while(1)
+	{
+		rcret = waitrc(tmcpic3, 0, 0);
+
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL)) break;
+	}
+
+	delownerrc(tmcpic3);
+	delmarkedscreennodes(tmcpic3, 1);
+
+	changepic(tmcpic3, tmppic);
+	free(tmppic); tmppic = NULL;
+	drawscreen(tmcpic3, 0);
+}
+
 char* screentmccategory(int type, char* category)
 {
 	int rcret = 0;
@@ -316,6 +387,41 @@ char* screentmccategory(int type, char* category)
 	changepic(tmcpic3, tmppic);
 	free(tmppic); tmppic = NULL;
 	drawscreen(tmcpic3, 0);
+
+	return ret;
+}
+
+int screentmcpicplay(char* picture)
+{
+	int rcret = 0, timeout = 0, ret = 0;
+	struct skin* picplay = getscreen("tmcpicplay");
+	struct skin* picname = getscreennode(picplay, "picname");
+	struct skin* pic = getscreennode(picplay, "pic");
+
+	timeout = getconfigint("tmcpictimeout", NULL) * 1000;
+	if(timeout == 0) timeout = 5000;
+
+	if(getconfigint("tmcshowpicname", NULL) == 1)
+		changetext(picname, picture);
+	else
+		changetext(picname, NULL);
+
+	changepic(pic, picture);
+
+	drawscreen(picplay, 0);
+
+	while(1)
+	{
+		rcret = waitrc(picplay, timeout, 0);
+
+		if(rcret == getrcconfigint("rcexit", NULL))
+		{
+			ret = 1;
+			break;
+		}
+		if(rcret == getrcconfigint("rcok", NULL)) break;
+		if(rcret == RCTIMEOUT) break;
+	}
 
 	return ret;
 }
@@ -435,9 +541,9 @@ void screentmcmenu()
 				{
 					mediadbscan();
 				}
-				else if(menuid == 1 && ostrcmp("Database", tmcmenutxt->ret) == 0)
+				else if(menuid == 1 && ostrcmp("Database Info", tmcmenutxt->ret) == 0)
 				{
-					//TODO
+					screentmcdb();
 				}
 				else if(menuid == 1 && ostrcmp("Main", tmcmenutxt->ret) == 0)
 				{
@@ -606,18 +712,58 @@ void screentmcmenu()
 				}
 				if(menuid == 4)
 				{
+					int audioret = 0, audioplaytype = 0;
+					struct mediadbfilter* mfilter = NULL;
+
 					drawscreen(skin, 0);
 
 					//TODO: random / listplay
-					screenplay(tmcpic3->ret, 0, 0);
+					mfilter = mediadbfilterpos;
+
+					while(mfilter != NULL && mediadbfilter != NULL)
+					{
+						if(mfilter->node != NULL)
+							audioret = screenplay(mfilter->node->file, 0, 0);
+						if(audioret == 1) break;
+
+						if(audioplaytype == 1) //single
+							break;
+						else if(audioplaytype == 2) //random
+							mfilter = getmediadbfilterrandom(getmediadbfiltercount());
+						else //next
+							mfilter = mfilter->next;
+
+						if(mfilter == NULL) mfilter = mediadbfilter;
+					}
 
 					tmcpicscroll(tmcpictitle, tmcpicstar, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, 0);
 					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
 				}
 				else if(menuid == 2)
 				{
+					int picret = 0, picplaytype = 0;
+					struct mediadbfilter* mfilter = NULL;
+
 					drawscreen(skin, 0);
 					//TODO: show pic / random / listplay
+					mfilter = mediadbfilterpos;
+					
+					while(mfilter != NULL && mediadbfilter != NULL)
+					{
+						if(mfilter->node != NULL)
+							picret = screentmcpicplay(mfilter->node->file);
+						if(picret == 1) break;
+
+						if(picplaytype == 1) //single
+							break;
+						else if(picplaytype == 2) //random
+							mfilter = getmediadbfilterrandom(getmediadbfiltercount());
+						else //next
+							mfilter = mfilter->next;
+
+						if(mfilter == NULL) mfilter = mediadbfilter;
+					}
+
 					tmcpicscroll(tmcpictitle, tmcpicstar, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, 0);
 					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
 				}
