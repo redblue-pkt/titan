@@ -525,6 +525,21 @@ void screentmcmenu()
 	char* tmpstr = NULL;
 	char* tmcpictitlebg = NULL, *tmcpicstarbg = NULL; 
 
+	//checks
+	if(!file_exist(getconfig("mediadbpath", NULL)))
+	{
+		textbox(_("Message"), _("MediaDB Path not found!\nConfigure it in MediaDB Settings"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+	}
+	else
+	{
+		if(!file_exist(getconfig("mediadbfile", NULL)))
+			textbox(_("Message"), _("MediaDB not found!\nScan your HDD in TMC Settings"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+	}
+
+	//TODO: TMDB and so on
+	if(getplugin("Imdb") == NULL)
+		textbox(_("Message"), _("IMDB Plugin not found!\nCan't geht detail media infos\nPlease install it"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+
 	mediadbfilterpos = NULL;
 
 	menu0pos = 0;
