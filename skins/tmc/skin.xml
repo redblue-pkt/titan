@@ -1,6 +1,6 @@
 <screen name=tmcpicplay posx=0 posy=0 width=1280 height=720>
 <node bgcol=-2 name=picname posx=0 posy=100 width=100% height=40 fontsize=30 fontcol=fontcol halign=center>
-<node name=pic posx=0 posy=0 width=1280 height=720>
+<node name=pic posx=0 posy=0 width=1280 height=720 halign=center valign=middle>
 </screen>
 
 <screen pic=%pluginpath%/tmc/skin/tmcbg.jpg name=tmcbg posx=0 posy=0 width=1280 height=720>
