@@ -13,6 +13,7 @@ void screengmediarender()
 	drawscreen(skin, 0);
 
 	//start renderer
+	system("gmediarender &");
 
 	textbox(_("Message"), _("Wait for connect or press EXIT"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
 
@@ -25,6 +26,7 @@ void screengmediarender()
 	}
 
 	//stop renderer
+	system("killall -9 gmediarender");
 
 	if(status.lastservice != NULL)
 		servicestart(status.lastservice->channel, NULL, NULL, 0);
