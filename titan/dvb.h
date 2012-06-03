@@ -284,7 +284,7 @@ char* dvbgethbbtvurl(unsigned char* buf)
 					{
 						char* tmpurl = NULL;
 						tmpurl = malloc(desclen + 1);
-						strncpy(tmpurl, &buf[pos2 + 2], desclen);
+						strncpy(tmpurl, (char*)&buf[pos2 + 2], desclen);
 						tmpurl[desclen]='\0';
 						url = ostrcat(url, tmpurl, 1, 1);
 					}
