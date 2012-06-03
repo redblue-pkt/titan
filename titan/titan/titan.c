@@ -194,6 +194,7 @@ struct imdb* imdb = NULL;
 #include "info.h"
 #include "softcam.h"
 #include "mediadb.h"
+#include "mediadbsettings.h"
 
 //#include "cardreader.h"
 //#include "sci.h"
