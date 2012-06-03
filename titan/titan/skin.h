@@ -1671,7 +1671,7 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 	jpeg_read_header(&cinfo, TRUE);
 	cinfo.out_color_space = JCS_RGB;
 	
-	if((scalewidth != 0 || scaleheight != 0) && (mwidth < 400 || mheight < 300) && (cinfo.output_width > 100 || cinfo.output_height > 100))
+	if((scalewidth != 0 || scaleheight != 0) && (mwidth < 400 || mheight < 400) && (cinfo.output_width > 100 || cinfo.output_height > 100))
   {
 		cinfo.scale_denom = getconfigint("picdenom", NULL);
     if(cinfo.scale_denom < 1) cinfo.scale_denom = 1;

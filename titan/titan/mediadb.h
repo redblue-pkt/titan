@@ -1006,7 +1006,10 @@ void mediadbscanthread(struct stimerthread* self)
 		readmediadb(getconfig("mediadbfile", NULL), 0, 0);
 
 	if(getconfigint("mediadbscandelall", NULL) == 1)
+	{
+		delallfiles(getconfig("mediadbpath", NULL), ".jpg");
 		freemediadb(0);
+	}
 
 	//check mediadb for not exist file
 	if(getconfigint("mediadbscandelnotfound", NULL) == 1)
@@ -1016,7 +1019,10 @@ void mediadbscanthread(struct stimerthread* self)
 			prev = node;
 			node = node->next;
 			if(!file_exist(prev->file))
+			{
+				//TODO: unlink all jpg to node
 				delmediadb(prev, 0);
+			}
 		}
 	}
 
@@ -1284,10 +1290,10 @@ void mediadbfindfilecb(char* path, char* file, int type)
 
 	if(treffer == 0 || (treffer == 1 && node != NULL && tout > 0 && time(NULL) > node->timestamp + (tout * 86400)))
 	{
-		struct imdb* imdb = NULL;
-		struct skin* imdbplugin = getplugin("Imdb");
 		if(type == 0)
 		{
+			struct imdb* imdb = NULL;
+
 			//create imdb search name
 			char* shortname = ostrcat(file, NULL, 0, 0);
 			string_tolower(shortname);
@@ -1300,6 +1306,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 #ifdef SIMULATE
 			imdb = getimdb(shortname, 0, 1, 0);
 #else
+			struct skin* imdbplugin = getplugin("Imdb");
 			if(imdbplugin != NULL)
 			{
 				struct imdb* (*startplugin)(char*, int, int, int);
@@ -1310,19 +1317,16 @@ void mediadbfindfilecb(char* path, char* file, int type)
 #endif
 			debug(777, "shortname: %s", shortname);
 			free(shortname); shortname = NULL;
-		}
 
-		debug(777, "add file: %s", tmpstr);
-		if(imdb != NULL)
-		{
-			debug(777, "imdb id %s", imdb->id);
-			createmediadb(node, imdb->id, type, imdb->title, imdb->year, imdb->released, imdb->runtime, imdb->genre, imdb->director, imdb->writer, imdb->actors, imdb->plot, imdb->id, imdb->rating, imdb->votes, tmpstr, file);
-		}
-		else
-			createmediadb(node, "0", type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, tmpstr, file);
+			debug(777, "add video: %s", tmpstr);
+			if(imdb != NULL)
+			{
+				debug(777, "imdb id %s", imdb->id);
+				createmediadb(node, imdb->id, type, imdb->title, imdb->year, imdb->released, imdb->runtime, imdb->genre, imdb->director, imdb->writer, imdb->actors, imdb->plot, imdb->id, imdb->rating, imdb->votes, tmpstr, file);
+			}
+			else
+				createmediadb(node, "0", type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, tmpstr, file);
 
-		if(type == 0)
-		{
 #ifdef SIMULATE
 			freeimdb(imdb);
 #else
@@ -1336,9 +1340,20 @@ void mediadbfindfilecb(char* path, char* file, int type)
 #endif
 			imdb = NULL;
 		}
+		else if(type == 1)
+		{
+			debug(777, "add audio: %s", tmpstr);
+			createmediadb(node, "0", type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, tmpstr, file);
+		}
+		else if(type == 2)
+		{
+			debug(777, "add pic: %s", tmpstr);
+			createmediadb(node, "0", type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, tmpstr, file);
+		}
 	}
 	free(tmpstr); tmpstr = NULL;
 }
+
 
 int findfiles(char* dirname)
 {
