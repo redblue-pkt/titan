@@ -2,6 +2,8 @@
 #define TMC_H
 
 extern struct mediadbfilter* mediadbfilter;
+extern struct mediadbcategory* mediadbcategory;
+extern struct skin* skin;
 struct mediadbfilter* mediadbfilterpos = NULL;
 
 //Mainmenu

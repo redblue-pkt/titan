@@ -422,6 +422,7 @@ char* gettime(struct skin* node, char* format);
 char* getepgakttitle(struct skin* node);
 
 //skin.h
+void restorescreennofree(char* buf, struct skin* node);
 unsigned char *loadjpg(char *filename, unsigned long *width, unsigned long *height, unsigned long *rowbytes, int *channels, int denom);
 int changeselectpic(struct skin* node, char* text);
 void calcautoscale(int width, int height, int mwidth, int mheight, int* scalewidth, int* scaleheight);
