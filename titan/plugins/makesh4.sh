@@ -105,5 +105,6 @@ compile "dlna" "dlna" ""
 compile "hbbtv" "hbbtv" ""
 compile "instar" "instar" ""
 compile "tmdb" "tmdb" ""
+compile "gmediarender" "gmediarender" ""
 
 #rm -r networkbrowser/networkbrowser
