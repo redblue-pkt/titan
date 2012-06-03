@@ -391,6 +391,71 @@ char* screentmccategory(int type, char* category)
 	return ret;
 }
 
+void screentmcsettings()
+{
+	int rcret = 0;
+	struct skin* tmcpic3 = getscreen("tmcpic3");
+	struct skin* listbox = getscreennode(tmcpic3, "listbox");
+	struct skin* pictimeout = getscreennode(tmcpic3, "pictimeout");
+	struct skin* picfull = getscreennode(tmcpic3, "picfull");
+	struct skin* picname = getscreennode(tmcpic3, "picname");
+	struct skin* tmp = NULL;
+	char* tmppic = NULL;
+
+	tmppic = ostrcat(tmcpic3->pic, NULL, 0, 0);
+	changepic(tmcpic3, NULL);
+
+	pictimeout->hidden = NO;
+	picfull->hidden = NO;
+	picname->hidden = NO;
+
+	addchoicebox(pictimeout, "5", "5");
+	addchoicebox(pictimeout, "10", "10");
+	addchoicebox(pictimeout, "15", "15");
+	addchoicebox(pictimeout, "20", "20");
+	setchoiceboxselection(pictimeout, getskinconfig("tmcpictimeout", NULL));
+
+	addchoicebox(picfull, "0", _("no"));
+	addchoicebox(picfull, "1", _("yes"));
+	setchoiceboxselection(picfull, getskinconfig("tmcpicfull", NULL));
+
+	addchoicebox(picname, "0", _("no"));
+	addchoicebox(picname, "1", _("yes"));
+	setchoiceboxselection(picname, getskinconfig("tmcpicname", NULL));
+
+	addscreenrc(tmcpic3, listbox);
+	drawscreen(tmcpic3, 0);
+
+	tmp = listbox->select;
+	while(1)
+	{
+		addscreenrc(tmcpic3, tmp);
+		rcret = waitrc(tmcpic3, 0, 0);
+		tmp = listbox->select;
+
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+
+		if(rcret == getrcconfigint("rcok", NULL) && listbox->select != NULL)
+		{
+			addskinconfigscreencheck("tmcpictimeout", tmcpic3, "5");
+			addskinconfigscreencheck("tmcpicname", tmcpic3, "0");
+			addskinconfigscreencheck("tmcpicfull", tmcpic3, "0");
+			break;
+		}
+	}
+
+	pictimeout->hidden = YES;
+	picfull->hidden = YES;
+	picname->hidden = YES;
+
+	delownerrc(tmcpic3);
+	delmarkedscreennodes(tmcpic3, 1);
+
+	changepic(tmcpic3, tmppic);
+	free(tmppic); tmppic = NULL;
+	drawscreen(tmcpic3, 0);
+}
+
 int screentmcpicplay(char* picture)
 {
 	int rcret = 0, timeout = 0, ret = 0;
@@ -558,7 +623,7 @@ void screentmcmenu()
 				}
 				else if(menuid == 1 && ostrcmp("Main", tmcmenutxt->ret) == 0)
 				{
-					//TODO
+					screentmcsettings();
 				}
 				else if(ostrcmp("Picture", tmcmenutxt->ret) == 0) //mainmenu picture
 				{

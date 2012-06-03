@@ -38,6 +38,9 @@
 
 <screen bordersize=5 bordercol=bordercol name=tmcpic3 picwidth=240 picheight=300 posx=490 posy=60 width=240 height=300>
 <node fontsize=30 fontcol=fontcol bordercol=bordercol bordersize=0 scrollbar=auto type=listbox name=listbox posy=0 width=100% height=100%>
+<node hidden=yes name=pictimeout type=choicebox parent=listbox valign=middle posx=0 text="Pic Timeout" bordercol=bordercol width=100%>
+<node hidden=yes name=picfull type=choicebox parent=listbox valign=middle posx=0 text="Full Pic" bordercol=bordercol width=100%>
+<node hidden=yes name=picname type=choicebox parent=listbox valign=middle posx=0 text="Pic Name" bordercol=bordercol width=100%>
 </screen>
 
 <screen bordersize=5 bordercol=bordercol name=tmcpic4 picwidth=180 picheight=260 posx=730 posy=80 width=180 height=260>
