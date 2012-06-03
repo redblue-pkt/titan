@@ -514,6 +514,11 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screensoftcam();
 	}
+	else if(ostrcmp("mediadbsettings", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		mediadbsettings();
+	}
 	else if(menuentry->pluginhandle != NULL)
 	{
 		if(menuentry->input != NULL)
