@@ -1285,6 +1285,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 	if(treffer == 0 || (treffer == 1 && node != NULL && tout > 0 && time(NULL) > node->timestamp + (tout * 86400)))
 	{
 		struct imdb* imdb = NULL;
+		struct skin* imdbplugin = getplugin("Imdb");
 		if(type == 0)
 		{
 			//create imdb search name
@@ -1299,7 +1300,6 @@ void mediadbfindfilecb(char* path, char* file, int type)
 #ifdef SIMULATE
 			imdb = getimdb(shortname, 0, 1, 0);
 #else
-			struct skin* imdbplugin = getplugin("Imdb");
 			if(imdbplugin != NULL)
 			{
 				struct imdb* (*startplugin)(char*, int, int, int);

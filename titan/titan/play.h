@@ -652,7 +652,7 @@ int screenplay(char* startfile, int startfolder, int flag)
 	if(startfolder == 0)
 	{
 		rcret = servicestop(status.aktservice, 1, 1);
-		if(rcret == 1) return;
+		if(rcret == 1) return ret;
 	}
 
 	if(status.webplayfile != NULL)
@@ -707,7 +707,7 @@ playerstart:
 					free(tmppolicy);
 					free(file);
 					free(formats);
-					return;
+					return ret;
 				}
 			}
 		}
