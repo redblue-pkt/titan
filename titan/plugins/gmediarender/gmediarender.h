@@ -36,11 +36,7 @@ void screengmediarender()
 	{
 		rcret = waitrc(NULL, 0, 0);
 
-		if(rcret == getrcconfigint("rcexit", NULL))
-		{
-			printf("gui neustart\n");
-			break;
-		}
+ 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL)) break;
 	}
 
