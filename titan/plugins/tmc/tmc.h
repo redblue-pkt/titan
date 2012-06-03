@@ -98,7 +98,10 @@ void tmcpicscroll(int menuid, struct skin* tmcpictitle, struct skin* tmcpicstar,
 		if(node != NULL && node->node != NULL)
 		{
 			if(menuid == 2) //picture
+			{
+				//TODO: check first if thumb exist
 				tmpstr = ostrcat(node->node->file, NULL, 0, 0);
+			}
 			else if(menuid == 3) //video
 			{
 				tmpstr = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
