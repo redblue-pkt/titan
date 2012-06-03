@@ -6,16 +6,29 @@ extern struct skin* skin;
 void screengmediarender()
 {
 	int rcret = -1, ret = 0;
-
+	char* cmd = NULL;
+	char* tmpstr = NULL;
+	
 	ret = servicestop(status.aktservice, 1, 0);
 	if(ret == 1) return;
 
 	drawscreen(skin, 0);
 
+	cmd = ostrcat(cmd, "/var/swap/titanplugins/gmediarender/gmediarender.sh gmediarender-", 1, 0);
+	cmd = ostrcat(cmd, status.boxtype, 1, 0);
+	cmd = ostrcat(cmd, " &", 1, 0);
+	
 	//start renderer
-	system("gmediarender &");
+	system(cmd);
+	free(cmd), cmd = NULL;
 
-	textbox(_("Message"), _("Wait for connect or press EXIT"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
+	tmpstr = ostrcat(tmpstr, "--- gmediarender-", 1, 0);
+	tmpstr = ostrcat(tmpstr, status.boxtype, 1, 0);
+	tmpstr = ostrcat(tmpstr, " ---\n", 1, 0);
+	tmpstr = ostrcat(tmpstr, _("Wait for connect or press EXIT"), 1, 0);
+
+	textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
+	free(tmpstr), tmpstr = NULL;
 
 	while(1)
 	{
