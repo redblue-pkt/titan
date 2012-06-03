@@ -8,6 +8,10 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//mediadb.h
+void freemediadbcontent(struct mediadb* node);
+int findfiles(char* dirname);
+
 //eraseswap.h
 void screeneraseswap();
 

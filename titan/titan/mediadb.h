@@ -530,7 +530,7 @@ struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* 
 	struct mediadb* mnode = NULL;
 	char* tmpstr = NULL;
 
-	if(fullfile == NULL) return;
+	if(fullfile == NULL) return NULL;
 
 	if(id == NULL) id = "0";
 	if(file == NULL) file = "n/a";
@@ -1339,7 +1339,6 @@ void mediadbfindfilecb(char* path, char* file, int type)
 	}
 	free(tmpstr); tmpstr = NULL;
 }
-
 
 int findfiles(char* dirname)
 {
