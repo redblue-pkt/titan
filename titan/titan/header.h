@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//mediadbsettings.h
+void screenmediadbsettings();
+
 //mediadb.h
 void freemediadbcontent(struct mediadb* node);
 int findfiles(char* dirname);
