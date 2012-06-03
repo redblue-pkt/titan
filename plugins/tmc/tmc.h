@@ -18,8 +18,8 @@ char* menu1txt[] = {"Scan", "Database Info", "Main", "Back", ""};
 
 //Picture
 int menu2pos = 0;
-char* menu2[] = {"skin/tmccategory.png", "skin/tmcall.png", "skin/tmcrandom.png", "skin/tmcone.png", "skin/tmcback.png"};
-char* menu2txt[] = {"Category", "All", "Random", "Single", "Back"};
+char* menu2[] = {"skin/tmccategory.png", "skin/tmcrandom.png", "skin/tmcall.png", "skin/tmcone.png", "skin/tmcback.png"};
+char* menu2txt[] = {"Category", "Random", "All", "Single", "Back"};
 
 //Video
 int menu3pos = 0;
@@ -28,8 +28,8 @@ char* menu3txt[] = {"Genre", "Category", "All", "Year", "Director", "Actors", "R
 
 //Audio
 int menu4pos = 0;
-char* menu4[] = {"skin/tmccategory.png", "skin/tmcall.png", "skin/tmcrandom.png", "skin/tmcone.png", "skin/tmcback.png"};
-char* menu4txt[] = {"Category", "All", "Random", "Single", "Back"};
+char* menu4[] = {"skin/tmccategory.png", "skin/tmcrandom.png", "skin/tmcall.png", "skin/tmcone.png", "skin/tmcback.png"};
+char* menu4txt[] = {"Category", "All", "All", "Single", "Back"};
 
 //flag 0: don't draw
 //flag 1: draw
