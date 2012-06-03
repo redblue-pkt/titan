@@ -11,6 +11,16 @@
 //mediadb.h
 void freemediadbcontent(struct mediadb* node);
 int findfiles(char* dirname);
+struct mediadbfilter* getlastmediadbfilter(struct mediadbfilter* node, int flag);
+void getmediadbcounts(int* video, int* audio, int* picture);
+int readmediadb(const char* filename, int type, int flag);
+void mediadbscan();
+void createmediadbfilter(int type, char* search, int flag);
+struct mediadbfilter* getmediadbfilterrandom(int maxentry);
+int getmediadbfiltercount();
+void freemediadbfilter(int flag);
+void freemediadb(int flag);
+void freemediadbcategory(int flag);
 
 //eraseswap.h
 void screeneraseswap();
