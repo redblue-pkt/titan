@@ -401,10 +401,21 @@ int screentmcpicplay(char* picture)
 	timeout = getconfigint("tmcpictimeout", NULL) * 1000;
 	if(timeout == 0) timeout = 5000;
 
-	if(getconfigint("tmcshowpicname", NULL) == 1)
+	if(getconfigint("tmcpicname", NULL) == 1)
 		changetext(picname, picture);
 	else
 		changetext(picname, NULL);
+
+	if(getconfigint("tmcpicfull", NULL) == 1)
+	{
+		pic->picheight = 720;
+		pic->picwidth = 1280;
+	}
+	else
+	{
+		pic->picheight = 1;
+		pic->picwidth = 1;
+	}
 
 	changepic(pic, picture);
 
