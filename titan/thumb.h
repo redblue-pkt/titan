@@ -31,7 +31,9 @@ void thumbthread(struct stimerthread* self)
 		qe = getqueue(101);
 		while(qe != NULL)
 		{
-			buf = loadjpg((char*)ostrcat(createpath(qe->data, "/"), qe->data1, 0, 0), &width, &height, &rowbytes, &channels, 16);		
+			char* picname = ostrcat(createpath(qe->data, "/"), qe->data1, 0, 0);
+			buf = loadjpg(picname, &width, &height, &rowbytes, &channels, 16);
+			free(picname); picname = NULL;
 			if(buf != NULL)
 			{
 				buf = scale(buf, width, height, 3, 100, 100, 1);
