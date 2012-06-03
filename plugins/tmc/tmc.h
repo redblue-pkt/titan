@@ -538,7 +538,7 @@ void screentmcmenu()
 
 	//TODO: TMDB and so on
 	if(getplugin("Imdb") == NULL)
-		textbox(_("Message"), _("IMDB Plugin not found!\nCan't geht detail media infos\nPlease install it"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+		textbox(_("Message"), _("IMDB Plugin not found!\nCan't get detail media infos\nPlease install it"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 
 	mediadbfilterpos = NULL;
 
