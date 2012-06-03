@@ -359,21 +359,26 @@ char* screentmccategory(int type, char* category)
 	tmppic = ostrcat(tmcpic3->pic, NULL, 0, 0);
 	changepic(tmcpic3, NULL);
 
-	freemediadbcategory(0);
 	tmpstr = ostrcat(getconfig("mediadbfile", NULL), category, 0, 0);
-	readmediadb(tmpstr, type, 1);
-	free(tmpstr); tmpstr = NULL;
 
-	node = mediadbcategory;
-	while(node != NULL)
+	if(status.mediadbthreadstatus != 3)
 	{
-		tmp = addlistbox(tmcpic3, listbox, tmp, 1);
-		if(tmp != NULL)
+		freemediadbcategory(0);
+		readmediadb(tmpstr, type, 1);
+
+		node = mediadbcategory;
+		while(node != NULL)
 		{
-			changetext(tmp, node->name);
+			tmp = addlistbox(tmcpic3, listbox, tmp, 1);
+			if(tmp != NULL)
+			{
+				changetext(tmp, node->name);
+			}
+			node = node->next;
 		}
-		node = node->next;
+		freemediadbcategory(0);
 	}
+	free(tmpstr); tmpstr = NULL;
 
 	addscreenrc(tmcpic3, listbox);
 	drawscreen(tmcpic3, 0);
@@ -393,7 +398,6 @@ char* screentmccategory(int type, char* category)
 
 	delownerrc(tmcpic3);
 	delmarkedscreennodes(tmcpic3, 1);
-	freemediadbcategory(0);
 
 	changepic(tmcpic3, tmppic);
 	free(tmppic); tmppic = NULL;
@@ -876,7 +880,8 @@ void screentmcmenu()
 	free(tmcpictitlebg); tmcpictitlebg = NULL;
 	free(tmcpicstarbg); tmcpicstarbg = NULL;
 	freemediadbfilter(0);
-	freemediadb(0);
+	if(status.mediadbthread == NULL)
+		freemediadb(0);
 	clearscreen(tmcbg);
 }
 
