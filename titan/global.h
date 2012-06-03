@@ -510,7 +510,7 @@ void killnet()
 	}
 }
 
-int getsysinfo()
+unsigned long getsysinfo()
 {
 	char* tmpstr = NULL;
 	struct utsname info;
