@@ -1169,6 +1169,8 @@ struct status
 	int moveblockcount;
 	//name ob file who played from webig
 	char* webplayfile;
+	//status of mediadbthread
+	int mediadbthreadstatus;
 } status;
 
 struct fb

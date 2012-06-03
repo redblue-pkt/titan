@@ -961,6 +961,8 @@ void createmediadbfilter(int type, char* search, int flag)
 {
 	struct mediadb* node = mediadb;
 
+	if(status.mediadbthreadstatus == 1) return;
+
 	freemediadbfilter(0);
 	while(node != NULL)
 	{
@@ -995,12 +997,12 @@ void mediadbscanthread(struct stimerthread* self)
 
 	if(status.mediadbthread != NULL || self == NULL) return;
 
-        debug(777, "mediadb scanthread start");
-        status.mediadbthread = self;
+	debug(777, "mediadb scanthread start");
+	status.mediadbthreadstatus = 1;
+	status.mediadbthread = self;
 
 	//clear all other db in mem
 	freemediadbfilter(0);
-	freemediadbcategory(0);
 
 	if(mediadb == NULL)
 		readmediadb(getconfig("mediadbfile", NULL), 0, 0);
@@ -1026,6 +1028,8 @@ void mediadbscanthread(struct stimerthread* self)
 		}
 	}
 
+	status.mediadbthreadstatus = 2;
+
 	//find media files
 	addhddall();
 	hddnode = hdd;
@@ -1045,6 +1049,11 @@ void mediadbscanthread(struct stimerthread* self)
 	}
 #endif
 	writemediadb(getconfig("mediadbfile", NULL));
+
+	status.mediadbthreadstatus = 3;
+	sleep(3); //wait a little if other thread read category
+
+	freemediadbcategory(0);
 
 	//create year
 	node = mediadb;
@@ -1263,6 +1272,7 @@ void mediadbscanthread(struct stimerthread* self)
 	freemediadbcategory(0);
 
 	status.mediadbthread = NULL;
+	status.mediadbthreadstatus = 0;
 	debug(777, "mediadb scanthread end");
 }
 
@@ -1354,7 +1364,6 @@ void mediadbfindfilecb(char* path, char* file, int type)
 	free(tmpstr); tmpstr = NULL;
 }
 
-
 int findfiles(char* dirname)
 {
 	DIR *d;
@@ -1424,7 +1433,16 @@ int findfiles(char* dirname)
 
 void mediadbscan()
 {
+	int count = 0;
+
 	addtimer(&mediadbscanthread, START, 1000, 1, NULL, NULL, NULL);
+
+	//block a little
+	while(status.mediadbthread != NULL && count < 20)
+	{
+		usleep(100000);
+		count++;
+	}
 }
 
 #endif
