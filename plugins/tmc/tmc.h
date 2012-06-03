@@ -113,9 +113,7 @@ void tmcpicscroll(struct skin* tmcpictitle, struct skin* tmcpicstar, struct skin
 				changeret(tmcpic3, node->node->file);
 				changetext(tmcpictitle, node->node->title);
 				
-				//TODO RATING
 				double rating = 0.0;
-
 				if(node->node->rating != NULL) rating = atof(node->node->rating);
 				rating = rating / 2;
 				
