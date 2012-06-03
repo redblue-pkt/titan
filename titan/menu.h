@@ -517,7 +517,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	else if(ostrcmp("mediadbsettings", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		mediadbsettings();
+		screenmediadbsettings();
 	}
 	else if(menuentry->pluginhandle != NULL)
 	{
