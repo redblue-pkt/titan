@@ -286,6 +286,7 @@ void screentmcdb()
 
 	tmppic = ostrcat(tmcpic3->pic, NULL, 0, 0);
 	changepic(tmcpic3, NULL);
+	tmcpic3->bgcol = 0;
 
 	getmediadbcounts(&videocount, &audiocount, &picturecount);
 
@@ -343,6 +344,7 @@ void screentmcdb()
 	delmarkedscreennodes(tmcpic3, 1);
 
 	changepic(tmcpic3, tmppic);
+	tmcpic3->bgcol = -1;
 	free(tmppic); tmppic = NULL;
 	drawscreen(tmcpic3, 0);
 }
@@ -358,6 +360,7 @@ char* screentmccategory(int type, char* category)
 
 	tmppic = ostrcat(tmcpic3->pic, NULL, 0, 0);
 	changepic(tmcpic3, NULL);
+	tmcpic3->bgcol = 0;
 
 	tmpstr = ostrcat(getconfig("mediadbfile", NULL), category, 0, 0);
 
@@ -400,6 +403,7 @@ char* screentmccategory(int type, char* category)
 	delmarkedscreennodes(tmcpic3, 1);
 
 	changepic(tmcpic3, tmppic);
+	tmcpic3->bgcol = -1;
 	free(tmppic); tmppic = NULL;
 	drawscreen(tmcpic3, 0);
 
@@ -419,6 +423,7 @@ void screentmcsettings()
 
 	tmppic = ostrcat(tmcpic3->pic, NULL, 0, 0);
 	changepic(tmcpic3, NULL);
+	tmcpic3->bgcol = 0;
 
 	pictimeout->hidden = NO;
 	picfull->hidden = NO;
@@ -467,6 +472,7 @@ void screentmcsettings()
 	delmarkedscreennodes(tmcpic3, 1);
 
 	changepic(tmcpic3, tmppic);
+	tmcpic3->bgcol = -1;
 	free(tmppic); tmppic = NULL;
 	drawscreen(tmcpic3, 0);
 }
@@ -535,7 +541,9 @@ void screentmcmenu()
 	struct skin* tmcpic4 = getscreen("tmcpic4");
 	struct skin* tmcpic5 = getscreen("tmcpic5");
 	char* tmpstr = NULL;
-	char* tmcpictitlebg = NULL, *tmcpicstarbg = NULL; 
+	char* tmcpictitlebg = NULL, *tmcpicstarbg = NULL;
+
+	setfbtransparent(255);
 
 	//checks
 	if(!file_exist(getconfig("mediadbpath", NULL)))
@@ -813,6 +821,7 @@ void screentmcmenu()
 
 					screenplay(tmcpic3->ret, 0, 0);
 
+					drawscreen(tmcbg, 1);
 					tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, 0);
 					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
 				}
@@ -842,6 +851,7 @@ void screentmcmenu()
 						if(mfilter == NULL) mfilter = mediadbfilter;
 					}
 
+					drawscreen(tmcbg, 1);
 					tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, 0);
 					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
 				}
@@ -870,6 +880,7 @@ void screentmcmenu()
 						if(mfilter == NULL) mfilter = mediadbfilter;
 					}
 
+					drawscreen(tmcbg, 1);
 					tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, 0);
 					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
 				}
@@ -883,6 +894,7 @@ void screentmcmenu()
 	if(status.mediadbthread == NULL)
 		freemediadb(0);
 	clearscreen(tmcbg);
+	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 }
 
 #endif

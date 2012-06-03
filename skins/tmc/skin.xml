@@ -6,7 +6,7 @@
 <screen pic=%pluginpath%/tmc/skin/tmcbg.jpg name=tmcbg posx=0 posy=0 width=1280 height=720>
 </screen>
 
-<screen name=tmcmenutxt posx=500 posy=620 width=230 height=40 fontsize=30 fontcol=fontcol valign=middle halign=center>
+<screen bgcol=0 name=tmcmenutxt posx=500 posy=620 width=230 height=40 fontsize=30 fontcol=fontcol valign=middle halign=center>
 </screen>
 
 <screen bgcol=-2 name=tmcpicstar posx=500 posy=370 width=230 height=40 fontsize=30 fontcol=fontcol valign=middle halign=center>
