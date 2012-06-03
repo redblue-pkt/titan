@@ -1,6 +1,7 @@
 #ifndef TMC_H
 #define TMC_H
 
+extern struct mediadbfilter* mediadbfilter;
 struct mediadbfilter* mediadbfilterpos = NULL;
 
 //Mainmenu
@@ -415,15 +416,15 @@ void screentmcsettings()
 	addchoicebox(pictimeout, "10", "10");
 	addchoicebox(pictimeout, "15", "15");
 	addchoicebox(pictimeout, "20", "20");
-	setchoiceboxselection(pictimeout, getskinconfig("tmcpictimeout", NULL));
+	setchoiceboxselection(pictimeout, getconfig("tmcpictimeout", NULL));
 
 	addchoicebox(picfull, "0", _("no"));
 	addchoicebox(picfull, "1", _("yes"));
-	setchoiceboxselection(picfull, getskinconfig("tmcpicfull", NULL));
+	setchoiceboxselection(picfull, getconfig("tmcpicfull", NULL));
 
 	addchoicebox(picname, "0", _("no"));
 	addchoicebox(picname, "1", _("yes"));
-	setchoiceboxselection(picname, getskinconfig("tmcpicname", NULL));
+	setchoiceboxselection(picname, getconfig("tmcpicname", NULL));
 
 	addscreenrc(tmcpic3, listbox);
 	drawscreen(tmcpic3, 0);
@@ -439,9 +440,9 @@ void screentmcsettings()
 
 		if(rcret == getrcconfigint("rcok", NULL) && listbox->select != NULL)
 		{
-			addskinconfigscreencheck("tmcpictimeout", tmcpic3, "5");
-			addskinconfigscreencheck("tmcpicname", tmcpic3, "0");
-			addskinconfigscreencheck("tmcpicfull", tmcpic3, "0");
+			addconfigscreencheck("tmcpictimeout", tmcpic3, "5");
+			addconfigscreencheck("tmcpicname", tmcpic3, "0");
+			addconfigscreencheck("tmcpicfull", tmcpic3, "0");
 			break;
 		}
 	}
