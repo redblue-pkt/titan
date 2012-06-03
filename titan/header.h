@@ -274,7 +274,7 @@ void dvdafterend();
 
 // play.h
 void playerffts(int speed);
-void screenplay(char* startfile, int startfolder, int flag);
+int screenplay(char* startfile, int startfolder, int flag);
 void playrcstop(int playertype, int flag);
 void playwritevfd(char* file);
 void playstartservice();
