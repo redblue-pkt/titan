@@ -555,7 +555,7 @@ void screentmcmenu()
 	{
 		rcret = waitrc(NULL, 0, 0);
 
-		if(menuid != 0 && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL)))
+		if(menuid > 1 && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL)))
 		{
 			if(active == 1)
 				active = 0;
