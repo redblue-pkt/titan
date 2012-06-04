@@ -5,10 +5,12 @@ char* checkthumb(char* path, char* file)
 {
 	char* tmpstr = NULL;
 	
-	tmpstr = ostrcat(createpath(path, "/.Thumbnails/"), file, 1, 0);
+	tmpstr = ostrcat(path, "/.Thumbnails/", 0, 0);
+	tmpstr = ostrcat(tmpstr, file, 1, 0);
 	if(file_exist(tmpstr))
 		return tmpstr;
 	
+	free(tmpstr);
 	return NULL;
 }
 
@@ -23,31 +25,36 @@ void thumbthread(struct stimerthread* self)
 	if(self == NULL) return;
 
 	debug(307, "start thumb thread");
+	status.createthumb = 1;
 
 	while(self->aktion != STOP)
 	{
-		sleep(5);
+		int count = 0;
 
 		qe = getqueue(101);
 		while(qe != NULL)
 		{
-			char* picname = ostrcat(createpath(qe->data, "/"), qe->data1, 0, 0);
-			buf = loadjpg(picname, &width, &height, &rowbytes, &channels, 16);
-			free(picname); picname = NULL;
-			if(buf != NULL)
+			if(qe->data != NULL && strstr(qe->data, ".Thumbnails") == NULL)
 			{
-				buf = scale(buf, width, height, 3, 100, 100, 1);
+				char* picname = createpath(qe->data, qe->data1);		
+				buf = loadjpg(picname, &width, &height, &rowbytes, &channels, 16);		
+				free(picname); picname = NULL;
+
 				if(buf != NULL)
 				{
-					thumbfile = ostrcat(thumbfile, (char*)qe->data, 1, 0);
-					thumbfile = ostrcat(thumbfile, "/.Thumbnails", 1, 0);
-					mkdir(thumbfile, 777);
-					
-					thumbfile = ostrcat(thumbfile, "/", 1, 0);
-					thumbfile = ostrcat(thumbfile, (char*)qe->data1, 1, 0);
+					buf = scale(buf, width, height, 3, 100, 100, 1);
+					if(buf != NULL)
+					{
+						thumbfile = ostrcat(thumbfile, (char*)qe->data, 1, 0);
+						thumbfile = ostrcat(thumbfile, "/.Thumbnails", 1, 0);
+						mkdir(thumbfile, 777);
 
-					debug(307, "create thumb: %s from %s/%s", thumbfile, (char*)qe->data, (char*)qe->data1);
-					savejpg(thumbfile, 100, 100, buf);
+						thumbfile = ostrcat(thumbfile, "/", 1, 0);
+						thumbfile = ostrcat(thumbfile, (char*)qe->data1, 1, 0);
+
+						debug(307, "create thumb: %s from %s/%s", thumbfile, (char*)qe->data, (char*)qe->data1);
+						savejpg(thumbfile, 100, 100, buf);
+					}
 				}
 			}
 
@@ -56,8 +63,16 @@ void thumbthread(struct stimerthread* self)
 			delqueue(qe, 0);
 			qe = getqueue(101);
 		}
+
+		while(count < 6)
+		{
+			if(self->aktion == STOP) break;
+			sleep(1);
+			count++;
+		}
 	}
 
+	status.createthumb = 0;
 	debug(307, "end thumb thread");
 }
 
