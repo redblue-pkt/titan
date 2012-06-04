@@ -444,6 +444,7 @@ echo "[titan] Language Po files done"
 echo "[titan]--------------------------------------------------------"
 
 mkdir -p "$HOME"/flashimg/BUILD/titan/var/etc/titan
+mkdir -p "$HOME"/flashimg/BUILD/titan/var/usr/lib
 mkdir -p "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins
 mkdir -p "$HOME"/flashimg/BUILD/titan/usr/local/bin
 mkdir -p "$HOME"/flashimg/BUILD/titan/sbin
@@ -541,6 +542,9 @@ else
 	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libixml* "$HOME"/flashimg/BUILD/titan/usr/lib
 	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libsoup* "$HOME"/flashimg/BUILD/titan/usr/lib
 	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libthreadutil* "$HOME"/flashimg/BUILD/titan/usr/lib
+
+	ln -s /var/swap/lib/gstreamer-0.10 "$HOME"/flashimg/BUILD/titan/var/usr/lib/gstreamer-0.10
+	ln -s /var/swap/lib/directfb-1.4-5 "$HOME"/flashimg/BUILD/titan/var/usr/lib/directfb-1.4-5
 fi
 
 #gmediarender
