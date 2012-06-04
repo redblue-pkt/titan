@@ -540,7 +540,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 								tmpstr = checkthumb(node->input, filelist[i]->d_name);
 								if(tmpstr == NULL)
 								{
-									addqueue(101, ostrcat((void*)node->input, NULL, 0, 0), strlen(node->input) + 1, ostrcat((void*)filelist[i]->d_name, NULL, 0, 0), strlen(filelist[i]->d_name) + 1, 0, NULL);
+									addqueue(101, (void*)node->input, strlen(node->input) + 1, (void*)filelist[i]->d_name, strlen(filelist[i]->d_name) + 1, 0, NULL);
 									tmpstr = ostrcat(tmpstr, "skin/ext_grid_dummy.png", 1, 0);
 									child->picheight = 180;
 									child->picwidth = 180;
