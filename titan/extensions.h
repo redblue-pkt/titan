@@ -128,8 +128,7 @@ void screenextensions(int mode, char* path)
 	}
 	else if(mode == 1)
 	{
-		ipkg_update();
-		ipkg_list();
+		system("cp -a /mnt/ipkg/* /var/usr/lib/ipkg");
 		ipkg_list_installed();
 		mbox = ipkmenulist(mlist, NULL, "Ipk Remove - select file", NULL, NULL, 1, 2);
 		
