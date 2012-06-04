@@ -151,7 +151,7 @@ if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/sbin
 	echo "[titan] minidlna building error !!!"
 	echo "[titan] check your src"
 	echo "[titan]--------------------------------------------------------"
-	exit 1
+#	exit 1
 fi
 
 echo "[titan]--------------------------------------------------------"
