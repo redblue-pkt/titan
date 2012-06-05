@@ -151,7 +151,7 @@ if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/sbin
 	echo "[titan] minidlna building error !!!"
 	echo "[titan] check your src"
 	echo "[titan]--------------------------------------------------------"
-#	exit 1
+	exit 1
 fi
 
 echo "[titan]--------------------------------------------------------"
@@ -562,6 +562,7 @@ cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libf
 
 # ffmpeg
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/ffmpeg "$HOME"/flashimg/BUILD/titan/sbin
+cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/jpegtran "$HOME"/flashimg/BUILD/titan/sbin
 
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type d -name "*.svn"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.h"`

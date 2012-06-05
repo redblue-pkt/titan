@@ -54,7 +54,7 @@ void screenfeed()
 		}
 
 		tmpstr = ostrcat(tmpstr, lastline, 1, 0);
-		tmpstr = ostrcat(tmpstr, "/svn/ipk/atemio510-rev16285-secret/sh4/titan", 1, 0);
+		tmpstr = ostrcat(tmpstr, "/svn/ipk/sh4/titan", 1, 0);
 		writesys(getconfig("feed", NULL), tmpstr, 0);
 	}
 
