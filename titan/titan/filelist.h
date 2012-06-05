@@ -200,11 +200,11 @@ int ralphasort64(const void* v1, const void* v2)
 
 //flag 0: listbox view
 //flag 1: grid view
-int createfilelist(struct skin* screen, struct skin* node, int flag)
+int createfilelist(struct skin* screen, struct skin* node, struct mediadb* dbnode , int flag)
 {
 	debug(1000, "in");
 	struct dirent64 **filelist;
-	struct mediadb* dbnode = NULL;
+//	struct mediadb* dbnode = NULL;
 	int count, tmpcount, i = 0, gridbr = 0, posx = 0, pagecount = 0, sumcount = 0;
 	struct skin *child = node, *oldchild = NULL, *parentdir = NULL;
 	char *tmpstr = NULL;
@@ -304,8 +304,8 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 		gridbr++;
 	} 
 
-	if((status.filelistextend == 2) || (status.filelistextend == 5)) 
-		readmediadb(getconfig("mediadbfile", NULL), 0, 0);
+//	if((status.filelistextend == 2) || (status.filelistextend == 5)) 
+//		readmediadb(getconfig("mediadbfile", NULL), 0, 0);
  	
 	child = parentdir;
 	tmpcount = count;
@@ -638,7 +638,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 										tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
 										tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
 										tmpstr = ostrcat(tmpstr, dbnode->poster, 1, 0);
-										tmpstr = ostrcat(tmpstr, "_poster.jpg", 1, 0);
+										tmpstr = ostrcat(tmpstr, "_cover.jpg", 1, 0);
 										break;
 									}
 									free(tmpstr), tmpstr = NULL;
@@ -737,27 +737,30 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 							child->filelist->imdbpath = tmpstr;
 						}
 */
+
 						if(status.filelistextend == 5)
 						{
 							dbnode = mediadb;
 							while(dbnode != NULL)
-							{							
+							{
+								free(tmpstr), tmpstr = NULL;								
 								tmpstr = ostrcat(tmpstr, basename(dbnode->file), 1, 0);
-
+printf("wo\n");
 								if(ostrcmp(filelist[i]->d_name, tmpstr) == 0)
 								{
+								printf("wo1\n");
 									free(tmpstr), tmpstr = NULL;
 									tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
 									tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
 									tmpstr = ostrcat(tmpstr, dbnode->poster, 1, 0);
-									tmpstr = ostrcat(tmpstr, "_backdrop.mvi", 1, 0);
+//									tmpstr = ostrcat(tmpstr, "_backdrop.mvi", 1, 0);
 									if(dbnode->title != NULL)
 										changetext(child, dbnode->title);
 									else
 										changetext(child, filelist[i]->d_name);								
 									break;
 								}
-								free(tmpstr), tmpstr = NULL;
+//								free(tmpstr), tmpstr = NULL;
 								dbnode = dbnode->next;
 							}
 
@@ -780,10 +783,10 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 		i++;
 	}
 
-	if(status.mediadbthread == NULL && ((status.filelistextend == 2) || (status.filelistextend == 5))) 
-	{
-		freemediadb(0);
-	}
+//	if(status.mediadbthread == NULL && ((status.filelistextend == 2) || (status.filelistextend == 5))) 
+//	{
+//		freemediadb(0);
+//	}
 	
 /*
 	for (i = 0; i <= pagecount; i++)
@@ -797,7 +800,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 	return 0;
 }
 
-void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* filelist, char* path, char* filemask, int tmpview, char* selection)
+void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* filelist, struct mediadb* dbnode, char* path, char* filemask, int tmpview, char* selection)
 {
 	debug(1000, "in");
 	char* tmpstr = NULL;
@@ -832,9 +835,17 @@ void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* fil
 
 	status.filelistextend = view;
 	printf("getfilelist: view=%d status=%d\n", view, status.filelistextend);
-
+	printf("getfilelist2: view=%d status=%d\n", view, status.filelistextend);
+//readmediadb(getconfig("mediadbfile", NULL), 0, 0);
+	printf("getfilelist3: view=%d status=%d\n", view, status.filelistextend);
+	dbnode = mediadb;
+	while(dbnode != NULL)
+	{
+		printf("getfilelist dbnode->file: %s\n",dbnode->file);
+		dbnode = dbnode->next;
+	}
 //	clearscreen(input);
-	createfilelist(input, filelist, 0);
+	createfilelist(input, filelist, mediadb, 0);
 	drawscreen(input, 0);
 	debug(1000, "out");
 }

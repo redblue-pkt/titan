@@ -35,7 +35,8 @@ struct skin* menu(struct skin* menu);
 
 // filelist.h
 void getfilelistmax(struct skin* filelist, int* maxdirs, int* maxfiles);
-void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* filelist, char* path, char* filemask, int tmpview, char* selection);
+//void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* filelist, char* path, char* filemask, int tmpview, char* selection);
+void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* filelist, struct mediadb* mediadb, char* path, char* filemask, int tmpview, char* selection);
 struct skin* getfilelistrandom(struct skin* filelist, int maxdirs, int maxfiles);
 
 // play.h

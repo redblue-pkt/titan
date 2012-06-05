@@ -1496,6 +1496,26 @@ void mediadbfindfilecb(char* path, char* file, int type)
 					imdb = startplugin(shortname, 0, 1, 0);
 			}
 #endif
+#ifdef SIMULATE
+			tmdb = gettmdb(imdb->id, 1, 1, 0);
+#else
+			struct skin* tmdbplugin = getplugin("TMDb");
+			if(imdbplugin != NULL)
+			{
+				struct tmdb* (*startplugin)(char*, int, int, int);
+				startplugin = dlsym(tmdbplugin->pluginhandle, "gettmdb");
+				if(startplugin != NULL)
+					tmdb = startplugin(imdb->id, 1, 1, 0);
+			}
+#endif
+			if(tmdb != NULL)
+			{
+				free(imdb->title);
+				imdb->title = ostrcat(tmdb->title, NULL, 0, 0);
+				free(imdb->plot);
+				imdb->plot = ostrcat(tmdb->plot, NULL, 0, 0);
+			}
+
 			debug(777, "shortname: %s", shortname);
 			free(shortname); shortname = NULL;
 
@@ -1520,6 +1540,18 @@ void mediadbfindfilecb(char* path, char* file, int type)
 			}
 #endif
 			imdb = NULL;
+#ifdef SIMULATE
+			freetmdb(tmdb);
+#else
+			if(tmdbplugin != NULL)
+			{
+				void (*startplugin)(struct tmdb*);
+				startplugin = dlsym(imdbplugin->pluginhandle, "freetmdb");
+				if(startplugin != NULL)
+					startplugin(tmdb);
+			}
+#endif
+			tmdb = NULL;
 		}
 		else if(type == 1)
 		{
