@@ -240,7 +240,7 @@ struct mediadb
 	char* id;
 	int type;
 	char* title;
-	char* year;
+	int year;
 	char* released;
 	char* runtime;
 	char* genre;
@@ -249,8 +249,8 @@ struct mediadb
 	char* actors;
 	char* plot;
 	char* poster;
-	char* rating;
-	char* votes;
+	int rating;
+	int votes;
 	char* file;
 	time_t timestamp;
 	struct mediadb* prev;
