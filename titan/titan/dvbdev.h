@@ -16,7 +16,7 @@ struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, st
 
 	memset(newnode, 0, sizeof(struct dvbdev));
 
-	newnode->dev = ostrcat(dev, "", 0, 0);
+	newnode->dev = ostrcat(dev, NULL, 0, 0);
 	newnode->fd = -1;
 	newnode->type = type;
 	newnode->feinfo = feinfo;

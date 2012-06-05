@@ -52,7 +52,7 @@ void screenscreensaveradjust()
 	if(getconfig("imdb_directory", NULL) != NULL)
 	{
 		char* imdbdir = NULL;
-		imdbdir = ostrcat("", imdb_directory, 0, 0);
+		imdbdir = ostrcat(NULL, imdb_directory, 0, 0);
 		imdbdir = ostrcat(imdbdir, "/imdb/", 1, 0);
 	
 		if(file_exist(imdbdir))

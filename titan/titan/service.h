@@ -814,18 +814,18 @@ char* servicecheckret(int ret, int flag)
 		switch(ret)
 		{
 			case 1:
-				tmpstr = ostrcat(_("Can't find a Tuner.\nAlle Tuners in use or no Tuner defined."), "", 0, 0);
+				tmpstr = ostrcat(_("Can't find a Tuner.\nAlle Tuners in use or no Tuner defined."), NULL, 0, 0);
 				break;
 			case 2:
-				tmpstr = ostrcat(_("Tuning to Channel failed!"), "", 0, 0);
+				tmpstr = ostrcat(_("Tuning to Channel failed!"), NULL, 0, 0);
 				break;
 			case 3:
-				tmpstr = ostrcat(_("Can't open frontend dev or Frontend Type unknown!"), "", 0, 0);
+				tmpstr = ostrcat(_("Can't open frontend dev or Frontend Type unknown!"), NULL, 0, 0);
 				break;
 			case 20:
 				break;
 			case 21:
-				tmpstr = ostrcat(_("Channellist empty or corrupt (channel not found)!"), "", 0, 0);
+				tmpstr = ostrcat(_("Channellist empty or corrupt (channel not found)!"), NULL, 0, 0);
 				break;
 			case 22:
 				break;

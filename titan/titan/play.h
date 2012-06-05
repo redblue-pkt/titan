@@ -54,7 +54,7 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 	char* tmpstr = NULL;
 	unsigned long long int pos = 0, len = 0, reverse = 0;
 
-	tmpstr = ostrcat(file, "", 0, 0);
+	tmpstr = ostrcat(file, NULL, 0, 0);
 	changetext(title, basename(tmpstr));
 	free(tmpstr); tmpstr = NULL;
 
@@ -255,7 +255,7 @@ void playrcok(char* file, int playinfobarstatus, int playertype, int flag)
 	if(checkbit(status.playercan, 0) == 0) return;
 
 	free(status.playfile); status.playfile = NULL;
-	status.playfile = ostrcat(file, "", 0, 0);
+	status.playfile = ostrcat(file, NULL, 0, 0);
 
 	screenplaypolicy(file, 1);
 	drawscreen(skin, 0);
@@ -452,7 +452,7 @@ void playrcplay(char* file, int* playinfobarstatus, int* playinfobarcount, int p
 	if(checkbit(status.playercan, 10) == 0) return;
 
 	free(status.playfile); status.playfile = NULL;
-	status.playfile = ostrcat(file, "", 0, 0);
+	status.playfile = ostrcat(file, NULL, 0, 0);
 
 	if(playertype == 1)
 	{
@@ -618,7 +618,7 @@ void playwritevfd(char* file)
 {
 	char* tmpstr = NULL;
 
-	tmpstr = ostrcat(file, "", 0, 0);
+	tmpstr = ostrcat(file, NULL, 0, 0);
 	if(tmpstr != NULL) writevfd(basename(tmpstr));
 	free(tmpstr); tmpstr = NULL;
 }
@@ -678,12 +678,12 @@ playerstart:
 
 	if(startfile == NULL)
 	{
-		tmpstr = ostrcat(file, "", 1, 0); file = NULL;
+		tmpstr = ostrcat(file, NULL, 1, 0); file = NULL;
 		file = screendir(startdir, formats, basename(tmpstr), &dirrcret, ".epg", _("DEL"), getrcconfigint("rcred", NULL), _("SELECT"), 0, "EPG", getrcconfigint("rcyellow", NULL), NULL, 0, 90, 1, 90, 1, 0);
 		free(tmpstr); tmpstr = NULL;
 	}
 	else
-		file = ostrcat(startfile, "", 0, 0);
+		file = ostrcat(startfile, NULL, 0, 0);
 
 	if(file != NULL)
 	{
@@ -692,7 +692,7 @@ playerstart:
 			if(getconfigint("playertype", NULL) == 1 && (cmpfilenameext(file, ".ts") == 0 || cmpfilenameext(file, ".mts") == 0 || cmpfilenameext(file, ".m2ts") == 0))
 				playertype = 1;
 
-			tmpstr = ostrcat(file, "", 0, 0);
+			tmpstr = ostrcat(file, NULL, 0, 0);
 			if(tmpstr != NULL && startfolder == 0) addconfig("rec_moviepath", dirname(tmpstr));
 			free(tmpstr); tmpstr = NULL;
 		
@@ -742,7 +742,7 @@ playerstart:
 		//eplayer.
 		//playchangecodec();
 		free(status.playfile); status.playfile = NULL;
-		status.playfile = ostrcat(file, "", 0, 0);
+		status.playfile = ostrcat(file, NULL, 0, 0);
 		status.play = 1;
 		while(1)
 		{

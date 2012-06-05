@@ -225,7 +225,7 @@ struct provider* addprovider(char *line, int count, struct provider* last)
 		return NULL;
 	}
 
-	newnode->name = ostrcat(name, "", 1, 0);
+	newnode->name = ostrcat(name, NULL, 1, 0);
 
 	if(last == NULL)
 	{

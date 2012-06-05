@@ -271,7 +271,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 					dvbnode->feaktpolarization = tpnode->polarization;
 					free(dvbnode->feaktnr);
 					if(aktnr != NULL)
-						dvbnode->feaktnr = ostrcat(aktnr, "", 0, 0);
+						dvbnode->feaktnr = ostrcat(aktnr, NULL, 0, 0);
 					else
 						dvbnode->feaktnr = NULL;
 
@@ -353,7 +353,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 					dvbnode->feaktpolarization = tpnode->polarization;
 					free(dvbnode->feaktnr);
 					if(aktnr != NULL)
-						dvbnode->feaktnr = ostrcat(aktnr, "", 0, 0);
+						dvbnode->feaktnr = ostrcat(aktnr, NULL, 0, 0);
 					else
 						dvbnode->feaktnr = NULL;
 					free(tmpstr); tmpstr = NULL;

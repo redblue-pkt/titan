@@ -338,7 +338,7 @@ int playerstart(char* file)
 		if(strstr(file, "://") == NULL)
 			tmpfile = ostrcat("file://", file, 0, 0);
 		else
-			tmpfile = ostrcat(file, "", 0, 0);
+			tmpfile = ostrcat(file, NULL, 0, 0);
 
 		if(tmpfile == NULL)
 		{
@@ -403,7 +403,7 @@ int playerstart(char* file)
 		if(strstr(file, "://") == NULL)
 			tmpfile = ostrcat("file://", file, 0, 0);
 		else
-			tmpfile = ostrcat(file, "", 0, 0);
+			tmpfile = ostrcat(file, NULL, 0, 0);
 
 		if(tmpfile == NULL)
 		{

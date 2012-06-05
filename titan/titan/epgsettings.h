@@ -30,9 +30,9 @@ void screenepgscanlist()
 	char* tmpstr = NULL, *tmpchannellist = NULL;
 
 	if(status.servicetype == 0)
-		tmpchannellist = ostrcat(getconfig("channellist", NULL), "", 0, 0);
+		tmpchannellist = ostrcat(getconfig("channellist", NULL), NULL, 0, 0);
 	else
-		tmpchannellist = ostrcat(getconfig("rchannellist", NULL), "", 0, 0);
+		tmpchannellist = ostrcat(getconfig("rchannellist", NULL), NULL, 0, 0);
 
 	scanlist->aktline = 1;
 	scanlist->aktpage = -1;

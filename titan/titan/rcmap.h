@@ -60,7 +60,7 @@ struct rcmap* addrcmap(char *line, int count, struct rcmap* last)
 		return NULL;
 	}
 
-	newnode->name = ostrcat(name, "", 1, 0);
+	newnode->name = ostrcat(name, NULL, 1, 0);
 	newnode->key = getrcconfigint(key, NULL);
 	free(key); key = NULL;
 	newnode->newkey = getrcconfigint(newkey, NULL);

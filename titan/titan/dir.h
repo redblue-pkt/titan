@@ -40,9 +40,9 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 	char *tmppath = NULL;
 
 	if(path == NULL || strlen(path) == 0 || !isdir(path))
-		tmppath = ostrcat("/", "", 0, 0);
+		tmppath = ostrcat("/", NULL, 0, 0);
 	else
-		tmppath = ostrcat(path, "", 0, 0);
+		tmppath = ostrcat(path, NULL, 0, 0);
 
 	filelist->aktline = 0;
 	filelist->aktpage = 0;

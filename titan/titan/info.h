@@ -25,7 +25,7 @@ void screensystem_info(int mode)
 		if(tmpstr1 != NULL) tmpstr2 = strstr(tmpstr1, "wElc0me");
 		tmpstr3 = command("cat /etc/imageinfo");
 		if(tmpstr2 == NULL)
-			tmpstr = ostrcat(tmpstr3, "", 1, 0);
+			tmpstr = ostrcat(tmpstr3, NULL, 1, 0);
 		else
 			tmpstr = ostrcat(tmpstr2, tmpstr3, 0, 1);
 		changetext(info, tmpstr);

@@ -644,7 +644,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						}
 						memset(child->filelist, 0, sizeof(struct filelist));
 						child->filelist->type = DT_DIR;
-						child->filelist->name = ostrcat(filelist[i]->d_name, "", 0, 0);
+						child->filelist->name = ostrcat(filelist[i]->d_name, NULL, 0, 0);
 						child->filelist->path = createpath(node->input, "");
 
 						if(status.filelistextend == 5)

@@ -1708,9 +1708,9 @@ char* webgetfilelist(char* param, char* link, char* dellink, char* path, char* m
 	if(param1 != NULL) page = atoi(param1);
 
 	if(strlen(param) == 0 || !isdir(param))
-		tmppath = ostrcat(path, "", 0, 0);
+		tmppath = ostrcat(path, NULL, 0, 0);
 	else
-		tmppath = ostrcat(param, "", 0, 0);
+		tmppath = ostrcat(param, NULL, 0, 0);
 
 	char* tmppath1 = createpath(tmppath, "");
 	free(tmppath); tmppath = tmppath1;
@@ -1720,7 +1720,7 @@ char* webgetfilelist(char* param, char* link, char* dellink, char* path, char* m
 		if(strstr(tmppath, path) != tmppath)
 		{
 			free(tmppath); tmppath = NULL;
-			tmppath = ostrcat(path, "", 0, 0);
+			tmppath = ostrcat(path, NULL, 0, 0);
 		}
 	}
 
@@ -2229,7 +2229,7 @@ char* webaddrectimer(char* param, int fmt)
 	strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
 	free(loctime); loctime = NULL;
 
-	buf1 = ostrcat(buf2, "", 0, 0);
+	buf1 = ostrcat(buf2, NULL, 0, 0);
 	ostrcatbig(&buf, "<td><font class=label>Begin:&nbsp;</font></td>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"begin\" value=\"", &maxlen, &pos);
 	ostrcatbig(&buf, buf1, &maxlen, &pos);
@@ -2243,7 +2243,7 @@ char* webaddrectimer(char* param, int fmt)
 	strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
 	free(loctime); loctime = NULL;
 	
-	buf1 = ostrcat(buf2, "", 0, 0);
+	buf1 = ostrcat(buf2, NULL, 0, 0);
 	ostrcatbig(&buf, "<td><font class=label>End:&nbsp;</font></td>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"end\" value=\"", &maxlen, &pos);
 	ostrcatbig(&buf, buf1, &maxlen, &pos);
@@ -2406,7 +2406,7 @@ char* webrectimersend(char* param, int fmt)
 		}
 	
 		free(node->name); node->name = NULL;
-		node->name = ostrcat(name, "", 0, 0);
+		node->name = ostrcat(name, NULL, 0, 0);
 	
 		if(ostrcmp(type, "record") == 0)
 			node->justplay = 0;
@@ -2510,7 +2510,7 @@ char* webeditrectimer(char* param, int fmt)
 	strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
 	free(loctime); loctime = NULL;
 
-	buf1 = ostrcat(buf2, "", 0, 0);
+	buf1 = ostrcat(buf2, NULL, 0, 0);
 	ostrcatbig(&buf, "<td><font class=label>Begin:&nbsp;</font></td>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"begin\" value=\"", &maxlen, &pos);
 	ostrcatbig(&buf, buf1, &maxlen, &pos);
@@ -2521,7 +2521,7 @@ char* webeditrectimer(char* param, int fmt)
 	strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
 	free(loctime); loctime = NULL;
 
-	buf1 = ostrcat(buf2, "", 0, 0);
+	buf1 = ostrcat(buf2, NULL, 0, 0);
 	ostrcatbig(&buf, "<td><font class=label>End:&nbsp;</font></td>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"end\" value=\"", &maxlen, &pos);
 	ostrcatbig(&buf, buf1, &maxlen, &pos);

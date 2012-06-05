@@ -475,32 +475,32 @@ void screennetwork_adapterext(int mode, char* interface)
 		if(net->ip != tmp_ipaddresse)
 		{
 			free(net->ip);
-			net->ip = ostrcat(tmp_ipaddresse, "", 0, 0);
+			net->ip = ostrcat(tmp_ipaddresse, NULL, 0, 0);
 		}
 		if(net->netmask != tmp_netmask)
 		{
 			free(net->netmask);
-			net->netmask = ostrcat(tmp_netmask, "", 0, 0);
+			net->netmask = ostrcat(tmp_netmask, NULL, 0, 0);
 		}
 		if(status.gateway != tmp_gateway)
 		{
 			free(status.gateway);
-			status.gateway = ostrcat(tmp_gateway, "", 0, 0);
+			status.gateway = ostrcat(tmp_gateway, NULL, 0, 0);
 		}
 		if(status.dnsserver1 != tmp_dnsserver1)
 		{
 			free(status.dnsserver1);
-			status.dnsserver1 = ostrcat(tmp_dnsserver1, "", 0, 0);
+			status.dnsserver1 = ostrcat(tmp_dnsserver1, NULL, 0, 0);
 		}
 		if(status.dnsserver2 != tmp_dnsserver2)
 		{
 			free(status.dnsserver2);
-			status.dnsserver2 = ostrcat(tmp_dnsserver2, "", 0, 0);
+			status.dnsserver2 = ostrcat(tmp_dnsserver2, NULL, 0, 0);
 		}
 		//if(net->broadcast != tmp_broadcast)
 		//{
 		//	free(net->broadcast);
-		//	net->broadcast = ostrcat(tmp_broadcast, "", 0, 0);
+		//	net->broadcast = ostrcat(tmp_broadcast, NULL, 0, 0);
 		//}
 		net->dhcp = tmp_dhcp;
 

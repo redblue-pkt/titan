@@ -23,7 +23,7 @@ struct font* addfont(char *fontname)
 	struct font *newnode = NULL, *node = font;
 	char *name = NULL;
 
-	name = ostrcat(fontname, "", 0, 0);
+	name = ostrcat(fontname, NULL, 0, 0);
 	if(name == NULL)
 	{
 		err("no memory");
