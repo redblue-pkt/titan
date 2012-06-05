@@ -1,7 +1,12 @@
 #ifndef TMDB_H
 #define TMDB_H
 
-#define TMPTMDBPIC "/tmp/tmptmdb.jpg"
+#define TMPTMDBPIC1 "/tmp/tmptmdb1.jpg"
+#define TMPTMDBPIC2 "/tmp/tmptmdb2.jpg"
+#define TMPTMDBPIC3 "/tmp/tmptmdb3.jpg"
+#define TMPTMDBPIC4 "/tmp/tmptmdb4.jpg"
+#define TMPTMDBPIC5 "/tmp/tmptmdb5.mvi"
+
 extern struct tmdb* tmdb;
 
 char* convertreturntopspace(char* value)
@@ -31,7 +36,7 @@ void freetmdb(struct tmdb* node)
 	free(node->genre); node->genre = NULL;
 	free(node->runtime); node->runtime = NULL;
 	free(node->plot); node->plot = NULL;
-	free(node->poster); node->poster = NULL;
+	free(node->postermid); node->postermid = NULL;
 	free(node->rating); node->rating = NULL;
 	free(node->votes); node->votes = NULL;
 	free(node->id); node->id = NULL;
@@ -44,8 +49,13 @@ void freetmdb(struct tmdb* node)
 	free(node->score); node->score = NULL;
 	free(node->cover); node->cover = NULL;
 	free(node->thumb); node->thumb = NULL;
+	free(node->mvi); node->mvi = NULL;
 
-	unlink(TMPTMDBPIC);
+	unlink(TMPTMDBPIC1);
+	unlink(TMPTMDBPIC2);
+	unlink(TMPTMDBPIC3);
+	unlink(TMPTMDBPIC4);
+	unlink(TMPTMDBPIC5);
 
 	free(node); node = NULL;
 }
@@ -54,8 +64,9 @@ void freetmdb(struct tmdb* node)
 // flag 1 = imdbid search
 // flag 2 = imdbid search and save
 
-struct tmdb* gettmdb(char* title, int flag)
+struct tmdb* gettmdb(char* title, int flag, int flag1, int flag2)
 {
+printf("aaaaaaa\n");
 	struct tmdb* tmdb = NULL;
 	char* tmpstr = NULL;
 	char* tmpsearch = NULL;
@@ -63,11 +74,7 @@ struct tmdb* gettmdb(char* title, int flag)
 	char* searchurl = NULL;
 	char* imdburl = NULL;
 	char* lang = NULL;
-	char* path = NULL;
 	char* savefile = NULL;
-	char* cmd = NULL;
-
-	int skip = 1;
 			
 	apikey = ostrcat(apikey, "7bcd34bb47bc65d20a49b6b446a32866", 1, 0);
 	searchurl = ostrcat(searchurl, "Movie.search", 1, 0);
@@ -75,6 +82,7 @@ struct tmdb* gettmdb(char* title, int flag)
 	lang = ostrcat(lang, "de", 1, 0);
 	
 start:
+printf("bbbbbbbb\n");
 	tmpsearch = ostrcat("2.1/", NULL, 0, 0);
 	if(flag == 0)
 		tmpsearch = ostrcat(tmpsearch, searchurl, 1, 0);
@@ -95,7 +103,7 @@ start:
 	debug(133, "tmpstr: %s", tmpstr);
 				
 	free(tmpsearch); tmpsearch = NULL;
-
+printf("cccccccc\n");
 	if(tmpstr != NULL)
 	{
 		tmdb = (struct tmdb*)malloc(sizeof(struct tmdb));
@@ -111,7 +119,7 @@ start:
 			free(tmpstr), tmpstr = NULL;
 			tmdb->title = ostrcat("Nothing found.", NULL, 0, 0);
 		}
-		else if(!string_find("<opensearch:totalResults>1</opensearch:totalResults>", tmpstr))
+		else if(!string_find("<opensearch:totalResults>1</opensearch:totalResults>", tmpstr) && flag1 == 0)
 		{
 			char* tmpstr1 = NULL;			
 			char* tmpstr2 = NULL;
@@ -229,10 +237,10 @@ start:
 
 		if(string_find("type=\"poster\"", tmpstr))
 		{
-			tmdb->poster = string_resub("<image type=\"poster\" url=\"", "\" size=\"mid\"", tmpstr);
-			while(string_find("<image type=", tmdb->poster))
+			tmdb->postermid = string_resub("<image type=\"poster\" url=\"", "\" size=\"mid\"", tmpstr);
+			while(string_find("<image type=", tmdb->postermid))
 			{
-				tmdb->poster = string_resub("<image type=\"poster\" url=\"", "\" size=\"mid\"", tmdb->poster);
+				tmdb->postermid = string_resub("<image type=\"poster\" url=\"", "\" size=\"mid\"", tmdb->postermid);
 			}
 		}
 
@@ -265,55 +273,10 @@ start:
 			tmdb->imdbid = string_resub("<imdb_id>", "</imdb_id>", tmpstr);
 		}
 
-		if(flag == 2)
-		{
-			path = ostrcat(path, getconfig("mediadbpath", NULL), 1, 0);
-			if(path != NULL && file_exist(path))
-			{
-				path = ostrcat(path, "/mediadb", 1, 0);					
-				if(!file_exist(path))
-				{
-					cmd = ostrcat("mkdir ", path, 0, 0);
-					system(cmd);
-					free(cmd), cmd = NULL;
-				}
-				if(file_exist(path))
-					skip = 0;
-			}
-		}
-						
-		if(tmdb->poster != NULL)
-		{
-			char* ip = NULL, *pos = NULL, *path = NULL;
-			ip = string_replace("http://", "", tmdb->poster, 0);
-
-			if(ip != NULL)
-				pos = strchr(ip, '/');
-			if(pos != NULL)
-			{
-				pos[0] = '\0';
-				path = pos + 1;
-			}
-
-			if(flag == 2 && skip == 0)
-			{
-				savefile = ostrcat(path, "/", 0, 0);
-				savefile = ostrcat(savefile, tmdb->id, 1, 0);
-				savefile = ostrcat(savefile, "_poster_mid.jpg", 1, 0);
-				if(!file_exist(savefile))
-					gethttp(ip, path, 80, savefile, NULL, NULL, 0);
-				free(savefile), savefile = NULL;
-			}
-			else
-				gethttp(ip, path, 80, TMPTMDBPIC, NULL, NULL, 0);
-
-			free(ip); ip = NULL;
-		}
-		
-		if(flag == 2 && skip == 0)
+		if(flag2 == 0)
 		{
 			if(tmdb->thumb != NULL)
-			{
+			{ 		
 				char* ip = NULL, *pos = NULL, *path = NULL;
 				ip = string_replace("http://", "", tmdb->thumb, 0);
 	
@@ -325,19 +288,26 @@ start:
 					path = pos + 1;
 				}
 	
-				savefile = ostrcat(path, "/", 0, 0);
-				savefile = ostrcat(savefile, tmdb->id, 1, 0);
-				savefile = ostrcat(savefile, "_poster_thumb.jpg", 1, 0);
-		
-				if(!file_exist(savefile))
+				if(flag1 == 1)
+				{
+					savefile = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+					savefile = ostrcat(savefile, tmdb->imdbid, 1, 0);
+					savefile = ostrcat(savefile, "_thumb.jpg", 1, 0);
 					gethttp(ip, path, 80, savefile, NULL, NULL, 0);
+					free(tmdb->thumb);
+					tmdb->thumb = savefile;
+				}
+				else
+				{
+					gethttp(ip, path, 80, TMPTMDBPIC1, NULL, NULL, 0);
+					free(tmdb->thumb);
+					tmdb->thumb = ostrcat(TMPTMDBPIC1, NULL, 0, 0);
+				}
 	
-				free(savefile), savefile = NULL;
 				free(ip); ip = NULL;
 			}
-	
-			if(tmdb->cover != NULL && flag == 2)
-			{
+			if(tmdb->cover != NULL)
+			{ 		
 				char* ip = NULL, *pos = NULL, *path = NULL;
 				ip = string_replace("http://", "", tmdb->cover, 0);
 	
@@ -349,20 +319,57 @@ start:
 					path = pos + 1;
 				}
 	
-				savefile = ostrcat(path, "/", 0, 0);
-				savefile = ostrcat(savefile, "/", 1, 0);
-				savefile = ostrcat(savefile, tmdb->id, 1, 0);
-				savefile = ostrcat(savefile, "_poster_cover.jpg", 1, 0);
-		
-				if(!file_exist(savefile))
+				if(flag1 == 1)
+				{
+					savefile = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+					savefile = ostrcat(savefile, tmdb->imdbid, 1, 0);
+					savefile = ostrcat(savefile, "_cover.jpg", 1, 0);
 					gethttp(ip, path, 80, savefile, NULL, NULL, 0);
+					free(tmdb->cover);
+					tmdb->cover = savefile;
+				}
+				else
+				{
+					gethttp(ip, path, 80, TMPTMDBPIC2, NULL, NULL, 0);
+					free(tmdb->cover);
+					tmdb->cover = ostrcat(TMPTMDBPIC2, NULL, 0, 0);
+				}
 	
-				free(savefile), savefile = NULL;
 				free(ip); ip = NULL;
 			}
+			if(tmdb->postermid != NULL)
+			{ 		
+				char* ip = NULL, *pos = NULL, *path = NULL;
+				ip = string_replace("http://", "", tmdb->postermid, 0);
 	
-			if(tmdb->backdrop != NULL && flag == 2)
-			{
+				if(ip != NULL)
+					pos = strchr(ip, '/');
+				if(pos != NULL)
+				{
+					pos[0] = '\0';
+					path = pos + 1;
+				}
+	
+				if(flag1 == 1)
+				{
+					savefile = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+					savefile = ostrcat(savefile, tmdb->imdbid, 1, 0);
+					savefile = ostrcat(savefile, "_postermid.jpg", 1, 0);
+					gethttp(ip, path, 80, savefile, NULL, NULL, 0);
+					free(tmdb->postermid);
+					tmdb->postermid = savefile;
+				}
+				else
+				{
+					gethttp(ip, path, 80, TMPTMDBPIC3, NULL, NULL, 0);
+					free(tmdb->postermid);
+					tmdb->postermid = ostrcat(TMPTMDBPIC3, NULL, 0, 0);
+				}
+	
+				free(ip); ip = NULL;
+			}
+			if(tmdb->backdrop != NULL)
+			{ 		
 				char* ip = NULL, *pos = NULL, *path = NULL;
 				ip = string_replace("http://", "", tmdb->backdrop, 0);
 	
@@ -374,35 +381,94 @@ start:
 					path = pos + 1;
 				}
 	
-				savefile = ostrcat(path, "/", 0, 0);
-				savefile = ostrcat(savefile, tmdb->id, 1, 0);
-				savefile = ostrcat(savefile, "_backdrop.jpg", 1, 0);
-		
-				if(!file_exist(savefile))
+				if(flag1 == 1)
 				{
+printf("1111111\n");
+					savefile = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+					savefile = ostrcat(savefile, tmdb->imdbid, 1, 0);
+					savefile = ostrcat(savefile, "_backdrop.jpg", 1, 0);
 					gethttp(ip, path, 80, savefile, NULL, NULL, 0);
-					if(file_exist(savefile))
-					{
-						cmd = ostrcat(cmd, "jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
-						cmd = ostrcat(cmd, savefile, 1, 0);
-						system(cmd);
-						free(cmd), cmd = NULL;
-						system("ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg");
-						cmd = ostrcat(cmd, "mv /tmp/backdrop.resize.mpg ", 1, 0);
-						cmd = ostrcat(cmd, path, 1, 0);
-						cmd = ostrcat(cmd, "/", 1, 0);
-						cmd = ostrcat(cmd, tmdb->id, 1, 0);
-						cmd = ostrcat(cmd, "_backdrop.mvi", 1, 0);
-						system(cmd);
-						free(cmd), cmd = NULL;
-					}
+
+					free(tmpstr), tmpstr = NULL;
+					tmpstr = ostrcat(tmpstr, savefile, 1, 0);
+					
+					free(tmdb->backdrop);
+					tmdb->backdrop = savefile;
+printf("2222222\n");
+					char* cmd = NULL;
+					cmd = ostrcat(cmd, "/var/bin/jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
+					cmd = ostrcat(cmd, tmpstr, 1, 0);
+
+					debug(10, "cmd %s", cmd);
+					system(cmd);
+					free(cmd), cmd = NULL;
+printf("3333333\n");
+					cmd = ostrcat(cmd, "/var/bin/ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg", 1, 0);
+					debug(10, "cmd %s", cmd);
+					system(cmd);
+					free(cmd), cmd = NULL;
+printf("4444444\n");
+					char* tmpmvi= NULL;
+					tmpmvi = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+					tmpmvi = ostrcat(tmpmvi, tmdb->imdbid, 1, 0);
+					tmpmvi = ostrcat(tmpmvi, "_backdrop.mvi", 1, 0);
+printf("5555555\n");
+					cmd = ostrcat(cmd, "mv /tmp/backdrop.resize.mpg ", 1, 0);
+					cmd = ostrcat(cmd, tmpmvi, 1, 0);
+					debug(10, "cmd %s", cmd);
+					system(cmd);
+					free(cmd), cmd = NULL;
+printf("6666666\n");
+//					free(tmdb->mvi);
+					tmdb->mvi = tmpmvi;
+printf("7777777\n");
 				}
-				free(savefile), savefile = NULL;
+				else
+				{
+					gethttp(ip, path, 80, TMPTMDBPIC4, NULL, NULL, 0);
+					free(tmdb->backdrop);
+					tmdb->backdrop = ostrcat(TMPTMDBPIC4, NULL, 0, 0);
+					tmdb->mvi = ostrcat(TMPTMDBPIC4, NULL, 0, 0);
+				}
+printf("8888888\n");
 				free(ip); ip = NULL;
+printf("9999999\n");
+			}
+		}
+		else
+		{
+			if(tmdb->thumb == NULL)
+			{
+				free(tmdb->thumb);
+				tmdb->thumb = NULL;
+			}
+			if(tmdb->cover == NULL)
+			{
+				free(tmdb->cover);
+				tmdb->cover = NULL;
+			}
+			if(tmdb->postermid == NULL)
+			{
+				free(tmdb->postermid);
+				tmdb->postermid = NULL;
+			}
+			if(tmdb->backdrop == NULL)
+			{
+				free(tmdb->backdrop);
+				tmdb->backdrop = NULL;
+			}
+			if(tmdb->mvi == NULL)
+			{
+				free(tmdb->mvi);
+				tmdb->mvi = NULL;
 			}
 		}
 
-		free(tmpstr); tmpstr = NULL;
+		if(tmpstr != NULL)
+		{
+			free(tmpstr); tmpstr = NULL;
+		}
+
 		debug(133, "title: %s", tmdb->title);
 		debug(133, "language: %s", tmdb->language);
 		debug(133, "type: %s", tmdb->type);
@@ -415,8 +481,9 @@ start:
 		debug(133, "plot: %s", tmdb->plot);
 		debug(133, "thumb: %s", tmdb->thumb);
 		debug(133, "cover: %s", tmdb->cover);
-		debug(133, "poster: %s", tmdb->poster);
+		debug(133, "postermid: %s", tmdb->postermid);
 		debug(133, "backdrop: %s", tmdb->backdrop);
+		debug(133, "mvi: %s", tmdb->mvi);
 		debug(133, "rating: %s", tmdb->rating);
 		debug(133, "votes: %s", tmdb->votes);
 		debug(133, "id: %s", tmdb->id);	
@@ -448,7 +515,7 @@ void screentmdb(char* title)
 
 	if(title == NULL) title = getepgakttitle(NULL);
 
-	node = gettmdb(title, 0);
+	node = gettmdb(title, 0, 0, 0);
 start:
 	if(node != NULL)
 	{
@@ -459,7 +526,7 @@ start:
 		changetext(skin_genre, node->genre);
 		changetext(skin_released, node->released);
 		changetext(skin_votes, node->votes);
-		changepic(skin_cover, TMPTMDBPIC);
+		changepic(skin_cover, TMPTMDBPIC3);
 	}
 
 	drawscreen(tmdbskin, 0);
@@ -477,7 +544,7 @@ start:
       if(search != NULL)
       {
 				freetmdb(node); node = NULL;
-				node = gettmdb(search, 0);
+				node = gettmdb(search, 0, 0, 0);
         free(search); search = NULL;
 				goto start;
       }

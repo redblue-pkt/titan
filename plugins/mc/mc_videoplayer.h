@@ -3,9 +3,20 @@
 
 extern struct skin* skin;
 extern struct screensaver* screensaver;
+extern struct mediadb* mediadb;
 
 void screenmc_videoplayer()
 {
+	struct mediadb* dbnode = NULL;
+	readmediadb(getconfig("mediadbfile", NULL), 0, 0);
+	dbnode = mediadb;
+
+	while(dbnode != NULL)
+	{
+		printf("dbnode->file: %s\n",dbnode->file);
+		dbnode = dbnode->next;
+	}
+				
 	char* filename = NULL;
 	char* tmppolicy = NULL;
 	char* currentdirectory = NULL;
@@ -66,7 +77,7 @@ void screenmc_videoplayer()
 	tmpview = view;
 	mc_changeview(view, filelist);
 
-	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
+	getfilelist(apskin, filelistpath, filelist, mediadb, currentdirectory, filemask, tmpview, selectedfile);
 	addscreenrc(apskin, filelist);
 
 	char* savecmd = NULL;
@@ -92,6 +103,7 @@ void screenmc_videoplayer()
 		else if(status.filelistextend == 5 && filelist->select != NULL)
 		{
 			char* cmd = NULL;
+/*
 			cmd = ostrcat(cmd, filelist->select->filelist->imdbpath, 1, 0);
 			cmd = ostrcat(cmd, ".jpg", 1, 0);			
 			changepic(skin_cover, cmd);
@@ -100,7 +112,43 @@ void screenmc_videoplayer()
 			free(cmd), cmd = NULL;
 			cmd = ostrcat(cmd, filelist->select->filelist->imdbpath, 1, 0);
 			cmd = ostrcat(cmd, ".backdrop.mvi", 1, 0);
+*/
+			cmd = ostrcat(cmd, filelist->select->filelist->imdbpath, 1, 0);
+			cmd = ostrcat(cmd, "_thumb.jpg", 1, 0);			
+			changepic(skin_cover, cmd);
+			drawscreen(apskin, 0);
 
+			free(cmd), cmd = NULL;
+			cmd = ostrcat(cmd, filelist->select->filelist->imdbpath, 1, 0);
+			cmd = ostrcat(cmd, "_backdrop.mvi", 1, 0);
+
+/*
+			if(filelist->select != NULL && filelist->select->input == NULL)
+			{
+				while(dbnode != NULL)
+				{
+					char* tmpstr = NULL;
+					tmpstr = ostrcat(tmpstr, basename(dbnode->file), 1, 0);
+					if(ostrcmp(listbox->select->name, tmpstr) == 0)
+					{
+						char* tmpstr1 = NULL;
+						tmpstr1 = ostrcat(tmpstr1, getconfig("mediadbpath", NULL), 1, 0);
+						tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);																			
+						tmpstr1 = ostrcat(tmpstr1, dbnode->poster, 1, 0);
+						cmd = ostrcat(cmd, tmpstr1, 1, 0);
+						tmpstr1 = ostrcat(tmpstr1, "_thumb.jpg", 1, 0);
+						changepic(skin_cover, tmpstr1);
+						free(tmpstr1), tmpstr1 = NULL;
+						cmd = ostrcat(cmd, ".backdrop.mvi", 1, 0);
+						break;
+					}
+					free(tmpstr), tmpstr = NULL;
+					dbnode = dbnode->next;
+				}
+			}
+*/
+			drawscreen(apskin, 0);
+					
 			if(!file_exist(cmd)){
 				free(cmd), cmd = NULL;
 				cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 1, 0);
@@ -248,7 +296,7 @@ void screenmc_videoplayer()
 					mc_changeview(tmpview, filelist);
 
 					delownerrc(apskin);	
-					getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
+					getfilelist(apskin, filelistpath, filelist, dbnode, filelistpath->text, filemask, tmpview, filelist->select->text);
 					addscreenrc(apskin, filelist);
 					drawscreen(apskin, 0);
 				}
@@ -288,7 +336,7 @@ void screenmc_videoplayer()
 				mc_changeview(tmpview, filelist);
 
 				delownerrc(apskin);	
-				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
+				getfilelist(apskin, filelistpath, filelist, dbnode, filelistpath->text, filemask, tmpview, filelist->select->text);
 				addscreenrc(apskin, filelist);
 				drawscreen(apskin, 0);
 			}

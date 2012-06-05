@@ -76,9 +76,9 @@ void filelistok(struct skin* screen, struct skin* filelist, int flag)
 					changetext(path, filelist->input);
 				delmarkedscreennodes(screen, FILELISTDELMARK);
 				if(filelist->type & GRID)
-					createfilelist(screen, filelist, 1);
+					createfilelist(screen, filelist, NULL, 1);
 				else
-					createfilelist(screen, filelist, 0);
+					createfilelist(screen, filelist, NULL, 0);
 				setlistboxselection(filelist, plastdir);
 				free(lastdir); lastdir = NULL;
 				drawscreen(screen, flag);
