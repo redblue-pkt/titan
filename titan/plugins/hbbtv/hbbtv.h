@@ -26,8 +26,11 @@ int operarcconnfd = -1;
 int opera_control_r_fd = -1;
 int operarcthread_ok = 0;
 int operareceiverthread_ok = 0;
-int operaserviceend = 0;
-int operaservicestate = 0;
+//100 = live play
+//0 = pause
+//1 = play
+//2 = stop
+int operaservicestate = 100;
 char* operaplayurl = NULL;
 
 struct hbbtvfav* addhbbtvfav(char *line, int count, struct hbbtvfav* last)
@@ -202,7 +205,7 @@ void operarcthread()
 	ret = sockcreate(&operarcsockfd, RC_TITAN, 1);
 	if(ret != 0) return;
 
-	closeonexec(operarcsockfd);
+	//closeonexec(operarcsockfd);
 
 	debug(788, "opera wait for rc accept");
 	operarcthread_ok = 1;
@@ -227,7 +230,7 @@ void operareceiverthread(struct stimerthread* self)
 	}
 
 	fcntl(control_w_fd, F_SETFL, fcntl(control_w_fd, F_GETFL) | O_NONBLOCK);
-	closeonexec(control_w_fd);
+	//closeonexec(control_w_fd);
 
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
@@ -292,18 +295,54 @@ void operasendkey(char* rckey)
 	}
 }
 
-void operastartservice()
+//flag 0: stop live tv and start play service
+//flag 1: stop play and start live service
+//flag 2: stop play
+int operaservice(char* url, int flag)
 {
 	char* tmpstr = NULL;
 
-	if(operaserviceend == 1)
+	//stop live tv service and start play
+	if(flag == 0)
 	{
+		if(operaservicestate == 100)
+		{
+			int ret = servicestop(status.aktservice, 1, 1);
+			if(ret == 1) return 1;
+		}
+
+		free(operaplayurl); operaplayurl = NULL;
+		operaplayurl = ostrcat(url, NULL, 0, 0);
+		playerstop();
+		playerafterend();
+		playerstart(operaplayurl);
+		operaservicestate = 1;
+	}
+
+	//stop play and start live service
+	if(flag == 1 && operaservicestate != 100)
+	{
+		//stop player if running
+		playerstop();
+		playerafterend();
+		free(operaplayurl); operaplayurl = NULL;
+
 		tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
 		servicestart(status.lastservice->channel, tmpstr, NULL, 0);
 		free(tmpstr); tmpstr = NULL;
-		operaserviceend = 0;
+		operaservicestate = 100;
 	}
-	free(operaplayurl); operaplayurl = NULL;
+
+	//stop play
+	if(flag == 2 && operaservicestate != 100)
+	{
+		playerstop();
+		playerafterend();
+		free(operaplayurl); operaplayurl = NULL;
+		operaservicestate = 2;
+	}
+
+	return 0;
 }
 
 void screenopera(char* url)
@@ -381,19 +420,13 @@ void screenopera(char* url)
     chdir(dirbuf);
   free(dirbuf); dirbuf = NULL;
     
-
 	while(1)
 	{
 		rcret = waitrc(NULL, 1000, 0);
     
     //check for player EOF
-    if(operaservicestate == 1 && !playerisplaying())
-    {
-      playerafterend();
-      operaservicestate = 0;
-
-			operastartservice();
-    }
+    if(operaservicestate < 2 && !playerisplaying())
+      operaservice(NULL, 1);
 
 		if(rcret == getrcconfigint("rchbbtv", NULL))
 		{
@@ -448,7 +481,7 @@ void screenopera(char* url)
 	if(operareceiver != NULL)
 	{
 		operareceiver->aktion = STOP;
-		while(operareceiver->status != DEACTIVE)
+		while(operareceiver != NULL && operareceiver->status != DEACTIVE)
 		{
 			usleep(100000);
 			i++; if(i > 20) break;
@@ -458,9 +491,6 @@ void screenopera(char* url)
 		{
 			err("detect hanging timer sub thread (operareceiver)");
 		}
-		else if(operareceiver->count < 0 && operareceiver->thread != '\0')
-			pthread_join(operareceiver->thread, &threadstatus);
-		pthread_attr_destroy(&operareceiver->attr);
 	}
 
 	sockclose(&operarcsockfd);
@@ -481,16 +511,7 @@ void screenopera(char* url)
 	//sleep(3);
 	fbrestore();
 
-	//stop player if running
-	if(operaservicestate == 1)
-	{
-		playerstop();
-		playerafterend();
-		operaservicestate = 0;
-	}
-
-	//start last service
-	operastartservice();
+	operaservice(NULL, 1); //stop play, start live tv
 
 	//reset tv pic size
 	status.tvpic = 1;
@@ -587,24 +608,11 @@ void operareceivercb(char* cmd)
 		{
 			if(count > 2)
 			{
-				if(ostrcmp("100", (&ret[2])->part) == 0) //PLAY OR RESUME
+				if(ostrcmp("100", (&ret[2])->part) == 0) //play or continue
 				{
-					if(ostrcmp(operaplayurl, (&ret[1])->part) != 0) //DIFFERENT URI SO PLAY
+					if(ostrcmp(operaplayurl, (&ret[1])->part) != 0) //different url, so play
 					{
-            //stop live tv service
-            if(operaserviceend == 0)
-            {
-              int ret = servicestop(status.aktservice, 1, 1);
-              if(ret == 1) return;
-              operaserviceend = 1;
-            }
-          
-						free(operaplayurl); operaplayurl = NULL;
-						operaplayurl = ostrcat((&ret[1])->part, NULL, 0, 0);
-            playerstop();
-            playerafterend();
-            playerstart(operaplayurl);
-            operaservicestate = 1;
+						operaservice((&ret[1])->part, 0); //stop live tv and play
 					}
 					else
           {
@@ -612,7 +620,7 @@ void operareceivercb(char* cmd)
             operaservicestate = 1;
 					}
 				}
-				else if(ostrcmp("0", (&ret[2])->part) == 0) //PAUSE
+				else if(ostrcmp("0", (&ret[2])->part) == 0) //pause
 				{
           playerpause();
           operaservicestate = 0;
@@ -621,10 +629,7 @@ void operareceivercb(char* cmd)
 		}
 		else if(ostrcmp("AvStop", (&ret[0])->part) == 0)
 		{
-      playerstop();
-      playerafterend();
-			free(operaplayurl); operaplayurl = NULL;
-      operaservicestate = 0;
+			operaservice(NULL, 2); //stop play
 		}
 		else if(ostrcmp("AvGetPos", (&ret[0])->part) == 0)
 		{
@@ -636,8 +641,10 @@ void operareceivercb(char* cmd)
 			tmppos = ostrcat(tmppos, "AvGetPos ", 1, 0);
 			tmppos = ostrcat(tmppos, olutoa(pos), 1, 1);
 			tmppos = ostrcat(tmppos, "\n", 1, 0);
+
 			if(tmppos != NULL)
 				write(opera_control_r_fd, tmppos, strlen(tmppos));
+
 			free(tmppos); tmppos = NULL;
 		}
 		else if(ostrcmp("AvGetDuration", (&ret[0])->part) == 0)
@@ -650,26 +657,33 @@ void operareceivercb(char* cmd)
 			tmplen = ostrcat(tmplen, "AvGetDuration ", 1, 0);
 			tmplen = ostrcat(tmplen, olutoa(len), 1, 1);
 			tmplen = ostrcat(tmplen, "\n", 1, 0);
+
 			if(tmplen != NULL)
 				write(opera_control_r_fd, tmplen, strlen(tmplen));
+
 			free(tmplen); tmplen = NULL;
 		}
 		else if(ostrcmp("AvGetState", (&ret[0])->part) == 0)
 		{
 			char* tmpstate = NULL;
+
 			tmpstate = ostrcat(tmpstate, "AvGetState ", 1, 0);
-			tmpstate = ostrcat(tmpstate, oitoa(operaservicestate), 1, 1);
+			if(operaservicestate == 1)
+				tmpstate = ostrcat(tmpstate, "1", 1, 0);
+			else
+				tmpstate = ostrcat(tmpstate, "0", 1, 0);
 			tmpstate = ostrcat(tmpstate, "\n", 1, 0);
+
 			if(tmpstate != NULL)
 				write(opera_control_r_fd, tmpstate, strlen(tmpstate));
+
 			free(tmpstate); tmpstate = NULL;
 		}
 		else if(ostrcmp("ReleaseHandle", (&ret[0])->part) == 0)
 		{
 			if(count > 1 && ostrcmp("1", (&ret[1])->part) == 0) //VOD
 			{
-      	//Switch back to live tv after vod session ended
-				operastartservice();
+				operaservice(NULL, 1); //stop play, start live tv
 			}
 		}
 	}
