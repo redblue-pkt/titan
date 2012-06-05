@@ -560,6 +560,9 @@ cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/sshf
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libcurl.so* "$HOME"/flashimg/BUILD/titan/lib
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libfuse.so* "$HOME"/flashimg/BUILD/titan/lib
 
+# ffmpeg
+cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/ffmpeg "$HOME"/flashimg/BUILD/titan/sbin
+
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type d -name "*.svn"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.h"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.c"`
