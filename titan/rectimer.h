@@ -122,17 +122,17 @@ int checkrectimertime(struct rectimer* node)
 
 void copyrectimer(struct rectimer* src, struct rectimer* dst)
 {
-	dst->timestamp = ostrcat(src->timestamp, "", 0, 0);
-	dst->name = ostrcat(src->name, "", 0, 0);
+	dst->timestamp = ostrcat(src->timestamp, NULL, 0, 0);
+	dst->name = ostrcat(src->name, NULL, 0, 0);
 	dst->begin = src->begin;
 	dst->end = src->end;
 	dst->repeate = src->repeate;
 	dst->afterevent = src->afterevent;
 	dst->disabled = src->disabled;
 	dst->justplay = src->justplay;
-	dst->recpath = ostrcat(src->recpath, "", 0, 0);
+	dst->recpath = ostrcat(src->recpath, NULL, 0, 0);
 	dst->servicetype = src->servicetype;
-	dst->channellist = ostrcat(src->channellist, "", 0, 0);
+	dst->channellist = ostrcat(src->channellist, NULL, 0, 0);
 	dst->serviceid = src->serviceid;
 	dst->transponderid = src->transponderid;
 }
@@ -394,7 +394,7 @@ void checkrectimer()
 		{
 			node->status = 3;
 			free(node->errstr);
-			node->errstr = ostrcat(_("not started akttime greater timer endtime"), "", 0, 0);
+			node->errstr = ostrcat(_("not started akttime greater timer endtime"), NULL, 0, 0);
 			status.writerectimer = 1;
 		}
 		node = node->next;
@@ -408,7 +408,7 @@ void checkrectimer()
 		{
 			char* retstr = servicecheckret(ret, 1);
 			free(node->errstr);
-			node->errstr = ostrcat(retstr, "", 0, 0);
+			node->errstr = ostrcat(retstr, NULL, 0, 0);
 			stringreplacecharonce(node->errstr, '\n', '\0');
 			free(retstr); retstr = NULL;
 		}
@@ -416,7 +416,7 @@ void checkrectimer()
 		{
 			char* retstr = recordcheckret(NULL, ret, 15);
 			free(node->errstr);
-			node->errstr = ostrcat(retstr, "", 0, 0);
+			node->errstr = ostrcat(retstr, NULL, 0, 0);
 			stringreplacecharonce(node->errstr, '\n', '\0');
 			free(retstr); retstr = NULL;
 		}
@@ -502,7 +502,7 @@ void delrectimer(struct rectimer* rectimernode, int write, int flag)
 			{
 				node->status = 2;
 				free(node->errstr);
-				node->errstr = ostrcat(_("stopped from user"), "", 0, 0);
+				node->errstr = ostrcat(_("stopped from user"), NULL, 0, 0);
 				//stop recording
 				node->servicenode->recendtime = 1;
 				if(flag == 0)
@@ -621,11 +621,11 @@ int writerectimer(const char *filename, int flag)
 			continue;
 		}
 
-		if(node->name == NULL) node->name = ostrcat(node->name, "", 1, 0);
-		if(node->channellist == NULL) node->channellist = ostrcat(node->channellist, "", 1, 0);
-		if(node->errstr == NULL) node->errstr = ostrcat(node->errstr, "", 1, 0);
+		if(node->name == NULL) node->name = ostrcat(node->name, NULL, 1, 0);
+		if(node->channellist == NULL) node->channellist = ostrcat(node->channellist, NULL, 1, 0);
+		if(node->errstr == NULL) node->errstr = ostrcat(node->errstr, NULL, 1, 0);
 		if(node->pincode == NULL) node->pincode = ostrcat(node->pincode, "0000", 1, 0);
-		if(node->recpath == NULL) node->recpath = ostrcat(node->recpath, "", 1, 0);
+		if(node->recpath == NULL) node->recpath = ostrcat(node->recpath, NULL, 1, 0);
 		if(node->status == 0 || node->status == 1)
 			type = "timer";
 		else
@@ -835,14 +835,14 @@ void screenrectimerext(struct rectimer* node, int flag)
 		node = addrectimernode(NULL, NULL);
 		tmpservicetype = status.servicetype;
 		if(tmpservicetype == 0)
-			tmpchannellist = ostrcat(getconfig("channellist", NULL), "", 0, 0);
+			tmpchannellist = ostrcat(getconfig("channellist", NULL), NULL, 0, 0);
 		else
-			tmpchannellist = ostrcat(getconfig("rchannellist", NULL), "", 0, 0);
+			tmpchannellist = ostrcat(getconfig("rchannellist", NULL), NULL, 0, 0);
 	}
 	else
 	{
 		tmpservicetype = node->servicetype;
-		tmpchannellist = ostrcat(node->channellist, "", 0, 0);
+		tmpchannellist = ostrcat(node->channellist, NULL, 0, 0);
 	}
 
 	if(node == NULL)
@@ -952,7 +952,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 		loctime = localtime(&akttime);
 	bdaylight = loctime->tm_isdst;
 	strftime(buf, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
-	buf1 = ostrcat(buf, "", 0, 0);
+	buf1 = ostrcat(buf, NULL, 0, 0);
 	changeinput(begin, buf1);
 	free(buf1); buf1 = NULL;
 
@@ -966,7 +966,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 	}
 	edaylight = loctime->tm_isdst;
 	strftime(buf, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
-	buf1 = ostrcat(buf, "", 1, 0);
+	buf1 = ostrcat(buf, NULL, 1, 0);
 	changeinput(end, buf1);
 	free(buf1); buf1 = NULL;
 
@@ -1103,7 +1103,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 			}
 
 			free(node->name); node->name = NULL;
-			node->name = ostrcat(name->ret, "", 0, 0);
+			node->name = ostrcat(name->ret, NULL, 0, 0);
 			if(justplay->ret != NULL)
 				node->justplay = atoi(justplay->ret);
 			if(begin->ret != NULL)
@@ -1142,7 +1142,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 			node->repeate = tmprepeate;
 
 			free(node->recpath); node->recpath = NULL;
-			node->recpath = ostrcat(path->ret, "", 0, 0);
+			node->recpath = ostrcat(path->ret, NULL, 0, 0);
 
 			free(node->channellist); node->channellist = NULL;
 			node->channellist = tmpchannellist;
@@ -1415,27 +1415,27 @@ int addrecepg(struct channel* chnode, struct epg* epgnode, char* channellist)
 	node = addrectimernode(NULL, NULL);
 	if(node != NULL)
 	{
-		node->name = ostrcat(epgnode->title, "", 0, 0);
+		node->name = ostrcat(epgnode->title, NULL, 0, 0);
 		node->begin = epgnode->starttime;
 		node->end = epgnode->endtime;
 
 		node->repeate = 0;
 
-		node->recpath = ostrcat(getconfig("rec_path", NULL), "", 0, 0);
+		node->recpath = ostrcat(getconfig("rec_path", NULL), NULL, 0, 0);
 		node->servicetype = status.servicetype;
 		if(node->servicetype == 0)
 		{
 			if(channellist == NULL)
-				node->channellist = ostrcat(getconfig("channellist", NULL), "", 0, 0);
+				node->channellist = ostrcat(getconfig("channellist", NULL), NULL, 0, 0);
 			else
-				node->channellist = ostrcat(channellist, "", 0, 0);
+				node->channellist = ostrcat(channellist, NULL, 0, 0);
 		}
 		else
 		{
 			if(channellist == NULL)
-				node->channellist = ostrcat(getconfig("rchannellist", NULL), "", 0, 0);
+				node->channellist = ostrcat(getconfig("rchannellist", NULL), NULL, 0, 0);
 			else
-				node->channellist = ostrcat(channellist, "", 0, 0);
+				node->channellist = ostrcat(channellist, NULL, 0, 0);
 		}
 		node->serviceid = chnode->serviceid;
 		node->transponderid = chnode->transponderid;

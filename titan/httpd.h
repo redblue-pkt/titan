@@ -414,7 +414,7 @@ void gotdata(int* connfd)
 			debug(250, "httpd filename=%s", filename);
 
 			if(strstr(filename, "/movie/") != NULL) 
-				fullfilename = ostrcat(filename,"", 0, 0);
+				fullfilename = ostrcat(filename, NULL, 0, 0);
 			else
 				fullfilename = ostrcat(getconfig("httpdpath", NULL), filename, 0, 0);
 			filefd = open(fullfilename, O_RDONLY | O_LARGEFILE);

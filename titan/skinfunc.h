@@ -6,37 +6,37 @@ char* getplaytext(struct skin* node, char* path)
 	char* tmpstr = NULL;
 
 	if(status.pause > 0)
-		tmpstr = ostrcat("Pause", "", 0, 0);
+		tmpstr = ostrcat("Pause", NULL, 0, 0);
 	else if(status.play > 0)
-		tmpstr = ostrcat("Play", "", 0, 0);
+		tmpstr = ostrcat("Play", NULL, 0, 0);
 	else if(status.playspeed == 1)
-		tmpstr = ostrcat(">> 2x", "", 0, 0);
+		tmpstr = ostrcat(">> 2x", NULL, 0, 0);
 	else if(status.playspeed == 2)
-		tmpstr = ostrcat(">> 4x", "", 0, 0);
+		tmpstr = ostrcat(">> 4x", NULL, 0, 0);
 	else if(status.playspeed == 3)
-		tmpstr = ostrcat(">> 8x", "", 0, 0);
+		tmpstr = ostrcat(">> 8x", NULL, 0, 0);
 	else if(status.playspeed == 4)
-		tmpstr = ostrcat(">> 16x", "", 0, 0);
+		tmpstr = ostrcat(">> 16x", NULL, 0, 0);
 	else if(status.playspeed == 5)
-		tmpstr = ostrcat(">> 32x", "", 0, 0);
+		tmpstr = ostrcat(">> 32x", NULL, 0, 0);
 	else if(status.playspeed == 6)
-		tmpstr = ostrcat(">> 64x", "", 0, 0);
+		tmpstr = ostrcat(">> 64x", NULL, 0, 0);
 	else if(status.playspeed == 7)
-		tmpstr = ostrcat(">> 128x", "", 0, 0);
+		tmpstr = ostrcat(">> 128x", NULL, 0, 0);
 	else if(status.playspeed == -1)
-		tmpstr = ostrcat("<< 2x", "", 0, 0);
+		tmpstr = ostrcat("<< 2x", NULL, 0, 0);
 	else if(status.playspeed == -2)
-		tmpstr = ostrcat("<< 4x", "", 0, 0);
+		tmpstr = ostrcat("<< 4x", NULL, 0, 0);
 	else if(status.playspeed == -3)
-		tmpstr = ostrcat("<< 8x", "", 0, 0);
+		tmpstr = ostrcat("<< 8x", NULL, 0, 0);
 	else if(status.playspeed == -4)
-		tmpstr = ostrcat("<< 16x", "", 0, 0);
+		tmpstr = ostrcat("<< 16x", NULL, 0, 0);
 	else if(status.playspeed == -5)
-		tmpstr = ostrcat("<< 32x", "", 0, 0);
+		tmpstr = ostrcat("<< 32x", NULL, 0, 0);
 	else if(status.playspeed == -6)
-		tmpstr = ostrcat("<< 64x", "", 0, 0);
+		tmpstr = ostrcat("<< 64x", NULL, 0, 0);
 	else if(status.playspeed == -7)
-		tmpstr = ostrcat("<< 128x", "", 0, 0);
+		tmpstr = ostrcat("<< 128x", NULL, 0, 0);
 
 	return tmpstr;
 }
@@ -46,37 +46,37 @@ char* getplaypic(struct skin* node, char* path)
 	char* tmpstr = NULL;
 
 	if(status.pause > 0)
-		tmpstr = ostrcat("pause.png", "", 0, 0);
+		tmpstr = ostrcat("pause.png", NULL, 0, 0);
 	else if(status.play > 0)
-		tmpstr = ostrcat("play.png", "", 0, 0);
+		tmpstr = ostrcat("play.png", NULL, 0, 0);
 	else if(status.playspeed == 1)
-		tmpstr = ostrcat("forward1.png", "", 0, 0);
+		tmpstr = ostrcat("forward1.png", NULL, 0, 0);
 	else if(status.playspeed == 2)
-		tmpstr = ostrcat("forward2.png", "", 0, 0);
+		tmpstr = ostrcat("forward2.png", NULL, 0, 0);
 	else if(status.playspeed == 3)
-		tmpstr = ostrcat("forward3.png", "", 0, 0);
+		tmpstr = ostrcat("forward3.png", NULL, 0, 0);
 	else if(status.playspeed == 4)
-		tmpstr = ostrcat("forward4.png", "", 0, 0);
+		tmpstr = ostrcat("forward4.png", NULL, 0, 0);
 	else if(status.playspeed == 5)
-		tmpstr = ostrcat("forward5.png", "", 0, 0);
+		tmpstr = ostrcat("forward5.png", NULL, 0, 0);
 	else if(status.playspeed == 6)
-		tmpstr = ostrcat("forward6.png", "", 0, 0);
+		tmpstr = ostrcat("forward6.png", NULL, 0, 0);
 	else if(status.playspeed == 7)
-		tmpstr = ostrcat("forward7.png", "", 0, 0);
+		tmpstr = ostrcat("forward7.png", NULL, 0, 0);
 	else if(status.playspeed == -1)
-		tmpstr = ostrcat("rewind1.png", "", 0, 0);
+		tmpstr = ostrcat("rewind1.png", NULL, 0, 0);
 	else if(status.playspeed == -2)
-		tmpstr = ostrcat("rewind2.png", "", 0, 0);
+		tmpstr = ostrcat("rewind2.png", NULL, 0, 0);
 	else if(status.playspeed == -3)
-		tmpstr = ostrcat("rewind3.png", "", 0, 0);
+		tmpstr = ostrcat("rewind3.png", NULL, 0, 0);
 	else if(status.playspeed == -4)
-		tmpstr = ostrcat("rewind4.png", "", 0, 0);
+		tmpstr = ostrcat("rewind4.png", NULL, 0, 0);
 	else if(status.playspeed == -5)
-		tmpstr = ostrcat("rewind5.png", "", 0, 0);
+		tmpstr = ostrcat("rewind5.png", NULL, 0, 0);
 	else if(status.playspeed == -6)
-		tmpstr = ostrcat("rewind6.png", "", 0, 0);
+		tmpstr = ostrcat("rewind6.png", NULL, 0, 0);
 	else if(status.playspeed == -7)
-		tmpstr = ostrcat("rewind7.png", "", 0, 0);
+		tmpstr = ostrcat("rewind7.png", NULL, 0, 0);
 
 	if(tmpstr != NULL)
 	{
@@ -104,7 +104,7 @@ char* getrec(struct skin* node, char* path)
 
 	if(status.recording > 0)
 	{
-		tmpstr = ostrcat("rec.png", "", 0, 0);
+		tmpstr = ostrcat("rec.png", NULL, 0, 0);
 
 		if(path != NULL)
 			tmpstr = ostrcat("/", tmpstr, 0, 1);
@@ -121,9 +121,9 @@ char* getcrypt(struct skin* node, char* path)
 	if(status.aktservice->channel != NULL)
 	{
 		if(status.aktservice->channel->crypt > 0)
-			tmpstr = ostrcat("crypt.png", "", 0, 0);
+			tmpstr = ostrcat("crypt.png", NULL, 0, 0);
 		else
-			tmpstr = ostrcat("nocrypt.png", "", 0, 0);
+			tmpstr = ostrcat("nocrypt.png", NULL, 0, 0);
 
 		if(path != NULL)
 			tmpstr = ostrcat("/", tmpstr, 0, 1);
@@ -165,14 +165,14 @@ char* getsdhd(struct skin* node, char* path)
 	if(getaktvideosize() == 0) //videosize is ok
 	{
 		if(status.videosize.w == 720)
-			tmpstr = ostrcat("sd.png", "", 0, 0);
+			tmpstr = ostrcat("sd.png", NULL, 0, 0);
 		else if(status.videosize.w == 1280)
-			tmpstr = ostrcat("hdready.png", "", 0, 0);
+			tmpstr = ostrcat("hdready.png", NULL, 0, 0);
 		else if(status.videosize.w == 1920)
-			tmpstr = ostrcat("hd.png", "", 0, 0);
+			tmpstr = ostrcat("hd.png", NULL, 0, 0);
 	}
 	
-	if(tmpstr == NULL) tmpstr = ostrcat("novideo.png", "", 0, 0);
+	if(tmpstr == NULL) tmpstr = ostrcat("novideo.png", NULL, 0, 0);
 
 	if(path != NULL)
 		tmpstr = ostrcat("/", tmpstr, 0, 1);
@@ -186,11 +186,11 @@ char* getresolution(struct skin* node, char* path)
 	char* tmpstr = NULL;
 
 	if(fb->width == 720 && fb->height == 576)
-		tmpstr = ostrcat("576.png", "", 0, 0);
+		tmpstr = ostrcat("576.png", NULL, 0, 0);
 	else if(fb->width == 1280 && fb->height == 720)
-		tmpstr = ostrcat("720.png", "", 0, 0);
+		tmpstr = ostrcat("720.png", NULL, 0, 0);
 	else if(fb->width == 1920 && fb->height == 1080)
-		tmpstr = ostrcat("1080.png", "", 0, 0);
+		tmpstr = ostrcat("1080.png", NULL, 0, 0);
 
 	if(path != NULL)
 		tmpstr = ostrcat("/", tmpstr, 0, 1);
@@ -206,9 +206,9 @@ char* getteletext(struct skin* node, char* path)
 	if(status.aktservice->channel != NULL)
 	{
 		if(status.aktservice->channel->txtpid > 0)
-			tmpstr = ostrcat("teletext.png", "", 0, 0);
+			tmpstr = ostrcat("teletext.png", NULL, 0, 0);
 		else
-			tmpstr = ostrcat("noteletext.png", "", 0, 0);
+			tmpstr = ostrcat("noteletext.png", NULL, 0, 0);
 
 		if(path != NULL)
 			tmpstr = ostrcat("/", tmpstr, 0, 1);
@@ -227,22 +227,22 @@ char* getsoundtype(struct skin* node, char* path)
 		switch(status.aktservice->channel->audiocodec)
 		{
 			case AC3:
-				tmpstr = ostrcat("ac3.png", "", 0, 0);
+				tmpstr = ostrcat("ac3.png", NULL, 0, 0);
 				break;
 			case MPEGA:
-				tmpstr = ostrcat("mpega.png", "", 0, 0);
+				tmpstr = ostrcat("mpega.png", NULL, 0, 0);
 				break;
 			case DTS:
-				tmpstr = ostrcat("dts.png", "", 0, 0);
+				tmpstr = ostrcat("dts.png", NULL, 0, 0);
 				break;
 			case LPCM:
-				tmpstr = ostrcat("lpcm.png", "", 0, 0);
+				tmpstr = ostrcat("lpcm.png", NULL, 0, 0);
 				break;
 			case AAC:
-				tmpstr = ostrcat("aac.png", "", 0, 0);
+				tmpstr = ostrcat("aac.png", NULL, 0, 0);
 				break;
 			case AACHE:
-				tmpstr = ostrcat("aache.png", "", 0, 0);
+				tmpstr = ostrcat("aache.png", NULL, 0, 0);
 				break;
 		}
 		if(path != NULL)
@@ -258,7 +258,7 @@ char* getprovidername(struct skin* node)
 	char* tmpstr = NULL;
 
 	if(status.aktservice->channel != NULL && status.aktservice->channel->provider != NULL)
-		tmpstr = ostrcat(status.aktservice->channel->provider->name, "", 0, 0);
+		tmpstr = ostrcat(status.aktservice->channel->provider->name, NULL, 0, 0);
 
 	return tmpstr;
 }
@@ -272,7 +272,7 @@ char* getsatname(struct skin* node)
 	{
 		satnode = getsatbyorbitalpos(status.aktservice->channel->transponder->orbitalpos);
 		if(satnode != NULL)
-			tmpstr = ostrcat(satnode->name, "", 0, 0);
+			tmpstr = ostrcat(satnode->name, NULL, 0, 0);
 	}
 
 	return tmpstr;
@@ -293,7 +293,7 @@ char* getber(struct skin* node, char* format)
 	}
 	
 	snprintf(buf, MINMALLOC, format, ber);
-	buf1 = ostrcat(buf, "", 1, 0);
+	buf1 = ostrcat(buf, NULL, 1, 0);
 
 	return buf1;
 }
@@ -314,7 +314,7 @@ char* getsignal(struct skin* node, char* format)
 	}
 	
 	snprintf(buf, MINMALLOC, format, signal);
-	buf1 = ostrcat(buf, "", 1, 0);
+	buf1 = ostrcat(buf, NULL, 1, 0);
 
 	return buf1;
 }
@@ -334,7 +334,7 @@ char* getunc(struct skin* node, char* format)
 	}
 	
 	snprintf(buf, MINMALLOC, format, unc);
-	buf1 = ostrcat(buf, "", 1, 0);
+	buf1 = ostrcat(buf, NULL, 1, 0);
 
 	return buf1;
 }
@@ -356,7 +356,7 @@ char* getsnr(struct skin* node, char* format)
 	}
 	
 	snprintf(buf, MINMALLOC, format, snr);
-	buf1 = ostrcat(buf, "", 1, 0);
+	buf1 = ostrcat(buf, NULL, 1, 0);
 
 	return buf1;
 }
@@ -476,7 +476,7 @@ char* getepgtime(struct skin* node, char* format, int akt, int type)
 				snprintf(buf, MINMALLOC, format, min);
 			else if(loctime != NULL)
 				ostrftime(buf, MINMALLOC, format, loctime);
-			buf1 = ostrcat(buf, "", 1, 0);
+			buf1 = ostrcat(buf, NULL, 1, 0);
 
 			free(loctime); loctime = NULL;
 			debug(1000, "out");
@@ -693,7 +693,7 @@ char* gettime(struct skin* node, char* format)
 	if(loctime != NULL)
 	{
 		ostrftime(buf, MINMALLOC, format, loctime);
-		buf1 = ostrcat(buf, "", 1, 0);
+		buf1 = ostrcat(buf, NULL, 1, 0);
 	}
 
 	free(loctime);
@@ -797,7 +797,7 @@ char* getpowerofftime(struct skin* node, char* format)
 		resttime = (status.sd_timer->shutdown_time - time(NULL)) / 60;
 		if(resttime < 0) resttime = 0;
 		snprintf(buf, MINMALLOC, format, resttime);
-		buf1 = ostrcat(buf, "", 1, 0);
+		buf1 = ostrcat(buf, NULL, 1, 0);
 	}
 
 	return buf1;

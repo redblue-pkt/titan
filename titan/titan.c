@@ -414,9 +414,9 @@ int main(int argc, char *argv[])
 	status.mainthread = pthread_self();
 
 	if(argc > 1)
-		status.configfile = ostrcat(argv[1], "", 0, 0);
+		status.configfile = ostrcat(argv[1], NULL, 0, 0);
 	else
-		status.configfile = ostrcat(CONFIGFILE, "", 0, 0);
+		status.configfile = ostrcat(CONFIGFILE, NULL, 0, 0);
 
 	printf("[%s] using config: %s\n", PROGNAME, status.configfile);
 	ret = readconfig(status.configfile, config);

@@ -223,7 +223,7 @@ void screenskinselect(void)
 
 				addconfig("skinfile", selection->name);
 
-				tmpstr = ostrcat(selection->name, "", 0, 0);
+				tmpstr = ostrcat(selection->name, NULL, 0, 0);
 				addconfig("skinpath", dirname(tmpstr));
 
 				skinchanged = 1;

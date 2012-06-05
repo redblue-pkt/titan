@@ -409,7 +409,7 @@ void updatevfd()
 	if(status.updatevfd != START)
 		return;
 
-	tmpstr = ostrcat(tmpstr, "", 1, 0);
+	tmpstr = ostrcat(tmpstr, NULL, 1, 0);
 	
 	if(status.standby == 0)
 	{

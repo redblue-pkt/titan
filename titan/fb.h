@@ -61,7 +61,7 @@ struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int
 	char *name = NULL;
 	long ret = 0;
 
-	name = ostrcat(fbname, "", 0, 0);
+	name = ostrcat(fbname, NULL, 0, 0);
 	if(name == NULL)
 	{
 		err("no memory");

@@ -43,7 +43,7 @@ struct pic* addpic(char *name, unsigned char* picbuf, int memfd, unsigned long w
 
 	memset(newnode, 0, sizeof(struct pic));
 
-	newnode->name = ostrcat(name, "", 0, 0);
+	newnode->name = ostrcat(name, NULL, 0, 0);
 	newnode->picbuf = picbuf;
 	newnode->memfd = memfd;
 	newnode->width = width;

@@ -399,12 +399,12 @@ start:
 			char* title = NULL;
 			struct splitstr* ret1 = NULL;
 			int count1 = 0;
-			tmpstr1 = ostrcat("", node->file, 0, 0);
+			tmpstr1 = ostrcat(NULL, node->file, 0, 0);
 			int i = 0;
 			ret1 = strsplit(tmpstr1, "/", &count1);
 			if(count1 >= 1)
 				i = count1 - 1;
-			title = ostrcat("", (&ret1[i])->part, 0, 0);
+			title = ostrcat(NULL, (&ret1[i])->part, 0, 0);
 			changetext(tmp, title);
 */			
 
@@ -467,7 +467,7 @@ start:
 			clearscreen(playlist);
 			ret = screendir(getconfig("addplaylistpath", NULL), "*.mp3 *.flac *.ogg *.wma *.ra *.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.pls *.trp *.ts *.vdr *.vob *.wmv *.rm", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, 1200, 0, 600, 0, 0);
 
-			tmpstr = ostrcat(ret, "", 0, 0);
+			tmpstr = ostrcat(ret, NULL, 0, 0);
 			if(tmpstr != NULL) addconfig("addplaylistpath", dirname(tmpstr));
 				free(tmpstr); tmpstr = NULL;
 

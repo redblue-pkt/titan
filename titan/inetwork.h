@@ -293,7 +293,7 @@ int addinetworkall(struct stimerthread* self)
 		if(strlen(buf) != 0)
 		{
 			tmpstr = fixip(buf, 0);
-			tmp_ipaddresse = string_newline(ostrcat(tmpstr, "", 1, 0));
+			tmp_ipaddresse = string_newline(ostrcat(tmpstr, NULL, 1, 0));
 		}
 		else
 			tmp_ipaddresse = ostrcat(tmp_ipaddresse, "000.000.000.000", 1, 0);
@@ -312,7 +312,7 @@ int addinetworkall(struct stimerthread* self)
 		if(strlen(buf) != 0)
 		{
 			tmpstr = fixip(buf, 0);
-			tmp_netmask = string_newline(ostrcat(tmpstr, "", 1, 0));
+			tmp_netmask = string_newline(ostrcat(tmpstr, NULL, 1, 0));
 		}
 		else
 			tmp_netmask = ostrcat(tmp_netmask, "000.000.000.000", 1, 0);
@@ -342,7 +342,7 @@ int addinetworkall(struct stimerthread* self)
 		if(strlen(buf) != 0)
 		{
 			tmpstr = fixip(tmp_broadcast, 0);
-			tmp_broadcast = string_newline(ostrcat(tmpstr, "",  1, 0));
+			tmp_broadcast = string_newline(ostrcat(tmpstr, NULL,  1, 0));
 		}
 		else
 			tmp_broadcast = ostrcat(tmp_broadcast, "000.000.000.000", 1, 0);
@@ -401,7 +401,7 @@ int addinetworkall(struct stimerthread* self)
 		if(tmp_gateway != NULL)
 		{
 			tmpstr = fixip(tmp_gateway, 0);
-			status.gateway = string_newline(ostrcat(tmpstr, "", 1, 0));
+			status.gateway = string_newline(ostrcat(tmpstr, NULL, 1, 0));
 		}
 		else
 			status.gateway = ostrcat(tmp_gateway, "000.000.000.000", 1, 0);
@@ -414,7 +414,7 @@ int addinetworkall(struct stimerthread* self)
 		{
 			tmpstr = fixip(tmp_dnsserver1, 0);
 			free(tmp_dnsserver1); tmp_dnsserver1 = NULL;
-			status.dnsserver1 = string_newline(ostrcat(tmpstr, "", 1, 0));
+			status.dnsserver1 = string_newline(ostrcat(tmpstr, NULL, 1, 0));
 		}
 		else
 			status.dnsserver1 = ostrcat(tmp_dnsserver1, "000.000.000.000", 1, 0);
@@ -428,7 +428,7 @@ int addinetworkall(struct stimerthread* self)
 		{
 			tmpstr = fixip(tmp_dnsserver2, 0);
 			free(tmp_dnsserver2); tmp_dnsserver2 = NULL;
-			status.dnsserver2 = string_newline(ostrcat(tmpstr, "", 1, 0));
+			status.dnsserver2 = string_newline(ostrcat(tmpstr, NULL, 1, 0));
 		}
 		else
 			status.dnsserver2 = ostrcat(tmp_dnsserver2, "000.000.000.000", 1, 0);
@@ -505,7 +505,7 @@ int addinetworkall()
 		{
 			tmpstr = fixip(tmp_ipaddresse, 0);
 			free(tmp_ipaddresse); tmp_ipaddresse = NULL;
-			tmp_ipaddresse = string_newline(ostrcat(tmpstr, "", 1, 0));
+			tmp_ipaddresse = string_newline(ostrcat(tmpstr, NULL, 1, 0));
 		}
 		else
 			tmp_ipaddresse = ostrcat(tmp_ipaddresse, "000.000.000.000", 1, 0);
@@ -522,7 +522,7 @@ int addinetworkall()
 		{
 			tmpstr = fixip(tmp_netmask, 0);
 			free(tmp_netmask); tmp_netmask = NULL;
-			tmp_netmask = string_newline(ostrcat(tmpstr, "", 1, 0));
+			tmp_netmask = string_newline(ostrcat(tmpstr, NULL, 1, 0));
 		}
 		else
 			tmp_netmask = ostrcat(tmp_netmask, "000.000.000.000", 1, 0);
@@ -538,7 +538,7 @@ int addinetworkall()
 			tmp_mac = command(cmd);
 		
 			if (tmp_mac != 0)
-				tmp_mac = string_newline(ostrcat(tmp_mac, "", 1, 0));
+				tmp_mac = string_newline(ostrcat(tmp_mac, NULL, 1, 0));
 			else
 				tmp_mac = ostrcat(tmp_mac, "00:00:00:00:00:00", 1, 0);
 		}
@@ -557,7 +557,7 @@ int addinetworkall()
 		{
 			tmpstr = fixip(tmp_broadcast, 0);
 			free(tmp_broadcast); tmp_broadcast = NULL;
-			tmp_broadcast = string_newline(ostrcat(tmpstr, "",  1, 0));
+			tmp_broadcast = string_newline(ostrcat(tmpstr, NULL,  1, 0));
 		}
 		else
 			tmp_broadcast = ostrcat(tmp_broadcast, "000.000.000.000", 1, 0);
@@ -584,7 +584,7 @@ int addinetworkall()
 	if (tmp_gateway != 0)
 	{
 		tmpstr = fixip(tmp_gateway, 0);
-		status.gateway = string_newline(ostrcat(tmpstr, "", 1, 0));
+		status.gateway = string_newline(ostrcat(tmpstr, NULL, 1, 0));
 	}
 	else
 		status.gateway = ostrcat(tmp_gateway, "000.000.000.000", 1, 0);
@@ -596,7 +596,7 @@ int addinetworkall()
 	{
 		tmpstr = fixip(tmp_dnsserver1, 0);
 		free(tmp_dnsserver1); tmp_dnsserver1 = NULL;
-		status.dnsserver1 = string_newline(ostrcat(tmpstr, "", 1, 0));
+		status.dnsserver1 = string_newline(ostrcat(tmpstr, NULL, 1, 0));
 	}
 	else
 		status.dnsserver1 = ostrcat(tmp_dnsserver1, "000.000.000.000", 1, 0);
@@ -609,7 +609,7 @@ int addinetworkall()
 	{
 		tmpstr = fixip(tmp_dnsserver2, 0);
 		free(tmp_dnsserver2); tmp_dnsserver2 = NULL;
-		status.dnsserver2 = string_newline(ostrcat(tmpstr, "", 1, 0));
+		status.dnsserver2 = string_newline(ostrcat(tmpstr, NULL, 1, 0));
 	}
 	else
 		status.dnsserver2 = ostrcat(tmp_dnsserver2, "000.000.000.000", 1, 0);

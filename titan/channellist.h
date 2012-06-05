@@ -1192,9 +1192,9 @@ start:
 					if(retchannellist != NULL)
 					{
 						if(status.servicetype == 0)
-							*retchannellist = ostrcat(getconfig("channellist", NULL), "", 0, 0);
+							*retchannellist = ostrcat(getconfig("channellist", NULL), NULL, 0, 0);
 						else
-							*retchannellist = ostrcat(getconfig("rchannellist", NULL), "", 0, 0);
+							*retchannellist = ostrcat(getconfig("rchannellist", NULL), NULL, 0, 0);
 					}
 					break;
 				}

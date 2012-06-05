@@ -293,7 +293,7 @@ char* getcpuid()
 		char* mac1 = NULL;
 		char* mac2 = NULL;
 		char* tmpstr = NULL;
-		tmpstr = ostrcat("", mac, 0, 0);
+		tmpstr = ostrcat(mac, NULL, 0, 0);
 
 		struct splitstr* ret = NULL;
 		ret = strsplit(tmpstr, ":", &count);
@@ -1687,7 +1687,7 @@ char* changefilenameext(char* filename, char* ext)
 
 	if(filename == NULL) return NULL;
 
-	newfilename = ostrcat(filename, "", 0, 0);
+	newfilename = ostrcat(filename, NULL, 0, 0);
 
 	zeichen = strrchr(newfilename, '.');
 	if(zeichen != NULL)
@@ -2396,45 +2396,29 @@ void ostrcatbig(char** value1, char* value2, int* maxlen, int* pos)
 char* ostrcat(char* value1, char* value2, int free1, int free2)
 {
 //	debug(1000, "in");
+	int len = 0, len1 = 0, len2 = 0;
 	char* buf = NULL;
 
 	if(value1 == NULL && value2 == NULL) return NULL;
 
-	if(value2 == NULL)
-	{
-		value2 = malloc(1);
-		if(value2 == NULL)
-		{
-			err("no memory");
-			return NULL;
-		}
-		free2 = 1;
-		value2[0] = '\0';
-	}
+	if(value1 != NULL) len1 = strlen(value1);
+	if(value2 != NULL) len2 = strlen(value2);
 
-	if(value1 == NULL)
-	{
-		value1 = malloc(1);
-		if(value1 == NULL)
-		{
-			err("no memory");
-			return NULL;
-		}
-		free1 = 1;
-		value1[0] = '\0';
-	}
+	len = len1 + len2 + 1;
 
-	buf = malloc(strlen(value1) + strlen(value2) + 1);
+	buf = malloc(len);
 	if(buf == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
 
-	sprintf(buf, "%s%s", value1, value2);
+	if(len1 > 0) memcpy(buf, value1, len1);
+	if(len2 > 0) memcpy(buf + len1, value2, len2);
+	buf[len - 1] = '\0';
 
-	if(free1 == 1) {free(value1); value1 = NULL;}
-	if(free2 == 1) {free(value2); value2 = NULL;}
+	if(free1 == 1) free(value1);
+	if(free2 == 1) free(value2);
 
 	//helpfull for memleak detect
 	//if(buf != NULL && strlen(buf) == 0x0b - 0x01)
@@ -2457,7 +2441,7 @@ char* olutoa(unsigned long value)
 	}
 
 	sprintf(buf, "%lu", value);
-	buf1 = ostrcat(buf, "", 1, 0);
+	buf1 = ostrcat(buf, NULL, 1, 0);
 
 	debug(1000, "out");
 	return buf1;
@@ -2476,7 +2460,7 @@ char* oitoax(int value)
 	}
 
 	sprintf(buf, "%x", value);
-	buf1 = ostrcat(buf, "", 1, 0);
+	buf1 = ostrcat(buf, NULL, 1, 0);
 
 	debug(1000, "out");
 	return buf1;
@@ -2495,7 +2479,7 @@ char* oitoa(int value)
 	}
 
 	sprintf(buf, "%d", value);
-	buf1 = ostrcat(buf, "", 1, 0);
+	buf1 = ostrcat(buf, NULL, 1, 0);
 
 	debug(1000, "out");
 	return buf1;
@@ -2514,7 +2498,7 @@ char* oitoa64(off64_t value)
 	}
 
 	sprintf(buf, "%lld", value);
-	buf1 = ostrcat(buf, "", 1, 0);
+	buf1 = ostrcat(buf, NULL, 1, 0);
 
 	debug(1000, "out");
 	return buf1;
@@ -2537,7 +2521,7 @@ char* oftoa64(double value, char* count)
 	tmpstr = ostrcat(tmpstr, "f", 1, 0);
 
 	sprintf(buf, tmpstr, value);
-	buf1 = ostrcat(buf, "", 1, 0);
+	buf1 = ostrcat(buf, NULL, 1, 0);
 
 	free(tmpstr);
 	debug(1000, "out");
@@ -2593,7 +2577,7 @@ char* createpath(char* dir, char* file)
 		return NULL;
 	}
 
-	tmpdir = ostrcat(dir, "", 0, 0);
+	tmpdir = ostrcat(dir, NULL, 0, 0);
 	if(tmpdir == NULL)
 	{
 		debug(1000, "out -> NULL detect");
@@ -2873,7 +2857,7 @@ unsigned long readsysul(const char *filename, int line)
 
 	if(fileline[strlen(fileline) - 1] == '\n')
 		fileline[strlen(fileline) - 1] = '\0';
-	buf1 = ostrcat(fileline, "", 1, 0);
+	buf1 = ostrcat(fileline, NULL, 1, 0);
 
 	fclose(fd);
 
@@ -2919,7 +2903,7 @@ char* readsys(const char *filename, int line)
 
 	if(fileline[strlen(fileline) - 1] == '\n')
 		fileline[strlen(fileline) - 1] = '\0';
-	buf1 = ostrcat(fileline, "", 1, 0);
+	buf1 = ostrcat(fileline, NULL, 1, 0);
 
 	fclose(fd);
 
@@ -2952,7 +2936,7 @@ int writesys(const char *filename, char *value, int flag)
 	if(flag == 1)
 		tmpstr = ostrcat(value, "\n", 0, 0);
 	else
-		tmpstr = ostrcat(value, "", 0, 0);
+		tmpstr = ostrcat(value, NULL, 0, 0);
 
 	ret = fwrite(tmpstr, strlen(tmpstr), 1, fd);
 	if(ret != 1)
@@ -3845,7 +3829,7 @@ char* getxmlentry(char *line, char *searchstr)
 	if(buf[0] == '"')
 	{
 		buf = buf + 1;
-		buf1 = ostrcat(buf, "", 0, 0);
+		buf1 = ostrcat(buf, NULL, 0, 0);
 		if(buf1 == NULL)
 		{
 			err("ostrcat failed");
@@ -3862,7 +3846,7 @@ char* getxmlentry(char *line, char *searchstr)
 	}
 	else
 	{
-		buf1 = ostrcat(buf, "", 0, 0);
+		buf1 = ostrcat(buf, NULL, 0, 0);
 		if(buf1 == NULL)
 		{
 			err("ostrcat failed");
@@ -4319,7 +4303,7 @@ char* string_replace(char *search, char *replace, char *string, int free1)
 
 	tmpstr = strndup(string, searchpos - string);
 	if(replace == NULL)
-		tmpstr = ostrcat(tmpstr, "", 1, 0);
+		tmpstr = ostrcat(tmpstr, NULL, 1, 0);
 	else
 		tmpstr = ostrcat(tmpstr, replace, 1, 0);
 	tmpstr = ostrcat(tmpstr, string + (searchpos - string) + strlen(search), 1, 0);

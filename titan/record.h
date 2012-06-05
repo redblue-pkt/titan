@@ -34,51 +34,51 @@ char* recordcheckret(struct stimerthread* timernode, int ret, int flag)
 		switch(ret)
 		{
 			case 1:
-				tmpstr = ostrcat(_("HDD not configured\ncan't find record path"), "", 0, 0);
+				tmpstr = ostrcat(_("HDD not configured\ncan't find record path"), NULL, 0, 0);
 				break;
 			case 2:
-				tmpstr = ostrcat(_("Not enought space"), "", 0, 0);
+				tmpstr = ostrcat(_("Not enought space"), NULL, 0, 0);
 				break;
 			case 3:
-				tmpstr = ostrcat(_("Error create filename"), "", 0, 0);
+				tmpstr = ostrcat(_("Error create filename"), NULL, 0, 0);
 				break;
 			case 4:
-				tmpstr = ostrcat(_("Can't open file"), "", 0, 0);
+				tmpstr = ostrcat(_("Can't open file"), NULL, 0, 0);
 				break;
 			case 5:
-				tmpstr = ostrcat(_("Can't open FRONTEND device"), "", 0, 0);
+				tmpstr = ostrcat(_("Can't open FRONTEND device"), NULL, 0, 0);
 				break;
 			case 6:
-				tmpstr = ostrcat(_("Can't open DMX device"), "", 0, 0);
+				tmpstr = ostrcat(_("Can't open DMX device"), NULL, 0, 0);
 				break;
 			case 7:
-				tmpstr = ostrcat(_("Pid's not ok"), "", 0, 0);
+				tmpstr = ostrcat(_("Pid's not ok"), NULL, 0, 0);
 				break;
 			case 8:
-				tmpstr = ostrcat(_("Channel or Transponder is empty"), "", 0, 0);
+				tmpstr = ostrcat(_("Channel or Transponder is empty"), NULL, 0, 0);
 				break;
 			case 9:
-				tmpstr = ostrcat(_("Write error"), "", 0, 0);
+				tmpstr = ostrcat(_("Write error"), NULL, 0, 0);
 				break;
 			case 10:
-				tmpstr = ostrcat(_("No memory"), "", 0, 0);
+				tmpstr = ostrcat(_("No memory"), NULL, 0, 0);
 				break;
 			case 11:
-				tmpstr = ostrcat(_("Failed open split file"), "", 0, 0);
+				tmpstr = ostrcat(_("Failed open split file"), NULL, 0, 0);
 				break;
 			case 12:
-				tmpstr = ostrcat(_("Frontend type unknown"), "", 0, 0);
+				tmpstr = ostrcat(_("Frontend type unknown"), NULL, 0, 0);
 				break;
 			case 13:
-				tmpstr = ostrcat(_("Tune to channel failed"), "", 0, 0);
+				tmpstr = ostrcat(_("Tune to channel failed"), NULL, 0, 0);
 				break;
 			case 14:
 				break;
 			case 15:
-				tmpstr = ostrcat(_("To many read error or end of file"), "", 0, 0);
+				tmpstr = ostrcat(_("To many read error or end of file"), NULL, 0, 0);
 				break;
 			case 16:
-				tmpstr = ostrcat(_("Can't create service"), "", 0, 0);
+				tmpstr = ostrcat(_("Can't create service"), NULL, 0, 0);
 				break;
 		}
 		if(tmpstr != NULL)
@@ -450,7 +450,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 					{
 						rectimernode->status = 3;
 						free(rectimernode->errstr);
-						rectimernode->errstr = ostrcat(retstr, "", 0, 0);
+						rectimernode->errstr = ostrcat(retstr, NULL, 0, 0);
 						status.writerectimer = 1;
 						writerectimer(getconfig("rectimerfile", NULL), 1);
 					}
@@ -507,7 +507,7 @@ char* recordcreatefilename(char* path, char* channelname, char* moviename, int t
 	}
 
 	strftime(buf, MINMALLOC, "%Y%m%d%H%M%S", loctime);
-	buf1 = ostrcat(buf, "", 1, 0);
+	buf1 = ostrcat(buf, NULL, 1, 0);
 
 	tmpstr = ostrcat(tmpstr, "-", 1, 0);
 	tmpstr = ostrcat(tmpstr, buf1, 1, 1);
@@ -808,7 +808,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 	else if(type == RECTIMESHIFT)
 	{
 		status.timeshift = 1;
-		servicenode->recname = ostrcat(filename, "", 0, 0);
+		servicenode->recname = ostrcat(filename, NULL, 0, 0);
 	}
 	else if(type == RECPLAY)
 	{
@@ -818,7 +818,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 	else if(type == RECDIRECT || type == RECTIMER)
 	{
 		status.recording++;
-		servicenode->recname = ostrcat(filename, "", 0, 0);
+		servicenode->recname = ostrcat(filename, NULL, 0, 0);
 	}
 
 	if(type != RECSTREAM && type != RECTIMESHIFT && type != RECPLAY)

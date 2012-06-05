@@ -444,7 +444,7 @@ char* changepicpath(char* picname)
 			tmpstr = createpath(getconfig("skinpath", NULL), picname);
 	}
 	else
-		tmpstr = ostrcat(picname, "", 0, 0);
+		tmpstr = ostrcat(picname, NULL, 0, 0);
 
 	return tmpstr;
 }

@@ -32,7 +32,7 @@ struct clist* addlisttmp(struct clist **clist, char *key1, char *value1)
 		return NULL;
 	}
 
-	key = ostrcat(key1, "", 0, 0);
+	key = ostrcat(key1, NULL, 0, 0);
 	if(key == NULL)
 	{
 		err("no memory");
@@ -40,7 +40,7 @@ struct clist* addlisttmp(struct clist **clist, char *key1, char *value1)
 		return NULL;
 	}
 
-	value = ostrcat(value1, "", 0, 0);
+	value = ostrcat(value1, NULL, 0, 0);
 	if(value == NULL)
 	{
 		err("no memory");
@@ -116,7 +116,7 @@ struct clist* addlistdef(struct clist **clist, char *key1, char *value1)
 		return NULL;
 	}
 
-	key = ostrcat(key1, "", 0, 0);
+	key = ostrcat(key1, NULL, 0, 0);
 	if(key == NULL)
 	{
 		err("no memory");
@@ -124,7 +124,7 @@ struct clist* addlistdef(struct clist **clist, char *key1, char *value1)
 		return NULL;
 	}
 
-	value = ostrcat(value1, "", 0, 0);
+	value = ostrcat(value1, NULL, 0, 0);
 	if(value == NULL)
 	{
 		err("no memory");
@@ -200,7 +200,7 @@ struct clist* addlist(struct clist **clist, char *key1, char *value1)
 		return NULL;
 	}
 
-	key = ostrcat(key1, "", 0, 0);
+	key = ostrcat(key1, NULL, 0, 0);
 	if(key == NULL)
 	{
 		err("no memory");
@@ -208,7 +208,7 @@ struct clist* addlist(struct clist **clist, char *key1, char *value1)
 		return NULL;
 	}
 
-	value = ostrcat(value1, "", 0, 0);
+	value = ostrcat(value1, NULL, 0, 0);
 	if(value == NULL)
 	{
 		err("no memory");
