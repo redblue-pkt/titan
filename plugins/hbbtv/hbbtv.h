@@ -467,8 +467,8 @@ void screenopera(char* url)
 	sockclose(&operarcconnfd);
 	close(opera_control_r_fd);
 
-	debug(788, "kill opera");
-	tmpstr = ostrcat(tmpstr, "killall opera", 1, 0);
+	debug(788, "killall -9 opera");
+	tmpstr = ostrcat(tmpstr, "killall -9 opera", 1, 0);
 	system(tmpstr);
 	free(tmpstr); tmpstr = NULL;
 
