@@ -59,6 +59,7 @@
 #include <linux/dvb/ca.h>
 #include <poll.h>
 #include <sys/utsname.h>
+#include <regex.h>
 
 #define IPKG_LIB
 #include "libipkg/config.h"
