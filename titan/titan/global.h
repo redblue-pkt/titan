@@ -655,7 +655,7 @@ int checkpluginskip(char* name)
 	else if(ostrcmp(name, "KeyLock") == 0) return 1;
 	else if(ostrcmp(name, "LCD Pearl") == 0) return 1;
 	else if(ostrcmp(name, "Mbox Info") == 0) return 1;
-	else if(ostrcmp(name, "Media Center") == 0) return 1;
+//	else if(ostrcmp(name, "Media Center") == 0) return 1;
 	else if(ostrcmp(name, "Networkbrowser") == 0) return 1;
 	else if(ostrcmp(name, "News") == 0) return 1;
 	else if(ostrcmp(name, "Optimize") == 0) return 1;
@@ -701,7 +701,7 @@ void setskinnodeslocked(int flag)
 			else if(ostrcmp("instar", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("keylock", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("lcdpearl1", child->name) == 0) child->locked = flag;
-			else if(ostrcmp("mediacenter", child->name) == 0) child->locked = flag;
+//			else if(ostrcmp("mediacenter", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("mboxinfo", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("networkbrowser", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("news", child->name) == 0) child->locked = flag;
