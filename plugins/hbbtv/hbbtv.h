@@ -349,7 +349,6 @@ void screenopera(char* url)
 {
 	int rcret = 0, i = 0;
 	char* tmpstr = NULL, *savedir = NULL, *dirbuf = NULL;;
-	void* threadstatus;
 	struct stimerthread* operareceiver = NULL;
 
 	drawscreen(skin, 0);
