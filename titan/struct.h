@@ -179,6 +179,20 @@ enum {DEACTIVE, ACTIVE, INPAUSE, ERROR};
 enum {FUNCTEXT, FUNCPIC, FUNCPROGRESS};
 enum {CASESSIONCREATE, CASESSIONBUSY, CASESSIONDEL, CASESSIONSTART, CASESSIONFINAL, CARESFIRSTENQUIRY, CARESCHANGE, CARESENQUIRY, CADATETIMESEND, CAMMIIDLE, CAMMIDISPLAYREPLAY, CAMMIFAKEOK};
 
+struct regex
+{
+	char* match1;
+	char* match2;
+	char* match3;
+	char* match4;
+	char* match5;
+	char* match6;
+	char* match7;
+	char* match8;
+	char* match9;
+	char* match10;
+};
+
 struct imdb
 {
 	char* title;

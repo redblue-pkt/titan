@@ -1,6 +1,75 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+void freeregexstruct(struct regex* node)
+{
+	if(node == NULL) return;
+
+	free(match1); match1 = NULL;
+	free(match2); match2 = NULL;
+	free(match3); match3 = NULL;
+	free(match4); match4 = NULL;
+	free(match5); match5 = NULL;
+	free(match6); match6 = NULL;
+	free(match7); match7 = NULL;
+	free(match8); match8 = NULL;
+	free(match9); match9 = NULL;
+	free(match10); match10 = NULL;
+
+	free(node); node = NULL;
+}
+
+struct regex* regexstruct(char* regex, char* str)
+{
+	regex_t preg;
+	regmatch_t pmatch[10];
+	size_t rm = 0, i = 0, len = 0;
+	char* ret = NULL;
+	struct regex* node = NULL;
+
+	rm = regcomp(&preg, regex, REG_EXTENDED);
+	if(rm != 0) return NULL; //error in regex
+
+	rm = regexec(&preg, str, 10, pmatch, 0);
+	if(rm != 0) return NULL; //no match
+
+	node = (struct regex*)malloc(sizeof(struct regex));
+	if(node == NULL)
+	{
+		err("no mem");
+		return NULL;
+	}
+
+	memset(node, 0, sizeof(struct regex));
+
+	for(i = 0; !rm && i <= preg.re_nsub; i++)
+	{
+		len = pmatch[i].rm_eo - pmatch[i].rm_so;
+		ret = malloc(len + 1);
+		if(ret != NULL)
+		{
+			memcpy(ret, str + pmatch[i].rm_so, len);
+			ret[len] = '\0';
+		}
+
+		if(i == 0) node->match1 = ret;
+		else if(i == 1) node->match2 = ret;
+		else if(i == 2) node->match3 = ret;
+		else if(i == 3) node->match4 = ret;
+		else if(i == 4) node->match5 = ret;
+		else if(i == 5) node->match6 = ret;
+		else if(i == 6) node->match7 = ret;
+		else if(i == 7) node->match8 = ret;
+		else if(i == 8) node->match9 = ret;
+		else if(i == 9) node->match10 = ret;
+
+		ret = NULL;
+	}
+
+	regfree(&preg);
+	return node;
+}
+
 char* oregex(char* regex, char* str)
 {
 	regex_t preg;
@@ -19,7 +88,7 @@ char* oregex(char* regex, char* str)
 	ret = malloc(len + 1);
 	if(ret != NULL)
 	{
-		strncpy(ret, str + pmatch[0].rm_so, len);
+		memcpy(ret, str + pmatch[0].rm_so, len);
 		ret[len] = '\0';
 	}
 
