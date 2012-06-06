@@ -26,6 +26,18 @@ char* oregex(char* regex, char* str)
 	return ret;
 }
 
+int oregexint(char* regex, char* str)
+{
+	int iret = 0;
+	char* ret = NULL;
+
+	ret = oregex(regex, str);
+	if(ret != NULL) iret = atoi(ret);
+	free(ret);
+
+	return iret;
+}
+
 void ckeckkillnetthread()
 {
 //	if(checkbox("ATEMIO510") == 1)
