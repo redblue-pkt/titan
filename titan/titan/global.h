@@ -5,16 +5,16 @@ void freeregexstruct(struct regex* node)
 {
 	if(node == NULL) return;
 
-	free(match1); match1 = NULL;
-	free(match2); match2 = NULL;
-	free(match3); match3 = NULL;
-	free(match4); match4 = NULL;
-	free(match5); match5 = NULL;
-	free(match6); match6 = NULL;
-	free(match7); match7 = NULL;
-	free(match8); match8 = NULL;
-	free(match9); match9 = NULL;
-	free(match10); match10 = NULL;
+	free(node->match1); node->match1 = NULL;
+	free(node->match2); node->match2 = NULL;
+	free(node->match3); node->match3 = NULL;
+	free(node->match4); node->match4 = NULL;
+	free(node->match5); node->match5 = NULL;
+	free(node->match6); node->match6 = NULL;
+	free(node->match7); node->match7 = NULL;
+	free(node->match8); node->match8 = NULL;
+	free(node->match9); node->match9 = NULL;
+	free(node->match10); node->match10 = NULL;
 
 	free(node); node = NULL;
 }
