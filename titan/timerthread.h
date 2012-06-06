@@ -23,7 +23,7 @@ struct stimerthread* gettimer(struct stimerthread* timernode)
 struct stimerthread* addtimer(void* func, int aktion, int delay, int count, void* param1, void* param2, struct stimerthread* last)
 {
 	debug(1000, "in");
-	struct stimerthread *newnode = NULL, *prev = NULL, *node = stimerthread;
+	struct stimerthread *newnode = NULL, *prev = NULL, *node = NULL;
 
 	newnode = (struct stimerthread*)malloc(sizeof(struct stimerthread));	
 	if(newnode == NULL)
@@ -42,6 +42,8 @@ struct stimerthread* addtimer(void* func, int aktion, int delay, int count, void
 	newnode->param2 = param2;
 
 	m_lock(&status.timerthreadmutex, 6);
+  node = stimerthread;
+  
 	if(last == NULL)
 	{
 		while(node != NULL)

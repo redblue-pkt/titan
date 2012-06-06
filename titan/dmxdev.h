@@ -30,11 +30,11 @@ struct dvbdev* dmxopen(struct dvbdev* fenode)
 {
 	debug(1000, "in");
 	int fd = -1;
-	struct dvbdev* node = dvbdev;
 
 	if(fenode == NULL) return NULL;
 		
 	m_lock(&status.dmxdevmutex, 9);
+  struct dvbdev* node = dvbdev;
 	
 	while(node != NULL)
 	{

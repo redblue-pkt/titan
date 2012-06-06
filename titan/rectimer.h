@@ -324,11 +324,12 @@ struct rectimer* getrectimerbyservice(struct service* servicenode)
 void checkrectimer()
 {
 	int ret = 0;
-	struct rectimer* node = rectimer, *newnode = NULL;
+	struct rectimer* node = NULL, *newnode = NULL;
 	struct channel* chnode = NULL;
 	time_t t = time(NULL), begin = 0, end = 0;
 
 	m_lock(&status.rectimermutex, 1);
+  node = rectimer;
 	
 	while(node != NULL)
 	{
@@ -486,10 +487,9 @@ int readrectimer(char *filename)
 void delrectimer(struct rectimer* rectimernode, int write, int flag)
 {
 	debug(1000, "in");
-	struct rectimer *node = rectimer, *prev = rectimer;
 
-	if(flag == 0)
-		m_lock(&status.rectimermutex, 1);
+	if(flag == 0) m_lock(&status.rectimermutex, 1);
+  struct rectimer *node = rectimer, *prev = rectimer;
 
 	while(node != NULL)
 	{
@@ -594,7 +594,7 @@ int writerectimer(const char *filename, int flag)
 {
 	debug(1000, "in");
 	FILE *fd = NULL;
-	struct rectimer *node = rectimer;
+	struct rectimer *node = NULL;
 	int ret = 0;
 	char* type = NULL;
 	time_t curtime = time(NULL), rectime = 0x7FFFFFFF;
@@ -602,6 +602,7 @@ int writerectimer(const char *filename, int flag)
 	if(status.writerectimer == 0) return 0;
 
 	if(flag == 0) m_lock(&status.rectimermutex, 1);
+  node = rectimer;
 
 	fd = fopen(filename, "w");
 	if(fd == NULL)
