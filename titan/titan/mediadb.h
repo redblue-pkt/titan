@@ -199,7 +199,9 @@ int movemediadbup(struct mediadb* node)
 
 struct mediadbfilter* addmediadbfilter(struct mediadb* mnode, int count, struct mediadbfilter* last)
 {
-	struct mediadbfilter *newnode = NULL, *prev = NULL, *node = mediadbfilter;
+  m_lock(&status.mediadbmutex, 17);
+  
+	struct mediadbfilter *newnode = NULL, *prev = NULL, *node = NULL;
 
 	if(mnode == NULL) return NULL;
 
@@ -214,6 +216,7 @@ struct mediadbfilter* addmediadbfilter(struct mediadb* mnode, int count, struct 
 	newnode->node = mnode;
 
 	m_lock(&status.mediadbmutex, 17);
+  node = mediadbfilter;
 
 	if(last == NULL)
 	{
@@ -249,7 +252,7 @@ struct mediadbfilter* addmediadbfilter(struct mediadb* mnode, int count, struct 
 //flag 1: without lock
 struct mediadbcategory* addmediadbcategory(char* line, int type, int count, struct mediadbcategory* last, int flag)
 {
-	struct mediadbcategory *newnode = NULL, *prev = NULL, *node = mediadbcategory;
+	struct mediadbcategory *newnode = NULL, *prev = NULL, *node = NULL;
 	char* name = NULL;
 	int ret = 0;
 
@@ -298,6 +301,7 @@ struct mediadbcategory* addmediadbcategory(char* line, int type, int count, stru
 	newnode->name = ostrcat(name, NULL, 1, 0);
 
 	if(flag == 0) m_lock(&status.mediadbmutex, 17);
+  node = mediadbcategory;
 
 	if(last == NULL)
 	{
@@ -407,7 +411,7 @@ int addmediadballoc(struct mediadb* node)
 struct mediadb* addmediadb(char *line, int count, struct mediadb* last, struct mediadb* newnode1, int sort, int flag)
 {
 	//debug(1000, "in");
-	struct mediadb *newnode = NULL, *prev = NULL, *node = mediadb, *nnode = NULL;
+	struct mediadb *newnode = NULL, *prev = NULL, *node = NULL, *nnode = NULL;
 	int ret = 0, free1 = 0;
 
 	if(line == NULL) return NULL;
@@ -541,6 +545,7 @@ struct mediadb* addmediadb(char *line, int count, struct mediadb* last, struct m
 	newnode->timestamp = nnode->timestamp;
 
 	if(flag == 0) m_lock(&status.mediadbmutex, 17);
+  node = mediadb;
 
 	if(last == NULL)
 	{
@@ -803,9 +808,9 @@ int delmediadbfilter(struct mediadbfilter* mnode, int flag)
 {
 	debug(1000, "in");
 	int ret = 1;
-	struct mediadbfilter *node = mediadbfilter, *prev = mediadbfilter;
 
 	m_lock(&status.mediadbmutex, 17);
+  struct mediadbfilter *node = mediadbfilter, *prev = mediadbfilter;
 
 	while(node != NULL)
 	{
@@ -844,9 +849,9 @@ int delmediadbcategory(struct mediadbcategory* mnode, int flag)
 {
 	debug(1000, "in");
 	int ret = 1;
-	struct mediadbcategory *node = mediadbcategory, *prev = mediadbcategory;
 
 	m_lock(&status.mediadbmutex, 17);
+  struct mediadbcategory *node = mediadbcategory, *prev = mediadbcategory;
 
 	while(node != NULL)
 	{
@@ -888,9 +893,9 @@ int delmediadb(struct mediadb* mnode, int flag)
 {
 	debug(1000, "in");
 	int ret = 1;
-	struct mediadb *node = mediadb, *prev = mediadb;
 
 	m_lock(&status.mediadbmutex, 17);
+  struct mediadb *node = mediadb, *prev = mediadb;
 
 	while(node != NULL)
 	{
@@ -976,7 +981,7 @@ int writemediadbcategory(const char *filename)
 {
 	debug(1000, "in");
 	FILE *fd = NULL;
-	struct mediadbcategory *node = mediadbcategory;
+	struct mediadbcategory *node = NULL;
 	int ret = 0;
 
 	fd = fopen(filename, "w");
@@ -987,6 +992,7 @@ int writemediadbcategory(const char *filename)
 	}
 
 	m_lock(&status.mediadbmutex, 17);
+  node = mediadbcategory;
 
 	while(node != NULL)
 	{
@@ -1009,7 +1015,7 @@ int writemediadb(const char *filename)
 {
 	debug(1000, "in");
 	FILE *fd = NULL;
-	struct mediadb *node = mediadb;
+	struct mediadb *node = NULL;
 	int ret = 0;
 
 	fd = fopen(filename, "w");
@@ -1020,6 +1026,7 @@ int writemediadb(const char *filename)
 	}
 
 	m_lock(&status.mediadbmutex, 17);
+  node = mediadb;
 
 	while(node != NULL)
 	{
@@ -1474,6 +1481,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 		if(type == 0)
 		{
 			struct imdb* imdb = NULL;
+			struct tmdb* tmdb = NULL;
 
 			//create imdb search name
 			char* shortname = ostrcat(file, NULL, 0, 0);
@@ -1496,6 +1504,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 					imdb = startplugin(shortname, 0, 1, 0);
 			}
 #endif
+
 #ifdef SIMULATE
 			tmdb = gettmdb(imdb->id, 1, 1, 0);
 #else
@@ -1540,6 +1549,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 			}
 #endif
 			imdb = NULL;
+
 #ifdef SIMULATE
 			freetmdb(tmdb);
 #else

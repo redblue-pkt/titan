@@ -205,6 +205,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 		return 1;
 	}
 	
+  //TODO: warum der sleep?
 	usleep(500000);
 	m_lock(&status.tsseekmutex, 15);
 	usleep(500000);

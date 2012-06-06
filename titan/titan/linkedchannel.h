@@ -63,6 +63,7 @@ start:
 	delmarkedscreennodes(linkedchannel, 1);
 	if(status.aktservice->channel != NULL)
 	{
+    m_lock(&status.linkedchannelmutex, 14);
 		if(status.aktservice->channel->linkedchannel == NULL)
 		{
 			while(chnode != NULL)
@@ -82,7 +83,6 @@ start:
 			}
 		}
 
-		m_lock(&status.linkedchannelmutex, 14);
 		if(node == NULL)
 			node = status.aktservice->channel->linkedchannel;
 		while(node != NULL)

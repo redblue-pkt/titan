@@ -57,9 +57,10 @@ struct channel* getlastchannel(struct channel* node, int flag)
 struct channel* gettmpchannel()
 {
 	debug(1000, "in");
-	struct channel *node = channel;
 
 	m_lock(&status.channelmutex, 5);
+  struct channel *node = channel;
+  
 	while(node != NULL)
 	{
 		if(node->servicetype == 99)
@@ -278,7 +279,7 @@ int movechannelup(struct channel* node)
 struct channel* addchannel(char *line, int count, struct channel* last)
 {
 	//debug(1000, "in");
-	struct channel *newnode = NULL, *prev = NULL, *node = channel;
+	struct channel *newnode = NULL, *prev = NULL, *node = NULL;
 	char *name = NULL;
 	int ret = 0;
 
@@ -327,6 +328,7 @@ struct channel* addchannel(char *line, int count, struct channel* last)
 	}
 
 	m_lock(&status.channelmutex, 5);
+  node = channel;
 
 	modifychannelcache(newnode->serviceid, newnode->transponderid, newnode);
 
@@ -443,10 +445,10 @@ int delchannel(int serviceid, unsigned long transponderid, int flag)
 {
 	debug(1000, "in");
 	int ret = 1;
-	struct channel *node = channel, *prev = channel;
 	struct provider* providernode = NULL;
 
 	m_lock(&status.channelmutex, 5);
+  struct channel *node = channel, *prev = channel;
 
 	while(node != NULL)
 	{
@@ -566,7 +568,7 @@ int writechannel(const char *filename)
 {
 	debug(1000, "in");
 	FILE *fd = NULL;
-	struct channel *node = channel;
+	struct channel *node = NULL;
 	int ret = 0;
 
 	fd = fopen(filename, "w");
@@ -577,6 +579,8 @@ int writechannel(const char *filename)
 	}
 
 	m_lock(&status.channelmutex, 5);
+  node = channel;
+  
 	while(node != NULL)
 	{
 		if(node->servicetype == 99)
