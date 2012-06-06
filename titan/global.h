@@ -6,6 +6,7 @@ char* oregex(char* regex, char* str)
 	regex_t preg;
 	regmatch_t pmatch[1];
 	size_t rm = 0, len = 0;
+	char* ret = NULL;
 
 	rm = regcomp(&preg, regex, REG_EXTENDED);
 	if(rm != 0) return NULL; //error in regex
