@@ -427,7 +427,7 @@ void screenopera(char* url)
     if(operaservicestate < 2 && !playerisplaying())
       operaservice(NULL, 1);
 
-		if(rcret == getrcconfigint("rchbbtv", NULL))
+		if(rcret == getrcconfigint("rchbbtv", NULL) || getrcconfigint("rcrecord", NULL))
 		{
 			//operasendkey("ESC\n");
 			break;
