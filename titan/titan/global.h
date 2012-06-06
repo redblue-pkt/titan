@@ -1,6 +1,31 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+char* oregex(char* regex, char* str)
+{
+	regex_t preg;
+	regmatch_t pmatch[1];
+	size_t rm = 0, len = 0;
+
+	rm = regcomp(&preg, regex, REG_EXTENDED);
+	if(rm != 0) return NULL; //error in regex
+
+	rm = regexec(&preg, str, 1, pmatch, 0);
+	if(rm != 0) return NULL; //no match
+
+	len = pmatch[0].rm_eo - pmatch[0].rm_so;
+
+	ret = malloc(len + 1);
+	if(ret != NULL)
+	{
+		strncpy(ret, str + pmatch[0].rm_so, len);
+		ret[len] = '\0';
+	}
+
+	regfree(&preg);
+	return ret;
+}
+
 void ckeckkillnetthread()
 {
 //	if(checkbox("ATEMIO510") == 1)
