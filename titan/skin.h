@@ -1482,7 +1482,7 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 {
 	int aktline = 0, x = 0, py = 0, px = 0, row_stride = 0;
 	unsigned char red, green, blue;
-	unsigned long color = 0xff000000;
+	unsigned long color = 0;
 	JSAMPARRAY buffer = NULL;
   
 	if(cinfo == NULL && buf == NULL) return 1;
@@ -1537,10 +1537,10 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 					{
 						green = buffer[0][px + 1];
 						blue = buffer[0][px + 2];
-						color |= (red << 16) | (green << 8) | blue;
+						color = (255 << 24) | (red << 16) | (green << 8) | blue;
 					}
 					else
-						color |= (red << 16) | (red << 8) | red;
+						color = (255 << 24) | (red << 16) | (red << 8) | red;
 
 					drawpixelfb(accelfb, (width * py) + x, 0, color);
 				}
@@ -1577,10 +1577,10 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 					{
 						green = buf[((aktline - 1) * row_stride) + (px + 1)];
 						blue = buf[((aktline - 1) * row_stride) + (px + 2)];
-						color |= (red << 16) | (green << 8) | blue;
+						color = (255 << 24) | (red << 16) | (green << 8) | blue;
 					}
 					else
-						color |= (red << 16) | (red << 8) | red;
+						color = (255 << 24) | (red << 16) | (red << 8) | red;
 
 					drawpixelfb(accelfb, (width * py) + x, 0, color);
 				}
@@ -1652,16 +1652,17 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 					{
 						green = buffer[0][px + 1];
 						blue = buffer[0][px + 2];
+						color = (255 << 24) | (red << 16) | (green << 8) | blue;
 					}
 					else
 					{
 						green = buf[((aktline - 1) * row_stride) + (px + 1)];
 						blue = buf[((aktline - 1) * row_stride) + (px + 2)];
-						color |= (red << 16) | (green << 8) | blue;
+						color = (255 << 24) | (red << 16) | (green << 8) | blue;
 					}
 				}
 				else
-					color |= (red << 16) | (red << 8) | red;
+					color = (255 << 24) | (red << 16) | (red << 8) | red;
 
 				drawpixelfast(posx + x, py, color);
 			}
