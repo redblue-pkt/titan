@@ -397,13 +397,13 @@ void screenopera(char* url)
 		if(count > 20) break;
 	}
 
-  //save working dir
-  dirbuf = malloc(PATH_MAX);
-  if(dirbuf != NULL)
-  {
-    savedir = getcwd(dirbuf, PATH_MAX);
-    chdir(OPERA_ROOT);
-  }
+	//save working dir
+	dirbuf = malloc(PATH_MAX);
+	if(dirbuf != NULL)
+	{
+		savedir = getcwd(dirbuf, PATH_MAX);
+		chdir(OPERA_ROOT);
+	}
 
 	fbsave();
 
@@ -415,17 +415,17 @@ void screenopera(char* url)
 	free(tmpstr); tmpstr = NULL;
 
 	//reset working dir
-  if(savedir != NULL)
-    chdir(dirbuf);
-  free(dirbuf); dirbuf = NULL;
-    
+	if(savedir != NULL)
+		chdir(dirbuf);
+	free(dirbuf); dirbuf = NULL;
+
 	while(1)
 	{
 		rcret = waitrc(NULL, 1000, 0);
-    
-    //check for player EOF
-    if(operaservicestate < 2 && !playerisplaying())
-      operaservice(NULL, 1);
+
+		//check for player EOF
+		if(operaservicestate < 2 && !playerisplaying())
+			operaservice(NULL, 1);
 
 		if(rcret == getrcconfigint("rchbbtv", NULL) || getrcconfigint("rcrecord", NULL))
 		{
@@ -556,16 +556,16 @@ void operareceivercb(char* cmd)
 				w = 720;
 				h = 576;
 			}
-      
-      position = ostrcat(position, oitoax(x), 1, 1);
-      position = ostrcat(position, " ", 1, 0);
-      position = ostrcat(position, oitoax(y), 1, 1);
-      position = ostrcat(position, " ", 1, 0);
-      position = ostrcat(position, oitoax(w), 1, 1);
-      position = ostrcat(position, " ", 1, 0);
-      position = ostrcat(position, oitoax(h), 1, 1);
 
-      debug(788, "change tv pic to: %s", position);
+			position = ostrcat(position, oitoax(x), 1, 1);
+			position = ostrcat(position, " ", 1, 0);
+			position = ostrcat(position, oitoax(y), 1, 1);
+			position = ostrcat(position, " ", 1, 0);
+			position = ostrcat(position, oitoax(w), 1, 1);
+			position = ostrcat(position, " ", 1, 0);
+			position = ostrcat(position, oitoax(h), 1, 1);
+
+			debug(788, "change tv pic to: %s", position);
 			writesys("/proc/stb/vmpeg/0/dst_all", position, 0);
 		}
 		else if(ostrcmp("AvGetFullScreen", (&ret[0])->part) == 0)
@@ -614,15 +614,15 @@ void operareceivercb(char* cmd)
 						operaservice((&ret[1])->part, 0); //stop live tv and play
 					}
 					else
-          {
-            playercontinue();
-            operaservicestate = 1;
+					{
+						playercontinue();
+						operaservicestate = 1;
 					}
 				}
 				else if(ostrcmp("0", (&ret[2])->part) == 0) //pause
 				{
-          playerpause();
-          operaservicestate = 0;
+					playerpause();
+					operaservicestate = 0;
 				}
 			}
 		}
@@ -634,8 +634,8 @@ void operareceivercb(char* cmd)
 		{
 			char* tmppos = NULL;
 			unsigned long pos = 0;
-			
-      pos = playergetpts() / 90000;
+
+			pos = playergetpts() / 90000;
 
 			tmppos = ostrcat(tmppos, "AvGetPos ", 1, 0);
 			tmppos = ostrcat(tmppos, olutoa(pos), 1, 1);
@@ -650,8 +650,8 @@ void operareceivercb(char* cmd)
 		{
 			char* tmplen = NULL;
 			unsigned long len = 0;
-      
-      len = playergetlength();
+
+			len = playergetlength();
 
 			tmplen = ostrcat(tmplen, "AvGetDuration ", 1, 0);
 			tmplen = ostrcat(tmplen, olutoa(len), 1, 1);
