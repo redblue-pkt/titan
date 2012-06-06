@@ -1480,9 +1480,9 @@ int savejpg(char* filename, int width, int height, unsigned char *buf)
 
 int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx, int posy, int width, int height, int colbytes, int mwidth, int mheight, int scalewidth, int scaleheight, int halign, int valign)
 {
-	int aktline = 0, x = 0, py = 0, row_stride = 0;
+	int aktline = 0, x = 0, py = 0, px = 0, row_stride = 0;
 	unsigned char red, green, blue;
-	unsigned long color;
+	unsigned long color = 0xff000000;
 	JSAMPARRAY buffer = NULL;
   
 	if(cinfo == NULL && buf == NULL) return 1;
@@ -1520,63 +1520,91 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 
 		m_lock(&status.accelfbmutex, 16);
 		if(cinfo != NULL) aktline = cinfo->output_scanline;
-		while(aktline < height)
+
+		if(cinfo != NULL)
 		{
-			if(cinfo != NULL)
+			while(aktline < height)
 			{
 				jpeg_read_scanlines(cinfo, buffer, 1);
 				aktline = cinfo->output_scanline;
-			}
-			else
-				aktline++;
-      
-			py++;
-			for(x = 0; x < width; x++)
-			{
-				if(cinfo != NULL)
-					red = buffer[0][colbytes * x];
-				else
-					red = buf[((aktline - 1) * row_stride) + (colbytes * x)];
-          
-				if(colbytes > 2)
+
+				py++;
+				for(x = 0; x < width; x++)
 				{
-					if(cinfo != NULL)
+					px = colbytes * x;
+					red = buffer[0][px];
+					if(colbytes > 2)
 					{
-						green = buffer[0][colbytes * x + 1];
-						blue = buffer[0][colbytes * x + 2];
+						green = buffer[0][px + 1];
+						blue = buffer[0][px + 2];
+						color |= (red << 16) | (green << 8) | blue;
 					}
 					else
-					{
-						green = buf[((aktline - 1) * row_stride) + (colbytes * x + 1)];
-						blue = buf[((aktline - 1) * row_stride) + (colbytes * x + 2)];
-					}
+						color |= (red << 16) | (red << 8) | red;
+
+					drawpixelfb(accelfb, (width * py) + x, 0, color);
 				}
-				else
+
+				if((py * width * 4) + (width * 8) >= accelfb->varfbsize)
 				{
-					green = red;
-					blue = red;
+					py++;
+					if(scaleheight > 0)
+					{
+						float tmp = (float)height / (float)scaleheight;
+						if(tmp > 0)
+						{
+							tmp = (float)py / tmp;
+							blitscale(posx, nposy, width, py, scalewidth, (int)(tmp + 0.5), 0);
+							nposy += (int)(tmp + 0.5);
+						}
+					}
+					py = -1;
 				}
-				color = (255 << 24) | (red << 16) | (green << 8) | blue;
-				drawpixelfb(accelfb, (width * py) + x, 0, color);
 			}
-			if((py * width * 4) + (width * 8) >= accelfb->varfbsize)
+		}
+		else
+		{
+			while(aktline < height)
 			{
+				aktline++;
+
 				py++;
-				if(scaleheight > 0)
+				for(x = 0; x < width; x++)
 				{
-					float tmp = (float)height / (float)scaleheight;
-					if(tmp > 0)
+					px = colbytes * x;
+					red = buf[((aktline - 1) * row_stride) + px];
+					if(colbytes > 2)
 					{
-						tmp = (float)py / tmp;
-						blitscale(posx, nposy, width, py, scalewidth, (int)(tmp + 0.5), 0);
-						nposy += (int)(tmp + 0.5);
+						green = buf[((aktline - 1) * row_stride) + (px + 1)];
+						blue = buf[((aktline - 1) * row_stride) + (px + 2)];
+						color |= (red << 16) | (green << 8) | blue;
 					}
+					else
+						color |= (red << 16) | (red << 8) | red;
+
+					drawpixelfb(accelfb, (width * py) + x, 0, color);
 				}
-				py = -1;
+
+				if((py * width * 4) + (width * 8) >= accelfb->varfbsize)
+				{
+					py++;
+					if(scaleheight > 0)
+					{
+						float tmp = (float)height / (float)scaleheight;
+						if(tmp > 0)
+						{
+							tmp = (float)py / tmp;
+							blitscale(posx, nposy, width, py, scalewidth, (int)(tmp + 0.5), 0);
+							nposy += (int)(tmp + 0.5);
+						}
+					}
+					py = -1;
+				}
 			}
-		} 
+		}
+
 		//blit the rest
-		if(scaleheight > 0 && py > -1)
+		if(py > -1 && scaleheight > 0)
 		{
 			int tmp = scaleheight - (nposy - posy);
 			blitscale(posx, nposy, width, py, scalewidth, tmp, 0);
@@ -1611,30 +1639,30 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 			py = (posy + aktline - 1) * skinfb->width;
 			for(x = 0; x < width; x++)
 			{
+				px = colbytes * x;
+
 				if(cinfo != NULL)
-					red = buffer[0][colbytes * x];
+					red = buffer[0][px];
 				else
-					red = buf[((aktline - 1) * row_stride) + (colbytes * x)];
+					red = buf[((aktline - 1) * row_stride) + px];
  
 				if(colbytes > 2)
 				{
 					if(cinfo != NULL)
 					{
-						green = buffer[0][colbytes * x + 1];
-						blue = buffer[0][colbytes * x + 2];
+						green = buffer[0][px + 1];
+						blue = buffer[0][px + 2];
 					}
 					else
 					{
-						green = buf[((aktline - 1) * row_stride) + (colbytes * x + 1)];
-						blue = buf[((aktline - 1) * row_stride) + (colbytes * x + 2)];
+						green = buf[((aktline - 1) * row_stride) + (px + 1)];
+						blue = buf[((aktline - 1) * row_stride) + (px + 2)];
+						color |= (red << 16) | (green << 8) | blue;
 					}
 				}
 				else
-				{
-					green = red;
-					blue = red;
-				}
-				color = (255 << 24) | (red << 16) | (green << 8) | blue;
+					color |= (red << 16) | (red << 8) | red;
+
 				drawpixelfast(posx + x, py, color);
 			}
 		} 
