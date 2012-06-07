@@ -1522,7 +1522,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 					tmdb = startplugin(imdb->id, 1, 1, 0);
 			}
 #endif
-			if(imdb != NULL && tmdb != NULL)
+			if(imdb != NULL && tmdb != NULL && ostrcmp(tmdb->title, "Nothing found.") != 0)
 			{
 				free(imdb->title);
 				imdb->title = ostrcat(tmdb->title, NULL, 0, 0);
@@ -1601,7 +1601,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 int findfiles(char* dirname, int type)
 {
 	DIR *d;
-
+printf("start: dir=%s type=%d\n", dirname, type);
 	//Open the directory specified by dirname
 	d = opendir(dirname);
 
@@ -1621,9 +1621,10 @@ int findfiles(char* dirname, int type)
 		snprintf(path, PATH_MAX, "%s", dirname);
 		//Readdir gets subsequent entries from d
 		entry = readdir(d);
+printf("start1\n");
 		if(!entry) //There are no more entries in this directory, so break out of the while loop
 			break;
-
+printf("start2\n");
 		//See if entry is a subdirectory of d
 		if(entry->d_type & DT_DIR)
 		{
@@ -1638,7 +1639,7 @@ int findfiles(char* dirname, int type)
 					return 1;
 				}
 				//Recursively call list_dir with the new path
-				findfiles(path, 100);
+				findfiles(path, type);
 			}
 		}
 		else //File

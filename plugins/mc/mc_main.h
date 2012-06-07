@@ -153,7 +153,10 @@ void mc_main()
 			addscreenrc(mc_main, listbox);
 
 		}
-
+		else if(rcret == getrcconfigint("rcgreen", NULL))
+		{
+			mediadbscan("/media", 0);
+		}	
 		if(listbox->select != NULL && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL)))
 		{
 			if(ostrcmp(listbox->select->name, "mc_videoplayer") == 0)

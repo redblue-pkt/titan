@@ -610,6 +610,8 @@ void screenmc_videoplayer()
 
 				free(status.playfile); status.playfile = NULL;
 				status.playfile = ostrcat(filename, "", 0, 0);
+				mediadbscan(filelistpath->text, 0);
+
 			}
 		}
 
