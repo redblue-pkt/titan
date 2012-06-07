@@ -20,6 +20,9 @@ void startmediadb()
 //	not working...
 //	mkdir(tmpstr, 777);
 
+	//disable autoscanning
+	addconfigtmp("mediadbscantimeout", "0");
+	
 	addconfigtmp("mediadbpath", tmpstr);
 	debug(50, "mediadbpath=%s", tmpstr);
 
@@ -677,6 +680,7 @@ void screenmc_videoplayer()
 	delconfigtmp("mediadbfile");
 	delconfigtmp("mediadbscandelall");
 	delconfigtmp("mediadbscandelnotfound");	
+	delconfigtmp("mediadbscantimeout");
 	
 	delmarkedscreennodes(apskin, FILELISTDELMARK);
 	delownerrc(apskin);
