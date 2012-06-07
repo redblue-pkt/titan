@@ -548,7 +548,7 @@ elif [ $MEDIAFW = 1 ];then
 	rm -rf "$HOME"/flashimg/BUILD/titan/usr/lib/lib*
 	list=`ls -1 "$HOME"/flashimg/BUILD/titan/usr/lib-all`
 	for ROUND in $list; do
-		dest"=`echo $ROUND | sed -e 's/.\{4\}$//'`
+		dest=`echo $ROUND | sed -e 's/.\{4\}$//'`
 		echo cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/$ROUND "$HOME"/flashimg/BUILD/titan/usr/lib/$dest
 		cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/$ROUND "$HOME"/flashimg/BUILD/titan/usr/lib/$dest
 	done
