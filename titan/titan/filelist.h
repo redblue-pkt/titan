@@ -305,8 +305,8 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 		gridbr++;
 	} 
 
-	if((status.filelistextend == 2) || (status.filelistextend == 5)) 
-		m_lock(&status.mediadbmutex, 17);
+//	if((status.filelistextend == 2) || (status.filelistextend == 5)) 
+//		m_lock(&status.mediadbmutex, 17);
  	
 	child = parentdir;
 	tmpcount = count;
@@ -390,7 +390,8 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 								string_removechar(tmpstr);
 								string_remove_whitechars(tmpstr);
 								tmpstr = ostrcat(tmpstr, ".png", 0, 0);
-*/
+
+								m_lock(&status.mediadbmutex, 17);								
 								dbnode = mediadb;
 								while(dbnode != NULL)
 								{
@@ -409,9 +410,9 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 									}
 									dbnode = dbnode->next;
 								}
-						
+								m_unlock(&status.mediadbmutex, 17);
+*/														
 							}	
-														
 							if(!file_exist(tmpstr))
 							{
 								free(tmpstr); tmpstr = NULL;
@@ -494,6 +495,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						tmpstr = ostrcat(tmpstr, filename, 1, 0);
 						free(filename); filename = NULL;
 */
+						m_lock(&status.mediadbmutex, 17);
 						dbnode = mediadb;
 						while(dbnode != NULL)
 						{
@@ -515,7 +517,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 							}
 							dbnode = dbnode->next;
 						}
-						
+						m_unlock(&status.mediadbmutex, 17);
 						debug(10, "imdbpath: %s", tmpstr);
 						//tmpstr is freed with imdbpath
 						child->filelist->imdbpath = tmpstr;						
@@ -628,6 +630,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 								free(filename); filename = NULL;
 								tmpstr = ostrcat(tmpstr, ".jpg", 1, 0);
 */
+								m_lock(&status.mediadbmutex, 17);
 								dbnode = mediadb;
 								while(dbnode != NULL)
 								{
@@ -645,6 +648,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 									free(tmpstr), tmpstr = NULL;
 									dbnode = dbnode->next;
 								}
+								m_unlock(&status.mediadbmutex, 17);
 							}
 							
 							if(!file_exist(tmpstr))
@@ -741,6 +745,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 
 						if(status.filelistextend == 5)
 						{
+							m_lock(&status.mediadbmutex, 17);
 							dbnode = mediadb;
 							while(dbnode != NULL)
 							{
@@ -749,20 +754,41 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 
 								if(ostrcmp(filelist[i]->d_name, tmpstr) == 0)
 								{
+									if(dbnode->title != NULL)
+									{
+										free(tmpstr), tmpstr = NULL;
+										tmpstr = ostrcat(tmpstr, dbnode->title, 1, 0);
+										
+										tmpstr = ostrcat(tmpstr, " (", 1, 0);
+										
+										struct regex* x = regexstruct(".*(cd[0-9]{1,3}).*", filelist[i]->d_name);
+										if(x != NULL)
+										{
+											tmpstr = ostrcat(tmpstr, x->match2, 1, 0);
+											tmpstr = ostrcat(tmpstr, " ", 1, 0);
+										}
+										
+										freeregexstruct(x); x= NULL;
+
+										tmpstr = ostrcat(tmpstr, getfilenameext(filelist[i]->d_name), 1, 0);
+										tmpstr = ostrcat(tmpstr, ")", 1, 0);								
+
+										changetext(child, tmpstr);										
+									}
+									else
+										changetext(child, filelist[i]->d_name);
+
 									free(tmpstr), tmpstr = NULL;
 									tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
 									tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
 									tmpstr = ostrcat(tmpstr, dbnode->poster, 1, 0);
-//									tmpstr = ostrcat(tmpstr, "_backdrop.mvi", 1, 0);
-									if(dbnode->title != NULL)
-										changetext(child, dbnode->title);
-									else
-										changetext(child, filelist[i]->d_name);								
+//									tmpstr = ostrcat(tmpstr, "_backdrop.mvi", 1, 0);							
 									break;
 								}
 //								free(tmpstr), tmpstr = NULL;
 								dbnode = dbnode->next;
 							}
+							m_unlock(&status.mediadbmutex, 17);
 
 							debug(10, "imdbpath: %s", tmpstr);
 							//tmpstr is freed with imdbpath
@@ -783,8 +809,8 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 		i++;
 	}
 
-	if((status.filelistextend == 2) || (status.filelistextend == 5)) 
-		m_unlock(&status.mediadbmutex, 17);	
+//	if((status.filelistextend == 2) || (status.filelistextend == 5)) 
+//		m_unlock(&status.mediadbmutex, 17);	
 /*
 	for (i = 0; i <= pagecount; i++)
 	{
