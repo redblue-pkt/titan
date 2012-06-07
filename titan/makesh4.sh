@@ -520,6 +520,38 @@ if [ $MEDIAFW = 2 ];then
 	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libavcodec.so* "$HOME"/flashimg/BUILD/titan/lib
 	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libavformat.so* "$HOME"/flashimg/BUILD/titan/lib
 	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libavutil.so* "$HOME"/flashimg/BUILD/titan/lib
+elif [ $MEDIAFW = 1 ];then
+	#directfb
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/directfb-1.4-5 "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libdirectfb* "$HOME"/flashimg/BUILD/titan/usr/lib
+
+	#gst
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/gstreamer-0.10 "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libgst* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libdirect* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libfusion* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libglib* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libgmodule* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libgobject* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libgthread* "$HOME"/flashimg/BUILD/titan/usr/lib
+
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libasound* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libFLAC* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libgio* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libogg* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libixml* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libsoup* "$HOME"/flashimg/BUILD/titan/usr/lib
+	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libthreadutil* "$HOME"/flashimg/BUILD/titan/usr/lib
+
+	mkdir "$HOME"/flashimg/BUILD/titan/usr/lib-all
+	find "$HOME"/flashimg/BUILD/titan/usr/lib -maxdepth 1 -type f \( ! -iname ".*" \) -exec cp {} "$HOME/flashimg/BUILD/titan/usr/lib-all/" \;	
+	rm -rf "$HOME"/flashimg/BUILD/titan/usr/lib/lib*
+	list=`ls -1 "$HOME"/flashimg/BUILD/titan/usr/lib-all`
+	for ROUND in $list; do
+		dest"=`echo $ROUND | sed -e 's/.\{4\}$//'`
+		echo cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/$ROUND "$HOME"/flashimg/BUILD/titan/usr/lib/$dest
+		cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/$ROUND "$HOME"/flashimg/BUILD/titan/usr/lib/$dest
+	done
 else
 	#directfb
 	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/directfb-1.4-5 "$HOME"/flashimg/BUILD/titan/usr/lib
