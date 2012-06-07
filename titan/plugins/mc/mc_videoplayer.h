@@ -673,7 +673,11 @@ void screenmc_videoplayer()
 	deinitscreensaver();
 	status.hangtime = getconfigint("hangtime", NULL);
 	delconfigtmp("dirsort");
-
+	delconfigtmp("mediadbpath");
+	delconfigtmp("mediadbfile");
+	delconfigtmp("mediadbscandelall");
+	delconfigtmp("mediadbscandelnotfound");	
+	
 	delmarkedscreennodes(apskin, FILELISTDELMARK);
 	delownerrc(apskin);
 	clearscreen(apskin);
