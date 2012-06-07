@@ -437,6 +437,8 @@ void screenmc_videoplayer()
 					playerafterend();
 			
 				writevfd("VideoPlayer Filelist-Mode");
+				startmediadb();
+				dbnode = mediadb;
 //			}
 		}
 		else if(rcret == getrcconfigint("rcexit", NULL))
