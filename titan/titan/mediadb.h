@@ -1522,7 +1522,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 					tmdb = startplugin(imdb->id, 1, 1, 0);
 			}
 #endif
-			if(tmdb != NULL)
+			if(imdb != NULL && tmdb != NULL)
 			{
 				free(imdb->title);
 				imdb->title = ostrcat(tmdb->title, NULL, 0, 0);
