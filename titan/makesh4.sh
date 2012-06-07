@@ -545,6 +545,9 @@ elif [ $MEDIAFW = 1 ];then
 
 	mkdir "$HOME"/flashimg/BUILD/titan/usr/lib-all
 	find "$HOME"/flashimg/BUILD/titan/usr/lib -maxdepth 1 -type f \( ! -iname ".*" \) -exec cp {} "$HOME/flashimg/BUILD/titan/usr/lib-all/" \;	
+	rm -rf `find "$HOME"/flashimg/BUILD/titan/usr/lib-all -type f -name "*.a"`
+	rm -rf `find "$HOME"/flashimg/BUILD/titan/usr/lib-all -type f -name "*.la"`
+
 	rm -rf "$HOME"/flashimg/BUILD/titan/usr/lib/lib*
 	list=`ls -1 "$HOME"/flashimg/BUILD/titan/usr/lib-all`
 	for ROUND in $list; do
@@ -552,6 +555,7 @@ elif [ $MEDIAFW = 1 ];then
 		echo cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/$ROUND "$HOME"/flashimg/BUILD/titan/usr/lib/$dest
 		cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/$ROUND "$HOME"/flashimg/BUILD/titan/usr/lib/$dest
 	done
+	rm -rf "$HOME"/flashimg/BUILD/titan/usr/lib-all
 else
 	#directfb
 	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/directfb-1.4-5 "$HOME"/flashimg/BUILD/titan/usr/lib
