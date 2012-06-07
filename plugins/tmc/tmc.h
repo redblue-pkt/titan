@@ -665,7 +665,7 @@ void screentmcmenu()
 				}
 				else if(menuid == 1 && ostrcmp("Scan", tmcmenutxt->ret) == 0)
 				{
-					mediadbscan();
+					mediadbscan(NULL, 100);
           screentmcdb();
 				}
 				else if(menuid == 1 && ostrcmp("Database Info", tmcmenutxt->ret) == 0)

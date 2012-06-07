@@ -1110,7 +1110,7 @@ void createmediadbfilter(int type, char* search, int flag)
 	}
 }
 
-void mediadbscanthread(struct stimerthread* self)
+void mediadbscanthread(struct stimerthread* self, char* path, int type)
 {
 	struct mediadb *node = mediadb, *prev = mediadb;
 	struct mediadbcategory *cnode = NULL;
@@ -1153,23 +1153,29 @@ void mediadbscanthread(struct stimerthread* self)
 	status.mediadbthreadstatus = 2;
 
 	//find media files
-	addhddall();
-	hddnode = hdd;
+	if(path == NULL)
+	{
+		addhddall();
+		hddnode = hdd;
 
 #ifdef SIMULATE
-	findfiles("/home/nit/titan/x");
+		findfiles("/home/nit/titan/x");
 #else
-	while(hddnode != NULL)
-	{
-		if(hddnode->partition != 0)
+		while(hddnode != NULL)
 		{
-			tmpstr = ostrcat("/autofs/", hddnode->device, 0, 0);
-			findfiles(tmpstr);
-			free(tmpstr); tmpstr = NULL;
+			if(hddnode->partition != 0)
+			{
+				tmpstr = ostrcat("/autofs/", hddnode->device, 0, 0);
+				findfiles(tmpstr, type);
+				free(tmpstr); tmpstr = NULL;
+			}
+			hddnode = hddnode->next;
 		}
-		hddnode = hddnode->next;
-	}
 #endif
+	}
+	else
+		findfiles(path, type);
+
 	writemediadb(getconfig("mediadbfile", NULL));
 
 	status.mediadbthreadstatus = 3;
@@ -1592,7 +1598,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 	free(tmpstr); tmpstr = NULL;
 }
 
-int findfiles(char* dirname)
+int findfiles(char* dirname, int type)
 {
 	DIR *d;
 
@@ -1640,13 +1646,22 @@ int findfiles(char* dirname)
 			//TODO: add extensions
 			//video
 			if(!filelistflt("*.avi", entry->d_name))
-				mediadbfindfilecb(path, entry->d_name, 0);
+			{
+				if(type == 0 || type == 100)
+					mediadbfindfilecb(path, entry->d_name, 0);
+			}
 			//audio
 			if(!filelistflt("*.mp3", entry->d_name))
-				mediadbfindfilecb(path, entry->d_name, 1);
+			{
+				if(type == 1 || type == 100)
+					mediadbfindfilecb(path, entry->d_name, 1);
+			}
 			//picture
 			if(!filelistflt("*.jpg", entry->d_name))
-				mediadbfindfilecb(path, entry->d_name, 2);
+			{
+				if(type == 2 || type == 100)
+					mediadbfindfilecb(path, entry->d_name, 2);
+			}
 		}
 	}
 
@@ -1660,11 +1675,12 @@ int findfiles(char* dirname)
 	return 0;
 }
 
-void mediadbscan()
+//type 0=video, 1=audio, 2=picture, 3=all
+void mediadbscan(char* path, int type)
 {
 	int count = 0;
 
-	addtimer(&mediadbscanthread, START, 1000, 1, NULL, NULL, NULL);
+	addtimer(&mediadbscanthread, START, 1000, 1, (void*)path, (void*)type, NULL);
 
 	//block a little
 	while(status.mediadbthread != NULL && count < 20)
