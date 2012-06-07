@@ -381,7 +381,7 @@ void screenopera(char* url)
 	//mkfifo(RC_TITAN, 0666);
 
 	debug(788, "step 2, start opera");
-	writesys("/proc/cpu/alignment", "0", 0);
+	//writesys("/proc/cpu/alignment", "0", 0);
 
 	operarcthread_ok = 0;
 	operareceiverthread_ok = 0;
@@ -503,7 +503,7 @@ void screenopera(char* url)
 
 	free(operaplayurl); operaplayurl = NULL;
 
-	writesys("/proc/cpu/alignment", "3", 0);
+	//writesys("/proc/cpu/alignment", "3", 0);
 
 	//setvideomode("720p50", 0);
 	//changefbresolution("720p50");
