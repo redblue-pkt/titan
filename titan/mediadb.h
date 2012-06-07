@@ -1508,7 +1508,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 			tmdb = gettmdb(imdb->id, 1, 1, 0);
 #else
 			struct skin* tmdbplugin = getplugin("TMDb");
-			if(imdbplugin != NULL)
+			if(tmdbplugin != NULL)
 			{
 				struct tmdb* (*startplugin)(char*, int, int, int);
 				startplugin = dlsym(tmdbplugin->pluginhandle, "gettmdb");
@@ -1555,7 +1555,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 			if(tmdbplugin != NULL)
 			{
 				void (*startplugin)(struct tmdb*);
-				startplugin = dlsym(imdbplugin->pluginhandle, "freetmdb");
+				startplugin = dlsym(tmdbplugin->pluginhandle, "freetmdb");
 				if(startplugin != NULL)
 					startplugin(tmdb);
 			}
