@@ -1127,14 +1127,13 @@ void mediadbscanthread(struct stimerthread* self)
 	//clear all other db in mem
 	freemediadbfilter(0);
 
-	if(mediadb == NULL)
-		readmediadb(getconfig("mediadbfile", NULL), 0, 0);
-
 	if(getconfigint("mediadbscandelall", NULL) == 1)
 	{
 		delallfiles(getconfig("mediadbpath", NULL), ".jpg");
 		freemediadb(0);
 	}
+	else
+		readmediadb(getconfig("mediadbfile", NULL), 0, 0);
 
 	//check mediadb for not exist file
 	if(getconfigint("mediadbscandelnotfound", NULL) == 1)
