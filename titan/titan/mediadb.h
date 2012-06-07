@@ -1159,7 +1159,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 		hddnode = hdd;
 
 #ifdef SIMULATE
-		findfiles("/home/nit/titan/x");
+		findfiles("/home/nit/titan/x", 100);
 #else
 		while(hddnode != NULL)
 		{
@@ -1638,7 +1638,7 @@ int findfiles(char* dirname, int type)
 					return 1;
 				}
 				//Recursively call list_dir with the new path
-				findfiles(path);
+				findfiles(path, 100);
 			}
 		}
 		else //File
