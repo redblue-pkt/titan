@@ -553,8 +553,47 @@ elif [ $MEDIAFW = 1 ];then
 	for ROUND in $list; do
 		dest=`echo $ROUND | sed -e 's/.\{4\}$//'`
 		echo cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/$ROUND "$HOME"/flashimg/BUILD/titan/usr/lib/$dest
-		cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/$ROUND "$HOME"/flashimg/BUILD/titan/usr/lib/$dest
+#		cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/$ROUND "$HOME"/flashimg/BUILD/titan/usr/lib/$dest
 	done
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libasound.so.2.0.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libasound.so.2
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libdirect-1.4.so.5.0.6 "$HOME"/flashimg/BUILD/titan/usr/lib/libdirect-1.4.so.5
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libdirectfb-1.4.so.5.0.6 "$HOME"/flashimg/BUILD/titan/usr/lib/libdirectfb-1.4.so.5
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libFLAC.so.8.2.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libFLAC.so.8
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libfusion-1.4.so.5.0.6 "$HOME"/flashimg/BUILD/titan/usr/lib/libfusion-1.4.so.5
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgio-2.0.so.0.2800.3 "$HOME"/flashimg/BUILD/titan/usr/lib/libgio-2.0.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libglib-2.0.so.0.2800.3 "$HOME"/flashimg/BUILD/titan/usr/lib/libglib-2.0.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgmodule-2.0.so.0.2800.3 "$HOME"/flashimg/BUILD/titan/usr/lib/libgmodule-2.0.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgobject-2.0.so.0.2800.3 "$HOME"/flashimg/BUILD/titan/usr/lib/libgobject-2.0.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstapp-0.10.so.0.25.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstapp-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstaudio-0.10.so.0.25.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstaudio-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstbase-0.10.so.0.30.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstbase-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstbasecamerabinsrc-0.10.so.0.0.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstbasecamerabinsrc-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstbasevideo-0.10.so.0.0.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstbasevideo-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstcdda-0.10.so.0.25.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstcdda-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstcheck-0.10.so.0.30.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstcheck-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstcodecparsers-0.10.so.0.0.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstcodecparsers-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstcontroller-0.10.so.0.30.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstcontroller-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstdataprotocol-0.10.so.0.30.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstdataprotocol-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstfft-0.10.so.0.25.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstfft-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstinterfaces-0.10.so.0.25.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstinterfaces-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstnet-0.10.so.0.30.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstnet-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstnetbuffer-0.10.so.0.25.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstnetbuffer-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstpbutils-0.10.so.0.25.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstpbutils-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstphotography-0.10.so.0.0.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstphotography-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstreamer-0.10.so.0.30.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstreamer-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstriff-0.10.so.0.25.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstriff-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstrtp-0.10.so.0.25.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstrtp-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstrtsp-0.10.so.0.25.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstrtsp-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstsdp-0.10.so.0.25.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstsdp-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstsignalprocessor-0.10.so.0.0.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstsignalprocessor-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgsttag-0.10.so.0.25.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgsttag-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgstvideo-0.10.so.0.25.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libgstvideo-0.10.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libgthread-2.0.so.0.2800.3 "$HOME"/flashimg/BUILD/titan/usr/lib/libgthread-2.0.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libixml.so.2.0.7 "$HOME"/flashimg/BUILD/titan/usr/lib/libixml.so.2
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libogg.so.0.7.1 "$HOME"/flashimg/BUILD/titan/usr/lib/libogg.so.0
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libsoup-2.4.so.1.3.0 "$HOME"/flashimg/BUILD/titan/usr/lib/libsoup-2.4.so.1
+	cp "$HOME"/flashimg/BUILD/titan/usr/lib-all/libthreadutil.so.6.0.2 "$HOME"/flashimg/BUILD/titan/usr/lib/libthreadutil.so.6
+
 	rm -rf "$HOME"/flashimg/BUILD/titan/usr/lib-all
 else
 	#directfb
