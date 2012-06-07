@@ -30,7 +30,7 @@ void screenmc_audioplayer()
 	struct skin* sreverse = getscreennode(infobar, "reverse");
 	struct skin* sprogress = getscreennode(infobar, "progress");
 
-	currentdirectory = ostrcat("", getconfig("mc_audioplayerpath", NULL), 0, 0);
+	currentdirectory = ostrcat("", getconfig("mc_ap_path", NULL), 0, 0);
 
 	// enable listbox and set hidden
 	listbox->aktpage = -1;
@@ -38,7 +38,7 @@ void screenmc_audioplayer()
 	listbox->hidden = YES;
 
 	// read configs
-	int view = getconfigint("ap_view", NULL);
+	int view = getconfigint("mc_ap_view", NULL);
 	int screensaver_delay = getconfigint("screensaver_delay", NULL);
 
 	// set allowed filemask
@@ -217,13 +217,13 @@ void screenmc_audioplayer()
 			{
 				debug(50, "rcmenu: settings");
 
-				view = getconfigint("ap_view", NULL);
+				view = getconfigint("mc_ap_view", NULL);
 				screenmc_audioplayer_settings();
 				
-				if(view != getconfigint("ap_view", NULL))
+				if(view != getconfigint("mc_ap_view", NULL))
 				{
 					printf("view changed > change tmpview\n");
-					tmpview = getconfigint("ap_view", NULL);
+					tmpview = getconfigint("mc_ap_view", NULL);
 				}
 				
 				mc_changeview(tmpview, filelist);
@@ -262,7 +262,7 @@ void screenmc_audioplayer()
 
 				filelist->hidden = NO;
 				listbox->hidden = YES;
-				changetext(filelistpath, _(getconfig("mc_audioplayerpath", NULL)));
+				changetext(filelistpath, _(getconfig("mc_ap_path", NULL)));
 				changetext(b2, _("Filelist-Mode"));
 
 				// switch filelist
@@ -285,7 +285,7 @@ void screenmc_audioplayer()
 			debug(50, "exit - save mc_audioplayerpath: %s", filelistpath->text);
 			if(playlist == 0)
 			{
-				if(ostrcmp(getconfig("mc_audioplayerpath", NULL), filelistpath->text) != 0)
+				if(ostrcmp(getconfig("mc_ap_path", NULL), filelistpath->text) != 0)
 					addconfig("mc_audioplayerpath", filelistpath->text);
 			}
 
@@ -342,7 +342,7 @@ void screenmc_audioplayer()
 						playlist = 0;
 						status.playspeed = 0;
 
-						changetext(filelistpath, _(getconfig("mc_audioplayerpath", NULL)));
+						changetext(filelistpath, _(getconfig("mc_ap_path", NULL)));
 						filelist->hidden = NO;
 						listbox->hidden = YES;
 
@@ -378,7 +378,7 @@ void screenmc_audioplayer()
 			}
 			else if(filelist->select != NULL && filelist->select->input == NULL)
 			{
-				if(ostrcmp(getconfig("mc_audioplayerpath", NULL), filelistpath->text) != 0)
+				if(ostrcmp(getconfig("mc_ap_path", NULL), filelistpath->text) != 0)
 					addconfig("mc_audioplayerpath", filelistpath->text);
 
 				debug(50, "filelist->select->text: %s", filelist->select->text);
@@ -388,7 +388,7 @@ void screenmc_audioplayer()
 				{
 					debug(50, "mc_mounter_main filename: %s", filename);
 					//addconfig("mc_audioplayerpath", filelistpath->text);
-					currentdirectory = ostrcat("", getconfig("mc_audioplayerpath", NULL), 0, 0);
+					currentdirectory = ostrcat("", getconfig("mc_ap_path", NULL), 0, 0);
 
 					mc_mounter_main(0,filename,filelistpath,filelist,apskin,filemask,tmpview,currentdirectory);
 					debug(50, "mc_mounter_main done");

@@ -5,19 +5,58 @@ extern struct skin* skin;
 extern struct screensaver* screensaver;
 extern struct mediadb* mediadb;
 
+void startmediadb()
+{
+	if(status.mediadbthread == NULL)
+		freemediadb(0);
+
+	char* tmpstr = NULL;
+	tmpstr = ostrcat("mkdir -p ", getconfig("mc_vp_mediadb", NULL), 0, 0);
+	tmpstr = ostrcat(tmpstr, "/mediadb_mc/vp", 1, 0);
+	system(tmpstr);
+	
+	free(tmpstr), tmpstr = NULL;
+	tmpstr = ostrcat(getconfig("mc_vp_mediadb", NULL), "/mediadb_mc/vp", 0, 0);
+//	not working...
+//	mkdir(tmpstr, 777);
+
+	addconfigtmp("mediadbpath", tmpstr);
+	debug(50, "mediadbpath=%s", tmpstr);
+
+	tmpstr = ostrcat(tmpstr, "/mediadb", 0, 0);	
+	addconfigtmp("mediadbfile", tmpstr);
+	debug(50, "mediadbfile=%s", tmpstr);
+
+	free(tmpstr), tmpstr = NULL;
+	tmpstr = ostrcat(getconfig("mc_vp_mediadbscandelall", NULL), NULL, 0, 0);
+	addconfigtmp("mediadbscandelall", tmpstr);
+
+	free(tmpstr), tmpstr = NULL;
+	tmpstr = ostrcat(getconfig("mc_vp_mediadbscandelnotfound", NULL), NULL, 0, 0);
+	addconfigtmp("mediadbscandelnotfound", tmpstr);	
+
+	readmediadb(getconfig("mediadbfile", NULL), 0, 0);
+//	dbnode = mediadb;
+
+//	printf("%p\n", mediadb);
+	
+//	while(dbnode != NULL)
+//	{
+//		printf("dbnode->file: %s\n",dbnode->file);
+//		dbnode = dbnode->next;
+//	}
+
+	free(tmpstr), tmpstr = NULL;
+	tmpstr = ostrcat(getconfig("mc_vp_dirsort", NULL), NULL, 0, 0);
+	addconfigtmp("dirsort", tmpstr);
+}
+
 void screenmc_videoplayer()
 {
 	struct mediadb* dbnode = NULL;
-	readmediadb(getconfig("mediadbfile", NULL), 0, 0);
+	startmediadb();
 	dbnode = mediadb;
-	printf("%p\n", mediadb);
 
-	while(dbnode != NULL)
-	{
-		printf("dbnode->file: %s\n",dbnode->file);
-		dbnode = dbnode->next;
-	}
-				
 	char* filename = NULL;
 	char* tmppolicy = NULL;
 	char* currentdirectory = NULL;
@@ -39,8 +78,8 @@ void screenmc_videoplayer()
 	struct skin* skin_cover = getscreennode(apskin, "cover");
 //	skin_cover->hidden = YES;
 			
-	currentdirectory = ostrcat(currentdirectory, getconfig("mc_videoplayerpath", NULL), 1, 0);
-	selectedfile = ostrcat(selectedfile, getconfig("mc_selectedfile", NULL), 1, 0);
+	currentdirectory = ostrcat(currentdirectory, getconfig("mc_vp_path", NULL), 1, 0);
+	selectedfile = ostrcat(selectedfile, getconfig("mc_vp_selectedfile", NULL), 1, 0);
 
 	// enable listbox and set hidden
 	listbox->aktpage = -1;
@@ -48,7 +87,7 @@ void screenmc_videoplayer()
 	listbox->hidden = YES;
 
 	// read configs
-	int view = getconfigint("vp_view", NULL);
+	int view = getconfigint("mc_vp_view", NULL);
 	int skip13 = getconfigint("skip13", NULL);
 	int skip46 = getconfigint("skip46", NULL);
 	int skip79 = getconfigint("skip79", NULL);
@@ -325,17 +364,20 @@ void screenmc_videoplayer()
 			{
 				debug(50, "rcmenu: settings");
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
-				view = getconfigint("vp_view", NULL);
+				view = getconfigint("mc_vp_view", NULL);
 				screenmc_videoplayer_settings();
 				
-				if(view != getconfigint("vp_view", NULL))
+				if(view != getconfigint("mc_vp_view", NULL))
 				{
 					printf("view changed > change tmpview\n");
-					tmpview = getconfigint("vp_view", NULL);
+					tmpview = getconfigint("mc_vp_view", NULL);
 				}
 				
 				mc_changeview(tmpview, filelist);
 
+				startmediadb();
+				dbnode = mediadb;
+	
 				delownerrc(apskin);	
 				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
 				addscreenrc(apskin, filelist);
@@ -366,7 +408,7 @@ void screenmc_videoplayer()
 				apskin->hidden = NO;
 				filelist->hidden = NO;
 				listbox->hidden = YES;
-				changetext(filelistpath, _(getconfig("mc_videoplayerpath", NULL)));
+				changetext(filelistpath, _(getconfig("mc_vp_path", NULL)));
 				changetext(b2, _("Filelist-Mode"));
 
 				// switch filelist
@@ -396,12 +438,12 @@ void screenmc_videoplayer()
 		}
 		else if(rcret == getrcconfigint("rcexit", NULL))
 		{
-			debug(50, "exit - save mc_videoplayerpath: %s", filelistpath->text);
+			debug(50, "exit - save mc_vp_path: %s", filelistpath->text);
 			if(playlist == 0)
 			{
-				if(ostrcmp(getconfig("mc_videoplayerpath", NULL), filelistpath->text) != 0)
+				if(ostrcmp(getconfig("mc_vp_path", NULL), filelistpath->text) != 0)
 					addconfig("mc_videoplayerpath", filelistpath->text);
-				if(ostrcmp(getconfig("mc_selectedfile", NULL), filelist->select->name) != 0)
+				if(ostrcmp(getconfig("mc_vp_selectedfile", NULL), filelist->select->name) != 0)
 					addconfig("mc_selectedfile", filelist->select->name);
 			}
 
@@ -475,7 +517,7 @@ void screenmc_videoplayer()
 				drawscreen(skin, 0);
 				setfbtransparent(255);
 				debug(50, "check");
-				debug(50, "autostart_playlist: %d", getconfigint("vp_autostart_playlist", NULL));
+				debug(50, "autostart_playlist: %d", getconfigint("mc_vp_autostart_playlist", NULL));
 				debug(50, "status.play: %d", status.play);
 				debug(50, "flag: %d", flag);
 ///////////
@@ -496,7 +538,7 @@ void screenmc_videoplayer()
 						status.playspeed = 0;
 						textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 
-						changetext(filelistpath, _(getconfig("mc_videoplayerpath", NULL)));
+						changetext(filelistpath, _(getconfig("mc_vp_path", NULL)));
 						filelist->hidden = NO;
 						listbox->hidden = YES;
 
@@ -530,7 +572,7 @@ void screenmc_videoplayer()
 			}
 			else if(filelist->select != NULL && filelist->select->input == NULL)
 			{
-				if(ostrcmp(getconfig("mc_videoplayerpath", NULL), filelistpath->text) != 0)
+				if(ostrcmp(getconfig("mc_vp_path", NULL), filelistpath->text) != 0)
 					addconfig("mc_videoplayerpath", filelistpath->text);
 
 				debug(50, "filelist->select->text: %s", filelist->select->text);
@@ -548,8 +590,8 @@ void screenmc_videoplayer()
 				{
 					debug(50, "mc_mounter_main filename: %s", filename);
 					//addconfig("mc_videoplayerpath", filelistpath->text);
-					currentdirectory = ostrcat("", getconfig("mc_videoplayerpath", NULL), 0, 0);
-					selectedfile = ostrcat(selectedfile, getconfig("mc_selectedfile", NULL), 0, 0);
+					currentdirectory = ostrcat("", getconfig("mc_vp_path", NULL), 0, 0);
+					selectedfile = ostrcat(selectedfile, getconfig("mc_vp_selectedfile", NULL), 0, 0);
 
 					mc_mounter_main(0,filename,filelistpath,filelist,apskin,filemask,tmpview,currentdirectory);
 					debug(50, "mc_mounter_main done");
@@ -561,7 +603,7 @@ void screenmc_videoplayer()
 				{
 					showplaylist(apskin, filelistpath, filelist, listbox, b2, 1, &playlist, &eof, &filename, &currentdirectory, &playertype, flag);
 
-					if(getconfigint("vp_autostart_playlist", NULL) == 0)
+					if(getconfigint("mc_vp_autostart_playlist", NULL) == 0)
 						drawscreen(apskin, 0);
 					continue;
 

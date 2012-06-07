@@ -193,12 +193,12 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 								listbox->hidden = YES;
 
 								if(flag == 1)
-									changetext(filelistpath, _(getconfig("mc_videoplayerpath", NULL)));
+									changetext(filelistpath, _(getconfig("mc_vp_path", NULL)));
 								else if(flag == 2)
-									changetext(filelistpath, _(getconfig("mc_audioplayerpath", NULL)));
+									changetext(filelistpath, _(getconfig("mc_ap_path", NULL)));
 								else if(flag == 3)
 								{
-									changetext(filelistpath, _(getconfig("mc_pictureplayerpath", NULL)));
+									changetext(filelistpath, _(getconfig("mc_pp_path", NULL)));
 									picplayer(picscreen, picture, picname, NULL, 0);
 									clearscreen(picscreen);
 								}
@@ -581,7 +581,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 							drawscreen(skin, 0);
 							setfbtransparent(255);
 							debug(50, "check");
-							debug(50, "autostart_playlist: %d", getconfigint("vp_autostart_playlist", NULL));
+							debug(50, "autostart_playlist: %d", getconfigint("mc_vp_autostart_playlist", NULL));
 							debug(50, "status.play: %d", status.play);
 							debug(50, "flag: %d", flag);
 						}
@@ -590,12 +590,12 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 							addscreenrc(apskin, listbox);
 							drawscreen(apskin, 0);
 							debug(50, "check");
-							debug(50, "autostart_playlist: %d", getconfigint("ap_autostart_playlist", NULL));
+							debug(50, "autostart_playlist: %d", getconfigint("mc_ap_autostart_playlist", NULL));
 							debug(50, "status.play: %d", status.play);				
 							debug(50, "flag: %d", flag);
 						}
 			
-						if((getconfigint("vp_autostart_playlist", NULL) == 1 && flag == 1 && status.play == 0) || (getconfigint("ap_autostart_playlist", NULL) == 1 && flag == 2 && status.play == 0))
+						if((getconfigint("mc_vp_autostart_playlist", NULL) == 1 && flag == 1 && status.play == 0) || (getconfigint("mc_ap_autostart_playlist", NULL) == 1 && flag == 2 && status.play == 0))
 						{
 							debug(50, "-------------- check ok titan playlist pls --------------");
 							debug(50, "playerstart: %s", *filename);
@@ -608,7 +608,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 								drawscreen(skin, 0);
 								setfbtransparent(255);
 								debug(50, "check");
-								debug(50, "autostart_playlist: %d", getconfigint("vp_autostart_playlist", NULL));
+								debug(50, "autostart_playlist: %d", getconfigint("mc_vp_autostart_playlist", NULL));
 								debug(50, "status.play: %d", status.play);
 							}
 							else if(flag == 2)
@@ -616,7 +616,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 								addscreenrc(apskin, listbox);
 								drawscreen(apskin, 0);
 								debug(50, "check");
-								debug(50, "autostart_playlist: %d", getconfigint("ap_autostart_playlist", NULL));
+								debug(50, "autostart_playlist: %d", getconfigint("mc_ap_autostart_playlist", NULL));
 								debug(50, "status.play: %d", status.play);				
 							}
 			
@@ -734,9 +734,9 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 					if(addcurrdir == 0)
 					{
 						if(flag == 1)
-							firstfile = ostrcat(getconfig("mc_videoplayerpath", NULL), "/", 0, 0);
+							firstfile = ostrcat(getconfig("mc_vp_path", NULL), "/", 0, 0);
 						else if(flag == 2)
-							firstfile = ostrcat(getconfig("mc_audioplayerpath", NULL), "/", 0, 0);
+							firstfile = ostrcat(getconfig("mc_ap_path", NULL), "/", 0, 0);
 
 						firstfile = ostrcat(firstfile, fileline, 1, 0);
 					}
@@ -753,9 +753,9 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 					char* tmpstr3 = NULL;
 
 					if(flag == 1)
-						tmpstr3 = ostrcat(getconfig("mc_videoplayerpath", NULL), "/", 0, 0);
+						tmpstr3 = ostrcat(getconfig("mc_vp_path", NULL), "/", 0, 0);
 					else if(flag == 2)
-						tmpstr3 = ostrcat(getconfig("mc_audioplayerpath", NULL), "/", 0, 0);
+						tmpstr3 = ostrcat(getconfig("mc_ap_path", NULL), "/", 0, 0);
 
 					tmpstr3 = ostrcat(tmpstr3, fileline, 1, 0);
 					changename(tmp, tmpstr3);
@@ -823,7 +823,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 				drawscreen(skin, 0);
 				setfbtransparent(255);
 				debug(50, "check");
-				debug(50, "autostart_playlist: %d", getconfigint("vp_autostart_playlist", NULL));
+				debug(50, "autostart_playlist: %d", getconfigint("mc_vp_autostart_playlist", NULL));
 				debug(50, "status.play: %d", status.play);
 				debug(50, "flag: %d", flag);
 			}
@@ -832,13 +832,13 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 				addscreenrc(apskin, listbox);
 				drawscreen(apskin, 0);
 				debug(50, "check");
-				debug(50, "autostart_playlist: %d", getconfigint("ap_autostart_playlist", NULL));
+				debug(50, "autostart_playlist: %d", getconfigint("mc_ap_autostart_playlist", NULL));
 				debug(50, "status.play: %d", status.play);				
 				debug(50, "flag: %d", flag);
 			}
 
 			// show playlist end
-			if((getconfigint("vp_autostart_playlist", NULL) == 1 && flag == 1 && status.play == 0) || (getconfigint("ap_autostart_playlist", NULL) == 1 && flag == 2 && status.play == 0))
+			if((getconfigint("mc_vp_autostart_playlist", NULL) == 1 && flag == 1 && status.play == 0) || (getconfigint("mc_ap_autostart_playlist", NULL) == 1 && flag == 2 && status.play == 0))
 			{
 				delownerrc(apskin);
 				debug(50, "-------------- check ok m3u --------------");
@@ -852,7 +852,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 					drawscreen(skin, 0);
 					setfbtransparent(255);
 					debug(50, "check");
-					debug(50, "autostart_playlist: %d", getconfigint("vp_autostart_playlist", NULL));
+					debug(50, "autostart_playlist: %d", getconfigint("mc_vp_autostart_playlist", NULL));
 					debug(50, "status.play: %d", status.play);
 				}
 				else if(flag == 2)
@@ -860,7 +860,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 					addscreenrc(apskin, listbox);
 					drawscreen(apskin, 0);
 					debug(50, "check");
-					debug(50, "autostart_playlist: %d", getconfigint("ap_autostart_playlist", NULL));
+					debug(50, "autostart_playlist: %d", getconfigint("mc_ap_autostart_playlist", NULL));
 					debug(50, "status.play: %d", status.play);				
 				}
 
@@ -950,7 +950,7 @@ void picplayer(struct skin* picscreen, struct skin* picture, struct skin* picnam
 
 	tmpstr = ostrcat(filename, "", 0, 0);
 
-	if(getconfigint("showpictitle", NULL) == 1 && tmpstr != NULL) changetext(picname,_((basename(tmpstr))));
+	if(getconfigint("mc_pp_showpictitle", NULL) == 1 && tmpstr != NULL) changetext(picname,_((basename(tmpstr))));
 	free(tmpstr); tmpstr = NULL;
 
 	changepic(picture, filename);

@@ -1600,8 +1600,8 @@ void mediadbfindfilecb(char* path, char* file, int type)
 
 int findfiles(char* dirname, int type)
 {
+	debug(777, "dir=%s type=%d\n", dirname, type);
 	DIR *d;
-printf("start: dir=%s type=%d\n", dirname, type);
 	//Open the directory specified by dirname
 	d = opendir(dirname);
 
@@ -1621,10 +1621,10 @@ printf("start: dir=%s type=%d\n", dirname, type);
 		snprintf(path, PATH_MAX, "%s", dirname);
 		//Readdir gets subsequent entries from d
 		entry = readdir(d);
-printf("start1\n");
+
 		if(!entry) //There are no more entries in this directory, so break out of the while loop
 			break;
-printf("start2\n");
+
 		//See if entry is a subdirectory of d
 		if(entry->d_type & DT_DIR)
 		{
