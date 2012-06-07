@@ -10,6 +10,7 @@ void screenmc_videoplayer_settings()
 	struct skin* listbox = getscreennode(mc_videoplayer_settings, "listbox");
 	struct skin* dirsort = getscreennode(mc_videoplayer_settings, "sort");
 	struct skin* view = getscreennode(mc_videoplayer_settings, "view");
+	struct skin* autoscan = getscreennode(mc_videoplayer_settings, "autoscan");
 	struct skin* mediadb = getscreennode(mc_videoplayer_settings, "mediadb");
 	struct skin* mediadbscandelall = getscreennode(mc_videoplayer_settings, "mediadbscandelall");
 	struct skin* mediadbscandelnotfound = getscreennode(mc_videoplayer_settings, "mediadbscandelnotfound");	
@@ -34,6 +35,10 @@ void screenmc_videoplayer_settings()
 	addchoicebox(autostart_playlist, "0", _("no"));	
 	addchoicebox(autostart_playlist, "1", _("yes"));
 	setchoiceboxselection(autostart_playlist, getconfig("mc_vp_autostart_playlist", NULL));
+
+	addchoicebox(autoscan, "0", _("no"));	
+	addchoicebox(autoscan, "1", _("yes"));
+	setchoiceboxselection(autostart_playlist, getconfig("mc_vp_autoscan", NULL));
 
 	system("ls -al /media/net ; ls -al /media/usb");
 
@@ -96,6 +101,8 @@ void screenmc_videoplayer_settings()
 		{
 			addconfigscreencheck("mc_vp_dirsort", dirsort, NULL);
 			addconfigscreencheck("mc_vp_view", view, NULL);
+			
+			addconfigscreencheck("mc_vp_autoscan", autoscan, NULL);			
 			addconfigscreencheck("mc_vp_mediadb", mediadb, NULL);
 			addconfigscreencheck("mc_vp_mediadbscandelall", mediadbscandelall, NULL);
 			addconfigscreencheck("mc_vp_mediadbscandelnotfound", mediadbscandelnotfound, NULL);						
