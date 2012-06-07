@@ -634,7 +634,10 @@ void savenetworkbrowser(char* filename)
 	}
 
 	if(savesettings != NULL)
+	{
 		writesys("/var/etc/automount/auto.misc", savesettings, 0);
+		system("hotplug.sh first");
+	}
 
 	debugnetworkbrowser(node);
 	debug(70, "savesettings: %s", savesettings);
