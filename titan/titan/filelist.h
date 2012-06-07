@@ -206,8 +206,6 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 	struct dirent64 **filelist;
 	struct mediadb* dbnode = NULL;
 
-	printf("%p\n", mediadb);
-
 	int count, tmpcount, i = 0, gridbr = 0, posx = 0, pagecount = 0, sumcount = 0;
 	struct skin *child = node, *oldchild = NULL, *parentdir = NULL;
 	char *tmpstr = NULL;
@@ -307,8 +305,8 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 		gridbr++;
 	} 
 
-//	if((status.filelistextend == 2) || (status.filelistextend == 5)) 
-//		readmediadb(getconfig("mediadbfile", NULL), 0, 0);
+	if((status.filelistextend == 2) || (status.filelistextend == 5)) 
+		m_lock(&status.mediadbmutex, 17);
  	
 	child = parentdir;
 	tmpcount = count;
@@ -748,10 +746,9 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 							{
 								free(tmpstr), tmpstr = NULL;								
 								tmpstr = ostrcat(tmpstr, basename(dbnode->file), 1, 0);
-printf("wo\n");
+
 								if(ostrcmp(filelist[i]->d_name, tmpstr) == 0)
 								{
-								printf("wo1\n");
 									free(tmpstr), tmpstr = NULL;
 									tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
 									tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
@@ -786,11 +783,8 @@ printf("wo\n");
 		i++;
 	}
 
-//	if(status.mediadbthread == NULL && ((status.filelistextend == 2) || (status.filelistextend == 5))) 
-//	{
-//		freemediadb(0);
-//	}
-	
+	if((status.filelistextend == 2) || (status.filelistextend == 5)) 
+		m_unlock(&status.mediadbmutex, 17);	
 /*
 	for (i = 0; i <= pagecount; i++)
 	{
