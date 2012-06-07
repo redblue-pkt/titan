@@ -24,7 +24,7 @@ void screenmc_audioplayer_settings()
 	addchoicebox(dirsort, "3", _("reverse size"));
 	addchoicebox(dirsort, "4", _("date"));
 	addchoicebox(dirsort, "5", _("reverse date"));
-	setchoiceboxselection(dirsort, getconfig("dirsort", NULL));
+	setchoiceboxselection(dirsort, getconfig("mc_ap_dirsort", NULL));
 
 	addchoicebox(view, "0", _("fast"));
 	addchoicebox(view, "1", _("big"));	
@@ -37,25 +37,25 @@ void screenmc_audioplayer_settings()
 
 	addchoicebox(ap_autostart_playlist, "0", _("no"));	
 	addchoicebox(ap_autostart_playlist, "1", _("yes"));
-	setchoiceboxselection(ap_autostart_playlist, getconfig("ap_autostart_playlist", NULL));
+	setchoiceboxselection(ap_autostart_playlist, getconfig("mc_ap_autostart_playlist", NULL));
 
 //	addchoicebox(dimmer, "0", _("no"));	
 //	addchoicebox(dimmer, "1", _("yes"));
-//	setchoiceboxselection(dimmer, getconfig("dimmer", NULL));
+//	setchoiceboxselection(dimmer, getconfig("mc_ap_dimmer", NULL));
 
 //	changeinput(dimmer_delay, "10\n20\n30\n40\n50\n60\n70\n80\n90\n100");
-//	setchoiceboxselection(dimmer_delay, getconfig("dimmer_delay", NULL));
+//	setchoiceboxselection(dimmer_delay, getconfig("mc_ap_dimmer_delay", NULL));
 
 //	addchoicebox(autosleep, "0", _("no"));	
 //	addchoicebox(autosleep, "1", _("yes"));
 //	setchoiceboxselection(autosleep, getconfig("autosleep", NULL));
 
 //	changeinput(autosleep_delay, "300\n600\n900\n1200\n1500\n1800\n2100\n2400");
-//	setchoiceboxselection(autosleep_delay, getconfig("autosleep_delay", NULL));
+//	setchoiceboxselection(autosleep_delay, getconfig("mc_ap_autosleep_delay", NULL));
 
 //	addchoicebox(repeat, "0", _("no"));	
 //	addchoicebox(repeat, "1", _("yes"));
-//	setchoiceboxselection(repeat, getconfig("repeat", NULL));
+//	setchoiceboxselection(repeat, getconfig("mc_ap_repeat", NULL));
 
 
 	drawscreen(mc_audioplayer_settings, 0);
@@ -72,14 +72,14 @@ void screenmc_audioplayer_settings()
 			break;
 		else if(rcret == getrcconfigint("rcok", NULL))
 		{
-			addconfigscreencheck("dirsort", dirsort, NULL);
-			addconfigscreencheck("ap_view", view, NULL);
-			addconfigscreencheck("ap_autostart_playlist", ap_autostart_playlist, NULL);						
-//			addconfigscreencheck("dimmer", dimmer, NULL);
-//			addconfigscreencheck("dimmer_delay", dimmer_delay, NULL);
-//			addconfigscreencheck("autosleep", autosleep, NULL);
-//			addconfigscreencheck("autosleep_delay", autosleep_delay, NULL);
-//			addconfigscreencheck("repeat", repeat, NULL);
+			addconfigscreencheck("mc_ap_dirsort", dirsort, NULL);
+			addconfigscreencheck("mc_ap_view", view, NULL);
+			addconfigscreencheck("mc_ap_autostart_playlist", ap_autostart_playlist, NULL);						
+//			addconfigscreencheck("mc_ap_dimmer", dimmer, NULL);
+//			addconfigscreencheck("mc_ap_dimmer_delay", dimmer_delay, NULL);
+//			addconfigscreencheck("mc_ap_autosleep", autosleep, NULL);
+//			addconfigscreencheck("mc_ap_autosleep_delay", autosleep_delay, NULL);
+//			addconfigscreencheck("mc_ap_repeat", repeat, NULL);
 			break;
 		}
 		else if(rcret == getrcconfigint("rcgreen", NULL))

@@ -11,21 +11,21 @@ void screenmc_pictureplayer_settings()
 	struct skin* dirsort = getscreennode(mc_pictureplayer_settings, "sort");
 	struct skin* view = getscreennode(mc_pictureplayer_settings, "view");
 	struct skin* sound = getscreennode(mc_pictureplayer_settings, "sound");
-	struct skin* pp_interval = getscreennode(mc_pictureplayer_settings, "interval");
+	struct skin* interval = getscreennode(mc_pictureplayer_settings, "interval");
 	struct skin* showpictitle = getscreennode(mc_pictureplayer_settings, "showpictitle");
 	struct skin* picdenom = getscreennode(mc_pictureplayer_settings, "picdenom");
 	struct skin* pichwdecode = getscreennode(mc_pictureplayer_settings, "pichwdecode");
 
 	changeinput(picdenom, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16");
-	setchoiceboxselection(picdenom, getskinconfig("picdenom", NULL));
+	setchoiceboxselection(picdenom, getskinconfig("mc_pp_picdenom", NULL));
 
 	addchoicebox(pichwdecode, "0", _("off"));	
 	addchoicebox(pichwdecode, "1", _("on"));	
-	setchoiceboxselection(pichwdecode, getconfig("pichwdecode", NULL));
+	setchoiceboxselection(pichwdecode, getconfig("mc_pp_pichwdecode", NULL));
 
 	addchoicebox(showpictitle, "0", _("off"));	
 	addchoicebox(showpictitle, "1", _("on"));	
-	setchoiceboxselection(showpictitle, getconfig("showpictitle", NULL));
+	setchoiceboxselection(showpictitle, getconfig("mc_pp_showpictitle", NULL));
 	
 	addchoicebox(dirsort, "0", _("alpha"));	
 	addchoicebox(dirsort, "1", _("reverse alpha"));	
@@ -33,7 +33,7 @@ void screenmc_pictureplayer_settings()
 	addchoicebox(dirsort, "3", _("reverse size"));
 	addchoicebox(dirsort, "4", _("date"));
 	addchoicebox(dirsort, "5", _("reverse date"));
-	setchoiceboxselection(dirsort, getconfig("dirsort", NULL));
+	setchoiceboxselection(dirsort, getconfig("mc_pp_dirsort", NULL));
 
 	addchoicebox(view, "0", _("fast"));
 	addchoicebox(view, "1", _("big"));	
@@ -41,7 +41,7 @@ void screenmc_pictureplayer_settings()
 	addchoicebox(view, "3", _("default"));
 	addchoicebox(view, "4", _("details"));
 //	addchoicebox(view, "5", _("fullcover"));
-	setchoiceboxselection(view, getconfig("pp_view", NULL));
+	setchoiceboxselection(view, getconfig("mc_pp_view", NULL));
 
 	addchoicebox(sound, "http://stream.mth-house.de:8500/", _("MTH House"));
 	addchoicebox(sound, "http://stream.laut.fm:80/radiofunclub", _("Radio Funclub"));
@@ -51,10 +51,10 @@ void screenmc_pictureplayer_settings()
 	addchoicebox(sound, "http://c22033-l.i.core.cdn.streamfarm.net/22004mdrjump/live/3087mdr_jump/live_de_128.mp3", _("Jump"));
 	addchoicebox(sound, "http://scfire-ntc-aa01.stream.aol.com:80/stream/1081", _("Raute Musik FM"));
 	addchoicebox(sound, "off", _("off"));
-	setchoiceboxselection(sound, getconfig("sound", NULL));
+	setchoiceboxselection(sound, getconfig("mc_pp_sound", NULL));
 
-	changeinput(pp_interval, "10\n15\n20\n30\n40\n50\n60\n70\n80\n90\n100\n2\n5");
-	setchoiceboxselection(pp_interval, getconfig("pp_interval", NULL));
+	changeinput(interval, "10\n15\n20\n30\n40\n50\n60\n70\n80\n90\n100\n2\n5");
+	setchoiceboxselection(interval, getconfig("mc_pp_interval", NULL));
 
 	drawscreen(mc_pictureplayer_settings, 0);
 	addscreenrc(mc_pictureplayer_settings, listbox);
@@ -69,13 +69,13 @@ void screenmc_pictureplayer_settings()
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
-			addconfigscreen("dirsort", dirsort);
-			addconfigscreen("pp_view", view);
-			addconfigscreen("sound", sound);
-			addconfigscreen("pp_interval", pp_interval);
-			addconfigscreen("showpictitle", showpictitle);
-			addconfigscreen("picdenom", picdenom);
-			addconfigscreen("pichwdecode", pichwdecode);
+			addconfigscreen("mc_pp_dirsort", dirsort);
+			addconfigscreen("mc_pp_view", view);
+			addconfigscreen("mc_pp_sound", sound);
+			addconfigscreen("mc_pp_interval", interval);
+			addconfigscreen("mc_pp_showpictitle", showpictitle);
+			addconfigscreen("mc_pp_picdenom", picdenom);
+			addconfigscreen("mc_pp_pichwdecode", pichwdecode);
 			break;
 		}
   }

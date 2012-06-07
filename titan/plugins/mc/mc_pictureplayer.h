@@ -27,7 +27,7 @@ void screenmc_pictureplayer()
 	struct skin* picture = getscreennode(picscreen, "picture");
 	struct skin* picname = getscreennode(picscreen, "picname");
 
-	currentdirectory = ostrcat(currentdirectory, getconfig("mc_pictureplayerpath", NULL), 1, 0);
+	currentdirectory = ostrcat(currentdirectory, getconfig("mc_pp_path", NULL), 1, 0);
 
 	// enable listbox and set hidden
 	listbox->aktpage = -1;
@@ -35,8 +35,8 @@ void screenmc_pictureplayer()
 	listbox->hidden = YES;
 
 	// read configs
-	int view = getconfigint("pp_view", NULL);
-	char* sound = getconfig("sound", NULL);
+	int view = getconfigint("mc_pp_view", NULL);
+	char* sound = getconfig("mc_pp_sound", NULL);
 
 	// set allowed filemask
 	char* filemask = "*.jpg *.png";
@@ -81,7 +81,7 @@ void screenmc_pictureplayer()
 		rcret = waitrc(apskin, rcwait, 0);
 		debug(50, "while status play=%d", status.play);
 		nextpic = 0;
-		if(playinfobarcount < getconfigint("pp_interval", NULL) && status.play == 1)
+		if(playinfobarcount < getconfigint("mc_pp_interval", NULL) && status.play == 1)
 			playinfobarcount ++;
 		else if(status.play == 1)
 		{
@@ -170,15 +170,15 @@ void screenmc_pictureplayer()
 			{
 				debug(50, "rcmenu: settings");
 
-				view = getconfigint("pp_view", NULL);
+				view = getconfigint("mc_pp_view", NULL);
 				screenmc_pictureplayer_settings();
-				if(view != getconfigint("pp_view", NULL))
+				if(view != getconfigint("mc_pp_view", NULL))
 				{
 					printf("view changed > change tmpview\n");
-					tmpview = getconfigint("pp_view", NULL);
+					tmpview = getconfigint("mc_pp_view", NULL);
 				}
 
-				sound = getconfig("sound", NULL);
+				sound = getconfig("mc_pp_sound", NULL);
 
 				// start radio musik on pictureplayer
 				playerstop();
@@ -219,7 +219,7 @@ void screenmc_pictureplayer()
 			apskin->hidden = NO;
 			filelist->hidden = NO;
 			listbox->hidden = YES;
-			changetext(filelistpath, _(getconfig("mc_pictureplayerpath", NULL)));
+			changetext(filelistpath, _(getconfig("mc_pp_path", NULL)));
 			changetext(b2, _("Filelist-Mode"));
 
 			// switch filelist
@@ -244,7 +244,7 @@ void screenmc_pictureplayer()
 			debug(50, "exit - save mc_pictureplayerpath: %s", filelistpath->text);
 			if(playlist == 0)
 			{
-				if(ostrcmp(getconfig("mc_pictureplayerpath", NULL), filelistpath->text) != 0)
+				if(ostrcmp(getconfig("mc_pp_path", NULL), filelistpath->text) != 0)
 					addconfig("mc_pictureplayerpath", filelistpath->text);
 			}
 
@@ -308,7 +308,7 @@ void screenmc_pictureplayer()
 							status.playspeed = 0;
 							textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 
-							changetext(filelistpath, _(getconfig("mc_pictureplayerpath", NULL)));
+							changetext(filelistpath, _(getconfig("mc_pp_path", NULL)));
 							filelist->hidden = NO;
 							listbox->hidden = YES;
 	
@@ -340,7 +340,7 @@ void screenmc_pictureplayer()
 			}
 			else if(filelist->select != NULL && filelist->select->input == NULL)
 			{
-				if(ostrcmp(getconfig("mc_pictureplayerpath", NULL), filelistpath->text) != 0)
+				if(ostrcmp(getconfig("mc_pp_path", NULL), filelistpath->text) != 0)
 					addconfig("mc_pictureplayerpath", filelistpath->text);
 
 				debug(50, "filelist->select->text: %s", filelist->select->text);
@@ -350,7 +350,7 @@ void screenmc_pictureplayer()
 				{
 					debug(50, "mc_mounter_main filename: %s", filename);
 					//addconfig("mc_pictureplayerpath", filelistpath->text);
-					currentdirectory = ostrcat("", getconfig("mc_pictureplayerpath", NULL), 0, 0);
+					currentdirectory = ostrcat("", getconfig("mc_pp_path", NULL), 0, 0);
 
 					mc_mounter_main(0,filename,filelistpath,filelist,apskin,filemask,tmpview,currentdirectory);
 					debug(50, "mc_mounter_main done");
