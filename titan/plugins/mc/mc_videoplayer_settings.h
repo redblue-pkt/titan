@@ -96,6 +96,10 @@ void screenmc_videoplayer_settings()
 			menu(screen);
 			drawscreen(mc_videoplayer_settings, 0);
 		}
+		else if(rcret == getrcconfigint("rcgreen", NULL))
+		{
+			mediadbscan("/media", 0);
+		}		
   }
 
 	delownerrc(mc_videoplayer_settings);

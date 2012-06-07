@@ -66,7 +66,6 @@ void freetmdb(struct tmdb* node)
 
 struct tmdb* gettmdb(char* title, int flag, int flag1, int flag2)
 {
-printf("aaaaaaa\n");
 	struct tmdb* tmdb = NULL;
 	char* tmpstr = NULL;
 	char* tmpsearch = NULL;
@@ -82,7 +81,6 @@ printf("aaaaaaa\n");
 	lang = ostrcat(lang, "de", 1, 0);
 	
 start:
-printf("bbbbbbbb\n");
 	tmpsearch = ostrcat("2.1/", NULL, 0, 0);
 	if(flag == 0)
 		tmpsearch = ostrcat(tmpsearch, searchurl, 1, 0);
@@ -103,7 +101,7 @@ printf("bbbbbbbb\n");
 	debug(133, "tmpstr: %s", tmpstr);
 				
 	free(tmpsearch); tmpsearch = NULL;
-printf("cccccccc\n");
+
 	if(tmpstr != NULL)
 	{
 		tmdb = (struct tmdb*)malloc(sizeof(struct tmdb));
@@ -383,7 +381,6 @@ printf("cccccccc\n");
 	
 				if(flag1 == 1)
 				{
-printf("1111111\n");
 					savefile = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 					savefile = ostrcat(savefile, tmdb->imdbid, 1, 0);
 					savefile = ostrcat(savefile, "_backdrop.jpg", 1, 0);
@@ -394,34 +391,33 @@ printf("1111111\n");
 					
 					free(tmdb->backdrop);
 					tmdb->backdrop = savefile;
-printf("2222222\n");
 					char* cmd = NULL;
-					cmd = ostrcat(cmd, "/var/bin/jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
+					cmd = ostrcat(cmd, "jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
 					cmd = ostrcat(cmd, tmpstr, 1, 0);
 
 					debug(10, "cmd %s", cmd);
 					system(cmd);
 					free(cmd), cmd = NULL;
-printf("3333333\n");
-					cmd = ostrcat(cmd, "/var/bin/ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg", 1, 0);
+
+					cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg", 1, 0);
 					debug(10, "cmd %s", cmd);
 					system(cmd);
 					free(cmd), cmd = NULL;
-printf("4444444\n");
+
 					char* tmpmvi= NULL;
 					tmpmvi = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 					tmpmvi = ostrcat(tmpmvi, tmdb->imdbid, 1, 0);
 					tmpmvi = ostrcat(tmpmvi, "_backdrop.mvi", 1, 0);
-printf("5555555\n");
+
 					cmd = ostrcat(cmd, "mv /tmp/backdrop.resize.mpg ", 1, 0);
 					cmd = ostrcat(cmd, tmpmvi, 1, 0);
 					debug(10, "cmd %s", cmd);
 					system(cmd);
 					free(cmd), cmd = NULL;
-printf("6666666\n");
+
 //					free(tmdb->mvi);
 					tmdb->mvi = tmpmvi;
-printf("7777777\n");
+
 				}
 				else
 				{

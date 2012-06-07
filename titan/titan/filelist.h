@@ -200,11 +200,14 @@ int ralphasort64(const void* v1, const void* v2)
 
 //flag 0: listbox view
 //flag 1: grid view
-int createfilelist(struct skin* screen, struct skin* node, struct mediadb* dbnode , int flag)
+int createfilelist(struct skin* screen, struct skin* node, int flag)
 {
 	debug(1000, "in");
 	struct dirent64 **filelist;
-//	struct mediadb* dbnode = NULL;
+	struct mediadb* dbnode = NULL;
+
+	printf("%p\n", mediadb);
+
 	int count, tmpcount, i = 0, gridbr = 0, posx = 0, pagecount = 0, sumcount = 0;
 	struct skin *child = node, *oldchild = NULL, *parentdir = NULL;
 	char *tmpstr = NULL;
@@ -800,7 +803,7 @@ printf("wo\n");
 	return 0;
 }
 
-void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* filelist, struct mediadb* dbnode, char* path, char* filemask, int tmpview, char* selection)
+void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* filelist, char* path, char* filemask, int tmpview, char* selection)
 {
 	debug(1000, "in");
 	char* tmpstr = NULL;
@@ -835,17 +838,8 @@ void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* fil
 
 	status.filelistextend = view;
 	printf("getfilelist: view=%d status=%d\n", view, status.filelistextend);
-	printf("getfilelist2: view=%d status=%d\n", view, status.filelistextend);
-//readmediadb(getconfig("mediadbfile", NULL), 0, 0);
-	printf("getfilelist3: view=%d status=%d\n", view, status.filelistextend);
-	dbnode = mediadb;
-	while(dbnode != NULL)
-	{
-		printf("getfilelist dbnode->file: %s\n",dbnode->file);
-		dbnode = dbnode->next;
-	}
-//	clearscreen(input);
-	createfilelist(input, filelist, mediadb, 0);
+
+	createfilelist(input, filelist, 0);
 	drawscreen(input, 0);
 	debug(1000, "out");
 }

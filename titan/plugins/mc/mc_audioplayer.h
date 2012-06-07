@@ -63,7 +63,7 @@ void screenmc_audioplayer()
 	tmpview = view;
 	mc_changeview(view, filelist);
 
-	getfilelist(apskin, filelistpath, filelist, NULL, currentdirectory, filemask, tmpview, NULL);
+	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, NULL);
 	addscreenrc(apskin, filelist);
 
 	while(1)
@@ -201,7 +201,7 @@ void screenmc_audioplayer()
 				mc_changeview(tmpview, filelist);
 
 				delownerrc(apskin);	
-				getfilelist(apskin, filelistpath, filelist, NULL, filelistpath->text, filemask, tmpview, filelist->select->text);
+				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
 				addscreenrc(apskin, filelist);
 				drawscreen(apskin, 0);			
 			}
@@ -229,7 +229,7 @@ void screenmc_audioplayer()
 				mc_changeview(tmpview, filelist);
 
 				delownerrc(apskin);	
-				getfilelist(apskin, filelistpath, filelist, NULL, filelistpath->text, filemask, tmpview, filelist->select->text);
+				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
 				addscreenrc(apskin, filelist);
 
 				screensaver_delay = getconfigint("screensaver_delay", NULL);

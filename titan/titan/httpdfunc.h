@@ -1731,7 +1731,7 @@ char* webgetfilelist(char* param, char* link, char* dellink, char* path, char* m
 	free(tmppath); tmppath = NULL;
 
 	delmarkedscreennodes(webdir, FILELISTDELMARK);
-	createfilelist(webdir, filelist, NULL, 0);
+	createfilelist(webdir, filelist, 0);
 
 	if(fmt == 0) ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script></head><body class=body><center><table width=100%>", &maxlen, &pos);
 
