@@ -13,7 +13,7 @@ void screenmediadbsettings();
 
 //mediadb.h
 void freemediadbcontent(struct mediadb* node);
-int findfiles(char* dirname);
+int findfiles(char* dirname, int type) ;
 struct mediadbfilter* getlastmediadbfilter(struct mediadbfilter* node, int flag);
 void getmediadbcounts(int* video, int* audio, int* picture);
 int readmediadb(const char* filename, int type, int flag);
@@ -379,8 +379,6 @@ int playerisplaying();
 void playerafterend();
 
 //filelist.h
-//void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* filelist, char* path, char* filemask, int tmpview);
-//void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* filelist, char* path, char* filemask, int tmpview, char* selection);
 void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* filelist, char* path, char* filemask, int tmpview, char* selection);
 
 //plugin.h
