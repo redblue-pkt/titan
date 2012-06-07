@@ -55,7 +55,7 @@ void screenmc_pictureplayer()
 
 	tmpview = view;
 	mc_changeview(view, filelist);
-	getfilelist(apskin, filelistpath, filelist, NULL, currentdirectory, filemask, tmpview, NULL);
+	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, NULL);
 	addscreenrc(apskin, filelist);
 
 	// start radio musik on pictureplayer
@@ -142,7 +142,7 @@ void screenmc_pictureplayer()
 
 					mc_changeview(view, filelist);
 					delownerrc(apskin);
-					getfilelist(apskin, filelistpath, filelist, NULL, filelistpath->text, filemask, tmpview, filelist->select->text);
+					getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
 					addscreenrc(apskin, filelist);
 					drawscreen(apskin, 0);
 				}
@@ -200,7 +200,7 @@ void screenmc_pictureplayer()
 				mc_changeview(tmpview, filelist);
 
 				delownerrc(apskin);	
-				getfilelist(apskin, filelistpath, filelist, NULL, filelistpath->text, filemask, tmpview, filelist->select->text);
+				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
 				addscreenrc(apskin, filelist);
 
 				drawscreen(apskin, 0);

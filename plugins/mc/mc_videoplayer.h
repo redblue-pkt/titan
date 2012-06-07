@@ -10,6 +10,7 @@ void screenmc_videoplayer()
 	struct mediadb* dbnode = NULL;
 	readmediadb(getconfig("mediadbfile", NULL), 0, 0);
 	dbnode = mediadb;
+	printf("%p\n", mediadb);
 
 	while(dbnode != NULL)
 	{
@@ -77,7 +78,7 @@ void screenmc_videoplayer()
 	tmpview = view;
 	mc_changeview(view, filelist);
 
-	getfilelist(apskin, filelistpath, filelist, mediadb, currentdirectory, filemask, tmpview, selectedfile);
+	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
 	addscreenrc(apskin, filelist);
 
 	char* savecmd = NULL;
@@ -296,7 +297,7 @@ void screenmc_videoplayer()
 					mc_changeview(tmpview, filelist);
 
 					delownerrc(apskin);	
-					getfilelist(apskin, filelistpath, filelist, dbnode, filelistpath->text, filemask, tmpview, filelist->select->text);
+					getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
 					addscreenrc(apskin, filelist);
 					drawscreen(apskin, 0);
 				}
@@ -336,7 +337,7 @@ void screenmc_videoplayer()
 				mc_changeview(tmpview, filelist);
 
 				delownerrc(apskin);	
-				getfilelist(apskin, filelistpath, filelist, dbnode, filelistpath->text, filemask, tmpview, filelist->select->text);
+				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
 				addscreenrc(apskin, filelist);
 				drawscreen(apskin, 0);
 			}

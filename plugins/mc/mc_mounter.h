@@ -80,7 +80,7 @@ char* mc_mounter_main(int mode, char* tmpstr, struct skin* filelistpath, struct 
 		debug(50, "[mc_mounter_main] save mc_videoplayerpath: %s", filelistpath->text);
 		addconfig("mc_videoplayerpath", filelistpath->text);
 		addscreenrc(mc_videoplayer, filelist);
-		getfilelist(mc_videoplayer, filelistpath, filelist, NULL, path, filemask, tmpview, NULL);
+		getfilelist(mc_videoplayer, filelistpath, filelist, path, filemask, tmpview, NULL);
 
 		rarMountDir = ostrcat(rarMountDir, filelistpath->text, 1, 0);
 		debug(50, "[mc_mounter_main] save rarMountDir: %s", rarMountDir);
@@ -110,7 +110,7 @@ char* mc_mounter_main(int mode, char* tmpstr, struct skin* filelistpath, struct 
 		debug(50, "[mc_mounter_main] save mc_videoplayerpath: %s", filelistpath->text);
 		addconfig("mc_videoplayerpath", filelistpath->text);
 		addscreenrc(mc_videoplayer, filelist);
-		getfilelist(mc_videoplayer, filelistpath, filelist, NULL, path, filemask, tmpview, NULL);
+		getfilelist(mc_videoplayer, filelistpath, filelist, path, filemask, tmpview, NULL);
 
 		imgMountDir = ostrcat(imgMountDir, filelistpath->text, 1, 0);
 		debug(50, "[mc_mounter_main] save imgMountDir: %s", imgMountDir);
@@ -141,7 +141,7 @@ char* mc_mounter_main(int mode, char* tmpstr, struct skin* filelistpath, struct 
 		debug(50, "[mc_mounter_main] save mc_videoplayerpath: %s", filelistpath->text);
 		addconfig("mc_videoplayerpath", filelistpath->text);
 		addscreenrc(mc_videoplayer, filelist);
-		getfilelist(mc_videoplayer, filelistpath, filelist, NULL, path, filemask, tmpview, NULL);
+		getfilelist(mc_videoplayer, filelistpath, filelist, path, filemask, tmpview, NULL);
 
 		isoMountDir = ostrcat(imgMountDir, filelistpath->text, 1, 0);
 		debug(50, "[mc_mounter_main] save isoMountDir: %s", isoMountDir);
