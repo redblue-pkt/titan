@@ -426,9 +426,7 @@ start:
 					tmdb->backdrop = ostrcat(TMPTMDBPIC4, NULL, 0, 0);
 					tmdb->mvi = ostrcat(TMPTMDBPIC4, NULL, 0, 0);
 				}
-printf("8888888\n");
 				free(ip); ip = NULL;
-printf("9999999\n");
 			}
 		}
 		else
