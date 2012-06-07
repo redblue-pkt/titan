@@ -50,10 +50,10 @@
 <node bordercol=bordercol scrollbar=auto type=listbox posy=150 posx=350 name=listbox width=45% height=60%>
 <node name=sort type=choicebox parent=listbox valign=middle posx=0 text="Sort" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=view type=choicebox parent=listbox valign=middle posx=0 text="View" bordercol=bordercol bordersize=1 width=100% height=25>
+<node name=autoscan type=choicebox parent=listbox valign=middle posx=0 text="MediaDB autoscan" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=mediadb type=choicebox parent=listbox valign=middle posx=0 text="MediaDB Directory" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=mediadbscandelall type=choicebox parent=listbox valign=middle posx=0 text="mediadbscandelall" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=mediadbscandelnotfound type=choicebox parent=listbox valign=middle posx=0 text="mediadbscandelnotfound" bordercol=bordercol bordersize=1 width=100% height=25>
-
 <node name=autostart_playlist type=choicebox parent=listbox valign=middle posx=0 text="Autostart Playlist" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=b1 text="OK" halign=center valign=middle bordercol=bgcol bordersize=0 posx=20% posy=90% width=150 height=30/>
 <node name=b1 text="OK" halign=center valign=middle bordercol=okcol bordersize=2 posx=20% posy=95% width=150 height=2/>
