@@ -220,7 +220,7 @@ struct tmdb
 	char* genre;
 	char* runtime;
 	char* plot;
-	char* poster;
+	char* postermid;
 	char* rating;
 	char* votes;
 	char* id;
@@ -233,6 +233,7 @@ struct tmdb
 	char* score;
 	char* cover;
 	char* thumb;
+	char* mvi;
 };
 
 struct mediadbfilter
