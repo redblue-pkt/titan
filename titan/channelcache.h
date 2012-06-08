@@ -28,15 +28,22 @@ struct channel* getchannel(int serviceid, unsigned long transponderid)
 
 	hash = (transponderid + serviceid) % CHANNELCACHEMAX;
 	if(hash < 0 || hash >= CHANNELCACHEMAX) hash = 0;
+
+	m_lock(&status.channelmutex, 5);
 	node = channelcache[hash];
 
 	while(node != NULL)
 	{
 		if(node->serviceid == serviceid && node->transponderid == transponderid)
+		{
+			m_unlock(&status.channelmutex, 5);
 			return node->chnode;
+		}
 
 		node = node->next;
 	}
+
+	m_unlock(&status.channelmutex, 5);
 	return NULL;
 }
 
