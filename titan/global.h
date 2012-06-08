@@ -2946,7 +2946,7 @@ int setlang(char *lang)
 unsigned long readsysul(const char *filename, int line)
 {
 	debug(1000, "in");
-	int i = 0;
+	int i = 0, len = 0;
 	unsigned long ret = 0;
 	FILE *fd = NULL;
 	char *fileline = NULL;
@@ -2973,8 +2973,9 @@ unsigned long readsysul(const char *filename, int line)
 		fgets(fileline, MINMALLOC, fd);
 	}
 
-	if(fileline[strlen(fileline) - 1] == '\n')
-		fileline[strlen(fileline) - 1] = '\0';
+	len = strlen(fileline) - 1;
+	if(fileline[len] == '\n')
+		fileline[len] = '\0';
 	buf1 = ostrcat(fileline, NULL, 1, 0);
 
 	fclose(fd);
@@ -2993,7 +2994,7 @@ unsigned long readsysul(const char *filename, int line)
 char* readsys(const char *filename, int line)
 {
 	debug(1000, "in");
-	int i = 0;
+	int i = 0, len = 0;
 	FILE *fd = NULL;
 	char *fileline = NULL;
 	char *buf1 = NULL;
@@ -3019,8 +3020,9 @@ char* readsys(const char *filename, int line)
 		fgets(fileline, MINMALLOC, fd);
 	}
 
-	if(fileline[strlen(fileline) - 1] == '\n')
-		fileline[strlen(fileline) - 1] = '\0';
+	len = strlen(fileline) - 1;
+	if(fileline[len] == '\n')
+		fileline[len] = '\0';
 	buf1 = ostrcat(fileline, NULL, 1, 0);
 
 	fclose(fd);

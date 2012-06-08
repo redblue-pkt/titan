@@ -520,7 +520,7 @@ int readmediadb(const char* filename, int type, int flag)
 	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL;
-	int linecount = 0;
+	int linecount = 0, len = 0;
 	struct mediadb* last = NULL, *tmplast = NULL;
 	struct mediadbcategory* lastcategory = NULL, *tmplastcategory = NULL;
 
@@ -554,10 +554,11 @@ printf("xxxxxxxxxxxxxxxxxx %lu\n", time(NULL));
 	{
 		if(fileline[0] == '#' || fileline[0] == '\n')
 			continue;
-		if(fileline[strlen(fileline) - 1] == '\n')
-			fileline[strlen(fileline) - 1] = '\0';
-		if(fileline[strlen(fileline) - 1] == '\r')
-			fileline[strlen(fileline) - 1] = '\0';
+		len = strlen(fileline) - 1;
+		if(fileline[len] == '\n')
+			fileline[len] = '\0';
+		if(fileline[len] == '\r')
+			fileline[len] = '\0';
 
 		linecount++;
 

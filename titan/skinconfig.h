@@ -85,6 +85,7 @@ int readskinconfig(const char *filename, struct clist** tmpskinconfig)
 	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL, *pos;
+	int len = 0;
 
 	fileline = malloc(MINMALLOC);
 	if(fileline == NULL)
@@ -105,10 +106,11 @@ int readskinconfig(const char *filename, struct clist** tmpskinconfig)
 	{
 		if(fileline[0] == '#' || fileline[0] == '\n')
 			continue;
-		if(fileline[strlen(fileline) - 1] == '\n')
-			fileline[strlen(fileline) - 1] = '\0';
-		if(fileline[strlen(fileline) - 1] == '\r')
-			fileline[strlen(fileline) - 1] = '\0';
+		len = strlen(fileline) - 1;
+		if(fileline[len] == '\n')
+			fileline[len] = '\0';
+		if(fileline[len] == '\r')
+			fileline[len] = '\0';
 
 		pos = strchr(fileline, '=');
 		if(pos != NULL)
