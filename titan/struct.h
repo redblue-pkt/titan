@@ -119,6 +119,7 @@
 #define RCTHREADSTANDBY 999998
 #define MAXSERVICETYPE 10
 #define CHANNELCACHEMAX 1000
+#define MEDIADBCACHEMAX 1000
 #define TRANSPONDERCACHEMAX 500
 #define MAXHTTPDCONN 20
 #define MAXHTMLLINE 300
@@ -271,6 +272,13 @@ struct mediadb
 	time_t timestamp;
 	struct mediadb* prev;
 	struct mediadb* next;
+};
+
+struct mediadbcache
+{
+	char* file;
+	struct mediadb* mediadbnode;
+	struct mediadbcache* next;
 };
 
 struct mostzap

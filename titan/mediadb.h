@@ -547,6 +547,8 @@ struct mediadb* addmediadb(char *line, int count, struct mediadb* last, struct m
 	if(flag == 0) m_lock(&status.mediadbmutex, 17);
   node = mediadb;
 
+	modifymediadbcache(newnode->file, newnode);
+
 	if(last == NULL)
 	{
 		if(sort == 1)
@@ -915,6 +917,7 @@ int delmediadb(struct mediadb* mnode, int flag)
 					node->next->prev = prev;
 			}
 
+			delmediadbcache(node->file);
 			freemediadbcontent(node);
 
 			free(node);
