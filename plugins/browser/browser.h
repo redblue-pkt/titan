@@ -221,8 +221,8 @@ start:
 	freemenulist(mlist, 1);
 	freebrowserfav();
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
-	if(status.lastservice != NULL)
-		servicestart(status.lastservice->channel, NULL, NULL, 0);
+	if(status.aktservice != NULL)
+		servicestart(status.aktservice->channel, NULL, NULL, 3);
 	flushrc(500);
 }
 

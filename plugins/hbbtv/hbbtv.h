@@ -329,8 +329,8 @@ int operaservice(char* url, int flag)
 		playerafterend();
 		free(operaplayurl); operaplayurl = NULL;
 
-		tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
-		servicestart(status.lastservice->channel, tmpstr, NULL, 0);
+		tmpstr = ostrcat(status.aktservice->channellist, NULL, 0, 0);
+		servicestart(status.aktservice->channel, tmpstr, NULL, 3);
 		free(tmpstr); tmpstr = NULL;
 		operaservicestate = 100;
 	}
