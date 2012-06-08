@@ -360,21 +360,24 @@ struct mediadb* addmediadb(char *line, int count, struct mediadb* last, int sort
 		{
 			tmpstr[0] = '\0';
 			tmpstr++;
-			if(ret == 0) type = tmpstr;
-			else if(ret == 1) newnode->title = tmpstr;
-			else if(ret == 2) year = tmpstr;
-			else if(ret == 3) newnode->released = tmpstr;
-			else if(ret == 4) newnode->runtime = tmpstr;
-			else if(ret == 5) newnode->genre = tmpstr;
-			else if(ret == 6) newnode->director = tmpstr;
-			else if(ret == 7) newnode->writer = tmpstr;
-			else if(ret == 8) newnode->actors = tmpstr;
-			else if(ret == 9) newnode->plot = tmpstr;
-			else if(ret == 10) newnode->poster = tmpstr;
-			else if(ret == 11) rating = tmpstr;
-			else if(ret == 12) votes = tmpstr;
-			else if(ret == 13) newnode->file = tmpstr;
-			else if(ret == 14) timestamp = tmpstr;
+			switch(ret)
+			{
+				case 0: type = tmpstr; break;
+				case 1: newnode->title = tmpstr; break;
+				case 2: year = tmpstr; break;
+				case 3: newnode->released = tmpstr; break;
+				case 4: newnode->runtime = tmpstr; break;
+				case 5: newnode->genre = tmpstr; break;
+				case 6: newnode->director = tmpstr; break;
+				case 7: newnode->writer = tmpstr; break;
+				case 8: newnode->actors = tmpstr; break;
+				case 9: newnode->plot = tmpstr; break;
+				case 10: newnode->poster = tmpstr; break;
+				case 11: rating = tmpstr; break;
+				case 12: votes = tmpstr; break;
+				case 13: newnode->file = tmpstr; break;
+				case 14: timestamp = tmpstr; break;
+			}
 
 			ret++;
 		}
@@ -384,7 +387,7 @@ struct mediadb* addmediadb(char *line, int count, struct mediadb* last, int sort
 	{
 		if(count > 0)
 		{
-			err("mediadb line %d not ok or double", count);
+			err("mediadb line %d not ok", count);
 		}
 		else
 		{
