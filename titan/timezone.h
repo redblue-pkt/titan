@@ -32,9 +32,10 @@ int readtimezone(struct skin* timezone, struct skin* listbox)
 		if(fileline[0] == '#' || fileline[0] == '\n')
 			continue;
 		len = strlen(fileline) - 1;
-		if(fileline[len] == '\n')
+		if(len >= 0 && fileline[len] == '\n')
 			fileline[len] = '\0';
-		if(fileline[len] == '\r')
+		len--;
+		if(len >= 0 && fileline[len] == '\r')
 			fileline[len] = '\0';
 
 		pos = strstr(fileline, "<zone ");

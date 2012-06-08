@@ -2974,7 +2974,7 @@ unsigned long readsysul(const char *filename, int line)
 	}
 
 	len = strlen(fileline) - 1;
-	if(fileline[len] == '\n')
+	if(len >= 0 && fileline[len] == '\n')
 		fileline[len] = '\0';
 	buf1 = ostrcat(fileline, NULL, 1, 0);
 
@@ -3021,7 +3021,7 @@ char* readsys(const char *filename, int line)
 	}
 
 	len = strlen(fileline) - 1;
-	if(fileline[len] == '\n')
+	if(len >= 0 && fileline[len] == '\n')
 		fileline[len] = '\0';
 	buf1 = ostrcat(fileline, NULL, 1, 0);
 
