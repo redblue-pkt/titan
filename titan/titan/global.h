@@ -1,6 +1,17 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+unsigned int gethash(char* str)
+{
+	unsigned int hash = 0;
+	int c = 0;
+
+	while(c = *str++)
+		hash = ((hash << 5) + hash) ^ c;
+
+	return hash;
+}
+
 void freeregexstruct(struct regex* node)
 {
 	if(node == NULL) return;
