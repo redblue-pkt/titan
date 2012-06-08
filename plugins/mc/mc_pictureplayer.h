@@ -15,8 +15,8 @@ void screenmc_pictureplayer()
 
 	// main screen
 	struct skin* apskin = getscreen("mc_pictureplayer");
-	struct skin* filelistpath = getscreennode(apskin, "mc_filelistpath");
-	struct skin* filelist = getscreennode(apskin, "mc_filelist");
+	struct skin* filelistpath = getscreennode(apskin, "filelistpath");
+	struct skin* filelist = getscreennode(apskin, "filelist");
 	struct skin* listbox = getscreennode(apskin, "listbox");
 	struct skin* b2 = getscreennode(apskin, "b2");
 	struct skin* b3 = getscreennode(apskin, "b3");
@@ -241,11 +241,11 @@ void screenmc_pictureplayer()
 		}
 		else if(rcret == getrcconfigint("rcexit", NULL))
 		{
-			debug(50, "exit - save mc_pictureplayerpath: %s", filelistpath->text);
+			debug(50, "exit - save mc_pp_path: %s", filelistpath->text);
 			if(playlist == 0)
 			{
 				if(ostrcmp(getconfig("mc_pp_path", NULL), filelistpath->text) != 0)
-					addconfig("mc_pictureplayerpath", filelistpath->text);
+					addconfig("mc_pp_path", filelistpath->text);
 			}
 
 			playerstop();
@@ -341,7 +341,7 @@ void screenmc_pictureplayer()
 			else if(filelist->select != NULL && filelist->select->input == NULL)
 			{
 				if(ostrcmp(getconfig("mc_pp_path", NULL), filelistpath->text) != 0)
-					addconfig("mc_pictureplayerpath", filelistpath->text);
+					addconfig("mc_pp_path", filelistpath->text);
 
 				debug(50, "filelist->select->text: %s", filelist->select->text);
 				filename = createpath(filelistpath->text, filelist->select->text);
@@ -349,7 +349,7 @@ void screenmc_pictureplayer()
 				if(!strncmp(".rar",filename+strlen(filename)-4,4) || !strncmp(".iso",filename+strlen(filename)-4,4) || !strncmp(".img",filename+strlen(filename)-4,4))
 				{
 					debug(50, "mc_mounter_main filename: %s", filename);
-					//addconfig("mc_pictureplayerpath", filelistpath->text);
+					//addconfig("mc_pp_path", filelistpath->text);
 					currentdirectory = ostrcat("", getconfig("mc_pp_path", NULL), 0, 0);
 
 					mc_mounter_main(0,filename,filelistpath,filelist,apskin,filemask,tmpview,currentdirectory);
