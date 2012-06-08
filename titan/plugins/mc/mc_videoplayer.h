@@ -71,8 +71,8 @@ void screenmc_videoplayer()
 
 	// main screen
 	struct skin* apskin = getscreen("mc_videoplayer");
-	struct skin* filelistpath = getscreennode(apskin, "mc_filelistpath");
-	struct skin* filelist = getscreennode(apskin, "mc_filelist");
+	struct skin* filelistpath = getscreennode(apskin, "filelistpath");
+	struct skin* filelist = getscreennode(apskin, "filelist");
 	struct skin* listbox = getscreennode(apskin, "listbox");
 	struct skin* b2 = getscreennode(apskin, "b2");
 	struct skin* b3 = getscreennode(apskin, "b3");
