@@ -337,8 +337,8 @@ struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last,
 	//debug(1000, "in");
 	struct mediadb *newnode = NULL, *prev = NULL, *node = NULL;
 	int ret = 0;
-	char* tmpstr = NULL, *type = NULL, *year = NULL;
-	char* rating = NULL, *votes = NULL, *timestamp = NULL;
+	char* tmpstr = NULL, *type = NULL, *year = NULL, *rating = NULL;
+	char* votes = NULL, *timestamp = NULL, *flag = NULL;
 
 	if(line == NULL) return NULL;
 
@@ -382,6 +382,7 @@ struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last,
 					case 12: votes = tmpstr; break;
 					case 13: newnode->file = tmpstr; break;
 					case 14: timestamp = tmpstr; break;
+					case 15: flag = tmpstr; break;
 				}
 
 				ret++;
@@ -389,7 +390,7 @@ struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last,
 		}
 	}
 
-	if(ret != 15)
+	if(ret != 16)
 	{
 		if(count > 0)
 		{
@@ -409,6 +410,7 @@ struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last,
 	if(rating != NULL) newnode->rating = atoi(rating);
 	if(votes != NULL) newnode->votes = atoi(votes);
 	if(timestamp != NULL) newnode->timestamp = strtoul(timestamp, NULL, 10);
+	if(flag != NULL) newnode->flag = atoi(flag);
 
 	if(flag == 0) m_lock(&status.mediadbmutex, 17);
 	node = mediadb;
@@ -455,7 +457,7 @@ struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last,
 	return newnode;
 }
 
-struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* title, char* year, char* released, char* runtime, char* genre, char* director, char* writer, char* actors, char* plot, char* poster, char* rating, char* votes, char* fullfile, char* file)
+struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* title, char* year, char* released, char* runtime, char* genre, char* director, char* writer, char* actors, char* plot, char* poster, char* rating, char* votes, char* fullfile, char* file, int flag)
 {
 	struct mediadb* mnode = NULL;
 	char* tmpstr = NULL;
@@ -510,6 +512,8 @@ struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* 
 	tmpstr = ostrcat(tmpstr, fullfile, 1, 0);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	tmpstr = ostrcat(tmpstr, olutoa(time(NULL)), 1, 1);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, oitoa(flag), 1, 1);
 
 	if(update != NULL)
 		delmediadb(update, 0);
@@ -827,22 +831,7 @@ int writemediadb(const char *filename)
 
 	while(node != NULL)
 	{
-		ret = fprintf(fd, "%s#%d#%s#%d#%s#%s#%s#%s#%s#%s#%s#%s#%d#%d#%s#%lu\n",
-		(node->id == NULL) ? "%" : node->id,
-		node->type,
-		(node->title == NULL) ? "%" : node->title,
-		node->year,
-		(node->released == NULL) ? "%" : node->released,
-		(node->runtime == NULL) ? "%" : node->runtime,
-		(node->genre == NULL) ? "%" : node->genre,
-		(node->director == NULL) ? "%" : node->director,
-		(node->writer == NULL) ? "%" : node->writer,
-		(node->actors == NULL) ? "%" : node->actors,
-		(node->plot == NULL) ? "%" : node->plot,
-		(node->poster == NULL) ? "%" : node->poster,
-		node->rating, node->votes,
-		(node->file == NULL) ? "%" : node->file,
-		node->timestamp);
+		ret = fprintf(fd, "%s#%d#%s#%d#%s#%s#%s#%s#%s#%s#%s#%s#%d#%d#%s#%lu#%d\n", node->id, node->type, node->title, node->year, node->released, node->runtime, node->genre, node->director, node->writer, node->actors, node->plot, node->poster, node->votes, node->file, node->timestamp, node->flag);
 
 		if(ret < 0)
 		{
@@ -1308,8 +1297,8 @@ void mediadbfindfilecb(char* path, char* file, int type)
 #endif
 
 #ifdef SIMULATE
-			//if(imdb != NULL)
-			//	tmdb = gettmdb(imdb->id, 1, 1, 0);
+			if(imdb != NULL)
+				tmdb = gettmdb(imdb->id, 1, 1, 0);
 #else
 			struct skin* tmdbplugin = NULL;
 			if(imdb != NULL)
@@ -1339,10 +1328,10 @@ void mediadbfindfilecb(char* path, char* file, int type)
 			if(imdb != NULL)
 			{
 				debug(777, "imdb id %s", imdb->id);
-				createmediadb(node, imdb->id, type, imdb->title, imdb->year, imdb->released, imdb->runtime, imdb->genre, imdb->director, imdb->writer, imdb->actors, imdb->plot, imdb->id, imdb->rating, imdb->votes, tmpstr, file);
+				createmediadb(node, imdb->id, type, imdb->title, imdb->year, imdb->released, imdb->runtime, imdb->genre, imdb->director, imdb->writer, imdb->actors, imdb->plot, imdb->id, imdb->rating, imdb->votes, tmpstr, file, 0);
 			}
 			else
-				createmediadb(node, NULL, type, NULL, "0", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, "0", "0", tmpstr, file);
+				createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, tmpstr, file, 0);
 
 #ifdef SIMULATE
 			freeimdb(imdb);
@@ -1358,7 +1347,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 			imdb = NULL;
 
 #ifdef SIMULATE
-			//freetmdb(tmdb);
+			freetmdb(tmdb);
 #else
 			if(tmdbplugin != NULL)
 			{
@@ -1373,7 +1362,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 		else if(type == 1)
 		{
 			debug(777, "add audio: %s", tmpstr);
-			createmediadb(node, NULL, type, NULL, "0", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, "0", "0", tmpstr, file);
+			createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, tmpstr, file, 0);
 		}
 		else if(type == 2)
 		{
@@ -1393,7 +1382,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 				}
 			}
 
-			createmediadb(node, NULL, type, NULL, "0", NULL, NULL, NULL, NULL, NULL, NULL, NULL, thumbfile, "0", "0", tmpstr, file);
+			createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, thumbfile, NULL, NULL, tmpstr, file, 0);
 			free(thumbfile); thumbfile = NULL;
 		}
 	}
@@ -1440,7 +1429,7 @@ int findfiles(char* dirname, int type)
 					err("path length has got too long");
 					return 1;
 				}
-				//Recursively call list_dir with the new path
+				//Recursively call findfiles with the new path
 				findfiles(path, type);
 			}
 		}
