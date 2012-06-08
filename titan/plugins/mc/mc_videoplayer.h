@@ -447,9 +447,9 @@ void screenmc_videoplayer()
 			if(playlist == 0)
 			{
 				if(ostrcmp(getconfig("mc_vp_path", NULL), filelistpath->text) != 0)
-					addconfig("mc_videoplayerpath", filelistpath->text);
+					addconfig("mc_vp_path", filelistpath->text);
 				if(ostrcmp(getconfig("mc_vp_selectedfile", NULL), filelist->select->name) != 0)
-					addconfig("mc_selectedfile", filelist->select->name);
+					addconfig("mc_vp_selectedfile", filelist->select->name);
 			}
 
 			playrcstop(playertype, flag);
@@ -578,7 +578,7 @@ void screenmc_videoplayer()
 			else if(filelist->select != NULL && filelist->select->input == NULL)
 			{
 				if(ostrcmp(getconfig("mc_vp_path", NULL), filelistpath->text) != 0)
-					addconfig("mc_videoplayerpath", filelistpath->text);
+					addconfig("mc_vp_path", filelistpath->text);
 
 				debug(50, "filelist->select->text: %s", filelist->select->text);
 				filename = createpath(filelistpath->text, filelist->select->name);
@@ -594,7 +594,7 @@ void screenmc_videoplayer()
 				if(!strncmp(".rar",filename+strlen(filename)-4,4) || !strncmp(".iso",filename+strlen(filename)-4,4) || !strncmp(".img",filename+strlen(filename)-4,4))
 				{
 					debug(50, "mc_mounter_main filename: %s", filename);
-					//addconfig("mc_videoplayerpath", filelistpath->text);
+					//addconfig("mc_vp_path", filelistpath->text);
 					currentdirectory = ostrcat("", getconfig("mc_vp_path", NULL), 0, 0);
 					selectedfile = ostrcat(selectedfile, getconfig("mc_vp_selectedfile", NULL), 0, 0);
 
