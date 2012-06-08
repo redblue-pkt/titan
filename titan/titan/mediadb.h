@@ -404,8 +404,6 @@ struct mediadb* addmediadb(char *line, int count, struct mediadb* last, int sort
 	if(votes != NULL) newnode->votes = atoi(votes);
 	if(timestamp != NULL) newnode->timestamp = strtoul(timestamp, NULL, 10);
 
-printf("%d\n", newnode->type);
-
 	if(flag == 0) m_lock(&status.mediadbmutex, 17);
 	node = mediadb;
 
