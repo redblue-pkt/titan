@@ -199,8 +199,8 @@ int movemediadbup(struct mediadb* node)
 
 struct mediadbfilter* addmediadbfilter(struct mediadb* mnode, int count, struct mediadbfilter* last)
 {
-  m_lock(&status.mediadbmutex, 17);
-  
+	m_lock(&status.mediadbmutex, 17);
+
 	struct mediadbfilter *newnode = NULL, *prev = NULL, *node = NULL;
 
 	if(mnode == NULL) return NULL;
@@ -216,7 +216,7 @@ struct mediadbfilter* addmediadbfilter(struct mediadb* mnode, int count, struct 
 	newnode->node = mnode;
 
 	m_lock(&status.mediadbmutex, 17);
-  node = mediadbfilter;
+	node = mediadbfilter;
 
 	if(last == NULL)
 	{
@@ -301,7 +301,7 @@ struct mediadbcategory* addmediadbcategory(char* line, int type, int count, stru
 	newnode->name = ostrcat(name, NULL, 1, 0);
 
 	if(flag == 0) m_lock(&status.mediadbmutex, 17);
-  node = mediadbcategory;
+	node = mediadbcategory;
 
 	if(last == NULL)
 	{
@@ -812,7 +812,7 @@ int delmediadbfilter(struct mediadbfilter* mnode, int flag)
 	int ret = 1;
 
 	m_lock(&status.mediadbmutex, 17);
-  struct mediadbfilter *node = mediadbfilter, *prev = mediadbfilter;
+	struct mediadbfilter *node = mediadbfilter, *prev = mediadbfilter;
 
 	while(node != NULL)
 	{
@@ -995,7 +995,7 @@ int writemediadbcategory(const char *filename)
 	}
 
 	m_lock(&status.mediadbmutex, 17);
-  node = mediadbcategory;
+	node = mediadbcategory;
 
 	while(node != NULL)
 	{
@@ -1029,7 +1029,7 @@ int writemediadb(const char *filename)
 	}
 
 	m_lock(&status.mediadbmutex, 17);
-  node = mediadb;
+	node = mediadb;
 
 	while(node != NULL)
 	{
