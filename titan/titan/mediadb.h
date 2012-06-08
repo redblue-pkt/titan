@@ -505,10 +505,7 @@ struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* 
 	tmpstr = ostrcat(tmpstr, olutoa(time(NULL)), 1, 1);
 
 	if(update != NULL)
-	{
-		delmediadbfilter(update, 0);
 		delmediadb(update, 0);
-	}
 
 	mnode = addmediadb(tmpstr, 1, NULL, 1, 0);
 	free(tmpstr);
@@ -705,6 +702,7 @@ int delmediadb(struct mediadb* mnode, int flag)
 					node->next->prev = prev;
 			}
 
+			delmediadbfilter(node, 0);
 			delmediadbcache(node->file);
 			freemediadbcontent(node);
 
