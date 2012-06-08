@@ -199,8 +199,6 @@ int movemediadbup(struct mediadb* node)
 
 struct mediadbfilter* addmediadbfilter(struct mediadb* mnode, int count, struct mediadbfilter* last)
 {
-	m_lock(&status.mediadbmutex, 17);
-
 	struct mediadbfilter *newnode = NULL, *prev = NULL, *node = NULL;
 
 	if(mnode == NULL) return NULL;
@@ -332,87 +330,15 @@ struct mediadbcategory* addmediadbcategory(char* line, int type, int count, stru
 	return newnode;
 }
 
-int addmediadballoc(struct mediadb* node)
-{
-	if(node == NULL) return 1;
-
-	node->id = malloc(256);
-	if(node->id == NULL)
-	{
-		err("no memory");
-		return 1;
-	}
-	node->title = malloc(256);
-	if(node->title == NULL)
-	{
-		err("no memory");
-		return 1;
-	}
-	node->released = malloc(256);
-	if(node->released == NULL)
-	{
-		err("no memory");
-		return 1;
-	}
-	node->runtime = malloc(256);
-	if(node->runtime == NULL)
-	{
-		err("no memory");
-		return 1;
-	}
-	node->genre = malloc(256);
-	if(node->genre == NULL)
-	{
-		err("no memory");
-		return 1;
-	}
-	node->director = malloc(256);
-	if(node->director == NULL)
-	{
-		err("no memory");
-		return 1;
-	}
-	node->writer = malloc(256);
-	if(node->writer == NULL)
-	{
-		err("no memory");
-		return 1;
-	}
-	node->actors = malloc(256);
-	if(node->actors == NULL)
-	{
-		err("no memory");
-		return 1;
-	}
-	node->plot = malloc(MINMALLOC);
-	if(node->plot == NULL)
-	{
-		err("no memory");
-		return 1;
-	}
-	node->poster = malloc(256);
-	if(node->poster == NULL)
-	{
-		err("no memory");
-		return 1;
-	}
-	node->file = malloc(256);
-	if(node->file == NULL)
-	{
-		err("no memory");
-		return 1;
-	}
-
-	return 0;
-}
-
 //flag 0: with lock
 //flag 1: without lock
-struct mediadb* addmediadb(char *line, int count, struct mediadb* last, struct mediadb* newnode1, int sort, int flag)
+struct mediadb* addmediadb(char *line, int count, struct mediadb* last, int sort, int flag)
 {
 	//debug(1000, "in");
-	struct mediadb *newnode = NULL, *prev = NULL, *node = NULL, *nnode = NULL;
-	int ret = 0, free1 = 0;
+	struct mediadb *newnode = NULL, *prev = NULL, *node = NULL;
+	int ret = 0;
+	char* tmpstr = NULL, *type = NULL, *year = NULL;
+	char* rating = NULL, *votes = NULL, *timestamp = NULL;
 
 	if(line == NULL) return NULL;
 
@@ -424,23 +350,37 @@ struct mediadb* addmediadb(char *line, int count, struct mediadb* last, struct m
 	}
 	memset(newnode, 0, sizeof(struct mediadb));
 
-	if(newnode1 == NULL)
+	tmpstr = ostrcat(line, NULL, 0, 0);
+	newnode->id = tmpstr;
+
+	while(tmpstr[0] != '\0')
 	{
-		if(addmediadballoc(newnode) != 0)
+		tmpstr++;
+		if(tmpstr[0] == '#')
 		{
-			freemediadbcontent(newnode);
-			free(newnode);
-			return NULL;
+			tmpstr[0] = '\0';
+			tmpstr++;
+			if(ret == 0) type = tmpstr;
+			else if(ret == 1) newnode->title = tmpstr;
+			else if(ret == 2) year = tmpstr;
+			else if(ret == 3) newnode->released = tmpstr;
+			else if(ret == 4) newnode->runtime = tmpstr;
+			else if(ret == 5) newnode->genre = tmpstr;
+			else if(ret == 6) newnode->director = tmpstr;
+			else if(ret == 7) newnode->writer = tmpstr;
+			else if(ret == 8) newnode->actors = tmpstr;
+			else if(ret == 9) newnode->plot = tmpstr;
+			else if(ret == 10) newnode->poster = tmpstr;
+			else if(ret == 11) rating = tmpstr;
+			else if(ret == 12) votes = tmpstr;
+			else if(ret == 13) newnode->file = tmpstr;
+			else if(ret == 14) timestamp = tmpstr;
+
+			ret++;
 		}
-		nnode = newnode;
-		free1 = 1;
 	}
-	else
-		nnode = newnode1;
 
-	ret = sscanf(line, "%[^#]#%d#%[^#]#%d#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%d#%d#%[^#]#%lu", nnode->id, &nnode->type, nnode->title, &nnode->year, nnode->released, nnode->runtime, nnode->genre, nnode->director, nnode->writer, nnode->actors, nnode->plot, nnode->poster, &nnode->rating, &nnode->votes, nnode->file, &nnode->timestamp);
-
-	if(ret != 16)
+	if(ret != 15)
 	{
 		if(count > 0)
 		{
@@ -455,97 +395,16 @@ struct mediadb* addmediadb(char *line, int count, struct mediadb* last, struct m
 		return NULL;
 	}
 
-	if(nnode->id != NULL && nnode->id[0] != '%')
-		newnode->id = ostrcat(nnode->id, NULL, free1, 0);
-	else if(newnode1 == NULL)
-	{
-		free(nnode->id);
-		nnode->id = NULL;
-	}
+	if(type != NULL) newnode->type = atoi(type);
+	if(year != NULL) newnode->year = atoi(year);
+	if(rating != NULL) newnode->rating = atoi(rating);
+	if(votes != NULL) newnode->votes = atoi(votes);
+	if(timestamp != NULL) newnode->timestamp = strtoul(timestamp, NULL, 10);
 
-	newnode->type = nnode->type;
-
-	if(nnode->title != NULL && nnode->title[0] != '%')
-		newnode->title = ostrcat(nnode->title, NULL, free1, 0);
-	else if(newnode1 == NULL)
-	{
-		free(nnode->title);
-		nnode->title = NULL;
-	}
-
-	newnode->year = nnode->year;
-
-	if(nnode->released != NULL && nnode->released[0] != '%')
-		newnode->released = ostrcat(nnode->released, NULL, free1, 0);
-	else if(newnode1 == NULL)
-	{
-		free(nnode->released);
-		nnode->released = NULL;
-	}
-
-	if(nnode->runtime != NULL && nnode->runtime[0] != '%')
-		newnode->runtime = ostrcat(nnode->runtime, NULL, free1, 0);
-	else if(newnode1 == NULL)
-	{
-		free(nnode->runtime);
-		nnode->runtime = NULL;
-	}
-
-	if(nnode->genre != NULL && nnode->genre[0] != '%')
-		newnode->genre = ostrcat(nnode->genre, NULL, free1, 0);
-	else if(newnode1 == NULL)
-	{
-		free(nnode->genre);
-		nnode->genre = NULL;
-	}
-
-	if(nnode->director != NULL && nnode->director[0] != '%')
-		newnode->director = ostrcat(nnode->director, NULL, free1, 0);
-	else if(newnode1 == NULL)
-	{
-		free(nnode->director);
-		nnode->director = NULL;
-	}
-
-	if(nnode->writer != NULL && nnode->writer[0] != '%')
-		newnode->writer = ostrcat(nnode->writer, NULL, free1, 0);
-	else if(newnode1 == NULL)
-	{
-		free(nnode->writer);
-		nnode->writer = NULL;
-	}
-
-	if(nnode->actors != NULL && nnode->actors[0] != '%')
-		newnode->actors = ostrcat(nnode->actors, NULL, free1, 0);
-	else if(newnode1 == NULL)
-	{
-		free(nnode->actors);
-		nnode->actors = NULL;
-	}
-
-	if(nnode->plot != NULL && nnode->plot[0] != '%')
-		newnode->plot = ostrcat(nnode->plot, NULL, free1, 0);
-	else if(newnode1 == NULL)
-	{
-		free(nnode->plot);
-		nnode->plot = NULL;
-	}
-
-	if(nnode->poster != NULL && nnode->poster[0] != '%')
-		newnode->poster = ostrcat(nnode->poster, NULL, free1, 0);
-	else if(newnode1 == NULL)
-	{
-		free(nnode->poster);
-		nnode->poster = NULL;
-	}
-
-	newnode->rating = nnode->rating;
-	newnode->votes = nnode->votes;
-	newnode->file = ostrcat(nnode->file, NULL, free1, 0);
-	newnode->timestamp = nnode->timestamp;
+printf("%d\n", newnode->type);
 
 	if(flag == 0) m_lock(&status.mediadbmutex, 17);
-  node = mediadb;
+	node = mediadb;
 
 	modifymediadbcache(newnode->file, newnode);
 
@@ -596,20 +455,7 @@ struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* 
 
 	if(fullfile == NULL) return NULL;
 
-	if(id == NULL) id = "%";
-	if(year == NULL) year = "0";
-	if(file == NULL) file = "%";
 	if(title == NULL) title = file;
-	if(released == NULL) released = "%";
-	if(runtime == NULL) runtime = "%";
-	if(genre == NULL) genre = "%";
-	if(director == NULL) director = "%";
-	if(writer == NULL) writer = "%";
-	if(actors == NULL) actors = "%";
-	if(plot == NULL) plot = "%";
-	if(rating == NULL) rating = "0";
-	if(votes == NULL) votes = "0";
-	if(poster == NULL) poster = "%";
 
 	id = stringreplacechar(id, '#', ' ');
 	title = stringreplacechar(title, '#', ' ');
@@ -626,64 +472,47 @@ struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* 
 	votes = stringreplacechar(votes, ',', '.');
 	fullfile = stringreplacechar(fullfile, '#', ' ');
 
-	if(update == NULL)
-	{
-		tmpstr = ostrcat(tmpstr, id, 1, 0);
-		tmpstr = ostrcat(tmpstr, "#", 1, 0);
-		tmpstr = ostrcat(tmpstr, oitoa(type), 1, 1);
-		tmpstr = ostrcat(tmpstr, "#", 1, 0);
-		tmpstr = ostrcat(tmpstr, title, 1, 0);
-		tmpstr = ostrcat(tmpstr, "#", 1, 0);
-		tmpstr = ostrcat(tmpstr, oitoa(atoi(year)), 1, 1);
-		tmpstr = ostrcat(tmpstr, "#", 1, 0);
-		tmpstr = ostrcat(tmpstr, released, 1, 0);
-		tmpstr = ostrcat(tmpstr, "#", 1, 0);
-		tmpstr = ostrcat(tmpstr, runtime, 1, 0);
-		tmpstr = ostrcat(tmpstr, "#", 1, 0);
-		tmpstr = ostrcat(tmpstr, genre, 1, 0);
-		tmpstr = ostrcat(tmpstr, "#", 1, 0);
-		tmpstr = ostrcat(tmpstr, director, 1, 0);
-		tmpstr = ostrcat(tmpstr, "#", 1, 0);
-		tmpstr = ostrcat(tmpstr, writer, 1, 0);
-		tmpstr = ostrcat(tmpstr, "#", 1, 0);
-		tmpstr = ostrcat(tmpstr, actors, 1, 0);
-		tmpstr = ostrcat(tmpstr, "#", 1, 0);
-		tmpstr = ostrcat(tmpstr, plot, 1, 0);
-		tmpstr = ostrcat(tmpstr, "#", 1, 0);
-		tmpstr = ostrcat(tmpstr, poster, 1, 0);
-		tmpstr = ostrcat(tmpstr, "#", 1, 0);
-		tmpstr = ostrcat(tmpstr, oitoa(atoi(rating)), 1, 1);
-		tmpstr = ostrcat(tmpstr, "#", 1, 0);
-		tmpstr = ostrcat(tmpstr, oitoa(atoi(votes)), 1, 1);
-		tmpstr = ostrcat(tmpstr, "#", 1, 0);
-		tmpstr = ostrcat(tmpstr, fullfile, 1, 0);
-		tmpstr = ostrcat(tmpstr, "#", 1, 0);
-		tmpstr = ostrcat(tmpstr, olutoa(time(NULL)), 1, 1);
+	tmpstr = ostrcat(tmpstr, id, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, oitoa(type), 1, 1);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, title, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, oitoa(atoi(year)), 1, 1);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, released, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, runtime, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, genre, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, director, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, writer, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, actors, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, plot, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, poster, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, oitoa(atoi(rating)), 1, 1);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, oitoa(atoi(votes)), 1, 1);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, fullfile, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, olutoa(time(NULL)), 1, 1);
 
-		mnode = addmediadb(tmpstr, 1, NULL, NULL, 1, 0);
-	}
-	else
+	if(update != NULL)
 	{
-		freemediadbcontent(update);
-		update->id = ostrcat(id, NULL, 0, 0);
-		update->type = type;
-		update->title = ostrcat(title, NULL, 0, 0);
-		if(year != NULL) update->year = atoi(year);
-		update->released = ostrcat(released, NULL, 0, 0);
-		update->runtime = ostrcat(runtime, NULL, 0, 0);
-		update->genre = ostrcat(genre, NULL, 0, 0);
-		update->director = ostrcat(director, NULL, 0, 0);
-		update->writer = ostrcat(writer, NULL, 0, 0);
-		update->actors = ostrcat(actors, NULL, 0, 0);
-		update->plot = ostrcat(plot, NULL, 0, 0);
-		update->poster = ostrcat(poster, NULL, 0, 0);
-		if(rating != NULL) update->rating = atoi(rating);
-		if(votes != NULL) update->votes = atoi(votes);
-		update->file = ostrcat(file, NULL, 0, 0);
-		update->timestamp = time(NULL);
+		delmediadbfilter(update, 0);
+		delmediadb(update, 0);
 	}
 
+	mnode = addmediadb(tmpstr, 1, NULL, 1, 0);
 	free(tmpstr);
+
 	return mnode;
 }
 
@@ -695,7 +524,7 @@ int readmediadb(const char* filename, int type, int flag)
 	FILE *fd = NULL;
 	char *fileline = NULL;
 	int linecount = 0;
-	struct mediadb* last = NULL, *tmplast = NULL, *newnode = NULL;
+	struct mediadb* last = NULL, *tmplast = NULL;
 	struct mediadbcategory* lastcategory = NULL, *tmplastcategory = NULL;
 
 	m_lock(&status.mediadbmutex, 17);
@@ -723,30 +552,6 @@ int readmediadb(const char* filename, int type, int flag)
 		return 1;
 	}
 
-	if(flag == 0)
-	{
-		newnode = (struct mediadb*)malloc(sizeof(struct mediadb));
-		if(newnode == NULL)
-		{
-			err("no memory");
-			free(fileline);
-			fclose(fd);
-			m_unlock(&status.mediadbmutex, 17);
-			return 1;
-		}
-		memset(newnode, 0, sizeof(struct mediadb));
-
-		if(addmediadballoc(newnode) != 0)
-		{
-			freemediadbcontent(newnode);
-			free(newnode);
-			free(fileline);
-			fclose(fd);
-			m_unlock(&status.mediadbmutex, 17);
-			return 1;
-		}
-	}
-
 printf("xxxxxxxxxxxxxxxxxx %lu\n", time(NULL));
 	while(fgets(fileline, MINMALLOC, fd) != NULL)
 	{
@@ -762,7 +567,7 @@ printf("xxxxxxxxxxxxxxxxxx %lu\n", time(NULL));
 		if(flag == 0)
 		{
 			if(last == NULL) last = tmplast;
-			last = addmediadb(fileline, linecount, last, newnode, 0, 1);
+			last = addmediadb(fileline, linecount, last, 0, 1);
 			if(last != NULL) tmplast = last;
 		}
 		else
@@ -774,13 +579,6 @@ printf("xxxxxxxxxxxxxxxxxx %lu\n", time(NULL));
 	}
 
 	//status.writemediadb = 0;
-
-	if(flag == 0)
-	{
-		freemediadbcontent(newnode);
-		free(newnode);
-		newnode = NULL;
-	}
 
 	free(fileline);
 	fclose(fd);
@@ -794,16 +592,6 @@ void freemediadbcontent(struct mediadb* node)
 	if(node == NULL) return;
 
 	free(node->id); node->id = NULL;
-	free(node->title); node->title = NULL;
-	free(node->released); node->released = NULL;
-	free(node->runtime); node->runtime = NULL;
-	free(node->genre); node->genre = NULL;
-	free(node->director); node->director = NULL;
-	free(node->writer); node->writer = NULL;
-	free(node->actors); node->actors = NULL;
-	free(node->plot); node->plot = NULL;
-	free(node->poster); node->poster = NULL;
-	free(node->file); node->file = NULL;
 }
 
 int delmediadbfilter(struct mediadbfilter* mnode, int flag)
@@ -897,7 +685,7 @@ int delmediadb(struct mediadb* mnode, int flag)
 	int ret = 1;
 
 	m_lock(&status.mediadbmutex, 17);
-  struct mediadb *node = mediadb, *prev = mediadb;
+	struct mediadb *node = mediadb, *prev = mediadb;
 
 	while(node != NULL)
 	{
@@ -1514,8 +1302,8 @@ void mediadbfindfilecb(char* path, char* file, int type)
 #endif
 
 #ifdef SIMULATE
-			if(imdb != NULL)
-				tmdb = gettmdb(imdb->id, 1, 1, 0);
+			//if(imdb != NULL)
+			//	tmdb = gettmdb(imdb->id, 1, 1, 0);
 #else
 			struct skin* tmdbplugin = NULL;
 			if(imdb != NULL)
@@ -1564,7 +1352,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 			imdb = NULL;
 
 #ifdef SIMULATE
-			freetmdb(tmdb);
+			//freetmdb(tmdb);
 #else
 			if(tmdbplugin != NULL)
 			{
