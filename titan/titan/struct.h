@@ -270,6 +270,8 @@ struct mediadb
 	int votes;
 	char* file;
 	time_t timestamp;
+	char* shortname;
+	int flag;
 	struct mediadb* prev;
 	struct mediadb* next;
 };
