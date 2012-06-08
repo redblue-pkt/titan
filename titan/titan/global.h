@@ -2664,7 +2664,7 @@ int ostrcmp(char* value1, char* value2)
 	int ret = 1;
 
 	if(value1 != NULL && value2 != NULL)
-		ret = strcmp(value1, value2);
+		ret = (*value1 != *value2 ? *value1 - *value2 : strcmp(value1, value2));
 
 //	debug(1000, "out");
 	return ret;
