@@ -1517,9 +1517,10 @@ void mediadbfindfilecb(char* path, char* file, int type)
 			if(imdb != NULL)
 				tmdb = gettmdb(imdb->id, 1, 1, 0);
 #else
+			struct skin* tmdbplugin = NULL;
 			if(imdb != NULL)
 			{
-				struct skin* tmdbplugin = getplugin("TMDb");
+				tmdbplugin = getplugin("TMDb");
 				if(tmdbplugin != NULL)
 				{
 					struct tmdb* (*startplugin)(char*, int, int, int);
