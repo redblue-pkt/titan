@@ -38,7 +38,10 @@ struct imdb* getimdb(char* title, int flag, int flag1, int flag2)
 	struct imdb* imdb = NULL;
 	char* tmpstr = NULL;
 	char* tmpsearch = NULL;
-	char* savefile = NULL;
+	char* savefile = NULL, *savethumb = NULL;
+	char* buf = NULL;
+	int channels = 0;
+	unsigned long width = 0, height = 0, rowbytes = 0;
 
 	if(flag == 0)
 		tmpsearch = ostrcat("?i=&t=", title, 0, 0);
@@ -97,6 +100,15 @@ struct imdb* getimdb(char* title, int flag, int flag1, int flag2)
 				gethttp(ip, path, 80, savefile, NULL, NULL, 0);
 				free(imdb->poster);
 				imdb->poster = savefile;
+
+				//create thumb
+				savethumb = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+				savethumb = ostrcat(savethumb, imdb->id, 1, 0);
+				savethumb = ostrcat(savethumb, "_thumb.jpg", 1, 0);
+				buf = loadjpg(savefile, &width, &height, &rowbytes, &channels, 16);
+				savejpg(savefile, 91, 140, buf);
+				free(buf); buf = NULL;
+				free(savethumb); savethumb = NULL;
 			}
 			else
 			{
