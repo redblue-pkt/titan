@@ -332,7 +332,7 @@ struct mediadbcategory* addmediadbcategory(char* line, int type, int count, stru
 
 //flag 0: with lock
 //flag 1: without lock
-struct mediadb* addmediadb(char *line, int count, struct mediadb* last, int sort, int flag)
+struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last, int sort, int flag)
 {
 	//debug(1000, "in");
 	struct mediadb *newnode = NULL, *prev = NULL, *node = NULL;
@@ -350,36 +350,42 @@ struct mediadb* addmediadb(char *line, int count, struct mediadb* last, int sort
 	}
 	memset(newnode, 0, sizeof(struct mediadb));
 
-	tmpstr = ostrcat(line, NULL, 0, 0);
-	newnode->id = tmpstr;
-
-	while(tmpstr[0] != '\0')
+	if(len > 0) tmpstr = malloc(len + 1);
+	if(tmpstr != NULL)
 	{
-		tmpstr++;
-		if(tmpstr[0] == '#')
-		{
-			tmpstr[0] = '\0';
-			tmpstr++;
-			switch(ret)
-			{
-				case 0: type = tmpstr; break;
-				case 1: newnode->title = tmpstr; break;
-				case 2: year = tmpstr; break;
-				case 3: newnode->released = tmpstr; break;
-				case 4: newnode->runtime = tmpstr; break;
-				case 5: newnode->genre = tmpstr; break;
-				case 6: newnode->director = tmpstr; break;
-				case 7: newnode->writer = tmpstr; break;
-				case 8: newnode->actors = tmpstr; break;
-				case 9: newnode->plot = tmpstr; break;
-				case 10: newnode->poster = tmpstr; break;
-				case 11: rating = tmpstr; break;
-				case 12: votes = tmpstr; break;
-				case 13: newnode->file = tmpstr; break;
-				case 14: timestamp = tmpstr; break;
-			}
+		memcpy(tmpstr, line, len);
+		buf[len] = '\0';
 
-			ret++;
+		newnode->id = tmpstr;
+
+		while(tmpstr[0] != '\0')
+		{
+			tmpstr++;
+			if(tmpstr[0] == '#')
+			{
+				tmpstr[0] = '\0';
+				tmpstr++;
+				switch(ret)
+				{
+					case 0: type = tmpstr; break;
+					case 1: newnode->title = tmpstr; break;
+					case 2: year = tmpstr; break;
+					case 3: newnode->released = tmpstr; break;
+					case 4: newnode->runtime = tmpstr; break;
+					case 5: newnode->genre = tmpstr; break;
+					case 6: newnode->director = tmpstr; break;
+					case 7: newnode->writer = tmpstr; break;
+					case 8: newnode->actors = tmpstr; break;
+					case 9: newnode->plot = tmpstr; break;
+					case 10: newnode->poster = tmpstr; break;
+					case 11: rating = tmpstr; break;
+					case 12: votes = tmpstr; break;
+					case 13: newnode->file = tmpstr; break;
+					case 14: timestamp = tmpstr; break;
+				}
+
+				ret++;
+			}
 		}
 	}
 
@@ -508,7 +514,7 @@ struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* 
 	if(update != NULL)
 		delmediadb(update, 0);
 
-	mnode = addmediadb(tmpstr, 1, NULL, 1, 0);
+	mnode = addmediadb(tmpstr, strlen(tmpstr), 1, NULL, 1, 0);
 	free(tmpstr);
 
 	return mnode;
@@ -566,7 +572,7 @@ printf("xxxxxxxxxxxxxxxxxx %lu\n", time(NULL));
 		if(flag == 0)
 		{
 			if(last == NULL) last = tmplast;
-			last = addmediadb(fileline, linecount, last, 0, 1);
+			last = addmediadb(fileline, len + 2, linecount, last, 0, 1);
 			if(last != NULL) tmplast = last;
 		}
 		else
