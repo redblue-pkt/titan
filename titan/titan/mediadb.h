@@ -560,8 +560,8 @@ printf("xxxxxxxxxxxxxxxxxx %lu\n", time(NULL));
 		len = strlen(fileline) - 1;
 		if(fileline[len] == '\n')
 			fileline[len] = '\0';
-		if(fileline[len] == '\r')
-			fileline[len] = '\0';
+		if(fileline[len - 1] == '\r')
+			fileline[len - 1] = '\0';
 
 		linecount++;
 
