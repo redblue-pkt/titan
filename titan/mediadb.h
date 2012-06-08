@@ -1514,15 +1514,19 @@ void mediadbfindfilecb(char* path, char* file, int type)
 #endif
 
 #ifdef SIMULATE
-			tmdb = gettmdb(imdb->id, 1, 1, 0);
+			if(imdb != NULL)
+				tmdb = gettmdb(imdb->id, 1, 1, 0);
 #else
-			struct skin* tmdbplugin = getplugin("TMDb");
-			if(tmdbplugin != NULL)
+			if(imdb != NULL)
 			{
-				struct tmdb* (*startplugin)(char*, int, int, int);
-				startplugin = dlsym(tmdbplugin->pluginhandle, "gettmdb");
-				if(startplugin != NULL)
-					tmdb = startplugin(imdb->id, 1, 1, 0);
+				struct skin* tmdbplugin = getplugin("TMDb");
+				if(tmdbplugin != NULL)
+				{
+					struct tmdb* (*startplugin)(char*, int, int, int);
+					startplugin = dlsym(tmdbplugin->pluginhandle, "gettmdb");
+					if(startplugin != NULL)
+						tmdb = startplugin(imdb->id, 1, 1, 0);
+				}
 			}
 #endif
 			if(imdb != NULL && tmdb != NULL && ostrcmp(tmdb->title, "Nothing found.") != 0)
