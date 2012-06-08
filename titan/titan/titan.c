@@ -44,6 +44,7 @@ struct mostzap* mostzap = NULL;
 struct mediadbfilter* mediadbfilter = NULL;
 struct mediadbcategory* mediadbcategory = NULL;
 struct mediadb* mediadb = NULL;
+struct mediadbcache* mediadbcache[MEDIADBCACHEMAX] = {NULL};
 struct tmdb* tmdb = NULL;
 struct imdb* imdb = NULL;
 
@@ -193,6 +194,7 @@ struct imdb* imdb = NULL;
 #include "system_backup_restore.h"
 #include "info.h"
 #include "softcam.h"
+#include "mediadbcache.h"
 #include "mediadb.h"
 #include "mediadbsettings.h"
 
