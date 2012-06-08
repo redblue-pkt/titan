@@ -361,7 +361,7 @@ int readmainbouquet(char* filename)
 	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL, *tmpstr = NULL, *tmpstr0 = NULL, *tmpstr1 = NULL;
-	int linecount = 0, treffer0 = 1, treffer1 = 1;
+	int linecount = 0, treffer0 = 1, treffer1 = 1, len = 0;
 	struct mainbouquet* last = NULL, *tmplast = NULL;
 	
 	tmpstr0 = getconfig("channellist", NULL);
@@ -388,10 +388,11 @@ int readmainbouquet(char* filename)
 	{
 		if(fileline[0] == '#' || fileline[0] == '\n')
 			continue;
-		if(fileline[strlen(fileline) - 1] == '\n')
-			fileline[strlen(fileline) - 1] = '\0';
-		if(fileline[strlen(fileline) - 1] == '\r')
-			fileline[strlen(fileline) - 1] = '\0';
+		len = strlen(fileline) - 1;
+		if(fileline[len] == '\n')
+			fileline[len] = '\0';
+		if(fileline[len] == '\r')
+			fileline[len] = '\0';
 
 		linecount++;
 

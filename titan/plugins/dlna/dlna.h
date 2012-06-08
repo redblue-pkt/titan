@@ -41,6 +41,7 @@ int readdlna(const char* filename, struct dlna* node)
 	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL, *tmpstr = NULL;
+	int len = 0;
   
 	if(node == NULL) return 1;
 
@@ -63,10 +64,11 @@ int readdlna(const char* filename, struct dlna* node)
 	{
 		if(fileline[0] == '#' || fileline[0] == '\n')
 			continue;
-		if(fileline[strlen(fileline) - 1] == '\n')
-			fileline[strlen(fileline) - 1] = '\0';
-		if(fileline[strlen(fileline) - 1] == '\r')
-			fileline[strlen(fileline) - 1] = '\0';
+		len = strlen(fileline) - 1;
+		if(fileline[len] == '\n')
+			fileline[len] = '\0';
+		if(fileline[len] == '\r')
+			fileline[len] = '\0';
 
 		tmpstr = ostrstrcase(fileline, "network_interface=");
 		if(tmpstr != NULL)

@@ -8,6 +8,7 @@ int readtimezone(struct skin* timezone, struct skin* listbox)
 	char *fileline = NULL, *filename = NULL;
 	char *pos = NULL, *name = NULL, *zone = NULL;
 	struct skin* node = NULL;
+	int len = 0;
 
 	filename = getconfig("timezonefile", NULL);
 
@@ -30,10 +31,11 @@ int readtimezone(struct skin* timezone, struct skin* listbox)
 	{
 		if(fileline[0] == '#' || fileline[0] == '\n')
 			continue;
-		if(fileline[strlen(fileline) - 1] == '\n')
-			fileline[strlen(fileline) - 1] = '\0';
-		if(fileline[strlen(fileline) - 1] == '\r')
-			fileline[strlen(fileline) - 1] = '\0';
+		len = strlen(fileline) - 1;
+		if(fileline[len] == '\n')
+			fileline[len] = '\0';
+		if(fileline[len] == '\r')
+			fileline[len] = '\0';
 
 		pos = strstr(fileline, "<zone ");
 		if(pos == NULL)
