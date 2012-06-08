@@ -9,7 +9,7 @@
 <node name=b1 text="ADD" halign=center valign=middle bordercol=red bordersize=6 bordertype=2 posx=0 posy=0 width=150 height=39/>
 <node name=b2 text="EDIT" halign=center valign=middle bordercol=green bordersize=6 bordertype=2 posx=160 posy=0 width=150 height=39/>
 <node name=b3 text="DEL" halign=center valign=middle bordercol=yellow bordersize=6 bordertype=2 posx=320 posy=0 width=150 height=39/>
-<node name=b4 text="SCAN" halign=center valign=middle bordercol=blue bordersize=6 bordertype=2 posx=480 posy=0 width=150 height=39/>
+<node name=b4 text="SEARCH" halign=center valign=middle bordercol=blue bordersize=6 bordertype=2 posx=480 posy=0 width=150 height=39/>
 </screen>
 
 <screen fontcol=fontcol valign=bottom titlealign=center name="networkbrowser_add_share" hspace=15 vspace=15 fontsize=30 title="" posx=center posy=center width=80% height=60% bordercol=bordercol bordersize=2 bgcol=bgcol>
