@@ -28,15 +28,22 @@ struct mediadb* getmediadb(char* file)
 
 	hash = gethash(file) % MEDIADBCACHEMAX;
 	if(hash < 0 || hash >= MEDIADBCACHEMAX) hash = 0;
+
+	m_lock(&status.mediadbmutex, 17);
 	node = mediadbcache[hash];
 
 	while(node != NULL)
 	{
 		if(file == node->file)
+		{
+			m_unlock(&status.mediadbmutex, 17);
 			return node->mediadbnode;
+		}
 
 		node = node->next;
 	}
+
+	m_unlock(&status.mediadbmutex, 17);
 	return NULL;
 }
 
