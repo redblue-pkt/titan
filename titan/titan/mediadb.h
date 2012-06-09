@@ -1333,9 +1333,9 @@ void mediadbfindfilecb(char* path, char* file, int type)
 					if(startplugin != NULL)
 					{
 						if(imdb != NULL)
-							tmdb = gettmdb(imdb->id, 1, 1, 0);
+							tmdb = startplugin(imdb->id, 1, 1, 0);
 						else if(imdbapi != NULL)
-							tmdb = gettmdb(imdbapi->id, 1, 1, 0);
+							tmdb = startplugin(imdbapi->id, 1, 1, 0);
 					}
 				}
 			}
