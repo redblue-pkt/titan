@@ -327,8 +327,8 @@ struct mediadbcategory* addmediadbcategory(char* line, int type, int count, stru
 	return newnode;
 }
 
-//flag 0: with lock
-//flag 1: without lock
+//flag1 0: with lock
+//flag1 1: without lock
 struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last, int sort, int flag1)
 {
 	//debug(1000, "in");
@@ -1373,7 +1373,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 			imdb = NULL;
 			
 #ifdef SIMULATE
-			freeimdb(imdbapi);
+			freeimdbapi(imdbapi);
 #else
 			if(imdbapiplugin != NULL)
 			{
