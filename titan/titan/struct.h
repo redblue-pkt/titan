@@ -210,6 +210,7 @@ struct imdb
 	char* rating;
 	char* votes;
 	char* id;
+	char* thumb;
 };
 
 struct imdbapi
