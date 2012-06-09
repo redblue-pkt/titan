@@ -1478,19 +1478,19 @@ int findfiles(char* dirname, int type)
 			//video
 			if(!filelistflt("*.avi", entry->d_name))
 			{
-				if(type == 0 || type == 100)
+				if(type == 0 || type == 100 || type == 90 || type == 91)
 					mediadbfindfilecb(path, entry->d_name, 0);
 			}
 			//audio
 			if(!filelistflt("*.mp3", entry->d_name))
 			{
-				if(type == 1 || type == 100)
+				if(type == 1 || type == 100 || type == 90 || type == 92)
 					mediadbfindfilecb(path, entry->d_name, 1);
 			}
 			//picture
 			if(!filelistflt("*.jpg", entry->d_name))
 			{
-				if(type == 2 || type == 100)
+				if(type == 2 || type == 100 || type == 91 || type == 92)
 					mediadbfindfilecb(path, entry->d_name, 2);
 			}
 		}
@@ -1506,7 +1506,7 @@ int findfiles(char* dirname, int type)
 	return 0;
 }
 
-//type 0=video, 1=audio, 2=picture, 3=all
+//type 0=video, 1=audio, 2=pic, 90=video/audio, 91=video/pic, 92=audio/pic, 100=all
 void mediadbscan(char* path, int type)
 {
 	int count = 0;
