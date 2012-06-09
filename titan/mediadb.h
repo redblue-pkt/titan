@@ -476,41 +476,73 @@ struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* 
 	rating = stringreplacechar(rating, ',', '.');
 	votes = stringreplacechar(votes, ',', '.');
 	fullfile = stringreplacechar(fullfile, '#', ' ');
-
+printf("11\n");
 	tmpstr = ostrcat(tmpstr, id, 1, 0);
+printf("112\n");
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+printf("113\n");
 	tmpstr = ostrcat(tmpstr, oitoa(type), 1, 1);
+printf("114\n");
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+printf("115\n");
 	tmpstr = ostrcat(tmpstr, title, 1, 0);
+printf("116\n");
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+printf("117\n");
 	tmpstr = ostrcat(tmpstr, oitoa(atoi(year)), 1, 1);
+printf("118\n");
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+printf("119\n");
 	tmpstr = ostrcat(tmpstr, released, 1, 0);
+printf("1110\n");
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+printf("1111\n");
 	tmpstr = ostrcat(tmpstr, runtime, 1, 0);
+printf("1112\n");
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+printf("1113\n");
 	tmpstr = ostrcat(tmpstr, genre, 1, 0);
+printf("1114\n");
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+printf("1115\n");
 	tmpstr = ostrcat(tmpstr, director, 1, 0);
+printf("1116\n");
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+printf("1117\n");
 	tmpstr = ostrcat(tmpstr, writer, 1, 0);
+printf("1118\n");
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+printf("1119\n");
 	tmpstr = ostrcat(tmpstr, actors, 1, 0);
+printf("1120\n");
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+printf("1121\n");
 	tmpstr = ostrcat(tmpstr, plot, 1, 0);
+printf("1122\n");
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+printf("1123\n");
 	tmpstr = ostrcat(tmpstr, poster, 1, 0);
+printf("1124\n");
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+printf("1125\n");
 	tmpstr = ostrcat(tmpstr, oitoa(atoi(rating)), 1, 1);
+printf("1126\n");
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+printf("1127\n");
 	tmpstr = ostrcat(tmpstr, oitoa(atoi(votes)), 1, 1);
+printf("1128\n");
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+printf("1129\n");
 	tmpstr = ostrcat(tmpstr, fullfile, 1, 0);
+printf("1130\n");
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+printf("1131\n");
 	tmpstr = ostrcat(tmpstr, olutoa(time(NULL)), 1, 1);
+printf("1132\n");
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+printf("1133\n");
 	tmpstr = ostrcat(tmpstr, oitoa(flag), 1, 1);
-
+printf("1134\n");
 	if(update != NULL)
 		delmediadb(update, 0);
 
@@ -1340,26 +1372,77 @@ void mediadbfindfilecb(char* path, char* file, int type)
 				}
 			}
 #endif
+printf("wo1\n");
+
+			if(imdb != NULL && tmdb != NULL)
+			{
+				if(imdb->id == NULL) imdb->id = tmdb->imdbid;			
+				if(imdb->title == NULL) imdb->title = tmdb->title;	
+				if(imdb->genre == NULL) imdb->genre = tmdb->genre;
+//				if(imdb->writer == NULL) imdb->writer = tmdb->writer;
+//				if(imdb->director == NULL) imdb->director = tmdb->director;
+//				if(imdb->actors == NULL) imdb->actors = tmdb->actors;
+				if(imdb->rating == NULL) imdb->rating = tmdb->rating;
+				if(imdb->votes == NULL) imdb->votes = tmdb->votes;
+				if(imdb->runtime == NULL) imdb->runtime = tmdb->runtime;
+			}
+
+			if(imdb != NULL && imdbapi != NULL)
+			{
+				if(imdb->id == NULL) imdb->id = imdbapi->id;			
+				if(imdb->title == NULL) imdb->title = imdbapi->title;	
+				if(imdb->genre == NULL) imdb->genre = imdbapi->genre;
+				if(imdb->writer == NULL) imdb->writer = imdbapi->writer;
+				if(imdb->director == NULL) imdb->director = imdbapi->director;
+				if(imdb->actors == NULL) imdb->actors = imdbapi->actors;
+				if(imdb->rating == NULL) imdb->rating = imdbapi->rating;
+				if(imdb->votes == NULL) imdb->votes = imdbapi->votes;
+				if(imdb->runtime == NULL) imdb->runtime = imdbapi->runtime;
+			}
+/*
 			if(imdb != NULL && tmdb != NULL && ostrcmp(tmdb->title, "Nothing found.") != 0)
 			{
 				free(imdb->title);
 				imdb->title = ostrcat(tmdb->title, NULL, 0, 0);
 				free(imdb->plot);
 				imdb->plot = ostrcat(tmdb->plot, NULL, 0, 0);			
+				free(imdb->plot);
+				imdb->plot = ostrcat(tmdb->plot, NULL, 0, 0);
 			}
-
+*/
+printf("wo2\n");
 			debug(777, "shortname: %s", shortname);
 			free(shortname); shortname = NULL;
 
+			debug(133, "use id: %s", imdbapi->id);
+			debug(133, "use title: %s", imdbapi->title);
+			debug(133, "use genre: %s", imdbapi->genre);
+			debug(133, "use writer: %s", imdbapi->writer);
+			debug(133, "use director: %s", imdbapi->director);
+			debug(133, "use released: %s", imdbapi->released);
+			debug(133, "use actors: %s", imdbapi->actors);
+			debug(133, "use plot: %s", imdbapi->plot);
+			debug(133, "use poster: %s", imdbapi->poster);
+			debug(133, "use rating: %s", imdbapi->rating);
+			debug(133, "use votes: %s", imdbapi->votes);
+			debug(133, "use runtime: %s", imdbapi->runtime);
+			debug(133, "use year: %s", imdbapi->year);
+			debug(133, "use rated: %s", imdbapi->rated);
+		
 			debug(777, "add video: %s", tmpstr);
 			if(imdb != NULL)
 			{
+printf("wo2.1\n");
 				debug(777, "imdb id %s", imdb->id);
+printf("wo2.2\n");
+
 				createmediadb(node, imdb->id, type, imdb->title, imdb->year, imdb->released, imdb->runtime, imdb->genre, imdb->director, imdb->writer, imdb->actors, imdb->plot, imdb->id, imdb->rating, imdb->votes, tmpstr, file, 0);
+printf("wo2.3\n");
+
 			}
 			else
 				createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, tmpstr, file, 0);
-
+printf("wo3\n");
 #ifdef SIMULATE
 			freeimdb(imdb);
 #else
@@ -1372,7 +1455,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 			}
 #endif
 			imdb = NULL;
-			
+printf("wo4\n");			
 #ifdef SIMULATE
 			freeimdbapi(imdbapi);
 #else
@@ -1385,7 +1468,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 			}
 #endif
 			imdbapi = NULL;
-
+printf("wo5\n");
 #ifdef SIMULATE
 			freetmdb(tmdb);
 #else
@@ -1398,6 +1481,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 			}
 #endif
 			tmdb = NULL;
+printf("wo6\n");
 		}
 		else if(type == 1)
 		{

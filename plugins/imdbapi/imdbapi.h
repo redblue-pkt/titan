@@ -142,7 +142,9 @@ struct imdbapi* getimdbapi(char* title, int flag, int flag1, int flag2)
 		debug(133, "poster: %s", imdbapi->poster);
 		debug(133, "rating: %s", imdbapi->rating);
 		debug(133, "votes: %s", imdbapi->votes);
-		debug(133, "runtime: %s", imdbapi->runtime);				
+		debug(133, "runtime: %s", imdbapi->runtime);
+		debug(133, "year: %s", imdbapi->year);
+		debug(133, "rated: %s", imdbapi->rated);
 	}
 
 	return imdbapi;
