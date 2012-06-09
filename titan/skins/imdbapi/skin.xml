@@ -14,6 +14,6 @@
 <node name=actors text="--actors--" posx=100 posy=303 width=45% height=30/>
 <node name=plottext text="Plot:" posx=20 posy=350 width=45% bordertype=2 bordersize=2 bordercol=bordercol height=300>
 <node name=plot text="--plot--" posx=20 posy=400 width=45% height=240 type=textbox wrap=yes>
-<node name=cover valign=middle halign=middle parent=listbox posx=640 posy=0 width=640 height=720 picwidth=640 picheight=720/>
+<node name=cover valign=middle halign=middle parent=listbox posx=55% posy=35 width=40% height=600>
 <node name=b1 text="SEARCH" halign=center valign=middle bordercol=red bordersize=6 bordertype=2 posx=0 posy=0 width=150 height=39/>
 </screen>
