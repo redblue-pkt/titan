@@ -1,17 +1,17 @@
 <screen fontcol=fontcol fontsize=20 titlealign=center name="imdb" valign=bottom hspace=30 vspace=10 posx=center posy=center width=100% height=100% bordercol=bordercol bordersize=2 bgcol=bgcol>
-<node name=text text="ImdB - Plugin" posx=20 posy=1 width=45% height=30 fontsize=35>
+<node name=text text="IMDb - Plugin" posx=20 posy=1 width=45% height=30 fontsize=35>
 <node name=titletext text="Title:" posx=20 posy=50 width=45% height=30 bordertype=2 bordersize=2 bordercol=bordercol/>
-<node name=title text="--title--" posx=100 posy=53 width=45% height=30/>
+<node name=title text="--title--" posx=130 posy=53 width=45% height=30/>
 <node name=genretext text="Genre:" posx=20 posy=100 width=45% height=30 bordertype=2 bordersize=2 bordercol=bordercol/>
-<node name=genre text="--genre--" posx=100 posy=103 width=45% height=30/>
+<node name=genre text="--genre--" posx=130 posy=103 width=45% height=30/>
 <node name=releasetimetext text="Release:" posx=20 posy=150 width=45% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
-<node name=releasetime text="--releasetime--" posx=100 posy=153 width=45% height=30/>
+<node name=releasetime text="--releasetime--" posx=130 posy=153 width=45% height=30/>
 <node name=directortext text="Director:" posx=20 posy=200 width=45% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
-<node name=director text="--director--" posx=100 posy=203 width=45% height=30/>
+<node name=director text="--director--" posx=130 posy=203 width=45% height=30/>
 <node name=writerstext text="Writers:" posx=20 posy=250 width=45% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
-<node name=writers text="--writers--" posx=100 posy=253 width=45% height=30/>
+<node name=writers text="--writers--" posx=130 posy=253 width=45% height=30/>
 <node name=actorstext text="Actors:" posx=20 posy=300 width=45% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
-<node name=actors text="--actors--" posx=100 posy=303 width=45% height=30/>
+<node name=actors text="--actors--" posx=130 posy=303 width=45% height=30/>
 <node name=plottext text="Plot:" posx=20 posy=350 width=45% bordertype=2 bordersize=2 bordercol=bordercol height=300>
 <node name=plot text="--plot--" posx=20 posy=400 width=45% height=240 type=textbox wrap=yes>
 <node name=cover valign=middle halign=middle parent=listbox posx=640 posy=0 width=640 height=720 picwidth=640 picheight=720/>
