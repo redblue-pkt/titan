@@ -533,18 +533,18 @@ start:
 		if(rcret == getrcconfigint("rcok", NULL)) break;
 
 		if(rcret == getrcconfigint("rcred", NULL))
-    {
-      search = textinput("Search", NULL);
-      if(search != NULL)
-      {
+		{
+			search = textinput("Search", NULL);
+			if(search != NULL)
+			{
 				freetmdb(node); node = NULL;
 				node = gettmdb(search, 0, 0, 0);
-        free(search); search = NULL;
+				free(search); search = NULL;
 				goto start;
-      }
-      drawscreen(tmdbskin, 0);
-      continue;
-    }
+			}
+			drawscreen(tmdbskin, 0);
+			continue;
+	    }
 	}
 
 	freetmdb(node); node = NULL;
