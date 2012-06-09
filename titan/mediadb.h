@@ -710,7 +710,8 @@ int delmediadb(struct mediadb* mnode, int flag)
 					node->next->prev = prev;
 			}
 
-			delmediadbfilter(node, 0);
+			//TODO: find mediadbfilter by mediadb
+			//delmediadbfilter(node, 0);
 			delmediadbcache(node->file);
 			freemediadbcontent(node);
 
@@ -1300,7 +1301,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 			else
 				imdbapi = startplugin(imdb->id, 1, 1, 0);
 #else
-			struct imdbapi* imdbapiplugin = getplugin("IMDb-API");
+			struct skin* imdbapiplugin = getplugin("IMDb-API");
 			if(imdbplugin != NULL)
 			{
 				struct imdbapi* (*startplugin)(char*, int, int, int);
@@ -1318,7 +1319,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 #ifdef SIMULATE
 			if(imdb != NULL)
 				tmdb = gettmdb(imdb->id, 1, 1, 0);
-			else if(imdb != NULL)
+			else if(imdbapi != NULL)
 				tmdb = gettmdb(imdbapi->id, 1, 1, 0);
 #else
 			struct skin* tmdbplugin = NULL;
@@ -1333,7 +1334,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 					{
 						if(imdb != NULL)
 							tmdb = gettmdb(imdb->id, 1, 1, 0);
-						else if(imdb != NULL)
+						else if(imdbapi != NULL)
 							tmdb = gettmdb(imdbapi->id, 1, 1, 0);
 					}
 				}
