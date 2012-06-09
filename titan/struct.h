@@ -212,6 +212,24 @@ struct imdb
 	char* id;
 };
 
+struct imdbapi
+{
+	char* title;
+	char* year;
+	char* rated;
+	char* released;
+	char* genre;
+	char* director;
+	char* writer;
+	char* actors;
+	char* plot;
+	char* poster;
+	char* runtime;
+	char* rating;
+	char* votes;
+	char* id;
+};
+
 struct tmdb
 {
 	char* title;
