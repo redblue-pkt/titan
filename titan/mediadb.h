@@ -329,7 +329,7 @@ struct mediadbcategory* addmediadbcategory(char* line, int type, int count, stru
 
 //flag 0: with lock
 //flag 1: without lock
-struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last, int sort, int flag)
+struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last, int sort, int flag1)
 {
 	//debug(1000, "in");
 	struct mediadb *newnode = NULL, *prev = NULL, *node = NULL;
@@ -408,7 +408,7 @@ struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last,
 	if(timestamp != NULL) newnode->timestamp = strtoul(timestamp, NULL, 10);
 	if(flag != NULL) newnode->flag = atoi(flag);
 
-	if(flag == 0) m_lock(&status.mediadbmutex, 17);
+	if(flag1 == 0) m_lock(&status.mediadbmutex, 17);
 	node = mediadb;
 
 	modifymediadbcache(newnode->file, newnode);
@@ -448,7 +448,7 @@ struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last,
 	newnode->next = node;
 	if(node != NULL) node->prev = newnode;
 
-	if(flag == 0) m_unlock(&status.mediadbmutex, 17);
+	if(flag1 == 0) m_unlock(&status.mediadbmutex, 17);
 	//debug(1000, "out");
 	return newnode;
 }
@@ -1279,10 +1279,11 @@ void mediadbfindfilecb(char* path, char* file, int type)
 			strstrip(shortname);
 
 			//TODO: got imdb infos
+
 #ifdef SIMULATE
 			imdb = getimdb(shortname, 0, 1, 0);
 #else
-			struct skin* imdbplugin = getplugin("Imdb");
+			struct skin* imdbplugin = getplugin("IMDb");
 			if(imdbplugin != NULL)
 			{
 				struct imdb* (*startplugin)(char*, int, int, int);
@@ -1293,8 +1294,31 @@ void mediadbfindfilecb(char* path, char* file, int type)
 #endif
 
 #ifdef SIMULATE
+			if(imdb == NULL)
+				imdbapi = startplugin(shortname, 0, 1, 0);
+			else
+				imdbapi = startplugin(imdb->id, 1, 1, 0);
+#else
+			struct imdbapi* imdbplugin = getplugin("IMDb-API");
+			if(imdbplugin != NULL)
+			{
+				struct imdbapi* (*startplugin)(char*, int, int, int);
+				startplugin = dlsym(imdbplugin->pluginhandle, "getimdbapi");
+				if(startplugin != NULL)
+				{
+					if(imdb == NULL)
+						imdbapi = startplugin(shortname, 0, 1, 0);
+					else
+						imdbapi = startplugin(imdb->id, 1, 1, 0);
+				}
+			}
+#endif
+
+#ifdef SIMULATE
 			if(imdb != NULL)
 				tmdb = gettmdb(imdb->id, 1, 1, 0);
+			else if(imdb != NULL)
+				tmdb = gettmdb(imdbapi->id, 1, 1, 0);
 #else
 			struct skin* tmdbplugin = NULL;
 			if(imdb != NULL)
@@ -1305,7 +1329,12 @@ void mediadbfindfilecb(char* path, char* file, int type)
 					struct tmdb* (*startplugin)(char*, int, int, int);
 					startplugin = dlsym(tmdbplugin->pluginhandle, "gettmdb");
 					if(startplugin != NULL)
-						tmdb = startplugin(imdb->id, 1, 1, 0);
+					{
+						if(imdb != NULL)
+							tmdb = gettmdb(imdb->id, 1, 1, 0);
+						else if(imdb != NULL)
+							tmdb = gettmdb(imdbapi->id, 1, 1, 0);
+					}
 				}
 			}
 #endif
@@ -1314,7 +1343,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 				free(imdb->title);
 				imdb->title = ostrcat(tmdb->title, NULL, 0, 0);
 				free(imdb->plot);
-				imdb->plot = ostrcat(tmdb->plot, NULL, 0, 0);
+				imdb->plot = ostrcat(tmdb->plot, NULL, 0, 0);			
 			}
 
 			debug(777, "shortname: %s", shortname);
@@ -1341,6 +1370,19 @@ void mediadbfindfilecb(char* path, char* file, int type)
 			}
 #endif
 			imdb = NULL;
+			
+#ifdef SIMULATE
+			freeimdb(imdbapi);
+#else
+			if(imdbplugin != NULL)
+			{
+				void (*startplugin)(struct imdbapi*);
+				startplugin = dlsym(imdbplugin->pluginhandle, "freeimdbapi");
+				if(startplugin != NULL)
+					startplugin(imdbapi);
+			}
+#endif
+			imdbapi = NULL;
 
 #ifdef SIMULATE
 			freetmdb(tmdb);
