@@ -3,7 +3,7 @@
 #include "../titan/header.h"
 #include "imdb.h"
 
-char pluginname[] = "Imdb";
+char pluginname[] = "IMDb";
 char plugindesc[] = "Extensions";
 char pluginpic[] = "%pluginpath%/panel/plugin.png";
 

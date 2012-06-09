@@ -350,7 +350,7 @@ struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last,
 	if(tmpstr != NULL)
 	{
 		memcpy(tmpstr, line, len);
-		buf[len] = '\0';
+		tmpstr[len] = '\0';
 
 		newnode->id = tmpstr;
 
@@ -827,7 +827,7 @@ int writemediadb(const char *filename)
 
 	while(node != NULL)
 	{
-		ret = fprintf(fd, "%s#%d#%s#%d#%s#%s#%s#%s#%s#%s#%s#%s#%d#%d#%s#%lu#%d\n", node->id, node->type, node->title, node->year, node->released, node->runtime, node->genre, node->director, node->writer, node->actors, node->plot, node->poster, node->votes, node->file, node->timestamp, node->flag);
+		ret = fprintf(fd, "%s#%d#%s#%d#%s#%s#%s#%s#%s#%s#%s#%s#%d#%d#%s#%lu#%d\n", node->id, node->type, node->title, node->year, node->released, node->runtime, node->genre, node->director, node->writer, node->actors, node->plot, node->poster, node->rating, node->votes, node->file, node->timestamp, node->flag);
 
 		if(ret < 0)
 		{
@@ -1268,6 +1268,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 		if(type == 0)
 		{
 			struct imdb* imdb = NULL;
+			struct imdbapi* imdbapi = NULL;
 			struct tmdb* tmdb = NULL;
 
 			//create imdb search name
@@ -1299,11 +1300,11 @@ void mediadbfindfilecb(char* path, char* file, int type)
 			else
 				imdbapi = startplugin(imdb->id, 1, 1, 0);
 #else
-			struct imdbapi* imdbplugin = getplugin("IMDb-API");
+			struct imdbapi* imdbapiplugin = getplugin("IMDb-API");
 			if(imdbplugin != NULL)
 			{
 				struct imdbapi* (*startplugin)(char*, int, int, int);
-				startplugin = dlsym(imdbplugin->pluginhandle, "getimdbapi");
+				startplugin = dlsym(imdbapiplugin->pluginhandle, "getimdbapi");
 				if(startplugin != NULL)
 				{
 					if(imdb == NULL)
@@ -1374,10 +1375,10 @@ void mediadbfindfilecb(char* path, char* file, int type)
 #ifdef SIMULATE
 			freeimdb(imdbapi);
 #else
-			if(imdbplugin != NULL)
+			if(imdbapiplugin != NULL)
 			{
 				void (*startplugin)(struct imdbapi*);
-				startplugin = dlsym(imdbplugin->pluginhandle, "freeimdbapi");
+				startplugin = dlsym(imdbapiplugin->pluginhandle, "freeimdbapi");
 				if(startplugin != NULL)
 					startplugin(imdbapi);
 			}
