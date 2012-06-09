@@ -51,6 +51,9 @@ struct imdbapi* getimdbapi(char* title, int flag, int flag1, int flag2)
 	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
 
 	tmpstr = gethttp("www.imdbapi.com", tmpsearch, 80, NULL, NULL, NULL, 0);
+	debug(133, "tmpsearch: %s", tmpsearch);
+//	debug(133, "tmpstr: %s", tmpstr);
+
 	free(tmpsearch); tmpsearch = NULL;
 
 	if(tmpstr != NULL)
