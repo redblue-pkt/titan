@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+// tmdb.h
+struct tmdb* gettmdb(char* title, int flag, int flag1, int flag2);
+
 //mediadbsettings.h
 void screenmediadbsettings();
 
