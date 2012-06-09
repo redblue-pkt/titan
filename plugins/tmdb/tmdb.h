@@ -98,7 +98,7 @@ start:
 	tmpstr = gethttp("api.themoviedb.org", tmpsearch, 80, NULL, NULL, NULL, 0);
 	
 	debug(133, "tmpsearch: %s", tmpsearch);
-	debug(133, "tmpstr: %s", tmpstr);
+//	debug(133, "tmpstr: %s", tmpstr);
 				
 	free(tmpsearch); tmpsearch = NULL;
 
