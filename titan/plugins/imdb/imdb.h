@@ -439,7 +439,7 @@ start:
 		if(rcret == getrcconfigint("rcok", NULL)) break;
 
 		if(rcret == getrcconfigint("rcred", NULL))
-    	{
+		{
 		search = textinput("Search", NULL);
 		if(search != NULL)
 		{
@@ -450,7 +450,7 @@ start:
 		}
 		drawscreen(imdbskin, 0);
 		continue;
-    	}
+		}
 	}
 
 	freeimdb(node); node = NULL;
