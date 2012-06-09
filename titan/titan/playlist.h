@@ -179,14 +179,12 @@ struct playlist* addplaylist(struct playlist **firstnode, char *line, int count,
 	int ret = 0;
 	char* file = NULL;
 
-	newnode = (struct playlist*)malloc(sizeof(struct playlist));	
+	newnode = (struct playlist*)calloc(1, sizeof(struct playlist));
 	if(newnode == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
-
-	memset(newnode, 0, sizeof(struct playlist));
 
 	file = malloc(MINMALLOC);
 	if(file == NULL)

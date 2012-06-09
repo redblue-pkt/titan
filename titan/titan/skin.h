@@ -471,14 +471,13 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 		node = node->child;
 	}
 
-	newnode = (struct skin*)malloc(sizeof(struct skin));
+	newnode = (struct skin*)calloc(1, sizeof(struct skin));
 	if(newnode == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
 
-	memset(newnode, 0, sizeof(struct skin));
 	newnode->bgcol = -1;
 	newnode->titlebgcol = -1;
 	newnode->deaktivcol = -1;

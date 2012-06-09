@@ -287,7 +287,7 @@ struct sat* addsat(char *line, int count, struct sat* last)
 	char *name = NULL;
 	int ret = 0;
 
-	newnode = (struct sat*)malloc(sizeof(struct sat));	
+	newnode = (struct sat*)calloc(1, sizeof(struct sat));
 	if(newnode == NULL)
 	{
 		err("no memory");
@@ -302,7 +302,6 @@ struct sat* addsat(char *line, int count, struct sat* last)
 		return NULL;
 	}
 
-	memset(newnode, 0, sizeof(struct sat));
 	status.writesat = 1;
 
 	ret = sscanf(line, "%[^#]#%d#%d#%d", name, &newnode->flag, &newnode->orbitalpos, &newnode->fetype);

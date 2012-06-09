@@ -537,14 +537,12 @@ struct transponder* addtransponder(char* line, int count, struct transponder* la
 
 	if(line == NULL) return NULL;
 
-	newnode = (struct transponder*)malloc(sizeof(struct transponder));	
+	newnode = (struct transponder*)calloc(1, sizeof(struct transponder));
 	if(newnode == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
-
-	memset(newnode, 0, sizeof(struct transponder));
 
 	ret = sscanf(line, "%lu#%"SCNu8"#%d#%"SCNu8"#%d#%d#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8, &newnode->id, &newnode->fetype, &newnode->frequency, &newnode->polarization, &newnode->orbitalpos, &newnode->symbolrate, &newnode->modulation, &newnode->fec, &newnode->pilot, &newnode->rolloff, &newnode->inversion, &newnode->system);
 	if(ret != 12)

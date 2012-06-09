@@ -671,14 +671,13 @@ struct service* addservice(struct service* last)
 	debug(1000, "in");
 	struct service *newnode = NULL, *node = NULL;
 
-	newnode = (struct service*)malloc(sizeof(struct service));	
+	newnode = (struct service*)calloc(1, sizeof(struct service));
 	if(newnode == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
 
-	memset(newnode, 0, sizeof(struct service));
 	newnode->recdstfd = -1;
 	newnode->recsrcfd = -1;
 	newnode->tssize = 188;

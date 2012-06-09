@@ -85,14 +85,12 @@ struct mostzap* addmostzap(char* line, int count, struct mostzap* last)
 
 	if(line == NULL) return NULL;
 
-	newnode = (struct mostzap*)malloc(sizeof(struct mostzap));	
+	newnode = (struct mostzap*)calloc(1, sizeof(struct mostzap));
 	if(newnode == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
-
-	memset(newnode, 0, sizeof(struct mostzap));
 
 	ret = sscanf(line, "%d#%lu#%d", &newnode->serviceid, &newnode->transponderid, &newnode->count);
 

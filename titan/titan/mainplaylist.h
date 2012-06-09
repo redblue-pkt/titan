@@ -126,7 +126,7 @@ struct mainplaylist* addmainplaylist(char *line, int count, struct mainplaylist*
 	char *name = NULL, *filename = NULL;
 	int ret = 0;
 
-	newnode = (struct mainplaylist*)malloc(sizeof(struct mainplaylist));	
+	newnode = (struct mainplaylist*)calloc(1, sizeof(struct mainplaylist));
 	if(newnode == NULL)
 	{
 		err("no memory");
@@ -150,7 +150,6 @@ struct mainplaylist* addmainplaylist(char *line, int count, struct mainplaylist*
 		return NULL;
 	}
 
-	memset(newnode, 0, sizeof(struct mainplaylist));
 	status.writemainplaylist = 1;
 
 	ret = sscanf(line, "%[^#]#%[^#]", name, filename);

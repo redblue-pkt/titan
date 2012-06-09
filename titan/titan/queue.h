@@ -21,7 +21,7 @@ struct queue* addqueue(int type, void* data, int len, void* data1, int len1, int
 	struct queue *newnode = NULL, *prev = NULL, *node = queue;
 	void* tmpdata = NULL, *tmpdata1 = NULL;
 
-	newnode = (struct queue*)malloc(sizeof(struct queue));	
+	newnode = (struct queue*)calloc(1, sizeof(struct queue));
 	if(newnode == NULL)
 	{
 		err("no memory");
@@ -53,8 +53,6 @@ struct queue* addqueue(int type, void* data, int len, void* data1, int len1, int
 			return NULL;
 		}
 	}
-	
-	memset(newnode, 0, sizeof(struct queue));
 
 	newnode->type = type;
 	newnode->len = len;

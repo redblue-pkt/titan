@@ -56,13 +56,12 @@ struct mediadbcache* modifymediadbcache(char* file, struct mediadb* mnode)
 	hash = gethash(file) % MEDIADBCACHEMAX;
 	if(hash < 0 || hash >= MEDIADBCACHEMAX) hash = 0;
 
-	newnode = (struct mediadbcache*)malloc(sizeof(struct mediadbcache));
+	newnode = (struct mediadbcache*)calloc(1, sizeof(struct mediadbcache));
 	if(newnode == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
-	memset(newnode, 0, sizeof(struct mediadbcache));
 
   //TODO: copy file???
 	newnode->file = file;
