@@ -395,12 +395,12 @@ start:
 					cmd = ostrcat(cmd, "jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
 					cmd = ostrcat(cmd, tmpstr, 1, 0);
 
-					debug(10, "cmd %s", cmd);
+					debug(133, "cmd %s", cmd);
 					system(cmd);
 					free(cmd), cmd = NULL;
 
 					cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg", 1, 0);
-					debug(10, "cmd %s", cmd);
+					debug(133, "cmd %s", cmd);
 					system(cmd);
 					free(cmd), cmd = NULL;
 
@@ -411,7 +411,7 @@ start:
 
 					cmd = ostrcat(cmd, "mv /tmp/backdrop.resize.mpg ", 1, 0);
 					cmd = ostrcat(cmd, tmpmvi, 1, 0);
-					debug(10, "cmd %s", cmd);
+					debug(133, "cmd %s", cmd);
 					system(cmd);
 					free(cmd), cmd = NULL;
 

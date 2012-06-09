@@ -80,8 +80,8 @@ start:
 
 	tmpstr = gethttp(url, tmpsearch, 80, NULL, NULL, NULL, 0);
 	
-	debug(10, "tmpsearch: %s", tmpsearch);
-//	debug(10, "tmpstr: %s", tmpstr);
+	debug(133, "tmpsearch: %s", tmpsearch);
+//	debug(133, "tmpstr: %s", tmpstr);
 				
 	free(tmpsearch); tmpsearch = NULL;
 
@@ -164,8 +164,8 @@ start:
 
 		tmpstr = gethttp(url, tmpsearch, 80, NULL, NULL, NULL, 0);
 		
-		debug(10, "tmpsearch: %s", tmpsearch);
-//		debug(10, "tmpstr: %s", tmpstr);
+		debug(133, "tmpsearch: %s", tmpsearch);
+//		debug(133, "tmpstr: %s", tmpstr);
 					
 		free(tmpsearch); tmpsearch = NULL;
 	}
@@ -254,8 +254,8 @@ start:
 	
 		tmpstr = gethttp(url, tmpsearch, 80, NULL, NULL, NULL, 0);
 		
-		debug(10, "tmpsearch: %s", tmpsearch);
-//		debug(10, "tmpstr: %s", tmpstr);
+		debug(133, "tmpsearch: %s", tmpsearch);
+//		debug(133, "tmpstr: %s", tmpstr);
 					
 		free(tmpsearch); tmpsearch = NULL;
 		if(tmpstr != NULL)
@@ -277,8 +277,8 @@ start:
 
 		tmpstr = gethttp(url, tmpsearch, 80, NULL, NULL, NULL, 0);
 		
-		debug(10, "tmpsearch: %s", tmpsearch);
-//		debug(10, "tmpstr: %s", tmpstr);
+		debug(133, "tmpsearch: %s", tmpsearch);
+//		debug(133, "tmpstr: %s", tmpstr);
 					
 		free(tmpsearch); tmpsearch = NULL;
 	}
@@ -380,16 +380,16 @@ start:
 	tmpstr = ostrcat("tt", "imdb->id", 0, 0);
 	imdb->id = tmpstr;
 				
-	debug(10, "id: %s", imdb->id);
-	debug(10, "title: %s", imdb->title);
-	debug(10, "genre: %s", imdb->genre);
-	debug(10, "writer: %s", imdb->writer);
-	debug(10, "director: %s", imdb->director);
-	debug(10, "released: %s", imdb->released);
-	debug(10, "actors: %s", imdb->actors);
-	debug(10, "plot: %s", imdb->plot);
-	debug(10, "poster: %s", imdb->poster);
-	debug(10, "thumb: %s", imdb->thumb);
+	debug(133, "id: %s", imdb->id);
+	debug(133, "title: %s", imdb->title);
+	debug(133, "genre: %s", imdb->genre);
+	debug(133, "writer: %s", imdb->writer);
+	debug(133, "director: %s", imdb->director);
+	debug(133, "released: %s", imdb->released);
+	debug(133, "actors: %s", imdb->actors);
+	debug(133, "plot: %s", imdb->plot);
+	debug(133, "poster: %s", imdb->poster);
+	debug(133, "thumb: %s", imdb->thumb);
 			
 	return imdb;
 }
