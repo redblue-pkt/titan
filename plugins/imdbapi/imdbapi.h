@@ -125,18 +125,18 @@ struct imdbapi* getimdbapi(char* title, int flag, int flag1, int flag2)
 		}
 
 		free(tmpstr); tmpstr = NULL;
-		debug(10, "id: %s", imdbapi->id);
-		debug(10, "title: %s", imdbapi->title);
-		debug(10, "genre: %s", imdbapi->genre);
-		debug(10, "writer: %s", imdbapi->writer);
-		debug(10, "director: %s", imdbapi->director);
-		debug(10, "released: %s", imdbapi->released);
-		debug(10, "actors: %s", imdbapi->actors);
-		debug(10, "plot: %s", imdbapi->plot);
-		debug(10, "poster: %s", imdbapi->poster);
-		debug(10, "rating: %s", imdbapi->rating);
-		debug(10, "votes: %s", imdbapi->votes);
-		debug(10, "runtime: %s", imdbapi->runtime);				
+		debug(133, "id: %s", imdbapi->id);
+		debug(133, "title: %s", imdbapi->title);
+		debug(133, "genre: %s", imdbapi->genre);
+		debug(133, "writer: %s", imdbapi->writer);
+		debug(133, "director: %s", imdbapi->director);
+		debug(133, "released: %s", imdbapi->released);
+		debug(133, "actors: %s", imdbapi->actors);
+		debug(133, "plot: %s", imdbapi->plot);
+		debug(133, "poster: %s", imdbapi->poster);
+		debug(133, "rating: %s", imdbapi->rating);
+		debug(133, "votes: %s", imdbapi->votes);
+		debug(133, "runtime: %s", imdbapi->runtime);				
 	}
 
 	return imdbapi;
