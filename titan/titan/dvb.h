@@ -73,7 +73,21 @@ int dvbreadfd(int fd, unsigned char *buf, int pos, int count, int tout)
 	{
 retry:
 		ret = TEMP_FAILURE_RETRY(read(fd, buf + pos, count));
-		if(ret < 0)
+		if(ret > 0)
+			return ret;
+		else if(ret == 0)
+		{
+#ifdef SIMULATE
+			tout = tout - 100000;
+			usleep(100000);
+#else
+			tout = tout - 1000;
+			usleep(1000);
+#endif
+			if(tout > 0) goto retry;
+			debug(250, "dvb read timeout fd=%d", fd);
+		}
+		else if(ret < 0)
 		{
 			if((errno == EAGAIN || errno == EOVERFLOW) && tout > 0) 
 			{
@@ -89,19 +103,6 @@ retry:
 			}
 			perr("dvb read data fd=%d", fd);
 		}
-		else if(ret == 0)
-		{
-#ifdef SIMULATE
-			tout = tout - 100000;
-			usleep(100000);
-#else
-			tout = tout - 1000;
-			usleep(1000);
-#endif
-			if(tout > 0) goto retry;
-			debug(250, "dvb read timeout fd=%d", fd);
-		}
-		return ret;
 	}
 	else if(ret == 0)
 	{
