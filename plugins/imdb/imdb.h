@@ -58,7 +58,6 @@ struct imdb* getimdb(char* title, int flag, int flag1, int flag2)
 	char* tmpsearch = NULL;
 	char* apikey = NULL;
 	char* searchurl = NULL;
-	char* iimdburl = NULL;
 	char* lang = NULL;
 	char* url = NULL;
 	char* savefile = NULL;
@@ -103,7 +102,7 @@ start:
 // Titel (näherungsweise Übereinstimmung)
 // Titel (genaue Übereinstimmung)
 
-		if(flag1 == 0 && string_find("<title>IMDb Titelsuche</title>", tmpstr) && string_find(!"<p><b>Meistgesuchte Titel</b>", tmpstr))
+		if(flag1 == 0 && string_find("<title>IMDb Titelsuche</title>", tmpstr) && string_find("<p><b>Meistgesuchte Titel</b>", tmpstr) == 0)
 		{
 			tmpstr = string_resub("<p><b>Titel","</td></tr></table> </p>",tmpstr);
 			

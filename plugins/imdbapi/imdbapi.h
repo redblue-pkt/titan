@@ -39,7 +39,7 @@ struct imdbapi* getimdbapi(char* title, int flag, int flag1, int flag2)
 	char* tmpstr = NULL;
 	char* tmpsearch = NULL;
 	char* savefile = NULL, *savethumb = NULL; 
-	char* buf = NULL; 
+	unsigned char* buf = NULL; 
 	int channels = 0; 
 	unsigned long width = 0, height = 0, rowbytes = 0; 
  	
@@ -102,7 +102,7 @@ struct imdbapi* getimdbapi(char* title, int flag, int flag1, int flag2)
 				imdbapi->poster = savefile;
 				//create thumb 
 				savethumb = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0); 
-				savethumb = ostrcat(savethumb, imdb->id, 1, 0); 
+				savethumb = ostrcat(savethumb, imdbapi->id, 1, 0); 
 				savethumb = ostrcat(savethumb, "_thumb.jpg", 1, 0); 
 				buf = loadjpg(savefile, &width, &height, &rowbytes, &channels, 16); 
 				savejpg(savefile, 91, 140, buf); 

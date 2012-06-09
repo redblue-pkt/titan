@@ -28,10 +28,10 @@ void init(void)
 		changeinput(child, "start");
 
 	pluginmenu = child;
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/imdbapiAPI/skin.xml", 0, 0);
+	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/imdbapi/skin.xml", 0, 0);
 	readscreen(tmpstr, 201, 1);
 	free(tmpstr); tmpstr = NULL;
-	debug(10, "Panel Plugin loadet !!!");
+	debug(10, "imdbapi Plugin loadet !!!");
 }
 
 //wird beim entladen ausgefuehrt
@@ -39,11 +39,11 @@ void deinit(void)
 {
 	delmarkedscreen(201);
 	pluginaktiv = 0;
-	debug(10, "imdbapiAPI Plugin removed !!!");
+	debug(10, "imdbapi Plugin removed !!!");
 }
 
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {
-	screenimdbapiAPI(NULL);
+	screenimdbapi(NULL);
 }

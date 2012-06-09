@@ -8,9 +8,6 @@
 #ifndef HEADER_H
 #define HEADER_H
 
-// tmdb.h
-struct tmdb* gettmdb(char* title, int flag, int flag1, int flag2);
-
 //mediadbsettings.h
 void screenmediadbsettings();
 
@@ -467,6 +464,7 @@ int changefont(struct skin* node, char* text);
 int changemask(struct skin* node, char* text);
 int changepicmem(struct skin* node, char* text, int timeout, int del);
 int convertxmlentry(char *value, uint8_t *proz);
+int savejpg(char* filename, int width, int height, unsigned char *buf);
 
 //volume.h
 void screenvolumeup();
@@ -592,6 +590,8 @@ int cmpfilenameext(char* filename, char* ext);
 void killnet();
 void checkserial(char* input);
 int checkprozess(char* input);
+struct regex* regexstruct(char* regex, char* str);
+void freeregexstruct(struct regex* node);
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
