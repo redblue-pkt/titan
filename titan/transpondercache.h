@@ -49,13 +49,12 @@ struct transpondercache* modifytranspondercache(unsigned long transponderid, str
 	hash = (transponderid) % TRANSPONDERCACHEMAX;
 	if(hash < 0 || hash >= TRANSPONDERCACHEMAX) hash = 0;
 
-	newnode = (struct transpondercache*)malloc(sizeof(struct transpondercache));
+	newnode = (struct transpondercache*)calloc(1, sizeof(struct transpondercache));
 	if(newnode == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
-	memset(newnode, 0, sizeof(struct transpondercache));
 
 	newnode->transponderid = transponderid;
 	newnode->tpnode = tpnode;

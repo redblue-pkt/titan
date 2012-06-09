@@ -163,14 +163,12 @@ struct linkedchannel* addlinkedchannel(struct channel* chnode, int serviceid, un
 		return NULL;
 	}
 
-	newnode = (struct linkedchannel*)malloc(sizeof(struct linkedchannel));	
+	newnode = (struct linkedchannel*)calloc(1, sizeof(struct linkedchannel));
 	if(newnode == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
-
-	memset(newnode, 0, sizeof(struct linkedchannel));
 
 	newnode->serviceid = serviceid;
 	newnode->transponderid = transponderid;

@@ -173,14 +173,13 @@ struct epgscanlist* addepgscanlist(char *line, int count, struct epgscanlist* la
 	struct epgscanlist *newnode = NULL, *prev = NULL, *node = epgscanlist;
 	int ret = 0;
 
-	newnode = (struct epgscanlist*)malloc(sizeof(struct epgscanlist));	
+	newnode = (struct epgscanlist*)calloc(1, sizeof(struct epgscanlist));
 	if(newnode == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
 
-	memset(newnode, 0, sizeof(struct epgscanlist));
 	status.writeepgscanlist = 1;
 
 	ret = sscanf(line, "%d#%lu", &newnode->serviceid, &newnode->transponderid);

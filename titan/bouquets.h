@@ -307,14 +307,13 @@ struct bouquet* addbouquet(struct bouquet **firstnode, char *line, int type, int
 	struct bouquet *newnode = NULL, *prev = NULL, *node = *firstnode;
 	int ret = 0;
 
-	newnode = (struct bouquet*)malloc(sizeof(struct bouquet));	
+	newnode = (struct bouquet*)calloc(1, sizeof(struct bouquet));
 	if(newnode == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
 
-	memset(newnode, 0, sizeof(struct bouquet));
 	status.writebouquet = 1;
 
 	ret = sscanf(line, "%d#%lu", &newnode->serviceid, &newnode->transponderid);

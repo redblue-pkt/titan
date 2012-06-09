@@ -203,14 +203,13 @@ struct mediadbfilter* addmediadbfilter(struct mediadb* mnode, int count, struct 
 
 	if(mnode == NULL) return NULL;
 
-	newnode = (struct mediadbfilter*)malloc(sizeof(struct mediadbfilter));
+	newnode = (struct mediadbfilter*)calloc(1, sizeof(struct mediadbfilter));
 	if(newnode == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
 
-	memset(newnode, 0, sizeof(struct mediadbfilter));
 	newnode->node = mnode;
 
 	m_lock(&status.mediadbmutex, 17);
@@ -256,14 +255,12 @@ struct mediadbcategory* addmediadbcategory(char* line, int type, int count, stru
 
 	if(line == NULL) return NULL;
 
-	newnode = (struct mediadbcategory*)malloc(sizeof(struct mediadbcategory));
+	newnode = (struct mediadbcategory*)calloc(1, sizeof(struct mediadbcategory));
 	if(newnode == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
-
-	memset(newnode, 0, sizeof(struct mediadbcategory));
 	
 	name = malloc(256);
 	if(name == NULL)
@@ -342,13 +339,12 @@ struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last,
 
 	if(line == NULL) return NULL;
 
-	newnode = (struct mediadb*)malloc(sizeof(struct mediadb));
+	newnode = (struct mediadb*)calloc(1, sizeof(struct mediadb));
 	if(newnode == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
-	memset(newnode, 0, sizeof(struct mediadb));
 
 	if(len > 0) tmpstr = malloc(len + 1);
 	if(tmpstr != NULL)

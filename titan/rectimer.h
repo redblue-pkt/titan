@@ -143,14 +143,13 @@ struct rectimer* addrectimernode(char* line, struct rectimer* last)
 	char *ret = NULL;
 	struct rectimer *newnode = NULL, *prev = NULL, *node = rectimer;
 	
-	newnode = (struct rectimer*)malloc(sizeof(struct rectimer));
+	newnode = (struct rectimer*)calloc(1, sizeof(struct rectimer));
 	if(newnode == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
 
-	memset(newnode, 0, sizeof(struct rectimer));
 	status.writerectimer = 1;
 	newnode->timestamp = NULL;
 

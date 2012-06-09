@@ -104,14 +104,12 @@ struct audiotrack* addaudiotrack(struct channel* chnode, char* langdesc, int pid
 		return NULL;
 	}
 
-	newnode = (struct audiotrack*)malloc(sizeof(struct audiotrack));	
+	newnode = (struct audiotrack*)calloc(1, sizeof(struct audiotrack));
 	if(newnode == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
-
-	memset(newnode, 0, sizeof(struct audiotrack));
 
 	newnode->audiopid = pid;
 	newnode->audiocodec = audiocodec;

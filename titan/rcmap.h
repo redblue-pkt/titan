@@ -8,7 +8,7 @@ struct rcmap* addrcmap(char *line, int count, struct rcmap* last)
 	char *name = NULL, *key = NULL, *newkey = NULL;
 	int ret = 0;
 
-	newnode = (struct rcmap*)malloc(sizeof(struct rcmap));	
+	newnode = (struct rcmap*)calloc(1, sizeof(struct rcmap));
 	if(newnode == NULL)
 	{
 		err("no memory");
@@ -30,6 +30,7 @@ struct rcmap* addrcmap(char *line, int count, struct rcmap* last)
 		free(name);
 		return NULL;
 	}
+
 	newkey = malloc(MINMALLOC);
 	if(newkey == NULL)
 	{
@@ -39,8 +40,6 @@ struct rcmap* addrcmap(char *line, int count, struct rcmap* last)
 		free(key);
 		return NULL;
 	}
-
-	memset(newnode, 0, sizeof(struct rcmap));
 
 	ret = sscanf(line, "%[^#]#%[^#]#%[^#]", name, key, newkey);
 	if(ret != 3)

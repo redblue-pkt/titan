@@ -285,7 +285,7 @@ struct channel* addchannel(char *line, int count, struct channel* last)
 
 	if(line == NULL) return NULL;
 
-	newnode = (struct channel*)malloc(sizeof(struct channel));	
+	newnode = (struct channel*)calloc(1, sizeof(struct channel));
 	if(newnode == NULL)
 	{
 		err("no memory");
@@ -299,8 +299,6 @@ struct channel* addchannel(char *line, int count, struct channel* last)
 		free(newnode);
 		return NULL;
 	}
-
-	memset(newnode, 0, sizeof(struct channel));
 
 	ret = sscanf(line, "%[^#]#%lu#%d#%d#%d#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu16"#%"SCNu16"#%"SCNu8, name, &newnode->transponderid, &newnode->providerid, &newnode->serviceid, &newnode->servicetype, &newnode->flag, &newnode->videocodec, &newnode->audiocodec, &newnode->videopid, &newnode->audiopid, &newnode->protect);
 	if(ret != 11 || getchannel(newnode->serviceid, newnode->transponderid) != NULL)

@@ -281,7 +281,7 @@ struct mainbouquet* addmainbouquet(char *line, int count, struct mainbouquet* la
 	char *name = NULL, *filename = NULL;
 	int ret = 0;
 
-	newnode = (struct mainbouquet*)malloc(sizeof(struct mainbouquet));	
+	newnode = (struct mainbouquet*)calloc(1, sizeof(struct mainbouquet));
 	if(newnode == NULL)
 	{
 		err("no memory");
@@ -305,7 +305,6 @@ struct mainbouquet* addmainbouquet(char *line, int count, struct mainbouquet* la
 		return NULL;
 	}
 
-	memset(newnode, 0, sizeof(struct mainbouquet));
 	status.writemainbouquet = 1;
 
 	ret = sscanf(line, "%[^#]#%d#%[^#]", name, &newnode->type, filename);

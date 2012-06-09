@@ -56,13 +56,12 @@ struct channelcache* modifychannelcache(int serviceid, unsigned long transponder
 	hash = (transponderid + serviceid) % CHANNELCACHEMAX;
 	if(hash < 0 || hash >= CHANNELCACHEMAX) hash = 0;
 
-	newnode = (struct channelcache*)malloc(sizeof(struct channelcache));
+	newnode = (struct channelcache*)calloc(1, sizeof(struct channelcache));
 	if(newnode == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
-	memset(newnode, 0, sizeof(struct channelcache));
 
 	newnode->serviceid = serviceid;
 	newnode->transponderid = transponderid;
