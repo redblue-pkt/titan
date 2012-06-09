@@ -1319,13 +1319,13 @@ struct tm* olocaltime(time_t *value)
 {
 	struct tm *loctime, *loctime1 = NULL;
 
-        loctime1 = (struct tm*)malloc(sizeof(struct tm));
+	loctime1 = (struct tm*)malloc(sizeof(struct tm));
 	if(loctime1 == NULL)
 	{
 		err("no mem");
 		return NULL;
 	}
-        loctime = localtime_r(value, loctime1);
+	loctime = localtime_r(value, loctime1);
 
 	return loctime;
 }
@@ -1443,32 +1443,32 @@ size_t writelengthfield(unsigned char * buf, unsigned int len)
 {
 	if(buf == NULL) return 0;
 
-        if(len < 128)
-        {
-                buf[0] = len;
-                return 1;
-        }
-        else
-        {
-                unsigned int pos = 0;
-                unsigned int shiftby = 8;
-                unsigned char lenfieldsize = 1;
+	if(len < 128)
+	{
+		buf[0] = len;
+		return 1;
+	}
+	else
+	{
+		unsigned int pos = 0;
+		unsigned int shiftby = 8;
+		unsigned char lenfieldsize = 1;
 
-                while((len >> shiftby) != 0)
-                {
-                        lenfieldsize++;
-                        shiftby += 8;
-                }
+		while((len >> shiftby) != 0)
+		{
+			lenfieldsize++;
+			shiftby += 8;
+		}
 
-                buf[pos++] = ((1 << 7) | lenfieldsize);
+		buf[pos++] = ((1 << 7) | lenfieldsize);
 
-                while(shiftby != 0)
-                {
+		while(shiftby != 0)
+		{
 			shiftby -= 8;
-                        buf[pos++] = len >> shiftby;
-                }
-                return pos;
-        }
+			buf[pos++] = len >> shiftby;
+		}
+		return pos;
+	}
 }
 
 
