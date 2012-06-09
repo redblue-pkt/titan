@@ -414,6 +414,7 @@ void screentmcsettings()
 	struct skin* pictimeout = getscreennode(tmcpic3, "pictimeout");
 	struct skin* picfull = getscreennode(tmcpic3, "picfull");
 	struct skin* picname = getscreennode(tmcpic3, "picname");
+	struct skin* scan = getscreennode(tmcpic3, "scan");
 	struct skin* tmp = NULL;
 	char* tmppic = NULL;
 
@@ -424,6 +425,7 @@ void screentmcsettings()
 	pictimeout->hidden = NO;
 	picfull->hidden = NO;
 	picname->hidden = NO;
+	scan->hidden = NO;
 
 	addchoicebox(pictimeout, "5", "5");
 	addchoicebox(pictimeout, "10", "10");
@@ -439,6 +441,15 @@ void screentmcsettings()
 	addchoicebox(picname, "1", _("yes"));
 	setchoiceboxselection(picname, getconfig("tmcpicname", NULL));
 
+	addchoicebox(scan, "0", _("all"));
+	addchoicebox(scan, "1", _("video"));
+	addchoicebox(scan, "2", _("audio"));
+	addchoicebox(scan, "3", _("picture"));
+	addchoicebox(scan, "91", _("video / audio"));
+	addchoicebox(scan, "92", _("video / picture"));
+	addchoicebox(scan, "93", _("audio / picture"));
+	setchoiceboxselection(scan, getconfig("tmcscan", NULL));
+
 	addscreenrc(tmcpic3, listbox);
 	drawscreen(tmcpic3, 0);
 
@@ -453,9 +464,10 @@ void screentmcsettings()
 
 		if(rcret == getrcconfigint("rcok", NULL) && listbox->select != NULL)
 		{
-			addconfigscreencheck("tmcpictimeout", tmcpic3, "5");
-			addconfigscreencheck("tmcpicname", tmcpic3, "0");
-			addconfigscreencheck("tmcpicfull", tmcpic3, "0");
+			addconfigscreencheck("tmcpictimeout", pictimeout, "5");
+			addconfigscreencheck("tmcpicname", picname, "0");
+			addconfigscreencheck("tmcpicfull", picfull, "0");
+			addconfigscreencheck("tmcscan", scan, "0");
 			break;
 		}
 	}
@@ -463,9 +475,87 @@ void screentmcsettings()
 	pictimeout->hidden = YES;
 	picfull->hidden = YES;
 	picname->hidden = YES;
+	scan->hidden = YES;
 
 	delownerrc(tmcpic3);
-	delmarkedscreennodes(tmcpic3, 1);
+
+	changepic(tmcpic3, tmppic);
+	tmcpic3->bgcol = -1;
+	free(tmppic); tmppic = NULL;
+	drawscreen(tmcpic3, 0);
+}
+
+void screentmcedit(char* file)
+{
+	//TODO
+}
+
+void screentmcdelete(char* file)
+{
+	//TODO
+}
+
+void screentmcimdbsearch(char* file)
+{
+	//TODO
+}
+
+void screentmcinfo(char* file)
+{
+	//TODO
+}
+
+void screentmcdbmenu(char* file)
+{
+	int rcret = 0;
+	struct skin* tmcpic3 = getscreen("tmcpic3");
+	struct skin* listbox = getscreennode(tmcpic3, "listbox");
+	struct skin* edit = getscreennode(tmcpic3, "edit");
+	struct skin* delete = getscreennode(tmcpic3, "delete");
+	struct skin* imdbsearch = getscreennode(tmcpic3, "imdbsearch");
+	struct skin* info = getscreennode(tmcpic3, "imdbsearch");
+	struct skin* tmp = NULL;
+	char* tmppic = NULL;
+
+	tmppic = ostrcat(tmcpic3->pic, NULL, 0, 0);
+	changepic(tmcpic3, NULL);
+	tmcpic3->bgcol = 0;
+
+	edit->hidden = NO;
+	delete->hidden = NO;
+	imdbsearch->hidden = NO;
+	info->hidden = NO;
+
+	addscreenrc(tmcpic3, listbox);
+	drawscreen(tmcpic3, 0);
+
+	while(1)
+	{
+		rcret = waitrc(tmcpic3, 0, 0);
+
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+
+		if(rcret == getrcconfigint("rcok", NULL) && listbox->select != NULL)
+		{
+			if(ostrcmp(listbox->select->name, "edit") == 0)
+				screentmcedit(file);
+			if(ostrcmp(listbox->select->name, "delete") == 0)
+				screentmcdelete(file);
+			if(ostrcmp(listbox->select->name, "imdbsearch") == 0)
+				screentmcimdbsearch(file);
+			if(ostrcmp(listbox->select->name, "info") == 0)
+				screentmcinfo(file);
+
+			drawscreen(tmcpic3, 0);
+		}
+	}
+
+	edit->hidden = YES;
+	delete->hidden = YES;
+	imdbsearch->hidden = YES;
+	info->hidden = YES;
+
+	delownerrc(tmcpic3);
 
 	changepic(tmcpic3, tmppic);
 	tmcpic3->bgcol = -1;
@@ -646,6 +736,12 @@ void screentmcmenu()
 			continue;
 		}
 
+		if(rcret == getrcconfigint("rcmenu", NULL) && active == 1)
+			screentmcdbmenu(tmcpic3->ret);
+
+		if(rcret == getrcconfigint("rcinfo", NULL) && active == 1)
+			screentmcinfo(tmcpic3->ret);
+
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			if(active == 1)
@@ -665,7 +761,14 @@ void screentmcmenu()
 				}
 				else if(menuid == 1 && ostrcmp("Scan", tmcmenutxt->ret) == 0)
 				{
-					mediadbscan(NULL, 100);
+					int scantype = getconfigint("tmcscan", NULL);
+
+					if(scantype == 0)
+						scantype = 100;
+					else
+						scantype--;
+
+					mediadbscan(NULL, scantype);
           screentmcdb();
 				}
 				else if(menuid == 1 && ostrcmp("Database Info", tmcmenutxt->ret) == 0)
