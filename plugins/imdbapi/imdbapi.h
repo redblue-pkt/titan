@@ -46,7 +46,7 @@ struct imdbapi* getimdbapi(char* title, int flag, int flag1, int flag2)
 	if(flag == 0)
 		tmpsearch = ostrcat("?i=&t=", title, 0, 0);
 	else
-		tmpsearch = ostrcat("?i=", title, 0, 0);
+		tmpsearch = ostrcat("?i=tt", title, 0, 0);
 
 	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
 
