@@ -27,6 +27,7 @@ int getmediadbfiltercount();
 void freemediadbfilter(int flag);
 void freemediadb(int flag);
 void freemediadbcategory(int flag);
+int delmediadb(struct mediadb* mnode, int flag);
 
 //eraseswap.h
 void screeneraseswap();
