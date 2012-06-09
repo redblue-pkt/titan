@@ -375,7 +375,10 @@ start:
 		}
 	}
 
-	free(tmpstr); tmpstr = NULL;
+	if(tmpstr != NULL)
+	{
+		free(tmpstr); tmpstr = NULL;
+	}
 
 	tmpstr = ostrcat("tt", imdb->id, 0, 0);
 	imdb->id = tmpstr;
