@@ -296,7 +296,7 @@ start:
 		free(tmpstr), tmpstr = NULL;
 	}
 
-	if(flag2 == 0)
+	if(flag2 == 0 && imdb->id != NULL)
 	{
 		if(imdb->poster != NULL)
 		{
@@ -313,7 +313,7 @@ start:
 	
 			if(flag1 == 1)
 			{
-				savefile = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+				savefile = ostrcat(getconfig("mediadbpath", NULL), "/tt", 0, 0);
 				savefile = ostrcat(savefile, imdb->id, 1, 0);
 				savefile = ostrcat(savefile, "_poster.jpg", 1, 0);
 				gethttp(ip, path, 80, savefile, NULL, NULL, 0);
@@ -344,7 +344,7 @@ start:
 	
 			if(flag1 == 1)
 			{
-				savefile = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+				savefile = ostrcat(getconfig("mediadbpath", NULL), "/tt", 0, 0);
 				savefile = ostrcat(savefile, imdb->id, 1, 0);
 				savefile = ostrcat(savefile, "_thumb.jpg", 1, 0);
 				gethttp(ip, path, 80, savefile, NULL, NULL, 0);
@@ -375,13 +375,12 @@ start:
 		}
 	}
 
+	imdb->id = ostrcat("tt", imdb->id, 0, 1);
+
 	if(tmpstr != NULL)
 	{
 		free(tmpstr); tmpstr = NULL;
 	}
-
-	tmpstr = ostrcat("tt", imdb->id, 0, 0);
-	imdb->id = tmpstr;
 				
 	debug(133, "id: %s", imdb->id);
 	debug(133, "title: %s", imdb->title);

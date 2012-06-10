@@ -1372,32 +1372,41 @@ void mediadbfindfilecb(char* path, char* file, int type)
 				}
 			}
 #endif
+
 printf("wo1\n");
 
 			if(imdb != NULL && tmdb != NULL)
 			{
-				if(imdb->id == NULL) imdb->id = tmdb->imdbid;			
-				if(imdb->title == NULL) imdb->title = tmdb->title;	
-				if(imdb->genre == NULL) imdb->genre = tmdb->genre;
-//				if(imdb->writer == NULL) imdb->writer = tmdb->writer;
-//				if(imdb->director == NULL) imdb->director = tmdb->director;
-//				if(imdb->actors == NULL) imdb->actors = tmdb->actors;
-				if(imdb->rating == NULL) imdb->rating = tmdb->rating;
-				if(imdb->votes == NULL) imdb->votes = tmdb->votes;
-				if(imdb->runtime == NULL) imdb->runtime = tmdb->runtime;
+				if(imdb->id == NULL) ostrcat(imdb->id, tmdb->imdbid, 1, 0);			
+				if(imdb->title == NULL) ostrcat(imdb->title, tmdb->title, 1, 0);	
+				if(imdb->genre == NULL) ostrcat(imdb->genre, tmdb->genre, 1, 0);
+//				if(imdb->writer == NULL) ostrcat(imdb->writer, tmdb->writer, 1, 0);
+//				if(imdb->director == NULL) ostrcat(imdb->director, tmdb->director, 1, 0);
+//				if(imdb->actors == NULL) ostrcat(imdb->actors, tmdb->actors, 1, 0);
+				if(imdb->rating == NULL) ostrcat(imdb->rating, tmdb->rating, 1, 0);
+				if(imdb->votes == NULL) ostrcat(imdb->votes, tmdb->votes, 1, 0);
+				if(imdb->runtime == NULL) ostrcat(imdb->runtime, tmdb->runtime, 1, 0);
+				if(imdb->plot == NULL) ostrcat(imdb->plot, tmdb->plot, 1, 0);
+				if(imdb->released == NULL) ostrcat(imdb->released, tmdb->released, 1, 0);
+				if(imdb->poster == NULL) ostrcat(imdb->poster, tmdb->postermid, 1, 0);
+				if(imdb->thumb == NULL) ostrcat(imdb->thumb, tmdb->thumb, 1, 0);
 			}
 
 			if(imdb != NULL && imdbapi != NULL)
 			{
-				if(imdb->id == NULL) imdb->id = imdbapi->id;			
-				if(imdb->title == NULL) imdb->title = imdbapi->title;	
-				if(imdb->genre == NULL) imdb->genre = imdbapi->genre;
-				if(imdb->writer == NULL) imdb->writer = imdbapi->writer;
-				if(imdb->director == NULL) imdb->director = imdbapi->director;
-				if(imdb->actors == NULL) imdb->actors = imdbapi->actors;
-				if(imdb->rating == NULL) imdb->rating = imdbapi->rating;
-				if(imdb->votes == NULL) imdb->votes = imdbapi->votes;
-				if(imdb->runtime == NULL) imdb->runtime = imdbapi->runtime;
+				if(imdb->id == NULL) ostrcat(imdb->id, imdbapi->id, 1, 0);			
+				if(imdb->title == NULL) ostrcat(imdb->title, imdbapi->title, 1, 0);	
+				if(imdb->genre == NULL) ostrcat(imdb->genre, imdbapi->genre, 1, 0);
+				if(imdb->writer == NULL) ostrcat(imdb->writer, imdbapi->writer, 1, 0);
+				if(imdb->director == NULL) ostrcat(imdb->director, imdbapi->director, 1, 0);
+				if(imdb->actors == NULL) ostrcat(imdb->actors, imdbapi->actors, 1, 0);
+				if(imdb->rating == NULL) ostrcat(imdb->rating, imdbapi->rating, 1, 0);
+				if(imdb->votes == NULL) ostrcat(imdb->votes, imdbapi->votes, 1, 0);
+				if(imdb->runtime == NULL) ostrcat(imdb->runtime, imdbapi->runtime, 1, 0);
+				if(imdb->plot == NULL) ostrcat(imdb->plot, imdbapi->plot, 1, 0);
+				if(imdb->released == NULL) ostrcat(imdb->released, imdbapi->released, 1, 0);
+				if(imdb->poster == NULL) ostrcat(imdb->poster, imdbapi->poster, 1, 0);
+//				if(imdb->thumb == NULL) ostrcat(imdb->thumb, imdbapi->thumb, 1, 0);
 			}
 /*
 			if(imdb != NULL && tmdb != NULL && ostrcmp(tmdb->title, "Nothing found.") != 0)
@@ -1443,6 +1452,7 @@ printf("wo2.3\n");
 			else
 				createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, tmpstr, file, 0);
 printf("wo3\n");
+
 #ifdef SIMULATE
 			freeimdb(imdb);
 #else
@@ -1469,6 +1479,7 @@ printf("wo4\n");
 #endif
 			imdbapi = NULL;
 printf("wo5\n");
+
 #ifdef SIMULATE
 			freetmdb(tmdb);
 #else
@@ -1480,6 +1491,7 @@ printf("wo5\n");
 					startplugin(tmdb);
 			}
 #endif
+
 			tmdb = NULL;
 printf("wo6\n");
 		}
