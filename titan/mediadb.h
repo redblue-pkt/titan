@@ -1329,9 +1329,9 @@ void mediadbfindfilecb(char* path, char* file, int type)
 
 #ifdef SIMULATE
 			if(imdb == NULL)
-				imdbapi = startplugin(shortname, 0, 1, 0);
+				imdbapi = getimdbapi(shortname, 0, 1, 0);
 			else
-				imdbapi = startplugin(imdb->id, 1, 1, 0);
+				imdbapi = getimdbapi(imdb->id, 1, 1, 0);
 #else
 			struct skin* imdbapiplugin = getplugin("IMDb-API");
 			if(imdbplugin != NULL)
