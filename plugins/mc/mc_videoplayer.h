@@ -64,7 +64,7 @@ void screenmc_videoplayer()
 	char* tmppolicy = NULL;
 	char* currentdirectory = NULL;
 	char* selectedfile = NULL;
-	int rcret = 0, rcwait = 1000, playerret = 0, flag = 1, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0;
+	int rcret = 0, rcwait = 1000, playerret = 0, flag = 1, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0, files = 0;
 	// workaround for grey background mvi
 	struct skin* blackscreen = getscreen("blackscreen");
 	drawscreen(blackscreen, 0);
@@ -398,6 +398,18 @@ void screenmc_videoplayer()
 			printf("Track: %s\n", playergetinfo("Track"));
 			printf("Copyright: %s\n", playergetinfo("Copyright"));
 			printf("TestLibEplayer: %s\n", playergetinfo("TestLibEplayer"));
+			
+			int videocount = 0, audiocount = 0, picturecount = 0;
+			getmediadbcounts(&videocount, &audiocount, &picturecount);
+
+			char* tmpstr = NULL;
+			tmpstr = ostrcat(tmpstr, "scanning (", 1, 0);
+			tmpstr = ostrcat(tmpstr, oitoa(videocount), 1, 0);
+			tmpstr = ostrcat(tmpstr, "/", 1, 0);
+			tmpstr = ostrcat(tmpstr, oitoa(files), 1, 0);
+			tmpstr = ostrcat(tmpstr, ")", 1, 0);
+			textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
+			free(tmpstr), tmpstr = NULL;			
 		}
 		else if(rcret == getrcconfigint("rcstop", NULL))
 		{
@@ -659,7 +671,10 @@ void screenmc_videoplayer()
 				status.playfile = ostrcat(filename, "", 0, 0);
 				
 				if(getconfig("mc_vp_autoscan", NULL) != NULL)
-					mediadbscan(filelistpath->text, 0);
+				{
+					mediadbscan(filelistpath->text, 0, 1);
+					files = findfiles(filelistpath->text, 0, 0, 1);
+				}
 			}
 		}
 

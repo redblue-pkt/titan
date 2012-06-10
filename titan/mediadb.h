@@ -999,14 +999,14 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 		hddnode = hdd;
 
 #ifdef SIMULATE
-		findfiles("/home/nit/titan/x", 100);
+		findfiles("/home/nit/titan/x", 100, 1, 0);
 #else
 		while(hddnode != NULL)
 		{
 			if(hddnode->partition != 0)
 			{
 				tmpstr = ostrcat("/autofs/", hddnode->device, 0, 0);
-				findfiles(tmpstr, type);
+				findfiles(tmpstr, type, 1, 0);
 				free(tmpstr); tmpstr = NULL;
 			}
 			hddnode = hddnode->next;
@@ -1014,7 +1014,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 #endif
 	}
 	else
-		findfiles(path, type);
+		findfiles(path, type, 0, 0);
 
 	writemediadb(getconfig("mediadbfile", NULL));
 
@@ -1550,7 +1550,11 @@ printf("wo6\n");
 	free(tmpstr); tmpstr = NULL;
 }
 
-int findfiles(char* dirname, int type)
+// flag = 0 (rekursive deaktive)
+// flag = 1 (rekursive active)
+// flag1 = 0 (scan files and start)
+// flag1 = 1 (count files)
+int findfiles(char* dirname, int type, int flag, int flag1)
 {
 	debug(777, "dir=%s type=%d\n", dirname, type);
 	DIR *d;
@@ -1563,6 +1567,8 @@ int findfiles(char* dirname, int type)
 		perr("Cannot open directory %s", dirname);
 		return 1;
 	}
+
+	int count = 0;
 
 	while(1)
 	{
@@ -1591,7 +1597,8 @@ int findfiles(char* dirname, int type)
 					return 1;
 				}
 				//Recursively call findfiles with the new path
-				findfiles(path, type);
+				if(flag == 0)
+					findfiles(path, type, 1, 0);
 			}
 		}
 		else //File
@@ -1601,19 +1608,34 @@ int findfiles(char* dirname, int type)
 			if(!filelistflt("*.avi", entry->d_name))
 			{
 				if(type == 0 || type == 100 || type == 90 || type == 91)
-					mediadbfindfilecb(path, entry->d_name, 0);
+				{
+					if(flag1 == 0)
+						mediadbfindfilecb(path, entry->d_name, 0);
+					else
+						count += 1;
+				}
 			}
 			//audio
 			if(!filelistflt("*.mp3", entry->d_name))
 			{
 				if(type == 1 || type == 100 || type == 90 || type == 92)
-					mediadbfindfilecb(path, entry->d_name, 1);
+				{
+					if(flag1 == 0)
+						mediadbfindfilecb(path, entry->d_name, 1);
+					else
+						count += 1;
+				}
 			}
 			//picture
 			if(!filelistflt("*.jpg", entry->d_name))
 			{
 				if(type == 2 || type == 100 || type == 91 || type == 92)
-					mediadbfindfilecb(path, entry->d_name, 2);
+				{
+					if(flag1 == 0)
+						mediadbfindfilecb(path, entry->d_name, 2);
+					else
+						count += 1;
+				}
 			}
 		}
 	}
@@ -1625,21 +1647,41 @@ int findfiles(char* dirname, int type)
 		return 1;
 	}
 
+	if(flag == 1)
+		return count;
 	return 0;
 }
 
 //type 0=video, 1=audio, 2=pic, 90=video/audio, 91=video/pic, 92=audio/pic, 100=all
-void mediadbscan(char* path, int type)
+void mediadbscan(char* path, int type, int flag)
 {
 	int count = 0;
-
-	addtimer(&mediadbscanthread, START, 1000, 1, (void*)path, (void*)type, NULL);
+	
+	if(flag == 0)
+		addtimer(&mediadbscanthread, START, 1000, 1, (void*)path, (void*)type, NULL);
+	else
+		addtimer(&mediadbscanthread, START, 60000, 1, (void*)path, (void*)type, NULL);	
 
 	//block a little
 	while(status.mediadbthread != NULL && count < 20)
 	{
 		usleep(100000);
 		count++;
+	}
+	if(flag == 1)
+	{
+		char* tmpstr = NULL;
+		tmpstr = ostrcat(tmpstr, _("Imdb directory scan started in Background !"), 1, 0);
+		tmpstr = ostrcat(tmpstr, "\n\n ", 1, 0);
+		tmpstr = ostrcat(tmpstr, _("Replace:"), 1, 0);
+		tmpstr = ostrcat(tmpstr, " ", 1, 0);
+		tmpstr = ostrcat(tmpstr, getconfig("mediadbscandelall", NULL), 1, 0);
+		tmpstr = ostrcat(tmpstr, _("\n "), 1, 0);
+		tmpstr = ostrcat(tmpstr, _("Directory:"), 1, 0);
+		tmpstr = ostrcat(tmpstr, " "), 1, 0);				
+		tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
+		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
+		free(tmpstr), tmpstr = NULL;
 	}
 }
 
