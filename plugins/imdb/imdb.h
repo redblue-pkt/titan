@@ -6,22 +6,6 @@
 
 extern struct imdb* imdb;
 
-char* convertreturntopspace(char* value)
-{
-	debug(1000, "in");
-	int i = 0;
-
-	while(value[i] != '\0')
-	{
-		if(value[i] == '\n')
-			value[i] = ' ';
-		i++;
-	}
-
-	debug(1000, "out");
-	return value;
-}
-
 void freeimdb(struct imdb* node)
 {
 	if(node == NULL) return;
