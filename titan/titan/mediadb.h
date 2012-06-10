@@ -1,6 +1,25 @@
 #ifndef MEDIADB_H
 #define MEDIADB_H
 
+struct mediadbfilter* getmediadbfilter(struct mediadb* mnode)
+{
+	m_lock(&status.mediadbmutex, 17);
+	struct mediadbfilter *node = mediadbfilter;
+
+	while(node != NULL)
+	{
+		if(node->node == mnode)
+		{
+			m_unlock(&status.mediadbmutex, 17);
+			return node;
+		}
+		node = node->next;
+	}
+
+	m_unlock(&status.mediadbmutex, 17);
+	return NULL;
+}
+
 int getmediadbfiltercount()
 {
 	int count = 0;
@@ -743,8 +762,9 @@ int delmediadb(struct mediadb* mnode, int flag)
 					node->next->prev = prev;
 			}
 
-			//TODO: find mediadbfilter by mediadb
-			//delmediadbfilter(node, 0);
+			struct mediadbfilter* mfnode = getmediadbfilter(node);
+			if(mfnode != NULL)
+				delmediadbfilter(mfnode, 0);
 			delmediadbcache(node->file);
 			freemediadbcontent(node);
 
