@@ -7,7 +7,7 @@ void screensystem_update(int mode)
 	int rcret = 0;
 
 	status.hangtime = 99999;
-	struct skin* systemupdate = getscreen("systemupdate");
+	struct skin* systemupdate = getscreen("loading");
 	drawscreen(systemupdate, 0);
 
 	char* tmpstr = NULL;
