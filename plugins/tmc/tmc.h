@@ -659,7 +659,7 @@ void screentmcmenu()
 	}
 
 	//TODO: TMDB and so on
-	if(getplugin("Imdb") == NULL)
+	if(getplugin("IMDb-API") == NULL && getplugin("IMDb") == NULL && getplugin("TMDb") == NULL)
 		textbox(_("Message"), _("IMDB Plugin not found!\nCan't get detail media infos\nPlease install it"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 
 	drawscreen(load, 0);
