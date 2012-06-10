@@ -32,10 +32,13 @@ struct mediadb* getmediadb(char* file)
 	m_lock(&status.mediadbmutex, 17);
 	node = mediadbcache[hash];
 
+int count = 0;
 	while(node != NULL)
 	{
+count++;
 		if(file == node->file)
 		{
+printf("found after count %d", count);
 			m_unlock(&status.mediadbmutex, 17);
 			return node->mediadbnode;
 		}
