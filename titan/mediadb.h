@@ -1678,7 +1678,7 @@ void mediadbscan(char* path, int type, int flag)
 		tmpstr = ostrcat(tmpstr, getconfig("mediadbscandelall", NULL), 1, 0);
 		tmpstr = ostrcat(tmpstr, _("\n "), 1, 0);
 		tmpstr = ostrcat(tmpstr, _("Directory:"), 1, 0);
-		tmpstr = ostrcat(tmpstr, " "), 1, 0);				
+		tmpstr = ostrcat(tmpstr, " ", 1, 0);				
 		tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
 		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
 		free(tmpstr), tmpstr = NULL;
