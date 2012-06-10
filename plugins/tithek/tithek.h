@@ -260,7 +260,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	int ret = 1;
 	char* ip = NULL, *pos = NULL, *path = NULL;
 	char* tmpstr = NULL, *localfile = NULL;
-	unsigned char* buf = NULL;
+	//unsigned char* buf = NULL;
 	int channels = 0;
 	unsigned long width = 0, height = 0, rowbytes = 0;
 
@@ -302,9 +302,9 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 			if(pic == 1)
 			{
 				gethttp(ip, path, 80, localfile, pw, NULL, 0);
-				buf = loadjpg(localfile, &width, &height, &rowbytes, &channels, 16);
-				savejpg(localfile, width, height, buf);
-				free(buf); buf = NULL;
+				//buf = loadjpg(localfile, &width, &height, &rowbytes, &channels, 16);
+				//savejpg(localfile, width, height, buf);
+				//free(buf); buf = NULL;
 			}
 			else
 				gethttp(ip, path, 80, localfile, pw, NULL, 0);
