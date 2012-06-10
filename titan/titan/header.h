@@ -16,7 +16,7 @@ void screenmediadbsettings();
 
 //mediadb.h
 void freemediadbcontent(struct mediadb* node);
-int findfiles(char* dirname, int type) ;
+int findfiles(char* dirname, int type, int flag, int flag1);
 struct mediadbfilter* getlastmediadbfilter(struct mediadbfilter* node, int flag);
 void getmediadbcounts(int* video, int* audio, int* picture);
 int readmediadb(const char* filename, int type, int flag);
