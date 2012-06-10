@@ -5,7 +5,7 @@
 
 char pluginname[] = "IMDb-API";
 char plugindesc[] = "Extensions";
-char pluginpic[] = "%pluginpath%/panel/plugin.png";
+char pluginpic[] = "%pluginpath%/imdbapi/plugin.png";
 
 int pluginaktiv = 0;
 struct skin* pluginmenu = NULL;
