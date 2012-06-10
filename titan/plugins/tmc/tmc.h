@@ -287,6 +287,8 @@ void screentmcdb()
 
 	while(1)
 	{
+		tmp = NULL;
+		videocount = 0, audiocount = 0, picturecount = 0;
 		getmediadbcounts(&videocount, &audiocount, &picturecount);
 		delmarkedscreennodes(tmcpic3, 1);
 
@@ -514,7 +516,6 @@ void screentmcdbmenu(char* file)
 	struct skin* delete = getscreennode(tmcpic3, "delete");
 	struct skin* imdbsearch = getscreennode(tmcpic3, "imdbsearch");
 	struct skin* info = getscreennode(tmcpic3, "imdbsearch");
-	struct skin* tmp = NULL;
 	char* tmppic = NULL;
 
 	tmppic = ostrcat(tmcpic3->pic, NULL, 0, 0);

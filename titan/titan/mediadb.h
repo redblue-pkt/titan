@@ -356,7 +356,6 @@ struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last,
 
 		while(tmpstr[0] != '\0')
 		{
-			tmpstr++;
 			if(tmpstr[0] == '#')
 			{
 				tmpstr[0] = '\0';
@@ -380,6 +379,8 @@ struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last,
 					case 14: timestamp = tmpstr; break;
 					case 15: flag = tmpstr; break;
 				}
+				else
+					tmpstr++;
 
 				ret++;
 			}
@@ -390,11 +391,11 @@ struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last,
 	{
 		if(count > 0)
 		{
-			err("mediadb line %d not ok", count);
+			err("mediadb line %d not ok (ret=%d)", count, ret);
 		}
 		else
 		{
-			err("add mediadb");
+			err("add mediadb (ret=%d)", ret);
 		}
 		freemediadbcontent(newnode);
 		free(newnode);

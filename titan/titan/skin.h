@@ -81,7 +81,7 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPIC;
 		return &getrec;
 	}
-  if(ostrcmp("gethbbtv", value) == 0)
+	if(ostrcmp("gethbbtv", value) == 0)
 	{
 		*rettype = FUNCPIC;
 		return &gethbbtv;
