@@ -379,11 +379,11 @@ struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last,
 					case 14: timestamp = tmpstr; break;
 					case 15: flag = tmpstr; break;
 				}
-				else
-					tmpstr++;
 
 				ret++;
 			}
+			else
+				tmpstr++;
 		}
 	}
 
