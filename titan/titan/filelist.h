@@ -318,13 +318,15 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						child->posx = posx;
 						posx += child->width;
 
+						char* currentdir = getcurrentdir(node->input);
+
 						if(ostrcmp(filelist[i]->d_name, "autofs") == 0)
 							tmpstr = ostrcat(tmpstr, "skin/ext_grid_autofs.png", 1, 0);
 						else if(ostrcmp(filelist[i]->d_name, "hdd") == 0)
 							tmpstr = ostrcat(tmpstr, "skin/ext_grid_harddisk.png", 1, 0);
-						else if((ostrcmp(filelist[i]->d_name, "usb") == 0) || (ostrcmp(getcurrentdir(node->input), "usb") == 0))
+						else if((ostrcmp(filelist[i]->d_name, "usb") == 0) || (ostrcmp(currentdir, "usb") == 0))
 							tmpstr = ostrcat(tmpstr, "skin/ext_grid_usb.png", 1, 0);
-						else if((ostrcmp(filelist[i]->d_name, "net") == 0) || (ostrcmp(getcurrentdir(node->input), "net") == 0))
+						else if((ostrcmp(filelist[i]->d_name, "net") == 0) || (ostrcmp(currentdir, "net") == 0))
 							tmpstr = ostrcat(tmpstr, "skin/ext_grid_network.png", 1, 0);
 						else
 						{
@@ -359,6 +361,8 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 								tmpstr = ostrcat(tmpstr, "skin/ext_grid_directory.png", 1, 0);
 							}
 						}
+
+						free(currentdir); currentdir = NULL;
 
 						if(tmpstr != NULL)
 						{
@@ -405,13 +409,12 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 
 				if(status.filelistextend > 2)
 				{
-					child->filelist = (struct filelist*)malloc(sizeof(struct filelist));
+					child->filelist = (struct filelist*)calloc(1, sizeof(struct filelist));
 					if(child->filelist == NULL)
 					{
 						err("no mem");
 						continue;
 					}
-					memset(child->filelist, 0, sizeof(struct filelist));
 					child->filelist->type = DT_DIR;
 					child->filelist->name = ostrcat(filelist[i]->d_name, "", 0, 0);
 					child->filelist->path = createpath(node->input, "");
@@ -571,7 +574,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 					else
 					{
 						tmpstr = ostrcat(tmpstr, "skin/ext_", 1, 0);
-						tmpstr = ostrcat(tmpstr, getfilenameext(filelist[i]->d_name), 1, 0);
+						tmpstr = ostrcat(tmpstr, getfilenameext(filelist[i]->d_name), 1, 1);
 						tmpstr = ostrcat(tmpstr, ".png", 1, 0);
 						debug(10, "picpath: %s", tmpstr);
 						if(tmpstr != NULL)
@@ -602,13 +605,12 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 
 					if(status.filelistextend > 2)
 					{
-						child->filelist = (struct filelist*)malloc(sizeof(struct filelist));
+						child->filelist = (struct filelist*)calloc(1, sizeof(struct filelist));
 						if(child->filelist == NULL)
 						{
 							err("no mem");
 							continue;
 						}
-						memset(child->filelist, 0, sizeof(struct filelist));
 						child->filelist->type = DT_DIR;
 						child->filelist->name = ostrcat(filelist[i]->d_name, NULL, 0, 0);
 						child->filelist->path = createpath(node->input, "");
@@ -640,7 +642,7 @@ printf("11 %s\n", tmpstr);
 									
 									freeregexstruct(regnode); regnode = NULL;
 
-									tmpstr = ostrcat(tmpstr, getfilenameext(filelist[i]->d_name), 1, 0);
+									tmpstr = ostrcat(tmpstr, getfilenameext(filelist[i]->d_name), 1, 1);
 									tmpstr = ostrcat(tmpstr, ")", 1, 0);								
 
 									changetext(child, tmpstr);										
