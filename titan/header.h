@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//mediadbcache.h
+struct mediadb* getmediadb(char* file);
+
 //mediadbsettings.h
 void screenmediadbsettings();
 
