@@ -302,8 +302,6 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 			{
 				gethttp(ip, path, 80, localfile, pw, NULL, 0);
 				buf = loadjpg(localfile, &width, &height, &rowbytes, &channels, 16);
-				width /= 4;
-				height /= 4;
 				savejpg(localfile, width, height, buf);
 				free(buf); buf = NULL;
 			}
