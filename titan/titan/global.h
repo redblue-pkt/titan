@@ -4921,9 +4921,9 @@ char* string_resub(char* str, char* str2, char* input)
 	int i, len_str, len_filename;
 	char* filename = NULL;
 	
+	if(str == NULL || str2 == NULL || input == NULL) return NULL;
+
 	filename = ostrcat(input, NULL, 0, 0);
-	
-	if(str == NULL || str2 == NULL || filename == NULL) return 0;
 
 	len_str = strlen(str);
 	len_filename = strlen(filename);
