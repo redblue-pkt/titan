@@ -42,19 +42,15 @@ void thumbthread(struct stimerthread* self)
 
 				if(buf != NULL)
 				{
-					buf = scale(buf, width, height, 3, 100, 100, 1);
-					if(buf != NULL)
-					{
-						thumbfile = ostrcat(thumbfile, (char*)qe->data, 1, 0);
-						thumbfile = ostrcat(thumbfile, "/.Thumbnails", 1, 0);
-						mkdir(thumbfile, 777);
+					thumbfile = ostrcat(thumbfile, (char*)qe->data, 1, 0);
+					thumbfile = ostrcat(thumbfile, "/.Thumbnails", 1, 0);
+					mkdir(thumbfile, 777);
 
-						thumbfile = ostrcat(thumbfile, "/", 1, 0);
-						thumbfile = ostrcat(thumbfile, (char*)qe->data1, 1, 0);
+					thumbfile = ostrcat(thumbfile, "/", 1, 0);
+					thumbfile = ostrcat(thumbfile, (char*)qe->data1, 1, 0);
 
-						debug(307, "create thumb: %s from %s/%s", thumbfile, (char*)qe->data, (char*)qe->data1);
-						savejpg(thumbfile, 100, 100, buf);
-					}
+					debug(307, "create thumb: %s from %s/%s", thumbfile, (char*)qe->data, (char*)qe->data1);
+					savejpg(thumbfile, width, height, buf);
 				}
 			}
 
