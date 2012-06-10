@@ -386,13 +386,13 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 								tmpstr = ostrcat(node->input, "/", 0, 0);
 								tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);								
 		
-								struct mediadb* a = getmediadb(tmpstr);
+								struct mediadb* mnode = getmediadb(tmpstr);
 								free(tmpstr), tmpstr = NULL;
-								if(a != NULL)
+								if(mnode != NULL)
 								{
 									tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
 									tmpstr = ostrcat(tmpstr, "/imdbfolder/", 1, 0);																			
-//									tmpstr = ostrcat(tmpstr, a->shortname, 1, 0);
+//									tmpstr = ostrcat(tmpstr, mnode->shortname, 1, 0);
 									tmpstr = ostrcat(tmpstr, ".png", 1, 0);
 								}													
 							}	
@@ -465,13 +465,13 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						tmpstr = ostrcat(node->input, "/", 0, 0);
 						tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);								
 
-						struct mediadb* b = getmediadb(tmpstr);
+						struct mediadb* mnode = getmediadb(tmpstr);
 						free(tmpstr), tmpstr = NULL;
-						if(b != NULL)
+						if(mnode != NULL)
 						{
 							tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
 							tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
-							tmpstr = ostrcat(tmpstr, b->poster, 1, 0);
+							tmpstr = ostrcat(tmpstr, mnode->poster, 1, 0);
 							tmpstr = ostrcat(tmpstr, "_backdrop.mvi", 1, 0);	
 						}
 					
@@ -577,13 +577,13 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 								tmpstr = ostrcat(node->input, "/", 0, 0);
 								tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);								
 
-								struct mediadb* c = getmediadb(tmpstr);
+								struct mediadb* mnode = getmediadb(tmpstr);
 								free(tmpstr), tmpstr = NULL;
-								if(c != NULL)
+								if(mnode != NULL)
 								{
 									tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
 									tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
-									tmpstr = ostrcat(tmpstr, c->poster, 1, 0);
+									tmpstr = ostrcat(tmpstr, mnode->poster, 1, 0);
 									tmpstr = ostrcat(tmpstr, "_cover.jpg", 1, 0);
 								}								
 							}
@@ -662,26 +662,26 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 							tmpstr = ostrcat(node->input, "/", 0, 0);
 							tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);								
 printf("11 %s\n", tmpstr);
-							struct mediadb* d = getmediadb(tmpstr);
-							if(d != NULL)
+							struct mediadb* mnode = getmediadb(tmpstr);
+							if(mnode != NULL)
 							{
 								printf("12 %s\n", tmpstr);
-								if(d->title != NULL)
+								if(mnode->title != NULL)
 								{
 									printf("13 %s\n", tmpstr);
 									free(tmpstr), tmpstr = NULL;
-									tmpstr = ostrcat(tmpstr, d->title, 1, 0);
+									tmpstr = ostrcat(tmpstr, mnode->title, 1, 0);
 									
 									tmpstr = ostrcat(tmpstr, " (", 1, 0);
 									
-									struct regex* x = regexstruct(".*(cd[0-9]{1,3}).*", filelist[i]->d_name);
-									if(x != NULL)
+									struct regex* regnode = regexstruct(".*(cd[0-9]{1,3}).*", filelist[i]->d_name);
+									if(regnode != NULL)
 									{
-										tmpstr = ostrcat(tmpstr, x->match2, 1, 0);
+										tmpstr = ostrcat(tmpstr, regnode->match2, 1, 0);
 										tmpstr = ostrcat(tmpstr, " ", 1, 0);
 									}
 									
-									freeregexstruct(x); x= NULL;
+									freeregexstruct(regnode); regnode = NULL;
 
 									tmpstr = ostrcat(tmpstr, getfilenameext(filelist[i]->d_name), 1, 0);
 									tmpstr = ostrcat(tmpstr, ")", 1, 0);								
@@ -694,7 +694,7 @@ printf("11 %s\n", tmpstr);
 								free(tmpstr), tmpstr = NULL;
 								tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
 								tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
-								tmpstr = ostrcat(tmpstr, d->poster, 1, 0);
+								tmpstr = ostrcat(tmpstr, mnode->poster, 1, 0);
 								tmpstr = ostrcat(tmpstr, "_backdrop.mvi", 1, 0);
 							}
 
