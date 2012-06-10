@@ -88,14 +88,14 @@ start:
 
 	if(tmpstr != NULL)
 	{
-		tmdb = (struct tmdb*)malloc(sizeof(struct tmdb));
+		tmdb = (struct tmdb*)calloc(1, sizeof(struct tmdb));
 		if(tmdb == NULL)
 		{
 			err("no mem");
 			free(tmpstr); tmpstr = NULL;
 			return NULL;
 		}
-		memset(tmdb, 0, sizeof(struct tmdb));
+
 		if(string_find("<movies>Nothing found.</movies>", tmpstr))
 		{
 			free(tmpstr), tmpstr = NULL;
