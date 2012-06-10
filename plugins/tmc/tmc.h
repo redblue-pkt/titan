@@ -769,7 +769,7 @@ void screentmcmenu()
 					else
 						scantype--;
 
-					mediadbscan(NULL, scantype);
+					mediadbscan(NULL, scantype, 0);
           screentmcdb();
 				}
 				else if(menuid == 1 && ostrcmp("Database Info", tmcmenutxt->ret) == 0)
