@@ -1496,15 +1496,6 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
   
 	if(accelfb != NULL && accelfb->varfbsize > width * 8 && (scalewidth != 0 || scaleheight != 0) && (scalewidth != width || scaleheight != height))
 	{
-		//auto scale to mwidth / mheight
-		if(scalewidth == 1 && scaleheight == 1)
-			calcautoscale(width, height, mwidth, mheight, &scalewidth, &scaleheight);
-		
-		if(scalewidth == 0) scalewidth = width;
-		if(scaleheight == 0) scaleheight = height;
-		if(scalewidth > mwidth) scalewidth = mwidth;
-		if(scaleheight > mheight) scaleheight = mheight;
-
 		if(halign == CENTER)
 			posx += mwidth / 2 - scalewidth / 2;
 		else if(halign == RIGHT)
@@ -1698,15 +1689,26 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 	jpeg_stdio_src(&cinfo, fd);
 	jpeg_read_header(&cinfo, TRUE);
 	cinfo.out_color_space = JCS_RGB;
+
+	cinfo.scale_denom = 1;
 	
-	if((scalewidth != 0 || scaleheight != 0) && (mwidth < 400 || mheight < 400) && (cinfo.output_width > 100 || cinfo.output_height > 100))
+	if(scalewidth != 0 || scaleheight != 0)
   {
-		cinfo.scale_denom = getconfigint("picdenom", NULL);
+		//auto scale to mwidth / mheight
+		if(scalewidth == 1 && scaleheight == 1)
+			calcautoscale(cinfo.output_width, cinfo.output_height, mwidth, mheight, &scalewidth, &scaleheight);
+
+		if(scalewidth == 0) scalewidth = cinfo.output_width;
+		if(scaleheight == 0) scaleheight = cinfo.output_height;
+		if(scalewidth > mwidth) scalewidth = mwidth;
+		if(scaleheight > mheight) scaleheight = mheight;
+
+		int tmpwidth = cinfo.output_width;
+		int tmpheight = cinfo.output_height;
+		while(mwidth > tmpwidth || mheight > tmpheight) {tmpwidth /= 2; tmpheight /=2; cinfo.scale_denom *= 2;}
     if(cinfo.scale_denom < 1) cinfo.scale_denom = 1;
     if(cinfo.scale_denom > 16) cinfo.scale_denom = 16;
   }
-	else
-		cinfo.scale_denom = 1;
 
 	jpeg_start_decompress(&cinfo);
 	width = cinfo.output_width;
