@@ -71,6 +71,9 @@ void screenextensions(int mode, char* path)
 	
 	if(mode == 0)
 	{
+		struct skin* load = getscreen("loading");
+		drawscreen(load, 0);
+
 		system("cp -a /mnt/ipkg/* /var/usr/lib/ipkg");
 		ipkg_update();
 		ipkg_list();
