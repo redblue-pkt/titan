@@ -628,7 +628,7 @@ void screentmcmenu()
 	int rcret = 0, menuid = 0, active = 1;
 	int audioplaytype = 0, picplaytype = 0;
 	struct skin* tmcbg = getscreen("tmcbg");
-	struct skin* tmcload = getscreen("tmcload");
+	struct skin* load = getscreen("loading");
 	struct skin* tmcmenutxt = getscreen("tmcmenutxt");
 	struct skin* tmcmenu1 = getscreen("tmcmenu1");
 	struct skin* tmcmenu2 = getscreen("tmcmenu2");
@@ -662,7 +662,7 @@ void screentmcmenu()
 	if(getplugin("Imdb") == NULL)
 		textbox(_("Message"), _("IMDB Plugin not found!\nCan't get detail media infos\nPlease install it"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 
-	drawscreen(tmcload, 0);
+	drawscreen(load, 0);
 	readmediadb(getconfig("mediadbfile", NULL), 0, 0);
 	mediadbfilterpos = NULL;
 

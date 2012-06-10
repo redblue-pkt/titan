@@ -3,9 +3,6 @@
 <node name=pic posx=0 posy=0 width=1280 height=720 halign=center valign=middle>
 </screen>
 
-<screen fontsize=50 fontcol=fontcol text="loading..." name=tmcload posx=0 posy=center halign=center width=100% height=70>
-</screen>
-
 <screen pic=%pluginpath%/tmc/skin/tmcbg.jpg name=tmcbg posx=0 posy=0 width=1280 height=720>
 </screen>
 
