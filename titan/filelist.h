@@ -43,30 +43,21 @@ int filelistfilter(struct skin* node, char* name)
 	return filelistflt(node->mask, name);
 }
 
-#ifdef SIMULATE
+//int sizesort64(const void* v1, const void* v2)
 int sizesort64(const struct dirent64** v1, const struct dirent64** v2)
-#else
-int sizesort64(const void* v1, const void* v2)
-#endif
 {
 	char* tmpstr = NULL, *rpath = NULL;
 	off64_t s1, s2;
 
-#ifdef SIMULATE
 	tmpstr = createpath(status.tmp, (char*) (*v1)->d_name);
-#else
-	tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v1)->d_name);
-#endif
+	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v1)->d_name);
 	rpath = realpath(tmpstr, NULL);
 	s1 = getfilesize(rpath);
 	free(tmpstr); tmpstr = NULL;
 	free(rpath); rpath = NULL;
 
-#ifdef SIMULATE
 	tmpstr = createpath(status.tmp, (char*) (*v2)->d_name);
-#else
-	tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v2)->d_name);
-#endif
+	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v2)->d_name);
 	rpath = realpath(tmpstr, NULL);
 	s2 = getfilesize(rpath);
 	free(tmpstr); tmpstr = NULL;
@@ -77,30 +68,22 @@ int sizesort64(const void* v1, const void* v2)
 	return 0;
 }
 
-#ifdef SIMULATE
+
+//int rsizesort64(const void* v1, const void* v2)
 int rsizesort64(const struct dirent64** v1, const struct dirent64** v2)
-#else
-int rsizesort64(const void* v1, const void* v2)
-#endif
 {
 	char* tmpstr = NULL, *rpath = NULL;
 	off64_t s1, s2;
 
-#ifdef SIMULATE
 	tmpstr = createpath(status.tmp, (char*) (*v1)->d_name);
-#else
-	tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v1)->d_name);
-#endif
+	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v1)->d_name);
 	rpath = realpath(tmpstr, NULL);
 	s1 = getfilesize(rpath);
 	free(tmpstr); tmpstr = NULL;
 	free(rpath); rpath = NULL;
 
-#ifdef SIMULATE
 	tmpstr = createpath(status.tmp, (char*) (*v2)->d_name);
-#else
-	tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v2)->d_name);
-#endif
+	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v2)->d_name);
 	rpath = realpath(tmpstr, NULL);
 	s2 = getfilesize(rpath);
 	free(tmpstr); tmpstr = NULL;
@@ -111,30 +94,21 @@ int rsizesort64(const void* v1, const void* v2)
 	return 0;
 }
 
-#ifdef SIMULATE
+//int datesort64(const void* v1, const void* v2)
 int datesort64(const struct dirent64** v1, const struct dirent64** v2)
-#else
-int datesort64(const void* v1, const void* v2)
-#endif
 {
 	char* tmpstr = NULL, *rpath = NULL;
 	time_t t1, t2;
 
-#ifdef SIMULATE
 	tmpstr = createpath(status.tmp, (char*) (*v1)->d_name);
-#else
-	tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v1)->d_name);
-#endif
+	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v1)->d_name);
 	rpath = realpath(tmpstr, NULL);
 	t1 = getfiletime(rpath, 0);
 	free(tmpstr); tmpstr = NULL;
 	free(rpath); rpath = NULL;
 
-#ifdef SIMULATE
 	tmpstr = createpath(status.tmp, (char*) (*v2)->d_name);
-#else
-	tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v2)->d_name);
-#endif
+	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v2)->d_name);
 	rpath = realpath(tmpstr, NULL);
 	t2 = getfiletime(rpath, 0);
 	free(tmpstr); tmpstr = NULL;
@@ -145,30 +119,21 @@ int datesort64(const void* v1, const void* v2)
 	return 0;
 }
 
-#ifdef SIMULATE
+//int rdatesort64(const void* v1, const void* v2)
 int rdatesort64(const struct dirent64** v1, const struct dirent64** v2)
-#else
-int rdatesort64(const void* v1, const void* v2)
-#endif
 {
 	char* tmpstr = NULL, *rpath = NULL;
 	time_t t1, t2;
 
-#ifdef SIMULATE
 	tmpstr = createpath(status.tmp, (char*) (*v1)->d_name);
-#else
-	tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v1)->d_name);
-#endif
+	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v1)->d_name);
 	rpath = realpath(tmpstr, NULL);
 	t1 = getfiletime(rpath, 0);
 	free(tmpstr); tmpstr = NULL;
 	free(rpath); rpath = NULL;
 
-#ifdef SIMULATE
 	tmpstr = createpath(status.tmp, (char*) (*v2)->d_name);
-#else
-	tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v2)->d_name);
-#endif
+	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v2)->d_name);
 	rpath = realpath(tmpstr, NULL);
 	t2 = getfiletime(rpath, 0);
 	free(tmpstr); tmpstr = NULL;
@@ -179,19 +144,13 @@ int rdatesort64(const void* v1, const void* v2)
 	return 0;
 }
 
-#ifdef SIMULATE
+//int ralphasort64(const void* v1, const void* v2)
 int ralphasort64(const struct dirent64** v1, const struct dirent64** v2)
-#else
-int ralphasort64(const void* v1, const void* v2)
-#endif
 {
 	int ret = 0;
 
-#ifdef SIMULATE
 	ret = strcoll((*v1)->d_name, (*v2)->d_name);
-#else
-	ret = strcoll((*(const struct dirent64**)v1)->d_name, (*(const struct dirent64**)v2)->d_name);
-#endif
+	//ret = strcoll((*(const struct dirent64**)v1)->d_name, (*(const struct dirent64**)v2)->d_name);
 
 	if(ret > 0) return -1;
 	if(ret < 0) return 1;
@@ -209,11 +168,9 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 	struct skin *child = node, *oldchild = NULL, *parentdir = NULL;
 	char *tmpstr = NULL;
 	char *rpath = NULL;
-#ifdef SIMULATE
+
 	int (*cmpfunc)(const struct dirent64**, const struct dirent64**);
-#else
-	int (*cmpfunc)(const void*, const void*);
-#endif
+	//int (*cmpfunc)(const void*, const void*);
 
 	if(node->input == NULL)
 	{
