@@ -592,7 +592,7 @@ int readmediadb(const char* filename, int type, int flag)
 printf("xxxxxxxxxxxxxxxxxx %lu\n", time(NULL));
 	while(fgets(fileline, MINMALLOC, fd) != NULL)
 	{
-		if(fileline[0] == '#' || fileline[0] == '\n')
+		if(fileline[0] == '\n')
 			continue;
 		len = strlen(fileline) - 1;
 		if(fileline[len] == '\n')
