@@ -99,7 +99,6 @@ start:
 		if(string_find("<movies>Nothing found.</movies>", tmpstr))
 		{
 			free(tmpstr), tmpstr = NULL;
-			tmdb->title = ostrcat("Nothing found.", NULL, 0, 0);
 		}
 		else if(!string_find("<opensearch:totalResults>1</opensearch:totalResults>", tmpstr) && flag1 == 0)
 		{
@@ -467,8 +466,6 @@ start:
 		debug(133, "id: %s", tmdb->id);	
 		debug(133, "imdbid: %s", tmdb->imdbid);
 	}
-	else
-		tmdb->title = ostrcat("Nothing found.", NULL, 0, 0);
 
 	return tmdb;
 }
