@@ -654,7 +654,10 @@ start:
 	if(flag == 3)
 	{
 		if(listbox->select != NULL)
+		{
+			resettvpic();
 			listmode = screenlistedit(list, (struct channel*)listbox->select->handle);
+		}
 		if(listmode == NOMODE) goto end;
 		if(nochanneltitle == 0) changechanneltitle(channellist, listbox, listmode, &oldtitle, &oldfontcol, &oldbgcol);
 	}
