@@ -259,7 +259,8 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 {
 	int ret = 1;
 	char* ip = NULL, *pos = NULL, *path = NULL;
-	char* tmpstr = NULL, *localfile = NULL, *buf = NULL;
+	char* tmpstr = NULL, *localfile = NULL;
+	unsigned char* buf = NULL;
 	int channels = 0;
 	unsigned long width = 0, height = 0, rowbytes = 0;
 
