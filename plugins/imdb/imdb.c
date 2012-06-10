@@ -5,7 +5,7 @@
 
 char pluginname[] = "IMDb";
 char plugindesc[] = "Extensions";
-char pluginpic[] = "%pluginpath%/panel/plugin.png";
+char pluginpic[] = "%pluginpath%/imdb/plugin.png";
 
 int pluginaktiv = 0;
 struct skin* pluginmenu = NULL;
@@ -31,7 +31,7 @@ void init(void)
 	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/imdb/skin.xml", 0, 0);
 	readscreen(tmpstr, 201, 1);
 	free(tmpstr); tmpstr = NULL;
-	debug(10, "Panel Plugin loadet !!!");
+	debug(10, "Imdb Plugin loadet !!!");
 }
 
 //wird beim entladen ausgefuehrt
