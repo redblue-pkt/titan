@@ -28,7 +28,7 @@ char* convertreturntopspace(char* value)
 void freetmdb(struct tmdb* node)
 {
 	if(node == NULL) return;
-
+	
 	free(node->title); node->title = NULL;
 	free(node->year); node->year = NULL;
 	free(node->rated); node->rated = NULL;
@@ -271,7 +271,7 @@ start:
 			tmdb->imdbid = string_resub("<imdb_id>", "</imdb_id>", tmpstr);
 		}
 
-		if(flag2 == 0)
+		if(flag2 == 0 && tmdb->imdbid != NULL)
 		{
 			if(tmdb->thumb != NULL)
 			{ 		
