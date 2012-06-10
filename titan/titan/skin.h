@@ -1705,9 +1705,11 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 
 		int tmpwidth = cinfo.output_width;
 		int tmpheight = cinfo.output_height;
-		while(scalewidth < tmpwidth || scaleheight < tmpheight) {tmpwidth /= 2; tmpheight /= 2; cinfo.scale_denom *= 2;}
-		if(cinfo.scale_denom < 1) cinfo.scale_denom = 1;
-		if(cinfo.scale_denom > 16) cinfo.scale_denom = 16;
+		while(scalewidth < tmpwidth || scaleheight < tmpheight)
+		{
+			tmpwidth /= 2; tmpheight /= 2; cinfo.scale_denom *= 2;
+			if(cinfo.scale_denom > 8) break;
+		}
 	}
 
 	jpeg_start_decompress(&cinfo);
