@@ -58,14 +58,13 @@ struct imdbapi* getimdbapi(char* title, int flag, int flag1, int flag2)
 
 	if(tmpstr != NULL)
 	{
-		imdbapi = (struct imdbapi*)malloc(sizeof(struct imdbapi));
+		imdbapi = (struct imdbapi*)calloc(1, sizeof(struct imdbapi));
 		if(imdbapi == NULL)
 		{
 			err("no mem");
 			free(tmpstr); tmpstr = NULL;
 			return NULL;
 		}
-		memset(imdbapi, 0, sizeof(struct imdbapi));
 
 		imdbapi->title = getxmlentry(tmpstr, "\"Title\":");
 		imdbapi->year = getxmlentry(tmpstr, "\"Year\":");

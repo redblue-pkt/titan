@@ -71,14 +71,14 @@ start:
 
 	if(tmpstr != NULL)
 	{
-		imdb = (struct imdb*)malloc(sizeof(struct imdb));
+		imdb = (struct imdb*)calloc(1, sizeof(struct imdb));
 		if(imdb == NULL)
 		{
 			err("no mem");
 			free(tmpstr); tmpstr = NULL;
 			return NULL;
 		}
-		memset(imdb, 0, sizeof(struct imdb));
+
 		imdb->id = string_resub("<a href=\"/title/tt","/",tmpstr);
 
 // todo - use Meistgesuchte Titel (default)
