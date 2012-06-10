@@ -31,14 +31,6 @@ void screenvideomode(int flag)
 
 	if(mbox != NULL)
 	{
-		tmpstr = getpolicychoices();
-		if(strstr(tmpstr, mbox->name) != NULL)
-			setpolicy(mbox->name);
-		free(tmpstr); tmpstr = NULL;
-	}
-
-	if(mbox != NULL)
-	{
 		if(ostrcmp(mbox->name, "Subchannel") == 0)
 		{
 			freemenulist(mlist, 1); mlist = NULL;
@@ -92,6 +84,13 @@ void screenvideomode(int flag)
 			free(tmpstr1); tmpstr1 = NULL;
 			if(mbox != NULL)
 				setmode3d(mbox->name);
+		}
+		else
+		{
+			tmpstr = getpolicychoices();
+			if(tmpstr != NULL && strstr(tmpstr, mbox->name) != NULL)
+				setpolicy(mbox->name);
+			free(tmpstr); tmpstr = NULL;
 		}
 	}
 
