@@ -1,22 +1,24 @@
 #ifndef MEDIADB_H
 #define MEDIADB_H
 
-struct mediadbfilter* getmediadbfilter(struct mediadb* mnode)
+//flag 0: with lock
+//flag 1: without lock
+struct mediadbfilter* getmediadbfilter(struct mediadb* mnode, int flag)
 {
-	m_lock(&status.mediadbmutex, 17);
+	if(flag == 0) m_lock(&status.mediadbmutex, 17);
 	struct mediadbfilter *node = mediadbfilter;
 
 	while(node != NULL)
 	{
 		if(node->node == mnode)
 		{
-			m_unlock(&status.mediadbmutex, 17);
+			if(flag == 0) m_unlock(&status.mediadbmutex, 17);
 			return node;
 		}
 		node = node->next;
 	}
 
-	m_unlock(&status.mediadbmutex, 17);
+	if(flag == 0) m_unlock(&status.mediadbmutex, 17);
 	return NULL;
 }
 
@@ -651,12 +653,14 @@ void freemediadbcontent(struct mediadb* node)
 	free(node->id); node->id = NULL;
 }
 
+//flag 0: with lock
+//flag 1: without lock
 int delmediadbfilter(struct mediadbfilter* mnode, int flag)
 {
 	debug(1000, "in");
 	int ret = 1;
 
-	m_lock(&status.mediadbmutex, 17);
+	if(flag == 0) m_lock(&status.mediadbmutex, 17);
 	struct mediadbfilter *node = mediadbfilter, *prev = mediadbfilter;
 
 	while(node != NULL)
@@ -687,7 +691,7 @@ int delmediadbfilter(struct mediadbfilter* mnode, int flag)
 		node = node->next;
 	}
 
-	m_unlock(&status.mediadbmutex, 17);
+	if(flag == 0) m_unlock(&status.mediadbmutex, 17);
 	debug(1000, "out");
 	return ret;
 }
@@ -762,9 +766,9 @@ int delmediadb(struct mediadb* mnode, int flag)
 					node->next->prev = prev;
 			}
 
-			struct mediadbfilter* mfnode = getmediadbfilter(node);
+			struct mediadbfilter* mfnode = getmediadbfilter(node, 1);
 			if(mfnode != NULL)
-				delmediadbfilter(mfnode, 0);
+				delmediadbfilter(mfnode, 1);
 			delmediadbcache(node->file);
 			freemediadbcontent(node);
 
