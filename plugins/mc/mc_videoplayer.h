@@ -378,8 +378,8 @@ void screenmc_videoplayer()
 				
 				mc_changeview(tmpview, filelist);
 
-				startmediadb();
-				dbnode = mediadb;
+//				startmediadb();
+//				dbnode = mediadb;
 	
 				delownerrc(apskin);	
 				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
@@ -437,8 +437,8 @@ void screenmc_videoplayer()
 					playerafterend();
 			
 				writevfd("VideoPlayer Filelist-Mode");
-				startmediadb();
-				dbnode = mediadb;
+//				startmediadb();
+//				dbnode = mediadb;
 //			}
 		}
 		else if(rcret == getrcconfigint("rcexit", NULL))

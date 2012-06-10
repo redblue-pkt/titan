@@ -204,7 +204,6 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 {
 	debug(1000, "in");
 	struct dirent64 **filelist;
-	struct mediadb* dbnode = NULL;
 
 	int count, tmpcount, i = 0, gridbr = 0, posx = 0, pagecount = 0, sumcount = 0;
 	struct skin *child = node, *oldchild = NULL, *parentdir = NULL;
@@ -383,35 +382,19 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 							}
 							else
 							{
-/*
-								tmpstr = ostrcat(tmpstr, (filelist[i]->d_name), 1, 0);
-								string_tolower(tmpstr);
-								tmpstr = string_shortname(tmpstr, 2);
-								string_removechar(tmpstr);
-								string_remove_whitechars(tmpstr);
-								tmpstr = ostrcat(tmpstr, ".png", 0, 0);
-
-								m_lock(&status.mediadbmutex, 17);								
-								dbnode = mediadb;
-								while(dbnode != NULL)
-								{
-									free(tmpstr), tmpstr = NULL;							
-									tmpstr = ostrcat(tmpstr, basename(dbnode->file), 1, 0);
+								free(tmpstr), tmpstr = NULL;
+								tmpstr = ostrcat(node->input, "/", 0, 0);
+								tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);								
 		
-									if(ostrcmp(filelist[i]->d_name, tmpstr) == 0)
-									{
-										free(tmpstr), tmpstr = NULL;
-										tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
-										tmpstr = ostrcat(tmpstr, "/imdbfolder/", 1, 0);
-//										tmpstr = ostrcat(tmpstr, string_remove_whitechars(dbnode->shortname), 1, 0);
-										tmpstr = ostrcat(tmpstr, string_remove_whitechars(dbnode->title), 1, 0);
-										tmpstr = ostrcat(tmpstr, ".png", 1, 0);
-										break;
-									}
-									dbnode = dbnode->next;
-								}
-								m_unlock(&status.mediadbmutex, 17);
-*/														
+								struct mediadb* a = getmediadb(tmpstr);
+								free(tmpstr), tmpstr = NULL;
+								if(a != NULL)
+								{
+									tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
+									tmpstr = ostrcat(tmpstr, "/imdbfolder/", 1, 0);																			
+//									tmpstr = ostrcat(tmpstr, a->shortname, 1, 0);
+									tmpstr = ostrcat(tmpstr, ".png", 1, 0);
+								}													
 							}	
 							if(!file_exist(tmpstr))
 							{
@@ -478,46 +461,20 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 
 					if(status.filelistextend == 5)
 					{
-/*
-						char* filename = NULL;
-						filename = ostrcat(filename, filelist[i]->d_name, 1, 0);
-						string_tolower(filename);
-						filename = string_shortname(filename, 1);
-						string_removechar(filename);
-						string_toupper(filename);
-						changetext(child, filename);
-						string_tolower(filename);
-						filename = string_shortname(filename, 2);
-						string_remove_whitechars(filename);
-						
-						tmpstr = ostrcat(tmpstr, getconfig("imdb_directory", NULL), 1, 0);
-						tmpstr = ostrcat(tmpstr, "/imdb/", 1, 0);
-						tmpstr = ostrcat(tmpstr, filename, 1, 0);
-						free(filename); filename = NULL;
-*/
-						m_lock(&status.mediadbmutex, 17);
-						dbnode = mediadb;
-						while(dbnode != NULL)
-						{
-							free(tmpstr), tmpstr = NULL;							
-							tmpstr = ostrcat(tmpstr, basename(dbnode->file), 1, 0);
+						free(tmpstr), tmpstr = NULL;
+						tmpstr = ostrcat(node->input, "/", 0, 0);
+						tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);								
 
-							if(ostrcmp(filelist[i]->d_name, tmpstr) == 0)
-							{
-								free(tmpstr), tmpstr = NULL;
-								tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
-								tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
-								tmpstr = ostrcat(tmpstr, dbnode->poster, 1, 0);
-								tmpstr = ostrcat(tmpstr, "_backdrop.mvi", 1, 0);
-								if(dbnode->title != NULL)
-									changetext(child, dbnode->title);
-								else
-									changetext(child, filelist[i]->d_name);								
-								break;
-							}
-							dbnode = dbnode->next;
+						struct mediadb* b = getmediadb(tmpstr);
+						free(tmpstr), tmpstr = NULL;
+						if(b != NULL)
+						{
+							tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
+							tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
+							tmpstr = ostrcat(tmpstr, b->poster, 1, 0);
+							tmpstr = ostrcat(tmpstr, "_backdrop.mvi", 1, 0);	
 						}
-						m_unlock(&status.mediadbmutex, 17);
+					
 						debug(10, "imdbpath: %s", tmpstr);
 						//tmpstr is freed with imdbpath
 						child->filelist->imdbpath = tmpstr;						
@@ -616,39 +573,19 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 								tmpstr = ostrcat(tmpstr, changefilenameext(filelist[i]->d_name, ".jpg"), 1, 0);
 							else
 							{						
-/*
-								char* filename = NULL;
-								filename = ostrcat(filename, filelist[i]->d_name, 1, 0);
-								string_tolower(filename);
-								filename = string_shortname(filename, 2);
-								string_removechar(filename);
-								string_remove_whitechars(filename);
-								
-								tmpstr = ostrcat(tmpstr, getconfig("imdb_directory", NULL), 1, 0);
-								tmpstr = ostrcat(tmpstr, "/imdb/", 1, 0);
-								tmpstr = ostrcat(tmpstr, filename, 1, 0);
-								free(filename); filename = NULL;
-								tmpstr = ostrcat(tmpstr, ".jpg", 1, 0);
-*/
-								m_lock(&status.mediadbmutex, 17);
-								dbnode = mediadb;
-								while(dbnode != NULL)
-								{
-									tmpstr = ostrcat(tmpstr, basename(dbnode->file), 1, 0);
+								free(tmpstr), tmpstr = NULL;
+								tmpstr = ostrcat(node->input, "/", 0, 0);
+								tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);								
 
-									if(ostrcmp(filelist[i]->d_name, tmpstr) == 0)
-									{
-										free(tmpstr), tmpstr = NULL;
-										tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
-										tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
-										tmpstr = ostrcat(tmpstr, dbnode->poster, 1, 0);
-										tmpstr = ostrcat(tmpstr, "_cover.jpg", 1, 0);
-										break;
-									}
-									free(tmpstr), tmpstr = NULL;
-									dbnode = dbnode->next;
-								}
-								m_unlock(&status.mediadbmutex, 17);
+								struct mediadb* c = getmediadb(tmpstr);
+								free(tmpstr), tmpstr = NULL;
+								if(c != NULL)
+								{
+									tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
+									tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
+									tmpstr = ostrcat(tmpstr, c->poster, 1, 0);
+									tmpstr = ostrcat(tmpstr, "_cover.jpg", 1, 0);
+								}								
 							}
 							
 							if(!file_exist(tmpstr))
@@ -718,77 +655,48 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						child->filelist->type = DT_DIR;
 						child->filelist->name = ostrcat(filelist[i]->d_name, NULL, 0, 0);
 						child->filelist->path = createpath(node->input, "");
-/*
-						if(status.filelistextend == 5)
-						{
-							char* filename = NULL;
-							filename = ostrcat(filename, filelist[i]->d_name, 1, 0);
-							string_tolower(filename);
-							filename = string_shortname(filename, 1);
-							string_removechar(filename);
-							string_toupper(filename);
-							string_strip_whitechars(filename);
-							changetext(child, filename);
-							string_tolower(filename);
-							filename = string_shortname(filename, 2);					
-							string_remove_whitechars(filename);
-														
-							tmpstr = ostrcat(tmpstr, getconfig("imdb_directory", NULL), 1, 0);
-							tmpstr = ostrcat(tmpstr, "/imdb/", 1, 0);
-							tmpstr = ostrcat(tmpstr, filename, 1, 0);
-							free(filename); filename = NULL;
-							debug(10, "imdbpath: %s", tmpstr);
-							//tmpstr is freed with imdbpath
-							child->filelist->imdbpath = tmpstr;
-						}
-*/
 
 						if(status.filelistextend == 5)
 						{
-							m_lock(&status.mediadbmutex, 17);
-							dbnode = mediadb;
-							while(dbnode != NULL)
+							free(tmpstr), tmpstr = NULL;
+							tmpstr = ostrcat(node->input, "/", 0, 0);
+							tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);								
+printf("11 %s\n", tmpstr);
+							struct mediadb* d = getmediadb(tmpstr);
+							if(d != NULL)
 							{
-								free(tmpstr), tmpstr = NULL;								
-								tmpstr = ostrcat(tmpstr, basename(dbnode->file), 1, 0);
-
-								if(ostrcmp(filelist[i]->d_name, tmpstr) == 0)
+								printf("12 %s\n", tmpstr);
+								if(d->title != NULL)
 								{
-									if(dbnode->title != NULL)
-									{
-										free(tmpstr), tmpstr = NULL;
-										tmpstr = ostrcat(tmpstr, dbnode->title, 1, 0);
-										
-										tmpstr = ostrcat(tmpstr, " (", 1, 0);
-										
-										struct regex* x = regexstruct(".*(cd[0-9]{1,3}).*", filelist[i]->d_name);
-										if(x != NULL)
-										{
-											tmpstr = ostrcat(tmpstr, x->match2, 1, 0);
-											tmpstr = ostrcat(tmpstr, " ", 1, 0);
-										}
-										
-										freeregexstruct(x); x= NULL;
-
-										tmpstr = ostrcat(tmpstr, getfilenameext(filelist[i]->d_name), 1, 0);
-										tmpstr = ostrcat(tmpstr, ")", 1, 0);								
-
-										changetext(child, tmpstr);										
-									}
-									else
-										changetext(child, filelist[i]->d_name);
-
+									printf("13 %s\n", tmpstr);
 									free(tmpstr), tmpstr = NULL;
-									tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
-									tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
-									tmpstr = ostrcat(tmpstr, dbnode->poster, 1, 0);
-//									tmpstr = ostrcat(tmpstr, "_backdrop.mvi", 1, 0);							
-									break;
+									tmpstr = ostrcat(tmpstr, d->title, 1, 0);
+									
+									tmpstr = ostrcat(tmpstr, " (", 1, 0);
+									
+									struct regex* x = regexstruct(".*(cd[0-9]{1,3}).*", filelist[i]->d_name);
+									if(x != NULL)
+									{
+										tmpstr = ostrcat(tmpstr, x->match2, 1, 0);
+										tmpstr = ostrcat(tmpstr, " ", 1, 0);
+									}
+									
+									freeregexstruct(x); x= NULL;
+
+									tmpstr = ostrcat(tmpstr, getfilenameext(filelist[i]->d_name), 1, 0);
+									tmpstr = ostrcat(tmpstr, ")", 1, 0);								
+
+									changetext(child, tmpstr);										
 								}
-//								free(tmpstr), tmpstr = NULL;
-								dbnode = dbnode->next;
+								else
+									changetext(child, filelist[i]->d_name);
+									
+								free(tmpstr), tmpstr = NULL;
+								tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
+								tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
+								tmpstr = ostrcat(tmpstr, d->poster, 1, 0);
+								tmpstr = ostrcat(tmpstr, "_backdrop.mvi", 1, 0);
 							}
-							m_unlock(&status.mediadbmutex, 17);
 
 							debug(10, "imdbpath: %s", tmpstr);
 							//tmpstr is freed with imdbpath
