@@ -730,6 +730,8 @@ start:
 				status.markmodus = 0;
 				movesel = NULL;
 				clearscreen(channellist);
+				resettvpic();
+
 				listmode = screenlistedit(list, NULL);
 				if(listmode == MVMODE)
 				{
@@ -1507,6 +1509,8 @@ start:
 			}
 
 			clearscreen(channellist);
+			resettvpic();
+
 			if(listbox->select != NULL)
 				listmode = screenlistedit(list, (struct channel*)listbox->select->handle);
 			else
@@ -1536,6 +1540,7 @@ start:
 			if(listbox->select != NULL)
 			{
 				clearscreen(channellist);
+				resettvpic();
 				epgchoice((struct channel*)listbox->select->handle);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
 				drawscreen(channellist, 0);
