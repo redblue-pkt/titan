@@ -22,9 +22,9 @@ void screenvideomode(int flag)
 	addmenulistall(&mlist, tmpstr1, NULL, 0, tmpstr);
 
 	if(flag == 0)
-		mbox = menulistbox(mlist, skinname, NULL, NULL, NULL, 1, 1);
+		mbox = menulistbox(mlist, skinname, "Videomode", NULL, NULL, 1, 1);
 	else
-		mbox = menulistbox(mlist, skinname, NULL, NULL, NULL, 1, 0);
+		mbox = menulistbox(mlist, skinname, "Videomode", NULL, NULL, 1, 0);
 
 	free(tmpstr); tmpstr = NULL;
 	free(tmpstr1); tmpstr1 = NULL;
@@ -44,7 +44,7 @@ void screenvideomode(int flag)
 			tmpstr = getvideomode();
 			tmpstr1 = getvideomodechoices();
 			addmenulistall(&mlist, tmpstr1, NULL, 0, tmpstr);
-			mbox = menulistbox(mlist, skinname, NULL, NULL, NULL, 1, 0);
+			mbox = menulistbox(mlist, skinname, "Resolution Settings", NULL, NULL, 1, 0);
 			free(tmpstr1); tmpstr1 = NULL;
 			if(mbox != NULL && ostrcmp(tmpstr, mbox->name) != 0)
 			{
@@ -66,7 +66,7 @@ void screenvideomode(int flag)
 			tmpstr = getaspect();
 			tmpstr1 = getaspectchoices();
 			addmenulistall(&mlist, tmpstr1, NULL, 0, tmpstr);
-			mbox = menulistbox(mlist, skinname, NULL, NULL, NULL, 1, 0);
+			mbox = menulistbox(mlist, skinname, "Aspect Settings", NULL, NULL, 1, 0);
 			free(tmpstr); tmpstr = NULL;
 			free(tmpstr1); tmpstr1 = NULL;
 			if(mbox != NULL)
@@ -79,7 +79,7 @@ void screenvideomode(int flag)
 			tmpstr = getmode3d();
 			tmpstr1 = getmode3dchoices();
 			addmenulistall(&mlist, tmpstr1, NULL, 0, tmpstr);
-			mbox = menulistbox(mlist, skinname, NULL, NULL, NULL, 1, 0);
+			mbox = menulistbox(mlist, skinname, "3D Mode", NULL, NULL, 1, 0);
 			free(tmpstr); tmpstr = NULL;
 			free(tmpstr1); tmpstr1 = NULL;
 			if(mbox != NULL)
