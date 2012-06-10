@@ -530,7 +530,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						{
 							int fast = 0;
 							if(fast == 1)
-								tmpstr = ostrcat(tmpstr, changefilenameext(filelist[i]->d_name, ".jpg"), 1, 0);
+								tmpstr = ostrcat(tmpstr, changefilenameext(filelist[i]->d_name, ".jpg"), 1, 1);
 							else
 							{						
 								free(tmpstr), tmpstr = NULL;
