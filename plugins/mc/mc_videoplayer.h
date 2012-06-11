@@ -404,9 +404,9 @@ void screenmc_videoplayer()
 
 			char* tmpstr = NULL;
 			tmpstr = ostrcat(tmpstr, "scanning (", 1, 0);
-			tmpstr = ostrcat(tmpstr, oitoa(videocount), 1, 0);
+			tmpstr = ostrcat(tmpstr, oitoa(videocount), 1, 1);
 			tmpstr = ostrcat(tmpstr, "/", 1, 0);
-			tmpstr = ostrcat(tmpstr, oitoa(files), 1, 0);
+			tmpstr = ostrcat(tmpstr, oitoa(files), 1, 1);
 			tmpstr = ostrcat(tmpstr, ")", 1, 0);
 			
 			tmpstr = ostrcat(tmpstr, "\n\n ", 1, 0);
