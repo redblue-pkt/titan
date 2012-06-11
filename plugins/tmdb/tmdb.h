@@ -53,28 +53,19 @@ struct tmdb* gettmdb(char* title, int flag, int flag1, int flag2)
 	struct tmdb* tmdb = NULL;
 	char* tmpstr = NULL;
 	char* tmpsearch = NULL;
-	char* apikey = NULL;
-	char* searchurl = NULL;
-	char* imdburl = NULL;
-	char* lang = NULL;
 	char* savefile = NULL;
-			
-	apikey = ostrcat(apikey, "7bcd34bb47bc65d20a49b6b446a32866", 1, 0);
-	searchurl = ostrcat(searchurl, "Movie.search", 1, 0);
-	imdburl = ostrcat(imdburl, "Movie.imdbLookup", 1, 0);
-	lang = ostrcat(lang, "de", 1, 0);
 	
 start:
 	tmpsearch = ostrcat("2.1/", NULL, 0, 0);
 	if(flag == 0)
-		tmpsearch = ostrcat(tmpsearch, searchurl, 1, 0);
+		tmpsearch = ostrcat(tmpsearch, "Movie.search", 1, 0);
 	else
-		tmpsearch = ostrcat(tmpsearch, imdburl, 1, 0);
+		tmpsearch = ostrcat(tmpsearch, "Movie.imdbLookup", 1, 0);
 		
 	tmpsearch = ostrcat(tmpsearch, "/", 1, 0);
-	tmpsearch = ostrcat(tmpsearch, lang, 1, 0);
+	tmpsearch = ostrcat(tmpsearch, "de", 1, 0);
 	tmpsearch = ostrcat(tmpsearch, "/xml/", 1, 0);
-	tmpsearch = ostrcat(tmpsearch, apikey, 1, 0);
+	tmpsearch = ostrcat(tmpsearch, "7bcd34bb47bc65d20a49b6b446a32866", 1, 0);
 	tmpsearch = ostrcat(tmpsearch, "/", 1, 0);
 	tmpsearch = ostrcat(tmpsearch, title, 1, 0);
 	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');

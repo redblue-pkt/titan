@@ -40,29 +40,18 @@ struct imdb* getimdb(char* title, int flag, int flag1, int flag2)
 	struct imdb* imdb = NULL;
 	char* tmpstr = NULL;
 	char* tmpsearch = NULL;
-	char* apikey = NULL;
-	char* searchurl = NULL;
-	char* lang = NULL;
-	char* url = NULL;
 	char* savefile = NULL;
-	char* lookup = NULL;
 	char* pageposter = NULL;
-
-	url = ostrcat(url, "www.imdb.de", 1, 0);
-	apikey = ostrcat(apikey, "7bcd34bb47bc65d20a49b6b446a32866", 1, 0);
-	searchurl = ostrcat(searchurl, "find?s=tt;q=", 1, 0);
-	lookup = ostrcat("/title/tt", NULL, 0, 0);
-	lang = ostrcat(lang, "de", 1, 0);
 	
 start:
-	tmpsearch = ostrcat(searchurl, NULL, 0, 0);
+	tmpsearch = ostrcat("find?s=tt;q=", NULL, 0, 0);
 	if(flag == 0)
 		tmpsearch = ostrcat(tmpsearch, title, 1, 0);
 	else
-		tmpsearch = ostrcat(tmpsearch, lookup, 1, 0);
+		tmpsearch = ostrcat(tmpsearch, "/title/tt", 1, 0);
 	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
 
-	tmpstr = gethttp(url, tmpsearch, 80, NULL, NULL, NULL, 0);
+	tmpstr = gethttp("www.imdb.de", tmpsearch, 80, NULL, NULL, NULL, 0);
 	
 	debug(133, "tmpsearch: %s", tmpsearch);
 //	debug(133, "tmpstr: %s", tmpstr);
@@ -143,10 +132,10 @@ start:
 
 	if(imdb != NULL)
 	{
-		tmpsearch = ostrcat(lookup, NULL, 0, 0);
+		tmpsearch = ostrcat("/title/tt", NULL, 0, 0);
 		tmpsearch = ostrcat(tmpsearch, imdb->id, 1, 0);
 
-		tmpstr = gethttp(url, tmpsearch, 80, NULL, NULL, NULL, 0);
+		tmpstr = gethttp("www.imdb.de", tmpsearch, 80, NULL, NULL, NULL, 0);
 		
 		debug(133, "tmpsearch: %s", tmpsearch);
 //		debug(133, "tmpstr: %s", tmpstr);
@@ -236,7 +225,7 @@ start:
 		tmpsearch = ostrcat(tmpsearch, imdb->id, 1, 0);
 		tmpsearch = ostrcat(tmpsearch, "/", 1, 0);
 	
-		tmpstr = gethttp(url, tmpsearch, 80, NULL, NULL, NULL, 0);
+		tmpstr = gethttp("www.imdb.de", tmpsearch, 80, NULL, NULL, NULL, 0);
 		
 		debug(133, "tmpsearch: %s", tmpsearch);
 //		debug(133, "tmpstr: %s", tmpstr);
@@ -255,11 +244,11 @@ start:
 
 	if(imdb != NULL)
 	{
-		tmpsearch = ostrcat(lookup, NULL, 0, 0);
+		tmpsearch = ostrcat("/title/tt", NULL, 0, 0);
 		tmpsearch = ostrcat(tmpsearch, imdb->id, 1, 0);
 		tmpsearch = ostrcat(tmpsearch, "/plotsummary", 1, 0);
 
-		tmpstr = gethttp(url, tmpsearch, 80, NULL, NULL, NULL, 0);
+		tmpstr = gethttp("www.imdb.de", tmpsearch, 80, NULL, NULL, NULL, 0);
 		
 		debug(133, "tmpsearch: %s", tmpsearch);
 //		debug(133, "tmpstr: %s", tmpstr);
