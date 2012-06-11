@@ -4849,7 +4849,7 @@ char* string_decode(char* input, int flag)
 		debug(210, "input: %s", input);
 	}
 
-	while(ostrstr(input, "&#x", input) != NULL)
+	while(ostrstr(input, "&#x") != NULL)
 	{
 		debug(210, "out %s", input);
 		input = string_replace("&#x", "%", input, 1);
