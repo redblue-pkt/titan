@@ -950,7 +950,7 @@ void createmediadbfilter(int type, char* search, int flag)
 	}
 }
 
-void mediadbscanthread(struct stimerthread* self, char* path, int type, int flag)
+void mediadbscanthread(struct stimerthread* self, char* path, int type)
 {
 	struct mediadb *node = mediadb, *prev = mediadb;
 	struct mediadbcategory *cnode = NULL;
@@ -964,20 +964,44 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type, int flag
 	status.mediadbthreadstatus = 1;
 	status.mediadbthread = self;
 
-	if(flag == 1)
+	if(type == 1000)
 	{
+		type = 0;
+	
 		char* tmpstr = NULL;
 		tmpstr = ostrcat(tmpstr, _("MediaDB directory scan started in Background !"), 1, 0);
-		tmpstr = ostrcat(tmpstr, "\n\n ", 1, 0);
-		tmpstr = ostrcat(tmpstr, _("Replace:"), 1, 0);
-		tmpstr = ostrcat(tmpstr, " ", 1, 0);
-		tmpstr = ostrcat(tmpstr, getconfig("mediadbscandelall", NULL), 1, 0);
-		tmpstr = ostrcat(tmpstr, _("\n "), 1, 0);
-		tmpstr = ostrcat(tmpstr, _("Directory:"), 1, 0);
-		tmpstr = ostrcat(tmpstr, " ", 1, 0);				
+		tmpstr = ostrcat(tmpstr, "\n\n  ", 1, 0);
+		tmpstr = ostrcat(tmpstr, _("Delete MediaDB before scan"), 1, 0);
+		tmpstr = ostrcat(tmpstr, ": \t", 1, 0);
+		if(ostrcmp(getconfig("mediadbscandelall", NULL), "1") == 0)
+			tmpstr = ostrcat(tmpstr, _("yes"), 1, 0);
+		else
+			tmpstr = ostrcat(tmpstr, _("no"), 1, 0);
+		tmpstr = ostrcat(tmpstr, "\n  ", 1, 0);			
+		tmpstr = ostrcat(tmpstr, _("Delete unused entrys before scan"), 1, 0);
+		tmpstr = ostrcat(tmpstr, ": \t", 1, 0);		
+		if(ostrcmp(getconfig("mediadbscandelnotfound", NULL), "1") == 0)
+			tmpstr = ostrcat(tmpstr, _("yes"), 1, 0);
+		else
+			tmpstr = ostrcat(tmpstr, _("no"), 1, 0);
+		tmpstr = ostrcat(tmpstr, "\n  ", 1, 0);
+		tmpstr = ostrcat(tmpstr, _("scan Directory:"), 1, 0);
+		tmpstr = ostrcat(tmpstr, " \t\t\t", 1, 0);
+		tmpstr = ostrcat(tmpstr, path, 1, 0);
+		tmpstr = ostrcat(tmpstr, "\n  ", 1, 0);		
+		tmpstr = ostrcat(tmpstr, _("MediaDB place:"), 1, 0);
+		tmpstr = ostrcat(tmpstr, " \t\t\t", 1, 0);				
 		tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
-		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 500, 5, 0);
+		int count = 0;
+		
+		while(count < 30)
+		{
+			sleep(1);
+			count++;
+		}
+		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 500, 10, 0);
 		free(tmpstr), tmpstr = NULL;
+		count = 0;
 	}
 	
 	//clear all other db in mem
@@ -1673,11 +1697,11 @@ int findfiles(char* dirname, int type, int flag, int flag1)
 void mediadbscan(char* path, int type, int flag)
 {
 	int count = 0;
-	
-	if(flag == 0)
-		addtimer(&mediadbscanthread, START, 1000, 1, (void*)path, (void*)type, (void*)flag);
-	else
-		addtimer(&mediadbscanthread, START, 600000, 1, (void*)path, (void*)type, (void*)flag);	
+
+	if(flag == 1)
+		type = 1000;
+
+	addtimer(&mediadbscanthread, START, 1000, 1, (void*)path, (void*)type, NULL);
 
 	//block a little
 	while(status.mediadbthread != NULL && count < 20)
