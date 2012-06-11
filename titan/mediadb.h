@@ -1647,7 +1647,7 @@ int findfiles(char* dirname, int type, int flag, int flag1)
 		return 1;
 	}
 
-	if(flag == 1)
+	if(flag1 == 1)
 		return count;
 	return 0;
 }
