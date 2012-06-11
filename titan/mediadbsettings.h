@@ -69,7 +69,7 @@ void screenmediadbsettings()
 				ret = screendir(listbox->select->ret, "", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, 700, 0, 650, 0, 0);
 				if(ret != NULL)
 				{
-					if(strstr(ret, "/mediadb") != NULL)
+					if(ostrstr(ret, "/mediadb") != NULL)
 						changeinput(listbox->select, ret);
 					else
 					{

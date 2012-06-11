@@ -136,7 +136,7 @@ int getnews()
 		tmpstr1 = tmpstr;
 		tmpstr2 = tmpstr;
 
-		tmpstr2 = strstr(tmpstr1, "<news_entry>");
+		tmpstr2 = ostrstr(tmpstr1, "<news_entry>");
 		while(tmpstr2 != NULL)
 		{
 			linecount++;
@@ -145,7 +145,7 @@ int getnews()
 			if(last == NULL) last = tmplast;
 			last = addnews(tmpstr2, linecount, last);
 			if(last != NULL) tmplast = last;
-			tmpstr2 = strstr(tmpstr1, "<news_entry>");
+			tmpstr2 = ostrstr(tmpstr1, "<news_entry>");
 		}
 
 		free(tmpstr); tmpstr = NULL;

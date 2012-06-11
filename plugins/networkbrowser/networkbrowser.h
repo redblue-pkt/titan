@@ -320,7 +320,7 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 		newnode->usessl = ostrcat(newnode->usessl, "0", 1, 0);
 
 		//nfs parse
-		if(strstr(line, "-fstype=nfs") != NULL)
+		if(ostrstr(line, "-fstype=nfs") != NULL)
 		{
 			treffer = 1;
 			newnode->mode = ostrcat("1", NULL, 0, 0);
@@ -342,11 +342,11 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 		}
 
 		//cifs parse
-		if(strstr(line, "-fstype=cifs") != NULL)
+		if(ostrstr(line, "-fstype=cifs") != NULL)
 		{
 			treffer = 1;
 			newnode->mode = ostrcat("0", NULL, 0, 0);
-			if(strstr(line, "user=,") != NULL)
+			if(ostrstr(line, "user=,") != NULL)
 			{
 				treffer = 6;
 				ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
@@ -375,7 +375,7 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 		}
 
 		//ftpfs parse
-		if(strstr(line, "-fstype=ftpfs") != NULL)
+		if(ostrstr(line, "-fstype=ftpfs") != NULL)
 		{
 			treffer = 1;
 			newnode->mode = ostrcat("2", NULL, 0, 0);
@@ -383,7 +383,7 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 			ret = sscanf(line, "%s\t-fstype=ftpfs,%[^,\t]", newnode->sharename, newnode->options);
 			if(ret != 2) treffer = 0;
 
-			tmpstr = strstr(line, "ssl");
+			tmpstr = ostrstr(line, "ssl");
 			if(tmpstr != NULL)
 			{
 				free(newnode->usessl); newnode->usessl = NULL;
@@ -392,7 +392,7 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 				if(ret != 1) treffer = 0;
 			}
 
-			tmpstr = strstr(line, "proxy=");
+			tmpstr = ostrstr(line, "proxy=");
 			if(tmpstr != NULL)
 			{
 				free(newnode->useproxy); newnode->useproxy = NULL;
@@ -400,7 +400,7 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 				ret = sscanf(tmpstr, "proxy=%[^\\]\\:%[^,],%[^,\t]", newnode->proxyip, newnode->proxyport, newnode->proxy);
 				if(ret != 3) treffer = 0;
 
-				tmpstr = strstr(line, "proxy_user=");
+				tmpstr = ostrstr(line, "proxy_user=");
 				if(tmpstr != NULL)
 				{
 					free(newnode->proxyauth); newnode->proxyauth = NULL;
@@ -410,10 +410,10 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 				}
 			}
 
-			tmpstr = strstr(line, ":ftp\\://");
+			tmpstr = ostrstr(line, ":ftp\\://");
 			if(tmpstr != NULL)
 			{
-				if(strstr(line, "@") != NULL)
+				if(ostrstr(line, "@") != NULL)
 				{
 					free(newnode->userauth); newnode->userauth = NULL;
 					newnode->userauth = ostrcat(newnode->userauth, "1", 1, 0);
@@ -431,7 +431,7 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
         
       if(newnode->ftpport != NULL)
       {
-        tmpstr = strstr(newnode->ftpport, "/");
+        tmpstr = ostrstr(newnode->ftpport, "/");
         if(tmpstr != NULL)
         {
           tmpstr[0] = '\0';
@@ -715,9 +715,9 @@ char* readnetworkbrowser(char* filename, int flag)
 		}
 		if(flag == 1)
 		{
-			if(strstr(fileline, "-fstype=cifs") != NULL) continue;
-			if(strstr(fileline, "-fstype=nfs") != NULL) continue;
-			if(strstr(fileline, "-fstype=ftpfs") != NULL) continue;
+			if(ostrstr(fileline, "-fstype=cifs") != NULL) continue;
+			if(ostrstr(fileline, "-fstype=nfs") != NULL) continue;
+			if(ostrstr(fileline, "-fstype=ftpfs") != NULL) continue;
 			tmpstr = ostrcat(tmpstr, fileline, 1, 0);
 		}
 	}
@@ -883,7 +883,7 @@ start1:
 		mbox1 = menulistboxext(mlist1, "networkbrowser_scan", _("Networkbrowser - show scanned cifs/nfs-Shares"), "%pluginpath%/networkbrowser/skin/", NULL, 1, NULL, 0);
 		if(mbox1 != NULL && mbox->name != NULL)
 		{
-			if(strstr(mbox1->name, "(cifs)") != NULL)
+			if(ostrstr(mbox1->name, "(cifs)") != NULL)
 			{
 				debug(70, "start addshare cifs");
 				struct networkbrowser* node = addnetworkbrowser(NULL, 1, NULL);
@@ -896,7 +896,7 @@ start1:
 					screennetworkbrowser_addshare(node, 1);
 				}
 			}
-			else if(strstr(mbox1->name, "(nfs)") != NULL)
+			else if(ostrstr(mbox1->name, "(nfs)") != NULL)
 			{
 				debug(70, "start addshare nfs");
 				struct networkbrowser* node = addnetworkbrowser(NULL, 1, NULL);

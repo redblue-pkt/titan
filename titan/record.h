@@ -867,7 +867,7 @@ struct service* getrecordbyname(char* recname, int type)
 		{
 			if(servicenode->recname != NULL)
 			{
-				if(strstr(recname, servicenode->recname) != NULL)
+				if(ostrstr(recname, servicenode->recname) != NULL)
 					return servicenode;
 			}
 		}
@@ -946,7 +946,7 @@ void screenrecordstop()
 
 	mbox = menulistbox(mlist, "recordlist", "Record", NULL, NULL, 0, 0);
 	
-	if(mbox != NULL && mbox->param != NULL && strstr(mbox->param, "stop") == mbox->param)
+	if(mbox != NULL && ostrstr(mbox->param, "stop") == mbox->param)
 	{
 		servicenode = getrecordbyname(mbox->param, RECORDDIRECT);
 		if(servicenode != NULL)
@@ -1015,13 +1015,13 @@ void screenrecorddirect()
 	
 	if(mbox != NULL)
 	{
-		if(mbox->param != NULL && strstr(mbox->param, "stop") == mbox->param)
+		if(ostrstr(mbox->param, "stop") == mbox->param)
 		{
 			servicenode = getrecordbyname(mbox->param, RECORDDIRECT);
 			if(servicenode != NULL)
 				servicenode->recendtime = 1;
 		}
-		if(mbox->param != NULL && strstr(mbox->param, "change") == mbox->param)
+		if(ostrstr(mbox->param, "change") == mbox->param)
 		{
 			servicenode = getrecordbyname(mbox->param, RECORDDIRECT);
 			if(servicenode != NULL)

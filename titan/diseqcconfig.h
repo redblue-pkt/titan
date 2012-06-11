@@ -194,7 +194,7 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 		rcret = waitrc(diseqcscreen, 0, 0);
 		tmp = listbox->select;
 
-		if(listbox->select != NULL && listbox->select->name != NULL && strstr(listbox->select->name, "diseqc_mode") != NULL && (rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)))
+		if(listbox->select != NULL && ostrstr(listbox->select->name, "diseqc_mode") != NULL && (rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)))
 		{
 			changediseqcmode(committedcmd, cmdorder, uncommittedcmd, rotorpos, diseqcrepeat, diseqcmode->ret);
 			changeuncommittedcmd(cmdorder, diseqcmode->ret);

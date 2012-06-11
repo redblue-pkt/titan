@@ -11,10 +11,10 @@ void writetunerconfig(struct dvbdev* tuner, struct skin* tunerreceptiondvbs)
 
 	while(child != NULL)
 	{
-		if(child->del == 1 && child->name != NULL && strstr(child->name, "_lnb") == NULL)
+		if(child->del == 1 && ostrstr(child->name, "_lnb") == NULL)
 		{
 			addconfigscreentmpcheck(child->name, child, "0");
-			if(strstr(child->name, "_sat") != NULL && child->ret != NULL && ostrcmp(child->ret, "0") != 0)
+			if(ostrstr(child->name, "_sat") != NULL && child->ret != NULL && ostrcmp(child->ret, "0") != 0)
 			{
 				if(child->handle != NULL)
                 			tmpnr = oitoa((int)child->handle);

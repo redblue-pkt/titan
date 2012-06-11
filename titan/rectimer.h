@@ -454,7 +454,7 @@ int addrectimer(char *buf)
 				snprintf(line, buf - buf1 + 1, "%s", buf1);
 			buf1 = buf;
 
-			if(strstr(line, "<timer ") != NULL || strstr(line, "<log "))
+			if(ostrstr(line, "<timer ") != NULL || ostrstr(line, "<log "))
 				node = addrectimernode(line, node);
 		}
 	}

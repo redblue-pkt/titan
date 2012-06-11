@@ -28,7 +28,7 @@ int addchoicebox(struct skin* choicebox, char* value, char* text)
 		if(ostrcmp(choicebox->choiceboxvalue, value) == 0) return 0;
 		//check first
 		tmp = ostrcat(value, "\n", 0, 0);
-		if(strstr(choicebox->choiceboxvalue, tmp) == choicebox->choiceboxvalue)
+		if(ostrstr(choicebox->choiceboxvalue, tmp) == choicebox->choiceboxvalue)
 		{
 			free(tmp); tmp = NULL;
 			return 0;
@@ -37,7 +37,7 @@ int addchoicebox(struct skin* choicebox, char* value, char* text)
 		//check mitddle
 		tmp = ostrcat("\n", value, 0, 0);
 		tmp = ostrcat(tmp, "\n", 1, 0);
-		if(strstr(choicebox->choiceboxvalue, tmp) != NULL)
+		if(ostrstr(choicebox->choiceboxvalue, tmp) != NULL)
 		{
 			free(tmp); tmp = NULL;
 			return 0;
@@ -45,7 +45,7 @@ int addchoicebox(struct skin* choicebox, char* value, char* text)
 		free(tmp); tmp = NULL;
 		//check end
 		tmp = ostrcat("\n", value, 0, 0);
-		char* c = strstr(choicebox->choiceboxvalue, tmp);
+		char* c = ostrstr(choicebox->choiceboxvalue, tmp);
 		if(c != NULL && choicebox->choiceboxvalue + strlen(choicebox->choiceboxvalue) == c + strlen(tmp))
 		{
 			free(tmp); tmp = NULL;

@@ -38,7 +38,7 @@ int readtimezone(struct skin* timezone, struct skin* listbox)
 		if(len >= 0 && fileline[len] == '\r')
 			fileline[len] = '\0';
 
-		pos = strstr(fileline, "<zone ");
+		pos = ostrstr(fileline, "<zone ");
 		if(pos == NULL)
 			continue;
 

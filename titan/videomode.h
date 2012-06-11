@@ -88,7 +88,7 @@ void screenvideomode(int flag)
 		else
 		{
 			tmpstr = getpolicychoices();
-			if(tmpstr != NULL && strstr(tmpstr, mbox->name) != NULL)
+			if(ostrstr(tmpstr, mbox->name) != NULL)
 				setpolicy(mbox->name);
 			free(tmpstr); tmpstr = NULL;
 		}

@@ -812,7 +812,7 @@ int addhddall()
 
 	while(fgets(fileline, MINMALLOC, fd) != NULL)
 	{
-		pos = strstr(fileline, "sd");
+		pos = ostrstr(fileline, "sd");
 		if(pos != NULL)
 		{
 			partition = 0;
@@ -883,7 +883,7 @@ int addhddall()
 	//check for removed devs
 	while(node != NULL && tmpstr != NULL)
 	{
-		if(strstr(tmpstr, node->device) == 0)
+		if(ostrstr(tmpstr, node->device) == NULL)
 		{
 			debug(80, "remove %s", node->device);
 			delhdd(node->device, 1);
