@@ -553,7 +553,7 @@ char* string_newline(char* str);
 char* get_label(char* device);
 char* string_quote(char* str);
 int file_exist(char* filename);
-int string_find(char* str, char* filename);
+char* ostrstr(char* str, char* search);
 char* createpath(char* dir, char* file);
 char* get_ipk_install(char* ipk);
 char* get_ipk_tmpinstall(char* path, char* ipk);

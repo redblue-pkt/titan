@@ -2295,7 +2295,7 @@ int delallfiles(char* dir, char* ext)
 		{
 			if(ostrcmp(".", dirent->d_name) != 0 && ostrcmp("..", dirent->d_name) != 0)
 			{
-				if(ext == NULL || strstr(dirent->d_name, ext) != NULL)
+				if(ostrstr(dirent->d_name, ext) != NULL)
 				{
 					tmpstr = ostrcat(dir, "/", 0, 0);
 					tmpstr = ostrcat(tmpstr, dirent->d_name, 1, 0);
@@ -3939,7 +3939,7 @@ char* getxmlentry(char *line, char *searchstr)
 	//debug(1000, "in");
 	char *buf = NULL, *buf1 = NULL, *buf2 = NULL;
 
-	buf = strstr(line, searchstr);
+	buf = ostrstr(line, searchstr);
 	if(buf == NULL)
 	{
 		//debug(1000, "out -> searchstr=\"%s\" not found in line=\"%s\"", searchstr, line);
@@ -3975,7 +3975,7 @@ char* getxmlentry(char *line, char *searchstr)
 		buf2 = strchr(buf1, ' ');
 		if(buf2 == NULL)
 		{
-			buf2 = strstr(buf1, "/>");
+			buf2 = ostrstr(buf1, "/>");
 			if(buf2 == NULL) 
 			{
 				buf2 = strchr(buf1, '>');
@@ -4380,7 +4380,7 @@ char* string_replace_remove_last_chars(char *search, char *replace, char *string
 		return tmpstr;
 	}
 
-	searchpos = strstr(string, search);
+	searchpos = ostrstr(string, search);
 
 	if(searchpos == NULL)
 	{
@@ -4412,7 +4412,7 @@ char* string_replace(char *search, char *replace, char *string, int free1)
 		return tmpstr;
 	}
 
-	searchpos = strstr(string, search);
+	searchpos = ostrstr(string, search);
 
 	if(searchpos == NULL)
 	{
@@ -4434,22 +4434,16 @@ char* string_replace(char *search, char *replace, char *string, int free1)
 	return tmpstr;
 }
 
-int string_find(char* str, char* filename)
+char* ostrstr(char* str, char* search)
 {
-	debug(1000, "in");
-	int i, len_str, len_filename;
+	//debug(1000, "in");
+	char* ret = NULL;
 
-	if(str == NULL || filename == NULL) return 0;
+	if(str == NULL || search == NULL) return NULL;
+	ret = strstr(str, search);
 
-	len_str = strlen(str);
-	len_filename = strlen(filename);
-
-	for(i = 0; (i + len_str) < len_filename; i++)
-		if(strncmp(filename + i, str, len_str) == 0)
-			return 1;
-
-	debug(1000, "out");
-	return 0;
+	//debug(1000, "out");
+	return ret;
 }
 
 int file_exist(char* filename)
@@ -4820,48 +4814,48 @@ char* string_decode(char* input, int flag)
 {
 	if(input == NULL) return input;
 
-	while(string_find("\\u00", input))
+	while(ostrstr(input, "\\u00") != NULL)
 	{
 		debug(210, "input: %s", input);
 		input = string_replace("\\u00", "%", input, 1);
 		debug(210, "input: %s", input);
 	}
 
-	while(string_find("&amp;", input))
+	while(ostrstr(input, "&amp;") != NULL)
 	{
 		debug(210, "input: %s", input);
 		input = string_replace("&amp;", "und", input, 1);
 		debug(210, "input: %s", input);
 	}
 
-	while(string_find("&gt;", input))
+	while(ostrstr(input, "&gt;") != NULL)
 	{
 		debug(210, "input: %s", input);
 		input = string_replace("&gt;", ">", input, 1);
 		debug(210, "input: %s", input);
 	}
 
-	while(string_find("&lt;", input))
+	while(ostrstr(input, "&lt;") != NULL)
 	{
 		debug(210, "input: %s", input);
 		input = string_replace("&lt;", "<", input, 1);
 		debug(210, "input: %s", input);
 	}
 	
-	while(string_find("&quot;", input))
+	while(ostrstr(input, "&quot;") != NULL)
 	{
 		debug(210, "input: %s", input);
 		input = string_replace("&quot;", "\"", input, 1);
 		debug(210, "input: %s", input);
 	}
 
-	while(string_find("&#x", input))
+	while(ostrstr(input, "&#x", input) != NULL)
 	{
 		debug(210, "out %s", input);
 		input = string_replace("&#x", "%", input, 1);
 		debug(210, "input: %s", input);
 	}
-	while(string_find("&#", input))
+	while(ostrstr(input, "&#") != NULL)
 	{
 		debug(210, "input: %s", input);
 		input = string_replace("&#", "%", input, 1);
@@ -4873,7 +4867,7 @@ char* string_decode(char* input, int flag)
 	else
 		htmldecode(input, input);
 			
-	while(string_find(";", input))
+	while(ostrstr(input, ";") != NULL)
 	{
 		debug(210, "input: %s", input);
 		input = string_replace(";", "", input, 1);

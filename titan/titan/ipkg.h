@@ -443,7 +443,7 @@ char* get_ipk_section()
 		{
 			tmpstr = ostrcat("-", node->section, 0, 0);
 			tmpstr = ostrcat(tmpstr, "-", 1, 0);
-			if(!string_find(tmpstr,namelist))
+			if(ostrstr(namelist, tmpstr) == NULL)
 			{
 				namelist = ostrcat(namelist, node->name, 1, 0);
 				namelist = ostrcat(namelist, " ", 1, 0);

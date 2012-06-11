@@ -86,11 +86,11 @@ start:
 // Titel (näherungsweise Übereinstimmung)
 // Titel (genaue Übereinstimmung)
 
-		if(flag1 == 0 && string_find("<title>IMDb Titelsuche</title>", tmpstr) && string_find("<p><b>Meistgesuchte Titel</b>", tmpstr) == 0)
+		if(flag1 == 0 && ostrstr(tmpstr, "<title>IMDb Titelsuche</title>") != NULL && ostrstr(tmpstr, "<p><b>Meistgesuchte Titel</b>") == NULL)
 		{
 			tmpstr = string_resub("<p><b>Titel","</td></tr></table> </p>",tmpstr);
 			
-			while(string_find("</td><td valign=\"top\"><a href=\"/title/", tmpstr))
+			while(ostrstr(tmpstr, "</td><td valign=\"top\"><a href=\"/title/") != NULL)
 			{
 				tmpstr = string_replace("</td><td valign=\"top\"><a href=\"/title/", "\n\n", tmpstr, 0);
 			}
@@ -156,7 +156,7 @@ start:
 
 	if(tmpstr != NULL)
 	{
-		if(string_find("<title>", tmpstr))
+		if(ostrstr(tmpstr, "<title>") != NULL)
 		{
 			imdb->title = string_resub("<title>","</title>",tmpstr);
 			imdb->title = string_decode(imdb->title,1);
@@ -164,7 +164,7 @@ start:
 			strstrip(imdb->title);
 		}
 
-		if(string_find("<h5>Genre:</h5>", tmpstr))
+		if(ostrstr(tmpstr, "<h5>Genre:</h5>") != NULL)
 		{
 			imdb->genre = string_resub("<h5>Genre:</h5>","</div>",tmpstr);
 			imdb->genre = string_decode(imdb->genre,1);
@@ -173,7 +173,7 @@ start:
 			strstrip(imdb->genre);
 		}
 
-		if(string_find("<h5>Drehbuchautor", tmpstr))
+		if(ostrstr(tmpstr, "<h5>Drehbuchautor") != NULL)
 		{
 			imdb->writer = string_resub("<h5>Drehbuchautor","</div>",tmpstr);
 			imdb->writer = string_resub("<div class=\"info-content\">","</div>",imdb->writer);
@@ -184,7 +184,7 @@ start:
 			strstrip(imdb->writer);
 		}
 
-		if(string_find("Regisseur:", tmpstr))
+		if(ostrstr(tmpstr, "Regisseur:") != NULL)
 		{
 			imdb->director = string_resub("Regisseur:","</div>",tmpstr);
 			imdb->director = string_resub(";\">","</a><br/>",imdb->director);			
@@ -194,7 +194,7 @@ start:
 			strstrip(imdb->director);
 		}
 		
-		if(string_find("<h5>Premierendatum:</h5>", tmpstr))
+		if(ostrstr(tmpstr, "<h5>Premierendatum:</h5>") != NULL)
 		{
 			imdb->released = string_resub("<h5>Premierendatum:</h5>","<a class=",tmpstr);
 			imdb->released = string_resub("<div class=\"info-content\">","<a class=",imdb->released);			
@@ -204,7 +204,7 @@ start:
 			strstrip(imdb->released);
 		}
 
-		if(string_find("<h3>Besetzung</h3>", tmpstr))
+		if(ostrstr(tmpstr, "<h3>Besetzung</h3>") != NULL)
 		{
 			imdb->actors = string_resub("<h3>Besetzung</h3>&nbsp;","</td></tr></table>",tmpstr);
 			imdb->actors = string_resub("<div class=\"info-content block\"><table class=\"cast\">","</a></td></tr>",imdb->actors);			
@@ -215,13 +215,13 @@ start:
 			strstrip(imdb->actors);
 		}
 
-		if(string_find("<a name=\"poster\" href=\"", tmpstr))
+		if(ostrstr(tmpstr, "<a name=\"poster\" href=\"") != NULL)
 		{
 			imdb->thumb = string_resub("<a name=\"poster\" href=\"", "\" /></a>",tmpstr);
 			imdb->thumb = string_resub("src=\"","\" /></a>",imdb->thumb);			
 		}
 
-		if(string_find("/media/rm", tmpstr))
+		if(ostrstr(tmpstr, "/media/rm") != NULL)
 		{
 			pageposter = string_resub("/media/rm","/",tmpstr);
 			strstrip(pageposter);
@@ -244,7 +244,7 @@ start:
 		free(tmpsearch); tmpsearch = NULL;
 		if(tmpstr != NULL)
 		{
-			if(string_find("image_src", tmpstr))
+			if(ostrstr(tmpstr, "image_src") != NULL)
 			{
 				imdb->poster = string_resub("<link rel=\"image_src\" href=\"","\"",tmpstr);
 				strstrip(imdb->poster);
@@ -269,7 +269,7 @@ start:
 
 	if(tmpstr != NULL)
 	{
-		if(string_find("swiki.2.1", tmpstr))
+		if(ostrstr(tmpstr, "swiki.2.1") != NULL)
 		{
 			imdb->plot = string_resub("<div id=\"swiki.2.1\">","</div>",tmpstr);
 			imdb->plot = string_decode(imdb->plot,1);
