@@ -129,10 +129,8 @@ struct imdbapi* getimdbapi(char* title, int flag, int flag1, int flag2)
 			imdbapi->poster = NULL;
 		}
 
-		if(tmpstr != NULL)
-		{
-			free(tmpstr); tmpstr = NULL;
-		}
+		free(tmpstr); tmpstr = NULL;
+
 		debug(133, "id: %s", imdbapi->id);
 		debug(133, "title: %s", imdbapi->title);
 		debug(133, "genre: %s", imdbapi->genre);
