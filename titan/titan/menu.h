@@ -86,6 +86,8 @@ struct skin* menu(struct skin* menu, int flag)
 			writevfd(listbox->select->text);
 	}
 
+	resettvpic();
+
 	delownerrc(menu);
 	clearscreen(menu);
 	debug(1000, "out");
