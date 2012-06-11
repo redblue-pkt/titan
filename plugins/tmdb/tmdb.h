@@ -96,11 +96,11 @@ start:
 			return NULL;
 		}
 
-		if(string_find("<movies>Nothing found.</movies>", tmpstr))
+		if(ostrstr(tmpstr, "<movies>Nothing found.</movies>") != NULL)
 		{
 			free(tmpstr), tmpstr = NULL;
 		}
-		else if(!string_find("<opensearch:totalResults>1</opensearch:totalResults>", tmpstr) && flag1 == 0)
+		else if(ostrstr(tmpstr, "<opensearch:totalResults>1</opensearch:totalResults>") == NULL && flag1 == 0)
 		{
 			char* tmpstr1 = NULL;			
 			char* tmpstr2 = NULL;
@@ -111,7 +111,7 @@ start:
 			struct menulist* mlist = NULL, *mbox = NULL;
 		
 			int count = 0;
-			while(string_find("<imdb_id>", tmpstr1))
+			while(ostrstr(tmpstr1, "<imdb_id>") != NULL)
 			{
 				tmpstr2 = string_resub("<imdb_id>", "</imdb_id>", tmpstr1);				
 				tmpstr3 = string_resub("<name>", "</name>", tmpstr1);
@@ -142,114 +142,114 @@ start:
 		}			
 	}
 	
-	if(tmpstr != NULL && string_find("<opensearch:totalResults>1</opensearch:totalResults>", tmpstr))
+	if(tmpstr != NULL && ostrstr(tmpstr, "<opensearch:totalResults>1</opensearch:totalResults>") != NULL)
 	{
-		if(string_find("<name>", tmpstr))
+		if(ostrstr(tmpstr, "<name>") != NULL)
 		{
 			tmdb->title = string_resub("<name>", "</name>", tmpstr);
 		}
 
-		if(string_find("<language>", tmpstr))
+		if(ostrstr(tmpstr, "<language>") != NULL)
 		{
 			tmdb->language = string_resub("<language>", "</language>", tmpstr);
 		}
 
-		if(string_find("<type>", tmpstr))
+		if(ostrstr(tmpstr, "<type>") != NULL)
 		{
 			tmdb->type = string_resub("<type>", "</type>", tmpstr);
 		}
 
-		if(string_find("<original_name>", tmpstr))
+		if(ostrstr(tmpstr, "<original_name>") != NULL)
 		{
 			tmdb->orgname = string_resub("<original_name>", "</original_name>", tmpstr);
 		}
 
-		if(string_find("<score>", tmpstr))
+		if(ostrstr(tmpstr, "<score>") != NULL)
 		{
 			tmdb->score = string_resub("<score>", "</score>", tmpstr);
 		}
 
-		if(string_find("<rating>", tmpstr))
+		if(ostrstr(tmpstr, "<rating>") != NULL)
 		{
 			tmdb->rated = string_resub("<rating>", "</rating>", tmpstr);
 		}
 
-		if(string_find("<released>", tmpstr))
+		if(ostrstr(tmpstr, "<released>") != NULL)
 		{
 			tmdb->released = string_resub("<released>", "</released>", tmpstr);
 		}
 
-		if(string_find("<categories>", tmpstr))
+		if(ostrstr(tmpstr, "<categories>") != NULL)
 		{
 			tmdb->genre = string_resub("<category type=\"genre\" name=\"", "\" url=", tmpstr);
-			while(string_find("<category type=", tmdb->genre))
+			while(ostrstr(tmdb->genre, "<category type=") != NULL)
 			{
 				tmdb->genre = string_resub("<category type=\"genre\" name=\"", "\" url=", tmdb->genre);
 			}
 		}
 
-		if(string_find("<runtime>", tmpstr))
+		if(ostrstr(tmpstr, "<runtime>") != NULL)
 		{
 			tmdb->runtime = string_resub("<runtime>", "</runtime>", tmpstr);
 		}
 
-		if(string_find("<overview>", tmpstr))
+		if(ostrstr(tmpstr, "<overview>") != NULL)
 		{
 			tmdb->plot = string_resub("<overview>", "</overview>", tmpstr);
 		}
 
-		if(string_find("type=\"poster\"", tmpstr))
+		if(ostrstr(tmpstr, "type=\"poster\"") != NULL)
 		{
 			tmdb->thumb = string_resub("<image type=\"poster\" url=\"", "\" size=\"thumb\"", tmpstr);
-			while(string_find("<image type=", tmdb->thumb))
+			while(ostrstr(tmdb->thumb, "<image type=") != NULL)
 			{
 				tmdb->thumb = string_resub("<image type=\"poster\" url=\"", "\" size=\"thumb\"", tmdb->thumb);
 			}
 		}
 
-		if(string_find("type=\"poster\"", tmpstr))
+		if(ostrstr(tmpstr, "type=\"poster\"") != NULL)
 		{
 			tmdb->cover = string_resub("<image type=\"poster\" url=\"", "\" size=\"cover\"", tmpstr);
-			while(string_find("<image type=", tmdb->cover))
+			while(ostrstr(tmdb->cover, "<image type=") != NULL)
 			{
 				tmdb->cover = string_resub("<image type=\"poster\" url=\"", "\" size=\"cover\"", tmdb->cover);
 			}
 		}
 
-		if(string_find("type=\"poster\"", tmpstr))
+		if(ostrstr(tmpstr, "type=\"poster\"") != NULL)
 		{
 			tmdb->postermid = string_resub("<image type=\"poster\" url=\"", "\" size=\"mid\"", tmpstr);
-			while(string_find("<image type=", tmdb->postermid))
+			while(ostrstr(tmdb->postermid, "<image type=") != NULL)
 			{
 				tmdb->postermid = string_resub("<image type=\"poster\" url=\"", "\" size=\"mid\"", tmdb->postermid);
 			}
 		}
 
-		if(string_find("type=\"backdrop\"", tmpstr))
+		if(ostrstr(tmpstr, "type=\"backdrop\"") != NULL)
 		{
 			tmdb->backdrop = string_resub("<image type=\"backdrop\" url=\"", "\" size=\"original\"", tmpstr);
-			while(string_find("<image type=", tmdb->backdrop))
+			while(ostrstr(tmdb->backdrop, "<image type=") != NULL)
 			{
 				tmdb->backdrop = string_resub("<image type=\"backdrop\" url=\"", "\" size=\"original\"", tmdb->backdrop);
 			}
 		}
 
-		if(string_find("<rating>", tmpstr))
+		if(ostrstr(tmpstr, "<rating>") != NULL)
 		{
 			tmdb->rating = string_resub("<rating>", "</rating>", tmpstr);
 		}
 
-		if(string_find("<votes>", tmpstr))
+		if(ostrstr(tmpstr, "<votes>") != NULL)
 		{
 			tmdb->votes = string_resub("<votes>", "</votes>", tmpstr);
 		}
 
-		if(string_find("<id>", tmpstr))
+		if(ostrstr(tmpstr, "<id>") != NULL)
 		{
 			tmdb->id = string_resub("<id>", "</id>", tmpstr);
 		}
 
-		if(string_find("<imdb_id>", tmpstr))
+		if(ostrstr(tmpstr, "<imdb_id>") != NULL)
 		{
 			tmdb->imdbid = string_resub("<imdb_id>", "</imdb_id>", tmpstr);
 		}
