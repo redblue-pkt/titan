@@ -532,6 +532,7 @@ void addscreenrcchannellist(struct skin* channellist, struct skin* listbox)
 int screenchannellist(struct channel** retchannel, char** retchannellist, int flag)
 {
 	struct skin* channellist = getscreen("channellist");
+	struct skin* titletext = getscreennode(channellist, "titletext");
 	struct skin* listbox = getscreennode(channellist, "listbox");
 	struct skin* channeltimeline = getscreennode(channellist, "channeltimeline");
 	struct skin* b1 = getscreennode(channellist, "b1");
@@ -583,7 +584,11 @@ start:
 			tmpstr1 = ostrcat(tmpstr1, _("Bouquets"), 0, 0);
 			tmpstr1 = ostrcat(tmpstr1, " - ", 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, tmpstr + 10, 1, 0);
-			if(nochanneltitle == 0) changetitle(channellist, tmpstr1);
+			if(nochanneltitle == 0)
+			{
+				changetitle(channellist, tmpstr1);
+				changetext(titletext, tmpstr1);
+			}
 			free(tmpstr1); tmpstr1 = NULL;
 			list = BOUQUETCHANNEL;
 			aktlist = (void*)mainbouquetnode;
