@@ -1402,7 +1402,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 			struct skin* imdbapiplugin = getplugin("IMDb-API");
 			if(imdbplugin != NULL)
 			{
-				struct imdbapi* (*startplugin)(char*, int, int, int);
+				struct imdbapi* (*startplugin)(char*, int, int);
 				startplugin = dlsym(imdbapiplugin->pluginhandle, "getimdbapi");
 				if(startplugin != NULL)
 				{
@@ -1426,7 +1426,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 				tmdbplugin = getplugin("TMDb");
 				if(tmdbplugin != NULL)
 				{
-					struct tmdb* (*startplugin)(char*, int, int, int);
+					struct tmdb* (*startplugin)(char*, int, int);
 					startplugin = dlsym(tmdbplugin->pluginhandle, "gettmdb");
 					if(startplugin != NULL)
 					{
