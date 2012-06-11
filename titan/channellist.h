@@ -455,6 +455,7 @@ void changebutton(int listmode, struct skin* b1, struct skin* b2, struct skin* b
 
 void changechanneltitle(struct skin* channellist, struct skin* listbox, int listmode, char** oldtitle, long* oldfontcol, long* oldbgcol)
 {
+	struct skin* titletext = getscreennode(channellist, "titletext");
 	char* tmpstr = NULL;
 
 	if(*oldtitle == NULL)
@@ -474,6 +475,7 @@ void changechanneltitle(struct skin* channellist, struct skin* listbox, int list
 		listbox->bgcol = convertcol("mvmode_bgcol");
 		listbox->fontcol = convertcol("mvmode_fontcol");
 		changetitle(channellist, tmpstr);
+		changetext(titletext, tmpstr);
 	}
 	else if(listmode == RMMODE)
 	{
@@ -482,6 +484,7 @@ void changechanneltitle(struct skin* channellist, struct skin* listbox, int list
 		listbox->bgcol = convertcol("rmmode_bgcol");
 		listbox->fontcol = convertcol("rmmode_fontcol");
 		changetitle(channellist, tmpstr);
+		changetext(titletext, tmpstr);
 	}
 	else if(listmode == CPMODE)
 	{
@@ -490,6 +493,7 @@ void changechanneltitle(struct skin* channellist, struct skin* listbox, int list
 		listbox->bgcol = convertcol("cpmode_bgcol");
 		listbox->fontcol = convertcol("cpmode_fontcol");
 		changetitle(channellist, tmpstr);
+		changetext(titletext, tmpstr);
 	}
 	else if(listmode == PROTECTMODE)
 	{
@@ -498,6 +502,7 @@ void changechanneltitle(struct skin* channellist, struct skin* listbox, int list
 		listbox->bgcol = convertcol("protectmode_bgcol");
 		listbox->fontcol = convertcol("protectmode_fontcol");
 		changetitle(channellist, tmpstr);
+		changetext(titletext, tmpstr);
 	}
 	else if(listmode == EDITMODE)
 	{
@@ -506,10 +511,12 @@ void changechanneltitle(struct skin* channellist, struct skin* listbox, int list
 		listbox->bgcol = convertcol("editmode_bgcol");
 		listbox->fontcol = convertcol("editmode_fontcol");
 		changetitle(channellist, tmpstr);
+		changetext(titletext, tmpstr);
 	}
 	else
 	{	
 		changetitle(channellist, *oldtitle);
+		changetext(titletext, *oldtitle);
 		*oldtitle = NULL;
 		listbox->fontcol = *oldfontcol;
 		*oldfontcol = -9999;
