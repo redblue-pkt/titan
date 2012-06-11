@@ -432,11 +432,6 @@ start:
 			}
 		}
 
-		if(tmpstr != NULL)
-		{
-			free(tmpstr); tmpstr = NULL;
-		}
-
 		debug(133, "title: %s", tmdb->title);
 		debug(133, "language: %s", tmdb->language);
 		debug(133, "type: %s", tmdb->type);
@@ -458,6 +453,7 @@ start:
 		debug(133, "imdbid: %s", tmdb->imdbid);
 	}
 
+	free(tmpstr); tmpstr = NULL;
 	return tmdb;
 }
 
