@@ -38,7 +38,7 @@ void screenmc_videoplayer_settings()
 
 	addchoicebox(autoscan, "0", _("no"));	
 	addchoicebox(autoscan, "1", _("yes"));
-	setchoiceboxselection(autostart_playlist, getconfig("mc_vp_autoscan", NULL));
+	setchoiceboxselection(autoscan, getconfig("mc_vp_autoscan", NULL));
 
 	system("ls -al /media/net ; ls -al /media/usb");
 
