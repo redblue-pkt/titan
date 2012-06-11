@@ -31,12 +31,10 @@ void freeimdbapi(struct imdbapi* node)
 //flag 1 = imdbid search
 //flag1 0 = save in tmp
 //flag1 1 = save in mediadbpath
-//flag2 0 = get pic
-//flag2 1 = don't get pic
-struct imdbapi* getimdbapi(char* title, int flag, int flag1, int flag2)
+struct imdbapi* getimdbapi(char* title, int flag, int flag1)
 {
 	struct imdbapi* imdbapi = NULL;
-	char* tmpstr = NULL;
+	char* tmpstr = NULL, *ret = NULL;
 	char* tmpsearch = NULL;
 	char* savefile = NULL, *savethumb = NULL; 
 	unsigned char* buf = NULL;
@@ -58,6 +56,15 @@ struct imdbapi* getimdbapi(char* title, int flag, int flag1, int flag2)
 
 	if(tmpstr != NULL)
 	{
+		ret = getxmlentry(tmpstr, "\"Response\":");
+		if(ostrcmp(ret, "False") == 0)
+		{
+			free(ret); ret = NULL;
+			free(tmpstr); tmpstr = NULL;
+			return NULL;
+		}
+		free(ret); ret = NULL;
+
 		imdbapi = (struct imdbapi*)calloc(1, sizeof(struct imdbapi));
 		if(imdbapi == NULL)
 		{
@@ -81,7 +88,7 @@ struct imdbapi* getimdbapi(char* title, int flag, int flag1, int flag2)
 		imdbapi->votes = getxmlentry(tmpstr, "\"imdbapiVotes\":");
 		imdbapi->id = getxmlentry(tmpstr, "\"imdbapiID\":");
 
-		if(imdbapi->poster != NULL && flag2 == 0)
+		if(imdbapi->poster != NULL)
 		{
 			char* ip = NULL, *pos = NULL, *path = NULL;
 			ip = string_replace("http://", "", imdbapi->poster, 0);
@@ -99,17 +106,19 @@ struct imdbapi* getimdbapi(char* title, int flag, int flag1, int flag2)
 				savefile = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 				savefile = ostrcat(savefile, imdbapi->id, 1, 0);
 				savefile = ostrcat(savefile, "_poster.jpg", 1, 0);
-				gethttp(ip, path, 80, savefile, NULL, NULL, 0);
+
+				if(!file_exist(savefile))
+					gethttp(ip, path, 80, savefile, NULL, NULL, 0);
 				free(imdbapi->poster);
 				imdbapi->poster = savefile;
 				//create thumb 
 				savethumb = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0); 
 				savethumb = ostrcat(savethumb, imdbapi->id, 1, 0); 
 				savethumb = ostrcat(savethumb, "_thumb.jpg", 1, 0);
-				if(file_exist(savefile))
-				{			
-					buf = loadjpg(savefile, &width, &height, &rowbytes, &channels, 16); 
-					savejpg(savefile, 91, 140, buf); 
+				if(file_exist(savefile) && !file_exist(savethumb))
+				{
+					buf = loadjpg(savefile, &width, &height, &rowbytes, &channels, 16);
+					savejpg(savethumb, 91, 140, buf);
 				}
 				free(buf); buf = NULL; 
 				free(savethumb); savethumb = NULL;
@@ -170,7 +179,7 @@ void screenimdbapi(char* title)
 
 	if(title == NULL) title = getepgakttitle(NULL);
 
-	node = getimdbapi(title, 0, 0, 0);
+	node = getimdbapi(title, 0, 0);
 start:
 	if(node != NULL)
 	{
@@ -199,7 +208,7 @@ start:
 			if(search != NULL)
 			{
 				freeimdbapi(node); node = NULL;
-				node = getimdbapi(search, 0, 0, 0);
+				node = getimdbapi(search, 0, 0);
 				free(search); search = NULL;
 				goto start;
 			}

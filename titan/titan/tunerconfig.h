@@ -11,7 +11,7 @@ void writetunerconfig(struct dvbdev* tuner, struct skin* tunerreceptiondvbs)
 
 	while(child != NULL)
 	{
-		if(child->del == 1 && ostrstr(child->name, "_lnb") == NULL)
+		if(child->del == 1 && child->name != NULL && ostrstr(child->name, "_lnb") == NULL)
 		{
 			addconfigscreentmpcheck(child->name, child, "0");
 			if(ostrstr(child->name, "_sat") != NULL && child->ret != NULL && ostrcmp(child->ret, "0") != 0)

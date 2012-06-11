@@ -33,7 +33,7 @@ void screenstreaming()
 	else
 	{
 		mbox = menulistbox(mlist, "menulist", "Streaming", NULL, NULL, 0, 0);
-		if(ostrstr(mbox->name, "stop") == mbox->name)
+		if(mbox != NULL && ostrstr(mbox->name, "stop") == mbox->name)
 		{
 			servicenode = getrecordbyname(mbox->name, RECORDSTREAM);
 			if(servicenode != NULL)
@@ -150,7 +150,7 @@ void streamthreadfunc(struct stimerthread* timernode)
 					{
 						htmldecode(filename, filename);
 						debug(250, "stream filename=%s", filename);
-						if(ostrstr(filename, getconfig("rec_streampath", NULL)) != filename)
+						if(filename != NULL && ostrstr(filename, getconfig("rec_streampath", NULL)) != filename)
 						{
 							filename = ostrcat("/", filename, 0, 1);
 							filename = ostrcat(getconfig("rec_streampath", NULL), filename, 0, 1);

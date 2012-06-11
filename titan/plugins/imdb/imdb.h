@@ -68,7 +68,7 @@ start:
 			return NULL;
 		}
 
-		imdb->id = string_resub("<a href=\"/title/tt","/",tmpstr);
+		imdb->id = string_resub("<a href=\"/title/tt", "/", tmpstr, 0);
 
 // todo - use Meistgesuchte Titel (default)
 // Meistgesuchte Titel
@@ -77,7 +77,7 @@ start:
 
 		if(flag1 == 0 && ostrstr(tmpstr, "<title>IMDb Titelsuche</title>") != NULL && ostrstr(tmpstr, "<p><b>Meistgesuchte Titel</b>") == NULL)
 		{
-			tmpstr = string_resub("<p><b>Titel","</td></tr></table> </p>",tmpstr);
+			tmpstr = string_resub("<p><b>Titel", "</td></tr></table> </p>", tmpstr, 0);
 			
 			while(ostrstr(tmpstr, "</td><td valign=\"top\"><a href=\"/title/") != NULL)
 			{
@@ -95,7 +95,7 @@ start:
 			int i = 0;
 			for( i = 0; i < max; i++)
 			{
-				tmpstr1 = string_resub("link=/title", "</a>", (&ret[i])->part);
+				tmpstr1 = string_resub("link=/title", "</a>", (&ret[i])->part, 0);
 				struct regex* x = regexstruct("/tt([0-9]{7})", tmpstr1);
 				struct regex* y = regexstruct(";\">(.*)", tmpstr1);
 				if(x != NULL && y != NULL)
@@ -147,7 +147,7 @@ start:
 	{
 		if(ostrstr(tmpstr, "<title>") != NULL)
 		{
-			imdb->title = string_resub("<title>","</title>",tmpstr);
+			imdb->title = string_resub("<title>", "</title>", tmpstr, 0);
 			imdb->title = string_decode(imdb->title,1);
 			string_strip_whitechars(imdb->title);
 			strstrip(imdb->title);
@@ -155,7 +155,7 @@ start:
 
 		if(ostrstr(tmpstr, "<h5>Genre:</h5>") != NULL)
 		{
-			imdb->genre = string_resub("<h5>Genre:</h5>","</div>",tmpstr);
+			imdb->genre = string_resub("<h5>Genre:</h5>", "</div>", tmpstr, 0);
 			imdb->genre = string_decode(imdb->genre,1);
 			string_striptags(imdb->genre);
 			string_strip_whitechars(imdb->genre);
@@ -164,9 +164,9 @@ start:
 
 		if(ostrstr(tmpstr, "<h5>Drehbuchautor") != NULL)
 		{
-			imdb->writer = string_resub("<h5>Drehbuchautor","</div>",tmpstr);
-			imdb->writer = string_resub("<div class=\"info-content\">","</div>",imdb->writer);
-			imdb->writer = string_resub(";\">","</a>",imdb->writer);
+			imdb->writer = string_resub("<h5>Drehbuchautor", "</div>", tmpstr, 0);
+			imdb->writer = string_resub("<div class=\"info-content\">", "</div>", imdb->writer, 0);
+			imdb->writer = string_resub(";\">", "</a>", imdb->writer, 0);
 			imdb->writer = string_decode(imdb->writer,1);
 			string_striptags(imdb->writer);
 			string_strip_whitechars(imdb->writer);
@@ -175,8 +175,8 @@ start:
 
 		if(ostrstr(tmpstr, "Regisseur:") != NULL)
 		{
-			imdb->director = string_resub("Regisseur:","</div>",tmpstr);
-			imdb->director = string_resub(";\">","</a><br/>",imdb->director);			
+			imdb->director = string_resub("Regisseur:", "</div>", tmpstr, 0);
+			imdb->director = string_resub(";\">", "</a><br/>", imdb->director, 0);
 			imdb->director = string_decode(imdb->director,1);
 			string_striptags(imdb->director);
 			string_strip_whitechars(imdb->director);
@@ -185,8 +185,8 @@ start:
 		
 		if(ostrstr(tmpstr, "<h5>Premierendatum:</h5>") != NULL)
 		{
-			imdb->released = string_resub("<h5>Premierendatum:</h5>","<a class=",tmpstr);
-			imdb->released = string_resub("<div class=\"info-content\">","<a class=",imdb->released);			
+			imdb->released = string_resub("<h5>Premierendatum:</h5>", "<a class=", tmpstr, 0);
+			imdb->released = string_resub("<div class=\"info-content\">", "<a class=", imdb->released, 0);
 			imdb->released = string_decode(imdb->released,1);
 			string_striptags(imdb->released);
 			string_strip_whitechars(imdb->released);
@@ -195,8 +195,8 @@ start:
 
 		if(ostrstr(tmpstr, "<h3>Besetzung</h3>") != NULL)
 		{
-			imdb->actors = string_resub("<h3>Besetzung</h3>&nbsp;","</td></tr></table>",tmpstr);
-			imdb->actors = string_resub("<div class=\"info-content block\"><table class=\"cast\">","</a></td></tr>",imdb->actors);			
+			imdb->actors = string_resub("<h3>Besetzung</h3>&nbsp;", "</td></tr></table>", tmpstr, 0);
+			imdb->actors = string_resub("<div class=\"info-content block\"><table class=\"cast\">", "</a></td></tr>", imdb->actors, 0);
 			imdb->actors = string_replace("...", "als", imdb->actors, 0);
 			imdb->actors = string_decode(imdb->actors,1);
 			string_striptags(imdb->actors);
@@ -206,13 +206,13 @@ start:
 
 		if(ostrstr(tmpstr, "<a name=\"poster\" href=\"") != NULL)
 		{
-			imdb->thumb = string_resub("<a name=\"poster\" href=\"", "\" /></a>",tmpstr);
-			imdb->thumb = string_resub("src=\"","\" /></a>",imdb->thumb);			
+			imdb->thumb = string_resub("<a name=\"poster\" href=\"", "\" /></a>", tmpstr, 0);
+			imdb->thumb = string_resub("src=\"", "\" /></a>", imdb->thumb, 0);
 		}
 
 		if(ostrstr(tmpstr, "/media/rm") != NULL)
 		{
-			pageposter = string_resub("/media/rm","/",tmpstr);
+			pageposter = string_resub("/media/rm", "/", tmpstr, 0);
 			strstrip(pageposter);
 		}
 		free(tmpstr), tmpstr = NULL;
@@ -235,7 +235,7 @@ start:
 		{
 			if(ostrstr(tmpstr, "image_src") != NULL)
 			{
-				imdb->poster = string_resub("<link rel=\"image_src\" href=\"","\"",tmpstr);
+				imdb->poster = string_resub("<link rel=\"image_src\" href=\"", "\"", tmpstr, 0);
 				strstrip(imdb->poster);
 			}
 			free(tmpstr), tmpstr = NULL;
@@ -260,7 +260,7 @@ start:
 	{
 		if(ostrstr(tmpstr, "swiki.2.1") != NULL)
 		{
-			imdb->plot = string_resub("<div id=\"swiki.2.1\">","</div>",tmpstr);
+			imdb->plot = string_resub("<div id=\"swiki.2.1\">", "</div>", tmpstr, 0);
 			imdb->plot = string_decode(imdb->plot,1);
 			string_striptags(imdb->plot);
 			string_strip_whitechars(imdb->plot);

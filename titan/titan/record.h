@@ -946,7 +946,7 @@ void screenrecordstop()
 
 	mbox = menulistbox(mlist, "recordlist", "Record", NULL, NULL, 0, 0);
 	
-	if(mbox != NULL && ostrstr(mbox->param, "stop") == mbox->param)
+	if(mbox != NULL && mbox->param != NULL && ostrstr(mbox->param, "stop") == mbox->param)
 	{
 		servicenode = getrecordbyname(mbox->param, RECORDDIRECT);
 		if(servicenode != NULL)
@@ -1015,13 +1015,13 @@ void screenrecorddirect()
 	
 	if(mbox != NULL)
 	{
-		if(ostrstr(mbox->param, "stop") == mbox->param)
+		if(mbox->param != NULL && ostrstr(mbox->param, "stop") == mbox->param)
 		{
 			servicenode = getrecordbyname(mbox->param, RECORDDIRECT);
 			if(servicenode != NULL)
 				servicenode->recendtime = 1;
 		}
-		if(ostrstr(mbox->param, "change") == mbox->param)
+		if(mbox->param != NULL && ostrstr(mbox->param, "change") == mbox->param)
 		{
 			servicenode = getrecordbyname(mbox->param, RECORDDIRECT);
 			if(servicenode != NULL)

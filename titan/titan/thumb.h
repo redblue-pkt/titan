@@ -34,7 +34,7 @@ void thumbthread(struct stimerthread* self)
 		qe = getqueue(101);
 		while(qe != NULL)
 		{
-			if(ostrstr(qe->data, ".Thumbnails") == NULL)
+			if(qe->data != NULL && ostrstr(qe->data, ".Thumbnails") == NULL)
 			{
 				char* picname = createpath(qe->data, qe->data1);		
 				buf = loadjpg(picname, &width, &height, &rowbytes, &channels, 16);		

@@ -2295,7 +2295,7 @@ int delallfiles(char* dir, char* ext)
 		{
 			if(ostrcmp(".", dirent->d_name) != 0 && ostrcmp("..", dirent->d_name) != 0)
 			{
-				if(ostrstr(dirent->d_name, ext) != NULL)
+				if(ext == NULL || ostrstr(dirent->d_name, ext) != NULL)
 				{
 					tmpstr = ostrcat(dir, "/", 0, 0);
 					tmpstr = ostrcat(tmpstr, dirent->d_name, 1, 0);
@@ -4434,6 +4434,24 @@ char* string_replace(char *search, char *replace, char *string, int free1)
 	return tmpstr;
 }
 
+char* ostrrstr(char* str, char* search, int len)
+{
+	int slen = 0;
+	char* tmpstr = NULL;
+
+	if(str == NULL || search == NULL) return NULL;
+
+	if(len == -1) len = strlen(str);
+	slen = strlen(search);
+	if(search > str) return NULL;
+
+	for(tmpstr = str + len - slen; tmpstr >= str; tmpstr--)
+		if(strncmp(tmpstr, search, slen) == 0)
+			return tmpstr;
+
+	return NULL;
+}
+
 char* ostrstr(char* str, char* search)
 {
 	//debug(1000, "in");
@@ -4909,48 +4927,39 @@ char* string_striptags(char* filename)
 	return strstrip(filename);	
 }
 
-char* string_resub(char* str, char* str2, char* input)
+char* string_resub(char* str, char* str2, char* input, int dir)
 {
 	debug(1000, "in");
-	int i, len_str, len_filename;
-	char* filename = NULL;
-	
+	int len;
+	char* tmpstr = NULL, *pos = NULL, *pos2 = NULL;
+
 	if(str == NULL || str2 == NULL || input == NULL) return NULL;
 
-	filename = ostrcat(input, NULL, 0, 0);
-
-	len_str = strlen(str);
-	len_filename = strlen(filename);
-
-	int count = 0;
-	for(i = 0; (i + len_str) < len_filename; i++)
+	if(dir == 0)
 	{
-		if(strncmp(filename + i, str, len_str) == 0 && count == 0)
-		{
-			count = i + len_str;
-			filename[i] = ' ';
-		}
-		else if(count == i && count != 0)
-		{
-			count = i - len_str;
-			break;
-		}
-		else
-			filename[i] = ' ';
+		len = strlen(str);
+		pos = ostrstr(input, str);
+		if(pos == NULL) return NULL;
+		pos += len;
+
+		pos2 = ostrstr(pos, str2);
+		if(pos2 == NULL) return NULL;
 	}
-	len_str = strlen(str2);
-
-	for(i = 0; (i + len_str) < len_filename; i++)
+	else
 	{
-		if(strncmp(filename + i, str2, len_str) == 0 && i >= count)
-		{
-			filename[i] = '\0';
-			break;
-		}
-	}	
+		pos2 = ostrstr(input, str2);
+		if(pos2 == NULL) return NULL;
+
+		len = strlen(str);
+		pos = ostrrstr(input, str, pos2 - input);
+		if(pos == NULL) return NULL;
+		pos += len;
+	}
+
+	tmpstr = strndup(pos, pos2 - pos);
 
 	debug(1000, "out");
-	return strstrip(filename);
+	return strstrip(tmpstr);
 }
 
 char* ostrstrcase(char* str, char* sub)

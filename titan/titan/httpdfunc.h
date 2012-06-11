@@ -1917,7 +1917,7 @@ char* webgetmovieepg(char* param, char* path, int flag, int fmt)
 
 	if(flag == 1)
 	{
-		if(ostrstr(param, path) == param)
+		if(param != NULL && ostrstr(param, path) == param)
 		{
 			tmpstr = changefilenameext(param, ".epg");
 			fd = fopen(tmpstr, "r");
@@ -1985,7 +1985,7 @@ char* webdelfile(char* param, char* link, char* dellink, char* path, char* mask,
 
 	if(checkbit(flag, 0) == 1)
 	{
-		if(ostrstr(tmpparam, path) == tmpparam)
+		if(tmpparam != NULL && ostrstr(tmpparam, path) == tmpparam)
 			unlink(tmpparam);
 	}
 	else

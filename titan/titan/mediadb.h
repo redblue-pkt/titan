@@ -1395,9 +1395,9 @@ void mediadbfindfilecb(char* path, char* file, int type)
 
 #ifdef SIMULATE
 			if(imdb == NULL)
-				imdbapi = getimdbapi(shortname, 0, 1, 0);
+				imdbapi = getimdbapi(shortname, 0, 1);
 			else
-				imdbapi = getimdbapi(imdb->id, 1, 1, 0);
+				imdbapi = getimdbapi(imdb->id, 1, 1);
 #else
 			struct skin* imdbapiplugin = getplugin("IMDb-API");
 			if(imdbplugin != NULL)
@@ -1407,18 +1407,18 @@ void mediadbfindfilecb(char* path, char* file, int type)
 				if(startplugin != NULL)
 				{
 					if(imdb == NULL)
-						imdbapi = startplugin(shortname, 0, 1, 0);
+						imdbapi = startplugin(shortname, 0, 1);
 					else
-						imdbapi = startplugin(imdb->id, 1, 1, 0);
+						imdbapi = startplugin(imdb->id, 1, 1);
 				}
 			}
 #endif
 
 #ifdef SIMULATE
 			if(imdb != NULL)
-				tmdb = gettmdb(imdb->id, 1, 1, 0);
+				tmdb = gettmdb(imdb->id, 1, 1);
 			else if(imdbapi != NULL)
-				tmdb = gettmdb(imdbapi->id, 1, 1, 0);
+				tmdb = gettmdb(imdbapi->id, 1, 1);
 #else
 			struct skin* tmdbplugin = NULL;
 			if(imdb != NULL)
@@ -1431,9 +1431,9 @@ void mediadbfindfilecb(char* path, char* file, int type)
 					if(startplugin != NULL)
 					{
 						if(imdb != NULL)
-							tmdb = startplugin(imdb->id, 1, 1, 0);
+							tmdb = startplugin(imdb->id, 1, 1);
 						else if(imdbapi != NULL)
-							tmdb = startplugin(imdbapi->id, 1, 1, 0);
+							tmdb = startplugin(imdbapi->id, 1, 1);
 					}
 				}
 			}
@@ -1547,14 +1547,14 @@ printf("wo4\n");
 printf("wo5\n");
 
 #ifdef SIMULATE
-			freetmdb(tmdb);
+			freetmdb(0);
 #else
 			if(tmdbplugin != NULL)
 			{
-				void (*startplugin)(struct tmdb*);
+				void (*startplugin)(int);
 				startplugin = dlsym(tmdbplugin->pluginhandle, "freetmdb");
 				if(startplugin != NULL)
-					startplugin(tmdb);
+					startplugin(0);
 			}
 #endif
 

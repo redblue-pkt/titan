@@ -245,7 +245,6 @@ struct tmdb
 	char* votes;
 	char* id;
 	char* backdrop;
-	char* name;
 	char* imdbid;
 	char* orgname;
 	char* language;
@@ -254,6 +253,8 @@ struct tmdb
 	char* cover;
 	char* thumb;
 	char* mvi;
+	struct tmdb* prev;
+	struct tmdb* next;
 };
 
 struct mediadbfilter

@@ -665,7 +665,7 @@ char* gethttp(char* host, char* page, int port, char* filename, char* auth, stru
 
 		*pbuf = c;
 
-		if(ostrstr(tmpbuf, "\n\n") != NULL || ostrstr(tmpbuf, "\r\n\r\n") != NULL)
+		if(tmpbuf != NULL && (ostrstr(tmpbuf, "\n\n") != NULL || ostrstr(tmpbuf, "\r\n\r\n") != NULL))
 		{
 			hret = checkhttpheader(tmpbuf, &retstr);
 			if(hret == 301 || hret == 302) goto end;
