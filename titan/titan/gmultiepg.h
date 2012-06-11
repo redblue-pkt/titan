@@ -127,7 +127,7 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 			chnode->bgspace = 1;
 			
 			if(epgpicon == 1) tmpstr = createpiconpath(tmpchannel, 0);
-			if(tmpstr != NULL && strstr(tmpstr, "default.png") == NULL)
+			if(ostrstr(tmpstr, "default.png") == NULL)
 			{
 				changepic(chnode, tmpstr);
 				chnode->height = picheight;

@@ -540,7 +540,7 @@ int checkhttpheader(char* tmpbuf, char** retstr)
 		return 0;
 	}
 
-	tmppos = strstr(tmpbuf, "HTTP/1.1 ");
+	tmppos = ostrstr(tmpbuf, "HTTP/1.1 ");
 	if(tmppos != NULL)
 	{
 		sscanf(tmppos, "HTTP/1.1 %s ", tmpstr);
@@ -553,7 +553,7 @@ int checkhttpheader(char* tmpbuf, char** retstr)
 
 	if(stat == 301 || stat == 302) // Redirect
 	{
-		tmppos = strstr(tmpbuf, "Location: ");
+		tmppos = ostrstr(tmpbuf, "Location: ");
 		if(tmppos != NULL)
 		{
 			sscanf(tmppos, "Location: %s", tmpstr);
@@ -665,7 +665,7 @@ char* gethttp(char* host, char* page, int port, char* filename, char* auth, stru
 
 		*pbuf = c;
 
-		if(tmpbuf != NULL && (strstr(tmpbuf, "\n\n") != NULL || strstr(tmpbuf, "\r\n\r\n") != NULL))
+		if(ostrstr(tmpbuf, "\n\n") != NULL || ostrstr(tmpbuf, "\r\n\r\n") != NULL)
 		{
 			hret = checkhttpheader(tmpbuf, &retstr);
 			if(hret == 301 || hret == 302) goto end;
@@ -675,7 +675,7 @@ char* gethttp(char* host, char* page, int port, char* filename, char* auth, stru
 	}
 
 	//TODO: case-sens check
-	char* contentlen = strstr(tmpbuf, "Content-Length:");
+	char* contentlen = ostrstr(tmpbuf, "Content-Length:");
 	if(contentlen != NULL)
 	{
 		contentlen += 15;

@@ -151,7 +151,7 @@ struct weather* getweather(char* location)
 		tmpstr1 = tmpstr;
 		tmpstr2 = tmpstr;
 
-		tmpstr2 = strstr(tmpstr1, "<forecast_information>");
+		tmpstr2 = ostrstr(tmpstr1, "<forecast_information>");
 		if(tmpstr2 != NULL)
 		{
 			tmpstr1 = tmpstr2 + 5;
@@ -159,7 +159,7 @@ struct weather* getweather(char* location)
 			weather->city = getxmlentry(tmpstr2, "postal_code data=");
 		}
 
-		tmpstr2 = strstr(tmpstr1, "<current_conditions>");
+		tmpstr2 = ostrstr(tmpstr1, "<current_conditions>");
 		if(tmpstr2 != NULL)
 		{
 			tmpstr1 = tmpstr2 + 5;
@@ -168,7 +168,7 @@ struct weather* getweather(char* location)
 			weather->day0_wind = getxmlentry(tmpstr2, "wind_condition data=");
 		}
 		
-		tmpstr2 = strstr(tmpstr1, "<forecast_conditions>");
+		tmpstr2 = ostrstr(tmpstr1, "<forecast_conditions>");
 		if(tmpstr2 != NULL)
 		{
 			tmpstr1 = tmpstr2 + 5;
@@ -180,7 +180,7 @@ struct weather* getweather(char* location)
 
 		}
 
-		tmpstr2 = strstr(tmpstr1, "<forecast_conditions>");
+		tmpstr2 = ostrstr(tmpstr1, "<forecast_conditions>");
 		if(tmpstr2 != NULL)
 		{
 			tmpstr1 = tmpstr2 + 5;
@@ -192,7 +192,7 @@ struct weather* getweather(char* location)
 
 		}
 
-		tmpstr2 = strstr(tmpstr1, "<forecast_conditions>");
+		tmpstr2 = ostrstr(tmpstr1, "<forecast_conditions>");
 		if(tmpstr2 != NULL)
 		{
 			tmpstr1 = tmpstr2 + 5;
@@ -204,7 +204,7 @@ struct weather* getweather(char* location)
 
 		}
 
-		tmpstr2 = strstr(tmpstr1, "<forecast_conditions>");
+		tmpstr2 = ostrstr(tmpstr1, "<forecast_conditions>");
 		if(tmpstr2 != NULL)
 		{
 			tmpstr1 = tmpstr2 + 5;
@@ -228,47 +228,47 @@ void changeweatherpic(struct skin* node, char* icon)
 
 	if(icon == NULL)
 		changepic(node, NULL);
-	else if(strstr(icon, "/sunny.gif") != NULL)
+	else if(ostrstr(icon, "/sunny.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/sunny.png");
-	else if(strstr(icon, "/mostly_sunny.gif") != NULL)
+	else if(ostrstr(icon, "/mostly_sunny.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/mostly_sunny.png");
-  else if(strstr(icon, "/chance_of_rain.gif") != NULL)
+  else if(ostrstr(icon, "/chance_of_rain.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/chance_of_rain.png"); 
-  else if(strstr(icon, "/partly_cloudy.gif") != NULL)
+  else if(ostrstr(icon, "/partly_cloudy.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/partly_cloudy.png");
-  else if(strstr(icon, "/mostly_cloudy.gif") != NULL)
+  else if(ostrstr(icon, "/mostly_cloudy.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/cloudy.png");
-  else if(strstr(icon, "/chance_of_storm.gif") != NULL)
+  else if(ostrstr(icon, "/chance_of_storm.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/chance_of_storm.png");
-  else if(strstr(icon, "/showers.gif") != NULL)
+  else if(ostrstr(icon, "/showers.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/showers.png"); 
-  else if(strstr(icon, "/rain.gif") != NULL)
+  else if(ostrstr(icon, "/rain.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/rain.png");
-  else if(strstr(icon, "/chance_of_snow.gif") != NULL)
+  else if(ostrstr(icon, "/chance_of_snow.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/chance_of_snow.png");
-  else if(strstr(icon, "/cloudy.gif") != NULL)
+  else if(ostrstr(icon, "/cloudy.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/cloudy.png");
-  else if(strstr(icon, "/storm.gif") != NULL)
+  else if(ostrstr(icon, "/storm.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/storm.png");
-  else if(strstr(icon, "/thunderstorm.gif") != NULL)
+  else if(ostrstr(icon, "/thunderstorm.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/storm.png");
-  else if(strstr(icon, "/chance_of_tstorm.gif") != NULL)
+  else if(ostrstr(icon, "/chance_of_tstorm.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/chance_of_storm.png"); 
-  else if(strstr(icon, "/sleet.gif") != NULL)
+  else if(ostrstr(icon, "/sleet.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/snow.png");
-  else if(strstr(icon, "/snow.gif") != NULL)
+  else if(ostrstr(icon, "/snow.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/snow.png");
-  else if(strstr(icon, "/icy.gif") != NULL)
+  else if(ostrstr(icon, "/icy.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/icy.png");
-  else if(strstr(icon, "/dust.gif") != NULL)
+  else if(ostrstr(icon, "/dust.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/fog.png"); 
-  else if(strstr(icon, "/fog.gif") != NULL)
+  else if(ostrstr(icon, "/fog.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/fog.png");
-  else if(strstr(icon, "/smoke.gif") != NULL)
+  else if(ostrstr(icon, "/smoke.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/fog.png");
-  else if(strstr(icon, "/haze.gif") != NULL)
+  else if(ostrstr(icon, "/haze.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/fog.png");
-  else if(strstr(icon, "/flurries.gif") != NULL)
+  else if(ostrstr(icon, "/flurries.gif") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/flurries.png");
 }
 

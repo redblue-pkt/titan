@@ -203,7 +203,7 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webgetsingleepg(param, fmt);
 	if(ostrcmp(query, "getgmultiepg") == 0)
 		buf = webgetgmultiepg(param, fmt);
-	if(query != NULL && strstr(query, "getepgsearch") == query)
+	if(ostrstr(query, "getepgsearch") == query)
 		buf = webgetepgsearch(query, param, fmt);
 	if(ostrcmp(query, "getsignal") == 0)
 		buf = webgetsignal(fmt);
@@ -236,18 +236,18 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		else
 			buf = ostrcat("shoot.html", NULL, 0, 0);
 	}
-	if(query != NULL && strstr(query, "poweroff") == query)
+	if(ostrstr(query, "poweroff") == query)
 		oshutdown(1, 1);
-	if(query != NULL && strstr(query, "restart") == query)
+	if(ostrstr(query, "restart") == query)
 		oshutdown(2, 1);
-	if(query != NULL && strstr(query, "guirestart") == query)
+	if(ostrstr(query, "guirestart") == query)
 		oshutdown(3, 1);
-	if(query != NULL && strstr(query, "standby") == query)
+	if(ostrstr(query, "standby") == query)
 	{
 		status.standby = 2;
 		addtimer(&screenstandby, START, 1000, 1, NULL, NULL, NULL);
 	}
-	if(query != NULL && strstr(query, "boxstatus") == query)
+	if(ostrstr(query, "boxstatus") == query)
 	{
 		if(status.standby > 0)
 		{
@@ -264,7 +264,7 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 				buf = ostrcat("running", NULL, 0, 0);
 		}
 	}
-	if(query != NULL && strstr(query, "message") == query)
+	if(ostrstr(query, "message") == query)
 		buf = websendmessage(query, fmt);
 		
 	if(buf != NULL || onlyheader == 1)
@@ -314,15 +314,15 @@ void gotdata(int* connfd)
 		}
 
 		*pbuf = c;
-		if(buf != NULL && (strstr((char*)buf, "\n\n") != NULL || strstr((char*)buf, "\r\n\r\n") != NULL))
+		if(ostrstr((char*)buf, "\n\n") != NULL || ostrstr((char*)buf, "\r\n\r\n") != NULL)
 			break;
 		pbuf++;
 	}
 
 	if(buf != NULL)
 	{
-		tmpstr = strstr((char*)buf, "GET /");
-		tmpstr1 = strstr((char*)buf, "Authorization: Basic ");
+		tmpstr = ostrstr((char*)buf, "GET /");
+		tmpstr1 = ostrstr((char*)buf, "Authorization: Basic ");
 	}
 
 	//Auth Password
@@ -368,7 +368,7 @@ void gotdata(int* connfd)
 		{
 			htmldecode(filename, filename);
 			
-			if(strstr(filename, "xmessage") == filename + 1  || strstr(filename, "/cgi-bin/xmessage") == filename )
+			if(ostrstr(filename, "xmessage") == filename + 1  || ostrstr(filename, "/cgi-bin/xmessage") == filename )
 			{	
 				xmessage(filename);
 				sendoktext(connfd, "ok", 0);
@@ -413,7 +413,7 @@ void gotdata(int* connfd)
 
 			debug(250, "httpd filename=%s", filename);
 
-			if(strstr(filename, "/movie/") != NULL) 
+			if(ostrstr(filename, "/movie/") != NULL)
 				fullfilename = ostrcat(filename, NULL, 0, 0);
 			else
 				fullfilename = ostrcat(getconfig("httpdpath", NULL), filename, 0, 0);

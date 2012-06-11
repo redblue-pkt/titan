@@ -163,7 +163,7 @@ struct font* getfont(char *name)
 
 	while(node != NULL)
 	{
-		if(strstr(node->name, name) != NULL)
+		if(ostrstr(node->name, name) != NULL)
 		{
 			debug(1000, "out");
 			return node;

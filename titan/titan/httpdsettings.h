@@ -23,7 +23,7 @@ void screenhttpdsettings()
 	tmpstr = ostrcat(getconfig("httpauth", NULL), NULL, 0, 0);
 	if(tmpstr != NULL)
 	{
-		pos = strstr(tmpstr, ":");
+		pos = ostrstr(tmpstr, ":");
 		if(pos != NULL)
 		{
 			pos[0] = '\0';

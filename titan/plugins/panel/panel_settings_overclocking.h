@@ -24,36 +24,36 @@ void read_cpufreq(struct skin* label)
 	{
 		for(i = 0; tmpstr2[i] != NULL; i++)
 		{
-			if(strstr(tmpstr2[i], "CKGA_") != 0){
+			if(ostrstr(tmpstr2[i], "CKGA_") != 0){
 				free(tmpstr2[i]); tmpstr2[i] = NULL;
-			}else if(strstr(tmpstr2[i], "SYSACLKOUT") != 0){
+			}else if(ostrstr(tmpstr2[i], "SYSACLKOUT") != 0){
 				tmpstr = ostrcat(tmpstr, tmpstr2[i], 1, 1);
 				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-			}else if(strstr(tmpstr2[i], "BOGOMIPS") != 0){
+			}else if(ostrstr(tmpstr2[i], "BOGOMIPS") != 0){
 				tmpstr = ostrcat(tmpstr, tmpstr2[i], 1, 1);
 				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-			}else if(strstr(tmpstr2[i], "PLL0") != 0){
+			}else if(ostrstr(tmpstr2[i], "PLL0") != 0){
 				tmpstr = ostrcat(tmpstr, tmpstr2[i], 1, 1);
 				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-			}else if(strstr(tmpstr2[i], "SH4") != 0){
+			}else if(ostrstr(tmpstr2[i], "SH4") != 0){
 				tmpstr = ostrcat(tmpstr, tmpstr2[i], 1, 1);
 				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-			}else if(strstr(tmpstr2[i], "MODULE") != 0){
+			}else if(ostrstr(tmpstr2[i], "MODULE") != 0){
 				tmpstr = ostrcat(tmpstr, tmpstr2[i], 1, 1);
 				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-			}else if(strstr(tmpstr2[i], "SLIM") != 0){
+			}else if(ostrstr(tmpstr2[i], "SLIM") != 0){
 				tmpstr = ostrcat(tmpstr, tmpstr2[i], 1, 1);
 				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-			}else if(strstr(tmpstr2[i], "PLL1") != 0){
+			}else if(ostrstr(tmpstr2[i], "PLL1") != 0){
 				tmpstr = ostrcat(tmpstr, tmpstr2[i], 1, 1);
 				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-			}else if(strstr(tmpstr2[i], "COMMS") != 0){
+			}else if(ostrstr(tmpstr2[i], "COMMS") != 0){
 				tmpstr = ostrcat(tmpstr, tmpstr2[i], 1, 1);
 				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-			}else if(strstr(tmpstr2[i], "TMU0") != 0){
+			}else if(ostrstr(tmpstr2[i], "TMU0") != 0){
 				tmpstr = ostrcat(tmpstr, tmpstr2[i], 1, 1);
 				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-			}else if(strstr(tmpstr2[i], "TMU0") != 0){
+			}else if(ostrstr(tmpstr2[i], "TMU0") != 0){
 				tmpstr = ostrcat(tmpstr, tmpstr2[i], 1, 1);
 				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 			}else{

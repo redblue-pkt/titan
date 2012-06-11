@@ -188,7 +188,7 @@ void screenlnb(char* feshortname, char* lnbnr)
 		rcret = waitrc(lnbscreen, 0, 0);
 		tmp = listbox->select;
 
-		if(listbox->select != NULL && listbox->select->name != NULL && strstr(listbox->select->name, "lnb_loftype") != NULL && (rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)))
+		if(listbox->select != NULL && ostrstr(listbox->select->name, "lnb_loftype") != NULL && (rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)))
 		{
 			changeloftype(lofl, lofh, threshold, satcr, satcrfrequ1, satcrfrequ2, loftype->ret);
 		}

@@ -336,7 +336,7 @@ int playerstart(char* file)
 			return 1;
 		}
 
-		if(strstr(file, "://") == NULL)
+		if(ostrstr(file, "://") == NULL)
 			tmpfile = ostrcat("file://", file, 0, 0);
 		else
 			tmpfile = ostrcat(file, NULL, 0, 0);
@@ -348,7 +348,7 @@ int playerstart(char* file)
 			return 1;
 		}
 
-		if(strstr(tmpfile, "file://") == NULL)
+		if(ostrstr(tmpfile, "file://") == NULL)
 			status.playercan = 0x4650;
 		else
 			status.playercan = 0x7FFF;
@@ -401,7 +401,7 @@ int playerstart(char* file)
 			playerstop();
 		}
 		
-		if(strstr(file, "://") == NULL)
+		if(ostrstr(file, "://") == NULL)
 			tmpfile = ostrcat("file://", file, 0, 0);
 		else
 			tmpfile = ostrcat(file, NULL, 0, 0);
@@ -413,7 +413,7 @@ int playerstart(char* file)
 			return 1;
 		}
 
-		if(strstr(tmpfile, "file://") == NULL)
+		if(ostrstr(tmpfile, "file://") == NULL)
 			status.playercan = 0x7E7F;
 		else
 			status.playercan = 0x7E7F;
@@ -962,7 +962,7 @@ unsigned long long int playergetpts()
 		if(!sink) return 0;
 
 		gchar *name = gst_element_get_name(sink);
-		gboolean use_get_decoder_time = strstr(name, "dvbaudiosink") || strstr(name, "dvbvideosink");
+		gboolean use_get_decoder_time = ostrstr(name, "dvbaudiosink") || ostrstr(name, "dvbvideosink");
 		g_free(name);
 
 		if(use_get_decoder_time) g_signal_emit_by_name(sink, "get-decoder-time", &pos);

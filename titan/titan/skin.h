@@ -436,7 +436,7 @@ char* changepicpath(char* picname)
 
 	if(getconfig("skinpath", NULL) != NULL && strlen(picname) > 0 && picname[0] != '/')
 	{
-		if(strstr(picname, "%pluginpath%/") != NULL)
+		if(ostrstr(picname, "%pluginpath%/") != NULL)
 		{
 			tmpstr = createpath(getconfig("pluginpath", NULL), &picname[13]);
 		}
@@ -889,7 +889,7 @@ int addscreen(char *buf, int del, int flag)
 				buf++;
 			}
 
-			if(strstr(buf1, "<screen ") != NULL)
+			if(ostrstr(buf1, "<screen ") != NULL)
 			{
 				node = NULL;
 				tmpnode = status.skinerr;
@@ -906,7 +906,7 @@ int addscreen(char *buf, int del, int flag)
 						node->del = del;
 				}
 			}
-			if(strstr(buf1, "<node ") != NULL && node != NULL)
+			if(ostrstr(buf1, "<node ") != NULL && node != NULL)
 				addscreennode(node, buf1, NULL);
 
 			buf1 = buf;
@@ -3738,7 +3738,7 @@ int drawscreen(struct skin* node, int flag)
 		return 1;
 	}
 	
-	if(node->name != NULL && strstr(node->name, "LCD_") != NULL)
+	if(ostrstr(node->name, "LCD_") != NULL)
 	{
 		merkskinfb = skinfb;
 		memset(lcdskinfb->fb, 0, lcdskinfb->varfbsize);

@@ -1717,7 +1717,7 @@ char* webgetfilelist(char* param, char* link, char* dellink, char* path, char* m
 
 	if(checkbit(flag, 0) == 1)
 	{
-		if(strstr(tmppath, path) != tmppath)
+		if(ostrstr(tmppath, path) != tmppath)
 		{
 			free(tmppath); tmppath = NULL;
 			tmppath = ostrcat(path, NULL, 0, 0);
@@ -1917,7 +1917,7 @@ char* webgetmovieepg(char* param, char* path, int flag, int fmt)
 
 	if(flag == 1)
 	{
-		if(param != NULL && strstr(param, path) == param)
+		if(ostrstr(param, path) == param)
 		{
 			tmpstr = changefilenameext(param, ".epg");
 			fd = fopen(tmpstr, "r");
@@ -1985,7 +1985,7 @@ char* webdelfile(char* param, char* link, char* dellink, char* path, char* mask,
 
 	if(checkbit(flag, 0) == 1)
 	{
-		if(tmpparam != NULL && strstr(tmpparam, path) == tmpparam)
+		if(ostrstr(tmpparam, path) == tmpparam)
 			unlink(tmpparam);
 	}
 	else
@@ -2277,31 +2277,31 @@ char* webrectimersend(char* param, int fmt)
 	struct channel *channel1 = NULL;
 //	struct service *service1;
 
-	anode = strstr(param, "node=");
+	anode = ostrstr(param, "node=");
 	if(anode != NULL)
 		anode = anode + 5;
-	name = strstr(param, "name=");
+	name = ostrstr(param, "name=");
 	if(name != NULL)
 		name = name + 5;
-	begin = strstr(param, "begin=");
+	begin = ostrstr(param, "begin=");
 	if(begin != NULL)
 		begin = begin + 6;
-	end = strstr(param, "end=");
+	end = ostrstr(param, "end=");
 	if(end != NULL)
 		end = end + 4;
-	type = strstr(param, "type=");
+	type = ostrstr(param, "type=");
 	if(type != NULL)
 		type = type + 5;
-	channelname = strstr(param, "channel=");
+	channelname = ostrstr(param, "channel=");
 	if(channelname != NULL)
 		channelname = channelname + 8;
-	sid = strstr(param, "sid=");
+	sid = ostrstr(param, "sid=");
 	if(sid != NULL)
 		sid = sid + 4;
-	tid = strstr(param, "tid=");
+	tid = ostrstr(param, "tid=");
 	if(tid != NULL)
 		tid = tid + 4;
-	ext = strstr(param, "ext=");
+	ext = ostrstr(param, "ext=");
 	if(ext != NULL)
 		ext = ext + 4;
 	
@@ -2356,7 +2356,7 @@ char* webrectimersend(char* param, int fmt)
 			channel1 = channel;		
 			while(channel1 != NULL)
 			{
-				if(strstr(channel1->name, channelname) != NULL && channel1->servicetype == 0)
+				if(ostrstr(channel1->name, channelname) != NULL && channel1->servicetype == 0)
 				{
 					if(channelnottunable(channel1) == 0)
 					{
@@ -2541,7 +2541,7 @@ char* webdelrectimer(char* param, int fmt)
 	struct rectimer *node = NULL;
 	int ext = 0;
 	
-	timerid = strstr(param, "timerid=");
+	timerid = ostrstr(param, "timerid=");
 	if(timerid != NULL)
 	{
 		timerid = timerid + 8;
@@ -2605,11 +2605,11 @@ void xmessage(char* filename)
 	char* caption=NULL, *body=NULL;
 	char* timeout=NULL;
 
-	param4 = strstr(filename, "icon=");
-	param3 = strstr(filename, "charset=");
-	param2 = strstr(filename, "timeout=");
-	param1 = strstr(filename, "caption=");
-	param = strstr(filename, "body=");
+	param4 = ostrstr(filename, "icon=");
+	param3 = ostrstr(filename, "charset=");
+	param2 = ostrstr(filename, "timeout=");
+	param1 = ostrstr(filename, "caption=");
+	param = ostrstr(filename, "body=");
 
 	if(param4 != NULL)
 	{
