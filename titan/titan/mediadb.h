@@ -1605,7 +1605,7 @@ int findfiles(char* dirname, int type, int flag, int flag1)
 		{
 			//TODO: add extensions
 			//video
-			if(!filelistflt("*.avi", entry->d_name))
+			if(!filelistflt("*.avi", entry->d_name) && !filelistflt("*.mkv", entry->d_name))
 			{
 				if(type == 0 || type == 100 || type == 90 || type == 91)
 				{
