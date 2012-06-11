@@ -2314,6 +2314,7 @@ void wrapstr(char* string, char* fontname, int fontsize, int mwidth, int charspa
 	char* tmpstr = NULL, *origstr = string;
 	unsigned char c = 0;
 
+	if(string == NULL) return;
 	aktfont = setaktfont(fontname, fontsize);
 
 	while(*string != '\0')
@@ -3738,7 +3739,7 @@ int drawscreen(struct skin* node, int flag)
 		return 1;
 	}
 	
-	if(ostrstr(node->name, "LCD_") != NULL)
+	if(node->name != NULL && ostrstr(node->name, "LCD_") != NULL)
 	{
 		merkskinfb = skinfb;
 		memset(lcdskinfb->fb, 0, lcdskinfb->varfbsize);

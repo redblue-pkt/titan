@@ -346,6 +346,7 @@ start:
 		}
 		if(rcret == getrcconfigint("rctext", NULL))
 		{
+			/* TODO:
 			struct skin* pluginnode = getplugin("Imdb");
 		
 			if(pluginnode != NULL)
@@ -358,6 +359,7 @@ start:
 					drawscreen(screenepg, 0);
 				}
 			}
+			*/
 		}
 	}	
 
