@@ -408,7 +408,17 @@ void screenmc_videoplayer()
 			tmpstr = ostrcat(tmpstr, "/", 1, 0);
 			tmpstr = ostrcat(tmpstr, oitoa(files), 1, 0);
 			tmpstr = ostrcat(tmpstr, ")", 1, 0);
-			textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
+			
+			tmpstr = ostrcat(tmpstr, "\n\n ", 1, 0);
+			tmpstr = ostrcat(tmpstr, _("Replace:"), 1, 0);
+			tmpstr = ostrcat(tmpstr, " ", 1, 0);
+			tmpstr = ostrcat(tmpstr, getconfig("mediadbscandelall", NULL), 1, 0);
+			tmpstr = ostrcat(tmpstr, _("\n "), 1, 0);
+			tmpstr = ostrcat(tmpstr, _("Directory:"), 1, 0);
+			tmpstr = ostrcat(tmpstr, " ", 1, 0);				
+			tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
+		
+			textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 500, 10, 0);
 			free(tmpstr), tmpstr = NULL;			
 		}
 		else if(rcret == getrcconfigint("rcstop", NULL))
