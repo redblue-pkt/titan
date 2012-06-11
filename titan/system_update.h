@@ -28,7 +28,7 @@ void screensystem_update(int mode)
 		char* lokalkey = NULL;
 		lokalkey = getcpuid();
 		atemiokeylist = wget http://gib-key-trustliste.de/keyliste
-		if(!string_find(lokalkey,atemiokeylist)) 
+		if(ostrstr(atemiokeylist, lokalkey) == NULL)
 */
 
 		char* cmd = NULL;
@@ -95,7 +95,7 @@ void screensystem_update(int mode)
 				count += 1;
 				label = get_label(pch);
 
-				if(string_find("MINI",label))
+				if(ostrstr(label, "MINI") != NULL)
 				{
 					cmd = ostrcat("cat /media/autofs/", pch, 0, 0);
 					cmd = ostrcat(cmd, "/etc/version", 1, 0);
@@ -189,7 +189,7 @@ void screensystem_update(int mode)
 				if(file_exist("/tmp/.swapextensionsdev") && file_exist("/etc/.beta"))
 				{
 					printf("Update: update with log\n");
-					if(string_find("_KERNEL_",filelist->select->text) && file_exist("/etc/.beta"))
+					if(ostrstr(filelist->select->text, "_KERNEL_") != NULL && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "kernel ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
@@ -197,7 +197,7 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Kernel Update ?"), 1, 0);
 					}
-					else if(string_find("_FW_",filelist->select->text) && file_exist("/etc/.beta"))
+					else if(ostrstr(filelist->select->text, "_FW_") != NULL && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "fw ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
@@ -205,7 +205,7 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Fw Update ?"), 1, 0);
 					}
-					else if(string_find("_ROOT_",filelist->select->text) && file_exist("/etc/.beta"))
+					else if(ostrstr(filelist->select->text, "_ROOT_") != NULL && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "root ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
@@ -213,7 +213,7 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Root Update ?"), 1, 0);
 					}
-					else if(string_find("_VAR_",filelist->select->text) && file_exist("/etc/.beta"))
+					else if(ostrstr(filelist->select->text, "_VAR_") != NULL && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "var ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
@@ -221,7 +221,7 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Var Update ?"), 1, 0);
 					}
-					else if(string_find("_FULL_",filelist->select->text))
+					else if(ostrstr(filelist->select->text, "_FULL_") != NULL)
 					{
 						cmd = ostrcat(cmd, "full ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
@@ -229,7 +229,7 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Full Update ?"), 1, 0);
 					}
-					else if(string_find("_USB_",filelist->select->text))
+					else if(ostrstr(filelist->select->text, "_USB_") != NULL)
 					{
 						//char* device = getconfig("device", NULL);
 						cmd = ostrcat(cmd, device->ret, 1, 0);
@@ -239,7 +239,7 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Usb Update ?"), 1, 0);
 					}
-					else if(string_find("_FULLUSB_",filelist->select->text))
+					else if(ostrstr(filelist->select->text, "_FULLUSB_") != NULL)
 					{
 						//char* device = getconfig("device", NULL);
 						cmd = ostrcat(cmd, device->ret, 1, 0);
@@ -254,42 +254,42 @@ void screensystem_update(int mode)
 				{
 					printf("Update: update without log\n");
 
-					if(string_find("_KERNEL_",filelist->select->text) && file_exist("/etc/.beta"))
+					if(ostrstr(filelist->select->text, "_KERNEL_") != NULL && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "kernel ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Kernel Update ?"), 1, 0);
 					}
-					else if(string_find("_FW_",filelist->select->text) && file_exist("/etc/.beta"))
+					else if(ostrstr(filelist->select->text, "_FW_") != NULL && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "fw ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Fw Update ?"), 1, 0);
 					}
-					else if(string_find("_ROOT_",filelist->select->text) && file_exist("/etc/.beta"))
+					else if(ostrstr(filelist->select->text, "_ROOT_") != NULL && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "root ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Root Update starten ?"), 1, 0);
 					}
-					else if(string_find("_VAR_",filelist->select->text) && file_exist("/etc/.beta"))
+					else if(ostrstr(filelist->select->text, "_VAR_") != NULL && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "var ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Var Update ?"), 1, 0);
 					}
-					else if(string_find("_FULL_",filelist->select->text))
+					else if(ostrstr(filelist->select->text, "_FULL_") != NULL)
 					{
 						cmd = ostrcat(cmd, "full ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Full Update ?"), 1, 0);
 					}
-					else if(string_find("_USB_",filelist->select->text))
+					else if(ostrstr(filelist->select->text, "_USB_") != NULL)
 					{
 						//char* device = getconfig("device", NULL);
 						cmd = ostrcat(cmd, device->ret, 1, 0);
@@ -298,7 +298,7 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, auth, 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Usb Update ?"), 1, 0);
 					}
-					else if(string_find("_FULLUSB_",filelist->select->text))
+					else if(ostrstr(filelist->select->text, "_FULLUSB_") != NULL)
 					{
 						//char* device = getconfig("device", NULL);
 						cmd = ostrcat(cmd, device->ret, 1, 0);
