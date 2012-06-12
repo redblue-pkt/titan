@@ -3,7 +3,7 @@
 
 #define TMPIMDBAPIPIC "/tmp/tmpimdbapi.jpg"
 
-void freeimdbapi(struct imdbapi** node)
+void freeimdbapi(struct imdbapi** node, int flag)
 {
 	if(node == NULL || *node == NULL) return;
 
