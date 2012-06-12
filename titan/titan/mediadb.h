@@ -1544,28 +1544,28 @@ printf("wo3\n");
 			imdb = NULL;
 printf("wo4\n");			
 #ifdef SIMULATE
-			freeimdbapi(&imdbapi);
+			freeimdbapi(&imdbapi, 0);
 #else
 			if(imdbapiplugin != NULL)
 			{
-				void (*startplugin)(struct imdbapi**);
+				void (*startplugin)(struct imdbapi**, int);
 				startplugin = dlsym(imdbapiplugin->pluginhandle, "freeimdbapi");
 				if(startplugin != NULL)
-					startplugin(&imdbapi);
+					startplugin(&imdbapi, 0);
 			}
 #endif
 			imdbapi = NULL;
 printf("wo5\n");
 
 #ifdef SIMULATE
-			freetmdb(&tmdb);
+			freetmdb(&tmdb, 0);
 #else
 			if(tmdbplugin != NULL)
 			{
-				void (*startplugin)(struct tmdb**);
+				void (*startplugin)(struct tmdb**, int);
 				startplugin = dlsym(tmdbplugin->pluginhandle, "freetmdb");
 				if(startplugin != NULL)
-					startplugin(&tmdb);
+					startplugin(&tmdb, 0);
 			}
 #endif
 
