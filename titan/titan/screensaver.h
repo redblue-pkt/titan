@@ -26,7 +26,7 @@ int showscreensaver()
 	int mixedcol[] = {0, 0x020202, 0xBEBEBE, 0xffffff, 0xffff00, 0xff0000, 0xFFD39B, 0x00ff00, 0x0000ff};
 	int overscanx = 60, overscany = 60;
 	if(screensaver->type == 3)
-		drawscreen(skin, 0);
+		drawscreen(skin, 0, 0);
 	if(screensaver == NULL) return 1;
 
 	if(screensaver->type != 3)
@@ -68,7 +68,7 @@ int showscreensaver()
 			screensaver->screen->bgcol = getconfigint("screensaver_background_color", NULL);
 			screensaversetfontcol(screensaver->screen->bgcol);
 		}
-		drawscreen(screensaver->screen, 0);
+		drawscreen(screensaver->screen, 0, 0);
 	}
 
 	if(screensaver->type == 3)

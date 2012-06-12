@@ -105,15 +105,13 @@ start:
 		b4->hidden = YES;
 	}
 
-	drawscreen(singleepg, 0);
+	drawscreen(singleepg, 0, 0);
 	addscreenrc(singleepg, listbox);
 
 	while(1)
 	{
 		status.epgchannel = chnode;
-		status.screencalc = 2;
-		rcret = waitrc(singleepg, 0, 0);
-		status.screencalc = 0;
+		rcret = waitrc(singleepg, 0, 2);
 		if((rcret == getrcconfigint("rcexit", NULL)) || (rcret == getrcconfigint("rcepg", NULL))) break;
 		if(rcret == getrcconfigint("rcinfo", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
@@ -127,7 +125,7 @@ start:
 			{
 				clearscreen(singleepg);
 				screenepg(chnode, (struct epg*)listbox->select->handle, 0);
-				//drawscreen(singleepg, 0);
+				//drawscreen(singleepg, 0, 0);
 				break;
 			}
 		}
@@ -135,14 +133,14 @@ start:
 		{
 			clearscreen(singleepg);
 			screenmultiepg(chnode, NULL, 0);
-			//drawscreen(singleepg, 0);
+			//drawscreen(singleepg, 0, 0);
 			break;
 		}
 		if(flag == 0 && epgscreenconf == 1 && rcret == getrcconfigint("rcblue", NULL))
 		{
 			clearscreen(singleepg);
 			screengmultiepg(chnode, NULL, 0);
-			//drawscreen(singleepg, 0);
+			//drawscreen(singleepg, 0, 0);
 			break;
 		}
 		if(listbox->select != NULL)
@@ -156,12 +154,11 @@ start:
 				ret = addrecepg(chnode, (struct epg*)listbox->select->handle, NULL);
 				goto start;
 			}
-			drawscreen(singleepg, 0);
+			drawscreen(singleepg, 0, 0);
 		}
 	}
 
 	status.epgchannel = NULL;
-	status.screencalc = 0;
 	delmarkedscreennodes(singleepg, 1);
 	delownerrc(singleepg);
 	clearscreen(singleepg);
@@ -273,7 +270,7 @@ start:
 		rectimeline->epgrecord = getepgrecord(chnode, epgnode);
 	}
 
-	drawscreen(screenepg, 0);
+	drawscreen(screenepg, 0, 0);
 	addscreenrc(screenepg, epgdesc);
 
 	while(1)
@@ -303,28 +300,28 @@ start:
 		{
 			clearscreen(screenepg);
 			screensingleepg(chnode, NULL, 0);
-			//drawscreen(screenepg, 0);
+			//drawscreen(screenepg, 0, 0);
 			break;
 		}
 		if(flag == 0 && epgscreenconf == 0 && rcret == getrcconfigint("rcyellow", NULL))
 		{
 			clearscreen(screenepg);
 			screenmultiepg(chnode, NULL, 0);
-			//drawscreen(screenepg, 0);
+			//drawscreen(screenepg, 0, 0);
 			break;
 		}
 		if(flag == 0 && epgscreenconf == 0 && rcret == getrcconfigint("rcblue", NULL))
 		{
 			clearscreen(screenepg);
 			screengmultiepg(chnode, NULL, 0);
-			//drawscreen(screenepg, 0);
+			//drawscreen(screenepg, 0, 0);
 			break;
 		}
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			clearscreen(screenepg);
 			ret = addrecepg(chnode, epgnode, NULL);
-			//drawscreen(screenepg, 0);
+			//drawscreen(screenepg, 0, 0);
 			goto start;
 		}
 		if(rcret == getrcconfigint("rcepg", NULL))
@@ -333,14 +330,14 @@ start:
 			{
 				clearscreen(screenepg);
 				screensingleepg(chnode, NULL, 0);
-				//drawscreen(screenepg, 0);
+				//drawscreen(screenepg, 0, 0);
 				break;
 			}
 			else
 			{
 				clearscreen(screenepg);
 				screenmultiepg(chnode, NULL, 0);				
-				//drawscreen(screenepg, 0);
+				//drawscreen(screenepg, 0, 0);
 				break;
 			}
 		}
@@ -356,7 +353,7 @@ start:
 				{
 					clearscreen(screenepg);
 					startplugin(epgnode->title);
-					drawscreen(screenepg, 0);
+					drawscreen(screenepg, 0, 0);
 				}
 			}
 			*/

@@ -4,7 +4,7 @@
 char* numinput(char* title, char* num, char* mask, int isip)
 {
 	debug(1000, "in");
-	int rcret = -1, tmpscreencalc = 0, fromthread = 0, height = 0;
+	int rcret = -1, fromthread = 0, height = 0;
 	struct skin* numinput = getscreen("numinput");
 	struct skin* input = getscreennode(numinput, "input");
 	struct skin* framebuffer = getscreen("framebuffer");
@@ -32,18 +32,13 @@ char* numinput(char* title, char* num, char* mask, int isip)
 	{
 		m_lock(&status.drawingmutex, 0);
 		m_lock(&status.rcmutex, 10);
-		tmpscreencalc = status.screencalc;
-		status.screencalc = 2;
-		setnodeattr(numinput, framebuffer);
-		status.screencalc = tmpscreencalc;
+		setnodeattr(numinput, framebuffer, 2);
 		status.rcowner = numinput;
 		bg = savescreen(numinput);
-		tmpscreencalc = status.screencalc;
-		status.screencalc = 0;
-		drawscreen(numinput, 2);
+		drawscreen(numinput, 0, 2);
 	}
 	else
-		drawscreen(numinput, 0);
+		drawscreen(numinput, 0, 0);
 	addscreenrc(numinput, input);
 
 	while(1)
@@ -64,7 +59,6 @@ char* numinput(char* title, char* num, char* mask, int isip)
 		clearscreennolock(numinput);
 		restorescreen(bg, numinput);
 		blitfb(0);
-		status.screencalc = tmpscreencalc;
 		sleep(1);
 		status.rcowner = NULL;
 		m_unlock(&status.rcmutex, 3);
@@ -73,7 +67,7 @@ char* numinput(char* title, char* num, char* mask, int isip)
 	else
 	{
 		clearscreen(numinput);
-		drawscreen(skin, 0);
+		drawscreen(skin, 0, 0);
 	}
 
 	numinput->height = height;

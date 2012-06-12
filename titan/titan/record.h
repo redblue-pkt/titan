@@ -892,7 +892,7 @@ int screenrecordduration(int minutes)
 		changeinput(recordduration, tmpnr);
 		free(tmpnr);
 
-		drawscreen(recordduration, 0);
+		drawscreen(recordduration, 0, 0);
 		addscreenrc(recordduration, recordduration);
 
 		while(1)

@@ -4,7 +4,7 @@
 int screendownload(char* title, char* host, char* page, int port, char* filename, char* auth, int flag)
 {
 	debug(1000, "in");
-	int rcret = -1, tmpscreencalc = 0, count = 0, ret = 0, fromthread = 0, sleeptime = 2;
+	int rcret = -1, count = 0, ret = 0, fromthread = 0, sleeptime = 2;
 	struct skin* download = getscreen("download");
 	struct skin* progress = getscreennode(download, "progress");
 	struct skin* file = getscreennode(download, "file");
@@ -33,18 +33,13 @@ int screendownload(char* title, char* host, char* page, int port, char* filename
 	{
 		m_lock(&status.drawingmutex, 0);
 		m_lock(&status.rcmutex, 10);
-		tmpscreencalc = status.screencalc;
-		status.screencalc = 2;
-		setnodeattr(download, framebuffer);
-		status.screencalc = tmpscreencalc;
+		setnodeattr(download, framebuffer, 2);
 		status.rcowner = download;
 		bg = savescreen(download);
-		tmpscreencalc = status.screencalc;
-		status.screencalc = 0;
-		drawscreen(download, 2);
+		drawscreen(download, 0, 2);
 	}
 	else
-		drawscreen(download, 0);
+		drawscreen(download, 0, 0);
 
 
 	dnode = malloc(sizeof(struct download));
@@ -81,7 +76,7 @@ int screendownload(char* title, char* host, char* page, int port, char* filename
 			changetext(aktkb, tmpstr);
 			free(tmpstr); tmpstr = NULL;
 		}
-		drawscreen(download, 0);
+		drawscreen(download, 0, 0);
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(dnode->ret == 0)
 		{
@@ -102,7 +97,7 @@ int screendownload(char* title, char* host, char* page, int port, char* filename
 	}
 	else
 		changetext(file, _("wait for stopping download"));
-	drawscreen(download, 0);
+	drawscreen(download, 0, 0);
 	sockclose(&dnode->connfd);
 	sleep(sleeptime);
 	count = 0;
@@ -119,7 +114,6 @@ int screendownload(char* title, char* host, char* page, int port, char* filename
 		clearscreennolock(download);
 		restorescreen(bg, download);
 		blitfb(0);
-		status.screencalc = tmpscreencalc;
 		sleep(1);
 		status.rcowner = NULL;
 		m_unlock(&status.rcmutex, 10);
@@ -128,7 +122,7 @@ int screendownload(char* title, char* host, char* page, int port, char* filename
 	else
 	{
 		clearscreen(download);
-		drawscreen(skin, 0);
+		drawscreen(skin, 0, 0);
 	}
 
 	debug(1000, "out");

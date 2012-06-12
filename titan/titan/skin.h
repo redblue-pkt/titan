@@ -3442,7 +3442,7 @@ int calcrposy(struct skin* node, struct skin* parent)
 	return 0;
 }
 
-int setnodeattr(struct skin* node, struct skin* parent)
+int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 {
 	if(node != skin) node->flag = clearbit(node->flag, 0);
 	if((parent->type & LISTBOX) || (parent->type & FILELIST) || (parent->type & GRID))
@@ -3482,7 +3482,7 @@ int setnodeattr(struct skin* node, struct skin* parent)
 		free(tmpstr);
 	}
 
-	if(status.screencalc != 2)
+	if(screencalc != 2)
 	{
 		if(node->hidden == YES || parent->hidden == YES || node->locked == YES || parent->locked == YES) return 1;
 		if(checkbit(parent->flag, 0) == 0) return 1;
@@ -3527,25 +3527,25 @@ int setnodeattr(struct skin* node, struct skin* parent)
 
 	if(node->rposx - shadowlx < parent->iposx)
 	{
-		if(status.screencalc == 0) err("node (%s posx=%d) out of parent (%s posx=%d)", node->name, node->rposx - shadowlx, parent->name, parent->iposx);
+		if(screencalc == 0) err("node (%s posx=%d) out of parent (%s posx=%d)", node->name, node->rposx - shadowlx, parent->name, parent->iposx);
 		node->rposx = parent->iposx + shadowlx;
 		//return 1;
 	}
 	if(node->rposy - shadowoy < parent->iposy)
 	{
-		if(status.screencalc == 0) err("node (%s posy=%d) out of parent (%s posy=%d)", node->name, node->rposy - shadowoy, parent->name, parent->iposy);
+		if(screencalc == 0) err("node (%s posy=%d) out of parent (%s posy=%d)", node->name, node->rposy - shadowoy, parent->name, parent->iposy);
 		node->rposy = parent->iposy + shadowoy;
 		//return 1;
 	}
 	if(node->rposx + node->rwidth + shadowrx > parent->iposx + parent->iwidth)
 	{
-		if(status.screencalc == 0) err("node (%s posxx=%d) out of parent (%s posxx=%d)", node->name, node->rposx + node->rwidth + shadowrx, parent->name, parent->iposx + parent->iwidth);
+		if(screencalc == 0) err("node (%s posxx=%d) out of parent (%s posxx=%d)", node->name, node->rposx + node->rwidth + shadowrx, parent->name, parent->iposx + parent->iwidth);
 		node->rwidth = parent->iwidth - node->rposx - shadowrx;
 		//return 1;
 	}
 	if(node->rposy + node->rheight + shadowuy > parent->iposy + parent->iheight)
 	{
-		if(status.screencalc == 0) err("node (%s posyy=%d) out of parent (%s posyy=%d)", node->name, node->rposy + node->rheight + shadowuy, parent->name, parent->iposy + parent->iheight);
+		if(screencalc == 0) err("node (%s posyy=%d) out of parent (%s posyy=%d)", node->name, node->rposy + node->rheight + shadowuy, parent->name, parent->iposy + parent->iheight);
 		node->rheight = parent->iheight - node->rposy - shadowuy;
 		//return 1;
 	}
@@ -3648,7 +3648,7 @@ int clearscreenalways()
 	return ret;
 }
 
-int drawscreenalways(struct skin* node)
+int drawscreenalways(struct skin* node, int screencalc)
 {
 	debug(1000, "in");
 	int i, ret = 0;
@@ -3662,7 +3662,7 @@ int drawscreenalways(struct skin* node)
 				if(status.drawallwaysbg[i] != NULL)
 					free(status.drawallwaysbg[i]);
 				status.drawallwaysbg[i] = savescreen(status.drawallways[i]);
-				ret = drawscreen(status.drawallways[i], 1);
+				ret = drawscreen(status.drawallways[i], screencalc, 1);
 			}
 		}
 	}
@@ -3671,7 +3671,7 @@ int drawscreenalways(struct skin* node)
 	return ret;
 }
 
-int drawscreennode(struct skin *node, char* nodename)
+int drawscreennode(struct skin *node, char* nodename, int screencalc)
 {
 	debug(1000, "in");
 
@@ -3680,7 +3680,7 @@ int drawscreennode(struct skin *node, char* nodename)
 	if(node != status.skinerr)
 		drawnode(node, 1);
 
-	drawscreenalways(node);
+	drawscreenalways(node, screencalc);
 	blitfb(0);
 	m_unlock(&status.drawingmutex, 0);
 
@@ -3688,7 +3688,7 @@ int drawscreennode(struct skin *node, char* nodename)
 	return 0;
 }
 
-int drawscreennodebyname(char* screenname, char* nodename)
+int drawscreennodebyname(char* screenname, char* nodename, int screencalc)
 {
 	debug(1000, "in");
 	struct skin *node;
@@ -3698,7 +3698,7 @@ int drawscreennodebyname(char* screenname, char* nodename)
 	if(node != status.skinerr)
 		drawnode(node, 1);
 
-	drawscreenalways(node);
+	drawscreenalways(node, screencalc);
 	blitfb(0);
 	m_unlock(&status.drawingmutex, 0);
 
@@ -3711,7 +3711,10 @@ int drawscreennodebyname(char* screenname, char* nodename)
 //flag 2: from thread (mutex is set in thread)
 //flag 3: same as 0 but don't use status.screencalc
 //flag 4: same as 0 but animate
-int drawscreen(struct skin* node, int flag)
+//screencalc 0: calculate and draw
+//screencalc 1: only calculate without hidden nodes
+//screencalc 2: only calculate hidden nodes
+int drawscreen(struct skin* node, int screencalc, int flag)
 {
 	struct fb* merkskinfb = NULL;
 
@@ -3730,7 +3733,7 @@ int drawscreen(struct skin* node, int flag)
 
 	parent = skin;
 
-	ret = setnodeattr(node, parent);
+	ret = setnodeattr(node, parent, screencalc);
 	if(ret == 1)
 	{
 		if(flag == 0 || flag == 3 || flag == 4)
@@ -3746,7 +3749,7 @@ int drawscreen(struct skin* node, int flag)
 		skinfb = lcdskinfb;
 	}
 
-	if(status.screencalc == 0 || flag == 3 || flag == 4)
+	if(screencalc == 0 || flag == 3 || flag == 4)
 	{
 		if(flag == 0 || flag == 2 || flag == 3 || flag == 4) clearscreenalways();
 		drawnode(node, 0);
@@ -3767,16 +3770,16 @@ int drawscreen(struct skin* node, int flag)
 		else
 			parent = oldparent;
 
-		if(setnodeattr(child, parent) == 0 && (status.screencalc == 0 || flag == 3))
+		if(setnodeattr(child, parent, screencalc) == 0 && (screencalc == 0 || flag == 3))
 			drawnode(child, 1);
 		child = child->next;
 	}
 
 	if(flag == 0 || flag == 2 || flag == 3 || flag == 4)
 	{
-		if(status.screencalc == 0 || flag == 3)
+		if(screencalc == 0 || flag == 3)
 		{
-			drawscreenalways(node);
+			drawscreenalways(node, screencalc);
 
 			if(merkskinfb != NULL) 
 				pngforlcd();
@@ -3806,7 +3809,7 @@ int drawscreen(struct skin* node, int flag)
 	return 0;
 }
 
-int drawscreenbyname(char* screenname)
+int drawscreenbyname(char* screenname, int screencalc, int flag)
 {
 	debug(1000, "in");
 	int ret;
@@ -3819,7 +3822,7 @@ int drawscreenbyname(char* screenname)
 		return 1;
 	}
 
-	ret = drawscreen(node, 0);
+	ret = drawscreen(node, screencalc, flag);
 	debug(1000, "out");
 	return ret;
 }

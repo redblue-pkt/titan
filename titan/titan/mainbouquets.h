@@ -25,7 +25,7 @@ struct mainbouquet* screenmainbouquet()
 		node = node->next;
 	}
 
-	drawscreen(bouquetlist, 0);
+	drawscreen(bouquetlist, 0, 0);
 	addscreenrc(bouquetlist, listbox);
 
 	while(1)

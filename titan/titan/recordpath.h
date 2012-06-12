@@ -19,7 +19,7 @@ void screenrecordpath()
 	changeinput(timeshiftpath, getconfig("rec_timeshiftpath", NULL));
 	changeinput(streampath, getconfig("rec_streampath", NULL));
 
-	drawscreen(recordpath, 0);
+	drawscreen(recordpath, 0, 0);
 	addscreenrc(recordpath, listbox);
 
 	while(1)
@@ -46,7 +46,7 @@ void screenrecordpath()
 					changeinput(listbox->select, ret);
 				free(ret);
 
-        			drawscreen(recordpath, 0);
+				drawscreen(recordpath, 0, 0);
 			}
 		}
 	}

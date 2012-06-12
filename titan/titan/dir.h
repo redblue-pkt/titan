@@ -90,14 +90,15 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 	else
 		changetext(button, _("---"));
 
-	drawscreen(dir, 0);
+	drawscreen(dir, 0, 0);
 	addscreenrc(dir, filelist);
 
 	while(1)
 	{
-		if(ext != NULL) status.screencalc = 2;
-		rcret = waitrc(dir, 0, 0);
-		if(ext != NULL) status.screencalc = 0;
+		if(ext != NULL)
+			rcret = waitrc(dir, 0, 2);
+		else
+			rcret = waitrc(dir, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
@@ -111,7 +112,7 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 			if(ext != NULL && filelist->select != NULL && filelist->select->input != NULL) //dir
 			{
 				changetext(label, NULL);
-				drawscreen(dir, 0);
+				drawscreen(dir, 0, 0);
 			}
 			else if(filelist->select != NULL && filelist->select->input == NULL) //file
 			{
@@ -120,7 +121,7 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 				if(ext != NULL)
 				{
 					readlabelext(label, ret, ext);
-					drawscreen(dir, 0);
+					drawscreen(dir, 0, 0);
 				}
 				free(ret); ret = NULL;
 			}
@@ -140,7 +141,7 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 					}
 				}
 				if(ext != NULL)
-					drawscreen(dir, 0);
+					drawscreen(dir, 0, 0);
 				continue;
 			}
 			else if(filelist->select != NULL && filelist->select->input == NULL) //file
@@ -158,7 +159,7 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 				break;
 			}
 			else if(ext != NULL)
-				drawscreen(dir, 0);
+				drawscreen(dir, 0, 0);
 		}
 
 		if(rcret == getrcconfigint("rcgreen", NULL))

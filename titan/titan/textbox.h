@@ -7,7 +7,7 @@
 int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char* b3, int rc3, char* b4, int rc4, int width, int height, int timeout, int flag)
 {
 	debug(1000, "in");
-	int rcret = -1, tmpscreencalc = 0, fromthread = 0;
+	int rcret = -1, fromthread = 0;
 	struct skin* messagebox = getscreen("messagebox");
 	struct skin* textbox = getscreennode(messagebox, "textbox");
 	struct skin *button = NULL;
@@ -95,18 +95,13 @@ int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char*
 	{
 		m_lock(&status.drawingmutex, 0);
 		m_lock(&status.rcmutex, 10);
-		tmpscreencalc = status.screencalc;
-		status.screencalc = 2;
-		setnodeattr(messagebox, framebuffer);
-		status.screencalc = tmpscreencalc;
+		setnodeattr(messagebox, framebuffer, 2);
 		status.rcowner = messagebox;
 		bg = savescreen(messagebox);
-		tmpscreencalc = status.screencalc;
-		status.screencalc = 0;
-		drawscreen(messagebox, 2);
+		drawscreen(messagebox, 0, 2);
 	}
 	else
-		drawscreen(messagebox, 0);
+		drawscreen(messagebox, 0, 0);
 
 	if(fromthread != 1)
 		addscreenrc(messagebox, textbox);
@@ -122,7 +117,6 @@ int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char*
 		clearscreennolock(messagebox);
 		restorescreen(bg, messagebox);
 		blitfb(0);
-		status.screencalc = tmpscreencalc;
 		sleep(1);
 		status.rcowner = NULL;
 		m_unlock(&status.rcmutex, 3);
@@ -131,7 +125,7 @@ int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char*
 	else
 	{
 		clearscreen(messagebox);
-		drawscreen(skin, 0);
+		drawscreen(skin, 0, 0);
 	}
 
 	if(flag == 1) delmarkedscreennodes(messagebox, 1);

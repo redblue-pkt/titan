@@ -8,7 +8,7 @@ void setchannelkeycode(struct skin* channelbynr, char* value)
 	tmpstr = ostrcat(channelbynr->text, value, 0, 0);
 	changetext(channelbynr, tmpstr);
 	free(tmpstr); tmpstr = NULL;
-	drawscreen(channelbynr, 0);
+	drawscreen(channelbynr, 0, 0);
 }
 
 void screenchannelbynr(int rcret)
@@ -22,7 +22,7 @@ void screenchannelbynr(int rcret)
 	status.channelswitch = 1;
 
 	status.rckey = rcret;
-	drawscreen(channelbynr, 0);
+	drawscreen(channelbynr, 0, 0);
 
 	while(1)
 	{
@@ -57,7 +57,7 @@ void screenchannelbynr(int rcret)
 			if(bouquetnode != NULL && bouquetnode->channel != NULL && bouquetnode->channel->servicetype == status.servicetype && channelnottunable(bouquetnode->channel) == 0)
 			{
 				clearscreen(channelbynr);
-				drawscreen(skin, 0);
+				drawscreen(skin, 0, 0);
 
 				mainbouquetnode = getmainbouquetbybouquetpointer(bouquetnode);
 				if(mainbouquetnode != NULL)

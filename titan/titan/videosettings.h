@@ -36,7 +36,7 @@ void screenvideosettings()
 	}
 */
 
-	drawscreen(videosettings, 0);
+	drawscreen(videosettings, 0, 0);
 	addscreenrc(videosettings, listbox);
 
 	tmp = listbox->select;
@@ -72,7 +72,7 @@ void screenvideosettings()
 			tint->progresssize = (int)ceil(((float)itint / 2.56));
 			//saturation->progresssize = (int)ceil(((float)isaturation / 2.56));
 
-			drawscreen(videosettings, 0);
+			drawscreen(videosettings, 0, 0);
 		}
 
 		setbrightness(ibrightness);

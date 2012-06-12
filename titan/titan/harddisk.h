@@ -144,7 +144,7 @@ void screenfilesystem(char* dev)
 		}
 	}
 
-	drawscreen(screen, 0);
+	drawscreen(screen, 0, 0);
 	addscreenrc(screen, listbox);
 
 	while (1)
@@ -247,7 +247,7 @@ void screenconfigurehdd(char* dev)
 		}
 	}
 
-	drawscreen(screen, 0);
+	drawscreen(screen, 0, 0);
 	addscreenrc(screen, listbox);
 
 	while (1)
@@ -325,7 +325,7 @@ void screenconfigurehdd(char* dev)
 				if(ostrcmp(listbox->select->name, "addrecord") == 0)
 					system("hotplug.sh first");
 			}
-			drawscreen(screen, 0);
+			drawscreen(screen, 0, 0);
 		}
 	}
 	delownerrc(screen);
@@ -477,7 +477,7 @@ start:
 		hddnode = hddnode->next;
 	}
 
-	drawscreen(screen, 0);
+	drawscreen(screen, 0, 0);
 	addscreenrc(screen, listbox);
 
 	while (1)
@@ -628,7 +628,7 @@ void screenharddisksleep()
 			setchoiceboxselection(node, sleepWert);
 	}
 		
-	drawscreen(sleep_config, 0);
+	drawscreen(sleep_config, 0, 0);
 	tmp = listbox->select;
 	
 	while(1)

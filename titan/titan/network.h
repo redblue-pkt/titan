@@ -247,7 +247,7 @@ void screennetwork_test()
 	struct skin* lan = getscreennode(network, "lan");
 	char* tmpstr = NULL;
 		
-	drawscreen(network, 0);
+	drawscreen(network, 0, 0);
 	addscreenrc(network, lan);
 	while(1)
 	{
@@ -272,7 +272,7 @@ void screennetwork_test()
 			else
 				internet->text = ostrcat(internet->text, "ERROR", 1, 0);
 			free(tmpstr); tmpstr=NULL;
-			drawscreen(network, 0);
+			drawscreen(network, 0, 0);
 		}
 	}
 	delownerrc(network);
@@ -403,7 +403,7 @@ void screennetwork_adapterext(int mode, char* interface)
 
 	listbox->aktline = 1;
 
-	drawscreen(network, 0);
+	drawscreen(network, 0, 0);
 	addscreenrc(network, listbox);
 
 	int save = 0;
@@ -427,7 +427,7 @@ void screennetwork_adapterext(int mode, char* interface)
 				save = 1;
 				break;
 			}
-			drawscreen(network, 0);
+			drawscreen(network, 0, 0);
 		}
 
 		if(listbox->select != NULL)
@@ -443,7 +443,7 @@ void screennetwork_adapterext(int mode, char* interface)
 					//nethidden(ipaddresse, netmask, gateway, dnsserver1, dnsserver2, broadcast, YES);
 					nethidden(ipaddresse, netmask, gateway, dnsserver1, dnsserver2, YES);
 
-				drawscreen(network, 0);
+				drawscreen(network, 0, 0);
 				tmp_dhcp = atoi(listbox->select->ret);
 			}
 			else if(ostrcmp(listbox->select->name, "ipaddresse") == 0)
@@ -548,7 +548,7 @@ start:
 		inetworknode = inetworknode->next;
 	}
 
-	drawscreen(interfacelist, 0);
+	drawscreen(interfacelist, 0, 0);
 	addscreenrc(interfacelist, listbox);
 
 	tmp = listbox->select;
@@ -614,7 +614,7 @@ void screennetwork_wlan()
 	changeinput(key, wkey);
 	free(wkey); wkey = NULL;
 
-	drawscreen(wlan, 0);
+	drawscreen(wlan, 0, 0);
 	addscreenrc(wlan, listbox);
 
 	tmp = listbox->select;
@@ -643,7 +643,7 @@ void screennetwork_wlan()
 				listbox->aktline = 1;
 				listbox->aktpage = -1;
 				tmp = tmp2;
-				drawscreen(wlan, 0);
+				drawscreen(wlan, 0, 0);
 			}
 			else
 				break;
@@ -676,7 +676,7 @@ void screennetwork_wlan()
 				listbox->aktline = 1;
 				listbox->aktpage = -1;
 				tmp = tmp2;
-				drawscreen(wlan, 0);
+				drawscreen(wlan, 0, 0);
 			}
 			else
 			{
@@ -699,7 +699,7 @@ void screennetwork_wlan()
 					textbox(_("Message"), _("WLAN started.\n You can now configure the new interface."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 				else
 					textbox(_("Message"), _("WLAN not started,\nPlease check your config."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
-				drawscreen(wlan, 0);
+				drawscreen(wlan, 0, 0);
 			}
 		}
 
@@ -721,7 +721,7 @@ void screennetwork_wlan()
 			tmp1 = addlistbox(wlan, listbox, tmp1, 1);
 			if(tmp1 != NULL)
 				changetext(tmp1, _("searching..."));
-			drawscreen(wlan, 0);
+			drawscreen(wlan, 0, 0);
 
 			system("wlan.sh notstart");
 			tmpstr = command("iwlist scanning | grep 'ESSID:' | sed 's/ESSID:\\\"\\\"/ESSID:\\\"unknown\\\"/' | sed 's/[ ]*ESSID://' | tr -d \\\"");
@@ -743,14 +743,14 @@ void screennetwork_wlan()
 				free(splitret); splitret = NULL;
 				free(tmpstr); tmpstr = NULL;
 			}
-			drawscreen(wlan, 0);
+			drawscreen(wlan, 0, 0);
 		}
 
 		if(rcret == getrcconfigint("rcyellow", NULL) && scan == 0)
 		{
 			system("killall wpa_supplicant; sleep 2; killall -9 wpa_supplicant");
 			textbox(_("Message"), _("WLAN now stopped"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
-			drawscreen(wlan, 0);
+			drawscreen(wlan, 0, 0);
 		}
 		
 		if(rcret == getrcconfigint("rcblue", NULL) && scan == 0)
@@ -758,7 +758,7 @@ void screennetwork_wlan()
 			tmpstr = readfiletomem("/tmp/wlan.log", 0);
 			textbox(_("WLAN LOG"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 			free(tmpstr); tmpstr = NULL;
-			drawscreen(wlan, 0);
+			drawscreen(wlan, 0, 0);
 		}
 	}
 

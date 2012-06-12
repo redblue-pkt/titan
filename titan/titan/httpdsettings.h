@@ -62,7 +62,7 @@ void screenhttpdsettings()
 			rguidport->input = ostrcat("0", rguidport->input, 0, 1);
 	}
 
-	drawscreen(httpdsettings, 0);
+	drawscreen(httpdsettings, 0, 0);
 	addscreenrc(httpdsettings, listbox);
 
 	tmp = listbox->select;

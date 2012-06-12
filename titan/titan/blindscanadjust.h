@@ -64,7 +64,7 @@ void screenblindscanadjust()
 			stepsignalrate->input = ostrcat("0", stepsignalrate->input, 0, 1);
 	}
 
-	drawscreen(blindscan, 0);
+	drawscreen(blindscan, 0, 0);
 	addscreenrc(blindscan, listbox);
 
 	tmp = listbox->select;

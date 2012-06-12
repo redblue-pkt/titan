@@ -131,7 +131,7 @@ void screennetwork_inadyn()
 	changeinput(host, ihost);
 	free(ihost); ihost = NULL;
 
-	drawscreen(inadyn, 0);
+	drawscreen(inadyn, 0, 0);
 	addscreenrc(inadyn, listbox);
 
 	tmp = listbox->select;
@@ -156,7 +156,7 @@ void screennetwork_inadyn()
 					textbox(_("Message"), _("DYNDNS started."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 				else
 					textbox(_("Message"), _("DYNDNS not started,\nPlease check your config."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
-				drawscreen(inadyn, 0);
+				drawscreen(inadyn, 0, 0);
 			}
 		}
 
@@ -164,7 +164,7 @@ void screennetwork_inadyn()
 		{
 			system("killall inadyn; sleep 2; killall -9 inadyn");
 			textbox(_("Message"), _("DYNDNS now stopped"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
-			drawscreen(inadyn, 0);
+			drawscreen(inadyn, 0, 0);
 		}
 	}
 

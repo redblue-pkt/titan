@@ -60,7 +60,7 @@ void screenaudiotrack()
 
 	if(treffer == 0) listbox->aktline = 1;
 
-	drawscreen(audiotrack, 0);
+	drawscreen(audiotrack, 0, 0);
 	addscreenrc(audiotrack, listbox);
 
 	while(1)

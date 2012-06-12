@@ -124,7 +124,7 @@ void screenpowerofftimer(void)
 	listbox->aktline = 1;
 	listbox->aktpage = 1;
 
-	drawscreen(screen, 0);
+	drawscreen(screen, 0, 0);
 	addscreenrc(screen, listbox);
 
 	struct skin* tmp = NULL;
@@ -172,7 +172,7 @@ void screenpowerofftimer(void)
 				debug(100, "blue: %s %d", tmpstr, min);
 				changeinput(minutes, tmpstr);
 				free(tmpstr);
-				drawscreen(screen, 0);
+				drawscreen(screen, 0, 0);
 			}
 		}
 	}

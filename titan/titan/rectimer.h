@@ -1020,9 +1020,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 	while(1)
 	{
 		addscreenrc(rectimerext, tmp);
-		status.screencalc = 2;
-		rcret = waitrc(rectimerext, 0, 0);
-		status.screencalc = 0;
+		rcret = waitrc(rectimerext, 0, 2);
 		tmp = listbox->select;
 
 		if(listbox->select != NULL && listbox->select->ret != NULL && ostrcmp(listbox->select->name, "justplay") == 0)
@@ -1035,7 +1033,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 		{
 			recrepeatehidden(tmprepeate, repeatetype, day, mon, tue, wed, thur, fri, sat, sun);
 		}
-		drawscreen(rectimerext, 0);
+		drawscreen(rectimerext, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
@@ -1052,7 +1050,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 					changeinput(listbox->select, tmpstr);
 				free(tmpstr); tmpstr = NULL;
 
-				drawscreen(rectimerext, 0);
+				drawscreen(rectimerext, 0, 0);
 				continue;
 			}
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "channel") == 0)
@@ -1098,7 +1096,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 					changeinput(listbox->select, ((struct channel*)recchannel->handle)->name);
 				}
 
-				drawscreen(rectimerext, 0);
+				drawscreen(rectimerext, 0, 0);
 				continue;
 			}
 
@@ -1332,7 +1330,7 @@ start:
 		b4->hidden = YES;
 	}
 
-	drawscreen(recordtimer, 0);
+	drawscreen(recordtimer, 0, 0);
 	addscreenrc(recordtimer, listbox);
 
 	while(1)

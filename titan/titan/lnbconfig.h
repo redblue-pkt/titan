@@ -177,15 +177,14 @@ void screenlnb(char* feshortname, char* lnbnr)
         free(tmpstr); tmpstr = NULL;
 	free(lnbnr); lnbnr = NULL;
 
-	drawscreen(lnbscreen, 0);
+	drawscreen(lnbscreen, 0, 0);
 	addscreenrc(lnbscreen, listbox);
 
 	tmp = listbox->select;
 	while(1)
 	{
 		addscreenrc(lnbscreen, tmp);
-		status.screencalc = 2;
-		rcret = waitrc(lnbscreen, 0, 0);
+		rcret = waitrc(lnbscreen, 0, 2);
 		tmp = listbox->select;
 
 		if(listbox->select != NULL && listbox->select->name != NULL && ostrstr(listbox->select->name, "lnb_loftype") != NULL && (rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)))
@@ -208,8 +207,7 @@ void screenlnb(char* feshortname, char* lnbnr)
 				addconfigscreentmpcheck(satcrfrequ2->name, satcrfrequ2, "0000");
 		}
 
-		status.screencalc = 0;
-		drawscreen(lnbscreen, 0);
+		drawscreen(lnbscreen, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
@@ -229,7 +227,6 @@ void screenlnb(char* feshortname, char* lnbnr)
 	changename(satcrfrequ1, "satcrfrequ1");
 	changename(satcrfrequ2, "satcrfrequ2");
 
-	status.screencalc = 0;
 	delconfigtmpall();
 	delownerrc(lnbscreen);
 	clearscreen(lnbscreen);

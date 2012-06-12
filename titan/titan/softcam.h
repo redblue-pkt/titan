@@ -253,7 +253,7 @@ void screensoftcam()
 	// add emu's to selectionbox
 	fillmenubox();
 
-	drawscreen(softcam, 0);
+	drawscreen(softcam, 0, 0);
 	addscreenrc(softcam, listbox);
 
 	tmp = listbox->select;
@@ -268,24 +268,24 @@ void screensoftcam()
 		if(rcret == getrcconfigint("rcred", NULL)){
 			// deactivate emu
 			deactivate(tmp->name);
-			drawscreen(softcam, 0);
+			drawscreen(softcam, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL)){
 			// restart emu
 			restartcam(tmp->name);
-			drawscreen(softcam, 0);
+			drawscreen(softcam, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcyellow", NULL)){
 			// refrech screen
 			readecminfo(labelecminfo);
 			readmenu();
 			fillmenubox();
-			drawscreen(softcam, 0);
+			drawscreen(softcam, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcblue", NULL)){
 			// activate emu
 			activate(tmp->name);
-			drawscreen(softcam, 0);
+			drawscreen(softcam, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcok", NULL)){
 			// start/stop emu, depending if emu already runs
@@ -295,12 +295,12 @@ void screensoftcam()
 			else{
 				startcam(tmp->name);
 			}
-			drawscreen(softcam, 0);
+			drawscreen(softcam, 0, 0);
 		}
 		if(rcret == RCTIMEOUT){
 			// update ecminfo
 			readecminfo(labelecminfo);
-			drawscreen(softcam, 0);
+			drawscreen(softcam, 0, 0);
 		}
         }
 

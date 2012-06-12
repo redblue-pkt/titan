@@ -52,7 +52,7 @@ int screenlistedit(int list, struct channel* chnode)
 		editmode->hidden = NO;
 	}
 
-	drawscreen(listedit, 0);
+	drawscreen(listedit, 0, 0);
 	addscreenrc(listedit, listbox);
 
 	while(1)

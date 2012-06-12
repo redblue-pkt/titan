@@ -270,7 +270,7 @@ void oshutdown(int exitcode, int flag)
 	{
 		changepic(logo, tmpstr);
 		tmpstr = NULL;
-		drawscreen(logo, 0);
+		drawscreen(logo, 0, 0);
 	}
 	else
 		clearfball();
@@ -716,13 +716,13 @@ firstwizzardstep1:
 		
 		writevfd("");
 		status.updatevfd = START;
-		drawscreen(skin, 0);
+		drawscreen(skin, 0, 0);
 		addconfig("nofirstwizzard", "1");
 	}
 	else
 	{
 		// workaround, remove bootlogo on startup
-		drawscreen(skin, 0);
+		drawscreen(skin, 0, 0);
 
 		//check servicestart
 		if(serviceret != 21) // no message if startchannel empty
@@ -854,7 +854,7 @@ starterror:
 	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, _("Automatic stop in 5 seconds."), 1, 0);
 	changetext(starterror, _(tmpstr));
-	drawscreen(starterror, 0);
+	drawscreen(starterror, 0, 0);
 	sleep(5);
 	free(tmpstr);
 	return 100;

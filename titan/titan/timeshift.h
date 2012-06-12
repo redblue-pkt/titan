@@ -187,7 +187,7 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
  			}
 		}
 		
-		drawscreen(timeshift, 0);
+		drawscreen(timeshift, 0, 0);
 		sleep (1);
 		if(status.timeshiftseek == 999999) {
 			timeout = timeout - 1;

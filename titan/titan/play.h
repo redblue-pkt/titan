@@ -14,7 +14,7 @@ start:
 	tmpstr = getpolicy();
 	changetext(playpolicy, _(tmpstr));
 	free(tmpstr); tmpstr = NULL;
-	drawscreen(playpolicy, 0);
+	drawscreen(playpolicy, 0, 0);
 
 	while(1)
 	{
@@ -42,7 +42,7 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 	{
 		clearscreen(playinfobar);
 		clearscreen(playinfobarpic);
-		drawscreen(skin, 0);
+		drawscreen(skin, 0, 0);
 		return;
 	}
 
@@ -95,8 +95,8 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 	changetext(sreverse, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 
-	drawscreen(playinfobar, 0);
-	drawscreen(playinfobarpic, 0);
+	drawscreen(playinfobar, 0, 0);
+	drawscreen(playinfobarpic, 0, 0);
 }
 
 void screenplaytracklist(int mode, int playertype, int flag)
@@ -175,7 +175,7 @@ void screenplaytracklist(int mode, int playertype, int flag)
 	listbox->aktpage = -1;
 
 	screenplayinfobar(NULL, 1, playertype, flag);
-	drawscreen(track, 0);
+	drawscreen(track, 0, 0);
 	addscreenrc(track, listbox);
 
 	while(1)
@@ -234,7 +234,7 @@ void playrcgreen(char* file, int playinfobarstatus, int playertype, int flag)
 		screenvideomode(2);
 	else
 		screenvideomode(1);
-	drawscreen(skin, 0);
+	drawscreen(skin, 0, 0);
 	if(playinfobarstatus > 0)
 		screenplayinfobar(file, 0, playertype, flag);
 }
@@ -245,7 +245,7 @@ void playrcblue(char* file, int playinfobarstatus, int playertype, int flag)
 
 	screenplayinfobar(file, 1, playertype, flag);
 	screenpowerofftimer();
-	drawscreen(skin, 0);
+	drawscreen(skin, 0, 0);
 	if(playinfobarstatus > 0)
 		screenplayinfobar(file, 0, playertype, flag);
 }
@@ -258,7 +258,7 @@ void playrcok(char* file, int playinfobarstatus, int playertype, int flag)
 	status.playfile = ostrcat(file, NULL, 0, 0);
 
 	screenplaypolicy(file, 1);
-	drawscreen(skin, 0);
+	drawscreen(skin, 0, 0);
 	if(playinfobarstatus > 0)
 		screenplayinfobar(file, 0, playertype, flag);
 }
@@ -269,7 +269,7 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 
 	screenplayinfobar(file, 1, playertype, flag);
 	screenvideosettings();
-	drawscreen(skin, 0);
+	drawscreen(skin, 0, 0);
 	if(playinfobarstatus > 0)
 		screenplayinfobar(file, 0, playertype, flag);
 }
@@ -712,7 +712,7 @@ playerstart:
 			}
 		}
 
-		drawscreen(skin, 0);
+		drawscreen(skin, 0, 0);
 		playwritevfd(file);
 		if(playertype == 1)
 			rcret = playerstartts(file, 0);

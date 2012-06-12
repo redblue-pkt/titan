@@ -3753,7 +3753,7 @@ void switchvideomode()
 			changefbresolution(tmpstr);
 		}
 		*/
-		drawscreen(playpolicy, 0);
+		drawscreen(playpolicy, 0, 0);
 		while(1)
 		{
 			rcret = waitrc(playpolicy, 5000, 0);

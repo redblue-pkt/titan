@@ -33,7 +33,7 @@ void screensystem_info(int mode)
 		free(tmpstr1); tmpstr1 = NULL;
 		free(tmpstr); tmpstr = NULL;
 	}
-	drawscreen(systeminfo, 0);
+	drawscreen(systeminfo, 0, 0);
 
 	while(1)
 	{

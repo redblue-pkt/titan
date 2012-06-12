@@ -8,7 +8,7 @@ void screensystem_update(int mode)
 
 	status.hangtime = 99999;
 	struct skin* systemupdate = getscreen("loading");
-	drawscreen(systemupdate, 0);
+	drawscreen(systemupdate, 0, 0);
 
 	char* tmpstr = NULL;
 
@@ -164,7 +164,7 @@ void screensystem_update(int mode)
 				free(cmd),cmd = NULL;
 			}
 
-			drawscreen(systemupdate, 0);
+			drawscreen(systemupdate, 0, 0);
 			getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 1, NULL);
 			addscreenrc(systemupdate, filelist);
 			continue;
@@ -312,7 +312,7 @@ void screensystem_update(int mode)
 				if(msgtxt == NULL)
 				{
 					textbox(_("Message"), _("Error file not supported"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-					drawscreen(systemupdate, 0);
+					drawscreen(systemupdate, 0, 0);
 					getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 1, NULL);
 					addscreenrc(systemupdate, filelist);
 					continue;
@@ -326,7 +326,7 @@ void screensystem_update(int mode)
 				else
 				{
 					debug(40, "update canceled cmd: %s", cmd);
-					drawscreen(systemupdate, 0);
+					drawscreen(systemupdate, 0, 0);
 					getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 1, NULL);
 					addscreenrc(systemupdate, filelist);
 					continue;

@@ -39,7 +39,7 @@ void screenepgscanlist()
 
 	createepgscanlist(scanlist, listbox);
 
-	drawscreen(scanlist, 0);
+	drawscreen(scanlist, 0, 0);
 	addscreenrc(scanlist, listbox);
 
 	while(1)
@@ -55,7 +55,7 @@ void screenepgscanlist()
 				listbox->aktpage = -1;
 				delmarkedscreennodes(scanlist, 1);
 				createepgscanlist(scanlist, listbox);
-				drawscreen(scanlist, 0);
+				drawscreen(scanlist, 0, 0);
 			}
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL))
@@ -80,7 +80,7 @@ void screenepgscanlist()
 				free(tmpstr); tmpstr = NULL;
 			}
 
-			drawscreen(scanlist, 0);
+			drawscreen(scanlist, 0, 0);
 		}
 	}
 
@@ -155,7 +155,7 @@ void screenepgsettings()
 	addchoicebox(epgsave, "2", _("never"));
 	setchoiceboxselection(epgsave, getconfig("epgsave", NULL));
 
-	drawscreen(epgsettings, 0);
+	drawscreen(epgsettings, 0, 0);
 	addscreenrc(epgsettings, listbox);
 
 	tmp = listbox->select;
@@ -193,20 +193,20 @@ void screenepgsettings()
 					changeinput(listbox->select, ret);
 				free(ret);
 
-				drawscreen(epgsettings, 0);
+				drawscreen(epgsettings, 0, 0);
 			}
 		}
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			resetepg();
 			textbox(_("Message"), _("EPG resetet and now clear."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-			drawscreen(epgsettings, 0);
+			drawscreen(epgsettings, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcyellow", NULL))
 		{
 			clearscreen(epgsettings);
 			screenepgscanlist();
-			drawscreen(epgsettings, 0);
+			drawscreen(epgsettings, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcblue", NULL))
 		{
@@ -215,7 +215,7 @@ void screenepgsettings()
 			if(log == NULL) log = ostrcat("No log infos available.", NULL, 0, 0);
 			textbox(_("EPG Scan Log"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
 			free(log); log = NULL;
-			drawscreen(epgsettings, 0);
+			drawscreen(epgsettings, 0, 0);
 		}
 	}
 

@@ -1107,10 +1107,6 @@ struct status
 	// if set to a value != 0, rcwait returns this number
 	int rckey;
 	struct skin* skinerr;
-	// 0 calc and draw
-	// 1 calc only without hidden nodes
-	// 2 calc only with hidden nodes
-	int screencalc;
 	// 0 deaktiv
 	// 1 struct filelist filled
 	// 2 struct filelist and show filesize
@@ -1237,7 +1233,7 @@ struct fb
 struct rc
 {
 	int key;
-	void (*rcfunc)(struct skin*, struct skin*, int flag);
+	void (*rcfunc)(struct skin*, struct skin*, int screencalc, int flag);
 	struct skin *screen;
 	struct skin *screennode;
 	struct skin *owner;

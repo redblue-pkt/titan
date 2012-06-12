@@ -39,7 +39,7 @@ void screenmediadbsettings()
 	addchoicebox(mediadbscantimeout, "50", _("older 50 day"));
 	setchoiceboxselection(mediadbscantimeout, getconfig("mediadbscantimeout", NULL));
 
-	drawscreen(mediadbsettings, 0);
+	drawscreen(mediadbsettings, 0, 0);
 	addscreenrc(mediadbsettings, listbox);
 
 	tmp = listbox->select;
@@ -81,7 +81,7 @@ void screenmediadbsettings()
 				}
 				free(ret);
 
-				drawscreen(mediadbsettings, 0);
+				drawscreen(mediadbsettings, 0, 0);
 			}
 		}
 	}

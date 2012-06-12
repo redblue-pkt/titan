@@ -20,7 +20,7 @@ int screenpincheck(int type, char* pin)
 	changemask(pincheck, "0000");
 	changeinput(pincheck, "0000");
 
-	drawscreen(pincheck, 0);
+	drawscreen(pincheck, 0, 0);
 	addscreenrc(pincheck, pincheck);
 
 	while(1)
@@ -49,7 +49,7 @@ int screenpincheck(int type, char* pin)
 
 	delownerrc(pincheck);
 	clearscreen(pincheck);
-	drawscreen(skin, 0);
+	drawscreen(skin, 0, 0);
 	return ret;
 }
 
@@ -91,7 +91,7 @@ void screenmenuprotect()
 		node = node->next;
 	}
 
-	drawscreen(menuprotect, 0);
+	drawscreen(menuprotect, 0, 0);
 	addscreenrc(menuprotect, listbox);
 
 	tmp = listbox->select;
@@ -172,7 +172,7 @@ void screenpin()
 	addchoicebox(menuprotect, "1", _("yes"));
 	setchoiceboxselection(menuprotect, getconfig("menuprotect", NULL));
 
-	drawscreen(pin, 0);
+	drawscreen(pin, 0, 0);
 	addscreenrc(pin, listbox);
 
 	tmp = listbox->select;
@@ -187,7 +187,7 @@ void screenpin()
 		{
 			clearscreen(pin);
 			screenmenuprotect();
-			drawscreen(pin, 0);
+			drawscreen(pin, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcok", NULL))
 		{

@@ -1,4 +1,3 @@
-//#include <cmath>
 #ifndef ROTORCALC_H
 #define ROTORCALC_H
 

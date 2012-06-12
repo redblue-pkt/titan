@@ -7,7 +7,6 @@
 //flag 3 = no framebuffer lock and no blit
 void screenmute(struct skin* screen, struct skin* node, int flag)
 {
-	int tmpscreencalc = 0;
 	struct skin* framebuffer = getscreen("framebuffer");
 	struct skin* mute = getscreen("mute");
 
@@ -29,13 +28,10 @@ void screenmute(struct skin* screen, struct skin* node, int flag)
 		if(status.drawallwaysbg[0] != NULL)
 			free(status.drawallwaysbg[0]);
 		status.drawallwaysbg[0] = savescreen(mute);
-		tmpscreencalc = status.screencalc;
-		status.screencalc = 0;
 		if(flag == 2 || flag == 3)
-			drawscreen(mute, 2);
+			drawscreen(mute, 0, 2);
 		else
-			drawscreen(mute, 0);
-		status.screencalc = tmpscreencalc;
+			drawscreen(mute, 0, 0);
 		status.drawallways[0] = mute;
 	}
 	

@@ -218,7 +218,7 @@ int flushrc(unsigned int timeout)
 	return 0;
 }
 
-int waitrc(struct skin* owner, unsigned int timeout, int flag)
+int waitrc(struct skin* owner, unsigned int timeout, int screencalc)
 {
 	debug(1000, "in");
 	fd_set rfds;
@@ -295,9 +295,9 @@ int waitrc(struct skin* owner, unsigned int timeout, int flag)
 			if(node != NULL && node->rcfunc != NULL) 
 			{
 				if(fromthread == 0)
- 					node->rcfunc(node->screen, node->screennode, 0);
+ 					node->rcfunc(node->screen, node->screennode, screencalc, 0);
 				else
- 					node->rcfunc(node->screen, node->screennode, 2);
+ 					node->rcfunc(node->screen, node->screennode, screencalc, 2);
 			}
 			
 			ret = rcdata.code;
@@ -320,9 +320,9 @@ int waitrc(struct skin* owner, unsigned int timeout, int flag)
 			if(node != NULL && node->rcfunc != NULL) 
 			{
 				if(fromthread == 0)
- 					node->rcfunc(node->screen, node->screennode, 0);
+ 					node->rcfunc(node->screen, node->screennode, screencalc, 0);
 				else
- 					node->rcfunc(node->screen, node->screennode, 2);
+ 					node->rcfunc(node->screen, node->screennode, screencalc, 2);
 			}
 			if(longpress > 0)
 				ret = rcdata.code;
@@ -338,9 +338,9 @@ int waitrc(struct skin* owner, unsigned int timeout, int flag)
 			if(node != NULL && node->rcfunc != NULL) 
 			{
 				if(fromthread == 0)
- 					node->rcfunc(node->screen, node->screennode, 0);
+ 					node->rcfunc(node->screen, node->screennode, screencalc, 0);
 				else
- 					node->rcfunc(node->screen, node->screennode, 2);
+ 					node->rcfunc(node->screen, node->screennode, screencalc, 2);
 			}
 			ret = status.rckey;
 			status.rckey = 0;

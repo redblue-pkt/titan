@@ -34,7 +34,7 @@ void screenhelp(struct skin* node)
 	free(tmpstr); tmpstr = NULL;
 	free(buf); buf = NULL;
 
-	drawscreen(help, 0);
+	drawscreen(help, 0, 0);
 	addscreenrc(help, textbox);
 	delrc(getrcconfigint("rchelp", NULL), help, textbox);
 

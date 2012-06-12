@@ -424,7 +424,7 @@ start:
 		node = node->next;
 	}
 
-	drawscreen(playlist, 0);
+	drawscreen(playlist, 0, 0);
 	if(movesel == NULL) addscreenrc(playlist, listbox);
 
 	while(1)
@@ -459,7 +459,7 @@ start:
 					addscreenrc(playlist, listbox);
 					movesel = NULL;
 				}
-				drawscreen(playlist, 0);
+				drawscreen(playlist, 0, 0);
 			}
 		}
 		if(movesel == NULL && rcret == getrcconfigint("rcgreen", NULL))

@@ -454,7 +454,7 @@ void clearscreen(struct skin* node);
 struct skin* getscreennode(struct skin *node, char* nodename);
 struct skin* getscreen(char* screenname);
 int calcrheight(struct skin* node, struct skin* parent);
-int drawscreen(struct skin* node, int flag);
+int drawscreen(struct skin* node, int screencalc, int flag);
 struct skin* addscreennode(struct skin* node, char* line, struct skin* last);
 int changetext(struct skin* node, char* text);
 int changetext2(struct skin* node, char* text);

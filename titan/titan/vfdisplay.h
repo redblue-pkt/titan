@@ -34,7 +34,7 @@ void screenvfdisplay()
 	addchoicebox(vfdstandby, "1", _("off"));
 	setchoiceboxselection(vfdstandby, getconfig("vfdisplaystandby", NULL));
 
-	drawscreen(vfdisplay, 0);
+	drawscreen(vfdisplay, 0, 0);
 	addscreenrc(vfdisplay, listbox);
 
 	tmp = listbox->select;
@@ -54,7 +54,7 @@ void screenvfdisplay()
 				if(brightness->progresssize > 100) brightness->progresssize = 100;
 				if(vfdbrightness > 7) vfdbrightness = 7;
 				setvfdbrightness(vfdbrightness);
-				drawscreen(vfdisplay, 0);
+				drawscreen(vfdisplay, 0, 0);
 			}
 			if(rcret == getrcconfigint("rcleft", NULL))
 			{
@@ -63,7 +63,7 @@ void screenvfdisplay()
 				if(brightness->progresssize < 0) brightness->progresssize = 0;
 				if(vfdbrightness < 0) vfdbrightness = 0;
 				setvfdbrightness(vfdbrightness);
-				drawscreen(vfdisplay, 0);
+				drawscreen(vfdisplay, 0, 0);
 			}
 		}
 		if(listbox->select != NULL && ostrcmp(listbox->select->name, "standby") == 0)
@@ -74,7 +74,7 @@ void screenvfdisplay()
 				standby->progresssize = (int)ceil(((float)vfdstandbybrightness * 14.28));
 				if(standby->progresssize > 100) standby->progresssize = 100;
 				if(vfdstandbybrightness > 7) vfdstandbybrightness = 7;
-				drawscreen(vfdisplay, 0);
+				drawscreen(vfdisplay, 0, 0);
 			}
 			if(rcret == getrcconfigint("rcleft", NULL))
 			{
@@ -82,7 +82,7 @@ void screenvfdisplay()
 				standby->progresssize = (int)ceil(((float)vfdstandbybrightness * 14.28));
 				if(standby->progresssize < 0) standby->progresssize = 0;
 				if(vfdstandbybrightness < 0) vfdstandbybrightness = 0;
-				drawscreen(vfdisplay, 0);
+				drawscreen(vfdisplay, 0, 0);
 			}
 		}
 		if(rcret == getrcconfigint("rcok", NULL))
