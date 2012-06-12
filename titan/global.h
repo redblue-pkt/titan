@@ -1,6 +1,52 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+struct blacklist* readblacklist(char* filename)
+{
+  char* tmpstr = NULL;
+  struct splitstr* ret = NULL;
+  int i = 0, count = 0;
+  
+  newnode = (struct blacklist*)calloc(1, sizeof(struct blacklist));
+	if(newnode == NULL)
+	{
+		err("no memory");
+		return NULL;
+	}
+  
+  tmpstr = readfiletomem(filename, 1);
+  if(tmpstr == NULL)
+  {
+    free(newnode); newnode = NULL;
+    return NULL;
+  }
+  
+  ret = strsplit(tmpstr, "\n", &count);
+  if(ret == NULL)
+  {
+    free(tmpstr); tmpstr = NULL;
+    free(newnode); newnode = NULL;
+    return NULL;
+  }
+  
+  newnode->count = count;
+  newnode->strsplit = ret;
+  newnode->file = tmpstr;
+  
+  return newnode;
+}
+
+freeblacklist(struct blacklist* node)
+{
+  if(node != NULL)
+  {
+    free(node->file); node->file = NULL;
+    free(node->splitstr); node->splitstr = NULL;
+    node->count = 0;
+    free(node); node = NULL; 
+  }
+}
+
 unsigned int gethash(char* str)
 {
 	unsigned int hash = 0;
