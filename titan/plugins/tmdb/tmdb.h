@@ -312,7 +312,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 				tnode->mvi = ostrcat(tnode->mvi, tnode->imdbid, 1, 0);
 				tnode->mvi = ostrcat(tnode->mvi, "_backdrop.mvi", 1, 0);
 				
-				if(!file_exits(tnode->mvi))
+				if(!file_exist(tnode->mvi))
 				{
 					char* cmd = NULL;
 					cmd = ostrcat(cmd, "jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
