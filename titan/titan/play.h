@@ -628,8 +628,16 @@ void playstartservice()
 {
 	char* tmpstr = NULL;
 
-	tmpstr = ostrcat(status.aktservice->channellist, NULL, 0, 0);
-	servicecheckret(servicestart(status.aktservice->channel, tmpstr, NULL, 3), 0);
+	if(status.aktservice->channel != NULL)
+	{
+		tmpstr = ostrcat(status.aktservice->channellist, NULL, 0, 0);
+		servicecheckret(servicestart(status.aktservice->channel, tmpstr, NULL, 3), 0);
+	}
+	else
+	{
+		tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
+		servicecheckret(servicestart(status.lastservice->channel, tmpstr, NULL, 0), 0);
+	}
 	free(tmpstr); tmpstr = NULL;
 }
 
