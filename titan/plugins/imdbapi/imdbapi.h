@@ -140,6 +140,7 @@ struct imdbapi* getimdbapi(char* title, int flag, int flag1)
 
 		free(tmpstr); tmpstr = NULL;
 
+		debug(133, "----------------------imdbapi start----------------------");
 		debug(133, "id: %s", imdbapi->id);
 		debug(133, "title: %s", imdbapi->title);
 		debug(133, "genre: %s", imdbapi->genre);
@@ -154,6 +155,7 @@ struct imdbapi* getimdbapi(char* title, int flag, int flag1)
 		debug(133, "runtime: %s", imdbapi->runtime);
 		debug(133, "year: %s", imdbapi->year);
 		debug(133, "rated: %s", imdbapi->rated);
+		debug(133, "----------------------imdbapi end----------------------");
 	}
 
 	return imdbapi;

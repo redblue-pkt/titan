@@ -68,7 +68,14 @@ start:
 			return NULL;
 		}
 
-		imdb->id = string_resub("<a href=\"/title/tt", "/", tmpstr, 0);
+		if(ostrstr(tmpstr, "<b>Keine Treffer.</b>") != NULL)
+		{
+			debug(133, "<b>Keine Treffer.</b>");
+			free(tmpstr); tmpstr = NULL;
+			return NULL;
+		}
+		else
+			imdb->id = string_resub("<a href=\"/title/tt", "/", tmpstr, 0);
 
 // todo - use Meistgesuchte Titel (default)
 // Meistgesuchte Titel
@@ -132,15 +139,22 @@ start:
 
 	if(imdb != NULL)
 	{
-		tmpsearch = ostrcat("/title/tt", NULL, 0, 0);
-		tmpsearch = ostrcat(tmpsearch, imdb->id, 1, 0);
-
-		tmpstr = gethttp("www.imdb.de", tmpsearch, 80, NULL, NULL, NULL, 0);
-		
-		debug(133, "tmpsearch: %s", tmpsearch);
-//		debug(133, "tmpstr: %s", tmpstr);
-					
-		free(tmpsearch); tmpsearch = NULL;
+		if(imdb->id == NULL)	
+			free(tmpstr),tmpstr = NULL;
+		else
+		{
+			debug(133, "imdb->id: %s", imdb->id);
+			
+			tmpsearch = ostrcat("/title/tt", NULL, 0, 0);
+			tmpsearch = ostrcat(tmpsearch, imdb->id, 1, 0);
+	
+			tmpstr = gethttp("www.imdb.de", tmpsearch, 80, NULL, NULL, NULL, 0);
+			
+			debug(133, "tmpsearch: %s", tmpsearch);
+	//		debug(133, "tmpstr: %s", tmpstr);
+						
+			free(tmpsearch); tmpsearch = NULL;
+		}
 	}
 
 	if(tmpstr != NULL)
@@ -242,7 +256,7 @@ start:
 		}
 	}
 
-	if(imdb != NULL)
+	if(imdb != NULL && imdb->id == NULL)
 	{
 		tmpsearch = ostrcat("/title/tt", NULL, 0, 0);
 		tmpsearch = ostrcat(tmpsearch, imdb->id, 1, 0);
@@ -348,10 +362,12 @@ start:
 		}
 	}
 
-	imdb->id = ostrcat("tt", imdb->id, 0, 1);
+	if(imdb->id != NULL)
+		imdb->id = ostrcat("tt", imdb->id, 0, 1);
 
 	free(tmpstr); tmpstr = NULL;
-				
+
+	debug(133, "----------------------imdb start----------------------");
 	debug(133, "id: %s", imdb->id);
 	debug(133, "title: %s", imdb->title);
 	debug(133, "genre: %s", imdb->genre);
@@ -362,7 +378,8 @@ start:
 	debug(133, "plot: %s", imdb->plot);
 	debug(133, "poster: %s", imdb->poster);
 	debug(133, "thumb: %s", imdb->thumb);
-			
+	debug(133, "----------------------imdb end----------------------");
+
 	return imdb;
 }
 
