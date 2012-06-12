@@ -45,9 +45,7 @@ struct mediadbfilter* mediadbfilter = NULL;
 struct mediadbcategory* mediadbcategory = NULL;
 struct mediadb* mediadb = NULL;
 struct mediadbcache* mediadbcache[MEDIADBCACHEMAX] = {NULL};
-struct tmdb* tmdb = NULL;
 struct imdb* imdb = NULL;
-struct imdbapi* imdbapi = NULL;
 
 #ifdef SH4
 #include "sh4port.h"

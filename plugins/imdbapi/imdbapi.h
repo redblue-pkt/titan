@@ -2,36 +2,36 @@
 #define IMDBAPI_H
 
 #define TMPIMDBAPIPIC "/tmp/tmpimdbapi.jpg"
-extern struct imdbapi* imdbapi;
 
-void freeimdbapi(struct imdbapi* node)
+void freeimdbapi(struct imdbapi** node)
 {
-	if(node == NULL) return;
+	if(node == NULL || *node == NULL) return;
 
-	free(node->title); node->title = NULL;
-	free(node->year); node->year = NULL;
-	free(node->rated); node->rated = NULL;
-	free(node->released); node->released = NULL;
-	free(node->genre); node->genre = NULL;
-	free(node->director); node->director = NULL;
-	free(node->writer); node->writer = NULL;
-	free(node->actors); node->actors = NULL;
-	free(node->plot); node->plot = NULL;
-	free(node->poster); node->poster = NULL;
-	free(node->runtime); node->runtime = NULL;
-	free(node->rating); node->rating = NULL;
-	free(node->votes); node->votes = NULL;
-	free(node->id); node->id = NULL;
+	free((*node)->title); (*node)->title = NULL;
+	free((*node)->year); (*node)->year = NULL;
+	free((*node)->rated); (*node)->rated = NULL;
+	free((*node)->released); (*node)->released = NULL;
+	free((*node)->genre); (*node)->genre = NULL;
+	free((*node)->director); (*node)->director = NULL;
+	free((*node)->writer); (*node)->writer = NULL;
+	free((*node)->actors); (*node)->actors = NULL;
+	free((*node)->plot); (*node)->plot = NULL;
+	free((*node)->poster); (*node)->poster = NULL;
+	free((*node)->runtime); (*node)->runtime = NULL;
+	free((*node)->rating); (*node)->rating = NULL;
+	free((*node)->votes); (*node)->votes = NULL;
+	free((*node)->id); (*node)->id = NULL;
 	unlink(TMPIMDBAPIPIC);
 
-	free(node); node = NULL;
+	free(*node); *node = NULL;
 }
 
 //flag 0 = title search
 //flag 1 = imdbid search
 //flag1 0 = save in tmp
-//flag1 1 = save in mediadbpath
-struct imdbapi* getimdbapi(char* title, int flag, int flag1)
+//flag1: 1 = save pic in mediadb path if pic not exist
+//flag2: 2 = save no pic
+struct imdbapi* getimdbapi(struct imdbapi* first, char* title, int flag, int flag1)
 {
 	struct imdbapi* imdbapi = NULL;
 	char* tmpstr = NULL, *ret = NULL;
@@ -65,33 +65,33 @@ struct imdbapi* getimdbapi(char* title, int flag, int flag1)
 		}
 		free(ret); ret = NULL;
 
-		imdbapi = (struct imdbapi*)calloc(1, sizeof(struct imdbapi));
-		if(imdbapi == NULL)
+		*first = (struct imdbapi*)calloc(1, sizeof(struct imdbapi));
+		if(*first == NULL)
 		{
 			err("no mem");
 			free(tmpstr); tmpstr = NULL;
 			return NULL;
 		}
 
-		imdbapi->title = getxmlentry(tmpstr, "\"Title\":");
-		imdbapi->year = getxmlentry(tmpstr, "\"Year\":");
-		imdbapi->rated = getxmlentry(tmpstr, "\"Rated\":");
-		imdbapi->released = getxmlentry(tmpstr, "\"Released\":");
-		imdbapi->genre = getxmlentry(tmpstr, "\"Genre\":");
-		imdbapi->director = getxmlentry(tmpstr, "\"Director\":");
-		imdbapi->writer = getxmlentry(tmpstr, "\"Writer\":");
-		imdbapi->actors = getxmlentry(tmpstr, "\"Actors\":");
-		imdbapi->plot = getxmlentry(tmpstr, "\"Plot\":");
-		imdbapi->poster = getxmlentry(tmpstr, "\"Poster\":");
-		imdbapi->runtime = getxmlentry(tmpstr, "\"Runtime\":");
-		imdbapi->rating = getxmlentry(tmpstr, "\"imdbapiRating\":");
-		imdbapi->votes = getxmlentry(tmpstr, "\"imdbapiVotes\":");
-		imdbapi->id = getxmlentry(tmpstr, "\"imdbapiID\":");
+		(*first)->title = getxmlentry(tmpstr, "\"Title\":");
+		(*first)->year = getxmlentry(tmpstr, "\"Year\":");
+		(*first)->rated = getxmlentry(tmpstr, "\"Rated\":");
+		(*first)->released = getxmlentry(tmpstr, "\"Released\":");
+		(*first)->genre = getxmlentry(tmpstr, "\"Genre\":");
+		(*first)->director = getxmlentry(tmpstr, "\"Director\":");
+		(*first)->writer = getxmlentry(tmpstr, "\"Writer\":");
+		(*first)->actors = getxmlentry(tmpstr, "\"Actors\":");
+		(*first)->plot = getxmlentry(tmpstr, "\"Plot\":");
+		(*first)->poster = getxmlentry(tmpstr, "\"Poster\":");
+		(*first)->runtime = getxmlentry(tmpstr, "\"Runtime\":");
+		(*first)->rating = getxmlentry(tmpstr, "\"imdbapiRating\":");
+		(*first)->votes = getxmlentry(tmpstr, "\"imdbapiVotes\":");
+		(*first)->id = getxmlentry(tmpstr, "\"imdbapiID\":");
 
-		if(imdbapi->poster != NULL)
+		if((*first)->poster != NULL)
 		{
 			char* ip = NULL, *pos = NULL, *path = NULL;
-			ip = string_replace("http://", "", imdbapi->poster, 0);
+			ip = string_replace("http://", "", (*first)->poster, 0);
 
 			if(ip != NULL)
 				pos = strchr(ip, '/');
@@ -101,19 +101,19 @@ struct imdbapi* getimdbapi(char* title, int flag, int flag1)
 				path = pos + 1;
 			}
 
-			if(flag1 == 1 && imdbapi->id != NULL)
+			if(flag1 == 1 && (*first)->id != NULL)
 			{
 				savefile = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
-				savefile = ostrcat(savefile, imdbapi->id, 1, 0);
+				savefile = ostrcat(savefile, (*first)->id, 1, 0);
 				savefile = ostrcat(savefile, "_poster.jpg", 1, 0);
 
 				if(!file_exist(savefile))
 					gethttp(ip, path, 80, savefile, NULL, NULL, 0);
-				free(imdbapi->poster);
-				imdbapi->poster = savefile;
+				free((*first)->poster);
+				(*first)->poster = savefile;
 				//create thumb 
 				savethumb = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0); 
-				savethumb = ostrcat(savethumb, imdbapi->id, 1, 0); 
+				savethumb = ostrcat(savethumb, (*first)->id, 1, 0); 
 				savethumb = ostrcat(savethumb, "_thumb.jpg", 1, 0);
 				if(file_exist(savefile) && !file_exist(savethumb))
 				{
@@ -123,42 +123,42 @@ struct imdbapi* getimdbapi(char* title, int flag, int flag1)
 				free(buf); buf = NULL; 
 				free(savethumb); savethumb = NULL;
 			}
-			else
+			else if(flag == 0)
 			{
 				gethttp(ip, path, 80, TMPIMDBAPIPIC, NULL, NULL, 0);
-				free(imdbapi->poster);
-				imdbapi->poster = ostrcat(TMPIMDBAPIPIC, NULL, 0, 0);
+				free((*first)->poster);
+				(*first)->poster = ostrcat(TMPIMDBAPIPIC, NULL, 0, 0);
 			}
 
 			free(ip); ip = NULL;
 		}
 		else
 		{
-			free(imdbapi->poster);
-			imdbapi->poster = NULL;
+			free((*first)->poster);
+			(*first)->poster = NULL;
 		}
 
 		free(tmpstr); tmpstr = NULL;
 
 		debug(133, "----------------------imdbapi start----------------------");
-		debug(133, "id: %s", imdbapi->id);
-		debug(133, "title: %s", imdbapi->title);
-		debug(133, "genre: %s", imdbapi->genre);
-		debug(133, "writer: %s", imdbapi->writer);
-		debug(133, "director: %s", imdbapi->director);
-		debug(133, "released: %s", imdbapi->released);
-		debug(133, "actors: %s", imdbapi->actors);
-		debug(133, "plot: %s", imdbapi->plot);
-		debug(133, "poster: %s", imdbapi->poster);
-		debug(133, "rating: %s", imdbapi->rating);
-		debug(133, "votes: %s", imdbapi->votes);
-		debug(133, "runtime: %s", imdbapi->runtime);
-		debug(133, "year: %s", imdbapi->year);
-		debug(133, "rated: %s", imdbapi->rated);
+		debug(133, "id: %s", (*first)->id);
+		debug(133, "title: %s", (*first)->title);
+		debug(133, "genre: %s", (*first)->genre);
+		debug(133, "writer: %s", (*first)->writer);
+		debug(133, "director: %s", (*first)->director);
+		debug(133, "released: %s", (*first)->released);
+		debug(133, "actors: %s", (*first)->actors);
+		debug(133, "plot: %s", (*first)->plot);
+		debug(133, "poster: %s", (*first)->poster);
+		debug(133, "rating: %s", (*first)->rating);
+		debug(133, "votes: %s", (*first)->votes);
+		debug(133, "runtime: %s", (*first)->runtime);
+		debug(133, "year: %s", (*first)->year);
+		debug(133, "rated: %s", (*first)->rated);
 		debug(133, "----------------------imdbapi end----------------------");
 	}
 
-	return imdbapi;
+	return *first;
 }
 
 void screenimdbapi(char* title)
@@ -181,7 +181,7 @@ void screenimdbapi(char* title)
 
 	if(title == NULL) title = getepgakttitle(NULL);
 
-	node = getimdbapi(title, 0, 0);
+	node = getimdbapi(&node, title, 0, 0);
 start:
 	if(node != NULL)
 	{
@@ -209,8 +209,8 @@ start:
 			search = textinput("Search", NULL);
 			if(search != NULL)
 			{
-				freeimdbapi(node); node = NULL;
-				node = getimdbapi(search, 0, 0);
+				freeimdbapi(&node); node = NULL;
+				node = getimdbapi(&search, 0, 0);
 				free(search); search = NULL;
 				goto start;
 			}
@@ -219,7 +219,7 @@ start:
 		}
 	}
 
-	freeimdbapi(node); node = NULL;
+	freeimdbapi(&node); node = NULL;
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	status.hangtime = getconfigint("hangtime", NULL);
 	clearscreen(imdbapiskin);
