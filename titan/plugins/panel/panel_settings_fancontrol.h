@@ -1,8 +1,6 @@
 #ifndef PANEL_SETTINGS_FANCONTROL_H
 #define PANEL_SETTINGS_FANCONTROL_H
 
-
-
 void screenpanel_settings_fancontrol()
 {
 	int rcret = 0;
@@ -30,7 +28,7 @@ void screenpanel_settings_fancontrol()
 		speed = 100;
 		
 	fanprogress->progresssize = speed;
-	drawscreen(panel_fancontrol, 0);
+	drawscreen(panel_fancontrol, 0, 0);
 
 	while(1)
 	{
@@ -49,14 +47,14 @@ void screenpanel_settings_fancontrol()
 				speed = speed - 25;
 			fanprogress->progresssize = speed;
 			setfanspeed(speed, 0);
-			drawscreen(panel_fancontrol, 0);
+			drawscreen(panel_fancontrol, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcright", NULL)){
 			if(speed < 100)
 				speed = speed + 25;
 			fanprogress->progresssize = speed;
 			setfanspeed(speed, 0);
-			drawscreen(panel_fancontrol, 0);
+			drawscreen(panel_fancontrol, 0, 0);
 		}
 	}
 }

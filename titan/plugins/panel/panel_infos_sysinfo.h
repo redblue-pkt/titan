@@ -106,7 +106,7 @@ void screenpanel_infos_sysinfo(int mode)
 		free(tmpstr); tmpstr = NULL;
 	}
 
-	drawscreen(panel_info, 0);
+	drawscreen(panel_info, 0, 0);
 
 	while(1)
 	{

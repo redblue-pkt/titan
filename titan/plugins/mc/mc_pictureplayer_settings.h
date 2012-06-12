@@ -56,7 +56,7 @@ void screenmc_pictureplayer_settings()
 	changeinput(interval, "10\n15\n20\n30\n40\n50\n60\n70\n80\n90\n100\n2\n5");
 	setchoiceboxselection(interval, getconfig("mc_pp_interval", NULL));
 
-	drawscreen(mc_pictureplayer_settings, 0);
+	drawscreen(mc_pictureplayer_settings, 0, 0);
 	addscreenrc(mc_pictureplayer_settings, listbox);
 
 	tmp = listbox->select;

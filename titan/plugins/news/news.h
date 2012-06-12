@@ -178,7 +178,7 @@ start:
 		changetext(date, node->date);
 	}
 
-	drawscreen(skin_news, 0);
+	drawscreen(skin_news, 0, 0);
 
 	while(1)
 	{
@@ -206,11 +206,11 @@ start:
       status.sec = 0; //deaktivate spinner
       setfbtransparent(255);
       
-      drawscreen(skin, 0);
+      drawscreen(skin, 0, 0);
       tmpstr = ostrcat("nsfb -f linux ", node->url, 0, 0);
       system(tmpstr);
       free(tmpstr); tmpstr = NULL;
-      drawscreen(skin, 0);
+      drawscreen(skin, 0, 0);
         
       setosdtransparent(getskinconfigint("osdtransparent", NULL));
       if(status.lastservice != NULL)

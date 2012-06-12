@@ -13,7 +13,7 @@ void screengmediarender()
 	ret = servicestop(status.aktservice, 1, 1);
 	if(ret == 1) return;
 
-	drawscreen(skin, 0);
+	drawscreen(skin, 0, 0);
 
 	cmd = ostrcat(cmd, "/var/swap/titanplugins/gmediarender/gmediarender.sh gmediarender-", 1, 0);
 	cmd = ostrcat(cmd, status.boxtype, 1, 0);

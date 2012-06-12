@@ -11,7 +11,7 @@ void screenmc_pictureplayer()
 	int nextpic = 0, rcret = 0, rcwait = 1000, playerret = 0, flag = 3, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0;
 	// workaround for grey background mvi
 	struct skin* blackscreen = getscreen("blackscreen");
-	drawscreen(blackscreen, 0);
+	drawscreen(blackscreen, 0, 0);
 
 	// main screen
 	struct skin* apskin = getscreen("mc_pictureplayer");
@@ -114,14 +114,14 @@ void screenmc_pictureplayer()
 			if(status.repeat == 0)
 			{
 				changetext(b4, _("Repeat-On"));
-				drawscreen(apskin, 0);
+				drawscreen(apskin, 0, 0);
 				status.repeat = 1;
 			}
 			else
 			{
 				status.repeat = 0;
 				changetext(b4, _("Repeat"));
-				drawscreen(apskin, 0);
+				drawscreen(apskin, 0, 0);
 			}
 		}
 		else if(rcret == getrcconfigint("rcyellow", NULL))
@@ -144,7 +144,7 @@ void screenmc_pictureplayer()
 					delownerrc(apskin);
 					getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
 					addscreenrc(apskin, filelist);
-					drawscreen(apskin, 0);
+					drawscreen(apskin, 0, 0);
 				}
 			}
 		}
@@ -155,7 +155,7 @@ void screenmc_pictureplayer()
 			else
 			{
 				showplaylist(apskin, filelistpath, filelist, listbox, b2, 0, &playlist, &eof, &filename, &currentdirectory, &playertype, flag);
-				drawscreen(apskin, 0);
+				drawscreen(apskin, 0, 0);
 			}
 
 		}
@@ -203,7 +203,7 @@ void screenmc_pictureplayer()
 				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
 				addscreenrc(apskin, filelist);
 
-				drawscreen(apskin, 0);
+				drawscreen(apskin, 0, 0);
 			}
 		}
 		else if(rcret == getrcconfigint("rcstop", NULL))
@@ -226,7 +226,7 @@ void screenmc_pictureplayer()
 			delownerrc(apskin);
 			addscreenrc(apskin, filelist);
 			setfbtransparent(255);
-			drawscreen(apskin, 0);
+			drawscreen(apskin, 0, 0);
 
 			sleep(1);
 
@@ -313,7 +313,7 @@ void screenmc_pictureplayer()
 							listbox->hidden = YES;
 	
 							addscreenrc(apskin, filelist);
-							drawscreen(apskin, 0);
+							drawscreen(apskin, 0, 0);
 							continue;
 						}
 					#endif
@@ -327,7 +327,7 @@ void screenmc_pictureplayer()
 				// workaround dont open folder on rcchup
 				if(skip == 1)
 				{
-					drawscreen(apskin, 0);
+					drawscreen(apskin, 0, 0);
 					writerc(getrcconfigint("rcok", NULL));
 					skip = 0;
 				}
@@ -404,7 +404,7 @@ void screenmc_pictureplayer()
 			{
 //				setfbtransparent(0);
 //				apskin->hidden = NO;
-//				drawscreen(skin, 0);
+//				drawscreen(skin, 0, 0);
 				playereof(apskin, filelist, listbox, filelistpath, picscreen, picture, picname, b2, &skip, &eof, &playlist, playertype, flag);
 			}
 		}

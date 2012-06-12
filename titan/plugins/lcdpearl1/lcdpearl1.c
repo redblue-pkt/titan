@@ -261,7 +261,7 @@ void LCD_Pearl1_thread()
 						}
 						
 						changetext(akttime, tmpstr);
-						drawscreen(LCD_Pearl1, 0);
+						drawscreen(LCD_Pearl1, 0, 0);
 
 						//system(fbgrab);
 						//system("mv /tmp/.titanlcd1.png /tmp/titanlcd.png");
@@ -310,13 +310,13 @@ void LCD_Pearl1_thread()
 						
 						changetext(akttimeplay, tmpstr);
 						changetext(stitle, basename(status.playfile));
-						drawscreen(LCD_Play, 0);
+						drawscreen(LCD_Play, 0, 0);
 
 					//else if(type == 999 && status.mcaktiv == 1) 
 					//else if(type == 999)	
 					//{
 						//changetext(akttimemc1, tmpstr);
-						//drawscreen(LCD_MC_Menu, 3);
+						//drawscreen(LCD_MC_Menu, 0, 3);
 					//}
 					}
 				}
@@ -335,7 +335,7 @@ void LCD_Pearl1_thread()
  	free(startlcd);startlcd=NULL;
  	addconfig("lcd_pearl1_plugin_running", "no");
  	LCD_Pearl1thread = NULL;
- 	drawscreen(LCD_Pearl1, 0);
+ 	drawscreen(LCD_Pearl1, 0, 0);
  	status.write_png = 0;
  	return;
 }
@@ -445,7 +445,7 @@ void start(void)
 	else
 		changetext(b3, "START");
 		
-	drawscreen(pearl1_main, 0);
+	drawscreen(pearl1_main, 0, 0);
 	addscreenrc(pearl1_main, listbox);
 	tmp = listbox->select;
 	
@@ -466,7 +466,7 @@ void start(void)
   			wettervorland->hidden = YES;
   		}
 			
-			drawscreen(pearl1_main, 0);
+			drawscreen(pearl1_main, 0, 0);
 		}
 					
 		if(rcret == getrcconfigint("rcexit", NULL))

@@ -44,7 +44,7 @@ void screenwins3()
 	wins3new(wins3);
 	wins3changetitle(wins3, player);
 	
-	drawscreen(wins3, 0);
+	drawscreen(wins3, 0, 0);
 	addscreenrc(wins3, grid);
 
 	while(1)
@@ -67,7 +67,7 @@ void screenwins3()
 					player = 1;
 				}
 				wins3changetitle(wins3, player);
-				drawscreen(wins3, 0);
+				drawscreen(wins3, 0, 0);
 			}
 			continue;
 		}
@@ -76,7 +76,7 @@ void screenwins3()
 			wins3new(grid);
 			player = 1;
 			wins3changetitle(wins3, player);
-			drawscreen(wins3, 0);
+			drawscreen(wins3, 0, 0);
 		}
 	}
 

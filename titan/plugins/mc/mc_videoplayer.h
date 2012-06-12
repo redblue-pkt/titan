@@ -67,7 +67,7 @@ void screenmc_videoplayer()
 	int rcret = 0, rcwait = 1000, playerret = 0, flag = 1, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0, files = 0;
 	// workaround for grey background mvi
 	struct skin* blackscreen = getscreen("blackscreen");
-	drawscreen(blackscreen, 0);
+	drawscreen(blackscreen, 0, 0);
 
 	// main screen
 	struct skin* apskin = getscreen("mc_videoplayer");
@@ -150,7 +150,7 @@ void screenmc_videoplayer()
 			cmd = ostrcat(cmd, filelist->select->filelist->imdbpath, 1, 0);
 			cmd = ostrcat(cmd, ".jpg", 1, 0);			
 			changepic(skin_cover, cmd);
-			drawscreen(apskin, 0);
+			drawscreen(apskin, 0, 0);
 
 			free(cmd), cmd = NULL;
 			cmd = ostrcat(cmd, filelist->select->filelist->imdbpath, 1, 0);
@@ -159,7 +159,7 @@ void screenmc_videoplayer()
 			cmd = ostrcat(cmd, filelist->select->filelist->imdbpath, 1, 0);
 			cmd = ostrcat(cmd, "_thumb.jpg", 1, 0);			
 			changepic(skin_cover, cmd);
-			drawscreen(apskin, 0);
+			drawscreen(apskin, 0, 0);
 
 			free(cmd), cmd = NULL;
 			cmd = ostrcat(cmd, filelist->select->filelist->imdbpath, 1, 0);
@@ -190,7 +190,7 @@ void screenmc_videoplayer()
 				}
 			}
 */
-			drawscreen(apskin, 0);
+			drawscreen(apskin, 0, 0);
 					
 			if(!file_exist(cmd)){
 				free(cmd), cmd = NULL;
@@ -305,14 +305,14 @@ void screenmc_videoplayer()
 				if(status.repeat == 0)
 				{
 					changetext(b4, _("Repeat-On"));
-					drawscreen(apskin, 0);
+					drawscreen(apskin, 0, 0);
 					status.repeat = 1;
 				}
 				else
 				{
 					status.repeat = 0;
 					changetext(b4, _("Repeat"));
-					drawscreen(apskin, 0);
+					drawscreen(apskin, 0, 0);
 				}
 			}
 		}
@@ -341,7 +341,7 @@ void screenmc_videoplayer()
 					delownerrc(apskin);	
 					getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
 					addscreenrc(apskin, filelist);
-					drawscreen(apskin, 0);
+					drawscreen(apskin, 0, 0);
 				}
 			}
 		}
@@ -352,7 +352,7 @@ void screenmc_videoplayer()
 			else
 			{
 				showplaylist(apskin, filelistpath, filelist, listbox, b2, 0, &playlist, &eof, &filename, &currentdirectory, &playertype, flag);
-				drawscreen(apskin, 0);
+				drawscreen(apskin, 0, 0);
 				continue;			
 			}
 		}
@@ -384,7 +384,7 @@ void screenmc_videoplayer()
 				delownerrc(apskin);	
 				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
 				addscreenrc(apskin, filelist);
-				drawscreen(apskin, 0);
+				drawscreen(apskin, 0, 0);
 			}
 		}
 		else if(rcret == getrcconfigint("rcinfo", NULL))
@@ -457,7 +457,7 @@ void screenmc_videoplayer()
 				addscreenrc(apskin, filelist);
 				// show skin
 				setfbtransparent(255);
-				drawscreen(apskin, 0);
+				drawscreen(apskin, 0, 0);
 
 				sleep(1);
 
@@ -548,7 +548,7 @@ void screenmc_videoplayer()
 				debug(50, "playerstop");
 				playrcstop(playertype, flag);
 //				sleep(1);
-//				drawscreen(infobar, 0);
+//				drawscreen(infobar, 0, 0);
 
 				debug(50, "playerstart: %s", filename);
 				eof = 0;
@@ -557,7 +557,7 @@ void screenmc_videoplayer()
 				setfbtransparent(255);
 //////////
 				servicestop(status.aktservice, 1, 1);
-				drawscreen(skin, 0);
+				drawscreen(skin, 0, 0);
 				setfbtransparent(255);
 				debug(50, "check");
 				debug(50, "autostart_playlist: %d", getconfigint("mc_vp_autostart_playlist", NULL));
@@ -586,7 +586,7 @@ void screenmc_videoplayer()
 						listbox->hidden = YES;
 
 						addscreenrc(apskin, filelist);
-						drawscreen(apskin, 0);
+						drawscreen(apskin, 0, 0);
 						continue;
 					}
 				#endif
@@ -602,7 +602,7 @@ void screenmc_videoplayer()
 				// workaround dont open folder on rcchup
 				if(skip == 1)
 				{
-					drawscreen(apskin, 0);
+					drawscreen(apskin, 0, 0);
 					writerc(getrcconfigint("rcok", NULL));
 					skip = 0;
 				}
@@ -647,7 +647,7 @@ void screenmc_videoplayer()
 					showplaylist(apskin, filelistpath, filelist, listbox, b2, 1, &playlist, &eof, &filename, &currentdirectory, &playertype, flag);
 
 					if(getconfigint("mc_vp_autostart_playlist", NULL) == 0)
-						drawscreen(apskin, 0);
+						drawscreen(apskin, 0, 0);
 					continue;
 
 				}
@@ -662,7 +662,7 @@ void screenmc_videoplayer()
 //				sleep(1);
 
 				servicestop(status.aktservice, 1, 1);
-				drawscreen(skin, 0);
+				drawscreen(skin, 0, 0);
 
 				delownerrc(apskin);
 				setfbtransparent(255);
@@ -686,7 +686,7 @@ void screenmc_videoplayer()
 						status.playspeed = 0;
 						textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 						addscreenrc(apskin, filelist);
-//						drawscreen(apskin, 0);
+//						drawscreen(apskin, 0, 0);
 						continue;
 					}
 				#endif
@@ -710,7 +710,7 @@ void screenmc_videoplayer()
 			{
 				setfbtransparent(0);
 				apskin->hidden = NO;
-				drawscreen(skin, 0);
+				drawscreen(skin, 0, 0);
 				playereof(apskin, filelist, listbox, filelistpath, b2, NULL, NULL, NULL, &skip, &eof, &playlist, playertype, flag);
 			}
 		}

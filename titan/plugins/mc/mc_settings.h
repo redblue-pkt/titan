@@ -14,7 +14,7 @@ void screenmc_settings()
 	addchoicebox(style, "1", _("skin (picmem jpg)"));
 	setchoiceboxselection(style, getconfig("style", NULL));
 
-	drawscreen(mc_settings, 0);
+	drawscreen(mc_settings, 0, 0);
 	addscreenrc(mc_settings, listbox);
 
 	tmp = listbox->select;

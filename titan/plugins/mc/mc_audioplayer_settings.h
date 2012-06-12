@@ -58,7 +58,7 @@ void screenmc_audioplayer_settings()
 //	setchoiceboxselection(repeat, getconfig("mc_ap_repeat", NULL));
 
 
-	drawscreen(mc_audioplayer_settings, 0);
+	drawscreen(mc_audioplayer_settings, 0, 0);
 	addscreenrc(mc_audioplayer_settings, listbox);
 
 	tmp = listbox->select;
@@ -86,12 +86,12 @@ void screenmc_audioplayer_settings()
 		{
 			struct skin* screen = getscreen("networkmenu");
 			menu(screen);
-			drawscreen(mc_audioplayer_settings, 0);
+			drawscreen(mc_audioplayer_settings, 0, 0);
 		}
 		else if(rcret == getrcconfigint("rcred", NULL))
 		{
 			screenscreensaveradjust();
-			drawscreen(mc_audioplayer_settings, 0);
+			drawscreen(mc_audioplayer_settings, 0, 0);
 		}
 	}
 	delownerrc(mc_audioplayer_settings);

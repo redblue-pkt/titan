@@ -30,7 +30,7 @@ void screenpanel_settings(int mode)
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
 
-	drawscreen(config, 0);
+	drawscreen(config, 0, 0);
 	tmp = listbox->select;
 
 	while(1)

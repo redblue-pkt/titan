@@ -86,7 +86,7 @@ void screenmc_videoplayer_settings()
 	addchoicebox(mediadbscandelnotfound, "1", _("yes"));
 	setchoiceboxselection(mediadbscandelnotfound, getconfig("mc_vp_mediadbscandelnotfound", NULL));
 	
-	drawscreen(mc_videoplayer_settings, 0);
+	drawscreen(mc_videoplayer_settings, 0, 0);
 	addscreenrc(mc_videoplayer_settings, listbox);
 
 	tmp = listbox->select;
@@ -114,7 +114,7 @@ void screenmc_videoplayer_settings()
 		{
 			struct skin* screen = getscreen("networkmenu");
 			menu(screen);
-			drawscreen(mc_videoplayer_settings, 0);
+			drawscreen(mc_videoplayer_settings, 0, 0);
 		}		
   }
 

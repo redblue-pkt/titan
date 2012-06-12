@@ -21,7 +21,7 @@ int screenmc_view()
 	addchoicebox(small, "4", _(""));
 	addchoicebox(fast, "5", _(""));
 
-	drawscreen(mc_view, 0);
+	drawscreen(mc_view, 0, 0);
 	addscreenrc(mc_view, listbox);
 
 	tmp = listbox->select;

@@ -250,7 +250,7 @@ start:
 		free(tmpstr); tmpstr = NULL;
 	}
 
-	drawscreen(stock, 0);
+	drawscreen(stock, 0, 0);
 
 	while(1)
 	{
@@ -272,7 +272,7 @@ start:
 					changename(tmp, name);
 				}
       }
-      drawscreen(stock, 0);
+      drawscreen(stock, 0, 0);
 			if(name == NULL)
 				continue;
 			free(name); name = NULL;
@@ -287,7 +287,7 @@ start:
 		if(listbox->select != NULL && rcret == getrcconfigint("rcgreen", NULL))
 		{
 			delscreennode(stock, listbox->select->name);
-			drawscreen(stock, 0);
+			drawscreen(stock, 0, 0);
 		}
     
     if(rcret == getrcconfigint("rcblue", NULL) && node->symbol_lookup_url != NULL)
@@ -297,7 +297,7 @@ start:
       status.sec = 0; //deaktivate spinner
       setfbtransparent(255);
       
-      drawscreen(skin, 0);
+      drawscreen(skin, 0, 0);
       tmpstr = ostrcat("http://www.google.com", node->symbol_lookup_url, 0, 0);
       system(tmpstr);
       free(tmpstr); tmpstr = NULL;
@@ -307,7 +307,7 @@ start:
         servicestart(status.lastservice->channel, NULL, NULL, 0);
       flushrc(500);
       
-      drawscreen(stock, 0);
+      drawscreen(stock, 0, 0);
       continue;
     }
 

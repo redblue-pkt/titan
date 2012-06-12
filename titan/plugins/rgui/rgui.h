@@ -19,7 +19,7 @@ int screenrgui(char* ip)
 	if(ip == NULL || ostrcmp(ip, "000.000.000.000") == 0) return 1;
 
 	//clear screen
-	drawscreen(skin, 0);
+	drawscreen(skin, 0, 0);
 
 	struct fb* rguiskinfb = addfb("rguiskinfb", 1000, 440, 330, 4, -1, skinfb->fb, 440 * 330 * 4);
 	if(rguiskinfb == NULL) return 1;
@@ -114,7 +114,7 @@ int screenrgui(char* ip)
 	}
 	
 	//clear screen
-	drawscreen(skin, 0);
+	drawscreen(skin, 0, 0);
 	if(textbox(_("Message"), _("Send remote box into standby ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
 		memcpy(buf, "98989", 5);
@@ -128,7 +128,7 @@ int screenrgui(char* ip)
 	delfb("rguiskinfb");
 
 	//clear screen
-	drawscreen(skin, 0);
+	drawscreen(skin, 0, 0);
 	status.spinnertime = getconfigint("spinnertime", NULL);
 
 	textbox(_("Message"), _("Connection to server lost !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
@@ -160,7 +160,7 @@ void screenrguimenu()
 	changemask(rgui5, "000.000.000.000");
 	changeinput(rgui5, getconfig("rgui5", NULL));
 
-	drawscreen(rgui, 0);
+	drawscreen(rgui, 0, 0);
 	addscreenrc(rgui, listbox);
 
 	tmp = listbox->select;
@@ -187,7 +187,7 @@ void screenrguimenu()
 				free(tmpstr); tmpstr = NULL;
 			}
 
-			drawscreen(rgui, 0);
+			drawscreen(rgui, 0, 0);
 			continue;
 		}
 	}

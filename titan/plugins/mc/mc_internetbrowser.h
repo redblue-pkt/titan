@@ -34,7 +34,7 @@ void screenmc_internetbrowser()
 				system(tmpstr);
 				free(tmpstr);
 				setosdtransparent(getskinconfigint("osdtransparent", NULL));
-				drawscreen(skin, 0);
+				drawscreen(skin, 0, 0);
 				servicestart(status.lastservice->channel, NULL, NULL, 0);
 				sleep(2);
 //			}

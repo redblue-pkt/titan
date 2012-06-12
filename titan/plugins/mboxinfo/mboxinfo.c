@@ -128,7 +128,7 @@ void start(void)
 		changename(tmp, "Info");
 	}
 
-	drawscreen(screen, 0);
+	drawscreen(screen, 0, 0);
 	addscreenrc(screen, listbox);
 
 	while (1)
@@ -164,7 +164,7 @@ void start(void)
 			}
 
 			free(tmpstr); tmpstr = NULL;
-			drawscreen(screen,0);
+			drawscreen(screen, 0, 0);
 		}
 	}
 

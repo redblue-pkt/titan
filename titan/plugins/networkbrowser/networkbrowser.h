@@ -860,7 +860,7 @@ void screennetworkbrowser_scan()
 	b2->hidden = YES;
 
 	net = inetwork;
-	drawscreen(net_scan, 0);
+	drawscreen(net_scan, 0, 0);
 
 	while(net != NULL)
 	{
@@ -1259,7 +1259,7 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 	changemodenetworkbrowser(node, net_addshare, skin_username, skin_password, skin_protocol, skin_rsize, skin_wsize, skin_options, skin_ssl, skin_proxy, skin_proxyip, skin_proxyport, skin_proxyuser, skin_proxypass, skin_ftpport, skin_userauth, skin_proxyauth, skin_useproxy, skin_usessl);
 
 	addscreenrc(net_addshare, listbox);
-	drawscreen(net_addshare, 0);
+	drawscreen(net_addshare, 0, 0);
 
 	tmp = listbox->select;
 	while(1)
@@ -1293,7 +1293,7 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 		if(listbox->select != NULL)
 		{
 			changemodenetworkbrowser(node, net_addshare, skin_username, skin_password, skin_protocol, skin_rsize, skin_wsize, skin_options, skin_ssl, skin_proxy, skin_proxyip, skin_proxyport, skin_proxyuser, skin_proxypass, skin_ftpport, skin_userauth, skin_proxyauth, skin_useproxy, skin_usessl);
-			drawscreen(net_addshare, 0);
+			drawscreen(net_addshare, 0, 0);
 		}
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
@@ -1318,7 +1318,7 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 				else
 					delnetworkbrowser(newshare);
 				free(tmpstr); tmpstr = NULL;
-				drawscreen(net_addshare, 0);
+				drawscreen(net_addshare, 0, 0);
 			}
 			continue;
 		}
@@ -1328,14 +1328,14 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 			if(node->sharename == NULL || strlen(node->sharename) == 0)
 			{
 				textbox(_("Message"), _("Sharename can't be empty!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
-				drawscreen(net_addshare, 0);
+				drawscreen(net_addshare, 0, 0);
 				continue;
 			}
 
 			if(checknetworkbrowserexist(node) == 1)
 			{
 				textbox(_("Message"), _("A mount entry with this name already exists!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
-				drawscreen(net_addshare, 0);
+				drawscreen(net_addshare, 0, 0);
 				continue;
 			}
 

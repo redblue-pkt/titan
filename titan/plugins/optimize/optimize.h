@@ -333,7 +333,7 @@ start:
 	free(tmpstr); tmpstr = NULL;
 */
 	
-	drawscreen(optimize, 0);
+	drawscreen(optimize, 0, 0);
 	addscreenrc(optimize, listbox);
 
 	tmp = listbox->select;
