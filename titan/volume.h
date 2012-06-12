@@ -44,7 +44,7 @@ void screenvolume(int direction, int flag)
 
 	changevolume(direction, volumebar);
 
-	setnodeattr(volume, framebuffer);
+	setnodeattr(volume, framebuffer, 0);
 	bg = savescreen(volume);
 
 	drawscreen(volume, 0, flag);

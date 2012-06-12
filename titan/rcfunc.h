@@ -105,7 +105,7 @@ void inputboxhelp(struct skin* screen, struct skin* inputbox, int screencalc, in
 
 	if(inputbox != NULL && (inputbox->type & INPUTBOX) && flag == 0)
 	{
-		tmpstr = screeninputhelp(inputbox->input, flag);
+		tmpstr = screeninputhelp(inputbox->input, screencalc, flag);
 		changeinput(inputbox, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 		drawscreen(screen, screencalc, flag);
@@ -253,7 +253,7 @@ void inputbox0(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		else
 		{
 			inputboxchar(screen, inputbox, '0', screencalc, 1);
-			inputboxright(screen, inputbox, flag);
+			inputboxright(screen, inputbox, screencalc, flag);
 		}
 	}
 }
@@ -294,7 +294,7 @@ void inputbox1(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		else
 		{
 			inputboxchar(screen, inputbox, '1', screencalc, 1);
-			inputboxright(screen, inputbox, flag);
+			inputboxright(screen, inputbox, screencalc, flag);
 		}
 	}
 }
@@ -325,7 +325,7 @@ void inputbox2(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		else
 		{
 			inputboxchar(screen, inputbox, '2', screencalc, 1);
-			inputboxright(screen, inputbox, flag);
+			inputboxright(screen, inputbox, screencalc, flag);
 		}
 	}
 }
@@ -356,7 +356,7 @@ void inputbox3(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		else
 		{
 			inputboxchar(screen, inputbox, '3', screencalc, 1);
-			inputboxright(screen, inputbox, flag);
+			inputboxright(screen, inputbox, screencalc, flag);
 		}
 	}
 }
@@ -387,7 +387,7 @@ void inputbox4(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		else
 		{
 			inputboxchar(screen, inputbox, '4', screencalc, 1);
-			inputboxright(screen, inputbox, flag);
+			inputboxright(screen, inputbox, screencalc, flag);
 		}
 	}
 }
@@ -418,7 +418,7 @@ void inputbox5(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		else
 		{
 			inputboxchar(screen, inputbox, '5', screencalc, 1);
-			inputboxright(screen, inputbox, flag);
+			inputboxright(screen, inputbox, screencalc, flag);
 		}
 
 	}
@@ -450,7 +450,7 @@ void inputbox6(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		else
 		{
 			inputboxchar(screen, inputbox, '6', screencalc, 1);
-			inputboxright(screen, inputbox, flag);
+			inputboxright(screen, inputbox, screencalc, flag);
 		}
 	}
 }
@@ -485,7 +485,7 @@ void inputbox7(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		else
 		{
 			inputboxchar(screen, inputbox, '7', screencalc, 1);
-			inputboxright(screen, inputbox, flag);
+			inputboxright(screen, inputbox, screencalc, flag);
 		}
 	}
 }
@@ -516,7 +516,7 @@ void inputbox8(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		else
 		{
 			inputboxchar(screen, inputbox, '8', screencalc, 1);
-			inputboxright(screen, inputbox, flag);
+			inputboxright(screen, inputbox, screencalc, flag);
 		}
 	}
 }
@@ -551,7 +551,7 @@ void inputbox9(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		else
 		{
 			inputboxchar(screen, inputbox, '9', screencalc, 1);
-			inputboxright(screen, inputbox, flag);
+			inputboxright(screen, inputbox, screencalc, flag);
 		}
 	}
 }
