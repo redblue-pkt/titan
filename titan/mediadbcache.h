@@ -32,13 +32,10 @@ struct mediadb* getmediadb(char* file)
 	m_lock(&status.mediadbmutex, 17);
 	node = mediadbcache[hash];
 
-int count = 0;
 	while(node != NULL)
 	{
-count++;
-		if(file == node->file)
+		if(ostrcmp(file, node->file) == 0)
 		{
-printf("found after count %d", count);
 			m_unlock(&status.mediadbmutex, 17);
 			return node->mediadbnode;
 		}
@@ -104,7 +101,7 @@ void delmediadbcache(char* file)
 
 	while(node != NULL)
 	{
-		if(file == node->file)
+		if(ostrcmp(file, node->file) == 0)
 		{
 			if(node == mediadbcache[hash])
 				mediadbcache[hash] = node->next;
