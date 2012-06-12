@@ -124,7 +124,7 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
 	}
 	
 	timeshiftbar->progresssize = 0;
-	setnodeattr(timeshift, framebuffer);
+	setnodeattr(timeshift, framebuffer, 0);
 	bg = savescreen(timeshift);
 	if(status.timeshiftseek == 999999)
 		timeout = 5;
