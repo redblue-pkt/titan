@@ -652,16 +652,16 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 			int max = count;
 			for(i = 0; i < max; i++)
 			{
-				if(string_find("type=video/mp4",(&ret1[i])->part))
+				if(ostrstr(ret1[i].part, "type=video/mp4") != NULL)
 				{
-					streamurl = ostrcat(streamurl, (&ret1[i])->part, 1, 0);
+					streamurl = ostrcat(streamurl, ret1[i].part, 1, 0);
 					int count2 = 0;
 					struct splitstr* ret2 = NULL;
-					ret2 = strsplit((&ret1[i])->part, "+", &count2);
+					ret2 = strsplit(ret1[i].part, "+", &count2);
 					if(ret2 != NULL)
 					{
 						free(streamurl);
-						streamurl = ostrcat("", (&ret2[0])->part, 0, 0);
+						streamurl = ostrcat("", ret2[0].part, 0, 0);
 						free(ret2); ret2 = NULL;
 					}
 				}
