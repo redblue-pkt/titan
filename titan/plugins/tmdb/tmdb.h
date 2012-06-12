@@ -307,24 +307,27 @@ struct tmdb* gettmdb(char* title, int flag, int flag1)
 
 			if(flag1 == 1 && tnode->backdrop != NULL && tnode->imdbid != NULL)
 			{
-				char* cmd = NULL;
-				cmd = ostrcat(cmd, "jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
-				cmd = ostrcat(cmd, tnode->backdrop, 1, 0);
-
-				debug(133, "cmd %s", cmd);
-				system(cmd);
-				free(cmd); cmd = NULL;
-
 				char* tmpmvi= NULL;
 				tmpmvi = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 				tmpmvi = ostrcat(tmpmvi, tnode->imdbid, 1, 0);
 				tmpmvi = ostrcat(tmpmvi, "_backdrop.mvi", 1, 0);
 
-				cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg ", 1, 0);
-				cmd = ostrcat(cmd, tmpmvi, 1, 0);
-				debug(133, "cmd %s", cmd);
-				system(cmd);
-				free(cmd); cmd = NULL;
+				if(!file_exits(tmpmvi))
+				{
+					char* cmd = NULL;
+					cmd = ostrcat(cmd, "jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
+					cmd = ostrcat(cmd, tnode->backdrop, 1, 0);
+
+					debug(133, "cmd %s", cmd);
+					system(cmd);
+					free(cmd); cmd = NULL;
+
+					cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg ", 1, 0);
+					cmd = ostrcat(cmd, tmpmvi, 1, 0);
+					debug(133, "cmd %s", cmd);
+					system(cmd);
+					free(cmd); cmd = NULL;
+				}
 
 				free(tnode->mvi);
 				tnode->mvi = tmpmvi;
