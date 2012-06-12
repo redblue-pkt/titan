@@ -31,7 +31,7 @@ void freeimdbapi(struct imdbapi** node, int flag)
 //flag1 0 = save in tmp
 //flag1: 1 = save pic in mediadb path if pic not exist
 //flag2: 2 = save no pic
-struct imdbapi* getimdbapi(struct imdbapi* first, char* title, int flag, int flag1)
+struct imdbapi* getimdbapi(struct imdbapi** first, char* title, int flag, int flag1)
 {
 	struct imdbapi* imdbapi = NULL;
 	char* tmpstr = NULL, *ret = NULL;
