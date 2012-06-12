@@ -48,11 +48,11 @@ void tmcpicdel(struct skin* tmcpictitle, struct skin* tmcpicstar, struct skin* t
 
 	if(flag == 1)
 	{
-		drawscreen(tmcpic1, 1);
-		drawscreen(tmcpic2, 1);
-		drawscreen(tmcpic3, 1);
-		drawscreen(tmcpic4, 1);
-		drawscreen(tmcpic5, 0);
+		drawscreen(tmcpic1, 0, 1);
+		drawscreen(tmcpic2, 0, 1);
+		drawscreen(tmcpic3, 0, 1);
+		drawscreen(tmcpic4, 0, 1);
+		drawscreen(tmcpic5, 0, 0);
 	}
 }
 
@@ -152,13 +152,13 @@ void tmcpicscroll(int menuid, struct skin* tmcpictitle, struct skin* tmcpicstar,
 		count++; if(count > 4) break;
 	}
 
-	drawscreen(tmcpictitle, 1);
-	drawscreen(tmcpicstar, 1);
-	drawscreen(tmcpic1, 1);
-	drawscreen(tmcpic2, 1);
-	drawscreen(tmcpic3, 1);
-	drawscreen(tmcpic4, 1);
-	drawscreen(tmcpic5, 0);
+	drawscreen(tmcpictitle, 0, 1);
+	drawscreen(tmcpicstar, 0, 1);
+	drawscreen(tmcpic1, 0, 1);
+	drawscreen(tmcpic2, 0, 1);
+	drawscreen(tmcpic3, 0, 1);
+	drawscreen(tmcpic4, 0, 1);
+	drawscreen(tmcpic5, 0, 0);
 }
 
 //flag 0: draw only
@@ -263,12 +263,12 @@ void tmcmenuscroll(int menuid, int active, struct skin* tmcmenutxt, struct skin*
 		changetext(tmcmenu5, "X");
 	}
 
-	drawscreen(tmcmenutxt, 1);
-	drawscreen(tmcmenu1, 1);
-	drawscreen(tmcmenu2, 1);
-	drawscreen(tmcmenu3, 1);
-	drawscreen(tmcmenu4, 1);
-	drawscreen(tmcmenu5, 0);
+	drawscreen(tmcmenutxt, 0, 1);
+	drawscreen(tmcmenu1, 0, 1);
+	drawscreen(tmcmenu2, 0, 1);
+	drawscreen(tmcmenu3, 0, 1);
+	drawscreen(tmcmenu4, 0, 1);
+	drawscreen(tmcmenu5, 0, 0);
 }
 
 void screentmcdb()
@@ -331,7 +331,7 @@ void screentmcdb()
 			free(tmpstr); tmpstr = NULL;
 		}
 		
-		drawscreen(tmcpic3, 0);
+		drawscreen(tmcpic3, 0, 0);
 		rcret = waitrc(tmcpic3, 1000, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
@@ -344,7 +344,7 @@ void screentmcdb()
 	changepic(tmcpic3, tmppic);
 	tmcpic3->bgcol = -1;
 	free(tmppic); tmppic = NULL;
-	drawscreen(tmcpic3, 0);
+	drawscreen(tmcpic3, 0, 0);
 }
 
 char* screentmccategory(int type, char* category)
@@ -382,7 +382,7 @@ char* screentmccategory(int type, char* category)
 	free(tmpstr); tmpstr = NULL;
 
 	addscreenrc(tmcpic3, listbox);
-	drawscreen(tmcpic3, 0);
+	drawscreen(tmcpic3, 0, 0);
 
 	while(1)
 	{
@@ -403,7 +403,7 @@ char* screentmccategory(int type, char* category)
 	changepic(tmcpic3, tmppic);
 	tmcpic3->bgcol = -1;
 	free(tmppic); tmppic = NULL;
-	drawscreen(tmcpic3, 0);
+	drawscreen(tmcpic3, 0, 0);
 
 	return ret;
 }
@@ -453,7 +453,7 @@ void screentmcsettings()
 	setchoiceboxselection(scan, getconfig("tmcscan", NULL));
 
 	addscreenrc(tmcpic3, listbox);
-	drawscreen(tmcpic3, 0);
+	drawscreen(tmcpic3, 0, 0);
 
 	tmp = listbox->select;
 	while(1)
@@ -484,7 +484,7 @@ void screentmcsettings()
 	changepic(tmcpic3, tmppic);
 	tmcpic3->bgcol = -1;
 	free(tmppic); tmppic = NULL;
-	drawscreen(tmcpic3, 0);
+	drawscreen(tmcpic3, 0, 0);
 }
 
 void screentmcedit(char* file)
@@ -528,7 +528,7 @@ void screentmcdbmenu(char* file)
 	info->hidden = NO;
 
 	addscreenrc(tmcpic3, listbox);
-	drawscreen(tmcpic3, 0);
+	drawscreen(tmcpic3, 0, 0);
 
 	while(1)
 	{
@@ -547,7 +547,7 @@ void screentmcdbmenu(char* file)
 			if(ostrcmp(listbox->select->name, "info") == 0)
 				screentmcinfo(file);
 
-			drawscreen(tmcpic3, 0);
+			drawscreen(tmcpic3, 0, 0);
 		}
 	}
 
@@ -561,7 +561,7 @@ void screentmcdbmenu(char* file)
 	changepic(tmcpic3, tmppic);
 	tmcpic3->bgcol = -1;
 	free(tmppic); tmppic = NULL;
-	drawscreen(tmcpic3, 0);
+	drawscreen(tmcpic3, 0, 0);
 }
 
 int screentmcpicplay(char* picture)
@@ -592,7 +592,7 @@ int screentmcpicplay(char* picture)
 
 	changepic(pic, picture);
 
-	drawscreen(picplay, 0);
+	drawscreen(picplay, 0, 0);
 
 	while(1)
 	{
@@ -662,7 +662,7 @@ void screentmcmenu()
 	if(getplugin("IMDb-API") == NULL && getplugin("IMDb") == NULL && getplugin("TMDb") == NULL)
 		textbox(_("Message"), _("IMDB Plugin not found!\nCan't get detail media infos\nPlease install it"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 
-	drawscreen(load, 0);
+	drawscreen(load, 0, 0);
 	readmediadb(getconfig("mediadbfile", NULL), 0, 0);
 	mediadbfilterpos = NULL;
 
@@ -675,21 +675,19 @@ void screentmcmenu()
 	tmcsetbutton(picplaytype, audioplaytype);
 	tmcpicdel(tmcpictitle, tmcpicstar, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, 0);
 
-	drawscreen(tmcbg, 1);
-	drawscreen(tmcpic1, 1);
-	drawscreen(tmcpic2, 1);
-	drawscreen(tmcpic3, 1);
-	drawscreen(tmcpic4, 1);
-	drawscreen(tmcpic5, 1);
+	drawscreen(tmcbg, 0, 1);
+	drawscreen(tmcpic1, 0, 1);
+	drawscreen(tmcpic2, 0, 1);
+	drawscreen(tmcpic3, 0, 1);
+	drawscreen(tmcpic4, 0, 1);
+	drawscreen(tmcpic5, 0, 1);
 	tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
 	
 	//save backgrounds
-	status.screencalc = 2;
-	drawscreen(tmcpictitle, 0);
-	drawscreen(tmcpicstar, 0);
+	drawscreen(tmcpictitle, 2, 0);
+	drawscreen(tmcpicstar, 2, 0);
 	tmcpictitlebg = savescreen(tmcpictitle);
 	tmcpicstarbg = savescreen(tmcpicstar);
-	status.screencalc = 0;
 
 	while(1)
 	{
@@ -991,11 +989,11 @@ void screentmcmenu()
 			{
 				if(menuid == 3)
 				{
-					drawscreen(skin, 0);
+					drawscreen(skin, 0, 0);
 
 					screenplay(tmcpic3->ret, 0, 0);
 
-					drawscreen(tmcbg, 1);
+					drawscreen(tmcbg, 0, 1);
 					tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, 0);
 					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
 				}
@@ -1004,7 +1002,7 @@ void screentmcmenu()
 					int audioret = 0;
 					struct mediadbfilter* mfilter = NULL;
 
-					drawscreen(skin, 0);
+					drawscreen(skin, 0, 0);
 					mfilter = mediadbfilterpos;
 
 					while(mfilter != NULL && mediadbfilter != NULL)
@@ -1026,7 +1024,7 @@ void screentmcmenu()
 						if(mfilter == NULL) mfilter = mediadbfilter;
 					}
 
-					drawscreen(tmcbg, 1);
+					drawscreen(tmcbg, 0, 1);
 					tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, 0);
 					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
 				}
@@ -1035,7 +1033,7 @@ void screentmcmenu()
 					int picret = 0;
 					struct mediadbfilter* mfilter = NULL;
 
-					drawscreen(skin, 0);
+					drawscreen(skin, 0, 0);
 					mfilter = mediadbfilterpos;
 					
 					while(mfilter != NULL && mediadbfilter != NULL)
@@ -1057,7 +1055,7 @@ void screentmcmenu()
 						if(mfilter == NULL) mfilter = mediadbfilter;
 					}
 
-					drawscreen(tmcbg, 1);
+					drawscreen(tmcbg, 0, 1);
 					tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, 0);
 					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
 				}

@@ -391,7 +391,7 @@ start:
 		changeweatherpic(day3_icon, node->day3_icon);
 	}
 
-	drawscreen(weather, 0);
+	drawscreen(weather, 0, 0);
 
 	while(1)
 	{
@@ -413,7 +413,7 @@ start:
 					changename(tmp, location);
 				}
       }
-      drawscreen(weather, 0);
+      drawscreen(weather, 0, 0);
 			if(location == NULL)
 				continue;
 			free(location); location = NULL;
@@ -428,7 +428,7 @@ start:
 		if(listbox->select != NULL && rcret == getrcconfigint("rcgreen", NULL))
 		{
 			delscreennode(weather, listbox->select->name);
-			drawscreen(weather, 0);
+			drawscreen(weather, 0, 0);
 		}
 
 		if(listbox->select != NULL)

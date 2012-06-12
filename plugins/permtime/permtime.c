@@ -26,7 +26,7 @@ void permtime_thread()
 	while (permtimethread->aktion != STOP) {
 		tmpstr = gettime(NULL, "%H:%M"); 
 		changetext(permtime, tmpstr);
-		drawscreen(permtime, 0);
+		drawscreen(permtime, 0, 0);
 		free(tmpstr); tmpstr = NULL;
 		sleep(1); 
 	}

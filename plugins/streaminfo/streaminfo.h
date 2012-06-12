@@ -54,11 +54,11 @@ void screenstreaminfo()
 		}
 		free(tmpstr); tmpstr = NULL;
 
-		drawscreen(streaminfo, 0);
+		drawscreen(streaminfo, 0, 0);
 
 		rcret = waitrc(streaminfo, 1000, 0);
-                if(rcret == getrcconfigint("rcexit", NULL)) break;
-                if(rcret == getrcconfigint("rcok", NULL)) break;
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL)) break;
 	}
 
 	clearscreen(streaminfo);

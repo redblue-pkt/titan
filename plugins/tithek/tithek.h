@@ -412,7 +412,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 
 	if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) return;
 				
-	drawscreen(grid, 0);
+	drawscreen(grid, 0, 0);
 	addscreenrc(grid, listbox);
 				
 	while(1)
@@ -445,7 +445,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 				tmp = tmp->next;
 			}
 
-			drawscreen(grid, 0);
+			drawscreen(grid, 0, 0);
 		}
 		
 		int count = getfilecount(TITHEKPATH);
@@ -466,7 +466,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 					{
 						char* tmpstr = tithekdownload((((struct tithek*)listbox->select->handle)->link), NULL, NULL, 0, 1);
 						free(tmpstr); tmpstr = NULL;
-						drawscreen(grid, 0);
+						drawscreen(grid, 0, 0);
 					}
 					else
 						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
@@ -485,7 +485,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 						{
 							char* tmpstr = tithekdownload(tmpstr1, tmpstr2, NULL, 0, 1);
 							free(tmpstr); tmpstr = NULL;
-							drawscreen(grid, 0);
+							drawscreen(grid, 0, 0);
 						}
 						else
 							textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
@@ -595,7 +595,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 						addscreenrc(grid, listbox);
 					}
 				}
-				drawscreen(grid, 0);			
+				drawscreen(grid, 0, 0);
 			}			
 		}
 	}

@@ -12,7 +12,7 @@ void screenmc_audioplayer()
 
 	// workaround for grey background mvi
 	struct skin* blackscreen = getscreen("blackscreen");
-	drawscreen(blackscreen, 0);
+	drawscreen(blackscreen, 0, 0);
 
 	// main screen
 	struct skin* apskin = getscreen("mc_audioplayer");
@@ -80,12 +80,12 @@ void screenmc_audioplayer()
 			{
 //				if((rcret == getrcconfigint("rcfr", NULL)) || (rcret == getrcconfigint("rcff", NULL)) || (rcret == getrcconfigint("rcpause", NULL)) || (rcret == getrcconfigint("rc1", NULL)) || (rcret == getrcconfigint("rc3", NULL)) || (rcret == getrcconfigint("rc4", NULL)) || (rcret == getrcconfigint("rc6", NULL)) || (rcret == getrcconfigint("rc7", NULL)) || (rcret == getrcconfigint("rc9", NULL)))
 				if((rcret == getrcconfigint("rcpause", NULL)) || (rcret == getrcconfigint("rc1", NULL)) || (rcret == getrcconfigint("rc3", NULL)) || (rcret == getrcconfigint("rc4", NULL)) || (rcret == getrcconfigint("rc6", NULL)) || (rcret == getrcconfigint("rc7", NULL)) || (rcret == getrcconfigint("rc9", NULL)))
-					drawscreen(infobar, 0);
+					drawscreen(infobar, 0, 0);
 				else
 				{
 					if(screensaver != NULL && screensaver->type == 3)
 						singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
-					drawscreen(apskin, 0);
+					drawscreen(apskin, 0, 0);
 				}
 
 
@@ -154,7 +154,7 @@ void screenmc_audioplayer()
 			{
 				if(screensaver != NULL && screensaver->type == 3)
 					singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
-				drawscreen(apskin, 0);
+				drawscreen(apskin, 0, 0);
 			}
 			if((status.play == 1) || (status.pause == 1))
 				playrcpause(filename, &playinfobarstatus, &playinfobarcount, playertype, flag);
@@ -176,14 +176,14 @@ void screenmc_audioplayer()
 			if(status.repeat == 0)
 			{
 				changetext(b4, _("Repeat-On"));
-				drawscreen(apskin, 0);
+				drawscreen(apskin, 0, 0);
 				status.repeat = 1;
 			}
 			else
 			{
 				status.repeat = 0;
 				changetext(b4, _("Repeat"));
-				drawscreen(apskin, 0);
+				drawscreen(apskin, 0, 0);
 			}
 		}
 		else if(rcret == getrcconfigint("rcyellow", NULL))
@@ -203,13 +203,13 @@ void screenmc_audioplayer()
 				delownerrc(apskin);	
 				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
 				addscreenrc(apskin, filelist);
-				drawscreen(apskin, 0);			
+				drawscreen(apskin, 0, 0);
 			}
 		}
 		else if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			showplaylist(apskin, filelistpath, filelist, listbox, b2, 0, &playlist, &eof, &filename, &currentdirectory, &playertype, flag);
-			drawscreen(apskin, 0);
+			drawscreen(apskin, 0, 0);
 		}
 		else if(rcret == getrcconfigint("rcmenu", NULL))
 		{
@@ -237,7 +237,7 @@ void screenmc_audioplayer()
 				if(getconfigint("screensaver", NULL) == 1)
 					initscreensaver();
 
-				drawscreen(apskin, 0);
+				drawscreen(apskin, 0, 0);
 			}
 		}
 		else if(rcret == getrcconfigint("rcinfo", NULL))
@@ -269,7 +269,7 @@ void screenmc_audioplayer()
 				delownerrc(apskin);
 				addscreenrc(apskin, filelist);
 
-				drawscreen(apskin, 0);
+				drawscreen(apskin, 0, 0);
 
 				sleep(1);
 				status.playspeed = 0;
@@ -325,7 +325,7 @@ void screenmc_audioplayer()
 				debug(50, "playerstop");
 				playerstop();
 				sleep(1);
-				drawscreen(infobar, 0);
+				drawscreen(infobar, 0, 0);
 				debug(50, "playerstart: %s", filename);
 				eof = 0;
 
@@ -348,7 +348,7 @@ void screenmc_audioplayer()
 
 						delownerrc(apskin);
 						addscreenrc(apskin, filelist);
-						drawscreen(apskin, 0);
+						drawscreen(apskin, 0, 0);
 */
 // test
 						status.play = 1;
@@ -365,7 +365,7 @@ void screenmc_audioplayer()
 				// workaround dont open folder on rcchup
 				if(skip == 1)
 				{
-					drawscreen(apskin, 0);
+					drawscreen(apskin, 0, 0);
 					writerc(getrcconfigint("rcok", NULL));
 					skip = 0;
 				}
@@ -399,7 +399,7 @@ void screenmc_audioplayer()
 				else if(!strncmp(".m3u",filename+strlen(filename)-4,4) || !strncmp(".pls",filename+strlen(filename)-4,4)) 
 				{
 					showplaylist(apskin, filelistpath, filelist, listbox, b2, 1, &playlist, &eof, &filename, &currentdirectory, &playertype, flag);
-					drawscreen(apskin, 0);
+					drawscreen(apskin, 0, 0);
 					continue;
 				}
 
@@ -412,7 +412,7 @@ void screenmc_audioplayer()
 				playerstop();
 				sleep(1);
 
-				drawscreen(infobar, 0);
+				drawscreen(infobar, 0, 0);
 				debug(50, "playerstart: %s", filename);
 				eof = 0;
 				playerret = playerstart(filename);

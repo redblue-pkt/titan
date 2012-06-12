@@ -417,7 +417,7 @@ start:
 		changepic(skin_cover, node->poster);
 	}
 
-	drawscreen(imdbskin, 0);
+	drawscreen(imdbskin, 0, 0);
 
 	while(1)
 	{
@@ -436,7 +436,7 @@ start:
 			free(search); search = NULL;
 			goto start;
 		}
-		drawscreen(imdbskin, 0);
+		drawscreen(imdbskin, 0, 0);
 		continue;
 		}
 	}

@@ -50,7 +50,7 @@ playerstart:
 			return;
 		}
 
-		drawscreen(skin, 0);
+		drawscreen(skin, 0, 0);
 		playwritevfd(file);
 
 		rcret = dvdstart(file);

@@ -13,21 +13,21 @@ int mc_menucall(struct skin* menuentry)
 
 	if(ostrcmp("mc_videoplayer", menuentry->name) == 0)
 	{
-		drawscreen(skin, 0);		
+		drawscreen(skin, 0, 0);
 		screenmc_videoplayer(NULL);
-		drawscreen(skin, 0);
+		drawscreen(skin, 0, 0);
 		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgVideo.mvi", 0);
 	} 
 	else if(ostrcmp("mc_audioplayer", menuentry->name) == 0)
 	{
-		drawscreen(skin, 0);
+		drawscreen(skin, 0, 0);
 		servicestop(status.aktservice, 1, 1);	
 		screenmc_audioplayer(NULL);
 		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgMusic.mvi", 0);
 	} 
 	else if(ostrcmp("mc_pictureplayer", menuentry->name) == 0)
 	{
-		drawscreen(skin, 0);
+		drawscreen(skin, 0, 0);
 		servicestop(status.aktservice, 1, 1);	
 		screenmc_pictureplayer(NULL);
 		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgMusic.mvi", 0);
@@ -54,7 +54,7 @@ int mc_menucall(struct skin* menuentry)
 	}
 	else if(ostrcmp("mc_internetbrowser", menuentry->name) == 0)
 	{
-		drawscreen(skin, 0);
+		drawscreen(skin, 0, 0);
 		servicestop(status.aktservice, 1, 1);	
 		screenmc_internetbrowser(NULL);
 		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgBrowser.mvi", 0);
@@ -76,7 +76,7 @@ int mc_menucall(struct skin* menuentry)
 	}
 	else if(ostrcmp("mc_settings", menuentry->name) == 0)
 	{
-		drawscreen(skin, 0);
+		drawscreen(skin, 0, 0);
 		servicestop(status.aktservice, 1, 1);	
 		screenmc_settings(NULL);
 		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgMusic.mvi", 0);
@@ -122,14 +122,12 @@ void mc_main()
 
 	singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgMusic.mvi", 0);
 
-	drawscreen(mc_main, 0);
+	drawscreen(mc_main, 0, 0);
 	addscreenrc(mc_main, listbox);
 
 	while(1)
 	{
-		status.screencalc = 1;
-		rcret = waitrc(mc_main, 0, 0);
-		status.screencalc = 0;
+		rcret = waitrc(mc_main, 0, 1);
 
 		if (rcret == getrcconfigint("rcexit", NULL)) break;
 
@@ -148,7 +146,7 @@ void mc_main()
 			listbox = getscreennode(mc_main, "listbox");
 			mc_main_selected = getscreennode(mc_main, "mc_main_selected_pic");
 
-			drawscreen(mc_main, 0);
+			drawscreen(mc_main, 0, 0);
 			debug(50, "ret: %d", ret);
 			addscreenrc(mc_main, listbox);
 
@@ -207,14 +205,14 @@ void mc_main()
 			{
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgSettings.mvi", 0);
 			}
-			drawscreen(mc_main, 0);
+			drawscreen(mc_main, 0, 0);
 		}
 	}
 
 
 	delownerrc(mc_main);
 	clearscreen(mc_main);
-	drawscreen(skin, 0);
+	drawscreen(skin, 0, 0);
 
 	debug(50, "drop_caches");
 	writesysint("/proc/sys/vm/drop_caches", 3, 0);

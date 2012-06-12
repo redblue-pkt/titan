@@ -195,7 +195,7 @@ start:
 		changepic(skin_cover, node->poster);
 	}
 
-	drawscreen(imdbapiskin, 0);
+	drawscreen(imdbapiskin, 0, 0);
 
 	while(1)
 	{
@@ -214,7 +214,7 @@ start:
 				free(search); search = NULL;
 				goto start;
 			}
-			drawscreen(imdbapiskin, 0);
+			drawscreen(imdbapiskin, 0, 0);
 			continue;
 		}
 	}

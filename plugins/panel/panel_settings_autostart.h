@@ -343,7 +343,7 @@ void screenpanel_settings_autostart(int mode)
 
 	}
 
-	drawscreen(panel_config, 0);
+	drawscreen(panel_config, 0, 0);
 	tmp = listbox->select;
 
 	while(1)

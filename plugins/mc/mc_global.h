@@ -142,7 +142,7 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 			if(screensaver != NULL && screensaver->type == 3 && flag == 2)
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 		
-			drawscreen(apskin, 0);
+			drawscreen(apskin, 0, 0);
 		
 			int switchtofilelist = 0;
 						
@@ -179,7 +179,7 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 //							{
 //								apskin->hidden = YES;
 //								delownerrc(apskin);
-//								drawscreen(skin, 0);
+//								drawscreen(skin, 0, 0);
 //							}
 						}
 						else
@@ -208,7 +208,7 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 								writevfd("Filelist-Mode");
 								switchtofilelist = 1;
 	
-								drawscreen(skin, 0);
+								drawscreen(skin, 0, 0);
 								
 								// show skin
 								setfbtransparent(255);
@@ -231,7 +231,7 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 							{
 								//apskin->hidden = YES;
 								//delownerrc(apskin);
-								drawscreen(skin, 0);
+								drawscreen(skin, 0, 0);
 							}
 						else
 						{
@@ -255,7 +255,7 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 							{
 								//apskin->hidden = YES;
 								//delownerrc(apskin);
-								drawscreen(skin, 0);
+								drawscreen(skin, 0, 0);
 							}
 							// workaround dont open folder on rcchup
 							*skip = 1;
@@ -282,7 +282,7 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 
 			if(flag != 3)
-				drawscreen(apskin, 0);
+				drawscreen(apskin, 0, 0);
 
 			if(status.random == 1 && status.repeat == 0)
 			{
@@ -385,13 +385,9 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 		debug(50, "skiprcok: %d", skiprcok);					
 
 		if(flag == 3 && skiprcok == 0)
-		{
-			status.screencalc=2;
-			drawscreen(apskin, 0);
-			status.screencalc=0;
-		}
+			drawscreen(apskin, 2, 0);
 		else
-			drawscreen(apskin, 0);
+			drawscreen(apskin, 0, 0);
 			
 		if(skiprcok == 0)
 			writerc(getrcconfigint("rcok", NULL));
@@ -414,7 +410,7 @@ void playerrandom(struct skin* apskin, struct skin* filelist, struct skin* listb
 				setlistboxselection(filelist, tmplist->name);
 //				if(flag == 2)
 					changetext(b3, _("Random-On"));
-				drawscreen(apskin, 0);
+				drawscreen(apskin, 0, 0);
 				status.random = 1;
 				debug(50, "writerc rcok");
 				writerc(getrcconfigint("rcok", NULL));
@@ -425,7 +421,7 @@ void playerrandom(struct skin* apskin, struct skin* filelist, struct skin* listb
 			status.random = 0;
 //			if(flag == 2)
 				changetext(b3, _("Random"));
-			drawscreen(apskin, 0);
+			drawscreen(apskin, 0, 0);
 		}
 	}
 	else
@@ -442,7 +438,7 @@ void playerrandom(struct skin* apskin, struct skin* filelist, struct skin* listb
 				setlistboxselection(listbox, tmplist->name);
 //				if(flag == 2)
 					changetext(b3, _("Random-On"));
-				drawscreen(apskin, 0);
+				drawscreen(apskin, 0, 0);
 				status.random = 1;
 				debug(50, "writerc rcok");
 				writerc(getrcconfigint("rcok", NULL));
@@ -453,7 +449,7 @@ void playerrandom(struct skin* apskin, struct skin* filelist, struct skin* listb
 			status.random = 0;
 //			if(flag == 2)
 				changetext(b3, _("Random"));
-			drawscreen(apskin, 0);
+			drawscreen(apskin, 0, 0);
 		}
 	}
 }
@@ -477,7 +473,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 		
 		mbox = menulistbox(mlist, "playlistmenu", NULL, "%pluginpath%/mc/skin", NULL, 1, 0);
 
-		drawscreen(apskin, 0);
+		drawscreen(apskin, 0, 0);
 
 		if(mbox != NULL)
 		{
@@ -490,7 +486,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 				status.play = 0;
 
 				mplaylist = screenmainplaylist(1);
-				drawscreen(apskin, 0);
+				drawscreen(apskin, 0, 0);
 
 				if(mplaylist != NULL && mplaylist->playlist != NULL)
 				{
@@ -571,14 +567,14 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 
 						delownerrc(apskin);
 						addscreenrc(apskin, listbox);
-						drawscreen(apskin, 0);
+						drawscreen(apskin, 0, 0);
 						// show playlist end	
 						sleep(1);
 
 						if(flag == 1  && status.play == 1)
 						{
 							servicestop(status.aktservice, 1, 1);
-							drawscreen(skin, 0);
+							drawscreen(skin, 0, 0);
 							setfbtransparent(255);
 							debug(50, "check");
 							debug(50, "autostart_playlist: %d", getconfigint("mc_vp_autostart_playlist", NULL));
@@ -588,7 +584,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 						else if(flag == 2  && status.play == 1)
 						{
 							addscreenrc(apskin, listbox);
-							drawscreen(apskin, 0);
+							drawscreen(apskin, 0, 0);
 							debug(50, "check");
 							debug(50, "autostart_playlist: %d", getconfigint("mc_ap_autostart_playlist", NULL));
 							debug(50, "status.play: %d", status.play);				
@@ -605,7 +601,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 							if(flag == 1)
 							{
 								servicestop(status.aktservice, 1, 1);
-								drawscreen(skin, 0);
+								drawscreen(skin, 0, 0);
 								setfbtransparent(255);
 								debug(50, "check");
 								debug(50, "autostart_playlist: %d", getconfigint("mc_vp_autostart_playlist", NULL));
@@ -614,7 +610,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 							else if(flag == 2)
 							{
 								addscreenrc(apskin, listbox);
-								drawscreen(apskin, 0);
+								drawscreen(apskin, 0, 0);
 								debug(50, "check");
 								debug(50, "autostart_playlist: %d", getconfigint("mc_ap_autostart_playlist", NULL));
 								debug(50, "status.play: %d", status.play);				
@@ -652,7 +648,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 			else
 			{
 				screenmainplaylist(0);
-				drawscreen(apskin, 0);
+				drawscreen(apskin, 0, 0);
 			}
 			freemenulist(mlist, 1);
 		}
@@ -799,7 +795,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 		changetext(b2, _("Playlist-Mode"));
 		delownerrc(apskin);
 		addscreenrc(apskin, listbox);
-		drawscreen(apskin, 0);
+		drawscreen(apskin, 0, 0);
 		// show playlist end	
 
 		if(firstfile != NULL)
@@ -820,7 +816,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 			if(flag == 1  && status.play == 1)
 			{
 				servicestop(status.aktservice, 1, 1);
-				drawscreen(skin, 0);
+				drawscreen(skin, 0, 0);
 				setfbtransparent(255);
 				debug(50, "check");
 				debug(50, "autostart_playlist: %d", getconfigint("mc_vp_autostart_playlist", NULL));
@@ -830,7 +826,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 			else if(flag == 2  && status.play == 1)
 			{
 				addscreenrc(apskin, listbox);
-				drawscreen(apskin, 0);
+				drawscreen(apskin, 0, 0);
 				debug(50, "check");
 				debug(50, "autostart_playlist: %d", getconfigint("mc_ap_autostart_playlist", NULL));
 				debug(50, "status.play: %d", status.play);				
@@ -849,7 +845,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 				if(flag == 1)
 				{
 					servicestop(status.aktservice, 1, 1);
-					drawscreen(skin, 0);
+					drawscreen(skin, 0, 0);
 					setfbtransparent(255);
 					debug(50, "check");
 					debug(50, "autostart_playlist: %d", getconfigint("mc_vp_autostart_playlist", NULL));
@@ -858,7 +854,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 				else if(flag == 2)
 				{
 					addscreenrc(apskin, listbox);
-					drawscreen(apskin, 0);
+					drawscreen(apskin, 0, 0);
 					debug(50, "check");
 					debug(50, "autostart_playlist: %d", getconfigint("mc_ap_autostart_playlist", NULL));
 					debug(50, "status.play: %d", status.play);				
@@ -934,7 +930,7 @@ void mc_audioplayer_infobar(struct skin* apskin, struct skin* infobar, struct sk
 	changetext(sreverse, _(tmpstr));
 	free(tmpstr); tmpstr = NULL;
 
-	drawscreen(infobar, 0);
+	drawscreen(infobar, 0, 0);
 }
 
 void picplayer(struct skin* picscreen, struct skin* picture, struct skin* picname, char* filename, int flag)
@@ -942,7 +938,7 @@ void picplayer(struct skin* picscreen, struct skin* picture, struct skin* picnam
 	if(filename == NULL)
 	{
 		clearscreen(picscreen);
-		drawscreen(skin, 0);
+		drawscreen(skin, 0, 0);
 		return;
 	}
 
@@ -958,6 +954,6 @@ void picplayer(struct skin* picscreen, struct skin* picture, struct skin* picnam
 	picture->picheight = 1;
 	picture->bgcol = 0;
 
-	drawscreen(picscreen, 4);
+	drawscreen(picscreen, 0, 4);
 }
 #endif

@@ -126,7 +126,7 @@ void start(void)
 	else
 		changetext(startstop, "Stop");
 	
-	drawscreen(notused_main, 0);
+	drawscreen(notused_main, 0, 0);
 	addscreenrc(notused_main, listbox);
 	
 	tmp = listbox->select;

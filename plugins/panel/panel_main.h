@@ -13,7 +13,7 @@ struct skin* panel_menu(struct skin* panel_menu)
 		return NULL;
 	}
 
-	drawscreen(panel_menu, 0);
+	drawscreen(panel_menu, 0, 0);
 	addscreenrc(panel_menu, listbox);
 
 	while(1)
@@ -27,7 +27,7 @@ struct skin* panel_menu(struct skin* panel_menu)
 			ret = panel_menucall(listbox->select);
 			if(ret != 0)
 				textbox(_("Message"), _("Menu not implemented !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-			drawscreen(panel_menu, 0);
+			drawscreen(panel_menu, 0, 0);
 		}
 	}
 
@@ -150,7 +150,7 @@ void panel_main()
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
 
-	drawscreen(panel_main, 0);
+	drawscreen(panel_main, 0, 0);
 	if(listbox->select != NULL)
 	{
 		status.updatevfd = PAUSE;
@@ -159,9 +159,7 @@ void panel_main()
 
 	while(1)
 	{
-		status.screencalc = 1;
-		rcret = waitrc(panel_main, 0, 0);
-		status.screencalc = 0;
+		rcret = waitrc(panel_main, 0, 1);
 
 		if (rcret == getrcconfigint("rcexit", NULL)) break;
 
@@ -171,7 +169,7 @@ void panel_main()
 			ret = panel_menucall(listbox->select);
 			if(ret != 0)
 				textbox(_("Message"), _("Menu not implemented !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-			drawscreen(panel_main, 0);
+			drawscreen(panel_main, 0, 0);
 		}
 		debug(10, "[panal_main] (select) menu=%s", listbox->select->name);
 		if(listbox->select != NULL && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL)))
@@ -182,7 +180,7 @@ void panel_main()
 			else if(ostrcmp(listbox->select->name, "panel_infos") == 0)
 				changepic(panel_main_selected, "panel/skin/panel_infos.png");
 		}
-		drawscreen(panel_main, 0);
+		drawscreen(panel_main, 0, 0);
 		if(listbox->select != NULL)
 			writevfd(listbox->select->text);
 	}

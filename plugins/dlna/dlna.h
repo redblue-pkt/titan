@@ -281,7 +281,7 @@ void screendlna()
 	changeinput(dir4, node->dir4);
 
 	freedlnacontent(node);
-	drawscreen(dlna, 0);
+	drawscreen(dlna, 0, 0);
 	addscreenrc(dlna, listbox);
 
 	tmp = listbox->select;
@@ -316,7 +316,7 @@ void screendlna()
 					textbox(_("Message"), _("DLNA started."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 				else
 					textbox(_("Message"), _("DLNA not started,\nPlease check your config."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
-				drawscreen(dlna, 0);
+				drawscreen(dlna, 0, 0);
 			}
 		}
 
@@ -324,7 +324,7 @@ void screendlna()
 		{
 			system("/var/swap/titanplugins/dlna/dlna.sh stop");
 			textbox(_("Message"), _("DLNA now stopped"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
-			drawscreen(dlna, 0);
+			drawscreen(dlna, 0, 0);
 		}
 
 		if(rcret == getrcconfigint("rcblue", NULL))
@@ -337,7 +337,7 @@ void screendlna()
 					changeinput(listbox->select, tmpstr);
 				free(tmpstr); tmpstr = NULL;
 
-				drawscreen(dlna, 0);
+				drawscreen(dlna, 0, 0);
 			}
 		}
 

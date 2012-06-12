@@ -204,7 +204,7 @@ void screenbrowser()
 	}
 
 start:
-	drawscreen(skin, 0);
+	drawscreen(skin, 0, 0);
 	mbox = menulistbox(mlist, "menulist", "Browser Favoriten", NULL, NULL, 0, 0);
 	if(mbox != NULL)
 	{

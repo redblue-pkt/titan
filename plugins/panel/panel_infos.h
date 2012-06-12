@@ -99,7 +99,7 @@ void screenpanel_infos(int mode)
 		free(tmpstr); tmpstr = NULL;
 	}
 
-	drawscreen(panel_info, 0);
+	drawscreen(panel_info, 0, 0);
 
 	while(1)
 	{

@@ -129,7 +129,7 @@ void callmon_main()
 	addchoicebox(atimeout, "12", _("12"));
 	setchoiceboxselection(atimeout, getlist(myconfig, "anzeigetimeout", NULL));
 
-	drawscreen(callmon_main, 0);
+	drawscreen(callmon_main, 0, 0);
 	addscreenrc(callmon_main, listbox);
 
 	tmp = listbox->select;
@@ -153,7 +153,7 @@ void callmon_main()
 				rufnummer1->hidden = YES;
 				rufnummer2->hidden = YES;
 			}
-			drawscreen(callmon_main, 0);
+			drawscreen(callmon_main, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL))
 			hgreen = 1;

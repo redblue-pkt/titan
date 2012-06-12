@@ -259,7 +259,7 @@ void screenpanel_settings_overclocking()
 	}
 
 	read_cpufreq(label1);
-	drawscreen(panel_overclock, 0);
+	drawscreen(panel_overclock, 0, 0);
 
 	inifreq = getlistvalue(listbox,"pll0_ndiv_mdiv");
 	oldfreq = getlistvalue(listbox,"pll0_ndiv_mdiv");
@@ -284,7 +284,7 @@ void screenpanel_settings_overclocking()
 			set_freq(oldfreq, oldfreq, getownconfig("pll0_ndiv_mdiv"));
 			set_fdma(oldfdma, oldfdma, getownconfig("pll1_fdma_bypass"));
 			read_cpufreq(label1);
-			drawscreen(panel_overclock, 0);
+			drawscreen(panel_overclock, 0, 0);
 		}
 
 		if(listbox->select != NULL)
@@ -305,7 +305,7 @@ void screenpanel_settings_overclocking()
 					changetext(listbox->select, NULL);
 					changeinput(listbox->select, NULL);
 				}
-				drawscreen(panel_overclock, 0);
+				drawscreen(panel_overclock, 0, 0);
 			}
 		}
 

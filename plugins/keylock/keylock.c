@@ -19,7 +19,7 @@ void keylock_main()
 	
 	setnodeattr(keylock, framebuffer);
 	bg = savescreen(keylock);
-	drawscreen(keylock, 0);
+	drawscreen(keylock, 0, 0);
 	
 	while(1)
 	{

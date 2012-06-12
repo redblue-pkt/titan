@@ -23,7 +23,7 @@ int screenmc_sort()
 	addchoicebox(date, "4", _(""));
 	addchoicebox(reversedate, "5", _(""));
 
-	drawscreen(mc_sort, 0);
+	drawscreen(mc_sort, 0, 0);
 	addscreenrc(mc_sort, listbox);
 
 	tmp = listbox->select;

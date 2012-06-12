@@ -395,7 +395,7 @@ start:
 		changepic(skin_cover, TMPTMDBPIC3);
 	}
 
-	drawscreen(tmdbskin, 0);
+	drawscreen(tmdbskin, 0, 0);
 
 	while(1)
 	{
@@ -414,7 +414,7 @@ start:
 				free(search); search = NULL;
 				goto start;
 			}
-			drawscreen(tmdbskin, 0);
+			drawscreen(tmdbskin, 0, 0);
 			continue;
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL))
@@ -442,7 +442,7 @@ start:
 				}
 			}
 			freemenulist(mlist, 1); mlist = NULL, mbox = NULL;
-			drawscreen(tmdbskin, 0);
+			drawscreen(tmdbskin, 0, 0);
 			continue;
 		}
 	}

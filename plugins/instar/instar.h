@@ -41,7 +41,7 @@ int show_control()
 			free(tmpstr); tmpstr = NULL;
 		}
 		
-		drawscreen(instar_screen, 0);
+		drawscreen(instar_screen, 0, 0);
 		rcret = waitrc(instar_screen, 100, 0);
 		ohnestop = 0;
 
@@ -199,7 +199,7 @@ int instar_settings()
   changemask(passCam2, "abcdefghijklmnopqrstuvwxyz");
   changeinput(passCam2, getlist(myconfig, "InstarCam2Pass", NULL));
   
-	drawscreen(instar_einstellungen, 0);
+	drawscreen(instar_einstellungen, 0, 0);
 	addscreenrc(instar_einstellungen, listbox);
 	tmp = listbox->select;
 	

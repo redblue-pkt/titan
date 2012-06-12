@@ -81,7 +81,7 @@ char* screenmc_imdb(int style, char* filepath, char* filename)
 	addchoicebox(mvid, "3", _(""));
 	addchoicebox(all, "4", _(""));
 
-	drawscreen(mc_imdb, 0);
+	drawscreen(mc_imdb, 0, 0);
 	addscreenrc(mc_imdb, listbox);
 
 	tmp = listbox->select;

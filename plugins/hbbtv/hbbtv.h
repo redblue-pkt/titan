@@ -353,7 +353,7 @@ void screenopera(char* url)
 	char* tmpstr = NULL, *savedir = NULL, *dirbuf = NULL;;
 	struct stimerthread* operareceiver = NULL;
 
-	drawscreen(skin, 0);
+	drawscreen(skin, 0, 0);
 
 	debug(788, "step 1, set env");
 	//setenv("DFBARGS", "pixelformat=ARGB,no-cursor,bg-none,no-linux-input-grab,no-vt", 1);
@@ -724,7 +724,7 @@ void screenoperafav()
 	}
 
 start:
-	drawscreen(skin, 0);
+	drawscreen(skin, 0, 0);
 	mbox = menulistbox(mlist, "menulist", "HBBTV Favoriten", NULL, NULL, 0, 0);
 	if(mbox != NULL)
 	{
