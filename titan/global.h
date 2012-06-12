@@ -81,7 +81,7 @@ void freeregexstruct(struct regex* node)
 struct regex* regexstruct(char* regex, char* str)
 {
 	regex_t preg;
-	regmatch_t pmatch[10];
+	regmatch_t pmatch[11];
 	size_t rm = 0, i = 0, len = 0;
 	char* ret = NULL;
 	struct regex* node = NULL;
@@ -89,7 +89,7 @@ struct regex* regexstruct(char* regex, char* str)
 	rm = regcomp(&preg, regex, REG_EXTENDED);
 	if(rm != 0) return NULL; //error in regex
 
-	rm = regexec(&preg, str, 10, pmatch, 0);
+	rm = regexec(&preg, str, 11, pmatch, 0);
 	if(rm != 0) return NULL; //no match
 
 	node = (struct regex*)malloc(sizeof(struct regex));
@@ -101,7 +101,7 @@ struct regex* regexstruct(char* regex, char* str)
 
 	memset(node, 0, sizeof(struct regex));
 
-	for(i = 0; !rm && i <= preg.re_nsub; i++)
+	for(i = 1; !rm && i <= preg.re_nsub; i++)
 	{
 		len = pmatch[i].rm_eo - pmatch[i].rm_so;
 		ret = malloc(len + 1);
@@ -111,16 +111,16 @@ struct regex* regexstruct(char* regex, char* str)
 			ret[len] = '\0';
 		}
 
-		if(i == 0) node->match1 = ret;
-		else if(i == 1) node->match2 = ret;
-		else if(i == 2) node->match3 = ret;
-		else if(i == 3) node->match4 = ret;
-		else if(i == 4) node->match5 = ret;
-		else if(i == 5) node->match6 = ret;
-		else if(i == 6) node->match7 = ret;
-		else if(i == 7) node->match8 = ret;
-		else if(i == 8) node->match9 = ret;
-		else if(i == 9) node->match10 = ret;
+		if(i == 1) node->match1 = ret;
+		else if(i == 2) node->match2 = ret;
+		else if(i == 3) node->match3 = ret;
+		else if(i == 4) node->match4 = ret;
+		else if(i == 5) node->match5 = ret;
+		else if(i == 6) node->match6 = ret;
+		else if(i == 7) node->match7 = ret;
+		else if(i == 8) node->match8 = ret;
+		else if(i == 9) node->match9 = ret;
+		else if(i == 10) node->match10 = ret;
 
 		ret = NULL;
 	}
@@ -132,22 +132,22 @@ struct regex* regexstruct(char* regex, char* str)
 char* oregex(char* regex, char* str)
 {
 	regex_t preg;
-	regmatch_t pmatch[1];
+	regmatch_t pmatch[2];
 	size_t rm = 0, len = 0;
 	char* ret = NULL;
 
 	rm = regcomp(&preg, regex, REG_EXTENDED);
 	if(rm != 0) return NULL; //error in regex
 
-	rm = regexec(&preg, str, 1, pmatch, 0);
+	rm = regexec(&preg, str, 2, pmatch, 0);
 	if(rm != 0) return NULL; //no match
 
-	len = pmatch[0].rm_eo - pmatch[0].rm_so;
+	len = pmatch[1].rm_eo - pmatch[1].rm_so;
 
 	ret = malloc(len + 1);
 	if(ret != NULL)
 	{
-		memcpy(ret, str + pmatch[0].rm_so, len);
+		memcpy(ret, str + pmatch[1].rm_so, len);
 		ret[len] = '\0';
 	}
 
