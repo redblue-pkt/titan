@@ -909,6 +909,7 @@ int writemediadb(const char *filename)
 //flag 5: rating
 //flag 6: genre
 //flag 7: a-z
+//flag 8: no imdb info
 void createmediadbfilter(int type, char* search, int flag)
 {
 	int isearch = 0;
@@ -944,6 +945,8 @@ void createmediadbfilter(int type, char* search, int flag)
 			else if(flag == 6 && ostrstrcase(node->genre, search) != NULL)
 				last = addmediadbfilter(node, 1, last);
 			else if(flag == 7 && node->title != NULL && node->title[0] == search[0])
+				last = addmediadbfilter(node, 1, last);
+			else if(flag == 8 && node->id == NULL)
 				last = addmediadbfilter(node, 1, last);
 		}
 		node = node->next;
