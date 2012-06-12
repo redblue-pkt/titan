@@ -638,7 +638,7 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 	{
 		tmpstr = string_resub("\": \"url=", "\", \"", tmpstr, 0);
 	
-		while(string_find(",url=", tmpstr))
+		while(ostrstr(tmpstr, ",url=") != NULL)
 			tmpstr = string_replace(",url=", "\nurl=", tmpstr, 1);
 	
 		tmpstr = string_decode(tmpstr, 0);

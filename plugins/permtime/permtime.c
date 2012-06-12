@@ -20,7 +20,7 @@ void permtime_thread()
 	struct skin* permtime = getscreen("permtime");
 	char* bg = NULL;
 	
-	setnodeattr(permtime, framebuffer);
+	setnodeattr(permtime, framebuffer, 0);
 	bg = savescreen(permtime);
 	
 	while (permtimethread->aktion != STOP) {

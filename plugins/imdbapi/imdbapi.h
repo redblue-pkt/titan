@@ -33,7 +33,6 @@ void freeimdbapi(struct imdbapi** node, int flag)
 //flag2: 2 = save no pic
 struct imdbapi* getimdbapi(struct imdbapi** first, char* title, int flag, int flag1)
 {
-	struct imdbapi* imdbapi = NULL;
 	char* tmpstr = NULL, *ret = NULL;
 	char* tmpsearch = NULL;
 	char* savefile = NULL, *savethumb = NULL; 
@@ -209,8 +208,8 @@ start:
 			search = textinput("Search", NULL);
 			if(search != NULL)
 			{
-				freeimdbapi(&node); node = NULL;
-				node = getimdbapi(&search, 0, 0);
+				freeimdbapi(&node, 0); node = NULL;
+				node = getimdbapi(&node, search, 0, 0);
 				free(search); search = NULL;
 				goto start;
 			}
@@ -219,7 +218,7 @@ start:
 		}
 	}
 
-	freeimdbapi(&node); node = NULL;
+	freeimdbapi(&node, 0); node = NULL;
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	status.hangtime = getconfigint("hangtime", NULL);
 	clearscreen(imdbapiskin);
