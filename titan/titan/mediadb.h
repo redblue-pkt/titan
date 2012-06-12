@@ -1395,30 +1395,30 @@ void mediadbfindfilecb(char* path, char* file, int type)
 
 #ifdef SIMULATE
 			if(imdb == NULL)
-				imdbapi = getimdbapi(shortname, 0, 1);
+				imdbapi = getimdbapi(&imdbapi, shortname, 0, 1);
 			else if(imdb->id != NULL)
-				imdbapi = getimdbapi(imdb->id, 1, 1);
+				imdbapi = getimdbapi(&imdbapi, imdb->id, 1, 1);
 #else
 			struct skin* imdbapiplugin = getplugin("IMDb-API");
 			if(imdbplugin != NULL)
 			{
-				struct imdbapi* (*startplugin)(char*, int, int);
+				struct imdbapi* (*startplugin)(struct imdbapi**, char*, int, int);
 				startplugin = dlsym(imdbapiplugin->pluginhandle, "getimdbapi");
 				if(startplugin != NULL)
 				{
 					if(imdb == NULL)
-						imdbapi = startplugin(shortname, 0, 1);
+						imdbapi = startplugin(&imdbapi, shortname, 0, 1);
 					else if(imdb->id != NULL)
-						imdbapi = startplugin(imdb->id, 1, 1);
+						imdbapi = startplugin(&imdbapi, imdb->id, 1, 1);
 				}
 			}
 #endif
 
 #ifdef SIMULATE
 			if(imdb != NULL && imdb->id != NULL)
-				tmdb = gettmdb(imdb->id, 1, 1);
+				tmdb = gettmdb(&tmdb, imdb->id, 1, 1);
 			else if(imdbapi != NULL && imdbapi->id != NULL)
-				tmdb = gettmdb(imdbapi->id, 1, 1);
+				tmdb = gettmdb(&tmdb, imdbapi->id, 1, 1);
 #else
 			struct skin* tmdbplugin = NULL;
 			if(imdb != NULL)
@@ -1426,14 +1426,14 @@ void mediadbfindfilecb(char* path, char* file, int type)
 				tmdbplugin = getplugin("TMDb");
 				if(tmdbplugin != NULL)
 				{
-					struct tmdb* (*startplugin)(char*, int, int);
+					struct tmdb* (*startplugin)(struct tmdb**, char*, int, int);
 					startplugin = dlsym(tmdbplugin->pluginhandle, "gettmdb");
 					if(startplugin != NULL)
 					{
 						if(imdb != NULL && imdb->id != NULL)
-							tmdb = startplugin(imdb->id, 1, 1);
+							tmdb = startplugin(&tmdb, imdb->id, 1, 1);
 						else if(imdbapi != NULL && imdbapi->id != NULL)
-							tmdb = startplugin(imdbapi->id, 1, 1);
+							tmdb = startplugin(&tmdb, imdbapi->id, 1, 1);
 					}
 				}
 			}
@@ -1544,28 +1544,28 @@ printf("wo3\n");
 			imdb = NULL;
 printf("wo4\n");			
 #ifdef SIMULATE
-			freeimdbapi(imdbapi);
+			freeimdbapi(&imdbapi);
 #else
 			if(imdbapiplugin != NULL)
 			{
-				void (*startplugin)(struct imdbapi*);
+				void (*startplugin)(struct imdbapi**);
 				startplugin = dlsym(imdbapiplugin->pluginhandle, "freeimdbapi");
 				if(startplugin != NULL)
-					startplugin(imdbapi);
+					startplugin(&imdbapi);
 			}
 #endif
 			imdbapi = NULL;
 printf("wo5\n");
 
 #ifdef SIMULATE
-			freetmdb(0);
+			freetmdb(&tmdb);
 #else
 			if(tmdbplugin != NULL)
 			{
-				void (*startplugin)(int);
+				void (*startplugin)(struct tmdb**);
 				startplugin = dlsym(tmdbplugin->pluginhandle, "freetmdb");
 				if(startplugin != NULL)
-					startplugin(0);
+					startplugin(&tmdb);
 			}
 #endif
 
