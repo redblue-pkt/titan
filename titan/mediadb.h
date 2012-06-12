@@ -1443,7 +1443,26 @@ void mediadbfindfilecb(char* path, char* file, int type)
 #endif
 
 printf("wo1\n");
-
+if(imdb != NULL)
+{
+	debug(133, "----------------------mediadb start----------------------");
+	debug(133, "use id: %s", imdb->id);
+	debug(133, "use title: %s", imdb->title);
+	debug(133, "use genre: %s", imdb->genre);
+	debug(133, "use writer: %s", imdb->writer);
+	debug(133, "use director: %s", imdb->director);
+	debug(133, "use released: %s", imdb->released);
+	debug(133, "use actors: %s", imdb->actors);
+	debug(133, "use plot: %s", imdb->plot);
+	debug(133, "use poster: %s", imdb->poster);
+	debug(133, "use rating: %s", imdb->rating);
+	debug(133, "use votes: %s", imdb->votes);
+	debug(133, "use runtime: %s", imdb->runtime);
+	debug(133, "use year: %s", imdb->year);
+	debug(133, "use rated: %s", imdb->rated);
+	debug(133, "----------------------mediadb end----------------------");
+}
+			
 			if(imdb != NULL && tmdb != NULL)
 			{
 printf("wo1.1\n");
@@ -1460,11 +1479,32 @@ printf("wo1.1\n");
 				if(imdb->released == NULL) imdb->released = ostrcat(imdb->released, tmdb->released, 1, 0);
 				if(imdb->poster == NULL) imdb->poster = ostrcat(imdb->poster, tmdb->postermid, 1, 0);
 				if(imdb->thumb == NULL) imdb->thumb = ostrcat(imdb->thumb, tmdb->thumb, 1, 0);
+				if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, tmdb->year, 1, 0);				
 			}
+printf("wo1.2\n");
 
+if(imdb != NULL)
+{
+	debug(133, "----------------------mediadb start----------------------");
+	debug(133, "use id: %s", imdb->id);
+	debug(133, "use title: %s", imdb->title);
+	debug(133, "use genre: %s", imdb->genre);
+	debug(133, "use writer: %s", imdb->writer);
+	debug(133, "use director: %s", imdb->director);
+	debug(133, "use released: %s", imdb->released);
+	debug(133, "use actors: %s", imdb->actors);
+	debug(133, "use plot: %s", imdb->plot);
+	debug(133, "use poster: %s", imdb->poster);
+	debug(133, "use rating: %s", imdb->rating);
+	debug(133, "use votes: %s", imdb->votes);
+	debug(133, "use runtime: %s", imdb->runtime);
+	debug(133, "use year: %s", imdb->year);
+	debug(133, "use rated: %s", imdb->rated);
+	debug(133, "----------------------mediadb end----------------------");
+}
 			if(imdb != NULL && imdbapi != NULL)
 			{
-printf("wo1.2\n");
+printf("wo1.3\n");
 				if(imdb->id == NULL) imdb->id = ostrcat(imdb->id, imdbapi->id, 1, 0);			
 				if(imdb->title == NULL) imdb->title = ostrcat(imdb->title, imdbapi->title, 1, 0);	
 				if(imdb->genre == NULL) imdb->genre = ostrcat(imdb->genre, imdbapi->genre, 1, 0);
@@ -1478,6 +1518,7 @@ printf("wo1.2\n");
 				if(imdb->released == NULL) imdb->released = ostrcat(imdb->released, imdbapi->released, 1, 0);
 				if(imdb->poster == NULL) imdb->poster = ostrcat(imdb->poster, imdbapi->poster, 1, 0);
 //				if(imdb->thumb == NULL) imdb->thumb = ostrcat(imdb->thumb, imdbapi->thumb, 1, 0);
+				if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, imdbapi->year, 1, 0);
 			}
 
 printf("wo2\n");
