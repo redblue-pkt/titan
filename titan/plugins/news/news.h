@@ -129,8 +129,8 @@ int getnews()
 	if(tmpstr != NULL)
 	{
 
-		while(string_find("&amp;amp;quot;", tmpstr))
-	                tmpstr = string_replace("&amp;amp;quot;", "\"", tmpstr, 1);
+		while(ostrstr(tmpstr, "&amp;amp;quot;") != NULL)
+			tmpstr = string_replace("&amp;amp;quot;", "\"", tmpstr, 1);
 		tmpstr = string_decode(tmpstr, 0);
 
 		tmpstr1 = tmpstr;

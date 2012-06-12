@@ -17,7 +17,7 @@ void keylock_main()
 	int t1 = 0, t2 = 0, rcret = 0;
 	char* bg = NULL;
 	
-	setnodeattr(keylock, framebuffer);
+	setnodeattr(keylock, framebuffer, 0);
 	bg = savescreen(keylock);
 	drawscreen(keylock, 0, 0);
 	
