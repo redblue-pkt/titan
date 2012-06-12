@@ -133,6 +133,8 @@ void freetmdb(int flag)
 
 char* savetmdbpic(char* imdbid, char* url, char* tmppic, char* pic, int flag1)
 {
+debug(133, "00000000000in save\n");
+debug(133, "url: %s", url);
 	char* ip = NULL, *pos = NULL, *path = NULL, *ret = NULL;
 	char* savefile = NULL;
 
@@ -147,11 +149,18 @@ char* savetmdbpic(char* imdbid, char* url, char* tmppic, char* pic, int flag1)
 		path = pos + 1;
 	}
 
+debug(133, "11111111in save");
+
 	if(flag1 == 1)
 	{
+debug(133, "22222222in save");
+	
 		savefile = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 		savefile = ostrcat(savefile, imdbid, 1, 0);
 		savefile = ostrcat(savefile, pic, 1, 0);
+
+debug(133, "savefile: %s", savefile);
+
 		if(!file_exist(savefile))
 			gethttp(ip, path, 80, savefile, NULL, NULL, 0);
 		ret = savefile;
@@ -202,6 +211,7 @@ struct tmdb* gettmdb(char* title, int flag, int flag1)
 	{
 		if(ostrstr(tmpstr, "<movies>Nothing found.</movies>") != NULL)
 		{
+			debug(133, "<movies>Nothing found.</movies>");
 			free(tmpstr); tmpstr = NULL;
 			return NULL;
 		}
@@ -272,7 +282,7 @@ struct tmdb* gettmdb(char* title, int flag, int flag1)
 				tnode->postermid = string_resub("<image type=\"poster\" url=\"", "\" size=\"mid\"", tmpstr1, 1);
 
 			if(ostrstr(tmpstr1, "size=\"original\"") != NULL)
-				tnode->backdrop = string_resub("<image type=\"backdrop\" url=\"", "\" size=\"original\"", tmpstr1, 1);
+				tnode->backdrop = string_resub("<image type=\"backdrop\" url=\"", "\" size=\"original\"", tmpstr1, 0);
 
 			if(ostrstr(tmpstr1, "<rating>") != NULL)
 				tnode->rating = string_resub("<rating>", "</rating>", tmpstr1, 0);
@@ -286,8 +296,10 @@ struct tmdb* gettmdb(char* title, int flag, int flag1)
 			if(ostrstr(tmpstr1, "<imdb_id>") != NULL)
 				tnode->imdbid = string_resub("<imdb_id>", "</imdb_id>", tmpstr1, 0);
 
+debug(133, "vor save");
 			if((flag1 == 0 && count == 1) || flag1 == 1)
 			{
+debug(133, "in save");
 				savefile = savetmdbpic(tnode->imdbid, tnode->thumb, TMPTMDBPIC1, "_thumb.jpg", flag1);
 				free(tnode->thumb);
 				tnode->thumb = savefile;
@@ -312,7 +324,7 @@ struct tmdb* gettmdb(char* title, int flag, int flag1)
 				tmpmvi = ostrcat(tmpmvi, tnode->imdbid, 1, 0);
 				tmpmvi = ostrcat(tmpmvi, "_backdrop.mvi", 1, 0);
 
-				if(!file_exits(tmpmvi))
+				if(!file_exist(tmpmvi))
 				{
 					char* cmd = NULL;
 					cmd = ostrcat(cmd, "jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
@@ -336,6 +348,7 @@ struct tmdb* gettmdb(char* title, int flag, int flag1)
 			tmpstr1 += 5;
 			tmpstr1 = ostrstr(tmpstr1, "<movie>");
 
+			debug(133, "----------------------tmdb start----------------------");
 			debug(133, "title: %s", tnode->title);
 			debug(133, "language: %s", tnode->language);
 			debug(133, "type: %s", tnode->type);
@@ -355,6 +368,7 @@ struct tmdb* gettmdb(char* title, int flag, int flag1)
 			debug(133, "votes: %s", tnode->votes);
 			debug(133, "id: %s", tnode->id);	
 			debug(133, "imdbid: %s", tnode->imdbid);
+			debug(133, "----------------------tmdb end----------------------");
 		}
 	}
 

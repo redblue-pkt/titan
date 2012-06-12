@@ -994,7 +994,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 		tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
 		int count = 0;
 		
-		while(count < 30)
+		while(count < 5)
 		{
 			sleep(1);
 			count++;
@@ -1396,7 +1396,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 #ifdef SIMULATE
 			if(imdb == NULL)
 				imdbapi = getimdbapi(shortname, 0, 1);
-			else
+			else if(imdb->id != NULL)
 				imdbapi = getimdbapi(imdb->id, 1, 1);
 #else
 			struct skin* imdbapiplugin = getplugin("IMDb-API");
@@ -1408,16 +1408,16 @@ void mediadbfindfilecb(char* path, char* file, int type)
 				{
 					if(imdb == NULL)
 						imdbapi = startplugin(shortname, 0, 1);
-					else
+					else if(imdb->id != NULL)
 						imdbapi = startplugin(imdb->id, 1, 1);
 				}
 			}
 #endif
 
 #ifdef SIMULATE
-			if(imdb != NULL)
+			if(imdb != NULL && imdb->id != NULL)
 				tmdb = gettmdb(imdb->id, 1, 1);
-			else if(imdbapi != NULL)
+			else if(imdbapi != NULL && imdbapi->id != NULL)
 				tmdb = gettmdb(imdbapi->id, 1, 1);
 #else
 			struct skin* tmdbplugin = NULL;
@@ -1430,9 +1430,9 @@ void mediadbfindfilecb(char* path, char* file, int type)
 					startplugin = dlsym(tmdbplugin->pluginhandle, "gettmdb");
 					if(startplugin != NULL)
 					{
-						if(imdb != NULL)
+						if(imdb != NULL && imdb->id != NULL)
 							tmdb = startplugin(imdb->id, 1, 1);
-						else if(imdbapi != NULL)
+						else if(imdbapi != NULL && imdbapi->id != NULL)
 							tmdb = startplugin(imdbapi->id, 1, 1);
 					}
 				}
@@ -1443,6 +1443,7 @@ printf("wo1\n");
 
 			if(imdb != NULL && tmdb != NULL)
 			{
+printf("wo1.1\n");
 				if(imdb->id == NULL) ostrcat(imdb->id, tmdb->imdbid, 1, 0);			
 				if(imdb->title == NULL) ostrcat(imdb->title, tmdb->title, 1, 0);	
 				if(imdb->genre == NULL) ostrcat(imdb->genre, tmdb->genre, 1, 0);
@@ -1460,6 +1461,7 @@ printf("wo1\n");
 
 			if(imdb != NULL && imdbapi != NULL)
 			{
+printf("wo1.2\n");
 				if(imdb->id == NULL) ostrcat(imdb->id, imdbapi->id, 1, 0);			
 				if(imdb->title == NULL) ostrcat(imdb->title, imdbapi->title, 1, 0);	
 				if(imdb->genre == NULL) ostrcat(imdb->genre, imdbapi->genre, 1, 0);
@@ -1488,22 +1490,28 @@ printf("wo1\n");
 printf("wo2\n");
 			debug(777, "shortname: %s", shortname);
 			free(shortname); shortname = NULL;
-
-			debug(133, "use id: %s", imdbapi->id);
-			debug(133, "use title: %s", imdbapi->title);
-			debug(133, "use genre: %s", imdbapi->genre);
-			debug(133, "use writer: %s", imdbapi->writer);
-			debug(133, "use director: %s", imdbapi->director);
-			debug(133, "use released: %s", imdbapi->released);
-			debug(133, "use actors: %s", imdbapi->actors);
-			debug(133, "use plot: %s", imdbapi->plot);
-			debug(133, "use poster: %s", imdbapi->poster);
-			debug(133, "use rating: %s", imdbapi->rating);
-			debug(133, "use votes: %s", imdbapi->votes);
-			debug(133, "use runtime: %s", imdbapi->runtime);
-			debug(133, "use year: %s", imdbapi->year);
-			debug(133, "use rated: %s", imdbapi->rated);
-		
+			if(imdb != NULL)
+			{
+				debug(133, "----------------------mediadb start----------------------");
+				debug(133, "use id: %s", imdb->id);
+				debug(133, "use title: %s", imdb->title);
+				debug(133, "use genre: %s", imdb->genre);
+				debug(133, "use writer: %s", imdb->writer);
+				debug(133, "use director: %s", imdb->director);
+				debug(133, "use released: %s", imdb->released);
+				debug(133, "use actors: %s", imdb->actors);
+				debug(133, "use plot: %s", imdb->plot);
+				debug(133, "use poster: %s", imdb->poster);
+				debug(133, "use rating: %s", imdb->rating);
+				debug(133, "use votes: %s", imdb->votes);
+				debug(133, "use runtime: %s", imdb->runtime);
+				debug(133, "use year: %s", imdb->year);
+				debug(133, "use rated: %s", imdb->rated);
+				debug(133, "----------------------mediadb end----------------------");
+			}
+			else
+				debug(133, "----------------------mediadb skipped----------------------");
+			
 			debug(777, "add video: %s", tmpstr);
 			if(imdb != NULL)
 			{
@@ -1516,7 +1524,10 @@ printf("wo2.3\n");
 
 			}
 			else
+			{
+				printf("wo2.0\n");
 				createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, tmpstr, file, 0);
+			}
 printf("wo3\n");
 
 #ifdef SIMULATE
