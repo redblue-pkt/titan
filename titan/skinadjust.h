@@ -48,7 +48,7 @@ void screenskinadjust()
 	otopoffset = getconfigint("fbtopoffset", NULL);
 	obottomoffset = getconfigint("fbbottomoffset", NULL);
 
-	drawscreen(skinadjust, 0);
+	drawscreen(skinadjust, 0, 0);
 	addscreenrc(skinadjust, listbox);
 
 	tmp = listbox->select;
@@ -67,7 +67,7 @@ void screenskinadjust()
 		addconfigscreencheck("fbbottomoffset", bottomoffset, "0");
 		status.bottomoffset = getconfigint("fbbottomoffset", NULL);
 		
-		drawscreen(skinadjust, 0);
+		drawscreen(skinadjust, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
@@ -99,7 +99,7 @@ void screenskinadjust()
 					changeinput(listbox->select, ret);
 				free(ret);
 
-				drawscreen(skinadjust, 0);
+				drawscreen(skinadjust, 0, 0);
 				continue;
 			}
 

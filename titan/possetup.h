@@ -21,7 +21,7 @@ void possearch(struct skin* possetup, struct dvbdev* dvbnode, int dir)
 			fediseqcrotor(dvbnode, NULL, 1, 9);
 
 		usleep(300000);
-		drawscreen(possetup, 0);
+		drawscreen(possetup, 0, 0);
 		snr = fereadsnr(status.aktservice->fedev);
 		snr = (snr * 100) / 0xffff;
 		if(snr > 50) break;
@@ -105,7 +105,7 @@ void screenpossetup()
 
 	poschangebutton(0, b1, b2, b3, b4);
 
-	drawscreen(possetup, 0);
+	drawscreen(possetup, 0, 0);
 	addscreenrc(possetup, listbox);
 
 	tmp = listbox->select;
@@ -115,7 +115,7 @@ void screenpossetup()
 		rcret = waitrc(possetup, 1000, 0);
 		if(rcret == RCTIMEOUT)
 		{
-			drawscreen(possetup, 0);
+			drawscreen(possetup, 0, 0);
 			continue;
 		}
 		tmp = listbox->select;
@@ -195,7 +195,7 @@ void screenpossetup()
 			}
 		}
 
-		drawscreen(possetup, 0);
+		drawscreen(possetup, 0, 0);
 	}
 
 	delownerrc(possetup);

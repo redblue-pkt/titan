@@ -93,7 +93,7 @@ void screenepgsearch()
 	listbox->aktpage = -1;
   
 	addscreenrc(epgsearch, listbox);
-	drawscreen(epgsearch, 0);
+	drawscreen(epgsearch, 0, 0);
   
 	while(1)
 	{
@@ -114,7 +114,7 @@ void screenepgsearch()
 			if(listbox->select != NULL)
 			{
 				ret = addrecepg((struct channel*)listbox->select->handle, (struct epg*)listbox->select->handle1, NULL);
-				drawscreen(epgsearch, 0);
+				drawscreen(epgsearch, 0, 0);
 				continue;
 			}
 		}
@@ -128,7 +128,7 @@ void screenepgsearch()
 				searchepg(search, 0, epgsearch, listbox);
 				free(search); search = NULL;
 			}
-			drawscreen(epgsearch, 0);
+			drawscreen(epgsearch, 0, 0);
 			continue;
 		}
     
@@ -141,7 +141,7 @@ void screenepgsearch()
 				searchepg(search, 1, epgsearch, listbox);
 				free(search); search = NULL;
 			}
-			drawscreen(epgsearch, 0);
+			drawscreen(epgsearch, 0, 0);
 			continue;
 		}
     
@@ -154,7 +154,7 @@ void screenepgsearch()
 				searchepg(search, 2, epgsearch, listbox);
 				free(search); search = NULL;
 			}
-			drawscreen(epgsearch, 0);
+			drawscreen(epgsearch, 0, 0);
 			continue;
 		}
   

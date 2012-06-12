@@ -243,7 +243,7 @@ int screenserviceinfo(void)
 	hiddepids(videopid, audiopid, pcrpid, pmtpid, txtpid, tsid, onid, sid, id, YES);
 	hiddetuner(tuner, type, system, modulation, orbitalpos, frequency, symbolrate, polarization, inversion, fec, rolloff, pilot, YES, 0);
 
-	drawscreen(serviceinfo, 0);
+	drawscreen(serviceinfo, 0, 0);
 
 	while(1)
 	{
@@ -257,7 +257,7 @@ int screenserviceinfo(void)
 			hiddeservice(name, provider, aspectratio, resolution, NO);
 			hiddepids(videopid, audiopid, pcrpid, pmtpid, txtpid, tsid, onid, sid, id, YES);
 			hiddetuner(tuner, type, system, modulation, orbitalpos, frequency, symbolrate, polarization, inversion, fec, rolloff, pilot, YES, 0);
-			drawscreen(serviceinfo, 0);
+			drawscreen(serviceinfo, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
@@ -266,7 +266,7 @@ int screenserviceinfo(void)
 			hiddeservice(name, provider, aspectratio, resolution, YES);
 			hiddepids(videopid, audiopid, pcrpid, pmtpid, txtpid, tsid, onid, sid, id, NO);
 			hiddetuner(tuner, type, system, modulation, orbitalpos, frequency, symbolrate, polarization, inversion, fec, rolloff, pilot, YES, 0);
-			drawscreen(serviceinfo, 0);
+			drawscreen(serviceinfo, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcyellow", NULL))
 		{
@@ -275,7 +275,7 @@ int screenserviceinfo(void)
 			hiddeservice(name, provider, aspectratio, resolution, YES);
 			hiddepids(videopid, audiopid, pcrpid, pmtpid, txtpid, tsid, onid, sid, id, YES);
 			hiddetuner(tuner, type, system, modulation, orbitalpos, frequency, symbolrate, polarization, inversion, fec, rolloff, pilot, NO, aktsystem);
-			drawscreen(serviceinfo, 0);
+			drawscreen(serviceinfo, 0, 0);
 		}
 	}
 

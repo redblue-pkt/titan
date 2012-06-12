@@ -727,7 +727,7 @@ void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* fil
 	printf("getfilelist: view=%d status=%d\n", view, status.filelistextend);
 
 	createfilelist(input, filelist, 0);
-	drawscreen(input, 0);
+	drawscreen(input, 0, 0);
 	debug(1000, "out");
 }
 

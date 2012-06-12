@@ -54,9 +54,9 @@ struct skin* menu(struct skin* menu, int flag)
 	}
 
 	if(flag == 1)
-		drawscreen(menu, 4);
+		drawscreen(menu, 0, 4);
 	else
-		drawscreen(menu, 0);
+		drawscreen(menu, 0, 0);
 	addscreenrc(menu, listbox);
 	if(listbox->select != NULL)
 	{
@@ -85,7 +85,7 @@ struct skin* menu(struct skin* menu, int flag)
 
 			if(ret != 0)
 				textbox(_("Message"), _("Menu not implemented !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-			drawscreen(menu, 0);
+			drawscreen(menu, 0, 0);
 		}
 		if(listbox->select != NULL)
 		{

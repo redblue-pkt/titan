@@ -82,7 +82,7 @@ void screenscreensaveradjust()
 	}
 	setchoiceboxselection(screensaver_type, getconfig("screensaver_type", NULL));
 
-	drawscreen(screensaveradjust, 0);
+	drawscreen(screensaveradjust, 0, 0);
 	addscreenrc(screensaveradjust, listbox);
 
 	tmp = listbox->select;

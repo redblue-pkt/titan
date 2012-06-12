@@ -19,7 +19,7 @@ int screenlanguage(int flag)
 
 	setlistboxselection(listbox, getconfig("lang", NULL));
 
-	drawscreen(language, 0);
+	drawscreen(language, 0, 0);
 	addscreenrc(language, listbox);
 
 	while(1)

@@ -183,15 +183,14 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 	free(tmpstr); tmpstr = NULL;
 	free(diseqcnr); diseqcnr = NULL;
 
-	drawscreen(diseqcscreen, 0);
+	drawscreen(diseqcscreen, 0, 0);
 	addscreenrc(diseqcscreen, listbox);
 
 	tmp = listbox->select;
 	while(1)
 	{
 		addscreenrc(diseqcscreen, tmp);
-		status.screencalc = 2;
-		rcret = waitrc(diseqcscreen, 0, 0);
+		rcret = waitrc(diseqcscreen, 0, 2);
 		tmp = listbox->select;
 
 		if(listbox->select != NULL && listbox->select->name != NULL && ostrstr(listbox->select->name, "diseqc_mode") != NULL && (rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)))
@@ -208,8 +207,7 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 		addconfigscreentmpcheck(uncommittedcmd->name, uncommittedcmd, "0");
 		addconfigscreentmpcheck(rotorpos->name, rotorpos, "000");
 
-		status.screencalc = 0;
-		drawscreen(diseqcscreen, 0);
+		drawscreen(diseqcscreen, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
@@ -227,7 +225,6 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 	changename(diseqcrepeat, "diseqcrepeat");
 	changename(rotorpos, "rotorpos");
 
-	status.screencalc = 0;
 	delconfigtmpall();
 	delownerrc(diseqcscreen);
 	clearscreen(diseqcscreen);
@@ -263,7 +260,7 @@ void screenownpos()
 	addchoicebox(longpos, "1", _("west"));
 	setchoiceboxselection(latpos, getconfig("longpos", NULL));
 
-	drawscreen(ownpos, 0);
+	drawscreen(ownpos, 0, 0);
 	addscreenrc(ownpos, listbox);
 
 	tmp = listbox->select;

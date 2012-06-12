@@ -122,7 +122,7 @@ struct menulist* addmenulist(struct menulist** mlist, char* name, char* text, ch
 struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* defaultpic, int showpng, int* rcreturn, int flag)
 {
 	debug(1000, "in");
-	int rcret = 0, tmpscreencalc = 0, fromthread = 0;
+	int rcret = 0, fromthread = 0;
 	struct skin* framebuffer = getscreen("framebuffer");
 	struct skin* tmp = NULL;
 	struct menulist* ret = NULL;
@@ -243,18 +243,13 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 	{
 		m_lock(&status.drawingmutex, 0);
 		m_lock(&status.rcmutex, 10);
-		tmpscreencalc = status.screencalc;
-		status.screencalc = 2;
-		setnodeattr(screen, framebuffer);
-		status.screencalc = tmpscreencalc;
+		setnodeattr(screen, framebuffer, 2);
 		status.rcowner = screen;
 		bg = savescreen(screen);
-		tmpscreencalc = status.screencalc;
-		status.screencalc = 0;
-		drawscreen(screen, 2);
+		drawscreen(screen, 0, 2);
 	}
 	else
-		drawscreen(screen,0);
+		drawscreen(screen, 0, 0);
 
 	addscreenrc(screen, listbox);
 
@@ -291,7 +286,6 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 		clearscreennolock(screen);
 		restorescreen(bg, screen);
 		blitfb(0);
-		status.screencalc = tmpscreencalc;
 		sleep(1);
 		status.rcowner = NULL;
 		m_unlock(&status.rcmutex, 3);

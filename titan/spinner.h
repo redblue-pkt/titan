@@ -31,7 +31,7 @@ void screenspinner()
 	struct skin* framebuffer = getscreen("framebuffer");
 	struct skin* spinner = getscreen("spinner");
 	struct skin* node = NULL;
-	int count = 0, treffer = 0, tmpscreencalc = 0;
+	int count = 0, treffer = 0;
 	char* bg = NULL;
 
 	if(spinner == NULL)
@@ -68,19 +68,16 @@ findspinner:
 
 	//save bg
 	m_lock(&status.drawingmutex, 0);
-	tmpscreencalc = status.screencalc;
-	status.screencalc = 0;
-	setnodeattr(spinner, framebuffer);
+	setnodeattr(spinner, framebuffer, 0);
 	bg = savescreen(spinner);
 
-	drawscreen(spinner, 2);
+	drawscreen(spinner, 0, 2);
 	usleep(status.spinnerspeed * 10000);
 	clearscreennolock(spinner);
 
 	//restore bg
 	restorescreen(bg, spinner);
 	blitfb(0);
-	status.screencalc = tmpscreencalc;
 	m_unlock(&status.drawingmutex, 0);
 	usleep(1000);
 }

@@ -24,7 +24,7 @@ void changevolume(int direction, struct skin* volumebar)
 //flag 2 = no framebuffer lock
 void screenvolume(int direction, int flag)
 {
-	int rcret = 0, tmpscreencalc = 0;
+	int rcret = 0;
 	struct skin* framebuffer = getscreen("framebuffer");
 	struct skin* volume = getscreen("volume");
 	struct skin* volumebar = getscreennode(volume, "volumebar");
@@ -47,10 +47,7 @@ void screenvolume(int direction, int flag)
 	setnodeattr(volume, framebuffer);
 	bg = savescreen(volume);
 
-	tmpscreencalc = status.screencalc;
-	status.screencalc = 0;
-	drawscreen(volume, flag);
-	status.screencalc = tmpscreencalc;
+	drawscreen(volume, 0, flag);
 
 	while(1)
 	{
@@ -68,19 +65,13 @@ void screenvolume(int direction, int flag)
 		if(rcret == getrcconfigint("rcvolup", NULL))
 		{
 			changevolume(0, volumebar);
-			tmpscreencalc = status.screencalc;
-			status.screencalc = 0;
-			drawscreen(volume, flag);
-			status.screencalc = tmpscreencalc;
+			drawscreen(volume, 0, flag);
 			continue;
 		}
 		if(rcret == getrcconfigint("rcvoldown", NULL))
 		{
 			changevolume(1, volumebar);
-			tmpscreencalc = status.screencalc;
-			status.screencalc = 0;
-			drawscreen(volume, flag);
-			status.screencalc = tmpscreencalc;
+			drawscreen(volume, 0, flag);
 			continue;
 		}
 		status.rckey = rcret;

@@ -245,7 +245,7 @@ void screenplugin()
 	struct skin* plugin = getscreen("plugin");
 	struct skin* listbox = getscreennode(plugin, "listbox");
 
-	drawscreen(plugin, 0);
+	drawscreen(plugin, 0, 0);
 	addscreenrc(plugin, listbox);
 
 	while(1)
@@ -262,7 +262,7 @@ void screenplugin()
 				{
 					clearscreen(plugin);
 					startplugin();
-					drawscreen(plugin, 0);
+					drawscreen(plugin, 0, 0);
 				}
 			}
 			continue;
@@ -272,14 +272,14 @@ void screenplugin()
 			if(listbox->select != NULL)
 			{
 				delplugin(listbox->select->name);
-				drawscreen(plugin, 0);
+				drawscreen(plugin, 0, 0);
 			}
 			continue;
 		}
 		if(rcret == getrcconfigint("rcblue", NULL))
 		{
 			loadplugin();
-			drawscreen(plugin, 0);
+			drawscreen(plugin, 0, 0);
 			continue;
 		}
 	}

@@ -165,7 +165,7 @@ void screenadjust()
 	addchoicebox(channellistview, "1", _("deactive"));
 	setchoiceboxselection(channellistview, getconfig("channellistview", NULL));
 
-	drawscreen(adjust, 0);
+	drawscreen(adjust, 0, 0);
 	addscreenrc(adjust, listbox);
 
 	tmp = listbox->select;

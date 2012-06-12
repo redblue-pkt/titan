@@ -1626,7 +1626,7 @@ void screensubtitle()
 
 	if(treffer == 0) listbox->aktline = 1;
 
-	drawscreen(subtitle, 0);
+	drawscreen(subtitle, 0, 0);
 	addscreenrc(subtitle, listbox);
 
 	while(1)
@@ -1645,7 +1645,7 @@ void screensubtitle()
 					if(((struct subtitle*)listbox->select->handle)->pid != status.subthreadpid)
 					{
 						clearscreen(subtitle);
-						drawscreen(skin, 0);
+						drawscreen(skin, 0, 0);
 						if(subtitlestart((struct subtitle*)listbox->select->handle) == 0)
 							status.subthreadpid = ((struct subtitle*)listbox->select->handle)->pid;
 					}

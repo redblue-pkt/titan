@@ -79,7 +79,7 @@ void screentimezone()
 	readtimezone(timezone, listbox);
 
 	setlistboxselection(listbox, getconfig("timezonename", NULL));
-	drawscreen(timezone, 0);
+	drawscreen(timezone, 0, 0);
 	addscreenrc(timezone, listbox);
 
 	while(1)

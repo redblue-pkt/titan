@@ -5,12 +5,12 @@ void inputhelpnum(struct skin* inputhelp, struct skin* inputbox, char num, int f
 {
 	inputboxff(inputhelp, inputbox, flag);
 	inputboxchar(inputhelp, inputbox, num, flag);
-	drawscreen(inputhelp, flag);
+	drawscreen(inputhelp, 0, flag);
 }
 
 char* screeninputhelp(char* text, int flag)
 {
-	int rcret = 0, tmpscreencalc = 0;
+	int rcret = 0;
 	struct skin* inputhelp = getscreen("inputhelp");
 	struct skin* grid = NULL;
 	struct skin* grid1 = getscreennode(inputhelp, "grid1");
@@ -26,9 +26,7 @@ char* screeninputhelp(char* text, int flag)
 		inputbox->aktpage = strlen(text);
 	}
 	changeinput(inputbox, text);
-	tmpscreencalc = status.screencalc;
-	status.screencalc = 0;
-	drawscreen(inputhelp, flag);
+	drawscreen(inputhelp, 0, flag);
 	addscreenrc(inputhelp, grid);
 
 	while(1)
@@ -82,19 +80,19 @@ char* screeninputhelp(char* text, int flag)
 				if(rcret == getrcconfigint("rcok", NULL) && ostrcmp(grid->select->name, "clear") == 0)
 				{
 					changeinput(inputbox, NULL);
-					drawscreen(inputhelp, flag);
+					drawscreen(inputhelp, 0, flag);
 					continue;
 				}
 				if(rcret == getrcconfigint("rcok", NULL) && ostrcmp(grid->select->name, "left") == 0)
 				{
 					inputboxleft(inputhelp, inputbox, flag);
-					drawscreen(inputhelp, flag);
+					drawscreen(inputhelp, 0, flag);
 					continue;
 				}
 				if(rcret == getrcconfigint("rcok", NULL) && ostrcmp(grid->select->name, "right") == 0)
 				{
 					inputboxright(inputhelp, inputbox, flag);
-					drawscreen(inputhelp, flag);
+					drawscreen(inputhelp, 0, flag);
 					continue;
 				}
 				if(rcret == getrcconfigint("rcblue", NULL) || (rcret == getrcconfigint("rcok", NULL) && ostrcmp(grid->select->name, "switch") == 0))
@@ -115,14 +113,14 @@ char* screeninputhelp(char* text, int flag)
 						grid2->hidden = NO;
 						addscreenrc(inputhelp, grid);
 					}
-					drawscreen(inputhelp, flag);
+					drawscreen(inputhelp, 0, flag);
 					continue;
 				}
 				if(rcret == getrcconfigint("rcyellow", NULL))
 				{
 					inputboxff(inputhelp, inputbox, flag);
 					inputboxchar(inputhelp, inputbox, ' ', flag);
-					drawscreen(inputhelp, flag);
+					drawscreen(inputhelp, 0, flag);
 					continue;
 				}
 
@@ -134,8 +132,7 @@ char* screeninputhelp(char* text, int flag)
 
 	delownerrc(inputhelp);
 	clearscreen(inputhelp);
-	drawscreen(skin, flag);
-	status.screencalc = tmpscreencalc;
+	drawscreen(skin, 0, flag);
 	return tmpstr;
 }
 

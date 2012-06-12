@@ -1,7 +1,7 @@
 #ifndef RCFUNC_H
 #define RCFUNC_H
 
-void progressbarright(struct skin* screen, struct skin* progressbar, int flag)
+void progressbarright(struct skin* screen, struct skin* progressbar, int screencalc, int flag)
 {
 	debug(1000, "in");
 
@@ -10,7 +10,7 @@ void progressbarright(struct skin* screen, struct skin* progressbar, int flag)
 		if(progressbar->progresssize <= 100)
 		{
 			progressbar->progresssize++;
-			drawscreen(screen, flag);
+			drawscreen(screen, screencalc, flag);
 		}
 		else
 			progressbar->progresssize = 100;
@@ -19,7 +19,7 @@ void progressbarright(struct skin* screen, struct skin* progressbar, int flag)
 	debug(1000, "out");
 }
 
-void progressbarleft(struct skin* screen, struct skin* progressbar, int flag)
+void progressbarleft(struct skin* screen, struct skin* progressbar, int screencalc, int flag)
 {
 	debug(1000, "in");
 
@@ -28,7 +28,7 @@ void progressbarleft(struct skin* screen, struct skin* progressbar, int flag)
 		if(progressbar->progresssize > 0)
 		{
 			progressbar->progresssize--;
-			drawscreen(screen, flag);
+			drawscreen(screen, screencalc, flag);
 		}
 		else
 			progressbar->progresssize = 0;
@@ -37,7 +37,7 @@ void progressbarleft(struct skin* screen, struct skin* progressbar, int flag)
 	debug(1000, "out");
 }
 
-void filelistok(struct skin* screen, struct skin* filelist, int flag)
+void filelistok(struct skin* screen, struct skin* filelist, int screencalc, int flag)
 {
 	debug(1000, "in");
 	struct skin* path = NULL;
@@ -81,7 +81,7 @@ void filelistok(struct skin* screen, struct skin* filelist, int flag)
 					createfilelist(screen, filelist, 0);
 				setlistboxselection(filelist, plastdir);
 				free(lastdir); lastdir = NULL;
-				drawscreen(screen, flag);
+				drawscreen(screen, screencalc, flag);
 			}
 			else
 				err("no memory");
@@ -90,12 +90,12 @@ void filelistok(struct skin* screen, struct skin* filelist, int flag)
 	debug(1000, "out");
 }
 
-void helpbox(struct skin* screen, struct skin* node, int flag)
+void helpbox(struct skin* screen, struct skin* node, int screencalc, int flag)
 {
 	if(node != NULL && flag == 0)
 	{
 		screenhelp(screen);
-		drawscreen(screen, flag);
+		drawscreen(screen, screencalc, flag);
 	}
 }
 
@@ -108,11 +108,11 @@ void inputboxhelp(struct skin* screen, struct skin* inputbox, int flag)
 		tmpstr = screeninputhelp(inputbox->input, flag);
 		changeinput(inputbox, tmpstr);
 		free(tmpstr); tmpstr = NULL;
-		drawscreen(screen, flag);
+		drawscreen(screen, screencalc, flag);
 	}
 }
 
-void inputboxchar(struct skin* screen, struct skin* inputbox, char zeichen, int flag)
+void inputboxchar(struct skin* screen, struct skin* inputbox, char zeichen, int screencalc, int flag)
 {
 	debug(1000, "in");
 	if(inputbox != NULL && inputbox->input != NULL)
@@ -121,13 +121,13 @@ void inputboxchar(struct skin* screen, struct skin* inputbox, char zeichen, int 
 		{
 			inputbox->input[inputbox->aktpage - 1] = zeichen;
 			if(flag != 1)
-				drawscreen(screen, flag);
+				drawscreen(screen, screencalc, flag);
 		}
 	}
 	debug(1000, "out");
 }
 
-void inputboxff(struct skin* screen, struct skin* inputbox, int flag)
+void inputboxff(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
 {
 	debug(1000, "in");
 	if(inputbox != NULL)
@@ -135,18 +135,18 @@ void inputboxff(struct skin* screen, struct skin* inputbox, int flag)
 		if(inputbox->input == NULL)
 			changeinput(inputbox, "");
 		inputbox->aktpage = insertchar(&inputbox->input, '_', inputbox->aktpage);
-		drawscreen(screen, flag);
+		drawscreen(screen, screencalc, flag);
 	}
 	debug(1000, "out");
 }
 
-void inputboxfr(struct skin* screen, struct skin* inputbox, int flag)
+void inputboxfr(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
 {
 	debug(1000, "in");
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
 		inputbox->aktpage = delchar(&inputbox->input, inputbox->aktpage);
-		drawscreen(screen, flag);
+		drawscreen(screen, screencalc, flag);
 	}
 	debug(1000, "out");
 }
@@ -201,7 +201,7 @@ void checkinputboxnumleft(struct skin* inputbox)
 	debug(1000, "out");
 }
 
-void inputboxright(struct skin* screen, struct skin* inputbox, int flag)
+void inputboxright(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
 {
 	debug(1000, "in");
 
@@ -211,12 +211,12 @@ void inputboxright(struct skin* screen, struct skin* inputbox, int flag)
 		if(inputbox->aktpage >= strlen(inputbox->input) + 1) inputbox->aktpage = 1;
 
 		checkinputboxnumright(inputbox);
-		drawscreen(screen, flag);
+		drawscreen(screen, screencalc, flag);
 	}
 	debug(1000, "out");
 }
 
-void inputboxleft(struct skin* screen, struct skin* inputbox, int flag)
+void inputboxleft(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
 {
 	debug(1000, "in");
 
@@ -226,12 +226,12 @@ void inputboxleft(struct skin* screen, struct skin* inputbox, int flag)
 		if(inputbox->aktpage < 1) inputbox->aktpage = strlen(inputbox->input);
 
 		checkinputboxnumleft(inputbox);
-		drawscreen(screen, flag);
+		drawscreen(screen, screencalc, flag);
 	}
 	debug(1000, "out");
 }
 
-void inputbox0(struct skin* screen, struct skin* inputbox, int flag)
+void inputbox0(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
 {
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
@@ -258,7 +258,7 @@ void inputbox0(struct skin* screen, struct skin* inputbox, int flag)
 	}
 }
 
-void inputbox1(struct skin* screen, struct skin* inputbox, int flag)
+void inputbox1(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
 {
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
@@ -299,7 +299,7 @@ void inputbox1(struct skin* screen, struct skin* inputbox, int flag)
 	}
 }
 
-void inputbox2(struct skin* screen, struct skin* inputbox, int flag)
+void inputbox2(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
 {
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
@@ -330,7 +330,7 @@ void inputbox2(struct skin* screen, struct skin* inputbox, int flag)
 	}
 }
 
-void inputbox3(struct skin* screen, struct skin* inputbox, int flag)
+void inputbox3(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
 {
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
@@ -361,7 +361,7 @@ void inputbox3(struct skin* screen, struct skin* inputbox, int flag)
 	}
 }
 
-void inputbox4(struct skin* screen, struct skin* inputbox, int flag)
+void inputbox4(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
 {
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
@@ -392,7 +392,7 @@ void inputbox4(struct skin* screen, struct skin* inputbox, int flag)
 	}
 }
 
-void inputbox5(struct skin* screen, struct skin* inputbox, int flag)
+void inputbox5(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
 {
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
@@ -424,7 +424,7 @@ void inputbox5(struct skin* screen, struct skin* inputbox, int flag)
 	}
 }
 
-void inputbox6(struct skin* screen, struct skin* inputbox, int flag)
+void inputbox6(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
 {
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
@@ -455,7 +455,7 @@ void inputbox6(struct skin* screen, struct skin* inputbox, int flag)
 	}
 }
 
-void inputbox7(struct skin* screen, struct skin* inputbox, int flag)
+void inputbox7(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
 {
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
@@ -490,7 +490,7 @@ void inputbox7(struct skin* screen, struct skin* inputbox, int flag)
 	}
 }
 
-void inputbox8(struct skin* screen, struct skin* inputbox, int flag)
+void inputbox8(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
 {
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
@@ -521,7 +521,7 @@ void inputbox8(struct skin* screen, struct skin* inputbox, int flag)
 	}
 }
 
-void inputbox9(struct skin* screen, struct skin* inputbox, int flag)
+void inputbox9(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
 {
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
@@ -556,7 +556,7 @@ void inputbox9(struct skin* screen, struct skin* inputbox, int flag)
 	}
 }
 
-void choiceboxleft(struct skin* screen, struct skin* choicebox, int flag)
+void choiceboxleft(struct skin* screen, struct skin* choicebox, int screencalc, int flag)
 {
 	debug(1000, "in");
 	if(choicebox != NULL)
@@ -565,12 +565,12 @@ void choiceboxleft(struct skin* screen, struct skin* choicebox, int flag)
 			choicebox->aktpage = choicebox->linecount;
 		else
 			choicebox->aktpage--;
-		drawscreen(screen, flag);
+		drawscreen(screen, screencalc, flag);
 	}
 	debug(1000, "out");
 }
 
-void choiceboxright(struct skin* screen, struct skin* choicebox, int flag)
+void choiceboxright(struct skin* screen, struct skin* choicebox, int screencalc, int flag)
 {
 	debug(1000, "in");
 	if(choicebox != NULL)
@@ -582,12 +582,12 @@ void choiceboxright(struct skin* screen, struct skin* choicebox, int flag)
 			if(choicebox->aktpage < 1) choicebox->aktpage = 1;
 			choicebox->aktpage++;
 		}
-		drawscreen(screen, flag);
+		drawscreen(screen, screencalc, flag);
 	}
 	debug(1000, "out");
 }
 
-void griddown(struct skin* screen, struct skin* grid, int flag)
+void griddown(struct skin* screen, struct skin* grid, int screencalc, int flag)
 {
 	debug(1000, "in");
 	int end = 0, br = 0, mark = 0;
@@ -643,13 +643,13 @@ void griddown(struct skin* screen, struct skin* grid, int flag)
 			grid->aktline = grid->linecount;
 
 		if(grid->select != NULL) delscreenrc(screen, grid->select);
-		drawscreen(screen, flag);
+		drawscreen(screen, screencalc, flag);
 	}
 
 	debug(1000, "out");
 }
 
-void gridup(struct skin* screen, struct skin* grid, int flag)
+void gridup(struct skin* screen, struct skin* grid, int screencalc, int flag)
 {
 	debug(1000, "in");
 	int start = 0, br = 0, mark = 0;
@@ -714,13 +714,13 @@ void gridup(struct skin* screen, struct skin* grid, int flag)
 			grid->aktline = 1;
 
 		if(grid->select != NULL) delscreenrc(screen, grid->select);
-		drawscreen(screen, flag);
+		drawscreen(screen, screencalc, flag);
 	}
 
 	debug(1000, "out");
 }
 
-void gridleft(struct skin* screen, struct skin* grid, int flag)
+void gridleft(struct skin* screen, struct skin* grid, int screencalc, int flag)
 {
 	debug(1000, "in");
 	struct skin* node = NULL;
@@ -751,14 +751,14 @@ void gridleft(struct skin* screen, struct skin* grid, int flag)
 		}
 
 		if(grid->select != NULL) delscreenrc(screen, grid->select);
-		drawscreen(screen, flag);
+		drawscreen(screen, screencalc, flag);
 		if(grid->select != NULL)
 			grid->gridcol = grid->select->posx + (grid->select->width / 2);
 	}
 	debug(1000, "out");
 }
 
-void gridright(struct skin* screen, struct skin* grid, int flag)
+void gridright(struct skin* screen, struct skin* grid, int screencalc, int flag)
 {
 	debug(1000, "in");
 	struct skin* node = NULL;
@@ -791,14 +791,14 @@ void gridright(struct skin* screen, struct skin* grid, int flag)
 		}
 
 		if(grid->select != NULL) delscreenrc(screen, grid->select);
-		drawscreen(screen, flag);
+		drawscreen(screen, screencalc, flag);
 		if(grid->select != NULL)
 			grid->gridcol = grid->select->posx + (grid->select->width / 2);
 	}
 	debug(1000, "out");
 }
 
-void gridchup(struct skin* screen, struct skin* grid, int flag)
+void gridchup(struct skin* screen, struct skin* grid, int screencalc, int flag)
 {
 	debug(1000, "in");
 
@@ -809,7 +809,7 @@ void gridchup(struct skin* screen, struct skin* grid, int flag)
 		if(grid->aktpage < 1)
 			grid->aktpage = 1;
 
-		drawscreen(screen, flag);
+		drawscreen(screen, screencalc, flag);
 		if(grid->select != NULL)
 			grid->gridcol = grid->select->posx + (grid->select->width / 2);
 	}
@@ -817,7 +817,7 @@ void gridchup(struct skin* screen, struct skin* grid, int flag)
 	debug(1000, "out");
 }
 
-void gridchdown(struct skin* screen, struct skin* grid, int flag)
+void gridchdown(struct skin* screen, struct skin* grid, int screencalc, int flag)
 {
 	debug(1000, "in");
 
@@ -831,7 +831,7 @@ void gridchdown(struct skin* screen, struct skin* grid, int flag)
 			grid->aktline = -2;
 		}
 
-		drawscreen(screen, flag);
+		drawscreen(screen, screencalc, flag);
 		if(grid->select != NULL)
 			grid->gridcol = grid->select->posx + (grid->select->width / 2);
 	}
@@ -840,7 +840,7 @@ void gridchdown(struct skin* screen, struct skin* grid, int flag)
 }
 
 
-void listboxleft(struct skin* screen, struct skin* listbox, int flag)
+void listboxleft(struct skin* screen, struct skin* listbox, int screencalc, int flag)
 {
 	debug(1000, "in");
 
@@ -852,7 +852,7 @@ void listboxleft(struct skin* screen, struct skin* listbox, int flag)
 			listbox->aktpage = 1;
 
 		if(listbox->select != NULL) delscreenrc(screen, listbox->select);
-		drawscreen(screen, flag);
+		drawscreen(screen, screencalc, flag);
 	}
 
 	debug(1000, "out");
@@ -873,13 +873,13 @@ void listboxright(struct skin* screen, struct skin* listbox, int flag)
 		}
 
 		if(listbox->select != NULL) delscreenrc(screen, listbox->select);
-		drawscreen(screen, flag);
+		drawscreen(screen, screencalc, flag);
 	}
 
 	debug(1000, "out");
 }
 
-void listboxup(struct skin* screen, struct skin* listbox, int flag)
+void listboxup(struct skin* screen, struct skin* listbox, int screencalc, int flag)
 {
 	debug(1000, "in");
 
@@ -891,12 +891,12 @@ void listboxup(struct skin* screen, struct skin* listbox, int flag)
 			listbox->aktline = listbox->linecount;
 
 		if(listbox->select != NULL) delscreenrc(screen, listbox->select);
-		drawscreen(screen, flag);
+		drawscreen(screen, screencalc, flag);
 	}
 	debug(1000, "out");
 }
 
-void listboxdown(struct skin* screen, struct skin* listbox, int flag)
+void listboxdown(struct skin* screen, struct skin* listbox, int screencalc, int flag)
 {
 	debug(1000, "in");
 
@@ -909,12 +909,12 @@ void listboxdown(struct skin* screen, struct skin* listbox, int flag)
 			listbox->aktline = 1;
 
 		if(listbox->select != NULL) delscreenrc(screen, listbox->select);
-		drawscreen(screen, flag);
+		drawscreen(screen, screencalc, flag);
 	}
 	debug(1000, "out");
 }
 
-void textboxup(struct skin* screen, struct skin* textbox, int flag)
+void textboxup(struct skin* screen, struct skin* textbox, int screencalc, int flag)
 {
 	debug(1000, "in");
 	if(textbox != NULL)
@@ -922,13 +922,13 @@ void textboxup(struct skin* screen, struct skin* textbox, int flag)
 		if(textbox->aktpage > 1)
 		{
 			textbox->aktpage--;
-			drawscreen(screen, flag);
+			drawscreen(screen, screencalc, flag);
 		}
 	}
 	debug(1000, "out");
 }
 
-void textboxdown(struct skin* screen, struct skin* textbox, int flag)
+void textboxdown(struct skin* screen, struct skin* textbox, int screencalc, int flag)
 {
 	debug(1000, "in");
 	if(textbox != NULL)
@@ -936,7 +936,7 @@ void textboxdown(struct skin* screen, struct skin* textbox, int flag)
 		if(textbox->aktpage < textbox->pagecount)
 		{
 			textbox->aktpage++;
-			drawscreen(screen, flag);
+			drawscreen(screen, screencalc, flag);
 		}
 	}
 	debug(1000, "out");

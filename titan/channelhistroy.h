@@ -99,7 +99,7 @@ void screenchannelhistory()
 	}
 
 	addscreenrc(chistory, listbox);
-	drawscreen(chistory, 0);
+	drawscreen(chistory, 0, 0);
 
 	while(1)
 	{
@@ -118,7 +118,7 @@ void screenchannelhistory()
 	delmarkedscreennodes(chistory, 1);
 	delownerrc(chistory);
 	clearscreen(chistory);
-	drawscreen(skin, 0);
+	drawscreen(skin, 0, 0);
 }
 
 #endif

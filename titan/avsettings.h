@@ -137,7 +137,7 @@ void screenavsettings(int flag)
 	setchoiceboxselection(mode3d, ret);
 	free(ret); ret = NULL;
 
-	drawscreen(avsettings, 0);
+	drawscreen(avsettings, 0, 0);
 	addscreenrc(avsettings, listbox);
 
 	if(flag == 1 && listbox->select != NULL)
@@ -180,7 +180,7 @@ void screenavsettings(int flag)
 					autorests->hidden=NO;
 				}
 			}
-			drawscreen(avsettings, 0);
+			drawscreen(avsettings, 0, 0);
 		}
 		setlr = 0;
 	
@@ -204,7 +204,7 @@ void screenavsettings(int flag)
 						}
 
 					}
-					if(flag == 1) drawscreen(avsettings, 0);
+					if(flag == 1) drawscreen(avsettings, 0, 0);
 				}
 				free(ret); ret = NULL;
 			}
@@ -238,7 +238,7 @@ void screenavsettings(int flag)
 				ret = getcolorformat(2);
 				changeinput(colformatscart, ret);
 				free(ret); ret = NULL;
-				drawscreen(avsettings, 0);
+				drawscreen(avsettings, 0, 0);
 			}
 			if(audiosource->ret != NULL)
 			{

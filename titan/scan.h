@@ -931,7 +931,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 		else
 			progress->progresssize = (100 / (float)scaninfo.tpmax) * scaninfo.tpcount;
 
-		drawscreen(scan, 0);
+		drawscreen(scan, 0, 0);
 		rcret = waitrc(scan, 1000, 0);
 
 		if(scantype != 3 && rcret == getrcconfigint("rcred", NULL))
@@ -1349,7 +1349,7 @@ void screenscanconfig(int flag)
 	addchoicebox(blindscan, "0", _("no"));
 	addchoicebox(blindscan, "1", _("yes"));
 
-	drawscreen(scan, 0);
+	drawscreen(scan, 0, 0);
 	addscreenrc(scan, listbox);
 
 	tmp = listbox->select;
@@ -1381,19 +1381,19 @@ void screenscanconfig(int flag)
 		{
 			scanchangesat(sat, tpnode, listbox->select->ret);
 			changescantype(scantype->ret, scan, listbox, tuner, sat, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot);
-			drawscreen(scan, 0);
+			drawscreen(scan, 0, 0);
 		}
 		if(listbox->select != NULL && ostrcmp(listbox->select->name, "scantype") == 0)
 		{
 			changescantype(scantype->ret, scan, listbox, tuner, sat, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot);
-			drawscreen(scan, 0);
+			drawscreen(scan, 0, 0);
 
 		}
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			clearscreen(scan);
 			screenscan(tpnode, scan->child, tuner->ret, iscantype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, inetworkscan, ionlyfree, iclear, iblindscan, isystem, 5000000);
-			drawscreen(scan, 0);
+			drawscreen(scan, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL) && tpnode != NULL && iscantype == 0)
 		{
@@ -1401,7 +1401,7 @@ void screenscanconfig(int flag)
 			copytransponder(tp1, tpnode, 99);
 			deltransponderbyid(99);
 			textbox(_("Message"), _("Transponder changed"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
-			drawscreen(scan, 0);
+			drawscreen(scan, 0, 0);
 		}
 		else if(rcret == getrcconfigint("rcok", NULL))
 			break;

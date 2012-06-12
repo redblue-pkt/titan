@@ -395,15 +395,12 @@ void drawchannellistmepg(struct skin* multiepg, int list, struct skin* listbox)
 	if(list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL || list == BOUQUETCHANNEL)
 	{
 		if(listbox->select == NULL)
-		{
-			status.screencalc = 2;
-			drawscreen(multiepg, 0);
-			status.screencalc = 0;
-		}
+			drawscreen(multiepg, 2, 0);
+
 		if(listbox->select != NULL)
 			status.markedchannel = (struct channel*)listbox->select->handle;
 	}
-	drawscreen(multiepg, 0);
+	drawscreen(multiepg, 0, 0);
 }
 
 void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
@@ -508,18 +505,14 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	}
 
 	tmpstr = NULL;
-	status.screencalc = 2;
-	drawscreen(multiepg, 0);
-	status.screencalc = 0;
+	drawscreen(multiepg, 2, 0);
 	addscreenrc(multiepg, listbox);
 
 	drawchannellistmepg(multiepg, list, listbox);
 
 	while(1)
 	{
-		status.screencalc = 2;
-		rcret = waitrc(multiepg, 0, 0);
-		status.screencalc = 0;
+		rcret = waitrc(multiepg, 0, 2);
 
 		if((rcret == getrcconfigint("rcexit", NULL)) || (rcret == getrcconfigint("rcepg", NULL))) break;
 		//if(rcret == getrcconfigint("rcinfo", NULL)) break;
@@ -534,7 +527,7 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			{
 				clearscreen(multiepg);
 				screenepg((struct channel*)listbox->select->handle, (struct epg*)listbox->select->handle1, 1);
-				drawscreen(multiepg, 0);
+				drawscreen(multiepg, 0, 0);
 			}
 		}
 		
@@ -544,7 +537,7 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			{
 				clearscreen(multiepg);
 				screenepg((struct channel*)listbox->select->handle, (struct epg*)listbox->select->handle1, 0);
-				//drawscreen(multiepg, 0);
+				//drawscreen(multiepg, 0, 0);
 				break;
 			}
 		}
@@ -554,7 +547,7 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			{
 				clearscreen(multiepg);
 				screensingleepg((struct channel*)listbox->select->handle, NULL, 0);
-				//drawscreen(multiepg, 0);
+				//drawscreen(multiepg, 0, 0);
 				break;
 			}
 		}
@@ -564,7 +557,7 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			{
 				clearscreen(multiepg);
 				screengmultiepg((struct channel*)listbox->select->handle, NULL, 0);
-				//drawscreen(multiepg, 0);
+				//drawscreen(multiepg, 0, 0);
 				break;
 			}
 		}
@@ -629,7 +622,7 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 						showprovidermepgchannel(multiepg, listbox, providernode, epgnr);
 				}
 			}
-			drawscreen(multiepg, 0);
+			drawscreen(multiepg, 0, 0);
 			continue;
 		}
 
@@ -648,7 +641,7 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 				showsatmepgchannel(multiepg, listbox, satnode, epgnr);
 			else if(list == PROVIDERCHANNEL)
 				showprovidermepgchannel(multiepg, listbox, providernode, epgnr);
-			drawscreen(multiepg, 0);
+			drawscreen(multiepg, 0, 0);
 			continue;
 		}
 
@@ -656,16 +649,15 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		{
 			clearscreen(multiepg);
 			ret = addrecepg((struct channel*)listbox->select->handle, readepgdesc((struct channel*)listbox->select->handle, epgnr), NULL);
-			drawscreen(multiepg, 0);
+			drawscreen(multiepg, 0, 0);
 			continue;
 		}
 
-		drawscreen(multiepg, 0);
+		drawscreen(multiepg, 0, 0);
 	}
 
 	status.markedchannel = NULL;
 	status.markmodus = 0;
-	status.screencalc = 0;
 	delmarkedscreennodes(multiepg, 1);
 	delownerrc(multiepg);
 	clearscreen(multiepg);

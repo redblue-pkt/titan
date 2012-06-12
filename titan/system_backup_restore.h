@@ -16,7 +16,7 @@ void screensystem_backup_restore()
 	changetext(info, _(infotext));
 	changetitle(backup_restore, _("Backup / Restore Settings"));
 
-	drawscreen(backup_restore, 0);
+	drawscreen(backup_restore, 0, 0);
 
 	while(1)
 	{
@@ -31,7 +31,7 @@ void screensystem_backup_restore()
 			if(textbox(_("Restore Settings"), _("Are you sure you want to restore settings?\n\nOK = start restore\nEXIT = abort restore"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 700, 250, 0, 0) == 1)
 			{
 				changetext(info, _("Please wait ...\n\nAll Settings are saved.\n\nBox will start in few seconds."));
-				drawscreen(backup_restore, 0);
+				drawscreen(backup_restore, 0, 0);
 			
 				if(isfile("/var/backup/.actbackup"))
 				{
@@ -49,11 +49,11 @@ void screensystem_backup_restore()
 					//clearscreen(backup_restore);
 					textbox(_("RESTORE ERROR"), _("No backup folders found!!!\n\nAborting restoring..."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 					changetext(info, _(infotext));
-					drawscreen(backup_restore, 0);
+					drawscreen(backup_restore, 0, 0);
 				}
 			}else
 			{
-				drawscreen(backup_restore, 0);
+				drawscreen(backup_restore, 0, 0);
 			}
 		}
 		if(rcret == getrcconfigint("rcyellow", NULL))
@@ -64,7 +64,7 @@ void screensystem_backup_restore()
 				changetext(info, _("Backup started\n\nPlease wait..."));
 				info->textposx = 50;
 				b_red->hidden = YES; b_green->hidden = YES; b_yellow->hidden = YES;
-				drawscreen(backup_restore, 0);
+				drawscreen(backup_restore, 0, 0);
 
 				writeallconfig(1);
 				
@@ -76,13 +76,13 @@ void screensystem_backup_restore()
 				info->textposx = 0;
 				b_red->hidden = NO; b_green->hidden = NO; b_yellow->hidden = NO;
 				textbox(_("Message"), _("Backup created successfully"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
-				drawscreen(backup_restore, 0);
+				drawscreen(backup_restore, 0, 0);
 			}
 			else
 			{
 				clearscreen(backup_restore);
 				textbox(_("BACKUP ERROR"), _("A record hdd or a swapstick must be mounted!\n\nAborting backup..."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-				drawscreen(backup_restore, 0);
+				drawscreen(backup_restore, 0, 0);
 			}
 		}
 	}

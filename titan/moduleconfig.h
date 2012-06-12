@@ -78,7 +78,7 @@ start:
 		dvbnode = dvbnode->next;
 	}
 
-	drawscreen(moduleconfig, 0);
+	drawscreen(moduleconfig, 0, 0);
 	addscreenrc(moduleconfig, listbox);
 
 	tmp = listbox->select;

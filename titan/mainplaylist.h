@@ -458,7 +458,7 @@ start:
 		node = node->next;
 	}
 
-	drawscreen(playlist, 0);
+	drawscreen(playlist, 0, 0);
 	addscreenrc(playlist, listbox);
 
 	while(1)

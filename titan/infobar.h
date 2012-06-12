@@ -48,7 +48,7 @@ void screeninfobar()
 			{
 				status.infobar = 1;
 				infobar = infobar1;
-				drawscreen(infobar, 4);
+				drawscreen(infobar, 0, 4);
 				continue;
 			}
 			else
@@ -81,7 +81,7 @@ void screeninfobar()
 			}
 			if(screensaver != NULL) screensaver->flag = 0;
 			deinitscreensaver();
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			infobartimeout = 0;
 		}
 
@@ -187,7 +187,7 @@ void screeninfobar()
 			clearscreen(infobar);
 			screenrecordstop();
 			status.updatevfd = START;
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			subtitlepause(0);
 			continue;
 		}
@@ -206,14 +206,14 @@ void screeninfobar()
 				else
 					status.servicetype = 0;
 			}
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			if(rcret == getrcconfigint("rcfav", NULL))	
 				ret = screenchannellist(NULL, NULL, 2);
 			else
 				ret = screenchannellist(NULL, NULL, 0);
 			if(ret >= 20 || ret < 0)
 				status.servicetype = tmpservicetype;
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			status.infobaraktiv = 1;
 			status.infobar = 2;
 			continue;
@@ -225,7 +225,7 @@ void screeninfobar()
 			subtitlepause(1);
 			status.infobar = 0;
 			clearscreen(infobar);
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			subtitlepause(0);
 			continue;
 		}
@@ -240,10 +240,10 @@ void screeninfobar()
 				tmpstr = ostrcat(getconfig("tuxtxtfile", NULL), " ", 0, 0);
 				tmpnr = oitoa(status.aktservice->channel->txtpid);
 				tmpstr = ostrcat(tmpstr, tmpnr, 1, 1);
-				drawscreen(skin, 0);
+				drawscreen(skin, 0, 0);
 				system(tmpstr);
 				free(tmpstr); tmpstr = NULL; tmpnr = NULL;
-				drawscreen(skin, 0);
+				drawscreen(skin, 0, 0);
 				subtitlepause(0);
 			}
 			continue;
@@ -255,7 +255,7 @@ void screeninfobar()
 			clearscreen(infobar);
 			screenrecorddirect();
 			status.updatevfd = START;
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			subtitlepause(0);
 			continue;
 		}
@@ -268,7 +268,7 @@ void screeninfobar()
 			screenplay(NULL, 1, 0);
 			status.infobaraktiv = 1;
 			status.updatevfd = START;
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			subtitlepause(0);
 			continue;
 		}
@@ -281,7 +281,7 @@ void screeninfobar()
 			screenkeyactions(1, 0);
 			status.infobaraktiv = 1;
 			status.updatevfd = START;
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			subtitlepause(0);
 			continue;
 		}
@@ -291,7 +291,7 @@ void screeninfobar()
 			status.infobar = 0;
 			clearscreen(infobar);
 			screenvideomode(0);
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			subtitlepause(0);
 			continue;
 		}
@@ -301,7 +301,7 @@ void screeninfobar()
 			status.infobar = 0;
 			clearscreen(infobar);
 			screenlinkedchannel();
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			subtitlepause(0);
 			continue;
 		}
@@ -311,7 +311,7 @@ void screeninfobar()
 			status.infobar = 0;
 			clearscreen(infobar);
 			screenpowerofftimer();
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			subtitlepause(0);
 			continue;
 		}
@@ -321,7 +321,7 @@ void screeninfobar()
 			status.infobar = 0;
 			clearscreen(infobar);
 			screensubtitle();
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			subtitlepause(0);
 			continue;
 		}
@@ -331,7 +331,7 @@ void screeninfobar()
 			status.infobar = 0;
 			clearscreen(infobar);
 			screenaudiotrack();
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			subtitlepause(0);
 			continue;
 		}
@@ -342,7 +342,7 @@ void screeninfobar()
 			clearscreen(infobar);
 			screenkeyactions(0, 0);
 			status.updatevfd = START;
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			subtitlepause(0);
 			continue;
 		}
@@ -361,7 +361,7 @@ void screeninfobar()
 			}
 
 			status.updatevfd = START;
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			subtitlepause(0);
 			continue;
 		}
@@ -380,7 +380,7 @@ void screeninfobar()
 				startplugin();
 			}
 			status.infobaraktiv = 1;
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			subtitlepause(0);
 			continue;
 		}
@@ -394,7 +394,7 @@ void screeninfobar()
 			status.menurelease = 0;
 			status.updatevfd = START;
 			status.infobaraktiv = 1;
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			subtitlepause(0);
 			continue;
 		}
@@ -405,7 +405,7 @@ void screeninfobar()
 			status.infobaraktiv = 0;
 			clearscreen(infobar);
 			epgchoice(NULL);
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			status.infobaraktiv = 1;
 			subtitlepause(0);
 			continue;
@@ -416,7 +416,7 @@ void screeninfobar()
 			status.infobar = 0;
 			clearscreen(infobar);
 			switchvideomode();
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			subtitlepause(0);
 			continue;
 		}
@@ -429,19 +429,19 @@ void screeninfobar()
 					clearscreen(infobar);
 					epgchoice(NULL);
 					status.infobar = 0;
-					drawscreen(skin, 0);
+					drawscreen(skin, 0, 0);
 					subtitlepause(0);
 				}
 				else if(getconfigint("secondinfobar", NULL) == 0 || infobar2 == status.skinerr || infobar == infobar2)
 				{
 					status.infobar = 0;
-					drawscreen(skin, 0);
+					drawscreen(skin, 0, 0);
 					subtitlepause(0);
 				}
 				else
 				{
 					infobar = infobar2;
-					drawscreen(infobar, 0);
+					drawscreen(infobar, 0, 0);
 				}
 			}
 			else
@@ -449,7 +449,7 @@ void screeninfobar()
 				subtitlepause(1);
 				status.infobar = 1;
 				infobar = infobar1;
-				drawscreen(infobar, 4);
+				drawscreen(infobar, 0, 4);
 			}
 			continue;
 		}
@@ -459,7 +459,7 @@ void screeninfobar()
 			status.infobar = 0;
 			status.infobaraktiv = 0;
 			clearscreen(infobar);
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			switch(getconfigint("poweraktion", NULL))
 			{
 				case 1: //power off
@@ -480,7 +480,7 @@ void screeninfobar()
 					break;
 			}
 			status.updatevfd = START;
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			status.infobaraktiv = 1;
 			subtitlepause(0);
 			continue;
@@ -489,14 +489,14 @@ void screeninfobar()
 		{
 			subtitlepause(1);
 			clearscreen(infobar);
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			screenchannelhistory();
 			infobartimeout = 0;
 			infobar = infobar1;
 			if(status.infobar == 0)
-				drawscreen(infobar, 4);
+				drawscreen(infobar, 0, 4);
 			else
-				drawscreen(infobar, 0);
+				drawscreen(infobar, 0, 0);
 			status.infobar = 1;
 			continue;
 		}
@@ -504,7 +504,7 @@ void screeninfobar()
 		{
 			subtitlepause(1);
 			clearscreen(infobar);
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			if(status.lastservice->channel != NULL)
 			{
 				tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
@@ -514,9 +514,9 @@ void screeninfobar()
 			infobartimeout = 0;
 			infobar = infobar1;
 			if(status.infobar == 0)
-				drawscreen(infobar, 4);
+				drawscreen(infobar, 0, 4);
 			else
-				drawscreen(infobar, 0);
+				drawscreen(infobar, 0, 0);
 			status.infobar = 1;
 			continue;
 		}
@@ -525,7 +525,7 @@ void screeninfobar()
 			subtitlepause(1);
 			zapup();
 			clearscreen(infobar);
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			infobartimeout = 0;
 			status.infobar = 2;
 			continue;
@@ -535,7 +535,7 @@ void screeninfobar()
 			subtitlepause(1);
 			zapdown();
 			clearscreen(infobar);
-			drawscreen(skin, 0);
+			drawscreen(skin, 0, 0);
 			infobartimeout = 0;
 			status.infobar = 2;
 			continue;
@@ -553,12 +553,12 @@ void screeninfobar()
 			if(getconfigint("infobartimeout", NULL) > infobartimeout)
 			{
 				clearscreen(infobar);
-				drawscreen(infobar, 0);
+				drawscreen(infobar, 0, 0);
 			}
 			else
 			{
 				status.infobar = 0;
-				drawscreen(skin, 0);
+				drawscreen(skin, 0, 0);
 				subtitlepause(0);
 			}
 		}

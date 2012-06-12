@@ -129,7 +129,7 @@ start:
 
 	if(treffer == 0) listbox->aktline = 1;
 
-	drawscreen(linkedchannel, 0);
+	drawscreen(linkedchannel, 0, 0);
 
 	while(1)
 	{

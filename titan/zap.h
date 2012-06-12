@@ -45,7 +45,7 @@ start:
 
 	status.aktservice->type = TMPOTHER;
 	status.aktservice->channel = chnode;
-	drawscreen(infobar, 0);
+	drawscreen(infobar, 0, 0);
 	while(1)
 	{
 		rcret = waitrc(infobar, virtualzap, 0);
@@ -106,7 +106,7 @@ start:
 
 		status.aktservice->type = TMPOTHER;
 		status.aktservice->channel = node;
-		drawscreen(infobar, 0);
+		drawscreen(infobar, 0, 0);
 		while(1)
 		{
 			rcret = waitrc(infobar, virtualzap, 0);
@@ -207,7 +207,7 @@ start:
 
 		status.aktservice->type = TMPOTHER;
 		status.aktservice->channel = node;
-		drawscreen(infobar, 0);
+		drawscreen(infobar, 0, 0);
 		while(1)
 		{
 			rcret = waitrc(infobar, virtualzap, 0);
@@ -285,7 +285,7 @@ start:
 
 		status.aktservice->type = TMPOTHER;
 		status.aktservice->channel = node;
-		drawscreen(infobar, 0);
+		drawscreen(infobar, 0, 0);
 		while(1)
 		{
 			rcret = waitrc(infobar, virtualzap, 0);
@@ -360,7 +360,7 @@ start:
 
 		status.aktservice->type = TMPOTHER;
 		status.aktservice->channel = node;
-		drawscreen(infobar, 0);
+		drawscreen(infobar, 0, 0);
 		while(1)
 		{
 			rcret = waitrc(infobar, virtualzap, 0);

@@ -394,15 +394,12 @@ void drawchannellist(struct skin* channellist, int list, struct skin* listbox)
 	if(list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL || list == BOUQUETCHANNEL)
 	{
 		if(listbox->select == NULL)
-		{
-			status.screencalc = 2;
-			drawscreen(channellist, 0);
-			status.screencalc = 0;
-		}
+			drawscreen(channellist, 2, 0);
+
 		if(listbox->select != NULL)
 			status.markedchannel = (struct channel*)listbox->select->handle;
 	}
-	drawscreen(channellist, 0);
+	drawscreen(channellist, 0, 0);
 }
 
 void recalclist(int list, void* aktlist, int listmode, struct skin* channellist, struct skin* listbox, struct skin* channeltimeline)
@@ -653,14 +650,11 @@ start:
 	if(status.screenanim > 0 && firstdraw == 0)
 	{
 		firstdraw = 1;
-		drawscreen(channellist, 4);
+		drawscreen(channellist, 0, 4);
 	}
 	else
-	{
-		status.screencalc = 2;
-		drawscreen(channellist, 0);
-		status.screencalc = 0;
-	}
+		drawscreen(channellist, 2, 0);
+
 	addscreenrcchannellist(channellist, listbox);
 
 	if(flag == 3)
@@ -687,11 +681,7 @@ start:
 			flag = 0;
 		}
 		else
-		{
-			status.screencalc = 2;
-			rcret = waitrc(channellist, 10000, 0);
-			status.screencalc = 0;
-		}
+			rcret = waitrc(channellist, 10000, 2);
 
 		//read epg new
 		if(listbox != NULL && listbox->select != NULL && (list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL || list == BOUQUETCHANNEL))
@@ -724,7 +714,7 @@ start:
 		if(rcret == RCTIMEOUT)
 		{
 			changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
-			drawscreen(channellist, 0);
+			drawscreen(channellist, 0, 0);
 		}
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
@@ -764,7 +754,7 @@ start:
 				recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
 				selectchannel(listbox, sid, tid);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
-				drawscreen(channellist, 0);
+				drawscreen(channellist, 0, 0);
 			}
 			if(listmode == PROTECTMODE && listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcok", NULL))
 			{
@@ -783,7 +773,7 @@ start:
 				delmarkedscreennodes(channellist, 2);
 				recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
-				drawscreen(channellist, 0);
+				drawscreen(channellist, 0, 0);
 			}
 			if(listmode == CPMODE && listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcok", NULL))
 			{
@@ -806,7 +796,7 @@ start:
 					}
 				}
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
-				drawscreen(channellist, 0);
+				drawscreen(channellist, 0, 0);
 			}
 			if(listmode == EDITMODE && listbox->select != NULL && listbox->select->handle1 != NULL && rcret == getrcconfigint("rcok", NULL))
 			{
@@ -854,7 +844,7 @@ start:
 				status.markedchannel = NULL;
 				recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
-				drawscreen(channellist, 0);
+				drawscreen(channellist, 0, 0);
 			}
 			if(listmode == RMMODE && listbox->select != NULL && listbox->select->handle1 != NULL && rcret == getrcconfigint("rcok", NULL))
 			{
@@ -899,7 +889,7 @@ start:
 				status.markedchannel = NULL;
 				recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
-				drawscreen(channellist, 0);
+				drawscreen(channellist, 0, 0);
 			}
 			if(listmode == MVMODE && listbox->select != NULL && rcret == getrcconfigint("rcok", NULL))
 			{
@@ -914,7 +904,7 @@ start:
 					movesel = NULL;
 				}
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
-				drawscreen(channellist, 0);
+				drawscreen(channellist, 0, 0);
 			}
 			if(listmode == MVMODE && listbox->select != NULL && movesel != NULL && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL) || rcret == getrcconfigint("rcchdown", NULL) || rcret == getrcconfigint("rcchup", NULL)))
 			{
@@ -935,7 +925,7 @@ start:
 					}
 					if(status.moveblockcount > 10)
 						status.moveblockcount = 10;
-					drawscreen(channellist, 0);
+					drawscreen(channellist, 0, 0);
 					continue;
 				}
 				if(rcret == getrcconfigint("rcchup", NULL))
@@ -943,7 +933,7 @@ start:
 					status.moveblockcount--;
 					if(status.moveblockcount < 0)
 						status.moveblockcount = 0;
-					drawscreen(channellist, 0);
+					drawscreen(channellist, 0, 0);
 					continue;
 				}
 				if(rcret == getrcconfigint("rcup", NULL))
@@ -1057,7 +1047,7 @@ start:
 				delmarkedscreennodes(channellist, 2);
 				recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
-				drawscreen(channellist, 0);
+				drawscreen(channellist, 0, 0);
 			}
 			continue;
 		}
@@ -1219,7 +1209,7 @@ start:
 				clearscreen(channellist);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
 				resettvpic();
-				drawscreen(skin, 0);
+				drawscreen(skin, 0, 0);
 				if(status.servicetype == 0)
 					ret = servicestart((struct channel*)listbox->select->handle, getconfig("channellist", NULL), NULL, 0);
 				else
@@ -1265,9 +1255,7 @@ start:
 					listbox->aktline = 1;
 					listbox->aktpage = -1;
 
-					status.screencalc = 2;
-					drawscreen(channellist, 0);
-					status.screencalc = 0;
+					drawscreen(channellist, 2, 0);
 					changetext(tmpnode, tmpaktlist->name);
 					tmpnode->handle = (char*)tmpaktlist->bouquet;
 					tmpnode->handle1 = (char*)tmpaktlist;
@@ -1337,9 +1325,7 @@ start:
 					listbox->aktline = 1;
 					listbox->aktpage = -1;
 
-					status.screencalc = 2;
-					drawscreen(channellist, 0);
-					status.screencalc = 0;
+					drawscreen(channellist, 2, 0);
 					changetext(tmpnode, tmpaktlist->name);
 					tmpnode->handle = (char*)tmpaktlist;
 					tmpnode->handle1 = (char*)tmpaktlist;
@@ -1397,9 +1383,7 @@ start:
 				listbox->aktline = 1;
 				listbox->aktpage = -1;
 
-				status.screencalc = 2;
-				drawscreen(channellist, 0);
-				status.screencalc = 0;
+				drawscreen(channellist, 2, 0);
 				tmpstr = malloc(2);
 				if(tmpstr != NULL)
 				{
@@ -1473,9 +1457,7 @@ start:
 					listbox->aktline = 1;
 					listbox->aktpage = -1;
 
-					status.screencalc = 2;
-					drawscreen(channellist, 0);
-					status.screencalc = 0;
+					drawscreen(channellist, 2, 0);
 					changetext(tmpnode, tmpaktlist->name);
 					tmpnode->handle = (char*)tmpaktlist;
 					tmpnode->handle1 = (char*)tmpaktlist;
@@ -1547,7 +1529,7 @@ start:
 			recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
 			selectchannel(listbox, sid, tid);
 			changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
-			drawscreen(channellist, 0);
+			drawscreen(channellist, 0, 0);
 			continue;
 		}
 		if(flag == 0 && rcret == getrcconfigint("rcepg", NULL) && (list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL || list == BOUQUETCHANNEL))
@@ -1558,7 +1540,7 @@ start:
 				resettvpic();
 				epgchoice((struct channel*)listbox->select->handle);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
-				drawscreen(channellist, 0);
+				drawscreen(channellist, 0, 0);
 			}
 			continue;
 		}
@@ -1584,7 +1566,6 @@ end:
 	free(oldtitle);
 	status.markedchannel = NULL;
 	status.markmodus = 0;
-	status.screencalc = 0;
 	delmarkedscreennodes(channellist, 1);
 	delmarkedscreennodes(channellist, 2);
 	delownerrc(channellist);

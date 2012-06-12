@@ -313,7 +313,7 @@ start:
 	addchoicebox(north_south, "0", _("south"));
 */
 
-	drawscreen(tunerreceptiondvbs, 0);
+	drawscreen(tunerreceptiondvbs, 0, 0);
 	addscreenrc(tunerreceptiondvbs, listbox);
 
 	tmp = listbox->select;
@@ -386,13 +386,13 @@ start:
 			{
 				clearscreen(tunerreceptiondvbs);
 				screenlnb(tuner->feshortname, listbox->select->handle);
-				drawscreen(tunerreceptiondvbs, 0);
+				drawscreen(tunerreceptiondvbs, 0, 0);
 			}
 			if(listbox->select != NULL && ostrcmp(listbox->select->text, "DiSEqC") == 0 && listbox->select->ret != NULL && ostrcmp(listbox->select->ret, "0") != 0)
 			{
 				clearscreen(tunerreceptiondvbs);
 				screendiseqc(tuner->feshortname, listbox->select->handle);
-				drawscreen(tunerreceptiondvbs, 0);
+				drawscreen(tunerreceptiondvbs, 0, 0);
 			}
 		}
 		else if(rcret == getrcconfigint("rcok", NULL))
@@ -461,7 +461,7 @@ int screentunerreceptiondvbc(struct dvbdev* tuner)
 		free(tmpstr); tmpstr = NULL;
 	}
 
-	drawscreen(tunerreceptiondvbc, 0);
+	drawscreen(tunerreceptiondvbc, 0, 0);
 	addscreenrc(tunerreceptiondvbc, listbox);
 
 	tmp = listbox->select;
@@ -471,7 +471,7 @@ int screentunerreceptiondvbc(struct dvbdev* tuner)
 		rcret = waitrc(tunerreceptiondvbc, 0, 0);
 		tmp = listbox->select;
 
-		drawscreen(tunerreceptiondvbc, 0);
+		drawscreen(tunerreceptiondvbc, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
@@ -642,7 +642,7 @@ void screentunerconfig()
 		dvbnode = dvbnode->next;
 	}
 
-	drawscreen(tunerconfig, 0);
+	drawscreen(tunerconfig, 0, 0);
 	addscreenrc(tunerconfig, listbox);
 
 	tmp = listbox->select;
@@ -664,19 +664,19 @@ void screentunerconfig()
 				{
 					clearscreen(tunerconfig);
 					ret = screentunerreceptiondvbs((struct dvbdev*)listbox->select->handle);
-					drawscreen(tunerconfig, 0);
+					drawscreen(tunerconfig, 0, 0);
 				}
 				if(((struct dvbdev*)listbox->select->handle)->feinfo->type == FE_QAM)
 				{
 					clearscreen(tunerconfig);
 					ret = screentunerreceptiondvbc((struct dvbdev*)listbox->select->handle);
-					drawscreen(tunerconfig, 0);
+					drawscreen(tunerconfig, 0, 0);
 				}
 				if(((struct dvbdev*)listbox->select->handle)->feinfo->type == FE_OFDM)
 				{
 					clearscreen(tunerconfig);
 					textbox(_("Message"), _("DVB-T not supportet at the moment !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-					drawscreen(tunerconfig, 0);
+					drawscreen(tunerconfig, 0, 0);
 				}
 			}
 		}
@@ -684,7 +684,7 @@ void screentunerconfig()
 		{
 			clearscreen(tunerconfig);
 			screenownpos();
-			drawscreen(tunerconfig, 0);
+			drawscreen(tunerconfig, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
@@ -705,7 +705,7 @@ void screentunerconfig()
 	//tune new if tunerconfig saved
 	if(ret == 1)
 	{
-		drawscreen(skin, 0);
+		drawscreen(skin, 0, 0);
 		ret = servicestop(status.aktservice, 1, 1);
 		if(ret == 0)
 		{

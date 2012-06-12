@@ -4,7 +4,7 @@
 void screenautores(char* text, int timeout, int flag)
 {
 	debug(1000, "in");
-	int rcret = -1, tmpscreencalc = 0, fromthread = 0;
+	int rcret = -1, fromthread = 0;
 	struct skin* autores = getscreen("autores");
 	struct skin* framebuffer = getscreen("framebuffer");
 	char* bg = NULL;
@@ -18,18 +18,13 @@ void screenautores(char* text, int timeout, int flag)
 	{
 		m_lock(&status.drawingmutex, 0);
 		m_lock(&status.rcmutex, 10);
-		tmpscreencalc = status.screencalc;
-		status.screencalc = 2;
-		setnodeattr(autores, framebuffer);
-		status.screencalc = tmpscreencalc;
+		setnodeattr(autores, framebuffer, 2);
 		status.rcowner = autores;
 		bg = savescreen(autores);
-		tmpscreencalc = status.screencalc;
-		status.screencalc = 0;
-		drawscreen(autores, 2);
+		drawscreen(autores, 0, 2);
 	}
 	else
-		drawscreen(autores, 0);
+		drawscreen(autores, 0, 0);
 
 	//deaktivate for test, so we can end the screen with each keypress
 	//while(rcret != RCTIMEOUT && rcret != getrcconfigint("rcexit", NULL))
@@ -43,7 +38,6 @@ void screenautores(char* text, int timeout, int flag)
 		clearscreennolock(autores);
 		restorescreen(bg, autores);
 		blitfb(0);
-		status.screencalc = tmpscreencalc;
 		sleep(1);
 		status.rcowner = NULL;
 		m_unlock(&status.rcmutex, 10);
@@ -52,7 +46,7 @@ void screenautores(char* text, int timeout, int flag)
 	else
 	{
 		clearscreen(autores);
-		drawscreen(skin, 0);
+		drawscreen(skin, 0, 0);
 	}
 
 	debug(1000, "out");

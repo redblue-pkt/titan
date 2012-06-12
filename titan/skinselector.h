@@ -168,7 +168,7 @@ void screenskinselect(void)
    	
 	listbox->aktpage = -1;
 	
-	drawscreen(screen,0);
+	drawscreen(screen, 0, 0);
 	addscreenrc(screen, listbox);
 
 	while (1)
@@ -216,7 +216,7 @@ void screenskinselect(void)
 				else
 				{
 					textbox(_("Message"), _("No skinconfig found in skin.\nCan't chage to selected skin."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-					drawscreen(screen, 0);
+					drawscreen(screen, 0, 0);
 					free(tmpstr); tmpstr = NULL;
 					continue;
 				}
@@ -239,7 +239,7 @@ void screenskinselect(void)
 			strncpy(pf + strlen(pf) - 8, "prev.png", 8);
 			changepic(png, pf);
 			free(pf);
-			drawscreen(screen,0);
+			drawscreen(screen, 0, 0);
 		}
 	}
 

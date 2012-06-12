@@ -29,7 +29,7 @@ void screensystem_backup()
 	else
 		changeinput(listfield, "kernel\nvar\nroot\nfull");
 
-	drawscreen(backup, 0);
+	drawscreen(backup, 0, 0);
 	tmp = listbox->select;
 
 	while(1)
@@ -46,7 +46,7 @@ void screensystem_backup()
 			if(isfile("/sbin/backup.sh"))
 			{
 				b_red->hidden = YES; b_green->hidden = YES;
-				drawscreen(backup, 0);
+				drawscreen(backup, 0, 0);
 				if(listbox->select != NULL && listbox->select->ret != NULL)
 				{
 					tmpstr = ostrcat(tmpstr, "backup.sh ", 1, 0);
