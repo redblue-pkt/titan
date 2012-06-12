@@ -77,6 +77,19 @@ start:
 		else
 			imdb->id = string_resub("<a href=\"/title/tt", "/", tmpstr, 0);
 
+		if(flag1 == 1)
+		{
+			if(imdb->id != NULL)
+				imdb->id = ostrcat("tt", imdb->id, 0, 1);
+
+			debug(133, "----------------------imdb start----------------------");
+			debug(133, "id: %s", imdb->id);
+			debug(133, "----------------------imdb end----------------------");
+	
+			free(tmpstr); tmpstr = NULL;	
+			return imdb;
+		}
+		
 // todo - use Meistgesuchte Titel (default)
 // Meistgesuchte Titel
 // Titel (näherungsweise Übereinstimmung)

@@ -1447,49 +1447,39 @@ printf("wo1\n");
 			if(imdb != NULL && tmdb != NULL)
 			{
 printf("wo1.1\n");
-				if(imdb->id == NULL) ostrcat(imdb->id, tmdb->imdbid, 1, 0);			
-				if(imdb->title == NULL) ostrcat(imdb->title, tmdb->title, 1, 0);	
-				if(imdb->genre == NULL) ostrcat(imdb->genre, tmdb->genre, 1, 0);
-//				if(imdb->writer == NULL) ostrcat(imdb->writer, tmdb->writer, 1, 0);
-//				if(imdb->director == NULL) ostrcat(imdb->director, tmdb->director, 1, 0);
-//				if(imdb->actors == NULL) ostrcat(imdb->actors, tmdb->actors, 1, 0);
-				if(imdb->rating == NULL) ostrcat(imdb->rating, tmdb->rating, 1, 0);
-				if(imdb->votes == NULL) ostrcat(imdb->votes, tmdb->votes, 1, 0);
-				if(imdb->runtime == NULL) ostrcat(imdb->runtime, tmdb->runtime, 1, 0);
-				if(imdb->plot == NULL) ostrcat(imdb->plot, tmdb->plot, 1, 0);
-				if(imdb->released == NULL) ostrcat(imdb->released, tmdb->released, 1, 0);
-				if(imdb->poster == NULL) ostrcat(imdb->poster, tmdb->postermid, 1, 0);
-				if(imdb->thumb == NULL) ostrcat(imdb->thumb, tmdb->thumb, 1, 0);
+				if(imdb->id == NULL) imdb->id = ostrcat(imdb->id, tmdb->imdbid, 1, 0);			
+				if(imdb->title == NULL) imdb->title = ostrcat(imdb->title, tmdb->title, 1, 0);	
+				if(imdb->genre == NULL) imdb->genre = ostrcat(imdb->genre, tmdb->genre, 1, 0);
+//				if(imdb->writer == NULL) imdb->writer = ostrcat(imdb->writer, tmdb->writer, 1, 0);
+//				if(imdb->director == NULL) imdb->director = ostrcat(imdb->director, tmdb->director, 1, 0);
+//				if(imdb->actors == NULL) imdb->actors = ostrcat(imdb->actors, tmdb->actors, 1, 0);
+				if(imdb->rating == NULL) imdb->rating = ostrcat(imdb->rating, tmdb->rating, 1, 0);
+				if(imdb->votes == NULL) imdb->votes = ostrcat(imdb->votes, tmdb->votes, 1, 0);
+				if(imdb->runtime == NULL) imdb->runtime = ostrcat(imdb->runtime, tmdb->runtime, 1, 0);
+				if(imdb->plot == NULL) imdb->plot = ostrcat(imdb->plot, tmdb->plot, 1, 0);
+				if(imdb->released == NULL) imdb->released = ostrcat(imdb->released, tmdb->released, 1, 0);
+				if(imdb->poster == NULL) imdb->poster = ostrcat(imdb->poster, tmdb->postermid, 1, 0);
+				if(imdb->thumb == NULL) imdb->thumb = ostrcat(imdb->thumb, tmdb->thumb, 1, 0);
 			}
 
 			if(imdb != NULL && imdbapi != NULL)
 			{
 printf("wo1.2\n");
-				if(imdb->id == NULL) ostrcat(imdb->id, imdbapi->id, 1, 0);			
-				if(imdb->title == NULL) ostrcat(imdb->title, imdbapi->title, 1, 0);	
-				if(imdb->genre == NULL) ostrcat(imdb->genre, imdbapi->genre, 1, 0);
-				if(imdb->writer == NULL) ostrcat(imdb->writer, imdbapi->writer, 1, 0);
-				if(imdb->director == NULL) ostrcat(imdb->director, imdbapi->director, 1, 0);
-				if(imdb->actors == NULL) ostrcat(imdb->actors, imdbapi->actors, 1, 0);
-				if(imdb->rating == NULL) ostrcat(imdb->rating, imdbapi->rating, 1, 0);
-				if(imdb->votes == NULL) ostrcat(imdb->votes, imdbapi->votes, 1, 0);
-				if(imdb->runtime == NULL) ostrcat(imdb->runtime, imdbapi->runtime, 1, 0);
-				if(imdb->plot == NULL) ostrcat(imdb->plot, imdbapi->plot, 1, 0);
-				if(imdb->released == NULL) ostrcat(imdb->released, imdbapi->released, 1, 0);
-				if(imdb->poster == NULL) ostrcat(imdb->poster, imdbapi->poster, 1, 0);
-//				if(imdb->thumb == NULL) ostrcat(imdb->thumb, imdbapi->thumb, 1, 0);
+				if(imdb->id == NULL) imdb->id = ostrcat(imdb->id, imdbapi->id, 1, 0);			
+				if(imdb->title == NULL) imdb->title = ostrcat(imdb->title, imdbapi->title, 1, 0);	
+				if(imdb->genre == NULL) imdb->genre = ostrcat(imdb->genre, imdbapi->genre, 1, 0);
+				if(imdb->writer == NULL) imdb->writer = ostrcat(imdb->writer, imdbapi->writer, 1, 0);
+				if(imdb->director == NULL) imdb->director = ostrcat(imdb->director, imdbapi->director, 1, 0);
+				if(imdb->actors == NULL) imdb->actors = ostrcat(imdb->actors, imdbapi->actors, 1, 0);
+				if(imdb->rating == NULL) imdb->rating = ostrcat(imdb->rating, imdbapi->rating, 1, 0);
+				if(imdb->votes == NULL) imdb->votes = ostrcat(imdb->votes, imdbapi->votes, 1, 0);
+				if(imdb->runtime == NULL) imdb->runtime = ostrcat(imdb->runtime, imdbapi->runtime, 1, 0);
+				if(imdb->plot == NULL) imdb->plot = ostrcat(imdb->plot, imdbapi->plot, 1, 0);
+				if(imdb->released == NULL) imdb->released = ostrcat(imdb->released, imdbapi->released, 1, 0);
+				if(imdb->poster == NULL) imdb->poster = ostrcat(imdb->poster, imdbapi->poster, 1, 0);
+//				if(imdb->thumb == NULL) imdb->thumb = ostrcat(imdb->thumb, imdbapi->thumb, 1, 0);
 			}
-/*
-			if(imdb != NULL && tmdb != NULL && ostrcmp(tmdb->title, "Nothing found.") != 0)
-			{
-				free(imdb->title);
-				imdb->title = ostrcat(tmdb->title, NULL, 0, 0);
-				free(imdb->plot);
-				imdb->plot = ostrcat(tmdb->plot, NULL, 0, 0);			
-				free(imdb->plot);
-				imdb->plot = ostrcat(tmdb->plot, NULL, 0, 0);
-			}
-*/
+
 printf("wo2\n");
 			debug(777, "shortname: %s", shortname);
 			free(shortname); shortname = NULL;
