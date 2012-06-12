@@ -2363,7 +2363,7 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 	long tmpcol = color;
 	FT_ULong cret = 0;
 
-	if(string == NULL) return 1;
+	if(string == NULL || color == -1) return 1;
 
 	transparent = (transparent - 255) * -1;
 
