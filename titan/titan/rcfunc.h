@@ -99,7 +99,7 @@ void helpbox(struct skin* screen, struct skin* node, int screencalc, int flag)
 	}
 }
 
-void inputboxhelp(struct skin* screen, struct skin* inputbox, int flag)
+void inputboxhelp(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
 {
 	char* tmpstr = NULL;
 
@@ -240,19 +240,19 @@ void inputbox0(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '0')
-				inputboxchar(screen, inputbox, ' ', flag);
+				inputboxchar(screen, inputbox, ' ', screencalc, flag);
 			else if(inputbox->input[aktpage] == ' ')
-				inputboxchar(screen, inputbox, '#', flag);
+				inputboxchar(screen, inputbox, '#', screencalc, flag);
 			else if(inputbox->input[aktpage] == '#')
-				inputboxchar(screen, inputbox, '*', flag);
+				inputboxchar(screen, inputbox, '*', screencalc, flag);
 			else if(inputbox->input[aktpage] == '*')
-				inputboxchar(screen, inputbox, '_', flag);
+				inputboxchar(screen, inputbox, '_', screencalc, flag);
 			else
-				inputboxchar(screen, inputbox, '0', flag);
+				inputboxchar(screen, inputbox, '0', screencalc, flag);
 		}
 		else
 		{
-			inputboxchar(screen, inputbox, '0', 1);
+			inputboxchar(screen, inputbox, '0', screencalc, 1);
 			inputboxright(screen, inputbox, flag);
 		}
 	}
@@ -267,33 +267,33 @@ void inputbox1(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '1')
-				inputboxchar(screen, inputbox, '.', flag);
+				inputboxchar(screen, inputbox, '.', screencalc, flag);
 			else if(inputbox->input[aktpage] == '.')
-				inputboxchar(screen, inputbox, ',', flag);
+				inputboxchar(screen, inputbox, ',', screencalc, flag);
 			else if(inputbox->input[aktpage] == ',')
-				inputboxchar(screen, inputbox, '?', flag);
+				inputboxchar(screen, inputbox, '?', screencalc, flag);
 			else if(inputbox->input[aktpage] == '?')
-				inputboxchar(screen, inputbox, '!', flag);
+				inputboxchar(screen, inputbox, '!', screencalc, flag);
 			else if(inputbox->input[aktpage] == '!')
-				inputboxchar(screen, inputbox, '\'', flag);
+				inputboxchar(screen, inputbox, '\'', screencalc, flag);
 			else if(inputbox->input[aktpage] == '\'')
-				inputboxchar(screen, inputbox, '-', flag);
+				inputboxchar(screen, inputbox, '-', screencalc, flag);
 			else if(inputbox->input[aktpage] == '-')
-				inputboxchar(screen, inputbox, '(', flag);
+				inputboxchar(screen, inputbox, '(', screencalc, flag);
 			else if(inputbox->input[aktpage] == '(')
-				inputboxchar(screen, inputbox, ')', flag);
+				inputboxchar(screen, inputbox, ')', screencalc, flag);
 			else if(inputbox->input[aktpage] == ')')
-				inputboxchar(screen, inputbox, '@', flag);
+				inputboxchar(screen, inputbox, '@', screencalc, flag);
 			else if(inputbox->input[aktpage] == '@')
-				inputboxchar(screen, inputbox, '/', flag);
+				inputboxchar(screen, inputbox, '/', screencalc, flag);
 			else if(inputbox->input[aktpage] == '/')
-				inputboxchar(screen, inputbox, ':', flag);
+				inputboxchar(screen, inputbox, ':', screencalc, flag);
 			else
-				inputboxchar(screen, inputbox, '1', flag);
+				inputboxchar(screen, inputbox, '1', screencalc, flag);
 		}
 		else
 		{
-			inputboxchar(screen, inputbox, '1', 1);
+			inputboxchar(screen, inputbox, '1', screencalc, 1);
 			inputboxright(screen, inputbox, flag);
 		}
 	}
@@ -308,23 +308,23 @@ void inputbox2(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '2')
-				inputboxchar(screen, inputbox, 'a', flag);
+				inputboxchar(screen, inputbox, 'a', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'a')
-				inputboxchar(screen, inputbox, 'b', flag);
+				inputboxchar(screen, inputbox, 'b', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'b')
-				inputboxchar(screen, inputbox, 'c', flag);
+				inputboxchar(screen, inputbox, 'c', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'c')
-				inputboxchar(screen, inputbox, 'A', flag);
+				inputboxchar(screen, inputbox, 'A', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'A')
-				inputboxchar(screen, inputbox, 'B', flag);
+				inputboxchar(screen, inputbox, 'B', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'B')
-				inputboxchar(screen, inputbox, 'C', flag);
+				inputboxchar(screen, inputbox, 'C', screencalc, flag);
 			else
-				inputboxchar(screen, inputbox, '2', flag);
+				inputboxchar(screen, inputbox, '2', screencalc, flag);
 		}
 		else
 		{
-			inputboxchar(screen, inputbox, '2', 1);
+			inputboxchar(screen, inputbox, '2', screencalc, 1);
 			inputboxright(screen, inputbox, flag);
 		}
 	}
@@ -339,23 +339,23 @@ void inputbox3(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '3')
-				inputboxchar(screen, inputbox, 'd', flag);
+				inputboxchar(screen, inputbox, 'd', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'd')
-				inputboxchar(screen, inputbox, 'e', flag);
+				inputboxchar(screen, inputbox, 'e', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'e')
-				inputboxchar(screen, inputbox, 'f', flag);
+				inputboxchar(screen, inputbox, 'f', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'f')
-				inputboxchar(screen, inputbox, 'D', flag);
+				inputboxchar(screen, inputbox, 'D', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'D')
-				inputboxchar(screen, inputbox, 'E', flag);
+				inputboxchar(screen, inputbox, 'E', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'E')
-				inputboxchar(screen, inputbox, 'F', flag);
+				inputboxchar(screen, inputbox, 'F', screencalc, flag);
 			else
-				inputboxchar(screen, inputbox, '3', flag);
+				inputboxchar(screen, inputbox, '3', screencalc, flag);
 		}
 		else
 		{
-			inputboxchar(screen, inputbox, '3', 1);
+			inputboxchar(screen, inputbox, '3', screencalc, 1);
 			inputboxright(screen, inputbox, flag);
 		}
 	}
@@ -370,23 +370,23 @@ void inputbox4(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '4')
-				inputboxchar(screen, inputbox, 'g', flag);
+				inputboxchar(screen, inputbox, 'g', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'g')
-				inputboxchar(screen, inputbox, 'h', flag);
+				inputboxchar(screen, inputbox, 'h', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'h')
-				inputboxchar(screen, inputbox, 'i', flag);
+				inputboxchar(screen, inputbox, 'i', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'i')
-				inputboxchar(screen, inputbox, 'G', flag);
+				inputboxchar(screen, inputbox, 'G', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'G')
-				inputboxchar(screen, inputbox, 'H', flag);
+				inputboxchar(screen, inputbox, 'H', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'H')
-				inputboxchar(screen, inputbox, 'I', flag);
+				inputboxchar(screen, inputbox, 'I', screencalc, flag);
 			else
-				inputboxchar(screen, inputbox, '4', flag);
+				inputboxchar(screen, inputbox, '4', screencalc, flag);
 		}
 		else
 		{
-			inputboxchar(screen, inputbox, '4', 1);
+			inputboxchar(screen, inputbox, '4', screencalc, 1);
 			inputboxright(screen, inputbox, flag);
 		}
 	}
@@ -401,23 +401,23 @@ void inputbox5(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '5')
-				inputboxchar(screen, inputbox, 'j', flag);
+				inputboxchar(screen, inputbox, 'j', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'j')
-				inputboxchar(screen, inputbox, 'k', flag);
+				inputboxchar(screen, inputbox, 'k', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'k')
-				inputboxchar(screen, inputbox, 'l', flag);
+				inputboxchar(screen, inputbox, 'l', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'l')
-				inputboxchar(screen, inputbox, 'J', flag);
+				inputboxchar(screen, inputbox, 'J', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'J')
-				inputboxchar(screen, inputbox, 'K', flag);
+				inputboxchar(screen, inputbox, 'K', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'K')
-				inputboxchar(screen, inputbox, 'L', flag);
+				inputboxchar(screen, inputbox, 'L', screencalc, flag);
 			else
-				inputboxchar(screen, inputbox, '5', flag);
+				inputboxchar(screen, inputbox, '5', screencalc, flag);
 		}
 		else
 		{
-			inputboxchar(screen, inputbox, '5', 1);
+			inputboxchar(screen, inputbox, '5', screencalc, 1);
 			inputboxright(screen, inputbox, flag);
 		}
 
@@ -433,23 +433,23 @@ void inputbox6(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '6')
-				inputboxchar(screen, inputbox, 'm', flag);
+				inputboxchar(screen, inputbox, 'm', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'm')
-				inputboxchar(screen, inputbox, 'n', flag);
+				inputboxchar(screen, inputbox, 'n', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'n')
-				inputboxchar(screen, inputbox, 'o', flag);
+				inputboxchar(screen, inputbox, 'o', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'o')
-				inputboxchar(screen, inputbox, 'M', flag);
+				inputboxchar(screen, inputbox, 'M', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'M')
-				inputboxchar(screen, inputbox, 'N', flag);
+				inputboxchar(screen, inputbox, 'N', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'N')
-				inputboxchar(screen, inputbox, 'O', flag);
+				inputboxchar(screen, inputbox, 'O', screencalc, flag);
 			else
-				inputboxchar(screen, inputbox, '6', flag);
+				inputboxchar(screen, inputbox, '6', screencalc, flag);
 		}
 		else
 		{
-			inputboxchar(screen, inputbox, '6', 1);
+			inputboxchar(screen, inputbox, '6', screencalc, 1);
 			inputboxright(screen, inputbox, flag);
 		}
 	}
@@ -464,27 +464,27 @@ void inputbox7(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '7')
-				inputboxchar(screen, inputbox, 'p', flag);
+				inputboxchar(screen, inputbox, 'p', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'p')
-				inputboxchar(screen, inputbox, 'q', flag);
+				inputboxchar(screen, inputbox, 'q', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'q')
-				inputboxchar(screen, inputbox, 'r', flag);
+				inputboxchar(screen, inputbox, 'r', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'r')
-				inputboxchar(screen, inputbox, 's', flag);
+				inputboxchar(screen, inputbox, 's', screencalc, flag);
 			else if(inputbox->input[aktpage] == 's')
-				inputboxchar(screen, inputbox, 'P', flag);
+				inputboxchar(screen, inputbox, 'P', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'P')
-				inputboxchar(screen, inputbox, 'Q', flag);
+				inputboxchar(screen, inputbox, 'Q', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'Q')
-				inputboxchar(screen, inputbox, 'R', flag);
+				inputboxchar(screen, inputbox, 'R', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'R')
-				inputboxchar(screen, inputbox, 'S', flag);
+				inputboxchar(screen, inputbox, 'S', screencalc, flag);
 			else
-				inputboxchar(screen, inputbox, '7', flag);
+				inputboxchar(screen, inputbox, '7', screencalc, flag);
 		}
 		else
 		{
-			inputboxchar(screen, inputbox, '7', 1);
+			inputboxchar(screen, inputbox, '7', screencalc, 1);
 			inputboxright(screen, inputbox, flag);
 		}
 	}
@@ -499,23 +499,23 @@ void inputbox8(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '8')
-				inputboxchar(screen, inputbox, 't', flag);
+				inputboxchar(screen, inputbox, 't', screencalc, flag);
 			else if(inputbox->input[aktpage] == 't')
-				inputboxchar(screen, inputbox, 'u', flag);
+				inputboxchar(screen, inputbox, 'u', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'u')
-				inputboxchar(screen, inputbox, 'v', flag);
+				inputboxchar(screen, inputbox, 'v', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'v')
-				inputboxchar(screen, inputbox, 'T', flag);
+				inputboxchar(screen, inputbox, 'T', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'T')
-				inputboxchar(screen, inputbox, 'U', flag);
+				inputboxchar(screen, inputbox, 'U', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'U')
-				inputboxchar(screen, inputbox, 'V', flag);
+				inputboxchar(screen, inputbox, 'V', screencalc, flag);
 			else
-				inputboxchar(screen, inputbox, '8', flag);
+				inputboxchar(screen, inputbox, '8', screencalc, flag);
 		}
 		else
 		{
-			inputboxchar(screen, inputbox, '8', 1);
+			inputboxchar(screen, inputbox, '8', screencalc, 1);
 			inputboxright(screen, inputbox, flag);
 		}
 	}
@@ -530,27 +530,27 @@ void inputbox9(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '9')
-				inputboxchar(screen, inputbox, 'w', flag);
+				inputboxchar(screen, inputbox, 'w', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'w')
-				inputboxchar(screen, inputbox, 'x', flag);
+				inputboxchar(screen, inputbox, 'x', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'x')
-				inputboxchar(screen, inputbox, 'y', flag);
+				inputboxchar(screen, inputbox, 'y', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'y')
-				inputboxchar(screen, inputbox, 'z', flag);
+				inputboxchar(screen, inputbox, 'z', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'z')
-				inputboxchar(screen, inputbox, 'W', flag);
+				inputboxchar(screen, inputbox, 'W', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'W')
-				inputboxchar(screen, inputbox, 'X', flag);
+				inputboxchar(screen, inputbox, 'X', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'X')
-				inputboxchar(screen, inputbox, 'Y', flag);
+				inputboxchar(screen, inputbox, 'Y', screencalc, flag);
 			else if(inputbox->input[aktpage] == 'Y')
-				inputboxchar(screen, inputbox, 'Z', flag);
+				inputboxchar(screen, inputbox, 'Z', screencalc, flag);
 			else
-				inputboxchar(screen, inputbox, '9', flag);
+				inputboxchar(screen, inputbox, '9', screencalc, flag);
 		}
 		else
 		{
-			inputboxchar(screen, inputbox, '9', 1);
+			inputboxchar(screen, inputbox, '9', screencalc, 1);
 			inputboxright(screen, inputbox, flag);
 		}
 	}
@@ -858,7 +858,7 @@ void listboxleft(struct skin* screen, struct skin* listbox, int screencalc, int 
 	debug(1000, "out");
 }
 
-void listboxright(struct skin* screen, struct skin* listbox, int flag)
+void listboxright(struct skin* screen, struct skin* listbox, int screencalc, int flag)
 {
 	debug(1000, "in");
 

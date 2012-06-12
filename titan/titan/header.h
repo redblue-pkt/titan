@@ -436,7 +436,7 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 unsigned char* scale(unsigned char* buf, int width, int height, int channels, int newwidth, int newheight, int free1);
 void blitrect(int posx, int posy, int width, int height, long color, int transparent, int mode);
 void fillrect(int posx, int posy, int width, int height, long color, int transparent);
-int setnodeattr(struct skin* node, struct skin* parent);
+int setnodeattr(struct skin* node, struct skin* parent, int screencalc);
 void clearscreennolock(struct skin* node);
 void clearshadow(struct skin* node);
 char* savescreen(struct skin* node);
@@ -501,11 +501,11 @@ void delrc(int key, struct skin* owner, struct skin* screennode);
 int flushrc(unsigned int timeout);
 
 //rcfunc.h
-void inputboxchar(struct skin* screen, struct skin* inputbox, char zeichen, int flag);
-void inputboxff(struct skin* screen, struct skin* inputbox, int flag);
-void inputboxfr(struct skin* screen, struct skin* inputbox, int flag);
-void inputboxright(struct skin* screen, struct skin* inputbox, int flag);
-void inputboxleft(struct skin* screen, struct skin* inputbox, int flag);
+void inputboxchar(struct skin* screen, struct skin* inputbox, char zeichen, int screencalc, int flag);
+void inputboxff(struct skin* screen, struct skin* inputbox, int screencalc, int flag);
+void inputboxfr(struct skin* screen, struct skin* inputbox, int screencalc, int flag);
+void inputboxright(struct skin* screen, struct skin* inputbox, int screencalc, int flag);
+void inputboxleft(struct skin* screen, struct skin* inputbox, int screencalc, int flag);
 int addscreenrc(struct skin* screen, struct skin* node);
 void checkinputboxnumright(struct skin* inputbox);
 int delscreenrc(struct skin* screen, struct skin* node);
