@@ -7,6 +7,9 @@ struct skin* menu(struct skin* menu, int flag)
 	debug(1000, "in");
 	int rcret = 0, ret = 0;
 	struct skin* listbox = getscreennode(menu, "listbox");
+	struct skin* menutext = getscreennode(menu, "menutext");
+	struct skin* details = getscreennode(menu, "details");
+
 	struct skin* child = NULL;
 	char* tmpstr = NULL;
 
@@ -59,6 +62,8 @@ struct skin* menu(struct skin* menu, int flag)
 	{
 		status.updatevfd = PAUSE;
 		writevfd(listbox->select->text);
+		changetext(menutext,_(listbox->select->text));
+		changetext(details,listbox->select->text);
 	}
 
 	while(1)
@@ -83,7 +88,11 @@ struct skin* menu(struct skin* menu, int flag)
 			drawscreen(menu, 0);
 		}
 		if(listbox->select != NULL)
+		{
 			writevfd(listbox->select->text);
+			changetext(menutext,_(listbox->select->text));
+			changetext(details,listbox->select->text);
+		}	
 	}
 
 	resettvpic();
@@ -97,6 +106,9 @@ struct skin* menu(struct skin* menu, int flag)
 int menucall(struct skin* menunode, struct skin* menuentry, int check)
 {
 	debug(1000, "in");
+//	struct skin* menutext = getscreennode(menunode, "menutext");
+//	struct skin* details = getscreennode(menunode, "details");
+
 	void (*startplugin) (void);
 	int ret = 0, pincheck = 0;
 	char* tmpstr = NULL;
@@ -108,9 +120,12 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	}
 	
 	if(!(menuentry->type & MENU)) return 1;
-
+	
 	debug(1000, "menuentry->name=%s", menuentry->name);
 
+//	changetext(menutext,_(menuentry->name));
+//	changetext(details,menuentry->name);
+		
 	tmpstr = ostrcat("protect_", menuentry->name, 0, 0);
 	pincheck = getconfigint(tmpstr, 0);
 	free(tmpstr); tmpstr = NULL;
