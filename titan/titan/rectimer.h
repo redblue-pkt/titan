@@ -1013,7 +1013,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 	else
 		changeinput(pincode, "0000");
 
-	drawscreen(rectimerext, 0);
+	drawscreen(rectimerext, 0, 0);
 	addscreenrc(rectimerext, listbox);
 
 	tmp = listbox->select;

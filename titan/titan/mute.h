@@ -24,7 +24,7 @@ void screenmute(struct skin* screen, struct skin* node, int flag)
 			setvol(getconfigint("vol", NULL));
 		status.mute = 1;
 		setmute(1);
-		setnodeattr(mute, framebuffer);
+		setnodeattr(mute, framebuffer, 0);
 		if(status.drawallwaysbg[0] != NULL)
 			free(status.drawallwaysbg[0]);
 		status.drawallwaysbg[0] = savescreen(mute);
