@@ -62,8 +62,8 @@ struct skin* menu(struct skin* menu, int flag)
 	{
 		status.updatevfd = PAUSE;
 		writevfd(listbox->select->text);
-		changetext(menutext,_(listbox->select->text));
-		changetext(details,listbox->select->text);
+		if(menutext != status.skinerr) changetext(menutext,_(listbox->select->text));
+		if(details != status.skinerr) changetext(details, listbox->select->text);
 	}
 
 	while(1)
@@ -90,8 +90,8 @@ struct skin* menu(struct skin* menu, int flag)
 		if(listbox->select != NULL)
 		{
 			writevfd(listbox->select->text);
-			changetext(menutext,_(listbox->select->text));
-			changetext(details,listbox->select->text);
+			if(menutext != status.skinerr) changetext(menutext,_(listbox->select->text));
+			if(details != status.skinerr) changetext(details, listbox->select->text);
 		}	
 	}
 
