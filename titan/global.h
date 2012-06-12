@@ -1,6 +1,7 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+/*
 struct blacklist* readblacklist(char* filename)
 {
   char* tmpstr = NULL;
@@ -46,6 +47,7 @@ freeblacklist(struct blacklist* node)
     free(node); node = NULL; 
   }
 }
+*/
 
 unsigned int gethash(char* str)
 {
