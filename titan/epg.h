@@ -1311,7 +1311,7 @@ int readepg(const char* filename)
 	FILE *fd = NULL;
 	struct channel *chnode = channel, *oldchnode = NULL;
 	struct epg* epgnode = NULL;
-	int ret = 0, len = 0;
+	int ret = 0, len = 0, err = 0;
 	time_t epgmaxsec = status.epgdays * 24 * 60 * 60;
 
 	fd = fopen(filename, "rb");
@@ -1341,35 +1341,44 @@ int readepg(const char* filename)
 
 		len = 0;
 		ret = fread(&len, sizeof(int), 1, fd);
-		if(len > 0)
+		if(len > 0 && len <= 4096)
 		{
 			title = malloc(len + 1);
 			if(title == NULL)
 			{
 				err("title no mem %d", len);
-				fclose(fd);
-				m_unlock(&status.epgmutex, 4);
-				return 1;
+				err = 1;
+				break;
 			}
 			ret = fread(title, len, 1, fd);
 			title[len] = '\0';
 		}
+		else if(len != 4096)
+		{
+			err("epgfile defekt title len=%d", len);
+			err = 1;
+			break;
+		}
 	
 		len = 0;
 		ret = fread(&len, sizeof(int), 1, fd);
-		if(len > 0)
+		if(len > 0 && len <= 4096)
 		{
 			subtitle = malloc(len + 1);
 			if(subtitle == NULL)	
 			{
 				err("subtitle no mem %d", len);
-				free(title); title = NULL;
-				fclose(fd);
-				m_unlock(&status.epgmutex, 4);
-				return 1;
+				err = 1;
+				break;
 			}
 			ret = fread(subtitle, len, 1, fd);
 			subtitle[len] = '\0';
+		}
+		else if(len != 4096)
+		{
+			err("epgfile defekt subtitle len=%d", len);
+			err = 1;
+			break;
 		}
 
 		ret = fread(&desclen, sizeof(int), 1, fd);
@@ -1378,7 +1387,7 @@ int readepg(const char* filename)
 		len = desccomplen;
 		if(len == 0)
 			len = desclen;
-		if(len > 0)
+		if(len > 0 && len <= 4096)
 		{
 			if(desccomplen == 0)
 				desc = malloc(len + 1);
@@ -1387,15 +1396,18 @@ int readepg(const char* filename)
 			if(desc == NULL)
 			{
 				err("desc no mem %d", len);
-				free(title); title = NULL;
-				free(subtitle); subtitle = NULL;
-				fclose(fd);
-				m_unlock(&status.epgmutex, 4);
-				return 1;
+				err = 1;
+				break;
 			}
 			ret = fread(desc, len, 1, fd);
 			if(desccomplen == 0)
 				desc[len] = '\0';
+		}
+		else if(len != 0)
+		{
+			err("epgfile defekt desc len=%d", len);
+			err = 1;
+			break;
 		}
 
 		if(oldchnode != NULL && oldchnode->serviceid == serviceid && oldchnode->transponderid == transponderid)
@@ -1444,13 +1456,20 @@ int readepg(const char* filename)
 
 	fclose(fd);
 
+	if(err == 1)
+	{
+		free(title); title = NULL;
+		free(subtitle); subtitle = NULL;
+		free(desc); desc = NULL;
+	}
+
 	if(getconfigint("epg_del", NULL) == 1)
 		unlink(filename);
 		
 	m_unlock(&status.epgmutex, 4);
 
 	debug(1000, "out");
-	return 0;
+	return err;
 }
 
 //Read EIT segments from DVB-demuxer
