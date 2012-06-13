@@ -810,8 +810,6 @@ firstwizzardstep1:
 		textbox(_("Message"), _("Free space in /var to little!\nThis can make problems!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
 	}
 
-	//wait a little for epg to show in infobar
-	sleep(1);
 	screeninfobar();
 
 	//for testign screens
