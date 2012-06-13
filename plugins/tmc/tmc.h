@@ -23,8 +23,8 @@ char* menu2txt[] = {"Category", "Random", "All", "Single", "A-Z", "Back"};
 
 //Video
 int menu3pos = 0;
-char* menu3[] = {"skin/tmcgenre.png", "skin/tmccategory.png", "skin/tmcall.png", "skin/tmcyear.png", "skin/tmcdirector.png", "skin/tmcactors.png", "skin/tmcrating.png", "skin/tmcaz.png", "skin/tmcback.png"};
-char* menu3txt[] = {"Genre", "Category", "All", "Year", "Director", "Actors", "Rating", "A-Z", "Back"};
+char* menu3[] = {"skin/tmcgenre.png", "skin/tmccategory.png", "skin/tmcall.png", "skin/tmcyear.png", "skin/tmcdirector.png", "skin/tmcactors.png", "skin/tmcrating.png", "skin/tmcaz.png", "skin/tmcnoimdb.png", "skin/tmcback.png"};
+char* menu3txt[] = {"Genre", "Category", "All", "Year", "Director", "Actors", "Rating", "A-Z", "No IMDB", "Back"};
 
 //Audio
 int menu4pos = 0;
@@ -489,12 +489,96 @@ void screentmcsettings()
 
 void screentmcedit(char* file)
 {
-	//TODO
+//TODO
+	int rcret = 0;
+	struct skin* tmcedit = getscreen("tmcedit");
+	struct skin* plot = getscreennode(tmcedit, "plot");
+	struct skin* title = getscreennode(tmcedit, "title");
+	struct skin* director = getscreennode(tmcedit, "director");
+	struct skin* writers = getscreennode(tmcedit, "writers");
+	struct skin* genre = getscreennode(tmcedit, "genre");
+	struct skin* releasetime = getscreennode(tmcedit, "releasetime");
+	struct skin* cover = getscreennode(tmcedit, "cover");
+	struct skin* actors = getscreennode(tmcedit, "actors");
+	char* tmpstr = NULL, *bg = NULL;
+	struct mediadb* node = NULL;
+	
+	if(file != NULL) node = getmediadb(file);
+
+	if(node != NULL)
+	{
+		changeinput(plot, node->plot);
+		changeinput(title, node->title);
+		changeinput(director, node->director);
+		changeinput(writers, node->writer);
+		changeinput(genre, node->genre);
+		changeinput(releasetime, node->released);
+		changeinput(actors, node->actors);
+		tmpstr = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+		tmpstr = ostrcat(node->poster, "_cover.jpg", 0, 0);
+		changepic(cover, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
+
+	drawscreen(tmcedit, 2, 0);
+	bg = savescreen(tmcedit);
+	
+	drawscreen(tmcedit, 0, 0);
+
+	while(1)
+	{
+		rcret = waitrc(tmcedit, 0, 0);
+	
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL)) break;
+	}
+
+	clearscreen(tmcedit);
+	restorescreen(bg, tmcedit);
+	blitfb(0);
 }
 
-void screentmcdelete(char* file)
+int screentmcdelete(char* file)
 {
 	//TODO
+	int ret = 0, tret = 0, width = 800, height = 300;
+	struct skin* tbox = getscreen("messagebox");
+	char* tmpstr = NULL, *bg = NULL;
+	struct mediadb* node = NULL;
+	
+	if(file != NULL) node = getmediadb(file);
+	
+	if(node != NULL)
+	{
+		tbox->width = width;
+		tbox->height = height;
+		
+		status.screencalc = 2;
+		drawscreen(tbox, 0, 0);
+		bg = savescreen(tbox);
+		status.screencalc = 0;
+	
+		tmpstr = ostrcat(_("Delete selected entry ?"), "\n\n", 0, 0);
+		tmpstr = ostrcat(node->file, NULL, 0, 0);
+		tret = textbox(_("Message"), tmpstr, _("Only DB"), getrcconfigint("rcok", NULL), _("DB and File"), getrcconfigint("rcred", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, width, height, 0, 0);
+		free(tmpstr); tmpstr = NULL;
+
+		if(tret == 1) //del only DB
+		{
+			delmediadb(node, 0);
+			ret = 1;
+		}
+		if(tret == 2) //del file and DB
+		{
+			unlink(node->file);
+			delmediadb(node, 0);
+			ret = 1;
+		}
+		
+		restorescreen(bg, tbox);
+	}
+	
+	return ret;
 }
 
 void screentmcimdbsearch(char* file)
@@ -504,12 +588,57 @@ void screentmcimdbsearch(char* file)
 
 void screentmcinfo(char* file)
 {
-	//TODO
+	int rcret = 0;
+	struct skin* tmcinfo = getscreen("tmcinfo");
+	struct skin* title = getscreennode(tmcinfo, "title");
+	struct skin* released = getscreennode(tmcinfo, "released");
+	struct skin* runtime = getscreennode(tmcinfo, "runtime");
+	struct skin* genre = getscreennode(tmcinfo, "genre");
+	struct skin* director = getscreennode(tmcinfo, "director");
+	struct skin* plot = getscreennode(tmcinfo, "plot");
+	struct skin* votes = getscreennode(tmcinfo, "votes");
+	struct skin* cover = getscreennode(tmcinfo, "cover");
+	char* tmpstr = NULL, *bg = NULL;
+	struct mediadb* node = NULL;
+	
+	if(file != NULL) node = getmediadb(file);
+
+	if(node != NULL)
+	{
+		changetext(title, node->title);
+		changetext(released, node->released);
+		changetext(runtime, node->runtime);
+		changetext(genre, node->genre);
+		changetext(director, node->director);
+		changetext(votes, node->votes);
+		changetext(plot, node->plot);
+		tmpstr = ostrcat(getconfig("mediadb", NULL), "/", 0, 0);
+		tmpstr = ostrcat(node->poster, "_cover.jpg", 0, 0);
+		changepic(cover, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
+
+	drawscreen(tmcinfo, 2, 0);
+	bg = savescreen(tmcinfo);
+	
+	drawscreen(tmcinfo, 0, 0);
+
+	while(1)
+	{
+		rcret = waitrc(tmcinfo, 0, 0);
+	
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL)) break;
+	}
+
+	clearscreen(tmcinfo);
+	restorescreen(bg, tmcinfo);
+	blitfb(0);
 }
 
-void screentmcdbmenu(char* file)
+int screentmcdbmenu(char* file)
 {
-	int rcret = 0;
+	int rcret = 0, ret = 0;
 	struct skin* tmcpic3 = getscreen("tmcpic3");
 	struct skin* listbox = getscreennode(tmcpic3, "listbox");
 	struct skin* edit = getscreennode(tmcpic3, "edit");
@@ -541,7 +670,7 @@ void screentmcdbmenu(char* file)
 			if(ostrcmp(listbox->select->name, "edit") == 0)
 				screentmcedit(file);
 			if(ostrcmp(listbox->select->name, "delete") == 0)
-				screentmcdelete(file);
+				ret = screentmcdelete(file);
 			if(ostrcmp(listbox->select->name, "imdbsearch") == 0)
 				screentmcimdbsearch(file);
 			if(ostrcmp(listbox->select->name, "info") == 0)
@@ -562,6 +691,8 @@ void screentmcdbmenu(char* file)
 	tmcpic3->bgcol = -1;
 	free(tmppic); tmppic = NULL;
 	drawscreen(tmcpic3, 0, 0);
+	
+	return ret;
 }
 
 int screentmcpicplay(char* picture)
@@ -659,7 +790,7 @@ void screentmcmenu()
 	}
 
 	//TODO: TMDB and so on
-	if(getplugin("IMDb-API") == NULL && getplugin("IMDb") == NULL && getplugin("TMDb") == NULL)
+ if(getplugin("IMDb-API") == NULL && getplugin("IMDb") == NULL && getplugin("TMDb") == NULL)
 		textbox(_("Message"), _("IMDB Plugin not found!\nCan't get detail media infos\nPlease install it"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 
 	drawscreen(load, 0, 0);
@@ -683,9 +814,10 @@ void screentmcmenu()
 	drawscreen(tmcpic5, 0, 1);
 	tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
 	
-	//save backgrounds
+ //save backgrounds
 	drawscreen(tmcpictitle, 2, 0);
 	drawscreen(tmcpicstar, 2, 0);
+
 	tmcpictitlebg = savescreen(tmcpictitle);
 	tmcpicstarbg = savescreen(tmcpicstar);
 
@@ -735,10 +867,14 @@ void screentmcmenu()
 			continue;
 		}
 
-		if(rcret == getrcconfigint("rcmenu", NULL) && active == 1)
-			screentmcdbmenu(tmcpic3->ret);
+		if(rcret == getrcconfigint("rcmenu", NULL) && active == 0)
+		{
+			int dbmenuret = screentmcdbmenu(tmcpic3->ret);
+			if(dbmenuret == 1 && mediadbfilterpos != NULL) mediadbfilterpos = mediadbfilterpos->next;
+			tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, 0);
+		}
 
-		if(rcret == getrcconfigint("rcinfo", NULL) && active == 1)
+		if(rcret == getrcconfigint("rcinfo", NULL) && active == 0)
 			screentmcinfo(tmcpic3->ret);
 
 		if(rcret == getrcconfigint("rcok", NULL))
@@ -924,6 +1060,12 @@ void screentmcmenu()
 						tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, 0);
 					}
 					free(tmpstr); tmpstr = NULL;
+				}
+				else if(menuid == 3 && ostrcmp("No IMDB", tmcmenutxt->ret) == 0)
+				{
+					mediadbfilterpos = NULL;
+					createmediadbfilter(0, tmpstr, 8);
+					tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, 0);
 				}
 				else if(ostrcmp("Audio", tmcmenutxt->ret) == 0) //mainmenu audio
 				{
