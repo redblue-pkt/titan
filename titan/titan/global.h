@@ -94,14 +94,12 @@ struct regex* regexstruct(char* regex, char* str)
 	rm = regexec(&preg, str, 11, pmatch, 0);
 	if(rm != 0) return NULL; //no match
 
-	node = (struct regex*)malloc(sizeof(struct regex));
+	node = (struct regex*)calloc(1, sizeof(struct regex));
 	if(node == NULL)
 	{
 		err("no mem");
 		return NULL;
 	}
-
-	memset(node, 0, sizeof(struct regex));
 
 	for(i = 1; !rm && i <= preg.re_nsub; i++)
 	{
