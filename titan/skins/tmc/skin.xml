@@ -53,3 +53,20 @@
 
 <screen bordersize=5 bordercol=bordercol name=tmcpic5 picwidth=140 picheight=220 posx=910 posy=100 width=140 height=220>
 </screen>
+
+<screen fontcol=fontcol fontsize=20 titlealign=center name="tmcinfo" hspace=10 vspace=10 posx=center posy=center width=70% height=70% bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node name=titletext text="Title:" posx=20 posy=20 width=45% height=30 bordertype=2 bordersize=2 bordercol=bordercol/>
+<node name=title posx=130 posy=23 width=45% height=30/>
+<node name=genretext text="Genre:" posx=20 posy=70 width=45% height=30 bordertype=2 bordersize=2 bordercol=bordercol/>
+<node name=genre posx=130 posy=73 width=45% height=30/>
+<node name=releasetext text="Release:" posx=20 posy=120 width=45% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
+<node name=released posx=130 posy=123 width=45% height=30/>
+<node name=runtimetext text="Runtime:" posx=20 posy=170 width=45% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
+<node name=runtime posx=130 posy=173 width=45% height=30/>
+<node name=votestext text="Votes:" posx=20 posy=220 width=45% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
+<node name=votes posx=130 posy=223 width=45% height=30/>
+<node name=directortext text="Director:" posx=20 posy=270 width=45% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
+<node name=director posx=130 posy=273 width=45% height=30/>
+<node name=plot posx=20 posy=320 width=45% height=150 type=textbox wrap=yes/>
+<node name=cover posx=440 posy=20 width=400 height=440 picwidth=400 picheight=440/>
+</screen>
