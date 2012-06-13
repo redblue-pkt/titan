@@ -3,7 +3,7 @@
 
 void screeninfobar()
 {
-	int rcret = 0, ret = 0, infobartimeout = 0, rcwait = 1000, count = 0;
+	int rcret = 0, ret = 0, infobartimeout = 0, rcwait = 1000, count = 0, first = 1;
 	struct skin* infobar1 = getscreen("infobar");
 	struct skin* infobar2 = getscreen("infobar2");
 	struct skin* infobar = infobar1;
@@ -42,8 +42,14 @@ void screeninfobar()
 		{
 			if(getconfigint("infobarsleep", NULL) > 0)
 				rcret = waitrc(infobar, getconfigint("infobarsleep", NULL) * 1000, 0);
+			else if(first == 1) //only on first start wait a little for epg
+			{
+				first = 0;
+				rcret = waitrc(infobar, 1000, 0);
+			}
 			else
 				rcret = RCTIMEOUT;
+
 			if(rcret == RCTIMEOUT)
 			{
 				status.infobar = 1;
