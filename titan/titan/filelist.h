@@ -157,9 +157,13 @@ int ralphasort64(const struct dirent64** v1, const struct dirent64** v2)
 	return 0;
 }
 
-//flag 0: listbox view
-//flag 1: grid view
-int createfilelist(struct skin* screen, struct skin* node, int flag)
+//view 0: deaktiv (normal filelist)
+//view 1: big (list)
+//view 2: cover (grid)
+//view 3: default (liste + size)
+//view 4: details (liste + date)
+//view 5: fullcover (list)
+int createfilelist(struct skin* screen, struct skin* node, int view)
 {
 	debug(1000, "in");
 	struct dirent64 **filelist;
@@ -178,7 +182,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 		return 1;
 	}
 
-	if(status.filelistextend == 2)
+	if(view == 2)
 		node->type |= GRID;
 	else
 		node->type &= ~(GRID);
@@ -217,20 +221,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 	status.tmp = NULL;
 	parentdir = addscreennode(screen, NULL, child);
 
-/*
-0: fast (list)
-1: big (list)
-2: cover (grid)
-3: default (liste + size)
-4: details (liste + date)
-5: fullcover (list)
-
-? cover1 (list + imdb)
-? cover2 (list + imdb)
-? cover3 (list + imdb)
-*/
-
-	if(status.filelistextend == 2 && parentdir != NULL) 
+	if(view == 2 && parentdir != NULL)
 	{
 		sumcount++;
 		pagecount++;
@@ -261,7 +252,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 		gridbr++;
 	} 
 
-//	if((status.filelistextend == 2) || (status.filelistextend == 5)) 
+//	if(view == 2 || view == 5)
 //		m_lock(&status.mediadbmutex, 17);
  	
 	child = parentdir;
@@ -289,7 +280,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 				child = addscreennode(screen, NULL, child);
 			if(child != NULL)
 			{
-				if(status.filelistextend == 2)
+				if(view == 2)
 				{
 					if(gridbr == 0) child->type = GRIDBR;
 
@@ -391,7 +382,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 				child->bordercol = node->bordercol;
 
 				
-				if(status.filelistextend != 2)
+				if(view != 2)
 				{
 					child->valign = MIDDLE;
 					child->width = 100;																	
@@ -407,7 +398,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 				changeinput(child, tmpstr);
 				free(tmpstr); tmpstr = NULL;
 
-				if(status.filelistextend > 2)
+				if(view > 2)
 				{
 					child->filelist = (struct filelist*)calloc(1, sizeof(struct filelist));
 					if(child->filelist == NULL)
@@ -415,11 +406,12 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 						err("no mem");
 						continue;
 					}
-					child->filelist->type = DT_DIR;
+					child->filelist->type = filelist[i]->d_type;
+					child->filelist->view = view;
 					child->filelist->name = ostrcat(filelist[i]->d_name, "", 0, 0);
 					child->filelist->path = createpath(node->input, "");
 
-					if(status.filelistextend == 5)
+					if(view == 5)
 					{
 						free(tmpstr), tmpstr = NULL;
 						tmpstr = ostrcat(node->input, "/", 0, 0);
@@ -467,7 +459,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 				if(child != NULL)
 				{
 					debug(10, "filename: %s", filelist[i]->d_name);
-					if(status.filelistextend == 2)
+					if(view == 2)
 					{
 						sumcount++;
 						pagecount++;
@@ -583,7 +575,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 					}
 
 					child->bordercol = node->bordercol;
-					if(status.filelistextend != 2)
+					if(view != 2)
 					{
 						child->valign = MIDDLE;
 						child->width = 100;
@@ -603,7 +595,7 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 					child->del = FILELISTDELMARK;
 					changeinput(child, NULL);
 
-					if(status.filelistextend > 2)
+					if(view > 2)
 					{
 						child->filelist = (struct filelist*)calloc(1, sizeof(struct filelist));
 						if(child->filelist == NULL)
@@ -611,11 +603,12 @@ int createfilelist(struct skin* screen, struct skin* node, int flag)
 							err("no mem");
 							continue;
 						}
-						child->filelist->type = DT_DIR;
+						child->filelist->type = filelist[i]->d_type;
+						child->filelist->view = view;
 						child->filelist->name = ostrcat(filelist[i]->d_name, NULL, 0, 0);
 						child->filelist->path = createpath(node->input, "");
 
-						if(status.filelistextend == 5)
+						if(view == 5)
 						{
 							free(tmpstr), tmpstr = NULL;
 							tmpstr = ostrcat(node->input, "/", 0, 0);
@@ -676,7 +669,7 @@ printf("11 %s\n", tmpstr);
 		i++;
 	}
 
-//	if((status.filelistextend == 2) || (status.filelistextend == 5)) 
+//	if(view == 2 || view == 5)
 //		m_unlock(&status.mediadbmutex, 17);	
 /*
 	for (i = 0; i <= pagecount; i++)
@@ -704,9 +697,9 @@ void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* fil
 	filelist->aktpage = 0;
 
 	if(filemask == NULL)
-		changemask(filelist,"*");	
+		changemask(filelist, "*");
 	else
-		changemask(filelist,filemask);
+		changemask(filelist, filemask);
 
 	changeinput(filelist, tmpstr);
 	changetext(filelistpath, filelist->input);
@@ -716,17 +709,11 @@ void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* fil
 	
 	delmarkedscreennodes(input, FILELISTDELMARK);
 
-
-	int view = 0;		
 	if (tmpview == -1)
-		view = 0;
+		createfilelist(input, filelist, 0);
 	else
-		view = tmpview;
+		createfilelist(input, filelist, tmpview);
 
-	status.filelistextend = view;
-	printf("getfilelist: view=%d status=%d\n", view, status.filelistextend);
-
-	createfilelist(input, filelist, 0);
 	drawscreen(input, 0, 0);
 	debug(1000, "out");
 }
