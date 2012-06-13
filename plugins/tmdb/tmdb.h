@@ -278,7 +278,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 
 			if(flag1 != 2 && ostrstr(tmpstr1, "size=\"original\"") != NULL)
 //				tnode->backdrop = string_resub("<image type=\"backdrop\" url=\"", "\" size=\"original\"", tmpstr1, 1);
-				tnode->backdrop = oregex(".*<image type=\"backdrop\" url=\".*(http://.*/original/.*)\" size=\"original\" width=\"1920" height=\"1080\".*", tmpstr1);
+				tnode->backdrop = oregex(".*<image type=\"backdrop\" url=\".*(http://.*/original/.*)\" size=\"original\" width=\"1920\" height=\"1080\".*", tmpstr1);
 
 			if(ostrstr(tmpstr1, "<rating>") != NULL)
 				tnode->rating = string_resub("<rating>", "</rating>", tmpstr1, 0);
@@ -367,7 +367,9 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 	return *first;
 }
 
-void screentmdb(char* title)
+//flag 0: only view
+//flag 1: can return tmdb node
+struct tmdb* screentmdb(char* title, int flag)
 {
 	int rcret = 0;
 	struct skin* tmdbskin = getscreen("tmdb");
@@ -379,11 +381,17 @@ void screentmdb(char* title)
 	struct skin* skin_released = getscreennode(tmdbskin, "released");
 	struct skin* skin_cover = getscreennode(tmdbskin, "cover");
 	struct skin* skin_votes = getscreennode(tmdbskin, "votes");
-	struct tmdb* node = NULL;
+	struct skin* b3 = getscreennode(tmdbskin, "b3");
+	struct tmdb* node = NULL, *retnode = NULL;
 	char* search = NULL;
 
 	setfbtransparent(255);
 	status.hangtime = 99999;
+
+	if(flag == 0)
+		b3->hidden = YES;
+	else
+		b3->hidden = NO;
 
 	if(title == NULL) title = getepgakttitle(NULL);
 
@@ -451,12 +459,24 @@ start:
 			drawscreen(tmdbskin, 0, 0);
 			continue;
 		}
+		if(rcret == getrcconfigint("rcyellow", NULL))
+		{
+			retnode = node;
+			break;
+		}
 	}
 
-	freetmdb(&node, 0); node = NULL;
+	if(retnode == NULL)
+	{
+		freetmdb(&node, 0);
+		node = NULL;
+	}
+
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	status.hangtime = getconfigint("hangtime", NULL);
 	clearscreen(tmdbskin);
+
+	return retnode;
 }
 
 #endif
