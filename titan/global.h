@@ -86,6 +86,8 @@ struct regex* regexstruct(char* regex, char* str)
 	char* ret = NULL;
 	struct regex* node = NULL;
 
+	if(regex == NULL || str == NULL) return NULL;
+
 	rm = regcomp(&preg, regex, REG_EXTENDED);
 	if(rm != 0) return NULL; //error in regex
 
@@ -135,6 +137,8 @@ char* oregex(char* regex, char* str)
 	regmatch_t pmatch[2];
 	size_t rm = 0, len = 0;
 	char* ret = NULL;
+
+	if(regex == NULL || str == NULL) return NULL;
 
 	rm = regcomp(&preg, regex, REG_EXTENDED);
 	if(rm != 0) return NULL; //error in regex
