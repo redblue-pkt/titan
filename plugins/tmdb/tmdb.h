@@ -263,16 +263,20 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 				tnode->plot = string_resub("<overview>", "</overview>", tmpstr1, 0);
 
 			if(flag1 != 2 && ostrstr(tmpstr1, "size=\"thumb\"") != NULL)
-				tnode->thumb = string_resub("<image type=\"poster\" url=\"", "\" size=\"thumb\"", tmpstr1, 1);
+//				tnode->thumb = string_resub("<image type=\"poster\" url=\"", "\" size=\"thumb\"", tmpstr1, 1);
+				tnode->postermid = oregex(".*<image type=\"poster\" url=\".*(http://.*)\" size=\"thumb\".*", tmpstr1);
 
 			if(flag1 != 2 && ostrstr(tmpstr1, "size=\"cover\"") != NULL)
-				tnode->cover = string_resub("<image type=\"poster\" url=\"", "\" size=\"cover\"", tmpstr1, 1);
+//				tnode->cover = string_resub("<image type=\"poster\" url=\"", "\" size=\"cover\"", tmpstr1, 1);
+				tnode->postermid = oregex(".*<image type=\"poster\" url=\".*(http://.*)\" size=\"cover\".*", tmpstr1);
 
 			if(flag1 != 2 && ostrstr(tmpstr1, "size=\"mid\"") != NULL)
-				tnode->postermid = string_resub("<image type=\"poster\" url=\"", "\" size=\"mid\"", tmpstr1, 1);
+//				tnode->postermid = string_resub("<image type=\"poster\" url=\"", "\" size=\"mid\"", tmpstr1, 1);
+				tnode->postermid = oregex(".*<image type=\"poster\" url=\".*(http://.*)\" size=\"mid\".*", tmpstr1);
 
 			if(flag1 != 2 && ostrstr(tmpstr1, "size=\"original\"") != NULL)
-				tnode->backdrop = string_resub("<image type=\"backdrop\" url=\"", "\" size=\"original\"", tmpstr1, 1);
+//				tnode->backdrop = string_resub("<image type=\"backdrop\" url=\"", "\" size=\"original\"", tmpstr1, 1);
+				tnode->backdrop = oregex(".*<image type=\"backdrop\" url=\".*(http://.*/original/.*)\" size=\"original\" width=\"1920" height=\"1080\".*", tmpstr1);
 
 			if(ostrstr(tmpstr1, "<rating>") != NULL)
 				tnode->rating = string_resub("<rating>", "</rating>", tmpstr1, 0);
