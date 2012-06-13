@@ -514,6 +514,7 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+char* oregex(char* regex, char* str);
 void resettvpic();
 int resetvmpeg(struct dvbdev* node);
 unsigned long readsysul(const char *filename, int line);

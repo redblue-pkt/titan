@@ -17,4 +17,5 @@
 <node name=cover valign=middle halign=middle parent=listbox posx=640 posy=0 width=640 height=720 picwidth=640 picheight=720/>
 <node name=b1 text="SEARCH" halign=center valign=middle bordercol=red bordersize=6 bordertype=2 posx=0 posy=0 width=150 height=39/>
 <node name=b2 text="OTHER" halign=center valign=middle bordercol=green bordersize=6 bordertype=2 posx=170 posy=0 width=150 height=39/>
+<node name=b3 text="SAVE" halign=center valign=middle bordercol=yellow bordersize=6 bordertype=2 posx=340 posy=0 width=150 height=39/>
 </screen>
