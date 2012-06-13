@@ -643,10 +643,6 @@ struct filelist
 {
 	int type;
 	int view;
-	char* name;
-	char* shortname;
-	char* path;
-	char* imdbpath;
 	off64_t size;
 	time_t date;
 };

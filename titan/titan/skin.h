@@ -1047,14 +1047,6 @@ void freenodecontent(struct skin* node)
 	free(node->choiceboxvalue);
 	node->choiceboxvalue = NULL;
 
-	if(node->filelist != NULL)
-	{
-		free(node->filelist->name); node->filelist->name = NULL;
-		free(node->filelist->shortname); node->filelist->shortname = NULL;
-		free(node->filelist->path); node->filelist->path = NULL;
-		free(node->filelist->imdbpath); node->filelist->imdbpath = NULL;
-	}
-
 	free(node->filelist);
 	node->filelist = NULL;
 
