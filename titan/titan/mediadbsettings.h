@@ -99,7 +99,7 @@ void screenmediadbsettings()
 			if(!file_exist(tmpstr))
 			{
 				char* cmd = NULL;
-				cmd = ostrcat("mkdir -p ", tmpstr, 0, 0);
+				cmd = ostrcat("mkdir ", tmpstr, 0, 0);
 				system(cmd);
 				free(cmd), cmd = NULL;
 			}
