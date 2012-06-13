@@ -408,29 +408,6 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 					}
 					child->filelist->type = filelist[i]->d_type;
 					child->filelist->view = view;
-					child->filelist->name = ostrcat(filelist[i]->d_name, "", 0, 0);
-					child->filelist->path = createpath(node->input, "");
-
-					if(view == 5)
-					{
-						free(tmpstr), tmpstr = NULL;
-						tmpstr = ostrcat(node->input, "/", 0, 0);
-						tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);								
-
-						struct mediadb* mnode = getmediadb(tmpstr);
-						free(tmpstr), tmpstr = NULL;
-						if(mnode != NULL)
-						{
-							tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
-							tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
-							tmpstr = ostrcat(tmpstr, mnode->id, 1, 0);
-							tmpstr = ostrcat(tmpstr, "_backdrop.mvi", 1, 0);	
-						}
-					
-						debug(10, "imdbpath: %s", tmpstr);
-						//tmpstr is freed with imdbpath
-						child->filelist->imdbpath = tmpstr;						
-					}
 
 					tmpstr = createpath(node->input, filelist[i]->d_name);
 					rpath = realpath(tmpstr, NULL);
@@ -605,23 +582,19 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 						}
 						child->filelist->type = filelist[i]->d_type;
 						child->filelist->view = view;
-						child->filelist->name = ostrcat(filelist[i]->d_name, NULL, 0, 0);
-						child->filelist->path = createpath(node->input, "");
 
 						if(view == 5)
 						{
 							free(tmpstr), tmpstr = NULL;
 							tmpstr = ostrcat(node->input, "/", 0, 0);
 							tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);								
-printf("11 %s\n", tmpstr);
+
 							struct mediadb* mnode = getmediadb(tmpstr);
+							free(tmpstr), tmpstr = NULL;
 							if(mnode != NULL)
 							{
-								printf("12 %s\n", tmpstr);
 								if(mnode->title != NULL)
 								{
-									printf("13 %s\n", tmpstr);
-									free(tmpstr), tmpstr = NULL;
 									tmpstr = ostrcat(tmpstr, mnode->title, 1, 0);
 									
 									tmpstr = ostrcat(tmpstr, " (", 1, 0);
@@ -638,21 +611,12 @@ printf("11 %s\n", tmpstr);
 									tmpstr = ostrcat(tmpstr, getfilenameext(filelist[i]->d_name), 1, 1);
 									tmpstr = ostrcat(tmpstr, ")", 1, 0);								
 
-									changetext(child, tmpstr);										
+									changetext(child, tmpstr);
+									free(tmpstr), tmpstr = NULL;
 								}
 								else
 									changetext(child, filelist[i]->d_name);
-									
-								free(tmpstr), tmpstr = NULL;
-								tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
-								tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
-								tmpstr = ostrcat(tmpstr, mnode->poster, 1, 0);
-								tmpstr = ostrcat(tmpstr, "_backdrop.mvi", 1, 0);
 							}
-
-							debug(10, "imdbpath: %s", tmpstr);
-							//tmpstr is freed with imdbpath
-							child->filelist->imdbpath = tmpstr;
 						}
 
 						tmpstr = createpath(node->input, filelist[i]->d_name);
