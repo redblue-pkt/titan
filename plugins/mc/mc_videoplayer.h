@@ -7,57 +7,25 @@ extern struct mediadb* mediadb;
 
 void startmediadb()
 {
-	if(status.mediadbthread == NULL)
-		freemediadb(0);
-
 	char* tmpstr = NULL;
-	tmpstr = ostrcat("mkdir -p ", getconfig("mc_vp_mediadb", NULL), 0, 0);
-	tmpstr = ostrcat(tmpstr, "/mediadb_mc/vp", 1, 0);
-	system(tmpstr);
-	
-	free(tmpstr), tmpstr = NULL;
-	tmpstr = ostrcat(getconfig("mc_vp_mediadb", NULL), "/mediadb_mc/vp", 0, 0);
-//	not working...
-//	mkdir(tmpstr, 777);
-
-	//disable autoscanning
-	addconfigtmp("mediadbscantimeout", "0");
-	
-	addconfigtmp("mediadbpath", tmpstr);
-	debug(50, "mediadbpath=%s", tmpstr);
-
-	tmpstr = ostrcat(tmpstr, "/mediadb", 0, 0);	
-	addconfigtmp("mediadbfile", tmpstr);
-	debug(50, "mediadbfile=%s", tmpstr);
-
-	free(tmpstr), tmpstr = NULL;
-	tmpstr = ostrcat(getconfig("mc_vp_mediadbscandelall", NULL), NULL, 0, 0);
-	addconfigtmp("mediadbscandelall", tmpstr);
-
-	free(tmpstr), tmpstr = NULL;
-	tmpstr = ostrcat(getconfig("mc_vp_mediadbscandelnotfound", NULL), NULL, 0, 0);
-	addconfigtmp("mediadbscandelnotfound", tmpstr);	
-
-	readmediadb(getconfig("mediadbfile", NULL), 0, 0);
-//	dbnode = mediadb;
-
-//	printf("%p\n", mediadb);
-	
-//	while(dbnode != NULL)
-//	{
-//		printf("dbnode->file: %s\n",dbnode->file);
-//		dbnode = dbnode->next;
-//	}
-
-	free(tmpstr), tmpstr = NULL;
 	tmpstr = ostrcat(getconfig("mc_vp_dirsort", NULL), NULL, 0, 0);
 	addconfigtmp("dirsort", tmpstr);
+	free(tmpstr), tmpstr = NULL;
 }
 
 void screenmc_videoplayer()
 {
+	struct skin* loadmediadb = getscreen("loading");
+	drawscreen(loadmediadb, 0, 0);
+
 	struct mediadb* dbnode = NULL;
-	startmediadb();
+	readmediadb(getconfig("mediadbfile", NULL), 0, 0);
+
+	char* tmpstr = NULL;
+	tmpstr = ostrcat(getconfig("mc_vp_dirsort", NULL), NULL, 0, 0);
+	addconfigtmp("dirsort", tmpstr);
+	
+//	startmediadb();
 	dbnode = mediadb;
 
 	char* filename = NULL;
@@ -745,6 +713,8 @@ void screenmc_videoplayer()
 	else
 		playerafterend();
 
+	if(status.mediadbthread == NULL)
+		freemediadb(0);
 			
 	writevfd("Mediacenter");
 	debug(50, "closed");

@@ -11,9 +11,9 @@ void screenmc_videoplayer_settings()
 	struct skin* dirsort = getscreennode(mc_videoplayer_settings, "sort");
 	struct skin* view = getscreennode(mc_videoplayer_settings, "view");
 	struct skin* autoscan = getscreennode(mc_videoplayer_settings, "autoscan");
-	struct skin* mediadb = getscreennode(mc_videoplayer_settings, "mediadb");
-	struct skin* mediadbscandelall = getscreennode(mc_videoplayer_settings, "mediadbscandelall");
-	struct skin* mediadbscandelnotfound = getscreennode(mc_videoplayer_settings, "mediadbscandelnotfound");	
+//	struct skin* mediadb = getscreennode(mc_videoplayer_settings, "mediadb");
+//	struct skin* mediadbscandelall = getscreennode(mc_videoplayer_settings, "mediadbscandelall");
+//	struct skin* mediadbscandelnotfound = getscreennode(mc_videoplayer_settings, "mediadbscandelnotfound");	
 	struct skin* autostart_playlist = getscreennode(mc_videoplayer_settings, "autostart_playlist");
 
 	addchoicebox(dirsort, "0", _("alpha"));	
@@ -39,7 +39,7 @@ void screenmc_videoplayer_settings()
 	addchoicebox(autoscan, "0", _("no"));	
 	addchoicebox(autoscan, "1", _("yes"));
 	setchoiceboxselection(autoscan, getconfig("mc_vp_autoscan", NULL));
-
+/*
 	system("ls -al /media/net ; ls -al /media/usb");
 
 	addchoicebox(mediadb, "/var/swap", "/var/swap");
@@ -85,7 +85,7 @@ void screenmc_videoplayer_settings()
 	addchoicebox(mediadbscandelnotfound, "0", _("no"));
 	addchoicebox(mediadbscandelnotfound, "1", _("yes"));
 	setchoiceboxselection(mediadbscandelnotfound, getconfig("mc_vp_mediadbscandelnotfound", NULL));
-	
+*/	
 	drawscreen(mc_videoplayer_settings, 0, 0);
 	addscreenrc(mc_videoplayer_settings, listbox);
 
@@ -103,9 +103,9 @@ void screenmc_videoplayer_settings()
 			addconfigscreencheck("mc_vp_view", view, NULL);
 			
 			addconfigscreencheck("mc_vp_autoscan", autoscan, NULL);			
-			addconfigscreencheck("mc_vp_mediadb", mediadb, NULL);
-			addconfigscreencheck("mc_vp_mediadbscandelall", mediadbscandelall, NULL);
-			addconfigscreencheck("mc_vp_mediadbscandelnotfound", mediadbscandelnotfound, NULL);						
+//			addconfigscreencheck("mc_vp_mediadb", mediadb, NULL);
+//			addconfigscreencheck("mc_vp_mediadbscandelall", mediadbscandelall, NULL);
+//			addconfigscreencheck("mc_vp_mediadbscandelnotfound", mediadbscandelnotfound, NULL);						
 
 			addconfigscreencheck("vp_autostart_playlist", autostart_playlist, NULL);		
 			break;
@@ -120,13 +120,13 @@ void screenmc_videoplayer_settings()
 
 	delownerrc(mc_videoplayer_settings);
 	clearscreen(mc_videoplayer_settings);
-	free(ext2);
-	free(ext3);
-	free(vfat);
-	free(ntfsmount);
-	free(ntfs3g);
-	free(cifs);
-	free(nfs);
+//	free(ext2);
+//	free(ext3);
+//	free(vfat);
+//	free(ntfsmount);
+//	free(ntfs3g);
+//	free(cifs);
+//	free(nfs);
 }
 
 #endif
