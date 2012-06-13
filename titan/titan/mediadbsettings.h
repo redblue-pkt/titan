@@ -92,17 +92,8 @@ void screenmediadbsettings()
 			tmpstr = ostrcat(getconfig("mediadbdevice", NULL), "/mediadb", 0, 0);
 			addconfig("mediadbpath", tmpstr);
 
-// not working
-//			if(!file_exist(tmpstr))
-//				mkdir(tmpstr, 777);
-
 			if(!file_exist(tmpstr))
-			{
-				char* cmd = NULL;
-				cmd = ostrcat("mkdir ", tmpstr, 0, 0);
-				system(cmd);
-				free(cmd), cmd = NULL;
-			}
+				mkdir(tmpstr, 0777);
 			
 			free(tmpstr), tmpstr = NULL;
 			tmpstr = ostrcat(getconfig("mediadbpath", NULL), "/mediadb", 0, 0);
