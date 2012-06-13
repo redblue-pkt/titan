@@ -1474,7 +1474,7 @@ int readepg(const char* filename)
 	m_unlock(&status.epgmutex, 4);
 
 	debug(1000, "out");
-	return err;
+	return 0;
 }
 
 //Read EIT segments from DVB-demuxer
