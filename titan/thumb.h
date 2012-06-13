@@ -44,7 +44,7 @@ void thumbthread(struct stimerthread* self)
 				{
 					thumbfile = ostrcat(thumbfile, (char*)qe->data, 1, 0);
 					thumbfile = ostrcat(thumbfile, "/.Thumbnails", 1, 0);
-					mkdir(thumbfile, 777);
+					mkdir(thumbfile, 0777);
 
 					thumbfile = ostrcat(thumbfile, "/", 1, 0);
 					thumbfile = ostrcat(thumbfile, (char*)qe->data1, 1, 0);

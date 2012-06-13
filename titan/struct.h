@@ -1434,12 +1434,12 @@ struct rstitem
 };
 #define RSTITEMLEN sizeof(struct rstitem)
 
-/*
+
 struct blacklist
 {
   char* file;
   struct splitstr* splitstr;
   int count;
 };
-*/
+
 #endif
