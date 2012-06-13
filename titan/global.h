@@ -89,15 +89,24 @@ struct regex* regexstruct(char* regex, char* str)
 	if(regex == NULL || str == NULL) return NULL;
 
 	rm = regcomp(&preg, regex, REG_EXTENDED);
-	if(rm != 0) return NULL; //error in regex
+	if(rm != 0) //error in regex
+	{
+		regfree(&preg);
+		return NULL;
+	}
 
 	rm = regexec(&preg, str, 11, pmatch, 0);
-	if(rm != 0) return NULL; //no match
+	if(rm != 0) //no match
+	{
+		regfree(&preg);
+		return NULL;
+	}
 
 	node = (struct regex*)calloc(1, sizeof(struct regex));
 	if(node == NULL)
 	{
 		err("no mem");
+		regfree(&preg);
 		return NULL;
 	}
 
@@ -141,13 +150,25 @@ char* oregex(char* regex, char* str)
 	if(regex == NULL || str == NULL) return NULL;
 
 	rm = regcomp(&preg, regex, REG_EXTENDED);
-	if(rm != 0) return NULL; //error in regex
+	if(rm != 0) //error in regex
+	{
+		regfree(&preg);
+		return NULL;
+	}
 
 	rm = regexec(&preg, str, 2, pmatch, 0);
-	if(rm != 0) return NULL; //no match
+	if(rm != 0) //no match
+	{
+		regfree(&preg);
+		return NULL;
+	}
 
 	len = pmatch[1].rm_eo - pmatch[1].rm_so;
-	if(len < 1) return NULL;
+	if(len < 1)
+	{
+		regfree(&preg);
+		return NULL;
+	}
 
 	ret = malloc(len + 1);
 	if(ret != NULL)
