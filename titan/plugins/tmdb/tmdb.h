@@ -134,6 +134,8 @@ char* savetmdbpic(char* imdbid, char* url, char* tmppic, char* pic, int flag1)
 	char* ip = NULL, *pos = NULL, *path = NULL, *ret = NULL;
 	char* savefile = NULL;
 
+	debug(133, "url: %s", url);
+	
 	if(imdbid == NULL || url == NULL) return NULL;
 	ip = string_replace("http://", "", url, 0);
 
