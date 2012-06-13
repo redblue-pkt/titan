@@ -617,14 +617,18 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 								else
 									changetext(child, filelist[i]->d_name);
 							}
+							child->filelist->size = 0;
+							child->filelist->date = 0;
 						}
-
-						tmpstr = createpath(node->input, filelist[i]->d_name);
-						rpath = realpath(tmpstr, NULL);
-						child->filelist->size = getfilesize(rpath);
-						child->filelist->date = getfiletime(rpath, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(rpath); rpath = NULL;
+						else
+						{
+							tmpstr = createpath(node->input, filelist[i]->d_name);
+							rpath = realpath(tmpstr, NULL);
+							child->filelist->size = getfilesize(rpath);					
+							child->filelist->date = getfiletime(rpath, 0);
+							free(rpath); rpath = NULL;
+							free(tmpstr); tmpstr = NULL;
+						}
 					}
 				}
 			}
