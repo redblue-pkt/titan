@@ -1325,8 +1325,8 @@ int readepg(const char* filename)
 
 	while(!feof(fd))
 	{
-		int serviceid = 0, transponderid = 0, eventid = 0;
-		int version = 0, starttime = 0, endtime = 0;
+		int serviceid = 0, transponderid = 0, eventid = 0, version = 0;
+		time_t starttime = 0, endtime = 0;
 		int desclen = 0, desccomplen = 0, parentalrating = 0;
 		char* title = NULL, *subtitle = NULL, *desc = NULL;
 
