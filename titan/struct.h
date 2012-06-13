@@ -1088,6 +1088,7 @@ struct status
 	int writerectimer;
 	int writeepgscanlist;
 	int writemostzap;
+	int writemediadb;
 	// 1 mute is aktiv
 	int mute;
 	// 1 spinner is aktiv

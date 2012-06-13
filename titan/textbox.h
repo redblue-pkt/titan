@@ -3,7 +3,7 @@
 
 //flag 1: for barcode show
 //flag 2: enable wrap
-
+//flag 3: no clearscreen
 int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char* b3, int rc3, char* b4, int rc4, int width, int height, int timeout, int flag)
 {
 	debug(1000, "in");
@@ -122,7 +122,7 @@ int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char*
 		m_unlock(&status.rcmutex, 3);
 		m_unlock(&status.drawingmutex, 0);
 	}
-	else
+	else if(flag != 3)
 	{
 		clearscreen(messagebox);
 		drawscreen(skin, 0, 0);

@@ -163,7 +163,7 @@ int movemediadbdown(struct mediadb* node)
 	next->next = node;
 
 	m_unlock(&status.mediadbmutex, 17);
-	//status.writemediadb = 1;
+	status.writemediadb = 1;
 	return 0;
 }
 
@@ -214,7 +214,7 @@ int movemediadbup(struct mediadb* node)
 	prev->prev = node;
 
 	m_unlock(&status.mediadbmutex, 17);
-	//status.writemediadb = 1;
+	status.writemediadb = 1;
 	return 0;
 }
 
@@ -433,6 +433,7 @@ struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last,
 	if(flag1 == 0) m_lock(&status.mediadbmutex, 17);
 	node = mediadb;
 
+	status.writemediadb = 1;
 	modifymediadbcache(newnode->file, newnode);
 
 	if(last == NULL)
@@ -637,7 +638,7 @@ printf("xxxxxxxxxxxxxxxxxx %lu\n", time(NULL));
 		}
 	}
 
-	//status.writemediadb = 0;
+	status.writemediadb = 0;
 
 	free(fileline);
 	fclose(fd);
@@ -753,6 +754,7 @@ int delmediadb(struct mediadb* mnode, int flag)
 		if(node == mnode)
 		{
 			ret = 0;
+			status.writemediadb = 1;
 			if(node == mediadb)
 			{
 				mediadb = node->next;
@@ -829,6 +831,8 @@ void freemediadb(int flag)
 		if(prev != NULL)
 			delmediadb(prev, flag);
 	}
+
+	status.writemediadb = 0;
 	debug(1000, "out");
 }
 
@@ -897,6 +901,7 @@ int writemediadb(const char *filename)
 	m_unlock(&status.mediadbmutex, 17);
 
 	fclose(fd);
+	status.writemediadb = 0;
 	debug(1000, "out");
 	return 0;
 }
