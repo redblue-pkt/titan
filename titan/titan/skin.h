@@ -3709,7 +3709,7 @@ int drawscreennodebyname(char* screenname, char* nodename, int screencalc)
 //flag 0: draw normal with allways
 //flag 1: draw without allways
 //flag 2: from thread (mutex is set in thread)
-//flag 3: same as 0 but don't use status.screencalc
+//flag 3: unused
 //flag 4: same as 0 but animate
 //screencalc 0: calculate and draw
 //screencalc 1: only calculate without hidden nodes
@@ -3728,7 +3728,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		return 1;
 	}
 
-	if(flag == 0 || flag == 3 || flag == 4)
+	if(flag == 0 || flag == 4)
 		m_lock(&status.drawingmutex, 0);
 
 	parent = skin;
@@ -3736,7 +3736,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 	ret = setnodeattr(node, parent, screencalc);
 	if(ret == 1)
 	{
-		if(flag == 0 || flag == 3 || flag == 4)
+		if(flag == 0 || flag == 4)
 			m_unlock(&status.drawingmutex, 0);
 		debug(1000, "out -> setnodeattr ret = 1");
 		return 1;
@@ -3749,9 +3749,9 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		skinfb = lcdskinfb;
 	}
 
-	if(screencalc == 0 || flag == 3 || flag == 4)
+	if(screencalc == 0 || flag == 4)
 	{
-		if(flag == 0 || flag == 2 || flag == 3 || flag == 4) clearscreenalways();
+		if(flag == 0 || flag == 2 || flag == 4) clearscreenalways();
 		drawnode(node, 0);
 	}
 	parent = node;
@@ -3770,14 +3770,14 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		else
 			parent = oldparent;
 
-		if(setnodeattr(child, parent, screencalc) == 0 && (screencalc == 0 || flag == 3))
+		if(setnodeattr(child, parent, screencalc) == 0 && screencalc == 0)
 			drawnode(child, 1);
 		child = child->next;
 	}
 
-	if(flag == 0 || flag == 2 || flag == 3 || flag == 4)
+	if(flag == 0 || flag == 2 || flag == 4)
 	{
-		if(screencalc == 0 || flag == 3)
+		if(screencalc == 0)
 		{
 			drawscreenalways(node, screencalc);
 
@@ -3803,7 +3803,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		if(ostrcmp(getconfig("write_fb_to_jpeg", NULL), "yes") == 0)
 			write_FB_to_JPEG_file(skinfb->fb, skinfb->width, skinfb->height, "/tmp/fb.jpg", 3);
 	}
-	if(flag == 0 || flag == 3 || flag == 4)
+	if(flag == 0 || flag == 4)
 		m_unlock(&status.drawingmutex, 0);
 	debug(1000, "out");
 	return 0;
