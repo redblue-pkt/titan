@@ -80,8 +80,8 @@ void freeregexstruct(struct regex* node)
 
 struct regex* regexstruct(char* regex, char* str)
 {
-	regex_t preg;
-	regmatch_t pmatch[11];
+	regex_t preg = {NULL};
+	regmatch_t pmatch[11] = {0};
 	size_t rm = 0, i = 0, len = 0;
 	char* ret = NULL;
 	struct regex* node = NULL;
@@ -142,8 +142,8 @@ struct regex* regexstruct(char* regex, char* str)
 
 char* oregex(char* regex, char* str)
 {
-	regex_t preg;
-	regmatch_t pmatch[2];
+	regex_t preg = {NULL};
+	regmatch_t pmatch[2] = {0};
 	size_t rm = 0, len = 0;
 	char* ret = NULL;
 
