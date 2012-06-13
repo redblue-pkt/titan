@@ -303,7 +303,7 @@ void screenconfigurehdd(char* dev)
 				path = ostrcat(path, "backup", 1, 0);
 			}
 
-			if(mode == 0) ret = mkdir(path, 777);
+			if(mode == 0) ret = mkdir(path, 0777);
 			if(mode == 1)
 			{
 				if(textbox("Message", _("Are you sure you want to delete this directory?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
