@@ -3041,11 +3041,11 @@ void drawnode(struct skin* node, int flag)
 				drawstring(node->text2, 1, 0, -1, lastposx, node->iposy, node->iwidth - (lastposx - node->iposx) - len, node->iheight, node->halign, node->valign, node->font, node->fontsize2, color2, node->transparent, 0, NULL, NULL, NULL, node->charspace);
 		}
 	}
-	if(node->filelist != NULL && node->filelist->view > 2)
+	if(node->filelist != NULL && node->filelist->view > 3)
 	{
 		char* tmpnr = NULL;
 
-		if(node->filelist->view == 3)
+		if(node->filelist->view == 4)
 		{
 			if(node->filelist->size >= 1073741824)
 			{
@@ -3068,7 +3068,7 @@ void drawnode(struct skin* node, int flag)
 				tmpnr = ostrcat(tmpnr, "B", 1, 0);
 			}
 		}
-		if(node->filelist->view == 4)
+		if(node->filelist->view == 5)
 		{
 			tmpnr = malloc(MINMALLOC);
 			if(tmpnr == NULL)

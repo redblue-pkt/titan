@@ -368,7 +368,6 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 				child->parentpointer = node;
 				child->bordercol = node->bordercol;
 
-				
 				if(view != 2)
 				{
 					child->valign = MIDDLE;
@@ -398,8 +397,8 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 
 					tmpstr = createpath(node->input, filelist[i]->d_name);
 					rpath = realpath(tmpstr, NULL);
-					child->filelist->size = getfilesize(rpath);
-					child->filelist->date = getfiletime(rpath, 0);
+					if(view == 4) child->filelist->size = getfilesize(rpath);
+					else if(view == 5) child->filelist->date = getfiletime(rpath, 0);
 					free(tmpstr); tmpstr = NULL;
 					free(rpath); rpath = NULL;
 				}
@@ -600,8 +599,8 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 
 						tmpstr = createpath(node->input, filelist[i]->d_name);
 						rpath = realpath(tmpstr, NULL);
-						child->filelist->size = getfilesize(rpath);					
-						child->filelist->date = getfiletime(rpath, 0);
+						if(view == 4) child->filelist->size = getfilesize(rpath);
+						else if(view == 5) child->filelist->date = getfiletime(rpath, 0);
 						free(rpath); rpath = NULL;
 						free(tmpstr); tmpstr = NULL;
 					}
@@ -622,7 +621,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 								char* tmpstr1 = NULL;
 								tmpstr1 = oregex(".*(cd[0-9]{1,3}).*", filelist[i]->d_name);
 								
-								if(tmpstr != NULL)
+								if(tmpstr1 != NULL)
 								{
 									tmpstr = ostrcat(tmpstr, tmpstr1, 1, 0);
 									tmpstr = ostrcat(tmpstr, " ", 1, 0);
