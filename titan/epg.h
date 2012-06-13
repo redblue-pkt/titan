@@ -1311,7 +1311,7 @@ int readepg(const char* filename)
 	FILE *fd = NULL;
 	struct channel *chnode = channel, *oldchnode = NULL;
 	struct epg* epgnode = NULL;
-	int ret = 0, len = 0, err = 0;
+	int ret = 0, len = 0;
 	time_t epgmaxsec = status.epgdays * 24 * 60 * 60;
 
 	fd = fopen(filename, "rb");
@@ -1347,7 +1347,9 @@ int readepg(const char* filename)
 			if(title == NULL)
 			{
 				err("title no mem %d", len);
-				err = 1;
+				free(title); title = NULL;
+				free(subtitle); subtitle = NULL;
+				free(desc); desc = NULL;
 				break;
 			}
 			ret = fread(title, len, 1, fd);
@@ -1356,7 +1358,9 @@ int readepg(const char* filename)
 		else if(len != 4096)
 		{
 			err("epgfile defekt title len=%d", len);
-			err = 1;
+			free(title); title = NULL;
+			free(subtitle); subtitle = NULL;
+			free(desc); desc = NULL;
 			break;
 		}
 	
@@ -1368,7 +1372,9 @@ int readepg(const char* filename)
 			if(subtitle == NULL)	
 			{
 				err("subtitle no mem %d", len);
-				err = 1;
+				free(title); title = NULL;
+				free(subtitle); subtitle = NULL;
+				free(desc); desc = NULL;
 				break;
 			}
 			ret = fread(subtitle, len, 1, fd);
@@ -1377,7 +1383,9 @@ int readepg(const char* filename)
 		else if(len != 4096)
 		{
 			err("epgfile defekt subtitle len=%d", len);
-			err = 1;
+			free(title); title = NULL;
+			free(subtitle); subtitle = NULL;
+			free(desc); desc = NULL;
 			break;
 		}
 
@@ -1396,7 +1404,9 @@ int readepg(const char* filename)
 			if(desc == NULL)
 			{
 				err("desc no mem %d", len);
-				err = 1;
+				free(title); title = NULL;
+				free(subtitle); subtitle = NULL;
+				free(desc); desc = NULL;
 				break;
 			}
 			ret = fread(desc, len, 1, fd);
@@ -1406,7 +1416,9 @@ int readepg(const char* filename)
 		else if(len != 0)
 		{
 			err("epgfile defekt desc len=%d", len);
-			err = 1;
+			free(title); title = NULL;
+			free(subtitle); subtitle = NULL;
+			free(desc); desc = NULL;
 			break;
 		}
 
@@ -1455,13 +1467,6 @@ int readepg(const char* filename)
 	}
 
 	fclose(fd);
-
-	if(err == 1)
-	{
-		free(title); title = NULL;
-		free(subtitle); subtitle = NULL;
-		free(desc); desc = NULL;
-	}
 
 	if(getconfigint("epg_del", NULL) == 1)
 		unlink(filename);
