@@ -160,9 +160,10 @@ int ralphasort64(const struct dirent64** v1, const struct dirent64** v2)
 //view 0: deaktiv (normal filelist)
 //view 1: big (list)
 //view 2: cover (grid)
-//view 3: default (liste + size)
-//view 4: details (liste + date)
-//view 5: fullcover (list)
+//view 3: fullcover (list)
+//view 4: default (liste + size)
+//view 5: details (liste + date)
+
 int createfilelist(struct skin* screen, struct skin* node, int view)
 {
 	debug(1000, "in");
@@ -252,7 +253,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 		gridbr++;
 	} 
 
-//	if(view == 2 || view == 5)
+//	if(view == 2 || view == 3)
 //		m_lock(&status.mediadbmutex, 17);
  	
 	child = parentdir;
@@ -398,7 +399,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 				changeinput(child, tmpstr);
 				free(tmpstr); tmpstr = NULL;
 
-				if(view > 2)
+				if(view > 3)
 				{
 					child->filelist = (struct filelist*)calloc(1, sizeof(struct filelist));
 					if(child->filelist == NULL)
@@ -509,11 +510,39 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 								struct mediadb* mnode = getmediadb(tmpstr);
 								free(tmpstr), tmpstr = NULL;
 								if(mnode != NULL)
-								{
-									tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
-									tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
-									tmpstr = ostrcat(tmpstr, mnode->id, 1, 0);
-									tmpstr = ostrcat(tmpstr, "_cover.jpg", 1, 0);
+								{									
+									if(mnode->title != NULL)
+									{
+										tmpstr = ostrcat(tmpstr, mnode->title, 1, 0);
+										tmpstr = ostrcat(tmpstr, " (", 1, 0);									
+											
+										char* tmpstr1 = NULL;
+										tmpstr1 = oregex(".*(cd[0-9]{1,3}).*", filelist[i]->d_name);
+										
+										if(tmpstr1 != NULL)
+										{
+											tmpstr = ostrcat(tmpstr, tmpstr1, 1, 0);
+											tmpstr = ostrcat(tmpstr, " ", 1, 0);
+										}
+		
+										tmpstr = ostrcat(tmpstr, getfilenameext(filelist[i]->d_name), 1, 1);
+										tmpstr = ostrcat(tmpstr, ")", 1, 0);
+											
+										changetext(child, tmpstr);
+										free(tmpstr), tmpstr = NULL;
+										free(tmpstr1), tmpstr1 = NULL;
+									}
+									else
+										changetext(child, filelist[i]->d_name);
+
+									if(mnode->id != NULL)
+									{
+										tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
+										tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
+										tmpstr = ostrcat(tmpstr, mnode->id, 1, 0);
+										tmpstr = ostrcat(tmpstr, "_thumb.jpg", 1, 0);
+									}
+
 								}								
 							}
 							
@@ -572,7 +601,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 					child->del = FILELISTDELMARK;
 					changeinput(child, NULL);
 
-					if(view > 2)
+					if(view > 3)
 					{
 						child->filelist = (struct filelist*)calloc(1, sizeof(struct filelist));
 						if(child->filelist == NULL)
@@ -583,51 +612,45 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 						child->filelist->type = filelist[i]->d_type;
 						child->filelist->view = view;
 
-						if(view == 5)
-						{
-							free(tmpstr), tmpstr = NULL;
-							tmpstr = ostrcat(node->input, "/", 0, 0);
-							tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);								
+						tmpstr = createpath(node->input, filelist[i]->d_name);
+						rpath = realpath(tmpstr, NULL);
+						child->filelist->size = getfilesize(rpath);					
+						child->filelist->date = getfiletime(rpath, 0);
+						free(rpath); rpath = NULL;
+						free(tmpstr); tmpstr = NULL;
+					}
+					if(view == 3)
+					{
+						tmpstr = ostrcat(node->input, "/", 0, 0);
+						tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);								
 
-							struct mediadb* mnode = getmediadb(tmpstr);
-							free(tmpstr), tmpstr = NULL;
-							if(mnode != NULL)
+						struct mediadb* mnode = getmediadb(tmpstr);
+						free(tmpstr), tmpstr = NULL;
+						if(mnode != NULL)
+						{
+							if(mnode->title != NULL)
 							{
-								if(mnode->title != NULL)
+								tmpstr = ostrcat(tmpstr, mnode->title, 1, 0);
+								tmpstr = ostrcat(tmpstr, " (", 1, 0);									
+									
+								char* tmpstr1 = NULL;
+								tmpstr1 = oregex(".*(cd[0-9]{1,3}).*", filelist[i]->d_name);
+								
+								if(tmpstr != NULL)
 								{
-									tmpstr = ostrcat(tmpstr, mnode->title, 1, 0);
-									
-									tmpstr = ostrcat(tmpstr, " (", 1, 0);
-									
-									struct regex* regnode = regexstruct(".*(cd[0-9]{1,3}).*", filelist[i]->d_name);
-									if(regnode != NULL)
-									{
-										tmpstr = ostrcat(tmpstr, regnode->match2, 1, 0);
-										tmpstr = ostrcat(tmpstr, " ", 1, 0);
-									}
-									
-									freeregexstruct(regnode); regnode = NULL;
-
-									tmpstr = ostrcat(tmpstr, getfilenameext(filelist[i]->d_name), 1, 1);
-									tmpstr = ostrcat(tmpstr, ")", 1, 0);								
-
-									changetext(child, tmpstr);
-									free(tmpstr), tmpstr = NULL;
+									tmpstr = ostrcat(tmpstr, tmpstr1, 1, 0);
+									tmpstr = ostrcat(tmpstr, " ", 1, 0);
 								}
-								else
-									changetext(child, filelist[i]->d_name);
+
+								tmpstr = ostrcat(tmpstr, getfilenameext(filelist[i]->d_name), 1, 1);
+								tmpstr = ostrcat(tmpstr, ")", 1, 0);
+									
+								changetext(child, tmpstr);
+								free(tmpstr), tmpstr = NULL;
+								free(tmpstr1), tmpstr1 = NULL;
 							}
-							child->filelist->size = 0;
-							child->filelist->date = 0;
-						}
-						else
-						{
-							tmpstr = createpath(node->input, filelist[i]->d_name);
-							rpath = realpath(tmpstr, NULL);
-							child->filelist->size = getfilesize(rpath);					
-							child->filelist->date = getfiletime(rpath, 0);
-							free(rpath); rpath = NULL;
-							free(tmpstr); tmpstr = NULL;
+							else
+								changetext(child, filelist[i]->d_name);
 						}
 					}
 				}
@@ -637,7 +660,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 		i++;
 	}
 
-//	if(view == 2 || view == 5)
+//	if(view == 2 || view == 3)
 //		m_unlock(&status.mediadbmutex, 17);	
 /*
 	for (i = 0; i <= pagecount; i++)
