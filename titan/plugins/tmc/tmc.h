@@ -540,44 +540,50 @@ void screentmcedit(char* file)
 
 int screentmcdelete(char* file)
 {
-	//TODO
 	int ret = 0, tret = 0, width = 800, height = 300;
 	struct skin* tbox = getscreen("messagebox");
 	char* tmpstr = NULL, *bg = NULL;
 	struct mediadb* node = NULL;
-	
+
 	if(file != NULL) node = getmediadb(file);
-	
+
 	if(node != NULL)
 	{
 		tbox->width = width;
 		tbox->height = height;
-		
-		status.screencalc = 2;
-		drawscreen(tbox, 0, 0);
+
+		drawscreen(tbox, 2, 0);
 		bg = savescreen(tbox);
-		status.screencalc = 0;
-	
+
 		tmpstr = ostrcat(_("Delete selected entry ?"), "\n\n", 0, 0);
-		tmpstr = ostrcat(node->file, NULL, 0, 0);
-		tret = textbox(_("Message"), tmpstr, _("Only DB"), getrcconfigint("rcok", NULL), _("DB and File"), getrcconfigint("rcred", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, width, height, 0, 0);
+		tmpstr = ostrcat(tmpstr, node->file, 1, 0);
+		tmpstr = ostrcat(tmpstr, "\n\nOK = delete DB only\nRED = delete DB and file", 1, 0);
+		tret = textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("RED"), getrcconfigint("rcred", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, width, height, 0, 3);
 		free(tmpstr); tmpstr = NULL;
 
 		if(tret == 1) //del only DB
 		{
+			struct mediadbfilter* mf = mediadbfilterpos;
+			if(mediadbfilterpos != NULL) mediadbfilterpos = mediadbfilterpos->next;
+			delmediadbfilter(mf, 0);
 			delmediadb(node, 0);
+			status.writemediadb = 1;
 			ret = 1;
 		}
 		if(tret == 2) //del file and DB
 		{
+			struct mediadbfilter* mf = mediadbfilterpos;
+			if(mediadbfilterpos != NULL) mediadbfilterpos = mediadbfilterpos->next;
 			unlink(node->file);
+			delmediadbfilter(mf, 0);
 			delmediadb(node, 0);
+			status.writemediadb = 1;
 			ret = 1;
 		}
-		
+
 		restorescreen(bg, tbox);
 	}
-	
+
 	return ret;
 }
 
@@ -636,9 +642,9 @@ void screentmcinfo(char* file)
 	blitfb(0);
 }
 
-int screentmcdbmenu(char* file)
+void screentmcdbmenu(char* file)
 {
-	int rcret = 0, ret = 0;
+	int rcret = 0;
 	struct skin* tmcpic3 = getscreen("tmcpic3");
 	struct skin* listbox = getscreennode(tmcpic3, "listbox");
 	struct skin* edit = getscreennode(tmcpic3, "edit");
@@ -670,7 +676,10 @@ int screentmcdbmenu(char* file)
 			if(ostrcmp(listbox->select->name, "edit") == 0)
 				screentmcedit(file);
 			if(ostrcmp(listbox->select->name, "delete") == 0)
-				ret = screentmcdelete(file);
+			{
+				if(screentmcdelete(file) == 1)
+					break;
+			}
 			if(ostrcmp(listbox->select->name, "imdbsearch") == 0)
 				screentmcimdbsearch(file);
 			if(ostrcmp(listbox->select->name, "info") == 0)
@@ -691,8 +700,6 @@ int screentmcdbmenu(char* file)
 	tmcpic3->bgcol = -1;
 	free(tmppic); tmppic = NULL;
 	drawscreen(tmcpic3, 0, 0);
-	
-	return ret;
 }
 
 int screentmcpicplay(char* picture)
@@ -869,8 +876,7 @@ void screentmcmenu()
 
 		if(rcret == getrcconfigint("rcmenu", NULL) && active == 0)
 		{
-			int dbmenuret = screentmcdbmenu(tmcpic3->ret);
-			if(dbmenuret == 1 && mediadbfilterpos != NULL) mediadbfilterpos = mediadbfilterpos->next;
+			screentmcdbmenu(tmcpic3->ret);
 			tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, 0);
 		}
 
@@ -1209,7 +1215,11 @@ void screentmcmenu()
 	free(tmcpicstarbg); tmcpicstarbg = NULL;
 	freemediadbfilter(0);
 	if(status.mediadbthread == NULL)
+	{
+		if(status.writemediadb == 1)
+			writemediadb(getconfig("mediadbfile", NULL));
 		freemediadb(0);
+	}
 	clearscreen(tmcbg);
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 }
