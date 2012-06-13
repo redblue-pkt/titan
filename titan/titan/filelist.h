@@ -322,31 +322,17 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 							tmpstr = ostrcat(tmpstr, "skin/ext_grid_network.png", 1, 0);
 						else
 						{
+							char* shortname = ostrcat(filelist[i]->d_name, NULL, 0, 0);
+							string_tolower(shortname);
+							string_removechar(shortname);
+							strstrip(shortname);
+
 							tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
-							tmpstr = ostrcat(tmpstr, "/imdbfolder/", 1, 0);
-							
-							int fast = 0;
-							if(fast == 1)
-							{
-								tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);
-								tmpstr = ostrcat(tmpstr, ".png", 1, 0);
-							}
-							else
-							{
-								free(tmpstr), tmpstr = NULL;
-								tmpstr = ostrcat(node->input, "/", 0, 0);
-								tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);								
-		
-								struct mediadb* mnode = getmediadb(tmpstr);
-								free(tmpstr), tmpstr = NULL;
-								if(mnode != NULL)
-								{
-									tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
-									tmpstr = ostrcat(tmpstr, "/imdbfolder/", 1, 0);																			
-//									tmpstr = ostrcat(tmpstr, mnode->shortname, 1, 0);
-									tmpstr = ostrcat(tmpstr, ".png", 1, 0);
-								}													
-							}	
+							tmpstr = ostrcat(tmpstr, "/imdbfolder/", 1, 0);																			
+							tmpstr = ostrcat(tmpstr, shortname, 1, 0);
+							tmpstr = ostrcat(tmpstr, ".png", 1, 0);
+							free(shortname); shortname = NULL;
+													
 							if(!file_exist(tmpstr))
 							{
 								free(tmpstr); tmpstr = NULL;
