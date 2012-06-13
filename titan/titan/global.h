@@ -106,6 +106,8 @@ struct regex* regexstruct(char* regex, char* str)
 	for(i = 1; !rm && i <= preg.re_nsub; i++)
 	{
 		len = pmatch[i].rm_eo - pmatch[i].rm_so;
+		if(len < 1) continue;
+
 		ret = malloc(len + 1);
 		if(ret != NULL)
 		{
@@ -147,6 +149,7 @@ char* oregex(char* regex, char* str)
 	if(rm != 0) return NULL; //no match
 
 	len = pmatch[1].rm_eo - pmatch[1].rm_so;
+	if(len < 1) return NULL;
 
 	ret = malloc(len + 1);
 	if(ret != NULL)
