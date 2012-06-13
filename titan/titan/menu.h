@@ -68,7 +68,7 @@ struct skin* menu(struct skin* menu, int flag)
 
 	while(1)
 	{
-		rcret = waitrc(menu, 0, 0);
+		rcret = waitrc(menu, 0, 2);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcmenu", NULL))
@@ -92,7 +92,8 @@ struct skin* menu(struct skin* menu, int flag)
 			writevfd(listbox->select->text);
 			if(menutext != status.skinerr) changetext(menutext,_(listbox->select->text));
 			if(details != status.skinerr) changetext(details, listbox->select->text);
-		}	
+		}
+		drawscreen(menu, 0, 0);	
 	}
 
 	resettvpic();
