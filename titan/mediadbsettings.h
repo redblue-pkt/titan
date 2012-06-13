@@ -4,7 +4,6 @@
 void screenmediadbsettings()
 {
 	int rcret = 0;
-	char* ret = NULL;
 	struct skin* mediadbsettings = getscreen("mediadbsettings");
 	struct skin* listbox = getscreennode(mediadbsettings, "listbox");
 	struct skin* mediadbdevice = getscreennode(mediadbsettings, "mediadbpath");
