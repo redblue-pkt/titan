@@ -1,7 +1,7 @@
 #ifndef RCFUNC_H
 #define RCFUNC_H
 
-void progressbarright(struct skin* screen, struct skin* progressbar, int screencalc, int flag)
+void progressbarright(struct skin* screen, struct skin* progressbar, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 
@@ -19,7 +19,7 @@ void progressbarright(struct skin* screen, struct skin* progressbar, int screenc
 	debug(1000, "out");
 }
 
-void progressbarleft(struct skin* screen, struct skin* progressbar, int screencalc, int flag)
+void progressbarleft(struct skin* screen, struct skin* progressbar, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 
@@ -37,7 +37,7 @@ void progressbarleft(struct skin* screen, struct skin* progressbar, int screenca
 	debug(1000, "out");
 }
 
-void filelistok(struct skin* screen, struct skin* filelist, int screencalc, int flag)
+void filelistok(struct skin* screen, struct skin* filelist, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 	struct skin* path = NULL;
@@ -75,10 +75,7 @@ void filelistok(struct skin* screen, struct skin* filelist, int screencalc, int 
 				if(path != status.skinerr)
 					changetext(path, filelist->input);
 				delmarkedscreennodes(screen, FILELISTDELMARK);
-				if(filelist->type & GRID)
-					createfilelist(screen, filelist, 1);
-				else
-					createfilelist(screen, filelist, 0);
+				createfilelist(screen, filelist, filelistview);
 				setlistboxselection(filelist, plastdir);
 				free(lastdir); lastdir = NULL;
 				drawscreen(screen, screencalc, flag);
@@ -90,7 +87,7 @@ void filelistok(struct skin* screen, struct skin* filelist, int screencalc, int 
 	debug(1000, "out");
 }
 
-void helpbox(struct skin* screen, struct skin* node, int screencalc, int flag)
+void helpbox(struct skin* screen, struct skin* node, int screencalc, int filelistview, int flag)
 {
 	if(node != NULL && flag == 0)
 	{
@@ -99,20 +96,20 @@ void helpbox(struct skin* screen, struct skin* node, int screencalc, int flag)
 	}
 }
 
-void inputboxhelp(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
+void inputboxhelp(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag)
 {
 	char* tmpstr = NULL;
 
 	if(inputbox != NULL && (inputbox->type & INPUTBOX) && flag == 0)
 	{
-		tmpstr = screeninputhelp(inputbox->input, screencalc, flag);
+		tmpstr = screeninputhelp(inputbox->input, screencalc, filelistview, flag);
 		changeinput(inputbox, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 		drawscreen(screen, screencalc, flag);
 	}
 }
 
-void inputboxchar(struct skin* screen, struct skin* inputbox, char zeichen, int screencalc, int flag)
+void inputboxchar(struct skin* screen, struct skin* inputbox, char zeichen, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 	if(inputbox != NULL && inputbox->input != NULL)
@@ -127,7 +124,7 @@ void inputboxchar(struct skin* screen, struct skin* inputbox, char zeichen, int 
 	debug(1000, "out");
 }
 
-void inputboxff(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
+void inputboxff(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 	if(inputbox != NULL)
@@ -140,7 +137,7 @@ void inputboxff(struct skin* screen, struct skin* inputbox, int screencalc, int 
 	debug(1000, "out");
 }
 
-void inputboxfr(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
+void inputboxfr(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 	if(inputbox != NULL && inputbox->input != NULL)
@@ -201,7 +198,7 @@ void checkinputboxnumleft(struct skin* inputbox)
 	debug(1000, "out");
 }
 
-void inputboxright(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
+void inputboxright(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 
@@ -216,7 +213,7 @@ void inputboxright(struct skin* screen, struct skin* inputbox, int screencalc, i
 	debug(1000, "out");
 }
 
-void inputboxleft(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
+void inputboxleft(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 
@@ -231,7 +228,7 @@ void inputboxleft(struct skin* screen, struct skin* inputbox, int screencalc, in
 	debug(1000, "out");
 }
 
-void inputbox0(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
+void inputbox0(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag)
 {
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
@@ -240,25 +237,25 @@ void inputbox0(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '0')
-				inputboxchar(screen, inputbox, ' ', screencalc, flag);
+				inputboxchar(screen, inputbox, ' ', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == ' ')
-				inputboxchar(screen, inputbox, '#', screencalc, flag);
+				inputboxchar(screen, inputbox, '#', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == '#')
-				inputboxchar(screen, inputbox, '*', screencalc, flag);
+				inputboxchar(screen, inputbox, '*', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == '*')
-				inputboxchar(screen, inputbox, '_', screencalc, flag);
+				inputboxchar(screen, inputbox, '_', screencalc, filelistview, flag);
 			else
-				inputboxchar(screen, inputbox, '0', screencalc, flag);
+				inputboxchar(screen, inputbox, '0', screencalc, filelistview, flag);
 		}
 		else
 		{
-			inputboxchar(screen, inputbox, '0', screencalc, 1);
-			inputboxright(screen, inputbox, screencalc, flag);
+			inputboxchar(screen, inputbox, '0', screencalc, filelistview, 1);
+			inputboxright(screen, inputbox, screencalc, filelistview, flag);
 		}
 	}
 }
 
-void inputbox1(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
+void inputbox1(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag)
 {
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
@@ -267,39 +264,39 @@ void inputbox1(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '1')
-				inputboxchar(screen, inputbox, '.', screencalc, flag);
+				inputboxchar(screen, inputbox, '.', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == '.')
-				inputboxchar(screen, inputbox, ',', screencalc, flag);
+				inputboxchar(screen, inputbox, ',', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == ',')
-				inputboxchar(screen, inputbox, '?', screencalc, flag);
+				inputboxchar(screen, inputbox, '?', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == '?')
-				inputboxchar(screen, inputbox, '!', screencalc, flag);
+				inputboxchar(screen, inputbox, '!', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == '!')
-				inputboxchar(screen, inputbox, '\'', screencalc, flag);
+				inputboxchar(screen, inputbox, '\'', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == '\'')
-				inputboxchar(screen, inputbox, '-', screencalc, flag);
+				inputboxchar(screen, inputbox, '-', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == '-')
-				inputboxchar(screen, inputbox, '(', screencalc, flag);
+				inputboxchar(screen, inputbox, '(', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == '(')
-				inputboxchar(screen, inputbox, ')', screencalc, flag);
+				inputboxchar(screen, inputbox, ')', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == ')')
-				inputboxchar(screen, inputbox, '@', screencalc, flag);
+				inputboxchar(screen, inputbox, '@', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == '@')
-				inputboxchar(screen, inputbox, '/', screencalc, flag);
+				inputboxchar(screen, inputbox, '/', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == '/')
-				inputboxchar(screen, inputbox, ':', screencalc, flag);
+				inputboxchar(screen, inputbox, ':', screencalc, filelistview, flag);
 			else
-				inputboxchar(screen, inputbox, '1', screencalc, flag);
+				inputboxchar(screen, inputbox, '1', screencalc, filelistview, flag);
 		}
 		else
 		{
-			inputboxchar(screen, inputbox, '1', screencalc, 1);
-			inputboxright(screen, inputbox, screencalc, flag);
+			inputboxchar(screen, inputbox, '1', screencalc, filelistview, 1);
+			inputboxright(screen, inputbox, screencalc, filelistview, flag);
 		}
 	}
 }
 
-void inputbox2(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
+void inputbox2(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag)
 {
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
@@ -308,29 +305,29 @@ void inputbox2(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '2')
-				inputboxchar(screen, inputbox, 'a', screencalc, flag);
+				inputboxchar(screen, inputbox, 'a', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'a')
-				inputboxchar(screen, inputbox, 'b', screencalc, flag);
+				inputboxchar(screen, inputbox, 'b', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'b')
-				inputboxchar(screen, inputbox, 'c', screencalc, flag);
+				inputboxchar(screen, inputbox, 'c', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'c')
-				inputboxchar(screen, inputbox, 'A', screencalc, flag);
+				inputboxchar(screen, inputbox, 'A', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'A')
-				inputboxchar(screen, inputbox, 'B', screencalc, flag);
+				inputboxchar(screen, inputbox, 'B', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'B')
-				inputboxchar(screen, inputbox, 'C', screencalc, flag);
+				inputboxchar(screen, inputbox, 'C', screencalc, filelistview, flag);
 			else
-				inputboxchar(screen, inputbox, '2', screencalc, flag);
+				inputboxchar(screen, inputbox, '2', screencalc, filelistview, flag);
 		}
 		else
 		{
-			inputboxchar(screen, inputbox, '2', screencalc, 1);
-			inputboxright(screen, inputbox, screencalc, flag);
+			inputboxchar(screen, inputbox, '2', screencalc, filelistview, 1);
+			inputboxright(screen, inputbox, screencalc, filelistview, flag);
 		}
 	}
 }
 
-void inputbox3(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
+void inputbox3(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag)
 {
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
@@ -339,29 +336,29 @@ void inputbox3(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '3')
-				inputboxchar(screen, inputbox, 'd', screencalc, flag);
+				inputboxchar(screen, inputbox, 'd', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'd')
-				inputboxchar(screen, inputbox, 'e', screencalc, flag);
+				inputboxchar(screen, inputbox, 'e', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'e')
-				inputboxchar(screen, inputbox, 'f', screencalc, flag);
+				inputboxchar(screen, inputbox, 'f', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'f')
-				inputboxchar(screen, inputbox, 'D', screencalc, flag);
+				inputboxchar(screen, inputbox, 'D', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'D')
-				inputboxchar(screen, inputbox, 'E', screencalc, flag);
+				inputboxchar(screen, inputbox, 'E', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'E')
-				inputboxchar(screen, inputbox, 'F', screencalc, flag);
+				inputboxchar(screen, inputbox, 'F', screencalc, filelistview, flag);
 			else
-				inputboxchar(screen, inputbox, '3', screencalc, flag);
+				inputboxchar(screen, inputbox, '3', screencalc, filelistview, flag);
 		}
 		else
 		{
-			inputboxchar(screen, inputbox, '3', screencalc, 1);
-			inputboxright(screen, inputbox, screencalc, flag);
+			inputboxchar(screen, inputbox, '3', screencalc, filelistview, 1);
+			inputboxright(screen, inputbox, screencalc, filelistview, flag);
 		}
 	}
 }
 
-void inputbox4(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
+void inputbox4(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag)
 {
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
@@ -370,29 +367,29 @@ void inputbox4(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '4')
-				inputboxchar(screen, inputbox, 'g', screencalc, flag);
+				inputboxchar(screen, inputbox, 'g', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'g')
-				inputboxchar(screen, inputbox, 'h', screencalc, flag);
+				inputboxchar(screen, inputbox, 'h', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'h')
-				inputboxchar(screen, inputbox, 'i', screencalc, flag);
+				inputboxchar(screen, inputbox, 'i', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'i')
-				inputboxchar(screen, inputbox, 'G', screencalc, flag);
+				inputboxchar(screen, inputbox, 'G', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'G')
-				inputboxchar(screen, inputbox, 'H', screencalc, flag);
+				inputboxchar(screen, inputbox, 'H', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'H')
-				inputboxchar(screen, inputbox, 'I', screencalc, flag);
+				inputboxchar(screen, inputbox, 'I', screencalc, filelistview, flag);
 			else
-				inputboxchar(screen, inputbox, '4', screencalc, flag);
+				inputboxchar(screen, inputbox, '4', screencalc, filelistview, flag);
 		}
 		else
 		{
-			inputboxchar(screen, inputbox, '4', screencalc, 1);
-			inputboxright(screen, inputbox, screencalc, flag);
+			inputboxchar(screen, inputbox, '4', screencalc, filelistview, 1);
+			inputboxright(screen, inputbox, screencalc, filelistview, flag);
 		}
 	}
 }
 
-void inputbox5(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
+void inputbox5(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag)
 {
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
@@ -401,30 +398,30 @@ void inputbox5(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '5')
-				inputboxchar(screen, inputbox, 'j', screencalc, flag);
+				inputboxchar(screen, inputbox, 'j', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'j')
-				inputboxchar(screen, inputbox, 'k', screencalc, flag);
+				inputboxchar(screen, inputbox, 'k', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'k')
-				inputboxchar(screen, inputbox, 'l', screencalc, flag);
+				inputboxchar(screen, inputbox, 'l', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'l')
-				inputboxchar(screen, inputbox, 'J', screencalc, flag);
+				inputboxchar(screen, inputbox, 'J', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'J')
-				inputboxchar(screen, inputbox, 'K', screencalc, flag);
+				inputboxchar(screen, inputbox, 'K', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'K')
-				inputboxchar(screen, inputbox, 'L', screencalc, flag);
+				inputboxchar(screen, inputbox, 'L', screencalc, filelistview, flag);
 			else
-				inputboxchar(screen, inputbox, '5', screencalc, flag);
+				inputboxchar(screen, inputbox, '5', screencalc, filelistview, flag);
 		}
 		else
 		{
-			inputboxchar(screen, inputbox, '5', screencalc, 1);
-			inputboxright(screen, inputbox, screencalc, flag);
+			inputboxchar(screen, inputbox, '5', screencalc, filelistview, 1);
+			inputboxright(screen, inputbox, screencalc, filelistview, flag);
 		}
 
 	}
 }
 
-void inputbox6(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
+void inputbox6(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag)
 {
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
@@ -433,29 +430,29 @@ void inputbox6(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '6')
-				inputboxchar(screen, inputbox, 'm', screencalc, flag);
+				inputboxchar(screen, inputbox, 'm', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'm')
-				inputboxchar(screen, inputbox, 'n', screencalc, flag);
+				inputboxchar(screen, inputbox, 'n', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'n')
-				inputboxchar(screen, inputbox, 'o', screencalc, flag);
+				inputboxchar(screen, inputbox, 'o', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'o')
-				inputboxchar(screen, inputbox, 'M', screencalc, flag);
+				inputboxchar(screen, inputbox, 'M', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'M')
-				inputboxchar(screen, inputbox, 'N', screencalc, flag);
+				inputboxchar(screen, inputbox, 'N', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'N')
-				inputboxchar(screen, inputbox, 'O', screencalc, flag);
+				inputboxchar(screen, inputbox, 'O', screencalc, filelistview, flag);
 			else
-				inputboxchar(screen, inputbox, '6', screencalc, flag);
+				inputboxchar(screen, inputbox, '6', screencalc, filelistview, flag);
 		}
 		else
 		{
-			inputboxchar(screen, inputbox, '6', screencalc, 1);
-			inputboxright(screen, inputbox, screencalc, flag);
+			inputboxchar(screen, inputbox, '6', screencalc, filelistview, 1);
+			inputboxright(screen, inputbox, screencalc, filelistview, flag);
 		}
 	}
 }
 
-void inputbox7(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
+void inputbox7(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag)
 {
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
@@ -464,33 +461,33 @@ void inputbox7(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '7')
-				inputboxchar(screen, inputbox, 'p', screencalc, flag);
+				inputboxchar(screen, inputbox, 'p', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'p')
-				inputboxchar(screen, inputbox, 'q', screencalc, flag);
+				inputboxchar(screen, inputbox, 'q', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'q')
-				inputboxchar(screen, inputbox, 'r', screencalc, flag);
+				inputboxchar(screen, inputbox, 'r', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'r')
-				inputboxchar(screen, inputbox, 's', screencalc, flag);
+				inputboxchar(screen, inputbox, 's', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 's')
-				inputboxchar(screen, inputbox, 'P', screencalc, flag);
+				inputboxchar(screen, inputbox, 'P', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'P')
-				inputboxchar(screen, inputbox, 'Q', screencalc, flag);
+				inputboxchar(screen, inputbox, 'Q', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'Q')
-				inputboxchar(screen, inputbox, 'R', screencalc, flag);
+				inputboxchar(screen, inputbox, 'R', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'R')
-				inputboxchar(screen, inputbox, 'S', screencalc, flag);
+				inputboxchar(screen, inputbox, 'S', screencalc, filelistview, flag);
 			else
-				inputboxchar(screen, inputbox, '7', screencalc, flag);
+				inputboxchar(screen, inputbox, '7', screencalc, filelistview, flag);
 		}
 		else
 		{
-			inputboxchar(screen, inputbox, '7', screencalc, 1);
-			inputboxright(screen, inputbox, screencalc, flag);
+			inputboxchar(screen, inputbox, '7', screencalc, filelistview, 1);
+			inputboxright(screen, inputbox, screencalc, filelistview, flag);
 		}
 	}
 }
 
-void inputbox8(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
+void inputbox8(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag)
 {
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
@@ -499,29 +496,29 @@ void inputbox8(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '8')
-				inputboxchar(screen, inputbox, 't', screencalc, flag);
+				inputboxchar(screen, inputbox, 't', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 't')
-				inputboxchar(screen, inputbox, 'u', screencalc, flag);
+				inputboxchar(screen, inputbox, 'u', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'u')
-				inputboxchar(screen, inputbox, 'v', screencalc, flag);
+				inputboxchar(screen, inputbox, 'v', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'v')
-				inputboxchar(screen, inputbox, 'T', screencalc, flag);
+				inputboxchar(screen, inputbox, 'T', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'T')
-				inputboxchar(screen, inputbox, 'U', screencalc, flag);
+				inputboxchar(screen, inputbox, 'U', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'U')
-				inputboxchar(screen, inputbox, 'V', screencalc, flag);
+				inputboxchar(screen, inputbox, 'V', screencalc, filelistview, flag);
 			else
-				inputboxchar(screen, inputbox, '8', screencalc, flag);
+				inputboxchar(screen, inputbox, '8', screencalc, filelistview, flag);
 		}
 		else
 		{
-			inputboxchar(screen, inputbox, '8', screencalc, 1);
-			inputboxright(screen, inputbox, screencalc, flag);
+			inputboxchar(screen, inputbox, '8', screencalc, filelistview, 1);
+			inputboxright(screen, inputbox, screencalc, filelistview, flag);
 		}
 	}
 }
 
-void inputbox9(struct skin* screen, struct skin* inputbox, int screencalc, int flag)
+void inputbox9(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag)
 {
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
@@ -530,33 +527,33 @@ void inputbox9(struct skin* screen, struct skin* inputbox, int screencalc, int f
 		if(inputbox->type & INPUTBOX)
 		{
 			if(inputbox->input[aktpage] == '9')
-				inputboxchar(screen, inputbox, 'w', screencalc, flag);
+				inputboxchar(screen, inputbox, 'w', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'w')
-				inputboxchar(screen, inputbox, 'x', screencalc, flag);
+				inputboxchar(screen, inputbox, 'x', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'x')
-				inputboxchar(screen, inputbox, 'y', screencalc, flag);
+				inputboxchar(screen, inputbox, 'y', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'y')
-				inputboxchar(screen, inputbox, 'z', screencalc, flag);
+				inputboxchar(screen, inputbox, 'z', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'z')
-				inputboxchar(screen, inputbox, 'W', screencalc, flag);
+				inputboxchar(screen, inputbox, 'W', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'W')
-				inputboxchar(screen, inputbox, 'X', screencalc, flag);
+				inputboxchar(screen, inputbox, 'X', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'X')
-				inputboxchar(screen, inputbox, 'Y', screencalc, flag);
+				inputboxchar(screen, inputbox, 'Y', screencalc, filelistview, flag);
 			else if(inputbox->input[aktpage] == 'Y')
-				inputboxchar(screen, inputbox, 'Z', screencalc, flag);
+				inputboxchar(screen, inputbox, 'Z', screencalc, filelistview, flag);
 			else
-				inputboxchar(screen, inputbox, '9', screencalc, flag);
+				inputboxchar(screen, inputbox, '9', screencalc, filelistview, flag);
 		}
 		else
 		{
-			inputboxchar(screen, inputbox, '9', screencalc, 1);
-			inputboxright(screen, inputbox, screencalc, flag);
+			inputboxchar(screen, inputbox, '9', screencalc, filelistview, 1);
+			inputboxright(screen, inputbox, screencalc, filelistview, flag);
 		}
 	}
 }
 
-void choiceboxleft(struct skin* screen, struct skin* choicebox, int screencalc, int flag)
+void choiceboxleft(struct skin* screen, struct skin* choicebox, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 	if(choicebox != NULL)
@@ -570,7 +567,7 @@ void choiceboxleft(struct skin* screen, struct skin* choicebox, int screencalc, 
 	debug(1000, "out");
 }
 
-void choiceboxright(struct skin* screen, struct skin* choicebox, int screencalc, int flag)
+void choiceboxright(struct skin* screen, struct skin* choicebox, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 	if(choicebox != NULL)
@@ -587,7 +584,7 @@ void choiceboxright(struct skin* screen, struct skin* choicebox, int screencalc,
 	debug(1000, "out");
 }
 
-void griddown(struct skin* screen, struct skin* grid, int screencalc, int flag)
+void griddown(struct skin* screen, struct skin* grid, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 	int end = 0, br = 0, mark = 0;
@@ -649,7 +646,7 @@ void griddown(struct skin* screen, struct skin* grid, int screencalc, int flag)
 	debug(1000, "out");
 }
 
-void gridup(struct skin* screen, struct skin* grid, int screencalc, int flag)
+void gridup(struct skin* screen, struct skin* grid, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 	int start = 0, br = 0, mark = 0;
@@ -720,7 +717,7 @@ void gridup(struct skin* screen, struct skin* grid, int screencalc, int flag)
 	debug(1000, "out");
 }
 
-void gridleft(struct skin* screen, struct skin* grid, int screencalc, int flag)
+void gridleft(struct skin* screen, struct skin* grid, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 	struct skin* node = NULL;
@@ -758,7 +755,7 @@ void gridleft(struct skin* screen, struct skin* grid, int screencalc, int flag)
 	debug(1000, "out");
 }
 
-void gridright(struct skin* screen, struct skin* grid, int screencalc, int flag)
+void gridright(struct skin* screen, struct skin* grid, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 	struct skin* node = NULL;
@@ -798,7 +795,7 @@ void gridright(struct skin* screen, struct skin* grid, int screencalc, int flag)
 	debug(1000, "out");
 }
 
-void gridchup(struct skin* screen, struct skin* grid, int screencalc, int flag)
+void gridchup(struct skin* screen, struct skin* grid, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 
@@ -817,7 +814,7 @@ void gridchup(struct skin* screen, struct skin* grid, int screencalc, int flag)
 	debug(1000, "out");
 }
 
-void gridchdown(struct skin* screen, struct skin* grid, int screencalc, int flag)
+void gridchdown(struct skin* screen, struct skin* grid, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 
@@ -840,7 +837,7 @@ void gridchdown(struct skin* screen, struct skin* grid, int screencalc, int flag
 }
 
 
-void listboxleft(struct skin* screen, struct skin* listbox, int screencalc, int flag)
+void listboxleft(struct skin* screen, struct skin* listbox, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 
@@ -858,7 +855,7 @@ void listboxleft(struct skin* screen, struct skin* listbox, int screencalc, int 
 	debug(1000, "out");
 }
 
-void listboxright(struct skin* screen, struct skin* listbox, int screencalc, int flag)
+void listboxright(struct skin* screen, struct skin* listbox, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 
@@ -879,7 +876,7 @@ void listboxright(struct skin* screen, struct skin* listbox, int screencalc, int
 	debug(1000, "out");
 }
 
-void listboxup(struct skin* screen, struct skin* listbox, int screencalc, int flag)
+void listboxup(struct skin* screen, struct skin* listbox, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 
@@ -896,7 +893,7 @@ void listboxup(struct skin* screen, struct skin* listbox, int screencalc, int fl
 	debug(1000, "out");
 }
 
-void listboxdown(struct skin* screen, struct skin* listbox, int screencalc, int flag)
+void listboxdown(struct skin* screen, struct skin* listbox, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 
@@ -914,7 +911,7 @@ void listboxdown(struct skin* screen, struct skin* listbox, int screencalc, int 
 	debug(1000, "out");
 }
 
-void textboxup(struct skin* screen, struct skin* textbox, int screencalc, int flag)
+void textboxup(struct skin* screen, struct skin* textbox, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 	if(textbox != NULL)
@@ -928,7 +925,7 @@ void textboxup(struct skin* screen, struct skin* textbox, int screencalc, int fl
 	debug(1000, "out");
 }
 
-void textboxdown(struct skin* screen, struct skin* textbox, int screencalc, int flag)
+void textboxdown(struct skin* screen, struct skin* textbox, int screencalc, int filelistview, int flag)
 {
 	debug(1000, "in");
 	if(textbox != NULL)

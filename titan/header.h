@@ -501,11 +501,11 @@ void delrc(int key, struct skin* owner, struct skin* screennode);
 int flushrc(unsigned int timeout);
 
 //rcfunc.h
-void inputboxchar(struct skin* screen, struct skin* inputbox, char zeichen, int screencalc, int flag);
-void inputboxff(struct skin* screen, struct skin* inputbox, int screencalc, int flag);
-void inputboxfr(struct skin* screen, struct skin* inputbox, int screencalc, int flag);
-void inputboxright(struct skin* screen, struct skin* inputbox, int screencalc, int flag);
-void inputboxleft(struct skin* screen, struct skin* inputbox, int screencalc, int flag);
+void inputboxchar(struct skin* screen, struct skin* inputbox, char zeichen, int screencalc, int filelistview, int flag);
+void inputboxff(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag);
+void inputboxfr(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag);
+void inputboxright(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag);
+void inputboxleft(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag);
 int addscreenrc(struct skin* screen, struct skin* node);
 void checkinputboxnumright(struct skin* inputbox);
 int delscreenrc(struct skin* screen, struct skin* node);
