@@ -61,7 +61,7 @@ void screenmc_audioplayer()
 		initscreensaver();
 
 	tmpview = view;
-	mc_changeview(view, filelist);
+	mc_changeview(view, filelist, apskin);
 
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, NULL);
 	addscreenrc(apskin, filelist);
@@ -198,7 +198,7 @@ void screenmc_audioplayer()
 				debug(50, "rcred: tmpsort=%d", sort);
 
 				addconfiginttmp("dirsort", sort);
-				mc_changeview(tmpview, filelist);
+				mc_changeview(tmpview, filelist, apskin);
 
 				delownerrc(apskin);	
 				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
@@ -226,7 +226,7 @@ void screenmc_audioplayer()
 					tmpview = getconfigint("mc_ap_view", NULL);
 				}
 				
-				mc_changeview(tmpview, filelist);
+				mc_changeview(tmpview, filelist, apskin);
 
 				delownerrc(apskin);	
 				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
@@ -306,7 +306,6 @@ void screenmc_audioplayer()
 			writevfd("Mediacenter");
 			
 			printf("exit: view=%d tmpview=%d\n", view, tmpview);			
-			status.filelistextend = 0;
 			break;
 		}
 		else if(rcret == getrcconfigint("rcok", NULL))
