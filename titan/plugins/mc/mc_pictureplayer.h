@@ -78,7 +78,7 @@ void screenmc_pictureplayer()
 	
 	while(1)
 	{
-		rcret = waitrc(apskin, rcwait, 0);
+		rcret = waitrcext(apskin, rcwait, 0, view);
 		debug(50, "while status play=%d", status.play);
 		nextpic = 0;
 		if(playinfobarcount < getconfigint("mc_pp_interval", NULL) && status.play == 1)
