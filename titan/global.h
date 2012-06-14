@@ -53,6 +53,8 @@ unsigned int gethash(char* str)
 	unsigned int hash = 0;
 	int c = 0;
 
+	if(str == NULL) return 0;
+
 	while((c = *str++))
 		hash = ((hash << 5) + hash) ^ c;
 
