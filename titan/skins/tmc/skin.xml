@@ -61,12 +61,12 @@
 <node name=genre posx=130 posy=73 width=45% height=30/>
 <node name=releasetext text="Release:" posx=20 posy=120 width=45% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
 <node name=released posx=130 posy=123 width=45% height=30/>
-<node name=runtimetext text="Runtime:" posx=20 posy=170 width=45% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
-<node name=runtime posx=130 posy=173 width=45% height=30/>
+<node name=ratingtext text="Runtime:" posx=20 posy=170 width=45% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
+<node name=rating posx=130 posy=173 width=45% height=30/>
 <node name=votestext text="Votes:" posx=20 posy=220 width=45% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
 <node name=votes posx=130 posy=223 width=45% height=30/>
-<node name=directortext text="Director:" posx=20 posy=270 width=45% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
-<node name=director posx=130 posy=273 width=45% height=30/>
+<node name=orgnametext text="Director:" posx=20 posy=270 width=45% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
+<node name=orgname posx=130 posy=273 width=45% height=30/>
 <node name=plot posx=20 posy=320 width=45% height=150 type=textbox wrap=yes/>
 <node name=cover posx=440 posy=20 width=400 height=440 picwidth=400 picheight=440/>
 </screen>
