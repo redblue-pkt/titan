@@ -116,28 +116,31 @@ void screenmc_videoplayer()
 			char* cmd = NULL;
 			char* pic = NULL;
 
-			struct mediadb* mnode = getmediadb(listbox->select->name);
-			if(mnode != NULL)
+			if(filelist->select != NULL && filelist->select->input == NULL)
 			{
-				if(mnode->id != NULL)
+				struct mediadb* mnode = getmediadb(filelist->select->name);
+				if(mnode != NULL)
 				{
-					tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
-					tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
-					tmpstr = ostrcat(tmpstr, mnode->id, 1, 0);
-
-					pic = ostrcat(tmpstr, "_thumb.jpg", 0, 0);
-					cmd = ostrcat(tmpstr, "_backdrop.mvi", 0, 0);
-					free(tmpstr), tmpstr = NULL;
+					if(mnode->id != NULL)
+					{
+						tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
+						tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
+						tmpstr = ostrcat(tmpstr, mnode->id, 1, 0);
+	
+						pic = ostrcat(tmpstr, "_thumb.jpg", 0, 0);
+						cmd = ostrcat(tmpstr, "_backdrop.mvi", 0, 0);
+						free(tmpstr), tmpstr = NULL;
+					}
+					if(mnode->plot != NULL)
+						changetext(plot, mnode->plot);
+					if(mnode->title != NULL)
+						changetext(title, mnode->title);
 				}
-				if(mnode->plot != NULL)
-					changetext(plot, mnode->plot);
-				if(mnode->title != NULL)
-					changetext(title, mnode->title);
+						
+				changepic(thumb, pic);
+				free(pic), pic = NULL;				
+				drawscreen(apskin, 0, 0);
 			}
-					
-			changepic(thumb, pic);
-			free(pic), pic = NULL;				
-			drawscreen(apskin, 0, 0);
 					
 			if(!file_exist(cmd)){
 				free(cmd), cmd = NULL;
