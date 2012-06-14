@@ -95,7 +95,7 @@ void screenmc_videoplayer()
 			
 	while(1)
 	{
-		rcret = waitrcext(apskin, rcwait, 0, view);
+		rcret = waitrcext(apskin, rcwait, 0, tmpview);
 //		debug(50, "while status play=%d", status.play);
 
 		if((status.play == 1) || (status.playspeed != 0))
