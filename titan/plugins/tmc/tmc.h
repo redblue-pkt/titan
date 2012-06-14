@@ -487,55 +487,76 @@ void screentmcsettings()
 	drawscreen(tmcpic3, 0, 0);
 }
 
-void screentmcedit(char* file)
+void screentmcedit(char* file, int menuid)
 {
 //TODO
-	int rcret = 0;
+	int rcret = 0, type = 0;
 	struct skin* tmcedit = getscreen("tmcedit");
-	struct skin* plot = getscreennode(tmcedit, "plot");
 	struct skin* title = getscreennode(tmcedit, "title");
-	struct skin* director = getscreennode(tmcedit, "director");
-	struct skin* writers = getscreennode(tmcedit, "writers");
+	struct skin* year = getscreennode(tmcedit, "year");
+	struct skin* released = getscreennode(tmcedit, "released");
+	struct skin* runtime = getscreennode(tmcedit, "runtime");
 	struct skin* genre = getscreennode(tmcedit, "genre");
-	struct skin* releasetime = getscreennode(tmcedit, "releasetime");
-	struct skin* cover = getscreennode(tmcedit, "cover");
+	struct skin* director = getscreennode(tmcedit, "director");
+	struct skin* writer = getscreennode(tmcedit, "writer");
 	struct skin* actors = getscreennode(tmcedit, "actors");
+	struct skin* plot = getscreennode(tmcedit, "plot");
+	struct skin* rating = getscreennode(tmcedit, "rating");
+	struct skin* votes = getscreennode(tmcedit, "votes");
+	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *bg = NULL;
 	struct mediadb* node = NULL;
 	
 	if(file != NULL) node = getmediadb(file);
 
+	if(menuid == 3) type = 0; //video
+	if(menuid == 4) type = 1; //audio
+	if(menuid == 2) type = 2; //picture
+
 	if(node != NULL)
 	{
-		changeinput(plot, node->plot);
 		changeinput(title, node->title);
-		changeinput(director, node->director);
-		changeinput(writers, node->writer);
+		changeinput(year, node->year);
+		changeinput(released, node->released);
+		changeinput(runtime, node->runtime);
 		changeinput(genre, node->genre);
-		changeinput(releasetime, node->released);
+		changeinput(director, node->director);
+		changeinput(writer, node->writer);
 		changeinput(actors, node->actors);
-		tmpstr = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
-		tmpstr = ostrcat(node->poster, "_cover.jpg", 0, 0);
-		changepic(cover, tmpstr);
+		changeinput(plot, node->plot);
+		changeinput(rating, node->rating);
+
+		tmpstr = oitoa(node->votes);
+		changeinput(votes, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10");
+		setchoiceboxselection(votes, tmpstr);
 		free(tmpstr); tmpstr = NULL;
+
+		//tmpstr = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+		//tmpstr = ostrcat(node->poster, "_cover.jpg", 0, 0);
+		//changepic(cover, tmpstr);
+		//free(tmpstr); tmpstr = NULL;
+
+		drawscreen(tmcedit, 2, 0);
+		bg = savescreen(tmcedit);
+
+		drawscreen(tmcedit, 0, 0);
+
+		while(1)
+		{
+			rcret = waitrc(tmcedit, 0, 0);
+
+			if(rcret == getrcconfigint("rcexit", NULL)) break;
+			if(rcret == getrcconfigint("rcok", NULL))
+			{
+				node = createmediadb(node, node->id, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, node->id, rating->ret, votes->ret, title->ret, node->file, 0);
+				break;
+			}
+		}
+
+		clearscreen(tmcedit);
+		restorescreen(bg, tmcedit);
+		blitfb(0);
 	}
-
-	drawscreen(tmcedit, 2, 0);
-	bg = savescreen(tmcedit);
-	
-	drawscreen(tmcedit, 0, 0);
-
-	while(1)
-	{
-		rcret = waitrc(tmcedit, 0, 0);
-	
-		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcok", NULL)) break;
-	}
-
-	clearscreen(tmcedit);
-	restorescreen(bg, tmcedit);
-	blitfb(0);
 }
 
 int screentmcdelete(char* file)
@@ -587,8 +608,9 @@ int screentmcdelete(char* file)
 	return ret;
 }
 
-void screentmcimdbsearch(char* file)
+void screentmcimdbsearch(char* file, int menuid)
 {
+	int type = 0;
 	struct tmdb* tmdb = NULL;
 	struct mediadb* node = NULL;
 	struct skin* tmdbplugin = NULL;
@@ -597,6 +619,10 @@ void screentmcimdbsearch(char* file)
 
 	if(file != NULL) node = getmediadb(file);
 	if(node == NULL) return;
+
+	if(menuid == 3) type = 0; //video
+	if(menuid == 4) type = 1; //audio
+	if(menuid == 2) type = 2; //picture
 
 	//create imdb search name
 	char* shortname = ostrcat(file, NULL, 0, 0);
@@ -680,7 +706,7 @@ void screentmcinfo(char* file)
 	blitfb(0);
 }
 
-void screentmcdbmenu(char* file)
+void screentmcdbmenu(char* file, int menuid)
 {
 	int rcret = 0;
 	struct skin* tmcpic3 = getscreen("tmcpic3");
@@ -712,14 +738,14 @@ void screentmcdbmenu(char* file)
 		if(rcret == getrcconfigint("rcok", NULL) && listbox->select != NULL)
 		{
 			if(ostrcmp(listbox->select->name, "edit") == 0)
-				screentmcedit(file);
+				screentmcedit(file, menuid);
 			if(ostrcmp(listbox->select->name, "delete") == 0)
 			{
 				if(screentmcdelete(file) == 1)
 					break;
 			}
 			if(ostrcmp(listbox->select->name, "imdbsearch") == 0)
-				screentmcimdbsearch(file);
+				screentmcimdbsearch(file, menuid);
 			if(ostrcmp(listbox->select->name, "info") == 0)
 				screentmcinfo(file);
 
@@ -914,7 +940,7 @@ void screentmcmenu()
 
 		if(rcret == getrcconfigint("rcmenu", NULL) && active == 0)
 		{
-			screentmcdbmenu(tmcpic3->ret);
+			screentmcdbmenu(tmcpic3->ret, menuid);
 			tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, 0);
 		}
 
