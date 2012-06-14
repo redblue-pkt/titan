@@ -381,7 +381,137 @@ void epgchoice(struct channel* chnode)
 		screenepg(chnode, NULL, 0);
 }
 
-int writeepg(const char* filename)
+char* createwriteepg(int* buflen)
+{
+	struct channel *chnode = channel;
+	struct epg* epgnode = NULL;
+	char* buf = NULL;
+	int len = 0, newlen = 0;
+
+	m_lock(&status.epgmutex, 4);
+
+	while(chnode != NULL)
+	{
+		epgnode = chnode->epg;
+		while(epgnode != NULL)
+		{
+			if(*buflen + (MINMALLOC * 2) >= newlen)
+			{
+				newlen = *buflen + (MINMALLOC * 100);
+				buf = realloc(buf, newlen);
+				if(buf == NULL)
+				{
+					err("no mem");
+					*buflen = 0;
+					m_unlock(&status.epgmutex, 4);
+					return NULL;
+				}
+			}
+
+			memcpy(buf + *buflen, &chnode->serviceid, sizeof(int));
+			*buflen += sizeof(int);
+			memcpy(buf + *buflen, &chnode->transponderid, sizeof(int));
+			*buflen += sizeof(int);
+			memcpy(buf + *buflen, &epgnode->eventid, sizeof(int));
+			*buflen += sizeof(int);
+			memcpy(buf + *buflen, &epgnode->version, sizeof(int));
+			*buflen += sizeof(int);
+			memcpy(buf + *buflen, &epgnode->parentalrating, sizeof(int));
+			*buflen += sizeof(int);
+			memcpy(buf + *buflen, &epgnode->starttime, sizeof(time_t));
+			*buflen += sizeof(int);
+			memcpy(buf + *buflen, &epgnode->endtime, sizeof(time_t));
+			*buflen += sizeof(int);
+
+			len = 0;
+			if(epgnode->title != NULL)
+				len = strlen(epgnode->title);
+			memcpy(buf + *buflen, &len, sizeof(int));
+			*buflen += sizeof(int);
+			if(epgnode->title != NULL && len > 0)
+			{
+				memcpy(buf + *buflen, epgnode->title, len);
+				*buflen += len;
+			}
+
+			len = 0;
+			if(epgnode->subtitle != NULL)
+				len = strlen(epgnode->subtitle);
+			memcpy(buf + *buflen, &len, sizeof(int));
+			*buflen += sizeof(int);
+			if(epgnode->subtitle != NULL && len > 0)
+			{
+				memcpy(buf + *buflen, epgnode->subtitle, len);
+				*buflen += len;
+			}
+
+			if(epgnode->desc == NULL)
+			{
+				epgnode->desclen = 0;
+				epgnode->desccomplen = 0;
+			}
+			memcpy(buf + *buflen, &epgnode->desclen, sizeof(int));
+			*buflen += sizeof(int);
+			memcpy(buf + *buflen, &epgnode->desccomplen, sizeof(int));
+			*buflen += sizeof(int);
+
+			len = epgnode->desccomplen;
+			if(len == 0)
+				len = epgnode->desclen;
+			if(epgnode->desc != NULL)
+			{
+				memcpy(buf + *buflen, epgnode->desc, len);
+				*buflen += len;
+			}
+
+			epgnode = epgnode->next;
+		}
+
+		chnode = chnode->next;
+	}
+
+	m_unlock(&status.epgmutex, 4);
+	return buf;
+}
+
+int writeepgfast(const char* filename, char* buf, int buflen)
+{
+	debug(1000, "in");
+	FILE *fd = NULL;
+	int ret;
+
+	fd = fopen(filename, "wbt");
+	if(fd == NULL)
+	{
+		perr("can't open %s", filename);
+		return 1;
+	}
+
+	if(buf == NULL || buflen == 0) return 1;
+
+	long long freespace = getfreespace((char*)filename);
+	long long epgfreespace = getconfigint("epgfreespace", NULL) * 1024;
+
+	if(freespace - buflen < epgfreespace)
+	{
+		err("fastwrite out of space %s", filename);
+		return 1;
+	}
+
+	ret = fwrite(buf, buflen, 1, fd);
+
+	if(ret != 1)
+	{
+		perr("fast writting file %s", filename);
+		return 1;
+	}
+
+	fclose(fd);
+	debug(1000, "out");
+	return 0;
+}
+
+int writeepgslow(const char* filename)
 {
 	debug(1000, "in");
 	FILE *fd = NULL;
@@ -488,6 +618,23 @@ int writeepg(const char* filename)
 	debug(1000, "out");
 	m_unlock(&status.epgmutex, 4);
 	return 0;
+}
+
+int writeepg(const char* filename)
+{
+	int ret = 0, buflen = 0;
+	char* buf = NULL;
+
+	buf = createwriteepg(&buflen);
+	if(buf != NULL)
+	{
+		ret = writeepgfast(filename, buf, buflen);
+		free(buf); buf = NULL;
+	}
+	else
+		ret = writeepgslow(filename);
+
+	return ret;
 }
 
 char* epgdescunzip(struct epg* epgnode)
