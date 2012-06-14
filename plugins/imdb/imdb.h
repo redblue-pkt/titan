@@ -56,6 +56,14 @@ start:
 
 	if(tmpstr != NULL)
 	{
+
+		if(ostrstr(tmpstr, "<b>Keine Treffer.</b>") != NULL)
+		{
+			debug(133, "<b>Keine Treffer.</b>");
+			free(tmpstr); tmpstr = NULL;
+			return NULL;
+		}
+
 		*first = (struct imdb*)calloc(1, sizeof(struct imdb));
 		if(*first == NULL)
 		{
@@ -64,14 +72,7 @@ start:
 			return NULL;
 		}
 
-		if(ostrstr(tmpstr, "<b>Keine Treffer.</b>") != NULL)
-		{
-			debug(133, "<b>Keine Treffer.</b>");
-			free(tmpstr); tmpstr = NULL;
-			return NULL;
-		}
-		else
-			(*first)->id = string_resub("<a href=\"/title/tt", "/", tmpstr, 0);
+		(*first)->id = string_resub("<a href=\"/title/tt", "/", tmpstr, 0);
 
 		if(flag1 == 1)
 		{
