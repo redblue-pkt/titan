@@ -70,3 +70,20 @@
 <node name=plot posx=20 posy=320 width=45% height=150 type=textbox wrap=yes/>
 <node name=cover posx=440 posy=20 width=400 height=440 picwidth=400 picheight=440/>
 </screen>
+
+<screen fontcol=fontcol fontsize=20 titlealign=center name="tmcedit" hspace=10 vspace=10 posx=center posy=center width=70% height=70% bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node fontsize=30 bordercol=titlebgcol scrollbar=auto type=listbox name=listbox posy=1 width=100% height=-35>
+<node name=title text="Title" parent=listbox type=choicebox width=100% height=30>
+<node name=year text="Year" parent=listbox type=choicebox width=100% height=30>
+<node name=released text="Released" parent=listbox type=choicebox width=100% height=30>
+<node name=runtime text="Runtime" parent=listbox type=choicebox width=100% height=30>
+<node name=genre text="Genre" parent=listbox type=inputboxnum width=100% height=30>
+<node name=director text="Director" parent=listbox type=choicebox width=100% height=30>
+<node name=writer text="Writer" parent=listbox type=inputboxnum width=100% height=30>
+<node name=actors text="Actors" parent=listbox type=choicebox width=100% height=30>
+<node name=plot text="Plot" parent=listbox type=choicebox width=100% height=30>
+<node name=rating text="Rating" parent=listbox type=choicebox width=100% height=30>
+<node name=votes text="Votes" parent=listbox type=choicebox width=100% height=30>
+<node name=b1 text="OK" halign=center valign=center bordercol=okcol bordersize=6 bordertype=2 posx=20 posy=0 width=150 height=39/>
+<node name=b2 text="EXIT" halign=center valign=center bordercol=exitcol bordersize=6 bordertype=2 posx=180 posy=0 width=150 height=39/>
+</screen>
