@@ -136,8 +136,13 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(pincheck == 1)
 			return 0;
 	}
-
-	if(ostrcmp("settings", menuentry->name) == 0)
+	if(ostrcmp("mainmenulist", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		struct skin* screen = getscreen("mainmenulist");
+		menu(screen, 0);
+	}
+	else if(ostrcmp("settings", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		struct skin* screen = getscreen("settingsmenu");
