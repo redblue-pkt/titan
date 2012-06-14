@@ -359,7 +359,7 @@ int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int file
 
 int waitrc(struct skin* owner, unsigned int timeout, int screencalc)
 {
-	return waitrc(owner, timeout, screencalc, 0);
+	return waitrcext(owner, timeout, screencalc, 0);
 }
 
 struct rc* addrc(int key, void *func, struct skin* screen, struct skin *screennode)
