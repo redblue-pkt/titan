@@ -350,6 +350,7 @@ struct mediadbcategory* addmediadbcategory(char* line, int type, int count, stru
 
 int addmediadbcontent(struct mediadb* node, char *line, int len, int count)
 {
+	int ret = 0;
 	char* tmpstr = NULL, *type = NULL, *year = NULL, *rating = NULL;
 	char* votes = NULL, *timestamp = NULL, *flag = NULL;
 
