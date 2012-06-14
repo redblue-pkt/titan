@@ -46,5 +46,5 @@ void deinit(void)
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {
-	screentmdb(NULL, 0);
+	screentmdb(NULL, NULL, 0);
 }
