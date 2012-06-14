@@ -6,7 +6,7 @@ struct blacklist* readblacklist(char* filename)
   char* tmpstr = NULL;
   struct splitstr* ret = NULL;
 	struct blacklist* newnode = NULL;
-  int i = 0, count = 0;
+  int count = 0;
   
   newnode = (struct blacklist*)calloc(1, sizeof(struct blacklist));
 	if(newnode == NULL)
@@ -31,7 +31,7 @@ struct blacklist* readblacklist(char* filename)
   }
   
   newnode->count = count;
-  newnode->strsplit = ret;
+  newnode->splitstr = ret;
   newnode->file = tmpstr;
   
   return newnode;
