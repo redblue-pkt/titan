@@ -1389,15 +1389,15 @@ void mediadbfindfilecb(char* path, char* file, int type)
 			//TODO: got imdb infos
 
 #ifdef SIMULATE
-			imdb = getimdb(shortname, 0, 1, 0);
+			imdb = getimdb(&imdb, shortname, 0, 1, 0);
 #else
 			struct skin* imdbplugin = getplugin("IMDb");
 			if(imdbplugin != NULL)
 			{
-				struct imdb* (*startplugin)(char*, int, int, int);
+				struct imdb* (*startplugin)(struct imdb**, char*, int, int, int);
 				startplugin = dlsym(imdbplugin->pluginhandle, "getimdb");
 				if(startplugin != NULL)
-					imdb = startplugin(shortname, 0, 1, 0);
+					imdb = startplugin(&imdb, shortname, 0, 1, 0);
 			}
 #endif
 
@@ -1570,14 +1570,14 @@ printf("wo2.3\n");
 printf("wo3\n");
 
 #ifdef SIMULATE
-			freeimdb(imdb);
+			freeimdb(&imdb, 0);
 #else
 			if(imdbplugin != NULL)
 			{
-				void (*startplugin)(struct imdb*);
+				void (*startplugin)(struct imdb**, int flag);
 				startplugin = dlsym(imdbplugin->pluginhandle, "freeimdb");
 				if(startplugin != NULL)
-					startplugin(imdb);
+					startplugin(&imdb, 0);
 			}
 #endif
 			imdb = NULL;
