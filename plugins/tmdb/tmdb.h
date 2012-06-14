@@ -278,7 +278,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 
 			if(flag1 != 2 && ostrstr(tmpstr1, "size=\"original\"") != NULL)
 //				tnode->backdrop = string_resub("<image type=\"backdrop\" url=\"", "\" size=\"original\"", tmpstr1, 1);
-				tnode->backdrop = oregex(".*<image type=\"backdrop\" url=\".*(http://.*/original/.*)\" size=\"original\" width=\"1920\" height=\"1080\".*", tmpstr1);
+				tnode->backdrop = oregex(".*<image type=\"backdrop\" url=\".*(http://.*/original/.*)\" size=\"original\" width=\"1280\" height=\"720\".*", tmpstr1);
 
 			if(ostrstr(tmpstr1, "<rating>") != NULL)
 				tnode->rating = string_resub("<rating>", "</rating>", tmpstr1, 0);
