@@ -590,6 +590,47 @@ int screentmcdelete(char* file)
 void screentmcimdbsearch(char* file)
 {
 	//TODO
+	struct tmdb* tmdb = NULL;
+	struct mediadb* node = NULL;
+	struct skin* tmdbplugin = NULL;
+	struct skin* tmcinfo = getscreen("tmcinfo");
+	char* bg = NULL;
+
+	if(file != NULL) node = getmediadb(file);
+	if(node == NULL) return;
+
+	//create imdb search name
+	char* shortname = ostrcat(file, NULL, 0, 0);
+	string_tolower(shortname);
+	shortname = string_shortname(shortname, 1);
+	shortname = string_shortname(shortname, 2);
+	string_removechar(shortname);
+	strstrip(shortname);
+
+	tmdbplugin = getplugin("TMDb");
+	if(tmdbplugin != NULL)
+	{
+		struct tmdb* (*startplugin)(char*, char*, int);
+		startplugin = dlsym(tmdbplugin->pluginhandle, "screentmdb");
+		if(startplugin != NULL)
+		{
+			drawscreen(tmcinfo, 2, 0);
+			bg = savescreen(tmcinfo);
+
+			tmdb = startplugin(shortname, "tmcinfo", 1);
+
+			if(tmdb != NULL)
+			{
+				node = createmediadb(node, tmdb->id, type, tmdb->title, tmdb->year, tmdb->released, tmdb->runtime, tmdb->genre, tmdb->director, tmdb->writer, tmdb->actors, tmdb->plot, tmdb->id, tmdb->rating, tmdb->votes, node->title, node->file, 0);
+			}
+
+			clearscreen(tmcinfo);
+			restorescreen(bg, tmcinfo);
+			blitfb(0);
+		}
+	}
+
+	free(shortname); shortname = NULL;
 }
 
 void screentmcinfo(char* file)
@@ -598,9 +639,9 @@ void screentmcinfo(char* file)
 	struct skin* tmcinfo = getscreen("tmcinfo");
 	struct skin* title = getscreennode(tmcinfo, "title");
 	struct skin* released = getscreennode(tmcinfo, "released");
-	struct skin* runtime = getscreennode(tmcinfo, "runtime");
+	struct skin* runtime = getscreennode(tmcinfo, "rating");
 	struct skin* genre = getscreennode(tmcinfo, "genre");
-	struct skin* director = getscreennode(tmcinfo, "director");
+	struct skin* director = getscreennode(tmcinfo, "orgname");
 	struct skin* plot = getscreennode(tmcinfo, "plot");
 	struct skin* votes = getscreennode(tmcinfo, "votes");
 	struct skin* cover = getscreennode(tmcinfo, "cover");
