@@ -218,7 +218,7 @@ int flushrc(unsigned int timeout)
 	return 0;
 }
 
-int waitrc(struct skin* owner, unsigned int timeout, int screencalc)
+int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int filelistview)
 {
 	debug(1000, "in");
 	fd_set rfds;
@@ -295,9 +295,9 @@ int waitrc(struct skin* owner, unsigned int timeout, int screencalc)
 			if(node != NULL && node->rcfunc != NULL) 
 			{
 				if(fromthread == 0)
- 					node->rcfunc(node->screen, node->screennode, screencalc, 0);
+ 					node->rcfunc(node->screen, node->screennode, screencalc, filelistview, 0);
 				else
- 					node->rcfunc(node->screen, node->screennode, screencalc, 2);
+ 					node->rcfunc(node->screen, node->screennode, screencalc, filelistview, 2);
 			}
 			
 			ret = rcdata.code;
@@ -320,9 +320,9 @@ int waitrc(struct skin* owner, unsigned int timeout, int screencalc)
 			if(node != NULL && node->rcfunc != NULL) 
 			{
 				if(fromthread == 0)
- 					node->rcfunc(node->screen, node->screennode, screencalc, 0);
+ 					node->rcfunc(node->screen, node->screennode, screencalc, filelistview, 0);
 				else
- 					node->rcfunc(node->screen, node->screennode, screencalc, 2);
+ 					node->rcfunc(node->screen, node->screennode, screencalc, filelistview, 2);
 			}
 			if(longpress > 0)
 				ret = rcdata.code;
@@ -338,9 +338,9 @@ int waitrc(struct skin* owner, unsigned int timeout, int screencalc)
 			if(node != NULL && node->rcfunc != NULL) 
 			{
 				if(fromthread == 0)
- 					node->rcfunc(node->screen, node->screennode, screencalc, 0);
+ 					node->rcfunc(node->screen, node->screennode, screencalc, filelistview, 0);
 				else
- 					node->rcfunc(node->screen, node->screennode, screencalc, 2);
+ 					node->rcfunc(node->screen, node->screennode, screencalc, filelistview, 2);
 			}
 			ret = status.rckey;
 			status.rckey = 0;
@@ -355,6 +355,11 @@ int waitrc(struct skin* owner, unsigned int timeout, int screencalc)
 	debug(1000, "out");
 	status.lastrcaction = time(NULL);
 	return ret;
+}
+
+int waitrc(struct skin* owner, unsigned int timeout, int screencalc)
+{
+	return waitrc(owner, timeout, screencalc, 0);
 }
 
 struct rc* addrc(int key, void *func, struct skin* screen, struct skin *screennode)

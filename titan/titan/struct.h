@@ -1226,7 +1226,7 @@ struct fb
 struct rc
 {
 	int key;
-	void (*rcfunc)(struct skin*, struct skin*, int screencalc, int flag);
+	void (*rcfunc)(struct skin*, struct skin*, int screencalc, int filelistview, int flag);
 	struct skin *screen;
 	struct skin *screennode;
 	struct skin *owner;
