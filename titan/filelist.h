@@ -679,16 +679,20 @@ void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* fil
 
 	changeinput(filelist, tmpstr);
 	changetext(filelistpath, filelist->input);
-	free(tmpstr);
-	if(selection != NULL)
-		setlistboxselection(filelist, selection);
-	
+	free(tmpstr); tmpstr = NULL;
+
+	tmpstr = ostrcat(selection, NULL, 0, 0);
+
 	delmarkedscreennodes(input, FILELISTDELMARK);
 
 	if (tmpview == -1)
 		createfilelist(input, filelist, 0);
 	else
 		createfilelist(input, filelist, tmpview);
+
+	if(tmpstr != NULL)
+		setlistboxselection(filelist, tmpstr);
+	free(tmpstr); tmpstr = NULL;
 
 	drawscreen(input, 0, 0);
 	debug(1000, "out");
