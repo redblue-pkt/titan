@@ -95,7 +95,7 @@ void screenmc_videoplayer()
 			
 	while(1)
 	{
-		rcret = waitrc(apskin, rcwait, 0);
+		rcret = waitrcext(apskin, rcwait, 0, view);
 //		debug(50, "while status play=%d", status.play);
 
 		if((status.play == 1) || (status.playspeed != 0))
@@ -266,7 +266,6 @@ void screenmc_videoplayer()
 				}
 			}
 		}
-
 		else if(rcret == getrcconfigint("rcyellow", NULL))
 		{
 			if(status.play == 1)
@@ -389,7 +388,6 @@ void screenmc_videoplayer()
 		}
 		else if(rcret == getrcconfigint("rcstop", NULL))
 		{
-
 //			if((status.play == 1) || (status.pause == 1))
 //			{
 				debug(50, "rcstop: stopplayback");

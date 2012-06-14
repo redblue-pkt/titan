@@ -71,7 +71,7 @@ void screenmc_audioplayer()
 		if(status.play == 1 && count <= screensaver_delay)
 			mc_audioplayer_infobar(apskin, infobar, spos, slen, sreverse, sprogress, NULL);
 
-		rcret = waitrc(apskin, rcwait, 0);
+		rcret = waitrcext(apskin, rcwait, 0, view);
 		debug(50, "while status play=%d", status.play);
 
 		if(rcret != RCTIMEOUT && rcret != getrcconfigint("rcvolup", NULL) && rcret != getrcconfigint("rcvoldown", NULL) && rcret != getrcconfigint("rcmute", NULL))
