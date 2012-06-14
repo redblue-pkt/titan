@@ -13,8 +13,8 @@ char* menu0txt[] = {"Settings", "Picture", "Video", "Audio", "Exit"};
 
 //Settings
 int menu1pos = 0;
-char* menu1[] = {"skin/tmcscan.png", "skin/tmcdb.png", "skin/tmcsettings.png", "skin/tmcback.png", "skin/tmcbtn.png"};
-char* menu1txt[] = {"Scan", "Database Info", "Main", "Back", ""};
+char* menu1[] = {"skin/tmcscan.png", "skin/tmcscandir.png", "skin/tmcsettings.png", "skin/tmcdb.png", "skin/tmcback.png"};
+char* menu1txt[] = {"Scan All", "Scan Dir", "Main", "Database Info", "Back"};
 
 //Picture
 int menu2pos = 0;
@@ -487,6 +487,11 @@ void screentmcsettings()
 	drawscreen(tmcpic3, 0, 0);
 }
 
+char* tmcscreenscandir()
+{
+	//TODO
+}
+
 void screentmcedit(char* file, int menuid)
 {
 //TODO
@@ -516,7 +521,11 @@ void screentmcedit(char* file, int menuid)
 	if(node != NULL)
 	{
 		changeinput(title, node->title);
-		changeinput(year, node->year);
+
+		tmpstr = oitoa(node->year);
+		changeinput(year, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
 		changeinput(released, node->released);
 		changeinput(runtime, node->runtime);
 		changeinput(genre, node->genre);
@@ -524,7 +533,10 @@ void screentmcedit(char* file, int menuid)
 		changeinput(writer, node->writer);
 		changeinput(actors, node->actors);
 		changeinput(plot, node->plot);
+
+		tmpstr = oitoa(node->rating);
 		changeinput(rating, node->rating);
+		free(tmpstr); tmpstr = NULL;
 
 		tmpstr = oitoa(node->votes);
 		changeinput(votes, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10");
@@ -680,8 +692,13 @@ void screentmcinfo(char* file)
 		changetext(runtime, node->runtime);
 		changetext(genre, node->genre);
 		changetext(director, node->director);
-		changetext(votes, node->votes);
+
+		tmpstr = oitoa(node->votes);
+		changeinput(votes, node->votes);
+		free(tmpstr); tmpstr = NULL;
+
 		changetext(plot, node->plot);
+
 		tmpstr = ostrcat(getconfig("mediadb", NULL), "/", 0, 0);
 		tmpstr = ostrcat(node->poster, "_cover.jpg", 0, 0);
 		changepic(cover, tmpstr);
@@ -964,7 +981,7 @@ void screentmcmenu()
 					menuid = 1;
 					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
 				}
-				else if(menuid == 1 && ostrcmp("Scan", tmcmenutxt->ret) == 0)
+				else if(menuid == 1 && ostrcmp("Scan All", tmcmenutxt->ret) == 0)
 				{
 					int scantype = getconfigint("tmcscan", NULL);
 
@@ -975,6 +992,24 @@ void screentmcmenu()
 
 					mediadbscan(NULL, scantype, 0);
           screentmcdb();
+				}
+				else if(menuid == 1 && ostrcmp("Scan Dir", tmcmenutxt->ret) == 0)
+				{
+					char* scanpath = tmcscreenscandir();
+
+					if(scanpath != NULL)
+					{
+						int scantype = getconfigint("tmcscan", NULL);
+
+						if(scantype == 0)
+							scantype = 100;
+						else
+							scantype--;
+
+						mediadbscan(scanpath, scantype, 0);
+						free(scanpath); scanpath = NULL;
+	          screentmcdb();
+					}
 				}
 				else if(menuid == 1 && ostrcmp("Database Info", tmcmenutxt->ret) == 0)
 				{
