@@ -374,10 +374,16 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 
 //flag 0: only view
 //flag 1: can return tmdb node
-struct tmdb* screentmdb(char* title, int flag)
+struct tmdb* screentmdb(char* title, char* skinname, int flag)
 {
 	int rcret = 0;
-	struct skin* tmdbskin = getscreen("tmdb");
+	struct skin* tmdbskin = NULL;
+
+	if(skinname != NULL)
+		getscreen(skinname);
+	else
+		getscreen("tmdb");
+
 	struct skin* skin_plot = getscreennode(tmdbskin, "plot");
 	struct skin* skin_title = getscreennode(tmdbskin, "title");
 	struct skin* skin_orgname = getscreennode(tmdbskin, "orgname");
