@@ -114,50 +114,33 @@ void screenmc_videoplayer()
 		else if(status.filelistextend == 5 && filelist->select != NULL)
 		{
 			char* cmd = NULL;
-/*
-			cmd = ostrcat(cmd, filelist->select->filelist->imdbpath, 1, 0);
-			cmd = ostrcat(cmd, ".jpg", 1, 0);			
-			changepic(skin_cover, cmd);
-			drawscreen(apskin, 0, 0);
+			char* pic = NULL;
 
-			free(cmd), cmd = NULL;
-			cmd = ostrcat(cmd, filelist->select->filelist->imdbpath, 1, 0);
-			cmd = ostrcat(cmd, ".backdrop.mvi", 1, 0);
-*/
-			cmd = ostrcat(cmd, filelist->select->filelist->imdbpath, 1, 0);
-			cmd = ostrcat(cmd, "_thumb.jpg", 1, 0);			
-			changepic(skin_cover, cmd);
-			drawscreen(apskin, 0, 0);
-
-			free(cmd), cmd = NULL;
-			cmd = ostrcat(cmd, filelist->select->filelist->imdbpath, 1, 0);
-			cmd = ostrcat(cmd, "_backdrop.mvi", 1, 0);
-
-/*
-			if(filelist->select != NULL && filelist->select->input == NULL)
+			struct mediadb* mnode = getmediadb(listbox->select->name);
+			if(mnode != NULL)
 			{
-				while(dbnode != NULL)
+				if(mnode->id != NULL)
 				{
-					char* tmpstr = NULL;
-					tmpstr = ostrcat(tmpstr, basename(dbnode->file), 1, 0);
-					if(ostrcmp(listbox->select->name, tmpstr) == 0)
-					{
-						char* tmpstr1 = NULL;
-						tmpstr1 = ostrcat(tmpstr1, getconfig("mediadbpath", NULL), 1, 0);
-						tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);																			
-						tmpstr1 = ostrcat(tmpstr1, dbnode->poster, 1, 0);
-						cmd = ostrcat(cmd, tmpstr1, 1, 0);
-						tmpstr1 = ostrcat(tmpstr1, "_thumb.jpg", 1, 0);
-						changepic(skin_cover, tmpstr1);
-						free(tmpstr1), tmpstr1 = NULL;
-						cmd = ostrcat(cmd, ".backdrop.mvi", 1, 0);
-						break;
-					}
+					tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
+					tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
+					tmpstr = ostrcat(tmpstr, mnode->id 1, 0);
+
+					pic = ostrcat(tmpstr, "_thumb.jpg", 0, 0);
+					cmd = ostrcat(tmpstr, "_backdrop.mvi", 0, 0);
 					free(tmpstr), tmpstr = NULL;
-					dbnode = dbnode->next;
+				}
+				if(mnode->plot != NULL)
+				{
+					changetext(plot, mnode->plot);
+				}
+				if(mnode->title != NULL)
+				{
+					changetext(title, mnode->title);
 				}
 			}
-*/
+					
+			changepic(skin_cover, pic);
+			free(pic), pic = NULL;				
 			drawscreen(apskin, 0, 0);
 					
 			if(!file_exist(cmd)){
