@@ -6,9 +6,12 @@
 	mc_changeview start
  ------------------------------------------
 */
-void mc_changeview(int view, struct skin* filelist)
+void mc_changeview(int view, struct skin* filelist, struct skin* apskin)
 {
 	struct skin* node = filelist;
+	struct skin* plot = getscreennode(apskin, "plot");
+	struct skin* title = getscreennode(apskin, "title");
+	struct skin* cover = getscreennode(apskin, "cover");
 
 	while(node != NULL)
 	{
@@ -35,6 +38,9 @@ void mc_changeview(int view, struct skin* filelist)
 		filelist->posx = 40;
 		filelist->transparent = -1;
 		filelist->bgcol = -1;
+		cover->hidden = YES;
+		plot->hidden = YES;
+		title->hidden = YES;
 	}
 	else if(view == 1)
 	{
@@ -45,7 +51,10 @@ void mc_changeview(int view, struct skin* filelist)
 		filelist->posx = 40;
 		filelist->transparent = -1;
 		filelist->bgcol = -1;
-		filelist->prozwidth = 0;		
+		filelist->prozwidth = 0;
+		cover->hidden = YES;
+		plot->hidden = YES;
+		title->hidden = YES;	
 	}
 	else if(view == 2)
 	{
@@ -55,7 +64,10 @@ void mc_changeview(int view, struct skin* filelist)
 		filelist->prozwidth = 0;	
 		filelist->posx = 40;
 		filelist->transparent = -1;
-		filelist->bgcol = -1;	
+		filelist->bgcol = -1;
+		cover->hidden = YES;
+		plot->hidden = YES;
+		title->hidden = YES;
 	}
 	else if(view == 3)
 	{
@@ -66,6 +78,9 @@ void mc_changeview(int view, struct skin* filelist)
 		filelist->bgcol = 0x474747;
 		filelist->transparent = 40;
 		filelist->posx = 20;
+		cover->hidden = NO;
+		plot->hidden = NO;
+		title->hidden = NO;
 	}	
 	else if(view == 4)
 	{
@@ -76,7 +91,10 @@ void mc_changeview(int view, struct skin* filelist)
 		filelist->posx = 40;
 		filelist->transparent = -1;
 		filelist->bgcol = -1;
-		filelist->prozwidth = 0;		
+		filelist->prozwidth = 0;
+		cover->hidden = YES;
+		plot->hidden = YES;
+		title->hidden = YES;		
 	}
 	else if(view == 5)
 	{
@@ -87,7 +105,10 @@ void mc_changeview(int view, struct skin* filelist)
 		filelist->posx = 40;
 		filelist->transparent = -1;
 		filelist->bgcol = -1;
-		filelist->prozwidth = 0;	
+		filelist->prozwidth = 0;
+		cover->hidden = YES;
+		plot->hidden = YES;
+		title->hidden = YES;	
 	}
 }
 

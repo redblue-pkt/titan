@@ -45,10 +45,10 @@ void screenmc_videoplayer()
 	struct skin* b2 = getscreennode(apskin, "b2");
 	struct skin* b3 = getscreennode(apskin, "b3");
 	struct skin* b4 = getscreennode(apskin, "b4");
-	
-	struct skin* skin_cover = getscreennode(apskin, "cover");
-//	skin_cover->hidden = YES;
-			
+	struct skin* plot = getscreennode(apskin, "plot");
+	struct skin* title = getscreennode(apskin, "title");
+	struct skin* cover = getscreennode(apskin, "cover");
+				
 	currentdirectory = ostrcat(currentdirectory, getconfig("mc_vp_path", NULL), 1, 0);
 	selectedfile = ostrcat(selectedfile, getconfig("mc_vp_selectedfile", NULL), 1, 0);
 
@@ -86,7 +86,7 @@ void screenmc_videoplayer()
 		initscreensaver();
 
 	tmpview = view;
-	mc_changeview(view, filelist);
+	mc_changeview(view, filelist, apskin);
 
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
 	addscreenrc(apskin, filelist);
@@ -111,7 +111,7 @@ void screenmc_videoplayer()
 				screenplayinfobar(NULL, 1, playertype, 0);
 			}
 		}
-		else if(status.filelistextend == 5 && filelist->select != NULL)
+		else if(tmpview == 5 && filelist->select != NULL)
 		{
 			char* cmd = NULL;
 			char* pic = NULL;
@@ -130,13 +130,9 @@ void screenmc_videoplayer()
 					free(tmpstr), tmpstr = NULL;
 				}
 				if(mnode->plot != NULL)
-				{
 					changetext(plot, mnode->plot);
-				}
 				if(mnode->title != NULL)
-				{
 					changetext(title, mnode->title);
-				}
 			}
 					
 			changepic(skin_cover, pic);
@@ -287,7 +283,7 @@ void screenmc_videoplayer()
 					debug(50, "rcred: tmpsort=%d", sort);
 
 					addconfiginttmp("dirsort", sort);
-					mc_changeview(tmpview, filelist);
+					mc_changeview(tmpview, filelist, apskin);
 
 					delownerrc(apskin);	
 					getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
@@ -327,7 +323,7 @@ void screenmc_videoplayer()
 					tmpview = getconfigint("mc_vp_view", NULL);
 				}
 				
-				mc_changeview(tmpview, filelist);
+				mc_changeview(tmpview, filelist, apskin);
 
 //				startmediadb();
 //				dbnode = mediadb;
@@ -461,7 +457,6 @@ void screenmc_videoplayer()
 			playinfobarcount = 0;
 	
 			printf("exit: view=%d tmpview=%d\n", view, tmpview);			
-			status.filelistextend = 0;
 			break;
 		}
 		else if(rcret == getrcconfigint("rcok", NULL))

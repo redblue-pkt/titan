@@ -54,7 +54,7 @@ void screenmc_pictureplayer()
 		initscreensaver();
 
 	tmpview = view;
-	mc_changeview(view, filelist);
+	mc_changeview(view, filelist, apskin);
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, NULL);
 	addscreenrc(apskin, filelist);
 
@@ -140,7 +140,7 @@ void screenmc_pictureplayer()
 					debug(50, "rcred: tmpsort=%d", sort);
 					addconfiginttmp("dirsort", sort);
 
-					mc_changeview(view, filelist);
+					mc_changeview(view, filelist, apskin);
 					delownerrc(apskin);
 					getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
 					addscreenrc(apskin, filelist);
@@ -197,7 +197,7 @@ void screenmc_pictureplayer()
 				else
 					playerstop();
 
-				mc_changeview(tmpview, filelist);
+				mc_changeview(tmpview, filelist, apskin);
 
 				delownerrc(apskin);	
 				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
@@ -271,7 +271,6 @@ void screenmc_pictureplayer()
 			playinfobarcount = 0;
 
 			printf("exit: view=%d tmpview=%d\n", view, tmpview);			
-			status.filelistextend = 0;
 			break;
 		}
 		else if(rcret == getrcconfigint("rcok", NULL))
