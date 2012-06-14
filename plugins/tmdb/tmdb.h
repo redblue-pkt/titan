@@ -328,7 +328,12 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 					system(cmd);
 					free(cmd); cmd = NULL;
 	
-					cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg ", 1, 0);
+					cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg", 1, 0);
+					debug(133, "cmd %s", cmd);
+					system(cmd);
+					free(cmd); cmd = NULL;
+					
+					cmd = ostrcat(cmd, "mv /tmp/backdrop.resize.mpg ", 1, 0);
 					cmd = ostrcat(cmd, tnode->mvi, 1, 0);
 					debug(133, "cmd %s", cmd);
 					system(cmd);
