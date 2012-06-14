@@ -331,7 +331,7 @@ void screenmc_videoplayer()
 				delownerrc(apskin);	
 				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
 				addscreenrc(apskin, filelist);
-				drawscreen(apskin, 0, 0);
+				//drawscreen(apskin, 0, 0);
 			}
 		}
 		else if(rcret == getrcconfigint("rcinfo", NULL))
