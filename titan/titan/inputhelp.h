@@ -5,7 +5,7 @@ void inputhelpnum(struct skin* inputhelp, struct skin* inputbox, char num, int s
 {
 	inputboxff(inputhelp, inputbox, screencalc, filelistview, flag);
 	inputboxchar(inputhelp, inputbox, num, screencalc, filelistview, flag);
-	drawscreen(inputhelp, screencalc, filelistview, flag);
+	drawscreen(inputhelp, screencalc, flag);
 }
 
 char* screeninputhelp(char* text, int screencalc, int filelistview, int flag)
