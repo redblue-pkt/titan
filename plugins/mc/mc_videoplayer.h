@@ -47,7 +47,7 @@ void screenmc_videoplayer()
 	struct skin* b4 = getscreennode(apskin, "b4");
 	struct skin* plot = getscreennode(apskin, "plot");
 	struct skin* title = getscreennode(apskin, "title");
-	struct skin* cover = getscreennode(apskin, "cover");
+	struct skin* thumb = getscreennode(apskin, "thumb");
 				
 	currentdirectory = ostrcat(currentdirectory, getconfig("mc_vp_path", NULL), 1, 0);
 	selectedfile = ostrcat(selectedfile, getconfig("mc_vp_selectedfile", NULL), 1, 0);
@@ -123,7 +123,7 @@ void screenmc_videoplayer()
 				{
 					tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
 					tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
-					tmpstr = ostrcat(tmpstr, mnode->id 1, 0);
+					tmpstr = ostrcat(tmpstr, mnode->id, 1, 0);
 
 					pic = ostrcat(tmpstr, "_thumb.jpg", 0, 0);
 					cmd = ostrcat(tmpstr, "_backdrop.mvi", 0, 0);
@@ -135,7 +135,7 @@ void screenmc_videoplayer()
 					changetext(title, mnode->title);
 			}
 					
-			changepic(skin_cover, pic);
+			changepic(thumb, pic);
 			free(pic), pic = NULL;				
 			drawscreen(apskin, 0, 0);
 					

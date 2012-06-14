@@ -11,7 +11,7 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin)
 	struct skin* node = filelist;
 	struct skin* plot = getscreennode(apskin, "plot");
 	struct skin* title = getscreennode(apskin, "title");
-	struct skin* cover = getscreennode(apskin, "cover");
+	struct skin* thumb = getscreennode(apskin, "thumb");
 
 	while(node != NULL)
 	{
@@ -38,7 +38,7 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin)
 		filelist->posx = 40;
 		filelist->transparent = -1;
 		filelist->bgcol = -1;
-		cover->hidden = YES;
+		thumb->hidden = YES;
 		plot->hidden = YES;
 		title->hidden = YES;
 	}
@@ -52,7 +52,7 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin)
 		filelist->transparent = -1;
 		filelist->bgcol = -1;
 		filelist->prozwidth = 0;
-		cover->hidden = YES;
+		thumb->hidden = YES;
 		plot->hidden = YES;
 		title->hidden = YES;	
 	}
@@ -65,7 +65,7 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin)
 		filelist->posx = 40;
 		filelist->transparent = -1;
 		filelist->bgcol = -1;
-		cover->hidden = YES;
+		thumb->hidden = YES;
 		plot->hidden = YES;
 		title->hidden = YES;
 	}
@@ -78,7 +78,7 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin)
 		filelist->bgcol = 0x474747;
 		filelist->transparent = 40;
 		filelist->posx = 20;
-		cover->hidden = NO;
+		thumb->hidden = NO;
 		plot->hidden = NO;
 		title->hidden = NO;
 	}	
@@ -92,7 +92,7 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin)
 		filelist->transparent = -1;
 		filelist->bgcol = -1;
 		filelist->prozwidth = 0;
-		cover->hidden = YES;
+		thumb->hidden = YES;
 		plot->hidden = YES;
 		title->hidden = YES;		
 	}
@@ -106,7 +106,7 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin)
 		filelist->transparent = -1;
 		filelist->bgcol = -1;
 		filelist->prozwidth = 0;
-		cover->hidden = YES;
+		thumb->hidden = YES;
 		plot->hidden = YES;
 		title->hidden = YES;	
 	}
