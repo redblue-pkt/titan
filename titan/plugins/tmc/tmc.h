@@ -589,7 +589,6 @@ int screentmcdelete(char* file)
 
 void screentmcimdbsearch(char* file)
 {
-	//TODO
 	struct tmdb* tmdb = NULL;
 	struct mediadb* node = NULL;
 	struct skin* tmdbplugin = NULL;
@@ -620,9 +619,7 @@ void screentmcimdbsearch(char* file)
 			tmdb = startplugin(shortname, "tmcinfo", 1);
 
 			if(tmdb != NULL)
-			{
-				node = createmediadb(node, tmdb->id, type, tmdb->title, tmdb->year, tmdb->released, tmdb->runtime, tmdb->genre, tmdb->director, tmdb->writer, tmdb->actors, tmdb->plot, tmdb->id, tmdb->rating, tmdb->votes, node->title, node->file, 0);
-			}
+				node = createmediadb(node, tmdb->id, type, tmdb->title, tmdb->year, tmdb->released, tmdb->runtime, tmdb->genre, NULL, NULL, NULL, tmdb->plot, tmdb->id, tmdb->rating, tmdb->votes, node->title, node->file, 0);
 
 			clearscreen(tmcinfo);
 			restorescreen(bg, tmcinfo);
