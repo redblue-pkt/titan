@@ -4,40 +4,36 @@
 #define TMPIMDBPIC1 "/tmp/tmpimdb1.jpg"
 #define TMPIMDBPIC2 "/tmp/tmpimdb2.jpg"
 
-extern struct imdb* imdb;
-
-void freeimdb(struct imdb* node)
+void freeimdb(struct imdb** node, int flag)
 {
-	if(node == NULL) return;
+	if(node == NULL || *node == NULL) return;
 
-	free(node->title); node->title = NULL;
-	free(node->year); node->year = NULL;
-	free(node->rated); node->rated = NULL;
-	free(node->released); node->released = NULL;
-	free(node->genre); node->genre = NULL;
-	free(node->director); node->director = NULL;
-	free(node->writer); node->writer = NULL;
-	free(node->actors); node->actors = NULL;
-	free(node->plot); node->plot = NULL;
-	free(node->poster); node->poster = NULL;
-	free(node->runtime); node->runtime = NULL;
-	free(node->rating); node->rating = NULL;
-	free(node->votes); node->votes = NULL;
-	free(node->id); node->id = NULL;
+	free((*node)->title); (*node)->title = NULL;
+	free((*node)->year); (*node)->year = NULL;
+	free((*node)->rated); (*node)->rated = NULL;
+	free((*node)->released); (*node)->released = NULL;
+	free((*node)->genre); (*node)->genre = NULL;
+	free((*node)->director); (*node)->director = NULL;
+	free((*node)->writer); (*node)->writer = NULL;
+	free((*node)->actors); (*node)->actors = NULL;
+	free((*node)->plot); (*node)->plot = NULL;
+	free((*node)->poster); (*node)->poster = NULL;
+	free((*node)->runtime); (*node)->runtime = NULL;
+	free((*node)->rating); (*node)->rating = NULL;
+	free((*node)->votes); (*node)->votes = NULL;
+	free((*node)->id); (*node)->id = NULL;
 
 	unlink(TMPIMDBPIC1);
 	unlink(TMPIMDBPIC2);
 
-	free(node); node = NULL;
+	free(*node); *node = NULL;
 }
 
 // flag 0 = title search
 // flag 1 = iimdbid search
 // flag 2 = iimdbid search and save
-
-struct imdb* getimdb(char* title, int flag, int flag1, int flag2)
+struct imdb* getimdb(struct imdb** first, char* title, int flag, int flag1, int flag2)
 {
-	struct imdb* imdb = NULL;
 	char* tmpstr = NULL;
 	char* tmpsearch = NULL;
 	char* savefile = NULL;
@@ -60,8 +56,8 @@ start:
 
 	if(tmpstr != NULL)
 	{
-		imdb = (struct imdb*)calloc(1, sizeof(struct imdb));
-		if(imdb == NULL)
+		*first = (struct imdb*)calloc(1, sizeof(struct imdb));
+		if(*first == NULL)
 		{
 			err("no mem");
 			free(tmpstr); tmpstr = NULL;
@@ -75,19 +71,19 @@ start:
 			return NULL;
 		}
 		else
-			imdb->id = string_resub("<a href=\"/title/tt", "/", tmpstr, 0);
+			(*first)->id = string_resub("<a href=\"/title/tt", "/", tmpstr, 0);
 
 		if(flag1 == 1)
 		{
-			if(imdb->id != NULL)
-				imdb->id = ostrcat("tt", imdb->id, 0, 1);
+			if((*first)->id != NULL)
+				(*first)->id = ostrcat("tt", (*first)->id, 0, 1);
 
 			debug(133, "----------------------imdb start----------------------");
-			debug(133, "id: %s", imdb->id);
+			debug(133, "id: %s", (*first)->id);
 			debug(133, "----------------------imdb end----------------------");
 	
 			free(tmpstr); tmpstr = NULL;	
-			return imdb;
+			return *first;
 		}
 		
 // todo - use Meistgesuchte Titel (default)
@@ -150,16 +146,16 @@ start:
 		free(tmpstr), tmpstr = NULL;		
 	}
 
-	if(imdb != NULL)
+	if(*first != NULL)
 	{
-		if(imdb->id == NULL)	
+		if((*first)->id == NULL)
 			free(tmpstr),tmpstr = NULL;
 		else
 		{
-			debug(133, "imdb->id: %s", imdb->id);
+			debug(133, "imdb->id: %s", (*first)->id);
 			
 			tmpsearch = ostrcat("/title/tt", NULL, 0, 0);
-			tmpsearch = ostrcat(tmpsearch, imdb->id, 1, 0);
+			tmpsearch = ostrcat(tmpsearch, (*first)->id, 1, 0);
 	
 			tmpstr = gethttp("www.imdb.de", tmpsearch, 80, NULL, NULL, NULL, 0);
 			
@@ -174,67 +170,67 @@ start:
 	{
 		if(ostrstr(tmpstr, "<title>") != NULL)
 		{
-			imdb->title = string_resub("<title>", "</title>", tmpstr, 0);
-			imdb->title = string_decode(imdb->title,1);
-			string_strip_whitechars(imdb->title);
-			strstrip(imdb->title);
+			(*first)->title = string_resub("<title>", "</title>", tmpstr, 0);
+			(*first)->title = string_decode((*first)->title,1);
+			string_strip_whitechars((*first)->title);
+			strstrip((*first)->title);
 		}
 
 		if(ostrstr(tmpstr, "<h5>Genre:</h5>") != NULL)
 		{
-			imdb->genre = string_resub("<h5>Genre:</h5>", "</div>", tmpstr, 0);
-			imdb->genre = string_decode(imdb->genre,1);
-			string_striptags(imdb->genre);
-			string_strip_whitechars(imdb->genre);
-			strstrip(imdb->genre);
+			(*first)->genre = string_resub("<h5>Genre:</h5>", "</div>", tmpstr, 0);
+			(*first)->genre = string_decode((*first)->genre,1);
+			string_striptags((*first)->genre);
+			string_strip_whitechars((*first)->genre);
+			strstrip((*first)->genre);
 		}
 
 		if(ostrstr(tmpstr, "<h5>Drehbuchautor") != NULL)
 		{
-			imdb->writer = string_resub("<h5>Drehbuchautor", "</div>", tmpstr, 0);
-			imdb->writer = string_resub("<div class=\"info-content\">", "</div>", imdb->writer, 0);
-			imdb->writer = string_resub(";\">", "</a>", imdb->writer, 0);
-			imdb->writer = string_decode(imdb->writer,1);
-			string_striptags(imdb->writer);
-			string_strip_whitechars(imdb->writer);
-			strstrip(imdb->writer);
+			(*first)->writer = string_resub("<h5>Drehbuchautor", "</div>", tmpstr, 0);
+			(*first)->writer = string_resub("<div class=\"info-content\">", "</div>", (*first)->writer, 0);
+			(*first)->writer = string_resub(";\">", "</a>", (*first)->writer, 0);
+			(*first)->writer = string_decode((*first)->writer,1);
+			string_striptags((*first)->writer);
+			string_strip_whitechars((*first)->writer);
+			strstrip((*first)->writer);
 		}
 
 		if(ostrstr(tmpstr, "Regisseur:") != NULL)
 		{
-			imdb->director = string_resub("Regisseur:", "</div>", tmpstr, 0);
-			imdb->director = string_resub(";\">", "</a><br/>", imdb->director, 0);
-			imdb->director = string_decode(imdb->director,1);
-			string_striptags(imdb->director);
-			string_strip_whitechars(imdb->director);
-			strstrip(imdb->director);
+			(*first)->director = string_resub("Regisseur:", "</div>", tmpstr, 0);
+			(*first)->director = string_resub(";\">", "</a><br/>", (*first)->director, 0);
+			(*first)->director = string_decode((*first)->director,1);
+			string_striptags((*first)->director);
+			string_strip_whitechars((*first)->director);
+			strstrip((*first)->director);
 		}
 		
 		if(ostrstr(tmpstr, "<h5>Premierendatum:</h5>") != NULL)
 		{
-			imdb->released = string_resub("<h5>Premierendatum:</h5>", "<a class=", tmpstr, 0);
-			imdb->released = string_resub("<div class=\"info-content\">", "<a class=", imdb->released, 0);
-			imdb->released = string_decode(imdb->released,1);
-			string_striptags(imdb->released);
-			string_strip_whitechars(imdb->released);
-			strstrip(imdb->released);
+			(*first)->released = string_resub("<h5>Premierendatum:</h5>", "<a class=", tmpstr, 0);
+			(*first)->released = string_resub("<div class=\"info-content\">", "<a class=", (*first)->released, 0);
+			(*first)->released = string_decode((*first)->released,1);
+			string_striptags((*first)->released);
+			string_strip_whitechars((*first)->released);
+			strstrip((*first)->released);
 		}
 
 		if(ostrstr(tmpstr, "<h3>Besetzung</h3>") != NULL)
 		{
-			imdb->actors = string_resub("<h3>Besetzung</h3>&nbsp;", "</td></tr></table>", tmpstr, 0);
-			imdb->actors = string_resub("<div class=\"info-content block\"><table class=\"cast\">", "</a></td></tr>", imdb->actors, 0);
-			imdb->actors = string_replace("...", "als", imdb->actors, 0);
-			imdb->actors = string_decode(imdb->actors,1);
-			string_striptags(imdb->actors);
-			string_strip_whitechars(imdb->actors);
-			strstrip(imdb->actors);
+			(*first)->actors = string_resub("<h3>Besetzung</h3>&nbsp;", "</td></tr></table>", tmpstr, 0);
+			(*first)->actors = string_resub("<div class=\"info-content block\"><table class=\"cast\">", "</a></td></tr>", (*first)->actors, 0);
+			(*first)->actors = string_replace("...", "als", (*first)->actors, 0);
+			(*first)->actors = string_decode((*first)->actors,1);
+			string_striptags((*first)->actors);
+			string_strip_whitechars((*first)->actors);
+			strstrip((*first)->actors);
 		}
 
 		if(ostrstr(tmpstr, "<a name=\"poster\" href=\"") != NULL)
 		{
-			imdb->thumb = string_resub("<a name=\"poster\" href=\"", "\" /></a>", tmpstr, 0);
-			imdb->thumb = string_resub("src=\"", "\" /></a>", imdb->thumb, 0);
+			(*first)->thumb = string_resub("<a name=\"poster\" href=\"", "\" /></a>", tmpstr, 0);
+			(*first)->thumb = string_resub("src=\"", "\" /></a>", (*first)->thumb, 0);
 		}
 
 		if(ostrstr(tmpstr, "/media/rm") != NULL)
@@ -249,7 +245,7 @@ start:
 	{
 		tmpsearch = ostrcat("/media/rm", pageposter, 0, 0);
 		tmpsearch = ostrcat(tmpsearch, "/tt", 1, 0);
-		tmpsearch = ostrcat(tmpsearch, imdb->id, 1, 0);
+		tmpsearch = ostrcat(tmpsearch, (*first)->id, 1, 0);
 		tmpsearch = ostrcat(tmpsearch, "/", 1, 0);
 	
 		tmpstr = gethttp("www.imdb.de", tmpsearch, 80, NULL, NULL, NULL, 0);
@@ -262,17 +258,17 @@ start:
 		{
 			if(ostrstr(tmpstr, "image_src") != NULL)
 			{
-				imdb->poster = string_resub("<link rel=\"image_src\" href=\"", "\"", tmpstr, 0);
-				strstrip(imdb->poster);
+				(*first)->poster = string_resub("<link rel=\"image_src\" href=\"", "\"", tmpstr, 0);
+				strstrip((*first)->poster);
 			}
 			free(tmpstr), tmpstr = NULL;
 		}
 	}
 
-	if(imdb != NULL && imdb->id == NULL)
+	if((*first) != NULL && (*first)->id == NULL)
 	{
 		tmpsearch = ostrcat("/title/tt", NULL, 0, 0);
-		tmpsearch = ostrcat(tmpsearch, imdb->id, 1, 0);
+		tmpsearch = ostrcat(tmpsearch, (*first)->id, 1, 0);
 		tmpsearch = ostrcat(tmpsearch, "/plotsummary", 1, 0);
 
 		tmpstr = gethttp("www.imdb.de", tmpsearch, 80, NULL, NULL, NULL, 0);
@@ -287,21 +283,21 @@ start:
 	{
 		if(ostrstr(tmpstr, "swiki.2.1") != NULL)
 		{
-			imdb->plot = string_resub("<div id=\"swiki.2.1\">", "</div>", tmpstr, 0);
-			imdb->plot = string_decode(imdb->plot,1);
-			string_striptags(imdb->plot);
-			string_strip_whitechars(imdb->plot);
-			strstrip(imdb->plot);
+			(*first)->plot = string_resub("<div id=\"swiki.2.1\">", "</div>", tmpstr, 0);
+			(*first)->plot = string_decode((*first)->plot,1);
+			string_striptags((*first)->plot);
+			string_strip_whitechars((*first)->plot);
+			strstrip((*first)->plot);
 		}
 		free(tmpstr), tmpstr = NULL;
 	}
 
-	if(flag2 == 0 && imdb->id != NULL)
+	if(flag2 == 0 && (*first)->id != NULL)
 	{
-		if(imdb->poster != NULL)
+		if((*first)->poster != NULL)
 		{
 			char* ip = NULL, *pos = NULL, *path = NULL;
-			ip = string_replace("http://", "", imdb->poster, 0);
+			ip = string_replace("http://", "", (*first)->poster, 0);
 	
 			if(ip != NULL)
 				pos = strchr(ip, '/');
@@ -314,25 +310,25 @@ start:
 			if(flag1 == 1)
 			{
 				savefile = ostrcat(getconfig("mediadbpath", NULL), "/tt", 0, 0);
-				savefile = ostrcat(savefile, imdb->id, 1, 0);
+				savefile = ostrcat(savefile, (*first)->id, 1, 0);
 				savefile = ostrcat(savefile, "_poster.jpg", 1, 0);
 				gethttp(ip, path, 80, savefile, NULL, NULL, 0);
-				free(imdb->poster);
-				imdb->poster = savefile;
+				free((*first)->poster);
+				(*first)->poster = savefile;
 			}
 			else
 			{
 				gethttp(ip, path, 80, TMPIMDBPIC1, NULL, NULL, 0);
-				free(imdb->poster);
-				imdb->poster = ostrcat(TMPIMDBPIC1, NULL, 0, 0);
+				free((*first)->poster);
+				(*first)->poster = ostrcat(TMPIMDBPIC1, NULL, 0, 0);
 			}
 	
 			free(ip); ip = NULL;
 		}
-		if(imdb->thumb != NULL)
+		if((*first)->thumb != NULL)
 		{
 			char* ip = NULL, *pos = NULL, *path = NULL;
-			ip = string_replace("http://", "", imdb->thumb, 0);
+			ip = string_replace("http://", "", (*first)->thumb, 0);
 	
 			if(ip != NULL)
 				pos = strchr(ip, '/');
@@ -345,17 +341,17 @@ start:
 			if(flag1 == 1)
 			{
 				savefile = ostrcat(getconfig("mediadbpath", NULL), "/tt", 0, 0);
-				savefile = ostrcat(savefile, imdb->id, 1, 0);
+				savefile = ostrcat(savefile, (*first)->id, 1, 0);
 				savefile = ostrcat(savefile, "_thumb.jpg", 1, 0);
 				gethttp(ip, path, 80, savefile, NULL, NULL, 0);
-				free(imdb->thumb);
-				imdb->thumb = savefile;
+				free((*first)->thumb);
+				(*first)->thumb = savefile;
 			}
 			else
 			{
 				gethttp(ip, path, 80, TMPIMDBPIC2, NULL, NULL, 0);
-				free(imdb->thumb);
-				imdb->thumb = ostrcat(TMPIMDBPIC2, NULL, 0, 0);
+				free((*first)->thumb);
+				(*first)->thumb = ostrcat(TMPIMDBPIC2, NULL, 0, 0);
 			}
 	
 			free(ip); ip = NULL;
@@ -363,37 +359,37 @@ start:
 	}
 	else
 	{
-		if(imdb->thumb == NULL)
+		if((*first)->thumb == NULL)
 		{
-			free(imdb->thumb);
-			imdb->thumb = NULL;
+			free((*first)->thumb);
+			(*first)->thumb = NULL;
 		}
-		if(imdb->poster == NULL)
+		if((*first)->poster == NULL)
 		{
-			free(imdb->poster);
-			imdb->poster = NULL;
+			free((*first)->poster);
+			(*first)->poster = NULL;
 		}
 	}
 
-	if(imdb->id != NULL)
-		imdb->id = ostrcat("tt", imdb->id, 0, 1);
+	if((*first)->id != NULL)
+		(*first)->id = ostrcat("tt", (*first)->id, 0, 1);
 
 	free(tmpstr); tmpstr = NULL;
 
 	debug(133, "----------------------imdb start----------------------");
-	debug(133, "id: %s", imdb->id);
-	debug(133, "title: %s", imdb->title);
-	debug(133, "genre: %s", imdb->genre);
-	debug(133, "writer: %s", imdb->writer);
-	debug(133, "director: %s", imdb->director);
-	debug(133, "released: %s", imdb->released);
-	debug(133, "actors: %s", imdb->actors);
-	debug(133, "plot: %s", imdb->plot);
-	debug(133, "poster: %s", imdb->poster);
-	debug(133, "thumb: %s", imdb->thumb);
+	debug(133, "id: %s", (*first)->id);
+	debug(133, "title: %s", (*first)->title);
+	debug(133, "genre: %s", (*first)->genre);
+	debug(133, "writer: %s", (*first)->writer);
+	debug(133, "director: %s", (*first)->director);
+	debug(133, "released: %s", (*first)->released);
+	debug(133, "actors: %s", (*first)->actors);
+	debug(133, "plot: %s", (*first)->plot);
+	debug(133, "poster: %s", (*first)->poster);
+	debug(133, "thumb: %s", (*first)->thumb);
 	debug(133, "----------------------imdb end----------------------");
 
-	return imdb;
+	return *first;
 }
 
 void screenimdb(char* title)
@@ -416,7 +412,7 @@ void screenimdb(char* title)
 
 	if(title == NULL) title = getepgakttitle(NULL);
 
-	node = getimdb(title, 0, 0, 0);
+	node = getimdb(&node, title, 0, 0, 0);
 start:
 	if(node != NULL)
 	{
@@ -444,8 +440,8 @@ start:
 		search = textinput("Search", NULL);
 		if(search != NULL)
 		{
-			freeimdb(node); node = NULL;
-			node = getimdb(search, 0, 0, 0);
+			freeimdb(&node, 0); node = NULL;
+			node = getimdb(&search, 0, 0, 0);
 			free(search); search = NULL;
 			goto start;
 		}
@@ -454,7 +450,7 @@ start:
 		}
 	}
 
-	freeimdb(node); node = NULL;
+	freeimdb(&node, 0); node = NULL;
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	status.hangtime = getconfigint("hangtime", NULL);
 	clearscreen(imdbskin);
