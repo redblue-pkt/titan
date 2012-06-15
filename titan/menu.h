@@ -91,7 +91,7 @@ struct skin* menu(struct skin* menu, int flag)
 		{
 			writevfd(listbox->select->text);
 			if(menutext != status.skinerr) changetext(menutext,_(listbox->select->text));
-			if(details != status.skinerr) changetext(details, listbox->select->text);
+			if(details != status.skinerr) changetext(details, listbox->select->text2);
 		}
 		drawscreen(menu, 0, 0);	
 	}
