@@ -528,7 +528,9 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 										tmpstr = ostrcat(tmpstr, "_thumb.jpg", 1, 0);
 									}
 
-								}								
+								}
+								else
+									changetext(child, filelist[i]->d_name);																
 							}
 							
 							if(!file_exist(tmpstr))
