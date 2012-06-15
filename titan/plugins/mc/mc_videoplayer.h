@@ -25,7 +25,7 @@ void screenmc_videoplayer()
 	tmpstr = ostrcat(getconfig("mc_vp_dirsort", NULL), NULL, 0, 0);
 	addconfigtmp("dirsort", tmpstr);
 	
-//	startmediadb();
+	startmediadb();
 	dbnode = mediadb;
 
 	char* filename = NULL;
@@ -118,7 +118,11 @@ void screenmc_videoplayer()
 
 			if(filelist->select != NULL && filelist->select->input == NULL)
 			{
-				struct mediadb* mnode = getmediadb(filelist->select->name);
+				char* tmpfilename = createpath(filelistpath->text, filelist->select->name);		
+				debug(50, "tmpfilename: %s", tmpfilename);
+
+				struct mediadb* mnode = getmediadb(tmpfilename);
+				free(tmpfilename), tmpfilename = NULL;
 				if(mnode != NULL)
 				{
 					if(mnode->id != NULL)
@@ -135,13 +139,13 @@ void screenmc_videoplayer()
 						changetext(plot, mnode->plot);
 					if(mnode->title != NULL)
 						changetext(title, mnode->title);
-				}
-						
+				}		
 				changepic(thumb, pic);
 				free(pic), pic = NULL;				
 				drawscreen(apskin, 0, 0);
 			}
-					
+
+			debug(50, "cmd: %s", cmd);	
 			if(!file_exist(cmd)){
 				free(cmd), cmd = NULL;
 				cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 1, 0);
