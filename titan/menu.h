@@ -139,73 +139,149 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	if(ostrcmp("mainmenulist", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
+		resettvpic();
 		struct skin* screen = getscreen("mainmenulist");
 		menu(screen, 0);
 	}
 	else if(ostrcmp("settings", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
+		resettvpic();
 		struct skin* screen = getscreen("settingsmenu");
+		menu(screen, 0);
+	}
+	else if(ostrcmp("settings_grid", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		struct skin* screen = getscreen("settingsmenu_grid");
 		menu(screen, 0);
 	}
 	else if(ostrcmp("extensionsmenu", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
+		resettvpic();
 		struct skin* screen = getscreen("extensionsmenu");
+		menu(screen, 0);
+	}
+	else if(ostrcmp("extensionsmenu_grid", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		struct skin* screen = getscreen("extensionsmenu_grid");
 		menu(screen, 0);
 	}
 	else if(ostrcmp("systemupdatemenu", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
+		resettvpic();
 		struct skin* screen = getscreen("systemupdatemenu");
+		menu(screen, 0);
+	}
+	else if(ostrcmp("systemupdatemenu_grid", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		struct skin* screen = getscreen("systemupdatemenu_grid");
 		menu(screen, 0);
 	}
 	else if(ostrcmp("timermenu", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
+		resettvpic();
 		struct skin* screen = getscreen("timermenu");
+		menu(screen, 0);
+	}
+	else if(ostrcmp("timermenu_grid", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		struct skin* screen = getscreen("timermenu_grid");
 		menu(screen, 0);
 	}
 	else if(ostrcmp("information", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
+		resettvpic();
 		struct skin* screen = getscreen("infomenu");
+		menu(screen, 0);
+	}
+	else if(ostrcmp("information_grid", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		struct skin* screen = getscreen("infomenu_grid");
 		menu(screen, 0);
 	}
 	else if(ostrcmp("channelservice", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
+		resettvpic();
 		struct skin* screen = getscreen("channelmenu");
+		menu(screen, 0);
+	}
+	else if(ostrcmp("channelservice_grid", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		struct skin* screen = getscreen("channelmenu_grid");
 		menu(screen, 0);
 	}
 	else if(ostrcmp("system", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
+		resettvpic();
 		struct skin* screen = getscreen("systemmenu");
+		menu(screen, 0);
+	}
+	else if(ostrcmp("system_grid", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		struct skin* screen = getscreen("systemmenu_grid");
 		menu(screen, 0);
 	}
 	else if(ostrcmp("standby", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
+		resettvpic();
 		struct skin* screen = getscreen("standbymenu");
+		menu(screen, 0);
+	}
+	else if(ostrcmp("standby_grid", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		struct skin* screen = getscreen("standbymenu_grid");
 		menu(screen, 0);
 	}
 	else if(ostrcmp("harddisk", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
+		resettvpic();
 		struct skin* screen = getscreen("harddiskmenu");
+		menu(screen, 0);
+	}
+	else if(ostrcmp("harddisk_grid", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		struct skin* screen = getscreen("harddiskmenu_grid");
 		menu(screen, 0);
 	}
 	else if(ostrcmp("network", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
+		resettvpic();
 		struct skin* screen = getscreen("networkmenu");
 		menu(screen, 0);
 	}
+	else if(ostrcmp("network_grid", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		struct skin* screen = getscreen("networkmenu_grid");
+		menu(screen, 0);
+	}	
 	else if(ostrcmp("httpdsettings", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		screenhttpdsettings();
+	}
+	else if(ostrcmp("mediaplayer", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screenplay(NULL, 0, 0);
 	}
 	else if(ostrcmp("mediaplayer", menuentry->name) == 0)
 	{
