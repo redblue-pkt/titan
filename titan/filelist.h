@@ -572,13 +572,13 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 						child->width = 100;
 						child->prozwidth = 1;
 						child->height = node->fontsize + 2 + (node->bordersize * 2);
-
 						child->textposx = node->textposx;			
 					}
 					else
 						child->textposx = 1;
 
-					changetext(child, filelist[i]->d_name);
+					if(view != 2)
+						changetext(child, filelist[i]->d_name);
 					changename(child, filelist[i]->d_name);
 					
 					child->parentpointer = node;
