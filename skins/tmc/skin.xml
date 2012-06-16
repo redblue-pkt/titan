@@ -3,13 +3,13 @@
 <node name=pic posx=0 posy=0 width=1280 height=720 halign=center valign=middle>
 </screen>
 
-<screen pic=%pluginpath%/tmc/skin/tmcbg.jpg name=tmcbg posx=0 posy=0 width=1280 height=720>
+<screen name=tmcbg posx=0 posy=0 width=1280 height=720>
 </screen>
 
 <screen bgcol=0 name=tmcmenutxt posx=500 posy=620 width=230 height=40 fontsize=30 fontcol=fontcol valign=middle halign=center>
 </screen>
 
-<screen bgcol=-2 name=tmcstatus posx=500 posy=100 width=230 height=40 fontsize=30 fontcol=fontcol valign=middle halign=center>
+<screen bgcol=-2 name=tmcstatus posx=500 posy=20 width=230 height=40 fontsize=30 fontcol=fontcol valign=middle halign=center>
 </screen>
 
 <screen bgcol=-2 name=tmcpicstar posx=500 posy=370 width=230 height=40 fontsize=30 fontcol=fontcol valign=middle halign=center>
