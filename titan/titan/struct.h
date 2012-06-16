@@ -260,6 +260,7 @@ struct tmdb
 struct mediadbfilter
 {
 	struct mediadb* node;
+	int count;
 	struct mediadbfilter* prev;
 	struct mediadbfilter* next;
 };
