@@ -1502,7 +1502,7 @@ int readepg(const char* filename)
 			ret = fread(title, len, 1, fd);
 			title[len] = '\0';
 		}
-		else if(len != 4096)
+		else if(len != 0)
 		{
 			err("epgfile defekt title len=%d", len);
 			free(title); title = NULL;
@@ -1527,7 +1527,7 @@ int readepg(const char* filename)
 			ret = fread(subtitle, len, 1, fd);
 			subtitle[len] = '\0';
 		}
-		else if(len != 4096)
+		else if(len != 0)
 		{
 			err("epgfile defekt subtitle len=%d", len);
 			free(title); title = NULL;
