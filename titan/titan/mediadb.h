@@ -602,7 +602,6 @@ int readmediadb(const char* filename, int type, int flag)
 		return 1;
 	}
 
-printf("xxxxxxxxxxxxxxxxxx %lu\n", time(NULL));
 	while(fgets(fileline, MINMALLOC, fd) != NULL)
 	{
 		if(fileline[0] == '\n')
@@ -634,7 +633,6 @@ printf("xxxxxxxxxxxxxxxxxx %lu\n", time(NULL));
 	free(fileline);
 	fclose(fd);
 	m_unlock(&status.mediadbmutex, 17);
-printf("xxxxxxxxxxxxxxxxxx %lu\n", time(NULL));
 	return 0;
 }
 
@@ -1448,20 +1446,17 @@ void mediadbfindfilecb(char* path, char* file, int type)
 			}
 
 			struct skin* tmdbplugin = NULL;
-			if(imdb != NULL)
+			tmdbplugin = getplugin("TMDb");
+			if(tmdbplugin != NULL)
 			{
-				tmdbplugin = getplugin("TMDb");
-				if(tmdbplugin != NULL)
+				struct tmdb* (*startplugin)(struct tmdb**, char*, int, int);
+				startplugin = dlsym(tmdbplugin->pluginhandle, "gettmdb");
+				if(startplugin != NULL)
 				{
-					struct tmdb* (*startplugin)(struct tmdb**, char*, int, int);
-					startplugin = dlsym(tmdbplugin->pluginhandle, "gettmdb");
-					if(startplugin != NULL)
-					{
-						if(imdb != NULL && imdb->id != NULL)
-							tmdb = startplugin(&tmdb, imdb->id, 1, 1);
-						else if(imdbapi != NULL && imdbapi->id != NULL)
-							tmdb = startplugin(&tmdb, imdbapi->id, 1, 1);
-					}
+					if(imdb != NULL && imdb->id != NULL)
+						tmdb = startplugin(&tmdb, imdb->id, 1, 1);
+					else if(imdbapi != NULL && imdbapi->id != NULL)
+						tmdb = startplugin(&tmdb, imdbapi->id, 1, 1);
 				}
 			}
 
@@ -1603,7 +1598,6 @@ printf("wo4\n");
 				if(startplugin != NULL)
 					startplugin(&imdbapi, 0);
 			}
-
 			imdbapi = NULL;
 printf("wo5\n");
 
@@ -1614,7 +1608,6 @@ printf("wo5\n");
 				if(startplugin != NULL)
 					startplugin(&tmdb, 0);
 			}
-
 			tmdb = NULL;
 printf("wo6\n");
 		}
