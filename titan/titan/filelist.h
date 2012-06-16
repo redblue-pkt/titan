@@ -488,11 +488,12 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 								tmpstr = ostrcat(tmpstr, changefilenameext(filelist[i]->d_name, ".jpg"), 1, 1);
 							else
 							{						
-								free(tmpstr), tmpstr = NULL;
-								tmpstr = ostrcat(node->input, "/", 0, 0);
-								tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);								
-
-								struct mediadb* mnode = getmediadb(tmpstr);
+//								free(tmpstr), tmpstr = NULL;
+//								tmpstr = ostrcat(node->input, "/", 0, 0);
+//								tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);								
+//								struct mediadb* mnode = getmediadb(tmpstr);
+								
+								struct mediadb* mnode = getmediadb(filelist[i]->d_name);
 								free(tmpstr), tmpstr = NULL;
 								if(mnode != NULL)
 								{									
@@ -608,11 +609,13 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 					}
 					if(view == 3)
 					{
-						tmpstr = ostrcat(node->input, "/", 0, 0);
-						tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);								
+//						tmpstr = ostrcat(node->input, "/", 0, 0);
+//						tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);								
 
-						struct mediadb* mnode = getmediadb(tmpstr);
-						free(tmpstr), tmpstr = NULL;
+//						struct mediadb* mnode = getmediadb(tmpstr);
+						struct mediadb* mnode = getmediadb(filelist[i]->d_name);
+
+//						free(tmpstr), tmpstr = NULL;
 						if(mnode != NULL)
 						{
 							if(mnode->title != NULL)

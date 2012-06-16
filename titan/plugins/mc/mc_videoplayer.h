@@ -118,11 +118,13 @@ void screenmc_videoplayer()
 
 			if(filelist->select != NULL && filelist->select->input == NULL)
 			{
-				char* tmpfilename = createpath(filelistpath->text, filelist->select->name);		
-				debug(50, "tmpfilename: %s", tmpfilename);
+//				char* tmpfilename = createpath(filelistpath->text, filelist->select->name);		
+//				debug(50, "tmpfilename: %s", tmpfilename);
 
-				struct mediadb* mnode = getmediadb(tmpfilename);
-				free(tmpfilename), tmpfilename = NULL;
+//				struct mediadb* mnode = getmediadb(tmpfilename);
+				struct mediadb* mnode = getmediadb(filelist->select->name);
+
+//				free(tmpfilename), tmpfilename = NULL;
 				if(mnode != NULL)
 				{
 					if(mnode->id != NULL)
