@@ -136,6 +136,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(pincheck == 1)
 			return 0;
 	}
+
 	if(ostrcmp("mainmenulist", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
@@ -612,6 +613,11 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	{
 		if(check == 1) return 0;
 		screenmediadbsettings();
+	}
+	else if(ostrcmp("extensionslist", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screenkeyactions(1, 0);
 	}
 	else if(menuentry->pluginhandle != NULL)
 	{
