@@ -1390,8 +1390,8 @@ unsigned char *loadjpg(char *filename, unsigned long *width, unsigned long *heig
 	jpeg_read_header(ciptr, TRUE);
 	ciptr->out_color_space = JCS_RGB;
   
-  if(denom < 1) denom = 1;
-  if(denom > 16) denom = 16;
+	if(denom < 1) denom = 1;
+	if(denom > 16) denom = 16;
 	ciptr->scale_denom = denom;
 
 	jpeg_start_decompress(ciptr);
@@ -1682,6 +1682,9 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 	jpeg_read_header(&cinfo, TRUE);
 	cinfo.out_color_space = JCS_RGB;
 
+	jpeg_start_decompress(&cinfo);
+	width = cinfo.output_width;
+	height = cinfo.output_height;
 	cinfo.scale_denom = 1;
 	
 	if(scalewidth != 0 || scaleheight != 0)
@@ -1703,10 +1706,6 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 			if(cinfo.scale_denom > 8) break;
 		}
 	}
-
-	jpeg_start_decompress(&cinfo);
-	width = cinfo.output_width;
-	height = cinfo.output_height;
 
 	drawjpgsw(&cinfo, NULL, posx, posy, width, height, cinfo.output_components, mwidth, mheight, scalewidth, scaleheight, halign, valign);
 
@@ -1975,8 +1974,8 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 	}
 	else if(pictype == 1 && memfd > -1)
 		blitjpg(buf, posx, posy, width, height, scalewidth, scaleheight, mwidth, mheight, halign, valign);
-  else if(pictype == 2 && picnode != NULL)
-    drawjpgsw(NULL, buf, posx, posy, width, height, rowbytes / width, mwidth, mheight, scalewidth, scaleheight, halign, valign);
+	else if(pictype == 2 && picnode != NULL)
+		drawjpgsw(NULL, buf, posx, posy, width, height, rowbytes / width, mwidth, mheight, scalewidth, scaleheight, halign, valign);
 
 	if(picnode == NULL)
 	{
