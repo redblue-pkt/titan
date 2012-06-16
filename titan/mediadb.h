@@ -218,7 +218,7 @@ int movemediadbup(struct mediadb* node)
 	return 0;
 }
 
-struct mediadbfilter* addmediadbfilter(struct mediadb* mnode, int count, struct mediadbfilter* last)
+struct mediadbfilter* addmediadbfilter(struct mediadb* mnode, int nr, int count, struct mediadbfilter* last)
 {
 	struct mediadbfilter *newnode = NULL, *prev = NULL, *node = NULL;
 
@@ -232,6 +232,7 @@ struct mediadbfilter* addmediadbfilter(struct mediadb* mnode, int count, struct 
 	}
 
 	newnode->node = mnode;
+	newnode->count = nr;
 
 	m_lock(&status.mediadbmutex, 17);
 	node = mediadbfilter;
@@ -921,20 +922,20 @@ int writemediadb(const char *filename)
 //flag 6: genre
 //flag 7: a-z
 //flag 8: no imdb info
-void createmediadbfilter(int type, char* search, int flag)
+int createmediadbfilter(int type, char* search, int flag)
 {
-	int isearch = 0;
+	int isearch = 0, count = 0;
 	struct mediadb* node = mediadb;
 	struct mediadbfilter* last = NULL;
 
-	if(status.mediadbthreadstatus == 1) return;
+	if(status.mediadbthreadstatus == 1) return 0;
 
 	if(flag == 1 || flag == 5)
 	{
-		if(search == NULL) return;
+		if(search == NULL) return 0;
 		isearch = atoi(search);
 	}
-	if(flag == 7 && search == NULL) return;
+	if(flag == 7 && search == NULL) return 0;
 
 	freemediadbfilter(0);
 	while(node != NULL)
@@ -942,26 +943,55 @@ void createmediadbfilter(int type, char* search, int flag)
 		if(node->type == type)
 		{
 			if(flag == 0)
-				last = addmediadbfilter(node, 1, last);
+			{
+				last = addmediadbfilter(node, count, 1, last);
+				count++;
+			}
 			else if(flag == 1 && node->year == isearch)
-				last = addmediadbfilter(node, 1, last);
+			{
+				last = addmediadbfilter(node, count, 1, last);
+				count++;
+			}
 			else if(flag == 2 && ostrstrcase(node->director, search) != NULL)
-				last = addmediadbfilter(node, 1, last);
+			{
+				last = addmediadbfilter(node, count, 1, last);
+				count++;
+			}
 			else if(flag == 3 && ostrstrcase(node->actors, search) != NULL)
-				last = addmediadbfilter(node, 1, last);
+			{
+				last = addmediadbfilter(node, count, 1, last);
+				count++;
+			}
 			else if(flag == 4 && ostrstrcase(node->file, search) != NULL)
-				last = addmediadbfilter(node, 1, last);
+			{
+				last = addmediadbfilter(node, count, 1, last);
+				count++;
+			}
 			else if(flag == 5 && node->rating == isearch)
-				last = addmediadbfilter(node, 1, last);
+			{
+				last = addmediadbfilter(node, count, 1, last);
+				count++;
+			}
 			else if(flag == 6 && ostrstrcase(node->genre, search) != NULL)
-				last = addmediadbfilter(node, 1, last);
+			{
+				last = addmediadbfilter(node, count, 1, last);
+				count++;
+			}
 			else if(flag == 7 && node->title != NULL && node->title[0] == search[0])
-				last = addmediadbfilter(node, 1, last);
+			{
+				last = addmediadbfilter(node, count, 1, last);
+				count++;
+			}
 			else if(flag == 8 && node->id == NULL)
-				last = addmediadbfilter(node, 1, last);
+			{
+				last = addmediadbfilter(node, count, 1, last);
+				count++;
+			}
 		}
 		node = node->next;
 	}
+
+	return count;
 }
 
 void mediadbscanthread(struct stimerthread* self, char* path, int type)
