@@ -31,6 +31,21 @@ int menu4pos = 0;
 char* menu4[] = {"skin/tmccategory.png", "skin/tmcrandom.png", "skin/tmcall.png", "skin/tmcone.png", "skin/tmcaz.png", "skin/tmcback.png"};
 char* menu4txt[] = {"Category", "Random", "All", "Single", "A-Z", "Back"};
 
+void tmcchangestatus(struct skin* tmcstatus, char* tmcpicstarbg, int count)
+{
+	int pos = 0;
+	char* tmpstr = NULL;
+
+	if(mediadbfilterpos != NULL) pos = mediadbfilterpos->count + 1;
+
+	tmpstr = ostrcat(oitoa(pos), " / ", 1, 0);
+	tmpstr = ostrcat(tmpstr, oitoa(count), 1, 1);
+
+	restorescreennofree(tmcstatusbg, tmcstatus);
+	changetext(tmcstatus, tmpstr);
+	drawscreen(tmcstatus, 0);
+}
+
 //flag 0: don't draw
 //flag 1: draw
 void tmcpicdel(struct skin* tmcpictitle, struct skin* tmcpicstar, struct skin* tmcpic1, struct skin* tmcpic2, struct skin* tmcpic3, struct skin* tmcpic4, struct skin* tmcpic5, char* tmcpictitlebg, char* tmcpicstarbg, int flag)
@@ -408,15 +423,16 @@ char* screentmccategory(int type, char* category)
 	return ret;
 }
 
-void screentmcsettings()
+int screentmcsettings()
 {
-	int rcret = 0;
+	int rcret = 0, ret = 0;
 	struct skin* tmcpic3 = getscreen("tmcpic3");
 	struct skin* listbox = getscreennode(tmcpic3, "listbox");
 	struct skin* pictimeout = getscreennode(tmcpic3, "pictimeout");
 	struct skin* picfull = getscreennode(tmcpic3, "picfull");
 	struct skin* picname = getscreennode(tmcpic3, "picname");
 	struct skin* scan = getscreennode(tmcpic3, "scan");
+	struct skin* bgpic = getscreennode(tmcpic3, "bgpic");
 	struct skin* tmp = NULL;
 	char* tmppic = NULL;
 
@@ -428,6 +444,7 @@ void screentmcsettings()
 	picfull->hidden = NO;
 	picname->hidden = NO;
 	scan->hidden = NO;
+	bgpic->hidden = NO;
 
 	addchoicebox(pictimeout, "5", "5");
 	addchoicebox(pictimeout, "10", "10");
@@ -452,6 +469,14 @@ void screentmcsettings()
 	addchoicebox(scan, "93", _("audio / picture"));
 	setchoiceboxselection(scan, getconfig("tmcscan", NULL));
 
+	addchoicebox(bgpic, "0", _("picture1"));
+	addchoicebox(bgpic, "1", _("picture2"));
+	addchoicebox(bgpic, "2", _("picture3"));
+	addchoicebox(bgpic, "3", _("picture4"));
+	addchoicebox(bgpic, "4", _("picture5"));
+	addchoicebox(bgpic, "1000", _("no picture"));
+	setchoiceboxselection(bgpic, getconfig("tmcbgpic", NULL));
+
 	addscreenrc(tmcpic3, listbox);
 	drawscreen(tmcpic3, 0, 0);
 
@@ -470,6 +495,8 @@ void screentmcsettings()
 			addconfigscreencheck("tmcpicname", picname, "0");
 			addconfigscreencheck("tmcpicfull", picfull, "0");
 			addconfigscreencheck("tmcscan", scan, "0");
+			if(ostrcmp(bgpic->ret, getconfig("tmcbgpic", NULL)) != 0) ret = 1;
+			addconfigscreencheck("tmcbgpic", bgpic, "0");
 			break;
 		}
 	}
@@ -478,6 +505,7 @@ void screentmcsettings()
 	picfull->hidden = YES;
 	picname->hidden = YES;
 	scan->hidden = YES;
+	bgpic->hidden = YES;
 
 	delownerrc(tmcpic3);
 
@@ -485,11 +513,28 @@ void screentmcsettings()
 	tmcpic3->bgcol = -1;
 	free(tmppic); tmppic = NULL;
 	drawscreen(tmcpic3, 0, 0);
+
+	return ret;
 }
 
 char* tmcscreenscandir()
 {
-	//TODO
+	struct skin* dir = getscreen("dir")
+	char* ret = NULL, *bg = NULL;
+
+	dir->width = 700;
+	dir->prozwidth = 0;
+	dir->height = 650;
+	dir->prozheight = 0;
+
+	drawscreen(dir, 2);
+	bg = savescreen(dir);
+
+	ret = screendir(getconfig("rec_moviepath", NULL), "", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, dir->width, dir->prozwidth, dir->height, dir->prozheight, 0);
+
+	restorescreen(bg, dir);
+	blit(0);
+	return ret;
 }
 
 void screentmcedit(char* file, int menuid)
@@ -856,13 +901,14 @@ void screentmcmenu()
 	struct skin* tmcmenu5 = getscreen("tmcmenu5");
 	struct skin* tmcpictitle = getscreen("tmcpictitle");
 	struct skin* tmcpicstar = getscreen("tmcpicstar");
+	struct skin* tmcstatus = getscreen("tmcstatus");
 	struct skin* tmcpic1 = getscreen("tmcpic1");
 	struct skin* tmcpic2 = getscreen("tmcpic2");
 	struct skin* tmcpic3 = getscreen("tmcpic3");
 	struct skin* tmcpic4 = getscreen("tmcpic4");
 	struct skin* tmcpic5 = getscreen("tmcpic5");
 	char* tmpstr = NULL;
-	char* tmcpictitlebg = NULL, *tmcpicstarbg = NULL;
+	char* tmcpictitlebg = NULL, *tmcpicstarbg = NULL, *tmcstatusbg = NULL;
 
 	setfbtransparent(255);
 
@@ -894,6 +940,11 @@ void screentmcmenu()
 	tmcsetbutton(picplaytype, audioplaytype);
 	tmcpicdel(tmcpictitle, tmcpicstar, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, 0);
 
+	tmpstr = ostrcat("%pluginpath%/tmc/skin/tmcbg", getconfig("tmcbgpic", NULL), 0, 0);
+	tmpstr = ostrcat(tmpstr, ".jpg", 1, 0);
+	changepic(tmcbg, tmpstr);
+	free(tmpstr); tmpstr = NULL;
+
 	drawscreen(tmcbg, 0, 1);
 	drawscreen(tmcpic1, 0, 1);
 	drawscreen(tmcpic2, 0, 1);
@@ -905,9 +956,11 @@ void screentmcmenu()
  //save backgrounds
 	drawscreen(tmcpictitle, 2, 0);
 	drawscreen(tmcpicstar, 2, 0);
+	drawscreen(tmcstatus, 2, 0);
 
 	tmcpictitlebg = savescreen(tmcpictitle);
 	tmcpicstarbg = savescreen(tmcpicstar);
+	tmcstatusbg = savescreen(tmcstatus);
 
 	while(1)
 	{
@@ -916,9 +969,16 @@ void screentmcmenu()
 		if(menuid > 1 && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL)))
 		{
 			if(active == 1)
+			{
 				active = 0;
+				tmcpic3->bordersize += 10;
+			}
 			else
+			{
 				active = 1;
+				tmcpic3->bordersize -= 10;
+			}
+			drawscreen(tmcpic3, 0, 0);
 
 			tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
 			continue;
@@ -1017,7 +1077,15 @@ void screentmcmenu()
 				}
 				else if(menuid == 1 && ostrcmp("Main", tmcmenutxt->ret) == 0)
 				{
-					screentmcsettings();
+					if(screentmcsettings() == 1)
+					{
+						drawscreen(tmcbg, 0, 1);
+						tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, 0);
+						tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
+						free(tmcpictitlebg); tmcpictitlebg = savescreen(tmcpictitle);
+						free(tmcpicstarbg); tmcpicstarbg = savescreen(tmcpicstar);
+						free(tmcstatusbg); tmcstatusbg = savescreen(tmcstatus);
+					}
 				}
 				else if(ostrcmp("Picture", tmcmenutxt->ret) == 0) //mainmenu picture
 				{
@@ -1312,6 +1380,7 @@ void screentmcmenu()
 
 	free(tmcpictitlebg); tmcpictitlebg = NULL;
 	free(tmcpicstarbg); tmcpicstarbg = NULL;
+	free(tmcstatusbg); tmcstatusbg = NULL;
 	freemediadbfilter(0);
 	if(status.mediadbthread == NULL)
 	{

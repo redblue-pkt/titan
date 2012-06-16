@@ -40,7 +40,7 @@ struct mediadb* getmediadb(char* file, int flag)
 		{
 			m_unlock(&status.mediadbmutex, 17);
 			return node->mediadbnode;
-		{
+		}
 		else if(flag == 1 && ostrcmp(file, basename(node->file)) == 0)
 		{					
 			m_unlock(&status.mediadbmutex, 17);

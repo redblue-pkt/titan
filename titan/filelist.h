@@ -491,9 +491,9 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 //								free(tmpstr), tmpstr = NULL;
 //								tmpstr = ostrcat(node->input, "/", 0, 0);
 //								tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);								
-//								struct mediadb* mnode = getmediadb(tmpstr);
+//								struct mediadb* mnode = getmediadb(tmpstr, 0);
 								
-								struct mediadb* mnode = getmediadb(filelist[i]->d_name);
+								struct mediadb* mnode = getmediadb(filelist[i]->d_name, 1);
 								free(tmpstr), tmpstr = NULL;
 								if(mnode != NULL)
 								{									
@@ -612,8 +612,8 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 //						tmpstr = ostrcat(node->input, "/", 0, 0);
 //						tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);								
 
-//						struct mediadb* mnode = getmediadb(tmpstr);
-						struct mediadb* mnode = getmediadb(filelist[i]->d_name);
+//						struct mediadb* mnode = getmediadb(tmpstr, 0);
+						struct mediadb* mnode = getmediadb(filelist[i]->d_name, 1);
 
 //						free(tmpstr), tmpstr = NULL;
 						if(mnode != NULL)
