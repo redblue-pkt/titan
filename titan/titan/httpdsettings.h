@@ -38,7 +38,8 @@ void screenhttpdsettings()
 	changeinput(httpdport, getconfig("httpdport", NULL));
 	if(httpdport->input != NULL)
 	{
-		for(i = 0; i < 6 - strlen(httpdport->input); i++)
+		int len = strlen(httpdport->input);
+		for(i = 0; i < 5 - len; i++)
 			httpdport->input = ostrcat("0", httpdport->input, 0, 1);
 	}
 
@@ -46,7 +47,8 @@ void screenhttpdsettings()
 	changeinput(streamport, getconfig("streamport", NULL));
 	if(streamport->input != NULL)
 	{
-		for(i = 0; i < 6 - strlen(streamport->input); i++)
+		int len = strlen(streamport->input);
+		for(i = 0; i < 5 - len; i++)
 			streamport->input = ostrcat("0", streamport->input, 0, 1);
 	}
 	
@@ -58,7 +60,8 @@ void screenhttpdsettings()
 	changeinput(rguidport, getconfig("rguidport", NULL));
 	if(rguidport->input != NULL)
 	{
-		for(i = 0; i < 6 - strlen(rguidport->input); i++)
+		int len = strlen(rguidport->input);
+		for(i = 0; i < 5 - len; i++)
 			rguidport->input = ostrcat("0", rguidport->input, 0, 1);
 	}
 
