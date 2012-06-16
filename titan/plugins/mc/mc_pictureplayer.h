@@ -8,7 +8,9 @@ void screenmc_pictureplayer()
 {
 	char* filename = NULL;
 	char* currentdirectory = NULL;
-	int nextpic = 0, rcret = 0, rcwait = 1000, playerret = 0, flag = 3, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0;
+	char* selectedfile = NULL;
+
+	int nextpic = 0, rcret = 0, rcwait = 1000, playerret = 0, flag = 3, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0, stopradio = 0;
 	// workaround for grey background mvi
 	struct skin* blackscreen = getscreen("blackscreen");
 	drawscreen(blackscreen, 0, 0);
@@ -28,6 +30,7 @@ void screenmc_pictureplayer()
 	struct skin* picname = getscreennode(picscreen, "picname");
 
 	currentdirectory = ostrcat(currentdirectory, getconfig("mc_pp_path", NULL), 1, 0);
+	selectedfile = ostrcat(selectedfile, getconfig("mc_pp_selectedfile", NULL), 1, 0);
 
 	// enable listbox and set hidden
 	listbox->aktpage = -1;
@@ -55,14 +58,15 @@ void screenmc_pictureplayer()
 
 	tmpview = view;
 	mc_changeview(view, filelist, apskin);
-	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, NULL);
+	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
 	addscreenrc(apskin, filelist);
 
 	// start radio musik on pictureplayer
 	char* track = NULL;
 	track = ostrcat(track, sound, 1, 0);
 
-	if(ostrcmp(sound, "off") != 0){
+	if(stopradio == 0 && getconfig("mc_pp_sound", NULL) != NULL && ostrcmp(sound, "off") != 0)
+	{
 		playerret = playerstart(track);
 		playwritevfd(track);
 
@@ -72,6 +76,7 @@ void screenmc_pictureplayer()
 				textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 				playerstop();
 				playerret = 0;
+				stopradio = 1;
 			}
 		#endif
 	}
@@ -179,19 +184,24 @@ void screenmc_pictureplayer()
 				}
 
 				sound = getconfig("mc_pp_sound", NULL);
+				stopradio = 0;
 
 				// start radio musik on pictureplayer
 				playerstop();
 				free(track), track = NULL;
 				track = ostrcat("", sound, 0, 0);
 
-				if(ostrcmp(sound, "off") != 0){
+				if(stopradio == 0 && getconfig("mc_pp_sound", NULL) != NULL && ostrcmp(sound, "off") != 0)
+				{
 					playerret = playerstart(track);
 					playwritevfd(filename);
 
 					#ifndef SIMULATE
 						if(playerret != 0)
+						{
 							textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+							stopradio = 1;
+						}
 					#endif
 				}
 				else
@@ -246,6 +256,8 @@ void screenmc_pictureplayer()
 			{
 				if(ostrcmp(getconfig("mc_pp_path", NULL), filelistpath->text) != 0)
 					addconfig("mc_pp_path", filelistpath->text);
+				if(ostrcmp(getconfig("mc_pp_selectedfile", NULL), filelist->select->name) != 0)
+					addconfig("mc_pp_selectedfile", filelist->select->name);
 			}
 
 			playerstop();
@@ -294,7 +306,8 @@ void screenmc_pictureplayer()
 				delownerrc(apskin);
 				setfbtransparent(255);
 
-				if(ostrcmp(sound, "off") != 0){
+				if(stopradio == 0 && getconfig("mc_pp_sound", NULL) != NULL && ostrcmp(sound, "off") != 0)
+				{
 					playerret = playerstart(filename);
 					playwritevfd(filename);
 
@@ -313,6 +326,7 @@ void screenmc_pictureplayer()
 	
 							addscreenrc(apskin, filelist);
 							drawscreen(apskin, 0, 0);
+							stopradio = 1;
 							continue;
 						}
 					#endif
@@ -350,6 +364,7 @@ void screenmc_pictureplayer()
 					debug(50, "mc_mounter_main filename: %s", filename);
 					//addconfig("mc_pp_path", filelistpath->text);
 					currentdirectory = ostrcat("", getconfig("mc_pp_path", NULL), 0, 0);
+					selectedfile = ostrcat(selectedfile, getconfig("mc_pp_selectedfile", NULL), 0, 0);
 
 					mc_mounter_main(0,filename,filelistpath,filelist,apskin,filemask,tmpview,currentdirectory);
 					debug(50, "mc_mounter_main done");
@@ -386,13 +401,17 @@ void screenmc_pictureplayer()
 		{
 			playerstop();
 
-			if(ostrcmp(sound, "off") != 0){
+			if(stopradio == 0 && getconfig("mc_pp_sound", NULL) != NULL && ostrcmp(sound, "off") != 0)
+			{
 				playerret = playerstart(track);
 				playwritevfd(filename);
 
 				#ifndef SIMULATE
 					if(playerret != 0)
+					{
 						textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+						stopradio = 1;
+					}
 				#endif
 			}
 		}
@@ -421,6 +440,7 @@ void screenmc_pictureplayer()
 	free(track), track = NULL;
 	free(filename), filename = NULL;
 	free(currentdirectory), currentdirectory = NULL;
+	free(selectedfile), selectedfile = NULL;
 
 	writevfd("Mediacenter");
 	debug(50, "closed");
