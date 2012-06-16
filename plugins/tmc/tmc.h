@@ -512,7 +512,7 @@ void screentmcedit(char* file, int menuid)
 	char* tmpstr = NULL, *bg = NULL;
 	struct mediadb* node = NULL;
 	
-	if(file != NULL) node = getmediadb(file);
+	if(file != NULL) node = getmediadb(file, 0);
 
 	if(menuid == 3) type = 0; //video
 	if(menuid == 4) type = 1; //audio
@@ -578,7 +578,7 @@ int screentmcdelete(char* file)
 	char* tmpstr = NULL, *bg = NULL;
 	struct mediadb* node = NULL;
 
-	if(file != NULL) node = getmediadb(file);
+	if(file != NULL) node = getmediadb(file, 0);
 
 	if(node != NULL)
 	{
@@ -629,7 +629,7 @@ void screentmcimdbsearch(char* file, int menuid)
 	struct skin* tmcinfo = getscreen("tmcinfo");
 	char* bg = NULL;
 
-	if(file != NULL) node = getmediadb(file);
+	if(file != NULL) node = getmediadb(file, 0);
 	if(node == NULL) return;
 
 	if(menuid == 3) type = 0; //video
@@ -683,7 +683,7 @@ void screentmcinfo(char* file)
 	char* tmpstr = NULL, *bg = NULL;
 	struct mediadb* node = NULL;
 	
-	if(file != NULL) node = getmediadb(file);
+	if(file != NULL) node = getmediadb(file, 0);
 
 	if(node != NULL)
 	{

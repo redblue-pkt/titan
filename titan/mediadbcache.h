@@ -21,7 +21,9 @@ void debugmediadbcache()
 	printf("maxcount=%d\n", maxcount);
 }
 
-struct mediadb* getmediadb(char* file)
+// flag 0 path + file
+// flag 1 file
+struct mediadb* getmediadb(char* file, int flag)
 {
 	unsigned int hash; 
 	struct mediadbcache* node = NULL;
@@ -34,8 +36,13 @@ struct mediadb* getmediadb(char* file)
 
 	while(node != NULL)
 	{
-		if(ostrcmp(file, node->file) == 0)
+		if(flag == 0 && ostrcmp(file, node->file) == 0)
 		{
+			m_unlock(&status.mediadbmutex, 17);
+			return node->mediadbnode;
+		{
+		else if(flag == 1 && ostrcmp(file, basename(node->file)) == 0)
+		{					
 			m_unlock(&status.mediadbmutex, 17);
 			return node->mediadbnode;
 		}
