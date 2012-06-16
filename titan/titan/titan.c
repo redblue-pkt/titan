@@ -763,8 +763,8 @@ firstwizzardstep1:
 	//start epg scanlist
 	status.epgscanlistthread = addtimer(&epgscanlistthread, START, 1000, 1, NULL, NULL, NULL);
 	//get pmt
-  if(getconfigint("checkpmtalways", NULL) == 1)
-    addtimer(&dvbgetpmtthread, START, 2000, -1, NULL, NULL, NULL);
+	if(getconfigint("checkpmtalways", NULL) == 1)
+		addtimer(&dvbgetpmtthread, START, 2000, -1, NULL, NULL, NULL);
 	//check hdd
 	status.addhddall = addtimer(&addhddall, START, 6000, -1, NULL, NULL, NULL);
 	//check net
