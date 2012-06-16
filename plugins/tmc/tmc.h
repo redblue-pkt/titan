@@ -186,7 +186,7 @@ void tmcpicscroll(int menuid, struct skin* tmcpictitle, struct skin* tmcpicstar,
 //flag 0: draw only
 //flag 1: left
 //flag 2: right
-void tmcmenuscroll(int menuid, int active, struct skin* tmcmenutxt, struct skin* tmcmenu1, struct skin* tmcmenu2, struct skin* tmcmenu3, struct skin* tmcmenu4, struct skin* tmcmenu5, int flag)
+void tmcmenuscroll(int menuid, int active, struct skin* tmcmenutxt, struct skin* tmcmenu1, struct skin* tmcmenu2, struct skin* tmcmenu3, struct skin* tmcmenu3p2, struct skin* tmcmenu4, struct skin* tmcmenu5, int flag)
 {
 	int id = 0, max = 0;
 	char** menu = NULL, **menutxt = NULL;
@@ -251,7 +251,7 @@ void tmcmenuscroll(int menuid, int active, struct skin* tmcmenutxt, struct skin*
 
 	if(id > max) id = 0;
 	tmpstr = ostrcat("%pluginpath%/tmc/", menu[id], 0, 0);
-	changepic(tmcmenu3, tmpstr);
+	changepic(tmcmenu3p2, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	changetext(tmcmenutxt, _(menutxt[id]));
 	changeret(tmcmenutxt, menutxt[id]);
@@ -272,7 +272,7 @@ void tmcmenuscroll(int menuid, int active, struct skin* tmcmenutxt, struct skin*
 	{
 		changetext(tmcmenu1, NULL);
 		changetext(tmcmenu2, NULL);
-		changetext(tmcmenu3, NULL);
+		changetext(tmcmenu3p2, NULL);
 		changetext(tmcmenu4, NULL);
 		changetext(tmcmenu5, NULL);
 	}
@@ -280,7 +280,7 @@ void tmcmenuscroll(int menuid, int active, struct skin* tmcmenutxt, struct skin*
 	{
 		changetext(tmcmenu1, "X");
 		changetext(tmcmenu2, "X");
-		changetext(tmcmenu3, "X");
+		changetext(tmcmenu3p2, "X");
 		changetext(tmcmenu4, "X");
 		changetext(tmcmenu5, "X");
 	}
@@ -903,6 +903,7 @@ void screentmcmenu()
 	struct skin* tmcmenu1 = getscreen("tmcmenu1");
 	struct skin* tmcmenu2 = getscreen("tmcmenu2");
 	struct skin* tmcmenu3 = getscreen("tmcmenu3");
+	struct skin* tmcmenu3p2 = getscreennode(tmcmenu3, "tmcmenu3p2");
 	struct skin* tmcmenu4 = getscreen("tmcmenu4");
 	struct skin* tmcmenu5 = getscreen("tmcmenu5");
 	struct skin* tmcpictitle = getscreen("tmcpictitle");
@@ -949,7 +950,11 @@ void screentmcmenu()
 
 	if(getconfigint("tmcbgpic", NULL) != 1000)
 	{
-		tmpstr = ostrcat("%pluginpath%/tmc/skin/tmcbg", getconfig("tmcbgpic", NULL), 0, 0);
+		char* tmpbgpic = getconfig("tmcbgpic", NULL);
+		if(tmpbgpic == NULL)
+			tmpstr = ostrcat("%pluginpath%/tmc/skin/tmcbg", "0", 0, 0);
+		else
+			tmpstr = ostrcat("%pluginpath%/tmc/skin/tmcbg", tmpbgpic, 0, 0);
 		tmpstr = ostrcat(tmpstr, ".jpg", 1, 0);
 		changepic(tmcbg, tmpstr);
 		free(tmpstr); tmpstr = NULL;
@@ -963,7 +968,7 @@ void screentmcmenu()
 	drawscreen(tmcpic3, 0, 1);
 	drawscreen(tmcpic4, 0, 1);
 	drawscreen(tmcpic5, 0, 1);
-	tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
+	tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 	
 	//save backgrounds
 	drawscreen(tmcpictitle, 2, 0);
@@ -992,7 +997,7 @@ void screentmcmenu()
 			}
 			drawscreen(tmcpic3, 0, 0);
 
-			tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
+			tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 			continue;
 		}
 
@@ -1004,7 +1009,7 @@ void screentmcmenu()
 				menuid = 0;
 				tmcpicdel(tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 1);
 
-				tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
+				tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 				continue;
 			}
 		}
@@ -1012,7 +1017,7 @@ void screentmcmenu()
 		if(rcret == getrcconfigint("rcleft", NULL))
 		{
 			if(active == 1)
-				tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 1);
+				tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 1);
 			else
 				tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 1);
 			continue;
@@ -1021,7 +1026,7 @@ void screentmcmenu()
 		if(rcret == getrcconfigint("rcright", NULL))
 		{
 			if(active == 1)
-				tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 2);
+				tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 2);
 			else
 				tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 2);
 			continue;
@@ -1046,12 +1051,12 @@ void screentmcmenu()
 				{
 					menuid = 0;
 					tmcpicdel(tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 1);
-					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
+					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 				}
 				else if(ostrcmp("Settings", tmcmenutxt->ret) == 0) //mainmenu settings
 				{
 					menuid = 1;
-					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
+					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 				}
 				else if(menuid == 1 && ostrcmp("Scan All", tmcmenutxt->ret) == 0)
 				{
@@ -1106,7 +1111,7 @@ void screentmcmenu()
 						free(tmcpicstarbg); tmcpicstarbg = savescreen(tmcpicstar);
 						free(tmcstatusbg); tmcstatusbg = savescreen(tmcstatus);
 						tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 0);
-						tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
+						tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 					}
 				}
 				else if(ostrcmp("Picture", tmcmenutxt->ret) == 0) //mainmenu picture
@@ -1115,7 +1120,7 @@ void screentmcmenu()
 					mediadbfilterpos = NULL;
 					mediadbfiltercount = createmediadbfilter(2, NULL, 0);
 					tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 0);
-					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
+					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 				}
 				else if(menuid == 2 && ostrcmp("Category", tmcmenutxt->ret) == 0)
 				{
@@ -1153,7 +1158,7 @@ void screentmcmenu()
 						picplaytype = 2;
 					
 					tmcsetbutton(picplaytype, audioplaytype);
-					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
+					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 				}
 				else if(menuid == 2 && ostrcmp("Single", tmcmenutxt->ret) == 0)
 				{
@@ -1163,7 +1168,7 @@ void screentmcmenu()
 						picplaytype = 1;
 						
 					tmcsetbutton(picplaytype, audioplaytype);
-					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
+					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 				}
 				else if(ostrcmp("Video", tmcmenutxt->ret) == 0) //mainmenu video
 				{
@@ -1171,7 +1176,7 @@ void screentmcmenu()
 					mediadbfilterpos = NULL;
 					mediadbfiltercount = createmediadbfilter(0, NULL, 0);
 					tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 0);
-					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
+					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 				}
 				else if(menuid == 3 && ostrcmp("Genre", tmcmenutxt->ret) == 0)
 				{
@@ -1268,7 +1273,7 @@ void screentmcmenu()
 					mediadbfilterpos = NULL;
 					mediadbfiltercount = createmediadbfilter(1, NULL, 0);
 					tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 0);
-					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
+					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 				}
 				else if(menuid == 4 && ostrcmp("Category", tmcmenutxt->ret) == 0)
 				{
@@ -1306,7 +1311,7 @@ void screentmcmenu()
 						audioplaytype = 2;
 						
 					tmcsetbutton(picplaytype, audioplaytype);
-					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
+					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 				}
 				else if(menuid == 4 && ostrcmp("Single", tmcmenutxt->ret) == 0)
 				{
@@ -1316,7 +1321,7 @@ void screentmcmenu()
 						audioplaytype = 1;
 						
 					tmcsetbutton(picplaytype, audioplaytype);
-					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
+					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 				}
 
 				continue;
@@ -1332,7 +1337,7 @@ void screentmcmenu()
 
 					drawscreen(tmcbg, 0, 1);
 					tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 0);
-					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
+					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 				}
 				if(menuid == 4)
 				{
@@ -1363,7 +1368,7 @@ void screentmcmenu()
 
 					drawscreen(tmcbg, 0, 1);
 					tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 0);
-					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
+					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 				}
 				else if(menuid == 2)
 				{
@@ -1394,7 +1399,7 @@ void screentmcmenu()
 
 					drawscreen(tmcbg, 0, 1);
 					tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 0);
-					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
+					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 				}
 			}
 		}
