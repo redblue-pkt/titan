@@ -9,7 +9,7 @@
 #define HEADER_H
 
 //mediadbcache.h
-struct mediadb* getmediadb(char* file);
+struct mediadb* getmediadb(char* file, int flag);
 
 //mediadbsettings.h
 void screenmediadbsettings();
@@ -21,7 +21,7 @@ struct mediadbfilter* getlastmediadbfilter(struct mediadbfilter* node, int flag)
 void getmediadbcounts(int* video, int* audio, int* picture);
 int readmediadb(const char* filename, int type, int flag);
 void mediadbscan();
-void createmediadbfilter(int type, char* search, int flag);
+int createmediadbfilter(int type, char* search, int flag);
 struct mediadbfilter* getmediadbfilterrandom(int maxentry);
 int getmediadbfiltercount();
 void freemediadbfilter(int flag);

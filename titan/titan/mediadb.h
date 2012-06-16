@@ -1424,9 +1424,6 @@ void mediadbfindfilecb(char* path, char* file, int type)
 
 			//TODO: got imdb infos
 
-#ifdef SIMULATE
-			imdb = getimdb(&imdb, shortname, 0, 1, 0);
-#else
 			struct skin* imdbplugin = getplugin("IMDb");
 			if(imdbplugin != NULL)
 			{
@@ -1435,14 +1432,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 				if(startplugin != NULL)
 					imdb = startplugin(&imdb, shortname, 0, 1, 0);
 			}
-#endif
 
-#ifdef SIMULATE
-			if(imdb == NULL)
-				imdbapi = getimdbapi(&imdbapi, shortname, 0, 1);
-			else if(imdb->id != NULL)
-				imdbapi = getimdbapi(&imdbapi, imdb->id, 1, 1);
-#else
 			struct skin* imdbapiplugin = getplugin("IMDb-API");
 			if(imdbplugin != NULL)
 			{
@@ -1456,14 +1446,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 						imdbapi = startplugin(&imdbapi, imdb->id, 1, 1);
 				}
 			}
-#endif
 
-#ifdef SIMULATE
-			if(imdb != NULL && imdb->id != NULL)
-				tmdb = gettmdb(&tmdb, imdb->id, 1, 1);
-			else if(imdbapi != NULL && imdbapi->id != NULL)
-				tmdb = gettmdb(&tmdb, imdbapi->id, 1, 1);
-#else
 			struct skin* tmdbplugin = NULL;
 			if(imdb != NULL)
 			{
@@ -1481,7 +1464,6 @@ void mediadbfindfilecb(char* path, char* file, int type)
 					}
 				}
 			}
-#endif
 
 printf("wo1\n");
 if(imdb != NULL)
@@ -1605,9 +1587,6 @@ printf("wo2.3\n");
 			}
 printf("wo3\n");
 
-#ifdef SIMULATE
-			freeimdb(&imdb, 0);
-#else
 			if(imdbplugin != NULL)
 			{
 				void (*startplugin)(struct imdb**, int flag);
@@ -1615,12 +1594,8 @@ printf("wo3\n");
 				if(startplugin != NULL)
 					startplugin(&imdb, 0);
 			}
-#endif
 			imdb = NULL;
 printf("wo4\n");			
-#ifdef SIMULATE
-			freeimdbapi(&imdbapi, 0);
-#else
 			if(imdbapiplugin != NULL)
 			{
 				void (*startplugin)(struct imdbapi**, int);
@@ -1628,13 +1603,10 @@ printf("wo4\n");
 				if(startplugin != NULL)
 					startplugin(&imdbapi, 0);
 			}
-#endif
+
 			imdbapi = NULL;
 printf("wo5\n");
 
-#ifdef SIMULATE
-			freetmdb(&tmdb, 0);
-#else
 			if(tmdbplugin != NULL)
 			{
 				void (*startplugin)(struct tmdb**, int);
@@ -1642,7 +1614,6 @@ printf("wo5\n");
 				if(startplugin != NULL)
 					startplugin(&tmdb, 0);
 			}
-#endif
 
 			tmdb = NULL;
 printf("wo6\n");
