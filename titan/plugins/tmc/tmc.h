@@ -31,7 +31,7 @@ int menu4pos = 0;
 char* menu4[] = {"skin/tmccategory.png", "skin/tmcrandom.png", "skin/tmcall.png", "skin/tmcone.png", "skin/tmcaz.png", "skin/tmcback.png"};
 char* menu4txt[] = {"Category", "Random", "All", "Single", "A-Z", "Back"};
 
-void tmcchangestatus(struct skin* tmcstatus, char* tmcpicstarbg, int count)
+void tmcchangestatus(struct skin* tmcstatus, char* tmcstatusbg, int count)
 {
 	int pos = 0;
 	char* tmpstr = NULL;
@@ -43,7 +43,7 @@ void tmcchangestatus(struct skin* tmcstatus, char* tmcpicstarbg, int count)
 
 	restorescreennofree(tmcstatusbg, tmcstatus);
 	changetext(tmcstatus, tmpstr);
-	drawscreen(tmcstatus, 0);
+	drawscreen(tmcstatus, 0, 0);
 }
 
 //flag 0: don't draw
@@ -519,7 +519,7 @@ int screentmcsettings()
 
 char* tmcscreenscandir()
 {
-	struct skin* dir = getscreen("dir")
+	struct skin* dir = getscreen("dir");
 	char* ret = NULL, *bg = NULL;
 
 	dir->width = 700;
@@ -527,13 +527,13 @@ char* tmcscreenscandir()
 	dir->height = 650;
 	dir->prozheight = 0;
 
-	drawscreen(dir, 2);
+	drawscreen(dir, 2, 0);
 	bg = savescreen(dir);
 
 	ret = screendir(getconfig("rec_moviepath", NULL), "", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, dir->width, dir->prozwidth, dir->height, dir->prozheight, 0);
 
 	restorescreen(bg, dir);
-	blit(0);
+	blitfb(0);
 	return ret;
 }
 
@@ -553,7 +553,6 @@ void screentmcedit(char* file, int menuid)
 	struct skin* plot = getscreennode(tmcedit, "plot");
 	struct skin* rating = getscreennode(tmcedit, "rating");
 	struct skin* votes = getscreennode(tmcedit, "votes");
-	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *bg = NULL;
 	struct mediadb* node = NULL;
 	
@@ -580,7 +579,7 @@ void screentmcedit(char* file, int menuid)
 		changeinput(plot, node->plot);
 
 		tmpstr = oitoa(node->rating);
-		changeinput(rating, node->rating);
+		changeinput(rating, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 
 		tmpstr = oitoa(node->votes);
@@ -739,7 +738,7 @@ void screentmcinfo(char* file)
 		changetext(director, node->director);
 
 		tmpstr = oitoa(node->votes);
-		changeinput(votes, node->votes);
+		changeinput(votes, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 
 		changetext(plot, node->plot);
