@@ -269,7 +269,8 @@ void screendlna()
 	changeinput(port, node->port);
 	if(port->input != NULL)
 	{
-		for(i = 0; i < 6 - strlen(port->input); i++)
+		len = strlen(port->input);
+		for(i = 0; i < 5 - len; i++)
 			port->input = ostrcat("0", port->input, 0, 1);
 	}
 

@@ -20,7 +20,8 @@ void screenblindscanadjust()
 	changeinput(minfrequency, getconfig("blindminfrequency", NULL));
 	if(minfrequency->input != NULL)
 	{
-		for(i = 0; i < 5 - strlen(minfrequency->input); i++)
+		int len = strlen(minfrequency->input);
+		for(i = 0; i < 5 - len; i++)
 			minfrequency->input = ostrcat("0", minfrequency->input, 0, 1);
 	}
   
@@ -28,7 +29,8 @@ void screenblindscanadjust()
 	changeinput(maxfrequency, getconfig("blindmaxfrequency", NULL));
 	if(maxfrequency->input != NULL)
 	{
-		for(i = 0; i < 5 - strlen(maxfrequency->input); i++)
+		int len = strlen(maxfrequency->input);
+		for(i = 0; i < 5 - len; i++)
 			maxfrequency->input = ostrcat("0", maxfrequency->input, 0, 1);
 	}
   
@@ -36,7 +38,8 @@ void screenblindscanadjust()
 	changemask(stepfrequency, "00");
 	if(stepfrequency->input != NULL)
 	{
-		for(i = 0; i < 2 - strlen(stepfrequency->input); i++)
+		int len = strlen(stepfrequency->input);
+		for(i = 0; i < 2 - len; i++)
 			stepfrequency->input = ostrcat("0", stepfrequency->input, 0, 1);
 	}
   
@@ -44,7 +47,8 @@ void screenblindscanadjust()
 	changemask(minsignalrate, "00000");
 	if(minsignalrate->input != NULL)
 	{
-		for(i = 0; i < 5 - strlen(minsignalrate->input); i++)
+		int len = strlen(minsignalrate->input);
+		for(i = 0; i < 5 - len; i++)
 			minsignalrate->input = ostrcat("0", minsignalrate->input, 0, 1);
 	}
   
@@ -52,7 +56,8 @@ void screenblindscanadjust()
 	changemask(maxsignalrate, "00000");
 	if(maxsignalrate->input != NULL)
 	{
-		for(i = 0; i < 5 - strlen(maxsignalrate->input); i++)
+		int len = strlen(maxsignalrate->input);
+		for(i = 0; i < 5 - len; i++)
 			maxsignalrate->input = ostrcat("0", maxsignalrate->input, 0, 1);
 	}
   
@@ -60,7 +65,8 @@ void screenblindscanadjust()
 	changemask(stepsignalrate, "00");
 	if(stepsignalrate->input != NULL)
 	{
-		for(i = 0; i < 2 - strlen(stepsignalrate->input); i++)
+		int len = strlen(stepsignalrate->input);
+		for(i = 0; i < 2 - len; i++)
 			stepsignalrate->input = ostrcat("0", stepsignalrate->input, 0, 1);
 	}
 

@@ -546,9 +546,9 @@ char* tmcscreenscandir()
 
 void screentmcedit(char* file, int menuid)
 {
-//TODO
-	int rcret = 0, type = 0;
+	int rcret = 0, type = 0, i = 0;
 	struct skin* tmcedit = getscreen("tmcedit");
+	struct skin* listbox = getscreennode(tmcedit, "listbox");
 	struct skin* title = getscreennode(tmcedit, "title");
 	struct skin* year = getscreennode(tmcedit, "year");
 	struct skin* released = getscreennode(tmcedit, "released");
@@ -560,6 +560,7 @@ void screentmcedit(char* file, int menuid)
 	struct skin* plot = getscreennode(tmcedit, "plot");
 	struct skin* rating = getscreennode(tmcedit, "rating");
 	struct skin* votes = getscreennode(tmcedit, "votes");
+	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *bg = NULL;
 	struct mediadb* node = NULL;
 	
@@ -573,9 +574,16 @@ void screentmcedit(char* file, int menuid)
 	{
 		changeinput(title, node->title);
 
+		changemask(year, "0000");
 		tmpstr = oitoa(node->year);
 		changeinput(year, tmpstr);
 		free(tmpstr); tmpstr = NULL;
+		if(year->input != NULL)
+		{
+			int len = strlen(year->input);
+			for(i = 0; i < 4 - len; i++)
+				year->input = ostrcat("0", year->input, 0, 1);
+		}
 
 		changeinput(released, node->released);
 		changeinput(runtime, node->runtime);
@@ -586,13 +594,21 @@ void screentmcedit(char* file, int menuid)
 		changeinput(plot, node->plot);
 
 		tmpstr = oitoa(node->rating);
-		changeinput(rating, tmpstr);
+		changeinput(rating, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10");
+		setchoiceboxselection(rating, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 
+		changemask(votes, "0000000");
 		tmpstr = oitoa(node->votes);
-		changeinput(votes, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10");
-		setchoiceboxselection(votes, tmpstr);
+		changeinput(votes, tmpstr);
 		free(tmpstr); tmpstr = NULL;
+		if(votes->input != NULL)
+		{
+			int len = strlen(votes->input);
+			for(i = 0; i < 7 - len; i++)
+				votes->input = ostrcat("0", votes->input, 0, 1);
+		}
+
 
 		//tmpstr = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 		//tmpstr = ostrcat(node->poster, "_cover.jpg", 0, 0);
@@ -602,20 +618,25 @@ void screentmcedit(char* file, int menuid)
 		drawscreen(tmcedit, 2, 0);
 		bg = savescreen(tmcedit);
 
+		addscreenrc(tmcedit, listbox);
 		drawscreen(tmcedit, 0, 0);
 
+		tmp = listbox->select;
 		while(1)
 		{
+			addscreenrc(tmcedit, tmp);
 			rcret = waitrc(tmcedit, 0, 0);
+			tmp = listbox->select;
 
 			if(rcret == getrcconfigint("rcexit", NULL)) break;
 			if(rcret == getrcconfigint("rcok", NULL))
 			{
-				node = createmediadb(node, node->id, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, node->id, rating->ret, votes->ret, title->ret, node->file, 0);
+				node = createmediadb(node, node->id, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, node->id, rating->ret, votes->ret, node->file, title->ret, 0);
 				break;
 			}
 		}
 
+		delownerrc(tmcedit);
 		clearscreen(tmcedit);
 		restorescreen(bg, tmcedit);
 		blitfb(0);
@@ -708,7 +729,7 @@ void screentmcimdbsearch(char* file, int menuid)
 			tmdb = startplugin(shortname, "tmcinfo", 1);
 
 			if(tmdb != NULL)
-				node = createmediadb(node, tmdb->id, type, tmdb->title, tmdb->year, tmdb->released, tmdb->runtime, tmdb->genre, NULL, NULL, NULL, tmdb->plot, tmdb->id, tmdb->rating, tmdb->votes, node->title, node->file, 0);
+				node = createmediadb(node, tmdb->id, type, tmdb->title, tmdb->year, tmdb->released, tmdb->runtime, tmdb->genre, NULL, NULL, NULL, tmdb->plot, tmdb->id, tmdb->rating, tmdb->votes, node->file, node->title, 0);
 
 			clearscreen(tmcinfo);
 			restorescreen(bg, tmcinfo);
