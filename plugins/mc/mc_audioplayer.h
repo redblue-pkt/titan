@@ -8,6 +8,8 @@ void screenmc_audioplayer()
 {
 	char* filename = NULL;
 	char* currentdirectory = NULL;
+	char* selectedfile = NULL;
+
 	int rcret = 0, rcwait = 1000, playerret = 0, flag = 2, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, count = 0, tmpview = 0, playlist = 0, playertype = 0;
 
 	// workaround for grey background mvi
@@ -31,6 +33,7 @@ void screenmc_audioplayer()
 	struct skin* sprogress = getscreennode(infobar, "progress");
 
 	currentdirectory = ostrcat("", getconfig("mc_ap_path", NULL), 0, 0);
+	selectedfile = ostrcat(selectedfile, getconfig("mc_ap_selectedfile", NULL), 1, 0);
 
 	// enable listbox and set hidden
 	listbox->aktpage = -1;
@@ -63,7 +66,7 @@ void screenmc_audioplayer()
 	tmpview = view;
 	mc_changeview(view, filelist, apskin);
 
-	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, NULL);
+	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
 	addscreenrc(apskin, filelist);
 
 	while(1)
@@ -286,7 +289,9 @@ void screenmc_audioplayer()
 			if(playlist == 0)
 			{
 				if(ostrcmp(getconfig("mc_ap_path", NULL), filelistpath->text) != 0)
-					addconfig("mc_audio_ap_path", filelistpath->text);
+					addconfig("mc_ap_path", filelistpath->text);
+				if(ostrcmp(getconfig("mc_ap_selectedfile", NULL), filelist->select->name) != 0)
+					addconfig("mc_ap_selectedfile", filelist->select->name);
 			}
 
 			playerstop();
@@ -388,6 +393,7 @@ void screenmc_audioplayer()
 					debug(50, "mc_mounter_main filename: %s", filename);
 					//addconfig("mc_ap_path", filelistpath->text);
 					currentdirectory = ostrcat("", getconfig("mc_ap_path", NULL), 0, 0);
+					selectedfile = ostrcat(selectedfile, getconfig("mc_ap_selectedfile", NULL), 0, 0);
 
 					mc_mounter_main(0,filename,filelistpath,filelist,apskin,filemask,tmpview,currentdirectory);
 					debug(50, "mc_mounter_main done");
@@ -451,6 +457,7 @@ void screenmc_audioplayer()
 
 	free(filename), filename = NULL;
 	free(currentdirectory), currentdirectory = NULL;
+	free(selectedfile), selectedfile = NULL;
 
 	writevfd("Mediacenter");
 	debug(50, "closed");
