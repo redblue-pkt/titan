@@ -1996,7 +1996,7 @@ void startcreatethumb(flag)
 	{
 		if(getconfigint("createthumb", NULL) == 1 && status.createthumb == NULL)
 		{
-			status.createthumb = addtimer(&thumbthread, START, 1000, 1, NULL, NULL, NULL);
+//			status.createthumb = addtimer(&thumbthread, START, 1000, 1, NULL, NULL, NULL);
 			if(status.createthumb != NULL)
 				status.createthumb->flag = setbit(status.createthumb->flag, 0);
 		}
