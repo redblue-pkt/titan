@@ -86,7 +86,6 @@ void setdefaults()
 	status.rightoffset = getconfigint("fbrightoffset", NULL);
 	status.topoffset = getconfigint("fbtopoffset", NULL);
 	status.bottomoffset = getconfigint("fbbottomoffset", NULL);
-	status.createthumb = getconfigint("createthumb", NULL);
 	
 	status.bgpic = getskinconfig("bgpic", NULL);
 	if(status.bgpic != NULL)

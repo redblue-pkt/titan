@@ -1196,8 +1196,6 @@ struct status
 	int bottomoffset;
 	//background picture for all screens
 	char* bgpic;
-	//should thumb thread start
-//	int createthumb;
 	//time for next picmem timeout check
 	time_t picmemtimeout;
 	//show not tunable channel hidden (0)) or deaktive (1) in channellist
