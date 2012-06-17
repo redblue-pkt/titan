@@ -491,6 +491,50 @@ start:
 	clearscreen(playlist);
 }
 
+//used in mc, but don't use this function more
+void getplaylistmaxold(struct skin* playlist, int* maxdirs, int* maxfiles)
+{
+	struct skin* node = playlist;
+
+	while(node != NULL)
+	{
+		if(node->del == 2)
+		{
+			if(node->input != NULL)
+				(*maxdirs)++;
+			else
+				(*maxfiles)++;
+		}
+		node = node->next;
+	}
+}
+
+//used in mc, but don't use this function more
+struct skin* getplaylistrandomold(struct skin* playlist, int maxdirs, int maxfiles)
+{
+	int count = 0;
+	struct skin* node = playlist;
+
+	if(maxfiles < 1) return NULL;
+
+	srand(time(NULL));
+	int r = rand() % maxfiles;
+	r++;
+
+	while(node != NULL)
+	{
+		if(node->del == 2 && node->input == NULL)
+		{
+			count++;
+			if(count == r) break;
+		}
+
+		node = node->next;
+	}
+
+	return node;
+}
+
 int getplaylistmax(struct playlist* plist)
 {
 	int count = 0;

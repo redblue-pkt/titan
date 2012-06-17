@@ -170,8 +170,8 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 			if(status.random == 1 && status.repeat == 0)
 			{
 				int maxdirs = 0, maxfiles = 0;
-				getplaylistmax(listbox, &maxdirs, &maxfiles);
-				struct skin* tmplist = getplaylistrandom(listbox, maxdirs, maxfiles);
+				getplaylistmaxold(listbox, &maxdirs, &maxfiles);
+				struct skin* tmplist = getplaylistrandomold(listbox, maxdirs, maxfiles);
 				debug(50, "struct skin xtext=%s", tmplist->text);
 				if(tmplist != NULL)
 				{
@@ -451,8 +451,8 @@ void playerrandom(struct skin* apskin, struct skin* filelist, struct skin* listb
 		if(status.random == 0)
 		{
 			int maxdirs = 0, maxfiles = 0;
-			getplaylistmax(listbox, &maxdirs, &maxfiles);
-			struct skin* tmplist = getplaylistrandom(listbox, maxdirs, maxfiles);
+			getplaylistmaxold(listbox, &maxdirs, &maxfiles);
+			struct skin* tmplist = getplaylistrandomold(listbox, maxdirs, maxfiles);
 			if(tmplist != NULL)
 			{
 				debug(50, "struct skin randomtext=%s", tmplist->text);

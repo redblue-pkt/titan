@@ -27,8 +27,8 @@ void setosdtransparent(int value);
 //void mc_audioplayer_infobar(struct skin* apskin, struct skin* infobar, struct skin* spos, struct skin* slen, struct skin* sreverse, struct skin* sprogress, char* filename);
 
 // playlist.h
-void getplaylistmax(struct skin* playlist, int* maxdirs, int* maxfiles);
-struct skin* getplaylistrandom(struct skin* playlist, int maxdirs, int maxfiles);
+void getplaylistmaxold(struct skin* playlist, int* maxdirs, int* maxfiles);
+struct skin* getplaylistrandomold(struct skin* playlist, int maxdirs, int maxfiles);
 
 // menu.h
 struct skin* menu(struct skin* menu);
