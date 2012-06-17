@@ -107,8 +107,6 @@ struct skin* menu(struct skin* menu, int flag)
 int menucall(struct skin* menunode, struct skin* menuentry, int check)
 {
 	debug(1000, "in");
-//	struct skin* menutext = getscreennode(menunode, "menutext");
-//	struct skin* details = getscreennode(menunode, "details");
 
 	void (*startplugin) (void);
 	int ret = 0, pincheck = 0;
@@ -123,9 +121,6 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	if(!(menuentry->type & MENU)) return 1;
 	
 	debug(1000, "menuentry->name=%s", menuentry->name);
-
-//	changetext(menutext,_(menuentry->name));
-//	changetext(details,menuentry->name);
 		
 	tmpstr = ostrcat("protect_", menuentry->name, 0, 0);
 	pincheck = getconfigint(tmpstr, 0);
@@ -627,6 +622,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 			if(startplugin != NULL)
 			{
 				if(check == 1) return 0;
+				resettvpic();
 				startplugin();
 			}
 		}
@@ -643,6 +639,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	else
 		ret = 1;
 
+	resettvpic();
 	debug(1000, "out");
 	return ret;
 }
