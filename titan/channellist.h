@@ -472,7 +472,7 @@ void changechanneltitle(struct skin* channellist, struct skin* listbox, int list
 		listbox->bgcol = convertcol("mvmode_bgcol");
 		listbox->fontcol = convertcol("mvmode_fontcol");
 		changetitle(channellist, tmpstr);
-		changetext(titletext, tmpstr);
+		if(titletext != status.skinerr) changetext(titletext, tmpstr);
 	}
 	else if(listmode == RMMODE)
 	{
@@ -481,7 +481,7 @@ void changechanneltitle(struct skin* channellist, struct skin* listbox, int list
 		listbox->bgcol = convertcol("rmmode_bgcol");
 		listbox->fontcol = convertcol("rmmode_fontcol");
 		changetitle(channellist, tmpstr);
-		changetext(titletext, tmpstr);
+		if(titletext != status.skinerr) changetext(titletext, tmpstr);
 	}
 	else if(listmode == CPMODE)
 	{
@@ -490,7 +490,7 @@ void changechanneltitle(struct skin* channellist, struct skin* listbox, int list
 		listbox->bgcol = convertcol("cpmode_bgcol");
 		listbox->fontcol = convertcol("cpmode_fontcol");
 		changetitle(channellist, tmpstr);
-		changetext(titletext, tmpstr);
+		if(titletext != status.skinerr) changetext(titletext, tmpstr);
 	}
 	else if(listmode == PROTECTMODE)
 	{
@@ -499,7 +499,7 @@ void changechanneltitle(struct skin* channellist, struct skin* listbox, int list
 		listbox->bgcol = convertcol("protectmode_bgcol");
 		listbox->fontcol = convertcol("protectmode_fontcol");
 		changetitle(channellist, tmpstr);
-		changetext(titletext, tmpstr);
+		if(titletext != status.skinerr) changetext(titletext, tmpstr);
 	}
 	else if(listmode == EDITMODE)
 	{
@@ -508,12 +508,12 @@ void changechanneltitle(struct skin* channellist, struct skin* listbox, int list
 		listbox->bgcol = convertcol("editmode_bgcol");
 		listbox->fontcol = convertcol("editmode_fontcol");
 		changetitle(channellist, tmpstr);
-		changetext(titletext, tmpstr);
+		if(titletext != status.skinerr) changetext(titletext, tmpstr);
 	}
 	else
 	{	
 		changetitle(channellist, *oldtitle);
-		changetext(titletext, *oldtitle);
+		if(titletext != status.skinerr) changetext(titletext, *oldtitle);
 		*oldtitle = NULL;
 		listbox->fontcol = *oldfontcol;
 		*oldfontcol = -9999;
@@ -565,7 +565,7 @@ start:
 	if(nochanneltitle == 0) 
 	{
 		changetitle(channellist, "");
-		changetext(titletext, "");
+		if(titletext != status.skinerr) changetext(titletext, "");
 		listbox->bgcol = convertcol("bgcol");
 		listbox->fontcol = convertcol("fontcol");
 	}
@@ -592,7 +592,7 @@ start:
 			if(nochanneltitle == 0)
 			{
 				changetitle(channellist, tmpstr1);
-				changetext(titletext, tmpstr1);
+				if(titletext != status.skinerr) changetext(titletext, tmpstr1);
 			}
 			free(tmpstr1); tmpstr1 = NULL;
 			list = BOUQUETCHANNEL;
@@ -609,7 +609,7 @@ start:
 		if(nochanneltitle == 0)
 		{
 			changetitle(channellist, tmpstr1);
-			changetext(titletext, tmpstr1);
+			if(titletext != status.skinerr) changetext(titletext, tmpstr1);
 		}
 		free(tmpstr1); tmpstr1 = NULL;
 		list = AZCHANNEL;
@@ -625,7 +625,7 @@ start:
 		if(nochanneltitle == 0)
 		{
 			changetitle(channellist, tmpstr1);
-			changetext(titletext, tmpstr);
+			if(titletext != status.skinerr) changetext(titletext, tmpstr);
 		}
 		free(tmpstr1); tmpstr1 = NULL;
 		struct sat* satnode = getsat(tmpstr + 6);
@@ -642,7 +642,7 @@ start:
 		if(nochanneltitle == 0)
 		{
 			changetitle(channellist, tmpstr1);
-			changetext(titletext, tmpstr1);
+			if(titletext != status.skinerr) changetext(titletext, tmpstr1);
 		}
 		free(tmpstr1); tmpstr1 = NULL;
 		struct provider* providernode = getproviderbyname(tmpstr + 11);
@@ -656,7 +656,7 @@ start:
 		if(nochanneltitle == 0)
 		{
 			changetitle(channellist, _("All Channels"));
-			changetext(titletext, _("All Channels"));
+			if(titletext != status.skinerr) changetext(titletext, _("All Channels"));
 		}
 		list = ALLCHANNEL;
 		showallchannel(channellist, listbox, flag);
@@ -1079,7 +1079,7 @@ start:
 			if(nochanneltitle == 0)
 			{
 				changetitle(channellist, _("All Channels"));
-				changetext(titletext, _("All Channels"));
+				if(titletext != status.skinerr) changetext(titletext, _("All Channels"));
 			}
 			delmarkedscreennodes(channellist, 1);
 			delmarkedscreennodes(channellist, 2);
@@ -1095,7 +1095,7 @@ start:
 			if(nochanneltitle == 0) 
 			{
 				changetitle(channellist, _("Bouquets"));
-				changetext(titletext, _("Bouquets"));
+				if(titletext != status.skinerr) changetext(titletext, _("Bouquets"));
 			}
 			delmarkedscreennodes(channellist, 1);
 			delmarkedscreennodes(channellist, 2);
@@ -1129,7 +1129,7 @@ start:
 			if(nochanneltitle == 0)
 			{
 				changetitle(channellist, _("Satellites"));
-				changetext(titletext, _("Satellites"));
+				if(titletext != status.skinerr) changetext(titletext, _("Satellites"));
 			}	
 			delmarkedscreennodes(channellist, 1);
 			delmarkedscreennodes(channellist, 2);
@@ -1163,7 +1163,7 @@ start:
 			if(nochanneltitle == 0)
 			{
 				changetitle(channellist, _("Channels A-Z"));
-				changetext(titletext, _("Channels A-Z"));
+				if(titletext != status.skinerr) changetext(titletext, _("Channels A-Z"));
 			}
 			delmarkedscreennodes(channellist, 1);
 			delmarkedscreennodes(channellist, 2);
@@ -1197,7 +1197,7 @@ start:
 			if(nochanneltitle == 0)
 			{
 				changetitle(channellist, _("Provider"));
-				changetext(titletext, _("Provider"));
+				if(titletext != status.skinerr) changetext(titletext, _("Provider"));
 			}	
 			delmarkedscreennodes(channellist, 1);
 			delmarkedscreennodes(channellist, 2);
@@ -1313,7 +1313,7 @@ start:
 				if(nochanneltitle == 0)
 				{
 					changetitle(channellist, tmpstr);
-					changetext(titletext, tmpstr);
+					if(titletext != status.skinerr) changetext(titletext, tmpstr);
 				}
 				free(tmpstr); tmpstr = NULL;
 				tmpstr = ostrcat(tmpstr, "(BOUQUET)-", 0, 0);
@@ -1387,7 +1387,7 @@ start:
 				if(nochanneltitle == 0)
 				{
 					changetitle(channellist, tmpstr);
-					changetext(titletext, tmpstr);
+					if(titletext != status.skinerr) changetext(titletext, tmpstr);
 				}
 				free(tmpstr); tmpstr = NULL;
 				tmpstr = ostrcat(tmpstr, "(SAT)-", 0, 0);
@@ -1453,7 +1453,7 @@ start:
 				if(nochanneltitle == 0)
 				{
 					changetitle(channellist, tmpstr);
-					changetext(titletext, tmpstr);
+					if(titletext != status.skinerr) changetext(titletext, tmpstr);
 				}
 				free(tmpstr); tmpstr = NULL;
 				tmpstr = ostrcat(tmpstr, "(A-Z)-", 0, 0);
@@ -1527,7 +1527,7 @@ start:
 				if(nochanneltitle == 0)
 				{
 					changetitle(channellist, tmpstr);
-					changetext(titletext, tmpstr);
+					if(titletext != status.skinerr) changetext(titletext, tmpstr);
 				}
 				free(tmpstr); tmpstr = NULL;
 				tmpstr = ostrcat(tmpstr, "(PROVIDER)-", 0, 0);
