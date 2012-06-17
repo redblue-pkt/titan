@@ -779,9 +779,9 @@ firstwizzardstep1:
 	addtimer(&checkboxstartthread, START, 1000, 1, NULL, NULL, NULL);
 	//check kill net (security)
 	addtimer(&ckeckkillnetthread, START, 1000, 1, NULL, NULL, NULL);
+
 	//thumb create thread
-	if(getconfigint("createthumb", NULL) == 1)
-		addtimer(&thumbthread, START, 1000, 1, NULL, NULL, NULL);
+	startcreatethumb(1);
 
 	//start webserver
 	starthttpd(1);

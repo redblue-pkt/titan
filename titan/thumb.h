@@ -58,6 +58,7 @@ void thumbthread(struct stimerthread* self)
 			free(thumbfile); thumbfile = NULL;
 			delqueue(qe, 0);
 			qe = getqueue(101);
+			if(self->aktion == STOP) break;
 		}
 
 		while(count < 6)
@@ -69,6 +70,7 @@ void thumbthread(struct stimerthread* self)
 	}
 
 	status.createthumb = 0;
+	delqueue(qe, 0);
 	debug(307, "end thumb thread");
 }
 
