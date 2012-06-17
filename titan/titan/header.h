@@ -15,6 +15,9 @@ struct mediadb* getmediadb(char* file, int flag);
 void screenmediadbsettings();
 
 //mediadb.h
+int writemediadb(const char *filename);
+int delmediadbfilter(struct mediadbfilter* mnode, int flag);
+struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* title, char* year, char* released, char* runtime, char* genre, char* director, char* writer, char* actors, char* plot, char* poster, char* rating, char* votes, char* fullfile, char* file, int flag);
 void freemediadbcontent(struct mediadb* node);
 int findfiles(char* dirname, int type, int flag, int flag1);
 struct mediadbfilter* getlastmediadbfilter(struct mediadbfilter* node, int flag);
@@ -495,6 +498,7 @@ int writeconfigtmp();
 int readconfig(const char *filename, struct clist** tmpconfig);
 
 //rc.h
+int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int filelistview);
 int waitrc(struct skin* owner, unsigned int timeout, int flag);
 void delownerrc(struct skin* owner);
 void delrc(int key, struct skin* owner, struct skin* screennode);
@@ -514,6 +518,8 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+char* string_removechar(char *str);
+unsigned int gethash(char* str);
 char* oregex(char* regex, char* str);
 void resettvpic();
 int resetvmpeg(struct dvbdev* node);
