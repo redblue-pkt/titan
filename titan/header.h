@@ -196,11 +196,6 @@ int videogetpts(struct dvbdev* node, uint64_t* pts);
 int findchannel(struct transponder* tpnode, unsigned char *buf, uint8_t* lastsecnr, struct skin* scan, struct skin* listbox, int flag);
 void screenscanconfig(int flag);
 
-// mainplaylist.h
-struct mainplaylist* screenmainplaylist(int flag);
-int getplaylistmax(struct playlist* plist);
-struct playlist* getplaylistrandom(struct playlist* plist, int max);
-
 // screensaver.h
 int showscreensaver();
 int initscreensaver();
@@ -216,6 +211,11 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 int writeallplaylist();
 int writemainplaylist(const char *filename);
 struct mainplaylist* getmainplaylistbyplaylistpointer(struct playlist* playlistnode);
+struct mainplaylist* screenmainplaylist(int flag);
+
+//playlist.h
+int getplaylistmax(struct playlist* plist);
+struct playlist* getplaylistrandom(struct playlist* plist, int max);
 
 // screensaveradjust.h
 void screensaveradjust();

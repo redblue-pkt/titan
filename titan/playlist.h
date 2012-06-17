@@ -538,7 +538,7 @@ struct skin* getplaylistrandomold(struct skin* playlist, int maxdirs, int maxfil
 int getplaylistmax(struct playlist* plist)
 {
 	int count = 0;
-	struct skin* node = plist;
+	struct playlist* node = plist;
 
 	while(node != NULL)
 	{
@@ -552,7 +552,7 @@ int getplaylistmax(struct playlist* plist)
 struct playlist* getplaylistrandom(struct playlist* plist, int max)
 {
 	int count = 0;
-	struct skin* node = plist;
+	struct playlist* node = plist;
 	
 	if(max < 1) return NULL;
 
