@@ -1078,12 +1078,11 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 	//find media files
 	if(path == NULL)
 	{
+		findfiles("/media", type, 0, 0);
+		/*
 		addhddall();
 		hddnode = hdd;
 
-#ifdef SIMULATE
-		findfiles("/home/nit/titan/x", 100, 1, 0);
-#else
 		while(hddnode != NULL)
 		{
 			if(hddnode->partition != 0)
@@ -1094,7 +1093,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 			}
 			hddnode = hddnode->next;
 		}
-#endif
+		*/
 	}
 	else
 		findfiles(path, type, 0, 0);
