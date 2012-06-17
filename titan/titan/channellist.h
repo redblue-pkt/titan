@@ -62,7 +62,7 @@ void changechannelepg(struct channel* chnode, struct skin* node)
 	}
 }
 
-void showallchannel(struct skin* channellist, struct skin* listbox, int mode)
+void showallchannel(struct skin* channellist, struct skin* listbox, struct skin* channeltimeline, int mode)
 {
 	struct skin* chnode = NULL;
 	struct channel* tmpchannel = channel;
@@ -87,6 +87,21 @@ void showallchannel(struct skin* channellist, struct skin* listbox, int mode)
 						chnode->hidden = YES;
 					else
 						chnode->deaktivcol = deaktivcol;
+				}
+				if(status.showchanneltimeline == 1 && channeltimeline != status.skinerr)
+				{
+					chnode->textposx = channeltimeline->width + 10;
+					struct skin* chnode1 = NULL;
+					chnode1 = addlistbox(channellist, chnode, chnode, 1);
+					chnode1->progresscol = channeltimeline->progresscol;
+					chnode1->skinfunc = convertfunc("getepgchanneltimeline", &chnode1->funcrettype);
+					chnode1->handle = (char*)tmpbouquet->channel;
+					chnode1->posy = channeltimeline->posy;
+					chnode1->width = channeltimeline->width;
+					chnode1->height = channeltimeline->height;
+					chnode1->bordersize = channeltimeline->bordersize;
+					chnode1->bordercol = channeltimeline->bordercol;
+					chnode1->prozwidth = 0;
 				}
 			}
 		}
@@ -159,7 +174,7 @@ void showbouquetchannel(struct skin* channellist, struct skin* listbox, struct s
 	}
 }
 
-void showproviderchannel(struct skin* channellist, struct skin* listbox, struct provider* providernode, int mode)
+void showproviderchannel(struct skin* channellist, struct skin* listbox, struct skin* channeltimeline, struct provider* providernode, int mode)
 {
 	struct skin* chnode = NULL;
 	struct channel* tmpchannel = channel;
@@ -187,6 +202,21 @@ void showproviderchannel(struct skin* channellist, struct skin* listbox, struct 
 						else
 							chnode->deaktivcol = deaktivcol;
 					}
+					if(status.showchanneltimeline == 1 && channeltimeline != status.skinerr)
+					{
+						chnode->textposx = channeltimeline->width + 10;
+						struct skin* chnode1 = NULL;
+						chnode1 = addlistbox(channellist, chnode, chnode, 1);
+						chnode1->progresscol = channeltimeline->progresscol;
+						chnode1->skinfunc = convertfunc("getepgchanneltimeline", &chnode1->funcrettype);
+						chnode1->handle = (char*)tmpbouquet->channel;
+						chnode1->posy = channeltimeline->posy;
+						chnode1->width = channeltimeline->width;
+						chnode1->height = channeltimeline->height;
+						chnode1->bordersize = channeltimeline->bordersize;
+						chnode1->bordercol = channeltimeline->bordercol;
+						chnode1->prozwidth = 0;
+					}
 				}
 			}
 		}
@@ -213,7 +243,7 @@ void showprovider(struct skin* channellist, struct skin* listbox)
 	}
 }
 
-void showsatchannel(struct skin* channellist, struct skin* listbox, struct sat* satnode, int mode)
+void showsatchannel(struct skin* channellist, struct skin* listbox, struct skin* channeltimeline, struct sat* satnode, int mode)
 {
 	struct skin* chnode = NULL;
 	struct channel* tmpchannel = channel;
@@ -243,6 +273,21 @@ void showsatchannel(struct skin* channellist, struct skin* listbox, struct sat* 
 							chnode->hidden = YES;
 						else
 							chnode->deaktivcol = deaktivcol;
+					}
+					if(status.showchanneltimeline == 1 && channeltimeline != status.skinerr)
+					{
+						chnode->textposx = channeltimeline->width + 10;
+						struct skin* chnode1 = NULL;
+						chnode1 = addlistbox(channellist, chnode, chnode, 1);
+						chnode1->progresscol = channeltimeline->progresscol;
+						chnode1->skinfunc = convertfunc("getepgchanneltimeline", &chnode1->funcrettype);
+						chnode1->handle = (char*)tmpbouquet->channel;
+						chnode1->posy = channeltimeline->posy;
+						chnode1->width = channeltimeline->width;
+						chnode1->height = channeltimeline->height;
+						chnode1->bordersize = channeltimeline->bordersize;
+						chnode1->bordercol = channeltimeline->bordercol;
+						chnode1->prozwidth = 0;
 					}
 				}
 			}
@@ -303,7 +348,7 @@ void showsat(struct skin* channellist, struct skin* listbox)
 	}
 }
 
-void showazchannel(struct skin* channellist, struct skin* listbox, int character, int mode)
+void showazchannel(struct skin* channellist, struct skin* listbox, struct skin* channeltimeline, int character, int mode)
 {
 	struct skin* chnode = NULL;
 	struct channel* tmpchannel = channel;
@@ -330,6 +375,21 @@ void showazchannel(struct skin* channellist, struct skin* listbox, int character
 							chnode->hidden = YES;
 						else
 							chnode->deaktivcol = deaktivcol;
+					}
+					if(status.showchanneltimeline == 1 && channeltimeline != status.skinerr)
+					{
+						chnode->textposx = channeltimeline->width + 10;
+						struct skin* chnode1 = NULL;
+						chnode1 = addlistbox(channellist, chnode, chnode, 1);
+						chnode1->progresscol = channeltimeline->progresscol;
+						chnode1->skinfunc = convertfunc("getepgchanneltimeline", &chnode1->funcrettype);
+						chnode1->handle = (char*)tmpbouquet->channel;
+						chnode1->posy = channeltimeline->posy;
+						chnode1->width = channeltimeline->width;
+						chnode1->height = channeltimeline->height;
+						chnode1->bordersize = channeltimeline->bordersize;
+						chnode1->bordercol = channeltimeline->bordercol;
+						chnode1->prozwidth = 0;
 					}
 				}
 			}
@@ -405,13 +465,13 @@ void drawchannellist(struct skin* channellist, int list, struct skin* listbox)
 void recalclist(int list, void* aktlist, int listmode, struct skin* channellist, struct skin* listbox, struct skin* channeltimeline)
 {
 	if(list == ALLCHANNEL)
-		showallchannel(channellist, listbox, listmode);
+		showallchannel(channellist, listbox, channeltimeline, listmode);
 	if(list == SATCHANNEL)
-		showsatchannel(channellist, listbox, (struct sat*)aktlist, listmode);
+		showsatchannel(channellist, listbox, channeltimeline, (struct sat*)aktlist, listmode);
 	if(list == PROVIDERCHANNEL)
-		showproviderchannel(channellist, listbox, (struct provider*)aktlist, listmode);
+		showproviderchannel(channellist, listbox, channeltimeline, (struct provider*)aktlist, listmode);
 	if(list == AZCHANNEL)
-		showazchannel(channellist, listbox, (int)aktlist, listmode);
+		showazchannel(channellist, listbox, channeltimeline, (int)aktlist, listmode);
 	if(list == BOUQUETCHANNEL)
 		showbouquetchannel(channellist, listbox, channeltimeline, ((struct mainbouquet*)aktlist)->bouquet, (struct mainbouquet*)aktlist, listmode);
 	if(list == MAINBOUQUETLIST)
@@ -614,7 +674,7 @@ start:
 		free(tmpstr1); tmpstr1 = NULL;
 		list = AZCHANNEL;
 		aktlist = (void*)(int)tmpstr[6];
-		showazchannel(channellist, listbox, (int)tmpstr[6], flag);
+		showazchannel(channellist, listbox, channeltimeline, (int)tmpstr[6], flag);
 		selectchannel(listbox, 0, 0);
 	}
 	else if(ostrncmp("(SAT)-", tmpstr, 6) == 0 && strlen(tmpstr) > 6)
@@ -631,7 +691,7 @@ start:
 		struct sat* satnode = getsat(tmpstr + 6);
 		list = SATCHANNEL;
 		aktlist = (void*)satnode;
-		showsatchannel(channellist, listbox, satnode, flag);
+		showsatchannel(channellist, listbox, channeltimeline, satnode, flag);
 		selectchannel(listbox, 0, 0);
 	}
 	else if(ostrncmp("(PROVIDER)-", tmpstr, 11) == 0 && strlen(tmpstr) > 6)
@@ -648,7 +708,7 @@ start:
 		struct provider* providernode = getproviderbyname(tmpstr + 11);
 		list = PROVIDERCHANNEL;
 		aktlist = (void*)providernode;
-		showproviderchannel(channellist, listbox, providernode, flag);
+		showproviderchannel(channellist, listbox, channeltimeline, providernode, flag);
 		selectchannel(listbox, 0, 0);
 	}
 	else
@@ -659,7 +719,7 @@ start:
 			if(titletext != status.skinerr) changetext(titletext, _("All Channels"));
 		}
 		list = ALLCHANNEL;
-		showallchannel(channellist, listbox, flag);
+		showallchannel(channellist, listbox, channeltimeline, flag);
 		selectchannel(listbox, 0, 0);
 	}
 
@@ -1083,7 +1143,7 @@ start:
 			}
 			delmarkedscreennodes(channellist, 1);
 			delmarkedscreennodes(channellist, 2);
-			showallchannel(channellist, listbox, flag);
+			showallchannel(channellist, listbox, channeltimeline, flag);
 			selectchannel(listbox, 0, 0);
 			changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
 			drawchannellist(channellist, list, listbox);
@@ -1398,7 +1458,7 @@ start:
 					addconfigtmp("rchannellist", tmpstr);
 				free(tmpstr); tmpstr = NULL;
 				aktlist = listbox->select->handle;
-				showsatchannel(channellist, listbox, (struct sat*)listbox->select->handle, flag);
+				showsatchannel(channellist, listbox, channeltimeline, (struct sat*)listbox->select->handle, flag);
 				delmarkedscreennodes(channellist, 2);
 				selectchannel(listbox, 0, 0);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
@@ -1464,7 +1524,7 @@ start:
 					addconfigtmp("rchannellist", tmpstr);
 				free(tmpstr); tmpstr = NULL;
 				aktlist = listbox->select->handle;
-				showazchannel(channellist, listbox, (int)listbox->select->handle, flag);
+				showazchannel(channellist, listbox, channeltimeline, (int)listbox->select->handle, flag);
 				delmarkedscreennodes(channellist, 2);
 				selectchannel(listbox, 0, 0);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
@@ -1538,7 +1598,7 @@ start:
 					addconfigtmp("rchannellist", tmpstr);
 				free(tmpstr); tmpstr = NULL;
 				aktlist = listbox->select->handle;
-				showproviderchannel(channellist, listbox, (struct provider*) listbox->select->handle, flag);
+				showproviderchannel(channellist, listbox, channeltimeline, (struct provider*) listbox->select->handle, flag);
 				delmarkedscreennodes(channellist, 2);
 				selectchannel(listbox, 0, 0);
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
