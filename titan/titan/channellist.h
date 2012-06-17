@@ -565,6 +565,7 @@ start:
 	if(nochanneltitle == 0) 
 	{
 		changetitle(channellist, "");
+		changetext(titletext, "");
 		listbox->bgcol = convertcol("bgcol");
 		listbox->fontcol = convertcol("fontcol");
 	}
@@ -605,7 +606,11 @@ start:
 		tmpstr1 = ostrcat(tmpstr1, _("Channel"), 0, 0);
 		tmpstr1 = ostrcat(tmpstr1, " - ", 1, 0);
 		tmpstr1 = ostrcat(tmpstr1, tmpstr + 6, 1, 0);
-		if(nochanneltitle == 0) changetitle(channellist, tmpstr1);
+		if(nochanneltitle == 0)
+		{
+			changetitle(channellist, tmpstr1);
+			changetext(titletext, tmpstr1);
+		}
 		free(tmpstr1); tmpstr1 = NULL;
 		list = AZCHANNEL;
 		aktlist = (void*)(int)tmpstr[6];
@@ -617,7 +622,11 @@ start:
 		tmpstr1 = ostrcat(tmpstr1, _("Satellites"), 0, 0);
 		tmpstr1 = ostrcat(tmpstr1, " - ", 1, 0);
 		tmpstr1 = ostrcat(tmpstr1, tmpstr + 6, 1, 0);
-		if(nochanneltitle == 0) changetitle(channellist, tmpstr1);
+		if(nochanneltitle == 0)
+		{
+			changetitle(channellist, tmpstr1);
+			changetext(titletext, tmpstr);
+		}
 		free(tmpstr1); tmpstr1 = NULL;
 		struct sat* satnode = getsat(tmpstr + 6);
 		list = SATCHANNEL;
@@ -630,7 +639,11 @@ start:
 		tmpstr1 = ostrcat(tmpstr1, _("Provider"), 0, 0);
 		tmpstr1 = ostrcat(tmpstr1, " - ", 1, 0);
 		tmpstr1 = ostrcat(tmpstr1, tmpstr + 11, 1, 0);
-		if(nochanneltitle == 0) changetitle(channellist, tmpstr1);
+		if(nochanneltitle == 0)
+		{
+			changetitle(channellist, tmpstr1);
+			changetext(titletext, tmpstr1);
+		}
 		free(tmpstr1); tmpstr1 = NULL;
 		struct provider* providernode = getproviderbyname(tmpstr + 11);
 		list = PROVIDERCHANNEL;
@@ -640,7 +653,11 @@ start:
 	}
 	else
 	{
-		if(nochanneltitle == 0) changetitle(channellist, _("All Channels"));
+		if(nochanneltitle == 0)
+		{
+			changetitle(channellist, _("All Channels"));
+			changetext(titletext, _("All Channels"));
+		}
 		list = ALLCHANNEL;
 		showallchannel(channellist, listbox, flag);
 		selectchannel(listbox, 0, 0);
@@ -1059,7 +1076,11 @@ start:
 				addconfigtmp("channellist", "(ALL)");
 			else
 				addconfigtmp("rchannellist", "(ALL)");
-			if(nochanneltitle == 0) changetitle(channellist, _("All Channels"));
+			if(nochanneltitle == 0)
+			{
+				changetitle(channellist, _("All Channels"));
+				changetext(titletext, _("All Channels"));
+			}
 			delmarkedscreennodes(channellist, 1);
 			delmarkedscreennodes(channellist, 2);
 			showallchannel(channellist, listbox, flag);
@@ -1071,7 +1092,11 @@ start:
 		if(rcret == getrcconfigint("rcblue", NULL) || rcret == getrcconfigint("rcfav", NULL))
 		{
 			list = MAINBOUQUETLIST;
-			if(nochanneltitle == 0) changetitle(channellist, _("Bouquets"));
+			if(nochanneltitle == 0) 
+			{
+				changetitle(channellist, _("Bouquets"));
+				changetext(titletext, _("Bouquets"));
+			}
 			delmarkedscreennodes(channellist, 1);
 			delmarkedscreennodes(channellist, 2);
 			showmainbouquet(channellist, listbox);
@@ -1101,7 +1126,11 @@ start:
 		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			list = SATLIST;
-			if(nochanneltitle == 0) changetitle(channellist, _("Satellites"));
+			if(nochanneltitle == 0)
+			{
+				changetitle(channellist, _("Satellites"));
+				changetext(titletext, _("Satellites"));
+			}	
 			delmarkedscreennodes(channellist, 1);
 			delmarkedscreennodes(channellist, 2);
 			showsat(channellist, listbox);
@@ -1131,7 +1160,11 @@ start:
 		if(rcret == getrcconfigint("rctext", NULL))
 		{
 			list = AZLIST;
-			if(nochanneltitle == 0) changetitle(channellist, _("Channels A-Z"));
+			if(nochanneltitle == 0)
+			{
+				changetitle(channellist, _("Channels A-Z"));
+				changetext(titletext, _("Channels A-Z"));
+			}
 			delmarkedscreennodes(channellist, 1);
 			delmarkedscreennodes(channellist, 2);
 			showaz(channellist, listbox);
@@ -1161,7 +1194,11 @@ start:
 		if(rcret == getrcconfigint("rcyellow", NULL))
 		{
 			list = PROVIDERLIST;
-			if(nochanneltitle == 0) changetitle(channellist, _("Provider"));
+			if(nochanneltitle == 0)
+			{
+				changetitle(channellist, _("Provider"));
+				changetext(titletext, _("Provider"));
+			}	
 			delmarkedscreennodes(channellist, 1);
 			delmarkedscreennodes(channellist, 2);
 			showprovider(channellist, listbox);
@@ -1273,7 +1310,11 @@ start:
 				tmpstr = ostrcat(tmpstr, _("Bouquets"), 0, 0);
 				tmpstr = ostrcat(tmpstr, " - ", 1, 0);
 				tmpstr = ostrcat(tmpstr, listbox->select->text, 1, 0);
-				if(nochanneltitle == 0) changetitle(channellist, tmpstr);
+				if(nochanneltitle == 0)
+				{
+					changetitle(channellist, tmpstr);
+					changetext(titletext, tmpstr);
+				}
 				free(tmpstr); tmpstr = NULL;
 				tmpstr = ostrcat(tmpstr, "(BOUQUET)-", 0, 0);
 				tmpstr = ostrcat(tmpstr, listbox->select->text, 1, 0);
@@ -1343,7 +1384,11 @@ start:
 				tmpstr = ostrcat(tmpstr, _("Satellites"), 0, 0);
 				tmpstr = ostrcat(tmpstr, " - ", 1, 0);
 				tmpstr = ostrcat(tmpstr, listbox->select->text, 1, 0);
-				if(nochanneltitle == 0) changetitle(channellist, tmpstr);
+				if(nochanneltitle == 0)
+				{
+					changetitle(channellist, tmpstr);
+					changetext(titletext, tmpstr);
+				}
 				free(tmpstr); tmpstr = NULL;
 				tmpstr = ostrcat(tmpstr, "(SAT)-", 0, 0);
 				tmpstr = ostrcat(tmpstr, listbox->select->text, 1, 0);
@@ -1405,7 +1450,11 @@ start:
 				tmpstr = ostrcat(tmpstr, _("Channel"), 0, 0);
 				tmpstr = ostrcat(tmpstr, " - ", 1, 0);
 				tmpstr = ostrcat(tmpstr, listbox->select->text, 1, 0);
-				if(nochanneltitle == 0) changetitle(channellist, tmpstr);
+				if(nochanneltitle == 0)
+				{
+					changetitle(channellist, tmpstr);
+					changetext(titletext, tmpstr);
+				}
 				free(tmpstr); tmpstr = NULL;
 				tmpstr = ostrcat(tmpstr, "(A-Z)-", 0, 0);
 				tmpstr = ostrcat(tmpstr, listbox->select->text, 1, 0);
@@ -1475,7 +1524,11 @@ start:
 				tmpstr = ostrcat(tmpstr, _("Provider"), 0, 0);
 				tmpstr = ostrcat(tmpstr, " - ", 1, 0);
 				tmpstr = ostrcat(tmpstr, listbox->select->text, 1, 0);
-				if(nochanneltitle == 0) changetitle(channellist, tmpstr);
+				if(nochanneltitle == 0)
+				{
+					changetitle(channellist, tmpstr);
+					changetext(titletext, tmpstr);
+				}
 				free(tmpstr); tmpstr = NULL;
 				tmpstr = ostrcat(tmpstr, "(PROVIDER)-", 0, 0);
 				tmpstr = ostrcat(tmpstr, listbox->select->text, 1, 0);
