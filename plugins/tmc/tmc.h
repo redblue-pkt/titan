@@ -9,13 +9,13 @@ int mediadbfiltercount = 0;
 
 //Mainmenu
 int menu0pos = 0;
-char* menu0[] = {"skin/tmcsettings.png", "skin/tmcpicture.png", "skin/tmcvideo.png", "skin/tmcaudio.png", "skin/tmcexit.png"};
-char* menu0txt[] = {"Settings", "Picture", "Video", "Audio", "Exit"};
+char* menu0[] = {"skin/tmcsettings.png", "skin/tmcpicture.png", "skin/tmcvideo.png", "skin/tmcaudio.png", "skin/tmcplaylist.png", "skin/tmcexit.png"};
+char* menu0txt[] = {"Settings", "Picture", "Video", "Audio", "Playlist", "Exit"};
 
 //Settings
 int menu1pos = 0;
-char* menu1[] = {"skin/tmcscan.png", "skin/tmcscandir.png", "skin/tmcsettings.png", "skin/tmcdb.png", "skin/tmcback.png"};
-char* menu1txt[] = {"Scan All", "Scan Dir", "Main", "Database Info", "Back"};
+char* menu1[] = {"skin/tmcscan.png", "skin/tmcscandir.png", "skin/tmcsettings.png", "skin/tmcdb.png", "skin/tmceditplaylist.png", "skin/tmcback.png"};
+char* menu1txt[] = {"Scan All", "Scan Dir", "Main", "Database Info", "Playlist Edit", "Back"};
 
 //Picture
 int menu2pos = 0;
@@ -544,6 +544,26 @@ char* tmcscreenscandir()
 	return ret;
 }
 
+//flag 0: editmode
+//flag 1: showmode
+struct mainplaylist* screentmcplaylist(int flag)
+{
+//TODO:
+	struct mainplaylist* mplaylist = NULL;
+	struct skin* playlist = getscreen("playlist");
+	char* bg = NULL;
+
+	drawscreen(playlist, 2, 0);
+	bg = savescreen(playlist);
+
+	mplaylist = screenmainplaylist(flag);
+
+	restorescreen(bg, playlist);
+	blitfb(0);
+
+	return mplaylist;
+}
+
 void screentmcedit(char* file, int menuid)
 {
 	int rcret = 0, type = 0, i = 0;
@@ -954,7 +974,7 @@ void tmcsetbutton(int picplaytype, int audioplaytype)
 void screentmcmenu()
 {
 	int rcret = 0, menuid = 0, active = 1;
-	int audioplaytype = 0, picplaytype = 0;
+	int audioplaytype = 0, picplaytype = 0, playlistplaytype = 0;
 	struct skin* tmcbg = getscreen("tmcbg");
 	struct skin* load = getscreen("loading");
 	struct skin* tmcmenutxt = getscreen("tmcmenutxt");
@@ -1149,6 +1169,10 @@ void screentmcmenu()
 				else if(menuid == 1 && ostrcmp("Database Info", tmcmenutxt->ret) == 0)
 				{
 					screentmcdb();
+				}
+				else if(menuid == 1 && ostrcmp("Playlist Edit", tmcmenutxt->ret) == 0)
+				{
+					screentmcplaylist(0);
 				}
 				else if(menuid == 1 && ostrcmp("Main", tmcmenutxt->ret) == 0)
 				{
@@ -1381,6 +1405,38 @@ void screentmcmenu()
 					tmcsetbutton(picplaytype, audioplaytype);
 					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 				}
+				else if(ostrcmp("Playlist", tmcmenutxt->ret) == 0) //playlist
+				{
+					int playlistret = 0;
+					struct mainplaylist* mplaylist = NULL;
+
+					mplaylist = screentmcplaylist(1);
+					if(mplaylist != NULL)
+					{
+						struct playlist* plist = mplaylist->playlist;
+						drawscreen(skin, 0, 0);
+						if(servicestop(status.aktservice, 1, 1) == 0)
+						{
+							while(plist != NULL)
+							{
+								//TODO: play playlist
+								playlistret = screenplay(plist->file, 0, 0);
+								if(playlistret == 1 || playlistret == 2) break;
+
+								if(playlistplaytype == 2) //random
+									plist = getplaylistrandom(mplaylist->playlist, getplaylistmax(mplaylist->playlist));
+								else //next
+									plist = plist->next;
+							}
+
+							playstartservice();
+						}
+
+						drawscreen(tmcbg, 0, 1);
+						tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 0);
+						tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
+					}
+				}
 
 				continue;
 			}
@@ -1405,7 +1461,7 @@ void screentmcmenu()
 					drawscreen(skin, 0, 0);
 					mfilter = mediadbfilterpos;
 
-					if(servicestop(status.aktservice, 1, 1) == 1)
+					if(servicestop(status.aktservice, 1, 1) == 0)
 					if(rcret == 0)
 					{
 						while(mfilter != NULL && mediadbfilter != NULL)
