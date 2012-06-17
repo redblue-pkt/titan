@@ -560,8 +560,9 @@ void screentmcedit(char* file, int menuid)
 	struct skin* plot = getscreennode(tmcedit, "plot");
 	struct skin* rating = getscreennode(tmcedit, "rating");
 	struct skin* votes = getscreennode(tmcedit, "votes");
+	struct skin* picture = getscreennode(tmcedit, "picture");
 	struct skin* tmp = NULL;
-	char* tmpstr = NULL, *bg = NULL;
+	char* tmpstr = NULL, *bg = NULL, *picret = NULL;
 	struct mediadb* node = NULL;
 	
 	if(file != NULL) node = getmediadb(file, 0);
@@ -610,11 +611,6 @@ void screentmcedit(char* file, int menuid)
 		}
 
 
-		//tmpstr = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
-		//tmpstr = ostrcat(node->poster, "_cover.jpg", 0, 0);
-		//changepic(cover, tmpstr);
-		//free(tmpstr); tmpstr = NULL;
-
 		drawscreen(tmcedit, 2, 0);
 		bg = savescreen(tmcedit);
 
@@ -625,17 +621,58 @@ void screentmcedit(char* file, int menuid)
 		while(1)
 		{
 			addscreenrc(tmcedit, tmp);
-			rcret = waitrc(tmcedit, 0, 0);
+			rcret = waitrcext(tmcedit, 0, 0, 1000);
+			delownerrc(tmcedit);
+			addscreenrc(tmcedit, listbox);
 			tmp = listbox->select;
 
 			if(rcret == getrcconfigint("rcexit", NULL)) break;
 			if(rcret == getrcconfigint("rcok", NULL))
 			{
-				node = createmediadb(node, node->id, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, node->id, rating->ret, votes->ret, node->file, title->ret, 0);
+				unsigned long hash = 0;
+
+				if(node->id == NULL || strlen(node->id) == 0)
+				{
+					hash = gethash(node->file);
+					tmpstr = olutoa(hash);
+				}
+				else
+					tmpstr = ostrcat(node->id, NULL, 0, 0);
+
+				node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, node->id, rating->ret, votes->ret, node->file, title->ret, 0);
+
+				if(picret != NULL)
+				{
+					int channels = 0;
+					unsigned long width = 0, height = 0, rowbytes = 0;
+					char* thumb = NULL;
+					unsigned char* buf = NULL;
+					
+					buf = loadjpg(picret, &width, &height, &rowbytes, &channels, 16);
+
+					//TODO: save pic in other sizes
+					thumb = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+					thumb = ostrcat(thumb, tmpstr, 1, 0);
+					thumb = ostrcat(thumb, "_thumb.jpg", 1, 0);
+					savejpg(thumb, 91, 140, 70, buf);
+
+					free(buf); buf = NULL;
+					free(thumb); thumb = NULL;
+				}
+
+				free(tmpstr); tmpstr = NULL;
 				break;
+			}
+			if(rcret == getrcconfigint("rcred", NULL))
+			{
+				free(picret); picret = NULL;
+				picret = screendir(getconfig("mediadbpath", NULL), "*.jpg", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, tmcedit->width, tmcedit->prozwidth, tmcedit->height, tmcedit->prozheight, 0);
+				changeinput(picture, basename(picret));
+				drawscreen(tmcedit, 0, 0);
 			}
 		}
 
+		free(picret); picret = NULL;
 		delownerrc(tmcedit);
 		clearscreen(tmcedit);
 		restorescreen(bg, tmcedit);

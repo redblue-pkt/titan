@@ -163,7 +163,7 @@ int ralphasort64(const struct dirent64** v1, const struct dirent64** v2)
 //view 3: fullcover (list)
 //view 4: default (liste + size)
 //view 5: details (liste + date)
-
+//view 1000: not used here see inputhelp.h
 int createfilelist(struct skin* screen, struct skin* node, int view)
 {
 	debug(1000, "in");

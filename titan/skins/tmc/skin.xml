@@ -25,7 +25,7 @@
 </screen>
 
 <screen bgcol=-2 name=tmcmenu3 posx=535 posy=455 width=158 height=158>
-<node picwidth=158 picheight=158 pic=%pluginpath%/tmc/skin/tmcstar.png name=tmcmenu3p1 bgcol=-2 width=100% height=100%>
+<node picwidth=158 picheight=158 pic=%pluginpath%/tmc/skin/tmcmenumark.png name=tmcmenu3p1 bgcol=-2 width=100% height=100%>
 <node name=tmcmenu3p2 bgcol=-2 width=100% height=100% fontcol=fontcol fontsize=100 halign=center valign=middle>
 </screen>
 
@@ -79,7 +79,7 @@
 
 <screen valign=bottom fontcol=fontcol fontsize=20 titlealign=center name="tmcedit" hspace=10 vspace=10 posx=center posy=center width=70% height=70% bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node fontsize=30 bordercol=titlebgcol scrollbar=auto type=listbox name=listbox posy=1 width=100% height=-35>
-<node name=title text="Title" parent=listbox type=choicebox width=100% height=30>
+<node name=title text="Title" parent=listbox type=inputbox width=100% height=30>
 <node name=year text="Year" parent=listbox type=inputboxnum width=100% height=30>
 <node name=released text="Released" parent=listbox type=inputbox width=100% height=30>
 <node name=runtime text="Runtime" parent=listbox type=inputbox width=100% height=30>
@@ -90,6 +90,7 @@
 <node name=plot text="Plot" parent=listbox type=inputbox width=100% height=30>
 <node name=rating text="Rating" parent=listbox type=choicebox width=100% height=30>
 <node name=votes text="Votes" parent=listbox type=inputboxnum width=100% height=30>
+<node name=picture text="Picture" parent=listbox type=choicebox width=100% height=30>
 <node name=b1 text="OK" halign=center valign=center bordercol=okcol bordersize=6 bordertype=2 posx=20 posy=0 width=150 height=39/>
-<node name=b2 text="EXIT" halign=center valign=center bordercol=exitcol bordersize=6 bordertype=2 posx=180 posy=0 width=150 height=39/>
+<node name=b2 text="PICTURE" halign=center valign=center bordercol=red bordersize=6 bordertype=2 posx=180 posy=0 width=150 height=39/>
 </screen>

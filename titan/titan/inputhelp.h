@@ -132,7 +132,8 @@ char* screeninputhelp(char* text, int screencalc, int filelistview, int flag)
 
 	delownerrc(inputhelp);
 	clearscreen(inputhelp);
-	drawscreen(skin, 0, flag);
+	if(filelistview != 1000)
+		drawscreen(skin, 0, flag);
 	return tmpstr;
 }
 
