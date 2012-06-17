@@ -3178,6 +3178,12 @@ int calclistbox(struct skin* node)
 			continue;
 		}
 
+		if(child->locked == YES)
+		{
+			child = child->next;
+			continue;
+		}		
+
 		calcrheight(child, node);
 
 		if((node->type & LISTBOX) || ((node->type & FILELIST) && !(node->type & GRID)) || ((node->type & GRID) && (child->type & GRIDBR)))
