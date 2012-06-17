@@ -48,12 +48,11 @@ void screenscreensaveradjust()
 	addchoicebox(screensaver_type, "1111111111", _("Logo 1"));
 	addchoicebox(screensaver_type, "2222222222", _("Logo 2"));
 
-	char* imdb_directory = getconfig("imdb_directory", NULL);
-	if(getconfig("imdb_directory", NULL) != NULL)
+	char* imdb_directory = getconfig("mediadbpath", NULL);
+	if(imdb_directory != NULL)
 	{
 		char* imdbdir = NULL;
-		imdbdir = ostrcat(NULL, imdb_directory, 0, 0);
-		imdbdir = ostrcat(imdbdir, "/imdb/", 1, 0);
+		imdbdir = ostrcat(imdb_directory, "/", 0, 0);
 	
 		if(file_exist(imdbdir))
 			addchoicebox(screensaver_type, imdbdir, _("imdb mvis (network/hdd)"));
