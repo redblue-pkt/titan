@@ -491,41 +491,35 @@ start:
 	clearscreen(playlist);
 }
 
-void getplaylistmax(struct skin* playlist, int* maxdirs, int* maxfiles)
+int getplaylistmax(struct playlist* plist)
 {
-	struct skin* node = playlist;
+	int count = 0;
+	struct skin* node = plist;
 
 	while(node != NULL)
 	{
-		if(node->del == 2)
-		{
-			if(node->input != NULL)
-				(*maxdirs)++;
-			else
-				(*maxfiles)++;
-		}
+		count++;
 		node = node->next;
 	}
+
+	return count;
 }
 
-struct skin* getplaylistrandom(struct skin* playlist, int maxdirs, int maxfiles)
+struct playlist* getplaylistrandom(struct playlist* plist, int max)
 {
 	int count = 0;
-	struct skin* node = playlist;
+	struct skin* node = plist;
 	
-	if(maxfiles < 1) return NULL;
+	if(max < 1) return NULL;
 
 	srand(time(NULL));
-	int r = rand() % maxfiles;
+	int r = rand() % max;
 	r++;
 
 	while(node != NULL)
 	{
-		if(node->del == 2 && node->input == NULL)
-		{
-			count++;
-			if(count == r) break;
-		}
+		count++;
+		if(count == r) break;
 
 		node = node->next;
 	}
