@@ -10,6 +10,7 @@ void screenmediadbsettings()
 	struct skin* mediadbscandelall = getscreennode(mediadbsettings, "mediadbscandelall");
 	struct skin* mediadbscandelnotfound = getscreennode(mediadbsettings, "mediadbscandelnotfound");
 	struct skin* mediadbscantimeout = getscreennode(mediadbsettings, "mediadbscantimeout");
+	struct skin* createthumb = getscreennode(mediadbsettings, "createthumb");
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL;
 
@@ -51,7 +52,6 @@ void screenmediadbsettings()
 
 	setchoiceboxselection(mediadbdevice, getconfig("mediadbdevice", NULL));
 
-
 	addchoicebox(mediadbscandelall, "0", _("no"));
 	addchoicebox(mediadbscandelall, "1", _("yes"));
 	setchoiceboxselection(mediadbscandelall, getconfig("mediadbscandelall", NULL));
@@ -59,7 +59,6 @@ void screenmediadbsettings()
 	addchoicebox(mediadbscandelnotfound, "0", _("no"));
 	addchoicebox(mediadbscandelnotfound, "1", _("yes"));
 	setchoiceboxselection(mediadbscandelnotfound, getconfig("mediadbscandelnotfound", NULL));
-
 
 	addchoicebox(mediadbscantimeout, "0", _("never"));
 	addchoicebox(mediadbscantimeout, "1", _("older 1 day"));
@@ -74,6 +73,10 @@ void screenmediadbsettings()
 	addchoicebox(mediadbscantimeout, "40", _("older 40 day"));
 	addchoicebox(mediadbscantimeout, "50", _("older 50 day"));
 	setchoiceboxselection(mediadbscantimeout, getconfig("mediadbscantimeout", NULL));
+
+	addchoicebox(createthumb, "0", _("no"));
+	addchoicebox(createthumb, "1", _("yes"));
+	setchoiceboxselection(createthumb, getconfig("createthumb", NULL));
 
 	drawscreen(mediadbsettings, 0, 0);
 	addscreenrc(mediadbsettings, listbox);
@@ -102,6 +105,13 @@ void screenmediadbsettings()
 			addconfigscreencheck("mediadbscandelall", mediadbscandelall, "0");
 			addconfigscreencheck("mediadbscandelnotfound", mediadbscandelnotfound, "0");
 			addconfigscreencheck("mediadbscantimeout", mediadbscantimeout, "0");
+
+			addconfigscreencheck("createthumb", createthumb, "0");
+			if(ostrcmp(createthumb->ret, "0") == 0)
+				startcreatethumb(0);
+			else
+				startcreatethumb(1);
+
 			writeallconfig(1);
 			break;
 		}

@@ -1990,6 +1990,24 @@ void closeonexec(int fd)
 		fcntl(fd, F_SETFD, fcntl(fd, F_GETFD) | FD_CLOEXEC);
 }
 
+void startcreatethumb(flag)
+{
+	if(flag == 1)
+	{
+		if(getconfigint("createthumb", NULL) == 1 && status.createthumb == NULL)
+		{
+			status.createthumb = addtimer(&thumbthread, START, 1000, 1, NULL, NULL, NULL);
+			if(status.createthumb != NULL)
+				status.createthumb->flag = setbit(status.createthumb->flag, 0);
+		}
+	}
+	else if(status.createthumb != NULL)
+	{
+		status.createthumb->aktion = STOP;
+		status.createthumb = NULL;
+	}
+}
+
 void starthttpd(flag)
 {
 	if(flag == 1)
