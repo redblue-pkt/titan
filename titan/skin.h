@@ -1429,7 +1429,7 @@ unsigned char *loadjpg(char *filename, unsigned long *width, unsigned long *heig
 	return(buf);
 }
 
-int savejpg(char* filename, int width, int height, unsigned char *buf)
+int savejpg(char* filename, int width, int height, int quality, unsigned char *buf)
 {
  	struct jpeg_compress_struct cinfo;
  	struct jpeg_error_mgr jerr;
@@ -1453,7 +1453,7 @@ int savejpg(char* filename, int width, int height, unsigned char *buf)
  	cinfo.input_components = 3;
  	cinfo.in_color_space = JCS_RGB;
  	jpeg_set_defaults(&cinfo);
- 	jpeg_set_quality(&cinfo, 70, TRUE);
+ 	jpeg_set_quality(&cinfo, quality, TRUE);
  	jpeg_start_compress(&cinfo, TRUE);
  	stride = width * 3;
 
