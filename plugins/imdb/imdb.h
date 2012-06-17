@@ -442,7 +442,7 @@ start:
 		if(search != NULL)
 		{
 			freeimdb(&node, 0); node = NULL;
-			node = getimdb(&node, &search, 0, 0, 0);
+			node = getimdb(&node, search, 0, 0, 0);
 			free(search); search = NULL;
 			goto start;
 		}
