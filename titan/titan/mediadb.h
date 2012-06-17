@@ -980,7 +980,7 @@ int createmediadbfilter(int type, char* search, int flag)
 				last = addmediadbfilter(node, count, 1, last);
 				count++;
 			}
-			else if(flag == 8 && node->id == NULL)
+			else if(flag == 8 && (node->id == NULL || strlen(node->id) == 0))
 			{
 				last = addmediadbfilter(node, count, 1, last);
 				count++;
