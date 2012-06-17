@@ -644,6 +644,7 @@ void playstartservice()
 // flag 0 = dirlist/playing/infobar
 // flag 1 = playing/infobar
 // flag 2 = playing
+// flag 3 = not stop/start live service
 // startfolder 2 = do nothing with playstop/playstart
 int screenplay(char* startfile, int startfolder, int flag)
 {
@@ -657,7 +658,7 @@ int screenplay(char* startfile, int startfolder, int flag)
 	int skip46 = getconfigint("skip46", NULL);
 	int skip79 = getconfigint("skip79", NULL);
 	
-	if(startfolder == 0)
+	if(startfolder == 0 && flag != 3)
 	{
 		rcret = servicestop(status.aktservice, 1, 1);
 		if(rcret == 1) return ret;
@@ -707,7 +708,7 @@ playerstart:
 			if(playcheckdirrcret(file, dirrcret) == 1)
 				goto playerstart;
 
-			if(startfolder == 1)
+			if(startfolder == 1 && flag != 3)
 			{
 				rcret = servicestop(status.aktservice, 1, 1);
 				if(rcret == 1)
@@ -734,11 +735,14 @@ playerstart:
 			
 			if(startfile == NULL)
 			{
-				if(startfolder == 1) playstartservice();
+				if(startfolder == 1 && flag != 3) playstartservice();
 				goto playerstart;
 			}
 			else
+			{
+				ret = 2;
 				goto playerend;
+			}
 		}
 #endif
 		screenplayinfobar(file, 0, playertype, flag);
@@ -792,7 +796,7 @@ playerstart:
 					playrcstop(playertype, flag);
 					if(startfile == NULL)
 					{
-						if(startfolder == 1) playstartservice();
+						if(startfolder == 1 && flag != 3) playstartservice();
 						goto playerstart;
 					}
 					else
@@ -853,7 +857,7 @@ playerend:
 
 			if(startfile == NULL)
 			{
-				if(startfolder == 1) playstartservice();
+				if(startfolder == 1 && flag != 3) playstartservice();
 				goto playerstart;
 			}
 			else
@@ -861,7 +865,7 @@ playerend:
 		}
 	}
 
-	if(startfolder == 0) playstartservice();
+	if(startfolder == 0 && flag != 3) playstartservice();
 	status.updatevfd = START;
 
 	if(tmppolicy != NULL)

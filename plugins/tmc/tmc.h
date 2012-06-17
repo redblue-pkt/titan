@@ -1387,7 +1387,7 @@ void screentmcmenu()
 			
 			if(active == 0 && tmcpic3->ret != NULL)
 			{
-				if(menuid == 3)
+				if(menuid == 3) //video
 				{
 					drawscreen(skin, 0, 0);
 
@@ -1397,7 +1397,7 @@ void screentmcmenu()
 					tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 0);
 					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 				}
-				if(menuid == 4)
+				if(menuid == 4) //audio
 				{
 					int audioret = 0;
 					struct mediadbfilter* mfilter = NULL;
@@ -1405,30 +1405,36 @@ void screentmcmenu()
 					drawscreen(skin, 0, 0);
 					mfilter = mediadbfilterpos;
 
-					while(mfilter != NULL && mediadbfilter != NULL)
+					if(servicestop(status.aktservice, 1, 1) == 1)
+					if(rcret == 0)
 					{
-						if(mfilter->node != NULL)
+						while(mfilter != NULL && mediadbfilter != NULL)
 						{
-							audioret = screenplay(mfilter->node->file, 0, 0);
-							mediadbfilterpos = mfilter;
+							if(mfilter->node != NULL)
+							{
+								audioret = screenplay(mfilter->node->file, 0, 3);
+								mediadbfilterpos = mfilter;
+							}
+							if(audioret == 1 || audioret == 2) break;
+
+							if(audioplaytype == 1) //single
+								break;
+							else if(audioplaytype == 2) //random
+								mfilter = getmediadbfilterrandom(getmediadbfiltercount());
+							else //next
+								mfilter = mfilter->next;
+
+							if(mfilter == NULL) mfilter = mediadbfilter;
 						}
-						if(audioret == 1) break;
 
-						if(audioplaytype == 1) //single
-							break;
-						else if(audioplaytype == 2) //random
-							mfilter = getmediadbfilterrandom(getmediadbfiltercount());
-						else //next
-							mfilter = mfilter->next;
-
-						if(mfilter == NULL) mfilter = mediadbfilter;
+						playstartservice();
 					}
 
 					drawscreen(tmcbg, 0, 1);
 					tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 0);
 					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 				}
-				else if(menuid == 2)
+				else if(menuid == 2) //picture
 				{
 					int picret = 0;
 					struct mediadbfilter* mfilter = NULL;
