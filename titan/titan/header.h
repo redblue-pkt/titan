@@ -198,6 +198,8 @@ void screenscanconfig(int flag);
 
 // mainplaylist.h
 struct mainplaylist* screenmainplaylist(int flag);
+int getplaylistmax(struct playlist* plist);
+struct playlist* getplaylistrandom(struct playlist* plist, int max);
 
 // screensaver.h
 int showscreensaver();
