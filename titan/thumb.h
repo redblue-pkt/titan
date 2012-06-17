@@ -25,7 +25,6 @@ void thumbthread(struct stimerthread* self)
 	if(self == NULL) return;
 
 	debug(307, "start thumb thread");
-	status.createthumb = 1;
 
 	while(self->aktion != STOP)
 	{
@@ -69,7 +68,6 @@ void thumbthread(struct stimerthread* self)
 		}
 	}
 
-	status.createthumb = 0;
 	delqueue(qe, 0);
 	debug(307, "end thumb thread");
 }
