@@ -1995,11 +1995,7 @@ void startthumb(flag)
 	if(flag == 1)
 	{
 		if(getconfigint("createthumb", NULL) == 1 && status.thumbthread == NULL)
-		{
 			status.thumbthread = addtimer(&thumbthread, START, 1000, 1, NULL, NULL, NULL);
-			if(status.thumbthread != NULL)
-				status.thumbthread->flag = setbit(status.thumbthread->flag, 0);
-		}
 	}
 	else if(status.thumbthread != NULL)
 	{

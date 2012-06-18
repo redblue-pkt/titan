@@ -786,7 +786,7 @@ firstwizzardstep1:
 	addtimer(&ckeckkillnetthread, START, 1000, 1, NULL, NULL, NULL);
 
 	//thumb create thread
-	starthumb(1);
+	startthumb(1);
 
 	//start webserver
 	starthttpd(1);
