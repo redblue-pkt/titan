@@ -1680,32 +1680,35 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 	jpeg_create_decompress(&cinfo);
 	jpeg_stdio_src(&cinfo, fd);
 	jpeg_read_header(&cinfo, TRUE);
-	cinfo.out_color_space = JCS_RGB;
 
-	jpeg_start_decompress(&cinfo);
-	width = cinfo.output_width;
-	height = cinfo.output_height;
+	cinfo.out_color_space = JCS_RGB;
+	width = cinfo.image_width;
+	height = cinfo.image_height;
 	cinfo.scale_denom = 1;
 	
 	if(scalewidth != 0 || scaleheight != 0)
 	{
 		//auto scale to mwidth / mheight
 		if(scalewidth == 1 && scaleheight == 1)
-			calcautoscale(cinfo.output_width, cinfo.output_height, mwidth, mheight, &scalewidth, &scaleheight);
+			calcautoscale(width, height, mwidth, mheight, &scalewidth, &scaleheight);
 
-		if(scalewidth == 0) scalewidth = cinfo.output_width;
-		if(scaleheight == 0) scaleheight = cinfo.output_height;
+		if(scalewidth == 0) scalewidth = width;
+		if(scaleheight == 0) scaleheight = height;
 		if(scalewidth > mwidth) scalewidth = mwidth;
 		if(scaleheight > mheight) scaleheight = mheight;
 
-		int tmpwidth = cinfo.output_width;
-		int tmpheight = cinfo.output_height;
+		int tmpwidth = width;
+		int tmpheight = height;
 		while(scalewidth < tmpwidth || scaleheight < tmpheight)
 		{
 			tmpwidth /= 2; tmpheight /= 2; cinfo.scale_denom *= 2;
 			if(cinfo.scale_denom > 8) break;
 		}
 	}
+
+	jpeg_start_decompress(&cinfo);
+	width = cinfo.output_width;
+	height = cinfo.output_height;
 
 	drawjpgsw(&cinfo, NULL, posx, posy, width, height, cinfo.output_components, mwidth, mheight, scalewidth, scaleheight, halign, valign);
 
