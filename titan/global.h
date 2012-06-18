@@ -2180,17 +2180,32 @@ int setvmpeg(struct dvbdev* node, int value, int flag)
 //flag 1: wh = height
 int setvmpegrect(struct dvbdev* node, int left, int top, int wh, int flag)
 {
-	int ret = 0;
-	
+	int ret = 0, xres = 0, yres = 0;
+	char* tmpstr = NULL;
+
+	if(wh == 0) return 1;
+
+	tmpstr = getdevcontent("vmpegxresdev");
+	if(tmpstr != NULL)
+		xres = strtol(tmpstr, 0, 16);
+	free(tmpstr); tmpstr = NULL;
+
+	tmpstr = getdevcontent("vmpegyresdev");
+	if(tmpstr != NULL)
+		yres = strtol(tmpstr, 0, 16);
+	free(tmpstr); tmpstr = NULL;
+
 	if(flag == 0)
 	{
+		double ratio = xres / wh;
 		ret = setvmpeg(node, wh, 2);
-		ret = setvmpeg(node, wh / 1.4, 3);
+		ret = setvmpeg(node, (int)((double)wh / ratio), 3);
 	}
 	if(flag == 1)
 	{
+		double ratio = yres / wh;
 		ret = setvmpeg(node, wh, 3);
-		ret = setvmpeg(node, wh * 1.3, 2);
+		ret = setvmpeg(node, (int)((double)wh / ratio), 2);
 	}
 		
 	ret = setvmpeg(node, left, 0);
