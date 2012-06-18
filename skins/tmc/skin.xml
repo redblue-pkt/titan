@@ -6,42 +6,42 @@
 <screen name=tmcbg posx=0 posy=0 width=1280 height=720>
 </screen>
 
-<screen bgcol=0 name=tmcmenutxt posx=500 posy=620 width=230 height=40 fontsize=30 fontcol=fontcol valign=middle halign=center>
+<screen bgcol=0 name=tmcmenutxt posx=525 posy=620 width=230 height=40 fontsize=30 fontcol=fontcol valign=middle halign=center>
 </screen>
 
-<screen bgcol=-2 name=tmcstatus posx=500 posy=20 width=230 height=40 fontsize=30 fontcol=fontcol valign=middle halign=center>
+<screen bgcol=-2 name=tmcstatus posx=525 posy=20 width=230 height=40 fontsize=30 fontcol=fontcol valign=middle halign=center>
 </screen>
 
-<screen bgcol=-2 name=tmcpicstar posx=500 posy=370 width=230 height=40 fontsize=30 fontcol=fontcol valign=middle halign=center>
+<screen bgcol=-2 name=tmcpicstar posx=525 posy=370 width=230 height=40 fontsize=30 fontcol=fontcol valign=middle halign=center>
 </screen>
 
-<screen bgcol=-2 name=tmcpictitle posx=500 posy=410 width=230 height=40 fontsize=30 fontcol=fontcol valign=middle halign=center>
+<screen bgcol=-2 name=tmcpictitle posx=225 posy=410 width=830 height=40 fontsize=30 fontcol=fontcol valign=middle halign=center>
 </screen>
 
-<screen bgcol=-2 name=tmcmenu1 posx=150 posy=570 width=128 height=128 fontcol=fontcol fontsize=100 halign=center valign=middle>
+<screen bgcol=-2 name=tmcmenu1 posx=175 posy=570 width=128 height=128 fontcol=fontcol fontsize=100 halign=center valign=middle>
 </screen>
 
-<screen bgcol=-2 name=tmcmenu2 posx=350 posy=520 width=128 height=128 fontcol=fontcol fontsize=100 halign=center valign=middle>
+<screen bgcol=-2 name=tmcmenu2 posx=375 posy=520 width=128 height=128 fontcol=fontcol fontsize=100 halign=center valign=middle>
 </screen>
 
-<screen bgcol=-2 name=tmcmenu3 posx=535 posy=455 width=158 height=158>
+<screen bgcol=-2 name=tmcmenu3 posx=560 posy=455 width=158 height=158>
 <node picwidth=158 picheight=158 pic=%pluginpath%/tmc/skin/tmcmenumark.png name=tmcmenu3p1 bgcol=-2 width=100% height=100%>
 <node name=tmcmenu3p2 bgcol=-2 width=100% height=100% fontcol=fontcol fontsize=100 halign=center valign=middle>
 </screen>
 
-<screen bgcol=-2 name=tmcmenu4 posx=750 posy=520 width=128 height=128 fontcol=fontcol fontsize=100 halign=center valign=middle>
+<screen bgcol=-2 name=tmcmenu4 posx=775 posy=520 width=128 height=128 fontcol=fontcol fontsize=100 halign=center valign=middle>
 </screen>
 
-<screen bgcol=-2 name=tmcmenu5 posx=950 posy=570 width=128 height=128 fontcol=fontcol fontsize=100 halign=center valign=middle>
+<screen bgcol=-2 name=tmcmenu5 posx=975 posy=570 width=128 height=128 fontcol=fontcol fontsize=100 halign=center valign=middle>
 </screen>
 
-<screen bordersize=5 bordercol=bordercol name=tmcpic1 picwidth=140 picheight=220 posx=170 posy=100 width=140 height=220>
+<screen bordersize=5 bordercol=bordercol name=tmcpic1 picwidth=140 picheight=220 posx=200 posy=100 width=140 height=220>
 </screen>
 
-<screen bordersize=5 bordercol=bordercol name=tmcpic2 picwidth=180 picheight=260 posx=310 posy=80 width=180 height=260>
+<screen bordersize=5 bordercol=bordercol name=tmcpic2 picwidth=180 picheight=260 posx=340 posy=80 width=180 height=260>
 </screen>
 
-<screen bordersize=5 bordercol=bordercol name=tmcpic3 picwidth=240 picheight=300 posx=490 posy=60 width=240 height=300>
+<screen bordersize=5 bordercol=bordercol name=tmcpic3 picwidth=240 picheight=300 posx=520 posy=60 width=240 height=300>
 <node fontsize=30 fontcol=fontcol bordercol=bordercol bordersize=0 scrollbar=auto type=listbox name=listbox posy=0 width=100% height=100%>
 <node hidden=yes name=pictimeout type=choicebox parent=listbox valign=middle posx=0 text="Pic Timeout" bordercol=bordercol width=100%>
 <node hidden=yes name=picfull type=choicebox parent=listbox valign=middle posx=0 text="Full Pic" bordercol=bordercol width=100%>
@@ -54,10 +54,10 @@
 <node hidden=yes name=delete parent=listbox valign=middle posx=0 text="Delete" bordercol=bordercol width=100%>
 </screen>
 
-<screen bordersize=5 bordercol=bordercol name=tmcpic4 picwidth=180 picheight=260 posx=730 posy=80 width=180 height=260>
+<screen bordersize=5 bordercol=bordercol name=tmcpic4 picwidth=180 picheight=260 posx=760 posy=80 width=180 height=260>
 </screen>
 
-<screen bordersize=5 bordercol=bordercol name=tmcpic5 picwidth=140 picheight=220 posx=910 posy=100 width=140 height=220>
+<screen bordersize=5 bordercol=bordercol name=tmcpic5 picwidth=140 picheight=220 posx=940 posy=100 width=140 height=220>
 </screen>
 
 <screen fontcol=fontcol fontsize=20 titlealign=center name="tmcinfo" hspace=10 vspace=10 posx=center posy=center width=70% height=70% bordercol=bordercol bordersize=2 bgcol=bgcol>
