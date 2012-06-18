@@ -380,9 +380,9 @@ struct tmdb* screentmdb(char* title, char* skinname, int flag)
 	struct skin* tmdbskin = NULL;
 
 	if(skinname != NULL)
-		getscreen(skinname);
+		tmdbskin = getscreen(skinname);
 	else
-		getscreen("tmdb");
+		tmdbskin = getscreen("tmdb");
 
 	struct skin* skin_plot = getscreennode(tmdbskin, "plot");
 	struct skin* skin_title = getscreennode(tmdbskin, "title");
