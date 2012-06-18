@@ -2181,12 +2181,12 @@ int setvmpegrect(struct dvbdev* node, int left, int top, int wh, int flag)
 	if(flag == 0)
 	{
 		ret = setvmpeg(node, wh, 2);
-		ret = setvmpeg(node, wh / 1.4, 3);
+		//ret = setvmpeg(node, wh / 1.4, 3);
 	}
 	if(flag == 1)
 	{
 		ret = setvmpeg(node, wh, 3);
-		ret = setvmpeg(node, wh * 1.3, 2);
+		//ret = setvmpeg(node, wh * 1.3, 2);
 	}
 
 	ret = setvmpeg(node, left, 0);
