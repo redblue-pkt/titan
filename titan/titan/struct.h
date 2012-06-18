@@ -1126,7 +1126,7 @@ struct status
 	// mediadb thread pointer
 	struct stimerthread* mediadbthread;
 	// create thumb thread
-	struct stimerthread* createthumb;
+	struct stimerthread* thumbthread;
 	// rguid sock filedescriptor for rguid
 	int rguidfd;
 	struct service* aktservice;

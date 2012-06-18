@@ -72,6 +72,7 @@ struct mediadbcache* mediadbcache[MEDIADBCACHEMAX] = {NULL};
 #include "ownconfig.h"
 #include "rcconfig.h"
 #include "skinconfig.h"
+#include "thumb.h"
 #include "global.h"
 #include "stream.h"
 #include "dvbdev.h"
@@ -181,7 +182,6 @@ struct mediadbcache* mediadbcache[MEDIADBCACHEMAX] = {NULL};
 #include "inadyn.h"
 #include "rguid.h"
 #include "channelhistroy.h"
-#include "thumb.h"
 #include "mostzap.h"
 #include "settings_redbutton.h"
 #include "settings_bluebutton.h"
@@ -786,7 +786,7 @@ firstwizzardstep1:
 	addtimer(&ckeckkillnetthread, START, 1000, 1, NULL, NULL, NULL);
 
 	//thumb create thread
-	startcreatethumb(1);
+	starthumb(1);
 
 	//start webserver
 	starthttpd(1);

@@ -108,9 +108,9 @@ void screenmediadbsettings()
 
 			addconfigscreencheck("createthumb", createthumb, "0");
 			if(ostrcmp(createthumb->ret, "0") == 0)
-				startcreatethumb(0);
+				startthumb(0);
 			else
-				startcreatethumb(1);
+				startthumb(1);
 
 			writeallconfig(1);
 			break;

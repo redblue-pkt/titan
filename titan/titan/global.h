@@ -1990,21 +1990,21 @@ void closeonexec(int fd)
 		fcntl(fd, F_SETFD, fcntl(fd, F_GETFD) | FD_CLOEXEC);
 }
 
-void startcreatethumb(flag)
+void startthumb(flag)
 {
 	if(flag == 1)
 	{
-		if(getconfigint("createthumb", NULL) == 1 && status.createthumb == NULL)
+		if(getconfigint("createthumb", NULL) == 1 && status.thumbthread == NULL)
 		{
-			status.createthumb = addtimer(&thumbthread, START, 1000, 1, NULL, NULL, NULL);
-			if(status.createthumb != NULL)
-				status.createthumb->flag = setbit(status.createthumb->flag, 0);
+			status.thumbthread = addtimer(&thumbthread, START, 1000, 1, NULL, NULL, NULL);
+			if(status.thumbthread != NULL)
+				status.thumbthread->flag = setbit(status.thumbthread->flag, 0);
 		}
 	}
-	else if(status.createthumb != NULL)
+	else if(status.thumbthread != NULL)
 	{
-		status.createthumb->aktion = STOP;
-		status.createthumb = NULL;
+		status.thumbthread->aktion = STOP;
+		status.thumbthread = NULL;
 	}
 }
 
