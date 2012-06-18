@@ -17,9 +17,10 @@ void clearserviceinfo(struct skin* l1, struct skin* l2, struct skin* l3, struct 
 	changetext(l12, NULL);
 }
 
-void fillservice(struct skin* l1, struct skin* l2, struct skin* l3, struct skin* l4)
+void fillservice(struct skin* l1, struct skin* l2, struct skin* l3, struct skin* l4, struct skin* l5, struct skin* l6)
 {
 	char* tmpstr = NULL;
+	unsigned long tmpnr = 0;
 	
 	if(status.aktservice != NULL)
 	{
@@ -36,14 +37,36 @@ void fillservice(struct skin* l1, struct skin* l2, struct skin* l3, struct skin*
 	tmpstr = getvideomode();
 	changetext(l4, _(tmpstr));
 	free(tmpstr); tmpstr = NULL;
+
+	tmpstr = getdevcontent("vmpegxresdev");
+	if(tmpstr != NULL)
+	{
+		tmpnr = strtol(tmpstr, 0, 16);
+		free(tmpstr); tmpstr = NULL;
+		tmpstr = olutoa(tmpnr);
+		changetext(l5, tmpstr);
+	}
+	free(tmpstr); tmpstr = NULL;
+
+	tmpstr = getdevcontent("vmpegyresdev");
+	if(tmpstr != NULL)
+	{
+		tmpnr = strtol(tmpstr, 0, 16);
+		free(tmpstr); tmpstr = NULL;
+		tmpstr = olutoa(tmpnr);
+		changetext(l6, tmpstr);
+	}
+	free(tmpstr); tmpstr = NULL;
 }
 
-void hiddeservice(struct skin* name, struct skin* provider, struct skin* aspectratio, struct skin* resolution, int hidden)
+void hiddeservice(struct skin* name, struct skin* provider, struct skin* aspectratio, struct skin* resolution, struct skin* xres, struct skin* yres, int hidden)
 {
 	name->hidden = hidden;
 	provider->hidden = hidden;
 	aspectratio->hidden = hidden;
 	resolution->hidden = hidden;
+	xres->hidden = hidden;
+	yres->hidden = hidden;
 }
 
 void fillpids(struct skin* l1, struct skin* l2, struct skin* l3, struct skin* l4, struct skin* l5, struct skin* l6, struct skin* l7, struct skin* l8, struct skin* l9)
@@ -200,6 +223,8 @@ int screenserviceinfo(void)
 	struct skin* provider = getscreennode(serviceinfo, "provider");
 	struct skin* aspectratio = getscreennode(serviceinfo, "aspectratio");
 	struct skin* resolution = getscreennode(serviceinfo, "resolution");
+	struct skin* xres = getscreennode(serviceinfo, "xres");
+	struct skin* yres = getscreennode(serviceinfo, "yres");
 
 	struct skin* videopid = getscreennode(serviceinfo, "videopid");
 	struct skin* audiopid = getscreennode(serviceinfo, "audiopid");
@@ -238,8 +263,8 @@ int screenserviceinfo(void)
 	struct skin* l12 = getscreennode(serviceinfo, "l12");
 
 	clearserviceinfo(l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12);
-	fillservice(l1, l2, l3, l4);
-	hiddeservice(name, provider, aspectratio, resolution, NO);
+	fillservice(l1, l2, l3, l4, l5, l6);
+	hiddeservice(name, provider, aspectratio, resolution, xres, yres, NO);
 	hiddepids(videopid, audiopid, pcrpid, pmtpid, txtpid, tsid, onid, sid, id, YES);
 	hiddetuner(tuner, type, system, modulation, orbitalpos, frequency, symbolrate, polarization, inversion, fec, rolloff, pilot, YES, 0);
 
@@ -253,8 +278,8 @@ int screenserviceinfo(void)
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			clearserviceinfo(l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12);
-			fillservice(l1, l2, l3, l4);
-			hiddeservice(name, provider, aspectratio, resolution, NO);
+			fillservice(l1, l2, l3, l4, l5, l6);
+			hiddeservice(name, provider, aspectratio, resolution, xres, yres, NO);
 			hiddepids(videopid, audiopid, pcrpid, pmtpid, txtpid, tsid, onid, sid, id, YES);
 			hiddetuner(tuner, type, system, modulation, orbitalpos, frequency, symbolrate, polarization, inversion, fec, rolloff, pilot, YES, 0);
 			drawscreen(serviceinfo, 0, 0);
@@ -263,7 +288,7 @@ int screenserviceinfo(void)
 		{
 			clearserviceinfo(l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12);
 			fillpids(l1, l2, l3, l4, l5, l6, l7, l8, l9);
-			hiddeservice(name, provider, aspectratio, resolution, YES);
+			hiddeservice(name, provider, aspectratio, resolution, xres, yres, YES);
 			hiddepids(videopid, audiopid, pcrpid, pmtpid, txtpid, tsid, onid, sid, id, NO);
 			hiddetuner(tuner, type, system, modulation, orbitalpos, frequency, symbolrate, polarization, inversion, fec, rolloff, pilot, YES, 0);
 			drawscreen(serviceinfo, 0, 0);
@@ -272,7 +297,7 @@ int screenserviceinfo(void)
 		{
 			clearserviceinfo(l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12);
 			aktsystem = filltuner(l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12);
-			hiddeservice(name, provider, aspectratio, resolution, YES);
+			hiddeservice(name, provider, aspectratio, resolution, xres, yres, YES);
 			hiddepids(videopid, audiopid, pcrpid, pmtpid, txtpid, tsid, onid, sid, id, YES);
 			hiddetuner(tuner, type, system, modulation, orbitalpos, frequency, symbolrate, polarization, inversion, fec, rolloff, pilot, NO, aktsystem);
 			drawscreen(serviceinfo, 0, 0);
