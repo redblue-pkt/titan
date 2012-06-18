@@ -1180,7 +1180,11 @@ void screentmcmenu()
 					{
 						if(getconfigint("tmcbgpic", NULL) != 1000)
 						{
-							tmpstr = ostrcat("%pluginpath%/tmc/skin/tmcbg", getconfig("tmcbgpic", NULL), 0, 0);
+							char* tmpbgpic = getconfig("tmcbgpic", NULL);
+							if(tmpbgpic == NULL)
+								tmpstr = ostrcat("%pluginpath%/tmc/skin/tmcbg", "0", 0, 0);
+							else
+								tmpstr = ostrcat("%pluginpath%/tmc/skin/tmcbg", tmpbgpic, 0, 0);
 							tmpstr = ostrcat(tmpstr, ".jpg", 1, 0);
 							changepic(tmcbg, tmpstr);
 							free(tmpstr); tmpstr = NULL;
