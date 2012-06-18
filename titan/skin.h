@@ -2177,7 +2177,11 @@ int drawchar(struct font* font, FT_ULong currentchar, int posx, int posy, int mw
 		return -1;
 	}
 
-	if(status.fasttextrender == 1) max = min - 1;
+	if(status.fasttextrender == 1)
+	{
+		max = 150;
+		min = 100;
+	}
 	
 	red = (color & 0xff0000) >> 16;
 	green = (color & 0x00ff00) >> 8;
@@ -2287,11 +2291,7 @@ struct font* setaktfont(char* fontname, int fontsize)
 
 	aktfont->desc.width = fontsize;
 	aktfont->desc.height = fontsize;
-	if(status.fasttextrender == 1)
-		aktfont->desc.flags = FT_LOAD_MONOCHROME;
-	else
-		aktfont->desc.flags = FT_LOAD_DEFAULT;
-
+	aktfont->desc.flags = FT_LOAD_DEFAULT;
 	aktfont->prev_glyphindex = 0;
 
 	return aktfont;
