@@ -457,7 +457,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 						}
 						else if(cmpfilenameext(filelist[i]->d_name, ".jpg") == 0)
 						{
-							if(status.createthumb != NULL)
+							if(status.thumbthread != NULL)
 							{
 								//check if thumb exists
 								tmpstr = checkthumb(node->input, filelist[i]->d_name);

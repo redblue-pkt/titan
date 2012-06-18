@@ -1620,7 +1620,7 @@ printf("wo6\n");
 			char* thumbfile = NULL;
 
 			debug(777, "add pic: %s", tmpstr);
-			if(status.createthumb == 1)
+			if(status.thumbthread == 1)
 			{
 				//check if thumb exists
 				thumbfile = checkthumb(path, file);
