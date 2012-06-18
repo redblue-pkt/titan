@@ -222,6 +222,8 @@ void screenextensions(int mode, char* path)
 	}
 	else if(mode == 3)
 	{
+		struct skin* load = getscreen("loading");
+		drawscreen(load, 0, 0);
 		system("cp -a /mnt/ipkg/* /var/usr/lib/ipkg");
 		ipkg_update();
 		ipkg_upgrade();
