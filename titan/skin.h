@@ -3166,13 +3166,13 @@ int calclistbox(struct skin* node)
 				child = child->next;
 				continue;
 			}
-			else if(ostrcmp(child->parent, node->name) != 0 || child->hidden == YES || child->locked == YES)
+			else if(ostrcmp(child->parent, node->name) != 0)
 			{
 				child = child->next;
 				continue;
 			}
 		}
-		else if(child->parentpointer != node || child->hidden == YES || child->locked == YES)
+		else if(child->parentpointer != node || child->hidden == YES)
 		{
 			child = child->next;
 			continue;
