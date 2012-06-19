@@ -1640,8 +1640,8 @@ printf("wo6\n");
 	free(tmpstr); tmpstr = NULL;
 }
 
-// flag = 0 (rekursive deaktive)
-// flag = 1 (rekursive active)
+// flag = 0 (rekursive aktive)
+// flag = 1 (rekursive deactive)
 // flag1 = 0 (scan files and start)
 // flag1 = 1 (count files)
 int findfiles(char* dirname, int type, int flag, int flag1)
