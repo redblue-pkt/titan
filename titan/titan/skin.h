@@ -1682,9 +1682,15 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 	jpeg_read_header(&cinfo, TRUE);
 
 	cinfo.out_color_space = JCS_RGB;
+	cinfo.dct_method = JDCT_IFAST;
+	cinfo.do_fancy_upsampling = FALSE;
+	cinfo.two_pass_quantize = FALSE;
+	cinfo.dither_mode = JDITHER_ORDERED;
+	cinfo.scale_num = 1;
+	cinfo.scale_denom = 1;
+
 	width = cinfo.image_width;
 	height = cinfo.image_height;
-	cinfo.scale_denom = 1;
 
 printf("before scale w=%d h=%d denom=%d, sw=%d, sh=%d, mw=%d, mh=%d\n", width, height, cinfo.scale_denom, scalewidth, scaleheight, mwidth, mheight);
 	
