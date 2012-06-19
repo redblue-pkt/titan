@@ -295,7 +295,7 @@ void tmcmenuscroll(int menuid, int active, struct skin* tmcmenutxt, struct skin*
 
 char* screentmcdirplay()
 {
-	struct skin* dir = getscreen("dir")
+	struct skin* dir = getscreen("dir");
 	char* ret = NULL, *bg = NULL, *formats = NULL;
 
 	dir->width = 700;
@@ -303,7 +303,7 @@ char* screentmcdirplay()
 	dir->height = 650;
 	dir->prozheight = 0;
 
-	drawscreen(dir, 2);
+	drawscreen(dir, 2, 0);
 	bg = savescreen(dir);
 
 	if(status.expertmodus > 0 && status.security == 1)
@@ -315,7 +315,7 @@ char* screentmcdirplay()
 
 	restorescreen(bg, dir);
 	free(formats); formats = NULL;
-	blit(0);
+	blitfb(0);
 	return ret;
 }
 
@@ -577,11 +577,11 @@ void screentmcepg(char* file)
 
 	if(file != NULL)
 	{
-		drawscreen(tmcepg, 2);
+		drawscreen(tmcepg, 2, 0);
 		bg = savescreen(tmcepg);
 
 		readlabelext(tmcepg, file, ".epg");
-		drawscreen(tmcepg, 0);
+		drawscreen(tmcepg, 0, 0);
 
 		while(1)
 		{
@@ -1505,13 +1505,13 @@ void screentmcmenu()
 
 				if(file != NULL)
 				{
-					drawscreen(skin, 0);
+					drawscreen(skin, 0, 0);
 					screenplay(file, 0, 0);
 
 					free(file); file = NULL;
-					drawscreen(tmcbg, 1);
-					tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, 0);
-					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
+					drawscreen(tmcbg, 0, 1);
+					tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 0);
+					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 				}
 
 				continue;
