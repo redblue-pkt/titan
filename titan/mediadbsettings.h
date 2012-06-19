@@ -60,7 +60,7 @@ void screenmediadbsettings()
 	addchoicebox(mediadbscandelnotfound, "1", _("yes"));
 	setchoiceboxselection(mediadbscandelnotfound, getconfig("mediadbscandelnotfound", NULL));
 
-	addchoicebox(mediadbscantimeout, "0", _("never"));
+	addchoicebox(mediadbscantimeout, "0", _("always"));
 	addchoicebox(mediadbscantimeout, "1", _("older 1 day"));
 	addchoicebox(mediadbscantimeout, "2", _("older 2 day"));
 	addchoicebox(mediadbscantimeout, "3", _("older 3 day"));
@@ -72,6 +72,7 @@ void screenmediadbsettings()
 	addchoicebox(mediadbscantimeout, "30", _("older 30 day"));
 	addchoicebox(mediadbscantimeout, "40", _("older 40 day"));
 	addchoicebox(mediadbscantimeout, "50", _("older 50 day"));
+	addchoicebox(mediadbscantimeout, "999999", _("never"));
 	setchoiceboxselection(mediadbscantimeout, getconfig("mediadbscantimeout", NULL));
 
 	addchoicebox(createthumb, "0", _("no"));
