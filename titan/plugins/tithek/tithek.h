@@ -419,7 +419,6 @@ void screentithekplay(char* titheklink, char* title, int first)
 				if(tmp->handle != NULL)
 				{
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
-					//changepicmem(tmp, tithekpic, 60, 0);
 					changepic(tmp, tithekpic);
 					free(tithekpic); tithekpic = NULL;
 				}
@@ -432,7 +431,6 @@ void screentithekplay(char* titheklink, char* title, int first)
 				if(tmp->handle != NULL)
 				{
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
-					//changepicmem(tmp, tithekpic, 60, 0);
 					changepic(tmp, tithekpic);
 					free(tithekpic); tithekpic = NULL;
 				}
