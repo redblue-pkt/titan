@@ -260,9 +260,6 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	int ret = 1;
 	char* ip = NULL, *pos = NULL, *path = NULL;
 	char* tmpstr = NULL, *localfile = NULL;
-	//unsigned char* buf = NULL;
-	int channels = 0;
-	unsigned long width = 0, height = 0, rowbytes = 0;
 
 	if(link == NULL) return NULL;
 
@@ -300,12 +297,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 		if(!file_exist(localfile))
 		{
 			if(pic == 1)
-			{
 				gethttp(ip, path, 80, localfile, pw, NULL, 0);
-				//buf = loadjpg(localfile, &width, &height, &rowbytes, &channels, 16);
-				//savejpg(localfile, width, height, buf);
-				//free(buf); buf = NULL;
-			}
 			else
 				gethttp(ip, path, 80, localfile, pw, NULL, 0);
 		}
@@ -427,7 +419,8 @@ void screentithekplay(char* titheklink, char* title, int first)
 				if(tmp->handle != NULL)
 				{
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
-					changepicmem(tmp, tithekpic, 60, 0);
+					//changepicmem(tmp, tithekpic, 60, 0);
+					changepic(tmp, tithekpic);
 					free(tithekpic); tithekpic = NULL;
 				}
 				tmp = tmp->prev;
@@ -439,7 +432,8 @@ void screentithekplay(char* titheklink, char* title, int first)
 				if(tmp->handle != NULL)
 				{
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
-					changepicmem(tmp, tithekpic, 60, 0);
+					//changepicmem(tmp, tithekpic, 60, 0);
+					changepic(tmp, tithekpic);
 					free(tithekpic); tithekpic = NULL;
 				}
 				tmp = tmp->next;
