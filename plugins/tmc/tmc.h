@@ -572,6 +572,7 @@ char* tmcscreenscandir()
 
 void screentmcepg(char* file)
 {
+	int rcret = -1;
 	char* bg = NULL;
 	struct skin* tmcepg = getscreen("tmcepg");
 
@@ -585,7 +586,7 @@ void screentmcepg(char* file)
 
 		while(1)
 		{
-			rcret = waitrc(tmcinfo, 0, 0);
+			rcret = waitrc(tmcepg, 0, 0);
 
 			if(rcret == getrcconfigint("rcexit", NULL)) break;
 			if(rcret == getrcconfigint("rcok", NULL)) break;
