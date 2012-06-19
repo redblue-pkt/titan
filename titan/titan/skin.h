@@ -1389,9 +1389,16 @@ unsigned char *loadjpg(char *filename, unsigned long *width, unsigned long *heig
 	jpeg_stdio_src(ciptr, fd);
 	jpeg_read_header(ciptr, TRUE);
 	ciptr->out_color_space = JCS_RGB;
+
+	//faster but less quality
+	ciptr->dct_method = JDCT_IFAST;
+	ciptr->do_fancy_upsampling = FALSE;
+	ciptr->two_pass_quantize = FALSE;
+	ciptr->dither_mode = JDITHER_ORDERED;
   
 	if(denom < 1) denom = 1;
 	if(denom > 16) denom = 16;
+	ciptr->scale_num = 1;
 	ciptr->scale_denom = denom;
 
 	jpeg_start_decompress(ciptr);
