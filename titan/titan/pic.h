@@ -51,6 +51,7 @@ struct pic* addpic(char *name, unsigned char* picbuf, int memfd, unsigned long w
 	newnode->rowbytes = rowbytes;
 	newnode->channels = channels;
   newnode->timeout = timeout;
+	newnode->lastaccess = time(NULL);
 	newnode->del = del;
 
 	if(last == NULL)
