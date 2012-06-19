@@ -1053,7 +1053,10 @@ void screentmcmenu()
 	//checks
 	if(!file_exist(getconfig("mediadbpath", NULL)))
 	{
-		textbox(_("Message"), _("MediaDB Path not found!\nConfigure it in MediaDB Settings"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+		tmpstr = ostrcat(_("MediaDB Path not found!\nConfigure it in MediaDB Settings"), "\n\n", 0, 0);
+		tmpstr = ostrcat(tmpstr, _("Path: "), 1, 0);
+		tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
+		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 	}
 	else
 	{
