@@ -1646,7 +1646,7 @@ printf("wo6\n");
 // flag1 = 1 (count files)
 int findfiles(char* dirname, int type, int flag, int flag1)
 {
-	debug(777, "dir=%s type=%d\n", dirname, type);
+	debug(777, "dir=%s type=%d flag=%d flag1=%d\n", dirname, type, flag, flag1);
 	DIR *d;
 	//Open the directory specified by dirname
 	d = opendir(dirname);
