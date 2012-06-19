@@ -1403,8 +1403,8 @@ void mediadbfindfilecb(char* path, char* file, int type)
 
 	int tout = getconfigint("mediadbscantimeout", NULL);
 
-	if(treffer == 0 || (treffer == 1 && node != NULL && tout > 0 && time(NULL) > node->timestamp + (tout * 86400)))
-	{
+	if(treffer == 0 || (treffer == 1 && tout == 0) || (treffer == 1 && node != NULL && time(NULL) > node->timestamp + (tout * 86400)))
+  {
 		if(type == 0)
 		{
 			struct imdb* imdb = NULL;
