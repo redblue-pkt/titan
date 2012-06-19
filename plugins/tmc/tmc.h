@@ -9,8 +9,8 @@ int mediadbfiltercount = 0;
 
 //Mainmenu
 int menu0pos = 0;
-char* menu0[] = {"skin/tmcsettings.png", "skin/tmcpicture.png", "skin/tmcvideo.png", "skin/tmcaudio.png", "skin/tmcplaylist.png", "skin/tmcexit.png"};
-char* menu0txt[] = {"Settings", "Picture", "Video", "Audio", "Playlist", "Exit"};
+char* menu0[] = {"skin/tmcsettings.png", "skin/tmcpicture.png", "skin/tmcvideo.png", "skin/tmcaudio.png", "skin/tmcdirplay.png", "skin/tmcplaylist.png", "skin/tmcexit.png"};
+char* menu0txt[] = {"Settings", "Picture", "Video", "Audio", "Play", "Playlist", "Exit"};
 
 //Settings
 int menu1pos = 0;
@@ -293,6 +293,32 @@ void tmcmenuscroll(int menuid, int active, struct skin* tmcmenutxt, struct skin*
 	drawscreen(tmcmenu5, 0, 0);
 }
 
+char* screentmcdirplay()
+{
+	struct skin* dir = getscreen("dir")
+	char* ret = NULL, *bg = NULL, *formats = NULL;
+
+	dir->width = 700;
+	dir->prozwidth = 0;
+	dir->height = 650;
+	dir->prozheight = 0;
+
+	drawscreen(dir, 2);
+	bg = savescreen(dir);
+
+	if(status.expertmodus > 0 && status.security == 1)
+		formats = ostrcat(formats, "*.flac *.ogg *.mp3 *.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", 1, 0);
+	else
+		formats = ostrcat(formats, "*.ts *.mts *.m2ts", 1, 0);
+
+	ret = screendir(getconfig("rec_moviepath", NULL), formats, NULL, NULL, NULL, NULL, 0, "SELECT", getrcconfigint("rcgreen", NULL), NULL, 0, NULL, 0, dir->width, dir->prozwidth, dir->height, dir->prozheight, 0);
+
+	restorescreen(bg, dir);
+	free(formats); formats = NULL;
+	blit(0);
+	return ret;
+}
+
 void screentmcdb()
 {
 	int rcret = 0, videocount = 0, audiocount = 0, picturecount = 0;
@@ -537,11 +563,37 @@ char* tmcscreenscandir()
 	drawscreen(dir, 2, 0);
 	bg = savescreen(dir);
 
-	ret = screendir(getconfig("rec_moviepath", NULL), "", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, dir->width, dir->prozwidth, dir->height, dir->prozheight, 0);
+	ret = screendir(getconfig("rec_moviepath", NULL), "", NULL, NULL, NULL, NULL, 0, "SELECT", getrcconfigint("rcgreen", NULL), NULL, 0, NULL, 0, dir->width, dir->prozwidth, dir->height, dir->prozheight, 0);
 
 	restorescreen(bg, dir);
 	blitfb(0);
 	return ret;
+}
+
+void screentmcepg(char* file)
+{
+	char* bg = NULL;
+	struct skin* tmcepg = getscreen("tmcepg");
+
+	if(file != NULL)
+	{
+		drawscreen(tmcepg, 2);
+		bg = savescreen(tmcepg);
+
+		readlabelext(tmcepg, file, ".epg");
+		drawscreen(tmcepg, 0);
+
+		while(1)
+		{
+			rcret = waitrc(tmcinfo, 0, 0);
+
+			if(rcret == getrcconfigint("rcexit", NULL)) break;
+			if(rcret == getrcconfigint("rcok", NULL)) break;
+		}
+
+		clearscreen(tmcepg);
+		restorescreen(bg, tmcepg);
+	}
 }
 
 //flag 0: editmode
@@ -1119,6 +1171,9 @@ void screentmcmenu()
 		if(rcret == getrcconfigint("rcinfo", NULL) && active == 0)
 			screentmcinfo(tmcpic3->ret);
 
+		if(rcret == getrcconfigint("rcepg", NULL) && active == 1)
+			screentmcepg(tmcpic3->ret);
+
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			if(active == 1)
@@ -1440,6 +1495,23 @@ void screentmcmenu()
 						tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 0);
 						tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 					}
+				}
+
+				continue;
+			}
+			else if(ostrcmp("Play", tmcmenutxt->ret) == 0) //directory play
+			{
+				char* file = screentmcdirplay();
+
+				if(file != NULL)
+				{
+					drawscreen(skin, 0);
+					screenplay(file, 0, 0);
+
+					free(file); file = NULL;
+					drawscreen(tmcbg, 1);
+					tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, 0);
+					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu4, tmcmenu5, 0);
 				}
 
 				continue;
