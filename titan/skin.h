@@ -1685,6 +1685,8 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 	width = cinfo.image_width;
 	height = cinfo.image_height;
 	cinfo.scale_denom = 1;
+
+printf("before scale w=%d h=%d denom=%d, sw=%d, sh=%d, mw=%d, mh=%d\n", width, height, cinfo.scale_denom, scalewidth, scaleheight, mwidth, mheight);
 	
 	if(scalewidth != 0 || scaleheight != 0)
 	{
@@ -1709,6 +1711,9 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 	jpeg_start_decompress(&cinfo);
 	width = cinfo.output_width;
 	height = cinfo.output_height;
+
+printf("after scale w=%d h=%d denom=%d, sw=%d, sh=%d, mw=%d, mh=%d\n", width, height, cinfo.scale_denom, scalewidth, scaleheight, mwidth, mheight);
+
 
 	drawjpgsw(&cinfo, NULL, posx, posy, width, height, cinfo.output_components, mwidth, mheight, scalewidth, scaleheight, halign, valign);
 
