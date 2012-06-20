@@ -652,7 +652,7 @@ void screenmc_videoplayer()
 				if(getconfig("mc_vp_autoscan", NULL) != NULL)
 				{
 					mediadbscan(filelistpath->text, 0, 1);
-					files = findfiles(filelistpath->text, 0, 0, 1);
+					files = findfiles(filelistpath->text, (0 | 0x40000000)); //count only
 				}
 			}
 		}
