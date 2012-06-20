@@ -1748,12 +1748,13 @@ int findfiles(char* dirname, int flag)
 }
 
 //type 0=video, 1=audio, 2=pic, 90=video/audio, 91=video/pic, 92=audio/pic, 100=all
+//flag: 0 = scan recursive
+//flag: 1 = not scan recursive
 void mediadbscan(char* path, int type, int flag)
 {
 	int count = 0;
 
-	if(flag == 1)
-		type = 1000;
+	if(flag == 1) type = type | 0x80000000;
 
 	addtimer(&mediadbscanthread, START, 1000, 1, (void*)path, (void*)type, NULL);
 
