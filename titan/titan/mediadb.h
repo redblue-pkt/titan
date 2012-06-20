@@ -1006,9 +1006,9 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 	status.mediadbthreadstatus = 1;
 	status.mediadbthread = self;
 
-	if(type == 1000)
+	if(type > 999)
 	{
-		type = 0;
+		type = type - 1000;
 	
 		char* tmpstr = NULL;
 		tmpstr = ostrcat(tmpstr, _("MediaDB directory scan started in Background !"), 1, 0);
