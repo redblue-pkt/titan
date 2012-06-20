@@ -1000,7 +1000,11 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 	struct splitstr* ret = NULL;
 	char* tmpstr = NULL, *tmpsplit = NULL;
 
-	if(status.mediadbthread != NULL || self == NULL) return;
+	if(status.mediadbthread != NULL || self == NULL)
+	{
+		free(path); path = NULL;
+		return;
+	}
 
 	debug(777, "mediadb scanthread start");
 	status.mediadbthreadstatus = 1;
@@ -1097,6 +1101,8 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 	}
 	else
 		findfiles(path, type);
+
+	free(path); path = NULL;
 
 	writemediadb(getconfig("mediadbfile", NULL));
 
@@ -1756,7 +1762,8 @@ void mediadbscan(char* path, int type, int flag)
 
 	if(flag == 1) type = type | 0x80000000;
 
-	addtimer(&mediadbscanthread, START, 1000, 1, (void*)path, (void*)type, NULL);
+	//param1 (path) is freed in thread
+	addtimer(&mediadbscanthread, START, 1000, 1, (void*)ostrcat(path, NULL, 0, 0), (void*)type, NULL);
 
 	//block a little
 	while(status.mediadbthread != NULL && count < 20)
