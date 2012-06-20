@@ -422,8 +422,8 @@ int addmediadbcontent(struct mediadb* node, char *line, int len, int count)
 	return 0;
 }
 
-//flag1 0: with lock
-//flag1 1: without lock
+//flag 0: with lock
+//flag 1: without lock
 struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last, int sort, int flag)
 {
 	//debug(1000, "in");
@@ -1078,7 +1078,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 	//find media files
 	if(path == NULL)
 	{
-		findfiles("/media", type, 0, 0);
+		findfiles("/media", type);
 		/*
 		addhddall();
 		hddnode = hdd;
@@ -1088,7 +1088,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 			if(hddnode->partition != 0)
 			{
 				tmpstr = ostrcat("/autofs/", hddnode->device, 0, 0);
-				findfiles(tmpstr, type, 1, 0);
+				findfiles(tmpstr, type);
 				free(tmpstr); tmpstr = NULL;
 			}
 			hddnode = hddnode->next;
@@ -1096,7 +1096,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 		*/
 	}
 	else
-		findfiles(path, type, 0, 0);
+		findfiles(path, type);
 
 	writemediadb(getconfig("mediadbfile", NULL));
 
@@ -1640,13 +1640,18 @@ printf("wo6\n");
 	free(tmpstr); tmpstr = NULL;
 }
 
-// flag = 0 (rekursive aktive)
-// flag = 1 (rekursive deactive)
-// flag1 = 0 (scan files and start)
-// flag1 = 1 (count files)
-int findfiles(char* dirname, int type, int flag, int flag1)
+//flag: bit 31 = 0 (rekursive), 1 (no recursive)
+//flag: bit 30 = 0 (scan files and start), 1 (count files)
+int findfiles(char* dirname, int flag)
 {
-	debug(777, "dir=%s type=%d flag=%d flag1=%d\n", dirname, type, flag, flag1);
+	int type = flag;
+	int onlydir = checkbit(flag, 31);
+	int onlycount = checkbit(flag, 30);
+
+	type = clearbit(type, 31);
+	type = clearbit(type, 30);
+
+	debug(777, "dir=%s type=%d onlydir=%d, onlycount=%d\n", dirname, type, onlydir, onlycount);
 	DIR *d;
 	//Open the directory specified by dirname
 	d = opendir(dirname);
@@ -1684,11 +1689,11 @@ int findfiles(char* dirname, int type, int flag, int flag1)
 				if(path_length >= PATH_MAX)
 				{
 					err("path length has got too long");
-					return 1;
+					return -1;
 				}
 				//Recursively call findfiles with the new path
-				if(flag == 0)
-					findfiles(path, type, 1, 0);
+				if(onlydir == 0)
+					findfiles(path, type);
 			}
 		}
 		else //File
@@ -1699,7 +1704,7 @@ int findfiles(char* dirname, int type, int flag, int flag1)
 			{
 				if(type == 0 || type == 100 || type == 90 || type == 91)
 				{
-					if(flag1 == 0)
+					if(onlycount == 0)
 						mediadbfindfilecb(path, entry->d_name, 0);
 					else
 						count += 1;
@@ -1710,7 +1715,7 @@ int findfiles(char* dirname, int type, int flag, int flag1)
 			{
 				if(type == 1 || type == 100 || type == 90 || type == 92)
 				{
-					if(flag1 == 0)
+					if(onlycount == 0)
 						mediadbfindfilecb(path, entry->d_name, 1);
 					else
 						count += 1;
@@ -1721,7 +1726,7 @@ int findfiles(char* dirname, int type, int flag, int flag1)
 			{
 				if(type == 2 || type == 100 || type == 91 || type == 92)
 				{
-					if(flag1 == 0)
+					if(onlycount == 0)
 						mediadbfindfilecb(path, entry->d_name, 2);
 					else
 						count += 1;
@@ -1734,10 +1739,10 @@ int findfiles(char* dirname, int type, int flag, int flag1)
 	if(closedir(d))
 	{
 		perr("Could not close %s", dirname);
-		return 1;
+		return -1;
 	}
 
-	if(flag1 == 1)
+	if(onlycount == 1)
 		return count;
 	return 0;
 }
