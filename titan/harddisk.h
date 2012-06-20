@@ -177,7 +177,6 @@ void screenconfigurehdd(char* dev)
 	listbox->aktline = 1;
 	changetitle(screen, _("Harddisk Configure"));
 
-	if(status.expertmodus < 10) y = 1;
 	for(i = 0; i < y; i++)
 	{
 		tmp = addlistbox(screen, listbox, tmp, 1);
@@ -188,17 +187,17 @@ void screenconfigurehdd(char* dev)
 				tmpstr = _("use medium for record");
 				tmpstr1 = "addrecord";
 			}
-			else if(i == 1)
+			else if(i == 1 && status.expertmodus > 9)
 			{
 				tmpstr = _("use medium for extension");
 				tmpstr1 = "addext";
 			}
-			else if(i == 2)
+			else if(i == 2 && status.expertmodus > 9)
 			{
 				tmpstr = _("use medium for swap");
 				tmpstr1 = "addswap";
 			}
-			else if(i == 3)
+			else if(i == 3 && status.expertmodus > 9)
 			{
 				tmpstr = _("use medium for backup");
 				tmpstr1 = "addbackup";
@@ -208,17 +207,17 @@ void screenconfigurehdd(char* dev)
 				tmpstr = _("del medium for record");
 				tmpstr1 = "delrecord";
 			}
-			else if(i == 5)
+			else if(i == 5 && status.expertmodus > 9)
 			{
 				tmpstr = _("del medium for extension");
 				tmpstr1 = "delext";
 			}
-			else if(i == 6)
+			else if(i == 6 && status.expertmodus > 9)
 			{
 				tmpstr = _("del medium for swap");
 				tmpstr1 = "delswap";
 			}
-			else if(i == 7)
+			else if(i == 7 && status.expertmodus > 9)
 			{
 				tmpstr = _("del medium for backup");
 				tmpstr1 = "delbackup";
