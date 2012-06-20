@@ -561,12 +561,15 @@ int main(int argc, char *argv[])
 			accelfb = addfb(ACCELFB, 0, ret / 4, 1, 4, fb->fd, skinfb->fb + skinfb->varfbsize, fb->fixfbsize);
 	}
 
-	if(lcdskinfb == NULL) {
-		mmapfb = malloc(4 * 320 * 240);
+	//if(lcdskinfb == NULL) {
+		//mmapfb = malloc(4 * 320 * 240);
+		//mmapfb = malloc(4 * 1024 * 768);
+		//mmapfb = NULL;
 		/* dev=999 ist LCD Buffer */
-		lcdskinfb = addfb("lcdskinfb", 999, 320, 240, 4, -1, mmapfb, 4 * 320 * 240);
+		//lcdskinfb = addfb("lcdskinfb", 999, 320, 240, 4, -1, mmapfb, 4 * 320 * 240);
+		//lcdskinfb = addfb("lcdskinfb", 999, 1024, 768, 4, -1, mmapfb, 4 * 1024 * 768);
 		// mmapfb = NULL;
-	}
+	//}
 
 	ret = createstartscreen();
 	if(ret != 0) return 100;

@@ -3734,6 +3734,7 @@ int drawscreennodebyname(char* screenname, char* nodename, int screencalc)
 //screencalc 2: only calculate hidden nodes
 int drawscreen(struct skin* node, int screencalc, int flag)
 {
+	int LCD_width, LCD_height;
 	struct fb* merkskinfb = NULL;
 
 	debug(1000, "in");
@@ -3762,6 +3763,16 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 	
 	if(node->name != NULL && ostrstr(node->name, "LCD_") != NULL)
 	{
+		if(lcdskinfb == NULL) {
+			if(node->name != NULL && ostrstr(node->name, "LCD_spf87") != NULL) {
+				merkskinfb = malloc(4 * 800 * 480);
+				lcdskinfb = addfb("lcdskinfb", 999, 800, 480, 4, -1, merkskinfb, 4 * 800 * 480);
+			}
+			else {
+				merkskinfb = malloc(4 * 320 * 240);
+				lcdskinfb = addfb("lcdskinfb", 999, 320, 240, 4, -1, merkskinfb, 4 * 320 * 240);
+			}	
+		}
 		merkskinfb = skinfb;
 		memset(lcdskinfb->fb, 0, lcdskinfb->varfbsize);
 		skinfb = lcdskinfb;
@@ -3800,7 +3811,12 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 			drawscreenalways(node, screencalc);
 
 			if(merkskinfb != NULL) 
-				pngforlcd();
+			{	
+				if(node->name != NULL && ostrstr(node->name, "LCD_spf") != NULL) 
+					write_FB_to_JPEG_file(skinfb->fb, skinfb->width, skinfb->height, "/tmp/titanlcd.jpg", 75);
+				else			
+					pngforlcd(skinfb->fb, skinfb->width, skinfb->height);
+			}
 			else	
 			{
 				if(flag == 4)
@@ -3813,8 +3829,12 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 
 	if(merkskinfb != NULL)
 	{
+		/*delete temporary FB*/
+		free(skinfb->fb); skinfb->fb = NULL;  
 		skinfb = merkskinfb;
 		merkskinfb = NULL;
+		delfb(lcdskinfb);
+		lcdskinfb = NULL;
 	}
 	else
 	{
