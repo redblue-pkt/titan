@@ -699,7 +699,11 @@ void screenmc_videoplayer()
 		playerafterend();
 
 	if(status.mediadbthread == NULL)
+	{
+		if(status.writemediadb == 1)
+			writemediadb(getconfig("mediadbfile", NULL));
 		freemediadb(0);
+	}
 			
 	writevfd("Mediacenter");
 	debug(50, "closed");
