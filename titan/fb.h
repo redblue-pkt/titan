@@ -414,20 +414,9 @@ int fb2png(unsigned char *buf_p, int width, int height, char *outfile)
     return 0;
 }
 
-void pngforlcd()
+void pngforlcd(char *fbuffer, int width, int height)
 {
-	fb2png(skinfb->fb, 320, 240, "/tmp/titanlcd.png");
-	
-/*	FILE *fd;
-	fd=fopen("/tmp/titanlcd.raw", "w");
-	int help = 0;
-	int i = 0;
-	while (i < 240) {
-		fwrite(skinfb->fb+help,320*4,1,fd);
-		help = help + (skinfb->width * 4);
-		i++;
-	}
-	fclose(fd);*/
+	fb2png(fbuffer, width, height, "/tmp/titanlcd.png");
 }
 
 void write_FB_to_JPEG_file(unsigned char *inbuffer, int image_width, int image_height, char * filename, int quality)
