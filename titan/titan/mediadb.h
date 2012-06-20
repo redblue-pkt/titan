@@ -1389,6 +1389,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 
 void mediadbfindfilecb(char* path, char* file, int type)
 {
+printf("start mediadbfindfilecb\n");
 	int treffer = 0;
 	char* tmpstr = NULL;
 	struct mediadb *node = mediadb;
@@ -1396,6 +1397,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 	tmpstr = ostrcat(path, "/", 0, 0);
 	tmpstr = ostrcat(tmpstr, file, 1, 0);
 
+printf("start while\n");
 	//check if entry exist
 	while(node != NULL)
 	{
@@ -1406,6 +1408,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 		}
 		node = node->next;
 	}
+printf("end while\n");
 
 	int tout = getconfigint("mediadbscantimeout", NULL);
 
@@ -1660,7 +1663,9 @@ int findfiles(char* dirname, int flag)
 	debug(777, "dir=%s type=%d onlydir=%d, onlycount=%d\n", dirname, type, onlydir, onlycount);
 	DIR *d;
 	//Open the directory specified by dirname
+printf("opendir\n");
 	d = opendir(dirname);
+printf("end opendir\n");
 
 	//Check it was opened
 	if(! d)
@@ -1679,7 +1684,9 @@ int findfiles(char* dirname, int flag)
 
 		snprintf(path, PATH_MAX, "%s", dirname);
 		//Readdir gets subsequent entries from d
+printf("readdir\n");
 		entry = readdir(d);
+printf("readdir end\n");
 
 		if(!entry) //There are no more entries in this directory, so break out of the while loop
 			break;
@@ -1687,6 +1694,7 @@ int findfiles(char* dirname, int flag)
 		//See if entry is a subdirectory of d
 		if(entry->d_type & DT_DIR)
 		{
+printf("in dir\n");
 			//Check that the directory is not d or d's parent
 			//if(strcmp(entry->d_name, "..") != 0 && strcmp (entry->d_name, ".") != 0)
 			if(entry->d_name != NULL && entry->d_name[0] != '.')
@@ -1704,6 +1712,7 @@ int findfiles(char* dirname, int flag)
 		}
 		else //File
 		{
+printf("in file\n");
 			//TODO: add extensions
 			//video
 			if(!filelistflt("*.avi *.mkv", entry->d_name))
@@ -1722,7 +1731,11 @@ int findfiles(char* dirname, int flag)
 				if(type == 1 || type == 100 || type == 90 || type == 92)
 				{
 					if(onlycount == 0)
+{
+printf("call mediadbfindfilecb\n");
 						mediadbfindfilecb(path, entry->d_name, 1);
+printf("end call mediadbfindfilecb\n");
+}
 					else
 						count += 1;
 				}
