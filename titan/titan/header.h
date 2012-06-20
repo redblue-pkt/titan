@@ -20,7 +20,6 @@ int delmediadbfilter(struct mediadbfilter* mnode, int flag);
 struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* title, char* year, char* released, char* runtime, char* genre, char* director, char* writer, char* actors, char* plot, char* poster, char* rating, char* votes, char* fullfile, char* file, int flag);
 void freemediadbcontent(struct mediadb* node);
 int findfiles(char* dirname, int flag);
-//int findfiles(char* dirname, int type, int flag, int flag1);
 struct mediadbfilter* getlastmediadbfilter(struct mediadbfilter* node, int flag);
 void getmediadbcounts(int* video, int* audio, int* picture);
 int readmediadb(const char* filename, int type, int flag);
