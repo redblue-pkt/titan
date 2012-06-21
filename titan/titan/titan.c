@@ -685,7 +685,7 @@ int main(int argc, char *argv[])
 		addtimer(&updatevfd, START, 1000, -1, NULL, NULL, NULL);
 
 	//first wizzard
-	if(getconfigint("nofirstwizzard", NULL) == 0)
+	if(getconfigint("nofirstwizzard", NULL) < 2)
 	{
 		if(file_exist("/tmp/.scart"))
 		{
@@ -694,11 +694,11 @@ int main(int argc, char *argv[])
 		}
 
 		autoresolution();
-/*
+
+		if(getconfigint("nofirstwizzard", NULL) == 0)
+		{
 firstwizzardstep1:
 
-		if(checkbox("ATEMIO510") == 0)
-		{
 			status.updatevfd = PAUSE;
 			screenavsettings(1);
 			resettvpic();
@@ -717,7 +717,7 @@ firstwizzardstep1:
 			}
 			resettvpic();
 		}
-*/
+
 		char* msg = NULL;
 		msg = command("cat /etc/imageinfo");
 		textbox(_("Info"), _(msg), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 680, 30, 0);
@@ -727,7 +727,7 @@ firstwizzardstep1:
 		writevfd("");
 		status.updatevfd = START;
 		drawscreen(skin, 0, 0);
-		addconfig("nofirstwizzard", "1");
+		addconfig("nofirstwizzard", "2");
 	}
 	else
 	{
