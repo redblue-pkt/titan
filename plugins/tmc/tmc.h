@@ -644,10 +644,10 @@ void screentmcedit(char* file, int menuid)
 	
 	if(file != NULL)
 	{
-		char* dirname = ostrcat(file, NULL, 0, 0);
-		dirname = dirname(dirname);
-		node = getmediadb(dirname, basename(file), 0);
-		free(dirname); dirname = NULL;
+		char* dame = ostrcat(file, NULL, 0, 0);
+		dname = dirname(dname);
+		node = getmediadb(dname, basename(file), 0);
+		free(dname); dname = NULL;
 	}
 
 	if(menuid == 3) type = 0; //video
@@ -772,10 +772,10 @@ int screentmcdelete(char* file)
 
 	if(file != NULL)
 	{
-		char* dirname = ostrcat(file, NULL, 0, 0);
-		dirname = dirname(dirname);
-		node = getmediadb(dirname, basename(file), 0);
-		free(dirname); dirname = NULL;
+		char* dname = ostrcat(file, NULL, 0, 0);
+		dname = dirname(dname);
+		node = getmediadb(dname, basename(file), 0);
+		free(dname); dname = NULL;
 	}
 
 	if(node != NULL)
@@ -837,10 +837,10 @@ void screentmcimdbsearch(char* file, int menuid)
 
 	if(file != NULL)
 	{
-		char* dirname = ostrcat(file, NULL, 0, 0);
-		dirname = dirname(dirname);
-		node = getmediadb(dirname, basename(file), 0);
-		free(dirname); dirname = NULL;
+		char* dname = ostrcat(file, NULL, 0, 0);
+		dname = dirname(dname);
+		node = getmediadb(dname, basename(file), 0);
+		free(dname); dname = NULL;
 	}
 
 	if(node == NULL) return;
@@ -898,10 +898,10 @@ void screentmcinfo(char* file)
 	
 	if(file != NULL)
 	{
-		char* dirname = ostrcat(file, NULL, 0, 0);
-		dirname = dirname(dirname);
-		node = getmediadb(dirname, basename(file), 0);
-		free(dirname); dirname = NULL;
+		char* dname = ostrcat(file, NULL, 0, 0);
+		dname = dirname(dname);
+		node = getmediadb(dname, basename(file), 0);
+		free(dname); dname = NULL;
 	}
 
 	if(node != NULL)
