@@ -83,7 +83,7 @@ void tmcpicscroll(int menuid, struct skin* tmcpictitle, struct skin* tmcpicstar,
 {
 	int count = 0;
 	struct mediadbfilter* node = mediadbfilterpos;
-	char* tmpstr = NULL;
+	char* tmpstr = NULL, *tmpfile = NULL;
 
 	tmcpicdel(tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 0);
 
@@ -137,7 +137,11 @@ void tmcpicscroll(int menuid, struct skin* tmcpictitle, struct skin* tmcpicstar,
 			if(count == 2)
 			{
 				changepic(tmcpic3, tmpstr);
-				changeret(tmcpic3, node->node->file);
+				tmpfile = ostrcat(node->node->path, "/", 0, 0);
+				tmpfile = ostrcat(tmpfile, node->node->file, 1, 0);
+				tmpfile = addmountpart(tmpfile, 1);
+				changeret(tmcpic3, tmpfile);
+				free(tmpfile); tmpfile = NULL;
 				changetext(tmcpictitle, node->node->title);
 				
 				int rating = node->node->rating;
@@ -638,7 +642,13 @@ void screentmcedit(char* file, int menuid)
 	char* tmpstr = NULL, *bg = NULL, *picret = NULL;
 	struct mediadb* node = NULL;
 	
-	if(file != NULL) node = getmediadb(file, 0);
+	if(file != NULL)
+	{
+		char* dirname = ostrcat(file, NULL, 0, 0);
+		dirname = dirname(dirname);
+		node = getmediadb(dirname, basename(file), 0);
+		free(dirname); dirname = NULL;
+	}
 
 	if(menuid == 3) type = 0; //video
 	if(menuid == 4) type = 1; //audio
@@ -712,7 +722,7 @@ void screentmcedit(char* file, int menuid)
 				else
 					tmpstr = ostrcat(node->id, NULL, 0, 0);
 
-				node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, node->id, rating->ret, votes->ret, node->file, title->ret, 0);
+				node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, node->id, rating->ret, votes->ret, node->path, node->file, 0);
 
 				if(picret != NULL)
 				{
@@ -757,10 +767,16 @@ int screentmcdelete(char* file)
 {
 	int ret = 0, tret = 0, width = 800, height = 300;
 	struct skin* tbox = getscreen("messagebox");
-	char* tmpstr = NULL, *bg = NULL;
+	char* tmpstr = NULL, *bg = NULL, *tmpfile = NULL;
 	struct mediadb* node = NULL;
 
-	if(file != NULL) node = getmediadb(file, 0);
+	if(file != NULL)
+	{
+		char* dirname = ostrcat(file, NULL, 0, 0);
+		dirname = dirname(dirname);
+		node = getmediadb(dirname, basename(file), 0);
+		free(dirname); dirname = NULL;
+	}
 
 	if(node != NULL)
 	{
@@ -770,32 +786,40 @@ int screentmcdelete(char* file)
 		drawscreen(tbox, 2, 0);
 		bg = savescreen(tbox);
 
-		tmpstr = ostrcat(_("Delete selected entry ?"), "\n\n", 0, 0);
-		tmpstr = ostrcat(tmpstr, node->file, 1, 0);
-		tmpstr = ostrcat(tmpstr, "\n\nOK = delete DB only\nRED = delete DB and file", 1, 0);
-		tret = textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("RED"), getrcconfigint("rcred", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, width, height, 0, 3);
-		free(tmpstr); tmpstr = NULL;
+		tmpfile = ostrcat(node->path, "/", 0, 0);
+		tmpfile = ostrcat(tmpfile, node->file, 1, 0);
+		tmpfile = addmountpart(tmpfile, 1);
 
-		if(tret == 1) //del only DB
+		if(tmpfile != NULL)
 		{
-			struct mediadbfilter* mf = mediadbfilterpos;
-			if(mediadbfilterpos != NULL) mediadbfilterpos = mediadbfilterpos->next;
-			delmediadbfilter(mf, 0);
-			delmediadb(node, 0);
-			status.writemediadb = 1;
-			ret = 1;
-		}
-		if(tret == 2) //del file and DB
-		{
-			struct mediadbfilter* mf = mediadbfilterpos;
-			if(mediadbfilterpos != NULL) mediadbfilterpos = mediadbfilterpos->next;
-			unlink(node->file);
-			delmediadbfilter(mf, 0);
-			delmediadb(node, 0);
-			status.writemediadb = 1;
-			ret = 1;
+			tmpstr = ostrcat(_("Delete selected entry ?"), "\n\n", 0, 0);
+			tmpstr = ostrcat(tmpstr, tmpfile, 1, 0);
+			tmpstr = ostrcat(tmpstr, "\n\nOK = delete DB only\nRED = delete DB and file", 1, 0);
+			tret = textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("RED"), getrcconfigint("rcred", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, width, height, 0, 3);
+			free(tmpstr); tmpstr = NULL;
+
+			if(tret == 1) //del only DB
+			{
+				struct mediadbfilter* mf = mediadbfilterpos;
+				if(mediadbfilterpos != NULL) mediadbfilterpos = mediadbfilterpos->next;
+				delmediadbfilter(mf, 0);
+				delmediadb(node, 0);
+				status.writemediadb = 1;
+				ret = 1;
+			}
+			if(tret == 2) //del file and DB
+			{
+				struct mediadbfilter* mf = mediadbfilterpos;
+				if(mediadbfilterpos != NULL) mediadbfilterpos = mediadbfilterpos->next;
+				unlink(tmpfile);
+				delmediadbfilter(mf, 0);
+				delmediadb(node, 0);
+				status.writemediadb = 1;
+				ret = 1;
+			}
 		}
 
+		free(tmpfile); tmpfile = NULL;
 		restorescreen(bg, tbox);
 	}
 
@@ -811,7 +835,14 @@ void screentmcimdbsearch(char* file, int menuid)
 	struct skin* tmcinfo = getscreen("tmcinfo");
 	char* bg = NULL;
 
-	if(file != NULL) node = getmediadb(file, 0);
+	if(file != NULL)
+	{
+		char* dirname = ostrcat(file, NULL, 0, 0);
+		dirname = dirname(dirname);
+		node = getmediadb(dirname, basename(file), 0);
+		free(dirname); dirname = NULL;
+	}
+
 	if(node == NULL) return;
 
 	if(menuid == 3) type = 0; //video
@@ -839,7 +870,7 @@ void screentmcimdbsearch(char* file, int menuid)
 			tmdb = startplugin(shortname, "tmcinfo", 1);
 
 			if(tmdb != NULL)
-				node = createmediadb(node, tmdb->id, type, tmdb->title, tmdb->year, tmdb->released, tmdb->runtime, tmdb->genre, NULL, NULL, NULL, tmdb->plot, tmdb->id, tmdb->rating, tmdb->votes, node->file, node->title, 0);
+				node = createmediadb(node, tmdb->id, type, tmdb->title, tmdb->year, tmdb->released, tmdb->runtime, tmdb->genre, NULL, NULL, NULL, tmdb->plot, tmdb->id, tmdb->rating, tmdb->votes, node->path, node->file, 0);
 
 			clearscreen(tmcinfo);
 			restorescreen(bg, tmcinfo);
@@ -865,7 +896,13 @@ void screentmcinfo(char* file)
 	char* tmpstr = NULL, *bg = NULL;
 	struct mediadb* node = NULL;
 	
-	if(file != NULL) node = getmediadb(file, 0);
+	if(file != NULL)
+	{
+		char* dirname = ostrcat(file, NULL, 0, 0);
+		dirname = dirname(dirname);
+		node = getmediadb(dirname, basename(file), 0);
+		free(dirname); dirname = NULL;
+	}
 
 	if(node != NULL)
 	{
@@ -1548,7 +1585,11 @@ void screentmcmenu()
 						{
 							if(mfilter->node != NULL)
 							{
-								audioret = screenplay(mfilter->node->file, 0, 3);
+								char* tmpfile = ostrcat(mfilter->node->path, "/", 0, 0);
+								tmpfile = ostrcat(tmpfile, mfilter->node->file, 1, 0);
+								tmpfile = addmountpart(tmpfile, 1);
+								audioret = screenplay(tmpfile, 0, 3);
+								free(tmpfile); tmpfile = NULL;
 								mediadbfilterpos = mfilter;
 							}
 							if(audioret == 1 || audioret == 2) break;
@@ -1582,7 +1623,11 @@ void screentmcmenu()
 					{
 						if(mfilter->node != NULL)
 						{
-							picret = screentmcpicplay(mfilter->node->file);
+							char* tmpfile = ostrcat(mfilter->node->path, "/", 0, 0);
+							tmpfile = ostrcat(tmpfile, mfilter->node->file, 1, 0);
+							tmpfile = addmountpart(tmpfile, 1);
+							picret = screentmcpicplay(tmpfile);
+							free(tmpfile); tmpfile = NULL;
 							mediadbfilterpos = mfilter;
 						}
 						if(picret == 1) break;
