@@ -1436,22 +1436,23 @@ unsigned char *loadjpg(char *filename, unsigned long *width, unsigned long *heig
 	return(buf);
 }
 
-int savejpg(char* filename, int width, int height, int quality, unsigned char *buf)
+int savejpg(char* filename, int stride, int width, int height, int quality, unsigned char *buf)
 {
  	struct jpeg_compress_struct cinfo;
  	struct jpeg_error_mgr jerr;
  	FILE * outfile;		
  	JSAMPROW pointer[1];
- 	int stride;		
- 
- 	cinfo.err = jpeg_std_error(&jerr);
- 	jpeg_create_compress(&cinfo);
+
+	if(buf == NULL) return 1;
  
  	if((outfile = fopen(filename, "wb")) == NULL) 
 	{
 		perr("jpeg can't open %s", filename);
 		return 1;
 	}
+
+	cinfo.err = jpeg_std_error(&jerr);
+ 	jpeg_create_compress(&cinfo);
 
  	jpeg_stdio_dest(&cinfo, outfile);
  
@@ -1462,7 +1463,6 @@ int savejpg(char* filename, int width, int height, int quality, unsigned char *b
  	jpeg_set_defaults(&cinfo);
  	jpeg_set_quality(&cinfo, quality, TRUE);
  	jpeg_start_compress(&cinfo, TRUE);
- 	stride = width * 3;
 
  	while(cinfo.next_scanline < cinfo.image_height) 
 	{
