@@ -694,8 +694,9 @@ int main(int argc, char *argv[])
 		}
 
 		autoresolution();
-firstwizzardstep1:
 /*
+firstwizzardstep1:
+
 		if(checkbox("ATEMIO510") == 0)
 		{
 			status.updatevfd = PAUSE;
