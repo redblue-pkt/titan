@@ -695,6 +695,7 @@ int main(int argc, char *argv[])
 
 		autoresolution();
 firstwizzardstep1:
+/*
 		if(checkbox("ATEMIO510") == 0)
 		{
 			status.updatevfd = PAUSE;
@@ -715,6 +716,7 @@ firstwizzardstep1:
 			}
 			resettvpic();
 		}
+*/
 		char* msg = NULL;
 		msg = command("cat /etc/imageinfo");
 		textbox(_("Info"), _(msg), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 680, 30, 0);
