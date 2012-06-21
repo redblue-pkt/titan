@@ -58,7 +58,17 @@ void screenmediadbsettings()
 		rcret = waitrc(mediadbsettings, 0, 0);
 		tmp = listbox->select;
 
-		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcexit", NULL))
+		{
+			if(!file_exist(getconfig("mediadbpath", NULL)))
+			{
+				if(textbox(_("Message"), _("No MediaDB Directory found\nPress OK to create it"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+					mkdir(getconfig("mediadbpath", NULL), 0777);
+			}
+
+			break;
+		}
+
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			addconfigscreencheck("mediadbpath", mediadbpath, NULL);
@@ -81,6 +91,7 @@ void screenmediadbsettings()
 				startthumb(1);
 
 			writeallconfig(1);
+
 			break;
 		}
 	}
