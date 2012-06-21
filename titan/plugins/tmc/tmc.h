@@ -738,7 +738,7 @@ void screentmcedit(char* file, int menuid)
 					thumb = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 					thumb = ostrcat(thumb, tmpstr, 1, 0);
 					thumb = ostrcat(thumb, "_thumb.jpg", 1, 0);
-					savejpg(thumb, 91, 140, 70, buf);
+					savejpg(thumb, width * channels, 91, 140, 70, buf);
 
 					free(buf); buf = NULL;
 					free(thumb); thumb = NULL;
