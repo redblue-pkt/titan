@@ -1700,7 +1700,7 @@ printf("end opendir\n");
 	if(! d)
 	{
 		perr("Cannot open directory %s", dirname);
-		return 1;
+		return -1;
 	}
 
 	int count = 0;
