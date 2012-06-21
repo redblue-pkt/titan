@@ -60,6 +60,7 @@
 #include <poll.h>
 #include <sys/utsname.h>
 #include <regex.h>
+#include <mntent.h>
 
 #define IPKG_LIB
 #include "libipkg/config.h"
@@ -289,6 +290,7 @@ struct mediadb
 	char* poster;
 	int rating;
 	int votes;
+	char* path;
 	char* file;
 	time_t timestamp;
 	int flag;
@@ -298,6 +300,7 @@ struct mediadb
 
 struct mediadbcache
 {
+	char* path;
 	char* file;
 	struct mediadb* mediadbnode;
 	struct mediadbcache* next;

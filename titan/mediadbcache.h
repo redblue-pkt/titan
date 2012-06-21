@@ -21,9 +21,9 @@ void debugmediadbcache()
 	printf("maxcount=%d\n", maxcount);
 }
 
-// flag 0 path + file
-// flag 1 file
-struct mediadb* getmediadb(char* file, int flag)
+// flag 0: path + file
+// flag 1: file
+struct mediadb* getmediadb(char* path, char* file, int flag)
 {
 	unsigned int hash; 
 	struct mediadbcache* node = NULL;
@@ -36,13 +36,13 @@ struct mediadb* getmediadb(char* file, int flag)
 
 	while(node != NULL)
 	{
-		if(flag == 0 && ostrcmp(file, node->file) == 0)
+		if(ostrcmp(file, node->file) == 0)
 		{
-			m_unlock(&status.mediadbmutex, 17);
-			return node->mediadbnode;
-		}
-		else if(flag == 1 && ostrcmp(file, basename(node->file)) == 0)
-		{					
+			if(flag == 0 && ostrrstr(path, node->path, -1, 1) == NULL)
+			{
+				node = node->next;
+				continue;
+			}
 			m_unlock(&status.mediadbmutex, 17);
 			return node->mediadbnode;
 		}
@@ -54,7 +54,7 @@ struct mediadb* getmediadb(char* file, int flag)
 	return NULL;
 }
 
-struct mediadbcache* modifymediadbcache(char* file, struct mediadb* mnode)
+struct mediadbcache* modifymediadbcache(char* path, char* file, struct mediadb* mnode)
 {
 	unsigned int hash; 
 	//struct mediadbcache* node = NULL, *prev = NULL, *newnode = NULL;
@@ -72,6 +72,7 @@ struct mediadbcache* modifymediadbcache(char* file, struct mediadb* mnode)
 
   //TODO: copy file???
 	newnode->file = file;
+	newnode->path = path;
 	newnode->mediadbnode = mnode;
 
 	node = mediadbcache[hash];
@@ -96,7 +97,7 @@ struct mediadbcache* modifymediadbcache(char* file, struct mediadb* mnode)
 	return newnode;
 }
 
-void delmediadbcache(char* file)
+void delmediadbcache(char* file, struct mediadb* mnode)
 {
 	unsigned int hash; 
 	struct mediadbcache *node = NULL, *prev = NULL;
@@ -108,7 +109,7 @@ void delmediadbcache(char* file)
 
 	while(node != NULL)
 	{
-		if(ostrcmp(file, node->file) == 0)
+		if(node->mediadbnode == mnode)
 		{
 			if(node == mediadbcache[hash])
 				mediadbcache[hash] = node->next;

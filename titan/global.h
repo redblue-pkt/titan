@@ -1,6 +1,79 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+char* delmountpart(char* filename, int free1)
+{
+	struct mntent ent;
+	FILE *fd = NULL;
+	char* ret = NULL, *buf = NULL;
+
+	if(filename == NULL) return NULL;
+
+	buf = malloc(MINMALLOC);
+	if(buf == NULL)
+	{
+		err("no mem");
+		return NULL;
+	}
+
+	fd = setmntent("/proc/mounts", "r");
+	if(fd != NULL)
+	{
+		while(getmntent_r(fd, &ent, buf, MINMALLOC) != 0)
+		{
+			if(ent.mnt_dir != NULL && strlen(ent.mnt_dir) > 1 && ostrstr(filename, ent.mnt_dir) == filename)
+			{
+				ret = string_replace(ent.mnt_dir, "", filename, free1);
+				free(buf);
+				return ret;
+			}
+		}
+	}
+
+	endmntent(fd);
+	free(buf);
+	return ret;
+}
+
+char* addmountpart(char* filename, int free1)
+{
+	struct mntent ent;
+	FILE *fd = NULL;
+	char* ret = NULL, *buf = NULL;
+
+	if(filename == NULL) return NULL;
+
+	buf = malloc(MINMALLOC);
+	if(buf == NULL)
+	{
+		err("no mem");
+		return NULL;
+	}
+
+	fd = setmntent("/proc/mounts", "r");
+	if(fd != NULL)
+	{
+		while(getmntent_r(fd, &ent, buf, MINMALLOC))
+		{
+			if(ent.mnt_dir != NULL && strlen(ent.mnt_dir) > 1)
+			{
+				ret = ostrcat(ent.mnt_dir, filename, 0, 0);
+				if(file_exist(ret))
+				{
+					if(free1 == 1) free(filename);
+					free(buf);
+					return ret;
+				}
+				free(ret); ret = NULL;
+			}
+		}
+	}
+
+	endmntent(fd);
+	free(buf);
+	return ret;
+}
+
 struct blacklist* readblacklist(char* filename)
 {
 	char* tmpstr = NULL;
@@ -4509,7 +4582,9 @@ char* string_replace(char *search, char *replace, char *string, int free1)
 	return tmpstr;
 }
 
-char* ostrrstr(char* str, char* search, int len)
+//flag 0: search full str
+//flag 1: search only end of string
+char* ostrrstr(char* str, char* search, int len, int flag)
 {
 	int slen = 0;
 	char* tmpstr = NULL;
@@ -4521,8 +4596,11 @@ char* ostrrstr(char* str, char* search, int len)
 	if(search > str) return NULL;
 
 	for(tmpstr = str + len - slen; tmpstr >= str; tmpstr--)
+	{
 		if(strncmp(tmpstr, search, slen) == 0)
 			return tmpstr;
+		if(flag == 1) return NULL;
+	}
 
 	return NULL;
 }
@@ -5026,7 +5104,7 @@ char* string_resub(char* str, char* str2, char* input, int dir)
 		if(pos2 == NULL) return NULL;
 
 		len = strlen(str);
-		pos = ostrrstr(input, str, pos2 - input);
+		pos = ostrrstr(input, str, pos2 - input, 0);
 		if(pos == NULL) return NULL;
 		pos += len;
 	}

@@ -386,9 +386,10 @@ int addmediadbcontent(struct mediadb* node, char *line, int len, int count)
 					case 10: node->poster = tmpstr; break;
 					case 11: rating = tmpstr; break;
 					case 12: votes = tmpstr; break;
-					case 13: node->file = tmpstr; break;
-					case 14: timestamp = tmpstr; break;
-					case 15: flag = tmpstr; break;
+					case 13: node->path = tmpstr; break;
+					case 14: node->file = tmpstr; break;
+					case 15: timestamp = tmpstr; break;
+					case 16: flag = tmpstr; break;
 				}
 
 				ret++;
@@ -398,7 +399,7 @@ int addmediadbcontent(struct mediadb* node, char *line, int len, int count)
 		}
 	}
 
-	if(ret != 16)
+	if(ret != 17)
 	{
 		if(count > 0)
 		{
@@ -450,7 +451,7 @@ struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last,
 	node = mediadb;
 
 	status.writemediadb = 1;
-	modifymediadbcache(newnode->file, newnode);
+	modifymediadbcache(newnode->path, newnode->file, newnode);
 
 	if(last == NULL)
 	{
@@ -492,13 +493,12 @@ struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last,
 	return newnode;
 }
 
-struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* title, char* year, char* released, char* runtime, char* genre, char* director, char* writer, char* actors, char* plot, char* poster, char* rating, char* votes, char* fullfile, char* file, int flag)
+struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* title, char* year, char* released, char* runtime, char* genre, char* director, char* writer, char* actors, char* plot, char* poster, char* rating, char* votes, char* path, char* file, int flag)
 {
 	struct mediadb* mnode = NULL;
 	char* tmpstr = NULL;
 
-	if(fullfile == NULL) return NULL;
-
+	if(path == NULL || file == NULL) return NULL;
 	if(title == NULL) title = file;
 
 	id = stringreplacechar(id, '#', ' ');
@@ -514,7 +514,8 @@ struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* 
 	poster = stringreplacechar(poster, '#', ' ');
 	rating = stringreplacechar(rating, ',', '.');
 	votes = stringreplacechar(votes, ',', '.');
-	fullfile = stringreplacechar(fullfile, '#', ' ');
+	path = stringreplacechar(path, '#', ' ');
+	file = stringreplacechar(file, '#', ' ');
 
 	tmpstr = ostrcat(tmpstr, id, 1, 0);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
@@ -544,7 +545,9 @@ struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* 
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	if(votes != NULL) tmpstr = ostrcat(tmpstr, oitoa(atoi(votes)), 1, 1);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, fullfile, 1, 0);
+	tmpstr = ostrcat(tmpstr, path, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, file, 1, 0);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	tmpstr = ostrcat(tmpstr, olutoa(time(NULL)), 1, 1);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
@@ -553,10 +556,10 @@ struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* 
 	if(update != NULL)
 	{
 		m_lock(&status.mediadbmutex, 17);
-		delmediadbcache(update->file);
+		delmediadbcache(update->file, update);
 		freemediadbcontent(update);
 		addmediadbcontent(update, tmpstr, strlen(tmpstr), 1);
-		modifymediadbcache(update->file, update);
+		modifymediadbcache(update->path, update->file, update);
 		m_unlock(&status.mediadbmutex, 17);
 	}
 
@@ -776,7 +779,7 @@ int delmediadb(struct mediadb* mnode, int flag)
 			struct mediadbfilter* mfnode = getmediadbfilter(node, 1);
 			if(mfnode != NULL)
 				delmediadbfilter(mfnode, 1);
-			delmediadbcache(node->file);
+			delmediadbcache(node->file, node);
 			freemediadbcontent(node);
 
 			free(node);
@@ -894,7 +897,7 @@ int writemediadb(const char *filename)
 
 	while(node != NULL)
 	{
-		ret = fprintf(fd, "%s#%d#%s#%d#%s#%s#%s#%s#%s#%s#%s#%s#%d#%d#%s#%lu#%d\n", node->id, node->type, node->title, node->year, node->released, node->runtime, node->genre, node->director, node->writer, node->actors, node->plot, node->poster, node->rating, node->votes, node->file, node->timestamp, node->flag);
+		ret = fprintf(fd, "%s#%d#%s#%d#%s#%s#%s#%s#%s#%s#%s#%s#%d#%d#%s#%s#%lu#%d\n", node->id, node->type, node->title, node->year, node->released, node->runtime, node->genre, node->director, node->writer, node->actors, node->plot, node->poster, node->rating, node->votes, node->path, node->file, node->timestamp, node->flag);
 
 		if(ret < 0)
 		{
@@ -1391,29 +1394,53 @@ void mediadbfindfilecb(char* path, char* file, int type)
 {
 printf("start mediadbfindfilecb\n");
 	int treffer = 0;
-	char* tmpstr = NULL;
-	struct mediadb *node = mediadb;
+	char* shortpath = NULL, *tmpstr = NULL;
+	struct mediadb *node = NULL;
 	
-	tmpstr = ostrcat(path, "/", 0, 0);
-	tmpstr = ostrcat(tmpstr, file, 1, 0);
+	shortpath = delmountpart(path, 0);
 
 printf("start while\n");
+	m_lock(&status.mediadbmutex, 17);
+	node = mediadb;
 	//check if entry exist
 	while(node != NULL)
 	{
-		if(ostrcmp(node->file, tmpstr) == 0)
+		if(ostrcmp(node->file, file) == 0)
 		{
-			treffer = 1;
-			break;
+			//check directory
+			if(ostrcmp(shortpath, node->path) == 0) //same file
+			{
+				treffer = 1; 
+				break;
+			}
+
+			//check file size
+			tmpstr = ostrcat(path, "/", 0, 0);
+			tmpstr = ostrcat(tmpstr, file, 1, 0);
+			off64_t s1 = getfilesize(tmpstr);
+			free(tmpstr); tmpstr = NULL;
+			
+			tmpstr = ostrcat(node->path, "/", 0, 0);
+			tmpstr = ostrcat(tmpstr, node->file, 1, 0);
+			tmpstr = addmountpart(tmpstr, 1);
+			off64_t s2 = getfilesize(tmpstr);
+			free(tmpstr); tmpstr = NULL;
+			
+			if(s1 == s2) //seems the same file
+			{
+				treffer = 1;
+				break;
+			}
 		}
 		node = node->next;
 	}
+	m_unlock(&status.mediadbmutex, 17);
 printf("end while\n");
 
 	int tout = getconfigint("mediadbscantimeout", NULL);
 
 	if(treffer == 0 || (treffer == 1 && tout == 0) || (treffer == 1 && node != NULL && time(NULL) > node->timestamp + (tout * 86400)))
-  {
+	{
 		if(type == 0)
 		{
 			struct imdb* imdb = NULL;
@@ -1572,21 +1599,21 @@ printf("wo2\n");
 			else
 				debug(133, "----------------------mediadb skipped----------------------");
 			
-			debug(777, "add video: %s", tmpstr);
+			debug(777, "add video: %s/%s", shortpath, file);
 			if(imdb != NULL)
 			{
 printf("wo2.1\n");
 				debug(777, "imdb id %s", imdb->id);
 printf("wo2.2\n");
 
-				createmediadb(node, imdb->id, type, imdb->title, imdb->year, imdb->released, imdb->runtime, imdb->genre, imdb->director, imdb->writer, imdb->actors, imdb->plot, imdb->id, imdb->rating, imdb->votes, tmpstr, file, 0);
+				createmediadb(node, imdb->id, type, imdb->title, imdb->year, imdb->released, imdb->runtime, imdb->genre, imdb->director, imdb->writer, imdb->actors, imdb->plot, imdb->id, imdb->rating, imdb->votes, shortpath, file, 0);
 printf("wo2.3\n");
 
 			}
 			else
 			{
 				printf("wo2.0\n");
-				createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, tmpstr, file, 0);
+				createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, 0);
 			}
 printf("wo3\n");
 
@@ -1621,14 +1648,14 @@ printf("wo6\n");
 		}
 		else if(type == 1)
 		{
-			debug(777, "add audio: %s", tmpstr);
-			createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, tmpstr, file, 0);
+			debug(777, "add audio: %s/%s", shortpath, file);
+			createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, 0);
 		}
 		else if(type == 2)
 		{
 			char* thumbfile = NULL;
 
-			debug(777, "add pic: %s", tmpstr);
+			debug(777, "add pic: %s/%s", shortpath, file);
 			if(status.thumbthread != NULL)
 			{
 				//check if thumb exists
@@ -1642,11 +1669,11 @@ printf("wo6\n");
 				}
 			}
 
-			createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, thumbfile, NULL, NULL, tmpstr, file, 0);
+			createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, thumbfile, NULL, NULL, shortpath, file, 0);
 			free(thumbfile); thumbfile = NULL;
 		}
 	}
-	free(tmpstr); tmpstr = NULL;
+	free(shortpath); shortpath = NULL;
 }
 
 //flag: bit 31 = 0 (rekursive), 1 (no recursive)
