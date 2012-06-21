@@ -656,6 +656,7 @@ void screentmcedit(char* file, int menuid)
 
 	if(node != NULL)
 	{
+		changeinput(picture, NULL);
 		changeinput(title, node->title);
 
 		changemask(year, "0000");
@@ -750,7 +751,8 @@ void screentmcedit(char* file, int menuid)
 			{
 				free(picret); picret = NULL;
 				picret = screendir(getconfig("mediadbpath", NULL), "*.jpg", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, tmcedit->width, tmcedit->prozwidth, tmcedit->height, tmcedit->prozheight, 0);
-				changeinput(picture, basename(picret));
+				if(picret != NULL)
+					changeinput(picture, basename(picret));
 				drawscreen(tmcedit, 0, 0);
 			}
 		}

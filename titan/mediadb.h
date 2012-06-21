@@ -561,9 +561,11 @@ struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* 
 		addmediadbcontent(update, tmpstr, strlen(tmpstr), 1);
 		modifymediadbcache(update->path, update->file, update);
 		m_unlock(&status.mediadbmutex, 17);
+		mnode = update;
 	}
+	else
+		mnode = addmediadb(tmpstr, strlen(tmpstr), 1, NULL, 1, 0);
 
-	mnode = addmediadb(tmpstr, strlen(tmpstr), 1, NULL, 1, 0);
 	free(tmpstr);
 
 	return mnode;
@@ -711,7 +713,7 @@ int delmediadbcategory(struct mediadbcategory* mnode, int flag)
 	int ret = 1;
 
 	m_lock(&status.mediadbmutex, 17);
-  struct mediadbcategory *node = mediadbcategory, *prev = mediadbcategory;
+	struct mediadbcategory *node = mediadbcategory, *prev = mediadbcategory;
 
 	while(node != NULL)
 	{
@@ -1266,12 +1268,12 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 	{
 		//split
 		int i = 0, count = 0;
-		tmpsplit = ostrcat(node->file, NULL, 0, 0);
+		tmpsplit = ostrcat(node->path, NULL, 0, 0);
 		ret = strsplit(tmpsplit, "/", &count);
 		
 		if(ret != NULL)
 		{
-			for(i = 0; i < count - 1; i++)
+			for(i = 0; i < count; i++)
 			{
 				int treffer = 1;
 				strstrip((&ret[i])->part);
