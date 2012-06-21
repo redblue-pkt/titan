@@ -3734,7 +3734,6 @@ int drawscreennodebyname(char* screenname, char* nodename, int screencalc)
 //screencalc 2: only calculate hidden nodes
 int drawscreen(struct skin* node, int screencalc, int flag)
 {
-	int LCD_width, LCD_height;
 	struct fb* merkskinfb = NULL;
 
 	debug(1000, "in");
@@ -3765,16 +3764,22 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 	{
 		if(lcdskinfb == NULL) {
 			if(node->name != NULL && ostrstr(node->name, "LCD_spf87") != NULL) {
-				merkskinfb = malloc(4 * 800 * 480);
-				lcdskinfb = addfb("lcdskinfb", 999, 800, 480, 4, -1, merkskinfb, 4 * 800 * 480);
+				//char *newskinfb = malloc(4 * 800 * 480);
+				char *newskinfb = calloc(1, 4 * 800 * 480);
+				if(newskinfb == NULL)
+					return -2;
+				lcdskinfb = addfb("lcdskinfb", 999, 800, 480, 4, -1, newskinfb, 4 * 800 * 480);
 			}
 			else {
-				merkskinfb = malloc(4 * 320 * 240);
-				lcdskinfb = addfb("lcdskinfb", 999, 320, 240, 4, -1, merkskinfb, 4 * 320 * 240);
+				//char *newskinfb = malloc(4 * 320 * 240);
+				char *newskinfb = calloc(1, 4 * 320 * 240);
+				if(newskinfb == NULL)
+					return -2;
+				lcdskinfb = addfb("lcdskinfb", 999, 320, 240, 4, -1, newskinfb, 4 * 320 * 240);
 			}	
 		}
 		merkskinfb = skinfb;
-		memset(lcdskinfb->fb, 0, lcdskinfb->varfbsize);
+		//memset(lcdskinfb->fb, 0, lcdskinfb->varfbsize);
 		skinfb = lcdskinfb;
 	}
 
