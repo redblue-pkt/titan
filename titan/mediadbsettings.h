@@ -6,7 +6,7 @@ void screenmediadbsettings()
 	int rcret = 0;
 	struct skin* mediadbsettings = getscreen("mediadbsettings");
 	struct skin* listbox = getscreennode(mediadbsettings, "listbox");
-	struct skin* mediadbdevice = getscreennode(mediadbsettings, "mediadbpath");
+	struct skin* mediadbpath = getscreennode(mediadbsettings, "mediadbpath");
 	struct skin* mediadbscandelall = getscreennode(mediadbsettings, "mediadbscandelall");
 	struct skin* mediadbscandelnotfound = getscreennode(mediadbsettings, "mediadbscandelnotfound");
 	struct skin* mediadbscantimeout = getscreennode(mediadbsettings, "mediadbscantimeout");
@@ -14,43 +14,12 @@ void screenmediadbsettings()
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL;
 
-	system("ls -al /media/net/ ; ls -al /media/usb/");
-
-	addchoicebox(mediadbdevice, "/var/swap", "/var/swap");
-
-	char* nfs = command("cat /proc/mounts | grep nfs | awk '{print $2}'");
-	debug(50, "mediadbdevice nfs: %s", nfs);
-	addchoicebox(mediadbdevice, nfs, nfs);
-
-	char* cifs = command("cat /proc/mounts | grep cifs | awk '{print $2}'");
-	debug(50, "mediadbdevice cifs: %s", cifs);
-	addchoicebox(mediadbdevice, cifs, cifs);
-
-	char* vfat = command("cat /proc/mounts | grep vfat | awk '{print $2}'");
-	debug(50, "mediadbdevice vfat: %s", vfat);
-	addchoicebox(mediadbdevice, vfat, vfat);
-
-	char* ntfs3g = command("cat /proc/mounts | grep ntfs-3g | awk '{print $2}'");
-	debug(50, "mediadbdevice ntfs-3g: %s", ntfs3g);
-	addchoicebox(mediadbdevice, ntfs3g, ntfs3g);
-
-	char* ntfsmount = command("cat /proc/mounts | grep ntfsmount | awk '{print $2}'");	
-	debug(50, "mediadbdevice ntfsmount: %s", ntfsmount);
-	addchoicebox(mediadbdevice, ntfsmount, ntfsmount);
-
-	char* jfs = command("cat /proc/mounts | grep jfs | awk '{print $2}'");
-	debug(50, "mediadbdevice jfs: %s", jfs);
-	addchoicebox(mediadbdevice, jfs, jfs);
-
-	char* ext2 = command("cat /proc/mounts | grep ext2 | awk '{print $2}'");
-	debug(50, "mediadbdevice ext2: %s", ext2);
-	addchoicebox(mediadbdevice, ext2, ext2);
-
-	char* ext3 = command("cat /proc/mounts | grep ext3 | awk '{print $2}'");
-	debug(50, "mediadbdevice ext3: %s", ext3);
-	addchoicebox(mediadbdevice, ext3, ext3);
-
-	setchoiceboxselection(mediadbdevice, getconfig("mediadbdevice", NULL));
+	addchoicebox(mediadbpath, "/media/hdd/mediadb", "/media/hdd/mediadb");
+	tmpstr = realpath("/var/swap", NULL);
+	if(tmpstr != NULL && ostrcmp(tmpstr, "/mnt/swapextensions") != 0)
+		addchoicebox(mediadbpath, "/var/swap/mediadb", "/var/swap/mediadb");
+	free(tmpstr); tmpstr = NULL;
+	setchoiceboxselection(mediadbpath, getconfig("mediadbpath", NULL));
 
 	addchoicebox(mediadbscandelall, "0", _("no"));
 	addchoicebox(mediadbscandelall, "1", _("yes"));
@@ -92,12 +61,10 @@ void screenmediadbsettings()
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
-			addconfigscreencheck("mediadbdevice", mediadbdevice, NULL);
-			tmpstr = ostrcat(getconfig("mediadbdevice", NULL), "/mediadb", 0, 0);
-			addconfig("mediadbpath", tmpstr);
+			addconfigscreencheck("mediadbpath", mediadbpath, NULL);
 
-			if(!file_exist(tmpstr))
-				mkdir(tmpstr, 0777);
+			if(!file_exist(getconfig("mediadbpath", NULL)))
+				mkdir(getconfig("mediadbpath", NULL), 0777);
 			
 			free(tmpstr), tmpstr = NULL;
 			tmpstr = ostrcat(getconfig("mediadbpath", NULL), "/mediadb", 0, 0);
