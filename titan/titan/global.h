@@ -24,6 +24,7 @@ char* delmountpart(char* filename, int free1)
 			if(ent.mnt_dir != NULL && strlen(ent.mnt_dir) > 1 && ostrstr(filename, ent.mnt_dir) == filename)
 			{
 				ret = string_replace(ent.mnt_dir, "", filename, free1);
+				endmntent(fd);
 				free(buf);
 				return ret;
 			}
@@ -61,6 +62,7 @@ char* addmountpart(char* filename, int free1)
 				if(file_exist(ret))
 				{
 					if(free1 == 1) free(filename);
+					endmntent(fd);
 					free(buf);
 					return ret;
 				}
