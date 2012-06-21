@@ -4593,7 +4593,7 @@ char* ostrrstr(char* str, char* search, int len, int flag)
 
 	if(len == -1) len = strlen(str);
 	slen = strlen(search);
-	if(search > str) return NULL;
+	if(slen > len) return NULL;
 
 	for(tmpstr = str + len - slen; tmpstr >= str; tmpstr--)
 	{
