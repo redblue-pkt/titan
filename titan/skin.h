@@ -1979,6 +1979,7 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 			for(y = py; y < pyh; y += skinfb->width)
 			{
 				pxw = y + width;
+				/*
 				for(x = y; x < pxw; x++)
 				{
 					if(src[3] < 10)
@@ -1987,6 +1988,26 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 						continue;
 					}
 					skinfb->fblong[x] = (src[3] << 24) | (src[0] << 16) | (src[1] << 8) | src[2];
+					src += 4;
+				}*/
+				for(x = y; x < pxw; x++)
+				{
+					//renderquality 255-0 = best
+					if(src[3] > 200)
+						skinfb->fblong[x] = (255 << 24) | (src[0] << 16) | (src[1] << 8) | src[2];
+					else if(src[3] < 50)
+					{
+						src += 4;
+						continue;
+					}
+					else
+					{
+						tmpcol = skinfb->fblong[x];
+						alpha_composite(r, src[0], src[3], (tmpcol & 0xff0000) >> 16);
+						alpha_composite(g, src[1], src[3], (tmpcol & 0x00ff00) >> 8);
+						alpha_composite(b, src[2], src[3], tmpcol & 0xff);
+						skinfb->fblong[x] = (255 << 24) | r << 16 | g << 8 | b;
+					}
 					src += 4;
 				}
 				src += diff;
