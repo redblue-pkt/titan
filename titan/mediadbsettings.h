@@ -84,13 +84,7 @@ void screenmediadbsettings()
 			break;
 		}
 	}
-	free(ext2);
-	free(ext3);
-	free(vfat);
-	free(ntfsmount);
-	free(ntfs3g);
-	free(cifs);
-	free(nfs);
+
 	delownerrc(mediadbsettings);
 	clearscreen(mediadbsettings);
 }
