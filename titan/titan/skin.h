@@ -1886,6 +1886,8 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 	struct pic* picnode = NULL;
 	int decoding = getconfigint("pichwdecode", NULL);
 	int pictype = 0; //0 = png, 1 = jpg HW, 2 = jpg SW
+	unsigned long tmpcol = 0;
+	unsigned char r = 0, g = 0, b = 0;
 
 	length = strlen(filename);
 	if(filename[length - 1] == 'g' && filename[length - 2] == 'n' && filename[length - 3] == 'p')
