@@ -122,7 +122,7 @@ void screenmc_videoplayer()
 //				debug(50, "tmpfilename: %s", tmpfilename);
 
 //				struct mediadb* mnode = getmediadb(tmpfilename);
-				struct mediadb* mnode = getmediadb(filelist->select->name, 1);
+				struct mediadb* mnode = getmediadb(filelistpath->text, filelist->select->name, 0);
 
 //				free(tmpfilename), tmpfilename = NULL;
 				if(mnode != NULL)
