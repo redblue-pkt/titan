@@ -644,7 +644,7 @@ void screentmcedit(char* file, int menuid)
 	
 	if(file != NULL)
 	{
-		char* dame = ostrcat(file, NULL, 0, 0);
+		char* dname = ostrcat(file, NULL, 0, 0);
 		dname = dirname(dname);
 		node = getmediadb(dname, basename(file), 0);
 		free(dname); dname = NULL;
