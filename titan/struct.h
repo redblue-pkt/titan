@@ -1209,6 +1209,8 @@ struct status
 	char* webplayfile;
 	//status of mediadbthread
 	int mediadbthreadstatus;
+	//hold time for save mediadb in scan
+	time_t mediadbsavetime;
 } status;
 
 struct fb

@@ -1082,6 +1082,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 		}
 	}
 
+	status.mediadbsavetime = time(NULL) + 60;
 	status.mediadbthreadstatus = 2;
 
 	//find media files
@@ -1676,6 +1677,13 @@ printf("wo6\n");
 		}
 	}
 	free(shortpath); shortpath = NULL;
+
+	//save mediadb all 60 sek
+	if(status.mediadbsavetime < time(NULL))
+	{
+		writemediadb(getconfig("mediadbfile", NULL));
+		status.mediadbsavetime = time(NULL) + 60;
+	}
 }
 
 //flag: bit 31 = 0 (rekursive), 1 (no recursive)
