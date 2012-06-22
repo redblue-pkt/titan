@@ -473,7 +473,7 @@ int changefont(struct skin* node, char* text);
 int changemask(struct skin* node, char* text);
 int changepicmem(struct skin* node, char* text, int timeout, int del);
 int convertxmlentry(char *value, uint8_t *proz);
-int savejpg(char* filename, int stride, int width, int height, int quality, unsigned char *buf)
+int savejpg(char* filename, int stride, int width, int height, int quality, unsigned char *buf);
 
 //volume.h
 void screenvolumeup();
