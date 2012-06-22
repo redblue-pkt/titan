@@ -90,6 +90,7 @@
 <node name=plot text="Plot" parent=listbox type=inputbox width=100% height=30>
 <node name=rating text="Rating" parent=listbox type=choicebox width=100% height=30>
 <node name=votes text="Votes" parent=listbox type=inputboxnum width=100% height=30>
+<node name=locked text="Scan locking" parent=listbox type=choicebox width=100% height=30>
 <node name=picture text="Picture" parent=listbox type=choicebox width=100% height=30>
 <node name=b1 text="OK" halign=center valign=center bordercol=okcol bordersize=6 bordertype=2 posx=20 posy=0 width=150 height=39/>
 <node name=b2 text="PICTURE" halign=center valign=center bordercol=red bordersize=6 bordertype=2 posx=180 posy=0 width=150 height=39/>

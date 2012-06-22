@@ -637,6 +637,7 @@ void screentmcedit(char* file, int menuid)
 	struct skin* plot = getscreennode(tmcedit, "plot");
 	struct skin* rating = getscreennode(tmcedit, "rating");
 	struct skin* votes = getscreennode(tmcedit, "votes");
+	struct skin* locked = getscreennode(tmcedit, "locked");
 	struct skin* picture = getscreennode(tmcedit, "picture");
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *bg = NULL, *picret = NULL;
@@ -694,6 +695,15 @@ void screentmcedit(char* file, int menuid)
 				votes->input = ostrcat("0", votes->input, 0, 1);
 		}
 
+		addchoicebox(locked, "0", _("unlock -> lock it"));
+		addchoicebox(locked, "1", _("unlock -> leaf unlock"));
+		addchoicebox(locked, "2", _("locked -> unlock it"));
+		addchoicebox(locked, "3", _("locked -> leaf locked"));
+
+		if(checkbit(node->flag, 31) == 1)
+			setchoiceboxselection(locked, "3");
+		else
+			setchoiceboxselection(locked, "0");
 
 		drawscreen(tmcedit, 2, 0);
 		bg = savescreen(tmcedit);
@@ -723,7 +733,10 @@ void screentmcedit(char* file, int menuid)
 				else
 					tmpstr = ostrcat(node->id, NULL, 0, 0);
 
-				node->flag = setbit(node->flag, 31);
+				if(ostrcmp(locked->ret, "1") == 0 || ostrcmp(locked->ret, "2") == 0)
+					node->flag = clearbit(node->flag, 31);
+				if(ostrcmp(locked->ret, "0") == 0 || ostrcmp(locked->ret, "3") == 0)
+					node->flag = setbit(node->flag, 31);
 				node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, node->id, rating->ret, votes->ret, node->path, node->file, node->flag);
 
 				if(picret != NULL)
