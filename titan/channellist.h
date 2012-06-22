@@ -633,12 +633,12 @@ start:
 	if(status.servicetype == 0)
 	{
 		tmpstr = getconfig("channellist", NULL);
-		changetext(b7, _("Radio (Info)"));
+		changetext(b7, _("Radio"));
 	}
 	else
 	{
 		tmpstr = getconfig("rchannellist", NULL);
-		changetext(b7, _("TV (Info)"));
+		changetext(b7, _("TV"));
 	}
 	if(ostrncmp("(BOUQUET)-", tmpstr, 10) == 0 && strlen(tmpstr) > 10)
 	{
@@ -1662,12 +1662,12 @@ start:
 			if(status.servicetype == 0)
 			{
 				status.servicetype = 1;
-				changetext(b7, _("TV (Info)"));
+				changetext(b7, _("TV"));
 			}
 			else
 			{
 				status.servicetype = 0;
-				changetext(b7, _("Radio (Info)"));
+				changetext(b7, _("Radio"));
 			}
 			newmodus = 1;
 			break;
