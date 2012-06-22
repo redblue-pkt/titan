@@ -117,7 +117,7 @@ struct imdbapi* getimdbapi(struct imdbapi** first, char* title, int flag, int fl
 				if(file_exist(savefile) && !file_exist(savethumb))
 				{
 					buf = loadjpg(savefile, &width, &height, &rowbytes, &channels, 16);
-					savejpg(savethumb, 91, 140, 70, buf);
+					savejpg(savethumb, width * channels, 91, 140, 70, buf);
 				}
 				free(buf); buf = NULL; 
 				free(savethumb); savethumb = NULL;
