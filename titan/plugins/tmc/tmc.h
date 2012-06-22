@@ -723,7 +723,8 @@ void screentmcedit(char* file, int menuid)
 				else
 					tmpstr = ostrcat(node->id, NULL, 0, 0);
 
-				node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, node->id, rating->ret, votes->ret, node->path, node->file, 0);
+				node->flag = setbit(node->flag, 31);
+				node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, node->id, rating->ret, votes->ret, node->path, node->file, node->flag);
 
 				if(picret != NULL)
 				{
@@ -872,7 +873,10 @@ void screentmcimdbsearch(char* file, int menuid)
 			tmdb = startplugin(shortname, "tmcinfo", 1);
 
 			if(tmdb != NULL)
-				node = createmediadb(node, tmdb->id, type, tmdb->title, tmdb->year, tmdb->released, tmdb->runtime, tmdb->genre, NULL, NULL, NULL, tmdb->plot, tmdb->id, tmdb->rating, tmdb->votes, node->path, node->file, 0);
+			{
+				node->flag = setbit(node->flag, 31);
+				node = createmediadb(node, tmdb->id, type, tmdb->title, tmdb->year, tmdb->released, tmdb->runtime, tmdb->genre, NULL, NULL, NULL, tmdb->plot, tmdb->id, tmdb->rating, tmdb->votes, node->path, node->file, node->flag);
+			}
 
 			clearscreen(tmcinfo);
 			restorescreen(bg, tmcinfo);

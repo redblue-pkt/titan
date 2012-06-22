@@ -1396,7 +1396,6 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 void mediadbfindfilecb(char* path, char* file, int type)
 {
 printf("start mediadbfindfilecb\n");
-	int treffer = 0;
 	char* shortpath = NULL, *tmpstr = NULL;
 	struct mediadb *node = NULL;
 	
@@ -1412,10 +1411,7 @@ printf("start while\n");
 		{
 			//check directory
 			if(ostrcmp(shortpath, node->path) == 0) //same file
-			{
-				treffer = 1; 
 				break;
-			}
 
 			//check file size
 			tmpstr = ostrcat(path, "/", 0, 0);
@@ -1430,10 +1426,7 @@ printf("start while\n");
 			free(tmpstr); tmpstr = NULL;
 			
 			if(s1 == s2) //seems the same file
-			{
-				treffer = 1;
 				break;
-			}
 		}
 		node = node->next;
 	}
@@ -1442,7 +1435,7 @@ printf("end while\n");
 
 	int tout = getconfigint("mediadbscantimeout", NULL);
 
-	if(treffer == 0 || (treffer == 1 && tout == 0) || (treffer == 1 && node != NULL && time(NULL) > node->timestamp + (tout * 86400)))
+	if(node == NULL || (node != NULL && checkbit(node->flag, 31) == 0 && tout == 0) || (node != NULL && checkbit(node->flag, 31) == 0 && time(NULL) > node->timestamp + (tout * 86400)))
 	{
 		if(type == 0)
 		{

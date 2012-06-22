@@ -293,6 +293,7 @@ struct mediadb
 	char* path;
 	char* file;
 	time_t timestamp;
+	//bit 31: manual change
 	int flag;
 	struct mediadb* prev;
 	struct mediadb* next;
