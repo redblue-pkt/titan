@@ -403,7 +403,7 @@ start:
 			tmpstr = ostrcat(tuner->feshortname, "_maxsat", 0, 0);
 			addconfigint(tmpstr, maxsat);
 			free(tmpstr); tmpstr = NULL;
-			writeallconfig(0);
+			writeallconfig(1);
 			break;
 		}
 	}

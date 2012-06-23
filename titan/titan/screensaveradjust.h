@@ -105,7 +105,7 @@ void screenscreensaveradjust()
 	}
 	delownerrc(screensaveradjust);
 	clearscreen(screensaveradjust);
-	writeallconfig(0);
+	writeallconfig(1);
 }
 
 #endif
