@@ -521,6 +521,8 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+int clearbit(int value, int bitpos);
+int checkbit(int value, int bitpos);
 char* addmountpart(char* filename, int free1);
 char* string_removechar(char *str);
 unsigned int gethash(char* str);
