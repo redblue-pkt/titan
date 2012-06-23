@@ -9,19 +9,19 @@
 <node name=b3 text=START halign=center valign=middle bordercol=blue bordersize=2 bordertype=2 posx=400 posy=0 width=200 height=30/>
 </screen>
 
-<screen halign=center fontcol=fontcol fontsize=30 name=LCD_Pearl1 posx=0 posy=0 width=320 height=240 bgcol=bgcol>
+<screen halign=center fontcol=fontcol fontsize=30 name=LCD_Pearl1 posx=0 posy=0 width=320 height=240 bgcol=000000>
 <node fontsize=40 halign=center text="" func=getaktchannelname name=channelname posx=5 posy=5 width=310 height=40 fontcol=fontcol/>
 <node func=getpicon posx=110 posy=50 width=100 height=60/>
 <node halign=center func=getepgakttitle bordersize=0 bordercol=bordercol fontsize=20 posx=10 posy=115 width=300 height=30 fontcol=fontcol/>
-<node halign=center bordersize=2 progresscol=bordercol bgcol=white halign=left func=getepgakttimeline bordercol=bordercol borderradius=5 name=epgline posy=145 posx=center width=290 height=20/>
+<node halign=center bordersize=2 progresscol=CD661D bgcol=white halign=left func=getepgakttimeline bordercol=bordercol borderradius=5 name=epgline posy=145 posx=center width=290 height=20/>
 <node halign=center text="" name=akttime fontsize=50 posx=center posy=170 width=320 height=50/>
 <node halign=center valign=left func=getrec param1=skin name=rec posx=0 posy=220 width=100 height=20/>
 </screen>
 
-<screen halign=center fontcol=fontcol fontsize=30 name=LCD_Pearl1_Wetter posx=0 posy=0 width=320 height=240 bgcol=bgcol>
+<screen halign=center fontcol=fontcol fontsize=30 name=LCD_Pearl1_Wetter posx=0 posy=0 width=320 height=240 bgcol=000000>
 <node fontsize=50 halign=center text="" func=getaktchannelname name=channelname posx=5 posy=3 width=310 height=50 fontcol=fontcol/>
 <node halign=center func=getepgakttitle bordersize=0 bordercol=bordercol fontsize=20 posx=10 posy=60 width=300 height=20 fontcol=fontcol/>
-<node halign=center bordersize=2 progresscol=bordercol bgcol=white halign=left func=getepgakttimeline bordercol=bordercol borderradius=5 name=epgline posy=85 posx=center width=290 height=15/>
+<node halign=center bordersize=2 progresscol=CD661D bgcol=white halign=left func=getepgakttimeline bordercol=bordercol borderradius=5 name=epgline posy=85 posx=center width=290 height=15/>
 <node halign=center text="" name=akttime fontsize=50 posx=center posy=100 width=320 height=50/>
 <node halign=center text="0 C" name=day0_t fontsize=20 posx=10 posy=160 width=60 height=20/>
 <node halign=center text="0 C" name=day1_t fontsize=20 posx=100 posy=160 width=60 height=20/>
@@ -34,7 +34,7 @@
 <node halign=center valign=left func=getrec param1=skin name=rec posx=0 posy=220 width=100 height=20/>
 </screen>
 
-<screen halign=center fontcol=fontcol fontsize=30 name=LCD_Play posx=0 posy=0 width=320 height=240 bgcol=bgcol>
+<screen halign=center fontcol=fontcol fontsize=30 name=LCD_Play posx=0 posy=0 width=320 height=240 bgcol=000000>
 <node pic=%pluginpath%/lcdpearl1/mc.png type=textbox wrap=yes fontsize=30 halign=center text="" name=title posx=0 posy=0 width=320 height=240 fontcol=fontcol/>
 <node type=textbox wrap=yes fontsize=30 halign=center text="" name=title1 posx=5 posy=40 width=310 height=90 fontcol=fontcol/>
 #<node text="---" name=len posx=center posy=110 width=100 height=20 fontcol=fontcol/>
@@ -53,7 +53,7 @@
 #<node halign=center text="" name=akttime fontsize=50 posx=center posy=170 width=320 height=50/>
 #</screen>
 
-<screen halign=center fontcol=fontcol fontsize=30 name=LCD_MC_Menu posx=0 posy=0 width=320 height=240 bgcol=bgcol>
+<screen halign=center fontcol=fontcol fontsize=30 name=LCD_MC_Menu posx=0 posy=0 width=320 height=240 bgcol=000000>
 <node pic=%pluginpath%/lcdpearl1/mc.png type=textbox wrap=yes fontsize=30 halign=center text="" name=title posx=0 posy=0 width=320 height=240 fontcol=fontcol/>
 <node type=textbox wrap=yes fontsize=30 halign=center text="Auswahl" name=title posx=5 posy=40 width=310 height=90 fontcol=fontcol/>
 <node halign=center text="" name=akttime fontsize=50 posx=center posy=150 width=320 height=50/>
