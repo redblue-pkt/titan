@@ -1742,15 +1742,20 @@ printf("in dir\n");
 		}
 		else //File
 		{
-printf("in file\n");
+printf("in file %s\n", entry->d_name);
 			//TODO: add extensions
 			//video
 			if(!filelistflt("*.avi *.mkv", entry->d_name))
 			{
+printf("in file1\n");
 				if(type == 0 || type == 100 || type == 90 || type == 91)
 				{
 					if(onlycount == 0)
+{
+printf("call mediadbfindfilecb1\n");
 						mediadbfindfilecb(path, entry->d_name, 0);
+printf("end call mediadbfindfilecb1\n");
+}
 					else
 						count += 1;
 				}
@@ -1758,13 +1763,14 @@ printf("in file\n");
 			//audio
 			if(!filelistflt("*.mp3", entry->d_name))
 			{
+printf("in file2\n");
 				if(type == 1 || type == 100 || type == 90 || type == 92)
 				{
 					if(onlycount == 0)
 {
-printf("call mediadbfindfilecb\n");
+printf("call mediadbfindfilecb2\n");
 						mediadbfindfilecb(path, entry->d_name, 1);
-printf("end call mediadbfindfilecb\n");
+printf("end call mediadbfindfilecb2\n");
 }
 					else
 						count += 1;
@@ -1773,14 +1779,20 @@ printf("end call mediadbfindfilecb\n");
 			//picture
 			if(!filelistflt("*.jpg", entry->d_name))
 			{
+printf("in file3\n");
 				if(type == 2 || type == 100 || type == 91 || type == 92)
 				{
 					if(onlycount == 0)
+{
+printf("call mediadbfindfilecb3\n");
 						mediadbfindfilecb(path, entry->d_name, 2);
+printf("end call mediadbfindfilecb3\n");
+}
 					else
 						count += 1;
 				}
 			}
+printf("end in file %s\n", entry->d_name);
 		}
 	}
 
