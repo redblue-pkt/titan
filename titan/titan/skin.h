@@ -3787,17 +3787,23 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 	{
 		if(lcdskinfb == NULL) {
 			if(node->name != NULL && ostrstr(node->name, "LCD_spf87") != NULL) {
-				//char *newskinfb = malloc(4 * 800 * 480);
-				char *newskinfb = calloc(1, 4 * 800 * 480);
+				unsigned char *newskinfb = calloc(1, 4 * 800 * 480);
 				if(newskinfb == NULL)
+				{
+					if(flag == 0 || flag == 4)
+						m_lock(&status.drawingmutex, 0);
 					return -2;
+				}
 				lcdskinfb = addfb("lcdskinfb", 999, 800, 480, 4, -1, newskinfb, 4 * 800 * 480);
 			}
 			else {
-				//char *newskinfb = malloc(4 * 320 * 240);
-				char *newskinfb = calloc(1, 4 * 320 * 240);
+				unsigned char *newskinfb = calloc(1, 4 * 320 * 240);
 				if(newskinfb == NULL)
+				{
+					if(flag == 0 || flag == 4)
+						m_lock(&status.drawingmutex, 0);
 					return -2;
+				}
 				lcdskinfb = addfb("lcdskinfb", 999, 320, 240, 4, -1, newskinfb, 4 * 320 * 240);
 			}	
 		}
@@ -3861,7 +3867,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		free(skinfb->fb); skinfb->fb = NULL;  
 		skinfb = merkskinfb;
 		merkskinfb = NULL;
-		delfb(lcdskinfb);
+		delfb("lcdskinfb");
 		lcdskinfb = NULL;
 	}
 	else
