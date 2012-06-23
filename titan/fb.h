@@ -409,12 +409,11 @@ int fb2png(unsigned char *buf_p, int width, int height, char *outfile)
 	}
 		
 	convert_and_write(buf_p, outfile, width, height, bitdepth, interlace);
-   
 
-    return 0;
+	return 0;
 }
 
-void pngforlcd(char *fbuffer, int width, int height)
+void pngforlcd(unsigned char *fbuffer, int width, int height)
 {
 	fb2png(fbuffer, width, height, "/tmp/titanlcd.png");
 }
