@@ -49,7 +49,7 @@ void thumbthread(struct stimerthread* self)
 					thumbfile = ostrcat(thumbfile, (char*)qe->data1, 1, 0);
 
 					debug(307, "create thumb: %s from %s/%s", thumbfile, (char*)qe->data, (char*)qe->data1);
-					savejpg(thumbfile, width * channels, 100, 100, 70, buf);
+					buf = savejpg(thumbfile, width, height, channels, 100, 100, 70, buf);
 				}
 			}
 

@@ -1436,35 +1436,46 @@ unsigned char *loadjpg(char *filename, unsigned long *width, unsigned long *heig
 	return(buf);
 }
 
-int savejpg(char* filename, int stride, int width, int height, int quality, unsigned char *buf)
+unsigned char* savejpg(char* filename, int width, int height, int channels, int newwidth, int newheight, int quality, unsigned char *buf)
 {
  	struct jpeg_compress_struct cinfo;
  	struct jpeg_error_mgr jerr;
- 	FILE * outfile;		
+ 	FILE* outfile = NULL;
  	JSAMPROW pointer[1];
+ 	int stride;
 
-	if(buf == NULL) return 1;
- 
- 	if((outfile = fopen(filename, "wb")) == NULL) 
+	if(buf == NULL) return buf;
+
+ 	if((outfile = fopen(filename, "wb")) == NULL)
 	{
 		perr("jpeg can't open %s", filename);
-		return 1;
+		return buf;
 	}
 
-	cinfo.err = jpeg_std_error(&jerr);
- 	jpeg_create_compress(&cinfo);
+	if(width != newwidth || height != newheight)
+	{
+		buf = scale(buf, width, height, channels, newwidth, newheight, 1);
+		if(buf == NULL)
+		{
+ 			fclose(outfile);
+			return buf;
+		}
+	}
 
+ 	cinfo.err = jpeg_std_error(&jerr);
+ 	jpeg_create_compress(&cinfo);
  	jpeg_stdio_dest(&cinfo, outfile);
- 
- 	cinfo.image_width = width;
- 	cinfo.image_height = height;
- 	cinfo.input_components = 3;
+
+ 	cinfo.image_width = newwidth;
+ 	cinfo.image_height = newheight;
+ 	cinfo.input_components = channels;
  	cinfo.in_color_space = JCS_RGB;
  	jpeg_set_defaults(&cinfo);
  	jpeg_set_quality(&cinfo, quality, TRUE);
  	jpeg_start_compress(&cinfo, TRUE);
+ 	stride = newwidth * channels;
 
- 	while(cinfo.next_scanline < cinfo.image_height) 
+ 	while(cinfo.next_scanline < cinfo.image_height)
 	{
  		pointer[0] = &buf[cinfo.next_scanline * stride];
  		jpeg_write_scanlines(&cinfo, pointer, 1);
@@ -1473,7 +1484,7 @@ int savejpg(char* filename, int stride, int width, int height, int quality, unsi
  	jpeg_finish_compress(&cinfo);
  	fclose(outfile);
  	jpeg_destroy_compress(&cinfo);
- 	return 0;
+ 	return buf;
 }
 
 int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx, int posy, int width, int height, int colbytes, int mwidth, int mheight, int scalewidth, int scaleheight, int halign, int valign)
@@ -1699,8 +1710,6 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 	width = cinfo.image_width;
 	height = cinfo.image_height;
 
-printf("before scale w=%d h=%d denom=%d, sw=%d, sh=%d, mw=%d, mh=%d\n", width, height, cinfo.scale_denom, scalewidth, scaleheight, mwidth, mheight);
-	
 	if(scalewidth != 0 || scaleheight != 0)
 	{
 		//auto scale to mwidth / mheight
@@ -1724,9 +1733,6 @@ printf("before scale w=%d h=%d denom=%d, sw=%d, sh=%d, mw=%d, mh=%d\n", width, h
 	jpeg_start_decompress(&cinfo);
 	width = cinfo.output_width;
 	height = cinfo.output_height;
-
-printf("after scale w=%d h=%d denom=%d, sw=%d, sh=%d, mw=%d, mh=%d\n", width, height, cinfo.scale_denom, scalewidth, scaleheight, mwidth, mheight);
-
 
 	drawjpgsw(&cinfo, NULL, posx, posy, width, height, cinfo.output_components, mwidth, mheight, scalewidth, scaleheight, halign, valign);
 
