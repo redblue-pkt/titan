@@ -1074,11 +1074,15 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 		{
 			prev = node;
 			node = node->next;
-			if(!file_exist(prev->file))
+			tmpstr = ostrcat(prev->path, "/", 0, 0);
+			tmpstr = ostrcat(tmpstr, prev->file, 1, 0);
+			tmpstr = addmountpart(tmpstr, 1);
+			if(tmpstr == NULL)
 			{
 				//TODO: unlink all jpg to node
 				delmediadb(prev, 0);
 			}
+			free(tmpstr); tmpstr = NULL;
 		}
 	}
 
