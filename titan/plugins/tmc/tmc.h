@@ -905,7 +905,7 @@ void screentmcimdbsearch(char* file, int menuid)
 	free(shortname); shortname = NULL;
 }
 
-void screentmcinfo(char* file)
+void screentmcinfo(char* file, int menuid)
 {
 	int rcret = 0;
 	struct skin* tmcinfo = getscreen("tmcinfo");
@@ -1005,10 +1005,10 @@ void screentmcdbmenu(char* file, int menuid)
 				if(screentmcdelete(file) == 1)
 					break;
 			}
-			if(ostrcmp(listbox->select->name, "imdbsearch") == 0)
+			if(menuid == 3 && ostrcmp(listbox->select->name, "imdbsearch") == 0)
 				screentmcimdbsearch(file, menuid);
 			if(ostrcmp(listbox->select->name, "info") == 0)
-				screentmcinfo(file);
+				screentmcinfo(file, menuid);
 
 			drawscreen(tmcpic3, 0, 0);
 		}
@@ -1235,9 +1235,9 @@ void screentmcmenu()
 		}
 
 		if(rcret == getrcconfigint("rcinfo", NULL) && active == 0)
-			screentmcinfo(tmcpic3->ret);
+			screentmcinfo(tmcpic3->ret, menuid);
 
-		if(rcret == getrcconfigint("rcepg", NULL) && active == 1)
+		if(rcret == getrcconfigint("rcepg", NULL) && active == 1 && menuid == 3) //only video
 			screentmcepg(tmcpic3->ret);
 
 		if(rcret == getrcconfigint("rcok", NULL))
