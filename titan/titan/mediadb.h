@@ -1723,8 +1723,7 @@ int findfiles(char* dirname, int flag)
 		if(entry->d_type & DT_DIR)
 		{
 			//Check that the directory is not d or d's parent
-			//if(strcmp(entry->d_name, "..") != 0 && strcmp (entry->d_name, ".") != 0)
-			if(entry->d_name != NULL && entry->d_name[0] != '.')
+			if(entry->d_name != NULL && entry->d_name[0] != '.' && entry->d_name[0] != '$')
 			{
 				path_length = snprintf(path, PATH_MAX, "%s/%s", dirname, entry->d_name);
 				if(path_length >= PATH_MAX)
