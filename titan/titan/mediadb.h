@@ -1740,7 +1740,7 @@ int findfiles(char* dirname, int flag)
 		{
 			//TODO: add extensions
 			//video
-			if(!filelistflt("*.avi *.mkv", entry->d_name))
+			if(!filelistflt(".avi .mkv", entry->d_name))
 			{
 				if(type == 0 || type == 100 || type == 90 || type == 91)
 				{
@@ -1751,7 +1751,7 @@ int findfiles(char* dirname, int flag)
 				}
 			}
 			//audio
-			if(!filelistflt("*.mp3", entry->d_name))
+			if(!filelistflt(".mp3", entry->d_name))
 			{
 				if(type == 1 || type == 100 || type == 90 || type == 92)
 				{
@@ -1762,7 +1762,7 @@ int findfiles(char* dirname, int flag)
 				}
 			}
 			//picture
-			if(!filelistflt("*.jpg", entry->d_name))
+			if(!filelistflt(".jpg", entry->d_name))
 			{
 				if(type == 2 || type == 100 || type == 91 || type == 92)
 				{

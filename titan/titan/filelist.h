@@ -11,21 +11,22 @@ int filelistflt(char* filter, char* name)
 
 	if(filter != NULL && name != NULL)
 	{
-printf("in filelistflt %s %s\n", filter, name);
 		tmpmatch--;
 		do
 		{
 			tmpmatch++;
 			if(*tmpmatch == ' ' || *tmpmatch == '\0')
 			{
-printf("strndup\n");
 				tmpchar = strndup(tmpmatch1, count);
-printf("strndup end\n");
 				if(tmpchar != NULL)
 				{
-printf("fnmatch %s\n", tmpchar);
-					ret = fnmatch(tmpchar, name, FNM_CASEFOLD);
-printf("fnmatch end\n");
+					if(tmpchar[0] == '.') //filter without glob check
+					{
+						if(ostrrstrcase(name, tmpchar, -1, 1) != NULL)
+							ret = 0;
+					}
+					else
+						ret = fnmatch(tmpchar, name, FNM_CASEFOLD);
 					free(tmpchar); tmpchar = NULL;
 					if(ret == 0) return 0;
 				}
