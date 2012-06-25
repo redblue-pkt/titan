@@ -14,10 +14,10 @@ void screenmediadbsettings()
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL;
 
-	addchoicebox(mediadbpath, "/media/hdd/mediadb", "/media/hdd/mediadb");
+	addchoicebox(mediadbpath, "/media/hdd/.mediadb", "/media/hdd/.mediadb");
 	tmpstr = realpath("/var/swap", NULL);
 	if(tmpstr != NULL && ostrcmp(tmpstr, "/mnt/swapextensions") != 0)
-		addchoicebox(mediadbpath, "/var/swap/mediadb", "/var/swap/mediadb");
+		addchoicebox(mediadbpath, "/var/swap/.mediadb", "/var/swap/.mediadb");
 	free(tmpstr); tmpstr = NULL;
 	setchoiceboxselection(mediadbpath, getconfig("mediadbpath", NULL));
 
