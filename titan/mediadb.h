@@ -1663,7 +1663,6 @@ printf("wo6\n");
 					thumbfile = ostrcat(path, "/.Thumbnails/", 0, 0);
 					thumbfile = ostrcat(thumbfile, file, 1, 0);
 					addqueue(101, (void*)path, strlen(path) + 1, (void*)file, strlen(file) + 1, 0, NULL);
-					thumbthread(NULL);
 				}
 			}
 
