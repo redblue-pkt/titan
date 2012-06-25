@@ -1403,6 +1403,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 	struct mediadb *node = NULL;
 	
 	shortpath = delmountpart(path, 0);
+	if(shortpath == NULL) return; //no mountpart found
 
 	m_lock(&status.mediadbmutex, 17);
 	node = mediadb;
