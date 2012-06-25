@@ -7,22 +7,26 @@ int filelistflt(char* filter, char* name)
 
 	char* tmpmatch = filter;
 	char* tmpmatch1 = filter;
-
 	char* tmpchar = NULL;
 
-	if(filter != NULL)
+	if(filter != NULL && name != NULL)
 	{
+printf("in filelistflt %s %s\n", filter, name);
 		tmpmatch--;
 		do
 		{
 			tmpmatch++;
 			if(*tmpmatch == ' ' || *tmpmatch == '\0')
 			{
+printf("strndup\n");
 				tmpchar = strndup(tmpmatch1, count);
+printf("strndup end\n");
 				if(tmpchar != NULL)
 				{
+printf("fnmatch %s\n", tmpchar);
 					ret = fnmatch(tmpchar, name, FNM_CASEFOLD);
-					free(tmpchar);
+printf("fnmatch end\n");
+					free(tmpchar); tmpchar = NULL;
 					if(ret == 0) return 0;
 				}
 				tmpmatch1 = tmpmatch + 1;
@@ -33,6 +37,7 @@ int filelistflt(char* filter, char* name)
 		while(*tmpmatch != '\0');
 	}
 
+printf("out filelistflt\n");
 	return 1;
 }
 
