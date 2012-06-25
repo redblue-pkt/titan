@@ -1399,13 +1399,11 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 
 void mediadbfindfilecb(char* path, char* file, int type)
 {
-printf("start mediadbfindfilecb\n");
 	char* shortpath = NULL, *tmpstr = NULL;
 	struct mediadb *node = NULL;
 	
 	shortpath = delmountpart(path, 0);
 
-printf("start while\n");
 	m_lock(&status.mediadbmutex, 17);
 	node = mediadb;
 	//check if entry exist
@@ -1435,7 +1433,6 @@ printf("start while\n");
 		node = node->next;
 	}
 	m_unlock(&status.mediadbmutex, 17);
-printf("end while\n");
 
 	int tout = getconfigint("mediadbscantimeout", NULL);
 
@@ -1612,7 +1609,7 @@ printf("wo2.3\n");
 			}
 			else
 			{
-				printf("wo2.0\n");
+printf("wo2.0\n");
 				createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, 0);
 			}
 printf("wo3\n");
@@ -1697,9 +1694,7 @@ int findfiles(char* dirname, int flag)
 	debug(777, "dir=%s type=%d onlydir=%d, onlycount=%d\n", dirname, type, onlydir, onlycount);
 	DIR *d;
 	//Open the directory specified by dirname
-printf("opendir\n");
 	d = opendir(dirname);
-printf("end opendir\n");
 
 	//Check it was opened
 	if(! d)
@@ -1718,9 +1713,7 @@ printf("end opendir\n");
 
 		snprintf(path, PATH_MAX, "%s", dirname);
 		//Readdir gets subsequent entries from d
-printf("readdir\n");
 		entry = readdir(d);
-printf("readdir end\n");
 
 		if(!entry) //There are no more entries in this directory, so break out of the while loop
 			break;
@@ -1728,7 +1721,6 @@ printf("readdir end\n");
 		//See if entry is a subdirectory of d
 		if(entry->d_type & DT_DIR)
 		{
-printf("in dir\n");
 			//Check that the directory is not d or d's parent
 			//if(strcmp(entry->d_name, "..") != 0 && strcmp (entry->d_name, ".") != 0)
 			if(entry->d_name != NULL && entry->d_name[0] != '.')
@@ -1746,20 +1738,14 @@ printf("in dir\n");
 		}
 		else //File
 		{
-printf("in file %s\n", entry->d_name);
 			//TODO: add extensions
 			//video
 			if(!filelistflt("*.avi *.mkv", entry->d_name))
 			{
-printf("in file1\n");
 				if(type == 0 || type == 100 || type == 90 || type == 91)
 				{
 					if(onlycount == 0)
-{
-printf("call mediadbfindfilecb1\n");
 						mediadbfindfilecb(path, entry->d_name, 0);
-printf("end call mediadbfindfilecb1\n");
-}
 					else
 						count += 1;
 				}
@@ -1767,15 +1753,10 @@ printf("end call mediadbfindfilecb1\n");
 			//audio
 			if(!filelistflt("*.mp3", entry->d_name))
 			{
-printf("in file2\n");
 				if(type == 1 || type == 100 || type == 90 || type == 92)
 				{
 					if(onlycount == 0)
-{
-printf("call mediadbfindfilecb2\n");
 						mediadbfindfilecb(path, entry->d_name, 1);
-printf("end call mediadbfindfilecb2\n");
-}
 					else
 						count += 1;
 				}
@@ -1783,20 +1764,14 @@ printf("end call mediadbfindfilecb2\n");
 			//picture
 			if(!filelistflt("*.jpg", entry->d_name))
 			{
-printf("in file3\n");
 				if(type == 2 || type == 100 || type == 91 || type == 92)
 				{
 					if(onlycount == 0)
-{
-printf("call mediadbfindfilecb3\n");
 						mediadbfindfilecb(path, entry->d_name, 2);
-printf("end call mediadbfindfilecb3\n");
-}
 					else
 						count += 1;
 				}
 			}
-printf("end in file %s\n", entry->d_name);
 		}
 	}
 
