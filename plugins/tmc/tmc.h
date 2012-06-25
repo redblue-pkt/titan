@@ -129,7 +129,12 @@ void tmcpicscroll(int menuid, struct skin* tmcpictitle, struct skin* tmcpicstar,
 			if(!file_exist(tmpstr))
 			{
 				free(tmpstr);
-				tmpstr = ostrcat("%pluginpath%/tmc/skin/tmcnopic.jpg", NULL, 0, 0);
+				if(menuid == 2)
+					tmpstr = ostrcat("%pluginpath%/tmc/skin/tmcnopic.jpg", NULL, 0, 0);
+				else if(menuid == 3)
+					tmpstr = ostrcat("%pluginpath%/tmc/skin/tmcnovideo.jpg", NULL, 0, 0);
+				else if(menuid == 4)
+					tmpstr = ostrcat("%pluginpath%/tmc/skin/tmcnoaudio.jpg", NULL, 0, 0);
 			}
 			
 			if(count == 0) changepic(tmcpic1, tmpstr);
@@ -978,7 +983,8 @@ void screentmcdbmenu(char* file, int menuid)
 
 	edit->hidden = NO;
 	delete->hidden = NO;
-	imdbsearch->hidden = NO;
+	if(menuid == 3)
+		imdbsearch->hidden = NO;
 	info->hidden = NO;
 
 	addscreenrc(tmcpic3, listbox);
