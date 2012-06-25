@@ -4609,6 +4609,29 @@ char* ostrrstr(char* str, char* search, int len, int flag)
 
 	for(tmpstr = str + len - slen; tmpstr >= str; tmpstr--)
 	{
+		if(strncasecmp(tmpstr, search, slen) == 0)
+			return tmpstr;
+		if(flag == 1) return NULL;
+	}
+
+	return NULL;
+}
+
+//flag 0: search full str
+//flag 1: search only end of string
+char* ostrrstr(char* str, char* search, int len, int flag)
+{
+	int slen = 0;
+	char* tmpstr = NULL;
+
+	if(str == NULL || search == NULL) return NULL;
+
+	if(len == -1) len = strlen(str);
+	slen = strlen(search);
+	if(slen > len) return NULL;
+
+	for(tmpstr = str + len - slen; tmpstr >= str; tmpstr--)
+	{
 		if(strncmp(tmpstr, search, slen) == 0)
 			return tmpstr;
 		if(flag == 1) return NULL;
