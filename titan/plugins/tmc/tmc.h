@@ -315,10 +315,10 @@ char* screentmcdirplay()
 	drawscreen(dir, 2, 0);
 	bg = savescreen(dir);
 
-	if(status.expertmodus > 0 && status.security == 1)
+	//if(status.expertmodus > 0 && status.security == 1)
 		formats = ostrcat(formats, "*.flac *.ogg *.mp3 *.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", 1, 0);
-	else
-		formats = ostrcat(formats, "*.ts *.mts *.m2ts", 1, 0);
+	//else
+	//	formats = ostrcat(formats, "*.ts *.mts *.m2ts", 1, 0);
 
 	ret = screendir(getconfig("rec_moviepath", NULL), formats, NULL, NULL, NULL, NULL, 0, "SELECT", getrcconfigint("rcgreen", NULL), NULL, 0, NULL, 0, dir->width, dir->prozwidth, dir->height, dir->prozheight, 0);
 
