@@ -118,12 +118,34 @@ void tmcpicscroll(int menuid, struct skin* tmcpictitle, struct skin* tmcpicstar,
 		if(node != NULL && node->node != NULL)
 		{
 			if(menuid == 2) //picture
-				tmpstr = ostrcat(node->node->poster, NULL, 0, 0);
+			{
+				if(node->node->poster != NULL)
+				{
+					tmpstr = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+					tmpstr = ostrcat(tmpstr, node->node->poster, 1, 0);
+          if(getconfigint("tmcpreview", NULL) == 0)
+            tmpstr = ostrcat(tmpstr, "_thumb.jpg", 1, 0);
+          else
+            tmpstr = ostrcat(tmpstr, "_xxxx.jpg", 1, 0);
+				}
+				else
+				{
+          if(getconfigint("tmcpreview", NULL) == 2)
+            tmpstr = ostrcat(node->node->path, "/", 0, 0);
+          else
+            tmpstr = ostrcat(node->node->path, "/.Thumbnails/", 0, 0);
+					tmpstr = ostrcat(tmpstr, node->node->file, 1, 0);
+					tmpstr = addmountpart(tmpstr, 1);
+				}
+			}
 			else if(menuid == 3) //video
 			{
 				tmpstr = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 				tmpstr = ostrcat(tmpstr, node->node->poster, 1, 0);
-				tmpstr = ostrcat(tmpstr, "_thumb.jpg", 1, 0);
+				if(getconfigint("tmcpreview", NULL) == 0)
+          tmpstr = ostrcat(tmpstr, "_thumb.jpg", 1, 0);
+        else
+          tmpstr = ostrcat(tmpstr, "_xxxx.jpg", 1, 0);
 			}
 			
 			if(!file_exist(tmpstr))
@@ -318,7 +340,7 @@ char* screentmcdirplay()
 	//if(status.expertmodus > 0 && status.security == 1)
 		formats = ostrcat(formats, "*.flac *.ogg *.mp3 *.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", 1, 0);
 	//else
-	//	formats = ostrcat(formats, "*.ts *.mts *.m2ts", 1, 0);
+		//formats = ostrcat(formats, "*.ts *.mts *.m2ts", 1, 0);
 
 	ret = screendir(getconfig("rec_moviepath", NULL), formats, NULL, NULL, NULL, NULL, 0, "SELECT", getrcconfigint("rcgreen", NULL), NULL, 0, NULL, 0, dir->width, dir->prozwidth, dir->height, dir->prozheight, 0);
 
@@ -475,6 +497,7 @@ int screentmcsettings()
 	struct skin* picname = getscreennode(tmcpic3, "picname");
 	struct skin* scan = getscreennode(tmcpic3, "scan");
 	struct skin* bgpic = getscreennode(tmcpic3, "bgpic");
+  struct skin* preview = getscreennode(tmcpic3, "preview");
 	struct skin* tmp = NULL;
 	char* tmppic = NULL;
 
@@ -487,6 +510,7 @@ int screentmcsettings()
 	picname->hidden = NO;
 	scan->hidden = NO;
 	bgpic->hidden = NO;
+  preview->hidden = NO;
 
 	addchoicebox(pictimeout, "5", "5");
 	addchoicebox(pictimeout, "10", "10");
@@ -518,6 +542,11 @@ int screentmcsettings()
 	addchoicebox(bgpic, "4", _("pic5"));
 	addchoicebox(bgpic, "1000", _("no pic"));
 	setchoiceboxselection(bgpic, getconfig("tmcbgpic", NULL));
+  
+  addchoicebox(preview, "0", _("slow"));
+	addchoicebox(preview, "1", _("normal"));
+  addchoicebox(preview, "2", _("high"));
+	setchoiceboxselection(preview, getconfig("tmcpreview", NULL));
 
 	addscreenrc(tmcpic3, listbox);
 	drawscreen(tmcpic3, 0, 0);
@@ -539,6 +568,7 @@ int screentmcsettings()
 			addconfigscreencheck("tmcscan", scan, "0");
 			if(ostrcmp(bgpic->ret, getconfig("tmcbgpic", NULL)) != 0) ret = 1;
 			addconfigscreencheck("tmcbgpic", bgpic, "0");
+      addconfigscreencheck("tmcpreview", preview, "0");
 			break;
 		}
 	}
@@ -548,6 +578,7 @@ int screentmcsettings()
 	picname->hidden = YES;
 	scan->hidden = YES;
 	bgpic->hidden = YES;
+  preview->hidden = YES;
 
 	delownerrc(tmcpic3);
 
@@ -742,7 +773,6 @@ void screentmcedit(char* file, int menuid)
 					node->flag = clearbit(node->flag, 31);
 				if(ostrcmp(locked->ret, "0") == 0 || ostrcmp(locked->ret, "3") == 0)
 					node->flag = setbit(node->flag, 31);
-				node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, node->id, rating->ret, votes->ret, node->path, node->file, node->flag);
 
 				if(picret != NULL)
 				{
@@ -752,16 +782,25 @@ void screentmcedit(char* file, int menuid)
 					unsigned char* buf = NULL;
 					
 					buf = loadjpg(picret, &width, &height, &rowbytes, &channels, 16);
-
-					//TODO: save pic in other sizes
 					thumb = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 					thumb = ostrcat(thumb, tmpstr, 1, 0);
 					thumb = ostrcat(thumb, "_thumb.jpg", 1, 0);
 					buf = savejpg(thumb, width, height, channels, 91, 140, 70, buf);
-
-					free(buf); buf = NULL;
 					free(thumb); thumb = NULL;
+					free(buf); buf = NULL;
+          
+					buf = loadjpg(picret, &width, &height, &rowbytes, &channels, 16);
+					thumb = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+					thumb = ostrcat(thumb, tmpstr, 1, 0);
+					thumb = ostrcat(thumb, "_xxxx.jpg", 1, 0);
+					buf = savejpg(thumb, width, height, channels, 91, 140, 70, buf);
+					free(thumb); thumb = NULL;
+					free(buf); buf = NULL;
+					
+					node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, tmpstr, rating->ret, votes->ret, node->path, node->file, node->flag);
 				}
+				else
+					node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, node->poster, rating->ret, votes->ret, node->path, node->file, node->flag);
 
 				free(tmpstr); tmpstr = NULL;
 				break;

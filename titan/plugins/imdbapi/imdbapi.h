@@ -110,6 +110,7 @@ struct imdbapi* getimdbapi(struct imdbapi** first, char* title, int flag, int fl
 					gethttp(ip, path, 80, savefile, NULL, NULL, 0);
 				free((*first)->poster);
 				(*first)->poster = savefile;
+
 				//create thumb 
 				savethumb = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0); 
 				savethumb = ostrcat(savethumb, (*first)->id, 1, 0); 
@@ -119,8 +120,20 @@ struct imdbapi* getimdbapi(struct imdbapi** first, char* title, int flag, int fl
 					buf = loadjpg(savefile, &width, &height, &rowbytes, &channels, 16);
 					buf = savejpg(savethumb, width, height, channels, 91, 140, 70, buf);
 				}
-				free(buf); buf = NULL; 
 				free(savethumb); savethumb = NULL;
+				free(buf); buf = NULL;
+
+				//create xxxxx
+				savethumb = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+				savethumb = ostrcat(savethumb, (*first)->id, 1, 0);
+				savethumb = ostrcat(savethumb, "_xxxx.jpg", 1, 0);
+				if(file_exist(savefile) && !file_exist(savethumb))
+				{
+					buf = loadjpg(savefile, &width, &height, &rowbytes, &channels, 16);
+					buf = savejpg(savethumb, width, height, channels, 91, 140, 70, buf);
+				}
+				free(savethumb); savethumb = NULL;
+				free(buf); buf = NULL; 
 			}
 			else if(flag == 0)
 			{
