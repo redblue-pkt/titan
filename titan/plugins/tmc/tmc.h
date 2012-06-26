@@ -1641,7 +1641,6 @@ void screentmcmenu()
 					mfilter = mediadbfilterpos;
 
 					if(servicestop(status.aktservice, 1, 1) == 0)
-					if(rcret == 0)
 					{
 						while(mfilter != NULL && mediadbfilter != NULL)
 						{
