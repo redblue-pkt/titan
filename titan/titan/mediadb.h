@@ -1020,7 +1020,8 @@ int createmediadbfilter(int type, char* search, int flag)
 	return count;
 }
 
-void mediadbscanthread(struct stimerthread* self, char* path, int type)
+//flag: bit 31 = 0 (rekursive), 1 (no recursive)
+void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 {
 	struct mediadb *node = mediadb, *prev = mediadb;
 	struct mediadbcategory *cnode = NULL;
@@ -1037,6 +1038,11 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 	debug(777, "mediadb scanthread start");
 	status.mediadbthreadstatus = 1;
 	status.mediadbthread = self;
+
+	int type = flag;
+	int onlydir = checkbit(flag, 31);
+
+	type = clearbit(type, 31);
 
 	if(type > 999)
 	{
@@ -1115,8 +1121,8 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 	//find media files
 	if(path == NULL)
 	{
-		findfiles("/media/usb", type);
-		findfiles("/media/net", type);
+		findfiles("/media/usb", type, onlydir, 0);
+		findfiles("/media/net", type, onlydir, 0);
 		/*
 		addhddall();
 		hddnode = hdd;
@@ -1126,7 +1132,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 			if(hddnode->partition != 0)
 			{
 				tmpstr = ostrcat("/autofs/", hddnode->device, 0, 0);
-				findfiles(tmpstr, type);
+				findfiles(tmpstr, type, onlydir, 0);
 				free(tmpstr); tmpstr = NULL;
 			}
 			hddnode = hddnode->next;
@@ -1134,7 +1140,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 		*/
 	}
 	else
-		findfiles(path, type);
+		findfiles(path, type, onlydir, 0);
 
 	free(path); path = NULL;
 
@@ -1629,17 +1635,8 @@ void mediadbfindfilecb(char* path, char* file, int type)
 	}
 }
 
-//flag: bit 31 = 0 (rekursive), 1 (no recursive)
-//flag: bit 30 = 0 (scan files and start), 1 (count files)
-int findfiles(char* dirname, int flag)
+int findfiles(char* dirname, int type, int onlydir, int onlycount)
 {
-	int type = flag;
-	int onlydir = checkbit(flag, 31);
-	int onlycount = checkbit(flag, 30);
-
-	type = clearbit(type, 31);
-	type = clearbit(type, 30);
-
 	debug(777, "dir=%s type=%d onlydir=%d, onlycount=%d\n", dirname, type, onlydir, onlycount);
 	DIR *d;
 	//Open the directory specified by dirname
