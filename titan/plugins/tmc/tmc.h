@@ -119,7 +119,7 @@ void tmcpicscroll(int menuid, struct skin* tmcpictitle, struct skin* tmcpicstar,
 		{
 			if(menuid == 2) //picture
 			{
-				if(node->node->poster != NULL)
+				if(node->node->poster != NULL && strlen(node->node->poster) > 0)
 				{
 					tmpstr = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 					tmpstr = ostrcat(tmpstr, node->node->poster, 1, 0);
