@@ -1,5 +1,5 @@
-<screen name=instar_full posx=75 posy=75 bgcol=bgcol>
-<node pic=/tmp/instar1.jpg name=win1 width=320 height=240 picwidth=1 picheight=1/>
+<screen name=instar_full posx=65 posy=65 bgcol=bgcol width=330 height=250 >
+<node pic=/tmp/instar1.jpg posx=5 posy=5 name=win1 width=320 height=240 picwidth=1 picheight=1/>
 </screen>
 
 <screen name="instar_einstellungen" title="IP-Kammera Einstellungen" titlealign=center fontcol=fontcol valign=bottom fontsize=30 posx=center posy=center width=50% height=70% bordercol=bordercol bordersize=2 bgcol=bgcol>
