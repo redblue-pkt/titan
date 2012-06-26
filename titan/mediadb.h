@@ -1115,7 +1115,8 @@ void mediadbscanthread(struct stimerthread* self, char* path, int type)
 	//find media files
 	if(path == NULL)
 	{
-		findfiles("/media/autofs", type);
+		findfiles("/media/usb", type);
+		findfiles("/media/net", type);
 		/*
 		addhddall();
 		hddnode = hdd;
