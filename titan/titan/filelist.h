@@ -3,7 +3,7 @@
 
 int filelistflt(char* filter, char* name)
 {
-	int ret = 0, count = 0;
+	int ret = 1, count = 0;
 
 	char* tmpmatch = filter;
 	char* tmpmatch1 = filter;
@@ -38,7 +38,6 @@ int filelistflt(char* filter, char* name)
 		while(*tmpmatch != '\0');
 	}
 
-printf("out filelistflt\n");
 	return 1;
 }
 
