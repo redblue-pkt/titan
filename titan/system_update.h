@@ -186,9 +186,9 @@ void screensystem_update(int mode)
 				char* msgtxt = NULL;
 				writeallconfig(1);
 
-				if(file_exist("/tmp/.swapextensionsdev") && file_exist("/etc/.beta"))
+				if(file_exist("/tmp/.swapextensionsdev") && checkswaplink() == 0 && file_exist("/etc/.beta"))
 				{
-					printf("Update: update with log\n");
+					debug(40, "Update: update with log");
 					if(ostrstr(filelist->select->text, "_KERNEL_") != NULL && file_exist("/etc/.beta"))
 					{
 						cmd = ostrcat(cmd, "kernel ", 1, 0);
@@ -252,7 +252,7 @@ void screensystem_update(int mode)
 				}
 				else
 				{
-					printf("Update: update without log\n");
+					debug(40, "Update: update without log");
 
 					if(ostrstr(filelist->select->text, "_KERNEL_") != NULL && file_exist("/etc/.beta"))
 					{
@@ -323,6 +323,13 @@ void screensystem_update(int mode)
 				{
 					debug(40, "update started cmd: %s", cmd);
 					system(cmd);
+					//should only reached if system fails
+					textbox(_("Message"), _("Can't start system update\nPlease remove Stick/HDD and try again"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+					debug(40, "update error cmd: %s", cmd);
+					drawscreen(systemupdate, 0, 0);
+					getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 1, NULL);
+					addscreenrc(systemupdate, filelist);
+					continue;
 				}
 				else
 				{

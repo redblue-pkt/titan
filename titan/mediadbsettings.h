@@ -15,10 +15,8 @@ void screenmediadbsettings()
 	char* tmpstr = NULL;
 
 	addchoicebox(mediadbpath, "/media/hdd/.mediadb", "/media/hdd/.mediadb");
-	tmpstr = realpath("/var/swap", NULL);
-	if(tmpstr != NULL && ostrcmp(tmpstr, "/mnt/swapextensions") != 0)
+	if(checkswaplink() == 0)
 		addchoicebox(mediadbpath, "/var/swap/.mediadb", "/var/swap/.mediadb");
-	free(tmpstr); tmpstr = NULL;
 	setchoiceboxselection(mediadbpath, getconfig("mediadbpath", NULL));
 
 	addchoicebox(mediadbscandelall, "0", _("no"));
@@ -76,7 +74,7 @@ void screenmediadbsettings()
 			if(!file_exist(getconfig("mediadbpath", NULL)))
 				mkdir(getconfig("mediadbpath", NULL), 0777);
 			
-			free(tmpstr), tmpstr = NULL;
+			free(tmpstr); tmpstr = NULL;
 			tmpstr = ostrcat(getconfig("mediadbpath", NULL), "/mediadb", 0, 0);
 			addconfig("mediadbfile", tmpstr);
 			free(tmpstr); tmpstr = NULL;

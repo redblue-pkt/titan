@@ -1,6 +1,20 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+//check if swap is in flash(1) or not(0)
+int checkswaplink()
+{
+	int ret = 1;
+	char* tmpstr = NULL;
+
+	tmpstr = realpath("/var/swap", NULL);
+	if(tmpstr != NULL && ostrcmp(tmpstr, "/mnt/swapextensions") != 0)
+		ret = 0;
+
+	free(tmpstr); tmpstr = NULL;
+	return ret;
+}
+
 char* delmountpart(char* filename, int free1)
 {
 	struct mntent ent;
