@@ -1601,22 +1601,20 @@ void screentmcmenu()
 						tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
 					}
 				}
-
-				continue;
-			}
-			else if(ostrcmp("Play", tmcmenutxt->ret) == 0) //directory play
-			{
-				char* file = screentmcdirplay();
-
-				if(file != NULL)
+				else if(ostrcmp("Play", tmcmenutxt->ret) == 0) //directory play
 				{
-					drawscreen(skin, 0, 0);
-					screenplay(file, 0, 0);
+					char* file = screentmcdirplay();
 
-					free(file); file = NULL;
-					drawscreen(tmcbg, 0, 1);
-					tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 0);
-					tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
+					if(file != NULL)
+					{
+						drawscreen(skin, 0, 0);
+						screenplay(file, 0, 0);
+
+						free(file); file = NULL;
+						drawscreen(tmcbg, 0, 1);
+						tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 0);
+						tmcmenuscroll(menuid, active, tmcmenutxt, tmcmenu1, tmcmenu2, tmcmenu3, tmcmenu3p2, tmcmenu4, tmcmenu5, 0);
+					}
 				}
 
 				continue;
