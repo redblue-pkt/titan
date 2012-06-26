@@ -48,6 +48,7 @@
 <node hidden=yes name=picname type=choicebox parent=listbox valign=middle posx=0 text="Pic Name" bordercol=bordercol width=100%>
 <node hidden=yes name=scan type=choicebox parent=listbox valign=middle posx=0 text="Scan" bordercol=bordercol width=100%>
 <node hidden=yes name=bgpic type=choicebox parent=listbox valign=middle posx=0 text="Back Pic" bordercol=bordercol width=100%>
+<node hidden=yes name=preview type=choicebox parent=listbox valign=middle posx=0 text="Preview" bordercol=bordercol width=100%>
 <node hidden=yes name=imdbsearch parent=listbox valign=middle posx=0 text="IMDB Search" bordercol=bordercol width=100%>
 <node hidden=yes name=info parent=listbox valign=middle posx=0 text="Info" bordercol=bordercol width=100%>
 <node hidden=yes name=edit parent=listbox valign=middle posx=0 text="Edit" bordercol=bordercol width=100%>
