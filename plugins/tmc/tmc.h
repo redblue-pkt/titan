@@ -126,7 +126,7 @@ void tmcpicscroll(int menuid, struct skin* tmcpictitle, struct skin* tmcpicstar,
           if(getconfigint("tmcpreview", NULL) == 0)
             tmpstr = ostrcat(tmpstr, "_thumb.jpg", 1, 0);
           else
-            tmpstr = ostrcat(tmpstr, "_xxxx.jpg", 1, 0);
+            tmpstr = ostrcat(tmpstr, "_cover.jpg", 1, 0);
 				}
 				else
 				{
@@ -145,7 +145,7 @@ void tmcpicscroll(int menuid, struct skin* tmcpictitle, struct skin* tmcpicstar,
 				if(getconfigint("tmcpreview", NULL) == 0)
           tmpstr = ostrcat(tmpstr, "_thumb.jpg", 1, 0);
         else
-          tmpstr = ostrcat(tmpstr, "_xxxx.jpg", 1, 0);
+          tmpstr = ostrcat(tmpstr, "_cover.jpg", 1, 0);
 			}
 			
 			if(!file_exist(tmpstr))
@@ -792,8 +792,8 @@ void screentmcedit(char* file, int menuid)
 					buf = loadjpg(picret, &width, &height, &rowbytes, &channels, 16);
 					thumb = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 					thumb = ostrcat(thumb, tmpstr, 1, 0);
-					thumb = ostrcat(thumb, "_xxxx.jpg", 1, 0);
-					buf = savejpg(thumb, width, height, channels, 91, 140, 70, buf);
+					thumb = ostrcat(thumb, "_cover.jpg", 1, 0);
+					buf = savejpg(thumb, width, height, channels, 185, 264, 70, buf);
 					free(thumb); thumb = NULL;
 					free(buf); buf = NULL;
 					
