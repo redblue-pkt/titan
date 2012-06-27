@@ -1678,7 +1678,7 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount)
 				}
 				//Recursively call findfiles with the new path
 				if(onlydir == 0)
-					findfiles(path, type);
+					findfiles(path, type, onlydir, onlycount);
 			}
 		}
 		else //File
