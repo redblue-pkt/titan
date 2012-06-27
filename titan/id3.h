@@ -720,7 +720,10 @@ struct id3tag* getid3(char* file, char* id, int flag)
 {
 	int fd = -1;
 	struct id3tag *node = NULL;
-	char* savefile = NULL;
+	char* savefile = NULL, * savethumb = NULL;
+	unsigned char* buf = NULL;
+	int channels = 0;
+	unsigned long width = 0, height = 0, rowbytes = 0;
 	
 	if(file == NULL) return NULL;
 	
@@ -739,6 +742,18 @@ struct id3tag* getid3(char* file, char* id, int flag)
 			
 			if(!file_exist(savefile))
 				id3writepic(fd, node, savefile);
+
+			//create thumb
+			savethumb = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+			savethumb = ostrcat(savethumb, id, 1, 0);
+			savethumb = ostrcat(savethumb, "_thumb.jpg", 1, 0);
+			if(file_exist(savefile) && !file_exist(savethumb))
+			{
+				buf = loadjpg(savefile, &width, &height, &rowbytes, &channels, 16);
+				buf = savejpg(savethumb, width, height, channels, 91, 140, 70, buf);
+			}
+			free(savethumb); savethumb = NULL;
+			free(buf); buf = NULL;
 
 			free(savefile); savefile = NULL;
 		}
