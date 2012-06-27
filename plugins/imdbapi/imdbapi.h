@@ -83,9 +83,9 @@ struct imdbapi* getimdbapi(struct imdbapi** first, char* title, int flag, int fl
 		(*first)->plot = getxmlentry(tmpstr, "\"Plot\":");
 		(*first)->poster = getxmlentry(tmpstr, "\"Poster\":");
 		(*first)->runtime = getxmlentry(tmpstr, "\"Runtime\":");
-		(*first)->rating = getxmlentry(tmpstr, "\"imdbapiRating\":");
-		(*first)->votes = getxmlentry(tmpstr, "\"imdbapiVotes\":");
-		(*first)->id = getxmlentry(tmpstr, "\"imdbapiID\":");
+		(*first)->rating = getxmlentry(tmpstr, "\"imdbRating\":");
+		(*first)->votes = getxmlentry(tmpstr, "\"imdbVotes\":");
+		(*first)->id = getxmlentry(tmpstr, "\"imdbID\":");
 
 		if((*first)->poster != NULL)
 		{
