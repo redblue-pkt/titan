@@ -1605,8 +1605,31 @@ void mediadbfindfilecb(char* path, char* file, int type)
 		}
 		else if(type == 1)
 		{
+			struct id3tag* id3tag = NULL;
+
 			debug(777, "add audio: %s/%s", shortpath, file);
-			createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, 0);
+
+			char* tmpfile = ostrcat(path, "/", 0, 0);
+			tmpfile = ostrcat(tmpfile, file, 1, 0);
+
+			int hash = gethash(tmpfile);
+			char* tmphash = olutoa(hash);
+
+			id3tag = getid3(tmpfile, tmphash, 1);
+
+			if(id3tag != NULL)
+			{
+				if(id3tag->poster != NULL)
+					createmediadb(node, tmphash, type, id3tag->title, id3tag->year, NULL, NULL, id3tag->genretext, NULL, NULL, id3tag->artist, id3tag->album, tmphash, NULL, NULL, shortpath, file, 0);
+				else
+					createmediadb(node, tmphash, type, id3tag->title, id3tag->year, NULL, NULL, id3tag->genretext, NULL, NULL, id3tag->artist, id3tag->album, NULL, NULL, NULL, shortpath, file, 0);
+			}
+			else
+				createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, 0);
+
+			free(tmpfile); tmpfile = NULL;
+			free(tmphash); tmphash = NULL;
+			freeid3(id3tag); id3tag = NULL;
 		}
 		else if(type == 2)
 		{
