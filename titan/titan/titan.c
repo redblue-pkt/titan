@@ -192,6 +192,7 @@ struct mediadbcache* mediadbcache[MEDIADBCACHEMAX] = {NULL};
 #include "system_backup_restore.h"
 #include "info.h"
 #include "softcam.h"
+#include "id3.h"
 #include "mediadbcache.h"
 #include "mediadb.h"
 #include "mediadbsettings.h"
