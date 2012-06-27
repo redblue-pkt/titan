@@ -1880,7 +1880,7 @@ unsigned char* readpng(const char* filename, unsigned long* width, unsigned long
 	return buf;
 }
 
-void drawpic(const char* filename, int posx, int posy, int scalewidth, int scaleheight, int mwidth, int mheight, int halign, int valign)
+void drawpic(const char* filename, int posx, int posy, int scalewidth, int scaleheight, int mwidth, int mheight, int halign, int valign, int transparent)
 {
 	debug(1000, "in");
 	unsigned char *buf = NULL, *scalebuf = NULL;
@@ -1987,36 +1987,42 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 			for(y = py; y < pyh; y += skinfb->width)
 			{
 				pxw = y + width;
-				/*
-				for(x = y; x < pxw; x++)
+
+				if(transparent == 1)
 				{
-					if(src[3] < 10)
+					for(x = y; x < pxw; x++)
 					{
+						if(src[3] < 10)
+						{
+							src += 4;
+							continue;
+						}
+						skinfb->fblong[x] = (src[3] << 24) | (src[0] << 16) | (src[1] << 8) | src[2];
 						src += 4;
-						continue;
 					}
-					skinfb->fblong[x] = (src[3] << 24) | (src[0] << 16) | (src[1] << 8) | src[2];
-					src += 4;
-				}*/
-				for(x = y; x < pxw; x++)
+				}
+				else
 				{
-					//renderquality 255-0 = best
-					if(src[3] > 200)
-						skinfb->fblong[x] = (255 << 24) | (src[0] << 16) | (src[1] << 8) | src[2];
-					else if(src[3] < 50)
+					for(x = y; x < pxw; x++)
 					{
+						//renderquality 255-0 = best
+						if(src[3] > 200)
+							skinfb->fblong[x] = (255 << 24) | (src[0] << 16) | (src[1] << 8) | src[2];
+						else if(src[3] < 50)
+						{
+							src += 4;
+							continue;
+						}
+						else
+						{
+							tmpcol = skinfb->fblong[x];
+							alpha_composite(r, src[0], src[3], (tmpcol & 0xff0000) >> 16);
+							alpha_composite(g, src[1], src[3], (tmpcol & 0x00ff00) >> 8);
+							alpha_composite(b, src[2], src[3], tmpcol & 0xff);
+							skinfb->fblong[x] = (255 << 24) | r << 16 | g << 8 | b;
+						}
 						src += 4;
-						continue;
 					}
-					else
-					{
-						tmpcol = skinfb->fblong[x];
-						alpha_composite(r, src[0], src[3], (tmpcol & 0xff0000) >> 16);
-						alpha_composite(g, src[1], src[3], (tmpcol & 0x00ff00) >> 8);
-						alpha_composite(b, src[2], src[3], tmpcol & 0xff);
-						skinfb->fblong[x] = (255 << 24) | r << 16 | g << 8 | b;
-					}
-					src += 4;
 				}
 				src += diff;
 			}
@@ -2876,30 +2882,30 @@ void drawpicborder(struct skin* node)
 	int borderheight = status.picbordersize;
 
 	//top-left
-	//drawpic("/home/nit/titan/skin/bs_tl.png", node->rposx + node->bordersize - borderwidth, node->rposy + node->bordersize - borderheight, 0, 0, borderwidth, borderheight, LEFT, TOP);
-	drawpic("/home/nit/titan/skin/bs_tl.png", node->rposx, node->rposy, 0, 0, borderwidth, borderheight, LEFT, TOP);
+	//drawpic("/home/nit/titan/skin/bs_tl.png", node->rposx + node->bordersize - borderwidth, node->rposy + node->bordersize - borderheight, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent);
+	drawpic("/home/nit/titan/skin/bs_tl.png", node->rposx, node->rposy, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent);
 	//top-right
-	//drawpic("/home/nit/titan/skin/bs_tr.png", node->rposx - node->bordersize + node->rwidth, node->rposy + node->bordersize - borderheight, 0, 0, borderwidth, borderheight, LEFT, TOP);
-	drawpic("/home/nit/titan/skin/bs_tr.png", node->rposx + node->rwidth - borderwidth, node->rposy, 0, 0, borderwidth, borderheight, LEFT, TOP);
+	//drawpic("/home/nit/titan/skin/bs_tr.png", node->rposx - node->bordersize + node->rwidth, node->rposy + node->bordersize - borderheight, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent);
+	drawpic("/home/nit/titan/skin/bs_tr.png", node->rposx + node->rwidth - borderwidth, node->rposy, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent);
 	//bottom-left
-	//drawpic("/home/nit/titan/skin/bs_bl.png", node->rposx + node->bordersize - borderwidth, node->rposy - node->bordersize + node->rheight, 0, 0, borderwidth, borderheight, LEFT, TOP);
-	drawpic("/home/nit/titan/skin/bs_bl.png", node->rposx, node->rposy + node->rheight - borderheight, 0, 0, borderwidth, borderheight, LEFT, TOP);
+	//drawpic("/home/nit/titan/skin/bs_bl.png", node->rposx + node->bordersize - borderwidth, node->rposy - node->bordersize + node->rheight, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent);
+	drawpic("/home/nit/titan/skin/bs_bl.png", node->rposx, node->rposy + node->rheight - borderheight, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent);
 	//bottom-right
-	//drawpic("/home/nit/titan/skin/bs_br.png", node->rposx - node->bordersize + node->rwidth, node->rposy - node->bordersize + node->rheight, 0, 0, borderwidth, borderheight, LEFT, TOP);
-	drawpic("/home/nit/titan/skin/bs_br.png", node->rposx + node->rwidth - borderwidth, node->rposy + node->rheight - borderheight, 0, 0, borderwidth, borderheight, LEFT, TOP);
+	//drawpic("/home/nit/titan/skin/bs_br.png", node->rposx - node->bordersize + node->rwidth, node->rposy - node->bordersize + node->rheight, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent);
+	drawpic("/home/nit/titan/skin/bs_br.png", node->rposx + node->rwidth - borderwidth, node->rposy + node->rheight - borderheight, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent);
 
 	//top
-	//drawpic("/home/nit/titan/skin/bs_t.png", node->rposx + node->bordersize, node->rposy + node->bordersize - borderheight, node->rwidth - (node->bordersize * 2), 0, node->rwidth - (node->bordersize * 2), borderheight, LEFT, TOP);
-	drawpic("/home/nit/titan/skin/bs_t.png", node->rposx + borderwidth, node->rposy, node->rwidth - (borderwidth * 2), 0, node->rwidth - (borderwidth * 2), borderheight, LEFT, TOP);
+	//drawpic("/home/nit/titan/skin/bs_t.png", node->rposx + node->bordersize, node->rposy + node->bordersize - borderheight, node->rwidth - (node->bordersize * 2), 0, node->rwidth - (node->bordersize * 2), borderheight, LEFT, TOP, node->transparent);
+	drawpic("/home/nit/titan/skin/bs_t.png", node->rposx + borderwidth, node->rposy, node->rwidth - (borderwidth * 2), 0, node->rwidth - (borderwidth * 2), borderheight, LEFT, TOP, node->transparent);
 	//bottom
-	//drawpic("/home/nit/titan/skin/bs_b.png", node->rposx + node->bordersize, node->rposy - node->bordersize + node->rheight, node->rwidth - (node->bordersize * 2), 0, node->rwidth - (node->bordersize * 2), borderheight, LEFT, TOP);
-	drawpic("/home/nit/titan/skin/bs_b.png", node->rposx + borderwidth, node->rposy + node->rheight - borderheight, node->rwidth - (borderwidth * 2), 0, node->rwidth - (node->bordersize * 2), borderheight, LEFT, TOP);
+	//drawpic("/home/nit/titan/skin/bs_b.png", node->rposx + node->bordersize, node->rposy - node->bordersize + node->rheight, node->rwidth - (node->bordersize * 2), 0, node->rwidth - (node->bordersize * 2), borderheight, LEFT, TOP, node->transparent);
+	drawpic("/home/nit/titan/skin/bs_b.png", node->rposx + borderwidth, node->rposy + node->rheight - borderheight, node->rwidth - (borderwidth * 2), 0, node->rwidth - (node->bordersize * 2), borderheight, LEFT, TOP, node->transparent);
 	//left
-	//drawpic("/home/nit/titan/skin/bs_l.png", node->rposx + node->bordersize - borderwidth, node->rposy + node->bordersize, 0, node->rheight - (node->bordersize * 2), borderwidth, node->rheight - (node->bordersize * 2), LEFT, TOP);
-	drawpic("/home/nit/titan/skin/bs_l.png", node->rposx, node->rposy + borderheight, 0, node->rheight - (borderheight * 2), borderwidth, node->rheight - (borderheight * 2), LEFT, TOP);
+	//drawpic("/home/nit/titan/skin/bs_l.png", node->rposx + node->bordersize - borderwidth, node->rposy + node->bordersize, 0, node->rheight - (node->bordersize * 2), borderwidth, node->rheight - (node->bordersize * 2), LEFT, TOP, node->transparent);
+	drawpic("/home/nit/titan/skin/bs_l.png", node->rposx, node->rposy + borderheight, 0, node->rheight - (borderheight * 2), borderwidth, node->rheight - (borderheight * 2), LEFT, TOP, node->transparent);
 	//right
-	//drawpic("/home/nit/titan/skin/bs_r.png", node->rposx - node->bordersize + node->rwidth, node->rposy + node->bordersize, 0, node->rheight - (node->bordersize * 2), borderwidth, node->rheight - (node->bordersize * 2), LEFT, TOP);
-	drawpic("/home/nit/titan/skin/bs_r.png", node->rposx + node->rwidth - borderwidth, node->rposy + borderheight, 0, node->rheight - (borderheight * 2), borderwidth, node->rheight - (borderheight * 2), LEFT, TOP);
+	//drawpic("/home/nit/titan/skin/bs_r.png", node->rposx - node->bordersize + node->rwidth, node->rposy + node->bordersize, 0, node->rheight - (node->bordersize * 2), borderwidth, node->rheight - (node->bordersize * 2), LEFT, TOP, node->transparent);
+	drawpic("/home/nit/titan/skin/bs_r.png", node->rposx + node->rwidth - borderwidth, node->rposy + borderheight, 0, node->rheight - (borderheight * 2), borderwidth, node->rheight - (borderheight * 2), LEFT, TOP, node->transparent);
 	debug(1000, "out");
 }
 
@@ -3047,7 +3053,7 @@ void drawnode(struct skin* node, int flag)
 			drawbgcol(node);
 	}
 	if(node->child != NULL && status.bgpic != NULL)
-		drawpic(status.bgpic, node->iposx, node->iposy, node->iwidth, node->iheight, node->iwidth, node->iheight, node->halign, node->valign);
+		drawpic(status.bgpic, node->iposx, node->iposy, node->iwidth, node->iheight, node->iwidth, node->iheight, node->halign, node->valign, node->transparent);
 	if(node->gradient > 0)
 		drawbggradient(node);
 	if(node->titlebgcol > -1)
@@ -3059,9 +3065,9 @@ void drawnode(struct skin* node, int flag)
 	if(node->type & MULTIPROGRESSBAR)
 		drawmultiprogressbar(node);
 	if(node->selectpic != NULL && !(node->type & FILELIST))
-		drawpic(node->selectpic, node->iposx, node->iposy, node->iwidth, node->iheight, node->iwidth, node->iheight, LEFT, TOP);
+		drawpic(node->selectpic, node->iposx, node->iposy, node->iwidth, node->iheight, node->iwidth, node->iheight, LEFT, TOP, node->transparent);
 	if(node->pic != NULL && !(node->type & FILELIST))
-		drawpic(node->pic, node->iposx, node->iposy, node->rpicwidth, node->rpicheight, node->iwidth, node->iheight, node->halign, node->valign);
+		drawpic(node->pic, node->iposx, node->iposy, node->rpicwidth, node->rpicheight, node->iwidth, node->iheight, node->halign, node->valign, node->transparent);
 	if(node->input != NULL)
 	{
 		if(node->type & CHOICEBOX)
