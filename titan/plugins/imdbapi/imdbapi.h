@@ -123,14 +123,14 @@ struct imdbapi* getimdbapi(struct imdbapi** first, char* title, int flag, int fl
 				free(savethumb); savethumb = NULL;
 				free(buf); buf = NULL;
 
-				//create xxxxx
+				//create cover
 				savethumb = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 				savethumb = ostrcat(savethumb, (*first)->id, 1, 0);
-				savethumb = ostrcat(savethumb, "_xxxx.jpg", 1, 0);
+				savethumb = ostrcat(savethumb, "_cover.jpg", 1, 0);
 				if(file_exist(savefile) && !file_exist(savethumb))
 				{
 					buf = loadjpg(savefile, &width, &height, &rowbytes, &channels, 16);
-					buf = savejpg(savethumb, width, height, channels, 91, 140, 70, buf);
+					buf = savejpg(savethumb, width, height, channels, 185, 264, 70, buf);
 				}
 				free(savethumb); savethumb = NULL;
 				free(buf); buf = NULL; 
