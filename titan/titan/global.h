@@ -19,7 +19,7 @@ char* delmountpart(char* filename, int free1)
 {
 	struct mntent ent;
 	FILE *fd = NULL;
-	char* ret = NULL, *buf = NULL, *treffer = NULL;
+	char* ret = NULL, *buf = NULL, *treffer = NULL, *rpath = NULL;
 	int mntdirlen = 0;
 
 	if(filename == NULL) return NULL;
@@ -31,6 +31,8 @@ char* delmountpart(char* filename, int free1)
 		return NULL;
 	}
 
+	rpath = realpath(filename, NULL);
+
 	fd = setmntent("/proc/mounts", "r");
 	if(fd != NULL)
 	{
@@ -39,7 +41,7 @@ char* delmountpart(char* filename, int free1)
 			if(ent.mnt_dir != NULL)
 			{
 				mntdirlen = strlen(ent.mnt_dir);
-				if(mntdirlen > 1 && ostrstr(filename, ent.mnt_dir) == filename)
+				if(mntdirlen > 1 && ostrstr(rpath, ent.mnt_dir) == rpath)
 				{
 					if(treffer == NULL || strlen(treffer) < mntdirlen)
 					{
@@ -52,11 +54,13 @@ char* delmountpart(char* filename, int free1)
 	}
 
 	if(treffer != NULL)
-		ret = string_replace(treffer, "", filename, free1);
+		ret = string_replace(treffer, "", rpath, 0);
 
 	endmntent(fd);
+	if(free1 == 1) free(filename);
 	free(buf);
 	free(treffer);
+	free(rpath);
 	return ret;
 }
 
