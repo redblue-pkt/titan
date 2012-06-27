@@ -181,6 +181,31 @@ enum {DEACTIVE, ACTIVE, INPAUSE, ERROR};
 enum {FUNCTEXT, FUNCPIC, FUNCPROGRESS};
 enum {CASESSIONCREATE, CASESSIONBUSY, CASESSIONDEL, CASESSIONSTART, CASESSIONFINAL, CARESFIRSTENQUIRY, CARESCHANGE, CARESENQUIRY, CADATETIMESEND, CAMMIIDLE, CAMMIDISPLAYREPLAY, CAMMIFAKEOK};
 
+struct id3tag
+{
+	int version;
+	char* title;
+	char* artist;
+	char* album;
+	char* year;
+	char* comment;
+	char* genrecode;
+	char* genretext;
+	char* tracktext;
+	char* poster;
+	int track;
+	int len;
+	int picturetype;
+	unsigned int picturepos;
+	unsigned int picturelen;
+};
+
+struct id3genre
+{
+	int code;
+	char text[30];
+};
+
 struct regex
 {
 	char* match1;
