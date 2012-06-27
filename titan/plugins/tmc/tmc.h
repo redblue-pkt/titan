@@ -147,6 +147,15 @@ void tmcpicscroll(int menuid, struct skin* tmcpictitle, struct skin* tmcpicstar,
         else
           tmpstr = ostrcat(tmpstr, "_cover.jpg", 1, 0);
 			}
+			else if(menuid == 4) //audio
+			{
+				tmpstr = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+				tmpstr = ostrcat(tmpstr, node->node->poster, 1, 0);
+				if(getconfigint("tmcpreview", NULL) == 0)
+          tmpstr = ostrcat(tmpstr, "_thumb.jpg", 1, 0);
+        else
+          tmpstr = ostrcat(tmpstr, "_cover.jpg", 1, 0);
+			}
 			
 			if(!file_exist(tmpstr))
 			{
