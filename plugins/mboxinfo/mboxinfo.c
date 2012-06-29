@@ -29,7 +29,6 @@ void deinit(void)
 	debug(10, "Mbox Info Plugin removed !!!");
 }
 
-
 int show_info(char *titelname, char *filename)
 {
 	FILE* fd = NULL;

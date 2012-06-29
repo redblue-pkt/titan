@@ -42,7 +42,6 @@ void deinit(void)
 	debug(10, "TMDb Plugin removed !!!");
 }
 
-
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {

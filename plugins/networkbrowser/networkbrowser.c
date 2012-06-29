@@ -46,7 +46,6 @@ void deinit(void)
 	debug(70, "Networkbrowser Plugin removed !!!");
 }
 
-
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {

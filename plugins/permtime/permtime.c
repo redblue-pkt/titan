@@ -75,7 +75,6 @@ void deinit(void)
 	debug(10, "Permanent Time removed !!!");
 }
 
-
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {
