@@ -32,7 +32,7 @@ void deinit(void)
 	delmarkedscreen(118);
 }
 
-	//wird in der Pluginverwaltung bzw Menue ausfeguehrt
+//wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {
 	instar_main();

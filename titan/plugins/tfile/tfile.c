@@ -1,11 +1,11 @@
 #include "../titan/struct.h"
 #include "../titan/debug.h"
 #include "../titan/header.h"
-#include "streaminfo.h"
+#include "tfile.h"
 
-char pluginname[] = "Streaminfo";
-char plugindesc[] = "Streaminfo";
-char pluginpic[] = "%pluginpath%/streaminfo/plugin.png";
+char pluginname[] = "File Manager";
+char plugindesc[] = "File Manager";
+char pluginpic[] = "%pluginpath%/tfile/plugin.png";
 
 int pluginaktiv = 0;
 struct skin* pluginmenu = NULL;
@@ -17,23 +17,23 @@ void init(void)
 	pluginaktiv = 1;
 	char* tmpstr = NULL;
 	
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/streaminfo/skin.xml", 0, 0);
-	readscreen(tmpstr, 225, 1);
+	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/tfile/skin.xml", 0, 0);
+	readscreen(tmpstr, 240, 1);
 	free(tmpstr); tmpstr = NULL;
   
-	debug(10, "Streaminfo Plugin loadet !!!");
+	debug(10, "File Manager Plugin loadet !!!");
 }
 
 //wird beim entladen ausgefuehrt
 void deinit(void)
 {
-	delmarkedscreen(225);
+	delmarkedscreen(240);
 	pluginaktiv = 0;
-	debug(10, "Streaminfo Plugin removed !!!");
+	debug(10, "File Manager Plugin removed !!!");
 }
 
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {
-	screenstreaminfo();
+	screentfile();
 }

@@ -29,8 +29,9 @@ char* menu3txt[] = {"Genre", "Category", "All", "Year", "Director", "Actors", "R
 
 //Audio
 int menu4pos = 0;
-char* menu4[] = {"skin/tmccategory.png", "skin/tmcrandom.png", "skin/tmcall.png", "skin/tmcone.png", "skin/tmcaz.png", "skin/tmcback.png"};
-char* menu4txt[] = {"Category", "Random", "All", "Single", "A-Z", "Back"};
+char* menu4[] = {"skin/tmccategory.png", "skin/tmcrandom.png", "skin/tmcall.png", "skin/tmcone.png", "skin/tmcgenre.png", "skin/tmcyear.png", "skin/tmcactors.png", "skin/tmcaz.png", "skin/tmcback.png"};
+char* menu4txt[] = {"Category", "Random", "All", "Single", "Genre", "Year", "Actors", "A-Z", "Back"};
+
 
 //flag 0: blit
 //flag 1: don't blit
@@ -1537,6 +1538,39 @@ void screentmcmenu()
 					{
 						mediadbfilterpos = NULL;
 						mediadbfiltercount = createmediadbfilter(1, tmpstr, 4);
+						tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 0);
+					}
+					free(tmpstr); tmpstr = NULL;
+				}
+				else if(menuid == 4 && ostrcmp("Genre", tmcmenutxt->ret) == 0)
+				{
+					tmpstr = screentmccategory(1, ".genre");
+					if(tmpstr != NULL)
+					{
+						mediadbfilterpos = NULL;
+						mediadbfiltercount = createmediadbfilter(1, tmpstr, 6);
+						tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 0);
+					}
+					free(tmpstr); tmpstr = NULL;
+				}
+        else if(menuid == 4 && ostrcmp("Year", tmcmenutxt->ret) == 0)
+				{
+					tmpstr = screentmccategory(1, ".year");
+					if(tmpstr != NULL)
+					{
+						mediadbfilterpos = NULL;
+						mediadbfiltercount = createmediadbfilter(1, tmpstr, 1);
+						tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 0);
+					}
+					free(tmpstr); tmpstr = NULL;
+				}
+        else if(menuid == 4 && ostrcmp("Actors", tmcmenutxt->ret) == 0)
+				{
+					tmpstr = screentmccategory(1, ".actors");
+					if(tmpstr != NULL)
+					{
+						mediadbfilterpos = NULL;
+						mediadbfiltercount = createmediadbfilter(1, tmpstr, 3);
 						tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 0);
 					}
 					free(tmpstr); tmpstr = NULL;

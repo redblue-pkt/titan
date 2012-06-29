@@ -32,7 +32,6 @@ void deinit(void)
 	debug(10, "Stock Plugin removed !!!");
 }
 
-
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {

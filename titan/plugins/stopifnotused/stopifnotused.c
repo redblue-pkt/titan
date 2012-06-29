@@ -3,7 +3,6 @@
 #include "../../titan/header.h"
 #include "../../titan/list.h"
 
-
 char pluginname[] = "Stop if not used";
 char plugindesc[] = "Auschalten der Box wenn in einem bestimmten Zeitraum keine Aktion erfolgte";
 char pluginpic[] = "%pluginpath%/stopifnotused/stopifnotused.png";
@@ -11,7 +10,6 @@ char pluginpic[] = "%pluginpath%/stopifnotused/stopifnotused.png";
 int pluginaktiv = 0;
 
 struct stimerthread* StopIfNotUsed = NULL;
-
 
 void StopIfNotUsed_thread()
 {
@@ -76,7 +74,7 @@ void deinit(void)
 	delmarkedscreen(117);
 }
 
-	//wird in der Pluginverwaltung bzw Menue ausfeguehrt
+//wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {
 	int rcret = 0;
@@ -156,8 +154,6 @@ void start(void)
 		}
 	}
 		
-	
 	delownerrc(notused_main);
 	clearscreen(notused_main);
-	
 }
