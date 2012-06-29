@@ -107,5 +107,6 @@ compile "instar" "instar" ""
 compile "tmdb" "tmdb" ""
 compile "gmediarender" "gmediarender" ""
 compile "imdb" "imdb" ""
+compile "tfile" "tfile" ""
 
 #rm -r networkbrowser/networkbrowser
