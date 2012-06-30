@@ -191,7 +191,6 @@ struct id3tag
 	char* comment;
 	char* genrecode;
 	char* genretext;
-	char* tracktext;
 	char* poster;
 	int track;
 	int len;
