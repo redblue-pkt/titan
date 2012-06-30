@@ -1694,7 +1694,7 @@ void m_lock(pthread_mutex_t *mutex, int flag)
 		case 15: debug(900, "tsseekmutex lock"); break;
 		case 16: debug(900, "accelfbmutex lock"); break;
 		case 17: debug(900, "mediadbmutex lock"); break;
-		default: debug(900, " unknown mutex lock"); break;
+		default: debug(900, "unknown mutex lock"); break;
 	}
 	pthread_mutex_lock(mutex);
 }

@@ -1,11 +1,11 @@
 #include "../titan/struct.h"
 #include "../titan/debug.h"
 #include "../titan/header.h"
-#include "tfile.h"
+#include "filemanager.h"
 
 char pluginname[] = "File Manager";
 char plugindesc[] = "File Manager";
-char pluginpic[] = "%pluginpath%/tfile/plugin.png";
+char pluginpic[] = "%pluginpath%/filemanager/plugin.png";
 
 int pluginaktiv = 0;
 struct skin* pluginmenu = NULL;
@@ -17,7 +17,7 @@ void init(void)
 	pluginaktiv = 1;
 	char* tmpstr = NULL;
 	
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/tfile/skin.xml", 0, 0);
+	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/filemanager/skin.xml", 0, 0);
 	readscreen(tmpstr, 240, 1);
 	free(tmpstr); tmpstr = NULL;
   
@@ -35,5 +35,5 @@ void deinit(void)
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {
-	screentfile();
+	screenfilemanager();
 }
