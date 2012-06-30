@@ -1,16 +1,16 @@
 #ifndef TFILE_H
 #define TFILE_H
 
-void screentfile()
+void screenfilemanager()
 {
 	int rcret = 0, aktfilelist = 0, ret = 0;
-	struct skin* tfile = getscreen("tfile");
-	struct skin* tfile1 = getscreen("tfile1");
-	struct skin* tfile2 = getscreen("tfile2");
-	struct skin* filelistpath1 = getscreennode(tfile1, "filelistpath");
-	struct skin* filelist1 = getscreennode(tfile1, "filelist");
-	struct skin* filelistpath2 = getscreennode(tfile2, "filelistpath");
-	struct skin* filelist2 = getscreennode(tfile2, "filelist");
+	struct skin* filemanager = getscreen("filemanager");
+	struct skin* filemanager1 = getscreen("filemanager1");
+	struct skin* filemanager2 = getscreen("filemanager2");
+	struct skin* filelistpath1 = getscreennode(filemanager1, "filelistpath");
+	struct skin* filelist1 = getscreennode(filemanager1, "filelist");
+	struct skin* filelistpath2 = getscreennode(filemanager2, "filelistpath");
+	struct skin* filelist2 = getscreennode(filemanager2, "filelist");
 	char* file1 = NULL, *cmd = NULL, *tmpstr = NULL;
 
 	filelist1->aktline = 0;
@@ -25,24 +25,24 @@ void screentfile()
 	changeinput(filelist2, "/");
 	changetext(filelistpath2, filelist2->input);
 
-	delmarkedscreennodes(tfile1, FILELISTDELMARK);
-	delmarkedscreennodes(tfile2, FILELISTDELMARK);
-	createfilelist(tfile1, filelist1, 0);
-	createfilelist(tfile2, filelist2, 0);
+	delmarkedscreennodes(filemanager1, FILELISTDELMARK);
+	delmarkedscreennodes(filemanager2, FILELISTDELMARK);
+	createfilelist(filemanager1, filelist1, 0);
+	createfilelist(filemanager2, filelist2, 0);
 
 	filelistpath1->bgcol = filelistpath1->bordercol;
 	
-	drawscreen(tfile, 0, 1);
-	drawscreen(tfile1, 0, 1);
-	drawscreen(tfile2, 0, 0);
-	addscreenrc(tfile1, filelist1);
+	drawscreen(filemanager, 0, 1);
+	drawscreen(filemanager1, 0, 1);
+	drawscreen(filemanager2, 0, 0);
+	addscreenrc(filemanager1, filelist1);
 	
 	while(1)
 	{
 		if(aktfilelist == 0)
-			rcret = waitrc(tfile1, 0, 0);
+			rcret = waitrc(filemanager1, 0, 0);
 		else
-			rcret = waitrc(tfile2, 0, 0);
+			rcret = waitrc(filemanager2, 0, 0);
 		
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		
@@ -79,13 +79,13 @@ void screentfile()
 			
 			if(ret == 1)
 			{
-				delmarkedscreennodes(tfile1, FILELISTDELMARK);
-				delmarkedscreennodes(tfile2, FILELISTDELMARK);
-				createfilelist(tfile1, filelist1, 0);
-				createfilelist(tfile2, filelist2, 0);
+				delmarkedscreennodes(filemanager1, FILELISTDELMARK);
+				delmarkedscreennodes(filemanager2, FILELISTDELMARK);
+				createfilelist(filemanager1, filelist1, 0);
+				createfilelist(filemanager2, filelist2, 0);
 			}
-			drawscreen(tfile1, 0, 1);
-			drawscreen(tfile2, 0, 0);
+			drawscreen(filemanager1, 0, 1);
+			drawscreen(filemanager2, 0, 0);
 		}
 		
 		if(rcret == getrcconfigint("rcred", NULL) && filelist1->select != NULL && ostrcmp(filelist1->select->text, "..") != 0) //delete
@@ -107,13 +107,13 @@ void screentfile()
 			
 			if(ret == 1)
 			{
-				delmarkedscreennodes(tfile1, FILELISTDELMARK);
-				delmarkedscreennodes(tfile2, FILELISTDELMARK);
-				createfilelist(tfile1, filelist1, 0);
-				createfilelist(tfile2, filelist2, 0);
+				delmarkedscreennodes(filemanager1, FILELISTDELMARK);
+				delmarkedscreennodes(filemanager2, FILELISTDELMARK);
+				createfilelist(filemanager1, filelist1, 0);
+				createfilelist(filemanager2, filelist2, 0);
 			}
-			drawscreen(tfile1, 0, 1);
-			drawscreen(tfile2, 0, 0);
+			drawscreen(filemanager1, 0, 1);
+			drawscreen(filemanager2, 0, 0);
 		}
 		
 		if(rcret == getrcconfigint("rcblue", NULL) && filelist1->select != NULL && ostrcmp(filelist1->select->text, "..") != 0) //view
@@ -124,9 +124,9 @@ void screentfile()
 			{
 				textbox(file1, tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
 
-				drawscreen(tfile, 0, 1);
-				drawscreen(tfile1, 0, 1);
-				drawscreen(tfile2, 0, 0);
+				drawscreen(filemanager, 0, 1);
+				drawscreen(filemanager1, 0, 1);
+				drawscreen(filemanager2, 0, 0);
 			}
 			free(tmpstr); tmpstr = NULL;
 			free(file1); file1 = NULL;
@@ -137,32 +137,32 @@ void screentfile()
 			if(aktfilelist == 0)
 			{
 				aktfilelist = 1;
-				delownerrc(tfile1);
-				delownerrc(tfile2);
-				addscreenrc(tfile2, filelist2);			
+				delownerrc(filemanager1);
+				delownerrc(filemanager2);
+				addscreenrc(filemanager2, filelist2);
 				filelistpath1->bgcol = 0;
 				filelistpath2->bgcol = filelistpath2->bordercol;
 			}
 			else
 			{
 				aktfilelist = 0;
-				delownerrc(tfile1);
-				delownerrc(tfile2);
-				addscreenrc(tfile1, filelist1);			
+				delownerrc(filemanager1);
+				delownerrc(filemanager2);
+				addscreenrc(filemanager1, filelist1);
 				filelistpath1->bgcol = filelistpath1->bordercol;
 				filelistpath2->bgcol = 0;
 			}
-			drawscreen(tfile1, 0, 1);
-			drawscreen(tfile2, 0, 0);
+			drawscreen(filemanager1, 0, 1);
+			drawscreen(filemanager2, 0, 0);
 		}
 	
 	}
 
 	filelistpath1->bgcol = 0;
 	filelistpath2->bgcol = 0;
-	delownerrc(tfile1);
-	delownerrc(tfile2);
-	clearscreen(tfile);
+	delownerrc(filemanager1);
+	delownerrc(filemanager2);
+	clearscreen(filemanager);
 }
 
 #endif

@@ -1,14 +1,14 @@
-<screen fontcol=fontcol name="tfile1" fontsize=30 posx=120 posy=150 width=510 height=420 bordercol=bordercol bordersize=2 bgcol=bgcol vspace=10 hspace=10>
+<screen fontcol=fontcol name="filemanager1" fontsize=30 posx=120 posy=150 width=510 height=420 bordercol=bordercol bordersize=2 bgcol=bgcol vspace=10 hspace=10>
 <node name=filelistpath valign=middle posy=1 bordercol=bordercol bordersize=2 width=100%>
 <node hspace=10 pic=skin/folder.png textposx=30 fontsize=30 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=filelist posy=50 width=100% height=-1>
 </screen>
 
-<screen fontcol=fontcol name="tfile2" fontsize=30 posx=650 posy=150 width=510 height=420 bordercol=bordercol bordersize=2 bgcol=bgcol vspace=10 hspace=10>
+<screen fontcol=fontcol name="filemanager2" fontsize=30 posx=650 posy=150 width=510 height=420 bordercol=bordercol bordersize=2 bgcol=bgcol vspace=10 hspace=10>
 <node name=filelistpath valign=middle posy=1 bordercol=bordercol bordersize=2 width=100%>
 <node hspace=10 pic=skin/folder.png textposx=30 fontsize=30 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=filelist posy=50 width=100% height=-1>
 </screen>
 
-<screen fontcol=fontcol valign=bottom titlealign=center name="tfile" hspace=10 vspace=10 fontsize=30 title="File Manager" posx=100 posy=100 width=1080 height=520 bordercol=bordercol bordersize=2 bgcol=bgcol>
+<screen fontcol=fontcol valign=bottom titlealign=center name="filemanager" hspace=10 vspace=10 fontsize=30 title="File Manager" posx=100 posy=100 width=1080 height=520 bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node name=b1 text="Delete" halign=center valign=middle bordersize=6 bordertype=2 posx=20 posy=0 width=150 height=39 bordercol=red/>
 <node name=b2 text="Copy" halign=center valign=middle bordersize=6 bordertype=2 posx=180 posy=0 width=150 height=39 bordercol=green/>
 <node name=b3 text="Move" halign=center valign=middle bordersize=6 bordertype=2 posx=340 posy=0 width=150 height=39 bordercol=yellow/>
