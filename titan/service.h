@@ -69,7 +69,7 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 	//struct dvbdev *dmxpcrnode = NULL;
 	struct dvbdev *audionode = NULL;
 	struct dvbdev *videonode = NULL;
-	int ret = 0, festatus = 1, setmute = 0;
+	int ret = 0, festatus = 1, tmpmute = 0;
 	unsigned char *patbuf = NULL;
 	int checkpmt = 0, pincheck = 0, stopflag = 0, ageprotect = 0, tune = 0;
 	struct epg* epgnode = NULL;
@@ -229,7 +229,7 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 	//set mute for scat problem
 	if(status.mute == 0)
 	{
-		setmute = 1;
+		tmpmute = 1;
 		status.mute = 1;
 		setmute(1);
 	}
@@ -366,8 +366,9 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 	}
 
 	//unset mute if set here
-	if(setmute == 1)
+	if(tmpmute == 1)
 	{
+		tmpmute = 0;
 		status.mute = 0;
 		setmute(0);
 	}
