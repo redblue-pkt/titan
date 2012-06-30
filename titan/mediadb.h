@@ -1742,7 +1742,7 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount)
 			}
 			else
 			{			
-				if(!filelistflt(".avi .mkv", entry->d_name)) //video
+				if(!filelistflt(".avi .mkv .mpg .mpeg .ts", entry->d_name)) //video
 				{
 					if(type == 0 || type == 100 || type == 90 || type == 91)
 					{
@@ -1752,7 +1752,7 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount)
 							count += 1;
 					}
 				}
-				else if(!filelistflt(".mp3", entry->d_name)) //audio
+				else if(!filelistflt(".mp3 .flac .ogg", entry->d_name)) //audio
 				{
 					if(type == 1 || type == 100 || type == 90 || type == 92)
 					{
@@ -1762,7 +1762,7 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount)
 							count += 1;
 					}
 				}
-				else if(!filelistflt(".jpg", entry->d_name)) //picture
+				else if(!filelistflt(".jpg .png", entry->d_name)) //picture
 				{
 					if(type == 2 || type == 100 || type == 91 || type == 92)
 					{
