@@ -308,8 +308,8 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 		}
 		if(servicenode->type == RECORDPLAY)
 		{
-			recbsize = servicenode->tssize * 512;
-			tmprecbsize = 188 * 512;
+			recbsize = servicenode->tssize * 2788;
+			tmprecbsize = 188 * 2788;
 		}
 		if(servicenode->type == RECORDSTREAM) recbsize = servicenode->tssize * 2788;
 		readtimeout = 5000000;
