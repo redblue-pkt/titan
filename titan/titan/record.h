@@ -356,14 +356,16 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 		usleep(1000);
 #else
 		if(servicenode->type == RECORDPLAY)
-			m_lock(&status.tsseekmutex, 15);
-		readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout);
-		if(servicenode->type == RECORDPLAY)
-			m_unlock(&status.tsseekmutex, 15);
+		{
+			pthread_mutex_lock(&status.tsseekmutex);
+			readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout);
+			pthread_mutex_unlock(&status.tsseekmutex);
+		}
+		else
+			readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout);
 #endif
 		if(readret > 0)
 		{
-//repeatewrite:
 			if(servicenode->type == RECORDSTREAM)
 				writeret = sockwrite(servicenode->recdstfd, buf, readret, writetimeout);
 			else
@@ -380,18 +382,9 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				else
 					writeret = dvbwrite(servicenode->recdstfd, buf, readret, writetimeout);
 			}
-			//else if(servicenode->type == RECORDPLAY)
-			//	writeret = dvbwrite(servicenode->recdstfd, buf, readret, writetimeout);
-			//else if(servicenode->type == RECORDDIRECT || servicenode->type == RECORDTIMER || servicenode->type == RECORDTIMESHIFT)
-			//	writeret = write(servicenode->recdstfd, buf, readret);
 
 			if(writeret < 1)
 			{
-				//if((servicenode->type == RECORDDIRECT || servicenode->type == RECORDTIMER || servicenode->type == RECORDTIMESHIFT) && (errno == EINTR || errno == EAGAIN || errno == EBUSY))
-				//{
-				//	perr("record/ts write repeate");
-				//	goto repeatewrite;
-				//}
 				ret = 9;
 				servicenode->recendtime = 1;
 			}
@@ -430,7 +423,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				perr("read");
 		}
 
-		if(servicenode->recendtime != 0 && (servicenode->recendtime) < time(NULL))
+		if(servicenode->recendtime != 0 && servicenode->recendtime < time(NULL))
 		{
 			if(servicenode->type == RECORDDIRECT || servicenode->type == RECORDTIMER || servicenode->type == RECORDTIMESHIFT)
 				fdatasync(servicenode->recdstfd);
