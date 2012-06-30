@@ -1707,34 +1707,70 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount)
 		else //File
 		{
 			//TODO: add extensions
-			if(!filelistflt(".avi .mkv", entry->d_name)) //video
-			{
-				if(type == 0 || type == 100 || type == 90 || type == 91)
+			
+			if((status.expertmodus > 0) || (file_exist("/var/swap/etc/.codecpack")))
+				if(!filelistflt(".avi .dat .divx .flv .mkv .m4v .mp4 .mov .mpg .mpeg .mts .m2ts .trp .ts .vdr .vob .wmv .rm", entry->d_name)) //video
 				{
-					if(onlycount == 0)
-						mediadbfindfilecb(path, entry->d_name, 0);
-					else
-						count += 1;
+					if(type == 0 || type == 100 || type == 90 || type == 91)
+					{
+						if(onlycount == 0)
+							mediadbfindfilecb(path, entry->d_name, 0);
+						else
+							count += 1;
+					}
+				}
+				else if(!filelistflt(".mp3 .flac .ogg .wma .ra", entry->d_name)) //audio
+				{
+					if(type == 1 || type == 100 || type == 90 || type == 92)
+					{
+						if(onlycount == 0)
+							mediadbfindfilecb(path, entry->d_name, 1);
+						else
+							count += 1;
+					}
+				}
+				else if(!filelistflt(".jpg .png", entry->d_name)) //picture
+				{
+					if(type == 2 || type == 100 || type == 91 || type == 92)
+					{
+						if(onlycount == 0)
+							mediadbfindfilecb(path, entry->d_name, 2);
+						else
+							count += 1;
+					}
 				}
 			}
-			else if(!filelistflt(".mp3", entry->d_name)) //audio
-			{
-				if(type == 1 || type == 100 || type == 90 || type == 92)
+			else
+			{			
+				if(!filelistflt(".avi .mkv", entry->d_name)) //video
 				{
-					if(onlycount == 0)
-						mediadbfindfilecb(path, entry->d_name, 1);
-					else
-						count += 1;
+					if(type == 0 || type == 100 || type == 90 || type == 91)
+					{
+						if(onlycount == 0)
+							mediadbfindfilecb(path, entry->d_name, 0);
+						else
+							count += 1;
+					}
 				}
-			}
-			else if(!filelistflt(".jpg", entry->d_name)) //picture
-			{
-				if(type == 2 || type == 100 || type == 91 || type == 92)
+				else if(!filelistflt(".mp3", entry->d_name)) //audio
 				{
-					if(onlycount == 0)
-						mediadbfindfilecb(path, entry->d_name, 2);
-					else
-						count += 1;
+					if(type == 1 || type == 100 || type == 90 || type == 92)
+					{
+						if(onlycount == 0)
+							mediadbfindfilecb(path, entry->d_name, 1);
+						else
+							count += 1;
+					}
+				}
+				else if(!filelistflt(".jpg", entry->d_name)) //picture
+				{
+					if(type == 2 || type == 100 || type == 91 || type == 92)
+					{
+						if(onlycount == 0)
+							mediadbfindfilecb(path, entry->d_name, 2);
+						else
+							count += 1;
+					}
 				}
 			}
 		}
