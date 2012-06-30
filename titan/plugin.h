@@ -261,6 +261,7 @@ void screenplugin()
 				if(startplugin != NULL)
 				{
 					clearscreen(plugin);
+					resettvpic();
 					startplugin();
 					drawscreen(plugin, 0, 0);
 				}
