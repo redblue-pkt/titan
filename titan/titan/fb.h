@@ -429,9 +429,9 @@ void write_FB_to_JPEG_file(unsigned char *inbuffer, int image_width, int image_h
 	//delete alpha byte
 	while(help <= (image_width*image_height*4))
 	{
-		helpbuffer[helpb+0] = inbuffer[help+0];
+		helpbuffer[helpb+0] = inbuffer[help+2];
 		helpbuffer[helpb+1] = inbuffer[help+1];
-		helpbuffer[helpb+2] = inbuffer[help+2];
+		helpbuffer[helpb+2] = inbuffer[help+0];
 		help = help + 4;
 		helpb = helpb + 3;
 	}
