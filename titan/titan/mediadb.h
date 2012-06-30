@@ -1121,8 +1121,8 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 	//find media files
 	if(path == NULL)
 	{
-		findfiles("/media/usb", type, onlydir, 0);
-		findfiles("/media/net", type, onlydir, 0);
+		findfiles("/media/usb", type, onlydir, 0, 1);
+		findfiles("/media/net", type, onlydir, 0, 1);
 		/*
 		addhddall();
 		hddnode = hdd;
@@ -1132,7 +1132,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 			if(hddnode->partition != 0)
 			{
 				tmpstr = ostrcat("/autofs/", hddnode->device, 0, 0);
-				findfiles(tmpstr, type, onlydir, 0);
+				findfiles(tmpstr, type, onlydir, 0, 1);
 				free(tmpstr); tmpstr = NULL;
 			}
 			hddnode = hddnode->next;
@@ -1140,7 +1140,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 		*/
 	}
 	else
-		findfiles(path, type, onlydir, 0);
+		findfiles(path, type, onlydir, 0, 1);
 
 	free(path); path = NULL;
 
@@ -1658,10 +1658,12 @@ void mediadbfindfilecb(char* path, char* file, int type)
 	}
 }
 
-int findfiles(char* dirname, int type, int onlydir, int onlycount)
+int findfiles(char* dirname, int type, int onlydir, int onlycount, int first)
 {
 	debug(777, "dir=%s type=%d onlydir=%d, onlycount=%d\n", dirname, type, onlydir, onlycount);
 	DIR *d;
+	char* tmpstr = NULL;
+
 	//Open the directory specified by dirname
 	d = opendir(dirname);
 
@@ -1687,6 +1689,16 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount)
 		if(!entry) //There are no more entries in this directory, so break out of the while loop
 			break;
 
+		//check if link is a dir
+		if(first == 1 && entry->d_type == DT_LNK)
+		{
+			tmpstr = createpath(path, entry->d_name);
+			if(isdir(tmpstr) == 1)
+				entry->d_type = DT_DIR;
+
+			free(tmpstr); tmpstr = NULL;
+		}
+
 		//See if entry is a subdirectory of d
 		if(entry->d_type & DT_DIR)
 		{
@@ -1701,7 +1713,7 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount)
 				}
 				//Recursively call findfiles with the new path
 				if(onlydir == 0)
-					findfiles(path, type, onlydir, onlycount);
+					findfiles(path, type, onlydir, onlycount, 0);
 			}
 		}
 		else //File
