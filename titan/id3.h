@@ -734,6 +734,18 @@ struct id3tag* getid3(char* file, char* id, int flag)
 	if(node != NULL)
 	{
 		id3parse(fd, node);
+
+		//del spaces
+		node->title = strstrip(node->title);
+		node->artist = strstrip(node->artist);
+		node->album = strstrip(node->album);
+		node->year = strstrip(node->year);
+		node->comment = strstrip(node->comment);
+		node->genrecode = strstrip(node->genrecode);
+		node->genretext = strstrip(node->genretext);
+		node->tracktext = strstrip(node->tracktext);
+		node->poster = strstrip(node->poster);
+
 		if(flag == 1 && id != NULL)
 		{
 			savefile = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
