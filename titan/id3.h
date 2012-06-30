@@ -35,7 +35,6 @@ void id3debug(struct id3tag* node)
 	debug(278, "Comment: %s", node->comment);
 	debug(278, "Genrecode: %s", node->genrecode);
 	debug(278, "Genretext: %s", node->genretext);
-	debug(278, "Tracktext: %s", node->tracktext);
 	debug(278, "Track: %d", node->track);
 	debug(278, "Len: %d", node->len);
 	debug(278, "Picturetype: %d", node->picturetype);
@@ -97,7 +96,6 @@ void freeid3(struct id3tag* node)
 	free(node->comment); node->comment = NULL;
 	free(node->genrecode); node->genrecode = NULL;
 	free(node->genretext); node->genretext = NULL;
-	free(node->tracktext); node->tracktext = NULL;
 	free(node->poster); node->poster = NULL;
 	
 	free(node); node = NULL;
@@ -186,15 +184,27 @@ int id3pngstart(int fp, int delta)
 
 char* id3readtag(int fd, int taglen, int maxtaglen)
 {
-	if(taglen > maxtaglen) taglen = maxtaglen;
-
+	int i = 0, y = 0;
 	char* tmpstr = NULL;
+
+	if(taglen > maxtaglen) taglen = maxtaglen;
 
 	tmpstr = malloc(taglen + 1);
 	if(tmpstr == NULL) return NULL; 
 
 	read(fd, tmpstr, taglen);
 	tmpstr[taglen] = '\0';
+
+	//remove non printable chars
+	for(i = 0; i < taglen; i++)
+	{
+		if((tmpstr[i] >= 0x20 && tmpstr[i] < 0x7F) || (tmpstr[i] >= 0xC0 && tmpstr[i] < 0xFD))
+		{
+			tmpstr[y] = tmpstr[i];
+			y++;
+		}
+	}
+	tmpstr[y] = '\0';
 
 	return tmpstr;
 }
@@ -379,9 +389,9 @@ void id3parse2_2(int fd, struct id3tag *node)
 		else if(!strncmp("TRK", tag, 3)) //track nr.
 		{
 			lseek(fd, 1, SEEK_CUR);
-			free(node->tracktext); node->tracktext = NULL;
-			node->tracktext = id3readtag(fd, taglen - 1, 8);
-			if(node->tracktext != NULL) node->track = atoi(node->tracktext);
+			buf = id3readtag(fd, taglen - 1, 8);
+			if(buf != NULL) node->track = atoi(buf);
+			free(buf); buf = NULL;
 		}
 		//else if(ostrncmp("TYE", tag, 3) == 0) //year
 		else if(!strncmp("TYE", tag, 3)) //year
@@ -500,9 +510,9 @@ void id3parse2_3(int fd, struct id3tag *node)
 		else if(!strncmp("TRCK", tag, 4)) //track nr
 		{
 			lseek(fd, 1, SEEK_CUR);
-			free(node->tracktext); node->tracktext = NULL;
-			node->tracktext = id3readtag(fd, taglen - 1, 8);
-			if(node->tracktext != NULL) node->track = atoi(node->tracktext);
+			buf = id3readtag(fd, taglen - 1, 8);
+			if(buf != NULL) node->track = atoi(buf);
+			free(buf); buf = NULL;
 		}
 		//else if(ostrncmp("TYER", tag, 4) == 0) //year
 		else if(!strncmp("TYER", tag, 4)) //year
@@ -622,9 +632,9 @@ void id3parse2_4(int fd, struct id3tag *node)
 		else if(!strncmp("TRCK", tag, 4)) //track nr
 		{
 			lseek(fd, 1, SEEK_CUR);
-			free(node->tracktext); node->tracktext = NULL;
-			node->tracktext = id3readtag(fd, taglen - 1, 8);
-			if(node->tracktext != NULL) node->track = atoi(node->tracktext);
+			buf = id3readtag(fd, taglen - 1, 8);
+			if(buf != NULL) node->track = atoi(buf);
+			free(buf); buf = NULL;
 		}
 		//else if(ostrncmp("TYER", tag, 4) == 0) //year
 		else if(!strncmp("TYER", tag, 4)) //year
@@ -743,7 +753,6 @@ struct id3tag* getid3(char* file, char* id, int flag)
 		node->comment = strstrip(node->comment);
 		node->genrecode = strstrip(node->genrecode);
 		node->genretext = strstrip(node->genretext);
-		node->tracktext = strstrip(node->tracktext);
 		node->poster = strstrip(node->poster);
 
 		if(flag == 1 && id != NULL)
