@@ -1,5 +1,5 @@
-#ifndef TFILE_H
-#define TFILE_H
+#ifndef FILEMANAGER_H
+#define FILEMANAGER_H
 
 void screenfilemanager()
 {
