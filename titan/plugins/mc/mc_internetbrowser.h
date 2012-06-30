@@ -15,8 +15,8 @@ void screenmc_internetbrowser()
 			{
 				if(ostrcmp(child->name, "Internet Browser") == 0)
 					treffer = 1;
-				child = child->next;
 			}
+			child = child->next;
 		}
 
 		if(treffer == 1)
