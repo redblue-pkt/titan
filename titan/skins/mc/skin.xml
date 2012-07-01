@@ -28,7 +28,7 @@
 </screen>
 
 # videoplayer
-<screen name="mc_videoplayer" picmem=%pluginpath%/mc/skin/background_overlay_HD.png fontcol=fontcol valign=bottom fontsize=30 posx=center posy=center width=100% height=100% bordersize=2>
+<screen name="mc_videoplayer" picmem=%pluginpath%/mc/skin/background_overlay_HD.png fontcol=fontcol valign=bottom fontsize=30 posx=center posy=center width=100% height=100% bordersize=2 transparent=1>
 <node textposx=100 text="VIDEO" name=mc_audioplayer_name posx=0 posy=30 width=100% height=30 fontcol=fontcol/>
 <node fontsize=25 bordercol=bordercol scrollbar=auto type=listbox name=listbox posx=center posy=140 width=92% height=480>
 <node name=filelistpath valign=middle bordersize=1 posx=center posy=100 width=95% height=30>
@@ -64,7 +64,7 @@
 </screen>
 
 # audioplayer
-<screen name="mc_audioplayer" picmem=%pluginpath%/mc/skin/background_overlay_HD.png fontcol=fontcol valign=bottom fontsize=30 posx=center posy=center width=100% height=100% bordersize=2>
+<screen name="mc_audioplayer" picmem=%pluginpath%/mc/skin/background_overlay_HD.png fontcol=fontcol valign=bottom fontsize=30 posx=center posy=center width=100% height=100% bordersize=2 transparent=1>
 <node textposx=100 text="AUDIO" name=mc_audioplayer_name posx=0 posy=30 width=100% height=30 fontcol=fontcol/>
 <node name=filelistpath valign=middle bordersize=1 posx=center posy=100 width=95% height=30>
 <node fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox posx=center posy=140 width=92% height=50%>
@@ -108,7 +108,7 @@
 </screen>
 
 # pictureplayer
-<screen name="mc_pictureplayer" picmem=%pluginpath%/mc/skin/background_overlay_HD.png fontcol=fontcol valign=bottom fontsize=30 posx=center posy=center width=100% height=100% bordersize=2>
+<screen name="mc_pictureplayer" picmem=%pluginpath%/mc/skin/background_overlay_HD.png fontcol=fontcol valign=bottom fontsize=30 posx=center posy=center width=100% height=100% bordersize=2 transparent=1>
 <node textposx=100 text="PICTURE" name=mc_videoplayer_name posx=0 posy=30 width=100% height=30 fontcol=fontcol/>
 <node fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox posx=center posy=140 width=92% height=480>
 <node name=filelistpath valign=middle bordersize=1 posx=center posy=100 width=95% height=30>
