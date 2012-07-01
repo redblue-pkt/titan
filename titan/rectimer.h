@@ -12,6 +12,50 @@ void debugrectimer()
 	}
 }
 
+int changerectimerbegin(struct rectimer* recnode, time_t begin)
+{
+	struct rectimer* prev = rectimer, *node = rectimer;
+
+	if(recnode != NULL)
+		recnode->begin = begin;
+
+	//aushaengen first node
+	if(recnode->prev == NULL)
+		rectimer = recnode->next;
+
+	//aushaengen last node
+	if(recnode->next == NULL && recnode->prev != NULL)
+		recnode->prev->next = NULL;
+
+	//recnode aushaengen
+	if(recnode->prev != NULL)
+		recnode->prev->next = recnode->next;
+	if(recnode->next != NULL)
+		recnode->next->prev = recnode->prev;
+
+	recnode->next = NULL;
+	recnode->prev = NULL;
+
+	//resort rectimer
+	while(node != NULL && begin <= node->begin)
+	{
+		prev = node;
+		node = node->next;
+	}
+
+	//recnode einhaengen
+	if(prev == NULL)
+		rectimer = recnode;
+	else
+	{
+		prev->next = recnode;
+		recnode->prev = prev;
+		if(prev->next != NULL);
+			prev->next->prev = recnode;
+		recnode->next = prev->next;
+	}
+}
+
 int checkrectimeradd(struct rectimer* recnode, char** ret)
 {
 	struct rectimer* node = rectimer;
@@ -328,7 +372,7 @@ void checkrectimer()
 	time_t t = time(NULL), begin = 0, end = 0;
 
 	m_lock(&status.rectimermutex, 1);
-  node = rectimer;
+	node = rectimer;
 	
 	while(node != NULL)
 	{
