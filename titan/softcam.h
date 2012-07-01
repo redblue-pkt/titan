@@ -45,11 +45,13 @@ void readmenu()
 
 	// get the emu list
 	emuline = command("emu.sh list");
-	if(emuline != NULL){
+	if(emuline != NULL)
+	{
 		// split emulist lines
 		emush = strtok(emuline, "\n");
 
-		while(emush != NULL){
+		while(emush != NULL)
+		{
 			active = 0;
 			check = 0;
 
@@ -64,7 +66,8 @@ void readmenu()
 			cmd = ostrcat("emu.sh active ", cmd, 0, 1);
 			checkactive = string_newline(command(cmd));
 			free(cmd); cmd = NULL;
-			if(ostrcmp(emush, checkactive) == 0){
+			if(ostrcmp(emush, checkactive) == 0)
+			{
 				debug(100, "active emu = %s\n", emush);
 				active = 1;
 			}
@@ -74,19 +77,20 @@ void readmenu()
 			cmd = ostrcat("emu.sh check ", cmd, 0, 1);
 			checkstate = command(cmd);
 			free(cmd); cmd = NULL;
-			if(strstr(checkstate, "checkemu running") != 0){
+			if(strstr(checkstate, "checkemu running") != 0)
+			{
 				debug(100, "running emu = %s\n", emush);
 				check = 1;
 			}
 
 			// update emuname with status
-			if(active == 1 && check ==1){
+			if(active == 1 && check ==1)
 				emuname = ostrcat(emuname, "  (running) (active)", 1, 0);
-			}else if(check ==1){
+			else if(check ==1)
 				emuname = ostrcat(emuname, "  (running)", 1, 0);
-			}else if(active == 1){
+			else if(active == 1)
 				emuname = ostrcat(emuname, "  (active)", 1, 0);
-			}
+
 			debug(100, "emuname = %s\n", emuname);
 			addlist(emulist, emuname, emush);
 			free(emuname); emuname = NULL;
@@ -94,9 +98,9 @@ void readmenu()
 			count++;
 		}
 	}
-	else{
+	else
 		addlist(emulist, "Emu not found", "emu0");
-	}
+
 	free(emuname);
 	free(emuline);
 	free(emush);
@@ -120,32 +124,38 @@ void fillmenubox()
 	{
 		elist = emulist[i];
 
-		while(elist != NULL){
-			if(elist->value != NULL){
+		while(elist != NULL)
+		{
+			if(elist->value != NULL)
+			{
 				node = addlistbox(screen, listbox, node, 1);
-				if(node != NULL){
+				if(node != NULL)
+				{
 					changetext(node, _(elist->key));
 					changename(node, elist->value);
 					node->height = 22;
 	
 					// change font color, depending emu is running/active
-					if(strstr(node->text, "active") != 0){
+					if(strstr(node->text, "active") != 0)
+					{
 						node->fontcol = convertcol("emuaktivecol");
-						if(setselection == 0){
+						if(setselection == 0)
+						{
 							aktemu = elist->value;
 							setselection = 1;
 						}
 					}
-					else if(strstr(node->text, "running") != 0){
+					else if(strstr(node->text, "running") != 0)
+					{
 						node->fontcol = convertcol("emurunningcol");
-						if(setselection == 0 || setselection == 1){
+						if(setselection == 0 || setselection == 1)
+						{
 							aktemu = elist->value;
 							setselection = 2;
 						}
 					}
-					else{
+					else
 						node->fontcol = convertcol("fontcol");
-					}
 				}
 			}
 			elist = elist->next;
@@ -227,6 +237,7 @@ void readecminfo(struct skin* labelecminfo)
 void screensoftcam()
 {
 	int rcret = 0;
+	struct skin* loading = getscreen("loading");
 	struct skin* softcam = getscreen("softcam");
 	struct skin* listbox = getscreennode(softcam, "listbox");
 	struct skin* labelecminfo = getscreennode(softcam, "ecminfo");
@@ -265,44 +276,57 @@ void screensoftcam()
 		tmp = listbox->select;
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcred", NULL)){
+		if(rcret == getrcconfigint("rcred", NULL))
+		{
 			// deactivate emu
+			drawscreen(loading, 0, 0);
 			deactivate(tmp->name);
 			drawscreen(softcam, 0, 0);
 		}
-		if(rcret == getrcconfigint("rcgreen", NULL)){
+		if(rcret == getrcconfigint("rcgreen", NULL))
+		{
 			// restart emu
+			drawscreen(loading, 0, 0);
 			restartcam(tmp->name);
 			drawscreen(softcam, 0, 0);
 		}
-		if(rcret == getrcconfigint("rcyellow", NULL)){
+		if(rcret == getrcconfigint("rcyellow", NULL))
+		{
 			// refrech screen
+			drawscreen(loading, 0, 0);
 			readecminfo(labelecminfo);
 			readmenu();
 			fillmenubox();
 			drawscreen(softcam, 0, 0);
 		}
-		if(rcret == getrcconfigint("rcblue", NULL)){
+		if(rcret == getrcconfigint("rcblue", NULL))
+		{
 			// activate emu
+			drawscreen(loading, 0, 0);
 			activate(tmp->name);
 			drawscreen(softcam, 0, 0);
 		}
-		if(rcret == getrcconfigint("rcok", NULL)){
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
 			// start/stop emu, depending if emu already runs
-			if(checkrunningcam(tmp->name) == 1){
+			drawscreen(loading, 0, 0);
+			if(checkrunningcam(tmp->name) == 1)
+			{
 				stopcam(tmp->name);
 			}
-			else{
+			else
+			{
 				startcam(tmp->name);
 			}
 			drawscreen(softcam, 0, 0);
 		}
-		if(rcret == RCTIMEOUT){
+		if(rcret == RCTIMEOUT)
+		{
 			// update ecminfo
 			readecminfo(labelecminfo);
 			drawscreen(softcam, 0, 0);
 		}
-        }
+	}
 
 	if(emulist != NULL)
 		freelist(emulist);
