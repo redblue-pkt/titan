@@ -530,7 +530,7 @@ void savenetworkbrowser(char* filename)
 
 		if(ostrcmp(node->mode, "0") == 0)
 		{
-			savesettings = ostrcat(savesettings, "\t-fstype=cifs,rw,rsize=", 1, 0);
+			savesettings = ostrcat(savesettings, "\t-fstype=cifs,directio,rw,rsize=", 1, 0);
 	 		savesettings = ostrcat(savesettings, node->rsize, 1, 0);
 			savesettings = ostrcat(savesettings, ",wsize=", 1, 0);
  			savesettings = ostrcat(savesettings, node->wsize, 1, 0);
