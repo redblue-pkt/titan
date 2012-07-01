@@ -133,6 +133,8 @@ void* convertfunc(char *value, uint8_t *rettype)
 		return &getaktchannelname;
 	if(ostrcmp("getakttuner", value) == 0)
 		return &getakttuner;
+	if(ostrcmp("getimgname", value) == 0)
+		return &getimgname;
 	if(ostrcmp("gettime", value) == 0)
 		return &gettime;
 	if(ostrcmp("getepgmarkedstart", value) == 0)

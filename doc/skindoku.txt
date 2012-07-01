@@ -161,3 +161,4 @@ getsignal
 getsatname
 getprovidername
 getpowerofftime
+getimgname
