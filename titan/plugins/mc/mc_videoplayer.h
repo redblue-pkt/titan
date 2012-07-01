@@ -561,9 +561,34 @@ void screenmc_videoplayer()
 				}
 				else
 				{
-					debug(50, "mc_mounter_chk start");
-					mc_mounter_chk(filelistpath);
-					debug(50, "mc_mounter_chk done");
+					char* checkdvd = ostrcat(filelist->select->name, NULL, 0, 0);
+					string_tolower(checkdvd);
+					printf("1\n");
+					if(ostrcmp(checkdvd, "video_ts") == 0)
+					{
+						printf("2\n");
+						struct skin* dvdplayer = getplugin("DVD Player");
+						if(dvdplayer != NULL)
+						{
+							void (*startplugin)(char*, int);
+							startplugin = dlsym(dvdplayer->pluginhandle, "screendvdplay");
+							if(startplugin != NULL)
+							{
+								debug(50, "filelist->select->text: %s", filelist->select->text);
+								filename = createpath(filelistpath->text, filelist->select->name);
+								printf("1name: %s\n",filelist->select->name);
+								printf("1text: %s\n",filelist->select->text);				
+								startplugin(filename,0);
+							}
+						}
+					}
+					else
+					{
+						printf("5\n");
+						debug(50, "mc_mounter_chk start");
+						mc_mounter_chk(filelistpath);
+						debug(50, "mc_mounter_chk done");	
+					}
 				}
 			}
 			else if(filelist->select != NULL && filelist->select->input == NULL)
