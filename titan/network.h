@@ -256,24 +256,24 @@ void screennetwork_test()
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
-			changetext(lan, "Wait");
-			changetext(internet, "Wait");
+			changetext(lan, _("Wait"));
+			changetext(internet, _("Wait"));
 			drawscreen(network, 0, 0);
 
 			tmpstr = ostrcat(tmpstr, "ping -c1 -W1 ", 1, 0);
 			tmpstr = ostrcat(tmpstr, fixip(status.gateway, 1), 1, 0);
 			if(system(tmpstr) == 0) 
-				changetext(lan, "OK");
+				changetext(lan, _("OK"));
 			else
-				changetext(lan, "ERROR");
+				changetext(lan, _("ERROR"));
 			free(tmpstr); tmpstr=NULL;
 
 			tmpstr = ostrcat(tmpstr, "ping -c1 -W1 ", 1, 0);
 			tmpstr = ostrcat(tmpstr, "www.google.de", 1, 0);
 			if(system(tmpstr) == 0) 
-				changetext(internet, "OK");
+				changetext(internet, _("OK"));
 			else
-				changetext(internet, "ERROR");
+				changetext(internet, _("ERROR"));
 			free(tmpstr); tmpstr=NULL;
 			drawscreen(network, 0, 0);
 		}
