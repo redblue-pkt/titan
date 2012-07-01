@@ -589,6 +589,7 @@ void screenmc_videoplayer()
 						mc_mounter_chk(filelistpath);
 						debug(50, "mc_mounter_chk done");	
 					}
+					free(checkdvd), checkdvd = NULL;
 				}
 			}
 			else if(filelist->select != NULL && filelist->select->input == NULL)
