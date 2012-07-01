@@ -1226,6 +1226,8 @@ void screenrectimerext(struct rectimer* node, int flag)
 		}
 	}
 
+	if(flag == 1) resettvpic();
+
 	delownerrc(rectimerext);
 	clearscreen(rectimerext);
 }
