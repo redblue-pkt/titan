@@ -128,7 +128,10 @@ void screenkeyactions(int key, int flag)
 	{
 		startplugin = dlsym(pluginnode->pluginhandle, "start");
 		if(startplugin != NULL)
+		{
+			resettvpic();
 			startplugin();
+		}
 	}
 
 	resettvpic();
