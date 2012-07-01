@@ -821,8 +821,6 @@ void freeservice()
 char* servicecheckret(int ret, int flag)
 { 
 	char* tmpstr = NULL;
-	int timeout = 0;
-	if(flag == 1) timeout = 10;
 
 	if(ret != 0)
 	{
@@ -846,13 +844,15 @@ char* servicecheckret(int ret, int flag)
 				break;
 		}
 		if(tmpstr != NULL)
-		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, timeout, 0);
-		}
+			textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+	}
+
 	if(flag != 1)
 	{
 		free(tmpstr);
 		tmpstr = NULL;
 	}
+
 	return tmpstr;
 }
 
