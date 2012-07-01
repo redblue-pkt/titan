@@ -45,7 +45,7 @@ int playerstartts(char* file, int flag)
 	struct dvbdev* fenode = NULL;
 	struct dvbdev* dvrnode = NULL;
 
-	fd = open(file, O_RDONLY | O_LARGEFILE);
+	fd = open(file, O_RDONLY | O_LARGEFILE | O_DIRECT);
 	if(fd < 0)
 	{
 		perr("open player file");
