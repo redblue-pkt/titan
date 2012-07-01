@@ -419,7 +419,7 @@ void drawchannellistgmepg(struct skin* gmultiepg, int list, struct skin* listbox
 	}
 	drawscreen(gmultiepg, 0, 0);
 }
-																																								:
+
 //flag 0: epg from listbox
 //flag 1: epg from param or aktepg
 void gmultiepgfilldesc(struct skin* listbox, struct skin* epgdesc, struct epg* epgnode, struct channel* chnode, int flag)
