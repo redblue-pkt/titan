@@ -26,5 +26,5 @@ void deinit(void)
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {
-	screendvdplay(0);
+	screendvdplay(NULL, 0);
 }
