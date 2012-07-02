@@ -14,7 +14,7 @@ void debugrectimer()
 
 int changerectimerbegin(struct rectimer* recnode, time_t begin)
 {
-	struct rectimer* prev = rectimer, *node = rectimer;
+	struct rectimer* prev = NULL, *node = rectimer;
 
 	if(recnode != NULL)
 		recnode->begin = begin;
@@ -50,10 +50,9 @@ int changerectimerbegin(struct rectimer* recnode, time_t begin)
 	{
 		prev->next = recnode;
 		recnode->prev = prev;
-		if(prev->next != NULL);
-			prev->next->prev = recnode;
-		recnode->next = prev->next;
 	}
+	recnode->next = node;
+	if(node != NULL) node->prev = recnode;
 }
 
 int checkrectimeradd(struct rectimer* recnode, char** ret)
