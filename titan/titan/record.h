@@ -123,7 +123,7 @@ void recordwriteepg(char* filename, struct channel* chnode, struct rectimer* rec
 	
 	if(epgnode != NULL)
 	{
-        	fd = fopen(epgfilename, "w");
+		fd = fopen(epgfilename, "w");
 		if(fd == NULL)
 		{
 			perr("open %s", epgfilename);
@@ -163,11 +163,11 @@ void recordwriteepg(char* filename, struct channel* chnode, struct rectimer* rec
 
 		if(ret != count)
 		{
-			err("writting record epg file");
+			err("writting record epg file ret=%d, count=%d", ret, count);
 		}
 
 		fclose(fd);
-        }
+	}
 	free(epgfilename);
 }
 
