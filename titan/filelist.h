@@ -231,8 +231,8 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 	{
 		sumcount++;
 		pagecount++;
-		debug(10, "pdir: pagecount: %d", pagecount);
-		debug(10, "pdir: sumcount: %d", sumcount);
+		debug(913, "pdir: pagecount: %d", pagecount);
+		debug(913, "pdir: sumcount: %d", sumcount);
 
 		parentdir->picheight = 180;
 		parentdir->picwidth = 180;				
@@ -250,7 +250,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 		posx += parentdir->width;
 		
 		tmpstr = ostrcat(tmpstr, "skin/ext_grid_changedir.png", 1, 0);
-		debug(10, "picpath: %s", tmpstr);
+		debug(913, "picpath: %s", tmpstr);
 		changepic(parentdir, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 
@@ -294,10 +294,10 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 					{
 						sumcount++;
 						pagecount++;
-						debug(10, "dir: pagecount: %d", pagecount);
-						debug(10, "dir: sumcount: %d", sumcount);
+						debug(913, "dir: pagecount: %d", pagecount);
+						debug(913, "dir: sumcount: %d", sumcount);
 						
-						debug(10, "filename: %s", filelist[i]->d_name);
+						debug(913, "filename: %s", filelist[i]->d_name);
 	 					child->picheight = 180;
 						child->picwidth = 180;
 								
@@ -349,8 +349,8 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 
 						if(tmpstr != NULL)
 						{
-							debug(10, "picpath: %s", tmpstr);
-							debug(10, "dir: change pic");
+							debug(913, "picpath: %s", tmpstr);
+							debug(913, "dir: change pic");
 							changepic(child, tmpstr);
 							free(tmpstr); tmpstr = NULL;
 						}					
@@ -364,7 +364,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 				}			
 				else				
 				{
-					debug(10, "picpath: %s", node->pic);
+					debug(913, "picpath: %s", node->pic);
 					if(node->pic != NULL)
 						changepic(child, node->pic);
 				}
@@ -426,13 +426,13 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 				child = addscreennode(screen, NULL, child);
 				if(child != NULL)
 				{
-					debug(10, "filename: %s", filelist[i]->d_name);
+					debug(913, "filename: %s", filelist[i]->d_name);
 					if(view == 2)
 					{
 						sumcount++;
 						pagecount++;
-						debug(10, "files: pagecount: %d", pagecount);
-						debug(10, "files: sumcount: %d", sumcount);
+						debug(913, "files: pagecount: %d", pagecount);
+						debug(913, "files: sumcount: %d", sumcount);
 
 						if(gridbr == 0) child->type = GRIDBR;
 	
@@ -547,10 +547,10 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 								tmpstr = ostrcat(tmpstr, "skin/ext_grid_dummy.png", 1, 0);
 							}
 						}
-						debug(10, "picpath: %s", tmpstr);
+						debug(913, "picpath: %s", tmpstr);
 						if(tmpstr != NULL)
 						{
-							debug(10, "files: change pic");
+							debug(913, "files: change pic");
 							changepic(child, tmpstr);
 							free(tmpstr); tmpstr = NULL;
 						}
@@ -567,7 +567,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 						tmpstr = ostrcat(tmpstr, "skin/ext_", 1, 0);
 						tmpstr = ostrcat(tmpstr, string_tolower(getfilenameext(filelist[i]->d_name)), 1, 1);
 						tmpstr = ostrcat(tmpstr, ".png", 1, 0);
-						debug(10, "picpath: %s", tmpstr);
+						debug(913, "picpath: %s", tmpstr);
 						if(tmpstr != NULL)
 							changepic(child, tmpstr);
 						free(tmpstr); tmpstr = NULL;
