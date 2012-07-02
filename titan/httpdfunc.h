@@ -2275,6 +2275,7 @@ char* webrectimersend(char* param, int fmt)
 	char* tmpstr = NULL;
 	struct tm* loctime = NULL;
 	struct channel *channel1 = NULL;
+	time_t tmpbegin = 0;
 //	struct service *service1;
 
 	anode = ostrstr(param, "node=");
@@ -2335,7 +2336,6 @@ char* webrectimersend(char* param, int fmt)
 		return buf;
 	}
 		
-	
 	if(channelname != NULL && sid == NULL)
 	{
 		channelfind = 0;
@@ -2378,7 +2378,7 @@ char* webrectimersend(char* param, int fmt)
 	node = getrectimerbytimestamp(anode);
 	if(node == NULL)
 	{
-		node = addrectimernode(NULL, NULL);
+		node = addrectimernode(NULL, NULL, 0);
 		if(node != NULL)
 		{
 			newnode = 1;
@@ -2417,9 +2417,10 @@ char* webrectimersend(char* param, int fmt)
 		tmpstr = strptime(begin, "%H:%M+%d-%m-%Y", loctime); 
 		if(tmpstr != NULL) {
 			loctime->tm_isdst = -1;
-			node->begin = mktime(loctime);
+			tmpbegin = mktime(loctime);
 		}
-		node->begin -= (node->begin % 60);
+		tmpbegin -= (tmpbegin % 60);
+		changerectimerbegin(node, tmpbegin, 0);
 		tmpstr = NULL;
 		free(loctime); loctime = NULL;
 
