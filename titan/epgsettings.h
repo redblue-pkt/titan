@@ -129,7 +129,7 @@ void screenepgsettings()
 	addchoicebox(epglistmode, "0", _("deaktiv"));
 	addchoicebox(epglistmode, "1", _("scan"));
 	addchoicebox(epglistmode, "2", _("whitelist"));
-	addchoicebox(epglistmode, "2", _("scan and whitelist"));
+	addchoicebox(epglistmode, "3", _("scan and whitelist"));
 	setchoiceboxselection(epglistmode, getconfig("epg_listmode", NULL));
 
 	char* tmpstr = NULL;
