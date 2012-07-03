@@ -997,6 +997,7 @@ void setskinnodeslocked(int flag)
 			else if(ostrcmp("instar", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("keylock", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("lcdpearl1", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("lcdsamsung", child->name) == 0) child->locked = flag;	
 //			else if(ostrcmp("mediacenter", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("mboxinfo", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("networkbrowser", child->name) == 0) child->locked = flag;
