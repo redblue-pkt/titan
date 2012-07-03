@@ -4,6 +4,7 @@ imdb: 201
 permtime: 115
 keylock: 117
 IP-Kammera/instar 118
+lcdsamsung: 119
 hello: ---
 mboxinfo: 194
 mc: 101
