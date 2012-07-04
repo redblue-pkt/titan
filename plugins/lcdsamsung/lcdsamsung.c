@@ -63,12 +63,16 @@ void LCD_Samsung1_thread()
 	
 	struct skin* day0_t = NULL;
 	struct skin* day0_i = NULL;
+	struct skin* day0_d = NULL;
 	struct skin* day1_t = NULL;
 	struct skin* day1_i = NULL;
+	struct skin* day1_d = NULL;
 	struct skin* day2_t = NULL;
 	struct skin* day2_i = NULL;
+	struct skin* day2_d = NULL;
 	struct skin* day3_t = NULL;
 	struct skin* day3_i = NULL;
+	struct skin* day3_d = NULL;
 	struct skin* akttime = NULL;
 	
 	
@@ -88,12 +92,16 @@ void LCD_Samsung1_thread()
 			LCD_Samsung1 = getscreen("LCD_spf87_Wetter");
 		day0_t = getscreennode(LCD_Samsung1, "day0_t");
 		day0_i = getscreennode(LCD_Samsung1, "day0_i");
+		day0_d = getscreennode(LCD_Samsung1, "day0_d");
 		day1_t = getscreennode(LCD_Samsung1, "day1_t");
 		day1_i = getscreennode(LCD_Samsung1, "day1_i");
+		day1_d = getscreennode(LCD_Samsung1, "day1_d");
 		day2_t = getscreennode(LCD_Samsung1, "day2_t");
 		day2_i = getscreennode(LCD_Samsung1, "day2_i");
+		day2_d = getscreennode(LCD_Samsung1, "day2_d");
 		day3_t = getscreennode(LCD_Samsung1, "day3_t");
 		day3_i = getscreennode(LCD_Samsung1, "day3_i");
+		day3_d = getscreennode(LCD_Samsung1, "day3_d");
 		if(file_exist("/tmp/lcdweather") == 1)
 			system("rm /tmp/lcdweather");
 	}
@@ -193,7 +201,18 @@ void LCD_Samsung1_thread()
 		{
 			if(status.standby == 1 && standby == 0)
 			{
-				system("killall lcd4linux");
+				tmpstr = ostrcat("cp ", getconfig("pluginpath", NULL), 0, 0);
+				tmpstr = ostrcat(tmpstr, "/lcdsamsung/standby.jpg", 1, 0);
+				tmpstr = ostrcat(tmpstr, " /tmp/titanlcd.jpg", 1, 0);
+				system(tmpstr);
+				free(tmpstr); tmpstr=NULL;
+				sleep(3);
+				tmpstr = ostrcat("cp ", getconfig("pluginpath", NULL), 0, 0);
+				tmpstr = ostrcat(tmpstr, "/lcdsamsung/black.jpg", 1, 0);
+				tmpstr = ostrcat(tmpstr, " /tmp/titanlcd.jpg", 1, 0);
+				system(tmpstr);
+				sleep(2);
+				system("killall fbread");
 				standby = 1;
 			}
 			if(status.standby == 0 && standby == 1)
@@ -260,29 +279,33 @@ void LCD_Samsung1_thread()
 											fd = fopen("/tmp/lcdweather", "r");
 											if(fd != NULL)
 											{
-												weather_getline(fd, fileline);weather_getline(fd, fileline);weather_getline(fd, fileline);
-												weather_getline(fd, fileline);
+												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												changetext(day0_d, fileline);
+												weather_getline(fd, fileline);weather_getline(fd, fileline);
 												changetext(day0_t, fileline);
 												weather_getline(fd, fileline);
 												weather_getline(fd, fileline);
 												changepic(day0_i, fileline);
 												
-												weather_getline(fd, fileline);weather_getline(fd, fileline);
 												weather_getline(fd, fileline);
+												changetext(day1_d, fileline);
+												weather_getline(fd, fileline);weather_getline(fd, fileline);
 												changetext(day1_t, fileline);
 												weather_getline(fd, fileline);
 												weather_getline(fd, fileline);
 												changepic(day1_i, fileline);
 												
-												weather_getline(fd, fileline);weather_getline(fd, fileline);
 												weather_getline(fd, fileline);
+												changetext(day2_d, fileline);
+												weather_getline(fd, fileline);weather_getline(fd, fileline);
 												changetext(day2_t, fileline);
 												weather_getline(fd, fileline);
 												weather_getline(fd, fileline);
 												changepic(day2_i, fileline);
 												
-												weather_getline(fd, fileline);weather_getline(fd, fileline);
 												weather_getline(fd, fileline);
+												changetext(day3_d, fileline);
+												weather_getline(fd, fileline);weather_getline(fd, fileline);
 												changetext(day3_t, fileline);
 												weather_getline(fd, fileline);
 												weather_getline(fd, fileline);
@@ -399,6 +422,11 @@ void init(void)
 	
 	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/skin.xml", 0, 0);
 	readscreen(tmpstr, 119, 1);
+	free(tmpstr); tmpstr = NULL;
+	tmpstr = ostrcat("cp ", getconfig("pluginpath", NULL), 0, 0);
+	tmpstr = ostrcat(tmpstr, "/lcdsamsung/black.jpg", 1, 0);
+	tmpstr = ostrcat(tmpstr, " /tmp/fbreadstop.jpg", 1, 0);
+	system(tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	debug(10, "LCD Samsung SPF.. loadet !!!");
 	tmpstr = getconfig("lcd_samsung_plugin_running", NULL);
