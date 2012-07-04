@@ -429,6 +429,7 @@ void init(void)
 	tmpstr = ostrcat(tmpstr, " /tmp/fbreadstop.jpg", 1, 0);
 	system(tmpstr);
 	free(tmpstr); tmpstr = NULL;
+	system("killall fbread");
 	debug(10, "LCD Samsung SPF.. loadet !!!");
 	tmpstr = getconfig("lcd_samsung_plugin_running", NULL);
 	if(ostrcmp(tmpstr, "yes") == 0)
