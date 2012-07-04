@@ -1,0 +1,16 @@
+<screen fontcol=fontcol valign=bottom titlealign=center name=catcatch hspace=30 vspace=30 fontsize=30 title="Cat-Catch" posx=center posy=center width=700 height=556 bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node text="Score:" posy=1 posx=424 width=90 height=30>
+<node text="0" name=sum halign=right posy=1 posx=514 width=120 height=30>
+<node text="Level:" posy=40 posx=424 width=90 height=30>
+<node text="1" name=level halign=right posy=40 posx=514 width=120 height=30>
+<node name=node0 posy=1 posx=0 bordercol=#0000FF bordersize=3 width=128 height=128>
+<node name=node1 posy=1 posx=138 bordercol=#0000FF bordersize=3 width=128 height=128>
+<node name=node2 posy=1 posx=276 bordercol=#0000FF bordersize=3 width=128 height=128>
+<node name=node3 posy=138 posx=0 bordercol=#0000FF bordersize=3 width=128 height=128>
+<node name=node4 posy=138 posx=138 bordercol=#0000FF bordersize=3 width=128 height=128>
+<node name=node5 posy=138 posx=276 bordercol=#0000FF bordersize=3 width=128 height=128>
+<node name=node6 posy=276 posx=0 bordercol=#0000FF bordersize=3 width=128 height=128>
+<node name=node7 posy=276 posx=138 bordercol=#0000FF bordersize=3 width=128 height=128>
+<node name=node8 posy=276 posx=276 bordercol=#0000FF bordersize=3 width=128 height=128>
+<node name=b1 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=6 bordertype=2 posx=20 posy=0 width=150 height=39/>
+</screen>

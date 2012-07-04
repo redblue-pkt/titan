@@ -109,5 +109,6 @@ compile "tmdb" "tmdb" ""
 compile "gmediarender" "gmediarender" ""
 compile "imdb" "imdb" ""
 compile "filemanager" "filemanager" ""
+compile "catcatch" "catcatch" ""
 
 #rm -r networkbrowser/networkbrowser
