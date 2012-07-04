@@ -21,5 +21,6 @@ stock: 220
 streaminfo: 225
 tmc: 230
 filemanager: 240
+catcatch: 241
 TopfieldVFD: ---
 browser: ---
