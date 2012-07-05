@@ -3142,7 +3142,7 @@ void drawnode(struct skin* node, int flag)
 		drawstring(tmpnr, 1, node->poscount, -1, node->iposx, node->iposy, node->iwidth, node->iheight, RIGHT, node->valign, node->font, node->fontsize, node->fontcol, node->transparent, 0, NULL, NULL, NULL, node->charspace);
 		free(tmpnr);
 	}
-	if(node->title != NULL)
+	if(node->title != NULL && node->fontsize > 0)
 		drawtitle(node);
 	if(node->scrollbar == YES || node->scrollbar == AUTOYES)
 		drawscrollbar(node);
