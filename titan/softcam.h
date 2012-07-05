@@ -155,7 +155,7 @@ void fillmenubox()
 						}
 					}
 					else
-						node->fontcol = convertcol("fontcol");
+						node->fontcol = listbox->fontcol;
 				}
 			}
 			elist = elist->next;
