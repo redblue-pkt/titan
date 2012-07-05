@@ -78,6 +78,8 @@ void screenextensions(int mode, char* path)
 		ipkg_update();
 		ipkg_list();
 
+		clearscreen(load);
+
 		mbox = ipkmenulist(mlist, NULL, "Ipk Install - select section", NULL, NULL, 1, 0);
 
 		if(mbox != NULL)
@@ -226,6 +228,7 @@ void screenextensions(int mode, char* path)
 		drawscreen(load, 0, 0);
 		system("cp -a /mnt/ipkg/* /var/usr/lib/ipkg");
 		ipkg_update();
+		clearscreen(load);
 		ipkg_upgrade();
 		system("rm -rf /mnt/ipkg ; mkdir /mnt/ipkg; cp -a /var/usr/lib/ipkg/info /mnt/ipkg; cp /var/usr/lib/ipkg/status /mnt/ipkg");
 		freeipkg();
