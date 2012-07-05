@@ -150,11 +150,13 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 
 	struct skin* screen = getscreen(skinname);
 	struct skin* listbox = getscreennode(screen, "listbox");
+	struct skin* titletext = getscreennode(screen, "titletext");
 	
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
 
 	changetitle(screen, _(skintitle));
+	if(titletext != status.skinerr) changetext(titletext, _(skintitle));
 
 	while(mlist != NULL)
 	{
