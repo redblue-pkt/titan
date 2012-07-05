@@ -16,13 +16,14 @@ void debugrectimer()
 //flag 1 = don't set mutex
 void changerectimerbegin(struct rectimer* recnode, time_t begin, int flag)
 {
-	struct rectimer* prev = NULL, *node = NULL;
+	//struct rectimer* prev = NULL, *node = NULL;
 
 	if(recnode == NULL) return;
 
-	if(flag == 0) m_lock(&status.rectimermutex, 1);
+	//if(flag == 0) m_lock(&status.rectimermutex, 1);
 
 	recnode->begin = begin;
+	return;
 
 	//aushaengen first node
 	if(recnode->prev == NULL)
@@ -60,7 +61,7 @@ void changerectimerbegin(struct rectimer* recnode, time_t begin, int flag)
 	recnode->next = node;
 	if(node != NULL) node->prev = recnode;
 
-	if(flag == 0) m_unlock(&status.rectimermutex, 1);
+	//if(flag == 0) m_unlock(&status.rectimermutex, 1);
 }
 
 int checkrectimeradd(struct rectimer* recnode, char** ret)
