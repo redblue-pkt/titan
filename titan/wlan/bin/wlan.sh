@@ -44,6 +44,9 @@ case $WLAN_MODULE in
 	8192cu )		WLAN_IF=wlan0
 				WLAN_DRV=wext
 				;;
+	rt5370sta )		WLAN_IF=ra0
+				WLAN_DRV=wext
+				;;
 	* )			echo "[wlan] Unknown module $WLAN_MODULE" | tee -a $WLAN_LOG && exit 1
 				;;
 esac
