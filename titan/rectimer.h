@@ -12,58 +12,6 @@ void debugrectimer()
 	}
 }
 
-//flag 0 = set mutex
-//flag 1 = don't set mutex
-void changerectimerbegin(struct rectimer* recnode, time_t begin, int flag)
-{
-	struct rectimer* prev = NULL, *node = NULL;
-
-	if(recnode == NULL) return;
-
-	//if(flag == 0) m_lock(&status.rectimermutex, 1);
-
-	recnode->begin = begin;
-	return;
-
-	//aushaengen first node
-	if(recnode->prev == NULL)
-		rectimer = recnode->next;
-
-	//aushaengen last node
-	if(recnode->next == NULL && recnode->prev != NULL)
-		recnode->prev->next = NULL;
-
-	//recnode aushaengen
-	if(recnode->prev != NULL)
-		recnode->prev->next = recnode->next;
-	if(recnode->next != NULL)
-		recnode->next->prev = recnode->prev;
-
-	node = rectimer;
-	recnode->next = NULL;
-	recnode->prev = NULL;
-
-	//resort rectimer
-	while(node != NULL && begin >= node->begin)
-	{
-		prev = node;
-		node = node->next;
-	}
-
-	//recnode einhaengen
-	if(prev == NULL)
-		rectimer = recnode;
-	else
-	{
-		prev->next = recnode;
-		recnode->prev = prev;
-	}
-	recnode->next = node;
-	if(node != NULL) node->prev = recnode;
-
-	//if(flag == 0) m_unlock(&status.rectimermutex, 1);
-}
-
 int checkrectimeradd(struct rectimer* recnode, char** ret)
 {
 	struct rectimer* node = rectimer;
@@ -115,9 +63,7 @@ int checkrectimeradd(struct rectimer* recnode, char** ret)
 	return 0;
 }
 
-//flag 0: set mutex in called funktions
-//flag 1: not set mutex in called funktions
-void recrepeatecalc(struct rectimer* node, int flag)
+void recrepeatecalc(struct rectimer* node)
 {
 	time_t daysec = 24 * 60 * 60;
 	struct tm* loctime = NULL;
@@ -135,7 +81,7 @@ void recrepeatecalc(struct rectimer* node, int flag)
 
 	for(i = 0; i < 7; i++)
 	{
-		changerectimerbegin(node, node->begin + daysec, flag);
+		node->begin = node->begin + daysec;
 		node->end = node->end + daysec;
 		rectimerday++;
 		if(rectimerday > 6) rectimerday = 0;
@@ -148,7 +94,7 @@ void recrepeatecalc(struct rectimer* node, int flag)
 	{
 		for(i = 0; i < 7; i++)
 		{
-			changerectimerbegin(node, node->begin + daysec, flag);
+			node->begin = node->begin + daysec;
 			node->end = node->end + daysec;
 			rectimerday++;
 			if(rectimerday > 6) rectimerday = 0;
@@ -158,9 +104,7 @@ void recrepeatecalc(struct rectimer* node, int flag)
 	}
 }
 
-//flag 0: set mutex in called funktions
-//flag 1: not set mutex in called funktions
-int checkrectimertime(struct rectimer* node, int flag)
+int checkrectimertime(struct rectimer* node)
 {
 	//don't load old timers
 	if(time(NULL) - node->end > 604800 && (node->status == 2 || node->status == 3))
@@ -171,7 +115,7 @@ int checkrectimertime(struct rectimer* node, int flag)
 
 	//recalc old repeat timer
 	if(time(NULL) > node->end && node->repeate != 0 && node->status == 0)
-		recrepeatecalc(node, flag);
+		recrepeatecalc(node);
 
 	return 0;
 }
@@ -180,7 +124,7 @@ void copyrectimer(struct rectimer* src, struct rectimer* dst)
 {
 	dst->timestamp = ostrcat(src->timestamp, NULL, 0, 0);
 	dst->name = ostrcat(src->name, NULL, 0, 0);
-	changerectimerbegin(dst, src->begin, 1);
+	dst->begin = src->begin;
 	dst->end = src->end;
 	dst->repeate = src->repeate;
 	dst->afterevent = src->afterevent;
@@ -193,9 +137,7 @@ void copyrectimer(struct rectimer* src, struct rectimer* dst)
 	dst->transponderid = src->transponderid;
 }
 
-//flag 0: set mutex in called funktions
-//flag 1: not set mutex in called funktions
-struct rectimer* addrectimernode(char* line, struct rectimer* last, int flag)
+struct rectimer* addrectimernode(char* line, struct rectimer* last)
 {
 	debug(1000, "in");
 	char *ret = NULL;
@@ -289,7 +231,7 @@ struct rectimer* addrectimernode(char* line, struct rectimer* last, int flag)
 		if(ret != NULL)
 			newnode->errstr = ret;
 
-		if(checkrectimertime(newnode, flag) == 1)
+		if(checkrectimertime(newnode) == 1)
 		{
 			free(newnode);
 			return NULL;
@@ -412,11 +354,11 @@ void checkrectimer()
 			if(node->repeate != 0)
 			{
 				//copy repeate timer
-				newnode = addrectimernode(NULL, NULL, 1);
+				newnode = addrectimernode(NULL, NULL);
 				if(newnode != NULL)
 				{
 					copyrectimer(node, newnode);
-					recrepeatecalc(newnode, 1);
+					recrepeatecalc(newnode);
 				}
 				node->repeate = 0;
 				status.writerectimer = 1;
@@ -513,7 +455,7 @@ int addrectimer(char *buf)
 			buf1 = buf;
 
 			if(ostrstr(line, "<timer ") != NULL || ostrstr(line, "<log "))
-				node = addrectimernode(line, node, 0);
+				node = addrectimernode(line, node);
 		}
 	}
 	free(line);
@@ -624,7 +566,7 @@ void deloldrectimer()
 	{
 		prev = node;
 		node = node->next;
-		if(prev != NULL && checkrectimertime(prev, 0) == 1)
+		if(prev != NULL && checkrectimertime(prev) == 1)
 			delrectimer(prev, 1, 0);
 	}
 	debug(1000, "out");
@@ -673,7 +615,7 @@ int writerectimer(const char *filename, int flag)
 	while(node != NULL)
 	{
 		//don't write for del marked or old timers
-		if(checkrectimertime(node, 1) == 1)
+		if(checkrectimertime(node) == 1)
 		{
 			node = node->next;
 			continue;
@@ -890,7 +832,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 	if(node == NULL)
 	{
 		newnode = 1;
-		node = addrectimernode(NULL, NULL, 0);
+		node = addrectimernode(NULL, NULL);
 		tmpservicetype = status.servicetype;
 		if(tmpservicetype == 0)
 			tmpchannellist = ostrcat(getconfig("channellist", NULL), NULL, 0, 0);
@@ -1164,18 +1106,15 @@ void screenrectimerext(struct rectimer* node, int flag)
 				node->justplay = atoi(justplay->ret);
 			if(begin->ret != NULL)
 			{
-				time_t tmpbegin = 0;
-
 				loctime->tm_isdst = bdaylight;
 				tmpstr = strptime(begin->ret, "%H:%M %d-%m-%Y", loctime); 
 				if(tmpstr != NULL)
-					tmpbegin = mktime(loctime);
+					node->begin = mktime(loctime);
 
 				if((flag == 1 || newnode == 1) && node->justplay == 0)
-					tmpbegin -= getconfigint("recforerun", NULL) * 60;
+					node->begin -= getconfigint("recforerun", NULL) * 60;
 
-				tmpbegin -= (tmpbegin % 60);
-				changerectimerbegin(node, tmpbegin, 0);
+				node->begin -= (node->begin % 60);
 
 				if(node->justplay == 1)
 					node->end = node->begin + 1;
@@ -1475,11 +1414,11 @@ int addrecepg(struct channel* chnode, struct epg* epgnode, char* channellist)
 	if(chnode == NULL || epgnode == NULL)
 		return 1;
 
-	node = addrectimernode(NULL, NULL, 0);
+	node = addrectimernode(NULL, NULL);
 	if(node != NULL)
 	{
 		node->name = ostrcat(epgnode->title, NULL, 0, 0);
-		changerectimerbegin(node, epgnode->starttime, 0);
+		node->begin = epgnode->starttime;
 		node->end = epgnode->endtime;
 
 		node->repeate = 0;
