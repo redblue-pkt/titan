@@ -394,6 +394,18 @@ struct skin* sortscreen(struct skin* node)
 			}
 		}
 	}
+
+	//calc prev
+	struct skin* prev = NULL;
+	nodetmp = node;
+	while(nodetmp != NULL)
+	{
+		nodetmp->prev = prev;
+		prev = nodetmp;
+
+		nodetmp = nodetmp->next;
+	}
+
 	debug(1000, "out");
 	return node;
 }
