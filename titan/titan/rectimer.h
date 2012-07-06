@@ -16,7 +16,7 @@ void debugrectimer()
 //flag 1 = don't set mutex
 void changerectimerbegin(struct rectimer* recnode, time_t begin, int flag)
 {
-	//struct rectimer* prev = NULL, *node = NULL;
+	struct rectimer* prev = NULL, *node = NULL;
 
 	if(recnode == NULL) return;
 
