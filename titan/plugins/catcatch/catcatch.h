@@ -1,12 +1,6 @@
 #ifndef CATCATCH_H
 #define CATCATCH_H
 
-int getrandom(int max)
-{
-	srand(time(NULL));
-	return (rand() % max);
-}
-
 int checktreffer(int nr, int* sum, int* cat, int* value)
 {
 	int ret = -1;

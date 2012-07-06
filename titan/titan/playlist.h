@@ -517,8 +517,7 @@ struct skin* getplaylistrandomold(struct skin* playlist, int maxdirs, int maxfil
 
 	if(maxfiles < 1) return NULL;
 
-	srand(time(NULL));
-	int r = rand() % maxfiles;
+	int r = getrandom(maxfiles);
 	r++;
 
 	while(node != NULL)
@@ -556,8 +555,7 @@ struct playlist* getplaylistrandom(struct playlist* plist, int max)
 	
 	if(max < 1) return NULL;
 
-	srand(time(NULL));
-	int r = rand() % max;
+	int r = getrandom(max);
 	r++;
 
 	while(node != NULL)

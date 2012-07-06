@@ -1,6 +1,12 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+int getrandom(int max)
+{
+	srand(time(NULL));
+	return (rand() % max);
+}
+
 //check if swap is in flash(1) or not(0)
 int checkswaplink()
 {

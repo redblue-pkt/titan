@@ -732,8 +732,7 @@ struct skin* getfilelistrandom(struct skin* filelist, int maxdirs, int maxfiles)
 	
 	if(maxfiles < 1) return NULL;
 
-	srand(time(NULL));
-	int r = rand() % maxfiles;
+	int r = getrandom(maxfiles);
 	r++;
 
 	while(node != NULL)
