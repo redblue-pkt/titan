@@ -12,6 +12,65 @@ void debugrectimer()
 	}
 }
 
+void sortrectimer()
+{
+	struct rectimer *nodea = NULL, *nodeb = NULL, *nodec = NULL, *noded = NULL;
+	struct rectimer *nodetmp = NULL, *node = rectimer;
+
+	if(node != NULL)
+	{
+		while (noded != node->next)
+		{
+			nodec = node;
+			nodea = node;
+			nodeb = nodea->next;
+
+			while (nodea != noded)
+			{
+				if (nodea->begin >= nodeb->begin)
+				{
+					if (nodea == node)
+					{
+						nodetmp = nodeb->next;
+						nodeb->next = nodea;
+						nodea->next = nodetmp;
+						node = nodeb;
+						nodec = nodeb;
+					}
+					else
+					{
+						nodetmp = nodeb->next;
+						nodeb->next = nodea;
+ 						nodea->next = nodetmp;
+						nodec->next = nodeb;
+						nodec = nodeb;
+					}
+				}
+				else
+				{
+					nodec = nodea;
+					nodea = nodea->next;
+				}
+				nodeb = nodea->next;
+				if (nodeb == noded)
+					noded = nodea;
+			}
+		}
+	}
+
+	struct rectimer* prev = NULL;
+	nodetmp = node;
+	while(nodetmp != NULL)
+	{
+		nodetmp->prev = prev;
+		prev = nodetmp;
+
+		nodetmp = nodetmp->next;
+	}
+
+	rectimer = node;
+}
+
 int checkrectimeradd(struct rectimer* recnode, char** ret)
 {
 	struct rectimer* node = rectimer;
@@ -70,6 +129,7 @@ void recrepeatecalc(struct rectimer* node)
 	int rectimerday = -1, rep = 0, i;
 
 	if(node->repeate == 0) return;
+	status.writerectimer = 1;
 
 	//get rectimer start day
 	loctime = olocaltime(&node->begin);
@@ -488,7 +548,7 @@ void delrectimer(struct rectimer* rectimernode, int write, int flag)
 	debug(1000, "in");
 
 	if(flag == 0) m_lock(&status.rectimermutex, 1);
-  struct rectimer *node = rectimer, *prev = rectimer;
+	struct rectimer *node = rectimer, *prev = rectimer;
 
 	while(node != NULL)
 	{
@@ -601,6 +661,7 @@ int writerectimer(const char *filename, int flag)
 	if(status.writerectimer == 0) return 0;
 
 	if(flag == 0) m_lock(&status.rectimermutex, 1);
+	sortrectimer();
   node = rectimer;
 
 	fd = fopen(filename, "w");
@@ -1263,9 +1324,9 @@ start:
 				tmpstr = ostrcat(tmpstr, ")", 1, 0);
 			}
 
+			tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 			if(rectimernode->name != NULL)
 			{
-				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 				if(rectimernode->name == NULL || strlen(rectimernode->name) == 0)
 					tmpstr = ostrcat(tmpstr, "---", 1, 0);
 				else
@@ -1279,26 +1340,15 @@ start:
 				tmpstr = ostrcat(tmpstr, ")", 1, 0);
 			}
 
+			tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 			if(rectimernode->status == 0)
-			{
-				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 				tmpstr = ostrcat(tmpstr, _("waiting"), 1, 0);
-			}
 			else if(rectimernode->status == 1)
-			{
-				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 				tmpstr = ostrcat(tmpstr, _("running"), 1, 0);
-			}
 			else if(rectimernode->status == 2)
-			{
-				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 				tmpstr = ostrcat(tmpstr, _("success"), 1, 0);
-			}
 			else if(rectimernode->status == 3)
-			{
-				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 				tmpstr = ostrcat(tmpstr, _("error"), 1, 0);
-			}
 
 			if(flag == 1 && rectimernode->errstr != NULL && strlen(rectimernode->errstr) != 0)
 			{
