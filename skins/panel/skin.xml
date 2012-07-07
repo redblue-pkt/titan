@@ -25,7 +25,7 @@
 <node type=MENU pic=%pluginpath%/panel/skin/panel_mounts.png textposx=120 valign=middle name=panel_infos_mounts text="Mounts" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_network.png textposx=120 valign=middle name=panel_infos_network text="Network" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_ram.png textposx=120 valign=middle name=panel_infos_ram text="Ram" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic="%pluginpath%/panel/skin/panel_system_info.png" textposx=120 valign=middle name=panel_infos_sysinfo text="System Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node type=MENU pic=%pluginpath%/panel/skin/panel_system_info.png textposx=120 valign=middle name=panel_infos_sysinfo text="System Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 #<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
@@ -35,18 +35,20 @@
 <node type=MENU pic=%pluginpath%/panel/skin/panel_meminfo.png textposx=120 valign=middle name=panel_sysinfos_mem text="Memory" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_mtd.png textposx=120 valign=middle name=panel_sysinfos_mtd text="MTD" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_module.png textposx=120 valign=middle name=panel_sysinfos_module text="Module" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic="%pluginpath%/panel/skin/panel_devices_config.png" textposx=120 valign=middle name=panel_sysinfos_devices text="Devices" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node type=MENU pic=%pluginpath%/panel/skin/panel_devices_config.png textposx=120 valign=middle name=panel_sysinfos_devices text="Devices" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_swap.png textposx=120 valign=middle name=panel_sysinfos_swap text="Swap" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+#<node type=MENU pic=%pluginpath%/panel/skin/panel_system_info.png textposx=120 valign=middle name=panel_sysinfos_top text="Top" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node type=MENU pic=%pluginpath%/panel/skin/panel_system_info.png textposx=120 valign=middle name=panel_sysinfos_ps text="Prozesslist" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 #<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
 <screen fontcol=fontcol title="Autostart" titlealign=center name=panel_autostart_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=65% bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=85%>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_default.png textposx=120 valign=middle name=panel_autostart_default text="Default" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic="%pluginpath%/panel/skin/panel_audiovideosat_config.png" textposx=120 valign=middle name=panel_autostart_audiovideo text="Audio / Video / Sat" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node type=MENU pic=%pluginpath%/panel/skin/panel_audiovideosat_config.png textposx=120 valign=middle name=panel_autostart_audiovideo text="Audio / Video / Sat" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_autofs.png textposx=120 valign=middle name=panel_autostart_usb text="Usb Device" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic="%pluginpath%/panel/skin/panel_camemu_config.png" textposx=120 valign=middle name=panel_autostart_emu text="Cam / Emu" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic="%pluginpath%/panel/skin/panel_network.png" textposx=120 valign=middle name=panel_autostart_network text="Network" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node type=MENU pic=%pluginpath%/panel/skin/panel_camemu_config.png textposx=120 valign=middle name=panel_autostart_emu text="Cam / Emu" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+<node type=MENU pic=%pluginpath%/panel/skin/panel_network.png textposx=120 valign=middle name=panel_autostart_network text="Network" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_parental.png textposx=120 valign=middle name=panel_autostart_safety text="Child safety" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 #<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
