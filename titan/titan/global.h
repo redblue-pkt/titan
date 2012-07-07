@@ -6,7 +6,7 @@ int getsupermagic(char* filename)
 	struct statfs64 s;
 
 	if(statfs64(filename, &s) >= 0)
-		return s.f_type
+		return s.f_type;
 
 	return 0;
 }
