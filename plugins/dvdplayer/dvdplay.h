@@ -3,11 +3,12 @@
 
 extern struct skin* skin;
 
-void screendvdplay(char* file, int flag)
+void screendvdplay(char* startfile, int flag)
 {
 printf("file1: %s\n",file);
 	int rcret = 0, playertype = 2, dirrcret = 0;
-	char* tmpstr = NULL, *startdir = NULL, *tmppolicy = NULL;
+	char* tmpstr = NULL, *startdir = NULL;
+	char* file = NULL, *tmppolicy = NULL;
 	struct skin* playinfobar = getscreen("playinfobar");
 
 	int skip13 = getconfigint("skip13", NULL);
@@ -25,15 +26,17 @@ playerstart:
 	status.playspeed = 0, status.play = 0, status.pause = 0;
 	int playinfobarcount = 0, playinfobarstatus = 0;
 printf("file3: %s\n",file);
-	if(file == NULL)
+	if(startfile == NULL)
 	{
 printf("file4: %s\n",file);
 		tmpstr = ostrcat(file, "", 1, 0); file = NULL;
 		file = screendir(startdir, NULL, basename(tmpstr), &dirrcret, NULL, _("EJECT"), getrcconfigint("rcred", NULL), _("SELECT"), 0, NULL, 0, NULL, 0, 90, 1, 90, 1, 2);
 		free(tmpstr); tmpstr = NULL;
 	}
+	else
+		file = ostrcat(startfile, NULL, 0, 0);
 	
-	if(dirrcret == 1)
+	if(startfile == NULL && dirrcret == 1)
 	{
 		system("umount /media/dvd");
 		system("eject /dev/sr0");
@@ -46,13 +49,18 @@ printf("file4: %s\n",file);
 		if(tmpstr != NULL) addconfig("dvdpath", dirname(tmpstr));
 		free(tmpstr); tmpstr = NULL;
 		
-		rcret = servicestop(status.aktservice, 1, 1);
-		if(rcret == 1)
+		if(startfile == NULL)
 		{
-			free(tmppolicy);
-			free(file);
-			return;
+			rcret = servicestop(status.aktservice, 1, 1);
+			if(rcret == 1)
+			{
+				free(tmppolicy);
+				free(file);
+				return;
+			}
 		}
+		else
+			goto playerend;
 
 		drawscreen(skin, 0, 0);
 		playwritevfd(file);
@@ -64,8 +72,11 @@ printf("file: %s\n",file);
 			textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 			writevfd("DVD");
 			
-			playstartservice();
-			goto playerstart;
+			if(startfile == NULL)
+			{
+				playstartservice();
+				goto playerstart;
+			}
 		}
 #endif
 
@@ -99,8 +110,13 @@ printf("file: %s\n",file);
 				if(rcret == getrcconfigint("rcstop", NULL))
 				{
 					playrcstop(playertype, flag);
-					playstartservice();
-					goto playerstart;
+					if(startfile == NULL)
+					{
+						playstartservice();
+						goto playerstart;
+					}
+					else
+						goto playerend;
 				}
 
 				if(dvdmenuopen() == 1)
@@ -166,14 +182,20 @@ printf("file: %s\n",file);
 			//don't change this sleep, without this
 			//the player stops to fast, and a last seek can
 			//produce a segfault
+playerend:
 			sleep(1);
 			dvdafterend();
 
 			writevfd("DVD");
 			screenplayinfobar(file, 1, playertype, flag);
 
-			playstartservice();
-			goto playerstart;
+			if(startfile == NULL)
+			{
+				playstartservice();
+				goto playerstart;
+			}
+			else
+				break;
 		}
 	}
 
