@@ -24,39 +24,61 @@ void read_cpufreq(struct skin* label)
 	{
 		for(i = 0; tmpstr2[i] != NULL; i++)
 		{
-			if(ostrstr(tmpstr2[i], "CKGA_") != 0){
+			if(ostrstr(tmpstr2[i], "CKGA_") != 0)
+			{
 				free(tmpstr2[i]); tmpstr2[i] = NULL;
-			}else if(ostrstr(tmpstr2[i], "SYSACLKOUT") != 0){
+			}
+			else if(ostrstr(tmpstr2[i], "SYSACLKOUT") != 0)
+			{
 				tmpstr = ostrcat(tmpstr, tmpstr2[i], 1, 1);
 				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-			}else if(ostrstr(tmpstr2[i], "BOGOMIPS") != 0){
+			}
+			else if(ostrstr(tmpstr2[i], "BOGOMIPS") != 0)
+			{
 				tmpstr = ostrcat(tmpstr, tmpstr2[i], 1, 1);
 				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-			}else if(ostrstr(tmpstr2[i], "PLL0") != 0){
+			}
+			else if(ostrstr(tmpstr2[i], "PLL0") != 0)
+			{
 				tmpstr = ostrcat(tmpstr, tmpstr2[i], 1, 1);
 				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-			}else if(ostrstr(tmpstr2[i], "SH4") != 0){
+			}
+			else if(ostrstr(tmpstr2[i], "SH4") != 0){
 				tmpstr = ostrcat(tmpstr, tmpstr2[i], 1, 1);
 				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-			}else if(ostrstr(tmpstr2[i], "MODULE") != 0){
+			}
+			else if(ostrstr(tmpstr2[i], "MODULE") != 0)
+			{
 				tmpstr = ostrcat(tmpstr, tmpstr2[i], 1, 1);
 				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-			}else if(ostrstr(tmpstr2[i], "SLIM") != 0){
+			}
+			else if(ostrstr(tmpstr2[i], "SLIM") != 0)
+			{
 				tmpstr = ostrcat(tmpstr, tmpstr2[i], 1, 1);
 				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-			}else if(ostrstr(tmpstr2[i], "PLL1") != 0){
+			}
+			else if(ostrstr(tmpstr2[i], "PLL1") != 0)
+			{
 				tmpstr = ostrcat(tmpstr, tmpstr2[i], 1, 1);
 				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-			}else if(ostrstr(tmpstr2[i], "COMMS") != 0){
+			}
+			else if(ostrstr(tmpstr2[i], "COMMS") != 0)
+			{
 				tmpstr = ostrcat(tmpstr, tmpstr2[i], 1, 1);
 				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-			}else if(ostrstr(tmpstr2[i], "TMU0") != 0){
+			}
+			else if(ostrstr(tmpstr2[i], "TMU0") != 0)
+			{
 				tmpstr = ostrcat(tmpstr, tmpstr2[i], 1, 1);
 				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-			}else if(ostrstr(tmpstr2[i], "TMU0") != 0){
+			}
+			else if(ostrstr(tmpstr2[i], "TMU0") != 0)
+			{
 				tmpstr = ostrcat(tmpstr, tmpstr2[i], 1, 1);
 				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-			}else{
+			}
+			else
+			{
 				free(tmpstr2[i]); tmpstr2[i] = NULL;
 			}
 		}
@@ -68,15 +90,15 @@ void set_freq(char* inifreq, char* oldfreq, char* newfreq)
 {
 	if(isfile("/proc/cpu_frequ/pll0_ndiv_mdiv") == 0)
 	{
-		debug(10, "[screenpanel_settings_overclock] file not found%s", "/proc/cpu_frequ/pll0_ndiv_mdiv");
+		debug(10, "file not found %s", "/proc/cpu_frequ/pll0_ndiv_mdiv");
 		return;
 	}
 
-	debug(10, "[screenpanel_settings_overclock] inifreq=%s oldfreq=%s => newfreq=%s", inifreq, oldfreq, newfreq);
+	debug(10, "inifreq=%s oldfreq=%s => newfreq=%s", inifreq, oldfreq, newfreq);
 
 	if(ostrcmp(newfreq, inifreq) == 0 && ostrcmp(newfreq, oldfreq) == 0)
 	{
-		debug(10, "[screenpanel_settings_overclock] Nothing to change in FREQ");
+		debug(10, "Nothing to change in FREQ");
 		return;
 	}
 
@@ -86,7 +108,7 @@ void set_freq(char* inifreq, char* oldfreq, char* newfreq)
 	tmpstr = ostrcat(tmpstr, newfreq, 1, 0);
 	tmpstr = ostrcat(tmpstr, "\" > /proc/cpu_frequ/pll0_ndiv_mdiv", 1, 0);
 
-	debug(10, "[screenpanel_settings_overclock] Set FREQ to %s", newfreq);
+	debug(10, "Set FREQ to %s", newfreq);
 	system(tmpstr);
 
 	if(oldfreq != NULL && newfreq != NULL){
@@ -97,20 +119,18 @@ void set_freq(char* inifreq, char* oldfreq, char* newfreq)
 
 void set_fdma(char* inifdma, char* oldfdma, char* newfdma)
 {
-	if(checkbox("UFS912") || checkbox("AT7500") || checkbox("SPARK"))
-	{
+	if(checkbox("UFS912") || checkbox("AT7500") || checkbox("SPARK") || checkbox("ATEMIO510"))
 		return;
-	}
 
 	if(isfile("/proc/cpu_frequ/pll1_fdma_bypass") == 0)
 	{
-		debug(10, "[screenpanel_settings_overclock] file not found%s", "/proc/cpu_frequ/pll1_fdma_bypass");
+		debug(10, "file not found %s", "/proc/cpu_frequ/pll1_fdma_bypass");
 		return;
 	}
 
 	if(ostrcmp(newfdma, inifdma) == 0 && ostrcmp(newfdma, oldfdma) == 0)
 	{
-		debug(10, "[screenpanel_settings_overclock] Nothing to change in FDMA");
+		debug(10, "Nothing to change in FDMA");
 		return;
 	}
 
@@ -120,12 +140,12 @@ void set_fdma(char* inifdma, char* oldfdma, char* newfdma)
 	tmpstr = ostrcat(tmpstr, newfdma, 1, 0);
 	tmpstr = ostrcat(tmpstr, "\" > /proc/cpu_frequ/pll1_fdma_bypass", 1, 0);
 
-	debug(10, "[screenpanel_settings_overclock] Set FDMA to %s", newfdma);
+	debug(10, "Set FDMA to %s", newfdma);
 	system(tmpstr);
 
-	if(oldfdma != NULL && newfdma != NULL){
+	if(oldfdma != NULL && newfdma != NULL)
 		strcpy(oldfdma, newfdma);
-	}
+
 	return;
 }
 
@@ -171,7 +191,7 @@ void screenpanel_settings_overclocking()
 
 	addscreenrc(panel_overclock, listbox);
 
-	if(checkbox("UFS912") || checkbox("AT7500") || checkbox("SPARK"))
+	if(checkbox("UFS912") || checkbox("AT7500") || checkbox("SPARK") || checkbox("ATEMIO510"))
 	{
 		FreqSelvalue = "3841\n12803\n5121\n16643\n17923";
 		FreqSeltext = "450 (default)\n500\n600\n650\n700";
@@ -204,7 +224,7 @@ void screenpanel_settings_overclocking()
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
 
-	if(checkbox("UFS912") == 0 && checkbox("AT7500") == 0 && checkbox("SPARK") == 0)
+	if(checkbox("UFS912") == 0 && checkbox("AT7500") == 0 && checkbox("SPARK") == 0 && checkbox("ATEMIO510") == 0)
 	{
 		node = addlistbox(panel_overclock, listbox, node, 1);
 		if(node != NULL)
@@ -246,7 +266,7 @@ void screenpanel_settings_overclocking()
 		}
 	}
 
-	if(checkbox("UFS912") == 0 && checkbox("AT7500") == 0 && checkbox("SPARK") == 0)
+	if(checkbox("UFS912") == 0 && checkbox("AT7500") == 0 && checkbox("SPARK") == 0 && checkbox("ATEMIO510") == 0)
 	{
 		node = addlistbox(panel_overclock, listbox, node, 1);
 		if(node != NULL)
