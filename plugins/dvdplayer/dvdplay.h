@@ -49,18 +49,13 @@ printf("file4: %s\n",file);
 		if(tmpstr != NULL) addconfig("dvdpath", dirname(tmpstr));
 		free(tmpstr); tmpstr = NULL;
 		
-		if(startfile == NULL)
+		rcret = servicestop(status.aktservice, 1, 1);
+		if(rcret == 1)
 		{
-			rcret = servicestop(status.aktservice, 1, 1);
-			if(rcret == 1)
-			{
-				free(tmppolicy);
-				free(file);
-				return;
-			}
+			free(tmppolicy);
+			free(file);
+			return;
 		}
-		else
-			goto playerend;
 
 		drawscreen(skin, 0, 0);
 		playwritevfd(file);
