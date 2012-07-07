@@ -528,7 +528,7 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 		{
 			status.restimer->aktion = STOP;
  			sleep(1);
- 			status.restimer = addtimer(&setaktres, START, 10000,1, (void*)sec, NULL, NULL);
+ 			status.restimer = addtimer(&setaktres, START, 10000, 1, (void*)sec, NULL, NULL);
 		}			
 	}
 	
