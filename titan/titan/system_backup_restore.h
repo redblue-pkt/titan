@@ -9,7 +9,7 @@ void screensystem_backup_restore()
 	struct skin* b_green = getscreennode(backup_restore, "b2");
 	struct skin* b_yellow = getscreennode(backup_restore, "b3");
 	struct skin* info = getscreennode(backup_restore, "info");
-	char* tmpstr = NULL;
+	char* tmpstr = NULL, *infotext = NULL;
 
 	infotext = "Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n\nPress -backup- to save your actual settings to swapstick / recording hdd.\nWARNING: The old backup will be deleted!\n\nWhile using the update function, your settings will be saved and restored automatically, if possible!";
 

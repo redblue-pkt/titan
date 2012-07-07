@@ -135,6 +135,13 @@
 #define HILO(x) (x##_hi << 8 | x##_lo)
 #define HTTPAUTH "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0="
 
+#define USBDEVICE_SUPER_MAGIC 0x9fa2
+#define EXT2_SUPER_MAGIC 0xEF53
+#define EXT3_SUPER_MAGIC 0xEF53
+#define SMB_SUPER_MAGIC 0x517B
+#define NFS_SUPER_MAGIC 0x6969
+#define MSDOS_SUPER_MAGIC 0x4d44
+
 //CA Defines
 #define T_SB 0x80		//sb (h<--m)
 #define T_RCV 0x81		//receive (h-->m)
