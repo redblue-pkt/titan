@@ -1,6 +1,17 @@
 #ifndef EXTENSIONS_H
 #define EXTENSIONS_H
 
+void saveipkg()
+{
+	system("rm -rf /mnt/ipkg ; mkdir /mnt/ipkg; cp -a /var/usr/lib/ipkg/info /mnt/ipkg; cp /var/usr/lib/ipkg/status /mnt/ipkg");
+
+	if(!file_exist("/mnt/ipkg/info") || !file_exist("/mnt/ipkg/status"))
+	{
+		system("rm -rf /mnt/ipkg");
+		textbox(_("Message"), _("Can't backup ipkg files\nPlease check if partition is full"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+	}
+}
+
 void screenfeed()
 {
 	char* tmpstr = NULL, *line = NULL, *lastline = NULL;
@@ -117,7 +128,7 @@ void screenextensions(int mode, char* path)
 					}
 					textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 					loadplugin();
-					system("rm -rf /mnt/ipkg ; mkdir /mnt/ipkg; cp -a /var/usr/lib/ipkg/info /mnt/ipkg; cp /var/usr/lib/ipkg/status /mnt/ipkg");
+					saveipkg();
 					free(log), log = NULL;
 					unlink("/tmp/ipkg.log");
 				}
@@ -155,7 +166,7 @@ void screenextensions(int mode, char* path)
 					log = readfiletomem("/tmp/ipkg.log", 0);
 					if(log == NULL) log = ostrcat("Remove success", NULL, 0, 0);
 					textbox(_("Ipk Remove Info - Remove OK"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
-					system("rm -rf /mnt/ipkg ; mkdir /mnt/ipkg; cp -a /var/usr/lib/ipkg/info /mnt/ipkg; cp /var/usr/lib/ipkg/status /mnt/ipkg");
+					saveipkg();
 				}
 				else
 				{
@@ -230,7 +241,7 @@ void screenextensions(int mode, char* path)
 		ipkg_update();
 		clearscreen(load);
 		ipkg_upgrade();
-		system("rm -rf /mnt/ipkg ; mkdir /mnt/ipkg; cp -a /var/usr/lib/ipkg/info /mnt/ipkg; cp /var/usr/lib/ipkg/status /mnt/ipkg");
+		saveipkg();
 		freeipkg();
 		loadplugin();
 	}
