@@ -380,14 +380,26 @@ struct rectimer* getrectimerbyservice(struct service* servicenode)
 	return NULL;
 }
 
-void checkrectimer()
+void checkrectimer(struct stimerthread* self)
 {
 	int ret = 0;
 	struct rectimer* node = NULL, *newnode = NULL;
 	struct channel* chnode = NULL;
-	time_t t = time(NULL), begin = 0, end = 0;
+	time_t t = 0, begin = 0, end = 0;
+
+	if(self == NULL) return;
+
+	//wait for right time
+	while(self->aktion != STOP && time(NULL) < 1072224000) // 01.01.2004
+		usleep(1 * 1000000);
+
+	//on first start read rectimer
+	if(self->delay == 1000)
+		readrectimer(getconfig("rectimerfile", NULL));
+	self->delay = 10000;
 
 	m_lock(&status.rectimermutex, 1);
+	t = time(NULL);
 	node = rectimer;
 	
 	while(node != NULL)
@@ -659,6 +671,13 @@ int writerectimer(const char *filename, int flag)
 	time_t curtime = time(NULL), rectime = 0x7FFFFFFF;
 
 	if(status.writerectimer == 0) return 0;
+
+	//check if rectimer loadet
+	if(status.rectimerthread == NULL || (status.rectimerthread != NULL && status.rectimerthread->delay == 1000))
+	{
+		err("can't write rectimer, not loaded yet");
+		return 1;
+	}
 
 	if(flag == 0) m_lock(&status.rectimermutex, 1);
 	sortrectimer();

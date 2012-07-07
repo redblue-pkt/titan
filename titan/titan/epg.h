@@ -1818,6 +1818,8 @@ void epgthreadfunc(struct stimerthread* self)
 	debug(1000, "in");
 	char* tmpstr = NULL;
 
+	if(self == NULL) return;
+
 	//wait for right time
 	while(self->aktion != STOP && time(NULL) < 1072224000) // 01.01.2004
 		usleep(1 * 1000000);
