@@ -5,7 +5,6 @@ extern struct skin* skin;
 
 void screendvdplay(char* startfile, int flag)
 {
-printf("file1: %s\n",file);
 	int rcret = 0, playertype = 2, dirrcret = 0;
 	char* tmpstr = NULL, *startdir = NULL;
 	char* file = NULL, *tmppolicy = NULL;
@@ -17,7 +16,6 @@ printf("file1: %s\n",file);
 	
 	status.updatevfd = PAUSE;
 	tmppolicy = getpolicy();
-printf("file2: %s\n",file);
 playerstart:
 	startdir = getconfig("dvdpath", NULL);
 	if(startdir == NULL)
@@ -25,10 +23,8 @@ playerstart:
 
 	status.playspeed = 0, status.play = 0, status.pause = 0;
 	int playinfobarcount = 0, playinfobarstatus = 0;
-printf("file3: %s\n",file);
 	if(startfile == NULL)
 	{
-printf("file4: %s\n",file);
 		tmpstr = ostrcat(file, "", 1, 0); file = NULL;
 		file = screendir(startdir, NULL, basename(tmpstr), &dirrcret, NULL, _("EJECT"), getrcconfigint("rcred", NULL), _("SELECT"), 0, NULL, 0, NULL, 0, 90, 1, 90, 1, 2);
 		free(tmpstr); tmpstr = NULL;
@@ -59,7 +55,6 @@ printf("file4: %s\n",file);
 
 		drawscreen(skin, 0, 0);
 		playwritevfd(file);
-printf("file: %s\n",file);
 		rcret = dvdstart(file);
 #ifndef SIMULATE
 		if(rcret != 0)
