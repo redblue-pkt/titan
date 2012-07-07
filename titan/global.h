@@ -1,6 +1,16 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+int getsupermagic(char* filename)
+{
+	struct statfs64 s;
+
+	if(statfs64(filename, &s) >= 0)
+		return s.f_type
+
+	return 0;
+}
+
 int getrandom(int max)
 {
 	srand(time(NULL));

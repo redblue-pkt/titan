@@ -40,12 +40,22 @@ int playerstartts(char* file, int flag)
 	int fd = -1, ret = 0, tssize = 188;
 	int16_t pmtpid = 0;
 	int serviceid = 0;
+	int supermagic = 0;
 	struct channel* chnode = NULL;
 	struct service* snode = NULL;
 	struct dvbdev* fenode = NULL;
 	struct dvbdev* dvrnode = NULL;
 
-	fd = open(file, O_RDONLY | O_LARGEFILE /*| O_DIRECT*/);
+	supermagic = getsupermagic(file);
+
+	if(supermagic == NFS_SUPER_MAGIC || supermagic == SMB_SUPER_MAGIC)
+	{
+		debug(150, "use O_DIRECT to open file %s", file);
+		fd = open(file, O_RDONLY | O_LARGEFILE | O_DIRECT);
+	}
+	else
+		fd = open(file, O_RDONLY | O_LARGEFILE);
+
 	if(fd < 0)
 	{
 		perr("open player file");
