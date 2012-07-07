@@ -102,7 +102,7 @@ void inputboxhelp(struct skin* screen, struct skin* inputbox, int screencalc, in
 
 	if(inputbox != NULL && (inputbox->type & INPUTBOX) && flag == 0)
 	{
-		tmpstr = screeninputhelp(inputbox->input, screencalc, filelistview, flag);
+		tmpstr = screeninputhelp(inputbox->input, 0, filelistview, flag);
 		changeinput(inputbox, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 		drawscreen(screen, screencalc, flag);
