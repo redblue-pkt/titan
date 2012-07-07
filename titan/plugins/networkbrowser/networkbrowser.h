@@ -349,7 +349,7 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 			if(ostrstr(line, "user=,") != NULL)
 			{
 				treffer = 6;
-				ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
+				ret = sscanf(line, "%s\t-fstype=cifs,%[^,],%*[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
 			}
 			else
 			{
