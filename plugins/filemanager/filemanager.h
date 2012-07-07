@@ -4,6 +4,7 @@
 void screenfilemanager()
 {
 	int rcret = 0, aktfilelist = 0, ret = 0;
+	long bgcol1 = 0, bgcol2 = 0;
 	struct skin* filemanager = getscreen("filemanager");
 	struct skin* filemanager1 = getscreen("filemanager1");
 	struct skin* filemanager2 = getscreen("filemanager2");
@@ -30,7 +31,10 @@ void screenfilemanager()
 	createfilelist(filemanager1, filelist1, 0);
 	createfilelist(filemanager2, filelist2, 0);
 
-	filelistpath1->bgcol = filelistpath1->bordercol;
+	bgcol1 = filelistpath1->bgcol;
+	bgcol2 = filelistpath2->bgcol;
+
+	filelistpath1->bgcol = convertcol("markcol");
 	
 	drawscreen(filemanager, 0, 1);
 	drawscreen(filemanager1, 0, 1);
@@ -84,6 +88,7 @@ void screenfilemanager()
 				createfilelist(filemanager1, filelist1, 0);
 				createfilelist(filemanager2, filelist2, 0);
 			}
+			drawscreen(filemanager, 0, 1);
 			drawscreen(filemanager1, 0, 1);
 			drawscreen(filemanager2, 0, 0);
 		}
@@ -112,6 +117,7 @@ void screenfilemanager()
 				createfilelist(filemanager1, filelist1, 0);
 				createfilelist(filemanager2, filelist2, 0);
 			}
+			drawscreen(filemanager, 0, 1);
 			drawscreen(filemanager1, 0, 1);
 			drawscreen(filemanager2, 0, 0);
 		}
@@ -141,7 +147,7 @@ void screenfilemanager()
 				delownerrc(filemanager2);
 				addscreenrc(filemanager2, filelist2);
 				filelistpath1->bgcol = 0;
-				filelistpath2->bgcol = filelistpath2->bordercol;
+				filelistpath2->bgcol = convertcol("markcol");
 			}
 			else
 			{
@@ -149,7 +155,7 @@ void screenfilemanager()
 				delownerrc(filemanager1);
 				delownerrc(filemanager2);
 				addscreenrc(filemanager1, filelist1);
-				filelistpath1->bgcol = filelistpath1->bordercol;
+				filelistpath1->bgcol = convertcol("markcol");
 				filelistpath2->bgcol = 0;
 			}
 			drawscreen(filemanager1, 0, 1);
@@ -158,8 +164,10 @@ void screenfilemanager()
 	
 	}
 
-	filelistpath1->bgcol = 0;
-	filelistpath2->bgcol = 0;
+	delmarkedscreennodes(filemanager1, FILELISTDELMARK);
+	delmarkedscreennodes(filemanager2, FILELISTDELMARK);
+	filelistpath1->bgcol = bgcol1;
+	filelistpath2->bgcol = bgcol2;
 	delownerrc(filemanager1);
 	delownerrc(filemanager2);
 	clearscreen(filemanager);
