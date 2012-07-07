@@ -17,6 +17,12 @@ int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char*
 	if(pthread_self() != status.mainthread)
 		fromthread = 1;
 
+	textbox->aktline = 0;
+	textbox->aktpage = 0;
+	textbox->linecount = 0;
+	textbox->pagecount = 0;
+	textbox->poscount = 0;
+
 	//show barcode for cpuid
 	if(flag == 1)
 	{
@@ -130,6 +136,8 @@ int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char*
 
 	if(flag == 1) delmarkedscreennodes(messagebox, 1);
 
+	changetitle(messagebox, NULL);
+	changetext(textbox, NULL);
 	debug(1000, "out");
 
 	if(rcret == rc1) return 1;
