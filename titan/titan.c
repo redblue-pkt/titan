@@ -748,7 +748,6 @@ firstwizzardstep1:
 	status.lastrcaction = time(NULL);
 	ret = loadplugin();
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
-	ret = readrectimer(getconfig("rectimerfile", NULL));
 	ret = setsaturation(getconfigint("vs_saturation", NULL));
 	ret = setbrightness(getconfigint("vs_brightness", NULL));
 	ret = setcontrast(getconfigint("vs_contrast", NULL));
@@ -761,8 +760,8 @@ firstwizzardstep1:
 
 	//start epg thread
 	status.epgthread = addtimer(&epgthreadfunc, START, 1000, -1, NULL, NULL, NULL);
-	//start record timer thread
-	addtimer(&checkrectimer, START, 10000, -1, NULL, NULL, NULL);
+	//start record timer thread (on delay change you must change rectimer.h also)
+	status.rectimerthread = addtimer(&checkrectimer, START, 1000, -1, NULL, NULL, NULL);
 	//check if cam socket connected
 	addtimer(&checkcam, START, 3000, -1, NULL, NULL, NULL);
 	//start stream server

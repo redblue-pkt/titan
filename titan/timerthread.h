@@ -42,7 +42,7 @@ struct stimerthread* addtimer(void* func, int aktion, int delay, int count, void
 	newnode->param2 = param2;
 
 	m_lock(&status.timerthreadmutex, 6);
-  node = stimerthread;
+	node = stimerthread;
   
 	if(last == NULL)
 	{
