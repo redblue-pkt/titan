@@ -967,8 +967,8 @@ int addscreenrc(struct skin* screen, struct skin* node)
 		addrc(getrcconfigint("rcdown", NULL), listboxdown, screen, node);
 		addrc(getrcconfigint("rcright", NULL), listboxright, screen, node);
 		addrc(getrcconfigint("rcleft", NULL), listboxleft, screen, node);
-		addrc(getrcconfigint("rcchup", NULL), listboxright, screen, node);
-		addrc(getrcconfigint("rcchdown", NULL), listboxleft, screen, node);
+		addrc(getrcconfigint("rcchup", NULL), listboxleft, screen, node);
+		addrc(getrcconfigint("rcchdown", NULL), listboxright, screen, node);
 		addrc(getrcconfigint("rchelp", NULL), helpbox, screen, node);
 	}
 	else if(node->type & CHOICEBOX)
@@ -1011,8 +1011,8 @@ int addscreenrc(struct skin* screen, struct skin* node)
 		addrc(getrcconfigint("rcright", NULL), listboxright, screen, node);
 		addrc(getrcconfigint("rcleft", NULL), listboxleft, screen, node);
 		addrc(getrcconfigint("rcok", NULL), filelistok, screen, node);
-		addrc(getrcconfigint("rcchup", NULL), listboxright, screen, node);
-		addrc(getrcconfigint("rcchdown", NULL), listboxleft, screen, node);
+		addrc(getrcconfigint("rcchup", NULL), listboxleft, screen, node);
+		addrc(getrcconfigint("rcchdown", NULL), listboxright, screen, node);
 		addrc(getrcconfigint("rchelp", NULL), helpbox, screen, node);
 	}
 	else if(node->type & PROGRESSBAR)
