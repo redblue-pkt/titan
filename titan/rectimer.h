@@ -395,8 +395,10 @@ void checkrectimer(struct stimerthread* self)
 
 	//on first start read rectimer
 	if(self->delay == 1000)
+	{
+		self->delay = 10000;
 		readrectimer(getconfig("rectimerfile", NULL));
-	self->delay = 10000;
+	}
 
 	m_lock(&status.rectimermutex, 1);
 	t = time(NULL);
