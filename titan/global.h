@@ -4986,15 +4986,19 @@ void setaktres()
 	int sec = 0;
 
 	if(status.restimer == NULL) return;
+printf("1\n");
 	sec = (int)status.restimer->param1;
+printf("2\n");
 
 	if(sec > 0)
 	{
+printf("3\n");
 		while(status.restimer->aktion == START && count <= sec)
 		{
 			sleep(1);
 			if(status.restimer->aktion != START)
 			{
+printf("4\n");
 				status.restimer = NULL;
 				return;
 			}
@@ -5002,15 +5006,21 @@ void setaktres()
 		}
 	}
 
+printf("5\n");
 	if(videoreadqwidth(status.aktservice->videodev) == 0)
 	{
+printf("6\n");
 		m_width = status.videosize.w;
-		if (m_width == 720) {
+printf("7\n");
+		if(m_width == 720)
+		{
+printf("8\n");
 			res_sd = getconfig("av_videomode_autores_sd", NULL);
 			if(res_sd == NULL)
 				res = ostrcat(res, "576i50", 1, 0);
 			else
 				res = ostrcat(res, res_sd, 1, 0);
+printf("9\n");
 		}
 		else if (m_width == 1280)
 			res = ostrcat(res, "720p50", 1, 0);
@@ -5018,22 +5028,32 @@ void setaktres()
 			res = ostrcat(res, "1080i50", 1, 0);
 		else
 			m_width = 0;
-		if ( m_width > 0)
+printf("10\n");
+		if(m_width > 0)
 		{
+printf("11\n");
 			res_akt = getvideomode();
+printf("12\n");
 			if (ostrcmp(res_akt, res) != 0)
 			{
+printf("13\n");
 				setvideomode(res, 1);
+printf("14\n");
 	  		changefbresolution(res);
+printf("15\n");
 				sleep(1);
+printf("16\n");
 				screenautores(res, 5, 0);
+printf("17\n");
 			}
 		}
 	}
 	else
 		textbox(_("Message"), _("ERROR cant read res"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 
+printf("18\n");
 	free(res);
+printf("19\n");
 	res = NULL;
 	status.restimer = NULL;
 	return;
