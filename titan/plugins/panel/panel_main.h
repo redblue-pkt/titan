@@ -114,6 +114,8 @@ int panel_menucall(struct skin* panel_menuentry)
 		screenpanel_infos_sysinfo(5);
 	else if(ostrcmp("panel_sysinfos_top", panel_menuentry->name) == 0)
 		screenpanel_infos_sysinfo(6);
+	else if(ostrcmp("panel_sysinfos_ps", panel_menuentry->name) == 0)
+		screenpanel_infos_sysinfo(7);
 	else if(ostrcmp("panel_autostart_default", panel_menuentry->name) == 0)
 		screenpanel_settings_autostart(0);
 	else if(ostrcmp("panel_autostart_audiovideo", panel_menuentry->name) == 0)

@@ -11,7 +11,8 @@ void screenpanel_infos_sysinfo(int mode)
 
 	addscreenrc(panel_info, info);
 
-	if (mode == 0){
+	if(mode == 0)
+	{
 		changetitle(panel_info, _("CPU info"));
 
 		tmpstr = command("cat /proc/cpuinfo | sed 's/\t\t/\t/'");
@@ -20,7 +21,8 @@ void screenpanel_infos_sysinfo(int mode)
 		free(tmpstr); tmpstr = NULL;
 	}
 
-	if (mode == 1){
+	if(mode == 1)
+	{
 		changetitle(panel_info, _("Memory info"));
 
 		tmpstr = command("cat /proc/meminfo");
@@ -29,7 +31,8 @@ void screenpanel_infos_sysinfo(int mode)
 		free(tmpstr); tmpstr = NULL;
 	}
 
-	if (mode == 2){
+	if(mode == 2)
+	{
 		changetitle(panel_info, _("MTD info"));
 
 		tmpstr = command("cat /proc/mtd");
@@ -38,7 +41,8 @@ void screenpanel_infos_sysinfo(int mode)
 		free(tmpstr); tmpstr = NULL;
 	}
 
-	if (mode == 3){
+	if(mode == 3)
+	{
 		changetitle(panel_info, _("Module info"));
 
 		tmpstr = command("cat /proc/modules");
@@ -47,7 +51,8 @@ void screenpanel_infos_sysinfo(int mode)
 		free(tmpstr); tmpstr = NULL;
 	}
 
-	if (mode == 4){
+	if(mode == 4)
+	{
 		changetitle(panel_info, _("Devices"));
 
 		tmpstr = command("cat /proc/devices");
@@ -56,7 +61,8 @@ void screenpanel_infos_sysinfo(int mode)
 		free(tmpstr); tmpstr = NULL;
 	}
 
-	if (mode == 5){
+	if(mode == 5)
+	{
 		char* tmpstr1 = NULL, **tmpstr2 = NULL, **tmpstr3 = NULL;
 		int i = 0, ii = 0;
 		char* swap[] = {"Name: ", "Type: ", "Size: ", "Used: ", "Prio: "};
@@ -97,10 +103,21 @@ void screenpanel_infos_sysinfo(int mode)
 		free(tmpstr); tmpstr = NULL;
 	}
 
-	if (mode == 6){
+	if(mode == 6)
+	{
 		changetitle(panel_info, _("Top Info"));
 
 		tmpstr = command("top -b -n1");
+		changetext(info, tmpstr);
+
+		free(tmpstr); tmpstr = NULL;
+	}
+
+	if(mode == 7)
+	{
+		changetitle(panel_info, _("Prozess Info"));
+
+		tmpstr = command("ps");
 		changetext(info, tmpstr);
 
 		free(tmpstr); tmpstr = NULL;
