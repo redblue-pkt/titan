@@ -3,13 +3,13 @@
 
 void screensystem_backup_restore()
 {
-	int rcret = 0;
+	int rcret = 0, ret = 0;
 	struct skin* backup_restore = getscreen("system_backup_restore");
 	struct skin* b_red = getscreennode(backup_restore, "b1");
 	struct skin* b_green = getscreennode(backup_restore, "b2");
 	struct skin* b_yellow = getscreennode(backup_restore, "b3");
 	struct skin* info = getscreennode(backup_restore, "info");
-	char* tmpstr = NULL, *infotext = NULL;
+	char* tmpstr = NULL;
 
 	infotext = "Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n\nPress -backup- to save your actual settings to swapstick / recording hdd.\nWARNING: The old backup will be deleted!\n\nWhile using the update function, your settings will be saved and restored automatically, if possible!";
 
@@ -56,6 +56,13 @@ void screensystem_backup_restore()
 				drawscreen(backup_restore, 0, 0);
 			}
 		}
+		if(rcret == getrcconfigint("rcblue", NULL))
+		{
+			tmpstr = readfiletomem("/tmp/backup.log", 0);
+			textbox(_("BACKUP LOG"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
+			free(tmpstr); tmpstr = NULL;
+			drawscreen(backup_restore, 0, 0);
+		}
 		if(rcret == getrcconfigint("rcyellow", NULL))
 		{
 			if(isfile("/tmp/.backupdev"))
@@ -68,14 +75,16 @@ void screensystem_backup_restore()
 
 				writeallconfig(1);
 				
-				tmpstr = command("/sbin/settings.sh titan backup");
-				free(tmpstr); tmpstr = NULL;
+				ret = system("/sbin/settings.sh titan backup > /tmp/backup.log 2>&1");
 				
 				changetitle(backup_restore, _("Backup / Restore Settings"));
 				changetext(info, _(infotext));
 				info->textposx = 0;
 				b_red->hidden = NO; b_green->hidden = NO; b_yellow->hidden = NO;
-				textbox(_("Message"), _("Backup created successfully"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
+				if(ret != 0)
+					textbox(_("Message"), _("Backup failed, see log"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
+				else
+					textbox(_("Message"), _("Backup created successfully"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
 				drawscreen(backup_restore, 0, 0);
 			}
 			else
