@@ -3,9 +3,17 @@
 
 void saveipkg()
 {
+	int err = 0;
+
 	system("rm -rf /mnt/ipkg ; mkdir /mnt/ipkg; cp -a /var/usr/lib/ipkg/info /mnt/ipkg; cp /var/usr/lib/ipkg/status /mnt/ipkg");
 
-	if(!file_exist("/mnt/ipkg/info") || !file_exist("/mnt/ipkg/status"))
+	if(file_exist("/var/usr/lib/ipkg/info") && !file_exist("/mnt/ipkg/info"))
+		err = 1;
+
+	if(file_exist("/var/usr/lib/ipkg/status") && !file_exist("/mnt/ipkg/status"))
+		err = 1;
+
+	if(err == 1)
 	{
 		system("rm -rf /mnt/ipkg");
 		textbox(_("Message"), _("Can't backup ipkg files\nPlease check if partition is full"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
