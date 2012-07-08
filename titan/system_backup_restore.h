@@ -8,6 +8,7 @@ void screensystem_backup_restore()
 	struct skin* b_red = getscreennode(backup_restore, "b1");
 	struct skin* b_green = getscreennode(backup_restore, "b2");
 	struct skin* b_yellow = getscreennode(backup_restore, "b3");
+	struct skin* b_blue = getscreennode(backup_restore, "b4");
 	struct skin* info = getscreennode(backup_restore, "info");
 	char* tmpstr = NULL, *infotext = NULL;
 
@@ -70,7 +71,7 @@ void screensystem_backup_restore()
 				changetitle(backup_restore, _("Backup - Settings"));
 				changetext(info, _("Backup started\n\nPlease wait..."));
 				info->textposx = 50;
-				b_red->hidden = YES; b_green->hidden = YES; b_yellow->hidden = YES;
+				b_red->hidden = YES; b_green->hidden = YES; b_yellow->hidden = YES; b_blue->hidden = YES;
 				drawscreen(backup_restore, 0, 0);
 
 				writeallconfig(1);
@@ -80,7 +81,7 @@ void screensystem_backup_restore()
 				changetitle(backup_restore, _("Backup / Restore Settings"));
 				changetext(info, _(infotext));
 				info->textposx = 0;
-				b_red->hidden = NO; b_green->hidden = NO; b_yellow->hidden = NO;
+				b_red->hidden = NO; b_green->hidden = NO; b_yellow->hidden = NO; b_blue->hidden = NO;
 				if(ret != 0)
 					textbox(_("Message"), _("Backup failed, see log"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
 				else
