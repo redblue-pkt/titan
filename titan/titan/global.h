@@ -1030,7 +1030,7 @@ void setskinnodeslocked(int flag)
 			else if(ostrcmp("stopifnotused", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("streaminfo", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("system_backup", child->name) == 0) child->locked = flag;
-			else if(ostrcmp("system_backup_restore", child->name) == 0) child->locked = flag;
+//			else if(ostrcmp("system_backup_restore", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("systemupdatemenu", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("tithek", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("tmc", child->name) == 0) child->locked = flag;
