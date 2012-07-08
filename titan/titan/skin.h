@@ -3217,9 +3217,14 @@ int calclistbox(struct skin* node)
 {
 	debug(1000, "in");
 	struct skin* child = NULL, *last = NULL, *found = NULL;
-	int selcol = convertcol("listboxselect");
+	int selcol = 0;
 	int markcol = convertcol("markcol");
 	char* selectpic = getskinconfig("selectpic", NULL);
+
+	if(node->type == FILELIST)
+		selcol = convertcol("filelistselect");
+	else
+		selcol = convertcol("listboxselect");
 
 	node->poscount = 0;
 	if(node->aktline == 0) node->aktline = 1;
