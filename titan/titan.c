@@ -196,6 +196,7 @@ struct mediadbcache* mediadbcache[MEDIADBCACHEMAX] = {NULL};
 #include "mediadbcache.h"
 #include "mediadb.h"
 #include "mediadbsettings.h"
+#include "colorpicker.h"
 
 //#include "cardreader.h"
 //#include "sci.h"
