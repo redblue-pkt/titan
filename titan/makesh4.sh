@@ -161,20 +161,23 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan]--------------------------------------------------------"
 echo "[titan] curlftpfs"
 echo "[titan]--------------------------------------------------------"
-
-cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-echo make curlftpfs-clean
-make curlftpfs-clean
-echo make curlftpfs
-make curlftpfs
-cd "$HOME"/flashimg/source.titan/titan
-
-if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/curlftpfs ]; then
-	echo "[titan]--------------------------------------------------------"
-	echo "[titan] curlftpfs building error !!!"
-	echo "[titan] check your src"
-	echo "[titan]--------------------------------------------------------"
-	exit 1
+if [ $STM != "stm23" ] ;then
+	cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
+	echo make curlftpfs-clean
+	make curlftpfs-clean
+	echo make curlftpfs
+	make curlftpfs
+	cd "$HOME"/flashimg/source.titan/titan
+	
+	if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/curlftpfs ]; then
+		echo "[titan]--------------------------------------------------------"
+		echo "[titan] curlftpfs building error !!!"
+		echo "[titan] check your src"
+		echo "[titan]--------------------------------------------------------"
+		exit 1
+	fi
+else
+	echo "[titan] skipped"
 fi
 
 echo "[titan]--------------------------------------------------------"
