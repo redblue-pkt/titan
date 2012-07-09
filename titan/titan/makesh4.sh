@@ -249,76 +249,76 @@ if [ $STM != "stm23" ] ;then
 	echo "[titan]--------------------------------------------------------"
 	echo "[titan] rarfs done"
 	echo "[titan]--------------------------------------------------------"
+
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] gst"
+	echo "[titan]--------------------------------------------------------"
+	
+	cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
+	echo make gst_plugins_dvbmediasink-clean
+	make gst_plugins_dvbmediasink-clean
+	echo make gst_plugins_dvbmediasink
+	make gst_plugins_dvbmediasink
+	cd "$HOME"/flashimg/source.titan/titan
+	
+	if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/gstreamer-0.10 ]; then
+		echo "[titan]--------------------------------------------------------"
+		echo "[titan] gst building error !!!"
+		echo "[titan] check your src"
+		echo "[titan]--------------------------------------------------------"
+		exit 1
+	fi
+	
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] gst done"
+	echo "[titan]--------------------------------------------------------"
+	
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] directfb"
+	echo "[titan]--------------------------------------------------------"
+	
+	cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
+	echo make directfb-clean
+	make directfb-clean
+	echo make directfb
+	make directfb
+	cd "$HOME"/flashimg/source.titan/titan
+	
+	if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/directfb-1.4-5 ]; then
+		echo "[titan]--------------------------------------------------------"
+		echo "[titan] directfb building error !!!"
+		echo "[titan] check your src"
+		echo "[titan]--------------------------------------------------------"
+		exit 1
+	fi
+	
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] directfb done"
+	echo "[titan]--------------------------------------------------------"
+	
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] gmediarender"
+	echo "[titan]--------------------------------------------------------"
+	
+	cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
+	echo make gmediarender-clean
+	make gmediarender-clean
+	echo make gmediarender
+	make gmediarender
+	cd "$HOME"/flashimg/source.titan/titan
+	
+	if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/gmediarender ]; then
+		echo "[titan]--------------------------------------------------------"
+		echo "[titan] gmediarender building error !!!"
+		echo "[titan] check your src"
+		echo "[titan]--------------------------------------------------------"
+		exit 1
+	fi
+	
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] gmediarender done"
+	echo "[titan]--------------------------------------------------------"
 fi
-
-echo "[titan]--------------------------------------------------------"
-echo "[titan] gst"
-echo "[titan]--------------------------------------------------------"
-
-cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-echo make gst_plugins_dvbmediasink-clean
-make gst_plugins_dvbmediasink-clean
-echo make gst_plugins_dvbmediasink
-make gst_plugins_dvbmediasink
-cd "$HOME"/flashimg/source.titan/titan
-
-if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/gstreamer-0.10 ]; then
-	echo "[titan]--------------------------------------------------------"
-	echo "[titan] gst building error !!!"
-	echo "[titan] check your src"
-	echo "[titan]--------------------------------------------------------"
-	exit 1
-fi
-
-echo "[titan]--------------------------------------------------------"
-echo "[titan] gst done"
-echo "[titan]--------------------------------------------------------"
-
-echo "[titan]--------------------------------------------------------"
-echo "[titan] directfb"
-echo "[titan]--------------------------------------------------------"
-
-cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-echo make directfb-clean
-make directfb-clean
-echo make directfb
-make directfb
-cd "$HOME"/flashimg/source.titan/titan
-
-if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/directfb-1.4-5 ]; then
-	echo "[titan]--------------------------------------------------------"
-	echo "[titan] directfb building error !!!"
-	echo "[titan] check your src"
-	echo "[titan]--------------------------------------------------------"
-	exit 1
-fi
-
-echo "[titan]--------------------------------------------------------"
-echo "[titan] directfb done"
-echo "[titan]--------------------------------------------------------"
-
-echo "[titan]--------------------------------------------------------"
-echo "[titan] gmediarender"
-echo "[titan]--------------------------------------------------------"
-
-cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-echo make gmediarender-clean
-make gmediarender-clean
-echo make gmediarender
-make gmediarender
-cd "$HOME"/flashimg/source.titan/titan
-
-if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/gmediarender ]; then
-	echo "[titan]--------------------------------------------------------"
-	echo "[titan] gmediarender building error !!!"
-	echo "[titan] check your src"
-	echo "[titan]--------------------------------------------------------"
-	exit 1
-fi
-
-echo "[titan]--------------------------------------------------------"
-echo "[titan] gmediarender done"
-echo "[titan]--------------------------------------------------------"
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] libipkg"
