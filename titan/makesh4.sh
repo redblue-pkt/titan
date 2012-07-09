@@ -158,10 +158,10 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] minidlna done"
 echo "[titan]--------------------------------------------------------"
 
-echo "[titan]--------------------------------------------------------"
-echo "[titan] curlftpfs"
-echo "[titan]--------------------------------------------------------"
 if [ $STM != "stm23" ] ;then
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] curlftpfs"
+	echo "[titan]--------------------------------------------------------"
 	cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
 	echo make curlftpfs-clean
 	make curlftpfs-clean
@@ -176,82 +176,80 @@ if [ $STM != "stm23" ] ;then
 		echo "[titan]--------------------------------------------------------"
 		exit 1
 	fi
-else
-	echo "[titan] skipped"
+	
+	
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] curlftpfs done"
+	echo "[titan]--------------------------------------------------------"
+	
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] djmount"
+	echo "[titan]--------------------------------------------------------"
+	cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
+	echo make djmount-clean
+	make djmount-clean
+	echo make djmount
+	make djmount
+	cd "$HOME"/flashimg/source.titan/titan
+	
+	if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/djmount ]; then
+		echo "[titan]--------------------------------------------------------"
+		echo "[titan] djmount building error !!!"
+		echo "[titan] check your src"
+		echo "[titan]--------------------------------------------------------"
+		exit 1
+	fi
+	
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] djmount done"
+	echo "[titan]--------------------------------------------------------"
+	
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] sshfs"
+	echo "[titan]--------------------------------------------------------"
+	
+	cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
+	echo make sshfs-clean
+	make sshfs-clean
+	echo make sshfs
+	make sshfs
+	cd "$HOME"/flashimg/source.titan/titan
+	
+	if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/sshfs ]; then
+		echo "[titan]--------------------------------------------------------"
+		echo "[titan] sshfs building error !!!"
+		echo "[titan] check your src"
+		echo "[titan]--------------------------------------------------------"
+		exit 1
+	fi
+	
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] sshfs done"
+	echo "[titan]--------------------------------------------------------"
+	
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] rarfs"
+	echo "[titan]--------------------------------------------------------"
+	
+	cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
+	echo make rarfs-clean
+	make rarfs-clean
+	echo make rarfs
+	make rarfs
+	cd "$HOME"/flashimg/source.titan/titan
+	
+	if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/rarfs ]; then
+		echo "[titan]--------------------------------------------------------"
+		echo "[titan] sshfs building error !!!"
+		echo "[titan] check your src"
+		echo "[titan]--------------------------------------------------------"
+		exit 1
+	fi
+	
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] rarfs done"
+	echo "[titan]--------------------------------------------------------"
 fi
-
-echo "[titan]--------------------------------------------------------"
-echo "[titan] curlftpfs done"
-echo "[titan]--------------------------------------------------------"
-
-echo "[titan]--------------------------------------------------------"
-echo "[titan] djmount"
-echo "[titan]--------------------------------------------------------"
-
-cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-echo make djmount-clean
-make djmount-clean
-echo make djmount
-make djmount
-cd "$HOME"/flashimg/source.titan/titan
-
-if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/djmount ]; then
-	echo "[titan]--------------------------------------------------------"
-	echo "[titan] djmount building error !!!"
-	echo "[titan] check your src"
-	echo "[titan]--------------------------------------------------------"
-	exit 1
-fi
-
-echo "[titan]--------------------------------------------------------"
-echo "[titan] djmount done"
-echo "[titan]--------------------------------------------------------"
-
-echo "[titan]--------------------------------------------------------"
-echo "[titan] sshfs"
-echo "[titan]--------------------------------------------------------"
-
-cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-echo make sshfs-clean
-make sshfs-clean
-echo make sshfs
-make sshfs
-cd "$HOME"/flashimg/source.titan/titan
-
-if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/sshfs ]; then
-	echo "[titan]--------------------------------------------------------"
-	echo "[titan] sshfs building error !!!"
-	echo "[titan] check your src"
-	echo "[titan]--------------------------------------------------------"
-	exit 1
-fi
-
-echo "[titan]--------------------------------------------------------"
-echo "[titan] sshfs done"
-echo "[titan]--------------------------------------------------------"
-
-echo "[titan]--------------------------------------------------------"
-echo "[titan] rarfs"
-echo "[titan]--------------------------------------------------------"
-
-cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-echo make rarfs-clean
-make rarfs-clean
-echo make rarfs
-make rarfs
-cd "$HOME"/flashimg/source.titan/titan
-
-if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/rarfs ]; then
-	echo "[titan]--------------------------------------------------------"
-	echo "[titan] sshfs building error !!!"
-	echo "[titan] check your src"
-	echo "[titan]--------------------------------------------------------"
-	exit 1
-fi
-
-echo "[titan]--------------------------------------------------------"
-echo "[titan] rarfs done"
-echo "[titan]--------------------------------------------------------"
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] gst"
