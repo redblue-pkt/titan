@@ -349,7 +349,7 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 			if(ostrstr(line, "user=,") != NULL)
 			{
 				treffer = 6;
-				ret = sscanf(line, "%s\t-fstype=cifs,%[^,],%*[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
+				ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
 			}
 			else
 			{
@@ -530,7 +530,7 @@ void savenetworkbrowser(char* filename)
 
 		if(ostrcmp(node->mode, "0") == 0)
 		{
-			savesettings = ostrcat(savesettings, "\t-fstype=cifs,directio,rw,rsize=", 1, 0);
+			savesettings = ostrcat(savesettings, "\t-fstype=cifs,rw,rsize=", 1, 0);
 	 		savesettings = ostrcat(savesettings, node->rsize, 1, 0);
 			savesettings = ostrcat(savesettings, ",wsize=", 1, 0);
  			savesettings = ostrcat(savesettings, node->wsize, 1, 0);
