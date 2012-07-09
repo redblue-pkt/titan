@@ -85,29 +85,19 @@ void caservicedel(struct service* snode, struct caslot* caslot)
 {
 	int i = 0;
 
-printf("a -> %d\n", i);
-
 	for(i = 0; i < MAXCASERVICE; i++)
 	{
-printf("b -> %d\n", i);
 		if(snode != NULL && caservice[i].service != NULL && caservice[i].channel == snode->channel)
 		{
-printf("c -> %d\n", i);
 			caservice[i].count--;
-printf("d -> %d\n", i);
 			if(caservice[i].count < 1)
 			{
-printf("e -> %d\n", i);
 				if(caservice[i].camsockfd > -1)
 					sockclose(&caservice[i].camsockfd);
-printf("f -> %d\n", i);
 				if(caservice[i].caslot != NULL)
 				{
-printf("g -> %d\n", i);
 					sendcapmt(caservice[i].service, 1, 2);
-printf("h -> %d\n", i);
 					if(caservice[i].caslot != NULL && caservice[i].camanager > -1 && caservice[i].caslot->casession[caservice[i].camanager].inuse > 0) caservice[i].caslot->casession[caservice[i].camanager].inuse = 1;
-printf("i -> %d\n", i);
 					caservice[i].caslot = NULL;
 					caservice[i].camanager = -1;
 				}
@@ -117,19 +107,14 @@ printf("i -> %d\n", i);
 			else
 				caservice[i].service = getservicebyservice(snode, 1);
 		}
-printf("j -> %d\n", i);
 		//remove cam from slot
 		if(caservice[i].service != NULL && caservice[i].caslot == caslot)
 		{
-printf("k -> %d\n", i);
 			if(caservice[i].caslot != NULL && caservice[i].camanager > -1 && caservice[i].caslot->casession[caservice[i].camanager].inuse > 0) caservice[i].caslot->casession[caservice[i].camanager].inuse = 1;
-printf("l -> %d\n", i);
 			caservice[i].caslot = NULL;
 			caservice[i].camanager = -1;
-printf("m -> %d\n", i);
 		}
 	}
-printf("n -> %d\n", i);
 }
 
 void dvbwritepmt(struct service* node, unsigned char* pmtbuf)
