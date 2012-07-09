@@ -316,7 +316,6 @@ void screensystem_update(int mode)
 					drawscreen(systemupdate, 0, 0);
 					getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 1, NULL);
 					addscreenrc(systemupdate, filelist);
-					continue;
 				}
 
 				if(textbox(_("Message"), msgtxt, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
@@ -329,7 +328,6 @@ void screensystem_update(int mode)
 					drawscreen(systemupdate, 0, 0);
 					getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 1, NULL);
 					addscreenrc(systemupdate, filelist);
-					continue;
 				}
 				else
 				{
@@ -337,7 +335,6 @@ void screensystem_update(int mode)
 					drawscreen(systemupdate, 0, 0);
 					getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 1, NULL);
 					addscreenrc(systemupdate, filelist);
-					continue;
 				}
 
 				free(cmd); cmd = NULL;
