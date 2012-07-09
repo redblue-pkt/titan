@@ -3,8 +3,13 @@
 
 void saveipkg()
 {
-	int err = 0;
+	if(checkbox("ATEMIO510") == 0 && checkbox("AT7500") == 0 && checkbox("UFS912") == 0)
+	{
+		return;
+	}
 
+	int err = 0;
+	
 	system("rm -rf /mnt/ipkg ; mkdir /mnt/ipkg; cp -a /var/usr/lib/ipkg/info /mnt/ipkg; cp /var/usr/lib/ipkg/status /mnt/ipkg");
 
 	if(file_exist("/var/usr/lib/ipkg/info") && !file_exist("/mnt/ipkg/info"))
