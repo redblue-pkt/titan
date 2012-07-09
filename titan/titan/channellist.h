@@ -518,13 +518,6 @@ void changechanneltitle(struct skin* channellist, struct skin* listbox, int list
 	if(*oldtitle == NULL)
 		*oldtitle = ostrcat(channellist->title, NULL, 0, 0);
 
-	if(*oldfontcol == -9999)
-		*oldfontcol = channellist->fontcol;
-
-	if(*oldbgcol == -9999)
-		*oldbgcol = channellist->bgcol;
-
-
 	if(listmode == MVMODE)
 	{
 		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
@@ -576,9 +569,7 @@ void changechanneltitle(struct skin* channellist, struct skin* listbox, int list
 		if(titletext != status.skinerr) changetext(titletext, *oldtitle);
 		*oldtitle = NULL;
 		listbox->fontcol = *oldfontcol;
-		*oldfontcol = -9999;
 		listbox->bgcol = *oldbgcol;
-		*oldbgcol = -9999;
 	}
 }
 
@@ -614,8 +605,8 @@ int screenchannellist(struct channel** retchannel, char** retchannellist, int fl
 	void* movesel = NULL, *aktlist = NULL;
 	int nochanneltitle = getskinconfigint("nochanneltitle", NULL);
 	int firstdraw = 0;
-	long oldfontcol = -9999;
-	long oldbgcol = -9999;
+	long oldfontcol = 0;
+	long oldbgcol = 0;
 	
 	status.channelswitch = 1;
 
@@ -626,9 +617,10 @@ start:
 	{
 		changetitle(channellist, "");
 		if(titletext != status.skinerr) changetext(titletext, "");
-		listbox->bgcol = convertcol("bgcol");
-		listbox->fontcol = convertcol("fontcol");
 	}
+
+	oldbgcol = listbox->bgcol;
+	oldfontcol = listbox->fontcol;
 
 	if(status.servicetype == 0)
 	{
@@ -1675,6 +1667,8 @@ start:
 	}
 
 end:
+	listbox->fontcol = oldfontcol;
+	listbox->bgcol = oldbgcol;
 	status.moveblockcount = 0;
 	free(oldtitle);
 	status.markedchannel = NULL;
