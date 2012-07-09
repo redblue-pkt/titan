@@ -4,9 +4,7 @@
 void saveipkg()
 {
 	if(checkbox("ATEMIO510") == 0 && checkbox("AT7500") == 0 && checkbox("UFS912") == 0)
-	{
 		return;
-	}
 
 	int err = 0;
 	

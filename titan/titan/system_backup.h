@@ -10,6 +10,7 @@ void screensystem_backup()
 	struct skin* b_red = getscreennode(backup, "b1");
 	struct skin* b_green = getscreennode(backup, "b2");
 	struct skin* info = getscreennode(backup, "info");
+	struct skin* loading = getscreen("loading");
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *infotext = NULL;
 
@@ -49,10 +50,13 @@ void screensystem_backup()
 				drawscreen(backup, 0, 0);
 				if(listbox->select != NULL && listbox->select->ret != NULL)
 				{
+					drawscreen(loading, 0, 0);
+					status.sec = 0; //deaktivate spinner
 					tmpstr = ostrcat(tmpstr, "backup.sh ", 1, 0);
 					tmpstr = ostrcat(tmpstr, listbox->select->ret, 1, 0);
 					system(tmpstr);
 					free(tmpstr); tmpstr = NULL;
+					clearscreen(loading);
 				}
 			}
 			break;
