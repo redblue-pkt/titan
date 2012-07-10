@@ -487,7 +487,7 @@ int writeepgfast(const char* filename, char* buf, int buflen)
 
 	if(freespace - buflen < epgfreespace)
 	{
-		err("fastwrite out of space %s", filename);
+		err("fastwrite out of space freespace=%lld epgfreespace=%lld (%s)", freespace - buflen, epgfreespace, filename);
 		return 1;
 	}
 
