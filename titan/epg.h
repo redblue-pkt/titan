@@ -480,13 +480,6 @@ int writeepgfast(const char* filename, char* buf, int buflen)
 	FILE *fd = NULL;
 	int ret;
 
-	fd = fopen(filename, "wbt");
-	if(fd == NULL)
-	{
-		perr("can't open %s", filename);
-		return 1;
-	}
-
 	if(buf == NULL || buflen == 0) return 1;
 
 	long long freespace = getfreespace((char*)filename);
@@ -498,11 +491,19 @@ int writeepgfast(const char* filename, char* buf, int buflen)
 		return 1;
 	}
 
+	fd = fopen(filename, "wbt");
+	if(fd == NULL)
+	{
+		perr("can't open %s", filename);
+		return 1;
+	}
+
 	ret = fwrite(buf, buflen, 1, fd);
 
 	if(ret != 1)
 	{
 		perr("fast writting file %s", filename);
+		fclose(fd);
 		return 1;
 	}
 
