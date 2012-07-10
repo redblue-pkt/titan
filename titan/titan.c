@@ -392,8 +392,6 @@ int main(int argc, char *argv[])
 	struct sigaction sa;
 	struct stimerthread *tmpthread = NULL;
 
-	system("echo $PATH");
-
 #ifdef SIMULATE
 	// for mem leak debug
 	setenv("MALLOC_TRACE", "/home/nit/titan/m.txt", 1);
