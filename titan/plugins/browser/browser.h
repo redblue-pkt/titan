@@ -210,6 +210,7 @@ start:
 	{
 		if(mbox->param != NULL)
 		{
+			drawscreen(skin, 0, 0);
 			status.sec = 0; //deaktivate spinner
 			tmpstr = ostrcat("nsfb -f linux ", mbox->param, 0, 0);
 			system(tmpstr);
