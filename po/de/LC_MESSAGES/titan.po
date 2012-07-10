@@ -2184,3 +2184,104 @@ msgstr "Festplatte konfigurieren - angeschlossene Geräte"
 msgid "Record Path settings"
 msgstr "Aufnahmepfad Einstellungen"
 
+msgid "Here you can make your recording timer configuration. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können sie Ihre Aufnahme-Timer Konfiguration vornehmen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can in your EPG entries for specific search. Use to start a color button to search. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie in Ihrem EPG nach speziellen einträgen suchen. Verwenden Sie eine der Farbtasten um die Suche zu starten.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can start and manage your additional plug-ins. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre zusätzlichen Plug-Ins starten und verwalten.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can install from our current online offering plug-ins. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie von unseren aktuellen Online-Angebot Plug-Ins installieren.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can choose to configure your tuner. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihren Tuner für die Konfiguration auswählen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here they can do for your chosen tuner to receive settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie für Ihren ausgewählten Tuner die Empfangs-Einstellungen vornehmen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here they can do for your chosen tuner to lnb settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie für Ihren ausgewählten Tuner die LNB-Einstellungen vornehmen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here they can do for your chosen tuner to ownpos settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie für Ihren ausgewählten Tuner die Eigene-Poistion-Einstellungen vornehmen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can check the reception of the current station. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie den Empfang des aktuellen Senders überprüfen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can do a blind scan, this process takes a long time. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie einen Blindscan durchführen, dieser vorgang dauert sehr lange.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can configure Ci-Modules. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ci-Module konfigurieren.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can select your Network Interface. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre Netzwerkschnittstelle auswählen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can make for your selected network interface settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie für Ihre ausgewählte Netzwerkschnittstelle Einstellungen vornehmen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can make for your wireless network settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre WLAN Einstellungen vornehmen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can test your network. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihr Netzwerk testen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can configure your web server. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihren Webserver konfigurieren.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can configure access to your DynDNS. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihren DynDns Zugang konfigurieren.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can backup and restore your settings."
+msgstr "Hier können Sie Ihre Einstellungen sichern und wiederherstellen."
+
+msgid "Here you can make your picture and sound settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre Bild und Ton Einstellungen vornehmen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can set your language. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre Sprache einstellen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can set your timezone. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre Zeitzone einstellen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can make your system settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre System Einstellungen vornehmen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can make your screensaver settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre Bildschirmschoner Einstellungen vornehmen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can make your recordpath settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre Aufnahmepfad Einstellungen vornehmen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can make your epg settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre EPG Einstellungen vornehmen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can make your mediadb settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre MediaDB Einstellungen vornehmen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can make your vfd settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre VFD Einstellungen vornehmen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can select from the following list. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie aus der folgenden liste auswählen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can edit the following channels from the EPG. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie aus den folgenden Kanälen das EPG bearbeiten.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can select from the following list a skin. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie aus den folgender Liste einen Skin auswählen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can create a new record timer. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können sie einen neuen Aufnahme-Timer anlegen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can make your PIN security settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen vornehmen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can make your PIN security for menus settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen für Menus vornehmen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "No MediaDB Directory found\nPress OK to create it"
+msgstr "Kein MedisDB Verzeichnis gefunden !\nWollen Sie es anlegen ?"
