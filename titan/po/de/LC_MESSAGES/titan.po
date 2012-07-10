@@ -2285,3 +2285,9 @@ msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen für Menus vornehmen.\n
 
 msgid "No MediaDB Directory found\nPress OK to create it"
 msgstr "Kein MedisDB Verzeichnis gefunden !\nWollen Sie es anlegen ?"
+
+msgid "Free space in /var to little!\nThis can make problems!"
+msgstr "Kein freier speicher in /var\nDies kann zu Problemen führen !"
+
+
+
