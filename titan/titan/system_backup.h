@@ -57,6 +57,8 @@ void screensystem_backup()
 					system(tmpstr);
 					free(tmpstr); tmpstr = NULL;
 					clearscreen(loading);
+					//should only reached if system call fails
+					textbox(_("Message"), _("Backup failed"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
 				}
 			}
 			break;
