@@ -738,6 +738,7 @@ start:
 	{
 		if(mbox->param != NULL)
 		{
+			drawscreen(skin, 0, 0);
 			screenopera(mbox->param);
 		}
 		goto start;
