@@ -6,7 +6,7 @@ SVNPASS=$5
 SVNURL=$6
 KERNELDIR=$7
 ROOTDIR=$8
-VARDIR=$9
+IPKDIR=$9
 VERSION=${10}
 
 if [ -z "$TYPE" ]; then
