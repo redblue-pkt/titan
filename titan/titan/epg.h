@@ -482,12 +482,12 @@ int writeepgfast(const char* filename, char* buf, int buflen)
 
 	if(buf == NULL || buflen == 0) return 1;
 
-	long long freespace = getfreespace((char*)filename);
-	long long epgfreespace = getconfigint("epgfreespace", NULL) * 1024;
+	unsigned long long freespace = getfreespace((char*)filename);
+	unsigned long long epgfreespace = getconfigint("epgfreespace", NULL) * 1024;
 
 	if(freespace - buflen < epgfreespace)
 	{
-		err("fastwrite out of space freespace=%lld epgfreespace=%lld (%s)", freespace - buflen, epgfreespace, filename);
+		err("fastwrite out of space freespace=%llu epgfreespace=%llu (%s)", freespace - buflen, epgfreespace, filename);
 		return 1;
 	}
 
@@ -530,8 +530,8 @@ int writeepgslow(const char* filename)
 		return 1;
 	}
 
-	long long freespace = getfreespace((char*)filename);
-	long long epgfreespace = getconfigint("epgfreespace", NULL) * 1024;
+	unsigned long long freespace = getfreespace((char*)filename);
+	unsigned long long epgfreespace = getconfigint("epgfreespace", NULL) * 1024;
 
 	while(chnode != NULL)
 	{
@@ -609,7 +609,7 @@ int writeepgslow(const char* filename)
 		}
 		if(freespace < epgfreespace)
 		{
-			err("not all data written freespace=%lld epgfreespace=%lld (%s)", freespace, epgfreespace, filename);
+			err("not all data written freespace=%llu epgfreespace=%llu (%s)", freespace, epgfreespace, filename);
 			break;
 		}
 		chnode = chnode->next;
