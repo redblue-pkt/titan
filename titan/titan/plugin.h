@@ -119,6 +119,7 @@ int readplugin(char *dir)
 	int *pluginaktiv = NULL;
 	int *pluginversion = NULL;
 	void (*initplugin)(void);
+	int nocheck = 0;
 
 	count = scandir(dir, &filelist, 0, 0);
 	if(count < 0)
@@ -126,6 +127,8 @@ int readplugin(char *dir)
 		perr("scandir");
 		return 1;
 	}
+
+	nocheck = getconfigint("nopluginversion", NULL);
 
 	while(count--)
 	{
@@ -143,21 +146,24 @@ int readplugin(char *dir)
 			dlerror();
 
 			//check plugin version
-			pluginversion = dlsym(pluginhandle, "pluginversion");
-			if(pluginversion == NULL || *pluginversion != PLUGINVERSION)
+			if(nocheck == 0)
 			{
-				if(pluginversion == NULL)
+				pluginversion = dlsym(pluginhandle, "pluginversion");
+				if(pluginversion == NULL || *pluginversion != PLUGINVERSION)
 				{
-					err("pluginversion not ok titan=%d plugin=NULL (%s)", PLUGINVERSION, pluginpath);
+					if(pluginversion == NULL)
+					{
+						err("pluginversion not ok titan=%d plugin=NULL (%s)", PLUGINVERSION, pluginpath);
+					}
+					else
+					{
+						err("pluginversion not ok titan=%d plugin=%d (%s)", PLUGINVERSION, *pluginversion, pluginpath);
+					}
+					dlclose(pluginhandle);
+					free(pluginpath); pluginpath = NULL;
+					free(filelist[count]);
+					continue;
 				}
-				else
-				{
-					err("pluginversion not ok titan=%d plugin=%d (%s)", PLUGINVERSION, *pluginversion, pluginpath);
-				}
-				dlclose(pluginhandle);
-				free(pluginpath); pluginpath = NULL;
-				free(filelist[count]);
-				continue;
 			}
 
 			pluginname = dlsym(pluginhandle, "pluginname");
