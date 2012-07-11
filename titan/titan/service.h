@@ -69,7 +69,7 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 	//struct dvbdev *dmxpcrnode = NULL;
 	struct dvbdev *audionode = NULL;
 	struct dvbdev *videonode = NULL;
-	int ret = 0, festatus = 1, tmpmute = 0;
+	int ret = 0, festatus = 1;
 	unsigned char *patbuf = NULL;
 	int checkpmt = 0, pincheck = 0, stopflag = 0, ageprotect = 0, tune = 0;
 	struct epg* epgnode = NULL;
@@ -226,14 +226,6 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 
 	if(flag != 0) checkpmt = 1;
 
-	//set mute for scat problem
-	if(status.mute == 0)
-	{
-		tmpmute = 1;
-		status.mute = 1;
-		setmute(1);
-	}
-
 	//demux audio start
 	if(chnode->audiopid > 0)
 	{
@@ -363,14 +355,6 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 		}
 		else
 			err("can't get free video dev");
-	}
-
-	//unset mute if set here
-	if(tmpmute == 1)
-	{
-		tmpmute = 0;
-		status.mute = 0;
-		setmute(0);
 	}
 
 	//check pmt if not done
