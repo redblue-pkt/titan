@@ -1,5 +1,7 @@
 #!/bin/sh
 IPKDIR=$1
+VERSION=$2
+
 . "$HOME"/flashimg/config/make-config
 
 cd "$HOME"/flashimg/source.titan/titan/tools
@@ -15,3 +17,7 @@ mv ipkg.h.tmp ../ipkg.h
 echo getipkg ipkg.h patch 2
 cat ../ipkg.h | sed s!97.74.32.10!$URLSECRET! > ipkg.h.tmp
 mv ipkg.h.tmp ../ipkg.h
+
+echo add pluginversionsnummer to: $VERSION
+cat ../struct.h | sed s/"^#define PLUGINVERSION 0"/"#define PLUGINVERSION $VERSION"/ > struct.h.tmp
+mv struct.h.tmp ../struct.h

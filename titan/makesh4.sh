@@ -7,6 +7,7 @@ SVNURL=$6
 KERNELDIR=$7
 ROOTDIR=$8
 IPKDIR=$9
+VERSION=${10}
 
 if [ -z "$TYPE" ]; then
 	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir>"
@@ -105,7 +106,7 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] Make Ipkdir"
 echo "[titan]--------------------------------------------------------"
 
-"$HOME"/flashimg/source.titan/titan/tools/getipk.sh $IPKDIR
+"$HOME"/flashimg/source.titan/titan/tools/getipk.sh $IPKDIR $VERSION
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Ipkdir done"
