@@ -592,6 +592,7 @@ void screennetwork_wlan()
 	struct skin* b4 = getscreennode(wlan, "b4");
 	struct skin* b5 = getscreennode(wlan, "b5");
 	struct skin* b6 = getscreennode(wlan, "b6");
+	struct skin* load = getscreen("loading");
 	struct inetwork* net = NULL;
 	struct skin* tmp = NULL, *tmp1 = NULL, *tmp2 = NULL;
 	char* tmpstr = NULL;
@@ -696,8 +697,10 @@ void screennetwork_wlan()
 			}
 			if(rcret == getrcconfigint("rcgreen", NULL))
 			{
+				drawscreen(load, 0, 0);
 				system("killall wpa_supplicant; sleep 2; killall -9 wpa_supplicant");
 				ret = system("wlan.sh");
+				clearscreen(load);
 				if(ret == 0)
 					textbox(_("Message"), _("WLAN started.\n You can now configure the new interface."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 				else
@@ -751,7 +754,9 @@ void screennetwork_wlan()
 
 		if(rcret == getrcconfigint("rcyellow", NULL) && scan == 0)
 		{
+			drawscreen(load, 0, 0);
 			system("killall wpa_supplicant; sleep 2; killall -9 wpa_supplicant");
+			clearscreen(load);
 			textbox(_("Message"), _("WLAN now stopped"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 			drawscreen(wlan, 0, 0);
 		}
