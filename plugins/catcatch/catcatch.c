@@ -15,6 +15,7 @@ char plugindesc[] = "Cat Catch";
 char pluginpic[] = "%pluginpath%/catcatch/plugin.png";
 
 int pluginaktiv = 0;
+int pluginversion = PLUGINVERSION;
 
 //wird beim laden ausgefuehrt
 void init(void)

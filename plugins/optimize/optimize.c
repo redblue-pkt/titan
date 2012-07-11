@@ -8,6 +8,7 @@ char plugindesc[] = "Optimize";
 char pluginpic[] = "%pluginpath%/optimize/plugin.png";
 
 int pluginaktiv = 0;
+int pluginversion = PLUGINVERSION;
 
 //wird beim laden ausgefuehrt
 void init(void)

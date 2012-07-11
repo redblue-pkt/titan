@@ -8,6 +8,7 @@ char plugindesc[] = "Weather";
 char pluginpic[] = "%pluginpath%/weather/plugin.png";
 
 int pluginaktiv = 0;
+int pluginversion = PLUGINVERSION;
 
 //wird beim laden ausgefuehrt
 void init(void)

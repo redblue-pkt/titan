@@ -8,6 +8,7 @@ char plugindesc[] = "Stock";
 char pluginpic[] = "%pluginpath%/stock/plugin.png";
 
 int pluginaktiv = 0;
+int pluginversion = PLUGINVERSION;
 struct skin* pluginmenu = NULL;
 int pluginflag = 0;
 

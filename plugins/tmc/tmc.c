@@ -8,6 +8,7 @@ char plugindesc[] = "Titan Media Center";
 char pluginpic[] = "%pluginpath%/tmc/plugin.png";
 
 int pluginaktiv = 0;
+int pluginversion = PLUGINVERSION;
 //struct skin* pluginmenu = NULL;
 //int pluginflag = 0;
 

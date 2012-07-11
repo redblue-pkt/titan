@@ -8,6 +8,7 @@ char plugindesc[] = "File Manager";
 char pluginpic[] = "%pluginpath%/filemanager/plugin.png";
 
 int pluginaktiv = 0;
+int pluginversion = PLUGINVERSION;
 struct skin* pluginmenu = NULL;
 int pluginflag = 0;
 

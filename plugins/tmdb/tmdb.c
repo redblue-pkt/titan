@@ -8,6 +8,7 @@ char plugindesc[] = "Extensions";
 char pluginpic[] = "%pluginpath%/tmdb/plugin.png";
 
 int pluginaktiv = 0;
+int pluginversion = PLUGINVERSION;
 struct skin* pluginmenu = NULL;
 int pluginflag = 0; //don't show the plugin in pluginmanager
 
