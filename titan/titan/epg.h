@@ -482,19 +482,20 @@ int writeepgfast(const char* filename, char* buf, int buflen)
 
 	if(buf == NULL || buflen == 0) return 1;
 
+	fd = fopen(filename, "wbt");
+	if(fd == NULL)
+	{
+		perr("can't open %s", filename);
+		return 1;
+	}
+
 	unsigned long long freespace = getfreespace((char*)filename);
 	unsigned long long epgfreespace = getconfigint("epgfreespace", NULL) * 1024;
 
 	if(freespace - buflen < epgfreespace)
 	{
 		err("fastwrite out of space freespace=%llu epgfreespace=%llu (%s)", freespace - buflen, epgfreespace, filename);
-		return 1;
-	}
-
-	fd = fopen(filename, "wbt");
-	if(fd == NULL)
-	{
-		perr("can't open %s", filename);
+		fclose(fd);
 		return 1;
 	}
 
