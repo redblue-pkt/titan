@@ -15,6 +15,7 @@ char plugindesc[] = "3 Wins Game";
 char pluginpic[] = "%pluginpath%/wins3/plugin.png";
 
 int pluginaktiv = 0;
+int pluginversion = PLUGINVERSION;
 
 //wird beim laden ausgefuehrt
 void init(void)

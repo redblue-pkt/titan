@@ -8,6 +8,7 @@ char plugindesc[] = "DLNA Settings";
 char pluginpic[] = "%pluginpath%/dlna/plugin.png";
 
 int pluginaktiv = 0;
+int pluginversion = PLUGINVERSION;
 
 //wird beim laden ausgefuehrt
 void init(void)

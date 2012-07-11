@@ -8,6 +8,7 @@ char plugindesc[] = "DVD Player";
 char pluginpic[] = "%pluginpath%/dvdplayer/plugin.png";
 
 int pluginaktiv = 0;
+int pluginversion = PLUGINVERSION;
 
 //wird beim laden ausgefuehrt
 void init(void)

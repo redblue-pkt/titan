@@ -8,6 +8,7 @@ char plugindesc[] = "GmediaRender";
 char pluginpic[] = "%pluginpath%/gmediarender/plugin.png";
 
 int pluginaktiv = 0;
+int pluginversion = PLUGINVERSION;
 
 //wird beim laden ausgefuehrt
 void init(void)

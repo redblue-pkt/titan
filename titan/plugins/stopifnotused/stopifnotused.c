@@ -8,6 +8,7 @@ char plugindesc[] = "Auschalten der Box wenn in einem bestimmten Zeitraum keine 
 char pluginpic[] = "%pluginpath%/stopifnotused/stopifnotused.png";
 
 int pluginaktiv = 0;
+int pluginversion = PLUGINVERSION;
 
 struct stimerthread* StopIfNotUsed = NULL;
 

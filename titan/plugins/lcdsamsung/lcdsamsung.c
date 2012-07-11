@@ -9,7 +9,7 @@ char plugindesc[] = "Extensions";
 char pluginpic[] = "%pluginpath%/lcdsamsung/lcdsamsung.png";
 
 int pluginaktiv = 0;
-
+int pluginversion = PLUGINVERSION;
 
 struct stimerthread* LCD_Samsung1thread = NULL;
 

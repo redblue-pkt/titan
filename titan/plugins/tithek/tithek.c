@@ -9,6 +9,7 @@ char plugindesc[] = "TiTan Mediathek";
 char pluginpic[] = "%pluginpath%/tithek/plugin.png";
 
 int pluginaktiv = 0;
+int pluginversion = PLUGINVERSION;
 
 //wird beim laden ausgefuehrt
 void init(void)

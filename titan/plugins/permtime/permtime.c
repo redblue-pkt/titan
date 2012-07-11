@@ -7,6 +7,7 @@ char plugindesc[] = "Extensions";
 char pluginpic[] = "%pluginpath%/permtime/plugin.png";
 
 int pluginaktiv = 0;
+int pluginversion = PLUGINVERSION;
 //struct skin* pluginmenu = NULL;
 //int pluginflag = 1; //don't show the plugin in pluginmanager
 

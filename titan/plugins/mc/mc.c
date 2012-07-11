@@ -34,6 +34,7 @@ char plugindesc[] = "AAF Multi Mediacenter";
 char pluginpic[] = "%pluginpath%/mediacenter/plugin.png";
 
 int pluginaktiv = 0;
+int pluginversion = PLUGINVERSION;
 struct skin* pluginmenu = NULL;
 int pluginflag = 1; //don't show the plugin in pluginmanager
 

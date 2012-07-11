@@ -15,6 +15,7 @@ char plugindesc[] = "Script execute";
 char pluginpic[] = "%pluginpath%/scriptexec/plugin.png";
 
 int pluginaktiv = 0;
+int pluginversion = PLUGINVERSION;
 
 //wird beim laden ausgefuehrt
 void init(void)

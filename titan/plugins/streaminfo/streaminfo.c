@@ -8,6 +8,7 @@ char plugindesc[] = "Streaminfo";
 char pluginpic[] = "%pluginpath%/streaminfo/plugin.png";
 
 int pluginaktiv = 0;
+int pluginversion = PLUGINVERSION;
 struct skin* pluginmenu = NULL;
 int pluginflag = 0;
 

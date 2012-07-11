@@ -7,6 +7,7 @@ char plugindesc[] = "Mbox Info V0.1    25/10/2011 AAF-tiTan";
 char pluginpic[] = "%pluginpath%/mboxinfo/plugin.png";
 
 int pluginaktiv = 0;
+int pluginversion = PLUGINVERSION;
 
 //wird beim laden ausgefuehrt
 void init(void)
