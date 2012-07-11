@@ -6,7 +6,7 @@ SVNPASS=$5
 SVNURL=$6
 KERNELDIR=$7
 ROOTDIR=$8
-IPKDIR=$9
+VARDIR=$9
 VERSION=${10}
 
 if [ -z "$TYPE" ]; then
@@ -459,6 +459,7 @@ mkdir -p "$HOME"/flashimg/BUILD/titan/usr/bin
 mkdir -p "$HOME"/flashimg/BUILD/titan/usr/lib
 mkdir -p "$HOME"/flashimg/BUILD/titan/usr/share
 mkdir -p "$HOME"/flashimg/BUILD/titan/lib
+mkdir -p "$HOME"/flashimg/BUILD/titan/modules
 
 PLIST=`ls -1 "$HOME"/flashimg/source.titan/plugins`
 
@@ -643,6 +644,13 @@ cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libf
 # ffmpeg
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/ffmpeg "$HOME"/flashimg/BUILD/titan/sbin
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/jpegtran "$HOME"/flashimg/BUILD/titan/sbin
+
+# wlan
+cp -a "$ROOTDIR"/lib/modules/8192cu.ko "$HOME"/flashimg/BUILD/titan/modules
+cp -a "$ROOTDIR"/lib/modules/8712u.ko "$HOME"/flashimg/BUILD/titan/modules
+cp -a "$ROOTDIR"/lib/modules/rt2870sta.ko "$HOME"/flashimg/BUILD/titan/modules
+cp -a "$ROOTDIR"/lib/modules/rt3070sta.ko "$HOME"/flashimg/BUILD/titan/modules
+cp -a "$ROOTDIR"/lib/modules/rt5370sta.ko "$HOME"/flashimg/BUILD/titan/modules
 
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type d -name "*.svn"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.h"`
