@@ -2212,7 +2212,7 @@ msgid "Here you can check the reception of the current station. Use to navigate 
 msgstr "Hier können Sie den Empfang des aktuellen Senders überprüfen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
 msgid "Here you can do a blind scan, this process takes a long time. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie einen Blindscan durchführen, dieser vorgang dauert sehr lange.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie einen Blindscan durchführen, dieser Vorgang dauert sehr lange.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
 msgid "Here you can configure Ci-Modules. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie Ci-Module konfigurieren.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
@@ -2289,5 +2289,9 @@ msgstr "Kein MedisDB Verzeichnis gefunden !\nWollen Sie es anlegen ?"
 msgid "Free space in /var to little!\nThis can make problems!"
 msgstr "Kein freier speicher in /var\nDies kann zu Problemen führen !"
 
+msgid "Here you can select your hard disks and USB flash drives for configuration. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre Festplatten und USB-Sticks zur Konfiguration auswählen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
+msgid "please wait..."
+msgstr "bitte warten"
 
