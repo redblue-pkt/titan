@@ -251,8 +251,8 @@ void screenmc_pictureplayer()
 		}
 		else if(rcret == getrcconfigint("rcexit", NULL))
 		{
-			debug(50, "exit - save mc_ap_path: %s", filelistpath->text);
-			debug(50, "exit - save mc_ap_selectedfile: %s", filelistpath->text);
+			debug(50, "exit - save mc_pp_path: %s", filelistpath->text);
+			debug(50, "exit - save mc_pp_selectedfile: %s", filelistpath->text);
 			if(playlist == 0)
 			{
 				if(filelistpath->text != NULL && ostrcmp(getconfig("mc_pp_path", NULL), filelistpath->text) != 0)
