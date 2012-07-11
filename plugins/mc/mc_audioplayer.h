@@ -286,12 +286,14 @@ void screenmc_audioplayer()
 		else if(rcret == getrcconfigint("rcexit", NULL))
 		{
 			debug(50, "exit - save mc_ap_path: %s", filelistpath->text);
+			debug(50, "exit - save mc_ap_selectedfile: %s", filelistpath->text);
 			if(playlist == 0)
 			{
-				if(ostrcmp(getconfig("mc_ap_path", NULL), filelistpath->text) != 0)
+				if(filelistpath->text != NULL && ostrcmp(getconfig("mc_ap_path", NULL), filelistpath->text) != 0)
 					addconfig("mc_ap_path", filelistpath->text);
-				if(ostrcmp(getconfig("mc_ap_selectedfile", NULL), filelist->select->name) != 0)
+				if(filelist->select != NULL && filelist->select->name != NULL && ostrcmp(getconfig("mc_ap_selectedfile", NULL), filelist->select->name) != 0)
 					addconfig("mc_ap_selectedfile", filelist->select->name);
+
 			}
 
 			playerstop();
@@ -382,9 +384,9 @@ void screenmc_audioplayer()
 			}
 			else if(filelist->select != NULL && filelist->select->input == NULL)
 			{
-				if(ostrcmp(getconfig("mc_ap_path", NULL), filelistpath->text) != 0)
+				if(filelistpath->text != NULL && ostrcmp(getconfig("mc_ap_path", NULL), filelistpath->text) != 0)
 					addconfig("mc_ap_path", filelistpath->text);
-
+			
 				debug(50, "filelist->select->text: %s", filelist->select->text);
 				filename = createpath(filelistpath->text, filelist->select->text);
 

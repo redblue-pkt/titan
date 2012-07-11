@@ -436,11 +436,12 @@ void screenmc_videoplayer()
 		else if(rcret == getrcconfigint("rcexit", NULL))
 		{
 			debug(50, "exit - save mc_vp_path: %s", filelistpath->text);
+			debug(50, "exit - save mc_vp_selectedfile: %s", filelist->select->name);
 			if(playlist == 0)
 			{
-				if(ostrcmp(getconfig("mc_vp_path", NULL), filelistpath->text) != 0)
+				if(filelistpath->text != NULL && ostrcmp(getconfig("mc_vp_path", NULL), filelistpath->text) != 0)
 					addconfig("mc_vp_path", filelistpath->text);
-				if(ostrcmp(getconfig("mc_vp_selectedfile", NULL), filelist->select->name) != 0)
+				if(filelist->select != NULL && filelist->select->name != NULL && ostrcmp(getconfig("mc_vp_selectedfile", NULL), filelist->select->name) != 0)
 					addconfig("mc_vp_selectedfile", filelist->select->name);
 			}
 
@@ -594,7 +595,7 @@ void screenmc_videoplayer()
 			}
 			else if(filelist->select != NULL && filelist->select->input == NULL)
 			{
-				if(ostrcmp(getconfig("mc_vp_path", NULL), filelistpath->text) != 0)
+				if(filelistpath->text != NULL && ostrcmp(getconfig("mc_vp_path", NULL), filelistpath->text) != 0)
 					addconfig("mc_vp_path", filelistpath->text);
 
 				debug(50, "filelist->select->text: %s", filelist->select->text);
