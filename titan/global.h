@@ -2524,10 +2524,10 @@ unsigned long getfilecount(char* dir)
 	return count;
 }
 
-long long getfullspace(char* dir)
+unsigned long long getfullspace(char* dir)
 {
 	struct statfs64 s;
-	long long fullsize = 0;
+	unsigned long long fullsize = 0;
 
 	if(statfs64(dir, &s) >= 0)
 	{
@@ -2538,10 +2538,10 @@ long long getfullspace(char* dir)
 	return fullsize;
 }
 
-long long getfreespace(char* dir)
+unsigned long long getfreespace(char* dir)
 {
 	struct statfs64 s;
-	long long freesize = 0;
+	unsigned long long freesize = 0;
 
 	if(statfs64(dir, &s) >= 0)
 	{
