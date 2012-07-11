@@ -112,6 +112,7 @@ void screennetwork_inadyn()
 	struct skin* user = getscreennode(inadyn, "user");
 	struct skin* pw = getscreennode(inadyn, "pw");
 	struct skin* host = getscreennode(inadyn, "host");
+	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
 
 	char* iuser = NULL, *ipw = NULL, *ihost = NULL;
@@ -150,8 +151,10 @@ void screennetwork_inadyn()
 			if(rcret == getrcconfigint("rcok", NULL)) break;
 			if(rcret == getrcconfigint("rcgreen", NULL))
 			{
+				drawscreen(load, 0, 0);
 				system("killall inadyn; sleep 2; killall -9 inadyn");
 				ret = system("inadyn --input_file /var/etc/inadyn.conf &");
+				clearscreen(load);
 				if(ret == 0)
 					textbox(_("Message"), _("DYNDNS started."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 				else
@@ -162,7 +165,9 @@ void screennetwork_inadyn()
 
 		if(rcret == getrcconfigint("rcyellow", NULL))
 		{
+			drawscreen(load, 0, 0);
 			system("killall inadyn; sleep 2; killall -9 inadyn");
+			clearscreen(load);
 			textbox(_("Message"), _("DYNDNS now stopped"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 			drawscreen(inadyn, 0, 0);
 		}
