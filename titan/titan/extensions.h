@@ -116,10 +116,13 @@ void screenextensions(int mode, char* path)
 				tmpstr = ostrcat(tmpstr, "-", 1, 0);
 				tmpstr = ostrcat(tmpstr, mbox1->param, 1, 0);
 
-				tmpinfo = ostrcat(tmpinfo, "Install ", 1, 0);
+				tmpinfo = ostrcat(tmpinfo, _("Install"), 1, 0);
+				tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
 				tmpinfo = ostrcat(tmpinfo, mbox->name, 1, 0);
 				tmpinfo = ostrcat(tmpinfo, "-", 1, 0);
 				tmpinfo = ostrcat(tmpinfo, mbox1->name, 1, 0);
+				tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
+				tmpinfo = ostrcat(tmpinfo, _("start"), 1, 0);
 				tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 
 				if(textbox(_("Ipk Install Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
@@ -165,11 +168,14 @@ void screenextensions(int mode, char* path)
 
 			tmpstr = ostrcat("titan-plugin-", mbox->name, 0, 0);
 
-			tmpinfo = ostrcat(tmpinfo, "Remove ", 1, 0);
+			tmpinfo = ostrcat(tmpinfo, _("Remove"), 1, 0);
+			tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
 			tmpinfo = ostrcat(tmpinfo, mbox->name, 1, 0);
+			tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
+			tmpinfo = ostrcat(tmpinfo, _("start"), 1, 0);
 			tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 
-			if(textbox(_("Remove Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+			if(textbox(_("Ipk Remove Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 			{
 				char* log = NULL;
 				if(ipkg_remove(tmpstr, 1) == 0)
@@ -219,8 +225,11 @@ void screenextensions(int mode, char* path)
 		{
 			debug(130, "file: %s", mbox->name);
 
-			tmpinfo = ostrcat(tmpinfo, "Install ", 1, 0);
+			tmpinfo = ostrcat(tmpinfo, _("Install"), 1, 0);
+			tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
 			tmpinfo = ostrcat(tmpinfo, mbox->name, 1, 0);
+			tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
+			tmpinfo = ostrcat(tmpinfo, _("start"), 1, 0);
 			tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 
 			if(textbox(_("Ipk Tmp Info"), _(tmpinfo), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
