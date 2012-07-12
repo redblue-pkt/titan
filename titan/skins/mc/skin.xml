@@ -34,14 +34,15 @@
 <node name=filelistpath valign=middle bordersize=1 posx=center posy=100 width=95% height=30>
 <node hspace=10 picmem=skin/ext_directory.png textposx=30 fontsize=25 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=filelist posx=center posy=140 width=92% height=480>
 <node name=cover posx=3% posy=70% width=124 height=171 picwidth=124 picheight=171>
-<node name=b1 text="Sorting" halign=center valign=middle bordercol=bgcol bordersize=0 posx=15% posy=90% width=150 height=30/>
-<node name=b1 text="Sorting" halign=center valign=middle bordercol=red bordersize=2 posx=15% posy=95% width=150 height=2/>
-<node name=b2 text="Filelist-Mode" halign=center valign=middle bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
-<node name=b2 text="Filelist-Mode" halign=center valign=middle bordercol=green bordersize=2 posx=35% posy=95% width=150 height=2/>
-<node name=b3 text="Random" halign=center valign=middle bordercol=bgcol bordersize=0 posx=55% posy=90% width=150 height=30/>
-<node name=b3 text="Random" halign=center valign=middle bordercol=yellow bordersize=2 posx=55% posy=95% width=150 height=2/>
-<node name=b4 text="Repeat" halign=center valign=middle bordercol=bgcol bordersize=0 posx=75% posy=90% width=150 height=30/>
-<node name=b4 text="Repeat" halign=center valign=middle bordercol=blue bordersize=2 posx=75% posy=95% width=150 height=2/>
+<node name="buttonbar" posx=center posy="660" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node name="b5" picmem="skin/key_ok_70x40.png"   posx="50"  posy="665" width="70" height="40">
+<node name="b6" picmem="skin/key_exit_70x40.png" posx="125" posy="665" width="70" height="40">
+<node name="b1" text="Sorting" picmem="skin/key_red_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="205" posy="670" width="180" height="30">
+<node name="b2" text="Filelist-Mode" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="395" posy="670" width="200" height="30">
+<node name="b3" text="Random"  picmem="skin/key_yellow_30x30.png"  textposx="40" valign="middle" fontcol="black" fontsize="25" posx="600" posy="670" width="200" height="30">
+<node name="b4" text="Repeat"   picmem="skin/key_blue_30x30.png"    textposx="40" valign="middle" fontcol="black" fontsize="25" posx="785" posy="670" width="200" height="30">
+<node name="b7" picmem="skin/key_menu_70x40.png" posx="1000" posy="665" width="70" height="40">
+<node name="b8" picmem="skin/key_stop_70x40.png" posx="1075" posy="665" width="70" height="40">
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=middle posx=75% posy=2% width=280 height=30/>
 </screen>
 
@@ -77,10 +78,8 @@
 <node name="b2" text="Filelist-Mode" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="395" posy="670" width="200" height="30">
 <node name="b3" text="Random"  picmem="skin/key_yellow_30x30.png"  textposx="40" valign="middle" fontcol="black" fontsize="25" posx="600" posy="670" width="200" height="30">
 <node name="b4" text="Repeat"   picmem="skin/key_blue_30x30.png"    textposx="40" valign="middle" fontcol="black" fontsize="25" posx="785" posy="670" width="200" height="30">
-
 <node name="b7" picmem="skin/key_menu_70x40.png" posx="1000" posy="665" width="70" height="40">
 <node name="b8" picmem="skin/key_stop_70x40.png" posx="1075" posy="665" width="70" height="40">
-
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=middle posx=75% posy=2% width=280 height=30/>
 </screen>
 
@@ -130,14 +129,15 @@
 <node fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox posx=center posy=140 width=92% height=480>
 <node name=filelistpath valign=middle bordersize=1 posx=center posy=100 width=95% height=30>
 <node hspace=10 picmem=skin/ext_directory.png textposx=30 fontsize=40 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=filelist posx=center posy=140 width=92% height=480>
-<node name=b1 text="Sorting" halign=center valign=middle bordercol=bgcol bordersize=0 posx=15% posy=90% width=150 height=30/>
-<node name=b1 text="Sorting" halign=center valign=middle bordercol=red bordersize=2 posx=15% posy=95% width=150 height=2/>
-<node name=b2 text="Filelist-Mode" halign=center valign=middle bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
-<node name=b2 text="Filelist-Mode" halign=center valign=middle bordercol=green bordersize=2 posx=35% posy=95% width=150 height=2/>
-<node name=b3 text="Random" halign=center valign=middle bordercol=bgcol bordersize=0 posx=55% posy=90% width=150 height=30/>
-<node name=b3 text="Random" halign=center valign=middle bordercol=yellow bordersize=2 posx=55% posy=95% width=150 height=2/>
-<node name=b4 text="Repeat" halign=center valign=middle bordercol=bgcol bordersize=0 posx=75% posy=90% width=150 height=30/>
-<node name=b4 text="Repeat" halign=center valign=middle bordercol=blue bordersize=2 posx=75% posy=95% width=150 height=2/>
+<node name="buttonbar" posx=center posy="660" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node name="b5" picmem="skin/key_ok_70x40.png"   posx="50"  posy="665" width="70" height="40">
+<node name="b6" picmem="skin/key_exit_70x40.png" posx="125" posy="665" width="70" height="40">
+<node name="b1" text="Sorting" picmem="skin/key_red_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="205" posy="670" width="180" height="30">
+<node name="b2" text="Filelist-Mode" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="395" posy="670" width="200" height="30">
+<node name="b3" text="Random"  picmem="skin/key_yellow_30x30.png"  textposx="40" valign="middle" fontcol="black" fontsize="25" posx="600" posy="670" width="200" height="30">
+<node name="b4" text="Repeat"   picmem="skin/key_blue_30x30.png"    textposx="40" valign="middle" fontcol="black" fontsize="25" posx="785" posy="670" width="200" height="30">
+<node name="b7" picmem="skin/key_menu_70x40.png" posx="1000" posy="665" width="70" height="40">
+<node name="b8" picmem="skin/key_stop_70x40.png" posx="1075" posy="665" width="70" height="40">
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=middle posx=75% posy=2% width=280 height=30/>
 </screen>
 

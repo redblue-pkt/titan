@@ -2378,3 +2378,5 @@ msgstr "Info zur TMP-IPK Installation"
 msgid "Networkbrowser - show Shares"
 msgstr "Netzwerk Browser - zeige Freigaben"
 
+msgid "Installed version:"
+msgstr "Installierte Version:"
