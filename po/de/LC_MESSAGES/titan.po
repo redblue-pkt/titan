@@ -1808,7 +1808,7 @@ msgstr "Kein Backup Verzeichnis gefunden"
 msgid "You find this Backup with timestamp on /tmp\nConnecting per ftp and copy this backup to your Pc !\nPlease Waiting 2 Min ... and relax\n \nNext infos on LCD Display!"
 msgstr "Datensicherung wird in /tmp abgelegt\nBitte per FTP-Client kopieren und anschliessend löschen"
 msgid "Some plugins needs restart.\nIf the plugin is not active\nreboot the box."
-msgstr "Einige Plugins benötigen einen Neustart.\nWenn das Plugin nicht verfügbar ist, bitte Neustarten"
+msgstr "Einige Erweiterungen benötigen einen Neustart.\nWenn das Plugin nicht verfügbar ist, bitte Neustarten"
 msgid "EDIT"
 msgstr "Bearbeiten"
 msgid "SCAN"
@@ -2340,3 +2340,48 @@ msgstr "Drücken von -Wiederherstellung- (Grün)\nund Ihre Daten werden aus einer 
 
 msgid "Can't start system update\nPlease remove Stick/HDD and try again"
 msgstr "System Aktualisierung kann nicht gestartet werden !\nEntfernen Sie Bitte alle USB Speichermedien und versuchen Sie es erneut."
+
+msgid "wireless"
+msgstr "Wlan Module"
+
+msgid "Can't backup ipkg files\nPlease check if partition is full"
+msgstr "Sichern der IPKG Datenbank fehlgeschlagen\nÜberprüfen Sie den SWAP Speicher."
+
+msgid "Ipk Install - select section"
+msgstr "IPK installieren - Kategorie wählen"
+
+msgid "Ipk Install Info - Install OK"
+msgstr "Paket erfolgreich installiert"
+
+msgid "Ipk Install Info - Install ERROR"
+msgstr "Paket konnte nicht installiert werden"
+
+msgid "Ipk Remove Info - Remove OK"
+msgstr "Paket erfolgreich gelöscht"
+
+msgid "Ipk Remove Info - Remove ERROR"
+msgstr "Paket konnte nicht gelöscht werden"
+
+msgid "Install success"
+msgstr "Installation erfolgreich durchgeführt.\nkeine Installationsinformationen gefunden !"
+
+msgid "Install error"
+msgstr "Installation nicht erfolgreich durchgeführt.\nkeine Installationsinformationen gefunden !"
+
+msgid "Install"
+msgstr "Installation von"
+
+msgid "start"
+msgstr "starten"
+
+msgid "Remove"
+msgstr "Löschen von"
+
+msgid "Install success"
+msgstr "Löschen erfolgreich durchgeführt.\nkeine Installationsinformationen gefunden !"
+
+msgid "Install error"
+msgstr "Löschen nicht erfolgreich durchgeführt.\nkeine Installationsinformationen gefunden !"
+
+msgid "Ipk Tmp Info"
+msgstr "Info zur TMP-IPK Installation"
