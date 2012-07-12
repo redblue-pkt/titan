@@ -2296,10 +2296,10 @@ int setvmpegrect(struct dvbdev* node, int posx, int posy, int wh, int flag)
 	int ret = 0;
 
 	if(flag == 0)
-		ret = setvmpeg(node, posx, posy, wh, wh / 1.4);
+		ret = setvmpeg(node, posx, posy, wh, wh / 1.2);
 
 	if(flag == 1)
-		ret = setvmpeg(node, posx, posy, wh * 1.3, wh);
+		ret = setvmpeg(node, posx, posy, wh * 1.2, wh);
 
 	return ret;
 }
