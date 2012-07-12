@@ -2371,8 +2371,8 @@ msgstr "Installation nicht erfolgreich durchgeführt.\nkeine Installationsinforma
 msgid "Install"
 msgstr "Installation von"
 
-msgid "start"
-msgstr "starten"
+msgid "started"
+msgstr "durchführen"
 
 msgid "Remove"
 msgstr "Löschen von"
