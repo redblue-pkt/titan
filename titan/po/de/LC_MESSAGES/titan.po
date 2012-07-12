@@ -2368,19 +2368,19 @@ msgstr "Installation erfolgreich durchgeführt.\nkeine Installationsinformationen
 msgid "Install error"
 msgstr "Installation nicht erfolgreich durchgeführt.\nkeine Installationsinformationen gefunden !"
 
-msgid "Install"
+msgid "Installing"
 msgstr "Installation von"
 
 msgid "started"
 msgstr "durchführen"
 
-msgid "Remove"
+msgid "Removeing"
 msgstr "Löschen von"
 
-msgid "Install success"
+msgid "Remove success"
 msgstr "Löschen erfolgreich durchgeführt.\nkeine Installationsinformationen gefunden !"
 
-msgid "Install error"
+msgid "Remove error"
 msgstr "Löschen nicht erfolgreich durchgeführt.\nkeine Installationsinformationen gefunden !"
 
 msgid "Ipk Tmp Info"
