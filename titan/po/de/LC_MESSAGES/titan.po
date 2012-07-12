@@ -2294,9 +2294,6 @@ msgstr "System aktualisieren"
 msgid "DYNDNS Settings"
 msgstr "DYNDNS Einstellungen"
 
-msgid "DYNDNS Settings"
-msgstr "DYNDNS Einstellungen"
-
 msgid "MediaDB Settings"
 msgstr "MediaDB Einstellungen"
 
