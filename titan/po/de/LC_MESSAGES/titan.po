@@ -2374,3 +2374,7 @@ msgstr "Löschen nicht erfolgreich durchgeführt.\nkeine Installationsinformatione
 
 msgid "Ipk Tmp Info"
 msgstr "Info zur TMP-IPK Installation"
+
+msgid "Networkbrowser - show Shares"
+msgstr "Netzwerk Browser - zeige Freigaben"
+

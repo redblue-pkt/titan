@@ -69,14 +69,18 @@
 <node name=filelistpath valign=middle bordersize=1 posx=center posy=100 width=95% height=30>
 <node fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox posx=center posy=140 width=92% height=50%>
 <node hspace=10 picmem=skin/ext_directory.png textposx=30 fontsize=25 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=filelist posx=center posy=140 width=92% height=480>
-<node name=b1 text="Sorting" halign=center valign=middle bordercol=bgcol bordersize=0 posx=15% posy=90% width=150 height=30/>
-<node name=b1 text="Sorting" halign=center valign=middle bordercol=red bordersize=2 posx=15% posy=95% width=150 height=2/>
-<node name=b2 text="Filelist-Mode" halign=center valign=middle bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
-<node name=b2 text="Filelist-Mode" halign=center valign=middle bordercol=green bordersize=2 posx=35% posy=95% width=150 height=2/>
-<node name=b3 text="Random" halign=center valign=middle bordercol=bgcol bordersize=0 posx=55% posy=90% width=150 height=30/>
-<node name=b3 text="Random" halign=center valign=middle bordercol=yellow bordersize=2 posx=55% posy=95% width=150 height=2/>
-<node name=b4 text="Repeat" halign=center valign=middle bordercol=bgcol bordersize=0 posx=75% posy=90% width=150 height=30/>
-<node name=b4 text="Repeat" halign=center valign=middle bordercol=blue bordersize=2 posx=75% posy=95% width=150 height=2/>
+
+<node name="buttonbar" posx=center posy="660" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node name="b5" picmem="skin/key_ok_70x40.png"   posx="50"  posy="665" width="70" height="40">
+<node name="b6" picmem="skin/key_exit_70x40.png" posx="125" posy="665" width="70" height="40">
+<node name="b1" text="Sorting" picmem="skin/key_red_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="205" posy="670" width="180" height="30">
+<node name="b2" text="Filelist-Mode" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="395" posy="670" width="200" height="30">
+<node name="b3" text="Random"  picmem="skin/key_yellow_30x30.png"  textposx="40" valign="middle" fontcol="black" fontsize="25" posx="600" posy="670" width="200" height="30">
+<node name="b4" text="Repeat"   picmem="skin/key_blue_30x30.png"    textposx="40" valign="middle" fontcol="black" fontsize="25" posx="785" posy="670" width="200" height="30">
+
+<node name="b7" picmem="skin/key_menu_70x40.png" posx="1000" posy="665" width="70" height="40">
+<node name="b8" picmem="skin/key_stop_70x40.png" posx="1075" posy="665" width="70" height="40">
+
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=middle posx=75% posy=2% width=280 height=30/>
 </screen>
 
@@ -96,11 +100,24 @@
 <node name=b4 text="Network" halign=center valign=middle bordercol=green bordersize=2 posx=75% posy=95% width=150 height=2/>
 </screen>
 
-<screen name="mc_audioplayer_infobar" fontcol=fontcol fontsize=30 posx=center posy=83% width=100% height=50 bordersize=2 bgcol=0>
+<screen name="mc_audioplayer_infobar" fontcol=fontcol fontsize=30 posx=center posy=610 width=100% height=110 bordersize=2 bgcol=0>
 <node textposx=1000 name=reverse posx=0 posy=0 width=100% height=21 fontcol=fontcol/>
 <node textposx=100 name=pos posx=100 posy=0 width=40% height=21 fontcol=fontcol/>
 <node textposx=1000 name=len posx=right posy=25 width=100% height=21 fontcol=fontcol/>
 <node progresscol=white bordersize=1 bordercol=bordercol name=progress posx=center posy=0 width=700 height=15>
+
+<node name="buttonbar" posx=center posy=50 width=1220 height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node name="b1" picmem="skin/key_ok_70x40.png"   posx="50"  posy="55" width="70" height="40">
+<node name="b2" picmem="skin/key_exit_70x40.png" posx="140" posy="55" width="70" height="40">
+<node name="b3" picmem="skin/key_pause_70x40.png" posx="230" posy="55" width="70" height="40">
+<node name="b4" picmem="skin/key_stop_70x40.png" posx="320" posy="55" width="70" height="40">
+<node name="b5" picmem="skin/key_prev_70x40.png" posx="410" posy="55" width="70" height="40">
+<node name="b6" picmem="skin/key_next_70x40.png" posx="500" posy="55" width="70" height="40">
+<node name="b7" picmem="skin/key_1-3_70x40.png" posx="590" posy="55" width="70" height="40">
+<node name="b8" picmem="skin/key_4-6_70x40.png" posx="680" posy="55" width="70" height="40">
+<node name="b9" picmem="skin/key_7-9_70x40.png" posx="770" posy="55" width="70" height="40">
+<node name="b12" text="Random" picmem="skin/key_yellow_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="860" posy="60" width="180" height="30">
+<node name="b13" text="Repeat" picmem="skin/key_blue_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="1040" posy="60" width="200" height="30">
 </screen>
 
 <screen fontcol=fontcol name=playlistmenu hspace=30 vspace=30 fontsize=30 posx=center posy=center width=35% height=28% bordercol=bordercol bordersize=2 bgcol=bgcol>
