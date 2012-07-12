@@ -116,7 +116,7 @@ void screenextensions(int mode, char* path)
 				tmpstr = ostrcat(tmpstr, "-", 1, 0);
 				tmpstr = ostrcat(tmpstr, mbox1->param, 1, 0);
 
-				tmpinfo = ostrcat(tmpinfo, _("Install"), 1, 0);
+				tmpinfo = ostrcat(tmpinfo, _("Installing"), 1, 0);
 				tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
 				tmpinfo = ostrcat(tmpinfo, mbox->name, 1, 0);
 				tmpinfo = ostrcat(tmpinfo, "-", 1, 0);
@@ -168,7 +168,7 @@ void screenextensions(int mode, char* path)
 
 			tmpstr = ostrcat("titan-plugin-", mbox->name, 0, 0);
 
-			tmpinfo = ostrcat(tmpinfo, _("Remove"), 1, 0);
+			tmpinfo = ostrcat(tmpinfo, _("Removeing"), 1, 0);
 			tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
 			tmpinfo = ostrcat(tmpinfo, mbox->name, 1, 0);
 			tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
@@ -225,7 +225,7 @@ void screenextensions(int mode, char* path)
 		{
 			debug(130, "file: %s", mbox->name);
 
-			tmpinfo = ostrcat(tmpinfo, _("Install"), 1, 0);
+			tmpinfo = ostrcat(tmpinfo, _("Installing"), 1, 0);
 			tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
 			tmpinfo = ostrcat(tmpinfo, mbox->name, 1, 0);
 			tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
