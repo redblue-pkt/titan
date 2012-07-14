@@ -2345,7 +2345,7 @@ int resettvpic()
 	int ret = 0;
 
 	if(status.tvpic > 0 && status.aktservice != NULL)
-		ret = setvmpeg(node, 0, 0, 0, 0);
+		ret = setvmpeg(status.aktservice, 0, 0, 0, 0);
 
 	return ret;
 }
