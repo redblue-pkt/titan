@@ -1643,7 +1643,9 @@ start:
 			{
 				clearscreen(channellist);
 				resettvpic();
+				char* tmpmarkedchannel = status.markedchannel;
 				epgchoice((struct channel*)listbox->select->handle);
+				status.markedchannel = tmpmarkedchannel;
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9);
 				drawscreen(channellist, 0, 0);
 			}
