@@ -2392,3 +2392,6 @@ msgstr "Autostart aktive"
 
 msgid "running"
 msgstr "gestartet"
+
+msgid "Activate (autostart)"
+msgstr "aktivieren (autostart)"
