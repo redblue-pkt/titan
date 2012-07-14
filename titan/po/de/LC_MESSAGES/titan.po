@@ -2380,3 +2380,15 @@ msgstr "Netzwerk Browser - zeige Freigaben"
 
 msgid "Installed version:"
 msgstr "Installierte Version:"
+
+msgid "Emu not found"
+msgstr "kein Emu gefunden"
+
+msgid "Emu not found"
+msgstr "kein Emu gefunden"
+
+msgid "active"
+msgstr "Autostart aktive"
+
+msgid "running"
+msgstr "gestartet"
