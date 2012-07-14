@@ -75,7 +75,7 @@ if [ ! -z $WLAN_STARTMODE ] && [ $WLAN_STARTMODE == "load" ]; then
 					;;
 	esac
 	ifconfig $WLAN_IF 0.0.0.0 up
-	[ -z "`ifconfig | grep $WLAN_IF`" ] && rmmod $WLAN_MODULE && echo "[wlan] $WLAN_IF not ready" | tee -a $WLAN_LOG && return
+  [ -z "`ifconfig | grep $WLAN_IF`" ] && rmmod $WLAN_MODULE && echo "[wlan] $WLAN_IF not ready" | tee -a $WLAN_LOG && return
 	#sleep 1
 
 	#if [ -z "`cat /var/etc/network/interfaces | grep \"auto $WLAN_IF\"`" ]; then
@@ -87,7 +87,7 @@ if [ ! -z $WLAN_STARTMODE ] && [ $WLAN_STARTMODE == "load" ]; then
 	if [ ! -f /etc/wpa_supplicant.conf ]; then
 		echo "[wlan] wireless lan not yet configured" | tee -a $WLAN_LOG
 		#python /var/etc/Wireless/wlanscan.py $WLAN_IF
-		ifconfig $WLAN_IF down
+    ifconfig $WLAN_IF down
 		return
 	fi
 fi
@@ -113,17 +113,17 @@ if [ -z $WLAN_STARTMODE ] || [ $WLAN_STARTMODE == "load" ] || [ $WLAN_STARTMODE 
 		#python /var/etc/Wireless/wlanscan.py $WLAN_IF
 		kill -9 `cat /var/run/wpa_supplicant.$WLAN_IF`
 		rm /var/run/wpa_supplicant.$WLAN_IF
-		ifconfig $WLAN_IF down
-		return
+    ifconfig $WLAN_IF down
+    return
 	fi
 	#python /var/etc/Wireless/wlanscan.py $WLAN_IF
-	startNetwork $WLAN_IF
+  startNetwork $WLAN_IF
 	( startWaitfor "/tmp/.networkready" 30
 	  IP=`ifconfig $WLAN_IF | grep -m1 "inet addr" | sed s/"^\s*"// | sed s/" \+"/" "/g | cut -d " " -f2 | cut -d ":" -f2`
 	  NET=`echo ${IP%.*}`
 	  /bin/fping -l -b12 -q -i2000 -g $NET.1 $NET.254 2> /dev/null &
 	  echo "[wlan] completed, now checking recordshare by hotplug" | tee -a $WLAN_LOG
 	  /sbin/hotplug.sh checkRecordShare ) &
-else
+  else
 	echo "[wlan] unknown wireless startmode $WLAN_STARTMODE" | tee -a $WLAN_LOG && break
 fi
