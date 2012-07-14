@@ -529,7 +529,7 @@ char* addmountpart(char* filename, int free1);
 char* string_removechar(char *str);
 unsigned int gethash(char* str);
 char* oregex(char* regex, char* str);
-void resettvpic();
+int resettvpic();
 int resetvmpeg(struct dvbdev* node);
 unsigned long readsysul(const char *filename, int line);
 char* oitoax(int value);
