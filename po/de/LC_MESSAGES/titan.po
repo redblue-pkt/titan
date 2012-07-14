@@ -1227,8 +1227,6 @@ msgid "Rotor Settings"
 msgstr "Rotor Einstellungen"
 msgid "rsize"
 msgstr "rsize"
-msgid "running"
-msgstr "an"
 msgid "Russian"
 msgstr "Russisch"
 msgid "s"
@@ -2380,9 +2378,6 @@ msgstr "Netzwerk Browser - zeige Freigaben"
 
 msgid "Installed version:"
 msgstr "Installierte Version:"
-
-msgid "Emu not found"
-msgstr "kein Emu gefunden"
 
 msgid "Emu not found"
 msgstr "kein Emu gefunden"
