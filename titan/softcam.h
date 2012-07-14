@@ -85,11 +85,26 @@ void readmenu()
 
 			// update emuname with status
 			if(active == 1 && check ==1)
-				emuname = ostrcat(emuname, "  (running) (active)", 1, 0);
+			{
+				emuname = ostrcat(emuname, "  (", 1, 0);
+				emuname = ostrcat(emuname, _("running"), 1, 0);
+				emuname = ostrcat(emuname, ") (", 1, 0);
+				emuname = ostrcat(emuname, _("active"), 1, 0);
+				emuname = ostrcat(emuname, ")", 1, 0);
+			}
 			else if(check ==1)
-				emuname = ostrcat(emuname, "  (running)", 1, 0);
+			{
+				emuname = ostrcat(emuname, "  (", 1, 0);
+				emuname = ostrcat(emuname, _("running"), 1, 0);
+				emuname = ostrcat(emuname, ")", 1, 0);
+				emuname = ostrcat(emuname, ")", 1, 0);
+			}
 			else if(active == 1)
-				emuname = ostrcat(emuname, "  (active)", 1, 0);
+			{
+				emuname = ostrcat(emuname, "  (", 1, 0);
+				emuname = ostrcat(emuname, _("active"), 1, 0);
+				emuname = ostrcat(emuname, ")", 1, 0);
+			}
 
 			debug(100, "emuname = %s\n", emuname);
 			addlist(emulist, emuname, emush);
@@ -99,7 +114,7 @@ void readmenu()
 		}
 	}
 	else
-		addlist(emulist, "Emu not found", "emu0");
+		addlist(emulist, _("Emu not found"), "emu0");
 
 	free(emuname);
 	free(emuline);
