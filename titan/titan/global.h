@@ -2277,8 +2277,44 @@ int setvmpeg(struct dvbdev* node, int posx, int posy, int width, int height)
 		snprintf(buf, MINMALLOC, vmpegdev, node->devnr);
 		snprintf(tmpstr, MINMALLOC, "%x %x %x %x", posx, posy, width, height);
 		debug(100, "set %s to %s", buf, tmpstr);
+
 		status.tvpic = 1;
+		/*
+		//workaround for driver crash
+		if(status.tvpic > 0)
+		{
+			char* tmpstr1 = NULL;
+
+			tmpstr1 = getaspect();
+			if(ostrcmp(tmpstr1, "4:3") == 0)
+				status.tvpic = 2;
+			else
+				status.tvpic = 1;
+			free(tmpstr1); tmpstr1 = NULL;
+
+			tmpstr1 = getvideomode();
+			if(ostrcmp("pal", tmpstr1) == 0 || ostrncmp("576", tmpstr1, 3) == 0)
+				setaspect("4:3");
+			else
+				setaspect("16:9");
+			free(tmpstr1); tmpstr1 = NULL;
+		}
+		*/
+
 		ret = writesys(buf, tmpstr, 1);
+
+		//reset
+		if(posx == 0 && posy == 0 && width == 0 && height == 0)
+		{
+			/*
+			//workaround for driver crash
+			if(status.tvpic == 1)
+				setaspect("16:9");
+			else
+				setaspect("4:3");
+			*/
+			status.tvpic = 0;
+		}
 		
 		free(tmpstr);
 		free(buf);
@@ -2304,22 +2340,14 @@ int setvmpegrect(struct dvbdev* node, int posx, int posy, int wh, int flag)
 	return ret;
 }
 
-int resetvmpeg(struct dvbdev* node)
+int resettvpic()
 {
 	int ret = 0;
-		
-	ret = setvmpeg(node, 0, 0, 0, 0);
-	
-	return ret;
-}
 
-void resettvpic()
-{
 	if(status.tvpic == 1 && status.aktservice != NULL)
-	{
-		status.tvpic = 0;
-		resetvmpeg(status.aktservice->videodev);
-	}
+		ret = setvmpeg(node, 0, 0, 0, 0);
+
+	return ret;
 }
 
 int setcontrast(int value)
