@@ -2388,10 +2388,10 @@ msgid "Emu not found"
 msgstr "kein Emu gefunden"
 
 msgid "active"
-msgstr "Autostart aktive"
+msgstr "Autostart aktiviert"
 
 msgid "running"
 msgstr "gestartet"
 
 msgid "Activate (autostart)"
-msgstr "aktivieren (autostart)"
+msgstr "Aktivieren (autostart)"
