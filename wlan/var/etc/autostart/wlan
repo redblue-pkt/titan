@@ -58,12 +58,19 @@ if [ ! -z $WLAN_STARTMODE ] && [ $WLAN_STARTMODE == "load" ]; then
 	    rt2870sta | rt3070sta )	WLAN_IF=ra0
 					WLAN_DRV=ralink
 					;;
-	    8192cu )			WLAN_IF=wlan0
-					WLAN_DRV=wext
-					;;
 	    rt5370sta )		WLAN_IF=ra0
 				  WLAN_DRV=wext
 				  ;;
+			rt3070sta )		WLAN_IF=ra0
+				  WLAN_DRV=wext
+				  ;;
+			8712u )		WLAN_IF=wlan0
+				  WLAN_DRV=wext
+				  ;;
+			8192cu )			WLAN_IF=wlan0
+					WLAN_DRV=wext
+					
+					;;
 	    * )				echo "[wlan] Unknown module $WLAN_MODULE" | tee -a $WLAN_LOG && return
 					;;
 	esac
