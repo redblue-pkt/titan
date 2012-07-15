@@ -393,6 +393,7 @@ struct tmdb* screentmdb(char* title, char* skinname, int flag)
 	struct skin* skin_cover = getscreennode(tmdbskin, "cover");
 	struct skin* skin_votes = getscreennode(tmdbskin, "votes");
 	struct skin* b3 = getscreennode(tmdbskin, "b3");
+	struct skin* load = getscreen("loading");
 	struct tmdb* node = NULL, *retnode = NULL;
 	char* search = NULL;
 
@@ -406,7 +407,10 @@ struct tmdb* screentmdb(char* title, char* skinname, int flag)
 
 	if(title == NULL) title = getepgakttitle(NULL);
 
+	drawscreen(load, 0, 0);
 	node = gettmdb(&node, title, 0, 0);
+	clearscreen(load);
+
 start:
 	if(node != NULL)
 	{
@@ -435,7 +439,9 @@ start:
 			if(search != NULL)
 			{
 				freetmdb(&node, 0); node = NULL;
+				drawscreen(load, 0, 0);
 				node = gettmdb(&node, search, 0, 0);
+				clearscreen(load);
 				free(search); search = NULL;
 				goto start;
 			}
@@ -460,7 +466,9 @@ start:
 				if(search != NULL)
 				{
 					freetmdb(&node, 0); node = NULL;
+					drawscreen(load, 0, 0);
 					node = gettmdb(&node, search, 1, 0);
+					clearscreen(load);
 					free(search); search = NULL;
 					freemenulist(mlist, 1); mlist = NULL, mbox = NULL;
 					goto start;
