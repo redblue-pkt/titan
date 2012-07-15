@@ -405,6 +405,7 @@ void screenimdb(char* title)
 	struct skin* skin_releasetime = getscreennode(imdbskin, "releasetime");
 	struct skin* skin_cover = getscreennode(imdbskin, "cover");
 	struct skin* skin_actors = getscreennode(imdbskin, "actors");
+	struct skin* load = getscreen("loading");
 	struct imdb* node = NULL;
 	char* search = NULL;
 
@@ -413,7 +414,10 @@ void screenimdb(char* title)
 
 	if(title == NULL) title = getepgakttitle(NULL);
 
+	drawscreen(load, 0, 0);
 	node = getimdb(&node, title, 0, 0, 0);
+	clearscreen(load);
+
 start:
 	if(node != NULL)
 	{
@@ -442,7 +446,9 @@ start:
 		if(search != NULL)
 		{
 			freeimdb(&node, 0); node = NULL;
+			drawscreen(load, 0, 0);
 			node = getimdb(&node, search, 0, 0, 0);
+			clearscreen(load);
 			free(search); search = NULL;
 			goto start;
 		}

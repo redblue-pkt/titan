@@ -185,6 +185,7 @@ void screenimdbapi(char* title)
 	struct skin* skin_releasetime = getscreennode(imdbapiskin, "releasetime");
 	struct skin* skin_cover = getscreennode(imdbapiskin, "cover");
 	struct skin* skin_actors = getscreennode(imdbapiskin, "actors");
+	struct skin* load = getscreen("loading");
 	struct imdbapi* node = NULL;
 	char* search = NULL;
 
@@ -193,7 +194,10 @@ void screenimdbapi(char* title)
 
 	if(title == NULL) title = getepgakttitle(NULL);
 
+	drawscreen(load, 0, 0);
 	node = getimdbapi(&node, title, 0, 0);
+	clearscreen(load);
+
 start:
 	if(node != NULL)
 	{
@@ -222,7 +226,9 @@ start:
 			if(search != NULL)
 			{
 				freeimdbapi(&node, 0); node = NULL;
+				drawscreen(load, 0, 0);
 				node = getimdbapi(&node, search, 0, 0);
+				clearscreen(load);
 				free(search); search = NULL;
 				goto start;
 			}
