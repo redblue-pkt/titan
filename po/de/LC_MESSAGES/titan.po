@@ -710,7 +710,7 @@ msgstr "l"
 msgid "L"
 msgstr "L"
 msgid "lan"
-msgstr "lan"
+msgstr "LAN"
 msgid "Language"
 msgstr "Sprache"
 msgid "Latitude"
@@ -2203,7 +2203,7 @@ msgid "Here you can do a blind scan, this process takes a long time. Use to navi
 msgstr "Hier können Sie einen Blindscan durchführen, dieser Vorgang dauert sehr lange.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
 msgid "Here you can configure Ci-Modules. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ci-Module konfigurieren.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie CI-Module konfigurieren.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
 msgid "Here you can select your Network Interface. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie Ihre Netzwerkschnittstelle auswählen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
@@ -2216,6 +2216,9 @@ msgstr "Hier können Sie Ihre WLAN Einstellungen vornehmen.\n\nBenutzen Sie das S
 
 msgid "Here you can test your network. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie Ihr Netzwerk testen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid="Here you can configure your network shares. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre Netzwerk Freigaben konfigurieren.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
 msgid "Here you can configure your web server. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie Ihren Webserver konfigurieren.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
