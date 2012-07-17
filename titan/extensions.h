@@ -96,7 +96,7 @@ void screenextensions(int mode, char* path)
 		struct skin* load = getscreen("loading");
 		drawscreen(load, 0, 0);
 
-		system("cp -a /mnt/ipkg/* /var/usr/lib/ipkg");
+		system("syncipkg.sh");
 		ipkg_update();
 		ipkg_list();
 
@@ -158,7 +158,7 @@ void screenextensions(int mode, char* path)
 	}
 	else if(mode == 1)
 	{
-		system("cp -a /mnt/ipkg/* /var/usr/lib/ipkg");
+		system("syncipkg.sh");
 		ipkg_list_installed();
 		mbox = ipkmenulist(mlist, NULL, "Ipk Remove - select file", NULL, NULL, 1, 2);
 		
@@ -257,7 +257,7 @@ void screenextensions(int mode, char* path)
 	{
 		struct skin* load = getscreen("loading");
 		drawscreen(load, 0, 0);
-		system("cp -a /mnt/ipkg/* /var/usr/lib/ipkg");
+		system("syncipkg.sh");
 		ipkg_update();
 		clearscreen(load);
 		ipkg_upgrade();
