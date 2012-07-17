@@ -35,8 +35,8 @@ if [ ! -z $WLAN_STARTMODE ] && [ $WLAN_STARTMODE == "load" ]; then
 		done
 		[ ! -z $WLAN_MODULE ] && echo $WLAN_MODULE $VID $PID > /etc/Wireless/wlan_module || rm -f /etc/Wireless/wlan_module
 	fi
-	[ -z $WLAN_MODULE ] && echo "[wlan] no applicable USB WLAN device found" | tee -a $WLAN_LOG && return
 	IFS=$MEM
+	[ -z $WLAN_MODULE ] && echo "[wlan] no applicable USB WLAN device found" | tee -a $WLAN_LOG && return
 	echo "[wlan] loading $WLAN_MODULE.ko" | tee -a $WLAN_LOG
 #	[ $WLAN_MODULE == "rt73" ] && insmod /lib/modules/funcemu.ko
 	if [ -e /lib/modules/$WLAN_MODULE.ko ];then
