@@ -35,7 +35,11 @@ fi
 [ -z $WLAN_MODULE ] && echo "[wlan] no applicable USB WLAN device found" | tee -a $WLAN_LOG && exit 1
 IFS=$MEM
 echo "[wlan] loading $WLAN_MODULE.ko" | tee -a $WLAN_LOG
-insmod /lib/modules/$WLAN_MODULE.ko
+if [ -e /var/lib/modules/$WLAN_MODULE.ko ];then
+	insmod /var/lib/modules/$WLAN_MODULE.ko
+else
+	insmod /lib/modules/$WLAN_MODULE.ko
+fi
 [ -z "`lsmod | grep $WLAN_MODULE`" ] && echo "[wlan] could not load $WLAN_MODULE" | tee -a $WLAN_LOG && exit 1
 case $WLAN_MODULE in
 	rt2870sta | rt3070sta )	WLAN_IF=ra0
