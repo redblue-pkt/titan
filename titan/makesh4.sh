@@ -652,6 +652,11 @@ cp -a "$ROOTDIR"/lib/modules/rt2870sta.ko "$HOME"/flashimg/BUILD/titan/modules
 cp -a "$ROOTDIR"/lib/modules/rt3070sta.ko "$HOME"/flashimg/BUILD/titan/modules
 cp -a "$ROOTDIR"/lib/modules/rt5370sta.ko "$HOME"/flashimg/BUILD/titan/modules
 
+#ipkg
+cp -a "$HOME"/flashimg/source.titan/ipkg "$HOME"/flashimg/BUILD/titan/var/usr/lib
+sed "s/Version:.*/Version: $VERSION/" -i "$HOME"/flashimg/BUILD/titan/var/usr/lib/ipkg/status
+sed "s/Version:.*/Version: $VERSION/" -i "$HOME"/flashimg/BUILD/titan/var/usr/lib/ipkg/info/*.control
+
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type d -name "*.svn"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.h"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.c"`
