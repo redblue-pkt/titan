@@ -2217,7 +2217,7 @@ msgstr "Hier können Sie Ihre WLAN Einstellungen vornehmen.\n\nBenutzen Sie das S
 msgid "Here you can test your network. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie Ihr Netzwerk testen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid="Here you can configure your network shares. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgid "Here you can configure your network shares. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie Ihre Netzwerk Freigaben konfigurieren.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
 msgid "Here you can configure your web server. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
