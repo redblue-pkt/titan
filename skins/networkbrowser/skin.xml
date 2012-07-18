@@ -49,8 +49,8 @@
 <node name="buttonbar" posx="0" posy="600" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
 <node parent="buttonbar" name="b1" picmem="skin/key_ok_70x40.png"   posx="5"   posy="center" width="70" height="40">
 <node parent="buttonbar" name="b2" picmem="skin/key_exit_70x40.png" posx="75"  posy="center" width="70" height="40">
-<node parent="buttonbar" name="b3" picmem="skin/key_text_70x40.png" posx="145" posy="center" width="70" height="40">
-<node parent="buttonbar" name="b4" text="COPY" picmem="skin/key_red_30x30.png" textposx="40" valign="middle" fontcol="black" fontsize="25" posx="225" posy="center" width="200" height="30">
+<node parent="buttonbar" name="b4" picmem="skin/key_text_70x40.png" posx="145" posy="center" width="70" height="40">
+<node parent="buttonbar" name="b3" text="COPY" picmem="skin/key_red_30x30.png" textposx="40" valign="middle" fontcol="black" fontsize="25" posx="225" posy="center" width="200" height="30">
 </screen>
 
 
