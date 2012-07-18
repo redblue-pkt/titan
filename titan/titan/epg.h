@@ -1474,7 +1474,7 @@ int readepg(const char* filename)
 
 	while(!feof(fd))
 	{
-		int serviceid = 0, transponderid = 0, eventid = 0, version = 0;
+		int serviceid = 0, transponderid = 0, eventid = 0, version = 0, count = 0;
 		time_t starttime = 0, endtime = 0;
 		int desclen = 0, desccomplen = 0, parentalrating = 0;
 		char* title = NULL, *subtitle = NULL, *desc = NULL;
@@ -1487,6 +1487,14 @@ int readepg(const char* filename)
 		ret = fread(&parentalrating, sizeof(int), 1, fd);
 		ret = fread(&starttime, sizeof(time_t), 1, fd);
 		ret = fread(&endtime, sizeof(time_t), 1, fd);
+
+		//if epg.dat has an IO Error it runs in endless loop
+		//this stops the endless loop
+		if(starttime == 0 && endtime == 0)
+			count++;
+		else
+			count = 0;
+		if(count > 50) break;
 
 		len = 0;
 		ret = fread(&len, sizeof(int), 1, fd);
@@ -1621,6 +1629,9 @@ int readepg(const char* filename)
 		unlink(filename);
 		
 	m_unlock(&status.epgmutex, 4);
+
+	//epg.dat seems defekt IO Error
+	if(count > 50) unlink(filename);
 
 	debug(1000, "out");
 	return 0;
