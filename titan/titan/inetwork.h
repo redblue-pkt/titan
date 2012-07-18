@@ -111,7 +111,7 @@ void delinetworknotfound()
 
 //flag 0: change all
 //flag 1: check only values from getifaddrs (called from timer)
-struct inetwork* changeinetwork(char* device, char* ip, char* netmask, char* mac, char* broadcast, int dhcp, struct inetwork* node, int flag)
+struct inetwork* changeinetwork(char* device, char* ip, char* netmask, char* mac, char* broadcast, int type, struct inetwork* node, int flag)
 {
 	if(node == NULL) return NULL;
 
@@ -157,7 +157,7 @@ struct inetwork* changeinetwork(char* device, char* ip, char* netmask, char* mac
 		else
 			free(mac);
 
-		node->dhcp = dhcp;
+		node->type = type;
 	}
 	else
 		free(mac);
@@ -167,7 +167,7 @@ struct inetwork* changeinetwork(char* device, char* ip, char* netmask, char* mac
 	return node;
 }
 
-struct inetwork* addinetwork(char* device, char* ip, char* netmask, char* mac, char* broadcast, int dhcp, struct inetwork* last)
+struct inetwork* addinetwork(char* device, char* ip, char* netmask, char* mac, char* broadcast, int type, struct inetwork* last)
 {
 	debug(1000, "in");
 	struct inetwork *newnode = NULL, *prev = NULL, *node = inetwork;
@@ -186,7 +186,7 @@ struct inetwork* addinetwork(char* device, char* ip, char* netmask, char* mac, c
 	newnode->netmask = netmask;
 	newnode->mac = mac;
 	newnode->broadcast = broadcast;
-	newnode->dhcp = dhcp;
+	newnode->type = type;
 	newnode->found = 1;
 	
 	if(ostrcmp(device, "eth0") == 0)
@@ -201,7 +201,7 @@ struct inetwork* addinetwork(char* device, char* ip, char* netmask, char* mac, c
 	debug(50,"[NETWORK] netmask: %s", netmask);
 	debug(50,"[NETWORK] mac: %s", mac);
 	debug(50,"[NETWORK] broadcast: %s", broadcast);
-	debug(50,"[NETWORK] dhcp: %d\n", dhcp);
+	debug(50,"[NETWORK] type: %d\n", type);
 
 	if(last == NULL)
 	{
@@ -268,7 +268,7 @@ int addinetworkall(struct stimerthread* self)
 		char* tmp_mac = NULL;
 		char* tmp_broadcast = NULL;
 		char* tmp_device = NULL;
-		int tmp_dhcp = 0;
+		int tmp_type = 0;
 
 		if(tmpifa->ifa_addr == NULL)
 			continue;
@@ -366,13 +366,28 @@ int addinetworkall(struct stimerthread* self)
 			free(cmd); cmd = NULL;
 
 			// DHCP
-			cmd = ostrcat(cmd, "cat /var/etc/network/interfaces | grep ", 1, 0);
-			cmd = ostrcat(cmd, tmp_device, 1, 0);
-			cmd = ostrcat(cmd, " | grep dhcp | wc -l", 1, 0);
-			tmpstr = command(cmd);
-			if(tmpstr != NULL)
-				tmp_dhcp = atoi(tmpstr);
-			free(tmpstr); tmpstr = NULL;
+			if(tmp_type == 0)
+			{
+				cmd = ostrcat(cmd, "cat /var/etc/network/interfaces | grep ", 1, 0);
+				cmd = ostrcat(cmd, tmp_device, 1, 0);
+				cmd = ostrcat(cmd, " | grep dhcp | wc -l", 1, 0);
+				tmpstr = command(cmd);
+				if(tmpstr != NULL && atoi(tmpstr) == 1)
+					tmp_type = 1;
+				free(tmpstr); tmpstr = NULL;
+			}
+
+			// OFF
+			if(tmp_type == 0)
+			{
+				cmd = ostrcat(cmd, "cat /var/etc/network/interfaces | grep ", 1, 0);
+				cmd = ostrcat(cmd, tmp_device, 1, 0);
+				cmd = ostrcat(cmd, " | grep off | wc -l", 1, 0);
+				tmpstr = command(cmd);
+				if(tmpstr != NULL && atoi(tmpstr) == 1)
+					tmp_type = 2;
+				free(tmpstr); tmpstr = NULL;
+			}
 		}
 
 
@@ -380,12 +395,12 @@ int addinetworkall(struct stimerthread* self)
 		if(tmpinetwork != NULL)
 		{
 			if(self == NULL)
-				node = changeinetwork(tmp_device, tmp_ipaddresse, tmp_netmask, tmp_mac, tmp_broadcast, tmp_dhcp, tmpinetwork, 0);
+				node = changeinetwork(tmp_device, tmp_ipaddresse, tmp_netmask, tmp_mac, tmp_broadcast, tmp_type, tmpinetwork, 0);
 			else
-				node = changeinetwork(tmp_device, tmp_ipaddresse, tmp_netmask, tmp_mac, tmp_broadcast, tmp_dhcp, tmpinetwork, 1);
+				node = changeinetwork(tmp_device, tmp_ipaddresse, tmp_netmask, tmp_mac, tmp_broadcast, tmp_type, tmpinetwork, 1);
 		}
 		else
-			node = addinetwork(tmp_device, tmp_ipaddresse, tmp_netmask, tmp_mac, tmp_broadcast, tmp_dhcp, node);
+			node = addinetwork(tmp_device, tmp_ipaddresse, tmp_netmask, tmp_mac, tmp_broadcast, tmp_type, node);
 
 		free(cmd); cmd = NULL;
 		free(cmddev); cmddev = NULL;
@@ -439,186 +454,6 @@ int addinetworkall(struct stimerthread* self)
 	delinetworknotfound();
 	return 0;
 }
-
-//this method does not include
-//network interfaces, that not
-//configured
-/*
-int addinetworkall()
-{
-	char* buf = NULL, *tmpstr = NULL;
-	int sck, nInterfaces, i;
-	struct ifconf ifc;
-	struct ifreq *ifr;
-	struct inetwork* node = inetwork;
-	char* tmp_gateway = NULL;
-	char* tmp_dnsserver1 = NULL;
-	char* tmp_dnsserver2 = NULL;
-	char* cmd = NULL;
-
-	buf = malloc(MINMALLOC);
-	if(buf == NULL)
-	{
-		err("no mem");
-		return 1;
-	}
-
-	// Get a socket handle.
-	sck = socket(AF_INET, SOCK_DGRAM, 0);
-	if(sck < 0)
-	{
-		perror("socket");
-		return 0;
-	}
-
-	// Query available interfaces.
-	ifc.ifc_len = MINMALLOC;
-	ifc.ifc_buf = buf;
-	if(ioctl(sck, SIOCGIFCONF, &ifc) < 0)
-	{
-		perror("ioctl(SIOCGIFCONF)");
-		return 0;
-	}
-
-	// Iterate through the list of interfaces.
-	ifr = ifc.ifc_req;
-	nInterfaces = ifc.ifc_len / sizeof(struct ifreq);
-	for(i = 0; i < nInterfaces; i++)
-	{
-		struct ifreq *item = &ifr[i];
-		char* cmddev = NULL;
-		char* tmp_ipaddresse = NULL;
-		char* tmp_netmask = NULL;
-		char* tmp_mac = NULL;
-		char* tmp_broadcast = NULL;
-		char* tmp_device = NULL;
-		int tmp_dhcp = 0;
-
-		cmddev = ostrcat(cmddev, item->ifr_name, 1, 0);
-		cmddev = ostrcat("ifconfig ", cmddev, 0, 1);
-
-		// IP
-		cmd = ostrcat(cmd, " | grep -m1 'inet addr' | awk '{ print $2 }' | cut -d ':' -f2", 1, 0);
-		cmd = ostrcat(cmddev, cmd, 0, 1);
-		tmp_ipaddresse = ostrcat(tmp_ipaddresse, command(cmd), 1, 1);
-		if (tmp_ipaddresse != 0)
-		{
-			tmpstr = fixip(tmp_ipaddresse, 0);
-			free(tmp_ipaddresse); tmp_ipaddresse = NULL;
-			tmp_ipaddresse = string_newline(ostrcat(tmpstr, NULL, 1, 0));
-		}
-		else
-			tmp_ipaddresse = ostrcat(tmp_ipaddresse, "000.000.000.000", 1, 0);
-		free(cmd); cmd = NULL;
-
-		// NETMASK
-		if(ostrcmp(cmddev, "ifconfig lo") == 0)
-			cmd = ostrcat(cmd, " | grep -m1 'inet addr' | awk '{ print $3 }' | cut -d ':' -f2", 1, 0);
-		else
-			cmd = ostrcat(cmd, " | grep -m1 'inet addr' | awk '{ print $4 }' | cut -d ':' -f2", 1 ,0);
-		cmd = ostrcat(cmddev, cmd, 0, 1);
-		tmp_netmask = ostrcat(tmp_netmask , command(cmd), 1, 1);
-		if (tmp_netmask != 0)
-		{
-			tmpstr = fixip(tmp_netmask, 0);
-			free(tmp_netmask); tmp_netmask = NULL;
-			tmp_netmask = string_newline(ostrcat(tmpstr, NULL, 1, 0));
-		}
-		else
-			tmp_netmask = ostrcat(tmp_netmask, "000.000.000.000", 1, 0);
-		free(cmd); cmd = NULL;
-
-		// MAC
-		if(ostrcmp(cmddev, "ifconfig lo") == 0)
-			tmp_mac = ostrcat(tmp_mac, "00:00:00:00:00:00", 1, 0);
-		else
-		{
-			cmd = ostrcat(cmd, " | grep -m1 'HWaddr' | awk '{ print $5 }'", 1, 0);
-			cmd = ostrcat(cmddev, cmd, 0, 1);
-			tmp_mac = command(cmd);
-		
-			if (tmp_mac != 0)
-				tmp_mac = string_newline(ostrcat(tmp_mac, NULL, 1, 0));
-			else
-				tmp_mac = ostrcat(tmp_mac, "00:00:00:00:00:00", 1, 0);
-		}
-		free(cmd); cmd = NULL;
-
-		// BROADCAST
-		if(ostrcmp(cmddev, "ifconfig lo") == 0)
-			tmp_broadcast = ostrcat(tmp_broadcast, "000.000.000.000", 1, 0);
-		else
-		{
-			cmd = ostrcat(cmd, " | grep -m1 'inet addr' | awk '{ print $3 }' | cut -d ':' -f2", 1, 0);
-			cmd = ostrcat(cmddev, cmd, 0, 1);
-			tmp_broadcast = command(cmd);
-		}
-		if (tmp_broadcast != 0)
-		{
-			tmpstr = fixip(tmp_broadcast, 0);
-			free(tmp_broadcast); tmp_broadcast = NULL;
-			tmp_broadcast = string_newline(ostrcat(tmpstr, NULL,  1, 0));
-		}
-		else
-			tmp_broadcast = ostrcat(tmp_broadcast, "000.000.000.000", 1, 0);
-		free(cmd); cmd = NULL;
-
-		// DHCP
-		cmd = ostrcat(cmd, "cat /var/etc/network/interfaces | grep dhcp | wc -l", 1, 0);
-		tmpstr = command(cmd);
-		if(tmpstr != NULL)
-			tmp_dhcp = atoi(tmpstr);
-		free(tmpstr); tmpstr = NULL;
-
-		// DEVICE NAME
-		tmp_device = string_newline(ostrcat(tmp_device, item->ifr_name, 1, 0));
-
-		node = addinetwork(i, tmp_device, tmp_ipaddresse, tmp_netmask, tmp_mac,  tmp_broadcast, tmp_dhcp, node);
-
-		free(cmd); cmd = NULL;
-		free(cmddev); cmddev = NULL;
-	}
-
-	// GATEWAY
-	tmp_gateway = getdefaultgw();
-	if (tmp_gateway != 0)
-	{
-		tmpstr = fixip(tmp_gateway, 0);
-		status.gateway = string_newline(ostrcat(tmpstr, NULL, 1, 0));
-	}
-	else
-		status.gateway = ostrcat(tmp_gateway, "000.000.000.000", 1, 0);
-
-	// DNSSERVER1
-	cmd = ostrcat(cmd, "cat /var/etc/resolv.conf | grep nameserver | awk '{ print $2 }' | head -n1 | tail -n1", 1, 0);
-	tmp_dnsserver1 = ostrcat(tmp_dnsserver1 , command(cmd), 1, 1);
-	if (tmp_dnsserver1 != 0)
-	{
-		tmpstr = fixip(tmp_dnsserver1, 0);
-		free(tmp_dnsserver1); tmp_dnsserver1 = NULL;
-		status.dnsserver1 = string_newline(ostrcat(tmpstr, NULL, 1, 0));
-	}
-	else
-		status.dnsserver1 = ostrcat(tmp_dnsserver1, "000.000.000.000", 1, 0);
-	free(cmd); cmd = NULL;
-
-	// DNSSERVER2
-	cmd = ostrcat(cmd, "cat /var/etc/resolv.conf | grep nameserver | awk '{ print $2 }' | head -n2 | tail -n1", 1, 0);
-	tmp_dnsserver2 = ostrcat(tmp_dnsserver2 , command(cmd), 1, 1);
-	if (tmp_dnsserver2 != 0)
-	{
-		tmpstr = fixip(tmp_dnsserver2, 0);
-		free(tmp_dnsserver2); tmp_dnsserver2 = NULL;
-		status.dnsserver2 = string_newline(ostrcat(tmpstr, NULL, 1, 0));
-	}
-	else
-		status.dnsserver2 = ostrcat(tmp_dnsserver2, "000.000.000.000", 1, 0);
-	free(cmd); cmd = NULL;
-
-	free(buf);
-	return 0;
-}
-*/
 
 void freeinetwork()
 {
