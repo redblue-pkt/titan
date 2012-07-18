@@ -640,7 +640,10 @@ struct inetwork
 	char* netmask;
 	char* mac;
 	char* broadcast;
-	int dhcp;
+	//0 = static
+	//1 = dhcp
+	//2 = off
+	int type;
 	int found;
 	//flag 1 = used in titan
 	int flag;
