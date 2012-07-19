@@ -721,7 +721,7 @@ char* gettimeinfovar()
 void checkserial(char* input)
 {
 	if(input == NULL) return;
-	
+printf("10\n");	
 	char* authlocal = NULL;
 	authlocal = ostrcat(authlocal, "AA040127284876,AA04012716801323,AA040127990094", 1, 0);
 	int count = 0;
@@ -734,8 +734,10 @@ void checkserial(char* input)
 	int max = count;
 	for(i = 0; i < max; i++)
 	{
+printf("12\n");
 		if(ret != NULL && ostrcmp(input, (&ret[i])->part) == 0)
 		{
+printf("13\n");		
 			status.security = 1;
 			break;
 		}
@@ -745,6 +747,7 @@ void checkserial(char* input)
 	
 	if(status.security == 0)
 	{
+printf("14\n");	
 		char* authfile = NULL;
 		authfile = gethttp("atemio.dyndns.tv", "/svn/auth/trustlist", 80, NULL, HTTPAUTH, NULL, 0);
 	
@@ -758,12 +761,14 @@ void checkserial(char* input)
 	
 		for(i = 0; i < max; i++)
 		{
+printf("15\n");		
 			int count2 = 0;
 			struct splitstr* ret2 = NULL;
 			ret2 = strsplit((&ret1[i])->part, ",", &count2);	
 	
 			if(ret2 != NULL && ostrcmp(input, (&ret2[0])->part) == 0)
 			{
+printf("16\n");
 				status.security = 1;
 				break;
 			}
@@ -775,6 +780,7 @@ void checkserial(char* input)
 
 	if(status.security == 1)
 	{
+printf("17\n");	
 		char* blackfile = NULL;
 		blackfile = gethttp("atemio.dyndns.tv", "/svn/auth/blacklist", 80, NULL, HTTPAUTH, NULL, 0);
 	
@@ -788,12 +794,14 @@ void checkserial(char* input)
 	
 		for(i = 0; i < max; i++)
 		{
+printf("18\n");		
 			int count4 = 0;
 			struct splitstr* ret4 = NULL;
 			ret4 = strsplit((&ret3[i])->part, ",", &count4);	
 	
 			if(ret4 != NULL && ostrcmp(input, (&ret4[0])->part) == 0)
 			{
+printf("19\n");
 				status.security = 0;
 				break;
 			}
@@ -802,9 +810,10 @@ void checkserial(char* input)
 		free(ret3); ret3 = NULL;
 		free(blackfile);
 	}
-
+printf("20\n");
 	if(status.security == 1)
 	{
+printf("21\n");	
 		char* cmd = NULL;
 		cmd = ostrcat(cmd, "/", 1, 0);
 		cmd = ostrcat(cmd, "usr", 1, 0);
