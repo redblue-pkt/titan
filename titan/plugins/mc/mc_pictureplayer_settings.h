@@ -79,6 +79,12 @@ void screenmc_pictureplayer_settings()
 			addconfigscreen("mc_pp_pichwdecode", pichwdecode);
 			break;
 		}
+		else if(rcret == getrcconfigint("rcred", NULL))
+		{
+			struct skin* screen = getscreen("networkmenu");
+			menu(screen);
+			drawscreen(mc_audioplayer_settings, 0, 0);
+		}
   }
 
 	delownerrc(mc_pictureplayer_settings);

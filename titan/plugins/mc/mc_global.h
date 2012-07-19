@@ -494,6 +494,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 		
 		mbox = menulistbox(mlist, "playlistmenu", NULL, "%pluginpath%/mc/skin", NULL, 1, 0);
 
+		drawscreen(skin, 0, 0);
 		drawscreen(apskin, 0, 0);
 
 		if(mbox != NULL)

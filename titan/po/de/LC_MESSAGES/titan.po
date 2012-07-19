@@ -2389,7 +2389,16 @@ msgid "active"
 msgstr "Autostart aktiviert"
 
 msgid "running"
+msgstr "an"
+
+msgid "started"
 msgstr "gestartet"
 
 msgid "Activate (autostart)"
 msgstr "Aktivieren (autostart)"
+
+msgid "Load Playlist"
+msgstr "Playliste laden"
+
+msgid "Edit Playlist"
+msgstr "Playliste bearbeiten"

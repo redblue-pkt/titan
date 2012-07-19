@@ -52,16 +52,21 @@
 <node name=sort type=choicebox parent=listbox valign=middle posx=0 text="Sort" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=view type=choicebox parent=listbox valign=middle posx=0 text="View" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=autoscan type=choicebox parent=listbox valign=middle posx=0 text="MediaDB autoscan" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=mediadb type=choicebox parent=listbox valign=middle posx=0 text="MediaDB Directory" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=mediadbscandelall type=choicebox parent=listbox valign=middle posx=0 text="mediadbscandelall" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=mediadbscandelnotfound type=choicebox parent=listbox valign=middle posx=0 text="mediadbscandelnotfound" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=autostart_playlist type=choicebox parent=listbox valign=middle posx=0 text="Autostart Playlist" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=b1 text="OK" halign=center valign=middle bordercol=bgcol bordersize=0 posx=20% posy=90% width=150 height=30/>
-<node name=b1 text="OK" halign=center valign=middle bordercol=okcol bordersize=2 posx=20% posy=95% width=150 height=2/>
-<node name=b2 text="EXIT" halign=center valign=middle bordercol=bgcol bordersize=0 posx=45% posy=90% width=150 height=30/>
-<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=2 posx=45% posy=95% width=150 height=2/>
-<node name=b4 text="Network" halign=center valign=middle bordercol=bgcol bordersize=0 posx=70% posy=90% width=150 height=30/>
-<node name=b4 text="Network" halign=center valign=middle bordercol=red bordersize=2 posx=70% posy=95% width=150 height=2/>
+#<node name=mediadb type=choicebox parent=listbox valign=middle posx=0 text="MediaDB Directory" bordercol=bordercol bordersize=1 width=100% height=25>
+#<node name=mediadbscandelall type=choicebox parent=listbox valign=middle posx=0 text="mediadbscandelall" bordercol=bordercol bordersize=1 width=100% height=25>
+#<node name=mediadbscandelnotfound type=choicebox parent=listbox valign=middle posx=0 text="mediadbscandelnotfound" bordercol=bordercol bordersize=1 width=100% height=25>
+#<node name=autostart_playlist type=choicebox parent=listbox valign=middle posx=0 text="Autostart Playlist" bordercol=bordercol bordersize=1 width=100% height=25>
+#<node name=b1 text="OK" halign=center valign=middle bordercol=bgcol bordersize=0 posx=20% posy=90% width=150 height=30/>
+#<node name=b1 text="OK" halign=center valign=middle bordercol=okcol bordersize=2 posx=20% posy=95% width=150 height=2/>
+#<node name=b2 text="EXIT" halign=center valign=middle bordercol=bgcol bordersize=0 posx=45% posy=90% width=150 height=30/>
+#<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=2 posx=45% posy=95% width=150 height=2/>
+#<node name=b4 text="Network" halign=center valign=middle bordercol=bgcol bordersize=0 posx=70% posy=90% width=150 height=30/>
+#<node name=b4 text="Network" halign=center valign=middle bordercol=red bordersize=2 posx=70% posy=95% width=150 height=2/>
+
+<node name="buttonbar" posx=center posy="660" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node name="b1" picmem="skin/key_ok_70x40.png"   posx="50"  posy="665" width="70" height="40">
+<node name="b2" picmem="skin/key_exit_70x40.png" posx="125" posy="665" width="70" height="40">
+<node name="b3" text="Network" picmem="skin/key_red_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="205" posy="670" width="180" height="30">
 </screen>
 
 # audioplayer
@@ -89,14 +94,20 @@
 <node name=sort type=choicebox parent=listbox valign=middle posx=0 text="Sort" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=view type=choicebox parent=listbox valign=middle posx=0 text="View" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=autostart_playlist type=choicebox parent=listbox valign=middle posx=0 text="Autostart Playlist" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=b1 text="OK" halign=center valign=middle bordercol=bgcol bordersize=0 posx=15% posy=90% width=150 height=30/>
-<node name=b1 text="OK" halign=center valign=middle bordercol=okcol bordersize=2 posx=15% posy=95% width=150 height=2/>
-<node name=b2 text="EXIT" halign=center valign=middle bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
-<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=2 posx=35% posy=95% width=150 height=2/>
-<node name=b3 text="Screensaver" halign=center valign=middle bordercol=bgcol bordersize=0 posx=51% posy=90% width=250 height=30/>
-<node name=b3 text="Screensaver" halign=center valign=middle bordercol=red bordersize=2 posx=51% posy=95% width=250 height=2/>
-<node name=b4 text="Network" halign=center valign=middle bordercol=bgcol bordersize=0 posx=75% posy=90% width=150 height=30/>
-<node name=b4 text="Network" halign=center valign=middle bordercol=green bordersize=2 posx=75% posy=95% width=150 height=2/>
+#<node name=b1 text="OK" halign=center valign=middle bordercol=bgcol bordersize=0 posx=15% posy=90% width=150 height=30/>
+#<node name=b1 text="OK" halign=center valign=middle bordercol=okcol bordersize=2 posx=15% posy=95% width=150 height=2/>
+#<node name=b2 text="EXIT" halign=center valign=middle bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
+#<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=2 posx=35% posy=95% width=150 height=2/>
+#<node name=b3 text="Screensaver" halign=center valign=middle bordercol=bgcol bordersize=0 posx=51% posy=90% width=250 height=30/>
+#<node name=b3 text="Screensaver" halign=center valign=middle bordercol=red bordersize=2 posx=51% posy=95% width=250 height=2/>
+#<node name=b4 text="Network" halign=center valign=middle bordercol=bgcol bordersize=0 posx=75% posy=90% width=150 height=30/>
+#<node name=b4 text="Network" halign=center valign=middle bordercol=green bordersize=2 posx=75% posy=95% width=150 height=2/>
+
+<node name="buttonbar" posx=center posy="660" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node name="b1" picmem="skin/key_ok_70x40.png"   posx="50"  posy="665" width="70" height="40">
+<node name="b2" picmem="skin/key_exit_70x40.png" posx="125" posy="665" width="70" height="40">
+<node name="b3" text="Network" picmem="skin/key_red_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="205" posy="670" width="200" height="30">
+<node name="b4" text="Screensaver" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="395" posy="670" width="250" height="30">
 </screen>
 
 <screen name="mc_audioplayer_infobar" fontcol=fontcol fontsize=30 posx=center posy=610 width=100% height=110 bordersize=2 bgcol=0>
@@ -119,8 +130,13 @@
 <node name="b13" text="Repeat" picmem="skin/key_blue_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="1040" posy="60" width="200" height="30">
 </screen>
 
-<screen fontcol=fontcol name=playlistmenu hspace=30 vspace=30 fontsize=30 posx=center posy=center width=35% height=28% bordercol=bordercol bordersize=2 bgcol=bgcol>
-<node fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox posy=1 width=100% height=-35>
+<screen name="playlistmenu" fontcol="fontcol" posx="center" posy="center" width="500" height="300">
+<node name="titletext" text="Choice Menu" fontcol="black" fontsize="36" posx="center" posy="0" width="100%" height="50" valign="middle" halign="center" bordercol="titlebgcol" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node name="bg" bgcol="bgcol" posx="center" posy="center" width="484" height="200" hspace="10" vspace="10">
+<node parent="bg" name="listbox" type="listbox" scrollbar="auto" fontsize="28" fontcol="fontcol" bordercol="titlebgcol" posx="0" posy="0" width="100%" height="100%">
+<node name="buttonbar" posx="center" posy="250" width="100%" height="50" bordercol="titlebgcol" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node parent="buttonbar" name="b1" picmem="skin/key_ok_70x40.png"   posx="5"  posy="center" width="70" height="40">
+<node parent="buttonbar" name="b2" picmem="skin/key_exit_70x40.png" posx="75" posy="center" width="70" height="40">
 </screen>
 
 # pictureplayer
@@ -153,10 +169,15 @@
 <node name=picdenom type=choicebox parent=listbox valign=middle posx=0 text="Picdenom Mode" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=pichwdecode type=choicebox parent=listbox valign=middle posx=0 text="Pic HW-decode" bordercol=bordercol bordersize=1 width=100% height=25>
 
-<node name=b1 text="OK" halign=center valign=middle bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
-<node name=b1 text="OK" halign=center valign=middle bordercol=okcol bordersize=2 posx=35% posy=95% width=150 height=2/>
-<node name=b2 text="EXIT" halign=center valign=middle bordercol=bgcol bordersize=0 posx=55% posy=90% width=150 height=30/>
-<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=2 posx=55% posy=95% width=150 height=2/>
+#<node name=b1 text="OK" halign=center valign=middle bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
+#<node name=b1 text="OK" halign=center valign=middle bordercol=okcol bordersize=2 posx=35% posy=95% width=150 height=2/>
+#<node name=b2 text="EXIT" halign=center valign=middle bordercol=bgcol bordersize=0 posx=55% posy=90% width=150 height=30/>
+#<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=2 posx=55% posy=95% width=150 height=2/>
+
+<node name="buttonbar" posx=center posy="660" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node name="b1" picmem="skin/key_ok_70x40.png"   posx="50"  posy="665" width="70" height="40">
+<node name="b2" picmem="skin/key_exit_70x40.png" posx="125" posy="665" width="70" height="40">
+<node name="b3" text="Network" picmem="skin/key_red_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="205" posy="670" width="200" height="30">
 </screen>
 
 <screen fontcol=fontcol name=picscreen fontsize=30 posx=0 posy=0 width=100% height=100% bordersize=0>
@@ -167,7 +188,7 @@
 </screen>
 
 # global menus
-<screen name="mc_sort" fontcol=fontcol valign=bottom titlealign=center fontsize=40 title="MC VideoPlayer Sort Settings" posx=center posy=center width=40% height=40% bordercol=bordercol bordersize=1 bgcol=bgcol>
+<screen name="mc_sort1" fontcol=fontcol valign=bottom titlealign=center fontsize=40 title="MC VideoPlayer Sort Settings" posx=center posy=center width=40% height=40% bordercol=bordercol bordersize=1 bgcol=bgcol>
 <node bordercol=bordercol scrollbar=auto type=listbox posy=center posx=center name=listbox width=80% height=80%>
 <node name=alpha type=choicebox parent=listbox valign=middle posx=0 text="alpha" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=reversealpha type=choicebox parent=listbox valign=middle posx=0 text="reverse alpha" bordercol=bordercol bordersize=1 width=100% height=25>
@@ -175,6 +196,22 @@
 <node name=reversesize type=choicebox parent=listbox valign=middle posx=0 text="reverse size" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=date type=choicebox parent=listbox valign=middle posx=0 text="date" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=reversedate type=choicebox parent=listbox valign=middle posx=0 text="reverse date" bordercol=bordercol bordersize=1 width=100% height=25>
+</screen>
+
+<screen name="mc_sort" fontcol="fontcol" posx="center" posy="center" width="500" height="300">
+<node name="titletext" text="Sorting" fontcol="black" fontsize="36" posx="center" posy="0" width="100%" height="50" valign="middle" halign="center" bordercol="titlebgcol" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node name="bg" bgcol="bgcol" posx="center" posy="center" width="484" height="200" hspace="10" vspace="10">
+<node parent="bg" name="listbox" type="listbox" scrollbar="auto" fontsize="28" fontcol="fontcol" bordercol="titlebgcol" posx="0" posy="0" width="100%" height="100%">
+<node name=alpha type=choicebox parent=listbox valign=middle posx=0 text="alpha" bordercol=bordercol bordersize=1 width=100% height=25>
+<node name=reversealpha type=choicebox parent=listbox valign=middle posx=0 text="reverse alpha" bordercol=bordercol bordersize=1 width=100% height=25>
+<node name=size type=choicebox parent=listbox valign=middle posx=0 text="size" bordercol=bordercol bordersize=1 width=100% height=25>
+<node name=reversesize type=choicebox parent=listbox valign=middle posx=0 text="reverse size" bordercol=bordercol bordersize=1 width=100% height=25>
+<node name=date type=choicebox parent=listbox valign=middle posx=0 text="date" bordercol=bordercol bordersize=1 width=100% height=25>
+<node name=reversedate type=choicebox parent=listbox valign=middle posx=0 text="reverse date" bordercol=bordercol bordersize=1 width=100% height=25>
+
+<node name="buttonbar" posx="center" posy="250" width="100%" height="50" bordercol="titlebgcol" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node parent="buttonbar" name="b1" picmem="skin/key_ok_70x40.png"   posx="5"  posy="center" width="70" height="40">
+<node parent="buttonbar" name="b2" picmem="skin/key_exit_70x40.png" posx="75" posy="center" width="70" height="40">
 </screen>
 
 <screen name="mc_imdb" fontcol=fontcol valign=bottom titlealign=center fontsize=40 title="MC VideoPlayer Imdb Settings" posx=center posy=center width=40% height=40% bordercol=bordercol bordersize=1 bgcol=bgcol>

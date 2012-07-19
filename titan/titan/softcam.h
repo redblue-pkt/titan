@@ -87,7 +87,7 @@ void readmenu()
 			if(active == 1 && check ==1)
 			{
 				emuname = ostrcat(emuname, "  (", 1, 0);
-				emuname = ostrcat(emuname, _("running"), 1, 0);
+				emuname = ostrcat(emuname, _("started"), 1, 0);
 				emuname = ostrcat(emuname, ") (", 1, 0);
 				emuname = ostrcat(emuname, _("active"), 1, 0);
 				emuname = ostrcat(emuname, ")", 1, 0);
@@ -95,7 +95,7 @@ void readmenu()
 			else if(check ==1)
 			{
 				emuname = ostrcat(emuname, "  (", 1, 0);
-				emuname = ostrcat(emuname, _("running"), 1, 0);
+				emuname = ostrcat(emuname, _("started"), 1, 0);
 				emuname = ostrcat(emuname, ")", 1, 0);
 				emuname = ostrcat(emuname, ")", 1, 0);
 			}
@@ -160,7 +160,7 @@ void fillmenubox()
 							setselection = 1;
 						}
 					}
-					else if(strstr(node->text, "running") != 0)
+					else if(strstr(node->text, "started") != 0)
 					{
 						node->fontcol = convertcol("emurunningcol");
 						if(setselection == 0 || setselection == 1)
