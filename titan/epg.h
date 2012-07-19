@@ -1460,7 +1460,7 @@ int readepg(const char* filename)
 	FILE *fd = NULL;
 	struct channel *chnode = channel, *oldchnode = NULL;
 	struct epg* epgnode = NULL;
-	int ret = 0, len = 0;
+	int ret = 0, len = 0, count = 0;
 	time_t epgmaxsec = status.epgdays * 24 * 60 * 60;
 
 	fd = fopen(filename, "rb");
@@ -1474,7 +1474,7 @@ int readepg(const char* filename)
 
 	while(!feof(fd))
 	{
-		int serviceid = 0, transponderid = 0, eventid = 0, version = 0, count = 0;
+		int serviceid = 0, transponderid = 0, eventid = 0, version = 0;
 		time_t starttime = 0, endtime = 0;
 		int desclen = 0, desccomplen = 0, parentalrating = 0;
 		char* title = NULL, *subtitle = NULL, *desc = NULL;

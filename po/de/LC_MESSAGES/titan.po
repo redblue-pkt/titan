@@ -2402,3 +2402,8 @@ msgstr "Playliste laden"
 
 msgid "Edit Playlist"
 msgstr "Playliste bearbeiten"
+
+msgid "Aktivate new network config ?"
+msgstr "Aktiviere neue Netzwerk Einstellungen ?"
+
+
