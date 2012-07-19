@@ -722,53 +722,108 @@ void checkserial(char* input)
 {
 	if(input == NULL) return;
 	
-	char* authfile = NULL;
-	authfile = gethttp("atemio.dyndns.tv", "/svn/auth/trustlist", 80, NULL, HTTPAUTH, NULL, 0);
-
+	char* authlocal = NULL;
+	authlocal = ostrcat(authlocal, "AA04012716801323,AA040127990094", 1, 0);
 	int count = 0;
 	int i;
 	struct splitstr* ret = NULL;
 
-	if(authfile != NULL)
-		ret = strsplit(authfile, "\n", &count);
+	if(authlocal != NULL)
+		ret = strsplit(authlocal, ",", &count);
 
 	int max = count;
-
 	for(i = 0; i < max; i++)
 	{
-		int count1 = 0;
-		struct splitstr* ret1 = NULL;
-		ret1 = strsplit((&ret[i])->part, ",", &count1);	
-
-		if(ret1 != NULL && ostrcmp(input, (&ret1[0])->part) == 0)
+		if(ret != NULL && ostrcmp(input, &ret[i])->part) == 0)
 		{
 			status.security = 1;
-			char* cmd = NULL;
-			cmd = ostrcat(cmd, "/", 1, 0);
-			cmd = ostrcat(cmd, "usr", 1, 0);
-			cmd = ostrcat(cmd, "/", 1, 0);
-			cmd = ostrcat(cmd, "sbin", 1, 0);
-			cmd = ostrcat(cmd, "/", 1, 0);									
-			cmd = ostrcat(cmd, "inetd", 1, 0);
-			cmd = ostrcat(cmd, " ", 1, 0);
-			cmd = ostrcat(cmd, "&", 1, 0);
-			if(!checkprozess("inetd"))
-				system(cmd);
-
-			free(cmd); cmd = NULL;
-			if(!file_exist("/dev/ttyS0") == 1)
-				mknod("/dev/ttyS0", S_IFCHR | 0666, makedev(204, 40));
-			free(ret1); ret1 = NULL;
 			break;
 		}
+	}
+	free(ret); ret = NULL;
+	free(authlocal);
+	
+	if(status.security == 0)
+	{
+		char* authfile = NULL;
+		authfile = gethttp("atemio.dyndns.tv", "/svn/auth/trustlist", 80, NULL, HTTPAUTH, NULL, 0);
+	
+		int count1 = 0;
+		struct splitstr* ret1 = NULL;
+	
+		if(authfile != NULL)
+			ret1 = strsplit(authfile, "\n", &count1);
+	
+		max = count1;
+	
+		for(i = 0; i < max; i++)
+		{
+			int count2 = 0;
+			struct splitstr* ret2 = NULL;
+			ret2 = strsplit((&ret1[i])->part, ",", &count2);	
+	
+			if(ret2 != NULL && ostrcmp(input, (&ret2[0])->part) == 0)
+			{
+				status.security = 1;
+				break;
+			}
+			free(ret2); ret2 = NULL;
+		}
+		free(ret1); ret1 = NULL;
+		free(authfile);
+	}
+
+	if(status.security == 1)
+	{
+		char* blackfile = NULL;
+		blackfile = gethttp("atemio.dyndns.tv", "/svn/auth/blacklist", 80, NULL, HTTPAUTH, NULL, 0);
+	
+		int count3 = 0;
+		struct splitstr* ret3 = NULL;
+	
+		if(blackfile != NULL)
+			ret3 = strsplit(blackfile, "\n", &count3);
+	
+		max = count3;
+	
+		for(i = 0; i < max; i++)
+		{
+			int count4 = 0;
+			struct splitstr* ret4 = NULL;
+			ret4 = strsplit((&ret3[i])->part, ",", &count4);	
+	
+			if(ret4 != NULL && ostrcmp(input, (&ret4[0])->part) == 0)
+			{
+				status.security = 0;
+				break;
+			}
+			free(ret4); ret4 = NULL;
+		}
+		free(ret3); ret3 = NULL;
+		free(blackfile);
+	}
+
+	if(status.security == 1)
+	{
+		char* cmd = NULL;
+		cmd = ostrcat(cmd, "/", 1, 0);
+		cmd = ostrcat(cmd, "usr", 1, 0);
+		cmd = ostrcat(cmd, "/", 1, 0);
+		cmd = ostrcat(cmd, "sbin", 1, 0);
+		cmd = ostrcat(cmd, "/", 1, 0);									
+		cmd = ostrcat(cmd, "inetd", 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, "&", 1, 0);
+		if(!checkprozess("inetd"))
+			system(cmd);
+
+		free(cmd); cmd = NULL;
+		if(!file_exist("/dev/ttyS0") == 1)
+			mknod("/dev/ttyS0", S_IFCHR | 0666, makedev(204, 40));
 		free(ret1); ret1 = NULL;
 	}
 	
-//	if(checkbox("ATEMIO510") == 1)
-		killnet();
-	
-	free(ret); ret = NULL;
-	free(authfile);
+	killnet();
 }
 
 int checkprozess(char* input)
