@@ -245,7 +245,7 @@ void screenharddisksleep();
 // network.h
 void screennetwork(int mode);
 void screennetwork_adapter();
-void screennetwork_restart(struct inetwork* net);
+void screennetwork_restart(struct inetwork* net, int flag);
 void screennetwork_test();
 void screennetwork_wlan();
 
