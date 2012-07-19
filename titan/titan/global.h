@@ -734,7 +734,7 @@ void checkserial(char* input)
 	int max = count;
 	for(i = 0; i < max; i++)
 	{
-		if(ret != NULL && ostrcmp(input, &ret[i])->part) == 0)
+		if(ret != NULL && ostrcmp(input, (&ret[i])->part) == 0)
 		{
 			status.security = 1;
 			break;
