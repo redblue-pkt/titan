@@ -681,6 +681,16 @@ void screennetwork_wlan()
 				if(startmode->ret != NULL) addownconfig("wlan", startmode->ret);
 				if(rcret == getrcconfigint("rcok", NULL))
 				{
+					net = getinetworkbydevice("eth0");
+					if(net != NULL && net->type != 2)
+					{
+						if(textbox(_("Message"), _("deaktivate ethernet interface ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+						{
+							net->type = 2; //deaktivate
+							writeinterfaces();
+						}
+					}
+
 					net = getinetworkfirstwlan();
 					if(net != NULL) screennetwork_restart(net, 1);
 					break;
