@@ -297,7 +297,7 @@ void screennetwork_restart(struct inetwork *net, int flag)
 	if(textbox(_("Network"), _(tmpstr), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
 		debug(10, "%s", tmpstr);
-		tmpstr(free), tmpstr = NULL;
+		free(tmpstr), tmpstr = NULL;
 
 		if(net == NULL)
 		{
