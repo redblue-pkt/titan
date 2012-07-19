@@ -83,13 +83,13 @@ void screenmc_audioplayer_settings()
 //			addconfigscreencheck("mc_ap_repeat", repeat, NULL);
 			break;
 		}
-		else if(rcret == getrcconfigint("rcgreen", NULL))
+		else if(rcret == getrcconfigint("rcred", NULL))
 		{
 			struct skin* screen = getscreen("networkmenu");
 			menu(screen);
 			drawscreen(mc_audioplayer_settings, 0, 0);
 		}
-		else if(rcret == getrcconfigint("rcred", NULL))
+		else if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			screenscreensaveradjust();
 			drawscreen(mc_audioplayer_settings, 0, 0);
