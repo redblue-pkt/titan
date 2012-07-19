@@ -86,6 +86,12 @@ void setdefaults()
 	status.rightoffset = getconfigint("fbrightoffset", NULL);
 	status.topoffset = getconfigint("fbtopoffset", NULL);
 	status.bottomoffset = getconfigint("fbbottomoffset", NULL);
+	status.markcol = convertcol("markcol");
+	status.listboxselectcol = convertcol("listboxselect");
+	status.filelistselectcol = convertcol("filelistselect");
+	status.selectpic = getskinconfig("selectpic", NULL);
+
+	if(status.filelistselectcol == 0) status.filelistselectcol = status.listboxselectcol;
 	
 	status.bgpic = getskinconfig("bgpic", NULL);
 	if(status.bgpic != NULL)

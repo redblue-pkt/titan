@@ -1249,6 +1249,11 @@ struct status
 	int mediadbthreadstatus;
 	//hold time for save mediadb in scan
 	time_t mediadbsavetime;
+	//colors / pic for selection
+	long markcol;
+	long filelistselectcol;
+	long listboxselectcol;
+	char* selectpic;
 } status;
 
 struct fb
