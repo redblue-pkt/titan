@@ -290,6 +290,9 @@ void screenmc_videoplayer()
 					int sort = screenmc_sort();
 					debug(50, "rcred: tmpsort=%d", sort);
 
+					// fixt grey if sorting >10s
+					drawscreen(skin, 0, 0);
+	
 					addconfiginttmp("dirsort", sort);
 					mc_changeview(tmpview, filelist, apskin);
 
