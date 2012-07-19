@@ -2456,7 +2456,7 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 	{
 		charcount++;
 		if(markpos == charcount)
-			color = convertcol("markcol");
+			color = status.markcol;
 		else
 			color = tmpcol;
 
@@ -3218,13 +3218,11 @@ int calclistbox(struct skin* node)
 	debug(1000, "in");
 	struct skin* child = NULL, *last = NULL, *found = NULL;
 	int selcol = 0;
-	int markcol = convertcol("markcol");
-	char* selectpic = getskinconfig("selectpic", NULL);
 
 	if(node->type == FILELIST)
-		selcol = convertcol("filelistselect");
+		selcol = status.filelistselectcol;
 	else
-		selcol = convertcol("listboxselect");
+		selcol = status.listboxselectcol;
 
 	node->poscount = 0;
 	if(node->aktline == 0) node->aktline = 1;
@@ -3291,12 +3289,12 @@ int calclistbox(struct skin* node)
 		if(status.listboxselecttype == 3)
 		{
 			changeselectpic(child, NULL);
-			if(child->bgcol == markcol)
+			if(child->bgcol == status.markcol)
 				child->bgcol = child->bordercol;
 		}
-		if(child->bgcol == selcol || child->bgcol == markcol) //&& status.listboxselecttype == 1)
+		if(child->bgcol == selcol || child->bgcol == status.markcol) //&& status.listboxselecttype == 1)
 			child->bgcol = child->bordercol;
-		if(child->fontcol == selcol || child->fontcol == markcol) //&& status.listboxselecttype == 2)
+		if(child->fontcol == selcol || child->fontcol == status.markcol) //&& status.listboxselecttype == 2)
 			child->fontcol = child->bordercol;
 
 		child = child->next;
@@ -3316,14 +3314,14 @@ int calclistbox(struct skin* node)
 			found->bordersize = 1;
 			if(status.markmodus > 0)
 			{
-				found->bordercol = markcol;
+				found->bordercol = status.markcol;
 				int i = 0;
 				struct skin* tmpskin = found;
 				for(i = 0; i < status.moveblockcount; i++)
 				{
 					tmpskin = tmpskin->next;
 					if(tmpskin != NULL)
-						tmpskin->bordercol = markcol;
+						tmpskin->bordercol = status.markcol;
 					else
 						break;
 				}
@@ -3333,7 +3331,7 @@ int calclistbox(struct skin* node)
 		}
 		else if(status.listboxselecttype == 1)
 		{
-			if(found->bgcol != selcol && found->bgcol != markcol)
+			if(found->bgcol != selcol && found->bgcol != status.markcol)
 			{
 				found->bordercol = found->bgcol;
 				int i = 0;
@@ -3349,14 +3347,14 @@ int calclistbox(struct skin* node)
 			}
 			if(status.markmodus > 0)
 			{
-				found->bgcol = markcol;
+				found->bgcol = status.markcol;
 				int i = 0;
 				struct skin* tmpskin = found;
 				for(i = 0; i < status.moveblockcount; i++)
 				{
 					tmpskin = tmpskin->next;
 					if(tmpskin != NULL)
-						tmpskin->bgcol = markcol;
+						tmpskin->bgcol = status.markcol;
 					else
 						break;
 				}
@@ -3366,7 +3364,7 @@ int calclistbox(struct skin* node)
 		}
 		else if(status.listboxselecttype == 2)
 		{
-			if(found->fontcol != selcol && found->fontcol != markcol)
+			if(found->fontcol != selcol && found->fontcol != status.markcol)
 			{
 				found->bordercol = found->fontcol;
 				int i = 0;
@@ -3382,14 +3380,14 @@ int calclistbox(struct skin* node)
 			}
 			if(status.markmodus > 0)
 			{
-				found->fontcol = markcol;
+				found->fontcol = status.markcol;
 				int i = 0;
 				struct skin* tmpskin = found;
 				for(i = 0; i < status.moveblockcount; i++)
 				{
 					tmpskin = tmpskin->next;
 					if(tmpskin != NULL)
-						tmpskin->fontcol = markcol;
+						tmpskin->fontcol = status.markcol;
 					else
 						break;
 				}
@@ -3402,7 +3400,7 @@ int calclistbox(struct skin* node)
 			if(status.markmodus > 0)
 			{
 				found->bordersize = 1;
-				found->bordercol = markcol;
+				found->bordercol = status.markcol;
 				int i = 0;
 				struct skin* tmpskin = found;
 				for(i = 0; i < status.moveblockcount; i++)
@@ -3411,14 +3409,14 @@ int calclistbox(struct skin* node)
 					if(tmpskin != NULL)
 					{
 						tmpskin->bordersize = 1;
-						tmpskin->bordercol = markcol;
+						tmpskin->bordercol = status.markcol;
 					}
 					else
 						break;
 				}
 			}
 			else
-				changeselectpic(found, selectpic);
+				changeselectpic(found, status.selectpic);
 		}
 
 		if(node->aktpage == -1)
