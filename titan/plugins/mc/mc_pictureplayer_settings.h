@@ -83,7 +83,7 @@ void screenmc_pictureplayer_settings()
 		{
 			struct skin* screen = getscreen("networkmenu");
 			menu(screen);
-			drawscreen(mc_audioplayer_settings, 0, 0);
+			drawscreen(mc_pictureplayer_settings, 0, 0);
 		}
   }
 
