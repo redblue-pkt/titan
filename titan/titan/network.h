@@ -285,13 +285,20 @@ void screennetwork(int mode)
 	textbox(_("Network"), _("comming soon..."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 }
 
-void screennetwork_restart(struct inetwork *net)
+void screennetwork_restart(struct inetwork *net, int flag)
 {
 	char* tmpstr = NULL, *cmd = NULL;
 
-	if(textbox(_("Network"), _("Restart Network ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+	if(flag == 0)
+		tmpstr = ostrcat("Restart Network ?", NULL, 0, 0);
+	else
+		tmpstr = ostrcat("Aktivate new network config ?", NULL, 0, 0);
+	
+	if(textbox(_("Network"), _(tmpstr), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
-		debug(10, "restart network");
+		debug(10, "%s", tmpstr);
+		tmpstr(free), tmpstr = NULL;
+
 		if(net == NULL)
 		{
 			net = inetwork;
@@ -492,7 +499,7 @@ void screennetwork_adapterext(int mode, char* interface)
 		net->type = tmp_type;
 
 		writeinterfaces();
-		screennetwork_restart(net);
+		screennetwork_restart(net, 1);
 	}
 
 	delownerrc(network);
@@ -675,7 +682,7 @@ void screennetwork_wlan()
 				if(rcret == getrcconfigint("rcok", NULL))
 				{
 					net = getinetworkfirstwlan();
-					if(net != NULL) screennetwork_restart(net);
+					if(net != NULL) screennetwork_restart(net, 1);
 					break;
 				}
 			}
