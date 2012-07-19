@@ -723,7 +723,7 @@ void checkserial(char* input)
 	if(input == NULL) return;
 	
 	char* authlocal = NULL;
-	authlocal = ostrcat(authlocal, "AA04012716801323,AA040127990094", 1, 0);
+	authlocal = ostrcat(authlocal, "AA040127284876,AA04012716801323,AA040127990094", 1, 0);
 	int count = 0;
 	int i;
 	struct splitstr* ret = NULL;
