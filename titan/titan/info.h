@@ -45,9 +45,9 @@ void screensystem_info(int mode)
 
 		changetitle(systeminfo, _("Infos"));
 
-		tmpstr1 = command("cat /etc/motd");
+		tmpstr1 = readfiletomem("/etc/motd");
 		if(tmpstr1 != NULL) tmpstr2 = strstr(tmpstr1, "wElc0me");
-		tmpstr3 = command("cat /etc/imageinfo");
+		tmpstr3 = readfiletomem("/etc/imageinfo");
 		if(tmpstr2 == NULL)
 			tmpstr = ostrcat(tmpstr3, NULL, 1, 0);
 		else
