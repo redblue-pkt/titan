@@ -94,6 +94,7 @@ void mc_main()
 	status.hangtime = 99999;
 	int rcret = 0, ret = 0;
 	writevfd("Mediacenter");
+	resettvpic();
 
 	debug(50, "setfbtransparent 255");
 	setfbtransparent(255);
