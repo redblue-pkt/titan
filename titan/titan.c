@@ -722,7 +722,7 @@ firstwizzardstep1:
 		}
 
 		char* msg = NULL;
-		msg = readfiletomem("/etc/imageinfo");
+		msg = readfiletomem("/etc/imageinfo", 0);
 		textbox(_("Info"), _(msg), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 680, 30, 0);
 		free(msg); msg = NULL;
 		
