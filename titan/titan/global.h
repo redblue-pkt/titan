@@ -514,56 +514,6 @@ int checkflash()
 	free(tmpstr), tmpstr = NULL;	
 	return 1;
 }
-
-void getserial()
-{
-	char* cpu = NULL;	
-	cpu = getcpuid();
-	if(cpu == NULL) return;
-	
-	char* cpuout = NULL;
-	cpuout = ostrcat(cpuout, cpu, 1, 0);
-
-	char* tmpstr = NULL;
-	tmpstr = ostrcat("Board-ID SerialNr: ", cpu, 0, 0);
-	writesys("/tmp/atemio.log", tmpstr, 1);
-	
-	char* cmd = NULL;
-	cmd = ostrcat(cmd, "/var/backup/atemio.", 1, 0);
-	cmd = ostrcat(cmd, cpu, 1, 0);
-	cmd = ostrcat(cmd, ".log", 1, 0);
-	writesys(cmd, tmpstr, 1);
-	free(tmpstr); tmpstr = NULL;
-	free(cmd); cmd = NULL;	
-	
-	cpu = string_replace("AA040127", "4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", cpu, 1);
-	cpu = ostrcat(cpu, "5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662", 1, 0);
-
-	cmd = ostrcat(cmd, "/", 1, 0);
-	cmd = ostrcat(cmd, "var", 1, 0);
-	cmd = ostrcat(cmd, "/", 1, 0);
-	cmd = ostrcat(cmd, "dev", 1, 0);	
-	cmd = ostrcat(cmd, "/", 1, 0);
-	cmd = ostrcat(cmd, "dvb", 1, 0);	
-	cmd = ostrcat(cmd, "/", 1, 0);
-	cmd = ostrcat(cmd, "adapter0", 1, 0);
-	cmd = ostrcat(cmd, "/", 1, 0);
-	cmd = ostrcat(cmd, "dts0", 1, 0);
-	writesys(cmd, cpu, 1);
-	free(cmd), cmd = NULL;
-
-	char* msg = NULL;
-	msg = ostrcat(_("For next OnlineUpdate please contact Atemio and send this Serial Number\nand your Atemio Serial Number !!\n\nBoard-ID SerialNr:"), " ", 0, 0);
-	msg = ostrcat(msg, cpuout, 1, 0);
-	msg = ostrcat(msg, "\n\n", 1, 0);
-	msg = ostrcat(msg, _("Email  		info@atemio.de"), 1, 0);
-	textbox(_("Info"), _(msg), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 400, 0, 1);	
-	free(msg), msg = NULL;
-
-	free(cpuout); cpuout = NULL;
-	free(cpu); cpu = NULL;
-	free(tmpstr); tmpstr = NULL;
-}
 	
 char* getcpuid()
 {
