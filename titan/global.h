@@ -517,15 +517,6 @@ int checkflash()
 
 void getserial()
 {
-/*
-	if(checkbox("ATEMIO510") == 0)
-	{
-		status.security = 0;
-		status.expertmodus = 0;
-		textbox(_("Info"), _("This is a advertising Image !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 400, 0, 0);	
-		return;
-	}
-*/	
 	char* cpu = NULL;	
 	cpu = getcpuid();
 	if(cpu == NULL) return;
@@ -569,10 +560,6 @@ void getserial()
 	textbox(_("Info"), _(msg), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 400, 0, 1);	
 	free(msg), msg = NULL;
 
-	//if(status.security == 0)
-	//{
-	//	checkserial(cpuout);
-	//}
 	free(cpuout); cpuout = NULL;
 	free(cpu); cpu = NULL;
 	free(tmpstr); tmpstr = NULL;
@@ -581,23 +568,14 @@ void getserial()
 char* getcpuid()
 {
 	char* serial = NULL;
-/*
-	if(checkbox("ATEMIO510") == 0)
-	{
-		status.security = 0;
-		status.expertmodus = 0;
-		return serial;
-	}
-*/
 	char* buffer = NULL;
 	struct inetwork* net = getinetworkbydevice("eth0");
-	char* tmpstr = NULL;
 
 	if(net != NULL)
 	{
-		int mac_int;
-		int mac1_int;
-		int mac2_int;
+		int mac_int = 0;
+		int mac1_int = 0;
+		int mac2_int = 0;
 	
 		char* mac = NULL;
 		mac = ostrcat(mac, net->mac, 1, 0);
@@ -605,7 +583,8 @@ char* getcpuid()
 		int count = 0;
 		char* mac1 = NULL;
 		char* mac2 = NULL;
-		//char* tmpstr = NULL;
+		char* tmpstr = NULL;
+
 		tmpstr = ostrcat(mac, NULL, 0, 0);
 
 		struct splitstr* ret = NULL;
@@ -652,29 +631,23 @@ char* getcpuid()
 		free(buffer);
 	}
 
-	char* cmd1 = NULL;
-	cmd1 = ostrcat(cmd1, "/", 1, 0);
-	cmd1 = ostrcat(cmd1, "var", 1, 0);
-	cmd1 = ostrcat(cmd1, "/", 1, 0);
-	cmd1 = ostrcat(cmd1, "dev", 1, 0);	
-	cmd1 = ostrcat(cmd1, "/", 1, 0);
-	cmd1 = ostrcat(cmd1, "dvb", 1, 0);	
-	cmd1 = ostrcat(cmd1, "/", 1, 0);
-	cmd1 = ostrcat(cmd1, "adapter0", 1, 0);
-	cmd1 = ostrcat(cmd1, "/", 1, 0);
-	cmd1 = ostrcat(cmd1, "dts0", 1, 0);
+	char* filename = NULL;
+	filename = ostrcat(filename, "/", 1, 0);
+	filename = ostrcat(filename, "var", 1, 0);
+	filename = ostrcat(filename, "/", 1, 0);
+	filename = ostrcat(filename, "dev", 1, 0);
+	filename = ostrcat(filename, "/", 1, 0);
+	filename = ostrcat(filename, "dvb", 1, 0);
+	filename = ostrcat(filename, "/", 1, 0);
+	filename = ostrcat(filename, "adapter0", 1, 0);
+	filename = ostrcat(filename, "/", 1, 0);
+	filename = ostrcat(filename, "dts0", 1, 0);
 
-	if(file_exist(cmd1) == 1)
+	if(file_exist(filename) == 1)
 	{
-		char* cmd = NULL;
-		cmd = ostrcat(cmd, "cat", 1, 0);
-		cmd = ostrcat(cmd, " ", 1, 0);
-		cmd = ostrcat(cmd, cmd1, 1, 0);
-				
 		char* serialtmp = NULL;
-		tmpstr = command(cmd);
-		serialtmp = string_newline(tmpstr);
-		free(cmd); cmd = NULL;
+		serialtmp = readsys(filename, 1);
+		serialtmp = string_newline(serialtmp);
 
 		serialtmp = string_replace("4567846556789906532345642234567876412455678976563421345678987542112345679090087543212345678", "AA040127", serialtmp, 1);
 		serialtmp = string_replace("5678420037256789300221667894725456729330004882615552738549732529047625463784500038226662", "", serialtmp, 1);
@@ -683,9 +656,11 @@ char* getcpuid()
 			destroy();
 			exit(100);
 		}
+
+		free(serialtmp); serialtmp = NULL;
 	}
-	free(tmpstr); tmpstr = NULL;
-	free(cmd1); cmd1 = NULL;
+
+	free(filename); filename = NULL;
 	return string_newline(serial);
 }
 
