@@ -616,23 +616,9 @@ char* gettimeinfovar()
 	return command(cmd);
 }
 
-void checkserial(char* input, char* buf)
+char* getserialpw()
 {
-	char* filename = "xxxxxxxxxxxxx", *pw = NULL;
-	unsigned char* authbuf = NULL;
-	int count = 0, i = 0;
-	off64_t len = 0;
-	struct splitstr* ret = NULL;
-
-	if(input == NULL) return;
-
-	if(buf == NULL)
-	{
-		buf = readfiletomem(filename, 0);
-		len = getfilesize(filename);
-	}
-	else
-		len = strlen(buf);
+	char* pw = NULL;
 
 	pw = ostrcat(pw, "/", 1, 0);
 	pw = ostrcat(pw, "?", 1, 0);
@@ -649,13 +635,66 @@ void checkserial(char* input, char* buf)
 	pw = ostrcat(pw, "9", 1, 0);
 	pw = ostrcat(pw, "}", 1, 0);
 
+	return pw;
+}
+
+int writeserial(char* cpuid)
+{
+	debug(1000, "in");
+
+	char* filename = "xxxxxxxxxxxxxxxxxxx", *pw = NULL;
+	unsigned char* buf = NULL;
+	FILE *fd = NULL;
+	int ret = 0;
+
+	pw = getserialpw();
+	buf = oencrypt(pw, cpuid, strlen(cpuid));
+	free(pw); pw = NULL;
+	if(buf == NULL) return 1;
+
+	fd = fopen(filename, "wbt");
+	if(fd == NULL)
+	{
+		perr("can't open %s", filename);
+		free(buf);
+		return 1;
+	}
+
+	ret += fwrite(buf, strlen(cpuid) * 2, 1, fd);
+
+	free(buf); buf = NULL;
+	fclose(fd);
+
+	debug(1000, "out");
+
+	if(ret != 1) return 1;
+	return 0;
+}
+
+void checkserial(char* input)
+{
+	char* filename = "xxxxxxxxxxxxx", *pw = NULL;
+	unsigned char* authbuf = NULL;
+	int count = 0, i = 0;
+	off64_t len = 0;
+	struct splitstr* ret = NULL;
+
+	if(input == NULL) return;
+
+	buf = readfiletomem(filename, 0);
+	len = getfilesize(filename);
+
+	pw = getserialpw();
+
 	authbuf = odecrypt(pw, buf, len);
 	if(authbuf == NULL)
 	{
+		free(buf);
 		free(authbuf);
 		free(pw);
 		return;
 	}
+	free(buf); buf = NULL;
 	free(pw); pw = NULL;
 
 	//Authfile check
@@ -666,6 +705,7 @@ void checkserial(char* input, char* buf)
 		if(ret != NULL && ostrcmp(input, (&ret[i])->part) == 0)
 		{
 			status.security = 1;
+			if(count > 1) writeserial(input);
 			break;
 		}
 	}
@@ -715,6 +755,9 @@ void checkserial(char* input, char* buf)
 
 		setskinnodeslocked(0);
 	}
+
+	if(status.security == 0)
+		unlink(filename);
 	
 	killnet();
 }

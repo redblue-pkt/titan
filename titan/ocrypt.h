@@ -148,7 +148,7 @@ unsigned char* oencrypt(char* pw, char* buf, int len)
 
 	if(pw == NULL || buf == NULL) return NULL;
 
-	outbuf = calloc(1, len * 2);
+	outbuf = calloc(1, (len * 2) + 1);
 	if(outbuf == NULL)
 	{
 		err("no mem");
@@ -158,7 +158,7 @@ unsigned char* oencrypt(char* pw, char* buf, int len)
 	strcpy((char*)oc.cle, "abcdefghijklmnopqrstuvwxyz012345");
 	strcpy((char*)oc.cle, pw);
 
-	while(pos <= len)
+	while(pos < len)
 	{
 		oc.c = buf[pos];
 
@@ -189,7 +189,7 @@ unsigned char* odecrypt(char* pw, char* buf, int len)
 
 	if(pw == NULL || buf == NULL) return NULL;
 
-	outbuf = calloc(1, len / 2);
+	outbuf = calloc(1, (len / 2) + 1);
 	if(outbuf == NULL)
 	{
 		err("no mem");
@@ -199,7 +199,7 @@ unsigned char* odecrypt(char* pw, char* buf, int len)
 	strcpy((char*)oc.cle, "abcdefghijklmnopqrstuvwxyz012345");
 	strcpy((char*)oc.cle, pw);
 
-	while(pos <= len)
+	while(pos < len)
 	{
 		oc.d = buf[pos];
 		oc.e = buf[pos + 1];

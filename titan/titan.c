@@ -198,6 +198,7 @@ struct mediadbcache* mediadbcache[MEDIADBCACHEMAX] = {NULL};
 #include "mediadbsettings.h"
 #include "colorpicker.h"
 #include "ocrypt.h"
+#include "serial.h"
 
 //#include "cardreader.h"
 //#include "sci.h"
@@ -497,7 +498,7 @@ int main(int argc, char *argv[])
 
 		char* tmpstr2 = NULL;
 		tmpstr2 = getcpuid();
-		checkserial(tmpstr2, NULL);
+		checkserial(tmpstr2);
 		free(tmpstr2), tmpstr2 = NULL;
 	}
 	else
