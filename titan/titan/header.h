@@ -8,6 +8,10 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//ocrypt.h
+unsigned char* oencrypt(char* pw, char* buf, int len);
+unsigned char* odecrypt(char* pw, char* buf, int len);
+
 //mediadbcache.h
 struct mediadb* getmediadb(char* path, char* file, int flag);
 
@@ -522,6 +526,7 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+char* stringreplacecharonce(char *str, char c1, char c2);
 int getrandom(int max);
 int clearbit(int value, int bitpos);
 int checkbit(int value, int bitpos);
@@ -599,13 +604,12 @@ int getvol();
 char* stringreplacechar(char *str, char c1, char c2);
 char* getcpuid();
 void get_ipk_update();
-void getserial();
 char* string_decode(char* input, int flag);
 char* string_striptags(char* filename);
 char* string_resub(char* str, char* str2, char* input, int dir);
 int cmpfilenameext(char* filename, char* ext);
 void killnet();
-void checkserial(char* input);
+void checkserial(char* input, char* buf);
 int checkprozess(char* input);
 struct regex* regexstruct(char* regex, char* str);
 void freeregexstruct(struct regex* node);
