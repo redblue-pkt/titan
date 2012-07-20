@@ -24,13 +24,6 @@ void screensystem_update(int mode)
 
 	if (mode == 0)
 	{	
-/*
-		char* lokalkey = NULL;
-		lokalkey = getcpuid();
-		atemiokeylist = wget http://gib-key-trustliste.de/keyliste
-		if(ostrstr(atemiokeylist, lokalkey) == NULL)
-*/
-
 		char* cmd = NULL;
 		cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
 		cmd = ostrcat(cmd, auth, 1, 0);	
