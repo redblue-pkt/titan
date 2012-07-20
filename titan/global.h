@@ -618,7 +618,7 @@ char* gettimeinfovar()
 
 void checkserial(char* input, char* buf)
 {
-	char* filename = "xxxxxxxxxxxxx";
+	char* filename = "xxxxxxxxxxxxx", *pw = NULL;
 	unsigned char* authbuf = NULL;
 	int count = 0, i = 0;
 	off64_t len = 0;
@@ -634,12 +634,29 @@ void checkserial(char* input, char* buf)
 	else
 		len = strlen(buf);
 
-	authbuf = odecrypt("password", buf, len);
+	pw = ostrcat(pw, "/", 1, 0);
+	pw = ostrcat(pw, "?", 1, 0);
+	pw = ostrcat(pw, "*", 1, 0);
+	pw = ostrcat(pw, "x", 1, 0);
+	pw = ostrcat(pw, "4", 1, 0);
+	pw = ostrcat(pw, "(", 1, 0);
+	pw = ostrcat(pw, "$", 1, 0);
+	pw = ostrcat(pw, "!", 1, 0);
+	pw = ostrcat(pw, "r", 1, 0);
+	pw = ostrcat(pw, "%", 1, 0);
+	pw = ostrcat(pw, "6", 1, 0);
+	pw = ostrcat(pw, "=", 1, 0);
+	pw = ostrcat(pw, "9", 1, 0);
+	pw = ostrcat(pw, "}", 1, 0);
+
+	authbuf = odecrypt(pw, buf, len);
 	if(authbuf == NULL)
 	{
 		free(authbuf);
+		free(pw);
 		return;
 	}
+	free(pw); pw = NULL;
 
 	//Authfile check
 	ret = strsplit((char*)authbuf, "\n", &count);
