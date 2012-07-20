@@ -609,7 +609,7 @@ char* string_striptags(char* filename);
 char* string_resub(char* str, char* str2, char* input, int dir);
 int cmpfilenameext(char* filename, char* ext);
 void killnet();
-void checkserial(char* input, char* buf);
+void checkserial(char* input);
 int checkprozess(char* input);
 struct regex* regexstruct(char* regex, char* str);
 void freeregexstruct(struct regex* node);
