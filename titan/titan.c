@@ -494,9 +494,10 @@ int main(int argc, char *argv[])
 			destroy();
 			exit(100);
 		}
+
 		char* tmpstr2 = NULL;
 		tmpstr2 = getcpuid();
-		checkserial(tmpstr2);
+		checkserial(tmpstr2, NULL);
 		free(tmpstr2), tmpstr2 = NULL;
 	}
 	else
@@ -754,8 +755,8 @@ firstwizzardstep1:
 	ret = setcontrast(getconfigint("vs_contrast", NULL));
 	ret = settint(getconfigint("vs_tint", NULL));
 	
-	//set skinentrys locked
 #ifndef SIMULATE
+	//set skinentrys locked
 	if(status.security == 0) setskinnodeslocked(1);	
 #endif
 
@@ -785,8 +786,6 @@ firstwizzardstep1:
 	//start ca slot watching threads
 	castart();
 #endif
-	//check skin nodes locked
-	addtimer(&ckeckskinnodeslockedthread, START, 1000, 1, NULL, NULL, NULL);
 	//check if box starts from a record
 	addtimer(&checkboxstartthread, START, 1000, 1, NULL, NULL, NULL);
 	//check kill net (security)

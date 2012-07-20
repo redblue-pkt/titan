@@ -326,14 +326,6 @@ void screennetwork_restart(struct inetwork *net, int flag)
 		}
 		textbox(_("Restart Network"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 		free(tmpstr); tmpstr = NULL;
-
-		if(status.security == 0)
-		{
-			char* tmpstr2 = NULL;
-			tmpstr2 = getcpuid();
-			checkserial(tmpstr2);
-			free(tmpstr2), tmpstr2 = NULL;
-		}
 	}
 }
 

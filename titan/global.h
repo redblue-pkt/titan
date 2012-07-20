@@ -616,102 +616,70 @@ char* gettimeinfovar()
 	return command(cmd);
 }
 
-void checkserial(char* input)
+void checkserial(char* input, char* buf)
 {
-	if(input == NULL) return;
-printf("10\n");	
-	char* authlocal = NULL;
-	authlocal = ostrcat(authlocal, "AA040127284876,AA04012716801323,AA040127990094", 1, 0);
-	int count = 0;
-	int i;
+	char* filename = "xxxxxxxxxxxxx";
+	unsigned char* authbuf = NULL;
+	int count = 0, i = 0;
+	off64_t len = 0;
 	struct splitstr* ret = NULL;
 
-	if(authlocal != NULL)
-		ret = strsplit(authlocal, ",", &count);
+	if(input == NULL) return;
 
-	int max = count;
-	for(i = 0; i < max; i++)
+	if(buf == NULL)
 	{
-printf("12\n");
+		buf = readfiletomem(filename, 0);
+		len = getfilesize(filename);
+	}
+	else
+		len = strlen(buf);
+
+	authbuf = odecrypt("password", buf, len);
+	if(authbuf == NULL)
+	{
+		free(authbuf);
+		return;
+	}
+
+	//Authfile check
+	ret = strsplit((char*)authbuf, "\n", &count);
+	for(i = 0; i < count; i++)
+	{
+		(&ret[i])->part = stringreplacecharonce((&ret[i])->part, ',', '\0');
 		if(ret != NULL && ostrcmp(input, (&ret[i])->part) == 0)
 		{
-printf("13\n");		
 			status.security = 1;
 			break;
 		}
 	}
 	free(ret); ret = NULL;
-	free(authlocal);
+	free(authbuf);
 	
-	if(status.security == 0)
+	//Blacklist check
+	if(status.security == 1)
 	{
-printf("14\n");	
-		char* authfile = NULL;
-		authfile = gethttp("atemio.dyndns.tv", "/svn/auth/trustlist", 80, NULL, HTTPAUTH, NULL, 0);
+		char* blackfile = NULL;
+		blackfile = gethttp("atemio.dyndns.tv", "/svn/auth/blacklist", 80, NULL, HTTPAUTH, NULL, 0);
 	
-		int count1 = 0;
-		struct splitstr* ret1 = NULL;
+		count = 0;
+		if(blackfile != NULL)
+			ret = strsplit(blackfile, "\n", &count);
 	
-		if(authfile != NULL)
-			ret1 = strsplit(authfile, "\n", &count1);
-	
-		max = count1;
-	
-		for(i = 0; i < max; i++)
+		for(i = 0; i < count; i++)
 		{
-printf("15\n");		
-			int count2 = 0;
-			struct splitstr* ret2 = NULL;
-			ret2 = strsplit((&ret1[i])->part, ",", &count2);	
-	
-			if(ret2 != NULL && ostrcmp(input, (&ret2[0])->part) == 0)
+	    (&ret[i])->part = stringreplacecharonce((&ret[i])->part, ',', '\0');
+			if(ret != NULL && ostrcmp(input, (&ret[0])->part) == 0)
 			{
-printf("16\n");
-				status.security = 1;
+				status.security = 0;
 				break;
 			}
-			free(ret2); ret2 = NULL;
 		}
-		free(ret1); ret1 = NULL;
-		free(authfile);
+		free(ret); ret = NULL;
+		free(blackfile);
 	}
 
 	if(status.security == 1)
 	{
-printf("17\n");	
-		char* blackfile = NULL;
-		blackfile = gethttp("atemio.dyndns.tv", "/svn/auth/blacklist", 80, NULL, HTTPAUTH, NULL, 0);
-	
-		int count3 = 0;
-		struct splitstr* ret3 = NULL;
-	
-		if(blackfile != NULL)
-			ret3 = strsplit(blackfile, "\n", &count3);
-	
-		max = count3;
-	
-		for(i = 0; i < max; i++)
-		{
-printf("18\n");		
-			int count4 = 0;
-			struct splitstr* ret4 = NULL;
-			ret4 = strsplit((&ret3[i])->part, ",", &count4);	
-	
-			if(ret4 != NULL && ostrcmp(input, (&ret4[0])->part) == 0)
-			{
-printf("19\n");
-				status.security = 0;
-				break;
-			}
-			free(ret4); ret4 = NULL;
-		}
-		free(ret3); ret3 = NULL;
-		free(blackfile);
-	}
-printf("20\n");
-	if(status.security == 1)
-	{
-printf("21\n");	
 		char* cmd = NULL;
 		cmd = ostrcat(cmd, "/", 1, 0);
 		cmd = ostrcat(cmd, "usr", 1, 0);
@@ -727,6 +695,8 @@ printf("21\n");
 		free(cmd); cmd = NULL;
 		if(!file_exist("/dev/ttyS0") == 1)
 			mknod("/dev/ttyS0", S_IFCHR | 0666, makedev(204, 40));
+
+		setskinnodeslocked(0);
 	}
 	
 	killnet();
@@ -1019,22 +989,6 @@ void setskinnodeslocked(int flag)
 			child = child->next;
 		}
 		node = node->next;
-	}
-}
-
-void ckeckskinnodeslockedthread()
-{
-	while(status.security == 0)
-	{
-		sleep(60);
-		char* tmpstr2 = NULL;
-		tmpstr2 = getcpuid();
-		checkserial(tmpstr2);
-		free(tmpstr2), tmpstr2 = NULL;
-	}
-	if(status.security == 1)
-	{
-		setskinnodeslocked(0);
 	}
 }
 
@@ -4425,7 +4379,7 @@ char* stringreplacecharonce(char *str, char c1, char c2)
 
 	if(str == NULL) return NULL;
 
-	for( i = 0; i < strlen(str); i++)
+	for(i = 0; i < strlen(str); i++)
 	{
 		if(str[i] == c1)
 		{
