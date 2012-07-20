@@ -3,7 +3,31 @@
 
 void screengetserial()
 {
-	getserial();
+	char* cpu = NULL;
+	char* tmpstr = NULL;
+
+	cpu = getcpuid();
+	if(cpu == NULL) return;
+
+	tmpstr = ostrcat("Board-ID SerialNr: ", cpu, 0, 0);
+	writesys("/tmp/atemio.log", tmpstr, 1);
+
+	char* cmd = NULL;
+	cmd = ostrcat(cmd, "/var/backup/atemio.", 1, 0);
+	cmd = ostrcat(cmd, cpu, 1, 0);
+	cmd = ostrcat(cmd, ".log", 1, 0);
+	writesys(cmd, tmpstr, 1);
+	free(tmpstr); tmpstr = NULL;
+	free(cmd); cmd = NULL;
+
+	tmpstr = ostrcat(_("For next OnlineUpdate please contact Atemio and send this Serial Number\nand your Atemio Serial Number !!\n\nBoard-ID SerialNr:"), " ", 0, 0);
+	tmpstr = ostrcat(tmpstr, cpu, 1, 0);
+	tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
+	tmpstr = ostrcat(tmpstr, _("Email  		info@atemio.de"), 1, 0);
+	textbox(_("Info"), _(tmpstr), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 400, 0, 1);
+
+	free(cpu); cpu = NULL;
+	free(tmpstr); tmpstr = NULL;
 }
 
 void screensystem_info(int mode)
