@@ -591,6 +591,7 @@ char* getcpuid()
 */
 	char* buffer = NULL;
 	struct inetwork* net = getinetworkbydevice("eth0");
+	char* tmpstr = NULL;
 
 	if(net != NULL)
 	{
@@ -604,7 +605,7 @@ char* getcpuid()
 		int count = 0;
 		char* mac1 = NULL;
 		char* mac2 = NULL;
-		char* tmpstr = NULL;
+		//char* tmpstr = NULL;
 		tmpstr = ostrcat(mac, NULL, 0, 0);
 
 		struct splitstr* ret = NULL;
