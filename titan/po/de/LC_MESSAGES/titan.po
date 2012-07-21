@@ -2422,7 +2422,7 @@ msgid "Receiver unlock"
 msgstr "Receiver freischalten"
 
 msgid "Code1"
-msgstr "Schlüssel 1"
+msgstr "Schlüssel 1:"
 
 msgid "Code2"
 msgstr "Schlüssel 2: "
@@ -2431,7 +2431,7 @@ msgid "RECEIVER ID: "
 msgstr "Board-ID Seriennummer: "
 
 msgid "Can't save Code.\nDelete Plugins to free space"
-msgstr "Ihr Schlüssel kann nicht gespeichert werden.\nLöschen Sie bitte eines der von Ihnen installierten Erweiterungen um freien Speicherplatz zu erhalten."
+msgstr "Ihr Schlüssel kann nicht gespeichert werden.\nLöschen Sie bitte eines der von Ihnen installierten Erweiterungen\num freien Speicherplatz zu erhalten."
 
 msgid "Please visit following website: http://atemio.dyndns.tv/key. Input your receiver id and then a code will be displayed. Insert this code into your receiver menu. The code will enable all functions."
 msgstr "Bitte besuchen Sie folgende Website: http://atemio.dyndns.tv/key. Geben Sie Ihre Board-ID Seriennummer ein somit erhalten Sie Ihren Schlüssel. Benutzen Sie diesen Schlüssel hier zur Eingabe. Danach werden automatisch alle Funktionen auf Ihrem Receiver freigeschaltet."
