@@ -850,17 +850,21 @@ void screennetworkbrowser_scan()
 	struct menulist* mlist = NULL, *mbox = NULL;
 	struct menulist* mlist1 = NULL, *mbox1 = NULL;
 	struct skin* net_scan = getscreen("networkbrowser_scan");
+	struct skin* titletext = getscreennode(net_scan, "titletext");
 	struct skin* b1 = getscreennode(net_scan, "b1");
 	struct skin* b2 = getscreennode(net_scan, "b2");
+	struct skin* load = getscreen("loading");
 	struct inetwork *net = inetwork;
 	
 	status.hangtime = 99999;
 	changetitle(net_scan, _("Scanning Network Shares, please wait !!"));
+	if(titletext != status.skinerr) changetext(titletext, _("Scanning Network Shares, please wait !!"));
 	b1->hidden = YES;
 	b2->hidden = YES;
 
 	net = inetwork;
 	drawscreen(net_scan, 0, 0);
+	drawscreen(load, 0, 0);
 
 	while(net != NULL)
 	{
@@ -868,6 +872,7 @@ void screennetworkbrowser_scan()
 			getnetworkbrowser_dns(net, &mlist);
 		net = net->next;
 	}
+	clearscreen(load);
 
 start:
 	b1->hidden = NO;
@@ -877,8 +882,10 @@ start:
 
 	if(mbox != NULL)
 	{
+		drawscreen(load, 0, 0);
 		getnetworkbrowser_cifs(&mlist1, mbox->param, mbox->param1, "user", "pass");
 		getnetworkbrowser_nfs(&mlist1, mbox->param, mbox->param1);
+		clearscreen(load);
 start1:
 		mbox1 = menulistboxext(mlist1, "networkbrowser_scan", _("Networkbrowser - show scanned cifs/nfs-Shares"), "%pluginpath%/networkbrowser/skin/", NULL, 1, NULL, 0);
 		if(mbox1 != NULL && mbox->name != NULL)
@@ -977,7 +984,7 @@ int checknetworkbrowserexist(struct networkbrowser* node)
 	return 0;
 }
 
-void changemodenetworkbrowser(struct networkbrowser* node, struct skin* net_addshare, struct skin* skin_username, struct skin* skin_password, struct skin* skin_protocol, struct skin* skin_rsize, struct skin* skin_wsize, struct skin* skin_options, struct skin* skin_ssl, struct skin* skin_proxy, struct skin* skin_proxyip, struct skin* skin_proxyport, struct skin* skin_proxyuser, struct skin* skin_proxypass, struct skin* skin_ftpport, struct skin* skin_userauth, struct skin* skin_proxyauth, struct skin* skin_useproxy, struct skin* skin_usessl)
+void changemodenetworkbrowser(struct networkbrowser* node, struct skin* titletext, struct skin* net_addshare, struct skin* skin_username, struct skin* skin_password, struct skin* skin_protocol, struct skin* skin_rsize, struct skin* skin_wsize, struct skin* skin_options, struct skin* skin_ssl, struct skin* skin_proxy, struct skin* skin_proxyip, struct skin* skin_proxyport, struct skin* skin_proxyuser, struct skin* skin_proxypass, struct skin* skin_ftpport, struct skin* skin_userauth, struct skin* skin_proxyauth, struct skin* skin_useproxy, struct skin* skin_usessl)
 {
 	char* tmpstr = NULL;
 	if(node == NULL) return;
@@ -989,6 +996,7 @@ void changemodenetworkbrowser(struct networkbrowser* node, struct skin* net_adds
 		tmpstr = ostrcat(tmpstr, strstrip(node->sharename), 1, 0);
 		tmpstr = ostrcat(tmpstr, ")", 1, 0);
 		changetitle(net_addshare, tmpstr);
+		if(titletext != status.skinerr) changetext(titletext, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 
 		skin_protocol->hidden = YES;
@@ -1025,6 +1033,7 @@ void changemodenetworkbrowser(struct networkbrowser* node, struct skin* net_adds
 		tmpstr = ostrcat(tmpstr, strstrip(node->sharename), 1, 0);
 		tmpstr = ostrcat(tmpstr, ")", 1, 0);
 		changetitle(net_addshare, tmpstr);
+		if(titletext != status.skinerr) changetext(titletext, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 
 		skin_username->hidden = YES;
@@ -1052,6 +1061,7 @@ void changemodenetworkbrowser(struct networkbrowser* node, struct skin* net_adds
 		tmpstr = ostrcat(tmpstr, strstrip(node->sharename), 1, 0);
 		tmpstr = ostrcat(tmpstr, ")", 1, 0);
 		changetitle(net_addshare, tmpstr);
+		if(titletext != status.skinerr) changetext(titletext, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 		
 		skin_protocol->hidden = YES;
@@ -1113,6 +1123,7 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 	int rcret = 0, save = 0;
 	char* skinname = "networkbrowser_add_share";
 	struct skin* net_addshare = getscreen(skinname);
+	struct skin* titletext = getscreennode(net_addshare, "titletext");
 	struct skin* listbox = getscreennode(net_addshare, "listbox");
 	struct skin* tmp = NULL;
 	struct skin* skin_sharename = getscreennode(net_addshare, "skin_sharename");
@@ -1256,7 +1267,7 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 	addchoicebox(skin_options, "ro", _("ro"));
 	setchoiceboxselection(skin_options, node->options);
 
-	changemodenetworkbrowser(node, net_addshare, skin_username, skin_password, skin_protocol, skin_rsize, skin_wsize, skin_options, skin_ssl, skin_proxy, skin_proxyip, skin_proxyport, skin_proxyuser, skin_proxypass, skin_ftpport, skin_userauth, skin_proxyauth, skin_useproxy, skin_usessl);
+	changemodenetworkbrowser(node, titletext, net_addshare, skin_username, skin_password, skin_protocol, skin_rsize, skin_wsize, skin_options, skin_ssl, skin_proxy, skin_proxyip, skin_proxyport, skin_proxyuser, skin_proxypass, skin_ftpport, skin_userauth, skin_proxyauth, skin_useproxy, skin_usessl);
 
 	addscreenrc(net_addshare, listbox);
 	drawscreen(net_addshare, 0, 0);
@@ -1292,7 +1303,7 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 
 		if(listbox->select != NULL)
 		{
-			changemodenetworkbrowser(node, net_addshare, skin_username, skin_password, skin_protocol, skin_rsize, skin_wsize, skin_options, skin_ssl, skin_proxy, skin_proxyip, skin_proxyport, skin_proxyuser, skin_proxypass, skin_ftpport, skin_userauth, skin_proxyauth, skin_useproxy, skin_usessl);
+			changemodenetworkbrowser(node, titletext, net_addshare, skin_username, skin_password, skin_protocol, skin_rsize, skin_wsize, skin_options, skin_ssl, skin_proxy, skin_proxyip, skin_proxyport, skin_proxyuser, skin_proxypass, skin_ftpport, skin_userauth, skin_proxyauth, skin_useproxy, skin_usessl);
 			drawscreen(net_addshare, 0, 0);
 		}
 
@@ -1313,7 +1324,7 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 					node = newshare;
 					changeinput(skin_sharename, node->sharename);
 					b3->hidden = YES;
-					changemodenetworkbrowser(node, net_addshare, skin_username, skin_password, skin_protocol, skin_rsize, skin_wsize, skin_options, skin_ssl, skin_proxy, skin_proxyip, skin_proxyport, skin_proxyuser, skin_proxypass, skin_ftpport, skin_userauth, skin_proxyauth, skin_useproxy, skin_usessl);
+					changemodenetworkbrowser(node, titletext, net_addshare, skin_username, skin_password, skin_protocol, skin_rsize, skin_wsize, skin_options, skin_ssl, skin_proxy, skin_proxyip, skin_proxyport, skin_proxyuser, skin_proxypass, skin_ftpport, skin_userauth, skin_proxyauth, skin_useproxy, skin_usessl);
 				}
 				else
 					delnetworkbrowser(newshare);
