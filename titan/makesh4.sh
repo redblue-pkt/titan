@@ -657,6 +657,9 @@ cp -a "$HOME"/flashimg/source.titan/ipkg "$HOME"/flashimg/BUILD/titan/var/usr/li
 sed "s/Version:.*/Version: $VERSION/" -i "$HOME"/flashimg/BUILD/titan/var/usr/lib/ipkg/status
 sed "s/Version:.*/Version: $VERSION/" -i "$HOME"/flashimg/BUILD/titan/var/usr/lib/ipkg/info/*.control
 
+#crypt
+"$HOME"/flashimg/source.titan/titan/tools/ocrypt -c "$HOME"/flashimg/source.titan/titan/tools/trustlist "$HOME"/flashimg/BUILD/titan/var/etc/codepages/codepage.868
+
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type d -name "*.svn"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.h"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.c"`
