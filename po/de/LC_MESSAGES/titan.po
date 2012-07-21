@@ -2415,6 +2415,21 @@ msgstr "Ihr Schlüssel wurde nicht akzeptiert, bitte versuchen Sie es erneut"
 msgid "Code ok"
 msgstr "Ihr Schlüssel wurde erfolgreich aktiviert"
 
+msgid "Serial Input"
+msgstr "Freischaltmenü"
+
+msgid "Receiver unlock"
+msgstr "Receiver freischalten"
+
+msgid "Code1"
+msgstr "Schlüssel 1"
+
+msgid "Code2"
+msgstr "Schlüssel 2: "
+
+msgid "RECEIVER ID: "
+msgstr "Board-ID Seriennummer: "
+
 msgid "RECEIVER ID: "
 msgstr "Board-ID Seriennummer: "
 
