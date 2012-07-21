@@ -1260,7 +1260,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 			}
 
 			//check if record is running and change endtime
-			char* service tmpservice = getservicebyrectimestamp(node->timestamp);
+			struct service* tmpservice = getservicebyrectimestamp(node->timestamp);
 			if(tmpservice != NULL)
 				tmpservice->recendtime = node->end;
 				
