@@ -758,7 +758,10 @@ firstwizzardstep1:
 	
 #ifndef SIMULATE
 	//set skinentrys locked
-	if(status.security == 0) setskinnodeslocked(1);	
+	if(status.security == 0)
+		setskinnodeslocked(1);
+	else
+		setskinnodeslocked(0);
 #endif
 
 	//start epg thread
