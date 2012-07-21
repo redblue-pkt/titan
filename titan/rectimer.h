@@ -1260,9 +1260,11 @@ void screenrectimerext(struct rectimer* node, int flag)
 			}
 
 			//check if record is running and change endtime
-			struct service* tmpservice = getservicebyrectimestamp(node->timestamp);
+			m_lock(&status.servicemutex, 2);
+			struct service* tmpservice = getservicebyrectimestamp(node->timestamp, 1);
 			if(tmpservice != NULL)
 				tmpservice->recendtime = node->end;
+			m_unlock(&status.servicemutex, 2);
 				
 			if(newnode == 1 || flag == 1) node->disabled = 0;
 			status.writerectimer = 1;
