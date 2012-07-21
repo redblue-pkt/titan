@@ -449,6 +449,7 @@ echo "[titan] Language Po files done"
 echo "[titan]--------------------------------------------------------"
 
 mkdir -p "$HOME"/flashimg/BUILD/titan/var/etc/titan
+mkdir -p "$HOME"/flashimg/BUILD/titan/var/etc/codepages
 mkdir -p "$HOME"/flashimg/BUILD/titan/var/usr/lib
 mkdir -p "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins
 mkdir -p "$HOME"/flashimg/BUILD/titan/usr/local/bin
