@@ -2419,4 +2419,4 @@ msgid "RECEIVER ID: "
 msgstr "Board-ID Seriennummer: "
 
 msgid "Please visit following website: http://atemio.dyndns.tv/key. Input your receiver id and then a code will be displayed. Insert this code into your receiver menu. The code will enable all functions."
-msgstr "Bitte besuchen Sie folgende Website: http://atemio.dyndns.tv/key. Geben Sie Ihre Board-ID Seriennummer ein somit erhalten Sie Ihren Schlüssel. Benutzen Sie diesen Schlüssel hier zur Eingabe. Danach werden automatisch alle Funktionen auf Ihrer Box freigeschaltet."
+msgstr "Bitte besuchen Sie folgende Website: http://atemio.dyndns.tv/key. Geben Sie Ihre Board-ID Seriennummer ein somit erhalten Sie Ihren Schlüssel. Benutzen Sie diesen Schlüssel hier zur Eingabe. Danach werden automatisch alle Funktionen auf Ihrem Receiver freigeschaltet."
