@@ -789,9 +789,7 @@ int checkprozess(char* input)
 
 void killnet()
 {
-	if(status.security == 1)
-		status.expertmodus = getconfigint("expertmodus", NULL);
-	else
+	if(status.security == 0)
 	{
 		status.expertmodus = 0;	
 		char* cmd = NULL;
