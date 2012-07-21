@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//serial.h
+void screenserial();
+
 //ocrypt.h
 unsigned char* oencrypt(char* pw, char* buf, int len);
 unsigned char* odecrypt(char* pw, char* buf, int len);
@@ -344,6 +347,7 @@ int writeepgscanlist(const char *filename);
 int delepgscanlist(int serviceid, unsigned long transponderid);
 
 //rectimer.h
+int readrectimer(char *filename);
 int writerectimer(const char *filename, int flag);
 int recordcheckcrypt(struct dvbdev* fenode, int servicetype);
 int recordstart(struct channel* chnode, int filefd, int recordfd, int type, time_t endtime, struct rectimer* rectimernode);
@@ -526,6 +530,7 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+void setskinnodeslocked(int flag);
 char* stringreplacecharonce(char *str, char c1, char c2);
 int getrandom(int max);
 int clearbit(int value, int bitpos);
