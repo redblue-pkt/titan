@@ -673,7 +673,7 @@ int writeserial(char* cpuid)
 
 void checkserial(char* input)
 {
-	char* filename = "xxxxxxxxxxxxx", *pw = NULL;
+	char* filename = "xxxxxxxxxxxxx", *pw = NULL, *buf = NULL;
 	unsigned char* authbuf = NULL;
 	int count = 0, i = 0;
 	off64_t len = 0;
