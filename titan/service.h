@@ -539,6 +539,26 @@ struct service* getservicebychannel(struct channel* chnode)
 	return NULL;
 }
 
+struct service* getservicebyrectimestamp(time_t timestamp)
+{
+	if(timestamp == 0) return NULL;
+
+	m_lock(&status.servicemutex, 2);
+	struct service* snode = service;
+
+	while(snode != NULL)
+	{
+		if(snode->rectimestamp == timestamp)
+		{
+			m_unlock(&status.servicemutex, 2);
+			return snode;
+		}
+		snode = snode->next;
+	}
+	m_unlock(&status.servicemutex, 2);
+	return NULL;
+}
+
 struct service* getservicebyservice(struct service* node, int flag)
 {
 	if(flag == 0) m_lock(&status.servicemutex, 2);
@@ -552,7 +572,6 @@ struct service* getservicebyservice(struct service* node, int flag)
 			return snode;
 		}
 		snode = snode->next;
-
 	}
 	if(flag == 0) m_unlock(&status.servicemutex, 2);
 	return NULL;
@@ -573,7 +592,6 @@ struct service* getservice(int type, int flag)
 			return snode;
 		}
 		snode = snode->next;
-
 	}
 	if(flag == 0) m_unlock(&status.servicemutex, 2);
 	return NULL;
