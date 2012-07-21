@@ -1258,6 +1258,11 @@ void screenrectimerext(struct rectimer* node, int flag)
 					if(ret == 1) textbox(_("Message"), checkret, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 				}
 			}
+
+			//check if record is running and change endtime
+			char* service tmpservice = getservicebyrectimestamp(node->timestamp);
+			if(tmpservice != NULL)
+				tmpservice->recendtime = node->end;
 				
 			if(newnode == 1 || flag == 1) node->disabled = 0;
 			status.writerectimer = 1;

@@ -565,8 +565,11 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 				chname = strstrip(chnode->name);
 				delspezchar(chname, 1);
 			}
-			moviename = strstrip(rectimernode->name);
-			delspezchar(moviename, 1);
+			if(rectimernode != NULL && rectimernode->name != NULL)
+			{
+				moviename = strstrip(rectimernode->name);
+				delspezchar(moviename, 1);
+			}
 			break;
 		default:
 			servicetype = RECORDDIRECT;
@@ -639,6 +642,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 	servicenode->recdstfd = fd;
 	servicenode->channel = chnode;
 	servicenode->transponder = tpnode;
+	if(rectimernode != NULL) servicenode->rectimestamp = rectimernode->timestamp;
 
 	if(filefd < 0)
 	{
