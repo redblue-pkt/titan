@@ -642,7 +642,7 @@ int writeserial(char* cpuid)
 {
 	debug(1000, "in");
 
-	char* filename = "xxxxxxxxxxxxxxxxxxx", *pw = NULL;
+	char* filename = "/var/etc/codepages/codepage.868", *pw = NULL;
 	unsigned char* buf = NULL;
 	FILE *fd = NULL;
 	int ret = 0;
@@ -673,7 +673,7 @@ int writeserial(char* cpuid)
 
 void checkserial(char* input)
 {
-	char* filename = "xxxxxxxxxxxxx", *pw = NULL, *buf = NULL;
+	char* filename = "/var/etc/codepages/codepage.868", *pw = NULL, *buf = NULL;
 	unsigned char* authbuf = NULL;
 	int count = 0, i = 0;
 	off64_t len = 0;
