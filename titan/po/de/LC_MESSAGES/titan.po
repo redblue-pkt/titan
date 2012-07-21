@@ -2430,9 +2430,6 @@ msgstr "Schlüssel 2: "
 msgid "RECEIVER ID: "
 msgstr "Board-ID Seriennummer: "
 
-msgid "RECEIVER ID: "
-msgstr "Board-ID Seriennummer: "
-
 msgid "Can't save Code.\nDelete Plugins to free space"
 msgstr "Ihr Schlüssel kann nicht gespeichert werden.\nLöschen Sie bitte eines der von Ihnen installierten Erweiterungen um freien Speicherplatz zu erhalten."
 
