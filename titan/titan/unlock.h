@@ -60,7 +60,11 @@ void screenunlock()
 
 			if(code != 0 && code == hash)
 			{
-				writeserial(cpuid);
+				status.security = 1;
+				int ret = writeserial(cpuid);
+				if(ret == 1)
+					textbox(_("Message"), _("Can't save Code.\nDelete Plugins to free space"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+
 				checkserial(cpuid);
 				if(status.security == 1)
 				{
