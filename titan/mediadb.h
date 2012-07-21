@@ -1073,7 +1073,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 		tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
 		int count = 0;
 		
-		while(count < 5)
+		while(count < 30)
 		{
 			sleep(1);
 			count++;
