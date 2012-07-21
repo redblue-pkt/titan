@@ -1073,11 +1073,18 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 		tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
 		int count = 0;
 		
-		while(count < 30)
+		while(count < 60)
 		{
 			sleep(1);
 			count++;
 		}
+
+		if(!file_exist("/tmp/.autoscan"))
+		{
+			free(path); path = NULL;
+			return;
+		}
+									
 		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 500, 10, 0);
 		free(tmpstr), tmpstr = NULL;
 		count = 0;

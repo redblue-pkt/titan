@@ -432,6 +432,8 @@ void screenmc_videoplayer()
 					playerafterend();
 			
 				writevfd("VideoPlayer Filelist-Mode");
+				unlink("/tmp/.autoscan");
+					
 //				startmediadb();
 //				dbnode = mediadb;
 //			}
@@ -467,7 +469,8 @@ void screenmc_videoplayer()
 			writevfd("Mediacenter");
 			playinfobarcount = 0;
 	
-			printf("exit: view=%d tmpview=%d\n", view, tmpview);			
+			printf("exit: view=%d tmpview=%d\n", view, tmpview);
+			unlink("/tmp/.autoscan");
 			break;
 		}
 		else if(rcret == getrcconfigint("rcok", NULL))
@@ -681,6 +684,7 @@ void screenmc_videoplayer()
 				
 				if(getconfig("mc_vp_autoscan", NULL) != NULL)
 				{
+					writesys("/tmp/.autoscan", "", 0);
 					mediadbscan(filelistpath->text, 1000, 1);
 					files = findfiles(filelistpath->text, 1000, 1, 1, 1); //count only
 				}
