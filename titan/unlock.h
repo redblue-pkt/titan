@@ -17,7 +17,7 @@ void screenunlock()
 
 	if(status.security == 1)
 	{
-		textbox(_("Message"), _("Spezialfunctions unlocked, no input required"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 700, 200, 10, 0);
+		textbox(_("Message"), _("Spezialfunctions unlocked, no input required"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 10, 0);
 		return;
 	}
 
@@ -63,7 +63,7 @@ void screenunlock()
 				status.security = 1;
 				int ret = writeserial(cpuid);
 				if(ret == 1)
-					textbox(_("Message"), _("Can't save Code.\nDelete Plugins to free space"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+					textbox(_("Message"), _("Can't save Code.\nDelete Plugins to free space"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 10, 0);
 
 				checkserial(cpuid);
 				if(status.security == 1)
@@ -72,7 +72,7 @@ void screenunlock()
 					break;
 				}
 			}
-			textbox(_("Message"), _("Code not ok, please try again !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+			textbox(_("Message"), _("Code not ok, please try again !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 			drawscreen(unlock, 0, 0);
 		}
 	}
