@@ -257,6 +257,7 @@ void screenextensions(int mode, char* path)
 	{
 		struct skin* load = getscreen("loading");
 		drawscreen(load, 0, 0);
+		unlink("/tmp/ipkg.log");
 		system("syncipkg.sh");
 		ipkg_update();
 		clearscreen(load);
