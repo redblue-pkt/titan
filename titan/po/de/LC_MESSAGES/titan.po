@@ -2257,7 +2257,7 @@ msgid "Here you can make your vfd settings. Use to navigate the control cross an
 msgstr "Hier können Sie Ihre VFD Einstellungen vornehmen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
 msgid "Here you can select from the following list. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie aus der folgenden liste auswählen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie aus der folgenden Liste auswählen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
 msgid "Here you can edit the following channels from the EPG. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie aus den folgenden Kanälen das EPG bearbeiten.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
