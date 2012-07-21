@@ -1039,7 +1039,6 @@ void setskinnodeslocked(int flag)
 			if(ostrcmp("vfdisplay", child->name) == 0) child->locked = tmpflag;
 			else if(ostrcmp("savesettings", child->name) == 0) child->locked = tmpflag;
 			else if(ostrcmp("scartrecorder", child->name) == 0) child->locked = tmpflag;
-			else if(ostrcmp("vfdisplay", child->name) == 0) child->locked = tmpflag;
 			else if(ostrcmp("system_update_usb_online", child->name) == 0) child->locked = tmpflag;
 			else if(ostrcmp("system_update_usb_tmp", child->name) == 0) child->locked = tmpflag;
 			else if(ostrcmp("sambasettings", child->name) == 0) child->locked = tmpflag;
