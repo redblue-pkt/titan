@@ -204,20 +204,27 @@ void screenextensions(int mode, char* path)
 	}
 	else if(mode == 2)
 	{
+		char* text1 = "Ipk Tmp Install - select file";
+		char* text2 = "Ipk Tmp Info";
+
 		if(path == NULL)
 			tmpstr = get_ipk_tmplistinstall("/tmp");
 		else
+		{
 			tmpstr = get_ipk_tmplistinstall(path);
+			text1 = "Ipk Media Install - select file";
+			text2 = "Ipk Media Info";
+		}
     
-	    if(tmpstr == NULL || strlen(tmpstr) == 0)
-	    {
+		if(tmpstr == NULL || strlen(tmpstr) == 0)
+		{
 			textbox(_("Message"), _("No plugin found."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-	    }
-	    else
-	    {
+		}
+		else
+		{
 			addmenulistall(&mlist, tmpstr, NULL, 0, NULL);
-			mbox = menulistbox(mlist, NULL, "Ipk Tmp Install - select file", NULL, "/skin/plugin.png", 1, 0);
-	    }
+			mbox = menulistbox(mlist, NULL, text1, NULL, "/skin/plugin.png", 1, 0);
+		}
 		
 		free(tmpstr); tmpstr = NULL;
 		
@@ -232,7 +239,7 @@ void screenextensions(int mode, char* path)
 			tmpinfo = ostrcat(tmpinfo, _("started"), 1, 0);
 			tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 
-			if(textbox(_("Ipk Tmp Info"), _(tmpinfo), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+			if(textbox(_(text2), _(tmpinfo), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
 			{
 				char* log = NULL;
 
@@ -242,7 +249,7 @@ void screenextensions(int mode, char* path)
 					log = get_ipk_tmpinstall(path, mbox->name);
 
 				if(log == NULL) log = ostrcat("No output found !", NULL, 0, 0);
-				textbox(_("Ipk Tmp Info"), log, "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
+				textbox(_(text2), log, "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 				free(log); log = NULL;
 				textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 				loadplugin();
