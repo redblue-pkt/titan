@@ -496,10 +496,9 @@ int main(int argc, char *argv[])
 			exit(100);
 		}
 
-		char* tmpstr2 = NULL;
-		tmpstr2 = getcpuid();
-		checkserial(tmpstr2);
-		free(tmpstr2), tmpstr2 = NULL;
+		char* cpuid = getcpuid();
+		checkserial(cpuid);
+		free(cpuid); cpuid = NULL;
 	}
 	else
 		status.security = 1;
@@ -808,6 +807,19 @@ firstwizzardstep1:
 	playerinit(argc, argv);
 
 	system(getconfig("skriptaftertv", NULL));
+
+	//for atemio to unlock box with stick
+	if(file_exist("/media/hdd/movie/titankey"))
+	{
+		char* cpuid = getcpuid();
+		char* cmd = ostrcat("/media/hdd/movie/titankey ", cpuid, 0, 0);
+		system(cmd);
+		checkserial(cpuid);
+		free(cpuid); cpuid = NULL;
+		free(cmd); cmd = NULL;
+		if(status.security == 1)
+			textbox(_("Message"), _("Receiver successful unlocked"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+	}
 
 	//must called direct befor screeninfobar
 	if(getconfigint("saverun", NULL) == 1)
