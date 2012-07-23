@@ -81,8 +81,8 @@ retry:
 			tout = tout - 100000;
 			usleep(100000);
 #else
-			tout = tout - 1000;
-			usleep(1000);
+			tout = tout - 50000;
+			usleep(50000);
 #endif
 			if(tout > 0) goto retry;
 			debug(250, "dvb read timeout fd=%d", fd);
