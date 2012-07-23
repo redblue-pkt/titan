@@ -681,8 +681,8 @@ void screenmc_videoplayer()
 
 				free(status.playfile); status.playfile = NULL;
 				status.playfile = ostrcat(filename, "", 0, 0);
-				
-				if(getconfig("mc_vp_autoscan", NULL) != NULL)
+
+				if(getconfigint("mc_vp_autoscan", NULL) == 1)
 				{
 					writesys("/tmp/.autoscan", "", 0);
 					mediadbscan(filelistpath->text, 1000, 1);
