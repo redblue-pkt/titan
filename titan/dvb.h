@@ -50,7 +50,9 @@ int dvbwrite(int fd, unsigned char* buf, int count, int tout)
 	return count;
 }
 
-int dvbreadfd(int fd, unsigned char *buf, int pos, int count, int tout)
+//flag 0: eof with timeout
+//flag 1: eof without timeout
+int dvbreadfd(int fd, unsigned char *buf, int pos, int count, int tout, int flag)
 {
 	struct timeval timeout;
 	int ret = 0, usec = 0, sec = 0;
@@ -81,10 +83,10 @@ retry:
 			tout = tout - 100000;
 			usleep(100000);
 #else
-			tout = tout - 50000;
-			usleep(50000);
+			tout = tout - 1000;
+			usleep(1000);
 #endif
-			if(tout > 0) goto retry;
+			if(flag == 0 && tout > 0) goto retry;
 			debug(250, "dvb read timeout fd=%d", fd);
 		}
 		else if(ret < 0)
@@ -119,7 +121,7 @@ retry:
 int dvbread(struct dvbdev* node, unsigned char *buf, int pos, int count, int tout)
 {
 	if(node == NULL) return -2;
-	return dvbreadfd(node->fd, buf, pos, count, tout);
+	return dvbreadfd(node->fd, buf, pos, count, tout, 0);
 }
 
 int dvbfindpmtpid(int fd, int16_t *pmtpid, int *serviceid, int tssize)
@@ -134,7 +136,7 @@ int dvbfindpmtpid(int fd, int16_t *pmtpid, int *serviceid, int tssize)
 		unsigned char packet[tssize];
 
 		lseek64(fd, pos, SEEK_SET);
-		int ret = dvbreadfd(fd, packet, 0, tssize, -1);
+		int ret = dvbreadfd(fd, packet, 0, tssize, -1, 0);
 		if(ret != tssize)
 		{
 			err("read error");
@@ -890,7 +892,7 @@ int getpts(int fd, off64_t offset, int spid, int left, unsigned long long *pts, 
 				*findpos = lseek64(fd, offset, SEEK_END);
 		}
 
-		int ret = dvbreadfd(fd, packet, 0, tssize, -1);
+		int ret = dvbreadfd(fd, packet, 0, tssize, -1, 0);
 		if(ret != tssize && ret != 188)
 		{
 			err("read error");

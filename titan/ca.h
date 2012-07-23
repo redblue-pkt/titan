@@ -38,7 +38,7 @@ void careseting(struct stimerthread* self, struct dvbdev* dvbnode, int flag)
 
 		//flush buffer
 		if(flag == 1)
-                	while(dvbreadfd(dvbnode->fd, buf, 0, 256, -1) > 0);
+                	while(dvbreadfd(dvbnode->fd, buf, 0, 256, -1, 0) > 0);
 
 		//flush queue
 		qe = getqueue(dvbnode->devnr);

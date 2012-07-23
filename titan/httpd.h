@@ -449,7 +449,7 @@ void gotdata(int* connfd)
 			int readret = 1;
 			while(readret > 0 && auth == 0)
 			{
-				readret = dvbreadfd(filefd, buf, 0, MINMALLOC, 1000);
+				readret = dvbreadfd(filefd, buf, 0, MINMALLOC, 1000, 0);
 				if(readret > 0)
 					socksend(connfd, buf, readret, 5000 * 1000);
 			}
