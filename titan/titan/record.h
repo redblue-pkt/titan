@@ -352,17 +352,17 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 	{	
 #ifdef SIMULATE
 		servicenode->recsrcfd = fd;
-		readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout);
+		readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 0);
 		usleep(1000);
 #else
 		if(servicenode->type == RECORDPLAY)
 		{
 			pthread_mutex_lock(&status.tsseekmutex);
-			readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout);
+			readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
 			pthread_mutex_unlock(&status.tsseekmutex);
 		}
 		else
-			readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout);
+			readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 0);
 #endif
 		if(readret > 0)
 		{
