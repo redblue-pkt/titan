@@ -51,10 +51,10 @@ int playerstartts(char* file, int flag)
 	if(supermagic == NFS_SUPER_MAGIC || supermagic == SMB_SUPER_MAGIC)
 	{
 		debug(150, "use O_DIRECT to open file %s", file);
-		fd = open(file, O_RDONLY | O_LARGEFILE | O_DIRECT);
+		fd = open(file, O_RDONLY | O_LARGEFILE | O_NONBLOCK | O_DIRECT);
 	}
 	else
-		fd = open(file, O_RDONLY | O_LARGEFILE);
+		fd = open(file, O_RDONLY | O_LARGEFILE | O_NONBLOCK);
 
 	if(fd < 0)
 	{
