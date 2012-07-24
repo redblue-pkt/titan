@@ -808,6 +808,10 @@ void killnet()
 		cmd = ostrcat(cmd, "&", 1, 0);
 		system(cmd);
 		free(cmd); cmd = NULL;
+
+		cmd = ostrcat(cmd, "emu.sh stop", 1, 0);
+		system(cmd);
+		free(cmd); cmd = NULL;	
 	}
 }
 
