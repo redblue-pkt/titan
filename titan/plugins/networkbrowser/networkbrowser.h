@@ -929,7 +929,9 @@ start1:
 	status.hangtime = getconfigint("hangtime", NULL);
 }
 
-void addhddreplacement(char* sharename)
+//flag = 0: don't start hotplug.sh
+//flag = 1: start hotplug.sh
+void addhddreplacement(char* sharename, int flag)
 {
 	char* tmpstr = NULL;
 
@@ -941,14 +943,17 @@ void addhddreplacement(char* sharename)
 	free(tmpstr); tmpstr = NULL;
 
 	writesys("/var/etc/automount/.recordshare", sharename, 0);
-	system("/sbin/hotplug.sh first &");
+	if(flag == 1) system("/sbin/hotplug.sh first &");
 }
 
-void delhddreplacement()
+
+//flag = 0: don't start hotplug.sh
+//flag = 1: start hotplug.sh
+void delhddreplacement(int flag)
 {
 	unlink("/media/hdd");
 	unlink("/var/etc/automount/.recordshare");
-	system("/sbin/hotplug.sh first &");
+	if(flag == 1) system("/sbin/hotplug.sh first &");
 }
 
 int checkhddreplacement(char* sharename)
@@ -1355,9 +1360,9 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 				//set to default if field is empty
 				setdefaultnetworkbrowser(node);
 				if(ostrcmp(skin_hddreplacement->ret, "1") == 0)
-					addhddreplacement(node->sharename);
+					addhddreplacement(node->sharename, 0);
 				else if(checkhddreplacement(node->sharename) == 1)
-					delhddreplacement();
+					delhddreplacement(0);
 
 				savenetworkbrowser("/var/etc/automount/auto.misc");
 				save = 1;
@@ -1450,7 +1455,7 @@ start:
 				if(delnode != NULL)
 				{
 					if(checkhddreplacement(delnode->sharename) == 1)
-						delhddreplacement();
+						delhddreplacement(0);
 
 					delnetworkbrowser(delnode);
 					savenetworkbrowser("/var/etc/automount/auto.misc");
