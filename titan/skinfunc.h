@@ -874,12 +874,140 @@ char* getimgname(struct skin* node)
 	return tmpstr;
 }
 
-char* getoscamserver(struct skin* node)
+char* getoscamcaid(struct skin* node)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	buf = readfiletomem("/tmp/rcm.info", 1);
+	tmpstr = ostrstr(buf, "caid:");
+	if(tmpstr != NULL)
+	{
+		tmpstr = stringreplacecharonce(tmpstr, '\n', '\0');
+		tmpstr = ostrcat(tmpstr, NULL, 0, 0);
+	}
+	free(buf); buf = NULL;
+
+	return tmpstr;
+}
+
+char* getoscampid(struct skin* node)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	buf = readfiletomem("/tmp/rcm.info", 1);
+	tmpstr = ostrstr(buf, "pid:");
+	if(tmpstr != NULL)
+	{
+		tmpstr = stringreplacecharonce(tmpstr, '\n', '\0');
+		tmpstr = ostrcat(tmpstr, NULL, 0, 0);
+	}
+	free(buf); buf = NULL;
+
+	return tmpstr;
+}
+
+char* getoscamprov(struct skin* node)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	buf = readfiletomem("/tmp/rcm.info", 1);
+	tmpstr = ostrstr(buf, "prov:");
+	if(tmpstr != NULL)
+	{
+		tmpstr = stringreplacecharonce(tmpstr, '\n', '\0');
+		tmpstr = ostrcat(tmpstr, NULL, 0, 0);
+	}
+	free(buf); buf = NULL;
+
+	return tmpstr;
+}
+
+char* getoscamfrom(struct skin* node)
 {
 	char* buf = NULL, *tmpstr = NULL;
 
 	buf = readfiletomem("/tmp/rcm.info", 1);
 	tmpstr = ostrstr(buf, "from:");
+	if(tmpstr != NULL)
+	{
+		tmpstr = stringreplacecharonce(tmpstr, '\n', '\0');
+		tmpstr = ostrcat(tmpstr, NULL, 0, 0);
+	}
+	free(buf); buf = NULL;
+
+	return tmpstr;
+}
+
+char* getoscamprotocol(struct skin* node)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	buf = readfiletomem("/tmp/rcm.info", 1);
+	tmpstr = ostrstr(buf, "protocol:");
+	if(tmpstr != NULL)
+	{
+		tmpstr = stringreplacecharonce(tmpstr, '\n', '\0');
+		tmpstr = ostrcat(tmpstr, NULL, 0, 0);
+	}
+	free(buf); buf = NULL;
+
+	return tmpstr;
+}
+
+char* getoscamhops(struct skin* node)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	buf = readfiletomem("/tmp/rcm.info", 1);
+	tmpstr = ostrstr(buf, "hops:");
+	if(tmpstr != NULL)
+	{
+		tmpstr = stringreplacecharonce(tmpstr, '\n', '\0');
+		tmpstr = ostrcat(tmpstr, NULL, 0, 0);
+	}
+	free(buf); buf = NULL;
+
+	return tmpstr;
+}
+
+char* getoscamecmtime(struct skin* node)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	buf = readfiletomem("/tmp/rcm.info", 1);
+	tmpstr = ostrstr(buf, "ecm time:");
+	if(tmpstr != NULL)
+	{
+		tmpstr = stringreplacecharonce(tmpstr, '\n', '\0');
+		tmpstr = ostrcat(tmpstr, NULL, 0, 0);
+	}
+	free(buf); buf = NULL;
+
+	return tmpstr;
+}
+
+char* getoscamcw0(struct skin* node)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	buf = readfiletomem("/tmp/rcm.info", 1);
+	tmpstr = ostrstr(buf, "cw0:");
+	if(tmpstr != NULL)
+	{
+		tmpstr = stringreplacecharonce(tmpstr, '\n', '\0');
+		tmpstr = ostrcat(tmpstr, NULL, 0, 0);
+	}
+	free(buf); buf = NULL;
+
+	return tmpstr;
+}
+
+char* getoscamcw1(struct skin* node)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	buf = readfiletomem("/tmp/rcm.info", 1);
+	tmpstr = ostrstr(buf, "cw1:");
 	if(tmpstr != NULL)
 	{
 		tmpstr = stringreplacecharonce(tmpstr, '\n', '\0');

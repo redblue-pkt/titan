@@ -162,4 +162,13 @@ getsatname
 getprovidername
 getpowerofftime
 getimgname
-getoscamserver
+getoscamcaid
+getoscampid
+getoscamprov
+getoscamreader
+getoscamfrom
+getoscamprotocol
+getoscamhops
+getoscamecmtime
+getoscamcw0
+getoscamcw1

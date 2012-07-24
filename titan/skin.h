@@ -135,8 +135,26 @@ void* convertfunc(char *value, uint8_t *rettype)
 		return &getakttuner;
 	if(ostrcmp("getimgname", value) == 0)
 		return &getimgname;
-	if(ostrcmp("getoscamserver", value) == 0)
-		return &getoscamserver;
+	if(ostrcmp("getoscamcaid", value) == 0)
+		return &getoscamcaid;
+	if(ostrcmp("getoscampid", value) == 0)
+		return &getoscampid;
+	if(ostrcmp("getoscamprov", value) == 0)
+		return &getoscamprov;
+	if(ostrcmp("getoscamreader", value) == 0)
+		return &getoscamreader;
+	if(ostrcmp("getoscamfrom", value) == 0)
+		return &getoscamfrom;
+	if(ostrcmp("getoscamprotocol", value) == 0)
+		return &getoscamprotocol;
+	if(ostrcmp("getoscamhops", value) == 0)
+		return &getoscamhops;
+	if(ostrcmp("getoscamecmtime", value) == 0)
+		return &getoscamecmtime;
+	if(ostrcmp("getoscamcw0", value) == 0)
+		return &getoscamcw0;
+	if(ostrcmp("getoscamcw1", value) == 0)
+		return &getoscamcw1;
 	if(ostrcmp("gettime", value) == 0)
 		return &gettime;
 	if(ostrcmp("getepgmarkedstart", value) == 0)
