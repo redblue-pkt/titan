@@ -155,6 +155,12 @@ void* convertfunc(char *value, uint8_t *rettype)
 		return &getoscamcw0;
 	if(ostrcmp("getoscamcw1", value) == 0)
 		return &getoscamcw1;
+	if(ostrcmp("getoscamsource", value) == 0)
+		return &getoscamsource;
+	if(ostrcmp("getoscamsystem", value) == 0)
+		return &getoscamsystem;
+	if(ostrcmp("getemu", value) == 0)
+		return &getemu;
 	if(ostrcmp("gettime", value) == 0)
 		return &gettime;
 	if(ostrcmp("getepgmarkedstart", value) == 0)
