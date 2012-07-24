@@ -874,4 +874,20 @@ char* getimgname(struct skin* node)
 	return tmpstr;
 }
 
+char* getoscamserver(struct skin* node)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	buf = readfiletomem("/tmp/rcm.info", 1);
+	tmpstr = ostrstr(buf, "from:");
+	if(tmpstr != NULL)
+	{
+		tmpstr = stringreplacecharonce(tmpstr, '\n', '\0');
+		tmpstr = ostrcat(tmpstr, NULL, 0, 0);
+	}
+	free(buf); buf = NULL;
+
+	return tmpstr;
+}
+
 #endif

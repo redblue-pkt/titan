@@ -135,6 +135,8 @@ void* convertfunc(char *value, uint8_t *rettype)
 		return &getakttuner;
 	if(ostrcmp("getimgname", value) == 0)
 		return &getimgname;
+	if(ostrcmp("getoscamserver", value) == 0)
+		return &getoscamserver;
 	if(ostrcmp("gettime", value) == 0)
 		return &gettime;
 	if(ostrcmp("getepgmarkedstart", value) == 0)
