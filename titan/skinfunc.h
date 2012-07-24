@@ -1018,4 +1018,43 @@ char* getoscamcw1(struct skin* node)
 	return tmpstr;
 }
 
+char* getoscamsystem(struct skin* node)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	buf = readfiletomem("/tmp/rcm.info", 1);
+	tmpstr = ostrstr(buf, "system:");
+	if(tmpstr != NULL)
+	{
+		tmpstr = stringreplacecharonce(tmpstr, '\n', '\0');
+		tmpstr = ostrcat(tmpstr, NULL, 0, 0);
+	}
+	free(buf); buf = NULL;
+
+	return tmpstr;
+}
+
+char* getoscamsource(struct skin* node)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	buf = readfiletomem("/tmp/rcm.info", 1);
+	tmpstr = ostrstr(buf, "source:");
+	if(tmpstr != NULL)
+	{
+		tmpstr = stringreplacecharonce(tmpstr, '\n', '\0');
+		tmpstr = ostrcat(tmpstr, NULL, 0, 0);
+	}
+	free(buf); buf = NULL;
+
+	return tmpstr;
+}
+
+char* getemu(struct skin* node)
+{
+	char* tmpstr = NULL;
+	tmpstr = string_newline(command("emu.sh infoname"));
+	return tmpstr;
+}
+
 #endif

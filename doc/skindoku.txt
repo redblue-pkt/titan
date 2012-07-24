@@ -172,3 +172,5 @@ getoscamhops
 getoscamecmtime
 getoscamcw0
 getoscamcw1
+getoscamsystem
+getoscamsource
