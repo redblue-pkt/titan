@@ -642,7 +642,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 	servicenode->recdstfd = fd;
 	servicenode->channel = chnode;
 	servicenode->transponder = tpnode;
-	if(rectimernode != NULL) servicenode->rectimestamp = rectimernode->timestamp;
+	if(rectimernode != NULL) servicenode->rectimestamp = ostrcat(rectimernode->timestamp, NULL, 0, 0);
 
 	if(filefd < 0)
 	{

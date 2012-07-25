@@ -541,7 +541,7 @@ struct service* getservicebychannel(struct channel* chnode)
 
 //flag 0: lock
 //flag 1: no lock
-struct service* getservicebyrectimestamp(time_t timestamp, int flag)
+struct service* getservicebyrectimestamp(char* timestamp, int flag)
 {
 	if(timestamp == 0) return NULL;
 
@@ -550,7 +550,7 @@ struct service* getservicebyrectimestamp(time_t timestamp, int flag)
 
 	while(snode != NULL)
 	{
-		if(snode->rectimestamp == timestamp)
+		if(ostrcmp(snode->rectimestamp, timestamp) == 0)
 		{
 			if(flag == 0) m_unlock(&status.servicemutex, 2);
 			return snode;
@@ -791,6 +791,9 @@ void delservice(struct service* snode, int flag)
 
 			free(node->recname);
 			node->recname = NULL;
+
+			free(node->rectimestamp);
+			node->rectimestamp = NULL;
 
 			free(node->pmtbuf);
 			node->pmtbuf = NULL;
