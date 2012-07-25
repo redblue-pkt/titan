@@ -22,5 +22,6 @@ streaminfo: 225
 tmc: 230
 filemanager: 240
 catcatch: 241
+facebook: 242
 TopfieldVFD: ---
 browser: ---
