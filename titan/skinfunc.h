@@ -878,7 +878,7 @@ char* getoscamcaid(struct skin* node)
 {
 	char* buf = NULL, *tmpstr = NULL;
 
-	buf = readfiletomem("/tmp/rcm.info", 1);
+	buf = readfiletomem("/tmp/ecm.info", 1);
 	tmpstr = ostrstr(buf, "caid:");
 	if(tmpstr != NULL)
 	{
@@ -894,7 +894,7 @@ char* getoscampid(struct skin* node)
 {
 	char* buf = NULL, *tmpstr = NULL;
 
-	buf = readfiletomem("/tmp/rcm.info", 1);
+	buf = readfiletomem("/tmp/ecm.info", 1);
 	tmpstr = ostrstr(buf, "pid:");
 	if(tmpstr != NULL)
 	{
@@ -910,7 +910,7 @@ char* getoscamprov(struct skin* node)
 {
 	char* buf = NULL, *tmpstr = NULL;
 
-	buf = readfiletomem("/tmp/rcm.info", 1);
+	buf = readfiletomem("/tmp/ecm.info", 1);
 	tmpstr = ostrstr(buf, "prov:");
 	if(tmpstr != NULL)
 	{
@@ -926,7 +926,7 @@ char* getoscamreader(struct skin* node)
 {
 	char* buf = NULL, *tmpstr = NULL;
 
-	buf = readfiletomem("/tmp/rcm.info", 1);
+	buf = readfiletomem("/tmp/ecm.info", 1);
 	tmpstr = ostrstr(buf, "reader:");
 	if(tmpstr != NULL)
 	{
@@ -942,7 +942,7 @@ char* getoscamfrom(struct skin* node)
 {
 	char* buf = NULL, *tmpstr = NULL;
 
-	buf = readfiletomem("/tmp/rcm.info", 1);
+	buf = readfiletomem("/tmp/ecm.info", 1);
 	tmpstr = ostrstr(buf, "from:");
 	if(tmpstr != NULL)
 	{
@@ -958,7 +958,7 @@ char* getoscamprotocol(struct skin* node)
 {
 	char* buf = NULL, *tmpstr = NULL;
 
-	buf = readfiletomem("/tmp/rcm.info", 1);
+	buf = readfiletomem("/tmp/ecm.info", 1);
 	tmpstr = ostrstr(buf, "protocol:");
 	if(tmpstr != NULL)
 	{
@@ -974,7 +974,7 @@ char* getoscamhops(struct skin* node)
 {
 	char* buf = NULL, *tmpstr = NULL;
 
-	buf = readfiletomem("/tmp/rcm.info", 1);
+	buf = readfiletomem("/tmp/ecm.info", 1);
 	tmpstr = ostrstr(buf, "hops:");
 	if(tmpstr != NULL)
 	{
@@ -990,7 +990,7 @@ char* getoscamecmtime(struct skin* node)
 {
 	char* buf = NULL, *tmpstr = NULL;
 
-	buf = readfiletomem("/tmp/rcm.info", 1);
+	buf = readfiletomem("/tmp/ecm.info", 1);
 	tmpstr = ostrstr(buf, "ecm time:");
 	if(tmpstr != NULL)
 	{
@@ -1006,7 +1006,7 @@ char* getoscamcw0(struct skin* node)
 {
 	char* buf = NULL, *tmpstr = NULL;
 
-	buf = readfiletomem("/tmp/rcm.info", 1);
+	buf = readfiletomem("/tmp/ecm.info", 1);
 	tmpstr = ostrstr(buf, "cw0:");
 	if(tmpstr != NULL)
 	{
@@ -1022,7 +1022,7 @@ char* getoscamcw1(struct skin* node)
 {
 	char* buf = NULL, *tmpstr = NULL;
 
-	buf = readfiletomem("/tmp/rcm.info", 1);
+	buf = readfiletomem("/tmp/ecm.info", 1);
 	tmpstr = ostrstr(buf, "cw1:");
 	if(tmpstr != NULL)
 	{
@@ -1038,7 +1038,7 @@ char* getoscamsystem(struct skin* node)
 {
 	char* buf = NULL, *tmpstr = NULL;
 
-	buf = readfiletomem("/tmp/rcm.info", 1);
+	buf = readfiletomem("/tmp/ecm.info", 1);
 	tmpstr = ostrstr(buf, "system:");
 	if(tmpstr != NULL)
 	{
@@ -1054,7 +1054,7 @@ char* getoscamsource(struct skin* node)
 {
 	char* buf = NULL, *tmpstr = NULL;
 
-	buf = readfiletomem("/tmp/rcm.info", 1);
+	buf = readfiletomem("/tmp/ecm.info", 1);
 	tmpstr = ostrstr(buf, "source:");
 	if(tmpstr != NULL)
 	{
