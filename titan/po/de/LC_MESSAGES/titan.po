@@ -2441,3 +2441,6 @@ msgstr "Bitte besuchen Sie folgende Website: http://atemio.dyndns.tv/key. Geben 
 
 msgid "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
 msgstr "Sie haben die Alternative Audio Firmware installiert (DTSDOWNMIX) !\nDamit laufen die Videos nicht korrekt."
+
+msgid "To many read error or end of file"
+msgstr "Zu viele Lesefehler oder das Ende der Datei erreicht"
