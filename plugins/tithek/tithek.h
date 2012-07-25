@@ -383,7 +383,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 {
 	int rcret = -1, oaktline = 1, oaktpage = -1, ogridcol = 0;
 
-	if(file_exist("/var/bin/audio.elf") || file_exist("/var/swap/bin/audio.elf") || file_exist("/boot/audio.old.elf"))
+	if(file_exist("/var/bin/audio.elf") || file_exist("/var/swap/bin/audio.elf"))
 		textbox(_("Message"), _("Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 	
 	if(first == 1)
