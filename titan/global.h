@@ -4566,6 +4566,31 @@ char* string_strip_whitechars(char *text)
 	return text;
 }
 
+char* string_replace_all(char *search, char *replace, char *string, int free1)
+{
+	char* tmpstr = NULL;
+	char* pos = NULL;
+
+	if(string == NULL || search == NULL)
+	{
+		tmpstr = ostrcat(tmpstr, string, 1, 0);
+		if(free1 == 1) free(string);
+		return tmpstr;
+	}
+
+	tmpstr = ostrcat(tmpstr, string, 1, 0);
+	pos = ostrstr(tmpstr, search);
+	while(pos != NULL)
+	{
+		tmpstr = string_replace(search, replace, tmpstr, 1);
+		pos = ostrstr(tmpstr, search);
+	}
+
+	if(free1 == 1) free(string);
+
+	return tmpstr;
+}
+
 char* string_replace_remove_last_chars(char *search, char *replace, char *string, int free1)
 {
 	debug(1000, "in");

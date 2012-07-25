@@ -1,0 +1,7 @@
+<screen fontcol=fontcol valign=bottom titlealign=center name=faceregister hspace=30 vspace=30 fontsize=30 title="Facebook Register" posx=center posy=center width=80% height=60% bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node name=info wrap=yes type=textbox posy=1 text="Enter the shown url in your browser and enter the Code to register the receiver to facebook" bordercol=bordercol width=100% height=130>
+<node name=url type=textbox posy=140 bordercol=bordercol width=100% height=30>
+<node name=key type=textbox posy=180 bordercol=bordercol width=100% height=30>
+<node name=b1 text="OK" parent=skinadj halign=center valign=middle bordercol=okcol bordersize=6 bordertype=2 posx=20 posy=0 width=150 height=39/>
+<node name=b2 text="EXIT" parent=skinadj halign=center valign=middle bordercol=exitcol bordersize=6 bordertype=2 posx=180 posy=0 width=150 height=39/>
+</screen>
