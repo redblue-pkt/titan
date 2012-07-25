@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//unlock.h
+void screenunlock();
+
 //serial.h
 void screenserial();
 

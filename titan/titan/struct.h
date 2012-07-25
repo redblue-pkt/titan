@@ -984,7 +984,7 @@ struct service
 	int recdstfd;
 	int recsrcfd;
 	time_t recendtime;
-	time_t rectimestamp;
+	char* rectimestamp;
 	size_t reclastsync;
 	off64_t rectotal;
 	int reccount;
