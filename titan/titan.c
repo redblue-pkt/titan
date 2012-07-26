@@ -59,6 +59,7 @@ struct mediadbcache* mediadbcache[MEDIADBCACHEMAX] = {NULL};
 #endif
 
 #include "ipkg.h"
+#include "jsmn.h"
 #include "queue.h"
 #include "channelcache.h"
 #include "transpondercache.h"
