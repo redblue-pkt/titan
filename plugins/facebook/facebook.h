@@ -3,6 +3,9 @@
 
 #include <curl/curl.h>
 
+#define FACEBOOKURL "https://graph.facebook.com"
+#define FACEBOOKAPPID "150792241632891"
+
 char* curlretbuf = NULL;
 
 size_t curl_write( void *ptr, size_t size, size_t nmemb, void *stream)
@@ -62,7 +65,10 @@ void screenfaceregister()
 			return;
 	}
 
-	curlretbuf = gethttps("https://graph.facebook.com/oauth/device?type=device_code&client_id=150792241632891");
+	tmpstr = ostrcat(FACEBOOKURL, "/oauth/device?type=device_code&client_id=", 0, 0);
+	tmpstr = ostrcat(tmpstr, FACEBOOKAPPID, 1, 0);
+	curlretbuf = gethttps(tmpstr);
+	free(tmpstr); tmpstr = NULL;
 	if(curlretbuf == NULL)
 	{
 		textbox(_("Message"), _("Connect to facebook failed"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
@@ -78,8 +84,10 @@ void screenfaceregister()
 	changetext(key, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 
-	tmpstr = getxmlentry(curlretbuf, "\"code\":");
-	tmpstr = ostrcat("https://graph.facebook.com/oauth/device?type=device_token&client_id=150792241632891&code=", tmpstr, 0, 1);
+	tmpstr = ostrcat(FACEBOOKURL, "/oauth/device?type=device_token&client_id=", 0, 0);
+	tmpstr = ostrcat(tmpstr, FACEBOOKAPPID, 1, 0);
+	tmpstr = ostrcat(tmpstr, "&code=", 1, 0);
+	tmpstr = ostrcat(tmpstr, getxmlentry(curlretbuf, "\"code\":"), 1, 1);
 
 	drawscreen(faceregister, 0, 0);
 
@@ -111,7 +119,81 @@ void screenfaceregister()
 	clearscreen(faceregister);
 }
 
-void screenfaceregister()
+int getfacefriens(struct skin* listbox)
+{
+	int ret = -1, i = 0, len = 0, treffer = 0;
+	jsmn_parser parser;
+	jsmntok_t tokens[100]; //TODO
+	char* buf = NULL, *tmpstr = NULL;
+
+	tmpstr = ostrcat(FACEBOOKURL, "/", 0, 0);
+	tmpstr = ostrcat(tmpstr, id, 1, 0);
+	tmpstr = ostrcat(tmpstr, "?access_token=", 1, 0);
+	tmpstr = ostrcat(tmpstr, getconfig("facebooktoken", NULL), 1, 0);
+	curlretbuf = gethttps(tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	if(curlretbuf == NULL || ostrstr(curlretbuf, "\"error\":") == 0)
+	{
+		textbox(_("Message"), _("Connect to facebook failed"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+		free(curlretbuf); curlretbuf = NULL;
+		return 1;
+	}
+
+	buf = malloc(MINMALLOC);
+	if(buf == NULL)
+	{
+		err("no mem");
+		free(curlretbuf); curlretbuf = NULL;
+		return 1;
+	}
+
+	jsmn_init(&parser);
+
+	ret = jsmn_parse(&parser, js, tokens, 100);
+	if(ret == JSMN_SUCCESS)
+	{
+		for(i = 0; i < 100; i++)
+		{
+			if(tokens[i].start == -1) break;
+
+			len = tokens[i].end - tokens[i].start;
+			char* ptr = js + tokens[i].start;
+
+			if(treffer == 1)
+			{
+				//TODO
+				printf("%d %d %d %d\n", tokens[i].type, tokens[i].start, tokens[i].end, tokens[i].size);
+				strncpy(buf, ptr, len);
+				buf[len] = NULL;
+				printf("%s\n", buf);
+			}
+
+			if(treffer == 2)
+			{
+				//TODO
+				printf("%d %d %d %d\n", tokens[i].type, tokens[i].start, tokens[i].end, tokens[i].size);
+				strncpy(buf, ptr, len);
+				buf[len] = NULL;
+				printf("%s\n", buf);
+			}
+
+			treffer = 0;
+			if(tokens[i].type == 3)
+			{
+				if(ostrncmp(ptr, "name", len) == 0)
+					treffer = 1;
+				else if(ostrncmp(ptr, "id", len) == 0)
+					treffer = 2;
+			}
+		}
+	}
+
+	free(curlretbuf); curlretbuf = NULL;
+	free(buf); buf = NULL;
+	return 0;
+}
+
+void screenface()
 {
 	if(getconfig("facebooktoken", NULL) == NULL)
 		screenfaceregister();
