@@ -104,6 +104,7 @@ void screenfaceregister()
 		if(access_token != NULL)
 		{
 			addconfig("facebooktoken", access_token);
+printf("%s\n", access_token);
 			changetext(key, "Register to facebook successful");
 			break;
 		}
@@ -119,20 +120,28 @@ void screenfaceregister()
 	clearscreen(faceregister);
 }
 
-int getfacefriens(struct skin* listbox)
+int getfacefriens(struct skin* facefriends, struct skin* listbox, char* id)
 {
 	int ret = -1, i = 0, len = 0, treffer = 0;
 	jsmn_parser parser;
 	jsmntok_t tokens[100]; //TODO
 	char* buf = NULL, *tmpstr = NULL;
+	struct skin* tmp = NULL;
+
+	tmp = addlistbox(facefriends, listbox, tmp, 1);
+	if(tmp != NULL)
+	{
+		changetext(tmp, "Home");
+		changeret(tmp, "me");
+	}
 
 	tmpstr = ostrcat(FACEBOOKURL, "/", 0, 0);
 	tmpstr = ostrcat(tmpstr, id, 1, 0);
-	tmpstr = ostrcat(tmpstr, "?access_token=", 1, 0);
+	tmpstr = ostrcat(tmpstr, "/friends?access_token=", 1, 0);
 	tmpstr = ostrcat(tmpstr, getconfig("facebooktoken", NULL), 1, 0);
 	curlretbuf = gethttps(tmpstr);
 	free(tmpstr); tmpstr = NULL;
-	if(curlretbuf == NULL || ostrstr(curlretbuf, "\"error\":") == 0)
+	if(curlretbuf == NULL || strstr(curlretbuf, "\"error\":") != NULL)
 	{
 		textbox(_("Message"), _("Connect to facebook failed"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		free(curlretbuf); curlretbuf = NULL;
@@ -149,7 +158,7 @@ int getfacefriens(struct skin* listbox)
 
 	jsmn_init(&parser);
 
-	ret = jsmn_parse(&parser, js, tokens, 100);
+	ret = jsmn_parse(&parser, curlretbuf, tokens, 100);
 	if(ret == JSMN_SUCCESS)
 	{
 		for(i = 0; i < 100; i++)
@@ -157,24 +166,28 @@ int getfacefriens(struct skin* listbox)
 			if(tokens[i].start == -1) break;
 
 			len = tokens[i].end - tokens[i].start;
-			char* ptr = js + tokens[i].start;
+			if(len > MINMALLOC) len = MINMALLOC;
+			char* ptr = curlretbuf + tokens[i].start;
 
 			if(treffer == 1)
 			{
-				//TODO
-				printf("%d %d %d %d\n", tokens[i].type, tokens[i].start, tokens[i].end, tokens[i].size);
-				strncpy(buf, ptr, len);
-				buf[len] = NULL;
-				printf("%s\n", buf);
+				tmp = addlistbox(facefriends, listbox, tmp, 1);
+				if(tmp != NULL)
+				{
+					strncpy(buf, ptr, len);
+					buf[len] = '\0';
+					changetext(tmp, buf);
+				}
 			}
 
 			if(treffer == 2)
 			{
-				//TODO
-				printf("%d %d %d %d\n", tokens[i].type, tokens[i].start, tokens[i].end, tokens[i].size);
-				strncpy(buf, ptr, len);
-				buf[len] = NULL;
-				printf("%s\n", buf);
+				if(tmp != NULL)
+				{
+					strncpy(buf, ptr, len);
+					buf[len] = '\0';
+					changeret(tmp, buf);
+				}
 			}
 
 			treffer = 0;
@@ -193,6 +206,43 @@ int getfacefriens(struct skin* listbox)
 	return 0;
 }
 
+int getfaceuser(struct skin* name, struct skin* username, struct skin* gender, char* id)
+{
+	char* tmpstr = NULL;
+
+	changetext(name, NULL);
+	changetext(username, NULL);
+	changetext(gender, NULL);
+
+	tmpstr = ostrcat(FACEBOOKURL, "/", 0, 0);
+	tmpstr = ostrcat(tmpstr, id, 1, 0);
+	tmpstr = ostrcat(tmpstr, "?access_token=", 1, 0);
+	tmpstr = ostrcat(tmpstr, getconfig("facebooktoken", NULL), 1, 0);
+	curlretbuf = gethttps(tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	if(curlretbuf == NULL || strstr(curlretbuf, "\"error\":") != NULL)
+	{
+		textbox(_("Message"), _("Connect to facebook failed"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+		free(curlretbuf); curlretbuf = NULL;
+		return 1;
+	}
+
+	tmpstr = getxmlentry(curlretbuf, "\"name\":");
+	changetext(name, tmpstr);
+	free(tmpstr); tmpstr = NULL;
+
+	tmpstr = getxmlentry(curlretbuf, "\"username\":");
+	changetext(username, tmpstr);
+	free(tmpstr); tmpstr = NULL;
+
+	tmpstr = getxmlentry(curlretbuf, "\"gender\":");
+	changetext(gender, tmpstr);
+	free(tmpstr); tmpstr = NULL;
+
+	free(curlretbuf); curlretbuf = NULL;
+	return 0;
+}
+
 void screenface()
 {
 	if(getconfig("facebooktoken", NULL) == NULL)
@@ -200,20 +250,46 @@ void screenface()
 
 	int rcret = -1;
 
+	struct skin* facetitle = getscreen("facetitle");
+	struct skin* facefriends = getscreen("facefriends");
+	struct skin* facefriendslist = getscreennode(facefriends, "listbox");
+	struct skin* facefoto = getscreen("facefoto");
 	struct skin* facebook = getscreen("facebook");
-	struct skin* listbox = getscreennode(facebook, "listbox");
-	struct skin* info = getscreennode(facebook, "info");
-	struct skin* text = getscreennode(facebook, "text");
+	struct skin* facebooklist = getscreennode(facebook, "facebooklist");
+	struct skin* facebutton = getscreen("facebutton");
+	struct skin* faceuser = getscreen("faceuser");
+	struct skin* facename = getscreennode(faceuser, "facename");
+	struct skin* faceusername = getscreennode(faceuser, "faceusername");
+	struct skin* facegender = getscreennode(faceuser, "facegender");
 
+	getfacefriens(facefriends, facefriendslist, "me");
+	getfaceuser(facename, faceusername, facegender, "me");
+
+	drawscreen(facetitle, 0, 1);
+	drawscreen(facefriends, 0, 1);
+	drawscreen(facefoto, 0, 1);
+	drawscreen(facebutton, 0, 1);
+	drawscreen(faceuser, 0, 1);
 	drawscreen(facebook, 0, 0);
-	addscreenrc(facebook, listbox);
+
+	addscreenrc(facefriends, facefriendslist);
 
 	while(1)
 	{
+		rcret = waitrc(facefriends, 0, 0);
+
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 	}
 
+	delownerrc(facefriends);
+	delmarkedscreennodes(facefriends, 1);
 	delownerrc(facebook);
+	delmarkedscreennodes(facebook, 1);
+	clearscreen(facetitle);
+	clearscreen(facefriends);
+	clearscreen(facefoto);
+	clearscreen(facebutton);
+	clearscreen(faceuser);
 	clearscreen(facebook);
 }
 
