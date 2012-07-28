@@ -689,6 +689,17 @@ int main(int argc, char *argv[])
 	if((checkbox("ATEMIO500") == 0) && (checkbox("ATEMIO510") == 0))
 		addtimer(&updatevfd, START, 1000, -1, NULL, NULL, NULL);
 
+	if(getconfigint("firststart", NULL) == 1)
+	{
+		if(file_exist("/tmp/.scart"))
+		{
+			setvideomode("pal", 0);
+			changefbresolution("pal");
+			addconfig("firststart", "0");
+			autoresolution();
+		}
+	}
+		
 	//first wizzard
 	if(getconfigint("nofirstwizzard", NULL) < 2)
 	{
