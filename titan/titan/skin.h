@@ -3684,7 +3684,10 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 		else
 		{
 			if(node->wrap == YES)
+			{
 				wrapstr(node->text, node->font, node->fontsize, node->iwidth, node->charspace);
+				wrapstr(node->text2, node->font, node->fontsize2, node->iwidth, node->charspace);
+			}
 			calctext(node->text, node->text2, &node->linecount, &node->pagecount, &node->poscount, node->iheight / node->fontsize, node->aktpage);
 		}
 		if(node->text2 != NULL) node->scrollbar = NO;
