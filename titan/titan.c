@@ -695,9 +695,9 @@ int main(int argc, char *argv[])
 		{
 			setvideomode("pal", 0);
 			changefbresolution("pal");
-			addconfig("firststart", "0");
 			autoresolution();
 		}
+		addconfig("firststart", "0");
 	}
 		
 	//first wizzard
