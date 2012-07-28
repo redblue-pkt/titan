@@ -6,7 +6,11 @@
 #define FACEBOOKURL "https://graph.facebook.com"
 #define FACEBOOKAPPID "150792241632891"
 #define FACEBOOKPIC "/tmp/facebookpic.jpg"
+#define FACEMAXTOKEN 1000
+#define FACEMAXENTRY "50"
+#define FACEMAXFRIEND "200"
 
+int curlretbufsize = 0;
 char* curlretbuf = NULL;
 
 int getfacefoto(char* url)
@@ -34,10 +38,16 @@ int getfacefoto(char* url)
 
 size_t curl_write( void *ptr, size_t size, size_t nmemb, void *stream)
 {
-	curlretbuf = calloc(1, size * nmemb);
+	curlretbuf = realloc(curlretbuf, (curlretbufsize + (size * nmemb)) + 1);
 	if(curlretbuf != NULL)
-		memcpy(curlretbuf, ptr, size * nmemb);
-		//buffer.append((char*)ptr, size * nmemb);
+	{
+		memcpy(curlretbuf + curlretbufsize, ptr, size * nmemb);
+		curlretbufsize += size * nmemb;
+		curlretbuf[curlretbufsize] = '\0';
+	}
+	else
+		curlretbufsize = 0;
+
 	return size * nmemb;
 }
 
@@ -47,6 +57,7 @@ char* gethttps(char* url)
 	CURLcode res;
 
 	free(curlretbuf); curlretbuf = NULL;
+	curlretbufsize = 0;
 
 	curl = curl_easy_init();
 	if(curl)
@@ -135,6 +146,7 @@ printf("%s\n", access_token);
 	}
 
 	free(curlretbuf); curlretbuf = NULL;
+	curlretbufsize = 0;
 	free(access_token); access_token = NULL;
 	free(tmpstr); tmpstr = NULL;
 
@@ -148,28 +160,27 @@ int getfacefriens(struct skin* facefriends, struct skin* listbox, char* id)
 {
 	int ret = -1, i = 0, len = 0, treffer = 0;
 	jsmn_parser parser;
-	jsmntok_t tokens[100]; //TODO
+	jsmntok_t tokens[FACEMAXTOKEN]; //TODO
 	char* buf = NULL, *tmpstr = NULL;
 	struct skin* tmp = NULL;
 
-	tmp = addlistbox(facefriends, listbox, tmp, 1);
-	if(tmp != NULL)
-	{
-		changetext(tmp, "Home");
-		changeret(tmp, "me()");
-	}
 	if(id == NULL) return 1;
 
-	tmpstr = ostrcat(FACEBOOKURL, "/fql?q=SELECT+name,id+FROM+profile+WHERE+id+IN(SELECT+uid2+FROM+friend+WHERE+uid1=", 0, 0);
+	tmpstr = ostrcat(FACEBOOKURL, "/fql?q=SELECT+name,id+FROM+profile+WHERE+id=me()+OR+id+IN(SELECT+uid2+FROM+friend+WHERE+uid1=", 0, 0);
 	tmpstr = ostrcat(tmpstr, id, 1, 0);
-	tmpstr = ostrcat(tmpstr, ")&access_token=", 1, 0);
+	tmpstr = ostrcat(tmpstr, ")+LIMIT+0,", 1, 0);
+	tmpstr = ostrcat(tmpstr, FACEMAXFRIEND, 1, 0);
+	tmpstr = ostrcat(tmpstr, "&access_token=", 1, 0);
 	tmpstr = ostrcat(tmpstr, getconfig("facebooktoken", NULL), 1, 0);
 	curlretbuf = gethttps(tmpstr);
+printf("%s\n", tmpstr);
+printf("%s\n", curlretbuf);
 	free(tmpstr); tmpstr = NULL;
 	if(curlretbuf == NULL || strstr(curlretbuf, "\"error\":") != NULL)
 	{
 		textbox(_("Message"), _("Can't get data from facebook"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		free(curlretbuf); curlretbuf = NULL;
+		curlretbufsize = 0;
 		return 1;
 	}
 
@@ -178,15 +189,16 @@ int getfacefriens(struct skin* facefriends, struct skin* listbox, char* id)
 	{
 		err("no mem");
 		free(curlretbuf); curlretbuf = NULL;
+		curlretbufsize = 0;
 		return 1;
 	}
 
 	jsmn_init(&parser);
 
-	ret = jsmn_parse(&parser, curlretbuf, tokens, 100);
+	ret = jsmn_parse(&parser, curlretbuf, tokens, FACEMAXTOKEN);
 	if(ret == JSMN_SUCCESS)
 	{
-		for(i = 0; i < 100; i++)
+		for(i = 0; i < FACEMAXTOKEN; i++)
 		{
 			if(tokens[i].start == -1) break;
 
@@ -227,6 +239,7 @@ int getfacefriens(struct skin* facefriends, struct skin* listbox, char* id)
 	}
 
 	free(curlretbuf); curlretbuf = NULL;
+	curlretbufsize = 0;
 	free(buf); buf = NULL;
 	return 0;
 }
@@ -251,6 +264,7 @@ int getfaceuser(struct skin* name, struct skin* status, struct skin* gender, str
 	{
 		textbox(_("Message"), _("Can't get data from facebook"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		free(curlretbuf); curlretbuf = NULL;
+		curlretbufsize = 0;
 		return 1;
 	}
 
@@ -273,22 +287,26 @@ int getfaceuser(struct skin* name, struct skin* status, struct skin* gender, str
 	free(tmpstr); tmpstr = NULL;
 
 	free(curlretbuf); curlretbuf = NULL;
+	curlretbufsize = 0;
 	return 0;
 }
 
 int getfacestream(struct skin* facebook, struct skin* listbox, char* id)
 {
 	int ret = -1, i = 0, len = 0, treffer = 0;
+	struct tm *loctime = NULL;
 	jsmn_parser parser;
-	jsmntok_t tokens[100]; //TODO
-	char* buf = NULL, *tmpstr = NULL;
+	jsmntok_t tokens[FACEMAXTOKEN]; //TODO
+	char* buf = NULL, *buf1 = NULL, *tmpstr = NULL;
 	struct skin* tmp = NULL;
 
 	delmarkedscreennodes(facebook, 1);
 	if(id == NULL) return 1;
 
-	tmpstr = ostrcat(FACEBOOKURL, "/fql?q=SELECT+message,post_id+FROM+stream+WHERE+source_id=", 0, 0);
+	tmpstr = ostrcat(FACEBOOKURL, "/fql?q=SELECT+message,attachment,type,created_time,post_id+FROM+stream+WHERE+source_id=", 0, 0);
 	tmpstr = ostrcat(tmpstr, id, 1, 0);
+	tmpstr = ostrcat(tmpstr, "+LIMIT+0,", 1, 0);
+	tmpstr = ostrcat(tmpstr, FACEMAXENTRY, 1, 0);
 	tmpstr = ostrcat(tmpstr, "&access_token=", 1, 0);
 	tmpstr = ostrcat(tmpstr, getconfig("facebooktoken", NULL), 1, 0);
 	curlretbuf = gethttps(tmpstr);
@@ -299,6 +317,7 @@ printf("%s\n", curlretbuf);
 	{
 		textbox(_("Message"), _("Can't get data from facebook"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		free(curlretbuf); curlretbuf = NULL;
+		curlretbufsize = 0;
 		return 1;
 	}
 
@@ -307,15 +326,26 @@ printf("%s\n", curlretbuf);
 	{
 		err("no mem");
 		free(curlretbuf); curlretbuf = NULL;
+		curlretbufsize = 0;
+		return 1;
+	}
+
+	buf1 = malloc(17);
+	if(buf1 == NULL)
+	{
+		err("no mem");
+		free(curlretbuf); curlretbuf = NULL;
+		curlretbufsize = 0;
+		free(buf); buf = NULL;
 		return 1;
 	}
 
 	jsmn_init(&parser);
 
-	ret = jsmn_parse(&parser, curlretbuf, tokens, 100);
+	ret = jsmn_parse(&parser, curlretbuf, tokens, FACEMAXTOKEN);
 	if(ret == JSMN_SUCCESS)
 	{
-		for(i = 0; i < 100; i++)
+		for(i = 0; i < FACEMAXTOKEN; i++)
 		{
 			if(tokens[i].start == -1) break;
 
@@ -328,6 +358,9 @@ printf("%s\n", curlretbuf);
 				tmp = addlistbox(facebook, listbox, tmp, 1);
 				if(tmp != NULL)
 				{
+					tmp->type = TEXTBOX;
+					tmp->wrap = YES;
+					tmp->height = 100;
 					strncpy(buf, ptr, len);
 					buf[len] = '\0';
 					changetext(tmp, buf);
@@ -336,91 +369,6 @@ printf("%s\n", curlretbuf);
 
 			if(treffer == 2)
 			{
-				if(tmp != NULL)
-				{
-					strncpy(buf, ptr, len);
-					buf[len] = '\0';
-					changeret(tmp, buf);
-				}
-			}
-
-			treffer = 0;
-			if(tokens[i].type == 3)
-			{
-				if(len > 0 && ostrncmp(ptr, "message", len) == 0)
-					treffer = 1;
-				else if(len > 0 && ostrncmp(ptr, "post_id", len) == 0)
-					treffer = 2;
-			}
-		}
-	}
-
-	free(curlretbuf); curlretbuf = NULL;
-	free(buf); buf = NULL;
-	return 0;
-}
-
-int getfacenote(struct skin* facebook, struct skin* listbox, char* id)
-{
-	int ret = -1, i = 0, len = 0, treffer = 0;
-	jsmn_parser parser;
-	jsmntok_t tokens[100]; //TODO
-	char* buf = NULL, *tmpstr = NULL;
-	struct skin* tmp = NULL;
-
-	delmarkedscreennodes(facebook, 1);
-	if(id == NULL) return 1;
-
-	tmpstr = ostrcat(FACEBOOKURL, "/fql?q=SELECT+title,content,note_id+FROM+note+WHERE+uid=", 0, 0);
-	tmpstr = ostrcat(tmpstr, id, 1, 0);
-	tmpstr = ostrcat(tmpstr, "&access_token=", 1, 0);
-	tmpstr = ostrcat(tmpstr, getconfig("facebooktoken", NULL), 1, 0);
-	curlretbuf = gethttps(tmpstr);
-printf("%s\n", tmpstr);
-printf("%s\n", curlretbuf);
-	free(tmpstr); tmpstr = NULL;
-	if(curlretbuf == NULL || strstr(curlretbuf, "\"error\":") != NULL)
-	{
-		textbox(_("Message"), _("Can't get data from facebook"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-		free(curlretbuf); curlretbuf = NULL;
-		return 1;
-	}
-
-	buf = malloc(MINMALLOC);
-	if(buf == NULL)
-	{
-		err("no mem");
-		free(curlretbuf); curlretbuf = NULL;
-		return 1;
-	}
-
-	jsmn_init(&parser);
-
-	ret = jsmn_parse(&parser, curlretbuf, tokens, 100);
-	if(ret == JSMN_SUCCESS)
-	{
-		for(i = 0; i < 100; i++)
-		{
-			if(tokens[i].start == -1) break;
-
-			len = tokens[i].end - tokens[i].start;
-			if(len > MINMALLOC) len = MINMALLOC;
-			char* ptr = curlretbuf + tokens[i].start;
-
-			if(treffer == 1)
-			{
-				tmp = addlistbox(facebook, listbox, tmp, 1);
-				if(tmp != NULL)
-				{
-					strncpy(buf, ptr, len);
-					buf[len] = '\0';
-					changetext(tmp, buf);
-				}
-			}
-
-			if(treffer == 2)
-			{
-				tmp = addlistbox(facebook, listbox, tmp, 1);
 				if(tmp != NULL)
 				{
 					strncpy(buf, ptr, len);
@@ -430,6 +378,199 @@ printf("%s\n", curlretbuf);
 			}
 
 			if(treffer == 3)
+			{
+				if(tmp != NULL && (tmp->text == NULL || (tmp->text != NULL && strlen(tmp->text) == 0)))
+				{
+					int type = 0;
+
+					strncpy(buf, ptr, len);
+					buf[len] = '\0';
+					if(buf != NULL)
+						type = atoi(buf);
+					switch(type)
+					{
+						case 11: changetext(tmp, _("Group created")); break;
+						case 12: changetext(tmp, _("Event created")); break;
+						case 46: changetext(tmp, _("Status update")); break;
+						case 56: changetext(tmp, _("Post on wall from another user")); break;
+						case 66: changetext(tmp, _("Note created")); break;
+						case 80: changetext(tmp, _("Link postet")); break;
+						case 128: changetext(tmp, _("Video postet")); break;
+						case 247: changetext(tmp, _("Photos postet")); break;
+						case 237: changetext(tmp, _("App story")); break;
+						case 257: changetext(tmp, _("Coment created")); break;
+						case 272: changetext(tmp, _("App story")); break;
+						case 285: changetext(tmp, _("Checkin to a place")); break;
+						case 308: changetext(tmp, _("Post in group")); break;
+
+					}
+				}
+			}
+
+			if(treffer == 4)
+			{
+				if(tmp != NULL)
+				{
+					time_t t = 0;
+
+					strncpy(buf, ptr, len);
+					buf[len] = '\0';
+					if(buf != NULL)
+						t = strtoul(buf, NULL, 10);
+					loctime = olocaltime(&t);
+					if(loctime != NULL)
+						strftime(buf1, 17, "%d-%m-%Y %H:%M", loctime);
+					free(loctime); loctime = NULL;
+
+					if(tmp->text != NULL && strlen(tmp->text) != 0)
+						tmp->text = ostrcat(tmp->text, " - ", 1, 0);
+					tmp->text = ostrcat(tmp->text, buf1, 1, 0);
+				}
+			}
+
+
+			if(treffer == 5)
+			{
+				if(tmp != NULL)
+				{
+					strncpy(buf, ptr, len);
+					buf[len] = '\0';
+					changeret(tmp, buf);
+				}
+			}
+
+
+			treffer = 0;
+			if(tokens[i].type == 3)
+			{
+				if(len > 0 && ostrncmp(ptr, "message", len) == 0)
+					treffer = 1;
+				else if(len > 0 && ostrncmp(ptr, "description", len) == 0)
+					treffer = 2;
+				else if(len > 0 && ostrncmp(ptr, "type", len) == 0)
+					treffer = 3;
+				else if(len > 0 && ostrncmp(ptr, "created_time", len) == 0)
+					treffer = 4;
+				else if(len > 0 && ostrncmp(ptr, "post_id", len) == 0)
+					treffer = 5;
+			}
+		}
+	}
+
+	free(curlretbuf); curlretbuf = NULL;
+	curlretbufsize = 0;
+	free(buf); buf = NULL;
+	return 0;
+}
+
+int getfacenote(struct skin* facebook, struct skin* listbox, char* id)
+{
+	int ret = -1, i = 0, len = 0, treffer = 0;
+	struct tm *loctime = NULL;
+	jsmn_parser parser;
+	jsmntok_t tokens[FACEMAXTOKEN]; //TODO
+	char* buf = NULL, *buf1 = NULL, *tmpstr = NULL;
+	struct skin* tmp = NULL;
+
+	delmarkedscreennodes(facebook, 1);
+	if(id == NULL) return 1;
+
+	tmpstr = ostrcat(FACEBOOKURL, "/fql?q=SELECT+title,content,created_time,note_id+FROM+note+WHERE+uid=", 0, 0);
+	tmpstr = ostrcat(tmpstr, id, 1, 0);
+	tmpstr = ostrcat(tmpstr, "+LIMIT+0,", 1, 0);
+	tmpstr = ostrcat(tmpstr, FACEMAXENTRY, 1, 0);
+	tmpstr = ostrcat(tmpstr, "&access_token=", 1, 0);
+	tmpstr = ostrcat(tmpstr, getconfig("facebooktoken", NULL), 1, 0);
+	curlretbuf = gethttps(tmpstr);
+printf("%s\n", tmpstr);
+printf("%s\n", curlretbuf);
+	free(tmpstr); tmpstr = NULL;
+	if(curlretbuf == NULL || strstr(curlretbuf, "\"error\":") != NULL)
+	{
+		textbox(_("Message"), _("Can't get data from facebook"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+		free(curlretbuf); curlretbuf = NULL;
+		curlretbufsize = 0;
+		return 1;
+	}
+
+	buf = malloc(MINMALLOC);
+	if(buf == NULL)
+	{
+		err("no mem");
+		free(curlretbuf); curlretbuf = NULL;
+		curlretbufsize = 0;
+		return 1;
+	}
+
+	buf1 = malloc(17);
+	if(buf1 == NULL)
+	{
+		err("no mem");
+		free(curlretbuf); curlretbuf = NULL;
+		curlretbufsize = 0;
+		free(buf); buf = NULL;
+		return 1;
+	}
+
+	jsmn_init(&parser);
+
+	ret = jsmn_parse(&parser, curlretbuf, tokens, FACEMAXTOKEN);
+	if(ret == JSMN_SUCCESS)
+	{
+		for(i = 0; i < FACEMAXTOKEN; i++)
+		{
+			if(tokens[i].start == -1) break;
+
+			len = tokens[i].end - tokens[i].start;
+			if(len > MINMALLOC) len = MINMALLOC;
+			char* ptr = curlretbuf + tokens[i].start;
+
+			if(treffer == 1)
+			{
+				tmp = addlistbox(facebook, listbox, tmp, 1);
+				if(tmp != NULL)
+				{
+					tmp->type = TEXTBOX;
+					tmp->wrap = YES;
+					tmp->height = 100;
+					strncpy(buf, ptr, len);
+					buf[len] = '\0';
+					changetext(tmp, buf);
+				}
+			}
+
+			if(treffer == 2)
+			{
+				if(tmp != NULL)
+				{
+					strncpy(buf, ptr, len);
+					buf[len] = '\0';
+					changetext2(tmp, buf);
+				}
+			}
+
+			if(treffer == 3)
+			{
+				if(tmp != NULL)
+				{
+					time_t t = 0;
+
+					strncpy(buf, ptr, len);
+					buf[len] = '\0';
+					if(buf != NULL)
+						t = strtoul(buf, NULL, 10);
+					loctime = olocaltime(&t);
+					if(loctime != NULL)
+						strftime(buf1, 17, "%d-%m-%Y %H:%M", loctime);
+					free(loctime); loctime = NULL;
+
+					if(tmp->text != NULL && strlen(tmp->text) != 0)
+						tmp->text = ostrcat(tmp->text, " - ", 1, 0);
+					tmp->text = ostrcat(tmp->text, buf1, 1, 0);
+				}
+			}
+
+			if(treffer == 4)
 			{
 				if(tmp != NULL)
 				{
@@ -446,30 +587,35 @@ printf("%s\n", curlretbuf);
 					treffer = 1;
 				if(len > 0 && ostrncmp(ptr, "content", len) == 0)
 					treffer = 2;
-				else if(len > 0 && ostrncmp(ptr, "note_id", len) == 0)
+				else if(len > 0 && ostrncmp(ptr, "created_time", len) == 0)
 					treffer = 3;
+				else if(len > 0 && ostrncmp(ptr, "note_id", len) == 0)
+					treffer = 4;
 			}
 		}
 	}
 
 	free(curlretbuf); curlretbuf = NULL;
+	curlretbufsize = 0;
 	free(buf); buf = NULL;
 	return 0;
 }
 
-int getfacealbum(struct skin* facebook, struct skin* listbox, char* id)
+int getfacealbum(struct skin* facebook, struct skin* listbox, struct skin* facefriendslist, char* id)
 {
 	int ret = -1, i = 0, len = 0, treffer = 0;
 	jsmn_parser parser;
-	jsmntok_t tokens[100]; //TODO
+	jsmntok_t tokens[FACEMAXTOKEN]; //TODO
 	char* buf = NULL, *tmpstr = NULL;
-	struct skin* tmp = NULL;
+	struct skin* tmp = NULL, *node = NULL;
 
 	delmarkedscreennodes(facebook, 1);
 	if(id == NULL) return 1;
 
-	tmpstr = ostrcat(FACEBOOKURL, "/fql?q=SELECT+name,aid+FROM+album+WHERE+owner=", 0, 0);
+	tmpstr = ostrcat(FACEBOOKURL, "/fql?q=SELECT+name,owner,aid+FROM+album+WHERE+owner=", 0, 0);
 	tmpstr = ostrcat(tmpstr, id, 1, 0);
+	tmpstr = ostrcat(tmpstr, "+LIMIT+0,", 1, 0);
+	tmpstr = ostrcat(tmpstr, FACEMAXENTRY, 1, 0);
 	tmpstr = ostrcat(tmpstr, "&access_token=", 1, 0);
 	tmpstr = ostrcat(tmpstr, getconfig("facebooktoken", NULL), 1, 0);
 	curlretbuf = gethttps(tmpstr);
@@ -480,6 +626,7 @@ printf("%s\n", curlretbuf);
 	{
 		textbox(_("Message"), _("Can't get data from facebook"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		free(curlretbuf); curlretbuf = NULL;
+		curlretbufsize = 0;
 		return 1;
 	}
 
@@ -488,15 +635,16 @@ printf("%s\n", curlretbuf);
 	{
 		err("no mem");
 		free(curlretbuf); curlretbuf = NULL;
+		curlretbufsize = 0;
 		return 1;
 	}
 
 	jsmn_init(&parser);
 
-	ret = jsmn_parse(&parser, curlretbuf, tokens, 100);
+	ret = jsmn_parse(&parser, curlretbuf, tokens, FACEMAXTOKEN);
 	if(ret == JSMN_SUCCESS)
 	{
-		for(i = 0; i < 100; i++)
+		for(i = 0; i < FACEMAXTOKEN; i++)
 		{
 			if(tokens[i].start == -1) break;
 
@@ -521,6 +669,26 @@ printf("%s\n", curlretbuf);
 				{
 					strncpy(buf, ptr, len);
 					buf[len] = '\0';
+
+					node = facefriendslist;
+					while(node != NULL)
+					{
+						if(ostrcmp(node->ret, buf) == 0)
+						{
+							tmp->text = ostrcat(tmp->text, " - ", 1, 0);
+							tmp->text = ostrcat(tmp->text, node->text, 1, 0);
+						}
+						node = node->next;
+					}
+				}
+			}
+
+			if(treffer == 3)
+			{
+				if(tmp != NULL)
+				{
+					strncpy(buf, ptr, len);
+					buf[len] = '\0';
 					changeret(tmp, buf);
 				}
 			}
@@ -530,30 +698,36 @@ printf("%s\n", curlretbuf);
 			{
 				if(len > 0 && ostrncmp(ptr, "name", len) == 0)
 					treffer = 1;
-				if(len > 0 && ostrncmp(ptr, "aid", len) == 0)
+				if(len > 0 && ostrncmp(ptr, "owner", len) == 0)
 					treffer = 2;
+				if(len > 0 && ostrncmp(ptr, "aid", len) == 0)
+					treffer = 3;
 			}
 		}
 	}
 
 	free(curlretbuf); curlretbuf = NULL;
+	curlretbufsize = 0;
 	free(buf); buf = NULL;
 	return 0;
 }
 
-int getfacecomment(struct skin* facebook, struct skin* listbox, char* id)
+int getfacecomment(struct skin* facecomment, struct skin* listbox, struct skin* facefriendslist, char* id)
 {
 	int ret = -1, i = 0, len = 0, treffer = 0;
+	struct tm *loctime = NULL;
 	jsmn_parser parser;
-	jsmntok_t tokens[100]; //TODO
-	char* buf = NULL, *tmpstr = NULL;
-	struct skin* tmp = NULL;
+	jsmntok_t tokens[FACEMAXTOKEN]; //TODO
+	char* buf = NULL, *buf1 = NULL, *tmpstr = NULL;
+	struct skin* tmp = NULL, *node = NULL;
 
-	delmarkedscreennodes(facebook, 1);
+	delmarkedscreennodes(facecomment, 1);
 	if(id == NULL) return 1;
 
-	tmpstr = ostrcat(FACEBOOKURL, "/fql?q=SELECT+username,text+FROM+comment+WHERE+object_id=", 0, 0);
+	tmpstr = ostrcat(FACEBOOKURL, "/fql?q=SELECT+time,text,fromid,object_id+FROM+comment+WHERE+object_id=", 0, 0);
 	tmpstr = ostrcat(tmpstr, id, 1, 0);
+	tmpstr = ostrcat(tmpstr, "+LIMIT+0,", 1, 0);
+	tmpstr = ostrcat(tmpstr, FACEMAXENTRY, 1, 0);
 	tmpstr = ostrcat(tmpstr, "&access_token=", 1, 0);
 	tmpstr = ostrcat(tmpstr, getconfig("facebooktoken", NULL), 1, 0);
 	curlretbuf = gethttps(tmpstr);
@@ -564,6 +738,7 @@ printf("%s\n", curlretbuf);
 	{
 		textbox(_("Message"), _("Can't get data from facebook"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		free(curlretbuf); curlretbuf = NULL;
+		curlretbufsize = 0;
 		return 1;
 	}
 
@@ -572,15 +747,26 @@ printf("%s\n", curlretbuf);
 	{
 		err("no mem");
 		free(curlretbuf); curlretbuf = NULL;
+		curlretbufsize = 0;
+		return 1;
+	}
+
+	buf1 = malloc(17);
+	if(buf1 == NULL)
+	{
+		err("no mem");
+		free(curlretbuf); curlretbuf = NULL;
+		curlretbufsize = 0;
+		free(buf); buf = NULL;
 		return 1;
 	}
 
 	jsmn_init(&parser);
 
-	ret = jsmn_parse(&parser, curlretbuf, tokens, 100);
+	ret = jsmn_parse(&parser, curlretbuf, tokens, FACEMAXTOKEN);
 	if(ret == JSMN_SUCCESS)
 	{
-		for(i = 0; i < 100; i++)
+		for(i = 0; i < FACEMAXTOKEN; i++)
 		{
 			if(tokens[i].start == -1) break;
 
@@ -590,9 +776,159 @@ printf("%s\n", curlretbuf);
 
 			if(treffer == 1)
 			{
-				tmp = addlistbox(facebook, listbox, tmp, 1);
+				tmp = addlistbox(facecomment, listbox, tmp, 1);
 				if(tmp != NULL)
 				{
+					time_t t = 0;
+
+					tmp->type = TEXTBOX;
+					tmp->wrap = YES;
+					tmp->height = 100;
+					strncpy(buf, ptr, len);
+					buf[len] = '\0';
+					if(buf != NULL)
+						t = strtoul(buf, NULL, 10);
+					loctime = olocaltime(&t);
+					if(loctime != NULL)
+						strftime(buf1, 17, "%d-%m-%Y %H:%M", loctime);
+					free(loctime); loctime = NULL;
+
+					changetext(tmp, buf1);
+				}
+			}
+
+			if(treffer == 2)
+			{
+				if(tmp != NULL)
+				{
+					strncpy(buf, ptr, len);
+					buf[len] = '\0';
+					changetext2(tmp, buf);
+				}
+			}
+
+			if(treffer == 3)
+			{
+				if(tmp != NULL)
+				{
+					strncpy(buf, ptr, len);
+					buf[len] = '\0';
+					
+					node = facefriendslist;
+					while(node != NULL)
+					{
+						if(ostrcmp(node->ret, buf) == 0)
+						{
+							tmp->text = ostrcat(tmp->text, " - ", 1, 0);
+							tmp->text = ostrcat(tmp->text, node->text, 1, 0);
+						}
+						node = node->next;
+					}
+				}
+			}
+
+			if(treffer == 4)
+			{
+				if(tmp != NULL)
+				{
+					strncpy(buf, ptr, len);
+					buf[len] = '\0';
+					changeret(tmp, buf);
+				}
+			}
+
+			treffer = 0;
+			if(tokens[i].type == 3)
+			{
+				if(len > 0 && ostrncmp(ptr, "time", len) == 0)
+					treffer = 1;
+				if(len > 0 && ostrncmp(ptr, "text", len) == 0)
+					treffer = 2;
+				if(len > 0 && ostrncmp(ptr, "fromid", len) == 0)
+					treffer = 3;
+				if(len > 0 && ostrncmp(ptr, "object_id", len) == 0)
+					treffer = 4;
+			}
+		}
+	}
+
+	free(curlretbuf); curlretbuf = NULL;
+	curlretbufsize = 0;
+	free(buf); buf = NULL;
+	free(buf1); buf1 = NULL;
+	return 0;
+}
+
+int getfacesubcomment(struct skin* facesubcomment, struct skin* listbox, char* id)
+{
+	int ret = -1, i = 0, len = 0, treffer = 0;
+	struct tm *loctime = NULL;
+	jsmn_parser parser;
+	jsmntok_t tokens[FACEMAXTOKEN]; //TODO
+	char* buf = NULL, *buf1 = NULL, *tmpstr = NULL;
+	struct skin* tmp = NULL;
+
+	delmarkedscreennodes(facesubcomment, 1);
+	if(id == NULL) return 1;
+
+	tmpstr = ostrcat(FACEBOOKURL, "/fql?q=SELECT+comments+FROM+comment+WHERE+object_id=", 0, 0);
+	tmpstr = ostrcat(tmpstr, id, 1, 0);
+	tmpstr = ostrcat(tmpstr, "+LIMIT+0,", 1, 0);
+	tmpstr = ostrcat(tmpstr, FACEMAXENTRY, 1, 0);
+	tmpstr = ostrcat(tmpstr, "&access_token=", 1, 0);
+	tmpstr = ostrcat(tmpstr, getconfig("facebooktoken", NULL), 1, 0);
+	curlretbuf = gethttps(tmpstr);
+printf("%s\n", tmpstr);
+printf("%s\n", curlretbuf);
+	free(tmpstr); tmpstr = NULL;
+	if(curlretbuf == NULL || strstr(curlretbuf, "\"error\":") != NULL)
+	{
+		textbox(_("Message"), _("Can't get data from facebook"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+		free(curlretbuf); curlretbuf = NULL;
+		curlretbufsize = 0;
+		return 1;
+	}
+
+	buf = malloc(MINMALLOC);
+	if(buf == NULL)
+	{
+		err("no mem");
+		free(curlretbuf); curlretbuf = NULL;
+		curlretbufsize = 0;
+		return 1;
+	}
+
+	buf1 = malloc(17);
+	if(buf1 == NULL)
+	{
+		err("no mem");
+		free(curlretbuf); curlretbuf = NULL;
+		curlretbufsize = 0;
+		free(buf); buf = NULL;
+		return 1;
+	}
+
+	jsmn_init(&parser);
+
+	ret = jsmn_parse(&parser, curlretbuf, tokens, FACEMAXTOKEN);
+	if(ret == JSMN_SUCCESS)
+	{
+		for(i = 0; i < FACEMAXTOKEN; i++)
+		{
+			if(tokens[i].start == -1) break;
+
+			len = tokens[i].end - tokens[i].start;
+			if(len > MINMALLOC) len = MINMALLOC;
+			char* ptr = curlretbuf + tokens[i].start;
+
+			if(treffer == 1)
+			{
+				tmp = addlistbox(facesubcomment, listbox, tmp, 1);
+				if(tmp != NULL)
+				{
+					tmp->type = TEXTBOX;
+					tmp->wrap = YES;
+					tmp->height = 100;
 					strncpy(buf, ptr, len);
 					buf[len] = '\0';
 					changetext(tmp, buf);
@@ -609,32 +945,105 @@ printf("%s\n", curlretbuf);
 				}
 			}
 
+			if(treffer == 3)
+			{
+				if(tmp != NULL)
+				{
+					time_t t = 0;
+
+					strncpy(buf, ptr, len);
+					buf[len] = '\0';
+					if(buf != NULL)
+						t = strtoul(buf, NULL, 10);
+					loctime = olocaltime(&t);
+					if(loctime != NULL)
+						strftime(buf1, 17, "%d-%m-%Y %H:%M", loctime);
+					free(loctime); loctime = NULL;
+
+					if(tmp->text != NULL && strlen(tmp->text) != 0)
+						tmp->text = ostrcat(" - ", tmp->text, 0, 1);
+					tmp->text = ostrcat(buf1, tmp->text, 0, 1);
+				}
+			}
+
 			treffer = 0;
 			if(tokens[i].type == 3)
 			{
-				if(len > 0 && ostrncmp(ptr, "username", len) == 0)
+				if(len > 0 && ostrncmp(ptr, "name", len) == 0)
 					treffer = 1;
-				if(len > 0 && ostrncmp(ptr, "text", len) == 0)
+				if(len > 0 && ostrncmp(ptr, "message", len) == 0)
 					treffer = 2;
+				if(len > 0 && ostrncmp(ptr, "created_time", len) == 0)
+					treffer = 3;
 			}
 		}
 	}
 
 	free(curlretbuf); curlretbuf = NULL;
+	curlretbufsize = 0;
 	free(buf); buf = NULL;
+	free(buf1); buf1 = NULL;
 	return 0;
 }
 
-void screenfacecomment(char* id)
+void screenfacesubcomment(char* id)
 {
-	int rcret = -1;
+	int rcret = -1, ret = 0;
+
+	struct skin* facesubcomment = getscreen("facesubcomment");
+	struct skin* listbox = getscreennode(facesubcomment, "listbox");
+	struct skin* load = getscreen("loading");
+	char* pos = NULL;
+
+	if(id == NULL) return;
+	pos = strchr(id, '_');
+	if(pos != NULL)
+		pos = pos + 1;
+	else
+		pos = id;
+
+	drawscreen(load, 0, 0);
+	ret = getfacesubcomment(facesubcomment, listbox, pos);
+	clearscreen(load);
+	if(ret == 1) return;
+
+	drawscreen(facesubcomment, 0, 0);
+	addscreenrc(facesubcomment, listbox);
+
+	while(1)
+	{
+		rcret = waitrc(facesubcomment, 0, 0);
+
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL)) break;
+	}
+
+	delownerrc(facesubcomment);
+	delmarkedscreennodes(facesubcomment, 1);
+	clearscreen(facesubcomment);
+}
+
+void screenfacecomment(struct skin* facefriendslist, char* id)
+{
+	int rcret = -1, ret = 0;
 
 	struct skin* facecomment = getscreen("facecomment");
 	struct skin* listbox = getscreennode(facecomment, "listbox");
+	struct skin* load = getscreen("loading");
+	char* pos = NULL;
 
 	if(id == NULL) return;
+	pos = strchr(id, '_');
+	if(pos != NULL)
+		pos = pos + 1;
+	else
+		pos = id;
 
-	getfacecomment(facecomment, listbox, id);
+	drawscreen(load, 0, 0);
+	ret = getfacecomment(facecomment, listbox, facefriendslist, pos);
+	clearscreen(load);
+	if(ret == 1) return;
+
 	drawscreen(facecomment, 0, 0);
 	addscreenrc(facecomment, listbox);
 
@@ -643,7 +1052,11 @@ void screenfacecomment(char* id)
 		rcret = waitrc(facecomment, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcok", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL) && listbox->select != NULL)
+		{
+			screenfacesubcomment(listbox->select->ret);
+			drawscreen(facecomment, 0, 0);
+		}
 	}
 
 	delownerrc(facecomment);
@@ -669,10 +1082,13 @@ void screenface()
 	struct skin* facename = getscreennode(faceuser, "facename");
 	struct skin* facestatus = getscreennode(faceuser, "facestatus");
 	struct skin* facegender = getscreennode(faceuser, "facegender");
+	struct skin* load = getscreen("loading");
 
+	drawscreen(load, 0, 0);
 	getfacefriens(facefriends, facefriendslist, "me()");
 	getfaceuser(facename, facestatus, facegender, facefoto, "me()");
 	getfacestream(facebook, facebooklist, "me()");
+	clearscreen(load);
 
 	drawscreen(facetitle, 0, 1);
 	drawscreen(facefriends, 0, 1);
@@ -691,7 +1107,8 @@ void screenface()
 		else
 			rcret = waitrc(facebook, 0, 0);
 
-		if(rcret == getrcconfigint("rcff", NULL) || rcret == getrcconfigint("rcfr", NULL))
+		//TODO
+		if(rcret == getrcconfigint("rc1", NULL) || rcret == getrcconfigint("rcfr", NULL))
 		{
 			if(aktlist == 0)
 				aktlist = 1;
@@ -706,7 +1123,9 @@ void screenface()
 		{
 			if(aktview != 0)
 			{
+				drawscreen(load, 0, 0);
 				getfacestream(facebook, facebooklist, facefriendslist->select->ret);
+				clearscreen(load);
 				drawscreen(facebook, 0, 0);
 			}
 			aktview = 0;
@@ -715,7 +1134,9 @@ void screenface()
 		{
 			if(aktview != 1)
 			{
+				drawscreen(load, 0, 0);
 				getfacenote(facebook, facebooklist, facefriendslist->select->ret);
+				clearscreen(load);
 				drawscreen(facebook, 0, 0);
 			}
 			aktview = 1;
@@ -724,20 +1145,24 @@ void screenface()
 		{
 			if(aktview != 2)
 			{
-				getfacealbum(facebook, facebooklist, facefriendslist->select->ret);
+				drawscreen(load, 0, 0);
+				getfacealbum(facebook, facebooklist, facefriendslist, facefriendslist->select->ret);
+				clearscreen(load);
 				drawscreen(facebook, 0, 0);
 			}
 			aktview = 2;
 		}
 		if(aktlist == 0 && rcret == getrcconfigint("rcok", NULL) && facefriendslist->select != NULL)
 		{
+			drawscreen(load, 0, 0);
 			getfaceuser(facename, facestatus, facegender, facefoto, facefriendslist->select->ret);
 			if(aktview == 0)
 				getfacestream(facebook, facebooklist, facefriendslist->select->ret);
 			else if(aktview == 1)
 				getfacenote(facebook, facebooklist, facefriendslist->select->ret);
 			else if(aktview == 2)
-				getfacealbum(facebook, facebooklist, facefriendslist->select->ret);
+				getfacealbum(facebook, facebooklist, facefriendslist, facefriendslist->select->ret);
+			clearscreen(load);
 
 			drawscreen(faceuser, 0, 1);
 			drawscreen(facebook, 0, 1);
@@ -746,7 +1171,7 @@ void screenface()
 		}
 		if(aktlist == 1 && rcret == getrcconfigint("rcok", NULL) && facebooklist->select != NULL)
 		{
-			screenfacecomment(facebooklist->select->ret);
+			screenfacecomment(facefriendslist, facebooklist->select->ret);
 			drawscreen(facetitle, 0, 1);
 			drawscreen(facefriends, 0, 1);
 			drawscreen(facefoto, 0, 1);
@@ -769,8 +1194,3 @@ void screenface()
 }
 
 #endif
-
-/*
-https://graph.facebook.com/fql?q=SELECT+object_id,username,text+FROM+comment+WHERE+object_id=207643296028886&access_token=AAAAAAITEghMBACankVwWxFeerpb1flmzioJpbJ1mdCM1luIr60wjI13GDLbtRQMP0WlTonwm8La9ZABpN8TaRbYDFw7ApVfkeprfm4IGSkX7QXyRS
-
-*/
