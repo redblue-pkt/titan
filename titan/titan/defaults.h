@@ -90,6 +90,7 @@ void setdefaults()
 	status.listboxselectcol = convertcol("listboxselect");
 	status.filelistselectcol = convertcol("filelistselect");
 	status.selectpic = getskinconfig("selectpic", NULL);
+	status.volautochangevalue = getconfigint("volautochangevalue", NULL);
 
 	if(status.filelistselectcol == 0) status.filelistselectcol = status.listboxselectcol;
 	
