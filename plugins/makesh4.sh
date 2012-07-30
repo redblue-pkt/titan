@@ -110,6 +110,6 @@ compile "gmediarender" "gmediarender" "" ""
 compile "imdb" "imdb" "" ""
 compile "filemanager" "filemanager" "" ""
 compile "catcatch" "catcatch" "" ""
-compile "facebook" "catcatch" "" "-l curl"
+compile "facebook" "facebook" "" "-l curl"
 
 #rm -r networkbrowser/networkbrowser
