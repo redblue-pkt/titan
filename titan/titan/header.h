@@ -533,6 +533,7 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+struct tm* olocaltime(time_t *value);
 void setskinnodeslocked(int flag);
 char* stringreplacecharonce(char *str, char c1, char c2);
 int getrandom(int max);
