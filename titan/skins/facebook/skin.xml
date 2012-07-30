@@ -5,3 +5,34 @@
 <node name=b1 text="OK" parent=skinadj halign=center valign=middle bordercol=okcol bordersize=6 bordertype=2 posx=20 posy=0 width=150 height=39/>
 <node name=b2 text="EXIT" parent=skinadj halign=center valign=middle bordercol=exitcol bordersize=6 bordertype=2 posx=180 posy=0 width=150 height=39/>
 </screen>
+
+<screen fontcol=fontcol name=facecomment hspace=10 vspace=10 fontsize=30 posx=center posy=center width=60% height=80% bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node fontsize=30 fontsize2=20 fontcol2=green bordercol=bordercol scrollbar=auto type=listbox name=listbox posy=0 width=100% height=100%>
+</screen>
+
+<screen fontcol=fontcol name=facesubcomment hspace=10 vspace=10 fontsize=30 posx=center posy=center width=60% height=80% bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node fontsize=30 fontsize2=20 fontcol2=green bordercol=bordercol scrollbar=auto type=listbox name=listbox posy=0 width=100% height=100%>
+</screen>
+
+<screen fontcol=fontcol titlealign=center name=facetitle fontsize=30 title="Facebook" posx=60 posy=60 width=1100 height=30px bordercol=bordercol bordersize=2 bgcol=bgcol>
+</screen>
+
+<screen fontcol=fontcol name=facefriends hspace=10 vspace=10 fontsize=30 posx=60 posy=100 width=200 height=450 bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=facefriendslist posy=0 width=100% height=100%>
+</screen>
+
+<screen fontcol=fontcol name=facebook hspace=10 vspace=10 fontsize=30 posx=260 posy=100 width=900 height=450 bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node fontsize=30 fontsize2=20 fontcol2=#00ff00 bordercol=bordercol scrollbar=auto type=listbox name=facebooklist posy=0 width=100% height=100%>
+</screen>
+
+<screen fontcol=fontcol name=facefoto hspace=10 vspace=10 fontsize=30 posx=60 posy=550 width=200 height=100 bordercol=bordercol bordersize=2 bgcol=bgcol>
+</screen>
+
+<screen fontcol=fontcol name=facebutton hspace=30 vspace=30 fontsize=30 posx=260 posy=550 width=700 height=100 bordercol=bordercol bordersize=2 bgcol=bgcol>
+</screen>
+
+<screen fontcol=fontcol name=faceuser hspace=10 vspace=10 fontsize=25 posx=960 posy=550 width=200 height=100 bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node name=facename posy=0 bordercol=bordercol width=100% height=25>
+<node name=facegender posy=30 bordercol=bordercol width=100% height=25>
+<node name=facestatus posy=60 bordercol=bordercol width=100% height=25>
+</screen>
