@@ -14,6 +14,44 @@
 int curlretbufsize = 0;
 char* curlretbuf = NULL;
 
+void convertfacedate(char* buf)
+{
+	char* buf1 = NULL;
+	struct tm *loctime = NULL;
+	time_t t = 0;
+
+	buf1 = calloc(1, 17);
+	if(buf1 == NULL)
+	{
+		err("no mem");
+		return;
+	}
+
+	if(buf != NULL)
+	{
+		t = strtoul(buf, NULL, 10);
+		loctime = olocaltime(&t);
+		if(loctime != NULL)
+			strftime(buf1, 17, "%d-%m-%Y %H:%M", loctime);
+		strncpy(buf, buf1, 17);
+	}
+
+	free(loctime); loctime = NULL;
+	free(buf1); buf1 = NULL;
+}
+
+int checkfaceerror()
+{
+	if(curlretbuf == NULL || strstr(curlretbuf, "\"error\":") != NULL)
+	{
+		textbox(_("Message"), _("Can't get data from facebook"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+		free(curlretbuf); curlretbuf = NULL;
+		curlretbufsize = 0;
+		return 1;
+	}
+	return 0;
+}
+
 int getfacefoto(char* url, char* name)
 {
 	char* ip = NULL, *pos = NULL, *path = NULL;
@@ -177,13 +215,7 @@ int getfacefriens(struct skin* facefriends, struct skin* listbox, char* id)
 printf("%s\n", tmpstr);
 printf("%s\n", curlretbuf);
 	free(tmpstr); tmpstr = NULL;
-	if(curlretbuf == NULL || strstr(curlretbuf, "\"error\":") != NULL)
-	{
-		textbox(_("Message"), _("Can't get data from facebook"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-		free(curlretbuf); curlretbuf = NULL;
-		curlretbufsize = 0;
-		return 1;
-	}
+	if(checkfaceerror() == 1) return 1;
 
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
@@ -261,13 +293,7 @@ int getfaceuser(struct skin* name, struct skin* status, struct skin* gender, str
 	tmpstr = ostrcat(tmpstr, getconfig("facebooktoken", NULL), 1, 0);
 	curlretbuf = gethttps(tmpstr);
 	free(tmpstr); tmpstr = NULL;
-	if(curlretbuf == NULL || strstr(curlretbuf, "\"error\":") != NULL)
-	{
-		textbox(_("Message"), _("Can't get data from facebook"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-		free(curlretbuf); curlretbuf = NULL;
-		curlretbufsize = 0;
-		return 1;
-	}
+	if(checkfaceerror() == 1) return 1;
 
 	tmpstr = getxmlentry(curlretbuf, "\"name\":");
 	changetext(name, tmpstr);
@@ -295,10 +321,9 @@ int getfaceuser(struct skin* name, struct skin* status, struct skin* gender, str
 int getfacestream(struct skin* facebook, struct skin* listbox, char* id)
 {
 	int ret = -1, i = 0, len = 0, treffer = 0;
-	struct tm *loctime = NULL;
 	jsmn_parser parser;
 	jsmntok_t tokens[FACEMAXTOKEN]; //TODO
-	char* buf = NULL, *buf1 = NULL, *tmpstr = NULL;
+	char* buf = NULL, *tmpstr = NULL;
 	struct skin* tmp = NULL;
 
 	delmarkedscreennodes(facebook, 1);
@@ -314,13 +339,7 @@ int getfacestream(struct skin* facebook, struct skin* listbox, char* id)
 printf("%s\n", tmpstr);
 printf("%s\n", curlretbuf);
 	free(tmpstr); tmpstr = NULL;
-	if(curlretbuf == NULL || strstr(curlretbuf, "\"error\":") != NULL)
-	{
-		textbox(_("Message"), _("Can't get data from facebook"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-		free(curlretbuf); curlretbuf = NULL;
-		curlretbufsize = 0;
-		return 1;
-	}
+	if(checkfaceerror() == 1) return 1;
 
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
@@ -328,16 +347,6 @@ printf("%s\n", curlretbuf);
 		err("no mem");
 		free(curlretbuf); curlretbuf = NULL;
 		curlretbufsize = 0;
-		return 1;
-	}
-
-	buf1 = malloc(17);
-	if(buf1 == NULL)
-	{
-		err("no mem");
-		free(curlretbuf); curlretbuf = NULL;
-		curlretbufsize = 0;
-		free(buf); buf = NULL;
 		return 1;
 	}
 
@@ -412,20 +421,13 @@ printf("%s\n", curlretbuf);
 			{
 				if(tmp != NULL)
 				{
-					time_t t = 0;
-
 					strncpy(buf, ptr, len);
 					buf[len] = '\0';
-					if(buf != NULL)
-						t = strtoul(buf, NULL, 10);
-					loctime = olocaltime(&t);
-					if(loctime != NULL)
-						strftime(buf1, 17, "%d-%m-%Y %H:%M", loctime);
-					free(loctime); loctime = NULL;
+					convertfacedate(buf);
 
 					if(tmp->text != NULL && strlen(tmp->text) != 0)
 						tmp->text = ostrcat(tmp->text, " - ", 1, 0);
-					tmp->text = ostrcat(tmp->text, buf1, 1, 0);
+					tmp->text = ostrcat(tmp->text, buf, 1, 0);
 				}
 			}
 
@@ -467,10 +469,9 @@ printf("%s\n", curlretbuf);
 int getfacenote(struct skin* facebook, struct skin* listbox, char* id)
 {
 	int ret = -1, i = 0, len = 0, treffer = 0;
-	struct tm *loctime = NULL;
 	jsmn_parser parser;
 	jsmntok_t tokens[FACEMAXTOKEN]; //TODO
-	char* buf = NULL, *buf1 = NULL, *tmpstr = NULL;
+	char* buf = NULL, *tmpstr = NULL;
 	struct skin* tmp = NULL;
 
 	delmarkedscreennodes(facebook, 1);
@@ -486,13 +487,7 @@ int getfacenote(struct skin* facebook, struct skin* listbox, char* id)
 printf("%s\n", tmpstr);
 printf("%s\n", curlretbuf);
 	free(tmpstr); tmpstr = NULL;
-	if(curlretbuf == NULL || strstr(curlretbuf, "\"error\":") != NULL)
-	{
-		textbox(_("Message"), _("Can't get data from facebook"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-		free(curlretbuf); curlretbuf = NULL;
-		curlretbufsize = 0;
-		return 1;
-	}
+	if(checkfaceerror() == 1) return 1;
 
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
@@ -500,16 +495,6 @@ printf("%s\n", curlretbuf);
 		err("no mem");
 		free(curlretbuf); curlretbuf = NULL;
 		curlretbufsize = 0;
-		return 1;
-	}
-
-	buf1 = malloc(17);
-	if(buf1 == NULL)
-	{
-		err("no mem");
-		free(curlretbuf); curlretbuf = NULL;
-		curlretbufsize = 0;
-		free(buf); buf = NULL;
 		return 1;
 	}
 
@@ -554,20 +539,13 @@ printf("%s\n", curlretbuf);
 			{
 				if(tmp != NULL)
 				{
-					time_t t = 0;
-
 					strncpy(buf, ptr, len);
 					buf[len] = '\0';
-					if(buf != NULL)
-						t = strtoul(buf, NULL, 10);
-					loctime = olocaltime(&t);
-					if(loctime != NULL)
-						strftime(buf1, 17, "%d-%m-%Y %H:%M", loctime);
-					free(loctime); loctime = NULL;
+					convertfacedate(buf);
 
 					if(tmp->text != NULL && strlen(tmp->text) != 0)
 						tmp->text = ostrcat(tmp->text, " - ", 1, 0);
-					tmp->text = ostrcat(tmp->text, buf1, 1, 0);
+					tmp->text = ostrcat(tmp->text, buf, 1, 0);
 				}
 			}
 
@@ -605,10 +583,9 @@ printf("%s\n", curlretbuf);
 int getfacepicture(struct skin* facebook, struct skin* listbox, struct skin* facefriendslist, char* id)
 {
 	int ret = -1, i = 0, len = 0, treffer = 0;
-	struct tm *loctime = NULL;
 	jsmn_parser parser;
 	jsmntok_t tokens[FACEMAXTOKEN]; //TODO
-	char* buf = NULL, *buf1 = NULL, *tmpstr = NULL;
+	char* buf = NULL, *tmpstr = NULL;
 	struct skin* tmp = NULL, *node = NULL;
 
 	delmarkedscreennodes(facebook, 1);
@@ -624,13 +601,7 @@ int getfacepicture(struct skin* facebook, struct skin* listbox, struct skin* fac
 printf("%s\n", tmpstr);
 printf("%s\n", curlretbuf);
 	free(tmpstr); tmpstr = NULL;
-	if(curlretbuf == NULL || strstr(curlretbuf, "\"error\":") != NULL)
-	{
-		textbox(_("Message"), _("Can't get data from facebook"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-		free(curlretbuf); curlretbuf = NULL;
-		curlretbufsize = 0;
-		return 1;
-	}
+	if(checkfaceerror() == 1) return 1;
 
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
@@ -638,16 +609,6 @@ printf("%s\n", curlretbuf);
 		err("no mem");
 		free(curlretbuf); curlretbuf = NULL;
 		curlretbufsize = 0;
-		return 1;
-	}
-
-	buf1 = malloc(17);
-	if(buf1 == NULL)
-	{
-		err("no mem");
-		free(curlretbuf); curlretbuf = NULL;
-		curlretbufsize = 0;
-		free(buf); buf = NULL;
 		return 1;
 	}
 
@@ -669,22 +630,14 @@ printf("%s\n", curlretbuf);
 				tmp = addlistbox(facebook, listbox, tmp, 1);
 				if(tmp != NULL)
 				{
-					time_t t = 0;
-
 					tmp->type = TEXTBOX;
 					tmp->wrap = YES;
 					tmp->height = 100;
 
 					strncpy(buf, ptr, len);
 					buf[len] = '\0';
-					if(buf != NULL)
-						t = strtoul(buf, NULL, 10);
-					loctime = olocaltime(&t);
-					if(loctime != NULL)
-						strftime(buf1, 17, "%d-%m-%Y %H:%M", loctime);
-					free(loctime); loctime = NULL;
-
-					changetext(tmp, buf1);
+					convertfacedate(buf);
+					changetext(tmp, buf);
 				}
 			}
 
@@ -792,13 +745,7 @@ int getfacealbum(struct skin* facebook, struct skin* listbox, struct skin* facef
 printf("%s\n", tmpstr);
 printf("%s\n", curlretbuf);
 	free(tmpstr); tmpstr = NULL;
-	if(curlretbuf == NULL || strstr(curlretbuf, "\"error\":") != NULL)
-	{
-		textbox(_("Message"), _("Can't get data from facebook"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-		free(curlretbuf); curlretbuf = NULL;
-		curlretbufsize = 0;
-		return 1;
-	}
+	if(checkfaceerror() == 1) return 1;
 
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
@@ -885,10 +832,9 @@ printf("%s\n", curlretbuf);
 int getfacecomment(struct skin* facecomment, struct skin* listbox, struct skin* facefriendslist, char* id)
 {
 	int ret = -1, i = 0, len = 0, treffer = 0;
-	struct tm *loctime = NULL;
 	jsmn_parser parser;
 	jsmntok_t tokens[FACEMAXTOKEN]; //TODO
-	char* buf = NULL, *buf1 = NULL, *tmpstr = NULL;
+	char* buf = NULL, *tmpstr = NULL;
 	struct skin* tmp = NULL, *node = NULL;
 
 	delmarkedscreennodes(facecomment, 1);
@@ -904,13 +850,7 @@ int getfacecomment(struct skin* facecomment, struct skin* listbox, struct skin* 
 printf("%s\n", tmpstr);
 printf("%s\n", curlretbuf);
 	free(tmpstr); tmpstr = NULL;
-	if(curlretbuf == NULL || strstr(curlretbuf, "\"error\":") != NULL)
-	{
-		textbox(_("Message"), _("Can't get data from facebook"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-		free(curlretbuf); curlretbuf = NULL;
-		curlretbufsize = 0;
-		return 1;
-	}
+	if(checkfaceerror() == 1) return 1;
 
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
@@ -918,16 +858,6 @@ printf("%s\n", curlretbuf);
 		err("no mem");
 		free(curlretbuf); curlretbuf = NULL;
 		curlretbufsize = 0;
-		return 1;
-	}
-
-	buf1 = malloc(17);
-	if(buf1 == NULL)
-	{
-		err("no mem");
-		free(curlretbuf); curlretbuf = NULL;
-		curlretbufsize = 0;
-		free(buf); buf = NULL;
 		return 1;
 	}
 
@@ -949,21 +879,13 @@ printf("%s\n", curlretbuf);
 				tmp = addlistbox(facecomment, listbox, tmp, 1);
 				if(tmp != NULL)
 				{
-					time_t t = 0;
-
 					tmp->type = TEXTBOX;
 					tmp->wrap = YES;
 					tmp->height = 100;
 					strncpy(buf, ptr, len);
 					buf[len] = '\0';
-					if(buf != NULL)
-						t = strtoul(buf, NULL, 10);
-					loctime = olocaltime(&t);
-					if(loctime != NULL)
-						strftime(buf1, 17, "%d-%m-%Y %H:%M", loctime);
-					free(loctime); loctime = NULL;
-
-					changetext(tmp, buf1);
+					convertfacedate(buf);
+					changetext(tmp, buf);
 				}
 			}
 
@@ -1025,17 +947,15 @@ printf("%s\n", curlretbuf);
 	free(curlretbuf); curlretbuf = NULL;
 	curlretbufsize = 0;
 	free(buf); buf = NULL;
-	free(buf1); buf1 = NULL;
 	return 0;
 }
 
 int getfacesubcomment(struct skin* facesubcomment, struct skin* listbox, char* id)
 {
 	int ret = -1, i = 0, len = 0, treffer = 0;
-	struct tm *loctime = NULL;
 	jsmn_parser parser;
 	jsmntok_t tokens[FACEMAXTOKEN]; //TODO
-	char* buf = NULL, *buf1 = NULL, *tmpstr = NULL;
+	char* buf = NULL, *tmpstr = NULL;
 	struct skin* tmp = NULL;
 
 	delmarkedscreennodes(facesubcomment, 1);
@@ -1051,13 +971,7 @@ int getfacesubcomment(struct skin* facesubcomment, struct skin* listbox, char* i
 printf("%s\n", tmpstr);
 printf("%s\n", curlretbuf);
 	free(tmpstr); tmpstr = NULL;
-	if(curlretbuf == NULL || strstr(curlretbuf, "\"error\":") != NULL)
-	{
-		textbox(_("Message"), _("Can't get data from facebook"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-		free(curlretbuf); curlretbuf = NULL;
-		curlretbufsize = 0;
-		return 1;
-	}
+	if(checkfaceerror() == 1) return 1;
 
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
@@ -1065,16 +979,6 @@ printf("%s\n", curlretbuf);
 		err("no mem");
 		free(curlretbuf); curlretbuf = NULL;
 		curlretbufsize = 0;
-		return 1;
-	}
-
-	buf1 = malloc(17);
-	if(buf1 == NULL)
-	{
-		err("no mem");
-		free(curlretbuf); curlretbuf = NULL;
-		curlretbufsize = 0;
-		free(buf); buf = NULL;
 		return 1;
 	}
 
@@ -1119,20 +1023,13 @@ printf("%s\n", curlretbuf);
 			{
 				if(tmp != NULL)
 				{
-					time_t t = 0;
-
 					strncpy(buf, ptr, len);
 					buf[len] = '\0';
-					if(buf != NULL)
-						t = strtoul(buf, NULL, 10);
-					loctime = olocaltime(&t);
-					if(loctime != NULL)
-						strftime(buf1, 17, "%d-%m-%Y %H:%M", loctime);
-					free(loctime); loctime = NULL;
+					convertfacedate(buf);
 
 					if(tmp->text != NULL && strlen(tmp->text) != 0)
 						tmp->text = ostrcat(" - ", tmp->text, 0, 1);
-					tmp->text = ostrcat(buf1, tmp->text, 0, 1);
+					tmp->text = ostrcat(buf, tmp->text, 0, 1);
 				}
 			}
 
@@ -1152,7 +1049,6 @@ printf("%s\n", curlretbuf);
 	free(curlretbuf); curlretbuf = NULL;
 	curlretbufsize = 0;
 	free(buf); buf = NULL;
-	free(buf1); buf1 = NULL;
 	return 0;
 }
 
