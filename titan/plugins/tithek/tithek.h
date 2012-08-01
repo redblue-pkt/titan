@@ -572,7 +572,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 					else
 						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);			
 				}
-				else if(((struct tithek*)listbox->select->handle)->flag == 9)
+				else if((((struct tithek*)listbox->select->handle)->flag == 9) || (((struct tithek*)listbox->select->handle)->flag == 10) || (((struct tithek*)listbox->select->handle)->flag == 11))
 				{
 					char* search = textinput("Search", NULL);
 					if(search != NULL)
@@ -585,8 +585,13 @@ void screentithekplay(char* titheklink, char* title, int first)
 						char* title = NULL;	
 						char* ip = ostrcat("gdata.youtube.com", NULL, 0, 0);
 						char* path = ostrcat("feeds/api/videos?q=", search, 0, 0);
-						path = ostrcat(path, "&max-results=50", 1, 0);
-		
+						if(((struct tithek*)listbox->select->handle)->flag == 9)
+							path = ostrcat(path, "&max-results=10", 1, 0);
+						else if(((struct tithek*)listbox->select->handle)->flag == 10)
+							path = ostrcat(path, "&max-results=25", 1, 0);
+						else if(((struct tithek*)listbox->select->handle)->flag == 11)
+							path = ostrcat(path, "&max-results=50", 1, 0);
+									
 						char* tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
 						tmpstr = string_replace_all("media:thumbnail", "\nthumbnail", tmpstr, 1);
 		
