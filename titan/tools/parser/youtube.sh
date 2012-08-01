@@ -3,7 +3,7 @@ rm -rf _full/youtube
 mkdir -p _full/youtube/streams
 piccount=0
 
-SEARCHLIST="charts/trailers/most_popular?region=US&v=2 standardfeeds/DE/most_viewed_Music?v=2 standardfeeds/DE/most_viewed?v=2 standardfeedsDE/top_rated?v=2 videos/-/HD videos?q=bodyrock+tv videos?q=trailer+2012+deutsch" 
+SEARCHLIST="charts/trailers/most_popular?region=US&v=2 standardfeeds/DE/most_viewed_Music?v=2 standardfeeds/DE/most_viewed?v=2 standardfeedsDE/top_rated?v=2 videos/-/HD videos?q=bodyrock+tv videos?q=Zuzana+Light+ZWOW videos?q=titannit videos?q=trailer+2012+deutsch" 
 
 for SEARCH in $SEARCHLIST; do
 	echo SEARCH=$SEARCH 
@@ -17,6 +17,10 @@ for SEARCH in $SEARCHLIST; do
 		filename=top_rated
 	elif [ $SEARCH == "videos?q=bodyrock+tv" ]; then
 		filename=bodyrock_tv
+	elif [ $SEARCH == "videos?q=Zuzana+Light+ZWOW" ]; then
+		filename=zuzana_light
+	elif [ $SEARCH == "videos?q=titannit" ]; then
+		filename=titannit
 	elif [ $SEARCH == "videos?q=trailer+2012+deutsch" ]; then
 		filename=trailer_2012_deutsch
 	else
