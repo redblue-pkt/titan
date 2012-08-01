@@ -65,7 +65,7 @@ for SEARCH in $SEARCHLIST; do
 	for ROUND in $LIST; do
 		echo round=$ROUND
 		URL=http://www.youtube.com/watch?v="$ROUND"
-		PIC=http://i.ytimg.com/vi/"$ROUND"/1.jpg
+		PIC=http://i.ytimg.com/vi/"$ROUND"/0.jpg
 		piccount=`expr $piccount + 1`
 	
 		wget --no-check-certificate http://www.youtube.com/watch?v=$ROUND -O cache.$filename.title.list
