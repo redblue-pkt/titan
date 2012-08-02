@@ -53,6 +53,7 @@ void LCD_Pearl1_thread()
 {
 	
 	struct skin* LCD_Pearl1 = NULL;
+	struct skin* LCD_Pearl1_Standby = NULL;
 	struct skin* day0_t = NULL;
 	struct skin* day0_i = NULL;
 	struct skin* day1_t = NULL;
@@ -62,12 +63,13 @@ void LCD_Pearl1_thread()
 	struct skin* day3_t = NULL;
 	struct skin* day3_i = NULL;
 	struct skin* akttime = NULL;
+	struct skin* akttime_Standby = NULL;
 	
 	
 	char* tmpstr = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *timemerk = NULL, *sendermerk = NULL, *recmerk = NULL;
 	FILE *fd = NULL;
 	char *fileline = NULL;
-	int weatherwrite = 0;
+	int weatherwrite = 999;
 	
 	if(ostrcmp(getconfig("lcd_pearl1_plugin_wetter", NULL), "yes") == 0)
 	{
@@ -82,6 +84,7 @@ void LCD_Pearl1_thread()
 		day3_i = getscreennode(LCD_Pearl1, "day3_i");
 		if(file_exist("/tmp/lcdweather") == 1)
 			system("rm /tmp/lcdweather");
+		weatherwrite = 0;
 	}
 	else
 		LCD_Pearl1 = getscreen("LCD_Pearl1");	
@@ -97,6 +100,13 @@ void LCD_Pearl1_thread()
 	
 	//struct skin* LCD_MC_Menu = getscreen("LCD_MC_Menu");
 	//struct skin* akttimemc1 = getscreennode(LCD_MC_Menu, "akttime");
+	
+			
+	if(ostrcmp(getconfig("lcd_pearl1_plugin_standby", NULL), "yes") == 0)
+	{
+		LCD_Pearl1_Standby = getscreen("LCD_Pearl1_Standby");
+		akttime_Standby = getscreennode(LCD_Pearl1_Standby, "akttime");
+	}
 		
 	int put = 0, typemerk = 0, type = 0;
 	int standby = 0;
@@ -157,23 +167,36 @@ void LCD_Pearl1_thread()
 		{
 			if(status.standby == 1 && standby == 0)
 			{
-				system("killall lcd4linux");
-				standby = 1;
+				if(ostrcmp(getconfig("lcd_pearl1_plugin_standby", NULL), "yes") == 0)
+					standby = 2;
+				else {
+					system("killall lcd4linux");
+					standby = 1;
+				}
 			}
-			if(status.standby == 0 && standby == 1)
+			if(status.standby == 0 && standby > 0)
 			{
-				system(startlcd);
+				if(standby == 1)
+					system(startlcd);
 				standby = 0;
+				put = 1;
 			}
-		
+
+			if(weatherthread == NULL && weatherwrite == 0)
+			{
+				if(file_exist("/tmp/lcdweather") != 0)
+					put = 1;
+			}			
+			
+			if(ostrcmp(tmpstr, timemerk) != 0)
+			{
+				free(timemerk);timemerk=NULL;
+				timemerk = ostrcat(tmpstr, "", 0, 0);
+				put = 1;
+			} 		
+
 			if(standby == 0)
 			{
-				if(ostrcmp(tmpstr, timemerk) != 0)
-				{
-					free(timemerk);timemerk=NULL;
-					timemerk = ostrcat(tmpstr, "", 0, 0);
-					put = 1;
-				} 
 				if(type == 1)
 				{
 					if(ostrcmp(tmpstr2, sendermerk) != 0)
@@ -322,6 +345,18 @@ void LCD_Pearl1_thread()
 					}
 				}
 			}
+			else 
+			{
+				if(standby == 2)
+				{	
+					if(put == 1)
+					{	
+						changetext(akttime_Standby, tmpstr);
+						drawscreen(LCD_Pearl1_Standby, 0, 0);
+						put = 0;
+					}
+				}
+			}
 		}
 		free(tmpstr); tmpstr = NULL;
 		free(tmpstr2); tmpstr2 = NULL;
@@ -404,6 +439,7 @@ void start(void)
 	struct skin* pearl1_main = getscreen("pearl1_main");
 	struct skin* listbox = getscreennode(pearl1_main, "listbox");
 	struct skin* allmenu = getscreennode(pearl1_main, "allmenu");
+	struct skin* aktstandby = getscreennode(pearl1_main, "aktstandby");
 	struct skin* wettervor = getscreennode(pearl1_main, "wettervor");
 	struct skin* wettervorplz = getscreennode(pearl1_main, "wettervorplz");
 	struct skin* wettervorland = getscreennode(pearl1_main, "wettervorland");
@@ -423,6 +459,10 @@ void start(void)
   addchoicebox(allmenu, "no", _("nein"));
   addchoicebox(allmenu, "yes", _("ja"));
 	setchoiceboxselection(allmenu, getconfig("write_fb_to_png", NULL));
+	
+	addchoicebox(aktstandby, "no", _("nein"));
+  addchoicebox(aktstandby, "yes", _("ja"));
+	setchoiceboxselection(aktstandby, getconfig("lcd_pearl1_plugin_standby", NULL));
 	
 	addchoicebox(wettervor, "no", _("nein"));
   addchoicebox(wettervor, "yes", _("ja"));
@@ -475,6 +515,7 @@ void start(void)
 		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			addconfig("write_fb_to_png", allmenu->ret);
+			addconfig("lcd_pearl1_plugin_standby", aktstandby->ret);
 			addconfig("lcd_pearl1_plugin_wetter", wettervor->ret);
 			addconfig("lcd_pearl1_plugin_wetterplz", wettervorplz->ret);
 			addconfig("lcd_pearl1_plugin_wetterland", wettervorland->ret);
