@@ -2,6 +2,7 @@
 #
 
 rm cache.*
+rm _liste
 rm -rf _full/myvideo
 mkdir -p _full/myvideo/streams
 piccount=0
@@ -51,12 +52,15 @@ for ROUND1 in $main_list; do
 				echo "$TITLE""#http://atemio.dyndns.tv/mediathek/myvideo/myvideo."$filename_submenu1"."$filename".list#http://atemio.dyndns.tv/mediathek/menu/"$filename".jpg#"$filename".jpg"#MyVideo#1 >> cache.myvideo.$filename_submenu1.titanlist
 				submenu2_list=`cat cache.$filename.list | tr ";" "\n" | grep /channel | grep .jpg | sed "s/.*longdesc=/pic=/" | grep ^pic  | tr ' ' '\n'| grep href | cut -d"'" -f2`
 			else
-				echo "$TITLE""#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."$filename_submenu1"."$filename".list#http://atemio.dyndns.tv/mediathek/menu/"$filename".jpg#"$filename".jpg"#MyVideo#1 >> cache.myvideo.$filename_submenu1.titanlist
+#				echo "$TITLE""#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."$filename_submenu1"."$filename".list#http://atemio.dyndns.tv/mediathek/menu/"$filename".jpg#"$filename".jpg"#MyVideo#1 >> cache.myvideo.$filename_submenu1.titanlist
+				echo "$TITLE""#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."$filename".list#http://atemio.dyndns.tv/mediathek/menu/"$filename".jpg#"$filename".jpg"#MyVideo#1 >> cache.myvideo.$filename_submenu1.titanlist
 				submenu2_list=`cat cache.$filename.list | tr ' ' '\n' |grep "href='http://www.myvideo.de/channel" | cut -d"'" -f2 | sed 's!http://www.myvideo.de!!'`
 			fi
 
 			echo submenu2_list $submenu2_list
-
+#			echo "cache.$filename.list#http://myvideo.de/$ROUND1/$ROUND2" >> _liste
+			echo "$filename#$ROUND1/$ROUND2" >> _liste
+			
 		fi
 		skip=0
 		echo submenu2_list $submenu2_list
@@ -94,7 +98,10 @@ for ROUND1 in $main_list; do
 						echo "$TITLE""#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."$filename".list#http://atemio.dyndns.tv/mediathek/menu/"$filename".jpg#"$filename".jpg"#MyVideo#1 >> cache.myvideo.$filename_submenu1.$filename_submenu2.titanlist
 					else
 						echo "$TITLE""#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."$filename".list#$PIC#"$filename".jpg"#MyVideo#1 >> cache.myvideo.$filename_submenu1.$filename_submenu2.titanlist
-					fi		
+					fi
+
+#					echo "cache.$filename.list#http://myvideo.de/$ROUND3PATH/$ROUND3" >> _liste
+					echo "$filename#$ROUND3PATH/$ROUND3" >> _liste			
 				fi
 				skip=0
 			done
@@ -111,8 +118,132 @@ done
 echo main_list $main_list
 cat cache.myvideo.category.titanlist | sort -u > _full/myvideo/myvideo.category.list
 
-exit
 
+#WEBPATH Themen/Talente
+#round Lifestyle#Themen/Lifestyle
+#TITLE Lifestyle	
+	
+WEBLIST=`cat _liste`
+echo weblist $WEBLIST
+for LIST in $WEBLIST; do
+	filename=`echo $LIST | cut -d "#" -f1`
+	WEBPATH=`echo $LIST | cut -d "#" -f2`
+	echo filename $filename
+	echo WEBPATH $WEBPATH
+	LIST1=`cat cache.$filename.list | tr '><' '>\n<' | grep "^img id='i" | tr ' ' '~'`
+	echo LIST1 $LIST1
+	PAGES=`cat cache.$filename.list | tr '><' '>\n<' | grep "page" | grep 'pView pnNumbers' | cut -d ">" -f2 | tr '\n' ' '`
+	echo PAGES $PAGES
+	echo $PAGES >cache.myvideo.$filename.pages.titanlist
+	if [ -z "$PAGES" ];then
+		for ROUND1 in $LIST1; do
+			piccount=`expr $piccount + 1`
+			echo round1 $ROUND1
+
+			ROUND1=`echo $ROUND1 | tr '~' '\n'`
+			ID=`echo $ROUND1 | tr '~' '\n' | grep "id='" | cut -d"'" -f2 | sed 's/i//'`
+			echo ID $ID
+
+#			PIC=`cat "cache.$filename.list" | tr ' ' '\n' | grep "$ID"| grep ".jp" | grep thumbs | cut -d "'" -f2 | tr ' ' '\n' | head -n1`
+			PIC=`cat "cache.$filename.list" | tr ' ' '\n' | grep "$ID" | grep ".jp" | grep thumbs | cut -d "'" -f2 | tr ' ' '\n' | head -n1`
+			echo PIC $PIC
+
+ls cache.$filename.list
+			TITLE=`cat cache.$filename.list | tr ' ' '\n' | grep "/watch/$ID" | head -n1 | cut -d"'" -f2 | cut -d"/" -f4 | tr '_' ' '`			
+			echo TITLE $TITLE
+	
+#			URL=http://www.myvideo.de/watch/$ID/`echo $TITLE | tr ' ' '_'`
+
+#echo $PIC | tr '/' '\n' | tail -n 4 | head -n1`"/"`echo $PIC | tr '/' '\n' | tail -n 3 | head -n1`"
+			URL="http://www.myvideo.de/dynamic/get_player_video_xml.php?flash_playertype=SER&ID=$ID&_countlimit=4&autorun=yes;pageUrl=http://www.myvideo.de/watch/$ID/;playpath=flv:`echo $PIC | tr '/' '\n' | tail -n 4 | head -n1`/`echo $PIC | tr '/' '\n' | tail -n 3 | head -n1`/$ID"
+			
+			echo URL $URL
+			if [ -z $PIC ];then
+				PIC=`echo $ROUND1 | cut -d"'" -f4`
+				if [ -z $PIC ];then
+					LINE="$TITLE#$URL#http://atemio.dyndns.tv/mediathek/menu/comedy.jpg#myvideo_$piccount.jpg#MyVideo#12"
+#					exit
+				else
+					LINE="$TITLE#$URL#$PIC#myvideo_$piccount.jpg#MyVideo#12"
+				fi				
+			else
+				LINE="$TITLE#$URL#$PIC#myvideo_$piccount.jpg#MyVideo#12"
+			fi
+			echo LINE $LINE
+#			exit
+			if [ ! -z "$TITLE" ]; then
+				echo $LINE >> cache.myvideo."$filename".titanlist
+				echo $LINE >> cache.myvideo.all.titanlist
+			fi
+		done
+	else
+		for PAGE in $PAGES; do
+			echo PAGE $PAGE
+			wget --no-check-certificate "http://myvideo.de/$WEBPATH?lpage=$PAGE" -O "cache.$filename.$PAGE.list"
+			LIST2=`cat "cache.$filename.$PAGE.list" | tr '><' '>\n<' | grep "^img id='i" | tr ' ' '~'`
+			for ROUND1 in $LIST2; do
+				piccount=`expr $piccount + 1`
+				echo round1 $ROUND1
+				
+				ROUND1=`echo $ROUND1 | tr '~' '\n'`
+				ID=`echo $ROUND1 | tr '~' '\n' | grep "id='" | cut -d"'" -f2 | sed 's/i//'`
+				echo ID $ID
+
+#				PIC=`cat "cache.$filename.$PAGE.list" | tr ' ' '\n' | grep "$ID"| grep ".jp" | cut -d "'" -f2 | tr ' ' '\n' | head -n1`
+				PIC=`cat "cache.$filename.$PAGE.list" | tr ' ' '\n' | grep "$ID" | grep ".jp" | grep thumbs | cut -d "'" -f2 | tr ' ' '\n' | head -n1`
+				echo PIC $PIC
+
+ls cache.$filename.list			
+#				if [ -z "$PIC" ];then
+#					PIC=`echo $ROUND1 | cut -d"'" -f4`
+#					echo PIC3 $PIC
+#					exit
+#				fi
+
+				TITLE=`cat "cache.$filename.$PAGE.list" | tr ' ' '\n' | grep "/watch/$ID" | head -n1 | cut -d"'" -f2 | cut -d"/" -f4 | tr '_' ' '`
+				echo TITLE $TITLE
+		
+				#http://www.myvideo.de/watch/5296613/Unsere_Hochzeit
+#				URL=http://www.myvideo.de/watch/$ID/`echo $TITLE | tr ' ' '_'`
+				URL="http://www.myvideo.de/dynamic/get_player_video_xml.php?flash_playertype=SER&ID=$ID&_countlimit=4&autorun=yes;pageUrl=http://www.myvideo.de/watch/$ID/;playpath=flv:`echo $PIC | tr '/' '\n' | tail -n 4 | head -n1`/`echo $PIC | tr '/' '\n' | tail -n 3 | head -n1`/$ID"				
+				echo URL $URL
+
+				if [ -z $PIC ];then
+					PIC=`echo $ROUND1 | cut -d"'" -f4`
+					if [ -z $PIC ];then
+						LINE="$TITLE#$URL#http://atemio.dyndns.tv/mediathek/menu/comedy.jpg#myvideo_$piccount.jpg#MyVideo#12"
+#						exit
+					else
+						LINE="$TITLE#$URL#$PIC#myvideo_$piccount.jpg#MyVideo#12"
+					fi
+				else
+					LINE="$TITLE#$URL#$PIC#myvideo_$piccount.jpg#MyVideo#12"
+				fi
+			
+				if [ ! -z "$TITLE" ]; then
+					echo $LINE >> cache.myvideo.$filename.titanlist
+					echo $LINE >> cache.myvideo.titanlist
+				fi
+			done
+		done
+	fi
+
+	cat cache.myvideo.$filename.titanlist | sort -u > _full/myvideo/streams/myvideo.$filename.list
+	echo piccount $piccount
+done
+
+cat cache.myvideo.titanlist | sort -u > _full/myvideo/streams/myvideo.all-sorted.list
+cat cache.myvideo.category.titanlist | sort -u > _full/myvideo/myvideo.category.list
+
+for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
+	if [ `cat cache.myvideo.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
+		cat cache.myvideo.titanlist | grep ^"$ROUND" > cache.myvideo.titanlist."$ROUND"
+		cat cache.myvideo.titanlist."$ROUND" | sort -u > _full/myvideo/streams/myvideo.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
+		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#MyVideo#1 >> _full/myvideo/myvideo.a-z.list
+	fi
+done
+
+exit
 videoaz_list=`cat Videos_A-Z | tr ' ' '\n' | grep "/Videos_A-Z/" | grep -v Playlisten | grep -v Flight | cut -d "'" -f2 | sed 's!/Videos_A-Z/!!'`
 kategorie_list="`cat Videos_in_Kategorien | tr ' ' '\n' | grep "href='http://feeds.myvideo.de/feeds/" | cut -d "'" -f2 | sed 's!http://feeds.myvideo.de/feeds/Kategorie-Videos-!!' | sed 's!-neu.rss!!' | sed 's!.rss!!'`
 
