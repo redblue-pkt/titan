@@ -1,6 +1,55 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+char *hexlify(char *str)
+{
+	int l,i; char *t;
+	l = strlen(str)*2;
+	t = malloc(l);
+	if ( t )
+	{
+		for(i=0; i<l; i++)
+		{
+			sprintf(t+2*i, "%02x", str[i]);
+		}
+		return t;
+	}
+	return NULL;
+}
+
+//it will be up to the caller to free the memory...
+
+char *unhexlify(char *hstr)
+{
+	int l, i; char *t; char c;
+	l = strlen(hstr)/2;
+	t = malloc(l);
+	if (t)
+	{
+		for(i=0; i<l; i++)
+		{
+			c = fromhex( hstr[2*i+1] ) + 16*fromhex( hstr[2*i] );
+			t[i] = c;
+		}
+	}
+	return t;
+}
+
+char fromhex(char c)
+{
+	if ( isxdigit(c) )
+	{
+		if ( isdigit(c) )
+		{
+			c -= '0';
+		} else {
+			c = tolower(c);
+			c = c - 'a' + 10;
+		}
+	} else { c = 0; }
+		return c;
+}
+
 int getsupermagic(char* filename)
 {
 	struct statfs64 s;
