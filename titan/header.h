@@ -623,6 +623,9 @@ void checkserial(char* input);
 int checkprozess(char* input);
 struct regex* regexstruct(char* regex, char* str);
 void freeregexstruct(struct regex* node);
+char fromhex(char c);
+char *hexlify(char *str);
+char *unhexlify(char *hstr);
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
