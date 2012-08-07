@@ -1100,8 +1100,11 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		int i = 0;
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "=", &count);
+int slen;
 		if(ret1 != NULL)
 		{
+			printf("ret1[1].part=%s\n", ret1[1].part);
+			slen = strlen(ret1[1].part);
 			tmpstr_uni = unhexlify(ret1[1].part);
 			writesys("/var/usr/local/share/titan/plugins/tithek/list_input", ret1[1].part, 0);
 		}
@@ -1119,8 +1122,8 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		char* key = NULL;		
 		key = MDString(b64);
 		printf("key: %s\n", key);
-
-		int slen = strlen(tmpstr_uni);
+		printf("slen: %d\n", slen);
+		slen = strlen(tmpstr_uni);
 		int klen = strlen(key);
 		printf("slen: %d\n", slen);
 		printf("klen: %d\n", klen);
@@ -1133,13 +1136,47 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		debug(99, "pageUrl: %s\n", pageUrl);
 		debug(99, "playpath: %s\n", playpath);
 		debug(99, "video_id: %s\n", video_id);
+printf("tmpstr_uni: %s\n",tmpstr_uni);
+
+	if(ostrstr(tmpstr_uni, "connectionurl='rtmp"))
+	{
+		printf("found rtmp stream\n");
+		int count2 = 0;
+		int i = 0;
+		struct splitstr* ret2 = NULL;
+		ret2 = strsplit(tmpstr_uni, "'", &count2);
+		if(ret2 != NULL)
+		{
+			int max = count2;
+			for(i = 0; i < max; i++)
+			{
+				printf("ret2[i].part= (%d/%d) %s\n", i, max, (ret2[i]).part);
+				if(ostrstr((ret2[i]).part, "rtmp"))
+				{
+					printf("add rtmp stream as url\n");
+					url = ostrcat((ret2[i]).part, NULL, 0, 0);
+//					tmpstr = ostrcat((ret2[i]).part, NULL, 0, 0);
+					htmldecode(url, url);
+				}
+			}
+		}
+		
+//		tmpstr = string_resub("connectionurl='", "\0", tmpstr_uni, 0);
+//		debug(99, "tmpstr: %s", tmpstr);
+//printf("tmpstr: %s\n",tmpstr);
+	}
 
 //tmpstr = ostrcat(NULL, "=c3RhcnRfdGltZT0yMDEyMDgwMjEzMjE1NiZlbmRfdGltZT0yMDEyMDgwMjE4MjIwMSZkaWdlc3Q9YWIyYzNmNzM2NTJjYjI4ZDIwODVjYTg5NTM0MGYzZTc=", 0, 0);		
 //		streamurl = ostrcat("rtmpe://myvideo3fs.fplive.net/myvideo3/?token=c3RhcnRfdGltZT0yMDEyMDgwMjEzMjE1NiZlbmRfdGltZT0yMDEyMDgwMjE4MjIwMSZkaWdlc3Q9YWIyYzNmNzM2NTJjYjI4ZDIwODVjYTg5NTM0MGYzZTc= tcUrl=rtmpe://myvideo3fs.fplive.net/myvideo3/?token=c3RhcnRfdGltZT0yMDEyMDgwMjEzMjE1NiZlbmRfdGltZT0yMDEyMDgwMjE4MjIwMSZkaWdlc3Q9YWIyYzNmNzM2NTJjYjI4ZDIwODVjYTg5NTM0MGYzZTc= swfVfy=http://is4.myvideo.de/de/player/mingR11q/ming.swf pageUrl=http://www.myvideo.de/watch/8470917/ playpath=flv:movie24/6a/8470917", NULL, 0, 0);
-		streamurl = ostrcat("rtmpe://myvideo3fs.fplive.net/myvideo3/?token=", tmpstr_uni, 0, 0);
+//		streamurl = ostrcat("rtmpe://myvideo3fs.fplive.net/myvideo3/?token=", tmpstr_uni, 0, 0);
+		streamurl = ostrcat(url, NULL, 0, 0);
+		
 		streamurl = ostrcat(streamurl, "= ", 1, 0);
-		streamurl = ostrcat(streamurl, "tcUrl=rtmpe://myvideo3fs.fplive.net/myvideo3/?token=", 1, 0);
-		streamurl = ostrcat(streamurl, tmpstr_uni, 1, 0);
+//		streamurl = ostrcat(streamurl, "tcUrl=rtmpe://myvideo3fs.fplive.net/myvideo3/?token=", 1, 0);
+		streamurl = ostrcat(streamurl, "tcUrl=", 1, 0);
+		streamurl = ostrcat(streamurl, url, 1, 0);
+
+//		streamurl = ostrcat(streamurl, tmpstr_uni, 1, 0);
 		streamurl = ostrcat(streamurl, "= swfVfy=http://is4.myvideo.de/de/player/mingR11q/ming.swf ", 1, 0);
 		streamurl = ostrcat(streamurl, pageUrl, 1, 0);
 		streamurl = ostrcat(streamurl, " ", 1, 0);
@@ -1148,7 +1185,7 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		free(pageUrl); pageUrl = NULL;		
 		free(playpath); playpath = NULL;
 		debug(99, "streamurl: %s", streamurl);
-		printf("streamurl: %s", streamurl);
+		printf("streamurl: %s\n", streamurl);
 	}
 	return streamurl;
 }
