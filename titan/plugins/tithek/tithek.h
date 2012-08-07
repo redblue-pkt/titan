@@ -3,6 +3,32 @@
 
 #define TITHEKPATH "/tmp/tithek"
 
+#include <assert.h>
+
+signed char htod(char c)
+{
+  c = tolower(c);
+  if(isdigit(c))
+    return c - '0';
+
+  if(c >= 'a' && c <= 'f')
+    return c - 'a';
+
+  return -1;
+}
+
+
+void unhexlify1(const char *hexstr, char *binstr)
+{
+    char *p, *q;
+
+    assert(strlen(hexstr) > 0);
+    assert(strlen(hexstr) % 2 == 0);    // even length
+
+    for (p=hexstr,q=binstr; *p; p+=2,q++)
+        sscanf(p, "%2x", q);
+    *q = '\0';
+}
 
 struct rc4ctx {
     unsigned char S[256];
@@ -62,7 +88,6 @@ void rc4(unsigned char *data, size_t dlen, unsigned char *key, size_t klen)
     rc4crypt(&ctx, data, dlen);
 }
 
-
 /*
 static byte[] rc4crypt(byte[] data,byte[] key)
 {
@@ -100,7 +125,44 @@ static byte[] rc4crypt(byte[] data,byte[] key)
 	return ret;
 }
 */
-        
+/*
+void rc4(unsigned char* ByteInput, unsigned char* pwd, unsigned char* ByteOutput)
+{
+	unsigned char * temp;
+	int i,j=0,t,tmp,tmp2,s[256], k[256];
+	for (tmp=0;tmp<256;tmp++)
+	{
+		s[tmp]=tmp;
+		k[tmp]=pwd[(tmp % strlen((char *)pwd))];
+	}
+	for (i=0;i<256;i++)
+	{
+		j = (j + s[i] + k[i]) % 256;
+		tmp=s[i];
+		s[i]=s[j];
+		s[j]=tmp;
+	}
+	
+	temp = unsigned char [ (int)strlen((char *)ByteInput) + 1 ] ;
+	i=j=0;
+	for (tmp=0;tmp<(int)strlen((char *)ByteInput);tmp++)
+	{
+		i = (i + 1) % 256;
+		j = (j + s[i]) % 256;
+		tmp2=s[i];
+		s[i]=s[j];
+		s[j]=tmp2;
+		t = (s[i] + s[j]) % 256;
+		if (s[t]==ByteInput[tmp])
+			temp[tmp]=ByteInput[tmp];
+		else
+			temp[tmp]=s[t]^ByteInput[tmp];
+	}
+	temp[tmp]='';
+	ByteOutput=temp;
+}
+*/
+       
 char fromhex(char c);
 
 char *hexlify(char *str)
@@ -865,23 +927,32 @@ void screentithekplay(char* titheklink, char* title, int first)
 char* getstreamurl(char* link, char* url, char* name, int flag)
 {
 	debug(99, "link(%d): %s", flag, link);
-	char* ip = NULL, *pos = NULL, *path = NULL, *pageUrl = NULL, *playpath = NULL;
+	char* ip = NULL, *pos = NULL, *path = NULL, *pageUrl = NULL, *playpath = NULL, *video_id = NULL;
 
 	if(flag == 4)
 	{
+  			printf("111111111111\n");	
 		int count = 0;
 		int i = 0;
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(link, ";", &count);
 		if(ret1 != NULL)
 		{
+  			printf("22222222222\n");	
+
 			link = ostrcat(ret1[0].part, NULL, 0, 0);
 			pageUrl = ostrcat(pageUrl, ret1[1].part, 1, 0);
 			playpath = ostrcat(playpath, ret1[2].part, 1, 0);
-			
+  			printf("3333333333333\n");	
+
+			video_id = ostrcat(video_id, ret1[3].part, 1, 0);
+  			printf("4444444444444\n");	
+						
 			printf("link: %s\n", link);
 			printf("pageUrl: %s\n", pageUrl);
 			printf("playpath: %s\n", playpath);											
+			printf("video_id: %s\n", video_id);											
+
 		}
 		free(ret1), ret1 = NULL;
 	}
@@ -1019,81 +1090,56 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 	}
 	if(flag == 4)
 	{
+  			printf("soooooooooooooooooooooooooo111\n");	
 //		printf("tmpstr: %s", tmpstr);
-writesys("/var/usr/local/share/titan/plugins/tithek/list", tmpstr, 0);
+		writesys("/var/usr/local/share/titan/plugins/tithek/list", tmpstr, 0);
 //		tmpstr = string_resub("_encxml=", "/0", tmpstr, 0);
+  			printf("soooooooooooooooooooooooooo2222\n");
+		char* tmpstr_uni = NULL;
 		int count = 0;
 		int i = 0;
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "=", &count);
 		if(ret1 != NULL)
 		{
-			tmpstr = ostrcat(ret1[1].part, NULL, 0, 0);
-//			printf("tmpstr1111111111: %s\n", tmpstr);
-
-
-			tmpstr = unhexlify(ret1[1].part);
-//			printf("tmpstr2222222222: %s\n", tmpstr);
-			printf("soooooooooooooooooooooooooo\n");
-writesys("/var/usr/local/share/titan/plugins/tithek/list_input", ret1[1].part, 0);
-writesys("/var/usr/local/share/titan/plugins/tithek/list_uni", tmpstr, 0);
-
-			printf("obi\n");
-			printf("MDFile /var/usr/local/share/titan/plugins/tithek/list_uni: %s\n", MDFile("/var/usr/local/share/titan/plugins/tithek/list_uni"));
-
-			char* video_id = NULL;
-			video_id = ostrcat("8682229", NULL, 0, 0);
-						
-			char* video_id_md5 = NULL;		
-			video_id_md5 = MDString(video_id);
-			printf("video_id_md5: %s\n", video_id_md5);
-//Uint16 zahl = 094c3e6eb98bc1578edd27fafbd91efe + atoi(video_id_md5);
-
-//long long int a = 0xea5f993a5fbf1ba2691ebc56b5159483;
-//long long int b = 0x094c3e6eb98bc1578edd27fafbd91efe;
-
-//fscanf(FILE, "%X", &start_loc)
-char * str1 = "0xea5f993a5fbf1ba2691ebc56b5159483", * ptr1;
-char * str2 = "0x094c3e6eb98bc1578edd27fafbd91efe", * ptr2;
-unsigned int n1 = strtol(str1, & ptr1, 16); // 16 ist die Basis des Hexadezimalsystems
-int n2 = strtol(str2, & ptr2, 16); // 16 ist die Basis des Hexadezimalsystems
-
-			printf("n1d: %d\n", n1);
-			printf("n1x: %x\n", n1);
-			printf("n2d: %d\n", n2);
-			printf("n2x: %x\n", n2);
-			
-			printf("n3d: %d\n", n1 + n2);
-			printf("n3x: %x\n", n1 + n2);
-
-
-//			printf("rechner: %x\n", a + b);
-			
-//			printf("zahl: %d\n", zahl);
-//			printf("chek: %s\n", MDString(tmpstr));
-//			MDString (tmpstr);			
-//			int test = 
-			
+			tmpstr_uni = unhexlify(ret1[1].part);
+			writesys("/var/usr/local/share/titan/plugins/tithek/list_input", ret1[1].part, 0);
 		}
-//8543777
-//094c3e6eb98bc1578edd27fafbd91efe
-		char* tt = ostrcat("8618366", NULL, 0, 0);
-		printf("tt %s\n", tt);
-//		printf("hash %s\n", gethash((char*)tt));
-		
-//		printf("link: %s\n", link);
-//		printf("tmpstr33333333333: %s\n", tmpstr);
+		free(ret1), ret1 = NULL;
+		writesys("/var/usr/local/share/titan/plugins/tithek/list_uni", tmpstr_uni, 0);
+					
+		char* video_id_md5 = NULL;		
+		video_id_md5 = MDString(video_id);
+		printf("video_id_md5: %s\n", video_id_md5);
+
+		char* b64 = NULL;
+		b64 = ostrcat("c8407a08b3c71ea418ec9dc662f2a56e40cbd6d5a114aa50fb1e1079e17f2b83", video_id_md5, 0, 0);
+		printf("b64: %s\n", b64);
+
+		char* key = NULL;		
+		key = MDString(b64);
+		printf("key: %s\n", key);
+
+		int slen = strlen(tmpstr_uni);
+		int klen = strlen(key);
+		printf("slen: %d\n", slen);
+		printf("klen: %d\n", klen);
+						
+//		rc4(tmpstr_uni, strlen(tmpstr_uni), key, strlen(key));
+		rc4(tmpstr_uni, slen, key, klen);
+		writesys("/var/usr/local/share/titan/plugins/tithek/list_key", tmpstr_uni, 1);			
+
 		debug(99, "tmpstr: %s\n", tmpstr);
 		debug(99, "pageUrl: %s\n", pageUrl);
 		debug(99, "playpath: %s\n", playpath);
+		debug(99, "video_id: %s\n", video_id);
 
-tmpstr = ostrcat(NULL, "=c3RhcnRfdGltZT0yMDEyMDgwMjEzMjE1NiZlbmRfdGltZT0yMDEyMDgwMjE4MjIwMSZkaWdlc3Q9YWIyYzNmNzM2NTJjYjI4ZDIwODVjYTg5NTM0MGYzZTc=", 0, 0);
-		
+//tmpstr = ostrcat(NULL, "=c3RhcnRfdGltZT0yMDEyMDgwMjEzMjE1NiZlbmRfdGltZT0yMDEyMDgwMjE4MjIwMSZkaWdlc3Q9YWIyYzNmNzM2NTJjYjI4ZDIwODVjYTg5NTM0MGYzZTc=", 0, 0);		
 //		streamurl = ostrcat("rtmpe://myvideo3fs.fplive.net/myvideo3/?token=c3RhcnRfdGltZT0yMDEyMDgwMjEzMjE1NiZlbmRfdGltZT0yMDEyMDgwMjE4MjIwMSZkaWdlc3Q9YWIyYzNmNzM2NTJjYjI4ZDIwODVjYTg5NTM0MGYzZTc= tcUrl=rtmpe://myvideo3fs.fplive.net/myvideo3/?token=c3RhcnRfdGltZT0yMDEyMDgwMjEzMjE1NiZlbmRfdGltZT0yMDEyMDgwMjE4MjIwMSZkaWdlc3Q9YWIyYzNmNzM2NTJjYjI4ZDIwODVjYTg5NTM0MGYzZTc= swfVfy=http://is4.myvideo.de/de/player/mingR11q/ming.swf pageUrl=http://www.myvideo.de/watch/8470917/ playpath=flv:movie24/6a/8470917", NULL, 0, 0);
-		streamurl = ostrcat("rtmpe://myvideo3fs.fplive.net/myvideo3/?token=", tmpstr, 0, 0);
+		streamurl = ostrcat("rtmpe://myvideo3fs.fplive.net/myvideo3/?token=", tmpstr_uni, 0, 0);
 		streamurl = ostrcat(streamurl, "= ", 1, 0);
 		streamurl = ostrcat(streamurl, "tcUrl=rtmpe://myvideo3fs.fplive.net/myvideo3/?token=", 1, 0);
-		streamurl = ostrcat(streamurl, tmpstr, 1, 0);
+		streamurl = ostrcat(streamurl, tmpstr_uni, 1, 0);
 		streamurl = ostrcat(streamurl, "= swfVfy=http://is4.myvideo.de/de/player/mingR11q/ming.swf ", 1, 0);
 		streamurl = ostrcat(streamurl, pageUrl, 1, 0);
 		streamurl = ostrcat(streamurl, " ", 1, 0);
