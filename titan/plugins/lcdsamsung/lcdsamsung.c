@@ -59,6 +59,7 @@ void LCD_Samsung1_thread()
 {
 	
 	struct skin* LCD_Samsung1 = NULL;
+	struct skin* LCD_Standby = NULL;
 	struct skin* LCD_Play = NULL;
 	
 	struct skin* day0_t = NULL;
@@ -74,12 +75,13 @@ void LCD_Samsung1_thread()
 	struct skin* day3_i = NULL;
 	struct skin* day3_d = NULL;
 	struct skin* akttime = NULL;
+	struct skin* akttime_Standby = NULL;
 	
 	
 	char* tmpstr = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *timemerk = NULL, *sendermerk = NULL, *recmerk = NULL;
 	FILE *fd = NULL;
 	char *fileline = NULL;
-	int weatherwrite = 0;
+	int weatherwrite = 999;
 	char* startlcd = NULL;
 	
 	if(ostrcmp(getconfig("lcd_samsung_plugin_wetter", NULL), "yes") == 0)
@@ -105,6 +107,7 @@ void LCD_Samsung1_thread()
 		akttime = getscreennode(LCD_Samsung1, "akttime");
 		if(file_exist("/tmp/lcdweather") == 1)
 			system("rm /tmp/lcdweather");
+		weatherwrite = 0;
 	}
 	else {
 		if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
@@ -135,6 +138,19 @@ void LCD_Samsung1_thread()
 		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 2", 0, 0);
 	else
 		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 2", 0, 0);
+	
+	
+	if(ostrcmp(getconfig("lcd_samsung_plugin_standby", NULL), "yes") == 0) 
+	{
+		if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
+			LCD_Standby = getscreen("LCD_spf75_Standby");
+		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
+			LCD_Standby = getscreen("LCD_spf87_Standby");
+		else
+			LCD_Standby = getscreen("LCD_spf87_Standby");
+		akttime_Standby = getscreennode(LCD_Standby, "akttime"); 
+	} 
+	
 	
 	int put = 0, typemerk = 0, type = 0;
 	int standby = 0;
@@ -202,34 +218,48 @@ void LCD_Samsung1_thread()
 		{
 			if(status.standby == 1 && standby == 0)
 			{
-				tmpstr = ostrcat("cp ", getconfig("pluginpath", NULL), 0, 0);
-				tmpstr = ostrcat(tmpstr, "/lcdsamsung/standby.jpg", 1, 0);
-				tmpstr = ostrcat(tmpstr, " /tmp/titanlcd.jpg", 1, 0);
-				system(tmpstr);
-				free(tmpstr); tmpstr=NULL;
-				sleep(3);
-				tmpstr = ostrcat("cp ", getconfig("pluginpath", NULL), 0, 0);
-				tmpstr = ostrcat(tmpstr, "/lcdsamsung/black.jpg", 1, 0);
-				tmpstr = ostrcat(tmpstr, " /tmp/titanlcd.jpg", 1, 0);
-				system(tmpstr);
-				sleep(2);
-				system("killall fbread");
-				standby = 1;
+				if(ostrcmp(getconfig("lcd_pearl1_plugin_standby", NULL), "yes") == 0)
+					standby = 2;
+				else
+				{
+					tmpstr = ostrcat("cp ", getconfig("pluginpath", NULL), 0, 0);
+					tmpstr = ostrcat(tmpstr, "/lcdsamsung/standby.jpg", 1, 0);
+					tmpstr = ostrcat(tmpstr, " /tmp/titanlcd.jpg", 1, 0);
+					system(tmpstr);
+					free(tmpstr); tmpstr=NULL;
+					sleep(3);
+					tmpstr = ostrcat("cp ", getconfig("pluginpath", NULL), 0, 0);
+					tmpstr = ostrcat(tmpstr, "/lcdsamsung/black.jpg", 1, 0);
+					tmpstr = ostrcat(tmpstr, " /tmp/titanlcd.jpg", 1, 0);
+					system(tmpstr);
+					sleep(2);
+					system("killall fbread");
+					standby = 1;
+				}
 			}
-			if(status.standby == 0 && standby == 1)
+			if(status.standby == 0 && standby > 0)
 			{
-				system(startlcd);
+				if(standby == 1)
+					system(startlcd);
 				standby = 0;
+				put = 1;
 			}
 		
+			if(weatherthread == NULL && weatherwrite == 0) 
+			{ 
+				if(file_exist("/tmp/lcdweather") != 0) 
+					put = 1; 
+			}                        
+ 			
+			if(ostrcmp(tmpstr, timemerk) != 0)
+			{
+				free(timemerk);timemerk=NULL;
+				timemerk = ostrcat(tmpstr, "", 0, 0);
+				put = 1;
+			} 
+
 			if(standby == 0)
 			{
-				if(ostrcmp(tmpstr, timemerk) != 0)
-				{
-					free(timemerk);timemerk=NULL;
-					timemerk = ostrcat(tmpstr, "", 0, 0);
-					put = 1;
-				} 
 				if(type == 1)
 				{
 					if(ostrcmp(tmpstr2, sendermerk) != 0)
@@ -371,6 +401,18 @@ void LCD_Samsung1_thread()
 					}
 				}
 			}
+			else
+			{
+				if(standby == 2) 
+				{        
+					if(put == 1) 
+					{        
+						changetext(akttime_Standby, tmpstr); 
+						drawscreen(LCD_Standby, 0, 0); 
+						put = 0; 
+					} 
+				} 
+			}
 		}
 		free(tmpstr); tmpstr = NULL;
 		free(tmpstr2); tmpstr2 = NULL;
@@ -456,6 +498,7 @@ void start(void)
 	struct skin* listbox = getscreennode(samsung1_main, "listbox");
 	struct skin* lcdtype = getscreennode(samsung1_main, "lcdtype");
 	struct skin* allmenu = getscreennode(samsung1_main, "allmenu");
+	struct skin* aktstandby = getscreennode(samsung1_main, "aktstandby");
 	struct skin* wettervor = getscreennode(samsung1_main, "wettervor");
 	struct skin* wettervorplz = getscreennode(samsung1_main, "wettervorplz");
 	struct skin* wettervorland = getscreennode(samsung1_main, "wettervorland");
@@ -479,6 +522,10 @@ void start(void)
 	addchoicebox(allmenu, "no", _("nein"));
 	addchoicebox(allmenu, "yes", _("ja"));
 	setchoiceboxselection(allmenu, getconfig("write_fb_to_jpg", NULL));
+	
+	addchoicebox(aktstandby, "no", _("nein")); 
+	addchoicebox(aktstandby, "yes", _("ja")); 
+	setchoiceboxselection(aktstandby, getconfig("lcd_samsung_plugin_standby", NULL)); 
 	
 	addchoicebox(wettervor, "no", _("nein"));
   addchoicebox(wettervor, "yes", _("ja"));
@@ -532,6 +579,7 @@ void start(void)
 		{
 			addconfig("lcd_samsung_plugin_type", lcdtype->ret);
 			addconfig("write_fb_to_jpg", allmenu->ret);
+			addconfig("lcd_samsung_plugin_standby", aktstandby->ret);
 			addconfig("lcd_samsung_plugin_wetter", wettervor->ret);
 			addconfig("lcd_samsung_plugin_wetterplz", wettervorplz->ret);
 			addconfig("lcd_samsung_plugin_wetterland", wettervorland->ret);
@@ -543,6 +591,7 @@ void start(void)
 		{
 			addconfig("lcd_samsung_plugin_type", lcdtype->ret);
 			addconfig("write_fb_to_jpg", allmenu->ret);
+			addconfig("lcd_samsung_plugin_standby", aktstandby->ret);
 			addconfig("lcd_samsung_plugin_wetter", wettervor->ret);
 			addconfig("lcd_samsung_plugin_wetterplz", wettervorplz->ret);
 			addconfig("lcd_samsung_plugin_wetterland", wettervorland->ret);
