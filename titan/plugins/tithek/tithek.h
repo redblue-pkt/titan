@@ -21,13 +21,29 @@ signed char htod(char c)
 void unhexlify1(const char *hexstr, char *binstr)
 {
     char *p, *q;
+printf("unhexlify1 11\n");
 
     assert(strlen(hexstr) > 0);
-    assert(strlen(hexstr) % 2 == 0);    // even length
+printf("unhexlify1 112\n");
 
+    assert(strlen(hexstr) % 2 == 0);    // even length
+printf("unhexlify1 113\n");
+int count = 0;
     for (p=hexstr,q=binstr; *p; p+=2,q++)
-        sscanf(p, "%2x", q);
-    *q = '\0';
+	{
+		count += 1;
+		printf("unhexlify1 (%d)\n", count);
+//		printf("unhexlify1 hexstring (%s)\n", p[count]);
+		
+		if(count < 2062)
+	        sscanf(p, "%2x", q);
+		printf("unhexlify1 115\n");
+
+	}
+printf("unhexlify1 116\n");
+//    *q = '\0';
+printf("unhexlify1 117\n");
+
 }
 
 struct rc4ctx {
@@ -183,15 +199,21 @@ char *hexlify(char *str)
 
 //it will be up to the caller to free the memory...
 
-char *unhexlify(char *hstr)
+char* unhexlify(char* hstr)
 {
-	int l, i; char *t; char c;
+	int count = 0;
+	int l, i; 
+	char* t;
+	char c;
 	l = strlen(hstr)/2;
 	t = malloc(l);
-	if (t)
+	if(t)
 	{
 		for(i=0; i<l; i++)
 		{
+			count += 1;
+			printf("unhexlify (%d)\n", count);
+		
 			c = fromhex( hstr[2*i+1] ) + 16*fromhex( hstr[2*i] );
 			t[i] = c;
 		}
@@ -201,17 +223,20 @@ char *unhexlify(char *hstr)
 
 char fromhex(char c)
 {
-	if ( isxdigit(c) )
+	if(isxdigit(c))
 	{
-		if ( isdigit(c) )
-		{
+		if(isdigit(c))
 			c -= '0';
-		} else {
+		else
+		{
 			c = tolower(c);
 			c = c - 'a' + 10;
 		}
-	} else { c = 0; }
-		return c;
+	}
+	else 
+		c = 0;
+
+	return c;
 }
 
 //flag 0: not used
@@ -927,7 +952,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 char* getstreamurl(char* link, char* url, char* name, int flag)
 {
 	debug(99, "link(%d): %s", flag, link);
-	char* ip = NULL, *pos = NULL, *path = NULL, *pageUrl = NULL, *playpath = NULL, *video_id = NULL;
+	char* ip = NULL, *pos = NULL, *path = NULL, *pageUrl = NULL, *playpath = NULL, *video_id = NULL, *source = NULL;
 
 	if(flag == 4)
 	{
@@ -1096,31 +1121,88 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 //		tmpstr = string_resub("_encxml=", "/0", tmpstr, 0);
   			printf("soooooooooooooooooooooooooo2222\n");
 		char* tmpstr_uni = NULL;
+		char* b64 = NULL;
+		char* key = NULL;
+
 		int count = 0;
 		int i = 0;
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "=", &count);
 int slen;
+		char buf[200];
 		if(ret1 != NULL)
 		{
-			printf("ret1[1].part=%s\n", ret1[1].part);
-			slen = strlen(ret1[1].part);
-			tmpstr_uni = unhexlify(ret1[1].part);
+			printf("ret1[1].part=%s\n", (ret1[1]).part);
+			slen = strlen((ret1[1]).part);
+// not workin correct
+//			tmpstr_uni = unhexlify(ret1[1].part);
+			sleep(1);
 			writesys("/var/usr/local/share/titan/plugins/tithek/list_input", ret1[1].part, 0);
+
+		    FILE *fp;
+		    char *file;
+		    char *cp;
+		    char buf[256];
+		    char hexstr[3];
+		    char hexval;
+		
+		    file = "/var/usr/local/share/titan/plugins/tithek/list_input";
+		
+		    fp = fopen(file, "r");
+		    if(fp)
+		    {
+			    cp = fgets(buf, sizeof(buf)-1, fp);
+			    while (cp && !feof(fp)) {
+			        cp = buf + strlen(buf) - 1;
+			        if (*cp == '\n' || *cp == '\r') *cp-- = '\0';
+			        if (*cp == '\n' || *cp == '\r') *cp-- = '\0';
+			        cp = buf;
+			        while (*cp) {
+			            hexstr[0] = *cp++;
+			            hexstr[1] = *cp++;
+			            hexstr[2] = '\0';
+			            hexval = strtol(hexstr, 0, 16);
+			 //           fwrite(&hexval, 1, 1, stdout);
+						tmpstr_uni = ostrcat(tmpstr_uni, &hexval, 1, 0);
+			        }
+			        cp = fgets(buf, sizeof(buf)-1, fp);
+			    }
+		    }
 		}
 		free(ret1), ret1 = NULL;
 		writesys("/var/usr/local/share/titan/plugins/tithek/list_uni", tmpstr_uni, 0);
-					
+
+//////////////
 		char* video_id_md5 = NULL;		
 		video_id_md5 = MDString(video_id);
 		printf("video_id_md5: %s\n", video_id_md5);
+/*
+		char* gk = NULL;
+		gk = ostrcat(gk, "WXpnME1EZGhNRGhpTTJNM01XVmhOREU0WldNNVpHTTJOakptTW1FMU5tVTBNR05pWkRaa05XRXhNVFJoWVRVd1ptSXhaVEV3TnpsbA0KTVRkbU1tSTRNdz09", 1, 0);
+		printf("gk: %s\n", gk);		
+		
+		char* b64_gk = malloc(255);		
+		b64dec(b64_gk, gk);
+		printf("b64_gk: %s\n", b64_gk);
 
-		char* b64 = NULL;
+		char* gk_video_id_md5 = NULL;
+		gk_video_id_md5 = ostrcat(b64_gk, video_id_md5, 0, 0);
+		free(video_id_md5), video_id_md5 = NULL;
+		printf("gk_video_id_md5: %s\n", gk_video_id_md5);
+		free(b64_gk), b64_gk = NULL;
+
+		char* b64_gk_video_id_md5 = malloc(255);		
+		b64dec(b64_gk_video_id_md5, gk_video_id_md5);
+		free(gk_video_id_md5), gk_video_id_md5 = NULL;
+		printf("b64_gk_video_id_md5: %s\n", b64_gk_video_id_md5);
+*/		
 		b64 = ostrcat("c8407a08b3c71ea418ec9dc662f2a56e40cbd6d5a114aa50fb1e1079e17f2b83", video_id_md5, 0, 0);
 		printf("b64: %s\n", b64);
 
-		char* key = NULL;		
 		key = MDString(b64);
+//		key = MDString(b64_gk_video_id_md5);
+//		free(b64_gk_video_id_md5), b64_gk_video_id_md5 = NULL;
+
 		printf("key: %s\n", key);
 		printf("slen: %d\n", slen);
 		slen = strlen(tmpstr_uni);
@@ -1132,59 +1214,85 @@ int slen;
 		rc4(tmpstr_uni, slen, key, klen);
 		writesys("/var/usr/local/share/titan/plugins/tithek/list_key", tmpstr_uni, 1);			
 
+		slen = strlen(buf);
+		rc4(buf, slen, key, klen);
+		writesys("/var/usr/local/share/titan/plugins/tithek/list_keybuf", buf, 1);	
+		
 		debug(99, "tmpstr: %s\n", tmpstr);
 		debug(99, "pageUrl: %s\n", pageUrl);
 		debug(99, "playpath: %s\n", playpath);
 		debug(99, "video_id: %s\n", video_id);
-printf("tmpstr_uni: %s\n",tmpstr_uni);
+		//printf("tmpstr_uni: %s\n",tmpstr_uni);
 
-	if(ostrstr(tmpstr_uni, "connectionurl='rtmp"))
-	{
-		printf("found rtmp stream\n");
-		int count2 = 0;
-		int i = 0;
-		struct splitstr* ret2 = NULL;
-		ret2 = strsplit(tmpstr_uni, "'", &count2);
-		if(ret2 != NULL)
+		if(ostrstr(tmpstr_uni, "connectionurl='rtmp"))
 		{
-			int max = count2;
-			for(i = 0; i < max; i++)
+			printf("found rtmp stream\n");
+			int count2 = 0;
+			int i = 0;
+			struct splitstr* ret2 = NULL;
+			ret2 = strsplit(tmpstr_uni, " ", &count2);
+			if(ret2 != NULL)
 			{
-				printf("ret2[i].part= (%d/%d) %s\n", i, max, (ret2[i]).part);
-				if(ostrstr((ret2[i]).part, "rtmp"))
+				int max = count2;
+				for(i = 0; i < max; i++)
 				{
-					printf("add rtmp stream as url\n");
-					url = ostrcat((ret2[i]).part, NULL, 0, 0);
-//					tmpstr = ostrcat((ret2[i]).part, NULL, 0, 0);
-					htmldecode(url, url);
+					printf("ret2[i].part= (%d/%d) %s\n", i, max, (ret2[i]).part);
+					if(ostrstr((ret2[i]).part, "connectionurl='rtmp"))
+					{
+						printf("add rtmp stream as url\n");					
+						url = ostrcat((ret2[i]).part, NULL, 0, 0);
+						url = string_resub("connectionurl='", "'", url, 0);
+						htmldecode(url, url);
+					}
+					else if(ostrstr((ret2[i]).part, "source='"))
+					{
+						printf("add rtmp stream as source\n");					
+						source = ostrcat((ret2[i]).part, NULL, 0, 0);
+						source = string_resub("source='", ".flv'", source, 0);
+						htmldecode(source, source);
+					}
 				}
 			}
+			
+	//		tmpstr = string_resub("connectionurl='", "\0", tmpstr_uni, 0);
+	//		debug(99, "tmpstr: %s", tmpstr);
+	//printf("tmpstr: %s\n",tmpstr);
 		}
-		
-//		tmpstr = string_resub("connectionurl='", "\0", tmpstr_uni, 0);
-//		debug(99, "tmpstr: %s", tmpstr);
-//printf("tmpstr: %s\n",tmpstr);
-	}
+		else
+			printf("tmpstr_uni not found rtmp: %s\n",tmpstr_uni);
+
 
 //tmpstr = ostrcat(NULL, "=c3RhcnRfdGltZT0yMDEyMDgwMjEzMjE1NiZlbmRfdGltZT0yMDEyMDgwMjE4MjIwMSZkaWdlc3Q9YWIyYzNmNzM2NTJjYjI4ZDIwODVjYTg5NTM0MGYzZTc=", 0, 0);		
 //		streamurl = ostrcat("rtmpe://myvideo3fs.fplive.net/myvideo3/?token=c3RhcnRfdGltZT0yMDEyMDgwMjEzMjE1NiZlbmRfdGltZT0yMDEyMDgwMjE4MjIwMSZkaWdlc3Q9YWIyYzNmNzM2NTJjYjI4ZDIwODVjYTg5NTM0MGYzZTc= tcUrl=rtmpe://myvideo3fs.fplive.net/myvideo3/?token=c3RhcnRfdGltZT0yMDEyMDgwMjEzMjE1NiZlbmRfdGltZT0yMDEyMDgwMjE4MjIwMSZkaWdlc3Q9YWIyYzNmNzM2NTJjYjI4ZDIwODVjYTg5NTM0MGYzZTc= swfVfy=http://is4.myvideo.de/de/player/mingR11q/ming.swf pageUrl=http://www.myvideo.de/watch/8470917/ playpath=flv:movie24/6a/8470917", NULL, 0, 0);
 //		streamurl = ostrcat("rtmpe://myvideo3fs.fplive.net/myvideo3/?token=", tmpstr_uni, 0, 0);
 		streamurl = ostrcat(url, NULL, 0, 0);
 		
-		streamurl = ostrcat(streamurl, "= ", 1, 0);
+		streamurl = ostrcat(streamurl, " ", 1, 0);
 //		streamurl = ostrcat(streamurl, "tcUrl=rtmpe://myvideo3fs.fplive.net/myvideo3/?token=", 1, 0);
 		streamurl = ostrcat(streamurl, "tcUrl=", 1, 0);
 		streamurl = ostrcat(streamurl, url, 1, 0);
 
 //		streamurl = ostrcat(streamurl, tmpstr_uni, 1, 0);
-		streamurl = ostrcat(streamurl, "= swfVfy=http://is4.myvideo.de/de/player/mingR11q/ming.swf ", 1, 0);
+		streamurl = ostrcat(streamurl, " swfVfy=http://is4.myvideo.de/de/player/mingR11q/ming.swf ", 1, 0);
 		streamurl = ostrcat(streamurl, pageUrl, 1, 0);
 		streamurl = ostrcat(streamurl, " ", 1, 0);
-		streamurl = ostrcat(streamurl, playpath, 1, 0);
+//		streamurl = ostrcat(streamurl, playpath, 1, 0);
+		streamurl = ostrcat(streamurl, "playpath=flv:", 1, 0);
+		streamurl = ostrcat(streamurl, source, 1, 0);
+
+		
+
+
+		free(key); key = NULL;		
+		free(b64); b64 = NULL;		
+		free(url); url = NULL;
+		free(source); source = NULL;		
+		free(tmpstr_uni); tmpstr_uni = NULL;		
 		free(tmpstr); tmpstr = NULL;
 		free(pageUrl); pageUrl = NULL;		
 		free(playpath); playpath = NULL;
 		debug(99, "streamurl: %s", streamurl);
+
 		printf("streamurl: %s\n", streamurl);
 	}
 	return streamurl;
