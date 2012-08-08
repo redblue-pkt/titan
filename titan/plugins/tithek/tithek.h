@@ -32,13 +32,13 @@ struct rc4ctx {
     unsigned char j;
 };
 
-void rc4init(struct rc4ctx *ctx, unsigned char *key, size_t keylen);
-void rc4crypt(struct rc4ctx *ctx, unsigned char *data, size_t len);
-void rc4(unsigned char *data, size_t dlen, unsigned char *key, size_t klen);
+void rc4init(struct rc4ctx *ctx, char *key, size_t keylen);
+void rc4crypt(struct rc4ctx *ctx, char *data, size_t len);
+void rc4(char *data, size_t dlen, char *key, size_t klen);
 
 #define SWAP(a,b) { unsigned char temp; temp = (a); (a) = (b); (b) = temp; }
 
-void rc4init(struct rc4ctx *ctx, unsigned char *key, size_t keylen)
+void rc4init(struct rc4ctx *ctx, char *key, size_t keylen)
 {
     int i;
     unsigned char j = 0;
@@ -53,7 +53,7 @@ void rc4init(struct rc4ctx *ctx, unsigned char *key, size_t keylen)
     }
 }
 
-void rc4crypt(struct rc4ctx *ctx, unsigned char *data, size_t len)
+void rc4crypt(struct rc4ctx *ctx, char *data, size_t len)
 {
     unsigned int i;
 
@@ -73,7 +73,7 @@ void rc4crypt(struct rc4ctx *ctx, unsigned char *data, size_t len)
     }
 }
 
-void rc4(unsigned char *data, size_t dlen, unsigned char *key, size_t klen)
+void rc4(char *data, size_t dlen, char *key, size_t klen)
 {
     struct rc4ctx ctx;
     rc4init(&ctx, key, klen);
@@ -797,28 +797,20 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 
 	if(flag == 4)
 	{
-  			printf("111111111111\n");	
 		int count = 0;
-		int i = 0;
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(link, ";", &count);
 		if(ret1 != NULL)
 		{
-  			printf("22222222222\n");	
-
 			link = ostrcat(ret1[0].part, NULL, 0, 0);
 			pageUrl = ostrcat(pageUrl, ret1[1].part, 1, 0);
 			playpath = ostrcat(playpath, ret1[2].part, 1, 0);
-  			printf("3333333333333\n");	
-
 			video_id = ostrcat(video_id, ret1[3].part, 1, 0);
-  			printf("4444444444444\n");	
-						
+
 			printf("link: %s\n", link);
 			printf("pageUrl: %s\n", pageUrl);
 			printf("playpath: %s\n", playpath);											
 			printf("video_id: %s\n", video_id);											
-
 		}
 		free(ret1), ret1 = NULL;
 	}
@@ -962,10 +954,9 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		char* key = NULL;
 
 		int count = 0;
-		int i = 0;
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "=", &count);
-		int hlen;
+		int hlen = 0;
 
 		if(ret1 != NULL)
 		{
@@ -1008,7 +999,7 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 
 		if(ostrstr(tmpstr_uni, "connectionurl='rtmp"))
 		{
-			printf("found rtmpe url\n");
+			printf("found rtmpe:// stream\n");
 			source = ostrcat(tmpstr_uni, NULL, 0, 0);
 			source = string_resub("source='", ".flv'", source, 0);
 
@@ -1017,7 +1008,7 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 
 			if(ostrstr(url, "myvideo2flash"))
 			{
-				printf("found rtmpt url\n");
+				printf("change to rtmpt:// stream\n");
 				url = string_replace("rtmpe://", "rtmpt://", url, 1);
 			}
 
@@ -1033,7 +1024,7 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		}
 		else
 		{		
-			printf("tmpstr_uni not found rtmp: %s\n",tmpstr_uni);
+			printf("rtmpe not found, change to *.flv stream\n");
 			source = ostrcat(tmpstr_uni, NULL, 0, 0);
 			source = string_resub("source='", "'", source, 0);
 
@@ -1043,13 +1034,21 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 			streamurl = ostrcat(url, source, 0, 0);
 		}
 
+		printf("close1\n");
 		free(key); key = NULL;		
+		printf("close2\n");
 		free(b64); b64 = NULL;		
+		printf("close3\n");
 		free(url); url = NULL;
+		printf("close4\n");
 		free(source); source = NULL;		
+		printf("close5\n");
 		free(tmpstr_uni); tmpstr_uni = NULL;		
+		printf("close6\n");
 		free(tmpstr); tmpstr = NULL;
+		printf("close7\n");
 		free(pageUrl); pageUrl = NULL;		
+		printf("close8\n");
 		free(playpath); playpath = NULL;
 		debug(99, "streamurl: %s", streamurl);
 

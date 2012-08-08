@@ -324,7 +324,7 @@ char* MDFile (char *filename)
 	else
 	{
 		MDInit (&context);
-		while (len = fread (buffer, 1, 1024, file))
+		while ((len = fread(buffer, 1, 1024, file)))
 		{
 			MDUpdate (&context, buffer, len);
 		}
