@@ -17,33 +17,27 @@ signed char htod(char c)
   return -1;
 }
 
-
-void unhexlify1(const char *hexstr, char *binstr)
+char* unhexlify1(const char *hexstr)
 {
-    char *p, *q;
-printf("unhexlify1 11\n");
+	int len = 0;
+	char *p, *q, *binstr = NULL;
 
-    assert(strlen(hexstr) > 0);
-printf("unhexlify1 112\n");
+	if(hexstr == NULL) return NULL;
 
-    assert(strlen(hexstr) % 2 == 0);    // even length
-printf("unhexlify1 113\n");
-int count = 0;
-    for (p=hexstr,q=binstr; *p; p+=2,q++)
+	len = strlen(hexstr);
+	if(len == 0 || len % 2 != 0) return NULL
+
+	binstr = calloc(1, (len / 2) + 1);
+	if(binstr = NULL)
 	{
-		count += 1;
-		printf("unhexlify1 (%d)\n", count);
-//		printf("unhexlify1 hexstring (%s)\n", p[count]);
-		
-		if(count < 2062)
-	        sscanf(p, "%2x", q);
-		printf("unhexlify1 115\n");
-
+		err("no mem");
+		return NULL;
 	}
-printf("unhexlify1 116\n");
-//    *q = '\0';
-printf("unhexlify1 117\n");
 
+	for(p = hexstr, q = binstr; *p; p += 2, q++)
+		sscanf(p, "%2x", (unsigned int*)q);
+
+	return binstr;
 }
 
 struct rc4ctx {
