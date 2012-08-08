@@ -28,7 +28,7 @@ char* unhexlify1(const char *hexstr)
 	if(len == 0 || len % 2 != 0) return NULL
 
 	binstr = calloc(1, (len / 2) + 1);
-	if(binstr = NULL)
+	if(binstr == NULL)
 	{
 		err("no mem");
 		return NULL;
