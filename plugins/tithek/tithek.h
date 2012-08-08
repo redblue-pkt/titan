@@ -1141,12 +1141,12 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		int klen = strlen(key);
 
 		printf("key: %s\n", key);		
-		printf("hlen: %d\n", hlen);
-		printf("slen: %d\n", slen);
-		printf("klen: %d\n", klen);
+		printf("hexlen: %d\n", hlen);
+		printf("binlen: %d\n", slen);
+		printf("keylen: %d\n", klen);
 
 		hlen /= 2;
-		printf("rc4 hlen: %d\n", hlen);
+		printf("hexlen/2 for rc4: %d\n", hlen);
 						
 		rc4(tmpstr_uni, hlen, key, klen);
 //		writesys("/var/usr/local/share/titan/plugins/tithek/list_key", tmpstr_uni, 1);			
