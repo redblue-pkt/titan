@@ -1524,6 +1524,23 @@ void htmldecode2(char* to, char* from)
 	*to = '\0';
 }
 
+void htmldecode3(char* to, char* from)
+{
+	if(to == NULL || from == NULL) return;
+
+	for(; *from != '\0'; ++to, ++from)
+	{
+		if(from[0] == '\\' && from[1] == 'u' && isxdigit(from[2]) && isxdigit(from[3]) && isxdigit(from[4]) && isxdigit(from[5]) && isxdigit(from[6]) && isxdigit(from[7]))
+		{
+			*to = hexit(from[2]) * 1048576 + hexit(from[3]) * 65536 + hexit(from[4]) * 4096 + hexit(from[5]) * 256 + hexit(from[6]) * 16 + hexit(from[7]);
+			from += 7;
+		}
+		else
+			*to = *from;
+	}
+	*to = '\0';
+}
+
 void setosdtransparent(int value)
 {
 	int ret = 255;
