@@ -1070,6 +1070,10 @@ char* getemu(struct skin* node)
 {
 	char* tmpstr = NULL;
 	tmpstr = string_newline(command("emu.sh infoname"));
+
+	if(ostrstr(tmpstr, "not found") != NULL)
+		free(tmpstr); tmpstr = NULL;
+
 	return tmpstr;
 }
 
