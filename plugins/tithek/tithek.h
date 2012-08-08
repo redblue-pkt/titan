@@ -3,20 +3,6 @@
 
 #define TITHEKPATH "/tmp/tithek"
 
-#include <assert.h>
-
-signed char htod(char c)
-{
-  c = tolower(c);
-  if(isdigit(c))
-    return c - '0';
-
-  if(c >= 'a' && c <= 'f')
-    return c - 'a';
-
-  return -1;
-}
-
 char* unhexlify1(const char *hexstr)
 {
 	int len = 0;
@@ -46,11 +32,9 @@ struct rc4ctx {
     unsigned char j;
 };
 
-
 void rc4init(struct rc4ctx *ctx, unsigned char *key, size_t keylen);
 void rc4crypt(struct rc4ctx *ctx, unsigned char *data, size_t len);
 void rc4(unsigned char *data, size_t dlen, unsigned char *key, size_t klen);
-
 
 #define SWAP(a,b) { unsigned char temp; temp = (a); (a) = (b); (b) = temp; }
 
@@ -68,7 +52,6 @@ void rc4init(struct rc4ctx *ctx, unsigned char *key, size_t keylen)
 	SWAP(ctx->S[i], ctx->S[j]);
     }
 }
-
 
 void rc4crypt(struct rc4ctx *ctx, unsigned char *data, size_t len)
 {
@@ -90,147 +73,11 @@ void rc4crypt(struct rc4ctx *ctx, unsigned char *data, size_t len)
     }
 }
 
-
 void rc4(unsigned char *data, size_t dlen, unsigned char *key, size_t klen)
 {
     struct rc4ctx ctx;
     rc4init(&ctx, key, klen);
     rc4crypt(&ctx, data, dlen);
-}
-
-/*
-static byte[] rc4crypt(byte[] data,byte[] key)
-{
-	byte[] ret = new byte[data.Length];
-	byte[] box = new byte[256];
-	int x = 0, y = 0, i = 0;
-	byte temp = 0;
-
-	for (x = 0; x < 256; x++)
-	{
-		box[x] = (byte)x;
-	}
-    
-	x=0;
-	for (i = 0; i < 256; i++)
-	{
-		x = (x + box[i] + key[i % key.Length]) % 256;
-		temp = box[i];
-		box[i] = box[x];
-		box[x] = temp;
-	}
-
-	x = y = 0;
-
-	for(i=0;i<data.Length;i++)
-	{
-		x = (x + 1) % 256;
-		y = (y + box[x]) % 256;
-		temp = box[y];
-		box[y] = box[x];
-		box[x] = temp;
-		ret[i] = (byte)(data[i] ^ box[(box[x] + box[y]) % 256]);
-	}
-
-	return ret;
-}
-*/
-/*
-void rc4(unsigned char* ByteInput, unsigned char* pwd, unsigned char* ByteOutput)
-{
-	unsigned char * temp;
-	int i,j=0,t,tmp,tmp2,s[256], k[256];
-	for (tmp=0;tmp<256;tmp++)
-	{
-		s[tmp]=tmp;
-		k[tmp]=pwd[(tmp % strlen((char *)pwd))];
-	}
-	for (i=0;i<256;i++)
-	{
-		j = (j + s[i] + k[i]) % 256;
-		tmp=s[i];
-		s[i]=s[j];
-		s[j]=tmp;
-	}
-	
-	temp = unsigned char [ (int)strlen((char *)ByteInput) + 1 ] ;
-	i=j=0;
-	for (tmp=0;tmp<(int)strlen((char *)ByteInput);tmp++)
-	{
-		i = (i + 1) % 256;
-		j = (j + s[i]) % 256;
-		tmp2=s[i];
-		s[i]=s[j];
-		s[j]=tmp2;
-		t = (s[i] + s[j]) % 256;
-		if (s[t]==ByteInput[tmp])
-			temp[tmp]=ByteInput[tmp];
-		else
-			temp[tmp]=s[t]^ByteInput[tmp];
-	}
-	temp[tmp]='';
-	ByteOutput=temp;
-}
-*/
-       
-char fromhex(char c);
-
-char *hexlify(char *str)
-{
-	int l,i; char *t;
-	l = strlen(str)*2;
-	t = malloc(l);
-	if ( t )
-	{
-		for(i=0; i<l; i++)
-		{
-			sprintf(t+2*i, "%02x", str[i]);
-		}
-		return t;
-	}
-	return NULL;
-}
-
-//it will be up to the caller to free the memory...
-
-char* unhexlify(char* hstr)
-{
-	int count = 0;
-	int l, i; 
-	char* t;
-	char c;
-	l = strlen(hstr)/2;
-	t = malloc(l);
-	if(t)
-	{
-		for(i=0; i<l; i++)
-		{
-			count += 1;
-			printf("unhexlify (%d)\n", count);
-		
-			c = fromhex( hstr[2*i+1] ) + 16*fromhex( hstr[2*i] );
-			t[i] = c;
-		}
-	}
-	return t;
-}
-
-char fromhex(char c)
-{
-	if(isxdigit(c))
-	{
-		if(isdigit(c))
-			c -= '0';
-		else
-		{
-			c = tolower(c);
-			c = c - 'a' + 10;
-		}
-	}
-	else 
-		c = 0;
-
-	return c;
 }
 
 //flag 0: not used
