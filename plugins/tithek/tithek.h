@@ -956,7 +956,7 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 	}
 	if(flag == 4)
 	{
-//		writesys("/var/usr/local/share/titan/plugins/tithek/list", tmpstr, 0);
+		writesys("/var/usr/local/share/titan/plugins/tithek/list", tmpstr, 0);
 		char* tmpstr_uni = NULL;
 		char* b64 = NULL;
 		char* key = NULL;
@@ -974,7 +974,7 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 			tmpstr_uni = unhexlify1(ret1[1].part);
 		}
 		free(ret1), ret1 = NULL;
-//		writesys("/var/usr/local/share/titan/plugins/tithek/list_uni", tmpstr_uni, 0);
+		writesys("/var/usr/local/share/titan/plugins/tithek/list_uni", tmpstr_uni, 0);
 
 		char* video_id_md5 = NULL;		
 		video_id_md5 = MDString(video_id);
@@ -996,7 +996,7 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		printf("hexlen/2 for rc4: %d\n", hlen);
 						
 		rc4(tmpstr_uni, hlen, key, klen);
-//		writesys("/var/usr/local/share/titan/plugins/tithek/list_key", tmpstr_uni, 1);			
+		writesys("/var/usr/local/share/titan/plugins/tithek/list_key", tmpstr_uni, 1);			
 		
 		debug(99, "tmpstr: %s\n", tmpstr);
 		debug(99, "pageUrl: %s\n", pageUrl);
@@ -1008,11 +1008,18 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 
 		if(ostrstr(tmpstr_uni, "connectionurl='rtmp"))
 		{
+			printf("found rtmpe url\n");
 			source = ostrcat(tmpstr_uni, NULL, 0, 0);
 			source = string_resub("source='", ".flv'", source, 0);
 
 			url = ostrcat(tmpstr_uni, NULL, 0, 0);
 			url = string_resub("connectionurl='", "'", url, 0);
+
+			if(ostrstr(url, "myvideo2flash"))
+			{
+				printf("found rtmpt url\n");
+				url = string_replace("rtmpe://", "rtmpt://", url, 1);
+			}
 
 			streamurl = ostrcat(url, NULL, 0, 0);
 			streamurl = ostrcat(streamurl, " ", 1, 0);
@@ -1047,6 +1054,7 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		debug(99, "streamurl: %s", streamurl);
 
 		printf("streamurl: %s\n", streamurl);
+		printf("rtmpt://myvideo2fs.fplive.net/myvideo2flash/ tcUrl=rtmpt://myvideo2fs.fplive.net/myvideo2flash/ swfVfy=http://is3.myvideo.de/de/player/mingR11q/ming.swf pageUrl=http://www.myvideo.de/watch/8017654/ playpath=flv:movie11/04/8017654\n");
 	}
 	return streamurl;
 }
