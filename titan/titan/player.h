@@ -84,6 +84,18 @@ int playerstartts(char* file, int flag)
 			dvrclose(dvrnode, -1);
 			return 1;
 		}
+		char* fileseek = changefilenameext(file, "se");
+		FILE* fbseek = fopen(fileseek, "r");
+		if(fbseek != NULL)
+		{
+			ret = textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 10, 0);
+			if(ret == 0 || ret == 1)
+			{
+				printf("hier kommt der seek rein");
+			}
+			fclose(fbseek);
+		}
+		free(fileseek); fileseek=NULL;
 		chnode = createchannel("player", 0, 0, serviceid, 99, 0, -1, -1, -1, -1, 0);
 		if(chnode != NULL) chnode->pmtpid = pmtpid;
 	}
