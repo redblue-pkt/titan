@@ -7,7 +7,7 @@ struct rc4ctx {
     unsigned char j;
 };
 
-#define SWAP(a,b) { unsigned char temp; temp = (a); (a) = (b); (b) = temp; }
+#define SWAPRC4(a,b) { unsigned char temp; temp = (a); (a) = (b); (b) = temp; }
 
 void rc4init(struct rc4ctx *ctx, char *key, size_t keylen)
 {
@@ -20,7 +20,7 @@ void rc4init(struct rc4ctx *ctx, char *key, size_t keylen)
     
     for (i = 0; i < sizeof(ctx->S); i++) {
 	j +=  (ctx->S[i] + key[i % keylen]);
-	SWAP(ctx->S[i], ctx->S[j]);
+	SWAPRC4(ctx->S[i], ctx->S[j]);
     }
 }
 
@@ -37,7 +37,7 @@ void rc4crypt(struct rc4ctx *ctx, char *data, size_t len)
 	ctx->i++;
 	ctx->j += ctx->S[ctx->i];
 
-	SWAP(ctx->S[ctx->i], ctx->S[ctx->j]);
+	SWAPRC4(ctx->S[ctx->i], ctx->S[ctx->j]);
 
 	s = ctx->S[ctx->i] + ctx->S[ctx->j];
 	data[i] = data[i] ^ ctx->S[s];
