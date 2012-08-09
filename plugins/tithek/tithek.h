@@ -3,83 +3,6 @@
 
 #define TITHEKPATH "/tmp/tithek"
 
-char* unhexlify1(const char *hexstr)
-{
-	int len = 0;
-	char *p, *q, *binstr = NULL;
-
-	if(hexstr == NULL) return NULL;
-
-	len = strlen(hexstr);
-	if(len == 0 || len % 2 != 0) return NULL;
-
-	binstr = calloc(1, (len / 2) + 1);
-	if(binstr == NULL)
-	{
-		err("no mem");
-		return NULL;
-	}
-
-	for(p = hexstr, q = binstr; *p; p += 2, q++)
-		sscanf(p, "%2x", (unsigned int*)q);
-
-	return binstr;
-}
-
-struct rc4ctx {
-    unsigned char S[256];
-    unsigned char i;
-    unsigned char j;
-};
-
-void rc4init(struct rc4ctx *ctx, char *key, size_t keylen);
-void rc4crypt(struct rc4ctx *ctx, char *data, size_t len);
-void rc4(char *data, size_t dlen, char *key, size_t klen);
-
-#define SWAP(a,b) { unsigned char temp; temp = (a); (a) = (b); (b) = temp; }
-
-void rc4init(struct rc4ctx *ctx, char *key, size_t keylen)
-{
-    int i;
-    unsigned char j = 0;
-
-    for (i = 0; i < sizeof(ctx->S); i++) {
-	ctx->S[i] = i;
-    }
-    
-    for (i = 0; i < sizeof(ctx->S); i++) {
-	j +=  (ctx->S[i] + key[i % keylen]);
-	SWAP(ctx->S[i], ctx->S[j]);
-    }
-}
-
-void rc4crypt(struct rc4ctx *ctx, char *data, size_t len)
-{
-    unsigned int i;
-
-    ctx->i = 0;
-    ctx->j = 0;
-
-    for (i = 0; i < len; i++) {
-	unsigned char s;
-
-	ctx->i++;
-	ctx->j += ctx->S[ctx->i];
-
-	SWAP(ctx->S[ctx->i], ctx->S[ctx->j]);
-
-	s = ctx->S[ctx->i] + ctx->S[ctx->j];
-	data[i] = data[i] ^ ctx->S[s];
-    }
-}
-
-void rc4(char *data, size_t dlen, char *key, size_t klen)
-{
-    struct rc4ctx ctx;
-    rc4init(&ctx, key, klen);
-    rc4crypt(&ctx, data, dlen);
-}
-
 //flag 0: not used
 //flag 1: not used
 //flag 2: streamlink allgemein
@@ -737,7 +660,11 @@ void screentithekplay(char* titheklink, char* title, int first)
 						if(tmpstr1 != NULL)
 						{
 							if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+							{
+								printf("11111111111111111111111111\n");
 								screenplay(tmpstr1, 2, 0);				
+								printf("22222222222222222222222222\n");
+							}
 						}
 						else
 							textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
@@ -962,7 +889,7 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		{
 //			printf("ret1[1].part=%s\n", (ret1[1]).part);
 			hlen = strlen((ret1[1]).part);
-			tmpstr_uni = unhexlify1(ret1[1].part);
+			tmpstr_uni = unhexlify(ret1[1].part);
 		}
 		free(ret1), ret1 = NULL;
 		writesys("/var/usr/local/share/titan/plugins/tithek/list_uni", tmpstr_uni, 0);
@@ -985,8 +912,10 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 
 		hlen /= 2;
 		printf("hexlen/2 for rc4: %d\n", hlen);
-						
-		rc4(tmpstr_uni, hlen, key, klen);
+		
+		if(tmpstr_uni != NULL)
+			rc4(tmpstr_uni, hlen, key, klen);
+
 		writesys("/var/usr/local/share/titan/plugins/tithek/list_key", tmpstr_uni, 1);			
 		
 		debug(99, "tmpstr: %s\n", tmpstr);
@@ -995,43 +924,46 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		debug(99, "video_id: %s\n", video_id);
 		//printf("tmpstr_uni: %s\n",tmpstr_uni);
 
-		htmldecode(tmpstr_uni, tmpstr_uni);
-
-		if(ostrstr(tmpstr_uni, "connectionurl='rtmp"))
+		if(tmpstr_uni != NULL)
 		{
-			printf("found rtmpe:// stream\n");
-			source = ostrcat(tmpstr_uni, NULL, 0, 0);
-			source = string_resub("source='", ".flv'", source, 0);
-
-			url = ostrcat(tmpstr_uni, NULL, 0, 0);
-			url = string_resub("connectionurl='", "'", url, 0);
-
-			if(ostrstr(url, "myvideo2flash"))
+			htmldecode(tmpstr_uni, tmpstr_uni);
+	
+			if(ostrstr(tmpstr_uni, "connectionurl='rtmp"))
 			{
-				printf("change to rtmpt:// stream\n");
-				url = string_replace("rtmpe://", "rtmpt://", url, 1);
+				printf("found rtmpe:// stream\n");
+				source = ostrcat(tmpstr_uni, NULL, 0, 0);
+				source = string_resub("source='", ".flv'", source, 0);
+	
+				url = ostrcat(tmpstr_uni, NULL, 0, 0);
+				url = string_resub("connectionurl='", "'", url, 0);
+	
+				if(ostrstr(url, "myvideo2flash"))
+				{
+					printf("change to rtmpt:// stream\n");
+					url = string_replace("rtmpe://", "rtmpt://", url, 1);
+				}
+	
+				streamurl = ostrcat(url, NULL, 0, 0);
+				streamurl = ostrcat(streamurl, " ", 1, 0);
+				streamurl = ostrcat(streamurl, "tcUrl=", 1, 0);
+				streamurl = ostrcat(streamurl, url, 1, 0);
+				streamurl = ostrcat(streamurl, " swfVfy=http://is4.myvideo.de/de/player/mingR11q/ming.swf ", 1, 0);
+				streamurl = ostrcat(streamurl, pageUrl, 1, 0);
+				streamurl = ostrcat(streamurl, " ", 1, 0);
+				streamurl = ostrcat(streamurl, "playpath=flv:", 1, 0);
+				streamurl = ostrcat(streamurl, source, 1, 0);		
 			}
-
-			streamurl = ostrcat(url, NULL, 0, 0);
-			streamurl = ostrcat(streamurl, " ", 1, 0);
-			streamurl = ostrcat(streamurl, "tcUrl=", 1, 0);
-			streamurl = ostrcat(streamurl, url, 1, 0);
-			streamurl = ostrcat(streamurl, " swfVfy=http://is4.myvideo.de/de/player/mingR11q/ming.swf ", 1, 0);
-			streamurl = ostrcat(streamurl, pageUrl, 1, 0);
-			streamurl = ostrcat(streamurl, " ", 1, 0);
-			streamurl = ostrcat(streamurl, "playpath=flv:", 1, 0);
-			streamurl = ostrcat(streamurl, source, 1, 0);		
-		}
-		else
-		{		
-			printf("rtmpe not found, change to *.flv stream\n");
-			source = ostrcat(tmpstr_uni, NULL, 0, 0);
-			source = string_resub("source='", "'", source, 0);
-
-			url = ostrcat(tmpstr_uni, NULL, 0, 0);
-			url = string_resub("path='", "'", url, 0);
-
-			streamurl = ostrcat(url, source, 0, 0);
+			else
+			{		
+				printf("rtmpe not found, change to *.flv stream\n");
+				source = ostrcat(tmpstr_uni, NULL, 0, 0);
+				source = string_resub("source='", "'", source, 0);
+	
+				url = ostrcat(tmpstr_uni, NULL, 0, 0);
+				url = string_resub("path='", "'", url, 0);
+	
+				streamurl = ostrcat(url, source, 0, 0);
+			}
 		}
 
 		printf("close1\n");
@@ -1043,7 +975,9 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		printf("close4\n");
 		free(source); source = NULL;		
 		printf("close5\n");
-		free(tmpstr_uni); tmpstr_uni = NULL;		
+// create somtimes segfault
+		free(tmpstr_uni);
+		tmpstr_uni = NULL;
 		printf("close6\n");
 		free(tmpstr); tmpstr = NULL;
 		printf("close7\n");

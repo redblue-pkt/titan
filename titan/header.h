@@ -8,6 +8,11 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//md5.h
+char* MDString (char *string);
+char* MDFile (char *string);
+char* MDPrint (unsigned char digest[16]);
+
 //unlock.h
 void screenunlock();
 
@@ -624,8 +629,10 @@ int checkprozess(char* input);
 struct regex* regexstruct(char* regex, char* str);
 void freeregexstruct(struct regex* node);
 char fromhex(char c);
-char *hexlify(char *str);
-char *unhexlify(char *hstr);
+char* unhexlify(const char *hexstr);
+void rc4init(struct rc4ctx *ctx, char *key, size_t keylen);
+void rc4crypt(struct rc4ctx *ctx, char *data, size_t len);
+void rc4(char *data, size_t dlen, char *key, size_t klen);
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);

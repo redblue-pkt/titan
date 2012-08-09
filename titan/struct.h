@@ -135,6 +135,7 @@
 #define MAXCHANNELHISTORY 6
 #define HILO(x) (x##_hi << 8 | x##_lo)
 #define HTTPAUTH "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0="
+#define SWAP(a,b) { unsigned char temp; temp = (a); (a) = (b); (b) = temp; }
 
 #define USBDEVICE_SUPER_MAGIC 0x9fa2
 #define EXT2_SUPER_MAGIC 0xEF53
@@ -1490,6 +1491,12 @@ struct blacklist
   char* file;
   struct splitstr* splitstr;
   int count;
+};
+
+struct rc4ctx {
+    unsigned char S[256];
+    unsigned char i;
+    unsigned char j;
 };
 
 #endif

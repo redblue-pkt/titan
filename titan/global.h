@@ -1,53 +1,69 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-char *hexlify(char *str)
+void rc4init(struct rc4ctx *ctx, char *key, size_t keylen)
 {
-	int l,i; char *t;
-	l = strlen(str)*2;
-	t = malloc(l);
-	if ( t )
-	{
-		for(i=0; i<l; i++)
-		{
-			sprintf(t+2*i, "%02x", str[i]);
-		}
-		return t;
-	}
-	return NULL;
+    int i;
+    unsigned char j = 0;
+
+    for (i = 0; i < sizeof(ctx->S); i++) {
+	ctx->S[i] = i;
+    }
+    
+    for (i = 0; i < sizeof(ctx->S); i++) {
+	j +=  (ctx->S[i] + key[i % keylen]);
+	SWAP(ctx->S[i], ctx->S[j]);
+    }
 }
 
-//it will be up to the caller to free the memory...
-
-char *unhexlify(char *hstr)
+void rc4crypt(struct rc4ctx *ctx, char *data, size_t len)
 {
-	int l, i; char *t; char c;
-	l = strlen(hstr)/2;
-	t = malloc(l);
-	if (t)
-	{
-		for(i=0; i<l; i++)
-		{
-			c = fromhex( hstr[2*i+1] ) + 16*fromhex( hstr[2*i] );
-			t[i] = c;
-		}
-	}
-	return t;
+    unsigned int i;
+
+    ctx->i = 0;
+    ctx->j = 0;
+
+    for (i = 0; i < len; i++) {
+	unsigned char s;
+
+	ctx->i++;
+	ctx->j += ctx->S[ctx->i];
+
+	SWAP(ctx->S[ctx->i], ctx->S[ctx->j]);
+
+	s = ctx->S[ctx->i] + ctx->S[ctx->j];
+	data[i] = data[i] ^ ctx->S[s];
+    }
 }
 
-char fromhex(char c)
+void rc4(char *data, size_t dlen, char *key, size_t klen)
 {
-	if ( isxdigit(c) )
+    struct rc4ctx ctx;
+    rc4init(&ctx, key, klen);
+    rc4crypt(&ctx, data, dlen);
+}
+
+char* unhexlify(const char *hexstr)
+{
+	int len = 0;
+	char *p, *q, *binstr = NULL;
+
+	if(hexstr == NULL) return NULL;
+
+	len = strlen(hexstr);
+	if(len == 0 || len % 2 != 0) return NULL;
+
+	binstr = calloc(1, (len / 2) + 1);
+	if(binstr == NULL)
 	{
-		if ( isdigit(c) )
-		{
-			c -= '0';
-		} else {
-			c = tolower(c);
-			c = c - 'a' + 10;
-		}
-	} else { c = 0; }
-		return c;
+		err("no mem");
+		return NULL;
+	}
+
+	for(p = hexstr, q = binstr; *p; p += 2, q++)
+		sscanf(p, "%2x", (unsigned int*)q);
+
+	return binstr;
 }
 
 int getsupermagic(char* filename)
