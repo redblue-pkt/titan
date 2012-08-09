@@ -505,8 +505,8 @@ void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 		{
 			if(playertype == 1)
 			{
-				playerstopts(0, 0);
-				playerstartts(file, 0);
+				playerstopts(2, 0);
+				playerstartts(file, 2);
 			}
 			else if(playertype == 2)
 			{
