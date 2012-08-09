@@ -76,6 +76,7 @@ int playerstartts(char* file, int flag)
 		//TODO: funktion to get tssize from file content
 		if(cmpfilenameext(file, ".mts") == 0) tssize = 192;
 		if(cmpfilenameext(file, ".m2ts") == 0) tssize = 192;
+		
 		ret = dvbfindpmtpid(fd, &pmtpid, &serviceid, tssize);
 		if(ret == 1)
 		{
@@ -84,6 +85,7 @@ int playerstartts(char* file, int flag)
 			dvrclose(dvrnode, -1);
 			return 1;
 		}
+
 		char* fileseek = changefilenameext(file, ".se");
 		FILE* fbseek = fopen(fileseek, "r");
 		if(fbseek != NULL)
@@ -91,7 +93,10 @@ int playerstartts(char* file, int flag)
 			ret = textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 400, 200, 10, 0);
 			if(ret == 0 || ret == 1)
 			{
-				printf("hier kommt der seek rein");
+				char* skip1 = malloc(20);
+				fscanf(fbseek,"%s",skip1);
+				off64_t pos = lseek64(fd, atoll(skip1), SEEK_SET);
+				free(skip1); skip1=NULL;
 			}
 			fclose(fbseek);
 		}
