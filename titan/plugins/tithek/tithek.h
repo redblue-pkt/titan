@@ -915,8 +915,8 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		hlen /= 2;
 		printf("hexlen/2 for rc4: %d\n", hlen);
 		
-		if(tmpstr_uni != NULL)
-			rc4(tmpstr_uni, hlen, key, klen);
+// rc4 has an error free tmpstr_uni 5 times then malloc error...
+		rc4(tmpstr_uni, hlen, key, klen);
 
 // somtimes segfault
 //		writesys("/tmp/tithek/list_key", tmpstr_uni, 1);			
@@ -934,11 +934,8 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 			if(ostrstr(tmpstr_uni, "connectionurl='rtmp"))
 			{
 				printf("found rtmpe:// stream\n");
-				source = ostrcat(tmpstr_uni, NULL, 0, 0);
-				source = string_resub("source='", ".flv'", source, 0);
-	
-				url = ostrcat(tmpstr_uni, NULL, 0, 0);
-				url = string_resub("connectionurl='", "'", url, 0);
+				source = string_resub("source='", ".flv'", tmpstr_uni, 0);
+				url = string_resub("connectionurl='", "'", tmpstr_uni, 0);
 	
 				if(ostrstr(url, "myvideo2flash"))
 				{
@@ -959,12 +956,8 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 			else
 			{		
 				printf("rtmpe not found, change to *.flv stream\n");
-				source = ostrcat(tmpstr_uni, NULL, 0, 0);
-				source = string_resub("source='", "'", source, 0);
-	
-				url = ostrcat(tmpstr_uni, NULL, 0, 0);
-				url = string_resub("path='", "'", url, 0);
-	
+				source = string_resub("source='", "'", tmpstr_uni, 0);
+				url = string_resub("path='", "'", tmpstr_uni, 0);	
 				streamurl = ostrcat(url, source, 0, 0);
 			}
 		}
@@ -990,7 +983,6 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		debug(99, "streamurl: %s", streamurl);
 
 		printf("streamurl: %s\n", streamurl);
-		printf("rtmpt://myvideo2fs.fplive.net/myvideo2flash/ tcUrl=rtmpt://myvideo2fs.fplive.net/myvideo2flash/ swfVfy=http://is3.myvideo.de/de/player/mingR11q/ming.swf pageUrl=http://www.myvideo.de/watch/8017654/ playpath=flv:movie11/04/8017654\n");
 	}
 	return streamurl;
 }
