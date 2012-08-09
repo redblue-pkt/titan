@@ -35,6 +35,7 @@ unsigned long long int m_gst_startpts = 0;
 
 //flag 0: from play
 //flag 1: from timeshift
+//flag 2: from playrcjumpr
 int playerstartts(char* file, int flag)
 {
 	int fd = -1, ret = 0, tssize = 188;
@@ -71,7 +72,7 @@ int playerstartts(char* file, int flag)
 		return 1;
 	}
 
-	if(flag == 0)
+	if(flag == 0 || flag == 2)
 	{
 		//TODO: funktion to get tssize from file content
 		if(cmpfilenameext(file, ".mts") == 0) tssize = 192;
@@ -85,22 +86,24 @@ int playerstartts(char* file, int flag)
 			dvrclose(dvrnode, -1);
 			return 1;
 		}
-
-		char* fileseek = changefilenameext(file, ".se");
-		FILE* fbseek = fopen(fileseek, "r");
-		if(fbseek != NULL)
-		{
-			ret = textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 400, 200, 10, 0);
-			if(ret == 0 || ret == 1)
+		if(flag == 0)
+		{ 
+			char* fileseek = changefilenameext(file, ".se");
+			FILE* fbseek = fopen(fileseek, "r");
+			if(fbseek != NULL)
 			{
-				char* skip1 = malloc(20);
-				fscanf(fbseek,"%s",skip1);
-				off64_t pos = lseek64(fd, atoll(skip1), SEEK_SET);
-				free(skip1); skip1=NULL;
+				ret = textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 400, 200, 10, 0);
+				if(ret == 0 || ret == 1)
+				{
+					char* skip1 = malloc(20);
+					fscanf(fbseek,"%s",skip1);
+					off64_t pos = lseek64(fd, atoll(skip1), SEEK_SET);
+					free(skip1); skip1=NULL;
+				}
+				fclose(fbseek);
 			}
-			fclose(fbseek);
+			free(fileseek); fileseek=NULL;
 		}
-		free(fileseek); fileseek=NULL;
 		chnode = createchannel("player", 0, 0, serviceid, 99, 0, -1, -1, -1, -1, 0);
 		if(chnode != NULL) chnode->pmtpid = pmtpid;
 	}
@@ -157,6 +160,7 @@ int playerstartts(char* file, int flag)
 
 //flag 0: from play
 //flag 1: from timeshift
+//flag 2: from playrcjumpr/playerafterendts
 //flag1 0: stop from rcstop
 //flag1 1: stop from servicestop
 void playerstopts(int flag, int flag1)
@@ -168,10 +172,23 @@ void playerstopts(int flag, int flag1)
 	snode = getservice(RECORDPLAY, flag1);
 	if(snode != NULL) snode->recendtime = 1;
 
-	if(flag == 0)
+	if(flag == 0 || flag == 2)
 	{
 		playerffts(0);
 
+		if(snode->recsrcfd >= 0 && flag == 0)
+		{
+			char* fileseek = changefilenameext(snode->recname, ".se");
+			FILE* fbseek = fopen(fileseek, "w");
+			if(fbseek != NULL)
+			{
+				off64_t pos = lseek64(snode->recsrcfd, 0, SEEK_CUR);
+				fprintf(fbseek,"%lld", pos);
+				fclose(fbseek);
+			}
+			free(fileseek); fileseek=NULL;
+		}
+		
 		ret = servicestop(status.aktservice, 1, 1);
 		if(ret == 1)
 		{
@@ -180,6 +197,7 @@ void playerstopts(int flag, int flag1)
 		else
 			status.aktservice->channel = NULL;
 
+				
 		node = gettmpchannel();
 		if(node != NULL && ostrcmp(node->name, "player") == 0)
 			delchannel(node->serviceid, node->transponderid, 1);
@@ -335,7 +353,7 @@ int playerisplayingts()
 
 void playerafterendts()
 {
-	playerstopts(0, 0);
+	playerstopts(2, 0);
 }
 
 //extern player
