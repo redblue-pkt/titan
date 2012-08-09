@@ -630,9 +630,6 @@ struct regex* regexstruct(char* regex, char* str);
 void freeregexstruct(struct regex* node);
 char fromhex(char c);
 char* unhexlify(const char *hexstr);
-void rc4init(struct rc4ctx *ctx, char *key, size_t keylen);
-void rc4crypt(struct rc4ctx *ctx, char *data, size_t len);
-void rc4(char *data, size_t dlen, char *key, size_t klen);
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
