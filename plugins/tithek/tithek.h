@@ -875,7 +875,8 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 	}
 	if(flag == 4)
 	{
-		writesys("/tmp/tithek/list", tmpstr, 0);
+// somtimes segfault
+//		writesys("/tmp/tithek/list", tmpstr, 0);
 		char* tmpstr_uni = NULL;
 		char* b64 = NULL;
 		char* key = NULL;
@@ -892,7 +893,8 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 			tmpstr_uni = unhexlify(ret1[1].part);
 		}
 		free(ret1), ret1 = NULL;
-		writesys("/tmp/tithek/list_uni", tmpstr_uni, 0);
+// somtimes segfault
+//		writesys("/tmp/tithek/list_uni", tmpstr_uni, 0);
 
 		char* video_id_md5 = NULL;		
 		video_id_md5 = MDString(video_id);
@@ -916,7 +918,8 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		if(tmpstr_uni != NULL)
 			rc4(tmpstr_uni, hlen, key, klen);
 
-		writesys("/tmp/tithek/list_key", tmpstr_uni, 1);			
+// somtimes segfault
+//		writesys("/tmp/tithek/list_key", tmpstr_uni, 1);			
 		
 		debug(99, "tmpstr: %s\n", tmpstr);
 		debug(99, "pageUrl: %s\n", pageUrl);
