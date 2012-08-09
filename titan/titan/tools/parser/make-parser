@@ -51,4 +51,27 @@ for TYPE in $LINE; do
 	rm -rf /var/www/atemio/web/mediathek/"$TYPE"
 	echo "[make-parser]" ln -s "$TYPE"_"$TIME" /var/www/atemio/web/mediathek/"$TYPE"
 	ln -s "$TYPE"_"$TIME" /var/www/atemio/web/mediathek/"$TYPE"
+
+	BSLIST=`ls -1 /var/www/atemio/web/mediathek | grep "$TYPE"_ | tail -n2`
+	BFLIST=`ls -1 /var/www/atemio/web/mediathek | grep "$TYPE"_`
+	for ROUND1 in $BFLIST; do
+		skip=0
+		for ROUND2 in $BSLIST; do
+			echo [Backup] ROUND1 $ROUND1
+			echo [Backup] ROUND2 $ROUND2
+			if [ $ROUND1 = $ROUND2 ]; then
+				echo [Backup] set skip=1
+				skip=1
+			fi
+			if [ $ROUND1 = ".." ] || [ $ROUND2 = ".." ] || [ $ROUND1 = "." ] || [ $ROUND2 = "." ]; then
+				echo [Backup] set skip=1
+				skip=1
+			fi
+		done
+		echo [Backup] skip $skip
+		if [ $skip = 0 ]; then	
+			echo [Backup] start remove user backups
+			rm -r /var/www/atemio/web/mediathek/"$ROUND1"
+		fi
+	done	
 done
