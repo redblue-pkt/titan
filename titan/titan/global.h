@@ -1,48 +1,6 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-void rc4init(struct rc4ctx *ctx, char *key, size_t keylen)
-{
-    int i;
-    unsigned char j = 0;
-
-    for (i = 0; i < sizeof(ctx->S); i++) {
-	ctx->S[i] = i;
-    }
-    
-    for (i = 0; i < sizeof(ctx->S); i++) {
-	j +=  (ctx->S[i] + key[i % keylen]);
-	SWAP(ctx->S[i], ctx->S[j]);
-    }
-}
-
-void rc4crypt(struct rc4ctx *ctx, char *data, size_t len)
-{
-    unsigned int i;
-
-    ctx->i = 0;
-    ctx->j = 0;
-
-    for (i = 0; i < len; i++) {
-	unsigned char s;
-
-	ctx->i++;
-	ctx->j += ctx->S[ctx->i];
-
-	SWAP(ctx->S[ctx->i], ctx->S[ctx->j]);
-
-	s = ctx->S[ctx->i] + ctx->S[ctx->j];
-	data[i] = data[i] ^ ctx->S[s];
-    }
-}
-
-void rc4(char *data, size_t dlen, char *key, size_t klen)
-{
-    struct rc4ctx ctx;
-    rc4init(&ctx, key, klen);
-    rc4crypt(&ctx, data, dlen);
-}
-
 char* unhexlify(const char *hexstr)
 {
 	int len = 0;
