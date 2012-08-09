@@ -361,7 +361,6 @@ char* MDPrint (unsigned char digest[16])
 		sprintf(tmpstr1,"%02x",(unsigned int)digest[i]);
 		tmpstr = ostrcat(tmpstr, tmpstr1, 1, 0);
 	}
-	printf("md5: %s\n",tmpstr);
 	return tmpstr;
 }
 
