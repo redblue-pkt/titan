@@ -904,8 +904,10 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		printf("b64: %s\n", b64);
 
 		key = MDString(b64);
-		int slen = strlen(tmpstr_uni);
-		int klen = strlen(key);
+		int slen = 0;
+		int klen = 0;
+		if(tmpstr_uni != NULL) strlen(tmpstr_uni);
+		if(key != NULL) klen = strlen(key);
 
 		printf("key: %s\n", key);		
 		printf("hexlen: %d\n", hlen);
@@ -972,8 +974,7 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		free(source); source = NULL;		
 		printf("close5\n");
 // create somtimes segfault
-		free(tmpstr_uni);
-		tmpstr_uni = NULL;
+		free(tmpstr_uni); tmpstr_uni = NULL;
 		printf("close6\n");
 		free(tmpstr); tmpstr = NULL;
 		printf("close7\n");
