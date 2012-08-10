@@ -3,7 +3,7 @@
 
 char* unhexlify(const char *hexstr)
 {
-	int len = 0;
+	int len = 0, tmpint = 0;
 	char *p, *q, *binstr = NULL;
 
 	if(hexstr == NULL) return NULL;
@@ -18,8 +18,13 @@ char* unhexlify(const char *hexstr)
 		return NULL;
 	}
 
+	printf("%p\n", binstr);
 	for(p = hexstr, q = binstr; *p; p += 2, q++)
-		sscanf(p, "%2x", (unsigned int*)q);
+	{
+		sscanf(p, "%2x", &tmpint);
+		*q = tmpint;
+	}
+	printf("%p\n", binstr);
 
 	return binstr;
 }
