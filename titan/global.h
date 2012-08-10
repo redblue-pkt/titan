@@ -1777,12 +1777,20 @@ void debugstack(void* address, void* address1)
 	char **aktstring;
 	time_t rawtime;
 
+	char* boxversion = NULL;
+
+	if(isfile("/etc/model")	!= 0)
+		boxversion = string_toupper(readsys("/etc/model", 1));
+	else
+		boxversion = ostrcat("unknown", NULL, 0, 0);
+
 	strings = backtrace_symbols(trace, size);
 	akttrace[0] = (void*)address1;
 	akttrace[1] = (void*)address;
 	aktstring = backtrace_symbols(akttrace, 2); //get fault funktion name
 
 	printf("--------------------------------------\n");
+	printf("Box: %s", boxversion);
 	printf("Obtaining %zd stack frames:\n\n", size);
 
 	for(i = 0; i < size; i++)
@@ -1799,6 +1807,7 @@ void debugstack(void* address, void* address1)
 	{
 		time(&rawtime);
 		fprintf(fd, "Date: %s", ctime(&rawtime));
+		fprintf(fd, "Box: %s", boxversion);
 		fprintf(fd, "Obtaining %zd stack frames:\n\n", size);
 		for(i = 1; i < size; i++)
 			fprintf(fd, "%s\n", strings[i]);
@@ -1812,6 +1821,7 @@ void debugstack(void* address, void* address1)
 	else
 		perr("open %s", getconfig("tracelog", NULL));
 
+	free(boxversion);
 	free(strings);
 	free(aktstring);
 }
