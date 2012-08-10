@@ -96,9 +96,12 @@ int playerstartts(char* file, int flag)
 				if(ret == 0 || ret == 1)
 				{
 					char* skip1 = malloc(20);
-					fscanf(fbseek,"%s",skip1);
-					off64_t pos = lseek64(fd, atoll(skip1), SEEK_SET);
-					free(skip1); skip1=NULL;
+					if(skip1 != NULL)
+					{
+						fscanf(fbseek,"%s",skip1);
+						off64_t pos = lseek64(fd, atoll(skip1), SEEK_SET);
+						free(skip1); skip1=NULL;
+					}
 				}
 				fclose(fbseek);
 			}
@@ -176,7 +179,7 @@ void playerstopts(int flag, int flag1)
 	{
 		playerffts(0);
 
-		if(snode->recsrcfd >= 0 && flag == 0)
+		if(snode != NULL && snode->recsrcfd >= 0 && flag == 0)
 		{
 			char* fileseek = changefilenameext(snode->recname, ".se");
 			FILE* fbseek = fopen(fileseek, "w");
