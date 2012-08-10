@@ -727,7 +727,7 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		int count = 0;
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(link, ";", &count);
-		if(ret1 != NULL)
+		if(ret1 != NULL && count >= 4)
 		{
 			link = ostrcat(ret1[0].part, NULL, 0, 0);
 			pageUrl = ostrcat(pageUrl, ret1[1].part, 1, 0);
@@ -886,10 +886,10 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		ret1 = strsplit(tmpstr, "=", &count);
 		int hlen = 0;
 
-		if(ret1 != NULL)
+		if(ret1 != NULL && count >= 2)
 		{
 //			printf("ret1[1].part=%s\n", (ret1[1]).part);
-			hlen = strlen((ret1[1]).part);
+			hlen = strlen(ret1[1].part);
 			tmpstr_uni = unhexlify(ret1[1].part);
 		}
 		free(ret1), ret1 = NULL;
