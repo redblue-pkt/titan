@@ -900,13 +900,13 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		video_id_md5 = MDString(video_id);
 		printf("video_id_md5: %s\n", video_id_md5);
 
-		b64 = ostrcat("c8407a08b3c71ea418ec9dc662f2a56e40cbd6d5a114aa50fb1e1079e17f2b83", video_id_md5, 0, 0);
+		b64 = ostrcat("c8407a08b3c71ea418ec9dc662f2a56e40cbd6d5a114aa50fb1e1079e17f2b83", MDString(video_id), 0, 1);
 		printf("b64: %s\n", b64);
 
 		key = MDString(b64);
 		int slen = 0;
 		int klen = 0;
-		if(tmpstr_uni != NULL) strlen(tmpstr_uni);
+		if(tmpstr_uni != NULL) slen = strlen(tmpstr_uni);
 		if(key != NULL) klen = strlen(key);
 
 		printf("key: %s\n", key);		
