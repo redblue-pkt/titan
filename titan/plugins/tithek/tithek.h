@@ -890,42 +890,36 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 
 		if(ret1 != NULL && count >= 2)
 		{
-//			printf("ret1[1].part=%s\n", (ret1[1]).part);
+			debug(99, "ret1[1].part=%s", (ret1[1]).part);
 			hlen = strlen(ret1[1].part);
-//			tmpstr_uni = unhexlify(ret1[1].part);
-			tmpstr_uni = unhexlify123(ret1[1].part);
+			tmpstr_uni = unhexlify(ret1[1].part);
 		}
 		free(ret1), ret1 = NULL;
-// somtimes segfault
-//		writesys("/tmp/tithek/list_uni", tmpstr_uni, 0);
 
 		b64 = ostrcat("c8407a08b3c71ea418ec9dc662f2a56e40cbd6d5a114aa50fb1e1079e17f2b83", MDString(video_id), 0, 1);
-		printf("b64: %s\n", b64);
-		printf("hexlen: %d\n", hlen);	
+		debug(99, "b64=%s", b64);
 
 		key = MDString(b64);
 		int slen = 0;
 		int klen = 0;
 		if(tmpstr_uni != NULL) slen = strlen(tmpstr_uni);
 		if(key != NULL) klen = strlen(key);
-
-		printf("key: %s\n", key);		
-		printf("hexlen: %d\n", hlen);
-		printf("binlen: %d\n", slen);
-		printf("keylen: %d\n", klen);
-
-		hlen /= 2;
-		printf("hexlen/2 for rc4: %d\n", hlen);
 		
 		if(tmpstr_uni != NULL)
 		{
+			debug(99, "hexlen=%d", hlen);
+			hlen /= 2;
+			debug(99, "binlen=%d", hlen);
+			debug(99, "keylen=%d", klen);
+			debug(99, "b64=%s", b64);
+			debug(99, "key=%s", key);
+
 			rc4(tmpstr_uni, hlen, key, klen);
-		
-			printf("tmpstr_uni: %s\n", tmpstr_uni);
+
+			debug(99, "encrypted=%s", tmpstr_uni);		
 // somtimes segfault
 //			writesys("/tmp/tithek/list_key", tmpstr_uni, 1);			
-			
-			debug(99, "tmpstr: %s\n", tmpstr);
+
 			debug(99, "pageUrl: %s\n", pageUrl);
 			debug(99, "playpath: %s\n", playpath);
 			debug(99, "video_id: %s\n", video_id);
@@ -967,25 +961,15 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 			}
 		}
 
-		printf("close1\n");
 		free(key); key = NULL;		
-		printf("close2\n");
 		free(b64); b64 = NULL;		
-		printf("close3\n");
 		free(url); url = NULL;
-		printf("close4\n");
 		free(source); source = NULL;		
-		printf("close5\n");
 		free(tmpstr_uni); tmpstr_uni = NULL;
-		printf("close6\n");
 		free(tmpstr); tmpstr = NULL;
-		printf("close7\n");
 		free(pageUrl); pageUrl = NULL;		
-		printf("close8\n");
 		free(playpath); playpath = NULL;
 		debug(99, "streamurl: %s", streamurl);
-
-		printf("streamurl: %s\n", streamurl);
 	}
 	return streamurl;
 }
