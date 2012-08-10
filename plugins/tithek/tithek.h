@@ -896,10 +896,6 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 // somtimes segfault
 //		writesys("/tmp/tithek/list_uni", tmpstr_uni, 0);
 
-		char* video_id_md5 = NULL;		
-		video_id_md5 = MDString(video_id);
-		printf("video_id_md5: %s\n", video_id_md5);
-
 		b64 = ostrcat("c8407a08b3c71ea418ec9dc662f2a56e40cbd6d5a114aa50fb1e1079e17f2b83", MDString(video_id), 0, 1);
 		printf("b64: %s\n", b64);
 
