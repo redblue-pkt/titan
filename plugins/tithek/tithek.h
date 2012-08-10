@@ -668,7 +668,9 @@ void screentithekplay(char* titheklink, char* title, int first)
 						}
 						else
 							textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+printf("33333333333333333333333333\n");
 						free(tmpstr1); tmpstr1 = NULL;
+printf("44444444444444444444444444\n");						
 					}
 					else
 						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);			
@@ -890,7 +892,8 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		{
 //			printf("ret1[1].part=%s\n", (ret1[1]).part);
 			hlen = strlen(ret1[1].part);
-			tmpstr_uni = unhexlify(ret1[1].part);
+//			tmpstr_uni = unhexlify(ret1[1].part);
+			tmpstr_uni = unhexlify123(ret1[1].part);
 		}
 		free(ret1), ret1 = NULL;
 // somtimes segfault
@@ -898,6 +901,7 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 
 		b64 = ostrcat("c8407a08b3c71ea418ec9dc662f2a56e40cbd6d5a114aa50fb1e1079e17f2b83", MDString(video_id), 0, 1);
 		printf("b64: %s\n", b64);
+		printf("hexlen: %d\n", hlen);	
 
 		key = MDString(b64);
 		int slen = 0;
@@ -913,26 +917,27 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		hlen /= 2;
 		printf("hexlen/2 for rc4: %d\n", hlen);
 		
-// rc4 has an error free tmpstr_uni 5 times then malloc error...
-		rc4(tmpstr_uni, hlen, key, klen);
-
-// somtimes segfault
-//		writesys("/tmp/tithek/list_key", tmpstr_uni, 1);			
-		
-		debug(99, "tmpstr: %s\n", tmpstr);
-		debug(99, "pageUrl: %s\n", pageUrl);
-		debug(99, "playpath: %s\n", playpath);
-		debug(99, "video_id: %s\n", video_id);
-		//printf("tmpstr_uni: %s\n",tmpstr_uni);
-
 		if(tmpstr_uni != NULL)
 		{
+			rc4(tmpstr_uni, hlen, key, klen);
+		
+			printf("tmpstr_uni: %s\n", tmpstr_uni);
+// somtimes segfault
+//			writesys("/tmp/tithek/list_key", tmpstr_uni, 1);			
+			
+			debug(99, "tmpstr: %s\n", tmpstr);
+			debug(99, "pageUrl: %s\n", pageUrl);
+			debug(99, "playpath: %s\n", playpath);
+			debug(99, "video_id: %s\n", video_id);
+			//printf("tmpstr_uni: %s\n",tmpstr_uni);
+
 			htmldecode(tmpstr_uni, tmpstr_uni);
 	
 			if(ostrstr(tmpstr_uni, "connectionurl='rtmp"))
 			{
 				printf("found rtmpe:// stream\n");
 				source = string_resub("source='", ".flv'", tmpstr_uni, 0);
+
 				url = string_resub("connectionurl='", "'", tmpstr_uni, 0);
 	
 				if(ostrstr(url, "myvideo2flash"))
@@ -955,7 +960,9 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 			{		
 				printf("rtmpe not found, change to *.flv stream\n");
 				source = string_resub("source='", "'", tmpstr_uni, 0);
-				url = string_resub("path='", "'", tmpstr_uni, 0);	
+	
+				url = string_resub("path='", "'", tmpstr_uni, 0);
+	
 				streamurl = ostrcat(url, source, 0, 0);
 			}
 		}
@@ -969,7 +976,6 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		printf("close4\n");
 		free(source); source = NULL;		
 		printf("close5\n");
-// create somtimes segfault
 		free(tmpstr_uni); tmpstr_uni = NULL;
 		printf("close6\n");
 		free(tmpstr); tmpstr = NULL;
