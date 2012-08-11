@@ -17,14 +17,18 @@ char* curlretbuf = NULL;
 
 void changefacetext(struct skin* node, char* text)
 {
+	text = string_replace("\\n", "", text, 0);
 	htmldecode3(text, text);
 	changetext(node, text);
+	free(text);
 }
 
 void changefacetext2(struct skin* node, char* text)
 {
+	text = string_replace("\\n", "", text, 0);
 	htmldecode3(text, text);
 	changetext2(node, text);
+	free(text);
 }
 
 void convertfacedate(char* buf)
@@ -1274,8 +1278,7 @@ void screenface()
 		else
 			rcret = waitrc(facebook, 0, 0);
 
-		//TODO
-		if(rcret == getrcconfigint("rc1", NULL) || rcret == getrcconfigint("rcfr", NULL))
+		if(rcret == getrcconfigint("rcff", NULL) || rcret == getrcconfigint("rcfr", NULL))
 		{
 			if(aktlist == 0)
 				aktlist = 1;
