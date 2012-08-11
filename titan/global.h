@@ -5237,35 +5237,64 @@ char* string_decode(char* input, int flag)
 	return input;
 }
 
-char* string_striptags(char* filename)
+char* string_deltags(char* str)
 {
 	debug(1000, "in");
-	int i, len_filename;
+	int i = 0, y = 0, len = 0;
 
-	if(filename == NULL) return 0;
+	if(str == NULL) return 0;
+
+	len = strlen(str);
+
+	int skip = 0;
+	for(i = 0; i < len; i++)
+	{
+		if(str[i] == '<')
+			skip = 1;
+		else if(str[i] == '>')
+			skip = 0;
+
+		if(skip == 0 && str[i] != '>')
+		{
+			str[y] = str[i];
+			y++;
+		}
+	}
+	str[y] = '\0';
+
+	debug(1000, "out");
+	return str;
+}
+
+char* string_striptags(char* str)
+{
+	debug(1000, "in");
+	int i = 0, len = 0;
+
+	if(str == NULL) return 0;
 	
-	len_filename = strlen(filename);
+	len = strlen(str);
 
 	int skip =0;
-	for(i = 0; (i) < len_filename; i++)
+	for(i = 0; i < len; i++)
 	{
-		if(filename[i] == '<')
+		if(str[i] == '<')
 		{
 			debug(210, "found < in string");
 			skip = 1;
 		}
-		else if(filename[i] == '>')	
+		else if(str[i] == '>')
 		{
 			debug(210, "found > in string");
 			skip = 0;
-			filename[i] = ' ';
+			str[i] = ' ';
 		}
 		if(skip == 1)
-			filename[i] = ' ';
+			str[i] = ' ';
 	}	
 
 	debug(1000, "out");
-	return strstrip(filename);	
+	return strstrip(str);
 }
 
 char* string_resub(char* str, char* str2, char* input, int dir)

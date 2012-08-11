@@ -19,6 +19,7 @@ void changefacetext(struct skin* node, char* text)
 {
 	text = string_replace("\\n", "", text, 0);
 	htmldecode3(text, text);
+	text = string_deltags(text);
 	changetext(node, text);
 	free(text);
 }
@@ -27,6 +28,7 @@ void changefacetext2(struct skin* node, char* text)
 {
 	text = string_replace("\\n", "", text, 0);
 	htmldecode3(text, text);
+	text = string_deltags(text);
 	changetext2(node, text);
 	free(text);
 }
