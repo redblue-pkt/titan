@@ -24,13 +24,13 @@ void screeninfobar()
 	
 	while(1)
 	{
-    //check if picmem times out and must freed
-    if(time(NULL) > status.picmemtimeout + 60)
-    {
-      checkpictimeout();
-      status.picmemtimeout = time(NULL);
-    }
-  
+		//check if picmem times out and must freed
+		if(time(NULL) > status.picmemtimeout + 60)
+		{
+			checkpictimeout();
+			status.picmemtimeout = time(NULL);
+		}
+
 		if(status.standby == 1)
 			screenstandby();
 		if(status.infobar == 1)
@@ -222,6 +222,7 @@ void screeninfobar()
 			drawscreen(skin, 0, 0);
 			status.infobaraktiv = 1;
 			status.infobar = 2;
+			infobartimeout = 0;
 			continue;
 		}
 		if(rcret == getrcconfigint("rcexit", NULL))
