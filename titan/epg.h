@@ -183,7 +183,7 @@ void screenepg(struct channel* chnode, struct epg* epgnode, int flag)
 	struct skin* b5 = getscreennode(screenepg, "b5");
 	struct tm* loctime = NULL;
 	char* tmpstr = NULL, *buf = NULL;
-	void (*startplugin)(char*);
+	struct tmdb* (*startplugin)(char*, char*, int);
 	
 	if(getconfigint("epgbutton", NULL) == 0)
 		changetext(b5, _("Single (EPG)"));
@@ -343,20 +343,18 @@ start:
 		}
 		if(rcret == getrcconfigint("rctext", NULL))
 		{
-			/* TODO:
-			struct skin* pluginnode = getplugin("Imdb");
+			struct skin* pluginnode = getplugin("TMDb");
 		
 			if(pluginnode != NULL)
 			{
-				startplugin = dlsym(pluginnode->pluginhandle, "screenimdb");
+				startplugin = dlsym(pluginnode->pluginhandle, "screentmdb");
 				if(startplugin != NULL && epgnode != NULL)
 				{
 					clearscreen(screenepg);
-					startplugin(epgnode->title);
+					startplugin(epgnode->title, NULL, 0);
 					drawscreen(screenepg, 0, 0);
 				}
 			}
-			*/
 		}
 	}	
 
