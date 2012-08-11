@@ -661,19 +661,96 @@ void screentithekplay(char* titheklink, char* title, int first)
 						{
 							if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 							{
-								printf("11111111111111111111111111\n");
 								screenplay(tmpstr1, 2, 0);				
-								printf("22222222222222222222222222\n");
 							}
 						}
 						else
 							textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-printf("33333333333333333333333333\n");
 						free(tmpstr1); tmpstr1 = NULL;
-printf("44444444444444444444444444\n");						
 					}
 					else
 						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);			
+				}
+				else if((((struct tithek*)listbox->select->handle)->flag == 13))
+				{
+					char* search = textinput("Search", NULL);
+					if(search != NULL)
+					{
+						drawscreen(load, 0, 0);
+						search = stringreplacechar(search, ' ', '+');
+						char* id = NULL;
+						char* line = NULL;
+						char* pic = NULL;
+						char* title = NULL;	
+						char* ip = ostrcat("www.myvideo.de", NULL, 0, 0);
+						char* path = ostrcat("Videos_A-Z?searchWord=", search, 0, 0);
+									
+						char* tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
+						tmpstr = string_replace_all("<", "\n", tmpstr, 1);
+						tmpstr = string_replace_all(">", "\n", tmpstr, 1);
+ 		
+						int count = 0;
+						int incount = 0;
+						int i = 0;
+						struct splitstr* ret1 = NULL;
+						ret1 = strsplit(tmpstr, "\n", &count);
+		
+						if(ret1 != NULL)
+						{
+							int max = count;
+							for(i = 0; i < max; i++)
+							{								
+								if(ostrstr(ret1[i].part, "img id='i") != NULL)
+								{
+								printf("ret1[i].part: %s",ret1[i].part);
+								
+									pic = oregex(".*longdesc='(.*)' class='vThumb'.*", ret1[i].part);
+									id = oregex(".*img id='i(.*)' onload=.*", ret1[i].part);
+									title = oregex(".*alt='(.*)' onmouseover=.*", ret1[i].part);
+									debug(99, "---------------------------");
+									debug(99, "title: %s", title);
+									debug(99, "pic: %s", pic);
+									debug(99, "id: %s", id);
+									debug(99, "---------------------------");
+	
+									if(id != NULL)
+									{
+										incount += 1;
+										line = ostrcat(line, title, 1, 0);
+										line = ostrcat(line, "#http://www.myvideo.de/dynamic/get_player_video_xml.php?flash_playertype=SER&ID=", 1, 0);
+										line = ostrcat(line, id, 1, 0);
+										line = ostrcat(line, "&_countlimit=4&autorun=yes;pageUrl=http://www.myvideo.de/watch/", 1, 0);										
+										line = ostrcat(line, id, 1, 0);
+										line = ostrcat(line, "/;playpath=flv:movie24/a0/", 1, 0);
+										line = ostrcat(line, id, 1, 0);
+										line = ostrcat(line, ";", 1, 0);
+										line = ostrcat(line, id, 1, 0);																				
+										line = ostrcat(line, "#", 1, 0);
+										line = ostrcat(line, pic, 1, 0);
+										line = ostrcat(line, "#myvideo_search_", 1, 0);
+										line = ostrcat(line, oitoa(incount + time(NULL)), 1, 0);
+										line = ostrcat(line, ".jpg#MyVideo - Search#12\n", 1, 0);
+										free(ip), ip = NULL;
+										free(path), path = NULL;
+										free(title), title = NULL;
+									}
+
+								}
+							}
+							free(ret1), ret1 = NULL;
+		
+							if(line != NULL)
+							{
+								writesys("/tmp/tithek/myvideo.search.list", line, 0);
+								free(line), line = NULL;
+								if(createtithekplay("/tmp/tithek/myvideo.search.list", grid, listbox, countlabel) != 0) return;
+								drawscreen(grid, 0, 0);
+							}
+						}
+						free(tmpstr), tmpstr = NULL;
+					}
+					free(search), search = NULL;
+					continue;
 				}
 				else
 				{
