@@ -1346,8 +1346,16 @@ int writeallconfig(int flag)
 			if(writeskinconfig(getconfig("skinconfig", NULL)) != 0)
 				ret = 1;
 		if(status.writeconfig == 1)
+		{
+			//reset volume autochange before save
+			if(status.volautochange > 0)
+				addconfigint("vol", getvol() - status.volautochange);
 			if(writeconfig(status.configfile) != 0)
 				ret = 1;
+			//restore volume autochange
+			if(status.volautochange > 0)
+				addconfigint("vol", getvol() + status.volautochange);
+		}
 		if(status.writemostzap == 1)
 			if(writemostzap(getconfig("mostzapfile", NULL)) != 0)
 				ret = 1;
