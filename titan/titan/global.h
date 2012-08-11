@@ -1514,6 +1514,11 @@ void htmldecode3(char* to, char* from)
 			*to = hexit(from[2]) * 1048576 + hexit(from[3]) * 65536 + hexit(from[4]) * 4096 + hexit(from[5]) * 256 + hexit(from[6]) * 16 + hexit(from[7]);
 			from += 7;
 		}
+		if(from[0] == '\\' && from[1] == 'u' && isxdigit(from[2]) && isxdigit(from[3]) && isxdigit(from[4]) && isxdigit(from[5]))
+		{
+			*to = hexit(from[2]) * 4096 + hexit(from[3]) * 256 + hexit(from[4]) * 16 + hexit(from[5]);
+			from += 5;
+		}
 		else
 			*to = *from;
 	}
