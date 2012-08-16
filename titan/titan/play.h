@@ -55,7 +55,7 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 	unsigned long long int pos = 0, len = 0, reverse = 0;
 
 	tmpstr = ostrcat(file, NULL, 0, 0);
-	changetext(title, basename(tmpstr));
+	if(tmpstr != NULL) changetext(title, basename(tmpstr));
 	free(tmpstr); tmpstr = NULL;
 
 	if(playertype == 1)
