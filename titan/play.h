@@ -29,6 +29,7 @@ start:
 
 void screenplayinfobar(char* file, int mode, int playertype, int flag)
 {
+printf("infobar in\n");
 	if(checkbit(status.playercan, 14) == 0) return;
 
 	if((flag == 2) || (flag == 3))
@@ -38,6 +39,7 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 	struct skin* playinfobar = getscreen("playinfobar");
 	struct skin* playinfobarpic = getscreen("playinfobarpic");
 
+printf("infobar 1\n");
 	if(mode == 1)
 	{
 		clearscreen(playinfobar);
@@ -45,6 +47,7 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 		drawscreen(skin, 0, 0);
 		return;
 	}
+printf("infobar 2\n");
 
 	struct skin* title = getscreennode(playinfobar, "title");
 	struct skin* spos = getscreennode(playinfobar, "pos");
@@ -54,10 +57,12 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 	char* tmpstr = NULL;
 	unsigned long long int pos = 0, len = 0, reverse = 0;
 
+printf("infobar 3\n");
 	tmpstr = ostrcat(file, NULL, 0, 0);
 	if(tmpstr != NULL) changetext(title, basename(tmpstr));
 	free(tmpstr); tmpstr = NULL;
 
+printf("infobar 4\n");
 	if(playertype == 1)
 	{
 		unsigned long long int startpos = 0;
@@ -78,25 +83,32 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 	if(pos < 0) pos = 0;
 	reverse = len - pos;
 
+printf("infobar 5\n");
 	if(len == 0)
 		sprogress->progresssize = 0;
 	else
 		sprogress->progresssize = pos * 100 / len;
 
+printf("infobar 6\n");
 	tmpstr = convert_timesec(pos);
 	changetext(spos, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 
+printf("infobar 7\n");
 	tmpstr = convert_timesec(len);
 	changetext(slen, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 
+printf("infobar 8\n");
 	tmpstr = convert_timesec(reverse);
 	changetext(sreverse, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 
+printf("infobar 9\n");
 	drawscreen(playinfobar, 0, 0);
 	drawscreen(playinfobarpic, 0, 0);
+
+printf("infobar out\n");
 }
 
 void screenplaytracklist(int mode, int playertype, int flag)
