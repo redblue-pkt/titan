@@ -30,6 +30,8 @@ start:
 void screenplayinfobar(char* file, int mode, int playertype, int flag)
 {
 printf("infobar in\n");
+	if(file_exist("/tmp/.noinfobar")) return;
+printf("infobar 0\n");
 	if(checkbit(status.playercan, 14) == 0) return;
 
 	if((flag == 2) || (flag == 3))
