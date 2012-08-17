@@ -106,6 +106,7 @@ printf("infobar 8\n");
 
 printf("infobar 9\n");
 	drawscreen(playinfobar, 0, 0);
+printf("infobar 10\n");
 	drawscreen(playinfobarpic, 0, 0);
 
 printf("infobar out\n");
