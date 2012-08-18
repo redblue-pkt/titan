@@ -348,6 +348,7 @@ void clearfball();
 //timerthread.h
 struct stimerthread* addtimer(void* func, int aktion, int delay, int count, void* param1, void* param2, struct stimerthread* last);
 void deltimer(struct stimerthread *tnode);
+struct stimerthread* gettimerbythread(pthread_t thread);
 
 //epgscanlist.h
 struct epgscanlist* getepgscanlist(int serviceid, unsigned long transponderid);
