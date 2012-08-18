@@ -1811,6 +1811,8 @@ void debugstack(void* address, void* address1)
 	printf("--------------------------------------\n");
 	printf("Box: %s\n", boxversion);
 	printf("Image: %s\n", imgversion);
+	printf("MainThread: %x\n", status.mainthread);
+	printf("Thread: %x\n", pthread_self());
 	printf("Obtaining %zd stack frames:\n\n", size);
 
 	for(i = 0; i < size; i++)
@@ -1829,6 +1831,8 @@ void debugstack(void* address, void* address1)
 		fprintf(fd, "Date: %s", ctime(&rawtime));
 		fprintf(fd, "Box: %s\n", boxversion);
 		fprintf(fd, "Image: %s\n", imgversion);
+		fprintf(fd, "MainThread: %x\n", status.mainthread);
+		fprintf(fd, "Thread: %x\n", pthread_self());
 		fprintf(fd, "Obtaining %zd stack frames:\n\n", size);
 		for(i = 1; i < size; i++)
 			fprintf(fd, "%s\n", strings[i]);
