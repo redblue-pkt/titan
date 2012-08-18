@@ -1779,6 +1779,7 @@ void m_unlock(pthread_mutex_t *mutex, int flag)
 
 void debugstack(void* address, void* address1)
 {
+	Dl_info info;
 	void* trace[10];
 	size_t size;
 	size = backtrace(trace, 10);
@@ -1792,6 +1793,7 @@ void debugstack(void* address, void* address1)
 
 	char* boxversion = NULL;
 	char* imgversion = NULL;
+	struct stimerthread* tnode = NULL;
 
 	if(isfile("/etc/model")	!= 0)
 		boxversion = readsys("/etc/model", 1);
@@ -1803,6 +1805,10 @@ void debugstack(void* address, void* address1)
 	else
 		imgversion = ostrcat("unknown", NULL, 0, 0);
 
+	tnode = gettimerbythread(pthread_self());
+	if(tnode != NULL)
+		dladdr(tnode->func, &info);
+
 	strings = backtrace_symbols(trace, size);
 	akttrace[0] = (void*)address1;
 	akttrace[1] = (void*)address;
@@ -1812,7 +1818,10 @@ void debugstack(void* address, void* address1)
 	printf("Box: %s\n", boxversion);
 	printf("Image: %s\n", imgversion);
 	printf("MainThread: %x\n", status.mainthread);
-	printf("Thread: %x\n", pthread_self());
+	if(tnode != NULL && info.dli_sname != NULL)
+		printf("Error in Thread: %x (%s)\n", pthread_self(), info.dli_sname);
+	else
+		printf("Error in Thread: %x\n", pthread_self());
 	printf("Obtaining %zd stack frames:\n\n", size);
 
 	for(i = 0; i < size; i++)
@@ -1832,7 +1841,10 @@ void debugstack(void* address, void* address1)
 		fprintf(fd, "Box: %s\n", boxversion);
 		fprintf(fd, "Image: %s\n", imgversion);
 		fprintf(fd, "MainThread: %x\n", status.mainthread);
-		fprintf(fd, "Thread: %x\n", pthread_self());
+		if(tnode != NULL && info.dli_sname != NULL)
+			fprintf(fd, "Error in Thread: %x (%s)\n", pthread_self(), info.dli_sname);
+		else
+			fprintf(fd, "Error in Thread: %x\n", pthread_self());
 		fprintf(fd, "Obtaining %zd stack frames:\n\n", size);
 		for(i = 1; i < size; i++)
 			fprintf(fd, "%s\n", strings[i]);

@@ -1,6 +1,25 @@
 #ifndef TIMERTHREAD_H
 #define TIMERTHREAD_H
 
+struct stimerthread* gettimerbythread(pthread_t thread)
+{
+	//debug(1000, "in");
+	struct stimerthread *node = stimerthread;
+
+	while(node != NULL)
+	{
+		if(node->thread == thread)
+		{
+			//debug(1000, "out");
+			return node;
+		}
+
+		node = node->next;
+	}
+	//debug(1000, "out");
+	return NULL;
+}
+
 struct stimerthread* gettimer(struct stimerthread* timernode)
 {
 	//debug(1000, "in");
