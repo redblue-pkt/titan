@@ -1779,7 +1779,7 @@ void m_unlock(pthread_mutex_t *mutex, int flag)
 
 void debugstack(void* address, void* address1)
 {
-	Dl_info info;
+	Dl_info info, info1;
 	void* trace[10];
 	size_t size;
 	size = backtrace(trace, 10);
@@ -1809,6 +1809,8 @@ void debugstack(void* address, void* address1)
 	if(tnode != NULL)
 		dladdr(tnode->func, &info);
 
+	dladdr(address, &info1);
+
 	strings = backtrace_symbols(trace, size);
 	akttrace[0] = (void*)address1;
 	akttrace[1] = (void*)address;
@@ -1817,6 +1819,8 @@ void debugstack(void* address, void* address1)
 	printf("--------------------------------------\n");
 	printf("Box: %s\n", boxversion);
 	printf("Image: %s\n", imgversion);
+	if(info1.dli_fname != NULL)
+		printf("Error in File: %s\n", info1.dli_fname);
 	printf("MainThread: %x\n", status.mainthread);
 	if(tnode != NULL && info.dli_sname != NULL)
 		printf("Error in Thread: %x (%s)\n", pthread_self(), info.dli_sname);
@@ -1840,6 +1844,8 @@ void debugstack(void* address, void* address1)
 		fprintf(fd, "Date: %s", ctime(&rawtime));
 		fprintf(fd, "Box: %s\n", boxversion);
 		fprintf(fd, "Image: %s\n", imgversion);
+		if(info1.dli_fname != NULL)
+			printf("Error in File: %s\n", info1.dli_fname);
 		fprintf(fd, "MainThread: %x\n", status.mainthread);
 		if(tnode != NULL && info.dli_sname != NULL)
 			fprintf(fd, "Error in Thread: %x (%s)\n", pthread_self(), info.dli_sname);
