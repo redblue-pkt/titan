@@ -798,7 +798,7 @@ firstwizzardstep1:
 	//check hdd
 	status.addhddall = addtimer(&addhddall, START, 6000, -1, NULL, NULL, NULL);
 	//check net
-	//addtimer(&addinetworkall, START, 15000, -1, NULL, NULL, NULL);
+	addtimer(&addinetworkall, START, 15000, -1, NULL, NULL, NULL);
 #ifdef CAMSUPP
 	//start ca slot watching threads
 	castart();
