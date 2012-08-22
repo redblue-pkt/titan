@@ -486,7 +486,7 @@ int checkflash()
 		dev = ostrcat(dev, "3", 1, 0);
 		dir = ostrcat(dir, "var", 1, 0);		
 	}
-	else if((checkbox("ATEMIO500") == 1) || (checkbox("ATEMIO510") == 1) || (checkbox("IPBOX91") == 1) || (checkbox("IPBOX900") == 1) || (checkbox("IPBOX910") == 1) || (checkbox("IPBOX9000") == 1))
+	else if((checkbox("ATEMIO500") == 1) || (checkbox("ATEMIO510") == 1) || (checkbox("ATEMIO7600") == 1) || (checkbox("IPBOX91") == 1) || (checkbox("IPBOX900") == 1) || (checkbox("IPBOX910") == 1) || (checkbox("IPBOX9000") == 1))
 	{
 		dev = ostrcat(dev, "4", 1, 0);
 		dir = ostrcat(dir, "var", 1, 0);
