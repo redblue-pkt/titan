@@ -96,12 +96,9 @@ int playerstartts(char* file, int flag)
 				if(ret == 0 || ret == 1)
 				{
 					char* skip1 = malloc(20);
-					if(skip1 != NULL)
-					{
-						fscanf(fbseek,"%s",skip1);
-						off64_t pos = lseek64(fd, atoll(skip1), SEEK_SET);
-						free(skip1); skip1=NULL;
-					}
+					fscanf(fbseek,"%s",skip1);
+					off64_t pos = lseek64(fd, atoll(skip1), SEEK_SET);
+					free(skip1); skip1=NULL;
 				}
 				fclose(fbseek);
 			}
@@ -155,7 +152,9 @@ int playerstartts(char* file, int flag)
 			dvrclose(dvrnode, -1);
 			return 1;
 		}
-		status.playercan = 0x7EFF;	
+		//status.playercan = 0x7EFF;
+		status.playercan = 0x7FFF;	
+		status.playfdirection = 0;
 	}
 
 	return 0;
@@ -179,7 +178,7 @@ void playerstopts(int flag, int flag1)
 	{
 		playerffts(0);
 
-		if(snode != NULL && snode->recsrcfd >= 0 && flag == 0)
+		if(snode->recsrcfd >= 0 && flag == 0)
 		{
 			char* fileseek = changefilenameext(snode->recname, ".se");
 			FILE* fbseek = fopen(fileseek, "w");
@@ -211,6 +210,18 @@ void playercontinuets()
 {
 	videocontinue(status.aktservice->videodev);
 	audioplay(status.aktservice->audiodev);
+	
+	if(status.playfdirection == -1)
+	{
+		audiosetavsync(status.aktservice->audiodev, 1);
+		audiosetmute(status.aktservice->audiodev, 0);
+		status.playfdirection = 0;
+		videoclearbuffer(status.aktservice->videodev);
+	}
+	if(status.playfdirection = 1)
+	{
+		status.playfdirection = 0;
+	}
 }
 
 void playerpausets()
@@ -226,10 +237,15 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	off64_t offset;
 	off64_t endoffile;
 	off64_t currentpos;
+	off64_t fdptspos;
 	int dupfd = -1;
 	int ret = 0;
-	unsigned long long pts = 0;
+	unsigned long long lenpts = 0;
+	unsigned long long aktpts = 0;
+	unsigned long long fdpts = 0;
 	unsigned long long bitrate = 0;
+	int aktsekunden = 0;
+	int sekundenoff = 0;
 	struct service* snode = NULL;
 	
 	if(servicenode == NULL) return 1;
@@ -254,10 +270,30 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	}
 	
   //TODO: warum der sleep?
-	usleep(500000);
+	//usleep(500000);
+	
 	m_lock(&status.tsseekmutex, 15);
-	usleep(500000);
-	if(gettsinfo(dupfd, &pts, NULL, NULL, &bitrate, servicenode->tssize) != 0)
+	//usleep(500000);
+	
+	ret = videogetpts(status.aktservice->videodev, &aktpts);
+	if(ret == 0)
+	{
+		aktsekunden = aktpts / 90000;
+		//printf("----> aktsekunden: %i\n",aktsekunden);
+	}
+	else
+		aktsekunden = 0;
+	ret = getpts(servicenode->recsrcfd, 0, 0, 256 * 1024, &fdpts, &fdptspos, 1, servicenode->tssize);
+	if(ret == 0 && aktsekunden != 0)
+	{
+		sekundenoff = fdpts / 90000 - aktsekunden ;
+		//printf("----> sekundenoff: %i\n",sekundenoff);
+		//currentpos = lseek64(servicenode->recsrcfd, fdptspos, SEEK_SET);
+	}
+	else
+		sekundenoff = 0;
+	
+	if(gettsinfo(dupfd, &lenpts, NULL, NULL, &bitrate, servicenode->tssize) != 0)
 	{
 		err("cant read endpts/bitrate");
 		m_unlock(&status.tsseekmutex, 15);
@@ -265,13 +301,18 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	}
 	endoffile = lseek64(dupfd , -servicenode->tssize * 2, SEEK_END);
 	close(dupfd);
+
 	currentpos = lseek64(servicenode->recsrcfd, 0, SEEK_CUR);
+	
 	ret = videoclearbuffer(status.aktservice->videodev);
 	ret = audioclearbuffer(status.aktservice->audiodev);
 
 	if(sekunden >= 0)
 	{
-		offset = (bitrate / 8) * sekunden - 5000000;
+		if(sekundenoff != 0)
+			offset = (bitrate / 8) * (sekunden - sekundenoff);
+		else
+			offset = (bitrate / 8) * sekunden - 5000000;
 		offset = offset - (offset % servicenode->tssize);
 		if(currentpos + offset > endoffile)
 		{
@@ -282,7 +323,10 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	else
 	{
 		sekunden = sekunden * -1;
-		offset = (bitrate / 8) * sekunden + 5000000;
+		if(sekundenoff != 0)
+			offset = (bitrate / 8) * (sekunden + sekundenoff);
+		else
+			offset = (bitrate / 8) * sekunden + 5000000;
 		offset = offset - (offset % servicenode->tssize);
 		if(currentpos - offset < 0)
 		{
@@ -302,12 +346,32 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 
 void playerffts(int speed)
 {
-		videofastforward(status.aktservice->videodev, speed / 2);
+	videofastforward(status.aktservice->videodev, speed / 2);
 }
 
 void playerfrts(int speed)
 {
+	if(status.playfdirection == 0)
+	{
+		m_lock(&status.tsseekmutex, 15);
+		if(speed != 0)
+		{ 
+			videoclearbuffer(status.aktservice->videodev);
+			videofreeze(status.aktservice->videodev);
+			//videostop(status.aktservice->videodev,0);
+			videoclearbuffer(status.aktservice->videodev);
+			videocontinue(status.aktservice->videodev);
+			//audioclearbuffer(status.aktservice->audiodev);
+			//videofastforward(status.aktservice->videodev, 0);
+			//audiosetavsync(status.aktservice->audiodev, 0);
+			//audiosetmute(status.aktservice->audiodev, 1);
+			status.playfdirection = -1;
+		}
+	}
+	m_unlock(&status.tsseekmutex, 15);
 }
+	
+
 
 int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, unsigned long long* endpts, unsigned long long* aktpts, unsigned long long* bitrate)
 {

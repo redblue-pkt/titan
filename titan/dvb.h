@@ -1098,4 +1098,224 @@ int getptspos(int fd, off64_t startfind, unsigned long long* pts, off64_t* findp
 	return ret;		
 }
 
+
+//rc = 1 --> mpeg
+//rc = 2 --> h.264
+int findcodec(unsigned char* buf, int len, int tssize)
+{
+	int i,i1;
+	int rc = 2;
+	
+	for(i = 0; i < len-tssize; i = i + tssize)
+	{
+		if((buf[i+1]&0x40)>>6 == 0x01)
+		{
+			for(i1 = i+4; i1 < tssize-4; i1 = i1 + 1)
+			{
+				if (buf[i1] == 0x00 && buf[i1+1] == 0x00 && buf[i1+2] == 0x01 && buf[i1+3] == 0xB3)
+				{
+					rc = 1;
+					break;
+				}
+			}
+		}
+	}
+	return rc;
+} 
+
+//flag=0 -> future use
+//flag=1 -> I-Slice
+//flag=2 -> ende Frame
+int findframeHD(unsigned char* buf, int len, int start, int tssize, int flag)
+{
+	int position = -1;
+	int i = 0;
+	int i1 = 0;
+
+	len = start + len;
+	
+	while(1) 
+	{
+		for(i = start; i < len-3; i = i + 1)
+		{
+			//Picture header ?
+			if (buf[i] == 0x00 && buf[i+1] == 0x00 && buf[i+2] == 0x01)
+			{
+				//SPS (Sequence Parameter Set)?
+				if(buf[i+3] == 0x67 && flag == 1)
+				{
+					//PPS (Picture Parameter Set) ?
+					for(i1 = i + 4; i1 < (i % tssize) + i; i1 = i1 + 1) 
+					{
+						if (buf[i1] == 0x00 && buf[i1+1] == 0x00 && buf[i1+2] == 0x01 && buf[i1+3] == 0x68)
+						{
+							position = i1;
+							break;
+						}
+					}
+					if(position != -1)
+					{
+						for(i1 = position + 4; i1 < (position % tssize) + position; i1 = i1 + 1)
+						{
+							if (buf[i1] == 0x00 && buf[i1+1] == 0x00 && buf[i1+2] == 0x01)
+							{
+								if(buf[i1+3] == 0x01 || buf[i1+3] == 0x21 || buf[i1+3] == 0x41 || buf[i1+3] == 0x61)
+								{
+									i = i1+4;
+									position = -1;
+									break;
+								}
+							}
+						}
+					}
+					if(position != -1)
+						break;					
+				}
+				//I-P-Slice oder I-P-B-Slice oder oder .....?
+				else if((buf[i+3] == 0x01 || buf[i+3] == 0x21 || buf[i+3] == 0x41 || buf[i+3] == 0x61) && flag == 2 )
+				{
+				  position = i;
+				 	break;
+				}
+   		}
+   	}
+   	return position;
+	}
+}
+
+
+//flag=0 -> Sequence header
+//flag=1 -> I-Fame
+//flag=2 -> ende Frame
+int findframe(unsigned char* buf, int len, int start, int tssize, int flag)
+{
+	
+	//#define	SEQ_START_CODE          0x000001b3
+	//#define GOP_START_CODE          0x000001b8
+	//#define PICTURE_START_CODE      0x00000100
+	//#define SLICE_START_CODE        0x00000101
+	//#define PACK_START_CODE         0x000001ba
+	//#define VIDEO_ID                0x000001e0
+	//#define AUDIO_ID                0x000001c0
+
+	
+	int position = -1;
+	int i = 0;
+
+	len = start + len;
+
+	while(1) {
+
+		for(i = start; i < len-3; i = i + 1)
+		{
+
+			//Picture header ?
+			if (buf[i] == 0x00 && buf[i+1] == 0x00 && buf[i+2] == 0x01)
+			{
+	
+				//Sequence header
+				if(buf[i+3] == 0xB3 && flag == 0)
+				{
+					position = i;
+					break;
+				}	
+
+				//Picture-Frame ?
+				else if(buf[i+3] == 0x00)
+				{
+
+					//I-Frame ?
+					if((buf[i+5] & 0x38)>>3 == 0x01 && flag == 1)
+					{
+					  position = i;
+						break;
+					}
+
+					//other Frame ?
+					else if((buf[i+5] & 0x38)>>3 != 0x00 && flag == 2) 
+					{
+					  position = i;
+					 	break;
+					}	
+				}
+   		}
+   	}
+   	return position;
+	}
+}
+
+int findandposrew(int fd, int tssize, int skip)
+{
+	int i, r;
+	int ret = 0;
+	int rc = 0;
+	int framelen = -1;
+	off64_t endframe = -1;
+	off64_t startframe = -1;
+	int readret = 0;
+	int codec = 0;
+	int buflen = tssize * 15000;
+	unsigned char* buf = malloc(buflen);
+	off64_t currentpos;
+	off64_t skippos;
+	
+	//ret = videostop(status.aktservice->videodev,0);
+	//ret = videoclearbuffer(status.aktservice->videodev);
+	//ret = audioclearbuffer(status.aktservice->audiodev);
+	//ret = audiosetavsync(status.aktservice->audiodev, 0);
+	//ret = audiosetmute(status.aktservice->audiodev, 1);
+	
+	currentpos = lseek64(fd, 0, SEEK_CUR);
+	skippos = currentpos;
+	
+	while(1) 
+	{ 
+		skippos = skippos - buflen;
+		if(skippos < 0)
+		{
+			currentpos = lseek64(fd, currentpos, SEEK_SET);
+			free(buf);
+			return -1;
+		}
+		skippos = lseek64(fd, skippos, SEEK_SET);
+		readret = dvbreadfd(fd, buf, 0, buflen, 5000000, 1);
+		if(readret > 0)
+		{
+			codec = findcodec(buf, buflen, tssize);
+			for(i = readret - tssize; i >= 0; i = i - tssize)
+			{
+				if(codec == 1)
+					ret = findframe(buf, tssize, i, tssize, 0);
+				else
+					ret = findframeHD(buf, tssize, i, tssize, 1);
+				if(ret > -1)
+				{
+					if(endframe == -1)
+					{
+						if(skip != 0)
+							skip = skip - 1;
+						else
+							endframe = skippos + i;
+					}
+					else
+					{
+						startframe = skippos + i;
+						framelen = endframe - startframe;
+						currentpos = lseek64(fd, startframe, SEEK_SET);
+						//readret = dvbreadfd(servicenode->recsrcfd, buf, 0, buflen, 5000000, 1);
+						free(buf);
+						return framelen;
+					}
+				}
+			}
+		}
+		else
+		{
+			currentpos = lseek64(fd, currentpos, SEEK_SET);
+			free(buf);
+			return -1;
+		}
+	}
+}
+
 #endif

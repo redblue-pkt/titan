@@ -280,6 +280,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 {
 	int readret = 0, writeret = 0, ret = 0, recbsize = 0, tmprecbsize = 0, i = 0, pktcount = 0;
 	int readtimeout = -1, writetimeout = -1;
+	int framelen = 0;
 	unsigned char* buf = NULL, *tmpbuf = NULL;
 	char* retstr = NULL;
 	//off64_t pos = 0;
@@ -358,7 +359,33 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 		if(servicenode->type == RECORDPLAY)
 		{
 			pthread_mutex_lock(&status.tsseekmutex);
-			readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
+			if(status.playfdirection > -1)
+			{
+				framelen = 0;
+				readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
+			}
+			else
+			{
+				if(framelen <= 0)
+				{
+					framelen = findandposrew(servicenode->recsrcfd, servicenode->tssize, ((int)pow(2, status.playspeed * -1)) / 2);
+					//printf("----> framelen: %i\n",framelen);
+					videoclearbuffer(status.aktservice->videodev);
+					videofreeze(status.aktservice->videodev);
+					//audioclearbuffer(status.aktservice->audiodev);
+					//audiosetmute(status.aktservice->audiodev, 1);
+					videoclearbuffer(status.aktservice->videodev);
+					videocontinue(status.aktservice->videodev);
+				}
+				if(framelen > 0)
+				{
+					if(framelen >= recbsize)
+						readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
+					else
+						readret = dvbreadfd(servicenode->recsrcfd, buf, 0, framelen, readtimeout, 1);
+					framelen = framelen - recbsize;
+				}
+			}
 			pthread_mutex_unlock(&status.tsseekmutex);
 		}
 		else
