@@ -1110,12 +1110,11 @@ int findcodec(unsigned char* buf, int len, int tssize)
 	{
 		if((buf[i+1]&0x40)>>6 == 0x01)
 		{
-			for(i1 = i+4; i1 < tssize-4; i1 = i1 + 1)
+			for(i1 = i+4; i1 < i + tssize-4; i1 = i1 + 1)
 			{
 				if (buf[i1] == 0x00 && buf[i1+1] == 0x00 && buf[i1+2] == 0x01 && buf[i1+3] == 0xB3)
 				{
-					rc = 1;
-					break;
+					return 1;
 				}
 			}
 		}
