@@ -218,7 +218,7 @@ void playercontinuets()
 		status.playfdirection = 0;
 		videoclearbuffer(status.aktservice->videodev);
 	}
-	if(status.playfdirection = 1)
+	if(status.playfdirection == 1)
 	{
 		status.playfdirection = 0;
 	}
