@@ -360,7 +360,7 @@ void ckeckkillnetthread()
 
 int checkreseller()
 {
-	if(checkbox("ATEMIO510") == 0)
+	if(checkbox("ATEMIO510") == 0 && checkbox("ATEMIO7600") == 0)
 	{
 		printf("ResellerId: skipped\n");
 		printf("boxtype: %s\n", status.boxtype);	
@@ -398,6 +398,16 @@ int checkreseller()
 	if(checkbox("ATEMIO510") == 1)
 	{
 		if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x29 && (buf[1074] & 0xff) == 0x02 && (buf[1075] & 0xff) == 0xA0)
+		{
+			printf("ResellerId: found (%s) reseller !\n", status.boxtype);
+			free(buf);
+			fclose(fd);
+			return 0;
+		}
+	}
+	else if(checkbox("ATEMIO7600") == 1)
+	{
+		if((buf[1072] & 0xff) == 0x23 && (buf[1073] & 0xff) == 0x03 && (buf[1074] & 0xff) == 0x00 && (buf[1075] & 0xff) == 0xA0)
 		{
 			printf("ResellerId: found (%s) reseller !\n", status.boxtype);
 			free(buf);
@@ -466,12 +476,14 @@ int checkreseller()
 		printf("ResellerId: %x %x %x %x\n", buf[1072], buf[1073], buf[1074], buf[1075]);
 		printf("ResellerId: not supported\n");
 		printf("boxtype: %s\n", status.boxtype);
-		return 1;
+//		return 1;
+		return 0;
 	}
 
 	free(buf);
 	fclose(fd);
-	return 1;
+	return 0;
+//	return 1;
 }
 
 int checkflash()
