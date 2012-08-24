@@ -476,14 +476,12 @@ int checkreseller()
 		printf("ResellerId: %x %x %x %x\n", buf[1072], buf[1073], buf[1074], buf[1075]);
 		printf("ResellerId: not supported\n");
 		printf("boxtype: %s\n", status.boxtype);
-//		return 1;
-		return 0;
+		return 1;
 	}
 
 	free(buf);
 	fclose(fd);
-	return 0;
-//	return 1;
+	return 1;
 }
 
 int checkflash()
