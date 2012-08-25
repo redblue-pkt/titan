@@ -213,8 +213,7 @@ void playercontinuets()
 	
 	if(status.playfdirection == -1)
 	{
-		audiosetavsync(status.aktservice->audiodev, 1);
-		audiosetmute(status.aktservice->audiodev, 0);
+		audioclearbuffer(status.aktservice->audiodev);
 		status.playfdirection = 0;
 		videoclearbuffer(status.aktservice->videodev);
 	}
@@ -347,22 +346,27 @@ void playerffts(int speed)
 	videofastforward(status.aktservice->videodev, speed / 2);
 }
 
-void playerfrts(int speed)
+//flag = 0 --> recordplay
+//flag = 1 --> timeshift
+void playerfrts(int speed, int flag)
 {
+	struct service* snode = NULL;
+	
 	if(status.playfdirection == 0)
 	{
 		m_lock(&status.tsseekmutex, 15);
 		if(speed != 0)
 		{ 
+			struct service* snode = NULL;
+			if(flag == 0)
+				snode = getservice(RECORDPLAY, 0);
+			else if(flag == 1)
+				snode = getservice(RECORDTIMESHIFT, 0);
+			lseek64(snode->recsrcfd, -(26600 * snode->tssize), SEEK_CUR);
 			videoclearbuffer(status.aktservice->videodev);
 			videofreeze(status.aktservice->videodev);
-			//videostop(status.aktservice->videodev,0);
 			videoclearbuffer(status.aktservice->videodev);
 			videocontinue(status.aktservice->videodev);
-			//audioclearbuffer(status.aktservice->audiodev);
-			//videofastforward(status.aktservice->videodev, 0);
-			//audiosetavsync(status.aktservice->audiodev, 0);
-			//audiosetmute(status.aktservice->audiodev, 1);
 			status.playfdirection = -1;
 		}
 	}
