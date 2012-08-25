@@ -255,7 +255,7 @@ void timeshiftseek(int sekunden, int* playinfobarstatus, int* playinfobarcount)
 					status.playspeed--;
 					status.timeshiftseek = sekunden;
 					sekunden = sekunden - 20000;
-					playerfrts(sekunden);
+					playerfrts(sekunden, 1);
 				}
 				*playinfobarstatus = 2;
 				*playinfobarcount = 0;

@@ -43,9 +43,11 @@ void screeninfobar()
 		else if(status.infobar == 0 && status.timeshift == 1)
 		{
 			rcret = waitrc(infobar, 1000, 0);
-			timeshiftinfobar(&playinfobarstatus, &playinfobarcount);
 			if(rcret == RCTIMEOUT)
+			{
+				timeshiftinfobar(&playinfobarstatus, &playinfobarcount);
 				continue;
+			}
 		}
 		else if(status.infobar == 2)
 		{
