@@ -286,7 +286,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	if(ret == 0 && aktsekunden != 0)
 	{
 		sekundenoff = fdpts / 90000 - aktsekunden ;
-		currentpos = lseek64(servicenode->recsrcfd, fdptspos, SEEK_SET);
+		//currentpos = lseek64(servicenode->recsrcfd, fdptspos, SEEK_SET);
 	}
 	else
 		sekundenoff = 0;
