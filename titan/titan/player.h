@@ -279,16 +279,14 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	if(ret == 0)
 	{
 		aktsekunden = aktpts / 90000;
-		//printf("----> aktsekunden: %i\n",aktsekunden);
 	}
 	else
 		aktsekunden = 0;
-	ret = getpts(servicenode->recsrcfd, 0, 0, 256 * 1024, &fdpts, &fdptspos, 1, servicenode->tssize);
+	ret = getpts(servicenode->recsrcfd, 0, 0, 256 * 1024, &fdpts, &fdptspos, -1, servicenode->tssize);
 	if(ret == 0 && aktsekunden != 0)
 	{
 		sekundenoff = fdpts / 90000 - aktsekunden ;
-		//printf("----> sekundenoff: %i\n",sekundenoff);
-		//currentpos = lseek64(servicenode->recsrcfd, fdptspos, SEEK_SET);
+		currentpos = lseek64(servicenode->recsrcfd, fdptspos, SEEK_SET);
 	}
 	else
 		sekundenoff = 0;
