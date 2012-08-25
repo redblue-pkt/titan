@@ -22,6 +22,8 @@ void screeninfobar()
 	status.infobaraktiv = 1;
 	status.mcaktiv = 0;
 	
+	int playinfobarcount = 0, playinfobarstatus = 1, dirrcret = 0;
+	
 	while(1)
 	{
 		//check if picmem times out and must freed
@@ -33,10 +35,17 @@ void screeninfobar()
 
 		if(status.standby == 1)
 			screenstandby();
-		if(status.infobar == 1)
+		if(status.infobar == 1 )
 		{
 			rcret = waitrc(infobar, 1000, 0);
 			infobartimeout++;
+		}
+		else if(status.infobar == 0 && status.timeshift == 1)
+		{
+			rcret = waitrc(infobar, 1000, 0);
+			timeshiftinfobar(&playinfobarstatus, &playinfobarcount);
+			if(rcret == RCTIMEOUT)
+				continue;
 		}
 		else if(status.infobar == 2)
 		{
@@ -99,6 +108,7 @@ void screeninfobar()
 		}
 		if(status.timeshift == 1)
 		{
+					
 			if(rcret == getrcconfigint("rcstop", NULL))
 			{
 				timeshiftstop(0);
@@ -106,7 +116,7 @@ void screeninfobar()
 			}
 			if(rcret == getrcconfigint("rcplay", NULL))
 			{
-				timeshiftplay();
+				timeshiftplay(&playinfobarstatus, &playinfobarcount);
 				continue;
 			}
 			//TODO: ff, fr, seek
@@ -114,76 +124,78 @@ void screeninfobar()
 			{
 				if(status.playing == 1) { 
 					if(status.timeshiftseek > 10000) {
-						timeshiftseek((status.timeshiftseek - 10000) * 2 + 10000);
+						timeshiftseek((status.timeshiftseek - 10000) * 2 + 10000, &playinfobarstatus, &playinfobarcount);
 					}
 					else
-					timeshiftseek(10002);
+					timeshiftseek(10002, &playinfobarstatus, &playinfobarcount);
 				}
 				continue;
 			}
 			if(rcret == getrcconfigint("rcfr", NULL))
 			{
-				if(status.playing == 1) {
-					if(status.timeshiftseek > 102)
-						timeshiftplay();
-					timeshiftseek(-10);
+				if(status.playing == 1) { 
+					if(status.timeshiftseek > 20000) {
+						timeshiftseek((status.timeshiftseek - 20000) * 2 + 20000, &playinfobarstatus, &playinfobarcount);
+					}
+					else
+					timeshiftseek(20002, &playinfobarstatus, &playinfobarcount);
 				}
 				continue;
 			}
 			if(rcret == getrcconfigint("rc3", NULL))
 			{
-				if(status.timeshiftseek > 102)
-						timeshiftplay();
-				timeshiftseek(60);
+				if(status.timeshiftseek >= 10002)
+						timeshiftplay(&playinfobarstatus, &playinfobarcount);
+				timeshiftseek(60, &playinfobarstatus, &playinfobarcount);
 				continue;
 			}
 			if(rcret == getrcconfigint("rc6", NULL))
 			{
-				if(status.timeshiftseek > 102)
-						timeshiftplay();
-				timeshiftseek(300);
+				if(status.timeshiftseek >= 10002)
+						timeshiftplay(&playinfobarstatus, &playinfobarcount);
+				timeshiftseek(300, &playinfobarstatus, &playinfobarcount);
 				continue;
 			}
 			if(rcret == getrcconfigint("rc9", NULL))
 			{
-				if(status.timeshiftseek > 102)
-						timeshiftplay();
-				timeshiftseek(600);
+				if(status.timeshiftseek >= 10002)
+						timeshiftplay(&playinfobarstatus, &playinfobarcount);
+				timeshiftseek(600, &playinfobarstatus, &playinfobarcount);
 				continue;
 			}	
 			if(rcret == getrcconfigint("rc1", NULL))
 			{
-				if(status.timeshiftseek > 102)
-						timeshiftplay();
-				timeshiftseek(-60);
+				if(status.timeshiftseek >= 10002)
+						timeshiftplay(&playinfobarstatus, &playinfobarcount);
+				timeshiftseek(-60, &playinfobarstatus, &playinfobarcount);
 				continue;
 			}
 			if(rcret == getrcconfigint("rc4", NULL))
 			{
-				if(status.timeshiftseek > 102)
-						timeshiftplay();
-				timeshiftseek(-300);
+				if(status.timeshiftseek >= 10002)
+						timeshiftplay(&playinfobarstatus, &playinfobarcount);
+				timeshiftseek(-300, &playinfobarstatus, &playinfobarcount);
 				continue;
 			}
 			if(rcret == getrcconfigint("rc7", NULL))
 			{
-				if(status.timeshiftseek > 102)
-						timeshiftplay();
-				timeshiftseek(-600);
+				if(status.timeshiftseek >= 10002)
+						timeshiftplay(&playinfobarstatus, &playinfobarcount);
+				timeshiftseek(-600, &playinfobarstatus, &playinfobarcount);
 				continue;
 			}
 			if(rcret == getrcconfigint("rcinfo", NULL))
 			{
-				if(status.playing == 1) {
-					if(status.timeshiftseek > 102 && status.timeshiftseek < 999999)
-							timeshiftplay();
+				if(status.playing == 1)
+				{
+					if(status.timeshiftseek >= 10002 && status.timeshiftseek < 999999)
+							timeshiftplay(&playinfobarstatus, &playinfobarcount);
 					if(status.timeshiftseek == 999999)
 						status.timeshiftseek = 0;
-					else {	
-						timeshiftseek(999999);
-					continue;
-					}
-				}	
+					else 
+						timeshiftseek(999999, &playinfobarstatus, &playinfobarcount);
+				}
+				continue;	
 			}
 		}
 		if(rcret == getrcconfigint("rcstop", NULL))

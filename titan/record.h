@@ -369,7 +369,6 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				if(framelen <= 0)
 				{
 					framelen = findandposrew(servicenode->recsrcfd, servicenode->tssize, ((int)pow(2, status.playspeed * -1)) / 2);
-					//printf("----> framelen: %i\n",framelen);
 					videoclearbuffer(status.aktservice->videodev);
 					videofreeze(status.aktservice->videodev);
 					//audioclearbuffer(status.aktservice->audiodev);

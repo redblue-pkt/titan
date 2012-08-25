@@ -372,12 +372,18 @@ void playerfrts(int speed)
 }
 	
 
-
-int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, unsigned long long* endpts, unsigned long long* aktpts, unsigned long long* bitrate)
+//flag = 0 --> play ts
+//flag = 1 --> timeshift
+int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, unsigned long long* endpts, unsigned long long* aktpts, unsigned long long* bitrate, int flag)
 {
 	int dupfd = -1;
-	struct service* snode = getservice(RECORDPLAY, 0);
+	struct service* snode = NULL;
 	
+	if(flag == 0)
+		snode = getservice(RECORDPLAY, 0);
+	else if(flag == 1)
+		snode = getservice(RECORDTIMESHIFT, 0);
+		
 	if(snode == NULL) return 1;
 	
 	dupfd = open(snode->recname, O_RDONLY | O_LARGEFILE);
