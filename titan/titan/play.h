@@ -27,6 +27,7 @@ start:
 	clearscreen(playpolicy);
 }
 
+//flag = 4 ---> timeshift
 void screenplayinfobar(char* file, int mode, int playertype, int flag)
 {
 	if(checkbit(status.playercan, 14) == 0) return;
@@ -37,7 +38,6 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 	}
 	struct skin* playinfobar = getscreen("playinfobar");
 	struct skin* playinfobarpic = getscreen("playinfobarpic");
-
 	if(mode == 1)
 	{
 		clearscreen(playinfobar);
@@ -45,7 +45,6 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 		drawscreen(skin, 0, 0);
 		return;
 	}
-
 	struct skin* title = getscreennode(playinfobar, "title");
 	struct skin* spos = getscreennode(playinfobar, "pos");
 	struct skin* slen = getscreennode(playinfobar, "len");
@@ -61,7 +60,10 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 	if(playertype == 1)
 	{
 		unsigned long long int startpos = 0;
-		playergetinfots(&len, &startpos, NULL, &pos, NULL);
+		if(flag == 4)
+			playergetinfots(&len, &startpos, NULL, &pos, NULL, 1);
+		else
+			playergetinfots(&len, &startpos, NULL, &pos, NULL, 0);
 		len = len / 90000;
 		pos = (pos - startpos) / 90000;
 	}
@@ -484,7 +486,7 @@ void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 		if(playertype == 1)
 		{
 			unsigned long long int startpos = 0;
-			playergetinfots(NULL, &startpos, NULL, &pos, NULL);
+			playergetinfots(NULL, &startpos, NULL, &pos, NULL, 0);
 			pos = (pos - startpos) / 90000;
 		}
 		else if(playertype == 2)

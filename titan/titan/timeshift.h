@@ -42,6 +42,10 @@ void timeshiftstop(int flag)
 	
 	playerstopts(1, flag);
 
+	writevfd("Player");
+	screenplayinfobar(NULL, 1, 1, 4);
+	
+	
 	if(snode != NULL)
 	{
 		file = ostrcat(file, snode->recname, 1, 0);
@@ -69,7 +73,7 @@ void timeshiftstop(int flag)
 	playercontinuets();
 }
 
-void timeshiftplay()
+void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)
 {
 	int ret = 1;
 	struct service* snode = getservice(RECORDTIMESHIFT, 0);
@@ -80,15 +84,24 @@ void timeshiftplay()
 		if(ret != 0)
 		{
 			textbox(_("Message"), _("Can't start timeshift play !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+			return;
 		}
 	}
-	else {
+	else
+	{	
 		if(status.timeshiftseek != 0) {
 			status.timeshiftseek = 0;
 			playerpausets();
 		}
 		playercontinuets();
 	}
+	status.playspeed = 0;
+	status.pause = 0;
+	status.play = 1;
+	status.playercan = 0x7FFF;
+	*playinfobarstatus = 1;
+	*playinfobarcount = 0;
+	screenplayinfobar(snode->recname, 0, 1, 4);
 }
 
 void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
@@ -201,14 +214,14 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
 	close(fd);
 }
 
-void timeshiftseek(int sekunden)
+void timeshiftseek(int sekunden, int* playinfobarstatus, int* playinfobarcount)
 {
 	struct service* snode = getservice(RECORDPLAY, 0);
 	
 	if(status.timeshiftseek == 0)
 	{
 		status.timeshiftseek = sekunden;
-		addtimer(&timeshiftscreen, START, 10000, 1, (void*)snode, NULL, NULL);
+		//addtimer(&timeshiftscreen, START, 10000, 1, (void*)snode, NULL, NULL);
 	}
 	
 	if(status.timeshiftseek < 999999)
@@ -218,22 +231,73 @@ void timeshiftseek(int sekunden)
 		{
 			if(sekunden > 10000)
 			{
-				if(sekunden >= 10032)
+				if(sekunden < 20000)
 				{
-					status.timeshiftseek = 10016;
-					return;
+					if(sekunden >= 10032)
+					{
+						status.timeshiftseek = 10016;
+						return;
+					}
+					status.play = 0;
+					status.playspeed++;
+					status.timeshiftseek = sekunden;
+					sekunden = sekunden - 10000;
+					playerffts(sekunden);
 				}
-				status.timeshiftseek = sekunden;
-				sekunden = sekunden - 10000;
-				playerffts(sekunden);
+				else
+				{
+					if(sekunden >= 20032)
+					{
+						status.timeshiftseek = 20016;
+						return;
+					}
+					status.play = 0;
+					status.playspeed--;
+					status.timeshiftseek = sekunden;
+					sekunden = sekunden - 20000;
+					playerfrts(sekunden);
+				}
+				*playinfobarstatus = 2;
+				*playinfobarcount = 0;
+				screenplayinfobar(status.playfile, 0, 1, 4);
 			}	
 			else
 			{
 				playerseekts(snode, sekunden, 1);
+				*playinfobarstatus = 1;
+				*playinfobarcount = 0;
+				status.play = 0;		
+				screenplayinfobar(status.playfile, 0, 1, 4);
+				status.play = 1;
 			}
+		}
+	}
+	else
+	{
+		if(*playinfobarstatus == 0)
+		{
+			*playinfobarstatus = 1;
+			*playinfobarcount = 0;
+			screenplayinfobar(status.playfile, 0, 1, 4);
+		}
+		else if(*playinfobarstatus == 1)
+		{
+			*playinfobarstatus = 0;
+			screenplayinfobar(status.playfile, 1, 1, 4);
 		}
 	}
 }
 
+void timeshiftinfobar(int* playinfobarstatus, int* playinfobarcount)
+{
+	*playinfobarcount++;
+	if(*playinfobarstatus > 0)
+		screenplayinfobar(status.playfile, 0, 1, 4);
+	if(*playinfobarstatus == 1 && *playinfobarcount >= getconfigint("infobartimeout", NULL))
+	{
+		*playinfobarstatus = 0;
+		screenplayinfobar(NULL, 1, 1, 4);
+	}
+}
 
 #endif
