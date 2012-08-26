@@ -498,10 +498,18 @@ int main(int argc, char *argv[])
 			destroy();
 			exit(100);
 		}
-
-		char* cpuid = getcpuid();
-		checkserial(cpuid);
-		free(cpuid); cpuid = NULL;
+		if(checkbox("UFS910") == 1 && checklowflash() != 0)
+		{
+			printf("error: 7\n");		
+			destroy();
+			exit(100);
+		}
+		else
+		{				
+			char* cpuid = getcpuid();
+			checkserial(cpuid);
+			free(cpuid); cpuid = NULL;
+		}	
 	}
 	else
 		status.security = 1;
