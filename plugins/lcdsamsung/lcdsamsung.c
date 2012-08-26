@@ -366,7 +366,7 @@ void LCD_Samsung1_thread()
 						if(playertype == 1)
 						{
 							unsigned long long int startpos = 0;
-							playergetinfots(&len, &startpos, NULL, &pos, NULL);
+							playergetinfots(&len, &startpos, NULL, &pos, NULL, 0);
 							len = len / 90000;
 							pos = (pos - startpos) / 90000;
 						}
