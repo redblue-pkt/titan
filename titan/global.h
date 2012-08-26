@@ -1,6 +1,30 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+int checklowflash()
+{
+	char* cmd = NULL;
+	cmd = ostrcat(cmd, "cat /proc/mtd | grep mtd5 | awk '{print $2}'", 1, 0);
+
+	tmpstr = string_newline(command(cmd));
+	free(cmd), cmd = NULL;
+
+	if(tmpstr == NULL)
+	{
+		return 1;
+	}
+
+	if(ostrcmp(tmpstr, "00fc0000") == 0)
+	{
+		free(tmpstr), tmpstr = NULL;
+		status.security = 1;
+		setskinnodeslocked(0);
+
+		return 0;
+	}
+	return 1;	
+}
+
 char* unhexlify(const char *hexstr)
 {
 	int len = 0, tmpint = 0;
@@ -1079,6 +1103,10 @@ void setskinnodeslocked(int flag)
 			if(checkbox("ATEMIO510") == 1)
 			{
 				if(ostrcmp("vfdisplay", child->name) == 0) child->locked = tmpflag;
+			}
+			if(checkbox("UFS910") == 1)
+			{
+				if(ostrcmp("unlock", child->name) == 0) child->locked = 1;
 			}
 
 			if(ostrcmp("savesettings", child->name) == 0) child->locked = tmpflag;
