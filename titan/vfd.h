@@ -454,6 +454,14 @@ void updatevfd()
 				tmpstr = ostrcat(tmpstr, " ", 1, 0);
 				break;
 
+			case 2: // date + time
+				tmpstr = ostrcat(tmpstr, gettime(NULL, "%d.%m %H:%M"), 1, 1);
+				break;
+
+			case 3: // date
+				tmpstr = ostrcat(tmpstr, gettime(NULL, "%d.%m.%y"), 1, 1);
+				break;
+
 			default: // time
 				tmpstr = ostrcat(tmpstr, gettime(NULL, "%H:%M"), 1, 1);
 				break;
