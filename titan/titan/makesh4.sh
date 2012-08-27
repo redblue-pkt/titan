@@ -672,6 +672,9 @@ rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "make.sh"`
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/networkbrowser/netlib
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/tithek/menu
 
+cp -a "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan.cfg."$TYPE" "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan.cfg
+rm -rf "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan.cfg.*
+
 cp -a "$HOME"/flashimg/BUILD/titan "$HOME"/flashimg/BUILD/titan-smal
 rm -rf "$HOME"/flashimg/BUILD/titan-smal/var/usr/local/share/titan/picons
 rm -rf "$HOME"/flashimg/BUILD/titan-smal/var/etc/titan/titan.cfg
