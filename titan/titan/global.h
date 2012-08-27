@@ -3,9 +3,25 @@
 
 int checklowflash()
 {
-	char* cmd = NULL;
 	char* tmpstr = NULL;
-	cmd = ostrcat(cmd, "cat /proc/mtd | grep mtd5 | awk '{print $2}'", 1, 0);
+	char* cmd = NULL;
+	cmd = ostrcat(cmd, "cat", 1, 0); 
+	cmd = ostrcat(cmd, " ", 1, 0); 
+	cmd = ostrcat(cmd, "/", 1, 0); 
+	cmd = ostrcat(cmd, "proc", 1, 0); 
+	cmd = ostrcat(cmd, "/", 1, 0); 
+	cmd = ostrcat(cmd, "mtd", 1, 0); 
+	cmd = ostrcat(cmd, " ", 1, 0); 
+	cmd = ostrcat(cmd, "|", 1, 0); 
+	cmd = ostrcat(cmd, " ", 1, 0); 
+	cmd = ostrcat(cmd, "grep", 1, 0); 
+	cmd = ostrcat(cmd, " ", 1, 0); 
+	cmd = ostrcat(cmd, "mtd5", 1, 0); 
+	cmd = ostrcat(cmd, " ", 1, 0); 
+	cmd = ostrcat(cmd, "|", 1, 0); 
+	cmd = ostrcat(cmd, " ", 1, 0); 
+	cmd = ostrcat(cmd, "awk '{print ", 1, 0); 
+	cmd = ostrcat(cmd, "$2}'", 1, 0); 
 
 	tmpstr = string_newline(command(cmd));
 	free(cmd), cmd = NULL;
