@@ -32,6 +32,8 @@ void screenvfdisplay()
 
 	addchoicebox(vfdstandby, "0", _("time"));
 	addchoicebox(vfdstandby, "1", _("off"));
+	addchoicebox(vfdstandby, "2", _("date + time"));
+	addchoicebox(vfdstandby, "3", _("date"));
 	setchoiceboxselection(vfdstandby, getconfig("vfdisplaystandby", NULL));
 
 	drawscreen(vfdisplay, 0, 0);
