@@ -361,7 +361,7 @@ void screenopera(char* url)
 	char* opera_root, *opera_bin = NULL, *opera_dir = NULL;
 	char* opera_home = NULL, *opera_fonts = NULL, *opera_widgets = NULL;
 
-	if(isdir("/var/usr/local/share/titan/plugins/hbbtv/opera")
+	if(isdir("/var/usr/local/share/titan/plugins/hbbtv/opera"))
 		opera_root = ostrcat("/var/usr/local/share/titan/plugins/hbbtv/opera", NULL, 0, 0);
 	else
 		opera_root = ostrcat("/var/swap/titanplugins/hbbtv/opera", NULL, 0, 0);
