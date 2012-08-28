@@ -172,9 +172,9 @@ int ralphasort64(const struct dirent64** v1, const struct dirent64** v2)
 int createfilelist(struct skin* screen, struct skin* node, int view)
 {
 	debug(1000, "in");
-	struct dirent64 **filelist;
+	struct dirent64 **filelist = NULL;
 
-	int count, tmpcount, i = 0, gridbr = 0, posx = 0, pagecount = 0, sumcount = 0;
+	int count = 0, tmpcount = 0, i = 0, gridbr = 0, posx = 0, pagecount = 0, sumcount = 0;
 	struct skin *child = node, *oldchild = NULL, *parentdir = NULL;
 	char *tmpstr = NULL;
 	char *rpath = NULL;
@@ -262,6 +262,19 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 //		m_lock(&status.mediadbmutex, 17);
  	
 	child = parentdir;
+
+	//if the dir is empty add backpath
+	if(count == 0)
+	{
+		free(filelist);
+		filelist = (struct dirent64**)malloc(1 * sizeof(struct dirent*));
+		struct dirent64* p = (struct dirent64*)malloc(sizeof(struct dirent64));
+		p->d_type = DT_DIR;
+		bcopy("..", p->d_name, 3);
+		filelist[0] = p;
+		count = 1;
+	}
+
 	tmpcount = count;
 	while(tmpcount--)
 	{
