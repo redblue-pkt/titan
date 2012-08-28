@@ -439,7 +439,7 @@ void screenopera(char* url)
 	free(opera_root); opera_root = NULL;
 	free(opera_bin); opera_bin = NULL;
 	free(opera_dir); opera_dir = NULL;
-	free(opera_home); opera_home = NULL
+	free(opera_home); opera_home = NULL;
 	free(opera_fonts); opera_fonts = NULL;
 	free(opera_widgets); opera_widgets = NULL;
 
