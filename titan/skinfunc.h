@@ -1069,6 +1069,7 @@ char* getoscamsource(struct skin* node)
 char* getemu(struct skin* node)
 {
 	char* tmpstr = NULL;
+	char* tmpstr1 = NULL;
 	tmpstr = string_newline(command("emu.sh infoname"));
 
 	if(ostrstr(tmpstr, "not found") != NULL)
@@ -1076,7 +1077,13 @@ char* getemu(struct skin* node)
 		free(tmpstr);
 		tmpstr = NULL;
 	}
-
+	else
+	{
+			tmpstr1 = ostrcat(tmpstr, NULL, 0, 0);
+			free(tmpstr),tmpstr = NULL;			
+			tmpstr = ostrcat("emu: ", tmpstr1, 0, 0);			
+			free(tmpstr1),tmpstr1 = NULL;
+	}
 	return tmpstr;
 }
 
