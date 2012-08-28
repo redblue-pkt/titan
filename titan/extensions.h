@@ -3,7 +3,7 @@
 
 void saveipkg()
 {
-	if(checkbox("ATEMIO510") == 0 && checkbox("AT7500") == 0 && checkbox("UFS912") == 0)
+	if(checkbox("ATEMIO510") == 0 && checkbox("AT7500") == 0 && checkbox("UFS912") == 0 && checkbox("ATEMIO7600") == 0)
 		return;
 
 	int err = 0;
@@ -90,6 +90,8 @@ void screenextensions(int mode, char* path)
 	char* tmpstr = NULL, *tmpinfo = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;
 	struct menulist* mlist1 = NULL, *mbox1 = NULL;
+
+	status.hangtime = 99999;
 	
 	if(mode == 0)
 	{
@@ -273,6 +275,7 @@ void screenextensions(int mode, char* path)
 		freeipkg();
 		loadplugin();
 	}
+	status.hangtime = getconfigint("hangtime", NULL);
 }
 
 //flag 0: without message
