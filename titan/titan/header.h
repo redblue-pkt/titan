@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//rc4.h
+void rc4(char *data, size_t dlen, char *key, size_t klen);
+
 //md5.h
 char* MDString (char *string);
 char* MDFile (char *string);
@@ -631,6 +634,9 @@ struct regex* regexstruct(char* regex, char* str);
 void freeregexstruct(struct regex* node);
 char fromhex(char c);
 char* unhexlify(const char *hexstr);
+int isdir(char* name);
+void htmldecode3(char* to, char* from);
+char* string_deltags(char* str);
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
