@@ -14,8 +14,6 @@ struct hbbtvfav *hbbtvfav = NULL;
 #define CONTROL_PIPE_W "/tmp/"NAME"_control_w"
 #define CONTROL_PIPE_R "/tmp/"NAME"_control_r"
 #define RC_TITAN "/tmp/rc_enigma2"
-#define OPERA_ROOT "/var/swap/titanplugins/hbbtv/opera"
-#define OPERA_BIN OPERA_ROOT"/bin/opera"
 
 extern struct skin* skin;
 
@@ -360,6 +358,19 @@ void screenopera(char* url)
 	int rcret = 0, i = 0;
 	char* tmpstr = NULL, *savedir = NULL, *dirbuf = NULL;;
 	struct stimerthread* operareceiver = NULL;
+	char* opera_root, *opera_bin = NULL, *opera_dir = NULL;
+	char* opera_home = NULL, *opera_fonts = NULL, *opera_widgets = NULL;
+
+	if(file_exist("/var/usr/local/share/titan/plugins/hbbtv/opera")
+		opera_root = ostrcat("/var/usr/local/share/titan/plugins/hbbtv/opera", NULL, 0, 0);
+	else
+		opera_root = ostrcat("/var/swap/titanplugins/hbbtv/opera", NULL, 0, 0);
+
+	opera_bin = ostrcat(opera_root, "/bin/opera", 0, 0);
+	opera_dir = ostrcat(opera_root, "/opera_dir", 0, 0);
+	opera_home = ostrcat(opera_root, "/opera_home/", 0, 0);
+	opera_fonts = ostrcat(opera_root, "/fonts", 0, 0);
+	opera_widgets = ostrcat(opera_root, "/widgets", 0, 0);
 
 	drawscreen(skin, 0, 0);
 
@@ -374,13 +385,13 @@ void screenopera(char* url)
 	setenv("OPERA_SHOW_HIGHLIGHT", "NO", 1);
 	setenv("OPERA_ESC_EXIT", "YES", 1);
 	setenv("FREETYPE_FONT_SET", "YES", 1);
-	setenv("OPERA_ROOT", OPERA_ROOT, 1);
+	setenv("OPERA_ROOT", opera_root, 1);
 	setenv("OPERA_FB_SIZE", "1280x720", 1);
-	setenv("OPERA_DIR", OPERA_ROOT"/opera_dir", 1);
-	setenv("OPERA_HOME", OPERA_ROOT"/opera_home/", 1);
-	setenv("OPERA_FONTS", OPERA_ROOT"/fonts", 1);
-	setenv("OPERA_WIDGETS", OPERA_ROOT"/widgets", 1);
-	setenv("LD_LIBRARY_PATH", OPERA_ROOT, 1); // + ":" + os.environ["LD_LIBRARY_PATH"]
+	setenv("OPERA_DIR", opera_dir, 1);
+	setenv("OPERA_HOME", opera_home, 1);
+	setenv("OPERA_FONTS", opera_fonts, 1);
+	setenv("OPERA_WIDGETS", opera_widgets, 1);
+	setenv("LD_LIBRARY_PATH", opera_root, 1); // + ":" + os.environ["LD_LIBRARY_PATH"]
 
 	unlink(CONTROL_PIPE_W);
 	unlink(CONTROL_PIPE_R);
@@ -412,17 +423,25 @@ void screenopera(char* url)
 	if(dirbuf != NULL)
 	{
 		savedir = getcwd(dirbuf, PATH_MAX);
-		chdir(OPERA_ROOT);
+		chdir(opera_root);
 	}
 
 	fbsave();
 
-	tmpstr = ostrcat(tmpstr, OPERA_BIN, 1, 0);
+	tmpstr = ostrcat(tmpstr, opera_bin, 1, 0);
 	tmpstr = ostrcat(tmpstr, " -u ", 1, 0);
 	tmpstr = ostrcat(tmpstr, url, 1, 0);
 	tmpstr = ostrcat(tmpstr, " --dfb:mode=1280x720,no-debug,no-vt,no-vt-switch &", 1, 0);
 	system(tmpstr);
 	free(tmpstr); tmpstr = NULL;
+
+	//free all opera vars
+	free(opera_root); opera_root = NULL;
+	free(opera_bin); opera_bin = NULL;
+	free(opera_dir); opera_dir = NULL;
+	free(opera_home); opera_home = NULL
+	free(opera_fonts); opera_fonts = NULL;
+	free(opera_widgets); opera_widgets = NULL;
 
 	//reset working dir
 	if(savedir != NULL)
