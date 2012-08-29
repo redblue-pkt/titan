@@ -178,7 +178,7 @@ void playerstopts(int flag, int flag1)
 	{
 		playerffts(0);
 
-		if(snode->recsrcfd >= 0 && flag == 0)
+		if(snode != NULL && snode->recsrcfd >= 0 && flag == 0)
 		{
 			char* fileseek = changefilenameext(snode->recname, ".se");
 			FILE* fbseek = fopen(fileseek, "w");
@@ -268,7 +268,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 		return 1;
 	}
 	
-  //TODO: warum der sleep?
+	//TODO: warum der sleep?
 	//usleep(500000);
 	
 	m_lock(&status.tsseekmutex, 15);
@@ -358,16 +358,21 @@ void playerfrts(int speed, int flag)
 		if(speed != 0)
 		{ 
 			struct service* snode = NULL;
+
 			if(flag == 0)
 				snode = getservice(RECORDPLAY, 0);
 			else if(flag == 1)
 				snode = getservice(RECORDTIMESHIFT, 0);
-			lseek64(snode->recsrcfd, -(26600 * snode->tssize), SEEK_CUR);
-			videoclearbuffer(status.aktservice->videodev);
-			videofreeze(status.aktservice->videodev);
-			videoclearbuffer(status.aktservice->videodev);
-			videocontinue(status.aktservice->videodev);
-			status.playfdirection = -1;
+
+			if(snode != NULL)
+			{
+				lseek64(snode->recsrcfd, -(26600 * snode->tssize), SEEK_CUR);
+				videoclearbuffer(status.aktservice->videodev);
+				videofreeze(status.aktservice->videodev);
+				videoclearbuffer(status.aktservice->videodev);
+				videocontinue(status.aktservice->videodev);
+				status.playfdirection = -1;
+			}
 		}
 	}
 	m_unlock(&status.tsseekmutex, 15);
