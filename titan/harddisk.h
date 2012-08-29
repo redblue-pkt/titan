@@ -176,7 +176,7 @@ void screenfilesystem(char* dev)
 
 void screenconfigurehdd(char* dev)
 {
-	int i, y = 8, rcret = 0, ret = 0, mode = 0;
+	int i, y = 2, rcret = 0, ret = 0, mode = 0;
 	struct skin* screen = getscreen("harddisk_main");
 	struct skin* titletext = getscreennode(screen, "titletext");
 	struct skin* listbox = getscreennode(screen, "listbox");
@@ -190,6 +190,8 @@ void screenconfigurehdd(char* dev)
 	changetitle(screen, _("Harddisk Configure"));
 	if(titletext != status.skinerr) changetext(titletext, _("Harddisk Configure"));
 
+	if(status.expertmodus > 9) y = 8;
+
 	for(i = 0; i < y; i++)
 	{
 		tmp = addlistbox(screen, listbox, tmp, 1);
@@ -200,37 +202,37 @@ void screenconfigurehdd(char* dev)
 				tmpstr = _("use medium for record");
 				tmpstr1 = "addrecord";
 			}
-			else if(i == 1 && status.expertmodus > 9)
-			{
-				tmpstr = _("use medium for extension");
-				tmpstr1 = "addext";
-			}
-			else if(i == 2 && status.expertmodus > 9)
-			{
-				tmpstr = _("use medium for swap");
-				tmpstr1 = "addswap";
-			}
-			else if(i == 3 && status.expertmodus > 9)
-			{
-				tmpstr = _("use medium for backup");
-				tmpstr1 = "addbackup";
-			}
-			else if(i == 4)
+			else if(i == 1)
 			{
 				tmpstr = _("del medium for record");
 				tmpstr1 = "delrecord";
 			}
-			else if(i == 5 && status.expertmodus > 9)
+			else if(i == 2)
+			{
+				tmpstr = _("use medium for extension");
+				tmpstr1 = "addext";
+			}
+			else if(i == 3)
 			{
 				tmpstr = _("del medium for extension");
 				tmpstr1 = "delext";
 			}
-			else if(i == 6 && status.expertmodus > 9)
+			else if(i == 4)
+			{
+				tmpstr = _("use medium for swap");
+				tmpstr1 = "addswap";
+			}
+			else if(i == 5)
 			{
 				tmpstr = _("del medium for swap");
 				tmpstr1 = "delswap";
 			}
-			else if(i == 7 && status.expertmodus > 9)
+			else if(i == 6)
+			{
+				tmpstr = _("use medium for backup");
+				tmpstr1 = "addbackup";
+			}
+			else if(i == 7)
 			{
 				tmpstr = _("del medium for backup");
 				tmpstr1 = "delbackup";
