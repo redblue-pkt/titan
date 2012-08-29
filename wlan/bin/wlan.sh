@@ -41,6 +41,8 @@ elif [ -e /var/lib/modules/$WLAN_MODULE.ko ];then
 	insmod /var/lib/modules/$WLAN_MODULE.ko
 elif [ -e /var/swap/modules/$WLAN_MODULE.ko ];then
 	insmod /var/swap/modules/$WLAN_MODULE.ko
+elif [ -e /mnt/swapextensions/modules/$WLAN_MODULE.ko ];then
+	insmod /mnt/swapextensions/modules/$WLAN_MODULE.ko
 fi
 
 [ -z "`lsmod | grep $WLAN_MODULE`" ] && echo "[wlan] could not load $WLAN_MODULE" | tee -a $WLAN_LOG && exit 1
