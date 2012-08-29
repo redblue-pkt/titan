@@ -795,7 +795,7 @@ start:
 			{
 				int sid = 0;
 				unsigned long tid = 0;
-				if((list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL || list == BOUQUETCHANNEL) && listbox->select->handle != NULL)
+				if((list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL || list == BOUQUETCHANNEL) && listbox->select != NULL && listbox->select->handle != NULL)
 				{
 					sid = ((struct channel*)listbox->select->handle)->serviceid;
 					tid = ((struct channel*)listbox->select->handle)->transponderid;
