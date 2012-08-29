@@ -2444,3 +2444,6 @@ msgstr "Sie haben die Alternative Audio Firmware installiert (DTSDOWNMIX) !\nDam
 
 msgid "To many read error or end of file"
 msgstr "Zu viele Lesefehler oder das Ende der Datei erreicht"
+
+msgid "date + time"
+msgstr "Datum + Zeit"
