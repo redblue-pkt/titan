@@ -499,7 +499,7 @@ void doscan(struct stimerthread* timernode)
 	unsigned char* buf = NULL;
 	struct transponder* tpnode = NULL;
 	struct dvbdev* fenode = NULL;
-	struct channel* chnode = NULL;
+	//struct channel* chnode = NULL;
 	struct sat* satnode = sat;
 	int nitscan = 1;
 
@@ -586,18 +586,18 @@ void doscan(struct stimerthread* timernode)
 			}
 
 			//del channels from transponder if selected
-			if(scaninfo.scantype != 3 && scaninfo.clear == 1)
-			{
-				struct channel* tmpchannel = NULL;
-				chnode = channel;
-				while(chnode != NULL)
-				{
-					tmpchannel = chnode->next;
-					if(chnode->transponder == tpnode)
-						delchannel(chnode->serviceid, chnode->transponderid, 1);
-					chnode = tmpchannel;
-				}
-			}
+			//if(scaninfo.scantype != 3 && scaninfo.clear == 1)
+			//{
+			//	struct channel* tmpchannel = NULL;
+			//	chnode = channel;
+			//	while(chnode != NULL)
+			//	{
+			//		tmpchannel = chnode->next;
+			//		if(chnode->transponder == tpnode)
+			//			delchannel(chnode->serviceid, chnode->transponderid, 1);
+			//		chnode = tmpchannel;
+			//	}
+			//}
 
 			//get nit
 			if(scaninfo.networkscan == 1 && nitscan == 1)
@@ -745,6 +745,39 @@ void scansetmultisat(struct skin* scan)
 	}
 }
 
+void delchannelbysat(int orbitalpos)
+{
+	struct transponder* transpondernode = transponder;
+	struct channel* chnode = NULL;
+
+	while(transpondernode != NULL)
+	{
+		if(transpondernode->orbitalpos == orbitalpos)
+		{
+			chnode = channel;
+			while(chnode != NULL)
+			{
+				if(chnode->transponder == transpondernode)
+					delchannel(chnode->serviceid, chnode->transponderid, 1);
+				chnode = chnode->next;
+			}
+		}
+		transpondernode = transpondernode->next;
+	}
+}
+
+void delchannelbymultisat()
+{
+	struct sat* satnode = sat;
+
+	while(satnode != NULL)
+	{
+		if(satnode->scan == 1)
+			delchannelbysat(satnode->orbitalpos);
+		satnode = satnode->next;
+	}
+}
+
 void screenscan(struct transponder* transpondernode, struct skin* mscan, char* tuner, int scantype, int orbitalpos, unsigned int frequency, int inversion, unsigned int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int networkscan, int onlyfree, int clear, int blindscan, int system, int timeout)
 {
 	int rcret = 0, tpmax = 0, i = 0, alladded = 0;
@@ -822,6 +855,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	}
 	else if(scantype == 1) //single sat
 	{
+		if(clear == 1) delchannelbysat(orbitalpos);
 		tpnode = transponder;
 		while(tpnode != NULL)
 		{
@@ -835,7 +869,11 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	}
 	else if(scantype == 2 || scantype == 3) //2: multi sat, 3: all
 	{
-		if(scantype == 2) scansetmultisat(mscan);
+		if(scantype == 2)
+		{
+			scansetmultisat(mscan);
+			if(clear == 1) delchannelbymultisat();
+		}
 		if(scantype == 3)
 		{
 			scansetallsat(FE_QPSK);
