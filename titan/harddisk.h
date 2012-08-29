@@ -118,12 +118,11 @@ void screenfilesystem(char* dev)
 		tmp = addlistbox(screen, listbox, tmp, 1);
 		if(tmp != NULL)
 		{
-			if(i == 0) tmpstr = "ext2";
-			else if(i == 1) tmpstr = "ext3";
-			else if(i == 2) tmpstr = "jfs";
+			if(i == 0) tmpstr = "jfs";
+			else if(i == 1) tmpstr = "ext2";
+			else if(i == 2) tmpstr = "ext3";
 			else if(i == 3) tmpstr = "vfat";
 			tmpstr1 = ostrcat(tmpstr1, getconfig("skinpath", NULL), 1, 0);
-			tmpstr1 = ostrcat(tmpstr1, "/skin/ext2.png", 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, "/skin/", 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, tmpstr, 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, ".png", 1, 0);
@@ -137,8 +136,18 @@ void screenfilesystem(char* dev)
 			changepic(tmp, tmpstr1);
 			free(tmpstr1); tmpstr1 = NULL;
 
-			changetext(tmp, tmpstr);
 			changename(tmp, tmpstr);
+			if(i == 0)
+			{
+				tmpstr = ostrcat(tmpstr, " (", 0, 0);
+				tmpstr = ostrcat(tmpstr, _("default"), 1, 0);
+				tmpstr = ostrcat(tmpstr, ")", 1, 0);
+				changetext(tmp, tmpstr);
+				free(tmpstr); tmpstr = NULL;
+			}
+			else
+				changetext(tmp, tmpstr);
+
 			tmp->textposx = 120;
 			tmp->height = 50;
 			tmp->valign = convertxmlentry("middle", 0);
