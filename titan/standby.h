@@ -95,7 +95,7 @@ void screenstandby()
 
 	subtitlepause(0);
 	status.standby = 0;
-	status.startmode = 2;
+	status.startmode = 1;
 	sleep(1);
 	status.rcowner = NULL;
 }

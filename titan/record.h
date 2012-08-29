@@ -211,7 +211,6 @@ void recordstop(struct service* node)
 		{
 			if(status.startmode == 1) afterevent = 2;
 			else if(getwaswakuptimer() == 1) afterevent = 3;
-
 		}
 		if(afterevent == 2 && status.standby == 0)
 		{
