@@ -236,7 +236,6 @@ void screenconfigurehdd(char* dev)
 				tmpstr1 = "delbackup";
 			}
 			tmpstr2 = ostrcat(tmpstr2, getconfig("skinpath", NULL), 1, 0);
-			tmpstr2 = ostrcat(tmpstr2, "/skin/ext2.png", 1, 0);
 			tmpstr2 = ostrcat(tmpstr2, "/skin/", 1, 0);
 			tmpstr2 = ostrcat(tmpstr2, tmpstr1, 1, 0);
 			tmpstr2 = ostrcat(tmpstr2, ".png", 1, 0);
