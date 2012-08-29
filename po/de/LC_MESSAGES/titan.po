@@ -2447,3 +2447,45 @@ msgstr "Zu viele Lesefehler oder das Ende der Datei erreicht"
 
 msgid "date + time"
 msgstr "Datum + Zeit"
+
+msgid "Not enought space"
+msgstr "Nicht genug Speicherplatz vorhanden"
+
+msgid "Error create filename"
+msgstr "Es kann keine Datei angelegt werden"
+
+msgid "Can't open file"
+msgstr "Die Datei kann nicht geöffnet werden"
+
+msgid "Can't open FRONTEND device"
+msgstr "Das FRONTEND device kann nicht geöffnet werden"
+
+msgid "Can't open DMX device"
+msgstr "Das DMX device kann nicht geöffnet werden"
+
+msgid "Pid's not ok"
+msgstr "Fehler in den Pid's"
+
+msgid "Channel or Transponder is empty"
+msgstr "Kanal oder Transponder ist lehr"
+
+msgid "Write error"
+msgstr "Schreibfehler"
+
+msgid "No memory"
+msgstr "Kein Speicher verfügbar"
+
+msgid "Failed open split file"
+msgstr "Split Datei kann nicht geöffnet werden"
+
+msgid "Frontend type unknown"
+msgstr "Frontend Typ unbekannt"
+
+msgid "Tune to channel failed"
+msgstr "Kanal kann nicht angesteuert werden"
+
+msgid "Can't create service"
+msgstr "Es kann kein Service angelegt werden"
+
+msgid "Can't find free Tuner for Record.\nSwitch to Recording/Timeshift Channel ?"
+msgstr "Es ist kein freier Tuner vorhanden.\nZum Aufnahme/Timeschift Kanal wechseln ?"
