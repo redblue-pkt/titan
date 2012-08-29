@@ -56,7 +56,7 @@ void setdefaults()
 	addconfigdef("skip79", "900");
 	addconfigdef("gmultiepgzoom", "4");
 	addconfigdef("wakeuptimerdevdiff", "300");
-	addconfigdef("rectimer_timediff", "120");
+	addconfigdef("rectimer_timediff", "180");
 	addconfigdef("screenanimspeed", "1");
 	addconfigdef("blindminfrequency", "9500");
 	addconfigdef("blindmaxfrequency", "14500");
