@@ -376,6 +376,7 @@ int addinetworkall(struct stimerthread* self)
 					tmp_type = 1;
 				free(tmpstr); tmpstr = NULL;
 			}
+			free(cmd); cmd = NULL;
 
 			// OFF
 			if(tmp_type == 0)
@@ -388,8 +389,8 @@ int addinetworkall(struct stimerthread* self)
 					tmp_type = 2;
 				free(tmpstr); tmpstr = NULL;
 			}
+			free(cmd); cmd = NULL;
 		}
-
 
 		struct inetwork* tmpinetwork = getinetworkbydevice(tmp_device);
 		if(tmpinetwork != NULL)
@@ -402,7 +403,6 @@ int addinetworkall(struct stimerthread* self)
 		else
 			node = addinetwork(tmp_device, tmp_ipaddresse, tmp_netmask, tmp_mac, tmp_broadcast, tmp_type, node);
 
-		free(cmd); cmd = NULL;
 		free(cmddev); cmddev = NULL;
 	}
 
