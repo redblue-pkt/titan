@@ -1766,6 +1766,8 @@ void delspezchar(char* text, int flag)
 {
 	char* tmpstr = text;
 
+	if(text == NULL) return;
+
 	while(*tmpstr != '\0')
 	{
 		if(flag == 1)
