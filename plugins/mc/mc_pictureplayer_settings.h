@@ -39,8 +39,8 @@ void screenmc_pictureplayer_settings()
 	addchoicebox(view, "1", _("big"));	
 	addchoicebox(view, "2", _("cover"));
 //	addchoicebox(view, "3", _("fullcover"));		
-	addchoicebox(view, "4", _("details"));
-	addchoicebox(view, "5", _("default"));
+	addchoicebox(view, "4", _("size (default)"));
+	addchoicebox(view, "5", _("datetime"));
 
 	setchoiceboxselection(view, getconfig("mc_pp_view", NULL));
 
