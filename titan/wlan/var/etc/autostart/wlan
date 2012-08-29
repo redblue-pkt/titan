@@ -45,6 +45,8 @@ if [ ! -z $WLAN_STARTMODE ] && [ $WLAN_STARTMODE == "load" ]; then
 		insmod /var/lib/modules/$WLAN_MODULE.ko
 	elif [ -e /var/swap/modules/$WLAN_MODULE.ko ];then
 		insmod /var/swap/modules/$WLAN_MODULE.ko
+	elif [ -e /mnt/swapextensions/modules/$WLAN_MODULE.ko ];then
+		insmod /mnt/swapextensions/modules/$WLAN_MODULE.ko
 	fi
 	
 	#sleep 1
