@@ -90,12 +90,12 @@ void screenextensions(int mode, char* path)
 	char* tmpstr = NULL, *tmpinfo = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;
 	struct menulist* mlist1 = NULL, *mbox1 = NULL;
-
+	struct skin* load = getscreen("loading");
+		
 	status.hangtime = 99999;
 	
 	if(mode == 0)
 	{
-		struct skin* load = getscreen("loading");
 		drawscreen(load, 0, 0);
 
 		system("syncipkg.sh");
@@ -129,6 +129,7 @@ void screenextensions(int mode, char* path)
 
 				if(textbox(_("Ipk Install Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 				{
+					drawscreen(load, 0, 0);
 					char* log = NULL;
 					if(ipkg_install(tmpstr) == 0)
 					{
@@ -179,6 +180,7 @@ void screenextensions(int mode, char* path)
 
 			if(textbox(_("Ipk Remove Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 			{
+				drawscreen(load, 0, 0);
 				char* log = NULL;
 				if(ipkg_remove(tmpstr, 1) == 0)
 				{
@@ -244,7 +246,7 @@ void screenextensions(int mode, char* path)
 			if(textbox(_(text2), _(tmpinfo), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
 			{
 				char* log = NULL;
-
+				drawscreen(load, 0, 0);
 				if(path == NULL)
 					log = get_ipk_tmpinstall("/tmp", mbox->name);
 				else
@@ -264,7 +266,6 @@ void screenextensions(int mode, char* path)
 	}
 	else if(mode == 3)
 	{
-		struct skin* load = getscreen("loading");
 		drawscreen(load, 0, 0);
 		unlink("/tmp/ipkg.log");
 		system("syncipkg.sh");
