@@ -977,7 +977,9 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 
 		if((scantype != 3 && rcret == getrcconfigint("rcgreen", NULL)) || (scantype == 3 && scaninfo.threadend == 1 && alladded < 2))
 		{
+			struct skin* load = getscreen("loading");
 			struct skin* lnode = listbox;
+
 			long deaktivcol = convertcol("deaktivcol");
 			if(scantype == 3 && alladded == 0)
 			{
@@ -985,12 +987,15 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 				continue;
 			}
 			alladded = 2;
+
+			drawscreen(load, 0, 0);
 			while(lnode != NULL)
 			{
 				if(lnode->fontcol != deaktivcol && lnode->del == 1)
 					scanaddchannel(lnode, scantype, tpnode);
 				lnode = lnode->next;
 			}
+			clearscreen(load);
 			textbox(_("Message"), _("All new channel added!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		}
 
@@ -1012,7 +1017,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	if(scantype == 0) deltransponderbyid(99);
 	if(clear == 1)
 	{
-		if(textbox(_("Message"), _("Does you want delete all unused Bouquets?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+		if(textbox(_("Message"), _("Does you want delete all unused Bouquetentrys?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 			delunusedbouquetchannels(0);
 		else
 			delunusedbouquetchannels(1);
