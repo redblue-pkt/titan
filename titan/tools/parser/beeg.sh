@@ -6,9 +6,9 @@ rm -rf _full/beeg
 mkdir -p _full/beeg/streams
 mkdir _single
 wget http://beeg.com -O cache.beeg.main.html
-sections=`cat cache.beeg.main.html | grep '^<a href="http://beeg.com/section' | tr '"' '\n' | grep ^http:`
+sections=`cat cache.beeg.main.html | grep '^    <li><a target="_self" href="http://beeg.com/tag'  | tr '"' '\n' | grep ^http: | sort -u`
 
-cat cache.beeg.main.html | grep http://beeg.com | grep -v http://beeg.com/section | grep alt= | sed 's/<a href="/link=/' | sed 's/"><img src="/#pic=/' | sed 's/" title="/"\n/' | sed 's/" alt="/#title="/' | grep ^link= | tr ' ' '|'>> cache.beeg.list
+cat cache.beeg.main.html | grep http://beeg.com | grep -v http://beeg.com/tag | grep alt= | sed 's/<a href="/link=/' | sed 's/"><img src="/#pic=/' | sed 's/" title="/"\n/' | sed 's/" alt="/#title="/' | grep ^link= | tr ' ' '|'>> cache.beeg.list
 
 piccount=0
 count=0
@@ -16,10 +16,12 @@ for ROUND in $sections; do
 	count=`expr $count + 1`
 #	echo "sections($count)=$ROUND"
 	wget $ROUND -O cache.beeg.section."$count".html
-	cat cache.beeg.section."$count".html | grep http://beeg.com | grep -v http://beeg.com/section | grep alt= | sed 's/<a href="/link=/' | sed 's/"><img src="/#pic=/' | sed 's/" title="/"\n/' | sed 's/" alt="/#title="/' | grep ^link= | tr ' ' '|'>> cache.beeg.list
+	cat cache.beeg.section."$count".html | grep http://beeg.com | grep -v http://beeg.com/tag | grep alt= | sed 's/<a href="/link=/' | sed 's/"><img src="/#pic=/' | sed 's/" title="/"\n/' | sed 's/" alt="/#title="/' | grep ^link= | tr ' ' '|'>> cache.beeg.list
+	if [ $count = 10 ];then
+		break
+	fi
 done
 LIST=`cat cache.beeg.list`
-
 echo "# Beeg.com" > cache.beeg.playlist
 
 count=0
@@ -38,6 +40,9 @@ for ROUND in $LIST; do
 		echo $LINE >> cache.beeg.titanlist
 		echo $STREAMURL >> cache.beeg.playlist
 		echo "$STREAMURL" >> _single/Beeg.`echo "$TITLE" | tr '_' '.' | tr ' ' '.' | tr '...' '.' | tr '..' '.' | tr '..' '.' | tr '..' '.'`."$count".m3u
+		if [ $count = 10 ];then
+			break
+		fi
 	fi
 done
 
@@ -53,9 +58,12 @@ for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X
 	fi
 done
 
-SECTION=`cat cache.beeg.main.html | grep "http://beeg.com/section/" | grep -v /home/ | sed 's/ target="_self">/title=/' | sed 's/      <td><a href="/link=/' | sed 's!</a></td>!!' | tr ' ' '|' | tr '"' '#'`
+SECTION=`cat cache.beeg.main.html | grep "http://beeg.com/tag/" | sed 's/    <li><a target="_self" href="/link=/' | sed 's/">/#title=/' | sed 's/" >/#title=/' | sed 's!</a></li>!!' | tr ' ' '|'`
+echo Section $SECTION
+
 for ROUND in $SECTION; do
 	echo Section $ROUND
+
 	URL=`echo $ROUND | tr '#' '\n' | grep ^link= | sed 's/link=//' | tr '|' ' '`
 	TITLE=`echo $ROUND | tr '#' '\n' | grep ^title= | sed 's/title=//' | tr '|' '-' | tr -d '"'`	
 	echo "$TITLE""#http://atemio.dyndns.tv/mediathek/beeg/streams/beeg."`echo "$TITLE" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$TITLE" | tr 'A-Z' 'a-z'`.jpg#`echo "$TITLE" | tr 'A-Z' 'a-z'`.jpg"#Beeg#1 >> _full/beeg/beeg.category.list
@@ -66,13 +74,13 @@ for ROUND in $SECTION; do
 
 	sections=`cat $file | grep '^<a href="http://beeg.com/section' | tr '"' '\n' | grep ^http:`
 
-	cat cache.beeg.section.`echo "$TITLE" | tr 'A-Z' 'a-z'`.html | grep http://beeg.com | grep -v http://beeg.com/section | grep alt= | sed 's/<a href="/link=/' | sed 's/"><img src="/#pic=/' | sed 's/" title="/"\n/' | sed 's/" alt="/#title="/' | grep ^link= | tr ' ' '|'> cache.beeg.section.list
+	cat cache.beeg.section.`echo "$TITLE" | tr 'A-Z' 'a-z'`.html | grep http://beeg.com | grep -v http://beeg.com/tag | grep alt= | sed 's/<a href="/link=/' | sed 's/"><img src="/#pic=/' | sed 's/" title="/"\n/' | sed 's/" alt="/#title="/' | grep ^link= | tr ' ' '|'> cache.beeg.section.list
 
 	count=0
 	for ROUND in $sections; do
 		count=`expr $count + 1`
 		wget $ROUND -O cache.beeg.section.`echo "$TITLE" | tr 'A-Z' 'a-z'`."$count".html
-		cat cache.beeg.section.`echo "$TITLE" | tr 'A-Z' 'a-z'`."$count".html | grep http://beeg.com | grep -v http://beeg.com/section | grep alt= | sed 's/<a href="/link=/' | sed 's/"><img src="/#pic=/' | sed 's/" title="/"\n/' | sed 's/" alt="/#title="/' | grep ^link= | tr ' ' '|'>> cache.beeg.section.list
+		cat cache.beeg.section.`echo "$TITLE" | tr 'A-Z' 'a-z'`."$count".html | grep http://beeg.com | grep -v http://beeg.com/tag | grep alt= | sed 's/<a href="/link=/' | sed 's/"><img src="/#pic=/' | sed 's/" title="/"\n/' | sed 's/" alt="/#title="/' | grep ^link= | tr ' ' '|'>> cache.beeg.section.list
 	done
 	
 	LIST=`cat cache.beeg.section.list`
