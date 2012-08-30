@@ -31,11 +31,25 @@ svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan
 svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/skins/tithek/menu "$HOME"/flashimg/BUILD/mediathek/menu
 rm -rf `find "$HOME"/flashimg/BUILD/mediathek -type d -name "*.svn"`
 mv "$HOME"/flashimg/BUILD/mediathek/* /var/www/atemio/web/mediathek
-
 cd "$HOME"/flashimg/BUILD/mediathek
-ls -1 "$HOME"/flashimg/source.titan/titan/tools/parser/*.sh | sort -r > tmp.txt
+
+lasttimestamp=`cat /var/www/atemio/web/mediathek/lasttimestamp`
+lasttimestamp=`expr $lasttimestamp + 84500`
+today=`date +%s`
+
+if [ $today -gt $lasttimestamp ];then
+	ls -1 "$HOME"/flashimg/source.titan/titan/tools/parser/*.sh | sort -r > tmp.txt
+else
+	ls -1 "$HOME"/flashimg/source.titan/titan/tools/parser/*.sh | grep -v beeg.sh | sort -r > tmp.txt
+fi
+
+
 LINE=`cat tmp.txt`
 for TYPE in $LINE; do
+	if [ $TYPE == beeg.sh ];then
+		echo `date +%s` >/var/www/atemio/web/mediathek/lasttimestamp
+	fi
+
 	$TYPE
 	echo "[make-parser] make $TYPE"
 	STARTTIME=`date +"%Y.%m.%d_%H.%M.%S"`
