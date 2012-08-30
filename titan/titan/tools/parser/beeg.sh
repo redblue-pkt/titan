@@ -72,7 +72,8 @@ for ROUND in $SECTION; do
 	wget $URL -O cache.beeg.section.`echo "$TITLE" | tr 'A-Z' 'a-z'`.html
 	file=cache.beeg.section.`echo "$TITLE" | tr 'A-Z' 'a-z'`.html
 
-	sections=`cat $file | grep '^<a href="http://beeg.com/section' | tr '"' '\n' | grep ^http:`
+#	sections=`cat $file | grep '^<a href="http://beeg.com/section' | tr '"' '\n' | grep ^http:`
+	sections=`cat $file | grep '^    <li><a target="_self" href="http://beeg.com/tag'  | tr '"' '\n' | grep ^http: | sort -u`
 
 	cat cache.beeg.section.`echo "$TITLE" | tr 'A-Z' 'a-z'`.html | grep http://beeg.com | grep -v http://beeg.com/tag | grep alt= | sed 's/<a href="/link=/' | sed 's/"><img src="/#pic=/' | sed 's/" title="/"\n/' | sed 's/" alt="/#title="/' | grep ^link= | tr ' ' '|'> cache.beeg.section.list
 
