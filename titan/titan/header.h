@@ -542,6 +542,7 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+int checkdirext(char* dir, char* ext);
 char* string_replace_all(char *search, char *replace, char *string, int free1);
 struct tm* olocaltime(time_t *value);
 void setskinnodeslocked(int flag);

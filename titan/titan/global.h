@@ -1016,13 +1016,13 @@ void autochangechannelname()
 //check if emu ist installed, if not it hiddes the menu
 int checkemu()
 {
-	char* tmpstr = NULL;
+	int ret = 0;
 
-	tmpstr = command("emu.sh list");
-	if(tmpstr != NULL)
-		return 1;
+	ret = checkdirext("/var/etc", ".emu");
+	if(ret == 0)
+		ret = checkdirext("/var/swap/etc", ".emu");
 
-	return 0;
+	return ret;
 }
 
 int checkpluginskip(char* name)
@@ -2639,6 +2639,32 @@ int rcnumber(int rcret)
 		return rcret;
 	else
 		return -9999;
+}
+
+int checkdirext(char* dir, char* ext)
+{
+	struct dirent *dirent = NULL;
+	DIR *pdir = NULL;
+
+	pdir = opendir(dir);
+	if(pdir != NULL)
+	{
+		while((dirent = readdir(pdir)) != NULL)
+		{
+			if(ostrcmp(".", dirent->d_name) != 0 && ostrcmp("..", dirent->d_name) != 0)
+			{
+				if(ostrstr(dirent->d_name, ext) != NULL)
+				{
+					closedir(pdir);
+					return 1;
+				}
+			}
+		}
+
+		closedir(pdir);
+	}
+
+	return 0;
 }
 
 int delallfiles(char* dir, char* ext)

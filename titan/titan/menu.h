@@ -44,7 +44,7 @@ struct skin* menu(struct skin* menu, int flag)
 		// Hide SoftCam Panel when no Emu's installed
 		if(ostrcmp(child->name, "softcam") == 0)
 		{
-			if((checkemu() == 0) || (status.security == 0))
+			if(status.security == 0 || checkemu() == 0)
 				child->hidden = YES;
 			else
 				child->hidden = NO;
