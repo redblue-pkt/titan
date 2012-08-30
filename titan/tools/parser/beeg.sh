@@ -17,9 +17,9 @@ for ROUND in $sections; do
 #	echo "sections($count)=$ROUND"
 	wget $ROUND -O cache.beeg.section."$count".html
 	cat cache.beeg.section."$count".html | grep http://beeg.com | grep -v http://beeg.com/tag | grep alt= | sed 's/<a href="/link=/' | sed 's/"><img src="/#pic=/' | sed 's/" title="/"\n/' | sed 's/" alt="/#title="/' | grep ^link= | tr ' ' '|'>> cache.beeg.list
-	if [ $count = 10 ];then
-		break
-	fi
+#	if [ $count = 10 ];then
+#		break
+#	fi
 done
 LIST=`cat cache.beeg.list`
 echo "# Beeg.com" > cache.beeg.playlist
@@ -40,9 +40,9 @@ for ROUND in $LIST; do
 		echo $LINE >> cache.beeg.titanlist
 		echo $STREAMURL >> cache.beeg.playlist
 		echo "$STREAMURL" >> _single/Beeg.`echo "$TITLE" | tr '_' '.' | tr ' ' '.' | tr '...' '.' | tr '..' '.' | tr '..' '.' | tr '..' '.'`."$count".m3u
-		if [ $count = 10 ];then
-			break
-		fi
+#		if [ $count = 10 ];then
+#			break
+#		fi
 	fi
 done
 
