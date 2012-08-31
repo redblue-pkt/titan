@@ -64,7 +64,7 @@ int mc_menucall(struct skin* menuentry)
 		drawscreen(skin, 0, 0);
 		servicestop(status.aktservice, 1, 1);	
 		screenmc_mediathek(NULL);
-		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgRadio.mvi", 0);
+		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgVideo.mvi", 0);
 	}
 	else if(ostrcmp("mc_radio", menuentry->name) == 0)
 	{
@@ -201,7 +201,7 @@ void mc_main()
 			}
 			else if(ostrcmp(listbox->select->name, "mc_mediathek") == 0)
 			{
-				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgRadio.mvi", 0);
+				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgVideo.mvi", 0);
 			}
 			else if(ostrcmp(listbox->select->name, "mc_radio") == 0)
 			{
