@@ -1,7 +1,7 @@
-#ifndef MC_WETTERINFO_H
-#define MC_WETTERINFO_H
+#ifndef MC_MEDIATHEK_H
+#define MC_MEDIATHEK_H
 
-void screenmc_wetterinfo()
+void screenmc_mediathek()
 {
 	if(status.security == 1)
 	{
@@ -15,7 +15,7 @@ void screenmc_wetterinfo()
 		{
 			if(child->del == PLUGINDELMARK)
 			{
-				if(ostrcmp(child->name, "Weather") == 0)
+				if(ostrcmp(child->name, "TiTan Mediathek") == 0)
 					treffer = 1;
 			}
 			child = child->next;
@@ -23,7 +23,7 @@ void screenmc_wetterinfo()
 
 		if(treffer == 1)
 		{
-//			if(textbox(_("Message"), _("start Weather now ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1){	
+//			if(textbox(_("Message"), _("start Tithek now ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1){	
 				char* tmpstr = NULL;
 				int rcret = 0;
 	
@@ -33,7 +33,7 @@ void screenmc_wetterinfo()
 //				if(rcret == 1) return;
 	
 //				screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.list", "Tithek - Mainmenu", 1)
-				pluginnode = getplugin("Weather");
+				pluginnode = getplugin("TiTan Mediathek");
 			
 				if(pluginnode != NULL)
 				{
