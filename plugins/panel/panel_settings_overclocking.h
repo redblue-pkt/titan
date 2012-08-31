@@ -119,7 +119,7 @@ void set_freq(char* inifreq, char* oldfreq, char* newfreq)
 
 void set_fdma(char* inifdma, char* oldfdma, char* newfdma)
 {
-	if(checkbox("UFS912") || checkbox("AT7500") || checkbox("SPARK") || checkbox("ATEMIO510"))
+	if(checkbox("UFS912") || checkbox("AT7500") || checkbox("SPARK") || checkbox("ATEMIO510") || checkbox("ATEMIO7600"))
 		return;
 
 	if(isfile("/proc/cpu_frequ/pll1_fdma_bypass") == 0)
@@ -191,7 +191,7 @@ void screenpanel_settings_overclocking()
 
 	addscreenrc(panel_overclock, listbox);
 
-	if(checkbox("UFS912") || checkbox("AT7500") || checkbox("SPARK") || checkbox("ATEMIO510"))
+	if(checkbox("UFS912") || checkbox("AT7500") || checkbox("SPARK") || checkbox("ATEMIO510") || checkbox("ATEMIO7600"))
 	{
 		FreqSelvalue = "3841\n12803\n5121\n16643\n17923";
 		FreqSeltext = "450 (default)\n500\n600\n650\n700";
@@ -224,7 +224,7 @@ void screenpanel_settings_overclocking()
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
 
-	if(checkbox("UFS912") == 0 && checkbox("AT7500") == 0 && checkbox("SPARK") == 0 && checkbox("ATEMIO510") == 0)
+	if(checkbox("UFS912") == 0 && checkbox("AT7500") == 0 && checkbox("SPARK") == 0 && checkbox("ATEMIO510") == 0 && checkbox("ATEMIO7600") == 0)
 	{
 		node = addlistbox(panel_overclock, listbox, node, 1);
 		if(node != NULL)
@@ -266,7 +266,7 @@ void screenpanel_settings_overclocking()
 		}
 	}
 
-	if(checkbox("UFS912") == 0 && checkbox("AT7500") == 0 && checkbox("SPARK") == 0 && checkbox("ATEMIO510") == 0)
+	if(checkbox("UFS912") == 0 && checkbox("AT7500") == 0 && checkbox("SPARK") == 0 && checkbox("ATEMIO510") == 0 && checkbox("ATEMIO7600") == 0)
 	{
 		node = addlistbox(panel_overclock, listbox, node, 1);
 		if(node != NULL)
