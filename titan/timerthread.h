@@ -210,6 +210,11 @@ void* timerthreadfunc(void *param)
 	debug(1000, "in");
 	int ret = 0;
 	struct stimerthread* node = stimerthread;
+	struct sched_param schedparam;
+
+	//set timer threads scheduler priority
+	schedparam.sched_priority = 0;
+	pthread_setschedparam(pthread_self(), SCHED_OTHER, &schedparam);
 
 	status.timerthreadstatus = ACTIVE;
 	while(status.timerthreadaktion != STOP)
