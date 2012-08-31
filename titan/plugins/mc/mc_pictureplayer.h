@@ -360,7 +360,7 @@ void screenmc_pictureplayer()
 				debug(50, "filelist->select->text: %s", filelist->select->text);
 				filename = createpath(filelistpath->text, filelist->select->text);
 
-				if(!strncmp(".rar",filename+strlen(filename)-4,4) || !strncmp(".iso",filename+strlen(filename)-4,4) || !strncmp(".img",filename+strlen(filename)-4,4))
+				if(cmpfilenameext(filename, ".rar") == 0 || cmpfilenameext(filename, ".iso") == 0 || cmpfilenameext(filename, ".img") == 0)
 				{
 					debug(50, "mc_mounter_main filename: %s", filename);
 					//addconfig("mc_pp_path", filelistpath->text);
@@ -373,7 +373,7 @@ void screenmc_pictureplayer()
 					singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 					continue;
 				}
-				else if(!strncmp(".m3u",filename+strlen(filename)-4,4) || !strncmp(".pls",filename+strlen(filename)-4,4)) 
+				else if(cmpfilenameext(filename, ".m3u") == 0 || cmpfilenameext(filename, ".pls") == 0)
 				{
 					showplaylist(apskin, filelistpath, filelist, listbox, b2, 1, &playlist, &eof, &filename, &currentdirectory, &playertype, flag);
 					continue;
