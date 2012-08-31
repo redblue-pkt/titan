@@ -2498,3 +2498,6 @@ msgstr "Datum Uhrzeit"
 
 msgid "Transponder changed"
 msgstr "Transponder wurde geändert"
+
+msgid "Start at last position ?"
+msgstr "An letzter Stelle beginnen ?"
