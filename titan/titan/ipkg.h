@@ -397,6 +397,8 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 		}
 		
 		err = screendownload("Download", ip, path, 80, (char*)filename, HTTPAUTH, 0);
+		struct skin* load = getscreen("loading");
+		drawscreen(load, 0, 0);
 	}
 
 	free(tmpip); tmpip = NULL;
