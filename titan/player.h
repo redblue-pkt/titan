@@ -354,7 +354,6 @@ void playerfrts(int speed, int flag)
 	
 	if(status.playfdirection == 0)
 	{
-		m_lock(&status.tsseekmutex, 15);
 		if(speed != 0)
 		{ 
 			struct service* snode = NULL;
@@ -366,16 +365,10 @@ void playerfrts(int speed, int flag)
 
 			if(snode != NULL)
 			{
-				lseek64(snode->recsrcfd, -(26600 * snode->tssize), SEEK_CUR);
-				videoclearbuffer(status.aktservice->videodev);
-				videofreeze(status.aktservice->videodev);
-				videoclearbuffer(status.aktservice->videodev);
-				videocontinue(status.aktservice->videodev);
-				status.playfdirection = -1;
+				playerseekts(snode, -30, flag);
 			}
 		}
 	}
-	m_unlock(&status.tsseekmutex, 15);
 }
 	
 

@@ -358,30 +358,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 		if(servicenode->type == RECORDPLAY)
 		{
 			pthread_mutex_lock(&status.tsseekmutex);
-			if(status.playfdirection > -1)
-			{
-				framelen = 0;
-				readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
-			}
-			else
-			{
-				if(framelen <= 0)
-				{
-					framelen = findandposrew(servicenode->recsrcfd, servicenode->tssize, ((int)pow(2, status.playspeed * -1)) / 2);
-					videoclearbuffer(status.aktservice->videodev);
-					videofreeze(status.aktservice->videodev);
-					videoclearbuffer(status.aktservice->videodev);
-					videocontinue(status.aktservice->videodev);
-				}
-				if(framelen > 0)
-				{
-					if(framelen >= recbsize)
-						readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
-					else
-						readret = dvbreadfd(servicenode->recsrcfd, buf, 0, framelen, readtimeout, 1);
-					framelen = framelen - recbsize;
-				}
-			}
+			readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
 			pthread_mutex_unlock(&status.tsseekmutex);
 		}
 		else
