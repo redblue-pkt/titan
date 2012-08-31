@@ -18,6 +18,7 @@ extern struct fb* fb;
 #include "mc_vlcplayer.h"
 #include "mc_dateibrowser.h"
 #include "mc_internetbrowser.h"
+#include "mc_mediathek.h"
 #include "mc_radio.h"
 #include "mc_webradio.h"
 #include "mc_wetterinfo.h"

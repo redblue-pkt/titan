@@ -4,6 +4,7 @@
 <node valign=middle textposx=40 name=mc_audioplayer text="Audio Player" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 <node valign=middle textposx=40 name=mc_videoplayer text="Video Player" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 <node valign=middle textposx=40 name=mc_pictureplayer text="Picture Player" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
+<node valign=middle textposx=40 name=mc_mediathek text="Mediathek" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 #<node valign=middle textposx=40 name=mc_appletrailer text="Apple Trailer" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 #<node valign=middle textposx=40 name=mc_myvideo text="My Video" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 #<node valign=middle textposx=40 name=mc_vlcplayer text="VLC Player" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
@@ -11,7 +12,7 @@
 <node valign=middle textposx=40 name=mc_internetbrowser text="Internet Browser" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 #<node valign=middle textposx=40 name=mc_radio text="Radio Player" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 #<node valign=middle textposx=40 name=mc_webradio text="Web Radio Player" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
-#<node valign=middle textposx=40 name=mc_wetterinfo text="Weather Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
+<node valign=middle textposx=40 name=mc_wetterinfo text="Weather Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 #<node valign=middle textposx=40 name=mc_settings text="Settings" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=middle posx=75% posy=2% width=280 height=30/>
 </screen>

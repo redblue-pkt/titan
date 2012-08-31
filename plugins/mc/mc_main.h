@@ -59,6 +59,13 @@ int mc_menucall(struct skin* menuentry)
 		screenmc_internetbrowser(NULL);
 		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgBrowser.mvi", 0);
 	}
+	else if(ostrcmp("mc_mediathek", menuentry->name) == 0)
+	{
+		drawscreen(skin, 0, 0);
+		servicestop(status.aktservice, 1, 1);	
+		screenmc_mediathek(NULL);
+		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgVideo.mvi", 0);
+	}
 	else if(ostrcmp("mc_radio", menuentry->name) == 0)
 	{
 		textbox(_("Message"), _("comming soon"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);	
@@ -71,8 +78,10 @@ int mc_menucall(struct skin* menuentry)
 	}
 	else if(ostrcmp("mc_wetterinfo", menuentry->name) == 0)
 	{
-		textbox(_("Message"), _("comming soon"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-		screenmc_wetterinfo();
+		drawscreen(skin, 0, 0);
+		servicestop(status.aktservice, 1, 1);	
+		screenmc_wetterinfo(NULL);
+		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgWeather.mvi", 0);
 	}
 	else if(ostrcmp("mc_settings", menuentry->name) == 0)
 	{
@@ -189,6 +198,10 @@ void mc_main()
 			else if(ostrcmp(listbox->select->name, "mc_internetbrowser") == 0)
 			{
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgBrowser.mvi", 0);
+			}
+			else if(ostrcmp(listbox->select->name, "mc_mediathek") == 0)
+			{
+				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgVideo.mvi", 0);
 			}
 			else if(ostrcmp(listbox->select->name, "mc_radio") == 0)
 			{
