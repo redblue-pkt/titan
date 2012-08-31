@@ -213,7 +213,7 @@ void screenplaytracklist(int mode, int playertype, int flag)
 
 void playrcyellow(char* file, int playinfobarstatus, int playertype, int flag)
 {
-	if(checkbit(status.playercan, 1) == 0) return;
+//	if(checkbit(status.playercan, 1) == 0) return;
 
 	screenplaytracklist(1, playertype, flag);
 	if(playinfobarstatus > 0)
@@ -222,7 +222,7 @@ void playrcyellow(char* file, int playinfobarstatus, int playertype, int flag)
 
 void playrctext(char* file, int playinfobarstatus, int playertype, int flag)
 {
-	if(checkbit(status.playercan, 2) == 0) return;
+//	if(checkbit(status.playercan, 2) == 0) return;
 
 	screenplaytracklist(2, playertype, flag);
 	if(playinfobarstatus > 0)
@@ -231,7 +231,7 @@ void playrctext(char* file, int playinfobarstatus, int playertype, int flag)
 
 void playrcgreen(char* file, int playinfobarstatus, int playertype, int flag)
 {
-	if(checkbit(status.playercan, 3) == 0) return;
+//	if(checkbit(status.playercan, 3) == 0) return;
 
 	screenplayinfobar(file, 1, playertype, flag);
 	if(playertype == 2)
@@ -256,7 +256,7 @@ void playrcblue(char* file, int playinfobarstatus, int playertype, int flag)
 
 void playrcok(char* file, int playinfobarstatus, int playertype, int flag)
 {
-	if(checkbit(status.playercan, 0) == 0) return;
+//	if(checkbit(status.playercan, 0) == 0) return;
 
 	free(status.playfile); status.playfile = NULL;
 	status.playfile = ostrcat(file, NULL, 0, 0);
@@ -269,7 +269,7 @@ void playrcok(char* file, int playinfobarstatus, int playertype, int flag)
 
 void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 {
-	if(checkbit(status.playercan, 5) == 0) return;
+//	if(checkbit(status.playercan, 5) == 0) return;
 
 	screenplayinfobar(file, 1, playertype, flag);
 	screenvideosettings();
@@ -815,7 +815,7 @@ playerstart:
 				if(rcret == getrcconfigint("rcinfo", NULL))
 					playrcinfo(file, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
-				if(rcret == getrcconfigint("rcstop", NULL))
+				if(rcret == getrcconfigint("rcstop", NULL) || rcret == getrcconfigint("rcexit", NULL))
 				{
 					playrcstop(playertype, flag);
 					if(startfile == NULL)
@@ -865,6 +865,13 @@ playerstart:
 				
 				if(rcret == getrcconfigint("rc9", NULL))
 					playrcjumpf(file, skip79, &playinfobarstatus, &playinfobarcount, playertype, flag);
+
+				if(rcret == getrcconfigint("rcdown", NULL))
+					playrcjumpr(file, 300, &playinfobarstatus, &playinfobarcount, playertype, flag);
+
+				if(rcret == getrcconfigint("rcup", NULL))
+					playrcjumpf(file, 300, &playinfobarstatus, &playinfobarcount, playertype, flag);
+
 			}
 			//don't change this sleep, without this
 			//the player stops to fast, and a last seek can
