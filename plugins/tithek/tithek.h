@@ -508,7 +508,14 @@ void screentithekplay(char* titheklink, char* title, int first)
 					if(status.security == 1)
 					{
 						if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-							screenplay((((struct tithek*)listbox->select->handle)->link), 2, 0);				
+						{
+							if(ostrcmp(title, "TiThek - Internet Radio") == 0)
+							{
+								screenplay((((struct tithek*)listbox->select->handle)->link), 2, 4);
+							}
+							else
+								screenplay((((struct tithek*)listbox->select->handle)->link), 2, 0);
+						}			
 					}
 					else
 						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
