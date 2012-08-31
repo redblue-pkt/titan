@@ -91,6 +91,7 @@ void setdefaults()
 	status.filelistselectcol = convertcol("filelistselect");
 	status.selectpic = getskinconfig("selectpic", NULL);
 	status.volautochangevalue = getconfigint("volautochangevalue", NULL);
+	status.channellistview = getconfigint("channellistview", NULL);
 
 	if(status.filelistselectcol == 0) status.filelistselectcol = status.listboxselectcol;
 	
