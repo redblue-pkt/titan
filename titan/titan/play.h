@@ -1,6 +1,8 @@
 #ifndef PLAY_H
 #define PLAY_H
 
+extern struct screensaver* screensaver;
+
 void screenplaypolicy()
 {
 	if(checkbit(status.playercan, 0) == 0) return;
@@ -647,10 +649,11 @@ void playstartservice()
 // flag 1 = playing/infobar
 // flag 2 = playing
 // flag 3 = not stop/start live service
+// flag 4 = playing with screensaver
 // startfolder 2 = do nothing with playstop/playstart
 int screenplay(char* startfile, int startfolder, int flag)
 {
-	int rcret = 0, playertype = 0, ret = 0;
+	int rcret = 0, playertype = 0, ret = 0, rcwait = 1000, screensaver_delay = 0;
 	char* file = NULL, *tmpstr = NULL;
 	char* tmppolicy = NULL, *startdir = NULL;
 	char* formats = NULL;
@@ -749,6 +752,12 @@ playerstart:
 #endif
 		screenplayinfobar(file, 0, playertype, flag);
 
+		if(flag == 4 && getconfigint("screensaver", NULL) == 1)
+		{
+			screensaver_delay = getconfigint("screensaver_delay", NULL);
+			initscreensaver();
+		}								
+		
 		//change codec if ac3default and video has ac3
 		//deaktivate, freeze player, makes a seek -5
 		//see eplayer container_ffmpeg_switch_audio
@@ -758,11 +767,12 @@ playerstart:
 		free(status.playfile); status.playfile = NULL;
 		status.playfile = ostrcat(file, NULL, 0, 0);
 		status.play = 1;
+		int count = 0;
 		while(1)
 		{
 			while((playertype == 0 && playerisplaying()) || (playertype == 1 && playerisplayingts()))
 			{
-				rcret = waitrc(playinfobar, 1000, 0);
+				rcret = waitrc(playinfobar, rcwait, 0);
 				playinfobarcount++;
 				if(playinfobarstatus > 0)
 					screenplayinfobar(file, 0, playertype, flag);
@@ -771,7 +781,19 @@ playerstart:
 					playinfobarstatus = 0;
 					screenplayinfobar(NULL, 1, playertype, flag);
 				}
-
+				
+				if(flag == 4)
+				{
+					if(status.play == 1 && screensaver != NULL)
+						count++;
+	
+					if(count > screensaver_delay && screensaver != NULL)
+					{
+						showscreensaver();
+						rcwait = screensaver->speed;
+					}
+				}
+		
 				if(rcret == getrcconfigint("rcyellow", NULL))
 					playrcyellow(file, playinfobarstatus, playertype, flag);
 				
@@ -876,6 +898,9 @@ playerend:
 		free(tmppolicy);
 	}
 	
+	if(flag == 4)
+		deinitscreensaver();
+
 	free(status.webplayfile); status.webplayfile = NULL; 
 	free(status.playfile); status.playfile = NULL; 
 	status.playspeed = 0;
