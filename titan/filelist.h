@@ -284,6 +284,10 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 			tmpstr = createpath(node->input, filelist[i]->d_name);
 			if(isdir(tmpstr) == 1)
 				filelist[i]->d_type = DT_DIR;
+
+			//for nfs mounts if file type is unknown use stat
+			if(filelist[i]->d_type == DT_UNKNOWN)
+				filelist[i]->d_type = getfiletype(tmpstr);
 	
 			free(tmpstr); tmpstr = NULL;
 		}
