@@ -486,7 +486,6 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 								if(tmpstr == NULL)
 								{
 									addqueue(101, (void*)node->input, strlen(node->input) + 1, (void*)filelist[i]->d_name, strlen(filelist[i]->d_name) + 1, 0, NULL);
-									tmpstr = ostrcat(tmpstr, "skin/ext_grid_dummy.png", 1, 0);
 									child->picheight = 180;
 									child->picwidth = 180;
 								}
@@ -496,6 +495,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 									child->picheight = 1;
 								}
 							}
+							if(tmpstr == NULL) tmpstr = ostrcat(tmpstr, "skin/ext_grid_dummy.png", 1, 0);
 						}
 						else if(cmpfilenameext(filelist[i]->d_name, ".iso") == 0)
 							tmpstr = ostrcat(tmpstr, "skin/ext_grid_iso.png", 1, 0);
