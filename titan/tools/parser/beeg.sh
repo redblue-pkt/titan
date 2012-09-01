@@ -108,7 +108,26 @@ ncount=`expr $ncount + 1`
 	done
 done
 
-cat _full/beeg/beeg.category.list | sort -u > _full/beeg/beeg.category.sorted.list
+category_file=`cat _full/beeg/beeg.category.list | cut -d "#" -f2 | sed 's!http://atemio.dyndns.tv/mediathek/beeg/streams/!!'`
+category_files=`ls -1 _full/beeg/streams`
+count=0
+for ROUND1 in $category_file; do
+	for ROUND2 in $category_files; do
+#		echo "list ($count) $ROUND1 $ROUND2"
+		if [ "$ROUND1" == "$ROUND2" ]; then
+			LINE=`cat _full/beeg/beeg.category.list | grep "$ROUND1"`
+			if [ ! -z "$LINE" ];then
+				count=`expr $count + 1`
+				echo "$LINE" >> _full/beeg/beeg.category.list.filter
+				echo "add ($count) $ROUND1 $ROUND2"
+			fi
+		fi
+	done
+done
+echo "beeg.category.list `cat _full/beeg/beeg.category.list | wc -l`"
+echo "beeg.category.list.filter `cat _full/beeg/beeg.category.list.filter | wc -l`"
+cat _full/beeg/beeg.category.list.filter | sort -u > _full/beeg/beeg.category.sorted.list
+mv -f _full/beeg/beeg.category.list _full/beeg/beeg.category.list.searchlist
 mv -f _full/beeg/beeg.category.sorted.list _full/beeg/beeg.category.list
 
 date
