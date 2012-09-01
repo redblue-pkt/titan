@@ -396,7 +396,7 @@ int main(int argc, char *argv[])
 	unsigned char *mmapfb = NULL;
 	struct sigaction sa;
 	struct stimerthread *tmpthread = NULL;
-	struct sched_param schedparam;
+	//struct sched_param schedparam;
 
 #ifdef SIMULATE
 	// for mem leak debug
@@ -435,8 +435,8 @@ int main(int argc, char *argv[])
 	//chdir("/tmp");
 
 	//set main scheduler priority
-	schedparam.sched_priority = 10;
-	pthread_setschedparam(pthread_self(), SCHED_RR, &schedparam);
+	//schedparam.sched_priority = 10;
+	//pthread_setschedparam(pthread_self(), SCHED_RR, &schedparam);
 
 	readconfig(getconfig("ownconfig", NULL), ownconfig);
 	readconfig(getconfig("rcconfig", NULL), rcconfig);
