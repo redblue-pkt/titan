@@ -124,12 +124,23 @@ for ROUND1 in $category_file; do
 		fi
 	done
 done
-echo "beeg.category.list `cat _full/beeg/beeg.category.list | wc -l`"
-echo "beeg.category.list.filter `cat _full/beeg/beeg.category.list.filter | wc -l`"
-cat _full/beeg/beeg.category.list.filter | sort -u > _full/beeg/beeg.category.sorted.list
-mv -f _full/beeg/beeg.category.list _full/beeg/beeg.category.list.searchlist
-mv -f _full/beeg/beeg.category.sorted.list _full/beeg/beeg.category.list
 
+in=`cat _full/beeg/category.list | wc -l`
+out=`cat _full/beeg/beeg.category.list.filter | wc -l`
+
+echo "category.list             $in"
+echo "beeg.category.list.filter $out"
+	
+if [ "$in" -gt "$out" ];then
+	cat _full/beeg/beeg.category.list.filter | sort -um > _full/beeg/beeg.category.sorted.list
+	mv -f _full/beeg/beeg.category.list _full/beeg/beeg.category.list.searchlist
+	mv -f _full/beeg/beeg.category.sorted.list _full/beeg/beeg.category.list
+	echo ---------------------- change ----------------------------- beeg.category.list
+else
+	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! not change !!!!!!!!!!!!!!!!!!!!"
+fi
+	
+	
 date
 rm cache.beeg.*
 rm Beeg.*.m3u
