@@ -388,7 +388,9 @@ void screenmc_audioplayer()
 					addconfig("mc_ap_path", filelistpath->text);
 			
 				debug(50, "filelist->select->text: %s", filelist->select->text);
-				filename = createpath(filelistpath->text, filelist->select->text);
+				filename = createpath(filelistpath->text, filelist->select->name);
+				printf("name: %s\n",filelist->select->name);
+				printf("text: %s\n",filelist->select->text);
 
 				if(!strncmp(".rar",filename+strlen(filename)-4,4) || !strncmp(".iso",filename+strlen(filename)-4,4) || !strncmp(".img",filename+strlen(filename)-4,4))
 				{
