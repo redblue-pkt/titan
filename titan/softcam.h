@@ -19,7 +19,7 @@ int checkrunningcam(char* emu)
 	cmd = ostrcat("emu.sh check \"" , cmd, 0, 1);
 	check = command(cmd);
 	free(cmd);
-	if(strstr(check, "checkemu running") != 0) running = 1;
+	if(ostrstr(check, "checkemu running") != 0) running = 1;
 	free(check);
 	return running;
 }
@@ -151,7 +151,7 @@ void fillmenubox()
 					node->height = 22;
 	
 					// change font color, depending emu is running/active
-					if(strstr(node->text, "active") != 0)
+					if(ostrstr(node->text, "active") != 0)
 					{
 						node->fontcol = convertcol("emuaktivecol");
 						if(setselection == 0)
@@ -160,7 +160,7 @@ void fillmenubox()
 							setselection = 1;
 						}
 					}
-					else if(strstr(node->text, "started") != 0)
+					else if(ostrstr(node->text, "started") != 0)
 					{
 						node->fontcol = convertcol("emurunningcol");
 						if(setselection == 0 || setselection == 1)
@@ -291,14 +291,14 @@ void screensoftcam()
 		tmp = listbox->select;
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcred", NULL))
+		if(tmp != NULL && rcret == getrcconfigint("rcred", NULL))
 		{
 			// deactivate emu
 			drawscreen(loading, 0, 0);
 			deactivate(tmp->name);
 			drawscreen(softcam, 0, 0);
 		}
-		if(rcret == getrcconfigint("rcgreen", NULL))
+		if(tmp != NULL && rcret == getrcconfigint("rcgreen", NULL))
 		{
 			// restart emu
 			drawscreen(loading, 0, 0);
@@ -314,14 +314,14 @@ void screensoftcam()
 			fillmenubox();
 			drawscreen(softcam, 0, 0);
 		}
-		if(rcret == getrcconfigint("rcblue", NULL))
+		if(tmp != NULL && rcret == getrcconfigint("rcblue", NULL))
 		{
 			// activate emu
 			drawscreen(loading, 0, 0);
 			activate(tmp->name);
 			drawscreen(softcam, 0, 0);
 		}
-		if(rcret == getrcconfigint("rcok", NULL))
+		if(tmp != NULL && rcret == getrcconfigint("rcok", NULL))
 		{
 			// start/stop emu, depending if emu already runs
 			drawscreen(loading, 0, 0);
