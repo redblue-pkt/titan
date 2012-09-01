@@ -1666,7 +1666,7 @@ void mediadbfindfilecb(char* path, char* file, int type)
 
 int findfiles(char* dirname, int type, int onlydir, int onlycount, int first)
 {
-	debug(777, "dir=%s type=%d onlydir=%d, onlycount=%d\n", dirname, type, onlydir, onlycount);
+	debug(777, "dir=%s type=%d onlydir=%d, onlycount=%d", dirname, type, onlydir, onlycount);
 	DIR *d;
 	char* tmpstr = NULL;
 
