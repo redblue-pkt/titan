@@ -398,6 +398,7 @@ void checkrectimer(struct stimerthread* self)
 	{
 		self->delay = 10000;
 		readrectimer(getconfig("rectimerfile", NULL));
+		checkboxstart();
 	}
 
 	m_lock(&status.rectimermutex, 1);

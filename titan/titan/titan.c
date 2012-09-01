@@ -816,8 +816,6 @@ firstwizzardstep1:
 	//start ca slot watching threads
 	castart();
 #endif
-	//check if box starts from a record
-	addtimer(&checkboxstartthread, START, 1000, 1, NULL, NULL, NULL);
 	//check kill net (security)
 	addtimer(&ckeckkillnetthread, START, 1000, 1, NULL, NULL, NULL);
 
