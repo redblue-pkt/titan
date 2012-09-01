@@ -2015,11 +2015,18 @@ void checkboxstart()
 		{
 			time_t akttime = time(NULL);
 			time_t begin = node->begin - getconfigint("wakeuptimerdevdiff", NULL);
+printf("akttime = %ld\n", akttime);
+printf("node->begin = %ld\n", node->begin);
+printf("begin = %ld\n", begin);
+printf("akttime - timediff = %ld\n", akttime - timediff);
+printf("akttime + timediff = %ld\n", akttime + timediff);
 			if(begin > akttime - timediff && begin < akttime + timediff)
 			{
+printf("treffer\n");
 				debug(400, "found rectimer who has start the box");
 				setwaswakuptimer(1);
 			}
+printf("-----------------\n");
 		}
 		node = node->next;
 	}
