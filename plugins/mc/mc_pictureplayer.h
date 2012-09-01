@@ -358,7 +358,9 @@ void screenmc_pictureplayer()
 					addconfig("mc_pp_path", filelistpath->text);
 
 				debug(50, "filelist->select->text: %s", filelist->select->text);
-				filename = createpath(filelistpath->text, filelist->select->text);
+				filename = createpath(filelistpath->text, filelist->select->name);
+				printf("name: %s\n",filelist->select->name);
+				printf("text: %s\n",filelist->select->text);
 
 				if(cmpfilenameext(filename, ".rar") == 0 || cmpfilenameext(filename, ".iso") == 0 || cmpfilenameext(filename, ".img") == 0)
 				{
