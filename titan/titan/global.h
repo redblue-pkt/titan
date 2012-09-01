@@ -2714,6 +2714,19 @@ unsigned long getfilecount(char* dir)
 	return count;
 }
 
+int getfiletype(char* filename)
+{
+	struct stat64 s;
+
+	if(stat64(filename, &s) >= 0)
+	{
+		if(S_ISDIR(s.st_mode)) return DT_DIR;
+		if(S_ISREG(s.st_mode)) return DT_REG;
+	}
+
+	return DT_UNKNOWN;
+}
+
 unsigned long long getfullspace(char* dir)
 {
 	struct statfs64 s;

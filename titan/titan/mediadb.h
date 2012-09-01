@@ -1695,6 +1695,15 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount, int first)
 		if(!entry) //There are no more entries in this directory, so break out of the while loop
 			break;
 
+		//for nfs mounts if file type is unknown use stat
+		if(entry->d_type == DT_UNKNOWN)
+		{
+			tmpstr = ostrcat(dirname, "/", 0, 0);
+			tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
+			entry->d_type = getfiletype(tmpstr);
+			free(tmpstr); tmpstr = NULL;
+		}
+
 		//check if link is a dir
 		if(first == 1 && entry->d_type == DT_LNK)
 		{
