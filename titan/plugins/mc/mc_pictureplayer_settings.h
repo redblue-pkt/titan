@@ -44,6 +44,7 @@ void screenmc_pictureplayer_settings()
 
 	setchoiceboxselection(view, getconfig("mc_pp_view", NULL));
 
+	addchoicebox(sound, "http://mp3.89.0rtl.de:80/", _("Jump"));
 	addchoicebox(sound, "http://stream.mth-house.de:8500/", _("MTH House"));
 	addchoicebox(sound, "http://stream.laut.fm:80/radiofunclub", _("Radio Funclub"));
 	addchoicebox(sound, "http://stream.laut.fm:80/radiofunclub80", _("Radio Funclub 80s"));	
