@@ -125,10 +125,10 @@ for ROUND1 in $category_file; do
 	done
 done
 
-in=`cat _full/beeg/category.list | wc -l`
+in=`cat _full/beeg/beeg.category.list | wc -l`
 out=`cat _full/beeg/beeg.category.list.filter | wc -l`
 
-echo "category.list             $in"
+echo "beeg.category.list        $in"
 echo "beeg.category.list.filter $out"
 	
 if [ "$in" -gt "$out" ];then
