@@ -427,4 +427,69 @@ int videoreadqwidth(struct dvbdev* node)
 	return 0;
 }
 
+//flag = 0 --> start at PES
+//flag = 1 --> start immediately
+int videoMakePES(char* buf, int len, int pid, int tssize, int flag)
+{
+	int adaptation = 0;
+	int payload = 0;
+	int pes = 0;
+  int pesfound = 0;
+  int posbufaus = 0;
+  int i;
+  int sid = 0;
+  int tspid = 0;
+  
+  if(flag == 1)
+  	pesfound = 1;
+
+	for(i = 0; i <= len-tssize; i = i + tssize)
+	{
+		payload = 0;
+		
+		tspid = (buf[i+1] & 0x1F) << 8;
+		tspid = tspid + (buf[i+2] & 0xFF);
+		pes = buf[i+1] & 0x40;
+
+		//video pid?
+		if(tspid == pid)
+		{	
+			adaptation = buf[i+3] & 0x30;
+			//payload only? 
+			if(adaptation == 16)
+			{
+				payload = 4;
+			}
+			//adaptation field only?
+			if(adaptation == 32)
+			{
+				//printf("adaptation field only\n");
+			}
+	  	//adaptation field and payload?
+	  	if(adaptation == 48)
+	  	{
+				payload = buf[i+4] & 0xFF;
+				payload = payload + 5;
+			}
+			if(payload != 0)
+			{
+				//start of PES data?
+				if(pes == 64)
+				{
+					pesfound = 1;
+				}
+				if(pesfound == 1)
+				{
+					memcpy(buf+posbufaus,buf+i+payload, tssize - payload);
+					posbufaus = posbufaus + tssize - payload;
+
+				}
+		  } 
+		}
+	}
+	return posbufaus;
+}
+
+
+
 #endif

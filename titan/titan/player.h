@@ -171,6 +171,20 @@ void playerstopts(int flag, int flag1)
 	struct service* snode = NULL;
 	struct channel* node = NULL;
 
+	if(status.playfdirection == -1)
+	{
+		videoclearbuffer(status.aktservice->videodev);
+		videostop(status.aktservice->videodev, 0);
+		videoselectsource(status.aktservice->videodev, VIDEO_SOURCE_DEMUX);
+		videoplay(status.aktservice->videodev);
+		status.playfdirection = 0;
+		
+	}
+	if(status.playfdirection == 1)
+	{
+		status.playfdirection = 0;
+	}
+	
 	snode = getservice(RECORDPLAY, flag1);
 	if(snode != NULL) snode->recendtime = 1;
 
@@ -208,19 +222,21 @@ void playerstopts(int flag, int flag1)
 
 void playercontinuets()
 {
-	videocontinue(status.aktservice->videodev);
-	audioplay(status.aktservice->audiodev);
-	
 	if(status.playfdirection == -1)
 	{
-		audioclearbuffer(status.aktservice->audiodev);
-		status.playfdirection = 0;
 		videoclearbuffer(status.aktservice->videodev);
+		videostop(status.aktservice->videodev, 0);
+		videoselectsource(status.aktservice->videodev, VIDEO_SOURCE_DEMUX);
+		videoplay(status.aktservice->videodev);
+		status.playfdirection = 0;
+		
 	}
 	if(status.playfdirection == 1)
 	{
 		status.playfdirection = 0;
 	}
+	videocontinue(status.aktservice->videodev);
+	audioplay(status.aktservice->audiodev);
 }
 
 void playerpausets()
@@ -354,21 +370,21 @@ void playerfrts(int speed, int flag)
 	
 	if(status.playfdirection == 0)
 	{
+		m_lock(&status.tsseekmutex, 15);
 		if(speed != 0)
 		{ 
-			struct service* snode = NULL;
-
-			if(flag == 0)
-				snode = getservice(RECORDPLAY, 0);
-			else if(flag == 1)
-				snode = getservice(RECORDTIMESHIFT, 0);
-
-			if(snode != NULL)
-			{
-				playerseekts(snode, -30, flag);
-			}
+			videoclearbuffer(status.aktservice->videodev);
+			videostop(status.aktservice->videodev, 0);
+			audioclearbuffer(status.aktservice->audiodev);
+			audiostop(status.aktservice->audiodev);
+			videoclearbuffer(status.aktservice->videodev);
+			videoselectsource(status.aktservice->videodev, VIDEO_SOURCE_MEMORY);
+			videoplay(status.aktservice->videodev);
+			videofastforward(status.aktservice->videodev, 0);
+			status.playfdirection = -1;
 		}
 	}
+	m_unlock(&status.tsseekmutex, 15);
 }
 	
 
@@ -1193,5 +1209,183 @@ void playerstopsubtitletrack()
 
 #endif
 }
+
+off64_t playerjumpts(struct service* servicenode, int sekunden, int *startpts ,int vpid, int tssize)
+{
+	int adaptation = 0;
+	int payload = 0;
+	int pes = 0;
+  int sid = 0;
+  int tspid = 0;
+	
+	off64_t pts  = 0;
+	off64_t aktpts = 0;
+	off64_t ziehlpts = 0;
+
+	off64_t curpos = 0;
+	off64_t newpos = 0;
+
+	int kleiner = 0;
+	int groesser = 0;
+	int gleich = 0;
+	int len = 0;
+	int i = 0;
+
+	int buflen = tssize * 15000;
+	char *buf = malloc(buflen);
+	if(buf == NULL)
+		return -1;
+	
+	curpos = lseek64(servicenode->recsrcfd, 0, SEEK_CUR);	
+	int dupfd = open(servicenode->recname, O_RDONLY | O_LARGEFILE);
+	newpos = lseek64(dupfd,curpos, SEEK_SET);
+
+	off64_t fdptspos;
+	if (*startpts == 0)
+	{
+		if(videogetpts(status.aktservice->videodev, &aktpts) == 0)
+		{
+				ziehlpts = (aktpts / 90000) + sekunden;
+		}
+		else
+			return -1;
+	}
+	else
+	{
+		ziehlpts = *startpts + sekunden;
+	}
+
+	*startpts = ziehlpts;
+	if(sekunden > 0)
+	{
+		printf("not implemented");
+		return -1;
+	}	
+	else if(sekunden < 0)
+	{
+		newpos = lseek64(dupfd, - buflen, SEEK_CUR);
+		if(newpos < 0)
+			newpos = lseek64(dupfd, tssize, SEEK_SET);
+	}
+	
+	len = read(dupfd, buf, buflen);
+	for(i = 0; i < len; i = i + 1)
+	{
+		if (buf[i] == 0x47 && buf[i+tssize] == 0x47)
+		{
+			newpos = lseek64(dupfd, newpos + i, SEEK_SET);
+			break;
+		}
+	}
+	if(i >= len)
+	{
+		newpos = lseek64(dupfd, curpos, SEEK_SET);	
+		return -1;
+	} 
+
+	while(1)
+	{
+	len = read(dupfd, buf, buflen);
+
+		if(len > 0)
+		{
+			for(i = 0; i <= len-tssize; i = i + tssize)
+			{
+				payload = 0;
+
+				tspid = (buf[i+1] & 0x1F) << 8;
+				tspid = tspid + (buf[i+2] & 0xFF);
+				pes = buf[i+1] & 0x40;
+
+				if(tspid == vpid)
+				{	
+					adaptation = buf[i+3] & 0x30;
+					if(adaptation == 16)
+					{
+						payload = 4;
+					}
+					if(adaptation == 32)
+					{
+						//printf("adaptation field only\n");
+					}
+			  	if(adaptation == 48)
+			  	{
+						payload = buf[i+4] & 0xFF;
+						payload = payload + 5;
+					}
+					if(payload != 0)
+					{
+						if(pes == 64)
+						{
+							if(buf[i+payload+7] & 0x80) //PTS
+							{
+								pts = ((unsigned long long)(buf[i+payload+9] & 0xE)) << 29;
+								pts |= ((unsigned long long)(buf[i+payload+10] & 0xFF)) << 22;
+								pts |= ((unsigned long long)(buf[i+payload+11] & 0xFE)) << 14;
+								pts |= ((unsigned long long)(buf[i+payload+12] & 0xFF)) << 7;
+								pts |= ((unsigned long long)(buf[i+payload+13] & 0xFE)) >> 1;
+								
+								if(pts / 90000 == ziehlpts)
+								{
+									gleich = newpos + i;
+									break;
+								}
+								else if(pts / 90000 > ziehlpts)
+								{									
+									groesser = newpos + i;
+									break;
+								}
+								else
+								{
+									kleiner = newpos + i;
+								}
+							}
+						}
+					}
+				}
+			}
+			if(gleich != 0)
+			{
+				close(dupfd);
+				free(buf);buf = NULL;
+				return lseek64(servicenode->recsrcfd, gleich, SEEK_SET);
+			}
+			else if(groesser != 0 && kleiner != 0)
+			{
+				close(dupfd);
+				free(buf);buf = NULL;
+				return lseek64(servicenode->recsrcfd, kleiner, SEEK_SET);
+			}
+			else if(groesser != 0)
+			{
+				if((newpos - buflen)  < 0)
+				{
+					close(dupfd);
+					free(buf);buf = NULL;
+					return -1	;
+				}
+				else
+					newpos = lseek64(dupfd, -(buflen * 2), SEEK_CUR);
+			}
+		}
+		else
+		{
+			if(kleiner == 0)
+			{
+				close(dupfd);
+				free(buf);buf = NULL;
+				newpos = lseek64(servicenode->recsrcfd, curpos, SEEK_SET);
+				return -1;
+			}
+			else
+			{
+				close(dupfd);
+				free(buf);buf = NULL;
+				return lseek64(servicenode->recsrcfd, kleiner, SEEK_SET);
+			}
+		}
+	}
+}
+
 
 #endif
