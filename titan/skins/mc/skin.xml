@@ -12,7 +12,7 @@
 <node valign=middle textposx=40 name=mc_internetbrowser text="Internet Browser" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 #<node valign=middle textposx=40 name=mc_radio text="Radio Player" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 #<node valign=middle textposx=40 name=mc_webradio text="Web Radio Player" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
-<node valign=middle textposx=40 name=mc_wetterinfo text="Weather Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
+#<node valign=middle textposx=40 name=mc_wetterinfo text="Weather Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 #<node valign=middle textposx=40 name=mc_settings text="Settings" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=middle posx=75% posy=2% width=280 height=30/>
 </screen>
