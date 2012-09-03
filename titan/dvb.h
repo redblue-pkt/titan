@@ -703,6 +703,9 @@ void dvbgetpmtthread()
 	int len = 0, change = 0;
 	unsigned char* pmtbuf = NULL;
 
+	//fastrew activ?
+	if(status.playfdirection == -1) return;
+	
 	if(status.aktservice->type != CHANNEL || status.aktservice->channel == NULL) return;
 
 	int serviceid = status.aktservice->channel->serviceid;

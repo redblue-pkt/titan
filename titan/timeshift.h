@@ -53,15 +53,9 @@ void timeshiftstop(int flag)
 
 		ret = getconfigint("deltimeshift", NULL);
 		if(ret == 0)
-		{
 			ret = textbox(_("Message"), _("Should Timeshift File deleted ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 10, 0);
-			if(ret == 0)
-				ret = 1;
-			else if(ret == 1)
-				ret = 0;
-		}
 
-		if(ret == 1) unlink(file);
+		if(ret == 0 || ret == 1) unlink(file);
 		free(file); file = NULL;
 	}
 
@@ -261,7 +255,8 @@ void timeshiftseek(int sekunden, int* playinfobarstatus, int* playinfobarcount)
 					status.playspeed--;
 					status.timeshiftseek = sekunden;
 					sekunden = sekunden - 20000;
-					playerfrts(sekunden, 1);
+					//playerfrts(sekunden, 1);
+					playerseekts(snode, -10, 1);
 				}
 				*playinfobarstatus = 2;
 				*playinfobarcount = 0;
