@@ -1005,7 +1005,7 @@ void screenrecordstop()
 void screenrecorddirect()
 {
 	char* tmpstr = NULL;
-	int ret = 0, ret1 = 0;
+	int ret = 0, ret1 = 0, newstart = 0;
 	struct service* servicenode = service;
 	struct epg* epgnode = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL, *tmpmbox = NULL;
@@ -1083,18 +1083,27 @@ void screenrecorddirect()
 #else
 			ret = recordstart(status.aktservice->channel, -1,  0, RECDIRECT, time(NULL) + 5, NULL);
 #endif
+			newstart = 1;
 		}
 		if(ostrcmp(mbox->name, "add recording (indefinitely)") == 0)
+		{
 			ret = recordstart(status.aktservice->channel, -1, 0, RECDIRECT, 0, NULL);
+			newstart = 1;
+		}
 		if(ostrcmp(mbox->name, "add recording (enter duration)") == 0)
 		{
 			ret1 = screenrecordduration(0);
 
 			if(ret1 > 0)
+			{
 				ret = recordstart(status.aktservice->channel, -1, 0, RECDIRECT, time(NULL) + (ret1 * 60), NULL);
+				newstart = 1;
+			}
 		}
 
 		recordcheckret(NULL, ret, 6);
+		if(ret == 0 && newstart == 1)
+			textbox(_("Message"), _("Record started"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
 	}
 	freemenulist(mlist, 1); mlist = NULL;
 }

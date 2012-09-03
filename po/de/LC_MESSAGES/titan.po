@@ -2507,3 +2507,6 @@ msgstr "Installieren Sie Bitte das Tithek Plugin unter Erweiterungen"
 
 msgid "Install Weather Ipk first !"
 msgstr "Installieren Sie Bitte das Wetter Plugin unter Erweiterungen"
+
+msgid "Record started"
+msgstr "Aufnahme wurde gestartet"
