@@ -199,7 +199,6 @@ void playerstopts(int flag, int flag1)
 			if(fbseek != NULL)
 			{
 				off64_t pos = lseek64(snode->recsrcfd, 0, SEEK_CUR);
-				fprintf(fbseek,"%lld", pos);
 				fclose(fbseek);
 			}
 			free(fileseek); fileseek=NULL;
@@ -1210,7 +1209,7 @@ void playerstopsubtitletrack()
 #endif
 }
 
-off64_t playerjumpts(struct service* servicenode, int sekunden, int *startpts ,int vpid, int tssize)
+int playerjumpts(struct service* servicenode, int sekunden, int *startpts, off64_t *poslastpts, off64_t *bitrate, int vpid, int tssize)
 {
 	int adaptation = 0;
 	int payload = 0;
@@ -1220,16 +1219,20 @@ off64_t playerjumpts(struct service* servicenode, int sekunden, int *startpts ,i
 	
 	off64_t pts  = 0;
 	off64_t aktpts = 0;
+	off64_t lenpts = 0;
+	off64_t aktbitrate = 0;
 	off64_t ziehlpts = 0;
 
 	off64_t curpos = 0;
 	off64_t newpos = 0;
+	off64_t jump = 0;
 
 	int kleiner = 0;
 	int groesser = 0;
 	int gleich = 0;
 	int len = 0;
 	int i = 0;
+	int ret = 0;
 
 	int buflen = tssize * 15000;
 	char *buf = malloc(buflen);
@@ -1238,9 +1241,10 @@ off64_t playerjumpts(struct service* servicenode, int sekunden, int *startpts ,i
 	
 	curpos = lseek64(servicenode->recsrcfd, 0, SEEK_CUR);	
 	int dupfd = open(servicenode->recname, O_RDONLY | O_LARGEFILE);
-	newpos = lseek64(dupfd,curpos, SEEK_SET);
+	newpos = lseek64(dupfd, curpos, SEEK_SET);
 
 	off64_t fdptspos;
+	
 	if (*startpts == 0)
 	{
 		if(videogetpts(status.aktservice->videodev, &aktpts) == 0)
@@ -1248,26 +1252,51 @@ off64_t playerjumpts(struct service* servicenode, int sekunden, int *startpts ,i
 				ziehlpts = (aktpts / 90000) + sekunden;
 		}
 		else
-			return -1;
+			return 1;
 	}
 	else
 	{
 		ziehlpts = *startpts + sekunden;
 	}
-
 	*startpts = ziehlpts;
+
+	if(*bitrate == 0)
+	{
+		ret = gettsinfo(dupfd, &lenpts, NULL, NULL, &aktbitrate, servicenode->tssize);
+		if(ret != 0) 
+		{
+			err("cant read endpts/bitrate");
+		}
+		else
+			*bitrate = aktbitrate;
+		newpos = lseek64(dupfd, curpos, SEEK_SET);
+	}
+	else
+		aktbitrate = *bitrate;
+		
+	if(*poslastpts == 0)
+		*poslastpts = curpos;
+	
 	if(sekunden > 0)
 	{
-		printf("not implemented");
-		return -1;
+		printf("not implemented\n");
+		return 1;
 	}	
 	else if(sekunden < 0)
 	{
-		newpos = lseek64(dupfd, - buflen, SEEK_CUR);
+		sekunden = sekunden * -1;
+		if(aktbitrate != 0)
+		{
+			jump = (aktbitrate / 8) * sekunden;
+			jump = jump + (curpos - *poslastpts);
+			jump = jump + (jump % servicenode->tssize);
+			newpos = lseek64(dupfd, -jump, SEEK_CUR);
+		}
+		else
+			newpos = lseek64(dupfd, - buflen, SEEK_CUR);
 		if(newpos < 0)
 			newpos = lseek64(dupfd, tssize, SEEK_SET);
 	}
-	
 	len = read(dupfd, buf, buflen);
 	for(i = 0; i < len; i = i + 1)
 	{
@@ -1280,9 +1309,8 @@ off64_t playerjumpts(struct service* servicenode, int sekunden, int *startpts ,i
 	if(i >= len)
 	{
 		newpos = lseek64(dupfd, curpos, SEEK_SET);	
-		return -1;
+		return 1;
 	} 
-
 	while(1)
 	{
 	len = read(dupfd, buf, buflen);
@@ -1348,13 +1376,15 @@ off64_t playerjumpts(struct service* servicenode, int sekunden, int *startpts ,i
 			{
 				close(dupfd);
 				free(buf);buf = NULL;
-				return lseek64(servicenode->recsrcfd, gleich, SEEK_SET);
+				*poslastpts = lseek64(servicenode->recsrcfd, gleich, SEEK_SET);
+				return 0;
 			}
 			else if(groesser != 0 && kleiner != 0)
 			{
 				close(dupfd);
 				free(buf);buf = NULL;
-				return lseek64(servicenode->recsrcfd, kleiner, SEEK_SET);
+				*poslastpts = lseek64(servicenode->recsrcfd, kleiner, SEEK_SET);
+				return 0;
 			}
 			else if(groesser != 0)
 			{
@@ -1362,10 +1392,13 @@ off64_t playerjumpts(struct service* servicenode, int sekunden, int *startpts ,i
 				{
 					close(dupfd);
 					free(buf);buf = NULL;
+					*poslastpts = 0;
 					return -1	;
 				}
 				else
+				{
 					newpos = lseek64(dupfd, -(buflen * 2), SEEK_CUR);
+				}
 			}
 		}
 		else
@@ -1375,13 +1408,15 @@ off64_t playerjumpts(struct service* servicenode, int sekunden, int *startpts ,i
 				close(dupfd);
 				free(buf);buf = NULL;
 				newpos = lseek64(servicenode->recsrcfd, curpos, SEEK_SET);
+				*poslastpts = 0;
 				return -1;
 			}
 			else
 			{
 				close(dupfd);
 				free(buf);buf = NULL;
-				return lseek64(servicenode->recsrcfd, kleiner, SEEK_SET);
+				*poslastpts = lseek64(servicenode->recsrcfd, kleiner, SEEK_SET);
+				return 0;
 			}
 		}
 	}
