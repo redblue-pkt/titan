@@ -2510,3 +2510,6 @@ msgstr "Installieren Sie Bitte das Wetter Plugin unter Erweiterungen"
 
 msgid "Record started"
 msgstr "Aufnahme wurde gestartet"
+
+msgid "swapwireless"
+msgstr "SWAP-Wlan Module"
