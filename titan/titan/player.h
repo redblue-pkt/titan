@@ -199,6 +199,7 @@ void playerstopts(int flag, int flag1)
 			if(fbseek != NULL)
 			{
 				off64_t pos = lseek64(snode->recsrcfd, 0, SEEK_CUR);
+				fprintf(fbseek,"%lld", pos);
 				fclose(fbseek);
 			}
 			free(fileseek); fileseek=NULL;
