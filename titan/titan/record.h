@@ -283,7 +283,8 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 	int prints = 0;
 	unsigned char* buf = NULL, *tmpbuf = NULL;
 	char* retstr = NULL;
-	//off64_t pos = 0;
+	off64_t bitrate = 0;
+	off64_t pospts = 0;
 
 	debug(250, "start read-write thread");
 
@@ -362,21 +363,20 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			{
 				if(prints == 0)
 					prints = findcodec(buf, recbsize, servicenode->tssize);
-				else if(prints == 2)
-					lseek64(servicenode->recsrcfd, -(recbsize*3), SEEK_CUR);
-				else 
-					lseek64(servicenode->recsrcfd, -(recbsize), SEEK_CUR);
-				playerjumpts(servicenode, -((int)pow(2, (status.playspeed * -1))), &pts, status.aktservice->channel->videopid, servicenode->tssize);
-				readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
-				//readret = read(servicenode->recsrcfd, buf, recbsize);
-				
+				readret = playerjumpts(servicenode, -((int)pow(2, (status.playspeed * -1))), &pts, &pospts, &bitrate, status.aktservice->channel->videopid, servicenode->tssize);
+				if(readret >= 0)
+					readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
+				else
+					readret = -1;
 			}
 			else
 			{
 				pthread_mutex_lock(&status.tsseekmutex);
 				readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
 				pts = 0;
+				pospts = 0;
 				prints = 0;
+				bitrate = 0;
 				pthread_mutex_unlock(&status.tsseekmutex);
 			}
 		}
