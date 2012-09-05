@@ -92,7 +92,9 @@ void screenmc_videoplayer()
 	addscreenrc(apskin, filelist);
 
 	char* savecmd = NULL;
-			
+	if(!file_exist("/mnt/player/"))	
+		mkdir("/mnt/player/", 0777);
+		
 	while(1)
 	{
 		rcret = waitrcext(apskin, rcwait, 0, tmpview);
@@ -468,6 +470,7 @@ void screenmc_videoplayer()
 				char* tmpfilename = ostrcat(filename, NULL, 0, 0);
 				char* fileseek = ostrcat("/mnt/player/", basename(tmpfilename), 0, 0);
 				fileseek = ostrcat(fileseek, ".se", 0, 0);
+
 				FILE* fbseek = fopen(fileseek, "w");
 				if(fbseek != NULL)
 				{
