@@ -397,46 +397,59 @@ void screenmc_videoplayer()
 		}
 		else if(rcret == getrcconfigint("rcstop", NULL))
 		{
-//			if((status.play == 1) || (status.pause == 1))
-//			{
-				debug(50, "rcstop: stopplayback");
-				playrcstop(playertype, flag);
-				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
-	
-				apskin->hidden = NO;
-				filelist->hidden = NO;
-				listbox->hidden = YES;
-				changetext(filelistpath, _(getconfig("mc_vp_path", NULL)));
-				changetext(b2, _("Filelist-Mode"));
-
-				// switch filelist
-				delownerrc(apskin);
-				addscreenrc(apskin, filelist);
-				// show skin
-				setfbtransparent(255);
-				drawscreen(apskin, 0, 0);
-
-				sleep(1);
-
-				playinfobarcount = 0;
-				playinfobarstatus = 1;
-				status.playspeed = 0;
-				status.pause = 0;
-				status.play = 0;
-				playlist = 0;
-				playinfobarcount = 0;
-				
-				if(playertype == 1)
-					playerafterendts();
-				else
-					playerafterend();
+			debug(50, "rcstop: stopplayback");
+			if(status.play == 1)
+			{
+				char* tmpfilename = ostrcat(filename, NULL, 0, 0);
+				char* fileseek = ostrcat("/mnt/player/", basename(tmpfilename), 0, 0);
+				fileseek = ostrcat(fileseek, ".se", 0, 0);
+				FILE* fbseek = fopen(fileseek, "w");
+				if(fbseek != NULL)
+				{
+					off64_t pos = playergetpts() / 90000;
+					fprintf(fbseek,"%lld", pos);
+					fclose(fbseek);
+				}
+				free(fileseek), fileseek = NULL;
+				free(tmpfilename), tmpfilename = NULL;
+			}
 			
-				writevfd("VideoPlayer Filelist-Mode");
-				unlink("/tmp/.autoscan");
-					
-//				startmediadb();
-//				dbnode = mediadb;
-//			}
+			playrcstop(playertype, flag);
+			singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
+
+			apskin->hidden = NO;
+			filelist->hidden = NO;
+			listbox->hidden = YES;
+			changetext(filelistpath, _(getconfig("mc_vp_path", NULL)));
+			changetext(b2, _("Filelist-Mode"));
+
+			// switch filelist
+			delownerrc(apskin);
+			addscreenrc(apskin, filelist);
+			// show skin
+			setfbtransparent(255);
+			drawscreen(apskin, 0, 0);
+
+			sleep(1);
+
+			playinfobarcount = 0;
+			playinfobarstatus = 1;
+			status.playspeed = 0;
+			status.pause = 0;
+			status.play = 0;
+			playlist = 0;
+			playinfobarcount = 0;
+			
+			if(playertype == 1)
+				playerafterendts();
+			else
+				playerafterend();
+		
+			writevfd("VideoPlayer Filelist-Mode");
+			unlink("/tmp/.autoscan");
+				
+//			startmediadb();
+//			dbnode = mediadb;
 		}
 		else if(rcret == getrcconfigint("rcexit", NULL))
 		{
@@ -448,6 +461,22 @@ void screenmc_videoplayer()
 					addconfig("mc_vp_path", filelistpath->text);
 				if(filelist->select != NULL && filelist->select->name != NULL && ostrcmp(getconfig("mc_vp_selectedfile", NULL), filelist->select->name) != 0)
 					addconfig("mc_vp_selectedfile", filelist->select->name);
+			}
+
+			if(status.play == 1)
+			{
+				char* tmpfilename = ostrcat(filename, NULL, 0, 0);
+				char* fileseek = ostrcat("/mnt/player/", basename(tmpfilename), 0, 0);
+				fileseek = ostrcat(fileseek, ".se", 0, 0);
+				FILE* fbseek = fopen(fileseek, "w");
+				if(fbseek != NULL)
+				{
+					off64_t pos = playergetpts() / 90000;
+					fprintf(fbseek,"%lld", pos);
+					fclose(fbseek);
+				}
+				free(fileseek), fileseek = NULL;
+				free(tmpfilename), tmpfilename = NULL;
 			}
 
 			playrcstop(playertype, flag);
@@ -675,6 +704,31 @@ void screenmc_videoplayer()
 //						drawscreen(apskin, 0, 0);
 						continue;
 					}
+					else
+					{
+						if(playertype == 1)
+						{
+							char* tmpfilename = ostrcat(filename, NULL, 0, 0);
+							char* fileseek = ostrcat("/mnt/player/", basename(tmpfilename), 0, 0);
+							fileseek = ostrcat(fileseek, ".se", 0, 0);
+	
+							FILE* fbseek = fopen(fileseek, "r");
+							if(fbseek != NULL)
+							{
+								if(textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
+								{
+									char* skip1 = malloc(20);
+									fscanf(fbseek,"%s",skip1);
+									playrcjumpf(filename, atoll(skip1), &playinfobarstatus, &playinfobarcount, playertype, flag);		
+									free(skip1); skip1=NULL;
+								}
+								fclose(fbseek);
+							}
+							free(fileseek), fileseek = NULL;
+							free(tmpfilename), tmpfilename = NULL;
+						}
+					}
+		
 				#endif
 				screenplayinfobar(filename, 0, playertype, 0);
 				status.play = 1;
