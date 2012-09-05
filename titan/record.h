@@ -281,6 +281,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 	int readtimeout = -1, writetimeout = -1;
 	int pts = 0;
 	int prints = 0;
+	int recsync = 0;
 	unsigned char* buf = NULL, *tmpbuf = NULL;
 	char* retstr = NULL;
 	off64_t bitrate = 0;
@@ -293,6 +294,8 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 		err("servicenode = NULL");
 		return 1;
 	}
+
+	recsync = getconfig("recsync", NULL);
 
 	if(servicenode->type == RECORDDIRECT || servicenode->type == RECORDTIMER || servicenode->type == RECORDTIMESHIFT)
 	{
@@ -443,9 +446,13 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				if(servicenode->reclastsync > 524288)
 				{
 					int tosync = servicenode->reclastsync > 2097152 ? 2097152 : servicenode->reclastsync &~ 4095; //sync max 2MB
-					//pos = lseek64(servicenode->recdstfd, 0, SEEK_CUR);
-					//pos -= tosync;
-					//posix_fadvise64(servicenode->recdstfd, pos, tosync, POSIX_FADV_DONTNEED);
+					if(recsync == 1)
+					{
+						pos = lseek64(servicenode->recdstfd, 0, SEEK_CUR);
+						pos -= tosync;
+						fdatasync(servicenode->recdstfd);
+						posix_fadvise64(servicenode->recdstfd, pos, tosync, POSIX_FADV_DONTNEED);
+					}
 					servicenode->reclastsync -= tosync;
 
 					//split only after sync
