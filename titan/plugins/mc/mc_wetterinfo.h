@@ -23,34 +23,16 @@ void screenmc_wetterinfo()
 
 		if(treffer == 1)
 		{
-//			if(textbox(_("Message"), _("start Weather now ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1){	
-				char* tmpstr = NULL;
-				int rcret = 0;
-	
-				status.sec = 0; //deaktivate spinner
-//				setfbtransparent(255);
-//				rcret = servicestop(status.aktservice, 1, 0);
-//				if(rcret == 1) return;
-	
-//				screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.list", "Tithek - Mainmenu", 1)
-				pluginnode = getplugin("Weather");
-			
-				if(pluginnode != NULL)
+			pluginnode = getplugin("Weather");
+		
+			if(pluginnode != NULL)
+			{
+				startplugin = dlsym(pluginnode->pluginhandle, "start");
+				if(startplugin != NULL)
 				{
-					startplugin = dlsym(pluginnode->pluginhandle, "start");
-					if(startplugin != NULL)
-					{
-//						resettvpic();
-						startplugin();
-					}
+					startplugin();
 				}
-				printf("gggggggggggggg\n");
-
-//				setosdtransparent(getskinconfigint("osdtransparent", NULL));
-//				drawscreen(skin, 0, 0);
-//				servicestart(status.lastservice->channel, NULL, NULL, 0);
-//				sleep(2);
-//			}
+			}
 		}
 		else
 			textbox(_("Message"), _("Install Weather Ipk first !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
