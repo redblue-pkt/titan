@@ -282,6 +282,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 	int pts = 0;
 	int prints = 0;
 	int recsync = 0;
+	int pos = 0;
 	unsigned char* buf = NULL, *tmpbuf = NULL;
 	char* retstr = NULL;
 	off64_t bitrate = 0;
