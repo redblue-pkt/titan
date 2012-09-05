@@ -92,8 +92,8 @@ void screenmc_videoplayer()
 	addscreenrc(apskin, filelist);
 
 	char* savecmd = NULL;
-	if(!file_exist("/mnt/player/"))	
-		mkdir("/mnt/player/", 0777);
+	if(!file_exist("/mnt/player"))	
+		mkdir("/mnt/player", 0777);
 		
 	while(1)
 	{
