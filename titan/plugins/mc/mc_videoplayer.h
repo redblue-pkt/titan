@@ -401,7 +401,7 @@ void screenmc_videoplayer()
 		else if(rcret == getrcconfigint("rcstop", NULL))
 		{
 			debug(50, "rcstop: stopplayback");
-			if(status.play == 1 && playertype == 1)
+			if(status.play == 1 && playertype == 0)
 			{
 				char* tmpfilename = ostrcat(filename, NULL, 0, 0);
 				char* fileseek = ostrcat("/mnt/player/", basename(tmpfilename), 0, 0);
@@ -466,7 +466,7 @@ void screenmc_videoplayer()
 					addconfig("mc_vp_selectedfile", filelist->select->name);
 			}
 
-			if(status.play == 1 && playertype == 1)
+			if(status.play == 1 && playertype == 0)
 			{
 				char* tmpfilename = ostrcat(filename, NULL, 0, 0);
 				char* fileseek = ostrcat("/mnt/player/", basename(tmpfilename), 0, 0);
