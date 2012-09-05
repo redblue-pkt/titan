@@ -92,9 +92,7 @@ void screenmc_videoplayer()
 	addscreenrc(apskin, filelist);
 
 	char* savecmd = NULL;
-	if(!file_exist("/mnt/player"))	
-		mkdir("/mnt/player", 0777);
-		
+			
 	while(1)
 	{
 		rcret = waitrcext(apskin, rcwait, 0, tmpview);
@@ -400,7 +398,7 @@ void screenmc_videoplayer()
 		else if(rcret == getrcconfigint("rcstop", NULL))
 		{
 			debug(50, "rcstop: stopplayback");
-			if(status.play == 1)
+			if(status.play == 1 && playertype == 1)
 			{
 				char* tmpfilename = ostrcat(filename, NULL, 0, 0);
 				char* fileseek = ostrcat("/mnt/player/", basename(tmpfilename), 0, 0);
@@ -465,12 +463,11 @@ void screenmc_videoplayer()
 					addconfig("mc_vp_selectedfile", filelist->select->name);
 			}
 
-			if(status.play == 1)
+			if(status.play == 1 && playertype == 1)
 			{
 				char* tmpfilename = ostrcat(filename, NULL, 0, 0);
 				char* fileseek = ostrcat("/mnt/player/", basename(tmpfilename), 0, 0);
 				fileseek = ostrcat(fileseek, ".se", 0, 0);
-
 				FILE* fbseek = fopen(fileseek, "w");
 				if(fbseek != NULL)
 				{
@@ -709,7 +706,7 @@ void screenmc_videoplayer()
 					}
 					else
 					{
-						if(playertype == 1)
+						if(playertype == 0)
 						{
 							char* tmpfilename = ostrcat(filename, NULL, 0, 0);
 							char* fileseek = ostrcat("/mnt/player/", basename(tmpfilename), 0, 0);
@@ -752,6 +749,11 @@ void screenmc_videoplayer()
 		{
 			if(status.play == 1)
 			{
+				char* tmpfilename = ostrcat(filename, NULL, 0, 0);
+				char* fileseek = ostrcat("/mnt/player/", basename(tmpfilename), 0, 0);
+				fileseek = ostrcat(fileseek, ".se", 0, 0);
+				unlink(fileseek);
+			
 				setfbtransparent(0);
 				apskin->hidden = NO;
 				drawscreen(skin, 0, 0);
