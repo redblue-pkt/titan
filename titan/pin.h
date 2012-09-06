@@ -17,8 +17,8 @@ int screenpincheck(int type, char* pin)
 	int rcret = 0, ret = 1;
 	struct skin* pincheck = getscreen("pincheck");
 
-	changemask(pincheck, "0000");
-	changeinput(pincheck, "0000");
+	changemask(pincheck, "****");
+	changeinput(pincheck, "****");
 
 	drawscreen(pincheck, 0, 0);
 	addscreenrc(pincheck, pincheck);

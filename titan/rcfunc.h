@@ -155,7 +155,7 @@ void checkinputboxnumright(struct skin* inputbox)
 
 	if(inputbox != NULL && inputbox->input != NULL && (inputbox->type & INPUTBOXNUM))
 	{
-		while(isdigit(inputbox->input[inputbox->aktpage - 1]) == 0)
+		while(isdigit(inputbox->input[inputbox->aktpage - 1]) == 0 && inputbox->input[inputbox->aktpage - 1] != '*')
 		{
 			inputbox->aktpage++;
 			if(inputbox->input[inputbox->aktpage - 1] == '\0')
@@ -180,7 +180,7 @@ void checkinputboxnumleft(struct skin* inputbox)
 
 	if(inputbox != NULL && inputbox->input != NULL && (inputbox->type & INPUTBOXNUM))
 	{
-		while(isdigit(inputbox->input[inputbox->aktpage - 1]) == 0)
+		while(isdigit(inputbox->input[inputbox->aktpage - 1]) == 0 && inputbox->input[inputbox->aktpage - 1] != '*')
 		{
 			inputbox->aktpage--;
 			if(inputbox->aktpage < 0)
