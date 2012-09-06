@@ -2554,4 +2554,7 @@ msgid "To"
 msgstr "nach"
 
 msgid "Install File Manager Ipk first !"
-msgstr "Installieren Sie Bitte das Datei Manager unter Erweiterungen"
+msgstr "Installieren Sie Bitte das Datei Browser unter Erweiterungen"
+
+msgid "FILELIST MANAGER"
+msgstr "Datei Browser"
