@@ -1024,7 +1024,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 {
 	struct mediadb *node = mediadb, *prev = mediadb;
 	struct mediadbcategory *cnode = NULL;
-	struct hdd *hddnode = NULL;
+	//struct hdd *hddnode = NULL;
 	struct splitstr* ret = NULL;
 	char* tmpstr = NULL, *tmpsplit = NULL;
 
