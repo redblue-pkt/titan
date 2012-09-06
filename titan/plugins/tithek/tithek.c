@@ -3,6 +3,7 @@
 #include "../titan/header.h"
 #include "tithek_header.h"
 #include "tithek.h"
+#include "tithek_settings.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";

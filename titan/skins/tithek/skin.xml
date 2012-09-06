@@ -4,8 +4,22 @@
 
 <screen name="titheklist" fontcol=fontcol valign=bottom titlealign=center hspace=5 vspace=5 fontsize=30 title="TiThek PlayList" posx=center posy=center width=95% height=95% bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node fontcol=fontcol fontsize=20 bordersize=0 bordercol=bordercol scrollbar=yes type=grid name=listbox posx=0 posy=1 width=100% height=-35>
-<node name=b1 text=OK halign=center valign=center bordercol=okcol bordersize=4 bordertype=2 posx=20 posy=0 width=150 height=30/>
-<node name=b2 text=EXIT halign=center valign=center bordercol=exitcol bordersize=4 bordertype=2 posx=180 posy=0 width=150 height=30/>
-<node name=b3 text="SAVE" halign=center valign=center posx=340 posy=0 width=150 height=30 bordercol=red bordertype=2 bordersize=4/>
-<node name=countlabel hspace=0 halign=right valign=center posx=0 posy=0 width=100% height=30/>
+<node name="buttonbar" posx=center posy="0" width=100% height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node name="b1" picmem="skin/key_ok_70x40.png"   posx="50"  posy="590" width="70" height="40">
+<node name="b2" picmem="skin/key_exit_70x40.png" posx="125" posy="590" width="70" height="40">
+<node name="b3" text="SAVE" picmem="skin/key_red_30x30.png" posx="205" posy="595" textposx="40" valign="middle" fontcol="black" fontsize="25" width="180" height="30">
+<node name="b4" picmem="skin/key_menu_70x40.png" posx="400" posy="590" width="70" height="40">
+<node name=countlabel hspace=0 halign=center valign=center posx=center posy=565 width=100% height=20/>
+<node name=countpage hspace=0 halign=right valign=center posx=right posy=565 width=100% height=20/>
+</screen>
+
+<screen name="tithek_settings" picmem=%pluginpath%/mc/skin/background5.png fontcol=fontcol valign=bottom fontsize=30 posx=center posy=center width=100% height=100% bordersize=0 bgcol=bgcol>
+<node textposx=100 text="TITHEK SETTINGS" name=mc_audioplayer_name posx=0 posy=30 width=100% height=30 fontcol=fontcol/>
+<node bordercol=bordercol scrollbar=auto type=listbox posy=150 posx=350 name=listbox width=45% height=60%>
+<node name=view type=choicebox parent=listbox valign=middle posx=0 text="View" bordercol=bordercol bordersize=1 width=100% height=25>
+
+<node name="buttonbar" posx=center posy="660" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node name="b1" picmem="skin/key_ok_70x40.png"   posx="50"  posy="665" width="70" height="40">
+<node name="b2" picmem="skin/key_exit_70x40.png" posx="125" posy="665" width="70" height="40">
+<node name="b3" text="Screensaver" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="205" posy="670" width="300" height="30">
 </screen>

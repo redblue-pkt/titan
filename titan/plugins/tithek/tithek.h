@@ -155,7 +155,7 @@ int readtithek(const char* filename)
 	if(fileline == NULL)
 	{
 		err("no memory");
-		return 1;
+		return 0;
 	}
 
 	fd = fopen(filename, "r");
@@ -163,7 +163,7 @@ int readtithek(const char* filename)
 	{
 		perr("can't open %s", filename);
 		free(fileline);
-		return 1;
+		return 0;
 	}
 
 	while(fgets(fileline, MINMALLOC, fd) != NULL)
@@ -184,7 +184,7 @@ int readtithek(const char* filename)
 
 	free(fileline);
 	fclose(fd);
-	return 0;
+	return linecount;
 }
 
 int deltithek(char* link)
@@ -319,7 +319,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 
 int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, struct skin* countlabel)
 {
-	int gridbr = 0, posx = 0, count = 0, sumcount = 0;
+	int gridbr = 0, posx = 0, count = 0, sumcount = 0, pagecount = 0;
 	struct skin* tmp = NULL;
 	char* tithekfile = NULL;
 	char* tmpstr = NULL;
@@ -331,10 +331,30 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 
 	delmarkedscreennodes(grid, 1);
 	freetithek();
-	if(readtithek(tithekfile) != 0) return 1;
-
+//	if(readtithek(tithekfile) != 0) return 1;
+	int linecount = readtithek(tithekfile);
+	if(linecount == 0) return 1;
+	
 	struct tithek* titheknode = tithek;
 
+	int height = 280;
+	int width = 390;
+	int picheight = 230;
+	int picwidth = 370;
+	int zcount = 3;
+	int fontsize = 20;
+	 
+	printf("linecount: %d\n",linecount);
+	if(linecount > 8 && getconfigint("tithek_view", NULL) == 1)
+	{
+		height = 180;
+		width = 295;
+		picheight = 130;
+		picwidth = 270;
+		zcount = 4;
+		fontsize = 18;
+	}
+		
 	while(titheknode != NULL)
 	{
 		tmp = addlistbox(grid, listbox, tmp, 1);
@@ -347,11 +367,12 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 			gridbr = 1;
 			tmp->wrap = YES;
 
-			tmp->picheight = 230;
-			tmp->picwidth = 370;
+			tmp->picheight = picheight;
+			tmp->picwidth = picwidth;
 
-			tmp->height = 280;
-			tmp->width = 390;
+			tmp->fontsize = fontsize;
+			tmp->height = height;
+			tmp->width = width;
 			tmp->prozwidth = 0;
 			//tmp->bgcol = 0xffffff;
 			tmp->bgspace = 1;
@@ -364,8 +385,9 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 			changetext(tmp, titheknode->title);
 			tmp->handle = (char*)titheknode;
 			posx += tmp->width;
-			if(count >= 3)
+			if(count >= zcount)
 			{
+				pagecount++;
 				count = 0;
 				posx = 0;
 				gridbr = 0;
@@ -374,12 +396,20 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		titheknode = titheknode->next;
 	}
 
-	tmpstr = oitoa(sumcount);
-	changetext(countlabel, tmpstr);
-	free(tmpstr); tmpstr = NULL;
 
+	tmpstr = oitoa(sumcount);
+
+	char* tmpstr1 = ostrcat(_("found"), NULL, 0, 0);
+	tmpstr1 = ostrcat(tmpstr1, " ", 1, 0);
+	tmpstr1 = ostrcat(tmpstr1, tmpstr, 1, 0);
+	free(tmpstr); tmpstr = NULL;
+	tmpstr1 = ostrcat(tmpstr1, " ", 1, 0);
+	tmpstr1 = ostrcat(tmpstr1, _("Results"), 1, 0);
+	changetext(countlabel, tmpstr1);
+	free(tmpstr1); tmpstr1 = NULL;
+	
 	free(tithekfile); tithekfile = NULL;
-	return 0;
+	return pagecount;
 }
 
 void screentithekplay(char* titheklink, char* title, int first)
@@ -399,6 +429,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 	struct skin* grid = getscreen("titheklist");
 	struct skin* listbox = getscreennode(grid, "listbox");
 	struct skin* countlabel = getscreennode(grid, "countlabel");
+	struct skin* countpage = getscreennode(grid, "countpage");
 	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
 	char* tithekpic = NULL;
@@ -410,8 +441,10 @@ void screentithekplay(char* titheklink, char* title, int first)
 	listbox->gridcol = 0;
 	listbox->select = NULL;
 
-	if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) return;
-				
+//	if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) return;
+	int pagecount = createtithekplay(titheklink, grid, listbox, countlabel);
+	if(pagecount == 0) return;
+
 	drawscreen(grid, 0, 0);
 	addscreenrc(grid, listbox);
 				
@@ -423,7 +456,18 @@ void screentithekplay(char* titheklink, char* title, int first)
 			tmp = listbox->select;
 			while(tmp != NULL)
 			{
+
 				if(tmp->pagecount != listbox->aktpage) break;
+
+				char* tmpstr = ostrcat(_("Page"), NULL, 0, 0);
+				tmpstr = ostrcat(tmpstr, " ( ", 1, 0);
+				tmpstr = ostrcat(tmpstr, oitoa(tmp->pagecount), 1, 0);
+				tmpstr = ostrcat(tmpstr, " / ", 1, 0);
+				tmpstr = ostrcat(tmpstr, oitoa(pagecount), 1, 0);	
+				tmpstr = ostrcat(tmpstr, _(" )"), 1, 0);
+				changetext(countpage, tmpstr);
+				free(tmpstr); tmpstr = NULL;
+	
 				if(tmp->handle != NULL)
 				{
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
@@ -455,6 +499,11 @@ void screentithekplay(char* titheklink, char* title, int first)
 		rcret = waitrc(grid, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcmenu", NULL))
+		{
+			screentithek_settings();
+		}
+		
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
@@ -646,7 +695,10 @@ void screentithekplay(char* titheklink, char* title, int first)
 							{
 								writesys("/tmp/tithek/youtube.search.list", line, 0);
 								free(line), line = NULL;
-								if(createtithekplay("/tmp/tithek/youtube.search.list", grid, listbox, countlabel) != 0) return;
+//								if(createtithekplay("/tmp/tithek/youtube.search.list", grid, listbox, countlabel) != 0) return;
+								int pagecount = createtithekplay("/tmp/tithek/youtube.search.list", grid, listbox, countlabel);
+								if(pagecount == 0) return;
+								
 								drawscreen(grid, 0, 0);
 							}
 						}
@@ -750,7 +802,10 @@ void screentithekplay(char* titheklink, char* title, int first)
 							{
 								writesys("/tmp/tithek/myvideo.search.list", line, 0);
 								free(line), line = NULL;
-								if(createtithekplay("/tmp/tithek/myvideo.search.list", grid, listbox, countlabel) != 0) return;
+//								if(createtithekplay("/tmp/tithek/myvideo.search.list", grid, listbox, countlabel) != 0) return;
+								int pagecount = createtithekplay("/tmp/tithek/myvideo.search.list", grid, listbox, countlabel);
+								if(pagecount == 0) return;
+
 								drawscreen(grid, 0, 0);
 							}
 						}
@@ -775,7 +830,10 @@ void screentithekplay(char* titheklink, char* title, int first)
 						screentithekplay(tmpstr, tmpstr2, 0);
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;					
-						if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
+//						if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
+						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel);
+						if(pagecount == 0) break;
+
 						listbox->aktpage = oaktpage;
 						listbox->aktline = oaktline;
 						listbox->gridcol = ogridcol;
