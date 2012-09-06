@@ -2513,3 +2513,18 @@ msgstr "Aufnahme wurde gestartet"
 
 msgid "swapwireless"
 msgstr "SWAP-Wlan Module"
+
+msgid "found"
+msgstr "Es wurden"
+
+msgid "Results"
+msgstr "Links gefunden"
+
+msgid "Page"
+msgstr "Seite"
+
+msgid "show 6 entrys"
+msgstr "gross (6 Bilder)"
+
+msgid "show 12 entrys"
+msgstr "klein (12 Bilder)"
