@@ -30,7 +30,7 @@ int mc_menucall(struct skin* menuentry)
 		drawscreen(skin, 0, 0);
 		servicestop(status.aktservice, 1, 1);	
 		screenmc_pictureplayer(NULL);
-		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgMusic.mvi", 0);
+		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgPicture.mvi", 0);
 	} 
 	else if(ostrcmp("mc_appletrailer", menuentry->name) == 0)
 	{
@@ -49,8 +49,10 @@ int mc_menucall(struct skin* menuentry)
 	}
 	else if(ostrcmp("mc_dateibrowser", menuentry->name) == 0)
 	{
-		textbox(_("Message"), _("comming soon"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);	
-		screenmc_dateibrowser();
+		drawscreen(skin, 0, 0);
+		servicestop(status.aktservice, 1, 1);	
+		screenmc_dateibrowser(NULL);
+		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgSettings.mvi", 0);
 	}
 	else if(ostrcmp("mc_internetbrowser", menuentry->name) == 0)
 	{
@@ -131,19 +133,59 @@ void mc_main()
 	struct skin* mc_main_selected = getscreennode(mc_main, "mc_main_selected_pic");
 
 	singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgMusic.mvi", 0);
-
+			printf("aaaa\n");
+			
 	drawscreen(mc_main, 0, 0);
+			printf("bbbb\n");	
 	addscreenrc(mc_main, listbox);
-
+	int first = 1;
+				printf("cccc\n");
 	while(1)
 	{
+		if(first == 1 && listbox->select != NULL)
+		{
+	// menu is slow if enable
+			writevfd(listbox->select->text);
+		
+			if(ostrcmp(listbox->select->name, "mc_videoplayer") == 0)
+			{
+				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgVideo.mvi", 0);
+			}
+			else if(ostrcmp(listbox->select->name, "mc_audioplayer") == 0)
+			{
+				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgMusic.mvi", 0);
+			}
+			else if(ostrcmp(listbox->select->name, "mc_pictureplayer") == 0)
+			{
+				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgPicture.mvi", 0);
+			}
+			else if(ostrcmp(listbox->select->name, "mc_myvideo") == 0)
+			{
+				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgBrowser.mvi", 0);
+			}
+			else if(ostrcmp(listbox->select->name, "mc_dateibrowser") == 0)
+			{
+				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgSettings.mvi", 0);
+			}
+			else if(ostrcmp(listbox->select->name, "mc_internetbrowser") == 0)
+			{
+				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgBrowser.mvi", 0);
+			}
+			else if(ostrcmp(listbox->select->name, "mc_mediathek") == 0)
+			{
+				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgVideo.mvi", 0);
+			}
+			else if(ostrcmp(listbox->select->name, "mc_wetterinfo") == 0)
+			{
+				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgWeather.mvi", 0);
+			}	
+			first = 0;
+		}
+		
 		rcret = waitrc(mc_main, 0, 1);
-
-		if (rcret == getrcconfigint("rcexit", NULL)) break;
-
-// menu is slow if enable
-//		writevfd(listbox->select->text);
-
+			printf("eeeee\n");
+		if (rcret == getrcconfigint("rcexit", NULL)) break;		
+			
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			clearscreen(mc_main);
@@ -161,11 +203,12 @@ void mc_main()
 			addscreenrc(mc_main, listbox);
 
 		}
-		else if(rcret == getrcconfigint("rcgreen", NULL))
-		{
-			mediadbscan("/media", 0);
-		}	
-		if(listbox->select != NULL && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL)))
+
+		drawscreen(mc_main, 0, 0);
+// menu is slow if enable
+		writevfd(listbox->select->text);
+		
+		if(listbox->select != NULL && (rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL) || rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL)))
 		{
 			if(ostrcmp(listbox->select->name, "mc_videoplayer") == 0)
 			{
@@ -179,17 +222,9 @@ void mc_main()
 			{
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgPicture.mvi", 0);
 			}
-			else if(ostrcmp(listbox->select->name, "mc_appletrailer") == 0)
-			{
-				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgVideo.mvi", 0);
-			}
 			else if(ostrcmp(listbox->select->name, "mc_myvideo") == 0)
 			{
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgBrowser.mvi", 0);
-			}
-			else if(ostrcmp(listbox->select->name, "mc_vlcplayer") == 0)
-			{
-				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgVLC.mvi", 0);
 			}
 			else if(ostrcmp(listbox->select->name, "mc_dateibrowser") == 0)
 			{
@@ -203,21 +238,9 @@ void mc_main()
 			{
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgVideo.mvi", 0);
 			}
-			else if(ostrcmp(listbox->select->name, "mc_radio") == 0)
-			{
-				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgRadio.mvi", 0);
-			}
-			else if(ostrcmp(listbox->select->name, "mc_webradio") == 0)
-			{
-				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgRadio.mvi", 0);
-			}
 			else if(ostrcmp(listbox->select->name, "mc_wetterinfo") == 0)
 			{
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgWeather.mvi", 0);
-			}
-			else if(ostrcmp(listbox->select->name, "mc_settings") == 0)
-			{
-				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgSettings.mvi", 0);
 			}
 			drawscreen(mc_main, 0, 0);
 		}

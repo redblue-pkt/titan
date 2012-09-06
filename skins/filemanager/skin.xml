@@ -1,16 +1,23 @@
-<screen fontcol=fontcol name="filemanager1" fontsize=30 posx=120 posy=150 width=510 height=420 bordercol=bordercol bordersize=2 bgcol=bgcol vspace=10 hspace=10>
+<screen fontcol=fontcol name="filemanager1" fontsize=30 posx=50 posy=100 width=580 height=510 bordercol=white bgcol=bgcol bordersize=2 vspace=10 hspace=10>
+<node name=filelistpath valign=middle posy=1 bordercol=bordercol bordersize=2 width=100%>
+<node hspace=10 pic=skin/folder.png textposx=30 fontsize=30 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=filelist posy=50 width=100% height=-1 bgcol=bgcol>
+</screen>
+
+<screen fontcol=fontcol name="filemanager2" fontsize=30 posx=650 posy=100 width=580 height=510 bordercol=white bgcol=bgcol bordersize=2 bgcol=grey vspace=10 hspace=10>
 <node name=filelistpath valign=middle posy=1 bordercol=bordercol bordersize=2 width=100%>
 <node hspace=10 pic=skin/folder.png textposx=30 fontsize=30 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=filelist posy=50 width=100% height=-1>
 </screen>
 
-<screen fontcol=fontcol name="filemanager2" fontsize=30 posx=650 posy=150 width=510 height=420 bordercol=bordercol bordersize=2 bgcol=bgcol vspace=10 hspace=10>
-<node name=filelistpath valign=middle posy=1 bordercol=bordercol bordersize=2 width=100%>
-<node hspace=10 pic=skin/folder.png textposx=30 fontsize=30 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=filelist posy=50 width=100% height=-1>
-</screen>
-
-<screen fontcol=fontcol valign=bottom titlealign=center name="filemanager" hspace=10 vspace=10 fontsize=30 title="File Manager" posx=100 posy=100 width=1080 height=520 bordercol=bordercol bordersize=2 bgcol=bgcol>
-<node name=b1 text="Delete" halign=center valign=middle bordersize=6 bordertype=2 posx=20 posy=0 width=150 height=39 bordercol=red/>
-<node name=b2 text="Copy" halign=center valign=middle bordersize=6 bordertype=2 posx=180 posy=0 width=150 height=39 bordercol=green/>
-<node name=b3 text="Move it" halign=center valign=middle bordersize=6 bordertype=2 posx=340 posy=0 width=150 height=39 bordercol=yellow/>
-<node name=b4 text="View" halign=center valign=middle bordersize=6 bordertype=2 posx=500 posy=0 width=150 height=39 bordercol=blue/>
+<screen name="filemanager" fontcol="fontcol" bgcol="black" posx="left" posy="top" width="100%" height="100%" hspace="30" vspace="30">
+<node name="titletext" text="FILELIST MANAGER" fontcol="black" fontsize="36" posx="0" posy="0" width="100%" height="50" valign="middle" halign="center" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node name="b5" picmem="skin/key_fr_70x40.png" valign="middle" posx="40"   posy="5" width="70" height="40">
+<node name="b6" picmem="skin/key_ff_70x40.png" valign="middle" posx="1100" posy="5" width="70" height="40">
+<node name="buttonbar" posx="0" posy="600" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node name="b7" picmem="skin/key_ok_70x40.png"   posx="50"  posy="605" width="70" height="40">
+<node name="b8" picmem="skin/key_exit_70x40.png" posx="125" posy="605" width="70" height="40">
+<node name="b1" text="Delete" picmem="skin/key_red_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="205" posy="610" width="180" height="30">
+<node name="b2" text="Copy" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="395" posy="610" width="200" height="30">
+<node name="b3" text="Moven"  picmem="skin/key_yellow_30x30.png"  textposx="40" valign="middle" fontcol="black" fontsize="25" posx="580" posy="610" width="200" height="30">
+<node name="b4" text="View"   picmem="skin/key_blue_30x30.png"    textposx="40" valign="middle" fontcol="black" fontsize="25" posx="785" posy="610" width="200" height="30">
+<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=middle posx=75% posy=2% width=280 height=30/>
 </screen>

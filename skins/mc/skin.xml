@@ -8,7 +8,7 @@
 #<node valign=middle textposx=40 name=mc_appletrailer text="Apple Trailer" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 #<node valign=middle textposx=40 name=mc_myvideo text="My Video" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 #<node valign=middle textposx=40 name=mc_vlcplayer text="VLC Player" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
-#<node valign=middle textposx=40 name=mc_dateibrowser text="Datei Browser" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
+<node valign=middle textposx=40 name=mc_dateibrowser text="Datei Browser" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 <node valign=middle textposx=40 name=mc_internetbrowser text="Internet Browser" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 #<node valign=middle textposx=40 name=mc_radio text="Radio Player" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 #<node valign=middle textposx=40 name=mc_webradio text="Web Radio Player" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
