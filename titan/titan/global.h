@@ -1882,9 +1882,9 @@ void debugstack(void* address, void* address1)
 	printf("Image: %s\n", imgversion);
 	if(info1.dli_fname != NULL)
 		printf("Error in File: %s\n", info1.dli_fname);
-	printf("MainThread: %x\n", (unsigend int)status.mainthread);
+	printf("MainThread: %x\n", (unsigned int)status.mainthread);
 	if(tnode != NULL && info.dli_sname != NULL)
-		printf("Error in Thread: %x (%s)\n", (unsigend int)pthread_self(), info.dli_sname);
+		printf("Error in Thread: %x (%s)\n", (unsigned int)pthread_self(), info.dli_sname);
 	else
 		printf("Error in Thread: %x\n", (unsigned int)pthread_self());
 	printf("Obtaining %zd stack frames:\n\n", size);
