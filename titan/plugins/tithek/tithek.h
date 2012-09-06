@@ -319,7 +319,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 
 int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, struct skin* countlabel)
 {
-	int gridbr = 0, posx = 0, count = 0, sumcount = 0, pagecount = 0;
+	int gridbr = 0, posx = 0, count = 0, sumcount = 0, count1 = 0, pagecount = 0, skip = 0;
 	struct skin* tmp = NULL;
 	char* tithekfile = NULL;
 	char* tmpstr = NULL;
@@ -343,8 +343,8 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	int picwidth = 370;
 	int zcount = 3;
 	int fontsize = 20;
+	int pcount = 6;
 	 
-	printf("linecount: %d\n",linecount);
 	if(linecount > 8 && getconfigint("tithek_view", NULL) == 1)
 	{
 		height = 180;
@@ -353,15 +353,18 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		picwidth = 270;
 		zcount = 4;
 		fontsize = 18;
+		pcount = 12;
 	}
-		
+
 	while(titheknode != NULL)
 	{
 		tmp = addlistbox(grid, listbox, tmp, 1);
 		if(tmp != NULL)
 		{
+			skip = 0;
 			sumcount++;
 			count++;
+			count1++;
 			if(gridbr == 0)
 				tmp->type = GRIDBR;
 			gridbr = 1;
@@ -387,15 +390,23 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 			posx += tmp->width;
 			if(count >= zcount)
 			{
-				pagecount++;
 				count = 0;
 				posx = 0;
 				gridbr = 0;
+			}
+			
+			if(count1 >= pcount)
+			{
+				count1 = 0;
+				pagecount++;
+				skip = 1;
 			}
 		}
 		titheknode = titheknode->next;
 	}
 
+	if(skip == 0)
+		pagecount++;
 
 	tmpstr = oitoa(sumcount);
 
