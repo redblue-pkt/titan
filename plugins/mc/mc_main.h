@@ -133,10 +133,8 @@ void mc_main()
 	struct skin* mc_main_selected = getscreennode(mc_main, "mc_main_selected_pic");
 
 	singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgMusic.mvi", 0);
-			printf("aaaa\n");
 			
 	drawscreen(mc_main, 0, 0);
-			printf("bbbb\n");	
 	addscreenrc(mc_main, listbox);
 	int first = 1;
 				printf("cccc\n");
@@ -183,7 +181,6 @@ void mc_main()
 		}
 		
 		rcret = waitrc(mc_main, 0, 1);
-			printf("eeeee\n");
 		if (rcret == getrcconfigint("rcexit", NULL)) break;		
 			
 		if(rcret == getrcconfigint("rcok", NULL))
