@@ -2528,3 +2528,27 @@ msgstr "gross (6 Bilder)"
 
 msgid "show 12 entrys"
 msgstr "klein (12 Bilder)"
+
+msgid "Delete"
+msgstr "Löschen"
+
+msgid "Copy"
+msgstr "Kopieren"
+
+msgid "Moven"
+msgstr "Verschieben"
+
+msgid "Realy move this file/dir?"
+msgstr "Verschieben"
+
+msgid "Realy copy this file/dir?"
+msgstr "Verschieben"
+
+msgid "Realy delete this file/dir?"
+msgstr "Verschieben"
+
+msgid "From"
+msgstr "von"
+
+msgid "To"
+msgstr "nach"

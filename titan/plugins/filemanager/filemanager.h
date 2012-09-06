@@ -66,9 +66,13 @@ void screenfilemanager()
 					cmd = ostrcat(cmd, "mv ", 1, 0);
 				}
 				
-				tmpstr = ostrcat(tmpstr, _("\n\nFrom: "), 1, 0);
+				tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
+				tmpstr = ostrcat(tmpstr, _("From"), 1, 0);
+				tmpstr = ostrcat(tmpstr, ": ", 1, 0);				
 				tmpstr = ostrcat(tmpstr, file1, 1, 0);
-				tmpstr = ostrcat(tmpstr, _("\nTo: "), 1, 0);
+				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+				tmpstr = ostrcat(tmpstr, _("To"), 1, 0);
+				tmpstr = ostrcat(tmpstr, ": ", 1, 0);
 				tmpstr = ostrcat(tmpstr, filelistpath2->text, 1, 0);
 				ret = textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 300, 0, 0);
 				free(tmpstr); tmpstr = NULL;
@@ -98,7 +102,8 @@ void screenfilemanager()
 			file1 = createpath(filelistpath1->text, filelist1->select->text);
 			if(file1 != NULL)
 			{
-				tmpstr = ostrcat(tmpstr, _("Realy delete this file/dir?\n\n"), 1, 0);
+				tmpstr = ostrcat(tmpstr, _("Realy delete this file/dir?"), 1, 0);
+				tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
 				tmpstr = ostrcat(tmpstr, file1, 1, 0);
 				ret = textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 				free(tmpstr); tmpstr = NULL;
