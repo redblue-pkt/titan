@@ -1882,11 +1882,11 @@ void debugstack(void* address, void* address1)
 	printf("Image: %s\n", imgversion);
 	if(info1.dli_fname != NULL)
 		printf("Error in File: %s\n", info1.dli_fname);
-	printf("MainThread: %x\n", status.mainthread);
+	printf("MainThread: %x\n", (unsigend int)status.mainthread);
 	if(tnode != NULL && info.dli_sname != NULL)
-		printf("Error in Thread: %x (%s)\n", pthread_self(), info.dli_sname);
+		printf("Error in Thread: %x (%s)\n", (unsigend int)pthread_self(), info.dli_sname);
 	else
-		printf("Error in Thread: %x\n", pthread_self());
+		printf("Error in Thread: %x\n", (unsigned int)pthread_self());
 	printf("Obtaining %zd stack frames:\n\n", size);
 
 	for(i = 0; i < size; i++)
@@ -1907,11 +1907,11 @@ void debugstack(void* address, void* address1)
 		fprintf(fd, "Image: %s\n", imgversion);
 		if(info1.dli_fname != NULL)
 			printf("Error in File: %s\n", info1.dli_fname);
-		fprintf(fd, "MainThread: %x\n", status.mainthread);
+		fprintf(fd, "MainThread: %x\n", (unsigned int)status.mainthread);
 		if(tnode != NULL && info.dli_sname != NULL)
-			fprintf(fd, "Error in Thread: %x (%s)\n", pthread_self(), info.dli_sname);
+			fprintf(fd, "Error in Thread: %x (%s)\n", (unsigned int)pthread_self(), info.dli_sname);
 		else
-			fprintf(fd, "Error in Thread: %x\n", pthread_self());
+			fprintf(fd, "Error in Thread: %x\n", (unsigned int)pthread_self());
 		fprintf(fd, "Obtaining %zd stack frames:\n\n", size);
 		for(i = 1; i < size; i++)
 			fprintf(fd, "%s\n", strings[i]);
