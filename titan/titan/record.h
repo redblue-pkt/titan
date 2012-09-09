@@ -404,6 +404,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				}
 				else
 				{
+					pthread_mutex_lock(&status.tsseekmutex);
 					if(status.playfdirection == -1)
 					{
 						readret = videoMakePES(buf, readret, status.aktservice->channel->videopid, servicenode->tssize, 1);
@@ -427,6 +428,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 					}
 					else	
 						writeret = dvbwrite(servicenode->recdstfd, buf, readret, writetimeout);
+					pthread_mutex_unlock(&status.tsseekmutex);
 				}
 			}
 

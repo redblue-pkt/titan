@@ -224,11 +224,13 @@ void playercontinuets()
 {
 	if(status.playfdirection == -1)
 	{
+		pthread_mutex_lock(&status.tsseekmutex);
 		videoclearbuffer(status.aktservice->videodev);
 		videostop(status.aktservice->videodev, 0);
 		videoselectsource(status.aktservice->videodev, VIDEO_SOURCE_DEMUX);
 		videoplay(status.aktservice->videodev);
 		status.playfdirection = 0;
+		pthread_mutex_unlock(&status.tsseekmutex);
 		
 	}
 	if(status.playfdirection == 1)
