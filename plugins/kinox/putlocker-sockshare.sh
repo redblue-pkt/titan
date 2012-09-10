@@ -1,5 +1,8 @@
 TYPE=$1
 FILE=$2
+echo /var/bin/putlocker-sockshare.sh sockshare 492B962B0DD5337E
+rm -rf /tmp/kinox
+mkdir /tmp/kinox
 
 # type
 # putlocker
@@ -12,8 +15,8 @@ HASH=`cat /tmp/kinox/cache_index.quell.html | grep hash | cut -d'"' -f 4`
 post="POST /file/$FILE HTTP/1.1\r\nContent-Length: 51\r\nAccept-Encoding: gzip\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nHost: www.$TYPE.com\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\nhash=$HASH&confirm=Continue+as+Free+User"
 echo -e $post | netcat www.$TYPE.com 80 > /tmp/kinox/cache_post.log
 
-PHPSESSID=`strings cache_post.log | grep Set-Cookie | grep PHPSESSID= | cut -d "=" -f2 | cut -d";" -f1`
-SERVERID=`strings cache_post.log | grep Set-Cookie | grep SERVERID= | cut -d "=" -f2 | cut -d";" -f1`
+PHPSESSID=`strings /tmp/kinox/cache_post.log | grep Set-Cookie | grep PHPSESSID= | cut -d "=" -f2 | cut -d";" -f1`
+SERVERID=`strings /tmp/kinox/cache_post.log | grep Set-Cookie | grep SERVERID= | cut -d "=" -f2 | cut -d";" -f1`
 getstream="GET /file/$FILE HTTP/1.1\r\nHost: www.$TYPE.com\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nCookie: SERVERID=$SERVERID; PHPSESSID=$PHPSESSID\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n"
 echo -e $getstream | netcat www.$TYPE.com 80 > /tmp/kinox/cache_getstream.log
 
