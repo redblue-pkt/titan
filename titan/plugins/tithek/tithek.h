@@ -90,6 +90,17 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 	memset(newnode, 0, sizeof(struct tithek));
 
 	ret = sscanf(line, "%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%d", title, link, pic, localname, menutitle, &newnode->flag);
+	if(newnode->flag == 9999 && !file_exist("/var/swap/etc/.codecpack"))
+	{
+		free(link);
+		free(pic);
+		free(title);
+		free(localname);
+		free(menutitle);
+		free(newnode);
+		return NULL;
+	}
+	
 	if(ret != 6)
 	{
 		if(count > 0)
@@ -825,6 +836,35 @@ void screentithekplay(char* titheklink, char* title, int first)
 					free(search), search = NULL;
 					continue;
 				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 14)
+				{
+					if(status.security == 1)
+					{
+						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+						char* tmpstr1 = NULL;
+						if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, NULL, NULL, 5);
+						free(tmpstr); tmpstr = NULL;
+							
+						if(tmpstr1 != NULL)
+						{
+							if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+								screenplay(tmpstr1, 2, 0);
+								
+//							writesys("/media/test.m3u", tmpstr1, 0);
+//							char* test = readfiletomem("/media/test.m3u", 0);		
+//							screenplay(test, 2, 0);
+
+//							if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+//								playerstart(tmpstr1);	
+
+						}
+						else
+							textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+						free(tmpstr1); tmpstr1 = NULL;
+					}
+					else
+						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);			
+				}
 				else
 				{
 					int pincheck = 0;
@@ -872,10 +912,12 @@ void screentithekplay(char* titheklink, char* title, int first)
 // flag 1 = youtube streamlink
 // flag 2 = rtlnow streamlinksrc
 // flag 3 = rtlnow streamlink
+// flag 4 = myvideo streamlink
+// flag 5 = kinox streamlink
 char* getstreamurl(char* link, char* url, char* name, int flag)
 {
 	debug(99, "link(%d): %s", flag, link);
-	char* ip = NULL, *pos = NULL, *path = NULL, *pageUrl = NULL, *playpath = NULL, *video_id = NULL, *source = NULL;
+	char* ip = NULL, *pos = NULL, *path = NULL, *pageUrl = NULL, *playpath = NULL, *video_id = NULL, *source = NULL, *streamurl = NULL;
 
 	if(flag == 4)
 	{
@@ -895,8 +937,42 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 			printf("video_id: %s\n", video_id);											
 		}
 		free(ret1), ret1 = NULL;
-	}
+	}	
+
+	if(flag == 5)
+	{
+		int count = 0;
+		struct splitstr* ret1 = NULL;
+		ret1 = strsplit(link, ";", &count);
+		if(ret1 != NULL && count >= 3)
+		{			
+			video_id = ostrcat(video_id, ret1[1].part, 1, 0);
+			printf("video_id: %s\n", video_id);
+
+			source = ostrcat(source, ret1[2].part, 1, 0);
+			printf("source: %s\n", source);
 	
+			char* cmd = ostrcat("/var/usr/local/share/titan/plugins/tithek/putlocker.sh ", source, 0, 0);
+			cmd = ostrcat(cmd, " ", 1, 0);
+			cmd = ostrcat(cmd, video_id, 1, 0);
+			printf("cmd: %s\n", cmd);
+			
+			streamurl = string_newline(command(cmd));
+			printf("streamurl: %s\n", streamurl);
+
+//			htmldecode(streamurl, streamurl);
+//			printf("streamurl: %s\n", streamurl);
+
+			printf("link: %s\n", link);
+			free(cmd), cmd = NULL;
+			free(video_id), video_id = NULL;
+			free(source), source = NULL;
+		}
+		free(ret1), ret1 = NULL;
+		debug(99, "streamurl: %s", streamurl);
+		return streamurl;
+	}
+		
 	ip = string_replace("http://", "", (char*)link, 0);
 
 	if(ip != NULL)
@@ -909,7 +985,6 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 
 	char* tmpstr = NULL;
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
-	char* streamurl = NULL;
 		
 	if(flag == 1)
 	{
