@@ -282,7 +282,6 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 	int pts = 0;
 	int prints = 0;
 	int recsync = 0;
-	off64_t pos = 0;
 	unsigned char* buf = NULL, *tmpbuf = NULL;
 	char* retstr = NULL;
 	off64_t bitrate = 0;
@@ -445,26 +444,22 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			if(servicenode->type == RECORDDIRECT || servicenode->type == RECORDTIMER || servicenode->type == RECORDTIMESHIFT)
 			{
 				//sync
-				servicenode->reclastsync += writeret;
-				if(servicenode->reclastsync > 524288)
+				if(recsync == 1)
 				{
-					int tosync = servicenode->reclastsync > 2097152 ? 2097152 : servicenode->reclastsync &~ 4095; //sync max 2MB
-					if(recsync == 1)
+					servicenode->reclastsync += writeret;
+					if(servicenode->reclastsync > 524288)
 					{
-						pos = lseek64(servicenode->recdstfd, 0, SEEK_CUR);
-						pos -= tosync;
 						fdatasync(servicenode->recdstfd);
-						posix_fadvise64(servicenode->recdstfd, pos, tosync, POSIX_FADV_DONTNEED);
+						posix_fadvise64(servicenode->recdstfd, 0, 0, POSIX_FADV_DONTNEED);
 					}
-					servicenode->reclastsync -= tosync;
+					servicenode->reclastsync = 0;
+				}
 
-					//split only after sync
-					if(status.recsplitsize && servicenode->type != RECORDTIMESHIFT)
-					{
-						servicenode->rectotal += tosync;
-						if(servicenode->rectotal > status.recsplitsize)
+				if(status.recsplitsize && servicenode->type != RECORDTIMESHIFT)
+				{
+					servicenode->rectotal += writeret;
+					if(servicenode->rectotal > status.recsplitsize)
 						ret = recordsplit(servicenode);
-					}
 				}
 			}
 		}
