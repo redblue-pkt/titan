@@ -296,7 +296,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 		return 1;
 	}
 
-	recsync = getconfig("recsync", NULL);
+	recsync = getconfigint("recsync", NULL);
 
 	if(servicenode->type == RECORDDIRECT || servicenode->type == RECORDTIMER || servicenode->type == RECORDTIMESHIFT)
 	{
