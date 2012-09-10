@@ -451,8 +451,8 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 					{
 						fdatasync(servicenode->recdstfd);
 						posix_fadvise64(servicenode->recdstfd, 0, 0, POSIX_FADV_DONTNEED);
+						servicenode->reclastsync = 0;
 					}
-					servicenode->reclastsync = 0;
 				}
 
 				if(status.recsplitsize && servicenode->type != RECORDTIMESHIFT)
