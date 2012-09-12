@@ -1,0 +1,8 @@
+<screen name="zapback_main" title="ZapBack" titlealign=center fontcol=fontcol valign=bottom fontsize=35 posx=center posy=center width=30% height=40% bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node halign=center text="schaltet zurueck auf Sender" name=kom1 fontsize=25 posx=center posy=10 width=300 height=25/>
+<node halign=center text="" name=sender func=getaktchannelname fontsize=25 posx=center posy=37 width=300 height=25/>
+<node halign=center text="in" name=kom2 fontsize=25 posx=center posy=64 width=300 height=25/>
+<node halign=center text="0" name=minuten fontsize=50 posx=center posy=95 width=100 height=50/>
+<node halign=center text="Minuten" name=kom3 fontsize=25 posx=center posy=150 width=300 height=50/>
+<node name=b1 text="Start-> OK" halign=center valign=middle bordercol=wihte bordersize=3 bordertype=2 posx=center posy=0 width=200 height=35/>
+</screen>
