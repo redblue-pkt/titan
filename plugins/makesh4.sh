@@ -79,7 +79,7 @@ echo "[titan]--------------------------------------------------------"
 #dir, file, extralib
 compile "networkbrowser" "networkbrowser" "netlib/netlib" ""
 compile "hello" "hello" "" ""
-#compile "panel" "panel" "" ""
+compile "panel" "panel" "" ""
 compile "mc" "mc" "" ""
 compile "TopfieldVFD" "TopfieldVFD" "" ""
 compile "mboxinfo" "mboxinfo" "" ""
