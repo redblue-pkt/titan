@@ -5,21 +5,8 @@ char* ltostr(char* str, long val, unsigned base)
 {
 	ldiv_t r;
 
-	if(base > 36)
-	{
-		str = NULL;
-		return str;
-	}
-
-	if(str == NULL)
-	{
-		str = calloc(1, MINMALLOC);
-		if(str == NULL)
-		{
-			err("no mem");
-			return NULL;
-		}
-	}
+	if(base > 36 || str == NULL)
+		return NULL;
 
 	if(val < 0) *str++ = '-';
 	r = ldiv(labs(val), base);
@@ -29,6 +16,22 @@ char* ltostr(char* str, long val, unsigned base)
 	*str++ = "0123456789abcdefghijklmnopqrstuvwxyz"[(int)r.rem];
 	*str = '\0';
 	return str;
+}
+
+char* oltostr(long val, unsigned base)
+{
+	char* str = NULL;
+
+	str = calloc(1, MINMALLOC);
+	if(str == NULL)
+	{
+		err("no mem");
+		return NULL;
+	}
+
+	ltostr(str, val, base);
+
+	return ostrcat(str, NULL, 1, 0);
 }
 
 int checklowflash()
