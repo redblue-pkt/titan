@@ -942,46 +942,9 @@ void screentithekplay(char* titheklink, char* title, int first)
 	status.hangtime = getconfigint("hangtime", NULL);
 }
 
-/*
-char* ltostr(char* str, long val, unsigned base)
-{
-	ldiv_t r;
-
-	if(base > 36 || str == NULL)
-		return NULL;
-
-	if(val < 0) *str++ = '-';
-	r = ldiv(labs(val), base);
-
-	if(r.quot > 0) str = ltostr(str, r.quot, base);
-
-	*str++ = "0123456789abcdefghijklmnopqrstuvwxyz"[(int)r.rem];
-	*str = '\0';
-	return str;
-}
-
-char* oltostr(long val, unsigned base)
-{
-	char* str = NULL;
-
-	str = calloc(1, MINMALLOC);
-	if(str == NULL)
-	{
-		err("no mem");
-		return NULL;
-	}
-
-	ltostr(str, val, base);
-
-	return ostrcat(str, NULL, 1, 0);
-}
-*/
-
 char* filenuke(char* input)
 {	
-	printf("running\n");
-	char* p = NULL;
-	char* k = NULL;
+	char* tmpstr = NULL, *p = NULL, *k = NULL, *base = NULL, *search = NULL;
 
 	struct splitstr* ret0 = NULL;
 	int count0 = 0;
@@ -991,23 +954,15 @@ char* filenuke(char* input)
 	free(ret0), ret0 = NULL;
 	
 	k = string_replace_all("||", "| |", k, 1);
-printf("p in: %s\n", p);
-printf("k in: %s\n", k);
 
-//	char* replace = NULL;
 	struct splitstr* ret1 = NULL;
 	int count = 0;
 	int i = 0;
 	ret1 = strsplit(k, "|", &count);
 	int max = count;
-//	int first = 1;
 
-
-	char* base = NULL;
-	char* search = NULL;
 	for(i = 0; i < max; i++)
 	{
-//		printf("(%d): %s\n", i, (&ret1[i])->part);
 		if(ostrstr((&ret1[i])->part, " ") != NULL)
 		{
 			printf("continue\n");
@@ -1044,8 +999,6 @@ printf("k in: %s\n", k);
 		p = string_replace(base, search, p, 1);
 		free(base), base = NULL;
 		free(search), search = NULL;
-
-// 2mal
 
 		base = ostrcat(base, "'", 1, 0);
 		base = ostrcat(base, x, 1, 0);
@@ -1166,36 +1119,13 @@ printf("k in: %s\n", k);
 		free(base), base = NULL;
 		free(search), search = NULL;
 
-		
-/*				
-//		base = ostrcat(base, " ", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, " ", 1, 0);
-//		search = ostrcat(search, " ", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, " ", 1, 0);
-		p = string_replace(base, search, p, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-*/
-//		printf("x: %s - %d\n",x,i);
-
-free(x);
-
+		free(x);
 	}
+	free(ret1), ret1 = NULL;
+	free(k), k = NULL;
 
-	
-	printf("max1: %d\n", max);
-	printf("count: %d\n", count);
-	printf("p00 in: %s\n", p);
-	printf("####################################\n");
-//	printf("p1 out: %s\n", p1);
-	printf("####################################\n");
-
-	char* tmpstr = NULL;
 	tmpstr = oregex(".*file.*(http:.*video.flv).*image.*", p);
-	printf("tmpstr: %s\n", tmpstr);
-								
+	free(p), p = NULL;								
     return tmpstr;
 }
 
