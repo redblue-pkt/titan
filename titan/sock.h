@@ -484,7 +484,7 @@ char *get_ip(char *host)
 	{
 		free(ip);
 		free(buf);
-		perr("can't get ip");
+		err("can't get ip");
 		return NULL;
 	}
 
@@ -566,11 +566,11 @@ int checkhttpheader(char* tmpbuf, char** retstr)
 	return stat;
 }
 
-char* gethttp(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect)
+char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect, char* header, long* clen)
 {
-	int sock = -1, ret = 0, count = 0, hret = 0;
+	int sock = -1, ret = 0, count = 0, hret = 0, freeheader = 0;
 	unsigned int len = 0, maxret = 0;
-	char *ip = NULL, *header = NULL;
+	char *ip = NULL;
 	char *tmpbuf = NULL, *buf = NULL;
 	char *tmppage = "/", *retstr = NULL;
 	FILE *fd = NULL;
@@ -616,7 +616,11 @@ char* gethttp(char* host, char* page, int port, char* filename, char* auth, stru
 	free(ip);
 
 	if(dnode != NULL) dnode->connfd = sock;
-	header = createhttpheader(host, page, auth);
+	if(header == NULL)
+	{
+		header = createhttpheader(host, page, auth);
+		freeheader = 1;
+	}
 
 	//Send the query to the server
 	ret = socksend(&sock, (unsigned char*)header, strlen(header), 5000 * 1000);
@@ -628,11 +632,11 @@ char* gethttp(char* host, char* page, int port, char* filename, char* auth, stru
 			fclose(fd);
 			unlink(filename);
 		}
-		free(header);
+		if(freeheader == 1) free(header);
 		if(dnode != NULL) dnode->ret = 1;
 		return NULL;
 	}
-	free(header);
+	if(freeheader == 1) free(header);
 
 	//now it is time to receive the page
 	tmpbuf = malloc(MINMALLOC);
@@ -755,9 +759,15 @@ end:
 		buf = gethttp(rhost, rpage, port, filename, auth, dnode, redirect);
 	}
 
+	if(clen != 0) *clen = maxret;
 	if(dnode != NULL) dnode->ret = 0;
 	free(retstr); retstr = NULL;
 	return buf;
+}
+
+char* gethttp(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect)
+{
+	return gethttpreal(host, page, port, filename, auth, dnode, redirect, NULL, NULL);
 }
 
 void gethttpstruct(struct stimerthread* timernode, struct download* node, int flag)
