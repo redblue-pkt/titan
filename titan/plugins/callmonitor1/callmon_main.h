@@ -114,7 +114,7 @@ void callmon_main()
 	
 	addchoicebox(stumm, "1", _("ja"));
 	addchoicebox(stumm, "0", _("nein"));
-	setchoiceboxselection(ausgehend, getlist(myconfig, "muteRing", NULL));
+	setchoiceboxselection(stumm, getlist(myconfig, "muteRing", NULL));
 	
 	addchoicebox(wennaus, "1", _("puffern"));
 	addchoicebox(wennaus, "0", _("verwerfen"));
