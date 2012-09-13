@@ -7,8 +7,13 @@ rm -rf _full/kinox
 mkdir -p _full/kinox/streams
 piccount=0
 
-wget --no-check-certificate "http://kinox.to" -O cache.main.list
-main_list=`cat cache.main.list | tr '><' '>\n<' | grep "Stream" | grep '.html" title=' | cut -d '"' -f2 | sort -um`
+
+#wget --no-check-certificate "http://kinox.to" -O cache.main.list
+#main_list=`cat cache.main.list | tr '><' '>\n<' | grep "Stream" | grep '.html" title=' | cut -d '"' -f2 | sort -um`
+
+wget --no-check-certificate "http://kinox.to/Cine-Films.html" -O cache.main.list
+main_list=`cat cache.main.list | grep /Stream/ | cut -d "'" -f2 | grep ^/Stream/`
+
 skip=0
 piccount=0
 echo main_list $main_list
@@ -92,10 +97,10 @@ cat cache.$searchname.$files.list | sed 's!http:!\nhttp:!' | sed 's!" target=!\n
 
 done
 
-exit
+#exit
 
 cat cache.kinox.titanlist | sort -u > _full/kinox/kinox.all.list
-
+exit
 cp -a _full/kinox /var/www/atemio/web/mediathek
 exit
 
