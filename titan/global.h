@@ -1,6 +1,36 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+char* ltostr(char* str, long val, unsigned base)
+{
+	ldiv_t r;
+
+	if(base > 36)
+	{
+		str = NULL;
+		return str;
+	}
+
+	if(str == NULL)
+	{
+		str = calloc(1, MINMALLOC);
+		if(str == NULL)
+		{
+			err("no mem");
+			return NULL;
+		}
+	}
+
+	if(val < 0) *str++ = '-';
+	r = ldiv(labs(val), base);
+
+	if(r.quot > 0) str = ltostr(str, r.quot, base);
+
+	*str++ = "0123456789abcdefghijklmnopqrstuvwxyz"[(int)r.rem];
+	*str = '\0';
+	return str;
+}
+
 int checklowflash()
 {
 	char* tmpstr = NULL;
