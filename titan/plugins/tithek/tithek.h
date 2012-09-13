@@ -443,6 +443,8 @@ void screentithekplay(char* titheklink, char* title, int first)
 	
 	if(first == 1)
 	{
+		delallfiles("/tmp/tithek", NULL); 
+		mkdir("/tmp/tithek", 777); 
 		rcret = servicestop(status.aktservice, 1, 1);
 		if(rcret == 1) return;
 	}
