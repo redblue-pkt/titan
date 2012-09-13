@@ -443,8 +443,6 @@ void screentithekplay(char* titheklink, char* title, int first)
 	
 	if(first == 1)
 	{
-		delallfiles("/tmp/tithek", NULL);
-		mkdir("/tmp/tithek", 777);
 		rcret = servicestop(status.aktservice, 1, 1);
 		if(rcret == 1) return;
 	}
@@ -569,9 +567,10 @@ void screentithekplay(char* titheklink, char* title, int first)
 				}
 			}
 		}
-
+				printf("wooooooooooooooooooo11111111111111111111\n");
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
+						printf("wooooooooooooooooooo22222222222222222\n");
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
 				clearscreen(grid);
@@ -867,6 +866,36 @@ void screentithekplay(char* titheklink, char* title, int first)
 					else
 						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);			
 				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 15)
+				{
+				printf("wooooooooooooooooooo\n");
+					if(status.security == 1)
+					{
+						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+						char* tmpstr1 = NULL;
+						if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, NULL, NULL, 6);
+						free(tmpstr); tmpstr = NULL;
+							
+						if(tmpstr1 != NULL)
+						{
+							if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+								screenplay(tmpstr1, 2, 0);
+								
+//							writesys("/media/test.m3u", tmpstr1, 0);
+//							char* test = readfiletomem("/media/test.m3u", 0);		
+//							screenplay(test, 2, 0);
+
+//							if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+//								playerstart(tmpstr1);	
+
+						}
+						else
+							textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+						free(tmpstr1); tmpstr1 = NULL;
+					}
+					else
+						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);			
+				}
 				else
 				{
 					int pincheck = 0;
@@ -910,6 +939,264 @@ void screentithekplay(char* titheklink, char* title, int first)
 	}
 	status.hangtime = getconfigint("hangtime", NULL);
 }
+
+/*
+char* ltostr(char* str, long val, unsigned base)
+{
+	ldiv_t r;
+
+	if(base > 36 || str == NULL)
+		return NULL;
+
+	if(val < 0) *str++ = '-';
+	r = ldiv(labs(val), base);
+
+	if(r.quot > 0) str = ltostr(str, r.quot, base);
+
+	*str++ = "0123456789abcdefghijklmnopqrstuvwxyz"[(int)r.rem];
+	*str = '\0';
+	return str;
+}
+
+char* oltostr(long val, unsigned base)
+{
+	char* str = NULL;
+
+	str = calloc(1, MINMALLOC);
+	if(str == NULL)
+	{
+		err("no mem");
+		return NULL;
+	}
+
+	ltostr(str, val, base);
+
+	return ostrcat(str, NULL, 1, 0);
+}
+*/
+
+char* filenuke(char* input)
+{	
+	printf("running\n");
+	char* p = NULL;
+	char* k = NULL;
+
+	struct splitstr* ret0 = NULL;
+	int count0 = 0;
+	ret0 = strsplit(input, "\n", &count0);
+	p = ostrcat((&ret0[0])->part, NULL, 0, 0);
+	k = ostrcat((&ret0[1])->part, NULL, 0, 0);
+	free(ret0), ret0 = NULL;
+	
+	k = string_replace_all("||", "| |", k, 1);
+printf("p in: %s\n", p);
+printf("k in: %s\n", k);
+
+//	char* replace = NULL;
+	struct splitstr* ret1 = NULL;
+	int count = 0;
+	int i = 0;
+	ret1 = strsplit(k, "|", &count);
+	int max = count;
+//	int first = 1;
+
+
+	char* base = NULL;
+	char* search = NULL;
+	for(i = 0; i < max; i++)
+	{
+//		printf("(%d): %s\n", i, (&ret1[i])->part);
+		if(ostrstr((&ret1[i])->part, " ") != NULL)
+		{
+			printf("continue\n");
+			continue;
+		}
+		char* x = oltostr(i, 36);
+
+		base = ostrcat(base, "'", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, "\\", 1, 0);		
+		search = ostrcat(search, "'", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, "\\", 1, 0);
+		p = string_replace(base, search, p, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+		
+		base = ostrcat(base, "'", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, "'", 1, 0);		
+		search = ostrcat(search, "'", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, "'", 1, 0);
+		p = string_replace(base, search, p, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+
+		base = ostrcat(base, "'", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, ":", 1, 0);		
+		search = ostrcat(search, "'", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, ":", 1, 0);
+		p = string_replace(base, search, p, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+
+// 2mal
+
+		base = ostrcat(base, "'", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, ":", 1, 0);		
+		search = ostrcat(search, "'", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, ":", 1, 0);
+		p = string_replace(base, search, p, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+				
+		base = ostrcat(base, "/", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, "/", 1, 0);
+		search = ostrcat(search, "/", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, "/", 1, 0);
+		p = string_replace(base, search, p, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+
+		base = ostrcat(base, ".", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, ".", 1, 0);
+		search = ostrcat(search, ".", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, ".", 1, 0);
+		p = string_replace(base, search, p, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+
+		base = ostrcat(base, ".", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, "/", 1, 0);
+		search = ostrcat(search, ".", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, "/", 1, 0);
+		p = string_replace(base, search, p, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+
+		base = ostrcat(base, ".", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, "'", 1, 0);
+		search = ostrcat(search, ".", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, "'", 1, 0);
+		p = string_replace(base, search, p, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+	
+		base = ostrcat(base, "/", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, ".", 1, 0);
+		search = ostrcat(search, "/", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, ".", 1, 0);
+		p = string_replace(base, search, p, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+
+		base = ostrcat(base, ".", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, "(", 1, 0);
+		search = ostrcat(search, ".", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, "(", 1, 0);
+		p = string_replace(base, search, p, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+
+		base = ostrcat(base, " ", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, "(", 1, 0);
+		search = ostrcat(search, " ", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, "(", 1, 0);
+		p = string_replace(base, search, p, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+
+		base = ostrcat(base, "=", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, " ", 1, 0);
+		search = ostrcat(search, "=", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, " ", 1, 0);
+		p = string_replace(base, search, p, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+
+		base = ostrcat(base, " ", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, "=", 1, 0);
+		search = ostrcat(search, " ", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, "=", 1, 0);
+		p = string_replace(base, search, p, 1);
+		free(base), base = NULL;
+
+		base = ostrcat(base, ";", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, ".", 1, 0);
+		search = ostrcat(search, ";", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, ".", 1, 0);
+		p = string_replace(base, search, p, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+
+		base = ostrcat(base, ".", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, "\\", 1, 0);
+		search = ostrcat(search, ".", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, "\\", 1, 0);
+		p = string_replace(base, search, p, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+
+		
+/*				
+//		base = ostrcat(base, " ", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, " ", 1, 0);
+//		search = ostrcat(search, " ", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, " ", 1, 0);
+		p = string_replace(base, search, p, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+*/
+//		printf("x: %s - %d\n",x,i);
+
+free(x);
+
+	}
+
+	
+	printf("max1: %d\n", max);
+	printf("count: %d\n", count);
+	printf("p00 in: %s\n", p);
+	printf("####################################\n");
+//	printf("p1 out: %s\n", p1);
+	printf("####################################\n");
+
+	char* tmpstr = NULL;
+	tmpstr = oregex(".*file.*(http:.*video.flv).*image.*", p);
+	printf("tmpstr: %s\n", tmpstr);
+								
+    return tmpstr;
+}
+
 
 // flag 1 = youtube streamlink
 // flag 2 = rtlnow streamlinksrc
@@ -969,6 +1256,45 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 			free(cmd), cmd = NULL;
 			free(video_id), video_id = NULL;
 			free(source), source = NULL;
+		}
+		free(ret1), ret1 = NULL;
+		debug(99, "streamurl: %s", streamurl);
+		return streamurl;
+	}
+
+	if(flag == 6)
+	{
+		int count = 0;
+		struct splitstr* ret1 = NULL;
+		ret1 = strsplit(link, ";", &count);
+		if(ret1 != NULL && count >= 3)
+		{			
+			video_id = ostrcat(video_id, ret1[1].part, 1, 0);
+			printf("video_id: %s\n", video_id);
+
+			source = ostrcat(source, ret1[2].part, 1, 0);
+			printf("source: %s\n", source);
+	
+			char* cmd = ostrcat("/var/usr/local/share/titan/plugins/tithek/filenuke.sh ", source, 0, 0);
+			cmd = ostrcat(cmd, " ", 1, 0);
+			cmd = ostrcat(cmd, video_id, 1, 0);
+			printf("cmd: %s\n", cmd);
+			
+			char* tmpstr = string_newline(command(cmd));
+
+			streamurl = filenuke(tmpstr);
+
+			printf("streamurl: %s\n", streamurl);
+
+//			htmldecode(streamurl, streamurl);
+//			printf("streamurl: %s\n", streamurl);
+
+			printf("link: %s\n", link);
+			free(cmd), cmd = NULL;
+			free(video_id), video_id = NULL;
+			free(source), source = NULL;
+			
+			
 		}
 		free(ret1), ret1 = NULL;
 		debug(99, "streamurl: %s", streamurl);

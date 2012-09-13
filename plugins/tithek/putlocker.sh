@@ -23,6 +23,14 @@ echo -e $getstream | /var/usr/local/share/titan/plugins/tithek/netcat www.$TYPE 
 cat /tmp/kinox/cache_getstream.log | sed '1,14d' | zcat > /tmp/kinox/cache_index.html 
 STREAMLINK=`cat /tmp/kinox/cache_index.html | grep playlist: | cut -d "'" -f2`
 
+#echo "#######################################"
+#echo get $get
+#echo "#######################################"
+#echo post $post
+#echo "#######################################"
+#echo getstream $getstream
+#echo "#######################################"
+
 getstream1="GET $STREAMLINK HTTP/1.1\r\nAccept-Encoding: identity\r\nHost: www.$TYPE\r\nCookie: SERVERID=$SERVERID; PHPSESSID=$PHPSESSID\r\nConnection: close\r\nUser-Agent: Python-urllib/2.6\r\n\r\n"
 echo -e $getstream1 | /var/usr/local/share/titan/plugins/tithek/netcat www.$TYPE 80 > /tmp/kinox/cache_getstream1.log
 
