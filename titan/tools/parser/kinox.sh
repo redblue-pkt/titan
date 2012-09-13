@@ -83,8 +83,10 @@ cat cache.$searchname.$files.list | sed 's!http:!\nhttp:!' | sed 's!" target=!\n
 			fi
 			if [ $ROUND2 == "Sockshare.com" ] || [ $ROUND2 == "Putlocker.com" ];then		
 				LINE="$TITLE#$URL#$PIC#kinox_$ROUND2.jpg#KinoX#14"
-			else
+			elif [ $ROUND2 == "FileNuke.com" ];then		
 				LINE="$TITLE#$URL#$PIC#kinox_$ROUND2.jpg#KinoX#15"
+			else
+				LINE="$TITLE#$URL#$PIC#kinox_$ROUND2.jpg#KinoX#16"
 			fi
 	
 #		echo $LINE >> cache.kinox.$filename.1titanlist
