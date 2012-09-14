@@ -69,8 +69,8 @@ int panel_menucall(struct skin* panel_menuentry)
 		screenpanel_settings_overclocking();
 	else if(ostrcmp("panel_settings_automount", panel_menuentry->name) == 0)
 		screenpanel_settings(0);
-	else if(ostrcmp("panel_settings_wizard", panel_menuentry->name) == 0)
-		screenpanel_wizard();
+//	else if(ostrcmp("panel_settings_wizard", panel_menuentry->name) == 0)
+//		screenpanel_wizard();
 	else if(ostrcmp("panel_settings_autostart", panel_menuentry->name) == 0)
 	{
 		struct skin* screen = getscreen("panel_autostart_main");
