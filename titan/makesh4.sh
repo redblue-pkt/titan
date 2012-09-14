@@ -132,7 +132,7 @@ if [ ! -e "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/nsfb ]; then
 	echo "[titan] netsurf building error !!!"
 	echo "[titan] check your src"
 	echo "[titan]--------------------------------------------------------"
-	exit 1
+#	exit 1
 fi
 
 echo "[titan]--------------------------------------------------------"
