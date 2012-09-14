@@ -2558,3 +2558,6 @@ msgstr "Installieren Sie Bitte das Datei Browser unter Erweiterungen"
 
 msgid "FILELIST MANAGER"
 msgstr "Datei Browser"
+
+msgid "Are you sure you want to delete this directory?"
+msgstr "Wollen Sie dieses Verzeichnis löschen ?"
