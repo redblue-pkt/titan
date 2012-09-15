@@ -61,7 +61,7 @@ void timeshiftstop(int flag)
  				ret = 0; 
 		} 
 		
-		cmd = ostrcat(cmd, "rm -rf ", 1, 0);
+		cmd = ostrcat(cmd, "rm -f ", 1, 0);
 		cmd = ostrcat(cmd, file, 1, 0);
 		if(ret == 1) system(cmd);
 		free(cmd); cmd = NULL;	
