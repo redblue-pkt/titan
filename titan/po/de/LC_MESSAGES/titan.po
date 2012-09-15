@@ -2539,13 +2539,13 @@ msgid "Moven"
 msgstr "Verschieben"
 
 msgid "Realy move this file/dir?"
-msgstr "Verschieben"
+msgstr "Wollen Sie diese Datei Verschieben ?"
 
 msgid "Realy copy this file/dir?"
-msgstr "Verschieben"
+msgstr "Wollen Sie diese Datei Kopieren ?"
 
 msgid "Realy delete this file/dir?"
-msgstr "Verschieben"
+msgstr "Wollen Sie diese Datei löschen ?"
 
 msgid "From"
 msgstr "von"
