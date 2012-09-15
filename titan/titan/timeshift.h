@@ -31,7 +31,7 @@ void timeshiftpause()
 void timeshiftstop(int flag)
 {
 	int i = 0, ret = 0;
-	char* file = NULL, *cmd = NULL;
+	char* file = NULL;
 	struct service* snode = getservice(RECORDTIMESHIFT, flag);
 
 	if(status.timeshiftseek != 0) { 
@@ -55,16 +55,11 @@ void timeshiftstop(int flag)
 		if(ret == 0)
 		{
 			ret = textbox(_("Message"), _("Should Timeshift File deleted ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 10, 0);
-			if(ret == 0) 
- 				ret = 1; 
- 			else if(ret == 1) 
- 				ret = 0; 
+			if(ret == 0) ret = 1; 
 		} 
+
+		if(ret == 1) unlink(file);
 		
-		cmd = ostrcat(cmd, "rm -f ", 1, 0);
-		cmd = ostrcat(cmd, file, 1, 0);
-		if(ret == 1) system(cmd);
-		free(cmd); cmd = NULL;	
 		free(file); file = NULL;
 	}
 
