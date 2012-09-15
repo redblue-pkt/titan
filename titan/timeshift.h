@@ -63,8 +63,8 @@ void timeshiftstop(int flag)
  				ret = 0; 
 		} 
 
-		printf("file: %s",file);
-		printf("ret: %d",ret);		
+		printf("file: %s\n",file);
+		printf("ret: %d\n",ret);		
 		if(ret == 1) unlink(file);
 		free(file); file = NULL;
 	}
