@@ -158,7 +158,6 @@ void dvbwritepmt(struct service* node, unsigned char* pmtbuf)
 	free(filename);
 }
 
-
 void sendcapmttosock(struct service* node, unsigned char* buf, int pos, int caservicenr)
 {
 	int ret = 0, i = 0;
@@ -177,42 +176,6 @@ void sendcapmttosock(struct service* node, unsigned char* buf, int pos, int case
 			printf("%02x ", buf[i] & 0xff);
 		printf("\n");
 	}
-}
-
-void sendcapmtend(struct service* node)
-{
-	unsigned char* buf = NULL;
-
-	if(node == NULL)
-	{
-		debug(620, "service empty");
-		return;
-	}
-	if(node->fedev == 0)
-	{
-		debug(620, "no frontend");
-		return;
-	}
-
-	buf = malloc(8);
-	if(buf == NULL)
-	{
-		err("no mem");
-		return;
-	}
-	memset(buf, 0, 8);
-
-	buf[0] = 0x9F; // ca_pmt_tag
-        buf[1] = 0x80; // ca_pmt_tag
-        buf[2] = 0x3f; // ca_pmt_tag
-        buf[3] = 0x04; // ca_pmt_tag
-        buf[4] = 0x83; // ca_pmt_tag
-        buf[5] = 0x02; // ca_pmt_tag
-        buf[6] = 0x00; // ca_pmt_tag
-	buf[7] = node->fedev->devnr; //demux_dev_nr
-	//sendcapmttosock(node, buf, 8);
-
-	free(buf);
 }
 
 //flag 0 = from zap
