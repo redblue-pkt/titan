@@ -31,7 +31,7 @@ void timeshiftpause()
 void timeshiftstop(int flag)
 {
 	int i = 0, ret = 0;
-	char* file = NULL;
+	char* file = NULL, *cmd = NULL;
 	struct service* snode = getservice(RECORDTIMESHIFT, flag);
 
 	if(status.timeshiftseek != 0) { 
@@ -48,8 +48,6 @@ void timeshiftstop(int flag)
 	
 	if(snode != NULL)
 	{
-		file = getconfig("rec_timeshiftpath", NULL);
-		file = ostrcat(file, "/", 1, 0);
 		file = ostrcat(file, snode->recname, 1, 0);
 		snode->recendtime = 1;
 
@@ -62,10 +60,11 @@ void timeshiftstop(int flag)
  			else if(ret == 1) 
  				ret = 0; 
 		} 
-
-		printf("file: %s\n",file);
-		printf("ret: %d\n",ret);		
-		if(ret == 1) unlink(file);
+		
+		cmd = ostrcat(cmd, "rm -rf ", 1, 0);
+		cmd = ostrcat(cmd, file, 1, 0);
+		if(ret == 1) system(cmd);
+		free(cmd); cmd = NULL;	
 		free(file); file = NULL;
 	}
 
