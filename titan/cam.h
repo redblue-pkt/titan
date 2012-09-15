@@ -413,8 +413,8 @@ start:
 			cadescnode = cadescnode->next;
 		}
 
-		buf[eslenpos] = eslen & 0x0f;
-		buf[eslenpos + 1] = (eslen >> 8) & 0xff;
+		buf[eslenpos + 1] = eslen & 0xff;
+		buf[eslenpos] = (eslen >> 8) & 0x0f;
 
 		esinfonode = esinfonode->next;
 	}
@@ -428,8 +428,8 @@ start:
 	tmppos = tmppos - 10 + lenbytes + 3;
 
 	//programinfo len
-	buf[8 + lenbytes] = (tmppos - 9 - lenbytes) & 0x0f;
-	buf[7 + lenbytes] = ((tmppos - 9 - lenbytes) >> 8) & 0xff;
+	buf[8 + lenbytes] = (tmppos - 9 - lenbytes) & 0xff;
+	buf[7 + lenbytes] = ((tmppos - 9 - lenbytes) >> 8) & 0x0f;
 
 	if(round == 0)
 	{
