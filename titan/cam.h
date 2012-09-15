@@ -311,8 +311,8 @@ start:
 	memset(buf, 0, MINMALLOC);
 
 	buf[0] = 0x9F; // ca_pmt_tag
-        buf[1] = 0x80; // ca_pmt_tag
-        buf[2] = 0x32; // ca_pmt_tag
+	buf[1] = 0x80; // ca_pmt_tag
+	buf[2] = 0x32; // ca_pmt_tag
 
 	buf[pos++] = 3; //ca_pmt_lst_management: fixme 5 for update
 	buf[pos++] = node->channel->pmt->programnumber >> 8;
@@ -363,20 +363,19 @@ start:
 
 	while(cadescnode != NULL && clear == 0)
 	{
-		if(cadescnode->len > 0)
+		if(cadescnode->len > 0 && cadescnode->pid == 0)
 		{
 			buf[pos++] = 0x09; //ca desc tag
 			buf[pos++] = cadescnode->len;
 			buf[pos++] = cadescnode->systemid >> 8;
 			buf[pos++] = cadescnode->systemid & 0xff;
-			buf[pos++] = (cadescnode->reserved << 5) | (cadescnode->pid >> 8);
-			buf[pos++] = cadescnode->pid & 0xff;
+			buf[pos++] = (cadescnode->reserved << 5) | (cadescnode->capid >> 8);
+			buf[pos++] = cadescnode->capid & 0xff;
 			if(cadescnode->len > 4)
 			{
 				memcpy(&buf[pos], cadescnode->privat, cadescnode->len - 4);
 				pos += cadescnode->len - 4;
 			}
-
 		}
 		cadescnode = cadescnode->next;
 	}
@@ -388,7 +387,35 @@ start:
 		buf[pos++] = esinfonode->streamtype;
 		buf[pos++] = esinfonode->pid >> 8;
 		buf[pos++] = esinfonode->pid & 0xff;
+
+		int eslenpos = pos;
+		int eslen = 0;
 		pos += 2;
+
+		while(cadescnode != NULL && clear == 0)
+		{
+			if(cadescnode->len > 0 && cadescnode->pid != 0)
+			{
+				if(eslen == 0) buf[pos++] = 0x01; //ca_pmt_cmd_id: ok_descrambling=1
+				eslen = eslen + cadescnode->len + 2;
+				buf[pos++] = 0x09; //ca desc tag
+				buf[pos++] = cadescnode->len;
+				buf[pos++] = cadescnode->systemid >> 8;
+				buf[pos++] = cadescnode->systemid & 0xff;
+				buf[pos++] = (cadescnode->reserved << 5) | (cadescnode->capid >> 8);
+				buf[pos++] = cadescnode->capid & 0xff;
+				if(cadescnode->len > 4)
+				{
+					memcpy(&buf[pos], cadescnode->privat, cadescnode->len - 4);
+					pos += cadescnode->len - 4;
+				}
+			}
+			cadescnode = cadescnode->next;
+		}
+
+		buf[eslenpos] = eslen & 0x0f;
+		buf[eslenpos + 1] = (eslen >> 8) & 0xff;
+
 		esinfonode = esinfonode->next;
 	}
 
@@ -401,7 +428,7 @@ start:
 	tmppos = tmppos - 10 + lenbytes + 3;
 
 	//programinfo len
-	buf[8 + lenbytes] = (tmppos - 9 - lenbytes) & 0xff;
+	buf[8 + lenbytes] = (tmppos - 9 - lenbytes) & 0x0f;
 	buf[7 + lenbytes] = ((tmppos - 9 - lenbytes) >> 8) & 0xff;
 
 	if(round == 0)
@@ -475,7 +502,7 @@ struct pmt* addpmt(struct channel* chnode, int programnumber, int versionnumber,
 	return newnode;
 }
 
-struct cadesc* addcadesc(struct channel* chnode, unsigned char* buf, struct cadesc* last)
+struct cadesc* addcadesc(struct channel* chnode, int pid, unsigned char* buf, struct cadesc* last)
 {
 	debug(1000, "in");
 	struct cadesc *newnode = NULL, *prev = NULL, *node = NULL;
@@ -497,10 +524,11 @@ struct cadesc* addcadesc(struct channel* chnode, unsigned char* buf, struct cade
 
 	memset(newnode, 0, sizeof(struct cadesc));
 
+	newnode->pid = pid;
 	newnode->len = buf[1];
 	newnode->systemid = (buf[2] << 8) | buf[3];
 	newnode->reserved = buf[4] >> 5;
-	newnode->pid = ((buf[4] & 0x1F) << 8) | buf[5];
+	newnode->capid = ((buf[4] & 0x1F) << 8) | buf[5];
 
 	if(newnode->len > 4)
 	{

@@ -38,7 +38,7 @@ void careseting(struct stimerthread* self, struct dvbdev* dvbnode, int flag)
 
 		//flush buffer
 		if(flag == 1)
-                	while(dvbreadfd(dvbnode->fd, buf, 0, 256, -1, 0) > 0);
+			while(dvbreadfd(dvbnode->fd, buf, 0, 256, -1, 0) > 0);
 
 		//flush queue
 		qe = getqueue(dvbnode->devnr);
@@ -661,7 +661,7 @@ int cacaAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *da
 	{
 		switch(tag[2])
 		{
-			case 0x31:
+			case 0x31: //ca info
 				if(debug_level == 620)
 				{
 					i = 0;
@@ -1690,6 +1690,8 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 	char* tmpstr = NULL;
 	struct dvbdev *dvbnode = dvbdev;
 
+	if(node == NULL) return;
+
 	while(dvbnode != NULL)
 	{
 		if(dvbnode->type == CIDEV && dvbnode->fd > -1 && dvbnode->caslot != NULL && dvbnode->caslot->status == 2 && dvbnode->caslot->caids != NULL)
@@ -1700,15 +1702,45 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 			{
 				debug(620, "cam is singel and is in use");
 				free(tmpstr); tmpstr = NULL;
-				return 1;
+				//return 1;
+				dvbnode = dvbnode->next;
+				continue;
 			}
 			free(tmpstr); tmpstr = NULL;
+
+			//check if cam can caid
+			int foundcaid = 0;
+			if(node->channel != NULL)
+			{
+				struct cadesc *nodecadesc = node->channel->cadesc;
+				while(nodecadesc != NULL)
+				{
+					debug(620, "cam-ciads=%s", dvbnode->caslot->caids);
+					debug(620, "videopid=%d, audiopid=%d, ac3pid=%d, capid=%d, caid=%d", node->channel->videopid, node->channel->audiopid, node->channel->ac3audiopid, nodecadesc->pid, nodecadesc->systemid);
+					tmpstr = oitoa(nodecadesc->systemid);
+					if(ostrstr(dvbnode->caslot->caids, tmpstr) != NULL)
+					{
+						foundcaid = 1;
+						break;
+					}
+					free(tmpstr); tmpstr = NULL;
+					nodecadesc = nodecadesc->next;
+				}
+			}
+			free(tmpstr); tmpstr = NULL;
+
+			if(foundcaid == 0)
+			{
+				debug(620, "cam not supports caid");
+				dvbnode = dvbnode->next;
+				continue;
+			}
 
 			//TODO: if record is running input should not changed
 			//change ciX_input and inputX
 			if(node->fedev != NULL)
 			{
-				debug(620, "set ci slot %d to tuner %d\n", dvbnode->devnr, node->fedev->devnr);
+				debug(620, "set ci slot %d to tuner %d", dvbnode->devnr, node->fedev->devnr);
 				switch(node->fedev->devnr)
 				{
 					case 0:
@@ -1732,12 +1764,16 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 
 			//got free camanager
 			if(caservice[caservicenr].camanager == -1)
+			{
 				caservice[caservicenr].camanager = getfreecasession(dvbnode, 2, 2);
+				debug(620, "use camanager %d", caservice[caservicenr].camanager);
+			}
 
 			if(caservice[caservicenr].camanager > -1)
 			{
 				sendSPDU(dvbnode, 0x90, NULL, 0, caservice[caservicenr].camanager, buf, len);
 				caservice[caservicenr].caslot = dvbnode->caslot;
+				debug(620, "found cam for decrypt (slot=%d)", dvbnode->devnr);
 			}
 			else
 			{
@@ -1746,7 +1782,7 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 				//casessioncreate(dvbnode, NULL, &status, 0x00030041);
 			}
 
-			return 1;
+			//return 1;
 		}
 		dvbnode = dvbnode->next;
 	}
