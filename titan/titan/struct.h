@@ -889,10 +889,11 @@ struct esinfo
 
 struct cadesc
 {
+	int pid;
 	int len;
 	int systemid;
 	int reserved;
-	int pid;
+	int capid;
 	char* privat;
 	struct cadesc* next;
 };

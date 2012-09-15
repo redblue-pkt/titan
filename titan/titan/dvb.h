@@ -492,7 +492,7 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 			{
 				case 0x09:
 					chnode->crypt = 1;
-					addcadesc(chnode, &pmtbuf[i], NULL);
+					addcadesc(chnode, 0, &pmtbuf[i], NULL);
 					break;
 			}
 		}
@@ -536,7 +536,7 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 					break;
 				case 0x09:
 					chnode->crypt = 1;
-					addcadesc(chnode, &tmpbuf[pos], NULL);
+					addcadesc(chnode, pid, &tmpbuf[pos], NULL);
 					break;
 				case 0x0A:
 					langdesc[0] = toupper(tmpbuf[pos + 2]);
