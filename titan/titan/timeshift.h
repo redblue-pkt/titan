@@ -48,6 +48,8 @@ void timeshiftstop(int flag)
 	
 	if(snode != NULL)
 	{
+		file = getconfig("rec_timeshiftpath", NULL);
+		file = ostrcat(file, "/", 1, 0);
 		file = ostrcat(file, snode->recname, 1, 0);
 		snode->recendtime = 1;
 
@@ -60,7 +62,9 @@ void timeshiftstop(int flag)
  			else if(ret == 1) 
  				ret = 0; 
 		} 
-		
+
+		printf("file: %s",file);
+		printf("ret: %d",ret);		
 		if(ret == 1) unlink(file);
 		free(file); file = NULL;
 	}
