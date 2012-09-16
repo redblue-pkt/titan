@@ -277,7 +277,7 @@ start:
 	buf[1] = 0x80; // ca_pmt_tag
 	buf[2] = 0x32; // ca_pmt_tag
 
-	buf[pos++] = 3; //ca_pmt_lst_management: fixme 5 for update
+	buf[pos++] = 4; //ca_pmt_lst_management: 0=more, 1=first, 2=last, 3=only, 4=add, 5=update
 	buf[pos++] = node->channel->pmt->programnumber >> 8;
 	buf[pos++] = node->channel->pmt->programnumber & 0xff;
 

@@ -1774,6 +1774,7 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 				sendSPDU(dvbnode, 0x90, NULL, 0, caservice[caservicenr].camanager, buf, len);
 				caservice[caservicenr].caslot = dvbnode->caslot;
 				debug(620, "found cam for decrypt (slot=%d)", dvbnode->devnr);
+				break;
 			}
 			else
 			{
