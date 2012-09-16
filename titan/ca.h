@@ -1797,7 +1797,7 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 			//got free camanager
 			if(caservice[caservicenr].camanager == -1)
 			{
-				caservice[caservicenr].camanager = getfreecasession(dvbnode, 2, 2);
+				caservice[caservicenr].camanager = getfreecasession(dvbnode, 2, 1);
 				debug(620, "use camanager %d", caservice[caservicenr].camanager);
 			}
 
@@ -1827,8 +1827,34 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 			//decrypt
 			if(caservice[caservicenr].camanager > -1)
 			{
+				//send all saved capmt first
+				int first = 0;
+				int i = 0;
+				for(i = 0; i < MAXCASERVICE; i++)
+				{
+					if(dvbnode->caslot == caservice[i].caslot && caservice[i].capmt != NULL && caservice[i].capmtlen > 0)
+					{
+						if(i == 0)
+							caservice[i].capmt[cmdpos - 6] = 0x01;
+						else
+							caservice[i].capmt[cmdpos - 6] = 0x04;
+						first = 1;
+						sendSPDU(dvbnode, 0x90, NULL, 0, caservice[i].camanager, caservice[i].capmt, caservice[i].capmtlen);
+					}
+				}
+				//send new capmt
+				if(first == 1) buf[cmdpos - 6] = 0x04;
 				sendSPDU(dvbnode, 0x90, NULL, 0, caservice[caservicenr].camanager, buf, len);
 				caservice[caservicenr].caslot = dvbnode->caslot;
+				//save new capmt
+				char* tmpbuf = malloc(len);
+				if(tmpbuf != NULL)
+				{
+					memcpy(buf, tmpbuf, len);
+					free(caservice[caservicenr].capmt);
+					caservice[caservicenr].capmt = tmpbuf;
+					caservice[caservicenr].capmtlen = len;
+				}
 				debug(620, "found cam for decrypt (slot=%d)", dvbnode->devnr);
 				break;
 			}

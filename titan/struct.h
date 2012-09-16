@@ -1002,6 +1002,8 @@ struct caservice
 	int camsockfd;
 	struct caslot* caslot;
 	int camanager;
+	char* capmt;
+	int capmtlen;
 };
 
 struct stimerthread
