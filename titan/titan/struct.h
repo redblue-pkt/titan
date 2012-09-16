@@ -1257,6 +1257,8 @@ struct status
 	long filelistselectcol;
 	long listboxselectcol;
 	char* selectpic;
+	//check if cam can decrypt channel
+	int checkcamdecrypt;
 } status;
 
 struct fb

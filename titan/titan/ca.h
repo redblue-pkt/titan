@@ -683,6 +683,13 @@ int cacaAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *da
 					dvbnode->caslot->caids = ostrcat(dvbnode->caslot->caids, "#", 1, 0);
 				}
 				break;
+			case 0x33: //ca pmt reply
+				if(len > 3)
+				{
+					if(((char*)data)[3] == 0x81) //can descrambling
+						status.checkcamdecrypt = -1;
+				}
+				break;
 			default:
 				debug(620, "unknown APDU tag 9F 80 %02x\n", tag[2]);
 				break;
@@ -1633,9 +1640,9 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 		if(getfreecasession(dvbnode, 1, 1) > -1 && getfreecasession(dvbnode, 2, 1) > -1)
 		{
 			canode->status = 2;
-			m_lock(&status.servicemutex, 2);
-			sendcapmt(status.aktservice, 0, 2);
-			m_unlock(&status.servicemutex, 2);
+			//m_lock(&status.servicemutex, 2);
+			//sendcapmt(status.aktservice, 0, 2);
+			//m_unlock(&status.servicemutex, 2);
 		}
 	}
 
@@ -1685,7 +1692,7 @@ void castart()
 	}
 }
 
-int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caservicenr)
+int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caservicenr, int cmdpos)
 {
 	char* tmpstr = NULL;
 	struct dvbdev *dvbnode = dvbdev;
@@ -1769,6 +1776,30 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 				debug(620, "use camanager %d", caservice[caservicenr].camanager);
 			}
 
+			//check if cam can decrypt
+			if(caservice[caservicenr].camanager > -1 && getconfigint("checkcamdecrypt", NULL) == 1)
+			{
+				if(buf != NULL && len >= cmdpos)
+				{
+					status.checkcamdecrypt = 100;
+					buf[cmdpos] = 0x03;
+					sendSPDU(dvbnode, 0x90, NULL, 0, caservice[caservicenr].camanager, buf, len);
+					buf[cmdpos] = 0x01;
+					while(status.checkcamdecrypt > 0)
+					{
+						status.checkcamdecrypt--;
+						usleep(10000);
+					}
+
+					if(status.checkcamdecrypt == 0)
+					{
+						dvbnode->caslot->casession[caservice[caservicenr].camanager].inuse = 1;
+						caservice[caservicenr].camanager = -1;
+					}
+				}
+			}
+
+			//decrypt
 			if(caservice[caservicenr].camanager > -1)
 			{
 				sendSPDU(dvbnode, 0x90, NULL, 0, caservice[caservicenr].camanager, buf, len);
@@ -1777,13 +1808,7 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 				break;
 			}
 			else
-			{
 				debug(620, "no free camanager found");
-				//int status = 0;
-				//casessioncreate(dvbnode, NULL, &status, 0x00030041);
-			}
-
-			//return 1;
 		}
 		dvbnode = dvbnode->next;
 	}
