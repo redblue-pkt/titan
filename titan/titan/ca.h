@@ -1711,6 +1711,13 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 	{
 		if(dvbnode->type == CIDEV && dvbnode->fd > -1 && dvbnode->caslot != NULL && dvbnode->caslot->status == 2 && dvbnode->caslot->caids != NULL)
 		{
+			//send clear only to right cimodule
+			if(clear > 0 && caservice[clear - 1].caslot != dvbnode->caslot)
+			{
+				dvbnode = dvbnode->next;
+				continue;
+			}
+
 			//check if crypt can onyl handle single service
 			tmpstr = ostrcat("camtype_", oitoa(dvbnode->devnr), 0, 1);
 			if(clear == 0 && getconfigint(tmpstr, NULL) == 0 && getcaservicebyslot(dvbnode->caslot, 1) > -1)
