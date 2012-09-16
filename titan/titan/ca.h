@@ -1700,7 +1700,7 @@ void castart()
 	}
 }
 
-int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caservicenr, int cmdpos)
+int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caservicenr, int cmdpos, int clear)
 {
 	char* tmpstr = NULL, *blacklist = NULL;
 	struct dvbdev *dvbnode = dvbdev;
@@ -1713,7 +1713,7 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 		{
 			//check if crypt can onyl handle single service
 			tmpstr = ostrcat("camtype_", oitoa(dvbnode->devnr), 0, 1);
-			if(getconfigint(tmpstr, NULL) == 0 && getcaservicebyslot(dvbnode->caslot, 1) > -1)
+			if(clear == 0 && getconfigint(tmpstr, NULL) == 0 && getcaservicebyslot(dvbnode->caslot, 1) > -1)
 			{
 				debug(620, "cam is singel and is in use");
 				free(tmpstr); tmpstr = NULL;
@@ -1795,7 +1795,7 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 			}
 
 			//check if cam can decrypt
-			if(caservice[caservicenr].camanager > -1 && getconfigint("checkcamdecrypt", NULL) == 1)
+			if(clear == 0 && caservice[caservicenr].camanager > -1 && getconfigint("checkcamdecrypt", NULL) == 1)
 			{
 				if(buf != NULL && len >= cmdpos)
 				{
