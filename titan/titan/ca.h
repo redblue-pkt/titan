@@ -688,6 +688,8 @@ int cacaAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *da
 				{
 					if(((char*)data)[3] == 0x81) //can descrambling
 						status.checkcamdecrypt = -1;
+					else
+						status.checkcamdecrypt = -2;
 				}
 				break;
 			default:
@@ -1791,7 +1793,7 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 						usleep(10000);
 					}
 
-					if(status.checkcamdecrypt == 0)
+					if(status.checkcamdecrypt == -2)
 					{
 						dvbnode->caslot->casession[caservice[caservicenr].camanager].inuse = 1;
 						caservice[caservicenr].camanager = -1;
