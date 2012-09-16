@@ -77,6 +77,7 @@ int caserviceadd(struct service* snode, int flag)
 		caservice[first].camanager = -1;
 		free(caservice[first].capmt); caservice[first].capmt = NULL;
 		caservice[first].capmtlen = 0;
+		caservice[first].cmdpos = 0;
 		return first;
 	}
 
@@ -105,6 +106,7 @@ void caservicedel(struct service* snode, struct caslot* caslot)
 				}
 				free(caservice[i].capmt); caservice[i].capmt = NULL;
 				caservice[i].capmtlen = 0;
+				caservice[i].cmdpos = 0;
 				caservice[i].service = NULL;
 				caservice[i].channel = NULL;
 			}

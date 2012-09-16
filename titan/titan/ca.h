@@ -1835,9 +1835,9 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 					if(dvbnode->caslot == caservice[i].caslot && caservice[i].capmt != NULL && caservice[i].capmtlen > 0)
 					{
 						if(i == 0)
-							caservice[i].capmt[cmdpos - 6] = 0x01;
+							caservice[i].capmt[caservice[caservicenr].cmdpos - 6] = 0x01;
 						else
-							caservice[i].capmt[cmdpos - 6] = 0x00;
+							caservice[i].capmt[caservice[caservicenr].cmdpos - 6] = 0x00;
 						first = 1;
 						sendSPDU(dvbnode, 0x90, NULL, 0, caservice[i].camanager, caservice[i].capmt, caservice[i].capmtlen);
 					}
@@ -1850,10 +1850,11 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 				char* tmpbuf = malloc(len);
 				if(tmpbuf != NULL)
 				{
-					memcpy(buf, tmpbuf, len);
+					memcpy(tmpbuf, buf, len);
 					free(caservice[caservicenr].capmt);
 					caservice[caservicenr].capmt = tmpbuf;
 					caservice[caservicenr].capmtlen = len;
+					caservice[caservicenr].cmdpos = cmdpos;
 				}
 				debug(620, "found cam for decrypt (slot=%d)", dvbnode->devnr);
 				break;
