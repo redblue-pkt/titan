@@ -96,7 +96,7 @@ void caservicedel(struct service* snode, struct caslot* caslot)
 					sockclose(&caservice[i].camsockfd);
 				if(caservice[i].caslot != NULL)
 				{
-					sendcapmt(caservice[i].service, 1, 2);
+					sendcapmt(caservice[i].service, i + 1, 2);
 					if(caservice[i].caslot != NULL && caservice[i].camanager > -1 && caservice[i].caslot->casession[caservice[i].camanager].inuse > 0) caservice[i].caslot->casession[caservice[i].camanager].inuse = 1;
 					caservice[i].caslot = NULL;
 					caservice[i].camanager = -1;
@@ -397,7 +397,7 @@ start:
 	if(round == 0)
 	{
 #ifdef CAMSUPP
-		if(caservice[caservicenr].caslot == NULL || clear == 1)
+		if(caservice[caservicenr].caslot == NULL || clear > 0)
 			sendcapmttocam(node, buf, pos, caservicenr, lenbytes + 9, clear);
 #endif
 		if(clear == 0)
