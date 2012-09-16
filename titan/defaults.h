@@ -64,6 +64,7 @@ void setdefaults()
 	addconfigdef("blindminsignalrate", "20000");
 	addconfigdef("blindmaxsignalrate", "30000");
 	addconfigdef("blindstepsignalrate", "20");
+	addconfigdef("camwait", "25");
 	
 	status.expertmodus = getconfigint("expertmodus", NULL);
 	status.pmtmode = getconfigint("pmtmode", NULL);

@@ -135,7 +135,7 @@ int cawrite(struct dvbdev* dvbnode, int fd, unsigned char* buf, int count, int f
 			printf("\n");
 		}
 
-		if(dvbnode->caslot != NULL && flag == 0) dvbnode->caslot->fastrun = 25;
+		if(dvbnode->caslot != NULL && flag == 0) dvbnode->caslot->fastrun = getconfigint("camwait", NULL);
 	}
 
 	ret = dvbwrite(fd, buf, count, tout);
@@ -1524,7 +1524,7 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 						caslotfree(dvbnode);
 						canode->status = 1;
 						canode->connid = dvbnode->devnr + 1;
-						dvbnode->caslot->fastrun = 25;
+						dvbnode->caslot->fastrun = getconfigint("camwait", NULL);
 					}
 					else
 					{
