@@ -1835,15 +1835,15 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 					if(dvbnode->caslot == caservice[i].caslot && caservice[i].capmt != NULL && caservice[i].capmtlen > 0)
 					{
 						if(i == 0)
-							caservice[i].capmt[caservice[i].cmdpos - 6] = 0x01;
+							caservice[i].capmt[caservice[i].cmdpos - 6] = 0x03;
 						else
-							caservice[i].capmt[caservice[i].cmdpos - 6] = 0x00;
+							caservice[i].capmt[caservice[i].cmdpos - 6] = 0x04;
 						first = 1;
 						sendSPDU(dvbnode, 0x90, NULL, 0, caservice[i].camanager, caservice[i].capmt, caservice[i].capmtlen);
 					}
 				}
 				//send new capmt
-				if(first == 1) buf[cmdpos - 6] = 0x02;
+				if(first == 1) buf[cmdpos - 6] = 0x04;
 				sendSPDU(dvbnode, 0x90, NULL, 0, caservice[caservicenr].camanager, buf, len);
 				caservice[caservicenr].caslot = dvbnode->caslot;
 				//save new capmt
