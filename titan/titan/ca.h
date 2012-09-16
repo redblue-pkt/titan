@@ -687,9 +687,15 @@ int cacaAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *da
 				if(len > 3)
 				{
 					if(((char*)data)[3] == 0x81) //can descrambling
+					{
 						status.checkcamdecrypt = -1;
+						debug(620, "cam say's he can handel decrypt");
+					}
 					else
+					{
 						status.checkcamdecrypt = -2;
+						debug(620, "cam say's he can not handel decrypt");
+					}
 				}
 				break;
 			default:
@@ -1696,7 +1702,7 @@ void castart()
 
 int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caservicenr, int cmdpos)
 {
-	char* tmpstr = NULL;
+	char* tmpstr = NULL, *blacklist = NULL;
 	struct dvbdev *dvbnode = dvbdev;
 
 	if(node == NULL) return;
@@ -1711,7 +1717,6 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 			{
 				debug(620, "cam is singel and is in use");
 				free(tmpstr); tmpstr = NULL;
-				//return 1;
 				dvbnode = dvbnode->next;
 				continue;
 			}
@@ -1719,6 +1724,9 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 
 			//check if cam can caid
 			int foundcaid = 0;
+			tmpstr = ostrcat("camblacklist_", oitoa(dvbnode->devnr), 0, 1);
+			blacklist = getconfig(tmpstr, NULL);
+			free(tmpstr); tmpstr = NULL;
 			if(node->channel != NULL)
 			{
 				struct cadesc *nodecadesc = node->channel->cadesc;
@@ -1729,14 +1737,22 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 					tmpstr = oitoa(nodecadesc->systemid);
 					if(ostrstr(dvbnode->caslot->caids, tmpstr) != NULL)
 					{
-						foundcaid = 1;
-						break;
+						//check if caid is in cams blacklist
+						if(blacklist == NULL || ostrstr(blacklist, tmpstr) == NULL)
+						{
+							foundcaid = 1;
+							break;
+						}
+						else
+							debug(620, "caid is in blacklist (%s -> %s)", tmpstr, blacklist);
 					}
 					free(tmpstr); tmpstr = NULL;
+
 					nodecadesc = nodecadesc->next;
 				}
 			}
 			free(tmpstr); tmpstr = NULL;
+			free(blacklist); blacklist = NULL;
 
 			if(foundcaid == 0)
 			{
