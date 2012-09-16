@@ -398,7 +398,7 @@ start:
 	{
 #ifdef CAMSUPP
 		if(caservice[caservicenr].caslot == NULL || clear == 1)
-			sendcapmttocam(node, buf, pos, caservicenr, lenbytes + 9);
+			sendcapmttocam(node, buf, pos, caservicenr, lenbytes + 9, clear);
 #endif
 		if(clear == 0)
 		{
