@@ -97,7 +97,7 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 	}
 	else if(newnode->flag == 9999)
 	{
-		cmd = ostrcat(cmd, "ping -c1 -W1 ", 1, 0);
+		cmd = ostrcat(cmd, "wget -s http://", 1, 0);
 		cmd = ostrcat(cmd, "kin", 1, 0);
 		cmd = ostrcat(cmd, "ox", 1, 0);
 		cmd = ostrcat(cmd, ".", 1, 0);
