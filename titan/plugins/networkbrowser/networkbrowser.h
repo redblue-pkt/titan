@@ -324,7 +324,7 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 		{
 			treffer = 1;
 			newnode->mode = ostrcat("1", NULL, 0, 0);
-			ret = sscanf(line, "%s\t-fstype=nfs,%[^,],%*[^,],rsize=%[^,],wsize=%[^,],%s\t%[^:]://%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->protocol, newnode->ip, newnode->sharedir);
+			ret = sscanf(line, "%s\t-fstype=nfs,%[^,],%*[^,],rsize=%[^,],wsize=%[^,],%s\t%[^:]:/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->protocol, newnode->ip, newnode->sharedir);
 			if(ret != 7)
 			{
 				if(count > 0)
@@ -568,7 +568,7 @@ void savenetworkbrowser(char* filename)
 			tmpstr = fixip(node->ip, 1);
  			savesettings = ostrcat(savesettings, fixip(node->ip, 1), 1, 0);
  			free(tmpstr); tmpstr = NULL;
-			savesettings = ostrcat(savesettings, "://", 1, 0);
+			savesettings = ostrcat(savesettings, ":/", 1, 0);
  			savesettings = ostrcat(savesettings, node->sharedir, 1, 0);
 			savesettings = ostrcat(savesettings, "\n", 1, 0);
 		}
