@@ -75,6 +75,8 @@ int caserviceadd(struct service* snode, int flag)
 		if(caservice[first].caslot != NULL && caservice[first].camanager > -1 && caservice[first].caslot->casession[caservice[first].camanager].inuse > 0) caservice[first].caslot->casession[caservice[first].camanager].inuse = 1;
 		caservice[first].caslot = NULL;
 		caservice[first].camanager = -1;
+		free(caservice[first].capmt); caservice[first].capmt = NULL;
+		caservice[first].capmtlen = 0;
 		return first;
 	}
 
@@ -96,11 +98,13 @@ void caservicedel(struct service* snode, struct caslot* caslot)
 					sockclose(&caservice[i].camsockfd);
 				if(caservice[i].caslot != NULL)
 				{
-					sendcapmt(caservice[i].service, i + 1, 2);
+					//sendcapmt(caservice[i].service, i + 1, 2);
 					if(caservice[i].caslot != NULL && caservice[i].camanager > -1 && caservice[i].caslot->casession[caservice[i].camanager].inuse > 0) caservice[i].caslot->casession[caservice[i].camanager].inuse = 1;
 					caservice[i].caslot = NULL;
 					caservice[i].camanager = -1;
 				}
+				free(caservice[i].capmt); caservice[i].capmt = NULL;
+				caservice[i].capmtlen = 0;
 				caservice[i].service = NULL;
 				caservice[i].channel = NULL;
 			}
@@ -114,6 +118,17 @@ void caservicedel(struct service* snode, struct caslot* caslot)
 			caservice[i].caslot = NULL;
 			caservice[i].camanager = -1;
 		}
+	}
+}
+
+void freecaservice()
+{
+	int i = 0;
+
+	for(i = 0; i < MAXCASERVICE; i++)
+	{
+		free(caservice[i].capmt);
+		caservice[i].capmt = NULL;
 	}
 }
 
@@ -277,7 +292,7 @@ start:
 	buf[1] = 0x80; // ca_pmt_tag
 	buf[2] = 0x32; // ca_pmt_tag
 
-	buf[pos++] = 4; //ca_pmt_lst_management: 0=more, 1=first, 2=last, 3=only, 4=add, 5=update
+	buf[pos++] = 0x03; //ca_pmt_lst_management: 0=more, 1=first, 2=last, 3=only, 4=add, 5=update
 	buf[pos++] = node->channel->pmt->programnumber >> 8;
 	buf[pos++] = node->channel->pmt->programnumber & 0xff;
 
