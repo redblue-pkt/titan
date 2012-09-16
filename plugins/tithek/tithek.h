@@ -25,8 +25,8 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 {
 	//debug(1000, "in");
 	struct tithek *newnode = NULL, *prev = NULL, *node = tithek;
-	char *link = NULL, *pic = NULL, *title = NULL, *localname = NULL, *menutitle = NULL;
-	int ret = 0;
+	char *link = NULL, *pic = NULL, *title = NULL, *localname = NULL, *menutitle = NULL, *cmd = NULL;
+	int ret = 0, skip = 0;
 
 	if(line == NULL) return NULL;
 
@@ -88,9 +88,28 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 	}
 
 	memset(newnode, 0, sizeof(struct tithek));
-
+			
 	ret = sscanf(line, "%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%d", title, link, pic, localname, menutitle, &newnode->flag);
+				
 	if(newnode->flag == 9999 && !file_exist("/var/swap/etc/.codecpack"))
+	{
+		skip = 1;
+	}
+	else if(newnode->flag == 9999)
+	{
+		cmd = ostrcat(cmd, "ping -c1 -W1 ", 1, 0);
+		cmd = ostrcat(cmd, "kin", 1, 0);
+		cmd = ostrcat(cmd, "ox", 1, 0);
+		cmd = ostrcat(cmd, ".", 1, 0);
+		cmd = ostrcat(cmd, "to", 1, 0);
+
+		if(system(cmd) != 0)
+			skip = 1;
+
+		free(cmd), cmd = NULL;
+	}
+
+	if(skip == 1)
 	{
 		free(link);
 		free(pic);
@@ -100,7 +119,7 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 		free(newnode);
 		return NULL;
 	}
-	
+
 	if(ret != 6)
 	{
 		if(count > 0)
@@ -569,10 +588,9 @@ void screentithekplay(char* titheklink, char* title, int first)
 				}
 			}
 		}
-				printf("wooooooooooooooooooo11111111111111111111\n");
+
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
-						printf("wooooooooooooooooooo22222222222222222\n");
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
 				clearscreen(grid);
@@ -852,14 +870,6 @@ void screentithekplay(char* titheklink, char* title, int first)
 						{
 							if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 								screenplay(tmpstr1, 2, 0);
-								
-//							writesys("/media/test.m3u", tmpstr1, 0);
-//							char* test = readfiletomem("/media/test.m3u", 0);		
-//							screenplay(test, 2, 0);
-
-//							if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-//								playerstart(tmpstr1);	
-
 						}
 						else
 							textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
@@ -870,7 +880,6 @@ void screentithekplay(char* titheklink, char* title, int first)
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 15)
 				{
-				printf("wooooooooooooooooooo\n");
 					if(status.security == 1)
 					{
 						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
@@ -882,14 +891,6 @@ void screentithekplay(char* titheklink, char* title, int first)
 						{
 							if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 								screenplay(tmpstr1, 2, 0);
-								
-//							writesys("/media/test.m3u", tmpstr1, 0);
-//							char* test = readfiletomem("/media/test.m3u", 0);		
-//							screenplay(test, 2, 0);
-
-//							if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-//								playerstart(tmpstr1);	
-
 						}
 						else
 							textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
