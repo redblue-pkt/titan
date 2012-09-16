@@ -1004,6 +1004,7 @@ struct caservice
 	int camanager;
 	char* capmt;
 	int capmtlen;
+	int cmdpos;
 };
 
 struct stimerthread
