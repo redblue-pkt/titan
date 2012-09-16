@@ -1770,7 +1770,7 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 
 			//TODO: if record is running input should not changed
 			//change ciX_input and inputX
-			if(node->fedev != NULL)
+			if(clear == 0 && node->fedev != NULL)
 			{
 				debug(620, "set ci slot %d to tuner %d", dvbnode->devnr, node->fedev->devnr);
 				switch(node->fedev->devnr)
