@@ -1835,7 +1835,7 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 					if(dvbnode->caslot == caservice[i].caslot && caservice[i].capmt != NULL && caservice[i].capmtlen > 0)
 					{
 						if(i == 0)
-							caservice[i].capmt[cmdpos - 6] = 0x01;
+							caservice[i].capmt[cmdpos - 6] = 0x04;
 						else
 							caservice[i].capmt[cmdpos - 6] = 0x04;
 						first = 1;
