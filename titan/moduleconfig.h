@@ -6,6 +6,8 @@ void screenmoduleconfig()
 	int rcret = 0, i = 0;
 	struct skin* moduleconfig = getscreen("moduleconfig");
 	struct skin* listbox = getscreennode(moduleconfig, "listbox");
+	struct skin* b3 = getscreennode(moduleconfig, "b3");
+	struct skin* b4 = getscreennode(moduleconfig, "b4");
 	struct skin* tmp = NULL;
 	struct dvbdev* dvbnode = NULL;
 	char* tmpstr = NULL, *tmpnr = NULL;
@@ -88,6 +90,18 @@ start:
 			addscreenrc(moduleconfig, tmp);
 		rcret = waitrc(moduleconfig, 2000, 0);
 		tmp = listbox->select;
+
+		if(listbox->select != NULL && listbox->select->handle != NULL)
+		{
+			b3->hidden = NO;
+			b4->hidden = NO;
+		}
+		else
+		{
+			b3->hidden = YES;
+			b4->hidden = YES;
+		}
+		drawscreen(moduleconfig, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
