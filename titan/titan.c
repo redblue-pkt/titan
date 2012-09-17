@@ -339,6 +339,7 @@ void oshutdown(int exitcode, int flag)
 		free(status.bgpic);
 
 		freeservice();
+		freecaservice();
 
 		freescreen();
 		freepic();
