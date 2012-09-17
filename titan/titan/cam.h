@@ -376,7 +376,11 @@ start:
 		{
 			if(cadescnode->len > 0 && cadescnode->pid != 0)
 			{
-				if(eslen == 0) buf[pos++] = 0x01; //ca_pmt_cmd_id: ok_descrambling=1
+				if(eslen == 0)
+				{
+					eslen = 1;
+					buf[pos++] = 0x01; //ca_pmt_cmd_id: ok_descrambling=1
+				}
 				eslen = eslen + cadescnode->len + 2;
 				buf[pos++] = 0x09; //ca desc tag
 				buf[pos++] = cadescnode->len;
