@@ -12,6 +12,8 @@ void screenmoduleconfig()
 	struct dvbdev* dvbnode = NULL;
 	char* tmpstr = NULL, *tmpnr = NULL;
 
+	b3->hidden = NO;
+	b4->hidden = NO;
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
 
