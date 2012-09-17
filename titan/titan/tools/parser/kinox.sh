@@ -6,7 +6,7 @@ rm _liste
 rm -rf _full/kinox
 mkdir -p _full/kinox/streams
 piccount=0
-main_list="Cine-Films Popular-Movies"
+main_list="Cine-Films Popular-Movies Popular-Documentations Popular-Series Latest-Documentations Latest-Series"
 
 for ROUND0 in $main_list; do
 	wget --no-check-certificate "http://kinox.to/$ROUND0.html" -O cache.main.next.list
@@ -62,21 +62,23 @@ for ROUND0 in $main_list; do
 		for ROUND2 in $hosterlist; do
 			piccount=`expr $piccount + 1`
 			echo round2 $ROUND2
-			files=`cat cache."$filename".list | grep $searchname | grep Hoster= | tr ";" "\n" | grep ^Hoster= | sed 's/&/=/' | sed 's/"/=/' | grep $ROUND2 | cut -d "=" -f2`
-			echo filessssssssss $files  
+#			files=`cat cache."$filename".list | grep $searchname | grep Hoster= | tr ";" "\n" | grep ^Hoster= | sed 's/&/=/' | sed 's/"/=/' | grep $ROUND2 | cut -d "=" -f2`
+			files=`cat cache."$filename".list | grep $searchname | grep $ROUND2 | tr ' ' '\n' | grep ^rel= | cut -d '"' -f2 | sed "s/amp;//" | sed "s/amp;//" | sed "s/amp;//" | sed "s/amp;//"`
 	
 			if [ ! -z "$files" ];then
 	
 				PIC="http://atemio.dyndns.tv/mediathek/menu/$ROUND2.jpg"
-				TITLE="$ROUND2 ($files)"	
+#				TITLE="$ROUND2 ($files)"	
+				TITLE="$ROUND2"
 				URL=http://$ROUND2
-		
-				wget --no-check-certificate "http://kinox.to/aGET/Mirror/$searchname&Hoster=$files" -O cache.$searchname.$files.list
+
+				wget --no-check-certificate "http://kinox.to/aGET/Mirror/$files" -O cache.$searchname.$ROUND2.list
 		
 				rm -rf cache.url
-				cat cache.$searchname.$files.list | sed 's!http:!\nhttp:!' | sed 's!" target=!\n!' | grep ^http: | sed 's:\\::g'
-				cat cache.$searchname.$files.list | sed 's!http:!\nhttp:!' | sed 's!" target=!\n!' | grep ^http: | sed 's:\\::g' > cache.url
-	cat cache.$searchname.$files.list | sed 's!http:!\nhttp:!' | sed 's!" target=!\n!' | grep ^http: | sed 's:\\::g'
+				cat cache.$searchname.$ROUND2.list | sed 's!http:!\nhttp:!' | sed 's!" target=!\n!' | grep ^http: | sed 's:\\::g'
+
+				cat cache.$searchname.$ROUND2.list | sed 's!http:!\nhttp:!' | sed 's!" target=!\n!' | grep ^http: | sed 's:\\::g' > cache.url
+
 				URL=`cat cache.url`
 				FILE=`echo $URL | tr "/" "\n" | tail -n1`			
 				URL="$URL;$FILE;$ROUND2"
@@ -85,7 +87,10 @@ for ROUND0 in $main_list; do
 				echo URL=$URL
 				echo TITLE=$TITLE
 				
-				echo cache.$searchname.$files.list
+				#echo cache.$searchname.$files.list
+				echo cache.$searchname.$ROUND2.list
+				
+				
 				if [ -z "$URL" ];then
 	#			URL=`cat cache.$searchname.$files.list | sed 's!http:!\nhttp:!' | sed 's!" target=!\n!' | grep ^http: | sed 's:\\::g'`
 					echo 111111111111111111111111
@@ -116,5 +121,5 @@ for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X
 		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/kinox/streams/kinox."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#KinoX#1 >> _full/kinox/kinox.a-z.list
 	fi
 done
-exit
-cp -a _full/kinox/* /var/www/atemio/web/mediathek/kinox
+
+#cp -a _full/kinox/* /var/www/atemio/web/mediathek/kinox
