@@ -1180,18 +1180,17 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 			printf("cmd: %s\n", cmd);
 			
 			streamurl = string_newline(command(cmd));
-			printf("streamurl: %s\n", streamurl);
-
+			debug(99, "streamurl1: %s", streamurl);
 //			htmldecode(streamurl, streamurl);
-//			printf("streamurl: %s\n", streamurl);
+//			debug(99, "streamurl2: %s", streamurl);
+			streamurl = string_replace_all("amp;", "", streamurl, 1);
+			debug(99, "streamurl2: %s", streamurl);
 
-			printf("link: %s\n", link);
 			free(cmd), cmd = NULL;
 			free(video_id), video_id = NULL;
 			free(source), source = NULL;
 		}
 		free(ret1), ret1 = NULL;
-		debug(99, "streamurl: %s", streamurl);
 		return streamurl;
 	}
 
@@ -1216,21 +1215,18 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 			char* tmpstr = string_newline(command(cmd));
 
 			streamurl = filenuke(tmpstr);
-
-			printf("streamurl: %s\n", streamurl);
-
+			debug(99, "streamurl1: %s", streamurl);
 //			htmldecode(streamurl, streamurl);
-//			printf("streamurl: %s\n", streamurl);
+//			debug(99, "streamurl2: %s", streamurl);
+			streamurl = string_replace_all("amp;", "", streamurl, 1);
+			debug(99, "streamurl2: %s", streamurl);
 
-			printf("link: %s\n", link);
+			free(tmpstr), cmd = tmpstr;
 			free(cmd), cmd = NULL;
 			free(video_id), video_id = NULL;
-			free(source), source = NULL;
-			
-			
+			free(source), source = NULL;			
 		}
 		free(ret1), ret1 = NULL;
-		debug(99, "streamurl: %s", streamurl);
 		return streamurl;
 	}
 		
