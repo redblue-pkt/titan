@@ -169,7 +169,7 @@ void screenadjust()
 	addchoicebox(camwait, "25", _("slow"));
 	addchoicebox(camwait, "15", _("middle"));
 	addchoicebox(camwait, "5", _("fast"));
-	setchoiceboxselection(secondinfobar, getconfig("camwait", NULL));
+	setchoiceboxselection(camwait, getconfig("camwait", NULL));
 
 	drawscreen(adjust, 0, 0);
 	addscreenrc(adjust, listbox);
