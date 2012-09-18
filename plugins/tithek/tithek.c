@@ -4,6 +4,8 @@
 #include "tithek_header.h"
 #include "tithek.h"
 #include "tithek_settings.h"
+#include "putlocker.h"
+#include "filenuke.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";
