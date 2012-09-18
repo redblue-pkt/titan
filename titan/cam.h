@@ -375,7 +375,7 @@ start:
 		cadescnode = node->channel->cadesc;
 		while(cadescnode != NULL && clear == 0)
 		{
-			if(cadescnode->len > 0 && cadescnode->pid != 0)
+			if(cadescnode->len > 0 && cadescnode->pid == esinfonode->pid)
 			{
 				if(eslen == 0)
 				{
