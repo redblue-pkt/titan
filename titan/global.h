@@ -3668,6 +3668,7 @@ int setciclock(int slotnr, char* value)
 	return 0;
 }
 
+//routes stream from tuner to ci or ci to ci
 int setciinput(int slotnr, char* value)
 {
 	debug(1000, "in");
@@ -3697,6 +3698,7 @@ int setciinput(int slotnr, char* value)
 	return 0;
 }
 
+//routes stream from tuner or ci to linux
 int setcisource(int tunernr, char* value)
 {
 	debug(1000, "in");
