@@ -249,7 +249,7 @@ start:
 				caappmenu((struct dvbdev*)listbox->select->handle);
 #endif
 		}
-		if(listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("yellow", NULL))
+		if(listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcyellow", NULL))
 		{
 			if((struct dvbdev*)listbox->select->handle != NULL)
 				screencaidlock((struct dvbdev*)listbox->select->handle);
