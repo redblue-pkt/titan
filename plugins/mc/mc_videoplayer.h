@@ -688,6 +688,8 @@ void screenmc_videoplayer()
 				debug(50, "playerstart: %s", filename);
 				eof = 0;
 
+				drawscreen(loadmediadb, 0, 0);
+	
 				debug(50, "playertype: %d", playertype);
 				if(playertype == 1)
 					playerret = playerstartts(filename, 0);
@@ -733,6 +735,8 @@ void screenmc_videoplayer()
 					}
 		
 				#endif
+
+				clearscreen(loadmediadb);
 				screenplayinfobar(filename, 0, playertype, 0);
 				status.play = 1;
 
