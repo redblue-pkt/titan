@@ -372,6 +372,7 @@ start:
 		int eslen = 0;
 		pos += 2;
 
+		cadescnode = node->channel->cadesc;
 		while(cadescnode != NULL && clear == 0)
 		{
 			if(cadescnode->len > 0 && cadescnode->pid != 0)
