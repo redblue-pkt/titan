@@ -183,7 +183,7 @@ start:
 				tmpstr = ostrcat(tmpstr, "camtype_", 1, 0);
 				tmpstr = ostrcat(tmpstr, oitoa(i - 1), 1, 1);
 				tmp->type = CHOICEBOX;
-				changetext(tmp, "Module Type");
+				changetext(tmp, _("Module Type"));
 				addchoicebox(tmp, "0", _("Single Service"));
 				addchoicebox(tmp, "1", _("Multiple Service"));
 				setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
