@@ -127,6 +127,8 @@ int socksend(int *fd, unsigned char* data, int count, int timeout);
 int sockread(int fd, unsigned char *buf, int pos, int count, int tout, int flag);
 int sockcreate(int *fd, char* sockname, int maxconn);
 int sockaccept(int *fd, int flag);
+char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect, char* header, long* clen);
+int sockreceive(int *fd, unsigned char* data, int count, int timeout);
 
 //numinput.h
 char* numinput(char* title, char* num, char* mask, int isip);

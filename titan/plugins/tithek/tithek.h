@@ -943,194 +943,6 @@ void screentithekplay(char* titheklink, char* title, int first)
 	status.hangtime = getconfigint("hangtime", NULL);
 }
 
-char* filenuke(char* input)
-{	
-	char* tmpstr = NULL, *p = NULL, *k = NULL, *base = NULL, *search = NULL;
-
-	struct splitstr* ret0 = NULL;
-	int count0 = 0;
-	ret0 = strsplit(input, "\n", &count0);
-	p = ostrcat((&ret0[0])->part, NULL, 0, 0);
-	k = ostrcat((&ret0[1])->part, NULL, 0, 0);
-	free(ret0), ret0 = NULL;
-	
-	k = string_replace_all("||", "| |", k, 1);
-
-	struct splitstr* ret1 = NULL;
-	int count = 0;
-	int i = 0;
-	ret1 = strsplit(k, "|", &count);
-	int max = count;
-
-	for(i = 0; i < max; i++)
-	{
-		if(ostrstr((&ret1[i])->part, " ") != NULL)
-		{
-			printf("continue\n");
-			continue;
-		}
-		char* x = oltostr(i, 36);
-
-		base = ostrcat(base, "'", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, "\\", 1, 0);		
-		search = ostrcat(search, "'", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, "\\", 1, 0);
-		p = string_replace(base, search, p, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-		
-		base = ostrcat(base, "'", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, "'", 1, 0);		
-		search = ostrcat(search, "'", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, "'", 1, 0);
-		p = string_replace(base, search, p, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-
-		base = ostrcat(base, "'", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, ":", 1, 0);		
-		search = ostrcat(search, "'", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, ":", 1, 0);
-		p = string_replace(base, search, p, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-
-		base = ostrcat(base, "'", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, ":", 1, 0);		
-		search = ostrcat(search, "'", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, ":", 1, 0);
-		p = string_replace(base, search, p, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-				
-		base = ostrcat(base, "/", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, "/", 1, 0);
-		search = ostrcat(search, "/", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, "/", 1, 0);
-		p = string_replace(base, search, p, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-
-		base = ostrcat(base, ".", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, ".", 1, 0);
-		search = ostrcat(search, ".", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, ".", 1, 0);
-		p = string_replace(base, search, p, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-
-		base = ostrcat(base, ".", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, "/", 1, 0);
-		search = ostrcat(search, ".", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, "/", 1, 0);
-		p = string_replace(base, search, p, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-
-		base = ostrcat(base, ".", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, "'", 1, 0);
-		search = ostrcat(search, ".", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, "'", 1, 0);
-		p = string_replace(base, search, p, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-	
-		base = ostrcat(base, "/", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, ".", 1, 0);
-		search = ostrcat(search, "/", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, ".", 1, 0);
-		p = string_replace(base, search, p, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-
-		base = ostrcat(base, ".", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, "(", 1, 0);
-		search = ostrcat(search, ".", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, "(", 1, 0);
-		p = string_replace(base, search, p, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-
-		base = ostrcat(base, " ", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, "(", 1, 0);
-		search = ostrcat(search, " ", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, "(", 1, 0);
-		p = string_replace(base, search, p, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-
-		base = ostrcat(base, "=", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, " ", 1, 0);
-		search = ostrcat(search, "=", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, " ", 1, 0);
-		p = string_replace(base, search, p, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-
-		base = ostrcat(base, " ", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, "=", 1, 0);
-		search = ostrcat(search, " ", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, "=", 1, 0);
-		p = string_replace(base, search, p, 1);
-		free(base), base = NULL;
-
-		base = ostrcat(base, ";", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, ".", 1, 0);
-		search = ostrcat(search, ";", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, ".", 1, 0);
-		p = string_replace(base, search, p, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-
-		base = ostrcat(base, ".", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, "\\", 1, 0);
-		search = ostrcat(search, ".", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, "\\", 1, 0);
-		p = string_replace(base, search, p, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-
-		free(x);
-	}
-	free(ret1), ret1 = NULL;
-	free(k), k = NULL;
-
-	tmpstr = oregex(".*file.*(http:.*video.flv).*image.*", p);
-	free(p), p = NULL;								
-    return tmpstr;
-}
-
-
 // flag 1 = youtube streamlink
 // flag 2 = rtlnow streamlinksrc
 // flag 3 = rtlnow streamlink
@@ -1169,24 +981,17 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		if(ret1 != NULL && count >= 3)
 		{			
 			video_id = ostrcat(video_id, ret1[1].part, 1, 0);
-			printf("video_id: %s\n", video_id);
+			debug(99, "video_id: %s", video_id);
 
 			source = ostrcat(source, ret1[2].part, 1, 0);
-			printf("source: %s\n", source);
-	
-			char* cmd = ostrcat("/var/usr/local/share/titan/plugins/tithek/putlocker.sh ", source, 0, 0);
-			cmd = ostrcat(cmd, " ", 1, 0);
-			cmd = ostrcat(cmd, video_id, 1, 0);
-			printf("cmd: %s\n", cmd);
-			
-			streamurl = string_newline(command(cmd));
+			debug(99, "source: %s", source);
+
+			streamurl = putlocker(source, video_id);
 			debug(99, "streamurl1: %s", streamurl);
-//			htmldecode(streamurl, streamurl);
-//			debug(99, "streamurl2: %s", streamurl);
+
 			streamurl = string_replace_all("amp;", "", streamurl, 1);
 			debug(99, "streamurl2: %s", streamurl);
 
-			free(cmd), cmd = NULL;
 			free(video_id), video_id = NULL;
 			free(source), source = NULL;
 		}
@@ -1202,27 +1007,17 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		if(ret1 != NULL && count >= 3)
 		{			
 			video_id = ostrcat(video_id, ret1[1].part, 1, 0);
-			printf("video_id: %s\n", video_id);
+			debug(99, "video_id: %s", video_id);
 
 			source = ostrcat(source, ret1[2].part, 1, 0);
-			printf("source: %s\n", source);
+			debug(99, "source: %s", source);
 	
-			char* cmd = ostrcat("/var/usr/local/share/titan/plugins/tithek/filenuke.sh ", source, 0, 0);
-			cmd = ostrcat(cmd, " ", 1, 0);
-			cmd = ostrcat(cmd, video_id, 1, 0);
-			printf("cmd: %s\n", cmd);
-			
-			char* tmpstr = string_newline(command(cmd));
-
-			streamurl = filenuke(tmpstr);
+			streamurl = filenuke(source, video_id);
 			debug(99, "streamurl1: %s", streamurl);
-//			htmldecode(streamurl, streamurl);
-//			debug(99, "streamurl2: %s", streamurl);
+
 			streamurl = string_replace_all("amp;", "", streamurl, 1);
 			debug(99, "streamurl2: %s", streamurl);
 
-			free(tmpstr), cmd = tmpstr;
-			free(cmd), cmd = NULL;
 			free(video_id), video_id = NULL;
 			free(source), source = NULL;			
 		}
