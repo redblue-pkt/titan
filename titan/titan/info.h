@@ -36,11 +36,13 @@ void screensystem_info(int mode)
 	int rcret = 0;
 	struct skin* systeminfo = getscreen("systeminfo");
 	struct skin* info = getscreennode(systeminfo, "info");
+	struct skin* load = getscreen("loading");
+	drawscreen(load, 0, 0);
 
 	addscreenrc(systeminfo, info);
 
 	if(mode == 0)
-  {
+	{
 		char* tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
 
 		changetitle(systeminfo, _("Infos"));
@@ -57,6 +59,29 @@ void screensystem_info(int mode)
 		free(tmpstr1); tmpstr1 = NULL;
 		free(tmpstr); tmpstr = NULL;
 	}
+	else if(mode == 1)
+	{
+		if(isfile("/etc/model")	== 0) return 0;
+		char* boxversion = string_tolower(readsys("/etc/model", 1));
+		char* path = NULL;
+		path = ostrcat(path, "/svn/image-beta/changelog.", 1, 0);
+		path = ostrcat(path, boxversion, 1, 0);
+		path = ostrcat(path, ".titan", 1, 0);
+		tmpstr = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, NULL, 0);
+		free(path), path = NULL;
+		free(boxversion), boxversion = NULL;
+		changetext(info, tmpstr);
+	}
+	else if(mode == 2)
+	{	
+		char* path = NULL;
+		path = ostrcat(path, "/svn/image-beta/changelog.git", 1, 0);
+		tmpstr = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, NULL, 0);
+		free(path), path = NULL;
+		changetext(info, tmpstr);
+	}
+
+	clearscreen(load);	
 	drawscreen(systeminfo, 0, 0);
 
 	while(1)
