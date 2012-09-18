@@ -658,6 +658,7 @@ int screenplay(char* startfile, int startfolder, int flag)
 	char* tmppolicy = NULL, *startdir = NULL;
 	char* formats = NULL;
 	struct skin* playinfobar = getscreen("playinfobar");
+	struct skin* load = getscreen("loading");
 
 	int skip13 = getconfigint("skip13", NULL);
 	int skip46 = getconfigint("skip46", NULL);
@@ -727,6 +728,7 @@ playerstart:
 		}
 
 		drawscreen(skin, 0, 0);
+		drawscreen(load, 0, 0);
 		playwritevfd(file);
 		if(playertype == 1)
 			rcret = playerstartts(file, 0);
@@ -750,6 +752,7 @@ playerstart:
 			}
 		}
 #endif
+		clearscreen(load);
 		screenplayinfobar(file, 0, playertype, flag);
 
 		if(flag == 4 && getconfigint("screensaver", NULL) == 1)
