@@ -37,7 +37,7 @@ void screencaidlock(struct dvbdev* dvbnode)
 	configname = ostrcat("camblacklist_", oitoa(dvbnode->devnr), 0, 1);
 	char* lockcaids = getconfig(configname, NULL);
 
-	ciads = ostrcat(dvbnode->caslot->caids, NULL, 0, 0);
+	caids = ostrcat(dvbnode->caslot->caids, NULL, 0, 0);
 	ret = strsplit(caids, "#", &count);
 
 	if(ret != NULL)
