@@ -64,21 +64,25 @@ void screensystem_info(int mode)
 		if(isfile("/etc/model")	== 0) return 0;
 		char* boxversion = string_tolower(readsys("/etc/model", 1));
 		char* path = NULL;
+		char* out = NULL;
 		path = ostrcat(path, "/svn/image-beta/changelog.", 1, 0);
 		path = ostrcat(path, boxversion, 1, 0);
 		path = ostrcat(path, ".titan", 1, 0);
 		tmpstr = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, NULL, 0);
 		free(path), path = NULL;
 		free(boxversion), boxversion = NULL;
-		changetext(info, tmpstr);
+		out = readfromlinetoline(tmpstr, 37, 537, 1);
+		changetext(info, out);
 	}
 	else if(mode == 2)
 	{	
 		char* path = NULL;
+		char* out = NULL;
 		path = ostrcat(path, "/svn/image-beta/changelog.git", 1, 0);
 		tmpstr = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, NULL, 0);
 		free(path), path = NULL;
-		changetext(info, tmpstr);
+		out = readfromlinetoline(tmpstr, 0, 500, 1);
+		changetext(info, out);
 	}
 
 	clearscreen(load);	

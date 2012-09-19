@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect, char* header, long* clen);
+int sockreceive(int *fd, unsigned char* data, int count, int timeout);
+
 //rc4.h
 void rc4(char *data, size_t dlen, char *key, size_t klen);
 
@@ -640,6 +643,7 @@ char* unhexlify(const char *hexstr);
 int isdir(char* name);
 void htmldecode3(char* to, char* from);
 char* string_deltags(char* str);
+char* readfromlinetoline(char* str, int start, int end, int flag);
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
