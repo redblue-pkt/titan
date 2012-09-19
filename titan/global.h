@@ -1,6 +1,33 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+char* readfromlinetoline(char* str, int start, int end, int flag)
+{
+	if(str == NULL) return str;
+
+	char* tmpstr = NULL;
+	int count = 0;
+	int i = 0;
+	struct splitstr* ret = NULL;
+	ret = strsplit(str, "\n", &count);
+
+	for(i = 0; i < count; i++)
+	{
+		if(i >= start && i <= end)
+		{
+			tmpstr = ostrcat(tmpstr, (&ret[i])->part, 1, 0);
+			tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+		}
+	}
+	free(ret), ret = NULL;
+
+	if(flag == 1)
+	{
+		free(str), str = NULL;
+	}
+	return tmpstr;	
+}
+
 char* ltostr(char* str, long val, unsigned base)
 {
 	ldiv_t r;
