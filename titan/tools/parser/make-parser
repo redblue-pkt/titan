@@ -40,7 +40,7 @@ today=`date +%s`
 if [ $today -gt $lasttimestamp ];then
 	ls -1 "$HOME"/flashimg/source.titan/titan/tools/parser/*.sh | sort -r > tmp.txt
 else
-	ls -1 "$HOME"/flashimg/source.titan/titan/tools/parser/*.sh | grep -v beeg.sh | sort -r > tmp.txt
+	ls -1 "$HOME"/flashimg/source.titan/titan/tools/parser/*.sh | grep -v beeg.sh | grep -v kinox.sh | sort -r > tmp.txt
 fi
 
 
