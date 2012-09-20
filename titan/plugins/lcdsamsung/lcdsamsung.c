@@ -218,7 +218,7 @@ void LCD_Samsung1_thread()
 		{
 			if(status.standby == 1 && standby == 0)
 			{
-				if(ostrcmp(getconfig("lcd_pearl1_plugin_standby", NULL), "yes") == 0)
+				if(ostrcmp(getconfig("lcd_samsung_plugin_standby", NULL), "yes") == 0)
 					standby = 2;
 				else
 				{
@@ -500,8 +500,9 @@ void start(void)
 	struct skin* allmenu = getscreennode(samsung1_main, "allmenu");
 	struct skin* aktstandby = getscreennode(samsung1_main, "aktstandby");
 	struct skin* wettervor = getscreennode(samsung1_main, "wettervor");
-	struct skin* wettervorplz = getscreennode(samsung1_main, "wettervorplz");
-	struct skin* wettervorland = getscreennode(samsung1_main, "wettervorland");
+	struct skin* wettervorort = getscreennode(samsung1_main, "wettervorort"); 
+	//struct skin* wettervorplz = getscreennode(samsung1_main, "wettervorplz");
+	//struct skin* wettervorland = getscreennode(samsung1_main, "wettervorland");
 	struct skin* b3 = getscreennode(samsung1_main, "b3");
 	struct skin* tmp = NULL;
 	
@@ -511,8 +512,9 @@ void start(void)
 	
   if(getconfig("lcd_samsung_plugin_wetter", NULL) == NULL || ostrcmp(getconfig("lcd_samsung_plugin_wetter", NULL), "no")  == 0)
   {
-  	wettervorplz->hidden = YES;
-  	wettervorland->hidden = YES;
+  	//wettervorplz->hidden = YES;
+  	//wettervorland->hidden = YES;
+  	wettervorort->hidden = YES;
   }
     
   addchoicebox(lcdtype, "spf75h", _("SPF-75H"));
@@ -531,18 +533,23 @@ void start(void)
   addchoicebox(wettervor, "yes", _("ja"));
 	setchoiceboxselection(wettervor, getconfig("lcd_samsung_plugin_wetter", NULL));
 	
-	changemask(wettervorplz, "0000");
-	if(getconfig("lcd_samsung_plugin_wetterplz", NULL) == NULL)
-		changeinput(wettervorplz, "10407");
-	else
-		changeinput(wettervorplz, getconfig("lcd_samsung_plugin_wetterplz", NULL));
+	//changemask(wettervorplz, "0000");
+	//if(getconfig("lcd_samsung_plugin_wetterplz", NULL) == NULL)
+	//	changeinput(wettervorplz, "10407");
+	//else
+	//	changeinput(wettervorplz, getconfig("lcd_samsung_plugin_wetterplz", NULL));
 		
-	changemask(wettervorland, "abcdefghijklmnopqrstuvwxyz");
-	if(getconfig("lcd_samsung_plugin_wetterland", NULL) == NULL)
-		changeinput(wettervorland, "Germany");
+	//changemask(wettervorland, "abcdefghijklmnopqrstuvwxyz");
+	//if(getconfig("lcd_samsung_plugin_wetterland", NULL) == NULL)
+	//	changeinput(wettervorland, "Germany");
+	//else
+	//	changeinput(wettervorland, getconfig("lcd_samsung_plugin_wetterland", NULL));
+	
+	changemask(wettervorort, "abcdefghijklmnopqrstuvwxyz"); 
+	if(getconfig("lcd_samsung_plugin_wetterort", NULL) == NULL) 
+		changeinput(wettervorort, "Berlin        "); 
 	else
-		changeinput(wettervorland, getconfig("lcd_samsung_plugin_wetterland", NULL));
-		
+		changeinput(wettervorort, getconfig("lcd_samsung_plugin_wetterort", NULL)); 	
 	
 	if(LCD_Samsung1thread != NULL)
 		changetext(b3, "STOP");
@@ -563,11 +570,13 @@ void start(void)
 		{
 			if(ostrcmp(wettervor->ret, "yes") == 0)
 			{
-				wettervorplz->hidden = NO;
-  			wettervorland->hidden = NO;
+				//wettervorplz->hidden = NO;
+  			//wettervorland->hidden = NO;
+  			wettervorort->hidden = NO;
 			} else {
-				wettervorplz->hidden = YES;
-  			wettervorland->hidden = YES;
+				//wettervorplz->hidden = YES;
+  			//wettervorland->hidden = YES;
+  			wettervorort->hidden = YES;
   		}
 			
 			drawscreen(samsung1_main, 0, 0);
@@ -581,8 +590,9 @@ void start(void)
 			addconfig("write_fb_to_jpg", allmenu->ret);
 			addconfig("lcd_samsung_plugin_standby", aktstandby->ret);
 			addconfig("lcd_samsung_plugin_wetter", wettervor->ret);
-			addconfig("lcd_samsung_plugin_wetterplz", wettervorplz->ret);
-			addconfig("lcd_samsung_plugin_wetterland", wettervorland->ret);
+			addconfig("lcd_samsung_plugin_wetterort", wettervorort->ret); 
+			//addconfig("lcd_samsung_plugin_wetterplz", wettervorplz->ret);
+			//addconfig("lcd_samsung_plugin_wetterland", wettervorland->ret);
 			restart = 1;
 			break;
 		}
@@ -593,8 +603,9 @@ void start(void)
 			addconfig("write_fb_to_jpg", allmenu->ret);
 			addconfig("lcd_samsung_plugin_standby", aktstandby->ret);
 			addconfig("lcd_samsung_plugin_wetter", wettervor->ret);
-			addconfig("lcd_samsung_plugin_wetterplz", wettervorplz->ret);
-			addconfig("lcd_samsung_plugin_wetterland", wettervorland->ret);
+			addconfig("lcd_samsung_plugin_wetterort", wettervorort->ret); 
+			//addconfig("lcd_samsung_plugin_wetterplz", wettervorplz->ret);
+			//addconfig("lcd_samsung_plugin_wetterland", wettervorland->ret);
 			startstop = 1;
 			break;
 		}
