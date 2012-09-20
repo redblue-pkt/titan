@@ -329,7 +329,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 			if(pic == 1)
 				gethttp(ip, path, 80, localfile, pw, NULL, 0);
 			else
-				gethttp(ip, path, 80, localfile, pw, NULL, 0);
+				gethttp(ip, path, 80, localfile, pw, NULL, 0);			
 		}
 	}
 	else
@@ -514,6 +514,16 @@ void screentithekplay(char* titheklink, char* title, int first)
 				if(tmp->handle != NULL)
 				{
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
+
+					off64_t checkpic = getfilesize(tithekpic);
+					printf("getfilesize1: %d\n", checkpic);
+			
+					if(checkpic < 1500)
+					{
+						free(tithekpic); tithekpic = NULL;
+						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
+					}
+			
 					changepic(tmp, tithekpic);
 					free(tithekpic); tithekpic = NULL;
 				}
@@ -526,6 +536,16 @@ void screentithekplay(char* titheklink, char* title, int first)
 				if(tmp->handle != NULL)
 				{
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
+
+					off64_t checkpic = getfilesize(tithekpic);
+					printf("getfilesize2: %d\n", checkpic);
+
+					if(checkpic < 1500)
+					{
+						free(tithekpic); tithekpic = NULL;
+						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
+					}
+
 					changepic(tmp, tithekpic);
 					free(tithekpic); tithekpic = NULL;
 				}
@@ -568,7 +588,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 					{
 						char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
 						tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, NULL, NULL, 1);
+						if(tmpstr != NULL) tmpstr1 = youtube(tmpstr, NULL, NULL, 1);
 						tmpstr2 = changefilenameext(((struct tithek*)tmp->handle)->localname, ".mp4");
 						free(tmpstr); tmpstr = NULL;
 							
@@ -618,7 +638,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 					{
 						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
 						char* tmpstr1 = NULL;
-						if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, NULL, NULL, 1);
+						if(tmpstr != NULL) tmpstr1 = youtube(tmpstr, NULL, NULL, 1);
 						free(tmpstr); tmpstr = NULL;
 							
 						if(tmpstr1 != NULL)
@@ -642,19 +662,19 @@ void screentithekplay(char* titheklink, char* title, int first)
 						
 						if(((struct tithek*)listbox->select->handle)->flag == 5)
 						{
-							if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, "http://rtl2now.rtl2.de", "rtl2now", 2);
+							if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://rtl2now.rtl2.de", "rtl2now", 1);
 						}
 						else if(((struct tithek*)listbox->select->handle)->flag == 6)
 						{
-							if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, "http://www.superrtlnow.de", "superrtlnow", 2);
+							if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.superrtlnow.de", "superrtlnow", 1);
 						}
 						else if(((struct tithek*)listbox->select->handle)->flag == 7)
 						{
-							if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, "http://rtl-now.rtl.de", "rtlnow", 2);
+							if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://rtl-now.rtl.de", "rtlnow", 1);
 						}
 						else if(((struct tithek*)listbox->select->handle)->flag == 8)
 						{
-							if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, "http://www.voxnow.de", "voxnow", 2);
+							if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.voxnow.de", "voxnow", 1);
 						}
 	
 						free(tmpstr); tmpstr = NULL;
@@ -757,7 +777,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 					{
 						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
 						char* tmpstr1 = NULL;
-						if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, NULL, NULL, 4);
+						if(tmpstr != NULL) tmpstr1 = myvideo(tmpstr, NULL, NULL, 1);
 						free(tmpstr); tmpstr = NULL;
 							
 						if(tmpstr1 != NULL)
@@ -864,7 +884,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 					{
 						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
 						char* tmpstr1 = NULL;
-						if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, NULL, NULL, 5);
+						if(tmpstr != NULL) tmpstr1 = kinox(tmpstr, NULL, NULL, 1);
 						free(tmpstr); tmpstr = NULL;
 							
 						if(tmpstr1 != NULL)
@@ -885,7 +905,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 					{
 						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
 						char* tmpstr1 = NULL;
-						if(tmpstr != NULL) tmpstr1 = getstreamurl(tmpstr, NULL, NULL, 6);
+						if(tmpstr != NULL) tmpstr1 = kinox(tmpstr, NULL, NULL, 2);
 						free(tmpstr); tmpstr = NULL;
 							
 						if(tmpstr1 != NULL)
@@ -943,482 +963,6 @@ void screentithekplay(char* titheklink, char* title, int first)
 		servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 	}
 	status.hangtime = getconfigint("hangtime", NULL);
-}
-
-// flag 1 = youtube
-// flag 2 = rtlnow
-// flag 3 = rtlnow
-// flag 4 = myvideo
-// flag 5 = kinox putlocker/ sockshare
-// flag 6 = kinox filenuke
-// flag 7 = youtube2
-
-char* getstreamurl(char* link, char* url, char* name, int flag)
-{
-	debug(99, "link(%d): %s", flag, link);
-	char* ip = NULL, *pos = NULL, *path = NULL, *pageUrl = NULL, *playpath = NULL, *video_id = NULL, *source = NULL, *streamurl = NULL, *title = NULL;
-
-	if(flag == 4)
-	{
-		int count = 0;
-		struct splitstr* ret1 = NULL;
-		ret1 = strsplit(link, ";", &count);
-		if(ret1 != NULL && count >= 4)
-		{
-			link = ostrcat(ret1[0].part, NULL, 0, 0);
-			pageUrl = ostrcat(pageUrl, ret1[1].part, 1, 0);
-			playpath = ostrcat(playpath, ret1[2].part, 1, 0);
-			video_id = ostrcat(video_id, ret1[3].part, 1, 0);
-
-			printf("link: %s\n", link);
-			printf("pageUrl: %s\n", pageUrl);
-			printf("playpath: %s\n", playpath);											
-			printf("video_id: %s\n", video_id);											
-		}
-		free(ret1), ret1 = NULL;
-	}	
-
-	if(flag == 5)
-	{
-		int count = 0;
-		struct splitstr* ret1 = NULL;
-		ret1 = strsplit(link, ";", &count);
-		if(ret1 != NULL && count >= 3)
-		{			
-			video_id = ostrcat(video_id, ret1[1].part, 1, 0);
-			debug(99, "video_id: %s", video_id);
-
-			source = ostrcat(source, ret1[2].part, 1, 0);
-			debug(99, "source: %s", source);
-
-			streamurl = putlocker(source, video_id);
-			debug(99, "streamurl1: %s", streamurl);
-
-			streamurl = string_replace_all("amp;", "", streamurl, 1);
-			debug(99, "streamurl2: %s", streamurl);
-
-			free(video_id), video_id = NULL;
-			free(source), source = NULL;
-		}
-		free(ret1), ret1 = NULL;
-		return streamurl;
-	}
-
-	if(flag == 6)
-	{
-		int count = 0;
-		struct splitstr* ret1 = NULL;
-		ret1 = strsplit(link, ";", &count);
-		if(ret1 != NULL && count >= 3)
-		{			
-			video_id = ostrcat(video_id, ret1[1].part, 1, 0);
-			debug(99, "video_id: %s", video_id);
-
-			source = ostrcat(source, ret1[2].part, 1, 0);
-			debug(99, "source: %s", source);
-	
-			streamurl = filenuke(source, video_id);
-			debug(99, "streamurl1: %s", streamurl);
-
-			streamurl = string_replace_all("amp;", "", streamurl, 1);
-			debug(99, "streamurl2: %s", streamurl);
-
-			free(video_id), video_id = NULL;
-			free(source), source = NULL;			
-		}
-		free(ret1), ret1 = NULL;
-		return streamurl;
-	}
-		
-	ip = string_replace("http://", "", (char*)link, 0);
-
-	if(ip != NULL)
-		pos = strchr(ip, '/');
-	if(pos != NULL)
-	{
-		pos[0] = '\0';
-		path = pos + 1;
-	}
-
-	char* tmpstr = NULL;
-	tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
-		
-	if(flag == 1)
-	{
-		writesys("/var/usr/local/share/titan/plugins/tithek/cache_org", tmpstr, 0);
-//		printf("path %s\n", path);
-
-		tmpstr = string_decode(tmpstr, 0);
-		writesys("/var/usr/local/share/titan/plugins/tithek/cache_decode", tmpstr, 0);
-
-
-		tmpstr = string_decode(tmpstr, 0);
-		writesys("/var/usr/local/share/titan/plugins/tithek/cache_decode2", tmpstr, 0);
-
-		tmpstr = string_decode(tmpstr, 0);
-		writesys("/var/usr/local/share/titan/plugins/tithek/cache_decode3", tmpstr, 0);
-
-		if(ostrstr(tmpstr, "status=fail&") == NULL)
-		{
-			tmpstr = string_resub("&url_encoded_fmt_stream_map=url=", "endscreen_module", tmpstr, 0);
-			writesys("/var/usr/local/share/titan/plugins/tithek/cache_resub", tmpstr, 0);
-		
-			while(ostrstr(tmpstr, ",url=") != NULL)
-				tmpstr = string_replace(",url=", "\n", tmpstr, 1);
-	
-			writesys("/var/usr/local/share/titan/plugins/tithek/cache_replace", tmpstr, 0);
-				
-			struct menulist* mlist = NULL, *mbox = NULL;
-			int count = 0;
-			int i = 0;
-			struct splitstr* ret1 = NULL;
-			ret1 = strsplit(tmpstr, "\n", &count);
-			if(ret1 != NULL)
-			{
-				int max = count;
-				for(i = 0; i < max; i++)
-				{
-					printf("(%d) %s\n",i, (ret1[i]).part);
-					if(ostrstr(ret1[i].part, "type=video/webm") == NULL)
-					{
-						streamurl = ostrcat((ret1[i]).part, NULL, 0, 0);
-						if(ostrstr(ret1[i].part, "video/x-flv") != NULL)
-						{
-							ret1[i].part = string_replace("video/x-flv", "video/x-flv\n", ret1[i].part, 0);
-							int count2 = 0;
-							struct splitstr* ret2 = NULL;
-							ret2 = strsplit(ret1[i].part, "\n", &count2);
-							if(ret2 != NULL)
-							{
-								free(streamurl), streamurl = NULL;
-								streamurl = ostrcat(ret2[0].part, NULL, 0, 0);
-							}
-							free(ret2); ret2 = NULL;					
-						}
-						else if(ostrstr(ret1[i].part, "+") != NULL)
-						{
-							int count2 = 0;
-							struct splitstr* ret2 = NULL;
-							ret2 = strsplit(ret1[i].part, "+", &count2);
-							if(ret2 != NULL)
-							{
-								free(streamurl), streamurl = NULL;
-								streamurl = ostrcat(ret2[0].part, NULL, 0, 0);
-							}
-							free(ret2); ret2 = NULL;					
-						}
-						
-						if(ostrstr(ret1[i].part, "itag=85") != NULL)
-							title = ostrcat("MP4 520p H.264 3D", NULL, 0, 0);
-						else if(ostrstr(ret1[i].part, "itag=84") != NULL)
-							title = ostrcat("MP4 720p H.264 3D", NULL, 0, 0);
-						else if(ostrstr(ret1[i].part, "itag=83") != NULL)
-							title = ostrcat("MP4 240p H.264 3D", NULL, 0, 0);
-						else if(ostrstr(ret1[i].part, "itag=82") != NULL)
-							title = ostrcat("MP4 360p H.264 3D", NULL, 0, 0);
-						else if(ostrstr(ret1[i].part, "itag=38") != NULL)
-							title = ostrcat("MP4 3072p H.264 High", NULL, 0, 0);
-						else if(ostrstr(ret1[i].part, "itag=37") != NULL)
-							title = ostrcat("MP4 1080p H.264 High", NULL, 0, 0);
-						else if(ostrstr(ret1[i].part, "itag=22") != NULL)
-							title = ostrcat("MP4 720p H.264 High", NULL, 0, 0);
-						else if(ostrstr(ret1[i].part, "itag=18") != NULL)
-							title = ostrcat("MP4 360p H.264 Baseline", NULL, 0, 0);												
-						else if(ostrstr(ret1[i].part, "itag=6") != NULL)
-							title = ostrcat("FLV 270p Sorenson H.263", NULL, 0, 0);
-						else if(ostrstr(ret1[i].part, "itag=5") != NULL)
-							title = ostrcat("FLV 240p Sorenson H.263", NULL, 0, 0);
-						else if(ostrstr(ret1[i].part, "itag=35") != NULL)
-							title = ostrcat("FLV 480p H.264 Main", NULL, 0, 0);
-						else if(ostrstr(ret1[i].part, "itag=34") != NULL)
-							title = ostrcat("FLV 360p H.264 Main", NULL, 0, 0);																		
-						else if(ostrstr(ret1[i].part, "itag=36") != NULL)
-							title = ostrcat("3GP 240p MPEG-4 Visual Simple", NULL, 0, 0);
-						else if(ostrstr(ret1[i].part, "itag=17") != NULL)
-							title = ostrcat("3GP 144p MPEG-4 Visual Simple", NULL, 0, 0);
-						
-						if(title == NULL)
-							title = ostrcat(_("unknown"), NULL, 0, 0);
-																																					
-						addmenulist(&mlist, title, streamurl, NULL, 0, 0);
-						free(title), title = NULL;					
-						free(streamurl), streamurl = NULL;
-					}
-				}
-				free(ret1); ret1 = NULL;			
-			}
-	
-			if(mlist != NULL)
-			{
-				mbox = menulistbox(mlist, NULL, NULL, NULL, NULL, 1, 0);
-				if(mbox != NULL)
-				{
-					free(streamurl), streamurl = NULL;
-		
-					debug(99, "mbox->name %s", mbox->name);
-					debug(99, "mbox->text %s", mbox->text);
-					streamurl = ostrcat(mbox->text, NULL, 0, 0);
-		
-				}
-			}
-/*
-			else
-			{
-	// videos not alloed in this country or outside youtube, lik has http error 403...		
-	//			link = string_replace("http://www.youtube.com/get_video_info?&video_id=", "http://www.youtube.com/watch?v=", link, 0);
-	//			streamurl = getstreamurl(link, url, name, 7);
-	//			free(tmpstr); tmpstr = NULL;
-			}
-*/
-		}
-		else
-		{	
-		printf("hhhhhhhh\n");		
-			tmpstr = string_resub("&reason=", "&errordetail", tmpstr, 1);
-			tmpstr = string_replace_all("+", " ", tmpstr, 1);
-			tmpstr = string_replace_all(", ", "\n", tmpstr, 1);
-			tmpstr = string_replace("wiedergegeben", "\nwiedergegeben ", tmpstr, 1);
-			tmpstr = string_replace("<br/><u><a href='", "\n\n", tmpstr, 1);
-			tmpstr = string_replace("' target='_blank'>", "\n", tmpstr, 1);
-			tmpstr = string_replace("</a></u>", "\n", tmpstr, 1);			
-			textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
-		}
-		free(tmpstr); tmpstr = NULL;
-
-	}
-	else if(flag == 2)
-	{
-		tmpstr = string_resub("data:'", "',", tmpstr, 0);
-		debug(99, "tmpstr: %s", tmpstr);
-
-		htmldecode(tmpstr, tmpstr);
-		tmpstr = ostrcat(url, tmpstr, 0, 1);
-		debug(99, "streamurl: %s", tmpstr);
-		streamurl = getstreamurl(tmpstr, url, name, 3);
-		free(tmpstr); tmpstr = NULL;
-	}
-	else if(flag == 3)
-	{
-		tmpstr = string_resub("rtmpe://", ".f4v", tmpstr, 0);
-		char* tmpstr9 = NULL;
-		tmpstr9 = ostrcat(tmpstr9, tmpstr, 1, 0);
-		free(tmpstr), tmpstr = NULL;
-		tmpstr = ostrcat("rtmpe://", tmpstr9, 0, 0);
-		tmpstr = ostrcat(tmpstr, ".f4v", 1, 0);		
-		free(tmpstr9), tmpstr9 = NULL;
-
-		debug(99, "tmpstr: %s", tmpstr);
-
-		int count = 0;
-		int i = 0;
-		struct splitstr* ret1 = NULL;
-		ret1 = strsplit(tmpstr, "/", &count);
-		if(ret1 != NULL)
-		{
-			int max = count;
-			char* link = NULL;
-			char* path = NULL;
-			for(i = 0; i < max; i++)
-			{
-				if(i < 3)
-				{
-					if(count > i)
-						link = ostrcat(link, (&ret1[i])->part, 1, 0);
-
-					if(i == 0)
-						link = ostrcat(link, "//", 1, 0);
-					else
-						link = ostrcat(link, "/", 1, 0);
-				}
-				else
-				{
-					if(count > i)
-						path = ostrcat(path, (&ret1[i])->part, 1, 0);
-					if(i != max - 1)
-						path = ostrcat(path, "/", 1, 0);
-				}
-			}
-			free(ret1), ret1 = NULL;
-
-			debug(99, "link: %s", link);
-			debug(99, "path: %s", path);
-	
-			streamurl = ostrcat(link, " swfVfy=1 playpath=mp4:", 0, 0);
-			streamurl = ostrcat(streamurl, path, 1, 0);
-			streamurl = ostrcat(streamurl, " app=", 1, 0);
-			streamurl = ostrcat(streamurl, name, 1, 0);
-			streamurl = ostrcat(streamurl, "/_definst_ pageUrl=", 1, 0);
-			streamurl = ostrcat(streamurl, url, 1, 0);
-			streamurl = ostrcat(streamurl, "/p/ tcUrl=", 1, 0);
-			streamurl = ostrcat(streamurl, link, 1, 0);
-			streamurl = ostrcat(streamurl, " swfUrl=", 1, 0);
-			streamurl = ostrcat(streamurl, url, 1, 0);
-			streamurl = ostrcat(streamurl, "/includes/vodplayer.swf", 1, 0);		
-	
-			if(link != NULL)
-				free(link), link = NULL;
-	
-			if(path != NULL)
-				free(path), path = NULL;
-		}
-		free(tmpstr); tmpstr = NULL;
-		debug(99, "streamurl: %s", streamurl);
-	}
-	else if(flag == 4)
-	{
-		char* tmpstr_uni = NULL;
-		char* b64 = NULL;
-		char* key = NULL;
-
-		int count = 0;
-		struct splitstr* ret1 = NULL;
-		ret1 = strsplit(tmpstr, "=", &count);
-		int hlen = 0;
-
-		if(ret1 != NULL && count >= 2)
-		{
-			debug(99, "ret1[1].part=%s", (ret1[1]).part);
-			hlen = strlen(ret1[1].part);
-			tmpstr_uni = unhexlify(ret1[1].part);
-		}
-		free(ret1), ret1 = NULL;
-
-		b64 = ostrcat("c8407a08b3c71ea418ec9dc662f2a56e40cbd6d5a114aa50fb1e1079e17f2b83", MDString(video_id), 0, 1);
-		debug(99, "b64=%s", b64);
-
-		key = MDString(b64);
-		int slen = 0;
-		int klen = 0;
-		if(tmpstr_uni != NULL) slen = strlen(tmpstr_uni);
-		if(key != NULL) klen = strlen(key);
-		
-		if(tmpstr_uni != NULL)
-		{
-			debug(99, "hexlen=%d", hlen);
-			hlen /= 2;
-			debug(99, "binlen=%d", hlen);
-			debug(99, "keylen=%d", klen);
-			debug(99, "b64=%s", b64);
-			debug(99, "key=%s", key);
-
-			rc4(tmpstr_uni, hlen, key, klen);
-
-			debug(99, "encrypted=%s", tmpstr_uni);
-			debug(99, "pageUrl: %s\n", pageUrl);
-			debug(99, "playpath: %s\n", playpath);
-			debug(99, "video_id: %s\n", video_id);
-			//printf("tmpstr_uni: %s\n",tmpstr_uni);
-
-			htmldecode(tmpstr_uni, tmpstr_uni);
-	
-			if(ostrstr(tmpstr_uni, "connectionurl='rtmp"))
-			{
-				printf("found rtmpe:// stream\n");
-				source = string_resub("source='", ".flv'", tmpstr_uni, 0);
-
-				url = string_resub("connectionurl='", "'", tmpstr_uni, 0);
-	
-				if(ostrstr(url, "myvideo2flash"))
-				{
-					printf("change to rtmpt:// stream\n");
-					url = string_replace("rtmpe://", "rtmpt://", url, 1);
-				}
-	
-				streamurl = ostrcat(url, NULL, 0, 0);
-				streamurl = ostrcat(streamurl, " ", 1, 0);
-				streamurl = ostrcat(streamurl, "tcUrl=", 1, 0);
-				streamurl = ostrcat(streamurl, url, 1, 0);
-				streamurl = ostrcat(streamurl, " swfVfy=http://is4.myvideo.de/de/player/mingR11q/ming.swf ", 1, 0);
-				streamurl = ostrcat(streamurl, pageUrl, 1, 0);
-				streamurl = ostrcat(streamurl, " ", 1, 0);
-				streamurl = ostrcat(streamurl, "playpath=flv:", 1, 0);
-				streamurl = ostrcat(streamurl, source, 1, 0);		
-			}
-			else
-			{		
-				printf("rtmpe not found, change to *.flv stream\n");
-				source = string_resub("source='", "'", tmpstr_uni, 0);
-	
-				url = string_resub("path='", "'", tmpstr_uni, 0);
-	
-				streamurl = ostrcat(url, source, 0, 0);
-			}
-		}
-
-		free(key); key = NULL;		
-		free(b64); b64 = NULL;		
-		free(url); url = NULL;
-		free(source); source = NULL;		
-		free(tmpstr_uni); tmpstr_uni = NULL;
-		free(tmpstr); tmpstr = NULL;
-		free(pageUrl); pageUrl = NULL;		
-		free(playpath); playpath = NULL;
-	}
-	else if(flag == 7)
-	{
-	printf("in 77777777777777\n");
-		writesys("/var/usr/local/share/titan/plugins/tithek/1cache_org", tmpstr, 0);
-
-		tmpstr = string_decode(tmpstr, 0);
-		writesys("/var/usr/local/share/titan/plugins/tithek/1cache_decode", tmpstr, 0);
-
-		tmpstr = string_decode(tmpstr, 0);
-		writesys("/var/usr/local/share/titan/plugins/tithek/1cache_decode2", tmpstr, 0);
-
-
-//		tmpstr = string_resub("\": \"url=", "\", \"", tmpstr, 0);
-		tmpstr = string_resub("var swf = \"", ".innerHTML = swf", tmpstr, 0);
-
-		
-		writesys("/var/usr/local/share/titan/plugins/tithek/1cache_resub", tmpstr, 0);
-	
-		while(ostrstr(tmpstr, "&url=") != NULL)
-			tmpstr = string_replace("&url=", "\nurl=", tmpstr, 1);
-
-		writesys("/var/usr/local/share/titan/plugins/tithek/1cache_replace", tmpstr, 0);
-			
-	
-		int count = 0;
-		int i = 0;
-		struct splitstr* ret1 = NULL;
-		ret1 = strsplit(tmpstr, "\n", &count);
-		if(ret1 != NULL)
-		{
-			int max = count;
-			for(i = 0; i < max; i++)
-			{
-				if(ostrstr(ret1[i].part, "type=video/mp4") != NULL)
-				{
-					streamurl = ostrcat(streamurl, ret1[i].part, 1, 0);
-					int count2 = 0;
-					struct splitstr* ret2 = NULL;
-					ret2 = strsplit(ret1[i].part, "+", &count2);
-					if(ret2 != NULL)
-					{
-						free(streamurl);
-						streamurl = ostrcat("", ret2[0].part, 0, 0);
-						free(ret2); ret2 = NULL;
-					}
-				}
-			}
-			free(ret1); ret1 = NULL;
-			
-			streamurl = string_replace("url=", "", streamurl, 1);
-		}
-		free(tmpstr); tmpstr = NULL;
-		writesys("/var/usr/local/share/titan/plugins/tithek/1cache_streamurl", streamurl, 0);
-
-		streamurl = string_decode(streamurl, 0);
-		writesys("/var/usr/local/share/titan/plugins/tithek/1cache_streamurl1", streamurl, 0);
-
-		streamurl = string_replace("&gcr=de", "", streamurl, 1);
-		writesys("/var/usr/local/share/titan/plugins/tithek/1cache_streamurl2", streamurl, 0);
-		
-		return streamurl;
-	}
-
-	debug(99, "streamurl2: %s", streamurl);	
-	return streamurl;
 }
 
 #endif
