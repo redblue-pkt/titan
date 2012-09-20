@@ -23,15 +23,18 @@ fi
 HOMEDIR=`pwd`
 TMP=.tmp
 
+rm -rf "$HOME"/parser/BUILD
+mkdir -p "$HOME"/parser/BUILD/mediathek
+
+svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/titan/tools/tithekmainmenu "$HOME"/parser/BUILD/mediathek/mediathek
+svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/skins/tithek/menu "$HOME"/parser/BUILD/mediathek/mediathek/menu
+
+rm -rf `find "$HOME"/parser/BUILD/mediathek -type d -name "*.svn"`
+
 rm -rf /var/www/atemio/web/mediathek/menu
 rm -rf /var/www/atemio/web/mediathek/*.list
-
-rm -rf "$HOME"/flashimg/BUILD/mediathek
-svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/titan/tools/tithekmainmenu "$HOME"/flashimg/BUILD/mediathek
-svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/skins/tithek/menu "$HOME"/flashimg/BUILD/mediathek/menu
-rm -rf `find "$HOME"/flashimg/BUILD/mediathek -type d -name "*.svn"`
-mv -f "$HOME"/flashimg/BUILD/mediathek/* /var/www/atemio/web/mediathek
-cd "$HOME"/flashimg/BUILD/mediathek
+mv -f "$HOME"/parser/BUILD/mediathek/* /var/www/atemio/web/mediathek
+mv -f "$HOME"/parser/*.sh "$HOME"/parser/BUILD
 
 lasttimestamp=`cat /var/www/atemio/web/mediathek/lasttimestamp`
 lasttimestamp=`expr $lasttimestamp + 84500`
@@ -41,13 +44,11 @@ echo today $today
 echo lasttimestamp $lasttimestamp
 
 if [ $today -gt $lasttimestamp ];then
-	echo iffffffffffff
-	ls -1 "$HOME"/flashimg/source.titan/titan/tools/parser/*.sh | sort -r > tmp.txt
+	ls -1 "$HOME"/parser/BUILD/*.sh | sort -r > tmp.txt
 else
 	echo else
-	ls -1 "$HOME"/flashimg/source.titan/titan/tools/parser/*.sh | grep -v beeg.sh | grep -v kinox.sh | sort -r > tmp.txt
+	ls -1 "$HOME"/parser/BUILD/*.sh | grep -v beeg.sh | grep -v kinox.sh | sort -r > tmp.txt
 fi
-
 
 LINE=`cat tmp.txt`
 echo LINE $LINE
@@ -61,7 +62,7 @@ for TYPE in $LINE; do
 	STARTTIME=`date +"%Y.%m.%d_%H.%M.%S"`
 done
 
-cd "$HOME"/flashimg/BUILD/mediathek/_full
+cd "$HOME"/parser/BUILD/_full
 LINE=`ls -1`
 TIME=`date +"%Y.%m.%d_%H.%M.%S"`
 
