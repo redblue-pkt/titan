@@ -28,7 +28,7 @@ mkdir -p "$HOME"/parser/BUILD
 cd "$HOME"/parser/BUILD
 
 svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/titan/tools/tithekmainmenu "$HOME"/parser/BUILD/mediathek
-svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/skins/tithek/menu "$HOME"/parser/BUILD/mediathek/mediathek/menu
+svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/skins/tithek/menu "$HOME"/parser/BUILD/mediathek/menu
 
 rm -rf `find "$HOME"/parser/BUILD/mediathek -type d -name "*.svn"`
 
