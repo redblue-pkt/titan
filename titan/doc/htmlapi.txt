@@ -226,7 +226,7 @@ raw: name#code
 descr: gets all rccodes
 param: no
 
-query: webplay
+query: videoplay
 raw play: play (on error "can not start playback")
 raw stop: stop (on error "not in play mode")
 raw pause: pause (on error "not in play mode")

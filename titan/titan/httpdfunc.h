@@ -937,7 +937,7 @@ char* webvideo(char* param, int fmt)
 	else
 		count = 31;
 
-	if(count >= 30)
+	if(count >= 30 && status.play == 0)
 	{
 		free(status.webplayfile); status.webplayfile = NULL;
 		tmpbuf = ostrcat("can not start playback", NULL, 0, 0);
