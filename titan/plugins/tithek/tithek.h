@@ -719,7 +719,8 @@ void screentithekplay(char* titheklink, char* title, int first)
 										title = string_resub("<meta name=\"title\" content=\"", "\">", title, 0);
 		
 										line = ostrcat(line, title, 1, 0);
-										line = ostrcat(line, "#http://www.youtube.com/watch?v=", 1, 0);
+//										line = ostrcat(line, "#http://www.youtube.com/watch?v=", 1, 0);
+										line = ostrcat(line, "#http://www.youtube.com/get_video_info?&video_id=", 1, 0);
 										line = ostrcat(line, id, 1, 0);
 										line = ostrcat(line, "#", 1, 0);
 										line = ostrcat(line, pic, 1, 0);
@@ -926,6 +927,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 					}
 				}
 				drawscreen(grid, 0, 0);
+				sleep(1);
 			}			
 		}
 	}
@@ -943,15 +945,18 @@ void screentithekplay(char* titheklink, char* title, int first)
 	status.hangtime = getconfigint("hangtime", NULL);
 }
 
-// flag 1 = youtube streamlink
-// flag 2 = rtlnow streamlinksrc
-// flag 3 = rtlnow streamlink
-// flag 4 = myvideo streamlink
-// flag 5 = kinox streamlink
+// flag 1 = youtube
+// flag 2 = rtlnow
+// flag 3 = rtlnow
+// flag 4 = myvideo
+// flag 5 = kinox putlocker/ sockshare
+// flag 6 = kinox filenuke
+// flag 7 = youtube2
+
 char* getstreamurl(char* link, char* url, char* name, int flag)
 {
 	debug(99, "link(%d): %s", flag, link);
-	char* ip = NULL, *pos = NULL, *path = NULL, *pageUrl = NULL, *playpath = NULL, *video_id = NULL, *source = NULL, *streamurl = NULL;
+	char* ip = NULL, *pos = NULL, *path = NULL, *pageUrl = NULL, *playpath = NULL, *video_id = NULL, *source = NULL, *streamurl = NULL, *title = NULL;
 
 	if(flag == 4)
 	{
@@ -1040,41 +1045,146 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		
 	if(flag == 1)
 	{
-		tmpstr = string_resub("\": \"url=", "\", \"", tmpstr, 0);
-	
-		while(ostrstr(tmpstr, ",url=") != NULL)
-			tmpstr = string_replace(",url=", "\nurl=", tmpstr, 1);
-	
+		writesys("/var/usr/local/share/titan/plugins/tithek/cache_org", tmpstr, 0);
+//		printf("path %s\n", path);
+
 		tmpstr = string_decode(tmpstr, 0);
-	
-		int count = 0;
-		int i = 0;
-		struct splitstr* ret1 = NULL;
-		ret1 = strsplit(tmpstr, "\n", &count);
-		if(ret1 != NULL)
+		writesys("/var/usr/local/share/titan/plugins/tithek/cache_decode", tmpstr, 0);
+
+
+		tmpstr = string_decode(tmpstr, 0);
+		writesys("/var/usr/local/share/titan/plugins/tithek/cache_decode2", tmpstr, 0);
+
+		tmpstr = string_decode(tmpstr, 0);
+		writesys("/var/usr/local/share/titan/plugins/tithek/cache_decode3", tmpstr, 0);
+
+		if(ostrstr(tmpstr, "status=fail&") == NULL)
 		{
-			int max = count;
-			for(i = 0; i < max; i++)
+			tmpstr = string_resub("&url_encoded_fmt_stream_map=url=", "endscreen_module", tmpstr, 0);
+			writesys("/var/usr/local/share/titan/plugins/tithek/cache_resub", tmpstr, 0);
+		
+			while(ostrstr(tmpstr, ",url=") != NULL)
+				tmpstr = string_replace(",url=", "\n", tmpstr, 1);
+	
+			writesys("/var/usr/local/share/titan/plugins/tithek/cache_replace", tmpstr, 0);
+				
+			struct menulist* mlist = NULL, *mbox = NULL;
+			int count = 0;
+			int i = 0;
+			struct splitstr* ret1 = NULL;
+			ret1 = strsplit(tmpstr, "\n", &count);
+			if(ret1 != NULL)
 			{
-				if(ostrstr(ret1[i].part, "type=video/mp4") != NULL)
+				int max = count;
+				for(i = 0; i < max; i++)
 				{
-					streamurl = ostrcat(streamurl, ret1[i].part, 1, 0);
-					int count2 = 0;
-					struct splitstr* ret2 = NULL;
-					ret2 = strsplit(ret1[i].part, "+", &count2);
-					if(ret2 != NULL)
+					printf("(%d) %s\n",i, (ret1[i]).part);
+					if(ostrstr(ret1[i].part, "type=video/webm") == NULL)
 					{
-						free(streamurl);
-						streamurl = ostrcat("", ret2[0].part, 0, 0);
-						free(ret2); ret2 = NULL;
+						streamurl = ostrcat((ret1[i]).part, NULL, 0, 0);
+						if(ostrstr(ret1[i].part, "video/x-flv") != NULL)
+						{
+							ret1[i].part = string_replace("video/x-flv", "video/x-flv\n", ret1[i].part, 0);
+							int count2 = 0;
+							struct splitstr* ret2 = NULL;
+							ret2 = strsplit(ret1[i].part, "\n", &count2);
+							if(ret2 != NULL)
+							{
+								free(streamurl), streamurl = NULL;
+								streamurl = ostrcat(ret2[0].part, NULL, 0, 0);
+							}
+							free(ret2); ret2 = NULL;					
+						}
+						else if(ostrstr(ret1[i].part, "+") != NULL)
+						{
+							int count2 = 0;
+							struct splitstr* ret2 = NULL;
+							ret2 = strsplit(ret1[i].part, "+", &count2);
+							if(ret2 != NULL)
+							{
+								free(streamurl), streamurl = NULL;
+								streamurl = ostrcat(ret2[0].part, NULL, 0, 0);
+							}
+							free(ret2); ret2 = NULL;					
+						}
+						
+						if(ostrstr(ret1[i].part, "itag=85") != NULL)
+							title = ostrcat("MP4 520p H.264 3D", NULL, 0, 0);
+						else if(ostrstr(ret1[i].part, "itag=84") != NULL)
+							title = ostrcat("MP4 720p H.264 3D", NULL, 0, 0);
+						else if(ostrstr(ret1[i].part, "itag=83") != NULL)
+							title = ostrcat("MP4 240p H.264 3D", NULL, 0, 0);
+						else if(ostrstr(ret1[i].part, "itag=82") != NULL)
+							title = ostrcat("MP4 360p H.264 3D", NULL, 0, 0);
+						else if(ostrstr(ret1[i].part, "itag=38") != NULL)
+							title = ostrcat("MP4 3072p H.264 High", NULL, 0, 0);
+						else if(ostrstr(ret1[i].part, "itag=37") != NULL)
+							title = ostrcat("MP4 1080p H.264 High", NULL, 0, 0);
+						else if(ostrstr(ret1[i].part, "itag=22") != NULL)
+							title = ostrcat("MP4 720p H.264 High", NULL, 0, 0);
+						else if(ostrstr(ret1[i].part, "itag=18") != NULL)
+							title = ostrcat("MP4 360p H.264 Baseline", NULL, 0, 0);												
+						else if(ostrstr(ret1[i].part, "itag=6") != NULL)
+							title = ostrcat("FLV 270p Sorenson H.263", NULL, 0, 0);
+						else if(ostrstr(ret1[i].part, "itag=5") != NULL)
+							title = ostrcat("FLV 240p Sorenson H.263", NULL, 0, 0);
+						else if(ostrstr(ret1[i].part, "itag=35") != NULL)
+							title = ostrcat("FLV 480p H.264 Main", NULL, 0, 0);
+						else if(ostrstr(ret1[i].part, "itag=34") != NULL)
+							title = ostrcat("FLV 360p H.264 Main", NULL, 0, 0);																		
+						else if(ostrstr(ret1[i].part, "itag=36") != NULL)
+							title = ostrcat("3GP 240p MPEG-4 Visual Simple", NULL, 0, 0);
+						else if(ostrstr(ret1[i].part, "itag=17") != NULL)
+							title = ostrcat("3GP 144p MPEG-4 Visual Simple", NULL, 0, 0);
+						
+						if(title == NULL)
+							title = ostrcat(_("unknown"), NULL, 0, 0);
+																																					
+						addmenulist(&mlist, title, streamurl, NULL, 0, 0);
+						free(title), title = NULL;					
+						free(streamurl), streamurl = NULL;
 					}
 				}
+				free(ret1); ret1 = NULL;			
 			}
-			free(ret1); ret1 = NULL;
-			
-			streamurl = string_replace("url=", "", streamurl, 1);
+	
+			if(mlist != NULL)
+			{
+				mbox = menulistbox(mlist, NULL, NULL, NULL, NULL, 1, 0);
+				if(mbox != NULL)
+				{
+					free(streamurl), streamurl = NULL;
+		
+					debug(99, "mbox->name %s", mbox->name);
+					debug(99, "mbox->text %s", mbox->text);
+					streamurl = ostrcat(mbox->text, NULL, 0, 0);
+		
+				}
+			}
+/*
+			else
+			{
+	// videos not alloed in this country or outside youtube, lik has http error 403...		
+	//			link = string_replace("http://www.youtube.com/get_video_info?&video_id=", "http://www.youtube.com/watch?v=", link, 0);
+	//			streamurl = getstreamurl(link, url, name, 7);
+	//			free(tmpstr); tmpstr = NULL;
+			}
+*/
+		}
+		else
+		{	
+		printf("hhhhhhhh\n");		
+			tmpstr = string_resub("&reason=", "&errordetail", tmpstr, 1);
+			tmpstr = string_replace_all("+", " ", tmpstr, 1);
+			tmpstr = string_replace_all(", ", "\n", tmpstr, 1);
+			tmpstr = string_replace("wiedergegeben", "\nwiedergegeben ", tmpstr, 1);
+			tmpstr = string_replace("<br/><u><a href='", "\n\n", tmpstr, 1);
+			tmpstr = string_replace("' target='_blank'>", "\n", tmpstr, 1);
+			tmpstr = string_replace("</a></u>", "\n", tmpstr, 1);			
+			textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
 		}
 		free(tmpstr); tmpstr = NULL;
+
 	}
 	else if(flag == 2)
 	{
@@ -1089,7 +1199,6 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 	}
 	else if(flag == 3)
 	{
-//		string_resub("delivery=\"streaming\"><![CDATA[", "]]></filename>", tmpstr, 0);
 		tmpstr = string_resub("rtmpe://", ".f4v", tmpstr, 0);
 		char* tmpstr9 = NULL;
 		tmpstr9 = ostrcat(tmpstr9, tmpstr, 1, 0);
@@ -1155,10 +1264,8 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		free(tmpstr); tmpstr = NULL;
 		debug(99, "streamurl: %s", streamurl);
 	}
-	if(flag == 4)
+	else if(flag == 4)
 	{
-// somtimes segfault
-//		writesys("/tmp/tithek/list", tmpstr, 0);
 		char* tmpstr_uni = NULL;
 		char* b64 = NULL;
 		char* key = NULL;
@@ -1196,10 +1303,7 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 
 			rc4(tmpstr_uni, hlen, key, klen);
 
-			debug(99, "encrypted=%s", tmpstr_uni);		
-// somtimes segfault
-//			writesys("/tmp/tithek/list_key", tmpstr_uni, 1);			
-
+			debug(99, "encrypted=%s", tmpstr_uni);
 			debug(99, "pageUrl: %s\n", pageUrl);
 			debug(99, "playpath: %s\n", playpath);
 			debug(99, "video_id: %s\n", video_id);
@@ -1249,8 +1353,71 @@ char* getstreamurl(char* link, char* url, char* name, int flag)
 		free(tmpstr); tmpstr = NULL;
 		free(pageUrl); pageUrl = NULL;		
 		free(playpath); playpath = NULL;
-		debug(99, "streamurl: %s", streamurl);
 	}
+	else if(flag == 7)
+	{
+	printf("in 77777777777777\n");
+		writesys("/var/usr/local/share/titan/plugins/tithek/1cache_org", tmpstr, 0);
+
+		tmpstr = string_decode(tmpstr, 0);
+		writesys("/var/usr/local/share/titan/plugins/tithek/1cache_decode", tmpstr, 0);
+
+		tmpstr = string_decode(tmpstr, 0);
+		writesys("/var/usr/local/share/titan/plugins/tithek/1cache_decode2", tmpstr, 0);
+
+
+//		tmpstr = string_resub("\": \"url=", "\", \"", tmpstr, 0);
+		tmpstr = string_resub("var swf = \"", ".innerHTML = swf", tmpstr, 0);
+
+		
+		writesys("/var/usr/local/share/titan/plugins/tithek/1cache_resub", tmpstr, 0);
+	
+		while(ostrstr(tmpstr, "&url=") != NULL)
+			tmpstr = string_replace("&url=", "\nurl=", tmpstr, 1);
+
+		writesys("/var/usr/local/share/titan/plugins/tithek/1cache_replace", tmpstr, 0);
+			
+	
+		int count = 0;
+		int i = 0;
+		struct splitstr* ret1 = NULL;
+		ret1 = strsplit(tmpstr, "\n", &count);
+		if(ret1 != NULL)
+		{
+			int max = count;
+			for(i = 0; i < max; i++)
+			{
+				if(ostrstr(ret1[i].part, "type=video/mp4") != NULL)
+				{
+					streamurl = ostrcat(streamurl, ret1[i].part, 1, 0);
+					int count2 = 0;
+					struct splitstr* ret2 = NULL;
+					ret2 = strsplit(ret1[i].part, "+", &count2);
+					if(ret2 != NULL)
+					{
+						free(streamurl);
+						streamurl = ostrcat("", ret2[0].part, 0, 0);
+						free(ret2); ret2 = NULL;
+					}
+				}
+			}
+			free(ret1); ret1 = NULL;
+			
+			streamurl = string_replace("url=", "", streamurl, 1);
+		}
+		free(tmpstr); tmpstr = NULL;
+		writesys("/var/usr/local/share/titan/plugins/tithek/1cache_streamurl", streamurl, 0);
+
+		streamurl = string_decode(streamurl, 0);
+		writesys("/var/usr/local/share/titan/plugins/tithek/1cache_streamurl1", streamurl, 0);
+
+		streamurl = string_replace("&gcr=de", "", streamurl, 1);
+		writesys("/var/usr/local/share/titan/plugins/tithek/1cache_streamurl2", streamurl, 0);
+		
+		return streamurl;
+	}
+
+	debug(99, "streamurl2: %s", streamurl);	
 	return streamurl;
 }
 
