@@ -50,6 +50,8 @@ else
 	ls -1 "$HOME"/parser/BUILD/*.sh | grep -v beeg.sh | grep -v kinox.sh | sort -r > tmp.txt
 fi
 
+cd "$HOME"/parser/BUILD
+
 LINE=`cat tmp.txt`
 echo LINE $LINE
 for TYPE in $LINE; do
