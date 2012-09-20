@@ -6,6 +6,10 @@
 #include "tithek_settings.h"
 #include "putlocker.h"
 #include "filenuke.h"
+#include "youtube.h"
+#include "kinox.h"
+#include "myvideo.h"
+#include "rtl2now.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";
