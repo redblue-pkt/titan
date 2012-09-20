@@ -671,8 +671,13 @@ int screenplay(char* startfile, int startfolder, int flag)
 	}
 
 	if(status.webplayfile != NULL)
+	{
 		startfile = status.webplayfile;
-	
+		htmldecode(startfile, startfile);
+		rcret = servicestop(status.aktservice, 1, 1);
+		if(rcret == 1) return ret;
+	}
+
 	// allowed from atemio avi mkv mpg4 xvid mpg1 mpg2 jpeg png
 	if(status.expertmodus > 0 && status.security == 1)
 		formats = ostrcat(formats, ".flac .ogg .mp3 .avi .dat .divx .flv .mkv .m4v .mp4 .mov .mpg .mpeg .mts .m2ts .trp .ts .vdr .vob .wmv .rm", 1, 0);
@@ -822,7 +827,7 @@ playerstart:
 				{
 					playrcstop(playertype, flag);
 					if(startfile == NULL)
-					{
+					{						
 						if(startfolder == 1 && flag != 3) playstartservice();
 						goto playerstart;
 					}
@@ -898,9 +903,14 @@ playerend:
 				break;
 		}
 	}
-
 	if(startfolder == 0 && flag != 3) playstartservice();
 	status.updatevfd = START;
+	
+	if(status.webplayfile != NULL)
+	{
+		playstartservice();
+		free(status.webplayfile); status.webplayfile = NULL;
+	}
 
 	if(tmppolicy != NULL)
 	{
@@ -911,7 +921,6 @@ playerend:
 	if(flag == 4)
 		deinitscreensaver();
 
-	free(status.webplayfile); status.webplayfile = NULL; 
 	free(status.playfile); status.playfile = NULL; 
 	status.playspeed = 0;
 	status.pause = 0;
