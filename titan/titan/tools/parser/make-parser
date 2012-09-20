@@ -24,9 +24,10 @@ HOMEDIR=`pwd`
 TMP=.tmp
 
 rm -rf "$HOME"/parser/BUILD
-mkdir -p "$HOME"/parser/BUILD/mediathek
+mkdir -p "$HOME"/parser/BUILD
+cd "$HOME"/parser/BUILD
 
-svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/titan/tools/tithekmainmenu "$HOME"/parser/BUILD/mediathek/mediathek
+svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/titan/tools/tithekmainmenu "$HOME"/parser/BUILD/mediathek
 svn co --username $SVNUSER --password $SVNPASS http://sbnc.myphotos.cc/svn/titan/skins/tithek/menu "$HOME"/parser/BUILD/mediathek/mediathek/menu
 
 rm -rf `find "$HOME"/parser/BUILD/mediathek -type d -name "*.svn"`
@@ -47,12 +48,10 @@ if [ $today -gt $lasttimestamp ];then
 	ls -1 "$HOME"/parser/BUILD/*.sh | sort -r > tmp.txt
 else
 	echo else
-	ls -1 "$HOME"/parser/BUILD/*.sh | grep -v beeg.sh | grep -v kinox.sh | sort -r > tmp.txt
+	ls -1 "$HOME"/parser/BUILD/*.sh | grep -v beeg.sh | grep -v kinox.sh | sort -r > "$HOME"/parser/BUILD/tmp.txt
 fi
 
-cd "$HOME"/parser/BUILD
-
-LINE=`cat tmp.txt`
+LINE=`cat "$HOME"/parser/BUILD/tmp.txt`
 echo LINE $LINE
 for TYPE in $LINE; do
 	if [ $TYPE == "beeg.sh" ] || [ $TYPE == "kinox.sh" ];then
