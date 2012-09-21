@@ -152,4 +152,84 @@ char* youtube(char* link, char* url, char* name, int flag)
 	return streamurl;
 }
 
+void youtube_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load)
+{
+	char* search = textinput("Search", NULL);
+	if(search != NULL)
+	{
+		drawscreen(load, 0, 0);
+		search = stringreplacechar(search, ' ', '+');
+		char* id = NULL;
+		char* line = NULL;
+		char* pic = NULL;
+		char* title = NULL;	
+		char* ip = ostrcat("gdata.youtube.com", NULL, 0, 0);
+		char* path = ostrcat("feeds/api/videos?q=", search, 0, 0);
+		if(((struct tithek*)listbox->select->handle)->flag == 9)
+			path = ostrcat(path, "&max-results=10", 1, 0);
+		else if(((struct tithek*)listbox->select->handle)->flag == 10)
+			path = ostrcat(path, "&max-results=25", 1, 0);
+		else if(((struct tithek*)listbox->select->handle)->flag == 11)
+			path = ostrcat(path, "&max-results=50", 1, 0);
+					
+		char* tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
+		tmpstr = string_replace_all("media:thumbnail", "\nthumbnail", tmpstr, 1);
+
+		int count = 0;
+		int incount = 0;
+		int i = 0;
+		struct splitstr* ret1 = NULL;
+		ret1 = strsplit(tmpstr, "\n", &count);
+
+		if(ret1 != NULL)
+		{
+			int max = count;
+			for(i = 0; i < max; i++)
+			{
+				if(ostrstr(ret1[i].part, "http://i.ytimg.com/vi/") != NULL)
+				{
+					pic = oregex(".*thumbnail url=\'(http://i.ytimg.com/vi/.*/0.jpg).*", ret1[i].part);
+					id = oregex(".*thumbnail url=\'http://i.ytimg.com/vi/(.*)/0.jpg.*", ret1[i].part);
+
+					if(id != NULL)
+					{
+						incount += 1;
+						ip = ostrcat("www.youtube.com", NULL, 0, 0);
+						path = ostrcat("watch?v=", id, 0, 0);
+						title = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
+						title = string_resub("<meta name=\"title\" content=\"", "\">", title, 0);
+
+						line = ostrcat(line, title, 1, 0);
+//										line = ostrcat(line, "#http://www.youtube.com/watch?v=", 1, 0);
+						line = ostrcat(line, "#http://www.youtube.com/get_video_info?&video_id=", 1, 0);
+						line = ostrcat(line, id, 1, 0);
+						line = ostrcat(line, "#", 1, 0);
+						line = ostrcat(line, pic, 1, 0);
+						line = ostrcat(line, "#youtube_search_", 1, 0);
+						line = ostrcat(line, oitoa(incount + time(NULL)), 1, 0);
+						line = ostrcat(line, ".jpg#YouTube - Search#4\n", 1, 0);
+						free(ip), ip = NULL;
+						free(path), path = NULL;
+						free(title), title = NULL;
+					}
+				}
+			}
+			free(ret1), ret1 = NULL;
+
+			if(line != NULL)
+			{
+				writesys("/tmp/tithek/youtube.search.list", line, 0);
+				free(line), line = NULL;
+//								if(createtithekplay("/tmp/tithek/youtube.search.list", grid, listbox, countlabel) != 0) return;
+				int pagecount = createtithekplay("/tmp/tithek/youtube.search.list", grid, listbox, countlabel);
+				if(pagecount == 0) return;
+				
+				drawscreen(grid, 0, 0);
+			}
+		}
+		free(tmpstr), tmpstr = NULL;
+	}
+	free(search), search = NULL;
+}
+
 #endif

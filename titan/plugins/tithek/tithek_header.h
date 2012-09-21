@@ -10,5 +10,7 @@ char* kinox(char* link, char* url, char* name, int flag);
 char* myvideo(char* link, char* url, char* name, int flag);
 char* rtl2now(char* link, char* url, char* name, int flag);
 char* youtube(char* link, char* url, char* name, int flag);
+void myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load);
+void youtube_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load);
 
 #endif
