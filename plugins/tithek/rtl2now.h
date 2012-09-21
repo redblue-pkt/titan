@@ -77,7 +77,7 @@ char* rtl2now(char* link, char* url, char* name, int flag)
 			debug(99, "newlink: %s", newlink);
 			debug(99, "newpath: %s", newpath);
 	
-			streamurl = ostrcat(link, " swfVfy=1 playpath=mp4:", 0, 0);
+			streamurl = ostrcat(newlink, " swfVfy=1 playpath=mp4:", 0, 0);
 			streamurl = ostrcat(streamurl, newpath, 1, 0);
 			streamurl = ostrcat(streamurl, " app=", 1, 0);
 			streamurl = ostrcat(streamurl, name, 1, 0);
