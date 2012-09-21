@@ -453,6 +453,70 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	return pagecount;
 }
 
+// 4  - youtube
+// 5  - rtl2now
+// 6  - superrtlnow
+// 7  - rtlnow
+// 8  - voxnow
+// 12 - myvideo
+// 14 - kinox putlocker/sockshare
+// 15 - kinox filenuke
+
+void submenu(struct skin* listbox)
+{
+	if(status.security == 1)
+	{
+		char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+		char* tmpstr1 = NULL;
+
+		if(((struct tithek*)listbox->select->handle)->flag == 4)
+		{
+			if(tmpstr != NULL) tmpstr1 = youtube(tmpstr, NULL, NULL, 1);
+		}						
+		else if(((struct tithek*)listbox->select->handle)->flag == 5)
+		{
+			if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://rtl2now.rtl2.de", "rtl2now", 1);
+		}
+		else if(((struct tithek*)listbox->select->handle)->flag == 6)
+		{
+			if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.superrtlnow.de", "superrtlnow", 1);
+		}
+		else if(((struct tithek*)listbox->select->handle)->flag == 7)
+		{
+			if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://rtl-now.rtl.de", "rtlnow", 1);
+		}
+		else if(((struct tithek*)listbox->select->handle)->flag == 8)
+		{
+			if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.voxnow.de", "voxnow", 1);
+		}
+		else if(((struct tithek*)listbox->select->handle)->flag == 12)
+		{
+			if(tmpstr != NULL) tmpstr1 = myvideo(tmpstr, NULL, NULL, 1);
+		}
+		else if(((struct tithek*)listbox->select->handle)->flag == 14)
+		{
+			if(tmpstr != NULL) tmpstr1 = kinox(tmpstr, NULL, NULL, 1);
+		}
+		else if(((struct tithek*)listbox->select->handle)->flag == 15)
+		{
+			if(tmpstr != NULL) tmpstr1 = kinox(tmpstr, NULL, NULL, 2);
+		}
+
+		free(tmpstr); tmpstr = NULL;
+			
+		if(tmpstr1 != NULL)
+		{
+			if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+				screenplay(tmpstr1, 2, 0);				
+		}
+		else
+			textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+		free(tmpstr1); tmpstr1 = NULL;
+	}
+	else
+		textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
+}
+
 void screentithekplay(char* titheklink, char* title, int first)
 {
 	int rcret = -1, oaktline = 1, oaktpage = -1, ogridcol = 0;
@@ -632,139 +696,19 @@ void screentithekplay(char* titheklink, char* title, int first)
 					else
 						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 				}
-				else if(((struct tithek*)listbox->select->handle)->flag == 4)
+				else if((((struct tithek*)listbox->select->handle)->flag == 4) || (((struct tithek*)listbox->select->handle)->flag == 5) || (((struct tithek*)listbox->select->handle)->flag == 6) || (((struct tithek*)listbox->select->handle)->flag == 7) || (((struct tithek*)listbox->select->handle)->flag == 8) || (((struct tithek*)listbox->select->handle)->flag == 12))
 				{
-					if(status.security == 1)
-					{
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = NULL;
-						if(tmpstr != NULL) tmpstr1 = youtube(tmpstr, NULL, NULL, 1);
-						free(tmpstr); tmpstr = NULL;
-							
-						if(tmpstr1 != NULL)
-						{
-							if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-								screenplay(tmpstr1, 2, 0);				
-						}
-						else
-							textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-						free(tmpstr1); tmpstr1 = NULL;
-					}
-					else
-						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);			
-				}
-				else if((((struct tithek*)listbox->select->handle)->flag == 5) || (((struct tithek*)listbox->select->handle)->flag == 6) || (((struct tithek*)listbox->select->handle)->flag == 7) || (((struct tithek*)listbox->select->handle)->flag == 8))
-				{
-					if(status.security == 1)
-					{
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = NULL;
-						
-						if(((struct tithek*)listbox->select->handle)->flag == 5)
-						{
-							if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://rtl2now.rtl2.de", "rtl2now", 1);
-						}
-						else if(((struct tithek*)listbox->select->handle)->flag == 6)
-						{
-							if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.superrtlnow.de", "superrtlnow", 1);
-						}
-						else if(((struct tithek*)listbox->select->handle)->flag == 7)
-						{
-							if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://rtl-now.rtl.de", "rtlnow", 1);
-						}
-						else if(((struct tithek*)listbox->select->handle)->flag == 8)
-						{
-							if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.voxnow.de", "voxnow", 1);
-						}
-	
-						free(tmpstr); tmpstr = NULL;
-							
-						if(tmpstr1 != NULL)
-						{
-							if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-								screenplay(tmpstr1, 2, 0);				
-						}
-						else
-							textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-						free(tmpstr1); tmpstr1 = NULL;
-					}
-					else
-						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);			
+					submenu(listbox);
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 9) || (((struct tithek*)listbox->select->handle)->flag == 10) || (((struct tithek*)listbox->select->handle)->flag == 11))
 				{
 					youtube_search(grid, listbox, countlabel, load);
 					continue;
 				}
-				else if(((struct tithek*)listbox->select->handle)->flag == 12)
-				{
-					if(status.security == 1)
-					{
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = NULL;
-						if(tmpstr != NULL) tmpstr1 = myvideo(tmpstr, NULL, NULL, 1);
-						free(tmpstr); tmpstr = NULL;
-							
-						if(tmpstr1 != NULL)
-						{
-							if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-							{
-								screenplay(tmpstr1, 2, 0);				
-							}
-						}
-						else
-							textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-						free(tmpstr1); tmpstr1 = NULL;
-					}
-					else
-						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);			
-				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 13))
 				{
 					myvideo_search(grid, listbox, countlabel, load);
 					continue;
-				}
-				else if(((struct tithek*)listbox->select->handle)->flag == 14)
-				{
-					if(status.security == 1)
-					{
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = NULL;
-						if(tmpstr != NULL) tmpstr1 = kinox(tmpstr, NULL, NULL, 1);
-						free(tmpstr); tmpstr = NULL;
-							
-						if(tmpstr1 != NULL)
-						{
-							if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-								screenplay(tmpstr1, 2, 0);
-						}
-						else
-							textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-						free(tmpstr1); tmpstr1 = NULL;
-					}
-					else
-						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);			
-				}
-				else if(((struct tithek*)listbox->select->handle)->flag == 15)
-				{
-					if(status.security == 1)
-					{
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = NULL;
-						if(tmpstr != NULL) tmpstr1 = kinox(tmpstr, NULL, NULL, 2);
-						free(tmpstr); tmpstr = NULL;
-							
-						if(tmpstr1 != NULL)
-						{
-							if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-								screenplay(tmpstr1, 2, 0);
-						}
-						else
-							textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-						free(tmpstr1); tmpstr1 = NULL;
-					}
-					else
-						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);			
 				}
 				else
 				{
