@@ -93,7 +93,7 @@ for TYPE in $LINE; do
 		echo [Backup] skip $skip
 		if [ $skip = 0 ]; then	
 			echo [Backup] start remove user backups
-			rm -r /var/www/atemio/web/mediathek/"$ROUND1"
+			rm -rf /var/www/atemio/web/mediathek/"$ROUND1"
 		fi
 	done	
 done
