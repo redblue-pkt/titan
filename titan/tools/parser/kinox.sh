@@ -8,6 +8,7 @@ mkdir -p _full/kinox/streams
 piccount=0
 main_list="Cine-Films Popular-Movies Popular-Documentations Popular-Series Latest-Documentations Latest-Series"
 echo main_list $main_list
+piccount=0
 
 for ROUND0 in $main_list; do
 	wget --no-check-certificate "http://kinox.to/$ROUND0.html" -O cache.main.next.list
@@ -21,7 +22,7 @@ for ROUND0 in $main_list; do
 #	main_next_list="/Stream/Die_Simpsons.html"
 	
 	skip=0
-	piccount=0
+
 	echo main_next_list $main_next_list
 	lokaltest=0
 	if [ $lokaltest == 1 ];then
