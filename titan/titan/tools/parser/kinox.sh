@@ -16,7 +16,7 @@ for ROUND0 in $main_list; do
 	main_next_list=`cat cache.main.next.list | grep /Stream/ | sed 's!/Stream/!\n/Stream/!' | grep ^/Stream/ | cut -d '"' -f1  | cut -d "'" -f1 | sort -um`
 	
 	if [ $ROUND0 == "Popular-Series" ]; then
-		main_next_list="$main_next_list /Stream/Die_Gummibaerenbande.html /Stream/Touch-1.html"
+		main_next_list="$main_next_list /Stream/Die_Gummibaerenbande.html /Stream/Touch-1.html /Stream/Alcatraz_german_subbed.html /Stream/Battlestar_Galactica.html /Stream/24.html /Stream/Heroes.html /Stream/Star_Wars_The_Clone_Wars-1.html /Stream/Star_Wars_The_Clone_Wars_german_subbed.html"
 	fi
 	
 #	main_next_list="/Stream/Die_Simpsons.html"
