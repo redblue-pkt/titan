@@ -518,7 +518,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 					off64_t checkpic = getfilesize(tithekpic);
 					printf("getfilesize1: %d\n", checkpic);
 			
-					if(checkpic < 1500)
+					if(checkpic < 1000)
 					{
 						free(tithekpic); tithekpic = NULL;
 						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
@@ -540,7 +540,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 					off64_t checkpic = getfilesize(tithekpic);
 					printf("getfilesize2: %d\n", checkpic);
 
-					if(checkpic < 1500)
+					if(checkpic < 1000)
 					{
 						free(tithekpic); tithekpic = NULL;
 						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
