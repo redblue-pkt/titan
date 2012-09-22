@@ -82,6 +82,7 @@ char* textinputhist(char* title, char* text, char* histname)
 	height = textinputhist->height;
 	if(title != NULL)
 		textinputhist->height += textinputhist->fontsize + 6 + (textinputhist->bordersize * 2);
+	if(text == NULL) text = ostrcat(text, "", 1, 0);
 	changeinput(input, text);
 	readhistory(textinputhist, listbox, histname);
 
@@ -106,15 +107,30 @@ char* textinputhist(char* title, char* text, char* histname)
 	{
 		rcret = waitrc(textinputhist, 0, 0);
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcok", NULL))
+
+		if(rcret == getrcconfigint("rcok", NULL) && ostrstr((&ret1[i])->part, "") != NULL && listbox->select != NULL)
+		{
+			changeinput(input, listbox->select->name);
+			if(fromthread == 1)
+				drawscreen(textinputhist, 0, 2);
+			else
+				drawscreen(textinputhist, 0, 0);
+			
+			ret = ostrcat(input->input, NULL, 0, 0);
+			savehistory(ret, histname);
+			break;
+		}
+		else if(rcret == getrcconfigint("rcok", NULL))
 		{
 			ret = ostrcat(input->input, NULL, 0, 0);
 			savehistory(ret, histname);
 			break;
 		}
-		if(rcret == getrcconfigint("rcred", NULL) && listbox->select != NULL)
+		if(rcret == getrcconfigint("rcred", NULL))
 		{
-			changeinput(input, listbox->select->name);
+			free(text), text = NULL;
+			text = ostrcat(text, "", 1, 0);
+			changeinput(input, text);
 			if(fromthread == 1)
 				drawscreen(textinputhist, 0, 2);
 			else
