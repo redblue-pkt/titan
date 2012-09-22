@@ -108,7 +108,7 @@ char* textinputhist(char* title, char* text, char* histname)
 		rcret = waitrc(textinputhist, 0, 0);
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 
-		if(rcret == getrcconfigint("rcok", NULL) && ostrstr((&ret1[i])->part, "") != NULL && listbox->select != NULL)
+		if(rcret == getrcconfigint("rcok", NULL) && ostrstr(text, "") != NULL && listbox->select != NULL)
 		{
 			changeinput(input, listbox->select->name);
 			if(fromthread == 1)
