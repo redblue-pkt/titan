@@ -1,6 +1,40 @@
 #ifndef TEXTINPUTHIST_H
 #define TEXTINPUTHIST_H
 
+void removehistory(char* text, char* histname)
+{
+	int count = 0, i = 0;
+	char* tmpstr = NULL, *tmpstr1 = NULL;
+	struct splitstr* ret = NULL;
+
+	if(histname == NULL || text == NULL || strlen(text) == 0) return;
+
+	tmpstr = readfiletomem(getconfig(histname, NULL), 0);
+	
+	ret = strsplit(tmpstr, "\n", &count);
+
+	if(ret != NULL)
+	{
+		for(i = 0; i < count; i++)
+		{
+			if(ostrstr(ret[i].part, text) == NULL)
+			{
+				tmpstr1 = ostrcat(tmpstr1, ret[i].part, 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, "\n", 1, 0);
+			}
+		}
+	}
+
+	if(tmpstr1 != NULL && strlen(tmpstr1) > 0)
+		tmpstr1[strlen(tmpstr1) - 1] = '\0';
+
+	writesys(getconfig(histname, NULL), tmpstr1, 0);
+
+	free(ret); ret = NULL;
+	free(tmpstr); tmpstr = NULL;
+	free(tmpstr1); tmpstr1 = NULL;
+}
+
 void savehistory(char* text, char* histname)
 {
 	int count = 0, i = 0;
@@ -8,25 +42,30 @@ void savehistory(char* text, char* histname)
 	struct splitstr* ret = NULL;
 
 	if(histname == NULL || text == NULL || strlen(text) == 0) return;
-	if(ostrstr(getconfig(histname, NULL), text) != NULL) return;
 
-	tmpstr = ostrcat(text, "#", 0, 0);
-	tmpstr = ostrcat(tmpstr, getconfig(histname, NULL), 1, 0);
-	ret = strsplit(tmpstr, "#", &count);
+	tmpstr1 = ostrcat(tmpstr1, text, 1, 0);
+	tmpstr1 = ostrcat(tmpstr1, "\n", 1, 0);
+
+	tmpstr = readfiletomem(getconfig(histname, NULL), 0);
+	
+	ret = strsplit(tmpstr, "\n", &count);
 
 	if(ret != NULL)
 	{
 		for(i = 0; i < count; i++)
 		{
-			tmpstr1 = ostrcat(tmpstr1, ret[i].part, 1, 0);
-			tmpstr1 = ostrcat(tmpstr1, "#", 1, 0);
-			if(i > 8) break;
+			if(ostrstr(ret[i].part, text) == NULL)
+			{
+				tmpstr1 = ostrcat(tmpstr1, ret[i].part, 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, "\n", 1, 0);
+			}
 		}
 	}
 
 	if(tmpstr1 != NULL && strlen(tmpstr1) > 0)
 		tmpstr1[strlen(tmpstr1) - 1] = '\0';
-	addconfig(histname, tmpstr1);
+
+	writesys(getconfig(histname, NULL), tmpstr1, 0);
 
 	free(ret); ret = NULL;
 	free(tmpstr); tmpstr = NULL;
@@ -45,8 +84,8 @@ void readhistory(struct skin* textinputhist, struct skin* listbox, char* histnam
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
 
-	tmpstr = ostrcat(getconfig(histname, NULL), NULL, 0, 0);
-	ret = strsplit(tmpstr, "#", &count);
+	tmpstr = readfiletomem(getconfig(histname, NULL), 0);
+	ret = strsplit(tmpstr, "\n", &count);
 
 	if(ret != NULL)
 	{
@@ -73,7 +112,7 @@ char* textinputhist(char* title, char* text, char* histname)
 	struct skin* listbox = getscreennode(textinputhist, "listbox");
 	struct skin* input = getscreennode(textinputhist, "input");
 	struct skin* framebuffer = getscreen("framebuffer");
-	char* ret = NULL, *bg = NULL;
+	char* ret = NULL, *bg = NULL, *tmpstr = NULL;
 
 	if(pthread_self() != status.mainthread)
 	fromthread = 1;
@@ -82,8 +121,12 @@ char* textinputhist(char* title, char* text, char* histname)
 	height = textinputhist->height;
 	if(title != NULL)
 		textinputhist->height += textinputhist->fontsize + 6 + (textinputhist->bordersize * 2);
-	if(text == NULL) text = ostrcat(text, "", 1, 0);
-	changeinput(input, text);
+
+	if(text != NULL)
+		tmpstr = ostrcat(tmpstr, text, 1, 0);
+
+	
+	changeinput(input, tmpstr);
 	readhistory(textinputhist, listbox, histname);
 
 	if(fromthread == 1)
@@ -98,7 +141,6 @@ char* textinputhist(char* title, char* text, char* histname)
 	else
 		drawscreen(textinputhist, 0, 0);
 
-
 	addrc(getrcconfigint("rcup", NULL), listboxup, textinputhist, listbox);
 	addrc(getrcconfigint("rcdown", NULL), listboxdown, textinputhist, listbox);
 	addscreenrc(textinputhist, input);
@@ -108,36 +150,47 @@ char* textinputhist(char* title, char* text, char* histname)
 		rcret = waitrc(textinputhist, 0, 0);
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 
-		if(rcret == getrcconfigint("rcok", NULL) && ostrstr(text, "") != NULL && listbox->select != NULL)
+		if(rcret == getrcconfigint("rcok", NULL) && tmpstr != NULL && listbox->select != NULL && (input->input == NULL || ostrcmp(input->input, "NULL") == 0))
 		{
 			changeinput(input, listbox->select->name);
+
 			if(fromthread == 1)
 				drawscreen(textinputhist, 0, 2);
 			else
 				drawscreen(textinputhist, 0, 0);
 			
-			ret = ostrcat(input->input, NULL, 0, 0);
+			ret = ostrcat(listbox->select->name, NULL, 0, 0);
 			savehistory(ret, histname);
 			break;
 		}
-		else if(rcret == getrcconfigint("rcok", NULL))
+		else if(rcret == getrcconfigint("rcok", NULL) && input->input != NULL)
 		{
 			ret = ostrcat(input->input, NULL, 0, 0);
 			savehistory(ret, histname);
 			break;
 		}
+
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
-			free(text), text = NULL;
-			text = ostrcat(text, "", 1, 0);
-			changeinput(input, text);
+			free(tmpstr), tmpstr = NULL;
+			tmpstr = ostrcat(tmpstr, NULL, 1, 0);
+			changeinput(input, tmpstr);
 			if(fromthread == 1)
 				drawscreen(textinputhist, 0, 2);
 			else
 				drawscreen(textinputhist, 0, 0);
 		}
-	}
 
+		if(rcret == getrcconfigint("rcgreen", NULL) && listbox->select != NULL)
+		{
+			ret = ostrcat(listbox->select->name, NULL, 0, 0);
+			removehistory(ret, histname);
+			break;
+// read listbox new?
+//			ret = textinputhist("Search", "NULL", "searchhist");
+		}
+	}
+	free(tmpstr), tmpstr = NULL;
 	delownerrc(textinputhist);
 	delrc(getrcconfigint("rcup", NULL), textinputhist, listbox);
 	delrc(getrcconfigint("rcdown", NULL), textinputhist, listbox);
@@ -161,6 +214,7 @@ char* textinputhist(char* title, char* text, char* histname)
 	textinputhist->height = height;
 	delmarkedscreennodes(textinputhist, 1);
 	debug(1000, "out");
+	printf("ret: %s\n",ret);
 	return ret;
 }
 
