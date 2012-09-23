@@ -654,6 +654,9 @@ void screentithekplay(char* titheklink, char* title, int first)
 
 	if(file_exist("/var/bin/audio.elf") || file_exist("/var/swap/bin/audio.elf"))
 		textbox(_("Message"), _("Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
+
+	if(!file_exist("/mnt/player"))   
+		mkdir("/mnt/player", 0777); 
 	
 	if(first == 1)
 	{
