@@ -619,6 +619,7 @@ void submenu(struct skin* listbox)
 		else if(((struct tithek*)listbox->select->handle)->flag == 15)
 		{
 			if(tmpstr != NULL) tmpstr1 = kinox(tmpstr, NULL, NULL, 2);
+		}
 		else if(((struct tithek*)listbox->select->handle)->flag == 16)
 		{
 			if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.superrtlnow.de", "superrtlnow", 1);
