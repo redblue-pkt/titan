@@ -453,6 +453,101 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	return pagecount;
 }
 
+void removefav(char* title, char* link, char* pic, char* localname, char* menutitle, int flag)
+{
+	int count = 0, i = 0;
+	char* tmpstr = NULL, *tmpstr1 = NULL, *input = NULL;
+	struct splitstr* ret = NULL;
+
+	input = ostrcat(input, title, 1, 0);
+	input = ostrcat(input, "#", 1, 0);
+	input = ostrcat(input, link, 1, 0);
+	input = ostrcat(input, "#", 1, 0);
+	input = ostrcat(input, pic, 1, 0);
+	input = ostrcat(input, "#", 1, 0);
+	input = ostrcat(input, localname, 1, 0);
+	input = ostrcat(input, "#", 1, 0);
+	input = ostrcat(input, menutitle, 1, 0);
+	input = ostrcat(input, "#", 1, 0);
+	input = ostrcat(input, oitoa(flag), 1, 0);
+	
+	tmpstr = readfiletomem(getconfig("tithek_fav", NULL), 0);
+	
+	ret = strsplit(tmpstr, "\n", &count);
+
+	if(ret != NULL)
+	{
+		for(i = 0; i < count; i++)
+		{
+			if(ostrcmp((ret[i]).part, input) != 0)
+			{
+				tmpstr1 = ostrcat(tmpstr1, ret[i].part, 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, "\n", 1, 0);
+			}
+			else
+				printf("remove: %s\n", ret[i].part);
+		}
+	}
+
+	if(tmpstr1 != NULL && strlen(tmpstr1) > 0)
+		tmpstr1[strlen(tmpstr1) - 1] = '\0';
+
+	writesys(getconfig("tithek_fav", NULL), tmpstr1, 0);
+
+	free(ret); ret = NULL;
+	free(tmpstr); tmpstr = NULL;
+	free(tmpstr1); tmpstr1 = NULL;
+	free(input); input = NULL;
+}
+
+void addfav(char* title, char* link, char* pic, char* localname, char* menutitle, int flag)
+{
+	int count = 0, i = 0;
+	char* tmpstr = NULL, *tmpstr1 = NULL, *input = NULL;
+	struct splitstr* ret = NULL;
+
+	input = ostrcat(input, title, 1, 0);
+	input = ostrcat(input, "#", 1, 0);
+	input = ostrcat(input, link, 1, 0);
+	input = ostrcat(input, "#", 1, 0);
+	input = ostrcat(input, pic, 1, 0);
+	input = ostrcat(input, "#", 1, 0);
+	input = ostrcat(input, localname, 1, 0);
+	input = ostrcat(input, "#", 1, 0);
+	input = ostrcat(input, menutitle, 1, 0);
+	input = ostrcat(input, "#", 1, 0);
+	input = ostrcat(input, oitoa(flag), 1, 0);
+	
+	tmpstr1 = ostrcat(tmpstr1, input, 1, 0);
+	tmpstr1 = ostrcat(tmpstr1, "\n", 1, 0);
+
+	tmpstr = readfiletomem(getconfig("tithek_fav", NULL), 0);
+	
+	ret = strsplit(tmpstr, "\n", &count);
+
+	if(ret != NULL)
+	{
+		for(i = 0; i < count; i++)
+		{
+			if(ostrcmp((ret[i]).part, input) != 0)
+			{
+				tmpstr1 = ostrcat(tmpstr1, ret[i].part, 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, "\n", 1, 0);
+			}
+		}
+	}
+
+	if(tmpstr1 != NULL && strlen(tmpstr1) > 0)
+		tmpstr1[strlen(tmpstr1) - 1] = '\0';
+
+	writesys(getconfig("tithek_fav", NULL), tmpstr1, 0);
+
+	free(ret); ret = NULL;
+	free(tmpstr); tmpstr = NULL;
+	free(tmpstr1); tmpstr1 = NULL;
+	free(input); input = NULL;
+}
+
 // 4  - youtube
 // 5  - rtl2now
 // 6  - superrtlnow
@@ -672,8 +767,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 				}
 			}
 		}
-
-		if(rcret == getrcconfigint("rcok", NULL))
+		else if(rcret == getrcconfigint("rcok", NULL))
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
@@ -739,6 +833,24 @@ void screentithekplay(char* titheklink, char* title, int first)
 				drawscreen(grid, 0, 0);
 				sleep(1);
 			}			
+		}
+		else if(rcret == getrcconfigint("rcyellow", NULL) && ostrcmp(title, "TiThek - Favoriten") == 0)
+		{
+			if(textbox(_("Message"), _("Remove this Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
+			{
+				removefav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag);		
+				int pagecount = createtithekplay(getconfig("tithek_fav", NULL), grid, listbox, countlabel);
+				if(pagecount == 0) return;
+					
+				drawscreen(grid, 0, 0);
+			}
+		}
+		else if(rcret == getrcconfigint("rcgreen", NULL) && ostrcmp(title, "TiThek - Favoriten") != 0)
+		{
+			if(textbox(_("Message"), _("Add this link as Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
+			{
+				addfav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag);		
+			}
 		}
 	}
 
