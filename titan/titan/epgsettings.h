@@ -106,6 +106,7 @@ void screenepgsettings()
 	struct skin* epgzoom = getscreennode(epgsettings, "epgzoom");
 	struct skin* epgpicon = getscreennode(epgsettings, "epgpicon");
 	struct skin* epgsave = getscreennode(epgsettings, "epgsave");
+	struct skin* delepgbeforescan = getscreennode(epgsettings, "delepgbeforescan");
 	struct skin* tmp = NULL;
 
 	changeinput(epgpath, getconfig("epg_path", NULL));
@@ -155,6 +156,10 @@ void screenepgsettings()
 	addchoicebox(epgsave, "2", _("never"));
 	setchoiceboxselection(epgsave, getconfig("epgsave", NULL));
 
+	addchoicebox(delepgbeforescan, "0", _("no"));
+	addchoicebox(delepgbeforescan, "1", _("yes"));
+	setchoiceboxselection(delepgbeforescan, getconfig("delepgbeforescan", NULL));
+
 	drawscreen(epgsettings, 0, 0);
 	addscreenrc(epgsettings, listbox);
 
@@ -181,6 +186,7 @@ void screenepgsettings()
 			addconfigscreen("gmultiepgzoom", epgzoom);
 			addconfigscreencheck("epgpicon", epgpicon, "0");
 			addconfigscreencheck("epgsave", epgsave, "0");
+			addconfigscreencheck("delepgbeforescan", delepgbeforescan, "0");
 			break;
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL))
@@ -198,7 +204,7 @@ void screenepgsettings()
 		}
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
-			resetepg();
+			resetepg(0);
 			textbox(_("Message"), _("EPG resetet and now clear."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 			drawscreen(epgsettings, 0, 0);
 		}

@@ -927,13 +927,15 @@ void freeepg(struct channel* chnode)
 	debug(1000, "out");
 }
 
-void resetepg()
+//flag 0: stop scanlist and delete epg.dat
+//flag 1: don't stop scanlist, don't delete epg.dat
+void resetepg(int flag)
 {
 	struct channel *node = channel;
 	char* tmpstr = NULL;
 
 	//stop epgscanlistthread
-	if(status.epgscanlistthread != NULL)
+	if(flag == 0 && status.epgscanlistthread != NULL)
 		status.epgscanlistthread->aktion = STOP;
 
 	if(status.epgthread != NULL)
@@ -948,9 +950,12 @@ void resetepg()
 		node = node->next;
 	}
 
-	tmpstr = createpath(getconfig("epg_path", NULL), "epg.dat");
-	unlink(tmpstr);
-	free(tmpstr); tmpstr = NULL;
+	if(flag == 0)
+	{
+		tmpstr = createpath(getconfig("epg_path", NULL), "epg.dat");
+		unlink(tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
 
 	if(status.epgthread != NULL)
 		status.epgthread->aktion = START;
