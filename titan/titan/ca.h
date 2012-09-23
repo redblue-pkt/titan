@@ -1702,6 +1702,7 @@ void castart()
 
 int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caservicenr, int cmdpos, int clear)
 {
+	int i = 0;
 	char* tmpstr = NULL, *blacklist = NULL;
 	struct dvbdev *dvbnode = dvbdev;
 
@@ -1768,29 +1769,17 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 				continue;
 			}
 
-			//TODO: if record is running input should not changed
-			//change ciX_input and inputX
-			if(clear == 0 && node->fedev != NULL)
+			//check if we can change input sources
+			for(i = 0; i < MAXCASERVICE; i++)
 			{
-				debug(620, "set ci slot %d to tuner %d", dvbnode->devnr, node->fedev->devnr);
-				switch(node->fedev->devnr)
+				if(caservice[i].caslot != NULL && caservice[i].service != NULL && caservice[i].service->fedev != NULL && node->fedev != NULL)
 				{
-					case 0:
-						setciinput(dvbnode->devnr, "A");
-						setcisource(dvbnode->devnr, "CI0");
-						break;
-					case 1:
-						setciinput(dvbnode->devnr, "B");
-						setcisource(dvbnode->devnr, "CI1");
-						break;
-					case 2:
-						setciinput(dvbnode->devnr, "C");
-						setcisource(dvbnode->devnr, "CI2");
-						break;
-					case 3:
-						setciinput(dvbnode->devnr, "D");
-						setcisource(dvbnode->devnr, "CI3");
-						break;
+					if(caservice[i].caslot == dvbnode->caslot && caservice[i].service->fedev->devnr != node->fedev->devnr && (caservice[i].service->type == RECORDDIRECT || caservice[i].service->type == RECORDTIMER))
+					{
+						debug(620, "can't change input sources");
+						dvbnode = dvbnode->next;
+						continue;
+					}
 				}
 			}
 
@@ -1827,9 +1816,32 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 			//decrypt
 			if(caservice[caservicenr].camanager > -1)
 			{
+				//change ciX_input and inputX
+				if(clear == 0 && node->fedev != NULL)
+				{
+					debug(620, "set ci slot %d to tuner %d", dvbnode->devnr, node->fedev->devnr);
+					switch(node->fedev->devnr)
+					{
+						case 0:
+							setciinput(dvbnode->devnr, "A");
+							setcisource(dvbnode->devnr, "CI0");
+							break;
+						case 1:
+							setciinput(dvbnode->devnr, "B");
+							setcisource(dvbnode->devnr, "CI1");
+							break;
+						case 2:
+							setciinput(dvbnode->devnr, "C");
+							setcisource(dvbnode->devnr, "CI2");
+							break;
+						case 3:
+							setciinput(dvbnode->devnr, "D");
+							setcisource(dvbnode->devnr, "CI3");
+							break;
+					}
+				}
 				//send all saved capmt first
 				int first = 0;
-				int i = 0;
 				for(i = 0; i < MAXCASERVICE; i++)
 				{
 					if(dvbnode->caslot == caservice[i].caslot && caservice[i].capmt != NULL && caservice[i].capmtlen > 0)
