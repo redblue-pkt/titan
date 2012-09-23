@@ -74,6 +74,9 @@ void epgscanlistthread(struct stimerthread* self)
 	debug(400, "epgscan time ok");
 	if(fd != NULL) fprintf(fd, "epgscan time ok\n");
 
+	if(getconfigint("delepgbeforescan", NULL) == 1)
+		resetepg(1);
+
 	while(node != NULL && self->aktion != STOP)
 	{
 		chnode = getchannel(node->serviceid, node->transponderid);
