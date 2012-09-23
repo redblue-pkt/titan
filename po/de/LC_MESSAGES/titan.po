@@ -2587,4 +2587,4 @@ msgid "Remove this Favorite ?"
 msgstr "Wollen Sie diesen Favoriten löschen ?"
 
 msgid "Add this link as Favorite ?"
-msgstr "Wollen Sie diesen Favoriten hinzufügen "
+msgstr "Wollen Sie diesen Favoriten hinzufügen ?"
