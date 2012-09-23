@@ -8,9 +8,9 @@
 <node name="b1" picmem="skin/key_ok_70x40.png"   posx="50"  posy="590" width="70" height="40">
 <node name="b2" picmem="skin/key_exit_70x40.png" posx="125" posy="590" width="70" height="40">
 <node name="b3" text="SAVE" picmem="skin/key_red_30x30.png" posx="205" posy="595" textposx="40" valign="middle" fontcol="black" fontsize="25" width="180" height="30">
-<node name="b4" text="ADD FAV" picmem="skin/key_green_30x30.png"  textposx="40" valign="middle" fontcol="black" fontsize="25" posx="400" posy="595" width="200" height="30">
-<node name="b5" text="DEL FAV" picmem="skin/key_yellow_30x30.png" textposx="40" valign="middle" fontcol="black" fontsize="25" posx="600" posy="595" width="180" height="30">
-<node name="b6" picmem="skin/key_menu_70x40.png" posx="800" posy="590" width="70" height="40">
+<node name="b4" text="ADD FAV" picmem="skin/key_green_30x30.png"  textposx="40" valign="middle" fontcol="black" fontsize="25" posx="400" posy="595" width="220" height="30">
+<node name="b5" text="DEL FAV" picmem="skin/key_yellow_30x30.png" textposx="40" valign="middle" fontcol="black" fontsize="25" posx="620" posy="595" width="180" height="30">
+<node name="b6" picmem="skin/key_menu_70x40.png" posx="820" posy="590" width="70" height="40">
 
 <node name=countlabel hspace=0 halign=center valign=center posx=center posy=565 width=100% height=20/>
 <node name=countpage hspace=0 halign=right valign=center posx=right posy=565 width=100% height=20/>
