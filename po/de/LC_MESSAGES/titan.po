@@ -2570,3 +2570,21 @@ msgstr "mittel"
 
 msgid "Del EPG before scan"
 msgstr "Lösche EPG vor dem Scan"
+
+msgid "Found Pay Stream visit the official Website and Order this Stream and try this again !"
+msgstr "Pay-Stream gefunden besuchen Sie die offizielle Website und bestellen\nSie diesen Stream und versuchen Sie es nochmal !"
+
+msgid "Show Pay Streams"
+msgstr "mittel"
+
+msgid "ADD FAV"
+msgstr "Fav hinzufügen"
+
+msgid "DEL FAV"
+msgstr "Fav löschen"
+
+msgid "Remove this Favorite ?"
+msgstr "Wollen Sie diesen Faforiten löschen ?"
+
+msgid "Add this link as Favorite ?"
+msgstr "Wollen Sie diesen Favoriten hinzufügen "
