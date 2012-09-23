@@ -77,6 +77,19 @@ void LCD_Samsung1_thread()
 	struct skin* akttime = NULL;
 	struct skin* akttime_Standby = NULL;
 	
+	struct skin* sday0_t = NULL;
+	struct skin* sday0_i = NULL;
+	struct skin* sday0_d = NULL;
+	struct skin* sday1_t = NULL;
+	struct skin* sday1_i = NULL;
+	struct skin* sday1_d = NULL;
+	struct skin* sday2_t = NULL;
+	struct skin* sday2_i = NULL;
+	struct skin* sday2_d = NULL;
+	struct skin* sday3_t = NULL;
+	struct skin* sday3_i = NULL;
+	struct skin* sday3_d = NULL;
+	
 	
 	char* tmpstr = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *timemerk = NULL, *sendermerk = NULL, *recmerk = NULL;
 	FILE *fd = NULL;
@@ -149,6 +162,18 @@ void LCD_Samsung1_thread()
 		else
 			LCD_Standby = getscreen("LCD_spf87_Standby");
 		akttime_Standby = getscreennode(LCD_Standby, "akttime"); 
+		sday0_t = getscreennode(LCD_Standby, "day0_t");
+		sday0_i = getscreennode(LCD_Standby, "day0_i");
+		sday0_d = getscreennode(LCD_Standby, "day0_d");
+		sday1_t = getscreennode(LCD_Standby, "day1_t");
+		sday1_i = getscreennode(LCD_Standby, "day1_i");
+		sday1_d = getscreennode(LCD_Standby, "day1_d");
+		sday2_t = getscreennode(LCD_Standby, "day2_t");
+		sday2_i = getscreennode(LCD_Standby, "day2_i");
+		sday2_d = getscreennode(LCD_Standby, "day2_d");
+		sday3_t = getscreennode(LCD_Standby, "day3_t");
+		sday3_i = getscreennode(LCD_Standby, "day3_i");
+		sday3_d = getscreennode(LCD_Standby, "day3_d");
 	} 
 	
 	
@@ -310,37 +335,86 @@ void LCD_Samsung1_thread()
 											fd = fopen("/tmp/lcdweather", "r");
 											if(fd != NULL)
 											{
-												weather_getline(fd, fileline);weather_getline(fd, fileline);
-												changetext(day0_d, fileline);
-												weather_getline(fd, fileline);weather_getline(fd, fileline);
-												changetext(day0_t, fileline);
-												weather_getline(fd, fileline);
-												weather_getline(fd, fileline);
-												changepic(day0_i, fileline);
+												if(ostrcmp(getconfig("lcd_samsung_plugin_standby", NULL), "yes") == 0) 
+												{
+													weather_getline(fd, fileline);weather_getline(fd, fileline);
+													changetext(day0_d, fileline);
+													changetext(sday0_d, fileline);
+													weather_getline(fd, fileline);weather_getline(fd, fileline);
+													changetext(day0_t, fileline);
+													changetext(sday0_t, fileline);
+													weather_getline(fd, fileline);
+													weather_getline(fd, fileline);
+													changepic(day0_i, fileline);
+													changepic(sday0_i, fileline);
 												
-												weather_getline(fd, fileline);
-												changetext(day1_d, fileline);
-												weather_getline(fd, fileline);weather_getline(fd, fileline);
-												changetext(day1_t, fileline);
-												weather_getline(fd, fileline);
-												weather_getline(fd, fileline);
-												changepic(day1_i, fileline);
+													weather_getline(fd, fileline);
+													changetext(day1_d, fileline);
+													changetext(sday1_d, fileline);
+													weather_getline(fd, fileline);weather_getline(fd, fileline);
+													changetext(day1_t, fileline);
+													changetext(sday1_t, fileline);
+													weather_getline(fd, fileline);
+													weather_getline(fd, fileline);
+													changepic(day1_i, fileline);
+													changepic(sday1_i, fileline);
 												
-												weather_getline(fd, fileline);
-												changetext(day2_d, fileline);
-												weather_getline(fd, fileline);weather_getline(fd, fileline);
-												changetext(day2_t, fileline);
-												weather_getline(fd, fileline);
-												weather_getline(fd, fileline);
-												changepic(day2_i, fileline);
+													weather_getline(fd, fileline);
+													changetext(day2_d, fileline);
+													changetext(sday2_d, fileline);
+													weather_getline(fd, fileline);weather_getline(fd, fileline);
+													changetext(day2_t, fileline);
+													changetext(sday2_t, fileline);
+													weather_getline(fd, fileline);
+													weather_getline(fd, fileline);
+													changepic(day2_i, fileline);
+													changepic(sday2_i, fileline);
 												
-												weather_getline(fd, fileline);
-												changetext(day3_d, fileline);
-												weather_getline(fd, fileline);weather_getline(fd, fileline);
-												changetext(day3_t, fileline);
-												weather_getline(fd, fileline);
-												weather_getline(fd, fileline);
-												changepic(day3_i, fileline);
+													weather_getline(fd, fileline);
+													changetext(day3_d, fileline);
+													changetext(sday3_d, fileline);
+													weather_getline(fd, fileline);weather_getline(fd, fileline);
+													changetext(day3_t, fileline);
+													changetext(sday3_t, fileline);
+													weather_getline(fd, fileline);
+													weather_getline(fd, fileline);
+													changepic(day3_i, fileline);
+													changepic(sday3_i, fileline);
+												}
+												else
+												{
+													weather_getline(fd, fileline);weather_getline(fd, fileline);
+													changetext(day0_d, fileline);
+													weather_getline(fd, fileline);weather_getline(fd, fileline);
+													changetext(day0_t, fileline);
+													weather_getline(fd, fileline);
+													weather_getline(fd, fileline);
+													changepic(day0_i, fileline);
+												
+													weather_getline(fd, fileline);
+													changetext(day1_d, fileline);
+													weather_getline(fd, fileline);weather_getline(fd, fileline);
+													changetext(day1_t, fileline);
+													weather_getline(fd, fileline);
+													weather_getline(fd, fileline);
+													changepic(day1_i, fileline);
+												
+													weather_getline(fd, fileline);
+													changetext(day2_d, fileline);
+													weather_getline(fd, fileline);weather_getline(fd, fileline);
+													changetext(day2_t, fileline);
+													weather_getline(fd, fileline);
+													weather_getline(fd, fileline);
+													changepic(day2_i, fileline);
+												
+													weather_getline(fd, fileline);
+													changetext(day3_d, fileline);
+													weather_getline(fd, fileline);weather_getline(fd, fileline);
+													changetext(day3_t, fileline);
+													weather_getline(fd, fileline);
+													weather_getline(fd, fileline);
+													changepic(day3_i, fileline);
+												}
 												fclose(fd);
 											}
 											free(fileline); fileline=NULL;
@@ -396,7 +470,7 @@ void LCD_Samsung1_thread()
 						
 						changetext(akttimeplay, tmpstr);
 						changetext(stitle, basename(status.playfile));
-						if(drawscreen(LCD_Samsung1, 0, 0) == -2)
+						if(drawscreen(LCD_Play, 0, 0) == -2)
 							printf("nicht genug Speicher fuer drawscreen\n");
 					}
 				}

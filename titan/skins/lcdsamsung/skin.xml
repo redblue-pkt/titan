@@ -55,6 +55,18 @@
 <screen halign=center fontcol=fontcol fontsize=30 name=LCD_spf75_Standby posx=0 posy=0 width=800 height=480 bgcol=000000>
 <node halign=center text="" name=akttime fontsize=100 posx=center posy=140 width=700 height=200/>
 <node halign=center valign=left func=getrec param1=skin name=rec posx=0 posy=440 width=100 height=20/>
+<node halign=center text="" name=day0_d fontsize=20 posx=96 posy=320 width=80 height=20/>
+<node halign=center text="" name=day1_d fontsize=20 posx=292 posy=320 width=80 height=20/>
+<node halign=center text="" name=day2_d fontsize=20 posx=458 posy=320 width=80 height=20/>
+<node halign=center text="" name=day3_d fontsize=20 posx=624 posy=320 width=80 height=20/>
+<node halign=center text="" name=day0_t fontsize=20 posx=96 posy=400 width=80 height=20/>
+<node halign=center text="" name=day1_t fontsize=20 posx=292 posy=400 width=80 height=20/>
+<node halign=center text="" name=day2_t fontsize=20 posx=458 posy=400 width=80 height=20/>
+<node halign=center text="" name=day3_t fontsize=20 posx=624 posy=400 width=80 height=20/>
+<node pic=sunny60.png halign=center name=day0_i posx=106 posy=340 width=60 height=60/>
+<node pic=sunny60.png halign=center name=day1_i posx=302 posy=340 width=60 height=60/>
+<node pic=sunny60.png halign=center name=day2_i posx=468 posy=340 width=60 height=60/>
+<node pic=sunny60.png halign=center name=day3_i posx=634 posy=340 width=60 height=60/>
 </screen>
 
 <screen halign=center fontcol=fontcol fontsize=30 name=LCD_spf87 posx=0 posy=0 width=800 height=480 bgcol=000000>
@@ -100,4 +112,16 @@
 <screen halign=center fontcol=fontcol fontsize=30 name=LCD_spf87_Standby posx=0 posy=0 width=800 height=480 bgcol=000000>
 <node halign=center text="" name=akttime fontsize=100 posx=center posy=140 width=700 height=200/>
 <node halign=center valign=left func=getrec param1=skin name=rec posx=0 posy=440 width=100 height=20/>
+<node halign=center text="" name=day0_d fontsize=20 posx=96 posy=320 width=80 height=20/>
+<node halign=center text="" name=day1_d fontsize=20 posx=292 posy=320 width=80 height=20/>
+<node halign=center text="" name=day2_d fontsize=20 posx=458 posy=320 width=80 height=20/>
+<node halign=center text="" name=day3_d fontsize=20 posx=624 posy=320 width=80 height=20/>
+<node halign=center text="" name=day0_t fontsize=20 posx=96 posy=400 width=80 height=20/>
+<node halign=center text="" name=day1_t fontsize=20 posx=292 posy=400 width=80 height=20/>
+<node halign=center text="" name=day2_t fontsize=20 posx=458 posy=400 width=80 height=20/>
+<node halign=center text="" name=day3_t fontsize=20 posx=624 posy=400 width=80 height=20/>
+<node pic=sunny60.png halign=center name=day0_i posx=106 posy=340 width=60 height=60/>
+<node pic=sunny60.png halign=center name=day1_i posx=302 posy=340 width=60 height=60/>
+<node pic=sunny60.png halign=center name=day2_i posx=468 posy=340 width=60 height=60/>
+<node pic=sunny60.png halign=center name=day3_i posx=634 posy=340 width=60 height=60/>
 </screen>
