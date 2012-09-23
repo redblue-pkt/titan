@@ -225,13 +225,30 @@ void sendcapmt(struct service* node, int clear, int flag)
 	{
 		debug(620, "channel not crypt");
 
-		debug(200, "set ci slot %d to tuner %d", node->fedev->devnr, node->fedev->devnr);
-		switch(node->fedev->devnr)
+		//check if we can change input sources
+		int doswitch = 1;
+		for(i = 0; i < MAXCASERVICE; i++)
 		{
-			case 0: setcisource(node->fedev->devnr, "A"); break;
-			case 1: setcisource(node->fedev->devnr, "B"); break;
-			case 2: setcisource(node->fedev->devnr, "C"); break;
-			case 3: setcisource(node->fedev->devnr, "D"); break;
+			if(caservice[i].caslot != NULL && caservice[i].service != NULL && caservice[i].service->fedev != NULL)
+			{
+				if(caservice[i].service->fedev->devnr == node->fedev->devnr && (caservice[i].service->type == RECORDDIRECT || caservice[i].service->type == RECORDTIMER))
+				{
+					debug(620, "can't change input sources");
+					doswitch = 0;
+				}
+			}
+		}
+
+		if(doswitch == 1)
+		{
+			debug(200, "set ci slot %d to tuner %d", node->fedev->devnr, node->fedev->devnr);
+			switch(node->fedev->devnr)
+			{
+				case 0: setcisource(node->fedev->devnr, "A"); break;
+				case 1: setcisource(node->fedev->devnr, "B"); break;
+				case 2: setcisource(node->fedev->devnr, "C"); break;
+				case 3: setcisource(node->fedev->devnr, "D"); break;
+			}
 		}
 		
 		return;
