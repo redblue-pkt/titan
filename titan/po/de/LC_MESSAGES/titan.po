@@ -2567,3 +2567,6 @@ msgstr "Wartezeit für CI Module"
 
 msgid "middle"
 msgstr "mittel"
+
+msgid "Del EPG before scan"
+msgstr "Lösche EPG vor dem Scan"
