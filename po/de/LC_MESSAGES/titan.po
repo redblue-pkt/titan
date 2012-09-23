@@ -2575,7 +2575,7 @@ msgid "Found Pay Stream visit the official Website and Order this Stream and try
 msgstr "Pay-Stream gefunden besuchen Sie die offizielle Website und bestellen\nSie diesen Stream und versuchen Sie es nochmal !"
 
 msgid "Show Pay Streams"
-msgstr "mittel"
+msgstr "Zeige Pay-Streams"
 
 msgid "ADD FAV"
 msgstr "Fav hinzufügen"
