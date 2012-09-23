@@ -3,11 +3,28 @@
 
 #define TITHEKPATH "/tmp/tithek"
 
-//flag 0: not used
-//flag 1: not used
-//flag 2: streamlink allgemein
-//flag 4: streamlink youtube
-//flag 1000: menu with pin
+//flag 0	- menu
+//flag 1	- menu pay hidden tithek_pay=0/1 0=hidden
+//flag 2	- http (default streamurl)
+//flag 4	- youtube
+//flag 5	- rtl2now
+//flag 6	- superrtlnow
+//flag 7	- rtlnow
+//flag 8	- voxnow
+//flag 9	- youtube suche 10 
+//flag 10	- youtube suche 25
+//flag 11	- youtube suche 50
+//flag 12	- myvideo
+//flag 13	- myvideo search 50
+//flag 14	- kinox putlocker/sockshare
+//flag 15	- kinox filenuke
+//flag 16	- superrtlnow pay
+//flag 17	- rtlnow pay
+//flag 18	- voxnow pay
+//flag 19	- rtl2now pay
+//flag 1000 - menu pincode
+//flag 9999 - menu hidden codecpack
+
 struct tithek
 {
 	char* title;
@@ -569,29 +586,6 @@ void addfav(char* title, char* link, char* pic, char* localname, char* menutitle
 	free(tmpstr1); tmpstr1 = NULL;
 	free(input); input = NULL;
 }
-
-// 0  - menu
-// 1  - menu hidden
-// 2  - http streamurl
-// 4  - youtube
-// 5  - rtl2now
-// 6  - superrtlnow
-// 7  - rtlnow
-// 8  - voxnow
-
-// 9  - youtube suche 10 
-// 10  - youtube suche 25
-// 11  - youtube suche 50
-
-// 12 - myvideo
-// 13 - myvideo search 50
-// 14 - kinox putlocker/sockshare
-// 15 - kinox filenuke
-
-// 16  - superrtlnow pay
-// 17  - rtlnow pay
-// 18  - voxnow pay
-// 19  - rtl2now pay
 
 void submenu(struct skin* listbox)
 {
