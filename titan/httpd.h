@@ -264,6 +264,23 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 				buf = ostrcat("running", NULL, 0, 0);
 		}
 	}
+	if(query != NULL && ostrstr(query, "mutestatus") == query)
+	{
+		if(status.mute > 0)
+		{
+			if(fmt == 0)
+				sendoktext(connfd, "muteon", auth);
+			else
+				buf = ostrcat("muteon", NULL, 0, 0);
+		}
+		else
+		{
+			if(fmt == 0)
+				sendoktext(connfd, "muteoff", auth);
+			else
+				buf = ostrcat("muteoff", NULL, 0, 0);
+		}
+	}
 	if(query != NULL && ostrstr(query, "message") == query)
 		buf = websendmessage(query, fmt);
 		
