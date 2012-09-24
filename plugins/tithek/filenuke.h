@@ -93,6 +93,8 @@ char* filenuke(char* host, char* file)
 	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);
 	send = ostrcat(send, hash, 1, 0);
 
+	sleep(5);
+	
 	//send and receive answer
 	gethttpreal(tmphost, tmpfile, 80, "post", NULL, NULL, 0, send, NULL);
 

@@ -10,6 +10,7 @@
 #include "kinox.h"
 #include "myvideo.h"
 #include "rtl2now.h"
+#include "streamcloud.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";

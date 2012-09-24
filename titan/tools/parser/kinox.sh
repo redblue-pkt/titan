@@ -73,7 +73,7 @@ for ROUND0 in $main_list; do
 		skip1=0
 
 		for ROUND2 in $hosterlist; do
-			if [ $ROUND2 != "Sockshare.com" ] && [ $ROUND2 != "Putlocker.com" ] && [ $ROUND2 != "FileNuke.com" ];then
+			if [ $ROUND2 != "Sockshare.com" ] && [ $ROUND2 != "Putlocker.com" ] && [ $ROUND2 != "FileNuke.com" ] && [ $ROUND2 != "StreamCloud.eu" ];then
 				echo error $ROUND2 not supported 
 				continue
 			fi
@@ -136,8 +136,10 @@ for ROUND0 in $main_list; do
 								LINE="$TITLE#$URL#$PIC#kinox_$ROUND2.jpg#KinoX#14"
 							elif [ $ROUND2 == "FileNuke.com" ];then		
 								LINE="$TITLE#$URL#$PIC#kinox_$ROUND2.jpg#KinoX#15"
+							elif [ $ROUND2 == "StreamCloud.eu" ];then
+								LINE="$TITLE#$URL#$PIC#kinox_$ROUND2.jpg#KinoX#20"
 							else
-								LINE="$TITLE#$URL#$PIC#kinox_$ROUND2.jpg#KinoX#16"
+								LINE="$TITLE#$URL#$PIC#kinox_$ROUND2.jpg#KinoX#21"
 							fi
 							echo $LINE >> _full/kinox/streams/kinox.$searchname.$checkserie.$ROUND3.list					
 						done
@@ -159,9 +161,12 @@ for ROUND0 in $main_list; do
 							LINE="$TITLE#$URL#$PIC#kinox_$ROUND2.jpg#KinoX#14"
 						elif [ $ROUND2 == "FileNuke.com" ];then		
 							LINE="$TITLE#$URL#$PIC#kinox_$ROUND2.jpg#KinoX#15"
+						elif [ $ROUND2 == "StreamCloud.eu" ];then
+							LINE="$TITLE#$URL#$PIC#kinox_$ROUND2.jpg#KinoX#20"
 						else
-							LINE="$TITLE#$URL#$PIC#kinox_$ROUND2.jpg#KinoX#16"
+							LINE="$TITLE#$URL#$PIC#kinox_$ROUND2.jpg#KinoX#21"
 						fi
+						
 						echo $LINE >> _full/kinox/streams/kinox.$searchname.list			
 						echo break
 						break
