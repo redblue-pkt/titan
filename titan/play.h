@@ -673,7 +673,6 @@ int screenplay(char* startfile, int startfolder, int flag)
 	if(status.webplayfile != NULL)
 	{
 		startfile = status.webplayfile;
-		htmldecode(startfile, startfile);
 		rcret = servicestop(status.aktservice, 1, 1);
 		if(rcret == 1) return ret;
 	}

@@ -913,16 +913,16 @@ char* webvideo(char* param, int fmt)
 
 	if(param1 == NULL) return NULL;
 
-	tmpbuf = htmlencode(param1);
-	if(tmpbuf != NULL)
+	htmldecode(param1, param1);
+	if(param1 != NULL)
 	{
 		if(status.play == 0 && status.webplayfile == NULL)
 		{
-			char* tmpbuf1 = tmpbuf;
-			if(ostrstr(tmpbuf, "url=") == tmpbuf) tmpbuf1 += 4;
-			status.webplayfile = ostrcat(tmpbuf1, NULL, 0, 0);
+			if(ostrstr(param1, "url=") == param1)
+				status.webplayfile = ostrcat(param1 + 4, NULL, 0, 0);
+			else
+				status.webplayfile = ostrcat(param1, NULL, 0, 0);
 		}
-		free(tmpbuf); tmpbuf = NULL;
 	}
 	tmpbuf = ostrcat("not in play mode", NULL, 0, 0);
     
