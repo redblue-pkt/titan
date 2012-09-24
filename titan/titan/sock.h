@@ -738,9 +738,9 @@ end:
 	if((hret == 301 || hret == 302) && retstr != NULL && redirect < 3) //redirect
 	{
 		char* pos = NULL, *rpage = NULL;
-        	char* rhost = string_replace("http://", "", retstr, 0);
+		char* rhost = string_replace("http://", "", retstr, 0);
 
-	    	if(rhost != NULL)
+		if(rhost != NULL)
 			pos = strchr(rhost, '/');
 		if(pos != NULL)
 		{
