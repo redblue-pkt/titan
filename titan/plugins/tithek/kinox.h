@@ -9,7 +9,7 @@ char* kinox(char* link, char* url, char* name, int flag)
 	debug(99, "link(%d): %s", flag, link);
 	char* video_id = NULL, *source = NULL, *streamurl = NULL;
 
-	if(flag == 1 || flag == 2)
+	if(flag == 1 || flag == 2 || flag == 3)
 	{
 		int count = 0;
 		struct splitstr* ret1 = NULL;
@@ -26,6 +26,8 @@ char* kinox(char* link, char* url, char* name, int flag)
 				streamurl = putlocker(source, video_id);
 			else if(flag == 2)
 				streamurl = filenuke(source, video_id);
+			else if(flag == 3)
+				streamurl = streamcloud(source, video_id);
 
 			debug(99, "streamurl1: %s", streamurl);
 
