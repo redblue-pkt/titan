@@ -669,6 +669,7 @@ int writeallbouquet();
 struct mainbouquet* getmainbouquetbybouquetpointer(struct bouquet* bouquetnode);
 int movemainbouquetdown(struct mainbouquet* node);
 int movemainbouquetup(struct mainbouquet* node);
+struct mainbouquet* addmainbouquet(char *line, int count, struct mainbouquet* last);
 
 //listbox.h
 struct skin* addlistbox(struct skin* screen, struct skin* listbox, struct skin* last, int del);
@@ -681,6 +682,7 @@ void setbouquetchanneltonullmain(int serviceid, unsigned long transponderid);
 void delbouquet(int serviceid, unsigned long transponderid, struct bouquet** firstnode);
 int movebouquetdown(struct bouquet* node);
 int movebouquetup(struct bouquet* node);
+struct bouquet* addbouquet(struct bouquet **firstnode, char *line, int type, int count, struct bouquet* last);
 
 //audiotrack.h
 void screenaudiotrack();
