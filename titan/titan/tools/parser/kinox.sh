@@ -154,7 +154,12 @@ for ROUND0 in $main_list; do
 						cat cache.$searchname.$ROUND2.list | sed 's!http:!\nhttp:!' | sed 's!" target=!\n!' | grep ^http: | sed 's:\\::g' > cache.url
 		
 						URL=`cat cache.url`
-						FILE=`echo $URL | tr "/" "\n" | tail -n1`			
+						if [ $ROUND2 == "StreamCloud.eu" ];then
+							FILE=`echo $URL | tr "/" "\n" | tail -n2 | head -n1`
+						else
+							FILE=`echo $URL | tr "/" "\n" | tail -n1`			
+						fi
+										
 						URL="$URL;$FILE;$ROUND2"
 						
 						echo TITLE=$TITLE
