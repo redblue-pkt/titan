@@ -410,27 +410,38 @@ struct provider* getprovider(int providerid)
 	return NULL;
 }
 
-void provider2bouquet(int providerid)
+int provider2bouquet(int providerid)
 {
 	struct provider* pnode = NULL;
 	struct mainbouquet* mnode = NULL;
 	struct channel* chnode = chnode;
 	char* tmpstr = NULL;
+	char* path = NULL;
 
 	pnode = getprovider(providerid);
-	if(pnode == NULL) return;
+	if(pnode == NULL) return 1;
 
 	tmpstr = ostrcat(tmpstr, pnode->name, 1, 0);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	tmpstr = ostrcat(tmpstr, oitoa(status.servicetype), 1, 1);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	//TODO: make path as config
-	tmpstr = ostrcat(tmpstr, "#/var/etc/titan/bouquets.", 1, 0);
-	tmpstr = ostrcat(tmpstr, pnode->name, 1, 0);
-	if(status.servicetype == 0) tmpstr = ostrcat(tmpstr, "_tv", 1, 0);
-	if(status.servicetype == 1) tmpstr = ostrcat(tmpstr, "_radio", 1, 0);
+	path = ostrcat(path, "/var/etc/titan/bouquets.", 1, 0);
+	path = ostrcat(path, pnode->name, 1, 0);
+	if(status.servicetype == 0) path = ostrcat(path, "_tv", 1, 0);
+	if(status.servicetype == 1) path = ostrcat(path, "_radio", 1, 0);
 
+	if(file_exist(path))
+	{
+		free(tmpstr); tmpstr = NULL;
+		free(path); path = NULL;
+		return 1;
+	}
+
+	tmpstr = ostrcat(tmpstr, path, 1, 0);
 	mnode = addmainbouquet(tmpstr, 1, NULL);
 	free(tmpstr); tmpstr = NULL;
+	free(path); path = NULL;
 
 	if(mnode != NULL)
 	{
@@ -447,6 +458,8 @@ void provider2bouquet(int providerid)
 			chnode = chnode->next;
 		}
 	}
+
+	return 0;
 }
 
 void freeprovider()
