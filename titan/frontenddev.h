@@ -1171,7 +1171,7 @@ void feset(struct dvbdev* node, struct transponder* tpnode)
 	fesetvoltage(node, volt, 15);
 
 	tmpstr = ostrcat(node->feshortname, "_diseqc", 0, 0);
-	if(getconfigint(tmpstr, node->feaktnr) == 0)
+	if(getconfigint(tmpstr, node->feaktnr) == 0 || node->feunicable == 1)
 	{
 		debug(200, "don't use diseqc");
 	}
