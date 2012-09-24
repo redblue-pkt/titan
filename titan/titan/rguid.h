@@ -60,6 +60,9 @@ void rguidgotdata(struct stimerthread* timernode, int* connfd)
 				continue;
 			}
 			
+			if(status.standby == 0 && keycode == getrcconfigint("rcpower", NULL))
+				continue;
+
 			writerc(keycode);
 		}
 	}
