@@ -422,10 +422,12 @@ void provider2bouquet(int providerid)
 
 	tmpstr = ostrcat(tmpstr, pnode->name, 1, 0);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, "0", 1, 0);
+	tmpstr = ostrcat(tmpstr, oitoa(status.servicetype), 1, 1);
 	//TODO: make path as config
 	tmpstr = ostrcat(tmpstr, "#/var/etc/titan/bouquets.", 1, 0);
 	tmpstr = ostrcat(tmpstr, pnode->name, 1, 0);
+	if(status.servicetype == 0) tmpstr = ostrcat(tmpstr, "_tv", 1, 0);
+	if(status.servicetype == 1) tmpstr = ostrcat(tmpstr, "_radio", 1, 0);
 
 	mnode = addmainbouquet(tmpstr, 1, NULL);
 	free(tmpstr); tmpstr = NULL;
@@ -434,12 +436,12 @@ void provider2bouquet(int providerid)
 	{
 		while(chnode != NULL)
 		{
-			if(chnode->servicetype == 0)
+			if(chnode->servicetype == status.servicetype)
 			{
 				tmpstr = ostrcat(tmpstr, oitoa(chnode->serviceid), 1, 1);
 				tmpstr = ostrcat(tmpstr, "#", 1, 0);
 				tmpstr = ostrcat(tmpstr, oitoa(chnode->transponderid), 1, 1);
-				addbouquet(&mnode->bouquet, tmpstr, 0, 1, NULL);
+				addbouquet(&mnode->bouquet, tmpstr, status.servicetype, 1, NULL);
 				free(tmpstr); tmpstr = NULL;
 			}
 			chnode = chnode->next;
