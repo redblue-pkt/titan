@@ -525,6 +525,7 @@ void delconfigtmp(char *key);
 struct clist* addconfiginttmp(char *key, int value);
 int writeconfigtmp();
 int readconfig(const char *filename, struct clist** tmpconfig);
+struct clist* addconfigint(char *key, int value);
 
 //rc.h
 int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int filelistview);

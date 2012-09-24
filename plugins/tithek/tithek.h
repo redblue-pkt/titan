@@ -731,7 +731,6 @@ void screentithekplay(char* titheklink, char* title, int first)
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
 					off64_t checkpic = getfilesize(tithekpic);
-					printf("getfilesize1: %d\n", checkpic);
 			
 					if(checkpic < 1000)
 					{
@@ -753,7 +752,6 @@ void screentithekplay(char* titheklink, char* title, int first)
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
 					off64_t checkpic = getfilesize(tithekpic);
-					printf("getfilesize2: %d\n", checkpic);
 
 					if(checkpic < 1000)
 					{
