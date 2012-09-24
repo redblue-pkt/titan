@@ -410,6 +410,43 @@ struct provider* getprovider(int providerid)
 	return NULL;
 }
 
+void provider2bouquet(int providerid)
+{
+	struct provider* pnode = NULL;
+	struct mainbouquet* mnode = NULL;
+	struct channel* chnode = chnode;
+	char* tmpstr = NULL;
+
+	pnode = getprovider(providerid);
+	if(pnode == NULL) return;
+
+	tmpstr = ostrcat(tmpstr, pnode->name, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, "0", 1, 0);
+	//TODO: make path as config
+	tmpstr = ostrcat(tmpstr, "#/var/etc/titan/bouquets.", 1, 0);
+	tmpstr = ostrcat(tmpstr, pnode->name, 1, 0);
+
+	mnode = addmainbouquet(tmpstr, 1, NULL);
+	free(tmpstr); tmpstr = NULL;
+
+	if(mnode != NULL)
+	{
+		while(chnode != NULL)
+		{
+			if(chnode->servicetype == 0)
+			{
+				tmpstr = ostrcat(tmpstr, oitoa(chnode->serviceid), 1, 1);
+				tmpstr = ostrcat(tmpstr, "#", 1, 0);
+				tmpstr = ostrcat(tmpstr, oitoa(chnode->transponderid), 1, 1);
+				addbouquet(&mnode->bouquet, tmpstr, 0, 1, NULL);
+				free(tmpstr); tmpstr = NULL;
+			}
+			chnode = chnode->next;
+		}
+	}
+}
+
 void freeprovider()
 {
 	debug(1000, "in");
