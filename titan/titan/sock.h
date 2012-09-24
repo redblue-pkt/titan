@@ -484,7 +484,7 @@ char *get_ip(char *host)
 	{
 		free(ip);
 		free(buf);
-		err("can't get ip");
+		err("can't get ip (%s)", host);
 		return NULL;
 	}
 
