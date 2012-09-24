@@ -38,7 +38,6 @@ unsigned char* streamcloudreceive(int* sock)
 
 char* streamcloud(char* host, char* file)
 {
-	int sock = -1, ret = 0;
 	char* tmphost = NULL;
 	char* tmpfile = NULL;
 	char* tmpstr = NULL;
@@ -48,15 +47,12 @@ char* streamcloud(char* host, char* file)
 	char* op = NULL;
 	char* hash = NULL;
 	char* hashline = NULL;
-	char* hashline2 = NULL;
 	char* hashlen = NULL;
 	char* referer = NULL;
 	char* usr_login = NULL;
 	char* imhuman = NULL;	
 	char* ip = NULL;
-	char* b36code = NULL;
-	char* base = NULL;
-	char* search = NULL;
+
 	char* streamlink = NULL;
 
 	if(host == NULL || file == NULL) return NULL;
