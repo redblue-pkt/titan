@@ -44,7 +44,7 @@ for SEARCH in $SEARCHLIST; do
 		echo DURL: $DURL
 		echo $DURL | sed 's/amp;//'
 
-		DURL=`echo $DURL | sed 's/amp;//' | sed 's/productdetail=/player=/'`
+		DURL=`echo $DURL | sed 's/amp;//' | sed 's/amp;//' | sed 's/amp;//' | sed 's/productdetail=/player=/'`
 		echo DURL: $DURL
 		
 		echo wget --no-check-certificate "$DURL" -O cache.$SEARCH.$count.list
@@ -53,7 +53,7 @@ for SEARCH in $SEARCHLIST; do
 		DPIC=`cat cache.$SEARCH.$count.list | grep jpg | grep '<meta property="og:image"' | cut -d'"' -f4 | tail -n1`
 #		TITLE=`./urldecode.sh cache.$SEARCH.$count.list | grep og:title  | cut -d'"' -f4 | sed 's/ - /#/' | cut -d"#" -f2`
 		DTITLE=`cat cache.$SEARCH.$count.list | grep og:title  | cut -d'"' -f4 | sed 's/ - /#/' | cut -d"#" -f2 | sed 's/ - /#/' | cut -d"#" -f2 | tail -n1`
-		DURL=$SITEURL/$ROUND
+#		DURL=$SITEURL/$ROUND
 
 		if [ `cat cache.$SEARCH.$count.list | grep "<\!\-\- 3-->" | wc -l` -eq 1 ];then
 			STREAMTYPE=6
