@@ -878,22 +878,30 @@ start:
 			}
 			if(listmode == CPMODE && listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcok", NULL))
 			{
-				struct mainbouquet* mbouquet = screenmainbouquet();
-				if(mbouquet != NULL && getbouquetbychannel(mbouquet->bouquet, ((struct channel*)listbox->select->handle)->serviceid, ((struct channel*)listbox->select->handle)->transponderid) == NULL)
+				if(list == PROVIDERLIST)
 				{
-					tmpstr1 = oitoa(((struct channel*)listbox->select->handle)->serviceid);
-					tmpstr = ostrcat(tmpstr, tmpstr1, 1, 1); tmpstr1 = NULL;
-					tmpstr = ostrcat(tmpstr, "#", 1, 0);
-					tmpstr1 = oitoa(((struct channel*)listbox->select->handle)->transponderid);
-					tmpstr = ostrcat(tmpstr, tmpstr1, 1, 1); tmpstr1 = NULL;
-					addbouquet(&mbouquet->bouquet, tmpstr, status.servicetype, 0, NULL);
-					free(tmpstr); tmpstr = NULL;
-					recalcbouquetnr();
-					if(list == BOUQUETCHANNEL)
+					provider2bouquet(((struct provider*)listbox->select->handle1)->providerid);
+					textbox(_("Message"), _("Providerlist copy successfull"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+				}
+				else
+				{
+					struct mainbouquet* mbouquet = screenmainbouquet();
+					if(mbouquet != NULL && getbouquetbychannel(mbouquet->bouquet, ((struct channel*)listbox->select->handle)->serviceid, ((struct channel*)listbox->select->handle)->transponderid) == NULL)
 					{
-						delmarkedscreennodes(channellist, 1);
-						delmarkedscreennodes(channellist, 2);
-						showbouquetchannel(channellist, listbox, channeltimeline, ((struct mainbouquet*)aktlist)->bouquet, (struct mainbouquet*)aktlist, 1);
+						tmpstr1 = oitoa(((struct channel*)listbox->select->handle)->serviceid);
+						tmpstr = ostrcat(tmpstr, tmpstr1, 1, 1); tmpstr1 = NULL;
+						tmpstr = ostrcat(tmpstr, "#", 1, 0);
+						tmpstr1 = oitoa(((struct channel*)listbox->select->handle)->transponderid);
+						tmpstr = ostrcat(tmpstr, tmpstr1, 1, 1); tmpstr1 = NULL;
+						addbouquet(&mbouquet->bouquet, tmpstr, status.servicetype, 0, NULL);
+						free(tmpstr); tmpstr = NULL;
+						recalcbouquetnr();
+						if(list == BOUQUETCHANNEL)
+						{
+							delmarkedscreennodes(channellist, 1);
+							delmarkedscreennodes(channellist, 2);
+							showbouquetchannel(channellist, listbox, channeltimeline, ((struct mainbouquet*)aktlist)->bouquet, (struct mainbouquet*)aktlist, 1);
+						}
 					}
 				}
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);

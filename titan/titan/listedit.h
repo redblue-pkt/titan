@@ -35,6 +35,8 @@ int screenlistedit(int list, struct channel* chnode)
 		cpmode->hidden = YES;
 		protectmode->hidden = YES;
 	}
+	if(list == PROVIDERLIST)
+		cpmode->hidden = NO;
 	if(list == MAINBOUQUETLIST)
 	{
 		addmode->hidden = NO;
