@@ -83,7 +83,8 @@ char* putlocker(char* host, char* file)
 	send = ostrcat(send, host, 1, 0);
 	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);
 	send = ostrcat(send, hash, 1, 0);
-	send = ostrcat(send, "&confirm=Continue+as+Free+User", 1, 0);
+
+	sleep(1);
 
 	//send and receive answer
 	ret = sockportopen(&sock, ip, 80, 5000 * 1000);
@@ -117,6 +118,8 @@ char* putlocker(char* host, char* file)
 	free(send); send = NULL;
 	tmpstr = command("cat x9 | sed '1,1d' | zcat");
 
+	sleep(2);
+
 	//get streamlink
 	streamlink = getxmlentry(tmpstr, "playlist: '");
 	if(streamlink != NULL)
@@ -138,6 +141,8 @@ char* putlocker(char* host, char* file)
 	send = ostrcat(send, phpsessid, 1, 0);
 	send = ostrcat(send, "\r\nConnection: close\r\nUser-Agent: Python-urllib/2.6\r\n\r\n", 1, 0);
 
+	sleep(2);
+	
 	//send and receive answer
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL);
 	free(send); send = NULL;

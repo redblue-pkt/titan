@@ -22,6 +22,7 @@
 //flag 17	- rtlnow pay
 //flag 18	- voxnow pay
 //flag 19	- rtl2now pay
+//flag 20	- kinox StreamCloud
 //flag 1000 - menu pincode
 //flag 9999 - menu hidden codecpack
 
@@ -587,10 +588,11 @@ void addfav(char* title, char* link, char* pic, char* localname, char* menutitle
 	free(input); input = NULL;
 }
 
-void submenu(struct skin* listbox)
+void submenu(struct skin* listbox, struct skin* load)
 {
 	if(status.security == 1)
 	{
+		drawscreen(load, 0, 0);	
 		char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
 		char* tmpstr1 = NULL;
 
@@ -642,6 +644,10 @@ void submenu(struct skin* listbox)
 		{
 			if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://rtl2now.rtl2.de", "rtl2now", 1);
 		}
+		else if(((struct tithek*)listbox->select->handle)->flag == 20)
+		{
+			if(tmpstr != NULL) tmpstr1 = kinox(tmpstr, NULL, NULL, 3);
+		}
 
 		free(tmpstr); tmpstr = NULL;
 			
@@ -652,6 +658,7 @@ void submenu(struct skin* listbox)
 		}
 		else
 			textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+
 		free(tmpstr1); tmpstr1 = NULL;
 	}
 	else
@@ -839,9 +846,9 @@ void screentithekplay(char* titheklink, char* title, int first)
 					else
 						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 				}
-				else if((((struct tithek*)listbox->select->handle)->flag == 4) || (((struct tithek*)listbox->select->handle)->flag == 5) || (((struct tithek*)listbox->select->handle)->flag == 6) || (((struct tithek*)listbox->select->handle)->flag == 7) || (((struct tithek*)listbox->select->handle)->flag == 8) || (((struct tithek*)listbox->select->handle)->flag == 12) || (((struct tithek*)listbox->select->handle)->flag == 14) || (((struct tithek*)listbox->select->handle)->flag == 15) || (((struct tithek*)listbox->select->handle)->flag == 16) || (((struct tithek*)listbox->select->handle)->flag == 17) || (((struct tithek*)listbox->select->handle)->flag == 18) || (((struct tithek*)listbox->select->handle)->flag == 19))
+				else if((((struct tithek*)listbox->select->handle)->flag == 4) || (((struct tithek*)listbox->select->handle)->flag == 5) || (((struct tithek*)listbox->select->handle)->flag == 6) || (((struct tithek*)listbox->select->handle)->flag == 7) || (((struct tithek*)listbox->select->handle)->flag == 8) || (((struct tithek*)listbox->select->handle)->flag == 12) || (((struct tithek*)listbox->select->handle)->flag == 14) || (((struct tithek*)listbox->select->handle)->flag == 15) || (((struct tithek*)listbox->select->handle)->flag == 16) || (((struct tithek*)listbox->select->handle)->flag == 17) || (((struct tithek*)listbox->select->handle)->flag == 18) || (((struct tithek*)listbox->select->handle)->flag == 19) || (((struct tithek*)listbox->select->handle)->flag == 20))
 				{
-					submenu(listbox);
+					submenu(listbox, load);
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 9) || (((struct tithek*)listbox->select->handle)->flag == 10) || (((struct tithek*)listbox->select->handle)->flag == 11))
 				{
