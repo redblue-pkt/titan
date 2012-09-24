@@ -756,7 +756,7 @@ end:
 
 		redirect++;
 		free(buf); buf = NULL;
-		buf = gethttp(rhost, rpage, port, filename, auth, dnode, redirect);
+		buf = gethttpreal(rhost, rpage, port, filename, auth, dnode, redirect, header, clen);
 	}
 
 	if(clen != 0) *clen = maxret;
