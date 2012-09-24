@@ -917,13 +917,17 @@ char* webvideo(char* param, int fmt)
 	if(tmpbuf != NULL)
 	{
 		if(status.play == 0 && status.webplayfile == NULL)
-			status.webplayfile = ostrcat(tmpbuf, NULL, 0, 0);
+		{
+			char* tmpbuf1 = tmpbuf;
+			if(ostrstr(tmpbuf, "url=") == tmpbuf) tmpbuf1 += 4;
+			status.webplayfile = ostrcat(tmpbuf1, NULL, 0, 0);
+		}
 		free(tmpbuf); tmpbuf = NULL;
 	}
 	tmpbuf = ostrcat("not in play mode", NULL, 0, 0);
     
 	int count = 0;
-	if(status.play == 0 && ostrcmp("play", param) == 0)
+	if(status.play == 0 && (ostrcmp("play", param) == 0 || ostrcmp("play=", param) == 0))
 	{
 		int count = 0;
 
@@ -945,22 +949,22 @@ char* webvideo(char* param, int fmt)
 
 	if(status.play == 1)
 	{
-		if(ostrcmp("stop", param) == 0)
+		if(ostrcmp("stop", param) == 0 || ostrcmp("stop=", param) == 0)
 			writerc(getrcconfigint("rcstop", NULL));
 
-		if(ostrcmp("pause", param) == 0)
+		if(ostrcmp("pause", param) == 0 || ostrcmp("pause=", param) == 0)
 			writerc(getrcconfigint("rcpause", NULL));
     
-		if(ostrcmp("ff", param) == 0)
+		if(ostrcmp("ff", param) == 0 || ostrcmp("ff=", param) == 0)
 			writerc(getrcconfigint("rcff", NULL));
     
-		if(ostrcmp("fr", param) == 0)
+		if(ostrcmp("fr", param) == 0 || ostrcmp("fr=", param) == 0)
 			writerc(getrcconfigint("rcfr", NULL));
 
 		free(tmpbuf); tmpbuf = NULL;
 		tmpbuf = ostrcat(param, NULL, 0, 0);
 
-		if(ostrcmp("getlen", param) == 0)
+		if(ostrcmp("getlen", param) == 0 || ostrcmp("getlen=", param) == 0)
 		{
 			unsigned long len = 0;
 			free(tmpbuf); tmpbuf = NULL;
@@ -969,7 +973,7 @@ char* webvideo(char* param, int fmt)
 			tmpbuf = ostrcat(buf, olutoa(len), 1, 1);
 		}
   
-		if(ostrcmp("getpos", param) == 0)
+		if(ostrcmp("getpos", param) == 0 || ostrcmp("getpos=", param) == 0)
 		{
 			unsigned long pos = 0;
 			free(tmpbuf); tmpbuf = NULL;
@@ -978,7 +982,7 @@ char* webvideo(char* param, int fmt)
 			tmpbuf = ostrcat(buf, olutoa(pos), 1, 1);
 		}
   
-		if(ostrcmp("getisplaying", param) == 0)
+		if(ostrcmp("getisplaying", param) == 0 || ostrcmp("getisplaying=", param) == 0)
 		{
 			int playing = 0;
 			free(tmpbuf); tmpbuf = NULL;
@@ -987,7 +991,7 @@ char* webvideo(char* param, int fmt)
 			tmpbuf = ostrcat(buf, oitoa(playing), 1, 1);
 		}
   
-		if(ostrcmp("getplayercan", param) == 0)
+		if(ostrcmp("getplayercan", param) == 0 || ostrcmp("getplayercan=", param) == 0)
 		{
 			free(tmpbuf); tmpbuf = NULL;
 			tmpbuf = ostrcat(buf, olutoa(status.playercan), 1, 1);
