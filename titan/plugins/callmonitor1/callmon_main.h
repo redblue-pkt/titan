@@ -27,9 +27,9 @@ void callmonstart()
 void callmontimeout()
 {
 	if(coldstart == 1)
-		sleep(25);
+		sleep(45);
 	else
-		sleep(15);
+		sleep(35);
 		
 	if(CallmonStartThread != NULL)
 	{
