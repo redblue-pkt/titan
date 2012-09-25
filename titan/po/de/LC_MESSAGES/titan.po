@@ -307,7 +307,7 @@ msgstr "Kontrast"
 msgid "Configure"
 msgstr "Festplatte konfigurieren"
 msgid "copy service"
-msgstr "Eintrag kopieren"
+msgstr "zu Favoriten Kopieren"
 msgid "CPU"
 msgstr "Prozessor"
 msgid "CPU info"
@@ -2588,3 +2588,9 @@ msgstr "Wollen Sie diesen Favoriten löschen ?"
 
 msgid "Add this link as Favorite ?"
 msgstr "Wollen Sie diesen Favoriten hinzufügen ?"
+
+msgid "Copy providerlist successfull"
+msgstr "Kopieren des Anbieters erfolgreich abgeschlossen"
+
+msgid "Copy providerlist not ok"
+msgstr Kopieren des Anbieters abgebrochen"
