@@ -657,12 +657,12 @@ start:
 	if(status.servicetype == 0)
 	{
 		tmpstr = getconfig("channellist", NULL);
-		changetext(b7, _("Radio"));
+		changetext(b8, _("Radio"));
 	}
 	else
 	{
 		tmpstr = getconfig("rchannellist", NULL);
-		changetext(b7, _("TV"));
+		changetext(b8, _("TV"));
 	}
 	if(ostrncmp("(BOUQUET)-", tmpstr, 10) == 0 && strlen(tmpstr) > 10)
 	{
