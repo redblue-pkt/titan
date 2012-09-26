@@ -325,7 +325,7 @@ void kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlab
 				else
 				{
 					tmpstr2 = ret2[2].part;
-					hname = ostrcat(hname, "commingsoon", 1, 0);
+					hname = ostrcat(hname, " (coming soon)", 1, 0);
 					type = 66;
 				}
 
@@ -510,7 +510,7 @@ void kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* c
 				else
 				{
 					tmpstr2 = ret2[2].part;
-					hname = ostrcat(hname, "commingsoon", 1, 0);
+					hname = ostrcat(hname, " (coming soon)", 1, 0);
 					type = 66;
 				}
 				
