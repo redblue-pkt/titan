@@ -23,6 +23,9 @@
 //flag 18	- voxnow pay
 //flag 19	- rtl2now pay
 //flag 20	- kinox StreamCloud
+//flag 21	- kinox search
+//flag 22	- kinox hoster
+//flag 23	- kinox hoster serie
 //flag 1000 - menu pincode
 //flag 9999 - menu hidden codecpack
 

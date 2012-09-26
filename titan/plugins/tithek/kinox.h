@@ -289,7 +289,7 @@ void kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlab
 					tmpstr2 = ret2[3].part;
 					type = 14;
 				}
-				else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "BitShare.com") == 0)
+				else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "") == 0)
 				{
 					tmpstr2 = ret2[3].part;
 				}
@@ -301,14 +301,14 @@ void kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlab
 				{
 					tmpstr2 = ret2[3].part;
 				}
-				else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "FileNuke.com") == 0)
+				else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "FileNuke.com") == 0)
 				{
-					tmpstr2 = ret2[3].part;
+					tmpstr2 = ret2[2].part;
 					type = 15;
 				}
-				else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "StreamCloud.eu") == 0)
+				else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "StreamCloud.eu") == 0)
 				{
-					tmpstr2 = ret2[3].part;
+					tmpstr2 = ret2[2].part;
 					type = 20;
 				}
 				else if(ret2 != NULL && count2 > 2)
@@ -316,7 +316,6 @@ void kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlab
 
 /*
 	tmpstr2 = ret2[2].part;
-
 	VidStream.in
 	FileNuke.com
 	StreamCloud.eu
@@ -326,7 +325,7 @@ void kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlab
 
 				
 				free(ret2), ret2 = NULL;
-				printf("tmpstr2: %s\n",tmpstr2);	
+				printf("id: %s\n",tmpstr2);	
 									
 				incount += 1;
 				line = ostrcat(line, hname, 1, 0);
