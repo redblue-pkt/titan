@@ -135,7 +135,7 @@ char* myvideo(char* link, char* url, char* name, int flag)
 
 void myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load)
 {
-	char* search = textinputhist("Search", "NULL", "searchhist");
+	char* search = textinputhist("Search", "suchtext", "searchhist");
 	
 	if(search != NULL)
 	{

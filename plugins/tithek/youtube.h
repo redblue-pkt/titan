@@ -154,7 +154,7 @@ char* youtube(char* link, char* url, char* name, int flag)
 
 void youtube_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load)
 {
-	char* search = textinputhist("Search", "NULL", "searchhist");
+	char* search = textinputhist("Search", "suchtext", "searchhist");
 	if(search != NULL)
 	{
 		drawscreen(load, 0, 0);
