@@ -858,6 +858,21 @@ void screentithekplay(char* titheklink, char* title, int first)
 					myvideo_search(grid, listbox, countlabel, load);
 					continue;
 				}
+				else if((((struct tithek*)listbox->select->handle)->flag == 21))
+				{
+					kinox_search(grid, listbox, countlabel, load);
+					continue;
+				}
+				else if((((struct tithek*)listbox->select->handle)->flag == 22))
+				{
+					kinox_hoster(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, 0);
+					continue;
+				}			 
+				else if((((struct tithek*)listbox->select->handle)->flag == 23))
+				{
+					kinox_hoster(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, 1);
+					continue;
+				}
 				else
 				{
 					int pincheck = 0;
