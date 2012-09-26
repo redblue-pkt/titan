@@ -48,7 +48,7 @@ if [ $today -gt $lasttimestamp ];then
 	ls -1 "$HOME"/parser/BUILD/*.sh | sort -r > tmp.txt
 else
 	echo else
-	ls -1 "$HOME"/parser/BUILD/*.sh | grep -v kinox.sh | grep -v beeg.sh | sort -r > "$HOME"/parser/BUILD/tmp.txt
+	ls -1 "$HOME"/parser/BUILD/*.sh | grep -v beeg.sh | sort -r > "$HOME"/parser/BUILD/tmp.txt
 fi
 
 LINE=`cat "$HOME"/parser/BUILD/tmp.txt`
@@ -56,7 +56,7 @@ echo LINE $LINE
 for ROUND in $LINE; do
 	FILE=`echo $ROUND | tr '/' '\n' | tail -n1`
 	FILENAME=`echo $ROUND | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
-	if [ $FILE == "beeg.sh" ] || [ $FILE == "kinox.sh" ];then
+	if [ $FILE == "beeg.sh" ];then
 		echo `date +%s` >/var/www/atemio/web/mediathek/lasttimestamp
 	fi
 	echo "######################## $ROUND ###############################"
