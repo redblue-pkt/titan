@@ -850,30 +850,36 @@ void screentithekplay(char* titheklink, char* title, int first)
 				else if((((struct tithek*)listbox->select->handle)->flag == 4) || (((struct tithek*)listbox->select->handle)->flag == 5) || (((struct tithek*)listbox->select->handle)->flag == 6) || (((struct tithek*)listbox->select->handle)->flag == 7) || (((struct tithek*)listbox->select->handle)->flag == 8) || (((struct tithek*)listbox->select->handle)->flag == 12) || (((struct tithek*)listbox->select->handle)->flag == 14) || (((struct tithek*)listbox->select->handle)->flag == 15) || (((struct tithek*)listbox->select->handle)->flag == 16) || (((struct tithek*)listbox->select->handle)->flag == 17) || (((struct tithek*)listbox->select->handle)->flag == 18) || (((struct tithek*)listbox->select->handle)->flag == 19) || (((struct tithek*)listbox->select->handle)->flag == 20))
 				{
 					submenu(listbox, load);
+					drawscreen(grid, 0, 0);
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 9) || (((struct tithek*)listbox->select->handle)->flag == 10) || (((struct tithek*)listbox->select->handle)->flag == 11))
 				{
 					youtube_search(grid, listbox, countlabel, load);
+					drawscreen(grid, 0, 0);
 					continue;
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 13))
 				{
 					myvideo_search(grid, listbox, countlabel, load);
+					drawscreen(grid, 0, 0);
 					continue;
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 21))
 				{
 					kinox_search(grid, listbox, countlabel, load);
+					drawscreen(grid, 0, 0);
 					continue;
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 22))
 				{
 					kinox_hoster(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title);
+					drawscreen(grid, 0, 0);
 					continue;
 				}			 
 				else if((((struct tithek*)listbox->select->handle)->flag == 23))
 				{
 					kinox_hoster_series(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title);
+					drawscreen(grid, 0, 0);
 					continue;
 				}
 				else
