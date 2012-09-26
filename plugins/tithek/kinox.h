@@ -165,7 +165,7 @@ void kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 void kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
 {
 	debug(99, "link: %s", link);
-	char* ip = NULL, *pos = NULL, *path = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *line = NULL;		
+	char* ip = NULL, *pos = NULL, *path = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *line = NULL, *url = NULL, *pathnew = NULL;		
 	ip = string_replace("http://", "", (char*)link, 0);
 
 	if(ip != NULL)
@@ -268,7 +268,7 @@ void kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlab
 				hlink = string_replace_all("amp;", "", hlink, 1);
 
 				hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
-				char* pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
+				pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
 
 				tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, NULL, 0);
 				free(pathnew), pathnew = NULL;
@@ -276,8 +276,8 @@ void kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlab
 				tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
 				tmpstr1 = string_resub("<a href=\"", "\"", tmpstr1, 0);
 
-				char* url = ostrcat(tmpstr1, NULL, 0, 0);
-				int type = 66;
+				url = ostrcat(tmpstr1, NULL, 0, 0);
+				int type = 0;
 				int count2 = 0;
 				struct splitstr* ret2 = NULL;
 				ret2 = strsplit(tmpstr1, "/", &count2);
@@ -292,18 +292,6 @@ void kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlab
 					tmpstr2 = ret2[3].part;
 					type = 14;
 				}
-				else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "") == 0)
-				{
-					tmpstr2 = ret2[3].part;
-				}
-				else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "FlashX.tv") == 0)
-				{
-					tmpstr2 = ret2[3].part;
-				}
-				else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "PrimeShare.tv") == 0)
-				{
-					tmpstr2 = ret2[3].part;
-				}
 				else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "FileNuke.com") == 0)
 				{
 					tmpstr2 = ret2[2].part;
@@ -314,21 +302,38 @@ void kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlab
 					tmpstr2 = ret2[2].part;
 					type = 20;
 				}
-				else if(ret2 != NULL && count2 > 2)
-					tmpstr2 = ret2[2].part;					
+				else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "VidStream.in") == 0)
+				{
+					tmpstr2 = ret2[3].part;
+				}
+				else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "FlashX.tv") == 0)
+				{
+					tmpstr2 = ret2[3].part;
+				}
+				else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "PrimeShare.tv") == 0)
+				{
+					tmpstr2 = ret2[3].part;
+				}				
+				else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "XvidStage.com") == 0)
+				{
+					tmpstr2 = ret2[3].part;
+				}
+				else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Vidxden.com (DivX)") == 0)
+				{
+					tmpstr2 = ret2[3].part;
+				}				
+				else
+				{
+					tmpstr2 = ret2[2].part;
+					hname = ostrcat(hname, "commingsoon", 1, 0);
+					type = 66;
+				}
 
-/*
-	tmpstr2 = ret2[2].part;
-	VidStream.in
-	FileNuke.com
-	StreamCloud.eu
-	XvidStage.com
-	Vidxden.com (DivX)
-*/
-
-				
 				free(ret2), ret2 = NULL;
-				printf("id: %s\n",tmpstr2);	
+				debug(99, "hname: %s", hname);
+				debug(99, "url: %s", url);
+				debug(99, "id: %s", tmpstr2);
+				debug(99, "hname: %s", hname);
 									
 				incount += 1;
 				line = ostrcat(line, hname, 1, 0);
@@ -352,7 +357,8 @@ void kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlab
 				free(hname), hname = NULL;
 				free(hnr), hnr = NULL;
 				free(hlink), hlink = NULL;										
-				free(url), url = NULL;	
+				free(url), url = NULL;
+				free(pathnew), pathnew = NULL;
 			}
 		}
 		free(ret1), ret1 = NULL;
@@ -456,8 +462,7 @@ void kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* c
 				tmpstr1 = string_resub("<a href=\"", "\"", tmpstr1, 0);
 
 				url = ostrcat(tmpstr1, NULL, 0, 0);
-
-				int type = 66;
+				int type = 0;
 				int count2 = 0;
 				struct splitstr* ret2 = NULL;
 				ret2 = strsplit(tmpstr1, "/", &count2);
@@ -472,18 +477,6 @@ void kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* c
 					tmpstr2 = ret2[3].part;
 					type = 14;
 				}
-				else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "") == 0)
-				{
-					tmpstr2 = ret2[3].part;
-				}
-				else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "FlashX.tv") == 0)
-				{
-					tmpstr2 = ret2[3].part;
-				}
-				else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "PrimeShare.tv") == 0)
-				{
-					tmpstr2 = ret2[3].part;
-				}
 				else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "FileNuke.com") == 0)
 				{
 					tmpstr2 = ret2[2].part;
@@ -494,18 +487,32 @@ void kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* c
 					tmpstr2 = ret2[2].part;
 					type = 20;
 				}
-				else if(ret2 != NULL && count2 > 2)
-					tmpstr2 = ret2[2].part;					
-	
-	/*
-	tmpstr2 = ret2[2].part;
-	VidStream.in
-	FileNuke.com
-	StreamCloud.eu
-	XvidStage.com
-	Vidxden.com (DivX)
-	*/
-	
+				else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "VidStream.in") == 0)
+				{
+					tmpstr2 = ret2[3].part;
+				}
+				else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "FlashX.tv") == 0)
+				{
+					tmpstr2 = ret2[3].part;
+				}
+				else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "PrimeShare.tv") == 0)
+				{
+					tmpstr2 = ret2[3].part;
+				}				
+				else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "XvidStage.com") == 0)
+				{
+					tmpstr2 = ret2[3].part;
+				}
+				else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Vidxden.com (DivX)") == 0)
+				{
+					tmpstr2 = ret2[3].part;
+				}				
+				else
+				{
+					tmpstr2 = ret2[2].part;
+					hname = ostrcat(hname, "commingsoon", 1, 0);
+					type = 66;
+				}
 				
 				free(ret2), ret2 = NULL;
 				debug(99, "hname: %s", hname);
