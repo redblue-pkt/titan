@@ -868,12 +868,12 @@ void screentithekplay(char* titheklink, char* title, int first)
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 22))
 				{
-					kinox_hoster(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, 0);
+					kinox_hoster(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title);
 					continue;
 				}			 
 				else if((((struct tithek*)listbox->select->handle)->flag == 23))
 				{
-					kinox_hoster(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, 1);
+					kinox_hoster_series(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title);
 					continue;
 				}
 				else
