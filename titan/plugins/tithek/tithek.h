@@ -26,6 +26,7 @@
 //flag 21	- kinox search
 //flag 22	- kinox hoster
 //flag 23	- kinox hoster serie
+//flag 66   - coming soon dummy
 //flag 1000 - menu pincode
 //flag 9999 - menu hidden codecpack
 
@@ -882,6 +883,11 @@ void screentithekplay(char* titheklink, char* title, int first)
 					drawscreen(grid, 0, 0);
 					continue;
 				}
+				else if((((struct tithek*)listbox->select->handle)->flag == 66))
+				{
+					textbox(_("Message"), _("The hoster is not yet supported for the time !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0)
+					continue;
+				}	
 				else
 				{
 					int pincheck = 0;
