@@ -68,10 +68,10 @@ char* putlocker(char* host, char* file)
 	hash = ostrcat(hash, "hash=", 1, 0);	
 	hash = ostrcat(hash, hashstr, 1, 0);
 	hash = ostrcat(hash, "&confirm=Continue+as+Free+User", 1, 0);
+	debug(99, "hash: %s", hash);
 
-	printf("hash: %s\n",hash);
 	hashlen = oitoa(strlen(hash));
-	printf("hashlen: %s\n",hashlen);	
+	debug(99, "hashlen: %s", hashlen);
 
 	//create send string
 	send = ostrcat(send, "POST /file/", 1, 0);
@@ -84,7 +84,7 @@ char* putlocker(char* host, char* file)
 	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);
 	send = ostrcat(send, hash, 1, 0);
 
-	sleep(1);
+	sleep(6);
 
 	//send and receive answer
 	ret = sockportopen(&sock, ip, 80, 5000 * 1000);
