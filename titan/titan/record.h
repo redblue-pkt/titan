@@ -209,8 +209,10 @@ void recordstop(struct service* node)
 		//afterevent: 3 = poweroff
 		if(afterevent == 0)
 		{
-			if(status.startmode == 1) afterevent = 2;
-			else if(getwaswakuptimer() == 1) afterevent = 3;
+			//not needed
+			//if(status.startmode == 1) afterevent = 2;
+			//else
+			if(getwaswakuptimer() == 1) afterevent = 3;
 		}
 		if(afterevent == 2 && status.standby == 0)
 		{
