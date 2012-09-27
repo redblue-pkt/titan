@@ -157,8 +157,6 @@ char* putlocker(char* host, char* file)
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL);
 	free(send); send = NULL;
 
-//Streaming version of this file is currently not available. You can download it below.
-
 	//get streamlink1
 	streamlink1 = getxmlentry(tmpstr, "url=");
 	free(tmpstr); tmpstr = NULL;
