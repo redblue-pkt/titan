@@ -137,7 +137,7 @@ void mc_main()
 	drawscreen(mc_main, 0, 0);
 	addscreenrc(mc_main, listbox);
 	int first = 1;
-				printf("cccc\n");
+
 	while(1)
 	{
 		if(first == 1 && listbox->select != NULL)

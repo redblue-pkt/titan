@@ -93,8 +93,8 @@ void screenmc_videoplayer()
 
 	char* savecmd = NULL;
 
-	if(!file_exist("/mnt/player"))   
-		mkdir("/mnt/player", 0777); 
+	if(!file_exist("/var/swap/player"))   
+		mkdir("/var/swap/player", 0777); 
 		
 	while(1)
 	{

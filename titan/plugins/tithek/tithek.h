@@ -676,8 +676,10 @@ void screentithekplay(char* titheklink, char* title, int first)
 	if(file_exist("/var/bin/audio.elf") || file_exist("/var/swap/bin/audio.elf"))
 		textbox(_("Message"), _("Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 
-	if(!file_exist("/mnt/player"))   
-		mkdir("/mnt/player", 0777); 
+	if(!file_exist("/var/swap/player"))
+		mkdir("/var/swap/player", 0777); 
+
+	writesysint("/proc/sys/vm/drop_caches", 3, 0); 
 	
 	if(first == 1)
 	{
@@ -855,11 +857,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 9) || (((struct tithek*)listbox->select->handle)->flag == 10) || (((struct tithek*)listbox->select->handle)->flag == 11))
 				{
-printf("1titheklink: %s\n",titheklink);
-printf("1listbox: %s\n",((struct tithek*)listbox->select->handle)->link);
 					youtube_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title);
-printf("2titheklink: %s\n",titheklink);
-printf("2listbox: %s\n",((struct tithek*)listbox->select->handle)->link);
 					oaktpage = listbox->aktpage;
 					oaktline = listbox->aktline;
 					ogridcol = listbox->gridcol;
@@ -880,11 +878,7 @@ printf("2listbox: %s\n",((struct tithek*)listbox->select->handle)->link);
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 13))
 				{
-printf("1titheklink: %s\n",titheklink);
-printf("1listbox: %s\n",((struct tithek*)listbox->select->handle)->link);
 					myvideo_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title);
-printf("2titheklink: %s\n",titheklink);
-printf("2listbox: %s\n",((struct tithek*)listbox->select->handle)->link);
 					oaktpage = listbox->aktpage;
 					oaktline = listbox->aktline;
 					ogridcol = listbox->gridcol;
@@ -905,11 +899,7 @@ printf("2listbox: %s\n",((struct tithek*)listbox->select->handle)->link);
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 21))
 				{
-printf("1titheklink: %s\n",titheklink);
-printf("1listbox: %s\n",((struct tithek*)listbox->select->handle)->link);
 					kinox_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title);
-printf("2titheklink: %s\n",titheklink);
-printf("2listbox: %s\n",((struct tithek*)listbox->select->handle)->link);
 					oaktpage = listbox->aktpage;
 					oaktline = listbox->aktline;
 					ogridcol = listbox->gridcol;
@@ -930,11 +920,7 @@ printf("2listbox: %s\n",((struct tithek*)listbox->select->handle)->link);
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 22))
 				{
-printf("1titheklink: %s\n",titheklink);
-printf("1listbox: %s\n",((struct tithek*)listbox->select->handle)->link);
 					kinox_hoster(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title);
-printf("2titheklink: %s\n",titheklink);
-printf("2listbox: %s\n",((struct tithek*)listbox->select->handle)->link);
 					oaktpage = listbox->aktpage;
 					oaktline = listbox->aktline;
 					ogridcol = listbox->gridcol;
@@ -955,11 +941,7 @@ printf("2listbox: %s\n",((struct tithek*)listbox->select->handle)->link);
 				}			 
 				else if((((struct tithek*)listbox->select->handle)->flag == 23))
 				{
-printf("3titheklink: %s\n",titheklink);
-printf("3listbox: %s\n",((struct tithek*)listbox->select->handle)->link);
 					kinox_hoster_series(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title);
-printf("4titheklink: %s\n",titheklink);
-printf("4listbox: %s\n",((struct tithek*)listbox->select->handle)->link);
 					oaktpage = listbox->aktpage;
 					oaktline = listbox->aktline;
 					ogridcol = listbox->gridcol;
@@ -986,9 +968,6 @@ printf("4listbox: %s\n",((struct tithek*)listbox->select->handle)->link);
 				}	
 				else
 				{
-						printf("5listbox->aktpage %d\n", listbox->aktpage);
-						printf("5listbox->aktpage %d\n", listbox->aktline);
-						
 					int pincheck = 0;
 					if(((struct tithek*)listbox->select->handle)->flag == 1000)
 						pincheck = screenpincheck(0, NULL);
