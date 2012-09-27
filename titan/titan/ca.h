@@ -1801,7 +1801,7 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 					while(status.checkcamdecrypt > 0)
 					{
 						status.checkcamdecrypt--;
-						usleep(10000);
+						usleep(20000);
 					}
 
 					if(status.checkcamdecrypt == -2)
