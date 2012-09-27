@@ -414,7 +414,7 @@ int provider2bouquet(int providerid)
 {
 	struct provider* pnode = NULL;
 	struct mainbouquet* mnode = NULL;
-	struct channel* chnode = chnode;
+	struct channel* chnode = channel;
 	char* tmpstr = NULL;
 	char* path = NULL;
 
