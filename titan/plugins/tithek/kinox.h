@@ -42,9 +42,9 @@ char* kinox(char* link, char* url, char* name, int flag)
 	return streamurl;
 }
 
-void kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load)
+void kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
 {
-	char* search = textinputhist("Search", "suchtext", "searchhist");
+	char* search = textinputhist("Search", "NULL", "searchhist");
 		
 	if(search != NULL)
 	{
@@ -61,6 +61,7 @@ void kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 		char* url = NULL;
 		char* ip = NULL;
 		char* path = NULL;
+		char* menu = NULL;
 
 		ip = ostrcat("kinox.to", NULL, 0, 0);
 		path = ostrcat("Search.html?q=", search, 0, 0);
@@ -147,12 +148,9 @@ void kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 			free(ret1), ret1 = NULL;
 			if(line != NULL)
 			{
-				writesys("/tmp/tithek/kinox.search.list", line, 0);
-				free(line), line = NULL;
-				int pagecount = createtithekplay("/tmp/tithek/kinox.search.list", grid, listbox, countlabel);
-				if(pagecount == 0) return;
-
-				drawscreen(grid, 0, 0);
+				menu = ostrcat("/tmp/tithek/kinox.search.list", NULL, 0, 0);
+				writesys(menu, line, 0);
+				((struct tithek*)listbox->select->handle)->link = menu;
 			}
 
 		}
@@ -367,12 +365,9 @@ void kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlab
 	free(tmpstr), tmpstr = NULL;	
 	if(line != NULL)
 	{
-		writesys("/tmp/tithek/kinox.hoster.list", line, 0);
-		free(line), line = NULL;
-		int pagecount = createtithekplay("/tmp/tithek/kinox.hoster.list", grid, listbox, countlabel);
-		if(pagecount == 0) return;
-
-		drawscreen(grid, 0, 0);
+		tmpstr = ostrcat("/tmp/tithek/kinox.hoster.list", NULL, 0, 0);
+		writesys(tmpstr, line, 0);
+		((struct tithek*)listbox->select->handle)->link = tmpstr;
 	}	
 }
 
@@ -552,12 +547,9 @@ void kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* c
 	free(tmpstr), tmpstr = NULL;	
 	if(line != NULL)
 	{
-		writesys("/tmp/tithek/kinox.hoster.series.list", line, 0);
-		free(line), line = NULL;
-		int pagecount = createtithekplay("/tmp/tithek/kinox.hoster.series.list", grid, listbox, countlabel);
-		if(pagecount == 0) return;
-
-		drawscreen(grid, 0, 0);
+		tmpstr = ostrcat("/tmp/tithek/kinox.hoster.series.list", NULL, 0, 0);
+		writesys(tmpstr, line, 0);
+		((struct tithek*)listbox->select->handle)->link = tmpstr;
 	}	
 }
 

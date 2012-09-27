@@ -133,9 +133,9 @@ char* myvideo(char* link, char* url, char* name, int flag)
 	return streamurl;
 }
 
-void myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load)
+void myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
 {
-	char* search = textinputhist("Search", "suchtext", "searchhist");
+	char* search = textinputhist("Search", "NULL", "searchhist");
 	
 	if(search != NULL)
 	{
@@ -144,7 +144,8 @@ void myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countl
 		char* id = NULL;
 		char* line = NULL;
 		char* pic = NULL;
-		char* title = NULL;	
+		char* title = NULL;
+		char* menu = NULL;
 		char* ip = ostrcat("www.myvideo.de", NULL, 0, 0);
 		char* path = ostrcat("Videos_A-Z?searchWord=", search, 0, 0);
 					
@@ -204,13 +205,9 @@ void myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countl
 
 			if(line != NULL)
 			{
-				writesys("/tmp/tithek/myvideo.search.list", line, 0);
-				free(line), line = NULL;
-//								if(createtithekplay("/tmp/tithek/myvideo.search.list", grid, listbox, countlabel) != 0) return;
-				int pagecount = createtithekplay("/tmp/tithek/myvideo.search.list", grid, listbox, countlabel);
-				if(pagecount == 0) return;
-
-				drawscreen(grid, 0, 0);
+				menu = ostrcat("/tmp/tithek/myvideo.search.list", NULL, 0, 0);
+				writesys(menu, line, 0);
+				((struct tithek*)listbox->select->handle)->link = menu;
 			}
 		}
 		free(tmpstr), tmpstr = NULL;
