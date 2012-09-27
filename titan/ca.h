@@ -1760,7 +1760,6 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 				}
 			}
 			free(tmpstr); tmpstr = NULL;
-			free(blacklist); blacklist = NULL;
 
 			if(foundcaid == 0)
 			{
