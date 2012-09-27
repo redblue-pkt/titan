@@ -152,9 +152,9 @@ char* youtube(char* link, char* url, char* name, int flag)
 	return streamurl;
 }
 
-void youtube_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load)
+void youtube_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
 {
-	char* search = textinputhist("Search", "suchtext", "searchhist");
+	char* search = textinputhist("Search", "NULL", "searchhist");
 	if(search != NULL)
 	{
 		drawscreen(load, 0, 0);
@@ -162,7 +162,8 @@ void youtube_search(struct skin* grid, struct skin* listbox, struct skin* countl
 		char* id = NULL;
 		char* line = NULL;
 		char* pic = NULL;
-		char* title = NULL;	
+		char* title = NULL;
+		char* menu = NULL;	
 		char* ip = ostrcat("gdata.youtube.com", NULL, 0, 0);
 		char* path = ostrcat("feeds/api/videos?q=", search, 0, 0);
 		if(((struct tithek*)listbox->select->handle)->flag == 9)
@@ -218,13 +219,9 @@ void youtube_search(struct skin* grid, struct skin* listbox, struct skin* countl
 
 			if(line != NULL)
 			{
-				writesys("/tmp/tithek/youtube.search.list", line, 0);
-				free(line), line = NULL;
-//								if(createtithekplay("/tmp/tithek/youtube.search.list", grid, listbox, countlabel) != 0) return;
-				int pagecount = createtithekplay("/tmp/tithek/youtube.search.list", grid, listbox, countlabel);
-				if(pagecount == 0) return;
-				
-				drawscreen(grid, 0, 0);
+				menu = ostrcat("/tmp/tithek/youtube.search.list", NULL, 0, 0);
+				writesys(menu, line, 0);
+				((struct tithek*)listbox->select->handle)->link = menu;
 			}
 		}
 		free(tmpstr), tmpstr = NULL;
