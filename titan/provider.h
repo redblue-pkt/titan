@@ -447,7 +447,7 @@ int provider2bouquet(int providerid)
 	{
 		while(chnode != NULL)
 		{
-			if(chnode->servicetype == status.servicetype)
+			if(chnode->providerid == providerid && chnode->servicetype == status.servicetype)
 			{
 				tmpstr = ostrcat(tmpstr, oitoa(chnode->serviceid), 1, 1);
 				tmpstr = ostrcat(tmpstr, "#", 1, 0);
