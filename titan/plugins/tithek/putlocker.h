@@ -99,7 +99,8 @@ char* putlocker(char* host, char* file)
 	phpsessid = getxmlentry(tmpstr, "PHPSESSID=");
 	serverid = getxmlentry(tmpstr, "SERVERID=");
 	free(tmpstr); tmpstr = NULL;
-	if(phpsessid == NULL || serverid == NULL) goto end;
+// move we need error msg later
+//	if(phpsessid == NULL || serverid == NULL) goto end;
 	if(strlen(phpsessid) > 0) phpsessid[strlen(phpsessid) - 1] = '\0';
 
 	//create send string
@@ -115,8 +116,17 @@ char* putlocker(char* host, char* file)
 
 	//send and receive answer
 	gethttpreal(tmphost, tmpfile, 80, "x9", NULL, NULL, 0, send, NULL);
+
 	free(send); send = NULL;
 	tmpstr = command("cat x9 | sed '1,1d' | zcat");
+	
+	if(ostrstr(tmpstr, "warning_message") != NULL)
+	{
+		tmpstr = string_resub("<div class='warning_message'>", "</div>", tmpstr, 0);	
+		textbox(_("Message"), _(tmpstr) , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+	if(phpsessid == NULL || serverid == NULL) goto end;			
 
 	sleep(2);
 
@@ -146,6 +156,8 @@ char* putlocker(char* host, char* file)
 	//send and receive answer
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL);
 	free(send); send = NULL;
+
+//Streaming version of this file is currently not available. You can download it below.
 
 	//get streamlink1
 	streamlink1 = getxmlentry(tmpstr, "url=");
