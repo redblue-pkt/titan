@@ -98,6 +98,8 @@ char* filenuke(char* host, char* file)
 	//send and receive answer
 	gethttpreal(tmphost, tmpfile, 80, "post", NULL, NULL, 0, send, NULL);
 
+	sleep(5);
+
 	tmpstr = command("/var/usr/local/share/titan/plugins/tithek/getstring1.sh post");
 	b36code = command("/var/usr/local/share/titan/plugins/tithek/getstring2.sh post");
 	b36code = string_replace_all("||", "| |", b36code, 1);
