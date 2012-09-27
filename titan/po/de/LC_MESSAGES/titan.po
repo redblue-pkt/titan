@@ -2597,3 +2597,9 @@ msgstr "Kopieren des Anbieters abgebrochen"
 
 msgid "The hoster is not yet supported for the time !"
 msgstr "Der hoster wird zur zeit noch nicht unterstützt !"
+
+msgid "CLEAR INPUT"
+msgstr "Eingabefeld Löschen"
+
+msgid "REMOVE ENTRY"
+msgstr "Listeneintrag Löschen"
