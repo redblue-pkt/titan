@@ -73,6 +73,7 @@ char* putlocker(char* host, char* file)
 	hashlen = oitoa(strlen(hash));
 	debug(99, "hashlen: %s", hashlen);
 
+	sleep(3);
 	//create send string
 	send = ostrcat(send, "POST /file/", 1, 0);
 	send = ostrcat(send, file, 1, 0);
@@ -84,7 +85,7 @@ char* putlocker(char* host, char* file)
 	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);
 	send = ostrcat(send, hash, 1, 0);
 
-	sleep(6);
+	sleep(3);
 
 	//send and receive answer
 	ret = sockportopen(&sock, ip, 80, 5000 * 1000);
@@ -94,7 +95,7 @@ char* putlocker(char* host, char* file)
 	free(send); send = NULL;
 	tmpstr = putlockereceive(&sock);
 	sockclose(&sock);
-
+sleep(2);
 	//get phpsessid and servierid
 	phpsessid = getxmlentry(tmpstr, "PHPSESSID=");
 	serverid = getxmlentry(tmpstr, "SERVERID=");
