@@ -106,7 +106,7 @@ char* streamcloud(char* host, char* file)
 	hash = ostrcat(hash, id, 1, 0);
 	hash = ostrcat(hash, "&op=", 1, 0);
 	hash = ostrcat(hash, op, 1, 0);
-	debug(99, "hash: %s", hash);
+	debug(99, "hash: %s\n", hash);
 	hashlen = oitoa(strlen(hash));
     	
 	//create send string
@@ -120,7 +120,7 @@ char* streamcloud(char* host, char* file)
 	send = ostrcat(send, host, 1, 0);
 	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);
 	send = ostrcat(send, hash, 1, 0);
-	debug(99, "send: %s", send);
+	debug(99, "send: %s\n", send);
 
 	free(tmpstr), tmpstr = NULL;
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL);

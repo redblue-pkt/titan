@@ -68,10 +68,10 @@ char* putlocker(char* host, char* file)
 	hash = ostrcat(hash, "hash=", 1, 0);	
 	hash = ostrcat(hash, hashstr, 1, 0);
 	hash = ostrcat(hash, "&confirm=Continue+as+Free+User", 1, 0);
-	debug(99, "hash: %s", hash);
+	debug(99, "hash: %s\n", hash);
 
 	hashlen = oitoa(strlen(hash));
-	debug(99, "hashlen: %s", hashlen);
+	debug(99, "hashlen: %s\n", hashlen);
 
 	sleep(1);
 	//create send string
@@ -84,7 +84,7 @@ char* putlocker(char* host, char* file)
 	send = ostrcat(send, host, 1, 0);
 	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);
 	send = ostrcat(send, hash, 1, 0);
-	debug(99, "send: %s", send);
+	debug(99, "send: %s\n", send);
 
 	//send and receive answer
 	ret = sockportopen(&sock, ip, 80, 5000 * 1000);
@@ -93,9 +93,8 @@ char* putlocker(char* host, char* file)
         if(ret != 0) goto end;
 	free(send); send = NULL;
 	tmpstr = putlockereceive(&sock);
+	debug(99, "tmpstr: %s\n", tmpstr);
 
-	debug(99, "tmpstr: %s", tmpstr);
-	
 	sockclose(&sock);
 	sleep(1);
 
@@ -118,8 +117,8 @@ char* putlocker(char* host, char* file)
 	send = ostrcat(send, " PHPSESSID=", 1, 0);
 	send = ostrcat(send, phpsessid, 1, 0);
 	send = ostrcat(send, "\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);
+	debug(99, "send: %s\n", send);
 
-	debug(99, "send: %s", send);
 	//send and receive answer
 	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/x9", NULL, NULL, 0, send, NULL);
 	sleep(1);
