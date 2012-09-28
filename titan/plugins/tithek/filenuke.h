@@ -80,7 +80,7 @@ char* filenuke(char* host, char* file)
 	hash = ostrcat(hash, fname, 1, 0);
 	hash = ostrcat(hash, "&method_free=Free&usr_login=&op=", 1, 0);
 	hash = ostrcat(hash, op, 1, 0);
-	debug(99, "hash: %s\n", hash);
+	debug(99, "hash: %s", hash);
 
 	hashlen = oitoa(strlen(hash));
 	
@@ -93,7 +93,7 @@ char* filenuke(char* host, char* file)
 	send = ostrcat(send, host, 1, 0);
 	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);
 	send = ostrcat(send, hash, 1, 0);
-	debug(99, "send: %s\n", send);
+	debug(99, "send: %s", send);
 
 	sleep(5);
 	
