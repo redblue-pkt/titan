@@ -1182,7 +1182,7 @@ void feset(struct dvbdev* node, struct transponder* tpnode)
 	}
 	free(tmpstr); tmpstr = NULL;
 
-	tmpstr = ostrcat(node->feshortname, "lnb_tonemode", 0, 0);
+	tmpstr = ostrcat(node->feshortname, "_lnb_tonemode", 0, 0);
 	tonemode = getconfigint(tmpstr, node->feaktnr); 
 	free(tmpstr); tmpstr = NULL;
 	switch(tonemode)
