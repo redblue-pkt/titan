@@ -73,7 +73,7 @@ char* putlocker(char* host, char* file)
 	hashlen = oitoa(strlen(hash));
 	debug(99, "hashlen: %s", hashlen);
 
-	sleep(3);
+	sleep(1);
 	//create send string
 	send = ostrcat(send, "POST /file/", 1, 0);
 	send = ostrcat(send, file, 1, 0);
@@ -84,8 +84,7 @@ char* putlocker(char* host, char* file)
 	send = ostrcat(send, host, 1, 0);
 	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);
 	send = ostrcat(send, hash, 1, 0);
-
-	sleep(3);
+	debug(99, "send: %s", send);
 
 	//send and receive answer
 	ret = sockportopen(&sock, ip, 80, 5000 * 1000);
@@ -94,12 +93,17 @@ char* putlocker(char* host, char* file)
         if(ret != 0) goto end;
 	free(send); send = NULL;
 	tmpstr = putlockereceive(&sock);
+
+	debug(99, "tmpstr: %s", tmpstr);
+	
 	sockclose(&sock);
-sleep(2);
+	sleep(1);
+
 	//get phpsessid and servierid
 	phpsessid = getxmlentry(tmpstr, "PHPSESSID=");
 	serverid = getxmlentry(tmpstr, "SERVERID=");
 	free(tmpstr); tmpstr = NULL;
+	
 // move we need error msg later
 //	if(phpsessid == NULL || serverid == NULL) goto end;
 	if(strlen(phpsessid) > 0) phpsessid[strlen(phpsessid) - 1] = '\0';
@@ -111,15 +115,16 @@ sleep(2);
 	send = ostrcat(send, host, 1, 0);
 	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nCookie: SERVERID=", 1, 0);
 	send = ostrcat(send, serverid, 1, 0);
-	send = ostrcat(send, "PHPSESSID=", 1, 0);
+	send = ostrcat(send, " PHPSESSID=", 1, 0);
 	send = ostrcat(send, phpsessid, 1, 0);
 	send = ostrcat(send, "\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);
 
+	debug(99, "send: %s", send);
 	//send and receive answer
-	gethttpreal(tmphost, tmpfile, 80, "x9", NULL, NULL, 0, send, NULL);
-
+	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/x9", NULL, NULL, 0, send, NULL);
+	sleep(1);
 	free(send); send = NULL;
-	tmpstr = command("cat x9 | sed '1,1d' | zcat");
+	tmpstr = command("cat /tmp/tithek/x9 | sed '1,1d' | zcat");
 	
 	if(ostrstr(tmpstr, "warning_message") != NULL)
 	{
@@ -129,7 +134,7 @@ sleep(2);
 	}
 	if(phpsessid == NULL || serverid == NULL) goto end;			
 
-	sleep(2);
+	sleep(1);
 
 	//get streamlink
 	streamlink = getxmlentry(tmpstr, "playlist: '");
@@ -152,11 +157,13 @@ sleep(2);
 	send = ostrcat(send, phpsessid, 1, 0);
 	send = ostrcat(send, "\r\nConnection: close\r\nUser-Agent: Python-urllib/2.6\r\n\r\n", 1, 0);
 
-	sleep(2);
+	sleep(1);
 	
 	//send and receive answer
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL);
 	free(send); send = NULL;
+
+//Streaming version of this file is currently not available. You can download it below.
 
 	//get streamlink1
 	streamlink1 = getxmlentry(tmpstr, "url=");

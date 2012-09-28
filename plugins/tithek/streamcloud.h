@@ -63,7 +63,6 @@ char* streamcloud(char* host, char* file)
 	ip = get_ip(tmphost);
 
 	tmpstr = gethttp(tmphost, tmpfile, 80, NULL, NULL, NULL, 0);
-//	writesys("/var/usr/local/share/titan/plugins/tithek/cache_input", tmpstr, 0);
 
 	sleep(10);
 
@@ -107,8 +106,7 @@ char* streamcloud(char* host, char* file)
 	hash = ostrcat(hash, id, 1, 0);
 	hash = ostrcat(hash, "&op=", 1, 0);
 	hash = ostrcat(hash, op, 1, 0);
-
-	printf("hash: %s\n",hash);
+	debug(99, "hash: %s", hash);
 	hashlen = oitoa(strlen(hash));
     	
 	//create send string
@@ -122,12 +120,10 @@ char* streamcloud(char* host, char* file)
 	send = ostrcat(send, host, 1, 0);
 	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);
 	send = ostrcat(send, hash, 1, 0);
+	debug(99, "send: %s", send);
 
-//	gethttpreal(tmphost, tmpfile, 80, "/var/usr/local/share/titan/plugins/tithek/cache_post", NULL, NULL, 0, send, NULL);
 	free(tmpstr), tmpstr = NULL;
-//	tmpstr = readfiletomem("/var/usr/local/share/titan/plugins/tithek/cache_post", 1);
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL);
-
 	
 	streamlink = oregex(".*file: \".*(http:.*video.mp4).*\".*", tmpstr);				
 	free(tmpstr); tmpstr = NULL;
