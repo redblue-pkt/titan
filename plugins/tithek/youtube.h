@@ -30,8 +30,13 @@ char* youtube(char* link, char* url, char* name, int flag)
 		{
 			tmpstr = string_resub("&url_encoded_fmt_stream_map=", "endscreen_module", tmpstr, 0);
 		
-			while(ostrstr(tmpstr, ",url=") != NULL)
-				tmpstr = string_replace(",url=", "\n", tmpstr, 1);
+			if(ostrstr(tmpstr, ",url=") != NULL)
+				tmpstr = string_replace_all(",url=", "\n", tmpstr, 1);
+			else if(ostrstr(tmpstr, "&url=") != NULL)
+				tmpstr = string_replace_all("&url=", "\n", tmpstr, 1);
+
+//			while(ostrstr(tmpstr, ",url=") != NULL)
+//				tmpstr = string_replace(",url=", "\n", tmpstr, 1);
 				
 			struct menulist* mlist = NULL, *mbox = NULL;
 			int count = 0;
