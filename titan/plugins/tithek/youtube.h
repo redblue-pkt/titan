@@ -28,7 +28,7 @@ char* youtube(char* link, char* url, char* name, int flag)
 
 		if(ostrstr(tmpstr, "status=fail&") == NULL)
 		{
-			tmpstr = string_resub("&url_encoded_fmt_stream_map=url=", "endscreen_module", tmpstr, 0);
+			tmpstr = string_resub("&url_encoded_fmt_stream_map=", "endscreen_module", tmpstr, 0);
 		
 			while(ostrstr(tmpstr, ",url=") != NULL)
 				tmpstr = string_replace(",url=", "\n", tmpstr, 1);
