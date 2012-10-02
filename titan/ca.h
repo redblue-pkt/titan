@@ -686,7 +686,7 @@ int cacaAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *da
 			case 0x33: //ca pmt reply
 				if(len > 3)
 				{
-					if(((char*)data)[3] == 0x81) //can descrambling
+					if(((unsigned char*)data)[3] == 0x81) //can descrambling
 					{
 						status.checkcamdecrypt = -1;
 						debug(620, "cam say's he can handel decrypt");
@@ -1801,7 +1801,7 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 					while(status.checkcamdecrypt > 0)
 					{
 						status.checkcamdecrypt--;
-						usleep(20000);
+						usleep(30000);
 					}
 
 					if(status.checkcamdecrypt == -2)
