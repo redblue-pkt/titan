@@ -98,7 +98,7 @@ retry:
 			if(readret < 0 && errno == EAGAIN && c < 10)
 			{
 				c++;
-				usleep(100000);
+				usleep(300000);
 				goto retry;
 			}
 			*len = 0;
@@ -139,7 +139,8 @@ int cawrite(struct dvbdev* dvbnode, int fd, unsigned char* buf, int count, int f
 	}
 
 	ret = dvbwrite(fd, buf, count, tout);
-	if(ret >= 0 && ret == count) dvbnode->caslot->poll = 0;
+	if(ret >= 0 && ret == count && dvbnode != NULL && dvbnode->caslot != NULL) dvbnode->caslot->poll = 0;
+
 	return ret;
 }
 
@@ -1668,7 +1669,7 @@ void cathread(struct stimerthread* self, struct dvbdev* dvbnode)
 		if(dvbnode->caslot->fastrun == 0)
 			sleep(1);
 		else
-			usleep(100000);
+			usleep(300000);
 	}
 	debug(620, "CA thread end (slot %d)", dvbnode->devnr);
 }
@@ -1796,8 +1797,10 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 				{
 					status.checkcamdecrypt = 100;
 					buf[cmdpos] = 0x03;
+					buf[cmdpos - 6] = 0x04; //WA for alphacrypt, only delete all ca-pmt
 					sendSPDU(dvbnode, 0x90, NULL, 0, caservice[caservicenr].camanager, buf, len);
 					buf[cmdpos] = 0x01;
+					buf[cmdpos - 6] = 0x03;
 					while(status.checkcamdecrypt > 0)
 					{
 						status.checkcamdecrypt--;
