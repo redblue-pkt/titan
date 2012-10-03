@@ -57,7 +57,10 @@ char* putlocker(char* host, char* file)
 
 	tmphost = ostrcat("www.", host, 0, 0);
 	tmpfile = ostrcat("/file/", file, 0, 0);
+	debug(99, "tmphost: %s", tmphost);
 	ip = get_ip(tmphost);
+	debug(99, "ip: %s", ip);
+	debug(99, "tmpfile: %s", tmpfile);
 	tmpstr = gethttp(tmphost, tmpfile, 80, NULL, NULL, NULL, 0);
 
 	//get hash from tmpstr
