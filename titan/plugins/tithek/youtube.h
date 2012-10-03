@@ -48,7 +48,10 @@ char* youtube(char* link, char* url, char* name, int flag)
 				int max = count;
 				for(i = 0; i < max; i++)
 				{
-					printf("(%d) %s\n",i, (ret1[i]).part);
+					if(i == 0)
+						continue;
+	
+					debug(99, "(%d) round %s",i, (ret1[i]).part);
 					if(ostrstr(ret1[i].part, "type=video/webm") == NULL)
 					{
 						streamurl = ostrcat((ret1[i]).part, NULL, 0, 0);
@@ -67,7 +70,7 @@ char* youtube(char* link, char* url, char* name, int flag)
 								streamurl = ostrcat(ret2[0].part, NULL, 0, 0);
 								streamurl = ostrcat(streamurl, "&signature=", 1, 0);
 								streamurl = ostrcat(streamurl, sig, 1, 0);
-								printf("(%d) add streamurl %s\n",i, streamurl);
+								debug(99, "(%d) add streamurl %s",i, streamurl);
 							}
 							free(ret2); ret2 = NULL;					
 						}
@@ -82,7 +85,7 @@ char* youtube(char* link, char* url, char* name, int flag)
 								streamurl = ostrcat(ret2[0].part, NULL, 0, 0);
 								streamurl = ostrcat(streamurl, "&signature=", 1, 0);
 								streamurl = ostrcat(streamurl, sig, 1, 0);
-								printf("(%d) add streamurl %s\n",i, streamurl);
+								debug(99, "(%d) add streamurl %s",i, streamurl);
 							}
 							free(ret2); ret2 = NULL;					
 						}
@@ -120,8 +123,8 @@ char* youtube(char* link, char* url, char* name, int flag)
 						if(title == NULL)
 						{
 							title = ostrcat(_("unknown"), NULL, 0, 0);
-							printf("(%d) title == NULL streamurl %s\n",i, streamurl);
-							printf("(%d) ret1 %s\n",i, (ret1[i]).part);
+							debug(99, "(%d) title == NULL streamurl %s\n",i, streamurl);
+							debug(99, "(%d) ret1 %s\n",i, (ret1[i]).part);
 						}
 																																		
 						addmenulist(&mlist, title, streamurl, NULL, 0, 0);
