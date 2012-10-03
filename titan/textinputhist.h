@@ -117,7 +117,7 @@ char* textinputhist(char* title, char* text, char* histname)
 	if(pthread_self() != status.mainthread)
 	fromthread = 1;
 
-	changetitle(textinputhist, title);
+	changetitle(textinputhist, _(title));
 	height = textinputhist->height;
 	if(title != NULL)
 		textinputhist->height += textinputhist->fontsize + 6 + (textinputhist->bordersize * 2);
@@ -150,7 +150,7 @@ char* textinputhist(char* title, char* text, char* histname)
 		rcret = waitrc(textinputhist, 0, 0);
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 
-		if(rcret == getrcconfigint("rcok", NULL) && tmpstr != NULL && listbox->select != NULL && (input->input == NULL || ostrcmp(input->input, "NULL") == 0))
+		if(rcret == getrcconfigint("rcok", NULL) && tmpstr != NULL && listbox->select != NULL && (input->input == NULL || ostrcmp(input->input, " ") == 0))
 		{
 			changeinput(input, listbox->select->name);
 
