@@ -54,6 +54,7 @@ char* youtube(char* link, char* url, char* name, int flag)
 						streamurl = ostrcat((ret1[i]).part, NULL, 0, 0);
 						char* sig = NULL;
 						sig = string_resub("&sig=", "&", ret1[i].part, 0);
+						
 						if(ostrstr(ret1[i].part, "video/x-flv") != NULL)
 						{
 							ret1[i].part = string_replace("video/x-flv", "video/x-flv\n", ret1[i].part, 0);
@@ -64,8 +65,9 @@ char* youtube(char* link, char* url, char* name, int flag)
 							{
 								free(streamurl), streamurl = NULL;
 								streamurl = ostrcat(ret2[0].part, NULL, 0, 0);
-								streamurl = ostrcat(streamurl, "&sig=", 1, 0);
+								streamurl = ostrcat(streamurl, "&signature=", 1, 0);
 								streamurl = ostrcat(streamurl, sig, 1, 0);
+								printf("(%d) add streamurl %s\n",i, streamurl);
 							}
 							free(ret2); ret2 = NULL;					
 						}
@@ -78,8 +80,9 @@ char* youtube(char* link, char* url, char* name, int flag)
 							{
 								free(streamurl), streamurl = NULL;
 								streamurl = ostrcat(ret2[0].part, NULL, 0, 0);
-								streamurl = ostrcat(streamurl, "&sig=", 1, 0);
+								streamurl = ostrcat(streamurl, "&signature=", 1, 0);
 								streamurl = ostrcat(streamurl, sig, 1, 0);
+								printf("(%d) add streamurl %s\n",i, streamurl);
 							}
 							free(ret2); ret2 = NULL;					
 						}
@@ -115,7 +118,11 @@ char* youtube(char* link, char* url, char* name, int flag)
 							title = ostrcat("3GP 144p MPEG-4 Visual Simple", NULL, 0, 0);
 						
 						if(title == NULL)
+						{
 							title = ostrcat(_("unknown"), NULL, 0, 0);
+							printf("(%d) title == NULL streamurl %s\n",i, streamurl);
+							printf("(%d) ret1 %s\n",i, (ret1[i]).part);
+						}
 																																		
 						addmenulist(&mlist, title, streamurl, NULL, 0, 0);
 						free(title), title = NULL;					
