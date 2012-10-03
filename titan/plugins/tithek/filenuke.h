@@ -38,6 +38,7 @@ unsigned char* filenukereceive(int* sock)
 
 char* filenuke(char* host, char* file)
 {
+	debug(99, "in host: %s file: %s", host, file);
 	char* tmphost = NULL;
 	char* tmpfile = NULL;
 	char* tmpstr = NULL;
@@ -59,19 +60,24 @@ char* filenuke(char* host, char* file)
 	tmpfile = ostrcat("/", file, 0, 0);
 	ip = get_ip(tmphost);
 	tmpstr = gethttp(tmphost, tmpfile, 80, NULL, NULL, NULL, 0);
+	debug(99, "write file");
+writesys("/tmp/filenuke", tmpstr, 0);
 
 	//get hash from tmpstr
 	char* pos1 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"fname\" value=");
 	fname = getxmlentry(pos1, "value=");
+	debug(99, "fname: %s", fname);
 	if(fname == NULL) goto end;
 
 	char* pos2 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"id\" value=");
 	id = getxmlentry(pos2, "value=");
+	debug(99, "id: %s", id);
 	if(id == NULL) goto end;
 
 	char* pos3 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"op\" value=");
 	op = getxmlentry(pos3, "value=");
 	free(tmpstr); tmpstr = NULL;
+	debug(99, "op: %s", op);
 	if(op == NULL) goto end;
 
 	hash = ostrcat(hash, "id=", 1, 0);	
