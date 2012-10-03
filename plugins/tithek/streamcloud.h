@@ -38,6 +38,7 @@ unsigned char* streamcloudreceive(int* sock)
 
 char* streamcloud(char* host, char* file)
 {
+	debug(99, "in host: %s file: %s", host, file);
 	char* tmphost = NULL;
 	char* tmpfile = NULL;
 	char* tmpstr = NULL;
@@ -69,10 +70,12 @@ char* streamcloud(char* host, char* file)
 	//get hash from tmpstr
 	char* pos1 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"fname\" value=");
 	fname = getxmlentry(pos1, "value=");
+	debug(99, "fname: %s", fname);
 	if(fname == NULL) goto end;
 
 	char* pos2 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"id\" value=");
 	id = getxmlentry(pos2, "value=");
+	debug(99, "id: %s", id);
 	if(id == NULL) goto end;
 
 	char* pos3 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"op\" value=");
@@ -91,6 +94,7 @@ char* streamcloud(char* host, char* file)
 	usr_login = getxmlentry(pos7, "value=");
 	
 	free(tmpstr); tmpstr = NULL;
+	debug(99, "op: %s", op);
 	if(op == NULL) goto end;
 
 	hash = ostrcat(hash, "hash=", 1, 0);

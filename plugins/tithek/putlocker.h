@@ -38,6 +38,7 @@ unsigned char* putlockereceive(int* sock)
 
 char* putlocker(char* host, char* file)
 {
+	debug(99, "in host: %s file: %s", host, file);
 	int sock = -1, ret = 0;
 	char* tmphost = NULL;
 	char* tmpfile = NULL;
@@ -63,6 +64,7 @@ char* putlocker(char* host, char* file)
 	char* pos = ostrstr(tmpstr, "<input type=\"hidden\" value=");
 	hashstr = getxmlentry(pos, "value=");
 	free(tmpstr); tmpstr = NULL;
+	debug(99, "hashstr: %s", hashstr);
 	if(hashstr == NULL) goto end;
 
 	hash = ostrcat(hash, "hash=", 1, 0);	
