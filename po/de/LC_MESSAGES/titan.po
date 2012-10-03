@@ -2606,3 +2606,6 @@ msgstr "Listeneintrag Löschen"
 
 msgid "Streaming version of this file is currently not available. You can download it below."
 msgstr "Streaming-Version dieser Datei ist derzeit nicht verfügbar. Sie können es nur downloaden."
+
+msgid "Autocheck cam can decrypt"
+msgstr "Automatisches überprüfen ob Ihr Cam entschlüsseln kann ?"
