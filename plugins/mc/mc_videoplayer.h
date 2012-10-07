@@ -404,7 +404,7 @@ void screenmc_videoplayer()
 			if(status.play == 1 && playertype == 0)
 			{
 				char* tmpfilename = ostrcat(filename, NULL, 0, 0);
-				char* fileseek = ostrcat("/mnt/player/", basename(tmpfilename), 0, 0);
+				char* fileseek = ostrcat("/var/swap/player/", basename(tmpfilename), 0, 0);
 				fileseek = ostrcat(fileseek, ".se", 0, 0);
 				FILE* fbseek = fopen(fileseek, "w");
 				if(fbseek != NULL)
@@ -469,7 +469,7 @@ void screenmc_videoplayer()
 			if(status.play == 1 && playertype == 0)
 			{
 				char* tmpfilename = ostrcat(filename, NULL, 0, 0);
-				char* fileseek = ostrcat("/mnt/player/", basename(tmpfilename), 0, 0);
+				char* fileseek = ostrcat("/var/swap/player/", basename(tmpfilename), 0, 0);
 				fileseek = ostrcat(fileseek, ".se", 0, 0);
 				FILE* fbseek = fopen(fileseek, "w");
 				if(fbseek != NULL)
@@ -714,7 +714,7 @@ void screenmc_videoplayer()
 						if(playertype == 0)
 						{
 							char* tmpfilename = ostrcat(filename, NULL, 0, 0);
-							char* fileseek = ostrcat("/mnt/player/", basename(tmpfilename), 0, 0);
+							char* fileseek = ostrcat("/var/swap/player/", basename(tmpfilename), 0, 0);
 							fileseek = ostrcat(fileseek, ".se", 0, 0);
 	
 							FILE* fbseek = fopen(fileseek, "r");
@@ -757,7 +757,7 @@ void screenmc_videoplayer()
 			if(status.play == 1)
 			{
 				char* tmpfilename = ostrcat(filename, NULL, 0, 0);
-				char* fileseek = ostrcat("/mnt/player/", basename(tmpfilename), 0, 0);
+				char* fileseek = ostrcat("/var/swap/player/", basename(tmpfilename), 0, 0);
 				fileseek = ostrcat(fileseek, ".se", 0, 0);
 				unlink(fileseek);
 			
