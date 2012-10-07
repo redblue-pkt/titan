@@ -331,7 +331,7 @@ void kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlab
 					}
 					else
 					{
-						tmpstr2 = ostrcat("unknown", 0, 0);
+						tmpstr2 = ostrcat("unknown", NULL, 0, 0);
 						hname = ostrcat(hname, " (coming soon)", 1, 0);
 						type = 66;
 					}
@@ -515,9 +515,15 @@ void kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* c
 					{
 						tmpstr2 = ret2[3].part;
 					}				
-					else
+					else if(ret2 != NULL && count2 > 2)
 					{
 						tmpstr2 = ret2[2].part;
+						hname = ostrcat(hname, " (coming soon)", 1, 0);
+						type = 66;
+					}
+					else
+					{
+						tmpstr2 = ostrcat("unknown", NULL, 0, 0);
 						hname = ostrcat(hname, " (coming soon)", 1, 0);
 						type = 66;
 					}
