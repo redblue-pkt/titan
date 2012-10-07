@@ -323,13 +323,19 @@ void kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlab
 					{
 						tmpstr2 = ret2[3].part;
 					}				
-					else
+					else if(ret2 != NULL && count2 > 2)
 					{
 						tmpstr2 = ret2[2].part;
 						hname = ostrcat(hname, " (coming soon)", 1, 0);
 						type = 66;
 					}
-	
+					else
+					{
+						tmpstr2 = ostrcat("unknown", 0, 0);
+						hname = ostrcat(hname, " (coming soon)", 1, 0);
+						type = 66;
+					}
+						
 					free(ret2), ret2 = NULL;
 					debug(99, "hname: %s", hname);
 					debug(99, "url: %s", url);
