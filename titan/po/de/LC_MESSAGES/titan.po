@@ -2609,3 +2609,9 @@ msgstr "Streaming-Version dieser Datei ist derzeit nicht verfügbar. Sie können e
 
 msgid "Autocheck cam can decrypt"
 msgstr "Automatisches überprüfen ob Ihr Cam entschlüsseln kann ?"
+
+msgid "Enable Cable Tuner ?"
+msgstr "Wollen Sie den Kabel Tuner aktivieren ?"
+
+msgid "Please install ipk Cable Settings, scan currenty not supportet !"
+msgstr "Bitte installieren Sie die Kabel Settings im Erweiterungsmenu !\nKabel Suchlauf wird noch nicht unterstützt !"
