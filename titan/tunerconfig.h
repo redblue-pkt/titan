@@ -479,6 +479,23 @@ int screentunerreceptiondvbc(struct dvbdev* tuner)
 			ret = 1;
 			deltranspondertunablestatus();
 			writetunerconfig(tuner, tunerreceptiondvbc);
+
+// cable workaround	start
+
+			if(textbox(_("Message"), _("Enable Cable Tuner ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+			{
+				tmpstr = ostrcat(tuner->feshortname, "_sat1", 0, 0);
+				addconfigint(tmpstr, "15");
+				free(tmpstr); tmpstr = NULL;
+				writeallconfig(1);
+	
+				tmpstr = ostrcat(tuner->feshortname, "_maxsat", 0, 0);
+				addconfigint(tmpstr, "1");
+				free(tmpstr); tmpstr = NULL;
+				writeallconfig(1);
+				textbox(_("Message"), _("Please install ipk Cable Settings, scan currenty not supportet !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+			}
+// cable workaround	end
 			break;
 		}
 	}
