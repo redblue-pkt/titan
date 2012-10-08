@@ -242,6 +242,16 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Fullusb Update ?"), 1, 0);
 					}
+					else if(ostrstr(filelist->select->text, ".tar.gz") != NULL)
+					{
+						//char* device = getconfig("device", NULL);
+						cmd = ostrcat(cmd, device->ret, 1, 0);
+						cmd = ostrcat(cmd, " ", 1, 0);
+						cmd = ostrcat(cmd, tmpstr, 1, 0);
+						cmd = ostrcat(cmd, auth, 1, 0);
+						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
+						msgtxt = ostrcat(msgtxt, _("starting Usb (unknown release grp) Update ?"), 1, 0);
+					}
 				}
 				else
 				{
@@ -299,6 +309,15 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Fullusb Update ?"), 1, 0);
+					}
+					else if(ostrstr(filelist->select->text, ".tar.gz") != NULL)
+					{
+						//char* device = getconfig("device", NULL);
+						cmd = ostrcat(cmd, device->ret, 1, 0);
+						cmd = ostrcat(cmd, " ", 1, 0);
+						cmd = ostrcat(cmd, tmpstr, 1, 0);
+						cmd = ostrcat(cmd, auth, 1, 0);
+						msgtxt = ostrcat(msgtxt, _("starting Usb (unknown release grp) Update ?"), 1, 0);
 					}
 				}
 				clearscreen(systemupdate);
