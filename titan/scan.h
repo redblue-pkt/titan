@@ -1105,10 +1105,10 @@ void scanchangesat(struct skin* sat, struct transponder* tpnode, char* feshortna
 
 	changeinput(sat, NULL);
 	changechoiceboxvalue(sat, NULL);
-	tmpstr = getsatstring(feshortname);
+	tmpstr = getsatstring(feshortname, FE_QPSK);
 	changeinput(sat, tmpstr);
 	free(tmpstr); tmpstr = NULL;
-	tmpstr = getorbitalposstring(feshortname);
+	tmpstr = getorbitalposstring(feshortname, FE_QPSK);
 	changechoiceboxvalue(sat, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	if(tpnode != NULL)

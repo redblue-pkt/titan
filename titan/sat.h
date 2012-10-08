@@ -31,7 +31,7 @@ struct sat* getsatbyorbitalpos(int orbitalpos)
 	return NULL;
 }
 
-char* getorbitalposstring(char* feshortname)
+char* getorbitalposstring(char* feshortname, int fetype)
 {
 	int i = 0, orbitalpos = 0;
 	struct sat* node = sat;
@@ -61,7 +61,7 @@ char* getorbitalposstring(char* feshortname)
 	{
 		while(node != NULL)
 		{
-			if(node->fetype == FE_QPSK)
+			if(node->fetype == fetype)
 			{
 				tmp = oitoa(node->orbitalpos);
 				str = ostrcat(str, tmp, 1, 1);
@@ -74,7 +74,7 @@ char* getorbitalposstring(char* feshortname)
 	return str;
 }
 
-char* getsatstring(char* feshortname)
+char* getsatstring(char* feshortname, int fetype)
 {
 	int i = 0, orbitalpos = 0;
 	struct sat* node = sat;
@@ -103,7 +103,7 @@ char* getsatstring(char* feshortname)
 	{
 		while(node != NULL)
 		{
-			if(node->fetype == FE_QPSK)
+			if(node->fetype == fetype)
 			{
 				str = ostrcat(str, node->name, 1, 0);
 				str = ostrcat(str, "\n", 1, 0);

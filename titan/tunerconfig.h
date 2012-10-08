@@ -1,7 +1,7 @@
 #ifndef TUNERCONFIG_H
 #define TUNERCONFIG_H
 
-void writetunerconfig(struct dvbdev* tuner, struct skin* tunerreceptiondvbs)
+void writetunerconfigsat(struct dvbdev* tuner, struct skin* tunerreceptiondvbs)
 {
 	if(tuner == NULL) return;
 	if(tunerreceptiondvbs == NULL) return;
@@ -17,7 +17,36 @@ void writetunerconfig(struct dvbdev* tuner, struct skin* tunerreceptiondvbs)
 			if(ostrstr(child->name, "_sat") != NULL && child->ret != NULL && ostrcmp(child->ret, "0") != 0)
 			{
 				if(child->handle != NULL)
-                			tmpnr = oitoa((int)child->handle);
+					tmpnr = oitoa((int)child->handle);
+				tmpstr = ostrcat(tuner->feshortname, "_satnr", 0, 0);
+				tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
+				addconfigtmp(tmpstr, tmpnr);
+				free(tmpstr); tmpstr = NULL;
+				free(tmpnr); tmpnr = NULL;
+			}
+		}
+		child = child->next;
+	}
+	writeconfigtmp();
+}
+
+void writetunerconfigcable(struct dvbdev* tuner, struct skin* tunerreceptiondvbc)
+{
+	if(tuner == NULL) return;
+	if(tunerreceptiondvbc == NULL) return;
+
+	struct skin* child = tunerreceptiondvbc->child;
+	char* tmpstr = NULL, *tmpnr = NULL;
+
+	while(child != NULL)
+	{
+		if(child->del == 1 && child->name != NULL)
+		{
+			addconfigscreentmpcheck(child->name, child, "0");
+			if(ostrstr(child->name, "_sat") != NULL && child->ret != NULL && ostrcmp(child->ret, "0") != 0)
+			{
+				if(child->handle != NULL)
+					tmpnr = oitoa((int)child->handle);
 				tmpstr = ostrcat(tuner->feshortname, "_satnr", 0, 0);
 				tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
 				addconfigtmp(tmpstr, tmpnr);
@@ -38,9 +67,9 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 	char* tmpstr = NULL, *tmpnr = NULL;
 	struct skin* tmp = NULL;
 
-	satstring = getsatstring(NULL);
+	satstring = getsatstring(NULL, FE_QPSK);
 	maxsatstring = getmaxsatstring(maxsat);
-	orbitalposstring = getorbitalposstring(NULL);
+	orbitalposstring = getorbitalposstring(NULL, FE_QPSK);
 
 	tmp = addlistbox(tunerreceptiondvbs, listbox, tmp, 1);
 	if(tmp != NULL)
@@ -248,19 +277,6 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 			tmp->del = 1;
 		}
 
-/*
-		tmp = addlistbox(tunerreceptiondvbs, listbox, NULL, 1);
-		if(tmp != NULL)
-		{
-			tmp->type = CHOICEBOX;
-			changetext(tmp, _("Rotor Position"));
-			tmpstr = ostrcat(_("no"), "\n", 0, 0);
-			tmpstr = ostrcat(tmpstr, maxsatstring, 1, 0);
-			changeinput(tmp, tmpstr);
-			free(tmpstr); tmpstr = NULL;
-		}
-*/
-
 		tmp = addlistbox(tunerreceptiondvbs, listbox, tmp, 1);
 		if(tmp != NULL)
 		{
@@ -277,15 +293,51 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 	free(orbitalposstring);
 }
 
+void createcablelist(struct dvbdev* tuner, struct skin* tunerreceptiondvbc, struct skin* listbox)
+{
+	char *satstring = NULL;
+	char* orbitalposstring = NULL;
+	char* tmpstr = NULL;
+	struct skin* tmp = NULL;
+
+	satstring = getsatstring(NULL, FE_QAM);
+	orbitalposstring = getorbitalposstring(NULL, FE_QAM);
+
+	tmp = addlistbox(tunerreceptiondvbc, listbox, tmp, 1);
+	if(tmp != NULL)
+	{
+		tmp->type = CHOICEBOX;
+		changetext(tmp, _("Cable"));
+
+		tmpstr = ostrcat(_("undefined"), "\n", 0, 0);
+		tmpstr = ostrcat(tmpstr, satstring, 1, 0);
+
+		changeinput(tmp, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat("0\n", orbitalposstring, 0, 0);
+		changechoiceboxvalue(tmp, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(tuner->feshortname, "_sat", 0, 0);
+		tmpstr = ostrcat(tmpstr, "1", 1, 0);
+		changename(tmp, tmpstr);
+		setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
+		free(tmpstr); tmpstr = NULL;
+
+		tmp->handle = (char*)1;
+		tmp->del = 1;
+	}
+
+	free(satstring);
+	free(orbitalposstring);
+}
+
 int screentunerreceptiondvbs(struct dvbdev* tuner)
 {
 	int rcret = 0, ret = 0, maxsat = 1;
 	struct skin* tunerreceptiondvbs = getscreen("tunerreceptiondvbs");
 	struct skin* listbox = getscreennode(tunerreceptiondvbs, "listbox");
-//	struct skin* longitude = getscreennode(tunerreceivedvbs, "longitude");
-//	struct skin* east_west = getscreennode(tunerreceivedvbs, "east_west");
-//	struct skin* latitude = getscreennode(tunerreceivedvbs, "latitude");
-//	struct skin* north_south = getscreennode(tunerreceivedvbs, "north_south");
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL;
 	
@@ -305,13 +357,6 @@ int screentunerreceptiondvbs(struct dvbdev* tuner)
 
 start:
 	createsatlist(tuner, tunerreceptiondvbs, listbox, maxsat);
-/*
-	addchoicebox(east_west, "0", _("east"));
-	addchoicebox(east_west, "1", _("west"));
-
-	addchoicebox(north_south, "0", _("north"));
-	addchoicebox(north_south, "0", _("south"));
-*/
 
 	drawscreen(tunerreceptiondvbs, 0, 0);
 	addscreenrc(tunerreceptiondvbs, listbox);
@@ -399,7 +444,7 @@ start:
 		{
 			ret = 1;
 			deltranspondertunablestatus();
-			writetunerconfig(tuner, tunerreceptiondvbs);
+			writetunerconfigsat(tuner, tunerreceptiondvbs);
 			tmpstr = ostrcat(tuner->feshortname, "_maxsat", 0, 0);
 			addconfigint(tmpstr, maxsat);
 			free(tmpstr); tmpstr = NULL;
@@ -416,7 +461,6 @@ start:
 	return ret;
 }
 
-//TODO: implement
 int screentunerreceptiondvbc(struct dvbdev* tuner)
 {
 	int rcret = 0, ret = 0;
@@ -434,32 +478,7 @@ int screentunerreceptiondvbc(struct dvbdev* tuner)
 		return 0;
 	}
 
-	tmp = addlistbox(tunerreceptiondvbc, listbox, tmp, 1);
-	if(tmp != NULL)
-	{
-		changetext(tmp, _("type of channelsearch"));
-		changename(tmp, "searchtype");
-		addchoicebox(tmp, "0", _("Provider"));
-		addchoicebox(tmp, "1", _("Freqiency"));
-		tmp->type = CHOICEBOX;
-
-		tmpstr = ostrcat(tuner->feshortname, "_searchtype", 0, 0);
-		setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
-		free(tmpstr); tmpstr = NULL;
-	}
-	tmp = addlistbox(tunerreceptiondvbc, listbox, tmp, 1);
-	if(tmp != NULL)
-	{
-		changetext(tmp, _("search EU VHF I"));
-		changename(tmp, "searcheuvhfi");
-		addchoicebox(tmp, "1", _("yes"));
-		addchoicebox(tmp, "0", _("no"));
-		tmp->type = CHOICEBOX;
-
-		tmpstr = ostrcat(tuner->feshortname, "_searcheuvhfi", 0, 0);
-		setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
-		free(tmpstr); tmpstr = NULL;
-	}
+	createcablelist(tuner, tunerreceptiondvbc, listbox);
 
 	drawscreen(tunerreceptiondvbc, 0, 0);
 	addscreenrc(tunerreceptiondvbc, listbox);
@@ -478,31 +497,18 @@ int screentunerreceptiondvbc(struct dvbdev* tuner)
 		{
 			ret = 1;
 			deltranspondertunablestatus();
-			writetunerconfig(tuner, tunerreceptiondvbc);
-
-// cable workaround	start
-
-			if(textbox(_("Message"), _("Enable Cable Tuner ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-			{
-				tmpstr = ostrcat(tuner->feshortname, "_sat1", 0, 0);
-				addconfigint(tmpstr, 15);
-				free(tmpstr); tmpstr = NULL;
-				writeallconfig(1);
+			writetunerconfigcable(tuner, tunerreceptiondvbc);
 	
-				tmpstr = ostrcat(tuner->feshortname, "_maxsat", 0, 0);
-				addconfigint(tmpstr, 1);
-				free(tmpstr); tmpstr = NULL;
-				writeallconfig(1);
-				textbox(_("Message"), _("Please install ipk Cable Settings, scan currenty not supportet !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
-			}
-// cable workaround	end
+			tmpstr = ostrcat(tuner->feshortname, "_maxsat", 0, 0);
+			addconfigint(tmpstr, 1);
+			free(tmpstr); tmpstr = NULL;
+			writeallconfig(1);
 			break;
 		}
 	}
 
 	delconfigtmpall();
 	delmarkedscreennodes(tunerreceptiondvbc, 1);
-	delmarkedscreennodes(tunerreceptiondvbc, 2);
 	delownerrc(tunerreceptiondvbc);
 	clearscreen(tunerreceptiondvbc);
 	return ret;
