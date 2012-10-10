@@ -812,7 +812,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	{
 		while(dvbnode != NULL)
 		{
-			if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL && dvbnode->felock < 1 && dvbnode->feinfo->type == FE_QPSK)
+			if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL && dvbnode->felock < 1)
 			{
 				if(ostrcmp(dvbnode->feshortname, tuner) == 0)
 				{
@@ -917,7 +917,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	while(1)
 	{
 		//satname
-		tmpstr = ostrcat(tmpstr, _("Sat: "), 1, 0);
+		tmpstr = ostrcat(tmpstr, _("Sat/Provider: "), 1, 0);
 		tmpstr = ostrcat(tmpstr, scaninfo.satname, 1, 0);
 		changetext(satname, tmpstr);
 		free(tmpstr); tmpstr = NULL;
@@ -1028,7 +1028,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	resetsatscan();
 }
 
-void changescantype(char* scantype, struct skin* scan, struct skin* listbox, struct skin* tuner, struct skin* satellite, struct skin* system, struct skin* frequency, struct skin* inversion, struct skin* symbolrate, struct skin* polarization, struct skin* fec, struct skin* modulation, struct skin* rolloff, struct skin* pilot)
+void changescantype(char* scantype, struct skin* scan, struct skin* listbox, struct skin* tuner, struct skin* satellite, struct skin* system, struct skin* frequency, struct skin* inversion, struct skin* symbolrate, struct skin* polarization, struct skin* fec, struct skin* modulation, struct skin* rolloff, struct skin* pilot, int flag)
 {
 	struct sat* satnode = sat;
 	struct skin* tmp = NULL;
@@ -1097,6 +1097,16 @@ void changescantype(char* scantype, struct skin* scan, struct skin* listbox, str
 		tuner->hidden = YES;
 		satellite->hidden = YES;
 	}
+
+	if(flag == 10)
+	{
+		system->hidden = YES;
+		inversion->hidden = YES;
+		polarization->hidden = YES;
+		rolloff->hidden = YES;
+		pilot->hidden = YES;
+		satellite->hidden = YES;
+	}
 }
 
 void scanchangesat(struct skin* sat, struct transponder* tpnode, char* feshortname)
@@ -1119,11 +1129,12 @@ void scanchangesat(struct skin* sat, struct transponder* tpnode, char* feshortna
 	}
 }
 
-//flag 0: manual scan
+//flag 0: manual scan DVB-S
 //flag 1: auto scan
+//flag 10: manual scan DVB-C
 void screenscanconfig(int flag)
 {
-	int rcret = 0;
+	int rcret = 0, fetype = -1;
 	unsigned int ifrequency = -1, isymbolrate = -1;
 	int iscantype = -1, isat = -1;
 	int iinversion = -1, ipolarization = -1;
@@ -1184,10 +1195,13 @@ void screenscanconfig(int flag)
 	changeinput(pilot, NULL);
 	changechoiceboxvalue(pilot, NULL);
 
+	if(flag < 10) fetype = FE_QPSK;
+	if(flag >= 10 && flag < 20) fetype = FE_QAM;
+
 	//tuner
 	while(dvbnode != NULL)
 	{
-		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL && dvbnode->felock < 1 && dvbnode->feinfo->type == FE_QPSK)
+		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL && dvbnode->felock < 1 && dvbnode->feinfo->type == fetype)
 		{
 			treffer = 0;
 			if(dvbnode->feshortname != NULL)
@@ -1248,13 +1262,19 @@ void screenscanconfig(int flag)
 		addchoicebox(scantype, "2", _("Multi Sat"));
 		setchoiceboxselection(scantype, "0");
 	}
+	else if(flag == 10)
+	{
+		addchoicebox(scantype, "0", _("Single Transponder"));
+		addchoicebox(scantype, "1", _("Single Provider"));
+		setchoiceboxselection(scantype, "0");
+	}
 	else
 	{
 		addchoicebox(scantype, "3", _("Auto Scan"));
 		setchoiceboxselection(scantype, "3");
 	}
 
-	changescantype(scantype->ret, scan, listbox, tuner, sat, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot);
+	changescantype(scantype->ret, scan, listbox, tuner, sat, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, flag);
 
 	//sat
 	scanchangesat(sat, tpnode, feshortname);
@@ -1422,12 +1442,12 @@ void screenscanconfig(int flag)
 		if(listbox->select != NULL && ostrcmp(listbox->select->name, "tuner") == 0)
 		{
 			scanchangesat(sat, tpnode, listbox->select->ret);
-			changescantype(scantype->ret, scan, listbox, tuner, sat, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot);
+			changescantype(scantype->ret, scan, listbox, tuner, sat, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, flag);
 			drawscreen(scan, 0, 0);
 		}
 		if(listbox->select != NULL && ostrcmp(listbox->select->name, "scantype") == 0)
 		{
-			changescantype(scantype->ret, scan, listbox, tuner, sat, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot);
+			changescantype(scantype->ret, scan, listbox, tuner, sat, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, flag);
 			drawscreen(scan, 0, 0);
 
 		}
