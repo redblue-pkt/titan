@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+void screensystem_infos(int mode);
+void screensystem_infos_sysinfo(int mode);
+
 char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect, char* header, long* clen);
 int sockreceive(int *fd, unsigned char* data, int count, int timeout);
 
