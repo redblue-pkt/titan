@@ -579,6 +579,90 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screensystem_update(3);
 	}
+	else if(ostrcmp("system_infos_default", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensystem_infos(0);
+	}
+	else if(ostrcmp("system_infos_free", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensystem_infos(1);
+	}
+	else if(ostrcmp("system_infos_kernel", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensystem_infos(2);
+	}
+	else if(ostrcmp("system_infos_mounts", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensystem_infos(3);
+	}
+	else if(ostrcmp("system_infos_network", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensystem_infos(4);
+	}
+	else if(ostrcmp("system_infos_ram", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensystem_infos(5);
+	}
+	else if(ostrcmp("system_infos", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		resettvpic();
+		struct skin* screen = getscreen("system_infos_main");
+		menu(screen, 0);
+	}
+	else if(ostrcmp("system_infos_sysinfo", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		resettvpic();
+		struct skin* screen = getscreen("system_sysinfos_main");
+		menu(screen, 0);
+	}
+	else if(ostrcmp("system_sysinfos_cpu", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensystem_infos_sysinfo(0);
+	}
+	else if(ostrcmp("system_sysinfos_mem", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensystem_infos_sysinfo(1);
+	}
+	else if(ostrcmp("system_sysinfos_mtd", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensystem_infos_sysinfo(2);
+	}
+	else if(ostrcmp("system_sysinfos_module", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensystem_infos_sysinfo(3);
+	}
+	else if(ostrcmp("system_sysinfos_devices", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensystem_infos_sysinfo(4);
+	}
+	else if(ostrcmp("system_sysinfos_swap", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensystem_infos_sysinfo(5);
+	}
+	else if(ostrcmp("system_sysinfos_top", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensystem_infos_sysinfo(6);
+	}
+	else if(ostrcmp("system_sysinfos_ps", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensystem_infos_sysinfo(7);
+	}
 	else if(ostrcmp("infos_serial", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;

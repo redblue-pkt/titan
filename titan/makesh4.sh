@@ -8,51 +8,63 @@ KERNELDIR=$7
 ROOTDIR=$8
 IPKDIR=$9
 VERSION=${10}
-
-skipstuff=1
+BUILDTYPE=${11}
 
 if [ -z "$TYPE" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
 	exit 1
 fi
 
 if [ -z "$STM" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
 	exit 1
 fi
 
 if [ -z "$MEDIAFW" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
 	exit 1
 fi
 
 if [ -z "$SVNUSER" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
 	exit 1
 fi
 
 if [ -z "$SVNPASS" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
 	exit 1
 fi
 
 if [ -z "$SVNURL" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
 	exit 1
 fi
 
 if [ -z "$KERNELDIR" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
 	exit 1
 fi
 
 if [ -z "$ROOTDIR" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
 	exit 1
 fi
 
 if [ -z "$IPKDIR" ]; then
-	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir>"
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
+	exit 1
+fi
+
+if [ -z "$VERSION" ]; then
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
+	exit 1
+fi
+
+if [ -z "$BUILDTYPE" ]; then
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
+	echo BUILDTYPE 0 = build all
+	echo BUILDTYPE 1 = build libdreamdvd and titan
+	echo BUILDTYPE 2 = build titan only
 	exit 1
 fi
 
@@ -117,7 +129,7 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] Ipkdir done"
 echo "[titan]--------------------------------------------------------"
 
-if [ $skipstuff == 1 ]; then
+if [ $BUILDTYPE == 0 ]; then
 	echo "[titan]--------------------------------------------------------"
 	echo "[titan] netsurf"
 	echo "[titan]--------------------------------------------------------"
@@ -327,43 +339,45 @@ if [ $skipstuff == 1 ]; then
 	fi
 fi
 
-echo "[titan]--------------------------------------------------------"
-echo "[titan] libipkg"
-echo "[titan]--------------------------------------------------------"
-cd "$HOME"/flashimg/source.titan/libipkg
-./makesh4.sh $STM
-cd "$HOME"/flashimg/source.titan/titan
-if [ ! -e "$HOME"/flashimg/source.titan/libipkg/.libs/libipkg.so.0.0.0 ]; then
+if [ $BUILDTYPE == 0 ] || [ $BUILDTYPE == 1 ]; then
 	echo "[titan]--------------------------------------------------------"
-	echo "[titan] ipkg building error !!!"
-	echo "[titan] check your src"
+	echo "[titan] libipkg"
 	echo "[titan]--------------------------------------------------------"
-	exit 1
+	cd "$HOME"/flashimg/source.titan/libipkg
+	./makesh4.sh $STM
+	cd "$HOME"/flashimg/source.titan/titan
+	if [ ! -e "$HOME"/flashimg/source.titan/libipkg/.libs/libipkg.so.0.0.0 ]; then
+		echo "[titan]--------------------------------------------------------"
+		echo "[titan] ipkg building error !!!"
+		echo "[titan] check your src"
+		echo "[titan]--------------------------------------------------------"
+		exit 1
+	fi
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] libipkg done"
+	echo "[titan]--------------------------------------------------------"
+	
+	###
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] libdreamdvd"
+	echo "[titan]--------------------------------------------------------"
+	cd "$HOME"/flashimg/source.titan/libdreamdvd
+	./makesh4.sh $STM
+	cd "$HOME"/flashimg/source.titan/titan
+	if [ ! -e "$HOME"/flashimg/source.titan/libdreamdvd/.libs/libdreamdvd.so.0.0.0 ]; then
+		echo "[titan]--------------------------------------------------------"
+		echo "[titan] libdreamdvd building error !!!"
+		echo "[titan] check your src"
+		echo "[titan]--------------------------------------------------------"
+		exit 1
+	fi
+	cp "$HOME"/flashimg/source.titan/libdreamdvd/.libs/libdreamdvd.so.0.0.0 "$ROOTDIR"/lib
+	
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] libdreamdvd done"
+	echo "[titan]--------------------------------------------------------"
+	###
 fi
-echo "[titan]--------------------------------------------------------"
-echo "[titan] libipkg done"
-echo "[titan]--------------------------------------------------------"
-
-###
-echo "[titan]--------------------------------------------------------"
-echo "[titan] libdreamdvd"
-echo "[titan]--------------------------------------------------------"
-cd "$HOME"/flashimg/source.titan/libdreamdvd
-./makesh4.sh $STM
-cd "$HOME"/flashimg/source.titan/titan
-if [ ! -e "$HOME"/flashimg/source.titan/libdreamdvd/.libs/libdreamdvd.so.0.0.0 ]; then
-	echo "[titan]--------------------------------------------------------"
-	echo "[titan] libdreamdvd building error !!!"
-	echo "[titan] check your src"
-	echo "[titan]--------------------------------------------------------"
-	exit 1
-fi
-cp "$HOME"/flashimg/source.titan/libdreamdvd/.libs/libdreamdvd.so.0.0.0 "$ROOTDIR"/lib
-
-echo "[titan]--------------------------------------------------------"
-echo "[titan] libdreamdvd done"
-echo "[titan]--------------------------------------------------------"
-###
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] update git cdkroot"
