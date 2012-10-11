@@ -78,44 +78,6 @@ int panel_menucall(struct skin* panel_menuentry)
 	}
 	else if(ostrcmp("panel_settings_fancontrol", panel_menuentry->name) == 0)
 		screenpanel_settings_fancontrol();
-	else if(ostrcmp("panel_infos_main", panel_menuentry->name) == 0)
-	{
-		struct skin* screen = getscreen("panel_infos_main");
-		panel_menu(screen);
-	}
-	else if(ostrcmp("panel_infos_default", panel_menuentry->name) == 0)
-		screenpanel_infos(0);
-	else if(ostrcmp("panel_infos_free", panel_menuentry->name) == 0)
-		screenpanel_infos(1);
-	else if(ostrcmp("panel_infos_kernel", panel_menuentry->name) == 0)
-		screenpanel_infos(2);
-	else if(ostrcmp("panel_infos_mounts", panel_menuentry->name) == 0)
-		screenpanel_infos(3);
-	else if(ostrcmp("panel_infos_network", panel_menuentry->name) == 0)
-		screenpanel_infos(4);
-	else if(ostrcmp("panel_infos_ram", panel_menuentry->name) == 0)
-		screenpanel_infos(5);
-	else if(ostrcmp("panel_infos_sysinfo", panel_menuentry->name) == 0)
-	{
-		struct skin* screen = getscreen("panel_sysinfos_main");
-		panel_menu(screen);
-	}
-	else if(ostrcmp("panel_sysinfos_cpu", panel_menuentry->name) == 0)
-		screenpanel_infos_sysinfo(0);
-	else if(ostrcmp("panel_sysinfos_mem", panel_menuentry->name) == 0)
-		screenpanel_infos_sysinfo(1);
-	else if(ostrcmp("panel_sysinfos_mtd", panel_menuentry->name) == 0)
-		screenpanel_infos_sysinfo(2);
-	else if(ostrcmp("panel_sysinfos_module", panel_menuentry->name) == 0)
-		screenpanel_infos_sysinfo(3);
-	else if(ostrcmp("panel_sysinfos_devices", panel_menuentry->name) == 0)
-		screenpanel_infos_sysinfo(4);
-	else if(ostrcmp("panel_sysinfos_swap", panel_menuentry->name) == 0)
-		screenpanel_infos_sysinfo(5);
-	else if(ostrcmp("panel_sysinfos_top", panel_menuentry->name) == 0)
-		screenpanel_infos_sysinfo(6);
-	else if(ostrcmp("panel_sysinfos_ps", panel_menuentry->name) == 0)
-		screenpanel_infos_sysinfo(7);
 	else if(ostrcmp("panel_autostart_default", panel_menuentry->name) == 0)
 		screenpanel_settings_autostart(0);
 	else if(ostrcmp("panel_autostart_audiovideo", panel_menuentry->name) == 0)
