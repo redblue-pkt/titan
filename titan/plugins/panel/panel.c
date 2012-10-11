@@ -4,8 +4,6 @@
 #include "panel_header.h"
 #include "panel_global.h"
 #include "panel_settings.h"
-#include "panel_infos.h"
-#include "panel_infos_sysinfo.h"
 #include "panel_settings_autostart.h"
 #include "panel_settings_overclocking.h"
 #include "panel_settings_fancontrol.h"
