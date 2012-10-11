@@ -708,7 +708,7 @@ void scansetallsat(int fetype)
 
 	while(dvbnode != NULL)
 	{
-		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL && dvbnode->felock < 1 && dvbnode->feinfo->type == FE_QPSK)
+		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL && dvbnode->felock < 1 && (fetype == -1 || dvbnode->feinfo->type == fetype))
 		{
 
 			tmpstr = ostrcat(dvbnode->feshortname, "_sat", 0, 0);
@@ -719,7 +719,7 @@ void scansetallsat(int fetype)
 				free(tmpnr); tmpnr = NULL;
 
 				satnode = getsatbyorbitalpos(orbitalpos);
-				if(satnode != NULL && satnode->fetype == FE_QPSK)
+				if(satnode != NULL && (fetype == -1 || satnode->fetype == fetype))
 					satnode->scan = 1;
 			}
 			free(tmpstr); tmpstr = NULL;
@@ -876,7 +876,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 		}
 		if(scantype == 3)
 		{
-			scansetallsat(FE_QPSK);
+			scansetallsat(-1);
 			b2->hidden = YES;
 			b3->hidden = YES;
 			//del all channel for auto. search
@@ -1098,7 +1098,7 @@ void changescantype(char* scantype, struct skin* scan, struct skin* listbox, str
 		satellite->hidden = YES;
 	}
 
-	if(flag == 10)
+	if(flag == 2)
 	{
 		system->hidden = YES;
 		inversion->hidden = YES;
@@ -1129,9 +1129,10 @@ void scanchangesat(struct skin* sat, struct transponder* tpnode, char* feshortna
 	}
 }
 
-//flag 0: manual scan DVB-S
-//flag 1: auto scan
-//flag 10: manual scan DVB-C
+//flag 0: manual scan (DVB-S)
+//flag 1: auto scan (all)
+//flag 2: manual scan (DVB-C)
+//flag 3: manual scan (DVB-T)
 void screenscanconfig(int flag)
 {
 	int rcret = 0, fetype = -1;
@@ -1195,13 +1196,14 @@ void screenscanconfig(int flag)
 	changeinput(pilot, NULL);
 	changechoiceboxvalue(pilot, NULL);
 
-	if(flag < 10) fetype = FE_QPSK;
-	if(flag >= 10 && flag < 20) fetype = FE_QAM;
+	if(flag == 0) fetype = FE_QPSK;
+	if(flag == 2) fetype = FE_QAM;
+	if(flag == 3) fetype = FE_OFDM;
 
 	//tuner
 	while(dvbnode != NULL)
 	{
-		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL && dvbnode->felock < 1 && dvbnode->feinfo->type == fetype)
+		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL && dvbnode->felock < 1 && (flag == 1 || dvbnode->feinfo->type == fetype))
 		{
 			treffer = 0;
 			if(dvbnode->feshortname != NULL)
@@ -1262,7 +1264,7 @@ void screenscanconfig(int flag)
 		addchoicebox(scantype, "2", _("Multi Sat"));
 		setchoiceboxselection(scantype, "0");
 	}
-	else if(flag == 10)
+	else if(flag == 2 || flag == 3)
 	{
 		addchoicebox(scantype, "0", _("Single Transponder"));
 		addchoicebox(scantype, "1", _("Single Provider"));
