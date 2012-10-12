@@ -648,6 +648,7 @@ int isdir(char* name);
 void htmldecode3(char* to, char* from);
 char* string_deltags(char* str);
 char* readfromlinetoline(char* str, int start, int end, int flag);
+int checkdev(char* dev);
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
