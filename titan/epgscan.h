@@ -33,6 +33,7 @@ struct epgscanlist* getepgscanlistbytransponder(unsigned long transponderid)
 
 void epgscanlistthread(struct stimerthread* self)
 {
+	int epgdelete = 0;
 	struct epgscanlist* node = epgscanlist, *tmpepgscannode = NULL;
 	struct dvbdev* fenode = NULL;
 	struct channel* chnode = NULL;
@@ -75,15 +76,26 @@ void epgscanlistthread(struct stimerthread* self)
 	if(fd != NULL) fprintf(fd, "epgscan time ok\n");
 
 	if(getconfigint("delepgbeforescan", NULL) == 1)
+	{
 		resetepg(1);
+		epgdelete = 1;
+	}
 
 	while(node != NULL && self->aktion != STOP)
 	{
 		chnode = getchannel(node->serviceid, node->transponderid);
-		if(chnode == NULL || chnode == status.aktservice->channel)
+		if(chnode == NULL)
 		{
 			debug(400, "epgscan channel not found sid=%d, tid=%lu", node->serviceid, node->transponderid);
 			if(fd != NULL) fprintf(fd, "epgscan channel not found sid=%d, tid=%lu\n", node->serviceid, node->transponderid);
+			node = node->next;
+			continue;
+		}
+
+		if(epgdelete == 0 && chnode == status.aktservice->channel)
+		{
+			debug(400, "epgscan channel same as aktchannel sid=%d, tid=%lu", node->serviceid, node->transponderid);
+			if(fd != NULL) fprintf(fd, "epgscan channel same as aktchannel sid=%d, tid=%lu\n", node->serviceid, node->transponderid);
 			node = node->next;
 			continue;
 		}
