@@ -32,7 +32,7 @@ void screenstandby()
 			while(dvbnode != NULL)
 			{
 				if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == FE_QPSK && dvbnode->felock == 0)
-					fesetvoltage(dvbnode, SEC_VOLTAGE_OFF, 15, 1);
+					fesetvoltage(dvbnode, SEC_VOLTAGE_OFF, 15);
 				dvbnode = dvbnode->next;
 			}
 		}
