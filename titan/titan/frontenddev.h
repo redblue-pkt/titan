@@ -558,7 +558,9 @@ void fesettone(struct dvbdev* node, fe_sec_tone_mode_t tone, int wait)
 	debug(1000, "out");
 }
 
-void fesetvoltage(struct dvbdev* node, fe_sec_voltage_t volt, int wait)
+//flag 0: reset tuner params on volt off
+//flag 1: don't reset tuner params on volt off
+void fesetvoltage(struct dvbdev* node, fe_sec_voltage_t volt, int wait, int flag)
 {
 	debug(1000, "in");
 	if(node == NULL)
@@ -577,7 +579,7 @@ void fesetvoltage(struct dvbdev* node, fe_sec_voltage_t volt, int wait)
 		node->feaktvolt = volt;
 		usleep(wait * 1000);
 
-		if(volt == SEC_VOLTAGE_OFF)
+		if(volt == SEC_VOLTAGE_OFF && flag == 0)
 		{
 			node->feakttransponder = NULL;
 			node->felasttransponder = NULL;
@@ -784,21 +786,21 @@ void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int
 
 	if(flag >= 0 && flag < 7)
 	{
-		fesetvoltage(node, SEC_VOLTAGE_18, 15);
+		fesetvoltage(node, SEC_VOLTAGE_18, 15, 0);
 		fesettone(node, SEC_TONE_OFF, 15);
 		fediseqcsendmastercmd(node, &cmd, 100);
 	}
 
 	if((flag == 7 || flag == 9 || flag == 10) && pos != 0)
 	{
-		fesetvoltage(node, SEC_VOLTAGE_18, 15);
+		fesetvoltage(node, SEC_VOLTAGE_18, 15, 0);
 		fesettone(node, SEC_TONE_OFF, 15);
 		fediseqcsendmastercmd(node, &cmd, 100);
 	}
 
 	if((flag == 8 || flag == 11) && (orbitalpos == 0 || status.rotoroldorbitalpos == 0 || orbitalpos != status.rotoroldorbitalpos))
 	{
-		fesetvoltage(node, SEC_VOLTAGE_18, 15);
+		fesetvoltage(node, SEC_VOLTAGE_18, 15, 0);
 		fesettone(node, SEC_TONE_OFF, 15);
 		fediseqcsendmastercmd(node, &cmd, 100);
 
@@ -814,7 +816,7 @@ void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int
 		sleep(waittime);
 	}
 	
-	fesetvoltage(node, oldvolt, 15);
+	fesetvoltage(node, oldvolt, 15, 0);
 	fesettone(node, oldtone, 15);
 	
 	debug(1000, "out");
@@ -850,8 +852,8 @@ void fesetunicable(struct dvbdev* node)
 
 	debug(200, "unicabletune %04x", unicabletune);
 
-	//fesetvoltage(node, SEC_VOLTAGE_OFF, 15);
-	fesetvoltage(node, SEC_VOLTAGE_18, 15);
+	//fesetvoltage(node, SEC_VOLTAGE_OFF, 15, 0);
+	fesetvoltage(node, SEC_VOLTAGE_18, 15, 0);
 	fesettone(node, SEC_TONE_OFF, 15);
 
 	//feunicable
@@ -869,7 +871,7 @@ void fesetunicable(struct dvbdev* node)
 
 	debug(200, "send diseqc unicable cmd (%s)", node->feshortname);
 	fediseqcsendmastercmd(node, &cmd, 100);
-	fesetvoltage(node, SEC_VOLTAGE_13, 15);
+	fesetvoltage(node, SEC_VOLTAGE_13, 15, 0);
 }
 
 void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
@@ -1064,7 +1066,7 @@ void feset(struct dvbdev* node, struct transponder* tpnode)
 		if(dvbnode->type != FRONTENDDEV) break;
 		if(dvbnode->type == FRONTENDDEV && dvbnode != node && dvbnode->felock == 0 && dvbnode != status.aktservice->fedev)
 		{
-			fesetvoltage(dvbnode, SEC_VOLTAGE_OFF, 15);
+			fesetvoltage(dvbnode, SEC_VOLTAGE_OFF, 15, 0);
 		}
 		dvbnode = dvbnode->next;
 	}
@@ -1080,7 +1082,7 @@ void feset(struct dvbdev* node, struct transponder* tpnode)
 		case 2: volt = SEC_VOLTAGE_18; break;
 		default: volt = node->feaktpolarization ? SEC_VOLTAGE_13 : SEC_VOLTAGE_18;
 	}
-	fesetvoltage(node, volt, 15);
+	fesetvoltage(node, volt, 15, 0);
 
 	tmpstr = ostrcat(node->feshortname, "_diseqc", 0, 0);
 	if(getconfigint(tmpstr, node->feaktnr) == 0 || node->feunicable == 1)
@@ -1618,7 +1620,7 @@ int fegetdev()
 					count++;
 					dvbnode = adddvbdev(buf, i, y, fd, FRONTENDDEV, feinfo, NULL);
 					if(dvbnode->feinfo->type == FE_QPSK)
-						fesetvoltage(dvbnode, SEC_VOLTAGE_OFF, 15);
+						fesetvoltage(dvbnode, SEC_VOLTAGE_OFF, 15, 0);
 				}
 			}
 		}
