@@ -2449,40 +2449,6 @@ int setoverclockfreq(int mode)
 	return writesys("/proc/cpu_frequ/pll0_ndiv_mdiv", tmpstr, 1);
 }
 
-int setsaturation(int value)
-{
-	debug(1000, "in");
-	char* saturationdev;
-
-	saturationdev = getconfig("saturationdev", NULL);
-
-	if(saturationdev != NULL)
-	{
-		debug(100, "set %s to %d", saturationdev, value);
-		return writesysint(saturationdev, value, 1);
-	}
-
-	debug(1000, "out");
-	return 0;
-}
-
-int setbrightness(int value)
-{
-	debug(1000, "in");
-	char* brightnessdev;
-
-	brightnessdev = getconfig("brightnessdev", NULL);
-
-	if(brightnessdev != NULL)
-	{
-		debug(100, "set %s to %d", brightnessdev, value);
-		return writesysint(brightnessdev, value, 1);
-	}
-
-	debug(1000, "out");
-	return 0;
-}
-
 int setvmpeg(struct dvbdev* node, int posx, int posy, int width, int height)
 {
 	debug(1000, "in");
@@ -2585,6 +2551,64 @@ int resettvpic()
 	return ret;
 }
 
+int checkdev(char* dev)
+{
+	char* cmd = NULL;
+	cmd = ostrcat(cmd, "cat ", 1, 0); 
+	cmd = ostrcat(cmd, dev, 1, 0); 
+
+	char* tmpstr = NULL;
+	tmpstr = string_newline(command(cmd));
+	free(cmd), cmd = NULL;
+
+	if(tmpstr == NULL)
+	{
+		return 0;
+	}
+
+	if(ostrcmp(tmpstr, "Segmentation fault") == 0)
+	{
+		return 0;
+	}
+	
+	free(tmpstr), tmpstr = NULL;
+	return 1;
+}
+
+int setsaturation(int value)
+{
+	debug(1000, "in");
+	char* saturationdev;
+
+	saturationdev = getconfig("saturationdev", NULL);
+
+	if(saturationdev != NULL && checkdev(saturationdev))
+	{
+		debug(100, "set %s to %d", saturationdev, value);
+		return writesysint(saturationdev, value, 1);
+	}
+
+	debug(1000, "out");
+	return 0;
+}
+
+int setbrightness(int value)
+{
+	debug(1000, "in");
+	char* brightnessdev;
+
+	brightnessdev = getconfig("brightnessdev", NULL);
+
+	if(brightnessdev != NULL && checkdev(brightnessdev))
+	{
+		debug(100, "set %s to %d", brightnessdev, value);
+		return writesysint(brightnessdev, value, 1);
+	}
+
+	debug(1000, "out");
+	return 0;
+}
+
 int setcontrast(int value)
 {
 	debug(1000, "in");
@@ -2592,7 +2616,7 @@ int setcontrast(int value)
 
 	contrastdev = getconfig("contrastdev", NULL);
 
-	if(contrastdev != NULL)
+	if(contrastdev != NULL && checkdev(contrastdev))
 	{
 		debug(100, "set %s to %d", contrastdev, value);
 		return writesysint(contrastdev, value, 1);
@@ -2609,7 +2633,7 @@ int settint(int value)
 
 	tintdev = getconfig("tintdev", NULL);
 
-	if(tintdev != NULL)
+	if(tintdev != NULL && checkdev(tintdev))
 	{
 		debug(100, "set %s to %d", tintdev, value);
 		return writesysint(tintdev, value, 1);
