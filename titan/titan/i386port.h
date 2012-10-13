@@ -1,6 +1,10 @@
 #ifndef I386PORT_H
 #define I386PORT_H
 
+int videodiscontinuityskip(struct dvbdev* node)
+{
+}
+
 void fbsave()
 {
 }

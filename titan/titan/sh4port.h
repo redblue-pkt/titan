@@ -10,6 +10,61 @@ struct stmfbio_outputinfo outinfo;
 struct stmfbio_planeinfo planemode;
 struct stmfbio_var_screeninfo_ex infoex;
 
+#define VIDEO_DISCONTINUITY                   _IO('o',  84)
+#define DVB_DISCONTINUITY_SKIP                0x01
+#define DVB_DISCONTINUITY_CONTINUOUS_REVERSE  0x02
+
+// inform the player about the jump in the stream data
+// this only works if the video device allows the discontinuity ioctl in read-only mode (patched)
+int videodiscontinuityskip(struct dvbdev* node)
+{
+	int fd = -1;
+	int param = DVB_DISCONTINUITY_SKIP; // | DVB_DISCONTINUITY_CONTINUOUS_REVERSE;
+	char *buf = NULL, *videodev = NULL;
+
+	videodev = getconfig("videodev", NULL);
+	if(videodev == NULL)
+	{
+		debug(1000, "out -> NULL detect");
+		return 1;
+	}
+
+	if(node == NULL)
+	{
+		debug(1000, "out-> NULL detect");
+		return 1;
+	}
+
+	buf = malloc(MINMALLOC);
+	if(buf == NULL)
+	{
+		err("no mem");
+		return 1;
+	}
+
+	sprintf(buf, videodev, node->adapter, node->devnr);
+	fd = open(buf, O_RDONLY);
+	if(fd < 0)
+	{
+		perr("VIDEO_DISCONTINUITY open");
+		free(buf);
+		return 1;
+	}
+
+	debug(200, "VIDEO_DISCONTINUITY");
+	if(ioctl(fd, VIDEO_DISCONTINUITY, (void*)param) < 0)
+	{
+		perr("VIDEO_DISCONTINUITY");
+		free(buf);
+		close(fd);
+		return 1;
+	}
+
+	free(buf);
+	close(fd);
+	return 0;
+}
+
 void fbsave()
 {
   outcfg.outputid = STMFBIO_OUTPUTID_MAIN;
