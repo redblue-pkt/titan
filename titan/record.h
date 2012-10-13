@@ -171,7 +171,7 @@ void recordwriteepg(char* filename, struct channel* chnode, struct rectimer* rec
 	free(epgfilename);
 }
 
-void recordstop(struct service* node)
+void recordstop(struct service* node, int ret)
 {
 	debug(1000, "in");
 	struct rectimer* rectimernode = NULL;
@@ -195,7 +195,11 @@ void recordstop(struct service* node)
 		if(type == RECORDSTREAM)
 			status.streaming--;
 		else if(type == RECORDTIMESHIFT)
+		{
 			status.timeshift = 0;
+			if(ret != 0) // on error stop timeshift
+				timeshiftstop(0);
+		}
 		else if(type == RECORDPLAY)
 			status.playing = 0;
 		else
@@ -501,7 +505,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				}
 				free(retstr); retstr = NULL;
 			}
-			recordstop(servicenode);
+			recordstop(servicenode, ret);
 			break;
 		}
 	}
