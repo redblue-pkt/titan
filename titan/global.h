@@ -1194,6 +1194,7 @@ void setskinnodeslocked(int flag)
 			else if(ostrcmp("dvdplayer", child->name) == 0) child->locked = flag;			
 			else if(ostrcmp("extensionsmenu", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("eraseswap", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("facebook", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("filemanager", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("hbbtv", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("imdb", child->name) == 0) child->locked = flag;
