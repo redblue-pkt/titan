@@ -521,7 +521,11 @@ int main(int argc, char *argv[])
 		}	
 	}
 	else
+	{
 		status.security = 1;
+		startnet();
+		setskinnodeslocked(0);
+	}
 #endif
 
 	ret = initfont();
