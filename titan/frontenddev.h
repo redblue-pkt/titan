@@ -579,7 +579,7 @@ void fesetvoltage(struct dvbdev* node, fe_sec_voltage_t volt, int wait)
 		node->feaktvolt = volt;
 		usleep(wait * 1000);
 
-		if(volt == SEC_VOLTAGE_OFF && flag == 0)
+		if(volt == SEC_VOLTAGE_OFF)
 		{
 			node->feakttransponder = NULL;
 			node->felasttransponder = NULL;

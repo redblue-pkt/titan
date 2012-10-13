@@ -490,6 +490,4 @@ int videoMakePES(char* buf, int len, int pid, int tssize, int flag)
 	return posbufaus;
 }
 
-
-
 #endif
