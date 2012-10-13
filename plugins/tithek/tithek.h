@@ -594,8 +594,8 @@ void addfav(char* title, char* link, char* pic, char* localname, char* menutitle
 
 void submenu(struct skin* listbox, struct skin* load)
 {
-//	if(status.security == 1)
-//	{
+	if(status.security == 1)
+	{
 		drawscreen(load, 0, 0);	
 		char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
 		char* tmpstr1 = NULL;
@@ -665,8 +665,8 @@ void submenu(struct skin* listbox, struct skin* load)
 
 		free(tmpstr1); tmpstr1 = NULL;
 	}
-//	else
-//		textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
+	else
+		textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 }
 
 void screentithekplay(char* titheklink, char* title, int first)
