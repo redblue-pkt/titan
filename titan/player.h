@@ -286,11 +286,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 		return 1;
 	}
 	
-	//TODO: warum der sleep?
-	//usleep(500000);
-	
 	m_lock(&status.tsseekmutex, 15);
-	//usleep(500000);
 	
 	ret = videogetpts(status.aktservice->videodev, &aktpts);
 	if(ret == 0)
@@ -318,7 +314,9 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	close(dupfd);
 
 	currentpos = lseek64(servicenode->recsrcfd, 0, SEEK_CUR);
-	
+
+	videofreeze(status.aktservice->videodev);
+	audiopause(status.aktservice->audiodev);
 	ret = videoclearbuffer(status.aktservice->videodev);
 	ret = audioclearbuffer(status.aktservice->audiodev);
 
@@ -353,6 +351,10 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 		offset = offset * -1;
 	}
 	currentpos = lseek64(servicenode->recsrcfd, offset, SEEK_CUR);
+
+	videocontinue(status.aktservice->videodev);
+	audioplay(status.aktservice->audiodev);
+
 	m_unlock(&status.tsseekmutex, 15);
 	usleep(500000);
 	status.timeshiftseek = 0;
