@@ -53,21 +53,14 @@
 <node name=sort type=choicebox parent=listbox valign=middle posx=0 text="Sort" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=view type=choicebox parent=listbox valign=middle posx=0 text="View" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=autoscan type=choicebox parent=listbox valign=middle posx=0 text="MediaDB autoscan" bordercol=bordercol bordersize=1 width=100% height=25>
-#<node name=mediadb type=choicebox parent=listbox valign=middle posx=0 text="MediaDB Directory" bordercol=bordercol bordersize=1 width=100% height=25>
-#<node name=mediadbscandelall type=choicebox parent=listbox valign=middle posx=0 text="mediadbscandelall" bordercol=bordercol bordersize=1 width=100% height=25>
-#<node name=mediadbscandelnotfound type=choicebox parent=listbox valign=middle posx=0 text="mediadbscandelnotfound" bordercol=bordercol bordersize=1 width=100% height=25>
-#<node name=autostart_playlist type=choicebox parent=listbox valign=middle posx=0 text="Autostart Playlist" bordercol=bordercol bordersize=1 width=100% height=25>
-#<node name=b1 text="OK" halign=center valign=middle bordercol=bgcol bordersize=0 posx=20% posy=90% width=150 height=30/>
-#<node name=b1 text="OK" halign=center valign=middle bordercol=okcol bordersize=2 posx=20% posy=95% width=150 height=2/>
-#<node name=b2 text="EXIT" halign=center valign=middle bordercol=bgcol bordersize=0 posx=45% posy=90% width=150 height=30/>
-#<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=2 posx=45% posy=95% width=150 height=2/>
-#<node name=b4 text="Network" halign=center valign=middle bordercol=bgcol bordersize=0 posx=70% posy=90% width=150 height=30/>
-#<node name=b4 text="Network" halign=center valign=middle bordercol=red bordersize=2 posx=70% posy=95% width=150 height=2/>
-
+<node name=showlastpos type=choicebox parent=listbox valign=middle posx=0 text="Show last pos Question" bordercol=bordercol bordersize=1 width=100% height=25>
+<node name=defaultdir type=choicebox parent=listbox valign=middle posx=0 text="default Directory" bordercol=bordercol bordersize=1 width=100% height=25>
+<node name=uselastdir type=choicebox parent=listbox valign=middle posx=0 text="use last Directory" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name="buttonbar" posx=center posy="660" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
 <node name="b1" picmem="skin/key_ok_70x40.png"   posx="50"  posy="665" width="70" height="40">
 <node name="b2" picmem="skin/key_exit_70x40.png" posx="125" posy="665" width="70" height="40">
 <node name="b3" text="Network" picmem="skin/key_red_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="205" posy="670" width="180" height="30">
+<node name="b4" text="EDIT" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="395" posy="670" width="250" height="30">
 </screen>
 
 # audioplayer
@@ -95,20 +88,14 @@
 <node name=sort type=choicebox parent=listbox valign=middle posx=0 text="Sort" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=view type=choicebox parent=listbox valign=middle posx=0 text="View" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=autostart_playlist type=choicebox parent=listbox valign=middle posx=0 text="Autostart Playlist" bordercol=bordercol bordersize=1 width=100% height=25>
-#<node name=b1 text="OK" halign=center valign=middle bordercol=bgcol bordersize=0 posx=15% posy=90% width=150 height=30/>
-#<node name=b1 text="OK" halign=center valign=middle bordercol=okcol bordersize=2 posx=15% posy=95% width=150 height=2/>
-#<node name=b2 text="EXIT" halign=center valign=middle bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
-#<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=2 posx=35% posy=95% width=150 height=2/>
-#<node name=b3 text="Screensaver" halign=center valign=middle bordercol=bgcol bordersize=0 posx=51% posy=90% width=250 height=30/>
-#<node name=b3 text="Screensaver" halign=center valign=middle bordercol=red bordersize=2 posx=51% posy=95% width=250 height=2/>
-#<node name=b4 text="Network" halign=center valign=middle bordercol=bgcol bordersize=0 posx=75% posy=90% width=150 height=30/>
-#<node name=b4 text="Network" halign=center valign=middle bordercol=green bordersize=2 posx=75% posy=95% width=150 height=2/>
-
+<node name=defaultdir type=choicebox parent=listbox valign=middle posx=0 text="default Directory" bordercol=bordercol bordersize=1 width=100% height=25>
+<node name=uselastdir type=choicebox parent=listbox valign=middle posx=0 text="use last Directory" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name="buttonbar" posx=center posy="660" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
 <node name="b1" picmem="skin/key_ok_70x40.png"   posx="50"  posy="665" width="70" height="40">
 <node name="b2" picmem="skin/key_exit_70x40.png" posx="125" posy="665" width="70" height="40">
 <node name="b3" text="Network" picmem="skin/key_red_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="205" posy="670" width="200" height="30">
-<node name="b4" text="Screensaver" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="395" posy="670" width="250" height="30">
+<node name="b4" text="EDIT" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="395" posy="670" width="250" height="30">
+<node name="b5" text="Screensaver" picmem="skin/key_yellow_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="585" posy="670" width="250" height="30">
 </screen>
 
 <screen name="mc_audioplayer_infobar" fontcol=fontcol fontsize=30 posx=center posy=610 width=100% height=110 bordersize=2 bgcol=0>
@@ -166,19 +153,15 @@
 <node name=sound type=choicebox parent=listbox valign=middle posx=0 text="Sound" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=interval type=choicebox parent=listbox valign=middle posx=0 text="Interval" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=showpictitle type=choicebox parent=listbox valign=middle posx=0 text="Show Pictitle" bordercol=bordercol bordersize=1 width=100% height=25>
-
 <node name=picdenom type=choicebox parent=listbox valign=middle posx=0 text="Picdenom Mode" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=pichwdecode type=choicebox parent=listbox valign=middle posx=0 text="Pic HW-decode" bordercol=bordercol bordersize=1 width=100% height=25>
-
-#<node name=b1 text="OK" halign=center valign=middle bordercol=bgcol bordersize=0 posx=35% posy=90% width=150 height=30/>
-#<node name=b1 text="OK" halign=center valign=middle bordercol=okcol bordersize=2 posx=35% posy=95% width=150 height=2/>
-#<node name=b2 text="EXIT" halign=center valign=middle bordercol=bgcol bordersize=0 posx=55% posy=90% width=150 height=30/>
-#<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=2 posx=55% posy=95% width=150 height=2/>
-
+<node name=defaultdir type=choicebox parent=listbox valign=middle posx=0 text="default Directory" bordercol=bordercol bordersize=1 width=100% height=25>
+<node name=uselastdir type=choicebox parent=listbox valign=middle posx=0 text="use last Directory" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name="buttonbar" posx=center posy="660" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
 <node name="b1" picmem="skin/key_ok_70x40.png"   posx="50"  posy="665" width="70" height="40">
 <node name="b2" picmem="skin/key_exit_70x40.png" posx="125" posy="665" width="70" height="40">
 <node name="b3" text="Network" picmem="skin/key_red_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="205" posy="670" width="200" height="30">
+<node name="b4" text="EDIT" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="395" posy="670" width="250" height="30">
 </screen>
 
 <screen fontcol=fontcol name=picscreen fontsize=30 posx=0 posy=0 width=100% height=100% bordersize=0>

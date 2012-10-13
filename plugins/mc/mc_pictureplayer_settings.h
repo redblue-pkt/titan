@@ -4,6 +4,7 @@
 void screenmc_pictureplayer_settings()
 {
 	int rcret = 0;
+	char* ret = NULL;
 	struct skin* tmp = NULL;
 
 	struct skin* mc_pictureplayer_settings = getscreen("mc_pictureplayer_settings");
@@ -15,6 +16,8 @@ void screenmc_pictureplayer_settings()
 	struct skin* showpictitle = getscreennode(mc_pictureplayer_settings, "showpictitle");
 	struct skin* picdenom = getscreennode(mc_pictureplayer_settings, "picdenom");
 	struct skin* pichwdecode = getscreennode(mc_pictureplayer_settings, "pichwdecode");
+	struct skin* defaultdir = getscreennode(mc_pictureplayer_settings, "defaultdir");
+	struct skin* uselastdir = getscreennode(mc_pictureplayer_settings, "uselastdir");
 
 	changeinput(picdenom, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16");
 	setchoiceboxselection(picdenom, getskinconfig("mc_pp_picdenom", NULL));
@@ -58,6 +61,12 @@ void screenmc_pictureplayer_settings()
 	changeinput(interval, "10\n15\n20\n30\n40\n50\n60\n70\n80\n90\n100\n2\n5");
 	setchoiceboxselection(interval, getconfig("mc_pp_interval", NULL));
 
+	changeinput(defaultdir, getconfig("mc_pp_defaultdir", NULL));
+
+	addchoicebox(uselastdir, "0", _("no"));
+	addchoicebox(uselastdir, "1", _("yes"));
+	setchoiceboxselection(uselastdir, getconfig("mc_pp_uselastdir", NULL));
+
 	drawscreen(mc_pictureplayer_settings, 0, 0);
 	addscreenrc(mc_pictureplayer_settings, listbox);
 
@@ -78,6 +87,8 @@ void screenmc_pictureplayer_settings()
 			addconfigscreen("mc_pp_showpictitle", showpictitle);
 			addconfigscreen("mc_pp_picdenom", picdenom);
 			addconfigscreen("mc_pp_pichwdecode", pichwdecode);
+			addconfigscreen("mc_pp_defaultdir", defaultdir);
+			addconfigscreencheck("mc_pp_uselastdir", uselastdir, NULL);
 			break;
 		}
 		else if(rcret == getrcconfigint("rcred", NULL))
@@ -86,7 +97,20 @@ void screenmc_pictureplayer_settings()
 			menu(screen);
 			drawscreen(mc_pictureplayer_settings, 0, 0);
 		}
-  }
+		else if(rcret == getrcconfigint("rcgreen", NULL))
+		{
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "defaultdir") == 0)
+			{
+				clearscreen(mc_pictureplayer_settings);
+				ret = screendir(listbox->select->ret, "", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, 750, 0, 650, 0, 0);
+				if(ret != NULL)
+					changeinput(listbox->select, ret);
+				free(ret);
+
+				drawscreen(mc_pictureplayer_settings, 0, 0);
+			}
+		}
+	}
 
 	delownerrc(mc_pictureplayer_settings);
 	clearscreen(mc_pictureplayer_settings);

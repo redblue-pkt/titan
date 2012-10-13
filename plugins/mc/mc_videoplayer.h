@@ -48,9 +48,16 @@ void screenmc_videoplayer()
 	struct skin* plot = getscreennode(apskin, "plot");
 	struct skin* title = getscreennode(apskin, "title");
 	struct skin* thumb = getscreennode(apskin, "thumb");
-				
-	currentdirectory = ostrcat(currentdirectory, getconfig("mc_vp_path", NULL), 1, 0);
-	selectedfile = ostrcat(selectedfile, getconfig("mc_vp_selectedfile", NULL), 1, 0);
+
+	if(getconfigint("mc_vp_uselastdir", NULL) == 1)
+	{
+		currentdirectory = ostrcat(currentdirectory, getconfig("mc_vp_path", NULL), 1, 0);
+		selectedfile = ostrcat(selectedfile, getconfig("mc_vp_selectedfile", NULL), 1, 0);
+	}
+	else
+	{
+		currentdirectory = ostrcat(currentdirectory, getconfig("mc_vp_defaultdir", NULL), 1, 0);		
+	}
 
 	// enable listbox and set hidden
 	listbox->aktpage = -1;
@@ -711,7 +718,7 @@ void screenmc_videoplayer()
 					}
 					else
 					{
-						if(playertype == 0)
+						if(playertype == 0 && getconfigint("mc_vp_showlastpos", NULL) == 1)
 						{
 							char* tmpfilename = ostrcat(filename, NULL, 0, 0);
 							char* fileseek = ostrcat("/var/swap/player/", basename(tmpfilename), 0, 0);

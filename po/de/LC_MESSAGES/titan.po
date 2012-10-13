@@ -2617,3 +2617,12 @@ msgstr "Wollen Sie den Kabel Tuner aktivieren ?"
 
 msgid "Please install ipk Cable Settings, scan currenty not supportet !"
 msgstr "Bitte installieren Sie die Kabel Settings im Erweiterungsmenu !\nKabel Suchlauf wird noch nicht unterstützt !"
+
+msgid "Show last pos Question"
+msgstr "Benutze An Letze Stelle beginnen"
+
+msgid "default Directory"
+msgstr "standard Verzeichnis"
+
+msgid "use last Directory"
+msgstr "Benutze immer letztes Verzeichnis"
