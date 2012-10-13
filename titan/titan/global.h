@@ -914,22 +914,7 @@ void checkserial(char* input)
 
 	if(status.security == 1)
 	{
-		char* cmd = NULL;
-		cmd = ostrcat(cmd, "/", 1, 0);
-		cmd = ostrcat(cmd, "usr", 1, 0);
-		cmd = ostrcat(cmd, "/", 1, 0);
-		cmd = ostrcat(cmd, "sbin", 1, 0);
-		cmd = ostrcat(cmd, "/", 1, 0);									
-		cmd = ostrcat(cmd, "inetd", 1, 0);
-		cmd = ostrcat(cmd, " ", 1, 0);
-		cmd = ostrcat(cmd, "&", 1, 0);
-		if(!checkprozess("inetd"))
-			system(cmd);
-
-		free(cmd); cmd = NULL;
-		if(!file_exist("/dev/ttyS0") == 1)
-			mknod("/dev/ttyS0", S_IFCHR | 0666, makedev(204, 40));
-
+		startnet();
 		setskinnodeslocked(0);
 	}
 
@@ -962,6 +947,29 @@ int checkprozess(char* input)
 //	printf("checkprozess: ret=%d\n", ret);
 	free(tmpstr), tmpstr = NULL;
 	return ret;
+}
+
+void startnet()
+{
+	char* cmd = NULL;
+
+	if(status.security == 1)
+	{
+		cmd = ostrcat(cmd, "/", 1, 0);
+		cmd = ostrcat(cmd, "usr", 1, 0);
+		cmd = ostrcat(cmd, "/", 1, 0);
+		cmd = ostrcat(cmd, "sbin", 1, 0);
+		cmd = ostrcat(cmd, "/", 1, 0);
+		cmd = ostrcat(cmd, "inetd", 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, "&", 1, 0);
+		if(!checkprozess("inetd"))
+			system(cmd);
+
+		free(cmd); cmd = NULL;
+		if(!file_exist("/dev/ttyS0") == 1)
+			mknod("/dev/ttyS0", S_IFCHR | 0666, makedev(204, 40));
+	}
 }
 
 void killnet()
