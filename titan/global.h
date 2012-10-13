@@ -901,7 +901,7 @@ void checkserial(char* input)
 	
 		for(i = 0; i < count; i++)
 		{
-	    (&ret[i])->part = stringreplacecharonce((&ret[i])->part, ',', '\0');
+			(&ret[i])->part = stringreplacecharonce((&ret[i])->part, ',', '\0');
 			if(ret != NULL && ostrcmp(input, (&ret[i])->part) == 0)
 			{
 				status.security = 0;
