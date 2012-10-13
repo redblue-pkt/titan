@@ -1136,15 +1136,20 @@ int checkpluginskip(char* name)
 	if(ostrcmp(name, "3 Wins") == 0) return 1;
 	else if(ostrcmp(name, "CallMonitor") == 0) return 1;
 	else if(ostrcmp(name, "Hello") == 0) return 1;
+	else if(ostrcmp(name, "Cat Catch") == 0) return 1;
 	else if(ostrcmp(name, "DLNA") == 0) return 1;
 	else if(ostrcmp(name, "DVD Player") == 0) return 1;
 	else if(ostrcmp(name, "File Manager") == 0) return 1;
+	else if(ostrcmp(name, "GmediaRender") == 0) return 1;
+	else if(ostrcmp(name, "Facebook") == 0) return 1;		
 	else if(ostrcmp(name, "hbbtv Browser") == 0) return 1;		
-	else if(ostrcmp(name, "Imdb") == 0) return 1;
+	else if(ostrcmp(name, "IMDb") == 0) return 1;
+	else if(ostrcmp(name, "IMDb-API") == 0) return 1;
 	else if(ostrcmp(name, "IP-Kammera") == 0) return 1;
 	else if(ostrcmp(name, "Internet Browser") == 0) return 1;
 	else if(ostrcmp(name, "KeyLock") == 0) return 1;
 	else if(ostrcmp(name, "LCD Pearl") == 0) return 1;
+	else if(ostrcmp(name, "LCD Samsung SPF..") == 0) return 1;
 	else if(ostrcmp(name, "Mbox Info") == 0) return 1;
 //	else if(ostrcmp(name, "Media Center") == 0) return 1;
 	else if(ostrcmp(name, "Networkbrowser") == 0) return 1;
@@ -1163,6 +1168,7 @@ int checkpluginskip(char* name)
 	else if(ostrcmp(name, "TMDb") == 0) return 1;
 	else if(ostrcmp(name, "TopfieldVFD") == 0) return 1;
 	else if(ostrcmp(name, "Weather") == 0) return 1;
+	else if(ostrcmp(name, "zapback (Werbezapper)") == 0) return 1;	
 
 	return 0;
 }
@@ -1181,6 +1187,7 @@ void setskinnodeslocked(int flag)
 		while(child != NULL)
 		{
 			if(ostrcmp("browser", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("catcatch", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("callmon_main", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("cinterface", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("dlna", child->name) == 0) child->locked = flag;
@@ -1190,6 +1197,7 @@ void setskinnodeslocked(int flag)
 			else if(ostrcmp("filemanager", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("hbbtv", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("imdb", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("imdbapi", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("instar", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("keylock", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("lcdpearl1", child->name) == 0) child->locked = flag;
@@ -1218,6 +1226,7 @@ void setskinnodeslocked(int flag)
 			else if(ostrcmp("TopfieldVFD", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("weather", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("wins3", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("zapback_main", child->name) == 0) child->locked = flag;
 
 			if(status.expertmodus > 9 && status.security == 1)
 				tmpflag = 0;
