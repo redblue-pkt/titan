@@ -584,7 +584,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screensystem_infos(0);
 	}
-	else if(ostrcmp("system_infos_free", menuentry->name) == 0)
+	else if(ostrcmp("system_infos_freespace", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		screensystem_infos(1);
