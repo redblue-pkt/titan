@@ -1138,6 +1138,7 @@ int checkpluginskip(char* name)
 	else if(ostrcmp(name, "Hello") == 0) return 1;
 	else if(ostrcmp(name, "DLNA") == 0) return 1;
 	else if(ostrcmp(name, "DVD Player") == 0) return 1;
+	else if(ostrcmp(name, "File Manager") == 0) return 1;
 	else if(ostrcmp(name, "hbbtv Browser") == 0) return 1;		
 	else if(ostrcmp(name, "Imdb") == 0) return 1;
 	else if(ostrcmp(name, "IP-Kammera") == 0) return 1;
@@ -1186,6 +1187,7 @@ void setskinnodeslocked(int flag)
 			else if(ostrcmp("dvdplayer", child->name) == 0) child->locked = flag;			
 			else if(ostrcmp("extensionsmenu", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("eraseswap", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("filemanager", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("hbbtv", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("imdb", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("instar", child->name) == 0) child->locked = flag;
