@@ -40,7 +40,7 @@ void screenfilemanager()
 	drawscreen(filemanager1, 0, 1);
 	drawscreen(filemanager2, 0, 0);
 	addscreenrc(filemanager1, filelist1);
-	
+
 	while(1)
 	{
 		if(aktfilelist == 0)
@@ -50,98 +50,103 @@ void screenfilemanager()
 		
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		
-		if((rcret == getrcconfigint("rcgreen", NULL) || rcret == getrcconfigint("rcyellow", NULL))&& filelist1->select != NULL && ostrcmp(filelist1->select->text, "..") != 0) //copy - move
+		if(status.security == 1)
 		{
-			file1 = createpath(filelistpath1->text, filelist1->select->text);
-			if(file1 != NULL)
+			if((rcret == getrcconfigint("rcgreen", NULL) || rcret == getrcconfigint("rcyellow", NULL))&& filelist1->select != NULL && ostrcmp(filelist1->select->text, "..") != 0) //copy - move
 			{
-				if(rcret == getrcconfigint("rcgreen", NULL))
+				file1 = createpath(filelistpath1->text, filelist1->select->text);
+				if(file1 != NULL)
 				{
-					tmpstr = ostrcat(tmpstr, _("Realy copy this file/dir?"), 1, 0);
-					cmd = ostrcat(cmd, "cp -r ", 1, 0);
+					if(rcret == getrcconfigint("rcgreen", NULL))
+					{
+						tmpstr = ostrcat(tmpstr, _("Realy copy this file/dir?"), 1, 0);
+						cmd = ostrcat(cmd, "cp -r ", 1, 0);
+					}
+					if(rcret == getrcconfigint("rcyellow", NULL))
+					{
+						tmpstr = ostrcat(tmpstr, _("Realy move this file/dir?"), 1, 0);
+						cmd = ostrcat(cmd, "mv ", 1, 0);
+					}
+					
+					tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
+					tmpstr = ostrcat(tmpstr, _("From"), 1, 0);
+					tmpstr = ostrcat(tmpstr, ": ", 1, 0);				
+					tmpstr = ostrcat(tmpstr, file1, 1, 0);
+					tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+					tmpstr = ostrcat(tmpstr, _("To"), 1, 0);
+					tmpstr = ostrcat(tmpstr, ": ", 1, 0);
+					tmpstr = ostrcat(tmpstr, filelistpath2->text, 1, 0);
+					ret = textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 300, 0, 0);
+					free(tmpstr); tmpstr = NULL;
+					
+					cmd = ostrcat(cmd, file1, 1, 0);
+					cmd = ostrcat(cmd, " ", 1, 0);
+					cmd = ostrcat(cmd, filelistpath2->text, 1, 0);
+					if(ret == 1) system(cmd);
+					free(cmd); cmd = NULL;
 				}
-				if(rcret == getrcconfigint("rcyellow", NULL))
+				free(file1); file1 = NULL;
+				
+				if(ret == 1)
 				{
-					tmpstr = ostrcat(tmpstr, _("Realy move this file/dir?"), 1, 0);
-					cmd = ostrcat(cmd, "mv ", 1, 0);
+					delmarkedscreennodes(filemanager1, FILELISTDELMARK);
+					delmarkedscreennodes(filemanager2, FILELISTDELMARK);
+					createfilelist(filemanager1, filelist1, 0);
+					createfilelist(filemanager2, filelist2, 0);
 				}
-				
-				tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
-				tmpstr = ostrcat(tmpstr, _("From"), 1, 0);
-				tmpstr = ostrcat(tmpstr, ": ", 1, 0);				
-				tmpstr = ostrcat(tmpstr, file1, 1, 0);
-				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-				tmpstr = ostrcat(tmpstr, _("To"), 1, 0);
-				tmpstr = ostrcat(tmpstr, ": ", 1, 0);
-				tmpstr = ostrcat(tmpstr, filelistpath2->text, 1, 0);
-				ret = textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 300, 0, 0);
-				free(tmpstr); tmpstr = NULL;
-				
-				cmd = ostrcat(cmd, file1, 1, 0);
-				cmd = ostrcat(cmd, " ", 1, 0);
-				cmd = ostrcat(cmd, filelistpath2->text, 1, 0);
-				if(ret == 1) system(cmd);
-				free(cmd); cmd = NULL;
-			}
-			free(file1); file1 = NULL;
-			
-			if(ret == 1)
-			{
-				delmarkedscreennodes(filemanager1, FILELISTDELMARK);
-				delmarkedscreennodes(filemanager2, FILELISTDELMARK);
-				createfilelist(filemanager1, filelist1, 0);
-				createfilelist(filemanager2, filelist2, 0);
-			}
-			drawscreen(filemanager, 0, 1);
-			drawscreen(filemanager1, 0, 1);
-			drawscreen(filemanager2, 0, 0);
-		}
-		
-		if(rcret == getrcconfigint("rcred", NULL) && filelist1->select != NULL && ostrcmp(filelist1->select->text, "..") != 0) //delete
-		{
-			file1 = createpath(filelistpath1->text, filelist1->select->text);
-			if(file1 != NULL)
-			{
-				tmpstr = ostrcat(tmpstr, _("Realy delete this file/dir?"), 1, 0);
-				tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
-				tmpstr = ostrcat(tmpstr, file1, 1, 0);
-				ret = textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
-				free(tmpstr); tmpstr = NULL;
-				
-				cmd = ostrcat(cmd, "rm -r ", 1, 0);
-				cmd = ostrcat(cmd, file1, 1, 0);
-				if(ret == 1) system(cmd);
-				free(cmd); cmd = NULL;			
-			}
-			free(file1); file1 = NULL;
-			
-			if(ret == 1)
-			{
-				delmarkedscreennodes(filemanager1, FILELISTDELMARK);
-				delmarkedscreennodes(filemanager2, FILELISTDELMARK);
-				createfilelist(filemanager1, filelist1, 0);
-				createfilelist(filemanager2, filelist2, 0);
-			}
-			drawscreen(filemanager, 0, 1);
-			drawscreen(filemanager1, 0, 1);
-			drawscreen(filemanager2, 0, 0);
-		}
-		
-		if(rcret == getrcconfigint("rcblue", NULL) && filelist1->select != NULL && ostrcmp(filelist1->select->text, "..") != 0) //view
-		{
-			file1 = createpath(filelistpath1->text, filelist1->select->text);
-			tmpstr = readfiletomem(file1, 0);
-			if(tmpstr != NULL)
-			{
-				textbox(file1, tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
-
 				drawscreen(filemanager, 0, 1);
 				drawscreen(filemanager1, 0, 1);
 				drawscreen(filemanager2, 0, 0);
 			}
-			free(tmpstr); tmpstr = NULL;
-			free(file1); file1 = NULL;
+			
+			if(rcret == getrcconfigint("rcred", NULL) && filelist1->select != NULL && ostrcmp(filelist1->select->text, "..") != 0) //delete
+			{
+				file1 = createpath(filelistpath1->text, filelist1->select->text);
+				if(file1 != NULL)
+				{
+					tmpstr = ostrcat(tmpstr, _("Realy delete this file/dir?"), 1, 0);
+					tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
+					tmpstr = ostrcat(tmpstr, file1, 1, 0);
+					ret = textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
+					free(tmpstr); tmpstr = NULL;
+					
+					cmd = ostrcat(cmd, "rm -r ", 1, 0);
+					cmd = ostrcat(cmd, file1, 1, 0);
+					if(ret == 1) system(cmd);
+					free(cmd); cmd = NULL;			
+				}
+				free(file1); file1 = NULL;
+				
+				if(ret == 1)
+				{
+					delmarkedscreennodes(filemanager1, FILELISTDELMARK);
+					delmarkedscreennodes(filemanager2, FILELISTDELMARK);
+					createfilelist(filemanager1, filelist1, 0);
+					createfilelist(filemanager2, filelist2, 0);
+				}
+				drawscreen(filemanager, 0, 1);
+				drawscreen(filemanager1, 0, 1);
+				drawscreen(filemanager2, 0, 0);
+			}
+		
+			if(rcret == getrcconfigint("rcblue", NULL) && filelist1->select != NULL && ostrcmp(filelist1->select->text, "..") != 0) //view
+			{
+				file1 = createpath(filelistpath1->text, filelist1->select->text);
+				tmpstr = readfiletomem(file1, 0);
+				if(tmpstr != NULL)
+				{
+					textbox(file1, tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+	
+					drawscreen(filemanager, 0, 1);
+					drawscreen(filemanager1, 0, 1);
+					drawscreen(filemanager2, 0, 0);
+				}
+				free(tmpstr); tmpstr = NULL;
+				free(file1); file1 = NULL;
+			}
 		}
+		else
+			textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 		
 		if(rcret == getrcconfigint("rcff", NULL) || rcret == getrcconfigint("rcfr", NULL)) //change filelist
 		{
@@ -168,7 +173,7 @@ void screenfilemanager()
 		}
 	
 	}
-
+	
 	delmarkedscreennodes(filemanager1, FILELISTDELMARK);
 	delmarkedscreennodes(filemanager2, FILELISTDELMARK);
 	filelistpath1->bgcol = bgcol1;
