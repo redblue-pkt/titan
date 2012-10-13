@@ -32,8 +32,15 @@ void screenmc_audioplayer()
 	struct skin* sreverse = getscreennode(infobar, "reverse");
 	struct skin* sprogress = getscreennode(infobar, "progress");
 
-	currentdirectory = ostrcat("", getconfig("mc_ap_path", NULL), 0, 0);
-	selectedfile = ostrcat(selectedfile, getconfig("mc_ap_selectedfile", NULL), 1, 0);
+	if(getconfigint("mc_ap_uselastdir", NULL) == 1)
+	{
+		currentdirectory = ostrcat(currentdirectory, getconfig("mc_ap_path", NULL), 1, 0);
+		selectedfile = ostrcat(selectedfile, getconfig("mc_ap_selectedfile", NULL), 1, 0);
+	}
+	else
+	{
+		currentdirectory = ostrcat(currentdirectory, getconfig("mc_ap_defaultdir", NULL), 1, 0);		
+	}
 
 	// enable listbox and set hidden
 	listbox->aktpage = -1;

@@ -4,11 +4,14 @@
 void screenmc_audioplayer_settings()
 {
 	int rcret = 0;
+	char* ret = NULL;
 	struct skin* mc_audioplayer_settings = getscreen("mc_audioplayer_settings");
 	struct skin* listbox = getscreennode(mc_audioplayer_settings, "listbox");
 	struct skin* dirsort = getscreennode(mc_audioplayer_settings, "sort");
 	struct skin* view = getscreennode(mc_audioplayer_settings, "view");
 	struct skin* ap_autostart_playlist = getscreennode(mc_audioplayer_settings, "autostart_playlist");
+	struct skin* defaultdir = getscreennode(mc_audioplayer_settings, "defaultdir");
+	struct skin* uselastdir = getscreennode(mc_audioplayer_settings, "uselastdir");
 	
 //	struct skin* dimmer = getscreennode(mc_audioplayer_settings, "dimmer");
 //	struct skin* dimmer_delay = getscreennode(mc_audioplayer_settings, "dimmer_delay");
@@ -39,6 +42,12 @@ void screenmc_audioplayer_settings()
 	addchoicebox(ap_autostart_playlist, "0", _("no"));	
 	addchoicebox(ap_autostart_playlist, "1", _("yes"));
 	setchoiceboxselection(ap_autostart_playlist, getconfig("mc_ap_autostart_playlist", NULL));
+
+	changeinput(defaultdir, getconfig("mc_ap_defaultdir", NULL));
+
+	addchoicebox(uselastdir, "0", _("no"));
+	addchoicebox(uselastdir, "1", _("yes"));
+	setchoiceboxselection(uselastdir, getconfig("mc_ap_uselastdir", NULL));
 
 //	addchoicebox(dimmer, "0", _("no"));	
 //	addchoicebox(dimmer, "1", _("yes"));
@@ -75,7 +84,9 @@ void screenmc_audioplayer_settings()
 		{
 			addconfigscreencheck("mc_ap_dirsort", dirsort, NULL);
 			addconfigscreencheck("mc_ap_view", view, NULL);
-			addconfigscreencheck("mc_ap_autostart_playlist", ap_autostart_playlist, NULL);						
+			addconfigscreencheck("mc_ap_autostart_playlist", ap_autostart_playlist, NULL);
+			addconfigscreen("mc_ap_defaultdir", defaultdir);
+			addconfigscreencheck("mc_ap_uselastdir", uselastdir, NULL);
 //			addconfigscreencheck("mc_ap_dimmer", dimmer, NULL);
 //			addconfigscreencheck("mc_ap_dimmer_delay", dimmer_delay, NULL);
 //			addconfigscreencheck("mc_ap_autosleep", autosleep, NULL);
@@ -90,6 +101,19 @@ void screenmc_audioplayer_settings()
 			drawscreen(mc_audioplayer_settings, 0, 0);
 		}
 		else if(rcret == getrcconfigint("rcgreen", NULL))
+		{
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "defaultdir") == 0)
+			{
+				clearscreen(mc_audioplayer_settings);
+				ret = screendir(listbox->select->ret, "", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, 750, 0, 650, 0, 0);
+				if(ret != NULL)
+					changeinput(listbox->select, ret);
+				free(ret);
+
+				drawscreen(mc_audioplayer_settings, 0, 0);
+			}
+		}
+		else if(rcret == getrcconfigint("rcyellow", NULL))
 		{
 			screenscreensaveradjust();
 			drawscreen(mc_audioplayer_settings, 0, 0);

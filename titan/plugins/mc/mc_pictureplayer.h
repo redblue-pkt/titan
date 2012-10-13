@@ -29,8 +29,15 @@ void screenmc_pictureplayer()
 	struct skin* picture = getscreennode(picscreen, "picture");
 	struct skin* picname = getscreennode(picscreen, "picname");
 
-	currentdirectory = ostrcat(currentdirectory, getconfig("mc_pp_path", NULL), 1, 0);
-	selectedfile = ostrcat(selectedfile, getconfig("mc_pp_selectedfile", NULL), 1, 0);
+	if(getconfigint("mc_pp_uselastdir", NULL) == 1)
+	{
+		currentdirectory = ostrcat(currentdirectory, getconfig("mc_pp_path", NULL), 1, 0);
+		selectedfile = ostrcat(selectedfile, getconfig("mc_pp_selectedfile", NULL), 1, 0);
+	}
+	else
+	{
+		currentdirectory = ostrcat(currentdirectory, getconfig("mc_pp_defaultdir", NULL), 1, 0);		
+	}
 
 	// enable listbox and set hidden
 	listbox->aktpage = -1;
