@@ -271,9 +271,7 @@ void timeshiftseek(int sekunden, int* playinfobarstatus, int* playinfobarcount)
 				playerseekts(snode, sekunden, 1);
 				*playinfobarstatus = 1;
 				*playinfobarcount = 0;
-				status.play = 0;		
 				screenplayinfobar(status.playfile, 0, 1, 4);
-				status.play = 1;
 			}
 		}
 	}
@@ -295,7 +293,7 @@ void timeshiftseek(int sekunden, int* playinfobarstatus, int* playinfobarcount)
 
 void timeshiftinfobar(int* playinfobarstatus, int* playinfobarcount)
 {
-	*playinfobarcount++;
+	(*playinfobarcount)++;
 	if(*playinfobarstatus > 0)
 		screenplayinfobar(status.playfile, 0, 1, 4);
 	if(*playinfobarstatus == 1 && *playinfobarcount >= getconfigint("infobartimeout", NULL))
