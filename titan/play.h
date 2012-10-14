@@ -337,7 +337,7 @@ void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int pla
 		{
 			status.play = 0;
 			if(playertype == 1)
-				playerfrts(status.playspeed, 0);
+				playerfrts((int)(pow(2, status.playspeed * -1) * -1), 0);
 			else if(playertype == 2)
 				dvdfr(status.playspeed);
 			else
@@ -390,7 +390,7 @@ void playrcfr(char* file, int* playinfobarstatus, int* playinfobarcount, int pla
 		{
 			status.play = 0;
 			if(playertype == 1)
-				playerfrts(status.playspeed, 0);
+				playerfrts((int)(pow(2, status.playspeed * -1) * -1), 0);
 			else if(playertype == 2)
 				dvdfr(status.playspeed);
 			else

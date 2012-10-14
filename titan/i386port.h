@@ -1,7 +1,7 @@
 #ifndef I386PORT_H
 #define I386PORT_H
 
-int videodiscontinuityskip(struct dvbdev* node)
+int videodiscontinuityskip(struct dvbdev* node, int flag)
 {
 }
 

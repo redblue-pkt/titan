@@ -285,13 +285,9 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 {
 	int readret = 0, writeret = 0, ret = 0, recbsize = 0, tmprecbsize = 0, i = 0, pktcount = 0;
 	int readtimeout = -1, writetimeout = -1;
-	int pts = 0;
-	int prints = 0;
-	int recsync = 0;
+	int recsync = 0, frcount = 0;
 	unsigned char* buf = NULL, *tmpbuf = NULL;
 	char* retstr = NULL;
-	off64_t bitrate = 0;
-	off64_t pospts = 0;
 
 	debug(250, "start read-write thread");
 
@@ -368,25 +364,34 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 #else
 		if(servicenode->type == RECORDPLAY)
 		{
-			if(status.playfdirection == -1 && servicenode->tssize == 188)
+			pthread_mutex_lock(&status.tsseekmutex);
+			if(frcount == 0 && status.playspeed < 0)
 			{
-				if(prints == 0)
-					prints = findcodec(buf, recbsize, servicenode->tssize);
-				readret = playerjumpts(servicenode, -((int)pow(2, (status.playspeed * -1))), &pts, &pospts, &bitrate, status.aktservice->channel->videopid, servicenode->tssize);
-				if(readret >= 0)
-					readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
-				else
-					readret = -1;
+				off64_t pos = lseek64(servicenode->recsrcfd, -(recbsize * 8), SEEK_CUR);
+				videodiscontinuityskip(status.aktservice->videodev, -1);
+
+				//begin of file
+				if(pos <= 0)
+				{
+					playerpausets();
+					playercontinuets();
+					status.playspeed = 0;
+					status.pause = 0;
+					status.play = 1;
+				}
 			}
-			else
+
+			if(frcount != 0 && status.playspeed >= 0)
+				frcount = 0;
+
+			readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
+			pthread_mutex_unlock(&status.tsseekmutex);
+			if(status.playspeed < 0)
 			{
-				pthread_mutex_lock(&status.tsseekmutex);
-				readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
-				pthread_mutex_unlock(&status.tsseekmutex);
-				pts = 0;
-				pospts = 0;
-				prints = 0;
-				bitrate = 0;
+				frcount += readret;
+				if(frcount >= recbsize * 4)
+					frcount = 0;
+
 			}
 		}
 		else
@@ -408,33 +413,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 					writeret = writeret + (pktcount * 4);
 				}
 				else
-				{
-					//pthread_mutex_lock(&status.tsseekmutex);
-					if(status.playfdirection == -1)
-					{
-						readret = videoMakePES(buf, readret, status.aktservice->channel->videopid, servicenode->tssize, 1);
-						videoclearbuffer(status.aktservice->videodev);
-						writeret = dvbwrite(status.aktservice->videodev->fd, buf, readret, writetimeout);
-						if(prints == 2)
-						{
-							readret = read(servicenode->recsrcfd, buf, recbsize);
-							readret = videoMakePES(buf, readret, status.aktservice->channel->videopid, servicenode->tssize, 1);
-							writeret = dvbwrite(status.aktservice->videodev->fd, buf, readret, writetimeout);
-							readret = read(servicenode->recsrcfd, buf, recbsize);
-							readret = videoMakePES(buf, readret, status.aktservice->channel->videopid, servicenode->tssize, 1);
-							writeret = dvbwrite(status.aktservice->videodev->fd, buf, readret, writetimeout);
-							readret = read(servicenode->recsrcfd, buf, recbsize);
-							readret = videoMakePES(buf, readret, status.aktservice->channel->videopid, servicenode->tssize, 1);
-							writeret = dvbwrite(status.aktservice->videodev->fd, buf, readret, writetimeout);
-						}				
-						usleep(400000);
-						//usleep(500000);
-						//usleep(1000000);
-					}
-					else	
 						writeret = dvbwrite(servicenode->recdstfd, buf, readret, writetimeout);
-					//pthread_mutex_unlock(&status.tsseekmutex);
-				}
 			}
 
 			if(writeret < 1)

@@ -6,7 +6,7 @@
 #define FBIO_BLIT 0x22
 #endif
 
-int videodiscontinuityskip(struct dvbdev* node)
+int videodiscontinuityskip(struct dvbdev* node, int flag)
 {
 }
 
