@@ -446,6 +446,7 @@ struct scaninfo
 	char* satname;
 	int tpcount;
 	int tpmax;
+	int tpnew;
 	int tvcount;
 	int newtvcount;
 	int radiocount;

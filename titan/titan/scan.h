@@ -182,6 +182,7 @@ int parsenit(unsigned char* buf, uint8_t* lastsecnr, int orbitalpos)
 				case 0x43:
 					if(satsystemdesc(buf + pos2, transponderid, onid, orbitalpos) != NULL)
 					{
+						scaninfo.tpnew++;
 						if(scaninfo.scantype != 0)
 							scaninfo.tpmax++;
 					}
@@ -607,7 +608,7 @@ void doscan(struct stimerthread* timernode)
 				while(secnr <= lastsecnr && secnr <= 256)
 				{
 					if(timernode->aktion != START) break;
-					buf = dvbgetnit(fenode, secnr, scaninfo.timeout);
+					buf = dvbgetnit(fenode, secnr, scaninfo.timeout * 2);
 					if(buf != NULL)
 					{
 						parsenit(buf, &lastsecnr, satnode->orbitalpos);
@@ -927,6 +928,8 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 		tmpstr = ostrcat(tmpstr, oitoa(scaninfo.tpcount), 1, 1);
 		tmpstr = ostrcat(tmpstr, " / ", 1, 0);
 		tmpstr = ostrcat(tmpstr, oitoa(scaninfo.tpmax), 1, 1);
+		tmpstr = ostrcat(tmpstr, " / ", 1, 0);
+		tmpstr = ostrcat(tmpstr, oitoa(scaninfo.tpnew), 1, 1);
 		changetext(tpcount, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 
