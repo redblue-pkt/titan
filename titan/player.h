@@ -86,7 +86,7 @@ int playerstartts(char* file, int flag)
 			dvrclose(dvrnode, -1);
 			return 1;
 		}
-		if(flag == 0)
+		if(flag == 0 && getconfigint("showlastpos", NULL) == 1)
 		{ 
 			char* fileseek = changefilenameext(file, ".se");
 			FILE* fbseek = fopen(fileseek, "r");
