@@ -1248,9 +1248,8 @@ int findframe(unsigned char* buf, int len, int start, int tssize, int flag)
 
 int findandposrew(int fd, int tssize, int skip)
 {
-	int i, r;
+	int i;
 	int ret = 0;
-	int rc = 0;
 	int framelen = -1;
 	off64_t endframe = -1;
 	off64_t startframe = -1;

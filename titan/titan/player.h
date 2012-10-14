@@ -97,7 +97,7 @@ int playerstartts(char* file, int flag)
 				{
 					char* skip1 = malloc(20);
 					fscanf(fbseek,"%s",skip1);
-					off64_t pos = lseek64(fd, atoll(skip1), SEEK_SET);
+					lseek64(fd, atoll(skip1), SEEK_SET);
 					free(skip1); skip1=NULL;
 				}
 				fclose(fbseek);
@@ -1173,7 +1173,6 @@ int playerjumpts(struct service* servicenode, int sekunden, int *startpts, off64
 	int adaptation = 0;
 	int payload = 0;
 	int pes = 0;
-  int sid = 0;
   int tspid = 0;
 	
 	off64_t pts  = 0;
@@ -1201,8 +1200,6 @@ int playerjumpts(struct service* servicenode, int sekunden, int *startpts, off64
 	curpos = lseek64(servicenode->recsrcfd, 0, SEEK_CUR);	
 	int dupfd = open(servicenode->recname, O_RDONLY | O_LARGEFILE);
 	newpos = lseek64(dupfd, curpos, SEEK_SET);
-
-	off64_t fdptspos;
 	
 	if (*startpts == 0)
 	{

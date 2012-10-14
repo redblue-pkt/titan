@@ -61,7 +61,7 @@ void screensystem_info(int mode)
 	}
 	else if(mode == 1)
 	{
-		if(isfile("/etc/model")	== 0) return 0;
+		if(isfile("/etc/model")	== 0) return;
 		char* boxversion = string_tolower(readsys("/etc/model", 1));
 		char* path = NULL;
 		char* out = NULL;

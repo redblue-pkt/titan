@@ -22,7 +22,7 @@ void screeninfobar()
 	status.infobaraktiv = 1;
 	status.mcaktiv = 0;
 	
-	int playinfobarcount = 0, playinfobarstatus = 1, dirrcret = 0;
+	int playinfobarcount = 0, playinfobarstatus = 1;
 	
 	while(1)
 	{
