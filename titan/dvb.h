@@ -433,7 +433,7 @@ unsigned char* dvbgetpmt(struct dvbdev* fenode, unsigned char* patbuf, int servi
 	{
 		if((length = dvbread(dmxnode, buf, 0, MINMALLOC, timeout)) < 0)
 		{
-			err("read pmt");
+			err("read pmt pid=%d", *pmtpid);
 			break;
 		}
 		if(serviceid == (((buf[3] & 0xff) << 8) + (buf[4] & 0xff)))
