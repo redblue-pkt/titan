@@ -1707,7 +1707,7 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 	char* tmpstr = NULL, *blacklist = NULL;
 	struct dvbdev *dvbnode = dvbdev;
 
-	if(node == NULL) return;
+	if(node == NULL) return 0;
 
 	while(dvbnode != NULL)
 	{
