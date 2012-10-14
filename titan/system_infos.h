@@ -67,11 +67,11 @@ void screensystem_infos(int mode)
 	if(mode == 3)
 	{
 		changetitle(system_info, _("Mounts"));
-		system("ls /media/usb/* >/dev/null"
-		system("ls /media/net/* >/dev/null"
-		system("ls /var/swap/* >/dev/null"
-		system("ls /var/backup/* >/dev/null"
-		system("ls /media/hdd/* >/dev/null"
+		system("ls /media/usb/* >/dev/null");
+		system("ls /media/net/* >/dev/null");
+		system("ls /var/swap/* >/dev/null");
+		system("ls /var/backup/* >/dev/null");
+		system("ls /media/hdd/* >/dev/null");
 		tmpstr = command("mount");
 		changetext(info, tmpstr);
 
