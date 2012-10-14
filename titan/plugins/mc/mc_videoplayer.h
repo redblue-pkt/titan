@@ -718,7 +718,7 @@ void screenmc_videoplayer()
 					}
 					else
 					{
-						if(playertype == 0 && getconfigint("mc_vp_showlastpos", NULL) == 1)
+						if(playertype == 0 && getconfigint("showlastpos", NULL) == 1)
 						{
 							char* tmpfilename = ostrcat(filename, NULL, 0, 0);
 							char* fileseek = ostrcat("/var/swap/player/", basename(tmpfilename), 0, 0);
