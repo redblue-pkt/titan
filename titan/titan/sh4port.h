@@ -15,19 +15,12 @@ struct stmfbio_var_screeninfo_ex infoex;
 #define DVB_DISCONTINUITY_CONTINUOUS_REVERSE  0x02
 
 // inform the player about the jump in the stream data
-// this only works if the video device allows the discontinuity ioctl in read-only mode (patched)
-int videodiscontinuityskip(struct dvbdev* node)
+// flag 0: skip
+// flag 1: cont. reverse
+int videodiscontinuityskip(struct dvbdev* node, int flag)
 {
 	int fd = -1;
-	int param = DVB_DISCONTINUITY_SKIP; // | DVB_DISCONTINUITY_CONTINUOUS_REVERSE;
-	char *buf = NULL, *videodev = NULL;
-
-	videodev = getconfig("videodev", NULL);
-	if(videodev == NULL)
-	{
-		debug(1000, "out -> NULL detect");
-		return 1;
-	}
+	int param = 0;
 
 	if(node == NULL)
 	{
@@ -35,33 +28,18 @@ int videodiscontinuityskip(struct dvbdev* node)
 		return 1;
 	}
 
-	buf = malloc(MINMALLOC);
-	if(buf == NULL)
-	{
-		err("no mem");
-		return 1;
-	}
-
-	sprintf(buf, videodev, node->adapter, node->devnr);
-	fd = open(buf, O_RDONLY);
-	if(fd < 0)
-	{
-		perr("VIDEO_DISCONTINUITY open");
-		free(buf);
-		return 1;
-	}
+	if(flag >= 0)
+		param = DVB_DISCONTINUITY_SKIP;
+	else
+		param = DVB_DISCONTINUITY_CONTINUOUS_REVERSE;
 
 	debug(200, "VIDEO_DISCONTINUITY");
 	if(ioctl(fd, VIDEO_DISCONTINUITY, (void*)param) < 0)
 	{
 		perr("VIDEO_DISCONTINUITY");
-		free(buf);
-		close(fd);
 		return 1;
 	}
 
-	free(buf);
-	close(fd);
 	return 0;
 }
 

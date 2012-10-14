@@ -154,7 +154,6 @@ int playerstartts(char* file, int flag)
 		}
 		//status.playercan = 0x7EFF;
 		status.playercan = 0x7FFF;	
-		status.playfdirection = 0;
 	}
 
 	return 0;
@@ -171,20 +170,6 @@ void playerstopts(int flag, int flag1)
 	struct service* snode = NULL;
 	struct channel* node = NULL;
 
-	if(status.playfdirection == -1)
-	{
-		videoclearbuffer(status.aktservice->videodev);
-		videostop(status.aktservice->videodev, 0);
-		videoselectsource(status.aktservice->videodev, VIDEO_SOURCE_DEMUX);
-		videoplay(status.aktservice->videodev);
-		status.playfdirection = 0;
-		
-	}
-	if(status.playfdirection == 1)
-	{
-		status.playfdirection = 0;
-	}
-	
 	snode = getservice(RECORDPLAY, flag1);
 	if(snode != NULL) snode->recendtime = 1;
 
@@ -222,21 +207,6 @@ void playerstopts(int flag, int flag1)
 
 void playercontinuets()
 {
-	if(status.playfdirection == -1)
-	{
-		pthread_mutex_lock(&status.tsseekmutex);
-		videoclearbuffer(status.aktservice->videodev);
-		videostop(status.aktservice->videodev, 0);
-		videoselectsource(status.aktservice->videodev, VIDEO_SOURCE_DEMUX);
-		videoplay(status.aktservice->videodev);
-		status.playfdirection = 0;
-		pthread_mutex_unlock(&status.tsseekmutex);
-		
-	}
-	if(status.playfdirection == 1)
-	{
-		status.playfdirection = 0;
-	}
 	videocontinue(status.aktservice->videodev);
 	audioplay(status.aktservice->audiodev);
 }
@@ -317,7 +287,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 
 	ret = videoclearbuffer(status.aktservice->videodev);
 	ret = audioclearbuffer(status.aktservice->audiodev);
-	ret = videodiscontinuityskip(status.aktservice->videodev);
+	ret = videodiscontinuityskip(status.aktservice->videodev, 0);
 
 	if(sekunden >= 0)
 	{
@@ -366,25 +336,13 @@ void playerffts(int speed)
 //flag = 1 --> timeshift
 void playerfrts(int speed, int flag)
 {
-	struct service* snode = NULL;
-	
-	if(status.playfdirection == 0)
+ if(speed == -2)
 	{
-		m_lock(&status.tsseekmutex, 15);
-		if(speed != 0)
-		{ 
-			videoclearbuffer(status.aktservice->videodev);
-			videostop(status.aktservice->videodev, 0);
-			audioclearbuffer(status.aktservice->audiodev);
-			audiostop(status.aktservice->audiodev);
-			videoclearbuffer(status.aktservice->videodev);
-			videoselectsource(status.aktservice->videodev, VIDEO_SOURCE_MEMORY);
-			videoplay(status.aktservice->videodev);
-			videofastforward(status.aktservice->videodev, 0);
-			status.playfdirection = -1;
-		}
+		videoclearbuffer(status.aktservice->videodev);
+		audioclearbuffer(status.aktservice->audiodev);
 	}
-	m_unlock(&status.tsseekmutex, 15);
+	speed *= -1;
+	videofastforward(status.aktservice->videodev, speed / 2);
 }
 	
 

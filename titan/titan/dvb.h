@@ -704,7 +704,7 @@ void dvbgetpmtthread()
 	unsigned char* pmtbuf = NULL;
 
 	//fastrew activ?
-	if(status.playfdirection == -1) return;
+	if(status.playspeed < 0) return;
 	
 	if(status.aktservice->type != CHANNEL || status.aktservice->channel == NULL) return;
 
