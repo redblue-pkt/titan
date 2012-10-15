@@ -974,6 +974,7 @@ void picplayer(struct skin* picscreen, struct skin* picture, struct skin* picnam
 	picture->picwidth = 1;
 	picture->picheight = 1;
 	picture->bgcol = 0;
+	picture->picquality = getconfigint("mc_pp_picquality", NULL);
 
 	drawscreen(picscreen, 0, 4);
 }
