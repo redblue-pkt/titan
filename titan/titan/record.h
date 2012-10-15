@@ -384,7 +384,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			if(frcount != 0 && status.playspeed >= 0)
 				frcount = 0;
 
-			readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 0);
+			readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
 			pthread_mutex_unlock(&status.tsseekmutex);
 			if(status.playspeed < 0)
 			{
