@@ -1605,6 +1605,7 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 			else if(ret == 1 && canode->poll == 0)
 			{
 				debug(620, "write but poll=0, slot %d, ret %d", dvbnode->devnr, ret);
+				if(canode->fastrun > 0) canode->fastrun--;
 			}
 			else if(ret == 2) //change
 			{
@@ -1625,6 +1626,7 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 			else if(ret == -2) //timeout
 			{
 				debug(620, "timeout slot %d, ret %d", dvbnode->devnr, ret);
+				if(canode->fastrun > 0) canode->fastrun--;
 				break;
 			}
 			else if(ret < 0) //error
@@ -1669,7 +1671,7 @@ void cathread(struct stimerthread* self, struct dvbdev* dvbnode)
 		if(dvbnode->caslot->fastrun == 0)
 			sleep(1);
 		else
-			usleep(300000);
+			usleep(100000);
 	}
 	debug(620, "CA thread end (slot %d)", dvbnode->devnr);
 }
