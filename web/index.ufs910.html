@@ -4,111 +4,7 @@
     </title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="titan.css">
-<script type="text/javascript">
-var firststart=true;
-function show(das) {
-  if (document.getElementById(das).style.display=='none') {
-    document.getElementById(das).style.display='block';
-  }
-  else {
-    document.getElementById(das).style.display='none';
- }
-}
-function vertAl(){
-  breite = window.innerWidth;
-  if (breite <= 1140){
-    document.getElementById("eins").style.left = 680;
-    document.getElementById("eins").style.top = 140;
-    document.getElementById("zwei").style.left = 680;
-    document.getElementById("zwei").style.top = 140;
-  } else {
-    document.getElementById("eins").style.left = 1000;
-    document.getElementById("zwei").style.left = 1000;
-  }
-  if (breite > 1360){
-    divPos = ((breite)/2)-657;
-    webIFPos = ((breite)/2)-490;
-    document.getElementById("eins").style.left = divPos;
-    document.getElementById("zwei").style.left = divPos -40;
-    document.getElementById("webif").style.left = webIFPos;
-  }
-}
-function rcopen_virtual() {
-  pwin = window.open("rc_virtual.html","_blank","toolbar=0,status=0,scrollbars=0,resizable=0,width=220,height=470,top=50,left=50");
-  pwin.blur();
-  window.focus();
-  javascript:show('eins');
-}
-function saveLastIframe(actQuery){
-	if(firststart){
-	 showLastIframe();
-   firststart=false;
-  }else{
-    var temp;
-    try{
-      if(((temp=actQuery.href.toString()).indexOf('getepg'))<=0 && (temp.indexOf('query?get')>0)){
-        var lastQuery = actQuery.href.toString().split("/");
-  	    var a = new Date();
-        a = new Date(a.getTime() +1000*60*60*24*365);
-        document.cookie = 'tiTan2='+lastQuery[3]+'; expires='+a.toGMTString()+';';
-      }
-    }catch(err){
-          
-    }
-  } 
-}      
-
-function showLastIframe(){
-  var temp;
-  if((temp=GetCookie('tiTan2'))!=null){
-  document.getElementById('main').src=temp; }
-}
-function rcopen_org() {
-  pwin = window.open("rc.html","_blank","toolbar=0,status=0,scrollbars=0,resizable=0,width=220,height=670,top=50,left=50");
-  pwin.blur();
-  window.focus();
-  javascript:show('zwei');
-}
-function rcswitch() {
-cookiewert = GetCookie('tiTan');
-if(cookiewert == 'VirtualRemote')
-	{ 
-	var a = new Date();
-	a = new Date(a.getTime() +1000*60*60*24*365);
-	document.cookie = 'tiTan=OriginalRemote; expires='+a.toGMTString()+';'; 
-	javascript:show('eins');
-	javascript:show('zwei');
-    } else {
-	var a = new Date();
-	a = new Date(a.getTime() +1000*60*60*24*365);
-	document.cookie = 'tiTan=VirtualRemote; expires='+a.toGMTString()+';'; 
-	javascript:show('zwei');
-	javascript:show('eins');
- }
-}
-function rcshow() {
-cookiewert = GetCookie('tiTan');
-if(cookiewert == 'VirtualRemote')
-	{ 
-	javascript:show('eins');
-    } else 	{ 	
-	javascript:show('zwei');
-    }
-}
-function GetCookie(sName)
-{
-  // cookies are separated by semicolons
-  var aCookie = document.cookie.split("; ");
-  for (var i=0; i < aCookie.length; i++)
-  {
-    // a name/value pair (a crumb) is separated by an equal sign
-    var aCrumb = aCookie[i].split("=");
-    if (sName == aCrumb[0]) 
-      return unescape(aCrumb[1]);
-  }
-  return null;
-}
-</script>
+<script language='JavaScript' src='helper.js'></script>
   </head>
   <body class=body onLoad="vertAl()">
     <iframe name=nothing scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=0 height=0>
@@ -120,7 +16,10 @@ function GetCookie(sName)
           <img src="img/titanweb.png"></td>  	
         <td width=50% align=right valign=top height=20>	 
           <table border=0 width=340>	  
-            <tr>	   
+           <tr>	 
+			 <td width=16 align=center id=ipadstream>	   	
+                <a href="javascript:ipadStream()">
+                  <img border=0 width=16 height=16 title="Ipad Stream" src="img/icon_smartPhone.png"></a>  	   </td>		
               <td width=16 align=center>	   	
                 <a href="javascript:rcshow()">
                   <img border=0 width=16 height=16 title="Show/Hide Remote Control" src="img/icon_rcopen.png"></a>  	   </td>	   
@@ -172,7 +71,7 @@ function GetCookie(sName)
       <tr> 
         <!-- AKT SERVICE -->  
         <td colspan=4 style="border-radius: 5px 5px 5px 5px">   
-          <iframe name=aktservice scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=35 src=query?getaktservice onload="setTimeout(function(){aktservice.document.location.href='query?getaktservice';}, 15000);">
+          <iframe id=aktserviceframe name=aktservice scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=35 src=query?getaktservice onload="setTimeout(function(){aktservice.document.location.href='query?getaktservice';}, 15000);">
           </iframe>  </td> 
         <!-- AKT SERVICE END --> 
       </tr>   
