@@ -744,6 +744,7 @@ struct skin
 	int8_t bordertype;
 	int16_t borderradius;
 	uint16_t bgspace;
+	uint8_t picquality;
 
 	uint8_t titlesize;
 	struct filelist* filelist;
