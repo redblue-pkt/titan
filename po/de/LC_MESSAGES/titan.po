@@ -2626,3 +2626,6 @@ msgstr "standard Verzeichnis"
 
 msgid "use last Directory"
 msgstr "Benutze immer letztes Verzeichnis"
+
+msgid "Pic quality"
+msgstr "Benutze immer letztes Verzeichnis"
