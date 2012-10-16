@@ -95,14 +95,17 @@ int playerstartts(char* file, int flag)
 				ret = textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 400, 200, 10, 0);
 				if(ret == 0 || ret == 1)
 				{
-					char* skip1 = malloc(20);
-					fscanf(fbseek,"%s",skip1);
-					lseek64(fd, atoll(skip1), SEEK_SET);
-					free(skip1); skip1=NULL;
+					char* skip1 = cmalloc(1, 20);
+					if(skip1 != NULL)
+					{
+						fscanf(fbseek, "%s", skip1);
+						lseek64(fd, atoll(skip1), SEEK_SET);
+					}
+					free(skip1); skip1 = NULL;
 				}
 				fclose(fbseek);
 			}
-			free(fileseek); fileseek=NULL;
+			free(fileseek); fileseek = NULL;
 		}
 		chnode = createchannel("player", 0, 0, serviceid, 99, 0, -1, -1, -1, -1, 0);
 		if(chnode != NULL) chnode->pmtpid = pmtpid;
