@@ -2628,4 +2628,10 @@ msgid "use last Directory"
 msgstr "Benutze immer letztes Verzeichnis"
 
 msgid "Pic quality"
-msgstr "Benutze immer letztes Verzeichnis"
+msgstr "Darstellungsqualität von Fotos"
+
+msgid "low"
+msgstr "gering"
+
+msgid "best"
+msgstr "beste"
