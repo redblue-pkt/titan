@@ -735,7 +735,7 @@ void screenmc_videoplayer()
 										fscanf(fbseek,"%s",skip1);
 										playrcjumpf(filename, atoll(skip1), &playinfobarstatus, &playinfobarcount, playertype, flag);		
 									}
-									free(skip1); skip1=NULL;
+									free(skip1), skip1 = NULL;
 								}
 								fclose(fbseek);
 							}
