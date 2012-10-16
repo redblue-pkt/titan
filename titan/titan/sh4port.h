@@ -19,7 +19,6 @@ struct stmfbio_var_screeninfo_ex infoex;
 // flag 1: cont. reverse
 int videodiscontinuityskip(struct dvbdev* node, int flag)
 {
-	int fd = -1;
 	int param = 0;
 
 	if(node == NULL)
@@ -34,7 +33,7 @@ int videodiscontinuityskip(struct dvbdev* node, int flag)
 		param = DVB_DISCONTINUITY_CONTINUOUS_REVERSE;
 
 	debug(200, "VIDEO_DISCONTINUITY");
-	if(ioctl(fd, VIDEO_DISCONTINUITY, (void*)param) < 0)
+	if(ioctl(node->fd, VIDEO_DISCONTINUITY, (void*)param) < 0)
 	{
 		perr("VIDEO_DISCONTINUITY");
 		return 1;
