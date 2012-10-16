@@ -369,17 +369,20 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			if(frcount == 0 && status.playspeed < 0)
 			{
 				off64_t pos = lseek64(servicenode->recsrcfd, -(frbsize * 8), SEEK_CUR);
-				videodiscontinuityskip(status.aktservice->videodev, -1);
 
 				//begin of file
 				if(pos <= 0)
 				{
+					videoclearbuffer(status.aktservice->videodev);
+					audioclearbuffer(status.aktservice->audiodev);
 					playerpausets();
 					playercontinuets();
 					status.playspeed = 0;
 					status.pause = 0;
 					status.play = 1;
 				}
+				else
+					videodiscontinuityskip(status.aktservice->videodev, -1);
 			}
 
 			if(frcount != 0 && status.playspeed >= 0)
