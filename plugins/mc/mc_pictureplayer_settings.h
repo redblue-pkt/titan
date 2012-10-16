@@ -23,7 +23,10 @@ void screenmc_pictureplayer_settings()
 	changeinput(picdenom, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16");
 	setchoiceboxselection(picdenom, getskinconfig("mc_pp_picdenom", NULL));
 
-	changeinput(picquality, "0\n1\n2\n3");
+//	changeinput(picquality, "0\n1\n2\n3");
+	addchoicebox(picquality, "0", _("low"));
+	addchoicebox(picquality, "1", _("middle"));
+	addchoicebox(picquality, "2", _("best"));
 	setchoiceboxselection(picquality, getconfig("mc_pp_picquality", NULL));
 
 	addchoicebox(pichwdecode, "0", _("off"));	
@@ -84,14 +87,14 @@ void screenmc_pictureplayer_settings()
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
-			addconfigscreen("mc_pp_dirsort", dirsort);
-			addconfigscreen("mc_pp_view", view);
-			addconfigscreen("mc_pp_sound", sound);
-			addconfigscreen("mc_pp_interval", interval);
-			addconfigscreen("mc_pp_showpictitle", showpictitle);
-			addconfigscreen("mc_pp_picdenom", picdenom);
-			addconfigscreen("mc_pp_picquality", picquality);			
-			addconfigscreen("mc_pp_pichwdecode", pichwdecode);
+			addconfigscreencheck("mc_pp_dirsort", dirsort, NULL);
+			addconfigscreencheck("mc_pp_view", view, NULL);
+			addconfigscreencheck("mc_pp_sound", sound, NULL);
+			addconfigscreencheck("mc_pp_interval", interval, NULL);
+			addconfigscreencheck("mc_pp_showpictitle", showpictitle, NULL);
+			addconfigscreen("mc_pp_picdenom", picdenom);			
+			addconfigscreencheck("mc_pp_picquality", picquality, NULL);
+			addconfigscreencheck("mc_pp_pichwdecode", pichwdecode, NULL);
 			addconfigscreen("mc_pp_defaultdir", defaultdir);
 			addconfigscreencheck("mc_pp_uselastdir", uselastdir, NULL);
 			break;
