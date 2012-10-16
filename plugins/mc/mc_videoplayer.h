@@ -729,9 +729,12 @@ void screenmc_videoplayer()
 							{
 								if(textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
 								{
-									char* skip1 = malloc(20);
-									fscanf(fbseek,"%s",skip1);
-									playrcjumpf(filename, atoll(skip1), &playinfobarstatus, &playinfobarcount, playertype, flag);		
+									char* skip1 = cmalloc(1, 20); 
+									if(skip1 != NULL) 
+									{
+										fscanf(fbseek,"%s",skip1);
+										playrcjumpf(filename, atoll(skip1), &playinfobarstatus, &playinfobarcount, playertype, flag);		
+									}
 									free(skip1); skip1=NULL;
 								}
 								fclose(fbseek);
