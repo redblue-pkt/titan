@@ -142,7 +142,7 @@ int playerstartts(char* file, int flag)
 		return 1;
 	}
 
-	if(flag == 0)
+	if(flag == 0 || flag == 2)
 	{
 		snode = getservice(RECORDPLAY, 0);
 		if(snode != NULL) snode->recname = ostrcat(file, NULL, 0, 0);
@@ -261,6 +261,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	
 	m_lock(&status.tsseekmutex, 15);
 	
+/*
 	ret = videogetpts(status.aktservice->videodev, &aktpts);
 	if(ret == 0)
 	{
@@ -276,6 +277,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	}
 	else
 		sekundenoff = 0;
+*/
 	
 	if(gettsinfo(dupfd, &lenpts, NULL, NULL, &bitrate, servicenode->tssize) != 0)
 	{
@@ -325,7 +327,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	currentpos = lseek64(servicenode->recsrcfd, offset, SEEK_CUR);
 
 	m_unlock(&status.tsseekmutex, 15);
-	usleep(500000);
+	//usleep(500000);
 	status.timeshiftseek = 0;
 	return 0;
 }
