@@ -430,7 +430,7 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 	}
 
 	//get ait and parse it for hbbtv url
-	if(chnode->aitpid > 0)
+	if(flag == 0 && chnode->aitpid > 0)
 	{
 		unsigned char* aitbuf = NULL;
 		aitbuf = dvbgetait(fenode, chnode->aitpid, 0, -1);

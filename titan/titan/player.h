@@ -41,13 +41,13 @@ int playerstartts(char* file, int flag)
 	int fd = -1, ret = 0, tssize = 188;
 	int16_t pmtpid = 0;
 	int serviceid = 0;
-	int supermagic = 0;
+	int supermagic = -1;
 	struct channel* chnode = NULL;
 	struct service* snode = NULL;
 	struct dvbdev* fenode = NULL;
 	struct dvbdev* dvrnode = NULL;
 
-	supermagic = getsupermagic(file);
+	//supermagic = getsupermagic(file);
 
 	if(supermagic == NFS_SUPER_MAGIC || supermagic == SMB_SUPER_MAGIC)
 	{
