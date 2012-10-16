@@ -47,7 +47,11 @@ void screensystem_infos(int mode)
 	if(mode == 1)
 	{
 		changetitle(system_info, _("Free Space"));
-
+		system("ls /media/usb/* >/dev/null");
+		system("ls /media/net/* >/dev/null");
+		system("ls /var/swap/* >/dev/null");
+		system("ls /var/backup/* >/dev/null");
+		system("ls /media/hdd/* >/dev/null");
 		tmpstr = command("df -h");
 		changetext(info, tmpstr);
 
