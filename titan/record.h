@@ -283,9 +283,9 @@ int recordsplit(struct service* servicenode)
 
 int readwritethread(struct stimerthread* stimer, struct service* servicenode, int flag)
 {
-	int readret = 0, writeret = 0, ret = 0, recbsize = 0, tmprecbsize = 0, i = 0, pktcount = 0;
+	int readret = 0, writeret = 0, ret = 0, recbsize = 0, tmprecbsize = 0, i = 0, pktcount = 0, frbsize = 0;
 	int readtimeout = -1, writetimeout = -1;
-	int recsync = 0, frcount = 0;
+	int recsync = 0, frcount = 0, count = 0;
 	unsigned char* buf = NULL, *tmpbuf = NULL;
 	char* retstr = NULL;
 
@@ -298,6 +298,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 	}
 
 	recsync = getconfigint("recsync", NULL);
+	frbsize = servicenode->tssize * 2788;
 
 	if(servicenode->type == RECORDDIRECT || servicenode->type == RECORDTIMER || servicenode->type == RECORDTIMESHIFT)
 	{
@@ -315,8 +316,8 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 		}
 		if(servicenode->type == RECORDPLAY)
 		{
-			recbsize = servicenode->tssize * 2788;
-			tmprecbsize = 188 * 2788;
+			recbsize = servicenode->tssize * 188;
+			tmprecbsize = 188 * 188;
 		}
 		if(servicenode->type == RECORDSTREAM) recbsize = servicenode->tssize * 2788;
 		readtimeout = 5000000;
@@ -367,7 +368,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			pthread_mutex_lock(&status.tsseekmutex);
 			if(frcount == 0 && status.playspeed < 0)
 			{
-				off64_t pos = lseek64(servicenode->recsrcfd, -(recbsize * 8), SEEK_CUR);
+				off64_t pos = lseek64(servicenode->recsrcfd, -(frbsize * 8), SEEK_CUR);
 				videodiscontinuityskip(status.aktservice->videodev, -1);
 
 				//begin of file
@@ -389,7 +390,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			if(status.playspeed < 0)
 			{
 				frcount += readret;
-				if(frcount >= recbsize * 4)
+				if(frcount >= frbsize * 4)
 					frcount = 0;
 
 			}
@@ -414,6 +415,38 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				}
 				else
 						writeret = dvbwrite(servicenode->recdstfd, buf, readret, writetimeout);
+
+				//inject first pakets slower/smaler, so demux can start and read
+				if(servicenode->type == RECORDPLAY && count < 20)
+				{
+					count++;
+					usleep(20000);
+					if(count == 19)
+					{
+						recbsize = servicenode->tssize * 2788;
+						tmprecbsize = 188 * 2788;
+
+						free(buf);
+						buf = malloc(recbsize);
+						if(buf == NULL)
+						{
+							err("no mem");
+							servicenode->recendtime = 1;
+						}
+
+						if(servicenode->tssize == 192)
+						{
+							free(tmpbuf);
+							tmpbuf = malloc(tmprecbsize);
+							if(tmpbuf == NULL)
+							{
+								err("no mem");
+								servicenode->recendtime = 1;
+							}
+						}
+					}
+				}
+
 			}
 
 			if(writeret < 1)
