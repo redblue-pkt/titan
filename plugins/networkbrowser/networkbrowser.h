@@ -1467,6 +1467,16 @@ start:
 		goto start;
 	}
 
+	if(mbox == NULL)
+	{
+		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcgreen", NULL) || rcret == getrcconfigint("rcyellow", NULL))
+		{
+			freemenulist(mlist, 0); mlist = NULL;
+			freenetworkbrowser(); networkbrowser = NULL;
+			goto start;
+		}
+	}
+
 	freemenulist(mlist, 0); mlist = NULL;
 	freenetworkbrowser();
 
