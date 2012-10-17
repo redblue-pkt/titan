@@ -2635,3 +2635,6 @@ msgstr "gering"
 
 msgid "best"
 msgstr "beste"
+
+msgid "Manual Search Cable"
+msgstr "Manuelle Kabelsuche"
