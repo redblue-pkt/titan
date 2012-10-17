@@ -274,11 +274,12 @@ void screenextensions(int mode, char* path)
 		unlink("/tmp/ipkg.log");
 		system("syncipkg.sh");
 		ipkg_update();
-		clearscreen(load);
 		ipkg_upgrade();
 		saveipkg();
 		freeipkg();
 		loadplugin();
+		clearscreen(load);
+		drawscreen(skin, 0, 0);
 	}
 	status.hangtime = getconfigint("hangtime", NULL);
 }
