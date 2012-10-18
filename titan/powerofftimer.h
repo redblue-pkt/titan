@@ -46,7 +46,6 @@ void checkshutdowntimer()
 	if(mode > 0)
 	{
 		if(status.fixpowerofftime > 1) status.fixpowerofftime += 86400;
-		status.sd_timer->active = 0;
 		if(getconfigint("shutdowntimetype", NULL) == 0)
 		{
 			if(mode == 2)
@@ -57,12 +56,13 @@ void checkshutdowntimer()
 			else
 			{
 				mode = 0;
-				oshutdown(1, 3);
+				oshutdown(1, 5);
 			} 
 		}
 		else
 		{
 			mode = 0;
+			status.sd_timer->active = 0;
 			status.standby = 2;
 			screenstandby();
 		}
