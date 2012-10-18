@@ -11,7 +11,7 @@ void setdefaults()
 	addconfigdef("dmxaudiobuffersize", "1048576");
 	addconfigdef("dmxepgbuffersize", "524288");
 	addconfigdef("dmxrecordbuffersize", "3145728");
-	addconfigdef("dmxtimeshiftbuffersize", "3145728");
+	addconfigdef("dmxtimeshiftbuffersize", "5242880");
 	addconfigdef("dmxstreambuffersize", "3145728");
 	addconfigdef("mediadbpath", "/media/hdd/.mediadb");
 	addconfigdef("mediadbfile", "/media/hdd/.mediadb/mediadb");
