@@ -3,6 +3,7 @@
 
 int videodiscontinuityskip(struct dvbdev* node, int flag)
 {
+	return 0;
 }
 
 void fbsave()
