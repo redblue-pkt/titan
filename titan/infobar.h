@@ -121,26 +121,37 @@ void screeninfobar()
 				timeshiftplay(&playinfobarstatus, &playinfobarcount);
 				continue;
 			}
-			//TODO: ff, fr, seek
 			if(rcret == getrcconfigint("rcff", NULL))
 			{
 				if(status.playing == 1) { 
-					if(status.timeshiftseek > 10000) {
-						timeshiftseek((status.timeshiftseek - 10000) * 2 + 10000, &playinfobarstatus, &playinfobarcount);
+					if(status.timeshiftseek > 10000)
+					{
+						if(status.timeshiftseek == 20002)
+							timeshiftplay(&playinfobarstatus, &playinfobarcount);
+						else if(status.timeshiftseek > 20002)
+							timeshiftseek((status.timeshiftseek - 20000) / 2 + 20000, &playinfobarstatus, &playinfobarcount, 1);
+						else
+							timeshiftseek((status.timeshiftseek - 10000) * 2 + 10000, &playinfobarstatus, &playinfobarcount, 0);
 					}
 					else
-					timeshiftseek(10002, &playinfobarstatus, &playinfobarcount);
+						timeshiftseek(10002, &playinfobarstatus, &playinfobarcount, 0);
 				}
 				continue;
 			}
 			if(rcret == getrcconfigint("rcfr", NULL))
 			{
 				if(status.playing == 1) { 
-					if(status.timeshiftseek > 20000) {
-						timeshiftseek((status.timeshiftseek - 20000) * 2 + 20000, &playinfobarstatus, &playinfobarcount);
+					if(status.timeshiftseek > 10000)
+					{
+						if(status.timeshiftseek == 10002)
+							timeshiftplay(&playinfobarstatus, &playinfobarcount);
+						else if(status.timeshiftseek < 20002)
+							timeshiftseek((status.timeshiftseek - 10000) / 2 + 10000, &playinfobarstatus, &playinfobarcount, 1);
+						else
+							timeshiftseek((status.timeshiftseek - 20000) * 2 + 20000, &playinfobarstatus, &playinfobarcount, 0);
 					}
 					else
-					timeshiftseek(20002, &playinfobarstatus, &playinfobarcount);
+						timeshiftseek(20002, &playinfobarstatus, &playinfobarcount, 0);
 				}
 				continue;
 			}
@@ -148,55 +159,48 @@ void screeninfobar()
 			{
 				if(status.timeshiftseek >= 10002)
 						timeshiftplay(&playinfobarstatus, &playinfobarcount);
-				timeshiftseek(60, &playinfobarstatus, &playinfobarcount);
+				timeshiftseek(60, &playinfobarstatus, &playinfobarcount, 0);
 				continue;
 			}
 			if(rcret == getrcconfigint("rc6", NULL))
 			{
 				if(status.timeshiftseek >= 10002)
 						timeshiftplay(&playinfobarstatus, &playinfobarcount);
-				timeshiftseek(300, &playinfobarstatus, &playinfobarcount);
+				timeshiftseek(300, &playinfobarstatus, &playinfobarcount, 0);
 				continue;
 			}
 			if(rcret == getrcconfigint("rc9", NULL))
 			{
 				if(status.timeshiftseek >= 10002)
 						timeshiftplay(&playinfobarstatus, &playinfobarcount);
-				timeshiftseek(600, &playinfobarstatus, &playinfobarcount);
+				timeshiftseek(600, &playinfobarstatus, &playinfobarcount, 0);
 				continue;
 			}	
 			if(rcret == getrcconfigint("rc1", NULL))
 			{
 				if(status.timeshiftseek >= 10002)
 						timeshiftplay(&playinfobarstatus, &playinfobarcount);
-				timeshiftseek(-60, &playinfobarstatus, &playinfobarcount);
+				timeshiftseek(-60, &playinfobarstatus, &playinfobarcount, 0);
 				continue;
 			}
 			if(rcret == getrcconfigint("rc4", NULL))
 			{
 				if(status.timeshiftseek >= 10002)
 						timeshiftplay(&playinfobarstatus, &playinfobarcount);
-				timeshiftseek(-300, &playinfobarstatus, &playinfobarcount);
+				timeshiftseek(-300, &playinfobarstatus, &playinfobarcount, 0);
 				continue;
 			}
 			if(rcret == getrcconfigint("rc7", NULL))
 			{
 				if(status.timeshiftseek >= 10002)
 						timeshiftplay(&playinfobarstatus, &playinfobarcount);
-				timeshiftseek(-600, &playinfobarstatus, &playinfobarcount);
+				timeshiftseek(-600, &playinfobarstatus, &playinfobarcount, 0);
 				continue;
 			}
 			if(rcret == getrcconfigint("rcinfo", NULL))
 			{
 				if(status.playing == 1)
-				{
-					if(status.timeshiftseek >= 10002 && status.timeshiftseek < 999999)
-							timeshiftplay(&playinfobarstatus, &playinfobarcount);
-					if(status.timeshiftseek == 999999)
-						status.timeshiftseek = 0;
-					else 
-						timeshiftseek(999999, &playinfobarstatus, &playinfobarcount);
-				}
+					timeshiftseek(999999, &playinfobarstatus, &playinfobarcount, 0);
 				continue;	
 			}
 		}

@@ -218,17 +218,13 @@ void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
 	close(fd);
 }
 
-void timeshiftseek(int sekunden, int* playinfobarstatus, int* playinfobarcount)
+//flag 0: normal ff or fr
+//flag 1: ff or fr back
+void timeshiftseek(int sekunden, int* playinfobarstatus, int* playinfobarcount, int flag)
 {
 	struct service* snode = getservice(RECORDPLAY, 0);
 	
-	if(status.timeshiftseek == 0)
-	{
-		status.timeshiftseek = sekunden;
-		//addtimer(&timeshiftscreen, START, 10000, 1, (void*)snode, NULL, NULL);
-	}
-	
-	if(status.timeshiftseek < 999999)
+	if(sekunden < 999999)
 	{
 		status.timeshiftseek = sekunden;
 		if(snode != 0)
@@ -243,8 +239,10 @@ void timeshiftseek(int sekunden, int* playinfobarstatus, int* playinfobarcount)
 						return;
 					}
 					status.play = 0;
-					status.playspeed++;
-					status.timeshiftseek = sekunden;
+					if(flag == 0)
+						status.playspeed++;
+					else
+						status.playspeed--;
 					sekunden = sekunden - 10000;
 					playerffts(sekunden);
 				}
@@ -256,8 +254,10 @@ void timeshiftseek(int sekunden, int* playinfobarstatus, int* playinfobarcount)
 						return;
 					}
 					status.play = 0;
-					status.playspeed--;
-					status.timeshiftseek = sekunden;
+					if(flag == 0)
+						status.playspeed--;
+					else
+						status.playspeed++;
 					sekunden = sekunden - 20000;
 					playerfrts(sekunden * -1, 1);
 					//playerseekts(snode, -10, 1);

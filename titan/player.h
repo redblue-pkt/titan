@@ -327,8 +327,6 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	currentpos = lseek64(servicenode->recsrcfd, offset, SEEK_CUR);
 
 	m_unlock(&status.tsseekmutex, 15);
-	//usleep(500000);
-	status.timeshiftseek = 0;
 	return 0;
 }
 
@@ -341,7 +339,9 @@ void playerffts(int speed)
 //flag = 1 --> timeshift
 void playerfrts(int speed, int flag)
 {
- if(speed == -2)
+	if(flag == 1)
+		videocontinue(status.aktservice->videodev);
+	if(speed == -2)
 	{
 		videoclearbuffer(status.aktservice->videodev);
 		audioclearbuffer(status.aktservice->audiodev);
