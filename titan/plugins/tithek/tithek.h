@@ -116,38 +116,27 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 	ret = sscanf(line, "%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%d", title, link, pic, localname, menutitle, &newnode->flag);
 				
 	if(newnode->flag == 9999 && !file_exist("/var/swap/etc/.codecpack"))
-	{
 		skip = 1;
-	}
 	else if(newnode->flag == 16 && pay == 0)
-	{
 		skip = 1;
-	}
 	else if(newnode->flag == 17 && pay == 0)
-	{
 		skip = 1;
-	}
 	else if(newnode->flag == 18 && pay == 0)
-	{
 		skip = 1;
-	}
 	else if(newnode->flag == 19 && pay == 0)
-	{
 		skip = 1;
-	}
 	else if(newnode->flag == 1 && pay == 0)
-	{
 		skip = 1;
-	}		
 	else if(newnode->flag == 9999)
 	{
-		cmd = ostrcat(cmd, "wget -s http://", 1, 0);
+		//cmd = ostrcat(cmd, "wget -s http://", 1, 0);
 		cmd = ostrcat(cmd, "kin", 1, 0);
 		cmd = ostrcat(cmd, "ox", 1, 0);
 		cmd = ostrcat(cmd, ".", 1, 0);
 		cmd = ostrcat(cmd, "to", 1, 0);
 
-		if(system(cmd) != 0)
+		//if(system(cmd) != 0)
+		if(gethttp(cmd, "/", 80, NULL, NULL, NULL, 0) == NULL)
 			skip = 1;
 
 		free(cmd), cmd = NULL;
