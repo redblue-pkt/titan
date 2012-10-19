@@ -2638,3 +2638,9 @@ msgstr "beste"
 
 msgid "Manual Search Cable"
 msgstr "Manuelle Kabelsuche"
+
+msgid "Unicable manufacturer"
+msgstr "Unicable Hersteller"
+
+msgid "Unicable product"
+msgstr "Unicable Produkt"
