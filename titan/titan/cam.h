@@ -131,6 +131,16 @@ void freecaservice()
 	{
 		free(caservice[i].capmt);
 		caservice[i].capmt = NULL;
+
+		caservice[i].caslot = NULL;
+		caservice[i].camanager = -1;
+		caservice[i].capmtlen = 0;
+		caservice[i].cmdpos = 0;
+		caservice[i].service = NULL;
+		caservice[i].channel = NULL;
+
+		if(caservice[i].camsockfd > -1)
+			sockclose(&caservice[i].camsockfd);
 	}
 }
 
