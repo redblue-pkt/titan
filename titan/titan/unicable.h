@@ -191,7 +191,7 @@ void screenunicable(struct skin* loftype, struct skin* lofl, struct skin* lofh, 
 	if(loftype == NULL || lofl == NULL || lofh == NULL || satcr == NULL || satcrfrequ2 == NULL)
 		return;
 
-	readunicable("unicable");
+	readunicable(getconfig("unicablefile", NULL));
 
 manufactor:
 	//show manufacturer
@@ -317,14 +317,14 @@ manufactor:
 						free(tmpnr); tmpnr = NULL;
 
 						scr = atoi(mbox->name);
-						if(scr == node->scr1) changeinput(satcr, "1");
-						if(scr == node->scr2) changeinput(satcr, "2");
-						if(scr == node->scr3) changeinput(satcr, "3");
-						if(scr == node->scr4) changeinput(satcr, "4");
-						if(scr == node->scr5) changeinput(satcr, "5");
-						if(scr == node->scr6) changeinput(satcr, "6");
-						if(scr == node->scr7) changeinput(satcr, "7");
-						if(scr == node->scr8) changeinput(satcr, "8");
+						if(scr == node->scr1) setchoiceboxselection(satcr, "1");
+						if(scr == node->scr2) setchoiceboxselection(satcr, "2");
+						if(scr == node->scr3) setchoiceboxselection(satcr, "3");
+						if(scr == node->scr4) setchoiceboxselection(satcr, "4");
+						if(scr == node->scr5) setchoiceboxselection(satcr, "5");
+						if(scr == node->scr6) setchoiceboxselection(satcr, "6");
+						if(scr == node->scr7) setchoiceboxselection(satcr, "7");
+						if(scr == node->scr8) setchoiceboxselection(satcr, "8");
 
 						changeinput(satcrfrequ2, mbox->name);
 						if(satcrfrequ2->input != NULL)
