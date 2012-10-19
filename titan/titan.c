@@ -45,6 +45,7 @@ struct mediadbfilter* mediadbfilter = NULL;
 struct mediadbcategory* mediadbcategory = NULL;
 struct mediadb* mediadb = NULL;
 struct mediadbcache* mediadbcache[MEDIADBCACHEMAX] = {NULL};
+struct unicable* unicable = NULL;
 
 #ifdef SH4
 #include "sh4port.h"
@@ -205,6 +206,7 @@ struct mediadbcache* mediadbcache[MEDIADBCACHEMAX] = {NULL};
 #include "textinputhist.h"
 #include "system_infos.h"
 #include "system_infos_sysinfo.h"
+#include "unicable.h"
 
 //#include "cardreader.h"
 //#include "sci.h"

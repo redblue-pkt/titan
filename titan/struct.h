@@ -189,6 +189,24 @@ enum {DEACTIVE, ACTIVE, INPAUSE, ERROR};
 enum {FUNCTEXT, FUNCPIC, FUNCPROGRESS};
 enum {CASESSIONCREATE, CASESSIONBUSY, CASESSIONDEL, CASESSIONSTART, CASESSIONFINAL, CARESFIRSTENQUIRY, CARESCHANGE, CARESENQUIRY, CADATETIMESEND, CAMMIIDLE, CAMMIDISPLAYREPLAY, CAMMIFAKEOK};
 
+struct unicable
+{
+	char* manufacturer;
+	char* product;
+	int scr1;
+	int scr2;
+	int scr3;
+	int scr4;
+	int scr5;
+	int scr6;
+	int scr7;
+	int scr8;
+	int lofl;
+	int lofh;
+	struct unicable* next;
+	struct unicable* prev;
+};
+
 struct id3tag
 {
 	int version;

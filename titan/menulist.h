@@ -79,6 +79,17 @@ void addmenulistall(struct menulist** mlist, char* allname, char* pic, int deakt
 	free(tmpstr); tmpstr = NULL;
 }
 
+struct menulist* getmenulist(struct menulist* mlist, char* name)
+{
+	while(mlist != NULL)
+	{
+		if(ostrcmp(name, mlist->name) == 0)
+			return mlist;
+		mlist = mlist->next;
+	}
+	return NULL;
+}
+
 struct menulist* addmenulist(struct menulist** mlist, char* name, char* text, char* pic, int deaktiv, int defaultentry)
 {
 	struct menulist *newnode = NULL, *prev = NULL, *node = *mlist;

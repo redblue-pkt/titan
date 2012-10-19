@@ -192,6 +192,12 @@ void screenlnb(char* feshortname, char* lnbnr)
 			changeloftype(lofl, lofh, threshold, satcr, satcrfrequ1, satcrfrequ2, loftype->ret);
 		}
 
+		if(rcret == getrcconfigint("rcred", NULL))
+		{
+			screenunicable(loftype, lofl, lofh, satcr, satcrfrequ2);
+			changeloftype(lofl, lofh, threshold, satcr, satcrfrequ1, satcrfrequ2, loftype->ret);
+		}
+
 		addconfigscreentmpcheck(voltagemode->name, voltagemode, "0");
 		addconfigscreentmpcheck(tonemode->name, tonemode, "0");
 		addconfigscreentmpcheck(loftype->name, loftype, "0");
