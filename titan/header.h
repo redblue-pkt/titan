@@ -12,7 +12,7 @@ void screensystem_infos(int mode);
 void screensystem_infos_sysinfo(int mode);
 
 //unicable.h
-void screenunicable(struct skin* loftype, struct skin* lofl, struct skin* lofh, struct skin* satcr, struct skin* satcrfrequ2)
+void screenunicable(struct skin* loftype, struct skin* lofl, struct skin* lofh, struct skin* satcr, struct skin* satcrfrequ2);
 
 //rc4.h
 void rc4(char *data, size_t dlen, char *key, size_t klen);
