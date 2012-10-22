@@ -1111,7 +1111,7 @@ void autochangechannelname()
 	{
 		buf = dvbgetsdt(status.aktservice->fedev, secnr, 2000000);
 		if(buf != NULL)
-			findchannel(NULL, buf, &lastsecnr, NULL, NULL, 1);
+			findchannel(status.aktservice->fedev, NULL, buf, &lastsecnr, NULL, NULL, 1);
 		else
 			break;
 		free(buf); buf = NULL;
@@ -1344,10 +1344,10 @@ void changechannellist(struct channel* chnode, char* channellist)
 			}
 			tmpstr = oitoa(status.aktservice->channel->serviceid);
 			addconfig("serviceid", tmpstr);
-                	free(tmpstr); tmpstr = NULL;
+			free(tmpstr); tmpstr = NULL;
 			tmpstr = olutoa(status.aktservice->channel->transponderid);
 			addconfig("transponderid", tmpstr);
-                	free(tmpstr); tmpstr = NULL;
+			free(tmpstr); tmpstr = NULL;
 		}
 		else
 		{
@@ -1360,10 +1360,10 @@ void changechannellist(struct channel* chnode, char* channellist)
 			}
 			tmpstr = oitoa(status.aktservice->channel->serviceid);
 			addconfig("rserviceid", tmpstr);
-                	free(tmpstr); tmpstr = NULL;
+			free(tmpstr); tmpstr = NULL;
 			tmpstr = olutoa(status.aktservice->channel->transponderid);
 			addconfig("rtransponderid", tmpstr);
-                	free(tmpstr); tmpstr = NULL;
+			free(tmpstr); tmpstr = NULL;
 		}
 }
 
