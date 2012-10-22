@@ -205,7 +205,7 @@ int parsenit(unsigned char* buf, uint8_t* lastsecnr, int orbitalpos)
 
 //flag 0: from scan
 //flag 1: from update channelname
-int findchannel(struct transponder* tpnode, unsigned char *buf, uint8_t* lastsecnr, struct skin* scan, struct skin* listbox, int flag)
+int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char *buf, uint8_t* lastsecnr, struct skin* scan, struct skin* listbox, int flag)
 {
 	int ret = -1;
 	unsigned long transponderid = 0;
@@ -231,7 +231,7 @@ int findchannel(struct transponder* tpnode, unsigned char *buf, uint8_t* lastsec
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
 	unsigned long* tmplong = NULL;
 
-	if(buf == NULL) return ret;
+	if(buf == NULL || fenode == NULL || fenode->feinfo == NULL) return ret;
 
 	seclen = ((buf[1] & 0x0F) << 8) | buf[2];
 	secnr = buf[6];
@@ -240,6 +240,10 @@ int findchannel(struct transponder* tpnode, unsigned char *buf, uint8_t* lastsec
 	onid = (buf[8] << 8) | buf[9];
 	
 	transponderid = (onid << 16) | tid;
+	if(fenode->feinfo->type == FE_QAM)
+		transponderid = transponderid | (1 << 30);
+	else if(fenode->feinfo->type == FE_OFDM)
+		transponderid = transponderid | (2 << 30);
 	if(tpnode != NULL && tpnode->id != transponderid && tpnode->id != 99)
 	{
 		changetransponderid(tpnode, transponderid);
@@ -346,17 +350,22 @@ int findchannel(struct transponder* tpnode, unsigned char *buf, uint8_t* lastsec
 	return ret;
 }
 
-unsigned long findtransponderid(unsigned char *buf)
+unsigned long findtransponderid(struct dvbdev* fenode, unsigned char *buf)
 {
 	unsigned long transponderid = 0;
 	unsigned short onid, tid;
 
-	if(buf == NULL) return 0;
+	if(buf == NULL || fenode == NULL || fenode->feinfo == NULL) return 0;
 
 	tid = (buf[3] << 8) | buf[4];
 	onid = (buf[8] << 8) | buf[9];
 	
 	transponderid = (onid << 16) | tid;
+
+	if(fenode->feinfo->type == FE_QAM)
+		transponderid = transponderid | (1 << 30);
+	else if(fenode->feinfo->type == FE_OFDM)
+		transponderid = transponderid | (2 << 30);
 
 	debug(500, "found SDT transponderid: %lu", transponderid);
 
@@ -464,7 +473,7 @@ void blindscan(struct stimerthread* timernode)
 							}
 
 							buf = dvbgetsdt(fenode, 0, scaninfo.timeout);
-							transponderid = findtransponderid(buf);
+							transponderid = findtransponderid(fenode, buf);
 							free(buf); buf = NULL;
 
 							if(transponderid == 0 || gettransponder(transponderid) != NULL)
@@ -630,7 +639,7 @@ void doscan(struct stimerthread* timernode)
 				buf = dvbgetsdt(fenode, secnr, scaninfo.timeout);
 #endif
 				if(buf != NULL)
-					findchannel(tpnode, buf, &lastsecnr, scaninfo.scanscreen, scaninfo.listbox, 0);
+					findchannel(fenode, tpnode, buf, &lastsecnr, scaninfo.scanscreen, scaninfo.listbox, 0);
 				else
 					break;
 				free(buf); buf = NULL;
