@@ -227,14 +227,14 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	off64_t offset;
 	off64_t endoffile;
 	off64_t currentpos;
-	off64_t fdptspos;
+	//off64_t fdptspos;
 	int dupfd = -1;
 	int ret = 0;
 	unsigned long long lenpts = 0;
-	unsigned long long aktpts = 0;
-	unsigned long long fdpts = 0;
+	//unsigned long long aktpts = 0;
+	//unsigned long long fdpts = 0;
 	unsigned long long bitrate = 0;
-	int aktsekunden = 0;
+	//int aktsekunden = 0;
 	int sekundenoff = 0;
 	struct service* snode = NULL;
 	
