@@ -95,6 +95,7 @@ void caservicedel(struct service* snode, struct caslot* caslot)
 			caservice[i].count--;
 			if(caservice[i].count < 1)
 			{
+				if(caservice[i].count < 0)
 				if(caservice[i].camsockfd > -1)
 					sockclose(&caservice[i].camsockfd);
 				if(caservice[i].caslot != NULL)
@@ -105,6 +106,7 @@ void caservicedel(struct service* snode, struct caslot* caslot)
 					caservice[i].camanager = -1;
 				}
 				free(caservice[i].capmt); caservice[i].capmt = NULL;
+				caservice[i].count = 0;
 				caservice[i].capmtlen = 0;
 				caservice[i].cmdpos = 0;
 				caservice[i].service = NULL;

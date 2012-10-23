@@ -631,7 +631,7 @@ int servicestop(struct service *node, int clear, int flag)
 			if(rcret == 2) return 1;
 			timeshiftstop(1);
 		}
-		if(flag != 2) caservicedel(node, NULL);
+		if(flag != 2 && node->type != NOTHING) caservicedel(node, NULL);
 
 		truncate("/tmp/ecm.info", 0);
 		unlink("/tmp/pid.info");
