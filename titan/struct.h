@@ -961,7 +961,8 @@ struct channel
 	int16_t pmtpid;
 	int16_t aitpid;
 	uint8_t protect;
-  char* hbbtvurl;
+	time_t lastepg;
+	char* hbbtvurl;
 	struct transponder *transponder;
 	struct provider *provider;
 	struct audiotrack *audiotrack;
