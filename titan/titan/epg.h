@@ -1645,7 +1645,7 @@ int readepg(const char* filename)
 //flag 1 = end after each run 
 int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fenode, int flag)
 {
-	int readlen = 0, pos = 0, len = 0, count = 0;
+	int readlen = 0, pos = 0, len = 0, count = 0, skip = 0;
 	unsigned char *buf = NULL, *head = NULL;
 	struct dvbdev* dmxnode;
 	struct eit* eit = NULL;
@@ -1653,6 +1653,36 @@ int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 	unsigned long firstseen[16] = {0};
 	int roundend = 0, round = 0x4e, i = 0;
 	time_t akttime, roundstart;
+
+	akttime = time(NULL);
+	if(chnode == NULL)
+	{
+		if(status.aktservice->channel != NULL && status.aktservice->channel->lastepg > akttime && status.aktservice->channel->epg != NULL)
+		{
+			debug(400, "skip epg read (%ld < %ld)", akttime, status.aktservice->channel->lastepg);
+			skip = (akttime - status.aktservice->channel->lastepg) * 2;
+		}
+	}
+	else
+	{
+		if(chnode->lastepg > akttime && chnode->epg != NULL)
+		{
+			debug(400, "skip epg read (%ld < %ld)", akttime, chnode->lastepg);
+			skip = (akttime - chnode->lastepg) * 2;
+		}
+	}
+
+	if(skip > 0)
+	{
+		while(self->aktion != STOP && self->aktion != PAUSE)
+		{
+			if(count > skip) break;
+			count++;
+			usleep(500000);
+		}
+		if(self->aktion == STOP || self->aktion == PAUSE) return 0;
+		count = 0;
+	}
 
 	buf = malloc(MINMALLOC * 4);
 	if(buf == NULL)
@@ -1729,9 +1759,18 @@ int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 				dmxstop(dmxnode);
 				if(flag == 1) goto end;
 				debug(400, "epg no more new data, wait for next run");
+
+				if(chnode == NULL)
+				{
+					if(status.aktservice->channel != NULL)
+						status.aktservice->channel->lastepg = time(NULL) + 7700;
+				}
+				else
+					chnode->lastepg = time(NULL) + 7700;
+
 				while(self->aktion != STOP && self->aktion != PAUSE)
 				{
-					if(count > 7200) break; //1h
+					if(count > 14400) break; //2h
 					count++;
 					usleep(500000);
 				}

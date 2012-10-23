@@ -155,6 +155,7 @@ void epgscanlistthread(struct stimerthread* self)
 				debug(400, "epgscan scanning channel=%s, sid=%d, tid=%lu, frontend=%s", chnode->name, chnode->serviceid, chnode->transponderid, fenode->feshortname);
 				if(fd != NULL) fprintf(fd, "epgscan scanning channel=%s, sid=%d, tid=%lu, frontend=%s\n", chnode->name, chnode->serviceid, chnode->transponderid, fenode->feshortname);
 			}
+			chnode->lastepg = 0;
 			readeit(self, chnode, fenode, 1);
 			node->scantime = time(NULL);
 		}
