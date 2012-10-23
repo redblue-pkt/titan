@@ -219,7 +219,7 @@ int videoclearbuffer(struct dvbdev* node);
 int videogetpts(struct dvbdev* node, uint64_t* pts);
 
 // scan.h
-int findchannel(struct transponder* tpnode, unsigned char *buf, uint8_t* lastsecnr, struct skin* scan, struct skin* listbox, int flag);
+int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char *buf, uint8_t* lastsecnr, struct skin* scan, struct skin* listbox, int flag);
 void screenscanconfig(int flag);
 
 // screensaver.h
