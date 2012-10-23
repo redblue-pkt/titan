@@ -749,12 +749,12 @@ void dvbgetpmtthread()
 		if(status.aktservice->channel->audiopid != audiopid || status.aktservice->channel->videopid != videopid)
 		{
 			audiostop(status.aktservice->audiodev);
-			dmxsetpesfilter(status.aktservice->dmxaudiodev, status.aktservice->channel->audiopid, -1, DMX_OUT_DECODER, DMX_PES_AUDIO, 0);
-			audioplay(status.aktservice->audiodev);
 			videostop(status.aktservice->videodev, 0);
+			dmxsetpesfilter(status.aktservice->dmxaudiodev, status.aktservice->channel->audiopid, -1, DMX_OUT_DECODER, DMX_PES_AUDIO, 0);
 			dmxsetpesfilter(status.aktservice->dmxvideodev, status.aktservice->channel->videopid, -1, DMX_OUT_DECODER, DMX_PES_VIDEO, 0);
+			//dmxsetpesfilter(status.aktservice->dmxpcrdev, status.aktservice->channel->pcrpid, -1, DMX_OUT_DECODER, DMX_PES_PCR, 0);
+			audioplay(status.aktservice->audiodev);
 			videoplay(status.aktservice->videodev);
-			dmxsetpesfilter(status.aktservice->dmxpcrdev, status.aktservice->channel->pcrpid, -1, DMX_OUT_DECODER, DMX_PES_PCR, 0);
 		}
 	}
 
