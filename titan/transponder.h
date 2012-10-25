@@ -642,6 +642,8 @@ int copytransponder(struct transponder* tp1, struct transponder* tp2, unsigned l
 		tp2->orbitalpos = tp1->orbitalpos;
 		tp2->frequency = tp1->frequency;
 		tp2->symbolrate = tp1->symbolrate;
+		tp2->encoding = tp1->encoding;
+		tp2->lastepg = tp1->lastepg;
 		status.writetransponder = 1;
 		ret = 0;
 	}
