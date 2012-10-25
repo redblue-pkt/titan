@@ -878,6 +878,7 @@ struct transponder
 	unsigned int frequency;
 	unsigned int symbolrate;
 	int encoding;
+	time_t lastepg;
 	struct transponder *next;
 };
 
@@ -961,7 +962,6 @@ struct channel
 	int16_t pmtpid;
 	int16_t aitpid;
 	uint8_t protect;
-	time_t lastepg;
 	char* hbbtvurl;
 	struct transponder *transponder;
 	struct provider *provider;
