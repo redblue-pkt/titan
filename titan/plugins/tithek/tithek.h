@@ -481,6 +481,9 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	tmpstr1 = ostrcat(tmpstr1, _("Results"), 1, 0);
 	changetext(countlabel, tmpstr1);
 	free(tmpstr1); tmpstr1 = NULL;
+
+//	if(ostrstr(tithekfile, "kinox") != NULL)
+		unlink(tithekfile);
 	
 	free(tithekfile); tithekfile = NULL;
 	return pagecount;
@@ -674,6 +677,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 		rcret = servicestop(status.aktservice, 1, 1);
 		if(rcret == 1) return;
 	}
+
 	status.hangtime = 99999;
 
 	struct skin* grid = getscreen("titheklist");
