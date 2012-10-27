@@ -53,7 +53,8 @@ char* streamcloud(char* host, char* file)
 	char* usr_login = NULL;
 	char* imhuman = NULL;	
 	char* ip = NULL;
-
+	char* cookie = NULL;
+	char* cmd = NULL;
 	char* streamlink = NULL;
 
 	if(host == NULL || file == NULL) return NULL;
@@ -69,9 +70,6 @@ char* streamcloud(char* host, char* file)
 // old not working we need cookie
 //	tmpstr = gethttp(tmphost, tmpfile, 80, NULL, NULL, NULL, 0);
 //new
-	char* cookie = NULL;
-	char* cmd = NULL;
-
 //getstream1="GET /iupl3hux3jsa HTTP/1.1\r\nHost: streamcloud.eu\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n"
 //echo -e $getstream1 | /var/usr/local/share/titan/plugins/tithek/netcat streamcloud.eu 80
 	send = ostrcat(send, "GET /", 1, 0);
@@ -175,7 +173,8 @@ end:
 	free(id), id = NULL;
 	free(fname), fname = NULL;
 	free(ip); ip = NULL;
-
+	free(cookie); cookie = NULL;
+	free(cmd); cmd = NULL;	
 	return streamlink;
 }
 
