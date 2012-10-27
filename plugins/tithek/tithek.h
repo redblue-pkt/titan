@@ -48,7 +48,7 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 	//debug(1000, "in");
 	struct tithek *newnode = NULL, *prev = NULL, *node = tithek;
 	char *link = NULL, *pic = NULL, *title = NULL, *localname = NULL, *menutitle = NULL, *cmd = NULL;
-	int ret = 0, skip = 0;
+	int ret = 0, skip = 0, i = 0;
 
 	if(line == NULL) return NULL;
 
@@ -129,6 +129,8 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 		skip = 1;
 	else if(newnode->flag == 9999)
 	{
+		char* tmp = NULL;
+
 		//cmd = ostrcat(cmd, "wget -s http://", 1, 0);
 		cmd = ostrcat(cmd, "kin", 1, 0);
 		cmd = ostrcat(cmd, "ox", 1, 0);
@@ -136,9 +138,16 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 		cmd = ostrcat(cmd, "to", 1, 0);
 
 		//if(system(cmd) != 0)
-		if(gethttp(cmd, "/", 80, NULL, NULL, NULL, 0) == NULL)
+		for(i = 0; i < 3; i++)
+		{
+			free(tmp); tmp = NULL;
+			tmp = gethttp(cmd, "/", 80, NULL, NULL, NULL, 0);
+			if(tmp != NULL) break;
+		}
+		if(tmp == NULL)
 			skip = 1;
 
+		free(tmp); tmp = NULL;
 		free(cmd), cmd = NULL;
 	}
 
