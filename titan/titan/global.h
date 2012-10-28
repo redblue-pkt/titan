@@ -3,6 +3,38 @@
 
 #define MAXTOKENS       256
 
+int checkpng(char* filename)
+{
+	int fd = -1;
+	char* sig = NULL;
+
+	fd = fopen(filename, "rb");
+	if(fd == NULL)
+	{
+		perr("open file %s", filename);
+		return 0;
+	}
+
+	sig = malloc(8);
+	if(sig == NULL)
+	{
+		err("no memory");
+		fclose(fd);
+		return 0;
+	}
+
+	fread(sig, 1, 8, fd);
+	ret = png_check_sig(sig, 8);
+	if(ret == 0)
+	{
+		free(sig);
+		fclose(fd);
+		return 0;
+	}
+
+	return 1;
+}
+
 char **str_split(char *string, char *delim) {
 	char **tokens = NULL;
 	char *working = NULL;
