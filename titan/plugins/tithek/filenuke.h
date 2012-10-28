@@ -66,7 +66,7 @@ char* filenuke(char* host, char* file)
 	tmpstr = gethttp(tmphost, tmpfile, 80, NULL, NULL, NULL, 0);
 	debug(99, "write file");
 	
-writesys("/tmp/filenuke", tmpstr, 0);
+	writesys("/tmp/filenuke", tmpstr, 0);
 
 	//get hash from tmpstr
 	char* pos1 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"fname\" value=");
@@ -109,7 +109,7 @@ writesys("/tmp/filenuke", tmpstr, 0);
 	sleep(5);
 	
 	//send and receive answer
-	gethttpreal(tmphost, tmpfile, 80, "post", NULL, NULL, 0, send, NULL);
+	gethttpreal(tmphost, tmpfile, 80, "post", NULL, NULL, 0, send, NULL, 0);
 
 	sleep(5);
 
