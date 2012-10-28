@@ -516,7 +516,7 @@ char* createhttpheader(char *host, char *page, char* auth)
 	query = ostrcat(query, host, 1, 0);
 	query = ostrcat(query, "\r\nUser-Agent: ", 1, 0);
 	//query = ostrcat(query, PROGNAME, 1, 0);
-	query = ostrcat(query, "Mozilla/5.0 (Windows NT 6.1; rv:11.0) Gecko/20100101 Firefox/11.0", 1, 0);
+	query = ostrcat(query, "Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1", 1, 0);
 	if(auth != NULL)
 	{
 		query = ostrcat(query, "\r\nAuthorization: Basic ", 1, 0);
