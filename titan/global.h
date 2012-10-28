@@ -2603,6 +2603,7 @@ int resettvpic()
 	return ret;
 }
 
+/*
 int checkdev(char* dev)
 {
 	char* cmd = NULL;
@@ -2626,6 +2627,7 @@ int checkdev(char* dev)
 	free(tmpstr), tmpstr = NULL;
 	return 1;
 }
+*/
 
 int setsaturation(int value)
 {
@@ -2634,7 +2636,7 @@ int setsaturation(int value)
 
 	saturationdev = getconfig("saturationdev", NULL);
 
-	if(saturationdev != NULL && checkdev(saturationdev))
+	if(saturationdev != NULL /*&& checkdev(saturationdev)*/)
 	{
 		debug(100, "set %s to %d", saturationdev, value);
 		return writesysint(saturationdev, value, 1);
@@ -2651,7 +2653,7 @@ int setbrightness(int value)
 
 	brightnessdev = getconfig("brightnessdev", NULL);
 
-	if(brightnessdev != NULL && checkdev(brightnessdev))
+	if(brightnessdev != NULL /*&& checkdev(brightnessdev)*/)
 	{
 		debug(100, "set %s to %d", brightnessdev, value);
 		return writesysint(brightnessdev, value, 1);
@@ -2668,7 +2670,7 @@ int setcontrast(int value)
 
 	contrastdev = getconfig("contrastdev", NULL);
 
-	if(contrastdev != NULL && checkdev(contrastdev))
+	if(contrastdev != NULL /*&& checkdev(contrastdev)*/)
 	{
 		debug(100, "set %s to %d", contrastdev, value);
 		return writesysint(contrastdev, value, 1);
@@ -2685,7 +2687,7 @@ int settint(int value)
 
 	tintdev = getconfig("tintdev", NULL);
 
-	if(tintdev != NULL && checkdev(tintdev))
+	if(tintdev != NULL /*&& checkdev(tintdev)*/)
 	{
 		debug(100, "set %s to %d", tintdev, value);
 		return writesysint(tintdev, value, 1);
