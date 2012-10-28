@@ -512,7 +512,7 @@ char* createhttpheader(char *host, char *page, char* auth)
 	if(getpage[0] == '/') getpage = getpage + 1;
 
 	query = ostrcat("GET /", getpage, 0, 0);
-	query = ostrcat(query, " HTTP/1.0\r\nHost: ", 1, 0);
+	query = ostrcat(query, " HTTP/1.1\r\nHost: ", 1, 0);
 	query = ostrcat(query, host, 1, 0);
 	query = ostrcat(query, "\r\nUser-Agent: ", 1, 0);
 	query = ostrcat(query, PROGNAME, 1, 0);
@@ -521,6 +521,7 @@ char* createhttpheader(char *host, char *page, char* auth)
 		query = ostrcat(query, "\r\nAuthorization: Basic ", 1, 0);
 		query = ostrcat(query, auth, 1, 0);
 	}
+	query = ostrcat(query, "\r\nConnection: close", 1, 0);
 	query = ostrcat(query, "\r\n\r\n", 1, 0);
 
 	return query;
@@ -738,25 +739,30 @@ end:
 	if((hret == 301 || hret == 302) && retstr != NULL && redirect < 3) //redirect
 	{
 		char* pos = NULL, *rpage = NULL;
-		char* rhost = string_replace("http://", "", retstr, 0);
+		char* rhost = NULL;
 
-		if(rhost != NULL)
-			pos = strchr(rhost, '/');
-		if(pos != NULL)
+		if(strchr(retstr, '/') == retstr)
 		{
-			pos[0] = '\0';
-			rpage = pos + 1;
+			rhost = ostrcat(host, NULL, 0, 0);
+			rpage = retstr;
 		}
-
-		if(dnode != NULL)
+		else
 		{
-			dnode->host = rhost;
-			dnode->page = rpage;
+			rhost = string_replace("http://", "", retstr, 0);
+
+			if(rhost != NULL)
+				pos = strchr(rhost, '/');
+			if(pos != NULL)
+			{
+				pos[0] = '\0';
+				rpage = pos + 1;
+			}
 		}
 
 		redirect++;
 		free(buf); buf = NULL;
-		buf = gethttpreal(rhost, rpage, port, filename, auth, dnode, redirect, header, clen);
+		buf = gethttpreal(rhost, rpage, port, filename, auth, dnode, redirect, NULL, clen);
+		free(rhost); rhost = NULL;
 	}
 
 	if(clen != 0) *clen = maxret;
