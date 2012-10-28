@@ -567,9 +567,12 @@ int checkhttpheader(char* tmpbuf, char** retstr)
 	return stat;
 }
 
-char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect, char* header, long* clen)
+//flag 0: output without header
+//flag 1: output with header
+char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect, char* header, long* clen, int flag)
 {
 	int sock = -1, ret = 0, count = 0, hret = 0, freeheader = 0;
+	int headerlen = 0;
 	unsigned int len = 0, maxret = 0;
 	char *ip = NULL;
 	char *tmpbuf = NULL, *buf = NULL;
@@ -669,6 +672,7 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 		}
 
 		*pbuf = c;
+		headerlen++;
 
 		if(tmpbuf != NULL && (ostrstr(tmpbuf, "\n\n") != NULL || ostrstr(tmpbuf, "\r\n\r\n") != NULL))
 		{
@@ -687,7 +691,8 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 		len = strtoul(contentlen, NULL, 10);
 	}
 
-	while((ret = sockread(sock, (unsigned char*)tmpbuf, 0, MINMALLOC, 5000 * 1000, 0)) > 0)
+	if(flag == 0) headerlen = 0;
+	while((ret = sockread(sock, (unsigned char*)tmpbuf + headerlen, 0, MINMALLOC - headerlen, 5000 * 1000, 0)) > 0)
 	{
 		maxret += ret;
 		if(len > 0)
@@ -700,6 +705,8 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 			}
 		}
 
+		ret += headerlen;
+		headerlen = 0;
 		if(filename != NULL)
 			fwrite(tmpbuf, ret, 1, fd);
 		else
@@ -761,7 +768,7 @@ end:
 
 		redirect++;
 		free(buf); buf = NULL;
-		buf = gethttpreal(rhost, rpage, port, filename, auth, dnode, redirect, NULL, clen);
+		buf = gethttpreal(rhost, rpage, port, filename, auth, dnode, redirect, NULL, clen, flag);
 		free(rhost); rhost = NULL;
 	}
 
@@ -773,7 +780,7 @@ end:
 
 char* gethttp(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect)
 {
-	return gethttpreal(host, page, port, filename, auth, dnode, redirect, NULL, NULL);
+	return gethttpreal(host, page, port, filename, auth, dnode, redirect, NULL, NULL, 0);
 }
 
 void gethttpstruct(struct stimerthread* timernode, struct download* node, int flag)
