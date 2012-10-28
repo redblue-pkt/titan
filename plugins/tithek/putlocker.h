@@ -125,7 +125,7 @@ char* putlocker(char* host, char* file)
 	debug(99, "send: %s", send);
 
 	//send and receive answer
-	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/x9", NULL, NULL, 0, send, NULL);
+	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/x9", NULL, NULL, 0, send, NULL, 0);
 	sleep(1);
 	free(send); send = NULL;
 	tmpstr = command("cat /tmp/tithek/x9 | sed '1,1d' | zcat");
@@ -164,7 +164,7 @@ char* putlocker(char* host, char* file)
 	sleep(1);
 	
 	//send and receive answer
-	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL);
+	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 0);
 	free(send); send = NULL;
 
 //Streaming version of this file is currently not available. You can download it below.

@@ -155,7 +155,7 @@ char* streamcloud(char* host, char* file)
 	debug(99, "send: %s", send);
 
 	free(tmpstr), tmpstr = NULL;
-	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL);
+	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 0);
 	debug(99, "tmpstr: %s", tmpstr);
 //	streamlink = oregex(".*file: \".*(http:.*video.mp4).*\".*", tmpstr);
 	streamlink = string_resub("file: \"", "\"", tmpstr, 0);
