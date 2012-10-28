@@ -5,7 +5,7 @@
 
 int checkpng(char* filename)
 {
-	int fd = -1;
+	int fd = -1, ret = 0;
 	char* sig = NULL;
 
 	fd = fopen(filename, "rb");
