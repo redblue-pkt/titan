@@ -13,6 +13,7 @@ void screenfilemanager()
 	struct skin* filelistpath2 = getscreennode(filemanager2, "filelistpath");
 	struct skin* filelist2 = getscreennode(filemanager2, "filelist");
 	char* file1 = NULL, *cmd = NULL, *tmpstr = NULL;
+	struct skin* tmpfilelist = filelist1;
 
 	filelist1->aktline = 0;
 	filelist1->aktpage = 0;
@@ -22,7 +23,7 @@ void screenfilemanager()
 	
 	filelist2->aktline = 0;
 	filelist2->aktpage = 0;
-	changemask(filelist2, "");
+	changemask(filelist2, "*");
 	changeinput(filelist2, "/");
 	changetext(filelistpath2, filelist2->input);
 
@@ -40,21 +41,33 @@ void screenfilemanager()
 	drawscreen(filemanager1, 0, 1);
 	drawscreen(filemanager2, 0, 0);
 	addscreenrc(filemanager1, filelist1);
+	delrc(getrcconfigint("rcff", NULL), filemanager1, filelist1);
+	delrc(getrcconfigint("rcfr", NULL), filemanager1, filelist1);
 
 	while(1)
 	{
 		if(aktfilelist == 0)
+		{
 			rcret = waitrc(filemanager1, 0, 0);
+			tmpfilelist = filelist1;
+		}
 		else
+		{
 			rcret = waitrc(filemanager2, 0, 0);
+			tmpfilelist = filelist2;
+		}
 		
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		
+
 		if(status.security == 1)
 		{
-			if((rcret == getrcconfigint("rcgreen", NULL) || rcret == getrcconfigint("rcyellow", NULL))&& filelist1->select != NULL && ostrcmp(filelist1->select->text, "..") != 0) //copy - move
+			if((rcret == getrcconfigint("rcgreen", NULL) || rcret == getrcconfigint("rcyellow", NULL)) && tmpfilelist->select != NULL && ostrcmp(tmpfilelist->select->text, "..") != 0) //copy - move
 			{
-				file1 = createpath(filelistpath1->text, filelist1->select->text);
+				if(aktfilelist == 0)
+					file1 = createpath(filelistpath1->text, filelist1->select->text);
+				else
+					file1 = createpath(filelistpath2->text, filelist2->select->text);
+
 				if(file1 != NULL)
 				{
 					if(rcret == getrcconfigint("rcgreen", NULL))
@@ -75,14 +88,20 @@ void screenfilemanager()
 					tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 					tmpstr = ostrcat(tmpstr, _("To"), 1, 0);
 					tmpstr = ostrcat(tmpstr, ": ", 1, 0);
-					tmpstr = ostrcat(tmpstr, filelistpath2->text, 1, 0);
+					if(aktfilelist == 0)
+						tmpstr = ostrcat(tmpstr, filelistpath2->text, 1, 0);
+					else
+						tmpstr = ostrcat(tmpstr, filelistpath1->text, 1, 0);
 					ret = textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 300, 0, 0);
 					free(tmpstr); tmpstr = NULL;
 					
 					cmd = ostrcat(cmd, "\"", 1, 0);
 					cmd = ostrcat(cmd, file1, 1, 0);
 					cmd = ostrcat(cmd, "\" \"", 1, 0);
-					cmd = ostrcat(cmd, filelistpath2->text, 1, 0);
+					if(aktfilelist == 0)
+						cmd = ostrcat(cmd, filelistpath2->text, 1, 0);
+					else
+						cmd = ostrcat(cmd, filelistpath1->text, 1, 0);
 					cmd = ostrcat(cmd, "\"", 1, 0);
 					if(ret == 1) system(cmd);
 					free(cmd); cmd = NULL;
@@ -101,9 +120,12 @@ void screenfilemanager()
 				drawscreen(filemanager2, 0, 0);
 			}
 			
-			if(rcret == getrcconfigint("rcred", NULL) && filelist1->select != NULL && ostrcmp(filelist1->select->text, "..") != 0) //delete
+			if(rcret == getrcconfigint("rcred", NULL) && tmpfilelist->select != NULL && ostrcmp(tmpfilelist->select->text, "..") != 0) //delete
 			{
-				file1 = createpath(filelistpath1->text, filelist1->select->text);
+				if(aktfilelist == 0)
+					file1 = createpath(filelistpath1->text, filelist1->select->text);
+				else
+					file1 = createpath(filelistpath2->text, filelist2->select->text);
 				if(file1 != NULL)
 				{
 					tmpstr = ostrcat(tmpstr, _("Realy delete this file/dir?"), 1, 0);
@@ -133,9 +155,12 @@ void screenfilemanager()
 				drawscreen(filemanager2, 0, 0);
 			}
 		
-			if(rcret == getrcconfigint("rcblue", NULL) && filelist1->select != NULL && ostrcmp(filelist1->select->text, "..") != 0) //view
+			if(rcret == getrcconfigint("rcblue", NULL) && tmpfilelist->select != NULL && ostrcmp(tmpfilelist->select->text, "..") != 0) //view
 			{
-				file1 = createpath(filelistpath1->text, filelist1->select->text);
+				if(aktfilelist == 0)
+					file1 = createpath(filelistpath1->text, filelist1->select->text);
+				else
+					file1 = createpath(filelistpath2->text, filelist2->select->text);
 				tmpstr = readfiletomem(file1, 0);
 				if(tmpstr != NULL)
 				{
@@ -160,6 +185,8 @@ void screenfilemanager()
 				delownerrc(filemanager1);
 				delownerrc(filemanager2);
 				addscreenrc(filemanager2, filelist2);
+				delrc(getrcconfigint("rcff", NULL), filemanager2, filelist2);
+				delrc(getrcconfigint("rcfr", NULL), filemanager2, filelist2);
 				filelistpath1->bgcol = 0;
 				filelistpath2->bgcol = convertcol("markcol");
 			}
@@ -169,6 +196,8 @@ void screenfilemanager()
 				delownerrc(filemanager1);
 				delownerrc(filemanager2);
 				addscreenrc(filemanager1, filelist1);
+				delrc(getrcconfigint("rcff", NULL), filemanager1, filelist1);
+				delrc(getrcconfigint("rcfr", NULL), filemanager1, filelist1);
 				filelistpath1->bgcol = convertcol("markcol");
 				filelistpath2->bgcol = 0;
 			}
