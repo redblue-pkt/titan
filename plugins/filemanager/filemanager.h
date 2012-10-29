@@ -79,9 +79,11 @@ void screenfilemanager()
 					ret = textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 300, 0, 0);
 					free(tmpstr); tmpstr = NULL;
 					
+					cmd = ostrcat(cmd, "\"", 1, 0);
 					cmd = ostrcat(cmd, file1, 1, 0);
-					cmd = ostrcat(cmd, " ", 1, 0);
+					cmd = ostrcat(cmd, "\" \"", 1, 0);
 					cmd = ostrcat(cmd, filelistpath2->text, 1, 0);
+					cmd = ostrcat(cmd, "\"", 1, 0);
 					if(ret == 1) system(cmd);
 					free(cmd); cmd = NULL;
 				}
@@ -111,7 +113,9 @@ void screenfilemanager()
 					free(tmpstr); tmpstr = NULL;
 					
 					cmd = ostrcat(cmd, "rm -r ", 1, 0);
+					cmd = ostrcat(cmd, "\"", 1, 0);
 					cmd = ostrcat(cmd, file1, 1, 0);
+					cmd = ostrcat(cmd, "\"", 1, 0);
 					if(ret == 1) system(cmd);
 					free(cmd); cmd = NULL;			
 				}
