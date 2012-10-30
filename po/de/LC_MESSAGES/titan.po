@@ -2504,7 +2504,7 @@ msgid "Transponder changed"
 msgstr "Transponder wurde geändert"
 
 msgid "Start at last position ?"
-msgstr "An letzter Stelle beginnen ?"
+msgstr "An letzte Stelle beginnen ?"
 
 msgid "Install Tithek Ipk first !"
 msgstr "Installieren Sie Bitte das Tithek Plugin unter Erweiterungen"
