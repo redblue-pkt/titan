@@ -133,10 +133,14 @@ char* myvideo(char* link, char* url, char* name, int flag)
 	return streamurl;
 }
 
-void myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
+int myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
 {
+	int ret = 1;
+
+	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
+		return ret;
+
 	char* search = textinputhist("Search", " ", "searchhist");
-	
 	if(search != NULL)
 	{
 		drawscreen(load, 0, 0);
@@ -207,12 +211,15 @@ void myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countl
 			{
 				menu = ostrcat("/tmp/tithek/myvideo.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
+				free(((struct tithek*)listbox->select->handle)->link);
 				((struct tithek*)listbox->select->handle)->link = menu;
+				ret = 0;
 			}
 		}
 		free(tmpstr), tmpstr = NULL;
 	}
 	free(search), search = NULL;
+	return ret;
 }
 
 #endif

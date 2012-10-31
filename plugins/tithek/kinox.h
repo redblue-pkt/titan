@@ -42,10 +42,14 @@ char* kinox(char* link, char* url, char* name, int flag)
 	return streamurl;
 }
 
-void kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
+int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
 {
+	int ret = 1;
+
+	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
+		return ret;
+
 	char* search = textinputhist("Search", " ", "searchhist");
-		
 	if(search != NULL)
 	{
 		drawscreen(load, 0, 0);
@@ -150,7 +154,9 @@ void kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 			{
 				menu = ostrcat("/tmp/tithek/kinox.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
+				free(((struct tithek*)listbox->select->handle)->link);
 				((struct tithek*)listbox->select->handle)->link = menu;
+				ret = 0;
 			}
 
 		}
@@ -158,12 +164,18 @@ void kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 		free(ip), ip = NULL;
 	}
 	free(search), search = NULL;
+	return ret;
 }
 
-void kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
+int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
 {
 	debug(99, "link: %s", link);
+	int ret = 1;
 	char* ip = NULL, *pos = NULL, *path = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *line = NULL, *url = NULL, *pathnew = NULL;		
+
+	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
+		return ret;
+
 	ip = string_replace("http://", "", (char*)link, 0);
 
 	if(ip != NULL)
@@ -377,14 +389,22 @@ void kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlab
 	{
 		tmpstr = ostrcat("/tmp/tithek/kinox.hoster.list", NULL, 0, 0);
 		writesys(tmpstr, line, 0);
+		free(((struct tithek*)listbox->select->handle)->link);
 		((struct tithek*)listbox->select->handle)->link = tmpstr;
-	}	
+		ret = 0;
+	}
+
+	return ret;
 }
 
-void kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
+int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
 {
 	debug(99, "link: %s", link);
+	int ret = 1;
 	char* ip = NULL, *pathnew = NULL, *seriesid = NULL, *searchname = NULL, *url = NULL, *session = NULL, *episode = NULL, *pos = NULL, *path = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *line = NULL;		
+
+	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
+		return ret;
 
 	int count0 = 0;
 	struct splitstr* ret0 = NULL;
@@ -569,8 +589,12 @@ void kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* c
 	{
 		tmpstr = ostrcat("/tmp/tithek/kinox.hoster.series.list", NULL, 0, 0);
 		writesys(tmpstr, line, 0);
+		free(((struct tithek*)listbox->select->handle)->link);
 		((struct tithek*)listbox->select->handle)->link = tmpstr;
-	}	
+		ret = 0;
+	}
+
+	return ret;
 }
 
 #endif
