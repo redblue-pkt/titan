@@ -509,7 +509,11 @@ char* createhttpheader(char *host, char *page, char* auth)
 	char *query = NULL;
 	char *getpage = page;
 
-	if(getpage[0] == '/') getpage = getpage + 1;
+	if(getpage != NULL)
+	{
+		if(getpage[0] == '/')
+			getpage = getpage + 1;
+	}
 
 	query = ostrcat("GET /", getpage, 0, 0);
 	query = ostrcat(query, " HTTP/1.1\r\nHost: ", 1, 0);
