@@ -185,9 +185,14 @@ char* textinputhist(char* title, char* text, char* histname)
 		{
 			ret = ostrcat(listbox->select->name, NULL, 0, 0);
 			removehistory(ret, histname);
-			break;
-// read listbox new?
-//			ret = textinputhist("Search", "NULL", "searchhist");
+			listbox->aktline = 1;
+			listbox->aktpage = -1;
+			delmarkedscreennodes(textinputhist, 1);
+			readhistory(textinputhist, listbox, histname);
+			if(fromthread == 1)
+				drawscreen(textinputhist, 0, 2);
+			else
+				drawscreen(textinputhist, 0, 0);
 		}
 	}
 	free(tmpstr), tmpstr = NULL;
