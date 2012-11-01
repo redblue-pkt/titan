@@ -8,11 +8,12 @@
 #include "../titan/struct.h"
 #include "../titan/debug.h"
 #include "../titan/header.h"
-#include "TopfieldVFD.h"
 
 char pluginname[] = "TopfieldVFD";
 char plugindesc[] = "Topfield specific functions of VFD";
 char pluginpic[] = "%pluginpath%/TopfieldVFD/plugin.png";
+
+#include "TopfieldVFD.h"
 
 int pluginaktiv = 0;
 int pluginversion = PLUGINVERSION;
