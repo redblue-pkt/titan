@@ -5,17 +5,17 @@
  *      Author: topfi
  */
 
+#include "../titan/struct.h"
+#include "../titan/debug.h"
+#include "../titan/header.h"
+#include "TopfieldVFD.h"
+
 char pluginname[] = "TopfieldVFD";
 char plugindesc[] = "Topfield specific functions of VFD";
 char pluginpic[] = "%pluginpath%/TopfieldVFD/plugin.png";
 
 int pluginaktiv = 0;
 int pluginversion = PLUGINVERSION;
-
-#include "../titan/struct.h"
-#include "../titan/debug.h"
-#include "../titan/header.h"
-#include "TopfieldVFD.h"
 
 struct stimerthread *TopfieldVFDstimerthread = NULL;
 

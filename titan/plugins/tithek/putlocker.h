@@ -97,7 +97,7 @@ char* putlocker(char* host, char* file)
 	ret = socksend(&sock, (unsigned char*)send, strlen(send), 5000 * 1000);
         if(ret != 0) goto end;
 	free(send); send = NULL;
-	tmpstr = putlockereceive(&sock);
+	tmpstr = (char*)putlockereceive(&sock);
 	debug(99, "tmpstr: %s", tmpstr);
 
 	sockclose(&sock);

@@ -8,8 +8,17 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//sh4port.h and other ports
+int videodiscontinuityskip(struct dvbdev* node, int flag);
+
+//system_infos.h
 void screensystem_infos(int mode);
+
+//system_infos_sysinfo.h
 void screensystem_infos_sysinfo(int mode);
+
+//textinputhist.h
+char* textinputhist(char* title, char* text, char* histname);
 
 //unicable.h
 void screenunicable(struct skin* loftype, struct skin* lofl, struct skin* lofh, struct skin* satcr, struct skin* satcrfrequ2);
