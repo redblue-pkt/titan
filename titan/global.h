@@ -7,7 +7,7 @@ int checkpng(char* filename)
 {
 	FILE* fd = NULL;
 	int ret = 0;
-	char* sig = NULL;
+	png_bytep sig = NULL;
 
 	fd = fopen(filename, "rb");
 	if(fd == NULL)
