@@ -1181,9 +1181,9 @@ int playerjumpts(struct service* servicenode, int sekunden, int *startpts, off64
   int tspid = 0;
 	
 	off64_t pts  = 0;
-	off64_t aktpts = 0;
-	off64_t lenpts = 0;
-	off64_t aktbitrate = 0;
+	uint64_t aktpts = 0;
+	long long unsigned int lenpts = 0;
+	long long unsigned int aktbitrate = 0;
 	off64_t ziehlpts = 0;
 
 	off64_t curpos = 0;
