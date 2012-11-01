@@ -1,7 +1,7 @@
 #ifndef SOFTCAM_H
 #define SOFTCAM_H
 
-char* swhichcam = NULL;
+//char* swhichcam = NULL;
 struct clist *emulist[LISTHASHSIZE] = {NULL};
 
 char* whichcam()
@@ -41,7 +41,8 @@ void readmenu()
 		freelist(emulist);
 
 	// search active cam
-	swhichcam = whichcam();
+	//free(swhichcam); swhichcam = NULL;
+	//swhichcam = whichcam();
 
 	// get the emu list
 	emuline = command("emu.sh list");
@@ -77,7 +78,7 @@ void readmenu()
 			cmd = ostrcat("emu.sh check ", cmd, 0, 1);
 			checkstate = command(cmd);
 			free(cmd); cmd = NULL;
-			if(strstr(checkstate, "checkemu running") != 0)
+			if(ostrstr(checkstate, "checkemu running") != 0)
 			{
 				debug(100, "running emu = %s\n", emush);
 				check = 1;
@@ -109,6 +110,8 @@ void readmenu()
 			debug(100, "emuname = %s\n", emuname);
 			addlist(emulist, emuname, emush);
 			free(emuname); emuname = NULL;
+			free(checkactive); checkactive = NULL;
+			free(checkstate); checkstate = NULL;
 			emush = strtok(NULL, "\n");
 			count++;
 		}
@@ -346,7 +349,7 @@ void screensoftcam()
 	if(emulist != NULL)
 		freelist(emulist);
 
-	free(swhichcam);
+	//free(swhichcam); swhichcam = NULL;
 	delmarkedscreennodes(softcam, 1);
 	delownerrc(softcam);
 	clearscreen(softcam);
