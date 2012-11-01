@@ -262,7 +262,7 @@ void screenmc_audioplayer()
 			printf("Copyright: %s\n", playergetinfo("Copyright"));
 			printf("TestLibEplayer: %s\n", playergetinfo("TestLibEplayer"));
 		}
-		else if(rcret == getrcconfigint("rcstop", NULL))
+		else if(rcret == getrcconfigint("rcstop", NULL) || (rcret == getrcconfigint("rcexit", NULL) && status.play == 1))
 		{
 
 //			if((status.play == 1) || (status.pause == 1))
