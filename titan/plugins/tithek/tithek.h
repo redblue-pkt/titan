@@ -409,7 +409,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	freetithek();
 //	if(readtithek(tithekfile) != 0) return 1;
 	int linecount = readtithek(tithekfile);
-	if(linecount == 0) return 1;
+//	if(linecount == 0) return 1;
 	
 	struct tithek* titheknode = tithek;
 
