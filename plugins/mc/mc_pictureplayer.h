@@ -223,7 +223,7 @@ void screenmc_pictureplayer()
 				drawscreen(apskin, 0, 0);
 			}
 		}
-		else if(rcret == getrcconfigint("rcstop", NULL))
+		else if(rcret == getrcconfigint("rcstop", NULL) || (rcret == getrcconfigint("rcexit", NULL) && status.play == 1))
 		{
 			debug(50, "rcstop: stopplayback");
 

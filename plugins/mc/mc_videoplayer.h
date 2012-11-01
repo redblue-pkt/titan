@@ -405,7 +405,7 @@ void screenmc_videoplayer()
 			textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 500, 10, 0);
 			free(tmpstr), tmpstr = NULL;			
 		}
-		else if(rcret == getrcconfigint("rcstop", NULL))
+		else if(rcret == getrcconfigint("rcstop", NULL) || (rcret == getrcconfigint("rcexit", NULL) && status.play == 1))
 		{
 			debug(50, "rcstop: stopplayback");
 			if(status.play == 1 && playertype == 0)
