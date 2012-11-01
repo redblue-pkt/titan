@@ -274,7 +274,7 @@ void oshutdown(int exitcode, int flag)
 			return;
 	}
 
-	ret = servicestop(status.aktservice, 1, 0);
+	ret = servicestop(status.aktservice, 1, 1);
 	if(ret == 1) return;
 	
 	if(exitcode == 1)
