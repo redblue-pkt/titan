@@ -669,6 +669,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 			else
 			{
 				screenmainplaylist(0);
+				writeallconfig(0);
 				drawscreen(apskin, 0, 0);
 			}
 			freemenulist(mlist, 1);
