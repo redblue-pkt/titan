@@ -788,6 +788,8 @@ void screentithekplay(char* titheklink, char* title, int first)
 		if(rcret == getrcconfigint("rcmenu", NULL))
 		{
 			screentithek_settings();
+			createtithekplay(titheklink, grid, listbox, countlabel);
+			drawscreen(grid, 0, 0);
 		}
 		
 		if(rcret == getrcconfigint("rcred", NULL))
