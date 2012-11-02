@@ -33,8 +33,14 @@ void LCD_start_lcd4linux()
 	
 	if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
 		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 1", 0, 0);
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
+		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 3", 0, 0);
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
 		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 2", 0, 0);
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf105p") == 0)
+		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 5", 0, 0);
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf107h") == 0)
+		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 4", 0, 0);
 	else
 		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 2", 0, 0);
 	
@@ -95,6 +101,7 @@ void LCD_Samsung1_thread()
 	FILE *fd = NULL;
 	char *fileline = NULL;
 	int weatherwrite = 999;
+	int weatherref = 0;
 	char* startlcd = NULL;
 	
 	if(ostrcmp(getconfig("lcd_samsung_plugin_wetter", NULL), "yes") == 0)
@@ -103,6 +110,12 @@ void LCD_Samsung1_thread()
 			LCD_Samsung1 = getscreen("LCD_spf75_Wetter");
 		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf87_Wetter");
+		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
+			LCD_Samsung1 = getscreen("LCD_spf87_Wetter");
+		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf105p") == 0)
+			LCD_Samsung1 = getscreen("LCD_spf105_Wetter");
+		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf107h") == 0)
+			LCD_Samsung1 = getscreen("LCD_spf107_Wetter");
 		else
 			LCD_Samsung1 = getscreen("LCD_spf87_Wetter");
 		day0_t = getscreennode(LCD_Samsung1, "day0_t");
@@ -127,6 +140,12 @@ void LCD_Samsung1_thread()
 			LCD_Samsung1 = getscreen("LCD_spf75");
 		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf87");
+		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
+			LCD_Samsung1 = getscreen("LCD_spf87");
+		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf105p") == 0)
+			LCD_Samsung1 = getscreen("LCD_spf105");
+		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf107h") == 0)
+			LCD_Samsung1 = getscreen("LCD_spf107");
 		else
 			LCD_Samsung1 = getscreen("LCD_spf87");	
 		akttime = getscreennode(LCD_Samsung1, "akttime");
@@ -136,6 +155,12 @@ void LCD_Samsung1_thread()
 		LCD_Play = getscreen("LCD_spf75_Play");
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
 		LCD_Play = getscreen("LCD_spf87_Play");
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
+		LCD_Play = getscreen("LCD_spf87_Play");
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf105p") == 0)
+		LCD_Play = getscreen("LCD_spf105_Play");
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf107h") == 0)
+		LCD_Play = getscreen("LCD_spf107_Play");
 	else
 		LCD_Play = getscreen("LCD_spf87_Play");
 	struct skin* akttimeplay = getscreennode(LCD_Play, "akttime");
@@ -147,8 +172,14 @@ void LCD_Samsung1_thread()
 		
 	if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
 		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 1", 0, 0);
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
+		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 3", 0, 0);
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
 		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 2", 0, 0);
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf105p") == 0)
+		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 5", 0, 0);
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf107h") == 0)
+		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 4", 0, 0);
 	else
 		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 2", 0, 0);
 	
@@ -159,6 +190,12 @@ void LCD_Samsung1_thread()
 			LCD_Standby = getscreen("LCD_spf75_Standby");
 		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
 			LCD_Standby = getscreen("LCD_spf87_Standby");
+		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
+			LCD_Standby = getscreen("LCD_spf87_Standby");
+		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf105p") == 0)
+			LCD_Standby = getscreen("LCD_spf105_Standby");
+		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf107h") == 0)
+			LCD_Standby = getscreen("LCD_spf107_Standby");
 		else
 			LCD_Standby = getscreen("LCD_spf87_Standby");
 		akttime_Standby = getscreennode(LCD_Standby, "akttime"); 
@@ -275,7 +312,6 @@ void LCD_Samsung1_thread()
 				if(file_exist("/tmp/lcdweather") != 0) 
 					put = 1; 
 			}                        
- 			
 			if(ostrcmp(tmpstr, timemerk) != 0)
 			{
 				free(timemerk);timemerk=NULL;
@@ -283,9 +319,9 @@ void LCD_Samsung1_thread()
 				put = 1;
 			} 
 
-			if(standby == 0)
+			if(standby == 0 || standby == 2 )
 			{
-				if(type == 1)
+				if(type == 1 && standby == 0)
 				{
 					if(ostrcmp(tmpstr2, sendermerk) != 0)
 					{
@@ -424,11 +460,18 @@ void LCD_Samsung1_thread()
 								}
 							}		
 						}
-						
-						changetext(akttime, tmpstr);
-						if(drawscreen(LCD_Samsung1, 0, 0) == -2)
-							printf("nicht genug Speicher fuer drawscreen\n");
-							
+						if(standby == 0)
+						{
+							changetext(akttime, tmpstr);
+							if(drawscreen(LCD_Samsung1, 0, 0) == -2)
+								printf("nicht genug Speicher fuer drawscreen\n");
+						}
+						else if(standby == 2)
+						{
+							changetext(akttime_Standby, tmpstr); 
+							drawscreen(LCD_Standby, 0, 0); 
+							put = 0;
+						} 
 					}
 					else if(type == 2)
 					{
@@ -493,6 +536,17 @@ void LCD_Samsung1_thread()
 		free(tmpstr3); tmpstr3 = NULL;
 		//sleep(1);
 		usleep(500000);
+		
+		if(ostrcmp(getconfig("lcd_samsung_plugin_wetter", NULL), "yes") == 0)
+		{
+			weatherref = weatherref + 1;
+			if(weatherref == 7200)
+			{
+				weatherwrite == 0;
+				system("rm /tmp/lcdweather");
+				weatherref == 0;
+			}
+		}
 	}
  	free(timemerk);timemerk=NULL;
  	free(sendermerk);sendermerk=NULL;
@@ -593,6 +647,9 @@ void start(void)
     
   addchoicebox(lcdtype, "spf75h", _("SPF-75H"));
   addchoicebox(lcdtype, "spf87h", _("SPF-87H"));
+  addchoicebox(lcdtype, "spf87hold", _("SPF-87H-old"));
+  addchoicebox(lcdtype, "spf105p", _("SPF-105P"));
+  addchoicebox(lcdtype, "spf107p", _("SPF-107H"));
 	setchoiceboxselection(lcdtype, getconfig("lcd_samsung_plugin_type", NULL));
 	
 	addchoicebox(allmenu, "no", _("nein"));
