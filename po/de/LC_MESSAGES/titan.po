@@ -2646,3 +2646,6 @@ msgstr "Unicable Hersteller"
 
 msgid "Unicable product"
 msgstr "Unicable Produkt"
+
+msgid "Resync Recording immediately"
+msgstr "Synchronisiere Aufnamen sofort"
