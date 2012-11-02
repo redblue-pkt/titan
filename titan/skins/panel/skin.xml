@@ -1,7 +1,7 @@
 <screen fontcol=fontcol title="Panel" titlealign=center name=panel_main hspace=30 vspace=30 fontsize=30 title="" posx=center posy=center width=60% height=65% bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=100%>
 <node type=MENU pic=%pluginpath%/panel/skin/panel_setup.png textposx=120 valign=middle name=panel_settings text="Settings" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
-<node type=MENU pic=%pluginpath%/panel/skin/panel_infos.png textposx=120 valign=middle name=panel_infos_main text="Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
+###<node type=MENU pic=%pluginpath%/panel/skin/panel_infos.png textposx=120 valign=middle name=panel_infos_main text="Infos" parent=listbox bordercol=bordercol bordersize=0 width=100% height=50 hspace=5>
 #<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=center posx=58% posy=90% width=280 height=30/>
 </screen>
 
