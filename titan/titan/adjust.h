@@ -38,6 +38,7 @@ void screenadjust()
 	struct skin* camwait = getscreennode(adjust, "camwait");
 	struct skin* checkcamdecrypt = getscreennode(adjust, "checkcamdecrypt");
 	struct skin* showlastpos = getscreennode(adjust, "showlastpos");
+	struct skin* recsync = getscreennode(adjust, "recsync");
 	
 	struct skin* tmp = NULL;
 
@@ -181,6 +182,10 @@ void screenadjust()
 	addchoicebox(showlastpos, "1", _("yes"));
 	setchoiceboxselection(showlastpos, getconfig("showlastpos", NULL));
 
+	addchoicebox(recsync, "0", _("no"));	
+	addchoicebox(recsync, "1", _("yes"));
+	setchoiceboxselection(recsync, getconfig("recsync", NULL));
+
 	drawscreen(adjust, 0, 0);
 	addscreenrc(adjust, listbox);
 
@@ -242,7 +247,7 @@ void screenadjust()
 			addconfigscreencheck("camwait", camwait, "25");
 			addconfigscreencheck("checkcamdecrypt", checkcamdecrypt, "0");
 			addconfigscreencheck("showlastpos", showlastpos, NULL);
-
+			addconfigscreencheck("recsync", recsync, NULL);
 			break;
 		}
 	}
