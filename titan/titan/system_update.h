@@ -129,7 +129,7 @@ void screensystem_update(int mode)
 
 	setchoiceboxselection(device, getconfig("device", NULL));
 
-	getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 1, NULL);
+	getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 0, NULL);
 	addscreenrc(systemupdate, filelist);
 	if(mode == 2 || mode == 3)
 	{
@@ -158,7 +158,7 @@ void screensystem_update(int mode)
 			}
 
 			drawscreen(systemupdate, 0, 0);
-			getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 1, NULL);
+			getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 0, NULL);
 			addscreenrc(systemupdate, filelist);
 			continue;
 		}
@@ -326,7 +326,7 @@ void screensystem_update(int mode)
 				{
 					textbox(_("Message"), _("Error file not supported"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 					drawscreen(systemupdate, 0, 0);
-					getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 1, NULL);
+					getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 0, NULL);
 					addscreenrc(systemupdate, filelist);
 				}
 
@@ -338,14 +338,14 @@ void screensystem_update(int mode)
 					textbox(_("Message"), _("Can't start system update\nPlease remove Stick/HDD and try again"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 					debug(40, "update error cmd: %s", cmd);
 					drawscreen(systemupdate, 0, 0);
-					getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 1, NULL);
+					getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 0, NULL);
 					addscreenrc(systemupdate, filelist);
 				}
 				else
 				{
 					debug(40, "update canceled cmd: %s", cmd);
 					drawscreen(systemupdate, 0, 0);
-					getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 1, NULL);
+					getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 0, NULL);
 					addscreenrc(systemupdate, filelist);
 				}
 
