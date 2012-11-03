@@ -517,6 +517,9 @@ unsigned char* savejpg(char* filename, int width, int height, int channels, int 
 void screenvolumeup();
 void screenvolumedown();
 
+//mute.h
+void screenmute(struct skin* screen, struct skin* node, int flag);
+
 //menu.h
 int menucall(struct skin* menunode, struct skin* menuentry, int check);
 

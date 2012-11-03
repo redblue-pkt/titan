@@ -99,6 +99,9 @@ int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char*
 	
 	if(fromthread == 1)
 	{
+		delrc(getrcconfigint("rcvolup", NULL), NULL, NULL);
+		delrc(getrcconfigint("rcvoldown", NULL), NULL, NULL);
+		delrc(getrcconfigint("rcmute", NULL), NULL, NULL);
 		m_lock(&status.drawingmutex, 0);
 		m_lock(&status.rcmutex, 10);
 		setnodeattr(messagebox, framebuffer, 2);
@@ -127,6 +130,9 @@ int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char*
 		status.rcowner = NULL;
 		m_unlock(&status.rcmutex, 3);
 		m_unlock(&status.drawingmutex, 0);
+		addrc(getrcconfigint("rcvolup", NULL), screenvolumeup, NULL, NULL);
+		addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
+		addrc(getrcconfigint("rcmute", NULL), screenmute, NULL, NULL);
 	}
 	else if(flag != 3)
 	{

@@ -30,6 +30,9 @@ char* numinput(char* title, char* num, char* mask, int isip)
 
 	if(fromthread == 1)
 	{
+		delrc(getrcconfigint("rcvolup", NULL), NULL, NULL);
+		delrc(getrcconfigint("rcvoldown", NULL), NULL, NULL);
+		delrc(getrcconfigint("rcmute", NULL), NULL, NULL);
 		m_lock(&status.drawingmutex, 0);
 		m_lock(&status.rcmutex, 10);
 		setnodeattr(numinput, framebuffer, 2);
@@ -63,6 +66,9 @@ char* numinput(char* title, char* num, char* mask, int isip)
 		status.rcowner = NULL;
 		m_unlock(&status.rcmutex, 3);
 		m_unlock(&status.drawingmutex, 0);
+		addrc(getrcconfigint("rcvolup", NULL), screenvolumeup, NULL, NULL);
+		addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
+		addrc(getrcconfigint("rcmute", NULL), screenmute, NULL, NULL);
 	}
 	else
 	{

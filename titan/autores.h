@@ -16,6 +16,9 @@ void screenautores(char* text, int timeout, int flag)
 
 	if(fromthread == 1)
 	{
+		delrc(getrcconfigint("rcvolup", NULL), NULL, NULL);
+		delrc(getrcconfigint("rcvoldown", NULL), NULL, NULL);
+		delrc(getrcconfigint("rcmute", NULL), NULL, NULL);
 		m_lock(&status.drawingmutex, 0);
 		m_lock(&status.rcmutex, 10);
 		setnodeattr(autores, framebuffer, 2);
@@ -42,6 +45,9 @@ void screenautores(char* text, int timeout, int flag)
 		status.rcowner = NULL;
 		m_unlock(&status.rcmutex, 10);
 		m_unlock(&status.drawingmutex, 0);
+		addrc(getrcconfigint("rcvolup", NULL), screenvolumeup, NULL, NULL);
+		addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
+		addrc(getrcconfigint("rcmute", NULL), screenmute, NULL, NULL);
 	}
 	else
 	{
