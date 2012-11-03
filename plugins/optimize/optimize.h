@@ -131,7 +131,7 @@ int gettranspondercount(int orbitalpos)
 	return count;
 }
 
-int getchannelcount(unsigned long transponderid)
+int getchannelcount(uint64_t transponderid)
 {
 	int count = 0;
 	struct channel* node = channel;
