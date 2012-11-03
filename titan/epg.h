@@ -1155,9 +1155,9 @@ void linkagedesc(struct channel* chnode, struct epg* epgnode, void *buf)
 	if(chnode != NULL && chnode->transponder != NULL)
 	{
 		if(chnode->transponder->fetype == FE_QAM)
-			transponderid = transponderid | (1 << 32);
+			transponderid = transponderid | ((uint64_t)1 << 32);
 		else if(chnode->transponder->fetype == FE_OFDM)
-			transponderid = transponderid | (2 << 32);
+			transponderid = transponderid | ((uint64_t)2 << 32);
 
 		if(getlinkedchannel(chnode, serviceid, transponderid) == NULL)
 			addlinkedchannel(chnode, serviceid, transponderid, NULL);
@@ -1395,9 +1395,9 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 		if(chnode->transponder != NULL)
 		{
 			if(chnode->transponder->fetype == FE_QAM)
-				transponderid = transponderid | (1 << 32);
+				transponderid = transponderid | ((uint64_t)1 << 32);
 			else if(chnode->transponder->fetype == FE_OFDM)
-				transponderid = transponderid | (2 << 32);
+				transponderid = transponderid | ((uint64_t)2 << 32);
 		}
 
 		serviceid = HILO(eit->service_id);
