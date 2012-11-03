@@ -241,9 +241,9 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 	
 	transponderid = (onid << 16) | tid;
 	if(fenode->feinfo->type == FE_QAM)
-		transponderid = transponderid | (1 << 32);
+		transponderid = transponderid | ((uint64_t)1 << 32);
 	else if(fenode->feinfo->type == FE_OFDM)
-		transponderid = transponderid | (2 << 32);
+		transponderid = transponderid | ((uint64_t)2 << 32);
 	if(tpnode != NULL && tpnode->id != transponderid && tpnode->id != 99)
 	{
 		changetransponderid(tpnode, transponderid);
@@ -363,9 +363,9 @@ uint64_t findtransponderid(struct dvbdev* fenode, unsigned char *buf)
 	transponderid = (onid << 16) | tid;
 
 	if(fenode->feinfo->type == FE_QAM)
-		transponderid = transponderid | (1 << 32);
+		transponderid = transponderid | ((uint64_t)1 << 32);
 	else if(fenode->feinfo->type == FE_OFDM)
-		transponderid = transponderid | (2 << 32);
+		transponderid = transponderid | ((uint64_t)2 << 32);
 
 	debug(500, "found SDT transponderid: %llu", transponderid);
 
