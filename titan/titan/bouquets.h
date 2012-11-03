@@ -1,5 +1,5 @@
 #ifndef BOUQUETS_H
-#define BOUQUETS
+#define BOUQUETS_H
 
 void debugbouquet()
 {
@@ -269,7 +269,7 @@ int movebouquetup(struct bouquet* node)
 	return 0;
 }
 
-struct bouquet* getbouquetbychannel(struct bouquet* node, int serviceid, unsigned long transponderid)
+struct bouquet* getbouquetbychannel(struct bouquet* node, int serviceid, uint64_t transponderid)
 {
 	while(node != NULL)
 	{
@@ -316,7 +316,7 @@ struct bouquet* addbouquet(struct bouquet **firstnode, char *line, int type, int
 
 	status.writebouquet = 1;
 
-	ret = sscanf(line, "%d#%lu", &newnode->serviceid, &newnode->transponderid);
+	ret = sscanf(line, "%d#%llu", &newnode->serviceid, &newnode->transponderid);
 	if(ret != 2)
 	{
 		if(count > 0)
@@ -445,7 +445,7 @@ int readbouquet(char* filename, struct bouquet** firstnode, int type)
 	return 0;
 }
 
-void delbouquet(int serviceid, unsigned long transponderid, struct bouquet** firstnode)
+void delbouquet(int serviceid, uint64_t transponderid, struct bouquet** firstnode)
 {
 	debug(1000, "in");
 	struct bouquet *node = *firstnode, *prev = *firstnode;
@@ -479,7 +479,7 @@ void delbouquet(int serviceid, unsigned long transponderid, struct bouquet** fir
 	debug(1000, "out");
 }
 
-void setbouquetchanneltonullmain(int serviceid, unsigned long transponderid)
+void setbouquetchanneltonullmain(int serviceid, uint64_t transponderid)
 {
 	struct mainbouquet* node = mainbouquet;
 	struct bouquet* bouquetnode = NULL;
@@ -497,7 +497,7 @@ void setbouquetchanneltonullmain(int serviceid, unsigned long transponderid)
 	}
 }
 
-void delbouquetbychannel(int serviceid, unsigned long transponderid)
+void delbouquetbychannel(int serviceid, uint64_t transponderid)
 {
 	struct mainbouquet* node = mainbouquet;
 
@@ -565,7 +565,7 @@ int writebouquet(const char *filename, struct bouquet *node)
 
 	while(node != NULL)
 	{
-		ret = fprintf(fd, "%d#%lu\n", node->serviceid, node->transponderid);
+		ret = fprintf(fd, "%d#%llu\n", node->serviceid, node->transponderid);
 		if(ret < 0)
 		{
 			perr("writting file %s", filename);

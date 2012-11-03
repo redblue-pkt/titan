@@ -102,7 +102,7 @@ void fillpids(struct skin* l1, struct skin* l2, struct skin* l3, struct skin* l4
 			tmpnr = oitoa(status.aktservice->channel->serviceid);
 			changetext(l8, tmpnr);
 			free(tmpnr); tmpnr = NULL;
-			tmpnr = olutoa(status.aktservice->channel->transponderid);
+			tmpnr = ollutoa(status.aktservice->channel->transponderid);
 			changetext(l9, tmpnr);
 			free(tmpnr); tmpnr = NULL;
 		}

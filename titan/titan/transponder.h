@@ -1,7 +1,7 @@
 #ifndef TRANSPONDER_H
 #define TRANSPONDER_H
 
-void changetransponderid(struct transponder* tpnode, unsigned long transponderid)
+void changetransponderid(struct transponder* tpnode, uint64_t transponderid)
 {
 	if(tpnode == NULL) return;
 	
@@ -544,7 +544,7 @@ struct transponder* addtransponder(char* line, int count, struct transponder* la
 		return NULL;
 	}
 
-	ret = sscanf(line, "%lu#%"SCNu8"#%d#%"SCNu8"#%d#%d#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8, &newnode->id, &newnode->fetype, &newnode->frequency, &newnode->polarization, &newnode->orbitalpos, &newnode->symbolrate, &newnode->modulation, &newnode->fec, &newnode->pilot, &newnode->rolloff, &newnode->inversion, &newnode->system);
+	ret = sscanf(line, "%llu#%"SCNu8"#%d#%"SCNu8"#%d#%d#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8, &newnode->id, &newnode->fetype, &newnode->frequency, &newnode->polarization, &newnode->orbitalpos, &newnode->symbolrate, &newnode->modulation, &newnode->fec, &newnode->pilot, &newnode->rolloff, &newnode->inversion, &newnode->system);
 	if(ret != 12)
 	{
 		if(count > 0)
@@ -589,12 +589,12 @@ struct transponder* addtransponder(char* line, int count, struct transponder* la
 	return newnode;
 }
 
-struct transponder* createtransponder(unsigned long id, int fetype, int orbitalpos, unsigned int frequency, int inversion, unsigned int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int system)
+struct transponder* createtransponder(uint64_t id, int fetype, int orbitalpos, unsigned int frequency, int inversion, unsigned int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int system)
 {
 	struct transponder* tpnode = NULL;
 	char* tmpstr = NULL;
 
-	tmpstr = ostrcat(tmpstr, olutoa(id), 1, 1);
+	tmpstr = ostrcat(tmpstr, ollutoa(id), 1, 1);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	tmpstr = ostrcat(tmpstr, oitoa(fetype), 1, 1);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
@@ -624,7 +624,7 @@ struct transponder* createtransponder(unsigned long id, int fetype, int orbitalp
 	return tpnode;
 }
 
-int copytransponder(struct transponder* tp1, struct transponder* tp2, unsigned long transponderid)
+int copytransponder(struct transponder* tp1, struct transponder* tp2, uint64_t transponderid)
 {
 	int ret = 1;
 
@@ -743,9 +743,9 @@ int readtransponderencoding(const char* filename)
 		linecount++;
 		tpnode = NULL;
 
-		unsigned long transponderid = 0;
+		uint64_t transponderid = 0;
 		int encoding = 0;
-		if(sscanf(fileline, "%lu#%d", &transponderid, &encoding) == 2)
+		if(sscanf(fileline, "%llu#%d", &transponderid, &encoding) == 2)
 		{
 			tpnode = gettransponder(transponderid);
 			if(tpnode != NULL) tpnode->encoding = encoding;
@@ -804,7 +804,7 @@ void deltransponder(struct transponder* tpnode)
 	debug(1000, "out");
 }
 
-void deltransponderbyid(unsigned long transponderid)
+void deltransponderbyid(uint64_t transponderid)
 {
 	struct transponder *node = transponder;
 	struct transponder *prev = NULL;
@@ -822,7 +822,7 @@ void deltransponderbyid(unsigned long transponderid)
 }
 
 /*
-struct transponder* gettransponder(unsigned long transponderid)
+struct transponder* gettransponder(uint64_t transponderid)
 {
 	//debug(1000, "in");
 	struct transponder *node = transponder;
@@ -837,7 +837,7 @@ struct transponder* gettransponder(unsigned long transponderid)
 
 		node = node->next;
 	}
-	debug(100, "transponder not found (%lu)", transponderid);
+	debug(100, "transponder not found (%llu)", transponderid);
 	return NULL;
 }
 */
@@ -893,7 +893,7 @@ int writetransponder(const char *filename)
 			node = node->next;
 			continue;
 		}
-		ret = fprintf(fd, "%lu#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d\n", node->id, node->fetype, node->frequency, node->polarization, node->orbitalpos, node->symbolrate, node->modulation, node->fec, node->pilot, node->rolloff, node->inversion, node->system);
+		ret = fprintf(fd, "%llu#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d\n", node->id, node->fetype, node->frequency, node->polarization, node->orbitalpos, node->symbolrate, node->modulation, node->fec, node->pilot, node->rolloff, node->inversion, node->system);
 		if(ret < 0)
 		{
 			perr("writting file %s", filename);

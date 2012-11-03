@@ -300,7 +300,7 @@ struct channel* addchannel(char *line, int count, struct channel* last)
 		return NULL;
 	}
 
-	ret = sscanf(line, "%[^#]#%lu#%d#%d#%d#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu16"#%"SCNu16"#%"SCNu8, name, &newnode->transponderid, &newnode->providerid, &newnode->serviceid, &newnode->servicetype, &newnode->flag, &newnode->videocodec, &newnode->audiocodec, &newnode->videopid, &newnode->audiopid, &newnode->protect);
+	ret = sscanf(line, "%[^#]#%llu#%d#%d#%d#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu16"#%"SCNu16"#%"SCNu8, name, &newnode->transponderid, &newnode->providerid, &newnode->serviceid, &newnode->servicetype, &newnode->flag, &newnode->videocodec, &newnode->audiocodec, &newnode->videopid, &newnode->audiopid, &newnode->protect);
 	if(ret != 11 || getchannel(newnode->serviceid, newnode->transponderid) != NULL)
 	{
 		if(count > 0)
@@ -359,14 +359,14 @@ struct channel* addchannel(char *line, int count, struct channel* last)
 	return newnode;
 }
 
-struct channel* createchannel(char* name, unsigned long transponderid, int providerid, int serviceid, int servicetype, int flag, int videocodec, int audiocodec, int videopid, int audiopid, int protect)
+struct channel* createchannel(char* name, uint64_t transponderid, int providerid, int serviceid, int servicetype, int flag, int videocodec, int audiocodec, int videopid, int audiopid, int protect)
 {
 	struct channel* chnode = NULL;
 	char* tmpstr = NULL;
 
 	tmpstr = ostrcat(tmpstr, name, 1, 0);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, olutoa(transponderid), 1, 1);
+	tmpstr = ostrcat(tmpstr, ollutoa(transponderid), 1, 1);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	tmpstr = ostrcat(tmpstr, oitoa(providerid), 1, 1);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
@@ -441,7 +441,7 @@ int readchannel(const char* filename)
 
 //flag 0: del bouquet
 //flag 1: don't del bouquet
-int delchannel(int serviceid, unsigned long transponderid, int flag)
+int delchannel(int serviceid, uint64_t transponderid, int flag)
 {
 	debug(1000, "in");
 	int ret = 1;
@@ -532,7 +532,7 @@ int delchannel(int serviceid, unsigned long transponderid, int flag)
 	return ret;
 }
 
-void delchannelbytransponder(unsigned long transponderid)
+void delchannelbytransponder(uint64_t transponderid)
 {
 	debug(1000, "in");
 	struct channel *node = channel, *prev = channel;
@@ -588,7 +588,7 @@ int writechannel(const char *filename)
 			node = node->next;
 			continue;
 		}
-		ret = fprintf(fd, "%s#%lu#%d#%d#%d#%d#%d#%d#%d#%d#%d\n", node->name, node->transponderid, node->providerid, node->serviceid, node->servicetype, node->flag, node->videocodec, node->audiocodec, node->videopid, node->audiopid, node->protect);
+		ret = fprintf(fd, "%s#%llu#%d#%d#%d#%d#%d#%d#%d#%d#%d\n", node->name, node->transponderid, node->providerid, node->serviceid, node->servicetype, node->flag, node->videocodec, node->audiocodec, node->videopid, node->audiopid, node->protect);
 		if(ret < 0)
 		{
 			perr("writting file %s", filename);

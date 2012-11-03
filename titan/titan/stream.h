@@ -49,7 +49,7 @@ void streamthreadfunc(struct stimerthread* timernode)
 	struct timeval timeout;
 	fd_set rfds;
 	int ret = 0, streamfd = -1, connfd = -1, filefd = -1, serviceid = 0;
-	unsigned long transponderid = 0;
+	uint64_t transponderid = 0;
 	unsigned char* buf = NULL;
 	char* tmpstr = NULL, *filename = NULL;
 	struct channel* chnode = NULL;
@@ -135,14 +135,14 @@ void streamthreadfunc(struct stimerthread* timernode)
 				}
 				memset(filename, 0, 512);
 
-				ret = sscanf(tmpstr, "%d,%lu,%s", &serviceid, &transponderid, filename);
+				ret = sscanf(tmpstr, "%d,%llu,%s", &serviceid, &transponderid, filename);
 				if(ret < 2)
-					ret = sscanf(tmpstr, "%d%%2c%lu%%2c%s", &serviceid, &transponderid, filename);
+					ret = sscanf(tmpstr, "%d%%2c%llu%%2c%s", &serviceid, &transponderid, filename);
 				if(ret == 2 || ret == 3)
 				{
 					if(ret == 2)
 					{
-						debug(250, "stream serviceid = %d, transponderid = %lu", serviceid, transponderid);
+						debug(250, "stream serviceid = %d, transponderid = %llu", serviceid, transponderid);
 						chnode = getchannel(serviceid, transponderid);
 						ret = recordstart(chnode, -1, connfd, RECSTREAM, 0, NULL);
 					}

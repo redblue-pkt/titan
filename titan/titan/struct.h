@@ -360,7 +360,7 @@ struct mediadbcache
 struct mostzap
 {
 	int serviceid;
-	unsigned long transponderid;
+	uint64_t transponderid;
 	int count;
 	struct mostzap* prev;
 	struct mostzap* next;
@@ -535,7 +535,7 @@ struct download
 struct epgscanlist
 {
 	int serviceid;
-	unsigned long transponderid;
+	uint64_t transponderid;
 	time_t scantime;
 	struct epgscanlist* prev;
 	struct epgscanlist* next;
@@ -647,7 +647,7 @@ struct rectimer
 	int status;
 	char* errstr;
 	struct service* servicenode;
-	unsigned long transponderid;
+	uint64_t transponderid;
 	struct rectimer *prev;
 	struct rectimer *next;
 };
@@ -686,14 +686,14 @@ struct splitstr
 struct channelcache
 {
 	int serviceid;
-	unsigned long transponderid;
+	uint64_t transponderid;
 	struct channel* chnode;
 	struct channelcache* next;
 };
 
 struct transpondercache
 {
-	unsigned long transponderid;
+	uint64_t transponderid;
 	struct transponder* tpnode;
 	struct transpondercache* next;
 };
@@ -860,7 +860,7 @@ struct dvbdev
 //if you change this struct you must change the function
 struct transponder
 {
-	unsigned long id;
+	uint64_t id;
 	uint8_t fetype;
 	uint8_t polarization;
 	uint8_t modulation;
@@ -936,7 +936,7 @@ struct audiotrack
 
 struct linkedchannel
 {
-	unsigned long transponderid;
+	uint64_t transponderid;
 	int serviceid;
 	struct linkedchannel* next;
 };
@@ -946,7 +946,7 @@ struct linkedchannel
 struct channel
 {
 	char* name;
-	unsigned long transponderid;
+	uint64_t transponderid;
 	int providerid;
 	int serviceid;
 	int servicetype;
@@ -1323,7 +1323,7 @@ struct bouquet
 {
 	int nr;
 	int serviceid;
-	unsigned long transponderid;
+	uint64_t transponderid;
 	struct channel *channel;
 	struct bouquet *prev;
 	struct bouquet *next;

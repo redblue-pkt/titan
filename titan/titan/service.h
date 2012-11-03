@@ -11,8 +11,8 @@ void debugservice()
 		printf("Service %d\n", count);
 		count++;
 
-		if(node->channel != NULL) printf("%s (%lu)\n", node->channel->name, node->channel->transponderid);
-		if(node->transponder != NULL) printf("TransponderID %lu\n", node->transponder->id);
+		if(node->channel != NULL) printf("%s (%llu)\n", node->channel->name, node->channel->transponderid);
+		if(node->transponder != NULL) printf("TransponderID %llu\n", node->transponder->id);
 		if(node->fedev != NULL) printf("%s (%d)\n", node->fedev->dev, node->fedev->fd);
 		if(node->dmxaudiodev != NULL) printf("%s (%d)\n", node->dmxaudiodev->dev, node->dmxaudiodev->fd);
 		if(node->dmxvideodev != NULL) printf("%s (%d)\n", node->dmxvideodev->dev, node->dmxvideodev->fd);

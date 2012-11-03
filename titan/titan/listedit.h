@@ -97,7 +97,7 @@ int screenlistedit(int list, struct channel* chnode)
 			{
 				addconfig("startchannellist", getconfig("channellist", NULL));
 				addconfigint("startserviceid", chnode->serviceid);
-				addconfiglu("starttransponderid", chnode->transponderid);
+				addconfigllu("starttransponderid", chnode->transponderid);
 				addconfig("startservicetype", getconfig("servicetype", NULL));
 			}
 			if(startchannel == 1 && ostrcmp(listbox->select->name, "delstartchannel") == 0)

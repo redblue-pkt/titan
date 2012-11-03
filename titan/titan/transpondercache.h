@@ -21,7 +21,7 @@ void debugtranspondercache()
 	printf("maxcount=%d\n", maxcount);
 }
 
-struct transponder* gettransponder(unsigned long transponderid)
+struct transponder* gettransponder(uint64_t transponderid)
 {
 	unsigned int hash; 
 	struct transpondercache* node = NULL;
@@ -40,7 +40,7 @@ struct transponder* gettransponder(unsigned long transponderid)
 	return NULL;
 }
 
-struct transpondercache* modifytranspondercache(unsigned long transponderid, struct transponder* tpnode)
+struct transpondercache* modifytranspondercache(uint64_t transponderid, struct transponder* tpnode)
 {
 	unsigned int hash; 
 	//struct transpondercache* node = NULL, *prev = NULL, *newnode = NULL;
@@ -81,7 +81,7 @@ struct transpondercache* modifytranspondercache(unsigned long transponderid, str
 	return newnode;
 }
 
-void deltranspondercache(unsigned long transponderid, struct transponder* tpnode)
+void deltranspondercache(uint64_t transponderid, struct transponder* tpnode)
 {
 	unsigned int hash; 
 	struct transpondercache *node = NULL, *prev = NULL;
