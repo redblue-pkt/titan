@@ -1863,6 +1863,14 @@ read_more:
 			status.deloldepg = time(NULL);
 			deloldepg();
 		}
+
+		//write epg periodic to medium
+		if(flag == 0 && status.writeperiodicepg + (2 * 60 * 60) < time(NULL)) // 2 stunde
+		{
+			status.writeperiodicepg = time(NULL);
+			writeallconfig(2);
+		}
+
 		//fill with fresh data
 #ifdef SIMULATE
 		readlen = TEMP_FAILURE_RETRY(read(fd, buf + pos, (MINMALLOC * 4) - pos));
@@ -1902,6 +1910,7 @@ void epgthreadfunc(struct stimerthread* self)
 	{
 		debug(400, "read epg data from file");
 		status.deloldepg = time(NULL);
+		status.writeperiodicepg = time(NULL);
 		tmpstr = createpath(getconfig("epg_path", NULL), "epg.dat");
 		readepg(tmpstr);
 		free(tmpstr); tmpstr = NULL;
