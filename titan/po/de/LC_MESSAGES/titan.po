@@ -2649,3 +2649,15 @@ msgstr "Unicable Produkt"
 
 msgid "Resync Recording immediately"
 msgstr "Synchronisiere Aufnamen sofort"
+
+msgid "IPK Upgrade Done your system rebooting !"
+msgstr "IPK Aktualisieren abgeschlossen Ihre Box wird neugestartet"
+
+msgid "IPK Tmp Install Done your system rebooting !"
+msgstr "IPK Tmp Installation abgeschlossen Ihre Box wird neugestartet"
+
+msgid "IPK Install Done your system rebooting !"
+msgstr "IPK Installation abgeschlossen Ihre Box wird neugestartet"
+
+msgid "IPK Remove Done your system rebooting !"
+msgstr "IPK Löschen abgeschlossen Ihre Box wird neugestartet"
