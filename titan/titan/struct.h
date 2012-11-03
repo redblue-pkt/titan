@@ -1082,6 +1082,8 @@ struct status
 	int pmtmode;
 	//timer for del old epg entrys
 	time_t deloldepg;
+	//write epg periodic to medium
+	time_t writeperiodicepg;
 	//0 dektiv
 	//1 only scan
 	//2 only whitlist
