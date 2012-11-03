@@ -104,9 +104,9 @@ void fbsave();
 void fbrestore();
 
 //mostzap.h
-struct mostzap* createmostzap(int serviceid, unsigned long transponderid);
+struct mostzap* createmostzap(int serviceid, uint64_t transponderid);
 int writemostzap(const char *filename);
-int delmostzap(int serviceid, unsigned long transponderid, int flag);
+int delmostzap(int serviceid, uint64_t transponderid, int flag);
 void mostzaptobouquet(struct mainbouquet* mbouquet);
 
 //thumb.h
@@ -286,15 +286,15 @@ void screennetwork_wlan();
 
 //channel.h
 int writechannel(const char *filename);
-struct channel* createchannel(char* name, unsigned long transponderid, int providerid, int serviceid, int servicetype, int flag, int videocodec, int audiocodec, int videopid, int audiopid, int protect);
-void delchannelbytransponder(unsigned long transponderid);
+struct channel* createchannel(char* name, uint64_t transponderid, int providerid, int serviceid, int servicetype, int flag, int videocodec, int audiocodec, int videopid, int audiopid, int protect);
+void delchannelbytransponder(uint64_t transponderid);
 struct channel* gettmpchannel();
-int delchannel(int serviceid, unsigned long transponderid, int flag);
+int delchannel(int serviceid, uint64_t transponderid, int flag);
 int movechanneldown(struct channel* node);
 int movechannelup(struct channel* node);
 
 //transponder.h
-struct transponder* gettransponder(unsigned long transponderid);
+struct transponder* gettransponder(uint64_t transponderid);
 int writetransponder(const char *filename);
 void deltransponderbyorbitalpos(int orbitalpos);
 void deltransponder(struct transponder* tpnode);
@@ -371,9 +371,9 @@ void deltimer(struct stimerthread *tnode);
 struct stimerthread* gettimerbythread(pthread_t thread);
 
 //epgscanlist.h
-struct epgscanlist* getepgscanlist(int serviceid, unsigned long transponderid);
+struct epgscanlist* getepgscanlist(int serviceid, uint64_t transponderid);
 int writeepgscanlist(const char *filename);
-int delepgscanlist(int serviceid, unsigned long transponderid);
+int delepgscanlist(int serviceid, uint64_t transponderid);
 
 //rectimer.h
 int readrectimer(char *filename);
@@ -546,6 +546,7 @@ struct clist* addconfigint(char *key, int value);
 int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int filelistview);
 int waitrc(struct skin* owner, unsigned int timeout, int flag);
 void delownerrc(struct skin* owner);
+struct rc* addrc(int key, void *func, struct skin* screen, struct skin *screennode);
 void delrc(int key, struct skin* owner, struct skin* screennode);
 int flushrc(unsigned int timeout);
 
@@ -629,6 +630,7 @@ int isfile(char* name);
 char* command(char* input);
 char* oitoa(int value);
 char* olutoa(unsigned long value);
+char* ollutoa(uint64_t value);
 int ostrcmp(char* value1, char* value2);
 int ostrcasecmp(char* value1, char* value2);
 char* ostrcat(char* value1, char* value2, int free1, int free2);
@@ -692,11 +694,11 @@ struct mainbouquet* addmainbouquet(char *line, int count, struct mainbouquet* la
 struct skin* addlistbox(struct skin* screen, struct skin* listbox, struct skin* last, int del);
 
 //bouquets.h
-void delbouquetbychannel(int serviceid, unsigned long transponderid);
-struct bouquet* getbouquetbychannelmain(int serviceid, unsigned long transponderid);
+void delbouquetbychannel(int serviceid, uint64_t transponderid);
+struct bouquet* getbouquetbychannelmain(int serviceid, uint64_t transponderid);
 void recalcbouquetnr();
-void setbouquetchanneltonullmain(int serviceid, unsigned long transponderid);
-void delbouquet(int serviceid, unsigned long transponderid, struct bouquet** firstnode);
+void setbouquetchanneltonullmain(int serviceid, uint64_t transponderid);
+void delbouquet(int serviceid, uint64_t transponderid, struct bouquet** firstnode);
 int movebouquetdown(struct bouquet* node);
 int movebouquetup(struct bouquet* node);
 struct bouquet* addbouquet(struct bouquet **firstnode, char *line, int type, int count, struct bouquet* last);
@@ -714,10 +716,10 @@ int subtitlestop(int flag);
 int subtitlepause(int flag);
 
 //linkedchannel.h
-struct linkedchannel* addlinkedchannel(struct channel* chnode, int serviceid, unsigned long transponderid, struct linkedchannel* last);
+struct linkedchannel* addlinkedchannel(struct channel* chnode, int serviceid, uint64_t transponderid, struct linkedchannel* last);
 void freelinkedchannel(struct channel* chnode);
 void screenlinkedchannel();
-struct linkedchannel* getlinkedchannel(struct channel* chnode, int serviceid, unsigned long transponderid);
+struct linkedchannel* getlinkedchannel(struct channel* chnode, int serviceid, uint64_t transponderid);
 
 //zap.h
 void zapup();
@@ -736,9 +738,9 @@ char* epgdescunzip(struct epg* epgnode);
 void screenstandby();
 
 //channelcache.h
-void delchannelcache(int serviceid, unsigned long transponderid);
-struct channelcache* modifychannelcache(int serviceid, unsigned long transponderid, struct channel*);
-struct channel* getchannel(int serviceid, unsigned long transponderid);
+void delchannelcache(int serviceid, uint64_t transponderid);
+struct channelcache* modifychannelcache(int serviceid, uint64_t transponderid, struct channel*);
+struct channel* getchannel(int serviceid, uint64_t transponderid);
 
 // vfd.h
 int setvfdicon(vfdicons id, int onoff);

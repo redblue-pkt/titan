@@ -1,7 +1,7 @@
 #ifndef LINKEDCHANNEL_H
 #define LINKEDCHANNEL_H
 
-struct linkedchannel* getlinkedchannel(struct channel* chnode, int serviceid, unsigned long transponderid)
+struct linkedchannel* getlinkedchannel(struct channel* chnode, int serviceid, uint64_t transponderid)
 {
 	if(chnode == NULL) return NULL;
 
@@ -152,7 +152,7 @@ start:
 	clearscreen(linkedchannel);
 }
 
-struct linkedchannel* addlinkedchannel(struct channel* chnode, int serviceid, unsigned long transponderid, struct linkedchannel* last)
+struct linkedchannel* addlinkedchannel(struct channel* chnode, int serviceid, uint64_t transponderid, struct linkedchannel* last)
 {
 	debug(1000, "in");
 	struct linkedchannel *newnode = NULL, *prev = NULL, *node = NULL;

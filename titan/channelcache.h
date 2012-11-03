@@ -21,7 +21,7 @@ void debugchannelcache()
 	printf("maxcount=%d\n", maxcount);
 }
 
-struct channel* getchannel(int serviceid, unsigned long transponderid)
+struct channel* getchannel(int serviceid, uint64_t transponderid)
 {
 	unsigned int hash; 
 	struct channelcache* node = NULL;
@@ -47,7 +47,7 @@ struct channel* getchannel(int serviceid, unsigned long transponderid)
 	return NULL;
 }
 
-struct channelcache* modifychannelcache(int serviceid, unsigned long transponderid, struct channel* chnode)
+struct channelcache* modifychannelcache(int serviceid, uint64_t transponderid, struct channel* chnode)
 {
 	unsigned int hash; 
 	//struct channelcache* node = NULL, *prev = NULL, *newnode = NULL;
@@ -89,7 +89,7 @@ struct channelcache* modifychannelcache(int serviceid, unsigned long transponder
 	return newnode;
 }
 
-void delchannelcache(int serviceid, unsigned long transponderid)
+void delchannelcache(int serviceid, uint64_t transponderid)
 {
 	unsigned int hash; 
 	struct channelcache *node = NULL, *prev = NULL;

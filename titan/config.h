@@ -84,7 +84,21 @@ struct clist* addconfiginttmp(char *key, int value)
 	return ret;
 }
 
-struct clist* addconfiglutmp(char *key, int value)
+struct clist* addconfigllutmp(char *key, uint64_t value)
+{
+	debug(1000, "in");
+	char* fileline = NULL;
+	struct clist* ret = NULL;
+
+	fileline = ollutoa(value);
+	ret = addconfigtmp(key, fileline);
+
+	free(fileline);
+	debug(1000, "out");
+	return ret;
+}
+
+struct clist* addconfiglutmp(char *key, unsigned long value)
 {
 	debug(1000, "in");
 	char* fileline = NULL;
@@ -112,7 +126,21 @@ struct clist* addconfigint(char *key, int value)
 	return ret;
 }
 
-struct clist* addconfiglu(char *key, int value)
+struct clist* addconfigllu(char *key, uint64_t value)
+{
+	debug(1000, "in");
+	char* fileline = NULL;
+	struct clist* ret = NULL;
+
+	fileline = ollutoa(value);
+	ret = addconfig(key, fileline);
+
+	free(fileline);
+	debug(1000, "out");
+	return ret;
+}
+
+struct clist* addconfiglu(char *key, unsigned long value)
 {
 	debug(1000, "in");
 	char* fileline = NULL;
@@ -231,6 +259,17 @@ float getconfigfloat(char *key, char *ext)
 	ret = getlist(config, key, ext);
 	if(ret != NULL)
 		return atof(ret);
+	else
+		return 0;
+}
+
+uint64_t getconfigllu(char *key, char *ext)
+{
+	char *ret = NULL;
+
+	ret = getlist(config, key, ext);
+	if(ret != NULL)
+		return strtoull(ret, NULL, 10);
 	else
 		return 0;
 }

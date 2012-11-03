@@ -408,7 +408,7 @@ char* createwriteepg(int* buflen)
 
 			memcpy(buf + *buflen, &chnode->serviceid, sizeof(int));
 			*buflen += sizeof(int);
-			memcpy(buf + *buflen, &chnode->transponderid, sizeof(int));
+			memcpy(buf + *buflen, &chnode->transponderid, sizeof(uint64_t));
 			*buflen += sizeof(int);
 			memcpy(buf + *buflen, &epgnode->eventid, sizeof(int));
 			*buflen += sizeof(int);
@@ -540,7 +540,7 @@ int writeepgslow(const char* filename)
 			ret = 0, count = 0;
 			ret += fwrite(&chnode->serviceid, sizeof(int), 1, fd); count++;
 			freespace -= sizeof(int);
-			ret += fwrite(&chnode->transponderid, sizeof(int), 1, fd); count++;
+			ret += fwrite(&chnode->transponderid, sizeof(uint64_t), 1, fd); count++;
 			freespace -= sizeof(int);
 			ret += fwrite(&epgnode->eventid, sizeof(int), 1, fd); count++;
 			freespace -= sizeof(int);
@@ -1144,7 +1144,7 @@ void ratingdescr(struct epg* epgnode, unsigned char *buf)
 void linkagedesc(struct channel* chnode, struct epg* epgnode, void *buf)
 {
 	struct eitlinkage *evtlink = buf;
-	unsigned long transponderid = 0;
+	uint64_t transponderid = 0;
 	
 	int tid = HILO(evtlink->transport_stream_id);
 	int onid = HILO(evtlink->original_network_id);
@@ -1152,8 +1152,16 @@ void linkagedesc(struct channel* chnode, struct epg* epgnode, void *buf)
 	
 	transponderid = (onid << 16) | tid;
 
-	if(getlinkedchannel(chnode, serviceid, transponderid) == NULL)
-		addlinkedchannel(chnode, serviceid, transponderid, NULL);
+	if(chnode != NULL && chnode->transponder != NULL)
+	{
+		if(chnode->transponder->fetype == FE_QAM)
+			transponderid = transponderid | (1 << 32);
+		else if(chnode->transponder->fetype == FE_OFDM)
+			transponderid = transponderid | (2 << 32);
+
+		if(getlinkedchannel(chnode, serviceid, transponderid) == NULL)
+			addlinkedchannel(chnode, serviceid, transponderid, NULL);
+	}
 }
 
 #if 0
@@ -1363,7 +1371,7 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 	char* zbuf = NULL;
 	int zlen = 0, ret = 0, eitlen = 0;
 	time_t epgmaxsec = status.epgdays * 24 * 60 * 60;
-	unsigned long transponderid = 0;
+	uint64_t transponderid = 0;
 	int serviceid = 0, eventid = 0;
 	int nolongdesc = 0;
 
@@ -1384,6 +1392,14 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 			return;
 		
 		transponderid = (HILO(eit->original_network_id) << 16) | HILO(eit->transport_stream_id);
+		if(chnode->transponder != NULL)
+		{
+			if(chnode->transponder->fetype == FE_QAM)
+				transponderid = transponderid | (1 << 32);
+			else if(chnode->transponder->fetype == FE_OFDM)
+				transponderid = transponderid | (2 << 32);
+		}
+
 		serviceid = HILO(eit->service_id);
 		tmpchnode = getchannel(serviceid, transponderid);
 		if(tmpchnode == NULL)
@@ -1477,14 +1493,15 @@ int readepg(const char* filename)
 
 	while(!feof(fd))
 	{
-		int serviceid = 0, transponderid = 0, eventid = 0, version = 0;
+		int serviceid = 0, eventid = 0, version = 0;
+		uint64_t transponderid = 0;
 		time_t starttime = 0, endtime = 0;
 		int desclen = 0, desccomplen = 0, parentalrating = 0;
 		char* title = NULL, *subtitle = NULL, *desc = NULL;
 
 		ret = fread(&serviceid, sizeof(int), 1, fd);
 		if(feof(fd)) break;
-		ret = fread(&transponderid, sizeof(int), 1, fd);
+		ret = fread(&transponderid, sizeof(uint64_t), 1, fd);
 		ret = fread(&eventid, sizeof(int), 1, fd);
 		ret = fread(&version, sizeof(int), 1, fd);
 		ret = fread(&parentalrating, sizeof(int), 1, fd);

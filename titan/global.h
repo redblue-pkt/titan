@@ -3124,6 +3124,25 @@ char* ostrcat(char* value1, char* value2, int free1, int free2)
 	return buf;
 }
 
+char* ollutoa(uint64_t value)
+{
+	debug(1000, "in");
+	char *buf = NULL, *buf1 = NULL;
+
+	buf = malloc(MINMALLOC);
+	if(buf == NULL)
+	{
+		err("no memory");
+		return NULL;
+	}
+
+	sprintf(buf, "%llu", value);
+	buf1 = ostrcat(buf, NULL, 1, 0);
+
+	debug(1000, "out");
+	return buf1;
+}
+
 char* olutoa(unsigned long value)
 {
 	debug(1000, "in");

@@ -25,12 +25,12 @@ uint8_t changeservicetype(uint8_t type)
 	return ret;
 }
 
-struct transponder* satsystemdesc(unsigned char* buf, unsigned long transportid, unsigned short onid, int orbitalpos)
+struct transponder* satsystemdesc(unsigned char* buf, uint64_t transportid, unsigned short onid, int orbitalpos)
 {
 	int polarization = 0, modulation = 0, system = 0;
 	int rolloff = 0, fec = 0;
 	unsigned int frequency = 0, symbolrate = 0;
-	unsigned long id = 0;
+	uint64_t id = 0;
 	struct transponder *tpnode = NULL;
 
 	frequency = (
@@ -103,7 +103,7 @@ struct transponder* satsystemdesc(unsigned char* buf, unsigned long transportid,
 		status.writetransponder = 1;
 	}
 
-	debug(500, "nitscan: id=%lu freq=%d sr=%d fec=%d pol=%d modulation=%d system=%d, tpnode=%p", id, frequency, symbolrate, fec, polarization, modulation, system, tpnode);
+	debug(500, "nitscan: id=%llu freq=%d sr=%d fec=%d pol=%d modulation=%d system=%d, tpnode=%p", id, frequency, symbolrate, fec, polarization, modulation, system, tpnode);
 
 	return tpnode;
 }
@@ -125,7 +125,7 @@ int parsenit(unsigned char* buf, uint8_t* lastsecnr, int orbitalpos)
 	unsigned short desclen = 0;
 	unsigned short tdesclen = 0;
 	unsigned short looplen = 0;
-	unsigned long transponderid = 0;
+	uint64_t transponderid = 0;
 	unsigned short onid = 0;
 	unsigned short nid = 0;
 	unsigned char secnr = 0;
@@ -208,7 +208,7 @@ int parsenit(unsigned char* buf, uint8_t* lastsecnr, int orbitalpos)
 int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char *buf, uint8_t* lastsecnr, struct skin* scan, struct skin* listbox, int flag)
 {
 	int ret = -1;
-	unsigned long transponderid = 0;
+	uint64_t transponderid = 0;
 	struct skin* node = NULL;
 	struct channel* chnode = NULL;
 
@@ -229,7 +229,7 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 	uint8_t servicetype = 0;
 	uint8_t providerlen = 0;
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
-	unsigned long* tmplong = NULL;
+	uint64_t* tmpuint64 = NULL;
 
 	if(buf == NULL || fenode == NULL || fenode->feinfo == NULL) return ret;
 
@@ -241,16 +241,16 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 	
 	transponderid = (onid << 16) | tid;
 	if(fenode->feinfo->type == FE_QAM)
-		transponderid = transponderid | (1 << 30);
+		transponderid = transponderid | (1 << 32);
 	else if(fenode->feinfo->type == FE_OFDM)
-		transponderid = transponderid | (2 << 30);
+		transponderid = transponderid | (2 << 32);
 	if(tpnode != NULL && tpnode->id != transponderid && tpnode->id != 99)
 	{
 		changetransponderid(tpnode, transponderid);
 		status.writetransponder = 1;
 	}
 
-	debug(500, "SDT nr: %d, lastnr: %d, len: %d, tid: %d, onid: %d, transponderid: %lu", secnr, *lastsecnr, seclen, tid, onid, transponderid);
+	debug(500, "SDT nr: %d, lastnr: %d, len: %d, tid: %d, onid: %d, transponderid: %llu", secnr, *lastsecnr, seclen, tid, onid, transponderid);
 
 	for(pos = 11; pos < seclen - 1; pos += desclooplen + 5)
 	{
@@ -319,15 +319,15 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 						changetext(node, tmpstr);
 						changeparam1(node, tmpstr1);
 						changeparam2(node, tmpstr2);
-						tmplong = (unsigned long*)malloc(sizeof(unsigned long) * 3);
-						if(tmplong != NULL)
+						tmpuint64 = (uint64_t*)malloc(sizeof(uint64_t) * 3);
+						if(tmpuint64 != NULL)
 						{
-							tmplong[0] = serviceid;
-							tmplong[1] = transponderid;
-							tmplong[2] = servicetype;
+							tmpuint64[0] = serviceid;
+							tmpuint64[1] = transponderid;
+							tmpuint64[2] = servicetype;
 						}
 						free(node->name);
-						node->name = (char*)tmplong;
+						node->name = (char*)tmpuint64;
 					}
 					
 					if(flag == 1 && chnode != NULL && ostrcmp(chnode->name, tmpstr2) != 0)
@@ -350,9 +350,9 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 	return ret;
 }
 
-unsigned long findtransponderid(struct dvbdev* fenode, unsigned char *buf)
+uint64_t findtransponderid(struct dvbdev* fenode, unsigned char *buf)
 {
-	unsigned long transponderid = 0;
+	uint64_t transponderid = 0;
 	unsigned short onid, tid;
 
 	if(buf == NULL || fenode == NULL || fenode->feinfo == NULL) return 0;
@@ -363,11 +363,11 @@ unsigned long findtransponderid(struct dvbdev* fenode, unsigned char *buf)
 	transponderid = (onid << 16) | tid;
 
 	if(fenode->feinfo->type == FE_QAM)
-		transponderid = transponderid | (1 << 30);
+		transponderid = transponderid | (1 << 32);
 	else if(fenode->feinfo->type == FE_OFDM)
-		transponderid = transponderid | (2 << 30);
+		transponderid = transponderid | (2 << 32);
 
-	debug(500, "found SDT transponderid: %lu", transponderid);
+	debug(500, "found SDT transponderid: %llu", transponderid);
 
 	return transponderid;
 }
@@ -375,7 +375,7 @@ unsigned long findtransponderid(struct dvbdev* fenode, unsigned char *buf)
 void blindscan(struct stimerthread* timernode)
 {
 	int festatus = 0;
-	unsigned long transponderid = 0;
+	uint64_t transponderid = 0;
 	unsigned char* buf = NULL;
 	struct dvbdev* fenode = NULL;
 	struct transponder* tpnode = NULL;
@@ -660,7 +660,7 @@ void doscan(struct stimerthread* timernode)
 void scanaddchannel(struct skin* node, int scantype, struct transponder* tp1)
 {
 	int serviceid = 0;
-	unsigned long transponderid = 0;
+	uint64_t transponderid = 0;
 	int servicetype = 0;
 	int providerid = 0;
 	struct provider* providernode = NULL;
@@ -669,9 +669,9 @@ void scanaddchannel(struct skin* node, int scantype, struct transponder* tp1)
 
 	if(node == NULL || node->name == NULL) return;
 
-	serviceid = ((unsigned long*)node->name)[0];
-	transponderid = ((unsigned long*)node->name)[1];
-	servicetype = ((unsigned long*)node->name)[2];
+	serviceid = ((uint64_t*)node->name)[0];
+	transponderid = ((uint64_t*)node->name)[1];
+	servicetype = ((uint64_t*)node->name)[2];
 	if(getchannel(serviceid, transponderid) == NULL)
 	{
 		//check if provider valid
@@ -1491,9 +1491,9 @@ void screenscanconfig(int flag)
 	if(status.lastservice->channel == NULL)
 	{
 		if(status.servicetype == 0)
-			servicecheckret(servicestart(getchannel(getconfigint("serviceid", NULL), getconfiglu("transponderid", NULL)), getconfig("channellist", NULL), NULL, 0), 0);
+			servicecheckret(servicestart(getchannel(getconfigint("serviceid", NULL), getconfigllu("transponderid", NULL)), getconfig("channellist", NULL), NULL, 0), 0);
 		else
-			servicecheckret(servicestart(getchannel(getconfigint("rserviceid", NULL), getconfiglu("rtransponderid", NULL)), getconfig("rchannellist", NULL),  NULL, 0), 0);
+			servicecheckret(servicestart(getchannel(getconfigint("rserviceid", NULL), getconfigllu("rtransponderid", NULL)), getconfig("rchannellist", NULL),  NULL, 0), 0);
 	}
 	else
 	{

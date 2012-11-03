@@ -1,7 +1,7 @@
 #ifndef CHANNELLIST_H
 #define CHANNELLIST_H
 
-int selectchannel(struct skin* listbox, int sid, unsigned long tid)
+int selectchannel(struct skin* listbox, int sid, uint64_t tid)
 {
 	struct skin* node = listbox;
 	struct channel* chnode = NULL;
@@ -15,14 +15,14 @@ int selectchannel(struct skin* listbox, int sid, unsigned long tid)
 		if(sid != 0 && tid != 0)
 			chnode = getchannel(sid, tid);
 		else
-			chnode = getchannel(getconfigint("serviceid", NULL), getconfiglu("transponderid", NULL));
+			chnode = getchannel(getconfigint("serviceid", NULL), getconfigllu("transponderid", NULL));
 	}
 	else
 	{
 		if(sid != 0 && tid != 0)
 			chnode = getchannel(sid, tid);
 		else
-			chnode = getchannel(getconfigint("rserviceid", NULL), getconfiglu("rtransponderid", NULL));
+			chnode = getchannel(getconfigint("rserviceid", NULL), getconfigllu("rtransponderid", NULL));
 	}
 
 	if(chnode == NULL)
@@ -826,7 +826,7 @@ start:
 			if(rcret == getrcconfigint("rcmenu", NULL))
 			{
 				int sid = 0;
-				unsigned long tid = 0;
+				uint64_t tid = 0;
 				if((list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL || list == BOUQUETCHANNEL) && listbox->select != NULL && listbox->select->handle != NULL)
 				{
 					sid = ((struct channel*)listbox->select->handle)->serviceid;
@@ -1645,7 +1645,7 @@ start:
 			if(list == AZLIST) continue;
 
 			int sid = 0;
-			unsigned long tid = 0;
+			uint64_t tid = 0;
 			if((list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL || list == BOUQUETCHANNEL) && listbox->select->handle != NULL)
 			{
 				sid = ((struct channel*)listbox->select->handle)->serviceid;

@@ -82,9 +82,9 @@ int selectchannelgmepg(struct skin* listbox)
 	listbox->select = NULL;
 
 	if(status.servicetype == 0)
-		chnode = getchannel(getconfigint("serviceid", NULL), getconfiglu("transponderid", NULL));
+		chnode = getchannel(getconfigint("serviceid", NULL), getconfigllu("transponderid", NULL));
 	else
-		chnode = getchannel(getconfigint("rserviceid", NULL), getconfiglu("rtransponderid", NULL));
+		chnode = getchannel(getconfigint("rserviceid", NULL), getconfigllu("rtransponderid", NULL));
 
 	if(chnode == NULL)
 	{
@@ -520,12 +520,12 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	if(status.servicetype == 0)
 	{
 		tmpstr = getconfig("channellist", NULL);
-                aktchannel = getchannel(getconfigint("serviceid", NULL), getconfiglu("transponderid", NULL));
+                aktchannel = getchannel(getconfigint("serviceid", NULL), getconfigllu("transponderid", NULL));
 	}
 	else
 	{
 		tmpstr = getconfig("rchannellist", NULL);
-                aktchannel = getchannel(getconfigint("rserviceid", NULL), getconfiglu("rtransponderid", NULL));
+                aktchannel = getchannel(getconfigint("rserviceid", NULL), getconfigllu("rtransponderid", NULL));
 	}
 
 	if(ostrncmp("(BOUQUET)-", tmpstr, 10) == 0 && strlen(tmpstr) > 10)

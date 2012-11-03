@@ -26,7 +26,7 @@ void mostzaptobouquet(struct mainbouquet* mbouquet)
 	}
 }
 
-struct mostzap* getmostzap(int serviceid, unsigned long transponderid)
+struct mostzap* getmostzap(int serviceid, uint64_t transponderid)
 {
 	struct mostzap* mnode = mostzap;
 
@@ -92,7 +92,7 @@ struct mostzap* addmostzap(char* line, int count, struct mostzap* last)
 		return NULL;
 	}
 
-	ret = sscanf(line, "%d#%lu#%d", &newnode->serviceid, &newnode->transponderid, &newnode->count);
+	ret = sscanf(line, "%d#%llu#%d", &newnode->serviceid, &newnode->transponderid, &newnode->count);
 
 	status.writemostzap = 1;
 
@@ -124,7 +124,7 @@ struct mostzap* addmostzap(char* line, int count, struct mostzap* last)
 	return newnode;
 }
 
-struct mostzap* createmostzap(int serviceid, unsigned long transponderid)
+struct mostzap* createmostzap(int serviceid, uint64_t transponderid)
 {
 	struct mostzap* mnode = NULL;
 	char* tmpstr = NULL;
@@ -140,7 +140,7 @@ struct mostzap* createmostzap(int serviceid, unsigned long transponderid)
 
 	tmpstr = ostrcat(tmpstr, oitoa(serviceid), 1, 1);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, olutoa(transponderid), 1, 1);
+	tmpstr = ostrcat(tmpstr, ollutoa(transponderid), 1, 1);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	tmpstr = ostrcat(tmpstr, "0", 1, 0);
 
@@ -193,7 +193,7 @@ int readmostzap(const char* filename)
 	return 0;
 }
 
-int delmostzap(int serviceid, unsigned long transponderid, int flag)
+int delmostzap(int serviceid, uint64_t transponderid, int flag)
 {
 	debug(1000, "in");
 	int ret = 1;
@@ -262,7 +262,7 @@ int writemostzap(const char *filename)
 
 	while(node != NULL)
 	{
-		ret = fprintf(fd, "%d#%lu#%d\n", node->serviceid, node->transponderid, node->count);
+		ret = fprintf(fd, "%d#%llu#%d\n", node->serviceid, node->transponderid, node->count);
 		if(ret < 0)
 		{
 			perr("writting file %s", filename);

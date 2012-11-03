@@ -670,7 +670,7 @@ int main(int argc, char *argv[])
 	//check if startchannel defined
 	char* startchannellist = getconfig("startchannellist", NULL);
 	int startserviceid = getconfigint("startserviceid", NULL);
-	unsigned long starttransponderid = getconfiglu("starttransponderid", NULL);
+	uint64_t starttransponderid = getconfigllu("starttransponderid", NULL);
 	int startservicetype = getconfigint("startservicetype", NULL);
 	if(startchannellist != NULL && startserviceid != 0)
 	{
@@ -678,22 +678,22 @@ int main(int argc, char *argv[])
 		{
 			addconfig("channellist", startchannellist);
 			addconfigint("serviceid", startserviceid);
-			addconfiglu("transponderid", starttransponderid);
+			addconfigllu("transponderid", starttransponderid);
 		}
 		else
 		{
 			addconfig("rchannellist", startchannellist);
 			addconfigint("rserviceid", startserviceid);
-			addconfiglu("rtransponderid", starttransponderid);
+			addconfigllu("rtransponderid", starttransponderid);
 		}
 		addconfigint("servicetype", startservicetype);
 	}
 
 	//tune to channel
 	if(status.servicetype == 0)
-		serviceret = servicestart(getchannel(getconfigint("serviceid", NULL), getconfiglu("transponderid", NULL)), getconfig("channellist", NULL), NULL, 0);
+		serviceret = servicestart(getchannel(getconfigint("serviceid", NULL), getconfigllu("transponderid", NULL)), getconfig("channellist", NULL), NULL, 0);
 	else
-		serviceret = servicestart(getchannel(getconfigint("rserviceid", NULL), getconfiglu("rtransponderid", NULL)), getconfig("rchannellist", NULL),  NULL, 0);
+		serviceret = servicestart(getchannel(getconfigint("rserviceid", NULL), getconfigllu("rtransponderid", NULL)), getconfig("rchannellist", NULL),  NULL, 0);
 
 	ret = readscreen(getconfig("skinfile", NULL), 0, 0);
 	ret = readmainbouquet(getconfig("bouquetfile", NULL));

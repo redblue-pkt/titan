@@ -714,7 +714,7 @@ int writerectimer(const char *filename, int flag)
 		else
 			type = "log";
 
-		ret = fprintf(fd, "<%s begin=\"%lu\" end=\"%lu\" serviceid=\"%d\" transponderid=\"%lu\" channellist=\"%s\" repeated=\"%d\" name=\"%s\" afterevent=\"%d\" pincode=\"%s\" disabled=\"%d\" justplay=\"%d\", recpath=\"%s\", timestamp=\"%s\", status=\"%d\" errstr=\"%s\">\n</%s>\n", type, node->begin, node->end, node->serviceid, node->transponderid, node->channellist, node->repeate, node->name, node->afterevent, node->pincode, node->disabled, node->justplay, node->recpath, node->timestamp, node->status, node->errstr, type);
+		ret = fprintf(fd, "<%s begin=\"%lu\" end=\"%lu\" serviceid=\"%d\" transponderid=\"%llu\" channellist=\"%s\" repeated=\"%d\" name=\"%s\" afterevent=\"%d\" pincode=\"%s\" disabled=\"%d\" justplay=\"%d\", recpath=\"%s\", timestamp=\"%s\", status=\"%d\" errstr=\"%s\">\n</%s>\n", type, node->begin, node->end, node->serviceid, node->transponderid, node->channellist, node->repeate, node->name, node->afterevent, node->pincode, node->disabled, node->justplay, node->recpath, node->timestamp, node->status, node->errstr, type);
 
 		if(ret < 0)
 		{
@@ -1149,7 +1149,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 					if(tmpchnode != NULL)
 					{
 						addconfiginttmp("serviceid", tmpchnode->serviceid);
-						addconfiglutmp("transponderid", tmpchnode->transponderid);
+						addconfigllutmp("transponderid", tmpchnode->transponderid);
 					}
 				}
      				else
@@ -1158,7 +1158,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 					if(tmpchnode != NULL)
 					{
 						addconfiginttmp("rserviceid", tmpchnode->serviceid);
-						addconfiglutmp("rtransponderid", tmpchnode->transponderid);
+						addconfigllutmp("rtransponderid", tmpchnode->transponderid);
 					}
 				}
 
