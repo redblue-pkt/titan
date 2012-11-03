@@ -53,7 +53,7 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 	struct skin* sreverse = getscreennode(playinfobar, "reverse");
 	struct skin* sprogress = getscreennode(playinfobar, "progress");
 	char* tmpstr = NULL;
-	unsigned long long int pos = 0, len = 0, reverse = 0;
+	unsigned long long pos = 0, len = 0, reverse = 0;
 
 	tmpstr = ostrcat(file, NULL, 0, 0);
 	if(tmpstr != NULL) changetext(title, basename(tmpstr));
@@ -61,7 +61,7 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 
 	if(playertype == 1)
 	{
-		unsigned long long int startpos = 0;
+		unsigned long long startpos = 0;
 		if(flag == 4)
 			playergetinfots(&len, &startpos, NULL, &pos, NULL, 1);
 		else
@@ -479,7 +479,7 @@ void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 {
 //	if(checkbit(status.playercan, 11) == 0) return;
 
-	unsigned long long int pos = 0;
+	unsigned long long pos = 0;
 	
 	if(status.pause == 0 && status.playspeed == 0)
 	{
@@ -487,7 +487,7 @@ void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 		//file, freez the player
 		if(playertype == 1)
 		{
-			unsigned long long int startpos = 0;
+			unsigned long long startpos = 0;
 			playergetinfots(NULL, &startpos, NULL, &pos, NULL, 0);
 			pos = (pos - startpos) / 90000;
 		}

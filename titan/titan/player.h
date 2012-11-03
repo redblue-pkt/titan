@@ -28,7 +28,7 @@ extern ManagerHandler_t ManagerHandler;
 
 #ifdef EPLAYER4
 GstElement *m_gst_playbin = NULL;
-unsigned long long int m_gst_startpts = 0;
+unsigned long long m_gst_startpts = 0;
 #endif
 
 //titan player
@@ -1020,10 +1020,10 @@ void playergetcurtrac(int type, int *CurTrackId, char** CurTrackEncoding, char**
 #endif
 }
 
-unsigned long long int playergetpts()
+unsigned long long playergetpts()
 {
-	unsigned long long int pts = 0;
-	unsigned long long int sec = 0;
+	unsigned long long pts = 0;
+	unsigned long long sec = 0;
 
 #ifdef EPLAYER3
 	if(player && player->playback)
