@@ -749,9 +749,9 @@ int dvdsetfb()
 	return 0;
 }
 
-unsigned long long int dvdgetlength()
+unsigned long long dvdgetlength()
 {
-	unsigned long long int len = 0;
+	unsigned long long len = 0;
 
 #ifdef DVDPLAYER
 	struct ddvd_time info;
@@ -805,9 +805,9 @@ int dvdseek(int sec)
 	return 0;
 }
 
-unsigned long long int dvdgetpts()
+unsigned long long dvdgetpts()
 {
-	unsigned long long int pts = 0;
+	unsigned long long pts = 0;
 
 #ifdef DVDPLAYER
 	struct ddvd_time info;
