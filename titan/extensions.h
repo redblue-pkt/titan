@@ -149,6 +149,11 @@ void screenextensions(int mode, char* path)
 					saveipkg();
 					free(log), log = NULL;
 					unlink("/tmp/ipkg.log");
+					if(file_exist("/tmp/.ipkg_needs_reboot"))
+					{
+						textbox(_("Message"), _("IPK Install Done your system rebooting !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+						system("init 6");
+					}
 				}
 			}
 		}
@@ -200,6 +205,11 @@ void screenextensions(int mode, char* path)
 				textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 				free(log), log = NULL;
 				unlink("/tmp/ipkg.log");
+				if(file_exist("/tmp/.ipkg_needs_reboot"))
+				{
+					textbox(_("Message"), _("IPK Remove Done your system rebooting !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+					system("init 6");
+				}
 			}
 		}
 		freemenulist(mlist, 1); mlist = NULL;
@@ -260,6 +270,11 @@ void screenextensions(int mode, char* path)
 				free(log); log = NULL;
 				textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 				loadplugin();
+				if(file_exist("/tmp/.ipkg_needs_reboot"))
+				{
+					textbox(_("Message"), _("IPK Tmp Install Done your system rebooting !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+					system("init 6");
+				}
 			}
 		}
 		freemenulist(mlist, 1); mlist = NULL;
@@ -273,6 +288,7 @@ void screenextensions(int mode, char* path)
 		resettvpic();
 		unlink("/tmp/ipkg.log");
 		system("syncipkg.sh");
+		system("touch /tmp/.ipkg_upgrade_start")
 		ipkg_update();
 		ipkg_upgrade();
 		saveipkg();
@@ -280,6 +296,13 @@ void screenextensions(int mode, char* path)
 		loadplugin();
 		clearscreen(load);
 		drawscreen(skin, 0, 0);
+
+		if(file_exist("/tmp/.ipkg_needs_reboot"))
+		{
+			textbox(_("Message"), _("IPK Upgrade Done your system rebooting !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+			system("init 6");
+		}
+		unlink("/tmp/.ipkg_upgrade_start");
 	}
 	status.hangtime = getconfigint("hangtime", NULL);
 }
