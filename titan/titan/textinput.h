@@ -21,6 +21,9 @@ char* textinput(char* title, char* text)
 
 	if(fromthread == 1)
 	{
+		delrc(getrcconfigint("rcvolup", NULL), NULL, NULL);
+		delrc(getrcconfigint("rcvoldown", NULL), NULL, NULL);
+		delrc(getrcconfigint("rcmute", NULL), NULL, NULL);
 		m_lock(&status.drawingmutex, 0);
 		m_lock(&status.rcmutex, 10);
 		setnodeattr(textinput, framebuffer, 2);
@@ -54,6 +57,9 @@ char* textinput(char* title, char* text)
 		status.rcowner = NULL;
 		m_unlock(&status.rcmutex, 3);
 		m_unlock(&status.drawingmutex, 0);
+		addrc(getrcconfigint("rcvolup", NULL), screenvolumeup, NULL, NULL);
+		addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
+		addrc(getrcconfigint("rcmute", NULL), screenmute, NULL, NULL);
 	}
 	else
 	{
