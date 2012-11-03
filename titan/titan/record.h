@@ -540,12 +540,13 @@ char* recordcreatefilename(char* path, char* channelname, char* moviename, int t
 	struct tm *loctime;
 	char *buf = NULL, *buf1 = NULL;
 	char* tmpstr = NULL;
+	int recordnamefmt = getconfigint("recordnamefmt", NULL);
 
 	if(path == NULL)
 		return NULL;
 
 	tmpstr = ostrcat(path, "/", 0, 0);
-	if(type != RECTIMESHIFT)
+	if(type != RECTIMESHIFT && recordnamefmt == 0)
 	{
 		if(channelname == NULL || strlen(channelname) == 0)
 			tmpstr = ostrcat(tmpstr, "unknown", 1, 0);
@@ -553,10 +554,20 @@ char* recordcreatefilename(char* path, char* channelname, char* moviename, int t
 			tmpstr = ostrcat(tmpstr, channelname, 1, 0);
 		tmpstr = ostrcat(tmpstr, "-", 1, 0);
 	}
+
 	if(moviename == NULL || strlen(moviename) == 0)
 		tmpstr = ostrcat(tmpstr, "unknown", 1, 0);
 	else
 		tmpstr = ostrcat(tmpstr, moviename, 1, 0);
+
+	if(type != RECTIMESHIFT && recordnamefmt == 1)
+	{
+		tmpstr = ostrcat(tmpstr, "-", 1, 0);
+		if(channelname == NULL || strlen(channelname) == 0)
+			tmpstr = ostrcat(tmpstr, "unknown", 1, 0);
+		else
+			tmpstr = ostrcat(tmpstr, channelname, 1, 0);
+	}
 
 	sec = time(NULL);
 	loctime = localtime(&sec);
