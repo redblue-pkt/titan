@@ -20,8 +20,8 @@ fi
 str=`strings tmp | grep "Linux version 2.6" | sed 's/Linux version //' | sed 's/(.*)//' | sed 's/  / /'`
 
 code=`./gettitancode "$str"`
+code="$code"UL
 echo "[gettitancode.sh] $str -> $code"
-echo code1: $code
 cat ../titan.c | sed s/"^#define SYSCODE .*"/"#define SYSCODE $code"/ > titan.c.tmp
 mv titan.c.tmp ../titan.c
 
