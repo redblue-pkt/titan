@@ -233,7 +233,9 @@ void recordstop(struct service* node, int ret)
 	debug(1000, "out");
 }
 
-int recordsplit(struct service* servicenode)
+//flag 0: record split
+//flag 1: play split
+int recordsplit(struct service* servicenode, int flag)
 {
 	int ret = 0;
 	char* filename = NULL;
@@ -247,8 +249,14 @@ int recordsplit(struct service* servicenode)
 	}
 	else
 	{
-		fdatasync(servicenode->recdstfd);
-		close(servicenode->recdstfd);
+		if(flag == 0)
+		{
+			fdatasync(servicenode->recdstfd);
+			close(servicenode->recdstfd);
+		}
+		else
+			close(servicenode->recsrcfd);
+
 		servicenode->rectotal = 0;
 		servicenode->reclastsync = 0;
 
@@ -266,17 +274,40 @@ int recordsplit(struct service* servicenode)
 		free(servicenode->recname);
 		servicenode->recname = filename;
 
-		debug(250, "split record file - Recording to %s...", filename);
-
-		servicenode->recdstfd = open(filename, O_WRONLY|O_CREAT|O_LARGEFILE, 0644);
-		if(servicenode->recdstfd < 0)
+		if(flag == 0)
 		{
-			debug(250, "split record file - can't open recording file!");
-			ret = 11;
-			servicenode->recendtime = 1;
+			debug(250, "split record file - Recording to %s...", filename);
 		}
 		else
-			posix_fadvise(servicenode->recdstfd, 0, 0, POSIX_FADV_RANDOM);
+		{
+			debug(250, "split play file - Playing %s...", filename);
+		}
+
+		if(flag == 0)
+			servicenode->recdstfd = open(filename, O_WRONLY|O_CREAT|O_LARGEFILE, 0644);
+		else
+			servicenode->recsrcfd = open(filename, O_RDONLY | O_LARGEFILE | O_NONBLOCK);
+
+		if(flag == 0)
+		{
+			if(servicenode->recdstfd < 0)
+			{
+				debug(250, "split record file - can't open recording file!");
+				ret = 11;
+				servicenode->recendtime = 1;
+			}
+			else
+				posix_fadvise(servicenode->recdstfd, 0, 0, POSIX_FADV_RANDOM);
+		}
+		else
+		{
+			if(servicenode->recsrcfd < 0)
+			{
+				debug(250, "split play file - can't open play file!");
+				ret = 15;
+				servicenode->recendtime = 1;
+			}
+		}
 	}
 	return ret;
 }
@@ -480,14 +511,28 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				{
 					servicenode->rectotal += writeret;
 					if(servicenode->rectotal > status.recsplitsize)
-						ret = recordsplit(servicenode);
+						ret = recordsplit(servicenode, 0);
 				}
 			}
 		}
 		else if(readret <= 0)
 		{
-			ret = 15;
-			servicenode->recendtime = 1;
+			if(readret == 0 && servicenode->type == RECORDPLAY)
+			{
+				if(getconfigint("playsplitfiles", NULL) == 1)
+					ret = recordsplit(servicenode, 1);
+				else
+				{
+					ret = 15;
+					servicenode->recendtime = 1;
+				}
+			}
+			else
+			{
+				ret = 15;
+				servicenode->recendtime = 1;
+			}
+
 			if(readret < -1)
 				perr("read");
 		}
