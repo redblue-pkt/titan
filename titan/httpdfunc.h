@@ -2317,6 +2317,7 @@ char* webrectimersend(char* param, int fmt)
 			*string++ = '\0';
 	} 
 	
+	/*
 	string = channelname;	
 	while(string != NULL)
 	{	
@@ -2331,7 +2332,8 @@ char* webrectimersend(char* param, int fmt)
 		string = strchr(string, '+');
 		if(string != NULL)
 			*string++ = ' ';
-	} 
+	}
+	*/
 	
 	if((sid == NULL && tid != NULL) || (sid != NULL && tid == NULL))
 	{

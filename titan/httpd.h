@@ -383,6 +383,8 @@ void gotdata(int* connfd)
 		ret = sscanf(tmpstr, "%s", filename);
 		if(ret == 1)
 		{
+			if(ostrstr(filename, "query?rectimersend") != NULL)
+				stringreplacechar(param, '+', ' ');
 			htmldecode(filename, filename);
 			
 			if(ostrstr(filename, "xmessage") == filename + 1  || ostrstr(filename, "/cgi-bin/xmessage") == filename )
