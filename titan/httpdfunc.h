@@ -2406,7 +2406,7 @@ char* webrectimersend(char* param, int fmt)
 		if(sid != NULL && tid != NULL)
 		{
 			node->serviceid = atoi(sid);
-			node->transponderid = strtoull(tid);
+			node->transponderid = strtoull(tid, NULL, 10);
 			node->servicetype = 0;
 		}
 	
