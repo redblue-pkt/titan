@@ -288,7 +288,7 @@ void screenextensions(int mode, char* path)
 		resettvpic();
 		unlink("/tmp/ipkg.log");
 		system("syncipkg.sh");
-		system("touch /tmp/.ipkg_upgrade_start")
+		writesys("/tmp/.ipkg_upgrade_start", "0", 0);
 		ipkg_update();
 		ipkg_upgrade();
 		saveipkg();
