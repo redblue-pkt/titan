@@ -451,7 +451,7 @@ int provider2bouquet(int providerid)
 			{
 				tmpstr = ostrcat(tmpstr, oitoa(chnode->serviceid), 1, 1);
 				tmpstr = ostrcat(tmpstr, "#", 1, 0);
-				tmpstr = ostrcat(tmpstr, oitoa(chnode->transponderid), 1, 1);
+				tmpstr = ostrcat(tmpstr, ollutoa(chnode->transponderid), 1, 1);
 				addbouquet(&mnode->bouquet, tmpstr, status.servicetype, 1, NULL);
 				free(tmpstr); tmpstr = NULL;
 			}

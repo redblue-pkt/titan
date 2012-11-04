@@ -71,7 +71,7 @@ void screenepgscanlist()
 			if(tmpchnode != NULL)
 			{
 				tmpstr = ostrcat(oitoa(tmpchnode->serviceid), "#", 1, 0);
-				tmpstr = ostrcat(tmpstr, oitoa(tmpchnode->transponderid), 1, 1);
+				tmpstr = ostrcat(tmpstr, ollutoa(tmpchnode->transponderid), 1, 1);
 				if(addepgscanlist(tmpstr, 1, NULL) != NULL)
 				{
 					delmarkedscreennodes(scanlist, 1);
