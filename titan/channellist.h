@@ -893,7 +893,7 @@ start:
 						tmpstr1 = oitoa(((struct channel*)listbox->select->handle)->serviceid);
 						tmpstr = ostrcat(tmpstr, tmpstr1, 1, 1); tmpstr1 = NULL;
 						tmpstr = ostrcat(tmpstr, "#", 1, 0);
-						tmpstr1 = oitoa(((struct channel*)listbox->select->handle)->transponderid);
+						tmpstr1 = ollutoa(((struct channel*)listbox->select->handle)->transponderid);
 						tmpstr = ostrcat(tmpstr, tmpstr1, 1, 1); tmpstr1 = NULL;
 						addbouquet(&mbouquet->bouquet, tmpstr, status.servicetype, 0, NULL);
 						free(tmpstr); tmpstr = NULL;
