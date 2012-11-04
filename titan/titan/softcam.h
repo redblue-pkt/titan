@@ -98,7 +98,6 @@ void readmenu()
 				emuname = ostrcat(emuname, "  (", 1, 0);
 				emuname = ostrcat(emuname, _("started"), 1, 0);
 				emuname = ostrcat(emuname, ")", 1, 0);
-				emuname = ostrcat(emuname, ")", 1, 0);
 			}
 			else if(active == 1)
 			{
@@ -264,7 +263,6 @@ void screensoftcam()
 	struct skin* b_green = getscreennode(softcam, "b2");
 	struct skin* b_yellow = getscreennode(softcam, "b3");
 	struct skin* b_blue = getscreennode(softcam, "b4");
-	struct skin* tmp = NULL;
 
 	// show labels
 	changetext(menutitle, _("Softcam selection:"));
@@ -285,27 +283,23 @@ void screensoftcam()
 	drawscreen(softcam, 0, 0);
 	addscreenrc(softcam, listbox);
 
-	tmp = listbox->select;
-
 	while(1)
 	{
-		addscreenrc(softcam, tmp);
 		rcret = waitrc(softcam, 4000, 0);
-		tmp = listbox->select;
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(tmp != NULL && rcret == getrcconfigint("rcred", NULL))
+		if(listbox->select != NULL && rcret == getrcconfigint("rcred", NULL))
 		{
 			// deactivate emu
 			drawscreen(loading, 0, 0);
-			deactivate(tmp->name);
+			deactivate(listbox->select->name);
 			drawscreen(softcam, 0, 0);
 		}
-		if(tmp != NULL && rcret == getrcconfigint("rcgreen", NULL))
+		if(listbox->select != NULL && rcret == getrcconfigint("rcgreen", NULL))
 		{
 			// restart emu
 			drawscreen(loading, 0, 0);
-			restartcam(tmp->name);
+			restartcam(listbox->select->name);
 			drawscreen(softcam, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcyellow", NULL))
@@ -317,24 +311,24 @@ void screensoftcam()
 			fillmenubox();
 			drawscreen(softcam, 0, 0);
 		}
-		if(tmp != NULL && rcret == getrcconfigint("rcblue", NULL))
+		if(listbox->select != NULL && rcret == getrcconfigint("rcblue", NULL))
 		{
 			// activate emu
 			drawscreen(loading, 0, 0);
-			activate(tmp->name);
+			activate(listbox->select->name);
 			drawscreen(softcam, 0, 0);
 		}
-		if(tmp != NULL && rcret == getrcconfigint("rcok", NULL))
+		if(listbox->select != NULL && rcret == getrcconfigint("rcok", NULL))
 		{
 			// start/stop emu, depending if emu already runs
 			drawscreen(loading, 0, 0);
-			if(checkrunningcam(tmp->name) == 1)
+			if(checkrunningcam(listbox->select->name) == 1)
 			{
-				stopcam(tmp->name);
+				stopcam(listbox->select->name);
 			}
 			else
 			{
-				startcam(tmp->name);
+				startcam(listbox->select->name);
 			}
 			drawscreen(softcam, 0, 0);
 		}
