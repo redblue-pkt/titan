@@ -384,7 +384,7 @@ void gotdata(int* connfd)
 		if(ret == 1)
 		{
 			if(ostrstr(filename, "query?rectimersend") != NULL)
-				stringreplacechar(param, '+', ' ');
+				stringreplacechar(filename, '+', ' ');
 			htmldecode(filename, filename);
 			
 			if(ostrstr(filename, "xmessage") == filename + 1  || ostrstr(filename, "/cgi-bin/xmessage") == filename )
