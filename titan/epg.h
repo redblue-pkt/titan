@@ -409,7 +409,7 @@ char* createwriteepg(int* buflen)
 			memcpy(buf + *buflen, &chnode->serviceid, sizeof(int));
 			*buflen += sizeof(int);
 			memcpy(buf + *buflen, &chnode->transponderid, sizeof(uint64_t));
-			*buflen += sizeof(int);
+			*buflen += sizeof(uint64_t);
 			memcpy(buf + *buflen, &epgnode->eventid, sizeof(int));
 			*buflen += sizeof(int);
 			memcpy(buf + *buflen, &epgnode->version, sizeof(int));
@@ -541,7 +541,7 @@ int writeepgslow(const char* filename)
 			ret += fwrite(&chnode->serviceid, sizeof(int), 1, fd); count++;
 			freespace -= sizeof(int);
 			ret += fwrite(&chnode->transponderid, sizeof(uint64_t), 1, fd); count++;
-			freespace -= sizeof(int);
+			freespace -= sizeof(uint64_t);
 			ret += fwrite(&epgnode->eventid, sizeof(int), 1, fd); count++;
 			freespace -= sizeof(int);
 			ret += fwrite(&epgnode->version, sizeof(int), 1, fd); count++;
