@@ -709,7 +709,7 @@ void dvbgetpmtthread()
 	if(status.aktservice->type != CHANNEL || status.aktservice->channel == NULL) return;
 
 	int serviceid = status.aktservice->channel->serviceid;
-	long transponderid = status.aktservice->channel->transponderid;
+	uint64_t transponderid = status.aktservice->channel->transponderid;
 	int16_t pmtpid = status.aktservice->channel->pmtpid;
 	int16_t audiopid = status.aktservice->channel->audiopid;
 	int16_t videopid = status.aktservice->channel->videopid;

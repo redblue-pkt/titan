@@ -263,7 +263,7 @@ struct rectimer* addrectimernode(char* line, struct rectimer* last)
 		ret = getxmlentry(line, " transponderid=");
 		if(ret != NULL)
 		{
-			newnode->transponderid = atol(ret);
+			newnode->transponderid = strtoull(ret);
 			free(ret);
 		}
 		ret = getxmlentry(line, " status=");
