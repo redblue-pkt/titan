@@ -129,7 +129,7 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 	}
 
 	serviceid = oitoa(chnode->serviceid);
-	transponderid = olutoa(chnode->transponderid);
+	transponderid = ollutoa(chnode->transponderid);
 
 	if(fmt == 0 && ret == 0)
 	{
@@ -1263,7 +1263,7 @@ char* webgetsingleepg(char* param, int fmt)
 			buf2 = ostrcat(buf2, "&", 0, 0);
 			free(tmpstr); tmpstr = NULL;
 			ostrcatbig(&buf, "&", &maxlen, &pos);
-			tmpstr = olutoa(chnode->transponderid);
+			tmpstr = ollutoa(chnode->transponderid);
 			ostrcatbig(&buf, tmpstr, &maxlen, &pos);
 			buf2 = ostrcat(buf2, tmpstr, 0, 0);
 			buf2 = ostrcat(buf2, "&", 0, 0);
@@ -1517,7 +1517,7 @@ void webgetshoot(char* param, int fmt)
 		cmd = ostrcat(cmd, tmpstr, 1, 0);
 		free(tmpstr); tmpstr = NULL;
 		cmd = ostrcat(cmd, ",", 1, 0);
-		tmpstr = olutoa(status.aktservice->channel->transponderid);
+		tmpstr = ollutoa(status.aktservice->channel->transponderid);
 		cmd = ostrcat(cmd, tmpstr, 1, 0);
 		free(tmpstr); tmpstr = NULL;
 		cmd = ostrcat(cmd, " titan", 1, 0);
@@ -1605,7 +1605,7 @@ char* webgetepgsearch(char* query, char* param, int fmt)
 					ostrcatbig(&buf, tmpstr, &maxlen, &pos);
 					free(tmpstr); tmpstr = NULL;
 					ostrcatbig(&buf, "&", &maxlen, &pos);
-					tmpstr = olutoa(chnode->transponderid);
+					tmpstr = ollutoa(chnode->transponderid);
 					ostrcatbig(&buf, tmpstr, &maxlen, &pos);
 					buf2 = ostrcat(buf2, tmpstr, 0, 0);
 					buf2 = ostrcat(buf2, "&", 0, 0);
@@ -2151,7 +2151,7 @@ char* webgetrectimer(char* param, int flag, int fmt)
 			buf = ostrcat(buf, "#", 1, 0);
 			buf = ostrcat(buf, oitoa(node->serviceid), 1, 1);
 			buf = ostrcat(buf, "#", 1, 0);
-			buf = ostrcat(buf, olutoa(node->transponderid), 1, 1);
+			buf = ostrcat(buf, ollutoa(node->transponderid), 1, 1);
 			buf = ostrcat(buf, "#", 1, 0);
 			buf = ostrcat(buf, oitoa(node->status), 1, 1);
 			buf = ostrcat(buf, "#", 1, 0);
@@ -2406,7 +2406,7 @@ char* webrectimersend(char* param, int fmt)
 		if(sid != NULL && tid != NULL)
 		{
 			node->serviceid = atoi(sid);
-			node->transponderid = atol(tid);
+			node->transponderid = strtoull(tid);
 			node->servicetype = 0;
 		}
 	
