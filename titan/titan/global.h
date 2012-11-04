@@ -1380,7 +1380,7 @@ void changechannellist(struct channel* chnode, char* channellist)
 			tmpstr = oitoa(status.aktservice->channel->serviceid);
 			addconfig("serviceid", tmpstr);
 			free(tmpstr); tmpstr = NULL;
-			tmpstr = olutoa(status.aktservice->channel->transponderid);
+			tmpstr = ollutoa(status.aktservice->channel->transponderid);
 			addconfig("transponderid", tmpstr);
 			free(tmpstr); tmpstr = NULL;
 		}
@@ -1396,7 +1396,7 @@ void changechannellist(struct channel* chnode, char* channellist)
 			tmpstr = oitoa(status.aktservice->channel->serviceid);
 			addconfig("rserviceid", tmpstr);
 			free(tmpstr); tmpstr = NULL;
-			tmpstr = olutoa(status.aktservice->channel->transponderid);
+			tmpstr = ollutoa(status.aktservice->channel->transponderid);
 			addconfig("rtransponderid", tmpstr);
 			free(tmpstr); tmpstr = NULL;
 		}
@@ -1417,7 +1417,7 @@ char* createpiconpath(struct channel* chnode, int flag)
 		tmpstr = ostrcat(tmpstr, tmpnr, 1, 1);
 		tmpnr = NULL;
 		tmpstr = ostrcat(tmpstr, "-", 1, 0);
-		tmpnr = olutoa(chnode->transponderid);
+		tmpnr = ollutoa(chnode->transponderid);
 		tmpstr = ostrcat(tmpstr, tmpnr, 1, 1);
 		tmpnr = NULL;
 		tmpstr = ostrcat(tmpstr, ".png", 1, 0);
