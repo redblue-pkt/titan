@@ -1868,7 +1868,8 @@ read_more:
 		if(flag == 0 && status.writeperiodicepg + (2 * 60 * 60) < time(NULL)) // 2 stunde
 		{
 			status.writeperiodicepg = time(NULL);
-			writeallconfig(2);
+			if(getconfigint("epgsave", NULL) == 0) //only write periodic if epgsave = allways
+				writeallconfig(2);
 		}
 
 		//fill with fresh data
