@@ -15,7 +15,7 @@ void mostzaptobouquet(struct mainbouquet* mbouquet)
 	{
 		tmpstr = ostrcat(tmpstr, oitoa(mnode->serviceid), 1, 1);
 		tmpstr = ostrcat(tmpstr, "#", 1, 0);
-		tmpstr = ostrcat(tmpstr, olutoa(mnode->transponderid), 1, 1);
+		tmpstr = ostrcat(tmpstr, ollutoa(mnode->transponderid), 1, 1);
 		last = addbouquet(&mbouquet->bouquet, tmpstr, 0, 1, last);
 		free(tmpstr); tmpstr = NULL;
 
