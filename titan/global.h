@@ -2053,7 +2053,10 @@ void debugstack(void* address, void* address1)
 
 	printf("--------------------------------------\n");
 
-	fd = fopen(getconfig("tracelog", NULL), "a");
+	if(!file_exist("/var/swap/logs"))   
+		mkdir("/var/swap/logs", 0777); 
+			
+	fd = fopen(getconfig("tracelog", NULL), "w");
 	if(fd != NULL)
 	{
 		time(&rawtime);
