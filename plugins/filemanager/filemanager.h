@@ -161,16 +161,28 @@ void screenfilemanager()
 					file1 = createpath(filelistpath1->text, filelist1->select->text);
 				else
 					file1 = createpath(filelistpath2->text, filelist2->select->text);
-				tmpstr = readfiletomem(file1, 0);
-				if(tmpstr != NULL)
+
+				if(cmpfilenameext(file1, ".txt") == 0 || cmpfilenameext(file1, ".sh") == 0 || cmpfilenameext(file1, ".cfg") == 0 || cmpfilenameext(file1, ".conf") == 0)
 				{
-					textbox(file1, tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
-	
+					tmpstr = readfiletomem(file1, 0);
+					if(tmpstr != NULL)
+					{
+						textbox(file1, tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+
+						drawscreen(filemanager, 0, 1);
+						drawscreen(filemanager1, 0, 1);
+						drawscreen(filemanager2, 0, 0);
+					}
+					free(tmpstr); tmpstr = NULL;
+				}
+				else
+				{
+					textbox(_("Message"), _("Can't show this file!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+
 					drawscreen(filemanager, 0, 1);
 					drawscreen(filemanager1, 0, 1);
 					drawscreen(filemanager2, 0, 0);
 				}
-				free(tmpstr); tmpstr = NULL;
 				free(file1); file1 = NULL;
 			}
 		}
