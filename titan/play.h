@@ -272,7 +272,45 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 //	if(checkbit(status.playercan, 5) == 0) return;
 
 	screenplayinfobar(file, 1, playertype, flag);
-	screenvideosettings();
+
+	struct skin* pluginnode = NULL;
+	void (*startplugin)(void);
+	struct skin* plugin = getscreen("plugin");
+	struct skin* child = plugin->child;
+	struct menulist* mlist = NULL, *mbox = NULL;
+	char* skintitle = "Menu";
+
+	addmenulist(&mlist, "Video Settings", NULL, NULL, 0, 0);
+	//add plugins
+	while(child != NULL)
+	{
+		if(child->del == PLUGINDELMARK && (status.security == 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
+		{
+			if(ostrcmp(child->name, "Streaminfo") == 0)
+				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
+		}
+		child = child->next;
+	}
+
+	mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
+	if(mbox != NULL)
+	{
+		if(ostrcmp(mbox->name, "Video Settings") == 0)
+			screenvideosettings();
+		else
+		{
+			pluginnode = getplugin(mbox->name);
+
+			if(pluginnode != NULL)
+			{
+				startplugin = dlsym(pluginnode->pluginhandle, "start");
+				if(startplugin != NULL)
+					startplugin();
+			}
+		}
+	}
+
+	freemenulist(mlist, 1); mlist = NULL;
 	drawscreen(skin, 0, 0);
 	if(playinfobarstatus > 0)
 		screenplayinfobar(file, 0, playertype, flag);
