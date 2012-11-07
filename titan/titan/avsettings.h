@@ -264,6 +264,7 @@ void screenavsettings(int flag)
 			addconfigscreencheck("volautochangevalue", volautochangevalue, 0);
 			status.volautochangevalue = getconfigint("volautochangevalue", NULL);
 			addconfigscreencheck("av_ac3default", ac3default, 0);
+			writeallconfig(1);
 			if(rcret == getrcconfigint("rcok", NULL)) break;
 		}
 	}
