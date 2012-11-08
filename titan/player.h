@@ -332,7 +332,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 
 void playerffts(int speed)
 {
-	videofastforward(status.aktservice->videodev, speed / 2);
+	videofastforward(status.aktservice->videodev, speed);
 }
 
 //flag = 0 --> recordplay
