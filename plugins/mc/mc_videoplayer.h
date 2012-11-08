@@ -33,9 +33,11 @@ void screenmc_videoplayer()
 	char* currentdirectory = NULL;
 	char* selectedfile = NULL;
 	int rcret = 0, rcwait = 1000, playerret = 0, flag = 1, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0, files = 0;
+
 	// workaround for grey background mvi
 	struct skin* blackscreen = getscreen("blackscreen");
 	drawscreen(blackscreen, 0, 0);
+	drawscreen(loadmediadb, 0, 0);
 
 	// main screen
 	struct skin* apskin = getscreen("mc_videoplayer");
@@ -337,7 +339,8 @@ void screenmc_videoplayer()
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 				view = getconfigint("mc_vp_view", NULL);
 				screenmc_videoplayer_settings();
-				
+	drawscreen(blackscreen, 0, 0);
+	drawscreen(loadmediadb, 0, 0);				
 				if(view != getconfigint("mc_vp_view", NULL))
 				{
 					printf("view changed > change tmpview\n");
@@ -348,6 +351,8 @@ void screenmc_videoplayer()
 
 //				startmediadb();
 //				dbnode = mediadb;
+	drawscreen(blackscreen, 0, 0);
+	drawscreen(loadmediadb, 0, 0);				
 	
 				delownerrc(apskin);	
 				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
@@ -465,6 +470,9 @@ void screenmc_videoplayer()
 		{
 			debug(50, "exit - save mc_vp_path: %s", filelistpath->text);
 			debug(50, "exit - save mc_vp_selectedfile: %s", filelist->select->name);
+			drawscreen(blackscreen, 0, 0);
+			drawscreen(loadmediadb, 0, 0);
+
 			if(playlist == 0)
 			{
 				if(filelistpath->text != NULL && ostrcmp(getconfig("mc_vp_path", NULL), filelistpath->text) != 0)
@@ -814,6 +822,9 @@ void screenmc_videoplayer()
 			writemediadb(getconfig("mediadbfile", NULL));
 		freemediadb(0);
 	}
+
+	clearscreen(blackscreen);
+	clearscreen(loadmediadb);
 			
 	writevfd("Mediacenter");
 	debug(50, "closed");

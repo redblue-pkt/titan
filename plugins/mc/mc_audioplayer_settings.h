@@ -12,6 +12,8 @@ void screenmc_audioplayer_settings()
 	struct skin* ap_autostart_playlist = getscreennode(mc_audioplayer_settings, "autostart_playlist");
 	struct skin* defaultdir = getscreennode(mc_audioplayer_settings, "defaultdir");
 	struct skin* uselastdir = getscreennode(mc_audioplayer_settings, "uselastdir");
+	struct skin* loadmediadb = getscreen("loading");
+	struct skin* blackscreen = getscreen("blackscreen");
 	
 //	struct skin* dimmer = getscreennode(mc_audioplayer_settings, "dimmer");
 //	struct skin* dimmer_delay = getscreennode(mc_audioplayer_settings, "dimmer_delay");
@@ -82,6 +84,8 @@ void screenmc_audioplayer_settings()
 			break;
 		else if(rcret == getrcconfigint("rcok", NULL))
 		{
+			drawscreen(blackscreen, 0, 0);
+			drawscreen(loadmediadb, 0, 0);
 			addconfigscreencheck("mc_ap_dirsort", dirsort, NULL);
 			addconfigscreencheck("mc_ap_view", view, NULL);
 			addconfigscreencheck("mc_ap_autostart_playlist", ap_autostart_playlist, NULL);
@@ -119,9 +123,9 @@ void screenmc_audioplayer_settings()
 			drawscreen(mc_audioplayer_settings, 0, 0);
 		}
 	}
+	writeallconfig(0);
 	delownerrc(mc_audioplayer_settings);
 	clearscreen(mc_audioplayer_settings);
-	writeallconfig(0);
 }
 
 #endif

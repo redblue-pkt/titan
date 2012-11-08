@@ -15,7 +15,9 @@ void screenmc_videoplayer_settings()
 	struct skin* autostart_playlist = getscreennode(mc_videoplayer_settings, "autostart_playlist");
 	struct skin* defaultdir = getscreennode(mc_videoplayer_settings, "defaultdir");
 	struct skin* uselastdir = getscreennode(mc_videoplayer_settings, "uselastdir");
-
+	struct skin* loadmediadb = getscreen("loading");
+	struct skin* blackscreen = getscreen("blackscreen");
+	
 	addchoicebox(dirsort, "0", _("alpha"));	
 	addchoicebox(dirsort, "1", _("reverse alpha"));	
 	addchoicebox(dirsort, "2", _("size"));
@@ -59,6 +61,8 @@ void screenmc_videoplayer_settings()
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
+			drawscreen(blackscreen, 0, 0);
+			drawscreen(loadmediadb, 0, 0);
 			addconfigscreencheck("mc_vp_dirsort", dirsort, NULL);
 			addconfigscreencheck("mc_vp_view", view, NULL);
 			addconfigscreencheck("mc_vp_autoscan", autoscan, NULL);			
@@ -88,9 +92,9 @@ void screenmc_videoplayer_settings()
 		}		
 	}
 
+	writeallconfig(0);
 	delownerrc(mc_videoplayer_settings);
 	clearscreen(mc_videoplayer_settings);
-	writeallconfig(0);
 //	free(ext2);
 //	free(ext3);
 //	free(vfat);

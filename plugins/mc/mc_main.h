@@ -30,6 +30,10 @@ int mc_menucall(struct skin* menuentry)
 		drawscreen(skin, 0, 0);
 		servicestop(status.aktservice, 1, 1);	
 		screenmc_pictureplayer(NULL);
+	struct skin* blackscreen = getscreen("blackscreen");
+	drawscreen(blackscreen, 0, 0);
+//	drawscreen(loadmediadb, 0, 0);
+	
 		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgPicture.mvi", 0);
 	} 
 	else if(ostrcmp("mc_appletrailer", menuentry->name) == 0)

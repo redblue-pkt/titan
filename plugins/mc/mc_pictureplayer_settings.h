@@ -19,6 +19,8 @@ void screenmc_pictureplayer_settings()
 	struct skin* pichwdecode = getscreennode(mc_pictureplayer_settings, "pichwdecode");
 	struct skin* defaultdir = getscreennode(mc_pictureplayer_settings, "defaultdir");
 	struct skin* uselastdir = getscreennode(mc_pictureplayer_settings, "uselastdir");
+	struct skin* loadmediadb = getscreen("loading");
+	struct skin* blackscreen = getscreen("blackscreen");
 	
 	changeinput(picdenom, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16");
 	setchoiceboxselection(picdenom, getskinconfig("mc_pp_picdenom", NULL));
@@ -87,6 +89,8 @@ void screenmc_pictureplayer_settings()
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
+			drawscreen(blackscreen, 0, 0);
+			drawscreen(loadmediadb, 0, 0);
 			addconfigscreencheck("mc_pp_dirsort", dirsort, NULL);
 			addconfigscreencheck("mc_pp_view", view, NULL);
 			addconfigscreencheck("mc_pp_sound", sound, NULL);
@@ -120,6 +124,7 @@ void screenmc_pictureplayer_settings()
 		}
 	}
 
+	writeallconfig(0);
 	delownerrc(mc_pictureplayer_settings);
 	clearscreen(mc_pictureplayer_settings);
 }
