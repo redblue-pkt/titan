@@ -826,6 +826,12 @@ struct epg* addepg(struct channel* chnode, int eventid, int version, time_t star
 	{
 		while(node != NULL && newnode->starttime >= node->starttime)
 		{
+			if(newnode->starttime == node->starttime) //don't save epg with same starttime
+			{
+				free(newnode); newnode = NULL;
+				if(flag == 0) m_unlock(&status.epgmutex, 4);
+				return NULL;
+			}
 			prev = node;
 			node = node->next;
 		}
