@@ -27,8 +27,5 @@ void deinit(void)
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {
-	if(!file_exist("/var/swap/player"))   
-		mkdir("/var/swap/player", 0777);
-
 	screenbrowser();
 }
