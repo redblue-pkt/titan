@@ -86,11 +86,10 @@ void screenmc_pictureplayer_settings()
 		rcret = waitrc(mc_pictureplayer_settings, 0, 0);
 		tmp = listbox->select;
 	
-		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcok", NULL))
+		if(rcret == getrcconfigint("rcexit", NULL))
+			break;
+		else if(rcret == getrcconfigint("rcok", NULL))
 		{
-			drawscreen(blackscreen, 0, 0);
-			drawscreen(loadmediadb, 0, 0);
 			addconfigscreencheck("mc_pp_dirsort", dirsort, NULL);
 			addconfigscreencheck("mc_pp_view", view, NULL);
 			addconfigscreencheck("mc_pp_sound", sound, NULL);
@@ -124,6 +123,8 @@ void screenmc_pictureplayer_settings()
 		}
 	}
 
+	drawscreen(blackscreen, 0, 0);
+	drawscreen(loadmediadb, 0, 0);
 	writeallconfig(0);
 	delownerrc(mc_pictureplayer_settings);
 	clearscreen(mc_pictureplayer_settings);

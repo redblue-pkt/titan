@@ -80,12 +80,10 @@ void screenmc_audioplayer_settings()
 		rcret = waitrc(mc_audioplayer_settings, 0, 0);
 		tmp = listbox->select;
 	
-		if(rcret == getrcconfigint("rcexit", NULL))  
+		if(rcret == getrcconfigint("rcexit", NULL))
 			break;
 		else if(rcret == getrcconfigint("rcok", NULL))
 		{
-			drawscreen(blackscreen, 0, 0);
-			drawscreen(loadmediadb, 0, 0);
 			addconfigscreencheck("mc_ap_dirsort", dirsort, NULL);
 			addconfigscreencheck("mc_ap_view", view, NULL);
 			addconfigscreencheck("mc_ap_autostart_playlist", ap_autostart_playlist, NULL);
@@ -123,6 +121,9 @@ void screenmc_audioplayer_settings()
 			drawscreen(mc_audioplayer_settings, 0, 0);
 		}
 	}
+
+	drawscreen(blackscreen, 0, 0);
+	drawscreen(loadmediadb, 0, 0);
 	writeallconfig(0);
 	delownerrc(mc_audioplayer_settings);
 	clearscreen(mc_audioplayer_settings);
