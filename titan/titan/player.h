@@ -347,7 +347,7 @@ void playerfrts(int speed, int flag)
 		audioclearbuffer(status.aktservice->audiodev);
 	}
 	speed *= -1;
-	videofastforward(status.aktservice->videodev, speed / 2);
+	videofastforward(status.aktservice->videodev, speed);
 }
 	
 
