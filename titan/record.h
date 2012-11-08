@@ -431,6 +431,18 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
 				videodiscontinuityskip(status.aktservice->videodev, -1);
 			}
+			else if(status.playspeed == -5)
+			{
+				off64_t pos = lseek64(servicenode->recsrcfd, -(recbsize), SEEK_CUR);
+				readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
+				videodiscontinuityskip(status.aktservice->videodev, -1);
+			}
+			else if(status.playspeed == -6)
+			{
+				off64_t pos = lseek64(servicenode->recsrcfd, -(recbsize*2), SEEK_CUR);
+				readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
+				videodiscontinuityskip(status.aktservice->videodev, -1);
+			}
 			else
 			{
 				readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
