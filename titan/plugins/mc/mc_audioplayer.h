@@ -16,6 +16,9 @@ void screenmc_audioplayer()
 	struct skin* blackscreen = getscreen("blackscreen");
 	drawscreen(blackscreen, 0, 0);
 
+	struct skin* loadmediadb = getscreen("loading");
+	drawscreen(loadmediadb, 0, 0);
+
 	// main screen
 	struct skin* apskin = getscreen("mc_audioplayer");
 	struct skin* filelistpath = getscreennode(apskin, "filelistpath");
@@ -229,7 +232,9 @@ void screenmc_audioplayer()
 
 				view = getconfigint("mc_ap_view", NULL);
 				screenmc_audioplayer_settings();
-				
+				drawscreen(blackscreen, 0, 0);
+				drawscreen(loadmediadb, 0, 0);	
+			
 				if(view != getconfigint("mc_ap_view", NULL))
 				{
 					printf("view changed > change tmpview\n");
@@ -237,11 +242,13 @@ void screenmc_audioplayer()
 				}
 				
 				mc_changeview(tmpview, filelist, apskin);
+				drawscreen(blackscreen, 0, 0);
+				drawscreen(loadmediadb, 0, 0);	
 
 				delownerrc(apskin);	
 				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
 				addscreenrc(apskin, filelist);
-
+	
 				screensaver_delay = getconfigint("screensaver_delay", NULL);
 				deinitscreensaver();
 				if(getconfigint("screensaver", NULL) == 1)
@@ -294,6 +301,9 @@ void screenmc_audioplayer()
 		{
 			debug(50, "exit - save mc_ap_path: %s", filelistpath->text);
 			debug(50, "exit - save mc_ap_selectedfile: %s", filelistpath->text);
+			drawscreen(blackscreen, 0, 0);
+			drawscreen(loadmediadb, 0, 0);
+
 			if(playlist == 0)
 			{
 				if(filelistpath->text != NULL && ostrcmp(getconfig("mc_ap_path", NULL), filelistpath->text) != 0)
@@ -469,6 +479,9 @@ void screenmc_audioplayer()
 	free(filename), filename = NULL;
 	free(currentdirectory), currentdirectory = NULL;
 	free(selectedfile), selectedfile = NULL;
+
+	clearscreen(blackscreen);
+	clearscreen(loadmediadb);
 
 	writevfd("Mediacenter");
 	debug(50, "closed");

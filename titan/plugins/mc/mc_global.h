@@ -12,7 +12,11 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin)
 	struct skin* plot = getscreennode(apskin, "plot");
 	struct skin* title = getscreennode(apskin, "title");
 	struct skin* thumb = getscreennode(apskin, "thumb");
-
+	struct skin* loadmediadb = getscreen("loading");
+	struct skin* blackscreen = getscreen("blackscreen");
+	drawscreen(blackscreen, 0, 0);
+	drawscreen(loadmediadb, 0, 0);
+			
 	while(node != NULL)
 	{
 		if(node->del == FILELISTDELMARK)

@@ -11,9 +11,13 @@ void screenmc_pictureplayer()
 	char* selectedfile = NULL;
 
 	int nextpic = 0, rcret = 0, rcwait = 1000, playerret = 0, flag = 3, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0, stopradio = 0;
+
 	// workaround for grey background mvi
 	struct skin* blackscreen = getscreen("blackscreen");
 	drawscreen(blackscreen, 0, 0);
+
+	struct skin* loadmediadb = getscreen("loading");
+	drawscreen(loadmediadb, 0, 0);
 
 	// main screen
 	struct skin* apskin = getscreen("mc_pictureplayer");
@@ -184,6 +188,9 @@ void screenmc_pictureplayer()
 
 				view = getconfigint("mc_pp_view", NULL);
 				screenmc_pictureplayer_settings();
+				drawscreen(blackscreen, 0, 0);
+				drawscreen(loadmediadb, 0, 0);	
+
 				if(view != getconfigint("mc_pp_view", NULL))
 				{
 					printf("view changed > change tmpview\n");
@@ -215,6 +222,8 @@ void screenmc_pictureplayer()
 					playerstop();
 
 				mc_changeview(tmpview, filelist, apskin);
+				drawscreen(blackscreen, 0, 0);
+				drawscreen(loadmediadb, 0, 0);	
 
 				delownerrc(apskin);	
 				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
@@ -260,6 +269,9 @@ void screenmc_pictureplayer()
 		{
 			debug(50, "exit - save mc_pp_path: %s", filelistpath->text);
 			debug(50, "exit - save mc_pp_selectedfile: %s", filelistpath->text);
+			drawscreen(blackscreen, 0, 0);
+			drawscreen(loadmediadb, 0, 0);
+
 			if(playlist == 0)
 			{
 				if(filelistpath->text != NULL && ostrcmp(getconfig("mc_pp_path", NULL), filelistpath->text) != 0)
@@ -270,7 +282,8 @@ void screenmc_pictureplayer()
 
 			playerstop();
 			picplayer(picscreen, picture, picname, NULL, 0);
-
+			drawscreen(blackscreen, 0, 0);
+			drawscreen(loadmediadb, 0, 0);
 			eof = 0;
 
 			setfbtransparent(255);
@@ -452,6 +465,9 @@ void screenmc_pictureplayer()
 	free(currentdirectory), currentdirectory = NULL;
 	free(selectedfile), selectedfile = NULL;
 
+	clearscreen(blackscreen);
+	clearscreen(loadmediadb);
+	
 	writevfd("Mediacenter");
 	debug(50, "closed");
 }
