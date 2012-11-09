@@ -444,6 +444,18 @@ int main(int argc, char *argv[])
 	if(ret != 0)
 		return 100;
 
+	//start timer thread
+	status.timerthreadaktion = START;
+	pthread_attr_init(&status.timerthreadattr);
+	pthread_attr_setstacksize(&status.timerthreadattr, 50000);
+	pthread_attr_setdetachstate(&status.timerthreadattr, PTHREAD_CREATE_JOINABLE);
+	ret = pthread_create(&status.timerthread, &status.timerthreadattr, timerthreadfunc, NULL);
+	if(ret)
+	{
+		err("create timer thread");
+		return 100;
+	}
+
 	//change working dir to /tmp
 	//chdir("/tmp");
 
@@ -648,6 +660,11 @@ int main(int argc, char *argv[])
 	ret = cigetdev();
 	ret = dvrgetdev();
 
+#ifdef CAMSUPP
+	//start ca slot watching threads
+	castart();
+#endif
+
 	//check skin
 	if(skincheck > 0)
 	{
@@ -703,19 +720,6 @@ int main(int argc, char *argv[])
 	ret = readrcmap(getconfig("rcmapfile", NULL));
 	ret = readepgscanlist(getconfig("epgchannelfile", NULL));
 	ret = settimezone(getconfig("timezone", NULL));
-
-	//start timer thread
-	status.timerthreadaktion = START;
-	pthread_attr_init(&status.timerthreadattr);
-	pthread_attr_setstacksize(&status.timerthreadattr, 50000);
-	pthread_attr_setdetachstate(&status.timerthreadattr, PTHREAD_CREATE_JOINABLE);
-	ret = pthread_create(&status.timerthread, &status.timerthreadattr, timerthreadfunc, NULL);
-	if(ret)
-	{
-		tmpstr = ostrcat(tmpstr, _("Error: create timer thread !!"), 1, 0);
-		err("create timer thread");
-		goto starterror;
-	}
 
 	addtimer(&checkdate, START, 2000, -1, NULL, NULL, NULL);
 	if((checkbox("ATEMIO500") == 0) && (checkbox("ATEMIO510") == 0))
@@ -829,10 +833,7 @@ firstwizzardstep1:
 	status.addhddall = addtimer(&addhddall, START, 6000, -1, NULL, NULL, NULL);
 	//check net
 	addtimer(&addinetworkall, START, 15000, -1, NULL, NULL, NULL);
-#ifdef CAMSUPP
-	//start ca slot watching threads
-	castart();
-#endif
+
 	//check kill net (security)
 	addtimer(&ckeckkillnetthread, START, 1000, 1, NULL, NULL, NULL);
 
