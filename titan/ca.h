@@ -1828,19 +1828,27 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 					{
 						case 0:
 							setciinput(dvbnode->devnr, "A");
-							setcisource(dvbnode->devnr, "CI0");
+							char* ci = ostrcat("CI", oitoa(dvbnode->devnr), 0, 1);
+							setcisource(node->fedev->devnr, ci);
+							free(ci); ci = NULL;
 							break;
 						case 1:
 							setciinput(dvbnode->devnr, "B");
-							setcisource(dvbnode->devnr, "CI1");
+							char* ci = ostrcat("CI", oitoa(dvbnode->devnr), 0, 1);
+							setcisource(node->fedev->devnr, ci);
+							free(ci); ci = NULL;
 							break;
 						case 2:
 							setciinput(dvbnode->devnr, "C");
-							setcisource(dvbnode->devnr, "CI2");
+							char* ci = ostrcat("CI", oitoa(dvbnode->devnr), 0, 1);
+							setcisource(node->fedev->devnr, ci);
+							free(ci); ci = NULL;
 							break;
 						case 3:
 							setciinput(dvbnode->devnr, "D");
-							setcisource(dvbnode->devnr, "CI3");
+							char* ci = ostrcat("CI", oitoa(dvbnode->devnr), 0, 1);
+							setcisource(node->fedev->devnr, ci);
+							free(ci); ci = NULL;
 							break;
 					}
 				}
