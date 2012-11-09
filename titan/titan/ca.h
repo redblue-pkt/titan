@@ -1823,30 +1823,31 @@ int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caserv
 				//change ciX_input and inputX
 				if(clear == 0 && node->fedev != NULL)
 				{
+					char* ci = NULL;
 					debug(620, "set ci slot %d to tuner %d", dvbnode->devnr, node->fedev->devnr);
 					switch(node->fedev->devnr)
 					{
 						case 0:
 							setciinput(dvbnode->devnr, "A");
-							char* ci = ostrcat("CI", oitoa(dvbnode->devnr), 0, 1);
+							ci = ostrcat("CI", oitoa(dvbnode->devnr), 0, 1);
 							setcisource(node->fedev->devnr, ci);
 							free(ci); ci = NULL;
 							break;
 						case 1:
 							setciinput(dvbnode->devnr, "B");
-							char* ci = ostrcat("CI", oitoa(dvbnode->devnr), 0, 1);
+							ci = ostrcat("CI", oitoa(dvbnode->devnr), 0, 1);
 							setcisource(node->fedev->devnr, ci);
 							free(ci); ci = NULL;
 							break;
 						case 2:
 							setciinput(dvbnode->devnr, "C");
-							char* ci = ostrcat("CI", oitoa(dvbnode->devnr), 0, 1);
+							ci = ostrcat("CI", oitoa(dvbnode->devnr), 0, 1);
 							setcisource(node->fedev->devnr, ci);
 							free(ci); ci = NULL;
 							break;
 						case 3:
 							setciinput(dvbnode->devnr, "D");
-							char* ci = ostrcat("CI", oitoa(dvbnode->devnr), 0, 1);
+							ci = ostrcat("CI", oitoa(dvbnode->devnr), 0, 1);
 							setcisource(node->fedev->devnr, ci);
 							free(ci); ci = NULL;
 							break;
