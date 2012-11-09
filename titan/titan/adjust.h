@@ -40,6 +40,7 @@ void screenadjust()
 	struct skin* showlastpos = getscreennode(adjust, "showlastpos");
 	struct skin* recsync = getscreennode(adjust, "recsync");
 	struct skin* recordnamefmt = getscreennode(adjust, "recordnamefmt");
+	struct skin* caskipprivat = getscreennode(adjust, "caskipprivat");
 	
 	struct skin* tmp = NULL;
 
@@ -191,6 +192,10 @@ void screenadjust()
 	addchoicebox(recordnamefmt, "1", _("movie-channel"));
 	setchoiceboxselection(recordnamefmt, getconfig("recordnamefmt", NULL));
 
+	addchoicebox(caskipprivat, "0", _("no"));
+	addchoicebox(caskipprivat, "1", _("yes"));
+	setchoiceboxselection(caskipprivat, getconfig("caskipprivat", NULL));
+
 	drawscreen(adjust, 0, 0);
 	addscreenrc(adjust, listbox);
 
@@ -251,9 +256,11 @@ void screenadjust()
 			status.channellistview = getconfigint("channellistview", NULL);
 			addconfigscreencheck("camwait", camwait, "25");
 			addconfigscreencheck("checkcamdecrypt", checkcamdecrypt, "0");
-			addconfigscreencheck("showlastpos", showlastpos, NULL);
-			addconfigscreencheck("recsync", recsync, NULL);
-			addconfigscreencheck("recordnamefmt", recordnamefmt, NULL);
+			addconfigscreencheck("showlastpos", showlastpos, 0);
+			addconfigscreencheck("recsync", recsync, 0);
+			addconfigscreencheck("recordnamefmt", recordnamefmt, 0);
+			addconfigscreencheck("caskipprivat", caskipprivat, "0");
+			status.caskipprivat = getconfigint("caskipprivat", NULL);
 			break;
 		}
 	}

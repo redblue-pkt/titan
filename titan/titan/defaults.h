@@ -93,6 +93,7 @@ void setdefaults()
 	status.selectpic = getskinconfig("selectpic", NULL);
 	status.volautochangevalue = getconfigint("volautochangevalue", NULL);
 	status.channellistview = getconfigint("channellistview", NULL);
+	status.caskipprivat = getconfigint("caskipprivat", NULL);
 
 	if(status.filelistselectcol == 0) status.filelistselectcol = status.listboxselectcol;
 	

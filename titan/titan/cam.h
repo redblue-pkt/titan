@@ -374,11 +374,15 @@ start:
 		if(cadescnode->len > 0 && cadescnode->pid == 0)
 		{
 			buf[pos++] = 0x09; //ca desc tag
-			buf[pos++] = cadescnode->len;
+			if(round == 0 && status.caskipprivat == 1) //workaround for to long capmt
+				buf[pos++] = 4;
+			else
+				buf[pos++] = cadescnode->len;
 			buf[pos++] = cadescnode->systemid >> 8;
 			buf[pos++] = cadescnode->systemid & 0xff;
 			buf[pos++] = (cadescnode->reserved << 5) | (cadescnode->capid >> 8);
 			buf[pos++] = cadescnode->capid & 0xff;
+
 			if(cadescnode->len > 4)
 			{
 				memcpy(&buf[pos], cadescnode->privat, cadescnode->len - 4);
