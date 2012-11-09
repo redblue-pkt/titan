@@ -1,5 +1,6 @@
-<screen name=instar_full posx=65 posy=65 bgcol=bgcol width=330 height=250 >
-<node pic=/tmp/instar1.jpg posx=5 posy=5 name=win1 width=320 height=240 picwidth=1 picheight=1/>
+<screen name=instar_full posx=65 posy=65 bgcol=bgcol width=330 height=280 >
+<node name=actcam1 type=textbox valign=left fontsize=25 posx=5 posy=5 text="CAMx" fontcol=CD661D bordercol=bordercol bordersize=2 width=90% height=25>
+<node name=pic1 pic=/tmp/instar1.jpg posx=5 posy=30 name=win1 width=320 height=240 picwidth=1 picheight=1/>
 </screen>
 
 <screen name="instar_einstellungen" title="IP-Kammera Einstellungen" titlealign=center fontcol=fontcol valign=bottom fontsize=30 posx=center posy=center width=50% height=70% bordercol=bordercol bordersize=2 bgcol=bgcol>
@@ -11,7 +12,7 @@
 <node name=userCam1 type=inputbox parent=listbox valign=middle posx=0 text="Benutzer-Kammera 1" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=passCam1 type=inputbox parent=listbox valign=middle posx=0 text="Passwort-Kammera 1" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=s1 type=textbox parent=listbox valign=middle posx=0 text=" " bordercol=bordercol bordersize=2 width=100% height=15>
-<node name=onCam2 type=choicebox parent=listbox valign=middle posx=0 text="Kammera 2 (für zukünftige Nutzung)" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=onCam2 type=choicebox parent=listbox valign=middle posx=0 text="Kammera 2 (Umschalten mit Rot)" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=ipCam2 type=inputbox parent=listbox valign=middle posx=0 text="IP-Kammera 2" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=portCam2 type=inputboxnum parent=listbox valign=middle posx=0 text="Port-Kammera 2" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=userCam2 type=inputbox parent=listbox valign=middle posx=0 text="Benutzer-Kammera 2" bordercol=bordercol bordersize=2 width=100% height=25>
