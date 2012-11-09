@@ -502,28 +502,27 @@ start:
 		rcret = waitrc(weather, 0, 0);
 	
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcok", NULL)) break;
 
 		if(rcret == getrcconfigint("rcred", NULL))
-    {
+		{
 			free(location); location = NULL;
 			location = textinput("Location", NULL);
-      if(location != NULL)
-      {
+			if(location != NULL)
+			{
 				struct skin* tmp = addlistbox(weather, listbox, NULL, 1);
 				if(tmp != NULL)
 				{
 					changetext(tmp, location);
 					changename(tmp, location);
 				}
-      }
-      drawscreen(weather, 0, 0);
+			}
+			drawscreen(weather, 0, 0);
 			if(location == NULL)
 				continue;
 			free(location); location = NULL;
-    }
+    	}
 
-		if(rcret == getrcconfigint("rcyellow", NULL))
+		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			writeweather(getconfig("weatherfile", NULL), listbox);
 			continue;
