@@ -1,10 +1,13 @@
-<screen titlealign=center name=streaminfo hspace=5 vspace=5 fontcol=fontcol fontsize=30 title="Streaminfo" posx=center posy=center width=500 height=200 bordercol=bordercol bordersize=2 bgcol=bgcol>
-<node text="Aspect" posx=5 posy=0 width=250 height=30>
-<node text="Framerate" posx=5 posy=35 width=250 height=30>
-<node text="X-Resolution" posx=5 posy=70 width=250 height=30>
-<node text="Y-Resolution" posx=5 posy=105 width=250 height=30>
-<node name=aspect posx=260 posy=0 width=200 height=30>
-<node name=framerate posx=260 posy=35 width=200 height=30>
-<node name=xres posx=260 posy=70 width=200 height=30>
-<node name=yres posx=260 posy=105 width=200 height=30>
+<screen name="streaminfo" title="Streaminfo" titlealign="center" fontsize="30" fontcol="black" valign="bottom" posx="center" posy="center" width="510" height="300" hspace="10" vspace="10" bordercol="titlebgcol" bordersize="2" borderradius="8" titlebgcol="titlebgcol" titlebgcol2="white" titlegradient="topmiddle" bgcol="bgcol">
+<node text="Aspect" posx=50 posy=30 width=250 height=30 fontcol=fontcol>
+<node text="Framerate" posx=50 posy=65 width=250 height=30 fontcol=fontcol>
+<node text="X-Resolution" posx=50 posy=100 width=250 height=30 fontcol=fontcol>
+<node text="Y-Resolution" posx=50 posy=135 width=250 height=30 fontcol=fontcol>
+<node name=aspect posx=300 posy=30 width=200 height=30 fontcol=fontcol>
+<node name=framerate posx=300 posy=65 width=200 height=30 fontcol=fontcol>
+<node name=xres posx=300 posy=100 width=200 height=30 fontcol=fontcol>
+<node name=yres posx=300 posy=135 width=200 height=30 fontcol=fontcol>
+<node name="buttonbar" posx=center posy="190" width=100% height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node name="b1" picmem="skin/key_ok_70x40.png"   posx="50"  posy="195" width="70" height="40">
+<node name="b2" picmem="skin/key_exit_70x40.png" posx="125" posy="195" width="70" height="40">
 </screen>
