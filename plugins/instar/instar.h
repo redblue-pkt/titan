@@ -4,6 +4,8 @@
 char* cam1 = NULL;
 char* cam2 = NULL;
 struct skin* instar_screen = NULL; 
+struct skin* instar_pic1 = NULL;
+struct skin* instar_actcam1 = NULL;
 int actcam = 1;
 
 struct clist *myconfig[LISTHASHSIZE] = {NULL};
@@ -141,6 +143,22 @@ int show_control()
 				free(tmpstr); tmpstr = NULL;	
 				free(positionstop); positionstop = NULL;
 			}
+			if(rcret == getrcconfigint("rcred", NULL)) {
+				if(actcam == 1 && cam2 != NULL) {
+					actcam = 2;
+					changepic(instar_pic1, "/tmp/instar2.jpg");
+					changetext(instar_actcam1, "CAM2");
+					tempcam = cam2;
+					addlist(myconfig, "InstarActCam", "2");
+				}
+				else if(actcam == 2 && cam1 != NULL) {
+					actcam = 1;
+					changepic(instar_pic1, "/tmp/instar1.jpg");
+					changetext(instar_actcam1, "CAM1");
+					tempcam = cam1;
+					addlist(myconfig, "InstarActCam", "1");
+				}
+			}
 		}
 	}
 
@@ -266,7 +284,7 @@ void instar_main()
 			}
 			
 		
-			/*
+			
 			if(ostrcmp(getlist(myconfig, "InstarCam2", NULL), "ein") == 0)
 			{
 				cam2 = ostrcat("wget --output-document=/tmp/instar2.jpg http://", getlist(myconfig, "InstarCam2User", NULL), 0, 0);
@@ -277,12 +295,25 @@ void instar_main()
 				cam2 = ostrcat(cam2, ":",1, 0);
 				cam2 = ostrcat(cam2, getlist(myconfig, "InstarCam2Port", NULL), 1, 0);
 			}
-			*/
-	
+			
+				
 			instar_screen = getscreen("instar_full");
+			instar_pic1 = getscreennode(instar_screen, "pic1");
+			instar_actcam1 = getscreennode(instar_screen, "actcam1");
 	
-			actcam = 1;
-	
+			if(ostrcmp(getlist(myconfig, "InstarActCam", NULL), "2") == 0)
+			{
+				actcam = 2;
+				changepic(instar_pic1, "/tmp/instar2.jpg");
+				changetext(instar_actcam1, "CAM2");
+			}
+			else
+			{
+				actcam = 1;
+				changepic(instar_pic1, "/tmp/instar1.jpg");
+				changetext(instar_actcam1, "CAM1");
+			}
+			
 			rcode = show_control();
 	
 			free(cam1), cam1 = NULL;
