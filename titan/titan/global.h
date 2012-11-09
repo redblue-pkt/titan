@@ -4286,18 +4286,21 @@ void switchvideomode()
 			setvideomode("720p50", 0);
 			changefbresolution("720p50");
 			changetext(playpolicy, "720p50");
+			writevfd("720p50");
 		}
 		else if(ostrncmp("720", tmpstr, 3) == 0)
 		{
 			setvideomode("1080i50", 0);
 			changefbresolution("1080i50");
 			changetext(playpolicy, "1080i50");
+			writevfd("1080i50");
 		}
 		else if(ostrncmp("1080", tmpstr, 4) == 0)
 		{
 			setvideomode("576i50", 0);
 			changefbresolution("576i50");
 			changetext(playpolicy, "576i50");
+			writevfd("576i50 / pal");
 		}
 		/*
 		int ret = textbox(_("Message"), _("Is this Videomode ok ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
