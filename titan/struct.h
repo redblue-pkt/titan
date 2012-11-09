@@ -1284,6 +1284,8 @@ struct status
 	char* selectpic;
 	//check if cam can decrypt channel
 	int checkcamdecrypt;
+	//don't send privat part of cadescriptor in capmt
+	int caskipprivat;
 } status;
 
 struct fb
