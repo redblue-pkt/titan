@@ -391,7 +391,7 @@ start:
 			buf[pos++] = (cadescnode->reserved << 5) | (cadescnode->capid >> 8);
 			buf[pos++] = cadescnode->capid & 0xff;
 
-			if(ccadesclen > 4)
+			if(cadesclen > 4)
 			{
 				memcpy(&buf[pos], cadescnode->privat, cadesclen - 4);
 				pos += cadesclen - 4;
