@@ -108,6 +108,8 @@ struct stock* getstock(char* name)
 	char* tmpstr = NULL;
 	char* tmpsearch = NULL;
 
+	if(name == NULL) return;
+
 	tmpsearch = ostrcat("ig/api?stock=", name, 0, 0);
 	//TODO: implement auto language (from titan.cfg)
 	tmpsearch = ostrcat(tmpsearch, "&hl=de", 1, 0);

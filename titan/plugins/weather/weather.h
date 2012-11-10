@@ -128,6 +128,8 @@ struct weather* getweather(char* location)
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
 	char* tmpsearch = NULL;
 
+	if(location == NULL) return NULL;
+
 	tmpsearch = ostrcat("data.aspx?weadegreetype=C&culture=de-DE&weasearchstr=", location, 0, 0);
 	//tmpsearch = ostrcat("ig/api?weather=", location, 0, 0);
 	//TODO: implement auto language (from titan.cfg)
