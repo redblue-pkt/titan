@@ -544,6 +544,7 @@ start:
 		if(listbox->select != NULL && rcret == getrcconfigint("rcgreen", NULL))
 		{
 			delscreennode(weather, listbox->select->name);
+			listbox->select = NULL;
 			drawscreen(weather, 0, 0);
 		}
 

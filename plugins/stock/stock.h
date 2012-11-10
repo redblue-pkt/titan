@@ -289,6 +289,7 @@ start:
 		if(listbox->select != NULL && rcret == getrcconfigint("rcgreen", NULL))
 		{
 			delscreennode(stock, listbox->select->name);
+			listbox->select = NULL;
 			drawscreen(stock, 0, 0);
 		}
     
