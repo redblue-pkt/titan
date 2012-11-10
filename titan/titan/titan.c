@@ -727,7 +727,7 @@ int main(int argc, char *argv[])
 
 	if(getconfigint("firststart", NULL) == 1)
 	{
-		if(file_exist("/tmp/.scart"))
+		if(file_exist("/var/etc/.scart"))
 		{
 			setvideomode("pal", 0);
 			changefbresolution("pal");
@@ -739,7 +739,7 @@ int main(int argc, char *argv[])
 	//first wizzard
 	if(getconfigint("nofirstwizzard", NULL) < 2)
 	{
-		if(file_exist("/tmp/.scart"))
+		if(file_exist("/var/etc/.scart"))
 		{
 			setvideomode("pal", 0);
 			changefbresolution("pal");
