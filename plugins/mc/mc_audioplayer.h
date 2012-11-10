@@ -12,6 +12,11 @@ void screenmc_audioplayer()
 
 	int rcret = 0, rcwait = 1000, playerret = 0, flag = 2, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, count = 0, tmpview = 0, playlist = 0, playertype = 0;
 
+	char* tmpstr = NULL;
+	tmpstr = ostrcat(getconfig("mc_ap_dirsort", NULL), NULL, 0, 0);
+	addconfigtmp("dirsort", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+
 	// workaround for grey background mvi
 	struct skin* blackscreen = getscreen("blackscreen");
 	drawscreen(blackscreen, 0, 0);
@@ -239,6 +244,14 @@ void screenmc_audioplayer()
 				{
 					printf("view changed > change tmpview\n");
 					tmpview = getconfigint("mc_ap_view", NULL);
+				}
+
+				if(getconfig("mc_ap_dirsort", NULL) != getconfig("dirsort", NULL))
+				{
+					char* tmpstr = NULL;
+					tmpstr = ostrcat(getconfig("mc_ap_dirsort", NULL), NULL, 0, 0);
+					addconfigtmp("dirsort", tmpstr);
+					free(tmpstr), tmpstr = NULL;
 				}
 				
 				mc_changeview(tmpview, filelist, apskin);
