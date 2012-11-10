@@ -79,7 +79,7 @@ int cigetdev()
 			if(fd >= 0)
 			{
 				count++;
-				adddvbdev(buf, i, y, fd, CIDEV, NULL, NULL);
+				adddvbdev(buf, i, y, fd, CIDEV, NULL, NULL, 0);
 			}
 		}
 	}

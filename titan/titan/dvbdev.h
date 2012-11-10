@@ -1,11 +1,18 @@
 #ifndef DVBDEV_H
 #define DVBDEV
 
-struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, struct dvb_frontend_info* feinfo, struct dvbdev* last)
+//flag 0: use dvbdev
+//flag 1: use dvbdevsim
+struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, struct dvb_frontend_info* feinfo, struct dvbdev* last, int flag)
 {
 	debug(1000, "in");
-	struct dvbdev *newnode = NULL, *node = dvbdev;
+	struct dvbdev *newnode = NULL, *node = NULL;
 	char* tmp = NULL, *tmp1 = NULL;
+
+	if(flag == 0)
+		node = dvbdev;
+	else
+		node = dvbdevsim;
 
 	newnode = (struct dvbdev*)malloc(sizeof(struct dvbdev));	
 	if(newnode == NULL)
@@ -77,23 +84,43 @@ struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, st
 			last->next = newnode;
 	}
 	else
-		dvbdev = newnode;
+	{
+		if(flag == 0)
+			dvbdev = newnode;
+		else
+			dvbdevsim = newnode;
+	}
 
 	debug(1000, "out");
 	return newnode;
 }
 
-void deldvbdev(char *dev)
+//flag 0: use dvbdev
+//flag 1: use dvbdevsim
+void deldvbdev(char *dev, int flag)
 {
 	debug(1000, "in");
-	struct dvbdev *node = dvbdev, *prev = dvbdev;
+	struct dvbdev *node = NULL, *prev = NULL;
+
+	if(flag == 0)
+	{
+		node = dvbdev;
+		prev = dvbdev;
+	}
+	else
+	{
+		node = dvbdevsim;
+		prev = dvbdevsim;
+	}
 
 	while(node != NULL)
 	{
 		if(ostrcmp(node->dev, dev) == 0)
 		{
-			if(node == dvbdev)
+			if(flag == 0 && node == dvbdev)
 				dvbdev = node->next;
+			else if(flag == 1 && node == dvbdevsim)
+				dvbdevsim = node->next;
 			else
 				prev->next = node->next;
 
@@ -125,17 +152,30 @@ void deldvbdev(char *dev)
 	debug(1000, "out");
 }
 
-void freedvbdev()
+//flag 0: use dvbdev
+//flag 1: use dvbdevsim
+void freedvbdev(int flag)
 {
 	debug(1000, "in");
-	struct dvbdev *node = dvbdev, *prev = dvbdev;
+	struct dvbdev *node = NULL, *prev = NULL;
+
+	if(flag == 0)
+	{
+		node = dvbdev;
+		prev = dvbdev;
+	}
+	else
+	{
+		node = dvbdevsim;
+		prev = dvbdevsim;
+	}
 
 	while(node != NULL)
 	{
 		prev = node;
 		node = node->next;
 		if(prev != NULL)
-			deldvbdev(prev->dev);
+			deldvbdev(prev->dev, flag);
 	}
 	debug(1000, "out");
 }
