@@ -1617,9 +1617,20 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 					debug(620, "flags %d %d %d, slot %d", info.flags, CA_CI_MODULE_READY, info.flags & CA_CI_MODULE_READY, dvbnode->devnr);
 					debug(620, "cam (slot %d) status changed, cam not present", dvbnode->devnr);
 
+					//reset routing
+					debug(620, "reset routing tuner %d", dvbnode->devnr);
+					switch(dvbnode->devnr)
+					{
+						case 0: setcisource(dvbnode->devnr, "A"); break;
+						case 1: setcisource(dvbnode->devnr, "B"); break;
+						case 2: setcisource(dvbnode->devnr, "C"); break;
+						case 3: setcisource(dvbnode->devnr, "D"); break;
+					}
+
 					casessionfree(dvbnode);
 					caslotfree(dvbnode);
 					canode->fastrun = 0;
+
 					sleep(1);
 				}
 			}
