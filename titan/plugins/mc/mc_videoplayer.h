@@ -339,20 +339,28 @@ void screenmc_videoplayer()
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 				view = getconfigint("mc_vp_view", NULL);
 				screenmc_videoplayer_settings();
-	drawscreen(blackscreen, 0, 0);
-	drawscreen(loadmediadb, 0, 0);				
+				drawscreen(blackscreen, 0, 0);
+				drawscreen(loadmediadb, 0, 0);				
 				if(view != getconfigint("mc_vp_view", NULL))
 				{
 					printf("view changed > change tmpview\n");
 					tmpview = getconfigint("mc_vp_view", NULL);
+				}
+
+				if(getconfig("mc_vp_dirsort", NULL) != getconfig("dirsort", NULL))
+				{
+					char* tmpstr = NULL;
+					tmpstr = ostrcat(getconfig("mc_vp_dirsort", NULL), NULL, 0, 0);
+					addconfigtmp("dirsort", tmpstr);
+					free(tmpstr), tmpstr = NULL;
 				}
 				
 				mc_changeview(tmpview, filelist, apskin);
 
 //				startmediadb();
 //				dbnode = mediadb;
-	drawscreen(blackscreen, 0, 0);
-	drawscreen(loadmediadb, 0, 0);				
+				drawscreen(blackscreen, 0, 0);
+				drawscreen(loadmediadb, 0, 0);
 	
 				delownerrc(apskin);	
 				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);

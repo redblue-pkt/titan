@@ -12,6 +12,11 @@ void screenmc_pictureplayer()
 
 	int nextpic = 0, rcret = 0, rcwait = 1000, playerret = 0, flag = 3, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0, stopradio = 0;
 
+	char* tmpstr = NULL;
+	tmpstr = ostrcat(getconfig("mc_pp_dirsort", NULL), NULL, 0, 0);
+	addconfigtmp("dirsort", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+
 	// workaround for grey background mvi
 	struct skin* blackscreen = getscreen("blackscreen");
 	drawscreen(blackscreen, 0, 0);
@@ -195,6 +200,14 @@ void screenmc_pictureplayer()
 				{
 					printf("view changed > change tmpview\n");
 					tmpview = getconfigint("mc_pp_view", NULL);
+				}
+
+				if(getconfig("mc_pp_dirsort", NULL) != getconfig("dirsort", NULL))
+				{
+					char* tmpstr = NULL;
+					tmpstr = ostrcat(getconfig("mc_pp_dirsort", NULL), NULL, 0, 0);
+					addconfigtmp("dirsort", tmpstr);
+					free(tmpstr), tmpstr = NULL;
 				}
 
 				sound = getconfig("mc_pp_sound", NULL);
