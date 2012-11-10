@@ -19,6 +19,7 @@ struct fb* lcdskinfb = NULL;
 struct font *font = NULL;
 struct rc *rc = NULL;
 struct dvbdev *dvbdev = NULL;
+struct dvbdev *dvbdevsim = NULL;
 struct channel *channel = NULL;
 struct transponder *transponder = NULL;
 struct provider *provider = NULL;
@@ -379,7 +380,7 @@ void oshutdown(int exitcode, int flag)
 		free(status.configfile);
 		freeconfig();
 
-		freedvbdev();
+		freedvbdev(0);
 
 		closefb(fb);
 		freefb();

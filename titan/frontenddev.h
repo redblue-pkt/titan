@@ -1618,7 +1618,7 @@ int fegetdev()
 				if(feinfo != NULL)
 				{
 					count++;
-					dvbnode = adddvbdev(buf, i, y, fd, FRONTENDDEV, feinfo, NULL);
+					dvbnode = adddvbdev(buf, i, y, fd, FRONTENDDEV, feinfo, NULL, 0);
 					if(dvbnode->feinfo->type == FE_QPSK)
 						fesetvoltage(dvbnode, SEC_VOLTAGE_OFF, 15);
 				}
@@ -1655,7 +1655,7 @@ int fecreatedummy()
 	if(dvbnode != NULL)
 	{
 		sprintf(buf, frontenddev, 0, dvbnode->devnr);
-		adddvbdev(buf, 0, dvbnode->devnr, -1, FRONTENDDEVDUMMY, NULL, NULL);
+		adddvbdev(buf, 0, dvbnode->devnr, -1, FRONTENDDEVDUMMY, NULL, NULL, 0);
 	}
 
 	free(buf);

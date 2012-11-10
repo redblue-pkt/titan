@@ -223,7 +223,7 @@ int cagetdev()
 			{
 				caclose(NULL, fd);
 				count++;
-				adddvbdev(buf, i, y, -1, CADEV, NULL, NULL);
+				adddvbdev(buf, i, y, -1, CADEV, NULL, NULL, 0);
 			}
 		}
 	}

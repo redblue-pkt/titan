@@ -71,6 +71,53 @@ void sortrectimer()
 	rectimer = node;
 }
 
+int checkrectimerconflict(struct rectimer* recnode)
+{
+	struct dvbdev* dvbnode = dvbdev;
+	struct transponder* tpnode = NULL;
+	struct rectimer* node = rectimer;
+
+	while(dvbnode != NULL)
+	{
+		if(dvbnode->type == FRONTENDDEV)
+		{
+			adddvbdev(ostrcat(dvbnode->dev, NULL, 0, 0), dvbnode->adapter, dvbnode->devnr, dvbnode->fd, FRONTENDDEV, dvbnode->feinfo, NULL, 1);
+		}
+		dvbnode = dvbnode->next;
+	}
+	dvbnode = NULL;
+
+	tpnode = gettransponder(recnode->transponderid);
+	dvbnode = fegetfree(tpnode, 0, dvbdevsim);
+	if(dvbnode != NULL)
+		dvbnode->felock = 1;
+
+	while(node != NULL)
+	{
+		if(recnode != node && node->status < 2)
+		{
+			if((recnode->begin >= node->begin && recnode->begin < node->end) || (recnode->end >= node->begin && recnode->end < node->end))
+			{
+				tpnode = gettransponder(recnode->transponderid);
+				dvbnode = fegetfree(tpnode, 0, dvbdevsim);
+				if(dvbnode == NULL)
+				{
+					freedvbdev(1);
+					dvbdevsim = NULL;
+					return 2;
+				}
+				else
+					dvbnode->felock = 1;
+			}
+		}
+		node = node->next;
+	}
+
+	freedvbdev(1);
+	dvbdevsim = NULL;
+	return 0;
+}
+
 int checkrectimeradd(struct rectimer* recnode, char** ret)
 {
 	struct rectimer* node = rectimer;
@@ -106,17 +153,10 @@ int checkrectimeradd(struct rectimer* recnode, char** ret)
 		return 1;
 	}
 
-	while(node != NULL)
+	if(checkrectimerconflict(recnode) != 0)
 	{
-		if(recnode != node && node->status < 2)
-		{
-			if((recnode->begin >= node->begin && recnode->begin < node->end) || (recnode->end >= node->begin && recnode->end < node->end))
-			{
-				*ret = "Timer conflicts with other timer\nWould you add the timer?";
-				return 2;
-			}
-		}
-		node = node->next;
+		*ret = "Timer conflicts with other timer\nWould you add the timer?";
+		return 2;
 	}
 
 	return 0;

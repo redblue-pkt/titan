@@ -475,7 +475,7 @@ int dmxgetdev()
 			{
 				count++;
 				for(z = 0; z < MAXDEMUXDEVOPEN; z++)
-					adddvbdev(buf, i, y, -1, DEMUXDEV, NULL, NULL);
+					adddvbdev(buf, i, y, -1, DEMUXDEV, NULL, NULL, 0);
 				//without this, on atevio7500, if the second tuner is the maintuner
 				//no picture (i don't know why)
 				dmxsetpesfilterfd(fd, 0, -1, DMX_OUT_DECODER, DMX_PES_AUDIO, 0);
