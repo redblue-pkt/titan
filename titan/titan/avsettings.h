@@ -202,6 +202,10 @@ void screenavsettings(int flag)
 							setvideomode(ret, 0); 
 							changefbresolution(ret);
 							writeallconfig(1);
+							if((ostrncmp("576", ret, 3) == 0) || (ostrncmp("pal", ret, 3) == 0))
+								writesys("/var/etc/.scart", "0", 0);
+							else
+								unlink("/var/etc/.scart");
 						}
 
 					}
