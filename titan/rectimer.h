@@ -120,8 +120,6 @@ int checkrectimerconflict(struct rectimer* recnode)
 
 int checkrectimeradd(struct rectimer* recnode, char** ret)
 {
-	struct rectimer* node = rectimer;
-
 	if(recnode == NULL)
 	{
 		*ret = _("undefined error");
