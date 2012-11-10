@@ -1102,6 +1102,9 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 	else
 		readmediadb(getconfig("mediadbfile", NULL), 0, 0);
 
+	node = mediadb;
+	prev = mediadb;
+
 	//check mediadb for not exist file
 	if(getconfigint("mediadbscandelnotfound", NULL) == 1)
 	{
