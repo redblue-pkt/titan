@@ -233,9 +233,9 @@ void timeshiftseek(int sekunden, int* playinfobarstatus, int* playinfobarcount, 
 			{
 				if(sekunden < 20000)
 				{
-					if(sekunden >= 10032)
+					if(sekunden >= 10128)
 					{
-						status.timeshiftseek = 10016;
+						status.timeshiftseek = 10064;
 						return;
 					}
 					status.play = 0;
@@ -248,9 +248,9 @@ void timeshiftseek(int sekunden, int* playinfobarstatus, int* playinfobarcount, 
 				}
 				else
 				{
-					if(sekunden >= 20032)
+					if(sekunden >= 20128)
 					{
-						status.timeshiftseek = 20016;
+						status.timeshiftseek = 20064;
 						return;
 					}
 					status.play = 0;
