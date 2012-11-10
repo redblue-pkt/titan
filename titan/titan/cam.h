@@ -252,7 +252,7 @@ void sendcapmt(struct service* node, int clear, int flag)
 
 		if(doswitch == 1)
 		{
-			debug(200, "set ci slot %d to tuner %d", node->fedev->devnr, node->fedev->devnr);
+			debug(200, "reset routing tuner %d", node->fedev->devnr);
 			switch(node->fedev->devnr)
 			{
 				case 0: setcisource(node->fedev->devnr, "A"); break;
