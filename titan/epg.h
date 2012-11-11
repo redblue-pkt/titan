@@ -1197,7 +1197,7 @@ void linkagedesc(struct channel* chnode, struct epg* epgnode, void *buf)
 	int onid = HILO(evtlink->original_network_id);
 	int serviceid = HILO(evtlink->service_id);
 	
-	transponderid = (onid << 16) | tid;
+	transponderid = ((onid << 16) | tid) & 0xffffffff;
 
 	if(chnode != NULL && chnode->transponder != NULL)
 	{
@@ -1438,7 +1438,7 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 		if(chnode == status.aktservice->channel && status.aktservice->type != CHANNEL)
 			return;
 		
-		transponderid = (HILO(eit->original_network_id) << 16) | HILO(eit->transport_stream_id);
+		transponderid = ((HILO(eit->original_network_id) << 16) | HILO(eit->transport_stream_id)) & 0xffffffff;
 		if(chnode->transponder != NULL)
 		{
 			if(chnode->transponder->fetype == FE_QAM)
