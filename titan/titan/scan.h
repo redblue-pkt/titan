@@ -95,7 +95,7 @@ struct transponder* satsystemdesc(unsigned char* buf, uint64_t transportid, unsi
 
 	if(frequency > 15000000) return NULL;
 
-	id = (onid << 16) | transportid;
+	id = ((onid << 16) | transportid) & 0xffffffff;
 
 	if(gettransponder(id) == NULL)
 	{
@@ -239,7 +239,7 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 	tid = (buf[3] << 8) | buf[4];
 	onid = (buf[8] << 8) | buf[9];
 	
-	transponderid = (onid << 16) | tid;
+	transponderid = ((onid << 16) | tid) & 0xffffffff;
 	if(fenode->feinfo->type == FE_QAM)
 		transponderid = transponderid | ((uint64_t)1 << 32);
 	else if(fenode->feinfo->type == FE_OFDM)
@@ -360,7 +360,7 @@ uint64_t findtransponderid(struct dvbdev* fenode, unsigned char *buf)
 	tid = (buf[3] << 8) | buf[4];
 	onid = (buf[8] << 8) | buf[9];
 	
-	transponderid = (onid << 16) | tid;
+	transponderid = ((onid << 16) | tid) & 0xffffffff;
 
 	if(fenode->feinfo->type == FE_QAM)
 		transponderid = transponderid | ((uint64_t)1 << 32);
