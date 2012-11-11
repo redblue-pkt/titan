@@ -458,9 +458,9 @@ char* getepgtime(struct skin* node, char* format, int akt, int type)
 			else if(type == 2)
 			{
 				if(akt == 1)
-					min = (epgnode->endtime - (time(NULL) - 60)) / 60;
+					min = ((epgnode->endtime - (epgnode->endtime % 60)) - (time(NULL) - (time(NULL) % 60))) / 60;
 				else if(akt == 2)
-					min = (epgnode->endtime - epgnode->starttime) / 60;
+					min = ((epgnode->endtime - (epgnode->endtime % 60)) - (epgnode->starttime - (epgnode->starttime % 60))) / 60;
 				if(min < 0) min = 0;
 			}
 
