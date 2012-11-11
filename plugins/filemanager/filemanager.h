@@ -198,6 +198,8 @@ void screenfilemanager()
 
 					if(!file_exist(tmpstr))
 						mkdir(tmpstr, 0777);
+
+					free(tmpstr); tmpstr = NULL;
 				}
 			}
 		}
