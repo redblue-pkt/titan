@@ -743,6 +743,9 @@ struct epg* updateepg(struct channel* chnode, struct epg* epgnode, int eventid, 
 		return NULL;
 	}
 
+	if(epgnode->version >= version) return epgnode;
+	if(endtime <= time(NULL)) return epgnode;
+
 	if(flag == 0) m_lock(&status.epgmutex, 4);
 
 	struct epg *prev = NULL, *node = chnode->epg;
