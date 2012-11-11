@@ -1690,7 +1690,7 @@ int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 		if(status.aktservice->channel != NULL && status.aktservice->channel->transponder != NULL && status.aktservice->channel->transponder->lastepg > akttime && status.aktservice->channel->epg != NULL)
 		{
 			debug(400, "skip epg read (%ld < %ld)", akttime, status.aktservice->channel->transponder->lastepg);
-			skip = (akttime - status.aktservice->channel->transponder->lastepg) * 2;
+			skip = (status.aktservice->channel->transponder->lastepg - akttime) * 2;
 		}
 	}
 	else
@@ -1698,7 +1698,7 @@ int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 		if(chnode->transponder != NULL && chnode->transponder->lastepg > akttime && chnode->epg != NULL)
 		{
 			debug(400, "skip epg read (%ld < %ld)", akttime, chnode->transponder->lastepg);
-			skip = (akttime - chnode->transponder->lastepg) * 2;
+			skip = (chnode->transponder->lastepg - akttime) * 2;
 		}
 	}
 
