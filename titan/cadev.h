@@ -117,7 +117,7 @@ int casendmsg(struct dvbdev* node, struct ca_msg *msg)
 	return 0;
 }
 
-int cagetdesc(struct dvbdev* node)
+int cagetdesc(struct dvbdev* node, struct ca_descr *descr)
 {
 	if(node == NULL)
 	{
@@ -126,7 +126,7 @@ int cagetdesc(struct dvbdev* node)
 	}
 
 	debug(200, "CA_GET_DESCR_INFO");
-	if(ioctl(node->fd, CA_GET_DESCR_INFO) < 0)
+	if(ioctl(node->fd, CA_GET_DESCR_INFO, descr) < 0)
 	{
 		perr("CA_GET_DESCR_INFO");
 		return 1;
@@ -135,7 +135,25 @@ int cagetdesc(struct dvbdev* node)
 	return 0;
 }
 
-int casetpid(struct dvbdev* node)
+int casetdesc(struct dvbdev* node, struct ca_descr *descr)
+{
+	if(node == NULL)
+	{
+		debug(1000, "out-> NULL detect");
+		return 1;
+	}
+
+	debug(200, "CA_SET_DESCR");
+	if(ioctl(node->fd, CA_SET_DESCR, descr) < 0)
+	{
+		perr("CA_SET_DESCR");
+		return 1;
+	}
+
+	return 0;
+}
+
+int casetpid(struct dvbdev* node, struct ca_pid *pid)
 {
 	if(node == NULL)
 	{
@@ -144,7 +162,7 @@ int casetpid(struct dvbdev* node)
 	}
 
 	debug(200, "CA_SET_PID");
-	if(ioctl(node->fd, CA_SET_PID) < 0)
+	if(ioctl(node->fd, CA_SET_PID, pid) < 0)
 	{
 		perr("CA_SET_PID");
 		return 1;
