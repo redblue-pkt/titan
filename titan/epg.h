@@ -50,6 +50,7 @@ void screensingleepg(struct channel* chnode, struct epg* epgnode, int flag)
 	if(chnode == NULL) chnode = status.aktservice->channel;
 	if(chnode == NULL) return;
 	if(epgnode == NULL) epgnode = getepgakt(chnode);
+	if(epgnode == NULL) epgnode = getepgnext(chnode);
 	tmpepg = epgnode;
 	
 	status.epgchannel = chnode;
@@ -193,6 +194,7 @@ void screenepg(struct channel* chnode, struct epg* epgnode, int flag)
 	if(chnode == NULL) chnode = status.aktservice->channel;
 	if(chnode == NULL) return;
 	if(epgnode == NULL) epgnode = getepgakt(chnode);
+	if(epgnode == NULL) epgnode = getepgnext(chnode);
 
 	status.epgchannel = chnode;
 	epgscreenconf = getconfigint("epg_screen", NULL);
@@ -676,6 +678,38 @@ struct epg* getepgbytime(struct channel* chnode, time_t akttime)
 	while(node != NULL)
 	{
 		if(node->starttime <= akttime && node->endtime > akttime) 
+		{
+			debug(1000, "out");
+        		m_unlock(&status.epgmutex, 4);
+			return node;
+		}
+
+		node = node->next;
+	}
+
+	m_unlock(&status.epgmutex, 4);
+	return NULL;
+}
+
+struct epg* getepgnext(struct channel* chnode)
+{
+	debug(1000, "in");
+	time_t akttime = time(NULL);
+
+	m_lock(&status.epgmutex, 4);
+
+	if(chnode == NULL || chnode->epg == NULL)
+	{
+		debug(1000, "out-> NULL detect");
+		m_unlock(&status.epgmutex, 4);
+		return NULL;
+	}
+
+	struct epg *node = chnode->epg;
+
+	while(node != NULL)
+	{
+		if(node->starttime >= akttime)
 		{
 			debug(1000, "out");
         		m_unlock(&status.epgmutex, 4);

@@ -9,6 +9,7 @@ struct epg* readepgdesc(struct channel* curchannel, int epgnr)
 	struct epg* epgnode = NULL;
 
 	epgnode = getepgakt(curchannel);
+	if(epgnode == NULL) epgnode = getepgnext(curchannel);
 			
 	while(epgnode != NULL){
 		if(i >= epgnr) break;

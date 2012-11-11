@@ -140,6 +140,7 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 			free(tmpstr); tmpstr = NULL;
 
 			epgnode = getepgakt(tmpchannel);
+			if(epgnode == NULL) epgnode = getepgnext(tmpchannel);
 
 			while(epgnode != NULL)
 			{

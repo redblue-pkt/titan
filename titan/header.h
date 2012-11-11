@@ -726,6 +726,7 @@ void zapup();
 void zapdown();
 
 //epg.h
+struct epg* getepgnext(struct channel* chnode);
 void screensingleepg(struct channel* chnode, struct epg* epgnode, int flag);
 void screenepg(struct channel* chnode, struct epg* epgnode, int flag);
 int writeepg(const char* filename);
