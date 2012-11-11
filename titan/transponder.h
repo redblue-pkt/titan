@@ -3,8 +3,76 @@
 
 void changetransponderid(struct transponder* tpnode, uint64_t transponderid)
 {
+	struct mostzap* node1 = mostzap;
+	struct epgscanlist* node2 = epgscanlist;
+	struct rectimer* node3 = rectimer;
+	struct mainbouquet* node4 = mainbouquet;
+	struct linkedchannel* node5 = NULL;
+	struct channel* node6 = channel;
+	struct bouquet* node7 = NULL;
+
 	if(tpnode == NULL) return;
-	
+
+	while(node1 != NULL)
+	{
+		if(node1->transponderid == tpnode->id)
+		{
+			node1->transponderid = transponderid;
+			status.writemostzap = 1;
+		}
+		node1 = node1->next;
+	}
+	while(node2 != NULL)
+	{
+		if(node2->transponderid == tpnode->id)
+		{
+			node2->transponderid = transponderid;
+			status.writeepgscanlist = 1;
+		}
+		node2 = node2->next;
+	}
+	while(node3 != NULL)
+	{
+		if(node3->transponderid == tpnode->id)
+		{
+			node3->transponderid = transponderid;
+			status.writerectimer = 1;
+		}
+		node3 = node3->next;
+	}
+	while(node4 != NULL)
+	{
+		node7 = node4->bouquet;
+		while(node7 != NULL)
+		{
+			if(node7->transponderid == tpnode->id)
+			{
+				node7->transponderid = transponderid;
+				status.writebouquet = 1;
+			}
+			node7 = node7->next;
+		}
+		node4 = node4->next;
+	}
+	while(node6 != NULL)
+	{
+		node5 = node6->linkedchannel;
+		while(node5 != NULL)
+		{
+			if(node5->transponderid == tpnode->id)
+				node5->transponderid = transponderid;
+			node5 = node5->next;
+		}
+		if(node6->transponderid == tpnode->id)
+		{
+			delchannelcache(node6->serviceid, tpnode->id);
+			node6->transponderid = transponderid;
+			modifychannelcache(node6->serviceid, transponderid, node6);
+			status.writechannel = 1;
+		}
+		node6 = node6->next;
+	}
+
 	deltranspondercache(tpnode->id, tpnode);
 	tpnode->id = transponderid;
 	modifytranspondercache(tpnode->id, tpnode);
