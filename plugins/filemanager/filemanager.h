@@ -154,8 +154,8 @@ void screenfilemanager()
 				drawscreen(filemanager1, 0, 1);
 				drawscreen(filemanager2, 0, 0);
 			}
-		
-			if(rcret == getrcconfigint("rcblue", NULL) && tmpfilelist->select != NULL && ostrcmp(tmpfilelist->select->text, "..") != 0) //view
+			
+			if(rcret == getrcconfigint("rctext", NULL) && tmpfilelist->select != NULL && ostrcmp(tmpfilelist->select->text, "..") != 0) //view
 			{
 				if(aktfilelist == 0)
 					file1 = createpath(filelistpath1->text, filelist1->select->text);
@@ -184,6 +184,21 @@ void screenfilemanager()
 					drawscreen(filemanager2, 0, 0);
 				}
 				free(file1); file1 = NULL;
+			}
+
+			if(rcret == getrcconfigint("rcblue", NULL))
+			{
+				char* search = textinputhist("Search", " ", "searchhist");
+				if(search != NULL)
+				{
+					if(aktfilelist == 0)
+						tmpstr = createpath(filelistpath1->text, search);
+					else
+						tmpstr = createpath(filelistpath2->text, search);
+
+					if(!file_exist(tmpstr))
+						mkdir(tmpstr, 0777);
+				}
 			}
 		}
 		else
