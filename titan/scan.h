@@ -319,7 +319,7 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 						changetext(node, tmpstr);
 						changeparam1(node, tmpstr1);
 						changeparam2(node, tmpstr2);
-						tmpuint64 = (uint64_t*)malloc(sizeof(uint64_t) * 3);
+						tmpuint64 = (uint64_t*)calloc(1, sizeof(uint64_t) * 3);
 						if(tmpuint64 != NULL)
 						{
 							tmpuint64[0] = serviceid;
