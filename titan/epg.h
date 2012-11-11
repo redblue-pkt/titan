@@ -256,9 +256,9 @@ start:
 		}
 		
 		if(epgnode->starttime <= time(NULL))
-			min = (epgnode->endtime - (time(NULL) - 60)) / 60;
+			min = ((epgnode->endtime - (epgnode->endtime % 60)) - (time(NULL) - (time(NULL) % 60))) / 60;
 		else
-			min = (epgnode->endtime - epgnode->starttime) / 60;
+			min = ((epgnode->endtime - (epgnode->endtime % 60)) - (epgnode->starttime - (epgnode->starttime % 60))) / 60;
 		if(min < 0) min = 0;
 		snprintf(buf, MINMALLOC, epgtimeremaining->param1, min);
 		changetext(epgtimeremaining, buf);
