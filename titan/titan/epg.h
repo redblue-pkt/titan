@@ -1435,7 +1435,7 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 		eitlen = GETEITDESCLEN(evt);
 		if(eitlen == 0 || chnode == NULL)
 			return;
-		if(chnode == status.aktservice->channel && status.aktservice->type != CHANNEL)
+		if(flag == 0 && chnode == status.aktservice->channel && status.aktservice->type != CHANNEL)
 			return;
 		
 		transponderid = ((HILO(eit->original_network_id) << 16) | HILO(eit->transport_stream_id)) & 0xffffffff;
@@ -1719,21 +1719,12 @@ int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 	time_t akttime, roundstart;
 
 	akttime = time(NULL);
-	if(chnode == NULL)
+	if(chnode == NULL) chnode = status.aktservice->channel;
+
+	if(chnode != NULL && chnode->transponder != NULL && chnode->transponder->lastepg > akttime && chnode->epg != NULL)
 	{
-		if(status.aktservice->channel != NULL && status.aktservice->channel->transponder != NULL && status.aktservice->channel->transponder->lastepg > akttime && status.aktservice->channel->epg != NULL)
-		{
-			debug(400, "skip epg read (%ld < %ld)", akttime, status.aktservice->channel->transponder->lastepg);
-			skip = (status.aktservice->channel->transponder->lastepg - akttime) * 2;
-		}
-	}
-	else
-	{
-		if(chnode->transponder != NULL && chnode->transponder->lastepg > akttime && chnode->epg != NULL)
-		{
-			debug(400, "skip epg read (%ld < %ld)", akttime, chnode->transponder->lastepg);
-			skip = (chnode->transponder->lastepg - akttime) * 2;
-		}
+		debug(400, "skip epg read (%ld < %ld)", akttime, chnode->transponder->lastepg);
+		skip = (chnode->transponder->lastepg - akttime) * 2;
 	}
 
 	if(skip > 0)
@@ -1759,7 +1750,7 @@ int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 	if(fenode == NULL) fenode = status.aktservice->fedev;
 	if(fenode == NULL)
 	{
-		debug(400, "no frontend dev in aktservice");
+		debug(400, "no frontend dev in service");
 		free(buf);
 		return 1;
 	}
@@ -1824,12 +1815,7 @@ int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 				if(flag == 1) goto end;
 				debug(400, "epg no more new data, wait for next run");
 
-				if(chnode == NULL)
-				{
-					if(status.aktservice->channel != NULL && status.aktservice->channel->transponder != NULL)
-						status.aktservice->channel->transponder->lastepg = time(NULL) + 7700;
-				}
-				else if(chnode->transponder != NULL)
+				if(chnode == NULL && chnode->transponder != NULL)
 					chnode->transponder->lastepg = time(NULL) + 7700;
 
 				while(self->aktion != STOP && self->aktion != PAUSE)
@@ -1964,7 +1950,8 @@ void epgthreadfunc(struct stimerthread* self)
 		free(tmpstr); tmpstr = NULL;
 	}
 
-	readeit(self, NULL, NULL, 0);
+	if(status.epgscanlistthread == NULL)
+		readeit(self, NULL, NULL, 0);
 
 	debug(400, "end epg thread on aktiv channel");
 	debug(1000, "out");

@@ -5,7 +5,6 @@ void screenstandby()
 {
 	int rcret = 0, voltoff = 1;
 	struct skin* standbyscreen = getscreen("standby");
-	struct stimerthread *epgscan = NULL;
 	char* loctime = NULL, *tmpstr = NULL;
 	time_t lastrun = 0;
 	struct dvbdev* dvbnode = dvbdev;
@@ -64,16 +63,17 @@ void screenstandby()
 			voltoff = 1; //is not a real voltoff, but after standby this makes a new channel tuning
 			//start epg scanlist
 			lastrun = time(NULL);
-			epgscan = addtimer(&epgscanlistthread, START, 1000, 1, NULL, NULL, NULL);
+			if(status.epgscanlistthread == NULL)
+				status.epgscanlistthread = addtimer(&epgscanlistthread, START, 1000, 1, NULL, NULL, NULL);
 		}
 		free(loctime); loctime = 0;
 	}
 
-	if(gettimer(epgscan) != NULL)
+	if(status.epgscanlistthread != NULL)
 	{
 		int i = 0;
-		epgscan->aktion = STOP;
-		while(gettimer(epgscan) != NULL && epgscan->status != DEACTIVE)
+		status.epgscanlistthread->aktion = STOP;
+		while(status.epgscanlistthread != NULL)
 		{
 			usleep(100000);
 			i++; if(i > 50) break;
