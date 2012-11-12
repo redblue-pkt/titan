@@ -716,7 +716,7 @@ void dvbgetpmtthread()
 	
 	if(pmtpid < 1) return;
 
-	//outside of look, can block a little
+	//outside of lock, can block a little
 	pmtbuf = dvbgetpmt(status.aktservice->fedev, NULL, serviceid, &pmtpid, &len, -1, 1);
 	if(pmtbuf == NULL) return;
 

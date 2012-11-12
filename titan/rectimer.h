@@ -77,6 +77,8 @@ int checkrectimerconflict(struct rectimer* recnode)
 	struct transponder* tpnode = NULL;
 	struct rectimer* node = rectimer;
 
+	if(recnode == NULL) return 0;
+
 	while(dvbnode != NULL)
 	{
 		if(dvbnode->type == FRONTENDDEV)
@@ -86,6 +88,8 @@ int checkrectimerconflict(struct rectimer* recnode)
 		dvbnode = dvbnode->next;
 	}
 	dvbnode = NULL;
+
+	if(dvbdevsim == NULL) return 0;
 
 	tpnode = gettransponder(recnode->transponderid);
 	dvbnode = fegetfree(tpnode, 0, dvbdevsim);
