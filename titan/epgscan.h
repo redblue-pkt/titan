@@ -172,7 +172,6 @@ void epgscanlistthread(struct stimerthread* self)
 	writeallconfig(2);
 
 end:
-	status.epgscanlistthread = NULL;
 	epgscanlistclearscantime();
 	
 	if(fd != NULL)
@@ -180,6 +179,7 @@ end:
 		fprintf(fd, "epgscan thread end\n");
 		fclose(fd);
 	}
+	status.epgscanlistthread = NULL;
 	debug(400, "epgscan thread end");
 }
 
