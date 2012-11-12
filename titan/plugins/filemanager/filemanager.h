@@ -201,6 +201,9 @@ void screenfilemanager()
 
 					free(tmpstr); tmpstr = NULL;
 				}
+				drawscreen(filemanager, 0, 1);
+				drawscreen(filemanager1, 0, 1);
+				drawscreen(filemanager2, 0, 0);
 			}
 		}
 		else
