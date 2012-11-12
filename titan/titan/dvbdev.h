@@ -124,13 +124,16 @@ void deldvbdev(char *dev, int flag)
 			else
 				prev->next = node->next;
 
-			close(node->fd);
+			if(flag == 0)
+			{
+				close(node->fd);
+
+				free(node->feinfo);
+				node->feinfo = NULL;
+			}
 
 			free(node->dev);
 			node->dev = NULL;
-
-			free(node->feinfo);
-			node->feinfo = NULL;
 
 			free(node->feshortname);
 			node->feshortname = NULL;
