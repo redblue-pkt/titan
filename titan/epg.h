@@ -1815,7 +1815,7 @@ int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 				if(flag == 1) goto end;
 				debug(400, "epg no more new data, wait for next run");
 
-				if(chnode == NULL && chnode->transponder != NULL)
+				if(chnode != NULL && chnode->transponder != NULL)
 					chnode->transponder->lastepg = time(NULL) + 7700;
 
 				while(self->aktion != STOP && self->aktion != PAUSE)
