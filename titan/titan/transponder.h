@@ -78,6 +78,17 @@ void changetransponderid(struct transponder* tpnode, uint64_t transponderid)
 	modifytranspondercache(tpnode->id, tpnode);
 }
 
+void deltransponderlastepg()
+{
+	struct transponder* node = transponder;
+
+	while(node != NULL)
+	{
+		node->lastepg = 0;
+		node = node->next;
+	}
+}
+
 void deltranspondertunablestatus()
 {
 	struct transponder* node = transponder;

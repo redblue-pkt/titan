@@ -777,7 +777,7 @@ struct epg* updateepg(struct channel* chnode, struct epg* epgnode, int eventid, 
 		return NULL;
 	}
 
-	if(epgnode->version >= version) return epgnode;
+	//if(epgnode->version >= version) return epgnode;
 	if(endtime <= time(NULL)) return epgnode;
 
 	if(flag == 0) m_lock(&status.epgmutex, 4);
@@ -1003,6 +1003,9 @@ void resetepg(int flag)
 		unlink(tmpstr);
 		free(tmpstr); tmpstr = NULL;
 	}
+
+	//set lastepg to 0 so, epg is running
+	deltransponderlastepg();
 
 	if(status.epgthread != NULL)
 		status.epgthread->aktion = START;
