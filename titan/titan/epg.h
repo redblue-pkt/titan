@@ -830,6 +830,53 @@ struct epg* updateepg(struct channel* chnode, struct epg* epgnode, int eventid, 
 
 //flag 0: lock
 //flag 1: nolock
+struct epg* addoldentryepg(struct channel* chnode, struct epg* newnode, int flag)
+{
+//	debug(1000, "in");
+
+	if(newnode == NULL)
+	{
+		debug(1000, "out-> NULL detect");
+		return NULL;
+	}
+
+	if(flag == 0) m_lock(&status.epgmutex, 4);
+
+	free(newnode->title);
+	newnode->title = NULL;
+	free(newnode->subtitle);
+	newnode->subtitle = NULL;
+	free(newnode->desc);
+	newnode->desc = NULL;
+	newnode->desclen = 0;
+	newnode->desccomplen = 0;
+
+	if(newnode == chnode->epg)
+	{
+		chnode->epg = newnode->next;
+		if(chnode->epg != NULL)
+			chnode->epg->prev = NULL;
+	}
+	else
+	{
+		if(newnode->prev != NULL)
+		{
+			newnode->prev->next = newnode->next;
+			if(newnode->next != NULL)
+				newnode->next->prev = newnode->prev;
+		}
+	}
+
+	if(flag == 0) m_unlock(&status.epgmutex, 4);
+
+	addoldentry((void*)newnode, 0, time(NULL) + 3600, NULL);
+
+//	debug(1000, "out");
+	return newnode;
+}
+
+//flag 0: lock
+//flag 1: nolock
 struct epg* addepg(struct channel* chnode, int eventid, int version, time_t starttime, time_t endtime, struct epg* last, int flag)
 {
 //	debug(1000, "in");
@@ -896,6 +943,29 @@ struct epg* addepg(struct channel* chnode, int eventid, int version, time_t star
 	if(flag == 0) m_unlock(&status.epgmutex, 4);
 //	debug(1000, "out");
 	return newnode;
+}
+
+void deloldentryepg(struct epg* node)
+{
+	debug(1000, "in");
+
+	if(node == NULL)
+	{
+		debug(1000, "out-> NULL detect");
+		return;
+	}
+
+	free(node->title);
+	node->title = NULL;
+	free(node->subtitle);
+	node->subtitle = NULL;
+	free(node->desc);
+	node->desc = NULL;
+
+	free(node);
+	node = NULL;
+
+	debug(1000, "out");
 }
 
 //flag 0: lock

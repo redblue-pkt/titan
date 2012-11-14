@@ -734,6 +734,8 @@ void freeepg(struct channel* chnode);
 struct epg* getepgakt(struct channel* chnode);
 struct epg* getepgbytime(struct channel* chnode, time_t akttime);
 char* epgdescunzip(struct epg* epgnode);
+struct epg* addoldentryepg(struct channel* chnode, struct epg* newnode, int flag);
+void deloldentryepg(struct epg* node);
 
 //standby.h
 void screenstandby();

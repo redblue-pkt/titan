@@ -189,6 +189,15 @@ enum {DEACTIVE, ACTIVE, INPAUSE, ERROR};
 enum {FUNCTEXT, FUNCPIC, FUNCPROGRESS};
 enum {CASESSIONCREATE, CASESSIONBUSY, CASESSIONDEL, CASESSIONSTART, CASESSIONFINAL, CARESFIRSTENQUIRY, CARESCHANGE, CARESENQUIRY, CADATETIMESEND, CAMMIIDLE, CAMMIDISPLAYREPLAY, CAMMIFAKEOK};
 
+struct oldentry
+{
+	void* entry;
+	//0 = epg
+	int type;
+	time_t del;
+	struct oldentry* next;
+};
+
 struct unicable
 {
 	char* manufacturer;
@@ -1110,6 +1119,7 @@ struct status
 	pthread_mutex_t tsseekmutex;
 	pthread_mutex_t accelfbmutex;
 	pthread_mutex_t mediadbmutex;
+	pthread_mutex_t oldentrymutex;
 	// mutex for VFD handling
 	pthread_mutex_t vfdmutex;
 	off64_t recsplitsize;
