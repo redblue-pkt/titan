@@ -12,7 +12,7 @@ void oldentrythreadfunc(struct stimerthread* self)
 	{
 		prev = node;
 		node = node->next;
-		if(node->del < time(NULL))
+		if(prev->del < time(NULL))
 			deloldentry(prev, 1);
 	}
 
@@ -71,7 +71,7 @@ void deloldentry(struct oldentry *entry, int flag)
 
 	while(node != NULL)
 	{
-		if(node->entry == entry)
+		if(node == entry)
 		{
 			if(node == oldentry)
 				oldentry = node->next;
