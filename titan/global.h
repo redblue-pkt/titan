@@ -1610,6 +1610,7 @@ void initmutex(int flag)
 		pthread_mutex_init(&status.tsseekmutex, NULL);
 		pthread_mutex_init(&status.accelfbmutex, NULL);
 		pthread_mutex_init(&status.mediadbmutex, NULL);
+		pthread_mutex_init(&status.oldentrymutex, NULL);
 	}
 	else
 	{
@@ -1631,6 +1632,7 @@ void initmutex(int flag)
 		pthread_mutex_destroy(&status.tsseekmutex);
 		pthread_mutex_destroy(&status.accelfbmutex);
 		pthread_mutex_destroy(&status.mediadbmutex);
+		pthread_mutex_destroy(&status.oldentrymutex);
 	}
 }
 
@@ -1961,6 +1963,7 @@ void m_lock(pthread_mutex_t *mutex, int flag)
 		case 15: debug(900, "tsseekmutex lock"); break;
 		case 16: debug(900, "accelfbmutex lock"); break;
 		case 17: debug(900, "mediadbmutex lock"); break;
+		case 18: debug(900, "oldentrymutex lock"); break;
 		default: debug(900, "unknown mutex lock"); break;
 	}
 	pthread_mutex_lock(mutex);
@@ -1988,6 +1991,7 @@ void m_unlock(pthread_mutex_t *mutex, int flag)
 		case 15: debug(900, "tsseekmutex unlock"); break;
 		case 16: debug(900, "accelfbmutex unlock"); break;
 		case 17: debug(900, "mediadbmutex unlock"); break;
+		case 18: debug(900, "oldentrymutex unlock"); break;
 		default: debug(900, "unknown mutex unlock"); break;
 	}
 	pthread_mutex_unlock(mutex);

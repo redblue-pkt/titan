@@ -47,6 +47,7 @@ struct mediadbcategory* mediadbcategory = NULL;
 struct mediadb* mediadb = NULL;
 struct mediadbcache* mediadbcache[MEDIADBCACHEMAX] = {NULL};
 struct unicable* unicable = NULL;
+struct oldentry* oldentry = NULL;
 
 #ifdef SH4
 #include "sh4port.h"
@@ -60,6 +61,7 @@ struct unicable* unicable = NULL;
 #include "i386port.h"
 #endif
 
+#include "oldentry.h"
 #include "ipkg.h"
 #include "jsmn.h"
 #include "queue.h"
@@ -390,6 +392,7 @@ void oshutdown(int exitcode, int flag)
 		freercmap();
 		free_shutdowntimervar();
 		freeinetwork();
+		freeoldentry();
 	}
 	else
 		freetimer(1);
@@ -834,9 +837,10 @@ firstwizzardstep1:
 	status.addhddall = addtimer(&addhddall, START, 6000, -1, NULL, NULL, NULL);
 	//check net
 	addtimer(&addinetworkall, START, 15000, -1, NULL, NULL, NULL);
-
 	//check kill net (security)
 	addtimer(&ckeckkillnetthread, START, 1000, 1, NULL, NULL, NULL);
+	//check old entrys and remove from mem
+	addtimer(&oldentrythreadfunc, START, 60000 * 60, -1, NULL, NULL, NULL);
 
 	//thumb create thread
 	startthumb(1);
