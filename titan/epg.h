@@ -812,6 +812,24 @@ struct epg* updateepg(struct channel* chnode, struct epg* epgnode, int eventid, 
 			node = node->next;
 		}
 
+		if(prev != NULL)
+		{
+			//check if new epg overlapps prev epg
+			if(epgnode->starttime < prev->endtime)
+			{
+				struct epg *tmp = prev->prev;
+				addoldentryepg(chnode, prev, 1);
+				prev = tmp;
+			}
+			//check if new epg overlaps next epg
+			while(node != NULL && epgnode->endtime > node->starttime)
+			{
+				struct epg *tmp = node;
+				node = node->next;
+				addoldentryepg(chnode, tmp, 1);
+			}
+		}
+
 		if(prev == NULL)
 			chnode->epg = epgnode;
 		else
@@ -920,13 +938,28 @@ struct epg* addepg(struct channel* chnode, int eventid, int version, time_t star
 		node = last->next;
 	}
 
-	if(prev != NULL)
+ 	if(prev != NULL)
 	{
-		if(newnode->starttime < prev->endtime - 60) //don't save epg with same starttime
+		//don't save epg with same starttime / endtime
+		if(newnode->starttime == prev->starttime && newnode->endtime == prev->endtime)
 		{
-			free(newnode); newnode = NULL;
+			free(newnode); newnode == NULL;
 			if(flag == 0) m_unlock(&status.epgmutex, 4);
 			return NULL;
+		}
+		//check if new epg overlapps prev epg
+		if(newnode->starttime < prev->endtime) //don't save epg with same starttime
+		{
+			struct epg *tmp = prev->prev;
+			addoldentryepg(chnode, prev, 1);
+			prev = tmp;
+		}
+		//check if new epg overlaps next epg
+		while(node != NULL && newnode->endtime > node->starttime)
+		{
+			struct epg *tmp = node;
+			node = node->next;
+			addoldentryepg(chnode, tmp, 1);
 		}
 	}
 
