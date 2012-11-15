@@ -739,27 +739,18 @@ void dvbgetpmtthread()
 		status.aktservice->channel->videocodec = -1;
 		status.aktservice->channel->pmtpid = pmtpid;
 		dvbgetinfo(pmtbuf, status.aktservice->channel);
-		free(status.aktservice->pmtbuf);
-		status.aktservice->pmtbuf = pmtbuf;
-		status.aktservice->pmtlen = len;
-		change = 1;
 
 		debug(200, "pmt dynamic change oldapid=%d apid=%d oldvpid=%d vpid=%d\n", audiopid, status.aktservice->channel->audiopid, videopid, status.aktservice->channel->videopid);
 
 		if(status.aktservice->channel->audiopid != audiopid || status.aktservice->channel->videopid != videopid)
-		{
-			audiostop(status.aktservice->audiodev);
-			videostop(status.aktservice->videodev, 0);
-			dmxsetpesfilter(status.aktservice->dmxaudiodev, status.aktservice->channel->audiopid, -1, DMX_OUT_DECODER, DMX_PES_AUDIO, 0);
-			dmxsetpesfilter(status.aktservice->dmxvideodev, status.aktservice->channel->videopid, -1, DMX_OUT_DECODER, DMX_PES_VIDEO, 0);
-			//dmxsetpesfilter(status.aktservice->dmxpcrdev, status.aktservice->channel->pcrpid, -1, DMX_OUT_DECODER, DMX_PES_PCR, 0);
-			audioplay(status.aktservice->audiodev);
-			videoplay(status.aktservice->videodev);
-		}
+			change = 1;
 	}
 
 	m_unlock(&status.servicemutex, 2);
-	if(change == 0) free(pmtbuf);
+	free(pmtbuf);
+
+	if(change == 1)
+		servicestart(status.aktservice->channel, NULL, NULL, 3);
 }
 
 time_t dvbconvertdate(unsigned char *buf, int flag)

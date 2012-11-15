@@ -1,6 +1,8 @@
 #ifndef EPG_H
 #define EPG_H
 
+struct epg* addoldentryepg(struct channel* chnode, struct epg* newnode, int flag);
+
 void debugepg()
 {
 	struct channel* chnode = channel;
@@ -860,14 +862,7 @@ struct epg* addoldentryepg(struct channel* chnode, struct epg* newnode, int flag
 
 	if(flag == 0) m_lock(&status.epgmutex, 4);
 
-	free(newnode->title);
-	newnode->title = NULL;
-	free(newnode->subtitle);
-	newnode->subtitle = NULL;
-	free(newnode->desc);
-	newnode->desc = NULL;
-	newnode->desclen = 0;
-	newnode->desccomplen = 0;
+	clearepgentry(newnode);
 
 	if(newnode == chnode->epg)
 	{
@@ -949,19 +944,30 @@ struct epg* addepg(struct channel* chnode, int eventid, int version, time_t star
 			return NULL;
 		}
 		*/
-		//check if new epg overlapps prev epg
-		if(newnode->starttime < prev->endtime)
-		{
-			struct epg *tmp = prev->prev;
-			addoldentryepg(chnode, prev, 1);
-			prev = tmp;
-		}
 		//check if new epg overlaps next epg
 		while(node != NULL && newnode->endtime > node->starttime)
 		{
 			struct epg *tmp = node;
 			node = node->next;
 			addoldentryepg(chnode, tmp, 1);
+		}
+		//check if new epg overlapps prev epg
+		if(newnode->starttime < prev->endtime)
+		{
+			//struct epg *tmp = prev->prev;
+			//addoldentryepg(chnode, prev, 1);
+			//prev = tmp;
+
+			clearepgentry(prev);
+			prev->eventid = eventid;
+			prev->version = version;
+			prev->starttime = starttime;
+			prev->endtime = endtime;
+			prev->parentalrating = 0;
+
+			free(newnode); newnode == NULL;
+			if(flag == 0) m_unlock(&status.epgmutex, 4);
+			return prev;
 		}
 	}
 
@@ -990,17 +996,26 @@ void deloldentryepg(struct epg* node)
 		return;
 	}
 
+	clearepgentry(node);
+
+	free(node);
+	node = NULL;
+
+	debug(1000, "out");
+}
+
+void clearepgentry(struct epg* node)
+{
+	if(node == NULL) return;
+
 	free(node->title);
 	node->title = NULL;
 	free(node->subtitle);
 	node->subtitle = NULL;
 	free(node->desc);
 	node->desc = NULL;
-
-	free(node);
-	node = NULL;
-
-	debug(1000, "out");
+	node->desclen = 0;
+	node->desccomplen = 0;
 }
 
 //flag 0: lock
@@ -1036,12 +1051,7 @@ void delepg(struct channel* chnode, struct epg* epgnode, int flag)
 					prev->next->prev = prev;
 			}
 
-			free(node->title);
-			node->title = NULL;
-			free(node->subtitle);
-			node->subtitle = NULL;
-			free(node->desc);
-			node->desc = NULL;
+			clearepgentry(node);
 
 			free(node);
 			node = NULL;
