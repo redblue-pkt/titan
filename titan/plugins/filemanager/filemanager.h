@@ -26,9 +26,9 @@ void filemanagerrename(int aktfilelist, struct skin* filelist1, struct skin* fil
 		{
 			file1 = createpath(filelistpath1->text, filelist1->select->text);
 			tmpstr = createpath(filelistpath1->text, search);
-		{
-		else
 		}
+		else
+		{
 			file1 = createpath(filelistpath2->text, filelist2->select->text);
 			tmpstr = createpath(filelistpath2->text, search);
 		}
