@@ -188,7 +188,7 @@ void screenfilemanager()
 
 			if(rcret == getrcconfigint("rcblue", NULL))
 			{
-				char* search = textinputhist("Search", " ", "searchhist");
+				char* search = textinputhist(_("Create Folder"), " ", "searchhist");
 				if(search != NULL)
 				{
 					if(aktfilelist == 0)
@@ -205,6 +205,49 @@ void screenfilemanager()
 				drawscreen(filemanager1, 0, 1);
 				drawscreen(filemanager2, 0, 0);
 			}
+
+			if(rcret == getrcconfigint("rcmenu", NULL))
+			{
+				if(aktfilelist == 0)
+					tmpstr = ostrcat(filelist1->select->text, NULL, 0, 0);
+				else
+					tmpstr = ostrcat(filelist2->select->text, NULL, 0, 0);
+
+				char* search = textinput("Search", tmpstr);
+				free(tmpstr); tmpstr = NULL;
+
+				if(search != NULL)
+				{
+					if(aktfilelist == 0)
+					{
+						file1 = createpath(filelistpath1->text, filelist1->select->text);					
+						tmpstr = createpath(filelistpath1->text, search);
+					{
+					else
+					}
+						file1 = createpath(filelistpath2->text, filelist2->select->text);
+						tmpstr = createpath(filelistpath2->text, search);
+					}
+
+					if(!file_exist(tmpstr))
+					{
+						cmd = ostrcat(cmd, "mv \"", 1, 0);
+						cmd = ostrcat(cmd, file1, 1, 0);
+						cmd = ostrcat(cmd, "\" \"", 1, 0);
+						cmd = ostrcat(cmd, tmpstr, 1, 0);
+						cmd = ostrcat(cmd, "\"", 1, 0);
+						system(cmd);
+						free(cmd); cmd = NULL;
+					}
+
+					free(tmpstr); tmpstr = NULL;
+				}
+				drawscreen(filemanager, 0, 1);
+				drawscreen(filemanager1, 0, 1);
+				drawscreen(filemanager2, 0, 0);
+			}
+			
+			
 		}
 		else
 			textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
