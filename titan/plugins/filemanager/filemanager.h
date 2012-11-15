@@ -91,7 +91,7 @@ void filemanagermenu(int aktfilelist, struct skin* filelist, struct skin* fileli
 	{
 		if(ostrcmp(mbox->name, "Rename") == 0)
 			filemanagerrename(aktfilelist, filelist1, filelistpath1, filelist2, filelistpath1);
-		else if(ostrcmp(mbox->name, "Rename") == 0)
+		else if(ostrcmp(mbox->name, "Create Folder") == 0)
 			filemanagercreatefolder(aktfilelist, filelist1, filelistpath1, filelist2, filelistpath1);
 
 	}
