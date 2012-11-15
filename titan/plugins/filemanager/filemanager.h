@@ -75,7 +75,6 @@ void filemanagercreatefolder(int aktfilelist, struct skin* filelist1, struct ski
 
 	free(tmpstr); tmpstr = NULL;
 	free(search); search = NULL;
-	}
 }
 			
 void filemanagermenu(int aktfilelist, struct skin* filelist, struct skin* filelist1, struct skin* filelistpath1, struct skin* filelist2, struct skin* filelistpath2)
