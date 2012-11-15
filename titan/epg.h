@@ -940,6 +940,7 @@ struct epg* addepg(struct channel* chnode, int eventid, int version, time_t star
 
  	if(prev != NULL)
 	{
+		/*
 		//don't save epg with same starttime / endtime
 		if(newnode->starttime == prev->starttime && newnode->endtime == prev->endtime)
 		{
@@ -947,8 +948,9 @@ struct epg* addepg(struct channel* chnode, int eventid, int version, time_t star
 			if(flag == 0) m_unlock(&status.epgmutex, 4);
 			return NULL;
 		}
+		*/
 		//check if new epg overlapps prev epg
-		if(newnode->starttime < prev->endtime) //don't save epg with same starttime
+		if(newnode->starttime < prev->endtime)
 		{
 			struct epg *tmp = prev->prev;
 			addoldentryepg(chnode, prev, 1);
