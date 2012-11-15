@@ -10,15 +10,15 @@
 
 <screen name="filemanager" fontcol="fontcol" bgcol="black" posx="left" posy="top" width="100%" height="100%" hspace="30" vspace="30">
 <node name="titletext" text="FILELIST MANAGER" fontcol="black" fontsize="36" posx="0" posy="0" width="100%" height="50" valign="middle" halign="center" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
-<node name="b5" picmem="skin/key_fr_70x40.png" valign="middle" posx="40"   posy="5" width="70" height="40">
-<node name="b6" picmem="skin/key_ff_70x40.png" valign="middle" posx="1100" posy="5" width="70" height="40">
+<node name="b1" picmem="skin/key_fr_70x40.png" valign="middle" posx="40"   posy="5" width="70" height="40">
+<node name="b2" picmem="skin/key_ff_70x40.png" valign="middle" posx="1100" posy="5" width="70" height="40">
 <node name="buttonbar" posx="0" posy="600" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
-<node name="b7" picmem="skin/key_ok_70x40.png"   posx="50"  posy="605" width="70" height="40">
-<node name="b8" picmem="skin/key_exit_70x40.png" posx="125" posy="605" width="70" height="40">
-<node name="b1" text="Delete" picmem="skin/key_red_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="205" posy="610" width="180" height="30">
-<node name="b2" text="Copy" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="395" posy="610" width="200" height="30">
-<node name="b3" text="Moven"  picmem="skin/key_yellow_30x30.png"  textposx="40" valign="middle" fontcol="black" fontsize="25" posx="580" posy="610" width="200" height="30">
-<node name="b4" text="Create Folder"   picmem="skin/key_blue_30x30.png"    textposx="40" valign="middle" fontcol="black" fontsize="25" posx="785" posy="610" width="250" height="30">
-<node name="b5" text="View"   picmem="skin/key_text_70x40.png"    textposx="40" valign="middle" fontcol="black" fontsize="25" posx="985" posy="610" width="200" height="30">
+<node name="b3" picmem="skin/key_ok_70x40.png"   posx="50"  posy="605" width="70" height="40">
+<node name="b4" picmem="skin/key_exit_70x40.png" posx="125" posy="605" width="70" height="40">
+<node name="b5" text="Delete" picmem="skin/key_red_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="205" posy="610" width="180" height="30">
+<node name="b6" text="Copy" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="395" posy="610" width="200" height="30">
+<node name="b7" text="Moven"  picmem="skin/key_yellow_30x30.png"  textposx="40" valign="middle" fontcol="black" fontsize="25" posx="580" posy="610" width="200" height="30">
+<node name="b8" text="View"   picmem="skin/key_blue_30x30.png"    textposx="40" valign="middle" fontcol="black" fontsize="25" posx="785" posy="610" width="250" height="30">
+<node name="b9" text="MENU"   picmem="skin/key_menu_70x40.png"    textposx="40" valign="middle" fontcol="black" fontsize="25" posx="1050" posy="610" width="200" height="30">
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=middle posx=75% posy=2% width=280 height=30/>
 </screen>
