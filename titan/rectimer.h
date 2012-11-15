@@ -92,7 +92,7 @@ int checkrectimerconflict(struct rectimer* recnode)
 	if(dvbdevsim == NULL) return 0;
 
 	tpnode = gettransponder(recnode->transponderid);
-	dvbnode = fegetfree(tpnode, 0, dvbdevsim);
+	dvbnode = fegetfree(tpnode, 3, dvbdevsim);
 	if(dvbnode != NULL)
 		dvbnode->felock = 1;
 
@@ -102,8 +102,8 @@ int checkrectimerconflict(struct rectimer* recnode)
 		{
 			if((recnode->begin >= node->begin && recnode->begin < node->end) || (recnode->end >= node->begin && recnode->end < node->end))
 			{
-				tpnode = gettransponder(recnode->transponderid);
-				dvbnode = fegetfree(tpnode, 0, dvbdevsim);
+				tpnode = gettransponder(node->transponderid);
+				dvbnode = fegetfree(tpnode, 3, dvbdevsim);
 				if(dvbnode == NULL)
 				{
 					freedvbdev(1);
