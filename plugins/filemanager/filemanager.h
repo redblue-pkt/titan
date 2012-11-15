@@ -1,6 +1,71 @@
 #ifndef FILEMANAGER_H
 #define FILEMANAGER_H
 
+void filemanagerrename(int aktfilelist, struct skin* filelist1, struct skin* filelistpath1, struct skin* filelist2, struct skin* filelistpath2)
+{
+	char* tmpstr = NULL, *file1 = NULL;
+
+	if(filelistpath1 == NULL || filelistpath2 == NULL)
+		return;
+	if(filelist1 == NULL || filelist1->select == NULL)
+		return;
+	if(filelist2 == NULL || filelist2->select == NULL)
+		return;
+
+	if(aktfilelist == 0)
+		tmpstr = ostrcat(filelist1->select->text, NULL, 0, 0);
+	else
+		tmpstr = ostrcat(filelist2->select->text, NULL, 0, 0);
+
+	char* search = textinput(_("Rename"), tmpstr);
+	free(tmpstr); tmpstr = NULL;
+
+	if(search != NULL)
+	{
+		if(aktfilelist == 0)
+		{
+			file1 = createpath(filelistpath1->text, filelist1->select->text);
+			tmpstr = createpath(filelistpath1->text, search);
+		{
+		else
+		}
+			file1 = createpath(filelistpath2->text, filelist2->select->text);
+			tmpstr = createpath(filelistpath2->text, search);
+		}
+
+		if(!file_exist(tmpstr))
+		{
+			cmd = ostrcat(cmd, "mv \"", 1, 0);
+			cmd = ostrcat(cmd, file1, 1, 0);
+			cmd = ostrcat(cmd, "\" \"", 1, 0);
+			cmd = ostrcat(cmd, tmpstr, 1, 0);
+			cmd = ostrcat(cmd, "\"", 1, 0);
+			system(cmd);
+			free(cmd); cmd = NULL;
+		}
+
+		free(tmpstr); tmpstr = NULL;
+		free(search); search = NULL;
+	}
+}
+
+void filemanagermenu(int aktfilelist, struct skin* filelist, struct skin* filelist1, struct skin* filelistpath1, struct skin* filelist2, struct skin* filelistpath2)
+{
+	struct menulist* mlist = NULL, *mbox = NULL;
+	char* skintitle = "Menu";
+
+	addmenulist(&mlist, "Rename", NULL, NULL, 0, 0);
+
+	mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
+	if(mbox != NULL)
+	{
+		if(ostrcmp(mbox->name, "Rename") == 0)
+			filemanagerrename(aktfilelist, filelist1, filelistpath1, filelist2, filelistpath1);
+	}
+
+	freemenulist(mlist, 1); mlist = NULL;
+}
+
 void screenfilemanager()
 {
 	int rcret = 0, aktfilelist = 0, ret = 0;
@@ -200,55 +265,22 @@ void screenfilemanager()
 						mkdir(tmpstr, 0777);
 
 					free(tmpstr); tmpstr = NULL;
+					free(search); search = NULL;
 				}
 				drawscreen(filemanager, 0, 1);
 				drawscreen(filemanager1, 0, 1);
 				drawscreen(filemanager2, 0, 0);
 			}
 
-			// rename dummy
+			//menu
 			if(rcret == getrcconfigint("rcmenu", NULL))
 			{
-				if(aktfilelist == 0)
-					tmpstr = ostrcat(filelist1->select->text, NULL, 0, 0);
-				else
-					tmpstr = ostrcat(filelist2->select->text, NULL, 0, 0);
+				filemanagermenu(aktfilelist, filemanager, filemanager1, filelistpath1, filemanager2, filelistpath2);
 
-				char* search = textinput(_("Rename"), tmpstr);
-				free(tmpstr); tmpstr = NULL;
-
-				if(search != NULL)
-				{
-					if(aktfilelist == 0)
-					{
-						file1 = createpath(filelistpath1->text, filelist1->select->text);					
-						tmpstr = createpath(filelistpath1->text, search);
-					{
-					else
-					}
-						file1 = createpath(filelistpath2->text, filelist2->select->text);
-						tmpstr = createpath(filelistpath2->text, search);
-					}
-
-					if(!file_exist(tmpstr))
-					{
-						cmd = ostrcat(cmd, "mv \"", 1, 0);
-						cmd = ostrcat(cmd, file1, 1, 0);
-						cmd = ostrcat(cmd, "\" \"", 1, 0);
-						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						cmd = ostrcat(cmd, "\"", 1, 0);
-						system(cmd);
-						free(cmd); cmd = NULL;
-					}
-
-					free(tmpstr); tmpstr = NULL;
-				}
 				drawscreen(filemanager, 0, 1);
 				drawscreen(filemanager1, 0, 1);
 				drawscreen(filemanager2, 0, 0);
 			}
-			
-			
 		}
 		else
 			textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
