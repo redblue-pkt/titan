@@ -281,6 +281,7 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 	char* skintitle = "Menu";
 
 	addmenulist(&mlist, "Video Settings", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "AV Settings", NULL, NULL, 0, 0);
 	//add plugins
 	while(child != NULL)
 	{
@@ -297,6 +298,8 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 	{
 		if(ostrcmp(mbox->name, "Video Settings") == 0)
 			screenvideosettings();
+		if(ostrcmp(mbox->name, "AV Settings") == 0)
+			screenavsettings(0);
 		else
 		{
 			pluginnode = getplugin(mbox->name);
