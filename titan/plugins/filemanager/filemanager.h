@@ -206,6 +206,7 @@ void screenfilemanager()
 				drawscreen(filemanager2, 0, 0);
 			}
 
+			// rename dummy
 			if(rcret == getrcconfigint("rcmenu", NULL))
 			{
 				if(aktfilelist == 0)
@@ -213,7 +214,7 @@ void screenfilemanager()
 				else
 					tmpstr = ostrcat(filelist2->select->text, NULL, 0, 0);
 
-				char* search = textinput("Search", tmpstr);
+				char* search = textinput(_("Rename"), tmpstr);
 				free(tmpstr); tmpstr = NULL;
 
 				if(search != NULL)
