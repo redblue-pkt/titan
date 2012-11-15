@@ -25,6 +25,8 @@ void debugservice()
 
 void serviceresetchannelinfo(struct channel* chnode)
 {
+	if(chnode == NULL) return;
+
 	freeaudiotrack(chnode);
 	freesubtitle(chnode);
 	freelinkedchannel(chnode);
