@@ -49,18 +49,51 @@ void filemanagerrename(int aktfilelist, struct skin* filelist1, struct skin* fil
 	}
 }
 
+void filemanagercreatefolder(int aktfilelist, struct skin* filelist1, struct skin* filelistpath1, struct skin* filelist2, struct skin* filelistpath2)
+{
+	char* tmpstr = NULL, *file1 = NULL;
+
+	if(filelistpath1 == NULL || filelistpath2 == NULL)
+		return;
+	if(filelist1 == NULL || filelist1->select == NULL)
+		return;
+	if(filelist2 == NULL || filelist2->select == NULL)
+		return;
+
+	char* search = textinputhist(_("Create Folder"), " ", "searchhist");
+	if(search != NULL)
+	{
+		if(aktfilelist == 0)
+			tmpstr = createpath(filelistpath1->text, search);
+		else
+			tmpstr = createpath(filelistpath2->text, search);
+
+		if(!file_exist(tmpstr))
+			mkdir(tmpstr, 0777);
+
+	}
+
+	free(tmpstr); tmpstr = NULL;
+	free(search); search = NULL;
+	}
+}
+			
 void filemanagermenu(int aktfilelist, struct skin* filelist, struct skin* filelist1, struct skin* filelistpath1, struct skin* filelist2, struct skin* filelistpath2)
 {
 	struct menulist* mlist = NULL, *mbox = NULL;
 	char* skintitle = "Menu";
 
 	addmenulist(&mlist, "Rename", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Create Folder", NULL, NULL, 0, 0);
 
 	mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
 	if(mbox != NULL)
 	{
 		if(ostrcmp(mbox->name, "Rename") == 0)
 			filemanagerrename(aktfilelist, filelist1, filelistpath1, filelist2, filelistpath1);
+		else if(ostrcmp(mbox->name, "Rename") == 0)
+			filemanagercreatefolder(aktfilelist, filelist1, filelistpath1, filelist2, filelistpath1);
+
 	}
 
 	freemenulist(mlist, 1); mlist = NULL;
@@ -220,7 +253,7 @@ void screenfilemanager()
 				drawscreen(filemanager2, 0, 0);
 			}
 			
-			if(rcret == getrcconfigint("rctext", NULL) && tmpfilelist->select != NULL && ostrcmp(tmpfilelist->select->text, "..") != 0) //view
+			if(rcret == getrcconfigint("rcblue", NULL) && tmpfilelist->select != NULL && ostrcmp(tmpfilelist->select->text, "..") != 0) //view
 			{
 				if(aktfilelist == 0)
 					file1 = createpath(filelistpath1->text, filelist1->select->text);
@@ -249,27 +282,6 @@ void screenfilemanager()
 					drawscreen(filemanager2, 0, 0);
 				}
 				free(file1); file1 = NULL;
-			}
-
-			if(rcret == getrcconfigint("rcblue", NULL))
-			{
-				char* search = textinputhist(_("Create Folder"), " ", "searchhist");
-				if(search != NULL)
-				{
-					if(aktfilelist == 0)
-						tmpstr = createpath(filelistpath1->text, search);
-					else
-						tmpstr = createpath(filelistpath2->text, search);
-
-					if(!file_exist(tmpstr))
-						mkdir(tmpstr, 0777);
-
-					free(tmpstr); tmpstr = NULL;
-					free(search); search = NULL;
-				}
-				drawscreen(filemanager, 0, 1);
-				drawscreen(filemanager1, 0, 1);
-				drawscreen(filemanager2, 0, 0);
 			}
 
 			//menu
