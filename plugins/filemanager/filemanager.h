@@ -3,7 +3,7 @@
 
 void filemanagerrename(int aktfilelist, struct skin* filelist1, struct skin* filelistpath1, struct skin* filelist2, struct skin* filelistpath2)
 {
-	char* tmpstr = NULL, *file1 = NULL;
+	char* tmpstr = NULL, *file1 = NULL, *cmd = NULL;
 
 	if(filelistpath1 == NULL || filelistpath2 == NULL)
 		return;
