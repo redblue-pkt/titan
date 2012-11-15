@@ -168,6 +168,7 @@ struct dvbdev* fegetdummy()
 //flag 0 = normal
 //flag 1 = check only
 //flag 2 = from record
+//flag 2 = from rectimer
 struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dvbfirst)
 {
 	debug(1000, "in");
@@ -249,7 +250,10 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 				if(orbitalpos == tpnode->orbitalpos)
 				{
 					fegetconfig(dvbnode, tpnode, &aktnr, tmpnr);
-					band = calclof(dvbnode, tpnode, aktnr, 1);
+					if(flag == 3)
+						band = calclof(dvbnode, tpnode, aktnr, 0);
+					else
+						band = calclof(dvbnode, tpnode, aktnr, 1);
 					if(tmpdvbnode != NULL && tmpdvbnode->feaktband != band && (tmpdvbnode->felock != 0 || (flag == 2 && tmpdvbnode->felock == 0)))
 					{
 						free(tmpnr); tmpnr = NULL;
@@ -331,7 +335,10 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 				if(orbitalpos == tpnode->orbitalpos)
 				{ 
 					fegetconfig(tmpdvbnode, tpnode, &aktnr, tmpnr);
-					band = calclof(dvbnode, tpnode, aktnr, 1);
+					if(flag == 3)
+						band = calclof(dvbnode, tpnode, aktnr, 0);
+					else
+						band = calclof(dvbnode, tpnode, aktnr, 1);
 					if(tmpdvbnode != NULL && tmpdvbnode->feaktband != band && (tmpdvbnode->felock != 0 || (flag == 2 && tmpdvbnode->felock == 0)))
 					{
 						free(tmpnr); tmpnr = NULL;
