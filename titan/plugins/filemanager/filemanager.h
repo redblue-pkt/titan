@@ -6,17 +6,28 @@ void filemanagerrename(int aktfilelist, struct skin* filelist1, struct skin* fil
 	char* tmpstr = NULL, *file1 = NULL, *cmd = NULL;
 
 	if(filelistpath1 == NULL || filelistpath2 == NULL)
+	{
+		printf("1111\n");
 		return;
+	}
 	if(filelist1 == NULL || filelist1->select == NULL)
+	{
+		printf("2222\n");
 		return;
+	}
 	if(filelist2 == NULL || filelist2->select == NULL)
+	{
+		printf("3333\n");
 		return;
+	}
 
 	if(aktfilelist == 0)
 		tmpstr = ostrcat(filelist1->select->text, NULL, 0, 0);
 	else
 		tmpstr = ostrcat(filelist2->select->text, NULL, 0, 0);
 
+	printf("4444\n");
+		
 	char* search = textinput(_("Rename"), tmpstr);
 	free(tmpstr); tmpstr = NULL;
 
@@ -54,11 +65,20 @@ void filemanagercreatefolder(int aktfilelist, struct skin* filelist1, struct ski
 	char* tmpstr = NULL;
 
 	if(filelistpath1 == NULL || filelistpath2 == NULL)
+	{
+		printf("1111\n");
 		return;
+	}
 	if(filelist1 == NULL || filelist1->select == NULL)
+	{
+		printf("2222\n");
 		return;
+	}
 	if(filelist2 == NULL || filelist2->select == NULL)
+	{
+		printf("3333\n");
 		return;
+	}
 
 	char* search = textinputhist(_("Create Folder"), " ", "searchhist");
 	if(search != NULL)
