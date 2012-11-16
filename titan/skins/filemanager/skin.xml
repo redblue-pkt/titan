@@ -19,6 +19,6 @@
 <node name="b6" text="Copy" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="395" posy="610" width="200" height="30">
 <node name="b7" text="Moven"  picmem="skin/key_yellow_30x30.png"  textposx="40" valign="middle" fontcol="black" fontsize="25" posx="580" posy="610" width="200" height="30">
 <node name="b8" text="View"   picmem="skin/key_blue_30x30.png"    textposx="40" valign="middle" fontcol="black" fontsize="25" posx="785" posy="610" width="250" height="30">
-<node name="b9" text="MENU"   picmem="skin/key_menu_70x40.png"    textposx="40" valign="middle" fontcol="black" fontsize="25" posx="1050" posy="610" width="200" height="30">
+<node name="b9" picmem="skin/key_menu_70x40.png"    textposx="40" valign="middle" fontcol="black" fontsize="25" posx="970" posy="610" width="200" height="30">
 <node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=middle posx=75% posy=2% width=280 height=30/>
 </screen>
