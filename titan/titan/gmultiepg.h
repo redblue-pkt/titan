@@ -627,7 +627,10 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		//if(rcret == getrcconfigint("rcinfo", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
-			servicecheckret(servicestart((struct channel*)listbox->select->handle, NULL, NULL, 0), 0);
+			if(status.servicetype == 0)
+				servicecheckret(servicestart((struct channel*)listbox->select->handle, getconfig("channellist", NULL), NULL, 0), 0);
+			else
+				servicecheckret(servicestart((struct channel*)listbox->select->handle, getconfig("rchannellist", NULL), NULL, 0), 0);
 			break;
 		}
 		if(rcret == getrcconfigint("rcinfo", NULL))
