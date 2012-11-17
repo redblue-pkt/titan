@@ -1431,6 +1431,8 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 	free(tmpstr); tmpstr = NULL;
 	freemediadbcategory(0);
 
+	textbox(_("Message"), _("MediaDB scan finished"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+
 	status.mediadbthread = NULL;
 	status.mediadbthreadstatus = 0;
 	debug(777, "mediadb scanthread end");
