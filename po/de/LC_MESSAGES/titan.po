@@ -2681,4 +2681,5 @@ msgstr "Überspringe Private CA descriptor"
 msgid "Rename"
 msgstr "Umbenennen"
 
-
+msgid "MediaDB scan finished"
+msgstr "MediaDB Suche beendet"
