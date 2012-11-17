@@ -61,6 +61,8 @@ void screensystem_info(int mode)
 	}
 	else if(mode == 1)
 	{
+		changetitle(systeminfo, _("Infos"));
+
 		if(isfile("/etc/model")	== 0) return;
 		char* boxversion = string_tolower(readsys("/etc/model", 1));
 		char* path = NULL;
@@ -75,7 +77,9 @@ void screensystem_info(int mode)
 		changetext(info, out);
 	}
 	else if(mode == 2)
-	{	
+	{
+		changetitle(systeminfo, _("Infos"));
+
 		char* path = NULL;
 		char* out = NULL;
 		path = ostrcat(path, "/svn/image-beta/changelog.git", 1, 0);
