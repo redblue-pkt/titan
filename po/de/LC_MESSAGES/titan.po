@@ -2677,3 +2677,8 @@ msgstr "Diese Datei kann nicht angezeigt werden"
 
 msgid "Skip privat CA descriptor"
 msgstr "Überspringe Private CA descriptor"
+
+msgid "Rename"
+msgstr "Umbenennen"
+
+
