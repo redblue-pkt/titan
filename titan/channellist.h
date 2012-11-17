@@ -1698,12 +1698,12 @@ start:
 			if(status.servicetype == 0)
 			{
 				status.servicetype = 1;
-				changetext(b7, _("TV"));
+				changetext(b8, _("TV"));
 			}
 			else
 			{
 				status.servicetype = 0;
-				changetext(b7, _("Radio"));
+				changetext(b8, _("Radio"));
 			}
 			newmodus = 1;
 			break;
