@@ -635,6 +635,11 @@ void savenetworkbrowser(char* filename)
 
 	if(savesettings != NULL)
 	{
+		struct skin* loadmediadb = getscreen("loading");
+		struct skin* blackscreen = getscreen("blackscreen");
+		drawscreen(blackscreen, 0, 0);
+		drawscreen(loadmediadb, 0, 0);	
+
 		writesys("/var/etc/automount/auto.misc", savesettings, 0);
 		system("hotplug.sh first");
 		system("rm -rf /mnt/automount ; mkdir /mnt/automount; cp -a /var/etc/automount/* /mnt/automount");
@@ -933,6 +938,11 @@ start1:
 //flag = 1: start hotplug.sh
 void addhddreplacement(char* sharename, int flag)
 {
+	struct skin* loadmediadb = getscreen("loading");
+	struct skin* blackscreen = getscreen("blackscreen");
+	drawscreen(blackscreen, 0, 0);
+	drawscreen(loadmediadb, 0, 0);
+
 	char* tmpstr = NULL;
 
 	if(sharename == NULL) return;
@@ -951,6 +961,11 @@ void addhddreplacement(char* sharename, int flag)
 //flag = 1: start hotplug.sh
 void delhddreplacement(int flag)
 {
+	struct skin* loadmediadb = getscreen("loading");
+	struct skin* blackscreen = getscreen("blackscreen");
+	drawscreen(blackscreen, 0, 0);
+	drawscreen(loadmediadb, 0, 0);	
+
 	unlink("/media/hdd");
 	unlink("/var/etc/automount/.recordshare");
 	if(flag == 1) system("/sbin/hotplug.sh first &");
