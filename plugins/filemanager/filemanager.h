@@ -292,6 +292,11 @@ void screenfilemanager()
 			{
 				filemanagermenu(aktfilelist, filelist1, filelistpath1, filelist2, filelistpath2);
 
+				delmarkedscreennodes(filemanager1, FILELISTDELMARK);
+				delmarkedscreennodes(filemanager2, FILELISTDELMARK);
+				createfilelist(filemanager1, filelist1, 0);
+				createfilelist(filemanager2, filelist2, 0);
+					
 				drawscreen(filemanager, 0, 1);
 				drawscreen(filemanager1, 0, 1);
 				drawscreen(filemanager2, 0, 0);
