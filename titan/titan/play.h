@@ -315,6 +315,7 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 
 	freemenulist(mlist, 1); mlist = NULL;
 	drawscreen(skin, 0, 0);
+	resettvpic();
 	if(playinfobarstatus > 0)
 		screenplayinfobar(file, 0, playertype, flag);
 }
