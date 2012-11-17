@@ -2593,12 +2593,39 @@ int setvmpeg(struct dvbdev* node, int posx, int posy, int width, int height)
 int setvmpegrect(struct dvbdev* node, int posx, int posy, int wh, int flag)
 {
 	int ret = 0;
+	int leftoffset = status.leftoffset;
+	int rightoffset = status.rightoffset;
+	int topoffset = status.topoffset;
+	int bottomoffset = status.bottomoffset;
+
+	float rx = (float)fb->width / 720;
+	float ry = (float)fb->height / 576;
+
+	leftoffset = (float)leftoffset / rx;
+	rightoffset = (float)rightoffset / rx;
+	topoffset = (float)topoffset / ry;
+	bottomoffset = (float)bottomoffset / ry;
+
+	rx = (float)720 / (float)(720 - leftoffset - rightoffset);
+	ry = (float)576 / (float)(576 - topoffset - bottomoffset);
+
+	posx = (float)posx / rx;
+	posx += leftoffset;
+
+	posy = (float)posy / ry;
+	posy += topoffset;
 
 	if(flag == 0)
-		ret = setvmpeg(node, posx, posy, wh, wh / 1.2);
+	{
+		wh = ((float)wh / rx);
+		ret = setvmpeg(node, posx, posy, wh, (int)((float)wh / 1.2));
+	}
 
 	if(flag == 1)
-		ret = setvmpeg(node, posx, posy, wh * 1.2, wh);
+	{
+		wh = ((float)wh / ry);
+		ret = setvmpeg(node, posx, posy, (int)((float)wh * 1.2), wh);
+	}
 
 	return ret;
 }
