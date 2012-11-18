@@ -575,6 +575,7 @@ void screennetwork_wlan()
 	struct skin* b4 = getscreennode(wlan, "b4");
 	struct skin* b5 = getscreennode(wlan, "b5");
 	struct skin* b6 = getscreennode(wlan, "b6");
+	struct skin* b7 = getscreennode(wlan, "b7");
 	struct skin* load = getscreen("loading");
 	struct inetwork* net = NULL;
 	struct skin* tmp = NULL, *tmp1 = NULL, *tmp2 = NULL;
@@ -626,6 +627,7 @@ void screennetwork_wlan()
 				b4->hidden = NO;
 				b5->hidden = NO;
 				b6->hidden = NO;
+				b7->hidden = NO;
 				listbox->select = NULL;
 				listbox->aktline = 1;
 				listbox->aktpage = -1;
@@ -659,6 +661,7 @@ void screennetwork_wlan()
 				b4->hidden = NO;
 				b5->hidden = NO;
 				b6->hidden = NO;
+				b7->hidden = NO;
 				listbox->select = NULL;
 				listbox->aktline = 1;
 				listbox->aktpage = -1;
@@ -717,6 +720,7 @@ void screennetwork_wlan()
 			b4->hidden = YES;
 			b5->hidden = YES;
 			b6->hidden = YES;
+			b7->hidden = YES;
 			listbox->select = NULL;
 			listbox->aktline = 1;
 			listbox->aktpage = -1;
