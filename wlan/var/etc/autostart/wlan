@@ -25,12 +25,10 @@ if [ ! -z $WLAN_STARTMODE ] && [ $WLAN_STARTMODE == "load" ]; then
 			VID=`echo $i | cut -d':' -f1`
 			PID=`echo $i | cut -d':' -f2`
 			WLAN_MODULE=
-			for j in `cat /etc/Wireless/wlan.usbmap`; do
-				if [ `echo $j | awk {'print $3'}` == 0x$VID ] && [ `echo $j | awk {'print $4'}` == 0x$PID ]; then
-					WLAN_MODULE=`echo $j | awk {'print $1'}`
-					break
-				fi
-			done
+			j=`cat /etc/Wireless/wlan.usbmap | grep -w 0x$VID | grep -w 0x$PID`
+			if [ ! -z "$j" ]; then
+				WLAN_MODULE=`echo $j | awk {'print $1'}`
+			fi
 			[ ! -z $WLAN_MODULE ] && break
 		done
 		[ ! -z $WLAN_MODULE ] && echo $WLAN_MODULE $VID $PID > /etc/Wireless/wlan_module || rm -f /etc/Wireless/wlan_module
