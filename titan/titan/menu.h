@@ -663,6 +663,11 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screensystem_infos_sysinfo(7);
 	}
+	else if(ostrcmp("system_sysinfos_usb", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensystem_infos_sysinfo(8);
+	}
 	else if(ostrcmp("infos_serial", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
