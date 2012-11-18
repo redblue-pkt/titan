@@ -123,6 +123,16 @@ void screensystem_infos_sysinfo(int mode)
 		free(tmpstr); tmpstr = NULL;
 	}
 
+	if(mode == 8)
+	{
+		changetitle(system_info, _("USB Info"));
+
+		tmpstr = command("cat /proc/bus/usb/devices");
+		changetext(info, tmpstr);
+
+		free(tmpstr); tmpstr = NULL;
+	}
+
 	drawscreen(system_info, 0, 0);
 
 	while(1)
