@@ -78,7 +78,13 @@ char* putlocker(char* host, char* file)
 	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/get", NULL, NULL, 0, send, NULL, 1);
 	sleep(1);
 	free(send); send = NULL;
-
+	
+	if(!file_exist("/tmp/tithek/get"))
+	{
+		textbox(_("Message"), _("This file doesn't exist, or has been removed") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+		
 	char* header = NULL;
 	header = command("cat /tmp/tithek/get");
 	

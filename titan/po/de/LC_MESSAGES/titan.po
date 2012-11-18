@@ -2683,3 +2683,6 @@ msgstr "Umbenennen"
 
 msgid "MediaDB scan finished"
 msgstr "MediaDB Suche beendet"
+
+msgid "This file doesn't exist, or has been removed"
+msgstr "Dieser Stream ist zur zeit nicht verfügbar oder entfernt worden"
