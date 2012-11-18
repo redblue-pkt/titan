@@ -39,7 +39,6 @@ unsigned char* putlockereceive(int* sock)
 char* putlocker(char* host, char* file)
 {
 	debug(99, "in host: %s file: %s", host, file);
-	int sock = -1, ret = 0;
 	char* tmphost = NULL;
 	char* tmpfile = NULL;
 	char* tmpstr = NULL;
@@ -50,6 +49,10 @@ char* putlocker(char* host, char* file)
 	char* ip = NULL;
 	char* phpsessid = NULL;
 	char* serverid = NULL;
+	char* usender = NULL;
+	char* line = NULL;
+	char* lines = NULL;	
+	char* cmd = NULL;
 	char* streamlink = NULL;
 	char* streamlink1 = NULL;
 
@@ -61,7 +64,54 @@ char* putlocker(char* host, char* file)
 	ip = get_ip(tmphost);
 	debug(99, "ip: %s", ip);
 	debug(99, "tmpfile: %s", tmpfile);
-	tmpstr = gethttp(tmphost, tmpfile, 80, NULL, NULL, NULL, 0);
+
+	send = ostrcat(send, "GET /file/", 1, 0);
+	send = ostrcat(send, file, 1, 0);
+	send = ostrcat(send, " HTTP/1.1\r\nHost: www.", 1, 0);	
+	send = ostrcat(send, host, 1, 0);
+	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);	
+	
+	debug(99, "tmphost: %s", tmphost);
+	debug(99, "tmpfile: %s", tmpfile);
+	debug(99, "send: %s", send);
+
+	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/get", NULL, NULL, 0, send, NULL, 1);
+	sleep(1);
+	free(send); send = NULL;
+
+	char* header = NULL;
+	header = command("cat /tmp/tithek/get");
+	
+	phpsessid = getxmlentry(header, "PHPSESSID=");
+	debug(99, "phpsessid: %s", phpsessid);
+	serverid = getxmlentry(header, "SERVERID=");
+	debug(99, "serverid: %s", serverid);
+	usender = getxmlentry(header, "usender=");
+	debug(99, "usender: %s", usender);
+	free(header), header = NULL;
+
+	line = string_newline(command("cat /tmp/tithek/get | grep 'Set-Cookie:' -n | tail -n1| cut -d':' -f1"));
+	cmd = ostrcat(cmd, "cat /tmp/tithek/get | wc -l", 1, 0);
+	lines = string_newline(command(cmd));
+	free(cmd); cmd = NULL;
+	debug(99, "line: %s", line);
+	debug(99, "lines: %s", lines);
+
+	if(lines == NULL || line == NULL) goto end;	
+	
+	int sline = atoi(lines) - atoi(line) - 1;
+	debug(99, "sline: %d", sline);
+	debug(99, "sline: %s", oitoa(sline));
+
+	cmd = ostrcat(cmd, "cat /tmp/tithek/get | tail -n", 1, 0);
+	cmd = ostrcat(cmd, oitoa(sline), 1, 0);
+	cmd = ostrcat(cmd, " | sed '1,1d' | zcat", 1, 0);
+	debug(99, "cmd: %s", cmd);	
+	tmpstr = command(cmd);
+	free(cmd); cmd = NULL;
+	free(lines); lines = NULL;
+	
+//	writesys("/var/usr/local/share/titan/plugins/tithek/tmpstr", tmpstr, 0);
 
 	//get hash from tmpstr
 	char* pos = ostrstr(tmpstr, "<input type=\"hidden\" value=");
@@ -85,43 +135,15 @@ char* putlocker(char* host, char* file)
 	send = ostrcat(send, " HTTP/1.1\r\nContent-Length: ", 1, 0);
 	send = ostrcat(send, hashlen, 1, 0);
 	send = ostrcat(send, "\r\nAccept-Encoding: gzip\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nHost: www.", 1, 0);
-
 	send = ostrcat(send, host, 1, 0);
-	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);
-	send = ostrcat(send, hash, 1, 0);
-	debug(99, "send: %s", send);
-
-	//send and receive answer
-	ret = sockportopen(&sock, ip, 80, 5000 * 1000);
-        if(ret != 0) goto end;
-	ret = socksend(&sock, (unsigned char*)send, strlen(send), 5000 * 1000);
-        if(ret != 0) goto end;
-	free(send); send = NULL;
-	tmpstr = (char*)putlockereceive(&sock);
-	debug(99, "tmpstr: %s", tmpstr);
-
-	sockclose(&sock);
-	sleep(1);
-
-	//get phpsessid and servierid
-	phpsessid = getxmlentry(tmpstr, "PHPSESSID=");
-	serverid = getxmlentry(tmpstr, "SERVERID=");
-	free(tmpstr); tmpstr = NULL;
-	
-// move we need error msg later
-//	if(phpsessid == NULL || serverid == NULL) goto end;
-	if(strlen(phpsessid) > 0) phpsessid[strlen(phpsessid) - 1] = '\0';
-
-	//create send string
-	send = ostrcat(send, "GET /file/", 1, 0);
-	send = ostrcat(send, file, 1, 0);
-	send = ostrcat(send, " HTTP/1.1\r\nHost: www.", 1, 0);
-	send = ostrcat(send, host, 1, 0);
-	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nCookie: SERVERID=", 1, 0);
+	send = ostrcat(send, "\r\nCookie: usender=", 1, 0);
+	send = ostrcat(send, usender, 1, 0);
+	send = ostrcat(send, " SERVERID=", 1, 0);
 	send = ostrcat(send, serverid, 1, 0);
 	send = ostrcat(send, " PHPSESSID=", 1, 0);
 	send = ostrcat(send, phpsessid, 1, 0);
-	send = ostrcat(send, "\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);
+	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);
+	send = ostrcat(send, hash, 1, 0);
 	debug(99, "send: %s", send);
 
 	//send and receive answer
@@ -184,8 +206,8 @@ end:
 	free(ip); ip = NULL;
 	free(phpsessid); phpsessid = NULL;
 	free(serverid); serverid = NULL;
+	free(usender); usender = NULL;
 	free(streamlink); streamlink = NULL;
-	sockclose(&sock);
 
 	return streamlink1;
 }
