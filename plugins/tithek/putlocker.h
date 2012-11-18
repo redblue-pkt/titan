@@ -76,7 +76,7 @@ char* putlocker(char* host, char* file)
 	debug(99, "send: %s", send);
 
 	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/get", NULL, NULL, 0, send, NULL, 1);
-	sleep(1);
+	sleep(5);
 	free(send); send = NULL;
 	
 	if(!file_exist("/tmp/tithek/get"))
@@ -166,7 +166,7 @@ char* putlocker(char* host, char* file)
 	}
 	if(phpsessid == NULL || serverid == NULL) goto end;			
 
-	sleep(1);
+	sleep(5);
 
 	//get streamlink
 	if(ostrstr(tmpstr, "playlist:") != NULL)
