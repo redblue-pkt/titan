@@ -76,7 +76,7 @@ char* putlocker(char* host, char* file)
 	debug(99, "send: %s", send);
 
 	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/get", NULL, NULL, 0, send, NULL, 1);
-	sleep(5);
+	sleep(1);
 	free(send); send = NULL;
 	
 	if(!file_exist("/tmp/tithek/get"))
@@ -116,8 +116,6 @@ char* putlocker(char* host, char* file)
 	tmpstr = command(cmd);
 	free(cmd); cmd = NULL;
 	free(lines); lines = NULL;
-	
-//	writesys("/var/usr/local/share/titan/plugins/tithek/tmpstr", tmpstr, 0);
 
 	//get hash from tmpstr
 	char* pos = ostrstr(tmpstr, "<input type=\"hidden\" value=");
@@ -134,7 +132,6 @@ char* putlocker(char* host, char* file)
 	hashlen = oitoa(strlen(hash));
 	debug(99, "hashlen: %s", hashlen);
 
-	sleep(1);
 	//create send string
 	send = ostrcat(send, "POST /file/", 1, 0);
 	send = ostrcat(send, file, 1, 0);
@@ -152,9 +149,11 @@ char* putlocker(char* host, char* file)
 	send = ostrcat(send, hash, 1, 0);
 	debug(99, "send: %s", send);
 
+	sleep(7);
 	//send and receive answer
 	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/x9", NULL, NULL, 0, send, NULL, 0);
 	sleep(1);
+
 	free(send); send = NULL;
 	tmpstr = command("cat /tmp/tithek/x9 | sed '1,1d' | zcat");
 	
@@ -165,8 +164,6 @@ char* putlocker(char* host, char* file)
 		goto end;
 	}
 	if(phpsessid == NULL || serverid == NULL) goto end;			
-
-	sleep(5);
 
 	//get streamlink
 	if(ostrstr(tmpstr, "playlist:") != NULL)
@@ -202,7 +199,7 @@ char* putlocker(char* host, char* file)
 	send = ostrcat(send, phpsessid, 1, 0);
 	send = ostrcat(send, "\r\nConnection: close\r\nUser-Agent: Python-urllib/2.6\r\n\r\n", 1, 0);
 
-	sleep(1);
+	sleep(5);
 	
 	//send and receive answer
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 0);
