@@ -264,6 +264,8 @@ void screensoftcam()
 	struct skin* b_yellow = getscreennode(softcam, "b3");
 	struct skin* b_blue = getscreennode(softcam, "b4");
 
+	drawscreen(loading, 0, 0);
+
 	// show labels
 	changetext(menutitle, _("Softcam selection:"));
 	changetext(b_red, _("Deactivate"));
