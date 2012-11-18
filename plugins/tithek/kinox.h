@@ -19,6 +19,9 @@ char* kinox(char* link, char* url, char* name, int flag)
 			video_id = ostrcat(video_id, ret1[1].part, 1, 0);
 			debug(99, "video_id: %s", video_id);
 
+			video_id = stringreplacecharonce(video_id, '!', '#');
+			debug(99, "video_id: %s", video_id);
+
 			source = ostrcat(source, ret1[2].part, 1, 0);
 			debug(99, "source: %s", source);
 
@@ -427,6 +430,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 
 		searchname = ostrcat(searchname, ret0[0].part, 1, 0);
 		searchname = string_replace("http://kinox.to//Stream/", "", searchname, 0);
+		searchname = string_replace("http://kinox.to/Stream/", "", searchname, 0);
 		searchname = string_replace(".html", "", searchname, 0);
 		debug(99, "searchname: %s", searchname);
 	}
@@ -487,6 +491,10 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 					hlink = string_resub("rel=\"", "\">", ret1[i].part, 0);
 					hlink = string_replace_all("amp;", "", hlink, 1);
 					hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
+
+					hlink = string_replace("http://kinox.to//Stream/", "", hlink, 1);					
+					hlink = string_replace("http://kinox.to/Stream/", "", hlink, 1);
+										
 					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
 					debug(99, "pathnew: %s", pathnew);
 	
