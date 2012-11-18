@@ -695,7 +695,10 @@ void screennetwork_wlan()
 				ret = system("wlan.sh");
 				clearscreen(load);
 				if(ret == 0)
+				{
 					textbox(_("Message"), _("WLAN started.\n You can now configure the new interface."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+					screennetwork_restart(NULL, 0);
+				}
 				else
 					textbox(_("Message"), _("WLAN not started,\nPlease check your config."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 				drawscreen(wlan, 0, 0);
