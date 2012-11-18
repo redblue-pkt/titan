@@ -19,9 +19,6 @@ char* kinox(char* link, char* url, char* name, int flag)
 			video_id = ostrcat(video_id, ret1[1].part, 1, 0);
 			debug(99, "video_id: %s", video_id);
 
-			video_id = stringreplacecharonce(video_id, '!', '#');
-			debug(99, "video_id: %s", video_id);
-
 			source = ostrcat(source, ret1[2].part, 1, 0);
 			debug(99, "source: %s", source);
 
