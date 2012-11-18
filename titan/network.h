@@ -784,6 +784,7 @@ void screennetwork_wlan()
 				tmpstr = readfiletomem("/tmp/check_wlan_driver", 0);
 				tmpstr = ostrcat("Found Wlan Stick and driver for: ", tmpstr, 0, 1);
 			}
+			unlink("/tmp/check_wlan_driver");
 			textbox(_("WLAN Info"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 			free(tmpstr); tmpstr = NULL;
 			drawscreen(wlan, 0, 0);
