@@ -163,7 +163,20 @@ char* putlocker(char* host, char* file)
 	sleep(1);
 
 	//get streamlink
-	streamlink = getxmlentry(tmpstr, "playlist: '");
+	if(ostrstr(tmpstr, "playlist:") != NULL)
+		streamlink = getxmlentry(tmpstr, "playlist: '");
+	else
+	{
+		streamlink = string_resub("/get_file.php", "\">Download File</a>", tmpstr, 0);	
+		streamlink1 = ostrcat("http://www.", host, 0, 0);
+		streamlink1 = ostrcat(streamlink1, "/get_file.php", 1, 0);
+		streamlink1 = ostrcat(streamlink1, streamlink, 1, 0);
+		debug(99, "stream downloadlink");
+		goto end;
+	}
+
+	debug(99, "streamlink: %s", streamlink);
+
 	if(streamlink != NULL)
 	{
 		char* pos = strchr(streamlink, '\'');
