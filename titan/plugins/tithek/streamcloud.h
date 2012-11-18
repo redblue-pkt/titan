@@ -91,7 +91,7 @@ char* streamcloud(char* host, char* file)
 	debug(99, "cookie: %s", cookie);
 //newend
  
-	sleep(5);
+	sleep(7);
 
 	//get hash from tmpstr
 	char* pos1 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"fname\" value=");
