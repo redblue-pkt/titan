@@ -40,11 +40,12 @@ struct imdb* getimdb(struct imdb** first, char* title, int flag, int flag1, int 
 	char* pageposter = NULL;
 	
 start:
+	debug(133, "title: %s",title);
 	tmpsearch = ostrcat("find?s=tt;q=", NULL, 0, 0);
 	if(flag == 0)
 		tmpsearch = ostrcat(tmpsearch, title, 1, 0);
 	else
-		tmpsearch = ostrcat(tmpsearch, "/title/tt", 1, 0);
+		tmpsearch = ostrcat("/title/tt", title, 0, 0);
 	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
 
 	tmpstr = gethttp("www.imdb.de", tmpsearch, 80, NULL, NULL, NULL, 0);
@@ -95,11 +96,13 @@ start:
 			char* tmp = tmpstr;
 			tmpstr = string_resub("<p><b>Titel", "</td></tr></table> </p>", tmpstr, 0);
 			free(tmp); tmp = NULL;
+//			writesys("/var/usr/local/share/titan/plugins/imdb/tmpstr", tmpstr, 0);
 			
 			while(ostrstr(tmpstr, "</td><td valign=\"top\"><a href=\"/title/") != NULL)
 			{
 				tmpstr = string_replace("</td><td valign=\"top\"><a href=\"/title/", "\n\n", tmpstr, 1);
 			}
+//			writesys("/var/usr/local/share/titan/plugins/imdb/tmpstr1", tmpstr, 0);
 
 			struct menulist* mlist = NULL, *mbox = NULL;
 			char* tmpstr1 = NULL;
@@ -112,11 +115,41 @@ start:
 			int i = 0;
 			for(i = 0; i < max; i++)
 			{
-				tmpstr1 = string_resub("link=/title", "</a>", (&ret[i])->part, 0);
+//				tmpstr1 = string_resub("link=/title", "</a>", (&ret[i])->part, 0);
+				tmpstr1 = string_resub("link=/title", "</td>", (&ret[i])->part, 0);
+				debug(133, "tmpstr1(%d): %s\n", i, tmpstr1);
+				tmpstr1 = string_replace("</a>", "", tmpstr1, 1);
+				debug(133, "tmpstr1(%d): %s\n", i, tmpstr1);
+	
+				char* x = oregex("/tt([0-9]{7})", tmpstr1);
+				char* y = oregex(";\">(.*)", tmpstr1);
+				if(ostrstr(y, "<img src") == NULL && x != NULL && y != NULL)
+				{
+					debug(133, "x(%d): %s\n", i, x);
+					debug(133, "y(%d): %s\n", i, y);				
+					string_striptags(x);
+					string_striptags(y);
+					string_strip_whitechars(x);
+					string_strip_whitechars(y);
+					debug(133, "x(%d): %s\n", i, x);
+					debug(133, "y(%d): %s\n", i, y);
+					y = string_decode(y, 1);
+					x = string_decode(x, 1);
+					debug(133, "x(%d): %s\n", i, x);
+					debug(133, "y(%d): %s\n", i, y);
+
+					addmenulist(&mlist, y, x, NULL, 0, 0);
+				}
+				free(x), x = NULL;
+				free(y), y = NULL;				
+/*				
+current not working
 				struct regex* x = regexstruct("/tt([0-9]{7})", tmpstr1);
 				struct regex* y = regexstruct(";\">(.*)", tmpstr1);
 				if(x != NULL && y != NULL)
 				{
+					debug(133, "x->match2(%d): %s\n", i, x->match2);
+					debug(133, "y->match2(%d): %s\n", i, y->match2);
 					x->match2 = string_decode(x->match2, 1);
 					y->match2 = string_decode(y->match2, 1);
 					addmenulist(&mlist, y->match2, x->match2, NULL, 0, 0);
@@ -125,7 +158,7 @@ start:
 				}
 				freeregexstruct(x); x = NULL;
 				freeregexstruct(y); y = NULL;
-
+*/
 				free(tmpstr1),tmpstr1 = NULL;				
 			}
 			free(ret); ret = NULL;
@@ -416,6 +449,7 @@ start:
 
 void screenimdb(char* title)
 {
+	debug(133, "title: %s",title);
 	int rcret = 0;
 	struct skin* imdbskin = getscreen("imdb");
 	struct skin* skin_plot = getscreennode(imdbskin, "plot");
@@ -430,10 +464,11 @@ void screenimdb(char* title)
 	struct imdb* node = NULL;
 	char* search = NULL;
 
-	setfbtransparent(255);
+//	setfbtransparent(255);
 	status.hangtime = 99999;
 
 	if(title == NULL) title = getepgakttitle(NULL);
+	debug(133, "title: %s",title);
 
 	drawscreen(load, 0, 0);
 	node = getimdb(&node, title, 0, 0, 0);
@@ -463,23 +498,23 @@ start:
 
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
-		search = textinput("Search", NULL);
-		if(search != NULL)
-		{
-			freeimdb(&node, 0); node = NULL;
-			drawscreen(load, 0, 0);
-			node = getimdb(&node, search, 0, 0, 0);
-			clearscreen(load);
-			free(search); search = NULL;
-			goto start;
-		}
-		drawscreen(imdbskin, 0, 0);
-		continue;
+			search = textinput("Search", NULL);
+			if(search != NULL)
+			{
+				freeimdb(&node, 0); node = NULL;
+				drawscreen(load, 0, 0);
+				node = getimdb(&node, search, 0, 0, 0);
+				clearscreen(load);
+				free(search); search = NULL;
+				goto start;
+			}
+			drawscreen(imdbskin, 0, 0);
+			continue;
 		}
 	}
 
 	freeimdb(&node, 0); node = NULL;
-	setosdtransparent(getskinconfigint("osdtransparent", NULL));
+//	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	status.hangtime = getconfigint("hangtime", NULL);
 	clearscreen(imdbskin);
 }
