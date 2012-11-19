@@ -267,10 +267,108 @@ void playrcok(char* file, int playinfobarstatus, int playertype, int flag)
 		screenplayinfobar(file, 0, playertype, flag);
 }
 
+void id3tag_info()
+{
+	char* tmpstr = NULL;
+	tmpstr = ostrcat(tmpstr, _("Title:"), 1, 0);
+	tmpstr = ostrcat(tmpstr, " ", 1, 0);
+	tmpstr = ostrcat(tmpstr, playergetinfo("Title"), 1, 0);
+	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+	
+	tmpstr = ostrcat(tmpstr, _("Artist:"), 1, 0);
+	tmpstr = ostrcat(tmpstr, " ", 1, 0);
+	tmpstr = ostrcat(tmpstr, playergetinfo("Artist"), 1, 0);
+	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+	
+	tmpstr = ostrcat(tmpstr, _("Album:"), 1, 0);
+	tmpstr = ostrcat(tmpstr, " ", 1, 0);
+	tmpstr = ostrcat(tmpstr, playergetinfo("Album"), 1, 0);
+	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+	
+	tmpstr = ostrcat(tmpstr, _("Year:"), 1, 0);
+	tmpstr = ostrcat(tmpstr, " ", 1, 0);
+	tmpstr = ostrcat(tmpstr, playergetinfo("Year"), 1, 0);
+	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+
+	tmpstr = ostrcat(tmpstr, _("Genre:"), 1, 0);
+	tmpstr = ostrcat(tmpstr, " ", 1, 0);
+	tmpstr = ostrcat(tmpstr, playergetinfo("Genre"), 1, 0);
+	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+	
+	tmpstr = ostrcat(tmpstr, _("Comment:"), 1, 0);
+	tmpstr = ostrcat(tmpstr, " ", 1, 0);
+	tmpstr = ostrcat(tmpstr, playergetinfo("Comment"), 1, 0);
+	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+	
+	tmpstr = ostrcat(tmpstr, _("Track:"), 1, 0);
+	tmpstr = ostrcat(tmpstr, " ", 1, 0);
+	tmpstr = ostrcat(tmpstr, playergetinfo("Track"), 1, 0);
+	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+	
+	tmpstr = ostrcat(tmpstr, _("Copyright:"), 1, 0);
+	tmpstr = ostrcat(tmpstr, " ", 1, 0);
+	tmpstr = ostrcat(tmpstr, playergetinfo("Copyright"), 1, 0);
+	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+	
+	tmpstr = ostrcat(tmpstr, _("TestLibEplayer:"), 1, 0);
+	tmpstr = ostrcat(tmpstr, " ", 1, 0);
+	tmpstr = ostrcat(tmpstr, playergetinfo("TestLibEplayer"), 1, 0);	
+	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+			
+	textbox(_("iD3Tag"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 500, 10, 0);
+	free(tmpstr), tmpstr = NULL;
+}
+
+void imdb_submenu(int mode, char* file)
+{
+	struct skin* pluginnode = NULL;
+	void (*startplugin)(char*);
+	struct skin* plugin = getscreen("plugin");
+	struct skin* child = plugin->child;
+
+	if(mode == 0)
+		pluginnode = getplugin("IMDb");
+	else if(mode == 1)
+		pluginnode = getplugin("IMDb-API");
+	else if(mode == 2)
+		pluginnode = getplugin("TMDb");
+			
+	if(pluginnode != NULL)
+	{			
+		if(mode == 0)
+			startplugin = dlsym(pluginnode->pluginhandle, "screenimdb");
+		else if(mode == 1)
+			startplugin = dlsym(pluginnode->pluginhandle, "screenimdbapi");
+		else if(mode == 2)
+			startplugin = dlsym(pluginnode->pluginhandle, "screentmdb");
+		
+		if(startplugin != NULL)
+		{
+			if(file != NULL)
+			{
+				//create imdb search name
+				debug(133, "inputfile=%s", file);
+				char* shortname = ostrcat(basename(file), NULL, 0, 0);
+				debug(133, "shortname1=%s", shortname);
+				string_tolower(shortname);
+				debug(133, "shortname2=%s", shortname);
+				shortname = string_shortname(shortname, 1);
+				debug(133, "shortname3=%s", shortname);
+				shortname = string_shortname(shortname, 2);
+				debug(133, "shortname4=%s", shortname);
+				string_removechar(shortname);
+				debug(133, "shortname5=%s", shortname);
+				strstrip(shortname);
+				debug(133, "shortname6=%s", shortname);
+				startplugin(shortname);
+			}				
+		}
+	}
+}
+
 void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 {
 //	if(checkbit(status.playercan, 5) == 0) return;
-
 	screenplayinfobar(file, 1, playertype, flag);
 
 	struct skin* pluginnode = NULL;
@@ -282,6 +380,8 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 
 	addmenulist(&mlist, "Video Settings", NULL, NULL, 0, 0);
 	addmenulist(&mlist, "AV Settings", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "iD3Tag Info", NULL, NULL, 0, 0);
+
 	//add plugins
 	while(child != NULL)
 	{
@@ -289,6 +389,12 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 		{
 			if(ostrcmp(child->name, "Streaminfo") == 0)
 				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
+			else if(ostrcmp(child->name, "IMDb") == 0)
+				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
+			else if(ostrcmp(child->name, "IMDb-API") == 0)
+				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
+			else if(ostrcmp(child->name, "TMDb") == 0)
+				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);								
 		}
 		child = child->next;
 	}
@@ -300,6 +406,14 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 			screenvideosettings();
 		else if(ostrcmp(mbox->name, "AV Settings") == 0)
 			screenavsettings(0);
+		else if(ostrcmp(mbox->name, "IMDb") == 0)
+			imdb_submenu(0, file);
+		else if(ostrcmp(mbox->name, "IMDb-API") == 0)
+			imdb_submenu(1, file);
+		else if(ostrcmp(mbox->name, "TMDb") == 0)
+			imdb_submenu(2, file);
+		else if(ostrcmp(mbox->name, "iD3Tag Info") == 0)
+			id3tag_info();
 		else
 		{
 			pluginnode = getplugin(mbox->name);
