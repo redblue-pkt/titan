@@ -1752,7 +1752,7 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount, int first)
 							count += 1;
 					}
 				}
-				else if(!filelistflt(".mp3 .flac .ogg .wma .ra", entry->d_name)) //audio
+				else if(!filelistflt(".mp3 .flac .ogg .wma .ra .wav", entry->d_name)) //audio
 				{
 					if(type == 1 || type == 100 || type == 90 || type == 92)
 					{

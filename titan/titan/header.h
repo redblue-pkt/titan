@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//id3.h
+struct id3tag* getid3(char* file, char* id, int flag);
+
 //sh4port.h and other ports
 int videodiscontinuityskip(struct dvbdev* node, int flag);
 

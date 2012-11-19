@@ -267,55 +267,106 @@ void playrcok(char* file, int playinfobarstatus, int playertype, int flag)
 		screenplayinfobar(file, 0, playertype, flag);
 }
 
-void id3tag_info()
+void id3tag_info(char* file)
 {
 	char* tmpstr = NULL;
-	tmpstr = ostrcat(tmpstr, _("Title:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-	tmpstr = ostrcat(tmpstr, playergetinfo("Title"), 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-	
-	tmpstr = ostrcat(tmpstr, _("Artist:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-	tmpstr = ostrcat(tmpstr, playergetinfo("Artist"), 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-	
-	tmpstr = ostrcat(tmpstr, _("Album:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-	tmpstr = ostrcat(tmpstr, playergetinfo("Album"), 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-	
-	tmpstr = ostrcat(tmpstr, _("Year:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-	tmpstr = ostrcat(tmpstr, playergetinfo("Year"), 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 
-	tmpstr = ostrcat(tmpstr, _("Genre:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-	tmpstr = ostrcat(tmpstr, playergetinfo("Genre"), 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+	if(!filelistflt(".mp3 .flac .ogg .wma .ra .wav", file))
+	{
+		struct id3tag* id3tag = NULL;
+		int hash = gethash(file);
+		char* tmphash = olutoa(hash);
+				
+		id3tag = getid3(file, tmphash, 1);
 	
-	tmpstr = ostrcat(tmpstr, _("Comment:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-	tmpstr = ostrcat(tmpstr, playergetinfo("Comment"), 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-	
-	tmpstr = ostrcat(tmpstr, _("Track:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-	tmpstr = ostrcat(tmpstr, playergetinfo("Track"), 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-	
-	tmpstr = ostrcat(tmpstr, _("Copyright:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-	tmpstr = ostrcat(tmpstr, playergetinfo("Copyright"), 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-	
-	tmpstr = ostrcat(tmpstr, _("TestLibEplayer:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-	tmpstr = ostrcat(tmpstr, playergetinfo("TestLibEplayer"), 1, 0);	
-	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+		if(id3tag != NULL)
+		{
+			tmpstr = ostrcat(tmpstr, _("Title:"), 1, 0);
+			tmpstr = ostrcat(tmpstr, " ", 1, 0);
+			tmpstr = ostrcat(tmpstr, playergetinfo("Title"), 1, 0);
+			tmpstr = ostrcat(tmpstr, id3tag->title, 1, 0);
+			tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 			
-	textbox(_("iD3Tag"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 500, 10, 0);
+			tmpstr = ostrcat(tmpstr, _("Artist:"), 1, 0);
+			tmpstr = ostrcat(tmpstr, " ", 1, 0);
+			tmpstr = ostrcat(tmpstr, playergetinfo("Artist"), 1, 0);
+			tmpstr = ostrcat(tmpstr, id3tag->artist, 1, 0);
+			tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+			
+			tmpstr = ostrcat(tmpstr, _("Album:"), 1, 0);
+			tmpstr = ostrcat(tmpstr, " ", 1, 0);
+			tmpstr = ostrcat(tmpstr, playergetinfo("Album"), 1, 0);	
+			tmpstr = ostrcat(tmpstr, id3tag->album, 1, 0);
+			tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+			
+			tmpstr = ostrcat(tmpstr, _("Year:"), 1, 0);
+			tmpstr = ostrcat(tmpstr, " ", 1, 0);
+			tmpstr = ostrcat(tmpstr, playergetinfo("Year"), 1, 0);	
+			tmpstr = ostrcat(tmpstr, id3tag->year, 1, 0);
+			tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+		
+			tmpstr = ostrcat(tmpstr, _("Genre:"), 1, 0);
+			tmpstr = ostrcat(tmpstr, " ", 1, 0);
+			tmpstr = ostrcat(tmpstr, playergetinfo("Genre"), 1, 0);
+			tmpstr = ostrcat(tmpstr, id3tag->genretext, 1, 0);
+			tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+
+			tmpstr = ostrcat(tmpstr, _("Comment:"), 1, 0);
+			tmpstr = ostrcat(tmpstr, " ", 1, 0);
+			tmpstr = ostrcat(tmpstr, id3tag->comment, 1, 0);
+			tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+		}
+		freeid3(id3tag); id3tag = NULL;		
+	}
+	else
+	{
+		tmpstr = ostrcat(tmpstr, _("Title:"), 1, 0);
+		tmpstr = ostrcat(tmpstr, " ", 1, 0);
+		tmpstr = ostrcat(tmpstr, playergetinfo("Title"), 1, 0);
+		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+		
+		tmpstr = ostrcat(tmpstr, _("Artist:"), 1, 0);
+		tmpstr = ostrcat(tmpstr, " ", 1, 0);
+		tmpstr = ostrcat(tmpstr, playergetinfo("Artist"), 1, 0);
+		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+		
+		tmpstr = ostrcat(tmpstr, _("Album:"), 1, 0);
+		tmpstr = ostrcat(tmpstr, " ", 1, 0);
+		tmpstr = ostrcat(tmpstr, playergetinfo("Album"), 1, 0);	
+		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+		
+		tmpstr = ostrcat(tmpstr, _("Year:"), 1, 0);
+		tmpstr = ostrcat(tmpstr, " ", 1, 0);
+		tmpstr = ostrcat(tmpstr, playergetinfo("Year"), 1, 0);	
+		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+	
+		tmpstr = ostrcat(tmpstr, _("Genre:"), 1, 0);
+		tmpstr = ostrcat(tmpstr, " ", 1, 0);
+		tmpstr = ostrcat(tmpstr, playergetinfo("Genre"), 1, 0);
+		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+		
+		tmpstr = ostrcat(tmpstr, _("Comment:"), 1, 0);
+		tmpstr = ostrcat(tmpstr, " ", 1, 0);
+		tmpstr = ostrcat(tmpstr, playergetinfo("Comment"), 1, 0);
+		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+		
+		tmpstr = ostrcat(tmpstr, _("Track:"), 1, 0);
+		tmpstr = ostrcat(tmpstr, " ", 1, 0);
+		tmpstr = ostrcat(tmpstr, playergetinfo("Track"), 1, 0);
+		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+		
+		tmpstr = ostrcat(tmpstr, _("Copyright:"), 1, 0);
+		tmpstr = ostrcat(tmpstr, " ", 1, 0);
+		tmpstr = ostrcat(tmpstr, playergetinfo("Copyright"), 1, 0);
+		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+		
+	//	tmpstr = ostrcat(tmpstr, _("TestLibEplayer:"), 1, 0);
+	//	tmpstr = ostrcat(tmpstr, " ", 1, 0);
+	//	tmpstr = ostrcat(tmpstr, playergetinfo("TestLibEplayer"), 1, 0);	
+	//	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+	}
+			
+	textbox(_("iD3Tag"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 500, 100, 0);
 	free(tmpstr), tmpstr = NULL;
 }
 
@@ -413,7 +464,7 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 		else if(ostrcmp(mbox->name, "TMDb") == 0)
 			imdb_submenu(2, file);
 		else if(ostrcmp(mbox->name, "iD3Tag Info") == 0)
-			id3tag_info();
+			id3tag_info(file);
 		else
 		{
 			pluginnode = getplugin(mbox->name);
