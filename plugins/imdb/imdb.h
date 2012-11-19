@@ -451,6 +451,9 @@ void screenimdb(char* title)
 {
 	debug(133, "title: %s",title);
 	int rcret = 0;
+	struct skin* blackscreen = getscreen("blackscreen");
+	drawscreen(blackscreen, 0, 0);
+
 	struct skin* imdbskin = getscreen("imdb");
 	struct skin* skin_plot = getscreennode(imdbskin, "plot");
 	struct skin* skin_title = getscreennode(imdbskin, "title");
@@ -502,6 +505,7 @@ start:
 			if(search != NULL)
 			{
 				freeimdb(&node, 0); node = NULL;
+				drawscreen(blackscreen, 0, 0);
 				drawscreen(load, 0, 0);
 				node = getimdb(&node, search, 0, 0, 0);
 				clearscreen(load);
