@@ -13,6 +13,7 @@ void deloldentry(struct oldentry *entry, int flag);
 
 //id3.h
 struct id3tag* getid3(char* file, char* id, int flag);
+void freeid3(struct id3tag* node);
 
 //sh4port.h and other ports
 int videodiscontinuityskip(struct dvbdev* node, int flag);
