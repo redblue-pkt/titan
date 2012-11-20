@@ -371,6 +371,37 @@ start:
 
 	while(cadescnode != NULL && clear == 0)
 	{
+
+		//remove caids, cam can't
+		if(round == 0 && status.casendallcaids == 0)
+		{
+			int treffer = 0;
+			struct dvbdev* dvbnode = dvbdev;
+			char* tmpnr = NULL;
+
+			while(dvbnode != NULL)
+			{
+				if(dvbnode->type == CIDEV && dvbnode->fd > -1 && dvbnode->caslot != NULL && dvbnode->caslot->status == 2 && dvbnode->caslot->caids != NULL)
+				{
+					tmpnr = oitoa(cadescnode->systemid);
+					if(ostrstr(dvbnode->caslot->caids, tmpnr) != NULL)
+					{
+						free(tmpnr); tmpnr = NULL;
+						treffer = 1;
+						break;
+					}
+					free(tmpnr); tmpnr = NULL;
+				}
+				dvbnode = dvbnode->next;
+			}
+
+			if(treffer == 0)
+			{
+				cadescnode = cadescnode->next;
+				continue;
+			}
+		}
+
 		if(cadescnode->len > 0 && cadescnode->pid == 0)
 		{
 			int cadesclen = 0;

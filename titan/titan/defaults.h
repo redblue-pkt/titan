@@ -94,6 +94,7 @@ void setdefaults()
 	status.volautochangevalue = getconfigint("volautochangevalue", NULL);
 	status.channellistview = getconfigint("channellistview", NULL);
 	status.caskipprivat = getconfigint("caskipprivat", NULL);
+	status.casendallcaids = getconfigint("casendallcaids", NULL);
 
 	if(status.filelistselectcol == 0) status.filelistselectcol = status.listboxselectcol;
 	

@@ -1296,6 +1296,8 @@ struct status
 	int checkcamdecrypt;
 	//don't send privat part of cadescriptor in capmt
 	int caskipprivat;
+	//send all caids or only caids cam can
+	int casendallcaids;
 } status;
 
 struct fb
