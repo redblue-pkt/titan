@@ -764,12 +764,14 @@ void delchannelbysat(int orbitalpos)
 	{
 		if(transpondernode->orbitalpos == orbitalpos)
 		{
+			struct channel* tmpchannel = NULL;
 			chnode = channel;
 			while(chnode != NULL)
 			{
+				tmpchannel = chnode->next;
 				if(chnode->transponder == transpondernode)
 					delchannel(chnode->serviceid, chnode->transponderid, 1);
-				chnode = chnode->next;
+				chnode = tmpchannel;
 			}
 		}
 		transpondernode = transpondernode->next;
@@ -844,12 +846,14 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 			//del channels from transponder if selected
 			if(clear == 1)
 			{
+				struct channel* tmpchannel = NULL;
 				chnode = channel;
 				while(chnode != NULL)
 				{
+					tmpchannel = chnode->next;
 					if(chnode->transponder == transpondernode)
 						delchannel(chnode->serviceid, chnode->transponderid, 1);
-					chnode = chnode->next;
+					chnode = tmpchannel;
 				}
 			}
 
