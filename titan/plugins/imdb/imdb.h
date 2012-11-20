@@ -447,9 +447,11 @@ current not working
 	return *first;
 }
 
-void screenimdb(char* title)
+void screenimdb(char* title, char* path, char* file)
 {
 	debug(133, "title: %s",title);
+	debug(133, "path: %s",path);
+	debug(133, "file: %s",file);	
 	int rcret = 0;
 	struct skin* blackscreen = getscreen("blackscreen");
 	drawscreen(blackscreen, 0, 0);
@@ -463,10 +465,17 @@ void screenimdb(char* title)
 	struct skin* skin_releasetime = getscreennode(imdbskin, "releasetime");
 	struct skin* skin_cover = getscreennode(imdbskin, "cover");
 	struct skin* skin_actors = getscreennode(imdbskin, "actors");
+	struct skin* skin_b2 = getscreennode(imdbskin, "b2");
+
 	struct skin* load = getscreen("loading");
 	struct imdb* node = NULL;
 	char* search = NULL;
 
+	if(path == NULL || file == NULL)
+		skin_b2->hidden = YES;
+	else
+		skin_b2->hidden = NO;
+			
 //	setfbtransparent(255);
 	status.hangtime = 99999;
 
@@ -514,6 +523,15 @@ start:
 			}
 			drawscreen(imdbskin, 0, 0);
 			continue;
+		}
+		
+		if(path != NULL && file != NULL && node != NULL && node->id != NULL && rcret == getrcconfigint("rcgreen", NULL))
+		{
+			debug(133, "path: %s",path);
+			debug(133, "file: %s",file);
+			debug(133, "type: 2");
+			debug(133, "node->id: %s",node->id);				
+			mediadbfindfilecb(path, file, 0, node->id);
 		}
 	}
 
