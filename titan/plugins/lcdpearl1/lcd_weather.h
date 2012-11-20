@@ -317,6 +317,8 @@ char* changeweatherpic(char* icon)
 		node = ostrcat(node, "%pluginpath%/lcdpearl1/skin/icy60.png", 0, 0);
 	else if(ostrstr(icon, "9") != NULL)
 		node = ostrcat(node, "%pluginpath%/lcdpearl1/skin/icy60.png", 0, 0);				
+// fix warning
+	return node;
 }
 
 void lcd_writeweather()
