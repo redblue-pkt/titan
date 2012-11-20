@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//oldentry.h
+void deloldentry(struct oldentry *entry, int flag);
+
 //id3.h
 struct id3tag* getid3(char* file, char* id, int flag);
 
