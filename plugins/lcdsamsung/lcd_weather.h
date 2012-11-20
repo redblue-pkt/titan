@@ -318,7 +318,10 @@ char* changeweatherpic(char* icon)
 	else if(ostrstr(icon, "9") != NULL)
 		node = ostrcat(node, "%pluginpath%/lcdsamsung/skin/9.png", 0, 0);		
 	else
-		node = ostrcat(node, "%pluginpath%/lcdsamsung/skin/na.png", 0, 0);		
+		node = ostrcat(node, "%pluginpath%/lcdsamsung/skin/na.png", 0, 0);
+
+// fix warning
+	return node;
 }
 
 void lcd_writeweather()

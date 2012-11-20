@@ -72,7 +72,7 @@ void zapback_main()
 	
 	struct skin* zapback_main = getscreen("zapback_main");
 	struct skin* minuten = getscreennode(zapback_main, "minuten");
-	struct skin* b1 = getscreennode(zapback_main, "b1");
+//	struct skin* b1 = getscreennode(zapback_main, "b1");
 	char *temp;
 	
 	if(zapbackthread != NULL)
