@@ -41,6 +41,7 @@ void screenadjust()
 	struct skin* recsync = getscreennode(adjust, "recsync");
 	struct skin* recordnamefmt = getscreennode(adjust, "recordnamefmt");
 	struct skin* caskipprivat = getscreennode(adjust, "caskipprivat");
+	struct skin* casendallcaids = getscreennode(adjust, "casendallcaids");
 	
 	struct skin* tmp = NULL;
 
@@ -196,6 +197,10 @@ void screenadjust()
 	addchoicebox(caskipprivat, "1", _("yes"));
 	setchoiceboxselection(caskipprivat, getconfig("caskipprivat", NULL));
 
+	addchoicebox(casendallcaids, "0", _("no"));
+	addchoicebox(casendallcaids, "1", _("yes"));
+	setchoiceboxselection(casendallcaids, getconfig("casendallcaids", NULL));
+
 	drawscreen(adjust, 0, 0);
 	addscreenrc(adjust, listbox);
 
@@ -261,6 +266,8 @@ void screenadjust()
 			addconfigscreencheck("recordnamefmt", recordnamefmt, 0);
 			addconfigscreencheck("caskipprivat", caskipprivat, "0");
 			status.caskipprivat = getconfigint("caskipprivat", NULL);
+			addconfigscreencheck("casendallcaids", casendallcaids, "0");
+			status.casendallcaids = getconfigint("casendallcaids", NULL);
 			break;
 		}
 	}
