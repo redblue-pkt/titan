@@ -374,7 +374,6 @@ void imdb_submenu(int mode, char* file)
 {
 	struct skin* pluginnode = NULL;
 	void (*startplugin)(char*);
-	struct skin* plugin = getscreen("plugin");
 
 	if(mode == 0)
 		pluginnode = getplugin("IMDb");

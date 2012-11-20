@@ -542,9 +542,9 @@ void LCD_Samsung1_thread()
 			weatherref = weatherref + 1;
 			if(weatherref == 7200)
 			{
-				weatherwrite == 0;
+				weatherwrite = 0;
 				system("rm /tmp/lcdweather");
-				weatherref == 0;
+				weatherref = 0;
 			}
 		}
 	}

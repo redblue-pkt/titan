@@ -189,7 +189,7 @@ void get_imdb_info(int mode, struct skin* filelist, struct skin* filelistpath)
 	free(tmpstr), tmpstr = NULL;
 }
 
-void info_menu(int files, struct skin* apskin, struct skin* filelist, struct skin* filelistpath)
+void info_menu(int files, struct skin* filelist, struct skin* filelistpath)
 {
 	struct menulist* mlist = NULL, *mbox = NULL;
 	char* skintitle = "Menu";
@@ -582,7 +582,7 @@ void screenmc_videoplayer()
 		}
 		else if(rcret == getrcconfigint("rcinfo", NULL))
 		{
-			info_menu(apskin, files, filelist, filelistpath);
+			info_menu(files, filelist, filelistpath);
 			drawscreen(skin, 0, 0);
 			if(status.play == 0 && status.pause == 0)
 			{
