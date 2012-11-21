@@ -46,5 +46,5 @@ void deinit(void)
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {
-	screenimdb(NULL, NULL, NULL);
+	screenimdb(NULL, NULL, NULL, NULL, NULL);
 }
