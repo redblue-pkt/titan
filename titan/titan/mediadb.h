@@ -1555,20 +1555,20 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
       		debugimdbnode(imdb);
 			if(flag == 2 && imdb != NULL && tmdb != NULL)
 			{
-				imdb->id = ostrcat(tmdb->imdbid, NULL, 0, 0);			
-				imdb->title = ostrcat(tmdb->title, NULL, 0, 0);	
-				imdb->genre = ostrcat(tmdb->genre, NULL, 0, 0);
-//				imdb->writer = ostrcat(tmdb->writer, NULL, 0, 0);
-//				imdb->director = ostrcat(tmdb->director, NULL, 0, 0);
-//				imdb->actors = ostrcat(tmdb->actors, NULL, 0, 0);
-				imdb->rating = ostrcat(tmdb->rating, NULL, 0, 0);
-				imdb->votes = ostrcat(tmdb->votes, NULL, 0, 0);
-				imdb->runtime = ostrcat(tmdb->runtime, NULL, 0, 0);
-				imdb->plot = ostrcat(tmdb->plot, NULL, 0, 0);
-				imdb->released = ostrcat(tmdb->released, NULL, 0, 0);
-				imdb->poster = ostrcat(tmdb->postermid, NULL, 0, 0);
-				imdb->thumb = ostrcat(tmdb->thumb, NULL, 0, 0);
-				imdb->year = ostrcat(tmdb->year, NULL, 0, 0);
+				if(tmdb->imdbid != NULL) imdb->id = ostrcat(tmdb->imdbid, NULL, 0, 0);			
+				if(tmdb->title != NULL) imdb->title = ostrcat(tmdb->title, NULL, 0, 0);	
+				if(tmdb->genre != NULL) imdb->genre = ostrcat(tmdb->genre, NULL, 0, 0);
+//				if(tmdb->writer != NULL) imdb->writer = ostrcat(tmdb->writer, NULL, 0, 0);
+//				if(tmdb->director != NULL) imdb->director = ostrcat(tmdb->director, NULL, 0, 0);
+//				if(tmdb->actors != NULL) imdb->actors = ostrcat(tmdb->actors, NULL, 0, 0);
+				if(tmdb->rating != NULL) imdb->rating = ostrcat(tmdb->rating, NULL, 0, 0);
+				if(tmdb->votes != NULL) imdb->votes = ostrcat(tmdb->votes, NULL, 0, 0);
+				if(tmdb->runtime != NULL) imdb->runtime = ostrcat(tmdb->runtime, NULL, 0, 0);
+				if(tmdb->plot != NULL) imdb->plot = ostrcat(tmdb->plot, NULL, 0, 0);
+				if(tmdb->released != NULL) imdb->released = ostrcat(tmdb->released, NULL, 0, 0);
+				if(tmdb->poster != NULL) imdb->poster = ostrcat(tmdb->postermid, NULL, 0, 0);
+				if(tmdb->thumb != NULL) imdb->thumb = ostrcat(tmdb->thumb, NULL, 0, 0);
+				if(tmdb->year != NULL) imdb->year = ostrcat(tmdb->year, NULL, 0, 0);
 			}
 						
 			if(imdb != NULL && tmdb != NULL)
