@@ -497,9 +497,7 @@ start:
 			debug(133, "node->imdbid: %s",node->imdbid);				
 			mediadbfindfilecb(path, file, 0, node->imdbid, 2);
 			clearscreen(load);
-			drawscreen(tmdbskin, 0, 0);
-			continue;
-
+			break;
 		}
 	}
 

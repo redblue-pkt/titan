@@ -539,8 +539,7 @@ start:
 			debug(133, "imdbid: %s",node->id);				
 			mediadbfindfilecb(path, file, 0, node->id, 1);
 			clearscreen(load);
-			drawscreen(imdbskin, 0, 0);
-			continue;
+			break;
 		}
 	}
 
