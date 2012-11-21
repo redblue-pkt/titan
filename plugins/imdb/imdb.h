@@ -39,6 +39,7 @@ struct imdb* getimdb(struct imdb** first, char* title, int flag, int flag1, int 
 	char* savefile = NULL;
 	char* pageposter = NULL;
 
+	debug(133, "title: %s",title);
 	debug(133, "flag: %d",flag);
 	debug(133, "flag1: %d",flag1);
 	debug(133, "flag2: %d",flag2);
@@ -74,10 +75,10 @@ start:
 			return NULL;
 		}
 
-		if(flag == 2)
-			(*first)->id = ostrcat(title, NULL, 0, 0);
-		else
+		if(flag == 0)
 			(*first)->id = string_resub("<a href=\"/title/tt", "/", tmpstr, 0);
+		else
+			(*first)->id = ostrcat(title, NULL, 0, 0);
 
 		if(flag1 == 1)
 		{
@@ -85,7 +86,7 @@ start:
 				(*first)->id = ostrcat("tt", (*first)->id, 0, 1);
 
 			debug(133, "----------------------imdb start----------------------");
-			debug(133, "id:sssssssssssssssss %s", (*first)->id);
+			debug(133, "id: %s", (*first)->id);
 			debug(133, "----------------------imdb end----------------------");
 	
 			free(tmpstr); tmpstr = NULL;	
@@ -193,7 +194,7 @@ current not working
 			free(tmpstr), tmpstr = NULL;
 		else
 		{
-			debug(133, "imdb->id:222222222222222 %s", (*first)->id);
+			debug(133, "imdb->id: %s", (*first)->id);
 			
 			tmpsearch = ostrcat("/title/tt", NULL, 0, 0);
 			tmpsearch = ostrcat(tmpsearch, (*first)->id, 1, 0);
