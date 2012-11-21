@@ -1,0 +1,367 @@
+#ifndef OSCAM_H
+#define OSCAM_H
+
+struct oscam
+{
+	char* enable;
+	char* label;
+	char* device;
+	char* rest;
+	struct oscam* next;
+};
+
+struct oscam* addoscam(char *enable, char* label, char* device, char* rest, struct oscam* last)
+{
+	struct oscam *newnode = NULL, *prev = NULL, *node = NULL;
+	int ret = 0;
+
+	newnode = (struct oscam*)calloc(1, sizeof(struct oscam));
+	if(newnode == NULL)
+	{
+		err("no memory");
+		return NULL;
+	}
+
+	newnode->enable = ostrcat(enable, NULL, 0, 0);
+	newnode->label = ostrcat(label, NULL, 0, 0);
+	newnode->device = ostrcat(device, NULL, 0, 0);
+	newnode->rest = ostrcat(rest, NULL, 0, 0);
+
+	if(last == NULL)
+	{
+		while(node != NULL)
+		{
+			prev = node;
+			node = node->next;
+		}
+	}
+	else
+	{
+		prev = last;
+		node = last->next;
+	}
+
+	if(prev == NULL)
+		oscam = newnode;
+	else
+	{
+		prev->next = newnode;
+		newnode->prev = prev;
+	}
+	newnode->next = node;
+	if(node != NULL) node->prev = newnode;
+
+	return newnode;
+}
+
+int readoscam(const char* filename)
+{
+	debug(1000, "in");
+	FILE *fd = NULL;
+	char *fileline = NULL;
+	char *enable = NULL, *label = NULL, *device = NULL, *rest = NULL;
+	int linecount = 0, len = 0;
+
+	fileline = malloc(MINMALLOC);
+	if(fileline == NULL)
+	{
+		err("no memory");
+		return 1;
+	}
+
+	fd = fopen(filename, "r");
+	if(fd == NULL)
+	{
+		perr("can't open %s", filename);
+		free(fileline);
+		return 1;
+	}
+
+	while(fgets(fileline, MINMALLOC, fd) != NULL)
+	{
+		len = strlen(fileline) - 1;
+		if(len >= 0 && fileline[len] == '\n')
+			fileline[len] = '\0';
+		len--;
+		if(len >= 0 && fileline[len] == '\r')
+			fileline[len] = '\0';
+
+		linecount++;
+
+		fileline = strstrip(fileline);
+
+		if(ostrstrcase(fileline, "enable") == fileline)
+		{
+			char* pos = strchr(fileline, "=");
+			if(pos != NULL)
+			{
+				pos++;
+				free(enable); enable = NULL;
+				enable = ostrcat(strstrip(pos), NULL, 0, 0);
+			}
+		}
+		else if(ostrstrcase(fileline, "Label") == fileline)
+		{
+			char* pos = strchr(fileline, "=");
+			if(pos != NULL)
+			{
+				pos++;
+				free(label); label = NULL;
+				label = ostrcat(pos, NULL, 0, 0);
+			}
+		}
+		else if(ostrstrcase(fileline, "device") == fileline)
+		{
+			char* pos = strchr(fileline, "=");
+			if(pos != NULL)
+			{
+				pos++;
+				free(device); device = NULL;
+				device = ostrcat(pos, NULL, 0, 0);
+			}
+		}
+		else
+			rest = ostrcat(rest, fileline, 1, 0);
+
+		if(ostrstrcase(fileline, "[reader]") == fileline)
+		{
+			//add to struct
+			addoscam(enable, label, device, rest, NULL);
+
+			free(enable); enable = NULL;
+			free(label); label = NULL;
+			free(device); device = NULL;
+			free(rest); rest = NULL;
+		}
+	}
+
+	//add to struct
+	addoscam(enable, label, device, rest, NULL);
+
+	free(enable); enable = NULL;
+	free(label); label = NULL;
+	free(device); device = NULL;
+	free(rest); rest = NULL;
+
+	free(fileline);
+	fclose(fd);
+	return 0;
+}
+
+int deloscam(struct oscam* onode)
+{
+	int ret = 1;
+	struct oscam *node = oscam, *prev = oscam;
+
+	while(node != NULL)
+	{
+		if(onode == node)
+		{
+			ret = 0;
+			if(node == onode)
+			{
+				onode = node->next;
+				if(onode != NULL)
+					onode->prev = NULL;
+			}
+			else
+			{
+				prev->next = node->next;
+				if(node->next != NULL)
+					node->next->prev = prev;
+			}
+
+			free(node->enable);
+			node->enable = NULL;
+
+			free(node->label);
+			node->label = NULL;
+
+			free(node->device);
+			node->device = NULL;
+
+			free(node->rest);
+			node->rest = NULL;
+
+			free(node);
+			node = NULL;
+
+			break;
+		}
+
+		prev = node;
+		node = node->next;
+	}
+
+	return ret;
+}
+
+void freeoscam()
+{
+	struct oscam *node = oscam, *prev = oscam;
+
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+		if(prev != NULL)
+			deloscam(prev);
+	}
+}
+
+int writeoscam(const char *filename)
+{
+	debug(1000, "in");
+	FILE *fd = NULL;
+	struct oscam *node = oscam;
+	int ret1 = 0, ret2 = 0, ret3 = 0, ret4 = 0;
+
+	fd = fopen(filename, "w");
+	if(fd == NULL)
+	{
+		perr("can't open %s", filename);
+		return 1;
+	}
+
+	while(node != NULL)
+	{
+		if(node->rest != NULL) ret1 = fprintf(fd, "%s", node->rest);
+		if(node->enable != NULL) ret2 = fprintf(fd, "enable=%s", node->enable);
+		if(node->label != NULL) ret3 = fprintf(fd, "Label=%s", node->label);
+		if(node->device != NULL) ret4 = fprintf(fd, "device=%s", node->device);
+		if(ret1 < 0 || ret2 < 0 || ret3 < 0 || ret4 < 0)
+		{
+			perr("writting file %s", filename);
+		}
+		node = node->next;
+	}
+
+	fclose(fd);
+	return 0;
+}
+
+void screenoscamconfig(struct oscam* node)
+{
+	struct skin* oscamconfig = getscreen("oscamconfig");
+	struct skin* listbox = getscreennode(oscamconfig, "listbox");
+	struct skin* enable = getscreennode(oscamconfig, "enable");
+	struct skin* device = getscreennode(oscamconfig, "device");
+	struct skin* tmp = NULL;
+
+	if(node == NULL) return;
+
+	listbox->aktline = 1;
+	listbox->aktpage = -1;
+
+	addchoicebox(enable, "0", _("no"));
+	addchoicebox(enable, "1", _("yes"));
+	setchoiceboxselection(enable, node->enable);
+
+	addchoicebox(device, "/dev/sci0", _("first slot"));
+	addchoicebox(device, "/dev/sci1", _("second slot"));
+	setchoiceboxselection(device, node->device);
+
+	if(node->device == NULL)
+		device->hidden = YES;
+	else
+		device->hidden = NO;
+
+	drawscreen(oscamconfig, 0, 0);
+	addscreenrc(oscamconfig, listbox);
+
+	tmp = listbox->select;
+	while(1)
+	{
+		addscreenrc(oscamconfig, tmp);
+		rcret = waitrc(oscamconfig, 0, 0);
+		tmp = listbox->select;
+
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			free(node->enable);
+			node->enable = ostrcat(enable->ret, NULL, 0, 0);
+
+			if(node->device != NULL)
+			{
+				free(node->device);
+				node->device = ostrcat(device->ret, NULL, 0, 0);
+			}
+		}
+	}
+
+	delownerrc(oscamconfig);
+	clearscreen(oscamconfig);
+}
+
+void screenoscam()
+{
+	struct skin* oscam = getscreen("oscam");
+	struct skin* listbox = getscreennode(oscam, "listbox");
+	struct skin* tmp = NULL;
+	struct oscam* node = NULL;
+	char* tmpstr = NULL;
+
+	//TODO
+	readoscam("xxx");
+
+	listbox->aktline = 1;
+	listbox->aktpage = -1;
+
+	while(node != NULL)
+	{
+		if(node->label == NULL || node->enable == NULL)
+		{
+			node = node->next;
+			continue;
+		}
+		tmp = addlistbox(oscam, listbox, tmp, 1);
+		if(tmp != NULL)
+		{
+			tmpstr = ostrcat(node->label, NULL, 0, 0);
+			tmpstr = ostrcat(tmpstr, " -> ", 1, 0);
+			if(ostrcmp(node->enable, "0") == 0)
+				tmpstr = ostrcat(tmpstr, _("on"), 1, 0);
+			else
+				tmpstr = ostrcat(tmpstr, _("off"), 1, 0);
+
+			changetext(tmp, tmpstr);
+			free(tmpstr); tmpstr = NULL;
+			tmp->del = 1;
+			tmp->handle = (char*)node;
+		}
+		node = node->next;
+	}
+
+	drawscreen(oscam, 0, 0);
+	addscreenrc(oscam, listbox);
+
+	while(1)
+	{
+		rcret = waitrc(oscam, 0, 0);
+
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcred", NULL))
+		{
+			//write oscam
+			writeoscam("xxx");
+			textbox(_("Message"), _("Oscam config written to medium !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+			drawscreen(oscam, 0, 0);
+		}
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			if(listbox->select != NULL && listbox->select->handle != NULL)
+			{
+				screenoscamconfig(struct oscam*)listbox->select->handle);
+				drawscreen(oscam, 0, 0);
+			}
+		}
+	}
+
+	delmarkedscreennodes(oscam, 1);
+	freeoscam();
+	delownerrc(oscam);
+	clearscreen(oscam);
+}
+
+#endif
