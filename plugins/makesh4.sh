@@ -112,5 +112,6 @@ compile "imdb" "imdb" "" ""
 compile "filemanager" "filemanager" "" ""
 compile "catcatch" "catcatch" "" ""
 compile "facebook" "facebook" "" "-l curl"
+compile "oscam" "oscam" "" ""
 
 #rm -r networkbrowser/networkbrowser
