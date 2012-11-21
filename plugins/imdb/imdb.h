@@ -532,11 +532,15 @@ start:
 		
 		if(path != NULL && file != NULL && node != NULL && node->id != NULL && rcret == getrcconfigint("rcgreen", NULL))
 		{
+			drawscreen(load, 0, 0);
 			debug(133, "path: %s",path);
 			debug(133, "file: %s",file);
 			debug(133, "type: 2");
 			debug(133, "imdbid: %s",node->id);				
 			mediadbfindfilecb(path, file, 0, node->id, 1);
+			clearscreen(load);
+			drawscreen(imdbskin, 0, 0);
+			continue;
 		}
 	}
 

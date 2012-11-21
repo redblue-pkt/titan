@@ -490,11 +490,16 @@ start:
 
 		if(rcret == getrcconfigint("rcyellow", NULL) && path != NULL && file != NULL && node != NULL && node->imdbid != NULL && flag == 2)
 		{
+			drawscreen(load, 0, 0);
 			debug(133, "path: %s",path);
 			debug(133, "file: %s",file);
 			debug(133, "type: 2");
 			debug(133, "node->imdbid: %s",node->imdbid);				
 			mediadbfindfilecb(path, file, 0, node->imdbid, 2);
+			clearscreen(load);
+			drawscreen(tmdbskin, 0, 0);
+			continue;
+
 		}
 	}
 
