@@ -1566,7 +1566,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				if(tmdb->runtime != NULL) imdb->runtime = ostrcat(tmdb->runtime, NULL, 0, 0);
 				if(tmdb->plot != NULL) imdb->plot = ostrcat(tmdb->plot, NULL, 0, 0);
 				if(tmdb->released != NULL) imdb->released = ostrcat(tmdb->released, NULL, 0, 0);
-				if(tmdb->poster != NULL) imdb->poster = ostrcat(tmdb->postermid, NULL, 0, 0);
+				if(tmdb->postermid != NULL) imdb->poster = ostrcat(tmdb->postermid, NULL, 0, 0);
 				if(tmdb->thumb != NULL) imdb->thumb = ostrcat(tmdb->thumb, NULL, 0, 0);
 				if(tmdb->year != NULL) imdb->year = ostrcat(tmdb->year, NULL, 0, 0);
 			}
