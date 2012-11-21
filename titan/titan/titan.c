@@ -88,9 +88,7 @@ struct oldentry* oldentry = NULL;
 #include "audiodev.h"
 #include "cidev.h"
 #include "cadev.h"
-#ifdef CAMSUPP
 #include "ca.h"
-#endif
 #include "dvrdev.h"
 #include "cam.h"
 #include "dvb.h"
@@ -664,10 +662,8 @@ int main(int argc, char *argv[])
 	ret = cigetdev();
 	ret = dvrgetdev();
 
-#ifdef CAMSUPP
 	//start ca slot watching threads
 	castart();
-#endif
 
 	//check skin
 	if(skincheck > 0)
