@@ -244,10 +244,8 @@ start:
 		}
 		if(listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcgreen", NULL))
 		{
-#ifdef CAMSUPP
 			if((struct dvbdev*)listbox->select->handle != NULL)
 				caappmenu((struct dvbdev*)listbox->select->handle);
-#endif
 		}
 		if(listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcyellow", NULL))
 		{
