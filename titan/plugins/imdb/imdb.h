@@ -38,7 +38,11 @@ struct imdb* getimdb(struct imdb** first, char* title, int flag, int flag1, int 
 	char* tmpsearch = NULL;
 	char* savefile = NULL;
 	char* pageposter = NULL;
-	
+
+	debug(133, "flag: %d",flag);
+	debug(133, "flag1: %d",flag1);
+	debug(133, "flag2: %d",flag2);
+		
 start:
 	debug(133, "title: %s",title);
 	tmpsearch = ostrcat("find?s=tt;q=", NULL, 0, 0);
@@ -55,7 +59,6 @@ start:
 
 	if(tmpstr != NULL)
 	{
-
 		if(ostrstr(tmpstr, "<b>Keine Treffer.</b>") != NULL)
 		{
 			debug(133, "<b>Keine Treffer.</b>");
@@ -71,7 +74,10 @@ start:
 			return NULL;
 		}
 
-		(*first)->id = string_resub("<a href=\"/title/tt", "/", tmpstr, 0);
+		if(flag == 2)
+			(*first)->id = ostrcat(title, NULL, 0, 0);
+		else
+			(*first)->id = string_resub("<a href=\"/title/tt", "/", tmpstr, 0);
 
 		if(flag1 == 1)
 		{
@@ -79,7 +85,7 @@ start:
 				(*first)->id = ostrcat("tt", (*first)->id, 0, 1);
 
 			debug(133, "----------------------imdb start----------------------");
-			debug(133, "id: %s", (*first)->id);
+			debug(133, "id:sssssssssssssssss %s", (*first)->id);
 			debug(133, "----------------------imdb end----------------------");
 	
 			free(tmpstr); tmpstr = NULL;	
@@ -177,16 +183,17 @@ current not working
 				goto start;
 			}
 		}
-		free(tmpstr), tmpstr = NULL;		
+		if(flag != 2)
+			free(tmpstr), tmpstr = NULL;		
 	}
 
-	if(*first != NULL)
+	if(*first != NULL && flag != 2)
 	{
 		if((*first)->id == NULL)
 			free(tmpstr), tmpstr = NULL;
 		else
 		{
-			debug(133, "imdb->id: %s", (*first)->id);
+			debug(133, "imdb->id:222222222222222 %s", (*first)->id);
 			
 			tmpsearch = ostrcat("/title/tt", NULL, 0, 0);
 			tmpsearch = ostrcat(tmpsearch, (*first)->id, 1, 0);
@@ -447,14 +454,12 @@ current not working
 	return *first;
 }
 
-void screenimdb(char* title, char* path, char* file)
+void screenimdb(char* title, char* dummy1, char* dummy2, char* path, char* file)
 {
 	debug(133, "title: %s",title);
 	debug(133, "path: %s",path);
 	debug(133, "file: %s",file);	
 	int rcret = 0;
-	struct skin* blackscreen = getscreen("blackscreen");
-	drawscreen(blackscreen, 0, 0);
 
 	struct skin* imdbskin = getscreen("imdb");
 	struct skin* skin_plot = getscreennode(imdbskin, "plot");
@@ -514,7 +519,6 @@ start:
 			if(search != NULL)
 			{
 				freeimdb(&node, 0); node = NULL;
-				drawscreen(blackscreen, 0, 0);
 				drawscreen(load, 0, 0);
 				node = getimdb(&node, search, 0, 0, 0);
 				clearscreen(load);
@@ -530,8 +534,8 @@ start:
 			debug(133, "path: %s",path);
 			debug(133, "file: %s",file);
 			debug(133, "type: 2");
-			debug(133, "node->id: %s",node->id);				
-			mediadbfindfilecb(path, file, 0, node->id);
+			debug(133, "imdbid: %s",node->id);				
+			mediadbfindfilecb(path, file, 0, node->id, 1);
 		}
 	}
 

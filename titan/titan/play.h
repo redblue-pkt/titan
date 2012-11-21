@@ -370,11 +370,11 @@ void id3tag_info(char* file)
 	free(tmpstr), tmpstr = NULL;
 }
 
-void imdb_submenu(int mode, char* file)
+void imdb_submenu(char* file, int mode)
 {
 	struct skin* pluginnode = NULL;
-	void (*startplugin)(char*);
-
+	void (*startplugin)(char*, char*, char*, char*, char*);
+	
 	if(mode == 0)
 		pluginnode = getplugin("IMDb");
 	else if(mode == 1)
@@ -390,26 +390,32 @@ void imdb_submenu(int mode, char* file)
 			startplugin = dlsym(pluginnode->pluginhandle, "screenimdbapi");
 		else if(mode == 2)
 			startplugin = dlsym(pluginnode->pluginhandle, "screentmdb");
-		
+
 		if(startplugin != NULL)
 		{
 			if(file != NULL)
 			{
 				//create imdb search name
-				debug(133, "inputfile=%s", file);
+
+				char* dname = ostrcat(file, NULL, 0, 0);
+				dname = dirname(dname);
+			
 				char* shortname = ostrcat(basename(file), NULL, 0, 0);
-				debug(133, "shortname1=%s", shortname);
 				string_tolower(shortname);
-				debug(133, "shortname2=%s", shortname);
 				shortname = string_shortname(shortname, 1);
-				debug(133, "shortname3=%s", shortname);
 				shortname = string_shortname(shortname, 2);
-				debug(133, "shortname4=%s", shortname);
 				string_removechar(shortname);
-				debug(133, "shortname5=%s", shortname);
 				strstrip(shortname);
-				debug(133, "shortname6=%s", shortname);
-				startplugin(shortname);
+
+				debug(133, "inputfile=%s", file);
+				debug(133, "shortname=%s", shortname);
+				debug(133, "dname=%s", dname);
+				debug(133, "file=%s", basename(file));
+
+				startplugin(shortname, NULL, 2, dname, basename(file));
+
+				free(shortname), shortname = NULL;
+				free(dname), dname = NULL;
 			}				
 		}
 	}
@@ -456,11 +462,11 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 		else if(ostrcmp(mbox->name, "AV Settings") == 0)
 			screenavsettings(0);
 		else if(ostrcmp(mbox->name, "IMDb") == 0)
-			imdb_submenu(0, file);
+			imdb_submenu(file, 0);
 		else if(ostrcmp(mbox->name, "IMDb-API") == 0)
-			imdb_submenu(1, file);
+			imdb_submenu(file, 1);
 		else if(ostrcmp(mbox->name, "TMDb") == 0)
-			imdb_submenu(2, file);
+			imdb_submenu(file, 2);
 		else if(ostrcmp(mbox->name, "iD3Tag Info") == 0)
 			id3tag_info(file);
 		else
