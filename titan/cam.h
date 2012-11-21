@@ -206,14 +206,207 @@ void sendcapmttosock(struct service* node, unsigned char* buf, int pos, int case
 	}
 }
 
+//flag 0: cam capmt
+//flag 1: emu capmt
+//flag 2: clear capmt
+int createcapmt(struct dvbdev* dvbnode, struct service* node, unsigned char* buf, int* lenbytes, int flag)
+{
+	if(buf == NULL || node == NULL || node->channel == NULL) return -1;
+	if(node->fedev == NULL || node->channel->pmt == NULL) return -1;
+	if(node->channel->cadesc == NULL || node->channel->esinfo == NULL) return -1;
+
+	int pos = 10, i = 0;
+	struct cadesc* cadescnode = node->channel->cadesc;
+	struct esinfo* esinfonode = node->channel->esinfo;
+
+	memset(buf, 0, MINMALLOC);
+
+	buf[0] = 0x9F; // ca_pmt_tag
+	buf[1] = 0x80; // ca_pmt_tag
+	buf[2] = 0x32; // ca_pmt_tag
+
+	buf[pos++] = 0x03; //ca_pmt_lst_management: 0=more, 1=first, 2=last, 3=only, 4=add, 5=update
+	buf[pos++] = node->channel->pmt->programnumber >> 8;
+	buf[pos++] = node->channel->pmt->programnumber & 0xff;
+
+	buf[pos++] = (node->channel->pmt->versionnumber << 1) | node->channel->pmt->currentnextindicator;
+
+	buf[pos++] = 0x00; //len from here (programinfo len)
+	buf[pos++] = 0x00; //len from here (programinfo len)
+	buf[pos++] = 0x01; //ca_pmt_cmd_id: ok_descrambling=1
+
+	if(flag == 1)
+	{
+		buf[pos++] = 0x81; //id (fix)
+		buf[pos++] = 0x08; //len
+		buf[pos++] = 0x00; //namespace >> 24
+		buf[pos++] = 0x00; //(namespace >> 16) & 0xff
+		buf[pos++] = 0x00; //(namespace >> 8) & 0xff
+		buf[pos++] = 0x00; //namespace & 0xff
+		buf[pos++] = 0x00; //transportstreamid >> 8
+		buf[pos++] = 0x00; //transportstreamid & 0xff
+		buf[pos++] = 0x00; //original network id >> 8
+		buf[pos++] = 0x00; //original network id & 0xff
+
+		buf[pos++] = 0x82; //id (fix)
+		buf[pos++] = 0x02; //len
+
+/*
+		while(tmpnode != NULL)
+		{
+			if(tmpnode->fedev != NULL)
+			{
+				//(demuxmask |= (1 << dmxdev->devnr)
+				buf[pos] |= (1 << tmpnode->fedev->devnr);
+			}
+			tmpnode = tmpnode->next;
+		}
+		pos++;
+*/
+		buf[pos++] |= (1 << node->fedev->devnr); //cadev_nr
+		buf[pos++] = node->fedev->devnr; //demux_dev_nr
+
+		buf[pos++] = 0x84; //id (fix)
+		buf[pos++] = 0x02; //len
+		buf[pos++] = node->channel->pmtpid >> 8; //pmtpid >> 8
+		buf[pos++] = node->channel->pmtpid & 0xff; //pmtpid & 0xff
+	}
+
+	while(cadescnode != NULL && flag < 2)
+	{
+		//remove caids, cam can't
+		if(flag == 0 && status.casendallcaids == 0)
+		{
+			char* tmpnr = NULL;
+
+			if(dvbnode != NULL)
+			{
+				tmpnr = oitoa(cadescnode->systemid);
+				if(ostrstr(dvbnode->caslot->caids, tmpnr) == NULL)
+				{
+					free(tmpnr); tmpnr = NULL;
+					cadescnode = cadescnode->next;
+					continue;
+				}
+				free(tmpnr); tmpnr = NULL;
+			}
+		}
+
+		if(cadescnode->len > 0 && cadescnode->pid == 0)
+		{
+			int cadesclen = 0;
+
+			buf[pos++] = 0x09; //ca desc tag
+			if(flag == 0 && status.caskipprivat == 1) //workaround for to long capmt
+			{
+				buf[pos++] = 4;
+				cadesclen = cadesclen;
+			}
+			else
+			{
+				cadesclen = cadescnode->len;
+				buf[pos++] = cadesclen;
+			}
+			buf[pos++] = cadescnode->systemid >> 8;
+			buf[pos++] = cadescnode->systemid & 0xff;
+			buf[pos++] = (cadescnode->reserved << 5) | (cadescnode->capid >> 8);
+			buf[pos++] = cadescnode->capid & 0xff;
+
+			if(cadesclen > 4)
+			{
+				memcpy(&buf[pos], cadescnode->privat, cadesclen - 4);
+				pos += cadesclen - 4;
+			}
+		}
+		cadescnode = cadescnode->next;
+	}
+
+	int tmppos = pos;
+
+	while(esinfonode != NULL)
+	{
+		buf[pos++] = esinfonode->streamtype;
+		buf[pos++] = esinfonode->pid >> 8;
+		buf[pos++] = esinfonode->pid & 0xff;
+
+		int eslenpos = pos;
+		int eslen = 0;
+		pos += 2;
+
+		cadescnode = node->channel->cadesc;
+		while(cadescnode != NULL && flag < 2)
+		{
+			if(cadescnode->len > 0 && cadescnode->pid == esinfonode->pid)
+			{
+				//remove caids, cam can't
+				if(flag == 0 && status.casendallcaids == 0)
+				{
+					char* tmpnr = NULL;
+
+					if(dvbnode != NULL)
+					{
+						tmpnr = oitoa(cadescnode->systemid);
+						if(ostrstr(dvbnode->caslot->caids, tmpnr) == NULL)
+						{
+							free(tmpnr); tmpnr = NULL;
+							cadescnode = cadescnode->next;
+							continue;
+						}
+						free(tmpnr); tmpnr = NULL;
+					}
+				}
+
+				if(eslen == 0)
+				{
+					eslen = 1;
+					buf[pos++] = 0x01; //ca_pmt_cmd_id: ok_descrambling=1
+				}
+				eslen = eslen + cadescnode->len + 2;
+				buf[pos++] = 0x09; //ca desc tag
+				buf[pos++] = cadescnode->len;
+				buf[pos++] = cadescnode->systemid >> 8;
+				buf[pos++] = cadescnode->systemid & 0xff;
+				buf[pos++] = (cadescnode->reserved << 5) | (cadescnode->capid >> 8);
+				buf[pos++] = cadescnode->capid & 0xff;
+				if(cadescnode->len > 4)
+				{
+					memcpy(&buf[pos], cadescnode->privat, cadescnode->len - 4);
+					pos += cadescnode->len - 4;
+				}
+			}
+			cadescnode = cadescnode->next;
+		}
+
+		buf[eslenpos + 1] = eslen & 0xff;
+		buf[eslenpos] = (eslen >> 8) & 0x0f;
+
+		esinfonode = esinfonode->next;
+	}
+
+	*lenbytes = writelengthfield(&buf[3], pos - 10);
+	for(i = 0; i < pos + 10; i++)
+	{
+		buf[(*lenbytes) + 3 + i] = buf[10 + i];
+	}
+	pos = pos - 10 + (*lenbytes) + 3;
+	tmppos = tmppos - 10 + (*lenbytes) + 3;
+
+	//programinfo len
+	buf[8 + (*lenbytes)] = (tmppos - 9 - (*lenbytes)) & 0xff;
+	buf[7 + (*lenbytes)] = ((tmppos - 9 - (*lenbytes)) >> 8) & 0x0f;
+
+	return pos;
+}
+
 //flag 0 = from zap
 //flag 1 = from watchthread
 //flag 2 = from cathread / caservicedel
 //flag 3 = from recordthread
 void sendcapmt(struct service* node, int clear, int flag)
 {
-	int pos = 10, i = 0, lenbytes = 0, round = 0, caservicenr = 0;
+	int len = 0, i = 0, caservicenr = 0, lenbytes = 0;
 	unsigned char* buf = NULL;
+	struct dvbdev* dvbnode = dvbdev;
 
 	//check if service should decrypt
 	if(node == NULL)
@@ -307,202 +500,50 @@ void sendcapmt(struct service* node, int clear, int flag)
 			free(buf);
 			return;
 		}
-	}
 
-	struct cadesc* cadescnode = node->channel->cadesc;
-	struct esinfo* esinfonode = node->channel->esinfo;
-
-start:
-	pos = 10, lenbytes = 0, i = 0;
-	cadescnode = node->channel->cadesc;
-	esinfonode = node->channel->esinfo;
-	memset(buf, 0, MINMALLOC);
-
-	buf[0] = 0x9F; // ca_pmt_tag
-	buf[1] = 0x80; // ca_pmt_tag
-	buf[2] = 0x32; // ca_pmt_tag
-
-	buf[pos++] = 0x03; //ca_pmt_lst_management: 0=more, 1=first, 2=last, 3=only, 4=add, 5=update
-	buf[pos++] = node->channel->pmt->programnumber >> 8;
-	buf[pos++] = node->channel->pmt->programnumber & 0xff;
-
-	buf[pos++] = (node->channel->pmt->versionnumber << 1) | node->channel->pmt->currentnextindicator;
-
-	buf[pos++] = 0x00; //len from here (programinfo len) 
-	buf[pos++] = 0x00; //len from here (programinfo len)
-	buf[pos++] = 0x01; //ca_pmt_cmd_id: ok_descrambling=1
-
-	if(round == 1)
-	{
-		buf[pos++] = 0x81; //id (fix)
-		buf[pos++] = 0x08; //len
-		buf[pos++] = 0x00; //namespace >> 24
-		buf[pos++] = 0x00; //(namespace >> 16) & 0xff
-		buf[pos++] = 0x00; //(namespace >> 8) & 0xff
-		buf[pos++] = 0x00; //namespace & 0xff
-		buf[pos++] = 0x00; //transportstreamid >> 8
-		buf[pos++] = 0x00; //transportstreamid & 0xff
-		buf[pos++] = 0x00; //original network id >> 8
-		buf[pos++] = 0x00; //original network id & 0xff
-
-		buf[pos++] = 0x82; //id (fix)
-		buf[pos++] = 0x02; //len
-
-/*
-		while(tmpnode != NULL)
+		while(dvbnode != NULL)
 		{
-			if(tmpnode->fedev != NULL)
+			if(dvbnode->type == CIDEV && dvbnode->fd > -1 && dvbnode->caslot != NULL && dvbnode->caslot->status == 2 && dvbnode->caslot->caids != NULL)
 			{
-				//(demuxmask |= (1 << dmxdev->devnr)
-				buf[pos] |= (1 << tmpnode->fedev->devnr);
-			}
-			tmpnode = tmpnode->next;
-		}
-		pos++;
-*/
-		buf[pos++] |= (1 << node->fedev->devnr); //cadev_nr
-		buf[pos++] = node->fedev->devnr; //demux_dev_nr
-
-		buf[pos++] = 0x84; //id (fix)
-		buf[pos++] = 0x02; //len
-		buf[pos++] = node->channel->pmtpid >> 8; //pmtpid >> 8
-		buf[pos++] = node->channel->pmtpid & 0xff; //pmtpid & 0xff
-	}
-
-	while(cadescnode != NULL && clear == 0)
-	{
-
-		//remove caids, cam can't
-		if(round == 0 && status.casendallcaids == 0)
-		{
-			int treffer = 0;
-			struct dvbdev* dvbnode = dvbdev;
-			char* tmpnr = NULL;
-
-			while(dvbnode != NULL)
-			{
-				if(dvbnode->type == CIDEV && dvbnode->fd > -1 && dvbnode->caslot != NULL && dvbnode->caslot->status == 2 && dvbnode->caslot->caids != NULL)
+				if(caservice[caservicenr].caslot == NULL)
 				{
-					tmpnr = oitoa(cadescnode->systemid);
-					if(ostrstr(dvbnode->caslot->caids, tmpnr) != NULL)
+					lenbytes = 0;
+					len = createcapmt(dvbnode, node, buf, &lenbytes, 0);
+					if(len > -1)
 					{
-						free(tmpnr); tmpnr = NULL;
-						treffer = 1;
-						break;
+						if(sendcapmttocam(dvbnode, node, buf, len, caservicenr, lenbytes + 9, clear) == 0) break;
 					}
-					free(tmpnr); tmpnr = NULL;
-				}
-				dvbnode = dvbnode->next;
-			}
-
-			if(treffer == 0)
-			{
-				cadescnode = cadescnode->next;
-				continue;
-			}
-		}
-
-		if(cadescnode->len > 0 && cadescnode->pid == 0)
-		{
-			int cadesclen = 0;
-
-			buf[pos++] = 0x09; //ca desc tag
-			if(round == 0 && status.caskipprivat == 1) //workaround for to long capmt
-			{
-				buf[pos++] = 4;
-				cadesclen = cadesclen;
-			}
-			else
-			{
-				cadesclen = cadescnode->len;
-				buf[pos++] = cadesclen;
-			}
-			buf[pos++] = cadescnode->systemid >> 8;
-			buf[pos++] = cadescnode->systemid & 0xff;
-			buf[pos++] = (cadescnode->reserved << 5) | (cadescnode->capid >> 8);
-			buf[pos++] = cadescnode->capid & 0xff;
-
-			if(cadesclen > 4)
-			{
-				memcpy(&buf[pos], cadescnode->privat, cadesclen - 4);
-				pos += cadesclen - 4;
-			}
-		}
-		cadescnode = cadescnode->next;
-	}
-
-	int tmppos = pos;
-
-	while(esinfonode != NULL)
-	{
-		buf[pos++] = esinfonode->streamtype;
-		buf[pos++] = esinfonode->pid >> 8;
-		buf[pos++] = esinfonode->pid & 0xff;
-
-		int eslenpos = pos;
-		int eslen = 0;
-		pos += 2;
-
-		cadescnode = node->channel->cadesc;
-		while(cadescnode != NULL && clear == 0)
-		{
-			if(cadescnode->len > 0 && cadescnode->pid == esinfonode->pid)
-			{
-				if(eslen == 0)
-				{
-					eslen = 1;
-					buf[pos++] = 0x01; //ca_pmt_cmd_id: ok_descrambling=1
-				}
-				eslen = eslen + cadescnode->len + 2;
-				buf[pos++] = 0x09; //ca desc tag
-				buf[pos++] = cadescnode->len;
-				buf[pos++] = cadescnode->systemid >> 8;
-				buf[pos++] = cadescnode->systemid & 0xff;
-				buf[pos++] = (cadescnode->reserved << 5) | (cadescnode->capid >> 8);
-				buf[pos++] = cadescnode->capid & 0xff;
-				if(cadescnode->len > 4)
-				{
-					memcpy(&buf[pos], cadescnode->privat, cadescnode->len - 4);
-					pos += cadescnode->len - 4;
 				}
 			}
-			cadescnode = cadescnode->next;
+			dvbnode = dvbnode->next;
 		}
 
-		buf[eslenpos + 1] = eslen & 0xff;
-		buf[eslenpos] = (eslen >> 8) & 0x0f;
-
-		esinfonode = esinfonode->next;
-	}
-
-	lenbytes = writelengthfield(&buf[3], pos - 10);
-	for(i = 0; i < pos + 10; i++)
-	{
-		buf[lenbytes + 3 + i] = buf[10 + i];
-	}
-	pos = pos - 10 + lenbytes + 3;
-	tmppos = tmppos - 10 + lenbytes + 3;
-
-	//programinfo len
-	buf[8 + lenbytes] = (tmppos - 9 - lenbytes) & 0xff;
-	buf[7 + lenbytes] = ((tmppos - 9 - lenbytes) >> 8) & 0x0f;
-
-	if(round == 0)
-	{
-#ifdef CAMSUPP
-		if(caservice[caservicenr].caslot == NULL || clear > 0)
-			sendcapmttocam(node, buf, pos, caservicenr, lenbytes + 9, clear);
-#endif
-		if(clear == 0)
-		{
-			round = 1;
-			goto start;
-		}
-	}
-	else
-	{
 		if(caservice[caservicenr].camsockfd < 0)
-			sendcapmttosock(node, buf, pos, caservicenr);
+		{
+			lenbytes = 0;
+			len = createcapmt(NULL, node, buf, &lenbytes, 1);
+			if(len > -1)
+				sendcapmttosock(node, buf, len, caservicenr);
+		}
+	}
+
+	if(clear > 0)
+	{
+		while(dvbnode != NULL)
+		{
+			if(dvbnode->type == CIDEV && dvbnode->fd > -1 && dvbnode->caslot != NULL && dvbnode->caslot->status == 2 && dvbnode->caslot->caids != NULL)
+			{
+				if(caservice[clear - 1].caslot == dvbnode->caslot)
+				{
+					lenbytes = 0;
+					len = createcapmt(dvbnode, node, buf, &lenbytes, 2);
+					if(len > -1)
+						sendcapmttocam(dvbnode, node, buf, len, caservicenr, lenbytes + 9, clear);
+					break;
+				}
+			}
+			dvbnode = dvbnode->next;
+		}
 	}
 
 	free(buf);

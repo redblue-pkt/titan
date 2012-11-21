@@ -1714,191 +1714,174 @@ void castart()
 	}
 }
 
-int sendcapmttocam(struct service* node, unsigned char* buf, int len, int caservicenr, int cmdpos, int clear)
+int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* buf, int len, int caservicenr, int cmdpos, int clear)
 {
 	int i = 0;
 	char* tmpstr = NULL, *blacklist = NULL;
-	struct dvbdev *dvbnode = dvbdev;
 
-	if(node == NULL) return 0;
+	if(node == NULL && dvbnode == NULL) return 1;
 
-	while(dvbnode != NULL)
+	if(dvbnode->type == CIDEV && dvbnode->fd > -1 && dvbnode->caslot != NULL && dvbnode->caslot->status == 2 && dvbnode->caslot->caids != NULL)
 	{
-		if(dvbnode->type == CIDEV && dvbnode->fd > -1 && dvbnode->caslot != NULL && dvbnode->caslot->status == 2 && dvbnode->caslot->caids != NULL)
+		//check if crypt can onyl handle single service
+		tmpstr = ostrcat("camtype_", oitoa(dvbnode->devnr), 0, 1);
+		if(clear == 0 && getconfigint(tmpstr, NULL) == 0 && getcaservicebyslot(dvbnode->caslot, 1) > -1)
 		{
-			//send clear only to right cimodule
-			if(clear > 0 && caservice[clear - 1].caslot != dvbnode->caslot)
-			{
-				dvbnode = dvbnode->next;
-				continue;
-			}
-
-			//check if crypt can onyl handle single service
-			tmpstr = ostrcat("camtype_", oitoa(dvbnode->devnr), 0, 1);
-			if(clear == 0 && getconfigint(tmpstr, NULL) == 0 && getcaservicebyslot(dvbnode->caslot, 1) > -1)
-			{
-				debug(620, "cam is singel and is in use");
-				free(tmpstr); tmpstr = NULL;
-				dvbnode = dvbnode->next;
-				continue;
-			}
+			debug(620, "cam is singel and is in use");
 			free(tmpstr); tmpstr = NULL;
+			return 1;
+		}
+		free(tmpstr); tmpstr = NULL;
 
-			//check if cam can caid
-			int foundcaid = 0;
-			tmpstr = ostrcat("camblacklist_", oitoa(dvbnode->devnr), 0, 1);
-			blacklist = getconfig(tmpstr, NULL);
-			free(tmpstr); tmpstr = NULL;
-			if(node->channel != NULL)
+		//check if cam can caid
+		int foundcaid = 0;
+		tmpstr = ostrcat("camblacklist_", oitoa(dvbnode->devnr), 0, 1);
+		blacklist = getconfig(tmpstr, NULL);
+		free(tmpstr); tmpstr = NULL;
+		if(node->channel != NULL)
+		{
+			struct cadesc *nodecadesc = node->channel->cadesc;
+			while(nodecadesc != NULL)
 			{
-				struct cadesc *nodecadesc = node->channel->cadesc;
-				while(nodecadesc != NULL)
+				debug(620, "cam-ciads=%s", dvbnode->caslot->caids);
+				debug(620, "videopid=%d, audiopid=%d, ac3pid=%d, capid=%d, caid=%d", node->channel->videopid, node->channel->audiopid, node->channel->ac3audiopid, nodecadesc->pid, nodecadesc->systemid);
+				tmpstr = oitoa(nodecadesc->systemid);
+				if(ostrstr(dvbnode->caslot->caids, tmpstr) != NULL)
 				{
-					debug(620, "cam-ciads=%s", dvbnode->caslot->caids);
-					debug(620, "videopid=%d, audiopid=%d, ac3pid=%d, capid=%d, caid=%d", node->channel->videopid, node->channel->audiopid, node->channel->ac3audiopid, nodecadesc->pid, nodecadesc->systemid);
-					tmpstr = oitoa(nodecadesc->systemid);
-					if(ostrstr(dvbnode->caslot->caids, tmpstr) != NULL)
+					//check if caid is in cams blacklist
+					if(blacklist == NULL || ostrstr(blacklist, tmpstr) == NULL)
 					{
-						//check if caid is in cams blacklist
-						if(blacklist == NULL || ostrstr(blacklist, tmpstr) == NULL)
-						{
-							foundcaid = 1;
-							break;
-						}
-						else
-							debug(620, "caid is in blacklist (%s -> %s)", tmpstr, blacklist);
+						foundcaid = 1;
+						break;
 					}
-					free(tmpstr); tmpstr = NULL;
+					else
+						debug(620, "caid is in blacklist (%s -> %s)", tmpstr, blacklist);
+				}
+				free(tmpstr); tmpstr = NULL;
+    		nodecadesc = nodecadesc->next;
+			}
+		}
+		free(tmpstr); tmpstr = NULL;
 
-					nodecadesc = nodecadesc->next;
+		if(foundcaid == 0)
+		{
+			debug(620, "cam not supports caid");
+			return 1;
+		}
+
+		//check if we can change input sources
+		for(i = 0; i < MAXCASERVICE; i++)
+		{
+			if(caservice[i].caslot != NULL && caservice[i].service != NULL && caservice[i].service->fedev != NULL && node->fedev != NULL)
+			{
+				if(caservice[i].caslot == dvbnode->caslot && caservice[i].service->fedev->devnr != node->fedev->devnr && (caservice[i].service->type == RECORDDIRECT || caservice[i].service->type == RECORDTIMER))
+				{
+					debug(620, "can't change input sources");
+					return 1;
 				}
 			}
-			free(tmpstr); tmpstr = NULL;
+		}
 
-			if(foundcaid == 0)
+		//got free camanager
+		if(caservice[caservicenr].camanager == -1)
+		{
+			caservice[caservicenr].camanager = getfreecasession(dvbnode, 2, 1);
+			debug(620, "use camanager %d", caservice[caservicenr].camanager);
+		}
+
+		//check if cam can decrypt
+		if(clear == 0 && caservice[caservicenr].camanager > -1 && getconfigint("checkcamdecrypt", NULL) == 1)
+		{
+			if(buf != NULL && len >= cmdpos)
 			{
-				debug(620, "cam not supports caid");
-				dvbnode = dvbnode->next;
-				continue;
+				status.checkcamdecrypt = 100;
+				buf[cmdpos] = 0x03;
+				buf[cmdpos - 6] = 0x04; //WA for alphacrypt, only delete all ca-pmt
+				sendSPDU(dvbnode, 0x90, NULL, 0, caservice[caservicenr].camanager, buf, len);
+				buf[cmdpos] = 0x01;
+				buf[cmdpos - 6] = 0x03;
+				while(status.checkcamdecrypt > 0)
+				{
+					status.checkcamdecrypt--;
+					usleep(30000);
+				}
+    		if(status.checkcamdecrypt == -2)
+				{
+					dvbnode->caslot->casession[caservice[caservicenr].camanager].inuse = 1;
+					caservice[caservicenr].camanager = -1;
+				}
 			}
+		}
 
-			//check if we can change input sources
+		//decrypt
+		if(caservice[caservicenr].camanager > -1)
+		{
+			//change ciX_input and inputX
+			if(clear == 0 && node->fedev != NULL)
+			{
+				char* ci = NULL;
+				debug(620, "set ci slot %d to tuner %d", dvbnode->devnr, node->fedev->devnr);
+				switch(node->fedev->devnr)
+				{
+					case 0:
+						setciinput(dvbnode->devnr, "A");
+						ci = ostrcat("CI", oitoa(dvbnode->devnr), 0, 1);
+						setcisource(node->fedev->devnr, ci);
+						free(ci); ci = NULL;
+						break;
+					case 1:
+						setciinput(dvbnode->devnr, "B");
+						ci = ostrcat("CI", oitoa(dvbnode->devnr), 0, 1);
+						setcisource(node->fedev->devnr, ci);
+						free(ci); ci = NULL;
+						break;
+					case 2:
+						setciinput(dvbnode->devnr, "C");
+						ci = ostrcat("CI", oitoa(dvbnode->devnr), 0, 1);
+						setcisource(node->fedev->devnr, ci);
+						free(ci); ci = NULL;
+						break;
+					case 3:
+						setciinput(dvbnode->devnr, "D");
+						ci = ostrcat("CI", oitoa(dvbnode->devnr), 0, 1);
+						setcisource(node->fedev->devnr, ci);
+						free(ci); ci = NULL;
+						break;
+				}
+			}
+			//send all saved capmt first
+			int first = 0;
 			for(i = 0; i < MAXCASERVICE; i++)
 			{
-				if(caservice[i].caslot != NULL && caservice[i].service != NULL && caservice[i].service->fedev != NULL && node->fedev != NULL)
+				if(dvbnode->caslot == caservice[i].caslot && caservice[i].capmt != NULL && caservice[i].capmtlen > 0)
 				{
-					if(caservice[i].caslot == dvbnode->caslot && caservice[i].service->fedev->devnr != node->fedev->devnr && (caservice[i].service->type == RECORDDIRECT || caservice[i].service->type == RECORDTIMER))
-					{
-						debug(620, "can't change input sources");
-						dvbnode = dvbnode->next;
-						continue;
-					}
+					if(i == 0)
+						caservice[i].capmt[caservice[i].cmdpos - 6] = 0x01;
+					else
+						caservice[i].capmt[caservice[i].cmdpos - 6] = 0x00;
+					first = 1;
+					sendSPDU(dvbnode, 0x90, NULL, 0, caservice[i].camanager, caservice[i].capmt, caservice[i].capmtlen);
 				}
 			}
-
-			//got free camanager
-			if(caservice[caservicenr].camanager == -1)
+			//send new capmt
+			if(first == 1) buf[cmdpos - 6] = 0x02;
+			sendSPDU(dvbnode, 0x90, NULL, 0, caservice[caservicenr].camanager, buf, len);
+			caservice[caservicenr].caslot = dvbnode->caslot;
+			//save new capmt
+			char* tmpbuf = malloc(len);
+			if(tmpbuf != NULL)
 			{
-				caservice[caservicenr].camanager = getfreecasession(dvbnode, 2, 1);
-				debug(620, "use camanager %d", caservice[caservicenr].camanager);
+				memcpy(tmpbuf, buf, len);
+				free(caservice[caservicenr].capmt);
+				caservice[caservicenr].capmt = tmpbuf;
+				caservice[caservicenr].capmtlen = len;
+				caservice[caservicenr].cmdpos = cmdpos;
 			}
-
-			//check if cam can decrypt
-			if(clear == 0 && caservice[caservicenr].camanager > -1 && getconfigint("checkcamdecrypt", NULL) == 1)
-			{
-				if(buf != NULL && len >= cmdpos)
-				{
-					status.checkcamdecrypt = 100;
-					buf[cmdpos] = 0x03;
-					buf[cmdpos - 6] = 0x04; //WA for alphacrypt, only delete all ca-pmt
-					sendSPDU(dvbnode, 0x90, NULL, 0, caservice[caservicenr].camanager, buf, len);
-					buf[cmdpos] = 0x01;
-					buf[cmdpos - 6] = 0x03;
-					while(status.checkcamdecrypt > 0)
-					{
-						status.checkcamdecrypt--;
-						usleep(30000);
-					}
-
-					if(status.checkcamdecrypt == -2)
-					{
-						dvbnode->caslot->casession[caservice[caservicenr].camanager].inuse = 1;
-						caservice[caservicenr].camanager = -1;
-					}
-				}
-			}
-
-			//decrypt
-			if(caservice[caservicenr].camanager > -1)
-			{
-				//change ciX_input and inputX
-				if(clear == 0 && node->fedev != NULL)
-				{
-					char* ci = NULL;
-					debug(620, "set ci slot %d to tuner %d", dvbnode->devnr, node->fedev->devnr);
-					switch(node->fedev->devnr)
-					{
-						case 0:
-							setciinput(dvbnode->devnr, "A");
-							ci = ostrcat("CI", oitoa(dvbnode->devnr), 0, 1);
-							setcisource(node->fedev->devnr, ci);
-							free(ci); ci = NULL;
-							break;
-						case 1:
-							setciinput(dvbnode->devnr, "B");
-							ci = ostrcat("CI", oitoa(dvbnode->devnr), 0, 1);
-							setcisource(node->fedev->devnr, ci);
-							free(ci); ci = NULL;
-							break;
-						case 2:
-							setciinput(dvbnode->devnr, "C");
-							ci = ostrcat("CI", oitoa(dvbnode->devnr), 0, 1);
-							setcisource(node->fedev->devnr, ci);
-							free(ci); ci = NULL;
-							break;
-						case 3:
-							setciinput(dvbnode->devnr, "D");
-							ci = ostrcat("CI", oitoa(dvbnode->devnr), 0, 1);
-							setcisource(node->fedev->devnr, ci);
-							free(ci); ci = NULL;
-							break;
-					}
-				}
-				//send all saved capmt first
-				int first = 0;
-				for(i = 0; i < MAXCASERVICE; i++)
-				{
-					if(dvbnode->caslot == caservice[i].caslot && caservice[i].capmt != NULL && caservice[i].capmtlen > 0)
-					{
-						if(i == 0)
-							caservice[i].capmt[caservice[i].cmdpos - 6] = 0x01;
-						else
-							caservice[i].capmt[caservice[i].cmdpos - 6] = 0x00;
-						first = 1;
-						sendSPDU(dvbnode, 0x90, NULL, 0, caservice[i].camanager, caservice[i].capmt, caservice[i].capmtlen);
-					}
-				}
-				//send new capmt
-				if(first == 1) buf[cmdpos - 6] = 0x02;
-				sendSPDU(dvbnode, 0x90, NULL, 0, caservice[caservicenr].camanager, buf, len);
-				caservice[caservicenr].caslot = dvbnode->caslot;
-				//save new capmt
-				char* tmpbuf = malloc(len);
-				if(tmpbuf != NULL)
-				{
-					memcpy(tmpbuf, buf, len);
-					free(caservice[caservicenr].capmt);
-					caservice[caservicenr].capmt = tmpbuf;
-					caservice[caservicenr].capmtlen = len;
-					caservice[caservicenr].cmdpos = cmdpos;
-				}
-				debug(620, "found cam for decrypt (slot=%d)", dvbnode->devnr);
-				break;
-			}
-			else
-				debug(620, "no free camanager found");
+			debug(620, "found cam for decrypt (slot=%d)", dvbnode->devnr);
+			return 0;
 		}
-		dvbnode = dvbnode->next;
+		else
+			debug(620, "no free camanager found");
 	}
 	return 1;
 }
