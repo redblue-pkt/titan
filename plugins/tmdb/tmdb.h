@@ -374,8 +374,12 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 
 //flag 0: only view
 //flag 1: can return tmdb node
-struct tmdb* screentmdb(char* title, char* skinname, int flag)
+struct tmdb* screentmdb(char* title, char* skinname, int flag, char* path, char* file)
 {
+	debug(133, "title: %s",title);
+	debug(133, "path: %s",path);
+	debug(133, "file: %s",file);	
+
 	int rcret = 0;
 	struct skin* tmdbskin = NULL;
 
@@ -397,14 +401,14 @@ struct tmdb* screentmdb(char* title, char* skinname, int flag)
 	struct tmdb* node = NULL, *retnode = NULL;
 	char* search = NULL;
 
-	setfbtransparent(255);
+//	setfbtransparent(255);
 	status.hangtime = 99999;
 
 	if(flag == 0)
 		b3->hidden = YES;
 	else
 		b3->hidden = NO;
-
+		
 	if(title == NULL) title = getepgakttitle(NULL);
 
 	drawscreen(load, 0, 0);
@@ -478,10 +482,19 @@ start:
 			drawscreen(tmdbskin, 0, 0);
 			continue;
 		}
-		if(rcret == getrcconfigint("rcyellow", NULL))
+		if(rcret == getrcconfigint("rcyellow", NULL) && flag == 1)
 		{
 			retnode = node;
 			break;
+		}
+
+		if(rcret == getrcconfigint("rcyellow", NULL) && path != NULL && file != NULL && node != NULL && node->imdbid != NULL && flag == 2)
+		{
+			debug(133, "path: %s",path);
+			debug(133, "file: %s",file);
+			debug(133, "type: 2");
+			debug(133, "node->imdbid: %s",node->imdbid);				
+			mediadbfindfilecb(path, file, 0, node->imdbid, 2);
 		}
 	}
 
@@ -491,7 +504,7 @@ start:
 		node = NULL;
 	}
 
-	setosdtransparent(getskinconfigint("osdtransparent", NULL));
+//	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	status.hangtime = getconfigint("hangtime", NULL);
 	clearscreen(tmdbskin);
 

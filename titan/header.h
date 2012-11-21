@@ -71,7 +71,7 @@ void freemediadbfilter(int flag);
 void freemediadb(int flag);
 void freemediadbcategory(int flag);
 int delmediadb(struct mediadb* mnode, int flag);
-void mediadbfindfilecb(char* path, char* file, int type, char* id);
+void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag);
 
 //eraseswap.h
 void screeneraseswap();

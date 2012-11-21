@@ -930,14 +930,14 @@ void screentmcimdbsearch(char* file, int menuid)
 	tmdbplugin = getplugin("TMDb");
 	if(tmdbplugin != NULL)
 	{
-		struct tmdb* (*startplugin)(char*, char*, int);
+		struct tmdb* (*startplugin)(char*, char*, int, char*, char*);
 		startplugin = dlsym(tmdbplugin->pluginhandle, "screentmdb");
 		if(startplugin != NULL)
 		{
 			drawscreen(tmcinfo, 2, 0);
 			bg = savescreen(tmcinfo);
 
-			tmdb = startplugin(shortname, "tmcinfo", 1);
+			tmdb = startplugin(shortname, "tmcinfo", 1, NULL, NULL);
 
 			if(tmdb != NULL)
 			{

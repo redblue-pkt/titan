@@ -1438,12 +1438,13 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 	debug(777, "mediadb scanthread end");
 }
 
-void mediadbfindfilecb(char* path, char* file, int type, char* id)
+void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 {
 	debug(133, "path: %s",path);
 	debug(133, "file: %s",file);
 	debug(133, "type: %d", type);
 	debug(133, "id: %s",id);
+	debug(133, "flag: %d", flag);
 	
 	char* shortpath = NULL, *tmpstr = NULL, *tmpid = NULL;
 	struct mediadb *node = NULL;
@@ -1509,18 +1510,18 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id)
 				startplugin = dlsym(imdbplugin->pluginhandle, "getimdb");
 				if(startplugin != NULL)
 				{
-				 	if(tmpid == NULL)
+				 	if(flag == NULL)
 						imdb = startplugin(&imdb, shortname, 0, 1, 0);
 					else
 					{
 						tmpid = string_replace("tt", "", tmpid, 1);
-						imdb = startplugin(&imdb, tmpid, 2, 1, 0); //load with imdbid with save
+						imdb = startplugin(&imdb, tmpid, 2, 0, 0); //load with imdbid with save
 					}
 				}
 			}
-		
-//			if(tmpid != NULL)
-//				imdb->id = tmpid;
+
+			if(flag == 2 && imdb != NULL && id != NULL)
+				imdb->id = ostrcat(id, NULL, 0, 0);
 	
 			struct skin* imdbapiplugin = getplugin("IMDb-API");
 			if(imdbplugin != NULL)
@@ -1551,8 +1552,25 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id)
 				}
 			}
 
-      debugimdbnode(imdb);
-			
+      		debugimdbnode(imdb);
+			if(flag == 2 && imdb != NULL && tmdb != NULL)
+			{
+				imdb->id = ostrcat(tmdb->imdbid, NULL, 0, 0);			
+				imdb->title = ostrcat(tmdb->title, NULL, 0, 0);	
+				imdb->genre = ostrcat(tmdb->genre, NULL, 0, 0);
+//				imdb->writer = ostrcat(tmdb->writer, NULL, 0, 0);
+//				imdb->director = ostrcat(tmdb->director, NULL, 0, 0);
+//				imdb->actors = ostrcat(tmdb->actors, NULL, 0, 0);
+				imdb->rating = ostrcat(tmdb->rating, NULL, 0, 0);
+				imdb->votes = ostrcat(tmdb->votes, NULL, 0, 0);
+				imdb->runtime = ostrcat(tmdb->runtime, NULL, 0, 0);
+				imdb->plot = ostrcat(tmdb->plot, NULL, 0, 0);
+				imdb->released = ostrcat(tmdb->released, NULL, 0, 0);
+				imdb->poster = ostrcat(tmdb->postermid, NULL, 0, 0);
+				imdb->thumb = ostrcat(tmdb->thumb, NULL, 0, 0);
+				imdb->year = ostrcat(tmdb->year, NULL, 0, 0);
+			}
+						
 			if(imdb != NULL && tmdb != NULL)
 			{
 				if(imdb->id == NULL) imdb->id = ostrcat(imdb->id, tmdb->imdbid, 1, 0);			
@@ -1568,11 +1586,11 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id)
 				if(imdb->released == NULL) imdb->released = ostrcat(imdb->released, tmdb->released, 1, 0);
 				if(imdb->poster == NULL) imdb->poster = ostrcat(imdb->poster, tmdb->postermid, 1, 0);
 				if(imdb->thumb == NULL) imdb->thumb = ostrcat(imdb->thumb, tmdb->thumb, 1, 0);
-				if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, tmdb->year, 1, 0);				
+				if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, tmdb->year, 1, 0);		
 			}
 
-      debugimdbnode(imdb);
-      
+      		debugimdbnode(imdb);
+      		
 			if(imdb != NULL && imdbapi != NULL)
 			{
 				if(imdb->id == NULL) imdb->id = ostrcat(imdb->id, imdbapi->id, 1, 0);			
@@ -1594,7 +1612,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id)
 			debug(777, "shortname: %s", shortname);
 			free(shortname); shortname = NULL;
 			
-      debugimdbnode(imdb);
+      		debugimdbnode(imdb);
 			
 			debug(777, "add video: %s/%s", shortpath, file);
 			if(imdb != NULL)
@@ -1786,7 +1804,7 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount, int first)
 					if(type == 0 || type == 100 || type == 90 || type == 91)
 					{
 						if(onlycount == 0)
-							mediadbfindfilecb(path, entry->d_name, 0, NULL);
+							mediadbfindfilecb(path, entry->d_name, 0, NULL, 0);
 						else
 							count += 1;
 					}
@@ -1796,7 +1814,7 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount, int first)
 					if(type == 1 || type == 100 || type == 90 || type == 92)
 					{
 						if(onlycount == 0)
-							mediadbfindfilecb(path, entry->d_name, 1, NULL);
+							mediadbfindfilecb(path, entry->d_name, 1, NULL, 0);
 						else
 							count += 1;
 					}
@@ -1806,7 +1824,7 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount, int first)
 					if(type == 2 || type == 100 || type == 91 || type == 92)
 					{
 						if(onlycount == 0)
-							mediadbfindfilecb(path, entry->d_name, 2, NULL);
+							mediadbfindfilecb(path, entry->d_name, 2, NULL, 0);
 						else
 							count += 1;
 					}
@@ -1819,7 +1837,7 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount, int first)
 					if(type == 0 || type == 100 || type == 90 || type == 91)
 					{
 						if(onlycount == 0)
-							mediadbfindfilecb(path, entry->d_name, 0, NULL);
+							mediadbfindfilecb(path, entry->d_name, 0, NULL, 0);
 						else
 							count += 1;
 					}
@@ -1829,7 +1847,7 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount, int first)
 					if(type == 1 || type == 100 || type == 90 || type == 92)
 					{
 						if(onlycount == 0)
-							mediadbfindfilecb(path, entry->d_name, 1, NULL);
+							mediadbfindfilecb(path, entry->d_name, 1, NULL, 0);
 						else
 							count += 1;
 					}
@@ -1839,7 +1857,7 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount, int first)
 					if(type == 2 || type == 100 || type == 91 || type == 92)
 					{
 						if(onlycount == 0)
-							mediadbfindfilecb(path, entry->d_name, 2, NULL);
+							mediadbfindfilecb(path, entry->d_name, 2, NULL, 0);
 						else
 							count += 1;
 					}
