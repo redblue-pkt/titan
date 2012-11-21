@@ -582,10 +582,30 @@ void screenmc_videoplayer()
 		}
 		else if(rcret == getrcconfigint("rcinfo", NULL))
 		{
-			info_menu(files, filelist, filelistpath);
-			drawscreen(skin, 0, 0);
 			if(status.play == 0 && status.pause == 0)
 			{
+				drawscreen(blackscreen, 0, 0);
+
+				if(filelist->select != NULL && filelist->select->input == NULL)
+				{
+					filename = createpath(filelistpath->text, filelist->select->name);
+					debug(133, "filename: %s", filename);				
+					playrcred(filename, playinfobarstatus, playertype, flag);
+				}
+			}
+			else
+			{
+			printf("2222222222222\n");
+
+				info_menu(files, filelist, filelistpath);
+			}
+			printf("3333333333333\n");
+
+			if(status.play == 0 && status.pause == 0)
+			{
+			printf("4444444444444\n");
+
+				drawscreen(skin, 0, 0);
 				drawscreen(blackscreen, 0, 0);
 				drawscreen(loadmediadb, 0, 0);
 				delownerrc(apskin);	

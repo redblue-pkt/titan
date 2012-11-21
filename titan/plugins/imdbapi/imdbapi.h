@@ -173,8 +173,12 @@ struct imdbapi* getimdbapi(struct imdbapi** first, char* title, int flag, int fl
 	return *first;
 }
 
-void screenimdbapi(char* title)
+void screenimdbapi(char* title, char* dummy1, char* dummy2, char* path, char* file)
 {
+	debug(133, "title: %s",title);
+	debug(133, "path: %s",path);
+	debug(133, "file: %s",file);	
+
 	int rcret = 0;
 	struct skin* imdbapiskin = getscreen("imdbapi");
 	struct skin* skin_plot = getscreennode(imdbapiskin, "plot");
@@ -185,14 +189,21 @@ void screenimdbapi(char* title)
 	struct skin* skin_releasetime = getscreennode(imdbapiskin, "releasetime");
 	struct skin* skin_cover = getscreennode(imdbapiskin, "cover");
 	struct skin* skin_actors = getscreennode(imdbapiskin, "actors");
+	struct skin* skin_b2 = getscreennode(imdbapiskin, "b2");
 	struct skin* load = getscreen("loading");
 	struct imdbapi* node = NULL;
 	char* search = NULL;
 
-	setfbtransparent(255);
+	if(path == NULL || file == NULL)
+		skin_b2->hidden = YES;
+	else
+		skin_b2->hidden = NO;
+
+//	setfbtransparent(255);
 	status.hangtime = 99999;
 
 	if(title == NULL) title = getepgakttitle(NULL);
+	debug(133, "title: %s",title);
 
 	drawscreen(load, 0, 0);
 	node = getimdbapi(&node, title, 0, 0);
@@ -235,10 +246,22 @@ start:
 			drawscreen(imdbapiskin, 0, 0);
 			continue;
 		}
+
+		if(path != NULL && file != NULL && node != NULL && node->id != NULL && rcret == getrcconfigint("rcgreen", NULL))
+		{
+			drawscreen(load, 0, 0);
+			debug(133, "path: %s",path);
+			debug(133, "file: %s",file);
+			debug(133, "type: 2");
+			debug(133, "imdbid: %s",node->id);				
+			mediadbfindfilecb(path, file, 0, node->id, 3);
+			clearscreen(load);
+			break;
+		}
 	}
 
 	freeimdbapi(&node, 0); node = NULL;
-	setosdtransparent(getskinconfigint("osdtransparent", NULL));
+//	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	status.hangtime = getconfigint("hangtime", NULL);
 	clearscreen(imdbapiskin);
 }

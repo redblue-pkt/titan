@@ -1438,6 +1438,10 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 	debug(777, "mediadb scanthread end");
 }
 
+// flag 0 = autoscan
+// flag 1 = manual scan imdb
+// flag 2 = manual scan tmdb
+// flag 3 = manual scan imdbapi
 void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 {
 	debug(133, "path: %s",path);
@@ -1522,6 +1526,9 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 
 			if(flag == 2 && imdb != NULL && id != NULL)
 				imdb->id = ostrcat(id, NULL, 0, 0);
+
+			if(flag == 3 && imdb != NULL && id != NULL)
+				imdb->id = ostrcat(id, NULL, 0, 0);
 	
 			struct skin* imdbapiplugin = getplugin("IMDb-API");
 			if(imdbplugin != NULL)
@@ -1553,6 +1560,8 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			}
 
       		debugimdbnode(imdb);
+
+			// manuel tmdb
 			if(flag == 2 && imdb != NULL && tmdb != NULL)
 			{
 				if(tmdb->imdbid != NULL) imdb->id = ostrcat(tmdb->imdbid, NULL, 0, 0);			
@@ -1570,7 +1579,28 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				if(tmdb->thumb != NULL) imdb->thumb = ostrcat(tmdb->thumb, NULL, 0, 0);
 				if(tmdb->year != NULL) imdb->year = ostrcat(tmdb->year, NULL, 0, 0);
 			}
-						
+
+      		debugimdbnode(imdb);
+
+			// manuel imdbapi
+			if(flag == 3 && imdb != NULL && tmdb != NULL)
+			{
+				if(imdbapi->id != NULL) imdb->id = ostrcat(imdbapi->id, NULL, 0, 0);			
+				if(imdbapi->title != NULL) imdb->title = ostrcat(imdbapi->title, NULL, 0, 0);	
+				if(imdbapi->genre != NULL) imdb->genre = ostrcat(imdbapi->genre, NULL, 0, 0);
+				if(imdbapi->writer != NULL) imdb->writer = ostrcat(imdbapi->writer, NULL, 0, 0);
+				if(imdbapi->director != NULL) imdb->director = ostrcat(imdbapi->director, NULL, 0, 0);
+				if(imdbapi->actors != NULL) imdb->actors = ostrcat(imdbapi->actors, NULL, 0, 0);
+				if(imdbapi->rating != NULL) imdb->rating = ostrcat(imdbapi->rating, NULL, 0, 0);
+				if(imdbapi->votes != NULL) imdb->votes = ostrcat(imdbapi->votes, NULL, 0, 0);
+				if(imdbapi->runtime != NULL) imdb->runtime = ostrcat(imdbapi->runtime, NULL, 0, 0);
+				if(imdbapi->plot != NULL) imdb->plot = ostrcat(imdbapi->plot, NULL, 0, 0);
+				if(imdbapi->released != NULL) imdb->released = ostrcat(imdbapi->released, NULL, 0, 0);
+//				if(imdbapi->postermid != NULL) imdb->poster = ostrcat(imdbapi->postermid, NULL, 0, 0);
+//				if(imdbapi->thumb != NULL) imdb->thumb = ostrcat(imdbapi->thumb, NULL, 0, 0);
+				if(imdbapi->year != NULL) imdb->year = ostrcat(imdbapi->year, NULL, 0, 0);
+			}
+		
 			if(imdb != NULL && tmdb != NULL)
 			{
 				if(imdb->id == NULL) imdb->id = ostrcat(imdb->id, tmdb->imdbid, 1, 0);			

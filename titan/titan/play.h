@@ -393,6 +393,7 @@ void imdb_submenu(char* file, int mode)
 
 		if(startplugin != NULL)
 		{
+				debug(133, "file=%s", basename(file));
 			if(file != NULL)
 			{
 				//create imdb search name
@@ -424,7 +425,8 @@ void imdb_submenu(char* file, int mode)
 void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 {
 //	if(checkbit(status.playercan, 5) == 0) return;
-	screenplayinfobar(file, 1, playertype, flag);
+	if(status.play == 1)
+		screenplayinfobar(file, 1, playertype, flag);
 
 	struct skin* pluginnode = NULL;
 	void (*startplugin)(void);
@@ -433,16 +435,19 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 	struct menulist* mlist = NULL, *mbox = NULL;
 	char* skintitle = "Menu";
 
-	addmenulist(&mlist, "Video Settings", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "AV Settings", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "iD3Tag Info", NULL, NULL, 0, 0);
+	if(status.play == 1)
+	{
+		addmenulist(&mlist, "Video Settings", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "AV Settings", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "iD3Tag Info", NULL, NULL, 0, 0);
+	}
 
 	//add plugins
 	while(child != NULL)
 	{
 		if(child->del == PLUGINDELMARK && (status.security == 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
 		{
-			if(ostrcmp(child->name, "Streaminfo") == 0)
+			if(ostrcmp(child->name, "Streaminfo") == 0 && status.play == 1)
 				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
 			else if(ostrcmp(child->name, "IMDb") == 0)
 				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
@@ -485,7 +490,7 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 	freemenulist(mlist, 1); mlist = NULL;
 	drawscreen(skin, 0, 0);
 	resettvpic();
-	if(playinfobarstatus > 0)
+	if(playinfobarstatus > 0 &&	status.play == 1)
 		screenplayinfobar(file, 0, playertype, flag);
 }
 
