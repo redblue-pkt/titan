@@ -373,7 +373,7 @@ void id3tag_info(char* file)
 void imdb_submenu(char* file, int mode)
 {
 	struct skin* pluginnode = NULL;
-	void (*startplugin)(char*, char*, char*, char*, char*);
+	void (*startplugin)(char*, char*, int, char*, char*);
 	
 	if(mode == 0)
 		pluginnode = getplugin("IMDb");
