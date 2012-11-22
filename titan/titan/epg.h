@@ -939,7 +939,7 @@ struct epg* addepg(struct channel* chnode, int eventid, int version, time_t star
 		//don't save epg with same starttime / endtime
 		if(newnode->starttime == prev->starttime && newnode->endtime == prev->endtime)
 		{
-			free(newnode); newnode == NULL;
+			free(newnode); newnode = NULL;
 			if(flag == 0) m_unlock(&status.epgmutex, 4);
 			return NULL;
 		}
@@ -965,7 +965,7 @@ struct epg* addepg(struct channel* chnode, int eventid, int version, time_t star
 			prev->endtime = endtime;
 			prev->parentalrating = 0;
 
-			free(newnode), newnode == NULL;
+			free(newnode); newnode = NULL;
 			if(flag == 0) m_unlock(&status.epgmutex, 4);
 			return prev;
 		}
