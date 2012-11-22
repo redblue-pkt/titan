@@ -303,8 +303,8 @@ void screenoscam()
 
 	if(file_exist("/var/swap/keys/oscam.server"))
 		file = "/var/swap/keys/oscam.server";
-	else if(file_exist("/etc/keys/oscam.server"))
-		file = "/etc/keys/oscam.server";
+	else if(file_exist("/var/keys/oscam.server"))
+		file = "/var/keys/oscam.server";
 
 	readoscam(file);
 	listbox->aktline = 1;
@@ -352,7 +352,7 @@ start:
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			//write oscam
-			writeoscam("oscam.server.2");
+			writeoscam(file);
 			textbox(_("Message"), _("Oscam config written to medium !\nPlease restart Oscam to activate new config."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 			drawscreen(skinoscam, 0, 0);
 		}
