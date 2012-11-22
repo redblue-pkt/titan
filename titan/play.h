@@ -271,6 +271,7 @@ void id3tag_info(char* file)
 {
 	char* tmpstr = NULL;
 
+	if(file == NULL) return;
 	if(!filelistflt(".mp3 .flac .ogg .wma .ra .wav", file))
 	{
 		struct id3tag* id3tag = NULL;
@@ -278,6 +279,7 @@ void id3tag_info(char* file)
 		char* tmphash = olutoa(hash);
 				
 		id3tag = getid3(file, tmphash, 1);
+		free(tmphash); tmphash = NULL;
 	
 		if(id3tag != NULL)
 		{
