@@ -263,6 +263,10 @@ void screensoftcam()
 	struct skin* b_green = getscreennode(softcam, "b2");
 	struct skin* b_yellow = getscreennode(softcam, "b3");
 	struct skin* b_blue = getscreennode(softcam, "b4");
+	struct skin* pluginnode = NULL;
+	void (*startplugin)(char*);
+	struct skin* plugin = getscreen("plugin");
+	struct skin* child = plugin->child;
 
 	drawscreen(loading, 0, 0);
 
@@ -325,13 +329,23 @@ void screensoftcam()
 			// start/stop emu, depending if emu already runs
 			drawscreen(loading, 0, 0);
 			if(checkrunningcam(listbox->select->name) == 1)
-			{
 				stopcam(listbox->select->name);
+			else
+				startcam(listbox->select->name);
+			drawscreen(softcam, 0, 0);
+		}
+		if(rcret == getrcconfigint("rcmenu", NULL))
+		{
+			pluginnode = getplugin("Oscam Config");
+
+			if(pluginnode != NULL)
+			{
+				startplugin = dlsym(pluginnode->pluginhandle, "start");
+				if(startplugin != NULL)
+					startplugin();
 			}
 			else
-			{
-				startcam(listbox->select->name);
-			}
+				textbox(_("Message"), _("Plugin not installed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 			drawscreen(softcam, 0, 0);
 		}
 		if(rcret == RCTIMEOUT)
