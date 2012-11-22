@@ -319,47 +319,47 @@ void id3tag_info(char* file)
 	{
 		tmpstr = ostrcat(tmpstr, _("Title:"), 1, 0);
 		tmpstr = ostrcat(tmpstr, " ", 1, 0);
-		tmpstr = ostrcat(tmpstr, playergetinfo("Title"), 1, 0);
+		tmpstr = ostrcat(tmpstr, playergetinfo("Title"), 1, 1);
 		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 		
 		tmpstr = ostrcat(tmpstr, _("Artist:"), 1, 0);
 		tmpstr = ostrcat(tmpstr, " ", 1, 0);
-		tmpstr = ostrcat(tmpstr, playergetinfo("Artist"), 1, 0);
+		tmpstr = ostrcat(tmpstr, playergetinfo("Artist"), 1, 1);
 		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 		
 		tmpstr = ostrcat(tmpstr, _("Album:"), 1, 0);
 		tmpstr = ostrcat(tmpstr, " ", 1, 0);
-		tmpstr = ostrcat(tmpstr, playergetinfo("Album"), 1, 0);	
+		tmpstr = ostrcat(tmpstr, playergetinfo("Album"), 1, 1);
 		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 		
 		tmpstr = ostrcat(tmpstr, _("Year:"), 1, 0);
 		tmpstr = ostrcat(tmpstr, " ", 1, 0);
-		tmpstr = ostrcat(tmpstr, playergetinfo("Year"), 1, 0);	
+		tmpstr = ostrcat(tmpstr, playergetinfo("Year"), 1, 1);
 		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 	
 		tmpstr = ostrcat(tmpstr, _("Genre:"), 1, 0);
 		tmpstr = ostrcat(tmpstr, " ", 1, 0);
-		tmpstr = ostrcat(tmpstr, playergetinfo("Genre"), 1, 0);
+		tmpstr = ostrcat(tmpstr, playergetinfo("Genre"), 1, 1);
 		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 		
 		tmpstr = ostrcat(tmpstr, _("Comment:"), 1, 0);
 		tmpstr = ostrcat(tmpstr, " ", 1, 0);
-		tmpstr = ostrcat(tmpstr, playergetinfo("Comment"), 1, 0);
+		tmpstr = ostrcat(tmpstr, playergetinfo("Comment"), 1, 1);
 		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 		
 		tmpstr = ostrcat(tmpstr, _("Track:"), 1, 0);
 		tmpstr = ostrcat(tmpstr, " ", 1, 0);
-		tmpstr = ostrcat(tmpstr, playergetinfo("Track"), 1, 0);
+		tmpstr = ostrcat(tmpstr, playergetinfo("Track"), 1, 1);
 		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 		
 		tmpstr = ostrcat(tmpstr, _("Copyright:"), 1, 0);
 		tmpstr = ostrcat(tmpstr, " ", 1, 0);
-		tmpstr = ostrcat(tmpstr, playergetinfo("Copyright"), 1, 0);
+		tmpstr = ostrcat(tmpstr, playergetinfo("Copyright"), 1, 1);
 		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 		
 	//	tmpstr = ostrcat(tmpstr, _("TestLibEplayer:"), 1, 0);
 	//	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-	//	tmpstr = ostrcat(tmpstr, playergetinfo("TestLibEplayer"), 1, 0);	
+	//	tmpstr = ostrcat(tmpstr, playergetinfo("TestLibEplayer"), 1, 1);
 	//	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 	}
 			
