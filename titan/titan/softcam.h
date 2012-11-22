@@ -266,7 +266,6 @@ void screensoftcam()
 	struct skin* pluginnode = NULL;
 	void (*startplugin)(void);
 	struct skin* plugin = getscreen("plugin");
-	struct skin* child = plugin->child;
 
 	drawscreen(loading, 0, 0);
 
