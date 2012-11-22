@@ -1110,28 +1110,24 @@ double playergetlength()
 	return length;
 }
 
-//TODO: implement
 char* playergetinfo(char* tag)
 {
-	char *ret = NULL;
+	char* ret = NULL;
 
 #ifdef EPLAYER3
-	//char *tags[] = {"Title", "Artist", "Album", "Year", "Genre", "Comment", "Track", "Copyright", "TestLibEplayer", NULL};
-	//int i = 0;
+	char *tags[] = {"Title", "Artist", "Album", "Year", "Genre", "Comment", "Track", "Copyright", "TestLibEplayer", NULL};
+	int i = 0;
 
 	if(player && player->playback)
 	{
-	//	while(tags[i] != NULL)
-	//	{
-	//		char* tag = tags[i];
-			player->playback->Command(player, PLAYBACK_INFO, &ret);
+		while(tags[i] != NULL)
+		{
+			ret = tags[i];
+			if(ostrcmp(tag, ret) == 0)
+				player->playback->Command(player, PLAYBACK_INFO, &ret);
 
-			if(tag != NULL)
-				printf("%s:%s",tag, ret);
-			else
-				printf("%s:NULL",tag);
-			//i++;
-		//}
+			i++;
+		}
 	}
 #endif
 	return ret;
