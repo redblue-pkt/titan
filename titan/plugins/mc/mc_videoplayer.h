@@ -13,218 +13,6 @@ void startmediadb()
 	free(tmpstr), tmpstr = NULL;
 }
 
-void get_mediadb_scan_info(int files)
-{
-	int videocount = 0, audiocount = 0, picturecount = 0;
-	getmediadbcounts(&videocount, &audiocount, &picturecount);
-
-	char* tmpstr = NULL;
-	tmpstr = ostrcat(tmpstr, "scanning (", 1, 0);
-	tmpstr = ostrcat(tmpstr, oitoa(videocount), 1, 1);
-	tmpstr = ostrcat(tmpstr, "/", 1, 0);
-	tmpstr = ostrcat(tmpstr, oitoa(files), 1, 1);
-	tmpstr = ostrcat(tmpstr, ")", 1, 0);
-	
-	tmpstr = ostrcat(tmpstr, "\n\n ", 1, 0);
-	tmpstr = ostrcat(tmpstr, _("MediaDB directory scan started in Background !"), 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n\n  ", 1, 0);
-	tmpstr = ostrcat(tmpstr, _("Delete MediaDB before scan"), 1, 0);
-	tmpstr = ostrcat(tmpstr, ": \t", 1, 0);
-	if(ostrcmp(getconfig("mediadbscandelall", NULL), "1") == 0)
-		tmpstr = ostrcat(tmpstr, _("yes"), 1, 0);
-	else
-		tmpstr = ostrcat(tmpstr, _("no"), 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n  ", 1, 0);			
-	tmpstr = ostrcat(tmpstr, _("Delete unused entrys before scan"), 1, 0);
-	tmpstr = ostrcat(tmpstr, ": \t", 1, 0);		
-	if(ostrcmp(getconfig("mediadbscandelnotfound", NULL), "1") == 0)
-		tmpstr = ostrcat(tmpstr, _("yes"), 1, 0);
-	else
-		tmpstr = ostrcat(tmpstr, _("no"), 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n  ", 1, 0);
-	tmpstr = ostrcat(tmpstr, _("scan Directory:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " \t\t\t", 1, 0);
-	tmpstr = ostrcat(tmpstr, getconfig("mc_vp_path", NULL), 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n  ", 1, 0);		
-	tmpstr = ostrcat(tmpstr, _("MediaDB place:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " \t\t\t", 1, 0);				
-	tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
-
-	textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 500, 10, 0);
-	free(tmpstr), tmpstr = NULL;
-}
-
-void get_tag_info()
-{
-/*
-	printf("Title: %s\n", playergetinfo("Title"));
-	printf("Artist: %s\n", playergetinfo("Artist"));
-	printf("Album: %s\n", playergetinfo("Album"));
-	printf("Year: %s\n", playergetinfo("Year"));
-	printf("Genre: %s\n", playergetinfo("Genre"));
-	printf("Comment: %s\n", playergetinfo("Comment"));
-	printf("Track: %s\n", playergetinfo("Track"));
-	printf("Copyright: %s\n", playergetinfo("Copyright"));
-	printf("TestLibEplayer: %s\n", playergetinfo("TestLibEplayer"));
-*/
-	char* tmpstr = NULL;
-	tmpstr = ostrcat(tmpstr, _("Title:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-	tmpstr = ostrcat(tmpstr, playergetinfo("Title"), 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-	
-	tmpstr = ostrcat(tmpstr, _("Artist:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-	tmpstr = ostrcat(tmpstr, playergetinfo("Artist"), 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-	
-	tmpstr = ostrcat(tmpstr, _("Album:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-	tmpstr = ostrcat(tmpstr, playergetinfo("Album"), 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-	
-	tmpstr = ostrcat(tmpstr, _("Year:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-	tmpstr = ostrcat(tmpstr, playergetinfo("Year"), 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-
-	tmpstr = ostrcat(tmpstr, _("Genre:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-	tmpstr = ostrcat(tmpstr, playergetinfo("Genre"), 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-	
-	tmpstr = ostrcat(tmpstr, _("Comment:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-	tmpstr = ostrcat(tmpstr, playergetinfo("Comment"), 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-	
-	tmpstr = ostrcat(tmpstr, _("Track:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-	tmpstr = ostrcat(tmpstr, playergetinfo("Track"), 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-	
-	tmpstr = ostrcat(tmpstr, _("Copyright:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-	tmpstr = ostrcat(tmpstr, playergetinfo("Copyright"), 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-	
-	tmpstr = ostrcat(tmpstr, _("TestLibEplayer:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-	tmpstr = ostrcat(tmpstr, playergetinfo("TestLibEplayer"), 1, 0);	
-	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-			
-	textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 500, 10, 0);
-	free(tmpstr), tmpstr = NULL;
-}
-
-void get_imdb_info(int mode, struct skin* filelist, struct skin* filelistpath)
-{
-	int treffer = 0;
-	struct skin* pluginnode = NULL;
-	void (*startplugin)(char*);
-	struct skin* plugin = getscreen("plugin");
-	struct skin* child = plugin->child;
-	char* tmpstr = NULL;
-
-	if(mode == 0)
-		tmpstr = ostrcat(tmpstr, "Install IMDb Ipk first !", 1, 0);
-	else if(mode == 1)
-		tmpstr = ostrcat(tmpstr, "Install IMDb-API Ipk first !", 1, 0);
-	else if(mode == 2)
-		tmpstr = ostrcat(tmpstr, "Install TMDb Ipk first !", 1, 0);
-
-	while(child != NULL)
-	{
-		if(child->del == PLUGINDELMARK)
-		{
-			if(ostrcmp(child->name, "IMDb") == 0)
-				treffer = 1;
-			else if(ostrcmp(child->name, "IMDb-API") == 0)
-				treffer = 1;
-			else if(ostrcmp(child->name, "TMDb") == 0)
-				treffer = 1;
-		}
-		child = child->next;
-	}
-
-	if(treffer == 1)
-	{
-		if(mode == 0)
-			pluginnode = getplugin("IMDb");
-		else if(mode == 1)
-			pluginnode = getplugin("IMDb-API");
-		else if(mode == 2)
-			pluginnode = getplugin("TMDb");
-				
-		if(pluginnode != NULL)
-		{			
-			if(mode == 0)
-				startplugin = dlsym(pluginnode->pluginhandle, "screenimdb");
-			else if(mode == 1)
-				startplugin = dlsym(pluginnode->pluginhandle, "screenimdbapi");
-			else if(mode == 2)
-				startplugin = dlsym(pluginnode->pluginhandle, "screentmdb");
-			
-			if(startplugin != NULL)
-			{
-				printf("start..... %s\n",filelist->select->name);
-				if(filelist->select != NULL && filelist->select->input == NULL)
-				{
-					//create imdb search name
-					char* shortname = ostrcat(filelist->select->name, NULL, 0, 0);
-					string_tolower(shortname);
-					shortname = string_shortname(shortname, 1);
-					shortname = string_shortname(shortname, 2);
-					string_removechar(shortname);
-					strstrip(shortname);
-					printf("start..... %s\n",shortname);
-					startplugin(shortname);
-				}				
-			}
-		}
-	}
-	else
-		textbox(_("Message"), _(tmpstr), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
-
-	free(tmpstr), tmpstr = NULL;
-}
-
-void info_menu(int files, struct skin* filelist, struct skin* filelistpath)
-{
-	struct menulist* mlist = NULL, *mbox = NULL;
-	char* skintitle = "Menu";
-
-	if(status.play == 1)
-	{
-		addmenulist(&mlist, "MediaDB Scan Info", NULL, NULL, 0, 0);
-		addmenulist(&mlist, "Tag Info", NULL, NULL, 0, 0);
-	}
-	
-	addmenulist(&mlist, "File Info", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "IMDb", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "IMDb-API", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "TMDb", NULL, NULL, 0, 0);
-
-	mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
-	if(mbox != NULL)
-	{
-		if(ostrcmp(mbox->name, "MediaDB Scan Info") == 0)
-			get_mediadb_scan_info(files);
-		else if(ostrcmp(mbox->name, "File Info") == 0)
-			get_mediadb_scan_info(files);
-		else if(ostrcmp(mbox->name, "Tag Info") == 0)
-			get_tag_info();
-		else if(ostrcmp(mbox->name, "IMDb") == 0)
-			get_imdb_info(0, filelist, filelistpath);
-		else if(ostrcmp(mbox->name, "IMDb-API") == 0)
-			get_imdb_info(1, filelist, filelistpath);
-		else if(ostrcmp(mbox->name, "TMDb") == 0)
-			get_imdb_info(2, filelist, filelistpath);
-	}
-
-	freemenulist(mlist, 1); mlist = NULL;			
-}
-
 void screenmc_videoplayer()
 {
 	struct skin* loadmediadb = getscreen("loading");
@@ -506,7 +294,7 @@ void screenmc_videoplayer()
 		else if(rcret == getrcconfigint("rcred", NULL))
 		{
 			if(status.play == 1)
-				playrcred(filename, playinfobarstatus, playertype, flag);
+				playrcred(filename, playinfobarstatus, playertype, files, flag);
 			else
 			{
 				if(playlist == 0)
@@ -590,21 +378,16 @@ void screenmc_videoplayer()
 				{
 					filename = createpath(filelistpath->text, filelist->select->name);
 					debug(133, "filename: %s", filename);				
-					playrcred(filename, playinfobarstatus, playertype, flag);
+					playrcred(filename, playinfobarstatus, playertype, files, flag);
 				}
 			}
 			else
 			{
-			printf("2222222222222\n");
-
-				info_menu(files, filelist, filelistpath);
+				info_menu(apskin, filelist, filelistpath, filename, &playinfobarstatus, &playinfobarcount, playertype, flag, files);
 			}
-			printf("3333333333333\n");
 
 			if(status.play == 0 && status.pause == 0)
 			{
-			printf("4444444444444\n");
-
 				drawscreen(skin, 0, 0);
 				drawscreen(blackscreen, 0, 0);
 				drawscreen(loadmediadb, 0, 0);
@@ -969,7 +752,8 @@ void screenmc_videoplayer()
 				{
 					writesys("/tmp/.autoscan", "", 0);
 					mediadbscan(filelistpath->text, 1000, 1);
-					files = findfiles(filelistpath->text, 1000, 1, 1, 1); //count only
+					files = findfiles(filelistpath->text, 0, 1, 1, 1); //count only
+					printf("files %d\n",files);
 				}
 			}
 		}

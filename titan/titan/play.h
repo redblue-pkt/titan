@@ -422,7 +422,48 @@ void imdb_submenu(char* file, int mode)
 	}
 }
 
-void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
+void get_mediadb_scan_info(int files)
+{
+	int videocount = 0, audiocount = 0, picturecount = 0;
+	getmediadbcounts(&videocount, &audiocount, &picturecount);
+
+	char* tmpstr = NULL;
+	tmpstr = ostrcat(tmpstr, "scanning (", 1, 0);
+	tmpstr = ostrcat(tmpstr, oitoa(videocount), 1, 1);
+	tmpstr = ostrcat(tmpstr, "/", 1, 0);
+	tmpstr = ostrcat(tmpstr, oitoa(files), 1, 1);
+	tmpstr = ostrcat(tmpstr, ")", 1, 0);
+	
+	tmpstr = ostrcat(tmpstr, "\n\n ", 1, 0);
+	tmpstr = ostrcat(tmpstr, _("MediaDB directory scan started in Background !"), 1, 0);
+	tmpstr = ostrcat(tmpstr, "\n\n  ", 1, 0);
+	tmpstr = ostrcat(tmpstr, _("Delete MediaDB before scan"), 1, 0);
+	tmpstr = ostrcat(tmpstr, ": \t", 1, 0);
+	if(ostrcmp(getconfig("mediadbscandelall", NULL), "1") == 0)
+		tmpstr = ostrcat(tmpstr, _("yes"), 1, 0);
+	else
+		tmpstr = ostrcat(tmpstr, _("no"), 1, 0);
+	tmpstr = ostrcat(tmpstr, "\n  ", 1, 0);			
+	tmpstr = ostrcat(tmpstr, _("Delete unused entrys before scan"), 1, 0);
+	tmpstr = ostrcat(tmpstr, ": \t", 1, 0);		
+	if(ostrcmp(getconfig("mediadbscandelnotfound", NULL), "1") == 0)
+		tmpstr = ostrcat(tmpstr, _("yes"), 1, 0);
+	else
+		tmpstr = ostrcat(tmpstr, _("no"), 1, 0);
+	tmpstr = ostrcat(tmpstr, "\n  ", 1, 0);
+	tmpstr = ostrcat(tmpstr, _("scan Directory:"), 1, 0);
+	tmpstr = ostrcat(tmpstr, " \t\t\t", 1, 0);
+	tmpstr = ostrcat(tmpstr, getconfig("mc_vp_path", NULL), 1, 0);
+	tmpstr = ostrcat(tmpstr, "\n  ", 1, 0);		
+	tmpstr = ostrcat(tmpstr, _("MediaDB place:"), 1, 0);
+	tmpstr = ostrcat(tmpstr, " \t\t\t", 1, 0);				
+	tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
+
+	textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 500, 10, 0);
+	free(tmpstr), tmpstr = NULL;
+}
+
+void playrcred(char* file, int playinfobarstatus, int playertype, int files, int flag)
 {
 //	if(checkbit(status.playercan, 5) == 0) return;
 	if(status.play == 1)
@@ -442,6 +483,9 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 		addmenulist(&mlist, "iD3Tag Info", NULL, NULL, 0, 0);
 	}
 
+	if(files > 0)
+		addmenulist(&mlist, "MediaDB Scan Info", NULL, NULL, 0, 0);
+
 	//add plugins
 	while(child != NULL)
 	{
@@ -454,7 +498,7 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 			else if(ostrcmp(child->name, "IMDb-API") == 0)
 				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
 			else if(ostrcmp(child->name, "TMDb") == 0)
-				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);								
+				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
 		}
 		child = child->next;
 	}
@@ -474,6 +518,8 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 			imdb_submenu(file, 2);
 		else if(ostrcmp(mbox->name, "iD3Tag Info") == 0)
 			id3tag_info(file);
+		else if(ostrcmp(mbox->name, "MediaDB Scan Info") == 0)
+			get_mediadb_scan_info(files);
 		else
 		{
 			pluginnode = getplugin(mbox->name);
@@ -1036,7 +1082,7 @@ playerstart:
 					playrcok(file, playinfobarstatus, playertype, flag);
 				
 				if(rcret == getrcconfigint("rcred", NULL))
-					playrcred(file, playinfobarstatus, playertype, flag);
+					playrcred(file, playinfobarstatus, playertype, 0, flag);
 
 				if(rcret == getrcconfigint("rcinfo", NULL))
 					playrcinfo(file, &playinfobarstatus, &playinfobarcount, playertype, flag);

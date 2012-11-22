@@ -1830,9 +1830,9 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount, int first)
 			if((status.expertmodus > 0) || (file_exist("/var/swap/etc/.codecpack")))
 			{
 				if(!filelistflt(".avi .dat .divx .flv .mkv .m4v .mp4 .mov .mpg .mpeg .mts .m2ts .trp .ts .vdr .vob .wmv .rm", entry->d_name)) //video
-				{
+				{				
 					if(type == 0 || type == 100 || type == 90 || type == 91)
-					{
+					{					
 						if(onlycount == 0)
 							mediadbfindfilecb(path, entry->d_name, 0, NULL, 0);
 						else
@@ -1861,9 +1861,9 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount, int first)
 				}
 			}
 			else
-			{			
+			{
 				if(!filelistflt(".avi .mkv .mpg .mpeg .ts", entry->d_name)) //video
-				{
+				{				
 					if(type == 0 || type == 100 || type == 90 || type == 91)
 					{
 						if(onlycount == 0)
@@ -1905,6 +1905,7 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount, int first)
 
 	if(onlycount == 1)
 		return count;
+
 	return 0;
 }
 
