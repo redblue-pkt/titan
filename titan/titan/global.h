@@ -1194,6 +1194,7 @@ int checkemu()
 int checkpluginskip(char* name)
 {
 	if(ostrcmp(name, "3 Wins") == 0) return 1;
+	else if(ostrcmp(name, "Oscam Config") == 0) return 1;
 	else if(ostrcmp(name, "CallMonitor") == 0) return 1;
 	else if(ostrcmp(name, "Hello") == 0) return 1;
 	else if(ostrcmp(name, "Cat Catch") == 0) return 1;
@@ -1247,6 +1248,7 @@ void setskinnodeslocked(int flag)
 		while(child != NULL)
 		{
 			if(ostrcmp("browser", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("oscam", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("catcatch", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("callmon_main", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("cinterface", child->name) == 0) child->locked = flag;
