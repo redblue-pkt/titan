@@ -285,31 +285,26 @@ void id3tag_info(char* file)
 		{
 			tmpstr = ostrcat(tmpstr, _("Title:"), 1, 0);
 			tmpstr = ostrcat(tmpstr, " ", 1, 0);
-			tmpstr = ostrcat(tmpstr, playergetinfo("Title"), 1, 0);
 			tmpstr = ostrcat(tmpstr, id3tag->title, 1, 0);
 			tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 			
 			tmpstr = ostrcat(tmpstr, _("Artist:"), 1, 0);
 			tmpstr = ostrcat(tmpstr, " ", 1, 0);
-			tmpstr = ostrcat(tmpstr, playergetinfo("Artist"), 1, 0);
 			tmpstr = ostrcat(tmpstr, id3tag->artist, 1, 0);
 			tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 			
 			tmpstr = ostrcat(tmpstr, _("Album:"), 1, 0);
 			tmpstr = ostrcat(tmpstr, " ", 1, 0);
-			tmpstr = ostrcat(tmpstr, playergetinfo("Album"), 1, 0);	
 			tmpstr = ostrcat(tmpstr, id3tag->album, 1, 0);
 			tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 			
 			tmpstr = ostrcat(tmpstr, _("Year:"), 1, 0);
 			tmpstr = ostrcat(tmpstr, " ", 1, 0);
-			tmpstr = ostrcat(tmpstr, playergetinfo("Year"), 1, 0);	
 			tmpstr = ostrcat(tmpstr, id3tag->year, 1, 0);
 			tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 		
 			tmpstr = ostrcat(tmpstr, _("Genre:"), 1, 0);
 			tmpstr = ostrcat(tmpstr, " ", 1, 0);
-			tmpstr = ostrcat(tmpstr, playergetinfo("Genre"), 1, 0);
 			tmpstr = ostrcat(tmpstr, id3tag->genretext, 1, 0);
 			tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 
