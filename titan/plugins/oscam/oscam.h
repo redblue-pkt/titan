@@ -352,9 +352,11 @@ start:
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			//write oscam
-			writeoscam(file);
-			textbox(_("Message"), _("Oscam config written to medium !\nPlease restart Oscam to activate new config."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
-			drawscreen(skinoscam, 0, 0);
+			if(writeoscam(file) == 0)
+			{
+				textbox(_("Message"), _("Oscam config written to medium !\nPlease restart Oscam to activate new config."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+				drawscreen(skinoscam, 0, 0);
+			}
 		}
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
