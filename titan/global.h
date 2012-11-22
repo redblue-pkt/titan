@@ -534,7 +534,7 @@ void ckeckkillnetthread()
 
 int checkreseller()
 {
-	if(checkbox("ATEMIO510") == 0 && checkbox("ATEMIO7600") == 0)
+	if(checkbox("ATEMIO510") == 0 && checkbox("ATEMIO7600") == 0 && checkbox("AT7000") == 0 && checkbox("AT700") == 0)
 	{
 		printf("ResellerId: skipped\n");
 		printf("boxtype: %s\n", status.boxtype);	
