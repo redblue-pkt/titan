@@ -540,10 +540,14 @@ int checkreseller()
 		printf("boxtype: %s\n", status.boxtype);	
 		return 0;
 	}
-	
+
+printf("1ResellerId\n");
+			
 	FILE* fd = NULL;
 	char mtd[10];
 	char* buf = NULL;
+	
+printf("2ResellerId\n");
 
 	// /dev/mtd0
 	mtd[0] = 0x2f;
@@ -557,8 +561,12 @@ int checkreseller()
 	mtd[8] = 0x30;
 	mtd[9] = '\0';
 
+printf("3ResellerId\n");
+	
 	if((fd = fopen(mtd, "r")) == NULL)
 		return 1;
+
+printf("4ResellerId\n");
 
 	buf = malloc(1080);
 	if(buf == NULL)
@@ -566,6 +574,8 @@ int checkreseller()
 		fclose(fd);
 		return 1;
 	}
+
+printf("5ResellerId\n");
 
 	fread(buf, 1080, 1, fd);
 
@@ -611,6 +621,17 @@ int checkreseller()
 	}
 	else if(checkbox("AT7000") == 1)
 	{
+printf("6ResellerId\n");
+
+		printf("1ResellerId: check\n");
+		printf("1ResellerId1: %x\n", buf[1072]);
+		printf("1ResellerId2: %x\n", buf[1073]);
+		printf("1ResellerId3: %x\n", buf[1074]);
+		printf("1ResellerId4: %x\n", buf[1075]);
+		printf("1ResellerId: %x %x %x %x\n", buf[1072], buf[1073], buf[1074], buf[1075]);
+		printf("1ResellerId: not supported\n");
+		printf("1boxtype: %s\n", status.boxtype);
+		
 		if((buf[1072] & 0xff) == 0x02 && (buf[1073] & 0xff) == 0x27 && (buf[1074] & 0xff) == 0x12 && (buf[1075] & 0xff) == 0x22)
 		{
 			printf("ResellerId: found (%s) reseller !\n", status.boxtype);
@@ -653,8 +674,12 @@ int checkreseller()
 		return 1;
 	}
 
+printf("7ResellerId\n");
+
 	free(buf);
 	fclose(fd);
+printf("8ResellerId\n");
+
 	return 1;
 }
 
