@@ -159,8 +159,9 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 					(*aktline)++;
 					if(gridbr == 0)
 					{
-						chnode1->titlesize = 1;
-						chnode1->type = TEXTBOX | GRIDBR;
+						//used for left/right scroll
+						chnode1->titlealign = 1;
+						chnode1->type = TEXTBOX | GRIDBR | MULTIPROGRESSBAR;
 						if(tmpchannel == aktchannel)
 						{
 							listbox->aktline = *aktline;
@@ -168,7 +169,7 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 						}
 					}
 					else
-						chnode1->type = TEXTBOX;
+						chnode1->type = TEXTBOX | MULTIPROGRESSBAR;
 					chnode1->wrap = YES;
 					gridbr = 1;
 					treffer = 1;
@@ -194,10 +195,9 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 					if(nottuneable == 1)
 						chnode1->deaktivcol = deaktivcol;
 					
-					//TODO: record timeline
-					//chnode1->type = MULTIPROGRESSBAR;
-					//chnode1->progresscol = listbox->progresscol;
-					//chnode1->epgrecord = getepgrecord(tmpchannel, epgnode);
+					//record timeline
+					chnode1->progresscol = listbox->progresscol;
+					chnode1->epgrecord = getepgrecord(tmpchannel, epgnode);
 		
 					changetext(chnode1, epgnode->title);
 					chnode1->handle = (char*)tmpchannel;
@@ -206,7 +206,8 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 					{
 						if(marklast == 1 && tmpchannel == aktchannel)
 							listbox->aktline = *aktline;
-						chnode1->titlesize += 2;
+						//used for left/right scroll
+						chnode1->titlealign += 2;
 						chnode1->width = listbox->iwidth - chnode1->posx;
 						break;
 					}
@@ -214,7 +215,7 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 				epgnode = epgnode->next;
 			}
 			
-			if(chnode1 != NULL && chnode1->titlesize < 2) chnode1->titlesize += 2;
+			if(chnode1 != NULL && chnode1->titlealign < 2) chnode1->titlealign += 2;
 			
 			if(gridbr == 0)
 			{
@@ -222,7 +223,8 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 				chnode1 = *pchnode1;
 				if(chnode1 != NULL)
 				{
-					chnode1->titlesize = 3;
+					//used for left/right scroll
+					chnode1->titlealign = 3;
 					(*aktline)++;
 					if(tmpchannel == aktchannel)
 						listbox->aktline = *aktline;
@@ -674,7 +676,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			}
 		}
 
-		if((listbox->select != NULL && (listbox->select->titlesize == 1 || listbox->select->titlesize == 3) && rcret == getrcconfigint("rcright", NULL)) || rcret == getrcconfigint("rcff", NULL) || rcret == getrcconfigint("rcfav", NULL))
+		if((listbox->select != NULL && (listbox->select->titlealign == 1 || listbox->select->titlealign == 3) && rcret == getrcconfigint("rcright", NULL)) || rcret == getrcconfigint("rcff", NULL) || rcret == getrcconfigint("rcfav", NULL))
 		{
 			time_t tmptime = 0;
 
@@ -768,7 +770,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			continue;
 		}
 
-		if((listbox->select != NULL && (listbox->select->titlesize == 2 || listbox->select->titlesize == 3) && rcret == getrcconfigint("rcleft", NULL)) || rcret == getrcconfigint("rcfr", NULL))
+		if((listbox->select != NULL && (listbox->select->titlealign == 2 || listbox->select->titlealign == 3) && rcret == getrcconfigint("rcleft", NULL)) || rcret == getrcconfigint("rcfr", NULL))
 		{
 			akttime -= addtime;
 			if(akttime < starttime) akttime = starttime;

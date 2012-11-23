@@ -2900,7 +2900,7 @@ void drawmultiprogressbar(struct skin* node)
 		val2 = ((float)node->iwidth / 100) * epgrecord->size;
 
 		if(val2 > val1)
-			fillrect(node->rposx + node->bordersize + val1, node->rposy + node->bordersize, val2 - val1, node->iheight, node->progresscol, node->transparent);
+			fillrect(node->rposx + node->bordersize + node->bgspace + val1, node->rposy + node->bgspace + node->bordersize, val2 - val1 + (node->bgspace * 2), node->iheight + (node->bgspace * 2), node->progresscol, node->transparent);
 		epgrecord = epgrecord->next;
 	}
 	debug(1000, "out");
