@@ -801,6 +801,16 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		{
 			clearscreen(gmultiepg);
 			ret = addrecepg((struct channel*)listbox->select->handle, (struct epg*)listbox->select->handle1, NULL);
+
+			//recalc record timelines
+			struct skin* tmplistbox = listbox;
+			while(tmplistbox != NULL)
+			{
+				if(tmplistbox->type & MULTIPROGRESSBAR)
+					tmplistbox->epgrecord = getepgrecord((struct channel*)tmplistbox->handle, (struct epg*)tmplistbox->handle1);
+				tmplistbox = tmplistbox->next;
+			}
+
 			drawscreen(gmultiepg, 0, 0);
 			continue;
 		}
