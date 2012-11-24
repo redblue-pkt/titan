@@ -91,14 +91,13 @@ int readnewsletter()
 {
 	debug(1000, "in");
 	FILE *fd = NULL;
-	char* fileline = NULL, *tmpstr = NULL;
+	char* fileline = NULL;
 	int linecount = 0, len = 0;
 	struct newsletter* last = NULL, *tmplast = NULL;
 	char* newsletterfile = "/tmp/newsletter.txt";
 
 	unlink(newsletterfile);
-	tmpstr = gethttp("atemio.dyndns.tv", "/newsletter/newsletter.txt", 80, newsletterfile, NULL, NULL, 0);
-	if(tmpstr == NULL) return 1;
+	gethttp("atemio.dyndns.tv", "/newsletter/newsletter.txt", 80, newsletterfile, NULL, NULL, 0);
 
 	fileline = malloc(MINMALLOC);
 	if(fileline == NULL)
@@ -263,7 +262,7 @@ void screennewsletter()
 void newsletterthreadfunc(struct stimerthread* self)
 {
 	char* tmpstr = NULL;
-	struct newsletter* node = NULL, *prev = NULL;
+	struct newsletter* node = NULL;
 
 	if(self == NULL) return;
 
@@ -274,22 +273,16 @@ void newsletterthreadfunc(struct stimerthread* self)
 	readnewsletter();
 	node = newsletter;
 
-	while(node != NULL)
+	if(node != NULL && node->nr > lastnewsletter)
 	{
-		prev = node;
-		node = node->next;
-	}
-
-	if(prev != NULL && prev->nr > lastnewsletter)
-	{
-		tmpstr = ostrcat(prev->title, NULL, 0, 0);
+		tmpstr = ostrcat(node->title, NULL, 0, 0);
 		tmpstr = ostrcat(tmpstr, " - ", 1, 0);
-		tmpstr = ostrcat(tmpstr, prev->date, 1, 0);
+		tmpstr = ostrcat(tmpstr, node->date, 1, 0);
 
-		textbox(tmpstr, prev->text, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 700, 600, 0, 2);
+		textbox(tmpstr, node->text, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 700, 600, 0, 2);
 		free(tmpstr); tmpstr = NULL;
 
-		addconfiglu("lastnewsletter", prev->nr);
+		addconfiglu("lastnewsletter", node->nr);
 	}
 
 	freenewsletter();
