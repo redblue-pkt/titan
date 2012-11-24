@@ -193,7 +193,7 @@ void screennewsletter()
 {
 	int rcret = -1;
 	struct skin* loading = getscreen("loading");
-	struct skin* skinnewsletter = getscreen("skinnewsletter");
+	struct skin* skinnewsletter = getscreen("newsletter");
 	struct skin* listbox = getscreennode(skinnewsletter, "listbox");
 	struct skin* tmp = NULL;
 	struct newsletter* node = NULL;
