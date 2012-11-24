@@ -78,10 +78,10 @@ void callmon_main()
 	free(tmpstr); tmpstr = NULL;
 	
 	changemask(rufnummer1, "0000000000000");
-	changeinput(rufnummer1,getlist(myconfig, "Ziehl", NULL));
+	changeinput(rufnummer1,getlist(myconfig, "Ziel", NULL));
 	
 	changemask(rufnummer2, "0000000000000");
-	changeinput(rufnummer2,getlist(myconfig, "Ziehl_2", NULL));
+	changeinput(rufnummer2,getlist(myconfig, "Ziel_2", NULL));
 		
 	addchoicebox(allnum, "ja", _("ja"));
 	addchoicebox(allnum, "nein", _("nein"));
@@ -177,8 +177,8 @@ void callmon_main()
 			addlist(myconfig, "anzeigetimeout", atimeout->ret);
 			addlist(myconfig, "usePhoneBook", phonebook->ret);
 			addlist(myconfig, "FritzPass", passwort->ret);
-			addlist(myconfig, "Ziehl", rufnummer1->ret);
-			addlist(myconfig, "Ziehl_2", rufnummer2->ret);
+			addlist(myconfig, "Ziel", rufnummer1->ret);
+			addlist(myconfig, "Ziel_2", rufnummer2->ret);
 			
 			if(ostrcmp(allnum->ret, "ja")  == 0)
 				addlist(myconfig, "Alle", "1");
