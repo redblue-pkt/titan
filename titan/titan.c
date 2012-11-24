@@ -48,6 +48,7 @@ struct mediadb* mediadb = NULL;
 struct mediadbcache* mediadbcache[MEDIADBCACHEMAX] = {NULL};
 struct unicable* unicable = NULL;
 struct oldentry* oldentry = NULL;
+struct newsletter* newsletter = NULL;
 
 #ifdef SH4
 #include "sh4port.h"
@@ -208,6 +209,7 @@ struct oldentry* oldentry = NULL;
 #include "system_infos.h"
 #include "system_infos_sysinfo.h"
 #include "unicable.h"
+#include "newsletter.h"
 
 //#include "cardreader.h"
 //#include "sci.h"
@@ -837,6 +839,9 @@ firstwizzardstep1:
 	addtimer(&ckeckkillnetthread, START, 1000, 1, NULL, NULL, NULL);
 	//check old entrys and remove from mem
 	addtimer(&oldentrythreadfunc, START, 60000 * 60, -1, NULL, NULL, NULL);
+	//check newsletter
+	if(getconfigint("newsletter", NULL) == 1)
+		addtimer(&newsletterthreadfunc, START, 60000 * 60, -1, NULL, NULL, NULL);
 
 	//thumb create thread
 	startthumb(1);

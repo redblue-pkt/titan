@@ -189,6 +189,15 @@ enum {DEACTIVE, ACTIVE, INPAUSE, ERROR};
 enum {FUNCTEXT, FUNCPIC, FUNCPROGRESS};
 enum {CASESSIONCREATE, CASESSIONBUSY, CASESSIONDEL, CASESSIONSTART, CASESSIONFINAL, CARESFIRSTENQUIRY, CARESCHANGE, CARESENQUIRY, CADATETIMESEND, CAMMIIDLE, CAMMIDISPLAYREPLAY, CAMMIFAKEOK};
 
+struct newsletter
+{
+	unsigned long nr;
+	char* date;
+	char* title;
+	char* text;
+	struct newsletter* next;
+};
+
 struct oldentry
 {
 	void* entry;
@@ -1120,6 +1129,7 @@ struct status
 	pthread_mutex_t accelfbmutex;
 	pthread_mutex_t mediadbmutex;
 	pthread_mutex_t oldentrymutex;
+	pthread_mutex_t newslettermutex;
 	// mutex for VFD handling
 	pthread_mutex_t vfdmutex;
 	off64_t recsplitsize;
