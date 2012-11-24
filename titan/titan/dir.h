@@ -21,7 +21,8 @@ void readlabelext(struct skin* label, char* filename, char* ext)
 }
 
 //flag 1: add selected dir to path
-//flag 2: add selected dir to path and use dirrcret for dirs
+//flag 2-15: add selected dir to path and use dirrcret for dirs
+//flag 16-127: use dirrcret for dirs
 char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ext, char* b1, int rc1, char* b2, int rc2, char* b3, int rc3, char* b4, int rc4, int width, int prozwidth, int height, int prozheight, int flag)
 {
 	int rcret = 0;
@@ -132,11 +133,21 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 		{
 			if(filelist->select != NULL && filelist->select->input != NULL) //dir
 			{
-				if(dirrcret != NULL && flag == 2)
+				if(dirrcret != NULL)
 				{
-					if(b1 != NULL && rcret == getrcconfigint("rcred", NULL))
+					if(((flag & 2) || (flag & 16)) && b1 != NULL && rcret == getrcconfigint("rcred", NULL))
 					{
 						*dirrcret = 1;
+						break;
+					}
+					if(((flag & 4) || (flag & 32)) && b3 != NULL && rcret == getrcconfigint("rcyellow", NULL))
+					{
+						*dirrcret = 4;
+						break;
+					}
+					if(((flag & 8) || (flag & 64)) && b4 != NULL && rcret == getrcconfigint("rcblue", NULL))
+					{
+						*dirrcret = 4;
 						break;
 					}
 				}
@@ -168,7 +179,7 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 			{
 				if(filelist->mask == NULL || strlen(filelist->mask) == 0)
 				{
-					if(flag == 1 || flag == 2)
+					if(flag >= 1 && flag <= 15)
 						ret = createpath(filelistpath->text, filelist->select->text);
 					else
 						ret = createpath(filelistpath->text, "");

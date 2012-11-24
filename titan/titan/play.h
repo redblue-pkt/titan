@@ -844,6 +844,12 @@ int playcheckdirrcret(char* file, int dirrcret)
 	int ret = 0;
 	char* epgfilename = NULL, *tmpstr = NULL;
 
+	if(dirrcret == 4)
+	{
+		//TODO: change sort
+		//addconfigint("dirstort", 3);
+		ret = 1;
+	}
 	if(dirrcret == 3)
 	{
 		epgfilename = changefilenameext(file, ".epg");
@@ -922,6 +928,7 @@ int screenplay(char* startfile, int startfolder, int flag)
 	struct skin* playinfobar = getscreen("playinfobar");
 	struct skin* load = getscreen("loading");
 
+	int oldsort = getconfigint("dirsort", NULL);
 	int skip13 = getconfigint("skip13", NULL);
 	int skip46 = getconfigint("skip46", NULL);
 	int skip79 = getconfigint("skip79", NULL);
@@ -960,11 +967,17 @@ playerstart:
 	if(startfile == NULL)
 	{
 		tmpstr = ostrcat(file, NULL, 1, 0); file = NULL;
-		file = screendir(startdir, formats, basename(tmpstr), &dirrcret, ".epg", _("DEL"), getrcconfigint("rcred", NULL), _("SELECT"), 0, "EPG", getrcconfigint("rcyellow", NULL), NULL, 0, 90, 1, 90, 1, 0);
+		file = screendir(startdir, formats, basename(tmpstr), &dirrcret, ".epg", _("DEL"), getrcconfigint("rcred", NULL), _("SELECT"), 0, "EPG", getrcconfigint("rcyellow", NULL), "SORT", getrcconfigint("rcblue", NULL), 90, 1, 90, 1, 64);
 		free(tmpstr); tmpstr = NULL;
 	}
 	else
 		file = ostrcat(startfile, NULL, 0, 0);
+
+	if(file == NULL)
+	{
+		if(playcheckdirrcret(file, dirrcret) == 1)
+			goto playerstart;
+	}
 
 	if(file != NULL)
 	{
@@ -988,6 +1001,7 @@ playerstart:
 					free(tmppolicy);
 					free(file);
 					free(formats);
+					addconfigint("dirstort", oldsort);
 					return ret;
 				}
 			}
@@ -1182,6 +1196,7 @@ playerend:
 	if(flag == 4)
 		deinitscreensaver();
 
+	addconfigint("dirstort", oldsort);
 	free(status.playfile); status.playfile = NULL; 
 	status.playspeed = 0;
 	status.pause = 0;
