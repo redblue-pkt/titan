@@ -41,7 +41,7 @@ struct newsletter* addnewsletter(char *line, int count, struct newsletter* last)
 		return NULL;
 	}
 
-	ret = sscanf(line, "%lu%[^#]%[^#]%[^#]", &newnode->nr, date, title, text);
+	ret = sscanf(line, "%lu#%[^#]#%[^#]#%[^#]", &newnode->nr, date, title, text);
 	if(ret != 4)
 	{
 		if(count > 0)
@@ -61,7 +61,7 @@ struct newsletter* addnewsletter(char *line, int count, struct newsletter* last)
 
 	newnode->date = ostrcat(date, NULL, 1, 0);
 	newnode->title = ostrcat(title, NULL, 1, 0);
-	newnode->text = ostrcat(text, NULL, 1, 0);
+	newnode->text = string_replace_all("\\n", "\n", text, 1);
 
 	if(last == NULL)
 	{
