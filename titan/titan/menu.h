@@ -723,6 +723,11 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screenunlock();
 	}
+	else if(ostrcmp("newsletter", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screennewsletter();
+	}
 	else if(menuentry->pluginhandle != NULL)
 	{
 		if(menuentry->input != NULL)
