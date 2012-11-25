@@ -263,8 +263,9 @@ void screensoftcam()
 	struct skin* b_green = getscreennode(softcam, "b2");
 	struct skin* b_yellow = getscreennode(softcam, "b3");
 	struct skin* b_blue = getscreennode(softcam, "b4");
+	struct skin* b_menu = getscreennode(softcam, "menu");
 	struct skin* pluginnode = NULL;
-	void (*startplugin)(void);
+	void (*startplugin)(char*);
 	struct skin* plugin = getscreen("plugin");
 
 	drawscreen(loading, 0, 0);
@@ -288,11 +289,38 @@ void screensoftcam()
 	drawscreen(softcam, 0, 0);
 	addscreenrc(softcam, listbox);
 
+	int found = 0;
 	while(1)
 	{
 		rcret = waitrc(softcam, 4000, 0);
-
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(listbox->select != NULL)
+		{		
+			free(tmpstr), tmpstr = NULL;
+			tmpstr = ostrcat(listbox->select->name, NULL, 0, 0);
+			string_tolower(tmpstr);
+			if(ostrstr(tmpstr, "oscam") != NULL)
+			{
+				b_menu->hidden = NO;
+				found = 1;
+
+				if(ostrstr(tmpstr, "swap") != NULL)
+				{
+					free(tmpstr), tmpstr = NULL;
+					tmpstr = ostrcat("/var/swap/keys/oscam.server", NULL, 0, 0);
+				}
+				else
+				{
+					free(tmpstr), tmpstr = NULL;
+					tmpstr = ostrcat("/var/keys/oscam.server", NULL, 0, 0);
+				}
+			}
+			else
+			{
+				b_menu->hidden = YES;
+				found = 0;
+			}
+		}
 		if(listbox->select != NULL && rcret == getrcconfigint("rcred", NULL))
 		{
 			// deactivate emu
@@ -333,7 +361,7 @@ void screensoftcam()
 				startcam(listbox->select->name);
 			drawscreen(softcam, 0, 0);
 		}
-		if(rcret == getrcconfigint("rcmenu", NULL))
+		if(rcret == getrcconfigint("rcmenu", NULL) && found == 1)
 		{
 			pluginnode = getplugin("Oscam Config");
 
@@ -341,10 +369,10 @@ void screensoftcam()
 			{
 				startplugin = dlsym(pluginnode->pluginhandle, "start");
 				if(startplugin != NULL)
-					startplugin();
+					startplugin(tmpstr);
 			}
 			else
-				textbox(_("Message"), _("Plugin not installed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+				textbox(_("Message"), _("Oscam Config Plugin not installed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 			drawscreen(softcam, 0, 0);
 		}
 		if(rcret == RCTIMEOUT)
