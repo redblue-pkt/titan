@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+// newslater.h
+void screennewsletter();
+
 //oldentry.h
 void deloldentry(struct oldentry *entry, int flag);
 
