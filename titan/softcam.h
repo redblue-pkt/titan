@@ -254,6 +254,7 @@ void readecminfo(struct skin* labelecminfo)
 void screensoftcam()
 {
 	int rcret = 0;
+	char* tmpstr = NULL;
 	struct skin* loading = getscreen("loading");
 	struct skin* softcam = getscreen("softcam");
 	struct skin* listbox = getscreennode(softcam, "listbox");
@@ -266,7 +267,6 @@ void screensoftcam()
 	struct skin* b_menu = getscreennode(softcam, "b7");
 	struct skin* pluginnode = NULL;
 	void (*startplugin)(char*);
-	struct skin* plugin = getscreen("plugin");
 
 	drawscreen(loading, 0, 0);
 
