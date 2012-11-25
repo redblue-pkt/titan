@@ -772,18 +772,19 @@ void screennetwork_wlan()
 		if(rcret == getrcconfigint("rcinfo", NULL) && scan == 0)
 		{
 			ret = system("check_wlan_driver.sh > /tmp/check_wlan_driver");
-			if(ret == 2)
-				tmpstr = ostrcat("Wlan Stick not found", tmpstr, 0, 1);
-			if(ret == 1)
-			{
-				tmpstr = readfiletomem("/tmp/check_wlan_driver", 0);
-				tmpstr = ostrcat("Found Wlan Stick but no driver\nPlease install driver: ", tmpstr, 0, 1);
-			}
 			if(ret == 0)
 			{
 				tmpstr = readfiletomem("/tmp/check_wlan_driver", 0);
-				tmpstr = ostrcat("Found Wlan Stick and driver for: ", tmpstr, 0, 1);
+				tmpstr = ostrcat(_("Found Wlan Stick and driver for: "), tmpstr, 0, 1);
 			}
+			else if(ret == 1)
+			{
+				tmpstr = readfiletomem("/tmp/check_wlan_driver", 0);
+				tmpstr = ostrcat(_("Found Wlan Stick but no driver\nPlease install driver: "), tmpstr, 0, 1);
+			}
+			else
+				tmpstr = ostrcat(_("Wlan Stick not found"), tmpstr, 0, 1);
+
 			unlink("/tmp/check_wlan_driver");
 			textbox(_("WLAN Info"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 			free(tmpstr); tmpstr = NULL;
