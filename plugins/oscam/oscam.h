@@ -354,7 +354,7 @@ start:
 		rcret = waitrc(skinoscam, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcred", NULL))
+		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			//write oscam
 			if(writeoscam(file) == 0)
@@ -363,7 +363,7 @@ start:
 				drawscreen(skinoscam, 0, 0);
 			}
 		}
-		if(rcret == getrcconfigint("rcok", NULL))
+		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
