@@ -263,7 +263,7 @@ void screensoftcam()
 	struct skin* b_green = getscreennode(softcam, "b2");
 	struct skin* b_yellow = getscreennode(softcam, "b3");
 	struct skin* b_blue = getscreennode(softcam, "b4");
-	struct skin* b_menu = getscreennode(softcam, "menu");
+	struct skin* b_menu = getscreennode(softcam, "b7");
 	struct skin* pluginnode = NULL;
 	void (*startplugin)(char*);
 	struct skin* plugin = getscreen("plugin");
