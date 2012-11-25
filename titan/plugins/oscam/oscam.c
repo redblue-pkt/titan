@@ -34,5 +34,5 @@ void deinit(void)
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {
-	screenoscam();
+	screenoscam(NULL);
 }

@@ -292,7 +292,7 @@ void screenoscamconfig(struct oscam* node)
 	clearscreen(oscamconfig);
 }
 
-void screenoscam()
+void screenoscam(char* cfgfile)
 {
 	int rcret = -1;
 	struct skin* skinoscam = getscreen("oscam");
@@ -301,10 +301,15 @@ void screenoscam()
 	struct oscam* node = NULL;
 	char* tmpstr = NULL, *file = NULL;
 
-	if(file_exist("/var/swap/keys/oscam.server"))
-		file = "/var/swap/keys/oscam.server";
-	else if(file_exist("/var/keys/oscam.server"))
-		file = "/var/keys/oscam.server";
+	if(cfgfile == NULL)
+	{	
+		if(file_exist("/var/swap/keys/oscam.server"))
+			file = "/var/swap/keys/oscam.server";
+		else if(file_exist("/var/keys/oscam.server"))
+			file = "/var/keys/oscam.server";
+	}
+	else
+		file = ostrcat(file, cfgfile, 1, 0);
 
 	readoscam(file);
 	listbox->aktline = 1;
