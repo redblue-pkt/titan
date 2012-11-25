@@ -279,7 +279,7 @@ void screenoscamconfig(struct oscam* node)
 			free(node->enable);
 			node->enable = ostrcat(enable->ret, NULL, 0, 0);
 
-			if(node->device != NULL)
+			if(node->device != NULL && (ostrcmp(node->device, "/dev/sci0") == 0 || ostrcmp(node->device, "/dev/sci1") == 0))
 			{
 				free(node->device);
 				node->device = ostrcat(device->ret, NULL, 0, 0);
