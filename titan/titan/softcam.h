@@ -286,14 +286,12 @@ void screensoftcam()
 	// add emu's to selectionbox
 	fillmenubox();
 
-	drawscreen(softcam, 0, 0);
+	drawscreen(softcam, 2, 0);
 	addscreenrc(softcam, listbox);
 	int found = 0;
 
 	if(listbox->select != NULL)
 	{
-		drawscreen(softcam, 0, 0);
-
 		free(tmpstr), tmpstr = NULL;
 		tmpstr = ostrcat(listbox->select->name, NULL, 0, 0);
 		string_tolower(tmpstr);
@@ -310,14 +308,15 @@ void screensoftcam()
 		}
 		free(tmpstr), tmpstr = NULL;
 	}
+
+	drawscreen(softcam, 0, 0);
 		
 	while(1)
 	{
-		rcret = waitrc(softcam, 100, 0);
+		rcret = waitrc(softcam, 4000, 2);
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(listbox->select != NULL)
 		{
-			drawscreen(softcam, 0, 0);
 			tmpstr = ostrcat(listbox->select->name, NULL, 0, 0);
 			string_tolower(tmpstr);
 			if(ostrstr(tmpstr, "oscam") != NULL)
@@ -337,14 +336,12 @@ void screensoftcam()
 			// deactivate emu
 			drawscreen(loading, 0, 0);
 			deactivate(listbox->select->name);
-			drawscreen(softcam, 0, 0);
 		}
 		if(listbox->select != NULL && rcret == getrcconfigint("rcgreen", NULL))
 		{
 			// restart emu
 			drawscreen(loading, 0, 0);
 			restartcam(listbox->select->name);
-			drawscreen(softcam, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcyellow", NULL))
 		{
@@ -353,14 +350,12 @@ void screensoftcam()
 			readecminfo(labelecminfo);
 			readmenu();
 			fillmenubox();
-			drawscreen(softcam, 0, 0);
 		}
 		if(listbox->select != NULL && rcret == getrcconfigint("rcblue", NULL))
 		{
 			// activate emu
 			drawscreen(loading, 0, 0);
 			activate(listbox->select->name);
-			drawscreen(softcam, 0, 0);
 		}
 		if(listbox->select != NULL && rcret == getrcconfigint("rcok", NULL))
 		{
@@ -370,7 +365,6 @@ void screensoftcam()
 				stopcam(listbox->select->name);
 			else
 				startcam(listbox->select->name);
-			drawscreen(softcam, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcmenu", NULL) && found == 1)
 		{
@@ -384,14 +378,13 @@ void screensoftcam()
 			}
 			else
 				textbox(_("Message"), _("Reader Config Plugin not installed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
-			drawscreen(softcam, 0, 0);
 		}
 		if(rcret == RCTIMEOUT)
 		{
 			// update ecminfo
 			readecminfo(labelecminfo);
-			drawscreen(softcam, 0, 0);
 		}
+		drawscreen(softcam, 0, 0);
 	}
 
 	if(emulist != NULL)
