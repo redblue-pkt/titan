@@ -386,7 +386,6 @@ void screensoftcam()
 				free(tmpstr), tmpstr = NULL;
 				tmpstr = ostrcat("/var/keys/oscam.server", NULL, 0, 0);
 			}
-			free(tmpstr), tmpstr = NULL;
 			
 			pluginnode = getplugin("Oscam Config");
 
@@ -399,6 +398,7 @@ void screensoftcam()
 			else
 				textbox(_("Message"), _("Oscam Config Plugin not installed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 			drawscreen(softcam, 0, 0);
+			free(tmpstr), tmpstr = NULL;
 		}
 		if(rcret == RCTIMEOUT)
 		{
