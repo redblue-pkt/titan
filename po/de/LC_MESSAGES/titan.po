@@ -2686,3 +2686,15 @@ msgstr "MediaDB Suche beendet"
 
 msgid "This file doesn't exist, or has been removed"
 msgstr "Dieser Stream ist zur zeit nicht verfügbar oder entfernt worden"
+
+msgid "Here you can select your reader. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können sie Ihre Reader auswählen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can configure your reader. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können sie Ihre Reader Konfiguration vornehmen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Oscam Config"
+msgstr "Oscam Einstellungen"
+
+msgid "Reader Configuration"
+msgid "Reader Konfiguration"
