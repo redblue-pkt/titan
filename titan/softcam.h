@@ -374,31 +374,17 @@ void screensoftcam()
 		}
 		if(rcret == getrcconfigint("rcmenu", NULL) && found == 1)
 		{
-			tmpstr = ostrcat(listbox->select->name, NULL, 0, 0);
-			string_tolower(tmpstr);
-			if(ostrstr(tmpstr, "swap") != NULL)
-			{
-				free(tmpstr), tmpstr = NULL;
-				tmpstr = ostrcat("/var/swap/keys/oscam.server", NULL, 0, 0);
-			}
-			else
-			{
-				free(tmpstr), tmpstr = NULL;
-				tmpstr = ostrcat("/var/keys/oscam.server", NULL, 0, 0);
-			}
-			
 			pluginnode = getplugin("Reader Config");
 
 			if(pluginnode != NULL)
 			{
-				startplugin = dlsym(pluginnode->pluginhandle, "start");
+				startplugin = dlsym(pluginnode->pluginhandle, "screenoscam");
 				if(startplugin != NULL)
-					startplugin(tmpstr);
+					startplugin(listbox->select->name);
 			}
 			else
 				textbox(_("Message"), _("Reader Config Plugin not installed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 			drawscreen(softcam, 0, 0);
-			free(tmpstr), tmpstr = NULL;
 		}
 		if(rcret == RCTIMEOUT)
 		{
