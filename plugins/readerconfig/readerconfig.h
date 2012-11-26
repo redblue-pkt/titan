@@ -319,7 +319,7 @@ void screenoscam(char* cfgfile)
 	}
 	else
 	{
-		cmd = ostrcat("/tmp/emu.sh keydir ", cfgfile, 0, 0);
+		cmd = ostrcat("/sbin/emu.sh keydir ", cfgfile, 0, 0);
 		tmpstr = string_newline(command(cmd));
 		file = ostrcat(tmpstr, "/oscam.server", 0, 0);
 		free(cmd), cmd = NULL;
