@@ -185,22 +185,6 @@
 <node name=reversedate type=choicebox parent=listbox valign=middle posx=0 text="reverse date" bordercol=bordercol bordersize=1 width=100% height=25>
 </screen>
 
-<screen name="mc_sort" fontcol="fontcol" posx="center" posy="center" width="500" height="300">
-<node name="titletext" text="Sorting" fontcol="black" fontsize="36" posx="center" posy="0" width="100%" height="50" valign="middle" halign="center" bordercol="titlebgcol" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
-<node name="bg" bgcol="bgcol" posx="center" posy="center" width="484" height="200" hspace="10" vspace="10">
-<node parent="bg" name="listbox" type="listbox" scrollbar="auto" fontsize="28" fontcol="fontcol" bordercol="titlebgcol" posx="0" posy="0" width="100%" height="100%">
-<node name=alpha type=choicebox parent=listbox valign=middle posx=0 text="alpha" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=reversealpha type=choicebox parent=listbox valign=middle posx=0 text="reverse alpha" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=size type=choicebox parent=listbox valign=middle posx=0 text="size" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=reversesize type=choicebox parent=listbox valign=middle posx=0 text="reverse size" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=date type=choicebox parent=listbox valign=middle posx=0 text="date" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=reversedate type=choicebox parent=listbox valign=middle posx=0 text="reverse date" bordercol=bordercol bordersize=1 width=100% height=25>
-
-<node name="buttonbar" posx="center" posy="250" width="100%" height="50" bordercol="titlebgcol" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
-<node parent="buttonbar" name="b1" picmem="skin/key_ok_70x40.png"   posx="5"  posy="center" width="70" height="40">
-<node parent="buttonbar" name="b2" picmem="skin/key_exit_70x40.png" posx="75" posy="center" width="70" height="40">
-</screen>
-
 <screen name="mc_imdb" fontcol=fontcol valign=bottom titlealign=center fontsize=40 title="MC VideoPlayer Imdb Settings" posx=center posy=center width=40% height=40% bordercol=bordercol bordersize=1 bgcol=bgcol>
 <node bordercol=bordercol scrollbar=auto type=listbox posy=center posx=center name=listbox width=80% height=80%>
 <node name=file type=choicebox parent=listbox valign=middle posx=0 text="file" bordercol=bordercol bordersize=1 width=100% height=25>
