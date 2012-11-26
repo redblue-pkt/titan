@@ -288,14 +288,35 @@ void screensoftcam()
 
 	drawscreen(softcam, 0, 0);
 	addscreenrc(softcam, listbox);
-
 	int found = 0;
+
+	if(listbox->select != NULL)
+	{
+		drawscreen(softcam, 0, 0);
+
+		free(tmpstr), tmpstr = NULL;
+		tmpstr = ostrcat(listbox->select->name, NULL, 0, 0);
+		string_tolower(tmpstr);
+
+		if(ostrstr(tmpstr, "oscam") != NULL)
+		{
+			b_menu->hidden = NO;
+			found = 1;
+		}
+		else
+		{
+			b_menu->hidden = YES;
+			found = 0;
+		}
+	}
+		
 	while(1)
 	{
-		rcret = waitrc(softcam, 4000, 0);
+		rcret = waitrc(softcam, 100, 0);
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(listbox->select != NULL)
-		{		
+		{
+			drawscreen(softcam, 0, 0);
 			free(tmpstr), tmpstr = NULL;
 			tmpstr = ostrcat(listbox->select->name, NULL, 0, 0);
 			string_tolower(tmpstr);
@@ -303,17 +324,6 @@ void screensoftcam()
 			{
 				b_menu->hidden = NO;
 				found = 1;
-
-				if(ostrstr(tmpstr, "swap") != NULL)
-				{
-					free(tmpstr), tmpstr = NULL;
-					tmpstr = ostrcat("/var/swap/keys/oscam.server", NULL, 0, 0);
-				}
-				else
-				{
-					free(tmpstr), tmpstr = NULL;
-					tmpstr = ostrcat("/var/keys/oscam.server", NULL, 0, 0);
-				}
 			}
 			else
 			{
@@ -363,6 +373,20 @@ void screensoftcam()
 		}
 		if(rcret == getrcconfigint("rcmenu", NULL) && found == 1)
 		{
+			free(tmpstr), tmpstr = NULL;
+			tmpstr = ostrcat(listbox->select->name, NULL, 0, 0);
+			string_tolower(tmpstr);
+			if(ostrstr(tmpstr, "swap") != NULL)
+			{
+				free(tmpstr), tmpstr = NULL;
+				tmpstr = ostrcat("/var/swap/keys/oscam.server", NULL, 0, 0);
+			}
+			else
+			{
+				free(tmpstr), tmpstr = NULL;
+				tmpstr = ostrcat("/var/keys/oscam.server", NULL, 0, 0);
+			}
+			
 			pluginnode = getplugin("Oscam Config");
 
 			if(pluginnode != NULL)
