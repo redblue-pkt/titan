@@ -236,13 +236,14 @@ int writeoscam(const char *filename)
 	return 0;
 }
 
-void screenoscamconfig(struct oscam* node)
+void screenoscamconfig(struct oscam* node, char* file)
 {
 	int rcret = -1;
 	struct skin* oscamconfig = getscreen("readerconfig");
 	struct skin* listbox = getscreennode(oscamconfig, "listbox");
 	struct skin* enable = getscreennode(oscamconfig, "enable");
 	struct skin* device = getscreennode(oscamconfig, "device");
+	struct skin* menutitle = getscreennode(oscamconfig, "menutitle");
 	struct skin* tmp = NULL;
 
 	if(node == NULL) return;
@@ -263,9 +264,15 @@ void screenoscamconfig(struct oscam* node)
 	else
 		device->hidden = NO;
 
+	char* tmpstr = NULL;
+	tmpstr = ostrcat(_("Reader Configuration"), " : ", 0, 0);
+	tmpstr = ostrcat(tmpstr, file, 1, 0);
+	changetext(menutitle, tmpstr);
+	free(tmpstr), tmpstr = NULL;
+
 	drawscreen(oscamconfig, 0, 0);
 	addscreenrc(oscamconfig, listbox);
-
+		
 	tmp = listbox->select;
 	while(1)
 	{
@@ -297,9 +304,11 @@ void screenoscam(char* cfgfile)
 	int rcret = -1;
 	struct skin* skinoscam = getscreen("reader");
 	struct skin* listbox = getscreennode(skinoscam, "listbox");
+	struct skin* menutitle = getscreennode(skinoscam, "menutitle");
+	
 	struct skin* tmp = NULL;
 	struct oscam* node = NULL;
-	char* tmpstr = NULL, *file = NULL;
+	char* tmpstr = NULL, *file = NULL, *cmd = NULL;
 
 	if(cfgfile == NULL)
 	{	
@@ -309,13 +318,25 @@ void screenoscam(char* cfgfile)
 			file = "/var/keys/oscam.server";
 	}
 	else
-		file = cfgfile;
-
+	{
+		cmd = ostrcat("/tmp/emu.sh keydir ", cfgfile, 0, 0);
+		tmpstr = string_newline(command(cmd));
+		file = ostrcat(tmpstr, "/oscam.server", 0, 0);
+		free(cmd), cmd = NULL;
+		free(tmpstr), tmpstr = NULL;
+	}
+	
 	readoscam(file);
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
 
+	tmpstr = ostrcat(_("Reader Selection"), " : ", 0, 0);
+	tmpstr = ostrcat(tmpstr, file, 1, 0);
+	changetext(menutitle, tmpstr);
+	free(tmpstr), tmpstr = NULL;	
+		
 start:
+
 	tmp = NULL;
 	node = oscam;
 	delmarkedscreennodes(skinoscam, 1);
@@ -367,7 +388,7 @@ start:
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
-				screenoscamconfig((struct oscam*)listbox->select->handle);
+				screenoscamconfig((struct oscam*)listbox->select->handle, file);
 				goto start;
 			}
 		}
