@@ -66,6 +66,7 @@ void setdefaults()
 	addconfigdef("blindstepsignalrate", "20");
 	addconfigdef("camwait", "25");
 	addconfigdef("newsletter", "1");
+	addconfigdef("showhiddenfiles", "1");
 	
 	status.expertmodus = getconfigint("expertmodus", NULL);
 	status.pmtmode = getconfigint("pmtmode", NULL);
@@ -96,6 +97,7 @@ void setdefaults()
 	status.channellistview = getconfigint("channellistview", NULL);
 	status.caskipprivat = getconfigint("caskipprivat", NULL);
 	status.casendallcaids = getconfigint("casendallcaids", NULL);
+	status.showhiddenfiles = getconfigint("showhiddenfiles", NULL);
 
 	if(status.filelistselectcol == 0) status.filelistselectcol = status.listboxselectcol;
 	

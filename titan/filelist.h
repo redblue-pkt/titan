@@ -436,7 +436,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 	i=0;
 	while(tmpcount--)
 	{
-		if(filelist[i]->d_type != DT_DIR)
+		if(filelist[i]->d_type != DT_DIR && filelist[i]->d_name != NULL && (status.showhiddenfiles == 1 || (status.showhiddenfiles == 0 && filelist[i]->d_name[0] != '.')))
 		{
 			if(filelistfilter(node, filelist[i]->d_name) == 0)
 			{
