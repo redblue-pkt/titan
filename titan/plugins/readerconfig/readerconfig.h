@@ -309,7 +309,7 @@ void screenoscam(char* cfgfile)
 			file = "/var/keys/oscam.server";
 	}
 	else
-		file = ostrcat(file, cfgfile, 1, 0);
+		file = cfgfile;
 
 	readoscam(file);
 	listbox->aktline = 1;
