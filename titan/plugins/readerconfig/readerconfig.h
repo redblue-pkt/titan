@@ -1,5 +1,5 @@
-#ifndef OSCAM_H
-#define OSCAM_H
+#ifndef READERCONFIG_H
+#define READERCONFIG_H
 
 struct oscam
 {
@@ -239,7 +239,7 @@ int writeoscam(const char *filename)
 void screenoscamconfig(struct oscam* node)
 {
 	int rcret = -1;
-	struct skin* oscamconfig = getscreen("oscamconfig");
+	struct skin* oscamconfig = getscreen("readerconfig");
 	struct skin* listbox = getscreennode(oscamconfig, "listbox");
 	struct skin* enable = getscreennode(oscamconfig, "enable");
 	struct skin* device = getscreennode(oscamconfig, "device");
@@ -295,7 +295,7 @@ void screenoscamconfig(struct oscam* node)
 void screenoscam(char* cfgfile)
 {
 	int rcret = -1;
-	struct skin* skinoscam = getscreen("oscam");
+	struct skin* skinoscam = getscreen("reader");
 	struct skin* listbox = getscreennode(skinoscam, "listbox");
 	struct skin* tmp = NULL;
 	struct oscam* node = NULL;
