@@ -23,6 +23,6 @@ tmc: 230
 filemanager: 240
 catcatch: 241
 facebook: 242
-oscam: 243
+readerconfig: 243
 TopfieldVFD: ---
 browser: ---
