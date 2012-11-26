@@ -846,8 +846,8 @@ int playcheckdirrcret(char* file, int dirrcret)
 
 	if(dirrcret == 4)
 	{
-		//TODO: change sort
-		//addconfigint("dirstort", 3);
+		int sort = screendirsort();
+		addconfigint("dirstort", sort);
 		ret = 1;
 	}
 	if(dirrcret == 3)
