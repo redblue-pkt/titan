@@ -1308,6 +1308,8 @@ struct status
 	int caskipprivat;
 	//send all caids or only caids cam can
 	int casendallcaids;
+	//show hidden files in filelist
+	int showhiddenfiles;
 } status;
 
 struct fb
