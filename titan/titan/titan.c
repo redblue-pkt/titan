@@ -210,6 +210,7 @@ struct newsletter* newsletter = NULL;
 #include "system_infos_sysinfo.h"
 #include "unicable.h"
 #include "newsletter.h"
+#include "dirsort.h"
 
 //#include "cardreader.h"
 //#include "sci.h"
