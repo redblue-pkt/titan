@@ -313,9 +313,9 @@ void screenoscam(char* cfgfile)
 	if(cfgfile == NULL)
 	{	
 		if(file_exist("/var/swap/keys/oscam.server"))
-			file = "/var/swap/keys/oscam.server";
+			file = ostrcat("/var/swap/keys/oscam.server", NULL, 0, 0);
 		else if(file_exist("/var/keys/oscam.server"))
-			file = "/var/keys/oscam.server";
+			file = ostrcat("/var/keys/oscam.server", NULL, 0, 0);
 	}
 	else
 	{
@@ -394,6 +394,7 @@ start:
 		}
 	}
 
+	free(file); file = NULL;
 	delmarkedscreennodes(skinoscam, 1);
 	freeoscam();
 	delownerrc(skinoscam);
