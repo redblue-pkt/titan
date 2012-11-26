@@ -1,7 +1,7 @@
 #include "../titan/struct.h"
 #include "../titan/debug.h"
 #include "../titan/header.h"
-#include "oscam.h"
+#include "readerconfig.h"
 
 char pluginname[] = "Reader Config";
 char plugindesc[] = "Reader Config";
