@@ -212,7 +212,7 @@ void screenmc_audioplayer()
 		{
 			if(playlist == 0)
 			{
-				int sort = screenmc_sort();
+				int sort = screendirsort();
 				debug(50, "rcred: tmpsort=%d", sort);
 
 				addconfiginttmp("dirsort", sort);

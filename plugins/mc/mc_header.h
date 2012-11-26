@@ -57,9 +57,6 @@ void screenmc_settings();
 // mc_view.h
 int screenmc_view();
 
-// mc_sort.h
-int screenmc_sort();
-
 // mc_audioplayer_settings.h
 void screenmc_audioplayer_settings();
 
