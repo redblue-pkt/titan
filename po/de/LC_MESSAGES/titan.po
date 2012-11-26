@@ -2700,4 +2700,7 @@ msgid "Reader Selection"
 msgstr "Reader Auswahl"
 
 msgid "Reader Configuration"
-msgid "Reader Konfiguration"
+msgstr "Reader Konfiguration"
+
+msgid "Reader Config Plugin not installed !"
+msgstr "Installieren Sie Bitte das Reader Konfiguration Plugin unter Erweiterungen"
