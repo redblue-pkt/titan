@@ -2704,3 +2704,24 @@ msgstr "Reader Konfiguration"
 
 msgid "Reader Config Plugin not installed !"
 msgstr "Installieren Sie Bitte das Reader Konfiguration Plugin unter Erweiterungen"
+
+msgid "Reader active"
+msgstr "Reader aktiviert"
+
+msgid "Oscam config written to medium !"
+msgstr "Oscam Config wird gespeichert !"
+
+msgid "Restart Oscam ?"
+msgstr "Wollen Ihre Oscam neustarten ?"
+
+msgid "first slot"
+msgstr "erster Kartenschacht (oben)"
+
+msgid "second slot"
+msgstr "zweiter Kartenschacht (unten)"
+
+msgid "Enable"
+msgstr "Enable"
+
+msgid "Device"
+msgstr "Device"

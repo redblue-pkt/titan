@@ -357,7 +357,12 @@ start:
 			if(ostrcmp(node->enable, "0") == 0)
 				tmpstr = ostrcat(tmpstr, _("off"), 1, 0);
 			else
+			{
 				tmpstr = ostrcat(tmpstr, _("on"), 1, 0);
+				tmpstr = ostrcat(tmpstr, " (", 1, 0);
+				tmpstr = ostrcat(tmpstr, _("Reader active"), 1, 0);
+				tmpstr = ostrcat(tmpstr, ")", 1, 0);
+			}
 
 			changetext(tmp, tmpstr);
 			free(tmpstr); tmpstr = NULL;
@@ -380,8 +385,16 @@ start:
 			//write oscam
 			if(writeoscam(file) == 0)
 			{
-				textbox(_("Message"), _("Oscam config written to medium !\nPlease restart Oscam to activate new config."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+				textbox(_("Message"), _("Oscam config written to medium !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+				if(textbox(_("Message"), _("Restart Oscam ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
+				{
+					char* cmd = NULL;
+					cmd = ostrcat("emu.sh restart" , NULL, 0, 0);
+					system(cmd);
+					free(cmd);
+				}
 				drawscreen(skinoscam, 0, 0);
+				break;
 			}
 		}
 		if(rcret == getrcconfigint("rcred", NULL))
