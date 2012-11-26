@@ -24,7 +24,6 @@ extern struct fb* fb;
 #include "mc_wetterinfo.h"
 #include "mc_settings.h"
 #include "mc_view.h"
-#include "mc_sort.h"
 #include "mc_main.h"
 #include "mc_audioplayer_settings.h"
 #include "mc_videoplayer_settings.h"

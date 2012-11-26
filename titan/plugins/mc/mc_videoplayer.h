@@ -299,7 +299,7 @@ void screenmc_videoplayer()
 			{
 				if(playlist == 0)
 				{
-					int sort = screenmc_sort();
+					int sort = screendirsort();
 					debug(50, "rcred: tmpsort=%d", sort);
 
 					// fixt grey if sorting >10s
