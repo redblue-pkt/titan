@@ -382,9 +382,7 @@ void screenmc_videoplayer()
 				}
 			}
 			else
-			{
-				info_menu(apskin, filelist, filelistpath, filename, &playinfobarstatus, &playinfobarcount, playertype, flag, files);
-			}
+				playrcplay(filename, &playinfobarstatus, &playinfobarcount, playertype, flag);
 
 			if(status.play == 0 && status.pause == 0)
 			{
