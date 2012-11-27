@@ -1124,7 +1124,10 @@ char* playergetinfo(char* tag)
 		{
 			ret = tags[i];
 			if(ostrcmp(tag, ret) == 0)
+			{
 				player->playback->Command(player, PLAYBACK_INFO, &ret);
+				break;
+			}
 
 			i++;
 		}
