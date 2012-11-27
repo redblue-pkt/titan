@@ -278,8 +278,8 @@ void screenadjust()
 			status.caskipprivat = getconfigint("caskipprivat", NULL);
 			addconfigscreencheck("casendallcaids", casendallcaids, "0");
 			status.casendallcaids = getconfigint("casendallcaids", NULL);
-			addconfigscreencheck("newsletter", newsletter, "0");
-			addconfigscreencheck("showhiddenfiles", showhiddenfiles, "0");
+			addconfigscreencheck("newsletter", newsletter, "1");
+			addconfigscreencheck("showhiddenfiles", showhiddenfiles, "1");
 			status.showhiddenfiles = getconfigint("showhiddenfiles", NULL);
 			break;
 		}
