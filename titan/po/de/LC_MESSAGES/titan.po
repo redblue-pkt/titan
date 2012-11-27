@@ -2712,7 +2712,7 @@ msgid "Oscam config written to medium !"
 msgstr "Oscam Config wird gespeichert !"
 
 msgid "Restart Oscam ?"
-msgstr "Wollen Ihre Oscam neustarten ?"
+msgstr "Soll Oscam neu gestartet werden ?"
 
 msgid "first slot"
 msgstr "erster Kartenschacht (oben)"
