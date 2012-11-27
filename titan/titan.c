@@ -211,6 +211,7 @@ struct newsletter* newsletter = NULL;
 #include "unicable.h"
 #include "newsletter.h"
 #include "dirsort.h"
+#include "shortepg.h"
 
 //#include "cardreader.h"
 //#include "sci.h"

@@ -1693,6 +1693,20 @@ start:
 			}
 			continue;
 		}
+		if(flag == 0 && rcret == getrcconfigint("rc0", NULL) && (list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL || list == BOUQUETCHANNEL))
+		{
+			if(listbox->select != NULL)
+			{
+				clearscreen(channellist);
+				resettvpic();
+				struct channel* tmpmarkedchannel = status.markedchannel;
+				screenshortepg((struct channel*)listbox->select->handle, NULL);
+				status.markedchannel = tmpmarkedchannel;
+				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+				drawscreen(channellist, 0, 0);
+			}
+			continue;
+		}
 		if(flag == 0 && rcret == getrcconfigint("rcinfo", NULL))
 		{
 			if(status.servicetype == 0)
