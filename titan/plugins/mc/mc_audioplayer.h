@@ -6,6 +6,15 @@ extern struct screensaver* screensaver;
 
 void screenmc_audioplayer()
 {
+	// workaround for grey background mvi
+	struct skin* loadmediadb = getscreen("loading");
+	struct skin* blackscreen = getscreen("blackscreen");
+	drawscreen(blackscreen, 0, 0);
+	drawscreen(loadmediadb, 0, 0);
+
+//	struct mediadb* dbnode = NULL;
+	readmediadb(getconfig("mediadbfile", NULL), 0, 0);
+
 	char* filename = NULL;
 	char* currentdirectory = NULL;
 	char* selectedfile = NULL;
@@ -17,12 +26,8 @@ void screenmc_audioplayer()
 	addconfigtmp("dirsort", tmpstr);
 	free(tmpstr), tmpstr = NULL;
 
-	// workaround for grey background mvi
-	struct skin* blackscreen = getscreen("blackscreen");
-	drawscreen(blackscreen, 0, 0);
-
-	struct skin* loadmediadb = getscreen("loading");
-	drawscreen(loadmediadb, 0, 0);
+//	startmediadb();
+//	dbnode = mediadb;
 
 	// main screen
 	struct skin* apskin = getscreen("mc_audioplayer");
@@ -32,6 +37,20 @@ void screenmc_audioplayer()
 	struct skin* b2 = getscreennode(apskin, "b2");
 	struct skin* b3 = getscreennode(apskin, "b3");
 	struct skin* b4 = getscreennode(apskin, "b4");
+
+	struct skin* plot = getscreennode(apskin, "plot");
+	struct skin* title = getscreennode(apskin, "title");
+	struct skin* thumb = getscreennode(apskin, "thumb");
+	struct skin* actorstext = getscreennode(apskin, "actorstext");
+	struct skin* actors = getscreennode(apskin, "actors");
+	struct skin* genretext = getscreennode(apskin, "genretext");
+	struct skin* genre = getscreennode(apskin, "genre");
+	struct skin* yeartext = getscreennode(apskin, "yeartext");
+	struct skin* year = getscreennode(apskin, "year");
+	struct skin* realnametext = getscreennode(apskin, "realnametext");
+	struct skin* realname = getscreennode(apskin, "realname");
+	struct skin* albumtext = getscreennode(apskin, "albumtext");
+	struct skin* album = getscreennode(apskin, "album");
 
 	// infobar screen
 	struct skin* infobar = getscreen("mc_audioplayer_infobar");
@@ -79,10 +98,12 @@ void screenmc_audioplayer()
 		initscreensaver();
 
 	tmpview = view;
-	mc_changeview(view, filelist, apskin);
+	mc_changeview(view, filelist, apskin, flag);
 
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
 	addscreenrc(apskin, filelist);
+
+	char* savecmd = NULL;
 
 	while(1)
 	{
@@ -119,6 +140,87 @@ void screenmc_audioplayer()
 			showscreensaver();
 			rcwait = screensaver->speed;
 		}
+
+		if(tmpview == 3 && filelist->select != NULL && count < screensaver_delay)
+		{
+			char* cmd = NULL;
+			char* pic = NULL;
+
+			if(filelist->select != NULL && filelist->select->input == NULL)
+			{
+				struct mediadb* mnode = getmediadb(filelistpath->text, filelist->select->name, 0);
+				if(mnode != NULL)
+				{
+					if(mnode->id != NULL)
+					{
+						tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
+						tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
+						tmpstr = ostrcat(tmpstr, mnode->id, 1, 0);
+	
+						pic = ostrcat(tmpstr, "_cover.jpg", 0, 0);
+						cmd = ostrcat(tmpstr, "_backdrop.mvi", 0, 0);
+						free(tmpstr), tmpstr = NULL;
+					}
+
+					if(mnode->plot != NULL)
+						changetext(album, mnode->plot);
+					if(mnode->title != NULL)
+					{
+						if(mnode->actors != NULL)
+						{
+							tmpstr = ostrcat(tmpstr, mnode->actors, 1, 0);
+							tmpstr = ostrcat(tmpstr, " - ", 1, 0);
+						}
+						tmpstr = ostrcat(tmpstr, mnode->title, 1, 0);
+
+						if(mnode->year != NULL)
+						{
+							tmpstr = ostrcat(tmpstr, " (", 1, 0);
+							tmpstr = ostrcat(tmpstr, oitoa(mnode->year), 1, 0);
+							tmpstr = ostrcat(tmpstr, ")", 1, 0);
+						}
+
+						changetext(title, tmpstr);
+						free(tmpstr), tmpstr = NULL;
+					}
+					if(mnode->actors != NULL)
+						changetext(actors, mnode->actors);
+					if(mnode->genre != NULL)
+						changetext(genre, mnode->genre);
+					if(mnode->year != NULL)
+						changetext(year, oitoa(mnode->year));
+
+					changetext(realname, filelist->select->name);
+				}		
+				changepic(thumb, pic);
+				free(pic), pic = NULL;				
+				drawscreen(apskin, 0, 0);
+			}
+
+			debug(50, "cmd: %s", cmd);	
+			if(!file_exist(cmd)){
+				free(cmd), cmd = NULL;
+				cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 1, 0);
+			}
+
+			if(savecmd == NULL)
+			{
+				singlepicstart(cmd, 0);
+				free(savecmd), savecmd = NULL;
+				savecmd = ostrcat(savecmd, cmd, 1, 0);
+			}
+			else
+			{
+				if(ostrcmp(savecmd, cmd) != 0)
+				{
+					singlepicstart(cmd, 0);
+					free(savecmd), savecmd = NULL;
+					savecmd = ostrcat(savecmd, cmd, 1, 0);
+				}
+			}
+			free(cmd), cmd = NULL;
+		}
+
 
 		if(rcret == getrcconfigint("rc1", NULL))
 		{
@@ -216,7 +318,7 @@ void screenmc_audioplayer()
 				debug(50, "rcred: tmpsort=%d", sort);
 
 				addconfiginttmp("dirsort", sort);
-				mc_changeview(tmpview, filelist, apskin);
+				mc_changeview(tmpview, filelist, apskin, flag);
 
 				delownerrc(apskin);	
 				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->name);
@@ -236,6 +338,9 @@ void screenmc_audioplayer()
 				debug(50, "rcmenu: settings");
 
 				view = getconfigint("mc_ap_view", NULL);
+				printf("view in: %d\n", view);
+				printf("tmpview in: %d\n", tmpview);
+
 				screenmc_audioplayer_settings();
 				drawscreen(blackscreen, 0, 0);
 				drawscreen(loadmediadb, 0, 0);	
@@ -253,10 +358,16 @@ void screenmc_audioplayer()
 					addconfigtmp("dirsort", tmpstr);
 					free(tmpstr), tmpstr = NULL;
 				}
+
+				printf("1view in: %d\n", view);
+				printf("1tmpview in: %d\n", tmpview);
 				
-				mc_changeview(tmpview, filelist, apskin);
+				mc_changeview(tmpview, filelist, apskin, flag);
 				drawscreen(blackscreen, 0, 0);
 				drawscreen(loadmediadb, 0, 0);	
+
+				printf("2view in: %d\n", view);
+				printf("2tmpview in: %d\n", tmpview);
 
 				delownerrc(apskin);	
 				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->name);
@@ -471,6 +582,14 @@ void screenmc_audioplayer()
 				status.play = 1;
 
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
+
+				if(getconfigint("mc_ap_autoscan", NULL) == 1)
+				{
+					writesys("/tmp/.autoscan", "", 0);
+					mediadbscan(filelistpath->text, 1001, 1);
+					int files = findfiles(filelistpath->text, 0, 1, 1, 1); //count only
+					printf("files %d\n",files);
+				}
 			}
 		}
 		if(eof >=1 || playerisplaying() == 0)
@@ -492,7 +611,14 @@ void screenmc_audioplayer()
 	free(filename), filename = NULL;
 	free(currentdirectory), currentdirectory = NULL;
 	free(selectedfile), selectedfile = NULL;
-
+/*
+	if(status.mediadbthread == NULL)
+	{
+		if(status.writemediadb == 1)
+			writemediadb(getconfig("mediadbfile", NULL));
+		freemediadb(0);
+	}
+*/
 	clearscreen(blackscreen);
 	clearscreen(loadmediadb);
 

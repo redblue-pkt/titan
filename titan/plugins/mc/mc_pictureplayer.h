@@ -73,7 +73,7 @@ void screenmc_pictureplayer()
 		initscreensaver();
 
 	tmpview = view;
-	mc_changeview(view, filelist, apskin);
+	mc_changeview(view, filelist, apskin, flag);
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
 	addscreenrc(apskin, filelist);
 
@@ -161,7 +161,7 @@ void screenmc_pictureplayer()
 					debug(50, "rcred: tmpsort=%d", sort);
 					addconfiginttmp("dirsort", sort);
 
-					mc_changeview(view, filelist, apskin);
+					mc_changeview(view, filelist, apskin, flag);
 					delownerrc(apskin);
 					getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->name);
 					addscreenrc(apskin, filelist);
@@ -234,7 +234,7 @@ void screenmc_pictureplayer()
 				else
 					playerstop();
 
-				mc_changeview(tmpview, filelist, apskin);
+				mc_changeview(tmpview, filelist, apskin, flag);
 				drawscreen(blackscreen, 0, 0);
 				drawscreen(loadmediadb, 0, 0);	
 

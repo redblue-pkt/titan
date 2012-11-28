@@ -37,7 +37,7 @@
 <node name=cover posx=3% posy=70% width=124 height=171 picwidth=124 picheight=171>
 <node name=title posx=center posy=10 halign=center valign=middle width=100% height=60 fontcol=fontcol/>
 <node name=thumb posx=3% posy=70% width=124 height=171 picwidth=124 picheight=171>
-<node name=plot posx=200 posy=500 type=textbox width=1050 height=160 fontcol=fontcol fontsize=12 wrap=yes />
+<node name=plot posx=200 posy=500 type=textbox width=1050 height=160 fontcol=fontcol fontsize=20 wrap=yes />
 <node name="buttonbar" posx=center posy="660" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
 <node name="b5" picmem="skin/key_ok_70x40.png"   posx="50"  posy="665" width="70" height="40">
 <node name="b6" picmem="skin/key_exit_70x40.png" posx="125" posy="665" width="70" height="40">
@@ -72,6 +72,24 @@
 <node fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox posx=center posy=140 width=92% height=50%>
 <node hspace=10 picmem=skin/ext_directory.png textposx=30 fontsize=25 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=filelist posx=center posy=140 width=92% height=480>
 
+<node name=thumb posx=65% posy=20% width=400 height=450 picwidth=400 picheight=450>
+<node name=title posx=center posy=10 halign=center valign=middle width=100% height=60 fontcol=fontcol/>
+
+<node name=albumtext text="Album:" posx=60 posy=500 type=textbox width=120 height=100 fontcol=fontcol fontsize=20 wrap=yes />
+<node name=album posx=200 posy=500 type=textbox width=650 height=100 fontcol=fontcol fontsize=20 wrap=yes />
+
+<node name=realnametext text="Filename:" posx=60 posy=520 type=textbox width=120 height=100 fontcol=fontcol fontsize=20 wrap=yes />
+<node name=realname posx=200 posy=520 type=textbox width=650 height=100 fontcol=fontcol fontsize=20 wrap=yes />
+
+<node name=actorstext text="Actors:" posx=60 posy=540 type=textbox width=120 height=100 fontcol=fontcol fontsize=20 wrap=yes />
+<node name=actors posx=200 posy=540 type=textbox width=650 height=100 fontcol=fontcol fontsize=20 wrap=yes />
+
+<node name=genretext text="Genre:" posx=60 posy=560 type=textbox width=120 height=100 fontcol=fontcol fontsize=20 wrap=yes />
+<node name=genre posx=200 posy=560 type=textbox width=650 height=100 fontcol=fontcol fontsize=20 wrap=yes />
+
+<node name=yeartext text="Year:" posx=60 posy=580 type=textbox width=120 height=100 fontcol=fontcol fontsize=20 wrap=yes />
+<node name=year posx=200 posy=580 type=textbox width=650 height=100 fontcol=fontcol fontsize=20 wrap=yes />
+
 <node name="buttonbar" posx=center posy="660" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
 <node name="b5" picmem="skin/key_ok_70x40.png"   posx="50"  posy="665" width="70" height="40">
 <node name="b6" picmem="skin/key_exit_70x40.png" posx="125" posy="665" width="70" height="40">
@@ -89,6 +107,7 @@
 <node bordercol=bordercol scrollbar=auto type=listbox posy=150 posx=350 name=listbox width=45% height=60%>
 <node name=sort type=choicebox parent=listbox valign=middle posx=0 text="Sort" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=view type=choicebox parent=listbox valign=middle posx=0 text="View" bordercol=bordercol bordersize=1 width=100% height=25>
+<node name=autoscan type=choicebox parent=listbox valign=middle posx=0 text="MediaDB autoscan" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=autostart_playlist type=choicebox parent=listbox valign=middle posx=0 text="Autostart Playlist" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=defaultdir type=choicebox parent=listbox valign=middle posx=0 text="default Directory" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=uselastdir type=choicebox parent=listbox valign=middle posx=0 text="use last Directory" bordercol=bordercol bordersize=1 width=100% height=25>

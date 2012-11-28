@@ -12,6 +12,7 @@ void screenmc_audioplayer_settings()
 	struct skin* ap_autostart_playlist = getscreennode(mc_audioplayer_settings, "autostart_playlist");
 	struct skin* defaultdir = getscreennode(mc_audioplayer_settings, "defaultdir");
 	struct skin* uselastdir = getscreennode(mc_audioplayer_settings, "uselastdir");
+	struct skin* autoscan = getscreennode(mc_audioplayer_settings, "autoscan");
 	struct skin* loadmediadb = getscreen("loading");
 	struct skin* blackscreen = getscreen("blackscreen");
 	
@@ -34,11 +35,11 @@ void screenmc_audioplayer_settings()
 	addchoicebox(view, "0", _("fast"));
 	addchoicebox(view, "1", _("big"));	
 	addchoicebox(view, "2", _("cover"));	
-//	addchoicebox(view, "3", _("fullcover"));
+	addchoicebox(view, "3", _("fullcover"));
 	addchoicebox(view, "4", _("size (default)"));
 	addchoicebox(view, "5", _("datetime"));
 
-	setchoiceboxselection(view, getconfig("ap_view", NULL));
+	setchoiceboxselection(view, getconfig("mc_ap_view", NULL));
 
 
 	addchoicebox(ap_autostart_playlist, "0", _("no"));	
@@ -50,6 +51,10 @@ void screenmc_audioplayer_settings()
 	addchoicebox(uselastdir, "0", _("no"));
 	addchoicebox(uselastdir, "1", _("yes"));
 	setchoiceboxselection(uselastdir, getconfig("mc_ap_uselastdir", NULL));
+
+	addchoicebox(autoscan, "0", _("no"));	
+	addchoicebox(autoscan, "1", _("yes"));
+	setchoiceboxselection(autoscan, getconfig("mc_ap_autoscan", NULL));
 
 //	addchoicebox(dimmer, "0", _("no"));	
 //	addchoicebox(dimmer, "1", _("yes"));
@@ -86,6 +91,7 @@ void screenmc_audioplayer_settings()
 		{
 			addconfigscreencheck("mc_ap_dirsort", dirsort, NULL);
 			addconfigscreencheck("mc_ap_view", view, NULL);
+			addconfigscreencheck("mc_ap_autoscan", autoscan, NULL);	
 			addconfigscreencheck("mc_ap_autostart_playlist", ap_autostart_playlist, NULL);
 			addconfigscreen("mc_ap_defaultdir", defaultdir);
 			addconfigscreencheck("mc_ap_uselastdir", uselastdir, NULL);

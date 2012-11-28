@@ -6,12 +6,27 @@
 	mc_changeview start
  ------------------------------------------
 */
-void mc_changeview(int view, struct skin* filelist, struct skin* apskin)
+// flag 1 = vp
+// flag 2 = ap
+// flag 3 = pp
+void mc_changeview(int view, struct skin* filelist, struct skin* apskin, int flag)
 {
 	struct skin* node = filelist;
+
 	struct skin* plot = getscreennode(apskin, "plot");
 	struct skin* title = getscreennode(apskin, "title");
 	struct skin* thumb = getscreennode(apskin, "thumb");
+	struct skin* actorstext = getscreennode(apskin, "actorstext");
+	struct skin* actors = getscreennode(apskin, "actors");
+	struct skin* genretext = getscreennode(apskin, "genretext");
+	struct skin* genre = getscreennode(apskin, "genre");
+	struct skin* yeartext = getscreennode(apskin, "yeartext");
+	struct skin* year = getscreennode(apskin, "year");
+	struct skin* realnametext = getscreennode(apskin, "realnametext");
+	struct skin* realname = getscreennode(apskin, "realname");
+	struct skin* albumtext = getscreennode(apskin, "albumtext");
+	struct skin* album = getscreennode(apskin, "album");
+
 	struct skin* loadmediadb = getscreen("loading");
 	struct skin* blackscreen = getscreen("blackscreen");
 	drawscreen(blackscreen, 0, 0);
@@ -45,6 +60,16 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin)
 		thumb->hidden = YES;
 		plot->hidden = YES;
 		title->hidden = YES;
+		actorstext->hidden = YES;
+		actors->hidden = YES;
+		genretext->hidden = YES;
+		genre->hidden = YES;
+		yeartext->hidden = YES;
+		year->hidden = YES;
+		realnametext->hidden = YES;
+		realname->hidden = YES;
+		albumtext->hidden = YES;
+		album->hidden = YES;
 	}
 	else if(view == 1)
 	{
@@ -59,6 +84,16 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin)
 		thumb->hidden = YES;
 		plot->hidden = YES;
 		title->hidden = YES;	
+		actorstext->hidden = YES;
+		actors->hidden = YES;
+		genretext->hidden = YES;
+		genre->hidden = YES;
+		yeartext->hidden = YES;
+		year->hidden = YES;
+		realnametext->hidden = YES;
+		realname->hidden = YES;
+		albumtext->hidden = YES;
+		album->hidden = YES;
 	}
 	else if(view == 2)
 	{
@@ -72,19 +107,60 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin)
 		thumb->hidden = YES;
 		plot->hidden = YES;
 		title->hidden = YES;
+		actorstext->hidden = YES;
+		actors->hidden = YES;
+		genretext->hidden = YES;
+		genre->hidden = YES;
+		yeartext->hidden = YES;
+		year->hidden = YES;
+		realnametext->hidden = YES;
+		realname->hidden = YES;
+		albumtext->hidden = YES;
+		album->hidden = YES;
 	}
 	else if(view == 3)
 	{
 		filelist->fontsize = 25;//, fontspace = 10;
 		filelist->height = 350;
-		filelist->width = 600;
+		if(flag == 2)
+			filelist->width = 800;
+		else
+			filelist->width = 600;
 		filelist->prozwidth = 0;		
 		filelist->bgcol = 0x474747;
 		filelist->transparent = 40;
 		filelist->posx = 20;
 		thumb->hidden = NO;
-		plot->hidden = NO;
 		title->hidden = NO;
+
+		if(flag == 2)
+		{
+			plot->hidden = YES;
+			actorstext->hidden = NO;
+			actors->hidden = NO;
+			genretext->hidden = NO;
+			genre->hidden = NO;
+			yeartext->hidden = NO;
+			year->hidden = NO;
+			realnametext->hidden = NO;
+			realname->hidden = NO;
+			albumtext->hidden = NO;
+			album->hidden = NO;
+		}
+		else
+		{
+			plot->hidden = NO;
+			actorstext->hidden = YES;
+			actors->hidden = YES;
+			genretext->hidden = YES;
+			genre->hidden = YES;
+			yeartext->hidden = YES;
+			year->hidden = YES;
+			realnametext->hidden = YES;
+			realname->hidden = YES;
+			albumtext->hidden = YES;
+			album->hidden = YES;
+		}
 	}	
 	else if(view == 4)
 	{
@@ -99,6 +175,16 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin)
 		thumb->hidden = YES;
 		plot->hidden = YES;
 		title->hidden = YES;		
+		actorstext->hidden = YES;
+		actors->hidden = YES;
+		genretext->hidden = YES;
+		genre->hidden = YES;
+		yeartext->hidden = YES;
+		year->hidden = YES;
+		realnametext->hidden = YES;
+		realname->hidden = YES;
+		albumtext->hidden = YES;
+		album->hidden = YES;
 	}
 	else if(view == 5)
 	{
@@ -113,6 +199,16 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin)
 		thumb->hidden = YES;
 		plot->hidden = YES;
 		title->hidden = YES;	
+		actorstext->hidden = YES;
+		actors->hidden = YES;
+		genretext->hidden = YES;
+		genre->hidden = YES;
+		yeartext->hidden = YES;
+		year->hidden = YES;
+		realnametext->hidden = YES;
+		realname->hidden = YES;
+		albumtext->hidden = YES;
+		album->hidden = YES;
 	}
 }
 

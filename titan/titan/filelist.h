@@ -518,9 +518,26 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 								struct mediadb* mnode = getmediadb(node->input, filelist[i]->d_name, 0);
 								free(tmpstr), tmpstr = NULL;
 								if(mnode != NULL)
-								{									
+								{
+									int musik = 0;
+									if(cmpfilenameext(filelist[i]->d_name, ".mp3") == 0)
+										musik = 1;
+									else if(cmpfilenameext(filelist[i]->d_name, ".flac") == 0)
+										musik = 1;
+									else if(cmpfilenameext(filelist[i]->d_name, ".ogg") == 0)
+										musik = 1;
+									else if(cmpfilenameext(filelist[i]->d_name, ".ra") == 0)
+										musik = 1;
+									else if(cmpfilenameext(filelist[i]->d_name, ".wav") == 0)
+										musik = 1;
+								
 									if(mnode->title != NULL)
 									{
+										if(mnode->actors != NULL && musik == 1)
+										{
+											tmpstr = ostrcat(tmpstr, mnode->actors, 1, 0);
+											tmpstr = ostrcat(tmpstr, " - ", 1, 0);
+										}
 										tmpstr = ostrcat(tmpstr, mnode->title, 1, 0);
 										tmpstr = ostrcat(tmpstr, " (", 1, 0);									
 											
@@ -548,7 +565,11 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 										tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
 										tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
 										tmpstr = ostrcat(tmpstr, mnode->id, 1, 0);
-										tmpstr = ostrcat(tmpstr, "_thumb.jpg", 1, 0);
+
+										//if(musik == 1)
+											tmpstr = ostrcat(tmpstr, "_cover.jpg", 1, 0);
+										//else
+										//	tmpstr = ostrcat(tmpstr, "_thumb.jpg", 1, 0);
 									}
 
 								}
@@ -638,10 +659,28 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 						struct mediadb* mnode = getmediadb(node->input, filelist[i]->d_name, 0);
 
 //						free(tmpstr), tmpstr = NULL;
+						int musik = 0;
+						if(cmpfilenameext(filelist[i]->d_name, ".mp3") == 0)
+							musik = 1;
+						else if(cmpfilenameext(filelist[i]->d_name, ".flac") == 0)
+							musik = 1;
+						else if(cmpfilenameext(filelist[i]->d_name, ".ogg") == 0)
+							musik = 1;
+						else if(cmpfilenameext(filelist[i]->d_name, ".ra") == 0)
+							musik = 1;
+						else if(cmpfilenameext(filelist[i]->d_name, ".wav") == 0)
+							musik = 1;
+
 						if(mnode != NULL)
 						{
 							if(mnode->title != NULL)
 							{
+								if(mnode->actors != NULL && musik == 1)
+								{
+									tmpstr = ostrcat(tmpstr, mnode->actors, 1, 0);
+									tmpstr = ostrcat(tmpstr, " - ", 1, 0);
+								}
+
 								tmpstr = ostrcat(tmpstr, mnode->title, 1, 0);
 								tmpstr = ostrcat(tmpstr, " (", 1, 0);									
 									
