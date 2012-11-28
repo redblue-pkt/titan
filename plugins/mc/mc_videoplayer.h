@@ -15,7 +15,10 @@ void startmediadb()
 
 void screenmc_videoplayer()
 {
+	// workaround for grey background mvi
 	struct skin* loadmediadb = getscreen("loading");
+	struct skin* blackscreen = getscreen("blackscreen");
+	drawscreen(blackscreen, 0, 0);
 	drawscreen(loadmediadb, 0, 0);
 
 	struct mediadb* dbnode = NULL;
@@ -33,11 +36,6 @@ void screenmc_videoplayer()
 	char* currentdirectory = NULL;
 	char* selectedfile = NULL;
 	int rcret = 0, rcwait = 1000, playerret = 0, flag = 1, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0, files = 0;
-
-	// workaround for grey background mvi
-	struct skin* blackscreen = getscreen("blackscreen");
-	drawscreen(blackscreen, 0, 0);
-	drawscreen(loadmediadb, 0, 0);
 
 	// main screen
 	struct skin* apskin = getscreen("mc_videoplayer");
@@ -95,7 +93,7 @@ void screenmc_videoplayer()
 		initscreensaver();
 
 	tmpview = view;
-	mc_changeview(view, filelist, apskin);
+	mc_changeview(view, filelist, apskin, flag);
 
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
 	addscreenrc(apskin, filelist);
@@ -306,7 +304,7 @@ void screenmc_videoplayer()
 					drawscreen(skin, 0, 0);
 	
 					addconfiginttmp("dirsort", sort);
-					mc_changeview(tmpview, filelist, apskin);
+					mc_changeview(tmpview, filelist, apskin, flag);
 
 					delownerrc(apskin);	
 					getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->name);
@@ -338,6 +336,9 @@ void screenmc_videoplayer()
 				debug(50, "rcmenu: settings");
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 				view = getconfigint("mc_vp_view", NULL);
+				printf("view in: %d\n", view);
+				printf("tmpview in: %d\n", tmpview);
+
 				screenmc_videoplayer_settings();
 				drawscreen(blackscreen, 0, 0);
 				drawscreen(loadmediadb, 0, 0);				
@@ -354,13 +355,18 @@ void screenmc_videoplayer()
 					addconfigtmp("dirsort", tmpstr);
 					free(tmpstr), tmpstr = NULL;
 				}
+
+				printf("1view in: %d\n", view);
+				printf("1tmpview in: %d\n", tmpview);
 				
-				mc_changeview(tmpview, filelist, apskin);
+				mc_changeview(tmpview, filelist, apskin, flag);
 
 //				startmediadb();
 //				dbnode = mediadb;
 				drawscreen(blackscreen, 0, 0);
 				drawscreen(loadmediadb, 0, 0);
+				printf("2view in: %d\n", view);
+				printf("2tmpview in: %d\n", tmpview);
 	
 				delownerrc(apskin);
 				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->name);
