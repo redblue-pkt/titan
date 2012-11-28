@@ -373,8 +373,6 @@ void screenmc_videoplayer()
 			if(status.play == 0 && status.pause == 0)
 			{
 				drawscreen(blackscreen, 0, 0);
-				drawscreen(apskin, 0, 0);
-
 				if(filelist->select != NULL && filelist->select->input == NULL)
 				{
 					filename = createpath(filelistpath->text, filelist->select->name);
