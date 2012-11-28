@@ -451,7 +451,6 @@ void screenmc_videoplayer()
 				playerafterend();
 		
 			writevfd("VideoPlayer Filelist-Mode");
-			unlink("/tmp/.autoscan");
 				
 //			startmediadb();
 //			dbnode = mediadb;
