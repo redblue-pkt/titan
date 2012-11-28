@@ -336,6 +336,8 @@ void screenmc_videoplayer()
 				debug(50, "rcmenu: settings");
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 				view = getconfigint("mc_vp_view", NULL);
+				printf("view in: %d\n", view);
+				printf("tmpview in: %d\n", tmpview);
 
 				screenmc_videoplayer_settings();
 				drawscreen(blackscreen, 0, 0);
@@ -353,6 +355,9 @@ void screenmc_videoplayer()
 					addconfigtmp("dirsort", tmpstr);
 					free(tmpstr), tmpstr = NULL;
 				}
+
+				printf("1view in: %d\n", view);
+				printf("1tmpview in: %d\n", tmpview);
 				
 				mc_changeview(tmpview, filelist, apskin, flag);
 
@@ -360,6 +365,8 @@ void screenmc_videoplayer()
 //				dbnode = mediadb;
 				drawscreen(blackscreen, 0, 0);
 				drawscreen(loadmediadb, 0, 0);
+				printf("2view in: %d\n", view);
+				printf("2tmpview in: %d\n", tmpview);
 	
 				delownerrc(apskin);
 				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->name);
@@ -445,6 +452,7 @@ void screenmc_videoplayer()
 		
 			writevfd("VideoPlayer Filelist-Mode");
 			unlink("/tmp/.autoscan");
+			unlink("/tmp/.autoscan.vp");
 				
 //			startmediadb();
 //			dbnode = mediadb;
@@ -501,6 +509,7 @@ void screenmc_videoplayer()
 	
 			printf("exit: view=%d tmpview=%d\n", view, tmpview);
 			unlink("/tmp/.autoscan");
+			unlink("/tmp/.autoscan.vp");
 			break;
 		}
 		else if(rcret == getrcconfigint("rcok", NULL))
