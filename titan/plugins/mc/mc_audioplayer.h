@@ -19,7 +19,7 @@ void screenmc_audioplayer()
 	char* currentdirectory = NULL;
 	char* selectedfile = NULL;
 
-	int rcret = 0, rcwait = 1000, playerret = 0, flag = 2, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, count = 0, tmpview = 0, playlist = 0, playertype = 0;
+	int rcret = 0, rcwait = 1000, playerret = 0, flag = 2, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, count = 0, tmpview = 0, playlist = 0, playertype = 0, files = 0;
 
 	char* tmpstr = NULL;
 	tmpstr = ostrcat(getconfig("mc_ap_dirsort", NULL), NULL, 0, 0);
@@ -412,9 +412,7 @@ void screenmc_audioplayer()
 				status.play = 0;
 				playlist = 0;
 
-				writevfd("AudioPlayer Filelist-Mode");
-				unlink("/tmp/.autoscan");
-				unlink("/tmp/.autoscan.ap");
+				writevfd("AudioPlayer Filelist-Mode");				
 //			}
 		}
 		else if(rcret == getrcconfigint("rcexit", NULL))
@@ -450,8 +448,7 @@ void screenmc_audioplayer()
 			writevfd("Mediacenter");
 			
 			printf("exit: view=%d tmpview=%d\n", view, tmpview);
-			unlink("/tmp/.autoscan");
-			unlink("/tmp/.autoscan.ap");			
+			unlink("/tmp/.autoscan");			
 			break;
 		}
 		else if(rcret == getrcconfigint("rcok", NULL))
@@ -519,6 +516,14 @@ void screenmc_audioplayer()
 					debug(50, "mc_mounter_chk start");
 					mc_mounter_chk(filelistpath);
 					debug(50, "mc_mounter_chk done");
+
+					char* checkautoscan = NULL;
+					checkautoscan = readfiletomem("/tmp/.autoscan", 0);
+
+					if(filelistpath->text != NULL && ostrcmp(checkautoscan, filelistpath->text) != 0)
+						unlink("/tmp/.autoscan");
+
+					free(checkautoscan), checkautoscan = NULL;
 				}				
 			}
 			else if(filelist->select != NULL && filelist->select->input == NULL)
@@ -581,13 +586,20 @@ void screenmc_audioplayer()
 
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 
-				if(getconfigint("mc_ap_autoscan", NULL) == 1 && !file_exist("/tmp/.autoscan.ap"))
+				if(getconfigint("mc_ap_autoscan", NULL) == 1 && !file_exist("/tmp/.autoscan"))
 				{
-					writesys("/tmp/.autoscan.ap", "", 0);
-					writesys("/tmp/.autoscan", "", 0);
-					mediadbscan(filelistpath->text, 1001, 1);
-					int files = findfiles(filelistpath->text, 0, 1, 1, 1); //count only
-					printf("files %d\n",files);
+					if(filelistpath->text != NULL)
+					{
+						writesys("/tmp/.autoscan", filelistpath->text, 0);
+						mediadbscan(filelistpath->text, 1001, 1);
+						files = findfiles(filelistpath->text, 0, 1, 1, 1); //count only
+					}
+					else
+					{
+						mediadbscan(currentdirectory, 1001, 1);
+						writesys("/tmp/.autoscan", currentdirectory, 0);
+						files = findfiles(currentdirectory, 0, 1, 1, 1); //count only
+					}
 				}
 			}
 		}

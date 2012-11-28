@@ -452,7 +452,6 @@ void screenmc_videoplayer()
 		
 			writevfd("VideoPlayer Filelist-Mode");
 			unlink("/tmp/.autoscan");
-			unlink("/tmp/.autoscan.vp");
 				
 //			startmediadb();
 //			dbnode = mediadb;
@@ -509,7 +508,6 @@ void screenmc_videoplayer()
 	
 			printf("exit: view=%d tmpview=%d\n", view, tmpview);
 			unlink("/tmp/.autoscan");
-			unlink("/tmp/.autoscan.vp");
 			break;
 		}
 		else if(rcret == getrcconfigint("rcok", NULL))
@@ -612,7 +610,7 @@ void screenmc_videoplayer()
 					printf("1\n");
 					if(ostrcmp(checkdvd, "video_ts") == 0)
 					{
-						printf("2\n");
+						printf("found video_ts folder\n");
 						struct skin* dvdplayer = getplugin("DVD Player");
 						if(dvdplayer != NULL)
 						{
@@ -620,20 +618,26 @@ void screenmc_videoplayer()
 							startplugin = dlsym(dvdplayer->pluginhandle, "screendvdplay");
 							if(startplugin != NULL)
 							{
-								debug(50, "filelist->select->text: %s", filelist->select->text);
+								debug(50, "filelist->select->name: %s", filelist->select->name);
 								filename = createpath(filelistpath->text, filelist->select->name);
-								printf("1name: %s\n",filelist->select->name);
-								printf("1text: %s\n",filelist->select->text);				
+								printf("start dvdplayer plugin\n");
 								startplugin(filename,0);
 							}
 						}
 					}
 					else
 					{
-						printf("5\n");
 						debug(50, "mc_mounter_chk start");
 						mc_mounter_chk(filelistpath);
-						debug(50, "mc_mounter_chk done");	
+						debug(50, "mc_mounter_chk done");
+
+						char* checkautoscan = NULL;
+						checkautoscan = readfiletomem("/tmp/.autoscan", 0);
+	
+						if(filelistpath->text != NULL && ostrcmp(checkautoscan, filelistpath->text) != 0)
+							unlink("/tmp/.autoscan");
+	
+						free(checkautoscan), checkautoscan = NULL;
 					}
 					free(checkdvd), checkdvd = NULL;
 				}
@@ -645,9 +649,6 @@ void screenmc_videoplayer()
 
 				debug(50, "filelist->select->text: %s", filelist->select->text);
 				filename = createpath(filelistpath->text, filelist->select->name);
-				printf("name: %s\n",filelist->select->name);
-				printf("text: %s\n",filelist->select->text);
-
 
 				if(getconfigint("playertype", NULL) == 1 && (cmpfilenameext(filename, ".ts") == 0 || cmpfilenameext(filename, ".mts") == 0 || cmpfilenameext(filename, ".m2ts") == 0))		
 					playertype = 1;
@@ -753,12 +754,21 @@ void screenmc_videoplayer()
 				free(status.playfile); status.playfile = NULL;
 				status.playfile = ostrcat(filename, "", 0, 0);
 
-				if(getconfigint("mc_vp_autoscan", NULL) == 1)
+				if(getconfigint("mc_vp_autoscan", NULL) == 1 && !file_exist("/tmp/.autoscan"))
 				{
-					writesys("/tmp/.autoscan", "", 0);
 					mediadbscan(filelistpath->text, 1000, 1);
-					files = findfiles(filelistpath->text, 0, 1, 1, 1); //count only
-					printf("files %d\n",files);
+					if(filelistpath->text != NULL)
+					{
+						writesys("/tmp/.autoscan", filelistpath->text, 0);
+						mediadbscan(filelistpath->text, 1000, 1);
+						files = findfiles(filelistpath->text, 0, 1, 1, 1); //count only
+					}
+					else
+					{
+						writesys("/tmp/.autoscan", currentdirectory, 0);
+						mediadbscan(currentdirectory, 1000, 1);
+						files = findfiles(currentdirectory, 0, 1, 1, 1); //count only
+					}
 				}
 			}
 		}
