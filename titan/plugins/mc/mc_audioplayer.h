@@ -19,7 +19,7 @@ void screenmc_audioplayer()
 	char* currentdirectory = NULL;
 	char* selectedfile = NULL;
 
-	int rcret = 0, rcwait = 1000, playerret = 0, flag = 2, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, count = 0, tmpview = 0, playlist = 0, playertype = 0, files = 0;
+	int rcret = 0, rcwait = 1000, playerret = 0, flag = 2, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, count = 0, tmpview = 0, playlist = 0, playertype = 0;
 
 	char* tmpstr = NULL;
 	tmpstr = ostrcat(getconfig("mc_ap_dirsort", NULL), NULL, 0, 0);
@@ -592,13 +592,11 @@ void screenmc_audioplayer()
 					{
 						writesys("/tmp/.autoscan", filelistpath->text, 0);
 						mediadbscan(filelistpath->text, 1001, 1);
-						files = findfiles(filelistpath->text, 0, 1, 1, 1); //count only
 					}
 					else
 					{
 						mediadbscan(currentdirectory, 1001, 1);
 						writesys("/tmp/.autoscan", currentdirectory, 0);
-						files = findfiles(currentdirectory, 0, 1, 1, 1); //count only
 					}
 				}
 			}
