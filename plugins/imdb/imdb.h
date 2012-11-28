@@ -46,9 +46,14 @@ struct imdb* getimdb(struct imdb** first, char* title, int flag, int flag1, int 
 		
 start:
 	debug(133, "title: %s",title);
-	tmpsearch = ostrcat("find?s=tt;q=", NULL, 0, 0);
+//	tmpsearch = ostrcat("find?s=tt;q=", NULL, 0, 0);
+	tmpsearch = ostrcat("find?q=", NULL, 0, 0);
+
 	if(flag == 0)
+	{
 		tmpsearch = ostrcat(tmpsearch, title, 1, 0);
+		tmpsearch = ostrcat(tmpsearch, "&s=all", 1, 0);
+	}
 	else
 		tmpsearch = ostrcat("/title/tt", title, 0, 0);
 	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
