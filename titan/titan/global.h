@@ -1303,7 +1303,7 @@ void setskinnodeslocked(int flag)
 				if(ostrcmp("system_backup", child->name) == 0) child->locked = tmpflag;
 			}
 
-			if((checkbox("ATEMIO7600") == 1 ) || (checkbox("ATEMIO7600") == 1))
+			if((checkbox("ATEMIO7600") == 1 ) || (checkbox("UFS912") == 1))
 			{
 				if(ostrcmp("system_backup", child->name) == 0) child->locked = tmpflag;
 			}
