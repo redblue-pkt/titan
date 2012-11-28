@@ -1300,8 +1300,14 @@ void setskinnodeslocked(int flag)
 			if(checkbox("ATEMIO510") == 1)
 			{
 				if(ostrcmp("vfdisplay", child->name) == 0) child->locked = tmpflag;
+				if(ostrcmp("system_backup", child->name) == 0) child->locked = tmpflag;
 			}
-			
+
+			if((checkbox("ATEMIO7600") == 1 ) || (checkbox("ATEMIO7600") == 1))
+			{
+				if(ostrcmp("system_backup", child->name) == 0) child->locked = tmpflag;
+			}
+		
 			if(checkbox("UFS910") == 1)
 			{
 				if(ostrcmp("unlock", child->name) == 0) child->locked = 1;
