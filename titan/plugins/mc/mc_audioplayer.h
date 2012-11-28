@@ -38,18 +38,12 @@ void screenmc_audioplayer()
 	struct skin* b3 = getscreennode(apskin, "b3");
 	struct skin* b4 = getscreennode(apskin, "b4");
 
-	struct skin* plot = getscreennode(apskin, "plot");
 	struct skin* title = getscreennode(apskin, "title");
 	struct skin* thumb = getscreennode(apskin, "thumb");
-	struct skin* actorstext = getscreennode(apskin, "actorstext");
 	struct skin* actors = getscreennode(apskin, "actors");
-	struct skin* genretext = getscreennode(apskin, "genretext");
 	struct skin* genre = getscreennode(apskin, "genre");
-	struct skin* yeartext = getscreennode(apskin, "yeartext");
 	struct skin* year = getscreennode(apskin, "year");
-	struct skin* realnametext = getscreennode(apskin, "realnametext");
 	struct skin* realname = getscreennode(apskin, "realname");
-	struct skin* albumtext = getscreennode(apskin, "albumtext");
 	struct skin* album = getscreennode(apskin, "album");
 
 	// infobar screen
@@ -419,6 +413,8 @@ void screenmc_audioplayer()
 				playlist = 0;
 
 				writevfd("AudioPlayer Filelist-Mode");
+				unlink("/tmp/.autoscan");
+				unlink("/tmp/.autoscan.ap");
 //			}
 		}
 		else if(rcret == getrcconfigint("rcexit", NULL))
@@ -453,7 +449,9 @@ void screenmc_audioplayer()
 			playlist = 0;
 			writevfd("Mediacenter");
 			
-			printf("exit: view=%d tmpview=%d\n", view, tmpview);			
+			printf("exit: view=%d tmpview=%d\n", view, tmpview);
+			unlink("/tmp/.autoscan");
+			unlink("/tmp/.autoscan.ap");			
 			break;
 		}
 		else if(rcret == getrcconfigint("rcok", NULL))
@@ -583,8 +581,9 @@ void screenmc_audioplayer()
 
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 
-				if(getconfigint("mc_ap_autoscan", NULL) == 1)
+				if(getconfigint("mc_ap_autoscan", NULL) == 1 && !file_exist("/tmp/.autoscan.ap"))
 				{
+					writesys("/tmp/.autoscan.ap", "", 0);
 					writesys("/tmp/.autoscan", "", 0);
 					mediadbscan(filelistpath->text, 1001, 1);
 					int files = findfiles(filelistpath->text, 0, 1, 1, 1); //count only
