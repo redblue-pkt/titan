@@ -163,7 +163,7 @@ void screenmc_pictureplayer()
 
 					mc_changeview(view, filelist, apskin);
 					delownerrc(apskin);
-					getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
+					getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->name);
 					addscreenrc(apskin, filelist);
 					drawscreen(apskin, 0, 0);
 				}
@@ -239,7 +239,7 @@ void screenmc_pictureplayer()
 				drawscreen(loadmediadb, 0, 0);	
 
 				delownerrc(apskin);	
-				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
+				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->name);
 				addscreenrc(apskin, filelist);
 
 				drawscreen(apskin, 0, 0);

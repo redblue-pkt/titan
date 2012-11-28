@@ -309,7 +309,7 @@ void screenmc_videoplayer()
 					mc_changeview(tmpview, filelist, apskin);
 
 					delownerrc(apskin);	
-					getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
+					getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->name);
 					addscreenrc(apskin, filelist);
 					drawscreen(apskin, 0, 0);
 				}
@@ -362,8 +362,8 @@ void screenmc_videoplayer()
 				drawscreen(blackscreen, 0, 0);
 				drawscreen(loadmediadb, 0, 0);
 	
-				delownerrc(apskin);	
-				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
+				delownerrc(apskin);
+				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->name);
 				addscreenrc(apskin, filelist);
 				drawscreen(apskin, 0, 0);
 			}
@@ -373,6 +373,7 @@ void screenmc_videoplayer()
 			if(status.play == 0 && status.pause == 0)
 			{
 				drawscreen(blackscreen, 0, 0);
+				drawscreen(apskin, 0, 0);
 
 				if(filelist->select != NULL && filelist->select->input == NULL)
 				{
@@ -389,8 +390,8 @@ void screenmc_videoplayer()
 				drawscreen(skin, 0, 0);
 				drawscreen(blackscreen, 0, 0);
 				drawscreen(loadmediadb, 0, 0);
-				delownerrc(apskin);	
-				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->text);
+				delownerrc(apskin);
+				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->name);
 				addscreenrc(apskin, filelist);
 				drawscreen(apskin, 0, 0);
 			}	
