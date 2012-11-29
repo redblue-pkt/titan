@@ -400,7 +400,7 @@ void imdb_submenu(char* file, int mode)
 			
 				char* shortname = ostrcat(basename(file), NULL, 0, 0);
 				string_tolower(shortname);
-				shortname = string_shortname(shortname, 1);
+//				shortname = string_shortname(shortname, 1);
 				shortname = string_shortname(shortname, 2);
 				string_removechar(shortname);
 				strstrip(shortname);
