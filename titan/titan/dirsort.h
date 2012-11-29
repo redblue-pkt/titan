@@ -14,7 +14,6 @@ int screendirsort()
 	struct skin* reversesize = getscreennode(dirsort, "reversesize");
 	struct skin* date = getscreennode(dirsort, "date");
 	struct skin* reversedate = getscreennode(dirsort, "reversedate");
-	struct skin* tmp = NULL;
 	
 	addchoicebox(alpha, "0", _(""));
 	addchoicebox(reversealpha, "1", _(""));

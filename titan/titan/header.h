@@ -8,6 +8,12 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//shortepg.h
+void screenshortepg(struct channel* chnode, struct epg* epgnode, int flag);
+
+//dirsort.h
+int screendirsort();
+
 // newslater.h
 void screennewsletter();
 

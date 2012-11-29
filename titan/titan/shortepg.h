@@ -19,14 +19,13 @@ void screenshortepg(struct channel* chnode, struct epg* epgnode, int flag)
 	if(epgnode == NULL) epgnode = getepgakt(chnode);
 	if(epgnode == NULL) epgnode = getepgnext(chnode);
 
-buf = malloc(100);
-if(buf == NULL)
-{
-	free(loctime);
-	err("no memory");
-	return;
-}
-
+	buf = malloc(100);
+	if(buf == NULL)
+	{
+		free(loctime);
+		err("no memory");
+		return;
+	}
 
 	while(epgnode != NULL)
 	{
