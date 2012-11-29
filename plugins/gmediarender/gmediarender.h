@@ -1,17 +1,71 @@
 #ifndef GMEDIARENDER_H
 #define GMEDIARENDER_H
 
-extern struct skin* skin;
-struct fb *fb = NULL;
+//extern struct skin* skin;
+//struct fb *fb = NULL;
+
+void gmediarendergetpic(struct skin* gmediarender, char* buf)
+{
+	char *tmpip = NULL, *pos = NULL, *pos1 = NULL, *path = NULL;
+	int port = 80;
+
+	if(buf == NULL) return;
+
+	tmpip = string_replace("http://", "", buf, 0);
+
+	if(tmpip != NULL)
+	{
+		pos = strchr(tmpip, '/');
+		pos1 = strchr(tmpip, ':');
+	}
+	if(pos != NULL)
+	{
+		pos[0] = '\0';
+		path = pos + 1;
+	}
+	if(pos1 != NULL)
+	{
+		pos1[0] = '\0';
+		port = atoi(pos1 + 1);
+	}
+
+	if(cmpfilenameext(path, ".jpg") == 0)
+	{
+		gethttp(tmpip, path, port, "/tmp/gmediarenderpic.jpg", NULL, NULL, 0);
+		changepic(gmediarender, "/tmp/gmediarenderpic.jpg");
+		drawscreen(gmediarender, 0, 0);
+	}
+	if(cmpfilenameext(path, ".png") == 0)
+	{
+		gethttp(tmpip, path, port, "/tmp/gmediarenderpic.png", NULL, NULL, 0);
+		changepic(gmediarender, "/tmp/gmediarenderpic.png");
+		drawscreen(gmediarender, 0, 0);
+	}
+}
 
 void screengmediarender()
 {
 	int rcret = -1, ret = 0;
-	char* cmd = NULL;
+	char* cmd = NULL, *buf = NULL;
 	char* tmpstr = NULL;
+	int fifo = -1;
+	struct skin* gmediarender = getscreen("gmediarender");
 	
 	ret = servicestop(status.aktservice, 1, 1);
 	if(ret == 1) return;
+
+	buf = malloc(MINMALLOC);
+	if(buf == NULL)
+	{
+		err("no mem");
+		return;
+	}
+
+	//create fifo
+	mkfifo("/tmp/gmediarender", 0666);
+
+	//open fifo
+	fifo = open("/tmp/gmediarender", O_RDONLY | O_NONBLOCK);
 
 	drawscreen(skin, 0, 0);
 
@@ -34,7 +88,11 @@ void screengmediarender()
 
 	while(1)
 	{
-		rcret = waitrc(NULL, 0, 0);
+		rcret = waitrc(NULL, 1000, 0);
+
+		ret = read(fifo, buf, MINMALLOC);
+		if(ret > 0)
+			gmediarendergetpic(gmediarender, buf);
 
  		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL)) break;
@@ -45,6 +103,14 @@ void screengmediarender()
 			
 	if(status.lastservice != NULL)
 		servicestart(status.lastservice->channel, NULL, NULL, 0);
+
+	free(buf); buf = NULL;
+
+	//close fifo
+	close(fifo);
+	unlink("/tmp/gmediarender");
+	unlink("/tmp/gmediarenderpic.jpg");
+	unlink("/tmp/gmediarenderpic.png");
 }
 
 #endif
