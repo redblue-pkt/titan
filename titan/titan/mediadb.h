@@ -1501,10 +1501,28 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			//create imdb search name
 			char* shortname = ostrcat(file, NULL, 0, 0);
 			string_tolower(shortname);
-			shortname = string_shortname(shortname, 1);
+			debug(133, "shortname1: %s", shortname);
+
+//			shortname = string_shortname(shortname, 1);
+//			debug(133, "shortname2: %s", shortname);
+
 			shortname = string_shortname(shortname, 2);
+			debug(133, "shortname3: %s", shortname);
+
 			string_removechar(shortname);
+			debug(133, "shortname4: %s", shortname);
+
 			strstrip(shortname);
+			debug(133, "shortname5: %s", shortname);
+
+			// log shortname
+			tmpstr = readfiletomem("/tmp/.mediadb.shortname.log", 0);
+			tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+			tmpstr = ostrcat(tmpstr, file, 1, 0);
+			tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+			tmpstr = ostrcat(tmpstr, shortname, 1, 0);						
+			writesys("/tmp/.mediadb.shortname.log", tmpstr, 0);
+			free(tmpstr), tmpstr = NULL;
 
 			//got imdb infos
 			struct skin* imdbplugin = getplugin("IMDb");

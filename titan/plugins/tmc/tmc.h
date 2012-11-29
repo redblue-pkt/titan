@@ -922,7 +922,7 @@ void screentmcimdbsearch(char* file, int menuid)
 	//create imdb search name
 	char* shortname = ostrcat(file, NULL, 0, 0);
 	string_tolower(shortname);
-	shortname = string_shortname(shortname, 1);
+//	shortname = string_shortname(shortname, 1);
 	shortname = string_shortname(shortname, 2);
 	string_removechar(shortname);
 	strstrip(shortname);
