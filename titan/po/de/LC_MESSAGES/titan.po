@@ -2725,3 +2725,6 @@ msgstr "Enable"
 
 msgid "Device"
 msgstr "Device"
+
+msgid "green"
+msgstr "grün"
