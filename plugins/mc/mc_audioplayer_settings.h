@@ -133,6 +133,7 @@ void screenmc_audioplayer_settings()
 	writeallconfig(0);
 	delownerrc(mc_audioplayer_settings);
 	clearscreen(mc_audioplayer_settings);
+	resettvpic();
 }
 
 #endif

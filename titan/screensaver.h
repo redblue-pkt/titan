@@ -65,7 +65,14 @@ int showscreensaver()
 		}
 		else
 		{
-			screensaver->screen->bgcol = getconfigint("screensaver_background_color", NULL);
+			char* tmp = getconfig("screensaver_background_color", NULL);
+			if(tmp != NULL)
+			{
+				screensaver->screen->bgcol = strtol(tmp, NULL, 16);
+			}
+			else
+				screensaver->screen->bgcol = 0;
+
 			screensaversetfontcol(screensaver->screen->bgcol);
 		}
 		drawscreen(screensaver->screen, 0, 0);

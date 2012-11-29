@@ -26,15 +26,15 @@ void screenscreensaveradjust()
 	changeinput(screensaver_interval, "2\n5\n10\n20\n30\n40\n50\n60\n70\n80\n90\n100");
 	setchoiceboxselection(screensaver_interval, getconfig("screensaver_interval", NULL));
 
-	addchoicebox(screensaver_background_color, "000000", _("black"));
-	addchoicebox(screensaver_background_color, "0000ff", _("blue"));
-	addchoicebox(screensaver_background_color, "00ff00", _("red"));
-	addchoicebox(screensaver_background_color, "ff0000", _("orange"));
-	addchoicebox(screensaver_background_color, "ffff00", _("yellow"));
-	addchoicebox(screensaver_background_color, "ffffff", _("white"));
-	addchoicebox(screensaver_background_color, "BEBEBE", _("grey"));
-	addchoicebox(screensaver_background_color, "FFD39B", _("burlywood1"));
-	addchoicebox(screensaver_background_color, "020202", _("lila"));
+	addchoicebox(screensaver_background_color, "0x000000", _("black"));
+	addchoicebox(screensaver_background_color, "0x0000ff", _("blue"));
+	addchoicebox(screensaver_background_color, "0x00ff00", _("green"));
+	addchoicebox(screensaver_background_color, "0xff0000", _("red"));
+	addchoicebox(screensaver_background_color, "0xffff00", _("yellow"));
+	addchoicebox(screensaver_background_color, "0xffffff", _("white"));
+	addchoicebox(screensaver_background_color, "0xBEBEBE", _("grey"));
+	addchoicebox(screensaver_background_color, "0xFFD39B", _("burlywood1"));
+	addchoicebox(screensaver_background_color, "0x020202", _("lila"));
 	addchoicebox(screensaver_background_color, "mixed", _("mixed mode"));
 	setchoiceboxselection(screensaver_background_color, getconfig("screensaver_background_color", NULL));
 
