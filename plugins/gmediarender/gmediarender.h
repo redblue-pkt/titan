@@ -90,9 +90,12 @@ void screengmediarender()
 	{
 		rcret = waitrc(NULL, 1000, 0);
 
-		ret = read(fifo, buf, MINMALLOC);
-		if(ret > 0)
-			gmediarendergetpic(gmediarender, buf);
+		if(fifo > -1)
+		{
+			ret = read(fifo, buf, MINMALLOC);
+			if(ret > 0)
+				gmediarendergetpic(gmediarender, buf);
+		}
 
  		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL)) break;
