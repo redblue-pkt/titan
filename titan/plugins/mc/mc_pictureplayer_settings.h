@@ -128,6 +128,7 @@ void screenmc_pictureplayer_settings()
 	writeallconfig(0);
 	delownerrc(mc_pictureplayer_settings);
 	clearscreen(mc_pictureplayer_settings);
+	resettvpic();
 }
 
 #endif

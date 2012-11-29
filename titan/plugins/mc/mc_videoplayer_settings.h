@@ -103,6 +103,7 @@ void screenmc_videoplayer_settings()
 //	free(ntfs3g);
 //	free(cifs);
 //	free(nfs);
+	resettvpic();
 }
 
 #endif
