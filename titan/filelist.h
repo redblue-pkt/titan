@@ -538,24 +538,28 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 											tmpstr = ostrcat(tmpstr, mnode->actors, 1, 0);
 											tmpstr = ostrcat(tmpstr, " - ", 1, 0);
 										}
-										tmpstr = ostrcat(tmpstr, mnode->title, 1, 0);
+										else
+										{
+											if(mnode->shortname != NULL)
+											{
+												tmpstr = ostrcat(tmpstr, mnode->shortname, 1, 0);
+												string_toupper(tmpstr);
+											}
+											else
+												tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);
+										}
+
 										tmpstr = ostrcat(tmpstr, " (", 1, 0);									
 											
-										char* tmpstr1 = NULL;
-										tmpstr1 = oregex(".*(cd[0-9]{1,3}).*", filelist[i]->d_name);
-										
-										if(tmpstr1 != NULL)
+										if(mnode->fileinfo != NULL)
 										{
-											tmpstr = ostrcat(tmpstr, tmpstr1, 1, 0);
-											tmpstr = ostrcat(tmpstr, " ", 1, 0);
+											tmpstr = ostrcat(tmpstr, " (", 1, 0);
+											tmpstr = ostrcat(tmpstr, mnode->fileinfo, 1, 0);
+											tmpstr = ostrcat(tmpstr, ")", 1, 0);
 										}
-		
-										tmpstr = ostrcat(tmpstr, getfilenameext(filelist[i]->d_name), 1, 1);
-										tmpstr = ostrcat(tmpstr, ")", 1, 0);
 											
 										changetext(child, tmpstr);
 										free(tmpstr), tmpstr = NULL;
-										free(tmpstr1), tmpstr1 = NULL;
 									}
 									else
 										changetext(child, filelist[i]->d_name);
@@ -652,13 +656,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 					}
 					if(view == 3)
 					{
-//						tmpstr = ostrcat(node->input, "/", 0, 0);
-//						tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);								
-
-//						struct mediadb* mnode = getmediadb(tmpstr, 0);
 						struct mediadb* mnode = getmediadb(node->input, filelist[i]->d_name, 0);
-
-//						free(tmpstr), tmpstr = NULL;
 						int musik = 0;
 						if(cmpfilenameext(filelist[i]->d_name, ".mp3") == 0)
 							musik = 1;
@@ -679,26 +677,27 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 								{
 									tmpstr = ostrcat(tmpstr, mnode->actors, 1, 0);
 									tmpstr = ostrcat(tmpstr, " - ", 1, 0);
+									tmpstr = ostrcat(tmpstr, mnode->title, 1, 0);
 								}
-
-								tmpstr = ostrcat(tmpstr, mnode->title, 1, 0);
-								tmpstr = ostrcat(tmpstr, " (", 1, 0);									
-									
-								char* tmpstr1 = NULL;
-								tmpstr1 = oregex(".*(cd[0-9]{1,3}).*", filelist[i]->d_name);
-								
-								if(tmpstr1 != NULL)
+								else
 								{
-									tmpstr = ostrcat(tmpstr, tmpstr1, 1, 0);
-									tmpstr = ostrcat(tmpstr, " ", 1, 0);
+									if(mnode->shortname != NULL)
+									{
+										tmpstr = ostrcat(tmpstr, mnode->shortname, 1, 0);
+										string_toupper(tmpstr);
+									}
+									else
+										tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);									
 								}
-
-								tmpstr = ostrcat(tmpstr, getfilenameext(filelist[i]->d_name), 1, 1);
-								tmpstr = ostrcat(tmpstr, ")", 1, 0);
-									
+								
+								if(mnode->fileinfo != NULL)
+								{
+									tmpstr = ostrcat(tmpstr, " (", 1, 0);
+									tmpstr = ostrcat(tmpstr, mnode->fileinfo, 1, 0);
+									tmpstr = ostrcat(tmpstr, ")", 1, 0);
+								}
 								changetext(child, tmpstr);
 								free(tmpstr), tmpstr = NULL;
-								free(tmpstr1), tmpstr1 = NULL;
 							}
 							else
 								changetext(child, filelist[i]->d_name);

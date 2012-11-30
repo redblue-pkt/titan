@@ -685,6 +685,8 @@ void screentmcedit(char* file, int menuid)
 	struct skin* votes = getscreennode(tmcedit, "votes");
 	struct skin* locked = getscreennode(tmcedit, "locked");
 	struct skin* picture = getscreennode(tmcedit, "picture");
+	struct skin* shortname = getscreennode(tmcedit, "shortname");
+	struct skin* fileinfo = getscreennode(tmcedit, "fileinfo");
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *bg = NULL, *picret = NULL;
 	struct mediadb* node = NULL;
@@ -724,6 +726,8 @@ void screentmcedit(char* file, int menuid)
 		changeinput(writer, node->writer);
 		changeinput(actors, node->actors);
 		changeinput(plot, node->plot);
+		changeinput(shortname, node->shortname);
+		changeinput(fileinfo, node->fileinfo);
 
 		tmpstr = oitoa(node->rating);
 		changeinput(rating, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10");
@@ -807,10 +811,10 @@ void screentmcedit(char* file, int menuid)
 					free(thumb); thumb = NULL;
 					free(buf); buf = NULL;
 					
-					node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, tmpstr, rating->ret, votes->ret, node->path, node->file, node->flag);
+					node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, tmpstr, rating->ret, votes->ret, node->path, node->file, node->shortname, node->fileinfo, node->flag);
 				}
 				else
-					node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, node->poster, rating->ret, votes->ret, node->path, node->file, node->flag);
+					node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, node->poster, rating->ret, votes->ret, node->path, node->file, node->shortname, node->fileinfo, node->flag);
 
 				free(tmpstr); tmpstr = NULL;
 				break;
@@ -942,7 +946,7 @@ void screentmcimdbsearch(char* file, int menuid)
 			if(tmdb != NULL)
 			{
 				node->flag = setbit(node->flag, 31);
-				node = createmediadb(node, tmdb->id, type, tmdb->title, tmdb->year, tmdb->released, tmdb->runtime, tmdb->genre, NULL, NULL, NULL, tmdb->plot, tmdb->id, tmdb->rating, tmdb->votes, node->path, node->file, node->flag);
+				node = createmediadb(node, tmdb->id, type, tmdb->title, tmdb->year, tmdb->released, tmdb->runtime, tmdb->genre, NULL, NULL, NULL, tmdb->plot, tmdb->id, tmdb->rating, tmdb->votes, node->path, node->file, shortname, fileinfo, node->flag);
 			}
 
 			clearscreen(tmcinfo);
