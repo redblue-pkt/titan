@@ -1677,7 +1677,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				shortname = string_replace(tmpstr1, "", shortname, 1);
 			}
 			free(tmpstr1), tmpstr1 = NULL;
-
+/*
 			tmpstr1 = oregex(".*([0-9]{4,4}).*", tmpstr);
 			if(tmpstr1 != NULL)
 			{
@@ -1688,7 +1688,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				}
 			}
 			free(tmpstr1), tmpstr1 = NULL;
-						
+*/						
 			strstrip(shortname);
 
 			if(fileinfo != NULL)
