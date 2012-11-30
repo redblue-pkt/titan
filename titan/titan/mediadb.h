@@ -1082,7 +1082,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 		tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
 		int count = 0;
 
-		while(count < 60)
+		while(count < 5)
 		{
 			sleep(1);
 			count++;
@@ -1094,7 +1094,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 			return;
 		}
 									
-		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 500, 10, 0);
+		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 500, 10, 0);
 		free(tmpstr), tmpstr = NULL;
 		count = 0;
 	}
@@ -1676,7 +1676,18 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				shortname = string_replace(tmpstr1, "", shortname, 1);
 			}
 			free(tmpstr1), tmpstr1 = NULL;
-			
+
+			tmpstr1 = oregex(".*([0-9]{4,4}).*", tmpstr);
+			if(tmpstr1 != NULL)
+			{
+				if(ostrstr(shortname, tmpstr) == NULL)
+				{
+					shortname = ostrcat(shortname, " ", 1, 0);
+					shortname = ostrcat(shortname, tmpstr1, 1, 0);
+				}
+			}
+			free(tmpstr1), tmpstr1 = NULL;
+						
 			strstrip(shortname);
 
 			if(fileinfo != NULL)
