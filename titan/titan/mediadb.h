@@ -525,8 +525,8 @@ struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* 
 	if(path == NULL || file == NULL) return NULL;
 	if(title == NULL) title = file;
 
-	id = stringreplacechar(id, '#', ' ');
-	title = stringreplacechar(title, '#', ' ');
+	id = string_newline(stringreplacechar(id, '#', ' '));
+	title = string_newline(stringreplacechar(title, '#', ' '));
 	year = stringreplacechar(year, '#', ' ');
 	released = stringreplacechar(released, '#', ' ');
 	runtime = stringreplacechar(runtime, '#', ' ');
@@ -540,8 +540,8 @@ struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* 
 	votes = stringreplacechar(votes, ',', '.');
 	path = stringreplacechar(path, '#', ' ');
 	file = stringreplacechar(file, '#', ' ');
-	shortname = stringreplacechar(shortname, '#', ' ');
-	fileinfo = stringreplacechar(fileinfo, '#', ' ');
+	shortname = string_newline(stringreplacechar(shortname, '#', ' '));
+	fileinfo = string_newline(stringreplacechar(fileinfo, '#', ' '));
 	
 	tmpstr = ostrcat(tmpstr, id, 1, 0);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
@@ -583,6 +583,7 @@ struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* 
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	tmpstr = ostrcat(tmpstr, oitoa(flag), 1, 1);
 
+printf("tmpstr: %s\n");
 	if(update != NULL)
 	{
 		m_lock(&status.mediadbmutex, 17);
