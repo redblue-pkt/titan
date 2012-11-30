@@ -88,11 +88,11 @@
 #include <ddvdlib.h>
 #endif
 
-#define OVERSION "1.20"
+#define OVERSION "1.21"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
 #define CRONTRIBUT "obi, black, dvboxer, oxygen, gost"
-#define PLUGINVERSION 0
+#define PLUGINVERSION 18841
 
 #define _(x) gettext(x)
 #define MINMALLOC 4096
@@ -360,6 +360,8 @@ struct mediadb
 	int votes;
 	char* path;
 	char* file;
+	char* shortname;
+	char* fileinfo;
 	time_t timestamp;
 	//bit 31: manual change
 	int flag;

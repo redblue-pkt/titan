@@ -410,8 +410,10 @@ int addmediadbcontent(struct mediadb* node, char *line, int len, int count)
 					case 12: votes = tmpstr; break;
 					case 13: node->path = tmpstr; break;
 					case 14: node->file = tmpstr; break;
-					case 15: timestamp = tmpstr; break;
-					case 16: flag = tmpstr; break;
+					case 15: node->shortname = tmpstr; break;
+					case 16: node->fileinfo = tmpstr; break;	
+					case 17: timestamp = tmpstr; break;
+					case 18: flag = tmpstr; break;
 				}
 
 				ret++;
@@ -421,7 +423,7 @@ int addmediadbcontent(struct mediadb* node, char *line, int len, int count)
 		}
 	}
 
-	if(ret != 17)
+	if(ret != 19)
 	{
 		if(count > 0)
 		{
@@ -515,7 +517,7 @@ struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last,
 	return newnode;
 }
 
-struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* title, char* year, char* released, char* runtime, char* genre, char* director, char* writer, char* actors, char* plot, char* poster, char* rating, char* votes, char* path, char* file, int flag)
+struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* title, char* year, char* released, char* runtime, char* genre, char* director, char* writer, char* actors, char* plot, char* poster, char* rating, char* votes, char* path, char* file, char* shortname, char* fileinfo, int flag)
 {
 	struct mediadb* mnode = NULL;
 	char* tmpstr = NULL;
@@ -538,7 +540,9 @@ struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* 
 	votes = stringreplacechar(votes, ',', '.');
 	path = stringreplacechar(path, '#', ' ');
 	file = stringreplacechar(file, '#', ' ');
-
+	shortname = stringreplacechar(shortname, '#', ' ');
+	fileinfo = stringreplacechar(fileinfo, '#', ' ');
+	
 	tmpstr = ostrcat(tmpstr, id, 1, 0);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	tmpstr = ostrcat(tmpstr, oitoa(type), 1, 1);
@@ -570,6 +574,10 @@ struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* 
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	tmpstr = ostrcat(tmpstr, file, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, shortname, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, fileinfo, 1, 0);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	tmpstr = ostrcat(tmpstr, olutoa(time(NULL)), 1, 1);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
@@ -682,6 +690,8 @@ void freemediadbcontent(struct mediadb* node)
 	node->rating = 0;
 	node->votes = 0;
 	node->file = NULL;
+	node->shortname = NULL;
+	node->fileinfo = NULL;
 	node->timestamp = 0;
 	node->flag = 0;
 }
@@ -921,7 +931,7 @@ int writemediadb(const char *filename)
 
 	while(node != NULL)
 	{
-		ret = fprintf(fd, "%s#%d#%s#%d#%s#%s#%s#%s#%s#%s#%s#%s#%d#%d#%s#%s#%lu#%d\n", node->id, node->type, node->title, node->year, node->released, node->runtime, node->genre, node->director, node->writer, node->actors, node->plot, node->poster, node->rating, node->votes, node->path, node->file, node->timestamp, node->flag);
+		ret = fprintf(fd, "%s#%d#%s#%d#%s#%s#%s#%s#%s#%s#%s#%s#%d#%d#%s#%s#%s#%s#%lu#%d\n", node->id, node->type, node->title, node->year, node->released, node->runtime, node->genre, node->director, node->writer, node->actors, node->plot, node->poster, node->rating, node->votes, node->path, node->file, node->shortname, node->fileinfo, node->timestamp, node->flag);
 
 		if(ret < 0)
 		{
@@ -1033,7 +1043,6 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 		free(path); path = NULL;
 		return;
 	}
-
 	debug(777, "mediadb scanthread start");
 	status.mediadbthreadstatus = 1;
 	status.mediadbthread = self;
@@ -1072,8 +1081,9 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 		tmpstr = ostrcat(tmpstr, " \t\t\t", 1, 0);				
 		tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
 		int count = 0;
-		
-		while(count < 60)
+
+//		while(count < 60)
+		while(count < 5)
 		{
 			sleep(1);
 			count++;
@@ -1501,28 +1511,201 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			//create imdb search name
 			char* shortname = ostrcat(file, NULL, 0, 0);
 			string_tolower(shortname);
-			debug(133, "shortname1: %s", shortname);
-
-//			shortname = string_shortname(shortname, 1);
-//			debug(133, "shortname2: %s", shortname);
-
 			shortname = string_shortname(shortname, 2);
-			debug(133, "shortname3: %s", shortname);
-
 			string_removechar(shortname);
-			debug(133, "shortname4: %s", shortname);
-
 			strstrip(shortname);
-			debug(133, "shortname5: %s", shortname);
-
-			// log shortname
-			tmpstr = readfiletomem("/tmp/.mediadb.shortname.log", 0);
-			tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+			
+			// create filelist info
 			tmpstr = ostrcat(tmpstr, file, 1, 0);
-			tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-			tmpstr = ostrcat(tmpstr, shortname, 1, 0);						
-			writesys("/tmp/.mediadb.shortname.log", tmpstr, 0);
+			string_tolower(tmpstr);
+			char* fileinfo = NULL;
+			if((ostrstr(tmpstr, ".special.extended.edition.") != NULL) || (ostrstr(tmpstr, ".sse.") != NULL))
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, "SEE-Version", 1, 0);
+				shortname = string_replace(".special.extended.edition.", "", shortname, 1);
+			}
+			if((ostrstr(tmpstr, ".extended.version.") != NULL) || (ostrstr(tmpstr, ".extended.") != NULL) || (ostrstr(tmpstr, ".ed.") != NULL))
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, "ED-Version", 1, 0);
+				shortname = string_replace(".extended.version.", "", shortname, 1);
+			}
+			if((ostrstr(tmpstr, ".uncut.") != NULL) || (ostrstr(tmpstr, ".uc.") != NULL))
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, "UC-Version", 1, 0);
+			}
+			if((ostrstr(tmpstr, ".unrated.") != NULL) || (ostrstr(tmpstr, ".ur.") != NULL))
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, "UR-Version", 1, 0);
+			}
+			if((ostrstr(tmpstr, ".telesync.") != NULL) || (ostrstr(tmpstr, ".ts.") != NULL))
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);			
+				fileinfo = ostrcat(fileinfo, "telesync", 1, 0);
+			}
+			if((ostrstr(tmpstr, ".telecine.") != NULL) || (ostrstr(tmpstr, ".tc.") != NULL))
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, "telecine", 1, 0);
+			}
+			if((ostrstr(tmpstr, ".dts.") != NULL) || (ostrstr(tmpstr, ".dtshd.") != NULL))
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, "dts", 1, 0);
+			}
+			if((ostrstr(tmpstr, ".ac3.") != NULL) || (ostrstr(tmpstr, ".ac3d.") != NULL) || (ostrstr(tmpstr, ".ac3hd.") != NULL))
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, "ac3", 1, 0);
+			}
+			if(ostrstr(tmpstr, ".r5.") != NULL)
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, "r5", 1, 0);
+			}
+			if(ostrstr(tmpstr, ".r3.") != NULL)
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, "r3", 1, 0);
+			}
+			if(ostrstr(tmpstr, ".r1.") != NULL)
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, "r1", 1, 0);
+			}			
+			char* tmpstr1 = oregex(".*(cd[0-9]{1,3}).*", tmpstr);
+			if(tmpstr1 != NULL)
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
+				shortname = string_replace(tmpstr1, "", shortname, 1);
+			}
+			free(tmpstr1), tmpstr1 = NULL;
+
+			tmpstr1 = oregex(".*(dvd[0-9]{1,2}).*", tmpstr);
+			if(tmpstr1 != NULL)
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
+				shortname = string_replace(tmpstr1, "", shortname, 1);
+			}
+			free(tmpstr1), tmpstr1 = NULL;
+
+			tmpstr1 = oregex(".*(s[0-9]{1,2}e[0-9]{1,2}e[0-9]{1,2}).*", tmpstr);
+			if(tmpstr1 != NULL)
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
+				shortname = string_replace(tmpstr1, "", shortname, 1);
+			}
+			free(tmpstr1), tmpstr1 = NULL;
+
+			tmpstr1 = oregex(".*(s[0-9]{1,2}e[0-9]{1,2}).*", tmpstr);
+			if(tmpstr1 != NULL)
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
+				shortname = string_replace(tmpstr1, "", shortname, 1);
+			}
+			free(tmpstr1), tmpstr1 = NULL;
+
+
+			tmpstr1 = oregex(".*(disc[0-9]{1,2}).*", tmpstr);
+			if(tmpstr1 != NULL)
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
+				shortname = string_replace(tmpstr1, "", shortname, 1);
+			}
+			free(tmpstr1), tmpstr1 = NULL;
+
+			tmpstr1 = oregex(".*(season[0-9]{1,2}).*", tmpstr);
+			if(tmpstr1 != NULL)
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
+				shortname = string_replace(tmpstr1, "", shortname, 1);
+			}
+			free(tmpstr1), tmpstr1 = NULL;			
+
+			tmpstr1 = oregex(".*(episode[0-9]{1,2}).*", tmpstr);
+			if(tmpstr1 != NULL)
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
+				shortname = string_replace(tmpstr1, "", shortname, 1);
+			}
+			free(tmpstr1), tmpstr1 = NULL;			
+
+			tmpstr1 = oregex(".*(staffel[0-9]{1,2}).*", tmpstr);
+			if(tmpstr1 != NULL)
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
+				shortname = string_replace(tmpstr1, "", shortname, 1);
+			}
+			free(tmpstr1), tmpstr1 = NULL;
+
+			tmpstr1 = oregex(".*(part[0-9]{1,2}).*", tmpstr);
+			if(tmpstr1 != NULL)
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
+				shortname = string_replace(tmpstr1, "", shortname, 1);
+			}
+			free(tmpstr1), tmpstr1 = NULL;
+			
+			strstrip(shortname);
+
+			if(fileinfo != NULL)
+				fileinfo = ostrcat(fileinfo, " ", 1, 0);
+			fileinfo = ostrcat(fileinfo, getfilenameext(tmpstr), 1, 1);
 			free(tmpstr), tmpstr = NULL;
+
+			if(getconfigint("mediadb_log", NULL) == 1)
+			{
+				// log shortname
+				tmpstr1 = ostrcat(getconfig("mediadbpath", NULL), "/.mediadb_log", 0, 0);
+				if(!file_exist(tmpstr1))
+					mkdir(tmpstr1, 0777); 
+
+				tmpstr1 = ostrcat(tmpstr1, "/_shortname.log", 1, 0);
+				
+				tmpstr = readfiletomem(tmpstr1, 0);
+				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+				tmpstr = ostrcat(tmpstr, file, 1, 0);
+				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+				tmpstr = ostrcat(tmpstr, shortname, 1, 0);
+				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+				tmpstr = ostrcat(tmpstr, fileinfo, 1, 0);
+
+				writesys(tmpstr1, tmpstr, 0);
+				free(tmpstr), tmpstr = NULL;
+				free(tmpstr1), tmpstr1 = NULL;
+			}
 
 			//got imdb infos
 			struct skin* imdbplugin = getplugin("IMDb");
@@ -1656,9 +1839,6 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 //				if(imdb->thumb == NULL) imdb->thumb = ostrcat(imdb->thumb, imdbapi->thumb, 1, 0);
 				if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, imdbapi->year, 1, 0);
 			}
-
-			debug(777, "shortname: %s", shortname);
-			free(shortname); shortname = NULL;
 			
       		debugimdbnode(imdb);
 			
@@ -1666,7 +1846,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			if(imdb != NULL)
 			{
 				debug(777, "imdb id %s", imdb->id);
-				createmediadb(node, imdb->id, type, imdb->title, imdb->year, imdb->released, imdb->runtime, imdb->genre, imdb->director, imdb->writer, imdb->actors, imdb->plot, imdb->id, imdb->rating, imdb->votes, shortpath, file, 0);
+				createmediadb(node, imdb->id, type, imdb->title, imdb->year, imdb->released, imdb->runtime, imdb->genre, imdb->director, imdb->writer, imdb->actors, imdb->plot, imdb->id, imdb->rating, imdb->votes, shortpath, file, shortname, fileinfo, 0);
 				if(tmpid != NULL)
 				{
 					char* tmpstr = NULL;
@@ -1690,8 +1870,15 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				}
 			}
 			else
-				createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, 0);
+				createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, shortname, fileinfo, 0);
 
+			debug(777, "shortname: %s", shortname);
+			debug(133, "shortname: %s", shortname);
+			free(shortname), shortname = NULL;
+			debug(777, "fileinfo: %s", fileinfo);
+			debug(133, "fileinfo: %s", fileinfo);
+			free(fileinfo), fileinfo = NULL;
+			
 			if(imdbplugin != NULL)
 			{
 				void (*startplugin)(struct imdb**, int flag);
@@ -1736,12 +1923,12 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			if(id3tag != NULL)
 			{
 				if(id3tag->poster != NULL)
-					createmediadb(node, tmphash, type, id3tag->title, id3tag->year, NULL, NULL, id3tag->genretext, NULL, NULL, id3tag->artist, id3tag->album, tmphash, NULL, NULL, shortpath, file, 0);
+					createmediadb(node, tmphash, type, id3tag->title, id3tag->year, NULL, NULL, id3tag->genretext, NULL, NULL, id3tag->artist, id3tag->album, tmphash, NULL, NULL, shortpath, file, NULL, NULL, 0);
 				else
-					createmediadb(node, tmphash, type, id3tag->title, id3tag->year, NULL, NULL, id3tag->genretext, NULL, NULL, id3tag->artist, id3tag->album, NULL, NULL, NULL, shortpath, file, 0);
+					createmediadb(node, tmphash, type, id3tag->title, id3tag->year, NULL, NULL, id3tag->genretext, NULL, NULL, id3tag->artist, id3tag->album, NULL, NULL, NULL, shortpath, file, NULL, NULL, 0);
 			}
 			else
-				createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, 0);
+				createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, NULL, NULL, 0);
 
 			free(tmpfile); tmpfile = NULL;
 			free(tmphash); tmphash = NULL;
@@ -1761,7 +1948,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			}
       free(thumbfile); thumbfile = NULL;
 
-			createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, 0);
+			createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, NULL, NULL, 0);
 		}
 	}
 	free(shortpath); shortpath = NULL;
@@ -1933,7 +2120,6 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount, int first)
 void mediadbscan(char* path, int type, int flag)
 {
 	int count = 0;
-
 	if(flag == 1) type = type | 0x80000000;
 
 	//param1 (path) is freed in thread
