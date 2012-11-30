@@ -279,7 +279,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 
 			if(flag1 != 2 && ostrstr(tmpstr1, "size=\"original\"") != NULL)
 				tnode->backdrop = oregex(".*<image type=\"backdrop\" url=\".*(http://.*/original/.*)\" size=\"original\" width=\"1920\" height=\"1080\".*", tmpstr1);
-
+				
 			if(tnode->backdrop == NULL && flag1 != 2 && ostrstr(tmpstr1, "size=\"original\"") != NULL)
 				tnode->backdrop = oregex(".*<image type=\"backdrop\" url=\".*(http://.*/original/.*)\" size=\"original\" width=\"1280\" height=\"720\".*", tmpstr1);
 
@@ -289,10 +289,30 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 			if(tnode->backdrop == NULL && flag1 != 2 && ostrstr(tmpstr1, "size=\"w780\"") != NULL)
 				tnode->backdrop = oregex(".*<image type=\"backdrop\" url=\".*(http://.*/w780/.*)\" size=\"poster\" width=\"780\" height=\"439\".*", tmpstr1);
 
+			if(tnode->backdrop == NULL && flag1 != 2 && ostrstr(tmpstr1, "size=\"original\"") != NULL)
+				tnode->backdrop = oregex(".*<image type=\"backdrop\" url=\".*(http://.*/original/.*)\" size=\"original\".*", tmpstr1);
+
+			if(tnode->backdrop == NULL && flag1 != 2 && ostrstr(tmpstr1, "size=\"w1280\"") != NULL)
+				tnode->backdrop = oregex(".*<image type=\"backdrop\" url=\".*(http://.*/w1280/.*)\" size=\"w1280\".*", tmpstr1);
+
+			if(tnode->backdrop == NULL && flag1 != 2 && ostrstr(tmpstr1, "size=\"poster\"") != NULL)
+				tnode->backdrop = oregex(".*<image type=\"backdrop\" url=\".*(http://.*/poster/.*)\" size=\"poster\".*", tmpstr1);
+
+// not working start
+			printf("sleep\n");
+			struct regex* x = regexstruct(".*<image type=\"backdrop\" url=\".*(http://.*/poster/.*)\" size=\"poster\".*", tmpstr1);
+			if(x != NULL)
+			{
+				printf("x->match2: %s\n", x->match2);
+			}
+			freeregexstruct(x); x = NULL;
+//			sleep(2);
+// not working done
+				
 			if(ostrstr(tmpstr1, "<imdb_id>") != NULL)
 				tnode->imdbid = string_resub("<imdb_id>", "</imdb_id>", tmpstr1, 0);
 
-			if(getconfigint("mediadb_log", NULL) == 1)
+			if(getconfigint("mediadb_log", NULL) == 1 && tnode->backdrop == NULL)
 			{
 				char* logfile = ostrcat(getconfig("mediadbpath", NULL), "/.mediadb_log", 0, 0);
 				if(!file_exist(logfile))
