@@ -372,7 +372,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 					system(cmd);
 					free(cmd); cmd = NULL;
 					
-					cmd = ostrcat(cmd, "mv /tmp/backdrop.resize.mpg ", 1, 0);
+					cmd = ostrcat(cmd, "mv -f /tmp/backdrop.resize.mpg ", 1, 0);
 					cmd = ostrcat(cmd, tnode->mvi, 1, 0);
 					debug(133, "cmd %s", cmd);
 					system(cmd);
@@ -401,7 +401,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 					system(cmd);
 					free(cmd); cmd = NULL;
 					
-					cmd = ostrcat(cmd, "mv /tmp/backdrop.resize.mpg ", 1, 0);
+					cmd = ostrcat(cmd, "mv -f /tmp/backdrop.resize.mpg ", 1, 0);
 					cmd = ostrcat(cmd, tnode->mvi, 1, 0);
 					debug(133, "cmd %s", cmd);
 					system(cmd);
@@ -409,6 +409,9 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 				}
 			}
 			
+			if(file_exist(tnode->mvi))
+				unlink(tnode->backdrop);
+				
 			tmpstr1 += 5;
 			tmpstr1 = ostrstr(tmpstr1, "<movie>");
 
