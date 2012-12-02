@@ -517,6 +517,18 @@ start:
 		changetext(skin_released, node->released);
 		changetext(skin_votes, node->votes);
 		changepic(skin_cover, TMPTMDBPIC3);
+		skin_cover->hidden = NO;
+	}
+	else
+	{
+		changetext(skin_plot, "--plot--");
+		changetext(skin_title, "--title--");
+		changetext(skin_orgname, "--orgname--");
+		changetext(skin_rating, "--rating--");
+		changetext(skin_genre, "--genre--");
+		changetext(skin_released, "--releasetime--");
+		changetext(skin_votes, "--votes--");
+		skin_cover->hidden = YES;
 	}
 
 	drawscreen(tmdbskin, 0, 0);

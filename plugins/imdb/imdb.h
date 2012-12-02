@@ -508,6 +508,18 @@ start:
 		changetext(skin_releasetime, node->released);
 		changetext(skin_actors, node->actors);
 		changepic(skin_cover, node->poster);
+		skin_cover->hidden = NO;
+	}
+	else
+	{
+		changetext(skin_plot, "--plot--");
+		changetext(skin_title, "--title--");
+		changetext(skin_director, "--director--");
+		changetext(skin_writers, "--writers--");
+		changetext(skin_genre, "--genre--");
+		changetext(skin_releasetime, "--releasetime--");
+		changetext(skin_actors, "--actors--");
+		skin_cover->hidden = YES;
 	}
 
 	drawscreen(imdbskin, 0, 0);
