@@ -52,8 +52,8 @@ struct imdbapi* getimdbapi(struct imdbapi** first, char* title, int flag, int fl
 //	debug(133, "tmpstr: %s", tmpstr);
 
 	free(tmpsearch); tmpsearch = NULL;
-
-	if(tmpstr != NULL)
+ 
+	if(tmpstr != NULL && ostrstr(tmpstr, "Movie not found!") == NULL)
 	{
 		ret = getxmlentry(tmpstr, "\"Response\":");
 		if(ostrcmp(ret, "False") == 0)
@@ -212,6 +212,7 @@ void screenimdbapi(char* title, char* dummy1, char* dummy2, char* path, char* fi
 start:
 	if(node != NULL)
 	{
+	printf("jetzt\n");
 		changetext(skin_plot, node->plot);
 		changetext(skin_title, node->title);
 		changetext(skin_director, node->director);
@@ -220,7 +221,20 @@ start:
 		changetext(skin_releasetime, node->released);
 		changetext(skin_actors, node->actors);
 		changepic(skin_cover, node->poster);
+		skin_cover->hidden = NO;
 	}
+	else
+	{
+		changetext(skin_plot, "--plot--");
+		changetext(skin_title, "--title--");
+		changetext(skin_director, "--director--");
+		changetext(skin_writers, "--writers--");
+		changetext(skin_genre, "--genre--");
+		changetext(skin_releasetime, "--releasetime--");
+		changetext(skin_actors, "--actors--");
+		skin_cover->hidden = YES;
+	}
+	
 
 	drawscreen(imdbapiskin, 0, 0);
 

@@ -151,9 +151,37 @@ void screenmc_videoplayer()
 						changetext(plot, mnode->plot);
 					if(mnode->title != NULL)
 						changetext(title, mnode->title);
-				}		
-				changepic(thumb, pic);
-				free(pic), pic = NULL;				
+
+					if(mnode->poster == NULL)
+					{
+						thumb->hidden = YES;
+						free(pic), pic = NULL;
+					}
+					else
+					{
+						thumb->hidden = NO;
+						changepic(thumb, pic);
+						free(pic), pic = NULL;
+					}
+					
+					if(mnode->plot == NULL)
+						plot->hidden = YES;
+					else
+						plot->hidden = NO;
+	
+					if(mnode->title == NULL)
+						title->hidden = YES;
+					else
+						title->hidden = NO;
+				}
+				else	
+				{
+					thumb->hidden = YES;
+					plot->hidden = YES;
+					title->hidden = YES;
+					free(pic), pic = NULL;
+				}
+					
 				drawscreen(apskin, 0, 0);
 			}
 

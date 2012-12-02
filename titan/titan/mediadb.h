@@ -583,7 +583,6 @@ struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* 
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	tmpstr = ostrcat(tmpstr, oitoa(flag), 1, 1);
 
-printf("tmpstr: %s\n");
 	if(update != NULL)
 	{
 		m_lock(&status.mediadbmutex, 17);
@@ -1587,6 +1586,13 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 					fileinfo = ostrcat(fileinfo, " ", 1, 0);
 				fileinfo = ostrcat(fileinfo, "r1", 1, 0);
 			}			
+			if(ostrstr(tmpstr, ".sample.") != NULL)
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, "sample", 1, 0);
+			}
+
 			char* tmpstr1 = oregex(".*(cd[0-9]{1,3}).*", tmpstr);
 			if(tmpstr1 != NULL)
 			{
@@ -1677,18 +1683,23 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				shortname = string_replace(tmpstr1, "", shortname, 1);
 			}
 			free(tmpstr1), tmpstr1 = NULL;
-/*
+
+			tmpstr1 = oregex(".*([0-9]{14,14}).*", tmpstr);
+			if(tmpstr1 != NULL)
+			{
+				shortname = string_replace(tmpstr1, "", shortname, 1);
+			}
+			free(tmpstr1), tmpstr1 = NULL;
+			
 			tmpstr1 = oregex(".*([0-9]{4,4}).*", tmpstr);
 			if(tmpstr1 != NULL)
 			{
-				if(ostrstr(shortname, tmpstr) == NULL)
-				{
-					shortname = ostrcat(shortname, " ", 1, 0);
-					shortname = ostrcat(shortname, tmpstr1, 1, 0);
-				}
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
 			}
 			free(tmpstr1), tmpstr1 = NULL;
-*/						
+
 			strstrip(shortname);
 
 			if(fileinfo != NULL)
@@ -1850,7 +1861,88 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 //				if(imdb->thumb == NULL) imdb->thumb = ostrcat(imdb->thumb, imdbapi->thumb, 1, 0);
 				if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, imdbapi->year, 1, 0);
 			}
-			
+
+			if(!strncmp(".ts",file+strlen(file)-3,3))
+			{
+				char* timestamp = NULL;
+				timestamp = ostrcat(oitoa(time(NULL)), NULL, 0, 0);	
+				if(imdb->id == NULL)
+				{
+					imdb->id = ostrcat(imdb->id, timestamp, 1, 0);
+					imdb->title = ostrcat(imdb->title, shortname, 1, 0);
+					imdb->plot = ostrcat(imdb->plot, fileinfo, 1, 0);
+	
+					char* cmd = NULL;
+					cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
+					cmd = ostrcat(cmd, path, 1, 0);
+					cmd = ostrcat(cmd, "/", 1, 0);
+					cmd = ostrcat(cmd, file, 1, 0);
+					cmd = ostrcat(cmd, "\" -vframes 1 -s 160x120 ", 1, 0);
+					cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+					cmd = ostrcat(cmd, "/", 1, 0);	
+					cmd = ostrcat(cmd, timestamp, 1, 0);
+					cmd = ostrcat(cmd, "_thumb.jpg", 1, 0);
+					printf("cmd: %s\n",cmd);
+					system(cmd);
+					free(cmd); cmd = NULL;
+	
+	
+					cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
+					cmd = ostrcat(cmd, path, 1, 0);
+					cmd = ostrcat(cmd, "/", 1, 0);
+					cmd = ostrcat(cmd, file, 1, 0);
+					cmd = ostrcat(cmd, "\" -vframes 1 -s 500x400 ", 1, 0);
+					cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+					cmd = ostrcat(cmd, "/", 1, 0);	
+					cmd = ostrcat(cmd, timestamp, 1, 0);
+					cmd = ostrcat(cmd, "_cover.jpg", 1, 0);
+					printf("cmd: %s\n",cmd);
+					system(cmd);
+					free(cmd); cmd = NULL;
+	
+					cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
+					cmd = ostrcat(cmd, path, 1, 0);
+					cmd = ostrcat(cmd, "/", 1, 0);
+					cmd = ostrcat(cmd, file, 1, 0);
+	//				cmd = ostrcat(cmd, "\" -vframes 1 -s 1920x1080 ", 1, 0);
+					cmd = ostrcat(cmd, "\" -vframes 1 -s 1280x720 ", 1, 0);
+					cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+					cmd = ostrcat(cmd, "/", 1, 0);
+	//				cmd = ostrcat(cmd, "/tmp/", 1, 0);
+					cmd = ostrcat(cmd, timestamp, 1, 0);
+					cmd = ostrcat(cmd, "_backdrop.jpg", 1, 0);
+					printf("cmd: %s\n",cmd);
+					system(cmd);
+					free(cmd); cmd = NULL;
+	
+					cmd = ostrcat(cmd, "jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
+					cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+					cmd = ostrcat(cmd, "/", 1, 0);
+	//				cmd = ostrcat(cmd, "/tmp/", 1, 0);
+					cmd = ostrcat(cmd, timestamp, 1, 0);
+					cmd = ostrcat(cmd, "_backdrop.jpg", 1, 0);
+					printf("cmd: %s\n",cmd);
+					system(cmd);
+					free(cmd); cmd = NULL;
+										
+					cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg", 1, 0);
+					printf("cmd: %s\n",cmd);
+					system(cmd);
+					free(cmd); cmd = NULL;
+	
+					cmd = ostrcat(cmd, "mv -f /tmp/backdrop.resize.mpg ", 1, 0);
+					cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+					cmd = ostrcat(cmd, "/", 1, 0);	
+					cmd = ostrcat(cmd, timestamp, 1, 0);
+					cmd = ostrcat(cmd, "_backdrop.mvi", 1, 0);
+					printf("cmd: %s\n",cmd);
+					system(cmd);
+					free(cmd); cmd = NULL;
+	
+				}
+				free(timestamp); timestamp = NULL;
+			} 
+
       		debugimdbnode(imdb);
 			
 			debug(777, "add video: %s/%s", shortpath, file);
