@@ -456,7 +456,7 @@ void get_mediadb_scan_info(int files)
 	tmpstr = ostrcat(tmpstr, " \t\t\t", 1, 0);				
 	tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
 
-	textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 500, 10, 0);
+	textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 500, 10, 0);
 	free(tmpstr), tmpstr = NULL;
 }
 
