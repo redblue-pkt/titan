@@ -1,8 +1,8 @@
 #ifndef GMEDIARENDER_H
 #define GMEDIARENDER_H
 
-//extern struct skin* skin;
-//struct fb *fb = NULL;
+extern struct skin* skin;
+struct fb *fb = NULL;
 
 void gmediarendergetpic(struct skin* gmediarender, char* buf)
 {
