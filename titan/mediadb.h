@@ -1459,6 +1459,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 	debug(133, "id: %s",id);
 	debug(133, "flag: %d", flag);
 	
+	int isrec = 0;
 	char* shortpath = NULL, *tmpstr = NULL, *tmpid = NULL;
 	struct mediadb *node = NULL;
 
@@ -1688,11 +1689,15 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			if(tmpstr1 != NULL)
 			{
 				shortname = string_replace(tmpstr1, "", shortname, 1);
-			}
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, "rec", 1, 0);
+				isrec = 1;
+			}			
 			free(tmpstr1), tmpstr1 = NULL;
 			
 			tmpstr1 = oregex(".*([0-9]{4,4}).*", tmpstr);
-			if(tmpstr1 != NULL)
+			if(tmpstr1 != NULL && isrec == 0)
 			{
 				if(fileinfo != NULL)
 					fileinfo = ostrcat(fileinfo, " ", 1, 0);
@@ -1862,17 +1867,29 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, imdbapi->year, 1, 0);
 			}
 
-			if(!strncmp(".ts",file+strlen(file)-3,3))
+			if((cmpfilenameext(file, ".ts") == 0) || (cmpfilenameext(file, ".mts") == 0))
 			{
 				char* timestamp = NULL;
-				timestamp = ostrcat(oitoa(time(NULL)), NULL, 0, 0);	
+				timestamp = oregex(".*([0-9]{14,14}).*", file);
+				if(timestamp == NULL)
+					timestamp = ostrcat(oitoa(time(NULL)), NULL, 0, 0);
+			
 				if(imdb->id == NULL)
 				{
 					imdb->id = ostrcat(imdb->id, timestamp, 1, 0);
 					imdb->title = ostrcat(imdb->title, shortname, 1, 0);
-					imdb->plot = ostrcat(imdb->plot, fileinfo, 1, 0);
-	
 					char* cmd = NULL;
+
+					tmpstr = ostrcat(tmpstr, path, 1, 0);
+					tmpstr = ostrcat(tmpstr, "/", 1, 0);
+					tmpstr = ostrcat(tmpstr, file, 1, 0);
+					tmpstr1 = changefilenameext(tmpstr, ".epg");
+					free(tmpstr), tmpstr = NULL;
+					cmd = readfiletomem(tmpstr1, 1);
+					free(tmpstr1), tmpstr1 = NULL;
+					imdb->plot = ostrcat(imdb->plot, cmd, 1, 0);
+					free(cmd), cmd = NULL;
+
 					cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
 					cmd = ostrcat(cmd, path, 1, 0);
 					cmd = ostrcat(cmd, "/", 1, 0);

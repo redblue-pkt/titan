@@ -533,6 +533,12 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 								
 									if(mnode->title != NULL)
 									{
+										if(mnode->id != NULL && ostrstr(mnode->id, "tt") == NULL)
+										{
+											child->picheight = 180;
+											child->picwidth = 300;
+										}
+
 										if(mnode->actors != NULL && musik == 1)
 										{
 											tmpstr = ostrcat(tmpstr, mnode->actors, 1, 0);
