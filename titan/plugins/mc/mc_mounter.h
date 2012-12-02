@@ -57,7 +57,7 @@ char* mc_mounter_main(int mode, char* tmpstr, struct skin* filelistpath, struct 
 {
 	debug(50, "start");
 
-	if(!strncmp(".rar",tmpstr+strlen(tmpstr)-4,4))
+	if(cmpfilenameext(tmpstr, ".rar") == 0)
 	{
 		debug(50, "found rar file: %s", tmpstr);
 		mkdir("/tmp/rarfs", 0777);
@@ -88,7 +88,7 @@ char* mc_mounter_main(int mode, char* tmpstr, struct skin* filelistpath, struct 
 
 		rarFS = 1;
 	}
-	else if(!strncmp(".img",tmpstr+strlen(tmpstr)-4,4))
+	else if(cmpfilenameext(tmpstr, ".img") == 0)
 	{
 		debug(50, "found img file: %s", tmpstr);
 		mkdir("/tmp/imgfs", 777);
@@ -119,7 +119,7 @@ char* mc_mounter_main(int mode, char* tmpstr, struct skin* filelistpath, struct 
 
 		imgFS = 1;
 	}
-	else if(!strncmp(".iso",tmpstr+strlen(tmpstr)-4,4))
+	else if(cmpfilenameext(tmpstr, ".iso") == 0)
 	{
 		debug(50, "found iso file: %s", tmpstr);
 		mkdir("/tmp/isofs", 0777);
