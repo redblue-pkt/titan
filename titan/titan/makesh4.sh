@@ -317,21 +317,32 @@ if [ $BUILDTYPE == 0 ]; then
 		echo "[titan]--------------------------------------------------------"
 		echo "[titan] gmediarender"
 		echo "[titan]--------------------------------------------------------"
-		
-		cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-		echo make gmediarender-clean
-		make gmediarender-clean
-		echo make gmediarender
-		make gmediarender
-		cd "$HOME"/flashimg/source.titan/titan
-		
-		if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/gmediarender ]; then
+
+
+		"$HOME"/flashimg/source.titan/gmediarender/makesh4.sh $STM $MEDIAFW
+		if [ ! -e "$HOME"/flashimg/source.titan/gmediarender/src/gmediarender ]; then
 			echo "[titan]--------------------------------------------------------"
 			echo "[titan] gmediarender building error !!!"
 			echo "[titan] check your src"
 			echo "[titan]--------------------------------------------------------"
 			exit 1
 		fi
+		cp 
+		
+#		cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
+#		echo make gmediarender-clean
+#		make gmediarender-clean
+#		echo make gmediarender
+#		make gmediarender
+#		cd "$HOME"/flashimg/source.titan/titan
+#		
+#		if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/gmediarender ]; then
+#			echo "[titan]--------------------------------------------------------"
+#			echo "[titan] gmediarender building error !!!"
+#			echo "[titan] check your src"
+#			echo "[titan]--------------------------------------------------------"
+#			exit 1
+#		fi
 		
 		echo "[titan]--------------------------------------------------------"
 		echo "[titan] gmediarender done"
@@ -651,7 +662,8 @@ else
 fi
 
 #gmediarender
-cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/gmediarender "$HOME"/flashimg/BUILD/titan/usr/bin
+#cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/gmediarender "$HOME"/flashimg/BUILD/titan/usr/bin
+cp -a "$HOME"/flashimg/source.titan/gmediarender/src/gmediarender "$HOME"/flashimg/BUILD/titan/usr/bin
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libupnp.so.6.3.1 "$HOME"/flashimg/BUILD/titan/usr/lib/libupnp.so.6
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/share/gmediarender "$HOME"/flashimg/BUILD/titan/usr/share
 
