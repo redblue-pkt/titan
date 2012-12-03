@@ -584,6 +584,7 @@ struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* 
 	tmpstr = ostrcat(tmpstr, oitoa(flag), 1, 1);
 
 	tmpstr = string_replace_all("\n", "", tmpstr, 1);
+	tmpstr = string_replace_all("\r", "", tmpstr, 1);
 
 	if(update != NULL)
 	{
