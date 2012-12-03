@@ -13,6 +13,12 @@ int pluginversion = PLUGINVERSION;
 //wird beim laden ausgefuehrt
 void init(void)
 {
+	char* tmpstr = NULL;
+
+	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/gmediarender/skin.xml", 0, 0);
+	readscreen(tmpstr, 279, 1);
+	free(tmpstr); tmpstr = NULL;
+
 	pluginaktiv = 1;
 	debug(10, "GmediaRender Plugin loadet !!!");
 }
@@ -20,6 +26,7 @@ void init(void)
 //wird beim entladen ausgefuehrt
 void deinit(void)
 {
+	delmarkedscreen(279);
 	pluginaktiv = 0;
 	debug(10, "GmediaRender Plugin removed !!!");
 }
