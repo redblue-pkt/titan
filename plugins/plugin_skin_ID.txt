@@ -24,5 +24,6 @@ filemanager: 240
 catcatch: 241
 facebook: 242
 readerconfig: 243
+gmediarender: 279
 TopfieldVFD: ---
 browser: ---
