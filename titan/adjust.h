@@ -271,15 +271,15 @@ void screenadjust()
 			status.channellistview = getconfigint("channellistview", NULL);
 			addconfigscreencheck("camwait", camwait, "25");
 			addconfigscreencheck("checkcamdecrypt", checkcamdecrypt, "0");
-			addconfigscreencheck("showlastpos", showlastpos, 0);
-			addconfigscreencheck("recsync", recsync, 0);
-			addconfigscreencheck("recordnamefmt", recordnamefmt, 0);
+			addconfigscreencheck("showlastpos", showlastpos, "0");
+			addconfigscreencheck("recsync", recsync, "0");
+			addconfigscreencheck("recordnamefmt", recordnamefmt, "0");
 			addconfigscreencheck("caskipprivat", caskipprivat, "0");
 			status.caskipprivat = getconfigint("caskipprivat", NULL);
 			addconfigscreencheck("casendallcaids", casendallcaids, "0");
 			status.casendallcaids = getconfigint("casendallcaids", NULL);
-			addconfigscreencheck("newsletter", newsletter, "1");
-			addconfigscreencheck("showhiddenfiles", showhiddenfiles, "1");
+			addconfigscreen("newsletter", newsletter);
+			addconfigscreen("showhiddenfiles", showhiddenfiles);
 			status.showhiddenfiles = getconfigint("showhiddenfiles", NULL);
 			break;
 		}
