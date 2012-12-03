@@ -94,7 +94,10 @@ void screengmediarender()
 		{
 			ret = read(fifo, buf, MINMALLOC);
 			if(ret > 0)
+			{
+				buf[ret] = NULL;
 				gmediarendergetpic(gmediarender, buf);
+			}
 		}
 
  		if(rcret == getrcconfigint("rcexit", NULL)) break;
