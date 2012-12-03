@@ -96,7 +96,10 @@ void screengmediarender()
 			if(ret > 0)
 			{
 				buf[ret] = NULL;
-				gmediarendergetpic(gmediarender, buf);
+				if(ostrcmp(buf, "clear.png") == 0) //clear screen
+					drawscreen(skin, 0, 0);
+				else
+					gmediarendergetpic(gmediarender, buf);
 			}
 		}
 
