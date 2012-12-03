@@ -604,6 +604,7 @@ void addscreenrcchannellist(struct skin* channellist, struct skin* listbox)
 {
 	addscreenrc(channellist, listbox);
 
+	//deaktivate for blockmove
 	delrc(getrcconfigint("rcchup", NULL), channellist, listbox);
 	delrc(getrcconfigint("rcchdown", NULL), channellist, listbox);
 }
