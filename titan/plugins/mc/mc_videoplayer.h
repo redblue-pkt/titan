@@ -121,7 +121,7 @@ void screenmc_videoplayer()
 				screenplayinfobar(NULL, 1, playertype, 0);
 			}
 		}
-		else if(tmpview == 3 && filelist->select != NULL)
+		else if(tmpview == 3 && filelist->select != NULL && status.play == 0 && status.pause == 0)
 		{
 			char* cmd = NULL;
 			char* pic = NULL;
