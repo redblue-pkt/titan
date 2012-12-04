@@ -931,7 +931,7 @@ void screentmcimdbsearch(char* file, int menuid)
 	string_removechar(shortname);
 	strstrip(shortname);
 	
-	char* fileinfo = ostrcat(fileinfo, getfilenameext(file), 1, 1);			
+	char* fileinfo = ostrcat(getfilenameext(file), NULL , 0, 1);			
 
 	tmdbplugin = getplugin("TMDb");
 	if(tmdbplugin != NULL)
@@ -957,8 +957,8 @@ void screentmcimdbsearch(char* file, int menuid)
 		}
 	}
 
-	free(shortname); shortname = NULL;
-	free(fileinfo); fileinfo = NULL;
+	free(shortname), shortname = NULL;
+	free(fileinfo), fileinfo = NULL;
 }
 
 void screentmcinfo(char* file, int menuid)
