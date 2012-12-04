@@ -292,7 +292,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 			free(tmpstr); tmpstr = NULL;
 		}
 
-		if(filelist[i]->d_type == DT_DIR && filelist[i]->d_name != NULL && ostrcmp(filelist[i]->d_name, ".") != 0 && (status.showhiddenfiles == 1 || (status.showhiddenfiles == 0 && (filelist[i]->d_name[0] != '.' || ostrcmp(filelist[i]->d_name, "..") == 0))))
+		if(filelist[i]->d_type == DT_DIR && filelist[i]->d_name != NULL && ostrcmp(filelist[i]->d_name, ".") != 0 && (status.showhiddenfiles == 1 || (status.showhiddenfiles == 0 && filelist[i]->d_name[0] != '.')))
 		{
 			if(ostrcmp(filelist[i]->d_name, "..") == 0)
 			{
@@ -543,6 +543,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 										{
 											tmpstr = ostrcat(tmpstr, mnode->actors, 1, 0);
 											tmpstr = ostrcat(tmpstr, " - ", 1, 0);
+											tmpstr = ostrcat(tmpstr, mnode->title, 1, 0);
 										}
 										else
 										{
@@ -554,8 +555,6 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 											else
 												tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);
 										}
-
-										tmpstr = ostrcat(tmpstr, " (", 1, 0);									
 											
 										if(mnode->fileinfo != NULL)
 										{
