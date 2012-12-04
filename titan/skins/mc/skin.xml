@@ -135,8 +135,8 @@
 <node name="b7" picmem="skin/key_1-3_70x40.png" posx="590" posy="55" width="70" height="40">
 <node name="b8" picmem="skin/key_4-6_70x40.png" posx="680" posy="55" width="70" height="40">
 <node name="b9" picmem="skin/key_7-9_70x40.png" posx="770" posy="55" width="70" height="40">
-<node name="b12" text="Random" picmem="skin/key_yellow_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="860" posy="60" width="180" height="30">
-<node name="b13" text="Repeat" picmem="skin/key_blue_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="1040" posy="60" width="200" height="30">
+<node name="b12" text="2Random" picmem="skin/key_yellow_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="860" posy="60" width="180" height="30">
+<node name="b13" text="1Repeat" picmem="skin/key_blue_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="1040" posy="60" width="200" height="30">
 </screen>
 
 <screen name="playlistmenu" fontcol="fontcol" posx="center" posy="center" width="500" height="300">
