@@ -185,6 +185,7 @@ int audiosetavsync(struct dvbdev* node, int state)
 
 int audiosetbypassmode(struct dvbdev* node, int mode)
 {
+	
 	if(node == NULL)
 	{
 		debug(1000, "out-> NULL detect");
@@ -216,7 +217,7 @@ int audiosetbypassmode(struct dvbdev* node, int mode)
 		}
 		else if(status.volautochange > 0)
 		{
-			aktvol = getvol();
+			int aktvol = getvol();
 			//setvol(getvol() - status.volautochange);
 			status.volautochange = 0;
 			setvol(aktvol);
