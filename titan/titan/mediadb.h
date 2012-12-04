@@ -2043,6 +2043,14 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 
 			debug(777, "add audio: %s/%s", shortpath, file);
 
+			// create filelist info
+			free(tmpstr), tmpstr = NULL;
+			tmpstr = ostrcat(tmpstr, file, 1, 0);
+			string_tolower(tmpstr);
+			char* fileinfo = NULL;
+			fileinfo = ostrcat(fileinfo, getfilenameext(tmpstr), 1, 1);
+			free(tmpstr), tmpstr = NULL;
+
 			char* tmpfile = ostrcat(path, "/", 0, 0);
 			tmpfile = ostrcat(tmpfile, file, 1, 0);
 
@@ -2054,15 +2062,16 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			if(id3tag != NULL)
 			{
 				if(id3tag->poster != NULL)
-					createmediadb(node, tmphash, type, id3tag->title, id3tag->year, NULL, NULL, id3tag->genretext, NULL, NULL, id3tag->artist, id3tag->album, tmphash, NULL, NULL, shortpath, file, NULL, NULL, 0);
+					createmediadb(node, tmphash, type, id3tag->title, id3tag->year, NULL, NULL, id3tag->genretext, NULL, NULL, id3tag->artist, id3tag->album, tmphash, NULL, NULL, shortpath, file, NULL, fileinfo, 0);
 				else
-					createmediadb(node, tmphash, type, id3tag->title, id3tag->year, NULL, NULL, id3tag->genretext, NULL, NULL, id3tag->artist, id3tag->album, NULL, NULL, NULL, shortpath, file, NULL, NULL, 0);
+					createmediadb(node, tmphash, type, id3tag->title, id3tag->year, NULL, NULL, id3tag->genretext, NULL, NULL, id3tag->artist, id3tag->album, NULL, NULL, NULL, shortpath, file, NULL, fileinfo, 0);
 			}
 			else
 				createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, NULL, NULL, 0);
 
 			free(tmpfile); tmpfile = NULL;
 			free(tmphash); tmphash = NULL;
+			free(fileinfo); fileinfo = NULL;
 			freeid3(id3tag); id3tag = NULL;
 		}
 		else if(type == 2)
