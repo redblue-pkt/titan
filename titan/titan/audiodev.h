@@ -210,13 +210,16 @@ int audiosetbypassmode(struct dvbdev* node, int mode)
 					status.volautochange = 100 - aktvol;
 				else
 					status.volautochange = status.volautochangevalue;
-				setvol(aktvol + status.volautochange);
+				//setvol(aktvol + status.volautochange);
+				setvol(aktvol);
 			}
 		}
 		else if(status.volautochange > 0)
 		{
-			setvol(getvol() - status.volautochange);
+			aktvol = getvol();
+			//setvol(getvol() - status.volautochange);
 			status.volautochange = 0;
+			setvol(aktvol);
 		}
 	}
 	
