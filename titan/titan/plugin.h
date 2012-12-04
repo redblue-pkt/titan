@@ -149,7 +149,7 @@ int readplugin(char *dir)
 			if(nocheck == 0)
 			{
 				pluginversion = dlsym(pluginhandle, "pluginversion");
-				if(pluginversion == NULL || *pluginversion != PLUGINVERSION)
+				if((pluginversion == NULL || *pluginversion != PLUGINVERSION) && *pluginversion != 999999)
 				{
 					if(pluginversion == NULL)
 					{
