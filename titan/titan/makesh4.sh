@@ -325,7 +325,7 @@ if [ $BUILDTYPE == 0 ]; then
 			echo "[titan] gmediarender building error !!!"
 			echo "[titan] check your src"
 			echo "[titan]--------------------------------------------------------"
-			exit 1
+#			exit 1
 		fi
 		cp 
 		
