@@ -5,7 +5,7 @@ void picplayer(struct skin* picscreen, struct skin* picture, struct skin* picnam
 struct clist* addconfigscreen(char *key, struct skin *node);
 
 //void screenmc_audioplayer();
-void mc_audioplayer_infobar(struct skin* apskin, struct skin* infobar, struct skin* spos, struct skin* slen, struct skin* sreverse, struct skin* sprogress, char* filename);
+void mc_audioplayer_infobar(struct skin* apskin, struct skin* infobar, struct skin* spos, struct skin* slen, struct skin* sreverse, struct skin* sprogress, struct skin* b12, struct skin* b13, char* filename);
 
 //void mc_videoplayer_infobar(struct skin* apskin, struct skin* infobar, struct skin* spos, struct skin* slen, struct skin* sreverse, struct skin* sprogress, char* filename);
 void screenplayinfobar(char* file, int mode, int playertype, int flag);

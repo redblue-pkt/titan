@@ -1020,7 +1020,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 	}
 }
 
-void mc_audioplayer_infobar(struct skin* apskin, struct skin* infobar, struct skin* spos, struct skin* slen, struct skin* sreverse, struct skin* sprogress, char* filename)
+void mc_audioplayer_infobar(struct skin* apskin, struct skin* infobar, struct skin* spos, struct skin* slen, struct skin* sreverse, struct skin* sprogress, struct skin* b12, struct skin* b13, char* filename)
 {
 	debug(50, "infobar start");
 
@@ -1051,6 +1051,16 @@ void mc_audioplayer_infobar(struct skin* apskin, struct skin* infobar, struct sk
 	tmpstr = convert_timesec(reverse);
 	changetext(sreverse, _(tmpstr));
 	free(tmpstr); tmpstr = NULL;
+
+	if(status.random == 1)
+		changetext(b12, _("Random-On"));
+	else
+		changetext(b12, _("Random"));	
+
+	if(status.repeat == 0)
+		changetext(b13, _("Repeat-On"));
+	else
+		changetext(b13, _("Repeat"));
 
 	drawscreen(infobar, 0, 0);
 }

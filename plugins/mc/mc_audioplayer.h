@@ -52,6 +52,8 @@ void screenmc_audioplayer()
 	struct skin* slen = getscreennode(infobar, "len");
 	struct skin* sreverse = getscreennode(infobar, "reverse");
 	struct skin* sprogress = getscreennode(infobar, "progress");
+	struct skin* b12 = getscreennode(infobar, "b12");
+	struct skin* b13 = getscreennode(infobar, "b13");
 
 	if(getconfigint("mc_ap_uselastdir", NULL) == 1)
 	{
@@ -102,7 +104,7 @@ void screenmc_audioplayer()
 	while(1)
 	{
 		if(status.play == 1 && count <= screensaver_delay)
-			mc_audioplayer_infobar(apskin, infobar, spos, slen, sreverse, sprogress, NULL);
+			mc_audioplayer_infobar(apskin, infobar, spos, slen, sreverse, sprogress, b12, b13, NULL);
 
 		rcret = waitrcext(apskin, rcwait, 0, tmpview);
 		debug(50, "while status play=%d", status.play);

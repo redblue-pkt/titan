@@ -1597,7 +1597,27 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				fileinfo = ostrcat(fileinfo, "sample", 1, 0);
 			}
 
-			char* tmpstr1 = oregex(".*(cd[0-9]{1,3}).*", tmpstr);
+			char* tmpstr1 = oregex(".*([0-9]{14,14}).*", tmpstr);
+			if(tmpstr1 != NULL)
+			{
+				shortname = string_replace(tmpstr1, "", shortname, 1);
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, "rec", 1, 0);
+				isrec = 1;
+			}			
+			free(tmpstr1), tmpstr1 = NULL;
+			
+			tmpstr1 = oregex(".*([0-9]{4,4}).*", tmpstr);
+			if(tmpstr1 != NULL && isrec == 0)
+			{
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
+			}
+			free(tmpstr1), tmpstr1 = NULL;
+			
+			tmpstr1 = oregex(".*(cd[0-9]{1,3}).*", tmpstr);
 			if(tmpstr1 != NULL)
 			{
 				if(fileinfo != NULL)
@@ -1685,26 +1705,6 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 					fileinfo = ostrcat(fileinfo, " ", 1, 0);
 				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
 				shortname = string_replace(tmpstr1, "", shortname, 1);
-			}
-			free(tmpstr1), tmpstr1 = NULL;
-
-			tmpstr1 = oregex(".*([0-9]{14,14}).*", tmpstr);
-			if(tmpstr1 != NULL)
-			{
-				shortname = string_replace(tmpstr1, "", shortname, 1);
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, "rec", 1, 0);
-				isrec = 1;
-			}			
-			free(tmpstr1), tmpstr1 = NULL;
-			
-			tmpstr1 = oregex(".*([0-9]{4,4}).*", tmpstr);
-			if(tmpstr1 != NULL && isrec == 0)
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
 			}
 			free(tmpstr1), tmpstr1 = NULL;
 
