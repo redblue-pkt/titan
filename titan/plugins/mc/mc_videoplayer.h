@@ -868,6 +868,7 @@ void screenmc_videoplayer()
 	free(filename), filename = NULL;
 	free(currentdirectory), currentdirectory = NULL;
 	free(selectedfile), selectedfile = NULL;
+	free(lastid), lastid = NULL;
 
 	free(status.playfile); status.playfile = NULL;
 	if(tmppolicy != NULL)
