@@ -47,6 +47,7 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 		drawscreen(skin, 0, 0);
 		return;
 	}
+
 	struct skin* title = getscreennode(playinfobar, "title");
 	struct skin* spos = getscreennode(playinfobar, "pos");
 	struct skin* slen = getscreennode(playinfobar, "len");
@@ -54,6 +55,31 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 	struct skin* sprogress = getscreennode(playinfobar, "progress");
 	char* tmpstr = NULL;
 	unsigned long long pos = 0, len = 0, reverse = 0;
+
+// show thumb cover start
+	struct skin* playinfobarcover = getscreen("playinfobarcover");
+	struct skin* cover = getscreennode(playinfobarcover, "cover");
+
+	if(file != NULL)
+	{
+		struct mediadb* node = NULL;
+		char* dname = ostrcat(file, NULL, 0, 0);
+		dname = dirname(dname);
+		node = getmediadb(dname, basename(file), 0);
+		free(dname); dname = NULL;
+		
+		if(node != NULL)
+		{
+			tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
+			tmpstr = ostrcat(tmpstr, "/", 1, 0);
+			tmpstr = ostrcat(tmpstr, node->id, 1, 0);
+			tmpstr = ostrcat(tmpstr, "_poster.jpg", 0, 0);
+			if(file_exist(tmpstr))
+				changepic(cover, tmpstr);
+			free(tmpstr), tmpstr = NULL;
+		}
+	}
+// show thumb cover end
 
 	tmpstr = ostrcat(file, NULL, 0, 0);
 	if(tmpstr != NULL) changetext(title, basename(tmpstr));
@@ -101,6 +127,7 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 
 	drawscreen(playinfobar, 0, 0);
 	drawscreen(playinfobarpic, 0, 0);
+	drawscreen(playinfobarcover, 0, 0);
 }
 
 void screenplaytracklist(int mode, int playertype, int flag)
