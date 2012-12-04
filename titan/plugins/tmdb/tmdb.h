@@ -282,7 +282,6 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 			{
 				char* tmpcat = string_resub("<images>", "</images>", tmpstr1, 0);
 				char* ptmpcat = ostrstr(tmpcat, "<image ");
-				char* original = ostrstr(tmpcat, "/original/");
 
 				while(ptmpcat != NULL)
 				{
@@ -324,8 +323,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 			if(ostrstr(tmpstr1, "<imdb_id>") != NULL)
 				tnode->imdbid = string_resub("<imdb_id>", "</imdb_id>", tmpstr1, 0);
 
-//			if(getconfigint("mediadb_log", NULL) == 1 && tnode->backdrop == NULL)
-			if(getconfigint("mediadb_log", NULL) == 1)
+			if(getconfigint("mediadb_log", NULL) == 1 && tnode->backdrop == NULL)
 			{
 				char* logfile = ostrcat(getconfig("mediadbpath", NULL), "/.mediadb_log", 0, 0);
 				if(!file_exist(logfile))
@@ -380,7 +378,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 				
 				if(mvicount == 0)
 				{
-					savefile = savetmdbpic(tnode->imdbid, tnode->backdrop, TMPTMDBPIC4, "_backdrop.jpg", flag1);
+					savefile = savetmdbpic(tnode->imdbid, tnode->backdrop, TMPTMDBPIC4, "_backdrop1.jpg", flag1);
 					free(tnode->backdrop);
 					tnode->backdrop = savefile;					
 				}
@@ -405,12 +403,11 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 						char* tmppath = NULL;
 						tmppath = ostrcat("_backdrop", oitoa(mvicount), 0, 0);
 						tmppath = ostrcat(tmppath, ".jpg", 1, 0);
-						
+
 						savefile = savetmdbpic(tnode->imdbid, (&ret1[i])->part, TMPTMDBPIC4, tmppath, flag1);
 						free(tnode->backdrop);
 						tnode->backdrop = savefile;
-				
-				
+
 						free(tnode->mvi);
 						tnode->mvi = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 						tnode->mvi = ostrcat(tnode->mvi, tnode->imdbid, 1, 0);
@@ -454,7 +451,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 				free(tnode->mvi);
 				tnode->mvi = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 				tnode->mvi = ostrcat(tnode->mvi, tnode->imdbid, 1, 0);
-				tnode->mvi = ostrcat(tnode->mvi, "_backdrop.mvi", 1, 0);
+				tnode->mvi = ostrcat(tnode->mvi, "_backdrop1.mvi", 1, 0);
 				
 				if((!file_exist(tnode->mvi)) || (flag1 == 2))
 				{
