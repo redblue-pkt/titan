@@ -948,7 +948,7 @@ void screentmcimdbsearch(char* file, int menuid)
 			if(tmdb != NULL)
 			{
 				node->flag = setbit(node->flag, 31);
-				node = createmediadb(node, tmdb->id, type, tmdb->title, tmdb->year, tmdb->released, tmdb->runtime, tmdb->genre, NULL, NULL, NULL, tmdb->plot, tmdb->id, tmdb->rating, tmdb->votes, node->path, node->file, shortname, fileinfo, node->flag);
+				node = createmediadb(node, tmdb->id, type, tmdb->title, tmdb->year, tmdb->released, tmdb->runtime, tmdb->genre, NULL, NULL, NULL, tmdb->plot, tmdb->mvi, tmdb->rating, tmdb->votes, node->path, node->file, shortname, fileinfo, node->flag);
 			}
 
 			clearscreen(tmcinfo);
