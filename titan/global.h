@@ -4559,6 +4559,11 @@ int setvol(int value)
 	{
 		if(value > 100) value = 100;
 		if(value < 0) value = 0;
+		if(status.volautochangevalue != 0 && value != 0)
+		{
+			if(status.volautochange == 0)
+				value = value - (status.volautochangevalue * value / 100);
+		}
 		value = 63 - value * 63 / 100;
 		debug(100, "set %s to %d", voldev, value);
 		ret = writesysint(voldev, value, 0);
@@ -4595,7 +4600,11 @@ int getvol()
 	tmpvol = atoi(value);
 	free(value);
 	tmpvol = 100 - tmpvol * 100 / 63;
-
+	if(status.volautochangevalue != 0)
+	{
+		if(status.volautochange == 0)
+			tmpvol = tmpvol * 100 / (100 - status.volautochangevalue);
+	}
 	debug(1000, "out");
 	return tmpvol;
 }
