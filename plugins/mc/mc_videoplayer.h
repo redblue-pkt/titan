@@ -27,15 +27,17 @@ void screenmc_videoplayer()
 	char* tmpstr = NULL;
 	tmpstr = ostrcat(getconfig("mc_vp_dirsort", NULL), NULL, 0, 0);
 	addconfigtmp("dirsort", tmpstr);
+	free(tmpstr), tmpstr = NULL;
 	
 	startmediadb();
 	dbnode = mediadb;
 
+	char* lastid = NULL;
 	char* filename = NULL;
 	char* tmppolicy = NULL;
 	char* currentdirectory = NULL;
 	char* selectedfile = NULL;
-	int rcret = 0, rcwait = 1000, playerret = 0, flag = 1, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0, files = 0;
+	int rcret = 0, rcwait = 1000, playerret = 0, flag = 1, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0, files = 0, mviwait = 0, mvinum = 0;
 
 	// main screen
 	struct skin* apskin = getscreen("mc_videoplayer");
@@ -94,6 +96,9 @@ void screenmc_videoplayer()
 
 	tmpview = view;
 	mc_changeview(view, filelist, apskin, flag);
+	thumb->hidden = YES;
+	plot->hidden = YES;
+	title->hidden = YES;
 
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
 	addscreenrc(apskin, filelist);
@@ -101,10 +106,11 @@ void screenmc_videoplayer()
 	char* savecmd = NULL;
 
 	if(!file_exist("/var/swap/player"))   
-		mkdir("/var/swap/player", 0777); 
-		
+		mkdir("/var/swap/player", 0777);
+							
 	while(1)
 	{
+		
 		rcret = waitrcext(apskin, rcwait, 0, tmpview);
 //		debug(50, "while status play=%d", status.play);
 
@@ -126,25 +132,44 @@ void screenmc_videoplayer()
 			char* cmd = NULL;
 			char* pic = NULL;
 
+			int waittime = 5;
+			
 			if(filelist->select != NULL && filelist->select->input == NULL)
 			{
-//				char* tmpfilename = createpath(filelistpath->text, filelist->select->name);		
-//				debug(50, "tmpfilename: %s", tmpfilename);
-
-//				struct mediadb* mnode = getmediadb(tmpfilename);
 				struct mediadb* mnode = getmediadb(filelistpath->text, filelist->select->name, 0);
 
-//				free(tmpfilename), tmpfilename = NULL;
 				if(mnode != NULL)
 				{
 					if(mnode->id != NULL)
 					{
+						if(ostrcmp(lastid, mnode->id) != 0)
+						{
+							free(lastid), lastid = NULL;
+							lastid = ostrcat(lastid, mnode->id, 1, 0);
+							mvinum = 1;
+							mviwait = waittime;
+						}
+						else
+						{
+							int maxmvi = atoi(mnode->poster);
+							if(mvinum == maxmvi)
+								mvinum = 1;
+
+							if(mviwait > waittime && mvinum < maxmvi)
+							{
+								mvinum++;
+							}
+						}
+
 						tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
 						tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
 						tmpstr = ostrcat(tmpstr, mnode->id, 1, 0);
 	
 						pic = ostrcat(tmpstr, "_thumb.jpg", 0, 0);
-						cmd = ostrcat(tmpstr, "_backdrop.mvi", 0, 0);
+						
+						cmd = ostrcat(tmpstr, "_backdrop", 0, 0);
+						cmd = ostrcat(cmd, oitoa(mvinum), 1, 0);
+						cmd = ostrcat(cmd, ".mvi", 1, 0);
 						free(tmpstr), tmpstr = NULL;
 					}
 					if(mnode->plot != NULL)
@@ -186,9 +211,16 @@ void screenmc_videoplayer()
 			}
 
 			debug(50, "cmd: %s", cmd);	
-			if(!file_exist(cmd)){
+			if(!file_exist(cmd))
+			{
 				free(cmd), cmd = NULL;
 				cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 1, 0);
+				mviwait = waittime;
+				thumb->hidden = YES;
+				plot->hidden = YES;
+				title->hidden = YES;
+
+				drawscreen(apskin, 0, 0);
 			}
 
 			if(savecmd == NULL)
@@ -199,12 +231,15 @@ void screenmc_videoplayer()
 			}
 			else
 			{
-				if(ostrcmp(savecmd, cmd) != 0)
+				if(ostrcmp(savecmd, cmd) != 0 && mviwait > waittime - 1)
 				{
 					singlepicstart(cmd, 0);
 					free(savecmd), savecmd = NULL;
 					savecmd = ostrcat(savecmd, cmd, 1, 0);
+					mviwait = 0;
 				}
+				else
+					mviwait++;
 			}
 			free(cmd), cmd = NULL;
 		}

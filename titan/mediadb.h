@@ -1809,6 +1809,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				if(tmdb->postermid != NULL) imdb->poster = ostrcat(tmdb->postermid, NULL, 0, 0);
 				if(tmdb->thumb != NULL) imdb->thumb = ostrcat(tmdb->thumb, NULL, 0, 0);
 				if(tmdb->year != NULL) imdb->year = ostrcat(tmdb->year, NULL, 0, 0);
+				if(tmdb->mvi != NULL) imdb->poster = ostrcat(tmdb->mvi, NULL, 0, 0);
 			}
 
       		debugimdbnode(imdb);
@@ -1847,7 +1848,13 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				if(imdb->released == NULL) imdb->released = ostrcat(imdb->released, tmdb->released, 1, 0);
 				if(imdb->poster == NULL) imdb->poster = ostrcat(imdb->poster, tmdb->postermid, 1, 0);
 				if(imdb->thumb == NULL) imdb->thumb = ostrcat(imdb->thumb, tmdb->thumb, 1, 0);
-				if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, tmdb->year, 1, 0);		
+				if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, tmdb->year, 1, 0);
+
+				if(tmdb->mvi != NULL) 
+				{
+					free(imdb->poster), imdb->poster = NULL;
+					imdb->poster = ostrcat(imdb->poster, tmdb->mvi, 1, 0);
+				}
 			}
 
       		debugimdbnode(imdb);
@@ -1869,7 +1876,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 //				if(imdb->thumb == NULL) imdb->thumb = ostrcat(imdb->thumb, imdbapi->thumb, 1, 0);
 				if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, imdbapi->year, 1, 0);
 			}
-
+				
 			if((cmpfilenameext(file, ".ts") == 0) || (cmpfilenameext(file, ".mts") == 0))
 			{
 				char* timestamp = NULL;
@@ -1969,7 +1976,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			if(imdb != NULL)
 			{
 				debug(777, "imdb id %s", imdb->id);
-				createmediadb(node, imdb->id, type, imdb->title, imdb->year, imdb->released, imdb->runtime, imdb->genre, imdb->director, imdb->writer, imdb->actors, imdb->plot, imdb->id, imdb->rating, imdb->votes, shortpath, file, shortname, fileinfo, 0);
+				createmediadb(node, imdb->id, type, imdb->title, imdb->year, imdb->released, imdb->runtime, imdb->genre, imdb->director, imdb->writer, imdb->actors, imdb->plot, imdb->poster, imdb->rating, imdb->votes, shortpath, file, shortname, fileinfo, 0);
 				if(tmpid != NULL)
 				{
 					char* tmpstr = NULL;
@@ -1998,10 +2005,11 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			debug(777, "shortname: %s", shortname);
 			debug(133, "shortname: %s", shortname);
 			free(shortname), shortname = NULL;
+
 			debug(777, "fileinfo: %s", fileinfo);
 			debug(133, "fileinfo: %s", fileinfo);
 			free(fileinfo), fileinfo = NULL;
-			
+						
 			if(imdbplugin != NULL)
 			{
 				void (*startplugin)(struct imdb**, int flag);
@@ -2069,7 +2077,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				if(thumbfile == NULL)
 					addqueue(101, (void*)path, strlen(path) + 1, (void*)file, strlen(file) + 1, 0, NULL);
 			}
-      free(thumbfile); thumbfile = NULL;
+      		free(thumbfile); thumbfile = NULL;
 
 			createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, NULL, NULL, 0);
 		}
