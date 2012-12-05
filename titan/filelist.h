@@ -550,7 +550,6 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 											if(mnode->shortname != NULL)
 											{
 												tmpstr = ostrcat(tmpstr, mnode->shortname, 1, 0);
-												string_toupper(tmpstr);
 											}
 											else
 												tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);
@@ -690,7 +689,6 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 									if(mnode->shortname != NULL)
 									{
 										tmpstr = ostrcat(tmpstr, mnode->shortname, 1, 0);
-										string_toupper(tmpstr);
 									}
 									else
 										tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);									
