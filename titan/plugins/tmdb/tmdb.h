@@ -175,7 +175,7 @@ char* savetmdbpic(char* imdbid, char* url, char* tmppic, char* pic, int flag1)
 struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 {
 	struct tmdb* tnode = NULL;
-	char* tmpstr = NULL, *tmpstr1 = NULL, *logdir = NULL, *logfile = NULL, *tmpsearch = NULL, *savefile = NULL, *timen = NULL, *log = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL, *logdir = NULL, *logfile = NULL, *tmpsearch = NULL, *savefile = NULL, *timen = NULL, *log = NULL, *posterurl = NULL;
 	int count = 0;
 	int mvicount = 0;
 
@@ -388,6 +388,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 				tnode->cover = savefile;
 
 				savefile = savetmdbpic(tnode->imdbid, tnode->postermid, TMPTMDBPIC3, "_postermid.jpg", flag1);
+				posterurl = ostrcat(posterurl, tnode->postermid, 1, 0); 
 				free(tnode->postermid);
 				tnode->postermid = savefile;
 				
@@ -449,7 +450,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 									system(cmd);
 									free(cmd); cmd = NULL;
 
-									char* size = command("cat /tmp/mediadb.meta | grep Stream | awk '{print $6}' | cut -d'x' -f1");
+									char* size = string_newline(command("cat /tmp/mediadb.meta | grep Stream | awk '{print $6}' | cut -d'x' -f1"));
 									debug(133, "size %s", size);
 									if(size != NULL)
 									{
@@ -478,7 +479,11 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 																						
 													cmd = ostrcat(cmd, "echo \"", 1, 0);
 													cmd = ostrcat(cmd, tnode->backdrop, 1, 0);
-													cmd = ostrcat(cmd, "\" >> ", 1, 0);
+													cmd = ostrcat(cmd, " size=(", 1, 0);
+													cmd = ostrcat(cmd, size, 1, 0);
+													cmd = ostrcat(cmd, ") (", 1, 0);
+													cmd = ostrcat(cmd, (&ret1[i])->part, 1, 0);
+													cmd = ostrcat(cmd, ")\" >> ", 1, 0);
 													cmd = ostrcat(cmd, logfile, 1, 0);
 													system(cmd);
 													free(cmd), cmd = NULL;
@@ -522,7 +527,11 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 
 											cmd = ostrcat(cmd, "echo \"ERROR Backdrop size to big skipped: ", 1, 0);
 											cmd = ostrcat(cmd, tnode->backdrop, 1, 0);
-											cmd = ostrcat(cmd, "\" >> ", 1, 0);
+											cmd = ostrcat(cmd, " size=(", 1, 0);
+											cmd = ostrcat(cmd, size, 1, 0);
+											cmd = ostrcat(cmd, ") (", 1, 0);
+											cmd = ostrcat(cmd, (&ret1[i])->part, 1, 0);
+											cmd = ostrcat(cmd, ")\" >> ", 1, 0);
 											cmd = ostrcat(cmd, logfile, 1, 0);
 											system(cmd);
 											free(cmd), cmd = NULL;
@@ -545,7 +554,11 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 
 										cmd = ostrcat(cmd, "echo \"ERROR Backdrop size is NULL skipped: ", 1, 0);
 										cmd = ostrcat(cmd, tnode->backdrop, 1, 0);
-										cmd = ostrcat(cmd, "\" >> ", 1, 0);
+										cmd = ostrcat(cmd, " size=(", 1, 0);
+										cmd = ostrcat(cmd, size, 1, 0);
+										cmd = ostrcat(cmd, ") (", 1, 0);
+										cmd = ostrcat(cmd, (&ret1[i])->part, 1, 0);
+										cmd = ostrcat(cmd, ")\" >> ", 1, 0);
 										cmd = ostrcat(cmd, logfile, 1, 0);
 										system(cmd);
 										free(cmd), cmd = NULL;
@@ -613,7 +626,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 					system(cmd);
 					free(cmd); cmd = NULL;
 
-					char* size = command("cat /tmp/mediadb.meta | grep Stream | awk '{print $6}' | cut -d'x' -f1");
+					char* size = string_newline(command("cat /tmp/mediadb.meta | grep Stream | awk '{print $6}' | cut -d'x' -f1"));
 					debug(133, "size %s", size);
 					if(size != NULL)
 					{
@@ -642,7 +655,11 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 										
 									cmd = ostrcat(cmd, "echo \"", 1, 0);
 									cmd = ostrcat(cmd, tnode->postermid, 1, 0);
-									cmd = ostrcat(cmd, "\" >> ", 1, 0);
+									cmd = ostrcat(cmd, " size=(", 1, 0);
+									cmd = ostrcat(cmd, size, 1, 0);
+									cmd = ostrcat(cmd, ") (", 1, 0);
+									cmd = ostrcat(cmd, posterurl, 1, 0);
+									cmd = ostrcat(cmd, ")\" >> ", 1, 0);
 									cmd = ostrcat(cmd, logfile, 1, 0);
 									system(cmd);
 									free(cmd), cmd = NULL;
@@ -684,7 +701,9 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 
 							cmd = ostrcat(cmd, "echo \"ERROR Postermid size to big skipped: ", 1, 0);
 							cmd = ostrcat(cmd, tnode->postermid, 1, 0);
-							cmd = ostrcat(cmd, "\" >> ", 1, 0);
+							cmd = ostrcat(cmd, " size=(", 1, 0);
+							cmd = ostrcat(cmd, size, 1, 0);
+							cmd = ostrcat(cmd, ")\" >> ", 1, 0);
 							cmd = ostrcat(cmd, logfile, 1, 0);
 							system(cmd);
 							free(cmd), cmd = NULL;
@@ -706,7 +725,9 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 
 						cmd = ostrcat(cmd, "echo \"ERROR Postermid size is NULL skipped: ", 1, 0);
 						cmd = ostrcat(cmd, tnode->postermid, 1, 0);
-						cmd = ostrcat(cmd, "\" >> ", 1, 0);
+						cmd = ostrcat(cmd, " size=(", 1, 0);
+						cmd = ostrcat(cmd, size, 1, 0);
+						cmd = ostrcat(cmd, ")\" >> ", 1, 0);
 						cmd = ostrcat(cmd, logfile, 1, 0);
 						system(cmd);
 						free(cmd), cmd = NULL;
@@ -722,7 +743,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 					unlink("/tmp/backdrop.resize.mpg");
 				}
 			}
-			
+
 			if(file_exist(tnode->mvi))
 				unlink(tnode->backdrop);
 		
@@ -730,14 +751,16 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 				tnode->mvi = ostrcat(oitoa(mvicount), NULL, 0, 0);
 			else
 				tnode->mvi = ostrcat("1", NULL, 0, 0);
-			
+
 			tmpstr1 += 5;
 			tmpstr1 = ostrstr(tmpstr1, "<movie>");
 
-printf("freee\n");
+printf("free1\n");
 			free(tmpstr1), tmpstr1 = NULL;
-printf("freee2\n");
-	
+printf("free2\n");
+			free(posterurl), posterurl = NULL;
+printf("free3\n");
+				
      		debug(133, "----------------------tmdb start----------------------");
 			debug(133, "title: %s", tnode->title);
 			debug(133, "language: %s", tnode->language);
