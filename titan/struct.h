@@ -365,6 +365,7 @@ struct mediadb
 	time_t timestamp;
 	//bit 31: manual change
 	int flag;
+	int postercount;
 	struct mediadb* prev;
 	struct mediadb* next;
 };
