@@ -811,10 +811,10 @@ void screentmcedit(char* file, int menuid)
 					free(thumb); thumb = NULL;
 					free(buf); buf = NULL;
 					
-					node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, tmpstr, rating->ret, votes->ret, node->path, node->file, node->shortname, node->fileinfo, node->flag);
+					node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, tmpstr, rating->ret, votes->ret, node->path, node->file, node->shortname, node->fileinfo, node->flag, 1);
 				}
 				else
-					node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, node->poster, rating->ret, votes->ret, node->path, node->file, node->shortname, node->fileinfo, node->flag);
+					node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, node->poster, rating->ret, votes->ret, node->path, node->file, node->shortname, node->fileinfo, node->flag, node->postercount);
 
 				free(tmpstr); tmpstr = NULL;
 				break;
