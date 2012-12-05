@@ -1463,6 +1463,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 	debug(133, "flag: %d", flag);
 	
 	int isrec = 0;
+	int iscam = 0;	
 	char* shortpath = NULL, *tmpstr = NULL, *tmpid = NULL;
 	struct mediadb *node = NULL;
 
@@ -1510,18 +1511,67 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			struct imdb* imdb = NULL;
 			struct imdbapi* imdbapi = NULL;
 			struct tmdb* tmdb = NULL;
-
+			
+			char* fileinfo = NULL;
 			//create imdb search name
 			char* shortname = ostrcat(file, NULL, 0, 0);
-			string_tolower(shortname);
-			shortname = string_shortname(shortname, 2);
-			string_removechar(shortname);
-			strstrip(shortname);
-			
+
 			// create filelist info
 			tmpstr = ostrcat(tmpstr, file, 1, 0);
+			char* tmpstr1 = oregex(".*([0-9]{14,14}).*", tmpstr);
+			if(tmpstr1 != NULL)
+			{
+				shortname = string_replace(tmpstr1, "", shortname, 1);
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, "rec", 1, 0);
+				isrec = 1;
+			}			
+			free(tmpstr1), tmpstr1 = NULL;
+
+			tmpstr1 = oregex(".*([0-9]{8,8}.*[0-9]{4,4}).*", tmpstr);
+			if(tmpstr1 != NULL && isrec == 0)
+			{
+				shortname = string_replace(tmpstr1, "", shortname, 1);
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, "recold", 1, 0);
+				isrec = 1;
+			}
+			free(tmpstr1), tmpstr1 = NULL;
+
+			tmpstr1 = oregex(".*([0-9]{5,5}).*", tmpstr);
+			if(tmpstr1 != NULL && isrec == 0)
+			{
+				iscam = 1;
+				if(fileinfo != NULL)
+					fileinfo = ostrcat(fileinfo, " ", 1, 0);
+				fileinfo = ostrcat(fileinfo, "cam", 1, 0);
+			}
+			free(tmpstr1), tmpstr1 = NULL;
+			
+			if(isrec == 0 && iscam == 0)
+			{
+				string_tolower(shortname);
+				shortname = string_shortname(shortname, 2);
+				string_removechar(shortname);
+				strstrip(shortname);
+				printf("shortname: %s\n",shortname);
+				printf("#############################################################\n");			
+			}
+			else
+			{
+				char* cut = ostrcat(".", getfilenameext(tmpstr), 0, 1);
+				cut = ostrcat(cut, "\0", 1, 0);
+				shortname = string_replace(cut, "\0", shortname, 1);
+				free(cut), cut = NULL;
+
+				string_removechar(shortname);
+				strstrip(shortname);
+			}
+
 			string_tolower(tmpstr);
-			char* fileinfo = NULL;
+
 			if((ostrstr(tmpstr, ".special.extended.edition.") != NULL) || (ostrstr(tmpstr, ".sse.") != NULL))
 			{
 				if(fileinfo != NULL)
@@ -1597,19 +1647,8 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				fileinfo = ostrcat(fileinfo, "sample", 1, 0);
 			}
 
-			char* tmpstr1 = oregex(".*([0-9]{14,14}).*", tmpstr);
-			if(tmpstr1 != NULL)
-			{
-				shortname = string_replace(tmpstr1, "", shortname, 1);
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, "rec", 1, 0);
-				isrec = 1;
-			}			
-			free(tmpstr1), tmpstr1 = NULL;
-			
 			tmpstr1 = oregex(".*([0-9]{4,4}).*", tmpstr);
-			if(tmpstr1 != NULL && isrec == 0)
+			if(tmpstr1 != NULL && isrec == 0 && iscam == 0)
 			{
 				if(fileinfo != NULL)
 					fileinfo = ostrcat(fileinfo, " ", 1, 0);
@@ -1708,6 +1747,10 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			}
 			free(tmpstr1), tmpstr1 = NULL;
 
+			printf("shortname222: %s\n",shortname);
+			printf("#############################################################\n");			
+
+
 			strstrip(shortname);
 
 			if(fileinfo != NULL)
@@ -1755,218 +1798,350 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				}
 			}
 
-			if(flag == 2 && imdb != NULL && id != NULL)
-				imdb->id = ostrcat(id, NULL, 0, 0);
-
-			if(flag == 3 && imdb != NULL && id != NULL)
-				imdb->id = ostrcat(id, NULL, 0, 0);
-	
-			struct skin* imdbapiplugin = getplugin("IMDb-API");
-			if(imdbplugin != NULL)
-			{
-				struct imdbapi* (*startplugin)(struct imdbapi**, char*, int, int);
-				startplugin = dlsym(imdbapiplugin->pluginhandle, "getimdbapi");
-				if(startplugin != NULL)
-				{
-					if(imdb == NULL)
-						imdbapi = startplugin(&imdbapi, shortname, 0, 1);
-					else if(imdb->id != NULL)
-						imdbapi = startplugin(&imdbapi, imdb->id, 1, 1);
-				}
-			}
-
+			struct skin* imdbapiplugin = NULL;
 			struct skin* tmdbplugin = NULL;
-			tmdbplugin = getplugin("TMDb");
-			if(tmdbplugin != NULL)
+
+			if(isrec == 0 && iscam == 0)
 			{
-				struct tmdb* (*startplugin)(struct tmdb**, char*, int, int);
-				startplugin = dlsym(tmdbplugin->pluginhandle, "gettmdb");
-				if(startplugin != NULL)
-				{
-					if(imdb != NULL && imdb->id != NULL)
-						tmdb = startplugin(&tmdb, imdb->id, 1, 1);
-					else if(imdbapi != NULL && imdbapi->id != NULL)
-						tmdb = startplugin(&tmdb, imdbapi->id, 1, 1);
-				}
-			}
-
-      		debugimdbnode(imdb);
-
-			// manuel tmdb
-			if(flag == 2 && imdb != NULL && tmdb != NULL)
-			{
-				if(tmdb->imdbid != NULL) imdb->id = ostrcat(tmdb->imdbid, NULL, 0, 0);			
-				if(tmdb->title != NULL) imdb->title = ostrcat(tmdb->title, NULL, 0, 0);	
-				if(tmdb->genre != NULL) imdb->genre = ostrcat(tmdb->genre, NULL, 0, 0);
-//				if(tmdb->writer != NULL) imdb->writer = ostrcat(tmdb->writer, NULL, 0, 0);
-//				if(tmdb->director != NULL) imdb->director = ostrcat(tmdb->director, NULL, 0, 0);
-//				if(tmdb->actors != NULL) imdb->actors = ostrcat(tmdb->actors, NULL, 0, 0);
-				if(tmdb->rating != NULL) imdb->rating = ostrcat(tmdb->rating, NULL, 0, 0);
-				if(tmdb->votes != NULL) imdb->votes = ostrcat(tmdb->votes, NULL, 0, 0);
-				if(tmdb->runtime != NULL) imdb->runtime = ostrcat(tmdb->runtime, NULL, 0, 0);
-				if(tmdb->plot != NULL) imdb->plot = ostrcat(tmdb->plot, NULL, 0, 0);
-				if(tmdb->released != NULL) imdb->released = ostrcat(tmdb->released, NULL, 0, 0);
-				if(tmdb->postermid != NULL) imdb->poster = ostrcat(tmdb->postermid, NULL, 0, 0);
-				if(tmdb->thumb != NULL) imdb->thumb = ostrcat(tmdb->thumb, NULL, 0, 0);
-				if(tmdb->year != NULL) imdb->year = ostrcat(tmdb->year, NULL, 0, 0);
-				if(tmdb->mvi != NULL) imdb->poster = ostrcat(tmdb->mvi, NULL, 0, 0);
-			}
-
-      		debugimdbnode(imdb);
-
-			// manuel imdbapi
-			if(flag == 3 && imdb != NULL && tmdb != NULL)
-			{
-				if(imdbapi->id != NULL) imdb->id = ostrcat(imdbapi->id, NULL, 0, 0);			
-				if(imdbapi->title != NULL) imdb->title = ostrcat(imdbapi->title, NULL, 0, 0);	
-				if(imdbapi->genre != NULL) imdb->genre = ostrcat(imdbapi->genre, NULL, 0, 0);
-				if(imdbapi->writer != NULL) imdb->writer = ostrcat(imdbapi->writer, NULL, 0, 0);
-				if(imdbapi->director != NULL) imdb->director = ostrcat(imdbapi->director, NULL, 0, 0);
-				if(imdbapi->actors != NULL) imdb->actors = ostrcat(imdbapi->actors, NULL, 0, 0);
-				if(imdbapi->rating != NULL) imdb->rating = ostrcat(imdbapi->rating, NULL, 0, 0);
-				if(imdbapi->votes != NULL) imdb->votes = ostrcat(imdbapi->votes, NULL, 0, 0);
-				if(imdbapi->runtime != NULL) imdb->runtime = ostrcat(imdbapi->runtime, NULL, 0, 0);
-				if(imdbapi->plot != NULL) imdb->plot = ostrcat(imdbapi->plot, NULL, 0, 0);
-				if(imdbapi->released != NULL) imdb->released = ostrcat(imdbapi->released, NULL, 0, 0);
-//				if(imdbapi->postermid != NULL) imdb->poster = ostrcat(imdbapi->postermid, NULL, 0, 0);
-//				if(imdbapi->thumb != NULL) imdb->thumb = ostrcat(imdbapi->thumb, NULL, 0, 0);
-				if(imdbapi->year != NULL) imdb->year = ostrcat(imdbapi->year, NULL, 0, 0);
-			}
+				if(flag == 2 && imdb != NULL && id != NULL)
+					imdb->id = ostrcat(id, NULL, 0, 0);
+	
+				if(flag == 3 && imdb != NULL && id != NULL)
+					imdb->id = ostrcat(id, NULL, 0, 0);
 		
-			if(imdb != NULL && tmdb != NULL)
-			{
-				if(imdb->id == NULL) imdb->id = ostrcat(imdb->id, tmdb->imdbid, 1, 0);			
-				if(imdb->title == NULL) imdb->title = ostrcat(imdb->title, tmdb->title, 1, 0);	
-				if(imdb->genre == NULL) imdb->genre = ostrcat(imdb->genre, tmdb->genre, 1, 0);
-//				if(imdb->writer == NULL) imdb->writer = ostrcat(imdb->writer, tmdb->writer, 1, 0);
-//				if(imdb->director == NULL) imdb->director = ostrcat(imdb->director, tmdb->director, 1, 0);
-//				if(imdb->actors == NULL) imdb->actors = ostrcat(imdb->actors, tmdb->actors, 1, 0);
-				if(imdb->rating == NULL) imdb->rating = ostrcat(imdb->rating, tmdb->rating, 1, 0);
-				if(imdb->votes == NULL) imdb->votes = ostrcat(imdb->votes, tmdb->votes, 1, 0);
-				if(imdb->runtime == NULL) imdb->runtime = ostrcat(imdb->runtime, tmdb->runtime, 1, 0);
-				if(imdb->plot == NULL) imdb->plot = ostrcat(imdb->plot, tmdb->plot, 1, 0);
-				if(imdb->released == NULL) imdb->released = ostrcat(imdb->released, tmdb->released, 1, 0);
-				if(imdb->poster == NULL) imdb->poster = ostrcat(imdb->poster, tmdb->postermid, 1, 0);
-				if(imdb->thumb == NULL) imdb->thumb = ostrcat(imdb->thumb, tmdb->thumb, 1, 0);
-				if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, tmdb->year, 1, 0);
-
-				if(tmdb->mvi != NULL) 
+				imdbapiplugin = getplugin("IMDb-API");
+				if(imdbplugin != NULL)
 				{
-					free(imdb->poster), imdb->poster = NULL;
-					imdb->poster = ostrcat(imdb->poster, tmdb->mvi, 1, 0);
+					struct imdbapi* (*startplugin)(struct imdbapi**, char*, int, int);
+					startplugin = dlsym(imdbapiplugin->pluginhandle, "getimdbapi");
+					if(startplugin != NULL)
+					{
+						if(imdb == NULL)
+							imdbapi = startplugin(&imdbapi, shortname, 0, 1);
+						else if(imdb->id != NULL)
+							imdbapi = startplugin(&imdbapi, imdb->id, 1, 1);
+					}
+				}
+	
+				tmdbplugin = getplugin("TMDb");
+				if(tmdbplugin != NULL)
+				{
+					struct tmdb* (*startplugin)(struct tmdb**, char*, int, int);
+					startplugin = dlsym(tmdbplugin->pluginhandle, "gettmdb");
+					if(startplugin != NULL)
+					{
+						if(imdb != NULL && imdb->id != NULL)
+							tmdb = startplugin(&tmdb, imdb->id, 1, 1);
+						else if(imdbapi != NULL && imdbapi->id != NULL)
+							tmdb = startplugin(&tmdb, imdbapi->id, 1, 1);
+					}
+				}
+	
+	      		debugimdbnode(imdb);
+	
+				// manuel tmdb
+				if(flag == 2 && imdb != NULL && tmdb != NULL)
+				{
+					if(tmdb->imdbid != NULL) imdb->id = ostrcat(tmdb->imdbid, NULL, 0, 0);			
+					if(tmdb->title != NULL) imdb->title = ostrcat(tmdb->title, NULL, 0, 0);	
+					if(tmdb->genre != NULL) imdb->genre = ostrcat(tmdb->genre, NULL, 0, 0);
+	//				if(tmdb->writer != NULL) imdb->writer = ostrcat(tmdb->writer, NULL, 0, 0);
+	//				if(tmdb->director != NULL) imdb->director = ostrcat(tmdb->director, NULL, 0, 0);
+	//				if(tmdb->actors != NULL) imdb->actors = ostrcat(tmdb->actors, NULL, 0, 0);
+					if(tmdb->rating != NULL) imdb->rating = ostrcat(tmdb->rating, NULL, 0, 0);
+					if(tmdb->votes != NULL) imdb->votes = ostrcat(tmdb->votes, NULL, 0, 0);
+					if(tmdb->runtime != NULL) imdb->runtime = ostrcat(tmdb->runtime, NULL, 0, 0);
+					if(tmdb->plot != NULL) imdb->plot = ostrcat(tmdb->plot, NULL, 0, 0);
+					if(tmdb->released != NULL) imdb->released = ostrcat(tmdb->released, NULL, 0, 0);
+					if(tmdb->postermid != NULL) imdb->poster = ostrcat(tmdb->postermid, NULL, 0, 0);
+					if(tmdb->thumb != NULL) imdb->thumb = ostrcat(tmdb->thumb, NULL, 0, 0);
+					if(tmdb->year != NULL) imdb->year = ostrcat(tmdb->year, NULL, 0, 0);
+					if(tmdb->mvi != NULL) imdb->poster = ostrcat(tmdb->mvi, NULL, 0, 0);
+				}
+	
+	      		debugimdbnode(imdb);
+	
+				// manuel imdbapi
+				if(flag == 3 && imdb != NULL && tmdb != NULL)
+				{
+					if(imdbapi->id != NULL) imdb->id = ostrcat(imdbapi->id, NULL, 0, 0);			
+					if(imdbapi->title != NULL) imdb->title = ostrcat(imdbapi->title, NULL, 0, 0);	
+					if(imdbapi->genre != NULL) imdb->genre = ostrcat(imdbapi->genre, NULL, 0, 0);
+					if(imdbapi->writer != NULL) imdb->writer = ostrcat(imdbapi->writer, NULL, 0, 0);
+					if(imdbapi->director != NULL) imdb->director = ostrcat(imdbapi->director, NULL, 0, 0);
+					if(imdbapi->actors != NULL) imdb->actors = ostrcat(imdbapi->actors, NULL, 0, 0);
+					if(imdbapi->rating != NULL) imdb->rating = ostrcat(imdbapi->rating, NULL, 0, 0);
+					if(imdbapi->votes != NULL) imdb->votes = ostrcat(imdbapi->votes, NULL, 0, 0);
+					if(imdbapi->runtime != NULL) imdb->runtime = ostrcat(imdbapi->runtime, NULL, 0, 0);
+					if(imdbapi->plot != NULL) imdb->plot = ostrcat(imdbapi->plot, NULL, 0, 0);
+					if(imdbapi->released != NULL) imdb->released = ostrcat(imdbapi->released, NULL, 0, 0);
+	//				if(imdbapi->postermid != NULL) imdb->poster = ostrcat(imdbapi->postermid, NULL, 0, 0);
+	//				if(imdbapi->thumb != NULL) imdb->thumb = ostrcat(imdbapi->thumb, NULL, 0, 0);
+					if(imdbapi->year != NULL) imdb->year = ostrcat(imdbapi->year, NULL, 0, 0);
+				}
+			
+				if(imdb != NULL && tmdb != NULL)
+				{
+					if(imdb->id == NULL) imdb->id = ostrcat(imdb->id, tmdb->imdbid, 1, 0);			
+					if(imdb->title == NULL) imdb->title = ostrcat(imdb->title, tmdb->title, 1, 0);	
+					if(imdb->genre == NULL) imdb->genre = ostrcat(imdb->genre, tmdb->genre, 1, 0);
+	//				if(imdb->writer == NULL) imdb->writer = ostrcat(imdb->writer, tmdb->writer, 1, 0);
+	//				if(imdb->director == NULL) imdb->director = ostrcat(imdb->director, tmdb->director, 1, 0);
+	//				if(imdb->actors == NULL) imdb->actors = ostrcat(imdb->actors, tmdb->actors, 1, 0);
+					if(imdb->rating == NULL) imdb->rating = ostrcat(imdb->rating, tmdb->rating, 1, 0);
+					if(imdb->votes == NULL) imdb->votes = ostrcat(imdb->votes, tmdb->votes, 1, 0);
+					if(imdb->runtime == NULL) imdb->runtime = ostrcat(imdb->runtime, tmdb->runtime, 1, 0);
+					if(imdb->plot == NULL) imdb->plot = ostrcat(imdb->plot, tmdb->plot, 1, 0);
+					if(imdb->released == NULL) imdb->released = ostrcat(imdb->released, tmdb->released, 1, 0);
+					if(imdb->poster == NULL) imdb->poster = ostrcat(imdb->poster, tmdb->postermid, 1, 0);
+					if(imdb->thumb == NULL) imdb->thumb = ostrcat(imdb->thumb, tmdb->thumb, 1, 0);
+					if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, tmdb->year, 1, 0);
+	
+					if(tmdb->mvi != NULL) 
+					{
+						free(imdb->poster), imdb->poster = NULL;
+						imdb->poster = ostrcat(imdb->poster, tmdb->mvi, 1, 0);
+					}
+				}
+
+	      		debugimdbnode(imdb);
+	      		
+				if(imdb != NULL && imdbapi != NULL)
+				{
+					if(imdb->id == NULL) imdb->id = ostrcat(imdb->id, imdbapi->id, 1, 0);			
+					if(imdb->title == NULL) imdb->title = ostrcat(imdb->title, imdbapi->title, 1, 0);	
+					if(imdb->genre == NULL) imdb->genre = ostrcat(imdb->genre, imdbapi->genre, 1, 0);
+					if(imdb->writer == NULL) imdb->writer = ostrcat(imdb->writer, imdbapi->writer, 1, 0);
+					if(imdb->director == NULL) imdb->director = ostrcat(imdb->director, imdbapi->director, 1, 0);
+					if(imdb->actors == NULL) imdb->actors = ostrcat(imdb->actors, imdbapi->actors, 1, 0);
+					if(imdb->rating == NULL) imdb->rating = ostrcat(imdb->rating, imdbapi->rating, 1, 0);
+					if(imdb->votes == NULL) imdb->votes = ostrcat(imdb->votes, imdbapi->votes, 1, 0);
+					if(imdb->runtime == NULL) imdb->runtime = ostrcat(imdb->runtime, imdbapi->runtime, 1, 0);
+					if(imdb->plot == NULL) imdb->plot = ostrcat(imdb->plot, imdbapi->plot, 1, 0);
+					if(imdb->released == NULL) imdb->released = ostrcat(imdb->released, imdbapi->released, 1, 0);
+					if(imdb->poster == NULL) imdb->poster = ostrcat(imdb->poster, imdbapi->poster, 1, 0);
+	//				if(imdb->thumb == NULL) imdb->thumb = ostrcat(imdb->thumb, imdbapi->thumb, 1, 0);
+					if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, imdbapi->year, 1, 0);
 				}
 			}
-
-      		debugimdbnode(imdb);
-      		
-			if(imdb != NULL && imdbapi != NULL)
+			else if((cmpfilenameext(file, ".ts") == 0) || (cmpfilenameext(file, ".mts") == 0))
 			{
-				if(imdb->id == NULL) imdb->id = ostrcat(imdb->id, imdbapi->id, 1, 0);			
-				if(imdb->title == NULL) imdb->title = ostrcat(imdb->title, imdbapi->title, 1, 0);	
-				if(imdb->genre == NULL) imdb->genre = ostrcat(imdb->genre, imdbapi->genre, 1, 0);
-				if(imdb->writer == NULL) imdb->writer = ostrcat(imdb->writer, imdbapi->writer, 1, 0);
-				if(imdb->director == NULL) imdb->director = ostrcat(imdb->director, imdbapi->director, 1, 0);
-				if(imdb->actors == NULL) imdb->actors = ostrcat(imdb->actors, imdbapi->actors, 1, 0);
-				if(imdb->rating == NULL) imdb->rating = ostrcat(imdb->rating, imdbapi->rating, 1, 0);
-				if(imdb->votes == NULL) imdb->votes = ostrcat(imdb->votes, imdbapi->votes, 1, 0);
-				if(imdb->runtime == NULL) imdb->runtime = ostrcat(imdb->runtime, imdbapi->runtime, 1, 0);
-				if(imdb->plot == NULL) imdb->plot = ostrcat(imdb->plot, imdbapi->plot, 1, 0);
-				if(imdb->released == NULL) imdb->released = ostrcat(imdb->released, imdbapi->released, 1, 0);
-				if(imdb->poster == NULL) imdb->poster = ostrcat(imdb->poster, imdbapi->poster, 1, 0);
-//				if(imdb->thumb == NULL) imdb->thumb = ostrcat(imdb->thumb, imdbapi->thumb, 1, 0);
-				if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, imdbapi->year, 1, 0);
-			}
-				
-			if((cmpfilenameext(file, ".ts") == 0) || (cmpfilenameext(file, ".mts") == 0))
-			{
+				char* logdir = ostrcat(getconfig("mediadbpath", NULL), "/.mediadb_log", 0, 0);
+				if(!file_exist(logdir))
+					mkdir(logdir, 0777);
+				char* logfile = ostrcat(logdir, "/imdb-scan.log", 1, 0);
+	
 				char* timestamp = NULL;
 				timestamp = oregex(".*([0-9]{14,14}).*", file);
 				if(timestamp == NULL)
 					timestamp = ostrcat(oitoa(time(NULL)), NULL, 0, 0);
-			
-				if(imdb->id == NULL)
-				{
-					imdb->id = ostrcat(imdb->id, timestamp, 1, 0);
-					imdb->title = ostrcat(imdb->title, shortname, 1, 0);
-					char* cmd = NULL;
+		
+				free(imdb->id), imdb->id = NULL;
+				imdb->id = ostrcat(imdb->id, timestamp, 1, 0);
+				
+				shortname = string_replace("   ", " - ", shortname, 1);
+				shortname = string_replace("  ", " - ", shortname, 1);
 
-					tmpstr = ostrcat(tmpstr, path, 1, 0);
-					tmpstr = ostrcat(tmpstr, "/", 1, 0);
-					tmpstr = ostrcat(tmpstr, file, 1, 0);
-					tmpstr1 = changefilenameext(tmpstr, ".epg");
-					free(tmpstr), tmpstr = NULL;
-					cmd = readfiletomem(tmpstr1, 1);
-					free(tmpstr1), tmpstr1 = NULL;
-					imdb->plot = ostrcat(imdb->plot, cmd, 1, 0);
+				imdb->title = ostrcat(imdb->title, shortname, 1, 0);
+				imdb->poster = ostrcat(imdb->poster, "1", 1, 0);
+								
+				char* cmd = NULL;
+				tmpstr = ostrcat(tmpstr, path, 1, 0);
+				tmpstr = ostrcat(tmpstr, "/", 1, 0);
+				tmpstr = ostrcat(tmpstr, file, 1, 0);
+				tmpstr1 = changefilenameext(tmpstr, ".epg");
+				free(tmpstr), tmpstr = NULL;
+				cmd = readfiletomem(tmpstr1, 1);
+				free(tmpstr1), tmpstr1 = NULL;
+				imdb->plot = ostrcat(imdb->plot, cmd, 1, 0);
+				free(cmd), cmd = NULL;
+
+				cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
+				cmd = ostrcat(cmd, path, 1, 0);
+				cmd = ostrcat(cmd, "/", 1, 0);
+				cmd = ostrcat(cmd, file, 1, 0);
+				cmd = ostrcat(cmd, "\" -vframes 1 -s 160x120 ", 1, 0);
+				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+				cmd = ostrcat(cmd, "/", 1, 0);	
+				cmd = ostrcat(cmd, timestamp, 1, 0);
+				cmd = ostrcat(cmd, "_thumb.jpg", 1, 0);
+				printf("cmd: %s\n",cmd);
+				system(cmd);
+				free(cmd); cmd = NULL;
+
+
+				cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
+				cmd = ostrcat(cmd, path, 1, 0);
+				cmd = ostrcat(cmd, "/", 1, 0);
+				cmd = ostrcat(cmd, file, 1, 0);
+				cmd = ostrcat(cmd, "\" -vframes 1 -s 500x400 ", 1, 0);
+				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+				cmd = ostrcat(cmd, "/", 1, 0);	
+				cmd = ostrcat(cmd, timestamp, 1, 0);
+				cmd = ostrcat(cmd, "_cover.jpg", 1, 0);
+				printf("cmd: %s\n",cmd);
+				system(cmd);
+				free(cmd); cmd = NULL;
+
+				cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
+				cmd = ostrcat(cmd, path, 1, 0);
+				cmd = ostrcat(cmd, "/", 1, 0);
+				cmd = ostrcat(cmd, file, 1, 0);
+//				cmd = ostrcat(cmd, "\" -vframes 1 -s 1920x1080 ", 1, 0);
+				cmd = ostrcat(cmd, "\" -vframes 1 -s 1280x720 ", 1, 0);
+				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+				cmd = ostrcat(cmd, "/", 1, 0);
+				cmd = ostrcat(cmd, timestamp, 1, 0);
+				cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
+				printf("cmd: %s\n",cmd);
+				system(cmd);
+				free(cmd); cmd = NULL;
+
+				cmd = ostrcat(cmd, "ffmpeg -i ", 1, 0);
+				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+				cmd = ostrcat(cmd, "/", 1, 0);
+				cmd = ostrcat(cmd, timestamp, 1, 0);
+				cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
+				cmd = ostrcat(cmd, " > /tmp/mediadb.meta 2>&1", 1, 0);
+
+				debug(133, "cmd %s", cmd);
+				system(cmd);
+				free(cmd); cmd = NULL;
+					
+				char* size = string_newline(command("cat /tmp/mediadb.meta | grep Stream | awk '{print $6}' | cut -d'x' -f1"));
+				debug(133, "size %s", size);
+				if(size != NULL)
+				{
+					debug(133, "size %d", atoi(size));
+					int picsize = atoi(size);
+
+					if(picsize < 2000)
+					{
+						debug(133, "size ok %d", picsize);
+										
+						cmd = ostrcat(cmd, "jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
+						cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+						cmd = ostrcat(cmd, "/", 1, 0);
+						cmd = ostrcat(cmd, timestamp, 1, 0);
+						cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
+						printf("cmd: %s\n",cmd);
+						system(cmd);
+						free(cmd); cmd = NULL;
+					
+						if(file_exist("/tmp/backdrop.resize.jpg"))
+						{
+							if(getconfigint("mediadb_log", NULL) == 1)
+							{
+								cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
+								cmd = ostrcat(cmd, logfile, 1, 0);
+								system(cmd);
+								free(cmd), cmd = NULL;
+									
+								cmd = ostrcat(cmd, "echo \"", 1, 0);
+								cmd = ostrcat(cmd, file, 1, 0);
+								cmd = ostrcat(cmd, " size=(", 1, 0);
+								cmd = ostrcat(cmd, size, 1, 0);
+								cmd = ostrcat(cmd, ") (", 1, 0);
+								cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+								cmd = ostrcat(cmd, "/", 1, 0);
+								cmd = ostrcat(cmd, timestamp, 1, 0);
+								cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
+								cmd = ostrcat(cmd, ")\" >> ", 1, 0);
+								cmd = ostrcat(cmd, logfile, 1, 0);
+								system(cmd);
+								free(cmd), cmd = NULL;
+
+								cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
+								cmd = ostrcat(cmd, logfile, 1, 0);
+								system(cmd);
+								free(cmd), cmd = NULL;
+
+								cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg >> ", 1, 0);
+								cmd = ostrcat(cmd, logfile, 1, 0);
+								cmd = ostrcat(cmd, " 2>&1", 1, 0);
+							}
+							else
+							{
+								cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg > /dev/null 2>&1", 1, 0);
+							}
+							
+							
+							debug(133, "cmd %s", cmd);
+							system(cmd);
+							free(cmd); cmd = NULL;
+							if(file_exist("/tmp/backdrop.resize.mpg"))
+							{					
+								cmd = ostrcat(cmd, "mv -f /tmp/backdrop.resize.mpg ", 1, 0);
+								cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+								cmd = ostrcat(cmd, "/", 1, 0);	
+								cmd = ostrcat(cmd, timestamp, 1, 0);
+								cmd = ostrcat(cmd, "_backdrop1.mvi", 1, 0);
+								debug(133, "cmd %s", cmd);
+								system(cmd);
+								free(cmd); cmd = NULL;
+								
+								writesysint("/proc/sys/vm/drop_caches", 3, 0);
+							}	
+						}
+					}
+					else
+					{
+						debug(133, "ERROR Postermid size to big skipped %d", picsize);
+						cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
+						cmd = ostrcat(cmd, logfile, 1, 0);
+						system(cmd);
+						free(cmd), cmd = NULL;
+
+						cmd = ostrcat(cmd, "echo \"ERROR Postermid size to big skipped: ", 1, 0);
+						cmd = ostrcat(cmd, file, 1, 0);
+						cmd = ostrcat(cmd, " size=(", 1, 0);
+						cmd = ostrcat(cmd, size, 1, 0);
+						cmd = ostrcat(cmd, ")\" >> ", 1, 0);
+						cmd = ostrcat(cmd, logfile, 1, 0);
+						system(cmd);
+						free(cmd), cmd = NULL;
+
+						cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
+						cmd = ostrcat(cmd, logfile, 1, 0);
+						system(cmd);
+						free(cmd), cmd = NULL;
+									
+					}
+				}
+				else
+				{
+					debug(133, "ERROR size is NULL skipped %s", size);
+					cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
+					cmd = ostrcat(cmd, logfile, 1, 0);
+					system(cmd);
 					free(cmd), cmd = NULL;
 
-					cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
-					cmd = ostrcat(cmd, path, 1, 0);
-					cmd = ostrcat(cmd, "/", 1, 0);
+					cmd = ostrcat(cmd, "echo \"ERROR Postermid size is NULL skipped: ", 1, 0);
 					cmd = ostrcat(cmd, file, 1, 0);
-					cmd = ostrcat(cmd, "\" -vframes 1 -s 160x120 ", 1, 0);
-					cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-					cmd = ostrcat(cmd, "/", 1, 0);	
-					cmd = ostrcat(cmd, timestamp, 1, 0);
-					cmd = ostrcat(cmd, "_thumb.jpg", 1, 0);
-					printf("cmd: %s\n",cmd);
+					cmd = ostrcat(cmd, " size=(", 1, 0);
+					cmd = ostrcat(cmd, size, 1, 0);
+					cmd = ostrcat(cmd, ")\" >> ", 1, 0);
+					cmd = ostrcat(cmd, logfile, 1, 0);
 					system(cmd);
-					free(cmd); cmd = NULL;
-	
-	
-					cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
-					cmd = ostrcat(cmd, path, 1, 0);
-					cmd = ostrcat(cmd, "/", 1, 0);
-					cmd = ostrcat(cmd, file, 1, 0);
-					cmd = ostrcat(cmd, "\" -vframes 1 -s 500x400 ", 1, 0);
-					cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-					cmd = ostrcat(cmd, "/", 1, 0);	
-					cmd = ostrcat(cmd, timestamp, 1, 0);
-					cmd = ostrcat(cmd, "_cover.jpg", 1, 0);
-					printf("cmd: %s\n",cmd);
+					free(cmd), cmd = NULL;
+
+					cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
+					cmd = ostrcat(cmd, logfile, 1, 0);
 					system(cmd);
-					free(cmd); cmd = NULL;
-	
-					cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
-					cmd = ostrcat(cmd, path, 1, 0);
-					cmd = ostrcat(cmd, "/", 1, 0);
-					cmd = ostrcat(cmd, file, 1, 0);
-	//				cmd = ostrcat(cmd, "\" -vframes 1 -s 1920x1080 ", 1, 0);
-					cmd = ostrcat(cmd, "\" -vframes 1 -s 1280x720 ", 1, 0);
-					cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-					cmd = ostrcat(cmd, "/", 1, 0);
-	//				cmd = ostrcat(cmd, "/tmp/", 1, 0);
-					cmd = ostrcat(cmd, timestamp, 1, 0);
-					cmd = ostrcat(cmd, "_backdrop.jpg", 1, 0);
-					printf("cmd: %s\n",cmd);
-					system(cmd);
-					free(cmd); cmd = NULL;
-	
-					cmd = ostrcat(cmd, "jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
-					cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-					cmd = ostrcat(cmd, "/", 1, 0);
-	//				cmd = ostrcat(cmd, "/tmp/", 1, 0);
-					cmd = ostrcat(cmd, timestamp, 1, 0);
-					cmd = ostrcat(cmd, "_backdrop.jpg", 1, 0);
-					printf("cmd: %s\n",cmd);
-					system(cmd);
-					free(cmd); cmd = NULL;
-										
-					cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg", 1, 0);
-					printf("cmd: %s\n",cmd);
-					system(cmd);
-					free(cmd); cmd = NULL;
-	
-					cmd = ostrcat(cmd, "mv -f /tmp/backdrop.resize.mpg ", 1, 0);
-					cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-					cmd = ostrcat(cmd, "/", 1, 0);	
-					cmd = ostrcat(cmd, timestamp, 1, 0);
-					cmd = ostrcat(cmd, "_backdrop.mvi", 1, 0);
-					printf("cmd: %s\n",cmd);
-					system(cmd);
-					free(cmd); cmd = NULL;
-	
+					free(cmd), cmd = NULL;
 				}
+				free(size), size = NULL;
+				unlink("/tmp/mediadb.meta");
+				unlink("/tmp/backdrop.resize.jpg");
+				unlink("/tmp/backdrop.resize.mpg");
+				
+				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+				cmd = ostrcat(cmd, "/", 1, 0);	
+				cmd = ostrcat(cmd, timestamp, 1, 0);
+				cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
+				unlink(cmd);
+				
+				free(cmd); cmd = NULL;
 				free(timestamp); timestamp = NULL;
 			} 
 
