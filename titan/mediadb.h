@@ -424,7 +424,7 @@ int addmediadbcontent(struct mediadb* node, char *line, int len, int count)
 		}
 	}
 
-	if(ret != 19)
+	if(ret != 20)
 	{
 		if(count > 0)
 		{
