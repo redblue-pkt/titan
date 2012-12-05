@@ -514,13 +514,13 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 										}
 										else
 										{
-											debug(133, "Backdrop size to big skipped %d", picsize);
+											debug(133, "ERROR Backdrop size to big skipped %d", picsize);
 											cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
 											cmd = ostrcat(cmd, logfile, 1, 0);
 											system(cmd);
 											free(cmd), cmd = NULL;	
 
-											cmd = ostrcat(cmd, "echo \"Backdrop size to big skipped: ", 1, 0);
+											cmd = ostrcat(cmd, "echo \"ERROR Backdrop size to big skipped: ", 1, 0);
 											cmd = ostrcat(cmd, tnode->backdrop, 1, 0);
 											cmd = ostrcat(cmd, "\" >> ", 1, 0);
 											cmd = ostrcat(cmd, logfile, 1, 0);
@@ -537,13 +537,13 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 									}
 									else
 									{
-										debug(133, "Backdrop size is NULL skipped %s", size);
+										debug(133, "ERROR Backdrop size is NULL skipped %s", size);
 										cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
 										cmd = ostrcat(cmd, logfile, 1, 0);
 										system(cmd);
 										free(cmd), cmd = NULL;
 
-										cmd = ostrcat(cmd, "echo \"Backdrop size is NULL skipped: ", 1, 0);
+										cmd = ostrcat(cmd, "echo \"ERROR Backdrop size is NULL skipped: ", 1, 0);
 										cmd = ostrcat(cmd, tnode->backdrop, 1, 0);
 										cmd = ostrcat(cmd, "\" >> ", 1, 0);
 										cmd = ostrcat(cmd, logfile, 1, 0);
@@ -676,13 +676,13 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 						}
 						else
 						{
-							debug(133, "Postermid size to big skipped %d", picsize);
+							debug(133, "ERROR Postermid size to big skipped %d", picsize);
 							cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
 							cmd = ostrcat(cmd, logfile, 1, 0);
 							system(cmd);
 							free(cmd), cmd = NULL;
 
-							cmd = ostrcat(cmd, "echo \"Postermid size to big skipped: ", 1, 0);
+							cmd = ostrcat(cmd, "echo \"ERROR Postermid size to big skipped: ", 1, 0);
 							cmd = ostrcat(cmd, tnode->postermid, 1, 0);
 							cmd = ostrcat(cmd, "\" >> ", 1, 0);
 							cmd = ostrcat(cmd, logfile, 1, 0);
@@ -698,13 +698,13 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 					}
 					else
 					{
-						debug(133, "size is NULL skipped %s", size);
+						debug(133, "ERROR size is NULL skipped %s", size);
 						cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
 						cmd = ostrcat(cmd, logfile, 1, 0);
 						system(cmd);
 						free(cmd), cmd = NULL;
 
-						cmd = ostrcat(cmd, "echo \"Postermid size is NULL skipped: ", 1, 0);
+						cmd = ostrcat(cmd, "echo \"ERROR Postermid size is NULL skipped: ", 1, 0);
 						cmd = ostrcat(cmd, tnode->postermid, 1, 0);
 						cmd = ostrcat(cmd, "\" >> ", 1, 0);
 						cmd = ostrcat(cmd, logfile, 1, 0);
