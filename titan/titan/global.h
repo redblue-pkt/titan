@@ -175,7 +175,7 @@ int checklowflash()
 	return 1;	
 }
 
-char* unhexlify(const char *hexstr)
+char* unhexlify(char *hexstr)
 {
 	int len = 0, tmpint = 0;
 	char *p, *q, *binstr = NULL;

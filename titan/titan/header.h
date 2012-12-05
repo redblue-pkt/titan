@@ -678,7 +678,7 @@ int checkprozess(char* input);
 struct regex* regexstruct(char* regex, char* str);
 void freeregexstruct(struct regex* node);
 char fromhex(char c);
-char* unhexlify(const char *hexstr);
+char* unhexlify(char *hexstr);
 int isdir(char* name);
 void htmldecode3(char* to, char* from);
 char* string_deltags(char* str);
