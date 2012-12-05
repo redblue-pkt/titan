@@ -3662,6 +3662,8 @@ char* readsys(const char *filename, int line)
 
 //flag 0: without \n
 //flag 1: with \n
+//flag 2: append without \n
+//flag 3: append with \n
 int writesys(const char *filename, char *value, int flag)
 {
 	debug(1000, "in");
@@ -3675,14 +3677,17 @@ int writesys(const char *filename, char *value, int flag)
 		return 1;
 	}
 
-	fd = fopen(filename, "w");
+	if(flag == 2 || flag == 3)
+		fd = fopen(filename, "a");
+	else
+		fd = fopen(filename, "w");
 	if(fd == NULL)
 	{
 		perr("can't open %s", filename);
 		return 1;
 	}
 
-	if(flag == 1)
+	if(flag == 1 || flag == 3)
 		tmpstr = ostrcat(value, "\n", 0, 0);
 	else
 		tmpstr = ostrcat(value, NULL, 0, 0);
