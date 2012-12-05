@@ -2180,7 +2180,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				}
 			}
 			else
-				createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, shortname, fileinfo, 0);
+				createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, shortname, fileinfo, 0, 0);
 
 			debug(777, "shortname: %s", shortname);
 			debug(133, "shortname: %s", shortname);
@@ -2242,12 +2242,12 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			if(id3tag != NULL)
 			{
 				if(id3tag->poster != NULL)
-					createmediadb(node, tmphash, type, id3tag->title, id3tag->year, NULL, NULL, id3tag->genretext, NULL, NULL, id3tag->artist, id3tag->album, tmphash, NULL, NULL, shortpath, file, NULL, fileinfo, 0);
+					createmediadb(node, tmphash, type, id3tag->title, id3tag->year, NULL, NULL, id3tag->genretext, NULL, NULL, id3tag->artist, id3tag->album, tmphash, NULL, NULL, shortpath, file, NULL, fileinfo, 0, 1);
 				else
-					createmediadb(node, tmphash, type, id3tag->title, id3tag->year, NULL, NULL, id3tag->genretext, NULL, NULL, id3tag->artist, id3tag->album, NULL, NULL, NULL, shortpath, file, NULL, fileinfo, 0);
+					createmediadb(node, tmphash, type, id3tag->title, id3tag->year, NULL, NULL, id3tag->genretext, NULL, NULL, id3tag->artist, id3tag->album, NULL, NULL, NULL, shortpath, file, NULL, fileinfo, 0, 0);
 			}
 			else
-				createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, NULL, NULL, 0);
+				createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, NULL, NULL, 0, 0);
 
 			free(tmpfile); tmpfile = NULL;
 			free(tmphash); tmphash = NULL;
@@ -2268,7 +2268,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			}
       		free(thumbfile); thumbfile = NULL;
 
-			createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, NULL, NULL, 0);
+			createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, NULL, NULL, 0, 0);
 		}
 	}
 	free(shortpath); shortpath = NULL;
