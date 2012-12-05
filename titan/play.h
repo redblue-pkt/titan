@@ -401,6 +401,8 @@ void imdb_submenu(char* file, int mode)
 {
 	struct skin* pluginnode = NULL;
 	void (*startplugin)(char*, char*, int, char*, char*);
+
+	startplugin = NULL;
 	
 	if(mode == 0)
 		pluginnode = getplugin("IMDb");
