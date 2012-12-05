@@ -95,7 +95,7 @@ void screengmediarender()
 			ret = read(fifo, buf, MINMALLOC);
 			if(ret > 0)
 			{
-				buf[ret] = NULL;
+				buf[ret] = '\0';
 				if(ostrcmp(buf, "clear.png") == 0) //clear screen
 					drawscreen(skin, 0, 0);
 				else
