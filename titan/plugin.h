@@ -149,7 +149,7 @@ int readplugin(char *dir)
 			if(nocheck == 0)
 			{
 				pluginversion = dlsym(pluginhandle, "pluginversion");
-				if((pluginversion == NULL || *pluginversion != PLUGINVERSION) && *pluginversion != 999999) //999999 for plugins without titan dependent
+				if(pluginversion == NULL || (*pluginversion != PLUGINVERSION && *pluginversion != 999999) //999999 for plugins without titan dependent
 				{
 					if(pluginversion == NULL)
 					{
