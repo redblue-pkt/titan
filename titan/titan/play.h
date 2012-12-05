@@ -653,9 +653,20 @@ void mediadb_edit(char* file, int menuid)
 					buf = savejpg(thumb, width, height, channels, 400, 450, 70, buf);
 					free(thumb); thumb = NULL;
 					free(buf); buf = NULL;
-
 /////////// start mvi
 					char* log = NULL, *logdir = NULL, *logfile = NULL, *cmd = NULL, *mvi = NULL;
+
+					logdir = ostrcat(getconfig("mediadbpath", NULL), "/.mediadb_log", 0, 0);
+					if(!file_exist(logdir))
+						mkdir(logdir, 0777);
+					logfile = ostrcat(logdir, "/imdb-scan.log", 1, 0);
+
+					if(getconfigint("mediadb_log", NULL) == 1)
+					{
+						writesys(logfile, "####################################################################", 3);
+						writesys(logfile, node->id, 3);
+						writesys(logfile, "####################################################################", 3);
+					}
 
 					mvi = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 					mvi = ostrcat(mvi, node->id, 1, 0);
@@ -689,11 +700,27 @@ void mediadb_edit(char* file, int menuid)
 		
 							if(file_exist("/tmp/backdrop.resize.jpg"))
 							{
-								cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg > /dev/null 2>&1", 1, 0);
+								if(getconfigint("mediadb_log", NULL) == 1)
+								{
+									writesys(logfile, "#############", 3);
+									writesys(logfile, picret, 2);
+									writesys(logfile, " size=(", 2);
+									writesys(logfile, size, 2);
+									writesys(logfile, ") (lokal file)", 3);
+									writesys(logfile, "#############", 3);
+
+									cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg >> ", 1, 0);
+									cmd = ostrcat(cmd, logfile, 1, 0);
+									cmd = ostrcat(cmd, " 2>&1", 1, 0);
+								}
+								else
+								{
+									cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg > /dev/null 2>&1", 1, 0);
+								}
+
 								debug(133, "cmd %s", cmd);
 								system(cmd);
 								free(cmd); cmd = NULL;
-
 								if(file_exist("/tmp/backdrop.resize.mpg"))
 								{					
 									cmd = ostrcat(cmd, "mv -f /tmp/backdrop.resize.mpg ", 1, 0);
@@ -704,12 +731,38 @@ void mediadb_edit(char* file, int menuid)
 									
 									writesysint("/proc/sys/vm/drop_caches", 3, 0);
 									free(mvi), mvi = NULL;
-									node->postercount = 1;
+									mvi = ostrcat(mvi, "1", 1, 0);
 								}
 								else
 									free(mvi), mvi = NULL;
 							}
 						}
+						else
+						{
+							debug(133, "ERROR Lokal Cover size to big skipped %d", picsize);
+							writesys(logfile, "#############", 3);
+							writesys(logfile, "ERROR Lokal Cover size to big skipped: ", 2);
+							writesys(logfile, picret, 2);
+							writesys(logfile, " size=(", 2);
+							writesys(logfile, size, 2);
+							writesys(logfile, ")", 3);
+							writesys(logfile, "#############", 3);
+
+							free(mvi), mvi = NULL;
+						}
+					}
+					else
+					{
+						debug(133, "ERROR size is NULL skipped %s", size);
+						writesys(logfile, "#############", 3);
+						writesys(logfile, "ERROR Lokal Cover size is NULL skipped: ", 2);
+						writesys(logfile, picret, 2);
+						writesys(logfile, " size=(", 2);
+						writesys(logfile, size, 2);
+						writesys(logfile, ")", 3);
+						writesys(logfile, "#############", 3);
+
+						free(mvi), mvi = NULL;
 					}
 
 					free(size), size = NULL;
@@ -722,12 +775,12 @@ void mediadb_edit(char* file, int menuid)
 					unlink("/tmp/backdrop.resize.jpg");
 					unlink("/tmp/backdrop.resize.mpg");
 
-					node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, mvi, rating->ret, votes->ret, node->path, node->file, node->shortname, node->fileinfo, node->flag, node->postercount);
+					node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, mvi, rating->ret, votes->ret, node->path, node->file, node->shortname, node->fileinfo, node->flag);
 					free(mvi), mvi = NULL;
 /////////// end mvi
 				}
 				else
-					node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, node->poster, rating->ret, votes->ret, node->path, node->file, node->shortname, node->fileinfo, node->flag, node->postercount);
+					node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, node->poster, rating->ret, votes->ret, node->path, node->file, node->shortname, node->fileinfo, node->flag);
 
 				free(tmpstr); tmpstr = NULL;
 				clearscreen(load);
