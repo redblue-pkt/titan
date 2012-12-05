@@ -1468,7 +1468,8 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 	debug(133, "flag: %d", flag);
 	
 	int isrec = 0;
-	int iscam = 0;	
+	int iscam = 0;
+	int backdrop = 0;
 	char* shortpath = NULL, *tmpstr = NULL, *tmpid = NULL;
 	struct mediadb *node = NULL;
 
@@ -1561,8 +1562,6 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				shortname = string_shortname(shortname, 2);
 				string_removechar(shortname);
 				strstrip(shortname);
-				printf("shortname: %s\n",shortname);
-				printf("#############################################################\n");			
 			}
 			else
 			{
@@ -1752,10 +1751,6 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			}
 			free(tmpstr1), tmpstr1 = NULL;
 
-			printf("shortname222: %s\n",shortname);
-			printf("#############################################################\n");			
-
-
 			strstrip(shortname);
 
 			if(fileinfo != NULL)
@@ -1850,9 +1845,6 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 					if(tmdb->imdbid != NULL) imdb->id = ostrcat(tmdb->imdbid, NULL, 0, 0);			
 					if(tmdb->title != NULL) imdb->title = ostrcat(tmdb->title, NULL, 0, 0);	
 					if(tmdb->genre != NULL) imdb->genre = ostrcat(tmdb->genre, NULL, 0, 0);
-	//				if(tmdb->writer != NULL) imdb->writer = ostrcat(tmdb->writer, NULL, 0, 0);
-	//				if(tmdb->director != NULL) imdb->director = ostrcat(tmdb->director, NULL, 0, 0);
-	//				if(tmdb->actors != NULL) imdb->actors = ostrcat(tmdb->actors, NULL, 0, 0);
 					if(tmdb->rating != NULL) imdb->rating = ostrcat(tmdb->rating, NULL, 0, 0);
 					if(tmdb->votes != NULL) imdb->votes = ostrcat(tmdb->votes, NULL, 0, 0);
 					if(tmdb->runtime != NULL) imdb->runtime = ostrcat(tmdb->runtime, NULL, 0, 0);
@@ -1880,8 +1872,6 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 					if(imdbapi->runtime != NULL) imdb->runtime = ostrcat(imdbapi->runtime, NULL, 0, 0);
 					if(imdbapi->plot != NULL) imdb->plot = ostrcat(imdbapi->plot, NULL, 0, 0);
 					if(imdbapi->released != NULL) imdb->released = ostrcat(imdbapi->released, NULL, 0, 0);
-	//				if(imdbapi->postermid != NULL) imdb->poster = ostrcat(imdbapi->postermid, NULL, 0, 0);
-	//				if(imdbapi->thumb != NULL) imdb->thumb = ostrcat(imdbapi->thumb, NULL, 0, 0);
 					if(imdbapi->year != NULL) imdb->year = ostrcat(imdbapi->year, NULL, 0, 0);
 				}
 			
@@ -1890,9 +1880,6 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 					if(imdb->id == NULL) imdb->id = ostrcat(imdb->id, tmdb->imdbid, 1, 0);			
 					if(imdb->title == NULL) imdb->title = ostrcat(imdb->title, tmdb->title, 1, 0);	
 					if(imdb->genre == NULL) imdb->genre = ostrcat(imdb->genre, tmdb->genre, 1, 0);
-	//				if(imdb->writer == NULL) imdb->writer = ostrcat(imdb->writer, tmdb->writer, 1, 0);
-	//				if(imdb->director == NULL) imdb->director = ostrcat(imdb->director, tmdb->director, 1, 0);
-	//				if(imdb->actors == NULL) imdb->actors = ostrcat(imdb->actors, tmdb->actors, 1, 0);
 					if(imdb->rating == NULL) imdb->rating = ostrcat(imdb->rating, tmdb->rating, 1, 0);
 					if(imdb->votes == NULL) imdb->votes = ostrcat(imdb->votes, tmdb->votes, 1, 0);
 					if(imdb->runtime == NULL) imdb->runtime = ostrcat(imdb->runtime, tmdb->runtime, 1, 0);
@@ -1904,8 +1891,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 	
 					if(tmdb->mvi != NULL) 
 					{
-						free(imdb->poster), imdb->poster = NULL;
-						imdb->poster = ostrcat(imdb->poster, tmdb->mvi, 1, 0);
+						backdrop = atoi(tmdb->mvi);
 					}
 				}
 
@@ -1925,7 +1911,6 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 					if(imdb->plot == NULL) imdb->plot = ostrcat(imdb->plot, imdbapi->plot, 1, 0);
 					if(imdb->released == NULL) imdb->released = ostrcat(imdb->released, imdbapi->released, 1, 0);
 					if(imdb->poster == NULL) imdb->poster = ostrcat(imdb->poster, imdbapi->poster, 1, 0);
-	//				if(imdb->thumb == NULL) imdb->thumb = ostrcat(imdb->thumb, imdbapi->thumb, 1, 0);
 					if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, imdbapi->year, 1, 0);
 				}
 			}
@@ -2156,7 +2141,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			if(imdb != NULL)
 			{
 				debug(777, "imdb id %s", imdb->id);
-				createmediadb(node, imdb->id, type, imdb->title, imdb->year, imdb->released, imdb->runtime, imdb->genre, imdb->director, imdb->writer, imdb->actors, imdb->plot, imdb->poster, imdb->rating, imdb->votes, shortpath, file, shortname, fileinfo, 0);
+				createmediadb(node, imdb->id, type, imdb->title, imdb->year, imdb->released, imdb->runtime, imdb->genre, imdb->director, imdb->writer, imdb->actors, imdb->plot, imdb->id, imdb->rating, imdb->votes, shortpath, file, shortname, fileinfo, 0, backdrop);
 				if(tmpid != NULL)
 				{
 					char* tmpstr = NULL;
@@ -2242,7 +2227,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			if(id3tag != NULL)
 			{
 				if(id3tag->poster != NULL)
-					createmediadb(node, tmphash, type, id3tag->title, id3tag->year, NULL, NULL, id3tag->genretext, NULL, NULL, id3tag->artist, id3tag->album, tmphash, NULL, NULL, shortpath, file, NULL, fileinfo, 0, 1);
+					createmediadb(node, tmphash, type, id3tag->title, id3tag->year, NULL, NULL, id3tag->genretext, NULL, NULL, id3tag->artist, id3tag->album, tmphash, NULL, NULL, shortpath, file, NULL, fileinfo, 0, 0);
 				else
 					createmediadb(node, tmphash, type, id3tag->title, id3tag->year, NULL, NULL, id3tag->genretext, NULL, NULL, id3tag->artist, id3tag->album, NULL, NULL, NULL, shortpath, file, NULL, fileinfo, 0, 0);
 			}

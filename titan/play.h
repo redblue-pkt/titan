@@ -653,31 +653,9 @@ void mediadb_edit(char* file, int menuid)
 					buf = savejpg(thumb, width, height, channels, 400, 450, 70, buf);
 					free(thumb); thumb = NULL;
 					free(buf); buf = NULL;
+
 /////////// start mvi
 					char* log = NULL, *logdir = NULL, *logfile = NULL, *cmd = NULL, *mvi = NULL;
-
-					logdir = ostrcat(getconfig("mediadbpath", NULL), "/.mediadb_log", 0, 0);
-					if(!file_exist(logdir))
-						mkdir(logdir, 0777);
-					logfile = ostrcat(logdir, "/imdb-scan.log", 1, 0);
-
-					if(getconfigint("mediadb_log", NULL) == 1)
-					{
-						log = ostrcat(log, "echo \"####################################################################\" >> ", 1, 0);
-						log = ostrcat(log, logfile, 1, 0);
-						system(log);
-						free(log), log = NULL;
-						log = ostrcat(log, "echo \"", 1, 0);
-						log = ostrcat(log, node->id, 1, 0);
-						log = ostrcat(log, "\" >> ", 1, 0);
-						log = ostrcat(log, logfile, 1, 0);
-						system(log);
-						free(log), log = NULL;
-						log = ostrcat(log, "echo \"####################################################################\" >> ", 1, 0);
-						log = ostrcat(log, logfile, 1, 0);
-						system(log);
-						free(log), log = NULL;
-					}
 
 					mvi = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 					mvi = ostrcat(mvi, node->id, 1, 0);
@@ -711,39 +689,11 @@ void mediadb_edit(char* file, int menuid)
 		
 							if(file_exist("/tmp/backdrop.resize.jpg"))
 							{
-								if(getconfigint("mediadb_log", NULL) == 1)
-								{
-									cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-									cmd = ostrcat(cmd, logfile, 1, 0);
-									system(cmd);
-									free(cmd), cmd = NULL;
-										
-									cmd = ostrcat(cmd, "echo \"", 1, 0);
-									cmd = ostrcat(cmd, picret, 1, 0);
-									cmd = ostrcat(cmd, " size=(", 1, 0);
-									cmd = ostrcat(cmd, size, 1, 0);
-									cmd = ostrcat(cmd, ") (lokal file)\" >> ", 1, 0);
-									cmd = ostrcat(cmd, logfile, 1, 0);
-									system(cmd);
-									free(cmd), cmd = NULL;
-
-									cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-									cmd = ostrcat(cmd, logfile, 1, 0);
-									system(cmd);
-									free(cmd), cmd = NULL;
-
-									cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg >> ", 1, 0);
-									cmd = ostrcat(cmd, logfile, 1, 0);
-									cmd = ostrcat(cmd, " 2>&1", 1, 0);
-								}
-								else
-								{
-									cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg > /dev/null 2>&1", 1, 0);
-								}
-
+								cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg > /dev/null 2>&1", 1, 0);
 								debug(133, "cmd %s", cmd);
 								system(cmd);
 								free(cmd); cmd = NULL;
+
 								if(file_exist("/tmp/backdrop.resize.mpg"))
 								{					
 									cmd = ostrcat(cmd, "mv -f /tmp/backdrop.resize.mpg ", 1, 0);
@@ -754,59 +704,14 @@ void mediadb_edit(char* file, int menuid)
 									
 									writesysint("/proc/sys/vm/drop_caches", 3, 0);
 									free(mvi), mvi = NULL;
-									mvi = ostrcat(mvi, "1", 1, 0);
+									node->postercount = 1;
 								}
 								else
 									free(mvi), mvi = NULL;
 							}
 						}
-						else
-						{
-							debug(133, "ERROR Lokal Cover size to big skipped %d", picsize);
-							cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-							cmd = ostrcat(cmd, logfile, 1, 0);
-							system(cmd);
-							free(cmd), cmd = NULL;
-
-							cmd = ostrcat(cmd, "echo \"ERROR Lokal Cover size to big skipped: ", 1, 0);
-							cmd = ostrcat(cmd, picret, 1, 0);
-							cmd = ostrcat(cmd, " size=(", 1, 0);
-							cmd = ostrcat(cmd, size, 1, 0);
-							cmd = ostrcat(cmd, ")\" >> ", 1, 0);
-							cmd = ostrcat(cmd, logfile, 1, 0);
-							system(cmd);
-							free(cmd), cmd = NULL;
-
-							cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-							cmd = ostrcat(cmd, logfile, 1, 0);
-							system(cmd);
-							free(cmd), cmd = NULL;
-							free(mvi), mvi = NULL;			
-						}
 					}
-					else
-					{
-						debug(133, "ERROR size is NULL skipped %s", size);
-						cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-						cmd = ostrcat(cmd, logfile, 1, 0);
-						system(cmd);
-						free(cmd), cmd = NULL;
 
-						cmd = ostrcat(cmd, "echo \"ERROR Lokal Cover size is NULL skipped: ", 1, 0);
-						cmd = ostrcat(cmd, picret, 1, 0);
-						cmd = ostrcat(cmd, " size=(", 1, 0);
-						cmd = ostrcat(cmd, size, 1, 0);
-						cmd = ostrcat(cmd, ")\" >> ", 1, 0);
-						cmd = ostrcat(cmd, logfile, 1, 0);
-						system(cmd);
-						free(cmd), cmd = NULL;
-
-						cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-						cmd = ostrcat(cmd, logfile, 1, 0);
-						system(cmd);
-						free(cmd), cmd = NULL;
-						free(mvi), mvi = NULL;
-					}
 					free(size), size = NULL;
 					free(log), log = NULL;
 					free(logdir), logdir = NULL;
@@ -817,12 +722,12 @@ void mediadb_edit(char* file, int menuid)
 					unlink("/tmp/backdrop.resize.jpg");
 					unlink("/tmp/backdrop.resize.mpg");
 
-					node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, mvi, rating->ret, votes->ret, node->path, node->file, node->shortname, node->fileinfo, node->flag);
+					node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, mvi, rating->ret, votes->ret, node->path, node->file, node->shortname, node->fileinfo, node->flag, node->postercount);
 					free(mvi), mvi = NULL;
 /////////// end mvi
 				}
 				else
-					node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, node->poster, rating->ret, votes->ret, node->path, node->file, node->shortname, node->fileinfo, node->flag);
+					node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, node->poster, rating->ret, votes->ret, node->path, node->file, node->shortname, node->fileinfo, node->flag, node->postercount);
 
 				free(tmpstr); tmpstr = NULL;
 				clearscreen(load);
