@@ -375,7 +375,7 @@ int addmediadbcontent(struct mediadb* node, char *line, int len, int count)
 {
 	int ret = 0;
 	char* tmpstr = NULL, *type = NULL, *year = NULL, *rating = NULL;
-	char* votes = NULL, *timestamp = NULL, *flag = NULL;
+	char* votes = NULL, *timestamp = NULL, *flag = NULL, *postercount = NULL;
 
 	if(node == NULL) return 1;
 
@@ -414,6 +414,7 @@ int addmediadbcontent(struct mediadb* node, char *line, int len, int count)
 					case 16: node->fileinfo = tmpstr; break;	
 					case 17: timestamp = tmpstr; break;
 					case 18: flag = tmpstr; break;
+					case 19: postercount = tmpstr; break;
 				}
 
 				ret++;
@@ -443,6 +444,7 @@ int addmediadbcontent(struct mediadb* node, char *line, int len, int count)
 	if(votes != NULL) node->votes = atoi(votes);
 	if(timestamp != NULL) node->timestamp = strtoul(timestamp, NULL, 10);
 	if(flag != NULL) node->flag = atoi(flag);
+	if(postercount != NULL) node->postercount = atoi(postercount);
 
 	return 0;
 }
@@ -697,6 +699,7 @@ void freemediadbcontent(struct mediadb* node)
 	node->fileinfo = NULL;
 	node->timestamp = 0;
 	node->flag = 0;
+	node->postercount = 0;
 }
 
 //flag 0: with lock
@@ -934,7 +937,7 @@ int writemediadb(const char *filename)
 
 	while(node != NULL)
 	{
-		ret = fprintf(fd, "%s#%d#%s#%d#%s#%s#%s#%s#%s#%s#%s#%s#%d#%d#%s#%s#%s#%s#%lu#%d\n", node->id, node->type, node->title, node->year, node->released, node->runtime, node->genre, node->director, node->writer, node->actors, node->plot, node->poster, node->rating, node->votes, node->path, node->file, node->shortname, node->fileinfo, node->timestamp, node->flag);
+		ret = fprintf(fd, "%s#%d#%s#%d#%s#%s#%s#%s#%s#%s#%s#%s#%d#%d#%s#%s#%s#%s#%lu#%d#%d\n", node->id, node->type, node->title, node->year, node->released, node->runtime, node->genre, node->director, node->writer, node->actors, node->plot, node->poster, node->rating, node->votes, node->path, node->file, node->shortname, node->fileinfo, node->timestamp, node->flag, node->postercount);
 
 		if(ret < 0)
 		{
