@@ -192,13 +192,11 @@ char* unhexlify(const char *hexstr)
 		return NULL;
 	}
 
-	printf("%p\n", binstr);
 	for(p = hexstr, q = binstr; *p; p += 2, q++)
 	{
 		sscanf(p, "%2x", &tmpint);
 		*q = tmpint;
 	}
-	printf("%p\n", binstr);
 
 	return binstr;
 }
@@ -536,18 +534,14 @@ int checkreseller()
 {
 	if(checkbox("ATEMIO510") == 0 && checkbox("ATEMIO7600") == 0 && checkbox("AT7000") == 0 && checkbox("AT700") == 0)
 	{
-		printf("ResellerId: skipped\n");
-		printf("boxtype: %s\n", status.boxtype);	
+		debug(10, "ResellerId: skipped");
+		debug(10, "boxtype: %s", status.boxtype);
 		return 0;
 	}
-
-printf("1ResellerId\n");
 			
 	FILE* fd = NULL;
 	char mtd[10];
 	char* buf = NULL;
-	
-printf("2ResellerId\n");
 
 	// /dev/mtd0
 	mtd[0] = 0x2f;
@@ -560,13 +554,9 @@ printf("2ResellerId\n");
 	mtd[7] = 0x64;
 	mtd[8] = 0x30;
 	mtd[9] = '\0';
-
-printf("3ResellerId\n");
 	
 	if((fd = fopen(mtd, "r")) == NULL)
 		return 1;
-
-printf("4ResellerId\n");
 
 	buf = malloc(1080);
 	if(buf == NULL)
@@ -575,15 +565,13 @@ printf("4ResellerId\n");
 		return 1;
 	}
 
-printf("5ResellerId\n");
-
 	fread(buf, 1080, 1, fd);
 
 	if(checkbox("ATEMIO510") == 1)
 	{
 		if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x29 && (buf[1074] & 0xff) == 0x02 && (buf[1075] & 0xff) == 0xA0)
 		{
-			printf("ResellerId: found (%s) reseller !\n", status.boxtype);
+			debug(10, "ResellerId: found (%s) reseller !", status.boxtype);
 			free(buf);
 			fclose(fd);
 			return 0;
@@ -593,7 +581,7 @@ printf("5ResellerId\n");
 	{
 		if((buf[1072] & 0xff) == 0x23 && (buf[1073] & 0xff) == 0x03 && (buf[1074] & 0xff) == 0x00 && (buf[1075] & 0xff) == 0xA0)
 		{
-			printf("ResellerId: found (%s) reseller !\n", status.boxtype);
+			debug(10, "ResellerId: found (%s) reseller !", status.boxtype);
 			free(buf);
 			fclose(fd);
 			return 0;
@@ -603,7 +591,7 @@ printf("5ResellerId\n");
 	{
 		if((buf[1072] & 0xff) == 0x03 && (buf[1073] & 0xff) == 0x00 && (buf[1074] & 0xff) == 0x00 && (buf[1075] & 0xff) == 0x00)
 		{
-			printf("ResellerId: found (%s) reseller !\n", status.boxtype);
+			debug(10, "ResellerId: found (%s) reseller !", status.boxtype);
 			free(buf);
 			fclose(fd);
 			return 0;
@@ -613,7 +601,7 @@ printf("5ResellerId\n");
 	{
 		if((buf[1072] & 0xff) == 0x2d && (buf[1073] & 0xff) == 0x41 && (buf[1074] & 0xff) == 0x04 && (buf[1075] & 0xff) == 0xd2)
 		{
-			printf("ResellerId: found (%s) reseller !\n", status.boxtype);
+			debug(10, "ResellerId: found (%s) reseller !", status.boxtype);
 			free(buf);
 			fclose(fd);
 			return 0;
@@ -621,20 +609,9 @@ printf("5ResellerId\n");
 	}
 	else if(checkbox("AT7000") == 1)
 	{
-printf("6ResellerId\n");
-
-		printf("1ResellerId: check\n");
-		printf("1ResellerId1: %x\n", buf[1072]);
-		printf("1ResellerId2: %x\n", buf[1073]);
-		printf("1ResellerId3: %x\n", buf[1074]);
-		printf("1ResellerId4: %x\n", buf[1075]);
-		printf("1ResellerId: %x %x %x %x\n", buf[1072], buf[1073], buf[1074], buf[1075]);
-		printf("1ResellerId: not supported\n");
-		printf("1boxtype: %s\n", status.boxtype);
-		
 		if((buf[1072] & 0xff) == 0x02 && (buf[1073] & 0xff) == 0x27 && (buf[1074] & 0xff) == 0x12 && (buf[1075] & 0xff) == 0x22)
 		{
-			printf("ResellerId: found (%s) reseller !\n", status.boxtype);
+			debug(10, "ResellerId: found (%s) reseller !", status.boxtype);
 			free(buf);
 			fclose(fd);
 			return 0;
@@ -644,7 +621,7 @@ printf("6ResellerId\n");
 	{
 		if((buf[1072] & 0xff) == 0x09 && (buf[1073] & 0xff) == 0x00 && (buf[1074] & 0xff) == 0x09 && (buf[1075] & 0xff) == 0x00)
 		{
-			printf("ResellerId: found (%s) reseller !\n", status.boxtype);
+			debug(10, "ResellerId: found (%s) reseller !", status.boxtype);
 			free(buf);
 			fclose(fd);
 			return 0;
@@ -654,7 +631,7 @@ printf("6ResellerId\n");
 	{
 		if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x22 && (buf[1074] & 0xff) == 0x00 && (buf[1075] & 0xff) == 0xa0)
 		{
-			printf("ResellerId: found (%s) reseller !\n", status.boxtype);
+			debug(10, "ResellerId: found (%s) reseller !", status.boxtype);
 			free(buf);
 			fclose(fd);
 			return 0;
@@ -663,23 +640,13 @@ printf("6ResellerId\n");
 	else
 	{
 		// dummy fpr other boxes
-		printf("ResellerId: check\n");
-		printf("ResellerId1: %x\n", buf[1072]);
-		printf("ResellerId2: %x\n", buf[1073]);
-		printf("ResellerId3: %x\n", buf[1074]);
-		printf("ResellerId4: %x\n", buf[1075]);
-		printf("ResellerId: %x %x %x %x\n", buf[1072], buf[1073], buf[1074], buf[1075]);
-		printf("ResellerId: not supported\n");
-		printf("boxtype: %s\n", status.boxtype);
+		debug(10, "ResellerId: not supported");
+		debug(10, "boxtype: %s", status.boxtype);
 		return 1;
 	}
 
-printf("7ResellerId\n");
-
 	free(buf);
 	fclose(fd);
-printf("8ResellerId\n");
-
 	return 1;
 }
 
@@ -2214,18 +2181,12 @@ void checkboxstart()
 		{
 			time_t akttime = time(NULL);
 			time_t begin = node->begin - getconfigint("wakeuptimerdevdiff", NULL);
-printf("akttime = %ld\n", akttime);
-printf("node->begin = %ld\n", node->begin);
-printf("begin = %ld\n", begin);
-printf("akttime - timediff = %ld\n", akttime - timediff);
-printf("akttime + timediff = %ld\n", akttime + timediff);
+
 			if(begin > akttime - timediff && begin < akttime + timediff)
 			{
-printf("treffer\n");
 				debug(400, "found rectimer who has start the box");
 				setwaswakuptimer(1);
 			}
-printf("-----------------\n");
 		}
 		node = node->next;
 	}
@@ -5502,19 +5463,15 @@ void setaktres()
 	int sec = 0;
 
 	if(status.restimer == NULL) return;
-printf("1\n");
 	sec = (int)status.restimer->param1;
-printf("2\n");
 
 	if(sec > 0)
 	{
-printf("3\n");
 		while(status.restimer->aktion == START && count <= sec)
 		{
 			sleep(1);
 			if(status.restimer->aktion != START)
 			{
-printf("4\n");
 				status.restimer = NULL;
 				return;
 			}
@@ -5522,21 +5479,16 @@ printf("4\n");
 		}
 	}
 
-printf("5\n");
 	if(videoreadqwidth(status.aktservice->videodev) == 0)
 	{
-printf("6\n");
 		m_width = status.videosize.w;
-printf("7\n");
 		if(m_width == 720)
 		{
-printf("8\n");
 			res_sd = getconfig("av_videomode_autores_sd", NULL);
 			if(res_sd == NULL)
 				res = ostrcat(res, "576i50", 1, 0);
 			else
 				res = ostrcat(res, res_sd, 1, 0);
-printf("9\n");
 		}
 		else if (m_width == 1280)
 			res = ostrcat(res, "720p50", 1, 0);
@@ -5544,32 +5496,23 @@ printf("9\n");
 			res = ostrcat(res, "1080i50", 1, 0);
 		else
 			m_width = 0;
-printf("10\n");
+
 		if(m_width > 0)
 		{
-printf("11\n");
 			res_akt = getvideomode();
-printf("12\n");
 			if (ostrcmp(res_akt, res) != 0)
 			{
-printf("13\n");
 				setvideomode(res, 1);
-printf("14\n");
 	  		changefbresolution(res);
-printf("15\n");
 				sleep(1);
-printf("16\n");
 				screenautores(res, 5, 0);
-printf("17\n");
 			}
 		}
 	}
 	else
 		textbox(_("Message"), _("ERROR cant read res"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 
-printf("18\n");
 	free(res);
-printf("19\n");
 	res = NULL;
 	status.restimer = NULL;
 	return;
