@@ -417,8 +417,8 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 						mvicount++;
 						printf("load %s\n",(&ret1[i])->part);
 
-						debug(50, "drop_caches");
-						writesysint("/proc/sys/vm/drop_caches", 3, 0);
+//						debug(50, "drop_caches");
+//						writesysint("/proc/sys/vm/drop_caches", 3, 0);
 	
 						if(!ostrncmp("http://", (&ret1[i])->part, 7))
 						{
@@ -512,6 +512,8 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 													debug(133, "cmd %s", cmd);
 													system(cmd);
 													free(cmd); cmd = NULL;
+													
+													writesysint("/proc/sys/vm/drop_caches", 3, 0);
 												}
 												else
 													mvicount--;
@@ -688,6 +690,8 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 									debug(133, "cmd %s", cmd);
 									system(cmd);
 									free(cmd); cmd = NULL;
+									
+									writesysint("/proc/sys/vm/drop_caches", 3, 0);
 								}
 							}
 						}
