@@ -519,7 +519,7 @@ struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last,
 	return newnode;
 }
 
-struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* title, char* year, char* released, char* runtime, char* genre, char* director, char* writer, char* actors, char* plot, char* poster, char* rating, char* votes, char* path, char* file, char* shortname, char* fileinfo, int flag)
+struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* title, char* year, char* released, char* runtime, char* genre, char* director, char* writer, char* actors, char* plot, char* poster, char* rating, char* votes, char* path, char* file, char* shortname, char* fileinfo, int flag, int postercount)
 {
 	struct mediadb* mnode = NULL;
 	char* tmpstr = NULL;
@@ -584,6 +584,8 @@ struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* 
 	tmpstr = ostrcat(tmpstr, olutoa(time(NULL)), 1, 1);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	tmpstr = ostrcat(tmpstr, oitoa(flag), 1, 1);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, oitoa(postercount), 1, 1);
 
 	tmpstr = string_replace_all("\n", "", tmpstr, 1);
 	tmpstr = string_replace_all("\r", "", tmpstr, 1);
