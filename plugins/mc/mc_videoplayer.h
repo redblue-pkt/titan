@@ -216,9 +216,9 @@ void screenmc_videoplayer()
 				free(cmd), cmd = NULL;
 				cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 1, 0);
 				mviwait = waittime;
-				thumb->hidden = YES;
-				plot->hidden = YES;
-				title->hidden = YES;
+//				thumb->hidden = YES;
+//				plot->hidden = YES;
+//				title->hidden = YES;
 
 				drawscreen(apskin, 0, 0);
 			}
