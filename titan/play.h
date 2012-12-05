@@ -59,7 +59,7 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 // show thumb cover start
 	struct skin* playinfobarcover = getscreen("playinfobarcover");
 	struct skin* cover = getscreennode(playinfobarcover, "cover");
-
+	cover->hidden = YES;
 	if(file != NULL)
 	{
 		struct mediadb* node = NULL;
@@ -75,7 +75,10 @@ void screenplayinfobar(char* file, int mode, int playertype, int flag)
 			tmpstr = ostrcat(tmpstr, node->id, 1, 0);
 			tmpstr = ostrcat(tmpstr, "_poster.jpg", 0, 0);
 			if(file_exist(tmpstr))
+			{
 				changepic(cover, tmpstr);
+				cover->hidden = NO;
+			}
 			free(tmpstr), tmpstr = NULL;
 		}
 	}
