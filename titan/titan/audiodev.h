@@ -202,26 +202,19 @@ int audiosetbypassmode(struct dvbdev* node, int mode)
 	//auto increase volume for ac3
 	if(status.volautochangevalue != 0)
 	{
+		int aktvol = getvol();
 		if(mode == AC3)
 		{
 			if(status.volautochange == 0)
 			{
-				int aktvol = getvol();
-				if(aktvol + status.volautochangevalue > 100)
-					status.volautochange = 100 - aktvol;
-				else
-					status.volautochange = status.volautochangevalue;
-				//setvol(aktvol + status.volautochange);
-				setvol(aktvol);
+				status.volautochange = 1;
 			}
 		}
 		else if(status.volautochange > 0)
 		{
-			int aktvol = getvol();
-			//setvol(getvol() - status.volautochange);
 			status.volautochange = 0;
-			setvol(aktvol);
 		}
+		setvol(aktvol);
 	}
 	
 	return 0;
