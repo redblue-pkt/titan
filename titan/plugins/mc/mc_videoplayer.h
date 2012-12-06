@@ -50,6 +50,7 @@ void screenmc_videoplayer()
 	struct skin* plot = getscreennode(apskin, "plot");
 	struct skin* title = getscreennode(apskin, "title");
 	struct skin* thumb = getscreennode(apskin, "thumb");
+	struct skin* stars = getscreennode(apskin, "stars");
 
 	if(getconfigint("mc_vp_uselastdir", NULL) == 1)
 	{
@@ -99,6 +100,7 @@ void screenmc_videoplayer()
 	thumb->hidden = YES;
 	plot->hidden = YES;
 	title->hidden = YES;
+	stars->hidden = YES;
 
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
 	addscreenrc(apskin, filelist);
@@ -136,7 +138,7 @@ void screenmc_videoplayer()
 			char* cmd = NULL;
 			char* pic = NULL;
 
-			int waittime = 5, foundthumb = 0, foundplot = 0, foundtitle = 0;
+			int waittime = 5, foundthumb = 0, foundplot = 0, foundtitle = 0, foundstars = 0;
 			waittime = getconfigint("mc_vp_backdrop", NULL);
 
 			if(filelist->select != NULL && filelist->select->input == NULL)
@@ -214,6 +216,65 @@ void screenmc_videoplayer()
 						foundtitle = 1;
 						title->hidden = NO;
 					}
+					
+					if(mnode->rating != 0)
+					{
+						foundstars = 1;
+						int rating = mnode->rating;
+						if(rating == 10)
+							changepic(stars, "%pluginpath%/mc/skin/stars10.png");
+						else if(rating > 9)
+							changepic(stars, "%pluginpath%/mc/skin/stars9x.png");
+						else if(rating == 9)
+							changepic(stars, "%pluginpath%/mc/skin/stars9.png");
+						else if(rating > 8)
+							changepic(stars, "%pluginpath%/mc/skin/stars8x.png");
+						else if(rating == 8)
+							changepic(stars, "%pluginpath%/mc/skin/stars8.png");
+						else if(rating > 7)
+							changepic(stars, "%pluginpath%/mc/skin/stars7x.png");
+						else if(rating == 7)
+							changepic(stars, "%pluginpath%/mc/skin/stars7.png");
+						else if(rating > 6)
+							changepic(stars, "%pluginpath%/mc/skin/stars6x.png");
+						else if(rating == 6)
+							changepic(stars, "%pluginpath%/mc/skin/stars6.png");
+						else if(rating > 5)
+							changepic(stars, "%pluginpath%/mc/skin/stars5x.png");
+						else if(rating == 5)
+							changepic(stars, "%pluginpath%/mc/skin/stars5.png");
+						else if(rating > 5)
+							changepic(stars, "%pluginpath%/mc/skin/stars5x.png");
+						else if(rating == 5)
+							changepic(stars, "%pluginpath%/mc/skin/stars5.png");
+						else if(rating > 4)
+							changepic(stars, "%pluginpath%/mc/skin/stars4x.png");
+						else if(rating == 4)
+							changepic(stars, "%pluginpath%/mc/skin/stars4.png");
+						else if(rating > 3)
+							changepic(stars, "%pluginpath%/mc/skin/stars3x.png");
+						else if(rating == 3)
+							changepic(stars, "%pluginpath%/mc/skin/stars3.png");
+						else if(rating > 2)
+							changepic(stars, "%pluginpath%/mc/skin/stars2x.png");
+						else if(rating == 2)
+							changepic(stars, "%pluginpath%/mc/skin/stars2.png");
+						else if(rating > 1)
+							changepic(stars, "%pluginpath%/mc/skin/stars1x.png");
+						else if(rating == 1)
+							changepic(stars, "%pluginpath%/mc/skin/stars1.png");
+						else if(rating > 0)
+							changepic(stars, "%pluginpath%/mc/skin/stars0x.png");
+						else
+							changepic(stars, NULL);
+						stars->hidden = NO;
+					}
+					else
+					{
+						foundstars = 0;
+						changepic(stars, NULL);
+						stars->hidden = YES;
+					}
 				}
 				else	
 				{
@@ -221,9 +282,11 @@ void screenmc_videoplayer()
 					foundthumb = 0;
 					foundplot = 0;
 					foundtitle = 0;
+					foundstars = 0;
 					thumb->hidden = YES;
 					plot->hidden = YES;
 					title->hidden = YES;
+					stars->hidden = YES;
 					free(pic), pic = NULL;
 				}
 					
@@ -242,6 +305,8 @@ void screenmc_videoplayer()
 					plot->hidden = YES;
 				if(foundtitle == 0)
 					title->hidden = YES;
+				if(foundstars == 0)					
+					stars->hidden = YES;
 
 				drawscreen(apskin, 0, 0);
 			}
