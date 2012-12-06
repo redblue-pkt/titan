@@ -31,7 +31,7 @@ void gmediarendergetpic(struct skin* gmediarender, char* buf)
 
 	if(cmpfilenameext(path, ".jpg") == 0)
 	{
-	
+		unlink("/tmp/gmediarenderpic.jpg");
 		char* cmd = NULL;
 		cmd = ostrcat(cmd, "wget ", 1, 0);
 		cmd = ostrcat(cmd, buf, 1, 0);
@@ -45,6 +45,7 @@ void gmediarendergetpic(struct skin* gmediarender, char* buf)
 	}
 	if(cmpfilenameext(path, ".png") == 0)
 	{
+		unlink("/tmp/gmediarenderpic.png");
 		char* cmd = NULL;
 		cmd = ostrcat(cmd, "wget ", 1, 0);
 		cmd = ostrcat(cmd, buf, 1, 0);
