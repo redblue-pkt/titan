@@ -208,22 +208,12 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 
 	if(getconfigint("mediadb_log", NULL) == 1)
 	{
-		log = ostrcat(log, "echo \"####################################################################\" >> ", 1, 0);
-		log = ostrcat(log, logfile, 1, 0);
-		system(log);
-		free(log), log = NULL;
-		log = ostrcat(log, "echo \"", 1, 0);
-		log = ostrcat(log, title, 1, 0);
-		log = ostrcat(log, "\" >> ", 1, 0);
-		log = ostrcat(log, logfile, 1, 0);
-		system(log);
-		free(log), log = NULL;
-		log = ostrcat(log, "echo \"####################################################################\" >> ", 1, 0);
-		log = ostrcat(log, logfile, 1, 0);
-		system(log);
-		free(log), log = NULL;
+		writesys(logfile, "####################################################################", 3); 
+		writesys(logfile, "title: ", 2); 
+		writesys(logfile, title, 3);
+		writesys(logfile, "####################################################################", 3); 
 	}
-	
+
 	if(tmpstr != NULL)
 	{
 		if(ostrstr(tmpstr, "<movies>Nothing found.</movies>") != NULL)
@@ -290,15 +280,12 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 				tnode->plot = string_resub("<overview>", "</overview>", tmpstr1, 0);
 
 			if(flag1 != 2 && ostrstr(tmpstr1, "size=\"thumb\"") != NULL)
-//				tnode->thumb = string_resub("<image type=\"poster\" url=\"", "\" size=\"thumb\"", tmpstr1, 1);
 				tnode->thumb = oregex(".*<image type=\"poster\" url=\".*(http://.*)\" size=\"thumb\".*", tmpstr1);
 
 			if(flag1 != 2 && ostrstr(tmpstr1, "size=\"cover\"") != NULL)
-//				tnode->cover = string_resub("<image type=\"poster\" url=\"", "\" size=\"cover\"", tmpstr1, 1);
 				tnode->cover = oregex(".*<image type=\"poster\" url=\".*(http://.*)\" size=\"cover\".*", tmpstr1);
 
 			if(flag1 != 2 && ostrstr(tmpstr1, "size=\"mid\"") != NULL)
-//				tnode->postermid = string_resub("<image type=\"poster\" url=\"", "\" size=\"mid\"", tmpstr1, 1);
 				tnode->postermid = oregex(".*<image type=\"poster\" url=\".*(http://.*)\" size=\"mid\".*", tmpstr1);
 
 			if(flag1 != 2 && ostrstr(tmpstr1, "<images>") != NULL)
@@ -440,7 +427,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 								{
 
 									off64_t filesize = getfilesize(tnode->backdrop);
-									printf("filesize: %lld.\n", filesize);
+									debug(133, "filesize %lld", filesize);
 									
 									if(filesize < 1500000)
 									{
@@ -475,27 +462,18 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 												{
 													if(getconfigint("mediadb_log", NULL) == 1)
 													{
-														cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-														cmd = ostrcat(cmd, logfile, 1, 0);
-														system(cmd);
-														free(cmd), cmd = NULL;
-																							
-														cmd = ostrcat(cmd, "echo \"", 1, 0);
-														cmd = ostrcat(cmd, tnode->backdrop, 1, 0);
-														cmd = ostrcat(cmd, " size=(", 1, 0);
-														cmd = ostrcat(cmd, size, 1, 0);
-														cmd = ostrcat(cmd, ") (", 1, 0);
-														cmd = ostrcat(cmd, (&ret1[i])->part, 1, 0);
-														cmd = ostrcat(cmd, ")\" >> ", 1, 0);
-														cmd = ostrcat(cmd, logfile, 1, 0);
-														system(cmd);
-														free(cmd), cmd = NULL;
-	
-														cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-														cmd = ostrcat(cmd, logfile, 1, 0);
-														system(cmd);
-														free(cmd), cmd = NULL;
-																								
+														writesys(logfile, "#############", 3); 
+														writesys(logfile, "backdrop: ", 2); 
+														writesys(logfile, tnode->backdrop, 2);
+														writesys(logfile, " size=(", 2);
+														writesys(logfile, size, 2);
+														writesys(logfile, ") filesize(", 2);
+														writesys(logfile, oitoa(filesize), 2);
+														writesys(logfile, ") (", 2);
+														writesys(logfile, (&ret1[i])->part, 2);
+														writesys(logfile, ")", 3);
+														writesys(logfile, "#############", 3); 
+
 														cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg >> ", 1, 0);
 														cmd = ostrcat(cmd, logfile, 1, 0);
 														cmd = ostrcat(cmd, " 2>&1", 1, 0);
@@ -525,60 +503,66 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 											else
 											{
 												debug(133, "ERROR Backdrop size to big skipped %d", picsize);
-												cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-												cmd = ostrcat(cmd, logfile, 1, 0);
-												system(cmd);
-												free(cmd), cmd = NULL;	
-	
-												cmd = ostrcat(cmd, "echo \"ERROR Backdrop size to big skipped: ", 1, 0);
-												cmd = ostrcat(cmd, tnode->backdrop, 1, 0);
-												cmd = ostrcat(cmd, " size=(", 1, 0);
-												cmd = ostrcat(cmd, size, 1, 0);
-												cmd = ostrcat(cmd, ") (", 1, 0);
-												cmd = ostrcat(cmd, (&ret1[i])->part, 1, 0);
-												cmd = ostrcat(cmd, ")\" >> ", 1, 0);
-												cmd = ostrcat(cmd, logfile, 1, 0);
-												system(cmd);
-												free(cmd), cmd = NULL;
-	
-												cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-												cmd = ostrcat(cmd, logfile, 1, 0);
-												system(cmd);
-												free(cmd), cmd = NULL;
-	
+
+												if(getconfigint("mediadb_log", NULL) == 1)
+												{
+													writesys(logfile, "#############", 3); 
+													writesys(logfile, "ERROR Backdrop size to big skipped: ", 3); 
+													writesys(logfile, tnode->backdrop, 2);
+													writesys(logfile, " size=(", 2);
+													writesys(logfile, size, 2);
+													writesys(logfile, ") filesize(", 2);
+													writesys(logfile, oitoa(filesize), 2);
+													writesys(logfile, ") (", 2);
+													writesys(logfile, (&ret1[i])->part, 2);
+													writesys(logfile, ")", 3);
+													writesys(logfile, "#############", 3);
+												}	
 												mvicount--;
 											}
 										}
 										else
 										{
 											debug(133, "ERROR Backdrop size is NULL skipped %s", size);
-											cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-											cmd = ostrcat(cmd, logfile, 1, 0);
-											system(cmd);
-											free(cmd), cmd = NULL;
-	
-											cmd = ostrcat(cmd, "echo \"ERROR Backdrop size is NULL skipped: ", 1, 0);
-											cmd = ostrcat(cmd, tnode->backdrop, 1, 0);
-											cmd = ostrcat(cmd, " size=(", 1, 0);
-											cmd = ostrcat(cmd, size, 1, 0);
-											cmd = ostrcat(cmd, ") (", 1, 0);
-											cmd = ostrcat(cmd, (&ret1[i])->part, 1, 0);
-											cmd = ostrcat(cmd, ")\" >> ", 1, 0);
-											cmd = ostrcat(cmd, logfile, 1, 0);
-											system(cmd);
-											free(cmd), cmd = NULL;
-	
-											cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-											cmd = ostrcat(cmd, logfile, 1, 0);
-											system(cmd);
-											free(cmd), cmd = NULL;
-												
+
+											if(getconfigint("mediadb_log", NULL) == 1)
+											{
+												writesys(logfile, "#############", 3); 
+												writesys(logfile, "ERROR Backdrop size is NULL skipped: ", 3); 
+												writesys(logfile, tnode->backdrop, 2);
+												writesys(logfile, " size=(", 2);
+												writesys(logfile, size, 2);
+												writesys(logfile, ") filesize(", 2);
+												writesys(logfile, oitoa(filesize), 2);
+												writesys(logfile, ") (", 2);
+												writesys(logfile, (&ret1[i])->part, 2);
+												writesys(logfile, ")", 3);
+												writesys(logfile, "#############", 3);
+											}
+
 											mvicount--;
 										}
 										free(size), size = NULL;
 										unlink("/tmp/mediadb.meta");
 										unlink("/tmp/backdrop.resize.jpg");
 										unlink("/tmp/backdrop.resize.mpg");
+									}
+									else
+									{
+										debug(133, "ERROR Backdrop filesize to BIG skipped %lld", filesize);
+				
+										if(getconfigint("mediadb_log", NULL) == 1)
+										{
+											writesys(logfile, "#############", 3); 
+											writesys(logfile, "ERROR Backdrop filesize to BIG skipped: ", 3); 
+											writesys(logfile, tnode->backdrop, 2);
+											writesys(logfile, " filesize(", 2);
+											writesys(logfile, oitoa(filesize), 2);
+											writesys(logfile, ") (", 2);
+											writesys(logfile, (&ret1[i])->part, 2);
+											writesys(logfile, ")", 3);
+											writesys(logfile, "#############", 3);
+										}									
 									}
 								}
 								else
@@ -663,26 +647,17 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 								{
 									if(getconfigint("mediadb_log", NULL) == 1)
 									{
-										cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-										cmd = ostrcat(cmd, logfile, 1, 0);
-										system(cmd);
-										free(cmd), cmd = NULL;
-											
-										cmd = ostrcat(cmd, "echo \"", 1, 0);
-										cmd = ostrcat(cmd, tnode->postermid, 1, 0);
-										cmd = ostrcat(cmd, " size=(", 1, 0);
-										cmd = ostrcat(cmd, size, 1, 0);
-										cmd = ostrcat(cmd, ") (", 1, 0);
-										cmd = ostrcat(cmd, posterurl, 1, 0);
-										cmd = ostrcat(cmd, ")\" >> ", 1, 0);
-										cmd = ostrcat(cmd, logfile, 1, 0);
-										system(cmd);
-										free(cmd), cmd = NULL;
-	
-										cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-										cmd = ostrcat(cmd, logfile, 1, 0);
-										system(cmd);
-										free(cmd), cmd = NULL;
+										writesys(logfile, "#############", 3); 
+										writesys(logfile, "postermid: ", 2); 
+										writesys(logfile, tnode->postermid, 2);
+										writesys(logfile, " size=(", 2);
+										writesys(logfile, size, 2);
+										writesys(logfile, ") filesize(", 2);
+										writesys(logfile, oitoa(filesize), 2);
+										writesys(logfile, ") (", 2);
+										writesys(logfile, posterurl, 2);
+										writesys(logfile, ")", 3);
+										writesys(logfile, "#############", 3); 
 	
 										cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg >> ", 1, 0);
 										cmd = ostrcat(cmd, logfile, 1, 0);
@@ -711,57 +686,67 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 							else
 							{
 								debug(133, "ERROR Postermid size to big skipped %d", picsize);
-								cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-								cmd = ostrcat(cmd, logfile, 1, 0);
-								system(cmd);
-								free(cmd), cmd = NULL;
-	
-								cmd = ostrcat(cmd, "echo \"ERROR Postermid size to big skipped: ", 1, 0);
-								cmd = ostrcat(cmd, tnode->postermid, 1, 0);
-								cmd = ostrcat(cmd, " size=(", 1, 0);
-								cmd = ostrcat(cmd, size, 1, 0);
-								cmd = ostrcat(cmd, ")\" >> ", 1, 0);
-								cmd = ostrcat(cmd, logfile, 1, 0);
-								system(cmd);
-								free(cmd), cmd = NULL;
-	
-								cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-								cmd = ostrcat(cmd, logfile, 1, 0);
-								system(cmd);
-								free(cmd), cmd = NULL;
-											
+
+								if(getconfigint("mediadb_log", NULL) == 1)
+								{
+									writesys(logfile, "#############", 3); 
+									writesys(logfile, "ERROR Postermid size to big skipped: ", 3); 
+									writesys(logfile, tnode->postermid, 2);
+									writesys(logfile, " size=(", 2);
+									writesys(logfile, size, 2);
+									writesys(logfile, ") filesize(", 2);
+									writesys(logfile, oitoa(filesize), 2);
+									writesys(logfile, ") (", 2);
+									writesys(logfile, posterurl, 2);
+									writesys(logfile, ")", 3);
+									writesys(logfile, "#############", 3);
+								}
 							}
 						}
 						else
 						{
-							debug(133, "ERROR size is NULL skipped %s", size);
-							cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-							cmd = ostrcat(cmd, logfile, 1, 0);
-							system(cmd);
-							free(cmd), cmd = NULL;
-	
-							cmd = ostrcat(cmd, "echo \"ERROR Postermid size is NULL skipped: ", 1, 0);
-							cmd = ostrcat(cmd, tnode->postermid, 1, 0);
-							cmd = ostrcat(cmd, " size=(", 1, 0);
-							cmd = ostrcat(cmd, size, 1, 0);
-							cmd = ostrcat(cmd, ")\" >> ", 1, 0);
-							cmd = ostrcat(cmd, logfile, 1, 0);
-							system(cmd);
-							free(cmd), cmd = NULL;
-	
-							cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-							cmd = ostrcat(cmd, logfile, 1, 0);
-							system(cmd);
-							free(cmd), cmd = NULL;
+							debug(133, "ERROR Postermid size is NULL skipped %s", size);
+
+							if(getconfigint("mediadb_log", NULL) == 1)
+							{
+								writesys(logfile, "#############", 3); 
+								writesys(logfile, "ERROR Postermid size is NULL skipped: ", 3); 
+								writesys(logfile, tnode->postermid, 2);
+								writesys(logfile, " size=(", 2);
+								writesys(logfile, size, 2);
+								writesys(logfile, ") filesize(", 2);
+								writesys(logfile, oitoa(filesize), 2);
+								writesys(logfile, ") (", 2);
+								writesys(logfile, posterurl, 2);
+								writesys(logfile, ")", 3);
+								writesys(logfile, "#############", 3);
+							}
 						}
 						free(size), size = NULL;
 						unlink("/tmp/mediadb.meta");
 						unlink("/tmp/backdrop.resize.jpg");
 						unlink("/tmp/backdrop.resize.mpg");
 					}
+					else
+					{
+						debug(133, "ERROR Postermid filesize to BIG skipped %lld", filesize);
+
+						if(getconfigint("mediadb_log", NULL) == 1)
+						{
+							writesys(logfile, "#############", 3); 
+							writesys(logfile, "ERROR Postermid filesize to BIG skipped: ", 3); 
+							writesys(logfile, tnode->postermid, 2);
+							writesys(logfile, " filesize(", 2);
+							writesys(logfile, oitoa(filesize), 2);
+							writesys(logfile, ") (", 2);
+							writesys(logfile, posterurl, 2);
+							writesys(logfile, ")", 3);
+							writesys(logfile, "#############", 3);
+						}
+					}
 				}
 			}
-
+					
 			if(file_exist(tnode->mvi))
 				unlink(tnode->backdrop);
 		
@@ -773,11 +758,10 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 			tmpstr1 += 5;
 			tmpstr1 = ostrstr(tmpstr1, "<movie>");
 
-printf("free1\n");
 			free(tmpstr1), tmpstr1 = NULL;
-printf("free2\n");
 			free(posterurl), posterurl = NULL;
-printf("free3\n");
+			free(logdir), logdir = NULL;
+			free(logfile), logfile = NULL;
 				
      		debug(133, "----------------------tmdb start----------------------");
 			debug(133, "title: %s", tnode->title);

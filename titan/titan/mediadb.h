@@ -375,7 +375,7 @@ int addmediadbcontent(struct mediadb* node, char *line, int len, int count)
 {
 	int ret = 0;
 	char* tmpstr = NULL, *type = NULL, *year = NULL, *rating = NULL;
-	char* votes = NULL, *timestamp = NULL, *flag = NULL, *postercount = NULL;
+	char* votes = NULL, *timestamp = NULL, *flag = NULL, *backdropcount = NULL;
 
 	if(node == NULL) return 1;
 
@@ -414,7 +414,7 @@ int addmediadbcontent(struct mediadb* node, char *line, int len, int count)
 					case 16: node->fileinfo = tmpstr; break;	
 					case 17: timestamp = tmpstr; break;
 					case 18: flag = tmpstr; break;
-					case 19: postercount = tmpstr; break;
+					case 19: backdropcount = tmpstr; break;
 				}
 
 				ret++;
@@ -444,7 +444,7 @@ int addmediadbcontent(struct mediadb* node, char *line, int len, int count)
 	if(votes != NULL) node->votes = atoi(votes);
 	if(timestamp != NULL) node->timestamp = strtoul(timestamp, NULL, 10);
 	if(flag != NULL) node->flag = atoi(flag);
-	if(postercount != NULL) node->postercount = atoi(postercount);
+	if(backdropcount != NULL) node->backdropcount = atoi(backdropcount);
 
 	return 0;
 }
@@ -519,7 +519,7 @@ struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last,
 	return newnode;
 }
 
-struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* title, char* year, char* released, char* runtime, char* genre, char* director, char* writer, char* actors, char* plot, char* poster, char* rating, char* votes, char* path, char* file, char* shortname, char* fileinfo, int flag, int postercount)
+struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* title, char* year, char* released, char* runtime, char* genre, char* director, char* writer, char* actors, char* plot, char* poster, char* rating, char* votes, char* path, char* file, char* shortname, char* fileinfo, int flag, int backdropcount)
 {
 	struct mediadb* mnode = NULL;
 	char* tmpstr = NULL;
@@ -585,7 +585,7 @@ struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* 
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	tmpstr = ostrcat(tmpstr, oitoa(flag), 1, 1);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, oitoa(postercount), 1, 1);
+	tmpstr = ostrcat(tmpstr, oitoa(backdropcount), 1, 1);
 
 	tmpstr = string_replace_all("\n", "", tmpstr, 1);
 	tmpstr = string_replace_all("\r", "", tmpstr, 1);
@@ -701,7 +701,7 @@ void freemediadbcontent(struct mediadb* node)
 	node->fileinfo = NULL;
 	node->timestamp = 0;
 	node->flag = 0;
-	node->postercount = 0;
+	node->backdropcount = 0;
 }
 
 //flag 0: with lock
@@ -939,7 +939,7 @@ int writemediadb(const char *filename)
 
 	while(node != NULL)
 	{
-		ret = fprintf(fd, "%s#%d#%s#%d#%s#%s#%s#%s#%s#%s#%s#%s#%d#%d#%s#%s#%s#%s#%lu#%d#%d\n", node->id, node->type, node->title, node->year, node->released, node->runtime, node->genre, node->director, node->writer, node->actors, node->plot, node->poster, node->rating, node->votes, node->path, node->file, node->shortname, node->fileinfo, node->timestamp, node->flag, node->postercount);
+		ret = fprintf(fd, "%s#%d#%s#%d#%s#%s#%s#%s#%s#%s#%s#%s#%d#%d#%s#%s#%s#%s#%lu#%d#%d\n", node->id, node->type, node->title, node->year, node->released, node->runtime, node->genre, node->director, node->writer, node->actors, node->plot, node->poster, node->rating, node->votes, node->path, node->file, node->shortname, node->fileinfo, node->timestamp, node->flag, node->backdropcount);
 
 		if(ret < 0)
 		{
@@ -1758,28 +1758,23 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			fileinfo = ostrcat(fileinfo, getfilenameext(tmpstr), 1, 1);
 			free(tmpstr), tmpstr = NULL;
 
+			char* logdir = ostrcat(getconfig("mediadbpath", NULL), "/.mediadb_log", 0, 0);
+			if(!file_exist(logdir))
+				mkdir(logdir, 0777);
+			char* logfile = ostrcat(logdir, "/imdb-scan.log", 1, 0);
+		
 			if(getconfigint("mediadb_log", NULL) == 1)
 			{
-				// log shortname
-				tmpstr1 = ostrcat(getconfig("mediadbpath", NULL), "/.mediadb_log", 0, 0);
-				if(!file_exist(tmpstr1))
-					mkdir(tmpstr1, 0777); 
-
-				tmpstr1 = ostrcat(tmpstr1, "/_shortname.log", 1, 0);
-				
-				tmpstr = readfiletomem(tmpstr1, 0);
-				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-				tmpstr = ostrcat(tmpstr, file, 1, 0);
-				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-				tmpstr = ostrcat(tmpstr, shortname, 1, 0);
-				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-				tmpstr = ostrcat(tmpstr, fileinfo, 1, 0);
-
-				writesys(tmpstr1, tmpstr, 0);
-				free(tmpstr), tmpstr = NULL;
-				free(tmpstr1), tmpstr1 = NULL;
+				writesys(logfile, "####################################################################", 3); 
+				writesys(logfile, "file: ", 2);
+				writesys(logfile, file, 3);
+				writesys(logfile, "shortname: ", 2);
+				writesys(logfile, shortname, 3);
+				writesys(logfile, "fileinfo: ", 2);
+				writesys(logfile, fileinfo, 3);
+				writesys(logfile, "####################################################################", 3); 
 			}
-
+	
 			//got imdb infos
 			struct skin* imdbplugin = getplugin("IMDb");
 			if(imdbplugin != NULL)
@@ -1916,11 +1911,6 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			}
 			else if((cmpfilenameext(file, ".ts") == 0) || (cmpfilenameext(file, ".mts") == 0))
 			{
-				char* logdir = ostrcat(getconfig("mediadbpath", NULL), "/.mediadb_log", 0, 0);
-				if(!file_exist(logdir))
-					mkdir(logdir, 0777);
-				char* logfile = ostrcat(logdir, "/imdb-scan.log", 1, 0);
-	
 				char* timestamp = NULL;
 				timestamp = oregex(".*([0-9]{14,14}).*", file);
 				if(timestamp == NULL)
@@ -1955,7 +1945,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				cmd = ostrcat(cmd, "/", 1, 0);	
 				cmd = ostrcat(cmd, timestamp, 1, 0);
 				cmd = ostrcat(cmd, "_thumb.jpg", 1, 0);
-				printf("cmd: %s\n",cmd);
+				debug(133, "cmd %s", cmd);
 				system(cmd);
 				free(cmd); cmd = NULL;
 
@@ -1969,7 +1959,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				cmd = ostrcat(cmd, "/", 1, 0);	
 				cmd = ostrcat(cmd, timestamp, 1, 0);
 				cmd = ostrcat(cmd, "_cover.jpg", 1, 0);
-				printf("cmd: %s\n",cmd);
+				debug(133, "cmd %s", cmd);
 				system(cmd);
 				free(cmd); cmd = NULL;
 
@@ -1983,158 +1973,183 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				cmd = ostrcat(cmd, "/", 1, 0);
 				cmd = ostrcat(cmd, timestamp, 1, 0);
 				cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
-				printf("cmd: %s\n",cmd);
+				debug(133, "cmd %s", cmd);
 				system(cmd);
 				free(cmd); cmd = NULL;
 
-				cmd = ostrcat(cmd, "ffmpeg -i ", 1, 0);
 				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
 				cmd = ostrcat(cmd, "/", 1, 0);
 				cmd = ostrcat(cmd, timestamp, 1, 0);
 				cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
-				cmd = ostrcat(cmd, " > /tmp/mediadb.meta 2>&1", 1, 0);
-
-				debug(133, "cmd %s", cmd);
-				system(cmd);
+				
+				off64_t filesize = getfilesize(cmd);
+				debug(133, "filesize %lld", filesize);
 				free(cmd); cmd = NULL;
-					
-				char* size = string_newline(command("cat /tmp/mediadb.meta | grep Stream | awk '{print $6}' | cut -d'x' -f1"));
-				debug(133, "size %s", size);
-				if(size != NULL)
+								
+				if(filesize < 1500000)
 				{
-					debug(133, "size %d", atoi(size));
-					int picsize = atoi(size);
-
-					if(picsize < 2000)
+					cmd = ostrcat(cmd, "ffmpeg -i ", 1, 0);
+					cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+					cmd = ostrcat(cmd, "/", 1, 0);
+					cmd = ostrcat(cmd, timestamp, 1, 0);
+					cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
+					cmd = ostrcat(cmd, " > /tmp/mediadb.meta 2>&1", 1, 0);
+	
+					debug(133, "cmd %s", cmd);
+					system(cmd);
+					free(cmd); cmd = NULL;
+						
+					char* size = string_newline(command("cat /tmp/mediadb.meta | grep Stream | awk '{print $6}' | cut -d'x' -f1"));
+					debug(133, "size %s", size);
+					if(size != NULL)
 					{
-						debug(133, "size ok %d", picsize);
-										
-						cmd = ostrcat(cmd, "jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
-						cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-						cmd = ostrcat(cmd, "/", 1, 0);
-						cmd = ostrcat(cmd, timestamp, 1, 0);
-						cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
-						printf("cmd: %s\n",cmd);
-						system(cmd);
-						free(cmd); cmd = NULL;
-					
-						if(file_exist("/tmp/backdrop.resize.jpg"))
+						debug(133, "size %d", atoi(size));
+						int picsize = atoi(size);
+	
+						if(picsize < 2000)
 						{
-							if(getconfigint("mediadb_log", NULL) == 1)
-							{
-								cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-								cmd = ostrcat(cmd, logfile, 1, 0);
-								system(cmd);
-								free(cmd), cmd = NULL;
-									
-								cmd = ostrcat(cmd, "echo \"", 1, 0);
-								cmd = ostrcat(cmd, file, 1, 0);
-								cmd = ostrcat(cmd, " size=(", 1, 0);
-								cmd = ostrcat(cmd, size, 1, 0);
-								cmd = ostrcat(cmd, ") (", 1, 0);
-								cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-								cmd = ostrcat(cmd, "/", 1, 0);
-								cmd = ostrcat(cmd, timestamp, 1, 0);
-								cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
-								cmd = ostrcat(cmd, ")\" >> ", 1, 0);
-								cmd = ostrcat(cmd, logfile, 1, 0);
-								system(cmd);
-								free(cmd), cmd = NULL;
-
-								cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-								cmd = ostrcat(cmd, logfile, 1, 0);
-								system(cmd);
-								free(cmd), cmd = NULL;
-
-								cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg >> ", 1, 0);
-								cmd = ostrcat(cmd, logfile, 1, 0);
-								cmd = ostrcat(cmd, " 2>&1", 1, 0);
-							}
-							else
-							{
-								cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg > /dev/null 2>&1", 1, 0);
-							}
-							
-							
+							debug(133, "size ok %d", picsize);
+											
+							cmd = ostrcat(cmd, "jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
+							cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+							cmd = ostrcat(cmd, "/", 1, 0);
+							cmd = ostrcat(cmd, timestamp, 1, 0);
+							cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
 							debug(133, "cmd %s", cmd);
 							system(cmd);
 							free(cmd); cmd = NULL;
-							if(file_exist("/tmp/backdrop.resize.mpg"))
-							{					
-								cmd = ostrcat(cmd, "mv -f /tmp/backdrop.resize.mpg ", 1, 0);
-								cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-								cmd = ostrcat(cmd, "/", 1, 0);	
-								cmd = ostrcat(cmd, timestamp, 1, 0);
-								cmd = ostrcat(cmd, "_backdrop1.mvi", 1, 0);
+						
+							if(file_exist("/tmp/backdrop.resize.jpg"))
+							{
+								if(getconfigint("mediadb_log", NULL) == 1)
+								{
+									writesys(logfile, "#############", 3); 
+									writesys(logfile, "Localfile: ", 2); 
+									writesys(logfile, getconfig("mediadbpath", NULL), 2);
+									writesys(logfile, "/", 2);
+									writesys(logfile, timestamp, 2);
+									writesys(logfile, "_backdrop1.jpg", 2);										
+									writesys(logfile, " size=(", 2);
+									writesys(logfile, size, 2);
+									writesys(logfile, ") filesize(", 2);
+									writesys(logfile, oitoa(filesize), 2);
+									writesys(logfile, ") (", 2);
+									writesys(logfile, file, 2);
+									writesys(logfile, ")", 3);
+									writesys(logfile, "#############", 3);
+	
+									cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg >> ", 1, 0);
+									cmd = ostrcat(cmd, logfile, 1, 0);
+									cmd = ostrcat(cmd, " 2>&1", 1, 0);
+								}
+								else
+								{
+									cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg > /dev/null 2>&1", 1, 0);
+								}
+								
+								
 								debug(133, "cmd %s", cmd);
 								system(cmd);
 								free(cmd); cmd = NULL;
-								
-								writesysint("/proc/sys/vm/drop_caches", 3, 0);
-							}	
+								if(file_exist("/tmp/backdrop.resize.mpg"))
+								{					
+									cmd = ostrcat(cmd, "mv -f /tmp/backdrop.resize.mpg ", 1, 0);
+									cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+									cmd = ostrcat(cmd, "/", 1, 0);	
+									cmd = ostrcat(cmd, timestamp, 1, 0);
+									cmd = ostrcat(cmd, "_backdrop1.mvi", 1, 0);
+									debug(133, "cmd %s", cmd);
+									system(cmd);
+									free(cmd); cmd = NULL;
+									
+									writesysint("/proc/sys/vm/drop_caches", 3, 0);
+								}	
+							}
+						}
+						else
+						{
+							debug(133, "ERROR Localfile size to big skipped %d", picsize);
+	
+							if(getconfigint("mediadb_log", NULL) == 1)
+							{
+								writesys(logfile, "#############", 3); 
+								writesys(logfile, "ERROR Localfile size to big skipped: ", 3); 
+								writesys(logfile, getconfig("mediadbpath", NULL), 2);
+								writesys(logfile, "/", 2);
+								writesys(logfile, timestamp, 2);
+								writesys(logfile, "_backdrop1.jpg", 2);
+								writesys(logfile, " size=(", 2);
+								writesys(logfile, size, 2);
+								writesys(logfile, ") filesize(", 2);
+								writesys(logfile, oitoa(filesize), 2);
+								writesys(logfile, ") (", 2);
+								writesys(logfile, file, 2);
+								writesys(logfile, ")", 3);
+								writesys(logfile, "#############", 3);
+							}
 						}
 					}
 					else
 					{
-						debug(133, "ERROR Postermid size to big skipped %d", picsize);
-						cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-						cmd = ostrcat(cmd, logfile, 1, 0);
-						system(cmd);
-						free(cmd), cmd = NULL;
-
-						cmd = ostrcat(cmd, "echo \"ERROR Postermid size to big skipped: ", 1, 0);
-						cmd = ostrcat(cmd, file, 1, 0);
-						cmd = ostrcat(cmd, " size=(", 1, 0);
-						cmd = ostrcat(cmd, size, 1, 0);
-						cmd = ostrcat(cmd, ")\" >> ", 1, 0);
-						cmd = ostrcat(cmd, logfile, 1, 0);
-						system(cmd);
-						free(cmd), cmd = NULL;
-
-						cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-						cmd = ostrcat(cmd, logfile, 1, 0);
-						system(cmd);
-						free(cmd), cmd = NULL;
-									
+						debug(133, "ERROR Localfile size is NULL skipped %s", size);
+	
+						if(getconfigint("mediadb_log", NULL) == 1)
+						{
+							writesys(logfile, "#############", 3); 
+							writesys(logfile, "ERROR Localfile size is NULL skipped: ", 3); 
+							writesys(logfile, getconfig("mediadbpath", NULL), 2);
+							writesys(logfile, "/", 2);
+							writesys(logfile, timestamp, 2);
+							writesys(logfile, "_backdrop1.jpg", 2);
+							writesys(logfile, " size=(", 2);
+							writesys(logfile, size, 2);
+							writesys(logfile, ") filesize(", 2);
+							writesys(logfile, oitoa(filesize), 2);
+							writesys(logfile, ") (", 2);
+							writesys(logfile, file, 2);
+							writesys(logfile, ")", 3);
+							writesys(logfile, "#############", 3);
+						}
 					}
+					free(size), size = NULL;
+					unlink("/tmp/mediadb.meta");
+					unlink("/tmp/backdrop.resize.jpg");
+					unlink("/tmp/backdrop.resize.mpg");
+					
+					cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+					cmd = ostrcat(cmd, "/", 1, 0);	
+					cmd = ostrcat(cmd, timestamp, 1, 0);
+					cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
+					unlink(cmd);
+					
+					free(cmd); cmd = NULL;
+					free(timestamp); timestamp = NULL;
 				}
 				else
 				{
-					debug(133, "ERROR size is NULL skipped %s", size);
-					cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-					cmd = ostrcat(cmd, logfile, 1, 0);
-					system(cmd);
-					free(cmd), cmd = NULL;
-
-					cmd = ostrcat(cmd, "echo \"ERROR Postermid size is NULL skipped: ", 1, 0);
-					cmd = ostrcat(cmd, file, 1, 0);
-					cmd = ostrcat(cmd, " size=(", 1, 0);
-					cmd = ostrcat(cmd, size, 1, 0);
-					cmd = ostrcat(cmd, ")\" >> ", 1, 0);
-					cmd = ostrcat(cmd, logfile, 1, 0);
-					system(cmd);
-					free(cmd), cmd = NULL;
-
-					cmd = ostrcat(cmd, "echo \"#############\" >> ", 1, 0);
-					cmd = ostrcat(cmd, logfile, 1, 0);
-					system(cmd);
-					free(cmd), cmd = NULL;
+					debug(133, "ERROR Localfile filesize to BIG skipped %lld", filesize);
+		
+					if(getconfigint("mediadb_log", NULL) == 1)
+					{
+						writesys(logfile, "#############", 3); 
+						writesys(logfile, "ERROR Localfile filesize to BIG skipped: ", 3); 
+						writesys(logfile, getconfig("mediadbpath", NULL), 2);
+						writesys(logfile, "/", 2);
+						writesys(logfile, timestamp, 2);
+						writesys(logfile, "_backdrop1.jpg", 2);
+						writesys(logfile, " filesize(", 2);
+						writesys(logfile, oitoa(filesize), 2);
+						writesys(logfile, ") (", 2);
+						writesys(logfile, file, 2);
+						writesys(logfile, ")", 3);
+						writesys(logfile, "#############", 3);
+					}
 				}
-				free(size), size = NULL;
-				unlink("/tmp/mediadb.meta");
-				unlink("/tmp/backdrop.resize.jpg");
-				unlink("/tmp/backdrop.resize.mpg");
-				
-				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-				cmd = ostrcat(cmd, "/", 1, 0);	
-				cmd = ostrcat(cmd, timestamp, 1, 0);
-				cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
-				unlink(cmd);
-				
-				free(cmd); cmd = NULL;
-				free(timestamp); timestamp = NULL;
-			} 
-
+			}
+		
+			free(logdir), logdir = NULL;
+			free(logfile), logfile = NULL;
+					
       		debugimdbnode(imdb);
 			
 			debug(777, "add video: %s/%s", shortpath, file);
@@ -2258,8 +2273,10 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 	}
 	free(shortpath); shortpath = NULL;
 
-	//save mediadb all 60 sek
-	if(status.mediadbsavetime < time(NULL))
+	//save mediadb all 60 sek and type video allways
+	if(type == 0)
+		writemediadb(getconfig("mediadbfile", NULL));
+	else if(status.mediadbsavetime < time(NULL))
 	{
 		writemediadb(getconfig("mediadbfile", NULL));
 		status.mediadbsavetime = time(NULL) + 60;

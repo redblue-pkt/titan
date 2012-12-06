@@ -163,69 +163,133 @@ void screenmediadbedit(char* file, int menuid)
 					free(thumb); thumb = NULL;
 					free(buf); buf = NULL;
 
-/////////// start mvi
-					char* log = NULL, *logdir = NULL, *logfile = NULL, *cmd = NULL, *mvi = NULL;
-
+					char* size = NULL, *logdir = NULL, *logfile = NULL, *cmd = NULL, *mvi = NULL;
 					mvi = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 					mvi = ostrcat(mvi, node->id, 1, 0);
 					mvi = ostrcat(mvi, "_backdrop1.mvi", 1, 0);
 					
-					cmd = ostrcat(cmd, "ffmpeg -i ", 1, 0);
-					cmd = ostrcat(cmd, picret, 1, 0);
-					cmd = ostrcat(cmd, " > /tmp/mediadb.meta 2>&1", 1, 0);
-
-					debug(133, "cmd %s", cmd);
-					system(cmd);
-					free(cmd); cmd = NULL;
-
-					char* size = string_newline(command("cat /tmp/mediadb.meta | grep Stream | awk '{print $6}' | cut -d'x' -f1"));
-					debug(133, "size %s", size);
-					if(size != NULL)
-					{
-						debug(133, "size %d", atoi(size));
-						int picsize = atoi(size);
-	
-						if(picsize < 2000)
-						{
-							debug(133, "size ok %d", picsize);
-											
-							cmd = ostrcat(cmd, "jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
-							cmd = ostrcat(cmd, picret, 1, 0);
+					logdir = ostrcat(getconfig("mediadbpath", NULL), "/.mediadb_log", 0, 0);
+					if(!file_exist(logdir))
+						mkdir(logdir, 0777);
+					logfile = ostrcat(logdir, "/imdb-scan.log", 1, 0);
 			
-							debug(133, "cmd %s", cmd);
-							system(cmd);
-							free(cmd); cmd = NULL;
+					off64_t filesize = getfilesize(picret);
+					debug(133, "filesize %lld", filesize);
+								
+					if(filesize < 1500000)
+					{
+						cmd = ostrcat(cmd, "ffmpeg -i ", 1, 0);
+						cmd = ostrcat(cmd, picret, 1, 0);
+						cmd = ostrcat(cmd, " > /tmp/mediadb.meta 2>&1", 1, 0);
+	
+						debug(133, "cmd %s", cmd);
+						system(cmd);
+						free(cmd); cmd = NULL;
+	
+						size = string_newline(command("cat /tmp/mediadb.meta | grep Stream | awk '{print $6}' | cut -d'x' -f1"));
+						debug(133, "size %s", size);
+						if(size != NULL)
+						{
+							debug(133, "size %d", atoi(size));
+							int picsize = atoi(size);
 		
-							if(file_exist("/tmp/backdrop.resize.jpg"))
+							if(picsize < 2000)
 							{
-								cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg > /dev/null 2>&1", 1, 0);
+								debug(133, "size ok %d", picsize);
+												
+								cmd = ostrcat(cmd, "jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
+								cmd = ostrcat(cmd, picret, 1, 0);
+				
 								debug(133, "cmd %s", cmd);
 								system(cmd);
 								free(cmd); cmd = NULL;
-
-								if(file_exist("/tmp/backdrop.resize.mpg"))
-								{					
-									cmd = ostrcat(cmd, "mv -f /tmp/backdrop.resize.mpg ", 1, 0);
-									cmd = ostrcat(cmd, mvi, 1, 0);
+			
+								if(file_exist("/tmp/backdrop.resize.jpg"))
+								{
+									if(getconfigint("mediadb_log", NULL) == 1)
+									{
+										writesys(logfile, "#############", 3); 
+										writesys(logfile, "Edit Localfile: ", 2); 
+										writesys(logfile, picret, 2);										
+										writesys(logfile, " size=(", 2);
+										writesys(logfile, size, 2);
+										writesys(logfile, ") filesize(", 2);
+										writesys(logfile, oitoa(filesize), 2);
+										writesys(logfile, ") (", 2);
+										writesys(logfile, node->id, 2);
+										writesys(logfile, ")", 3);
+										writesys(logfile, "#############", 3);
+		
+										cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg >> ", 1, 0);
+										cmd = ostrcat(cmd, logfile, 1, 0);
+										cmd = ostrcat(cmd, " 2>&1", 1, 0);
+									}
+									else
+									{
+										cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg > /dev/null 2>&1", 1, 0);
+									}
 									debug(133, "cmd %s", cmd);
 									system(cmd);
 									free(cmd); cmd = NULL;
-									
-									writesysint("/proc/sys/vm/drop_caches", 3, 0);
-									free(mvi), mvi = NULL;
-									node->backdropcount = 1;
+	
+									if(file_exist("/tmp/backdrop.resize.mpg"))
+									{					
+										cmd = ostrcat(cmd, "mv -f /tmp/backdrop.resize.mpg ", 1, 0);
+										cmd = ostrcat(cmd, mvi, 1, 0);
+										debug(133, "cmd %s", cmd);
+										system(cmd);
+										free(cmd); cmd = NULL;
+										
+										writesysint("/proc/sys/vm/drop_caches", 3, 0);
+										free(mvi), mvi = NULL;
+										node->backdropcount = 1;
+									}
+									else
+									{
+										free(mvi), mvi = NULL;
+										node->backdropcount = 0;
+									}
 								}
-								else
+							}
+							else
+							{
+								debug(133, "ERROR Edit Localfile size to big skipped %d", picsize);
+		
+								if(getconfigint("mediadb_log", NULL) == 1)
 								{
-									free(mvi), mvi = NULL;
-									node->backdropcount = 0;
+									writesys(logfile, "#############", 3); 
+									writesys(logfile, "ERROR Edit Localfile size to big skipped: ", 3); 
+									writesys(logfile, picret, 2);
+									writesys(logfile, " size=(", 2);
+									writesys(logfile, size, 2);
+									writesys(logfile, ") filesize(", 2);
+									writesys(logfile, oitoa(filesize), 2);
+									writesys(logfile, ") (", 2);
+									writesys(logfile, node->id, 2);
+									writesys(logfile, ")", 3);
+									writesys(logfile, "#############", 3);
 								}
 							}
 						}
 					}
-
+					else
+					{
+						debug(133, "ERROR Edit Localfile filesize to BIG skipped %lld", filesize);
+			
+						if(getconfigint("mediadb_log", NULL) == 1)
+						{
+							writesys(logfile, "#############", 3); 
+							writesys(logfile, "ERROR Edit Localfile filesize to BIG skipped: ", 3); 
+							writesys(logfile, picret, 2);
+							writesys(logfile, " filesize(", 2);
+							writesys(logfile, oitoa(filesize), 2);
+							writesys(logfile, ") (", 2);
+							writesys(logfile, node->id, 2);
+							writesys(logfile, ")", 3);
+							writesys(logfile, "#############", 3);
+						}
+					}
 					free(size), size = NULL;
-					free(log), log = NULL;
 					free(logdir), logdir = NULL;
 					free(logfile), logfile = NULL;
 					free(cmd), cmd = NULL;
