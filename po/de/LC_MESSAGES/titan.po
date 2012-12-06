@@ -2728,3 +2728,27 @@ msgstr "Device"
 
 msgid "green"
 msgstr "grün"
+
+msgid "Backdrop Download Count"
+msgstr "Wieviel Hintergrundbilder sollen geladen werden"
+
+msgid "Debug Modus"
+msgstr "Debug Modus"
+
+msgid "Backdrop Interval"
+msgstr "Hintergrund Bilderwechesel Interval"
+
+msgid "MediaDB Debug"
+msgstr "MediaDB Debug Modus"
+
+msgid "MediaDB place"
+msgstr "MediaDB Speicherort"
+
+msgid "scan Directory"
+msgstr "Durchsuchtes Verzeichnis"
+
+
+
+
+
+
