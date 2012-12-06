@@ -10,6 +10,8 @@ void screenmediadbsettings()
 	struct skin* mediadbscandelall = getscreennode(mediadbsettings, "mediadbscandelall");
 	struct skin* mediadbscandelnotfound = getscreennode(mediadbsettings, "mediadbscandelnotfound");
 	struct skin* mediadbscantimeout = getscreennode(mediadbsettings, "mediadbscantimeout");
+	struct skin* mediadbbackdrop = getscreennode(mediadbsettings, "mediadbbackdrop");
+	struct skin* mediadbdebug = getscreennode(mediadbsettings, "mediadbdebug");	
 	struct skin* createthumb = getscreennode(mediadbsettings, "createthumb");
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL;
@@ -46,6 +48,21 @@ void screenmediadbsettings()
 	addchoicebox(createthumb, "1", _("yes"));
 	setchoiceboxselection(createthumb, getconfig("createthumb", NULL));
 
+	addchoicebox(mediadbbackdrop, "0", _("all"));
+	addchoicebox(mediadbbackdrop, "1", _("1"));
+	addchoicebox(mediadbbackdrop, "2", _("2"));
+	addchoicebox(mediadbbackdrop, "3", _("3"));
+	addchoicebox(mediadbbackdrop, "4", _("4"));
+	addchoicebox(mediadbbackdrop, "5", _("5"));
+	addchoicebox(mediadbbackdrop, "10", _("10"));
+	addchoicebox(mediadbbackdrop, "15", _("15"));
+	addchoicebox(mediadbbackdrop, "20", _("20"));
+	setchoiceboxselection(mediadbbackdrop, getconfig("mediadbbackdrop", NULL));
+
+	addchoicebox(mediadbdebug, "0", _("no"));
+	addchoicebox(mediadbdebug, "1", _("yes"));
+	setchoiceboxselection(mediadbdebug, getconfig("mediadbdebug", NULL));
+		
 	drawscreen(mediadbsettings, 0, 0);
 	addscreenrc(mediadbsettings, listbox);
 
@@ -81,7 +98,8 @@ void screenmediadbsettings()
 			addconfigscreencheck("mediadbscandelall", mediadbscandelall, "0");
 			addconfigscreencheck("mediadbscandelnotfound", mediadbscandelnotfound, "0");
 			addconfigscreencheck("mediadbscantimeout", mediadbscantimeout, "0");
-
+			addconfigscreencheck("mediadbbackdrop", mediadbbackdrop, "0");
+			addconfigscreencheck("mediadbdebug", mediadbdebug, "0");
 			addconfigscreencheck("createthumb", createthumb, "0");
 			if(ostrcmp(createthumb->ret, "0") == 0)
 				startthumb(0);

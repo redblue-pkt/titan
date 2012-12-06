@@ -15,9 +15,11 @@ void screenmc_videoplayer_settings()
 	struct skin* autostart_playlist = getscreennode(mc_videoplayer_settings, "autostart_playlist");
 	struct skin* defaultdir = getscreennode(mc_videoplayer_settings, "defaultdir");
 	struct skin* uselastdir = getscreennode(mc_videoplayer_settings, "uselastdir");
+	struct skin* backdrop = getscreennode(mc_videoplayer_settings, "backdrop");
+
 	struct skin* loadmediadb = getscreen("loading");
 	struct skin* blackscreen = getscreen("blackscreen");
-	
+
 	addchoicebox(dirsort, "0", _("alpha"));	
 	addchoicebox(dirsort, "1", _("reverse alpha"));	
 	addchoicebox(dirsort, "2", _("size"));
@@ -47,7 +49,15 @@ void screenmc_videoplayer_settings()
 	addchoicebox(uselastdir, "0", _("no"));
 	addchoicebox(uselastdir, "1", _("yes"));
 	setchoiceboxselection(uselastdir, getconfig("mc_vp_uselastdir", NULL));
-	
+
+	addchoicebox(backdrop, "0", _("off"));
+	addchoicebox(backdrop, "1", _("1s"));	
+	addchoicebox(backdrop, "2", _("2s"));
+	addchoicebox(backdrop, "3", _("3s"));	
+	addchoicebox(backdrop, "4", _("4s"));
+	addchoicebox(backdrop, "5", _("5s (default)"));
+	setchoiceboxselection(backdrop, getconfig("mc_vp_backdrop", NULL));
+		
 	drawscreen(mc_videoplayer_settings, 0, 0);
 	addscreenrc(mc_videoplayer_settings, listbox);
 
@@ -68,6 +78,7 @@ void screenmc_videoplayer_settings()
 			addconfigscreencheck("vp_autostart_playlist", autostart_playlist, NULL);		
 			addconfigscreen("mc_vp_defaultdir", defaultdir);
 			addconfigscreencheck("mc_vp_uselastdir", uselastdir, NULL);
+			addconfigscreencheck("mc_vp_backdrop", backdrop, NULL);
 			break;
 		}
 		else if(rcret == getrcconfigint("rcred", NULL))
