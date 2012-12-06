@@ -107,13 +107,15 @@ void screenmc_videoplayer()
 
 	if(!file_exist("/var/swap/player"))   
 		mkdir("/var/swap/player", 0777);
-							
+	
+	int refresh = 0;			
 	while(1)
 	{
 		
 		rcret = waitrcext(apskin, rcwait, 0, tmpview);
-//		debug(50, "while status play=%d", status.play);
-
+		if(filelist->select != NULL && filelist->select->input != NULL)
+			refresh = 1;
+			
 		if((status.play == 1) || (status.playspeed != 0))
 		{
 			playinfobarcount ++;
@@ -132,7 +134,7 @@ void screenmc_videoplayer()
 			char* cmd = NULL;
 			char* pic = NULL;
 
-			int waittime = 5, foundthumb = 0, foundplot = 0, foundtitle = 0, show = 0;
+			int waittime = 5, foundthumb = 0, foundplot = 0, foundtitle = 0;
 
 			if(filelist->select != NULL && filelist->select->input == NULL)
 			{
@@ -142,7 +144,7 @@ void screenmc_videoplayer()
 				{
 					if(mnode->id != NULL)
 					{
-						if(ostrcmp(lastid, mnode->id) != 0)
+						if(ostrcmp(lastid, mnode->id) != 0)					
 						{
 							free(lastid), lastid = NULL;
 							lastid = ostrcat(lastid, mnode->id, 1, 0);
@@ -151,7 +153,6 @@ void screenmc_videoplayer()
 						}
 						else
 						{
-							show = 1;
 							if(mvinum == mnode->backdropcount)
 								mvinum = 1;
 
@@ -213,7 +214,7 @@ void screenmc_videoplayer()
 				}
 				else	
 				{
-					show = 1;				
+					refresh = 1;				
 					foundthumb = 0;
 					foundplot = 0;
 					foundtitle = 0;
@@ -250,7 +251,7 @@ void screenmc_videoplayer()
 			}
 			else
 			{
-				if((show == 1 ) || (exit == 0 && ostrcmp(savecmd, cmd) != 0 && mviwait > waittime - 1))
+				if((refresh == 1 ) || (exit == 0 && ostrcmp(savecmd, cmd) != 0 && mviwait > waittime - 1))
 				{
 					singlepicstart(cmd, 0);
 					free(savecmd), savecmd = NULL;
