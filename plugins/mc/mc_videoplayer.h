@@ -262,7 +262,9 @@ void screenmc_videoplayer()
 					mviwait = 0;
 				}
 				else if(waittime == 0)
+				{
 					debug(50, "disable Backdrop Interval");
+				}
 				else
 					mviwait++;
 			}
