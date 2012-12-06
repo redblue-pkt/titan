@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//mediadbedit.h
+void screenmediadbedit(char* file, int menuid);
+
 //shortepg.h
 void screenshortepg(struct channel* chnode, struct epg* epgnode, int flag);
 

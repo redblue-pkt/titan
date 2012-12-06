@@ -37,7 +37,7 @@ void screenmc_videoplayer()
 	char* tmppolicy = NULL;
 	char* currentdirectory = NULL;
 	char* selectedfile = NULL;
-	int rcret = 0, rcwait = 1000, playerret = 0, flag = 1, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0, files = 0, mviwait = 0, mvinum = 0;
+	int rcret = 0, rcwait = 1000, playerret = 0, flag = 1, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0, files = 0, mviwait = 0, mvinum = 0, exit = 0;
 
 	// main screen
 	struct skin* apskin = getscreen("mc_videoplayer");
@@ -83,7 +83,7 @@ void screenmc_videoplayer()
 		filemask = ostrcat("*.m3u *.pls *.avi *.mkv *.mpg *.mpeg *.ts", NULL, 0, 0);
 	
 	// disable global transparent/hangtime
-	setfbtransparent(255);
+//	setfbtransparent(255);
 	status.hangtime = 99999;
 	status.playspeed = 0, status.play = 0, status.pause = 0, status.random = 0;
 
@@ -127,13 +127,13 @@ void screenmc_videoplayer()
 				screenplayinfobar(NULL, 1, playertype, 0);
 			}
 		}
-		else if(tmpview == 3 && filelist->select != NULL && status.play == 0 && status.pause == 0)
+		else if(exit == 0 && tmpview == 3 && filelist->select != NULL && status.play == 0 && status.pause == 0)
 		{
 			char* cmd = NULL;
 			char* pic = NULL;
 
-			int waittime = 5;
-			
+			int waittime = 5, foundthumb = 0, foundplot = 0, foundtitle = 0, show = 0;
+
 			if(filelist->select != NULL && filelist->select->input == NULL)
 			{
 				struct mediadb* mnode = getmediadb(filelistpath->text, filelist->select->name, 0);
@@ -151,14 +151,12 @@ void screenmc_videoplayer()
 						}
 						else
 						{
-							int maxmvi = atoi(mnode->poster);
-							if(mvinum == maxmvi)
+							show = 1;
+							if(mvinum == mnode->backdropcount)
 								mvinum = 1;
 
-							if(mviwait > waittime && mvinum < maxmvi)
-							{
+							if(mviwait > waittime && mvinum < mnode->backdropcount)
 								mvinum++;
-							}
 						}
 
 						tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
@@ -181,26 +179,44 @@ void screenmc_videoplayer()
 					{
 						thumb->hidden = YES;
 						free(pic), pic = NULL;
+						foundthumb = 0;
 					}
 					else
 					{
 						thumb->hidden = NO;
 						changepic(thumb, pic);
 						free(pic), pic = NULL;
+						foundthumb = 1;
 					}
 					
 					if(mnode->plot == NULL)
+					{
+						foundtitle = 0;
 						plot->hidden = YES;
+					}
 					else
+					{
+						foundtitle = 1;
 						plot->hidden = NO;
-	
+					}
+					
 					if(mnode->title == NULL)
+					{
+						foundtitle = 0;
 						title->hidden = YES;
+					}
 					else
+					{
+						foundtitle = 1;
 						title->hidden = NO;
+					}
 				}
 				else	
 				{
+					show = 1;				
+					foundthumb = 0;
+					foundplot = 0;
+					foundtitle = 0;
 					thumb->hidden = YES;
 					plot->hidden = YES;
 					title->hidden = YES;
@@ -216,9 +232,12 @@ void screenmc_videoplayer()
 				free(cmd), cmd = NULL;
 				cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 1, 0);
 				mviwait = waittime;
-//				thumb->hidden = YES;
-//				plot->hidden = YES;
-//				title->hidden = YES;
+				if(foundthumb == 0)
+					thumb->hidden = YES;
+				if(foundplot == 0)
+					plot->hidden = YES;
+				if(foundtitle == 0)
+					title->hidden = YES;
 
 				drawscreen(apskin, 0, 0);
 			}
@@ -231,7 +250,7 @@ void screenmc_videoplayer()
 			}
 			else
 			{
-				if(ostrcmp(savecmd, cmd) != 0 && mviwait > waittime - 1)
+				if((show == 1 ) || (exit == 0 && ostrcmp(savecmd, cmd) != 0 && mviwait > waittime - 1))
 				{
 					singlepicstart(cmd, 0);
 					free(savecmd), savecmd = NULL;
@@ -466,6 +485,8 @@ void screenmc_videoplayer()
 		else if(rcret == getrcconfigint("rcstop", NULL) || (rcret == getrcconfigint("rcexit", NULL) && status.play == 1))
 		{
 			debug(50, "rcstop: stopplayback");
+			drawscreen(blackscreen, 0, 0);
+			drawscreen(loadmediadb, 0, 0);
 			if(status.play == 1 && playertype == 0)
 			{
 				char* tmpfilename = ostrcat(filename, NULL, 0, 0);
@@ -495,10 +516,11 @@ void screenmc_videoplayer()
 			delownerrc(apskin);
 			addscreenrc(apskin, filelist);
 			// show skin
-			setfbtransparent(255);
 			drawscreen(apskin, 0, 0);
 
-			sleep(1);
+//			setfbtransparent(255);
+			clearscreen(loadmediadb);
+			clearscreen(blackscreen);
 
 			playinfobarcount = 0;
 			playinfobarstatus = 1;
@@ -520,6 +542,7 @@ void screenmc_videoplayer()
 		}
 		else if(rcret == getrcconfigint("rcexit", NULL))
 		{
+			exit = 1;
 			debug(50, "exit - save mc_vp_path: %s", filelistpath->text);
 			debug(50, "exit - save mc_vp_selectedfile: %s", filelist->select->name);
 			drawscreen(blackscreen, 0, 0);
@@ -549,10 +572,15 @@ void screenmc_videoplayer()
 				free(tmpfilename), tmpfilename = NULL;
 			}
 
+//			setfbtransparent(0);
+			servicestop(status.aktservice, 1, 1);
 			playrcstop(playertype, flag);
+			drawscreen(blackscreen, 0, 0);
+			drawscreen(loadmediadb, 0, 0);
+			sleep(2);
+
 			// show skin
 			setfbtransparent(255);
-			sleep(1);
 			apskin->hidden = NO;
 			filelist->hidden = NO;
 			listbox->hidden = YES;
@@ -613,11 +641,11 @@ void screenmc_videoplayer()
 				eof = 0;
 
 				delownerrc(apskin);
-				setfbtransparent(255);
+//				setfbtransparent(255);
 //////////
 				servicestop(status.aktservice, 1, 1);
 				drawscreen(skin, 0, 0);
-				setfbtransparent(255);
+//				setfbtransparent(255);
 				debug(50, "check");
 				debug(50, "autostart_playlist: %d", getconfigint("mc_vp_autostart_playlist", NULL));
 				debug(50, "status.play: %d", status.play);
@@ -753,7 +781,7 @@ void screenmc_videoplayer()
 				drawscreen(skin, 0, 0);
 
 				delownerrc(apskin);
-				setfbtransparent(255);
+//				setfbtransparent(255);
 
 				debug(50, "playerstart: %s", filename);
 				eof = 0;
@@ -844,7 +872,7 @@ void screenmc_videoplayer()
 				fileseek = ostrcat(fileseek, ".se", 0, 0);
 				unlink(fileseek);
 			
-				setfbtransparent(0);
+//				setfbtransparent(0);
 				apskin->hidden = NO;
 				drawscreen(skin, 0, 0);
 				playereof(apskin, filelist, listbox, filelistpath, b2, NULL, NULL, NULL, &skip, &eof, &playlist, playertype, flag);
@@ -882,13 +910,14 @@ void screenmc_videoplayer()
 	else
 		playerafterend();
 
+/*
 	if(status.mediadbthread == NULL)
 	{
 		if(status.writemediadb == 1)
 			writemediadb(getconfig("mediadbfile", NULL));
 		freemediadb(0);
 	}
-
+*/
 	clearscreen(blackscreen);
 	clearscreen(loadmediadb);
 			
