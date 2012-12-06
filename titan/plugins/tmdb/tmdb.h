@@ -203,7 +203,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 	logdir = ostrcat(getconfig("mediadbpath", NULL), "/.mediadb_log", 0, 0);
 	if(!file_exist(logdir))
 		mkdir(logdir, 0777);
-	logfile = ostrcat(logdir, "/imdb-scan.log", 1, 0);
+	logfile = ostrcat(logdir, "/imdb-scan.log", 0, 0);
 	timen = ostrcat(oitoa(time(NULL)), NULL, 1, 0);
 
 	if(getconfigint("mediadb_log", NULL) == 1)

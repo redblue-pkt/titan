@@ -171,7 +171,7 @@ void screenmediadbedit(char* file, int menuid)
 					logdir = ostrcat(getconfig("mediadbpath", NULL), "/.mediadb_log", 0, 0);
 					if(!file_exist(logdir))
 						mkdir(logdir, 0777);
-					logfile = ostrcat(logdir, "/imdb-scan.log", 1, 0);
+					logfile = ostrcat(logdir, "/imdb-scan.log", 0, 0);
 			
 					off64_t filesize = getfilesize(picret);
 					debug(133, "filesize %lld", filesize);

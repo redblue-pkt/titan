@@ -1758,14 +1758,18 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			fileinfo = ostrcat(fileinfo, getfilenameext(tmpstr), 1, 1);
 			free(tmpstr), tmpstr = NULL;
 
-			char* logdir = ostrcat(getconfig("mediadbpath", NULL), "/.mediadb_log", 0, 0);
+			char* logdir = NULL, *logfile = NULL;
+			logdir = ostrcat(getconfig("mediadbpath", NULL), "/.mediadb_log", 0, 0);
+			if(ostrcmp(getconfig("mediadbscandelall", NULL), "1") == 0)
+				unlink(logdir);
+				
 			if(!file_exist(logdir))
 				mkdir(logdir, 0777);
-			char* logfile = ostrcat(logdir, "/imdb-scan.log", 1, 0);
+			logfile = ostrcat(logdir, "/imdb-scan.log", 0, 0);
 		
 			if(getconfigint("mediadb_log", NULL) == 1)
 			{
-				writesys(logfile, "####################################################################", 3); 
+				writesys(logfile, "####################################################################", 3);
 				writesys(logfile, "file: ", 2);
 				writesys(logfile, file, 3);
 				writesys(logfile, "shortname: ", 2);
