@@ -4,7 +4,7 @@
 #include "crc32.h"
 #include "sock.h"
 
-#define SYSCODE 0UL
+#define SYSCODE 0
 
 struct clist *config[LISTHASHSIZE] = {NULL};
 struct clist *ownconfig[LISTHASHSIZE] = {NULL};
