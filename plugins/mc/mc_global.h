@@ -26,6 +26,7 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin, int fla
 	struct skin* realname = getscreennode(apskin, "realname");
 	struct skin* albumtext = getscreennode(apskin, "albumtext");
 	struct skin* album = getscreennode(apskin, "album");
+	struct skin* stars = getscreennode(apskin, "stars");
 
 	struct skin* loadmediadb = getscreen("loading");
 	struct skin* blackscreen = getscreen("blackscreen");
@@ -70,6 +71,7 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin, int fla
 		realname->hidden = YES;
 		albumtext->hidden = YES;
 		album->hidden = YES;
+		stars->hidden = YES;
 	}
 	else if(view == 1)
 	{
@@ -94,6 +96,7 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin, int fla
 		realname->hidden = YES;
 		albumtext->hidden = YES;
 		album->hidden = YES;
+		stars->hidden = YES;
 	}
 	else if(view == 2)
 	{
@@ -117,6 +120,7 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin, int fla
 		realname->hidden = YES;
 		albumtext->hidden = YES;
 		album->hidden = YES;
+		stars->hidden = YES;
 	}
 	else if(view == 3)
 	{
@@ -146,6 +150,7 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin, int fla
 			realname->hidden = NO;
 			albumtext->hidden = NO;
 			album->hidden = NO;
+			stars->hidden = YES;
 		}
 		else
 		{
@@ -160,6 +165,7 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin, int fla
 			realname->hidden = YES;
 			albumtext->hidden = YES;
 			album->hidden = YES;
+			stars->hidden = NO;
 		}
 	}	
 	else if(view == 4)
@@ -185,6 +191,7 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin, int fla
 		realname->hidden = YES;
 		albumtext->hidden = YES;
 		album->hidden = YES;
+		stars->hidden = YES;
 	}
 	else if(view == 5)
 	{
@@ -209,6 +216,7 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin, int fla
 		realname->hidden = YES;
 		albumtext->hidden = YES;
 		album->hidden = YES;
+		stars->hidden = YES;
 	}
 }
 
