@@ -115,6 +115,8 @@ void screenmc_videoplayer()
 		rcret = waitrcext(apskin, rcwait, 0, tmpview);
 		if(filelist->select != NULL && filelist->select->input != NULL)
 			refresh = 1;
+		else
+			refresh = 0;
 			
 		if((status.play == 1) || (status.playspeed != 0))
 		{
@@ -135,6 +137,7 @@ void screenmc_videoplayer()
 			char* pic = NULL;
 
 			int waittime = 5, foundthumb = 0, foundplot = 0, foundtitle = 0;
+			waittime = getconfigint("mc_vp_backdrop", NULL);
 
 			if(filelist->select != NULL && filelist->select->input == NULL)
 			{
@@ -192,12 +195,12 @@ void screenmc_videoplayer()
 					
 					if(mnode->plot == NULL)
 					{
-						foundtitle = 0;
+						foundplot = 0;
 						plot->hidden = YES;
 					}
 					else
 					{
-						foundtitle = 1;
+						foundplot = 1;
 						plot->hidden = NO;
 					}
 					
@@ -258,6 +261,8 @@ void screenmc_videoplayer()
 					savecmd = ostrcat(savecmd, cmd, 1, 0);
 					mviwait = 0;
 				}
+				else if(waittime == 0)
+					debug(50, "disable Backdrop Interval");
 				else
 					mviwait++;
 			}
@@ -416,6 +421,7 @@ void screenmc_videoplayer()
 		{
 			if(status.play == 0 && status.pause == 0)
 			{
+				refresh = 1;
 				debug(50, "rcmenu: settings");
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 				view = getconfigint("mc_vp_view", NULL);

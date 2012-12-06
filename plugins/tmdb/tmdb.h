@@ -200,13 +200,13 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 
 	free(tmpsearch); tmpsearch = NULL;
 
-	logdir = ostrcat(getconfig("mediadbpath", NULL), "/.mediadb_log", 0, 0);
+	logdir = ostrcat(getconfig("mediadbpath", NULL), "/.mediadbdebug", 0, 0);
 	if(!file_exist(logdir))
 		mkdir(logdir, 0777);
 	logfile = ostrcat(logdir, "/imdb-scan.log", 0, 0);
 	timen = ostrcat(oitoa(time(NULL)), NULL, 1, 0);
 
-	if(getconfigint("mediadb_log", NULL) == 1)
+	if(getconfigint("mediadbdebug", NULL) == 1)
 	{
 		writesys(logfile, "####################################################################", 3); 
 		writesys(logfile, "title: ", 2); 
@@ -332,7 +332,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 			if(ostrstr(tmpstr1, "<imdb_id>") != NULL)
 				tnode->imdbid = string_resub("<imdb_id>", "</imdb_id>", tmpstr1, 0);
 
-			if(getconfigint("mediadb_log", NULL) == 1 && tnode->backdrop == NULL)
+			if(getconfigint("mediadbdebug", NULL) == 1 && tnode->backdrop == NULL)
 			{
 				log = ostrcat(logdir, "/tmdb_", 0, 0);
 				if(tnode->imdbid != NULL)
@@ -460,7 +460,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 		
 												if(file_exist("/tmp/backdrop.resize.jpg"))
 												{
-													if(getconfigint("mediadb_log", NULL) == 1)
+													if(getconfigint("mediadbdebug", NULL) == 1)
 													{
 														writesys(logfile, "#############", 3); 
 														writesys(logfile, "backdrop: ", 2); 
@@ -495,6 +495,9 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 														free(cmd); cmd = NULL;
 														
 														writesysint("/proc/sys/vm/drop_caches", 3, 0);
+														
+														if(mvicount == getconfigint("mediadbbackdrop", NULL))
+															break;
 													}
 													else
 														mvicount--;
@@ -504,7 +507,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 											{
 												debug(133, "ERROR Backdrop size to big skipped %d", picsize);
 
-												if(getconfigint("mediadb_log", NULL) == 1)
+												if(getconfigint("mediadbdebug", NULL) == 1)
 												{
 													writesys(logfile, "#############", 3); 
 													writesys(logfile, "ERROR Backdrop size to big skipped: ", 3); 
@@ -525,7 +528,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 										{
 											debug(133, "ERROR Backdrop size is NULL skipped %s", size);
 
-											if(getconfigint("mediadb_log", NULL) == 1)
+											if(getconfigint("mediadbdebug", NULL) == 1)
 											{
 												writesys(logfile, "#############", 3); 
 												writesys(logfile, "ERROR Backdrop size is NULL skipped: ", 3); 
@@ -551,7 +554,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 									{
 										debug(133, "ERROR Backdrop filesize to BIG skipped %lld", filesize);
 				
-										if(getconfigint("mediadb_log", NULL) == 1)
+										if(getconfigint("mediadbdebug", NULL) == 1)
 										{
 											writesys(logfile, "#############", 3); 
 											writesys(logfile, "ERROR Backdrop filesize to BIG skipped: ", 3); 
@@ -598,6 +601,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 							unlink(tnode->backdrop);
 					}
 				}
+
 				free(ret1), ret1 = NULL;				
 				free(tmpstr2), tmpstr2 = NULL;
 			}
@@ -645,7 +649,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 			
 								if(file_exist("/tmp/backdrop.resize.jpg"))
 								{
-									if(getconfigint("mediadb_log", NULL) == 1)
+									if(getconfigint("mediadbdebug", NULL) == 1)
 									{
 										writesys(logfile, "#############", 3); 
 										writesys(logfile, "postermid: ", 2); 
@@ -687,7 +691,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 							{
 								debug(133, "ERROR Postermid size to big skipped %d", picsize);
 
-								if(getconfigint("mediadb_log", NULL) == 1)
+								if(getconfigint("mediadbdebug", NULL) == 1)
 								{
 									writesys(logfile, "#############", 3); 
 									writesys(logfile, "ERROR Postermid size to big skipped: ", 3); 
@@ -707,7 +711,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 						{
 							debug(133, "ERROR Postermid size is NULL skipped %s", size);
 
-							if(getconfigint("mediadb_log", NULL) == 1)
+							if(getconfigint("mediadbdebug", NULL) == 1)
 							{
 								writesys(logfile, "#############", 3); 
 								writesys(logfile, "ERROR Postermid size is NULL skipped: ", 3); 
@@ -731,7 +735,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 					{
 						debug(133, "ERROR Postermid filesize to BIG skipped %lld", filesize);
 
-						if(getconfigint("mediadb_log", NULL) == 1)
+						if(getconfigint("mediadbdebug", NULL) == 1)
 						{
 							writesys(logfile, "#############", 3); 
 							writesys(logfile, "ERROR Postermid filesize to BIG skipped: ", 3); 

@@ -168,7 +168,7 @@ void screenmediadbedit(char* file, int menuid)
 					mvi = ostrcat(mvi, node->id, 1, 0);
 					mvi = ostrcat(mvi, "_backdrop1.mvi", 1, 0);
 					
-					logdir = ostrcat(getconfig("mediadbpath", NULL), "/.mediadb_log", 0, 0);
+					logdir = ostrcat(getconfig("mediadbpath", NULL), "/.mediadbdebug", 0, 0);
 					if(!file_exist(logdir))
 						mkdir(logdir, 0777);
 					logfile = ostrcat(logdir, "/imdb-scan.log", 0, 0);
@@ -206,7 +206,7 @@ void screenmediadbedit(char* file, int menuid)
 			
 								if(file_exist("/tmp/backdrop.resize.jpg"))
 								{
-									if(getconfigint("mediadb_log", NULL) == 1)
+									if(getconfigint("mediadbdebug", NULL) == 1)
 									{
 										writesys(logfile, "#############", 3); 
 										writesys(logfile, "Edit Localfile: ", 2); 
@@ -255,7 +255,7 @@ void screenmediadbedit(char* file, int menuid)
 							{
 								debug(133, "ERROR Edit Localfile size to big skipped %d", picsize);
 		
-								if(getconfigint("mediadb_log", NULL) == 1)
+								if(getconfigint("mediadbdebug", NULL) == 1)
 								{
 									writesys(logfile, "#############", 3); 
 									writesys(logfile, "ERROR Edit Localfile size to big skipped: ", 3); 
@@ -276,7 +276,7 @@ void screenmediadbedit(char* file, int menuid)
 					{
 						debug(133, "ERROR Edit Localfile filesize to BIG skipped %lld", filesize);
 			
-						if(getconfigint("mediadb_log", NULL) == 1)
+						if(getconfigint("mediadbdebug", NULL) == 1)
 						{
 							writesys(logfile, "#############", 3); 
 							writesys(logfile, "ERROR Edit Localfile filesize to BIG skipped: ", 3); 

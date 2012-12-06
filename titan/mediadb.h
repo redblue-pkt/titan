@@ -1088,6 +1088,18 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 		tmpstr = ostrcat(tmpstr, _("MediaDB place:"), 1, 0);
 		tmpstr = ostrcat(tmpstr, " \t\t\t", 1, 0);				
 		tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
+		tmpstr = ostrcat(tmpstr, "\n  ", 1, 0);		
+		tmpstr = ostrcat(tmpstr, _("MediaDB Debug:"), 1, 0);
+		tmpstr = ostrcat(tmpstr, " \t\t\t", 1, 0);
+		if(ostrcmp(getconfig("mediadbdebug", NULL), "1") == 0)
+			tmpstr = ostrcat(tmpstr, _("yes"), 1, 0);
+		else
+			tmpstr = ostrcat(tmpstr, _("no"), 1, 0);
+		tmpstr = ostrcat(tmpstr, "\n  ", 1, 0);		
+		tmpstr = ostrcat(tmpstr, _("Backdrop Download Count:"), 1, 0);
+		tmpstr = ostrcat(tmpstr, " \t\t", 1, 0);		
+		tmpstr = ostrcat(tmpstr, getconfig("mediadbbackdrop", NULL), 1, 0);
+
 		int count = 0;
 
 		while(count < 5)
@@ -1759,7 +1771,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			free(tmpstr), tmpstr = NULL;
 
 			char* logdir = NULL, *logfile = NULL;
-			logdir = ostrcat(getconfig("mediadbpath", NULL), "/.mediadb_log", 0, 0);
+			logdir = ostrcat(getconfig("mediadbpath", NULL), "/.mediadbdebug", 0, 0);
 			if(ostrcmp(getconfig("mediadbscandelall", NULL), "1") == 0)
 				unlink(logdir);
 				
@@ -1767,7 +1779,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				mkdir(logdir, 0777);
 			logfile = ostrcat(logdir, "/imdb-scan.log", 0, 0);
 		
-			if(getconfigint("mediadb_log", NULL) == 1)
+			if(getconfigint("mediadbdebug", NULL) == 1)
 			{
 				writesys(logfile, "####################################################################", 3);
 				writesys(logfile, "file: ", 2);
@@ -2025,7 +2037,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 						
 							if(file_exist("/tmp/backdrop.resize.jpg"))
 							{
-								if(getconfigint("mediadb_log", NULL) == 1)
+								if(getconfigint("mediadbdebug", NULL) == 1)
 								{
 									writesys(logfile, "#############", 3); 
 									writesys(logfile, "Localfile: ", 2); 
@@ -2074,7 +2086,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 						{
 							debug(133, "ERROR Localfile size to big skipped %d", picsize);
 	
-							if(getconfigint("mediadb_log", NULL) == 1)
+							if(getconfigint("mediadbdebug", NULL) == 1)
 							{
 								writesys(logfile, "#############", 3); 
 								writesys(logfile, "ERROR Localfile size to big skipped: ", 3); 
@@ -2097,7 +2109,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 					{
 						debug(133, "ERROR Localfile size is NULL skipped %s", size);
 	
-						if(getconfigint("mediadb_log", NULL) == 1)
+						if(getconfigint("mediadbdebug", NULL) == 1)
 						{
 							writesys(logfile, "#############", 3); 
 							writesys(logfile, "ERROR Localfile size is NULL skipped: ", 3); 
@@ -2133,7 +2145,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				{
 					debug(133, "ERROR Localfile filesize to BIG skipped %lld", filesize);
 		
-					if(getconfigint("mediadb_log", NULL) == 1)
+					if(getconfigint("mediadbdebug", NULL) == 1)
 					{
 						writesys(logfile, "#############", 3); 
 						writesys(logfile, "ERROR Localfile filesize to BIG skipped: ", 3); 
