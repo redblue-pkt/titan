@@ -92,7 +92,7 @@
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
 #define CRONTRIBUT "obi, black, dvboxer, oxygen, gost"
-#define PLUGINVERSION 0
+#define PLUGINVERSION 18841
 
 #define _(x) gettext(x)
 #define MINMALLOC 4096
@@ -365,7 +365,7 @@ struct mediadb
 	time_t timestamp;
 	//bit 31: manual change
 	int flag;
-	int postercount;
+	int backdropcount;
 	struct mediadb* prev;
 	struct mediadb* next;
 };
