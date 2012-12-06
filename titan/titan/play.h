@@ -480,23 +480,23 @@ void get_mediadb_scan_info(int files)
 	else
 		tmpstr = ostrcat(tmpstr, _("no"), 1, 0);
 	tmpstr = ostrcat(tmpstr, "\n  ", 1, 0);
-	tmpstr = ostrcat(tmpstr, _("scan Directory:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " \t\t\t", 1, 0);
+	tmpstr = ostrcat(tmpstr, _("scan Directory"), 1, 0);
+	tmpstr = ostrcat(tmpstr, ": \t\t\t", 1, 0);
 	tmpstr = ostrcat(tmpstr, getconfig("mc_vp_path", NULL), 1, 0);
 	tmpstr = ostrcat(tmpstr, "\n  ", 1, 0);		
-	tmpstr = ostrcat(tmpstr, _("MediaDB place:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " \t\t\t", 1, 0);				
+	tmpstr = ostrcat(tmpstr, _("MediaDB place"), 1, 0);
+	tmpstr = ostrcat(tmpstr, ": \t\t\t", 1, 0);				
 	tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
 	tmpstr = ostrcat(tmpstr, "\n  ", 1, 0);
-	tmpstr = ostrcat(tmpstr, _("MediaDB Debug:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " \t\t\t", 1, 0);
+	tmpstr = ostrcat(tmpstr, _("MediaDB Debug"), 1, 0);
+	tmpstr = ostrcat(tmpstr, ": \t\t\t", 1, 0);
 	if(ostrcmp(getconfig("mediadbdebug", NULL), "1") == 0)
 		tmpstr = ostrcat(tmpstr, _("yes"), 1, 0);
 	else
 		tmpstr = ostrcat(tmpstr, _("no"), 1, 0);
 	tmpstr = ostrcat(tmpstr, "\n  ", 1, 0);		
-	tmpstr = ostrcat(tmpstr, _("Backdrop Download Count:"), 1, 0);
-	tmpstr = ostrcat(tmpstr, " \t\t", 1, 0);		
+	tmpstr = ostrcat(tmpstr, _("Backdrop Download Count"), 1, 0);
+	tmpstr = ostrcat(tmpstr, ": \t\t", 1, 0);		
 	tmpstr = ostrcat(tmpstr, getconfig("mediadbbackdrop", NULL), 1, 0);
 		
 	textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 500, 10, 0);
