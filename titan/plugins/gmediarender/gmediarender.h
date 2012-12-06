@@ -8,7 +8,8 @@ void gmediarendergetpic(struct skin* gmediarender, char* buf)
 {
 	char *tmpip = NULL, *pos = NULL, *pos1 = NULL, *path = NULL;
 	int port = 80;
-
+	printf("dlna download link: %s\n", buf);
+		
 	if(buf == NULL) return;
 
 	tmpip = string_replace("http://", "", buf, 0);
