@@ -2747,8 +2747,5 @@ msgstr "MediaDB Speicherort"
 msgid "scan Directory"
 msgstr "Durchsuchtes Verzeichnis"
 
-
-
-
-
-
+msgid "OTHER"
+msgstr "mehr"
