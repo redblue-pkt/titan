@@ -170,15 +170,14 @@ char* savetmdbpic(char* imdbid, char* url, char* tmppic, char* pic, int flag1)
 //flag: 1 = imdbid search
 //flag1: 0 = save pic in tmp
 //flag1: 1 = save pic in mediadb path if pic not exist
-//flag1: 2 = save pic in mediadb path
 //flag2: 2 = save no pic
 struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 {
 	struct tmdb* tnode = NULL;
 	char* tmpstr = NULL, *tmpstr1 = NULL, *logdir = NULL, *logfile = NULL, *tmpsearch = NULL, *savefile = NULL, *timen = NULL, *log = NULL, *posterurl = NULL;
-	int count = 0;
-	int mvicount = 0;
 
+	int count = 0;
+	int mvicount = 0;	
 	tmpsearch = ostrcat("2.1/", NULL, 0, 0);
 	if(flag == 0)
 		tmpsearch = ostrcat(tmpsearch, "Movie.search", 1, 0);
@@ -193,11 +192,12 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 	tmpsearch = ostrcat(tmpsearch, title, 1, 0);
 	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
 
+	debug(133, "search: http://api.themoviedb.org/%s", tmpsearch);
 	tmpstr = gethttp("api.themoviedb.org", tmpsearch, 80, NULL, NULL, NULL, 0);
 	
 	debug(133, "tmpsearch: %s", tmpsearch);
 //	debug(133, "tmpstr: %s", tmpstr);
-
+				
 	free(tmpsearch); tmpsearch = NULL;
 
 	logdir = ostrcat(getconfig("mediadbpath", NULL), "/.mediadbdebug", 0, 0);
@@ -218,7 +218,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 	{
 		if(ostrstr(tmpstr, "<movies>Nothing found.</movies>") != NULL)
 		{
-      		debug(133, "<movies>Nothing found.</movies>");
+      debug(133, "<movies>Nothing found.</movies>");
 			free(tmpstr); tmpstr = NULL;
 			return NULL;
 		}
@@ -328,9 +328,8 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 
 			if(tnode->backdrop == NULL && flag1 != 2 && ostrstr(tmpstr1, "size=\"poster\"") != NULL)
 				tnode->backdrop = oregex(".*<image type=\"backdrop\" url=\".*(http://.*/poster/.*)\" size=\"poster\".*", tmpstr1);
-	
-			if(ostrstr(tmpstr1, "<imdb_id>") != NULL)
-				tnode->imdbid = string_resub("<imdb_id>", "</imdb_id>", tmpstr1, 0);
+
+				printf("0000022222222222zzzzzzzzzzz\n");
 
 			if(getconfigint("mediadbdebug", NULL) == 1 && tnode->backdrop == NULL)
 			{
@@ -355,6 +354,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 				free(log), log = NULL;
 			}
 
+
 			if(ostrstr(tmpstr1, "<rating>") != NULL)
 				tnode->rating = string_resub("<rating>", "</rating>", tmpstr1, 0);
 
@@ -363,6 +363,9 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 
 			if(ostrstr(tmpstr1, "<id>") != NULL)
 				tnode->id = string_resub("<id>", "</id>", tmpstr1, 0);
+
+			if(ostrstr(tmpstr1, "<imdb_id>") != NULL)
+				tnode->imdbid = string_resub("<imdb_id>", "</imdb_id>", tmpstr1, 0);
 
 			if((flag1 == 0 && count == 1) || flag1 == 1)
 			{
@@ -375,10 +378,9 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 				tnode->cover = savefile;
 
 				savefile = savetmdbpic(tnode->imdbid, tnode->postermid, TMPTMDBPIC3, "_postermid.jpg", flag1);
-				posterurl = ostrcat(posterurl, tnode->postermid, 1, 0); 
 				free(tnode->postermid);
 				tnode->postermid = savefile;
-				
+
 				if(mvicount == 0)
 				{
 					savefile = savetmdbpic(tnode->imdbid, tnode->backdrop, TMPTMDBPIC4, "_backdrop1.jpg", flag1);
@@ -387,7 +389,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 				}
 			}
 
-			if((flag1 == 1 && tnode->backdrop != NULL && tnode->imdbid != NULL) || (flag1 == 2 && tnode->backdrop != NULL && tnode->imdbid != NULL))
+			if(flag1 == 1 && tnode->backdrop != NULL && tnode->imdbid != NULL)
 			{
 				char* tmppath = NULL;
 				mvicount = 0;
@@ -411,7 +413,6 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 							
 							savefile = savetmdbpic(tnode->imdbid, (&ret1[i])->part, TMPTMDBPIC4, tmppath, flag1);
 							free(tnode->backdrop);
-
 							if(file_exist(savefile))
 							{
 								tnode->backdrop = savefile;
@@ -601,11 +602,10 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 							unlink(tnode->backdrop);
 					}
 				}
-
 				free(ret1), ret1 = NULL;				
 				free(tmpstr2), tmpstr2 = NULL;
 			}
-			else if((flag1 == 1 && tnode->postermid != NULL && tnode->imdbid != NULL && file_exist(savefile)) || (flag1 == 2 && tnode->postermid != NULL && tnode->imdbid != NULL && file_exist(savefile)))
+			else if(flag1 == 1 && tnode->postermid != NULL && tnode->imdbid != NULL && file_exist(savefile))
 			{
 				free(tnode->mvi);
 				tnode->mvi = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
@@ -753,7 +753,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 					
 			if(file_exist(tnode->mvi))
 				unlink(tnode->backdrop);
-		
+
 			if(mvicount > 0)
 				tnode->mvi = ostrcat(oitoa(mvicount), NULL, 0, 0);
 			else
@@ -762,12 +762,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 			tmpstr1 += 5;
 			tmpstr1 = ostrstr(tmpstr1, "<movie>");
 
-			free(tmpstr1), tmpstr1 = NULL;
-			free(posterurl), posterurl = NULL;
-			free(logdir), logdir = NULL;
-			free(logfile), logfile = NULL;
-				
-     		debug(133, "----------------------tmdb start----------------------");
+			debug(133, "----------------------tmdb start----------------------");
 			debug(133, "title: %s", tnode->title);
 			debug(133, "language: %s", tnode->language);
 			debug(133, "type: %s", tnode->type);
@@ -788,9 +783,9 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 			debug(133, "id: %s", tnode->id);	
 			debug(133, "imdbid: %s", tnode->imdbid);
 			debug(133, "----------------------tmdb end----------------------");
-			printf("mvi count: %s", tnode->mvi);
 		}
 	}
+
 
 	free(tmpstr); tmpstr = NULL;
 	return *first;
@@ -803,6 +798,7 @@ struct tmdb* screentmdb(char* title, char* skinname, int flag, char* path, char*
 	debug(133, "title: %s",title);
 	debug(133, "path: %s",path);
 	debug(133, "file: %s",file);	
+	char* searchstr = NULL, *tmpstr = NULL;	
 
 	int rcret = 0;
 	struct skin* tmdbskin = NULL;
@@ -822,6 +818,8 @@ struct tmdb* screentmdb(char* title, char* skinname, int flag, char* path, char*
 	struct skin* skin_votes = getscreennode(tmdbskin, "votes");
 	struct skin* b3 = getscreennode(tmdbskin, "b3");
 	struct skin* load = getscreen("loading");
+	struct skin* blackscreen = getscreen("blackscreen");
+	
 	struct tmdb* node = NULL, *retnode = NULL;
 	char* search = NULL;
 
@@ -833,11 +831,26 @@ struct tmdb* screentmdb(char* title, char* skinname, int flag, char* path, char*
 	else
 		b3->hidden = NO;
 		
-	if(title == NULL) title = getepgakttitle(NULL);
+	if(title == NULL)
+		searchstr = getepgakttitle(NULL);
+	else
+	{
+		int isrec = 0, iscam = 0;
+		tmpstr = createshortname(file, &isrec, &iscam, 1);
+		if(tmpstr != NULL)
+			searchstr = ostrcat(searchstr, tmpstr, 1, 0);
+		else
+			searchstr = ostrcat(searchstr, title, 1, 0);
+	}
 
+	debug(133, "searchstr: %s",searchstr);
+
+	drawscreen(blackscreen, 0, 0);
 	drawscreen(load, 0, 0);
-	node = gettmdb(&node, title, 0, 0);
+
+	node = gettmdb(&node, searchstr, 0, 0);
 	clearscreen(load);
+	clearscreen(blackscreen);
 
 start:
 	if(node != NULL)
@@ -848,7 +861,11 @@ start:
 		changetext(skin_rating, node->rating);
 		changetext(skin_genre, node->genre);
 		changetext(skin_released, node->released);
-		changetext(skin_votes, node->votes);
+		char* tmpstr = NULL;
+		tmpstr = ostrcat("( ", node->votes, 0, 0);
+		tmpstr = ostrcat(tmpstr, " votes)", 1, 0);		
+		changetext(skin_votes, tmpstr);
+		free(tmpstr), tmpstr = NULL;
 		changepic(skin_cover, TMPTMDBPIC3);
 		skin_cover->hidden = NO;
 	}
@@ -860,7 +877,7 @@ start:
 		changetext(skin_rating, "--rating--");
 		changetext(skin_genre, "--genre--");
 		changetext(skin_released, "--releasetime--");
-		changetext(skin_votes, "--votes--");
+		changetext(skin_votes, "( --votes-- )");		
 		skin_cover->hidden = YES;
 	}
 
@@ -875,13 +892,16 @@ start:
 
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
-			search = textinput("Search", NULL);
+			search = textinput("Search", searchstr);
 			if(search != NULL)
 			{
 				freetmdb(&node, 0); node = NULL;
+				drawscreen(blackscreen, 0, 0);
 				drawscreen(load, 0, 0);
+
 				node = gettmdb(&node, search, 0, 0);
 				clearscreen(load);
+				clearscreen(blackscreen);
 				free(search); search = NULL;
 				goto start;
 			}
@@ -906,9 +926,11 @@ start:
 				if(search != NULL)
 				{
 					freetmdb(&node, 0); node = NULL;
+					drawscreen(blackscreen, 0, 0);
 					drawscreen(load, 0, 0);
 					node = gettmdb(&node, search, 1, 0);
 					clearscreen(load);
+					clearscreen(blackscreen);
 					free(search); search = NULL;
 					freemenulist(mlist, 1); mlist = NULL, mbox = NULL;
 					goto start;
@@ -926,13 +948,17 @@ start:
 
 		if(rcret == getrcconfigint("rcyellow", NULL) && path != NULL && file != NULL && node != NULL && node->imdbid != NULL && flag == 2)
 		{
+			drawscreen(blackscreen, 0, 0);
 			drawscreen(load, 0, 0);
 			debug(133, "path: %s",path);
 			debug(133, "file: %s",file);
 			debug(133, "type: 2");
-			debug(133, "node->imdbid: %s",node->imdbid);				
+			debug(133, "node->imdbid: %s",node->imdbid);
+			addconfigtmp("mediadbscantimeout", "0");
 			mediadbfindfilecb(path, file, 0, node->imdbid, 2);
+			delconfigtmp("mediadbscantimeout");			
 			clearscreen(load);
+			clearscreen(blackscreen);
 			break;
 		}
 	}
@@ -943,6 +969,7 @@ start:
 		node = NULL;
 	}
 
+	free(searchstr), searchstr = NULL;
 //	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	status.hangtime = getconfigint("hangtime", NULL);
 	clearscreen(tmdbskin);

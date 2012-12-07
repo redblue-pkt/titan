@@ -1097,7 +1097,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 			tmpstr = ostrcat(tmpstr, _("no"), 1, 0);
 		tmpstr = ostrcat(tmpstr, "\n  ", 1, 0);		
 		tmpstr = ostrcat(tmpstr, _("Backdrop Download Count"), 1, 0);
-		tmpstr = ostrcat(tmpstr, ": \t\t", 1, 0);
+		tmpstr = ostrcat(tmpstr, ": \t\t", 1, 0);		
 		tmpstr = ostrcat(tmpstr, getconfig("mediadbbackdrop", NULL), 1, 0);
 
 		int count = 0;
@@ -1467,6 +1467,258 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 	debug(777, "mediadb scanthread end");
 }
 
+// flag 1 = shortname
+// flag 2 = fileinfo
+char* createshortname(char* file, int *isrec, int *iscam, int flag)
+{
+	char* fileinfo = NULL, *shortname = NULL, *tmpstr = NULL;
+	//create imdb search name
+	shortname = ostrcat(file, NULL, 0, 0);
+
+	// create filelist info
+	tmpstr = ostrcat(tmpstr, file, 1, 0);
+	char* tmpstr1 = oregex(".*([0-9]{14,14}).*", tmpstr);
+	if(tmpstr1 != NULL)
+	{
+		shortname = string_replace(tmpstr1, "", shortname, 1);
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, "rec", 1, 0);
+		*isrec = 1;
+	}			
+	free(tmpstr1), tmpstr1 = NULL;
+
+	tmpstr1 = oregex(".*([0-9]{8,8}.*[0-9]{4,4}).*", tmpstr);
+	if(tmpstr1 != NULL && *isrec == 0)
+	{
+		shortname = string_replace(tmpstr1, "", shortname, 1);
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, "recold", 1, 0);
+		*isrec = 1;
+	}
+	free(tmpstr1), tmpstr1 = NULL;
+
+	tmpstr1 = oregex(".*([0-9]{5,5}).*", tmpstr);
+	if(tmpstr1 != NULL && *isrec == 0)
+	{
+		*iscam = 1;
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, "cam", 1, 0);
+	}
+	free(tmpstr1), tmpstr1 = NULL;
+	
+	if(*isrec == 0 && *iscam == 0)
+	{
+		string_tolower(shortname);
+		shortname = string_shortname(shortname, 2);
+		string_removechar(shortname);
+		strstrip(shortname);
+	}
+	else
+	{
+		char* cut = ostrcat(".", getfilenameext(tmpstr), 0, 1);
+		cut = ostrcat(cut, "\0", 1, 0);
+		shortname = string_replace(cut, "\0", shortname, 1);
+		free(cut), cut = NULL;
+
+		string_removechar(shortname);
+		strstrip(shortname);
+	}
+
+	string_tolower(tmpstr);
+
+	if((ostrstr(tmpstr, ".special.extended.edition.") != NULL) || (ostrstr(tmpstr, ".sse.") != NULL))
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, "SEE-Version", 1, 0);
+		shortname = string_replace(".special.extended.edition.", "", shortname, 1);
+	}
+	if((ostrstr(tmpstr, ".extended.version.") != NULL) || (ostrstr(tmpstr, ".extended.") != NULL) || (ostrstr(tmpstr, ".ed.") != NULL))
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, "ED-Version", 1, 0);
+		shortname = string_replace(".extended.version.", "", shortname, 1);
+	}
+	if((ostrstr(tmpstr, ".uncut.") != NULL) || (ostrstr(tmpstr, ".uc.") != NULL))
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, "UC-Version", 1, 0);
+	}
+	if((ostrstr(tmpstr, ".unrated.") != NULL) || (ostrstr(tmpstr, ".ur.") != NULL))
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, "UR-Version", 1, 0);
+	}
+	if((ostrstr(tmpstr, ".telesync.") != NULL) || (ostrstr(tmpstr, ".ts.") != NULL))
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);			
+		fileinfo = ostrcat(fileinfo, "telesync", 1, 0);
+	}
+	if((ostrstr(tmpstr, ".telecine.") != NULL) || (ostrstr(tmpstr, ".tc.") != NULL))
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, "telecine", 1, 0);
+	}
+	if((ostrstr(tmpstr, ".dts.") != NULL) || (ostrstr(tmpstr, ".dtshd.") != NULL))
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, "dts", 1, 0);
+	}
+	if((ostrstr(tmpstr, ".ac3.") != NULL) || (ostrstr(tmpstr, ".ac3d.") != NULL) || (ostrstr(tmpstr, ".ac3hd.") != NULL))
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, "ac3", 1, 0);
+	}
+	if(ostrstr(tmpstr, ".r5.") != NULL)
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, "r5", 1, 0);
+	}
+	if(ostrstr(tmpstr, ".r3.") != NULL)
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, "r3", 1, 0);
+	}
+	if(ostrstr(tmpstr, ".r1.") != NULL)
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, "r1", 1, 0);
+	}			
+	if(ostrstr(tmpstr, ".sample.") != NULL)
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, "sample", 1, 0);
+	}
+
+	tmpstr1 = oregex(".*([0-9]{4,4}).*", tmpstr);
+	if(tmpstr1 != NULL && *isrec == 0 && *iscam == 0)
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
+	}
+	free(tmpstr1), tmpstr1 = NULL;
+	
+	tmpstr1 = oregex(".*(cd[0-9]{1,3}).*", tmpstr);
+	if(tmpstr1 != NULL)
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
+		shortname = string_replace(tmpstr1, "", shortname, 1);
+	}
+	free(tmpstr1), tmpstr1 = NULL;
+
+	tmpstr1 = oregex(".*(dvd[0-9]{1,2}).*", tmpstr);
+	if(tmpstr1 != NULL)
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
+		shortname = string_replace(tmpstr1, "", shortname, 1);
+	}
+	free(tmpstr1), tmpstr1 = NULL;
+
+	tmpstr1 = oregex(".*(s[0-9]{1,2}e[0-9]{1,2}e[0-9]{1,2}).*", tmpstr);
+	if(tmpstr1 != NULL)
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
+		shortname = string_replace(tmpstr1, "", shortname, 1);
+	}
+	free(tmpstr1), tmpstr1 = NULL;
+
+	tmpstr1 = oregex(".*(s[0-9]{1,2}e[0-9]{1,2}).*", tmpstr);
+	if(tmpstr1 != NULL)
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
+		shortname = string_replace(tmpstr1, "", shortname, 1);
+	}
+	free(tmpstr1), tmpstr1 = NULL;
+
+
+	tmpstr1 = oregex(".*(disc[0-9]{1,2}).*", tmpstr);
+	if(tmpstr1 != NULL)
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
+		shortname = string_replace(tmpstr1, "", shortname, 1);
+	}
+	free(tmpstr1), tmpstr1 = NULL;
+
+	tmpstr1 = oregex(".*(season[0-9]{1,2}).*", tmpstr);
+	if(tmpstr1 != NULL)
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
+		shortname = string_replace(tmpstr1, "", shortname, 1);
+	}
+	free(tmpstr1), tmpstr1 = NULL;			
+
+	tmpstr1 = oregex(".*(episode[0-9]{1,2}).*", tmpstr);
+	if(tmpstr1 != NULL)
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
+		shortname = string_replace(tmpstr1, "", shortname, 1);
+	}
+	free(tmpstr1), tmpstr1 = NULL;			
+
+	tmpstr1 = oregex(".*(staffel[0-9]{1,2}).*", tmpstr);
+	if(tmpstr1 != NULL)
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
+		shortname = string_replace(tmpstr1, "", shortname, 1);
+	}
+	free(tmpstr1), tmpstr1 = NULL;
+
+	tmpstr1 = oregex(".*(part[0-9]{1,2}).*", tmpstr);
+	if(tmpstr1 != NULL)
+	{
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
+		shortname = string_replace(tmpstr1, "", shortname, 1);
+	}
+	free(tmpstr1), tmpstr1 = NULL;
+
+	strstrip(shortname);
+
+	if(fileinfo != NULL)
+		fileinfo = ostrcat(fileinfo, " ", 1, 0);
+	fileinfo = ostrcat(fileinfo, getfilenameext(tmpstr), 1, 1);
+	free(tmpstr), tmpstr = NULL;
+
+	if(flag == 1)
+		return shortname;
+	else if(flag == 2)
+		return fileinfo;
+
+	return NULL;
+}
+
 // flag 0 = autoscan
 // flag 1 = manual scan imdb
 // flag 2 = manual scan tmdb
@@ -1489,9 +1741,11 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 		tmpid = ostrcat(tmpid, id, 1, 0);
 		
 	shortpath = delmountpart(path, 0);
+	
 	if(shortpath == NULL) return; //no mountpart found
 
 	m_lock(&status.mediadbmutex, 17);
+
 	node = mediadb;
 	//check if entry exist
 	while(node != NULL)
@@ -1520,6 +1774,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 		node = node->next;
 	}
 	m_unlock(&status.mediadbmutex, 17);
+
 	int tout = getconfigint("mediadbscantimeout", NULL);
 
 	if(node == NULL || (node != NULL && checkbit(node->flag, 31) == 0 && tout == 0) || (node != NULL && checkbit(node->flag, 31) == 0 && time(NULL) > node->timestamp + (tout * 86400)))
@@ -1530,245 +1785,8 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			struct imdbapi* imdbapi = NULL;
 			struct tmdb* tmdb = NULL;
 			
-			char* fileinfo = NULL;
-			//create imdb search name
-			char* shortname = ostrcat(file, NULL, 0, 0);
-
-			// create filelist info
-			tmpstr = ostrcat(tmpstr, file, 1, 0);
-			char* tmpstr1 = oregex(".*([0-9]{14,14}).*", tmpstr);
-			if(tmpstr1 != NULL)
-			{
-				shortname = string_replace(tmpstr1, "", shortname, 1);
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, "rec", 1, 0);
-				isrec = 1;
-			}			
-			free(tmpstr1), tmpstr1 = NULL;
-
-			tmpstr1 = oregex(".*([0-9]{8,8}.*[0-9]{4,4}).*", tmpstr);
-			if(tmpstr1 != NULL && isrec == 0)
-			{
-				shortname = string_replace(tmpstr1, "", shortname, 1);
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, "recold", 1, 0);
-				isrec = 1;
-			}
-			free(tmpstr1), tmpstr1 = NULL;
-
-			tmpstr1 = oregex(".*([0-9]{5,5}).*", tmpstr);
-			if(tmpstr1 != NULL && isrec == 0)
-			{
-				iscam = 1;
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, "cam", 1, 0);
-			}
-			free(tmpstr1), tmpstr1 = NULL;
-			
-			if(isrec == 0 && iscam == 0)
-			{
-				string_tolower(shortname);
-				shortname = string_shortname(shortname, 2);
-				string_removechar(shortname);
-				strstrip(shortname);
-			}
-			else
-			{
-				char* cut = ostrcat(".", getfilenameext(tmpstr), 0, 1);
-				cut = ostrcat(cut, "\0", 1, 0);
-				shortname = string_replace(cut, "\0", shortname, 1);
-				free(cut), cut = NULL;
-
-				string_removechar(shortname);
-				strstrip(shortname);
-			}
-
-			string_tolower(tmpstr);
-
-			if((ostrstr(tmpstr, ".special.extended.edition.") != NULL) || (ostrstr(tmpstr, ".sse.") != NULL))
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, "SEE-Version", 1, 0);
-				shortname = string_replace(".special.extended.edition.", "", shortname, 1);
-			}
-			if((ostrstr(tmpstr, ".extended.version.") != NULL) || (ostrstr(tmpstr, ".extended.") != NULL) || (ostrstr(tmpstr, ".ed.") != NULL))
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, "ED-Version", 1, 0);
-				shortname = string_replace(".extended.version.", "", shortname, 1);
-			}
-			if((ostrstr(tmpstr, ".uncut.") != NULL) || (ostrstr(tmpstr, ".uc.") != NULL))
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, "UC-Version", 1, 0);
-			}
-			if((ostrstr(tmpstr, ".unrated.") != NULL) || (ostrstr(tmpstr, ".ur.") != NULL))
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, "UR-Version", 1, 0);
-			}
-			if((ostrstr(tmpstr, ".telesync.") != NULL) || (ostrstr(tmpstr, ".ts.") != NULL))
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);			
-				fileinfo = ostrcat(fileinfo, "telesync", 1, 0);
-			}
-			if((ostrstr(tmpstr, ".telecine.") != NULL) || (ostrstr(tmpstr, ".tc.") != NULL))
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, "telecine", 1, 0);
-			}
-			if((ostrstr(tmpstr, ".dts.") != NULL) || (ostrstr(tmpstr, ".dtshd.") != NULL))
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, "dts", 1, 0);
-			}
-			if((ostrstr(tmpstr, ".ac3.") != NULL) || (ostrstr(tmpstr, ".ac3d.") != NULL) || (ostrstr(tmpstr, ".ac3hd.") != NULL))
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, "ac3", 1, 0);
-			}
-			if(ostrstr(tmpstr, ".r5.") != NULL)
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, "r5", 1, 0);
-			}
-			if(ostrstr(tmpstr, ".r3.") != NULL)
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, "r3", 1, 0);
-			}
-			if(ostrstr(tmpstr, ".r1.") != NULL)
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, "r1", 1, 0);
-			}			
-			if(ostrstr(tmpstr, ".sample.") != NULL)
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, "sample", 1, 0);
-			}
-
-			tmpstr1 = oregex(".*([0-9]{4,4}).*", tmpstr);
-			if(tmpstr1 != NULL && isrec == 0 && iscam == 0)
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
-			}
-			free(tmpstr1), tmpstr1 = NULL;
-			
-			tmpstr1 = oregex(".*(cd[0-9]{1,3}).*", tmpstr);
-			if(tmpstr1 != NULL)
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
-				shortname = string_replace(tmpstr1, "", shortname, 1);
-			}
-			free(tmpstr1), tmpstr1 = NULL;
-
-			tmpstr1 = oregex(".*(dvd[0-9]{1,2}).*", tmpstr);
-			if(tmpstr1 != NULL)
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
-				shortname = string_replace(tmpstr1, "", shortname, 1);
-			}
-			free(tmpstr1), tmpstr1 = NULL;
-
-			tmpstr1 = oregex(".*(s[0-9]{1,2}e[0-9]{1,2}e[0-9]{1,2}).*", tmpstr);
-			if(tmpstr1 != NULL)
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
-				shortname = string_replace(tmpstr1, "", shortname, 1);
-			}
-			free(tmpstr1), tmpstr1 = NULL;
-
-			tmpstr1 = oregex(".*(s[0-9]{1,2}e[0-9]{1,2}).*", tmpstr);
-			if(tmpstr1 != NULL)
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
-				shortname = string_replace(tmpstr1, "", shortname, 1);
-			}
-			free(tmpstr1), tmpstr1 = NULL;
-
-
-			tmpstr1 = oregex(".*(disc[0-9]{1,2}).*", tmpstr);
-			if(tmpstr1 != NULL)
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
-				shortname = string_replace(tmpstr1, "", shortname, 1);
-			}
-			free(tmpstr1), tmpstr1 = NULL;
-
-			tmpstr1 = oregex(".*(season[0-9]{1,2}).*", tmpstr);
-			if(tmpstr1 != NULL)
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
-				shortname = string_replace(tmpstr1, "", shortname, 1);
-			}
-			free(tmpstr1), tmpstr1 = NULL;			
-
-			tmpstr1 = oregex(".*(episode[0-9]{1,2}).*", tmpstr);
-			if(tmpstr1 != NULL)
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
-				shortname = string_replace(tmpstr1, "", shortname, 1);
-			}
-			free(tmpstr1), tmpstr1 = NULL;			
-
-			tmpstr1 = oregex(".*(staffel[0-9]{1,2}).*", tmpstr);
-			if(tmpstr1 != NULL)
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
-				shortname = string_replace(tmpstr1, "", shortname, 1);
-			}
-			free(tmpstr1), tmpstr1 = NULL;
-
-			tmpstr1 = oregex(".*(part[0-9]{1,2}).*", tmpstr);
-			if(tmpstr1 != NULL)
-			{
-				if(fileinfo != NULL)
-					fileinfo = ostrcat(fileinfo, " ", 1, 0);
-				fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
-				shortname = string_replace(tmpstr1, "", shortname, 1);
-			}
-			free(tmpstr1), tmpstr1 = NULL;
-
-			strstrip(shortname);
-
-			if(fileinfo != NULL)
-				fileinfo = ostrcat(fileinfo, " ", 1, 0);
-			fileinfo = ostrcat(fileinfo, getfilenameext(tmpstr), 1, 1);
-			free(tmpstr), tmpstr = NULL;
+			char* shortname = createshortname(file, &isrec, &iscam, 1);
+			char* fileinfo = createshortname(file, &isrec, &iscam, 2);
 
 			char* logdir = NULL, *logfile = NULL;
 			logdir = ostrcat(getconfig("mediadbpath", NULL), "/.mediadbdebug", 0, 0);
@@ -1945,7 +1963,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				tmpstr = ostrcat(tmpstr, path, 1, 0);
 				tmpstr = ostrcat(tmpstr, "/", 1, 0);
 				tmpstr = ostrcat(tmpstr, file, 1, 0);
-				tmpstr1 = changefilenameext(tmpstr, ".epg");
+				char* tmpstr1 = changefilenameext(tmpstr, ".epg");
 				free(tmpstr), tmpstr = NULL;
 				cmd = readfiletomem(tmpstr1, 1);
 				free(tmpstr1), tmpstr1 = NULL;

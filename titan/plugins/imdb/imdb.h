@@ -58,6 +58,8 @@ start:
 		tmpsearch = ostrcat("/title/tt", title, 0, 0);
 	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
 
+	debug(133, "search: http://www.imdb.de/%s", tmpsearch);
+
 	tmpstr = gethttp("www.imdb.de", tmpsearch, 80, NULL, NULL, NULL, 0);
 	
 	debug(133, "tmpsearch: %s", tmpsearch);
@@ -464,7 +466,8 @@ void screenimdb(char* title, char* dummy1, char* dummy2, char* path, char* file)
 {
 	debug(133, "title: %s",title);
 	debug(133, "path: %s",path);
-	debug(133, "file: %s",file);	
+	debug(133, "file: %s",file);
+	char* searchstr = NULL, *tmpstr = NULL;	
 	int rcret = 0;
 
 	struct skin* imdbskin = getscreen("imdb");
@@ -477,8 +480,9 @@ void screenimdb(char* title, char* dummy1, char* dummy2, char* path, char* file)
 	struct skin* skin_cover = getscreennode(imdbskin, "cover");
 	struct skin* skin_actors = getscreennode(imdbskin, "actors");
 	struct skin* skin_b2 = getscreennode(imdbskin, "b2");
-
 	struct skin* load = getscreen("loading");
+	struct skin* blackscreen = getscreen("blackscreen");
+
 	struct imdb* node = NULL;
 	char* search = NULL;
 
@@ -490,12 +494,27 @@ void screenimdb(char* title, char* dummy1, char* dummy2, char* path, char* file)
 //	setfbtransparent(255);
 	status.hangtime = 99999;
 
-	if(title == NULL) title = getepgakttitle(NULL);
-	debug(133, "title: %s",title);
+	if(title == NULL)
+		searchstr = getepgakttitle(NULL);
+	else
+	{
+		int isrec = 0, iscam = 0;
+		tmpstr = createshortname(file, &isrec, &iscam, 1);
+		if(tmpstr != NULL)
+			searchstr = ostrcat(searchstr, tmpstr, 1, 0);
+		else
+			searchstr = ostrcat(searchstr, title, 1, 0);
+	}
 
+	debug(133, "searchstr: %s",searchstr);
+
+	drawscreen(blackscreen, 0, 0);
 	drawscreen(load, 0, 0);
-	node = getimdb(&node, title, 0, 0, 0);
+
+	node = getimdb(&node, searchstr, 0, 0, 0);
+
 	clearscreen(load);
+	clearscreen(blackscreen);
 
 start:
 	if(node != NULL)
@@ -533,13 +552,15 @@ start:
 
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
-			search = textinput("Search", NULL);
+			search = textinput("Search", searchstr);
 			if(search != NULL)
 			{
 				freeimdb(&node, 0); node = NULL;
+				drawscreen(blackscreen, 0, 0);
 				drawscreen(load, 0, 0);
 				node = getimdb(&node, search, 0, 0, 0);
 				clearscreen(load);
+				clearscreen(blackscreen);
 				free(search); search = NULL;
 				goto start;
 			}
@@ -549,17 +570,22 @@ start:
 		
 		if(path != NULL && file != NULL && node != NULL && node->id != NULL && rcret == getrcconfigint("rcgreen", NULL))
 		{
+			drawscreen(blackscreen, 0, 0);
 			drawscreen(load, 0, 0);
 			debug(133, "path: %s",path);
 			debug(133, "file: %s",file);
 			debug(133, "type: 2");
 			debug(133, "imdbid: %s",node->id);				
+			addconfigtmp("mediadbscantimeout", "0");
 			mediadbfindfilecb(path, file, 0, node->id, 1);
+			delconfigtmp("mediadbscantimeout");
 			clearscreen(load);
+			clearscreen(blackscreen);
 			break;
 		}
 	}
 
+	free(searchstr), searchstr = NULL;
 	freeimdb(&node, 0); node = NULL;
 //	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	status.hangtime = getconfigint("hangtime", NULL);
