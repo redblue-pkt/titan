@@ -36,7 +36,14 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 	struct skin* filelistpath = getscreennode(dir, "filelistpath");
 	struct skin* filelist = getscreennode(dir, "filelist");
 	struct skin* label = getscreennode(dir, "label");
+	struct skin* thumb = getscreennode(dir, "thumb");
 	struct skin *button = NULL;
+	struct skin* load = getscreen("loading");
+	drawscreen(load, 0, 0);
+
+	struct mediadb* dbnode = NULL;
+	readmediadb(getconfig("mediadbfile", NULL), 0, 0);
+
 	char *ret = NULL;
 	char *tmppath = NULL;
 
@@ -91,6 +98,8 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 	else
 		changetext(button, _("---"));
 
+	thumb->hidden = YES;
+
 	drawscreen(dir, 0, 0);
 	addscreenrc(dir, filelist);
 
@@ -117,10 +126,38 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 			}
 			else if(filelist->select != NULL && filelist->select->input == NULL) //file
 			{
-
 				ret = createpath(filelistpath->text, filelist->select->text);
 				if(ext != NULL)
 				{
+					char* tmpstr = NULL, *pic = NULL;
+					struct mediadb* mnode = getmediadb(filelistpath->text, filelist->select->text, 0);
+					if(mnode != NULL)
+					{
+						if(mnode->id != NULL)
+						{
+							tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
+							tmpstr = ostrcat(tmpstr, "/", 1, 0);
+							tmpstr = ostrcat(tmpstr, mnode->id, 1, 0);
+
+							pic = ostrcat(tmpstr, "_thumb.jpg", 0, 0);
+							thumb->hidden = NO;
+							changepic(thumb, pic);
+						}
+						else
+						{
+							thumb->hidden = YES;
+							changepic(thumb, NULL);
+						}
+					}
+					else
+					{
+						thumb->hidden = YES;
+						changepic(thumb, NULL);
+					}
+											
+					free(pic), pic = NULL;
+					free(tmpstr), tmpstr = NULL;
+
 					readlabelext(label, ret, ext);
 					drawscreen(dir, 0, 0);
 				}
