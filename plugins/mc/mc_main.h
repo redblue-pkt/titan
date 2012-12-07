@@ -104,8 +104,12 @@ void mc_main()
 	status.mcaktiv = 1;
 	status.hangtime = 99999;
 	int rcret = 0, ret = 0;
+	char* videomode = NULL, *currvideomode = NULL;
+
 	writevfd("Mediacenter");
 	resettvpic();
+	videomode = getvideomode();
+	debug(50, "save videomode: %s", videomode);
 
 	debug(50, "setfbtransparent 255");
 	setfbtransparent(255);
@@ -259,6 +263,23 @@ void mc_main()
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	status.hangtime = getconfigint("hangtime", NULL);
 	status.mcaktiv = 0;
+
+	currvideomode = getvideomode();
+	if(videomode != NULL && currvideomode != NULL && ostrcmp(videomode, currvideomode) != 0)
+	{
+		debug(50, "detected videomode change: %s > %s", videomode, currvideomode);
+		debug(50, "reset videomode: %s", videomode);
+		setvideomode(videomode, 0); 
+		changefbresolution(videomode);
+		writeallconfig(1);
+		if((ostrncmp("576", videomode, 3) == 0) || (ostrncmp("pal", videomode, 3) == 0))
+			writesys("/var/etc/.scart", "0", 0);
+		else
+			unlink("/var/etc/.scart");
+	}
+
+	free(videomode),videomode = NULL;
+	free(currvideomode),currvideomode = NULL;
 }
 
 #endif
