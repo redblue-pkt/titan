@@ -170,6 +170,7 @@ char* savetmdbpic(char* imdbid, char* url, char* tmppic, char* pic, int flag1)
 //flag: 1 = imdbid search
 //flag1: 0 = save pic in tmp
 //flag1: 1 = save pic in mediadb path if pic not exist
+//flag1: 2 = save pic in mediadb path 
 //flag2: 2 = save no pic
 struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 {
@@ -329,7 +330,8 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 			if(tnode->backdrop == NULL && flag1 != 2 && ostrstr(tmpstr1, "size=\"poster\"") != NULL)
 				tnode->backdrop = oregex(".*<image type=\"backdrop\" url=\".*(http://.*/poster/.*)\" size=\"poster\".*", tmpstr1);
 
-				printf("0000022222222222zzzzzzzzzzz\n");
+			if(ostrstr(tmpstr1, "<imdb_id>") != NULL)
+				tnode->imdbid = string_resub("<imdb_id>", "</imdb_id>", tmpstr1, 0);
 
 			if(getconfigint("mediadbdebug", NULL) == 1 && tnode->backdrop == NULL)
 			{
@@ -364,9 +366,6 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 			if(ostrstr(tmpstr1, "<id>") != NULL)
 				tnode->id = string_resub("<id>", "</id>", tmpstr1, 0);
 
-			if(ostrstr(tmpstr1, "<imdb_id>") != NULL)
-				tnode->imdbid = string_resub("<imdb_id>", "</imdb_id>", tmpstr1, 0);
-
 			if((flag1 == 0 && count == 1) || flag1 == 1)
 			{
 				savefile = savetmdbpic(tnode->imdbid, tnode->thumb, TMPTMDBPIC1, "_thumb.jpg", flag1);
@@ -378,6 +377,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 				tnode->cover = savefile;
 
 				savefile = savetmdbpic(tnode->imdbid, tnode->postermid, TMPTMDBPIC3, "_postermid.jpg", flag1);
+				posterurl = ostrcat(posterurl, tnode->postermid, 1, 0);
 				free(tnode->postermid);
 				tnode->postermid = savefile;
 
@@ -389,7 +389,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 				}
 			}
 
-			if(flag1 == 1 && tnode->backdrop != NULL && tnode->imdbid != NULL)
+			if((flag1 == 1 && tnode->backdrop != NULL && tnode->imdbid != NULL) || (flag1 == 2 && tnode->backdrop != NULL && tnode->imdbid != NULL)) 
 			{
 				char* tmppath = NULL;
 				mvicount = 0;
@@ -605,7 +605,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 				free(ret1), ret1 = NULL;				
 				free(tmpstr2), tmpstr2 = NULL;
 			}
-			else if(flag1 == 1 && tnode->postermid != NULL && tnode->imdbid != NULL && file_exist(savefile))
+			else if((flag1 == 1 && tnode->postermid != NULL && tnode->imdbid != NULL && file_exist(savefile)) || (flag1 == 2 && tnode->postermid != NULL && tnode->imdbid != NULL && file_exist(savefile)))
 			{
 				free(tnode->mvi);
 				tnode->mvi = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
@@ -761,6 +761,11 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 
 			tmpstr1 += 5;
 			tmpstr1 = ostrstr(tmpstr1, "<movie>");
+
+			free(tmpstr1), tmpstr1 = NULL; 
+			free(posterurl), posterurl = NULL; 
+			free(logdir), logdir = NULL; 
+			free(logfile), logfile = NULL; 
 
 			debug(133, "----------------------tmdb start----------------------");
 			debug(133, "title: %s", tnode->title);
