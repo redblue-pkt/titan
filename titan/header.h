@@ -70,7 +70,6 @@ void screenmediadbsettings();
 int writemediadb(const char *filename);
 int delmediadbfilter(struct mediadbfilter* mnode, int flag);
 struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* title, char* year, char* released, char* runtime, char* genre, char* director, char* writer, char* actors, char* plot, char* poster, char* rating, char* votes, char* path, char* file, char* shortname, char* fileinfo, int flag, int postercount);
-
 void freemediadbcontent(struct mediadb* node);
 int findfiles(char* dirname, int type, int onlydir, int onlycount, int first);
 struct mediadbfilter* getlastmediadbfilter(struct mediadbfilter* node, int flag);
@@ -85,6 +84,7 @@ void freemediadb(int flag);
 void freemediadbcategory(int flag);
 int delmediadb(struct mediadb* mnode, int flag);
 void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag);
+char* createshortname(char* file, int *isrec, int *iscam, int flag);
 
 //eraseswap.h
 void screeneraseswap();
