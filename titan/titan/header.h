@@ -363,7 +363,7 @@ void playwritevfd(char* file);
 void playstartservice();
 void screenplayinfobar(char* file, int mode, int playertype, int flag);
 void playrcgreen(char* file, int playinfobarstatus, int playertype, int flag);
-void playrcred(char* file, int playinfobarstatus, int playertype, int files, int flag);
+void playrcred(char* file, int playinfobarstatus, int playertype, int flag);
 void playrcinfo(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
 void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
 void playrcfr(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
@@ -371,7 +371,7 @@ void playrcpause(char* file, int* playinfobarstatus, int* playinfobarcount, int 
 void playrcplay(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
 void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
 void playrcjumpf(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
-void get_mediadb_scan_info(int files);
+void get_mediadb_scan_info();
 
 //inetwork.h
 struct inetwork* getinetworkbydevice(char* device);
