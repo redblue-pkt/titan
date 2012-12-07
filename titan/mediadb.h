@@ -934,6 +934,13 @@ int writemediadb(const char *filename)
 		return 1;
 	}
 
+	int run = 0, videocount = 0, audiocount = 0, picturecount = 0;
+	if(status.mediadbfiles > 0)
+	{
+		getmediadbcounts(&videocount, &audiocount, &picturecount);
+		run = 1;
+	}
+
 	m_lock(&status.mediadbmutex, 17);
 	node = mediadb;
 
@@ -946,6 +953,18 @@ int writemediadb(const char *filename)
 			perr("writting file %s", filename);
 		}
 		node = node->next;
+	}
+
+	if(run == 1 && status.mediadbfiles > 0)
+	{	
+		char* tmpstr = NULL;
+		tmpstr = ostrcat(tmpstr, "add(", 1, 0);
+		tmpstr = ostrcat(tmpstr, oitoa(videocount), 1, 1);
+		tmpstr = ostrcat(tmpstr, "/", 1, 0);
+		tmpstr = ostrcat(tmpstr, oitoa(status.mediadbfiles), 1, 1);
+		tmpstr = ostrcat(tmpstr, ")", 1, 0);
+		writevfd(tmpstr);
+		free(tmpstr),tmpstr = NULL;
 	}
 
 	m_unlock(&status.mediadbmutex, 17);
@@ -1065,6 +1084,11 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 		type = type - 1000;
 	
 		char* tmpstr = NULL;
+		tmpstr = ostrcat(tmpstr, "scanning (", 1, 0);
+		tmpstr = ostrcat(tmpstr, "0", 1, 0);
+		tmpstr = ostrcat(tmpstr, "/", 1, 0);
+		tmpstr = ostrcat(tmpstr, oitoa(status.mediadbfiles), 1, 1);
+		tmpstr = ostrcat(tmpstr, ")", 1, 0);
 		tmpstr = ostrcat(tmpstr, _("MediaDB directory scan started in Background !"), 1, 0);
 		tmpstr = ostrcat(tmpstr, "\n\n  ", 1, 0);
 		tmpstr = ostrcat(tmpstr, _("Delete MediaDB before scan"), 1, 0);
@@ -1097,8 +1121,11 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 			tmpstr = ostrcat(tmpstr, _("no"), 1, 0);
 		tmpstr = ostrcat(tmpstr, "\n  ", 1, 0);		
 		tmpstr = ostrcat(tmpstr, _("Backdrop Download Count"), 1, 0);
-		tmpstr = ostrcat(tmpstr, ": \t\t", 1, 0);		
-		tmpstr = ostrcat(tmpstr, getconfig("mediadbbackdrop", NULL), 1, 0);
+		tmpstr = ostrcat(tmpstr, ": \t\t", 1, 0);
+		if(getconfigint("mediadbbackdrop", NULL) == 0)
+			tmpstr = ostrcat(tmpstr, "all", 1, 0);
+		else
+			tmpstr = ostrcat(tmpstr, oitoa(getconfigint("mediadbbackdrop", NULL)), 1, 1);
 
 		int count = 0;
 
@@ -1116,6 +1143,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 									
 		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 500, 10, 0);
 		free(tmpstr), tmpstr = NULL;
+		writevfd("iMDB start");
 		count = 0;
 	}
 	
@@ -1461,7 +1489,9 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 	freemediadbcategory(0);
 
 	textbox(_("Message"), _("MediaDB scan finished"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+	writevfd("iMDB Done !");
 
+	status.mediadbfiles = 0;
 	status.mediadbthread = NULL;
 	status.mediadbthreadstatus = 0;
 	debug(777, "mediadb scanthread end");

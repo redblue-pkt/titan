@@ -20,7 +20,10 @@ void screenkeyactions(int key, int flag)
 	if(flag == 1)
 	{
 		char* skintitle = "Key Action - Plugins";
-	
+
+		if(status.mediadbfiles > 0)
+			addmenulist(&mlist, "MediaDB Scan Info", NULL, NULL, 0, 0);
+			
 		if(key == 1)
 		{
 			while(child != NULL)
@@ -121,6 +124,8 @@ void screenkeyactions(int key, int flag)
 		resettvpic();
 		return;
 	}
+	else if(ostrcmp(keyconf, "MediaDB Scan Info") == 0)
+		get_mediadb_scan_info();
 
 	pluginnode = getplugin(keyconf);
 

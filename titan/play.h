@@ -451,7 +451,7 @@ void imdb_submenu(char* file, int mode)
 	}
 }
 
-void get_mediadb_scan_info(int files)
+void get_mediadb_scan_info()
 {
 	int videocount = 0, audiocount = 0, picturecount = 0;
 	getmediadbcounts(&videocount, &audiocount, &picturecount);
@@ -460,7 +460,7 @@ void get_mediadb_scan_info(int files)
 	tmpstr = ostrcat(tmpstr, "scanning (", 1, 0);
 	tmpstr = ostrcat(tmpstr, oitoa(videocount), 1, 1);
 	tmpstr = ostrcat(tmpstr, "/", 1, 0);
-	tmpstr = ostrcat(tmpstr, oitoa(files), 1, 1);
+	tmpstr = ostrcat(tmpstr, oitoa(status.mediadbfiles), 1, 1);
 	tmpstr = ostrcat(tmpstr, ")", 1, 0);
 	
 	tmpstr = ostrcat(tmpstr, "\n\n ", 1, 0);
@@ -497,13 +497,16 @@ void get_mediadb_scan_info(int files)
 	tmpstr = ostrcat(tmpstr, "\n  ", 1, 0);		
 	tmpstr = ostrcat(tmpstr, _("Backdrop Download Count"), 1, 0);
 	tmpstr = ostrcat(tmpstr, ": \t\t", 1, 0);		
-	tmpstr = ostrcat(tmpstr, getconfig("mediadbbackdrop", NULL), 1, 0);
-		
+	if(getconfigint("mediadbbackdrop", NULL) == 0)
+		tmpstr = ostrcat(tmpstr, "all", 1, 0);
+	else
+		tmpstr = ostrcat(tmpstr, oitoa(getconfigint("mediadbbackdrop", NULL)), 1, 1);
+
 	textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 500, 10, 0);
 	free(tmpstr), tmpstr = NULL;
 }
 
-void playrcred(char* file, int playinfobarstatus, int playertype, int files, int flag)
+void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 {
 //	if(checkbit(status.playercan, 5) == 0) return;
 	if(status.play == 1)
@@ -525,7 +528,7 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int files, int
 
 	addmenulist(&mlist, "MediaDB Edit", NULL, NULL, 0, 0);
 		
-	if(files > 0)
+	if(status.mediadbfiles > 0)
 		addmenulist(&mlist, "MediaDB Scan Info", NULL, NULL, 0, 0);
 
 	//add plugins
@@ -561,7 +564,7 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int files, int
 		else if(ostrcmp(mbox->name, "iD3Tag Info") == 0)
 			id3tag_info(file);
 		else if(ostrcmp(mbox->name, "MediaDB Scan Info") == 0)
-			get_mediadb_scan_info(files);
+			get_mediadb_scan_info();
 		else if(ostrcmp(mbox->name, "MediaDB Edit") == 0)
 			screenmediadbedit(file, 0);
 		else
@@ -1140,7 +1143,7 @@ playerstart:
 					playrcok(file, playinfobarstatus, playertype, flag);
 				
 				if(rcret == getrcconfigint("rcred", NULL))
-					playrcred(file, playinfobarstatus, playertype, 0, flag);
+					playrcred(file, playinfobarstatus, playertype, flag);
 
 				if(rcret == getrcconfigint("rcinfo", NULL))
 					playrcinfo(file, &playinfobarstatus, &playinfobarcount, playertype, flag);

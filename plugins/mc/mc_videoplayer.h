@@ -447,7 +447,7 @@ void screenmc_videoplayer()
 		else if(rcret == getrcconfigint("rcred", NULL))
 		{
 			if(status.play == 1)
-				playrcred(filename, playinfobarstatus, playertype, files, flag);
+				playrcred(filename, playinfobarstatus, playertype, flag);
 			else
 			{
 				if(playlist == 0)
@@ -539,7 +539,7 @@ void screenmc_videoplayer()
 				{
 					filename = createpath(filelistpath->text, filelist->select->name);
 					debug(133, "filename: %s", filename);				
-					playrcred(filename, playinfobarstatus, playertype, files, flag);
+					playrcred(filename, playinfobarstatus, playertype, flag);
 				}
 			}
 			else
@@ -918,20 +918,20 @@ void screenmc_videoplayer()
 				free(status.playfile); status.playfile = NULL;
 				status.playfile = ostrcat(filename, "", 0, 0);
 
-				if(getconfigint("mc_vp_autoscan", NULL) == 1 && !file_exist("/tmp/.autoscan"))
+				if(status.mediadbfiles == 0 && getconfigint("mc_vp_autoscan", NULL) == 1 && !file_exist("/tmp/.autoscan"))
 				{
 					mediadbscan(filelistpath->text, 1000, 1);
 					if(filelistpath->text != NULL)
 					{
 						writesys("/tmp/.autoscan", filelistpath->text, 0);
 						mediadbscan(filelistpath->text, 1000, 1);
-						files = findfiles(filelistpath->text, 0, 1, 1, 1); //count only
+						status.mediadbfiles = findfiles(filelistpath->text, 0, 1, 1, 1); //count only
 					}
 					else
 					{
 						writesys("/tmp/.autoscan", currentdirectory, 0);
 						mediadbscan(currentdirectory, 1000, 1);
-						files = findfiles(currentdirectory, 0, 1, 1, 1); //count only
+						status.mediadbfiles = findfiles(currentdirectory, 0, 1, 1, 1); //count only
 					}
 				}
 			}

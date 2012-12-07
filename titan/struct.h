@@ -92,7 +92,7 @@
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
 #define CRONTRIBUT "obi, black, dvboxer, oxygen, gost"
-#define PLUGINVERSION 0
+#define PLUGINVERSION 1
 
 #define _(x) gettext(x)
 #define MINMALLOC 4096
@@ -1313,6 +1313,8 @@ struct status
 	int casendallcaids;
 	//show hidden files in filelist
 	int showhiddenfiles;
+	//mediadb
+	int mediadbfiles;
 } status;
 
 struct fb
