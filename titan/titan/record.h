@@ -171,6 +171,20 @@ void recordwriteepg(char* filename, struct channel* chnode, struct rectimer* rec
 	free(epgfilename);
 }
 
+void createrecthumbthread(char* dname, char* filename)
+{
+	if(dname != NULL && filename != NULL)
+	{
+		debug(133, "path: %s",dname);
+		debug(133, "file: %s",filename);
+		debug(133, "type: 2");
+	
+		addconfigtmp("mediadbscantimeout", "0");
+		mediadbfindfilecb(dname, filename, 0, NULL, 0);
+		delconfigtmp("mediadbscantimeout");			
+	}
+}
+
 void recordstop(struct service* node, int ret)
 {
 	debug(1000, "in");
@@ -189,7 +203,16 @@ void recordstop(struct service* node, int ret)
 		if(rectimernode != NULL)
 			afterevent = rectimernode->afterevent;
 		m_unlock(&status.rectimermutex, 1);
-		
+
+		char* dname = NULL, *filename = NULL;
+
+		if(type != RECORDSTREAM && type != RECORDTIMESHIFT && type != RECORDPLAY)
+		{
+			dname = ostrcat(node->recname, NULL, 0, 0);
+			dname = dirname(dname);
+			filename = ostrcat(basename(node->recname), NULL, 0, 0);
+		}
+			
 		delservice(node, 0);
 
 		if(type == RECORDSTREAM)
@@ -204,8 +227,15 @@ void recordstop(struct service* node, int ret)
 			status.playing = 0;
 		else
 			status.recording--;
-
+	
 		deltranspondertunablestatus();
+
+		if(dname != NULL && filename != NULL)
+		{
+			createrecthumbthread(dname,filename);
+		}
+		free(dname); dname = NULL;
+		free(filename); filename = NULL;
 
 		//afterevent: 0 = auto
 		//afterevent: 1 = nothing
@@ -1093,12 +1123,15 @@ void screenrecordstop()
 		servicenode = servicenode->next;
 	}
 
+	printf("bbbbbbbbbb\n");
+
 	mbox = menulistbox(mlist, "recordlist", "Record", NULL, NULL, 0, 0);
 	
 	if(mbox != NULL && mbox->param != NULL && ostrstr(mbox->param, "stop") == mbox->param)
 	{
 		servicenode = getrecordbyname(mbox->param, RECORDDIRECT);
 		if(servicenode != NULL)
+		
 			servicenode->recendtime = 1;
 		else
 		{
