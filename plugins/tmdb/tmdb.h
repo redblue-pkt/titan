@@ -198,7 +198,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 	tmpsearch = ostrcat(tmpsearch, "/", 1, 0);
 	tmpsearch = ostrcat(tmpsearch, title, 1, 0);
 	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
-printf("11111\n");
+
 	debug(133, "search: http://api.themoviedb.org/%s", tmpsearch);
 	tmpstr = gethttp("api.themoviedb.org", tmpsearch, 80, NULL, NULL, NULL, 0);
 	
@@ -394,7 +394,6 @@ printf("11111\n");
 					tnode->backdrop = savefile;					
 				}
 			}
-printf("22222\n");
 
 			if((flag1 == 1 && tnode->backdrop != NULL && tnode->imdbid != NULL) || (flag1 == 2 && tnode->backdrop != NULL && tnode->imdbid != NULL)) 
 			{
@@ -623,7 +622,7 @@ printf("22222\n");
 				{
 
 					off64_t filesize = getfilesize(tnode->backdrop);
-					printf("filesize: %lld.\n", filesize);
+					debug(133, "filesize %lld", filesize);
 					
 					if(filesize < 1500000)
 					{
@@ -757,7 +756,6 @@ printf("22222\n");
 					}
 				}
 			}
-printf("33333\n");
 					
 			if(file_exist(tnode->mvi))
 				unlink(tnode->backdrop);
@@ -868,8 +866,6 @@ struct tmdb* screentmdb(char* title, char* skinname, int flag, char* path, char*
 	clearscreen(blackscreen);
 
 start:
-				printf("0000\n");
-
 	if(node != NULL)
 	{
 		changetext(skin_plot, node->plot);
