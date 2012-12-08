@@ -1,26 +1,28 @@
 #ifndef MEDIADBEDIT_H
 #define MEDIADBEDIT_H
 
-void screenmediadbedit(char* file, int menuid)
+//flag 0: don't save/restore background
+//flag 1: save/restore background
+void screenmediadbedit(char* file, int id, int flag)
 {
 	int rcret = 0, type = 0, i = 0;
-	struct skin* tmcedit = getscreen("mediadbedit");
-	struct skin* listbox = getscreennode(tmcedit, "listbox");
-	struct skin* title = getscreennode(tmcedit, "title");
-	struct skin* year = getscreennode(tmcedit, "year");
-	struct skin* released = getscreennode(tmcedit, "released");
-	struct skin* runtime = getscreennode(tmcedit, "runtime");
-	struct skin* genre = getscreennode(tmcedit, "genre");
-	struct skin* director = getscreennode(tmcedit, "director");
-	struct skin* writer = getscreennode(tmcedit, "writer");
-	struct skin* actors = getscreennode(tmcedit, "actors");
-	struct skin* plot = getscreennode(tmcedit, "plot");
-	struct skin* rating = getscreennode(tmcedit, "rating");
-	struct skin* votes = getscreennode(tmcedit, "votes");
-	struct skin* locked = getscreennode(tmcedit, "locked");
-	struct skin* picture = getscreennode(tmcedit, "picture");
-	struct skin* shortname = getscreennode(tmcedit, "shortname");
-	struct skin* fileinfo = getscreennode(tmcedit, "fileinfo");
+	struct skin* mediadbedit = getscreen("mediadbedit");
+	struct skin* listbox = getscreennode(mediadbedit, "listbox");
+	struct skin* title = getscreennode(mediadbedit, "title");
+	struct skin* year = getscreennode(mediadbedit, "year");
+	struct skin* released = getscreennode(mediadbedit, "released");
+	struct skin* runtime = getscreennode(mediadbedit, "runtime");
+	struct skin* genre = getscreennode(mediadbedit, "genre");
+	struct skin* director = getscreennode(mediadbedit, "director");
+	struct skin* writer = getscreennode(mediadbedit, "writer");
+	struct skin* actors = getscreennode(mediadbedit, "actors");
+	struct skin* plot = getscreennode(mediadbedit, "plot");
+	struct skin* rating = getscreennode(mediadbedit, "rating");
+	struct skin* votes = getscreennode(mediadbedit, "votes");
+	struct skin* locked = getscreennode(mediadbedit, "locked");
+	struct skin* picture = getscreennode(mediadbedit, "picture");
+	struct skin* shortname = getscreennode(mediadbedit, "shortname");
+	struct skin* fileinfo = getscreennode(mediadbedit, "fileinfo");
 	struct skin* tmp = NULL;
 	struct skin* load = getscreen("loading");
 	char* tmpstr = NULL, *bg = NULL, *picret = NULL;
@@ -34,9 +36,9 @@ void screenmediadbedit(char* file, int menuid)
 		free(dname); dname = NULL;
 	}
 
-	if(menuid == 3) type = 0; //video
-	if(menuid == 4) type = 1; //audio
-	if(menuid == 2) type = 2; //picture
+	if(id == 3) type = 0; //video
+	if(id == 4) type = 1; //audio
+	if(id == 2) type = 2; //picture
 
 	if(node != NULL)
 	{
@@ -90,19 +92,22 @@ void screenmediadbedit(char* file, int menuid)
 		else
 			setchoiceboxselection(locked, "0");
 
-		drawscreen(tmcedit, 2, 0);
-		bg = savescreen(tmcedit);
+		if(flag == 1)
+		{
+			drawscreen(mediadbedit, 2, 0);
+			bg = savescreen(mediadbedit);
+		}
 
-		addscreenrc(tmcedit, listbox);
-		drawscreen(tmcedit, 0, 0);
+		addscreenrc(mediadbedit, listbox);
+		drawscreen(mediadbedit, 0, 0);
 
 		tmp = listbox->select;
 		while(1)
 		{
-			addscreenrc(tmcedit, tmp);
-			rcret = waitrcext(tmcedit, 0, 0, 1000);
-			delownerrc(tmcedit);
-			addscreenrc(tmcedit, listbox);
+			addscreenrc(mediadbedit, tmp);
+			rcret = waitrcext(mediadbedit, 0, 0, 1000);
+			delownerrc(mediadbedit);
+			addscreenrc(mediadbedit, listbox);
 			tmp = listbox->select;
 
 			if(rcret == getrcconfigint("rcexit", NULL)) break;
@@ -311,18 +316,22 @@ void screenmediadbedit(char* file, int menuid)
 			if(rcret == getrcconfigint("rcred", NULL))
 			{
 				free(picret); picret = NULL;
-				picret = screendir(getconfig("mediadbpath", NULL), "*.jpg", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, tmcedit->width, tmcedit->prozwidth, tmcedit->height, tmcedit->prozheight, 0);
+				picret = screendir(getconfig("mediadbpath", NULL), "*.jpg", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, mediadbedit->width, mediadbedit->prozwidth, mediadbedit->height, mediadbedit->prozheight, 0);
 				if(picret != NULL)
 					changeinput(picture, basename(picret));
-				drawscreen(tmcedit, 0, 0);
+				drawscreen(mediadbedit, 0, 0);
 			}
 		}
 
 		free(picret); picret = NULL;
-		delownerrc(tmcedit);
-		clearscreen(tmcedit);
-		restorescreen(bg, tmcedit);
-		blitfb(0);
+		delownerrc(mediadbedit);
+		clearscreen(mediadbedit);
+
+		if(flag == 1)
+		{
+			restorescreen(bg, mediadbedit);
+			blitfb(0);
+		}
 	}
 }
 

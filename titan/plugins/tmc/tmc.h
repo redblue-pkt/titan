@@ -885,7 +885,7 @@ void screentmcdbmenu(char* file, int menuid)
 		if(rcret == getrcconfigint("rcok", NULL) && listbox->select != NULL)
 		{
 			if(ostrcmp(listbox->select->name, "edit") == 0)
-				screenmediadbedit(file, menuid);
+				screenmediadbedit(file, menuid, 1);
 			if(ostrcmp(listbox->select->name, "delete") == 0)
 			{
 				if(screentmcdelete(file) == 1)

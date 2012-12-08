@@ -566,7 +566,7 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 		else if(ostrcmp(mbox->name, "MediaDB Scan Info") == 0)
 			get_mediadb_scan_info();
 		else if(ostrcmp(mbox->name, "MediaDB Edit") == 0)
-			screenmediadbedit(file, 0);
+			screenmediadbedit(file, 0, 0);
 		else
 		{
 			pluginnode = getplugin(mbox->name);
