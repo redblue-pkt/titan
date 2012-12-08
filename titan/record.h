@@ -171,6 +171,7 @@ void recordwriteepg(char* filename, struct channel* chnode, struct rectimer* rec
 	free(epgfilename);
 }
 
+// need this as thread recording stop screen hang 30s
 void createrecthumbthread(char* dname, char* filename)
 {
 	if(dname != NULL && filename != NULL)
