@@ -179,7 +179,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 	debug(133, "flag1: %d",flag1);
 	
 	struct tmdb* tnode = NULL;
-	char* tmpstr = NULL, *tmpstr1 = NULL, *logdir = NULL, *logfile = NULL, *tmpsearch = NULL, *savefile = NULL, *timen = NULL, *log = NULL, *posterurl = NULL, *title = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL, *logdir = NULL, *logfile = NULL, *tmpsearch = NULL, *savefile = NULL, *timen = NULL, *log = NULL, *posterurl = NULL, *title = NULL, *tmpjpg = NULL, *tmpmpg = NULL, *tmpmeta = NULL;
 
 	title = ostrcat(title, input, 1, 0);
 
@@ -212,6 +212,15 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 		mkdir(logdir, 0777);
 	logfile = ostrcat(logdir, "/imdb-scan.log", 0, 0);
 	timen = ostrcat(oitoa(time(NULL)), NULL, 1, 0);
+
+	tmpjpg = ostrcat("/tmp/backdrop.resize.", timen, 0, 0);
+	tmpjpg = ostrcat(tmpjpg, ".jpg", 1, 0);
+
+	tmpmpg = ostrcat("/tmp/backdrop.resize.", timen, 0, 0);
+	tmpmpg = ostrcat(tmpmpg, ".mpg", 1, 0);
+
+	tmpmeta = ostrcat("mediadb.", timen, 0, 0);
+	tmpmeta = ostrcat(tmpmeta, ".meta", 1, 0);
 
 	if(getconfigint("mediadbdebug", NULL) == 1)
 	{
@@ -441,32 +450,46 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 										char* cmd = NULL;
 										cmd = ostrcat(cmd, "ffmpeg -i ", 1, 0);
 										cmd = ostrcat(cmd, tnode->backdrop, 1, 0);
-										cmd = ostrcat(cmd, " > /tmp/mediadb.meta 2>&1", 1, 0);
+										cmd = ostrcat(cmd, " > ", 1, 0);
+										cmd = ostrcat(cmd, tmpmeta, 1, 0);
+										cmd = ostrcat(cmd, " 2>&1", 1, 0);
 						
 										debug(133, "cmd %s", cmd);
 										system(cmd);
 										free(cmd); cmd = NULL;
-	
-										char* size = string_newline(command("cat /tmp/mediadb.meta | grep Stream | awk '{print $6}' | cut -d'x' -f1"));
+
+										cmd = ostrcat(cmd, "cat ", 1, 0);
+										cmd = ostrcat(cmd, tmpmeta, 1, 0);
+										cmd = ostrcat(cmd, " | grep Stream | awk '{print $6}' | cut -d'x' -f1", 1, 0);
+										char* size = string_newline(command(cmd));
+										free(cmd), cmd = NULL;	
 										debug(133, "size %s", size);
 										if(size != NULL)
 										{
 											debug(133, "size %d", atoi(size));
 											int picsize = atoi(size);
-											unlink("/tmp/mediadb.meta");
+											unlink(tmpmeta);
 		
 											if(picsize < 2000)
 											{
 												debug(133, "size ok %d", picsize);
-												cmd = ostrcat(cmd, "jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
+												cmd = ostrcat(cmd, "jpegtran -outfile ", 1, 0);
+												cmd = ostrcat(cmd, tmpjpg, 1, 0);
+												cmd = ostrcat(cmd, " -copy none ", 1, 0);
 												cmd = ostrcat(cmd, tnode->backdrop, 1, 0);
-								
+																
 												debug(133, "cmd %s", cmd);
 												system(cmd);
 												free(cmd); cmd = NULL;
-		
-												if(file_exist("/tmp/backdrop.resize.jpg"))
+												if(file_exist(tmpjpg))
 												{
+													free(cmd), cmd = NULL;
+													cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i ", 1, 0);
+													cmd = ostrcat(cmd, tmpjpg, 1, 0);
+													cmd = ostrcat(cmd, " ", 1, 0);
+													cmd = ostrcat(cmd, tmpmpg, 1, 0);
+													cmd = ostrcat(cmd, " >> ", 1, 0);
+
 													if(getconfigint("mediadbdebug", NULL) == 1)
 													{
 														writesys(logfile, "#############", 3); 
@@ -481,21 +504,23 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 														writesys(logfile, ")", 3);
 														writesys(logfile, "#############", 3); 
 
-														cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg >> ", 1, 0);
+														cmd = ostrcat(cmd, " >> ", 1, 0);
 														cmd = ostrcat(cmd, logfile, 1, 0);
 														cmd = ostrcat(cmd, " 2>&1", 1, 0);
 													}
 													else
 													{
-														cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg > /dev/null 2>&1", 1, 0);
+														cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
 													}
 													debug(133, "cmd %s", cmd);
 													system(cmd);
 													free(cmd); cmd = NULL;
 													
-													if(file_exist("/tmp/backdrop.resize.mpg"))
+													if(file_exist(tmpmpg))
 													{
-														cmd = ostrcat(cmd, "mv -f /tmp/backdrop.resize.mpg ", 1, 0);
+														cmd = ostrcat(cmd, "mv -f ", 1, 0);
+														cmd = ostrcat(cmd, tmpmpg, 1, 0);
+														cmd = ostrcat(cmd, " ", 1, 0);
 														cmd = ostrcat(cmd, tnode->mvi, 1, 0);
 														debug(133, "cmd %s", cmd);
 														system(cmd);
@@ -553,9 +578,9 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 											mvicount--;
 										}
 										free(size), size = NULL;
-										unlink("/tmp/mediadb.meta");
-										unlink("/tmp/backdrop.resize.jpg");
-										unlink("/tmp/backdrop.resize.mpg");
+										unlink(tmpmeta);
+										unlink(tmpjpg);
+										unlink(tmpmpg);
 									}
 									else
 									{
@@ -629,13 +654,19 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 						char* cmd = NULL;
 						cmd = ostrcat(cmd, "ffmpeg -i ", 1, 0);
 						cmd = ostrcat(cmd, tnode->postermid, 1, 0);
-						cmd = ostrcat(cmd, " > /tmp/mediadb.meta 2>&1", 1, 0);
-	
+						cmd = ostrcat(cmd, " > ", 1, 0);
+						cmd = ostrcat(cmd, tmpmeta, 1, 0);
+						cmd = ostrcat(cmd, " 2>&1", 1, 0);
+		
 						debug(133, "cmd %s", cmd);
 						system(cmd);
 						free(cmd); cmd = NULL;
-										
-						char* size = string_newline(command("cat /tmp/mediadb.meta | grep Stream | awk '{print $6}' | cut -d'x' -f1"));
+
+						cmd = ostrcat(cmd, "cat ", 1, 0);
+						cmd = ostrcat(cmd, tmpmeta, 1, 0);
+						cmd = ostrcat(cmd, " | grep Stream | awk '{print $6}' | cut -d'x' -f1", 1, 0);
+						char* size = string_newline(command(cmd));
+						free(cmd), cmd = NULL;
 						debug(133, "size %s", size);
 						if(size != NULL)
 						{
@@ -645,16 +676,24 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 							if(picsize < 2000)
 							{
 								debug(133, "size ok %d", picsize);
-												
-								cmd = ostrcat(cmd, "jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
+								cmd = ostrcat(cmd, "jpegtran -outfile ", 1, 0);
+								cmd = ostrcat(cmd, tmpjpg, 1, 0);
+								cmd = ostrcat(cmd, " -copy none ", 1, 0);
 								cmd = ostrcat(cmd, tnode->postermid, 1, 0);
 				
 								debug(133, "cmd %s", cmd);
 								system(cmd);
 								free(cmd); cmd = NULL;
-			
-								if(file_exist("/tmp/backdrop.resize.jpg"))
+												
+								if(file_exist(tmpjpg))
 								{
+									free(cmd), cmd = NULL;
+									cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i ", 1, 0);
+									cmd = ostrcat(cmd, tmpjpg, 1, 0);
+									cmd = ostrcat(cmd, " ", 1, 0);
+									cmd = ostrcat(cmd, tmpmpg, 1, 0);
+									cmd = ostrcat(cmd, " >> ", 1, 0);
+
 									if(getconfigint("mediadbdebug", NULL) == 1)
 									{
 										writesys(logfile, "#############", 3); 
@@ -669,21 +708,24 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 										writesys(logfile, ")", 3);
 										writesys(logfile, "#############", 3); 
 	
-										cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg >> ", 1, 0);
+										cmd = ostrcat(cmd, " >> ", 1, 0);
 										cmd = ostrcat(cmd, logfile, 1, 0);
 										cmd = ostrcat(cmd, " 2>&1", 1, 0);
 									}
 									else
 									{
-										cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg > /dev/null 2>&1", 1, 0);
+										cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
 									}
+
 	
 									debug(133, "cmd %s", cmd);
 									system(cmd);
 									free(cmd); cmd = NULL;
-									if(file_exist("/tmp/backdrop.resize.mpg"))
+									if(file_exist(tmpmpg))
 									{					
-										cmd = ostrcat(cmd, "mv -f /tmp/backdrop.resize.mpg ", 1, 0);
+										cmd = ostrcat(cmd, "mv -f ", 1, 0);
+										cmd = ostrcat(cmd, tmpmpg, 1, 0);
+										cmd = ostrcat(cmd, " ", 1, 0);
 										cmd = ostrcat(cmd, tnode->mvi, 1, 0);
 										debug(133, "cmd %s", cmd);
 										system(cmd);
@@ -692,6 +734,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 										writesysint("/proc/sys/vm/drop_caches", 3, 0);
 									}
 								}
+								free(cmd), cmd = NULL;
 							}
 							else
 							{
@@ -733,9 +776,9 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 							}
 						}
 						free(size), size = NULL;
-						unlink("/tmp/mediadb.meta");
-						unlink("/tmp/backdrop.resize.jpg");
-						unlink("/tmp/backdrop.resize.mpg");
+						unlink(tmpmeta);
+						unlink(tmpjpg);
+						unlink(tmpmpg);
 					}
 					else
 					{
