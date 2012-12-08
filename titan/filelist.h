@@ -531,15 +531,17 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 									else if(cmpfilenameext(filelist[i]->d_name, ".wav") == 0)
 										musik = 1;
 								
-									if(mnode->title != NULL)
+									if(mnode->id != NULL && ostrstr(mnode->id, "tt") == NULL)
 									{
-										if(mnode->id != NULL && ostrstr(mnode->id, "tt") == NULL)
-										{
-											child->picheight = 180;
-											child->picwidth = 300;
-										}
+										child->picheight = 180;
+										child->picwidth = 300;
+									}
 
-										if(mnode->actors != NULL && musik == 1)
+									int len1 = strlen(mnode->title);
+									int len2 = strlen(mnode->actors);
+									if((mnode->title != NULL && len1 != 0 && musik == 0) || (mnode->actors != NULL && len2 != 0 && mnode->title != NULL && len1 != 0 && musik == 1))
+									{
+										if(musik == 1)
 										{
 											tmpstr = ostrcat(tmpstr, mnode->actors, 1, 0);
 											tmpstr = ostrcat(tmpstr, " - ", 1, 0);
@@ -547,15 +549,17 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 										}
 										else
 										{
-											if(mnode->shortname != NULL)
+											len1 = strlen(mnode->shortname);
+											if(mnode->shortname != NULL && len1 != 0)
 											{
 												tmpstr = ostrcat(tmpstr, mnode->shortname, 1, 0);
 											}
 											else
 												tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);
 										}
-											
-										if(mnode->fileinfo != NULL)
+	
+										len1 = strlen(mnode->fileinfo);		
+										if(mnode->fileinfo != NULL && len1 != 0)
 										{
 											tmpstr = ostrcat(tmpstr, " (", 1, 0);
 											tmpstr = ostrcat(tmpstr, mnode->fileinfo, 1, 0);
@@ -676,9 +680,11 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 
 						if(mnode != NULL)
 						{
-							if(mnode->title != NULL)
+							int len1 = strlen(mnode->title);
+							int len2 = strlen(mnode->actors);
+							if((mnode->title != NULL && len1 != 0 && musik == 0) || (mnode->actors != NULL && len2 != 0 && mnode->title != NULL && len1 != 0 && musik == 1))
 							{
-								if(mnode->actors != NULL && musik == 1)
+								if(musik == 1)
 								{
 									tmpstr = ostrcat(tmpstr, mnode->actors, 1, 0);
 									tmpstr = ostrcat(tmpstr, " - ", 1, 0);
@@ -686,15 +692,17 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 								}
 								else
 								{
-									if(mnode->shortname != NULL)
+									len1 = strlen(mnode->shortname);
+									if(mnode->shortname != NULL && len1 != 0)
 									{
 										tmpstr = ostrcat(tmpstr, mnode->shortname, 1, 0);
 									}
 									else
 										tmpstr = ostrcat(tmpstr, filelist[i]->d_name, 1, 0);									
 								}
-								
-								if(mnode->fileinfo != NULL)
+
+								len1 = strlen(mnode->fileinfo);								
+								if(mnode->fileinfo != NULL && len1 != 1)
 								{
 									tmpstr = ostrcat(tmpstr, " (", 1, 0);
 									tmpstr = ostrcat(tmpstr, mnode->fileinfo, 1, 0);
