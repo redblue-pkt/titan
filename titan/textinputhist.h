@@ -28,7 +28,10 @@ void removehistory(char* text, char* histname)
 	if(tmpstr1 != NULL && strlen(tmpstr1) > 0)
 		tmpstr1[strlen(tmpstr1) - 1] = '\0';
 
-	writesys(getconfig(histname, NULL), tmpstr1, 0);
+	if(tmpstr1 == NULL)
+		writesys(getconfig(histname, NULL), "", 0);
+	else
+		writesys(getconfig(histname, NULL), tmpstr1, 0);
 
 	free(ret); ret = NULL;
 	free(tmpstr); tmpstr = NULL;
@@ -125,7 +128,6 @@ char* textinputhist(char* title, char* text, char* histname)
 	if(text != NULL)
 		tmpstr = ostrcat(tmpstr, text, 1, 0);
 
-	
 	changeinput(input, tmpstr);
 	readhistory(textinputhist, listbox, histname);
 
@@ -188,6 +190,7 @@ char* textinputhist(char* title, char* text, char* histname)
 		{
 			ret = ostrcat(listbox->select->name, NULL, 0, 0);
 			removehistory(ret, histname);
+			free(ret); ret = NULL;
 			listbox->aktline = 1;
 			listbox->aktpage = -1;
 			delmarkedscreennodes(textinputhist, 1);
@@ -198,6 +201,7 @@ char* textinputhist(char* title, char* text, char* histname)
 				drawscreen(textinputhist, 0, 0);
 		}
 	}
+
 	free(tmpstr), tmpstr = NULL;
 	delownerrc(textinputhist);
 	delrc(getrcconfigint("rcup", NULL), textinputhist, listbox);
