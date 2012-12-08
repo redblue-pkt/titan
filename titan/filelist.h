@@ -577,12 +577,8 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 										tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
 										tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
 										tmpstr = ostrcat(tmpstr, mnode->id, 1, 0);
-
-										//if(musik == 1)
-//											tmpstr = ostrcat(tmpstr, "_poster.jpg", 1, 0);
-											tmpstr = ostrcat(tmpstr, "_cover.jpg", 1, 0);
-										//else
-										//	tmpstr = ostrcat(tmpstr, "_thumb.jpg", 1, 0);
+// cover + thumb unscharf
+										tmpstr = ostrcat(tmpstr, "_poster.jpg", 1, 0);
 									}
 
 								}
