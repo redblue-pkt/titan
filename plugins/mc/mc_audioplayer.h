@@ -697,8 +697,6 @@ void screenmc_audioplayer()
 
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 					
-printf("11111111status.mediadbfiles: %d\n",status.mediadbfiles);
-					
 				if(status.mediadbfiles == 0 && getconfigint("mc_ap_autoscan", NULL) == 1 && !file_exist("/tmp/.autoscan"))
 				{
 					if(filelistpath->text != NULL)
