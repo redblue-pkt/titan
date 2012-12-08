@@ -1123,8 +1123,6 @@ void screenrecordstop()
 		servicenode = servicenode->next;
 	}
 
-	printf("bbbbbbbbbb\n");
-
 	mbox = menulistbox(mlist, "recordlist", "Record", NULL, NULL, 0, 0);
 	
 	if(mbox != NULL && mbox->param != NULL && ostrstr(mbox->param, "stop") == mbox->param)
