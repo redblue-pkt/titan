@@ -116,7 +116,7 @@ void screenmc_audioplayer()
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
 	addscreenrc(apskin, filelist);
 
-	char* savecmd = NULL;
+	char* lastid = NULL;
 
 	while(1)
 	{
@@ -130,7 +130,6 @@ void screenmc_audioplayer()
 		{
 			if(count > screensaver_delay && screensaver != NULL)
 			{
-//				if((rcret == getrcconfigint("rcfr", NULL)) || (rcret == getrcconfigint("rcff", NULL)) || (rcret == getrcconfigint("rcpause", NULL)) || (rcret == getrcconfigint("rc1", NULL)) || (rcret == getrcconfigint("rc3", NULL)) || (rcret == getrcconfigint("rc4", NULL)) || (rcret == getrcconfigint("rc6", NULL)) || (rcret == getrcconfigint("rc7", NULL)) || (rcret == getrcconfigint("rc9", NULL)))
 				if((rcret == getrcconfigint("rcpause", NULL)) || (rcret == getrcconfigint("rc1", NULL)) || (rcret == getrcconfigint("rc3", NULL)) || (rcret == getrcconfigint("rc4", NULL)) || (rcret == getrcconfigint("rc6", NULL)) || (rcret == getrcconfigint("rc7", NULL)) || (rcret == getrcconfigint("rc9", NULL)))
 					drawscreen(infobar, 0, 0);
 				else
@@ -139,8 +138,6 @@ void screenmc_audioplayer()
 						singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 					drawscreen(apskin, 0, 0);
 				}
-
-
 			}
 			count = 0;
 			rcwait = 1000;
@@ -156,11 +153,23 @@ void screenmc_audioplayer()
 
 		if(tmpview == 3 && filelist->select != NULL && count < screensaver_delay)
 		{
-			char* cmd = NULL;
 			char* pic = NULL;
-
+			int len1 = 0;
+					
 			if(filelist->select != NULL && filelist->select->input == NULL)
 			{
+
+				if(status.play == 1)
+				{
+					if(ostrcmp(lastid, filelist->select->name) == 0)					
+						continue;
+					else
+					{
+						free(lastid), lastid = NULL;
+						lastid = ostrcat(lastid, filelist->select->name, 1, 0);
+					}
+				}
+
 				struct mediadb* mnode = getmediadb(filelistpath->text, filelist->select->name, 0);
 				if(mnode != NULL)
 				{
@@ -171,11 +180,11 @@ void screenmc_audioplayer()
 						tmpstr = ostrcat(tmpstr, mnode->id, 1, 0);
 	
 						pic = ostrcat(tmpstr, "_cover.jpg", 0, 0);
-						cmd = ostrcat(tmpstr, "_backdrop.mvi", 0, 0);
 						free(tmpstr), tmpstr = NULL;
 					}
 
-					if(mnode->plot != NULL)
+					len1 = strlen(mnode->plot);
+					if(mnode->plot != NULL && len1 != 0)
 					{
 						changetext(album, mnode->plot);
 						album->hidden = NO;
@@ -187,9 +196,11 @@ void screenmc_audioplayer()
 						albumtext->hidden = YES;
 					}
 
-					if(mnode->title != NULL)
+					len1 = strlen(mnode->plot);
+					if(mnode->title != NULL && len1 != 0)
 					{
-						if(mnode->actors != NULL)
+						len1 = strlen(mnode->actors);
+						if(mnode->actors != NULL && len1 != 0)					
 						{
 							tmpstr = ostrcat(tmpstr, mnode->actors, 1, 0);
 							tmpstr = ostrcat(tmpstr, " - ", 1, 0);
@@ -222,8 +233,10 @@ void screenmc_audioplayer()
 							title->hidden = NO;
 						}
 						else
-							title->hidden = YES;
-
+						{
+							changetext(title, filelist->select->name);
+							title->hidden = NO;
+						}
 						free(tmpstr), tmpstr = NULL;
 
 						changetext(realname, filelist->select->name);
@@ -234,9 +247,12 @@ void screenmc_audioplayer()
 					{
 						realname->hidden = YES;
 						realnametext->hidden = YES;
+						changetext(title, filelist->select->name);
+						title->hidden = NO;
 					}					
 
-					if(mnode->actors != NULL)
+					len1 = strlen(mnode->actors);
+					if(mnode->actors != NULL && len1 != 0)
 					{
 						changetext(actors, mnode->actors);
 						actors->hidden = NO;
@@ -248,7 +264,8 @@ void screenmc_audioplayer()
 						actorstext->hidden = YES;
 					}
 
-					if(mnode->genre != NULL)
+					len1 = strlen(mnode->genre);
+					if(mnode->genre != NULL && len1 != 0)
 					{
 						changetext(genre, mnode->genre);
 						genre->hidden = NO;
@@ -288,8 +305,7 @@ void screenmc_audioplayer()
 					genretext->hidden = YES;
 					free(pic), pic = NULL;
 				}
-					
-				drawscreen(apskin, 0, 0);
+
 				if(file_exist(pic))
 				{
 					changepic(thumb, pic);
@@ -301,31 +317,27 @@ void screenmc_audioplayer()
 				free(pic), pic = NULL;				
 				drawscreen(apskin, 0, 0);
 			}
-
-			debug(50, "cmd: %s", cmd);	
-			if(!file_exist(cmd)){
-				free(cmd), cmd = NULL;
-				cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 1, 0);
-			}
-
-			if(savecmd == NULL)
-			{
-				singlepicstart(cmd, 0);
-				free(savecmd), savecmd = NULL;
-				savecmd = ostrcat(savecmd, cmd, 1, 0);
-			}
 			else
 			{
-				if(ostrcmp(savecmd, cmd) != 0)
-				{
-					singlepicstart(cmd, 0);
-					free(savecmd), savecmd = NULL;
-					savecmd = ostrcat(savecmd, cmd, 1, 0);
-				}
-			}
-			free(cmd), cmd = NULL;
-		}
+				thumb->hidden = YES;
+				album->hidden = YES;
+				title->hidden = YES;
+				actors->hidden = YES;
+				year->hidden = YES;
+				realname->hidden = YES;
+				genre->hidden = YES;
+				albumtext->hidden = YES;
+				actorstext->hidden = YES;
+				yeartext->hidden = YES;
+				realnametext->hidden = YES;
+				genretext->hidden = YES;
+				free(pic), pic = NULL;
+				drawscreen(apskin, 0, 0);
 
+			}
+			if(status.play == 1)
+				drawscreen(infobar, 0, 0);
+		}
 
 		if(rcret == getrcconfigint("rc1", NULL))
 		{
@@ -504,8 +516,11 @@ void screenmc_audioplayer()
 //			if((status.play == 1) || (status.pause == 1))
 //			{
 				debug(50, "rcstop: stopplayback");
+				drawscreen(blackscreen, 0, 0);
+				drawscreen(loadmediadb, 0, 0);
 				playerstop();
-
+				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
+			
 				filelist->hidden = NO;
 				listbox->hidden = YES;
 				changetext(filelistpath, _(getconfig("mc_ap_path", NULL)));
@@ -516,7 +531,9 @@ void screenmc_audioplayer()
 				addscreenrc(apskin, filelist);
 
 				drawscreen(apskin, 0, 0);
-
+				clearscreen(loadmediadb);
+				clearscreen(blackscreen);
+			
 				sleep(1);
 				status.playspeed = 0;
 				status.pause = 0;
@@ -542,8 +559,11 @@ void screenmc_audioplayer()
 
 			}
 
+			servicestop(status.aktservice, 1, 1);
 			playerstop();
-
+			drawscreen(blackscreen, 0, 0);
+			drawscreen(loadmediadb, 0, 0);
+	
 			sleep(1);
 			filelist->hidden = NO;
 			listbox->hidden = YES;
