@@ -168,7 +168,7 @@ void screenmediadbedit(char* file, int id, int flag)
 					free(thumb); thumb = NULL;
 					free(buf); buf = NULL;
 
-					char* size = NULL, *logdir = NULL, *logfile = NULL, *cmd = NULL, *mvi = NULL;
+					char* size = NULL, *logdir = NULL, *logfile = NULL, *cmd = NULL, *mvi = NULL, *tmpjpg = NULL, *tmpmpg = NULL, *tmpmeta = NULL, *timen = NULL;
 					mvi = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 					mvi = ostrcat(mvi, node->id, 1, 0);
 					mvi = ostrcat(mvi, "_backdrop1.mvi", 1, 0);
@@ -177,7 +177,18 @@ void screenmediadbedit(char* file, int id, int flag)
 					if(!file_exist(logdir))
 						mkdir(logdir, 0777);
 					logfile = ostrcat(logdir, "/imdb-scan.log", 0, 0);
-			
+
+					timen = ostrcat(oitoa(time(NULL)), NULL, 1, 0);
+					
+					tmpjpg = ostrcat("/tmp/backdrop.resize.", timen, 0, 0);
+					tmpjpg = ostrcat(tmpjpg, ".jpg", 1, 0);
+					
+					tmpmpg = ostrcat("/tmp/backdrop.resize.", timen, 0, 0);
+					tmpmpg = ostrcat(tmpmpg, ".mpg", 1, 0);
+					
+					tmpmeta = ostrcat("mediadb.", timen, 0, 0);
+					tmpmeta = ostrcat(tmpmeta, ".meta", 1, 0);
+				
 					off64_t filesize = getfilesize(picret);
 					debug(133, "filesize %lld", filesize);
 								
@@ -185,13 +196,18 @@ void screenmediadbedit(char* file, int id, int flag)
 					{
 						cmd = ostrcat(cmd, "ffmpeg -i ", 1, 0);
 						cmd = ostrcat(cmd, picret, 1, 0);
-						cmd = ostrcat(cmd, " > /tmp/mediadb.meta 2>&1", 1, 0);
+						cmd = ostrcat(cmd, " > ", 1, 0);
+						cmd = ostrcat(cmd, tmpmeta, 1, 0);
+						cmd = ostrcat(cmd, " 2>&1", 1, 0);
 	
 						debug(133, "cmd %s", cmd);
 						system(cmd);
 						free(cmd); cmd = NULL;
 	
-						size = string_newline(command("cat /tmp/mediadb.meta | grep Stream | awk '{print $6}' | cut -d'x' -f1"));
+						cmd = ostrcat(cmd, "cat ", 1, 0);
+						cmd = ostrcat(cmd, tmpmeta, 1, 0);
+						cmd = ostrcat(cmd, " | grep Stream | awk '{print $6}' | cut -d'x' -f1", 1, 0);
+						char* size = string_newline(command(cmd));
 						debug(133, "size %s", size);
 						if(size != NULL)
 						{
@@ -202,15 +218,24 @@ void screenmediadbedit(char* file, int id, int flag)
 							{
 								debug(133, "size ok %d", picsize);
 												
-								cmd = ostrcat(cmd, "jpegtran -outfile /tmp/backdrop.resize.jpg -copy none ", 1, 0);
+								cmd = ostrcat(cmd, "jpegtran -outfile ", 1, 0);
+								cmd = ostrcat(cmd, tmpjpg, 1, 0);
+								cmd = ostrcat(cmd, " -copy none ", 1, 0);
 								cmd = ostrcat(cmd, picret, 1, 0);
 				
 								debug(133, "cmd %s", cmd);
 								system(cmd);
 								free(cmd); cmd = NULL;
 			
-								if(file_exist("/tmp/backdrop.resize.jpg"))
+								if(file_exist(tmpjpg))
 								{
+									free(cmd), cmd = NULL;
+									cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i ", 1, 0);
+									cmd = ostrcat(cmd, tmpjpg, 1, 0);
+									cmd = ostrcat(cmd, " ", 1, 0);
+									cmd = ostrcat(cmd, tmpmpg, 1, 0);
+									cmd = ostrcat(cmd, " >> ", 1, 0);
+
 									if(getconfigint("mediadbdebug", NULL) == 1)
 									{
 										writesys(logfile, "#############", 3); 
@@ -225,21 +250,23 @@ void screenmediadbedit(char* file, int id, int flag)
 										writesys(logfile, ")", 3);
 										writesys(logfile, "#############", 3);
 		
-										cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg >> ", 1, 0);
+										cmd = ostrcat(cmd, " >> ", 1, 0);
 										cmd = ostrcat(cmd, logfile, 1, 0);
 										cmd = ostrcat(cmd, " 2>&1", 1, 0);
 									}
 									else
 									{
-										cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i /tmp/backdrop.resize.jpg /tmp/backdrop.resize.mpg > /dev/null 2>&1", 1, 0);
+										cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
 									}
 									debug(133, "cmd %s", cmd);
 									system(cmd);
 									free(cmd); cmd = NULL;
 	
-									if(file_exist("/tmp/backdrop.resize.mpg"))
+									if(file_exist(tmpmpg))
 									{					
-										cmd = ostrcat(cmd, "mv -f /tmp/backdrop.resize.mpg ", 1, 0);
+										cmd = ostrcat(cmd, "mv -f ", 1, 0);
+										cmd = ostrcat(cmd, tmpmpg, 1, 0);
+										cmd = ostrcat(cmd, " ", 1, 0);
 										cmd = ostrcat(cmd, mvi, 1, 0);
 										debug(133, "cmd %s", cmd);
 										system(cmd);
@@ -294,16 +321,28 @@ void screenmediadbedit(char* file, int id, int flag)
 							writesys(logfile, "#############", 3);
 						}
 					}
+					free(timen), timen = NULL;
+					free(tmpjpg), tmpjpg = NULL;
+					free(tmpmpg), tmpmpg = NULL;
+					free(tmpmeta), tmpmeta = NULL;
 					free(size), size = NULL;
 					free(logdir), logdir = NULL;
 					free(logfile), logfile = NULL;
 					free(cmd), cmd = NULL;
 					free(mvi), mvi = NULL;
 
-					unlink("/tmp/mediadb.meta");
-					unlink("/tmp/backdrop.resize.jpg");
-					unlink("/tmp/backdrop.resize.mpg");
-
+					unlink(tmpmeta);
+					unlink(tmpjpg);
+					unlink(tmpmpg);
+/*
+					cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+					cmd = ostrcat(cmd, "/", 1, 0);	
+					cmd = ostrcat(cmd, timestamp, 1, 0);
+					cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
+					unlink(cmd);
+					free(cmd); cmd = NULL;
+					free(timestamp); timestamp = NULL;
+*/
 					node = createmediadb(node, tmpstr, type, title->ret, year->ret, released->ret, runtime->ret, genre->ret, director->ret, writer->ret, actors->ret, plot->ret, node->poster, rating->ret, votes->ret, node->path, node->file, node->shortname, node->fileinfo, node->flag, node->backdropcount);
 				}
 				else
