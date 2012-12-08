@@ -508,6 +508,7 @@ void get_mediadb_scan_info()
 
 void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 {
+		printf("222222222\n");
 //	if(checkbit(status.playercan, 5) == 0) return;
 	if(status.play == 1)
 		screenplayinfobar(file, 1, playertype, flag);
