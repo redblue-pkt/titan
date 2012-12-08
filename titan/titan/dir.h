@@ -37,6 +37,7 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 	struct skin* filelist = getscreennode(dir, "filelist");
 	struct skin* label = getscreennode(dir, "label");
 	struct skin* thumb = getscreennode(dir, "thumb");
+	struct skin* b5 = getscreennode(dir, "b5");
 	struct skin *button = NULL;
 	struct skin* load = getscreen("loading");
 	drawscreen(load, 0, 0);
@@ -77,25 +78,42 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 	if(b1 != NULL)
 		changetext(button, _(b1));
 	else
+	{
 		changetext(button, _("---"));
+		button->hidden = YES;
+	}
 
 	button = getscreennode(dir, "b2");
 	if(b2 != NULL)
 		changetext(button, _(b2));
 	else
+	{
 		changetext(button, _("---"));
+		button->hidden = YES;
+	}
 
 	button = getscreennode(dir,  "b3");
 	if(b3 != NULL)
 		changetext(button, _(b3));
 	else
+	{
 		changetext(button, _("---"));
+		button->hidden = YES;
+	}
 
 	button = getscreennode(dir, "b4");
 	if(b4 != NULL)
 		changetext(button, _(b4));
 	else
+	{
 		changetext(button, _("---"));
+		button->hidden = YES;
+	}
+
+	if(flag == 64)
+		b5->hidden = NO;
+	else
+		b5->hidden = YES;
 
 	thumb->hidden = YES;
 
@@ -229,6 +247,14 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 					break;
 				}
 			}
+		}
+
+		if(rcret == getrcconfigint("rcinfo", NULL) && status.play == 0 && flag == 64)
+		{
+			char* file = createpath(filelistpath->text, filelist->select->text);
+			playrcred(file, 0, 1, 1);
+			free(file), file = NULL;
+			drawscreen(dir, 0, 0);
 		}
 	}
 
