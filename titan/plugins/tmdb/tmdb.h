@@ -172,10 +172,16 @@ char* savetmdbpic(char* imdbid, char* url, char* tmppic, char* pic, int flag1)
 //flag1: 1 = save pic in mediadb path if pic not exist
 //flag1: 2 = save pic in mediadb path 
 //flag2: 2 = save no pic
-struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
+struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 {
+	debug(133, "title: %s",input);
+	debug(133, "flag: %d",flag);
+	debug(133, "flag1: %d",flag1);
+	
 	struct tmdb* tnode = NULL;
-	char* tmpstr = NULL, *tmpstr1 = NULL, *logdir = NULL, *logfile = NULL, *tmpsearch = NULL, *savefile = NULL, *timen = NULL, *log = NULL, *posterurl = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL, *logdir = NULL, *logfile = NULL, *tmpsearch = NULL, *savefile = NULL, *timen = NULL, *log = NULL, *posterurl = NULL, *title = NULL;
+
+	title = ostrcat(title, input, 1, 0);
 
 	int count = 0;
 	int mvicount = 0;	
@@ -192,7 +198,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 	tmpsearch = ostrcat(tmpsearch, "/", 1, 0);
 	tmpsearch = ostrcat(tmpsearch, title, 1, 0);
 	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
-
+printf("11111\n");
 	debug(133, "search: http://api.themoviedb.org/%s", tmpsearch);
 	tmpstr = gethttp("api.themoviedb.org", tmpsearch, 80, NULL, NULL, NULL, 0);
 	
@@ -388,6 +394,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 					tnode->backdrop = savefile;					
 				}
 			}
+printf("22222\n");
 
 			if((flag1 == 1 && tnode->backdrop != NULL && tnode->imdbid != NULL) || (flag1 == 2 && tnode->backdrop != NULL && tnode->imdbid != NULL)) 
 			{
@@ -750,6 +757,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 					}
 				}
 			}
+printf("33333\n");
 					
 			if(file_exist(tnode->mvi))
 				unlink(tnode->backdrop);
@@ -762,7 +770,9 @@ struct tmdb* gettmdb(struct tmdb** first, char* title, int flag, int flag1)
 			tmpstr1 += 5;
 			tmpstr1 = ostrstr(tmpstr1, "<movie>");
 
-			free(tmpstr1), tmpstr1 = NULL; 
+// *** glibc detected *** /var/usr/local/share/titan/plugins/titan: free(): invalid pointer: 0x00a77a2b ***
+//			free(tmpstr1), tmpstr1 = NULL; 
+
 			free(posterurl), posterurl = NULL; 
 			free(logdir), logdir = NULL; 
 			free(logfile), logfile = NULL; 
@@ -858,6 +868,8 @@ struct tmdb* screentmdb(char* title, char* skinname, int flag, char* path, char*
 	clearscreen(blackscreen);
 
 start:
+				printf("0000\n");
+
 	if(node != NULL)
 	{
 		changetext(skin_plot, node->plot);
@@ -900,14 +912,13 @@ start:
 			search = textinput("Search", searchstr);
 			if(search != NULL)
 			{
-				freetmdb(&node, 0); node = NULL;
+				freetmdb(&node, 0), node = NULL;
 				drawscreen(blackscreen, 0, 0);
 				drawscreen(load, 0, 0);
-
 				node = gettmdb(&node, search, 0, 0);
 				clearscreen(load);
 				clearscreen(blackscreen);
-				free(search); search = NULL;
+				free(search), search = NULL;
 				goto start;
 			}
 			drawscreen(tmdbskin, 0, 0);
@@ -936,7 +947,7 @@ start:
 					node = gettmdb(&node, search, 1, 0);
 					clearscreen(load);
 					clearscreen(blackscreen);
-					free(search); search = NULL;
+					free(search), search = NULL;
 					freemenulist(mlist, 1); mlist = NULL, mbox = NULL;
 					goto start;
 				}

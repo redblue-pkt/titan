@@ -1860,7 +1860,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			struct skin* imdbapiplugin = NULL;
 			struct skin* tmdbplugin = NULL;
 
-			if(isrec == 0 && iscam == 0)
+			if(flag > 0 || (isrec == 0 && iscam == 0))
 			{
 				if(flag == 2 && imdb != NULL && id != NULL)
 					imdb->id = ostrcat(id, NULL, 0, 0);

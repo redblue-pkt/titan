@@ -32,17 +32,16 @@ void freeimdb(struct imdb** node, int flag)
 // flag 0 = title search
 // flag 1 = iimdbid search
 // flag 2 = iimdbid search and save
-struct imdb* getimdb(struct imdb** first, char* title, int flag, int flag1, int flag2)
+struct imdb* getimdb(struct imdb** first, char* input, int flag, int flag1, int flag2)
 {
-	char* tmpstr = NULL;
-	char* tmpsearch = NULL;
-	char* savefile = NULL;
-	char* pageposter = NULL;
+	char* tmpstr = NULL, *tmpsearch = NULL, *savefile = NULL, *pageposter = NULL, *title = NULL;
 
-	debug(133, "title: %s",title);
+	debug(133, "title: %s",input);
 	debug(133, "flag: %d",flag);
 	debug(133, "flag1: %d",flag1);
 	debug(133, "flag2: %d",flag2);
+
+	title = ostrcat(title, input, 1, 0);
 		
 start:
 	debug(133, "title: %s",title);
@@ -561,7 +560,7 @@ start:
 				node = getimdb(&node, search, 0, 0, 0);
 				clearscreen(load);
 				clearscreen(blackscreen);
-				free(search); search = NULL;
+				free(search), search = NULL;
 				goto start;
 			}
 			drawscreen(imdbskin, 0, 0);
