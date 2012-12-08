@@ -295,16 +295,16 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 			if(ostrstr(tmpstr1, "<overview>") != NULL)
 				tnode->plot = string_resub("<overview>", "</overview>", tmpstr1, 0);
 
-			if(flag1 != 2 && ostrstr(tmpstr1, "size=\"thumb\"") != NULL)
+			if(ostrstr(tmpstr1, "size=\"thumb\"") != NULL)
 				tnode->thumb = oregex(".*<image type=\"poster\" url=\".*(http://.*)\" size=\"thumb\".*", tmpstr1);
 
-			if(flag1 != 2 && ostrstr(tmpstr1, "size=\"cover\"") != NULL)
+			if(ostrstr(tmpstr1, "size=\"cover\"") != NULL)
 				tnode->cover = oregex(".*<image type=\"poster\" url=\".*(http://.*)\" size=\"cover\".*", tmpstr1);
 
-			if(flag1 != 2 && ostrstr(tmpstr1, "size=\"mid\"") != NULL)
+			if(ostrstr(tmpstr1, "size=\"mid\"") != NULL)
 				tnode->postermid = oregex(".*<image type=\"poster\" url=\".*(http://.*)\" size=\"mid\".*", tmpstr1);
 
-			if(flag1 != 2 && ostrstr(tmpstr1, "<images>") != NULL)
+			if(ostrstr(tmpstr1, "<images>") != NULL)
 			{
 				char* tmpcat = string_resub("<images>", "</images>", tmpstr1, 0);
 				char* ptmpcat = ostrstr(tmpcat, "<image ");
@@ -488,7 +488,6 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 													cmd = ostrcat(cmd, tmpjpg, 1, 0);
 													cmd = ostrcat(cmd, " ", 1, 0);
 													cmd = ostrcat(cmd, tmpmpg, 1, 0);
-													cmd = ostrcat(cmd, " >> ", 1, 0);
 
 													if(getconfigint("mediadbdebug", NULL) == 1)
 													{
@@ -692,7 +691,6 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 									cmd = ostrcat(cmd, tmpjpg, 1, 0);
 									cmd = ostrcat(cmd, " ", 1, 0);
 									cmd = ostrcat(cmd, tmpmpg, 1, 0);
-									cmd = ostrcat(cmd, " >> ", 1, 0);
 
 									if(getconfigint("mediadbdebug", NULL) == 1)
 									{

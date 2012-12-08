@@ -234,7 +234,6 @@ void screenmediadbedit(char* file, int id, int flag)
 									cmd = ostrcat(cmd, tmpjpg, 1, 0);
 									cmd = ostrcat(cmd, " ", 1, 0);
 									cmd = ostrcat(cmd, tmpmpg, 1, 0);
-									cmd = ostrcat(cmd, " >> ", 1, 0);
 
 									if(getconfigint("mediadbdebug", NULL) == 1)
 									{
