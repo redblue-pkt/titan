@@ -2016,6 +2016,76 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				cmd = ostrcat(cmd, path, 1, 0);
 				cmd = ostrcat(cmd, "/", 1, 0);
 				cmd = ostrcat(cmd, file, 1, 0);
+//				cmd = ostrcat(cmd, "\" -vframes 1 -s 1920x1080 ", 1, 0);
+				cmd = ostrcat(cmd, "\" -vframes 1 -s 1280x720 ", 1, 0);
+				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+				cmd = ostrcat(cmd, "/", 1, 0);
+				cmd = ostrcat(cmd, timestamp, 1, 0);
+				cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
+				debug(133, "cmd %s", cmd);
+				system(cmd);
+				free(cmd); cmd = NULL;
+
+				int channels = 0;
+				unsigned long width = 0, height = 0, rowbytes = 0;
+				unsigned char* buf = NULL;
+
+				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+				cmd = ostrcat(cmd, "/", 1, 0);
+				cmd = ostrcat(cmd, timestamp, 1, 0);
+				cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
+				buf = loadjpg(cmd, &width, &height, &rowbytes, &channels, 16);
+				free(cmd), cmd = NULL;
+				cmd = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+				cmd = ostrcat(cmd, timestamp, 1, 0);
+				cmd = ostrcat(cmd, "_thumb.jpg", 1, 0);
+				buf = savejpg(cmd, width, height, channels, 91, 140, 70, buf);
+				free(cmd); cmd = NULL;
+				free(buf); buf = NULL;
+
+				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+				cmd = ostrcat(cmd, "/", 1, 0);
+				cmd = ostrcat(cmd, timestamp, 1, 0);
+				cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
+				buf = loadjpg(cmd, &width, &height, &rowbytes, &channels, 16);
+				free(cmd), cmd = NULL;
+				cmd = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+				cmd = ostrcat(cmd, timestamp, 1, 0);
+				cmd = ostrcat(cmd, "_cover.jpg", 1, 0);
+				buf = savejpg(cmd, width, height, channels, 185, 264, 70, buf);
+				free(cmd); cmd = NULL;
+				free(buf); buf = NULL;
+
+				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+				cmd = ostrcat(cmd, "/", 1, 0);
+				cmd = ostrcat(cmd, timestamp, 1, 0);
+				cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
+				buf = loadjpg(cmd, &width, &height, &rowbytes, &channels, 16);
+				free(cmd), cmd = NULL;
+				cmd = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+				cmd = ostrcat(cmd, timestamp, 1, 0);
+				cmd = ostrcat(cmd, "_poster.jpg", 1, 0);
+				buf = savejpg(cmd, width, height, channels, 400, 450, 70, buf);
+				free(cmd); cmd = NULL;
+				free(buf); buf = NULL;
+
+				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+				cmd = ostrcat(cmd, "/", 1, 0);
+				cmd = ostrcat(cmd, timestamp, 1, 0);
+				cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
+				buf = loadjpg(cmd, &width, &height, &rowbytes, &channels, 16);
+				free(cmd), cmd = NULL;
+				cmd = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+				cmd = ostrcat(cmd, timestamp, 1, 0);
+				cmd = ostrcat(cmd, "_postermid.jpg", 1, 0);
+				buf = savejpg(cmd, width, height, channels, 400, 450, 70, buf);
+				free(cmd); cmd = NULL;
+				free(buf); buf = NULL;
+/*
+				cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
+				cmd = ostrcat(cmd, path, 1, 0);
+				cmd = ostrcat(cmd, "/", 1, 0);
+				cmd = ostrcat(cmd, file, 1, 0);
 				cmd = ostrcat(cmd, "\" -vframes 1 -s 160x120 ", 1, 0);
 				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
 				cmd = ostrcat(cmd, "/", 1, 0);	
@@ -2024,7 +2094,6 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				debug(133, "cmd %s", cmd);
 				system(cmd);
 				free(cmd); cmd = NULL;
-
 
 				cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
 				cmd = ostrcat(cmd, path, 1, 0);
@@ -2038,21 +2107,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				debug(133, "cmd %s", cmd);
 				system(cmd);
 				free(cmd); cmd = NULL;
-
-				cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
-				cmd = ostrcat(cmd, path, 1, 0);
-				cmd = ostrcat(cmd, "/", 1, 0);
-				cmd = ostrcat(cmd, file, 1, 0);
-//				cmd = ostrcat(cmd, "\" -vframes 1 -s 1920x1080 ", 1, 0);
-				cmd = ostrcat(cmd, "\" -vframes 1 -s 1280x720 ", 1, 0);
-				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-				cmd = ostrcat(cmd, "/", 1, 0);
-				cmd = ostrcat(cmd, timestamp, 1, 0);
-				cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
-				debug(133, "cmd %s", cmd);
-				system(cmd);
-				free(cmd); cmd = NULL;
-
+*/
 				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
 				cmd = ostrcat(cmd, "/", 1, 0);
 				cmd = ostrcat(cmd, timestamp, 1, 0);
