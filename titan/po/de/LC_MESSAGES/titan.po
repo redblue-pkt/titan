@@ -2751,6 +2751,3 @@ msgstr "Durchsuchtes Verzeichnis"
 
 msgid "OTHER"
 msgstr "mehr"
-
-msgid "all"
-msgstr "alle"
