@@ -171,8 +171,7 @@ void recordwriteepg(char* filename, struct channel* chnode, struct rectimer* rec
 	free(epgfilename);
 }
 
-// need this as thread recording stop screen hang 30s
-void createrecthumbthread(char* dname, char* filename)
+void createrecthumbthread(struct stimerthread* self, char* dname, char* filename)
 {
 	if(dname != NULL && filename != NULL)
 	{
@@ -182,8 +181,11 @@ void createrecthumbthread(char* dname, char* filename)
 	
 		addconfigtmp("mediadbscantimeout", "0");
 		mediadbfindfilecb(dname, filename, 0, NULL, 0);
-		delconfigtmp("mediadbscantimeout");			
+		delconfigtmp("mediadbscantimeout");
 	}
+
+	free(dname); dname = NULL;
+	free(filename); filename = NULL;
 }
 
 void recordstop(struct service* node, int ret)
@@ -232,9 +234,8 @@ void recordstop(struct service* node, int ret)
 		deltranspondertunablestatus();
 
 		if(dname != NULL && filename != NULL)
-		{
-			createrecthumbthread(dname,filename);
-		}
+			addtimer(&createrecthumbthread, START, 1000, 1, (void*)ostrcat(dname, NULL, 0, 0), (void*)ostrcat(filename, NULL, 0, 0), NULL);
+
 		free(dname); dname = NULL;
 		free(filename); filename = NULL;
 

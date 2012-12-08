@@ -3707,6 +3707,10 @@ int writesys(const char *filename, char *value, int flag)
 	return 0;
 }
 
+//flag 0: without \n
+//flag 1: with \n
+//flag 2: append without \n
+//flag 3: append with \n
 int writesysint(const char *filename, int value, int flag)
 {
 	debug(1000, "in");
