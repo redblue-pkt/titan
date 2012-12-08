@@ -41,7 +41,6 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 	struct skin* load = getscreen("loading");
 	drawscreen(load, 0, 0);
 
-	struct mediadb* dbnode = NULL;
 	readmediadb(getconfig("mediadbfile", NULL), 0, 0);
 
 	char *ret = NULL;
