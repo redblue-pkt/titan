@@ -696,19 +696,24 @@ void screenmc_audioplayer()
 				status.play = 1;
 
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
-
-				if(getconfigint("mc_ap_autoscan", NULL) == 1 && !file_exist("/tmp/.autoscan"))
+					
+printf("11111111status.mediadbfiles: %d\n",status.mediadbfiles);
+					
+				if(status.mediadbfiles == 0 && getconfigint("mc_ap_autoscan", NULL) == 1 && !file_exist("/tmp/.autoscan"))
 				{
 					if(filelistpath->text != NULL)
 					{
-						writesys("/tmp/.autoscan", filelistpath->text, 0);
 						mediadbscan(filelistpath->text, 1001, 1);
+						writesys("/tmp/.autoscan", filelistpath->text, 0);
+						status.mediadbfiles = findfiles(currentdirectory, 1, 1, 1, 1); //count only
 					}
 					else
 					{
 						mediadbscan(currentdirectory, 1001, 1);
 						writesys("/tmp/.autoscan", currentdirectory, 0);
+						status.mediadbfiles = findfiles(currentdirectory, 1, 1, 1, 1); //count only
 					}
+					printf("status.mediadbfiles: %d\n",status.mediadbfiles);
 				}
 			}
 		}

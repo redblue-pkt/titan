@@ -37,7 +37,7 @@ void screenmc_videoplayer()
 	char* tmppolicy = NULL;
 	char* currentdirectory = NULL;
 	char* selectedfile = NULL;
-	int rcret = 0, rcwait = 1000, playerret = 0, flag = 1, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0, files = 0, mviwait = 0, mvinum = 0, exit = 0;
+	int rcret = 0, rcwait = 1000, playerret = 0, flag = 1, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0, mviwait = 0, mvinum = 0, exit = 0;
 
 	// main screen
 	struct skin* apskin = getscreen("mc_videoplayer");
@@ -920,17 +920,16 @@ void screenmc_videoplayer()
 
 				if(status.mediadbfiles == 0 && getconfigint("mc_vp_autoscan", NULL) == 1 && !file_exist("/tmp/.autoscan"))
 				{
-					mediadbscan(filelistpath->text, 1000, 1);
 					if(filelistpath->text != NULL)
 					{
-						writesys("/tmp/.autoscan", filelistpath->text, 0);
 						mediadbscan(filelistpath->text, 1000, 1);
+						writesys("/tmp/.autoscan", filelistpath->text, 0);
 						status.mediadbfiles = findfiles(filelistpath->text, 0, 1, 1, 1); //count only
 					}
 					else
 					{
-						writesys("/tmp/.autoscan", currentdirectory, 0);
 						mediadbscan(currentdirectory, 1000, 1);
+						writesys("/tmp/.autoscan", currentdirectory, 0);
 						status.mediadbfiles = findfiles(currentdirectory, 0, 1, 1, 1); //count only
 					}
 				}
