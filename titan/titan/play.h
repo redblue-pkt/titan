@@ -498,7 +498,7 @@ void get_mediadb_scan_info()
 	tmpstr = ostrcat(tmpstr, _("Backdrop Download Count"), 1, 0);
 	tmpstr = ostrcat(tmpstr, ": \t\t", 1, 0);		
 	if(getconfigint("mediadbbackdrop", NULL) == 0)
-		tmpstr = ostrcat(tmpstr, "all", 1, 0);
+		tmpstr = ostrcat(tmpstr, _("all"), 1, 0);
 	else
 		tmpstr = ostrcat(tmpstr, oitoa(getconfigint("mediadbbackdrop", NULL)), 1, 1);
 
