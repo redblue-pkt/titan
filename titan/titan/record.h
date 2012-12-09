@@ -191,6 +191,7 @@ void createrecthumbthread(struct stimerthread* self, char* dname, char* filename
 void recordstop(struct service* node, int ret)
 {
 	debug(1000, "in");
+	struct stimerthread *recthumbthread = NULL;
 	struct rectimer* rectimernode = NULL;
 	int afterevent = 1, type = -1;
 
@@ -234,7 +235,7 @@ void recordstop(struct service* node, int ret)
 		deltranspondertunablestatus();
 
 		if(dname != NULL && filename != NULL)
-			addtimer(&createrecthumbthread, START, 1000, 1, (void*)ostrcat(dname, NULL, 0, 0), (void*)ostrcat(filename, NULL, 0, 0), NULL);
+			recthumbthread = addtimer(&createrecthumbthread, START, 1000, 1, (void*)ostrcat(dname, NULL, 0, 0), (void*)ostrcat(filename, NULL, 0, 0), NULL);
 
 		free(dname); dname = NULL;
 		free(filename); filename = NULL;
@@ -258,7 +259,16 @@ void recordstop(struct service* node, int ret)
 		if(afterevent == 3)
 		{
 			if(status.recording < 1)
+			{
+				//wait for recthumbthread end before shutdown
+				int count = 0;
+				while(gettimer(recthumbthread) != NULL && count < 60)
+				{
+					sleep(1);
+					count++;
+				}
 				oshutdown(1, 3);
+			}
 		}
 	}
 
