@@ -1298,7 +1298,7 @@ struct status
 	char* webplayfile;
 	//status of mediadbthread
 	int mediadbthreadstatus;
-	//hold time for save mediadb in scan
+	//for save mediadb in scan
 	time_t mediadbsavetime;
 	//colors / pic for selection
 	long markcol;
