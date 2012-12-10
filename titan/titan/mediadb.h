@@ -2022,6 +2022,23 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				cmd = ostrcat(cmd, "/", 1, 0);
 				cmd = ostrcat(cmd, timestamp, 1, 0);
 				cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
+				if(getconfigint("mediadbdebug", NULL) == 1)
+				{
+					writesys(logfile, "#############", 3); 
+					writesys(logfile, "Localfile: ", 2); 
+					writesys(logfile, getconfig("mediadbpath", NULL), 2);
+					writesys(logfile, "/", 2); 
+					writesys(logfile, timestamp, 2); 
+					writesys(logfile, "_backdrop1.jpg", 2); 					
+					writesys(logfile, "#############", 3);
+					cmd = ostrcat(cmd, " >> ", 1, 0);
+					cmd = ostrcat(cmd, logfile, 1, 0);
+					cmd = ostrcat(cmd, " 2>&1", 1, 0);
+				}
+				else
+				{
+					cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
+				}
 				debug(133, "cmd %s", cmd);
 				system(cmd);
 				free(cmd); cmd = NULL;
@@ -2094,6 +2111,23 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				cmd = ostrcat(cmd, "/", 1, 0);	
 				cmd = ostrcat(cmd, timestamp, 1, 0);
 				cmd = ostrcat(cmd, "_thumb.jpg", 1, 0);
+				if(getconfigint("mediadbdebug", NULL) == 1)
+				{
+					writesys(logfile, "#############", 3); 
+					writesys(logfile, "Localfile: ", 2); 
+					writesys(logfile, getconfig("mediadbpath", NULL), 2);
+					writesys(logfile, "/", 2); 
+					writesys(logfile, timestamp, 2); 
+					writesys(logfile, "_thumb.jpg", 2); 					
+					writesys(logfile, "#############", 3);
+					cmd = ostrcat(cmd, " >> ", 1, 0);
+					cmd = ostrcat(cmd, logfile, 1, 0);
+					cmd = ostrcat(cmd, " 2>&1", 1, 0);
+				}
+				else
+				{
+					cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
+				}
 				debug(133, "cmd %s", cmd);
 				system(cmd);
 				free(cmd); cmd = NULL;
@@ -2107,6 +2141,23 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				cmd = ostrcat(cmd, "/", 1, 0);	
 				cmd = ostrcat(cmd, timestamp, 1, 0);
 				cmd = ostrcat(cmd, "_cover.jpg", 1, 0);
+				if(getconfigint("mediadbdebug", NULL) == 1)
+				{
+					writesys(logfile, "#############", 3); 
+					writesys(logfile, "Localfile: ", 2); 
+					writesys(logfile, getconfig("mediadbpath", NULL), 2);
+					writesys(logfile, "/", 2); 
+					writesys(logfile, timestamp, 2); 
+					writesys(logfile, "_cover.jpg", 2); 					
+					writesys(logfile, "#############", 3);
+					cmd = ostrcat(cmd, " >> ", 1, 0);
+					cmd = ostrcat(cmd, logfile, 1, 0);
+					cmd = ostrcat(cmd, " 2>&1", 1, 0);
+				}
+				else
+				{
+					cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
+				}
 				debug(133, "cmd %s", cmd);
 				system(cmd);
 				free(cmd); cmd = NULL;
