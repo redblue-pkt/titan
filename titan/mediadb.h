@@ -1912,7 +1912,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 					}
 				}
 	
-	      		debugimdbnode(imdb);
+				debugimdbnode(imdb);
 	
 				// manuel tmdb
 				if(flag == 2 && imdb != NULL && tmdb != NULL)
@@ -1931,7 +1931,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 					if(tmdb->mvi != NULL) backdrop = atoi(tmdb->mvi);
 				}
 	
-	      		debugimdbnode(imdb);
+				debugimdbnode(imdb);
 	
 				// manuel imdbapi
 				if(flag == 3 && imdb != NULL && tmdb != NULL)
@@ -1966,7 +1966,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 					if(tmdb->mvi != NULL) backdrop = atoi(tmdb->mvi);
 				}
 
-	      		debugimdbnode(imdb);
+				debugimdbnode(imdb);
 	      		
 				if(imdb != NULL && imdbapi != NULL)
 				{
@@ -2331,7 +2331,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			free(tmpmpg), tmpmpg = NULL;
 			free(tmpmeta), tmpmeta = NULL;
 
-      		debugimdbnode(imdb);
+			debugimdbnode(imdb);
 			
 			debug(777, "add video: %s/%s", shortpath, file);
 			if(imdb != NULL)
