@@ -756,7 +756,11 @@ void screenmc_audioplayer()
 	free(selectedfile), selectedfile = NULL;
 
 	if(status.mediadbthread == NULL)
+	{
+		if(status.writemediadb == 1)
+			writemediadb(getconfig("mediadbfile", NULL), NULL);
 		freemediadb(0);
+	}
 
 	clearscreen(blackscreen);
 	clearscreen(loadmediadb);

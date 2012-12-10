@@ -1598,7 +1598,7 @@ void screentmcmenu()
 	if(status.mediadbthread == NULL)
 	{
 		if(status.writemediadb == 1)
-			writemediadb(getconfig("mediadbfile", NULL));
+			writemediadb(getconfig("mediadbfile", NULL), NULL);
 		freemediadb(0);
 	}
 	clearscreen(tmcbg);

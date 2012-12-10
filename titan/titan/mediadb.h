@@ -920,14 +920,17 @@ int writemediadbcategory(const char *filename)
 	return 0;
 }
 
-int writemediadb(const char *filename)
+int writemediadb(const char *filename, struct mediadb* cmediadb)
 {
 	debug(1000, "in");
 	FILE *fd = NULL;
 	struct mediadb *node = NULL;
 	int ret = 0;
 
-	fd = fopen(filename, "w");
+	if(cmediadb == NULL)
+		fd = fopen(filename, "w");
+	else
+		fd = fopen(filename, "a");
 	if(fd == NULL)
 	{
 		perr("can't open %s", filename);
@@ -942,7 +945,10 @@ int writemediadb(const char *filename)
 	}
 
 	m_lock(&status.mediadbmutex, 17);
-	node = mediadb;
+	if(cmediadb == NULL)
+		node = mediadb;
+	else
+		node = cmediadb;
 
 	while(node != NULL)
 	{
@@ -952,6 +958,7 @@ int writemediadb(const char *filename)
 		{
 			perr("writting file %s", filename);
 		}
+		if(cmediadb != NULL) break;
 		node = node->next;
 	}
 
@@ -1181,7 +1188,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 		}
 	}
 
-	status.mediadbsavetime = time(NULL) + 60;
+	status.mediadbsavetime = 0;
 	status.mediadbthreadstatus = 2;
 
 	//find media files
@@ -1210,7 +1217,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 
 	free(path); path = NULL;
 
-	writemediadb(getconfig("mediadbfile", NULL));
+	writemediadb(getconfig("mediadbfile", NULL), NULL);
 
 	status.mediadbthreadstatus = 3;
 	sleep(3); //wait a little if other thread read category
@@ -1765,7 +1772,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 	int iscam = 0;
 	int backdrop = 0;
 	char* shortpath = NULL, *tmpstr = NULL, *tmpid = NULL;
-	struct mediadb *node = NULL;
+	struct mediadb *node = NULL, *cmediadb = NULL;
 
 	if(id != NULL);
 		tmpid = ostrcat(tmpid, id, 1, 0);
@@ -2387,7 +2394,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			if(imdb != NULL)
 			{
 				debug(777, "imdb id %s", imdb->id);
-				createmediadb(node, imdb->id, type, imdb->title, imdb->year, imdb->released, imdb->runtime, imdb->genre, imdb->director, imdb->writer, imdb->actors, imdb->plot, imdb->id, imdb->rating, imdb->votes, shortpath, file, shortname, fileinfo, 0, backdrop);
+				cmediadb = createmediadb(node, imdb->id, type, imdb->title, imdb->year, imdb->released, imdb->runtime, imdb->genre, imdb->director, imdb->writer, imdb->actors, imdb->plot, imdb->id, imdb->rating, imdb->votes, shortpath, file, shortname, fileinfo, 0, backdrop);
 				if(tmpid != NULL)
 				{
 					char* tmpstr = NULL;
@@ -2411,7 +2418,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				}
 			}
 			else
-				createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, shortname, fileinfo, 0, 0);
+				cmediadb = createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, shortname, fileinfo, 0, 0);
 
 			debug(777, "shortname: %s", shortname);
 			debug(133, "shortname: %s", shortname);
@@ -2473,12 +2480,12 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			if(id3tag != NULL)
 			{
 				if(id3tag->poster != NULL)
-					createmediadb(node, tmphash, type, id3tag->title, id3tag->year, NULL, NULL, id3tag->genretext, NULL, NULL, id3tag->artist, id3tag->album, tmphash, NULL, NULL, shortpath, file, NULL, fileinfo, 0, 0);
+					cmediadb = createmediadb(node, tmphash, type, id3tag->title, id3tag->year, NULL, NULL, id3tag->genretext, NULL, NULL, id3tag->artist, id3tag->album, tmphash, NULL, NULL, shortpath, file, NULL, fileinfo, 0, 0);
 				else
-					createmediadb(node, tmphash, type, id3tag->title, id3tag->year, NULL, NULL, id3tag->genretext, NULL, NULL, id3tag->artist, id3tag->album, NULL, NULL, NULL, shortpath, file, NULL, fileinfo, 0, 0);
+					cmediadb = createmediadb(node, tmphash, type, id3tag->title, id3tag->year, NULL, NULL, id3tag->genretext, NULL, NULL, id3tag->artist, id3tag->album, NULL, NULL, NULL, shortpath, file, NULL, fileinfo, 0, 0);
 			}
 			else
-				createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, NULL, NULL, 0, 0);
+				cmediadb = createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, NULL, NULL, 0, 0);
 
 			free(tmpfile); tmpfile = NULL;
 			free(tmphash); tmphash = NULL;
@@ -2499,19 +2506,19 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			}
 			free(thumbfile); thumbfile = NULL;
 
-			createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, NULL, NULL, 0, 0);
+			cmediadb = createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, NULL, NULL, 0, 0);
 		}
 	}
 	free(shortpath); shortpath = NULL;
 
-	//save mediadb all 60 sek and type video allways
-	if(type == 0)
-		writemediadb(getconfig("mediadbfile", NULL));
-	else if(status.mediadbsavetime < time(NULL))
+	//first time save full mediadb, rest save only akt entry
+	if(status.mediadbsavetime == 0)
 	{
-		writemediadb(getconfig("mediadbfile", NULL));
-		status.mediadbsavetime = time(NULL) + 60;
+		writemediadb(getconfig("mediadbfile", NULL), NULL);
+		status.mediadbsavetime = 1;
 	}
+	else if(cmediadb != NULL)
+		writemediadb(getconfig("mediadbfile", NULL), cmediadb);
 }
 
 int findfiles(char* dirname, int type, int onlydir, int onlycount, int first)

@@ -67,7 +67,7 @@ struct mediadb* getmediadb(char* path, char* file, int flag);
 void screenmediadbsettings();
 
 //mediadb.h
-int writemediadb(const char *filename);
+int writemediadb(const char *filename, NULL);
 int delmediadbfilter(struct mediadbfilter* mnode, int flag);
 struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* title, char* year, char* released, char* runtime, char* genre, char* director, char* writer, char* actors, char* plot, char* poster, char* rating, char* votes, char* path, char* file, char* shortname, char* fileinfo, int flag, int postercount);
 void freemediadbcontent(struct mediadb* node);
