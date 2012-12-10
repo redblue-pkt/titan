@@ -26,6 +26,13 @@ void screeninfobar()
 	
 	while(1)
 	{
+		//check if mediadb can freed
+		if(status.mediadbthread == NULL)
+		{
+			if(status.writemediadb == 1)
+				writemediadb(getconfig("mediadbfile", NULL));
+			freemediadb(0);
+		}
 		//check if picmem times out and must freed
 		if(time(NULL) > status.picmemtimeout + 60)
 		{

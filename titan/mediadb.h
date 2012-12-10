@@ -2273,7 +2273,6 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 									cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
 								}
 								
-								
 								debug(133, "cmd %s", cmd);
 								system(cmd);
 								free(cmd); cmd = NULL;
@@ -2498,7 +2497,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				if(thumbfile == NULL)
 					addqueue(101, (void*)path, strlen(path) + 1, (void*)file, strlen(file) + 1, 0, NULL);
 			}
-      		free(thumbfile); thumbfile = NULL;
+			free(thumbfile); thumbfile = NULL;
 
 			createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, NULL, NULL, 0, 0);
 		}
