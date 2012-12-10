@@ -754,14 +754,10 @@ void screenmc_audioplayer()
 	free(filename), filename = NULL;
 	free(currentdirectory), currentdirectory = NULL;
 	free(selectedfile), selectedfile = NULL;
-/*
+
 	if(status.mediadbthread == NULL)
-	{
-		if(status.writemediadb == 1)
-			writemediadb(getconfig("mediadbfile", NULL));
 		freemediadb(0);
-	}
-*/
+
 	clearscreen(blackscreen);
 	clearscreen(loadmediadb);
 
