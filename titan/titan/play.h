@@ -1016,10 +1016,7 @@ playerstart:
 
 	if(startfile == NULL)
 	{
-		struct mediadb* dbnode = NULL;
 		readmediadb(getconfig("mediadbfile", NULL), 0, 0);
-		startmediadb();
-		dbnode = mediadb;
 
 		tmpstr = ostrcat(file, NULL, 1, 0); file = NULL;
 		file = screendir(startdir, formats, basename(tmpstr), &dirrcret, ".epg", _("DEL"), getrcconfigint("rcred", NULL), _("SELECT"), 0, "EPG", getrcconfigint("rcyellow", NULL), "SORT", getrcconfigint("rcblue", NULL), 90, 1, 90, 1, 64);
@@ -1260,7 +1257,11 @@ playerend:
 	free(formats);
 
 	if(status.mediadbthread == NULL)
+	{
+		if(status.writemediadb == 1)
+			writemediadb(getconfig("mediadbfile", NULL));
 		freemediadb(0);
+	}
 
 	return ret;
 }
