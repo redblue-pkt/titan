@@ -56,7 +56,7 @@ void screenmc_videoplayer_settings()
 	addchoicebox(backdrop, "3", _("3s"));	
 	addchoicebox(backdrop, "4", _("4s"));
 	addchoicebox(backdrop, "5", _("5s (default)"));
-	setchoiceboxselection(backdrop, getconfig("mc_vp_backdrop", NULL));
+	setchoiceboxselection(backdrop, getconfig("mc_vp_backdrop_interval", NULL));
 		
 	drawscreen(mc_videoplayer_settings, 0, 0);
 	addscreenrc(mc_videoplayer_settings, listbox);
@@ -78,7 +78,7 @@ void screenmc_videoplayer_settings()
 			addconfigscreencheck("vp_autostart_playlist", autostart_playlist, NULL);		
 			addconfigscreen("mc_vp_defaultdir", defaultdir);
 			addconfigscreencheck("mc_vp_uselastdir", uselastdir, NULL);
-			addconfigscreencheck("mc_vp_backdrop", backdrop, NULL);
+			addconfigscreencheck("mc_vp_backdrop_interval", backdrop, NULL);
 			break;
 		}
 		else if(rcret == getrcconfigint("rcred", NULL))
