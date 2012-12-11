@@ -1,4 +1,4 @@
-3#11.12.2012#Software Update#An diesem Wochenende wird die TitanNit Version 1.21 freigegeben\nMit einigen neuen Multimedia features.
-2#06.12.2012#TitanNit news#Atemio hat es mit dem Betriebssystem Titan geschafft,\nLinux als Firmware etwas aus dem Freakbereich herauszuholen und Mainstream-tauglich zu machen.\nDenn mit dem AM 7600 werden sich auch Nutzer ohne Linux-Erfahrungen sehr schnell zurecht finden.
-1#06.12.2012#Atemio 7600 news#Der Atemio AM 7600 HD PVR TitanNit Edition konnte gleich bei den ersten Tests\ndie Fachpresse von sich überzeugen.\nDie neue TitanNit Box wurde in der aktuellen Ausgabe 12/2012 der SATVISION\nnicht nur Testsieger,sondern auch "Preis-/Leistungssieger" und "Energiesparsieger.
+3#11.12.2012#Software Update#An diesem Wochenende wird die TitanNit Version 1.21 freigegeben,\nmit einigen neuen Multimedia features.
+2#06.12.2012#TitanNit news#Atemio hat es mit dem Betriebssystem Titan geschafft,\nLinux als Firmware etwas aus dem Freakbereich herauszuholen und Mainstream\ntauglich zu machen.\nDenn mit dem AM 7600 werden sich auch Nutzer ohne Linux-Erfahrungen\nsehr schnell zurecht finden.
+1#06.12.2012#Atemio 7600 news#Der Atemio AM 7600 HD PVR TitanNit Edition konnte gleich bei den ersten Tests\ndie Fachpresse von sich überzeugen.\nDie neue TitanNit Box wurde in der aktuellen Ausgabe 12/2012 der SATVISION\nnicht nur Testsieger,sondern auch "Preis-/Leistungssieger" und\n"Energiesparsieger".
 
