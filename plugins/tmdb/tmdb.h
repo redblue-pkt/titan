@@ -525,7 +525,8 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 														system(cmd);
 														free(cmd); cmd = NULL;
 														
-														writesysint("/proc/sys/vm/drop_caches", 3, 0);
+														if(getconfigint("mediadbdebug", NULL) == 1)
+															writesysint("/proc/sys/vm/drop_caches", 3, 0);
 														
 														if(mvicount == getconfigint("mediadbbackdrop", NULL))
 															break;
