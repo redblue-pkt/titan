@@ -427,9 +427,9 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 							tmppath = ostrcat(tmppath, ".jpg", 1, 0);
 							
 							savefile = savetmdbpic(tnode->imdbid, (&ret1[i])->part, TMPTMDBPIC4, tmppath, flag1);
-							free(tnode->backdrop);
 							if(file_exist(savefile))
 							{
+								free(tnode->backdrop);
 								tnode->backdrop = savefile;
 		
 								free(tnode->mvi);

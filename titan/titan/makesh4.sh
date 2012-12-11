@@ -68,6 +68,15 @@ if [ -z "$BUILDTYPE" ]; then
 	exit 1
 fi
 
+
+if [ $# -lt 10 ]; then
+	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
+	echo BUILDTYPE 0 = build all
+	echo BUILDTYPE 1 = build libdreamdvd and titan
+	echo BUILDTYPE 2 = build titan only
+	exit 1
+fi
+
 echo "[titan]--------------------------------------------------------"
 echo "[titan] get skin"
 echo "[titan]--------------------------------------------------------"
