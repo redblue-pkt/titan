@@ -579,7 +579,13 @@ void screenmc_videoplayer()
 			
 			servicestop(status.aktservice, 1, 1);
 			playrcstop(playertype, flag);
+			drawscreen(blackscreen, 0, 0);
+			drawscreen(loadmediadb, 0, 0);
+			sleep(2);
 			singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
+
+			// show skin
+			setfbtransparent(255);
 
 			apskin->hidden = NO;
 			filelist->hidden = NO;
