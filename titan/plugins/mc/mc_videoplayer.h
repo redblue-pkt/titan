@@ -577,6 +577,7 @@ void screenmc_videoplayer()
 				free(tmpfilename), tmpfilename = NULL;
 			}
 			
+			servicestop(status.aktservice, 1, 1);
 			playrcstop(playertype, flag);
 			singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 
