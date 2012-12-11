@@ -139,7 +139,7 @@ void screenmc_videoplayer()
 			char* pic = NULL;
 
 			int waittime = 5, foundthumb = 0, foundplot = 0, foundtitle = 0, foundstars = 0;
-			waittime = getconfigint("mc_vp_backdrop", NULL);
+			waittime = getconfigint("mc_vp_backdrop_interval", NULL);
 
 			if(filelist->select != NULL && filelist->select->input == NULL)
 			{
