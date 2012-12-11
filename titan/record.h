@@ -173,6 +173,10 @@ void recordwriteepg(char* filename, struct channel* chnode, struct rectimer* rec
 
 void createrecthumbthread(struct stimerthread* self, char* dname, char* filename)
 {
+	if(status.mediadbthread != NULL || self == NULL) return;
+	status.mediadbthread = self;
+	status.mediadbsavetime = 1;
+
 	if(dname != NULL && filename != NULL)
 	{
 		debug(133, "path: %s",dname);
@@ -186,6 +190,8 @@ void createrecthumbthread(struct stimerthread* self, char* dname, char* filename
 
 	free(dname); dname = NULL;
 	free(filename); filename = NULL;
+	status.mediadbsavetime = 0;
+	status.mediadbthread = NULL;
 }
 
 void recordstop(struct service* node, int ret)
@@ -234,9 +240,8 @@ void recordstop(struct service* node, int ret)
 	
 		deltranspondertunablestatus();
 
-		//deactivate for the moment
-		//if(dname != NULL && filename != NULL)
-		//	recthumbthread = addtimer(&createrecthumbthread, START, 1000, 1, (void*)ostrcat(dname, NULL, 0, 0), (void*)ostrcat(filename, NULL, 0, 0), NULL);
+		if(dname != NULL && filename != NULL)
+			recthumbthread = addtimer(&createrecthumbthread, START, 1000, 1, (void*)ostrcat(dname, NULL, 0, 0), (void*)ostrcat(filename, NULL, 0, 0), NULL);
 
 		free(dname); dname = NULL;
 		free(filename); filename = NULL;
