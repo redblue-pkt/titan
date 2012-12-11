@@ -593,7 +593,7 @@ void screenmc_videoplayer()
 			// show skin
 			drawscreen(apskin, 0, 0);
 
-//			setfbtransparent(255);
+			setfbtransparent(255);
 			clearscreen(loadmediadb);
 			clearscreen(blackscreen);
 
@@ -848,20 +848,20 @@ void screenmc_videoplayer()
 				if(screensaver != NULL && screensaver->type == 0)
 					screensaver->value = (void*)filelist->select->text;
 
+				setfbtransparent(0);
+
 				debug(50, "playerstop");
 				playrcstop(playertype, flag);
-//				sleep(1);
-
-				servicestop(status.aktservice, 1, 1);
-				drawscreen(skin, 0, 0);
 
 				delownerrc(apskin);
-//				setfbtransparent(255);
 
 				debug(50, "playerstart: %s", filename);
 				eof = 0;
 
+				servicestop(status.aktservice, 1, 1);
+				drawscreen(skin, 0, 0);
 				drawscreen(loadmediadb, 0, 0);
+				setfbtransparent(255);
 	
 				debug(50, "playertype: %d", playertype);
 				if(playertype == 1)
@@ -946,7 +946,7 @@ void screenmc_videoplayer()
 				fileseek = ostrcat(fileseek, ".se", 0, 0);
 				unlink(fileseek);
 			
-//				setfbtransparent(0);
+				setfbtransparent(0);
 				apskin->hidden = NO;
 				drawscreen(skin, 0, 0);
 				playereof(apskin, filelist, listbox, filelistpath, b2, NULL, NULL, NULL, &skip, &eof, &playlist, playertype, flag);
