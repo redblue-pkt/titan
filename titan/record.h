@@ -174,11 +174,17 @@ void recordwriteepg(char* filename, struct channel* chnode, struct rectimer* rec
 void createrecthumbthread(struct stimerthread* self, char* dname, char* filename)
 {
 	if(status.mediadbthread != NULL || self == NULL) return;
+
+	debug(777, "mediadb scanthread (record thumb) start");
+
+	status.mediadbthreadstatus = 1;
 	status.mediadbthread = self;
 	status.mediadbsavetime = 1;
 
 	if(dname != NULL && filename != NULL)
 	{
+		readmediadb(getconfig("mediadbfile", NULL), 0, 0);
+
 		debug(133, "path: %s",dname);
 		debug(133, "file: %s",filename);
 		debug(133, "type: 2");
@@ -192,6 +198,9 @@ void createrecthumbthread(struct stimerthread* self, char* dname, char* filename
 	free(filename); filename = NULL;
 	status.mediadbsavetime = 0;
 	status.mediadbthread = NULL;
+	status.mediadbthreadstatus = 0;
+
+	debug(777, "mediadb scanthread (record thumb) end");
 }
 
 void recordstop(struct service* node, int ret)
