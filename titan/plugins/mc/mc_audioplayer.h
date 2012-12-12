@@ -161,12 +161,10 @@ void screenmc_audioplayer()
 
 				if(status.play == 1)
 				{
-					if(ostrcmp(lastid, filelist->select->name) == 0)					
-						continue;
-					else
-					{
+					if(ostrcmp(lastid, filelist->select->name) 1= 0)
+					{				
 						free(lastid), lastid = NULL;
-						lastid = ostrcat(lastid, filelist->select->name, 1, 0);
+						lastid = ostrcat(lastid, filelist->select->name, 1, 0);	
 					}
 				}
 
