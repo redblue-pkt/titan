@@ -2754,3 +2754,12 @@ msgstr "mehr"
 
 msgid "Delete File"
 msgstr "Datei löschen"
+
+msgid "MediaDB Scan Info"
+msgstr "MediaDB Scan Informationen"
+
+msgid "MediaDB Edit"
+msgstr "MediaDB Eintrag bearbeiten"
+
+msgid "AV Settings"
+msgstr "Audio/Video Einstellungen"
