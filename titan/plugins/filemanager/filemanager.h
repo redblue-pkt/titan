@@ -37,7 +37,7 @@ void filemanagerrename(int aktfilelist, struct skin* filelist1, struct skin* fil
 
 		if(!file_exist(tmpstr))
 		{
-			cmd = ostrcat(cmd, "mv \"", 1, 0);
+			cmd = ostrcat(cmd, "mv -f\"", 1, 0);
 			cmd = ostrcat(cmd, file1, 1, 0);
 			cmd = ostrcat(cmd, "\" \"", 1, 0);
 			cmd = ostrcat(cmd, tmpstr, 1, 0);
@@ -235,7 +235,7 @@ void screenfilemanager()
 					ret = textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 					free(tmpstr); tmpstr = NULL;
 					
-					cmd = ostrcat(cmd, "rm -r ", 1, 0);
+					cmd = ostrcat(cmd, "rm -rf ", 1, 0);
 					cmd = ostrcat(cmd, "\"", 1, 0);
 					cmd = ostrcat(cmd, file1, 1, 0);
 					cmd = ostrcat(cmd, "\"", 1, 0);

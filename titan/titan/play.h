@@ -506,6 +506,24 @@ void get_mediadb_scan_info()
 	free(tmpstr), tmpstr = NULL;
 }
 
+void screenremovefile(char* file)
+{
+	char* tmpstr = NULL, *cmd = NULL;
+	tmpstr = ostrcat(tmpstr, _("Realy delete this file/dir?"), 1, 0);
+	tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
+	tmpstr = ostrcat(tmpstr, file, 1, 0);
+	if(textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
+	{
+		cmd = ostrcat(cmd, "rm -rf ", 1, 0);
+		cmd = ostrcat(cmd, "\"", 1, 0);
+		cmd = ostrcat(cmd, file, 1, 0);
+		cmd = ostrcat(cmd, "\"", 1, 0);
+		system(cmd);
+		free(cmd), cmd = NULL;
+	}
+	free(tmpstr), tmpstr = NULL;
+}
+
 void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 {
 //	if(checkbit(status.playercan, 5) == 0) return;
@@ -527,6 +545,9 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 	}
 
 	addmenulist(&mlist, "MediaDB Edit", NULL, NULL, 0, 0);
+
+	if(status.play == 0)
+		addmenulist(&mlist, "Delete File", NULL, NULL, 0, 0);
 		
 	if(status.mediadbfiles > 0)
 		addmenulist(&mlist, "MediaDB Scan Info", NULL, NULL, 0, 0);
@@ -567,6 +588,8 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 			get_mediadb_scan_info();
 		else if(ostrcmp(mbox->name, "MediaDB Edit") == 0)
 			screenmediadbedit(file, 0, 0);
+		else if(ostrcmp(mbox->name, "Delete File") == 0)
+			screenremovefile(file);
 		else
 		{
 			pluginnode = getplugin(mbox->name);
