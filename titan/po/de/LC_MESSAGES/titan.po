@@ -2751,3 +2751,6 @@ msgstr "Durchsuchtes Verzeichnis"
 
 msgid "OTHER"
 msgstr "mehr"
+
+msgid "Delete File"
+msgstr "Datei löschen"
