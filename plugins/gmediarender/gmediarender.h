@@ -33,6 +33,7 @@ void gmediarendergetpic(struct skin* gmediarender, char* buf)
 	if(cmpfilenameext(path, ".jpg") == 0)
 	{
 		unlink("/tmp/gmediarenderpic.jpg");
+/*
 		char* cmd = NULL;
 		cmd = ostrcat(cmd, "wget ", 1, 0);
 		cmd = ostrcat(cmd, buf, 1, 0);
@@ -40,13 +41,15 @@ void gmediarendergetpic(struct skin* gmediarender, char* buf)
 		printf("cmd: %s\n", cmd);
 		system(cmd); 
 		free(cmd), cmd = NULL;
-//		gethttp(tmpip, path, port, "/tmp/gmediarenderpic.jpg", NULL, NULL, 0);
+*/
+		gethttp(tmpip, path, port, "/tmp/gmediarenderpic.jpg", NULL, NULL, 0);
 		changepic(gmediarender, "/tmp/gmediarenderpic.jpg");
 		drawscreen(gmediarender, 0, 0);
 	}
 	if(cmpfilenameext(path, ".png") == 0)
 	{
 		unlink("/tmp/gmediarenderpic.png");
+/*
 		char* cmd = NULL;
 		cmd = ostrcat(cmd, "wget ", 1, 0);
 		cmd = ostrcat(cmd, buf, 1, 0);
@@ -54,7 +57,8 @@ void gmediarendergetpic(struct skin* gmediarender, char* buf)
 		printf("cmd: %s\n", cmd);
 		system(cmd); 
 		free(cmd), cmd = NULL;
-//		gethttp(tmpip, path, port, "/tmp/gmediarenderpic.png", NULL, NULL, 0);
+*/
+		gethttp(tmpip, path, port, "/tmp/gmediarenderpic.png", NULL, NULL, 0);
 		changepic(gmediarender, "/tmp/gmediarenderpic.png");
 		drawscreen(gmediarender, 0, 0);
 	}
