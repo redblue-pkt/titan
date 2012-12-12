@@ -3,16 +3,16 @@
 
 // flag 1 = getstreamurl
 
-char* myvideo(char* link, char* url, char* name, int flag)
+char* myvideo(char* input, char* url, char* name, int flag)
 {
-	debug(99, "link(%d): %s", flag, link);
-	char* ip = NULL, *pos = NULL, *path = NULL, *pageUrl = NULL, *playpath = NULL, *video_id = NULL, *source = NULL, *streamurl = NULL, *tmpstr_uni = NULL, *b64 = NULL, *key = NULL, *newurl = NULL;
+	debug(99, "link(%d): %s", flag, input);
+	char* ip = NULL, *pos = NULL, *path = NULL, *pageUrl = NULL, *playpath = NULL, *video_id = NULL, *source = NULL, *streamurl = NULL, *tmpstr_uni = NULL, *b64 = NULL, *key = NULL, *newurl = NULL, *link = NULL;
 
 	if(flag == 1)
 	{
 		int count = 0;
 		struct splitstr* ret1 = NULL;
-		ret1 = strsplit(link, ";", &count);
+		ret1 = strsplit(input, ";", &count);
 		if(ret1 != NULL && count >= 4)
 		{
 			link = ostrcat(ret1[0].part, NULL, 0, 0);
@@ -34,8 +34,19 @@ char* myvideo(char* link, char* url, char* name, int flag)
 	}
 
 	char* tmpstr = NULL;
-	tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
-		
+// not working tmpstr hat zusatzdaten im string
+//	tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
+
+// work start
+	unlink("/tmp/myvideo_tmp");
+	char* cmd = NULL;
+	cmd = ostrcat("wget \"", input, 0, 0);
+	cmd = ostrcat(cmd, "\" -O /tmp/myvideo_tmp", 1, 0);
+	system(cmd);
+	free(cmd), cmd = NULL;
+	tmpstr = readfiletomem("/tmp/myvideo_tmp", 0);
+// work end
+
 	if(flag == 1)
 	{
 		int count = 0;
