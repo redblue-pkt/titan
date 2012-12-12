@@ -116,8 +116,6 @@ void screenmc_audioplayer()
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
 	addscreenrc(apskin, filelist);
 
-	char* lastid = NULL;
-
 	while(1)
 	{
 		if(status.play == 1 && count <= screensaver_delay)
@@ -158,16 +156,6 @@ void screenmc_audioplayer()
 					
 			if(filelist->select != NULL && filelist->select->input == NULL)
 			{
-
-				if(status.play == 1)
-				{
-					if(ostrcmp(lastid, filelist->select->name) 1= 0)
-					{				
-						free(lastid), lastid = NULL;
-						lastid = ostrcat(lastid, filelist->select->name, 1, 0);	
-					}
-				}
-
 				struct mediadb* mnode = getmediadb(filelistpath->text, filelist->select->name, 0);
 				if(mnode != NULL)
 				{
