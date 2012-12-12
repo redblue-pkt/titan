@@ -516,7 +516,7 @@ char* createhttpheader(char *host, char *page, char* auth)
 	}
 
 	query = ostrcat("GET /", getpage, 0, 0);
-	query = ostrcat(query, " HTTP/1.1\r\nHost: ", 1, 0);
+	query = ostrcat(query, " HTTP/1.0\r\nHost: ", 1, 0);
 	query = ostrcat(query, host, 1, 0);
 	query = ostrcat(query, "\r\nUser-Agent: ", 1, 0);
 	//query = ostrcat(query, PROGNAME, 1, 0);
