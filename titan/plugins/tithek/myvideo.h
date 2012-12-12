@@ -35,8 +35,8 @@ char* myvideo(char* input, char* url, char* name, int flag)
 
 	char* tmpstr = NULL;
 // not working tmpstr hat zusatzdaten im string
-//	tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
-
+	tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
+/*
 // work start
 	unlink("/tmp/myvideo_tmp");
 	char* cmd = NULL;
@@ -46,7 +46,7 @@ char* myvideo(char* input, char* url, char* name, int flag)
 	free(cmd), cmd = NULL;
 	tmpstr = readfiletomem("/tmp/myvideo_tmp", 0);
 // work end
-
+*/
 	if(flag == 1)
 	{
 		int count = 0;
