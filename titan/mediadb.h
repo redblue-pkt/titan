@@ -1936,13 +1936,12 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 					if(tmdb->postermid != NULL) imdb->poster = ostrcat(tmdb->postermid, NULL, 0, 0);
 					if(tmdb->thumb != NULL) imdb->thumb = ostrcat(tmdb->thumb, NULL, 0, 0);
 					if(tmdb->year != NULL) imdb->year = ostrcat(tmdb->year, NULL, 0, 0);
-					if(tmdb->mvi != NULL) backdrop = atoi(tmdb->mvi);
 				}
 	
 				debugimdbnode(imdb);
 	
 				// manuel imdbapi
-				if(flag == 3 && imdb != NULL && tmdb != NULL)
+				if(flag == 3 && imdb != NULL && imdbapi != NULL)
 				{
 					if(imdbapi->id != NULL) imdb->id = ostrcat(imdbapi->id, NULL, 0, 0);			
 					if(imdbapi->title != NULL) imdb->title = ostrcat(imdbapi->title, NULL, 0, 0);	
@@ -1971,7 +1970,6 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 					if(imdb->poster == NULL) imdb->poster = ostrcat(imdb->poster, tmdb->postermid, 1, 0);
 					if(imdb->thumb == NULL) imdb->thumb = ostrcat(imdb->thumb, tmdb->thumb, 1, 0);
 					if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, tmdb->year, 1, 0);
-					if(tmdb->mvi != NULL) backdrop = atoi(tmdb->mvi);
 				}
 
 				debugimdbnode(imdb);
@@ -1992,6 +1990,8 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 					if(imdb->poster == NULL) imdb->poster = ostrcat(imdb->poster, imdbapi->poster, 1, 0);
 					if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, imdbapi->year, 1, 0);
 				}
+
+				if(tmdb != NULL && tmdb->mvi != NULL) backdrop = atoi(tmdb->mvi);
 			}
 			else if((cmpfilenameext(file, ".ts") == 0) || (cmpfilenameext(file, ".mts") == 0))
 			{
@@ -2297,6 +2297,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 									system(cmd);
 									free(cmd); cmd = NULL;
 									
+									backdrop = 1;
 									writesysint("/proc/sys/vm/drop_caches", 3, 0);
 								}	
 							}

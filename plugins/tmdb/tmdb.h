@@ -403,9 +403,10 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 					tnode->backdrop = savefile;					
 				}
 			}
-
+							
 			if((flag1 == 1 || flag1 == 2) && tnode->backdrop != NULL && tnode->imdbid != NULL) 
 			{
+				debug(133, "load backdrop flag1: %d", flag1);
 				char* tmppath = NULL;
 				mvicount = 0;
 				char* tmpstr2 = NULL;
@@ -420,12 +421,12 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 					{
 						mvicount++;
 						debug(133, "load %s\n",(&ret1[i])->part);
-	
+
 						if(!ostrncmp("http://", (&ret1[i])->part, 7))
 						{
 							tmppath = ostrcat("_backdrop", oitoa(mvicount), 0, 1);
 							tmppath = ostrcat(tmppath, ".jpg", 1, 0);
-							
+
 							savefile = savetmdbpic(tnode->imdbid, (&ret1[i])->part, TMPTMDBPIC4, tmppath, flag1);
 							if(file_exist(savefile))
 							{
@@ -599,9 +600,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 											writesys(logfile, "#############", 3);
 										}									
 									}
-								}
-								else
-									mvicount--;									
+								}								
 
 								free(tmppath), tmppath = NULL;
 							}
@@ -638,6 +637,8 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 			}
 			else if((flag1 == 1 || flag1 == 2) && tnode->postermid != NULL && tnode->imdbid != NULL)
 			{
+				debug(133, "load postermid flag1: %d", flag1);
+
 				free(tnode->mvi);
 				tnode->mvi = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 				tnode->mvi = ostrcat(tnode->mvi, tnode->imdbid, 1, 0);
@@ -798,14 +799,24 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 					}
 				}
 			}
-					
+
+			debug(133, "mvi=%s (mvicount=%d)", tnode->mvi,flag1);
+			debug(133, "backdrop=%s (mvicount=%d)", tnode->backdrop,flag1);
+
 			if(file_exist(tnode->mvi))
 				unlink(tnode->backdrop);
 
 			if(mvicount > 0)
-				tnode->mvi = ostrcat(oitoa(mvicount), NULL, 0, 0);
+			{
+				free(tnode->mvi);
+				tnode->mvi = ostrcat(oitoa(mvicount), NULL, 1, 0);
+			}
 			else
+			{
+				free(tnode->mvi);
 				tnode->mvi = ostrcat("1", NULL, 0, 0);
+			}
+			debug(133, "change mvi=%s (mvicount=%d)", tnode->mvi,flag1);
 
 			tmpstr1 += 5;
 			tmpstr1 = ostrstr(tmpstr1, "<movie>");
