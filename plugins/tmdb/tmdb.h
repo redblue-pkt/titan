@@ -301,7 +301,15 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 			if(ostrstr(tmpstr1, "size=\"cover\"") != NULL)
 				tnode->cover = oregex(".*<image type=\"poster\" url=\".*(http://.*)\" size=\"cover\".*", tmpstr1);
 
-			if(ostrstr(tmpstr1, "size=\"mid\"") != NULL)
+			if(ostrstr(tmpstr1, "<images>") != NULL)
+			{
+				char* tmpcat = string_resub("<images>", "</images>", tmpstr1, 0);
+				if(tmpcat != NULL)
+					tnode->postermid = oregex(".*<image type=\"poster\" url=\".*(http://.*)\" size=\"mid\".*", tmpcat);
+				free(tmpcat); tmpcat = NULL;
+			}
+			
+			if(tnode->postermid == NULL && ostrstr(tmpstr1, "size=\"mid\"") != NULL)
 				tnode->postermid = oregex(".*<image type=\"poster\" url=\".*(http://.*)\" size=\"mid\".*", tmpstr1);
 
 			if(ostrstr(tmpstr1, "<images>") != NULL)
