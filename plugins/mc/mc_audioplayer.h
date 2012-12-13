@@ -116,6 +116,8 @@ void screenmc_audioplayer()
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
 	addscreenrc(apskin, filelist);
 
+	char* lastid = NULL; 
+
 	while(1)
 	{
 		if(status.play == 1 && count <= screensaver_delay)
@@ -153,43 +155,98 @@ void screenmc_audioplayer()
 		{
 			char* pic = NULL;
 			int len1 = 0;
-					
-			if(filelist->select != NULL && filelist->select->input == NULL)
-			{
-				struct mediadb* mnode = getmediadb(filelistpath->text, filelist->select->name, 0);
-				if(mnode != NULL)
+
+			if(ostrcmp(lastid, filelist->select->name) != 0) 
+			{                                
+				free(lastid), lastid = NULL; 
+				lastid = ostrcat(lastid, filelist->select->name, 1, 0);  
+				if(filelist->select != NULL && filelist->select->input == NULL)
 				{
-					if(mnode->id != NULL)
+					struct mediadb* mnode = getmediadb(filelistpath->text, filelist->select->name, 0);
+					if(mnode != NULL)
 					{
-						tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
-						tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
-						tmpstr = ostrcat(tmpstr, mnode->id, 1, 0);
-	
-						pic = ostrcat(tmpstr, "_cover.jpg", 0, 0);
-						free(tmpstr), tmpstr = NULL;
-					}
-
-					len1 = strlen(mnode->plot);
-					if(mnode->plot != NULL && len1 != 0)
-					{
-						changetext(album, mnode->plot);
-						album->hidden = NO;
-						albumtext->hidden = NO;
-					}
-					else
-					{
-						album->hidden = YES;
-						albumtext->hidden = YES;
-					}
-
-					len1 = strlen(mnode->plot);
-					if(mnode->title != NULL && len1 != 0)
-					{
-						len1 = strlen(mnode->actors);
-						if(mnode->actors != NULL && len1 != 0)					
+						if(mnode->id != NULL)
 						{
-							tmpstr = ostrcat(tmpstr, mnode->actors, 1, 0);
-							tmpstr = ostrcat(tmpstr, " - ", 1, 0);
+							tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
+							tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
+							tmpstr = ostrcat(tmpstr, mnode->id, 1, 0);
+		
+							pic = ostrcat(tmpstr, "_cover.jpg", 0, 0);
+							free(tmpstr), tmpstr = NULL;
+						}
+	
+						len1 = strlen(mnode->plot);
+						if(mnode->plot != NULL && len1 != 0)
+						{
+							changetext(album, mnode->plot);
+							album->hidden = NO;
+							albumtext->hidden = NO;
+						}
+						else
+						{
+							album->hidden = YES;
+							albumtext->hidden = YES;
+						}
+	
+						len1 = strlen(mnode->plot);
+						if(mnode->title != NULL && len1 != 0)
+						{
+							len1 = strlen(mnode->actors);
+							if(mnode->actors != NULL && len1 != 0)					
+							{
+								tmpstr = ostrcat(tmpstr, mnode->actors, 1, 0);
+								tmpstr = ostrcat(tmpstr, " - ", 1, 0);
+								actors->hidden = NO;
+								actorstext->hidden = NO;
+							}
+							else
+							{
+								actors->hidden = YES;
+								actorstext->hidden = YES;
+							}
+							tmpstr = ostrcat(tmpstr, mnode->title, 1, 0);
+	
+							if(mnode->year != 0)
+							{
+								tmpstr = ostrcat(tmpstr, " (", 1, 0);
+								tmpstr = ostrcat(tmpstr, oitoa(mnode->year), 1, 0);
+								tmpstr = ostrcat(tmpstr, ")", 1, 0);
+								year->hidden = NO;
+								yeartext->hidden = NO;
+							}
+							else
+							{
+								year->hidden = YES;
+								yeartext->hidden = YES;
+							}
+							if(tmpstr != NULL)
+							{
+								changetext(title, tmpstr);
+								title->hidden = NO;
+							}
+							else
+							{
+								changetext(title, filelist->select->name);
+								title->hidden = NO;
+							}
+							free(tmpstr), tmpstr = NULL;
+	
+							changetext(realname, filelist->select->name);
+							realname->hidden = NO;
+							realnametext->hidden = NO;
+						}
+						else
+						{
+							realname->hidden = YES;
+							realnametext->hidden = YES;
+							changetext(title, filelist->select->name);
+							title->hidden = NO;
+						}					
+	
+						len1 = strlen(mnode->actors);
+						if(mnode->actors != NULL && len1 != 0)
+						{
+							changetext(actors, mnode->actors);
 							actors->hidden = NO;
 							actorstext->hidden = NO;
 						}
@@ -198,13 +255,23 @@ void screenmc_audioplayer()
 							actors->hidden = YES;
 							actorstext->hidden = YES;
 						}
-						tmpstr = ostrcat(tmpstr, mnode->title, 1, 0);
-
+	
+						len1 = strlen(mnode->genre);
+						if(mnode->genre != NULL && len1 != 0)
+						{
+							changetext(genre, mnode->genre);
+							genre->hidden = NO;
+							genretext->hidden = NO;
+						}
+						else
+						{
+							genre->hidden = YES;
+							genretext->hidden = YES;
+						}
+	
 						if(mnode->year != 0)
 						{
-							tmpstr = ostrcat(tmpstr, " (", 1, 0);
-							tmpstr = ostrcat(tmpstr, oitoa(mnode->year), 1, 0);
-							tmpstr = ostrcat(tmpstr, ")", 1, 0);
+							changetext(year, oitoa(mnode->year));
 							year->hidden = NO;
 							yeartext->hidden = NO;
 						}
@@ -213,69 +280,36 @@ void screenmc_audioplayer()
 							year->hidden = YES;
 							yeartext->hidden = YES;
 						}
-						if(tmpstr != NULL)
-						{
-							changetext(title, tmpstr);
-							title->hidden = NO;
-						}
-						else
-						{
-							changetext(title, filelist->select->name);
-							title->hidden = NO;
-						}
-						free(tmpstr), tmpstr = NULL;
-
-						changetext(realname, filelist->select->name);
-						realname->hidden = NO;
-						realnametext->hidden = NO;
 					}
-					else
+					else	
 					{
-						realname->hidden = YES;
-						realnametext->hidden = YES;
-						changetext(title, filelist->select->name);
-						title->hidden = NO;
-					}					
-
-					len1 = strlen(mnode->actors);
-					if(mnode->actors != NULL && len1 != 0)
-					{
-						changetext(actors, mnode->actors);
-						actors->hidden = NO;
-						actorstext->hidden = NO;
-					}
-					else
-					{
+						thumb->hidden = YES;
+						album->hidden = YES;
+						title->hidden = YES;
 						actors->hidden = YES;
-						actorstext->hidden = YES;
-					}
-
-					len1 = strlen(mnode->genre);
-					if(mnode->genre != NULL && len1 != 0)
-					{
-						changetext(genre, mnode->genre);
-						genre->hidden = NO;
-						genretext->hidden = NO;
-					}
-					else
-					{
-						genre->hidden = YES;
-						genretext->hidden = YES;
-					}
-
-					if(mnode->year != 0)
-					{
-						changetext(year, oitoa(mnode->year));
-						year->hidden = NO;
-						yeartext->hidden = NO;
-					}
-					else
-					{
 						year->hidden = YES;
+						realname->hidden = YES;
+						genre->hidden = YES;
+						albumtext->hidden = YES;
+						actorstext->hidden = YES;
 						yeartext->hidden = YES;
+						realnametext->hidden = YES;
+						genretext->hidden = YES;
+						free(pic), pic = NULL;
 					}
+	
+					if(file_exist(pic))
+					{
+						changepic(thumb, pic);
+						thumb->hidden = NO;
+					}
+					else
+						thumb->hidden = YES;
+	
+					free(pic), pic = NULL;				
+					drawscreen(apskin, 0, 0);
 				}
-				else	
+				else
 				{
 					thumb->hidden = YES;
 					album->hidden = YES;
@@ -290,39 +324,12 @@ void screenmc_audioplayer()
 					realnametext->hidden = YES;
 					genretext->hidden = YES;
 					free(pic), pic = NULL;
+					drawscreen(apskin, 0, 0);
+	
 				}
-
-				if(file_exist(pic))
-				{
-					changepic(thumb, pic);
-					thumb->hidden = NO;
-				}
-				else
-					thumb->hidden = YES;
-
-				free(pic), pic = NULL;				
-				drawscreen(apskin, 0, 0);
+				if(status.play == 1)
+					drawscreen(infobar, 0, 0);
 			}
-			else
-			{
-				thumb->hidden = YES;
-				album->hidden = YES;
-				title->hidden = YES;
-				actors->hidden = YES;
-				year->hidden = YES;
-				realname->hidden = YES;
-				genre->hidden = YES;
-				albumtext->hidden = YES;
-				actorstext->hidden = YES;
-				yeartext->hidden = YES;
-				realnametext->hidden = YES;
-				genretext->hidden = YES;
-				free(pic), pic = NULL;
-				drawscreen(apskin, 0, 0);
-
-			}
-			if(status.play == 1)
-				drawscreen(infobar, 0, 0);
 		}
 
 		if(rcret == getrcconfigint("rc1", NULL))
