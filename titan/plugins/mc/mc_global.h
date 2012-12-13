@@ -1065,7 +1065,7 @@ void mc_audioplayer_infobar(struct skin* apskin, struct skin* infobar, struct sk
 	else
 		changetext(b12, _("Random"));	
 
-	if(status.repeat == 0)
+	if(status.repeat == 1)
 		changetext(b13, _("Repeat-On"));
 	else
 		changetext(b13, _("Repeat"));
