@@ -5,14 +5,6 @@ extern struct skin* skin;
 extern struct screensaver* screensaver;
 extern struct mediadb* mediadb;
 
-void startmediadb()
-{
-	char* tmpstr = NULL;
-	tmpstr = ostrcat(getconfig("mc_vp_dirsort", NULL), NULL, 0, 0);
-	addconfigtmp("dirsort", tmpstr);
-	free(tmpstr), tmpstr = NULL;
-}
-
 void screenmc_videoplayer()
 {
 	// workaround for grey background mvi
@@ -21,23 +13,14 @@ void screenmc_videoplayer()
 	drawscreen(blackscreen, 0, 0);
 	drawscreen(loadmediadb, 0, 0);
 
-	struct mediadb* dbnode = NULL;
 	readmediadb(getconfig("mediadbfile", NULL), 0, 0);
 
-	char* tmpstr = NULL;
+	char* lastid = NULL, *filename = NULL, *tmppolicy = NULL ,*currentdirectory = NULL, *selectedfile = NULL, *tmpstr = NULL;
+	int rcret = 0, rcwait = 1000, playerret = 0, flag = 1, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0, mviwait = 0, mvinum = 0, exit = 0;
+
 	tmpstr = ostrcat(getconfig("mc_vp_dirsort", NULL), NULL, 0, 0);
 	addconfigtmp("dirsort", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	startmediadb();
-	dbnode = mediadb;
-
-	char* lastid = NULL;
-	char* filename = NULL;
-	char* tmppolicy = NULL;
-	char* currentdirectory = NULL;
-	char* selectedfile = NULL;
-	int rcret = 0, rcwait = 1000, playerret = 0, flag = 1, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0, mviwait = 0, mvinum = 0, exit = 0;
 
 	// main screen
 	struct skin* apskin = getscreen("mc_videoplayer");
@@ -519,8 +502,6 @@ void screenmc_videoplayer()
 				
 				mc_changeview(tmpview, filelist, apskin, flag);
 
-//				startmediadb();
-//				dbnode = mediadb;
 				drawscreen(blackscreen, 0, 0);
 				drawscreen(loadmediadb, 0, 0);
 				printf("2view in: %d\n", view);
@@ -619,9 +600,6 @@ void screenmc_videoplayer()
 				playerafterend();
 		
 			writevfd("VideoPlayer Filelist-Mode");
-				
-//			startmediadb();
-//			dbnode = mediadb;
 		}
 		else if(rcret == getrcconfigint("rcexit", NULL))
 		{

@@ -12,22 +12,14 @@ void screenmc_audioplayer()
 	drawscreen(blackscreen, 0, 0);
 	drawscreen(loadmediadb, 0, 0);
 
-//	struct mediadb* dbnode = NULL;
 	readmediadb(getconfig("mediadbfile", NULL), 0, 0);
 
-	char* filename = NULL;
-	char* currentdirectory = NULL;
-	char* selectedfile = NULL;
-
+	char* filename = NULL, *currentdirectory = NULL, *selectedfile = NULL, *lastid = NULL, *tmpstr = NULL;
 	int rcret = 0, rcwait = 1000, playerret = 0, flag = 2, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, count = 0, tmpview = 0, playlist = 0, playertype = 0;
 
-	char* tmpstr = NULL;
 	tmpstr = ostrcat(getconfig("mc_ap_dirsort", NULL), NULL, 0, 0);
 	addconfigtmp("dirsort", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-
-//	startmediadb();
-//	dbnode = mediadb;
 
 	// main screen
 	struct skin* apskin = getscreen("mc_audioplayer");
@@ -115,8 +107,6 @@ void screenmc_audioplayer()
 
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
 	addscreenrc(apskin, filelist);
-
-	char* lastid = NULL; 
 
 	while(1)
 	{
@@ -744,6 +734,7 @@ void screenmc_audioplayer()
 	delownerrc(apskin);
 	clearscreen(apskin);
 
+	free(lastid), lastid = NULL;
 	free(filename), filename = NULL;
 	free(currentdirectory), currentdirectory = NULL;
 	free(selectedfile), selectedfile = NULL;
