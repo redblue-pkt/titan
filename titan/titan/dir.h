@@ -154,7 +154,7 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 							tmpstr = ostrcat(tmpstr, "/", 1, 0);
 							tmpstr = ostrcat(tmpstr, mnode->id, 1, 0);
 
-							pic = ostrcat(tmpstr, "_postermid.jpg", 0, 0);
+							pic = ostrcat(tmpstr, "_poster.jpg", 0, 0);
 							thumb->hidden = NO;
 							changepic(thumb, pic);
 						}
