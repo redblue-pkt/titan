@@ -1844,7 +1844,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			tmpmpg = ostrcat("/tmp/backdrop.resize.", timen, 0, 0);
 			tmpmpg = ostrcat(tmpmpg, ".mpg", 1, 0);
 			
-			tmpmeta = ostrcat("mediadb.", timen, 0, 0);
+			tmpmeta = ostrcat("/tmp/mediadb.", timen, 0, 0);
 			tmpmeta = ostrcat(tmpmeta, ".meta", 1, 0);
 			
 			if(getconfigint("mediadbdebug", NULL) == 1)
