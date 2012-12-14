@@ -1490,15 +1490,15 @@ struct eitlongeventitem
 
 struct eitlinkage
 {
-        u_char descriptor_tag                 /*:8*/;
-        u_char descriptor_length              /*:8*/;
-        u_char transport_stream_id_hi         /*:8*/;
-        u_char transport_stream_id_lo         /*:8*/;
-        u_char original_network_id_hi         /*:8*/;
-        u_char original_network_id_lo         /*:8*/;
-        u_char service_id_hi                  /*:8*/;
-        u_char service_id_lo                  /*:8*/;
-        u_char linkage_type                   /*:8*/;
+	u_char descriptor_tag                 /*:8*/;
+	u_char descriptor_length              /*:8*/;
+	u_char transport_stream_id_hi         /*:8*/;
+	u_char transport_stream_id_lo         /*:8*/;
+	u_char original_network_id_hi         /*:8*/;
+	u_char original_network_id_lo         /*:8*/;
+	u_char service_id_hi                  /*:8*/;
+	u_char service_id_lo                  /*:8*/;
+	u_char linkage_type                   /*:8*/;
 };
 #define EITLLINKAGELEN sizeof(struct eitlinkage)
 
@@ -1544,6 +1544,71 @@ struct rstitem
 };
 #define RSTITEMLEN sizeof(struct rstitem)
 
+struct mhwchannel
+{
+	u_char	network_id_hi;
+	u_char	network_id_lo;
+	u_char	transponder_id_hi;
+	u_char	transponder_id_lo;
+	u_char	channel_id_hi;
+	u_char	channel_id_lo;
+	u_char	name[16];
+};
+#define MHWCHANNELLEN sizeof(struct mhwchannel)
+
+struct mhwtitle
+{
+	u_char table_id                       :8;
+	u_char section_length_hi              :4;
+	u_char                                :2;
+	u_char dummy                          :1;
+	u_char section_syntax_indicator       :1;
+	u_char section_length_lo              :8;
+	u_char channel_id                     :8;
+	u_char theme_id                       :8;
+	u_char hours		                      :5;
+	u_char day                            :3;
+	u_char summary_available              :1;
+	u_char		                            :1;
+	u_char minutes                        :6;
+	u_char                                :8;
+	u_char                                :8;
+	u_char duration_hi                    :8;
+	u_char duration_lo                    :8;
+	u_char title                          [23];
+	u_char ppv_id_hi                      :8;
+	u_char ppv_id_mh                      :8;
+	u_char ppv_id_ml                      :8;
+	u_char ppv_id_lo                      :8;
+	u_char program_id_hi                  :8;
+	u_char program_id_mh                  :8;
+	u_char program_id_ml                  :8;
+	u_char program_id_lo                  :8;
+	u_char                                :8;
+	u_char                                :8;
+	u_char                                :8;
+	u_char                                :8;
+};
+#define MHWTITLELEN sizeof(struct mhwtitle)
+
+struct mhwsummary
+{
+	u_char table_id                       :8;
+	u_char section_length_hi              :4;
+	u_char                                :2;
+	u_char dummy                          :1;
+	u_char section_syntax_indicator       :1;
+	u_char section_length_lo              :8;
+	u_char program_id_hi                  :8;
+	u_char program_id_mh                  :8;
+	u_char program_id_ml                  :8;
+	u_char program_id_lo                  :8;
+	u_char                                :8;
+	u_char                                :8;
+	u_char                                :8;
+	u_char nb_replays                     :8;
+};
+#define MHWSUMMARYLEN sizeof(struct mhwsummary)
 
 struct blacklist
 {
