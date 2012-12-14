@@ -2226,6 +2226,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 					cmd = ostrcat(cmd, tmpmeta, 1, 0);
 					cmd = ostrcat(cmd, " | grep Stream | awk '{print $6}' | cut -d'x' -f1", 1, 0);
 					char* size = string_newline(command(cmd));
+					free(cmd), cmd= NULL;
 					debug(133, "size %s", size);
 					if(size != NULL)
 					{
@@ -2245,7 +2246,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 							cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
 							debug(133, "cmd %s", cmd);
 							system(cmd);
-							free(cmd); cmd = NULL;
+							free(cmd), cmd = NULL;
 						
 							if(file_exist(tmpjpg))
 							{
@@ -2283,7 +2284,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 								
 								debug(133, "cmd %s", cmd);
 								system(cmd);
-								free(cmd); cmd = NULL;
+								free(cmd), cmd = NULL;
 								if(file_exist(tmpmpg))
 								{					
 									cmd = ostrcat(cmd, "mv -f ", 1, 0);

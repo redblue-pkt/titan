@@ -208,6 +208,7 @@ void screenmediadbedit(char* file, int id, int flag)
 						cmd = ostrcat(cmd, tmpmeta, 1, 0);
 						cmd = ostrcat(cmd, " | grep Stream | awk '{print $6}' | cut -d'x' -f1", 1, 0);
 						char* size = string_newline(command(cmd));
+						free(cmd); cmd = NULL;
 						debug(133, "size %s", size);
 						if(size != NULL)
 						{
