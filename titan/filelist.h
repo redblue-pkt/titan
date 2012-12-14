@@ -581,7 +581,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 										if(musik == 1)
 											tmpstr = ostrcat(tmpstr, "_cover.jpg", 1, 0);
 										else
-											tmpstr = ostrcat(tmpstr, "_poster.jpg", 1, 0);
+											tmpstr = ostrcat(tmpstr, "_cover.jpg", 1, 0);
 									}
 
 								}

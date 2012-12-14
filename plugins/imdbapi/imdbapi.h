@@ -117,6 +117,7 @@ struct imdbapi* getimdbapi(struct imdbapi** first, char* input, int flag, int fl
 				free((*first)->poster);
 				(*first)->poster = savefile;
 
+/*
 				//create thumb 
 				savethumb = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0); 
 				savethumb = ostrcat(savethumb, (*first)->id, 1, 0); 
@@ -140,6 +141,7 @@ struct imdbapi* getimdbapi(struct imdbapi** first, char* input, int flag, int fl
 				}
 				free(savethumb); savethumb = NULL;
 				free(buf); buf = NULL; 
+*/
 			}
 			else if(flag == 0)
 			{
