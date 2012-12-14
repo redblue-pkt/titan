@@ -34,10 +34,10 @@
 <node fontsize=25 bordercol=bordercol scrollbar=auto type=listbox name=listbox posx=center posy=140 width=92% height=480>
 <node name=filelistpath valign=middle bordersize=1 posx=center posy=100 width=95% height=30>
 <node hspace=10 picmem=skin/ext_directory.png textposx=30 fontsize=25 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=filelist posx=center posy=140 width=92% height=480>
-<node name=cover posx=3% posy=70% width=124 height=171 picwidth=124 picheight=171>
+<node name=cover posx=3% posy=70% width=200 height=171  picwidth=1 picheight=1>
 <node name=title posx=center posy=10 halign=center valign=middle width=100% height=60 fontcol=fontcol/>
-<node name=thumb posx=3% posy=70% width=124 height=171 picwidth=124 picheight=171>
-<node name=plot posx=200 posy=500 type=textbox width=1050 height=160 fontcol=fontcol fontsize=20 wrap=yes />
+<node name=thumb posx=3% posy=70% width=200 height=171  picwidth=1 picheight=1>
+<node name=plot posx=245 posy=500 type=textbox width=1000 height=160 fontcol=fontcol fontsize=20 wrap=yes />
 
 <node bgcol=-2 name=stars posy=60 halign=center valign=middle width=100% height=40 fontsize=30 fontcol=fontcol>
 
