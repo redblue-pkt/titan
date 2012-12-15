@@ -804,7 +804,7 @@ char* webswitch(char* param, int fmt)
 
 	if(param1 == NULL && param2 == NULL) goto end;
 
-	chnode = getchannel(atoi(param), atoi(param1));
+	chnode = getchannel(atoi(param), strtoull(param1, NULL, 10));
 	if(chnode != NULL)
 	{
 		ret = channelnottunable(chnode);
@@ -1139,7 +1139,7 @@ char* webgetepg(char* param, int fmt)
 
 	if(param1 == NULL || param2 == NULL) return NULL;
 
-	chnode = getchannel(atoi(param), atoi(param1));
+	chnode = getchannel(atoi(param), strtoull(param1, NULL, 10));
 	if(chnode == NULL) return NULL;
 
 	epgnode = getepg(chnode, atoi(param2), 0);
@@ -1228,7 +1228,7 @@ char* webgetsingleepg(char* param, int fmt)
 
 	if(param1 == NULL) return NULL;
 
-	chnode = getchannel(atoi(param), atoi(param1));
+	chnode = getchannel(atoi(param), strtoull(param1, NULL, 10));
 	if(chnode == NULL) return NULL;
 	epgnode = getepgakt(chnode);;
 
@@ -2198,7 +2198,7 @@ char* webaddrectimer(char* param, int fmt)
 				*param2++ = '\0';
 		}
 		if(param1 == NULL || param2 == NULL) return NULL;
-		chnode = getchannel(atoi(param), atoi(param1));
+		chnode = getchannel(atoi(param), strtoull(param1, NULL, 10));
 		if(chnode == NULL) return NULL;
 
 		epgnode = getepg(chnode, atoi(param2), 0);
