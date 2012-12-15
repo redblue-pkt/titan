@@ -254,6 +254,7 @@ int createstartscreen()
 void oshutdown(int exitcode, int flag)
 {
 	debug(1000, "in");
+	struct dvbdev* dvbnode = dvbdev;
 	struct service* servicenode = service;
 	void* threadstatus;
 	int i = 0, faststop = 0, ret = 0;
@@ -324,6 +325,14 @@ void oshutdown(int exitcode, int flag)
 			writeallconfig(1); //do not save epg
 		else
 			writeallconfig(0); //save epg
+	}
+
+	//reset ci devices
+	while(dvbnode != NULL)
+	{
+		if(dvbnode->type == CIDEV && dvbnode->fd > -1)
+			careset(dvbnode, dvbnode->devnr);
+		dvbnode = dvbnode->next;
 	}
 
 	if(faststop == 0)
