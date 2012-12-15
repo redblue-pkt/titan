@@ -1970,7 +1970,7 @@ int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 		eit = (struct eit*)head;
 
 		len = 3 + GETEITSECLEN(eit);
-		if (pos < len) goto read_more;
+		if(pos < len) goto read_more;
 		
 		if(eit->table_id - round < 0 || eit->table_id - round > 15 || dvbcrc32((uint8_t *)head, len) != 0)
 		{
