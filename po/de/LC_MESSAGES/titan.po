@@ -2717,10 +2717,10 @@ msgid "Restart Oscam ?"
 msgstr "Soll Oscam neu gestartet werden ?"
 
 msgid "first slot"
-msgstr "erster Kartenschacht (oben)"
+msgstr "erster Kartenschacht (unten)"
 
 msgid "second slot"
-msgstr "zweiter Kartenschacht (unten)"
+msgstr "zweiter Kartenschacht (oben)"
 
 msgid "Enable"
 msgstr "Enable"
