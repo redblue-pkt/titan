@@ -211,6 +211,28 @@ int cagetslotinfo(struct dvbdev* node, ca_slot_info_t* info)
 	return 0;
 }
 
+//workaround for atemio500 and orf1 with unicam and orf card
+//without this artefakte
+void cainit(int fd)
+{
+	ca_descr_t cadescr;
+	unsigned char buf[8];
+
+	if(fd < 0) return;
+
+	memset(buf, 1, 8);
+	memset(&cadescr, 0, sizeof(cadescr));
+
+	cadescr.index = 0;
+	cadescr.parity = 0;
+	memcpy(cadescr.cw, buf, 8);
+
+	ioctl(fd, CA_SET_DESCR, &cadescr);
+
+	cadescr.parity = 1;
+	ioctl(fd, CA_SET_DESCR, &cadescr);
+}
+
 int cagetdev()
 {
 	debug(1000, "in");
@@ -239,6 +261,7 @@ int cagetdev()
 			fd = caopendirect(buf);
 			if(fd >= 0)
 			{
+				cainit(fd);
 				caclose(NULL, fd);
 				count++;
 				adddvbdev(buf, i, y, -1, CADEV, NULL, NULL, 0);
