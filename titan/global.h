@@ -532,7 +532,7 @@ void ckeckkillnetthread()
 
 int checkreseller()
 {
-	if(checkbox("ATEMIO510") == 0 && checkbox("ATEMIO7600") == 0 && checkbox("AT7000") == 0 && checkbox("AT700") == 0)
+	if(checkbox("ATEMIO510") == 0 && checkbox("ATEMIO7600") == 0 && checkbox("ATEVIO7000") == 0 && checkbox("ATEVIO700") == 0)
 	{
 		debug(10, "ResellerId: skipped");
 		debug(10, "boxtype: %s", status.boxtype);
@@ -630,6 +630,26 @@ int checkreseller()
 	else if(checkbox("SKYSAT") == 1)
 	{
 		if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x22 && (buf[1074] & 0xff) == 0x00 && (buf[1075] & 0xff) == 0xa0)
+		{
+			debug(10, "ResellerId: found (%s) reseller !", status.boxtype);
+			free(buf);
+			fclose(fd);
+			return 0;
+		}
+	}
+	else if(checkbox("ATEVIO7000") == 1)
+	{
+		if((buf[240] & 0xff) == 0x20 && (buf[241] & 0xff) == 0x9 && (buf[242] & 0xff) == 0x00 && (buf[243] & 0xff) == 0x00)
+		{
+			debug(10, "ResellerId: found (%s) reseller !", status.boxtype);
+			free(buf);
+			fclose(fd);
+			return 0;
+		}
+	}
+	else if(checkbox("ATEVIO700") == 1)
+	{
+		if((buf[240] & 0xff) == 0x20 && (buf[241] & 0xff) == 0x9 && (buf[242] & 0xff) == 0x03 && (buf[243] & 0xff) == 0x00)
 		{
 			debug(10, "ResellerId: found (%s) reseller !", status.boxtype);
 			free(buf);
