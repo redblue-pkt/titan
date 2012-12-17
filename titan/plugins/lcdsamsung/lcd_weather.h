@@ -379,7 +379,7 @@ void lcd_writeweather()
 		
 		fclose(ausg);
 		freeweather(node);
-		weatherthread = NULL;
 	}
+	weatherthread = NULL;
 }
 		

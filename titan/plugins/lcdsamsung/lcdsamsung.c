@@ -33,6 +33,8 @@ void LCD_start_lcd4linux()
 	
 	if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
 		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 1", 0, 0);
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf83h") == 0)
+		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 6", 0, 0);
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
 		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 3", 0, 0);
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
@@ -110,6 +112,8 @@ void LCD_Samsung1_thread()
 			LCD_Samsung1 = getscreen("LCD_spf75_Wetter");
 		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf87_Wetter");
+		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf83h") == 0)
+			LCD_Samsung1 = getscreen("LCD_spf83_Wetter");
 		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf87_Wetter");
 		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf105p") == 0)
@@ -138,6 +142,8 @@ void LCD_Samsung1_thread()
 	else {
 		if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf75");
+		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf83h") == 0)
+			LCD_Samsung1 = getscreen("LCD_spf83");
 		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf87");
 		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
@@ -153,6 +159,8 @@ void LCD_Samsung1_thread()
 	
 	if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
 		LCD_Play = getscreen("LCD_spf75_Play");
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf83h") == 0)
+		LCD_Play = getscreen("LCD_spf83_Play");
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
 		LCD_Play = getscreen("LCD_spf87_Play");
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
@@ -172,6 +180,8 @@ void LCD_Samsung1_thread()
 		
 	if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
 		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 1", 0, 0);
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf83h") == 0)
+		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 6", 0, 0);
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
 		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 3", 0, 0);
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
@@ -188,6 +198,8 @@ void LCD_Samsung1_thread()
 	{
 		if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
 			LCD_Standby = getscreen("LCD_spf75_Standby");
+		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf83h") == 0)
+			LCD_Standby = getscreen("LCD_spf83_Standby");
 		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
 			LCD_Standby = getscreen("LCD_spf87_Standby");
 		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
@@ -646,6 +658,7 @@ void start(void)
   }
     
   addchoicebox(lcdtype, "spf75h", _("SPF-75H"));
+  addchoicebox(lcdtype, "spf83h", _("SPF-83H"));
   addchoicebox(lcdtype, "spf87h", _("SPF-87H"));
   addchoicebox(lcdtype, "spf87hold", _("SPF-87H-old"));
   addchoicebox(lcdtype, "spf105p", _("SPF-105P"));
