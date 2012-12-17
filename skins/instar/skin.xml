@@ -11,7 +11,7 @@
 <node name=portCam1 type=inputboxnum parent=listbox valign=middle posx=0 text="Port-Kammera 1" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=userCam1 type=inputbox parent=listbox valign=middle posx=0 text="Benutzer-Kammera 1" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=passCam1 type=inputbox parent=listbox valign=middle posx=0 text="Passwort-Kammera 1" bordercol=bordercol bordersize=2 width=100% height=25>
-<node name=s1 type=textbox parent=listbox valign=middle posx=0 text=" " bordercol=bordercol bordersize=2 width=100% height=15>
+<node name=s1 type=inputbox parent=listbox valign=middle posx=0 text=" " bordercol=bordercol bordersize=2 width=100% height=15>
 <node name=onCam2 type=choicebox parent=listbox valign=middle posx=0 text="Kammera 2 (Umschalten mit Rot)" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=ipCam2 type=inputbox parent=listbox valign=middle posx=0 text="IP-Kammera 2" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=portCam2 type=inputboxnum parent=listbox valign=middle posx=0 text="Port-Kammera 2" bordercol=bordercol bordersize=2 width=100% height=25>
