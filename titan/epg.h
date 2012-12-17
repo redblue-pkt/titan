@@ -634,6 +634,8 @@ int writeepg(const char* filename)
 	{
 		ret = writeepgfast(filename, buf, buflen);
 		free(buf); buf = NULL;
+    
+    if(ret != 0) ret = writeepgslow(filename);
 	}
 	else
 		ret = writeepgslow(filename);
