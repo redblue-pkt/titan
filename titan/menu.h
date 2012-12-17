@@ -1,6 +1,56 @@
 #ifndef MENU_H
 #define MENU_H
 
+void menucheckentry(struct skin* child)
+{
+	struct dvbdev* dvbnode = dvbdev;
+
+	if(child == NULL) return;
+
+	// Hide SoftCam Panel when no Emu's installed
+	if(ostrcmp(child->name, "softcam") == 0)
+	{
+		if(status.security == 0 || checkemu() == 0)
+			child->hidden = YES;
+		else
+			child->hidden = NO;
+
+		return;
+	}
+
+	// Hide Cable scan when no cable tuner is installed
+	if(ostrcmp(child->name, "manualsearch_dvbc") == 0)
+	{
+		child->hidden = YES;
+		while(dvbnode != NULL)
+		{
+			if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL && dvbnode->feinfo->type == FE_QAM)
+			{
+				child->hidden = NO;
+				break;
+			}
+			dvbnode = dvbnode->next;
+		}
+		return;
+	}
+
+	// Hide Sat scan when no sat tuner is installed
+	if(ostrcmp(child->name, "manualsearch") == 0)
+	{
+		child->hidden = YES;
+		while(dvbnode != NULL)
+		{
+			if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL && dvbnode->feinfo->type == FE_QPSK)
+			{
+				child->hidden = NO;
+				break;
+			}
+			dvbnode = dvbnode->next;
+		}
+		return;
+	}
+}
+
 //flag 1: fist call
 struct skin* menu(struct skin* menu, int flag)
 {
@@ -41,32 +91,7 @@ struct skin* menu(struct skin* menu, int flag)
 			free(tmpstr); tmpstr = NULL;
 		}
 
-		// Hide SoftCam Panel when no Emu's installed
-		if(ostrcmp(child->name, "softcam") == 0)
-		{
-			if(status.security == 0 || checkemu() == 0)
-				child->hidden = YES;
-			else
-				child->hidden = NO;
-		}
-
-		// Hide Cable scan when no cable tuner is installed
-		if(ostrcmp(child->name, "manualsearch_dvbc") == 0)
-		{
-			struct dvbdev* dvbnode = dvbdev;
-
-			child->hidden = YES;
-			while(dvbnode != NULL)
-			{
-				if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL && dvbnode->feinfo->type == FE_QAM)
-				{
-					child->hidden = NO;
-					break;
-				}
-				dvbnode = dvbnode->next;
-			}
-		}
-
+		menucheckentry(child);
 		child = child->next;
 	}
 
