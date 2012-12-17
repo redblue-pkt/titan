@@ -472,7 +472,7 @@ void blindscan(struct stimerthread* timernode)
 								continue;
 							}
 
-							buf = dvbgetsdt(fenode, 0, scaninfo.timeout);
+							buf = dvbgetsdt(fenode, 0, scaninfo.timeout / 5);
 							transponderid = findtransponderid(fenode, buf);
 							free(buf); buf = NULL;
 
