@@ -401,7 +401,8 @@ void blindscan(struct stimerthread* timernode)
 	int countmodulation = ((maxmodulation + stepmodulation) - minmodulation) / stepmodulation;
 	int countpolarization = ((maxpolarization + steppolarization) - minpolarization) / steppolarization;
 	int systemcount = ((maxsystem + stepsystem) - minsystem) / stepsystem;
-
+	int timeout = scaninfo.timeout / 5;
+	if(timeout < 1000000) timeout = 1000000;
 
 	scaninfo.blindmax += systemcount * countpolarization * countmodulation * countsymbolrate * countfrequency;
 
@@ -472,7 +473,7 @@ void blindscan(struct stimerthread* timernode)
 								continue;
 							}
 
-							buf = dvbgetsdt(fenode, 0, scaninfo.timeout / 5);
+							buf = dvbgetsdt(fenode, 0, timeout);
 							transponderid = findtransponderid(fenode, buf);
 							free(buf); buf = NULL;
 
