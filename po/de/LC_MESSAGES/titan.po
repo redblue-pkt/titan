@@ -2763,3 +2763,6 @@ msgstr "MediaDB Eintrag bearbeiten"
 
 msgid "AV Settings"
 msgstr "Audio/Video Einstellungen"
+
+msgid "Red-Menu"
+msgstr "Rot-Menu"
