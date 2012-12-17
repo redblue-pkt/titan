@@ -50,6 +50,23 @@ struct skin* menu(struct skin* menu, int flag)
 				child->hidden = NO;
 		}
 
+		// Hide Cable scan when no cable tuner is installed
+		if(ostrcmp(child->name, "manualsearch_dvbc") == 0)
+		{
+			struct dvbdev* dvbnode = dvbdev;
+
+			child->hidden = YES;
+			while(dvbnode != NULL)
+			{
+				if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL && dvbnode->feinfo->type == FE_QAM)
+				{
+					child->hidden = NO;
+					break;
+				}
+				dvbnode = dvbnode->next;
+			}
+		}
+
 		child = child->next;
 	}
 
