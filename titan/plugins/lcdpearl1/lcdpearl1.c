@@ -82,7 +82,7 @@ void LCD_Pearl1_thread()
 		day2_i = getscreennode(LCD_Pearl1, "day2_i");
 		day3_t = getscreennode(LCD_Pearl1, "day3_t");
 		day3_i = getscreennode(LCD_Pearl1, "day3_i");
-		if(file_exist("/tmp/lcdweather") == 1)
+		if(file_exist("/tmp/lcdweather"))
 			system("rm /tmp/lcdweather");
 		weatherwrite = 0;
 	}
@@ -184,7 +184,7 @@ void LCD_Pearl1_thread()
 
 			if(weatherthread == NULL && weatherwrite == 0)
 			{
-				if(file_exist("/tmp/lcdweather") != 0)
+				if(file_exist("/tmp/lcdweather"))
 					put = 1;
 			}			
 			
@@ -237,7 +237,7 @@ void LCD_Pearl1_thread()
 							{
 								if(weatherthread == NULL)
 								{
-									if(file_exist("/tmp/lcdweather") == 0)
+									if(!file_exist("/tmp/lcdweather"))
 										weatherthread = addtimer(&lcd_writeweather, START, 10000, 1, NULL, NULL, NULL);
 									else
 									{
