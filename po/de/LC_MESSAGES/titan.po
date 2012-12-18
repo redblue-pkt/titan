@@ -2766,3 +2766,6 @@ msgstr "Audio/Video Einstellungen"
 
 msgid "Red-Menu"
 msgstr "Rot-Menu"
+
+msgid "Expert Modus"
+msgstr "Experten Modus"
