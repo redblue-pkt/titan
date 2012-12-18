@@ -135,7 +135,7 @@ void LCD_Samsung1_thread()
 		day3_i = getscreennode(LCD_Samsung1, "day3_i");
 		day3_d = getscreennode(LCD_Samsung1, "day3_d");
 		akttime = getscreennode(LCD_Samsung1, "akttime");
-		if(file_exist("/tmp/lcdweather") == 1)
+		if(file_exist("/tmp/lcdweather"))
 			system("rm /tmp/lcdweather");
 		weatherwrite = 0;
 	}
@@ -321,7 +321,7 @@ void LCD_Samsung1_thread()
 		
 			if(weatherthread == NULL && weatherwrite == 0) 
 			{ 
-				if(file_exist("/tmp/lcdweather") != 0) 
+				if(file_exist("/tmp/lcdweather")) 
 					put = 1; 
 			}                        
 			if(ostrcmp(tmpstr, timemerk) != 0)
@@ -373,7 +373,7 @@ void LCD_Samsung1_thread()
 							{
 								if(weatherthread == NULL)
 								{
-									if(file_exist("/tmp/lcdweather") == 0)
+									if(!file_exist("/tmp/lcdweather"))
 										weatherthread = addtimer(&lcd_writeweather, START, 10000, 1, NULL, NULL, NULL);
 									else
 									{
