@@ -1259,7 +1259,7 @@ char* webgetsingleepg(char* param, int fmt)
 			ostrcatbig(&buf, "<td nowrap><a target=main class=link href=query?getepg&", &maxlen, &pos);
 			tmpstr = oitoa(chnode->serviceid);
 			ostrcatbig(&buf, tmpstr, &maxlen, &pos);
-			buf2 = ostrcat("<td nowrap><a target=main class=link href=query?addrectimer&",tmpstr, 0, 0);
+			buf2 = ostrcat("<td nowrap><a target=main class=link href=query?addrectimer&", tmpstr, 0, 0);
 			buf2 = ostrcat(buf2, "&", 0, 0);
 			free(tmpstr); tmpstr = NULL;
 			ostrcatbig(&buf, "&", &maxlen, &pos);
