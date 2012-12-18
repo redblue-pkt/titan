@@ -1757,6 +1757,188 @@ char* createshortname(char* file, int *isrec, int *iscam, int flag)
 	return NULL;
 }
 
+struct mediadb mediadbcheckfile(char* file, char* path, char* shortpath)
+{
+	char* tmpstr = NULL;
+	struct mediadb *node = NULL;
+
+	if(file == NULL || path == NULL || shortpath == NULL) return NULL;
+	m_lock(&status.mediadbmutex, 17);
+
+	//check if entry exist
+	node = mediadb;
+	while(node != NULL)
+	{
+		if(ostrcmp(node->file, file) == 0)
+		{
+			//check directory
+			if(ostrcmp(shortpath, node->path) == 0) //same file
+				break;
+
+			//check file size
+			tmpstr = ostrcat(path, "/", 0, 0);
+			tmpstr = ostrcat(tmpstr, file, 1, 0);
+			off64_t s1 = getfilesize(tmpstr);
+			free(tmpstr); tmpstr = NULL;
+
+			tmpstr = ostrcat(node->path, "/", 0, 0);
+			tmpstr = ostrcat(tmpstr, node->file, 1, 0);
+			tmpstr = addmountpart(tmpstr, 1);
+			off64_t s2 = getfilesize(tmpstr);
+			free(tmpstr); tmpstr = NULL;
+
+			if(s1 == s2) //seems the same file
+				break;
+		}
+		node = node->next;
+	}
+	m_unlock(&status.mediadbmutex, 17);
+
+	return node;
+}
+
+int mediadbffmpeg1(char* file, char* path, char* timestamp, char* logfile)
+{
+	char* cmd = NULL;
+
+	if(file == NULL || path == NULL || timestamp == NULL || logfile == NULL) return 1;
+
+	cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
+	cmd = ostrcat(cmd, path, 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, file, 1, 0);
+//cmd = ostrcat(cmd, "\" -vframes 1 -s 1920x1080 ", 1, 0);
+	cmd = ostrcat(cmd, "\" -vframes 1 -s 1280x720 ", 1, 0);
+	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, timestamp, 1, 0);
+	cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
+
+	if(getconfigint("mediadbdebug", NULL) == 1)
+	{
+		writesys(logfile, "#############", 3);
+		writesys(logfile, "Localfile: ", 2);
+		writesys(logfile, getconfig("mediadbpath", NULL), 2);
+		writesys(logfile, "/", 2);
+		writesys(logfile, timestamp, 2);
+		writesys(logfile, "_backdrop1.jpg", 2);
+		writesys(logfile, "#############", 3);
+		cmd = ostrcat(cmd, " >> ", 1, 0);
+		cmd = ostrcat(cmd, logfile, 1, 0);
+		cmd = ostrcat(cmd, " 2>&1", 1, 0);
+	}
+	else
+		cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
+
+	debug(133, "cmd %s", cmd);
+	system(cmd);
+	free(cmd); cmd = NULL;
+
+	return 0;
+}
+
+int mediadbffmpeg2(char* file, char* path, char* timestamp, char* logfile)
+{
+	char* cmd = NULL;
+
+	if(file == NULL || path == NULL || timestamp == NULL || logfile == NULL) return 1;
+
+	cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
+	cmd = ostrcat(cmd, path, 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, file, 1, 0);
+	cmd = ostrcat(cmd, "\" -vframes 1 -s 160x120 ", 1, 0);
+	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, timestamp, 1, 0);
+	cmd = ostrcat(cmd, "_thumb.jpg", 1, 0);
+
+	if(getconfigint("mediadbdebug", NULL) == 1)
+	{
+		writesys(logfile, "#############", 3);
+		writesys(logfile, "Localfile: ", 2);
+		writesys(logfile, getconfig("mediadbpath", NULL), 2);
+		writesys(logfile, "/", 2);
+		writesys(logfile, timestamp, 2);
+		writesys(logfile, "_thumb.jpg", 2);
+		writesys(logfile, "#############", 3);
+		cmd = ostrcat(cmd, " >> ", 1, 0);
+		cmd = ostrcat(cmd, logfile, 1, 0);
+		cmd = ostrcat(cmd, " 2>&1", 1, 0);
+	}
+	else
+		cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
+
+	debug(133, "cmd %s", cmd);
+	system(cmd);
+	free(cmd); cmd = NULL;
+
+	return 0;
+}
+
+int mediadbffmpeg3(char* file, char* path, char* timestamp, char* logfile)
+{
+	char* cmd = NULL;
+
+	if(file == NULL || path == NULL || timestamp == NULL || logfile == NULL) return 1;
+
+	cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
+	cmd = ostrcat(cmd, path, 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, file, 1, 0);
+	cmd = ostrcat(cmd, "\" -vframes 1 -s 500x400 ", 1, 0);
+	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, timestamp, 1, 0);
+	cmd = ostrcat(cmd, "_cover.jpg", 1, 0);
+
+	if(getconfigint("mediadbdebug", NULL) == 1)
+	{
+		writesys(logfile, "#############", 3);
+		writesys(logfile, "Localfile: ", 2);
+		writesys(logfile, getconfig("mediadbpath", NULL), 2);
+		writesys(logfile, "/", 2);
+		writesys(logfile, timestamp, 2);
+		writesys(logfile, "_cover.jpg", 2);
+		writesys(logfile, "#############", 3);
+		cmd = ostrcat(cmd, " >> ", 1, 0);
+		cmd = ostrcat(cmd, logfile, 1, 0);
+		cmd = ostrcat(cmd, " 2>&1", 1, 0);
+	}
+	else
+		cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
+
+	debug(133, "cmd %s", cmd);
+	system(cmd);
+	free(cmd); cmd = NULL;
+
+	return 0;
+}
+
+int mediadbcp(char* timestamp, char* poster)
+{
+	char* cmd = NULL;
+
+	if(timestamp == NULL || poster == NULL) return 1;
+
+	cmd = ostrcat(cmd, "cp ", 1, 0);
+	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, timestamp, 1, 0);
+	cmd = ostrcat(cmd, "_cover.jpg", 1, 0);
+	cmd = ostrcat(cmd, " ", 1, 0);
+	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, timestamp, 1, 0);
+	cmd = ostrcat(cmd, poster, 1, 0);
+
+	debug(133, "cmd %s", cmd);
+	system(cmd);
+	free(cmd); cmd = NULL;
+
+	return 0;
+}
+
 // flag 0 = autoscan
 // flag 1 = manual scan imdb
 // flag 2 = manual scan tmdb
@@ -1779,39 +1961,10 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 		tmpid = ostrcat(tmpid, id, 1, 0);
 		
 	shortpath = delmountpart(path, 0);
-	
 	if(shortpath == NULL) return; //no mountpart found
 
-	m_lock(&status.mediadbmutex, 17);
-
-	node = mediadb;
 	//check if entry exist
-	while(node != NULL)
-	{
-		if(ostrcmp(node->file, file) == 0)
-		{
-			//check directory
-			if(ostrcmp(shortpath, node->path) == 0) //same file
-				break;
-
-			//check file size
-			tmpstr = ostrcat(path, "/", 0, 0);
-			tmpstr = ostrcat(tmpstr, file, 1, 0);
-			off64_t s1 = getfilesize(tmpstr);
-			free(tmpstr); tmpstr = NULL;
-			
-			tmpstr = ostrcat(node->path, "/", 0, 0);
-			tmpstr = ostrcat(tmpstr, node->file, 1, 0);
-			tmpstr = addmountpart(tmpstr, 1);
-			off64_t s2 = getfilesize(tmpstr);
-			free(tmpstr); tmpstr = NULL;
-			
-			if(s1 == s2) //seems the same file
-				break;
-		}
-		node = node->next;
-	}
-	m_unlock(&status.mediadbmutex, 17);
+	node = mediadbcheckfile(file, path, shortpath);
 
 	int tout = getconfigint("mediadbscantimeout", NULL);
 
@@ -2020,36 +2173,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				imdb->plot = ostrcat(imdb->plot, cmd, 1, 0);
 				free(cmd), cmd = NULL;
 
-				cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
-				cmd = ostrcat(cmd, path, 1, 0);
-				cmd = ostrcat(cmd, "/", 1, 0);
-				cmd = ostrcat(cmd, file, 1, 0);
-//				cmd = ostrcat(cmd, "\" -vframes 1 -s 1920x1080 ", 1, 0);
-				cmd = ostrcat(cmd, "\" -vframes 1 -s 1280x720 ", 1, 0);
-				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-				cmd = ostrcat(cmd, "/", 1, 0);
-				cmd = ostrcat(cmd, timestamp, 1, 0);
-				cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
-				if(getconfigint("mediadbdebug", NULL) == 1)
-				{
-					writesys(logfile, "#############", 3); 
-					writesys(logfile, "Localfile: ", 2); 
-					writesys(logfile, getconfig("mediadbpath", NULL), 2);
-					writesys(logfile, "/", 2); 
-					writesys(logfile, timestamp, 2); 
-					writesys(logfile, "_backdrop1.jpg", 2); 					
-					writesys(logfile, "#############", 3);
-					cmd = ostrcat(cmd, " >> ", 1, 0);
-					cmd = ostrcat(cmd, logfile, 1, 0);
-					cmd = ostrcat(cmd, " 2>&1", 1, 0);
-				}
-				else
-				{
-					cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
-				}
-				debug(133, "cmd %s", cmd);
-				system(cmd);
-				free(cmd); cmd = NULL;
+				mediadbffmpeg1(file, path, timestamp, logfile);
 
 // bilder alle unscharf
 /*
@@ -2110,93 +2234,12 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				free(buf); buf = NULL;
 */
 
-				cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
-				cmd = ostrcat(cmd, path, 1, 0);
-				cmd = ostrcat(cmd, "/", 1, 0);
-				cmd = ostrcat(cmd, file, 1, 0);
-				cmd = ostrcat(cmd, "\" -vframes 1 -s 160x120 ", 1, 0);
-				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-				cmd = ostrcat(cmd, "/", 1, 0);	
-				cmd = ostrcat(cmd, timestamp, 1, 0);
-				cmd = ostrcat(cmd, "_thumb.jpg", 1, 0);
-				if(getconfigint("mediadbdebug", NULL) == 1)
-				{
-					writesys(logfile, "#############", 3); 
-					writesys(logfile, "Localfile: ", 2); 
-					writesys(logfile, getconfig("mediadbpath", NULL), 2);
-					writesys(logfile, "/", 2); 
-					writesys(logfile, timestamp, 2); 
-					writesys(logfile, "_thumb.jpg", 2); 					
-					writesys(logfile, "#############", 3);
-					cmd = ostrcat(cmd, " >> ", 1, 0);
-					cmd = ostrcat(cmd, logfile, 1, 0);
-					cmd = ostrcat(cmd, " 2>&1", 1, 0);
-				}
-				else
-				{
-					cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
-				}
-				debug(133, "cmd %s", cmd);
-				system(cmd);
-				free(cmd); cmd = NULL;
+				mediadbffmpeg2(file, path, timestamp, logfile);
+				mediadbffmpeg3(file, path, timestamp, logfile);
 
-				cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
-				cmd = ostrcat(cmd, path, 1, 0);
-				cmd = ostrcat(cmd, "/", 1, 0);
-				cmd = ostrcat(cmd, file, 1, 0);
-				cmd = ostrcat(cmd, "\" -vframes 1 -s 500x400 ", 1, 0);
-				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-				cmd = ostrcat(cmd, "/", 1, 0);	
-				cmd = ostrcat(cmd, timestamp, 1, 0);
-				cmd = ostrcat(cmd, "_cover.jpg", 1, 0);
-				if(getconfigint("mediadbdebug", NULL) == 1)
-				{
-					writesys(logfile, "#############", 3); 
-					writesys(logfile, "Localfile: ", 2); 
-					writesys(logfile, getconfig("mediadbpath", NULL), 2);
-					writesys(logfile, "/", 2); 
-					writesys(logfile, timestamp, 2); 
-					writesys(logfile, "_cover.jpg", 2); 					
-					writesys(logfile, "#############", 3);
-					cmd = ostrcat(cmd, " >> ", 1, 0);
-					cmd = ostrcat(cmd, logfile, 1, 0);
-					cmd = ostrcat(cmd, " 2>&1", 1, 0);
-				}
-				else
-				{
-					cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
-				}
-				debug(133, "cmd %s", cmd);
-				system(cmd);
-				free(cmd); cmd = NULL;
+				mediadbcp(timestamp, "_poster.jpg");
+				mediadbcp(timestamp, "_postermid.jpg");
 
-				cmd = ostrcat(cmd, "cp ", 1, 0);
-				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-				cmd = ostrcat(cmd, "/", 1, 0);	
-				cmd = ostrcat(cmd, timestamp, 1, 0);
-				cmd = ostrcat(cmd, "_cover.jpg", 1, 0);
-				cmd = ostrcat(cmd, " ", 1, 0);
-				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-				cmd = ostrcat(cmd, "/", 1, 0);	
-				cmd = ostrcat(cmd, timestamp, 1, 0);
-				cmd = ostrcat(cmd, "_poster.jpg", 1, 0);
-				debug(133, "cmd %s", cmd);
-				system(cmd);
-				free(cmd); cmd = NULL;
-
-				cmd = ostrcat(cmd, "cp ", 1, 0);
-				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-				cmd = ostrcat(cmd, "/", 1, 0);	
-				cmd = ostrcat(cmd, timestamp, 1, 0);
-				cmd = ostrcat(cmd, "_cover.jpg", 1, 0);
-				cmd = ostrcat(cmd, " ", 1, 0);
-				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-				cmd = ostrcat(cmd, "/", 1, 0);	
-				cmd = ostrcat(cmd, timestamp, 1, 0);
-				cmd = ostrcat(cmd, "_postermid.jpg", 1, 0);
-				debug(133, "cmd %s", cmd);
-				system(cmd);
-				free(cmd); cmd = NULL;
 
 				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
 				cmd = ostrcat(cmd, "/", 1, 0);
