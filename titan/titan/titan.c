@@ -275,9 +275,7 @@ void oshutdown(int exitcode, int flag)
 				return;
 		}
 
-		int timeout = 0;
-		if(flag == 3 || flag == 4 || flag == 5) timeout = 15;
-		if(textbox(_("Message"), _("Found running record\nor record is starting in next time.\nRealy shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, timeout, 1) != 1)
+		if(textbox(_("Message"), _("Found running record\nor record is starting in next time.\nRealy shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 1) != 1)
 			return;
 	}
 
