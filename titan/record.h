@@ -249,8 +249,8 @@ void recordstop(struct service* node, int ret)
 	
 		deltranspondertunablestatus();
 
-		//if(dname != NULL && filename != NULL)
-		//	recthumbthread = addtimer(&createrecthumbthread, START, 1000, 1, (void*)ostrcat(dname, NULL, 0, 0), (void*)ostrcat(filename, NULL, 0, 0), NULL);
+		if(dname != NULL && filename != NULL && getconfigint("recordpicture", NULL) == 1)
+			recthumbthread = addtimer(&createrecthumbthread, START, 1000, 1, (void*)ostrcat(dname, NULL, 0, 0), (void*)ostrcat(filename, NULL, 0, 0), NULL);
 
 		free(dname); dname = NULL;
 		free(filename); filename = NULL;
