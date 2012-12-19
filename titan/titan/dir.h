@@ -113,7 +113,7 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 	else
 		b5->hidden = YES;
 
-	thumb->hidden = YES;
+	changepic(thumb, "playpic.png");
 
 	drawscreen(dir, 0, 0);
 	addscreenrc(dir, filelist);
@@ -155,20 +155,13 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 							tmpstr = ostrcat(tmpstr, mnode->id, 1, 0);
 
 							pic = ostrcat(tmpstr, "_poster.jpg", 0, 0);
-							thumb->hidden = NO;
 							changepic(thumb, pic);
 						}
 						else
-						{
-							thumb->hidden = YES;
-							changepic(thumb, NULL);
-						}
+							changepic(thumb, "playpic.png");
 					}
 					else
-					{
-						thumb->hidden = YES;
-						changepic(thumb, NULL);
-					}
+						changepic(thumb, "playpic.png");
 											
 					free(pic), pic = NULL;
 					free(tmpstr), tmpstr = NULL;
