@@ -1524,7 +1524,7 @@ char* createshortname(char* file, int *isrec, int *iscam, int flag)
 		fileinfo = ostrcat(fileinfo, "rec", 1, 0);
 		*isrec = 1;
 	}			
-	free(tmpstr1), tmpstr1 = NULL;
+	free(tmpstr1); tmpstr1 = NULL;
 
 	tmpstr1 = oregex(".*([0-9]{8,8}.*[0-9]{4,4}).*", tmpstr);
 	if(tmpstr1 != NULL && *isrec == 0)
@@ -1535,7 +1535,7 @@ char* createshortname(char* file, int *isrec, int *iscam, int flag)
 		fileinfo = ostrcat(fileinfo, "recold", 1, 0);
 		*isrec = 1;
 	}
-	free(tmpstr1), tmpstr1 = NULL;
+	free(tmpstr1); tmpstr1 = NULL;
 
 	tmpstr1 = oregex(".*([0-9]{5,5}).*", tmpstr);
 	if(tmpstr1 != NULL && *isrec == 0)
@@ -1559,7 +1559,7 @@ char* createshortname(char* file, int *isrec, int *iscam, int flag)
 		char* cut = ostrcat(".", getfilenameext(tmpstr), 0, 1);
 		cut = ostrcat(cut, "\0", 1, 0);
 		shortname = string_replace(cut, "\0", shortname, 1);
-		free(cut), cut = NULL;
+		free(cut); cut = NULL;
 
 		string_removechar(shortname);
 		strstrip(shortname);
@@ -1649,7 +1649,7 @@ char* createshortname(char* file, int *isrec, int *iscam, int flag)
 			fileinfo = ostrcat(fileinfo, " ", 1, 0);
 		fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
 	}
-	free(tmpstr1), tmpstr1 = NULL;
+	free(tmpstr1); tmpstr1 = NULL;
 	
 	tmpstr1 = oregex(".*(cd[0-9]{1,3}).*", tmpstr);
 	if(tmpstr1 != NULL)
@@ -1659,7 +1659,7 @@ char* createshortname(char* file, int *isrec, int *iscam, int flag)
 		fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
 		shortname = string_replace(tmpstr1, "", shortname, 1);
 	}
-	free(tmpstr1), tmpstr1 = NULL;
+	free(tmpstr1); tmpstr1 = NULL;
 
 	tmpstr1 = oregex(".*(dvd[0-9]{1,2}).*", tmpstr);
 	if(tmpstr1 != NULL)
@@ -1669,7 +1669,7 @@ char* createshortname(char* file, int *isrec, int *iscam, int flag)
 		fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
 		shortname = string_replace(tmpstr1, "", shortname, 1);
 	}
-	free(tmpstr1), tmpstr1 = NULL;
+	free(tmpstr1); tmpstr1 = NULL;
 
 	tmpstr1 = oregex(".*(s[0-9]{1,2}e[0-9]{1,2}e[0-9]{1,2}).*", tmpstr);
 	if(tmpstr1 != NULL)
@@ -1679,7 +1679,7 @@ char* createshortname(char* file, int *isrec, int *iscam, int flag)
 		fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
 		shortname = string_replace(tmpstr1, "", shortname, 1);
 	}
-	free(tmpstr1), tmpstr1 = NULL;
+	free(tmpstr1); tmpstr1 = NULL;
 
 	tmpstr1 = oregex(".*(s[0-9]{1,2}e[0-9]{1,2}).*", tmpstr);
 	if(tmpstr1 != NULL)
@@ -1689,8 +1689,7 @@ char* createshortname(char* file, int *isrec, int *iscam, int flag)
 		fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
 		shortname = string_replace(tmpstr1, "", shortname, 1);
 	}
-	free(tmpstr1), tmpstr1 = NULL;
-
+	free(tmpstr1); tmpstr1 = NULL;
 
 	tmpstr1 = oregex(".*(disc[0-9]{1,2}).*", tmpstr);
 	if(tmpstr1 != NULL)
@@ -1700,7 +1699,7 @@ char* createshortname(char* file, int *isrec, int *iscam, int flag)
 		fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
 		shortname = string_replace(tmpstr1, "", shortname, 1);
 	}
-	free(tmpstr1), tmpstr1 = NULL;
+	free(tmpstr1); tmpstr1 = NULL;
 
 	tmpstr1 = oregex(".*(season[0-9]{1,2}).*", tmpstr);
 	if(tmpstr1 != NULL)
@@ -1710,7 +1709,7 @@ char* createshortname(char* file, int *isrec, int *iscam, int flag)
 		fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
 		shortname = string_replace(tmpstr1, "", shortname, 1);
 	}
-	free(tmpstr1), tmpstr1 = NULL;			
+	free(tmpstr1); tmpstr1 = NULL;
 
 	tmpstr1 = oregex(".*(episode[0-9]{1,2}).*", tmpstr);
 	if(tmpstr1 != NULL)
@@ -1720,7 +1719,7 @@ char* createshortname(char* file, int *isrec, int *iscam, int flag)
 		fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
 		shortname = string_replace(tmpstr1, "", shortname, 1);
 	}
-	free(tmpstr1), tmpstr1 = NULL;			
+	free(tmpstr1); tmpstr1 = NULL;
 
 	tmpstr1 = oregex(".*(staffel[0-9]{1,2}).*", tmpstr);
 	if(tmpstr1 != NULL)
@@ -1730,7 +1729,7 @@ char* createshortname(char* file, int *isrec, int *iscam, int flag)
 		fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
 		shortname = string_replace(tmpstr1, "", shortname, 1);
 	}
-	free(tmpstr1), tmpstr1 = NULL;
+	free(tmpstr1); tmpstr1 = NULL;
 
 	tmpstr1 = oregex(".*(part[0-9]{1,2}).*", tmpstr);
 	if(tmpstr1 != NULL)
@@ -1740,20 +1739,28 @@ char* createshortname(char* file, int *isrec, int *iscam, int flag)
 		fileinfo = ostrcat(fileinfo, tmpstr1, 1, 0);
 		shortname = string_replace(tmpstr1, "", shortname, 1);
 	}
-	free(tmpstr1), tmpstr1 = NULL;
+	free(tmpstr1); tmpstr1 = NULL;
 
 	strstrip(shortname);
 
 	if(fileinfo != NULL)
 		fileinfo = ostrcat(fileinfo, " ", 1, 0);
 	fileinfo = ostrcat(fileinfo, getfilenameext(tmpstr), 1, 1);
-	free(tmpstr), tmpstr = NULL;
+	free(tmpstr); tmpstr = NULL;
 
 	if(flag == 1)
+	{
+		free(fileinfo);
 		return shortname;
+	}
 	else if(flag == 2)
+	{
+		free(shortname);
 		return fileinfo;
+	}
 
+	free(fileinfo);
+	free(shortname);
 	return NULL;
 }
 
@@ -1801,7 +1808,7 @@ int mediadbffmpeg1(char* file, char* path, char* timestamp, char* logfile)
 {
 	char* cmd = NULL;
 
-	if(file == NULL || path == NULL || timestamp == NULL || logfile == NULL) return 1;
+	if(file == NULL || path == NULL || timestamp == NULL) return 1;
 
 	cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
 	cmd = ostrcat(cmd, path, 1, 0);
@@ -1814,7 +1821,7 @@ int mediadbffmpeg1(char* file, char* path, char* timestamp, char* logfile)
 	cmd = ostrcat(cmd, timestamp, 1, 0);
 	cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
 
-	if(getconfigint("mediadbdebug", NULL) == 1)
+	if(logfile != NULL && getconfigint("mediadbdebug", NULL) == 1)
 	{
 		filedebug(logfile, "#############\nLocalfile: %s/%s_backdrop1.jpg\n#############", getconfig("mediadbpath", NULL), timestamp);
 		cmd = ostrcat(cmd, " >> ", 1, 0);
@@ -1835,7 +1842,7 @@ int mediadbffmpeg2(char* file, char* path, char* timestamp, char* logfile)
 {
 	char* cmd = NULL;
 
-	if(file == NULL || path == NULL || timestamp == NULL || logfile == NULL) return 1;
+	if(file == NULL || path == NULL || timestamp == NULL) return 1;
 
 	cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
 	cmd = ostrcat(cmd, path, 1, 0);
@@ -1847,7 +1854,7 @@ int mediadbffmpeg2(char* file, char* path, char* timestamp, char* logfile)
 	cmd = ostrcat(cmd, timestamp, 1, 0);
 	cmd = ostrcat(cmd, "_thumb.jpg", 1, 0);
 
-	if(getconfigint("mediadbdebug", NULL) == 1)
+	if(logfile != NULL && getconfigint("mediadbdebug", NULL) == 1)
 	{
 		filedebug(logfile, "#############\nLocalfile: %s/%s_thumb.jpg\n#############", getconfig("mediadbpath", NULL), timestamp);
 		cmd = ostrcat(cmd, " >> ", 1, 0);
@@ -1868,7 +1875,7 @@ int mediadbffmpeg3(char* file, char* path, char* timestamp, char* logfile)
 {
 	char* cmd = NULL;
 
-	if(file == NULL || path == NULL || timestamp == NULL || logfile == NULL) return 1;
+	if(file == NULL || path == NULL || timestamp == NULL) return 1;
 
 	cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
 	cmd = ostrcat(cmd, path, 1, 0);
@@ -1880,9 +1887,59 @@ int mediadbffmpeg3(char* file, char* path, char* timestamp, char* logfile)
 	cmd = ostrcat(cmd, timestamp, 1, 0);
 	cmd = ostrcat(cmd, "_cover.jpg", 1, 0);
 
-	if(getconfigint("mediadbdebug", NULL) == 1)
+	if(logfile != NULL && getconfigint("mediadbdebug", NULL) == 1)
 	{
 		filedebug(logfile, "#############\nLocalfile: %s/%s_cover.jpg\n#############", getconfig("mediadbpath", NULL), timestamp);
+		cmd = ostrcat(cmd, " >> ", 1, 0);
+		cmd = ostrcat(cmd, logfile, 1, 0);
+		cmd = ostrcat(cmd, " 2>&1", 1, 0);
+	}
+	else
+		cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
+
+	debug(133, "cmd %s", cmd);
+	system(cmd);
+	free(cmd); cmd = NULL;
+
+	return 0;
+}
+
+int mediadbffmpeg4(char* timestamp, char* tmpmeta)
+{
+	char* cmd = NULL;
+
+	if(timestamp == NULL || tmpmeta == NULL) return 1;
+
+	cmd = ostrcat(cmd, "ffmpeg -i ", 1, 0);
+	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, timestamp, 1, 0);
+	cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
+	cmd = ostrcat(cmd, " > ", 1, 0);
+	cmd = ostrcat(cmd, tmpmeta, 1, 0);
+	cmd = ostrcat(cmd, " 2>&1", 1, 0);
+
+	debug(133, "cmd %s", cmd);
+	system(cmd);
+	free(cmd); cmd = NULL;
+
+	return 0;
+}
+
+int mediadbffmpeg5(char* tmpjpg, char* tmpmpg, char* logfile)
+{
+	char* cmd = NULL;
+
+	if(tmpjpg == NULL || tmpmpg == NULL) return 1;
+
+	cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i ", 1, 0);
+	cmd = ostrcat(cmd, tmpjpg, 1, 0);
+	cmd = ostrcat(cmd, " ", 1, 0);
+	cmd = ostrcat(cmd, tmpmpg, 1, 0);
+
+	if(logfile != NULL && getconfigint("mediadbdebug", NULL) == 1)
+	{
+		filedebug(logfile, "#############\nLocalfile: %s/%s_backdrop1.jpg size=(%s) filesize(%lld) (%s)\n#############", getconfig("mediadbpath", NULL), timestamp, size, filesize, file);
 		cmd = ostrcat(cmd, " >> ", 1, 0);
 		cmd = ostrcat(cmd, logfile, 1, 0);
 		cmd = ostrcat(cmd, " 2>&1", 1, 0);
@@ -1992,6 +2049,48 @@ void mediadbcpimdbapi2(struct imdbapi* imdbapi, struct imdb* imdb)
 	if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, imdbapi->year, 1, 0);
 }
 
+int mediadbjpegtran(char* tmpjpg, char* timestamp)
+{
+	char* cmd = NULL;
+
+	if(tmpjpg == NULL || timestamp == NULL) return 1;
+
+	cmd = ostrcat(cmd, "jpegtran -outfile ", 1, 0);
+	cmd = ostrcat(cmd, tmpjpg, 1, 0);
+	cmd = ostrcat(cmd, " -copy none ", 1, 0);
+	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, timestamp, 1, 0);
+	cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
+
+	debug(133, "cmd %s", cmd);
+	system(cmd);
+	free(cmd); cmd = NULL;
+
+	return 0;
+}
+
+int mediadbmv(char* tmpjpg, char* timestamp)
+{
+	char* cmd = NULL;
+
+	if(tmpjpg == NULL || timestamp == NULL) return 1;
+
+	cmd = ostrcat(cmd, "mv -f ", 1, 0);
+	cmd = ostrcat(cmd, tmpmpg, 1, 0);
+	cmd = ostrcat(cmd, " ", 1, 0);
+	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, timestamp, 1, 0);
+	cmd = ostrcat(cmd, "_backdrop1.mvi", 1, 0);
+
+	debug(133, "cmd %s", cmd);
+	system(cmd);
+	free(cmd); cmd = NULL;
+
+	return 0;
+}
+
 // flag 0 = autoscan
 // flag 1 = manual scan imdb
 // flag 2 = manual scan tmdb
@@ -2035,7 +2134,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			char* logdir = NULL, *logfile = NULL, *tmpjpg = NULL, *tmpmpg = NULL, *tmpmeta = NULL, *timen = NULL;
 
 			logdir = ostrcat(getconfig("mediadbpath", NULL), "/.mediadbdebug", 0, 0);
-			if(ostrcmp(getconfig("mediadbscandelall", NULL), "1") == 0)
+			if(getconfigint("mediadbscandelall", NULL) == 1)
 				unlink(logdir);
 				
 			if(!file_exist(logdir))
@@ -2129,11 +2228,11 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			}
 			else if((cmpfilenameext(file, ".ts") == 0) || (cmpfilenameext(file, ".mts") == 0))
 			{
-				char* poster = NULL, *plot = NULL, *timestamp = NULL, *cmd = NULL;
+				char* poster = NULL, *plot = NULL, *timestamp = NULL, *cmd = NULL, *tmpstr1 = NULL;
 
 				timestamp = oregex(".*([0-9]{14,14}).*", file);
 				if(timestamp == NULL)
-					timestamp = ostrcat(oitoa(time(NULL)), NULL, 0, 0);
+					timestamp = ostrcat(oitoa(time(NULL)), NULL, 1, 0);
 				
 				shortname = string_replace("   ", " - ", shortname, 1);
 				shortname = string_replace("  ", " - ", shortname, 1);
@@ -2145,12 +2244,12 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				tmpstr = ostrcat(tmpstr, path, 1, 0);
 				tmpstr = ostrcat(tmpstr, "/", 1, 0);
 				tmpstr = ostrcat(tmpstr, file, 1, 0);
-				char* tmpstr1 = changefilenameext(tmpstr, ".epg");
-				free(tmpstr), tmpstr = NULL;
+				tmpstr1 = changefilenameext(tmpstr, ".epg");
+				free(tmpstr); tmpstr = NULL;
 				cmd = readfiletomem(tmpstr1, 1);
-				free(tmpstr1), tmpstr1 = NULL;
+				free(tmpstr1); tmpstr1 = NULL;
 				plot = ostrcat(plot, cmd, 1, 0);
-				free(cmd), cmd = NULL;
+				free(cmd); cmd = NULL;
 
 				mediadbffmpeg1(file, path, timestamp, logfile);
 
@@ -2230,24 +2329,13 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 								
 				if(filesize < 1500000)
 				{
-					cmd = ostrcat(cmd, "ffmpeg -i ", 1, 0);
-					cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-					cmd = ostrcat(cmd, "/", 1, 0);
-					cmd = ostrcat(cmd, timestamp, 1, 0);
-					cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
-					cmd = ostrcat(cmd, " > ", 1, 0);
-					cmd = ostrcat(cmd, tmpmeta, 1, 0);
-					cmd = ostrcat(cmd, " 2>&1", 1, 0);
-	
-					debug(133, "cmd %s", cmd);
-					system(cmd);
-					free(cmd); cmd = NULL;
+					mediadbffmpeg4(timestamp, tmpmeta);
 						
 					cmd = ostrcat(cmd, "cat ", 1, 0);
 					cmd = ostrcat(cmd, tmpmeta, 1, 0);
 					cmd = ostrcat(cmd, " | grep Stream | awk '{print $6}' | cut -d'x' -f1", 1, 0);
 					char* size = string_newline(command(cmd));
-					free(cmd), cmd= NULL;
+					free(cmd); cmd= NULL;
 					debug(133, "size %s", size);
 					if(size != NULL)
 					{
@@ -2257,52 +2345,15 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 						if(picsize < 2000)
 						{
 							debug(133, "size ok %d", picsize);
-											
-							cmd = ostrcat(cmd, "jpegtran -outfile ", 1, 0);
-							cmd = ostrcat(cmd, tmpjpg, 1, 0);
-							cmd = ostrcat(cmd, " -copy none ", 1, 0);
-							cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-							cmd = ostrcat(cmd, "/", 1, 0);
-							cmd = ostrcat(cmd, timestamp, 1, 0);
-							cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
-							debug(133, "cmd %s", cmd);
-							system(cmd);
-							free(cmd), cmd = NULL;
+							mediadbjpegtran(tmpjpg, timestamp);
 						
 							if(file_exist(tmpjpg))
 							{
-								free(cmd), cmd = NULL;
-								cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i ", 1, 0);
-								cmd = ostrcat(cmd, tmpjpg, 1, 0);
-								cmd = ostrcat(cmd, " ", 1, 0);
-								cmd = ostrcat(cmd, tmpmpg, 1, 0);
+								mediadbffmpeg5(tmpjpg, tmpmpg, logfile);
 
-								if(getconfigint("mediadbdebug", NULL) == 1)
-								{
-									filedebug(logfile, "#############\nLocalfile: %s/%s_backdrop1.jpg size=(%s) filesize(%lld) (%s)\n#############", getconfig("mediadbpath", NULL), timestamp, size, filesize, file);
-									cmd = ostrcat(cmd, " >> ", 1, 0);
-									cmd = ostrcat(cmd, logfile, 1, 0);
-									cmd = ostrcat(cmd, " 2>&1", 1, 0);
-								}
-								else
-									cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
-								
-								debug(133, "cmd %s", cmd);
-								system(cmd);
-								free(cmd), cmd = NULL;
 								if(file_exist(tmpmpg))
-								{					
-									cmd = ostrcat(cmd, "mv -f ", 1, 0);
-									cmd = ostrcat(cmd, tmpmpg, 1, 0);
-									cmd = ostrcat(cmd, " ", 1, 0);
-									cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-									cmd = ostrcat(cmd, "/", 1, 0);	
-									cmd = ostrcat(cmd, timestamp, 1, 0);
-									cmd = ostrcat(cmd, "_backdrop1.mvi", 1, 0);
-									debug(133, "cmd %s", cmd);
-									system(cmd);
-									free(cmd); cmd = NULL;
-									
+								{
+									mediadbmv(tmpmpg, timestamp);
 									backdrop = 1;
 									writesysint("/proc/sys/vm/drop_caches", 3, 0);
 
@@ -2326,7 +2377,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 						if(getconfigint("mediadbdebug", NULL) == 1)
 							filedebug(logfile, "#############\nERROR Localfile size is NULL skipped: %s/%s_backdrop1.jpg size=(%s) filesize(%lld) (%s)\n#############", getconfig("mediadbpath", NULL), timestamp, size, filesize, file);
 					}
-					free(size), size = NULL;
+					free(size); size = NULL;
 					unlink(tmpmeta);
 					unlink(tmpjpg);
 					unlink(tmpmpg);
@@ -2344,18 +2395,18 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 					if(getconfigint("mediadbdebug", NULL) == 1)
 						filedebug(logfile, "#############\nERROR Localfile filesize to BIG skipped: %s/%s_backdrop1.jpg filesize(%lld) (%s)\n#############", getconfig("mediadbpath", NULL), timestamp, filesize, file);
 				}
-				free(cmd), cmd = NULL;
-				free(timestamp), timestamp = NULL;
-				free(poster), poster = NULL;
-				free(plot), plot = NULL;
+				free(cmd); cmd = NULL;
+				free(timestamp); timestamp = NULL;
+				free(poster); poster = NULL;
+				free(plot); plot = NULL;
 			}
 		
-			free(logdir), logdir = NULL;
-			free(logfile), logfile = NULL;
-			free(timen), timen = NULL;
-			free(tmpjpg), tmpjpg = NULL;
-			free(tmpmpg), tmpmpg = NULL;
-			free(tmpmeta), tmpmeta = NULL;
+			free(logdir); logdir = NULL;
+			free(logfile); logfile = NULL;
+			free(timen); timen = NULL;
+			free(tmpjpg); tmpjpg = NULL;
+			free(tmpmpg); tmpmpg = NULL;
+			free(tmpmeta); tmpmeta = NULL;
 
 			debugimdbnode(imdb);
 			
@@ -2383,7 +2434,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 					tmpstr = ostrcat(tmpstr, ": ", 1, 0);
 					tmpstr = ostrcat(tmpstr, id, 1, 0);																										
 					textbox(_("Add iMDB manuel"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 500, 10, 0);
-					free(tmpstr), tmpstr = NULL;
+					free(tmpstr); tmpstr = NULL;
 				}
 			}
 			else
@@ -2391,11 +2442,11 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 
 			debug(777, "shortname: %s", shortname);
 			debug(133, "shortname: %s", shortname);
-			free(shortname), shortname = NULL;
+			free(shortname); shortname = NULL;
 
 			debug(777, "fileinfo: %s", fileinfo);
 			debug(133, "fileinfo: %s", fileinfo);
-			free(fileinfo), fileinfo = NULL;
+			free(fileinfo); fileinfo = NULL;
 						
 			if(imdbplugin != NULL)
 			{
