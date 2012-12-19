@@ -238,18 +238,7 @@ void screenmediadbedit(char* file, int id, int flag)
 
 									if(getconfigint("mediadbdebug", NULL) == 1)
 									{
-										writesys(logfile, "#############", 3); 
-										writesys(logfile, "Edit Localfile: ", 2); 
-										writesys(logfile, picret, 2);										
-										writesys(logfile, " size=(", 2);
-										writesys(logfile, size, 2);
-										writesys(logfile, ") filesize(", 2);
-										writesys(logfile, oitoa(filesize), 2);
-										writesys(logfile, ") (", 2);
-										writesys(logfile, node->id, 2);
-										writesys(logfile, ")", 3);
-										writesys(logfile, "#############", 3);
-		
+										filedebug(logfile, "#############\nEdit Localfile: %s size=(%s) filesize(%lld) (%s)\n#############", picret, size, filesize, node-id);
 										cmd = ostrcat(cmd, " >> ", 1, 0);
 										cmd = ostrcat(cmd, logfile, 1, 0);
 										cmd = ostrcat(cmd, " 2>&1", 1, 0);
@@ -288,19 +277,7 @@ void screenmediadbedit(char* file, int id, int flag)
 								debug(133, "ERROR Edit Localfile size to big skipped %d", picsize);
 		
 								if(getconfigint("mediadbdebug", NULL) == 1)
-								{
-									writesys(logfile, "#############", 3); 
-									writesys(logfile, "ERROR Edit Localfile size to big skipped: ", 3); 
-									writesys(logfile, picret, 2);
-									writesys(logfile, " size=(", 2);
-									writesys(logfile, size, 2);
-									writesys(logfile, ") filesize(", 2);
-									writesys(logfile, oitoa(filesize), 2);
-									writesys(logfile, ") (", 2);
-									writesys(logfile, node->id, 2);
-									writesys(logfile, ")", 3);
-									writesys(logfile, "#############", 3);
-								}
+									filedebug(logfile, "#############\nERROR Localfile size to big skipped: %s size=(%s) filesize(%lld) (%s)\n#############", picret, size, filesize, node->id);
 							}
 						}
 					}
@@ -309,17 +286,7 @@ void screenmediadbedit(char* file, int id, int flag)
 						debug(133, "ERROR Edit Localfile filesize to BIG skipped %lld", filesize);
 			
 						if(getconfigint("mediadbdebug", NULL) == 1)
-						{
-							writesys(logfile, "#############", 3); 
-							writesys(logfile, "ERROR Edit Localfile filesize to BIG skipped: ", 3); 
-							writesys(logfile, picret, 2);
-							writesys(logfile, " filesize(", 2);
-							writesys(logfile, oitoa(filesize), 2);
-							writesys(logfile, ") (", 2);
-							writesys(logfile, node->id, 2);
-							writesys(logfile, ")", 3);
-							writesys(logfile, "#############", 3);
-						}
+							filedebug(logfile, "#############\nERROR Edit Localfile filesize to BIG skipped: %s filesize(%lld) (%s)\n#############", picret, filesize, node->id);
 					}
 					free(timen), timen = NULL;
 					free(tmpjpg), tmpjpg = NULL;
