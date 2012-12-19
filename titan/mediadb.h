@@ -1816,13 +1816,7 @@ int mediadbffmpeg1(char* file, char* path, char* timestamp, char* logfile)
 
 	if(getconfigint("mediadbdebug", NULL) == 1)
 	{
-		writesys(logfile, "#############", 3);
-		writesys(logfile, "Localfile: ", 2);
-		writesys(logfile, getconfig("mediadbpath", NULL), 2);
-		writesys(logfile, "/", 2);
-		writesys(logfile, timestamp, 2);
-		writesys(logfile, "_backdrop1.jpg", 2);
-		writesys(logfile, "#############", 3);
+		filedebug(logfile, "#############\nLocalfile: %s/%s_backdrop1.jpg\n#############", getconfig("mediadbpath", NULL), timestamp);
 		cmd = ostrcat(cmd, " >> ", 1, 0);
 		cmd = ostrcat(cmd, logfile, 1, 0);
 		cmd = ostrcat(cmd, " 2>&1", 1, 0);
@@ -1855,13 +1849,7 @@ int mediadbffmpeg2(char* file, char* path, char* timestamp, char* logfile)
 
 	if(getconfigint("mediadbdebug", NULL) == 1)
 	{
-		writesys(logfile, "#############", 3);
-		writesys(logfile, "Localfile: ", 2);
-		writesys(logfile, getconfig("mediadbpath", NULL), 2);
-		writesys(logfile, "/", 2);
-		writesys(logfile, timestamp, 2);
-		writesys(logfile, "_thumb.jpg", 2);
-		writesys(logfile, "#############", 3);
+		filedebug(logfile, "#############\nLocalfile: %s/%s_thumb.jpg\n#############", getconfig("mediadbpath", NULL), timestamp);
 		cmd = ostrcat(cmd, " >> ", 1, 0);
 		cmd = ostrcat(cmd, logfile, 1, 0);
 		cmd = ostrcat(cmd, " 2>&1", 1, 0);
@@ -1894,13 +1882,7 @@ int mediadbffmpeg3(char* file, char* path, char* timestamp, char* logfile)
 
 	if(getconfigint("mediadbdebug", NULL) == 1)
 	{
-		writesys(logfile, "#############", 3);
-		writesys(logfile, "Localfile: ", 2);
-		writesys(logfile, getconfig("mediadbpath", NULL), 2);
-		writesys(logfile, "/", 2);
-		writesys(logfile, timestamp, 2);
-		writesys(logfile, "_cover.jpg", 2);
-		writesys(logfile, "#############", 3);
+		filedebug(logfile, "#############\nLocalfile: %s/%s_cover.jpg\n#############", getconfig("mediadbpath", NULL), timestamp);
 		cmd = ostrcat(cmd, " >> ", 1, 0);
 		cmd = ostrcat(cmd, logfile, 1, 0);
 		cmd = ostrcat(cmd, " 2>&1", 1, 0);
@@ -2001,16 +1983,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			tmpmeta = ostrcat(tmpmeta, ".meta", 1, 0);
 			
 			if(getconfigint("mediadbdebug", NULL) == 1)
-			{
-				writesys(logfile, "####################################################################", 3);
-				writesys(logfile, "file: ", 2);
-				writesys(logfile, file, 3);
-				writesys(logfile, "shortname: ", 2);
-				writesys(logfile, shortname, 3);
-				writesys(logfile, "fileinfo: ", 2);
-				writesys(logfile, fileinfo, 3);
-				writesys(logfile, "####################################################################", 3); 
-			}
+				filedebug(logfile, "#############\nfile: %s\nshortname: %s\nfileinfo: %s\n#############", file, shortname, fileinfo);
 	
 			//got imdb infos
 			struct skin* imdbplugin = getplugin("IMDb");
@@ -2240,7 +2213,6 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				mediadbcp(timestamp, "_poster.jpg");
 				mediadbcp(timestamp, "_postermid.jpg");
 
-
 				cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
 				cmd = ostrcat(cmd, "/", 1, 0);
 				cmd = ostrcat(cmd, timestamp, 1, 0);
@@ -2301,29 +2273,13 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 
 								if(getconfigint("mediadbdebug", NULL) == 1)
 								{
-									writesys(logfile, "#############", 3); 
-									writesys(logfile, "Localfile: ", 2); 
-									writesys(logfile, getconfig("mediadbpath", NULL), 2);
-									writesys(logfile, "/", 2);
-									writesys(logfile, timestamp, 2);
-									writesys(logfile, "_backdrop1.jpg", 2);										
-									writesys(logfile, " size=(", 2);
-									writesys(logfile, size, 2);
-									writesys(logfile, ") filesize(", 2);
-									writesys(logfile, oitoa(filesize), 2);
-									writesys(logfile, ") (", 2);
-									writesys(logfile, file, 2);
-									writesys(logfile, ")", 3);
-									writesys(logfile, "#############", 3);
-
+									filedebug(logfile, "#############\nLocalfile: %s/%s_backdrop1.jpg size=(%s) filesize(%lld) (%s)\n#############", getconfig("mediadbpath", NULL), timestamp, size, filesize, file);
 									cmd = ostrcat(cmd, " >> ", 1, 0);
 									cmd = ostrcat(cmd, logfile, 1, 0);
 									cmd = ostrcat(cmd, " 2>&1", 1, 0);
 								}
 								else
-								{
 									cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
-								}
 								
 								debug(133, "cmd %s", cmd);
 								system(cmd);
@@ -2351,22 +2307,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 							debug(133, "ERROR Localfile size to big skipped %d", picsize);
 	
 							if(getconfigint("mediadbdebug", NULL) == 1)
-							{
-								writesys(logfile, "#############", 3); 
-								writesys(logfile, "ERROR Localfile size to big skipped: ", 3); 
-								writesys(logfile, getconfig("mediadbpath", NULL), 2);
-								writesys(logfile, "/", 2);
-								writesys(logfile, timestamp, 2);
-								writesys(logfile, "_backdrop1.jpg", 2);
-								writesys(logfile, " size=(", 2);
-								writesys(logfile, size, 2);
-								writesys(logfile, ") filesize(", 2);
-								writesys(logfile, oitoa(filesize), 2);
-								writesys(logfile, ") (", 2);
-								writesys(logfile, file, 2);
-								writesys(logfile, ")", 3);
-								writesys(logfile, "#############", 3);
-							}
+								filedebug(logfile, "#############\nERROR Localfile size to big skipped: %s/%s_backdrop1.jpg size=(%s) filesize(%lld) (%s)\n#############", getconfig("mediadbpath", NULL), timestamp, size, filesize, file);
 						}
 					}
 					else
@@ -2374,22 +2315,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 						debug(133, "ERROR Localfile size is NULL skipped %s", size);
 	
 						if(getconfigint("mediadbdebug", NULL) == 1)
-						{
-							writesys(logfile, "#############", 3); 
-							writesys(logfile, "ERROR Localfile size is NULL skipped: ", 3); 
-							writesys(logfile, getconfig("mediadbpath", NULL), 2);
-							writesys(logfile, "/", 2);
-							writesys(logfile, timestamp, 2);
-							writesys(logfile, "_backdrop1.jpg", 2);
-							writesys(logfile, " size=(", 2);
-							writesys(logfile, size, 2);
-							writesys(logfile, ") filesize(", 2);
-							writesys(logfile, oitoa(filesize), 2);
-							writesys(logfile, ") (", 2);
-							writesys(logfile, file, 2);
-							writesys(logfile, ")", 3);
-							writesys(logfile, "#############", 3);
-						}
+							filedebug(logfile, "#############\nERROR Localfile size is NULL skipped: %s/%s_backdrop1.jpg size=(%s) filesize(%lld) (%s)\n#############", getconfig("mediadbpath", NULL), timestamp, size, filesize, file);
 					}
 					free(size), size = NULL;
 					unlink(tmpmeta);
@@ -2410,20 +2336,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 					debug(133, "ERROR Localfile filesize to BIG skipped %lld", filesize);
 		
 					if(getconfigint("mediadbdebug", NULL) == 1)
-					{
-						writesys(logfile, "#############", 3); 
-						writesys(logfile, "ERROR Localfile filesize to BIG skipped: ", 3); 
-						writesys(logfile, getconfig("mediadbpath", NULL), 2);
-						writesys(logfile, "/", 2);
-						writesys(logfile, timestamp, 2);
-						writesys(logfile, "_backdrop1.jpg", 2);
-						writesys(logfile, " filesize(", 2);
-						writesys(logfile, oitoa(filesize), 2);
-						writesys(logfile, ") (", 2);
-						writesys(logfile, file, 2);
-						writesys(logfile, ")", 3);
-						writesys(logfile, "#############", 3);
-					}
+						filedebug(logfile, "#############\nERROR Localfile filesize to BIG skipped: %s/%s_backdrop1.jpg size=(%s) filesize(%lld) (%s)\n#############", getconfig("mediadbpath", NULL), timestamp, size, filesize, file);
 				}
 			}
 		
