@@ -39,6 +39,12 @@ struct imdbapi* getimdbapi(struct imdbapi** first, char* input, int flag, int fl
 
 	char* tmpstr = NULL, *ret = NULL, *tmpsearch = NULL, *savefile = NULL, *savethumb = NULL, *title = NULL;
 
+	if(checkinternet == 1)
+	{
+		debug(133, ""Error, Internet Connection not found"");
+		return NULL;
+	}
+
 	title = ostrcat(title, input, 1, 0);
 
 	unsigned char* buf = NULL;
@@ -187,6 +193,12 @@ void screenimdbapi(char* title, char* dummy1, char* dummy2, char* path, char* fi
 	debug(133, "path: %s",path);
 	debug(133, "file: %s",file);	
 	char* searchstr = NULL, *tmpstr = NULL;
+
+	if(checkinternet == 1)
+	{
+		textbox(_("Message"), _("Error, Internet Connection not found"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 500, 10, 0);
+		return NULL;
+	}
 
 	int rcret = 0;
 	struct skin* imdbapiskin = getscreen("imdbapi");
