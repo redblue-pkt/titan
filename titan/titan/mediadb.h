@@ -1757,7 +1757,7 @@ char* createshortname(char* file, int *isrec, int *iscam, int flag)
 	return NULL;
 }
 
-struct mediadb mediadbcheckfile(char* file, char* path, char* shortpath)
+struct mediadb* mediadbcheckfile(char* file, char* path, char* shortpath)
 {
 	char* tmpstr = NULL;
 	struct mediadb *node = NULL;
