@@ -2121,7 +2121,8 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			}
 			else if((cmpfilenameext(file, ".ts") == 0) || (cmpfilenameext(file, ".mts") == 0))
 			{
-				char* timestamp = NULL;
+				char* poster = NULL, *plot = NULL, *timestamp = NULL, *cmd = NULL;
+
 				timestamp = oregex(".*([0-9]{14,14}).*", file);
 				if(timestamp == NULL)
 					timestamp = ostrcat(oitoa(time(NULL)), NULL, 0, 0);
@@ -2129,12 +2130,10 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				shortname = string_replace("   ", " - ", shortname, 1);
 				shortname = string_replace("  ", " - ", shortname, 1);
 
-				char* poster = NULL;
 				poster = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
 				poster = ostrcat(poster, timestamp, 1, 0);
 				poster = ostrcat(poster, "_poster.jpg", 1, 0);
-								
-				char* cmd = NULL;
+
 				tmpstr = ostrcat(tmpstr, path, 1, 0);
 				tmpstr = ostrcat(tmpstr, "/", 1, 0);
 				tmpstr = ostrcat(tmpstr, file, 1, 0);
@@ -2142,7 +2141,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				free(tmpstr), tmpstr = NULL;
 				cmd = readfiletomem(tmpstr1, 1);
 				free(tmpstr1), tmpstr1 = NULL;
-				char* plot = ostrcat(plot, cmd, 1, 0);
+				plot = ostrcat(plot, cmd, 1, 0);
 				free(cmd), cmd = NULL;
 
 				mediadbffmpeg1(file, path, timestamp, logfile);
@@ -2329,9 +2328,6 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 					cmd = ostrcat(cmd, timestamp, 1, 0);
 					cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
 					unlink(cmd);
-					
-					free(cmd); cmd = NULL;
-					free(timestamp); timestamp = NULL;
 				}
 				else
 				{
@@ -2340,6 +2336,10 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 					if(getconfigint("mediadbdebug", NULL) == 1)
 						filedebug(logfile, "#############\nERROR Localfile filesize to BIG skipped: %s/%s_backdrop1.jpg size=(%s) filesize(%lld) (%s)\n#############", getconfig("mediadbpath", NULL), timestamp, size, filesize, file);
 				}
+				free(cmd), cmd = NULL;
+				free(timestamp), timestamp = NULL;
+				free(poster), poster = NULL;
+				free(plot), plot = NULL;
 			}
 		
 			free(logdir), logdir = NULL;
