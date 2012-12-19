@@ -3,6 +3,29 @@
 
 #define MAXTOKENS       256
 
+int checkinternet()
+{
+	int skip 0;
+	char* tmp = NULL, *cmd = NULL;
+
+	cmd = ostrcat(cmd, "google.de", 1, 0);
+
+	//if(system(cmd) != 0)
+	for(i = 0; i < 3; i++)
+	{
+		free(tmp); tmp = NULL;
+		tmp = gethttp(cmd, "/", 80, NULL, NULL, NULL, 0);
+		if(tmp != NULL) break;
+	}
+	if(tmp == NULL)
+		skip = 1;
+
+	free(tmp); tmp = NULL;
+	free(cmd), cmd = NULL;
+
+	return skip;
+}
+
 int checkpng(char* filename)
 {
 	FILE* fd = NULL;

@@ -2769,3 +2769,9 @@ msgstr "Rot-Menu"
 
 msgid "Expert Modus"
 msgstr "Experten Modus"
+
+msgid "Create Record Picture"
+msgstr "Erstelle Aufnahme Vorschaubild"
+
+msgid "Error, Internet Connection not found"
+msgstr "Fehler, keine Internet Verbindung verfügbar"
