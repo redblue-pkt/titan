@@ -238,7 +238,7 @@ void screenmediadbedit(char* file, int id, int flag)
 
 									if(getconfigint("mediadbdebug", NULL) == 1)
 									{
-										filedebug(logfile, "#############\nEdit Localfile: %s size=(%s) filesize(%lld) (%s)\n#############", picret, size, filesize, node-id);
+										filedebug(logfile, "#############\nEdit Localfile: %s size=(%s) filesize(%lld) (%s)\n#############", picret, size, filesize, node->id);
 										cmd = ostrcat(cmd, " >> ", 1, 0);
 										cmd = ostrcat(cmd, logfile, 1, 0);
 										cmd = ostrcat(cmd, " 2>&1", 1, 0);
