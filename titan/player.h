@@ -107,6 +107,7 @@ int playerstartts(char* file, int flag)
 			}
 			free(fileseek); fileseek = NULL;
 		}
+		delchannel(0, serviceid, 1);
 		chnode = createchannel("player", 0, 0, serviceid, 99, 0, -1, -1, -1, -1, 0);
 		if(chnode != NULL) chnode->pmtpid = pmtpid;
 	}
