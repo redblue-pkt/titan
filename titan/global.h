@@ -5,7 +5,7 @@
 
 int checkinternet()
 {
-	int skip 0;
+	int skip 0; 
 	char* tmp = NULL, *cmd = NULL;
 
 	cmd = ostrcat(cmd, "google.de", 1, 0);
