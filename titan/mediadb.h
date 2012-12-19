@@ -1921,6 +1921,77 @@ int mediadbcp(char* timestamp, char* poster)
 	return 0;
 }
 
+void mediadbcptmdb(struct tmdb* tmdb, struct imdb* imdb)
+{
+	if(tmdb == NULL || imdb == NULL) return;
+
+	if(tmdb->imdbid != NULL) imdb->id = ostrcat(tmdb->imdbid, NULL, 0, 0);
+	if(tmdb->title != NULL) imdb->title = ostrcat(tmdb->title, NULL, 0, 0);
+	if(tmdb->genre != NULL) imdb->genre = ostrcat(tmdb->genre, NULL, 0, 0);
+	if(tmdb->rating != NULL) imdb->rating = ostrcat(tmdb->rating, NULL, 0, 0);
+	if(tmdb->votes != NULL) imdb->votes = ostrcat(tmdb->votes, NULL, 0, 0);
+	if(tmdb->runtime != NULL) imdb->runtime = ostrcat(tmdb->runtime, NULL, 0, 0);
+	if(tmdb->plot != NULL) imdb->plot = ostrcat(tmdb->plot, NULL, 0, 0);
+	if(tmdb->released != NULL) imdb->released = ostrcat(tmdb->released, NULL, 0, 0);
+	if(tmdb->postermid != NULL) imdb->poster = ostrcat(tmdb->postermid, NULL, 0, 0);
+	if(tmdb->thumb != NULL) imdb->thumb = ostrcat(tmdb->thumb, NULL, 0, 0);
+	if(tmdb->year != NULL) imdb->year = ostrcat(tmdb->year, NULL, 0, 0);
+}
+
+void mediadbcpimdbapi(struct imdbapi* imdbapi, struct imdb* imdb)
+{
+	if(imdbapi == NULL || imdb == NULL) return;
+
+	if(imdbapi->id != NULL) imdb->id = ostrcat(imdbapi->id, NULL, 0, 0);
+	if(imdbapi->title != NULL) imdb->title = ostrcat(imdbapi->title, NULL, 0, 0);
+	if(imdbapi->genre != NULL) imdb->genre = ostrcat(imdbapi->genre, NULL, 0, 0);
+	if(imdbapi->writer != NULL) imdb->writer = ostrcat(imdbapi->writer, NULL, 0, 0);
+	if(imdbapi->director != NULL) imdb->director = ostrcat(imdbapi->director, NULL, 0, 0);
+	if(imdbapi->actors != NULL) imdb->actors = ostrcat(imdbapi->actors, NULL, 0, 0);
+	if(imdbapi->rating != NULL) imdb->rating = ostrcat(imdbapi->rating, NULL, 0, 0);
+	if(imdbapi->votes != NULL) imdb->votes = ostrcat(imdbapi->votes, NULL, 0, 0);
+	if(imdbapi->runtime != NULL) imdb->runtime = ostrcat(imdbapi->runtime, NULL, 0, 0);
+	if(imdbapi->plot != NULL) imdb->plot = ostrcat(imdbapi->plot, NULL, 0, 0);
+	if(imdbapi->released != NULL) imdb->released = ostrcat(imdbapi->released, NULL, 0, 0);
+	if(imdbapi->year != NULL) imdb->year = ostrcat(imdbapi->year, NULL, 0, 0);
+}
+
+void mediadbcptmdb2(struct tmdb* tmdb, struct imdb* imdb)
+{
+	if(tmdb == NULL || imdb == NULL) return;
+
+	if(imdb->id == NULL) imdb->id = ostrcat(imdb->id, tmdb->imdbid, 1, 0);
+	if(imdb->title == NULL) imdb->title = ostrcat(imdb->title, tmdb->title, 1, 0);
+	if(imdb->genre == NULL) imdb->genre = ostrcat(imdb->genre, tmdb->genre, 1, 0);
+	if(imdb->rating == NULL) imdb->rating = ostrcat(imdb->rating, tmdb->rating, 1, 0);
+	if(imdb->votes == NULL) imdb->votes = ostrcat(imdb->votes, tmdb->votes, 1, 0);
+	if(imdb->runtime == NULL) imdb->runtime = ostrcat(imdb->runtime, tmdb->runtime, 1, 0);
+	if(imdb->plot == NULL) imdb->plot = ostrcat(imdb->plot, tmdb->plot, 1, 0);
+	if(imdb->released == NULL) imdb->released = ostrcat(imdb->released, tmdb->released, 1, 0);
+	if(imdb->poster == NULL) imdb->poster = ostrcat(imdb->poster, tmdb->postermid, 1, 0);
+	if(imdb->thumb == NULL) imdb->thumb = ostrcat(imdb->thumb, tmdb->thumb, 1, 0);
+	if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, tmdb->year, 1, 0);
+}
+
+void mediadbcpimdbapi2(struct imdbapi* imdbapi, struct imdb* imdb)
+{
+	if(imdbapi == NULL || imdb == NULL) return;
+
+	if(imdb->id == NULL) imdb->id = ostrcat(imdb->id, imdbapi->id, 1, 0);
+	if(imdb->title == NULL) imdb->title = ostrcat(imdb->title, imdbapi->title, 1, 0);
+	if(imdb->genre == NULL) imdb->genre = ostrcat(imdb->genre, imdbapi->genre, 1, 0);
+	if(imdb->writer == NULL) imdb->writer = ostrcat(imdb->writer, imdbapi->writer, 1, 0);
+	if(imdb->director == NULL) imdb->director = ostrcat(imdb->director, imdbapi->director, 1, 0);
+	if(imdb->actors == NULL) imdb->actors = ostrcat(imdb->actors, imdbapi->actors, 1, 0);
+	if(imdb->rating == NULL) imdb->rating = ostrcat(imdb->rating, imdbapi->rating, 1, 0);
+	if(imdb->votes == NULL) imdb->votes = ostrcat(imdb->votes, imdbapi->votes, 1, 0);
+	if(imdb->runtime == NULL) imdb->runtime = ostrcat(imdb->runtime, imdbapi->runtime, 1, 0);
+	if(imdb->plot == NULL) imdb->plot = ostrcat(imdb->plot, imdbapi->plot, 1, 0);
+	if(imdb->released == NULL) imdb->released = ostrcat(imdb->released, imdbapi->released, 1, 0);
+	if(imdb->poster == NULL) imdb->poster = ostrcat(imdb->poster, imdbapi->poster, 1, 0);
+	if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, imdbapi->year, 1, 0);
+}
+
 // flag 0 = autoscan
 // flag 1 = manual scan imdb
 // flag 2 = manual scan tmdb
@@ -2047,75 +2118,12 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				}
 	
 				debugimdbnode(imdb);
-	
-				// manuel tmdb
-				if(flag == 2 && imdb != NULL && tmdb != NULL)
-				{
-					if(tmdb->imdbid != NULL) imdb->id = ostrcat(tmdb->imdbid, NULL, 0, 0);			
-					if(tmdb->title != NULL) imdb->title = ostrcat(tmdb->title, NULL, 0, 0);	
-					if(tmdb->genre != NULL) imdb->genre = ostrcat(tmdb->genre, NULL, 0, 0);
-					if(tmdb->rating != NULL) imdb->rating = ostrcat(tmdb->rating, NULL, 0, 0);
-					if(tmdb->votes != NULL) imdb->votes = ostrcat(tmdb->votes, NULL, 0, 0);
-					if(tmdb->runtime != NULL) imdb->runtime = ostrcat(tmdb->runtime, NULL, 0, 0);
-					if(tmdb->plot != NULL) imdb->plot = ostrcat(tmdb->plot, NULL, 0, 0);
-					if(tmdb->released != NULL) imdb->released = ostrcat(tmdb->released, NULL, 0, 0);
-					if(tmdb->postermid != NULL) imdb->poster = ostrcat(tmdb->postermid, NULL, 0, 0);
-					if(tmdb->thumb != NULL) imdb->thumb = ostrcat(tmdb->thumb, NULL, 0, 0);
-					if(tmdb->year != NULL) imdb->year = ostrcat(tmdb->year, NULL, 0, 0);
-				}
-	
+				if(flag == 2) mediadbcptmdb(tmdb, imdb); // manuel tmdb
 				debugimdbnode(imdb);
-	
-				// manuel imdbapi
-				if(flag == 3 && imdb != NULL && imdbapi != NULL)
-				{
-					if(imdbapi->id != NULL) imdb->id = ostrcat(imdbapi->id, NULL, 0, 0);			
-					if(imdbapi->title != NULL) imdb->title = ostrcat(imdbapi->title, NULL, 0, 0);	
-					if(imdbapi->genre != NULL) imdb->genre = ostrcat(imdbapi->genre, NULL, 0, 0);
-					if(imdbapi->writer != NULL) imdb->writer = ostrcat(imdbapi->writer, NULL, 0, 0);
-					if(imdbapi->director != NULL) imdb->director = ostrcat(imdbapi->director, NULL, 0, 0);
-					if(imdbapi->actors != NULL) imdb->actors = ostrcat(imdbapi->actors, NULL, 0, 0);
-					if(imdbapi->rating != NULL) imdb->rating = ostrcat(imdbapi->rating, NULL, 0, 0);
-					if(imdbapi->votes != NULL) imdb->votes = ostrcat(imdbapi->votes, NULL, 0, 0);
-					if(imdbapi->runtime != NULL) imdb->runtime = ostrcat(imdbapi->runtime, NULL, 0, 0);
-					if(imdbapi->plot != NULL) imdb->plot = ostrcat(imdbapi->plot, NULL, 0, 0);
-					if(imdbapi->released != NULL) imdb->released = ostrcat(imdbapi->released, NULL, 0, 0);
-					if(imdbapi->year != NULL) imdb->year = ostrcat(imdbapi->year, NULL, 0, 0);
-				}
-			
-				if(imdb != NULL && tmdb != NULL)
-				{
-					if(imdb->id == NULL) imdb->id = ostrcat(imdb->id, tmdb->imdbid, 1, 0);			
-					if(imdb->title == NULL) imdb->title = ostrcat(imdb->title, tmdb->title, 1, 0);	
-					if(imdb->genre == NULL) imdb->genre = ostrcat(imdb->genre, tmdb->genre, 1, 0);
-					if(imdb->rating == NULL) imdb->rating = ostrcat(imdb->rating, tmdb->rating, 1, 0);
-					if(imdb->votes == NULL) imdb->votes = ostrcat(imdb->votes, tmdb->votes, 1, 0);
-					if(imdb->runtime == NULL) imdb->runtime = ostrcat(imdb->runtime, tmdb->runtime, 1, 0);
-					if(imdb->plot == NULL) imdb->plot = ostrcat(imdb->plot, tmdb->plot, 1, 0);
-					if(imdb->released == NULL) imdb->released = ostrcat(imdb->released, tmdb->released, 1, 0);
-					if(imdb->poster == NULL) imdb->poster = ostrcat(imdb->poster, tmdb->postermid, 1, 0);
-					if(imdb->thumb == NULL) imdb->thumb = ostrcat(imdb->thumb, tmdb->thumb, 1, 0);
-					if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, tmdb->year, 1, 0);
-				}
-
+				if(flag == 3) mediadbcpimdbapi(imdbapi, imdb); // manuel imdbapi
+				mediadbcpimdb2(tmdb, imdb);
 				debugimdbnode(imdb);
-	      		
-				if(imdb != NULL && imdbapi != NULL)
-				{
-					if(imdb->id == NULL) imdb->id = ostrcat(imdb->id, imdbapi->id, 1, 0);			
-					if(imdb->title == NULL) imdb->title = ostrcat(imdb->title, imdbapi->title, 1, 0);	
-					if(imdb->genre == NULL) imdb->genre = ostrcat(imdb->genre, imdbapi->genre, 1, 0);
-					if(imdb->writer == NULL) imdb->writer = ostrcat(imdb->writer, imdbapi->writer, 1, 0);
-					if(imdb->director == NULL) imdb->director = ostrcat(imdb->director, imdbapi->director, 1, 0);
-					if(imdb->actors == NULL) imdb->actors = ostrcat(imdb->actors, imdbapi->actors, 1, 0);
-					if(imdb->rating == NULL) imdb->rating = ostrcat(imdb->rating, imdbapi->rating, 1, 0);
-					if(imdb->votes == NULL) imdb->votes = ostrcat(imdb->votes, imdbapi->votes, 1, 0);
-					if(imdb->runtime == NULL) imdb->runtime = ostrcat(imdb->runtime, imdbapi->runtime, 1, 0);
-					if(imdb->plot == NULL) imdb->plot = ostrcat(imdb->plot, imdbapi->plot, 1, 0);
-					if(imdb->released == NULL) imdb->released = ostrcat(imdb->released, imdbapi->released, 1, 0);
-					if(imdb->poster == NULL) imdb->poster = ostrcat(imdb->poster, imdbapi->poster, 1, 0);
-					if(imdb->year == NULL) imdb->year = ostrcat(imdb->year, imdbapi->year, 1, 0);
-				}
+				mediadbcpimdbapi2(imdbapi, imdb);
 
 				if(tmdb != NULL && tmdb->mvi != NULL) backdrop = atoi(tmdb->mvi);
 			}
