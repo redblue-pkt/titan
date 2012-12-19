@@ -229,12 +229,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 	tmpmeta = ostrcat(tmpmeta, ".meta", 1, 0);
 
 	if(getconfigint("mediadbdebug", NULL) == 1)
-	{
-		writesys(logfile, "####################################################################", 3); 
-		writesys(logfile, "title: ", 2); 
-		writesys(logfile, title, 3);
-		writesys(logfile, "####################################################################", 3); 
-	}
+		filedebug(logfile, "#############\nTitle: %s\n#############", title);
 
 	if(tmpstr != NULL)
 	{
@@ -385,7 +380,6 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 				free(log), log = NULL;
 			}
 
-
 			if(ostrstr(tmpstr1, "<rating>") != NULL)
 				tnode->rating = string_resub("<rating>", "</rating>", tmpstr1, 0);
 
@@ -506,7 +500,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 
 													if(getconfigint("mediadbdebug", NULL) == 1)
 													{
-														filedebug(logfile, "#############\backdrop: %s size=(%s) filesize(%d) (%s)\n#############", getconfig("mediadbpath", NULL), tnode->backdrop, size, filesize, (&ret1[i])->part);
+														filedebug(logfile, "#############\nbackdrop: %s size=(%s) filesize(%d) (%s)\n#############", getconfig("mediadbpath", NULL), tnode->backdrop, size, filesize, (&ret1[i])->part);
 														cmd = ostrcat(cmd, " >> ", 1, 0);
 														cmd = ostrcat(cmd, logfile, 1, 0);
 														cmd = ostrcat(cmd, " 2>&1", 1, 0);
@@ -544,9 +538,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 												debug(133, "ERROR Backdrop size to big skipped %d", picsize);
 
 												if(getconfigint("mediadbdebug", NULL) == 1)
-												{
 													filedebug(logfile, "#############\nERROR Backdrop size to big skipped: %s size=(%s) filesize(%d) (%s)\n#############", getconfig("mediadbpath", NULL), tnode->backdrop, size, filesize, (&ret1[i])->part);
-												}	
 												mvicount--;
 											}
 										}
@@ -555,9 +547,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 											debug(133, "ERROR Backdrop size is NULL skipped %s", size);
 
 											if(getconfigint("mediadbdebug", NULL) == 1)
-											{
 												filedebug(logfile, "#############\nERROR Backdrop size is NULL skipped: %s size=(%s) filesize(%d) (%s)\n#############", getconfig("mediadbpath", NULL), tnode->backdrop, size, filesize, (&ret1[i])->part);
-											}
 
 											mvicount--;
 										}
@@ -571,9 +561,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 										debug(133, "ERROR Backdrop filesize to BIG skipped %lld", filesize);
 				
 										if(getconfigint("mediadbdebug", NULL) == 1)
-										{
 											filedebug(logfile, "#############\nERROR Backdrop filesize to BIG skipped: %s filesize(%d) (%s)\n#############", getconfig("mediadbpath", NULL), tnode->backdrop, filesize, (&ret1[i])->part);
-										}									
 									}
 								}								
 
@@ -681,7 +669,6 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 										cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
 									}
 
-	
 									debug(133, "cmd %s", cmd);
 									system(cmd);
 									free(cmd); cmd = NULL;
@@ -705,9 +692,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 								debug(133, "ERROR Postermid size to big skipped %d", picsize);
 
 								if(getconfigint("mediadbdebug", NULL) == 1)
-								{
 									filedebug(logfile, "#############\nERROR Postermid size to big skipped: %s size=(%s) filesize(%d) (%s)\n#############", getconfig("mediadbpath", NULL), tnode->postermid, size, filesize, posterurl);	
-								}
 							}
 						}
 						else
@@ -715,9 +700,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 							debug(133, "ERROR Postermid size is NULL skipped %s", size);
 
 							if(getconfigint("mediadbdebug", NULL) == 1)
-							{
-								filedebug(logfile, "#############\nERROR Postermid size is NULL skipped: %s size=(%s) filesize(%d) (%s)\n#############", getconfig("mediadbpath", NULL), tnode->postermid, size, filesize, posterurl);	
-							}
+								filedebug(logfile, "#############\nERROR Postermid size is NULL skipped: %s size=(%s) filesize(%d) (%s)\n#############", getconfig("mediadbpath", NULL), tnode->postermid, size, filesize, posterurl);
 						}
 						free(size), size = NULL;
 						unlink(tmpmeta);
@@ -729,9 +712,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 						debug(133, "ERROR Postermid filesize to BIG skipped %lld", filesize);
 
 						if(getconfigint("mediadbdebug", NULL) == 1)
-						{
 							filedebug(logfile, "#############\nERROR Postermid filesize to BIG skipped: %s filesize(%d) (%s)\n#############", getconfig("mediadbpath", NULL), tnode->postermid, filesize, posterurl);	
-						}
 					}
 				}
 			}
@@ -756,9 +737,6 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 
 			tmpstr1 += 5;
 			tmpstr1 = ostrstr(tmpstr1, "<movie>");
-
-// *** glibc detected *** /var/usr/local/share/titan/plugins/titan: free(): invalid pointer: 0x00a77a2b ***
-//			free(tmpstr1), tmpstr1 = NULL; 
 
 			free(posterurl), posterurl = NULL; 
 			free(logdir), logdir = NULL; 
@@ -787,7 +765,6 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 			debug(133, "----------------------tmdb end----------------------");
 		}
 	}
-
 
 	free(tmpstr); tmpstr = NULL;
 	return *first;
