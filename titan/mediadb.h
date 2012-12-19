@@ -2121,7 +2121,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				if(flag == 2) mediadbcptmdb(tmdb, imdb); // manuel tmdb
 				debugimdbnode(imdb);
 				if(flag == 3) mediadbcpimdbapi(imdbapi, imdb); // manuel imdbapi
-				mediadbcpimdb2(tmdb, imdb);
+				mediadbcptmdb2(tmdb, imdb);
 				debugimdbnode(imdb);
 				mediadbcpimdbapi2(imdbapi, imdb);
 
@@ -2342,7 +2342,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 					debug(133, "ERROR Localfile filesize to BIG skipped %lld", filesize);
 		
 					if(getconfigint("mediadbdebug", NULL) == 1)
-						filedebug(logfile, "#############\nERROR Localfile filesize to BIG skipped: %s/%s_backdrop1.jpg size=(%s) filesize(%lld) (%s)\n#############", getconfig("mediadbpath", NULL), timestamp, size, filesize, file);
+						filedebug(logfile, "#############\nERROR Localfile filesize to BIG skipped: %s/%s_backdrop1.jpg filesize(%lld) (%s)\n#############", getconfig("mediadbpath", NULL), timestamp, filesize, file);
 				}
 				free(cmd), cmd = NULL;
 				free(timestamp), timestamp = NULL;
