@@ -2125,15 +2125,14 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				timestamp = oregex(".*([0-9]{14,14}).*", file);
 				if(timestamp == NULL)
 					timestamp = ostrcat(oitoa(time(NULL)), NULL, 0, 0);
-		
-				free(imdb->id), imdb->id = NULL;
-				imdb->id = ostrcat(imdb->id, timestamp, 1, 0);
 				
 				shortname = string_replace("   ", " - ", shortname, 1);
 				shortname = string_replace("  ", " - ", shortname, 1);
 
-				imdb->title = ostrcat(imdb->title, shortname, 1, 0);
-				imdb->poster = ostrcat(imdb->poster, "1", 1, 0);
+				char* poster = NULL;
+				poster = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+				poster = ostrcat(poster, timestamp, 1, 0);
+				poster = ostrcat(poster, "_poster.jpg", 1, 0);
 								
 				char* cmd = NULL;
 				tmpstr = ostrcat(tmpstr, path, 1, 0);
@@ -2143,7 +2142,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				free(tmpstr), tmpstr = NULL;
 				cmd = readfiletomem(tmpstr1, 1);
 				free(tmpstr1), tmpstr1 = NULL;
-				imdb->plot = ostrcat(imdb->plot, cmd, 1, 0);
+				char* plot = ostrcat(plot, cmd, 1, 0);
 				free(cmd), cmd = NULL;
 
 				mediadbffmpeg1(file, path, timestamp, logfile);
@@ -2299,6 +2298,9 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 									
 									backdrop = 1;
 									writesysint("/proc/sys/vm/drop_caches", 3, 0);
+
+									debug(777, "imdb id %s", timestamp);
+									cmediadb = createmediadb(node, timestamp, type, shortname, NULL, NULL, NULL, NULL, NULL, NULL, NULL, plot, poster, NULL, NULL, shortpath, file, shortname, fileinfo, 0, backdrop);
 								}	
 							}
 						}
