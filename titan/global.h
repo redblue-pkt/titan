@@ -1410,7 +1410,7 @@ void changechannellist(struct channel* chnode, char* channellist)
 
 		if(chnode == NULL || status.aktservice->channel == NULL) return;
 
-		status.servicetype = chnode->servicetype;
+		if(chnode->servicetype != 99) status.servicetype = chnode->servicetype;
 		if(status.servicetype == 0)
 		{
 			if(channellist != NULL)
