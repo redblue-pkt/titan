@@ -5,7 +5,7 @@
 
 int checkinternet()
 {
-	int skip1 = 0; 
+	int skip = 0, i = 0;
 	char* tmp = NULL, *cmd = NULL;
 
 	cmd = ostrcat(cmd, "google.de", 1, 0);
@@ -18,12 +18,12 @@ int checkinternet()
 		if(tmp != NULL) break;
 	}
 	if(tmp == NULL)
-		skip1 = 1;
+		skip = 1;
 
 	free(tmp); tmp = NULL;
 	free(cmd), cmd = NULL;
 
-	return skip1;
+	return skip;
 }
 
 int checkpng(char* filename)
