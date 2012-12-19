@@ -310,9 +310,12 @@ void oshutdown(int exitcode, int flag)
 	// Free memory, semaphores, etc. and say goodbye
 	if(faststop == 0) cleanupvfd();
 
-	tmpstr = oitoa(status.servicetype);
-	addconfig("servicetype", tmpstr);
-	free(tmpstr); tmpstr = NULL;
+	if(status.servicetype != 99) //don't save tmp servicetype
+	{
+		tmpstr = oitoa(status.servicetype);
+		addconfig("servicetype", tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
 
 	status.sec = 0;
 
