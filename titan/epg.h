@@ -1526,8 +1526,8 @@ void parseeitdesc(struct channel* chnode, struct epg* epgnode, unsigned char *bu
 }
 
 // Parse Event Information Table
-//flag 0 = end only on channelswitch / or stop sig
-//flag 1 = end after each run 
+//flag 0 = from epg thread
+//flag 1 = from epg scan
 void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 {
 	struct eit* eit = (struct eit*)buf;
@@ -1825,11 +1825,11 @@ int readepg(const char* filename)
 }
 
 //Read EIT segments from DVB-demuxer
-//flag 0 = end only on channelswitch / or stop sig
-//flag 1 = end after each run 
+//flag 0 = from epg thread
+//flag 1 = from epg scan
 int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fenode, int flag)
 {
-	int readlen = 0, pos = 0, len = 0, count = 0, skip = 0;
+	int readlen = 0, pos = 0, len = 0;
 	unsigned char *buf = NULL, *head = NULL;
 	struct dvbdev* dmxnode;
 	struct eit* eit = NULL;
@@ -1838,26 +1838,7 @@ int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 	int roundend = 0, round = 0x4e, i = 0;
 	time_t akttime, roundstart;
 
-	akttime = time(NULL);
 	if(chnode == NULL) chnode = status.aktservice->channel;
-
-	if(chnode != NULL && chnode->transponder != NULL && chnode->transponder->lastepg > akttime && chnode->epg != NULL)
-	{
-		debug(400, "skip epg read (%ld < %ld)", akttime, chnode->transponder->lastepg);
-		skip = (chnode->transponder->lastepg - akttime) * 2;
-	}
-
-	if(skip > 0)
-	{
-		while(self->aktion != STOP && self->aktion != PAUSE)
-		{
-			if(count > skip) break;
-			count++;
-			usleep(500000);
-		}
-		if(self->aktion == STOP || self->aktion == PAUSE) return 0;
-		count = 0;
-	}
 
 	buf = malloc(MINMALLOC * 4);
 	if(buf == NULL)
@@ -1932,20 +1913,12 @@ int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 			if(round == 0x60)
 			{
 				dmxstop(dmxnode);
-				if(flag == 1) goto end;
 				debug(400, "epg no more new data, wait for next run");
 
 				if(chnode != NULL && chnode->transponder != NULL)
 					chnode->transponder->lastepg = time(NULL) + 7700;
 
-				while(self->aktion != STOP && self->aktion != PAUSE)
-				{
-					if(count > 14400) break; //2h
-					count++;
-					usleep(500000);
-				}
-				count = 0;
-				debug(400, "epg next run start");
+				goto end;
 			}
 			if(round == 0x4e)
 			{
@@ -2010,21 +1983,6 @@ read_more:
 		//move remaining data to front of buffer
 		if (pos > 0) memmove(buf, head, pos);
 
-		//del old epg date
-		if(flag == 0 && status.deloldepg + (5 * 60 * 60) < time(NULL)) // 5 stunde
-		{
-			status.deloldepg = time(NULL);
-			deloldepg();
-		}
-
-		//write epg periodic to medium
-		if(flag == 0 && status.writeperiodicepg + (2 * 60 * 60) < time(NULL)) // 2 stunde
-		{
-			status.writeperiodicepg = time(NULL);
-			if(getconfigint("epgsave", NULL) == 0) //only write periodic if epgsave = allways
-				writeallconfig(2);
-		}
-
 		//fill with fresh data
 #ifdef SIMULATE
 		readlen = TEMP_FAILURE_RETRY(read(fd, buf + pos, (MINMALLOC * 4) - pos));
@@ -2051,6 +2009,9 @@ void epgthreadfunc(struct stimerthread* self)
 {
 	debug(1000, "in");
 	char* tmpstr = NULL;
+	time_t akttime = 0;
+	struct channel* chnode = NULL;
+	int skip = 0, count = 0;
 
 	if(self == NULL) return;
 
@@ -2071,8 +2032,56 @@ void epgthreadfunc(struct stimerthread* self)
 	}
 
 	if(status.epgscanlistthread == NULL)
-		readeit(self, NULL, NULL, 0);
+	{
+		akttime = time(NULL);
+		chnode = status.aktservice->channel;
 
+		//del old epg date
+		if(status.deloldepg + (5 * 60 * 60) < time(NULL)) // 5 stunde
+		{
+			status.deloldepg = time(NULL);
+			deloldepg();
+		}
+
+		//write epg periodic to medium
+		if(status.writeperiodicepg + (2 * 60 * 60) < time(NULL)) // 2 stunde
+		{
+			status.writeperiodicepg = time(NULL);
+			if(getconfigint("epgsave", NULL) == 0) //only write periodic if epgsave = allways
+				writeallconfig(2);
+		}
+
+		if(chnode != NULL && chnode->transponder != NULL && chnode->transponder->lastepg > akttime && chnode->epg != NULL)
+		{
+			debug(400, "skip epg read (%ld < %ld)", akttime, chnode->transponder->lastepg);
+			skip = (chnode->transponder->lastepg - akttime) * 2;
+		}
+
+		if(skip > 0)
+		{
+			while(self->aktion != STOP && self->aktion != PAUSE)
+			{
+				if(count > skip) break;
+				count++;
+				usleep(500000);
+			}
+			if(self->aktion == STOP || self->aktion == PAUSE) goto end;
+			count = 0;
+		}
+
+		readeit(self, NULL, NULL, 0);
+		readmhw(self, NULL);
+
+		//wait for next run
+		while(self->aktion != STOP && self->aktion != PAUSE)
+		{
+			if(count > 14400) break; //2h
+			count++;
+			usleep(500000);
+		}
+	}
+
+end:
 	debug(400, "end epg thread on aktiv channel");
 	debug(1000, "out");
 }
