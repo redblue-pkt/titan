@@ -126,6 +126,7 @@ struct newsletter* newsletter = NULL;
 #include "multiepg.h"
 #include "gmultiepg.h"
 #include "epg.h"
+#include "mhwepg.h"
 #include "epgscan.h"
 #include "menulist.h"
 #include "videomode.h"
