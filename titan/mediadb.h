@@ -1926,7 +1926,7 @@ int mediadbffmpeg4(char* timestamp, char* tmpmeta)
 	return 0;
 }
 
-int mediadbffmpeg5(char* tmpjpg, char* tmpmpg, char* logfile)
+int mediadbffmpeg5(char* tmpjpg, char* tmpmpg, char* timestamp, char* file, char* size, off64_t filesize, char* logfile)
 {
 	char* cmd = NULL;
 
@@ -2070,11 +2070,11 @@ int mediadbjpegtran(char* tmpjpg, char* timestamp)
 	return 0;
 }
 
-int mediadbmv(char* tmpjpg, char* timestamp)
+int mediadbmv(char* tmpmpg, char* timestamp)
 {
 	char* cmd = NULL;
 
-	if(tmpjpg == NULL || timestamp == NULL) return 1;
+	if(tmpmpg == NULL || timestamp == NULL) return 1;
 
 	cmd = ostrcat(cmd, "mv -f ", 1, 0);
 	cmd = ostrcat(cmd, tmpmpg, 1, 0);
@@ -2349,7 +2349,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 						
 							if(file_exist(tmpjpg))
 							{
-								mediadbffmpeg5(tmpjpg, tmpmpg, logfile);
+								mediadbffmpeg5(tmpjpg, tmpmpg, timestamp, file, size, filesize, logfile);
 
 								if(file_exist(tmpmpg))
 								{
