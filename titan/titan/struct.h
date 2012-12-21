@@ -1610,6 +1610,16 @@ struct mhwsummary
 };
 #define MHWSUMMARYLEN sizeof(struct mhwsummary)
 
+struct mhw2channel
+{
+	u_char network_id_hi;
+	u_char network_id_lo;
+	u_char transponder_id_hi;
+	u_char transponder_id_lo;
+	u_char channel_id_hi;
+	u_char channel_id_lo;
+};
+
 struct blacklist
 {
   char* file;
