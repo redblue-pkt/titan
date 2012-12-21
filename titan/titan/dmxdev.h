@@ -308,6 +308,38 @@ int dmxsetfilter(struct dvbdev* node, int pid, int secnr, int flag)
 		sctflt.pid = pid;
 		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
 	}
+	if(flag == 17) //mhw summary
+	{
+		//sctflt.filter.filter[0] = 0x91;
+		sctflt.filter.mask[0] = 0xff;
+		sctflt.timeout = 0;
+		sctflt.pid = pid;
+		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
+	}
+	if(flag == 18) //mhw2 title
+	{
+		sctflt.filter.filter[0] = 0xe6;
+		sctflt.filter.mask[0] = 0xff;
+		sctflt.timeout = 0;
+		sctflt.pid = pid;
+		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
+	}
+	if(flag == 19) //mhw2 channel
+	{
+		sctflt.filter.filter[0] = 0xc8;
+		sctflt.filter.mask[0] = 0xff;
+		sctflt.timeout = 0;
+		sctflt.pid = pid;
+		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
+	}
+	if(flag == 20) //mhw2 summary
+	{
+		sctflt.filter.filter[0] = 0x96;
+		sctflt.filter.mask[0] = 0xff;
+		sctflt.timeout = 0;
+		sctflt.pid = pid;
+		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
+	}
 
 	debug(200, "DMX_SET_FILTER pid=%d, flag=%d", pid, flag);
 	if(ioctl(node->fd, DMX_SET_FILTER, &sctflt) < 0)
