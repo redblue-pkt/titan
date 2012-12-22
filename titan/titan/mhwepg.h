@@ -579,7 +579,125 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 	return 0;
 }
 
-int readmhw2summarie(struct stimerthread* self, struct dvbdev* fenode)
+int readmhwsummary(struct stimerthread* self, struct dvbdev* fenode)
+{
+	int readlen = 0, first = 1, len = 0;
+	unsigned char *buf = NULL, *firstbuf = NULL;
+	struct dvbdev* dmxnode;
+	unsigned long quad = 0, quad0 = 0;
+	time_t akttime = 0;
+	char* tmpstr = NULL;
+	struct mhwsummary* mhwsummary = NULL;
+
+	buf = calloc(1, MINMALLOC);
+	if(buf == NULL)
+	{
+		err("no memory");
+		return 1;
+	}
+	mhwsummary = (struct mhwsummary*)buf;
+
+	firstbuf = calloc(1, MINMALLOC);
+	if(firstbuf == NULL)
+	{
+		err("no memory");
+		free(buf);
+		return 1;
+	}
+
+	if(fenode == NULL) fenode = status.aktservice->fedev;
+	if(fenode == NULL)
+	{
+		debug(400, "no frontend dev in service");
+		free(buf);
+		free(firstbuf);
+		return 1;
+	}
+
+	dmxnode = dmxopen(fenode);
+	if(dmxnode == NULL)
+	{
+		err("open demux dev");
+		free(buf);
+		free(firstbuf);
+		return 1;
+	}
+
+	dmxsetbuffersize(dmxnode, getconfigint("dmxepgbuffersize", NULL));
+	dmxsetsource(dmxnode, fenode->fedmxsource);
+
+	dmxsetfilter(dmxnode, 0xD3, 0, 17);
+	akttime = time(NULL);
+
+	while(self->aktion != STOP && self->aktion != PAUSE)
+	{
+		readlen = dvbread(dmxnode, buf, 0, 3, 1000000);
+		if(readlen <= 0)
+		{
+			dmxclose(dmxnode, -1);
+			free(buf);
+			free(firstbuf);
+printf("eeeeeeeeeeeeeeeeeeeeee1\n");
+			return -1;
+		}
+		readlen = 0;
+		len = buf[2] | ((buf[1] & 0x0f) << 8);
+printf("len = %d\n", len);
+		if(len + 3 <= MINMALLOC)
+			readlen = dvbread(dmxnode, buf, 3, len, 1000000);
+		if(readlen <= 0)
+		{
+			dmxclose(dmxnode, -1);
+			free(buf);
+			free(firstbuf);
+			return -1;
+		}
+
+		//stop epgscan after 2 min
+		if(akttime + 120 < time(NULL))
+		{
+			debug(400, "mhwepg timeout");
+			break;
+		}
+
+		// Invalid Data
+		if(readlen < 12 || buf[7] != 0xFF || buf[8] != 0xFF || buf[9] !=0xFF || buf[10] >= 10)
+{
+printf("continue\n");
+			continue;
+}
+
+		if(first == 1)
+		{
+			first = 0;
+			memcpy(firstbuf, buf, readlen + 3);
+		}
+		else
+		{
+			if(memcmp(firstbuf, buf, readlen + 3) == 0)
+			{
+				debug(400, "mhwsummary no more new data, wait for next run");
+				break;
+			}
+		}
+
+		buf[readlen + 3] = '\0';	//String terminator
+
+		printf("id=%d", HILO32(mhwsummary->program_id));
+
+		//Index of summary text beginning
+ 		tmpstr = ostrcat(buf + MHWSUMMARYLEN + mhwsummary->nb_replays * 7, NULL, 0, 0);
+		printf("%s\n", tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
+
+	dmxclose(dmxnode, -1);
+	free(buf);
+	free(firstbuf);
+	return 0;
+}
+
+int readmhw2summary(struct stimerthread* self, struct dvbdev* fenode)
 {
 	int readlen = 0, len = 0;
 	unsigned char *buf = NULL;
@@ -712,6 +830,13 @@ int readmhw(struct stimerthread* self, struct dvbdev* fenode)
 	}
 
 	ret = readmhwtitle(self, fenode, NULL, channelbuf, channelcount);
+	if(ret != 0)
+	{
+		free(channelbuf); channelbuf = NULL;
+		return 1;
+	}
+
+	ret = readmhwsummary(self, fenode);
 	if(ret != 0)
 	{
 		free(channelbuf); channelbuf = NULL;
