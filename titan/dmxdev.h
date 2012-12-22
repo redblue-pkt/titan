@@ -310,7 +310,7 @@ int dmxsetfilter(struct dvbdev* node, int pid, int secnr, int flag)
 	}
 	if(flag == 17) //mhw summary
 	{
-		//sctflt.filter.filter[0] = 0x91;
+		sctflt.filter.filter[0] = 0x90;
 		sctflt.filter.mask[0] = 0xff;
 		sctflt.timeout = 0;
 		sctflt.pid = pid;
