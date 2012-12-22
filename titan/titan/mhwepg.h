@@ -59,7 +59,7 @@ struct mhwchannel* getmhwchannel(unsigned char* channelbuf, int channelcount, in
 
 	for(i = 0; i < channelcount; i++)
 	{
-		if(i == id) return mhwchannel;
+		if(i == id - 1) return mhwchannel;
 		mhwchannel++;
 	}
 
@@ -315,7 +315,7 @@ int readmhwtitle(struct stimerthread* self, struct dvbdev* fenode, struct channe
 			//get start/endtime
 			day = mhwtitle->day;
 			hours = mhwtitle->hours;
-	    if(day == 7) day = 0;
+			if(day == 7) day = 0;
 			if(hours > 15) hours = hours - 4;
 			else if(hours > 7) hours = hours - 2;
 			else day = (day == 6) ? 0 : day + 1;
