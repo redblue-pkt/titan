@@ -49,6 +49,7 @@ struct mediadbcache* mediadbcache[MEDIADBCACHEMAX] = {NULL};
 struct unicable* unicable = NULL;
 struct oldentry* oldentry = NULL;
 struct newsletter* newsletter = NULL;
+struct mhwcache* mhwcache = NULL;
 
 #ifdef SH4
 #include "sh4port.h"
