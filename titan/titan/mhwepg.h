@@ -272,7 +272,7 @@ int readmhwtitle(struct stimerthread* self, struct dvbdev* fenode, struct channe
 			}
 
 			//stop epgscan after 2 min
-			if(akttime + 120 > time(NULL))
+			if(akttime + 120 < time(NULL))
 			{
 				debug(400, "mhwepg timeout");
 				break;
@@ -460,7 +460,7 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 		}
 
 		//stop epgscan after 2 min
-		if(akttime + 120 > time(NULL))
+		if(akttime + 120 < time(NULL))
 		{
 			debug(400, "mhw2epg timeout");
 			break;
@@ -642,7 +642,7 @@ int readmhw2summarie(struct stimerthread* self, struct dvbdev* fenode)
 		else if(quad == quad0) break;
 
 		//stop epgscan after 2 min
-		if(akttime + 120 > time(NULL))
+		if(akttime + 120 < time(NULL))
 		{
 			debug(400, "mhw2epg timeout");
 			break;
