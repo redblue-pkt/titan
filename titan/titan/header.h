@@ -8,6 +8,10 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//mhwepg.h
+int readmhw(struct stimerthread* self, struct dvbdev* fenode);
+int readmhw2(struct stimerthread* self, struct dvbdev* fenode);
+
 //mediadbedit.h
 void screenmediadbedit(char* file, int id, int flag);
 
