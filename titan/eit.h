@@ -1,5 +1,5 @@
-#ifndef EPG_H
-#define EPG_H
+#ifndef EIT_H
+#define EIT_H
 
 void debugepg()
 {
