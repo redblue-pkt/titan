@@ -1,7 +1,107 @@
 #ifndef MHWEPG_H
 #define MHWEPG_H
 
-//channel C+ DEMANDE for test on astra 19.2
+//channel C+ DEMANDE for test on astra 19.2 (mhw)
+
+struct mhwcache* addmhwcache(int id, struct epg* epgnode, struct mhwcache* last)
+{
+	//debug(1000, "in");
+	struct mhwcache *newnode = NULL, *prev = NULL, *node = mhwcache;
+	char *name = NULL;
+	int ret = 0;
+
+	newnode = (struct mhwcache*)calloc(1, sizeof(struct mhwcache));
+	if(newnode == NULL)
+	{
+		err("no memory");
+		return NULL;
+	}
+
+	newnode->id = id;
+	newnode->epgnode = epgnode;
+
+	if(last == NULL)
+	{
+		while(node != NULL)
+		{
+			prev = node;
+			node = node->next;
+		}
+	}
+	else
+	{
+		prev = last;
+		node = last->next;
+	}
+
+	if(prev == NULL)
+		mhwcache = newnode;
+	else
+		prev->next = newnode;
+	newnode->next = node;
+
+	//debug(1000, "out");
+	return newnode;
+}
+
+void delmhwcache(struct mhwcache* cache)
+{
+	//debug(1000, "in");
+	struct mhwcache *node = mhwcache, *prev = mhwcache;
+
+	while(node != NULL)
+	{
+		if(node == cache)
+		{
+			if(node == mhwcache)
+				mhwcache = node->next;
+			else
+				prev->next = node->next;
+
+			free(node);
+			node = NULL;
+			break;
+		}
+
+		prev = node;
+		node = node->next;
+	}
+	//debug(1000, "out");
+}
+
+void freemhwcache()
+{
+	//debug(1000, "in");
+	struct mhwcache *node = mhwcache, *prev = mhwcache;
+
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+		if(prev != NULL)
+			delmhwcache(prev);
+	}
+	//debug(1000, "out");
+}
+
+struct mhwcache* getmhwcache(int id)
+{
+	//debug(1000, "in");
+	struct mhwcache *node = mhwcache;
+
+	while(node != NULL)
+	{
+		if(node->id == id)
+		{
+			//debug(1000, "out");
+			return node;
+		}
+
+		node = node->next;
+	}
+	debug(100, "mhwcache not found (mhwcache=%d)", id);
+	return NULL;
+}
 
 unsigned long getquad(void *ptr)
 {
@@ -187,13 +287,11 @@ int readmhwtitle(struct stimerthread* self, struct dvbdev* fenode, struct channe
 	struct mhwchannel* mhwchannel = NULL;
 	uint64_t transponderid = 0;
 	int serviceid = 0, eventid = 0, day = 0, hours = 0, yesterday = 0;
-	int nolongdesc = 0;
 	struct channel* tmpchnode = NULL;
 	struct epg* epgnode = NULL;
-	char* zbuf = NULL;
-	int zlen = 0, ret = 0;
 	time_t dvbtime = 0, starttime = 0, endtime = 0, akttime = 0, yesterdayepoch = 0;
 	time_t epgmaxsec = status.epgdays * 24 * 60 * 60;
+	struct mhwcache* cache = NULL;
 
 	if(chnode == NULL) chnode = status.aktservice->channel;
 	if(chnode == NULL || (chnode == status.aktservice->channel && status.aktservice->type != CHANNEL))
@@ -243,8 +341,6 @@ int readmhwtitle(struct stimerthread* self, struct dvbdev* fenode, struct channe
 
 	while(self->aktion != STOP && self->aktion != PAUSE)
 	{
-		nolongdesc = 0;
-
 		readlen = dvbread(dmxnode, buf, 0, MHWTITLELEN, 1000000);
 		usleep(1000);
 		if(readlen != MHWTITLELEN)
@@ -337,11 +433,7 @@ int readmhwtitle(struct stimerthread* self, struct dvbdev* fenode, struct channe
 			if(epgnode == NULL)
 				epgnode = addepg(tmpchnode, eventid, 0, starttime, endtime, NULL, 1);
 			else
-			{
 				updateepg(tmpchnode, epgnode, eventid, 0, starttime, endtime, 1);
-				if(epgnode->desc != NULL)
-					nolongdesc = 1;
-			}
 
 			if(epgnode == NULL)
 			{
@@ -351,19 +443,8 @@ int readmhwtitle(struct stimerthread* self, struct dvbdev* fenode, struct channe
 			}
 
 			epgnode->title = ostrcat((char*)mhwtitle->title, NULL, 0, 0);
+			cache = addmhwcache(HILO32(mhwtitle->program_id), epgnode, cache);
 
-			//TODO: get long descr;
-			//compress long desc
-			if(nolongdesc == 0 && epgnode->desc != NULL)
-			{
-				ret = ozip(epgnode->desc, strlen(epgnode->desc) + 1, &zbuf, &zlen, 1);
-				if(ret == 0)
-				{
-					free(epgnode->desc); epgnode->desc = NULL;
-					epgnode->desc = zbuf;
-					epgnode->desccomplen = zlen;
-				}
-			}
 			m_unlock(&status.epgmutex, 4);
 		}
 	}
@@ -384,13 +465,11 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 	int serviceid = 0, eventid = 0;
 	struct channel* tmpchnode = NULL;
 	unsigned long quad = 0, quad0 = 0;
-	int nolongdesc = 0;
 	struct epg* epgnode = NULL;
-	char* zbuf = NULL;
-	int zlen = 0, ret = 0;
 	time_t dvbtime = 0, starttime = 0, endtime = 0, akttime = 0;
 	time_t epgmaxsec = status.epgdays * 24 * 60 * 60;
 	char tmpstr[65];
+	struct mhwcache* cache = NULL;
 
 	if(chnode == NULL) chnode = status.aktservice->channel;
 	if(chnode == NULL || (chnode == status.aktservice->channel && status.aktservice->type != CHANNEL))
@@ -427,8 +506,6 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 
 	while(self->aktion != STOP && self->aktion != PAUSE)
 	{
-		nolongdesc = 0;
-
 		readlen = dvbread(dmxnode, buf, 0, 3, 1000000);
 		if(readlen <= 0)
 		{
@@ -539,11 +616,7 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 				if(epgnode == NULL)
 					epgnode = addepg(tmpchnode, eventid, 0, starttime, endtime, NULL, 1);
 				else
-				{
 					updateepg(tmpchnode, epgnode, eventid, 0, starttime, endtime, 1);
-					if(epgnode->desc != NULL)
-						nolongdesc = 1;
-				}
 
 				if(epgnode == NULL)
 				{
@@ -554,19 +627,8 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 				}
 
 				epgnode->title = ostrcat(tmpstr, NULL, 0, 0);
+				//cache = addmhwcache(HILO32(mhwtitle->program_id), epgnode, cache);
 
-				//TODO: get long descr;
-				//compress long desc
-				if(nolongdesc == 0 && epgnode->desc != NULL)
-				{
-					ret = ozip(epgnode->desc, strlen(epgnode->desc) + 1, &zbuf, &zlen, 1);
-					if(ret == 0)
-					{
-						free(epgnode->desc); epgnode->desc = NULL;
-						epgnode->desc = zbuf;
-						epgnode->desccomplen = zlen;
-					}
-				}
 				m_unlock(&status.epgmutex, 4);
 
 			}
@@ -588,6 +650,9 @@ int readmhwsummary(struct stimerthread* self, struct dvbdev* fenode)
 	time_t akttime = 0;
 	char* tmpstr = NULL;
 	struct mhwsummary* mhwsummary = NULL;
+	char* zbuf = NULL;
+	int zlen = 0, ret = 0;
+	struct mhwcache* cache = NULL;
 
 	buf = calloc(1, MINMALLOC);
 	if(buf == NULL)
@@ -637,12 +702,10 @@ int readmhwsummary(struct stimerthread* self, struct dvbdev* fenode)
 			dmxclose(dmxnode, -1);
 			free(buf);
 			free(firstbuf);
-printf("eeeeeeeeeeeeeeeeeeeeee1\n");
 			return -1;
 		}
 		readlen = 0;
 		len = buf[2] | ((buf[1] & 0x0f) << 8);
-printf("len = %d\n", len);
 		if(len + 3 <= MINMALLOC)
 			readlen = dvbread(dmxnode, buf, 3, len, 1000000);
 		if(readlen <= 0)
@@ -662,10 +725,7 @@ printf("len = %d\n", len);
 
 		// Invalid Data
 		if(readlen < 12 || buf[7] != 0xFF || buf[8] != 0xFF || buf[9] !=0xFF || buf[10] >= 10)
-{
-printf("continue\n");
 			continue;
-}
 
 		if(first == 1)
 		{
@@ -683,12 +743,27 @@ printf("continue\n");
 
 		buf[readlen + 3] = '\0';	//String terminator
 
-		printf("id=%d", HILO32(mhwsummary->program_id));
+		cache = getmhwcache(HILO32(mhwsummary->program_id));
+		if(cache != NULL && cache->epgnode != NULL)
+		{
 
-		//Index of summary text beginning
- 		tmpstr = ostrcat(buf + MHWSUMMARYLEN + mhwsummary->nb_replays * 7, NULL, 0, 0);
-		printf("%s\n", tmpstr);
-		free(tmpstr); tmpstr = NULL;
+			//Index of summary text beginning
+ 			tmpstr = buf + MHWSUMMARYLEN + mhwsummary->nb_replays * 7;
+			printf("%s\n", tmpstr);
+
+			//compress long desc
+			if(tmpstr != NULL)
+			{
+				ret = ozip(tmpstr, strlen(tmpstr) + 1, &zbuf, &zlen, 1);
+				if(ret == 0)
+				{
+					free(cache->epgnode->desc); cache->epgnode->desc = NULL;
+					cache->epgnode->desc = zbuf;
+					cache->epgnode->desccomplen = zlen;
+				}
+			}
+			tmpstr = NULL;
+		}
 	}
 
 	dmxclose(dmxnode, -1);
@@ -704,6 +779,8 @@ int readmhw2summary(struct stimerthread* self, struct dvbdev* fenode)
 	struct dvbdev* dmxnode;
 	unsigned long quad = 0, quad0 = 0;
 	time_t akttime = 0;
+	char* zbuf = NULL;
+	int zlen = 0, ret = 0;
 
 	buf = calloc(1, MINMALLOC);
 	if(buf == NULL)
@@ -833,6 +910,7 @@ int readmhw(struct stimerthread* self, struct dvbdev* fenode)
 	if(ret != 0)
 	{
 		free(channelbuf); channelbuf = NULL;
+		freemhwcache();
 		return 1;
 	}
 
@@ -840,10 +918,12 @@ int readmhw(struct stimerthread* self, struct dvbdev* fenode)
 	if(ret != 0)
 	{
 		free(channelbuf); channelbuf = NULL;
+		freemhwcache();
 		return 1;
 	}
 
 	free(channelbuf); channelbuf = NULL;
+	freemhwcache();
 	return 0;
 }
 

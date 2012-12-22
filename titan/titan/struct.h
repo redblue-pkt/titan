@@ -1621,6 +1621,13 @@ struct mhw2channel
 	u_char channel_id_lo;
 };
 
+struct mhwcache
+{
+	long id;
+	struct epg* epgnode;
+	struct mhwcache* next;
+};
+
 struct blacklist
 {
   char* file;
