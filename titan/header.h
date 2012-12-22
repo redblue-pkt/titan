@@ -754,6 +754,7 @@ void screensingleepg(struct channel* chnode, struct epg* epgnode, int flag);
 void screenepg(struct channel* chnode, struct epg* epgnode, int flag);
 
 //eit.h
+void epgthreadfunc(struct stimerthread* self);
 struct epg* getepgnext(struct channel* chnode);
 int writeepg(const char* filename);
 void freeepg(struct channel* chnode);
