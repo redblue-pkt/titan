@@ -443,6 +443,7 @@ int readmhwtitle(struct stimerthread* self, struct dvbdev* fenode, struct channe
 			}
 
 			epgnode->title = ostrcat((char*)mhwtitle->title, NULL, 0, 0);
+			epgnode->title = strstrip(epgnode->title);
 			cache = addmhwcache(HILO32(mhwtitle->program_id), epgnode, cache);
 
 			m_unlock(&status.epgmutex, 4);
@@ -555,6 +556,7 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 
 			starttime = dvbtime;
 			endtime = starttime + (getdoub(buf + pos + 8) >> 4) * 60;
+			eventid = (buf[pos + 7] << 24) | (buf[pos + 8] << 16) | (buf[pos + 9] << 8) | buf[pos + 10];
 
 			int lgr = buf[pos + 10] & 0x3f;
 			if(lgr < 65)
@@ -601,7 +603,6 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 
 				m_lock(&status.epgmutex, 4);
 
-				//eventid = (mhwtitle->channel_id << 16) | (mhwtitle->day << 13) | (mhwtitle->hours << 8) | mhwtitle->minutes;
 				epgnode = getepg(tmpchnode, eventid, 1);
 
 #ifndef SIMULATE
@@ -749,7 +750,7 @@ int readmhwsummary(struct stimerthread* self, struct dvbdev* fenode)
 
 			//Index of summary text beginning
  			tmpstr = buf + MHWSUMMARYLEN + mhwsummary->nb_replays * 7;
-			printf("%s\n", tmpstr);
+			tmpstr = stringreplacechar(tmpstr, '\n', ' ');
 
 			//compress long desc
 			if(tmpstr != NULL)
