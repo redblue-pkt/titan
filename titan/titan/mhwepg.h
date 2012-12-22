@@ -125,24 +125,24 @@ int readmhwchannel(struct stimerthread* self, struct dvbdev* fenode, unsigned ch
 
 int readmhw2channel(struct stimerthread* self, struct dvbdev* fenode, unsigned char* channelbuf)
 {
-	int readlen = 0;
+	int readlen = 0, count = 0;
 	unsigned short len = 0;
 	struct dvbdev* dmxnode;
 
-	if(channelbuf == NULL) return -1;
+	if(channelbuf == NULL) return 1;
 
 	if(fenode == NULL) fenode = status.aktservice->fedev;
 	if(fenode == NULL)
 	{
 		debug(400, "no frontend dev in service");
-		return -1;
+		return 1;
 	}
 
 	dmxnode = dmxopen(fenode);
 	if(dmxnode == NULL)
 	{
 		err("open demux dev");
-		return -1;
+		return 1;
 	}
 
 	dmxsetbuffersize(dmxnode, getconfigint("dmxepgbuffersize", NULL));
@@ -155,7 +155,7 @@ start:
 	if(readlen <= 0)
 	{
 		dmxclose(dmxnode, -1);
-		return -1;
+		return 1;
 	}
 	readlen = 0;
 	len = channelbuf[2] | ((channelbuf[1] & 0x0f) << 8);
@@ -164,13 +164,18 @@ start:
 	if(readlen <= 0)
 	{
 		dmxclose(dmxnode, -1);
-		return -1;
+		return 1;
 	}
 
-	if(channelbuf[3] != 0) goto start;
+	count++;
+	if(channelbuf[3] != 0 && count < 6) goto start;
 
 	dmxclose(dmxnode, -1);
-	return readlen;
+
+	if(count >= 6)
+		return 1;
+	else
+		return 0;
 }
 
 int readmhwtitle(struct stimerthread* self, struct dvbdev* fenode, struct channel* chnode, unsigned char* channelbuf, int channelcount)
@@ -736,7 +741,12 @@ int readmhw2(struct stimerthread* self, struct dvbdev* fenode)
 		return 1;
 	}
 
-	readmhw2channel(self, fenode, channelbuf);
+	ret = readmhw2channel(self, fenode, channelbuf);
+	if(ret != 0)
+	{
+		free(channelbuf); channelbuf = NULL;
+		return 1;
+	}
 
 	ret = readmhw2title(self, fenode, NULL, channelbuf);
 	if(ret != 0)
