@@ -461,22 +461,19 @@ struct epg* updateepg(struct channel* chnode, struct epg* epgnode, int eventid, 
 			node = node->next;
 		}
 
-		if(prev != NULL)
+		//check if new epg overlapps prev epg
+		if(prev != NULL && epgnode->starttime < prev->endtime)
 		{
-			//check if new epg overlapps prev epg
-			if(epgnode->starttime < prev->endtime)
-			{
-				struct epg *tmp = prev->prev;
-				addoldentryepg(chnode, prev, 1);
-				prev = tmp;
-			}
-			//check if new epg overlaps next epg
-			while(node != NULL && epgnode->endtime > node->starttime)
-			{
-				struct epg *tmp = node;
-				node = node->next;
-				addoldentryepg(chnode, tmp, 1);
-			}
+			struct epg *tmp = prev->prev;
+			addoldentryepg(chnode, prev, 1);
+			prev = tmp;
+		}
+		//check if new epg overlaps next epg
+		while(node != NULL && epgnode->endtime > node->starttime)
+		{
+			struct epg *tmp = node;
+			node = node->next;
+			addoldentryepg(chnode, tmp, 1);
 		}
 
 		if(prev == NULL)
@@ -580,42 +577,26 @@ struct epg* addepg(struct channel* chnode, int eventid, int version, time_t star
 		node = last->next;
 	}
 
- 	if(prev != NULL)
+	//check if new epg overlaps next epg
+	while(node != NULL && newnode->endtime > node->starttime)
 	{
-		/*
-		//don't save epg with same starttime / endtime
-		if(newnode->starttime == prev->starttime && newnode->endtime == prev->endtime)
-		{
-			free(newnode); newnode = NULL;
-			if(flag == 0) m_unlock(&status.epgmutex, 4);
-			return NULL;
-		}
-		*/
-		//check if new epg overlaps next epg
-		while(node != NULL && newnode->endtime > node->starttime)
-		{
-			struct epg *tmp = node;
-			node = node->next;
-			addoldentryepg(chnode, tmp, 1);
-		}
-		//check if new epg overlapps prev epg
-		if(newnode->starttime < prev->endtime)
-		{
-			//struct epg *tmp = prev->prev;
-			//addoldentryepg(chnode, prev, 1);
-			//prev = tmp;
+		struct epg *tmp = node;
+		node = node->next;
+		addoldentryepg(chnode, tmp, 1);
+	}
+	//check if new epg overlapps prev epg
+	if(prev != NULL && newnode->starttime < prev->endtime)
+	{
+		clearepgentry(prev);
+		prev->eventid = eventid;
+		prev->version = version;
+		prev->starttime = starttime;
+		prev->endtime = endtime;
+		prev->parentalrating = 0;
 
-			clearepgentry(prev);
-			prev->eventid = eventid;
-			prev->version = version;
-			prev->starttime = starttime;
-			prev->endtime = endtime;
-			prev->parentalrating = 0;
-
-			free(newnode); newnode = NULL;
-			if(flag == 0) m_unlock(&status.epgmutex, 4);
-			return prev;
-		}
+		free(newnode); newnode = NULL;
+		if(flag == 0) m_unlock(&status.epgmutex, 4);
+		return prev;
 	}
 
 	if(prev == NULL)
