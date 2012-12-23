@@ -1619,6 +1619,8 @@ struct mhw2channel
 	u_char transponder_id_lo;
 	u_char channel_id_hi;
 	u_char channel_id_lo;
+	u_char                                :8;
+	u_char                                :8;
 };
 
 struct mhwcache
