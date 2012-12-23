@@ -1699,6 +1699,8 @@ void epgthreadfunc(struct stimerthread* self)
 			readeit(self, NULL, NULL, 0);
 		if(self->aktion != STOP && self->aktion != PAUSE)
 			readmhw(self, NULL);
+		if(self->aktion != STOP && self->aktion != PAUSE)
+			readmhw2(self, NULL);
 
 		//wait for next run
 		while(self->aktion != STOP && self->aktion != PAUSE)
