@@ -2,6 +2,7 @@
 #define MHWEPG_H
 
 //channel C+ DEMANDE for test on astra 19.2 (mhw)
+//channel C+ PORTADA for test on astra 19.2 (mhw2)
 
 struct mhwcache* addmhwcache(int id, struct epg* epgnode, struct mhwcache* last)
 {
@@ -179,7 +180,7 @@ struct mhw2channel* getmhw2channel(unsigned char* channelbuf, int id)
 
 	for(i = 0; i < channelcount; i++)
 	{
-		if(i == id) return mhw2channel;
+		if(i == id - 1) return mhw2channel;
 		mhw2channel++;
 	}
 
@@ -548,25 +549,26 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 		while(pos < len)
  		{
 			int channelid = buf[pos];
-
-			//get start/endtime
-			dvbtime = (getdoub(buf + pos + 3) - 40587) * 86400
-			 + (((buf[pos + 5] & 0xf0) >> 4) * 10 + (buf[pos + 5] & 0x0f)) * 3600
-			 + (((buf[pos + 6] & 0xf0) >> 4) * 10 + (buf[pos + 6] & 0x0f)) * 60;
-
-			starttime = dvbtime;
-			endtime = starttime + (getdoub(buf + pos + 8) >> 4) * 60;
 			eventid = (buf[pos + 7] << 24) | (buf[pos + 8] << 16) | (buf[pos + 9] << 8) | buf[pos + 10];
 
-			int lgr = buf[pos + 10] & 0x3f;
+			//get start/endtime
+			pos += 11;
+			dvbtime = (getdoub(buf + pos) - 40587) * 86400
+			 + (((buf[pos + 2] & 0xf0) >> 4) * 10 + (buf[pos + 2] & 0x0f)) * 3600
+			 + (((buf[pos + 3] & 0xf0) >> 4) * 10 + (buf[pos + 3] & 0x0f)) * 60;
+
+			starttime = dvbtime;
+			endtime = starttime + (getdoub(buf + pos + 5) >> 4) * 60;
+
+			int lgr = buf[pos + 7] & 0x3f;
 			if(lgr < 65)
 			{
-				memcpy(tmpstr, buf + pos + 11, lgr);
+				memcpy(tmpstr, buf + pos + 8, lgr);
 				tmpstr[lgr] = '\0';
 			}
 			else
 				tmpstr[0] = '\0';
-			pos += lgr + 11;
+			pos += lgr + 8;
 			//program->id = getdoub(buf + pos + 1);
 
 			mhw2channel = getmhw2channel(channelbuf, channelid);
@@ -586,7 +588,7 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 				if(tmpchnode == NULL)
 				{
 					debug(1000, "out -> NULL detect");
-					pos += 4;
+					pos += 3;
 					continue;
 				}
 
@@ -596,7 +598,7 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 				{
 					if(getepgscanlist(serviceid, transponderid) == NULL)
 					{
-						pos += 4;
+						pos += 3;
 						continue;
 					}
 				}
@@ -609,7 +611,7 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 				if(endtime < time(NULL) || starttime > time(NULL) + epgmaxsec)
 				{
 					m_unlock(&status.epgmutex, 4);
-					pos += 4;
+					pos += 3;
 					continue;
 				}
 #endif
@@ -623,7 +625,7 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 				{
 					debug(1000, "out -> NULL detect");
 					m_unlock(&status.epgmutex, 4);
-					pos += 4;
+					pos += 3;
 					continue;
 				}
 
@@ -633,7 +635,7 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 				m_unlock(&status.epgmutex, 4);
 
 			}
-			pos += 4;
+			pos += 3;
 		}
 	}
 
