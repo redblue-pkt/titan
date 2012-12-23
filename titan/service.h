@@ -500,13 +500,14 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 		}
 	}
 
+	//wait for epg thread stops
 	if(status.epgthread != NULL)
 	{
 		int i = 0;
 		while(status.epgthread->status != INPAUSE)
 		{
 			usleep(10000);
-			i++; if(i > 200) break;
+			i++; if(i > 300) break;
 		}
 		status.epgthread->aktion = START;
 	}
