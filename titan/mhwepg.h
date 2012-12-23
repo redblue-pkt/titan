@@ -5,6 +5,233 @@
 //channel C+ PORTADA for test on astra 19.2 (mhw2)
 
 //global function
+
+struct freesat
+{
+	unsigned int value;
+	short bits;
+	char next;
+};
+
+struct skybox
+{
+	char *value;
+	struct skybox *p0;
+	struct skybox *p1;
+};
+typedef struct skybox skyboxnode;
+
+static struct freesat *freesattable[2][128];
+static int freesattablesize[2][128];
+static skyboxnode* skyboxtable[2];
+
+char *freesathuffmandecode(unsigned char *src, size_t size)
+{
+	int tableid;
+
+	if(src[0] == 0x1f && (src[1] == 1 || src[1] == 2))
+	{
+		int uncompressedlen = 30, p = 0;
+		char *uncompressed = NULL;
+		unsigned value = 0, byte = 2, bit = 0;
+		unsigned char lastch = '\0';
+
+		uncompressed = calloc(1, uncompressedlen + 1);
+		if(uncompressed == NULL)
+		{
+			err("no mem");
+			return NULL;
+		}
+
+		tableid = src[1] - 1;
+		while(byte < 6 && byte < size)
+		{
+			value |= src[byte] << ((5 - byte) * 8);
+			byte++;
+		}
+
+		do
+		{
+			int found = 0;
+			unsigned bitshift = 0;
+			if(lastch == '\1')
+			{
+				char nextchar = (value >> 24) & 0xff;
+				found = 1;
+				//Encoded in the next 8 bits.
+				//Terminated by the first ASCII character.
+				bitshift = 8;
+				if((nextchar & 0x80) == 0)
+					lastch = nextchar;
+				if(p >= uncompressedlen)
+				{
+					uncompressedlen += 10;
+					uncompressed = (char *)realloc(uncompressed, uncompressedlen + 1);
+				}
+				uncompressed[p++] = nextchar;
+				uncompressed[p] = '\0';
+			}
+			else
+			{
+				int j = 0;
+				for(j = 0; j < freesattablesize[tableid][lastch]; j++)
+				{
+					unsigned mask = 0, maskbit = 0x80000000;
+					short kk = 0;
+					for(kk = 0; kk < freesattable[tableid][lastch][j].bits; kk++)
+					{
+						mask |= maskbit;
+						maskbit >>= 1;
+					}
+					if((value & mask) == freesattable[tableid][lastch][j].value)
+					{
+ 						char nextchar = freesattable[tableid][lastch][j].next;
+						bitshift = freesattable[tableid][lastch][j].bits;
+						if(nextchar != '\0' && nextchar != '\1')
+						{
+							if(p >= uncompressedlen)
+							{
+								uncompressedlen += 10;
+								uncompressed = (char *)realloc(uncompressed, uncompressedlen + 1);
+							}
+							uncompressed[p++] = nextchar;
+							uncompressed[p] = 0;
+						}
+						found = 1;
+						lastch = nextchar;
+						break;
+					}
+				}
+			}
+			if(found)
+			{
+				//Shift up by the number of bits.
+				unsigned b = 0;
+				for(b = 0; b < bitshift; b++)
+				{
+					value = (value << 1) & 0xfffffffe;
+					if(byte < size)
+						value |= (src[byte] >> (7 - bit)) & 1;
+					if(bit == 7)
+					{
+						bit = 0;
+						byte++;
+					}
+					else
+						bit++;
+				}
+			}
+			else
+			{
+				debug(400, "Missing table %d entry: <%s>", tableid + 1, uncompressed);
+				//Entry missing in table.
+				return uncompressed;
+			}
+		} while(lastch != '\0' && value != 0);
+
+		return uncompressed;
+	}
+	return NULL;
+}
+
+//flag 0: SKY IT
+//flag 1: SKY UK
+int skyhuffmandecode(unsigned char *buf, int len, unsigned char *decodetxt, int flag)
+{
+	skyboxnode *nh, h = (flag == 0) ? *skyboxtable[0] : *skyboxtable[1];
+	int i = 0, p = 0, q = 0;
+	int codeerr = 0, isfound = 0;
+	unsigned char byte = 0, lastbyte = 0;
+	unsigned char mask = 0, lastmask = 0;
+
+	nh = &h;
+	decodetxt[0] = '\0';
+
+	for(i = 0; i < len; i++)
+	{
+		byte = buf[i];
+		mask = 0x80;
+		if(i == 0)
+		{
+			mask = 0x20;
+			lastbyte = i;
+			lastmask = mask;
+		}
+loop1:
+		if(isfound)
+		{
+			lastbyte = i;
+			lastmask = mask;
+			isfound = 0;
+		}
+		if((byte & mask) == 0)
+		{
+			if(codeerr)
+			{
+				q++;
+				goto loop2;
+			}
+			if(nh->p0 != NULL)
+			{
+				nh = nh->p0;
+				if(nh->value != NULL)
+				{
+					memcpy (&decodetxt[p], nh->value, strlen(nh->value));
+					p += strlen(nh->value);
+					nh = &h;
+					isfound = 1;
+				}
+			}
+			else
+			{
+				memcpy(&decodetxt[p], "<...?...>", 9);
+				p += 9;
+				i = lastbyte;
+				byte = buf[lastbyte];
+				mask = lastmask;
+				codeerr = 1;
+				goto loop1;
+			}
+		}
+		else
+		{
+			if(codeerr)
+			{
+				q++;
+				goto loop2;
+			}
+			if(nh->p1 != NULL)
+			{
+				nh = nh->p1;
+				if(nh->value != NULL)
+				{
+					memcpy(&decodetxt[p], nh->value, strlen(nh->value));
+					p += strlen(nh->value);
+					nh = &h;
+					isfound = 1;
+				}
+			}
+			else
+			{
+				memcpy(&decodetxt[p], "<...?...>", 9);
+				p += 9;
+				i = lastbyte;
+				byte = buf[lastbyte];
+				mask = lastmask;
+				codeerr = 1;
+				goto loop1;
+			}
+		}
+loop2:
+		mask = mask >> 1;
+		if(mask > 0)
+			goto loop1;
+	}
+
+	decodetxt[p] = '\0';
+	return p;
+}
+
 struct mhwcache* addmhwcache(int id, struct epg* epgnode, struct mhwcache* last)
 {
 	//debug(1000, "in");
@@ -1124,6 +1351,164 @@ int readskyboxchannel(struct stimerthread* self, struct dvbdev* fenode, unsigned
 
 int readskyboxtitle(struct stimerthread* self, struct dvbdev* fenode, struct channel* chnode, unsigned char* channelbuf)
 {
+	int readlen = 0, pos = 0, len = 0;
+	unsigned char *buf = NULL;
+	struct dvbdev* dmxnode;
+	struct mhw2channel* mhw2channel = NULL;
+	uint64_t transponderid = 0;
+	int serviceid = 0, eventid = 0;
+	struct channel* tmpchnode = NULL;
+	unsigned long quad = 0, quad0 = 0;
+	struct epg* epgnode = NULL;
+	time_t dvbtime = 0, starttime = 0, endtime = 0, akttime = 0;
+	time_t epgmaxsec = status.epgdays * 24 * 60 * 60;
+	char tmpstr[65];
+	struct mhwcache* cache = NULL;
+
+	if(chnode == NULL) chnode = status.aktservice->channel;
+	if(chnode == NULL || (chnode == status.aktservice->channel && status.aktservice->type != CHANNEL))
+		return 1;
+
+	buf = calloc(1, MINMALLOC);
+	if(buf == NULL)
+	{
+		err("no memory");
+		return 1;
+	}
+
+	if(fenode == NULL) fenode = status.aktservice->fedev;
+	if(fenode == NULL)
+	{
+		debug(400, "no frontend dev in service");
+		free(buf);
+		return 1;
+	}
+
+	dmxnode = dmxopen(fenode);
+	if(dmxnode == NULL)
+	{
+		err("open demux dev");
+		free(buf);
+		return 1;
+	}
+
+	dmxsetbuffersize(dmxnode, getconfigint("dmxepgbuffersize", NULL));
+	dmxsetsource(dmxnode, fenode->fedmxsource);
+
+	//AddFilter (0x30, 0xa0, 0xfc); //SKY Titles batch 0 of 7
+	dmxsetfilter(dmxnode, 0x234, 0, 18);
+	akttime = time(NULL);
+
+	while(self->aktion != STOP && self->aktion != PAUSE)
+	{
+		readlen = dvbread(dmxnode, buf, 0, 3, 2000000);
+		if(readlen <= 0)
+		{
+			dmxclose(dmxnode, -1);
+			free(buf);
+			return 1;
+		}
+		readlen = 0;
+		len = buf[2] | ((buf[1] & 0x0f) << 8);
+		if(len + 3 <= MINMALLOC)
+			readlen = dvbread(dmxnode, buf, 3, len, 2000000);
+		if(readlen <= 0)
+		{
+			dmxclose(dmxnode, -1);
+			free(buf);
+			return 1;
+		}
+
+		//check for end
+		quad = getquad(buf + 3);
+		if(quad0 == 0) quad0 = quad;
+		else if(quad == quad0)
+		{
+			debug(400, "mhw2epg no more new data, wait for next run");
+
+			if(chnode != NULL && chnode->transponder != NULL)
+				chnode->transponder->lastepg = time(NULL) + 7700;
+			break;
+		}
+
+		//stop epgscan after 2 min
+		if(akttime + 120 < time(NULL))
+		{
+			debug(400, "mhw2epg timeout");
+			break;
+		}
+
+		//////////////
+
+	int p = 0;
+	unsigned short int channelid = 0;
+	unsigned short int mjdtime = 0;
+	int len1 = 0;
+	int len2 = 0;
+
+  if(readlen + 3 < 20)
+		return 1;
+
+	/*
+  if (memcmp (InitialTitle, Data, 20) == 0) //data is the same as initial title
+    return 2;
+  else {
+    if (nTitles == 0)
+      memcpy (InitialTitle, Data, 20); //copy data into initial title
+	 */
+
+
+		channelid = (buf[3] << 8) | buf[4];
+    mjdtime = ((buf[8] << 8) | buf[9]);
+		if(channelid > 0)
+		{
+			if(mjdtime > 0)
+			{
+				p = 10;
+				do
+				{
+          //T->EventId = (buf[p] << 8) | buf[p + 1];
+          len1 = ((buf[p + 2] & 0x0f) << 8) | buf[p + 3];
+          if(buf[p + 4] != 0xb5)
+					{
+            err("Data error signature for title - buf[p + 4] != 0xb5");
+						break;
+					}
+					if(len1 > readlen + 3)
+					{
+						err("Data error signature for title - len1 > readlen + 3");
+						break;
+					}
+          p += 4;
+          len2 = buf[p + 1] - 7;
+          //T->StartTime = ((MjdTime - 40587) * 86400) + ((Data[p + 2] << 9) | (Data[p + 3] << 1));
+          //T->Duration = ((Data[p + 4] << 9) | (Data[p + 5] << 1));
+
+          unsigned char tmp[4096]; //TODO smarter
+					len2 = skyhuffmandecode(&buf[p + 9], len2, tmp, 0);
+					if(len2 == 0)
+					{
+						err("Could not huffman-decode title-text, skipping title");
+						//return 1; //non-fatal error
+					}
+					/*)
+          T->Text = (unsigned char *) malloc (Len2 + 1);
+          if (T->Text == NULL) {
+            LogE(0, prep("Titles memory allocation error."));
+            return 0;
+          }
+          T->Text[Len2] = '\0'; //end string with NULL character
+          memcpy (T->Text, tmp, Len2);
+          CleanString (T->Text);
+          T->SummaryAvailable = 1; //TODO I assume this is true?
+					*/
+          p += len1;
+        } while(p < readlen + 3);
+      }
+    }
+  }
+
+	dmxclose(dmxnode, -1);
 	return 0;
 }
 
