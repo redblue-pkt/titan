@@ -9,8 +9,6 @@ struct mhwcache* addmhwcache(int id, struct epg* epgnode, struct mhwcache* last)
 {
 	//debug(1000, "in");
 	struct mhwcache *newnode = NULL, *prev = NULL, *node = mhwcache;
-	char *name = NULL;
-	int ret = 0;
 
 	newnode = (struct mhwcache*)calloc(1, sizeof(struct mhwcache));
 	if(newnode == NULL)
@@ -389,7 +387,6 @@ int readmhwsummary(struct stimerthread* self, struct dvbdev* fenode)
 	int readlen = 0, first = 1, len = 0;
 	unsigned char *buf = NULL, *firstbuf = NULL;
 	struct dvbdev* dmxnode;
-	unsigned long quad = 0, quad0 = 0;
 	time_t akttime = 0;
 	char* tmpstr = NULL;
 	struct mhwsummary* mhwsummary = NULL;
@@ -445,7 +442,7 @@ int readmhwsummary(struct stimerthread* self, struct dvbdev* fenode)
 			dmxclose(dmxnode, -1);
 			free(buf);
 			free(firstbuf);
-			return -1;
+			return 1;
 		}
 		readlen = 0;
 		len = buf[2] | ((buf[1] & 0x0f) << 8);
@@ -456,7 +453,7 @@ int readmhwsummary(struct stimerthread* self, struct dvbdev* fenode)
 			dmxclose(dmxnode, -1);
 			free(buf);
 			free(firstbuf);
-			return -1;
+			return 1;
 		}
 
 		//stop epgscan after 2 min
@@ -491,7 +488,7 @@ int readmhwsummary(struct stimerthread* self, struct dvbdev* fenode)
 		{
 
 			//Index of summary text beginning
- 			tmpstr = buf + MHWSUMMARYLEN + mhwsummary->nb_replays * 7;
+ 			tmpstr = (char*)(buf + MHWSUMMARYLEN + mhwsummary->nb_replays * 7);
 			tmpstr = stringreplacechar(tmpstr, '\n', ' ');
 
 			//compress long desc
@@ -524,7 +521,7 @@ int readmhw(struct stimerthread* self, struct dvbdev* fenode)
 	if(fenode == NULL)
 	{
 		debug(400, "no frontend dev in service");
-		return -1;
+		return 1;
 	}
 
 	channelbuf = calloc(1, MINMALLOC);
@@ -695,7 +692,7 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 		{
 			dmxclose(dmxnode, -1);
 			free(buf);
-			return -1;
+			return 1;
 		}
 		readlen = 0;
 		len = buf[2] | ((buf[1] & 0x0f) << 8);
@@ -705,7 +702,7 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 		{
 			dmxclose(dmxnode, -1);
 			free(buf);
-			return -1;
+			return 1;
 		}
 
 		//check for end
@@ -751,7 +748,7 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 			else
 				tmpstr[0] = '\0';
 			pos += lgr + 8;
-			//program->id = getdoub(buf + pos + 1);
+			int progid = getdoub(buf + pos + 1);
 
 			mhw2channel = getmhw2channel(channelbuf, channelid);
 			if(mhw2channel != NULL)
@@ -812,7 +809,7 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 				}
 
 				epgnode->title = ostrcat(tmpstr, NULL, 0, 0);
-				//cache = addmhwcache(HILO32(mhwtitle->program_id), epgnode, cache);
+				cache = addmhwcache(progid, epgnode, cache);
 
 				m_unlock(&status.epgmutex, 4);
 
@@ -835,6 +832,8 @@ int readmhw2summary(struct stimerthread* self, struct dvbdev* fenode)
 	time_t akttime = 0;
 	char* zbuf = NULL;
 	int zlen = 0, ret = 0;
+	char* tmpstr = NULL;
+	struct mhwcache* cache = NULL;
 
 	buf = calloc(1, MINMALLOC);
 	if(buf == NULL)
@@ -872,7 +871,7 @@ int readmhw2summary(struct stimerthread* self, struct dvbdev* fenode)
 		{
 			dmxclose(dmxnode, -1);
 			free(buf);
-			return -1;
+			return 1;
 		}
 		readlen = 0;
 		len = buf[2] | ((buf[1] & 0x0f) << 8);
@@ -882,7 +881,7 @@ int readmhw2summary(struct stimerthread* self, struct dvbdev* fenode)
 		{
 			dmxclose(dmxnode, -1);
 			free(buf);
-			return -1;
+			return 1;
 		}
 
 		//check for end
@@ -897,35 +896,53 @@ int readmhw2summary(struct stimerthread* self, struct dvbdev* fenode)
 			break;
 		}
 
-/*
-      summary = malloc (sizeof (struct summary));
-      summaries[nb_summaries++] = summary;
+		int textlen = buf[14];
+		int pos = 15;
+		int loop = buf[pos + textlen] & 0x0f;
+		int progid = (buf[3] << 8) | buf[4];
 
-      summary->id = getdoub(buf + 3);
-      nb = buf[12];
-      int pos = 13 + nb;
-      nb = buf[pos] & 0x0f;
-      pos += 1;
-      len=0;
-      int len_line;
-      for(; nb > 0; nb--)
-      {
-				len_line = buf[pos + len];
-				buf[pos + len] = '|';
-				len += len_line+1;
-      }
-      if(len > 0)
-        buf[pos + len] = 0;
-      else
-        buf[pos + 1] = 0;
-      summary->text = malloc(len + 1);
-      if(summary->text == NULL)
-      {
-         fprintf (stderr,"Memory allocation error %d\n", len + 1);
-         exit(1);
-      }
-      memcpy(summary->text, buf + pos + 1, len + 1);
-*/
+		buf[pos + textlen + 1] = '\0';
+		tmpstr = ostrcat(tmpstr, (char*)&buf[pos], 1, 0);
+
+		pos += (textlen + 1);
+		if(loop > 0)
+		{
+			while(loop > 0)
+			{
+				textlen = buf[pos];
+				pos += 1;
+				if(pos + textlen < readlen + 3)
+				{
+					buf[pos + textlen + 1] = '\0';
+					tmpstr = ostrcat(tmpstr, (char*)&buf[pos], 1, 0);
+      	}
+					else
+						break;
+
+				pos += textlen;
+				loop--;
+			}
+		}
+
+		cache = getmhwcache(progid);
+		if(cache != NULL && cache->epgnode != NULL)
+		{
+			tmpstr = stringreplacechar(tmpstr, '\n', ' ');
+
+			//compress long desc
+			if(tmpstr != NULL)
+			{
+				ret = ozip(tmpstr, strlen(tmpstr) + 1, &zbuf, &zlen, 1);
+				if(ret == 0)
+				{
+					free(cache->epgnode->desc); cache->epgnode->desc = NULL;
+					cache->epgnode->desc = zbuf;
+					cache->epgnode->desccomplen = zlen;
+				}
+			}
+		}
+
+		free(tmpstr); tmpstr = NULL;
 	}
 
 	dmxclose(dmxnode, -1);
@@ -942,7 +959,7 @@ int readmhw2(struct stimerthread* self, struct dvbdev* fenode)
 	if(fenode == NULL)
 	{
 		debug(400, "no frontend dev in service");
-		return -1;
+		return 1;
 	}
 
 	channelbuf = calloc(1, MINMALLOC);
@@ -963,10 +980,202 @@ int readmhw2(struct stimerthread* self, struct dvbdev* fenode)
 	if(ret != 0)
 	{
 		free(channelbuf); channelbuf = NULL;
+		freemhwcache();
+		return 1;
+	}
+
+	ret = readmhw2summary(self, fenode);
+	if(ret != 0)
+	{
+		free(channelbuf); channelbuf = NULL;
+		freemhwcache();
 		return 1;
 	}
 
 	free(channelbuf); channelbuf = NULL;
+	freemhwcache();
+	return 0;
+}
+
+//satbox
+struct mhw2channel* getskyboxchannel(unsigned char* buf, int id)
+{
+	if(buf == NULL) return NULL;
+
+	int bouquetdesclen = ((buf[8] & 0x0f) << 8) | buf[9];
+	int looplen = ((buf[bouquetdesclen + 10] & 0x0f) << 8) | buf[bouquetdesclen + 11];
+	int p1 = bouquetdesclen + 12;
+
+	while(looplen > 0)
+	{
+		unsigned short int tid = (buf[p1] << 8) | buf[p1 + 1];
+		unsigned short int nid = (buf[p1 + 2] << 8) | buf[p1 + 3];
+		int transpdesclen = ((buf[p1 + 4] & 0x0f) << 8) | buf[p1 + 5];
+		int p2 = p1 + 6;
+
+		p1 += transpdesclen + 6;
+		looplen -= transpdesclen + 6;
+		while(transpdesclen > 0)
+		{
+			unsigned char desctag = buf[p2];
+			int desclen = buf[p2 + 1];
+			int p3 = p2 + 2;
+
+			p2 += desclen + 2;
+			transpdesclen -= (desclen + 2);
+			switch(desctag)
+			{
+				case 0xb1:
+				{
+					p3 += 2;
+					desclen -= 2;
+					while(desclen > 0)
+					{
+						unsigned short int sid = (buf[p3] << 8) | buf[p3 + 1];
+						unsigned short int channelid = (buf[p3 + 3] << 8) | buf[p3 + 4];
+						unsigned short int skynr = (buf[p3 + 5] << 8) | buf[p3 + 6];
+						if(skynr > 100 && skynr < 1000)
+						{
+							if(channelid > 0)
+							{
+
+							/*
+                	sChannel *C;
+                	if (ChannelSeq.count (ChannelId) == 0) { //not found
+                  	C = &sChannels[nChannels];
+                  	C->ChannelId = ChannelId;
+                  	//C->NumberOfEquivalences = 1; //there is always an original channel. every equivalence adds 1
+                  	C->Src = Source (); //assume all EPG channels are on same satellite, if not, manage this via equivalents!!!
+                  	C->Nid = Nid;
+                  	C->Tid = Tid;
+                  	C->Sid = Sid;
+                  	C->SkyNumber = SkyNumber;
+
+
+
+                  ChannelSeq[C->ChannelId] = nChannels; //fill lookup table to go from channel-id to sequence nr in table
+                  nChannels++;
+									}
+								 */
+							}
+						}
+					}
+					p3 += 9;
+					desclen -= 9;
+				}
+				break;
+			default:
+				break;
+			}
+		}
+	}
+
+	return NULL;
+}
+
+int readskyboxchannel(struct stimerthread* self, struct dvbdev* fenode, unsigned char* buf)
+{
+	int readlen = 0;
+	unsigned short len = 0;
+	struct dvbdev* dmxnode;
+
+	if(buf == NULL) return 1;
+
+	if(fenode == NULL) fenode = status.aktservice->fedev;
+	if(fenode == NULL)
+	{
+		debug(400, "no frontend dev in service");
+		return 1;
+	}
+
+	dmxnode = dmxopen(fenode);
+	if(dmxnode == NULL)
+	{
+		err("open demux dev");
+		return 1;
+	}
+
+	dmxsetbuffersize(dmxnode, getconfigint("dmxepgbuffersize", NULL));
+	dmxsetsource(dmxnode, fenode->fedmxsource);
+
+	dmxsetfilter(dmxnode, 0x11, 0, 19); //0x4a
+
+	readlen = dvbread(dmxnode, buf, 0, 3, 2000000);
+	if(readlen <= 0)
+	{
+		dmxclose(dmxnode, -1);
+		free(buf);
+		return 1;
+	}
+	readlen = 0;
+	len = buf[2] | ((buf[1] & 0x0f) << 8);
+	if(len + 3 <= MINMALLOC)
+		readlen = dvbread(dmxnode, buf, 3, len, 2000000);
+	if(readlen <= 0)
+	{
+		dmxclose(dmxnode, -1);
+		free(buf);
+		return 1;
+	}
+
+	dmxclose(dmxnode, -1);
+	return 0;
+}
+
+int readskyboxtitle(struct stimerthread* self, struct dvbdev* fenode, struct channel* chnode, unsigned char* channelbuf)
+{
+	return 0;
+}
+
+int readskyboxsummary(struct stimerthread* self, struct dvbdev* fenode)
+{
+	return 0;
+}
+
+int readsatbox(struct stimerthread* self, struct dvbdev* fenode)
+{
+	int ret = 0;
+	unsigned char* channelbuf = NULL;
+
+	if(fenode == NULL) fenode = status.aktservice->fedev;
+	if(fenode == NULL)
+	{
+		debug(400, "no frontend dev in service");
+		return 1;
+	}
+
+	channelbuf = calloc(1, MINMALLOC);
+	if(channelbuf == NULL)
+	{
+		err("no memory");
+		return 1;
+	}
+
+	ret = readskyboxchannel(self, fenode, channelbuf);
+	if(ret != 0)
+	{
+		free(channelbuf); channelbuf = NULL;
+		return 1;
+	}
+
+	ret = readskyboxtitle(self, fenode, NULL, channelbuf);
+	if(ret != 0)
+	{
+		free(channelbuf); channelbuf = NULL;
+		freemhwcache();
+		return 1;
+	}
+
+	ret = readskyboxsummary(self, fenode);
+	if(ret != 0)
+	{
+		free(channelbuf); channelbuf = NULL;
+		freemhwcache();
+		return 1;
+	}
+
+	free(channelbuf); channelbuf = NULL;
+	freemhwcache();
 	return 0;
 }
 
