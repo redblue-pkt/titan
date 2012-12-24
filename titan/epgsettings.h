@@ -133,11 +133,31 @@ void screenepgsettings()
 	addchoicebox(epglistmode, "3", _("scan and whitelist"));
 	setchoiceboxselection(epglistmode, getconfig("epg_listmode", NULL));
 
-	char* tmpstr = NULL;
-	tmpstr = ostrcat(_("deaktiv"), "\n", 0, 0);
-	tmpstr = ostrcat(tmpstr, "01:00\n02:00\n03:00\n04:00\n05:00\n06:00\n07:00\n08:00\n09:00\n10:00\n11:00\n12:00\n13:00\n14:00\n15:00\n16:00\n17:00\n18:00\n19:00\n20:00\n21:00\n22:00\n23:00\n24:00", 1, 0);		
-	changeinput(epgrefresh, tmpstr);
-	free(tmpstr), tmpstr = NULL;
+	addchoicebox(epgrefresh, "0", _("deaktiv"));
+	addchoicebox(epgrefresh, "01:00", "01:00");
+	addchoicebox(epgrefresh, "02:00", "02:00");
+	addchoicebox(epgrefresh, "03:00", "03:00");
+	addchoicebox(epgrefresh, "04:00", "04:00");
+	addchoicebox(epgrefresh, "05:00", "05:00");
+	addchoicebox(epgrefresh, "06:00", "06:00");
+	addchoicebox(epgrefresh, "07:00", "07:00");
+	addchoicebox(epgrefresh, "08:00", "08:00");
+	addchoicebox(epgrefresh, "09:00", "09:00");
+	addchoicebox(epgrefresh, "10:00", "10:00");
+	addchoicebox(epgrefresh, "11:00", "11:00");
+	addchoicebox(epgrefresh, "12:00", "12:00");
+	addchoicebox(epgrefresh, "13:00", "13:00");
+	addchoicebox(epgrefresh, "14:00", "14:00");
+	addchoicebox(epgrefresh, "15:00", "15:00");
+	addchoicebox(epgrefresh, "16:00", "16:00");
+	addchoicebox(epgrefresh, "17:00", "17:00");
+	addchoicebox(epgrefresh, "18:00", "18:00");
+	addchoicebox(epgrefresh, "19:00", "19:00");
+	addchoicebox(epgrefresh, "20:00", "20:00");
+	addchoicebox(epgrefresh, "21:00", "21:00");
+	addchoicebox(epgrefresh, "22:00", "22:00");
+	addchoicebox(epgrefresh, "23:00", "23:00");
+	addchoicebox(epgrefresh, "24:00", "24:00");
 	setchoiceboxselection(epgrefresh, getconfig("epg_refreshtime", NULL));
 		
 	addchoicebox(epgbutton, "0", _("Single EPG")); 	 	 
@@ -181,7 +201,7 @@ void screenepgsettings()
 			addconfigscreen("epgfreespace", epgfreespace);
 			addconfigscreencheck("epg_listmode", epglistmode, "0");
 			status.epglistmode = getconfigint("epg_listmode", NULL);
-			addconfigscreencheck("epg_refreshtime", epgrefresh, "deaktiv");
+			addconfigscreencheck("epg_refreshtime", epgrefresh, "0");
 			addconfigscreencheck("epgbutton", epgbutton, "0");
 			addconfigscreen("gmultiepgzoom", epgzoom);
 			addconfigscreencheck("epgpicon", epgpicon, "0");
