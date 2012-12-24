@@ -1410,11 +1410,11 @@ int readmhw2summary(struct stimerthread* self, struct dvbdev* fenode)
 		if(first == 1)
 		{
 			first = 0;
-			memcpy(firstbuf, buf, MHWTITLELEN);
+			memcpy(firstbuf, buf, MINMALLOC);
 		}
 		else
 		{
-			if(memcmp(firstbuf, buf, MHWTITLELEN) == 0)
+			if(memcmp(firstbuf, buf, MINMALLOC) == 0)
 			{
 				debug(400, "mhw2epg no more new data, wait for next run");
 				break;
