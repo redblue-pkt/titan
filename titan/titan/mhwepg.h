@@ -1052,6 +1052,7 @@ int readmhw(struct stimerthread* self, struct dvbdev* fenode)
 	ret = readmhwtitle(self, fenode, NULL, channelbuf, channelcount);
 	if(ret != 0)
 	{
+		debug(400, "mhwepg no titles found");
 		free(channelbuf); channelbuf = NULL;
 		freemhwcache();
 		return 1;
@@ -1060,6 +1061,7 @@ int readmhw(struct stimerthread* self, struct dvbdev* fenode)
 	ret = readmhwsummary(self, fenode);
 	if(ret != 0)
 	{
+		debug(400, "mhwepg no summary found");
 		free(channelbuf); channelbuf = NULL;
 		freemhwcache();
 		return 1;
@@ -1511,6 +1513,7 @@ int readmhw2(struct stimerthread* self, struct dvbdev* fenode)
 	ret = readmhw2channel(self, fenode, channelbuf);
 	if(ret != 0)
 	{
+		debug(400, "mhw2epg no channel found");
 		free(channelbuf); channelbuf = NULL;
 		return 1;
 	}
@@ -1518,6 +1521,7 @@ int readmhw2(struct stimerthread* self, struct dvbdev* fenode)
 	ret = readmhw2title(self, fenode, NULL, channelbuf);
 	if(ret != 0)
 	{
+		debug(400, "mhw2epg no titles found");
 		free(channelbuf); channelbuf = NULL;
 		freemhwcache();
 		return 1;
@@ -1526,6 +1530,7 @@ int readmhw2(struct stimerthread* self, struct dvbdev* fenode)
 	ret = readmhw2summary(self, fenode);
 	if(ret != 0)
 	{
+		debug(400, "mhw2epg no summary found");
 		free(channelbuf); channelbuf = NULL;
 		freemhwcache();
 		return 1;
@@ -1919,6 +1924,7 @@ int readskybox(struct stimerthread* self, struct dvbdev* fenode)
 	ret = readskyboxchannel(self, fenode, channelbuf);
 	if(ret != 0)
 	{
+		debug(400, "skybox epg no channel found");
 		free(channelbuf); channelbuf = NULL;
 		return 1;
 	}
@@ -1926,6 +1932,7 @@ int readskybox(struct stimerthread* self, struct dvbdev* fenode)
 	ret = readskyboxtitle(self, fenode, NULL, channelbuf);
 	if(ret != 0)
 	{
+		debug(400, "skybox epg no titles found");
 		free(channelbuf); channelbuf = NULL;
 		freemhwcache();
 		return 1;
@@ -1934,6 +1941,7 @@ int readskybox(struct stimerthread* self, struct dvbdev* fenode)
 	ret = readskyboxsummary(self, fenode);
 	if(ret != 0)
 	{
+		debug(400, "skybox epg no summary found");
 		free(channelbuf); channelbuf = NULL;
 		freemhwcache();
 		return 1;
