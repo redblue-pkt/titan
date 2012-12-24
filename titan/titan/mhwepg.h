@@ -947,7 +947,7 @@ int readmhwsummary(struct stimerthread* self, struct dvbdev* fenode)
 	while(self->aktion != STOP && self->aktion != PAUSE)
 	{
 		readlen = dvbread(dmxnode, buf, 0, 3, 2000000);
-		if(readlen <= 0)
+		if(readlen != 3)
 		{
 			dmxclose(dmxnode, -1);
 			free(buf);
@@ -1120,7 +1120,7 @@ int readmhw2channel(struct stimerthread* self, struct dvbdev* fenode, unsigned c
 
 start:
 	readlen = dvbread(dmxnode, channelbuf, 0, 3, 2000000);
-	if(readlen <= 0)
+	if(readlen != 3)
 	{
 		dmxclose(dmxnode, -1);
 		return 1;
@@ -1198,7 +1198,7 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 	while(self->aktion != STOP && self->aktion != PAUSE)
 	{
 		readlen = dvbread(dmxnode, buf, 0, 3, 2000000);
-		if(readlen <= 0)
+		if(readlen != 3)
 		{
 			dmxclose(dmxnode, -1);
 			free(buf);
@@ -1388,7 +1388,7 @@ int readmhw2summary(struct stimerthread* self, struct dvbdev* fenode)
 		tmpstr[0] = '\0';
 
 		readlen = dvbread(dmxnode, buf, 0, 3, 2000000);
-		if(readlen <= 0)
+		if(readlen != 3)
 		{
 			dmxclose(dmxnode, -1);
 			free(buf);
@@ -1640,10 +1640,9 @@ int readskyboxchannel(struct stimerthread* self, struct dvbdev* fenode, unsigned
 	dmxsetfilter(dmxnode, 0x11, 0, 19); //0x4a
 
 	readlen = dvbread(dmxnode, buf, 0, 3, 2000000);
-	if(readlen <= 0)
+	if(readlen != 3)
 	{
 		dmxclose(dmxnode, -1);
-		free(buf);
 		return 1;
 	}
 	readlen = 0;
@@ -1653,7 +1652,6 @@ int readskyboxchannel(struct stimerthread* self, struct dvbdev* fenode, unsigned
 	if(readlen <= 0)
 	{
 		dmxclose(dmxnode, -1);
-		free(buf);
 		return 1;
 	}
 
@@ -1714,7 +1712,7 @@ int readskyboxtitle(struct stimerthread* self, struct dvbdev* fenode, struct cha
 	while(self->aktion != STOP && self->aktion != PAUSE)
 	{
 		readlen = dvbread(dmxnode, buf, 0, 3, 2000000);
-		if(readlen <= 0)
+		if(readlen != 3)
 		{
 			dmxclose(dmxnode, -1);
 			free(buf);
