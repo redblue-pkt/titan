@@ -48,9 +48,9 @@ start:
 //	tmpsearch = ostrcat("find?s=tt;q=", NULL, 0, 0);
 	tmpsearch = ostrcat("find?q=", NULL, 0, 0);
 
-	if(checkinternet == 1)
+	if(checkinternet() == 1)
 	{
-		debug(133, ""Error, Internet Connection not found"");
+		debug(133, "Error, Internet Connection not found");
 		return NULL;
 	}
 
@@ -475,10 +475,10 @@ void screenimdb(char* title, char* dummy1, char* dummy2, char* path, char* file)
 	char* searchstr = NULL, *tmpstr = NULL;	
 	int rcret = 0;
 
-	if(checkinternet == 1)
+	if(checkinternet() == 1)
 	{
 		textbox(_("Message"), _("Error, Internet Connection not found"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 500, 10, 0);
-		return NULL;
+		return;
 	}
 
 	struct skin* imdbskin = getscreen("imdb");

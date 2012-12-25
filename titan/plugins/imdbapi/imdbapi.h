@@ -37,19 +37,20 @@ struct imdbapi* getimdbapi(struct imdbapi** first, char* input, int flag, int fl
 	debug(133, "flag: %d",flag);
 	debug(133, "flag1: %d",flag1);
 
-	char* tmpstr = NULL, *ret = NULL, *tmpsearch = NULL, *savefile = NULL, *savethumb = NULL, *title = NULL;
+//	char* tmpstr = NULL, *ret = NULL, *tmpsearch = NULL, *savefile = NULL, *savethumb = NULL, *title = NULL;
+	char* tmpstr = NULL, *ret = NULL, *tmpsearch = NULL, *savefile = NULL, *title = NULL;
 
-	if(checkinternet == 1)
+	if(checkinternet() == 1)
 	{
-		debug(133, ""Error, Internet Connection not found"");
+		debug(133, "Error, Internet Connection not found");
 		return NULL;
 	}
 
 	title = ostrcat(title, input, 1, 0);
 
-	unsigned char* buf = NULL;
-	int channels = 0;
-	unsigned long width = 0, height = 0, rowbytes = 0; 
+//	unsigned char* buf = NULL;
+//	int channels = 0;
+//	unsigned long width = 0, height = 0, rowbytes = 0; 
 
 	if(flag == 0)
 		tmpsearch = ostrcat("?i=&t=", title, 0, 0);
@@ -194,10 +195,10 @@ void screenimdbapi(char* title, char* dummy1, char* dummy2, char* path, char* fi
 	debug(133, "file: %s",file);	
 	char* searchstr = NULL, *tmpstr = NULL;
 
-	if(checkinternet == 1)
+	if(checkinternet() == 1)
 	{
 		textbox(_("Message"), _("Error, Internet Connection not found"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 500, 10, 0);
-		return NULL;
+		return;
 	}
 
 	int rcret = 0;

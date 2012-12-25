@@ -692,6 +692,7 @@ char* string_deltags(char* str);
 char* readfromlinetoline(char* str, int start, int end, int flag);
 int checkdev(char* dev);
 char* getvideomode();
+int checkinternet();
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);

@@ -178,9 +178,9 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 	debug(133, "flag: %d",flag);
 	debug(133, "flag1: %d",flag1);
 
-	if(checkinternet == 1)
+	if(checkinternet() == 1)
 	{
-		debug(133, ""Error, Internet Connection not found"");
+		debug(133, "Error, Internet Connection not found");
 		return NULL;
 	}
 		
@@ -500,7 +500,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 
 													if(getconfigint("mediadbdebug", NULL) == 1)
 													{
-														filedebug(logfile, "#############\nbackdrop: %s size=(%s) filesize(%d) (%s)\n#############", getconfig("mediadbpath", NULL), tnode->backdrop, size, filesize, (&ret1[i])->part);
+														filedebug(logfile, "#############\nbackdrop: %s size=(%s) filesize(%lld) (%s)\n#############", tnode->backdrop, size, filesize, (&ret1[i])->part);
 														cmd = ostrcat(cmd, " >> ", 1, 0);
 														cmd = ostrcat(cmd, logfile, 1, 0);
 														cmd = ostrcat(cmd, " 2>&1", 1, 0);
@@ -538,7 +538,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 												debug(133, "ERROR Backdrop size to big skipped %d", picsize);
 
 												if(getconfigint("mediadbdebug", NULL) == 1)
-													filedebug(logfile, "#############\nERROR Backdrop size to big skipped: %s size=(%s) filesize(%d) (%s)\n#############", getconfig("mediadbpath", NULL), tnode->backdrop, size, filesize, (&ret1[i])->part);
+													filedebug(logfile, "#############\nERROR Backdrop size to big skipped: %s size=(%s) filesize(%lld) (%s)\n#############", tnode->backdrop, size, filesize, (&ret1[i])->part);
 												mvicount--;
 											}
 										}
@@ -547,7 +547,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 											debug(133, "ERROR Backdrop size is NULL skipped %s", size);
 
 											if(getconfigint("mediadbdebug", NULL) == 1)
-												filedebug(logfile, "#############\nERROR Backdrop size is NULL skipped: %s size=(%s) filesize(%d) (%s)\n#############", getconfig("mediadbpath", NULL), tnode->backdrop, size, filesize, (&ret1[i])->part);
+												filedebug(logfile, "#############\nERROR Backdrop size is NULL skipped: %s size=(%s) filesize(%lld) (%s)\n#############", tnode->backdrop, size, filesize, (&ret1[i])->part);
 
 											mvicount--;
 										}
@@ -561,7 +561,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 										debug(133, "ERROR Backdrop filesize to BIG skipped %lld", filesize);
 				
 										if(getconfigint("mediadbdebug", NULL) == 1)
-											filedebug(logfile, "#############\nERROR Backdrop filesize to BIG skipped: %s filesize(%d) (%s)\n#############", getconfig("mediadbpath", NULL), tnode->backdrop, filesize, (&ret1[i])->part);
+											filedebug(logfile, "#############\nERROR Backdrop filesize to BIG skipped: %s filesize(%lld) (%s)\n#############", tnode->backdrop, filesize, (&ret1[i])->part);
 									}
 								}								
 
@@ -659,7 +659,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 
 									if(getconfigint("mediadbdebug", NULL) == 1)
 									{
-										filedebug(logfile, "#############\npostermid: %s size=(%s) filesize(%d) (%s)\n#############", getconfig("mediadbpath", NULL), tnode->postermid, size, filesize, posterurl);	
+										filedebug(logfile, "#############\npostermid: %s size=(%s) filesize(%lld) (%s)\n#############", tnode->postermid, size, filesize, posterurl);	
 										cmd = ostrcat(cmd, " >> ", 1, 0);
 										cmd = ostrcat(cmd, logfile, 1, 0);
 										cmd = ostrcat(cmd, " 2>&1", 1, 0);
@@ -692,7 +692,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 								debug(133, "ERROR Postermid size to big skipped %d", picsize);
 
 								if(getconfigint("mediadbdebug", NULL) == 1)
-									filedebug(logfile, "#############\nERROR Postermid size to big skipped: %s size=(%s) filesize(%d) (%s)\n#############", getconfig("mediadbpath", NULL), tnode->postermid, size, filesize, posterurl);	
+									filedebug(logfile, "#############\nERROR Postermid size to big skipped: %s size=(%s) filesize(%lld) (%s)\n#############", tnode->postermid, size, filesize, posterurl);	
 							}
 						}
 						else
@@ -700,7 +700,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 							debug(133, "ERROR Postermid size is NULL skipped %s", size);
 
 							if(getconfigint("mediadbdebug", NULL) == 1)
-								filedebug(logfile, "#############\nERROR Postermid size is NULL skipped: %s size=(%s) filesize(%d) (%s)\n#############", getconfig("mediadbpath", NULL), tnode->postermid, size, filesize, posterurl);
+								filedebug(logfile, "#############\nERROR Postermid size is NULL skipped: %s size=(%s) filesize(%lld) (%s)\n#############", tnode->postermid, size, filesize, posterurl);
 						}
 						free(size), size = NULL;
 						unlink(tmpmeta);
@@ -712,7 +712,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 						debug(133, "ERROR Postermid filesize to BIG skipped %lld", filesize);
 
 						if(getconfigint("mediadbdebug", NULL) == 1)
-							filedebug(logfile, "#############\nERROR Postermid filesize to BIG skipped: %s filesize(%d) (%s)\n#############", getconfig("mediadbpath", NULL), tnode->postermid, filesize, posterurl);	
+							filedebug(logfile, "#############\nERROR Postermid filesize to BIG skipped: %s filesize(%lld) (%s)\n#############", tnode->postermid, filesize, posterurl);	
 					}
 				}
 			}
@@ -779,7 +779,7 @@ struct tmdb* screentmdb(char* title, char* skinname, int flag, char* path, char*
 	debug(133, "file: %s",file);	
 	char* searchstr = NULL, *tmpstr = NULL;	
 
-	if(checkinternet == 1)
+	if(checkinternet() == 1)
 	{
 		textbox(_("Message"), _("Error, Internet Connection not found"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 500, 10, 0);
 		return NULL;
