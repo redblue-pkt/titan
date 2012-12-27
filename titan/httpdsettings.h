@@ -104,14 +104,12 @@ void screenhttpdsettings()
 			if(httpdport->ret != NULL)
 			{
 				int hport = atoi(httpdport->ret);
-				if(hport != 80)
-					addconfigint("httpdport", hport);
+				addconfigint("httpdport", hport);
 			}
 			if(streamport->ret != NULL)
 			{
 				int sport = atoi(streamport->ret);
-				if(sport != 22222)
-					addconfigint("streamport", sport);
+				addconfigint("streamport", sport);
 			}
 			if(rguidstart->ret != NULL)
 			{
@@ -127,8 +125,7 @@ void screenhttpdsettings()
 			if(rguidport->ret != NULL)
 			{
 				int rport = atoi(rguidport->ret);
-				if(rport != 22233)
-					addconfigint("rguidport", rport);
+				addconfigint("rguidport", rport);
 			}
 			break;
 		}

@@ -84,13 +84,37 @@ void screenblindscanadjust()
 
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
-			addconfigscreencheck("blindminfrequency", minfrequency, "9500");
-			addconfigscreencheck("blindmaxfrequency", maxfrequency, "14500");
-			addconfigscreencheck("blindstepfrequency", stepfrequency, "20");
-			addconfigscreencheck("blindminsignalrate", minsignalrate, "20000");
-			addconfigscreencheck("blindmaxsignalrate", maxsignalrate, "30000");
-			addconfigscreencheck("blindstepsignalrate", stepsignalrate, "20");
-			
+			if(minfrequency->ret != NULL)
+			{
+				int i = atoi(minfrequency->ret);
+				addconfigint("blindminfrequency", i);
+			}
+			if(maxfrequency->ret != NULL)
+			{
+				int i = atoi(maxfrequency->ret);
+				addconfigint("blindmaxfrequency", i);
+			}
+			if(stepfrequency->ret != NULL)
+			{
+				int i = atoi(stepfrequency->ret);
+				addconfigint("blindstepfrequency", i);
+			}
+			if(minsignalrate->ret != NULL)
+			{
+				int i = atoi(minsignalrate->ret);
+				addconfigint("blindminsignalrate", i);
+			}
+			if(maxsignalrate->ret != NULL)
+			{
+				int i = atoi(maxsignalrate->ret);
+				addconfigint("blindmaxsignalrate", i);
+			}
+			if(stepsignalrate->ret != NULL)
+			{
+				int i = atoi(stepsignalrate->ret);
+				addconfigint("blindstepsignalrate", i);
+			}
+
 			break;
 		}
 	}
