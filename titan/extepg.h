@@ -1210,7 +1210,7 @@ int readmhwsummary(struct stimerthread* self, struct dvbdev* fenode, int pid)
 
 //flag 0 = from epg thread
 //flag 1 = from epg scan
-int readmhw(struct stimerthread* self, struct dvbdev* fenode, struct channel* chnode, int flag)
+int readmhw(struct stimerthread* self, struct channel* chnode, struct dvbdev* fenode, int flag)
 {
 	int ret = 0, channelcount = 0;
 	unsigned char* channelbuf = NULL;
@@ -1695,7 +1695,7 @@ int readmhw2summary(struct stimerthread* self, struct dvbdev* fenode, int pid)
 
 //flag 0 = from epg thread
 //flag 1 = from epg scan
-int readmhw2(struct stimerthread* self, struct dvbdev* fenode, struct channel* chnode, int flag)
+int readmhw2(struct stimerthread* self, struct channel* chnode, struct dvbdev* fenode, int flag)
 {
 	int ret = 0;
 	unsigned char* channelbuf = NULL;
@@ -2251,7 +2251,7 @@ int readopentvsummary(struct stimerthread* self, struct dvbdev* fenode, int pid)
 
 //flag 0 = from epg thread
 //flag 1 = from epg scan
-int readopentv(struct stimerthread* self, struct dvbdev* fenode, struct channel* chnode, int flag)
+int readopentv(struct stimerthread* self, struct channel* chnode, struct dvbdev* fenode, int flag)
 {
 	int ret = 0;
 	unsigned char* channelbuf = NULL;
