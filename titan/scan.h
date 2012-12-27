@@ -381,7 +381,7 @@ void blindscan(struct stimerthread* timernode)
 	struct transponder* tpnode = NULL;
 
 	unsigned int frequency = 0, symbolrate = 0;
-	int polarization = 0, modulation = 0, system = 0;
+	int polarization = 0, modulation = 0, system = 0, fec = 0;
 
 	unsigned int minfrequency = getconfigint("blindminfrequency", NULL) * 1000;
 	unsigned int maxfrequency = getconfigint("blindmaxfrequency", NULL) * 1000;
@@ -393,6 +393,7 @@ void blindscan(struct stimerthread* timernode)
 	int minmodulation = 0, maxmodulation = 2, stepmodulation = 1;
 	int minpolarization = 0, maxpolarization = 1, steppolarization = 1;
 	int minsystem = 0, maxsystem = 1, stepsystem = 1;
+	int minfec = 0, maxfec = 8, stepfec = 1;
 
 	if(scaninfo.fenode == NULL || timernode == NULL) return;
 
@@ -400,11 +401,12 @@ void blindscan(struct stimerthread* timernode)
 	int countsymbolrate = ((maxsymbolrate + stepsymbolrate) - minsymbolrate) / stepsymbolrate;
 	int countmodulation = ((maxmodulation + stepmodulation) - minmodulation) / stepmodulation;
 	int countpolarization = ((maxpolarization + steppolarization) - minpolarization) / steppolarization;
+	int countfec = ((maxfec + stepfec) - minfec) / stepfec;
 	int systemcount = ((maxsystem + stepsystem) - minsystem) / stepsystem;
 	int timeout = scaninfo.timeout / 5;
 	if(timeout < 1000000) timeout = 1000000;
 
-	scaninfo.blindmax += systemcount * countpolarization * countmodulation * countsymbolrate * countfrequency;
+	scaninfo.blindmax += systemcount * countpolarization * countmodulation * countsymbolrate * countfrequency * countfec;
 
 	for(frequency = minfrequency; frequency <= maxfrequency; frequency += stepfrequency)
 	{
@@ -428,69 +430,105 @@ void blindscan(struct stimerthread* timernode)
 							break;
 					}
 
-					for(system = minsystem; system <= maxsystem; system += stepsystem)
+					int cfec = 0;
+					for(cfec = minfec; cfec <= maxfec; cfec += stepfec)
 					{
-						scaninfo.blindcount++;
-
-						tpnode = createtransponder(99, scaninfo.fenode->feinfo->type, scaninfo.orbitalpos, frequency, INVERSION_AUTO, symbolrate, polarization, FEC_AUTO, modulation, 0, 0, system);
-
-						debug(500, "blindscan: frequ=%d, sr=%d, modulation=%d, system=%d, orbitalpos=%d", frequency, symbolrate, modulation, system, scaninfo.orbitalpos);
-
-						if(tpnode != NULL)
+						switch(cfec)
 						{
-
-							fenode = fegetfree(tpnode, 0, scaninfo.fenode);
-							if(fenode == NULL )
-							{
-								debug(500, "Frontend for scan not free");
-								deltransponderbyid(99);
-								continue;
-							}
-
-							//frontend tune
-							if(fenode->feinfo->type == FE_QPSK)
-							{
-								feset(fenode, tpnode);
-								fetunedvbs(fenode, tpnode);
-							}
-							else if(fenode->feinfo->type == FE_QAM)
-								fetunedvbc(fenode, tpnode);
-							else if(fenode->feinfo->type == FE_OFDM)
-								fetunedvbt(fenode, tpnode);
-							else
-							{
-								debug(500, "Frontend type unknown");
-								deltransponderbyid(99);
-								continue;
-							}
-
-							festatus = fewait(fenode);
-							if(debug_level == 200) fereadstatus(fenode);
-							if(festatus != 0)
-							{
-								debug(500, "tuning failed");
-								deltransponderbyid(99);
-								continue;
-							}
-
-							buf = dvbgetsdt(fenode, 0, timeout);
-							transponderid = findtransponderid(fenode, buf);
-							free(buf); buf = NULL;
-
-							if(transponderid == 0 || gettransponder(transponderid) != NULL)
-							{
-								deltransponderbyid(99);
-								continue;
-							}
-
-							if(tpnode->id != transponderid)
-							{
-								scaninfo.newblindcount++;
-								changetransponderid(tpnode, transponderid);
-								status.writetransponder = 1;
-							}
+							case 0:
+								fec = FEC_1_2;
+								break;
+							case 1:
+								fec = FEC_2_3;
+								break;
+							case 2:
+								fec = FEC_3_4;
+								break;
+							case 3:
+								fec = FEC_5_6;
+								break;
+							case 4:
+								fec = FEC_7_8;
+								break;
+							case 5:
+								fec = FEC_8_9;
+								break;
+							case 6:
+								fec = FEC_3_5;
+								break;
+							case 7:
+								fec = FEC_4_5;
+								break;
+							case 8:
+								fec = FEC_9_10;
+								break;
 						}
-						deltransponderbyid(99);
+
+						for(system = minsystem; system <= maxsystem; system += stepsystem)
+						{
+							scaninfo.blindcount++;
+
+							tpnode = createtransponder(99, scaninfo.fenode->feinfo->type, scaninfo.orbitalpos, frequency, INVERSION_AUTO, symbolrate, polarization, fec, modulation, 0, 0, system);
+
+							debug(500, "blindscan: frequ=%d, sr=%d, modulation=%d, fec=%d, system=%d, orbitalpos=%d", frequency, symbolrate, modulation, fec, system, scaninfo.orbitalpos);
+
+							if(tpnode != NULL)
+							{
+
+								fenode = fegetfree(tpnode, 0, scaninfo.fenode);
+								if(fenode == NULL )
+								{
+									debug(500, "Frontend for scan not free");
+									deltransponderbyid(99);
+									continue;
+								}
+
+								//frontend tune
+								if(fenode->feinfo->type == FE_QPSK)
+								{
+									feset(fenode, tpnode);
+									fetunedvbs(fenode, tpnode);
+								}
+								else if(fenode->feinfo->type == FE_QAM)
+									fetunedvbc(fenode, tpnode);
+								else if(fenode->feinfo->type == FE_OFDM)
+									fetunedvbt(fenode, tpnode);
+								else
+								{
+									debug(500, "Frontend type unknown");
+									deltransponderbyid(99);
+									continue;
+								}
+
+								festatus = fewait(fenode);
+								if(debug_level == 200) fereadstatus(fenode);
+								if(festatus != 0)
+								{
+									debug(500, "tuning failed");
+									deltransponderbyid(99);
+									continue;
+								}
+
+								buf = dvbgetsdt(fenode, 0, timeout);
+								transponderid = findtransponderid(fenode, buf);
+								free(buf); buf = NULL;
+
+								if(transponderid == 0 || gettransponder(transponderid) != NULL)
+								{
+									deltransponderbyid(99);
+									continue;
+								}
+
+								if(tpnode->id != transponderid)
+								{
+									scaninfo.newblindcount++;
+									changetransponderid(tpnode, transponderid);
+									status.writetransponder = 1;
+								}
+							}
+							deltransponderbyid(99);
+							if(timernode->aktion != START) break;
+						}
 						if(timernode->aktion != START) break;
 					}
 					if(timernode->aktion != START) break;
