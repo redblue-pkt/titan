@@ -8,9 +8,10 @@
 #ifndef HEADER_H
 #define HEADER_H
 
-//mhwepg.h
-int readmhw(struct stimerthread* self, struct dvbdev* fenode);
-int readmhw2(struct stimerthread* self, struct dvbdev* fenode);
+//extepg.h
+int readmhw(struct stimerthread* self, struct dvbdev* fenode, struct channel* chnode, int flag);
+int readmhw2(struct stimerthread* self, struct dvbdev* fenode, struct channel* chnode, int flag);
+int readopentv(struct stimerthread* self, struct dvbdev* fenode, struct channel* chnode, int flag);
 
 //mediadbedit.h
 void screenmediadbedit(char* file, int id, int flag);
