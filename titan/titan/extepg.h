@@ -1915,7 +1915,7 @@ int readopentvchannel(struct stimerthread* self, struct dvbdev* fenode, struct c
 //flag 1 = from epg scan
 int readopentvtitle(struct stimerthread* self, struct dvbdev* fenode, struct channel* chnode, unsigned char* channelbuf, int pid, int flag)
 {
-	int readlen = 0, first = 1, ret = 1, len = 0;
+	int readlen = 0, first = 1, ret = 1, len = 0, count = 0;
 	unsigned char *buf = NULL, *firstbuf = NULL;
 	struct dvbdev* dmxnode;
 	uint64_t transponderid = 0;
@@ -1969,9 +1969,14 @@ int readopentvtitle(struct stimerthread* self, struct dvbdev* fenode, struct cha
 
 	while(self->aktion != STOP && self->aktion != PAUSE)
 	{
+start:
 		readlen = dvbread(dmxnode, buf, 0, 3, 2000000);
 		if(readlen != 3)
+		{
+			count++;
+			if(count < 5 && self->aktion != STOP && self->aktion != PAUSE) goto start;
 			break;
+		}
 
 		readlen = 0;
 		len = buf[2] | ((buf[1] & 0x0f) << 8);
