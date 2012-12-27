@@ -340,6 +340,30 @@ int dmxsetfilter(struct dvbdev* node, int pid, int secnr, int flag)
 		sctflt.pid = pid;
 		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
 	}
+	if(flag == 21) //opentv channel
+	{
+		sctflt.filter.filter[0] = 0x4a;
+		sctflt.filter.mask[0] = 0xff;
+		sctflt.timeout = 0;
+		sctflt.pid = pid;
+		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
+	}
+	if(flag == 22) //opentv title
+	{
+		sctflt.filter.filter[0] = 0xa0;
+		sctflt.filter.mask[0] = 0xfc;
+		sctflt.timeout = 0;
+		sctflt.pid = pid;
+		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
+	}
+	if(flag == 23) //opentv summary
+	{
+		sctflt.filter.filter[0] = 0xa8;
+		sctflt.filter.mask[0] = 0xfc;
+		sctflt.timeout = 0;
+		sctflt.pid = pid;
+		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
+	}
 
 	debug(200, "DMX_SET_FILTER pid=%d, flag=%d", pid, flag);
 	if(ioctl(node->fd, DMX_SET_FILTER, &sctflt) < 0)

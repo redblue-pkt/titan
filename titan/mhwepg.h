@@ -1,8 +1,9 @@
-#ifndef MHWEPG_H
-#define MHWEPG_H
+#ifndef EXTEPG_H
+#define EXTEPG_H
 
 //channel C+ DEMANDE for test on astra 19.2 (mhw)
 //channel C+ PORTADA for test on astra 19.2 (mhw2)
+//channel Sky Assist for test on hotbird (opentv)
 
 //global function
 
@@ -13,17 +14,28 @@ struct freesat
 	char next;
 };
 
-struct skybox
+typedef struct opentv
 {
 	char *value;
-	struct skybox *p0;
-	struct skybox *p1;
-};
-typedef struct skybox skyboxnode;
+	struct opentv *p0;
+	struct opentv *p1;
+} opentvnode;
 
+opentvnode opentvroot;
 static struct freesat *freesattable[2][128];
 static int freesattablesize[2][128];
-static skyboxnode* skyboxtable[2];
+
+unsigned long getquad(void *ptr)
+{
+	unsigned char *data = ptr;
+	return (data[0] << 24) | (data[1] << 16) | (data[2] << 8) | data[3];
+}
+
+unsigned short getdoub(void *ptr)
+{
+	unsigned char *data = ptr;
+	return (data[0] << 8) | data[1];
+}
 
 unsigned char resolvechar(char *str)
 {
@@ -79,29 +91,26 @@ void freefreesat()
 	}
 }
 
-void freeskyboxnode(skyboxnode* node)
+void freeopentvnode(opentvnode *node)
 {
-	if(node != NULL)
+	if(node->p0 != NULL)
 	{
-		free(node->value); node->value = NULL;
-		if(node->p0 != NULL)
-			freeskyboxnode(node->p0);
+		freeopentvnode(node->p0);
 		free(node->p0); node->p0 = NULL;
-		if(node->p1 != NULL)
-			freeskyboxnode(node->p1);
+	}
+
+	if(node->p1 != NULL)
+	{
+		freeopentvnode(node->p1);
 		free(node->p1); node->p1 = NULL;
 	}
+
+	free(node->value); node->value = NULL;
 }
 
-void freeskybox()
+void freeopentv()
 {
-	freeskyboxnode(skyboxtable[0]);
-	freeskyboxnode(skyboxtable[1]);
-
-	free(skyboxtable[0]);
-	skyboxtable[0] = NULL;
-	free(skyboxtable[1]);
-	skyboxtable[1] = NULL;
+	freeopentvnode(&opentvroot);
 }
 
 int loadfreesat(int tableid, char *filename)
@@ -149,158 +158,101 @@ int loadfreesat(int tableid, char *filename)
 
 //flag 0: SKY IT
 //flag 1: SKY UK
-int loadskybox(char *filename, int flag)
+int loadopentv(char *file)
 {
 	FILE *fd = NULL;
-	char *line = NULL;
-	char buf[256];
-	skyboxnode *nh = NULL;
+	char line[512];
+	char value[256];
+	char code[256];
+	opentvnode *node;
+	int len = 0;
+	int count = 0;
+	int i = 0;
 
-	fd = fopen(filename, "r");
-	if(fd == NULL)
+	opentvroot.value = NULL;
+	opentvroot.p0 = NULL;
+	opentvroot.p1 = NULL;
+
+	fd = fopen(file, "r");
+	if(!fd)
 	{
-		perr("opening file %s", filename);
+		perr("load %s", file);
 		return 1;
 	}
-	else
-	{
-		int i = 0;
-		int len = 0;
-		char string1[256];
-		char string2[256];
 
-		if(!skyboxtable[flag])
+	while(fgets(line, sizeof(line), fd))
+	{
+		memset(value, 0, sizeof(value));
+		memset(code, 0, sizeof(code));
+
+		if(sscanf(line, "%c=%[^\n]\n", value, code) != 2)
 		{
-			skyboxtable[flag] = (skyboxnode*)calloc(1, sizeof(skyboxnode));
-			if(!skyboxtable[flag])
+			if(sscanf(line, "%[^=]=%[^\n]\n", value, code) != 2)
 			{
-				err("no mem");
-				return 1;
+				if(sscanf(line, "=%[^\n]\n", code) != 1)
+					continue;
+				else
+					memset(value, 0, sizeof (value));
 			}
 		}
 
-		while((line = fgets(buf, sizeof(buf), fd)) != NULL)
-		{
-			if(line != NULL && strlen(line) > 0)
-			{
-				memset(string1, 0, sizeof(string1));
-				memset(string2, 0, sizeof(string2));
-				if(sscanf(line, "%c=%[^\n]\n", string1, string2) == 2 || (sscanf(line, "%[^=]=%[^\n]\n", string1, string2) == 2))
-				{
- 					nh = skyboxtable[flag];
-					len = strlen(string2);
-					for(i = 0; i < len; i++)
-					{
-						switch(string2[i])
-						{
-							case '0':
-								if(nh->p0 == NULL)
-								{
-									nh->p0 = (skyboxnode*)calloc(1, sizeof(skyboxnode));
-									if(nh->p0 != NULL)
-									{
-										nh = nh->p0;
-										nh->value = NULL;
-										nh->p0 = NULL;
-										nh->p1 = NULL;
-										if((len - 1) == i)
-											asprintf (&nh->value, "%s", string1);
-									}
-								}
-								else
-								{
-									nh = nh->p0;
-									if(nh->value != NULL || (len - 1) == i)
-									{
-                  	debug(400 ,"huffman prefix code already exists for \"%s\"=%s with '%s'", string1, string2, nh->value);
-									}
-								}
-								break;
-							case '1':
-								if(nh->p1 == NULL)
-								{
-									nh->p1 = (skyboxnode*)calloc(1, sizeof(skyboxnode));
-									if(nh->p1 != NULL)
-									{
-										nh = nh->p1;
-										nh->value = NULL;
-										nh->p0 = NULL;
-										nh->p1 = NULL;
-										if((len - 1) == i)
-											asprintf(&nh->value, "%s", string1);
-									}
-								}
-								else
-								{
-									nh = nh->p1;
-									if(nh->value != NULL || (len - 1) == i)
-									{
-										debug(400, "huffman prefix code already exists for \"%s\"=%s with '%s'", string1, string2, nh->value);
-									}
-								}
-								break;
-							default:
-								break;
-						}
-					}
-				}
-			}
-		}
-		fclose(fd);
-	}
+		node = &opentvroot;
+		len = strlen(code);
 
-	//check tree huffman nodes
-	fd = fopen(filename, "r");
-	if(fd)
-	{
-		int i = 0;
-		int len = 0;
-		char string1[256];
-		char string2[256];
-
-		while((line = fgets(buf, sizeof(buf), fd)) != NULL)
+		for(i = 0; i < len; i++)
 		{
-			if(line != NULL && strlen(line) > 0)
+			switch(code[i])
 			{
-				memset(string1, 0, sizeof(string1));
-				memset(string2, 0, sizeof(string2));
-				if(sscanf(line, "%c=%[^\n]\n", string1, string2) == 2 || (sscanf(line, "%[^=]=%[^\n]\n", string1, string2) == 2))
-				{
-					nh = skyboxtable[flag];
-					len = strlen(string2);
-					for(i = 0; i < len; i++)
+				case '0':
+					if(node->p0 == NULL)
 					{
-						switch(string2[i])
+						node->p0 = malloc(sizeof(opentvnode));
+						node = node->p0;
+						node->value = NULL;
+						node->p0 = NULL;
+						node->p1 = NULL;
+						if(len == (i + 1))
 						{
-							case '0':
-								if(nh->p0 != NULL)
-									nh = nh->p0;
-								break;
-							case '1':
-								if(nh->p1 != NULL)
-									nh = nh->p1;
-								break;
-							default:
-								break;
-						}
-					}
-					if(nh->value != NULL)
-					{
-						if(memcmp(nh->value, string1, strlen(nh->value)) != 0)
-						{
-							debug(400, "huffman prefix value '%s' not equal to '%s'", nh->value, string1);
+							node->value = malloc(sizeof(char) * (strlen(value) + 1));
+							sprintf(node->value, "%s", value);
+							count++;
 						}
 					}
 					else
 					{
-						debug(400, "huffman prefix value is not exists for \"%s\"=%s", string1, string2);
+						node = node->p0;
+						if((node->value != NULL) || (len == (i + 1)))
+							err("huffman prefix code '%s' already exist", code);
 					}
-				}
+					break;
+
+				case '1':
+					if(node->p1 == NULL)
+					{
+						node->p1 = malloc(sizeof(opentvnode));
+						node = node->p1;
+						node->value = NULL;
+						node->p0 = NULL;
+						node->p1 = NULL;
+						if(len == (i + 1))
+						{
+							node->value = malloc(sizeof (char) * (strlen(value) + 1));
+							sprintf(node->value, "%s", value);
+							count++;
+						}
+					}
+					else
+					{
+						node = node->p1;
+						if((node->value != NULL) || (len == (i + 1)))
+							err("huffman prefix code '%s' already exist", code);
+					}
+					break;
 			}
 		}
-		fclose(fd);
 	}
 
+	fclose(fd);
 	return 0;
 }
 
@@ -417,110 +369,83 @@ char *freesathuffmandecode(unsigned char *src, size_t size)
 
 //flag 0: SKY IT
 //flag 1: SKY UK
-int skyhuffmandecode(unsigned char *buf, int len, unsigned char *decodetxt, int flag)
+int skyhuffmandecode(unsigned char *buf, int len, unsigned char *result, int resultmaxlen)
 {
-	skyboxnode *nh, h = (flag == 0) ? *skyboxtable[0] : *skyboxtable[1];
-	int i = 0, p = 0, q = 0;
-	int codeerr = 0, isfound = 0;
-	unsigned char byte = 0, lastbyte = 0;
-	unsigned char mask = 0, lastmask = 0;
+	opentvnode *node = &opentvroot;
+	unsigned char byte = 0;
+	unsigned char mask = 0;
+	int index = 0;
+	int toolong = 0;
+	int i = 0;
 
-	if(buf == NULL || decodetxt == NULL) return -1;
-
-	nh = &h;
-	decodetxt[0] = '\0';
+	if(resultmaxlen > MINMALLOC) resultmaxlen = MINMALLOC;
 
 	for(i = 0; i < len; i++)
 	{
 		byte = buf[i];
-		mask = 0x80;
-		if(i == 0)
+		if(i == 0) mask = 0x20;
+		else mask = 0x80;
+
+		do
 		{
-			mask = 0x20;
-			lastbyte = i;
-			lastmask = mask;
-		}
-loop1:
-		if(isfound)
-		{
-			lastbyte = i;
-			lastmask = mask;
-			isfound = 0;
-		}
-		if((byte & mask) == 0)
-		{
-			if(codeerr)
+			if((byte & mask) == 0)
 			{
-				q++;
-				goto loop2;
-			}
-			if(nh->p0 != NULL)
-			{
-				nh = nh->p0;
-				if(nh->value != NULL)
+				if(node->p0 != NULL) node = node->p0;
+				else
 				{
-					memcpy(&decodetxt[p], nh->value, strlen(nh->value));
-					p += strlen(nh->value);
-					nh = &h;
-					isfound = 1;
+					err("cannot decode huffman data");
+					return 1;
 				}
 			}
 			else
 			{
-				memcpy(&decodetxt[p], "<...?...>", 9);
-				p += 9;
-				i = lastbyte;
-				byte = buf[lastbyte];
-				mask = lastmask;
-				codeerr = 1;
-				goto loop1;
-			}
-		}
-		else
-		{
-			if(codeerr)
-			{
-				q++;
-				goto loop2;
-			}
-			if(nh->p1 != NULL)
-			{
-				nh = nh->p1;
-				if(nh->value != NULL)
+				if (node->p1 != NULL) node = node->p1;
+				else
 				{
-					memcpy(&decodetxt[p], nh->value, strlen(nh->value));
-					p += strlen(nh->value);
-					nh = &h;
-					isfound = 1;
+					err("cannot decode huffman data");
+					return 1;
 				}
 			}
-			else
+
+			if(node->value != NULL)
 			{
-				memcpy(&decodetxt[p], "<...?...>", 9);
-				p += 9;
-				i = lastbyte;
-				byte = buf[lastbyte];
-				mask = lastmask;
-				codeerr = 1;
-				goto loop1;
+				int size = 0;
+
+				if((index + strlen(node->value)) >= (resultmaxlen - 1))
+				{
+					size = resultmaxlen - len - 1;
+					toolong = 1;
+				}
+				else size = strlen(node->value);
+
+				memcpy(result + index, node->value, size);
+				index += size;
+				node = &opentvroot;
 			}
+
+			if(toolong) break;
+
+			mask = mask >> 1;
+		} while(mask > 0);
+
+		if(toolong == 1)
+		{
+			debug(400, "huffman string is too long. truncated");
+			break;
 		}
-loop2:
-		mask = mask >> 1;
-		if(mask > 0)
-			goto loop1;
 	}
 
-	decodetxt[p] = '\0';
-	return p;
+	result[index] = '\0';
+
+	return 0;
 }
 
-struct mhwcache* addmhwcache(int id, struct epg* epgnode, struct mhwcache* last)
+struct extepgcache* addextepgcache(int id, struct epg* epgnode, struct extepgcache* last)
 {
 	//debug(1000, "in");
-	struct mhwcache *newnode = NULL, *prev = NULL, *node = mhwcache;
+	struct extepgcache *newnode = NULL, *prev = NULL, *node = extepgcache;
 
-	newnode = (struct mhwcache*)calloc(1, sizeof(struct mhwcache));
+	newnode = (struct extepgcache*)calloc(1, sizeof(struct extepgcache));
 	if(newnode == NULL)
 	{
 		err("no memory");
@@ -545,7 +470,7 @@ struct mhwcache* addmhwcache(int id, struct epg* epgnode, struct mhwcache* last)
 	}
 
 	if(prev == NULL)
-		mhwcache = newnode;
+		extepgcache = newnode;
 	else
 		prev->next = newnode;
 	newnode->next = node;
@@ -554,17 +479,17 @@ struct mhwcache* addmhwcache(int id, struct epg* epgnode, struct mhwcache* last)
 	return newnode;
 }
 
-void delmhwcache(struct mhwcache* cache)
+void delextepgcache(struct extepgcache* cache)
 {
 	//debug(1000, "in");
-	struct mhwcache *node = mhwcache, *prev = mhwcache;
+	struct extepgcache *node = extepgcache, *prev = extepgcache;
 
 	while(node != NULL)
 	{
 		if(node == cache)
 		{
-			if(node == mhwcache)
-				mhwcache = node->next;
+			if(node == extepgcache)
+				extepgcache = node->next;
 			else
 				prev->next = node->next;
 
@@ -579,25 +504,25 @@ void delmhwcache(struct mhwcache* cache)
 	//debug(1000, "out");
 }
 
-void freemhwcache()
+void freeextepgcache()
 {
 	//debug(1000, "in");
-	struct mhwcache *node = mhwcache, *prev = mhwcache;
+	struct extepgcache *node = extepgcache, *prev = extepgcache;
 
 	while(node != NULL)
 	{
 		prev = node;
 		node = node->next;
 		if(prev != NULL)
-			delmhwcache(prev);
+			delextepgcache(prev);
 	}
 	//debug(1000, "out");
 }
 
-struct mhwcache* getmhwcache(int id)
+struct extepgcache* getextepgcache(int id)
 {
 	//debug(1000, "in");
-	struct mhwcache *node = mhwcache;
+	struct extepgcache *node = extepgcache;
 
 	while(node != NULL)
 	{
@@ -609,20 +534,281 @@ struct mhwcache* getmhwcache(int id)
 
 		node = node->next;
 	}
-	debug(100, "mhwcache not found (mhwcache=%d)", id);
+	debug(100, "extepgcache not found (extepgcache=%d)", id);
 	return NULL;
 }
 
-unsigned long getquad(void *ptr)
+struct extepgchannel* addextepgchannel(int id, int serviceid, off64_t transponderid, struct extepgchannel* last)
 {
-	unsigned char *data = ptr;
-	return (data[0] << 24) | (data[1] << 16) | (data[2] << 8) | data[3];
+	//debug(1000, "in");
+	struct extepgchannel *newnode = NULL, *prev = NULL, *node = extepgchannel;
+
+	newnode = (struct extepgchannel*)calloc(1, sizeof(struct extepgchannel));
+	if(newnode == NULL)
+	{
+		err("no memory");
+		return NULL;
+	}
+
+	newnode->id = id;
+	newnode->serviceid = serviceid;
+	newnode->transponderid = transponderid;
+
+	if(last == NULL)
+	{
+		while(node != NULL)
+		{
+			prev = node;
+			node = node->next;
+		}
+	}
+	else
+	{
+		prev = last;
+		node = last->next;
+	}
+
+	if(prev == NULL)
+		extepgchannel = newnode;
+	else
+		prev->next = newnode;
+	newnode->next = node;
+
+	//debug(1000, "out");
+	return newnode;
 }
 
-unsigned short getdoub(void *ptr)
+void delextepgchannel(struct extepgchannel* channel)
 {
-	unsigned char *data = ptr;
-	return (data[0] << 8) | data[1];
+	//debug(1000, "in");
+	struct extepgchannel *node = extepgchannel, *prev = extepgchannel;
+
+	while(node != NULL)
+	{
+		if(node == channel)
+		{
+			if(node == extepgchannel)
+				extepgchannel = node->next;
+			else
+				prev->next = node->next;
+
+			free(node);
+			node = NULL;
+			break;
+		}
+
+		prev = node;
+		node = node->next;
+	}
+	//debug(1000, "out");
+}
+
+void freeextepgchannel()
+{
+	//debug(1000, "in");
+	struct extepgchannel *node = extepgchannel, *prev = extepgchannel;
+
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+		if(prev != NULL)
+			delextepgchannel(prev);
+	}
+	//debug(1000, "out");
+}
+
+struct extepgchannel* getextepgchannel(int id)
+{
+	//debug(1000, "in");
+	struct extepgchannel *node = extepgchannel;
+
+	while(node != NULL)
+	{
+		if(node->id == id)
+		{
+			//debug(1000, "out");
+			return node;
+		}
+
+		node = node->next;
+	}
+	debug(100, "extepgchannel not found (extepgchannel=%d)", id);
+	return NULL;
+}
+
+struct extepgconfig* addextepgconfig(char *line, int count, struct extepgconfig* last)
+{
+	//debug(1000, "in");
+	struct extepgconfig *newnode = NULL, *prev = NULL, *node = extepgconfig;
+	char *file = NULL;
+	int ret = 0;
+
+	if(line == NULL) return NULL;
+
+	newnode = (struct extepgconfig*)calloc(1, sizeof(struct extepgconfig));
+	if(newnode == NULL)
+	{
+		err("no memory");
+		return NULL;
+	}
+
+	file = malloc(MINMALLOC);
+	if(file == NULL)
+	{
+		err("no memory");
+		free(newnode);
+		return NULL;
+	}
+
+	ret = sscanf(line, "%llu#%d#%[^#]#%d#%d#%d", &newnode->transponderid, &newnode->type, file, &newnode->channelpid, &newnode->titlepid, &newnode->summarypid);
+	if(ret != 6)
+	{
+		if(count > 0)
+		{
+			err("extepgconfig line %d not ok or double", count);
+		}
+		else
+		{
+			err("add extepgconfig");
+		}
+		free(file);
+		free(newnode);
+		return NULL;
+	}
+
+	newnode->file = ostrcat(file, NULL, 1, 0);
+
+	if(last == NULL)
+	{
+		while(node != NULL)
+		{
+			prev = node;
+			node = node->next;
+		}
+	}
+	else
+	{
+		prev = last;
+		node = last->next;
+	}
+
+	if(prev == NULL)
+		extepgconfig = newnode;
+	else
+		prev->next = newnode;
+	newnode->next = node;
+
+	//debug(1000, "out");
+	return newnode;
+}
+
+int readextepgconfig(const char* filename)
+{
+	debug(1000, "in");
+	FILE *fd = NULL;
+	char *fileline = NULL;
+	int linecount = 0, len = 0;
+	struct extepgconfig* last = NULL, *tmplast = NULL;
+
+	fileline = malloc(MINMALLOC);
+	if(fileline == NULL)
+	{
+		err("no memory");
+		return 1;
+	}
+
+	fd = fopen(filename, "r");
+	if(fd == NULL)
+	{
+		perr("can't open %s", filename);
+		free(fileline);
+		return 1;
+	}
+
+	while(fgets(fileline, MINMALLOC, fd) != NULL)
+	{
+		if(fileline[0] == '#' || fileline[0] == '\n')
+			continue;
+		len = strlen(fileline) - 1;
+		if(len >= 0 && fileline[len] == '\n')
+			fileline[len] = '\0';
+		len--;
+		if(len >= 0 && fileline[len] == '\r')
+			fileline[len] = '\0';
+
+		linecount++;
+
+		if(last == NULL) last = tmplast;
+		last = addextepgconfig(fileline, linecount, last);
+		if(last != NULL) tmplast = last;
+	}
+
+	free(fileline);
+	fclose(fd);
+	return 0;
+}
+
+void delextepgconfig(struct extepgconfig* config)
+{
+	//debug(1000, "in");
+	struct extepgconfig *node = extepgconfig, *prev = extepgconfig;
+
+	while(node != NULL)
+	{
+		if(node == config)
+		{
+			if(node == extepgconfig)
+				extepgconfig = node->next;
+			else
+				prev->next = node->next;
+
+			free(node->file);
+			node->file = NULL;
+
+			free(node);
+			node = NULL;
+			break;
+		}
+
+		prev = node;
+		node = node->next;
+	}
+	//debug(1000, "out");
+}
+
+void freeextepgconfig()
+{
+	//debug(1000, "in");
+	struct extepgconfig *node = extepgconfig, *prev = extepgconfig;
+
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+		if(prev != NULL)
+			delextepgconfig(prev);
+	}
+	//debug(1000, "out");
+}
+
+struct extepgconfig* getextepgconfig(uint64_t transponderid, int type)
+{
+	//debug(1000, "in");
+	struct extepgconfig *node = extepgconfig;
+
+	while(node != NULL)
+	{
+		if(node->transponderid == transponderid && node->type == type)
+		{
+			//debug(1000, "out");
+			return node;
+		}
+
+		node = node->next;
+	}
+	debug(100, "extepgconfig not found");
+	return NULL;
 }
 
 time_t localtime2utc(time_t t)
@@ -677,7 +863,7 @@ struct mhwchannel* getmhwchannel(unsigned char* channelbuf, int channelcount, in
 	return NULL;
 }
 
-int readmhwchannel(struct stimerthread* self, struct dvbdev* fenode, unsigned char* channelbuf)
+int readmhwchannel(struct stimerthread* self, struct dvbdev* fenode, unsigned char* channelbuf, int pid)
 {
 	int readlen = 0;
 	struct dvbdev* dmxnode;
@@ -701,7 +887,7 @@ int readmhwchannel(struct stimerthread* self, struct dvbdev* fenode, unsigned ch
 	dmxsetbuffersize(dmxnode, getconfigint("dmxepgbuffersize", NULL));
 	dmxsetsource(dmxnode, fenode->fedmxsource);
 
-	dmxsetfilter(dmxnode, 0xD3, 0, 16);
+	dmxsetfilter(dmxnode, pid, 0, 16);
 
 	readlen = dvbread(dmxnode, channelbuf, 0, MINMALLOC, 2000000);
 	if(readlen <= 0)
@@ -714,7 +900,9 @@ int readmhwchannel(struct stimerthread* self, struct dvbdev* fenode, unsigned ch
 	return readlen;
 }
 
-int readmhwtitle(struct stimerthread* self, struct dvbdev* fenode, struct channel* chnode, unsigned char* channelbuf, int channelcount)
+//flag 0 = from epg thread
+//flag 1 = from epg scan
+int readmhwtitle(struct stimerthread* self, struct dvbdev* fenode, struct channel* chnode, unsigned char* channelbuf, int channelcount, int pid, int flag)
 {
 	int readlen = 0, first = 1;
 	unsigned char *buf = NULL, *firstbuf = NULL;
@@ -727,11 +915,9 @@ int readmhwtitle(struct stimerthread* self, struct dvbdev* fenode, struct channe
 	struct epg* epgnode = NULL;
 	time_t dvbtime = 0, starttime = 0, endtime = 0, akttime = 0, yesterdayepoch = 0;
 	time_t epgmaxsec = status.epgdays * 24 * 60 * 60;
-	struct mhwcache* cache = NULL;
+	struct extepgcache* cache = NULL;
 
-	if(chnode == NULL) chnode = status.aktservice->channel;
-	if(chnode == NULL || (chnode == status.aktservice->channel && status.aktservice->type != CHANNEL))
-		return 1;
+	if(chnode == NULL) return 1;
 
 	mhwtimeoffset(&yesterday, &yesterdayepoch);
 
@@ -772,7 +958,7 @@ int readmhwtitle(struct stimerthread* self, struct dvbdev* fenode, struct channe
 	dmxsetbuffersize(dmxnode, getconfigint("dmxepgbuffersize", NULL));
 	dmxsetsource(dmxnode, fenode->fedmxsource);
 
-	dmxsetfilter(dmxnode, 0xD2, 0, 15);
+	dmxsetfilter(dmxnode, pid, 0, 15);
 	akttime = time(NULL);
 
 	while(self->aktion != STOP && self->aktion != PAUSE)
@@ -880,7 +1066,7 @@ int readmhwtitle(struct stimerthread* self, struct dvbdev* fenode, struct channe
 
 			epgnode->title = ostrcat((char*)mhwtitle->title, NULL, 0, 0);
 			epgnode->title = strstrip(epgnode->title);
-			cache = addmhwcache(HILO32(mhwtitle->program_id), epgnode, cache);
+			cache = addextepgcache(HILO32(mhwtitle->program_id), epgnode, cache);
 
 			m_unlock(&status.epgmutex, 4);
 		}
@@ -892,7 +1078,7 @@ int readmhwtitle(struct stimerthread* self, struct dvbdev* fenode, struct channe
 	return 0;
 }
 
-int readmhwsummary(struct stimerthread* self, struct dvbdev* fenode)
+int readmhwsummary(struct stimerthread* self, struct dvbdev* fenode, int pid)
 {
 	int readlen = 0, first = 1, len = 0;
 	unsigned char *buf = NULL, *firstbuf = NULL;
@@ -902,7 +1088,7 @@ int readmhwsummary(struct stimerthread* self, struct dvbdev* fenode)
 	struct mhwsummary* mhwsummary = NULL;
 	char* zbuf = NULL;
 	int zlen = 0, ret = 0;
-	struct mhwcache* cache = NULL;
+	struct extepgcache* cache = NULL;
 
 	buf = calloc(1, MINMALLOC);
 	if(buf == NULL)
@@ -941,7 +1127,7 @@ int readmhwsummary(struct stimerthread* self, struct dvbdev* fenode)
 	dmxsetbuffersize(dmxnode, getconfigint("dmxepgbuffersize", NULL));
 	dmxsetsource(dmxnode, fenode->fedmxsource);
 
-	dmxsetfilter(dmxnode, 0xD3, 0, 17);
+	dmxsetfilter(dmxnode, pid, 0, 17);
 	akttime = time(NULL);
 
 	while(self->aktion != STOP && self->aktion != PAUSE)
@@ -993,7 +1179,7 @@ int readmhwsummary(struct stimerthread* self, struct dvbdev* fenode)
 
 		buf[readlen + 3] = '\0'; //String terminator
 
-		cache = getmhwcache(HILO32(mhwsummary->program_id));
+		cache = getextepgcache(HILO32(mhwsummary->program_id));
 		if(cache != NULL && cache->epgnode != NULL)
 		{
 
@@ -1022,10 +1208,25 @@ int readmhwsummary(struct stimerthread* self, struct dvbdev* fenode)
 	return 0;
 }
 
-int readmhw(struct stimerthread* self, struct dvbdev* fenode)
+//flag 0 = from epg thread
+//flag 1 = from epg scan
+int readmhw(struct stimerthread* self, struct dvbdev* fenode, struct channel* chnode, int flag)
 {
 	int ret = 0, channelcount = 0;
 	unsigned char* channelbuf = NULL;
+	struct extepgconfig* extepgconfignode = NULL;
+
+	if(chnode == NULL) chnode = status.aktservice->channel;
+	if(chnode == NULL || (flag == 0 && chnode == status.aktservice->channel && status.aktservice->type != CHANNEL))
+		return 1;
+
+	extepgconfignode = getextepgconfig(chnode->transponderid, 0);
+	if(extepgconfignode == NULL) extepgconfignode = getextepgconfig(chnode->transponderid, 0);
+	if(extepgconfignode == NULL)
+	{
+		debug(400, "transponder not found in extepgconfig");
+		return 1;
+	}
 
 	if(fenode == NULL) fenode = status.aktservice->fedev;
 	if(fenode == NULL)
@@ -1041,7 +1242,7 @@ int readmhw(struct stimerthread* self, struct dvbdev* fenode)
 		return 1;
 	}
 
-	channelcount = readmhwchannel(self, fenode, channelbuf);
+	channelcount = readmhwchannel(self, fenode, channelbuf, extepgconfignode->channelpid);
 	if(channelcount <= 0)
 	{
 		debug(400, "mhwepg no channels found");
@@ -1049,26 +1250,26 @@ int readmhw(struct stimerthread* self, struct dvbdev* fenode)
 		return 1;
 	}
 
-	ret = readmhwtitle(self, fenode, NULL, channelbuf, channelcount);
+	ret = readmhwtitle(self, fenode, chnode, channelbuf, channelcount, extepgconfignode->titlepid, flag);
 	if(ret != 0)
 	{
 		debug(400, "mhwepg no titles found");
 		free(channelbuf); channelbuf = NULL;
-		freemhwcache();
+		freeextepgcache();
 		return 1;
 	}
 
-	ret = readmhwsummary(self, fenode);
+	ret = readmhwsummary(self, fenode, extepgconfignode->summarypid);
 	if(ret != 0)
 	{
 		debug(400, "mhwepg no summary found");
 		free(channelbuf); channelbuf = NULL;
-		freemhwcache();
+		freeextepgcache();
 		return 1;
 	}
 
 	free(channelbuf); channelbuf = NULL;
-	freemhwcache();
+	freeextepgcache();
 	return 0;
 }
 
@@ -1093,7 +1294,7 @@ struct mhw2channel* getmhw2channel(unsigned char* channelbuf, int id)
  	return NULL;
 }
 
-int readmhw2channel(struct stimerthread* self, struct dvbdev* fenode, unsigned char* channelbuf)
+int readmhw2channel(struct stimerthread* self, struct dvbdev* fenode, unsigned char* channelbuf, int pid)
 {
 	int readlen = 0, count = 0;
 	unsigned short len = 0;
@@ -1118,7 +1319,7 @@ int readmhw2channel(struct stimerthread* self, struct dvbdev* fenode, unsigned c
 	dmxsetbuffersize(dmxnode, getconfigint("dmxepgbuffersize", NULL));
 	dmxsetsource(dmxnode, fenode->fedmxsource);
 
-	dmxsetfilter(dmxnode, 0x231, 0, 19);
+	dmxsetfilter(dmxnode, pid, 0, 19);
 
 start:
 	readlen = dvbread(dmxnode, channelbuf, 0, 3, 2000000);
@@ -1148,7 +1349,9 @@ start:
 		return 0;
 }
 
-int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct channel* chnode, unsigned char* channelbuf)
+//flag 0 = from epg thread
+//flag 1 = from epg scan
+int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct channel* chnode, unsigned char* channelbuf, int pid, int flag)
 {
 	int readlen = 0, pos = 0, len = 0;
 	unsigned char *buf = NULL;
@@ -1162,11 +1365,9 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 	time_t dvbtime = 0, starttime = 0, endtime = 0, akttime = 0;
 	time_t epgmaxsec = status.epgdays * 24 * 60 * 60;
 	char tmpstr[65];
-	struct mhwcache* cache = NULL;
+	struct extepgcache* cache = NULL;
 
-	if(chnode == NULL) chnode = status.aktservice->channel;
-	if(chnode == NULL || (chnode == status.aktservice->channel && status.aktservice->type != CHANNEL))
-		return 1;
+	if(chnode == NULL) return 1;
 
 	buf = calloc(1, MINMALLOC);
 	if(buf == NULL)
@@ -1194,7 +1395,7 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 	dmxsetbuffersize(dmxnode, getconfigint("dmxepgbuffersize", NULL));
 	dmxsetsource(dmxnode, fenode->fedmxsource);
 
-	dmxsetfilter(dmxnode, 0x234, 0, 18);
+	dmxsetfilter(dmxnode, pid, 0, 18);
 	akttime = time(NULL);
 
 	while(self->aktion != STOP && self->aktion != PAUSE)
@@ -1321,7 +1522,7 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 				}
 
 				epgnode->title = ostrcat(tmpstr, NULL, 0, 0);
-				cache = addmhwcache(progid, epgnode, cache);
+				cache = addextepgcache(progid, epgnode, cache);
 
 				m_unlock(&status.epgmutex, 4);
 
@@ -1335,7 +1536,7 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 	return 0;
 }
 
-int readmhw2summary(struct stimerthread* self, struct dvbdev* fenode)
+int readmhw2summary(struct stimerthread* self, struct dvbdev* fenode, int pid)
 {
 	int readlen = 0, len = 0, first = 1;
 	unsigned char *buf = NULL, *firstbuf = NULL;
@@ -1344,7 +1545,7 @@ int readmhw2summary(struct stimerthread* self, struct dvbdev* fenode)
 	char* zbuf = NULL;
 	int zlen = 0, ret = 0;
 	char tmpstr[MINMALLOC];
-	struct mhwcache* cache = NULL;
+	struct extepgcache* cache = NULL;
 
 	buf = calloc(1, MINMALLOC);
 	if(buf == NULL)
@@ -1382,7 +1583,7 @@ int readmhw2summary(struct stimerthread* self, struct dvbdev* fenode)
 	dmxsetbuffersize(dmxnode, getconfigint("dmxepgbuffersize", NULL));
 	dmxsetsource(dmxnode, fenode->fedmxsource);
 
-	dmxsetfilter(dmxnode, 0x236, 0, 20);
+	dmxsetfilter(dmxnode, pid, 0, 20);
 	akttime = time(NULL);
 
 	while(self->aktion != STOP && self->aktion != PAUSE)
@@ -1405,6 +1606,7 @@ int readmhw2summary(struct stimerthread* self, struct dvbdev* fenode)
 		{
 			dmxclose(dmxnode, -1);
 			free(buf);
+			free(firstbuf);
 			return 1;
 		}
 
@@ -1466,7 +1668,7 @@ int readmhw2summary(struct stimerthread* self, struct dvbdev* fenode)
 		}
 		tmpstr[sumlen] = '\0';
 
-		cache = getmhwcache(progid);
+		cache = getextepgcache(progid);
 		if(cache != NULL && cache->epgnode != NULL)
 		{
 			//tmpstr = stringreplacechar(tmpstr, '\n', ' ');
@@ -1491,10 +1693,25 @@ int readmhw2summary(struct stimerthread* self, struct dvbdev* fenode)
 	return 0;
 }
 
-int readmhw2(struct stimerthread* self, struct dvbdev* fenode)
+//flag 0 = from epg thread
+//flag 1 = from epg scan
+int readmhw2(struct stimerthread* self, struct dvbdev* fenode, struct channel* chnode, int flag)
 {
 	int ret = 0;
 	unsigned char* channelbuf = NULL;
+	struct extepgconfig* extepgconfignode = NULL;
+
+	if(chnode == NULL) chnode = status.aktservice->channel;
+	if(chnode == NULL || (flag == 0 && chnode == status.aktservice->channel && status.aktservice->type != CHANNEL))
+		return 1;
+
+	extepgconfignode = getextepgconfig(chnode->transponderid, 1);
+	if(extepgconfignode == NULL) extepgconfignode = getextepgconfig(chnode->transponderid, 1);
+	if(extepgconfignode == NULL)
+	{
+		debug(400, "transponder not found in extepgconfig");
+		return 1;
+	}
 
 	if(fenode == NULL) fenode = status.aktservice->fedev;
 	if(fenode == NULL)
@@ -1510,7 +1727,7 @@ int readmhw2(struct stimerthread* self, struct dvbdev* fenode)
 		return 1;
 	}
 
-	ret = readmhw2channel(self, fenode, channelbuf);
+	ret = readmhw2channel(self, fenode, channelbuf, extepgconfignode->channelpid);
 	if(ret != 0)
 	{
 		debug(400, "mhw2epg no channel found");
@@ -1518,174 +1735,105 @@ int readmhw2(struct stimerthread* self, struct dvbdev* fenode)
 		return 1;
 	}
 
-	ret = readmhw2title(self, fenode, NULL, channelbuf);
+	ret = readmhw2title(self, fenode, chnode, channelbuf, extepgconfignode->titlepid, flag);
 	if(ret != 0)
 	{
 		debug(400, "mhw2epg no titles found");
 		free(channelbuf); channelbuf = NULL;
-		freemhwcache();
+		freeextepgcache();
 		return 1;
 	}
 
-	ret = readmhw2summary(self, fenode);
+	ret = readmhw2summary(self, fenode, extepgconfignode->summarypid);
 	if(ret != 0)
 	{
 		debug(400, "mhw2epg no summary found");
 		free(channelbuf); channelbuf = NULL;
-		freemhwcache();
+		freeextepgcache();
 		return 1;
 	}
 
 	free(channelbuf); channelbuf = NULL;
-	freemhwcache();
+	freeextepgcache();
 	return 0;
 }
 
-//skybox
-struct mhw2channel* getskyboxchannel(unsigned char* buf, int id)
+//opentv
+//flag 0 = from epg thread
+//flag 1 = from epg scan
+int createopentvchannel(unsigned char* channelbuf, struct channel* chnode, int flag)
 {
-	if(buf == NULL) return NULL;
+	if(channelbuf == NULL) return 1;
 
-	int bouquetdesclen = ((buf[8] & 0x0f) << 8) | buf[9];
-	int looplen = ((buf[bouquetdesclen + 10] & 0x0f) << 8) | buf[bouquetdesclen + 11];
+	if(chnode == NULL) return 1;
+
+	int bouquetdesclen = ((channelbuf[8] & 0x0f) << 8) | channelbuf[9];
+	int looplen = ((channelbuf[bouquetdesclen + 10] & 0x0f) << 8) | channelbuf[bouquetdesclen + 11];
 	int p1 = bouquetdesclen + 12;
 
 	while(looplen > 0)
 	{
-		unsigned short int tid = (buf[p1] << 8) | buf[p1 + 1];
-		unsigned short int nid = (buf[p1 + 2] << 8) | buf[p1 + 3];
-		int transpdesclen = ((buf[p1 + 4] & 0x0f) << 8) | buf[p1 + 5];
+		unsigned short int tid = (channelbuf[p1] << 8) | channelbuf[p1 + 1];
+		unsigned short int nid = (channelbuf[p1 + 2] << 8) | channelbuf[p1 + 3];
+		int transpdesclen = ((channelbuf[p1 + 4] & 0x0f) << 8) | channelbuf[p1 + 5];
 		int p2 = p1 + 6;
 
 		p1 += transpdesclen + 6;
-		looplen -= transpdesclen + 6;
+		looplen -= (transpdesclen + 6);
 		while(transpdesclen > 0)
 		{
-			unsigned char desctag = buf[p2];
-			int desclen = buf[p2 + 1];
+			unsigned char desctag = channelbuf[p2];
+			int desclen = channelbuf[p2 + 1];
 			int p3 = p2 + 2;
 
 			p2 += desclen + 2;
 			transpdesclen -= (desclen + 2);
-			switch(desctag)
+			if(desctag == 0xb1)
 			{
-				case 0xb1:
+				p3 += 2;
+				desclen -= 2;
+				while(desclen > 0)
 				{
-					p3 += 2;
-					desclen -= 2;
-					while(desclen > 0)
+					unsigned short int sid = (channelbuf[p3] << 8) | channelbuf[p3 + 1];
+					unsigned short int channelid = (channelbuf[p3 + 3] << 8) | channelbuf[p3 + 4];
+					if(getextepgchannel(channelid) == NULL)
 					{
-						unsigned short int sid = (buf[p3] << 8) | buf[p3 + 1];
-						unsigned short int channelid = (buf[p3 + 3] << 8) | buf[p3 + 4];
-						unsigned short int skynr = (buf[p3 + 5] << 8) | buf[p3 + 6];
-						if(skynr > 100 && skynr < 1000)
+						uint64_t transponderid = ((nid << 16) | tid) & 0xffffffff;
+						if(chnode->transponder != NULL)
 						{
-							if(channelid > 0)
-							{
-
-							/*
-                	sChannel *C;
-                	if (ChannelSeq.count (ChannelId) == 0) { //not found
-                  	C = &sChannels[nChannels];
-                  	C->ChannelId = ChannelId;
-                  	//C->NumberOfEquivalences = 1; //there is always an original channel. every equivalence adds 1
-                  	C->Src = Source (); //assume all EPG channels are on same satellite, if not, manage this via equivalents!!!
-                  	C->Nid = Nid;
-                  	C->Tid = Tid;
-                  	C->Sid = Sid;
-                  	C->SkyNumber = SkyNumber;
-
-
-
-                  ChannelSeq[C->ChannelId] = nChannels; //fill lookup table to go from channel-id to sequence nr in table
-                  nChannels++;
-									}
-								 */
-							}
+							if(chnode->transponder->fetype == FE_QAM)
+								transponderid = transponderid | ((uint64_t)1 << 32);
+							else if(chnode->transponder->fetype == FE_OFDM)
+								transponderid = transponderid | ((uint64_t)2 << 32);
 						}
+						addextepgchannel(channelid, sid, transponderid, NULL);
 					}
 					p3 += 9;
 					desclen -= 9;
 				}
-				break;
-			default:
-				break;
 			}
 		}
 	}
 
-	return NULL;
-}
-
-int readskyboxchannel(struct stimerthread* self, struct dvbdev* fenode, unsigned char* buf)
-{
-	int readlen = 0;
-	unsigned short len = 0;
-	struct dvbdev* dmxnode;
-
-	if(buf == NULL) return 1;
-
-	if(fenode == NULL) fenode = status.aktservice->fedev;
-	if(fenode == NULL)
-	{
-		debug(400, "no frontend dev in service");
-		return 1;
-	}
-
-	dmxnode = dmxopen(fenode);
-	if(dmxnode == NULL)
-	{
-		err("open demux dev");
-		return 1;
-	}
-
-	dmxsetbuffersize(dmxnode, getconfigint("dmxepgbuffersize", NULL));
-	dmxsetsource(dmxnode, fenode->fedmxsource);
-
-	dmxsetfilter(dmxnode, 0x11, 0, 19); //0x4a
-
-	readlen = dvbread(dmxnode, buf, 0, 3, 2000000);
-	if(readlen != 3)
-	{
-		dmxclose(dmxnode, -1);
-		return 1;
-	}
-	readlen = 0;
-	len = buf[2] | ((buf[1] & 0x0f) << 8);
-	if(len + 3 <= MINMALLOC)
-		readlen = dvbread(dmxnode, buf, 3, len, 2000000);
-	if(readlen <= 0)
-	{
-		dmxclose(dmxnode, -1);
-		return 1;
-	}
-
-	dmxclose(dmxnode, -1);
 	return 0;
 }
 
-int readskyboxtitle(struct stimerthread* self, struct dvbdev* fenode, struct channel* chnode, unsigned char* channelbuf)
+//flag 0 = from epg thread
+//flag 1 = from epg scan
+int readopentvchannel(struct stimerthread* self, struct dvbdev* fenode, struct channel* chnode, unsigned char* channelbuf, int pid, int flag)
 {
-	int readlen = 0, pos = 0, len = 0;
-	unsigned char *buf = NULL;
+	int readlen = 0, first = 1;
+	unsigned short len = 0;
 	struct dvbdev* dmxnode;
-	struct mhw2channel* mhw2channel = NULL;
-	uint64_t transponderid = 0;
-	int serviceid = 0, eventid = 0;
-	struct channel* tmpchnode = NULL;
-	unsigned long quad = 0, quad0 = 0;
-	struct epg* epgnode = NULL;
-	time_t dvbtime = 0, starttime = 0, endtime = 0, akttime = 0;
-	time_t epgmaxsec = status.epgdays * 24 * 60 * 60;
-	char tmpstr[65];
-	struct mhwcache* cache = NULL;
+	char* firstbuf = NULL;
+	time_t akttime = 0;
 
-	if(chnode == NULL) chnode = status.aktservice->channel;
-	if(chnode == NULL || (chnode == status.aktservice->channel && status.aktservice->type != CHANNEL))
-		return 1;
+	if(channelbuf == NULL) return 1;
 
-	buf = calloc(1, MINMALLOC);
-	if(buf == NULL)
+	if(chnode == NULL) return 1;
+
+	firstbuf = calloc(1, MINMALLOC);
+	if(firstbuf == NULL)
 	{
 		err("no memory");
 		return 1;
@@ -1695,7 +1843,112 @@ int readskyboxtitle(struct stimerthread* self, struct dvbdev* fenode, struct cha
 	if(fenode == NULL)
 	{
 		debug(400, "no frontend dev in service");
+		free(firstbuf);
+		return 1;
+	}
+
+	dmxnode = dmxopen(fenode);
+	if(dmxnode == NULL)
+	{
+		err("open demux dev");
+		free(firstbuf);
+		return 1;
+	}
+
+	dmxsetbuffersize(dmxnode, getconfigint("dmxepgbuffersize", NULL));
+	dmxsetsource(dmxnode, fenode->fedmxsource);
+
+	dmxsetfilter(dmxnode, pid, 0, 21);
+	akttime = time(NULL);
+
+	while(self->aktion != STOP && self->aktion != PAUSE)
+	{
+		readlen = dvbread(dmxnode, channelbuf, 0, 3, 5000000);
+		if(readlen <= 0)
+		{
+			dmxclose(dmxnode, -1);
+			free(firstbuf);
+			return 1;
+		}
+		readlen = 0;
+		len = channelbuf[2] | ((channelbuf[1] & 0x0f) << 8);
+		if(len + 3 <= MINMALLOC)
+			readlen = dvbread(dmxnode, channelbuf, 3, len, 2000000);
+		if(readlen <= 0)
+		{
+			dmxclose(dmxnode, -1);
+			free(firstbuf);
+			return 1;
+		}
+
+		//check for end
+		if(first == 1)
+		{
+			first = 0;
+			memcpy(firstbuf, channelbuf, readlen + 3);
+		}
+		else
+		{
+			if(memcmp(firstbuf, channelbuf, readlen + 3) == 0)
+			{
+				debug(400, "opentv no more new data, wait for next run");
+				break;
+			}
+
+			//stop epgscan after 2 min
+			if(akttime + 120 < time(NULL))
+			{
+				debug(400, "opentv timeout");
+				break;
+			}
+		}
+
+		createopentvchannel(channelbuf, channel, flag);
+	}
+
+	dmxclose(dmxnode, -1);
+	free(firstbuf);
+	return 0;
+}
+
+//flag 0 = from epg thread
+//flag 1 = from epg scan
+int readopentvtitle(struct stimerthread* self, struct dvbdev* fenode, struct channel* chnode, unsigned char* channelbuf, int pid, int flag)
+{
+	int readlen = 0, first = 1, ret = 1, len = 0;
+	unsigned char *buf = NULL, *firstbuf = NULL;
+	struct dvbdev* dmxnode;
+	uint64_t transponderid = 0;
+	int serviceid = 0;
+	struct channel* tmpchnode = NULL;
+	struct epg* epgnode = NULL;
+	time_t dvbtime = 0, starttime = 0, endtime = 0, akttime = 0;
+	time_t epgmaxsec = status.epgdays * 24 * 60 * 60;
+	struct extepgcache* cache = NULL;
+
+	if(chnode == NULL) return 1;
+
+	buf = calloc(1, MINMALLOC);
+	if(buf == NULL)
+	{
+		err("no memory");
+		return 1;
+	}
+
+	firstbuf = calloc(1, MINMALLOC);
+	if(firstbuf == NULL)
+	{
+		err("no memory");
 		free(buf);
+		return 1;
+	}
+
+	if(fenode == NULL) fenode = status.aktservice->fedev;
+	if(fenode == NULL)
+	{
+		debug(400, "no frontend dev in service");
+		free(buf);
+		free(firstbuf);
 		return 1;
 	}
 
@@ -1704,130 +1957,160 @@ int readskyboxtitle(struct stimerthread* self, struct dvbdev* fenode, struct cha
 	{
 		err("open demux dev");
 		free(buf);
+		free(firstbuf);
 		return 1;
 	}
 
 	dmxsetbuffersize(dmxnode, getconfigint("dmxepgbuffersize", NULL));
 	dmxsetsource(dmxnode, fenode->fedmxsource);
 
-	//AddFilter (0x30, 0xa0, 0xfc); //SKY Titles batch 0 of 7
-	dmxsetfilter(dmxnode, 0x234, 0, 18);
+	int tmppid = 0x30;
+start:
+	dmxsetfilter(dmxnode, tmppid, 0, 22);
 	akttime = time(NULL);
+	first = 1;
 
 	while(self->aktion != STOP && self->aktion != PAUSE)
 	{
 		readlen = dvbread(dmxnode, buf, 0, 3, 2000000);
 		if(readlen != 3)
-		{
-			dmxclose(dmxnode, -1);
-			free(buf);
-			return 1;
-		}
+			break;
+
 		readlen = 0;
 		len = buf[2] | ((buf[1] & 0x0f) << 8);
 		if(len + 3 <= MINMALLOC)
 			readlen = dvbread(dmxnode, buf, 3, len, 2000000);
 		if(readlen <= 0)
-		{
-			dmxclose(dmxnode, -1);
-			free(buf);
-			return 1;
-		}
+			break;
 
 		//check for end
-		quad = getquad(buf + 3);
-		if(quad0 == 0) quad0 = quad;
-		else if(quad == quad0)
+		if(first == 1)
 		{
-			debug(400, "mhw2epg no more new data, wait for next run");
+			first = 0;
+			memcpy(firstbuf, buf, readlen + 3);
+		}
+		else
+		{
+			if(memcmp(firstbuf, buf, readlen + 3) == 0)
+			{
+				debug(400, "opentv no more new data, wait for next run");
+				break;
+			}
 
-			if(chnode != NULL && chnode->transponder != NULL)
-				chnode->transponder->lastepg = time(NULL) + 7700;
-			break;
+			//stop epgscan after 2 min
+			if(akttime + 120 < time(NULL))
+			{
+				debug(400, "opentv timeout");
+				break;
+			}
 		}
 
-		//stop epgscan after 2 min
-		if(akttime + 120 < time(NULL))
-		{
-			debug(400, "mhw2epg timeout");
-			break;
-		}
-
-		//////////////
-
-	int p = 0;
-	unsigned short int channelid = 0;
-	unsigned short int mjdtime = 0;
-	int len1 = 0;
-	int len2 = 0;
-
-  if(readlen + 3 < 20)
-		return 1;
-
-	/*
-  if (memcmp (InitialTitle, Data, 20) == 0) //data is the same as initial title
-    return 2;
-  else {
-    if (nTitles == 0)
-      memcpy (InitialTitle, Data, 20); //copy data into initial title
-	 */
-
+		int p = 0;
+		unsigned short int channelid = 0;
+		unsigned short int mjdtime = 0;
 
 		channelid = (buf[3] << 8) | buf[4];
-    mjdtime = ((buf[8] << 8) | buf[9]);
-		if(channelid > 0)
+		mjdtime = ((buf[8] << 8) | buf[9]);
+		if(channelid > 0 && mjdtime > 0)
 		{
-			if(mjdtime > 0)
+			p = 10;
+			while((p + 11) < readlen + 3)
 			{
-				p = 10;
-				do
-				{
-          //T->EventId = (buf[p] << 8) | buf[p + 1];
-          len1 = ((buf[p + 2] & 0x0f) << 8) | buf[p + 3];
-          if(buf[p + 4] != 0xb5)
-					{
-            err("data signature for title - buf[p + 4] != 0xb5");
-						break;
-					}
-					if(len1 > readlen + 3)
-					{
-						err("data signature for title - len1 > readlen + 3");
-						break;
-					}
-          p += 4;
-          len2 = buf[p + 1] - 7;
-          //T->StartTime = ((MjdTime - 40587) * 86400) + ((Data[p + 2] << 9) | (Data[p + 3] << 1));
-          //T->Duration = ((Data[p + 4] << 9) | (Data[p + 5] << 1));
+				unsigned short int eventid = 0;
+				unsigned char	desclen = 0;
+				unsigned short int packetlen = ((buf[p + 2] & 0x0f) << 8) | buf[p + 3];
 
-          unsigned char tmp[4096]; //TODO smarter
-					len2 = skyhuffmandecode(&buf[p + 9], len2, tmp, 0);
-					if(len2 == 0)
+				if((buf[p + 4] != 0xb5) || ((packetlen + p) > readlen + 3)) break;
+
+				eventid = (buf[p] << 8) | buf[p + 1];
+				p += 4;
+				desclen = buf[p + 1] - 7;
+
+				if((p + 9 + desclen) > readlen + 3) break;
+
+				struct extepgchannel* extepgchannelnode = getextepgchannel(channelid);
+				if(extepgchannelnode != NULL)
+				{
+					unsigned char tmpstr[256];
+
+					if(skyhuffmandecode(buf + p + 9, desclen, tmpstr, 256) != 0)
+						tmpstr[0] = '\0';
+					else
 					{
-						err("could not huffman-decode title-text, skipping title");
-						//return 1; //non-fatal error
+						ret = 0;
+
+						//get start/endtime
+						dvbtime = ((mjdtime - 40587) * 86400) + ((buf[p + 2] << 9) | (buf[p + 3] << 1));
+						starttime = dvbtime;
+						endtime = starttime + ((buf[p + 4] << 9) | (buf[p + 5] << 1)) * 60;
+
+						tmpchnode = getchannel(extepgchannelnode->serviceid, extepgchannelnode->transponderid);
+						if(tmpchnode == NULL)
+						{
+							debug(1000, "NULL detect");
+							p += packetlen;
+							continue;
+						}
+
+						//look in epglist if channel exists
+						//only if epglist is marked as whitelist
+						if(status.epglistmode == 2 || status.epglistmode == 3)
+						{
+							if(getepgscanlist(serviceid, transponderid) == NULL)
+							{
+								p += packetlen;
+								continue;
+							}
+						}
+
+						m_lock(&status.epgmutex, 4);
+
+						epgnode = getepg(tmpchnode, eventid, 1);
+
+#ifndef SIMULATE
+						if(endtime < time(NULL) || starttime > time(NULL) + epgmaxsec)
+						{
+							m_unlock(&status.epgmutex, 4);
+							p += packetlen;
+							continue;
+						}
+#endif
+
+						if(epgnode == NULL)
+							epgnode = addepg(tmpchnode, eventid, 0, starttime, endtime, NULL, 1);
+						else
+							updateepg(tmpchnode, epgnode, eventid, 0, starttime, endtime, 1);
+
+						if(epgnode == NULL)
+						{
+							debug(1000, "NULL detect");
+							m_unlock(&status.epgmutex, 4);
+							p += packetlen;
+							continue;
+						}
+
+						epgnode->title = ostrcat((char*)tmpstr, NULL, 0, 0);
+						cache = addextepgcache(eventid, epgnode, cache);
+
+						m_unlock(&status.epgmutex, 4);
 					}
-					/*)
-          T->Text = (unsigned char *) malloc (Len2 + 1);
-          if (T->Text == NULL) {
-            LogE(0, prep("Titles memory allocation error."));
-            return 0;
-          }
-          T->Text[Len2] = '\0'; //end string with NULL character
-          memcpy (T->Text, tmp, Len2);
-          CleanString (T->Text);
-          T->SummaryAvailable = 1; //TODO I assume this is true?
-					*/
-          p += len1;
-        } while(p < readlen + 3);
-      }
-    }
-  }
+				}
+
+				p += packetlen;
+			}
+		}
+	}
+
+	tmppid++;
+	if(tmppid != 0x38) goto start;
 
 	dmxclose(dmxnode, -1);
-	return 0;
+	free(buf);
+	free(firstbuf);
+	return ret;
 }
 
-int readskyboxsummary(struct stimerthread* self, struct dvbdev* fenode)
+int readopentvsummary(struct stimerthread* self, struct dvbdev* fenode, int pid)
 {
 	int readlen = 0, pos = 0, len = 0;
 	unsigned char *buf = NULL;
@@ -1841,7 +2124,7 @@ int readskyboxsummary(struct stimerthread* self, struct dvbdev* fenode)
 	time_t dvbtime = 0, starttime = 0, endtime = 0, akttime = 0;
 	time_t epgmaxsec = status.epgdays * 24 * 60 * 60;
 	char tmpstr[65];
-	struct mhwcache* cache = NULL;
+	struct extepgcache* cache = NULL;
 
 	int p = 0;
   unsigned short int channelid = 0;
@@ -1878,9 +2161,8 @@ int readskyboxsummary(struct stimerthread* self, struct dvbdev* fenode)
           }
           p += 4;
           len2 = buf[p + 1];
-          unsigned char tmp[4096]; //TODO can this be done better?
-          len2 = skyhuffmandecode(&buf[p + 2], len2, tmp, 0);
-          if(len2 == 0)
+          unsigned char tmp[MINMALLOC]; //TODO can this be done better?
+          if(skyhuffmandecode(&buf[p + 2], len2, tmp, MINMALLOC) != 0)
 					{
             //LogE(0, prep("Warning, could not huffman-decode text, skipping summary."));
             return 1; //non-fatal error
@@ -1902,10 +2184,24 @@ int readskyboxsummary(struct stimerthread* self, struct dvbdev* fenode)
 	return 0;
 }
 
-int readskybox(struct stimerthread* self, struct dvbdev* fenode)
+//flag 0 = from epg thread
+//flag 1 = from epg scan
+int readopentv(struct stimerthread* self, struct dvbdev* fenode, struct channel* chnode, int flag)
 {
 	int ret = 0;
 	unsigned char* channelbuf = NULL;
+	struct extepgconfig* extepgconfignode = NULL;
+
+	if(chnode == NULL) chnode = status.aktservice->channel;
+	if(chnode == NULL || (flag == 0 && chnode == status.aktservice->channel && status.aktservice->type != CHANNEL))
+		return 1;
+
+	extepgconfignode = getextepgconfig(chnode->transponderid, 2);
+	if(extepgconfignode == NULL)
+	{
+		debug(400, "transponder not found in extepgconfig");
+		return 1;
+	}
 
 	if(fenode == NULL) fenode = status.aktservice->fedev;
 	if(fenode == NULL)
@@ -1921,34 +2217,50 @@ int readskybox(struct stimerthread* self, struct dvbdev* fenode)
 		return 1;
 	}
 
-	ret = readskyboxchannel(self, fenode, channelbuf);
+	ret = loadopentv(extepgconfignode->file);
 	if(ret != 0)
 	{
-		debug(400, "skybox epg no channel found");
+		debug(400, "opentv can't load dict");
 		free(channelbuf); channelbuf = NULL;
 		return 1;
 	}
 
-	ret = readskyboxtitle(self, fenode, NULL, channelbuf);
+	ret = readopentvchannel(self, fenode, chnode, channelbuf, extepgconfignode->channelpid, flag);
 	if(ret != 0)
 	{
-		debug(400, "skybox epg no titles found");
+		debug(400, "opentv epg no channel found");
 		free(channelbuf); channelbuf = NULL;
-		freemhwcache();
+		freeextepgchannel();
+		freeopentv();
 		return 1;
 	}
 
-	ret = readskyboxsummary(self, fenode);
+	ret = readopentvtitle(self, fenode, chnode, channelbuf, extepgconfignode->titlepid, flag);
 	if(ret != 0)
 	{
-		debug(400, "skybox epg no summary found");
+		debug(400, "opentv epg no titles found");
 		free(channelbuf); channelbuf = NULL;
-		freemhwcache();
+		freeextepgchannel();
+		freeextepgcache();
+		freeopentv();
+		return 1;
+	}
+
+	ret = readopentvsummary(self, fenode, extepgconfignode->summarypid);
+	if(ret != 0)
+	{
+		debug(400, "opentv epg no summary found");
+		free(channelbuf); channelbuf = NULL;
+		freeextepgchannel();
+		freeextepgcache();
+		freeopentv();
 		return 1;
 	}
 
 	free(channelbuf); channelbuf = NULL;
-	freemhwcache();
+	freeextepgchannel();
+	freeextepgcache();
+	freeopentv();
 	return 0;
 }
 
