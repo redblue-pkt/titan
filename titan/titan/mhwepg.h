@@ -1964,9 +1964,7 @@ int readopentvtitle(struct stimerthread* self, struct dvbdev* fenode, struct cha
 	dmxsetbuffersize(dmxnode, getconfigint("dmxepgbuffersize", NULL));
 	dmxsetsource(dmxnode, fenode->fedmxsource);
 
-	int tmppid = 0x30;
-start:
-	dmxsetfilter(dmxnode, tmppid, 0, 22);
+	dmxsetfilter(dmxnode, pid, 0, 22);
 	akttime = time(NULL);
 	first = 1;
 
@@ -2100,9 +2098,6 @@ start:
 			}
 		}
 	}
-
-	tmppid++;
-	if(tmppid != 0x38) goto start;
 
 	dmxclose(dmxnode, -1);
 	free(buf);
