@@ -411,6 +411,7 @@ void oshutdown(int exitcode, int flag)
 		free_shutdowntimervar();
 		freeinetwork();
 		freeoldentry();
+		freeextepgconfig();
 	}
 	else
 		freetimer(1);
