@@ -740,6 +740,7 @@ int main(int argc, char *argv[])
 	ret = readrcmap(getconfig("rcmapfile", NULL));
 	ret = readepgscanlist(getconfig("epgchannelfile", NULL));
 	ret = settimezone(getconfig("timezone", NULL));
+	ret = readextepgconfig(getconfig("extepgfile", NULL));
 
 	addtimer(&checkdate, START, 2000, -1, NULL, NULL, NULL);
 	if((checkbox("ATEMIO500") == 0) && (checkbox("ATEMIO510") == 0))

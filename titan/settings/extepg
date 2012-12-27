@@ -1,0 +1,17 @@
+#transponderid#type#channelpid#titlepid#summarypid#file
+#transponderid 0=all transponder
+
+#mhw
+0#0#-#211#210#211
+
+#mhw2
+0#1#-#561#564#566
+
+#skyit 13.2
+xxx#2#/var/etc/titan/skyit.dict#17#0#0
+
+#skyuk 28.2
+xxx#2#/var/etc/titan/skyuk.dict#17#0#0
+
+#skyuk 28.4
+xxx#2#/var/etc/titan/skyuk.dict#17#0#0

@@ -703,7 +703,7 @@ struct extepgconfig* addextepgconfig(char *line, int count, struct extepgconfig*
 	return newnode;
 }
 
-int readextepgconfig(const char* filename)
+int readextepgconfig(char* filename)
 {
 	debug(1000, "in");
 	FILE *fd = NULL;
