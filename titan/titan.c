@@ -130,7 +130,7 @@ struct extepgconfig* extepgconfig = NULL;
 #include "gmultiepg.h"
 #include "epg.h"
 #include "eit.h"
-#include "mhwepg.h"
+#include "extepg.h"
 #include "epgscan.h"
 #include "menulist.h"
 #include "videomode.h"
