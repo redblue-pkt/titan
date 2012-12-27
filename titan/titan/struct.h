@@ -1623,11 +1623,30 @@ struct mhw2channel
 	u_char                                :8;
 };
 
-struct mhwcache
+struct extepgcache
 {
 	long id;
 	struct epg* epgnode;
-	struct mhwcache* next;
+	struct extepgcache* next;
+};
+
+struct extepgchannel
+{
+	long id;
+	int serviceid;
+	uint64_t transponderid;
+	struct extepgchannel* next;
+};
+
+struct extepgconfig
+{
+	uint64_t transponderid;
+	int type;
+	char* file;
+	int channelpid;
+	int titlepid;
+	int summarypid;
+	struct extepgconfig* next;
 };
 
 struct blacklist
