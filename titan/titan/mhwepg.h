@@ -1966,7 +1966,6 @@ int readopentvtitle(struct stimerthread* self, struct dvbdev* fenode, struct cha
 
 	dmxsetfilter(dmxnode, pid, 0, 22);
 	akttime = time(NULL);
-	first = 1;
 
 	while(self->aktion != STOP && self->aktion != PAUSE)
 	{
@@ -2088,7 +2087,7 @@ int readopentvtitle(struct stimerthread* self, struct dvbdev* fenode, struct cha
 						}
 
 						epgnode->title = ostrcat((char*)tmpstr, NULL, 0, 0);
-						cache = addextepgcache(eventid, epgnode, cache);
+						cache = addextepgcache((channelid << 16) | eventid, epgnode, cache);
 
 						m_unlock(&status.epgmutex, 4);
 					}
@@ -2107,76 +2106,142 @@ int readopentvtitle(struct stimerthread* self, struct dvbdev* fenode, struct cha
 
 int readopentvsummary(struct stimerthread* self, struct dvbdev* fenode, int pid)
 {
-	int readlen = 0, pos = 0, len = 0;
-	unsigned char *buf = NULL;
+	int readlen = 0, first = 1, ret = 1, len = 0, zret = 0, zlen = 0;
+	unsigned char *buf = NULL, *firstbuf = NULL;
 	struct dvbdev* dmxnode;
-	struct mhw2channel* mhw2channel = NULL;
-	uint64_t transponderid = 0;
-	int serviceid = 0, eventid = 0;
-	struct channel* tmpchnode = NULL;
-	unsigned long quad = 0, quad0 = 0;
-	struct epg* epgnode = NULL;
-	time_t dvbtime = 0, starttime = 0, endtime = 0, akttime = 0;
-	time_t epgmaxsec = status.epgdays * 24 * 60 * 60;
-	char tmpstr[65];
+	time_t akttime = 0;
 	struct extepgcache* cache = NULL;
+	char* zbuf = NULL;
 
-	int p = 0;
-  unsigned short int channelid = 0;
-  unsigned short int mjdtime = 0;
-  int len1 = 0, len2 = 0;
+	buf = calloc(1, MINMALLOC);
+	if(buf == NULL)
+	{
+		err("no memory");
+		return 1;
+	}
 
-  if(readlen + 3 < 20) {
-    return 1; //non fatal error I assume
-  }
- // if (memcmp (InitialSummary, Data, 20) == 0) //data is equal to initial buffer
-  //  return 2;
-//        else if (nSummaries < MAX_SUMMARIES) {
-  else {
-   // if (nSummaries == 0)
-    //  memcpy (InitialSummary, buf, 20); //copy this data in initial buffer
-    channelid = (buf[3] << 8) | buf[4];
-		mjdtime = ((buf[8] << 8) | buf[9]);
-    if(channelid > 0)
+	firstbuf = calloc(1, MINMALLOC);
+	if(firstbuf == NULL)
+	{
+		err("no memory");
+		free(buf);
+		return 1;
+	}
+
+	if(fenode == NULL) fenode = status.aktservice->fedev;
+	if(fenode == NULL)
+	{
+		debug(400, "no frontend dev in service");
+		free(buf);
+		free(firstbuf);
+		return 1;
+	}
+
+	dmxnode = dmxopen(fenode);
+	if(dmxnode == NULL)
+	{
+		err("open demux dev");
+		free(buf);
+		free(firstbuf);
+		return 1;
+	}
+
+	dmxsetbuffersize(dmxnode, getconfigint("dmxepgbuffersize", NULL));
+	dmxsetsource(dmxnode, fenode->fedmxsource);
+
+	dmxsetfilter(dmxnode, pid, 0, 23);
+	akttime = time(NULL);
+
+	while(self->aktion != STOP && self->aktion != PAUSE)
+	{
+		readlen = dvbread(dmxnode, buf, 0, 3, 2000000);
+		if(readlen != 3)
+			break;
+
+		readlen = 0;
+		len = buf[2] | ((buf[1] & 0x0f) << 8);
+		if(len + 3 <= MINMALLOC)
+			readlen = dvbread(dmxnode, buf, 3, len, 2000000);
+		if(readlen <= 0)
+			break;
+
+		//check for end
+		if(first == 1)
 		{
-      if (mjdtime > 0)
+			first = 0;
+			memcpy(firstbuf, buf, readlen + 3);
+		}
+		else
+		{
+			if(memcmp(firstbuf, buf, readlen + 3) == 0)
 			{
-        p = 10;
-        do {
-          //S->EventId = (buf[p] << 8) | buf[p + 1];
-          len1 = ((buf[p + 2] & 0x0f) << 8) | buf[p + 3];
-          if(buf[p + 4] != 0xb9)
+				debug(400, "opentv no more new data, wait for next run");
+				break;
+			}
+
+			//stop epgscan after 2 min
+			if(akttime + 120 < time(NULL))
+			{
+				debug(400, "opentv timeout");
+				break;
+			}
+		}
+
+		if(readlen + 3 < 20) continue;
+
+		int p = 0;
+		unsigned short int channelid = (buf[3] << 8) | buf[4];
+		unsigned short int mjdtime = (buf[8] << 8) | buf[9];
+
+		if((channelid > 0) && (mjdtime > 0))
+		{
+			p = 10;
+			while(p < readlen + 3)
+			{
+				unsigned short int eventid = 0;
+				unsigned char	desclen = 0;
+				unsigned short int packetlen = ((buf[p + 2] & 0x0f) << 8) | buf[p + 3];
+
+				if((buf[p + 4] != 0xb9) || ((packetlen + p) > readlen + 3)) break;
+
+				eventid = (buf[p] << 8) | buf[p + 1];
+				p += 4;
+				desclen = buf[p + 1];
+
+				char tmpstr[MINMALLOC];
+
+				if(skyhuffmandecode(buf + p + 2, desclen, (unsigned char*)tmpstr, MINMALLOC) != 0)
+					tmpstr[0] = '\0';
+				else
+				{
+					cache = getextepgcache((channelid << 16) | eventid);
+					if(cache != NULL && cache->epgnode != NULL)
 					{
-     //       LogD(5, prep("data signature for title - buf[p + 4] != 0xb5"));
-            break;
-          }
-          if(len1 > readlen + 3) {
-          //  LogD(5, prep("data signature for title - len1 > readlen + 3"));
-            break;
-          }
-          p += 4;
-          len2 = buf[p + 1];
-          unsigned char tmp[MINMALLOC]; //TODO can this be done better?
-          if(skyhuffmandecode(&buf[p + 2], len2, tmp, MINMALLOC) != 0)
-					{
-            //LogE(0, prep("Warning, could not huffman-decode text, skipping summary."));
-            return 1; //non-fatal error
-          }
-          //S->Text = (unsigned char *) malloc (Len2 + 1);
-          //if (S->Text == NULL) {
-          //  LogE(0, prep("Summaries memory allocation error."));
-          //  return 0;
-          //}
-          //memcpy (S->Text, tmp, Len2);
-          //S->Text[Len2] = '\0'; //end string with NULL character
-          p += len1;
-        } while (p < readlen + 3);
-      }
-    }
+						//tmpstr = stringreplacechar(tmpstr, '\n', ' ');
+
+						//compress long desc
+						if(tmpstr[0] != '\0')
+						{
+							zret = ozip(tmpstr, strlen(tmpstr) + 1, &zbuf, &zlen, 1);
+							if(zret == 0)
+							{
+								free(cache->epgnode->desc); cache->epgnode->desc = NULL;
+								cache->epgnode->desc = zbuf;
+								cache->epgnode->desccomplen = zlen;
+							}
+						}
+					}
+				}
+
+				p += packetlen;
+			}
+		}
   }
 
 	dmxclose(dmxnode, -1);
-	return 0;
+	free(buf);
+	free(firstbuf);
+	return ret;
 }
 
 //flag 0 = from epg thread
