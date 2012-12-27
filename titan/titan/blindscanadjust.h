@@ -115,6 +115,18 @@ void screenblindscanadjust()
 				addconfigint("blindstepsignalrate", i);
 			}
 
+			if(getrcconfigint("blindminfrequency", NULL) > getrcconfigint("blindmaxfrequency", NULL))
+				addconfigint("blindminfrequency", getrcconfigint("blindmaxfrequency", NULL));
+
+			if(getrcconfigint("blindminsignalrate", NULL) > getrcconfigint("blindmaxsignalrate", NULL))
+				addconfigint("blindminfrequency", getrcconfigint("blindmaxsignalrate", NULL));
+
+			if(getrcconfigint("blindstepfrequency", NULL) < 1)
+				addconfigint("blindstepfrequency", 20);
+
+			if(getrcconfigint("blindstepsignalrate", NULL) < 1)
+				addconfigint("blindstepsignalrate", 20);
+
 			break;
 		}
 	}
