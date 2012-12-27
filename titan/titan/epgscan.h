@@ -157,6 +157,12 @@ void epgscanlistthread(struct stimerthread* self)
 			}
 			if(chnode->transponder != NULL) chnode->transponder->lastepg = 0;
 			readeit(self, chnode, fenode, 1);
+			if(getconfigint("mhwepg", NULL) != 0)
+				readmhw(self, chnode, fenode, 1);
+			if(getconfigint("mhw2epg", NULL) != 0)
+				readmhw2(self, chnode, fenode, 1);
+			if(getconfigint("opentv", NULL) != 0)
+				readopentv(self, chnode, fenode, 0);
 			node->scantime = time(NULL);
 		}
 		else

@@ -107,6 +107,9 @@ void screenepgsettings()
 	struct skin* epgpicon = getscreennode(epgsettings, "epgpicon");
 	struct skin* epgsave = getscreennode(epgsettings, "epgsave");
 	struct skin* delepgbeforescan = getscreennode(epgsettings, "delepgbeforescan");
+	struct skin* mhwepg = getscreennode(epgsettings, "mhwepg");
+	struct skin* mhw2epg = getscreennode(epgsettings, "mhw2epg");
+	struct skin* opentv = getscreennode(epgsettings, "opentv");
 	struct skin* tmp = NULL;
 
 	changeinput(epgpath, getconfig("epg_path", NULL));
@@ -180,6 +183,21 @@ void screenepgsettings()
 	addchoicebox(delepgbeforescan, "1", _("yes"));
 	setchoiceboxselection(delepgbeforescan, getconfig("delepgbeforescan", NULL));
 
+	addchoicebox(mhwepg, "0", _("no"));
+	addchoicebox(mhwepg, "1", _("only for scan"));
+	addchoicebox(mhwepg, "2", _("always"));
+	setchoiceboxselection(mhwepg, getconfig("mhwepg", NULL));
+
+	addchoicebox(mhw2epg, "0", _("no"));
+	addchoicebox(mhw2epg, "1", _("only for scan"));
+	addchoicebox(mhw2epg, "2", _("always"));
+	setchoiceboxselection(mhw2epg, getconfig("mhw2epg", NULL));
+
+	addchoicebox(opentv, "0", _("no"));
+	addchoicebox(opentv, "1", _("only for scan"));
+	addchoicebox(opentv, "2", _("always"));
+	setchoiceboxselection(opentv, getconfig("opentv", NULL));
+
 	drawscreen(epgsettings, 0, 0);
 	addscreenrc(epgsettings, listbox);
 
@@ -207,6 +225,9 @@ void screenepgsettings()
 			addconfigscreencheck("epgpicon", epgpicon, "0");
 			addconfigscreencheck("epgsave", epgsave, "0");
 			addconfigscreencheck("delepgbeforescan", delepgbeforescan, "0");
+			addconfigscreencheck("mhwepg", mhwepg, "0");
+			addconfigscreencheck("mhw2epg", mhw2epg, "0");
+			addconfigscreencheck("opentv", opentv, "0");
 			break;
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL))

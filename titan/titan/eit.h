@@ -1698,11 +1698,20 @@ void epgthreadfunc(struct stimerthread* self)
 		if(self->aktion != STOP && self->aktion != PAUSE)
 			readeit(self, NULL, NULL, 0);
 		if(self->aktion != STOP && self->aktion != PAUSE)
-			readmhw(self, NULL, NULL, 0);
+		{
+			if(getconfigint("mhwepg", NULL) == 2)
+				readmhw(self, NULL, NULL, 0);
+		}
 		if(self->aktion != STOP && self->aktion != PAUSE)
-			readmhw2(self, NULL, NULL, 0);
+		{
+			if(getconfigint("mhw2epg", NULL) == 2)
+				readmhw2(self, NULL, NULL, 0);
+		}
 		if(self->aktion != STOP && self->aktion != PAUSE)
-			readopentv(self, NULL, NULL, 0);
+		{
+			if(getconfigint("opentv", NULL) == 2)
+				readopentv(self, NULL, NULL, 0);
+		}
 
 		//wait for next run
 		while(self->aktion != STOP && self->aktion != PAUSE)
