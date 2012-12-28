@@ -313,7 +313,7 @@ char* webgetbouquetchannel(char* param, int fmt)
 
 	if(param == NULL) return NULL;
 
-	if(fmt == 0) webcreateheadbig(&buf, &maxlen, "<meta http-equiv=refresh content=15>", &pos, 0);
+	if(fmt == 0) webcreateheadbig(&buf, &maxlen, "<meta http-equiv=refresh content=60>", &pos, 0);
 
 	mbouquet = getmainbouquet(param);
 	if(mbouquet != NULL)
@@ -353,7 +353,7 @@ char* webgetchannel(int param, int flag, int page, int fmt)
 	struct channel* chnode = channel;
 	int line = 0, maxcount = 0, maxlen = 0, pos = 0;
 
-	if(fmt == 0) webcreateheadbig(&buf, &maxlen, "<meta http-equiv=refresh content=15>", &pos, 0);
+	if(fmt == 0) webcreateheadbig(&buf, &maxlen, "<meta http-equiv=refresh content=60>", &pos, 0);
 
 	if(flag == 0) tmpstr1 = ostrcat(tmpstr1, "(ALL)", 1, 0);
 	if(flag == 1)
