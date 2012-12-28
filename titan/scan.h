@@ -1495,7 +1495,7 @@ void screenscanconfig(int flag)
 		if(blindscan->ret != NULL) iblindscan = atoi(blindscan->ret);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-    if(rcret == getrcconfigint("rcok", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL)) break;
 		if(listbox->select != NULL && ostrcmp(listbox->select->name, "tuner") == 0)
 		{
 			scanchangesat(sat, tpnode, listbox->select->ret);
