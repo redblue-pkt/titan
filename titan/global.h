@@ -3177,18 +3177,21 @@ char* ostrcat(char* value1, char* value2, int free1, int free2)
 
 	len = len1 + len2 + 1;
 
-	buf = malloc(len);
+	if(free1 == 1)
+		buf = realloc(value1, len);
+	else
+		buf = malloc(len);
 	if(buf == NULL)
 	{
-		err("no memory");
+		if(free1 == 1) free(value1);
+		if(free2 == 1) free(value2);
 		return NULL;
 	}
 
-	if(len1 > 0) memcpy(buf, value1, len1);
+	if(free1 == 0 && len1 > 0) memcpy(buf, value1, len1);
 	if(len2 > 0) memcpy(buf + len1, value2, len2);
 	buf[len - 1] = '\0';
 
-	if(free1 == 1) free(value1);
 	if(free2 == 1) free(value2);
 
 	//helpfull for memleak detect
