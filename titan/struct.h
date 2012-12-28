@@ -1644,8 +1644,8 @@ struct extepgconfig
 	int type;
 	char* file;
 	int channelpid;
-	int titlepid;
-	int summarypid;
+	int titlepid[8];
+	int summarypid[8];
 	struct extepgconfig* next;
 };
 
