@@ -52,7 +52,7 @@ unsigned char resolvechar(char *str)
 	else if(sscanf(str, "0x%02x", &val) == 1)
 		return val;
 
-  return str[0];
+	return str[0];
 }
 
 unsigned long decodebinary(char *binary)
@@ -150,7 +150,7 @@ int loadfreesat(int tableid, char *filename)
 	}
 	else
 	{
-    perr("cannot load <%s> for table %d", filename, tableid + 1);
+		perr("cannot load <%s> for table %d", filename, tableid + 1);
 		return 1;
 	}
 	return 0;
@@ -1291,7 +1291,7 @@ struct mhw2channel* getmhw2channel(unsigned char* channelbuf, int id)
 		mhw2channel++;
 	}
 
- 	return NULL;
+	return NULL;
 }
 
 int readmhw2channel(struct stimerthread* self, struct dvbdev* fenode, unsigned char* channelbuf, int pid)
@@ -1439,7 +1439,7 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 
 		pos = 18;
 		while(pos < len)
- 		{
+		{
 			int channelid = buf[pos];
 			eventid = (buf[pos + 7] << 24) | (buf[pos + 8] << 16) | (buf[pos + 9] << 8) | buf[pos + 10];
 
@@ -1658,7 +1658,7 @@ int readmhw2summary(struct stimerthread* self, struct dvbdev* fenode, int pid)
 						tmpstr[sumlen] = ' ';
 						sumlen++;
 					}
-      	}
+				}
 				else
 					break;
 
@@ -2241,7 +2241,7 @@ int readopentvsummary(struct stimerthread* self, struct dvbdev* fenode, int pid)
 				p += packetlen;
 			}
 		}
-  }
+	}
 
 	dmxclose(dmxnode, -1);
 	free(buf);
