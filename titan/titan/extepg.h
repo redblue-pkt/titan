@@ -661,8 +661,12 @@ struct extepgconfig* addextepgconfig(char *line, int count, struct extepgconfig*
 		return NULL;
 	}
 
-	ret = sscanf(line, "%llu#%d#%[^#]#%d#%d#%d", &newnode->transponderid, &newnode->type, file, &newnode->channelpid, &newnode->titlepid, &newnode->summarypid);
-	if(ret != 6)
+	ret = sscanf(line, "%llu#%d#%[^#]#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d", &newnode->transponderid, &newnode->type, file, &newnode->channelpid, \
+		&newnode->titlepid[0], &newnode->titlepid[1], &newnode->titlepid[2], &newnode->titlepid[3], \
+		&newnode->titlepid[4], &newnode->titlepid[5], &newnode->titlepid[6], &newnode->titlepid[7], \
+		&newnode->summarypid[0], &newnode->summarypid[1], &newnode->summarypid[2], &newnode->summarypid[3], \
+		&newnode->summarypid[4], &newnode->summarypid[5], &newnode->summarypid[6], &newnode->summarypid[7]);
+	if(ret != 20)
 	{
 		if(count > 0)
 		{
@@ -1212,7 +1216,7 @@ int readmhwsummary(struct stimerthread* self, struct dvbdev* fenode, int pid)
 //flag 1 = from epg scan
 int readmhw(struct stimerthread* self, struct channel* chnode, struct dvbdev* fenode, int flag)
 {
-	int ret = 0, channelcount = 0;
+	int ret = 0, channelcount = 0, i = 0;
 	unsigned char* channelbuf = NULL;
 	struct extepgconfig* extepgconfignode = NULL;
 
@@ -1252,7 +1256,14 @@ int readmhw(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 		goto end;
 	}
 
-	ret = readmhwtitle(self, fenode, chnode, channelbuf, channelcount, extepgconfignode->titlepid, flag);
+	ret = 1;
+	for(i = 0; i < 8; i++)
+	{
+		if(i < 0) continue;
+		if(self->aktion == STOP || self->aktion == PAUSE) break;
+		int tmpret = readmhwtitle(self, fenode, chnode, channelbuf, channelcount, extepgconfignode->titlepid[i], flag);
+		if(tmpret == 0) ret = 0;
+	}
 	if(ret != 0 || self->aktion == STOP || self->aktion == PAUSE)
 	{
 		debug(400, "mhwepg no titles found");
@@ -1260,7 +1271,14 @@ int readmhw(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 		goto end;
 	}
 
-	ret = readmhwsummary(self, fenode, extepgconfignode->summarypid);
+	ret = 1;
+	for(i = 0; i < 8; i++)
+	{
+		if(i < 0) continue;
+		if(self->aktion == STOP || self->aktion == PAUSE) break;
+		int tmpret = readmhwsummary(self, fenode, extepgconfignode->summarypid[i]);
+		if(tmpret == 0) ret = 0;
+	}
 	if(ret != 0 || self->aktion == STOP || self->aktion == PAUSE)
 	{
 		debug(400, "mhwepg no summary found");
@@ -1701,7 +1719,7 @@ int readmhw2summary(struct stimerthread* self, struct dvbdev* fenode, int pid)
 //flag 1 = from epg scan
 int readmhw2(struct stimerthread* self, struct channel* chnode, struct dvbdev* fenode, int flag)
 {
-	int ret = 0;
+	int ret = 0, i = 0;
 	unsigned char* channelbuf = NULL;
 	struct extepgconfig* extepgconfignode = NULL;
 
@@ -1741,7 +1759,14 @@ int readmhw2(struct stimerthread* self, struct channel* chnode, struct dvbdev* f
 		goto end;
 	}
 
-	ret = readmhw2title(self, fenode, chnode, channelbuf, extepgconfignode->titlepid, flag);
+	ret = 1;
+	for(i = 0; i < 8; i++)
+	{
+		if(i < 0) continue;
+		if(self->aktion == STOP || self->aktion == PAUSE) break;
+		int tmpret = readmhw2title(self, fenode, chnode, channelbuf, extepgconfignode->titlepid[i], flag);
+		if(tmpret == 0) ret = 0;
+	}
 	if(ret != 0 || self->aktion == STOP || self->aktion == PAUSE)
 	{
 		debug(400, "mhw2epg no titles found");
@@ -1749,7 +1774,14 @@ int readmhw2(struct stimerthread* self, struct channel* chnode, struct dvbdev* f
 		goto end;
 	}
 
-	ret = readmhw2summary(self, fenode, extepgconfignode->summarypid);
+	ret = 1;
+	for(i = 0; i < 8; i++)
+	{
+		if(i < 0) continue;
+		if(self->aktion == STOP || self->aktion == PAUSE) break;
+		int tmpret = readmhw2summary(self, fenode, extepgconfignode->summarypid[i]);
+		if(tmpret == 0) ret = 0;
+	}
 	if(ret != 0 || self->aktion == STOP || self->aktion == PAUSE)
 	{
 		debug(400, "mhw2epg no summary found");
@@ -2261,7 +2293,7 @@ int readopentvsummary(struct stimerthread* self, struct dvbdev* fenode, int pid)
 //flag 1 = from epg scan
 int readopentv(struct stimerthread* self, struct channel* chnode, struct dvbdev* fenode, int flag)
 {
-	int ret = 0;
+	int ret = 0, i = 0;
 	unsigned char* channelbuf = NULL;
 	struct extepgconfig* extepgconfignode = NULL;
 
@@ -2308,7 +2340,14 @@ int readopentv(struct stimerthread* self, struct channel* chnode, struct dvbdev*
 		goto end;
 	}
 
-	ret = readopentvtitle(self, fenode, chnode, channelbuf, extepgconfignode->titlepid, flag);
+	ret = 1;
+	for(i = 0; i < 8; i++)
+	{
+		if(i < 0) continue;
+		if(self->aktion == STOP || self->aktion == PAUSE) break;
+		int tmpret = readopentvtitle(self, fenode, chnode, channelbuf, extepgconfignode->titlepid[i], flag);
+		if(tmpret == 0) ret = 0;
+	}
 	if(ret != 0 || self->aktion == STOP || self->aktion == PAUSE)
 	{
 		debug(400, "opentv epg no titles found");
@@ -2316,7 +2355,14 @@ int readopentv(struct stimerthread* self, struct channel* chnode, struct dvbdev*
 		goto end;
 	}
 
-	ret = readopentvsummary(self, fenode, extepgconfignode->summarypid);
+	ret = 1;
+	for(i = 0; i < 8; i++)
+	{
+		if(i < 0) continue;
+		if(self->aktion == STOP || self->aktion == PAUSE) break;
+		int tmpret = readopentvsummary(self, fenode, extepgconfignode->summarypid[i]);
+		if(tmpret == 0) ret = 0;
+	}
 	if(ret != 0 || self->aktion == STOP || self->aktion == PAUSE)
 	{
 		debug(400, "opentv epg no summary found");
