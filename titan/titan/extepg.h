@@ -1216,6 +1216,8 @@ int readmhw(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 	unsigned char* channelbuf = NULL;
 	struct extepgconfig* extepgconfignode = NULL;
 
+	if(self == NULL) return 1;
+
 	if(chnode == NULL) chnode = status.aktservice->channel;
 	if(chnode == NULL || (flag == 0 && chnode == status.aktservice->channel && status.aktservice->type != CHANNEL))
 		return 1;
@@ -1243,34 +1245,36 @@ int readmhw(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 	}
 
 	channelcount = readmhwchannel(self, fenode, channelbuf, extepgconfignode->channelpid);
-	if(channelcount <= 0)
+	if(channelcount <= 0 || self->aktion == STOP || self->aktion == PAUSE)
 	{
 		debug(400, "mhwepg no channels found");
-		free(channelbuf); channelbuf = NULL;
-		return 1;
+		ret = 1;
+		goto end;
 	}
 
 	ret = readmhwtitle(self, fenode, chnode, channelbuf, channelcount, extepgconfignode->titlepid, flag);
-	if(ret != 0)
+	if(ret != 0 || self->aktion == STOP || self->aktion == PAUSE)
 	{
 		debug(400, "mhwepg no titles found");
-		free(channelbuf); channelbuf = NULL;
-		freeextepgcache();
-		return 1;
+		ret = 1;
+		goto end;
 	}
 
 	ret = readmhwsummary(self, fenode, extepgconfignode->summarypid);
-	if(ret != 0)
+	if(ret != 0 || self->aktion == STOP || self->aktion == PAUSE)
 	{
 		debug(400, "mhwepg no summary found");
-		free(channelbuf); channelbuf = NULL;
-		freeextepgcache();
-		return 1;
+		ret = 1;
+		goto end;
 	}
+
+	ret = 0;
+
+end:
 
 	free(channelbuf); channelbuf = NULL;
 	freeextepgcache();
-	return 0;
+	return ret;
 }
 
 //mhw2
@@ -1701,6 +1705,8 @@ int readmhw2(struct stimerthread* self, struct channel* chnode, struct dvbdev* f
 	unsigned char* channelbuf = NULL;
 	struct extepgconfig* extepgconfignode = NULL;
 
+	if(self == NULL) return 1;
+
 	if(chnode == NULL) chnode = status.aktservice->channel;
 	if(chnode == NULL || (flag == 0 && chnode == status.aktservice->channel && status.aktservice->type != CHANNEL))
 		return 1;
@@ -1728,30 +1734,32 @@ int readmhw2(struct stimerthread* self, struct channel* chnode, struct dvbdev* f
 	}
 
 	ret = readmhw2channel(self, fenode, channelbuf, extepgconfignode->channelpid);
-	if(ret != 0)
+	if(ret != 0 || self->aktion == STOP || self->aktion == PAUSE)
 	{
 		debug(400, "mhw2epg no channel found");
-		free(channelbuf); channelbuf = NULL;
-		return 1;
+		ret = 1;
+		goto end;
 	}
 
 	ret = readmhw2title(self, fenode, chnode, channelbuf, extepgconfignode->titlepid, flag);
-	if(ret != 0)
+	if(ret != 0 || self->aktion == STOP || self->aktion == PAUSE)
 	{
 		debug(400, "mhw2epg no titles found");
-		free(channelbuf); channelbuf = NULL;
-		freeextepgcache();
-		return 1;
+		ret = 1;
+		goto end;
 	}
 
 	ret = readmhw2summary(self, fenode, extepgconfignode->summarypid);
-	if(ret != 0)
+	if(ret != 0 || self->aktion == STOP || self->aktion == PAUSE)
 	{
 		debug(400, "mhw2epg no summary found");
-		free(channelbuf); channelbuf = NULL;
-		freeextepgcache();
-		return 1;
+		ret = 1;
+		goto end;
 	}
+
+	ret = 0;
+
+end:
 
 	free(channelbuf); channelbuf = NULL;
 	freeextepgcache();
@@ -2257,6 +2265,8 @@ int readopentv(struct stimerthread* self, struct channel* chnode, struct dvbdev*
 	unsigned char* channelbuf = NULL;
 	struct extepgconfig* extepgconfignode = NULL;
 
+	if(self == NULL) return 1;
+
 	if(chnode == NULL) chnode = status.aktservice->channel;
 	if(chnode == NULL || (flag == 0 && chnode == status.aktservice->channel && status.aktservice->type != CHANNEL))
 		return 1;
@@ -2283,50 +2293,46 @@ int readopentv(struct stimerthread* self, struct channel* chnode, struct dvbdev*
 	}
 
 	ret = loadopentv(extepgconfignode->file);
-	if(ret != 0)
+	if(ret != 0 || self->aktion == STOP || self->aktion == PAUSE)
 	{
 		debug(400, "opentv can't load dict");
-		free(channelbuf); channelbuf = NULL;
-		return 1;
+		ret = 1;
+		goto end;
 	}
 
 	ret = readopentvchannel(self, fenode, chnode, channelbuf, extepgconfignode->channelpid, flag);
-	if(ret != 0)
+	if(ret != 0 || self->aktion == STOP || self->aktion == PAUSE)
 	{
 		debug(400, "opentv epg no channel found");
-		free(channelbuf); channelbuf = NULL;
-		freeextepgchannel();
-		freeopentv();
-		return 1;
+		ret = 1;
+		goto end;
 	}
 
 	ret = readopentvtitle(self, fenode, chnode, channelbuf, extepgconfignode->titlepid, flag);
-	if(ret != 0)
+	if(ret != 0 || self->aktion == STOP || self->aktion == PAUSE)
 	{
 		debug(400, "opentv epg no titles found");
-		free(channelbuf); channelbuf = NULL;
-		freeextepgchannel();
-		freeextepgcache();
-		freeopentv();
-		return 1;
+		ret = 1;
+		goto end;
 	}
 
 	ret = readopentvsummary(self, fenode, extepgconfignode->summarypid);
-	if(ret != 0)
+	if(ret != 0 || self->aktion == STOP || self->aktion == PAUSE)
 	{
 		debug(400, "opentv epg no summary found");
-		free(channelbuf); channelbuf = NULL;
-		freeextepgchannel();
-		freeextepgcache();
-		freeopentv();
-		return 1;
+		ret = 1;
+		goto end;
 	}
+
+	ret = 0;
+
+end:
 
 	free(channelbuf); channelbuf = NULL;
 	freeextepgchannel();
 	freeextepgcache();
 	freeopentv();
-	return 0;
+	return ret;
 }
 
 #endif
