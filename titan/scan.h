@@ -1083,7 +1083,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	resetsatscan();
 }
 
-void changescantype(char* scantype, struct skin* scan, struct skin* listbox, struct skin* tuner, struct skin* satellite, struct skin* id, struct skin* system, struct skin* frequency, struct skin* inversion, struct skin* symbolrate, struct skin* polarization, struct skin* fec, struct skin* modulation, struct skin* rolloff, struct skin* pilot, int flag)
+void changescantype(char* scantype, struct skin* scan, struct skin* listbox, struct skin* tuner, struct skin* satellite, struct skin* id, struct skin* system, struct skin* frequency, struct skin* inversion, struct skin* symbolrate, struct skin* polarization, struct skin* fec, struct skin* modulation, struct skin* rolloff, struct skin* pilot, struct skin* b4, struct skin* b5, int flag)
 {
 	struct sat* satnode = sat;
 	struct skin* tmp = NULL;
@@ -1105,6 +1105,8 @@ void changescantype(char* scantype, struct skin* scan, struct skin* listbox, str
 	rolloff->hidden = NO;
 	pilot->hidden = NO;
 	satellite->hidden = NO;
+	b4->hidden = NO;
+	b5->hidden = NO;
 	delmarkedscreennodes(scan, 1);
 
 	if(ostrcmp(scantype, "1") == 0 || ostrcmp(scantype, "2") == 0 || ostrcmp(scantype, "3") == 0)
@@ -1119,6 +1121,8 @@ void changescantype(char* scantype, struct skin* scan, struct skin* listbox, str
 		modulation->hidden = YES;
 		rolloff->hidden = YES;
 		pilot->hidden = YES;
+		b4->hidden = YES;
+		b5->hidden = YES;
 	}
 	if(ostrcmp(scantype, "2") == 0 && feshortname != NULL)
 	{
@@ -1218,6 +1222,8 @@ void screenscanconfig(int flag)
 	struct skin* clear = getscreennode(scan, "clear");
 	struct skin* onlyfree = getscreennode(scan, "onlyfree");
 	struct skin* blindscan = getscreennode(scan, "blindscan");
+	struct skin* b4 = getscreennode(scan, "b4");
+	struct skin* b5 = getscreennode(scan, "b5");
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *tmpnr = NULL, *feshortname = NULL;
 	struct transponder* tpnode = NULL;
@@ -1335,7 +1341,7 @@ start:
 		setchoiceboxselection(scantype, "3");
 	}
 
-	changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, flag);
+	changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, b4, b5, flag);
 
 	//sat
 	scanchangesat(sat, tpnode, feshortname);
@@ -1509,12 +1515,12 @@ start:
 		if(listbox->select != NULL && ostrcmp(listbox->select->name, "tuner") == 0)
 		{
 			scanchangesat(sat, tpnode, listbox->select->ret);
-			changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, flag);
+			changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, b4, b5, flag);
 			drawscreen(scan, 0, 0);
 		}
 		if(listbox->select != NULL && ostrcmp(listbox->select->name, "scantype") == 0)
 		{
-			changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, flag);
+			changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, b4, b5, flag);
 			drawscreen(scan, 0, 0);
 
 		}
