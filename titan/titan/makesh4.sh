@@ -678,7 +678,8 @@ cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/share/gm
 
 #new net tools
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/djmount "$HOME"/flashimg/BUILD/titan/sbin
-cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/rarfs "$HOME"/flashimg/BUILD/titan/sbin
+# rarfs last version not working eplayer has playback error
+#cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/rarfs "$HOME"/flashimg/BUILD/titan/sbin
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/curlftpfs "$HOME"/flashimg/BUILD/titan/sbin
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/sshfs "$HOME"/flashimg/BUILD/titan/sbin
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libcurl.so* "$HOME"/flashimg/BUILD/titan/lib
