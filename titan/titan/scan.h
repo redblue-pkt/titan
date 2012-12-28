@@ -1314,6 +1314,7 @@ void screenscanconfig(int flag)
 	if(status.aktservice->channel != NULL)
 		tpnode = status.aktservice->channel->transponder;
 
+start:
 
 	if(flag == 0)
 	{
@@ -1530,6 +1531,17 @@ void screenscanconfig(int flag)
 			deltransponderbyid(99);
 			textbox(_("Message"), _("Transponder changed"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 			drawscreen(scan, 0, 0);
+		}
+		if(rcret == getrcconfigint("rcyellow", NULL) && iscantype == 0)
+		{
+			struct transponder* tp = tpchoicescreen(isat, flag);
+			if(tp != NULL)
+			{
+				tpnode = tp;
+				goto start;
+			}
+			else
+				drawscreen(scan, 0, 0);
 		}
 		else if(rcret == getrcconfigint("rcok", NULL))
 			break;

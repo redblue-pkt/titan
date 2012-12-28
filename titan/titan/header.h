@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//tpchoice.h
+struct transponder* tpchoicescreen(int orbitalpos, int flag);
+
 //extepg.h
 int readmhw(struct stimerthread* self, struct channel* chnode, struct dvbdev* fenode, int flag);
 int readmhw2(struct stimerthread* self, struct channel* chnode, struct dvbdev* fenode, int flag);
