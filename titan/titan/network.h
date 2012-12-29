@@ -356,11 +356,11 @@ void screennetwork_adapterext(int mode, char* interface)
 	if(net == NULL)
 		return;
 
-	char* tmp_ipaddresse = net->ip;
-	char* tmp_netmask = net->netmask;
-	char* tmp_gateway = status.gateway;
-	char* tmp_dnsserver1 = status.dnsserver1;
-	char* tmp_dnsserver2 = status.dnsserver2;
+	char* tmp_ipaddresse = ostrcat(net->ip, NULL, 0, 0);
+	char* tmp_netmask = ostrcat(net->netmask, NULL, 0, 0);;
+	char* tmp_gateway = ostrcat(status.gateway, NULL, 0, 0);;
+	char* tmp_dnsserver1 = ostrcat(status.dnsserver1, NULL, 0, 0);;
+	char* tmp_dnsserver2 = ostrcat(status.dnsserver2, NULL, 0, 0);;
 	int tmp_type = net->type;
 
 	changemask(ipaddresse, "000.000.000.000");
@@ -437,15 +437,30 @@ void screennetwork_adapterext(int mode, char* interface)
 				tmp_type = atoi(listbox->select->ret);
 			}
 			else if(ostrcmp(listbox->select->name, "ipaddresse") == 0)
-				tmp_ipaddresse = listbox->select->ret;
+			{
+				free(tmp_ipaddresse);
+				tmp_ipaddresse = ostrcat(listbox->select->ret, NULL, 0, 0);
+			}
 			else if(ostrcmp(listbox->select->name, "netmask") == 0)
-				tmp_netmask = listbox->select->ret;
+			{
+				free(tmp_netmask);
+				tmp_netmask = ostrcat(listbox->select->ret, NULL, 0, 0);
+			}
 			else if(ostrcmp(listbox->select->name, "gateway") == 0)
-				tmp_gateway = listbox->select->ret;
+			{
+				free(tmp_gateway);
+				tmp_gateway = ostrcat(listbox->select->ret, NULL, 0, 0);
+			}
 			else if(ostrcmp(listbox->select->name, "dnsserver1") == 0)
-				tmp_dnsserver1 = listbox->select->ret;
+			{
+				free(tmp_dnsserver1);
+				tmp_dnsserver1 = ostrcat(listbox->select->ret, NULL, 0, 0);
+			}
 			else if(ostrcmp(listbox->select->name, "dnsserver2") == 0)
-				tmp_dnsserver2 = listbox->select->ret;
+			{
+				free(tmp_dnsserver2);
+				tmp_dnsserver2 = ostrcat(listbox->select->ret, NULL, 0, 0);
+			}
 		}
 	}
 
@@ -459,30 +474,38 @@ void screennetwork_adapterext(int mode, char* interface)
 		debug(50, "dnsserver1: %s", tmp_dnsserver1);
 		debug(50, "dnsserver2: %s", tmp_dnsserver2);
 
-		if(net->ip != tmp_ipaddresse)
+		if(ostrcmp(net->ip, tmp_ipaddresse) != 0)
 		{
 			free(net->ip);
 			net->ip = ostrcat(tmp_ipaddresse, NULL, 0, 0);
 		}
-		if(net->netmask != tmp_netmask)
+		if(ostrcmp(net->netmask, tmp_netmask) != 0)
 		{
 			free(net->netmask);
 			net->netmask = ostrcat(tmp_netmask, NULL, 0, 0);
 		}
-		if(status.gateway != tmp_gateway)
+		if(ostrcmp(status.gateway, tmp_gateway) != 0)
 		{
 			free(status.gateway);
 			status.gateway = ostrcat(tmp_gateway, NULL, 0, 0);
 		}
-		if(status.dnsserver1 != tmp_dnsserver1)
+		if(ostrcmp(status.dnsserver1, tmp_dnsserver1) != 0)
 		{
 			free(status.dnsserver1);
 			status.dnsserver1 = ostrcat(tmp_dnsserver1, NULL, 0, 0);
 		}
-		if(status.dnsserver2 != tmp_dnsserver2)
+		if(ostrcmp(status.dnsserver2, tmp_dnsserver2) != 0)
 		{
 			free(status.dnsserver2);
 			status.dnsserver2 = ostrcat(tmp_dnsserver2, NULL, 0, 0);
+		}
+
+		if(tmp_type != 0)
+		{
+			free(net->ip);
+			net->ip = ostrcat("000.000.000.000", NULL, 0, 0);
+			free(net->netmask);
+			net->netmask = ostrcat("000.000.000.000", NULL, 0, 0);
 		}
 
 		net->type = tmp_type;
@@ -490,6 +513,12 @@ void screennetwork_adapterext(int mode, char* interface)
 		writeinterfaces();
 		screennetwork_restart(net, 1);
 	}
+
+	free(tmp_ipaddresse);
+	free(tmp_netmask);
+	free(tmp_gateway);
+	free(tmp_dnsserver1);
+	free(tmp_dnsserver2);
 
 	delownerrc(network);
 	clearscreen(network);
