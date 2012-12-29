@@ -660,7 +660,7 @@ void doscan(struct stimerthread* timernode)
 					if(buf != NULL)
 					{
 						parsenit(buf, &lastsecnr, satnode->orbitalpos);
-						nitscan = 0;
+						nitscan = 1; //1 = scan all transponder for nit / 0 = scan only first transponder for nit
 					}
 					else
 						break;
