@@ -404,7 +404,6 @@ void screennetwork_adapterext(int mode, char* interface)
 	addscreenrc(network, listbox);
 
 	int save = 0;
-	struct skin* child = NULL;
 
 	tmp = listbox->select;
 	while(1)
@@ -429,8 +428,6 @@ void screennetwork_adapterext(int mode, char* interface)
 		{
 			if(ostrcmp(listbox->select->name, "type") == 0)
 			{
-				child = listbox->select->next;
-
 				if(atoi(listbox->select->ret) == 0)
 					nethidden(ipaddresse, netmask, gateway, dnsserver1, dnsserver2, NO);
 				else
