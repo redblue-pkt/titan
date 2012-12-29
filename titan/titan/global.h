@@ -682,7 +682,7 @@ int checkreseller()
 	}
 	else
 	{
-		// dummy fpr other boxes
+		// dummy for other boxes
 		debug(10, "ResellerId: not supported");
 		debug(10, "boxtype: %s", status.boxtype);
 		return 1;
