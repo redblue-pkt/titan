@@ -85,16 +85,16 @@ void screenvolume(int direction, int flag)
 	blitfb(0);
 }
 
-//screen and node are needed if funktion is called from rc handle
+//screen, node, screencalc and filelistview are needed if funktion is called from rc handle
 //flag 2 = no framebuffer lock
-void screenvolumeup(struct skin* screen, struct skin* node, int flag)
+void screenvolumeup(struct skin* screen, struct skin* node, int screencalc, int filelistview, int flag)
 {
 	screenvolume(0, flag);
 }
 
-//screen and node are needed if funktion is called from rc handle
+//screen, node, screencalc and filelistview are needed if funktion is called from rc handle
 //flag 2 = no framebuffer lock
-void screenvolumedown(struct skin* screen, struct skin* node, int flag)
+void screenvolumedown(struct skin* screen, struct skin* node, int screencalc, int filelistview, int flag)
 {
 	screenvolume(1, flag);
 }
