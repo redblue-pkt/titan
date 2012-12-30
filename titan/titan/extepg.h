@@ -1259,7 +1259,7 @@ int readmhw(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 	ret = 1;
 	for(i = 0; i < 8; i++)
 	{
-		if(i < 0) continue;
+		if(extepgconfignode->titlepid[i] < 0) continue;
 		if(self->aktion == STOP || self->aktion == PAUSE) break;
 		int tmpret = readmhwtitle(self, fenode, chnode, channelbuf, channelcount, extepgconfignode->titlepid[i], flag);
 		if(tmpret == 0) ret = 0;
@@ -1274,7 +1274,7 @@ int readmhw(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 	ret = 1;
 	for(i = 0; i < 8; i++)
 	{
-		if(i < 0) continue;
+		if(extepgconfignode->summarypid[i] < 0) continue;
 		if(self->aktion == STOP || self->aktion == PAUSE) break;
 		int tmpret = readmhwsummary(self, fenode, extepgconfignode->summarypid[i]);
 		if(tmpret == 0) ret = 0;
@@ -1762,7 +1762,7 @@ int readmhw2(struct stimerthread* self, struct channel* chnode, struct dvbdev* f
 	ret = 1;
 	for(i = 0; i < 8; i++)
 	{
-		if(i < 0) continue;
+		if(extepgconfignode->titlepid[i] < 0) continue;
 		if(self->aktion == STOP || self->aktion == PAUSE) break;
 		int tmpret = readmhw2title(self, fenode, chnode, channelbuf, extepgconfignode->titlepid[i], flag);
 		if(tmpret == 0) ret = 0;
@@ -1777,7 +1777,7 @@ int readmhw2(struct stimerthread* self, struct channel* chnode, struct dvbdev* f
 	ret = 1;
 	for(i = 0; i < 8; i++)
 	{
-		if(i < 0) continue;
+		if(extepgconfignode->summarypid[i] < 0) continue;
 		if(self->aktion == STOP || self->aktion == PAUSE) break;
 		int tmpret = readmhw2summary(self, fenode, extepgconfignode->summarypid[i]);
 		if(tmpret == 0) ret = 0;
@@ -2343,7 +2343,7 @@ int readopentv(struct stimerthread* self, struct channel* chnode, struct dvbdev*
 	ret = 1;
 	for(i = 0; i < 8; i++)
 	{
-		if(i < 0) continue;
+		if(extepgconfignode->titlepid[i] < 0) continue;
 		if(self->aktion == STOP || self->aktion == PAUSE) break;
 		int tmpret = readopentvtitle(self, fenode, chnode, channelbuf, extepgconfignode->titlepid[i], flag);
 		if(tmpret == 0) ret = 0;
@@ -2358,7 +2358,7 @@ int readopentv(struct stimerthread* self, struct channel* chnode, struct dvbdev*
 	ret = 1;
 	for(i = 0; i < 8; i++)
 	{
-		if(i < 0) continue;
+		if(extepgconfignode->summarypid[i] < 0) continue;
 		if(self->aktion == STOP || self->aktion == PAUSE) break;
 		int tmpret = readopentvsummary(self, fenode, extepgconfignode->summarypid[i]);
 		if(tmpret == 0) ret = 0;
