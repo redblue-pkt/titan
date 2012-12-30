@@ -538,7 +538,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				if(servicenode->type == RECORDPLAY && count < 20)
 				{
 					count++;
-					usleep(20000);
+					usleep(50000);
 					if(count == 19)
 					{
 						recbsize = servicenode->tssize * 2788;
