@@ -1227,7 +1227,7 @@ int readmhw(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 		return 1;
 
 	extepgconfignode = getextepgconfig(chnode->transponderid, 0);
-	if(extepgconfignode == NULL) extepgconfignode = getextepgconfig(chnode->transponderid, 0);
+	if(extepgconfignode == NULL) extepgconfignode = getextepgconfig(0, 0);
 	if(extepgconfignode == NULL)
 	{
 		debug(400, "transponder not found in extepgconfig");
@@ -1730,7 +1730,7 @@ int readmhw2(struct stimerthread* self, struct channel* chnode, struct dvbdev* f
 		return 1;
 
 	extepgconfignode = getextepgconfig(chnode->transponderid, 1);
-	if(extepgconfignode == NULL) extepgconfignode = getextepgconfig(chnode->transponderid, 1);
+	if(extepgconfignode == NULL) extepgconfignode = getextepgconfig(0, 1);
 	if(extepgconfignode == NULL)
 	{
 		debug(400, "transponder not found in extepgconfig");
