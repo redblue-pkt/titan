@@ -80,6 +80,9 @@ char* recordcheckret(struct stimerthread* timernode, int ret, int flag)
 			case 16:
 				tmpstr = ostrcat(_("Can't create service"), NULL, 0, 0);
 				break;
+			case 17:
+				tmpstr = ostrcat(_("No space left on device"), NULL, 0, 0);
+				break;
 		}
 		if(tmpstr != NULL)
 		{
@@ -570,6 +573,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			if(writeret < 1)
 			{
 				ret = 9;
+				if(writeret == -ENOSPC) ret = 17;
 				servicenode->recendtime = 1;
 			}
 			else if(readret != writeret)
