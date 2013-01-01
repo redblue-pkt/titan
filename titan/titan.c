@@ -502,6 +502,7 @@ int main(int argc, char *argv[])
 	if(checkbox("UFS922") == 1)
 		setfanspeed(-1, 0);
 
+	system(getconfig("skriptbeforetv", NULL));
 	ret = setvideomode(getconfig("av_videomode", NULL), 0);
 
 	ret = setpolicy(getconfig("av_policy", NULL));
@@ -727,8 +728,6 @@ int main(int argc, char *argv[])
 		}
 		addconfigint("servicetype", startservicetype);
 	}
-
-	system(getconfig("skriptbeforetv", NULL));
 
 	//tune to channel
 	if(status.servicetype == 0)
