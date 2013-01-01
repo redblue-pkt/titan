@@ -1109,6 +1109,13 @@ void changescantype(char* scantype, struct skin* scan, struct skin* listbox, str
 	b5->hidden = NO;
 	delmarkedscreennodes(scan, 1);
 
+	if(ostrcmp(scantype, "0") == 0 && ostrcmp(system->ret, "0") == 0)
+	{
+		modulation->hidden = YES;
+		rolloff->hidden = YES;
+		pilot->hidden = YES;
+	}
+
 	if(ostrcmp(scantype, "1") == 0 || ostrcmp(scantype, "2") == 0 || ostrcmp(scantype, "3") == 0)
 	{
 		id->hidden = YES;
@@ -1260,6 +1267,9 @@ void screenscanconfig(int flag)
 	changeinput(pilot, NULL);
 	changechoiceboxvalue(pilot, NULL);
 
+	frequency->aktpage = 0;
+	symbolrate->aktpage = 0;
+
 	if(flag == 0) fetype = FE_QPSK;
 	if(flag == 2) fetype = FE_QAM;
 	if(flag == 3) fetype = FE_OFDM;
@@ -1341,8 +1351,6 @@ start:
 		setchoiceboxselection(scantype, "3");
 	}
 
-	changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, b4, b5, flag);
-
 	//sat
 	scanchangesat(sat, tpnode, feshortname);
 
@@ -1365,6 +1373,8 @@ start:
 		setchoiceboxselection(system, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 	}
+
+	changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, b4, b5, flag);
 
 	//frequency
 	if(tpnode != NULL)
@@ -1522,7 +1532,11 @@ start:
 		{
 			changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, b4, b5, flag);
 			drawscreen(scan, 0, 0);
-
+		}
+		if(listbox->select != NULL && ostrcmp(listbox->select->name, "system") == 0)
+		{
+			changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, b4, b5, flag);
+			drawscreen(scan, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
