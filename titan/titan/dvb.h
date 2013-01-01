@@ -40,7 +40,7 @@ int dvbwrite(int fd, unsigned char* buf, int count, int tout)
 			if(ret < 0)
 			{
 				perr("can't write fd=%d", fd);
-				return -1;
+				return errno * -1;
 			}
 		}
 		else
