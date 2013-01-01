@@ -1,3 +1,4 @@
+5#24.12.2012#Information#Das TitanNit Team wünscht allen Besitzern dieser Software\nein frohes Neues Jahr und vor allem Gesundheit.
 4#24.12.2012#Information#Das TitanNit Team wünscht allen Besitzern dieser Software\nein frohes besinnliches Weihnachtsfest !\n\nNews:\nFür die Atevio700 / Atevio7000 sind alle Vorbereitungen für TitanNit getroffen.\nDas dazu benötigte IRD Image wurde fertiggestellt.\nWeitere Infos folgen demnächst.
 3#11.12.2012#Software Update#An diesem Wochenende wird die TitanNit Version 1.21 freigegeben,\nmit einigen neuen Multimedia features.
 2#06.12.2012#TitanNit news#Atemio hat es mit dem Betriebssystem Titan geschafft,\nLinux als Firmware etwas aus dem Freakbereich herauszuholen und Mainstream\ntauglich zu machen.\nDenn mit dem AM 7600 werden sich auch Nutzer ohne Linux-Erfahrungen\nsehr schnell zurecht finden.
