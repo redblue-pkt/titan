@@ -44,9 +44,9 @@ struct transponder* satsystemdesc(unsigned char* buf, uint64_t transportid, unsi
 		((buf[5] & 0x0F) * 10)
 	);
 
-	rolloff = (buf[8] >> 4) & 0x03; //alpha_0_35, alpha_0_25, alpha_0_20, alpha_auto
-	system = (buf[8] >> 2) & 0x01; //1=DVB_S2
-	modulation = (buf[8]) & 0x03; //1=QPSK, 2=8PSK
+	rolloff = (buf[8] >> 4) & 0x03; //0=rolloff_0_35, 1=rolloff_0_25, 2=rolloff_0_20, 3=rolloff_auto
+	system = (buf[8] >> 2) & 0x01; //0=DVB_S, 1=DVB_S2
+	modulation = (buf[8]) & 0x03; //1=QPSK, 2=PSK_8, 3=QAM_16
 
 	symbolrate = (
 		((buf[9] >> 4) * 100000000) +
@@ -58,7 +58,9 @@ struct transponder* satsystemdesc(unsigned char* buf, uint64_t transportid, unsi
 		((buf[12] >> 4) * 100)
 	);
 
-	switch(fec & 0x0F)
+	fec = (buf[12]) & 0x0F;
+
+	switch(fec)
 	{
 		case 0x01:
 			fec = FEC_1_2;
@@ -75,6 +77,18 @@ struct transponder* satsystemdesc(unsigned char* buf, uint64_t transportid, unsi
 		case 0x05:
 			fec = FEC_7_8;
 			break;
+		case 0x06:
+			fec = FEC_8_9;
+			break;
+		case 0x07:
+			fec = FEC_3_5;
+			break;
+		case 0x08:
+			fec = FEC_4_5;
+			break;
+		case 0x09:
+			fec = FEC_9_10;
+			break;
 		case 0x0F:
 			fec = FEC_NONE;
 			break;
@@ -83,15 +97,13 @@ struct transponder* satsystemdesc(unsigned char* buf, uint64_t transportid, unsi
 			break;
 	}
 
-	//if(modulation == 2) fec += 9;
-
-	polarization = (buf[8] >> 5) & 0x03;
+	polarization = (buf[8] >> 5) & 0x03; //0=H, 1=V
 
 	//workarounds for braindead broadcasters (e.g. on Telstar 12 at 15.0W)
 	if(frequency >= 100000000) frequency /= 10;
 	if(symbolrate >= 50000000) symbolrate /= 10;
 
-	frequency = (int) 1000 * (int) round ((double) frequency / (double) 1000);
+	frequency = (int)1000 * (int)round((double)frequency / (double)1000);
 
 	if(frequency > 15000000) return NULL;
 
@@ -103,7 +115,94 @@ struct transponder* satsystemdesc(unsigned char* buf, uint64_t transportid, unsi
 		status.writetransponder = 1;
 	}
 
-	debug(500, "nitscan: id=%llu freq=%d sr=%d fec=%d pol=%d modulation=%d system=%d, tpnode=%p", id, frequency, symbolrate, fec, polarization, modulation, system, tpnode);
+	debug(500, "nitscan: id=%llu freq=%d sr=%d fec=%d pol=%d modulation=%d system=%d tpnode=%p", id, frequency, symbolrate, fec, polarization, modulation, system, tpnode);
+
+	return tpnode;
+}
+
+struct transponder* cablesystemdesc(unsigned char* buf, uint64_t transportid, unsigned short onid, int orbitalpos)
+{
+	int modulation = 0, fec = 0;
+	unsigned int frequency = 0, symbolrate = 0;
+	uint64_t id = 0;
+	struct transponder *tpnode = NULL;
+
+	frequency = (
+		((buf[2] >> 4) * 1000000000) +
+		((buf[2] & 0x0F) * 100000000) +
+		((buf[3] >> 4) * 10000000) +
+		((buf[3] & 0x0F) * 1000000) +
+		((buf[4] >> 4) * 100000) +
+		((buf[4] & 0x0F) * 10000) +
+		((buf[5] >> 4) * 1000) +
+		((buf[5] & 0x0F) * 100)
+	);
+
+	modulation = buf[8]; //0=QAM_AUTO, 1=QAM_16, 2=QAM_32, 3=QAM_64, 4=QAM_128, 5=QAM_256
+
+	symbolrate = (
+		((buf[9] >> 4) * 100000000) +
+		((buf[9] & 0x0F) * 10000000) +
+		((buf[10] >> 4) * 1000000) +
+		((buf[10] & 0x0F) * 100000) +
+		((buf[11] >> 4) * 10000) +
+		((buf[11] & 0x0F) * 1000) +
+		((buf[12] >> 4) * 100)
+	);
+
+	fec = (buf[12]) & 0x0F;
+
+	switch(fec)
+	{
+		case 0x01:
+			fec = FEC_1_2;
+			break;
+		case 0x02:
+			fec = FEC_2_3;
+			break;
+		case 0x03:
+			fec = FEC_3_4;
+			break;
+		case 0x04:
+			fec = FEC_5_6;
+			break;
+		case 0x05:
+			fec = FEC_7_8;
+			break;
+		case 0x06:
+			fec = FEC_8_9;
+			break;
+		case 0x07:
+			fec = FEC_3_5;
+			break;
+		case 0x08:
+			fec = FEC_4_5;
+			break;
+		case 0x09:
+			fec = FEC_9_10;
+			break;
+		case 0x0F:
+			fec = FEC_NONE;
+			break;
+		default:
+			fec = FEC_AUTO;
+			break;
+	}
+
+	if(frequency > 1000000) frequency /= 1000;
+
+	frequency = (int)1000 * (int)round((double)frequency / (double)1000);
+
+	id = ((onid << 16) | transportid) & 0xffffffff;
+	id = id | ((uint64_t)1 << 32);
+
+	if(gettransponder(id) == NULL)
+	{
+		tpnode = createtransponder(id, FE_QAM, orbitalpos, frequency, INVERSION_AUTO, symbolrate, 0, fec, modulation, 0, 0, 0);
+		status.writetransponder = 1;
+	}
+
+	debug(500, "nitscan: id=%llu freq=%d sr=%d fec=%d modulation=%d tpnode=%p", id, frequency, symbolrate, fec, modulation, tpnode);
 
 	return tpnode;
 }
@@ -188,7 +287,12 @@ int parsenit(unsigned char* buf, uint8_t* lastsecnr, int orbitalpos)
 					}
 					break;
 				case 0x44:
-					//cablesystemdesc(buf + pos2, transponderid, onid) < 0)
+					if(cablesystemdesc(buf + pos2, transponderid, onid, orbitalpos) != NULL)
+					{
+						scaninfo.tpnew++;
+						if(scaninfo.scantype != 0)
+							scaninfo.tpmax++;
+					}
 					break;
 				case 0x5A:
 					//terrestrialsystemdesc(buf + pos2);

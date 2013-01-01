@@ -1390,6 +1390,9 @@ void fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 		case 4: fec = FEC_5_6; break;
 		case 5: fec = FEC_7_8; break;
 		case 6: fec = FEC_8_9; break;
+		case 7: fec = FEC_3_5; break;
+		case 8: fec = FEC_4_5; break;
+		case 9: fec = FEC_9_10; break;
 		case 15: fec = FEC_NONE; break;
 		default: fec = FEC_AUTO; break;
 	}
