@@ -390,11 +390,19 @@ void blindscan(struct stimerthread* timernode)
 	unsigned int maxsymbolrate = getconfigint("blindmaxsignalrate", NULL) * 1000;
 	unsigned int stepsymbolrate = getconfigint("blindstepsignalrate", NULL) * 1000;
 	unsigned int usedefaultsr = getconfigint("blindusedefaultsr", NULL);
+	unsigned int onlydvbs = getconfigint("blindonlydvbs", NULL);
+	unsigned int usedefaultfec = getconfigint("blindusedefaultfec", NULL);
 	
 	int minmodulation = 0, maxmodulation = 2, stepmodulation = 1;
 	int minpolarization = 0, maxpolarization = 1, steppolarization = 1;
 	int minsystem = 0, maxsystem = 1, stepsystem = 1;
 	int minfec = 0, maxfec = 8, stepfec = 1;
+
+	if(onlydvbs == 1)
+	{
+		maxmodulation = 0;
+		maxsystem = 0;
+	}
 
 	if(usedefaultsr == 1)
 	{
@@ -402,6 +410,9 @@ void blindscan(struct stimerthread* timernode)
 		maxsymbolrate = 3;
 		stepsymbolrate = 1;
 	}
+
+	if(usedefaultfec == 1)
+		maxfec = 6;
 
 	if(scaninfo.fenode == NULL || timernode == NULL) return;
 
@@ -424,7 +435,7 @@ void blindscan(struct stimerthread* timernode)
 		{
 			if(usedefaultsr == 1)
 			{
-				switch(cpolarization)
+				switch(csymbolrate)
 				{
 					case 0:
 						symbolrate = 22000 * 1000;

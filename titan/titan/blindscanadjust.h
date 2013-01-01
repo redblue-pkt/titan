@@ -15,6 +15,8 @@ void screenblindscanadjust()
 	struct skin* maxsignalrate = getscreennode(blindscan, "maxsignalrate");
 	struct skin* stepsignalrate = getscreennode(blindscan, "stepsignalrate");
 	struct skin* usedefaultsr = getscreennode(blindscan, "blindusedefaultsr");
+	struct skin* onlydvbs = getscreennode(blindscan, "blindonlydvbs");
+	struct skin* usedefaultfec = getscreennode(blindscan, "blindusedefaultfec");
 	struct skin* tmp = NULL;
 
 	changemask(minfrequency, "00000");
@@ -75,6 +77,14 @@ void screenblindscanadjust()
 	addchoicebox(usedefaultsr, "1", _("yes"));
 	setchoiceboxselection(usedefaultsr, getconfig("blindusedefaultsr", NULL));
 
+	addchoicebox(onlydvbs, "0", _("no"));
+	addchoicebox(onlydvbs, "1", _("yes"));
+	setchoiceboxselection(onlydvbs, getconfig("blindonlydvbs", NULL));
+
+	addchoicebox(usedefaultfec, "0", _("no"));
+	addchoicebox(usedefaultfec, "1", _("yes"));
+	setchoiceboxselection(usedefaultfec, getconfig("blindusedefaultfec", NULL));
+
 	drawscreen(blindscan, 0, 0);
 	addscreenrc(blindscan, listbox);
 
@@ -133,6 +143,8 @@ void screenblindscanadjust()
 				addconfigint("blindstepsignalrate", 20);
 
 			addconfigscreencheck("blindusedefaultsr", usedefaultsr, "0");
+			addconfigscreencheck("blindonlydvbs", onlydvbs, "0");
+			addconfigscreencheck("blindusedefaultfec", usedefaultfec, "0");
 
 			break;
 		}
