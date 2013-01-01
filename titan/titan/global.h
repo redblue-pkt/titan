@@ -4562,6 +4562,8 @@ int setmute(int value)
 			debug(100, "set %s to %d", mutedev, value);
 			ret = writesysint(mutedev, value, 0);
 			if(ret == 0) status.mute = value;
+			tmpvol = getvol();
+			setvol(tmpvol);
 			return ret;
 		}
 	}
