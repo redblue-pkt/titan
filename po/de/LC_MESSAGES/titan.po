@@ -2775,3 +2775,15 @@ msgstr "Erstelle Aufnahme Vorschaubild"
 
 msgid "Error, Internet Connection not found"
 msgstr "Fehler, keine Internet Verbindung verfügbar"
+
+msgid "No space left on device"
+msgstr "Fehler, Festplatte/Stick voll"
+
+msgid "Only default signalrate"
+msgstr "Verwende Standard Signalrate"
+
+msgid "Only DVBS"
+msgstr "Nur DVBS verwenden"
+
+msgid "Only default FEC"
+msgstr "Verwende Standard FEC"
