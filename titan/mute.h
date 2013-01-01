@@ -14,15 +14,11 @@ void screenmute(struct skin* screen, struct skin* node, int flag)
 		addconfig("stepmute", "0");
 		
 	if(status.mute == 0 && atoi(getconfig("stepmute", NULL)) == 1)
-	{
-		status.mute = 2;
 		setmute(2);
-	}
 	else if(status.mute == 0 || status.mute == 2)
 	{
 		if(status.mute == 2)
 			setvol(getconfigint("vol", NULL));
-		status.mute = 1;
 		setmute(1);
 		setnodeattr(mute, framebuffer, 0);
 		if(status.drawallwaysbg[0] != NULL)
@@ -37,7 +33,6 @@ void screenmute(struct skin* screen, struct skin* node, int flag)
 	
 	else
 	{
-		status.mute = 0;
 		setmute(0);
 		if(flag == 2 || flag == 3)
 			clearscreennolock(mute);

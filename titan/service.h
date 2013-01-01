@@ -232,7 +232,6 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 	if(status.mute == 0)
 	{
 		tmpmute = 1;
-		status.mute = 1;
 		setmute(1);
 	}
 
@@ -371,7 +370,6 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 	if(tmpmute == 1)
 	{
 		tmpmute = 0;
-		status.mute = 0;
 		setmute(0);
 	}
 

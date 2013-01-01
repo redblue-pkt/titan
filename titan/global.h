@@ -4541,13 +4541,17 @@ int setmute(int value)
 {
 	debug(1000, "in");
 	char* mutedev;
-	int tmpvol;
+	int tmpvol, ret = 0;
+
+	//don't set mute 2x
+	if(value == 1 && status.mute == 1) return 0;
 
 	if(value == 2)
 	{
 		tmpvol = getvol();
 		tmpvol = tmpvol * 50 / 100;
 		setvol(tmpvol);
+		status.mute = value;
 	} 
 	else
 	{
@@ -4556,7 +4560,9 @@ int setmute(int value)
 		if(mutedev != NULL)
 		{
 			debug(100, "set %s to %d", mutedev, value);
-			return writesysint(mutedev, value, 0);
+			ret = writesysint(mutedev, value, 0);
+			if(ret == 0) status.mute = value;
+			return ret;
 		}
 	}
 	debug(1000, "out");
