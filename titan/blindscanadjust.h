@@ -14,6 +14,7 @@ void screenblindscanadjust()
 	struct skin* minsignalrate = getscreennode(blindscan, "minsignalrate");
 	struct skin* maxsignalrate = getscreennode(blindscan, "maxsignalrate");
 	struct skin* stepsignalrate = getscreennode(blindscan, "stepsignalrate");
+	struct skin* usedefaultsr = getscreennode(blindscan, "blindusedefaultsr");
 	struct skin* tmp = NULL;
 
 	changemask(minfrequency, "00000");
@@ -69,6 +70,10 @@ void screenblindscanadjust()
 		for(i = 0; i < 2 - len; i++)
 			stepsignalrate->input = ostrcat("0", stepsignalrate->input, 0, 1);
 	}
+
+	addchoicebox(usedefaultsr, "0", _("no"));
+	addchoicebox(usedefaultsr, "1", _("yes"));
+	setchoiceboxselection(usedefaultsr, getconfig("blindusedefaultsr", NULL));
 
 	drawscreen(blindscan, 0, 0);
 	addscreenrc(blindscan, listbox);
@@ -126,6 +131,8 @@ void screenblindscanadjust()
 
 			if(getconfigint("blindstepsignalrate", NULL) < 1)
 				addconfigint("blindstepsignalrate", 20);
+
+			addconfigscreencheck("blindusedefaultsr", usedefaultsr, "0");
 
 			break;
 		}

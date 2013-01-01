@@ -389,11 +389,19 @@ void blindscan(struct stimerthread* timernode)
 	unsigned int minsymbolrate = getconfigint("blindminsignalrate", NULL) * 1000;
 	unsigned int maxsymbolrate = getconfigint("blindmaxsignalrate", NULL) * 1000;
 	unsigned int stepsymbolrate = getconfigint("blindstepsignalrate", NULL) * 1000;
+	unsigned int usedefaultsr = getconfigint("blindusedefaultsr", NULL);
 	
 	int minmodulation = 0, maxmodulation = 2, stepmodulation = 1;
 	int minpolarization = 0, maxpolarization = 1, steppolarization = 1;
 	int minsystem = 0, maxsystem = 1, stepsystem = 1;
 	int minfec = 0, maxfec = 8, stepfec = 1;
+
+	if(usedefaultsr == 1)
+	{
+		minsymbolrate = 0;
+		maxsymbolrate = 3;
+		stepsymbolrate = 1;
+	}
 
 	if(scaninfo.fenode == NULL || timernode == NULL) return;
 
@@ -411,8 +419,26 @@ void blindscan(struct stimerthread* timernode)
 	for(frequency = minfrequency; frequency <= maxfrequency; frequency += stepfrequency)
 	{
 
-		for(symbolrate = minsymbolrate; symbolrate <= maxsymbolrate; symbolrate += stepsymbolrate)
+		int csymbolrate = 0;
+		for(csymbolrate = minsymbolrate; csymbolrate <= maxsymbolrate; csymbolrate += stepsymbolrate)
 		{
+			if(usedefaultsr == 1)
+			{
+				switch(cpolarization)
+				{
+					case 0:
+						symbolrate = 22000 * 1000;
+						break;
+					case 1:
+						symbolrate = 27500 * 1000;
+						break;
+					case 2:
+						symbolrate = 30000 * 1000;
+						break;
+				}
+			}
+			else
+				symbolrate = csymbolrate;
 
 			for(modulation = minmodulation; modulation <= maxmodulation; modulation += stepmodulation)
 			{
