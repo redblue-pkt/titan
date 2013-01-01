@@ -214,7 +214,8 @@ int audiosetbypassmode(struct dvbdev* node, int mode)
 		{
 			status.volautochange = 0;
 		}
-		setvol(aktvol);
+		if(status.mute != 1)
+			setvol(aktvol);
 	}
 	
 	return 0;
