@@ -4560,10 +4560,9 @@ int setmute(int value)
 		if(mutedev != NULL)
 		{
 			debug(100, "set %s to %d", mutedev, value);
+			if(status.volautochangevalue != 0 && value == 0) setvol(getvol());
 			ret = writesysint(mutedev, value, 0);
 			if(ret == 0) status.mute = value;
-			tmpvol = getvol();
-			setvol(tmpvol);
 			return ret;
 		}
 	}
