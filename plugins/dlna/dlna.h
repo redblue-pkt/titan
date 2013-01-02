@@ -311,7 +311,7 @@ void screendlna()
 			
 			if(rcret == getrcconfigint("rcgreen", NULL))
 			{
-				system("/etc/init.d/dlna.sh stop");
+				system("/var/swap/titanplugins/dlna/dlna.sh stop");
 				ret = system("/var/swap/titanplugins/dlna/dlna.sh start");
 				if(ret == 0)
 					textbox(_("Message"), _("DLNA started."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
