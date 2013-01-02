@@ -1486,38 +1486,37 @@ void fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		default: modulation = QAM_AUTO; break;
 	}
 	
-/*
-	int bandwidth = tpnode->bandwidth;
+	int bandwidth = tpnode->polarization; //polarization = bandwidth on DVBT
 	switch(bandwidth)
 	{
-		case 0: bandwidth = BANDWIDTH_8MHZ; break;
-		case 1: bandwidth = BANDWIDTH_7MHZ; break;
-		case 2: bandwidth = BANDWIDTH_6MHZ; break;
+		case 0: bandwidth = BANDWIDTH_8_MHZ; break;
+		case 1: bandwidth = BANDWIDTH_7_MHZ; break;
+		case 2: bandwidth = BANDWIDTH_6_MHZ; break;
 		case 3: bandwidth = BANDWIDTH_AUTO; break;
-		default: modulation = BANDWIDTH_AUTO; break;
+		default: bandwidth = BANDWIDTH_AUTO; break;
 	}
 	
-	int transmission = tpnode->transmission;
+	int transmission = tpnode->symbolrate; //symbolrate = transmission on DVBT
 	switch(transmission)
 	{
-		case 0: transmission = TRANSMISSIONMODE_2K; break;
-		case 1: transmission = TRANSMISSIONMODE_8K; break;
-		case 2: transmission = TRANSMISSIONMODE_AUTO; break;
-		default: transmission = TRANSMISSIONMODE_AUTO; break;
+		case 0: transmission = TRANSMISSION_MODE_2K; break;
+		case 1: transmission = TRANSMISSION_MODE_8K; break;
+		case 2: transmission = TRANSMISSION_MODE_AUTO; break;
+		default: transmission = TRANSMISSION_MODE_AUTO; break;
 	}
 	
-	int guardinterval = tpnode->guardinterval;
+	int guardinterval = tpnode->pilot; //pilot = guardinterval on DVBT
 	switch(guardinterval)
 	{
-		case 0: guardinterval = GUARDINTERVAL_1_32; break;
-		case 1: guardinterval = GUARDINTERVAL_1_16; break;
-		case 2: guardinterval = GUARDINTERVAL_1_8; break;
-		case 3: guardinterval = GUARDINTERVAL_1_4; break;
-		case 4: guardinterval = GUARDINTERVAL_AUTO; break;
-		default: guardinterval = GUARDINTERVAL_AUTO; break;
+		case 0: guardinterval = GUARD_INTERVAL_1_32; break;
+		case 1: guardinterval = GUARD_INTERVAL_1_16; break;
+		case 2: guardinterval = GUARD_INTERVAL_1_8; break;
+		case 3: guardinterval = GUARD_INTERVAL_1_4; break;
+		case 4: guardinterval = GUARD_INTERVAL_AUTO; break;
+		default: guardinterval = GUARD_INTERVAL_AUTO; break;
 	}
 	
-	int hierarchy = tpnode->hierarchy;
+	int hierarchy = tpnode->rolloff; //rolloff = hierarchy on DVBT
 	switch(guardinterval)
 	{
 		case 0: hierarchy = HIERARCHY_NONE;
@@ -1527,17 +1526,16 @@ void fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		case 4: hierarchy = HIERARCHY_AUTO;
 		default: hierarchy = HIERARCHY_AUTO; break;
 	}
-*/
 
 	tuneto.frequency = tpnode->frequency;
 	tuneto.inversion = tpnode->inversion;
-	//tuneto.u.ofdm.bandwidth = bandwidth;
-	tuneto.u.ofdm.code_rate_HP = 0;
-	tuneto.u.ofdm.code_rate_LP = 0;
-	tuneto.u.ofdm.constellation = 0;
-	//tuneto.u.ofdm.transmission_mode = transmission;
-	//tuneto.u.ofdm.guard_interval = guardinterval;
-	//tuneto.u.ofdm.hierarchy_information = hierarchy;
+	tuneto.u.ofdm.bandwidth = bandwidth;
+	tuneto.u.ofdm.code_rate_HP = fec;
+	tuneto.u.ofdm.code_rate_LP = fec;
+	tuneto.u.ofdm.constellation = modulation;
+	tuneto.u.ofdm.transmission_mode = transmission;
+	tuneto.u.ofdm.guard_interval = guardinterval;
+	tuneto.u.ofdm.hierarchy_information = hierarchy;
 
 	fediscard(node);
 
