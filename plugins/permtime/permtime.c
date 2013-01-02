@@ -7,7 +7,7 @@ char plugindesc[] = "Extensions";
 char pluginpic[] = "%pluginpath%/permtime/plugin.png";
 
 int pluginaktiv = 0;
-int pluginversion = PLUGINVERSION;
+int pluginversion = 999999;
 //struct skin* pluginmenu = NULL;
 //int pluginflag = 1; //don't show the plugin in pluginmanager
 
@@ -20,6 +20,17 @@ void permtime_thread()
 	struct skin* framebuffer = getscreen("framebuffer");
 	struct skin* permtime = getscreen("permtime");
 	char* bg = NULL;
+	
+	int posx = getconfigint("permtime_posx", NULL);
+	int posy = getconfigint("permtime_posy", NULL);
+ 
+	if (posx == 0) posx = 3;
+	if (posy == 0) posy = 2;
+	permtime->prozposx = 1;
+	permtime->prozposy = 1;
+	permtime->posx = posx;
+	permtime->posy = posy;
+	
 	
 	setnodeattr(permtime, framebuffer, 0);
 	bg = savescreen(permtime);
@@ -79,5 +90,56 @@ void deinit(void)
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {
-	permtime_main();
+	char* tmpstr = NULL;
+	int rcret;
+ 
+	struct skin* pospermtime = getscreen("pospermtime");
+ 
+	int posx = getconfigint("permtime_posx", NULL);
+	int posy = getconfigint("permtime_posy", NULL);
+ 
+	if (posx == 0) posx = 3;
+	if (posy == 0) posy = 2;
+	pospermtime->prozposx = 1;
+	pospermtime->prozposy = 1;
+	
+	tmpstr = getconfig("permtime_plugin_running", NULL);
+	if(ostrcmp(tmpstr, "yes") == 0) {
+		tmpstr=NULL;
+		permtime_main();
+	}
+	else {
+		tmpstr=NULL;
+		while(1)
+		{
+			pospermtime->posx = posx;
+			pospermtime->posy = posy;
+			drawscreen(pospermtime, 0, 0);
+			rcret = waitrc(pospermtime, 0, 0);
+			clearscreen(pospermtime);
+			if(rcret == getrcconfigint("rcup", NULL)) {
+				posy = posy - 2;
+				if(posy <= 0) posy = 2;
+			}
+			else if(rcret == getrcconfigint("rcdown", NULL)) {
+				posy = posy + 2;
+				if(posy >=96) posy = 96;
+			}
+			else if(rcret == getrcconfigint("rcleft", NULL)) {
+				posx = posx - 3;
+				if(posx <= 0) posx = 3;
+			}
+			else if(rcret == getrcconfigint("rcright", NULL)) {
+				posx = posx + 3;
+				if(posx >= 97) posx = 97;
+			}
+			else if(rcret == getrcconfigint("rcok", NULL)) {
+				addconfigint("permtime_posx", posx);
+				addconfigint("permtime_posy", posy);
+				break;
+			}
+		}
+		permtime_main();
+		
+	}
 }
