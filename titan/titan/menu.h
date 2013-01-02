@@ -34,6 +34,22 @@ void menucheckentry(struct skin* child)
 		return;
 	}
 
+	// Hide Terr scan when no terr tuner is installed
+	if(ostrcmp(child->name, "manualsearch_dvbt") == 0)
+	{
+		child->hidden = YES;
+		while(dvbnode != NULL)
+		{
+			if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL && dvbnode->feinfo->type == FE_OFDM)
+			{
+				child->hidden = NO;
+				break;
+			}
+			dvbnode = dvbnode->next;
+		}
+		return;
+	}
+
 	// Hide Sat scan when no sat tuner is installed
 	if(ostrcmp(child->name, "manualsearch") == 0)
 	{
@@ -515,6 +531,11 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	{
 		if(check == 1) return 0;
 		screenscanconfig(2);
+	}
+	else if(ostrcmp("manualsearch_dvbt", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screenscanconfig(3);
 	}
 	else if(ostrcmp("autosearch", menuentry->name) == 0)
 	{
