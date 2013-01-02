@@ -100,7 +100,6 @@ void deltranspondertunablestatus()
 	}
 }
 
-/*
 char* transpondergetbandwidthstr(struct transponder* node, int flag)
 {
 	char* text = NULL;
@@ -113,7 +112,7 @@ char* transpondergetbandwidthstr(struct transponder* node, int flag)
 			return NULL;
 		}
 
-		switch(node->bandwidth)
+		switch(node->symbolrate)
 		{	
 			case 0: text = ostrcat(text, _("8 Mhz"), 1, 0); break;
 			case 1: text = ostrcat(text, _("7 Mhz"), 1, 0); break;
@@ -150,7 +149,7 @@ char* transpondergettransmissionstr(struct transponder* node, int flag)
 			return NULL;
 		}
 
-		switch(node->transmission)
+		switch(node->pilot)
 		{	
 			case 0: text = ostrcat(text, _("2 Khz"), 1, 0); break;
 			case 1: text = ostrcat(text, _("8 Khz"), 1, 0); break;
@@ -184,7 +183,7 @@ char* transpondergetguardintervalstr(struct transponder* node, int flag)
 			return NULL;
 		}
 
-		switch(node->guardinterval)
+		switch(node->rolloff)
 		{	
 			case 0: text = ostrcat(text, "1/32", 1, 0); break;
 			case 1: text = ostrcat(text, "1/16", 1, 0); break;
@@ -205,7 +204,7 @@ char* transpondergetguardintervalstr(struct transponder* node, int flag)
 	return text;
 }
 
-char* transpondergethieratchystr(struct transponder* node, int flag)
+char* transpondergethierarchystr(struct transponder* node, int flag)
 {
 	char* text = NULL;
 
@@ -217,7 +216,7 @@ char* transpondergethieratchystr(struct transponder* node, int flag)
 			return NULL;
 		}
 
-		switch(node->hierarchy)
+		switch(node->system)
 		{	
 			case 0: text = ostrcat(text, _("none"), 1, 0); break;
 			case 1: text = ostrcat(text, "1", 1, 0); break;
@@ -238,7 +237,6 @@ char* transpondergethieratchystr(struct transponder* node, int flag)
 
 	return text;
 }
-*/
 
 char* transpondergetpilotstr(struct transponder* node, int flag)
 {
@@ -348,6 +346,9 @@ char* transpondergetfecstr(struct transponder* node, int flag)
 				case 4: text = ostrcat(text, "5/6", 1, 0); break;
 				case 5: text = ostrcat(text, "7/8", 1, 0); break;
 				case 6: text = ostrcat(text, "8/9", 1, 0); break;
+				case 7: text = ostrcat(text, "3/5", 1, 0); break;
+				case 8: text = ostrcat(text, "4/5", 1, 0); break;
+				case 9: text = ostrcat(text, "9/10", 1, 0); break;
 				case 15: text = ostrcat(text, _("none"), 1, 0); break;
 				default: text = ostrcat(text, _("unknown"), 1, 0);
 			}
@@ -377,7 +378,7 @@ char* transpondergetfecstr(struct transponder* node, int flag)
 		else if(node->fetype == FE_QAM)
 		{
 			text = ostrcat(text, _("auto"), 1, 0);
-			text = ostrcat(text, "\n1/2\n2/3\n3/4\n5/6\n7/8\n8/9\n", 1, 0);
+			text = ostrcat(text, "\n1/2\n2/3\n3/4\n5/6\n7/8\n8/9\n3/5\n4/5\n9/10\n", 1, 0);
 			text = ostrcat(text, _("none"), 1, 0);
 		}
 		else if(node->fetype == FE_OFDM)
@@ -391,7 +392,7 @@ char* transpondergetfecstr(struct transponder* node, int flag)
 		if(node->fetype == FE_QPSK)
 			text = ostrcat(text, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10", 1, 0);
 		else if(node->fetype == FE_QAM)
-			text = ostrcat(text, "0\n1\n2\n3\n4\n5\n6\n7", 1, 0);
+			text = ostrcat(text, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10", 1, 0);
 		else if(node->fetype == FE_OFDM)
 			text = ostrcat(text, "0\n1\n2\n3\n4\n5", 1, 0);
 	}

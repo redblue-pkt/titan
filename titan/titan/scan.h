@@ -1333,7 +1333,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	resetsatscan();
 }
 
-void changescantype(char* scantype, struct skin* scan, struct skin* listbox, struct skin* tuner, struct skin* satellite, struct skin* id, struct skin* system, struct skin* frequency, struct skin* inversion, struct skin* symbolrate, struct skin* polarization, struct skin* fec, struct skin* modulation, struct skin* rolloff, struct skin* pilot, struct skin* b4, struct skin* b5, int flag)
+void changescantype(char* scantype, struct skin* scan, struct skin* listbox, struct skin* tuner, struct skin* satellite, struct skin* id, struct skin* system, struct skin* frequency, struct skin* inversion, struct skin* symbolrate, struct skin* polarization, struct skin* fec, struct skin* modulation, struct skin* rolloff, struct skin* pilot, struct skin* hp, struct skin* lp, struct skin* bandwidth, struct skin* transmission, struct skin* guardinterval, struct skin* hierarchy, struct skin* b4, struct skin* b5, int flag)
 {
 	struct sat* satnode = sat;
 	struct skin* tmp = NULL;
@@ -1354,6 +1354,12 @@ void changescantype(char* scantype, struct skin* scan, struct skin* listbox, str
 	modulation->hidden = NO;
 	rolloff->hidden = NO;
 	pilot->hidden = NO;
+	hp->hidden = NO;
+	lp->hidden = NO;
+	bandwidth->hidden = NO;
+	transmission->hidden = NO;
+	guardinterval->hidden = NO;
+	hierarchy->hidden = NO;
 	satellite->hidden = NO;
 	b4->hidden = NO;
 	b5->hidden = NO;
@@ -1378,6 +1384,12 @@ void changescantype(char* scantype, struct skin* scan, struct skin* listbox, str
 		modulation->hidden = YES;
 		rolloff->hidden = YES;
 		pilot->hidden = YES;
+		hp->hidden = YES;
+		lp->hidden = YES;
+		bandwidth->hidden = YES;
+		transmission->hidden = YES;
+		guardinterval->hidden = YES;
+		hierarchy->hidden = YES;
 		b4->hidden = YES;
 		b5->hidden = YES;
 	}
@@ -1424,6 +1436,26 @@ void changescantype(char* scantype, struct skin* scan, struct skin* listbox, str
 		rolloff->hidden = YES;
 		pilot->hidden = YES;
 		satellite->hidden = YES;
+	}
+
+	if(flag == 3)
+	{
+		system->hidden = YES;
+		polarization->hidden = YES;
+		rolloff->hidden = YES;
+		pilot->hidden = YES;
+		satellite->hidden = YES;
+		symbolrate->hidden = YES;
+		fec->hidden = YES;
+	}
+	else
+	{
+		hp->hidden = YES;
+		lp->hidden = YES;
+		bandwidth->hidden = YES;
+		transmission->hidden = YES;
+		guardinterval->hidden = YES;
+		hierarchy->hidden = YES;
 	}
 }
 
@@ -1475,6 +1507,12 @@ void screenscanconfig(int flag)
 	struct skin* modulation = getscreennode(scan, "modulation");
 	struct skin* rolloff = getscreennode(scan, "rolloff");
 	struct skin* pilot = getscreennode(scan, "pilot");
+	struct skin* hp = getscreennode(scan, "hp");
+	struct skin* lp = getscreennode(scan, "lp");
+	struct skin* bandwidth = getscreennode(scan, "bandwidth");
+	struct skin* transmission = getscreennode(scan, "transmission");
+	struct skin* guardinterval = getscreennode(scan, "guardinterval");
+	struct skin* hierarchy = getscreennode(scan, "hierarchy");
 	struct skin* networkscan = getscreennode(scan, "networkscan");
 	struct skin* clear = getscreennode(scan, "clear");
 	struct skin* onlyfree = getscreennode(scan, "onlyfree");
@@ -1516,6 +1554,18 @@ void screenscanconfig(int flag)
 	changechoiceboxvalue(rolloff, NULL);
 	changeinput(pilot, NULL);
 	changechoiceboxvalue(pilot, NULL);
+	changeinput(hp, NULL);
+	changeinput(lp, NULL);
+	changeinput(bandwidth, NULL);
+	changeinput(transmission, NULL);
+	changeinput(guardinterval, NULL);
+	changeinput(hierarchy, NULL);
+	changechoiceboxvalue(hp, NULL);
+	changechoiceboxvalue(lp, NULL);
+	changechoiceboxvalue(bandwidth, NULL);
+	changechoiceboxvalue(transmission, NULL);
+	changechoiceboxvalue(guardinterval, NULL);
+	changechoiceboxvalue(hierarchy, NULL);
 
 	frequency->aktpage = 0;
 	symbolrate->aktpage = 0;
@@ -1624,8 +1674,6 @@ start:
 		free(tmpstr); tmpstr = NULL;
 	}
 
-	changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, b4, b5, flag);
-
 	//frequency
 	if(tpnode != NULL)
 		tmpstr = oitoa(tpnode->frequency / 1000);
@@ -1728,6 +1776,90 @@ start:
 		free(tmpstr); tmpstr = NULL;
 	}
 
+	//hp
+	tmpstr = transpondergetfecstr(tpnode, 1);
+	changeinput(hp, tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	tmpstr = transpondergetfecstr(tpnode, 2);
+	changechoiceboxvalue(hp, tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	if(tpnode != NULL)
+	{
+		tmpstr = oitoa(tpnode->fec);
+		setchoiceboxselection(hp, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
+
+	//lp
+	tmpstr = transpondergetfecstr(tpnode, 1);
+	changeinput(lp, tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	tmpstr = transpondergetfecstr(tpnode, 2);
+	changechoiceboxvalue(lp, tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	if(tpnode != NULL)
+	{
+		tmpstr = oitoa(tpnode->polarization);
+		setchoiceboxselection(lp, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
+
+	//bandwidth
+	tmpstr = transpondergetbandwidthstr(tpnode, 1);
+	changeinput(bandwidth, tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	tmpstr = transpondergetbandwidthstr(tpnode, 2);
+	changechoiceboxvalue(bandwidth, tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	if(tpnode != NULL)
+	{
+		tmpstr = oitoa(tpnode->symbolrate);
+		setchoiceboxselection(bandwidth, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
+
+	//guardinterval
+	tmpstr = transpondergetguardintervalstr(tpnode, 1);
+	changeinput(guardinterval, tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	tmpstr = transpondergetguardintervalstr(tpnode, 2);
+	changechoiceboxvalue(guardinterval, tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	if(tpnode != NULL)
+	{
+		tmpstr = oitoa(tpnode->rolloff);
+		setchoiceboxselection(guardinterval, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
+
+	//transmission
+	tmpstr = transpondergettransmissionstr(tpnode, 1);
+	changeinput(transmission, tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	tmpstr = transpondergettransmissionstr(tpnode, 2);
+	changechoiceboxvalue(transmission, tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	if(tpnode != NULL)
+	{
+		tmpstr = oitoa(tpnode->pilot);
+		setchoiceboxselection(transmission, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
+
+	//hierarchy
+	tmpstr = transpondergethierarchystr(tpnode, 1);
+	changeinput(hierarchy, tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	tmpstr = transpondergethierarchystr(tpnode, 2);
+	changechoiceboxvalue(hierarchy, tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	if(tpnode != NULL)
+	{
+		tmpstr = oitoa(tpnode->system);
+		setchoiceboxselection(hierarchy, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
+
 	//networkscan
 	addchoicebox(networkscan, "0", _("no"));
 	addchoicebox(networkscan, "1", _("yes"));
@@ -1744,6 +1876,8 @@ start:
 	addchoicebox(blindscan, "0", _("no"));
 	addchoicebox(blindscan, "1", _("yes"));
 
+	drawscreen(scan, 2, 0);
+	changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, hp, lp, bandwidth, transmission, guardinterval, hierarchy, b4, b5, flag);
 	drawscreen(scan, 0, 0);
 	addscreenrc(scan, listbox);
 
@@ -1765,6 +1899,17 @@ start:
 		if(modulation->ret != NULL) imodulation = atoi(modulation->ret);
 		if(rolloff->ret != NULL) irolloff = atoi(rolloff->ret);
 		if(pilot->ret != NULL) ipilot = atoi(pilot->ret);
+
+		if(flag == 3)
+		{
+			if(hp->ret != NULL) ifec = atoi(hp->ret);
+			if(lp->ret != NULL) ipolarization = atoi(lp->ret);
+			if(bandwidth->ret != NULL) isymbolrate = atoi(bandwidth->ret);
+			if(transmission->ret != NULL) ipilot = atoi(transmission->ret);
+			if(guardinterval->ret != NULL) irolloff = atoi(guardinterval->ret);
+			if(hierarchy->ret != NULL) isystem = atoi(hierarchy->ret);
+		}
+
 		if(networkscan->ret != NULL) inetworkscan = atoi(networkscan->ret);
 		if(onlyfree->ret != NULL) ionlyfree = atoi(onlyfree->ret);
 		if(clear->ret != NULL) iclear = atoi(clear->ret);
@@ -1775,17 +1920,17 @@ start:
 		if(listbox->select != NULL && ostrcmp(listbox->select->name, "tuner") == 0)
 		{
 			scanchangesat(sat, tpnode, listbox->select->ret);
-			changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, b4, b5, flag);
+			changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, hp, lp, bandwidth, transmission, guardinterval, hierarchy, b4, b5, flag);
 			drawscreen(scan, 0, 0);
 		}
 		if(listbox->select != NULL && ostrcmp(listbox->select->name, "scantype") == 0)
 		{
-			changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, b4, b5, flag);
+			changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, hp, lp, bandwidth, transmission, guardinterval, hierarchy, b4, b5, flag);
 			drawscreen(scan, 0, 0);
 		}
 		if(listbox->select != NULL && ostrcmp(listbox->select->name, "system") == 0)
 		{
-			changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, b4, b5, flag);
+			changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, hp, lp, bandwidth, transmission, guardinterval, hierarchy, b4, b5, flag);
 			drawscreen(scan, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcred", NULL))
