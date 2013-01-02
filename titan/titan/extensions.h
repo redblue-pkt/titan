@@ -41,6 +41,13 @@ void screenfeed()
 
 	lastline = numinput(_("Feed"), tmpstr, "000.000.000.000", 1);
 
+	//for devs, who have secret feed not in mind
+	if(ostrcmp("111.111.111.111", lastline) == 0)
+	{
+		free(lastline); lastline = NULL;
+		lastline = ostrcat("097.074.032.010", NULL, 0, 0);
+	}
+
 	if(lastline != NULL)
 	{
 		free(tmpstr); tmpstr = NULL;
