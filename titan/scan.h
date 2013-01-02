@@ -33,6 +33,8 @@ struct transponder* satsystemdesc(unsigned char* buf, uint64_t transportid, unsi
 	uint64_t id = 0;
 	struct transponder *tpnode = NULL;
 
+	if(buf == NULL) return NULL;
+
 	frequency = (
 		((buf[2] >> 4) * 100000000) +
 		((buf[2] & 0x0F) * 10000000) +
@@ -127,6 +129,8 @@ struct transponder* cablesystemdesc(unsigned char* buf, uint64_t transportid, un
 	uint64_t id = 0;
 	struct transponder *tpnode = NULL;
 
+	if(buf == NULL) return NULL;
+
 	frequency = (
 		((buf[2] >> 4) * 1000000000) +
 		((buf[2] & 0x0F) * 100000000) +
@@ -203,6 +207,106 @@ struct transponder* cablesystemdesc(unsigned char* buf, uint64_t transportid, un
 	}
 
 	debug(500, "nitscan: id=%llu freq=%d sr=%d fec=%d modulation=%d tpnode=%p", id, frequency, symbolrate, fec, modulation, tpnode);
+
+	return tpnode;
+}
+
+struct transponder* terrsystemdesc(unsigned char* buf, uint64_t transportid, unsigned short onid, int orbitalpos)
+{
+	int modulation = 0, hp = 0, lp = 0;
+	int bandwidth = 0, hierarchy = 0, guardinterval = 0;
+	int transmission = 0;
+	unsigned int frequency = 0;
+	uint64_t id = 0;
+	struct transponder *tpnode = NULL;
+
+	if(buf == NULL) return NULL;
+
+	frequency = (buf[2] << 24) | (buf[3] << 16);
+	frequency |= (buf[4] << 8) | buf[5];
+	frequency *= 10;
+
+	bandwidth = BANDWIDTH_8_MHZ + ((buf[6] >> 5) & 0x3);
+	modulation = (buf[7] >> 6) & 0x3;
+	hierarchy = HIERARCHY_NONE + ((buf[7] >> 3) & 0x3);
+
+	hp = (buf[7] & 0x7);
+	switch(hp)
+	{
+		case 0x00:
+			hp = FEC_1_2;
+			break;
+		case 0x01:
+			hp = FEC_2_3;
+			break;
+		case 0x02:
+			hp = FEC_3_4;
+			break;
+		case 0x03:
+			hp = FEC_5_6;
+			break;
+		case 0x04:
+			hp = FEC_7_8;
+			break;
+		default:
+			hp = FEC_AUTO;
+			break;
+	}
+
+	lp = ((buf[8] >> 5) & 0x7);
+	switch(lp)
+	{
+		case 0x00:
+			lp = FEC_1_2;
+			break;
+		case 0x01:
+			lp = FEC_2_3;
+			break;
+		case 0x02:
+			lp = FEC_3_4;
+			break;
+		case 0x03:
+			lp = FEC_5_6;
+			break;
+		case 0x04:
+			lp = FEC_7_8;
+			break;
+		default:
+			lp = FEC_AUTO;
+			break;
+	}
+
+	guardinterval = GUARD_INTERVAL_1_32 + ((buf[8] >> 3) & 0x3);
+
+	transmission = (buf[8] & 0x2);
+	switch(transmission)
+	{
+		case 0x00:
+			transmission = TRANSMISSION_MODE_2K;
+			break;
+		case 0x01:
+			transmission = TRANSMISSION_MODE_8K;
+			break;
+		case 0x02:
+			transmission = TRANSMISSION_MODE_AUTO;
+			break;
+		default:
+			transmission = TRANSMISSION_MODE_AUTO;
+			break;
+	}
+
+	//other_frequency_flag = (buf[8] & 0x01);
+
+	id = ((onid << 16) | transportid) & 0xffffffff;
+	id = id | ((uint64_t)2 << 32);
+
+	if(gettransponder(id) == NULL)
+	{
+		tpnode = createtransponder(id, FE_OFDM, orbitalpos, frequency, INVERSION_AUTO, bandwidth, lp, hp, modulation, guardinterval, transmission, hierarchy);
+		status.writetransponder = 1;
+	}
+
+	debug(500, "nitscan: id=%llu freq=%d bandwidth=%d hp=%d lp=%d modulation=%d guard=%d trans=%d hierarchy=%d tpnode=%p", id, frequency, bandwidth, hp, lp, modulation, guardinterval, transmission, hierarchy, tpnode);
 
 	return tpnode;
 }
@@ -295,7 +399,12 @@ int parsenit(unsigned char* buf, uint8_t* lastsecnr, int orbitalpos)
 					}
 					break;
 				case 0x5A:
-					//terrestrialsystemdesc(buf + pos2);
+					if(terrsystemdesc(buf + pos2, transponderid, onid, orbitalpos) != NULL)
+					{
+						scaninfo.tpnew++;
+						if(scaninfo.scantype != 0)
+							scaninfo.tpmax++;
+					}
 					break;
 				case 0x62:
 					//frequencylistdesc(buf + pos2);
