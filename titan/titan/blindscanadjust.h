@@ -14,9 +14,9 @@ void screenblindscanadjust()
 	struct skin* minsignalrate = getscreennode(blindscan, "minsignalrate");
 	struct skin* maxsignalrate = getscreennode(blindscan, "maxsignalrate");
 	struct skin* stepsignalrate = getscreennode(blindscan, "stepsignalrate");
-	struct skin* usedefaultsr = getscreennode(blindscan, "blindusedefaultsr");
-	struct skin* onlydvbs = getscreennode(blindscan, "blindonlydvbs");
-	struct skin* usedefaultfec = getscreennode(blindscan, "blindusedefaultfec");
+	struct skin* usedefaultsr = getscreennode(blindscan, "usedefaultsr");
+	struct skin* onlydvbs = getscreennode(blindscan, "onlydvbs");
+	struct skin* usedefaultfec = getscreennode(blindscan, "usedefaultfec");
 	struct skin* tmp = NULL;
 
 	changemask(minfrequency, "00000");
