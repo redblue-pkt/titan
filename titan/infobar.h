@@ -12,6 +12,7 @@ void screeninfobar()
 	struct skin* pluginnode = NULL;
 	void (*startplugin)(void);
 	time_t lasttime = 0;
+	int mark = 0;
 
 	status.mute = 0;
 	status.infobar = 2;
@@ -27,6 +28,7 @@ void screeninfobar()
 	
 	while(1)
 	{
+		mark = 0;
 		//check if mediadb can freed
 		if(status.mediadbthread == NULL)
 		{
@@ -81,7 +83,6 @@ void screeninfobar()
 		}
 		else
 		{
-			int mark = 0;
 			int screensaver_delay = getconfigint("screensaver_delay", NULL);
 			rcret = 0; count = 0; rcwait = 1000;
 			if(status.servicetype == 1 && getconfigint("screensaver", NULL) == 1)
@@ -615,7 +616,7 @@ void screeninfobar()
 				}
 			}
 		}
-		if(rcret == RCTIMEOUT)
+		if(rcret == RCTIMEOUT && mark == 0)
 		{
 			if(getconfigint("infobartimeout", NULL) > infobartimeout)
 			{
