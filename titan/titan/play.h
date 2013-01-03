@@ -920,7 +920,7 @@ int playcheckdirrcret(char* file, int dirrcret)
 	if(dirrcret == 4)
 	{
 		int sort = screendirsort();
-		addconfigint("dirstort", sort);
+		addconfigint("dirsort", sort);
 		ret = 1;
 	}
 	if(dirrcret == 3)
@@ -1076,7 +1076,7 @@ playerstart:
 					free(tmppolicy);
 					free(file);
 					free(formats);
-					addconfigint("dirstort", oldsort);
+					addconfigint("dirsort", oldsort);
 					return ret;
 				}
 			}
@@ -1271,7 +1271,7 @@ playerend:
 	if(flag == 4)
 		deinitscreensaver();
 
-	addconfigint("dirstort", oldsort);
+	addconfigint("dirsort", oldsort);
 	free(status.playfile); status.playfile = NULL; 
 	status.playspeed = 0;
 	status.pause = 0;

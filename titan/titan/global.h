@@ -4921,7 +4921,7 @@ char* string_tolower(char *str)
 
 	if(str == NULL) return NULL;
 
-	for( i = 0; i < strlen(str); i++)
+	for(i = 0; i < strlen(str); i++)
 		str[i] = tolower(str[i]);
 
 	debug(1000, "out");
@@ -4935,7 +4935,7 @@ char* string_toupper(char *str)
 
 	if(str == NULL) return NULL;
 
-	for( i = 0; i < strlen(str); i++)
+	for(i = 0; i < strlen(str); i++)
 		str[i] = toupper(str[i]);
 
 	debug(1000, "out");
