@@ -339,9 +339,9 @@ void initvfd()
 
 	*vfdtext='\0';
 	tmpstr = ostrcat(tmpstr, "<", 1, 0);
-	tmpstr = ostrcat(tmpstr, string_toupper(PROGNAME), 1, 0);
+	tmpstr = ostrcat(tmpstr, PROGNAME, 1, 0);
 	tmpstr = ostrcat(tmpstr, ">", 1, 0);
-	writevfd(tmpstr);
+	writevfd(string_toupper(tmpstr));
 	free(tmpstr); tmpstr = NULL;
 
 	addvfdiconstate(VFD_USB);
