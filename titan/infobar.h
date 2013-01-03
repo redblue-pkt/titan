@@ -582,7 +582,7 @@ void screeninfobar()
 			continue;
 		}
 		//show infobar on program switch (only tv)
-		if(status.infobar == 0 && status.infobarprogram == 1 && status.servicetype == 0)
+		if(status.infobarprogram == 1 && status.infobar == 0 && status.servicetype == 0)
 		{
 			time_t akttime = time(NULL);
 			//show infobar only all 60 sec

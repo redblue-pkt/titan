@@ -332,13 +332,17 @@ void addvfdiconstate(vfdicons icon)
 // Initialize all VFD relevant parts (e.g. the linked list of all supported VFD icons, etc)
 void initvfd()
 {
+	char* tmpstr = NULL;
+
 	if(vfdiconstates!= 0)
-	{
 		return; // Do not initialize twice
-	}
 
 	*vfdtext='\0';
-	writevfd(">TITAN<");
+	tmpstr = ostrcat(tmpstr, "<", 1, 0);
+	tmpstr = ostrcat(tmpstr, string_toupper(PROGNAME), 1, 0);
+	tmpstr = ostrcat(tmpstr, ">", 1, 0);
+	writevfd(tmpstr);
+	free(tmpstr); tmpstr = NULL;
 
 	addvfdiconstate(VFD_USB);
 	addvfdiconstate(VFD_HD);
