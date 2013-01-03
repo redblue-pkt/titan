@@ -11,6 +11,7 @@ void screeninfobar()
 	char* tmpstr = NULL; char* tmpnr = NULL;
 	struct skin* pluginnode = NULL;
 	void (*startplugin)(void);
+	time_t lasttime = 0;
 
 	status.mute = 0;
 	status.infobar = 2;
@@ -579,6 +580,25 @@ void screeninfobar()
 			screenchannelbynr(rcret);
 			status.infobar = 2;
 			continue;
+		}
+		//show infobar on program switch (only tv)
+		if(status.infobar == 0 && status.infobarprogram == 1 && status.servicetype == 0)
+		{
+			time_t akttime = time(NULL);
+			//show infobar only all 60 sec
+			if(lasttime < akttime)
+			{
+				struct epg* tmpepg = getepgakt(status.aktservice->channel);
+				if(tmpepg != NULL && akttime - 1 >= tmpepg->starttime && akttime + 1 <= tmpepg->starttime)
+				{
+					lasttime = akttime + 60;
+					subtitlepause(1);
+					status.infobar = 1;
+					infobar = infobar1;
+					drawscreen(infobar, 0, 4);
+					continue;
+				}
+			}
 		}
 		if(rcret == RCTIMEOUT)
 		{
