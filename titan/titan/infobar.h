@@ -81,6 +81,7 @@ void screeninfobar()
 		}
 		else
 		{
+			int mark = 0;
 			int screensaver_delay = getconfigint("screensaver_delay", NULL);
 			rcret = 0; count = 0; rcwait = 1000;
 			if(status.servicetype == 1 && getconfigint("screensaver", NULL) == 1)
@@ -88,11 +89,21 @@ void screeninfobar()
 				initscreensaver();
 				if(screensaver != NULL) screensaver->flag = 1;
 			}
-			if(screensaver == NULL) rcwait = 0;
+			if(screensaver == NULL)
+			{
+				if(status.infobarprogram == 1) rcwait = 2000;
+				else rcwait = 0;
+			}
 			while(rcret == 0 || rcret == RCTIMEOUT)
 			{
 				rcret = waitrc(infobar, rcwait, 0);
 				count++;
+				if(screensaver == NULL && status.infobarprogram == 1 && (rcret == 0 || rcret == RCTIMEOUT))
+				{
+					infobartimeout = 99999;
+					mark = 1;
+					break;
+				}
 				if(rcret == RCTIMEOUT && screensaver != NULL && count > screensaver_delay)
 				{
 					if(status.aktservice->channel != NULL)
@@ -106,8 +117,11 @@ void screeninfobar()
 			}
 			if(screensaver != NULL) screensaver->flag = 0;
 			deinitscreensaver();
-			drawscreen(skin, 0, 0);
-			infobartimeout = 0;
+			if(mark == 0)
+			{
+				drawscreen(skin, 0, 0);
+				infobartimeout = 0;
+			}
 		}
 
 		if(rcret == getrcconfigint("rcpause", NULL))
@@ -589,9 +603,10 @@ void screeninfobar()
 			if(lasttime < akttime)
 			{
 				struct epg* tmpepg = getepgakt(status.aktservice->channel);
-				if(tmpepg != NULL && akttime - 1 >= tmpepg->starttime && akttime + 1 <= tmpepg->starttime)
+				if(tmpepg != NULL && akttime - 1 <= tmpepg->starttime && akttime + 1 >= tmpepg->starttime)
 				{
-					lasttime = akttime + 60;
+					lasttime = akttime + 10;
+					infobartimeout = 0;
 					subtitlepause(1);
 					status.infobar = 1;
 					infobar = infobar1;
