@@ -45,6 +45,7 @@ void screenadjust()
 	struct skin* newsletter = getscreennode(adjust, "newsletter");
 	struct skin* showhiddenfiles = getscreennode(adjust, "showhiddenfiles");
 	struct skin* expertmodus = getscreennode(adjust, "expertmodus");
+	struct skin* infobarprogram = getscreennode(adjust, "infobarprogram");
 	
 	struct skin* tmp = NULL;
 
@@ -216,6 +217,10 @@ void screenadjust()
 	addchoicebox(expertmodus, "10", _("yes"));
 	setchoiceboxselection(expertmodus, getconfig("expertmodus", NULL));
 
+	addchoicebox(infobarprogram, "0", _("no"));
+	addchoicebox(infobarprogram, "1", _("yes"));
+	setchoiceboxselection(infobarprogram, getconfig("infobarprogram", NULL));
+
 	drawscreen(adjust, 0, 0);
 	addscreenrc(adjust, listbox);
 
@@ -287,6 +292,8 @@ void screenadjust()
 			addconfigscreen("showhiddenfiles", showhiddenfiles);
 			status.showhiddenfiles = getconfigint("showhiddenfiles", NULL);
 			addconfigscreencheck("expertmodus", expertmodus, "0");
+			addconfigscreencheck("infobarprogram", infobarprogram, "0");
+			status.infobarprogram = getconfigint("infobarprogram", NULL);
 
 			break;
 		}

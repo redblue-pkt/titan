@@ -1316,6 +1316,8 @@ struct status
 	int showhiddenfiles;
 	//mediadb
 	int mediadbfiles;
+	//show infobar on program change
+	int infobarprogram;
 } status;
 
 struct fb

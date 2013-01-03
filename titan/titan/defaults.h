@@ -98,6 +98,7 @@ void setdefaults()
 	status.caskipprivat = getconfigint("caskipprivat", NULL);
 	status.casendallcaids = getconfigint("casendallcaids", NULL);
 	status.showhiddenfiles = getconfigint("showhiddenfiles", NULL);
+	status.infobarprogram = getconfigint("infobarprogram", NULL);
 
 	if(status.filelistselectcol == 0) status.filelistselectcol = status.listboxselectcol;
 	

@@ -2787,3 +2787,6 @@ msgstr "Nur DVBS verwenden"
 
 msgid "Only default FEC"
 msgstr "Verwende Standard FEC"
+
+msgid "Show infobar on program change"
+msgstr "Zeige Infobar bei Sendungwechsel"
