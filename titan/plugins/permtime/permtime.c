@@ -119,7 +119,7 @@ void start(void)
 			clearscreen(pospermtime);
 			if(rcret == getrcconfigint("rcup", NULL)) {
 				posy = posy - 2;
-				if(posy <= 0) posy = 2;
+				if(posy <= 0) posy = 0;
 			}
 			else if(rcret == getrcconfigint("rcdown", NULL)) {
 				posy = posy + 2;
@@ -127,7 +127,7 @@ void start(void)
 			}
 			else if(rcret == getrcconfigint("rcleft", NULL)) {
 				posx = posx - 3;
-				if(posx <= 0) posx = 3;
+				if(posx <= 0) posx = 0;
 			}
 			else if(rcret == getrcconfigint("rcright", NULL)) {
 				posx = posx + 3;
