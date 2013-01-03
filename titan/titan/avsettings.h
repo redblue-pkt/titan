@@ -127,7 +127,7 @@ void screenavsettings(int flag)
 	setchoiceboxselection(ac3mode, ret);
 	free(ret); ret = NULL;
 	
-	changeinput(volautochangevalue, "0\n5\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60\n65\n70\n75\n80\n85\n90\n95\n100");
+	changeinput(volautochangevalue, "0\n5\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60\n65\n70\n75");
 	setchoiceboxselection(volautochangevalue, getconfig("volautochangevalue", NULL));
 
 	ret = getmode3dchoices();
