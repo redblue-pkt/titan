@@ -14,7 +14,7 @@ struct transponder* tpchoicescreen(int orbitalpos, int flag)
 	struct transponder* node = transponder;
 	char* tmpstr = NULL;
 
-	if(flag == 1) return;
+	if(flag == 1) return NULL;
 
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
