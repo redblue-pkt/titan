@@ -2264,6 +2264,11 @@ char* webaddrectimer(char* param, int fmt)
 	ostrcatbig(&buf, "\" /></td></tr>", &maxlen, &pos);
 	free(buf1); buf1 = NULL;
 	
+	ostrcatbig(&buf, "<td><font class=label>after event:&nbsp;</font></td>", &maxlen, &pos);
+	ostrcatbig(&buf, "<td><select name=\"afterevent\" border=0><option selected>", &maxlen, &pos);
+	ostrcatbig(&buf, "auto", &maxlen, &pos);
+	ostrcatbig(&buf, "<option>auto<option>nothing<option>standby<option>off</select></td></tr>", &maxlen, &pos);
+	
 	ostrcatbig(&buf, "</table><br><br><input class=button type=submit name=send value=\"Send\" onClick=\"return checkdaytime(begin.value, end.value)\"></input>&nbsp;<input class=button type=reset name=reset value=\"Reset\"></input></form></center></body></html>", &maxlen, &pos);
 
 	//ostrcatbig(&buf, param, &maxlen, &pos);
@@ -2272,7 +2277,7 @@ char* webaddrectimer(char* param, int fmt)
 
 char* webrectimersend(char* param, int fmt)
 {
-	char* buf = NULL, *string = NULL, *name = NULL, *begin = NULL, *end = NULL, *type = NULL, *anode = NULL, *channelname = NULL, *sid = NULL, *tid = NULL, *ext = NULL;
+	char* buf = NULL, *string = NULL, *name = NULL, *begin = NULL, *end = NULL, *type = NULL, *anode = NULL, *channelname = NULL, *sid = NULL, *tid = NULL, *ext = NULL, *afterevent = NULL;
 //	int maxlen = 0, pos = 0, newnode = 0, channelfind = 0;
 	int newnode = 0, channelfind = 0;
 	struct rectimer *node = NULL;
@@ -2308,6 +2313,10 @@ char* webrectimersend(char* param, int fmt)
 	ext = ostrstr(param, "ext=");
 	if(ext != NULL)
 		ext = ext + 4;
+	afterevent = ostrstr(param, "afterevent="); 
+	if(afterevent != NULL)
+		afterevent = afterevent + 11;
+		
 	
 	string = param;	
 	while(string != NULL)
@@ -2417,6 +2426,18 @@ char* webrectimersend(char* param, int fmt)
 			node->justplay = 0;
 		else
 			node->justplay = 1;
+			
+		if(afterevent != NULL)
+		{
+			if(ostrcmp(afterevent, "auto") == 0)
+				node->afterevent = 0;
+			else if(ostrcmp(afterevent, "nothing") == 0)
+				node->afterevent = 1;
+			else if(ostrcmp(afterevent, "standby") == 0)
+				node->afterevent = 2;
+			else if(ostrcmp(afterevent, "off") == 0)
+				node->afterevent = 3;
+		}
 	
 		loctime = olocaltime(&node->begin);
 		tmpstr = strptime(begin, "%H:%M %d-%m-%Y", loctime);
@@ -2535,6 +2556,20 @@ char* webeditrectimer(char* param, int fmt)
 	ostrcatbig(&buf, "\" /></td></tr>", &maxlen, &pos);
 	free(buf1); buf1 = NULL;
 	free(buf2); buf2 = NULL;
+	
+	ostrcatbig(&buf, "<td><font class=after event>Type:&nbsp;</font></td>", &maxlen, &pos);
+	ostrcatbig(&buf, "<td><select name=\"afterevent\" border=0><option selected>", &maxlen, &pos);
+	if( node->afterevent == 0 )
+		ostrcatbig(&buf, "auto", &maxlen, &pos);
+	else if( node->afterevent == 1 )
+		ostrcatbig(&buf, "nothing", &maxlen, &pos);
+	else if( node->afterevent == 2 )
+		ostrcatbig(&buf, "standby", &maxlen, &pos);
+	else if( node->afterevent == 3 )
+		ostrcatbig(&buf, "off", &maxlen, &pos);
+	else
+		ostrcatbig(&buf, "auto", &maxlen, &pos);
+	ostrcatbig(&buf, "<option>auto<option>nothing<option>standby<option>off</select></td></tr>", &maxlen, &pos);
 	
 	ostrcatbig(&buf, "</table><br><br><input class=button type=submit name=send value=\"Send\" onClick=\"return checkdaytime(begin.value, end.value)\"></input>&nbsp;<input class=button type=reset name=reset value=\"Reset\"></input></form></center></body></html>", &maxlen, &pos);
 	
