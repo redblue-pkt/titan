@@ -268,7 +268,7 @@ void newsletterthreadfunc(struct stimerthread* self)
 
 	debug(427, "start newsletter thread");
 
-	while(timernode->aktion != STOP)
+	while(self->aktion != STOP)
 	{
 		int count = 0;
 
