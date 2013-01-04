@@ -515,7 +515,7 @@ void httpdthreadfunc(struct stimerthread* timernode)
 	fd_set rfds;
 	int i, ret = 0, streamfd = -1, connfd[MAXHTTPDCONN], maxfd = -1;
 
-	if(timernode != NULL) return;
+	if(timernode == NULL) return;
 	debug(250, "Starting httpd thread");
 
 	for(i = 0; i < MAXHTTPDCONN; i++)
