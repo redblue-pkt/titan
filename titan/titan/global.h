@@ -4640,7 +4640,7 @@ int getvol()
 	if(status.volautochangevalue != 0)
 	{
 		if(status.volautochange == 0 && status.volautochangevalue < 100)
-			tmpvol = tmpvol + ((tmpvol * status.volautochangevalue) / (100 - status.volautochangevalue))
+			tmpvol = tmpvol + ((tmpvol * status.volautochangevalue) / (100 - status.volautochangevalue));
 	}
 	debug(1000, "out");
 	return tmpvol;
