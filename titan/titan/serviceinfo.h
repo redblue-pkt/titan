@@ -165,7 +165,7 @@ int filltuner(struct skin* l1, struct skin* l2, struct skin* l3, struct skin* l4
 			changetext(l8, tmpstr);
 			free(tmpstr); tmpstr = NULL;
 
-			tmpstr = transpondergetfecstr(status.aktservice->transponder, -1 0);
+			tmpstr = transpondergetfecstr(status.aktservice->transponder, -1, 0);
 			changetext(l9, tmpstr);
 			free(tmpstr); tmpstr = NULL;
 
