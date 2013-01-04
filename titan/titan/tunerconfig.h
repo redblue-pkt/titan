@@ -59,6 +59,35 @@ void writetunerconfigcable(struct dvbdev* tuner, struct skin* tunerreceptiondvbc
 	writeconfigtmp();
 }
 
+void writetunerconfigterr(struct dvbdev* tuner, struct skin* tunerreceptiondvbt)
+{
+	if(tuner == NULL) return;
+	if(tunerreceptiondvbt == NULL) return;
+
+	struct skin* child = tunerreceptiondvbt->child;
+	char* tmpstr = NULL, *tmpnr = NULL;
+
+	while(child != NULL)
+	{
+		if(child->del == 1 && child->name != NULL)
+		{
+			addconfigscreentmpcheck(child->name, child, "0");
+			if(ostrstr(child->name, "_sat") != NULL && child->ret != NULL && ostrcmp(child->ret, "0") != 0)
+			{
+				if(child->handle != NULL)
+					tmpnr = oitoa((int)child->handle);
+				tmpstr = ostrcat(tuner->feshortname, "_satnr", 0, 0);
+				tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
+				addconfigtmp(tmpstr, tmpnr);
+				free(tmpstr); tmpstr = NULL;
+				free(tmpnr); tmpnr = NULL;
+			}
+		}
+		child = child->next;
+	}
+	writeconfigtmp();
+}
+
 void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct skin* listbox, int maxsat)
 {
 	int i;
@@ -333,6 +362,46 @@ void createcablelist(struct dvbdev* tuner, struct skin* tunerreceptiondvbc, stru
 	free(orbitalposstring);
 }
 
+void createterrlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbt, struct skin* listbox)
+{
+	char *satstring = NULL;
+	char* orbitalposstring = NULL;
+	char* tmpstr = NULL;
+	struct skin* tmp = NULL;
+
+	satstring = getsatstring(NULL, FE_OFDM);
+	orbitalposstring = getorbitalposstring(NULL, FE_OFDM);
+
+	tmp = addlistbox(tunerreceptiondvbt, listbox, tmp, 1);
+	if(tmp != NULL)
+	{
+		tmp->type = CHOICEBOX;
+		changetext(tmp, _("Terrestrisch"));
+
+		tmpstr = ostrcat(_("undefined"), "\n", 0, 0);
+		tmpstr = ostrcat(tmpstr, satstring, 1, 0);
+
+		changeinput(tmp, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat("0\n", orbitalposstring, 0, 0);
+		changechoiceboxvalue(tmp, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(tuner->feshortname, "_sat", 0, 0);
+		tmpstr = ostrcat(tmpstr, "1", 1, 0);
+		changename(tmp, tmpstr);
+		setchoiceboxselection(tmp, getconfig(tmpstr, NULL));
+		free(tmpstr); tmpstr = NULL;
+
+		tmp->handle = (char*)1;
+		tmp->del = 1;
+	}
+
+	free(satstring);
+	free(orbitalposstring);
+}
+
 int screentunerreceptiondvbs(struct dvbdev* tuner)
 {
 	int rcret = 0, ret = 0, maxsat = 1;
@@ -511,6 +580,59 @@ int screentunerreceptiondvbc(struct dvbdev* tuner)
 	delmarkedscreennodes(tunerreceptiondvbc, 1);
 	delownerrc(tunerreceptiondvbc);
 	clearscreen(tunerreceptiondvbc);
+	return ret;
+}
+
+int screentunerreceptiondvbt(struct dvbdev* tuner)
+{
+	int rcret = 0, ret = 0;
+	struct skin* tunerreceptiondvbt = getscreen("tunerreceptiondvbt");
+	struct skin* listbox = getscreennode(tunerreceptiondvbt, "listbox");
+	struct skin* tmp = NULL;
+	char* tmpstr = NULL;
+
+	listbox->aktline = 1;
+	listbox->aktpage = -1;
+
+	if(tuner == NULL || tuner->feshortname == NULL)
+	{
+		err("out -> NULL detect");
+		return 0;
+	}
+
+	createterrlist(tuner, tunerreceptiondvbt, listbox);
+
+	drawscreen(tunerreceptiondvbt, 0, 0);
+	addscreenrc(tunerreceptiondvbt, listbox);
+
+	tmp = listbox->select;
+	while(1)
+	{
+		addscreenrc(tunerreceptiondvbt, tmp);
+		rcret = waitrc(tunerreceptiondvbt, 0, 0);
+		tmp = listbox->select;
+
+		drawscreen(tunerreceptiondvbt, 0, 0);
+
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			ret = 1;
+			deltranspondertunablestatus();
+			writetunerconfigterr(tuner, tunerreceptiondvbt);
+
+			tmpstr = ostrcat(tuner->feshortname, "_maxsat", 0, 0);
+			addconfigint(tmpstr, 1);
+			free(tmpstr); tmpstr = NULL;
+			writeallconfig(1);
+			break;
+		}
+	}
+
+	delconfigtmpall();
+	delmarkedscreennodes(tunerreceptiondvbt, 1);
+	delownerrc(tunerreceptiondvbt);
+	clearscreen(tunerreceptiondvbt);
 	return ret;
 }
 
@@ -698,7 +820,7 @@ void screentunerconfig()
 				if(((struct dvbdev*)listbox->select->handle)->feinfo->type == FE_OFDM)
 				{
 					clearscreen(tunerconfig);
-					textbox(_("Message"), _("DVB-T not supportet at the moment !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+					ret = screentunerreceptiondvbt((struct dvbdev*)listbox->select->handle);
 					drawscreen(tunerconfig, 0, 0);
 				}
 			}
