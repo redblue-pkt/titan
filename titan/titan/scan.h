@@ -1365,7 +1365,7 @@ void changescantype(char* scantype, struct skin* scan, struct skin* listbox, str
 	b5->hidden = NO;
 	delmarkedscreennodes(scan, 1);
 
-	if(ostrcmp(scantype, "0") == 0 && ostrcmp(system->ret, "0") == 0)
+	if(flag == 0 && ostrcmp(scantype, "0") == 0 && ostrcmp(system->ret, "0") == 0)
 	{
 		modulation->hidden = YES;
 		rolloff->hidden = YES;
