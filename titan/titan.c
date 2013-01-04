@@ -861,9 +861,9 @@ firstwizzardstep1:
 	addtimer(&ckeckkillnetthread, START, 1000, 1, NULL, NULL, NULL);
 	//check old entrys and remove from mem
 	addtimer(&oldentrythreadfunc, START, 60000 * 60, -1, NULL, NULL, NULL);
-	//check newsletter
-	if(getconfigint("newsletter", NULL) == 1)
-		addtimer(&newsletterthreadfunc, START, 60000 * 60, -1, NULL, NULL, NULL);
+
+	//start newsletter
+	startnewsletter(1);
 
 	//thumb create thread
 	startthumb(1);

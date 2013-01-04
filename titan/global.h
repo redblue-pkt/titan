@@ -2448,6 +2448,20 @@ void closeonexec(int fd)
 		fcntl(fd, F_SETFD, fcntl(fd, F_GETFD) | FD_CLOEXEC);
 }
 
+void startnewsletter(flag)
+{
+	if(flag == 1)
+	{
+		if(getconfigint("newsletter", NULL) == 1 && status.newsletterthread == NULL)
+			status.newsletterthread = addtimer(&newsletterthreadfunc, START, 1000, 1, NULL, NULL, NULL);
+	}
+	else if(status.newsletterthread != NULL)
+	{
+		status.newsletterthread->aktion = STOP;
+		status.newsletterthread = NULL;
+	}
+}
+
 void startthumb(flag)
 {
 	if(flag == 1)

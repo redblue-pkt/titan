@@ -268,25 +268,38 @@ void newsletterthreadfunc(struct stimerthread* self)
 
 	debug(427, "start newsletter thread");
 
-	m_lock(&status.newslettermutex, 19);
-	long unsigned lastnewsletter = getconfiglu("lastnewsletter", NULL);
-	readnewsletter();
-	node = newsletter;
-
-	if(node != NULL && node->nr > lastnewsletter)
+	while(timernode->aktion != STOP)
 	{
-		tmpstr = ostrcat(node->title, NULL, 0, 0);
-		tmpstr = ostrcat(tmpstr, " - ", 1, 0);
-		tmpstr = ostrcat(tmpstr, node->date, 1, 0);
+		int count = 0;
 
-		textbox(tmpstr, node->text, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 2);
-		free(tmpstr); tmpstr = NULL;
+		m_lock(&status.newslettermutex, 19);
+		long unsigned lastnewsletter = getconfiglu("lastnewsletter", NULL);
+		readnewsletter();
+		node = newsletter;
 
-		addconfiglu("lastnewsletter", node->nr);
+		if(node != NULL && node->nr > lastnewsletter)
+		{
+			tmpstr = ostrcat(node->title, NULL, 0, 0);
+			tmpstr = ostrcat(tmpstr, " - ", 1, 0);
+			tmpstr = ostrcat(tmpstr, node->date, 1, 0);
+
+			textbox(tmpstr, node->text, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 2);
+			free(tmpstr); tmpstr = NULL;
+
+			addconfiglu("lastnewsletter", node->nr);
+		}
+
+		freenewsletter();
+		m_unlock(&status.newslettermutex, 19);
+
+		//wait 1h
+		while(count < 3600)
+		{
+			if(self->aktion == STOP) break;
+			sleep(1);
+			count++;
+		}
 	}
-
-	freenewsletter();
-	m_unlock(&status.newslettermutex, 19);
 
 	debug(427, "end newsletter thread");
 }
