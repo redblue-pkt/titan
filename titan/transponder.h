@@ -309,7 +309,7 @@ char* transpondergetfecstr(struct transponder* node, int fetype, int flag)
 {
 	char* text = NULL;
 	
-	if(flag == 0 && node != NULL)
+	if((flag == 0 || flag == 3) && node != NULL)
 	{
 		if(fetype == FE_QPSK || (fetype == -1 && node->fetype == FE_QPSK))
 		{
@@ -349,7 +349,10 @@ char* transpondergetfecstr(struct transponder* node, int fetype, int flag)
 		}
 		if(fetype == FE_OFDM || (fetype == -1 && node->fetype == FE_OFDM))
 		{
-			switch(node->fec)
+			int sw = node->fec;
+			if(flag == 3) sw = node->polarization;
+
+			switch(sw)
 			{	
 				case 0: text = ostrcat(text, "1/2", 1, 0); break;
 				case 1: text = ostrcat(text, "2/3", 1, 0); break;
