@@ -1216,6 +1216,8 @@ struct status
 	struct stimerthread* rguithread;
 	// mediadb thread pointer
 	struct stimerthread* mediadbthread;
+	// newsletter thread pointer
+	struct stimerthread* newsletterthread;
 	// thumb thread pointer
 	struct stimerthread* thumbthread;
 	// rectimer thread

@@ -288,7 +288,13 @@ void screenadjust()
 			status.caskipprivat = getconfigint("caskipprivat", NULL);
 			addconfigscreencheck("casendallcaids", casendallcaids, "0");
 			status.casendallcaids = getconfigint("casendallcaids", NULL);
+
 			addconfigscreen("newsletter", newsletter);
+			if(newsletter->ret != NULL && ostrcmp(newsletter->ret, "0") == 0)
+				startnewsletter(0);
+			else
+				startnewsletter(1);
+
 			addconfigscreen("showhiddenfiles", showhiddenfiles);
 			status.showhiddenfiles = getconfigint("showhiddenfiles", NULL);
 			addconfigscreencheck("expertmodus", expertmodus, "0");
