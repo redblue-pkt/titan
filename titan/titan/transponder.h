@@ -305,19 +305,13 @@ char* transpondergetrolloffstr(struct transponder* node, int flag)
 	return text;
 }
 
-char* transpondergetfecstr(struct transponder* node, int flag)
+char* transpondergetfecstr(struct transponder* node, int fetype, int flag)
 {
 	char* text = NULL;
 	
-	if(node == NULL)
+	if(flag == 0 && node != NULL)
 	{
-		debug(1000, "out -> NULL detect");
-		return NULL;
-	}
-
-	if(flag == 0)
-	{
-		if(node->fetype == FE_QPSK)
+		if(feytpe == FE_QPSK || (fetype == -1 && node->fetype == FE_QPSK))
 		{
 			switch(node->fec)
 			{	
@@ -335,7 +329,7 @@ char* transpondergetfecstr(struct transponder* node, int flag)
 				default: text = ostrcat(text, _("unknown"), 1, 0);
 			}
 		}
-		if(node->fetype == FE_QAM)
+		if(feytpe == FE_QAM || (fetype == -1 && node->fetype == FE_QAM))
 		{
 			switch(node->fec)
 			{	
@@ -353,7 +347,7 @@ char* transpondergetfecstr(struct transponder* node, int flag)
 				default: text = ostrcat(text, _("unknown"), 1, 0);
 			}
 		}
-		if(node->fetype == FE_OFDM)
+		if(feytpe == FE_OFDM || (fetype == -1 && node->fetype == FE_OFDM))
 		{
 			switch(node->fec)
 			{	
@@ -369,19 +363,19 @@ char* transpondergetfecstr(struct transponder* node, int flag)
 	}
 	else if(flag == 1)
 	{
-		if(node->fetype == FE_QPSK)
+		if(feytpe == FE_QPSK || (fetype == -1 && node != NULL && node->fetype == FE_QPSK))
 		{
 			text = ostrcat(text, _("auto"), 1, 0);
 			text = ostrcat(text, "\n1/2\n2/3\n3/4\n5/6\n7/8\n8/9\n3/5\n4/5\n9/10\n", 1, 0);
 			text = ostrcat(text, _("none"), 1, 0);
 		}
-		else if(node->fetype == FE_QAM)
+		else if(feytpe == FE_QAM || (fetype == -1 && node != NULL && node->fetype == FE_QAM))
 		{
 			text = ostrcat(text, _("auto"), 1, 0);
 			text = ostrcat(text, "\n1/2\n2/3\n3/4\n5/6\n7/8\n8/9\n3/5\n4/5\n9/10\n", 1, 0);
 			text = ostrcat(text, _("none"), 1, 0);
 		}
-		else if(node->fetype == FE_OFDM)
+		else if(feytpe == FE_OFDM || (fetype == -1 && node != NULL && node->fetype == FE_OFDM))
 		{
 			text = ostrcat(text, "1/2\n2/3\n3/4\n5/6\n7/8\n", 1, 0);
 			text = ostrcat(text, _("auto"), 1, 0);
@@ -389,11 +383,11 @@ char* transpondergetfecstr(struct transponder* node, int flag)
 	}
 	else if(flag == 2)
 	{
-		if(node->fetype == FE_QPSK)
+		if(feytpe == FE_QPSK || (fetype == -1 && node != NULL && node->fetype == FE_QPSK))
 			text = ostrcat(text, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10", 1, 0);
-		else if(node->fetype == FE_QAM)
+		else if(feytpe == FE_QAM || (fetype == -1 && node != NULL && node->fetype == FE_QAM))
 			text = ostrcat(text, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10", 1, 0);
-		else if(node->fetype == FE_OFDM)
+		else if(feytpe == FE_OFDM || (fetype == -1 && node != NULL && node->fetype == FE_OFDM))
 			text = ostrcat(text, "0\n1\n2\n3\n4\n5", 1, 0);
 	}
 
@@ -469,15 +463,9 @@ char* transpondergetmodulationstr(struct transponder* node, int flag)
 {
 	char* text = NULL;
 	
-	if(node == NULL)
+	if(flag == 0 && node != NULL)
 	{
-		debug(1000, "out -> NULL detect");
-		return NULL;
-	}
-
-	if(flag == 0)
-	{
-		if(node->fetype == FE_QPSK)
+		if(feytpe == FE_QPSK || (fetype == -1 && node->fetype == FE_QPSK))
 		{
 			switch(node->modulation)
 			{
@@ -488,7 +476,7 @@ char* transpondergetmodulationstr(struct transponder* node, int flag)
 				default: text = ostrcat(text, _("unknown"), 1, 0);
 			}
 		}
-		if(node->fetype == FE_QAM)
+		if(feytpe == FE_QAM || (fetype == -1 && node->fetype == FE_QAM))
 		{
 			switch(node->modulation)
 			{
@@ -501,7 +489,7 @@ char* transpondergetmodulationstr(struct transponder* node, int flag)
 				default: text = ostrcat(text, _("unknown"), 1, 0);
 			}
 		}
-		if(node->fetype == FE_OFDM)
+		if(feytpe == FE_OFDM || (fetype == -1 && node->fetype == FE_OFDM))
 		{
 			switch(node->modulation)
 			{
@@ -515,7 +503,7 @@ char* transpondergetmodulationstr(struct transponder* node, int flag)
 	}
 	else if(flag == 1)
 	{
-		if(node->fetype == FE_QPSK)
+		if(feytpe == FE_QPSK || (fetype == -1 && node != NULL && node->fetype == FE_QPSK))
 		{
 			text = ostrcat(text, _("auto"), 1, 0);
 			text = ostrcat(text, "\n", 1, 0);
@@ -525,7 +513,7 @@ char* transpondergetmodulationstr(struct transponder* node, int flag)
 			text = ostrcat(text, "\n", 1, 0);
 			text = ostrcat(text, _("QAM 16"), 1, 0);
 		}
-		else if(node->fetype == FE_QAM)
+		else if(feytpe == FE_QAM || (fetype == -1 && node != NULL && node->fetype == FE_QAM))
 		{
 			text = ostrcat(text, _("QAM auto"), 1, 0);
 			text = ostrcat(text, "\n", 1, 0);
@@ -539,7 +527,7 @@ char* transpondergetmodulationstr(struct transponder* node, int flag)
 			text = ostrcat(text, "\n", 1, 0);
 			text = ostrcat(text, _("QAM 256"), 1, 0);
 		}
-		else if(node->fetype == FE_OFDM)
+		else if(feytpe == FE_OFDM || (fetype == -1 && node != NULL && node->fetype == FE_OFDM))
 		{
 			text = ostrcat(text, _("QPSK"), 1, 0);
 			text = ostrcat(text, "\n", 1, 0);
@@ -552,11 +540,11 @@ char* transpondergetmodulationstr(struct transponder* node, int flag)
 	}
 	else if(flag == 2)
 	{
-		if(node->fetype == FE_QPSK)
+		if(feytpe == FE_QPSK || (fetype == -1 && node != NULL && node->fetype == FE_QPSK))
 			text = ostrcat(text, "0\n1\n2\n3", 1, 0);
-		if(node->fetype == FE_QAM)
+		if(feytpe == FE_QAM || (fetype == -1 && node != NULL && node->fetype == FE_QAM))
 			text = ostrcat(text, "0\n1\n2\n3\n4\n5", 1, 0);
-		if(node->fetype == FE_OFDM)
+		if(feytpe == FE_OFDM || (fetype == -1 && node != NULL && node->fetype == FE_OFDM))
 			text = ostrcat(text, "0\n1\n2\n3", 1, 0);
 	}
 

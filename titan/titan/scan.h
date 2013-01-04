@@ -1625,7 +1625,7 @@ void screenscanconfig(int flag)
 	}
 
 	rcret = servicestop(status.aktservice, 1, 1);
-        if(rcret == 1) return;
+	if(rcret == 1) return;
 
 	if(status.aktservice->channel != NULL)
 		tpnode = status.aktservice->channel->transponder;
@@ -1721,10 +1721,10 @@ start:
 	}
 
 	//fec
-	tmpstr = transpondergetfecstr(tpnode, 1);
+	tmpstr = transpondergetfecstr(tpnode, fetype, 1);
 	changeinput(fec, tmpstr);
 	free(tmpstr); tmpstr = NULL;
-	tmpstr = transpondergetfecstr(tpnode, 2);
+	tmpstr = transpondergetfecstr(tpnode, fetype, 2);
 	changechoiceboxvalue(fec, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	if(tpnode != NULL)
@@ -1735,10 +1735,10 @@ start:
 	}
 
 	//modulation
-	tmpstr = transpondergetmodulationstr(tpnode, 1);
+	tmpstr = transpondergetmodulationstr(tpnode, fetype, 1);
 	changeinput(modulation, tmpstr);
 	free(tmpstr); tmpstr = NULL;
-	tmpstr = transpondergetmodulationstr(tpnode, 2);
+	tmpstr = transpondergetmodulationstr(tpnode, fetype, 2);
 	changechoiceboxvalue(modulation, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	if(tpnode != NULL)
@@ -1777,10 +1777,10 @@ start:
 	}
 
 	//hp
-	tmpstr = transpondergetfecstr(tpnode, 1);
+	tmpstr = transpondergetfecstr(tpnode, fetype, 1);
 	changeinput(hp, tmpstr);
 	free(tmpstr); tmpstr = NULL;
-	tmpstr = transpondergetfecstr(tpnode, 2);
+	tmpstr = transpondergetfecstr(tpnode, fetype, 2);
 	changechoiceboxvalue(hp, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	if(tpnode != NULL)
@@ -1791,10 +1791,10 @@ start:
 	}
 
 	//lp
-	tmpstr = transpondergetfecstr(tpnode, 1);
+	tmpstr = transpondergetfecstr(tpnode, fetype, 1);
 	changeinput(lp, tmpstr);
 	free(tmpstr); tmpstr = NULL;
-	tmpstr = transpondergetfecstr(tpnode, 2);
+	tmpstr = transpondergetfecstr(tpnode, fetype, 2);
 	changechoiceboxvalue(lp, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	if(tpnode != NULL)
