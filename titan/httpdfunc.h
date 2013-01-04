@@ -2557,7 +2557,7 @@ char* webeditrectimer(char* param, int fmt)
 	free(buf1); buf1 = NULL;
 	free(buf2); buf2 = NULL;
 	
-	ostrcatbig(&buf, "<td><font class=after event>Type:&nbsp;</font></td>", &maxlen, &pos);
+	ostrcatbig(&buf, "<td><font class=label>after event:&nbsp;</font></td>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><select name=\"afterevent\" border=0><option selected>", &maxlen, &pos);
 	if( node->afterevent == 0 )
 		ostrcatbig(&buf, "auto", &maxlen, &pos);
