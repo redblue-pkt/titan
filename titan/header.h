@@ -25,8 +25,9 @@ void screenshortepg(struct channel* chnode, struct epg* epgnode, int flag);
 //dirsort.h
 int screendirsort();
 
-// newslater.h
+// newsletter.h
 void screennewsletter();
+void newsletterthreadfunc(struct stimerthread* self);
 
 //oldentry.h
 void deloldentry(struct oldentry *entry, int flag);
