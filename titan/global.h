@@ -4665,7 +4665,7 @@ int getvol()
 	if(status.volmute == 0)
 		value = readsys(voldev, 1);
 	else
-		tmpvol = status.volmute
+		tmpvol = status.volmute;
 	if(value == NULL && tmpvol == 0)
 	{
 		debug(1000, "out -> NULL detect");
