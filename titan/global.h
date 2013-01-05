@@ -558,7 +558,7 @@ int checkreseller()
 	if(checkbox("ATEMIO510") == 0 && checkbox("ATEMIO7600") == 0 && checkbox("ATEVIO7000") == 0 && checkbox("ATEVIO700") == 0)
 	{
 		debug(10, "ResellerId: skipped");
-		debug(10, "boxtype: %s", status.boxtype);
+		debug(10, "boxtype: %s", getboxtype();
 		return 0;
 	}
 			
@@ -594,7 +594,7 @@ int checkreseller()
 	{
 		if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x29 && (buf[1074] & 0xff) == 0x02 && (buf[1075] & 0xff) == 0xA0)
 		{
-			debug(10, "ResellerId: found (%s) reseller !", status.boxtype);
+			debug(10, "ResellerId: found (%s) reseller !", getboxtype());
 			free(buf);
 			fclose(fd);
 			return 0;
@@ -604,7 +604,7 @@ int checkreseller()
 	{
 		if((buf[1072] & 0xff) == 0x23 && (buf[1073] & 0xff) == 0x03 && (buf[1074] & 0xff) == 0x00 && (buf[1075] & 0xff) == 0xA0)
 		{
-			debug(10, "ResellerId: found (%s) reseller !", status.boxtype);
+			debug(10, "ResellerId: found (%s) reseller !", getboxtype());
 			free(buf);
 			fclose(fd);
 			return 0;
@@ -614,7 +614,7 @@ int checkreseller()
 	{
 		if((buf[1072] & 0xff) == 0x03 && (buf[1073] & 0xff) == 0x00 && (buf[1074] & 0xff) == 0x00 && (buf[1075] & 0xff) == 0x00)
 		{
-			debug(10, "ResellerId: found (%s) reseller !", status.boxtype);
+			debug(10, "ResellerId: found (%s) reseller !", getboxtype());
 			free(buf);
 			fclose(fd);
 			return 0;
@@ -624,7 +624,7 @@ int checkreseller()
 	{
 		if((buf[1072] & 0xff) == 0x2d && (buf[1073] & 0xff) == 0x41 && (buf[1074] & 0xff) == 0x04 && (buf[1075] & 0xff) == 0xd2)
 		{
-			debug(10, "ResellerId: found (%s) reseller !", status.boxtype);
+			debug(10, "ResellerId: found (%s) reseller !", getboxtype());
 			free(buf);
 			fclose(fd);
 			return 0;
@@ -634,7 +634,7 @@ int checkreseller()
 	{
 		if((buf[1072] & 0xff) == 0x02 && (buf[1073] & 0xff) == 0x27 && (buf[1074] & 0xff) == 0x12 && (buf[1075] & 0xff) == 0x22)
 		{
-			debug(10, "ResellerId: found (%s) reseller !", status.boxtype);
+			debug(10, "ResellerId: found (%s) reseller !", getboxtype());
 			free(buf);
 			fclose(fd);
 			return 0;
@@ -644,7 +644,7 @@ int checkreseller()
 	{
 		if((buf[1072] & 0xff) == 0x09 && (buf[1073] & 0xff) == 0x00 && (buf[1074] & 0xff) == 0x09 && (buf[1075] & 0xff) == 0x00)
 		{
-			debug(10, "ResellerId: found (%s) reseller !", status.boxtype);
+			debug(10, "ResellerId: found (%s) reseller !", getboxtype());
 			free(buf);
 			fclose(fd);
 			return 0;
@@ -654,7 +654,7 @@ int checkreseller()
 	{
 		if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x22 && (buf[1074] & 0xff) == 0x00 && (buf[1075] & 0xff) == 0xa0)
 		{
-			debug(10, "ResellerId: found (%s) reseller !", status.boxtype);
+			debug(10, "ResellerId: found (%s) reseller !", getboxtype());
 			free(buf);
 			fclose(fd);
 			return 0;
@@ -664,7 +664,7 @@ int checkreseller()
 	{
 		if((buf[240] & 0xff) == 0x20 && (buf[241] & 0xff) == 0x9 && (buf[242] & 0xff) == 0x00 && (buf[243] & 0xff) == 0x00)
 		{
-			debug(10, "ResellerId: found (%s) reseller !", status.boxtype);
+			debug(10, "ResellerId: found (%s) reseller !", getboxtype());
 			free(buf);
 			fclose(fd);
 			return 0;
@@ -674,7 +674,7 @@ int checkreseller()
 	{
 		if((buf[240] & 0xff) == 0x20 && (buf[241] & 0xff) == 0x9 && (buf[242] & 0xff) == 0x03 && (buf[243] & 0xff) == 0x00)
 		{
-			debug(10, "ResellerId: found (%s) reseller !", status.boxtype);
+			debug(10, "ResellerId: found (%s) reseller !", getboxtype());
 			free(buf);
 			fclose(fd);
 			return 0;
@@ -684,7 +684,7 @@ int checkreseller()
 	{
 		// dummy for other boxes
 		debug(10, "ResellerId: not supported");
-		debug(10, "boxtype: %s", status.boxtype);
+		debug(10, "boxtype: %s", getboxtype());
 		return 1;
 	}
 
@@ -2060,10 +2060,7 @@ void debugstack(void* address, void* address1)
 	char* imgversion = NULL;
 	struct stimerthread* tnode = NULL;
 
-	if(isfile("/etc/model")	!= 0)
-		boxversion = readsys("/etc/model", 1);
-	else
-		boxversion = ostrcat("unknown", NULL, 0, 0);
+	boxversion = getboxtype();
 
 	if(isfile(getconfig("imagenamefile", NULL))	!= 0)
 		imgversion = readsys(getconfig("imagenamefile", NULL), 1);
@@ -2508,6 +2505,17 @@ void startrguid(flag)
 		status.rguithread->aktion = STOP;
 		status.rguithread = NULL;
 	}
+}
+
+char* getboxtype()
+{
+	if(status.boxtype == NULL)
+	{
+		if(isfile("/etc/model")	== 0) return NULL;
+		status.boxtype = string_toupper(readsys("/etc/model", 1));
+	}
+
+	return status.boxtype;
 }
 
 int checkbox(char* box)
