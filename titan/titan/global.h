@@ -4602,7 +4602,7 @@ int setmute(int value)
 		if(mutedev != NULL)
 		{
 			debug(100, "set %s to %d", mutedev, value);
-			if(status.volautochangevalue != 0 && value == 0) setvol(status.volautochange);
+			if(status.volautochangevalue != 0 && value == 0) setvol(getvol());
 			ret = writesysint(mutedev, value, 0);
 			if(ret == 0) status.mute = value;
 			return ret;
@@ -4619,22 +4619,26 @@ int setvol(int value)
 	int ret = 0, tmpvol = value;
 
 	voldev = getconfig("voldev", NULL);
-
+	
 	if(voldev != NULL)
 	{
 		if(value > 100) value = 100;
 		if(value < 0) value = 0;
 		if(status.volautochangevalue != 0 && value != 0)
 		{
-			if(status.volautochange == 3 || status.volautochange == 4)
-			{
+			if(status.volautochange == 0)
 				value = value - (status.volautochangevalue * value / 100);
-				if(status.volautochange == 3) status.volautochange = 4;
-			}
 		}
 		value = 63 - value * 63 / 100;
 		debug(100, "set %s to %d", voldev, value);
-		ret = writesysint(voldev, value, 0);
+		ret = 0;
+		if(status.mute == 1)
+			status.volmute = value;
+		else
+		{
+			status.volmute = 0;
+			ret = writesysint(voldev, value, 0);
+		}
 		if(ret == 0 && status.mute != 2) addconfigint("vol", tmpvol);
 		return ret;
 	}
@@ -4657,25 +4661,23 @@ int getvol()
 		debug(1000, "out -> NULL detect");
 		return 0;
 	}
-
-	value = readsys(voldev, 1);
-	if(value == NULL)
+	if(status.volmute == 0)
+		value = readsys(voldev, 1);
+	else
+		tmpvol = status.volmute
+	if(value == NULL && tmpvol == 0)
 	{
 		debug(1000, "out -> NULL detect");
 		return 0;
 	}
-
-	tmpvol = atoi(value);
+	if(status.volmute == 0)
+		tmpvol = atoi(value);
 	free(value);
 	tmpvol = 100 - tmpvol * 100 / 63;
 	if(status.volautochangevalue != 0)
 	{
-		if((status.volautochange == 1 || status.volautochange == 4) && status.volautochangevalue < 100)
-		{
+		if(status.volautochange == 0 && status.volautochangevalue < 100)
 			tmpvol = tmpvol + ((tmpvol * status.volautochangevalue) / (100 - status.volautochangevalue));
-			//tmpvol = tmpvol * 100 / (100 - status.volautochangevalue);
-			if(status.volautochange == 1) status.volautochange = 2;
-		}
 	}
 	debug(1000, "out");
 	return tmpvol;
