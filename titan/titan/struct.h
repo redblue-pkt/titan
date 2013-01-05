@@ -1320,6 +1320,8 @@ struct status
 	int mediadbfiles;
 	//show infobar on program change
 	int infobarprogram;
+	//for auto increase audio vol (mute)
+	int volmute;
 } status;
 
 struct fb
