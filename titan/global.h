@@ -3325,7 +3325,7 @@ char* oitoa64(off64_t value)
 	}
 
 	sprintf(buf, "%lld", value);
-	buf = ostrcat(buf);
+	buf = ostrshrink(buf);
 
 	debug(1000, "out");
 	return buf;
@@ -3348,7 +3348,7 @@ char* oftoa64(double value, char* count)
 	tmpstr = ostrcat(tmpstr, "f", 1, 0);
 
 	sprintf(buf, tmpstr, value);
-	buf = ostrcat(buf);
+	buf = ostrshrink(buf);
 
 	free(tmpstr);
 	debug(1000, "out");
