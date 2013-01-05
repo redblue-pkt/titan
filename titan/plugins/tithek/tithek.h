@@ -43,6 +43,170 @@ struct tithek
 };
 struct tithek *tithek = NULL;
 
+/*
+void freetithekcontent(struct tithek* node)
+{
+	if(node == NULL) return;
+
+	free(node->title); node->title = NULL;
+	node->link = NULL;
+	node->pic = NULL;
+	node->localname = NULL;
+	node->menutitle = NULL;
+	node->flag = 0;
+}
+
+int addtithekcontent(struct tithek* node, char *line, int len, int count, int pay)
+{
+	int ret = 0, i = 0, skip = 0;
+	char* tmpstr = NULL, *flag = NULL, *cmd = NULL;
+
+	if(node == NULL) return 1;
+
+	if(len > 0) tmpstr = malloc(len + 1);
+	if(tmpstr != NULL)
+	{
+		memcpy(tmpstr, line, len);
+		tmpstr[len] = '\0';
+
+		node->title = tmpstr;
+
+		while(tmpstr[0] != '\0')
+		{
+			if(tmpstr[0] == '#')
+			{
+				tmpstr[0] = '\0';
+				tmpstr++;
+				switch(ret)
+				{
+					case 0: node->link = tmpstr; break;
+					case 1: node->pic = tmpstr; break;
+					case 2: node->localname = tmpstr; break;
+					case 3: node->menutitle = tmpstr; break;
+					case 4: flag = tmpstr; break;
+				}
+
+				ret++;
+			}
+			else
+				tmpstr++;
+		}
+	}
+
+	if(ret != 5)
+	{
+		if(count > 0)
+		{
+			err("tithek line %d not ok (ret=%d)", count, ret);
+		}
+		else
+		{
+			err("add tithek (ret=%d)", ret);
+		}
+		freetithekcontent(node);
+		return 1;
+	}
+
+	if(flag != NULL) node->flag = atoi(flag);
+
+	if(node->flag == 9999 && !file_exist("/var/swap/etc/.codecpack"))
+		skip = 1;
+	else if(node->flag == 16 && pay == 0)
+		skip = 1;
+	else if(node->flag == 17 && pay == 0)
+		skip = 1;
+	else if(node->flag == 18 && pay == 0)
+		skip = 1;
+	else if(node->flag == 19 && pay == 0)
+		skip = 1;
+	else if(node->flag == 1 && pay == 0)
+		skip = 1;
+	else if(node->flag == 9999)
+	{
+		char* tmp = NULL;
+
+		//cmd = ostrcat(cmd, "wget -s http://", 1, 0);
+		cmd = ostrcat(cmd, "kin", 1, 0);
+		cmd = ostrcat(cmd, "ox", 1, 0);
+		cmd = ostrcat(cmd, ".", 1, 0);
+		cmd = ostrcat(cmd, "to", 1, 0);
+
+		//if(system(cmd) != 0)
+		for(i = 0; i < 3; i++)
+		{
+			free(tmp); tmp = NULL;
+			tmp = gethttp(cmd, "/", 80, NULL, NULL, NULL, 0);
+			if(tmp != NULL) break;
+		}
+		if(tmp == NULL)
+			skip = 1;
+
+		free(tmp); tmp = NULL;
+		free(cmd), cmd = NULL;
+	}
+
+	if(skip == 1)
+	{
+		freetithekcontent(node);
+		return 1;
+	}
+
+	return 0;
+}
+
+struct tithek* addtithek(char *line, int len, int count, struct tithek* last, int pay)
+{
+	//debug(1000, "in");
+	struct tithek *newnode = NULL, *prev = NULL, *node = NULL;
+	int ret = 0;
+
+	if(line == NULL) return NULL;
+
+	newnode = (struct tithek*)calloc(1, sizeof(struct tithek));
+	if(newnode == NULL)
+	{
+		err("no memory");
+		return NULL;
+	}
+
+	ret = addtithekcontent(newnode, line, len, count, pay);
+	if(ret == 1)
+	{
+		free(newnode);
+		return NULL;
+	}
+
+	node = tithek;
+
+	if(last == NULL)
+	{
+		while(node != NULL)
+		{
+			prev = node;
+			node = node->next;
+		}
+	}
+	else
+	{
+		prev = last;
+		node = last->next;
+	}
+
+	if(prev == NULL)
+		tithek = newnode;
+	else
+	{
+		prev->next = newnode;
+		newnode->prev = prev;
+	}
+	newnode->next = node;
+	if(node != NULL) node->prev = newnode;
+
+	//debug(1000, "out");
+	return newnode;
+}
+*/
+
 struct tithek* addtithek(char *line, int count, struct tithek* last)
 {
 	//debug(1000, "in");
@@ -213,6 +377,55 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 	return newnode;
 }
 
+/*
+int readtithek(const char* filename)
+{
+	debug(1000, "in");
+	FILE *fd = NULL;
+	char *fileline = NULL;
+	int linecount = 0, len = 0, pay = 0;
+	struct tithek* last = NULL, *tmplast = NULL;
+
+	fileline = malloc(MINMALLOC);
+	if(fileline == NULL)
+	{
+		err("no memory");
+		return 1;
+	}
+
+	fd = fopen(filename, "r");
+	if(fd == NULL)
+	{
+		perr("can't open %s", filename);
+		free(fileline);
+		return 1;
+	}
+
+	pay = getconfigint("tithek_pay", NULL);
+
+	while(fgets(fileline, MINMALLOC, fd) != NULL)
+	{
+		if(fileline[0] == '\n')
+			continue;
+		len = strlen(fileline) - 1;
+		if(fileline[len] == '\n')
+			fileline[len] = '\0';
+		if(fileline[len - 1] == '\r')
+			fileline[len - 1] = '\0';
+
+		linecount++;
+
+		if(last == NULL) last = tmplast;
+		last = addtithek(fileline, len + 2, linecount, last, pay);
+		if(last != NULL) tmplast = last;
+	}
+
+	free(fileline);
+	fclose(fd);
+	return linecount;
+}
+*/
+
 int readtithek(const char* filename)
 {
 	debug(1000, "in");
@@ -256,6 +469,65 @@ int readtithek(const char* filename)
 	fclose(fd);
 	return linecount;
 }
+
+/*
+int deltithek(char* link)
+{
+	debug(1000, "in");
+	int ret = 1;
+
+	struct tithek *node = tithek, *prev = tithek;
+
+	while(node != NULL)
+	{
+		if(ostrcmp(link, node->link) == 0)
+		{
+			ret = 0;
+			if(node == tithek)
+			{
+				tithek = node->next;
+				if(tithek != NULL)
+					tithek->prev = NULL;
+			}
+			else
+			{
+				prev->next = node->next;
+				if(node->next != NULL)
+					node->next->prev = prev;
+			}
+
+			freetithekcontent(node);
+
+			free(node);
+			node = NULL;
+
+			break;
+		}
+
+		prev = node;
+		node = node->next;
+	}
+
+	debug(1000, "out");
+	return ret;
+}
+
+void freetithek()
+{
+	debug(1000, "in");
+	struct tithek *node = tithek, *prev = tithek;
+
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+		if(prev != NULL)
+			deltithek(prev->link);
+	}
+
+	debug(1000, "out");
+}
+*/
 
 int deltithek(char* link)
 {
