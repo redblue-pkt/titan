@@ -4602,7 +4602,7 @@ int setmute(int value)
 		if(mutedev != NULL)
 		{
 			debug(100, "set %s to %d", mutedev, value);
-			if(status.volautochangevalue != 0 && value == 0) setvol(getvol());
+			if(status.volautochangevalue != 0 && value == 0) setvol(status.volautochange);
 			ret = writesysint(mutedev, value, 0);
 			if(ret == 0) status.mute = value;
 			return ret;
@@ -4626,8 +4626,11 @@ int setvol(int value)
 		if(value < 0) value = 0;
 		if(status.volautochangevalue != 0 && value != 0)
 		{
-			if(status.volautochange == 0)
+			if(status.volautochange == 3 || status.volautochange == 4)
+			{
 				value = value - (status.volautochangevalue * value / 100);
+				if(status.volautochange == 3) status.volautochange == 4;
+			}
 		}
 		value = 63 - value * 63 / 100;
 		debug(100, "set %s to %d", voldev, value);
@@ -4667,8 +4670,12 @@ int getvol()
 	tmpvol = 100 - tmpvol * 100 / 63;
 	if(status.volautochangevalue != 0)
 	{
-		if(status.volautochange == 0 && status.volautochangevalue < 100)
+		if((status.volautochange == 1 || status.volautochange == 4) && status.volautochangevalue < 100)
+		{
 			tmpvol = tmpvol + ((tmpvol * status.volautochangevalue) / (100 - status.volautochangevalue));
+			//tmpvol = tmpvol * 100 / (100 - status.volautochangevalue);
+			if(status.volautochange == 1) status.volautochange == 2;
+		}
 	}
 	debug(1000, "out");
 	return tmpvol;
