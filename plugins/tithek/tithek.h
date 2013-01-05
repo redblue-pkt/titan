@@ -179,11 +179,11 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 		return NULL;
 	}
 
-	newnode->link = ostrcat(link, NULL, 1, 0);
-	newnode->pic = ostrcat(pic, NULL, 1, 0);
-	newnode->title = ostrcat(title, NULL, 1, 0);
-	newnode->localname = ostrcat(localname, NULL, 1, 0);
-	newnode->menutitle = ostrcat(menutitle, NULL, 1, 0);
+	newnode->link = ostrshrink(link);
+	newnode->pic = ostrshrink(pic);
+	newnode->title = ostrshrink(title);
+	newnode->localname = ostrshrink(localname);
+	newnode->menutitle = ostrshrink(menutitle);
 
 	if(last == NULL)
 	{
