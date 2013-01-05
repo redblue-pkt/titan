@@ -68,7 +68,10 @@ char* readstock(const char* filename, struct skin* stock, struct skin* listbox)
 			changetext(tmp, fileline);
 			changename(tmp, fileline);
 			if(name == NULL)
+			{
 				name = ostrcat(name, fileline, 1, 0);
+				name = ostrshrink(name);
+			}
 		}
 
 	}

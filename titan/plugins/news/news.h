@@ -75,14 +75,12 @@ struct news* addnews(char *line, int count, struct news* last)
 
 	if(line == NULL) return NULL;
 
-	newnode = (struct news*)malloc(sizeof(struct news));	
+	newnode = (struct news*)calloc(1, sizeof(struct news));
 	if(newnode == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
-
-	memset(newnode, 0, sizeof(struct news));
 
 	newnode->title = getxmlentry(line, "title data=");
 	newnode->url = getxmlentry(line, "url data=");

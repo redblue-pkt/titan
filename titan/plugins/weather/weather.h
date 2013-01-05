@@ -75,7 +75,10 @@ char* readweather(const char* filename, struct skin* weather, struct skin* listb
 			changetext(tmp, fileline);
 			changename(tmp, fileline);
 			if(location == NULL)
+			{
 				location = ostrcat(location, fileline, 1, 0);
+				location = ostrshrink(location);
+			}
 		}
 
 	}

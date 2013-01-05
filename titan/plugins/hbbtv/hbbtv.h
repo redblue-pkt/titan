@@ -37,14 +37,12 @@ struct hbbtvfav* addhbbtvfav(char *line, int count, struct hbbtvfav* last)
 	struct hbbtvfav *newnode = NULL, *prev = NULL, *node = hbbtvfav;
 	int ret = 0;
 
-	newnode = (struct hbbtvfav*)malloc(sizeof(struct hbbtvfav));
+	newnode = (struct hbbtvfav*)calloc(1, sizeof(struct hbbtvfav));
 	if(newnode == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
-
-	memset(newnode, 0, sizeof(struct hbbtvfav));
 
 	newnode->name = malloc(1024);
 	if(newnode->name == NULL)
@@ -80,8 +78,8 @@ struct hbbtvfav* addhbbtvfav(char *line, int count, struct hbbtvfav* last)
 		return NULL;
 	}
 
-	newnode->name = ostrcat(newnode->name, NULL, 1, 0);
-	newnode->addr = ostrcat(newnode->addr, NULL, 1, 0);
+	newnode->name = ostrshrink(newnode->name);
+	newnode->addr = ostrshrink(newnode->addr);
 
 	if(last == NULL)
 	{

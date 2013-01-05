@@ -17,14 +17,12 @@ struct browserfav* addbrowserfav(char *line, int count, struct browserfav* last)
 	struct browserfav *newnode = NULL, *prev = NULL, *node = browserfav;
 	int ret = 0;
 
-	newnode = (struct browserfav*)malloc(sizeof(struct browserfav));	
+	newnode = (struct browserfav*)calloc(1, sizeof(struct browserfav));
 	if(newnode == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
-
-	memset(newnode, 0, sizeof(struct browserfav));
 
 	newnode->name = malloc(1024);
 	if(newnode->name == NULL)
@@ -60,8 +58,8 @@ struct browserfav* addbrowserfav(char *line, int count, struct browserfav* last)
 		return NULL;
 	}
 
-	newnode->name = ostrcat(newnode->name, NULL, 1, 0);
-	newnode->addr = ostrcat(newnode->addr, NULL, 1, 0);
+	newnode->name = ostrshrink(newnode->name);
+	newnode->addr = ostrshrink(newnode->addr);
 
 	if(last == NULL)
 	{
