@@ -52,7 +52,7 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 
 	if(line == NULL) return NULL;
 
-	newnode = (struct tithek*)malloc(sizeof(struct tithek));	
+	newnode = (struct tithek*)calloc(1, sizeof(struct tithek));
 	if(newnode == NULL)
 	{
 		err("no memory");
@@ -111,8 +111,6 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 
 	int pay = getconfigint("tithek_pay", NULL);
 
-	memset(newnode, 0, sizeof(struct tithek));
-			
 	ret = sscanf(line, "%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%d", title, link, pic, localname, menutitle, &newnode->flag);
 				
 	if(newnode->flag == 9999 && !file_exist("/var/swap/etc/.codecpack"))
