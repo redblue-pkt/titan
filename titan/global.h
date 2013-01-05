@@ -4629,7 +4629,7 @@ int setvol(int value)
 			if(status.volautochange == 3 || status.volautochange == 4)
 			{
 				value = value - (status.volautochangevalue * value / 100);
-				if(status.volautochange == 3) status.volautochange == 4;
+				if(status.volautochange == 3) status.volautochange = 4;
 			}
 		}
 		value = 63 - value * 63 / 100;
@@ -4674,7 +4674,7 @@ int getvol()
 		{
 			tmpvol = tmpvol + ((tmpvol * status.volautochangevalue) / (100 - status.volautochangevalue));
 			//tmpvol = tmpvol * 100 / (100 - status.volautochangevalue);
-			if(status.volautochange == 1) status.volautochange == 2;
+			if(status.volautochange == 1) status.volautochange = 2;
 		}
 	}
 	debug(1000, "out");
