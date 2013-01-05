@@ -113,10 +113,10 @@ char* youtube(char* link, char* url, char* name, int flag)
 		    
 					}
 				}
-			}else {
-					// TODO handle error while parsing
 			}
-		}else	{	
+		}
+		else
+		{	
 			tmpstr = string_resub("&reason=", "&errordetail", tmpstr, 1);
 			tmpstr = string_replace_all("+", " ", tmpstr, 1);
 			tmpstr = string_replace_all(", ", "\n", tmpstr, 1);
@@ -130,6 +130,8 @@ char* youtube(char* link, char* url, char* name, int flag)
 
 	free(tmpstr); tmpstr = NULL;
 	free(title); title = NULL;
+	free(ip), ip = NULL;
+
 // segfault munmap_chunk(): invalid pointer
 //	free(pos), pos = NULL;
 //	free(path), path = NULL;
