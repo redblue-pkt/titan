@@ -204,7 +204,7 @@ void sendSPDU(struct dvbdev* dvbnode, unsigned char tag, void *data, int len, in
 	unsigned char* buf = NULL;
 	unsigned char *tmpbuf = NULL;
 
-	buf = malloc(MINMALLOC);
+	buf = calloc(1, MINMALLOC);
 	if(buf == NULL)
 	{
 		err("no mem");
@@ -213,7 +213,6 @@ void sendSPDU(struct dvbdev* dvbnode, unsigned char tag, void *data, int len, in
 
 	debug(620, "send SPDU, nr %d", sessionnr);
 
-	memset(buf, 0, MINMALLOC);
 	tmpbuf = buf;
 
 	*tmpbuf++ = tag;
@@ -1498,13 +1497,12 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 	if(dvbnode == NULL) return;
 	canode = dvbnode->caslot;
 
-	buf = malloc(MINMALLOC);
+	buf = calloc(1, MINMALLOC);
 	if(buf == NULL)
 	{
 		err("no mem");
 		return;
 	}
-	memset(buf, 0, MINMALLOC);
 
 	switch(canode->status)
 	{
@@ -1513,7 +1511,7 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 			cawait(self, dvbnode, -1);
 			debug(620, "status: no, slot %d", dvbnode->devnr);
 
-		        //reset the module an wait max 10 sek
+			//reset the module an wait max 10 sek
 			careseting(self, dvbnode, 0);
 
 			info.num = dvbnode->devnr;

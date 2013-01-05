@@ -169,8 +169,8 @@ struct mainplaylist* addmainplaylist(char *line, int count, struct mainplaylist*
 		return NULL;
 	}
 
-	newnode->name = ostrcat(name, NULL, 1, 0);
-	newnode->filename = ostrcat(filename, NULL, 1, 0);
+	newnode->name = ostrshrink(name);
+	newnode->filename = ostrshrink(filename);
 
 	if(last == NULL)
 	{

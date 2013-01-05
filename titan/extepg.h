@@ -681,7 +681,7 @@ struct extepgconfig* addextepgconfig(char *line, int count, struct extepgconfig*
 		return NULL;
 	}
 
-	newnode->file = ostrcat(file, NULL, 1, 0);
+	newnode->file = ostrshrink(file);
 
 	if(last == NULL)
 	{

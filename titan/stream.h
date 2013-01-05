@@ -88,14 +88,13 @@ void streamthreadfunc(struct stimerthread* timernode)
 			if(connfd < 0) continue;
 			debug(250, "accept stream connection connfd=%d", connfd);
 
-			buf = malloc(MINMALLOC);
+			buf = calloc(1, MINMALLOC);
 			if(buf == NULL)
 			{
 				err("no mem");
 				sockclose(&connfd);
 				continue;
 			}
-			memset(buf, 0, MINMALLOC);
 
 			debug(250, "get client data");
 

@@ -191,7 +191,7 @@ struct provider* addprovider(char *line, int count, struct provider* last)
 	char *name = NULL;
 	int ret = 0;
 
-	newnode = (struct provider*)malloc(sizeof(struct provider));	
+	newnode = (struct provider*)calloc(1, sizeof(struct provider));
 	if(newnode == NULL)
 	{
 		err("no memory");
@@ -206,7 +206,6 @@ struct provider* addprovider(char *line, int count, struct provider* last)
 		return NULL;
 	}
 
-	memset(newnode, 0, sizeof(struct provider));
 	status.writeprovider = 1;
 
 	ret = sscanf(line, "%d#%[^#]#%d", &newnode->providerid, name, &newnode->flag);
@@ -225,7 +224,7 @@ struct provider* addprovider(char *line, int count, struct provider* last)
 		return NULL;
 	}
 
-	newnode->name = ostrcat(name, NULL, 1, 0);
+	newnode->name = ostrshrink(name);
 
 	if(last == NULL)
 	{

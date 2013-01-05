@@ -665,6 +665,7 @@ char* olutoa(unsigned long value);
 char* ollutoa(uint64_t value);
 int ostrcmp(char* value1, char* value2);
 int ostrcasecmp(char* value1, char* value2);
+char* ostrshrink(char* value);
 char* ostrcat(char* value1, char* value2, int free1, int free2);
 int ostrncmp(char* value1, char* value2, int count);
 char* readsys(const char *filename, int line);

@@ -59,9 +59,10 @@ struct newsletter* addnewsletter(char *line, int count, struct newsletter* last)
 		return NULL;
 	}
 
-	newnode->date = ostrcat(date, NULL, 1, 0);
-	newnode->title = ostrcat(title, NULL, 1, 0);
-	newnode->text = string_replace_all("\\n", "\n", text, 1);
+	newnode->date = ostrshrink(date);
+	newnode->title = ostrshrink(title);
+	newnode->text = ostrshrink(text);
+	newnode->text = string_replace_all("\\n", "\n", newnode->text, 1);
 
 	if(last == NULL)
 	{

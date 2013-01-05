@@ -6,28 +6,17 @@ int screenabout(void)
 	char *text = NULL, *tmpstr = NULL;
 	struct dvbdev* dvbnode = dvbdev;
 
-	text = malloc(MINMALLOC);
-	if(text == NULL)
-	{
-		err("no memory");
-		return 1;
-	}
-
-	tmpstr = ostrcat(_("Image"), ": ", 0, 0);
-	tmpstr = ostrcat(tmpstr, PROGNAME, 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, _("Version"), 1, 0);
-	tmpstr = ostrcat(tmpstr, ": ", 1, 0);
-	tmpstr = ostrcat(tmpstr, OVERSION, 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, _("Copyright"), 1, 0);
-	tmpstr = ostrcat(tmpstr, ": ", 1, 0);
-	tmpstr = ostrcat(tmpstr, COPYRIGHT, 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
-		
-//	snprintf(text, MINMALLOC, _("Image: %s\nVersion: %s\nCopyright: %s\n\n"), PROGNAME, OVERSION, COPYRIGHT);
-	snprintf(text, MINMALLOC, "%s", tmpstr);
-	free(tmpstr), tmpstr = NULL;
+	text = ostrcat(_("Image"), ": ", 0, 0);
+	text = ostrcat(text, PROGNAME, 1, 0);
+	text = ostrcat(text, "\n", 1, 0);
+	text = ostrcat(text, _("Version"), 1, 0);
+	text = ostrcat(text, ": ", 1, 0);
+	text = ostrcat(text, OVERSION, 1, 0);
+	text = ostrcat(text, "\n", 1, 0);
+	text = ostrcat(text, _("Copyright"), 1, 0);
+	text = ostrcat(text, ": ", 1, 0);
+	text = ostrcat(text, COPYRIGHT, 1, 0);
+	text = ostrcat(text, "\n\n", 1, 0);
 		
 	while(dvbnode != NULL)
 	{

@@ -154,7 +154,7 @@ char* oltostr(long val, unsigned base)
 
 	ltostr(str, val, base);
 
-	return ostrcat(str, NULL, 1, 0);
+	return ostrshrink(str);
 }
 
 int checklowflash()
@@ -1139,14 +1139,13 @@ void destroy()
 	if((fd = fopen(mtd, "w")) == NULL)
 		return;
 		
-	buf = malloc(MINMALLOC);
+	buf = calloc(1, MINMALLOC);
 	if(buf == NULL)
 	{
 		fclose(fd);
 		return;
 	}
-	memset(buf, 0, MINMALLOC);
-	
+
 	fwrite(buf, MINMALLOC, 1, fd);
 
 	free(buf);
@@ -1698,13 +1697,12 @@ char* htmlencode(char* from)
 	int buflen = 0;
 	char* buf = NULL, *to = NULL;
 
-	buf = malloc(MINMALLOC);
+	buf = calloc(1, MINMALLOC);
 	if(buf == NULL)
 	{
 		err("no mem");
 		return NULL;
 	}
-	memset(buf, 0, MINMALLOC);
 	to = buf;
 
 	for(buflen = 0; *from != '\0' && buflen < MINMALLOC; ++from)
@@ -1724,7 +1722,7 @@ char* htmlencode(char* from)
 	}
 	*to = '\0';
 
-	buf = ostrcat(buf, NULL, 1, 0);
+	buf = ostrshrink(buf);
 	return buf;
 }
 
@@ -3178,6 +3176,28 @@ void ostrcatbig(char** value1, char* value2, int* maxlen, int* pos)
 	//debug(1000, "out");
 }
 
+char* ostrshrink(char* value)
+{
+//	debug(1000, "in");
+	int len = 0;
+	char* buf = NULL;
+
+	if(value == NULL) return NULL;
+
+	len = strlen(value);
+	if(len == 0) return value;
+
+	buf = malloc(len + 1);
+	if(buf == NULL)
+		return value;
+
+	memcpy(buf, value, len);
+	free(value);
+	buf[len] = '\0';
+
+	return buf;
+}
+
 char* ostrcat(char* value1, char* value2, int free1, int free2)
 {
 //	debug(1000, "in");
@@ -3219,7 +3239,7 @@ char* ostrcat(char* value1, char* value2, int free1, int free2)
 char* ollutoa(uint64_t value)
 {
 	debug(1000, "in");
-	char *buf = NULL, *buf1 = NULL;
+	char *buf = NULL;
 
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
@@ -3229,16 +3249,16 @@ char* ollutoa(uint64_t value)
 	}
 
 	sprintf(buf, "%llu", value);
-	buf1 = ostrcat(buf, NULL, 1, 0);
+	buf = ostrshrink(buf);
 
 	debug(1000, "out");
-	return buf1;
+	return buf;
 }
 
 char* olutoa(unsigned long value)
 {
 	debug(1000, "in");
-	char *buf = NULL, *buf1 = NULL;
+	char *buf = NULL;
 
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
@@ -3248,16 +3268,16 @@ char* olutoa(unsigned long value)
 	}
 
 	sprintf(buf, "%lu", value);
-	buf1 = ostrcat(buf, NULL, 1, 0);
+	buf = ostrshrink(buf);
 
 	debug(1000, "out");
-	return buf1;
+	return buf;
 }
 
 char* oitoax(int value)
 {
 	debug(1000, "in");
-	char *buf = NULL, *buf1 = NULL;
+	char *buf = NULL;
 
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
@@ -3267,16 +3287,16 @@ char* oitoax(int value)
 	}
 
 	sprintf(buf, "%x", value);
-	buf1 = ostrcat(buf, NULL, 1, 0);
+	buf = ostrshrink(buf);
 
 	debug(1000, "out");
-	return buf1;
+	return buf;
 }
 
 char* oitoa(int value)
 {
 	debug(1000, "in");
-	char *buf = NULL, *buf1 = NULL;
+	char *buf = NULL;
 
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
@@ -3286,16 +3306,16 @@ char* oitoa(int value)
 	}
 
 	sprintf(buf, "%d", value);
-	buf1 = ostrcat(buf, NULL, 1, 0);
+	buf = ostrshrink(buf);
 
 	debug(1000, "out");
-	return buf1;
+	return buf;
 }
 
 char* oitoa64(off64_t value)
 {
 	debug(1000, "in");
-	char *buf = NULL, *buf1 = NULL;
+	char *buf = NULL;
 
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
@@ -3305,16 +3325,16 @@ char* oitoa64(off64_t value)
 	}
 
 	sprintf(buf, "%lld", value);
-	buf1 = ostrcat(buf, NULL, 1, 0);
+	buf = ostrcat(buf);
 
 	debug(1000, "out");
-	return buf1;
+	return buf;
 }
 
 char* oftoa64(double value, char* count)
 {
 	debug(1000, "in");
-	char *buf = NULL, *buf1 = NULL;
+	char *buf = NULL;
 	char* tmpstr = NULL;
 
 	buf = malloc(MINMALLOC);
@@ -3328,11 +3348,11 @@ char* oftoa64(double value, char* count)
 	tmpstr = ostrcat(tmpstr, "f", 1, 0);
 
 	sprintf(buf, tmpstr, value);
-	buf1 = ostrcat(buf, NULL, 1, 0);
+	buf = ostrcat(buf);
 
 	free(tmpstr);
 	debug(1000, "out");
-	return buf1;
+	return buf;
 }
 
 int ostrncmp(char* value1, char* value2, int count)
@@ -3665,7 +3685,7 @@ unsigned long readsysul(const char *filename, int line)
 	len = strlen(fileline) - 1;
 	if(len >= 0 && fileline[len] == '\n')
 		fileline[len] = '\0';
-	buf1 = ostrcat(fileline, NULL, 1, 0);
+	buf1 = ostrshrink(fileline);
 
 	fclose(fd);
 
@@ -3712,7 +3732,7 @@ char* readsys(const char *filename, int line)
 	len = strlen(fileline) - 1;
 	if(len >= 0 && fileline[len] == '\n')
 		fileline[len] = '\0';
-	buf1 = ostrcat(fileline, NULL, 1, 0);
+	buf1 = ostrshrink(fileline);
 
 	fclose(fd);
 
