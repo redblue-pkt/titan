@@ -558,7 +558,7 @@ int checkreseller()
 	if(checkbox("ATEMIO510") == 0 && checkbox("ATEMIO7600") == 0 && checkbox("ATEVIO7000") == 0 && checkbox("ATEVIO700") == 0)
 	{
 		debug(10, "ResellerId: skipped");
-		debug(10, "boxtype: %s", getboxtype();
+		debug(10, "boxtype: %s", getboxtype());
 		return 0;
 	}
 			
