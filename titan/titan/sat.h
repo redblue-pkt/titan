@@ -320,7 +320,7 @@ struct sat* addsat(char *line, int count, struct sat* last)
 		return NULL;
 	}
 
-	newnode->name = ostrcat(name, NULL, 1, 0);
+	newnode->name = ostrshrink(name);
 
 	if(last == NULL)
 	{

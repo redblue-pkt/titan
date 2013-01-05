@@ -461,22 +461,20 @@ char *get_ip(char *host)
 
 	if(host == NULL) return NULL;
 
-	ip = malloc(iplen);
+	ip = calloc(1, iplen);
 	if(ip == NULL)
 	{
 		err("no mem");
 		return NULL;
 	}
-	memset(ip, 0, iplen);
 
-	buf = malloc(MINMALLOC);
+	buf = calloc(1, MINMALLOC);
 	if(buf == NULL)
 	{
 		err("no mem");
 		free(ip);
 		return NULL;
 	}
-	memset(buf, 0, MINMALLOC);
 
 	ret = gethostbyname_r(host, &hent, buf, MINMALLOC, &result, &err);
 	//if((hent = gethostbyname(host)) == NULL)
@@ -648,7 +646,7 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 	if(freeheader == 1) free(header);
 
 	//now it is time to receive the page
-	tmpbuf = malloc(MINMALLOC);
+	tmpbuf = calloc(1, MINMALLOC);
 	if(tmpbuf == NULL)
 	{
 		if(fd != NULL)
@@ -661,7 +659,6 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 		if(dnode != NULL) dnode->ret = 1;
 		return NULL;
 	}
-	memset(tmpbuf, 0, MINMALLOC);
 
 	//read one line
 	char* pbuf = tmpbuf;

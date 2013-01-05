@@ -316,7 +316,7 @@ struct channel* addchannel(char *line, int count, struct channel* last)
 		return NULL;
 	}
 
-	newnode->name = ostrcat(name, NULL, 1, 0);
+	newnode->name = ostrshrink(name);
 	//99 = tmp channel
 	if(newnode->servicetype != 99)
 	{

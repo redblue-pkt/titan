@@ -8,7 +8,7 @@ struct unicable* addunicable(char *line, int count, struct unicable* last)
 	char *manufacturer = NULL, *product = NULL;;
 	int ret = 0;
 
-	newnode = (struct unicable*)malloc(sizeof(struct unicable));	
+	newnode = (struct unicable*)calloc(1, sizeof(struct unicable));
 	if(newnode == NULL)
 	{
 		err("no memory");
@@ -32,8 +32,6 @@ struct unicable* addunicable(char *line, int count, struct unicable* last)
 		return NULL;
 	}
 
-	memset(newnode, 0, sizeof(struct unicable));
-
 	ret = sscanf(line, "%[^#]#%[^#]#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d", manufacturer, product, &newnode->scr1, &newnode->scr2, &newnode->scr3, &newnode->scr4, &newnode->scr5, &newnode->scr6, &newnode->scr7, &newnode->scr8, &newnode->lofl, &newnode->lofh);
 	if(ret != 12)
 	{
@@ -51,8 +49,8 @@ struct unicable* addunicable(char *line, int count, struct unicable* last)
 		return NULL;
 	}
 
-	newnode->manufacturer = ostrcat(manufacturer, NULL, 1, 0);
-	newnode->product = ostrcat(product, NULL, 1, 0);
+	newnode->manufacturer = ostrshrink(manufacturer);
+	newnode->product = ostrshrink(product);
 
 	if(last == NULL)
 	{

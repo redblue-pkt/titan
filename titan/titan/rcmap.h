@@ -22,6 +22,7 @@ struct rcmap* addrcmap(char *line, int count, struct rcmap* last)
 		free(newnode);
 		return NULL;
 	}
+
 	key = malloc(MINMALLOC);
 	if(key == NULL)
 	{
@@ -59,7 +60,7 @@ struct rcmap* addrcmap(char *line, int count, struct rcmap* last)
 		return NULL;
 	}
 
-	newnode->name = ostrcat(name, NULL, 1, 0);
+	newnode->name = ostrshrink(name);
 	newnode->key = getrcconfigint(key, NULL);
 	free(key); key = NULL;
 	newnode->newkey = getrcconfigint(newkey, NULL);

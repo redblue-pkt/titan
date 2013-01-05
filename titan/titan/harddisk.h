@@ -12,7 +12,7 @@ char* blocktogb(unsigned long size)
 		return NULL;
 	}
 	snprintf(buf, MINMALLOC, "%.2f", (float)size / 2 / 1024 / 1024); //size is in 512KB blocks
-	return buf;
+	return ostrshrink(buf);
 }
 
 struct hdd* gethdd(char* device)

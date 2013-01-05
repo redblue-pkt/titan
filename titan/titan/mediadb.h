@@ -337,7 +337,7 @@ struct mediadbcategory* addmediadbcategory(char* line, int type, int count, stru
 		return NULL;	
 	}
 
-	newnode->name = ostrcat(name, NULL, 1, 0);
+	newnode->name = ostrshrink(name);
 
 	if(flag == 0) m_lock(&status.mediadbmutex, 17);
 	node = mediadbcategory;
