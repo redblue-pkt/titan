@@ -30,7 +30,6 @@ void screenmute(struct skin* screen, struct skin* node, int flag)
 			drawscreen(mute, 0, 0);
 		status.drawallways[0] = mute;
 	}
-	
 	else
 	{
 		setmute(0);
