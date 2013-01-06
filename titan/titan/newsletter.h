@@ -271,7 +271,7 @@ void newsletterthreadfunc(struct stimerthread* self)
 
 	while(self->aktion != STOP)
 	{
-		int count = 0;
+		int count = 0, ret = 0;
 
 		m_lock(&status.newslettermutex, 19);
 		long unsigned lastnewsletter = getconfiglu("lastnewsletter", NULL);
@@ -284,10 +284,11 @@ void newsletterthreadfunc(struct stimerthread* self)
 			tmpstr = ostrcat(tmpstr, " - ", 1, 0);
 			tmpstr = ostrcat(tmpstr, node->date, 1, 0);
 
-			textbox(tmpstr, node->text, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 2);
+			ret = textbox(tmpstr, node->text, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 15, 2);
 			free(tmpstr); tmpstr = NULL;
 
-			addconfiglu("lastnewsletter", node->nr);
+			//mark only if no timeout
+			if(ret != 0) addconfiglu("lastnewsletter", node->nr);
 		}
 
 		freenewsletter();
