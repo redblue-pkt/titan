@@ -4592,8 +4592,8 @@ int setmute(int value)
 	{
 		tmpvol = getvol();
 		tmpvol = tmpvol * 50 / 100;
-		setvol(tmpvol);
 		status.mute = value;
+		setvol(tmpvol);
 	} 
 	else
 	{
