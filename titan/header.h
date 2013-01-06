@@ -161,7 +161,7 @@ void rguidthreadfunc(struct stimerthread* timernode);
 void screennetwork_inadyn();
 
 //epgsearch.h
-void screenepgsearch();
+void screenepgsearch(char* text);
 
 //sock.h
 char* gethttp(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect);

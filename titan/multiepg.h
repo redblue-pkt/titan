@@ -562,6 +562,16 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 				break;
 			}
 		}
+		if(rcret == getrcconfigint("rc0", NULL))
+		{
+			if(listbox->select != NULL && listbox->select->handle1 != NULL)
+			{
+				screenepgsearch(((struct epg*)listbox->select->handle1)->title);
+				resettvpic();
+				drawscreen(multiepg, 0, 0);
+				continue;
+			}
+		}
 
 		if(rcret == getrcconfigint("rcff", NULL))
 		{
