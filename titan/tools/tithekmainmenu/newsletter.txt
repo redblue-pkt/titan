@@ -1,3 +1,4 @@
+6#06.01.2013#Information#Ab sofort steht die neue TitanNit Firmware V1.23 mit zahlreichen Verbesserungen\nund Korrekturen für folgende Geräte zur Verfügung:\nAtemio AM 500, Atemio AM 510, Atemio AM 7600 HD PVR\nAtevio AV 700 HD, Atevio AV 7000 HD PVR und die Atevio AV 7500 HD PVR.
 5#01.01.2013#Information#Das TitanNit Team wünscht allen Besitzern dieser Software\nein frohes Neues Jahr und vor allem Gesundheit.
 4#24.12.2012#Information#Das TitanNit Team wünscht allen Besitzern dieser Software\nein frohes besinnliches Weihnachtsfest !\n\nNews:\nFür die Atevio700 / Atevio7000 sind alle Vorbereitungen für TitanNit getroffen.\nDas dazu benötigte IRD Image wurde fertiggestellt.\nWeitere Infos folgen demnächst.
 3#11.12.2012#Software Update#An diesem Wochenende wird die TitanNit Version 1.21 freigegeben,\nmit einigen neuen Multimedia features.
