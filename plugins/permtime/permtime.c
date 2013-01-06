@@ -23,9 +23,12 @@ void permtime_thread()
 	
 	int posx = getconfigint("permtime_posx", NULL);
 	int posy = getconfigint("permtime_posy", NULL);
+	
+	if(getconfigint("permtime_trans", NULL) == 1)
+		permtime->bgcol = -1;
  
-	if (posx == 0) posx = 3;
-	if (posy == 0) posy = 2;
+	//if (posx == 0) posx = 3;
+	//if (posy == 0) posy = 2;
 	permtime->prozposx = 1;
 	permtime->prozposy = 1;
 	permtime->posx = posx;
@@ -97,9 +100,11 @@ void start(void)
  
 	int posx = getconfigint("permtime_posx", NULL);
 	int posy = getconfigint("permtime_posy", NULL);
+	int trans = getconfigint("permtime_trans", NULL);
+	int bgc = pospermtime->bgcol
  
-	if (posx == 0) posx = 3;
-	if (posy == 0) posy = 2;
+	//if (posx == 0) posx = 3;
+	//if (posy == 0) posy = 2;
 	pospermtime->prozposx = 1;
 	pospermtime->prozposy = 1;
 	
@@ -114,6 +119,10 @@ void start(void)
 		{
 			pospermtime->posx = posx;
 			pospermtime->posy = posy;
+			if(trans == 1)
+				pospermtime->bgcol = -1;
+			else
+				pospermtime->bgcol = bgc;
 			drawscreen(pospermtime, 0, 0);
 			rcret = waitrc(pospermtime, 0, 0);
 			clearscreen(pospermtime);
@@ -133,9 +142,16 @@ void start(void)
 				posx = posx + 3;
 				if(posx >= 97) posx = 97;
 			}
+			else if(rcret == getrcconfigint("rc0", NULL)) {
+				if(trans == 1)
+					trans = 0;
+				else
+					trans = 1;
+			}
 			else if(rcret == getrcconfigint("rcok", NULL)) {
 				addconfigint("permtime_posx", posx);
 				addconfigint("permtime_posy", posy);
+				addconfigint("permtime_trans", trans);
 				break;
 			}
 		}
