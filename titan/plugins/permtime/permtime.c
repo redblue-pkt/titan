@@ -101,7 +101,7 @@ void start(void)
 	int posx = getconfigint("permtime_posx", NULL);
 	int posy = getconfigint("permtime_posy", NULL);
 	int trans = getconfigint("permtime_trans", NULL);
-	int bgc = pospermtime->bgcol
+	int bgc = pospermtime->bgcol;
  
 	//if (posx == 0) posx = 3;
 	//if (posy == 0) posy = 2;
