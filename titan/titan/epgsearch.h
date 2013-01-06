@@ -82,12 +82,18 @@ int searchepg(char* search, int searchtype, struct skin* epgsearch, struct skin*
 	return 0;
 }
 
-void screenepgsearch()
+void screenepgsearch(char* text)
 {
 	int rcret = -1, ret = 0;
 	struct skin* epgsearch = getscreen("epgsearch");
 	struct skin* listbox = getscreennode(epgsearch, "listbox");
 	char* search = NULL;
+
+	if(text != NULL)
+	{
+		delmarkedscreennodes(epgsearch, 1);
+		searchepg(text, 0, epgsearch, listbox);
+	}
 
 	listbox->aktline = 1;
 	listbox->aktpage = -1;

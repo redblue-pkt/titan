@@ -117,6 +117,16 @@ start:
 			//drawscreen(singleepg, 0, 0);
 			break;
 		}
+		if(rcret == getrcconfigint("rc0", NULL))
+		{
+			if(listbox->select != NULL && listbox->select->handle != NULL)
+			{
+				screenepgsearch(((struct epg*)listbox->select->handle)->title);
+				resettvpic();
+				drawscreen(singleepg, 0, 0);
+				continue;
+			}
+		}
 		if(listbox->select != NULL)
 		{
 			tmpstr = epgdescunzip((struct epg*)listbox->select->handle);
@@ -291,6 +301,13 @@ start:
 			screengmultiepg(chnode, NULL, 0);
 			//drawscreen(screenepg, 0, 0);
 			break;
+		}
+		if(rcret == getrcconfigint("rc0", NULL))
+		{
+			screenepgsearch(epgnode->title);
+			resettvpic();
+			drawscreen(screenepg, 0, 0);
+			continue;
 		}
 		if(rcret == getrcconfigint("rcred", NULL))
 		{

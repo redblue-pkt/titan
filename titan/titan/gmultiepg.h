@@ -627,7 +627,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 
 		if((rcret == getrcconfigint("rcexit", NULL)) || (rcret == getrcconfigint("rcepg", NULL))) break;
 		//if(rcret == getrcconfigint("rcinfo", NULL)) break;
-		if(rcret == getrcconfigint("rcok", NULL))
+		if(listbox->select != NULL && rcret == getrcconfigint("rcok", NULL))
 		{
 			if(status.servicetype == 0)
 				servicecheckret(servicestart((struct channel*)listbox->select->handle, getconfig("channellist", NULL), NULL, 0), 0);
@@ -673,6 +673,16 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 				screenmultiepg((struct channel*)listbox->select->handle, NULL, 0);
 				//drawscreen(gmultiepg, 0, 0);
 				break;
+			}
+		}
+		if(rcret == getrcconfigint("rc0", NULL))
+		{
+			if(listbox->select != NULL && listbox->select->handle1 != NULL)
+			{
+				screenepgsearch(((struct epg*)listbox->select->handle1)->title);
+				resettvpic();
+				drawscreen(gmultiepg, 0, 0);
+				continue;
 			}
 		}
 
