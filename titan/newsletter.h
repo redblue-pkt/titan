@@ -288,7 +288,11 @@ void newsletterthreadfunc(struct stimerthread* self)
 			free(tmpstr); tmpstr = NULL;
 
 			//mark only if no timeout
-			if(ret != 0) addconfiglu("lastnewsletter", node->nr);
+			if(ret != 0)
+			{
+				addconfiglu("lastnewsletter", node->nr);
+				writeallconfig(3);
+			}
 		}
 
 		freenewsletter();

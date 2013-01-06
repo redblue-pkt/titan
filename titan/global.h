@@ -1554,13 +1554,14 @@ int ostrftime(char* buf, int count, char* format, struct tm* t)
 //flag 0 = write all
 //flag 1 = don't write epg
 //flag 2 = only write epg
+//flag 3 = only write config
 int writeallconfig(int flag)
 {
 	debug(1000, "in");
 	char* tmpstr = NULL;
 	int ret = 0;
 
-	if(flag != 2)
+	if(flag == 0 || flag == 1)
 	{
 		if(status.writerectimer == 1)
 			if(writerectimer(getconfig("rectimerfile", NULL), 0) != 0)
@@ -1601,6 +1602,12 @@ int writeallconfig(int flag)
 		if(status.writeskinconfig == 1)
 			if(writeskinconfig(getconfig("skinconfig", NULL)) != 0)
 				ret = 1;
+		if(status.writemostzap == 1)
+			if(writemostzap(getconfig("mostzapfile", NULL)) != 0)
+				ret = 1;
+	}
+	if(flag == 0 || flag == 1 || flag == 3)
+	{
 		if(status.writeconfig == 1)
 		{
 			//reset volume autochange before save
@@ -1612,9 +1619,6 @@ int writeallconfig(int flag)
 			if(status.volautochange > 0)
 				addconfigint("vol", getvol() + status.volautochange);
 		}
-		if(status.writemostzap == 1)
-			if(writemostzap(getconfig("mostzapfile", NULL)) != 0)
-				ret = 1;
 	}
 	if((flag == 0 || flag == 2) && time(NULL) > 1072224000) // 01.01.2004
 	{
