@@ -43,6 +43,8 @@ void LCD_start_lcd4linux()
 		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 5", 0, 0);
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf107h") == 0)
 		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 4", 0, 0);
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "none") == 0)
+		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 99", 0, 0);
 	else
 		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 2", 0, 0);
 	
@@ -190,6 +192,8 @@ void LCD_Samsung1_thread()
 		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 5", 0, 0);
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf107h") == 0)
 		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 4", 0, 0);
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "none") == 0)
+		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 99", 0, 0);
 	else
 		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 2", 0, 0);
 	
@@ -663,6 +667,7 @@ void start(void)
   addchoicebox(lcdtype, "spf87hold", _("SPF-87H-old"));
   addchoicebox(lcdtype, "spf105p", _("SPF-105P"));
   addchoicebox(lcdtype, "spf107p", _("SPF-107H"));
+  addchoicebox(lcdtype, "none", _("tiMote"));
 	setchoiceboxselection(lcdtype, getconfig("lcd_samsung_plugin_type", NULL));
 	
 	addchoicebox(allmenu, "no", _("nein"));
