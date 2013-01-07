@@ -64,6 +64,15 @@ void setdefaults()
 	addconfigdef("blindminsignalrate", "20000");
 	addconfigdef("blindmaxsignalrate", "30000");
 	addconfigdef("blindstepsignalrate", "20");
+	addconfigdef("cblindminfrequency", "9500");
+	addconfigdef("cblindmaxfrequency", "14500");
+	addconfigdef("cblindstepfrequency", "20");
+	addconfigdef("cblindminsignalrate", "20000");
+	addconfigdef("cblindmaxsignalrate", "30000");
+	addconfigdef("cblindstepsignalrate", "20");
+	addconfigdef("tblindminfrequency", "9500");
+	addconfigdef("tblindmaxfrequency", "14500");
+	addconfigdef("tblindstepfrequency", "20");
 	addconfigdef("camwait", "25");
 	addconfigdef("newsletter", "1");
 	addconfigdef("showhiddenfiles", "1");
