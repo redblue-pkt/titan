@@ -495,7 +495,7 @@ struct scaninfo
 	int newdatacount;
 	int blindcount;
 	int newblindcount;
-	int blindmax;
+	unsigned int blindmax;
 } scaninfo;
 
 struct screensaver

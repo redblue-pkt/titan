@@ -1,7 +1,123 @@
 #ifndef BLINDSCANADJUST_H
 #define BLINDSCANADJUST_H
 
-void changetunertype(struct skin* tunertype, struct skin* minfrequency, struct skin* maxfrequency, struct skin* stepfrequency, struct skin* minsignalrate, struct skin* maxsignalrate, struct skin* stepsignalrate, struct skin* usedefaultsr, struct skin* onlydvbs, struct skin* usedefaultfec, struct skin* cminfrequency, struct skin* cmaxfrequency, struct skin* cstepfrequency, struct skin* cminsignalrate, struct skin* cmaxsignalrate, struct skin* cstepsignalrate, struct skin* cusedefaultsr, struct skin* cusedefaultfec, struct skin* tminfrequency, struct skin* tmaxfrequency, struct skin* tstepfrequency)
+void blindcalc()
+{
+	unsigned int blindmax = 0, cblindmax = 0, tblindmax = 0;
+	char* tmpstr = NULL;
+
+	//sat
+	unsigned int minfrequency = getconfigint("blindminfrequency", NULL) * 1000;
+	unsigned int maxfrequency = getconfigint("blindmaxfrequency", NULL) * 1000;
+	unsigned int stepfrequency = getconfigint("blindstepfrequency", NULL) * 1000;
+	unsigned int minsymbolrate = getconfigint("blindminsignalrate", NULL) * 1000;
+	unsigned int maxsymbolrate = getconfigint("blindmaxsignalrate", NULL) * 1000;
+	unsigned int stepsymbolrate = getconfigint("blindstepsignalrate", NULL) * 1000;
+	unsigned int usedefaultsr = getconfigint("blindusedefaultsr", NULL);
+	unsigned int onlydvbs = getconfigint("blindonlydvbs", NULL);
+	unsigned int usedefaultfec = getconfigint("blindusedefaultfec", NULL);
+
+	int minmodulation = 0, maxmodulation = 2, stepmodulation = 1;
+	int minpolarization = 0, maxpolarization = 1, steppolarization = 1;
+	int minsystem = 0, maxsystem = 1, stepsystem = 1;
+	int minfec = 0, maxfec = 8, stepfec = 1;
+
+	if(onlydvbs == 1)
+	{
+		maxmodulation = 0;
+		maxsystem = 0;
+	}
+
+	if(usedefaultsr == 1)
+	{
+		minsymbolrate = 0;
+		maxsymbolrate = 3;
+		stepsymbolrate = 1;
+	}
+
+	if(usedefaultfec == 1)
+		maxfec = 6;
+
+	int countfrequency = ((maxfrequency + stepfrequency) - minfrequency) / stepfrequency;
+	int countsymbolrate = ((maxsymbolrate + stepsymbolrate) - minsymbolrate) / stepsymbolrate;
+	int countmodulation = ((maxmodulation + stepmodulation) - minmodulation) / stepmodulation;
+	int countpolarization = ((maxpolarization + steppolarization) - minpolarization) / steppolarization;
+	int countfec = ((maxfec + stepfec) - minfec) / stepfec;
+	int systemcount = ((maxsystem + stepsystem) - minsystem) / stepsystem;
+
+	blindmax = systemcount * countpolarization * countmodulation * countsymbolrate * countfrequency * countfec;
+
+	//cable
+	minfrequency = getconfigint("cblindminfrequency", NULL) * 1000;
+	maxfrequency = getconfigint("cblindmaxfrequency", NULL) * 1000;
+	stepfrequency = getconfigint("cblindstepfrequency", NULL) * 1000;
+	minsymbolrate = getconfigint("cblindminsignalrate", NULL) * 1000;
+	maxsymbolrate = getconfigint("cblindmaxsignalrate", NULL) * 1000;
+	stepsymbolrate = getconfigint("cblindstepsignalrate", NULL) * 1000;
+	usedefaultsr = getconfigint("cblindusedefaultsr", NULL);
+	usedefaultfec = getconfigint("cblindusedefaultfec", NULL);
+
+	minmodulation = 0, maxmodulation = 4, stepmodulation = 1;
+	minfec = 0, maxfec = 8, stepfec = 1;
+
+	if(usedefaultsr == 1)
+	{
+		minsymbolrate = 0;
+		maxsymbolrate = 3;
+		stepsymbolrate = 1;
+	}
+
+	if(usedefaultfec == 1)
+		maxfec = 6;
+
+	countfrequency = ((maxfrequency + stepfrequency) - minfrequency) / stepfrequency;
+	countsymbolrate = ((maxsymbolrate + stepsymbolrate) - minsymbolrate) / stepsymbolrate;
+	countmodulation = ((maxmodulation + stepmodulation) - minmodulation) / stepmodulation;
+	countfec = ((maxfec + stepfec) - minfec) / stepfec;
+
+	cblindmax = countmodulation * countsymbolrate * countfrequency * countfec;
+
+	//terr
+	minfrequency = getconfigint("tblindminfrequency", NULL) * 1000;
+	maxfrequency = getconfigint("tblindmaxfrequency", NULL) * 1000;
+	stepfrequency = getconfigint("tblindstepfrequency", NULL) * 1000;
+
+	int minhp = 0, maxhp = 4, stephp = 1;
+	int minlp = 0, maxlp = 2, steplp = 1;
+	minmodulation = 0, maxmodulation = 2, stepmodulation = 1;
+	int minbandwidth = 0, maxbandwidth = 2, stepbandwidth = 1;
+	int mintransmission = 0, maxtransmission = 1, steptransmission = 1;
+	int minguardinterval = 0, maxguardinterval = 3, stepguardinterval = 1;
+	int minhierarchy = 0, maxhierarchy = 3, stephierarchy = 1;
+
+	countfrequency = ((maxfrequency + stepfrequency) - minfrequency) / stepfrequency;
+	int counthp = ((maxhp + stephp) - minhp) / stephp;
+	int countlp = ((maxlp + steplp) - minlp) / steplp;
+	countmodulation = ((maxmodulation + stepmodulation) - minmodulation) / stepmodulation;
+	int countbandwidth = ((maxbandwidth + stepbandwidth) - minbandwidth) / stepbandwidth;
+	int counttransmission = ((maxtransmission + steptransmission) - mintransmission) / steptransmission;
+	int countguardinterval = ((maxguardinterval + stepguardinterval) - minguardinterval) / stepguardinterval;
+	int counthierarchy = ((maxhierarchy + stephierarchy) - minhierarchy) / stephierarchy;
+
+	tblindmax += counthierarchy * countguardinterval * countmodulation * counttransmission * countfrequency * countbandwidth * countlp * counthp;
+
+	tmpstr = ostrcat(tmpstr, _("Sat: "), 1, 0);
+	tmpstr = ostrcat(tmpstr, oitoa(blindmax), 1, 1);
+	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+
+	tmpstr = ostrcat(tmpstr, _("Cable: "), 1, 0);
+	tmpstr = ostrcat(tmpstr, oitoa(cblindmax), 1, 1);
+	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+
+	tmpstr = ostrcat(tmpstr, _("Terrestrial: "), 1, 0);
+	tmpstr = ostrcat(tmpstr, oitoa(tblindmax), 1, 1);
+	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+
+	textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+	free(tmpstr);
+}
+
+void blindchangetunertype(struct skin* tunertype, struct skin* minfrequency, struct skin* maxfrequency, struct skin* stepfrequency, struct skin* minsignalrate, struct skin* maxsignalrate, struct skin* stepsignalrate, struct skin* usedefaultsr, struct skin* onlydvbs, struct skin* usedefaultfec, struct skin* cminfrequency, struct skin* cmaxfrequency, struct skin* cstepfrequency, struct skin* cminsignalrate, struct skin* cmaxsignalrate, struct skin* cstepsignalrate, struct skin* cusedefaultsr, struct skin* cusedefaultfec, struct skin* tminfrequency, struct skin* tmaxfrequency, struct skin* tstepfrequency)
 {
 	minfrequency->hidden = YES;
 	maxfrequency->hidden = YES;
@@ -94,7 +210,7 @@ void screenblindscanadjust()
 	
 	addchoicebox(tunertype, "0", _("Sat"));
 	addchoicebox(tunertype, "1", _("Cable"));
-	addchoicebox(tunertype, "2", _("Terrestrial "));
+	addchoicebox(tunertype, "2", _("Terrestrial"));
 	setchoiceboxselection(tunertype, "0");
 
 	//sat
@@ -256,7 +372,7 @@ void screenblindscanadjust()
 	}
 
 	drawscreen(blindscan, 2, 0);
-	changetunertype(tunertype, minfrequency, maxfrequency, stepfrequency, minsignalrate, maxsignalrate, stepsignalrate, usedefaultsr, onlydvbs, usedefaultfec, cminfrequency, cmaxfrequency, cstepfrequency, cminsignalrate, cmaxsignalrate, cstepsignalrate, cusedefaultsr, cusedefaultfec, tminfrequency, tmaxfrequency, tstepfrequency);
+	blindchangetunertype(tunertype, minfrequency, maxfrequency, stepfrequency, minsignalrate, maxsignalrate, stepsignalrate, usedefaultsr, onlydvbs, usedefaultfec, cminfrequency, cmaxfrequency, cstepfrequency, cminsignalrate, cmaxsignalrate, cstepsignalrate, cusedefaultsr, cusedefaultfec, tminfrequency, tmaxfrequency, tstepfrequency);
 	drawscreen(blindscan, 0, 0);
 	addscreenrc(blindscan, listbox);
 
@@ -269,7 +385,7 @@ void screenblindscanadjust()
 		
 		if(listbox->select != NULL && ostrcmp(listbox->select->name, "tunertype") == 0)
 		{
-			changetunertype(tunertype, minfrequency, maxfrequency, stepfrequency, minsignalrate, maxsignalrate, stepsignalrate, usedefaultsr, onlydvbs, usedefaultfec, cminfrequency, cmaxfrequency, cstepfrequency, cminsignalrate, cmaxsignalrate, cstepsignalrate, cusedefaultsr, cusedefaultfec, tminfrequency, tmaxfrequency, tstepfrequency);
+			blindchangetunertype(tunertype, minfrequency, maxfrequency, stepfrequency, minsignalrate, maxsignalrate, stepsignalrate, usedefaultsr, onlydvbs, usedefaultfec, cminfrequency, cmaxfrequency, cstepfrequency, cminsignalrate, cmaxsignalrate, cstepsignalrate, cusedefaultsr, cusedefaultfec, tminfrequency, tmaxfrequency, tstepfrequency);
 			drawscreen(blindscan, 0, 0);
 		}
 
@@ -395,6 +511,8 @@ void screenblindscanadjust()
 			if(getconfigint("tblindstepfrequency", NULL) < 1)
 				addconfigint("tblindstepfrequency", 20);
 
+
+			blindcalc();
 			break;
 		}
 	}
