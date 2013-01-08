@@ -32,8 +32,11 @@ void screenvolume(int direction, int flag)
 
 	delrc(getrcconfigint("rcvolup", NULL), NULL, NULL);
 	delrc(getrcconfigint("rcvoldown", NULL), NULL, NULL);
-	delrc(getrcconfigint("rcright", NULL), NULL, NULL);
-	delrc(getrcconfigint("rcleft", NULL), NULL, NULL);
+	if(status.playing == 0 && status.pause == 0)
+	{
+		delrc(getrcconfigint("rcright", NULL), NULL, NULL);
+		delrc(getrcconfigint("rcleft", NULL), NULL, NULL);
+	}
 	delrc(getrcconfigint("rcmute", NULL), NULL, NULL);
 
 	if(status.mute == 1)
@@ -64,13 +67,13 @@ void screenvolume(int direction, int flag)
 		if(rcret == RCTIMEOUT) break;
 		//if(rcret == getrcconfigint("rcexit", NULL)) break;
 		//if(rcret == getrcconfigint("rcok", NULL)) break;
-		if(rcret == getrcconfigint("rcvolup", NULL) || rcret == getrcconfigint("rcright", NULL))
+		if(rcret == getrcconfigint("rcvolup", NULL)  || (status.playing == 0 && status.pause == 0 && rcret == getrcconfigint("rcright", NULL)))
 		{
 			changevolume(0, volumebar);
 			drawscreen(volume, 0, flag);
 			continue;
 		}
-		if(rcret == getrcconfigint("rcvoldown", NULL) || rcret == getrcconfigint("rcleft", NULL))
+		if(rcret == getrcconfigint("rcvoldown", NULL) || (status.playing == 0 && status.pause == 0 && rcret == getrcconfigint("rcleft", NULL)))
 		{
 			changevolume(1, volumebar);
 			drawscreen(volume, 0, flag);
