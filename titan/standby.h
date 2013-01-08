@@ -46,6 +46,16 @@ void screenstandby()
 	setvfdbrightness(getconfigint("vfdstandbybrightness", NULL));
 	setoverclockfreq(0);
 
+	if(checkbox("ATEVIO7000") == 1)
+	{
+		if(getconfig("at7000frontsleep", NULL) != NULL)
+			tmpstr = ostrcat("fp_control -P ",getconfig("at7000frontsleep", NULL), 0, 0);
+		else
+			tmpstr = ostrcat("fp_control -P ", "0", 0, 0);
+		system(tmpstr);
+		free(tmpstr); tmpstr=NULL;
+	}
+
 	status.protecttime = 0;
 	status.rcowner = standbyscreen;
 	
@@ -85,6 +95,16 @@ void screenstandby()
 	setoverclockfreq(1);
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	setvfdbrightness(getconfigint("vfdbrightness", NULL));
+	
+	if(checkbox("ATEVIO7000") == 1)
+	{
+		if(getconfig("at7000frontrun", NULL) != NULL)
+			tmpstr = ostrcat("fp_control -P ",getconfig("at7000frontrun", NULL), 0, 0);
+		else
+			tmpstr = ostrcat("fp_control -P ", "15", 0, 0);
+		system(tmpstr);
+		free(tmpstr); tmpstr=NULL;
+	}
 
 	tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
 	if(voltoff == 1)
