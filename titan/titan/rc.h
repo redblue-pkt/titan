@@ -353,7 +353,8 @@ int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int file
 	}
 
 	debug(1000, "out");
-	status.lastrcaction = time(NULL);
+	if(ret != RCTIMEOUT)
+		status.lastrcaction = time(NULL);
 	return ret;
 }
 
