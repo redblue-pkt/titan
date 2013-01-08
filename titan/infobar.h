@@ -19,6 +19,8 @@ void screeninfobar()
 
 	addrc(getrcconfigint("rcvolup", NULL), screenvolumeup, NULL, NULL);
 	addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
+	addrc(getrcconfigint("rcleft", NULL), screenvolumedown, NULL, NULL);
+	addrc(getrcconfigint("rcright", NULL), screenvolumeup, NULL, NULL);	
 	addrc(getrcconfigint("rcmute", NULL), screenmute, NULL, NULL);
 
 	status.infobaraktiv = 1;
@@ -568,7 +570,7 @@ void screeninfobar()
 			status.infobar = 1;
 			continue;
 		}
-		if(rcret == getrcconfigint("rcchup", NULL))
+		if(rcret == getrcconfigint("rcchup", NULL) || rcret == getrcconfigint("rcup", NULL))
 		{
 			subtitlepause(1);
 			zapup();
@@ -578,7 +580,7 @@ void screeninfobar()
 			status.infobar = 2;
 			continue;
 		}
-		if(rcret == getrcconfigint("rcchdown", NULL))
+		if(rcret == getrcconfigint("rcchdown", NULL) || rcret == getrcconfigint("rcdown", NULL))
 		{
 			subtitlepause(1);
 			zapdown();
