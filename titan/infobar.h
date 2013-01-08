@@ -242,7 +242,7 @@ void screeninfobar()
 		}
 		if(rcret == getrcconfigint("rcblue", NULL) && getconfig("bluekey", NULL) == NULL)
 			rcret = getrcconfigint("rctvradio", NULL);
-		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL) || rcret == getrcconfigint("rctvradio", NULL) || rcret == getrcconfigint("rcfav", NULL))
+		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rctvradio", NULL) || rcret == getrcconfigint("rcfav", NULL))
 		{
 			int tmpservicetype = status.servicetype;
 			status.infobaraktiv = 0;
@@ -570,7 +570,7 @@ void screeninfobar()
 			status.infobar = 1;
 			continue;
 		}
-		if(rcret == getrcconfigint("rcchup", NULL) || rcret == getrcconfigint("rcup", NULL))
+		if(rcret == getrcconfigint("rcchup", NULL) || rcret == getrcconfigint("rcdown", NULL))
 		{
 			subtitlepause(1);
 			zapup();
@@ -580,7 +580,7 @@ void screeninfobar()
 			status.infobar = 2;
 			continue;
 		}
-		if(rcret == getrcconfigint("rcchdown", NULL) || rcret == getrcconfigint("rcdown", NULL))
+		if(rcret == getrcconfigint("rcchdown", NULL) || rcret == getrcconfigint("rcup", NULL))
 		{
 			subtitlepause(1);
 			zapdown();
