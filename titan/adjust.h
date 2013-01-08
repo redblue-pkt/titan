@@ -4,6 +4,8 @@
 void screenadjust()
 {
 	int rcret = 0;
+	char* tmpstr = NULL;
+	
 	struct skin* adjust = getscreen("adjust");
 	struct skin* listbox = getscreennode(adjust, "listbox");
 	struct skin* volbartimeout = getscreennode(adjust, "volbartimeout");
@@ -46,6 +48,8 @@ void screenadjust()
 	struct skin* showhiddenfiles = getscreennode(adjust, "showhiddenfiles");
 	struct skin* expertmodus = getscreennode(adjust, "expertmodus");
 	struct skin* infobarprogram = getscreennode(adjust, "infobarprogram");
+	struct skin* at7000frontrun = getscreennode(adjust, "at7000frontrun");
+	struct skin* at7000frontsleep = getscreennode(adjust, "at7000frontsleep");
 	
 	struct skin* tmp = NULL;
 
@@ -220,7 +224,22 @@ void screenadjust()
 	addchoicebox(infobarprogram, "0", _("no"));
 	addchoicebox(infobarprogram, "1", _("yes"));
 	setchoiceboxselection(infobarprogram, getconfig("infobarprogram", NULL));
-
+	
+	changeinput(at7000frontrun, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15");
+	setchoiceboxselection(at7000frontrun, getconfig("at7000frontrun", NULL));
+	
+	changeinput(at7000frontsleep, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15");
+	setchoiceboxselection(at7000frontsleep, getconfig("at7000frontsleep", NULL));
+	
+	if(checkbox("at7000") == 1)
+	{
+		at7000frontrun->hidden = NO;
+		at7000frontsleep->hidden = NO;
+	}else{
+		at7000frontrun->hidden = YES;
+		at7000frontsleep->hidden = YES;
+	}
+	
 	drawscreen(adjust, 0, 0);
 	addscreenrc(adjust, listbox);
 
@@ -300,7 +319,14 @@ void screenadjust()
 			addconfigscreencheck("expertmodus", expertmodus, "0");
 			addconfigscreencheck("infobarprogram", infobarprogram, "0");
 			status.infobarprogram = getconfigint("infobarprogram", NULL);
-
+			
+			if(checkbox("at7000") == 1)
+			{
+				addconfigscreencheck("at7000frontrun", at7000frontrun, "15");
+				addconfigscreencheck("at7000frontsleep", at7000frontsleep, "15");
+				tmpstr = ostrcat("fp_control -P ",getconfig("at7000frontrun", NULL), 0, 0);
+				free(tmpstr); tmpstr=NULL;
+			}
 			break;
 		}
 	}
