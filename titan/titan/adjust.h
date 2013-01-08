@@ -231,7 +231,7 @@ void screenadjust()
 	changeinput(at7000frontsleep, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15");
 	setchoiceboxselection(at7000frontsleep, getconfig("at7000frontsleep", NULL));
 	
-	if(checkbox("at7000") == 1)
+	if(checkbox("ATEVIO7000") == 1)
 	{
 		at7000frontrun->hidden = NO;
 		at7000frontsleep->hidden = NO;
@@ -320,7 +320,7 @@ void screenadjust()
 			addconfigscreencheck("infobarprogram", infobarprogram, "0");
 			status.infobarprogram = getconfigint("infobarprogram", NULL);
 			
-			if(checkbox("at7000") == 1)
+			if(checkbox("ATEVIO7000") == 1)
 			{
 				addconfigscreencheck("at7000frontrun", at7000frontrun, "15");
 				addconfigscreencheck("at7000frontsleep", at7000frontsleep, "15");
