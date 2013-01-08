@@ -325,6 +325,7 @@ void screenadjust()
 				addconfigscreencheck("at7000frontrun", at7000frontrun, "15");
 				addconfigscreencheck("at7000frontsleep", at7000frontsleep, "15");
 				tmpstr = ostrcat("fp_control -P ",getconfig("at7000frontrun", NULL), 0, 0);
+				system(tmpstr);
 				free(tmpstr); tmpstr=NULL;
 			}
 			break;
