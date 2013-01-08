@@ -19,8 +19,11 @@ void screeninfobar()
 
 	addrc(getrcconfigint("rcvolup", NULL), screenvolumeup, NULL, NULL);
 	addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
-	addrc(getrcconfigint("rcleft", NULL), screenvolumedown, NULL, NULL);
-	addrc(getrcconfigint("rcright", NULL), screenvolumeup, NULL, NULL);	
+	if(status.playing != 0 && status.pause != 1)
+	{
+		addrc(getrcconfigint("rcleft", NULL), screenvolumedown, NULL, NULL);
+		addrc(getrcconfigint("rcright", NULL), screenvolumeup, NULL, NULL);	
+	}
 	addrc(getrcconfigint("rcmute", NULL), screenmute, NULL, NULL);
 
 	status.infobaraktiv = 1;
@@ -570,7 +573,7 @@ void screeninfobar()
 			status.infobar = 1;
 			continue;
 		}
-		if(rcret == getrcconfigint("rcchup", NULL) || rcret == getrcconfigint("rcdown", NULL))
+		if(rcret == getrcconfigint("rcchup", NULL) || (status.playing == 0 && status.pause == 0 && rcret == getrcconfigint("rcdown", NULL)))
 		{
 			subtitlepause(1);
 			zapup();
@@ -580,7 +583,7 @@ void screeninfobar()
 			status.infobar = 2;
 			continue;
 		}
-		if(rcret == getrcconfigint("rcchdown", NULL) || rcret == getrcconfigint("rcup", NULL))
+		if(rcret == getrcconfigint("rcchdown", NULL) || (status.playing == 0 && status.pause == 0 && rcret == getrcconfigint("rcup", NULL)))
 		{
 			subtitlepause(1);
 			zapdown();
