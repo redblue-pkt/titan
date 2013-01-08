@@ -32,6 +32,8 @@ void screenvolume(int direction, int flag)
 
 	delrc(getrcconfigint("rcvolup", NULL), NULL, NULL);
 	delrc(getrcconfigint("rcvoldown", NULL), NULL, NULL);
+	delrc(getrcconfigint("rcright", NULL), NULL, NULL);
+	delrc(getrcconfigint("rcleft", NULL), NULL, NULL);
 	delrc(getrcconfigint("rcmute", NULL), NULL, NULL);
 
 	if(status.mute == 1)
@@ -62,13 +64,13 @@ void screenvolume(int direction, int flag)
 		if(rcret == RCTIMEOUT) break;
 		//if(rcret == getrcconfigint("rcexit", NULL)) break;
 		//if(rcret == getrcconfigint("rcok", NULL)) break;
-		if(rcret == getrcconfigint("rcvolup", NULL))
+		if(rcret == getrcconfigint("rcvolup", NULL) || rcret == getrcconfigint("rcright", NULL))
 		{
 			changevolume(0, volumebar);
 			drawscreen(volume, 0, flag);
 			continue;
 		}
-		if(rcret == getrcconfigint("rcvoldown", NULL))
+		if(rcret == getrcconfigint("rcvoldown", NULL) || rcret == getrcconfigint("rcleft", NULL))
 		{
 			changevolume(1, volumebar);
 			drawscreen(volume, 0, flag);
@@ -80,6 +82,8 @@ void screenvolume(int direction, int flag)
 
 	addrc(getrcconfigint("rcvolup", NULL), screenvolumeup, NULL, NULL);
 	addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
+	addrc(getrcconfigint("rcright", NULL), screenvolumeup, NULL, NULL);
+	addrc(getrcconfigint("rcleft", NULL), screenvolumedown, NULL, NULL);
 	addrc(getrcconfigint("rcmute", NULL), screenmute, NULL, NULL);
 	restorescreen(bg, volume);
 	blitfb(0);
