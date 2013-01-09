@@ -585,7 +585,7 @@ uint64_t findtransponderid(struct dvbdev* fenode, unsigned char *buf)
 	return transponderid;
 }
 
-void blindscan(struct stimerthread* timernode)
+unsigned int satblindscan(struct stimerthread* timernode, int onlycalc)
 {
 	int festatus = 0;
 	uint64_t transponderid = 0;
@@ -606,7 +606,7 @@ void blindscan(struct stimerthread* timernode)
 	unsigned int onlydvbs = getconfigint("blindonlydvbs", NULL);
 	unsigned int usedefaultfec = getconfigint("blindusedefaultfec", NULL);
 	
-	int minmodulation = 0, maxmodulation = 2, stepmodulation = 1;
+	int minmodulation = 1, maxmodulation = 2, stepmodulation = 1;
 	int minpolarization = 0, maxpolarization = 1, steppolarization = 1;
 	int minsystem = 0, maxsystem = 1, stepsystem = 1;
 	int minfec = 0, maxfec = 8, stepfec = 1;
@@ -627,17 +627,18 @@ void blindscan(struct stimerthread* timernode)
 	if(usedefaultfec == 1)
 		maxfec = 6;
 
-	if(scaninfo.fenode == NULL || timernode == NULL) return;
-
 	int countfrequency = ((maxfrequency + stepfrequency) - minfrequency) / stepfrequency;
 	int countsymbolrate = ((maxsymbolrate + stepsymbolrate) - minsymbolrate) / stepsymbolrate;
 	int countmodulation = ((maxmodulation + stepmodulation) - minmodulation) / stepmodulation;
 	int countpolarization = ((maxpolarization + steppolarization) - minpolarization) / steppolarization;
 	int countfec = ((maxfec + stepfec) - minfec) / stepfec;
 	int systemcount = ((maxsystem + stepsystem) - minsystem) / stepsystem;
+	
+	if(onlycalc == 1) return systemcount * countpolarization * countmodulation * countsymbolrate * countfrequency * countfec;
+
+	if(scaninfo.fenode == NULL || timernode == NULL) return -1;
 	int timeout = scaninfo.timeout / 5;
 	if(timeout < 1000000) timeout = 1000000;
-
 	scaninfo.blindmax += systemcount * countpolarization * countmodulation * countsymbolrate * countfrequency * countfec;
 
 	for(frequency = minfrequency; frequency <= maxfrequency; frequency += stepfrequency)
@@ -666,53 +667,12 @@ void blindscan(struct stimerthread* timernode)
 
 			for(modulation = minmodulation; modulation <= maxmodulation; modulation += stepmodulation)
 			{
-
-				int cpolarization = 0;
-				for(cpolarization = minpolarization; cpolarization <= maxpolarization; cpolarization += steppolarization)
+				
+				for(polarization = minpolarization; polarization <= maxpolarization; polarization += steppolarization)
 				{
-					switch(cpolarization)
-					{
-						case 0:
-							polarization = SEC_VOLTAGE_13; 
-							break;
-						case 1:
-							polarization = SEC_VOLTAGE_18;
-							break;
-					}
 
-					int cfec = 0;
-					for(cfec = minfec; cfec <= maxfec; cfec += stepfec)
+					for(fec = minfec; fec <= maxfec; fec += stepfec)
 					{
-						switch(cfec)
-						{
-							case 0:
-								fec = FEC_1_2;
-								break;
-							case 1:
-								fec = FEC_2_3;
-								break;
-							case 2:
-								fec = FEC_3_4;
-								break;
-							case 3:
-								fec = FEC_5_6;
-								break;
-							case 4:
-								fec = FEC_7_8;
-								break;
-							case 5:
-								fec = FEC_8_9;
-								break;
-							case 6:
-								fec = FEC_3_5;
-								break;
-							case 7:
-								fec = FEC_4_5;
-								break;
-							case 8:
-								fec = FEC_9_10;
-								break;
-						}
 
 						for(system = minsystem; system <= maxsystem; system += stepsystem)
 						{
@@ -739,10 +699,6 @@ void blindscan(struct stimerthread* timernode)
 									feset(fenode, tpnode);
 									fetunedvbs(fenode, tpnode);
 								}
-								else if(fenode->feinfo->type == FE_QAM)
-									fetunedvbc(fenode, tpnode);
-								else if(fenode->feinfo->type == FE_OFDM)
-									fetunedvbt(fenode, tpnode);
 								else
 								{
 									debug(500, "Frontend type unknown");
@@ -789,6 +745,299 @@ void blindscan(struct stimerthread* timernode)
 		}
 		if(timernode->aktion != START) break;
 	}
+	
+	return 0;
+}
+
+unsigned int cableblindscan(struct stimerthread* timernode, int onlycalc)
+{
+	int festatus = 0;
+	uint64_t transponderid = 0;
+	unsigned char* buf = NULL;
+	struct dvbdev* fenode = NULL;
+	struct transponder* tpnode = NULL;
+
+	unsigned int frequency = 0, symbolrate = 0;
+	int modulation = 0, fec = 0;
+
+	unsigned int minfrequency = getconfigint("cblindminfrequency", NULL) * 1000;
+	unsigned int maxfrequency = getconfigint("cblindmaxfrequency", NULL) * 1000;
+	unsigned int stepfrequency = getconfigint("cblindstepfrequency", NULL) * 1000;
+	unsigned int minsymbolrate = getconfigint("cblindminsignalrate", NULL) * 1000;
+	unsigned int maxsymbolrate = getconfigint("cblindmaxsignalrate", NULL) * 1000;
+	unsigned int stepsymbolrate = getconfigint("cblindstepsignalrate", NULL) * 1000;
+	unsigned int usedefaultsr = getconfigint("cblindusedefaultsr", NULL);
+	unsigned int usedefaultfec = getconfigint("cblindusedefaultfec", NULL);
+	
+	int minmodulation = 0, maxmodulation = 4, stepmodulation = 1;
+	int minfec = 0, maxfec = 8, stepfec = 1;
+
+	if(usedefaultsr == 1)
+	{
+		minsymbolrate = 0;
+		maxsymbolrate = 3;
+		stepsymbolrate = 1;
+	}
+
+	if(usedefaultfec == 1)
+		maxfec = 6;
+
+	int countfrequency = ((maxfrequency + stepfrequency) - minfrequency) / stepfrequency;
+	int countsymbolrate = ((maxsymbolrate + stepsymbolrate) - minsymbolrate) / stepsymbolrate;
+	int countmodulation = ((maxmodulation + stepmodulation) - minmodulation) / stepmodulation;
+	int countfec = ((maxfec + stepfec) - minfec) / stepfec;
+	
+	if(onlycalc == 1) return countmodulation * countsymbolrate * countfrequency * countfec;
+	
+	if(scaninfo.fenode == NULL || timernode == NULL) return -1;
+	int timeout = scaninfo.timeout / 5;
+	if(timeout < 1000000) timeout = 1000000;
+	scaninfo.blindmax += countmodulation * countsymbolrate * countfrequency * countfec;
+
+	for(frequency = minfrequency; frequency <= maxfrequency; frequency += stepfrequency)
+	{
+
+		int csymbolrate = 0;
+		for(csymbolrate = minsymbolrate; csymbolrate <= maxsymbolrate; csymbolrate += stepsymbolrate)
+		{
+			if(usedefaultsr == 1)
+			{
+				switch(csymbolrate)
+				{
+					case 0:
+						symbolrate = 22000 * 1000;
+						break;
+					case 1:
+						symbolrate = 27500 * 1000;
+						break;
+					case 2:
+						symbolrate = 30000 * 1000;
+						break;
+				}
+			}
+			else
+				symbolrate = csymbolrate;
+
+			for(modulation = minmodulation; modulation <= maxmodulation; modulation += stepmodulation)
+			{
+
+				for(fec = minfec; fec <= maxfec; fec += stepfec)
+				{
+					scaninfo.blindcount++;
+
+					tpnode = createtransponder(99, scaninfo.fenode->feinfo->type, scaninfo.orbitalpos, frequency, INVERSION_AUTO, symbolrate, 0, fec, modulation, 0, 0, 0);
+
+					debug(500, "blindscan: frequ=%d, sr=%d, modulation=%d, fec=%d, orbitalpos=%d", frequency, symbolrate, modulation, fec, scaninfo.orbitalpos);
+
+					if(tpnode != NULL)
+					{
+
+						fenode = fegetfree(tpnode, 0, scaninfo.fenode);
+						if(fenode == NULL )
+						{
+							debug(500, "Frontend for scan not free");
+							deltransponderbyid(99);
+							continue;
+						}
+
+						//frontend tune
+						if(fenode->feinfo->type == FE_QAM)
+							fetunedvbc(fenode, tpnode);
+						else
+						{
+							debug(500, "Frontend type unknown");
+							deltransponderbyid(99);
+							continue;
+						}
+
+						festatus = fewait(fenode);
+						if(debug_level == 200) fereadstatus(fenode);
+						if(festatus != 0)
+						{
+							debug(500, "tuning failed");
+							deltransponderbyid(99);
+							continue;
+						}
+
+						buf = dvbgetsdt(fenode, 0, timeout);
+						transponderid = findtransponderid(fenode, buf);
+						free(buf); buf = NULL;
+
+						if(transponderid == 0 || gettransponder(transponderid) != NULL)
+						{
+							deltransponderbyid(99);
+							continue;
+						}
+
+						if(tpnode->id != transponderid)
+						{
+							scaninfo.newblindcount++;
+							changetransponderid(tpnode, transponderid);
+							status.writetransponder = 1;
+						}
+					}
+					deltransponderbyid(99);
+					if(timernode->aktion != START) break;
+				}
+				if(timernode->aktion != START) break;
+			}
+			if(timernode->aktion != START) break;
+		}
+		if(timernode->aktion != START) break;
+	}
+	
+	return 0;
+}
+
+unsigned int terrblindscan(struct stimerthread* timernode, int onlycalc)
+{
+	int festatus = 0;
+	uint64_t transponderid = 0;
+	unsigned char* buf = NULL;
+	struct dvbdev* fenode = NULL;
+	struct transponder* tpnode = NULL;
+
+	unsigned int frequency = 0;
+	int hp = 0, lp = 0, modulation = 0, bandwidth = 0, transmission = 0, guardinterval = 0, hierarchy = 0;
+
+	unsigned int minfrequency = getconfigint("tblindminfrequency", NULL) * 1000;
+	unsigned int maxfrequency = getconfigint("tblindmaxfrequency", NULL) * 1000;
+	unsigned int stepfrequency = getconfigint("tblindstepfrequency", NULL) * 1000;
+	
+	int minhp = 0, maxhp = 3, stephp = 1;
+	int minlp = 0, maxlp = 3, steplp = 1;
+	int minmodulation = 0, maxmodulation = 2, stepmodulation = 1;
+	int minbandwidth = 0, maxbandwidth = 2, stepbandwidth = 1;
+	int mintransmission = 0, maxtransmission = 1, steptransmission = 1;
+	int minguardinterval = 0, maxguardinterval = 3, stepguardinterval = 1;
+	int minhierarchy = 0, maxhierarchy = 3, stephierarchy = 1;
+
+	int countfrequency = ((maxfrequency + stepfrequency) - minfrequency) / stepfrequency;
+	int counthp = ((maxhp + stephp) - minhp) / stephp;
+	int countlp = ((maxlp + steplp) - minlp) / steplp;
+	int countmodulation = ((maxmodulation + stepmodulation) - minmodulation) / stepmodulation;
+	int countbandwidth = ((maxbandwidth + stepbandwidth) - minbandwidth) / stepbandwidth;
+	int counttransmission = ((maxtransmission + steptransmission) - mintransmission) / steptransmission;
+	int countguardinterval = ((maxguardinterval + stepguardinterval) - minguardinterval) / stepguardinterval;
+	int counthierarchy = ((maxhierarchy + stephierarchy) - minhierarchy) / stephierarchy;
+	
+	if(onlycalc == 1) return counthierarchy * countguardinterval * countmodulation * counttransmission * countfrequency * countbandwidth * countlp * counthp;
+	
+	if(scaninfo.fenode == NULL || timernode == NULL) return -1;
+	int timeout = scaninfo.timeout / 5;
+	if(timeout < 1000000) timeout = 1000000;
+	scaninfo.blindmax += counthierarchy * countguardinterval * countmodulation * counttransmission * countfrequency * countbandwidth * countlp * counthp;
+
+	for(frequency = minfrequency; frequency <= maxfrequency; frequency += stepfrequency)
+	{
+
+		for(hp = minhp; hp <= maxhp; hp += stephp)
+		{
+
+			for(lp = minlp; lp <= maxlp; lp += steplp)
+			{
+
+				for(modulation = minmodulation; modulation <= maxmodulation; modulation += stepmodulation)
+				{
+
+					for(bandwidth = minbandwidth; bandwidth <= maxbandwidth; bandwidth += stepbandwidth)
+					{
+
+						for(transmission = mintransmission; transmission <= maxtransmission; transmission += steptransmission)
+						{
+						
+							for(guardinterval = minguardinterval; guardinterval <= maxguardinterval; guardinterval += stepguardinterval)
+							{
+						
+								for(hierarchy = minhierarchy; hierarchy <= maxhierarchy; hierarchy += stephierarchy)
+								{
+									scaninfo.blindcount++;
+	
+									tpnode = createtransponder(99, scaninfo.fenode->feinfo->type, scaninfo.orbitalpos, frequency, INVERSION_AUTO, bandwidth, lp, hp, modulation, guardinterval, transmission, hierarchy);
+	
+									debug(500, "blindscan: frequ=%d, modulation=%d, hp=%d, lp=%d, bandwidth=%d, guardinterval=%d, transmission=%d, hierarchy=%d, orbitalpos=%d", frequency, modulation, hp, lp, bandwidth, guardinterval, transmission, hierarchy, scaninfo.orbitalpos);
+	
+									if(tpnode != NULL)
+									{
+	
+										fenode = fegetfree(tpnode, 0, scaninfo.fenode);
+										if(fenode == NULL )
+										{
+											debug(500, "Frontend for scan not free");
+											deltransponderbyid(99);
+											continue;
+										}
+	
+										//frontend tune
+										if(fenode->feinfo->type == FE_OFDM)
+										{
+											feset(fenode, tpnode);
+											fetunedvbs(fenode, tpnode);
+										}
+										else
+										{
+											debug(500, "Frontend type unknown");
+											deltransponderbyid(99);
+											continue;
+										}
+		
+										festatus = fewait(fenode);
+										if(debug_level == 200) fereadstatus(fenode);
+										if(festatus != 0)
+										{
+											debug(500, "tuning failed");
+											deltransponderbyid(99);
+											continue;
+										}
+		
+										buf = dvbgetsdt(fenode, 0, timeout);
+										transponderid = findtransponderid(fenode, buf);
+										free(buf); buf = NULL;
+		
+										if(transponderid == 0 || gettransponder(transponderid) != NULL)
+										{
+											deltransponderbyid(99);
+											continue;
+										}
+	
+										if(tpnode->id != transponderid)
+										{
+											scaninfo.newblindcount++;
+											changetransponderid(tpnode, transponderid);
+											status.writetransponder = 1;
+										}
+									}
+									deltransponderbyid(99);
+									if(timernode->aktion != START) break;
+								}
+								if(timernode->aktion != START) break;
+							}
+							if(timernode->aktion != START) break;
+						}
+						if(timernode->aktion != START) break;
+					}
+					if(timernode->aktion != START) break;
+				}
+				if(timernode->aktion != START) break;
+			}
+			if(timernode->aktion != START) break;
+		}
+		if(timernode->aktion != START) break;
+	}
+	
+	return 0;
+}
+
+void blindscan(struct stimerthread* timernode)
+{
+	if(scaninfo.fenode == NULL) return;
+	
+	if(scaninfo.fenode->feinfo->type == FE_QPSK)
+		satblindscan(timernode, 0);
+	else if(scaninfo.fenode->feinfo->type == FE_QAM)
+		cableblindscan(timernode, 0);
+	else if(scaninfo.fenode->feinfo->type == FE_OFDM)
+		terrblindscan(timernode, 0);
 }
 
 void doscan(struct stimerthread* timernode)
