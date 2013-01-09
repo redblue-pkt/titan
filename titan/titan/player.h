@@ -63,6 +63,9 @@ int playerstartts(char* file, int flag)
 		return 1;
 	}
 
+	//test seek 100 paket forward, some app wites own text in first ts paket
+	lseek(fd, 100 * 188, SEEK_CUR);
+
 	fenode = fegetdummy();
 	dvrnode = dvropen(fenode);
 	if(dvrnode == NULL)
