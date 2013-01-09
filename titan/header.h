@@ -258,6 +258,9 @@ int videoclearbuffer(struct dvbdev* node);
 int videogetpts(struct dvbdev* node, uint64_t* pts);
 
 // scan.h
+unsigned int satblindscan(struct stimerthread* timernode, int onlycalc);
+unsigned int cableblindscan(struct stimerthread* timernode, int onlycalc);
+unsigned int terrblindscan(struct stimerthread* timernode, int onlycalc);
 int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char *buf, uint8_t* lastsecnr, struct skin* scan, struct skin* listbox, int flag);
 void screenscanconfig(int flag);
 
