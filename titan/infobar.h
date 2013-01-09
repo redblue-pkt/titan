@@ -19,7 +19,7 @@ void screeninfobar()
 
 	addrc(getrcconfigint("rcvolup", NULL), screenvolumeup, NULL, NULL);
 	addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
-	if(status.playing != 0 && status.pause != 1)
+	if(status.playing == 0 && status.pause == 0) 
 	{
 		addrc(getrcconfigint("rcleft", NULL), screenvolumedown, NULL, NULL);
 		addrc(getrcconfigint("rcright", NULL), screenvolumeup, NULL, NULL);	
