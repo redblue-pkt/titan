@@ -43,7 +43,7 @@ struct tithek
 };
 struct tithek *tithek = NULL;
 
-/*
+
 void freetithekcontent(struct tithek* node)
 {
 	if(node == NULL) return;
@@ -205,8 +205,8 @@ struct tithek* addtithek(char *line, int len, int count, struct tithek* last, in
 	//debug(1000, "out");
 	return newnode;
 }
-*/
 
+/*
 struct tithek* addtithek(char *line, int count, struct tithek* last)
 {
 	//debug(1000, "in");
@@ -376,8 +376,8 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 	//debug(1000, "out");
 	return newnode;
 }
+*/
 
-/*
 int readtithek(const char* filename)
 {
 	debug(1000, "in");
@@ -424,8 +424,8 @@ int readtithek(const char* filename)
 	fclose(fd);
 	return linecount;
 }
-*/
 
+/*
 int readtithek(const char* filename)
 {
 	debug(1000, "in");
@@ -469,8 +469,8 @@ int readtithek(const char* filename)
 	fclose(fd);
 	return linecount;
 }
+*/
 
-/*
 int deltithek(char* link)
 {
 	debug(1000, "in");
@@ -527,8 +527,8 @@ void freetithek()
 
 	debug(1000, "out");
 }
-*/
 
+/*
 int deltithek(char* link)
 {
 	debug(1000, "in");
@@ -596,6 +596,7 @@ void freetithek()
 	}
 	debug(1000, "out");
 }
+*/
 
 char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 {
