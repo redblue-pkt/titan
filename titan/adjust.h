@@ -225,7 +225,7 @@ void screenadjust()
 	addchoicebox(infobarprogram, "1", _("yes"));
 	setchoiceboxselection(infobarprogram, getconfig("infobarprogram", NULL));
 	
-	changeinput(at7000frontrun, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15");
+	changeinput(at7000frontrun, "15\n14\n13\n12\n11\n10\n9\n8\n7\n6\n5\n4\n3\n2\n1");
 	setchoiceboxselection(at7000frontrun, getconfig("at7000frontrun", NULL));
 	
 	changeinput(at7000frontsleep, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15");
@@ -322,7 +322,7 @@ void screenadjust()
 			
 			if(checkbox("ATEVIO7000") == 1)
 			{
-				addconfigscreencheck("at7000frontrun", at7000frontrun, "15");
+				addconfigscreencheck("at7000frontrun", at7000frontrun, "0");
 				addconfigscreencheck("at7000frontsleep", at7000frontsleep, "0");
 				tmpstr = ostrcat("fp_control -P ",getconfig("at7000frontrun", NULL), 0, 0);
 				system(tmpstr);
