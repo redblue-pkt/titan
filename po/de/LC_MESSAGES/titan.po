@@ -2790,3 +2790,9 @@ msgstr "Verwende Standard FEC"
 
 msgid "Show infobar on program change"
 msgstr "Zeige Infobar bei Sendungwechsel"
+
+msgid "Deactivate Crypt Support on Media Playback"
+msgstr "Deaktiviere Crypt Support während der Wiedergabe von Daten / Streams"
+
+msgid "Use cross control for fast zapping and vol"
+msgstr "Benutze das Steuerkreuz für schnelles umschalten und laut / leise"

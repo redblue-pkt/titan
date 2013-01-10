@@ -118,6 +118,9 @@ void mc_main()
 	if(ret == 1) return;
 	ret = 0;
 
+	if(getconfigint("emucontrol", NULL) == 1)
+		system("emu.sh halt");
+
 	debug(50, "drop_caches");
 	writesysint("/proc/sys/vm/drop_caches", 3, 0);
 	
@@ -263,6 +266,9 @@ void mc_main()
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	status.hangtime = getconfigint("hangtime", NULL);
 	status.mcaktiv = 0;
+
+	if(getconfigint("emucontrol", NULL) == 1)
+		system("emu.sh unhalt");
 
 	currvideomode = getvideomode();
 	if(videomode != NULL && currvideomode != NULL && ostrcmp(videomode, currvideomode) != 0)
