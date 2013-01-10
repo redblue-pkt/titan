@@ -295,23 +295,12 @@ manufactor:
 						setchoiceboxselection(loftype, "4");
 						tmpnr = oitoa(node->lofl);
 						changeinput(lofl, tmpnr);
-						if(lofl->input != NULL)
-						{
-							int len = strlen(lofl->input);
-							for(i = 0; i < 6 - len; i++)
-								lofl->input = ostrcat("0", lofl->input, 0, 1);
-						}
-
+						lofl->input = mask(lofl->input, 6, "0");
 						free(tmpnr); tmpnr = NULL;
 
 						tmpnr = oitoa(node->lofh);
 						changeinput(lofh, tmpnr);
-						if(lofh->input != NULL)
-						{
-							int len = strlen(lofh->input);
-							for(i = 0; i < 6 - len; i++)
-								lofh->input = ostrcat("0", lofh->input, 0, 1);
-						}
+						lofh->input = mask(lofh->input, 6, "0");
 						free(tmpnr); tmpnr = NULL;
 
 						scr = atoi(mbox->name);

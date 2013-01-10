@@ -1930,6 +1930,7 @@ start:
 		tmpstr = ostrcat(tmpstr, "00000", 1, 0);
 	changemask(frequency, "00000");
 	changeinput(frequency, tmpstr);
+	frequency->input = mask(frequency->input, 5, "0");
 	free(tmpstr); tmpstr = NULL;
 
 	//inversion
@@ -1953,6 +1954,7 @@ start:
 		tmpstr = ostrcat(tmpstr, "00000", 1, 0);
 	changemask(symbolrate, "00000");
 	changeinput(symbolrate, tmpstr);
+	symbolrate->input = mask(symbolrate->input, 5, "0");
 	free(tmpstr); tmpstr = NULL;
 
 	//polarization
