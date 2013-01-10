@@ -214,8 +214,8 @@ int youtube_search(struct skin* grid, struct skin* listbox, struct skin* countla
 			{
 				menu = ostrcat("/tmp/tithek/youtube.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
-				free(((struct tithek*)listbox->select->handle)->link);
-				((struct tithek*)listbox->select->handle)->link = menu;
+				struct tithek* tnode = (struct tithek*)listbox->select->handle;
+				createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
 				ret = 0;
 			}
 		}

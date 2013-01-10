@@ -206,6 +206,49 @@ struct tithek* addtithek(char *line, int len, int count, struct tithek* last, in
 	return newnode;
 }
 
+struct tithek* createtithek(struct tithek* update, char* title, char* link, char* pic, char* localname, char* menutitle, int flag)
+{
+	int pay = 0;
+	struct tithek* tnode = NULL;
+	char* tmpstr = NULL;
+	
+	pay = getconfigint("tithek_pay", NULL);
+
+	title = stringreplacechar(title, '#', ' ');
+	link = stringreplacechar(link, '#', ' ');
+	pic = stringreplacechar(pic, '#', ' ');
+	localname = stringreplacechar(localname, '#', ' ');
+	menutitle = stringreplacechar(menutitle, '#', ' ');
+	
+	tmpstr = ostrcat(tmpstr, title, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, link, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, pic, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, localname, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, menutitle, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, oitoa(flag), 1, 1);
+
+	tmpstr = string_replace_all("\n", "", tmpstr, 1);
+	tmpstr = string_replace_all("\r", "", tmpstr, 1);
+
+	if(update != NULL)
+	{
+		freetithekcontent(update);
+		addtithekcontent(update, tmpstr, strlen(tmpstr), 1, pay);
+		tnode = update;
+	}
+	else
+		tnode = addtithek(tmpstr, strlen(tmpstr), 1, NULL, pay);
+
+	free(tmpstr);
+
+	return tnode;
+}
+
 /*
 struct tithek* addtithek(char *line, int count, struct tithek* last)
 {
