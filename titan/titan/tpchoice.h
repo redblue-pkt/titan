@@ -7,7 +7,7 @@
 //flag 3: manual scan (DVB-T)
 struct transponder* tpchoicescreen(int orbitalpos, int flag)
 {
-	int rcret = 0;
+	int rcret = 0, count = 0;
 	struct skin* menulist = getscreen("menulist");
 	struct skin* listbox = getscreennode(menulist, "listbox");
 	struct skin* tmp = 0;
@@ -46,6 +46,9 @@ struct transponder* tpchoicescreen(int orbitalpos, int flag)
 		tmp = addlistbox(menulist, listbox, tmp, 1);
 		if(tmp != NULL)
 		{
+			count++;
+			tmpstr = ostrcat(tmpstr, oitoa(count), 1, 1);
+			tmpstr = ostrcat(tmpstr, " / ", 1, 0);
 			tmpstr = ostrcat(tmpstr, _("ID"), 1, 0);
 			tmpstr = ostrcat(tmpstr, " ", 1, 0);
 			tmpstr = ostrcat(tmpstr, ollutoa(node->id), 1, 1);
@@ -55,8 +58,14 @@ struct transponder* tpchoicescreen(int orbitalpos, int flag)
 			tmpstr = ostrcat(tmpstr, oitoa(node->frequency / 1000), 1, 1);
 			tmpstr = ostrcat(tmpstr, " / ", 1, 0);
 			if(node->fetype == FE_QPSK)
-				tmpstr = ostrcat(tmpstr, _("SAT"), 1, 0);
-			else if(node->fetype == FE_QAM)
+			{
+				if(node->polarization == 0)
+					tmpstr = ostrcat(tmpstr, "H", 1, 0);
+				else
+					tmpstr = ostrcat(tmpstr, "V", 1, 0);
+			}
+
+			if(node->fetype == FE_QAM)
 				tmpstr = ostrcat(tmpstr, _("CABLE"), 1, 0);
 			else if(node->fetype == FE_OFDM)
 				tmpstr = ostrcat(tmpstr, _("TERR"), 1, 0);
@@ -64,9 +73,19 @@ struct transponder* tpchoicescreen(int orbitalpos, int flag)
 				tmpstr = ostrcat(tmpstr, _("UNKNOWN"), 1, 0);
 
 			tmpstr = ostrcat(tmpstr, " / ", 1, 0);
-			tmpstr = ostrcat(tmpstr, _("SAT"), 1, 0);
-			tmpstr = ostrcat(tmpstr, " ", 1, 0);
-			tmpstr = ostrcat(tmpstr, oitoa(node->orbitalpos), 1, 1);
+
+			if(node->fetype == FE_QPSK || node->fetype == FE_QAM)
+			{
+				tmpstr = ostrcat(tmpstr, _("SR"), 1, 0);
+				tmpstr = ostrcat(tmpstr, " ", 1, 0);
+				tmpstr = ostrcat(tmpstr, oitoa(node->symbolrate / 1000), 1, 1);
+			}
+			else
+			{
+				tmpstr = ostrcat(tmpstr, _("POS"), 1, 0);
+				tmpstr = ostrcat(tmpstr, " ", 1, 0);
+				tmpstr = ostrcat(tmpstr, oitoa(node->orbitalpos), 1, 1);
+			}
 
 			changetext(tmp, tmpstr);
 			free(tmpstr); tmpstr = NULL;
