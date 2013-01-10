@@ -581,15 +581,16 @@ struct splitstr* oregexsplit(char* regex, char *str, char *tok, int* count)
 
 void freeoregexsplit(struct splitstr* tmparray, int len)
 {
-  if(tmparray == NULL) return;
-  
-  for(i = 0; i < len; i++)
-  {
-    free(tmparray[i].part);
-    tmparray[i].part = NULL; 
-  }
-  
-  free(tmparray);
+	if(tmparray == NULL) return;
+	int i = 0;
+	
+	for(i = 0; i < len; i++)
+	{
+		free(tmparray[i].part);
+		tmparray[i].part = NULL; 
+	}
+	
+	free(tmparray);
 }
 
 void ckeckkillnetthread()
