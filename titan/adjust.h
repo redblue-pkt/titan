@@ -241,7 +241,7 @@ void screenadjust()
 	addchoicebox(emucontrol, "1", _("yes"));
 	setchoiceboxselection(emucontrol, getconfig("emucontrol", NULL));
 
-	if(status.security == 0)
+	if(status.security == 1)
 		emucontrol->hidden = NO;
 	else
 		emucontrol->hidden = YES;
