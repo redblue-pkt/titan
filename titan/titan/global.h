@@ -6,6 +6,7 @@
 char* mask(char* input, int count, char* maskchar)
 {
 	char* tmpstr = NULL;
+	int i = 0;
 
 	tmpstr = ostrcat(input, NULL, 1, 0);
 
