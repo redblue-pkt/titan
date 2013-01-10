@@ -67,11 +67,6 @@ char* streamcloud(char* host, char* file)
 	debug(99, "ip: %s", ip);
 	debug(99, "tmpfile: %s", tmpfile);
 
-// old not working we need cookie
-//	tmpstr = gethttp(tmphost, tmpfile, 80, NULL, NULL, NULL, 0);
-//new
-//getstream1="GET /iupl3hux3jsa HTTP/1.1\r\nHost: streamcloud.eu\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n"
-//echo -e $getstream1 | /var/usr/local/share/titan/plugins/tithek/netcat streamcloud.eu 80
 	send = ostrcat(send, "GET /", 1, 0);
 	send = ostrcat(send, file, 1, 0);
 	send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);
@@ -79,6 +74,10 @@ char* streamcloud(char* host, char* file)
 	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);
 	debug(99, "send: %s", send);
 
+	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 1);
+
+/*
+	old code	
 	cmd = ostrcat(cmd, "echo -e \"", 1, 0);
 	cmd = ostrcat(cmd, send, 1, 0);
 	cmd = ostrcat(cmd, "\" | /var/usr/local/share/titan/plugins/tithek/netcat ", 1, 0);
@@ -87,9 +86,9 @@ char* streamcloud(char* host, char* file)
 	debug(99, "cmd: %s", cmd);
 	free(tmpstr), tmpstr = NULL;
 	tmpstr = command(cmd);
+*/
 	cookie = string_resub("Set-Cookie: afc=", ";", tmpstr, 0);	
 	debug(99, "cookie: %s", cookie);
-//newend
  
 	sleep(20);
 
