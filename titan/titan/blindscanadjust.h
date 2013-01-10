@@ -125,57 +125,27 @@ void screenblindscanadjust()
 	//sat
 	changemask(minfrequency, "00000");
 	changeinput(minfrequency, getconfig("blindminfrequency", NULL));
-	if(minfrequency->input != NULL)
-	{
-		int len = strlen(minfrequency->input);
-		for(i = 0; i < 5 - len; i++)
-			minfrequency->input = ostrcat("0", minfrequency->input, 0, 1);
-	}
+	minfrequency->input = mask(minfrequency->input, 5, "0");
   
 	changemask(maxfrequency, "00000");
 	changeinput(maxfrequency, getconfig("blindmaxfrequency", NULL));
-	if(maxfrequency->input != NULL)
-	{
-		int len = strlen(maxfrequency->input);
-		for(i = 0; i < 5 - len; i++)
-			maxfrequency->input = ostrcat("0", maxfrequency->input, 0, 1);
-	}
+	maxfrequency->input = mask(maxfrequency->input, 5, "0");
   
-	changeinput(stepfrequency, getconfig("blindstepfrequency", NULL));
 	changemask(stepfrequency, "00");
-	if(stepfrequency->input != NULL)
-	{
-		int len = strlen(stepfrequency->input);
-		for(i = 0; i < 2 - len; i++)
-			stepfrequency->input = ostrcat("0", stepfrequency->input, 0, 1);
-	}
+	changeinput(stepfrequency, getconfig("blindstepfrequency", NULL));
+	stepfrequency->input = mask(stepfrequency->input, 2, "0");
   
-	changeinput(minsignalrate, getconfig("blindminsignalrate", NULL));
 	changemask(minsignalrate, "00000");
-	if(minsignalrate->input != NULL)
-	{
-		int len = strlen(minsignalrate->input);
-		for(i = 0; i < 5 - len; i++)
-			minsignalrate->input = ostrcat("0", minsignalrate->input, 0, 1);
-	}
+	changeinput(minsignalrate, getconfig("blindminsignalrate", NULL));
+	minsignalrate->input = mask(minsignalrate->input, 5, "0");
   
-	changeinput(maxsignalrate, getconfig("blindmaxsignalrate", NULL));
 	changemask(maxsignalrate, "00000");
-	if(maxsignalrate->input != NULL)
-	{
-		int len = strlen(maxsignalrate->input);
-		for(i = 0; i < 5 - len; i++)
-			maxsignalrate->input = ostrcat("0", maxsignalrate->input, 0, 1);
-	}
+	changeinput(maxsignalrate, getconfig("blindmaxsignalrate", NULL));
+	maxsignalrate->input = mask(maxsignalrate->input, 5, "0");
   
-	changeinput(stepsignalrate, getconfig("blindstepsignalrate", NULL));
 	changemask(stepsignalrate, "00");
-	if(stepsignalrate->input != NULL)
-	{
-		int len = strlen(stepsignalrate->input);
-		for(i = 0; i < 2 - len; i++)
-			stepsignalrate->input = ostrcat("0", stepsignalrate->input, 0, 1);
-	}
+	changeinput(stepsignalrate, getconfig("blindstepsignalrate", NULL));
+	stepsignalrate->input = mask(stepsignalrate->input, 2, "0");
 
 	addchoicebox(usedefaultsr, "0", _("no"));
 	addchoicebox(usedefaultsr, "1", _("yes"));
@@ -192,57 +162,27 @@ void screenblindscanadjust()
 	//cable
 	changemask(cminfrequency, "00000");
 	changeinput(cminfrequency, getconfig("cblindminfrequency", NULL));
-	if(cminfrequency->input != NULL)
-	{
-		int len = strlen(cminfrequency->input);
-		for(i = 0; i < 5 - len; i++)
-			cminfrequency->input = ostrcat("0", cminfrequency->input, 0, 1);
-	}
+	cminfrequency->input = mask(cminfrequency->input, 5, "0");
   
 	changemask(cmaxfrequency, "00000");
 	changeinput(cmaxfrequency, getconfig("cblindmaxfrequency", NULL));
-	if(cmaxfrequency->input != NULL)
-	{
-		int len = strlen(cmaxfrequency->input);
-		for(i = 0; i < 5 - len; i++)
-			cmaxfrequency->input = ostrcat("0", cmaxfrequency->input, 0, 1);
-	}
+	cmaxfrequency->input = mask(cmaxfrequency->input, 5, "0");
   
 	changeinput(cstepfrequency, getconfig("cblindstepfrequency", NULL));
 	changemask(cstepfrequency, "00");
-	if(cstepfrequency->input != NULL)
-	{
-		int len = strlen(cstepfrequency->input);
-		for(i = 0; i < 2 - len; i++)
-			cstepfrequency->input = ostrcat("0", cstepfrequency->input, 0, 1);
-	}
+	cstepfrequency->input = mask(cstepfrequency->input, 2, "0");
   
 	changeinput(cminsignalrate, getconfig("cblindminsignalrate", NULL));
 	changemask(cminsignalrate, "00000");
-	if(cminsignalrate->input != NULL)
-	{
-		int len = strlen(cminsignalrate->input);
-		for(i = 0; i < 5 - len; i++)
-			cminsignalrate->input = ostrcat("0", cminsignalrate->input, 0, 1);
-	}
+	cminsignalrate->input = mask(cminsignalrate->input, 5, "0");
   
 	changeinput(cmaxsignalrate, getconfig("cblindmaxsignalrate", NULL));
 	changemask(cmaxsignalrate, "00000");
-	if(cmaxsignalrate->input != NULL)
-	{
-		int len = strlen(cmaxsignalrate->input);
-		for(i = 0; i < 5 - len; i++)
-			cmaxsignalrate->input = ostrcat("0", cmaxsignalrate->input, 0, 1);
-	}
+	cmaxsignalrate->input = mask(cmaxsignalrate->input, 5, "0");
   
 	changeinput(cstepsignalrate, getconfig("cblindstepsignalrate", NULL));
 	changemask(cstepsignalrate, "00");
-	if(cstepsignalrate->input != NULL)
-	{
-		int len = strlen(cstepsignalrate->input);
-		for(i = 0; i < 2 - len; i++)
-			cstepsignalrate->input = ostrcat("0", cstepsignalrate->input, 0, 1);
-	}
+	cstepsignalrate->input = mask(cstepsignalrate->input, 2, "0");
 
 	addchoicebox(cusedefaultsr, "0", _("no"));
 	addchoicebox(cusedefaultsr, "1", _("yes"));
@@ -255,30 +195,15 @@ void screenblindscanadjust()
 	//terr
 	changemask(tminfrequency, "00000");
 	changeinput(tminfrequency, getconfig("tblindminfrequency", NULL));
-	if(tminfrequency->input != NULL)
-	{
-		int len = strlen(tminfrequency->input);
-		for(i = 0; i < 5 - len; i++)
-			tminfrequency->input = ostrcat("0", tminfrequency->input, 0, 1);
-	}
+	tminfrequency->input = mask(tminfrequency->input, 5, "0");
   
 	changemask(tmaxfrequency, "00000");
 	changeinput(tmaxfrequency, getconfig("tblindmaxfrequency", NULL));
-	if(tmaxfrequency->input != NULL)
-	{
-		int len = strlen(tmaxfrequency->input);
-		for(i = 0; i < 5 - len; i++)
-			tmaxfrequency->input = ostrcat("0", tmaxfrequency->input, 0, 1);
-	}
+	tmaxfrequency->input = mask(tmaxfrequency->input, 5, "0");
   
 	changeinput(tstepfrequency, getconfig("tblindstepfrequency", NULL));
 	changemask(tstepfrequency, "00");
-	if(tstepfrequency->input != NULL)
-	{
-		int len = strlen(tstepfrequency->input);
-		for(i = 0; i < 2 - len; i++)
-			tstepfrequency->input = ostrcat("0", tstepfrequency->input, 0, 1);
-	}
+	tstepfrequency->input = mask(tstepfrequency->input, 2, "0");
 
 	drawscreen(blindscan, 2, 0);
 	blindchangetunertype(tunertype, minfrequency, maxfrequency, stepfrequency, minsignalrate, maxsignalrate, stepsignalrate, usedefaultsr, onlydvbs, usedefaultfec, cminfrequency, cmaxfrequency, cstepfrequency, cminsignalrate, cmaxsignalrate, cstepsignalrate, cusedefaultsr, cusedefaultfec, tminfrequency, tmaxfrequency, tstepfrequency);

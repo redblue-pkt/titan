@@ -1,7 +1,23 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-#define MAXTOKENS       256
+#define MAXTOKENS 256
+
+char* mask(char* input, int count, char* maskchar)
+{
+	char* tmpstr = NULL;
+
+	tmpstr = ostrcat(input, NULL, 1, 0);
+
+	if(tmpstr != NULL)
+	{
+		int len = strlen(tmpstr);
+		for(i = 0; i < count - len; i++)
+			tmpstr = ostrcat(maskchar, tmpstr, 0, 1);
+	}
+
+	return tmpstr;
+}
 
 int checkinternet()
 {

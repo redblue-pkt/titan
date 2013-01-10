@@ -49,12 +49,7 @@ void screenmediadbedit(char* file, int id, int flag)
 		tmpstr = oitoa(node->year);
 		changeinput(year, tmpstr);
 		free(tmpstr); tmpstr = NULL;
-		if(year->input != NULL)
-		{
-			int len = strlen(year->input);
-			for(i = 0; i < 4 - len; i++)
-				year->input = ostrcat("0", year->input, 0, 1);
-		}
+		year->input = mask(year->input, 4, "0");
 
 		changeinput(released, node->released);
 		changeinput(runtime, node->runtime);
@@ -75,12 +70,7 @@ void screenmediadbedit(char* file, int id, int flag)
 		tmpstr = oitoa(node->votes);
 		changeinput(votes, tmpstr);
 		free(tmpstr); tmpstr = NULL;
-		if(votes->input != NULL)
-		{
-			int len = strlen(votes->input);
-			for(i = 0; i < 7 - len; i++)
-				votes->input = ostrcat("0", votes->input, 0, 1);
-		}
+		votes->input = mask(votes->input, 7, "0");
 
 		addchoicebox(locked, "0", _("unlock -> lock it"));
 		addchoicebox(locked, "1", _("unlock -> leaf unlock"));

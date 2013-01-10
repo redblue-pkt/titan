@@ -267,12 +267,7 @@ void screendlna()
   
 	changemask(port, "00000");
 	changeinput(port, node->port);
-	if(port->input != NULL)
-	{
-		int len = strlen(port->input);
-		for(i = 0; i < 5 - len; i++)
-			port->input = ostrcat("0", port->input, 0, 1);
-	}
+	port->input = mask(port->input, 5, "0");
 
 	changeinput(name, node->name);
 

@@ -36,21 +36,11 @@ void screenhttpdsettings()
 
 	changemask(httpdport, "00000");
 	changeinput(httpdport, getconfig("httpdport", NULL));
-	if(httpdport->input != NULL)
-	{
-		int len = strlen(httpdport->input);
-		for(i = 0; i < 5 - len; i++)
-			httpdport->input = ostrcat("0", httpdport->input, 0, 1);
-	}
+	httpdport->input = mask(httpdport->input, 5, "0");
 
 	changemask(streamport, "00000");
 	changeinput(streamport, getconfig("streamport", NULL));
-	if(streamport->input != NULL)
-	{
-		int len = strlen(streamport->input);
-		for(i = 0; i < 5 - len; i++)
-			streamport->input = ostrcat("0", streamport->input, 0, 1);
-	}
+	streamport->input = mask(streamport->input, 5, "0");
 	
 	addchoicebox(rguidstart, "0", _("no"));
 	addchoicebox(rguidstart, "1", _("yes"));
@@ -58,12 +48,7 @@ void screenhttpdsettings()
 
 	changemask(rguidport, "00000");
 	changeinput(rguidport, getconfig("rguidport", NULL));
-	if(rguidport->input != NULL)
-	{
-		int len = strlen(rguidport->input);
-		for(i = 0; i < 5 - len; i++)
-			rguidport->input = ostrcat("0", rguidport->input, 0, 1);
-	}
+	rguidport->input = mask(rguidport->input, 5, "0");
 
 	drawscreen(httpdsettings, 0, 0);
 	addscreenrc(httpdsettings, listbox);
