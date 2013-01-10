@@ -3,7 +3,7 @@
 
 void screenhttpdsettings()
 {
-	int rcret = 0, i = 0;
+	int rcret = 0;
 	struct skin* httpdsettings = getscreen("httpdsettings");
 	struct skin* listbox = getscreennode(httpdsettings, "listbox");
 	struct skin* httpdstart = getscreennode(httpdsettings, "httpdstart");

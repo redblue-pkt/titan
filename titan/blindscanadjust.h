@@ -84,7 +84,7 @@ void blindchangetunertype(struct skin* tunertype, struct skin* minfrequency, str
 
 void screenblindscanadjust()
 {
-	int rcret = 0, i = 0;
+	int rcret = 0;
 	struct skin* blindscan = getscreen("blindscanadjust");
 	struct skin* listbox = getscreennode(blindscan, "listbox");
 	struct skin* tunertype = getscreennode(blindscan, "tunertype");
