@@ -20,7 +20,7 @@ void screenscreensaveradjust()
 	addchoicebox(screensaver, "1", _("yes"));
 	setchoiceboxselection(screensaver, getconfig("screensaver", NULL));
 
-	changeinput(screensaver_delay, "5\n6\n7\n8\n9\n10\n15\n20\n30\40\n50\60");
+	changeinput(screensaver_delay, "5\n6\n7\n8\n9\n10\n15\n20\n30\n40\n50\n60");
 	setchoiceboxselection(screensaver_delay, getconfig("screensaver_delay", NULL));
 
 	changeinput(screensaver_interval, "2\n5\n10\n20\n30\n40\n50\n60\n70\n80\n90\n100");
