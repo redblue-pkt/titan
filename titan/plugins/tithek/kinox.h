@@ -394,7 +394,8 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 		else
 			tmpstr = ostrcat("/tmp/tithek/kinox.hoster.ser.list", NULL, 0, 0);
 		writesys(tmpstr, line, 0);
-		free(((struct tithek*)listbox->select->handle)->link);
+// *** glibc detected *** titan: free(): invalid pointer: 0x00a3bccd ***
+//		free(((struct tithek*)listbox->select->handle)->link);
 		((struct tithek*)listbox->select->handle)->link = tmpstr;
 		ret = 0;
 	}
@@ -599,7 +600,8 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 	{
 		tmpstr = ostrcat("/tmp/tithek/kinox.hoster.series.list", NULL, 0, 0);
 		writesys(tmpstr, line, 0);
-		free(((struct tithek*)listbox->select->handle)->link);
+// *** glibc detected *** titan: free(): invalid pointer: 0x00a3bccd ***
+//		free(((struct tithek*)listbox->select->handle)->link);
 		((struct tithek*)listbox->select->handle)->link = tmpstr;
 		ret = 0;
 	}
