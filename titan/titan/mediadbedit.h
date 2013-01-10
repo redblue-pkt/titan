@@ -5,7 +5,7 @@
 //flag 1: save/restore background
 void screenmediadbedit(char* file, int id, int flag)
 {
-	int rcret = 0, type = 0, i = 0;
+	int rcret = 0, type = 0;
 	struct skin* mediadbedit = getscreen("mediadbedit");
 	struct skin* listbox = getscreennode(mediadbedit, "listbox");
 	struct skin* title = getscreennode(mediadbedit, "title");
