@@ -536,6 +536,45 @@ int oregexint(char* regex, char* str)
 	return iret;
 }
 
+struct splitstr* oregexsplit(char* regex, char *str, char *tok, int* count)
+{
+	debug(1000, "in");
+	char *tmpstr = NULL;
+	struct splitstr *tmparray = NULL;
+	*count = 0;
+
+	if(str == NULL || tok == NULL)
+		return NULL;
+
+	tmpstr = strtok(str, tok);
+	while(tmpstr != NULL)
+	{
+		*count = *count + 1;
+		tmparray = (struct splitstr*)realloc(tmparray, sizeof(struct splitstr*) * (*count));
+		if(tmparray == NULL)
+			return NULL;
+      
+		(&tmparray[(*count) - 1])->part = oregex(regex, tmpstr);
+		tmpstr = strtok(NULL, tok);
+	}
+
+	debug(1000, "out");
+	return tmparray;
+}
+
+void freeoregexsplit(struct splitstr* tmparray, int len)
+{
+  if(tmparray == NULL) return;
+  
+  for(i = 0; i < len; i++)
+  {
+    free(tmparray[i].part);
+    tmparray[i].part = NULL; 
+  }
+  
+  free(tmparray);
+}
+
 void ckeckkillnetthread()
 {
 //	if(checkbox("ATEMIO510") == 1)

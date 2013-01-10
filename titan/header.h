@@ -703,6 +703,8 @@ char* readfromlinetoline(char* str, int start, int end, int flag);
 int checkdev(char* dev);
 char* getvideomode();
 int checkinternet();
+struct splitstr* oregexsplit(char* regex, char *str, char *tok, int* count);
+void freeoregexsplit(struct splitstr* tmparray, int len);
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);

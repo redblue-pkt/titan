@@ -181,12 +181,12 @@ int myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countla
 			{								
 				if(ostrstr(ret1[i].part, "img id='i") != NULL)
 				{
-				printf("ret1[i].part: %s",ret1[i].part);
+					debug(99, "---------------------------");
+					debug(99, "ret1[i].part: %s", ret1[i].part);
 				
 					pic = oregex(".*longdesc='(.*)' class='vThumb'.*", ret1[i].part);
 					id = oregex(".*img id='i(.*)' onload=.*", ret1[i].part);
 					title = oregex(".*alt='(.*)' onmouseover=.*", ret1[i].part);
-					debug(99, "---------------------------");
 					debug(99, "title: %s", title);
 					debug(99, "pic: %s", pic);
 					debug(99, "id: %s", id);
@@ -222,8 +222,8 @@ int myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countla
 			{
 				menu = ostrcat("/tmp/tithek/myvideo.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
-				free(((struct tithek*)listbox->select->handle)->link);
-				((struct tithek*)listbox->select->handle)->link = menu;
+				struct tithek* tnode = (struct tithek*)listbox->select->handle;
+				createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
 				ret = 0;
 			}
 		}
