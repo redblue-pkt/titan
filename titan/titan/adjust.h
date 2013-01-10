@@ -50,7 +50,9 @@ void screenadjust()
 	struct skin* infobarprogram = getscreennode(adjust, "infobarprogram");
 	struct skin* at7000frontrun = getscreennode(adjust, "at7000frontrun");
 	struct skin* at7000frontsleep = getscreennode(adjust, "at7000frontsleep");
-	
+	struct skin* darkcontrol = getscreennode(adjust, "darkcontrol");
+	struct skin* emucontrol = getscreennode(adjust, "emucontrol");
+
 	struct skin* tmp = NULL;
 
 	changeinput(volbartimeout, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10");
@@ -230,12 +232,27 @@ void screenadjust()
 	
 	changeinput(at7000frontsleep, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15");
 	setchoiceboxselection(at7000frontsleep, getconfig("at7000frontsleep", NULL));
-	
+
+	addchoicebox(darkcontrol, "0", _("no"));
+	addchoicebox(darkcontrol, "1", _("yes"));
+	setchoiceboxselection(darkcontrol, getconfig("darkcontrol", NULL));
+
+	addchoicebox(emucontrol, "0", _("no"));
+	addchoicebox(emucontrol, "1", _("yes"));
+	setchoiceboxselection(emucontrol, getconfig("emucontrol", NULL));
+
+	if(status.security == 0)
+		emucontrol->hidden = NO;
+	else
+		emucontrol->hidden = YES;
+
 	if(checkbox("ATEVIO7000") == 1)
 	{
 		at7000frontrun->hidden = NO;
 		at7000frontsleep->hidden = NO;
-	}else{
+	}
+	else
+	{
 		at7000frontrun->hidden = YES;
 		at7000frontsleep->hidden = YES;
 	}
@@ -319,6 +336,8 @@ void screenadjust()
 			addconfigscreencheck("expertmodus", expertmodus, "0");
 			addconfigscreencheck("infobarprogram", infobarprogram, "0");
 			status.infobarprogram = getconfigint("infobarprogram", NULL);
+			addconfigscreencheck("darkcontrol", darkcontrol, "0");
+			addconfigscreencheck("emucontrol", emucontrol, "0");
 			
 			if(checkbox("ATEVIO7000") == 1)
 			{
