@@ -193,13 +193,13 @@ void screenblindscanadjust()
 	setchoiceboxselection(cusedefaultfec, getconfig("cblindusedefaultfec", NULL));
 	
 	//terr
-	changemask(tminfrequency, "00000");
+	changemask(tminfrequency, "000000");
 	changeinput(tminfrequency, getconfig("tblindminfrequency", NULL));
-	tminfrequency->input = mask(tminfrequency->input, 5, "0");
+	tminfrequency->input = mask(tminfrequency->input, 6, "0");
   
-	changemask(tmaxfrequency, "00000");
+	changemask(tmaxfrequency, "000000");
 	changeinput(tmaxfrequency, getconfig("tblindmaxfrequency", NULL));
-	tmaxfrequency->input = mask(tmaxfrequency->input, 5, "0");
+	tmaxfrequency->input = mask(tmaxfrequency->input, 6, "0");
   
 	changeinput(tstepfrequency, getconfig("tblindstepfrequency", NULL));
 	changemask(tstepfrequency, "00");

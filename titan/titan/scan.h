@@ -1927,10 +1927,24 @@ start:
 	if(tpnode != NULL)
 		tmpstr = oitoa(tpnode->frequency / 1000);
 	else
-		tmpstr = ostrcat(tmpstr, "00000", 1, 0);
-	changemask(frequency, "00000");
-	changeinput(frequency, tmpstr);
-	frequency->input = mask(frequency->input, 5, "0");
+	{
+		if(flag == 3)
+			tmpstr = ostrcat(tmpstr, "000000", 1, 0);
+		else
+			tmpstr = ostrcat(tmpstr, "00000", 1, 0);
+	}
+	if(flag == 3)
+	{
+		changemask(frequency, "000000");
+		changeinput(frequency, tmpstr);
+		frequency->input = mask(frequency->input, 6, "0");
+	}
+	else
+	{
+		changemask(frequency, "00000");
+		changeinput(frequency, tmpstr);
+		frequency->input = mask(frequency->input, 5, "0");
+	}
 	free(tmpstr); tmpstr = NULL;
 
 	//inversion
