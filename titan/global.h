@@ -2636,6 +2636,9 @@ int setoverclockfreq(int mode)
 int setvmpeg(struct dvbdev* node, int posx, int posy, int width, int height)
 {
 	debug(1000, "in");
+	if(getconfigint("minitv", NULL) == 1) 
+ 		return 0;
+ 	
 	char* vmpegdev = NULL, *tmpstr = NULL, *buf = NULL;
 	int ret = 0;
 
