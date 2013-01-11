@@ -641,6 +641,14 @@ void freetithek()
 }
 */
 
+void tithekdownloadthread(struct stimerthread* timernode, struct download* node, int flag)
+{
+	if(node != NULL)
+		gethttp(node->host, node->page, node->port, node->filename, node->auth, NULL, 0);
+
+	free(node); node = NULL;
+}
+
 char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 {
 	int ret = 1;
@@ -683,7 +691,22 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 		if(!file_exist(localfile))
 		{
 			if(pic == 1)
-				gethttp(ip, path, 80, localfile, pw, NULL, 0);
+			{
+				//dnode is freed in thread
+				struct download* dnode = calloc(1, sizeof(struct download));
+				if(dnode != NULL)
+				{
+					dnode->host = ip;
+					dnode->page = path;
+					dnode->port = 80;
+					dnode->filename = localfile;
+					dnode->auth = pw;
+					dnode->connfd = -1;
+					dnode->ret = -1;
+					addtimer(&tithekdownloadthread, START, 100, 1, (void*)dnode, NULL, NULL);
+					//gethttp(ip, path, 80, localfile, pw, NULL, 0);
+				}
+			}
 			else
 				gethttp(ip, path, 80, localfile, pw, NULL, 0);			
 		}
@@ -1005,8 +1028,6 @@ void screentithekplay(char* titheklink, char* title, int first)
 		if(rcret == 1) return;
 	}
 
-	status.hangtime = 99999;
-
 	struct skin* grid = getscreen("titheklist");
 	struct skin* listbox = getscreennode(grid, "listbox");
 	struct skin* countlabel = getscreennode(grid, "countlabel");
@@ -1054,6 +1075,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 				{
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
+					/* not working with thread download
 					off64_t checkpic = getfilesize(tithekpic);
 			
 					if(checkpic < 1000)
@@ -1061,6 +1083,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 						free(tithekpic); tithekpic = NULL;
 						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
 					}
+					*/
 			
 					changepic(tmp, tithekpic);
 					free(tithekpic); tithekpic = NULL;
@@ -1075,6 +1098,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 				{
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
+					/* not working with thread download
 					off64_t checkpic = getfilesize(tithekpic);
 
 					if(checkpic < 1000)
@@ -1082,6 +1106,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 						free(tithekpic); tithekpic = NULL;
 						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
 					}
+					*/
 
 					changepic(tmp, tithekpic);
 					free(tithekpic); tithekpic = NULL;
@@ -1355,7 +1380,6 @@ void screentithekplay(char* titheklink, char* title, int first)
 		delallfiles("/tmp/tithek", ".list");
 		servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 	}
-	status.hangtime = getconfigint("hangtime", NULL);
 }
 
 #endif
