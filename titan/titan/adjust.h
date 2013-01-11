@@ -52,6 +52,7 @@ void screenadjust()
 	struct skin* at7000frontsleep = getscreennode(adjust, "at7000frontsleep");
 	struct skin* darkcontrol = getscreennode(adjust, "darkcontrol");
 	struct skin* emucontrol = getscreennode(adjust, "emucontrol");
+	struct skin* minitv = getscreennode(adjust, "minitv");
 
 	struct skin* tmp = NULL;
 
@@ -241,6 +242,10 @@ void screenadjust()
 	addchoicebox(emucontrol, "1", _("yes"));
 	setchoiceboxselection(emucontrol, getconfig("emucontrol", NULL));
 
+	addchoicebox(minitv, "0", _("no"));
+	addchoicebox(minitv, "1", _("yes"));
+	setchoiceboxselection(minitv, getconfig("minitv", NULL));
+
 	if(status.security == 1)
 		emucontrol->hidden = NO;
 	else
@@ -338,6 +343,7 @@ void screenadjust()
 			status.infobarprogram = getconfigint("infobarprogram", NULL);
 			addconfigscreencheck("darkcontrol", darkcontrol, "0");
 			addconfigscreencheck("emucontrol", emucontrol, "0");
+			addconfigscreencheck("minitv", minitv, "0");
 			
 			if(checkbox("ATEVIO7000") == 1)
 			{

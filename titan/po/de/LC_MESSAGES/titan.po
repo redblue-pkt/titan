@@ -2796,3 +2796,6 @@ msgstr "Deaktiviere Crypt Support während der Wiedergabe von Daten / Streams"
 
 msgid "Use cross control for fast zapping and vol"
 msgstr "Benutze das Steuerkreuz für schnelles umschalten und laut / leise"
+
+msgid "Deactivate MiniTV"
+msgstr "Deaktiviere MiniTV Vorschau Fenster"
