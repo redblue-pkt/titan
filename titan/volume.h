@@ -37,6 +37,10 @@ void screenvolume(int direction, int flag)
 		delrc(getrcconfigint("rcright", NULL), NULL, NULL);
 		delrc(getrcconfigint("rcleft", NULL), NULL, NULL);
 	}
+	else if(getconfigint("crosscontrol", NULL) == 1 && (status.play == 1 || status.pause == 1))
+		return;
+
+	
 	delrc(getrcconfigint("rcmute", NULL), NULL, NULL);
 
 	if(status.mute == 1)
@@ -85,8 +89,11 @@ void screenvolume(int direction, int flag)
 
 	addrc(getrcconfigint("rcvolup", NULL), screenvolumeup, NULL, NULL);
 	addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
-	addrc(getrcconfigint("rcright", NULL), screenvolumeup, NULL, NULL);
-	addrc(getrcconfigint("rcleft", NULL), screenvolumedown, NULL, NULL);
+	if(getconfigint("crosscontrol", NULL) == 1 && status.play == 0 && status.pause == 0)
+	{
+		addrc(getrcconfigint("rcright", NULL), screenvolumeup, NULL, NULL);
+		addrc(getrcconfigint("rcleft", NULL), screenvolumedown, NULL, NULL);
+	}
 	addrc(getrcconfigint("rcmute", NULL), screenmute, NULL, NULL);
 	restorescreen(bg, volume);
 	blitfb(0);
