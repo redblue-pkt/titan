@@ -45,13 +45,12 @@ int screendownload(char* title, char* host, char* page, int port, char* filename
 		drawscreen(download, 0, 0);
 
 
-	dnode = malloc(sizeof(struct download));
+	dnode = calloc(1, sizeof(struct download));
 	if(dnode == NULL)
 	{
 		err("no mem");
 		return 1;
 	}
-	memset(dnode, 0, sizeof(struct download));
 
 	dnode->host = host;
 	dnode->page = page;
