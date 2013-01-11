@@ -160,13 +160,13 @@ void screenblindscanadjust()
 	setchoiceboxselection(usedefaultfec, getconfig("blindusedefaultfec", NULL));
 	
 	//cable
-	changemask(cminfrequency, "00000");
+	changemask(cminfrequency, "000000");
 	changeinput(cminfrequency, getconfig("cblindminfrequency", NULL));
-	cminfrequency->input = mask(cminfrequency->input, 5, "0");
+	cminfrequency->input = mask(cminfrequency->input, 6, "0");
   
-	changemask(cmaxfrequency, "00000");
+	changemask(cmaxfrequency, "000000");
 	changeinput(cmaxfrequency, getconfig("cblindmaxfrequency", NULL));
-	cmaxfrequency->input = mask(cmaxfrequency->input, 5, "0");
+	cmaxfrequency->input = mask(cmaxfrequency->input, 6, "0");
   
 	changeinput(cstepfrequency, getconfig("cblindstepfrequency", NULL));
 	changemask(cstepfrequency, "00");
