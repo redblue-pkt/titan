@@ -1933,7 +1933,7 @@ start:
 		else
 			tmpstr = ostrcat(tmpstr, "00000", 1, 0);
 	}
-	if(flag == 3)
+	if(flag == 2 || flag == 3)
 	{
 		changemask(frequency, "000000");
 		changeinput(frequency, tmpstr);
