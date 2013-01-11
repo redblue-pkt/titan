@@ -50,7 +50,7 @@ void screenadjust()
 	struct skin* infobarprogram = getscreennode(adjust, "infobarprogram");
 	struct skin* at7000frontrun = getscreennode(adjust, "at7000frontrun");
 	struct skin* at7000frontsleep = getscreennode(adjust, "at7000frontsleep");
-	struct skin* darkcontrol = getscreennode(adjust, "darkcontrol");
+	struct skin* crosscontrol = getscreennode(adjust, "crosscontrol");
 	struct skin* emucontrol = getscreennode(adjust, "emucontrol");
 	struct skin* minitv = getscreennode(adjust, "minitv");
 
@@ -234,9 +234,9 @@ void screenadjust()
 	changeinput(at7000frontsleep, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15");
 	setchoiceboxselection(at7000frontsleep, getconfig("at7000frontsleep", NULL));
 
-	addchoicebox(darkcontrol, "0", _("no"));
-	addchoicebox(darkcontrol, "1", _("yes"));
-	setchoiceboxselection(darkcontrol, getconfig("darkcontrol", NULL));
+	addchoicebox(crosscontrol, "0", _("no"));
+	addchoicebox(crosscontrol, "1", _("yes"));
+	setchoiceboxselection(crosscontrol, getconfig("crosscontrol", NULL));
 
 	addchoicebox(emucontrol, "0", _("no"));
 	addchoicebox(emucontrol, "1", _("yes"));
@@ -341,7 +341,7 @@ void screenadjust()
 			addconfigscreencheck("expertmodus", expertmodus, "0");
 			addconfigscreencheck("infobarprogram", infobarprogram, "0");
 			status.infobarprogram = getconfigint("infobarprogram", NULL);
-			addconfigscreencheck("darkcontrol", darkcontrol, "0");
+			addconfigscreencheck("crosscontrol", crosscontrol, "0");
 			addconfigscreencheck("emucontrol", emucontrol, "0");
 			addconfigscreencheck("minitv", minitv, "0");
 			

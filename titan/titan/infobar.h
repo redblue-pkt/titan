@@ -19,7 +19,7 @@ void screeninfobar()
 
 	addrc(getrcconfigint("rcvolup", NULL), screenvolumeup, NULL, NULL);
 	addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
-	if(getconfigint("darkcontrol", NULL) == 1 && status.playing == 0 && status.pause == 0) 
+	if(getconfigint("crosscontrol", NULL) == 1 && status.playing == 0 && status.pause == 0) 
 	{
 		addrc(getrcconfigint("rcleft", NULL), screenvolumedown, NULL, NULL);
 		addrc(getrcconfigint("rcright", NULL), screenvolumeup, NULL, NULL);	
@@ -573,7 +573,7 @@ void screeninfobar()
 			status.infobar = 1;
 			continue;
 		}
-		if(rcret == getrcconfigint("rcchup", NULL) || (getconfigint("darkcontrol", NULL) == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcdown", NULL)))
+		if(rcret == getrcconfigint("rcchup", NULL) || (getconfigint("crosscontrol", NULL) == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcdown", NULL)))
 		{
 			subtitlepause(1);
 			zapup();
@@ -583,7 +583,7 @@ void screeninfobar()
 			status.infobar = 2;
 			continue;
 		}
-		if(rcret == getrcconfigint("rcchdown", NULL) || (getconfigint("darkcontrol", NULL) == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcup", NULL)))
+		if(rcret == getrcconfigint("rcchdown", NULL) || (getconfigint("crosscontrol", NULL) == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcup", NULL)))
 		{
 			subtitlepause(1);
 			zapdown();
