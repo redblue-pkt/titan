@@ -31,16 +31,7 @@ void screenvolume(int direction, int flag)
 	char* bg = NULL;
 
 	delrc(getrcconfigint("rcvolup", NULL), NULL, NULL);
-	delrc(getrcconfigint("rcvoldown", NULL), NULL, NULL);
-	if(getconfigint("crosscontrol", NULL) == 1 && status.play == 0 && status.pause == 0)
-	{
-		delrc(getrcconfigint("rcright", NULL), NULL, NULL);
-		delrc(getrcconfigint("rcleft", NULL), NULL, NULL);
-	}
-	else if(getconfigint("crosscontrol", NULL) == 1 && (status.play == 1 || status.pause == 1))
-		return;
-
-	
+	delrc(getrcconfigint("rcvoldown", NULL), NULL, NULL);	
 	delrc(getrcconfigint("rcmute", NULL), NULL, NULL);
 
 	if(status.mute == 1)
@@ -71,13 +62,13 @@ void screenvolume(int direction, int flag)
 		if(rcret == RCTIMEOUT) break;
 		//if(rcret == getrcconfigint("rcexit", NULL)) break;
 		//if(rcret == getrcconfigint("rcok", NULL)) break;
-		if(rcret == getrcconfigint("rcvolup", NULL)  || (getconfigint("crosscontrol", NULL) == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcright", NULL)))
+		if(rcret == getrcconfigint("rcvolup", NULL))
 		{
 			changevolume(0, volumebar);
 			drawscreen(volume, 0, flag);
 			continue;
 		}
-		if(rcret == getrcconfigint("rcvoldown", NULL) || (getconfigint("crosscontrol", NULL) == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcleft", NULL)))
+		if(rcret == getrcconfigint("rcvoldown", NULL))
 		{
 			changevolume(1, volumebar);
 			drawscreen(volume, 0, flag);
@@ -89,11 +80,7 @@ void screenvolume(int direction, int flag)
 
 	addrc(getrcconfigint("rcvolup", NULL), screenvolumeup, NULL, NULL);
 	addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
-	if(getconfigint("crosscontrol", NULL) == 1 && status.play == 0 && status.pause == 0)
-	{
-		addrc(getrcconfigint("rcright", NULL), screenvolumeup, NULL, NULL);
-		addrc(getrcconfigint("rcleft", NULL), screenvolumedown, NULL, NULL);
-	}
+
 	addrc(getrcconfigint("rcmute", NULL), screenmute, NULL, NULL);
 	restorescreen(bg, volume);
 	blitfb(0);
