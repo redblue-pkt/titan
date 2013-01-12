@@ -1043,9 +1043,12 @@ void screentithekplay(char* titheklink, char* title, int first)
 	if(first == 1)
 	{
 		delallfiles("/tmp/tithek", NULL); 
-		mkdir("/tmp/tithek", 777); 
-		rcret = servicestop(status.aktservice, 1, 1);
-		if(rcret == 1) return;
+		mkdir("/tmp/tithek", 777);
+		if(status.mcaktiv == 0)
+		{
+			rcret = servicestop(status.aktservice, 1, 1);
+			if(rcret == 1) return;
+		}
 	}
 
 	struct skin* grid = getscreen("titheklist");
@@ -1415,7 +1418,8 @@ waitrcstart:
 	if(first == 1)
 	{
 		delallfiles("/tmp/tithek", ".list");
-		servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
+		if(status.mcaktiv == 0)
+			servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 	}
 }
 
