@@ -52,6 +52,10 @@ void start(void)
 	}
 
 	status.hangtime = 99999;
+	tithekdownloadrun = 0;
+	tithekdownloadcount = 0;
+	tithekrun = 1;
 	screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.list", "Tithek - Mainmenu", 1);
+	tithekrun = 0;
 	status.hangtime = getconfigint("hangtime", NULL);
 }
