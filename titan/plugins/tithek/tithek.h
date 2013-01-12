@@ -644,7 +644,13 @@ void freetithek()
 void tithekdownloadthread(struct stimerthread* timernode, struct download* node, int flag)
 {
 	if(node != NULL)
+	{
 		gethttp(node->host, node->page, node->port, node->filename, node->auth, NULL, 0);
+		free(node->host); node->host = NULL;
+		free(node->page); node->page = NULL;
+		free(node->filename); node->filename = NULL;
+		free(node->auth); node->auth = NULL;
+	}
 
 	free(node); node = NULL;
 }
@@ -696,11 +702,11 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 				struct download* dnode = calloc(1, sizeof(struct download));
 				if(dnode != NULL)
 				{
-					dnode->host = ip;
-					dnode->page = path;
+					dnode->host = ostrcat(ip, NULL, 0, 0);
+					dnode->page = ostrcat(path, NULL, 0, 0);
 					dnode->port = 80;
-					dnode->filename = localfile;
-					dnode->auth = pw;
+					dnode->filename = ostrcat(localfile, NULL, 0, 0);
+					dnode->auth = ostrcat(pw, NULL, 0, 0);
 					dnode->connfd = -1;
 					dnode->ret = -1;
 					addtimer(&tithekdownloadthread, START, 100, 1, (void*)dnode, NULL, NULL);
