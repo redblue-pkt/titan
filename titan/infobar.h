@@ -19,11 +19,6 @@ void screeninfobar()
 
 	addrc(getrcconfigint("rcvolup", NULL), screenvolumeup, NULL, NULL);
 	addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
-	if(getconfigint("crosscontrol", NULL) == 1 && status.playing == 0 && status.pause == 0) 
-	{
-		addrc(getrcconfigint("rcleft", NULL), screenvolumedown, NULL, NULL);
-		addrc(getrcconfigint("rcright", NULL), screenvolumeup, NULL, NULL);	
-	}
 	addrc(getrcconfigint("rcmute", NULL), screenmute, NULL, NULL);
 
 	status.infobaraktiv = 1;
@@ -34,6 +29,11 @@ void screeninfobar()
 	while(1)
 	{
 		mark = 0;
+
+		if(getconfigint("crosscontrol", NULL) == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcright", NULL))
+			writerc(getrcconfigint("rcvolup", NULL));
+		if(getconfigint("crosscontrol", NULL) == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcleft", NULL))
+			writerc(getrcconfigint("rcvoldown", NULL));
 
 		//check if mediadb can freed
 		if(status.mediadbthread == NULL)
