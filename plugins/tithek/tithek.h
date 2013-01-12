@@ -2,6 +2,9 @@
 #define TITHEK_H
 
 #define TITHEKPATH "/tmp/tithek"
+int tithekdownloadrun = 0;
+int tithekdownloadcount = 0;
+int tithekrun = 0;
 
 //flag 0	- menu
 //flag 1	- menu pay hidden tithek_pay=0/1 0=hidden
@@ -643,9 +646,13 @@ void freetithek()
 
 void tithekdownloadthread(struct stimerthread* timernode, struct download* node, int flag)
 {
+	tithekdownloadcount++;
 	if(node != NULL)
 	{
 		gethttp(node->host, node->page, node->port, node->filename, node->auth, NULL, 0);
+
+		if(tithekrun == 0) unlink(node->filename);
+
 		free(node->host); node->host = NULL;
 		free(node->page); node->page = NULL;
 		free(node->filename); node->filename = NULL;
@@ -653,6 +660,8 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 	}
 
 	free(node); node = NULL;
+	tithekdownloadcount--;
+	tithekdownloadrun = 1;
 }
 
 char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
@@ -698,19 +707,23 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 		{
 			if(pic == 1)
 			{
-				//dnode is freed in thread
-				struct download* dnode = calloc(1, sizeof(struct download));
-				if(dnode != NULL)
+				if(tithekdownloadcount > 100) //start max 100 threads
+					gethttp(ip, path, 80, localfile, pw, NULL, 0);
+				else
 				{
-					dnode->host = ostrcat(ip, NULL, 0, 0);
-					dnode->page = ostrcat(path, NULL, 0, 0);
-					dnode->port = 80;
-					dnode->filename = ostrcat(localfile, NULL, 0, 0);
-					dnode->auth = ostrcat(pw, NULL, 0, 0);
-					dnode->connfd = -1;
-					dnode->ret = -1;
-					addtimer(&tithekdownloadthread, START, 100, 1, (void*)dnode, NULL, NULL);
-					//gethttp(ip, path, 80, localfile, pw, NULL, 0);
+					//dnode is freed in thread
+					struct download* dnode = calloc(1, sizeof(struct download));
+					if(dnode != NULL)
+					{
+						dnode->host = ostrcat(ip, NULL, 0, 0);
+						dnode->page = ostrcat(path, NULL, 0, 0);
+						dnode->port = 80;
+						dnode->filename = ostrcat(localfile, NULL, 0, 0);
+						dnode->auth = ostrcat(pw, NULL, 0, 0);
+						dnode->connfd = -1;
+						dnode->ret = -1;
+						addtimer(&tithekdownloadthread, START, 100, 1, (void*)dnode, NULL, NULL);
+					}
 				}
 			}
 			else
@@ -1126,8 +1139,19 @@ void screentithekplay(char* titheklink, char* title, int first)
 		int count = getfilecount(TITHEKPATH);
 		if(count > 500)
 			delallfiles(TITHEKPATH, ".jpg");
-		
-		rcret = waitrc(grid, 0, 0);
+
+waitrcstart:
+		rcret = waitrc(grid, 2000, 0);
+
+		if(rcret == RCTIMEOUT)
+		{
+			if(tithekdownloadrun == 1)
+			{
+				tithekdownloadrun = 0;
+				drawscreen(grid, 0, 0);
+			}
+			goto waitrcstart;
+		}
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcmenu", NULL))
