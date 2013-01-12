@@ -5,6 +5,7 @@
 int tithekdownloadrun = 0;
 int tithekdownloadcount = 0;
 int tithekrun = 0;
+int tithekexit = 0;
 
 //flag 0	- menu
 //flag 1	- menu pay hidden tithek_pay=0/1 0=hidden
@@ -1153,6 +1154,12 @@ waitrcstart:
 			goto waitrcstart;
 		}
 
+		if(rcret == getrcconfigint("rcblue", NULL))
+		{
+			tithekexit = 1;
+			break;
+		}
+
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcmenu", NULL))
 		{
@@ -1245,7 +1252,7 @@ waitrcstart:
 						free(tmpstr2); tmpstr2 = NULL;
 //					if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
 						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel);
-						if(pagecount == 0) break;
+						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
 						listbox->aktline = oaktline;
@@ -1268,7 +1275,7 @@ waitrcstart:
 						free(tmpstr2); tmpstr2 = NULL;
 //					if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
 						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel);
-						if(pagecount == 0) break;
+						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
 						listbox->aktline = oaktline;
@@ -1291,7 +1298,7 @@ waitrcstart:
 						free(tmpstr2); tmpstr2 = NULL;
 //					if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
 						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel);
-						if(pagecount == 0) break;
+						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
 						listbox->aktline = oaktline;
@@ -1314,7 +1321,7 @@ waitrcstart:
 						free(tmpstr2); tmpstr2 = NULL;
 //					if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
 						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel);
-						if(pagecount == 0) break;
+						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
 						listbox->aktline = oaktline;
@@ -1337,7 +1344,7 @@ waitrcstart:
 						free(tmpstr2); tmpstr2 = NULL;
 //					if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
 						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel);
-						if(pagecount == 0) break;
+						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
 						listbox->aktline = oaktline;
@@ -1368,7 +1375,7 @@ waitrcstart:
 						free(tmpstr2); tmpstr2 = NULL;	
 //						if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
 						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel);
-						if(pagecount == 0) break;
+						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
 						listbox->aktline = oaktline;
