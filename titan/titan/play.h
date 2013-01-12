@@ -1041,7 +1041,9 @@ playerstart:
 	{
 		readmediadb(getconfig("mediadbfile", NULL), 0, 0);
 
-		tmpstr = ostrcat(file, NULL, 1, 0); file = NULL;
+		tmpstr = ostrcat(file, NULL, 0, 0);
+		if(file != NULL) startdir = dirname(file);
+		free(file); file = NULL;
 		file = screendir(startdir, formats, basename(tmpstr), &dirrcret, ".epg", _("DEL"), getrcconfigint("rcred", NULL), _("SELECT"), 0, "EPG", getrcconfigint("rcyellow", NULL), "SORT", getrcconfigint("rcblue", NULL), 90, 1, 90, 1, 64);
 		free(tmpstr); tmpstr = NULL;
 	}
