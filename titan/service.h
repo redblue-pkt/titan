@@ -200,7 +200,8 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 		}
 
 		checkpmt = 1;
-		patbuf = dvbgetpat(fenode, -1);
+		if(flag != 1 || (flag == 1 && chnode->pmtpid == 0))
+			patbuf = dvbgetpat(fenode, -1);
 		free(status.aktservice->pmtbuf);
 		status.aktservice->pmtbuf = NULL;
 		status.aktservice->pmtlen = 0;
