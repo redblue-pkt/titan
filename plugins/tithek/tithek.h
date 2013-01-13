@@ -652,7 +652,18 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 	{
 		gethttp(node->host, node->page, node->port, node->filename, node->auth, NULL, 0);
 
-		if(tithekrun == 0) unlink(node->filename);
+		if(tithekrun == 0)
+			unlink(node->filename);
+		else
+		{
+			off64_t checkpic = getfilesize(node->filename);
+
+			if(checkpic < 1000)
+			{
+				unlink(node->filename);
+				symlink("/var/usr/local/share/titan/plugins/tithek/default.jpg", node->filename);
+			}
+		}
 
 		free(node->host); node->host = NULL;
 		free(node->page); node->page = NULL;
