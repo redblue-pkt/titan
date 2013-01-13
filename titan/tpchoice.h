@@ -64,13 +64,15 @@ struct transponder* tpchoicescreen(int orbitalpos, int flag)
 				else
 					tmpstr = ostrcat(tmpstr, "V", 1, 0);
 			}
-
-			if(node->fetype == FE_QAM)
-				tmpstr = ostrcat(tmpstr, _("CABLE"), 1, 0);
-			else if(node->fetype == FE_OFDM)
-				tmpstr = ostrcat(tmpstr, _("TERR"), 1, 0);
 			else
-				tmpstr = ostrcat(tmpstr, _("UNKNOWN"), 1, 0);
+			{
+				if(node->fetype == FE_QAM)
+					tmpstr = ostrcat(tmpstr, _("CABLE"), 1, 0);
+				else if(node->fetype == FE_OFDM)
+					tmpstr = ostrcat(tmpstr, _("TERR"), 1, 0);
+				else
+					tmpstr = ostrcat(tmpstr, _("UNKNOWN"), 1, 0);
+			}
 
 			tmpstr = ostrcat(tmpstr, " / ", 1, 0);
 
