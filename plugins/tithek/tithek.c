@@ -11,6 +11,7 @@
 #include "myvideo.h"
 #include "rtl2now.h"
 #include "streamcloud.h"
+#include "flashx.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";

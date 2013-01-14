@@ -9,7 +9,7 @@ char* kinox(char* link, char* url, char* name, int flag)
 	debug(99, "link(%d): %s", flag, link);
 	char* video_id = NULL, *source = NULL, *streamurl = NULL;
 
-	if(flag == 1 || flag == 2 || flag == 3)
+	if(flag == 1 || flag == 2 || flag == 3 || flag == 4)
 	{
 		int count = 0;
 		struct splitstr* ret1 = NULL;
@@ -28,6 +28,8 @@ char* kinox(char* link, char* url, char* name, int flag)
 				streamurl = filenuke(source, video_id);
 			else if(flag == 3)
 				streamurl = streamcloud(source, video_id);
+			else if(flag == 4)
+				streamurl = flashx(source, video_id);
 
 			debug(99, "streamurl1: %s", streamurl);
 
@@ -296,7 +298,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					int count2 = 0;
 					struct splitstr* ret2 = NULL;
 					ret2 = strsplit(tmpstr1, "/", &count2);
-	
+			
 					if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Sockshare.com") == 0)
 					{
 						tmpstr2 = ret2[3].part;
@@ -324,6 +326,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "FlashX.tv") == 0)
 					{
 						tmpstr2 = ret2[3].part;
+						type = 24;
 					}
 					else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "PrimeShare.tv") == 0)
 					{
