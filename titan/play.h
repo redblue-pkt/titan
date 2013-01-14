@@ -995,7 +995,7 @@ void playstartservice()
 int screenplay(char* startfile, int startfolder, int flag)
 {
 	int rcret = 0, playertype = 0, ret = 0, rcwait = 1000, screensaver_delay = 0;
-	char* file = NULL, *tmpstr = NULL;
+	char* file = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
 	char* tmppolicy = NULL, *startdir = NULL;
 	char* formats = NULL;
 	struct skin* playinfobar = getscreen("playinfobar");
@@ -1042,10 +1042,15 @@ playerstart:
 		readmediadb(getconfig("mediadbfile", NULL), 0, 0);
 
 		tmpstr = ostrcat(file, NULL, 0, 0);
-		if(file != NULL) startdir = dirname(file);
+		if(file != NULL)
+		{
+			tmpstr1 = ostrcat(file, NULL, 0, 0);
+			startdir = dirname(tmpstr1);
+		}
 		free(file); file = NULL;
 		file = screendir(startdir, formats, basename(tmpstr), &dirrcret, ".epg", _("DEL"), getrcconfigint("rcred", NULL), _("SELECT"), 0, "EPG", getrcconfigint("rcyellow", NULL), "SORT", getrcconfigint("rcblue", NULL), 90, 1, 90, 1, 64);
 		free(tmpstr); tmpstr = NULL;
+		free(tmpstr1); tmpstr1 = NULL;
 	}
 	else
 		file = ostrcat(startfile, NULL, 0, 0);
