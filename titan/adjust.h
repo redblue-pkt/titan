@@ -52,7 +52,7 @@ void screenadjust()
 	struct skin* at7000frontsleep = getscreennode(adjust, "at7000frontsleep");
 	struct skin* crosscontrol = getscreennode(adjust, "crosscontrol");
 	struct skin* emucontrol = getscreennode(adjust, "emucontrol");
-	struct skin* minitv = getscreennode(adjust, "minitv");
+	struct skin* minitv = getscreennode(adjust, "choiceminitv");
 
 	struct skin* tmp = NULL;
 
