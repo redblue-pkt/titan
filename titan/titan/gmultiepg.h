@@ -156,7 +156,7 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 				chnode1 = *pchnode1;
 				if(chnode1 != NULL)
 				{
-					(*aktline)++;
+					if(nottuneable != 1) (*aktline)++;
 					if(gridbr == 0)
 					{
 						//used for left/right scroll
@@ -225,7 +225,10 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 				{
 					//used for left/right scroll
 					chnode1->titlealign = 3;
-					(*aktline)++;
+					if(nottuneable == 1)
+						chnode1->deaktivcol = deaktivcol;
+					else
+						(*aktline)++;
 					if(tmpchannel == aktchannel)
 						listbox->aktline = *aktline;
 					if(gridbr == 0) chnode1->type = GRIDBR;
@@ -233,17 +236,12 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 					chnode1->height = chnode->height;
 					chnode1->handle = (char*)tmpchannel;
 					chnode1->bgspace = 1;
-					if(nottuneable == 1)
-						chnode1->deaktivcol = deaktivcol;
 				}
 			}
 
 			chnode->handle = (char*)tmpchannel;
 			if(nottuneable == 1)
-			{
 				chnode->deaktivcol = deaktivcol;
-				(*aktline)--;
-			}
 		}
 	}
 	return treffer;
