@@ -86,13 +86,15 @@ struct stimerthread* addtimer(void* func, int aktion, int delay, int count, void
 	return newnode;
 }
 
+//flag 0: lock
+//flag 1: no lock
 void deltimer(struct stimerthread *tnode)
 {
 	debug(1000, "in");
 	int i = 0;
 	void* threadstatus;
 
-	m_lock(&status.timerthreadmutex, 6);
+	if(flag == 0) m_lock(&status.timerthreadmutex, 6);
 	struct stimerthread *node = stimerthread, *prev = stimerthread;
 
 	while(node != NULL)
@@ -129,7 +131,7 @@ void deltimer(struct stimerthread *tnode)
 		node = node->next;
 	}
 
-	m_unlock(&status.timerthreadmutex, 6);
+	if(flag == 0) m_unlock(&status.timerthreadmutex, 6);
 	debug(1000, "out");
 }
 
@@ -147,9 +149,9 @@ void freetimer(int flag)
 		if(prev != NULL)
 		{
 			if(flag == 0)
-				deltimer(prev);
+				deltimer(prev, 0);
 			else if(flag == 1 && checkbit(prev->flag, 0) == 1)
-				deltimer(prev);
+				deltimer(prev, 0);
 		}
 	}
 	debug(1000, "out");
@@ -195,9 +197,11 @@ void* timerthreadsubfunc(void *param)
 		else
 			usleep(node->delay * 1000);
 	}
-	node->status = DEACTIVE;
 
-	if(node->count > -1) deltimer(node);
+	m_lock(&status.timerthreadmutex, 6);
+	node->status = DEACTIVE;
+	if(node->count > -1) deltimer(node, 1);
+	m_unlock(&status.timerthreadmutex, 6);
 
 	debug(1000, "out");
 	pthread_exit(NULL);
@@ -220,6 +224,8 @@ void* timerthreadfunc(void *param)
 		if(status.timerthreadaktion != PAUSE)
 		{
 			status.timerthreadstatus = ACTIVE;
+
+			m_lock(&status.timerthreadmutex, 6);
 			node = stimerthread;
 			while(node != NULL)
 			{
@@ -241,6 +247,7 @@ void* timerthreadfunc(void *param)
 				}
 				if(node != NULL) node = node->next;
 			}
+			m_unlock(&status.timerthreadmutex, 6);
 
 		}
 		else
