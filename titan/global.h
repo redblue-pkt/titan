@@ -5344,7 +5344,7 @@ char* ostrstr(char* str, char* search)
 int file_exist(char* filename)
 {
 	debug(1000, "in");
-	if (access(filename, F_OK) == 0)
+	if(access(filename, F_OK) == 0)
 		return 1;
 	else
 		return 0;
