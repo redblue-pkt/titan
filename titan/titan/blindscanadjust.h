@@ -169,8 +169,8 @@ void screenblindscanadjust()
 	cmaxfrequency->input = mask(cmaxfrequency->input, 6, "0");
   
 	changeinput(cstepfrequency, getconfig("cblindstepfrequency", NULL));
-	changemask(cstepfrequency, "00");
-	cstepfrequency->input = mask(cstepfrequency->input, 2, "0");
+	changemask(cstepfrequency, "00000");
+	cstepfrequency->input = mask(cstepfrequency->input, 5, "0");
   
 	changeinput(cminsignalrate, getconfig("cblindminsignalrate", NULL));
 	changemask(cminsignalrate, "00000");
@@ -202,8 +202,8 @@ void screenblindscanadjust()
 	tmaxfrequency->input = mask(tmaxfrequency->input, 6, "0");
   
 	changeinput(tstepfrequency, getconfig("tblindstepfrequency", NULL));
-	changemask(tstepfrequency, "00");
-	tstepfrequency->input = mask(tstepfrequency->input, 2, "0");
+	changemask(tstepfrequency, "00000");
+	tstepfrequency->input = mask(tstepfrequency->input, 5, "0");
 
 	drawscreen(blindscan, 2, 0);
 	blindchangetunertype(tunertype, minfrequency, maxfrequency, stepfrequency, minsignalrate, maxsignalrate, stepsignalrate, usedefaultsr, onlydvbs, usedefaultfec, cminfrequency, cmaxfrequency, cstepfrequency, cminsignalrate, cmaxsignalrate, cstepsignalrate, cusedefaultsr, cusedefaultfec, tminfrequency, tmaxfrequency, tstepfrequency);
@@ -314,7 +314,7 @@ void screenblindscanadjust()
 				addconfigint("cblindminfrequency", getconfigint("cblindmaxsignalrate", NULL));
 
 			if(getconfigint("cblindstepfrequency", NULL) < 1)
-				addconfigint("cblindstepfrequency", 20);
+				addconfigint("cblindstepfrequency", 20000);
 
 			if(getconfigint("cblindstepsignalrate", NULL) < 1)
 				addconfigint("cblindstepsignalrate", 20);
@@ -343,7 +343,7 @@ void screenblindscanadjust()
 				addconfigint("tblindminfrequency", getconfigint("tblindmaxfrequency", NULL));
 
 			if(getconfigint("tblindstepfrequency", NULL) < 1)
-				addconfigint("tblindstepfrequency", 20);
+				addconfigint("tblindstepfrequency", 20000);
 
 
 			blindcalc();
