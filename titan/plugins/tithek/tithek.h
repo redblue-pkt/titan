@@ -716,7 +716,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 
 	if(flag == 0)
 	{
-		if(!file_exist(localfile))
+		if(localfile != NULL && !file_exist(localfile))
 		{
 			if(pic == 1)
 			{
@@ -745,10 +745,10 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	}
 	else
 	{
-		if(file_exist(localfile))
+		if(localfile != NULL && file_exist(localfile))
 			ret = textbox(_("Message"), _("File exist, overwrite?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 
-		if(ret == 1)
+		if(localfile != NULL && ret == 1)
 			screendownload("Download", ip, path, 80, localfile, pw, 0);
 	}
 
@@ -1130,6 +1130,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 				tmp = tmp->prev;
 			}
 			tmp = listbox->select;
+			if(tmp != NULL) tmp = tmp->next;
 			while(tmp != NULL)
 			{
 				if(tmp->pagecount != listbox->aktpage) break;
@@ -1152,16 +1153,15 @@ void screentithekplay(char* titheklink, char* title, int first)
 				}
 				tmp = tmp->next;
 			}
-
-			drawscreen(grid, 0, 0);
 		}
 		
 		int count = getfilecount(TITHEKPATH);
 		if(count > 500)
 			delallfiles(TITHEKPATH, ".jpg");
 
+		drawscreen(grid, 0, 0);
 waitrcstart:
-		rcret = waitrc(grid, 2000, 0);
+		rcret = waitrc(grid, 2000, 2);
 
 		if(rcret == RCTIMEOUT)
 		{
