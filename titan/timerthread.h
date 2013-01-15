@@ -44,14 +44,12 @@ struct stimerthread* addtimer(void* func, int aktion, int delay, int count, void
 	debug(1000, "in");
 	struct stimerthread *newnode = NULL, *prev = NULL, *node = NULL;
 
-	newnode = (struct stimerthread*)malloc(sizeof(struct stimerthread));	
+	newnode = (struct stimerthread*)calloc(1, sizeof(struct stimerthread));
 	if(newnode == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
-
-	memset(newnode, 0, sizeof(struct stimerthread));
 
 	newnode->func = func;
 	newnode->aktion = aktion;
@@ -241,7 +239,7 @@ void* timerthreadfunc(void *param)
 					}
 					node = stimerthread;
 				}
-				node = node->next;
+				if(node != NULL) node = node->next;
 			}
 
 		}
