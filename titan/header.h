@@ -401,7 +401,7 @@ void clearfball();
 
 //timerthread.h
 struct stimerthread* addtimer(void* func, int aktion, int delay, int count, void* param1, void* param2, struct stimerthread* last);
-void deltimer(struct stimerthread *tnode);
+void deltimer(struct stimerthread *tnode, int flag);
 struct stimerthread* gettimerbythread(pthread_t thread);
 
 //epgscanlist.h
