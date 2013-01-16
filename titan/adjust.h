@@ -266,6 +266,11 @@ void screenadjust()
 		at7000frontrun->hidden = YES;
 		at7000frontsleep->hidden = YES;
 	}
+
+	if(checkbox("ATEMIO500") == 1 || checkbox("ATEMIO510") == 1 || checkbox("UFS912") == 1 || checkbox("AT7500") == 1 || checkbox("ATEMIO7600") == 1)
+		usecec->hidden = NO;
+	else
+		usecec->hidden = YES;
 	
 	drawscreen(adjust, 0, 0);
 	addscreenrc(adjust, listbox);
@@ -349,7 +354,9 @@ void screenadjust()
 			addconfigscreencheck("crosscontrol", crosscontrol, "0");
 			addconfigscreencheck("emucontrol", emucontrol, "0");
 			addconfigscreencheck("minitv", minitv, "0");
-			addconfigscreencheck("usecec", usecec, "0");
+
+			if(checkbox("ATEMIO500") == 1 || checkbox("ATEMIO510") == 1 || checkbox("UFS912") == 1 || checkbox("AT7500") == 1 || checkbox("ATEMIO7600") == 1)
+				addconfigscreencheck("usecec", usecec, "0");
 			
 			if(checkbox("ATEVIO7000") == 1)
 			{
