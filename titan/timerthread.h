@@ -116,24 +116,27 @@ void deltimer(struct stimerthread *tnode, int flag)
 			while(node->status != DEACTIVE)
 			{
 				usleep(100000);
-				i++; if(i > 20) break;
+				i++; if(i > 50) break;
 			}
 
-			if(i > 20)
+			if(i > 50)
 			{
 				err("detect hanging timer sub thread");
 			}
-			else if(node->thread != '\0')
-				pthread_join(node->thread, &threadstatus);
-			pthread_attr_destroy(&node->attr);
+			else //only free mem if we can stop thread
+			{
+				if(node->thread != '\0')
+					pthread_join(node->thread, &threadstatus);
+				pthread_attr_destroy(&node->attr);
 
-			if(node == stimerthread)
-				stimerthread = node->next;
-			else
-				prev->next = node->next;
+				if(node == stimerthread)
+					stimerthread = node->next;
+				else
+					prev->next = node->next;
 
-			free(node);
-			node = NULL;
+				free(node);
+				node = NULL;
+			}
 			break;
 		}
 
@@ -208,10 +211,8 @@ void* timerthreadsubfunc(void *param)
 			usleep(node->delay * 1000);
 	}
 
-	m_lock(&status.timerthreadmutex, 6);
-	node->status = DEACTIVE;
 	node->aktion = STOP;
-	m_unlock(&status.timerthreadmutex, 6);
+	node->status = DEACTIVE;
 
 	debug(1000, "out");
 	pthread_exit(NULL);
@@ -221,7 +222,7 @@ void* timerthreadfunc(void *param)
 {
 	debug(1000, "in");
 	int ret = 0;
-	struct stimerthread* node = stimerthread;
+	struct stimerthread* node = NULL;
 	void* threadstatus;
 	//struct sched_param schedparam;
 
@@ -251,7 +252,7 @@ void* timerthreadfunc(void *param)
 					continue;
 				}
 
-				if(node->status == DEACTIVE && node->aktion == START)
+				if(node->status == DEACTIVE && node->aktion == START && node->count != 0)
 				{
 					pthread_attr_init(&node->attr);
 					pthread_attr_setstacksize(&node->attr, 50000);
