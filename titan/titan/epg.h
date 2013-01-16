@@ -266,8 +266,11 @@ start:
 		if(rcret == getrcconfigint("rcinfo", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
-			servicecheckret(servicestart(chnode, NULL, NULL, 0), 0);
-			break;
+			if(channelnottunable(chnode) == 0)
+			{
+				servicecheckret(servicestart(chnode, NULL, NULL, 0), 0);
+				break;
+			}
 		}
 		if(rcret == getrcconfigint("rcright", NULL))
 		{
