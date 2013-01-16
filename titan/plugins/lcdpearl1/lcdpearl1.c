@@ -70,6 +70,7 @@ void LCD_Pearl1_thread()
 	FILE *fd = NULL;
 	char *fileline = NULL;
 	int weatherwrite = 999;
+	int weatherref = 0;
 	
 	if(ostrcmp(getconfig("lcd_pearl1_plugin_wetter", NULL), "yes") == 0)
 	{
@@ -363,6 +364,18 @@ void LCD_Pearl1_thread()
 		free(tmpstr3); tmpstr3 = NULL;
 		//sleep(1);
 		usleep(500000);
+		
+		if(ostrcmp(getconfig("lcd_pearl1_plugin_wetter", NULL), "yes") == 0)
+		{
+			weatherref = weatherref + 1;
+			if(weatherref == 7200)
+			{
+				weatherwrite = 0;
+				system("rm /tmp/lcdweather");
+				weatherref = 0;
+			}
+		}
+
 	}
  	free(timemerk);timemerk=NULL;
  	free(sendermerk);sendermerk=NULL;
