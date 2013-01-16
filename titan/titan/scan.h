@@ -1195,7 +1195,7 @@ void doscan(struct stimerthread* timernode)
 	debug(500, "channel scan thread end");
 }
 
-void scanaddchannel(struct skin* node, int scantype, struct transponder* tp1)
+void scanaddchannel(struct skin* node, int scantype, struct transponder* tp1, int changename)
 {
 	int serviceid = 0;
 	uint64_t transponderid = 0;
@@ -1204,13 +1204,16 @@ void scanaddchannel(struct skin* node, int scantype, struct transponder* tp1)
 	struct provider* providernode = NULL;
 	char* tmpstr = NULL;
 	struct transponder* tp2 = NULL;
+	struct channel* chnode = NULL;
 
 	if(node == NULL || node->name == NULL) return;
 
 	serviceid = ((uint64_t*)node->name)[0];
 	transponderid = ((uint64_t*)node->name)[1];
 	servicetype = ((uint64_t*)node->name)[2];
-	if(getchannel(serviceid, transponderid) == NULL)
+
+	channel = getchannel(serviceid, transponderid);
+	if(channel == NULL)
 	{
 		//check if provider valid
 		providernode = getproviderbyname(node->param1);
@@ -1244,7 +1247,15 @@ void scanaddchannel(struct skin* node, int scantype, struct transponder* tp1)
 			node->fontcol = convertcol("deaktivcol");
 	}
 	else
+	{
 		node->fontcol = convertcol("deaktivcol");
+		//change channel name if selected
+		if(changename == 1 && node->param2 != NULL && strlen(node->param2) > 0 && ostrcmp(node->param2, channel->name) != 0)
+		{
+			free(channel->name);
+			channel->name = ostrcat(node->param2, NULL, 0, 0);
+		}
+	}
 }
 
 void scansetallsat(int fetype)
@@ -1328,7 +1339,7 @@ void delchannelbymultisat()
 	}
 }
 
-void screenscan(struct transponder* transpondernode, struct skin* mscan, char* tuner, int scantype, int orbitalpos, unsigned int frequency, int inversion, unsigned int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int networkscan, int onlyfree, int clear, int blindscan, int system, int timeout)
+void screenscan(struct transponder* transpondernode, struct skin* mscan, char* tuner, int scantype, int orbitalpos, unsigned int frequency, int inversion, unsigned int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int networkscan, int onlyfree, int clear, int blindscan, int changename, int system, int timeout)
 {
 	int rcret = 0, tpmax = 0, i = 0, alladded = 0;
 	struct skin* scan = getscreen("scan");
@@ -1527,7 +1538,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 		rcret = waitrc(scan, 1000, 0);
 
 		if(scantype != 3 && rcret == getrcconfigint("rcred", NULL))
-			scanaddchannel(listbox->select, scantype, tpnode);
+			scanaddchannel(listbox->select, scantype, tpnode, changename);
 
 		if((scantype != 3 && rcret == getrcconfigint("rcgreen", NULL)) || (scantype == 3 && scaninfo.threadend == 1 && alladded < 2))
 		{
@@ -1546,7 +1557,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 			while(lnode != NULL)
 			{
 				if(lnode->fontcol != deaktivcol && lnode->del == 1)
-					scanaddchannel(lnode, scantype, tpnode);
+					scanaddchannel(lnode, scantype, tpnode, changename);
 				lnode = lnode->next;
 			}
 			clearscreen(load);
@@ -1739,7 +1750,7 @@ void screenscanconfig(int flag)
 	int iscantype = -1, isat = -1;
 	int iinversion = -1, ipolarization = -1;
 	int ifec = -1, imodulation = -1, irolloff = -1, ipilot = -1, isystem = -1;
-	int inetworkscan = -1, ionlyfree = -1, iclear = -1, iblindscan = -1;
+	int inetworkscan = -1, ionlyfree = -1, iclear = -1, iblindscan = -1, ichangename = -1;
 	int i = 0, treffer = 0, tunercount = 0;
 	struct skin* scan = getscreen("manualscan");
 	struct skin* listbox = getscreennode(scan, "listbox");
@@ -1766,6 +1777,7 @@ void screenscanconfig(int flag)
 	struct skin* clear = getscreennode(scan, "clear");
 	struct skin* onlyfree = getscreennode(scan, "onlyfree");
 	struct skin* blindscan = getscreennode(scan, "blindscan");
+	struct skin* changename = getscreennode(scan, "changename");
 	struct skin* b4 = getscreennode(scan, "b4");
 	struct skin* b5 = getscreennode(scan, "b5");
 	struct skin* tmp = NULL;
@@ -2141,6 +2153,10 @@ start:
 	addchoicebox(blindscan, "0", _("no"));
 	addchoicebox(blindscan, "1", _("yes"));
 
+	//changename
+	addchoicebox(changename, "0", _("no"));
+	addchoicebox(changename, "1", _("yes"));
+
 	drawscreen(scan, 2, 0);
 	changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, hp, lp, bandwidth, transmission, guardinterval, hierarchy, b4, b5, flag);
 	drawscreen(scan, 0, 0);
@@ -2179,6 +2195,7 @@ start:
 		if(onlyfree->ret != NULL) ionlyfree = atoi(onlyfree->ret);
 		if(clear->ret != NULL) iclear = atoi(clear->ret);
 		if(blindscan->ret != NULL) iblindscan = atoi(blindscan->ret);
+		if(changename->ret != NULL) ichangename = atoi(changename->ret);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL)) break;
@@ -2201,7 +2218,7 @@ start:
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			clearscreen(scan);
-			screenscan(tpnode, scan->child, tuner->ret, iscantype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, inetworkscan, ionlyfree, iclear, iblindscan, isystem, 5000000);
+			screenscan(tpnode, scan->child, tuner->ret, iscantype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, inetworkscan, ionlyfree, iclear, iblindscan, ichangename, isystem, 5000000);
 			drawscreen(scan, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL) && tpnode != NULL && iscantype == 0)
