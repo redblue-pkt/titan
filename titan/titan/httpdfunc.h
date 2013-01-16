@@ -2357,7 +2357,7 @@ char* webrectimersend(char* param, int fmt)
 		while(channel1 != NULL)
 		{
 			if(ostrcmp(channel1->name, channelname) == 0 && channel1->servicetype == 0) {
-				if(channelnottunable(channel1) == 0)
+				//if(channelnottunable(channel1) == 0) //allow timer in webif on channel not tunable
 				{
 					channelfind = 1;
 					break;
