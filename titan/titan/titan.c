@@ -417,6 +417,8 @@ void oshutdown(int exitcode, int flag)
 	else
 		freetimer(1);
 
+	setcecstandby(1);
+
 	starthttpd(0);
 	startrguid(0);
 	initmutex(0);
@@ -503,8 +505,8 @@ int main(int argc, char *argv[])
 		setfanspeed(-1, 0);
 
 	system(getconfig("skriptbeforetv", NULL));
+	ret = setcecstandby(0);
 	ret = setvideomode(getconfig("av_videomode", NULL), 0);
-
 	ret = setpolicy(getconfig("av_policy", NULL));
 	ret = setaspect(getconfig("av_aspect", NULL));
 	ret = setcolorformat(getconfig("av_colorformat", NULL));

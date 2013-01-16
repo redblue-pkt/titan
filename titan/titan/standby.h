@@ -59,6 +59,7 @@ void screenstandby()
 	status.protecttime = 0;
 	status.rcowner = standbyscreen;
 	
+	setcecstandby(1);
 	system("vdstandby -a");
 	while(1)
 	{
@@ -90,6 +91,7 @@ void screenstandby()
 		}
 	}
 	
+	setcecstandby(0);
 	system("vdstandby -d");
 
 	setoverclockfreq(1);
