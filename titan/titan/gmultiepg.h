@@ -156,7 +156,7 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 				chnode1 = *pchnode1;
 				if(chnode1 != NULL)
 				{
-					if(nottuneable != 1) (*aktline)++;
+					/*if(nottuneable != 1)*/ (*aktline)++;
 					if(gridbr == 0)
 					{
 						//used for left/right scroll
@@ -192,8 +192,7 @@ int calcgmultiepg(struct channel* tmpchannel, struct skin* gmultiepg, struct ski
 					chnode1->bgspace = 1;
 					chnode1->vspace = 2;
 					chnode1->hspace = 2;
-					if(nottuneable == 1)
-						chnode1->deaktivcol = deaktivcol;
+					/*if(nottuneable == 1)*/ chnode1->deaktivcol = deaktivcol;
 					
 					//record timeline
 					chnode1->progresscol = listbox->progresscol;
@@ -627,11 +626,14 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		//if(rcret == getrcconfigint("rcinfo", NULL)) break;
 		if(listbox->select != NULL && rcret == getrcconfigint("rcok", NULL))
 		{
-			if(status.servicetype == 0)
-				servicecheckret(servicestart((struct channel*)listbox->select->handle, getconfig("channellist", NULL), NULL, 0), 0);
-			else
-				servicecheckret(servicestart((struct channel*)listbox->select->handle, getconfig("rchannellist", NULL), NULL, 0), 0);
-			break;
+			if(channelnottunable((struct channel*)listbox->select->handle) == 1)
+			{
+				if(status.servicetype == 0)
+					servicecheckret(servicestart((struct channel*)listbox->select->handle, getconfig("channellist", NULL), NULL, 0), 0);
+				else
+					servicecheckret(servicestart((struct channel*)listbox->select->handle, getconfig("rchannellist", NULL), NULL, 0), 0);
+				break;
+			}
 		}
 		if(rcret == getrcconfigint("rcinfo", NULL))
 		{
