@@ -17,5 +17,6 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title);
 int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title);
 char* flashx(char* host, char* file);
+char* vidstream(char* host, char* file);
 
 #endif

@@ -31,6 +31,7 @@ int tithekexit = 0;
 //flag 22	- kinox hoster
 //flag 23	- kinox hoster serie
 //flag 24	- kinox flashx
+//flag 25	- kinox vidstream
 //flag 66   - coming soon dummy
 //flag 1000 - menu pincode
 //flag 9999 - menu hidden codecpack
@@ -1030,6 +1031,10 @@ void submenu(struct skin* listbox, struct skin* load)
 		{
 			if(tmpstr != NULL) tmpstr1 = kinox(tmpstr, NULL, NULL, 4);
 		}
+		else if(((struct tithek*)listbox->select->handle)->flag == 25)
+		{
+			if(tmpstr != NULL) tmpstr1 = kinox(tmpstr, NULL, NULL, 5);
+		}
 
 		free(tmpstr); tmpstr = NULL;
 			
@@ -1251,7 +1256,7 @@ waitrcstart:
 					else
 						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 				}
-				else if((((struct tithek*)listbox->select->handle)->flag == 4) || (((struct tithek*)listbox->select->handle)->flag == 5) || (((struct tithek*)listbox->select->handle)->flag == 6) || (((struct tithek*)listbox->select->handle)->flag == 7) || (((struct tithek*)listbox->select->handle)->flag == 8) || (((struct tithek*)listbox->select->handle)->flag == 12) || (((struct tithek*)listbox->select->handle)->flag == 14) || (((struct tithek*)listbox->select->handle)->flag == 15) || (((struct tithek*)listbox->select->handle)->flag == 16) || (((struct tithek*)listbox->select->handle)->flag == 17) || (((struct tithek*)listbox->select->handle)->flag == 18) || (((struct tithek*)listbox->select->handle)->flag == 19) || (((struct tithek*)listbox->select->handle)->flag == 20) || (((struct tithek*)listbox->select->handle)->flag == 24))
+				else if((((struct tithek*)listbox->select->handle)->flag == 4) || (((struct tithek*)listbox->select->handle)->flag == 5) || (((struct tithek*)listbox->select->handle)->flag == 6) || (((struct tithek*)listbox->select->handle)->flag == 7) || (((struct tithek*)listbox->select->handle)->flag == 8) || (((struct tithek*)listbox->select->handle)->flag == 12) || (((struct tithek*)listbox->select->handle)->flag == 14) || (((struct tithek*)listbox->select->handle)->flag == 15) || (((struct tithek*)listbox->select->handle)->flag == 16) || (((struct tithek*)listbox->select->handle)->flag == 17) || (((struct tithek*)listbox->select->handle)->flag == 18) || (((struct tithek*)listbox->select->handle)->flag == 19) || (((struct tithek*)listbox->select->handle)->flag == 20) || (((struct tithek*)listbox->select->handle)->flag == 24) || (((struct tithek*)listbox->select->handle)->flag == 25))
 				{
 					submenu(listbox, load);
 					drawscreen(grid, 0, 0);
