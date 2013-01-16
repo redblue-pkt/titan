@@ -243,9 +243,6 @@ void* timerthreadfunc(void *param)
 			{
 				if(node->status == DEACTIVE && node->aktion == STOP && node->count == 0)
 				{
-					if(node->thread != '\0')
-						pthread_join(node->thread, &threadstatus);
-
 					struct stimerthread* prev = node;
 					node = node->next;
 					deltimer(prev, 1);
