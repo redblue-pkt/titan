@@ -1,6 +1,9 @@
 #ifndef SERVICE_H
 #define SERVICE_H
 
+//TODO: use status.
+int secondzap = 0;
+
 void debugservice()
 {
 	struct service* node = service;
@@ -61,7 +64,7 @@ void akttolast()
 //flag 3: same as 0 but don't check chnode
 //flag 4: same as 0 but new tuning
 //flag 5: same as 3 but new tuning
-int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
+int servicestartreal(struct channel* chnode, char* channellist, char* pin, int flag)
 {
 	debug(1000, "in");
 	struct transponder* tpnode = NULL;
@@ -77,6 +80,8 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 	struct epg* epgnode = NULL;
 
 	m_lock(&status.servicemutex, 2);
+
+	secondzap = 0;
 
 	if(flag == 4 || flag == 5) tune = 1;
 	if(flag == 4) flag = 0;
@@ -201,7 +206,10 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 
 		checkpmt = 1;
 		if(flag != 1 || (flag == 1 && chnode->pmtpid == 0))
+		{
 			patbuf = dvbgetpat(fenode, -1);
+			if(patbuf == NULL) secondzap = 1;
+		}
 		free(status.aktservice->pmtbuf);
 		status.aktservice->pmtbuf = NULL;
 		status.aktservice->pmtlen = 0;
@@ -210,6 +218,7 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 		else if(chnode->pmtpid > 0)
 			status.aktservice->pmtbuf = dvbgetpmt(fenode, NULL, chnode->serviceid, &chnode->pmtpid, &status.aktservice->pmtlen, -1, 1);
 
+		if(status.aktservice->pmtbuf == NULL) secondzap = 1;
 		dvbgetinfo(status.aktservice->pmtbuf, chnode);
 
 		if(flag == 0)
@@ -399,6 +408,7 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 
 		checkpmt = 1;
 		patbuf = dvbgetpat(fenode, -1);
+		if(patbuf == NULL) secondzap = 1;
 		free(status.aktservice->pmtbuf);
 		status.aktservice->pmtbuf = NULL;
 		status.aktservice->pmtlen = 0;
@@ -407,6 +417,7 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 		else if(chnode->pmtpid > 0)
 			status.aktservice->pmtbuf = dvbgetpmt(fenode, NULL, chnode->serviceid, &chnode->pmtpid, &status.aktservice->pmtlen, -1, 1);
 
+		if(status.aktservice->pmtbuf == NULL) secondzap = 1;
 		if(dvbgetinfo(status.aktservice->pmtbuf, chnode) == 1)
 		{
 			//audio or video pid or codec changed
@@ -536,6 +547,20 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 	
 	debug(1000, "out");
 	return 0;
+}
+
+//second zap on failure
+//TODO: use flag 6 (same as 5 but no pin question on second tune)
+int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
+{
+	int ret = 0;
+
+	ret = servicestartreal(chnode, channellist, pin, flag);
+
+	if(secondzap != 0 && ret == 0 && (flag == 0 || flag > 2))
+		ret = servicestartreal(chnode, channellist, pin, 5);
+
+	return ret;
 }
 
 struct service* getservicebychannel(struct channel* chnode)
