@@ -108,8 +108,8 @@ int showallmepgchannel(struct skin* multiepg, struct skin* listbox, int epgnr)
 				}
 
 				chnode->handle = (char*) tmpchannel;
-				if(channelnottunable(tmpchannel) == 1)
-					chnode->deaktivcol = convertcol("deaktivcol");
+				//if(channelnottunable(tmpchannel) == 1)
+				//	chnode->deaktivcol = convertcol("deaktivcol");
 			}
 		}
 		tmpchannel = tmpchannel->next;
@@ -184,8 +184,8 @@ int showbouquetmepgchannel(struct skin* multiepg, struct skin* listbox, struct b
 						chnode->handle1 = (char*) epgnode;
 					}
 					chnode->handle = (char*) tmpbouquet->channel;
-					if(channelnottunable(tmpbouquet->channel) == 1)
-						chnode->deaktivcol = convertcol("deaktivcol");
+					//if(channelnottunable(tmpbouquet->channel) == 1)
+					//	chnode->deaktivcol = convertcol("deaktivcol");
 				}
 			}
 		}
@@ -248,8 +248,8 @@ int showprovidermepgchannel(struct skin* multiepg, struct skin* listbox, struct 
 						chnode->handle1 = (char*) epgnode;
 					}
 					chnode->handle = (char*) tmpchannel;
-					if(channelnottunable(tmpchannel) == 1)
-						chnode->deaktivcol = convertcol("deaktivcol");
+					//if(channelnottunable(tmpchannel) == 1)
+					//	chnode->deaktivcol = convertcol("deaktivcol");
 				}
 			}
 		}
@@ -315,8 +315,8 @@ int showsatmepgchannel(struct skin* multiepg, struct skin* listbox, struct sat* 
 						chnode->handle1 = (char*) epgnode;
 					}
 					chnode->handle = (char*) tmpchannel;
-					if(channelnottunable(tmpchannel) == 1)
-						chnode->deaktivcol = convertcol("deaktivcol");
+					//if(channelnottunable(tmpchannel) == 1)
+					//	chnode->deaktivcol = convertcol("deaktivcol");
 				}
 			}
 		}
@@ -378,8 +378,8 @@ int showazmepgchannel(struct skin* multiepg, struct skin* listbox, int character
 						chnode->handle1 = (char*) epgnode;
 					}
 					chnode->handle = (char*) tmpchannel;
-					if(channelnottunable(tmpchannel) == 1)
-						chnode->deaktivcol = convertcol("deaktivcol");
+					//if(channelnottunable(tmpchannel) == 1)
+					//	chnode->deaktivcol = convertcol("deaktivcol");
 				}
 			}
 		}
@@ -519,8 +519,11 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		//if(rcret == getrcconfigint("rcinfo", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
-			servicecheckret(servicestart((struct channel*)listbox->select->handle, NULL, NULL, 0), 0);
-			break;
+			if(channelnottunable((struct channel*)listbox->select->handle) == 0)
+			{
+				servicecheckret(servicestart((struct channel*)listbox->select->handle, NULL, NULL, 0), 0);
+				break;
+			}
 		}
 		if(rcret == getrcconfigint("rcinfo", NULL))
 		{
