@@ -5,7 +5,7 @@
 
 //flag 0: leave standby
 //flag 1: set standby
-void cecstandby(int flag)
+void setcecstandby(int flag)
 {
   if(getconfigint("usecec", "NULL") == 1)
   {
