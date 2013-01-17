@@ -1,9 +1,6 @@
 #ifndef SERVICE_H
 #define SERVICE_H
 
-//TODO: use status.
-int secondzap = 0;
-
 void debugservice()
 {
 	struct service* node = service;
@@ -81,7 +78,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 
 	m_lock(&status.servicemutex, 2);
 
-	secondzap = 0;
+	status.secondzap = 0;
 
 	if(flag == 4 || flag == 5) tune = 1;
 	if(flag == 4) flag = 0;
@@ -208,7 +205,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		if(flag != 1 || (flag == 1 && chnode->pmtpid == 0))
 		{
 			patbuf = dvbgetpat(fenode, -1);
-			if(patbuf == NULL) secondzap = 1;
+			if(patbuf == NULL) status.secondzap = 1;
 		}
 		free(status.aktservice->pmtbuf);
 		status.aktservice->pmtbuf = NULL;
@@ -218,7 +215,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		else if(chnode->pmtpid > 0)
 			status.aktservice->pmtbuf = dvbgetpmt(fenode, NULL, chnode->serviceid, &chnode->pmtpid, &status.aktservice->pmtlen, -1, 1);
 
-		if(status.aktservice->pmtbuf == NULL) secondzap = 2;
+		if(status.aktservice->pmtbuf == NULL) status.secondzap = 2;
 		dvbgetinfo(status.aktservice->pmtbuf, chnode);
 
 		if(flag == 0)
@@ -408,7 +405,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 
 		checkpmt = 1;
 		patbuf = dvbgetpat(fenode, -1);
-		if(patbuf == NULL) secondzap = 3;
+		if(patbuf == NULL) status.secondzap = 3;
 		free(status.aktservice->pmtbuf);
 		status.aktservice->pmtbuf = NULL;
 		status.aktservice->pmtlen = 0;
@@ -417,7 +414,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		else if(chnode->pmtpid > 0)
 			status.aktservice->pmtbuf = dvbgetpmt(fenode, NULL, chnode->serviceid, &chnode->pmtpid, &status.aktservice->pmtlen, -1, 1);
 
-		if(status.aktservice->pmtbuf == NULL) secondzap = 4;
+		if(status.aktservice->pmtbuf == NULL) status.secondzap = 4;
 		if(dvbgetinfo(status.aktservice->pmtbuf, chnode) == 1)
 		{
 			//audio or video pid or codec changed
@@ -557,9 +554,9 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 
 	ret = servicestartreal(chnode, channellist, pin, flag);
 
-	if(secondzap != 0 && ret == 0 && (flag == 0 || flag > 2))
+	if(status.secondzap != 0 && ret == 0 && (flag == 0 || flag > 2))
 	{
-		debug(200, "first zap not ok, make second zap (%d)", secondzap);
+		debug(200, "first zap not ok, make second zap (%d)", status.secondzap);
 		ret = servicestartreal(chnode, channellist, pin, 5);
 	}
 

@@ -1322,6 +1322,7 @@ struct status
 	int infobarprogram;
 	//for auto increase audio vol (mute)
 	int volmute;
+	int secondzap;
 } status;
 
 struct fb
