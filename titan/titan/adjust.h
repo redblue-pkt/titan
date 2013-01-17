@@ -353,6 +353,8 @@ void screenadjust()
 			status.infobarprogram = getconfigint("infobarprogram", NULL);
 			addconfigscreencheck("crosscontrol", crosscontrol, "0");
 			addconfigscreencheck("emucontrol", emucontrol, "0");
+
+			if(ostrcmp(minitv->ret, "1") == 0) resettvpic();
 			addconfigscreencheck("minitv", minitv, "0");
 
 			if(checkbox("ATEMIO500") == 1 || checkbox("ATEMIO510") == 1 || checkbox("UFS912") == 1 || checkbox("AT7500") == 1 || checkbox("ATEMIO7600") == 1)
