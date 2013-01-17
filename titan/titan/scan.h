@@ -1212,8 +1212,8 @@ void scanaddchannel(struct skin* node, int scantype, struct transponder* tp1, in
 	transponderid = ((uint64_t*)node->name)[1];
 	servicetype = ((uint64_t*)node->name)[2];
 
-	channel = getchannel(serviceid, transponderid);
-	if(channel == NULL)
+	chnode = getchannel(serviceid, transponderid);
+	if(chnode == NULL)
 	{
 		//check if provider valid
 		providernode = getproviderbyname(node->param1);
@@ -1250,10 +1250,10 @@ void scanaddchannel(struct skin* node, int scantype, struct transponder* tp1, in
 	{
 		node->fontcol = convertcol("deaktivcol");
 		//change channel name if selected
-		if(changename == 1 && node->param2 != NULL && strlen(node->param2) > 0 && ostrcmp(node->param2, channel->name) != 0)
+		if(changename == 1 && node->param2 != NULL && strlen(node->param2) > 0 && ostrcmp(node->param2, chnode->name) != 0)
 		{
-			free(channel->name);
-			channel->name = ostrcat(node->param2, NULL, 0, 0);
+			free(chnode->name);
+			chnode->name = ostrcat(node->param2, NULL, 0, 0);
 		}
 	}
 }
