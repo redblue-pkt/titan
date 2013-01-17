@@ -223,7 +223,6 @@ void* timerthreadfunc(void *param)
 	debug(1000, "in");
 	int ret = 0;
 	struct stimerthread* node = NULL;
-	void* threadstatus;
 	//struct sched_param schedparam;
 
 	//set timer threads scheduler priority
