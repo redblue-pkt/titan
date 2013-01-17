@@ -6,11 +6,10 @@
 
 char* kinox(char* link, char* url, char* name, int flag)
 {
-printf("aaaaaaaaaaaaaaaaaaaa\n");
 	debug(99, "link(%d): %s", flag, link);
 	char* video_id = NULL, *source = NULL, *streamurl = NULL;
 
-	if(flag == 1 || flag == 2 || flag == 3 || flag == 4 || flag == 5)
+	if(flag == 1 || flag == 2 || flag == 3 || flag == 4 || flag == 5 || flag == 6)
 	{
 		int count = 0;
 		struct splitstr* ret1 = NULL;
@@ -33,7 +32,9 @@ printf("aaaaaaaaaaaaaaaaaaaa\n");
 				streamurl = flashx(source, video_id);
 			else if(flag == 5)
 				streamurl = vidstream(source, video_id);
-printf("bbbbbbbbbbbbbbbbbbbbbb\n");
+			else if(flag == 6)
+				streamurl = xvidstage(source, video_id);
+
 			debug(99, "streamurl1: %s", streamurl);
 
 			streamurl = string_replace_all("amp;", "", streamurl, 1);
@@ -174,7 +175,6 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 
 int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
 {
-printf("111111111111111111\n");
 	debug(99, "link: %s", link);
 	int ret = 1, series = 0;
 	char* ip = NULL, *pos = NULL, *path = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *line = NULL, *url = NULL, *pathnew = NULL;
@@ -268,7 +268,6 @@ printf("111111111111111111\n");
 		else
 		{
 			tmpstr = string_resub("<ul id=\"HosterList\" class=\"Sortable\">", "</ul>", tmpstr, 0);
-printf("22222222222222222222222\n");
 	
 			int count = 0;
 			int incount = 0;
@@ -326,8 +325,6 @@ printf("22222222222222222222222\n");
 					}
 					else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "VidStream.in") == 0)
 					{
-printf("333333333333333333333\n");
-
 						tmpstr2 = ret2[2].part;
 						type = 25;
 					}
@@ -340,9 +337,10 @@ printf("333333333333333333333\n");
 					{
 						tmpstr2 = ret2[3].part;
 					}				
-					else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "XvidStage.com") == 0)
+					else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "XvidStage.com") == 0)
 					{
-						tmpstr2 = ret2[3].part;
+						tmpstr2 = ret2[2].part;
+						type = 26;
 					}
 					else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Vidxden.com (DivX)") == 0)
 					{
@@ -554,9 +552,10 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 					{
 						tmpstr2 = ret2[3].part;
 					}
-					else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Vidxden.com (DivX)") == 0)
+					else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "Vidxden.com (DivX)") == 0)
 					{
-						tmpstr2 = ret2[3].part;
+						tmpstr2 = ret2[2].part;
+						type = 26;
 					}				
 					else if(ret2 != NULL && count2 > 2)
 					{
