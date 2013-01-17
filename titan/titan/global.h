@@ -5,7 +5,7 @@
 
 //flag 0: leave standby
 //flag 1: set standby
-void setcecstandby(int flag)
+int setcecstandby(int flag)
 {
   if(getconfigint("usecec", "NULL") == 1)
   {
@@ -23,6 +23,8 @@ void setcecstandby(int flag)
       free(tmpstr1); tmpstr1 = NULL;
     }
   }
+
+	return 0;
 }
 
 char* mask(char* input, int count, char* maskchar)
