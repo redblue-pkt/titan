@@ -90,7 +90,7 @@ int delmarkernode(off64_t pos)
 		node = delnode->next;
 		if(pos == -1)
 		{
-			free(delnode->time);
+			free(delnode->timetext);
 			free(delnode);
 			status.playmarker == NULL;
 		}
@@ -102,13 +102,60 @@ int delmarkernode(off64_t pos)
 				status.playmarker = delnode->next;
 			else
 				delnode->prev->next = delnode->next;
-			free(delnode->time);
+			free(delnode->timetext);
 			free(delnode);
 			break;
 		}
 		delnode = node;
 	}
 	return 0;
+}
+
+int getmarker(char* dateiname);
+{
+	off64_t pos;
+	off64_t time;
+	struct marker *node = NULL;
+	
+	FILE* datei = fopen(dateiname, "r");
+	if(datei!= NULL)
+	{
+		while (!feof(datei))
+		{
+			fscanf(datei, "%lld,%lld", &pos,&time);
+			node = addmarkernode(pos);
+			node->time = time;
+			node->pos = pos;
+			node->timetext = convert_timesec(time);
+		}
+		fclose(datei);
+	}
+	else 
+		return -1;
+}
+
+int putmarker(char* dateiname);
+{
+	struct marker *node = NULL;
+	
+	if(status.playmarker == NULL)
+		return -1;	
+	else
+		node = status.playmarker;
+	
+	FILE* datei = fopen(dateiname, "w");
+	if(datei!= NULL)
+	{
+		while(node->next != NULL)
+		{
+			fprintf(datei, "%lld,%lld\n", node->pos, node->time);
+			node = node->next;
+		}
+		fprintf(datei, "%lld,%lld\n", node->pos, node->time);	
+		fclose(datei);
+	}
+	else 
+		return -1;
 }
 
 #endif
