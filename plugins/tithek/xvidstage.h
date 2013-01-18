@@ -56,10 +56,15 @@ char* xvidstage(char* host, char* file)
 	char* referer = NULL;
 	char* usr_login = NULL;
 	char* imhuman = NULL;
+	char* post = NULL;
 
 	char* b36code = NULL;
 	char* base = NULL;
 	char* search = NULL;
+
+	char* tmpstr2 = NULL;
+	char* tmpstr3 = NULL;
+	char* charlist = NULL;
 
 	if(host == NULL || file == NULL) return NULL;
 
@@ -71,9 +76,6 @@ char* xvidstage(char* host, char* file)
 	debug(99, "tmpfile: %s", tmpfile);
 	debug(99, "file: %s", file);
 
-
-//'GET /bgszal6iipuy HTTP/1.1\r\nHost: www.xvidstage.com\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n'
-
 	send = ostrcat(send, "GET /", 1, 0);
 	send = ostrcat(send, file, 1, 0);
 	send = ostrcat(send, " HTTP/1.1\r\nHost: www.", 1, 0);	
@@ -83,8 +85,6 @@ char* xvidstage(char* host, char* file)
 	debug(99, "tmpfile: %s", tmpfile);
 	debug(99, "send: %s", send);
 
-//	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 1);
-//	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage1", tmpstr, 0);
 	char* line = NULL;
 	char* lines = NULL;
 	char* cmd = NULL;
@@ -101,11 +101,10 @@ char* xvidstage(char* host, char* file)
 	tmpstr = command("cat /tmp/tithek/get");
 	cookie = string_resub("Set-Cookie: afc=", ";", tmpstr, 0);	
 	debug(99, "cookie: %s", cookie);
-	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage1", tmpstr, 0);
+//	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage1", tmpstr, 0);
 
 	free(tmpstr), tmpstr = NULL;
 
-///////////////////
 	line = string_newline(command("cat /tmp/tithek/get | grep 'Set-Cookie:' -n | tail -n1| cut -d':' -f1"));
 	cmd = ostrcat(cmd, "cat /tmp/tithek/get | wc -l", 1, 0);
 	lines = string_newline(command(cmd));
@@ -126,12 +125,10 @@ char* xvidstage(char* host, char* file)
 	tmpstr = command(cmd);
 	free(cmd); cmd = NULL;
 	free(lines); lines = NULL;
-	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage2", tmpstr, 0);
+//	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage2", tmpstr, 0);
 
 
-/////////////
 	sleep(1);
-///////////////////
 
 	//get hash from tmpstr
 	char* pos1 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"fname\" value=");
@@ -182,8 +179,6 @@ char* xvidstage(char* host, char* file)
 	//create send string
 	free(send), send = NULL;
 
-//'POST /bgszal6iipuy HTTP/1.1\r\nContent-Length: 238\r\nAccept-Encoding: gzip\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nHost: www.xvidstage.com\r\nCookie: aff=4784\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n'
-
 	send = ostrcat(send, "POST /", 1, 0);
 	send = ostrcat(send, file, 1, 0);
 	send = ostrcat(send, " HTTP/1.1\r\nContent-Length: ", 1, 0);
@@ -197,24 +192,64 @@ char* xvidstage(char* host, char* file)
 	debug(99, "send: %s", send);
 
 	free(tmpstr), tmpstr = NULL;
-//	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 0);
-	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/get", NULL, NULL, 0, send, NULL, 0);
-	cmd = ostrcat(cmd, "cat /tmp/tithek/get | zcat", 1, 0);
+
+	//send and receive answer
+//	post = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 0);
+//	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_post1", post, 0);
+///
+	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/post", NULL, NULL, 0, send, NULL, 0);
+	cmd = ostrcat(cmd, "cat /tmp/tithek/post | zcat", 1, 0);
 	debug(99, "cmd: %s", cmd);
-	tmpstr = command(cmd);
+	post = command(cmd);
+//	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_post1", post, 0);
 	free(cmd); cmd = NULL;
-	system("cp /tmp/tithek/get /var/usr/local/share/titan/plugins/tithek/xvidstage3"); 	
-	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage4", tmpstr, 0);
 
-////////////////777
-	tmpstr = command("/var/usr/local/share/titan/plugins/tithek/getstring1.sh /tmp/post");
-	b36code = command("/var/usr/local/share/titan/plugins/tithek/getstring2.sh /tmp/post");
-	b36code = string_replace_all("||", "| |", b36code, 1);
+	free(tmpstr),tmpstr = NULL;
+	tmpstr = string_resub(";return p}('", ");'", post, 0);
+//	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_tmpstr1", tmpstr, 0);
+	
+	post = string_replace_all(tmpstr, "", post, 1);
+	post = string_replace_all(";return p}(');'", "", post, 1);
+//	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_post2", post, 0);
 
+	free(tmpstr),tmpstr = NULL;
+	free(b36code),b36code = NULL;
+	tmpstr = string_resub(";return p}('", ");'", post, 0);
+//	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_tmpstr2", tmpstr, 0);
+
+	b36code = oregex(".*;',[0-9]{2,2},[0-9]{2,2},'(.*)'.split.*", post);
+	
+	b36code = string_replace_all("||", "| |", b36code, 1);		
+//	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_b36code2", b36code, 0);
+	
 	struct splitstr* ret1 = NULL;
 	int count = 0;
 	int i = 0;
 	ret1 = strsplit(b36code, "|", &count);
+
+	charlist = ostrcat(charlist, "\"", 1, 0);
+	charlist = ostrcat(charlist, "|", 1, 0);
+	charlist = ostrcat(charlist, "'", 1, 0);
+	charlist = ostrcat(charlist, "|", 1, 0);
+	charlist = ostrcat(charlist, ".", 1, 0);
+	charlist = ostrcat(charlist, "|", 1, 0);
+	charlist = ostrcat(charlist, ";", 1, 0);
+	charlist = ostrcat(charlist, "|", 1, 0);
+	charlist = ostrcat(charlist, ":", 1, 0);
+	charlist = ostrcat(charlist, "|", 1, 0);
+	charlist = ostrcat(charlist, "=", 1, 0);
+	charlist = ostrcat(charlist, "|", 1, 0);
+	charlist = ostrcat(charlist, ",", 1, 0);
+	charlist = ostrcat(charlist, "|", 1, 0);
+	charlist = ostrcat(charlist, " ", 1, 0);
+	charlist = ostrcat(charlist, "|", 1, 0);
+	charlist = ostrcat(charlist, "\\", 1, 0);
+	charlist = ostrcat(charlist, "|", 1, 0);
+	charlist = ostrcat(charlist, "/", 1, 0);
+	charlist = ostrcat(charlist, "|", 1, 0);
+	charlist = ostrcat(charlist, "(", 1, 0);
+	charlist = ostrcat(charlist, "|", 1, 0);
+	charlist = ostrcat(charlist, ")", 1, 0);
 
 	for(i = 0; i < count; i++)
 	{
@@ -225,167 +260,76 @@ char* xvidstage(char* host, char* file)
 		}
 		char* x = oltostr(i, 36);
 
-		base = ostrcat(base, "'", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, "\\", 1, 0);		
-		search = ostrcat(search, "'", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, "\\", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-		
-		base = ostrcat(base, "'", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, "'", 1, 0);		
-		search = ostrcat(search, "'", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, "'", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
+		struct splitstr* ret2 = NULL;
+		int count2 = 0;
+		int i2 = 0;
+		tmpstr2 = ostrcat(charlist, NULL, 0, 0);
+		ret2 = strsplit(tmpstr2, "|", &count2);
+		for(i2 = 0; i2 < count2; i2++)
+		{
+			struct splitstr* ret3 = NULL;
+			int count3 = 0;
+			int i3 = 0;
+			tmpstr3 = ostrcat(charlist, NULL, 0, 0);
+			ret3 = strsplit(tmpstr3, "|", &count3);
+			for(i3 = 0; i3 < count3; i3++)
+			{
+				debug(99, "-----------------------------------------------");
+				debug(99, "replace %s%s%s <> %s%s%s",(&ret2[i2])->part, x, (&ret3[i3])->part, (&ret2[i2])->part, (&ret1[i])->part, (&ret3[i3])->part);
 
-		base = ostrcat(base, "'", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, ":", 1, 0);		
-		search = ostrcat(search, "'", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, ":", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-
-		base = ostrcat(base, "'", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, ":", 1, 0);		
-		search = ostrcat(search, "'", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, ":", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-				
-		base = ostrcat(base, "/", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, "/", 1, 0);
-		search = ostrcat(search, "/", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, "/", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-
-		base = ostrcat(base, ".", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, ".", 1, 0);
-		search = ostrcat(search, ".", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, ".", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-
-		base = ostrcat(base, ".", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, "/", 1, 0);
-		search = ostrcat(search, ".", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, "/", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-
-		base = ostrcat(base, ".", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, "'", 1, 0);
-		search = ostrcat(search, ".", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, "'", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-	
-		base = ostrcat(base, "/", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, ".", 1, 0);
-		search = ostrcat(search, "/", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, ".", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-
-		base = ostrcat(base, ".", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, "(", 1, 0);
-		search = ostrcat(search, ".", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, "(", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-
-		base = ostrcat(base, " ", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, "(", 1, 0);
-		search = ostrcat(search, " ", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, "(", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-
-		base = ostrcat(base, "=", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, " ", 1, 0);
-		search = ostrcat(search, "=", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, " ", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-
-		base = ostrcat(base, " ", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, "=", 1, 0);
-		search = ostrcat(search, " ", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, "=", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
-		free(base), base = NULL;
-
-		base = ostrcat(base, ";", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, ".", 1, 0);
-		search = ostrcat(search, ";", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, ".", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-
-		base = ostrcat(base, ".", 1, 0);
-		base = ostrcat(base, x, 1, 0);
-		base = ostrcat(base, "\\", 1, 0);
-		search = ostrcat(search, ".", 1, 0);
-		search = ostrcat(search, (&ret1[i])->part, 1, 0);
-		search = ostrcat(search, "\\", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
-		free(base), base = NULL;
-		free(search), search = NULL;
-
+				base = ostrcat(base, (&ret2[i2])->part, 1, 0);
+				base = ostrcat(base, x, 1, 0);
+				base = ostrcat(base, (&ret3[i3])->part, 1, 0);		
+				search = ostrcat(search, (&ret2[i2])->part, 1, 0);
+				search = ostrcat(search, (&ret1[i])->part, 1, 0);
+				search = ostrcat(search, (&ret3[i3])->part, 1, 0);
+				tmpstr = string_replace_all(base, search, tmpstr, 1);
+				free(base), base = NULL;
+				free(search), search = NULL;
+			}
+			free(ret3), ret3 = NULL;
+			free(tmpstr3), tmpstr3 = NULL;
+		}
+		free(ret2), ret2 = NULL;
+		free(tmpstr2), tmpstr2 = NULL;
 		free(x);
 	}
 	free(ret1), ret1 = NULL;
 	free(b36code), b36code = NULL;
+	free(post), post = NULL;
+	free(charlist), charlist = NULL;
 
-	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage5", tmpstr, 0);
+//	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_tmpstr_last", tmpstr, 0);
 
 	streamlink = oregex(".*file.*(http:.*video.flv).*image.*", tmpstr);
 	if(streamlink == NULL)
-		streamlink = oregex(".*file.*(http:.*video.mp4).*image.*", tmpstr);	
+		streamlink = oregex(".*file.*(http:.*video.mp4).*image.*", tmpstr);				
+
+	if(streamlink == NULL)
+		streamlink = oregex(".*file.*(http:.*video.mkv).*image.*", tmpstr);
+
+	if(streamlink == NULL)
+		streamlink = oregex(".*file.*(http:.*video.avi).*image.*", tmpstr);
+
+	if(streamlink == NULL)
+		streamlink = oregex(".*src=.*(http:.*video.mp4).*\".*", tmpstr);
+
+	if(streamlink == NULL)
+		streamlink = oregex(".*src=.*(http:.*video.mkv).*\".*", tmpstr);
+
+	if(streamlink == NULL)
+		streamlink = oregex(".*src=.*(http:.*video.avi).*\".*", tmpstr);
 		
-/////////////////
+	if(streamlink == NULL)
+		streamlink = oregex(".*value=.*(http:.*video.mp4).*\".*", tmpstr);				
+
+	if(streamlink == NULL)
+		streamlink = oregex(".*value=.*(http:.*video.mkv).*\".*", tmpstr);
+
+	if(streamlink == NULL)
+		streamlink = oregex(".*value=.*(http:.*video.avi).*\".*", tmpstr);			
+
+	free(tmpstr); tmpstr = NULL;
 
 end:
 
