@@ -1079,7 +1079,8 @@ struct hddparm
 struct marker
 {
 	off64_t pos;
-	char* time;
+	off64_t time;
+	char* timetext;
 	struct marker* prev;
 	struct marker* next;
 };
