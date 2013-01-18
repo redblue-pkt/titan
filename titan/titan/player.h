@@ -192,6 +192,9 @@ void playerstopts(int flag, int flag1)
 				fclose(fbseek);
 			}
 			free(fileseek); fileseek=NULL;
+			char* filemarker = changefilenameext(snode->recname, ".ma");
+			ret = putmarker(filemarker);
+			free(filemarker); filemarker=NULL;
 		}
 		
 		ret = servicestop(status.aktservice, 1, 1);
