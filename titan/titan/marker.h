@@ -110,3 +110,5 @@ int delmarkernode(off64_t pos)
 	}
 	return 0;
 }
+
+#endif
