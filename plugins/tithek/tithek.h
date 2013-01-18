@@ -1418,7 +1418,7 @@ waitrcstart:
 					}
 				}
 				drawscreen(grid, 0, 0);
-				//sleep(1);
+				sleep(1);
 			}			
 		}
 		else if(rcret == getrcconfigint("rcyellow", NULL) && ostrcmp(title, "TiThek - Favoriten") == 0)
