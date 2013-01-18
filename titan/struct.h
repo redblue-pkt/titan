@@ -1076,6 +1076,14 @@ struct hddparm
 	int notchanged;
 };
 
+struct marker
+{
+	off64_t pos;
+	char* time;
+	struct marker* prev;
+	struct marker* next;
+};
+
 struct status
 {
 	int longkeycode[MAXLONGKEY];
@@ -1323,6 +1331,8 @@ struct status
 	//for auto increase audio vol (mute)
 	int volmute;
 	int secondzap;
+	//pointer to marker for recordings
+	struct marker* playmarker;
 } status;
 
 struct fb

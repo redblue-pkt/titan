@@ -219,6 +219,7 @@ struct extepgconfig* extepgconfig = NULL;
 #include "shortepg.h"
 #include "mediadbedit.h"
 #include "tpchoice.h"
+#include "marker.h"
 
 //#include "cardreader.h"
 //#include "sci.h"
