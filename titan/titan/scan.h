@@ -1254,6 +1254,7 @@ void scanaddchannel(struct skin* node, int scantype, struct transponder* tp1, in
 		{
 			free(chnode->name);
 			chnode->name = ostrcat(node->param2, NULL, 0, 0);
+			status.writetransponder = 1;
 		}
 	}
 }
