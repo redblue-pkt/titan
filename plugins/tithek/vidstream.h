@@ -1,41 +1,6 @@
 #ifndef VIDSTREAM_H
 #define VIDSTREAM_H
 
-unsigned char* vidstreamreceive(int* sock)
-{
-	int ret = 0;
-	unsigned char* buf = NULL;
-
-	buf = calloc(1, MINMALLOC);
-	if(buf == NULL)
-	{
-		err("no mem");
-		return NULL;
-	}
-
-	//read one line
-	unsigned char* pbuf = buf;
-
-	while(pbuf - buf < MINMALLOC)
-	{
-		unsigned char c;
-
-		ret = sockreceive(sock, &c, 1, 5000 * 1000);
-		if(ret != 0)
-		{
-			err("no client data in buffer");
-			break;
-		}
-
-		*pbuf = c;
-		if(buf != NULL && (ostrstr((char*)buf, "\n\n") != NULL || ostrstr((char*)buf, "\r\n\r\n") != NULL))
-			break;
-		pbuf++;
-	}
-
-	return buf;
-}
-
 char* vidstream(char* host, char* file)
 {
 	debug(99, "in host: %s file: %s", host, file);
@@ -66,9 +31,6 @@ char* vidstream(char* host, char* file)
 	debug(99, "tmpfile: %s", tmpfile);
 	debug(99, "file: %s", file);
 
-
-//'GET /1cr2nsh9pdjw HTTP/1.1\r\nHost: vidstream.in\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n'
-
 	send = ostrcat(send, "GET /", 1, 0);
 	send = ostrcat(send, file, 1, 0);
 	send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);	
@@ -78,10 +40,9 @@ char* vidstream(char* host, char* file)
 	debug(99, "tmpfile: %s", tmpfile);
 	debug(99, "send: %s", send);
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 1);
-	writesys("/var/usr/local/share/titan/plugins/tithek/vidstream1", tmpstr, 0);
+//	writesys("/var/usr/local/share/titan/plugins/tithek/vidstream1", tmpstr, 0);
 
 	sleep(1);
-///////////////////
 
 	//get hash from tmpstr
 	char* pos1 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"fname\" value=");
@@ -145,7 +106,7 @@ char* vidstream(char* host, char* file)
 	free(tmpstr), tmpstr = NULL;
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 1);
 	
-	writesys("/var/usr/local/share/titan/plugins/tithek/vidstream2", tmpstr, 0);
+//	writesys("/var/usr/local/share/titan/plugins/tithek/vidstream2", tmpstr, 0);
 
 	sleep(1);
 	streamlink = string_resub("file: \"", "\",", tmpstr, 0);

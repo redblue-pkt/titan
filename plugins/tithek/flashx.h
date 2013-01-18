@@ -1,41 +1,6 @@
 #ifndef FLASHX_H
 #define FLASHX_H
 
-unsigned char* flashxreceive(int* sock)
-{
-	int ret = 0;
-	unsigned char* buf = NULL;
-
-	buf = calloc(1, MINMALLOC);
-	if(buf == NULL)
-	{
-		err("no mem");
-		return NULL;
-	}
-
-	//read one line
-	unsigned char* pbuf = buf;
-
-	while(pbuf - buf < MINMALLOC)
-	{
-		unsigned char c;
-
-		ret = sockreceive(sock, &c, 1, 5000 * 1000);
-		if(ret != 0)
-		{
-			err("no client data in buffer");
-			break;
-		}
-
-		*pbuf = c;
-		if(buf != NULL && (ostrstr((char*)buf, "\n\n") != NULL || ostrstr((char*)buf, "\r\n\r\n") != NULL))
-			break;
-		pbuf++;
-	}
-
-	return buf;
-}
-
 char* flashx(char* host, char* file)
 {
 	debug(99, "in host: %s file: %s", host, file);
