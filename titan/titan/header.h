@@ -801,6 +801,6 @@ char* getrec();
 
 //marker.h
 struct marker* addmarkernode(off64_t pos);
-int delmarkernode(off64_t pos)
+int delmarkernode(off64_t pos);
 
 #endif
