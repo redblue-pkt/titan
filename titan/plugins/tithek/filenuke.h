@@ -52,6 +52,7 @@ char* filenuke(char* host, char* file)
 	char* b36code = NULL;
 	char* base = NULL;
 	char* search = NULL;
+	char* post = NULL;
 	char* streamlink = NULL;
 
 	if(host == NULL || file == NULL) return NULL;
@@ -65,8 +66,6 @@ char* filenuke(char* host, char* file)
 	debug(99, "tmpfile: %s", tmpfile);
 	tmpstr = gethttp(tmphost, tmpfile, 80, NULL, NULL, NULL, 0);
 	debug(99, "write file");
-	
-	writesys("/tmp/filenuke", tmpstr, 0);
 
 	//get hash from tmpstr
 	char* pos1 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"fname\" value=");
@@ -106,18 +105,30 @@ char* filenuke(char* host, char* file)
 	send = ostrcat(send, hash, 1, 0);
 	debug(99, "send: %s", send);
 
-	sleep(10);
-	
+	sleep(5);
+
 	//send and receive answer
-	gethttpreal(tmphost, tmpfile, 80, "/tmp/post", NULL, NULL, 0, send, NULL, 0);
-//	writesys("/var/usr/local/share/titan/plugins/tithek/flashx4", tmpstr, 0)
+	post = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 0);
+//	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke_post1", post, 0);
+
+	free(tmpstr),tmpstr = NULL;
+	tmpstr = string_resub(";return p}('", ");'", post, 0);
+//	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke_tmpstr1", tmpstr, 0);
 	
-	sleep(10);
+	post = string_replace_all(tmpstr, "", post, 1);
+	post = string_replace_all(";return p}(');'", "", post, 1);
+//	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke_post2", post, 0);
 
-	tmpstr = command("/var/usr/local/share/titan/plugins/tithek/getstring1.sh /tmp/post");
-	b36code = command("/var/usr/local/share/titan/plugins/tithek/getstring2.sh /tmp/post");
-	b36code = string_replace_all("||", "| |", b36code, 1);
+	free(tmpstr),tmpstr = NULL;
+	free(b36code),b36code = NULL;
+	tmpstr = string_resub(";return p}('", ");'", post, 0);
+//	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke_tmpstr2", tmpstr, 0);
 
+	b36code = oregex(".*;',[0-9]{2,2},[0-9]{2,2},'(.*)'.split.*", post);
+	
+	b36code = string_replace_all("||", "| |", b36code, 1);		
+//	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke_b36code2", b36code, 0);
+	
 	struct splitstr* ret1 = NULL;
 	int count = 0;
 	int i = 0;
@@ -132,13 +143,64 @@ char* filenuke(char* host, char* file)
 		}
 		char* x = oltostr(i, 36);
 
+		base = ostrcat(base, "\"", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, "\\", 1, 0);		
+		search = ostrcat(search, "\"", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, "\\", 1, 0);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+		
+		base = ostrcat(base, "\"", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, "'", 1, 0);		
+		search = ostrcat(search, "\"", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, "'", 1, 0);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+
+		base = ostrcat(base, "\"", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, ":", 1, 0);		
+		search = ostrcat(search, "\"", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, ":", 1, 0);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+
+		base = ostrcat(base, "\"", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, ":", 1, 0);		
+		search = ostrcat(search, "\"", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, ":", 1, 0);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+
+		base = ostrcat(base, "\"", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, "=", 1, 0);		
+		search = ostrcat(search, "\"", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, "=", 1, 0);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+///
+
 		base = ostrcat(base, "'", 1, 0);
 		base = ostrcat(base, x, 1, 0);
 		base = ostrcat(base, "\\", 1, 0);		
 		search = ostrcat(search, "'", 1, 0);
 		search = ostrcat(search, (&ret1[i])->part, 1, 0);
 		search = ostrcat(search, "\\", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
 		free(base), base = NULL;
 		free(search), search = NULL;
 		
@@ -148,7 +210,7 @@ char* filenuke(char* host, char* file)
 		search = ostrcat(search, "'", 1, 0);
 		search = ostrcat(search, (&ret1[i])->part, 1, 0);
 		search = ostrcat(search, "'", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
 		free(base), base = NULL;
 		free(search), search = NULL;
 
@@ -158,7 +220,7 @@ char* filenuke(char* host, char* file)
 		search = ostrcat(search, "'", 1, 0);
 		search = ostrcat(search, (&ret1[i])->part, 1, 0);
 		search = ostrcat(search, ":", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
 		free(base), base = NULL;
 		free(search), search = NULL;
 
@@ -168,17 +230,27 @@ char* filenuke(char* host, char* file)
 		search = ostrcat(search, "'", 1, 0);
 		search = ostrcat(search, (&ret1[i])->part, 1, 0);
 		search = ostrcat(search, ":", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
 		free(base), base = NULL;
 		free(search), search = NULL;
-				
+
+		base = ostrcat(base, "'", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, "=", 1, 0);		
+		search = ostrcat(search, "'", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, "=", 1, 0);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+///				
 		base = ostrcat(base, "/", 1, 0);
 		base = ostrcat(base, x, 1, 0);
 		base = ostrcat(base, "/", 1, 0);
 		search = ostrcat(search, "/", 1, 0);
 		search = ostrcat(search, (&ret1[i])->part, 1, 0);
 		search = ostrcat(search, "/", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
 		free(base), base = NULL;
 		free(search), search = NULL;
 
@@ -188,7 +260,7 @@ char* filenuke(char* host, char* file)
 		search = ostrcat(search, ".", 1, 0);
 		search = ostrcat(search, (&ret1[i])->part, 1, 0);
 		search = ostrcat(search, ".", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
 		free(base), base = NULL;
 		free(search), search = NULL;
 
@@ -198,7 +270,7 @@ char* filenuke(char* host, char* file)
 		search = ostrcat(search, ".", 1, 0);
 		search = ostrcat(search, (&ret1[i])->part, 1, 0);
 		search = ostrcat(search, "/", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
 		free(base), base = NULL;
 		free(search), search = NULL;
 
@@ -208,17 +280,28 @@ char* filenuke(char* host, char* file)
 		search = ostrcat(search, ".", 1, 0);
 		search = ostrcat(search, (&ret1[i])->part, 1, 0);
 		search = ostrcat(search, "'", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
 		free(base), base = NULL;
 		free(search), search = NULL;
-	
+
+		base = ostrcat(base, ".", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, "=", 1, 0);
+		search = ostrcat(search, ".", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, "=", 1, 0);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+
+///	
 		base = ostrcat(base, "/", 1, 0);
 		base = ostrcat(base, x, 1, 0);
 		base = ostrcat(base, ".", 1, 0);
 		search = ostrcat(search, "/", 1, 0);
 		search = ostrcat(search, (&ret1[i])->part, 1, 0);
 		search = ostrcat(search, ".", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
 		free(base), base = NULL;
 		free(search), search = NULL;
 
@@ -228,17 +311,27 @@ char* filenuke(char* host, char* file)
 		search = ostrcat(search, ".", 1, 0);
 		search = ostrcat(search, (&ret1[i])->part, 1, 0);
 		search = ostrcat(search, "(", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
 		free(base), base = NULL;
 		free(search), search = NULL;
 
+		base = ostrcat(base, ".", 1, 0);
+		base = ostrcat(base, x, 1, 0);
+		base = ostrcat(base, "\"", 1, 0);
+		search = ostrcat(search, ".", 1, 0);
+		search = ostrcat(search, (&ret1[i])->part, 1, 0);
+		search = ostrcat(search, "\"", 1, 0);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
+		free(base), base = NULL;
+		free(search), search = NULL;
+		
 		base = ostrcat(base, " ", 1, 0);
 		base = ostrcat(base, x, 1, 0);
 		base = ostrcat(base, "(", 1, 0);
 		search = ostrcat(search, " ", 1, 0);
 		search = ostrcat(search, (&ret1[i])->part, 1, 0);
 		search = ostrcat(search, "(", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
 		free(base), base = NULL;
 		free(search), search = NULL;
 
@@ -248,7 +341,7 @@ char* filenuke(char* host, char* file)
 		search = ostrcat(search, "=", 1, 0);
 		search = ostrcat(search, (&ret1[i])->part, 1, 0);
 		search = ostrcat(search, " ", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
 		free(base), base = NULL;
 		free(search), search = NULL;
 
@@ -258,7 +351,7 @@ char* filenuke(char* host, char* file)
 		search = ostrcat(search, " ", 1, 0);
 		search = ostrcat(search, (&ret1[i])->part, 1, 0);
 		search = ostrcat(search, "=", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
 		free(base), base = NULL;
 
 		base = ostrcat(base, ";", 1, 0);
@@ -267,7 +360,7 @@ char* filenuke(char* host, char* file)
 		search = ostrcat(search, ";", 1, 0);
 		search = ostrcat(search, (&ret1[i])->part, 1, 0);
 		search = ostrcat(search, ".", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
 		free(base), base = NULL;
 		free(search), search = NULL;
 
@@ -277,7 +370,7 @@ char* filenuke(char* host, char* file)
 		search = ostrcat(search, ".", 1, 0);
 		search = ostrcat(search, (&ret1[i])->part, 1, 0);
 		search = ostrcat(search, "\\", 1, 0);
-		tmpstr = string_replace(base, search, tmpstr, 1);
+		tmpstr = string_replace_all(base, search, tmpstr, 1);
 		free(base), base = NULL;
 		free(search), search = NULL;
 
@@ -285,12 +378,19 @@ char* filenuke(char* host, char* file)
 	}
 	free(ret1), ret1 = NULL;
 	free(b36code), b36code = NULL;
+	free(post), post = NULL;
 
-//	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke1", tmpstr, 0);
+//	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke_tmpstr_last", tmpstr, 0);
 
 	streamlink = oregex(".*file.*(http:.*video.flv).*image.*", tmpstr);
 	if(streamlink == NULL)
 		streamlink = oregex(".*file.*(http:.*video.mp4).*image.*", tmpstr);				
+
+	if(streamlink == NULL)
+		streamlink = oregex(".*src=.*(http:.*video.mkv).*\".*", tmpstr);				
+
+	if(streamlink == NULL)
+		streamlink = oregex(".*value=.*(http:.*video.mkv).*\".*", tmpstr);				
 
 	free(tmpstr); tmpstr = NULL;
 
