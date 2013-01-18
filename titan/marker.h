@@ -86,7 +86,6 @@ int delmarkernode(off64_t pos)
 	delnode = node;
 	while(delnode != NULL)
 	{
-		printf("--> %i",delnode->pos);
 		node = delnode->next;
 		if(pos == -1)
 		{
@@ -111,7 +110,7 @@ int delmarkernode(off64_t pos)
 	return 0;
 }
 
-int getmarker(char* dateiname);
+int getmarker(char* dateiname)
 {
 	off64_t pos;
 	off64_t time;
@@ -132,9 +131,11 @@ int getmarker(char* dateiname);
 	}
 	else 
 		return -1;
+		
+	return 0;
 }
 
-int putmarker(char* dateiname);
+int putmarker(char* dateiname)
 {
 	struct marker *node = NULL;
 	
@@ -156,6 +157,17 @@ int putmarker(char* dateiname);
 	}
 	else 
 		return -1;
+
+	return 0;
+}
+
+int setmarker()
+{
+	unsigned long long pos = 0, len = 0, startpos = 0;
+	
+	playergetinfots(&len, &startpos, NULL, &pos, NULL, 0);
+	len = len / 90000;
+	pos = (pos - startpos) / 90000;
 }
 
 #endif
