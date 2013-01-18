@@ -180,7 +180,7 @@ int setmarker()
 		node->timetext = convert_timesec(atime);
 	}
 	else
-		retutn - 1;
+		return -1;
 	
 	return 0;
 }
