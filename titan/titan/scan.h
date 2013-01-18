@@ -520,15 +520,20 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 								break;
 						}
 						tmpstr = ostrcat(tmpstr2, " (", 0, 0);
-						tmpstr = ostrcat(tmpstr, tmpstr1, 0, 0);
-						tmpstr = ostrcat(tmpstr, " - ", 0, 0);
+						tmpstr = ostrcat(tmpstr, tmpstr1, 1, 0);
+						tmpstr = ostrcat(tmpstr, " - ", 1, 0);
 						if(servicetype == 0)
-							tmpstr = ostrcat(tmpstr, _("TV"), 0, 0);
+							tmpstr = ostrcat(tmpstr, _("TV"), 1, 0);
 						else if(servicetype == 1)
-							tmpstr = ostrcat(tmpstr, _("Radio"), 0, 0);
+							tmpstr = ostrcat(tmpstr, _("Radio"), 1, 0);
 						else
-							tmpstr = ostrcat(tmpstr, _("Data"), 0, 0);
-						tmpstr = ostrcat(tmpstr, ")", 0, 0);
+							tmpstr = ostrcat(tmpstr, _("Data"), 1, 0);
+						if(chnode != NULL && chnode->name != NULL && strlen(chnode->name) > 0 && ostrcmp(tmpstr2, chnode->name) != 0)
+						{
+							tmpstr = ostrcat(tmpstr, " - ", 1, 0);
+							tmpstr = ostrcat(tmpstr, chnode->name, 1, 0);
+						}
+						tmpstr = ostrcat(tmpstr, ")", 1, 0);
 						changetext(node, tmpstr);
 						changeparam1(node, tmpstr1);
 						changeparam2(node, tmpstr2);
