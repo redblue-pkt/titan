@@ -19,5 +19,6 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 char* flashx(char* host, char* file);
 char* vidstream(char* host, char* file);
 char* xvidstage(char* host, char* file);
+char* nowvideo(char* host, char* file);
 
 #endif

@@ -14,6 +14,7 @@
 #include "flashx.h"
 #include "vidstream.h"
 #include "xvidstage.h"
+#include "nowvideo.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";
