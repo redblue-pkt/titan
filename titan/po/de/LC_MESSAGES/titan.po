@@ -2651,16 +2651,16 @@ msgid "Resync Recording immediately"
 msgstr "Synchronisiere Aufnamen sofort"
 
 msgid "IPK Upgrade Done your system rebooting !"
-msgstr "IPK Aktualisieren abgeschlossen Ihre Box wird neugestartet"
+msgstr "IPK Aktualisieren abgeschlossen\nIhre Box wird neu gestartet"
 
 msgid "IPK Tmp Install Done your system rebooting !"
-msgstr "IPK Tmp Installation abgeschlossen Ihre Box wird neugestartet"
+msgstr "IPK Tmp Installation abgeschlossen\nIhre Box wird neu gestartet"
 
 msgid "IPK Install Done your system rebooting !"
-msgstr "IPK Installation abgeschlossen Ihre Box wird neugestartet"
+msgstr "IPK Installation abgeschlossen\nIhre Box wird neu gestartet"
 
 msgid "IPK Remove Done your system rebooting !"
-msgstr "IPK Löschen abgeschlossen Ihre Box wird neugestartet"
+msgstr "IPK Löschen abgeschlossen\nIhre Box wird neu gestartet"
 
 msgid "Weather Infos"
 msgstr "Wetter anzeigen"
