@@ -1238,6 +1238,9 @@ playerstart:
 
 				if(rcret == getrcconfigint("rcup", NULL))
 					playrcjumpf(file, 300, &playinfobarstatus, &playinfobarcount, playertype, flag);
+				
+				if(rcret == getrcconfigint("rc0", NULL))
+					setmarker();
 
 			}
 			//don't change this sleep, without this

@@ -91,7 +91,7 @@ int delmarkernode(off64_t pos)
 		{
 			free(delnode->timetext);
 			free(delnode);
-			status.playmarker == NULL;
+			status.playmarker = NULL;
 		}
 		else if(delnode->pos == pos)
 		{
@@ -123,6 +123,8 @@ int getmarker(char* dateiname)
 		{
 			fscanf(datei, "%lld,%lld", &pos,&time);
 			node = addmarkernode(pos);
+			if(node == NULL)
+				return -1;
 			node->time = time;
 			node->pos = pos;
 			node->timetext = convert_timesec(time);
@@ -163,11 +165,24 @@ int putmarker(char* dateiname)
 
 int setmarker()
 {
-	unsigned long long pos = 0, len = 0, startpos = 0;
+	unsigned long long atime = 0, len = 0, startpos = 0;
+	struct marker *node = NULL;
 	
-	playergetinfots(&len, &startpos, NULL, &pos, NULL, 0);
-	len = len / 90000;
-	pos = (pos - startpos) / 90000;
+	struct service* snode = getservice(RECORDPLAY, 0);
+	off64_t pos = lseek64(snode->recsrcfd, 0, SEEK_CUR);
+	node = addmarkernode(pos);
+	if(node != NULL)
+	{
+		node->pos = pos;
+		playergetinfots(&len, &startpos, NULL, &atime, NULL, 0);
+		atime = (atime - startpos) / 90000;
+		node->time = atime;
+		node->timetext = convert_timesec(atime);
+	}
+	else
+		retutn - 1;
+	
+	return 0;
 }
 
 #endif
