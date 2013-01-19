@@ -805,5 +805,8 @@ int delmarkernode(off64_t pos);
 int getmarker(char* dateiname);
 int putmarker(char* dateiname);
 int setmarker();
+int jumpmarker(char* timetext);
+void screenmarker();
+
 
 #endif

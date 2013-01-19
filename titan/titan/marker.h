@@ -178,6 +178,7 @@ int setmarker()
 		atime = (atime - startpos) / 90000;
 		node->time = atime;
 		node->timetext = convert_timesec(atime);
+		int ret = textbox(_("Message"), _("Marker has been set."), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 2, 0);
 	}
 	else
 		return -1;
@@ -185,6 +186,24 @@ int setmarker()
 	return 0;
 }
 
+int jumpmarker(char* timetext)
+{
+	struct marker* marker = status.playmarker;
+
+	while(marker != NULL)
+	{
+		if(ostrcmp(marker->timetext, timetext) == 0)
+		{
+			struct service* snode = getservice(RECORDPLAY, 0);
+			m_lock(&status.tsseekmutex, 15);
+			off64_t pos = lseek64(snode->recsrcfd, marker->pos, SEEK_SET);
+			m_unlock(&status.tsseekmutex, 15);
+			return 0;
+		}
+	}
+	return -1;
+}
+	
 void screenmarker()
 {
 	int rcret;
@@ -221,10 +240,16 @@ void screenmarker()
 	{
 		rcret = waitrc(screen1, 0, 0);
 		if(rcret==getrcconfigint("rcexit",NULL)) break;
+		if(listbox->select != NULL && rcret==getrcconfigint("rcok",NULL))
+		{
+			rcret = jumpmarker(listbox->select->name);
+			break;
+		}
 	}
 	delownerrc(screen1);
 	delmarkedscreennodes(screen1, 1);
 	clearscreen(screen1);
+	drawscreen(screen1, 0, 0);
 }
 
 #endif
