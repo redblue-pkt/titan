@@ -110,6 +110,18 @@ int delmarkernode(off64_t pos)
 	return 0;
 }
 
+int delmarker(char* timetext)
+{
+	struct marker* marker = status.playmarker;
+
+	while(marker != NULL)
+	{
+		if(ostrcmp(marker->timetext, timetext) == 0)
+			return = delmarkernode(marker->pos);
+	}
+	return -1;
+}
+
 int getmarker(char* dateiname)
 {
 	off64_t pos;
@@ -244,6 +256,15 @@ void screenmarker()
 		{
 			rcret = jumpmarker(listbox->select->name);
 			break;
+		}
+		if(listbox->select != NULL && rcret==getrcconfigint("rcred",NULL))
+		{
+			if(delmarker(listbox->select->name) == 0)
+			{
+				listbox->select->hidden = YES;
+				clearscreen(screen1);
+				drawscreen(screen1, 0, 0);
+			}
 		}
 	}
 	delownerrc(screen1);
