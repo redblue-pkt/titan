@@ -802,6 +802,7 @@ char* getrec();
 //marker.h
 struct marker* addmarkernode(off64_t pos);
 int delmarkernode(off64_t pos);
+int delmarker(char* timetext);
 int getmarker(char* dateiname);
 int putmarker(char* dateiname);
 int setmarker();
