@@ -290,7 +290,6 @@ void playrcok(char* file, int playinfobarstatus, int playertype, int flag)
 
 	free(status.playfile); status.playfile = NULL;
 	status.playfile = ostrcat(file, NULL, 0, 0);
-
 	screenplaypolicy(file, 1);
 	drawscreen(skin, 0, 0);
 	if(playinfobarstatus > 0)
@@ -1241,6 +1240,8 @@ playerstart:
 				
 				if(rcret == getrcconfigint("rc0", NULL))
 					setmarker();
+				if(rcret == getrcconfigint("rc5", NULL))
+					screenmarker();
 
 			}
 			//don't change this sleep, without this

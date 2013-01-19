@@ -151,10 +151,10 @@ int putmarker(char* dateiname)
 	{
 		while(node->next != NULL)
 		{
-			fprintf(datei, "%lld,%lld\n", node->pos, node->time);
+			fprintf(datei, "%lld,%lld,", node->pos, node->time);
 			node = node->next;
 		}
-		fprintf(datei, "%lld,%lld\n", node->pos, node->time);	
+		fprintf(datei, "%lld,%lld", node->pos, node->time);	
 		fclose(datei);
 	}
 	else 
@@ -183,6 +183,48 @@ int setmarker()
 		return -1;
 	
 	return 0;
+}
+
+void screenmarker()
+{
+	int rcret;
+	
+	struct skin* screen1 = getscreen("marker");
+	struct skin* listbox = getscreennode(screen1, "listbox");
+	struct skin* dummy = getscreennode(screen1, "dummy");
+	struct skin* tmp = NULL;
+	
+	struct marker *marker = NULL;
+	
+	marker = status.playmarker;
+	while(marker != NULL)
+	{
+		tmp = addlistbox(screen1, listbox, tmp, 1);
+		if(tmp != NULL)
+		{
+			tmp->textposx = dummy->textposx;
+			tmp->prozposx = dummy->prozposx;
+			tmp->prozposy = dummy->prozposy;
+			tmp->height = dummy->height;
+			tmp->valign = dummy->valign;
+			tmp->hspace = dummy->hspace;
+			
+			changename(tmp, marker->timetext);
+			changetext(tmp, marker->timetext);
+		}
+		marker = marker->next;
+	}
+
+	drawscreen(screen1, 0, 0);
+	addscreenrc(screen1, listbox);
+	while (1)
+	{
+		rcret = waitrc(screen1, 0, 0);
+		if(rcret==getrcconfigint("rcexit",NULL)) break;
+	}
+	delownerrc(screen1);
+	delmarkedscreennodes(screen1, 1);
+	clearscreen(screen1);
 }
 
 #endif
