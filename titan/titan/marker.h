@@ -117,7 +117,7 @@ int delmarker(char* timetext)
 	while(marker != NULL)
 	{
 		if(ostrcmp(marker->timetext, timetext) == 0)
-			return = delmarkernode(marker->pos);
+			return delmarkernode(marker->pos);
 	}
 	return -1;
 }
