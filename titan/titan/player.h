@@ -107,6 +107,14 @@ int playerstartts(char* file, int flag)
 			}
 			free(fileseek); fileseek = NULL;
 		}
+		if(flag == 0)
+		{
+			delmarkernode(-1);
+			char* filemarker = changefilenameext(file, ".ma");
+			getmarker(filemarker);
+			free(filemarker); filemarker=NULL;
+		}
+
 		delchannel(serviceid, 0, 1);
 		chnode = createchannel("player", 0, 0, serviceid, 99, 0, -1, -1, -1, -1, 0);
 		if(chnode != NULL) chnode->pmtpid = pmtpid;
@@ -195,6 +203,7 @@ void playerstopts(int flag, int flag1)
 			char* filemarker = changefilenameext(snode->recname, ".ma");
 			ret = putmarker(filemarker);
 			free(filemarker); filemarker=NULL;
+			delmarkernode(-1);
 		}
 		
 		ret = servicestop(status.aktservice, 1, 1);
