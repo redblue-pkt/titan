@@ -118,6 +118,7 @@ int delmarker(char* timetext)
 	{
 		if(ostrcmp(marker->timetext, timetext) == 0)
 			return delmarkernode(marker->pos);
+		marker = marker->next;
 	}
 	return -1;
 }
@@ -208,10 +209,14 @@ int jumpmarker(char* timetext)
 		{
 			struct service* snode = getservice(RECORDPLAY, 0);
 			m_lock(&status.tsseekmutex, 15);
+			videoclearbuffer(status.aktservice->videodev);
+			audioclearbuffer(status.aktservice->audiodev);
+			videodiscontinuityskip(status.aktservice->videodev, 0);
 			off64_t pos = lseek64(snode->recsrcfd, marker->pos, SEEK_SET);
 			m_unlock(&status.tsseekmutex, 15);
 			return 0;
 		}
+		marker = marker->next;
 	}
 	return -1;
 }
@@ -254,12 +259,12 @@ void screenmarker()
 		if(rcret==getrcconfigint("rcexit",NULL)) break;
 		if(listbox->select != NULL && rcret==getrcconfigint("rcok",NULL))
 		{
-			rcret = jumpmarker(listbox->select->name);
-			break;
+			if(jumpmarker(listbox->select->text) == 0)
+				break;
 		}
 		if(listbox->select != NULL && rcret==getrcconfigint("rcred",NULL))
 		{
-			if(delmarker(listbox->select->name) == 0)
+			if(delmarker(listbox->select->text) == 0)
 			{
 				listbox->select->hidden = YES;
 				clearscreen(screen1);
@@ -270,7 +275,7 @@ void screenmarker()
 	delownerrc(screen1);
 	delmarkedscreennodes(screen1, 1);
 	clearscreen(screen1);
-	drawscreen(screen1, 0, 0);
+	blitfb(0);
 }
 
 #endif
