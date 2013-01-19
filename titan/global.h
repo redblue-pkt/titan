@@ -4366,7 +4366,7 @@ char* getvideomodechoices()
 		return NULL;
 	}
 
-	if((status.expertmodus > 0) || (file_exist("/var/swap/etc/.codecpack")))
+	if((status.expertmodus == 0) && (!file_exist("/var/swap/etc/.codecpack")))
 	{
 		value = string_replace("1080p60", "", value, 1);
 		value = string_replace("  ", " ", value, 1);
