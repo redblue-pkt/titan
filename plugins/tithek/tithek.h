@@ -969,6 +969,110 @@ void addfav(char* title, char* link, char* pic, char* localname, char* menutitle
 	free(input); input = NULL;
 }
 
+void cacheplay(char* link)
+{
+	struct skin* load = getscreen("loadingproz");
+	struct skin* proztext = getscreennode(load, "proztext");
+
+	drawscreen(load, 0, 0);	
+	int port = 80, count = 0;
+	off64_t size = 0;
+	char* host = NULL, *pos = NULL, *path = NULL, *file = NULL, *tmpstr = NULL;
+	host = string_replace("http://", "", (char*)link, 0);
+
+	if(host != NULL)
+		pos = strchr(host, '/');
+	if(pos != NULL)
+	{
+		pos[0] = '\0';
+		path = pos + 1;
+	}
+
+	file = ostrcat("/media/hdd/.cache.tithek.stream.flv", NULL, 0, 0);
+
+	printf("host: %s\n",host);
+	printf("port: %d\n",port);
+	printf("path: %s\n",path);
+				
+	if(ostrstr(host, ":") != NULL)
+	{
+		host = oregex("http://(.*):.*", link);
+		port = atoi(oregex("http://.*:(.*)/.*", link));
+	}
+
+	printf("host: %s\n",host);
+	printf("port: %d\n",port);
+	printf("path: %s\n",path);
+	printf("file: %s\n",file);
+	
+	struct download* dnode = NULL;
+	dnode = calloc(1, sizeof(struct download));
+	if(dnode == NULL)
+	{
+		err("no mem");
+		return;
+	}		
+	dnode->host = host;
+	dnode->page = path;
+	dnode->port = port;
+	dnode->filename = file;
+	dnode->auth = NULL;
+	dnode->connfd = -1;
+	dnode->ret = -1;
+	
+	addtimer(&gethttpstruct, START, 1000, 1, (void*)dnode, NULL, NULL);
+		
+	while(count < 120 || size >= 10000000)
+	{
+		sleep(1);
+		count++;
+		if(file_exist(file))
+			size = getfilesize(file);
+
+		int proz = 0;
+		int proz1 = size * 100 / 10000000;
+		printf("size (%dprozent)\n", proz1);
+
+		int proz2 = count * 100 / 120;
+		printf("time (%dprozent)\n", proz2);
+		
+		if(proz1 > proz2)
+			proz = proz1;
+		else
+			proz = proz2;
+		
+		printf("cacheing...(%lldkb) (%dprozent)\n", size / 1024, proz);
+		if(size >= 10000000)
+			break;
+		if(count >= 120)
+			break;
+		
+		tmpstr = ostrcat(_("please wait..."), " (", 0, 0);
+		tmpstr = ostrcat(tmpstr, oitoa(proz), 0, 1);
+		tmpstr = ostrcat(tmpstr, "%)", 1, 0);
+		clearscreen(load);
+		changetext(proztext, tmpstr);
+		drawscreen(load, 0, 0);
+		free(tmpstr), tmpstr = NULL;
+	}
+
+	screenplay(file, 2, 0);
+	sockclose(&dnode->connfd);
+	free(dnode); dnode = NULL;
+
+	tmpstr = ostrcat(tmpstr, _("Remove Cachefile ?"), 1, 0);
+	tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
+	tmpstr = ostrcat(tmpstr, file, 1, 0);
+	
+	if(textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+	{
+		unlink(file);
+	}
+	free(tmpstr), tmpstr = NULL;
+	free(file), file = NULL;
+	free(host), host = NULL;
+}
+
 void submenu(struct skin* listbox, struct skin* load)
 {
 	if(status.security == 1)
@@ -1050,8 +1154,28 @@ void submenu(struct skin* listbox, struct skin* load)
 			
 		if(tmpstr1 != NULL)
 		{
-			if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-				screenplay(tmpstr1, 2, 0);				
+			if(!ostrncmp("http://", tmpstr1, 7))
+			{
+				char* keyconf = NULL;
+				char* skintitle = "Choice Playback";
+				struct menulist* mlist = NULL, *mbox = NULL;
+				addmenulist(&mlist, "Streaming Playback (default)", NULL, NULL, 0, 0);
+				addmenulist(&mlist, "Caching Playback", NULL, NULL, 0, 0);
+				mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
+				if(mbox != NULL) keyconf = mbox->name;
+				if(ostrcmp(keyconf, "Streaming Playback (default)") == 0)
+				{
+					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+						screenplay(tmpstr1, 2, 0);
+				}
+				else if(ostrcmp(keyconf, "Caching Playback") == 0)
+				{
+					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+						cacheplay(tmpstr1);
+				}
+			}
+			else if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+				screenplay(tmpstr1, 2, 0);
 		}
 		else
 			textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
