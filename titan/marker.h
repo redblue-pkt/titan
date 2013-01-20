@@ -191,6 +191,9 @@ int setmarker()
 		atime = (atime - startpos) / 90000;
 		node->time = atime;
 		node->timetext = convert_timesec(atime);
+		char* filemarker = changefilenameext(snode->recname, ".ma");
+		putmarker(filemarker);
+		free(filemarker); filemarker=NULL;
 		int ret = textbox(_("Message"), _("Marker has been set."), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 2, 0);
 	}
 	else
@@ -224,6 +227,8 @@ int jumpmarker(char* timetext)
 void screenmarker()
 {
 	int rcret;
+	char* filemarker = NULL;
+	struct service* snode = getservice(RECORDPLAY, 0);
 	
 	struct skin* screen1 = getscreen("marker");
 	struct skin* listbox = getscreennode(screen1, "listbox");
@@ -266,6 +271,9 @@ void screenmarker()
 		{
 			if(delmarker(listbox->select->text) == 0)
 			{
+				filemarker = changefilenameext(snode->recname, ".ma");
+				putmarker(filemarker);
+				free(filemarker); filemarker=NULL;
 				listbox->select->hidden = YES;
 				clearscreen(screen1);
 				drawscreen(screen1, 0, 0);
