@@ -174,6 +174,7 @@ int sockcreate(int *fd, char* sockname, int maxconn);
 int sockaccept(int *fd, int flag);
 char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect, char* header, long* clen, int flag);
 int sockreceive(int *fd, unsigned char* data, int count, int timeout);
+void gethttpstruct(struct stimerthread* timernode, struct download* node, int flag);
 
 //numinput.h
 char* numinput(char* title, char* num, char* mask, int isip);
