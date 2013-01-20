@@ -164,7 +164,7 @@ int putmarker(char* dateiname)
 	{
 		while(node->next != NULL)
 		{
-			fprintf(datei, "%lld,%lld,", node->pos, node->time);
+			fprintf(datei, "%lld,%lld\n", node->pos, node->time);
 			node = node->next;
 		}
 		fprintf(datei, "%lld,%lld", node->pos, node->time);	
@@ -183,17 +183,22 @@ int setmarker()
 	
 	struct service* snode = getservice(RECORDPLAY, 0);
 	off64_t pos = lseek64(snode->recsrcfd, 0, SEEK_CUR);
+	playergetinfots(&len, &startpos, NULL, &atime, NULL, 0);
+	atime = (atime - startpos) / 90000;
+	if(atime == 0)
+	{
+		int ret = textbox(_("Message"), _("ERROR... can't set maker in this file"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 4, 0);
+		return -1;
+	}
 	node = addmarkernode(pos);
 	if(node != NULL)
 	{
 		node->pos = pos;
-		playergetinfots(&len, &startpos, NULL, &atime, NULL, 0);
-		atime = (atime - startpos) / 90000;
 		node->time = atime;
 		node->timetext = convert_timesec(atime);
-		char* filemarker = changefilenameext(snode->recname, ".ma");
-		putmarker(filemarker);
-		free(filemarker); filemarker=NULL;
+		//char* filemarker = changefilenameext(snode->recname, ".ma");
+		//putmarker(filemarker);
+		//free(filemarker); filemarker=NULL;
 		int ret = textbox(_("Message"), _("Marker has been set."), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 2, 0);
 	}
 	else
@@ -227,8 +232,8 @@ int jumpmarker(char* timetext)
 void screenmarker()
 {
 	int rcret;
-	char* filemarker = NULL;
-	struct service* snode = getservice(RECORDPLAY, 0);
+	//char* filemarker = NULL;
+	//struct service* snode = getservice(RECORDPLAY, 0);
 	
 	struct skin* screen1 = getscreen("marker");
 	struct skin* listbox = getscreennode(screen1, "listbox");
@@ -271,9 +276,9 @@ void screenmarker()
 		{
 			if(delmarker(listbox->select->text) == 0)
 			{
-				filemarker = changefilenameext(snode->recname, ".ma");
-				putmarker(filemarker);
-				free(filemarker); filemarker=NULL;
+				//filemarker = changefilenameext(snode->recname, ".ma");
+				//putmarker(filemarker);
+				//free(filemarker); filemarker=NULL;
 				listbox->select->hidden = YES;
 				clearscreen(screen1);
 				drawscreen(screen1, 0, 0);
