@@ -200,9 +200,9 @@ void playerstopts(int flag, int flag1)
 				fclose(fbseek);
 			}
 			free(fileseek); fileseek=NULL;
-			//char* filemarker = changefilenameext(snode->recname, ".ma");
-			//ret = putmarker(filemarker);
-			//free(filemarker); filemarker=NULL;
+			char* filemarker = changefilenameext(snode->recname, ".ma");
+			ret = putmarker(filemarker);
+			free(filemarker); filemarker=NULL;
 			delmarkernode(-1);
 		}
 		

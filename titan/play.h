@@ -951,6 +951,9 @@ int playcheckdirrcret(char* file, int dirrcret)
 			epgfilename = changefilenameext(file, ".se");
 			unlink(epgfilename);
 			free(epgfilename); epgfilename = NULL;
+			epgfilename = changefilenameext(file, ".ma");
+			unlink(epgfilename);
+			free(epgfilename); epgfilename = NULL;
 		}
 		ret = 1;
 	}
