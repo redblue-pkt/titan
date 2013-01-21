@@ -374,7 +374,7 @@ int recordsplit(struct service* servicenode, int flag)
 
 int readwritethread(struct stimerthread* stimer, struct service* servicenode, int flag)
 {
-	int readret = 0, writeret = 0, ret = 0, recbsize = 0, tmprecbsize = 0, i = 0, pktcount = 0, frbsize = 0;
+	int readret = 0, writeret = 0, ret = 0, recbsize = 0, tmprecbsize = 0, i = 0, pktcount = 0, frbsize = 0, frbmulti = 0;
 	int readtimeout = -1, writetimeout = -1;
 	int recsync = 0, frcount = 0, count = 0;
 	unsigned char* buf = NULL, *tmpbuf = NULL;
@@ -457,9 +457,26 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 		if(servicenode->type == RECORDPLAY)
 		{
 			pthread_mutex_lock(&status.tsseekmutex);
-			if(frcount == 0 && status.playspeed < 0)
+			
+			if(status.playspeed != 0)
 			{
-				off64_t pos = lseek64(servicenode->recsrcfd, -(frbsize * 8), SEEK_CUR);
+				frbmulti = 8;
+								
+				if(status.playspeed == -4 || status.playspeed == 4)
+					frbmulti = frbmulti +  (frbmulti/2);
+				else if(status.playspeed == -5 || status.playspeed == 5)
+					frbmulti = frbmulti * 2;
+				else if(status.playspeed == -6 || status.playspeed == 6)
+					frbmulti = frbmulti * 4 ;
+			}			
+			
+			if(frcount == 0 && status.playspeed != 0)
+			{				
+				off64_t pos;
+				if(status.playspeed <= 0)
+					pos = lseek64(servicenode->recsrcfd, -(frbsize * frbmulti), SEEK_CUR);
+				else if(status.playspeed == 4 || status.playspeed == 5 || status.playspeed == 6)
+					pos = lseek64(servicenode->recsrcfd, (frbsize * frbmulti), SEEK_CUR);
 
 				//begin of file
 				if(pos <= 0)
@@ -476,44 +493,17 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 					videodiscontinuityskip(status.aktservice->videodev, -1);
 			}
 
-			if(frcount != 0 && status.playspeed >= 0)
+			if(frcount != 0 && status.playspeed == 0)
 				frcount = 0;
 			
-			if(status.playspeed == 5)
-			{
-				lseek64(servicenode->recsrcfd, recbsize, SEEK_CUR);
-				readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
-				videodiscontinuityskip(status.aktservice->videodev, -1);
-			}
-			else if(status.playspeed == 6)
-			{
-				lseek64(servicenode->recsrcfd, recbsize * 2, SEEK_CUR);
-				readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
-				videodiscontinuityskip(status.aktservice->videodev, -1);
-			}
-			else if(status.playspeed == -5)
-			{
-				lseek64(servicenode->recsrcfd, -(recbsize), SEEK_CUR);
-				readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
-				videodiscontinuityskip(status.aktservice->videodev, -1);
-			}
-			else if(status.playspeed == -6)
-			{
-				lseek64(servicenode->recsrcfd, -(recbsize * 2), SEEK_CUR);
-				readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
-				videodiscontinuityskip(status.aktservice->videodev, -1);
-			}
-			else
-			{
-				readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
-			}
+			readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
+		
 			pthread_mutex_unlock(&status.tsseekmutex);
-			if(status.playspeed < 0)
+			if(status.playspeed < 0 || status.playspeed > 0)
 			{
 				frcount += readret;
 				if(frcount >= frbsize * 4)
 					frcount = 0;
-
 			}
 		}
 		else
