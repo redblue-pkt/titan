@@ -1381,7 +1381,7 @@ void setskinnodeslocked(int flag)
 			else if(ostrcmp("wins3", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("zapback_main", child->name) == 0) child->locked = flag;
 
-			if(status.expertmodus > 9 && status.security == 1)
+			if(status.expertmodus >= 11 && status.security == 1)
 				tmpflag = 0;
 			else
 				tmpflag = 1;
@@ -1389,22 +1389,23 @@ void setskinnodeslocked(int flag)
 			// dont show this menus
 			if(checkbox("ATEMIO510") == 1)
 			{
-				if(ostrcmp("vfdisplay", child->name) == 0) child->locked = tmpflag;
-				if(ostrcmp("system_backup", child->name) == 0) child->locked = tmpflag;
+				if(ostrcmp("vfdisplay", child->name) == 0) child->locked = 1;
+				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
 			}
 
-			if((checkbox("ATEMIO7600") == 1 ) || (checkbox("UFS912") == 1))
+			if((checkbox("ATEMIO7600") == 1 ) || (checkbox("UFS912") == 1) || (checkbox("ATEVIO7000") == 1) || (checkbox("ATEVIO700") == 1))
 			{
-				if(ostrcmp("system_backup", child->name) == 0) child->locked = tmpflag;
+				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
 			}
 		
 			if(checkbox("UFS910") == 1)
 			{
 				if(ostrcmp("unlock", child->name) == 0) child->locked = 1;
+				if(ostrcmp("system_update_usb_tmp", child->name) == 0) child->locked = 0;
 			}
 			else
-				if(ostrcmp("system_update_usb_tmp", child->name) == 0) child->locked = tmpflag;
-		
+	 			if(ostrcmp("system_update_usb_tmp", child->name) == 0) child->locked = tmpflag;
+
 			if(ostrcmp("savesettings", child->name) == 0) child->locked = tmpflag;
 			else if(ostrcmp("scartrecorder", child->name) == 0) child->locked = tmpflag;
 			else if(ostrcmp("system_update_usb_online", child->name) == 0) child->locked = tmpflag;
