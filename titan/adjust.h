@@ -349,6 +349,7 @@ void screenadjust()
 			addconfigscreen("showhiddenfiles", showhiddenfiles);
 			status.showhiddenfiles = getconfigint("showhiddenfiles", NULL);
 			addconfigscreencheck("expertmodus", expertmodus, "0");
+			status.expertmodus = getconfigint("expertmodus", NULL);					
 			addconfigscreencheck("infobarprogram", infobarprogram, "0");
 			status.infobarprogram = getconfigint("infobarprogram", NULL);
 			addconfigscreencheck("crosscontrol", crosscontrol, "0");
