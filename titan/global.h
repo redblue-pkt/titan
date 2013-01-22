@@ -1692,14 +1692,9 @@ int writeallconfig(int flag)
 	{
 		if(status.writeconfig == 1)
 		{
-			//reset volume autochange before save
-			if(status.volautochange > 0)
-				addconfigint("vol", getvol() - status.volautochange);
+			addconfigint("vol", getvol());
 			if(writeconfig(status.configfile) != 0)
 				ret = 1;
-			//restore volume autochange
-			if(status.volautochange > 0)
-				addconfigint("vol", getvol() + status.volautochange);
 		}
 	}
 	if((flag == 0 || flag == 2) && time(NULL) > 1072224000) // 01.01.2004
