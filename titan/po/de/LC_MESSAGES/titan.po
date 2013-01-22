@@ -2801,7 +2801,7 @@ msgid "Deactivate MiniTV"
 msgstr "Deaktiviere MiniTV Vorschau Fenster"
 
 msgid "Streaming Playback (default)"
-msgstr "Direktes Streamen (standart)"
+msgstr "Direktes Streamen (standard)"
 
 msgid "Caching Playback (10MB / 120s)"
 msgstr "Auf Festplatte Zwischenspeichern (10MB / 120s)"
