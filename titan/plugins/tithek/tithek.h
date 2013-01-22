@@ -682,7 +682,7 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 
 char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 {
-	int ret = 1;
+	int ret = 1, port = 80;
 	char* ip = NULL, *pos = NULL, *path = NULL;
 	char* tmpstr = NULL, *localfile = NULL;
 
@@ -696,6 +696,12 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	{
 		pos[0] = '\0';
 		path = pos + 1;
+	}
+
+	if(ostrstr(ip, ":") != NULL)
+	{
+		ip = oregex("http://(.*):.*", link);
+		port = atoi(oregex("http://.*:(.*)/.*", link));
 	}
 
 	tmpstr = ostrcat(path, NULL, 0, 0);
@@ -717,6 +723,17 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 			localfile = ostrcat(localfile, localname, 1, 0);
 	}
 
+	debug(99, "---------------------------------------");
+	debug(99, "link: %s", link);
+	debug(99, "localname: %s", localname);
+	debug(99, "---------------------------------------");
+	debug(99, "ip: %s", ip);
+	debug(99, "port: %d", port);
+	debug(99, "path: %s", path);
+	debug(99, "localfile: %s", localfile);
+	debug(99, "pw: %s", pw);
+	debug(99, "---------------------------------------");
+
 	if(flag == 0)
 	{
 		if(localfile != NULL && !file_exist(localfile))
@@ -724,7 +741,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 			if(pic == 1)
 			{
 				if(tithekdownloadcount > 100) //start max 100 threads
-					gethttp(ip, path, 80, localfile, pw, NULL, 0);
+					gethttp(ip, path, port, localfile, pw, NULL, 0);
 				else
 				{
 					//dnode is freed in thread
@@ -733,7 +750,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 					{
 						dnode->host = ostrcat(ip, NULL, 0, 0);
 						dnode->page = ostrcat(path, NULL, 0, 0);
-						dnode->port = 80;
+						dnode->port = port;
 						dnode->filename = ostrcat(localfile, NULL, 0, 0);
 						dnode->auth = ostrcat(pw, NULL, 0, 0);
 						dnode->connfd = -1;
@@ -743,16 +760,17 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 				}
 			}
 			else
-				gethttp(ip, path, 80, localfile, pw, NULL, 0);			
+				gethttp(ip, path, port, localfile, pw, NULL, 0);			
 		}
 	}
 	else
 	{
+	
 		if(localfile != NULL && file_exist(localfile))
 			ret = textbox(_("Message"), _("File exist, overwrite?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 
 		if(localfile != NULL && ret == 1)
-			screendownload("Download", ip, path, 80, localfile, pw, 0);
+			screendownload("Download", ip, path, port, localfile, pw, 0);
 	}
 
 	free(ip); ip = NULL;
@@ -769,7 +787,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	char* tithekfile = NULL;
 	char* tmpstr = NULL;
 
-	if(ostrstr(titheklink, "http://") != NULL)
+	if(!ostrncmp("http://", titheklink, 7))
 		tithekfile = tithekdownload(titheklink, NULL, HTTPAUTH, 0, 0);
 	else
 	{
@@ -969,14 +987,14 @@ void addfav(char* title, char* link, char* pic, char* localname, char* menutitle
 	free(input); input = NULL;
 }
 
-void cacheplay(char* link)
+void cacheplay(char* link, char* filename, int flag)
 {
 	struct skin* load = getscreen("loadingproz");
 	struct skin* proztext = getscreennode(load, "proztext");
 
 	drawscreen(load, 0, 0);	
-	int port = 80, count = 0;
-	off64_t size = 0;
+	int port = 80, count = 0, mcount = 0;
+	off64_t size = 0, msize = 0;
 	char* host = NULL, *pos = NULL, *path = NULL, *file = NULL, *tmpstr = NULL;
 	host = string_replace("http://", "", (char*)link, 0);
 
@@ -988,22 +1006,23 @@ void cacheplay(char* link)
 		path = pos + 1;
 	}
 
-	file = ostrcat("/media/hdd/.cache.tithek.stream.flv", NULL, 0, 0);
+	file = ostrcat("/media/hdd/.cache.", filename, 0, 0);
 
-	printf("host: %s\n",host);
-	printf("port: %d\n",port);
-	printf("path: %s\n",path);
-				
 	if(ostrstr(host, ":") != NULL)
 	{
 		host = oregex("http://(.*):.*", link);
 		port = atoi(oregex("http://.*:(.*)/.*", link));
 	}
 
-	printf("host: %s\n",host);
-	printf("port: %d\n",port);
-	printf("path: %s\n",path);
-	printf("file: %s\n",file);
+	debug(99, "---------------------------------------");
+	debug(99, "link: %s", link);
+	debug(99, "---------------------------------------");
+	debug(99, "host: %s", host);
+	debug(99, "port: %d", port);
+	debug(99, "path: %s", path);
+	debug(99, "local: %s", file);
+	debug(99, "---------------------------------------");
+	
 	
 	struct download* dnode = NULL;
 	dnode = calloc(1, sizeof(struct download));
@@ -1021,8 +1040,24 @@ void cacheplay(char* link)
 	dnode->ret = -1;
 	
 	addtimer(&gethttpstruct, START, 1000, 1, (void*)dnode, NULL, NULL);
-		
-	while(count < 120 || size >= 10000000)
+
+	if(flag == 1)
+	{
+		mcount = 120;
+		msize = 10485760;
+	}
+	else if(flag == 2)
+	{
+		mcount = 240; 
+		msize = 20971520;
+	}
+	else if(flag == 3)
+	{
+		mcount = 360; 
+		msize = 31457280;
+	}
+			
+	while(count < mcount || size >= msize)
 	{
 		sleep(1);
 		count++;
@@ -1030,21 +1065,22 @@ void cacheplay(char* link)
 			size = getfilesize(file);
 
 		int proz = 0;
-		int proz1 = size * 100 / 10000000;
-		printf("size (%dprozent)\n", proz1);
+		int proz1 = size * 100 / msize;
+		debug(99, "size (%dprozent)", proz1);
 
-		int proz2 = count * 100 / 120;
-		printf("time (%dprozent)\n", proz2);
+		int proz2 = count * 100 / mcount;
+		debug(99, "time (%dprozent)", proz2);
 		
 		if(proz1 > proz2)
 			proz = proz1;
 		else
 			proz = proz2;
-		
-		printf("cacheing...(%lldkb) (%dprozent)\n", size / 1024, proz);
-		if(size >= 10000000)
+
+		debug(99, "cacheing...(%lldkb) (%dprozent)", size / 1024, proz);
+
+		if(size >= msize)
 			break;
-		if(count >= 120)
+		if(count >= mcount)
 			break;
 		
 		tmpstr = ostrcat(_("please wait..."), " (", 0, 0);
@@ -1073,7 +1109,7 @@ void cacheplay(char* link)
 	free(host), host = NULL;
 }
 
-void submenu(struct skin* listbox, struct skin* load)
+void submenu(struct skin* listbox, struct skin* load, char* title)
 {
 	if(status.security == 1)
 	{
@@ -1156,11 +1192,22 @@ void submenu(struct skin* listbox, struct skin* load)
 		{
 			if(!ostrncmp("http://", tmpstr1, 7))
 			{
+				char* filename = ostrcat(title, "_", 0, 0);
+				filename = ostrcat(filename, ((struct tithek*)listbox->select->handle)->title, 1, 0);
+				filename = ostrcat(filename, ".mp4", 1, 0);
+				filename = string_replace_all(" ", ".", filename, 1);
+				filename = string_replace_all("-", "_", filename, 1);
+				filename = string_replace_all("._.", "_", filename, 1);
+				debug(99, "filename: %s", filename);
+					
 				char* keyconf = NULL;
 				char* skintitle = "Choice Playback";
 				struct menulist* mlist = NULL, *mbox = NULL;
 				addmenulist(&mlist, "Streaming Playback (default)", NULL, NULL, 0, 0);
-				addmenulist(&mlist, "Caching Playback", NULL, NULL, 0, 0);
+				addmenulist(&mlist, "Caching Playback (10MB / 120s)", NULL, NULL, 0, 0);
+				addmenulist(&mlist, "Caching Playback (20MB / 240s)", NULL, NULL, 0, 0);
+				addmenulist(&mlist, "Caching Playback (30MB / 360s)", NULL, NULL, 0, 0);
+				addmenulist(&mlist, "Download Full File", NULL, NULL, 0, 0);
 				mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
 				if(mbox != NULL) keyconf = mbox->name;
 				if(ostrcmp(keyconf, "Streaming Playback (default)") == 0)
@@ -1168,11 +1215,41 @@ void submenu(struct skin* listbox, struct skin* load)
 					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 						screenplay(tmpstr1, 2, 0);
 				}
-				else if(ostrcmp(keyconf, "Caching Playback") == 0)
+				else if(ostrcmp(keyconf, "Caching Playback (10MB / 120s)") == 0)
 				{
 					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-						cacheplay(tmpstr1);
+						cacheplay(tmpstr1, filename, 1);
 				}
+				else if(ostrcmp(keyconf, "Caching Playback (20MB / 240s)") == 0)
+				{
+					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+						cacheplay(tmpstr1, filename, 2);
+				}
+				else if(ostrcmp(keyconf, "Caching Playback (30MB / 360s)") == 0)
+				{
+					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+						cacheplay(tmpstr1, filename, 3);
+				}
+				else if(ostrcmp(keyconf, "Download Full File") == 0)
+				{
+					char* search = textinput("Search", filename);
+					if(search != NULL)
+					{	
+						char* tmpstr2 = tithekdownload(tmpstr1, search, NULL, 0, 1);
+//						drawscreen(grid, 0, 0);
+						free(tmpstr2); tmpstr2 = NULL;
+					
+						if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+						{
+							tmpstr2 = ostrcat(getconfig("rec_path", NULL), "/", 0, 0);
+							tmpstr2 = ostrcat(tmpstr2, search, 1, 0);
+							screenplay(tmpstr2, 2, 0);
+							free(tmpstr2); tmpstr2 = NULL;
+						}
+					}
+					free(search), search = NULL;
+				}
+				free(filename), filename = NULL;
 			}
 			else if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 				screenplay(tmpstr1, 2, 0);
@@ -1392,7 +1469,7 @@ waitrcstart:
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 4) || (((struct tithek*)listbox->select->handle)->flag == 5) || (((struct tithek*)listbox->select->handle)->flag == 6) || (((struct tithek*)listbox->select->handle)->flag == 7) || (((struct tithek*)listbox->select->handle)->flag == 8) || (((struct tithek*)listbox->select->handle)->flag == 12) || (((struct tithek*)listbox->select->handle)->flag == 14) || (((struct tithek*)listbox->select->handle)->flag == 15) || (((struct tithek*)listbox->select->handle)->flag == 16) || (((struct tithek*)listbox->select->handle)->flag == 17) || (((struct tithek*)listbox->select->handle)->flag == 18) || (((struct tithek*)listbox->select->handle)->flag == 19) || (((struct tithek*)listbox->select->handle)->flag == 20) || (((struct tithek*)listbox->select->handle)->flag == 24) || (((struct tithek*)listbox->select->handle)->flag == 25) || (((struct tithek*)listbox->select->handle)->flag == 26) || (((struct tithek*)listbox->select->handle)->flag == 27))
 				{
-					submenu(listbox, load);
+					submenu(listbox, load, title);
 					drawscreen(grid, 0, 0);
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 9) || (((struct tithek*)listbox->select->handle)->flag == 10) || (((struct tithek*)listbox->select->handle)->flag == 11))
@@ -1542,7 +1619,7 @@ waitrcstart:
 					}
 				}
 				drawscreen(grid, 0, 0);
-				sleep(1);
+//				sleep(1);
 			}			
 		}
 		else if(rcret == getrcconfigint("rcyellow", NULL) && ostrcmp(title, "TiThek - Favoriten") == 0)
