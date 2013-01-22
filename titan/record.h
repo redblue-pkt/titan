@@ -456,7 +456,6 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 #else
 		if(servicenode->type == RECORDPLAY)
 		{
-			pthread_mutex_lock(&status.tsseekmutex);
 			
 			if(status.playspeed != 0)
 			{
@@ -472,6 +471,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			
 			if(frcount == 0 && status.playspeed != 0)
 			{				
+				pthread_mutex_lock(&status.tsseekmutex);
 				off64_t pos;
 				if(status.playspeed <= 0)
 					pos = lseek64(servicenode->recsrcfd, -(frbsize * frbmulti), SEEK_CUR);
@@ -491,6 +491,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				}
 				else
 					videodiscontinuityskip(status.aktservice->videodev, -1);
+				pthread_mutex_unlock(&status.tsseekmutex);
 			}
 
 			if(frcount != 0 && status.playspeed == 0)
@@ -498,7 +499,6 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			
 			readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
 		
-			pthread_mutex_unlock(&status.tsseekmutex);
 			if(status.playspeed < 0 || status.playspeed > 0)
 			{
 				frcount += readret;
