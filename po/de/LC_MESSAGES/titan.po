@@ -2813,7 +2813,7 @@ msgid "Caching Playback (30MB / 360s)"
 msgstr "Auf Festplatte Zwischenspeichern (30MB / 360s)"
 
 msgid "Download Full File"
-msgstr "Komplettes File Downloaden in den Aufnahmepfad"
+msgstr "Datei Downloaden in den Aufnahmepfad"
 
 msgid "Remove Cachefile ?"
 msgstr "Zwischengespeichertes File löschen ?"
