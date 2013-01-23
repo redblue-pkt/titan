@@ -34,7 +34,7 @@ int tithekexit = 0;
 //flag 25	- kinox vidstream
 //flag 26	- kinox xvidstage
 //flag 27	- kinox nowvideo
-//flag 50	- kinox beeg
+//flag 50	- beeg
 //flag 66   - coming soon dummy
 //flag 1000 - menu pincode
 //flag 9999 - menu hidden codecpack
