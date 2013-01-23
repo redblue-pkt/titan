@@ -1,4 +1,5 @@
 #! /bin/sh
+exit
 echo beeg started
 date
 rm cache.beeg.*
@@ -9,18 +10,92 @@ mkdir -p _full/beeg/streams
 mkdir _single
 wget http://beeg.com -O cache.beeg.main.html
 
-sections=`cat cache.beeg.main.html | grep ^'<a href="http://beeg.com/section/home/' | cut -d '"' -f2`
-cat cache.beeg.main.html | grep http://beeg.com | grep -v http://beeg.com/tag | grep alt= | sed 's/<a href="/link=/' | sed 's/"><img src="/#pic=/' | sed 's/" title="/"\n/' | sed 's/" alt="/#title="/' | grep ^link= | tr ' ' '|'>> cache.beeg.list
+sectionstags=`cat cache.beeg.main.html | grep 'href="/tag/' | cut -d '"' -f4`
+count=`cat cache.beeg.main.html | grep ^'<a href="/section/home/' | grep -v self | cut -d ">" -f2 | cut -d"<" -f1`
+
+i=1
+until [ $i -gt $count ]
+do
+echo $i
+sections="$sections http://beeg.com/section/home/$i/"
+i=$[$i+1]
+done
+echo sections $sections
 
 piccount=0
 count=0
-for ROUND in $sections; do	
-	count=`expr $count + 1`
-	echo "sections($count)=$ROUND"
 
-	wget $ROUND -O cache.beeg.section."$count".html
-	cat cache.beeg.section."$count".html | grep http://beeg.com | grep -v http://beeg.com/tag | grep alt= | sed 's/<a href="/link=/' | sed 's/"><img src="/#pic=/' | sed 's/" title="/"\n/' | sed 's/" alt="/#title="/' | grep ^link= | tr ' ' '|'>> cache.beeg.list
+#tumbid=`cat cache.beeg.main.html | grep "var tumbid" | cut -d"[" -f2 | cut -d"]" -f1 | tr ',' ' '`
+#tumbalt=`cat cache.beeg.main.html | grep "var tumbalt" | cut -d"[" -f2 | cut -d"]" -f1 | sed "s/','\+/|/g" | tr ' ' '_' | tr '|' ' '`
+#tumburl=`cat cache.beeg.main.html | grep "var IMGthumb" | cut -d"'" -f2`
+#
+#for ROUND in $tumbid; do
+#	count=`expr $count + 1`
+#	echo "add($count)=$ROUND"
+#	STREAMURL=http://beeg.com/$ROUND
+#	piccount=`expr $piccount + 1`
+#	PIC=`echo $tumburl`$ROUND.jpg
+#
+#	count1=0
+#	for ROUND1 in $tumbalt; do
+#		count1=`expr $count1 + 1`
+#		if [ $count = $count1 ];then
+#			TITLE=`echo $ROUND1 | tr "'" ' ' | tr '_' ' '` 
+#			break
+#		fi
+#	done
+#	LINE="$TITLE#$STREAMURL#$PIC#beeg_$piccount.jpg#Beeg#50"
+#	echo $LINE >> cache.beeg.titanlist
+#	echo $STREAMURL >> cache.beeg.playlist
+#	
+#	break
+#done
+count=0
+count0=0
+count1=0
+count2=0
+
+for ROUND0 in $sections; do
+	count0=`expr $count0 + 1`
+	echo "sections($count0)=$ROUND0"
+
+	echo wget $ROUND0
+	wget $ROUND0 -O cache.beeg.section."$count0".html
+
+	tumbid=`cat cache.beeg.section."$count0".html | grep "var tumbid" | cut -d"[" -f2 | cut -d"]" -f1 | tr ',' ' '`
+	tumbalt=`cat cache.beeg.section."$count0".html | grep "var tumbalt" | cut -d"[" -f2 | cut -d"]" -f1 | sed "s/','\+/|/g" | tr ' ' '_' | tr '|' ' '`
+	tumburl=`cat cache.beeg.section."$count0".html | grep "var IMGthumb" | cut -d"'" -f2`
+
+	echo tumbid: $tumbid
+	echo tumbalt: $tumbalt
+	echo tumburl: $tumburl
+sleep 2
+	count1=0
+	for ROUND1 in $tumbid; do
+		count1=`expr $count1 + 1`
+		
+		count=`expr $count + 1`
+		echo "section($count0/$i) add($count) id($ROUND1)"
+
+		STREAMURL=http://beeg.com/$ROUND1
+		piccount=`expr $piccount + 1`
+		PIC=`echo $tumburl`$ROUND1.jpg
+	
+		count2=0
+		for ROUND2 in $tumbalt; do
+			count2=`expr $count2 + 1`
+			if [ $count1 = $count2 ];then
+				TITLE=`echo $ROUND2 | tr "'" ' ' | tr '_' ' '` 
+				break
+			fi
+		done
+		LINE="$TITLE#$STREAMURL#$PIC#beeg_$piccount.jpg#Beeg#50"
+		echo $LINE >> cache.beeg.titanlist
+		echo $STREAMURL >> cache.beeg.playlist
+	done
+#exit
 done
+exit
 
 LIST=`cat cache.beeg.list`
 echo "# Beeg.com" > cache.beeg.playlist
