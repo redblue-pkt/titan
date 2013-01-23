@@ -891,7 +891,8 @@ int addhddall()
 								nodedev->notchanged = nodedev->notchanged + (status.addhddall->delay / 1000);
 								if (nodedev->notchanged >= nodedev->sleeptime) {
 									free(tmpstr2);tmpstr2=NULL;
-									tmpstr2 = ostrcat(tmpstr2, "/sbin/sdparm -C stop /dev/", 1, 0);
+//									tmpstr2 = ostrcat(tmpstr2, "/sbin/sdparm -C stop /dev/", 1, 0);
+									tmpstr2 = ostrcat(tmpstr2, "/sbin//hd-idle -t ", 1, 0);
 									tmpstr2 = ostrcat(tmpstr2, nodedev->device, 1, 0);
 									system(tmpstr2);
 								}
