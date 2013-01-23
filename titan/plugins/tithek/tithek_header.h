@@ -20,5 +20,6 @@ char* flashx(char* host, char* file);
 char* vidstream(char* host, char* file);
 char* xvidstage(char* host, char* file);
 char* nowvideo(char* host, char* file);
+char* beeg(char* link);
 
 #endif
