@@ -374,7 +374,7 @@ int recordsplit(struct service* servicenode, int flag)
 
 int readwritethread(struct stimerthread* stimer, struct service* servicenode, int flag)
 {
-	int readret = 0, writeret = 0, ret = 0, recbsize = 0, tmprecbsize = 0, i = 0, pktcount = 0, frbsize = 0, frbmulti = 0;
+	int readret = 0, writeret = 0, ret = 0, recbsize = 0, tmprecbsize = 0, i = 0, pktcount = 0, frbsize = 0, frmulti = 0, frmultiread = 0;
 	int readtimeout = -1, writetimeout = -1;
 	int recsync = 0, frcount = 0, count = 0;
 	unsigned char* buf = NULL, *tmpbuf = NULL;
@@ -459,14 +459,29 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			
 			if(status.playspeed != 0)
 			{
-				frbmulti = 8;
+				if(status.videosize.w > 720)
+				{
+					frmulti = 16;
+					frmultiread = 8;
+				}
+				else
+				{
+					frmulti = 8;
+					frmultiread = 4;
+				}
 								
-				if(status.playspeed == -4 || status.playspeed == 4)
-					frbmulti = frbmulti +  (frbmulti/2);
-				else if(status.playspeed == -5 || status.playspeed == 5)
-					frbmulti = frbmulti * 2;
-				else if(status.playspeed == -6 || status.playspeed == 6)
-					frbmulti = frbmulti * 4 ;
+				if(status.playspeed == -4)
+					frmulti = frmulti + (frmulti/2);
+				else if(status.playspeed == -5)
+					frmulti = frmulti * 2;
+				else if(status.playspeed == -6)
+					frmulti = frmulti * 4;
+				else if(status.playspeed == 4)
+					frmulti = frmultiread ;
+				else if(status.playspeed == 5)
+					frmulti = frmultiread * 4;
+				else if(status.playspeed == 6)
+					frmulti = frmultiread * 8;				
 			}			
 			
 			if(frcount == 0 && status.playspeed != 0)
@@ -474,9 +489,9 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				pthread_mutex_lock(&status.tsseekmutex);
 				off64_t pos;
 				if(status.playspeed <= 0)
-					pos = lseek64(servicenode->recsrcfd, -(frbsize * frbmulti), SEEK_CUR);
+					pos = lseek64(servicenode->recsrcfd, -(frbsize * frmulti), SEEK_CUR);
 				else if(status.playspeed == 4 || status.playspeed == 5 || status.playspeed == 6)
-					pos = lseek64(servicenode->recsrcfd, (frbsize * frbmulti), SEEK_CUR);
+					pos = lseek64(servicenode->recsrcfd, ((frbsize * frmulti) - ( frbsize * frmultiread )), SEEK_CUR);
 
 				//begin of file
 				if(pos <= 0)
@@ -502,7 +517,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			if(status.playspeed < 0 || status.playspeed > 0)
 			{
 				frcount += readret;
-				if(frcount >= frbsize * 4)
+				if(frcount >= frbsize * frmultiread)
 					frcount = 0;
 			}
 		}
