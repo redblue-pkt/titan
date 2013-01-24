@@ -467,14 +467,30 @@ int playerstart(char* file)
 		player->output = &OutputHandler;
 		player->container = &ContainerHandler;
 		player->manager = &ManagerHandler;
-
+		
+		//add container befor open, so we can set buffer size
+		char* ext = getfilenameext(tmpfile);
+		if(ext != NULL)
+		{
+			player->container->Command(player, CONTAINER_ADD, ext);
+			free(ext); ext = NULL;
+		}
+		
+		if(player && player->container && player->container->selectedContainer)
+		{
+			int size = getconfigint("playerbuffersize", NULL);
+			int seektime = getconfigint("playerbufferseektime", NULL);
+			player->container->selectedContainer->Command(player, CONTAINER_SET_BUFFER_SIZE, (void*)&size);
+			player->container->selectedContainer->Command(player, CONTAINER_SET_BUFFER_SEEK_TIME, (void*)&seektime);
+		}
+		
 		debug(150, "eplayername = %s", player->output->Name);
 
 		//Registrating output devices
 		player->output->Command(player, OUTPUT_ADD, "audio");
 		player->output->Command(player, OUTPUT_ADD, "video");
 		player->output->Command(player, OUTPUT_ADD, "subtitle");
-
+		
 		//for subtitle
 		SubtitleOutputDef_t subout;
 
@@ -486,7 +502,7 @@ int playerstart(char* file)
 		subout.shareFramebuffer = 1;
 
 		player->output->subtitle->Command(player, (OutputCmd_t)OUTPUT_SET_SUBTITLE_OUTPUT, (void*)&subout);
-
+		
 		if(player->playback->Command(player, PLAYBACK_OPEN, tmpfile) < 0)
 		{
 			free(player); player = NULL;
@@ -717,6 +733,30 @@ int gstbuscall(GstBus *bus, GstMessage *msg)
 	return ret;
 }
 #endif
+
+int playergetbuffersize()
+{
+	int ret = 0;
+  
+#ifdef EPLAYER3
+	if(player && player->container && player->container->selectedContainer)
+		player->container->selectedContainer->Command(player, CONTAINER_GET_BUFFER_SIZE, (void*)&ret);
+#endif
+
+	return ret;
+}
+
+int playergetbufferstatus()
+{
+	int ret = 0;
+  
+#ifdef EPLAYER3
+	if(player && player->container && player->container->selectedContainer)
+		player->container->selectedContainer->Command(player, CONTAINER_GET_BUFFER_STATUS, (void*)&ret);
+#endif
+
+	return ret;
+}
 
 int playerisplaying()
 {
@@ -1252,7 +1292,7 @@ int playerjumpts(struct service* servicenode, int sekunden, int *startpts, off64
 	
 	if(sekunden > 0)
 	{
-		printf("not implemented\n");
+		err("not implemented");
 		return 1;
 	}	
 	else if(sekunden < 0)

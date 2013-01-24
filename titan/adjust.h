@@ -54,6 +54,8 @@ void screenadjust()
 	struct skin* emucontrol = getscreennode(adjust, "emucontrol");
 	struct skin* minitv = getscreennode(adjust, "choiceminitv");
 	struct skin* usecec = getscreennode(adjust, "usecec");
+	struct skin* playerbuffersize = getscreennode(adjust, "playerbuffersize");
+	struct skin* playerbufferseektime = getscreennode(adjust, "playerbufferseektime");
 
 	struct skin* tmp = NULL;
 
@@ -272,6 +274,33 @@ void screenadjust()
 	else
 		usecec->hidden = YES;
 	
+	
+	addchoicebox(playerbuffersize, "0", _("no"));
+	addchoicebox(playerbuffersize, "524288", "512KB");
+	addchoicebox(playerbuffersize, "1048576", "1MB");
+	addchoicebox(playerbuffersize, "1572864", "1,5MB");
+	addchoicebox(playerbuffersize, "2097152", "2MB");
+	addchoicebox(playerbuffersize, "2621440", "2,5MB");
+	addchoicebox(playerbuffersize, "3145728", "3MB");
+	addchoicebox(playerbuffersize, "3670016", "3,5MB");
+	addchoicebox(playerbuffersize, "4194304", "4MB");
+	addchoicebox(playerbuffersize, "4718592", "4,5MB");
+	addchoicebox(playerbuffersize, "5242880", "5MB");
+	setchoiceboxselection(playerbuffersize, getconfig("playerbuffersize", NULL));
+	
+	addchoicebox(playerbufferseektime, "0", "0");
+	addchoicebox(playerbufferseektime, "1", "1");
+	addchoicebox(playerbufferseektime, "2", "2");
+	addchoicebox(playerbufferseektime, "3", "3");
+	addchoicebox(playerbufferseektime, "4", "4");
+	addchoicebox(playerbufferseektime, "5", "5");
+	addchoicebox(playerbufferseektime, "6", "6");
+	addchoicebox(playerbufferseektime, "7", "7");
+	addchoicebox(playerbufferseektime, "8", "8");
+	addchoicebox(playerbufferseektime, "9", "9");
+	addchoicebox(playerbufferseektime, "10", "10");
+	setchoiceboxselection(playerbufferseektime, getconfig("playerbufferseektime", NULL));	
+	
 	drawscreen(adjust, 0, 0);
 	addscreenrc(adjust, listbox);
 
@@ -369,6 +398,10 @@ void screenadjust()
 				system(tmpstr);
 				free(tmpstr); tmpstr=NULL;
 			}
+			
+			addconfigscreen("playerbuffersize", playerbuffersize);
+			addconfigscreen("playerbufferseektime", playerbufferseektime);
+			
 			break;
 		}
 	}
