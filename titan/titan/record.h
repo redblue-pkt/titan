@@ -473,11 +473,11 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				if(status.playspeed == -4)
 					frmulti = frmulti + (frmulti/2);
 				else if(status.playspeed == -5)
-					frmulti = frmulti * 2;
+					frmulti = frmultiread * 4;
 				else if(status.playspeed == -6)
-					frmulti = frmulti * 4;
+					frmulti = frmultiread * 8;
 				else if(status.playspeed == 4)
-					frmulti = frmultiread ;
+					frmulti = frmulti + frmultiread ;
 				else if(status.playspeed == 5)
 					frmulti = frmultiread * 4;
 				else if(status.playspeed == 6)
