@@ -1208,29 +1208,97 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 				char* keyconf = NULL;
 				char* skintitle = "Choice Playback";
 				struct menulist* mlist = NULL, *mbox = NULL;
+				
 				addmenulist(&mlist, "Streaming Playback (default)", NULL, NULL, 0, 0);
-				addmenulist(&mlist, "Caching Playback (10MB / 120s)", NULL, NULL, 0, 0);
-				addmenulist(&mlist, "Caching Playback (20MB / 240s)", NULL, NULL, 0, 0);
-				addmenulist(&mlist, "Caching Playback (30MB / 360s)", NULL, NULL, 0, 0);
-				addmenulist(&mlist, "Download Full File", NULL, NULL, 0, 0);
+				addmenulist(&mlist, "Streaming Playback Caching (1MB)", NULL, NULL, 0, 0);
+				addmenulist(&mlist, "Streaming Playback Caching (2MB)", NULL, NULL, 0, 0);
+				addmenulist(&mlist, "Streaming Playback Caching (3MB)", NULL, NULL, 0, 0);
+				addmenulist(&mlist, "Streaming Playback Caching (4MB)", NULL, NULL, 0, 0);
+				addmenulist(&mlist, "Streaming Playback Caching (5MB)", NULL, NULL, 0, 0);
+
+				if(file_exist(getconfig("rec_path", NULL)))
+				{
+					addmenulist(&mlist, "File Caching Playback (10MB / 120s)", NULL, NULL, 0, 0);
+					addmenulist(&mlist, "File Caching Playback (20MB / 240s)", NULL, NULL, 0, 0);
+					addmenulist(&mlist, "File Caching Playback (30MB / 360s)", NULL, NULL, 0, 0);
+					addmenulist(&mlist, "Download Full File", NULL, NULL, 0, 0);
+				}
 				mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
 				if(mbox != NULL) keyconf = mbox->name;
 				if(ostrcmp(keyconf, "Streaming Playback (default)") == 0)
 				{
 					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+					{
+						addconfigtmp("playerbuffersize", "0");
 						screenplay(tmpstr1, 2, 0);
+						delconfigtmp("dirsort");
+					}
 				}
-				else if(ostrcmp(keyconf, "Caching Playback (10MB / 120s)") == 0)
+				else if(ostrcmp(keyconf, "Streaming Playback Caching (0.5MB)") == 0)
+				{
+					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+					{
+						addconfigtmp("playerbuffersize", "524288");
+						screenplay(tmpstr1, 2, 0);
+						delconfigtmp("dirsort");
+					}
+				}
+				else if(ostrcmp(keyconf, "Streaming Playback Caching (1MB)") == 0)
+				{
+					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+					{
+						addconfigtmp("playerbuffersize", "1048576");
+						screenplay(tmpstr1, 2, 0);
+						delconfigtmp("dirsort");
+					}
+				}
+				else if(ostrcmp(keyconf, "Streaming Playback Caching (2MB)") == 0)
+				{
+					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+					{
+						addconfigtmp("playerbuffersize", "2097152");
+						screenplay(tmpstr1, 2, 0);
+						delconfigtmp("dirsort");
+					}
+				}
+				else if(ostrcmp(keyconf, "Streaming Playback Caching (3MB)") == 0)
+				{
+					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+					{
+						addconfigtmp("playerbuffersize", "3145728");
+						screenplay(tmpstr1, 2, 0);
+						delconfigtmp("dirsort");
+					}
+				}
+				else if(ostrcmp(keyconf, "Streaming Playback Caching (4MB)") == 0)
+				{
+					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+					{
+						addconfigtmp("playerbuffersize", "4194304");
+						screenplay(tmpstr1, 2, 0);
+						delconfigtmp("dirsort");
+					}
+				}
+				else if(ostrcmp(keyconf, "Streaming Playback Caching (5MB)") == 0)
+				{
+					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+					{
+						addconfigtmp("playerbuffersize", "5242880");
+						screenplay(tmpstr1, 2, 0);
+						delconfigtmp("dirsort");
+					}
+				}
+				else if(ostrcmp(keyconf, "File Caching Playback (10MB / 120s)") == 0)
 				{
 					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 						cacheplay(tmpstr1, filename, 1);
 				}
-				else if(ostrcmp(keyconf, "Caching Playback (20MB / 240s)") == 0)
+				else if(ostrcmp(keyconf, "File Caching Playback (20MB / 240s)") == 0)
 				{
 					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 						cacheplay(tmpstr1, filename, 2);
 				}
-				else if(ostrcmp(keyconf, "Caching Playback (30MB / 360s)") == 0)
+				else if(ostrcmp(keyconf, "File Caching Playback (30MB / 360s)") == 0)
 				{
 					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 						cacheplay(tmpstr1, filename, 3);
