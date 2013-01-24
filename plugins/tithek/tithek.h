@@ -1218,9 +1218,9 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 
 				if(file_exist(getconfig("rec_path", NULL)))
 				{
-					addmenulist(&mlist, "File Caching Playback (10MB / 120s)", NULL, NULL, 0, 0);
-					addmenulist(&mlist, "File Caching Playback (20MB / 240s)", NULL, NULL, 0, 0);
-					addmenulist(&mlist, "File Caching Playback (30MB / 360s)", NULL, NULL, 0, 0);
+//					addmenulist(&mlist, "File Caching Playback (10MB / 120s)", NULL, NULL, 0, 0);
+//					addmenulist(&mlist, "File Caching Playback (20MB / 240s)", NULL, NULL, 0, 0);
+//					addmenulist(&mlist, "File Caching Playback (30MB / 360s)", NULL, NULL, 0, 0);
 					addmenulist(&mlist, "Download Full File", NULL, NULL, 0, 0);
 				}
 				mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
