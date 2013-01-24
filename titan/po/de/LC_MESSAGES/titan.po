@@ -2824,5 +2824,3 @@ msgstr "Wiedergabepuffer - Grösse (http) Streams"
 msgid "Time to wait after seek for fill buffer"
 msgstr "Wiedergabepuffer - Zeit bis zum automatischen laden nach einem Seek"
 
-
-[15:39:26] nit: text=
