@@ -2800,9 +2800,6 @@ msgstr "Benutze das Steuerkreuz für schnelles umschalten und laut / leise"
 msgid "Deactivate MiniTV"
 msgstr "Deaktiviere MiniTV Vorschau Fenster"
 
-msgid "Streaming Playback (default)"
-msgstr "Direktes Streamen (standard)"
-
 msgid "Caching Playback (10MB / 120s)"
 msgstr "Auf Festplatte Zwischenspeichern (10MB / 120s)"
 
@@ -2824,3 +2821,20 @@ msgstr "Wiedergabepuffer - Grösse (http) Streams"
 msgid "Time to wait after seek for fill buffer"
 msgstr "Wiedergabepuffer - Zeit bis zum automatischen laden nach einem Seek"
 
+msgid "Streaming Playback (default)"
+msgstr "Direktes Streamen (standard)"
+
+msgid "Streaming Playback Caching (1MB)"
+msgstr "Direktes Streamen mit Puffer (1MB)"
+
+msgid "Streaming Playback Caching (2MB)"
+msgstr "Direktes Streamen mit Puffer (2MB)"
+
+msgid "Streaming Playback Caching (3MB)"
+msgstr "Direktes Streamen mit Puffer (3MB)"
+
+msgid "Streaming Playback Caching (4MB)"
+msgstr "Direktes Streamen mit Puffer (4MB)"
+
+msgid "Streaming Playback Caching (5MB)"
+msgstr "Direktes Streamen mit Puffer (5MB)"
