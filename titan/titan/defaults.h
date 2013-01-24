@@ -76,6 +76,8 @@ void setdefaults()
 	addconfigdef("camwait", "25");
 	addconfigdef("newsletter", "1");
 	addconfigdef("showhiddenfiles", "1");
+	addconfigdef("playerbuffersize", "1048576");
+	addconfigdef("playerbufferseektime", "3");
 	
 	status.expertmodus = getconfigint("expertmodus", NULL);
 	status.pmtmode = getconfigint("pmtmode", NULL);

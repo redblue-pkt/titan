@@ -56,6 +56,7 @@ void start(void)
 			textbox(_("Message"), _("Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 	}
 
+	int aktplayerbuffersize = getconfigint("playerbuffersize", NULL);
 	status.hangtime = 99999;
 	tithekdownloadrun = 0;
 	tithekdownloadcount = 0;
@@ -63,5 +64,6 @@ void start(void)
 	tithekexit = 0;
 	screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.list", "Tithek - Mainmenu", 1);
 	tithekrun = 0;
+	addconfigint("playerbuffersize", aktplayerbuffersize);
 	status.hangtime = getconfigint("hangtime", NULL);
 }
