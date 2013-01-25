@@ -1227,81 +1227,57 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 				if(mbox != NULL) keyconf = mbox->name;
 				if(ostrcmp(keyconf, "Streaming Playback (default)") == 0)
 				{
-					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-					{
-						addconfigtmp("playerbuffersize", "0");
-						screenplay(tmpstr1, 2, 0);
-						delconfigtmp("dirsort");
-					}
+					addconfigtmp("playerbuffersize", "0");
+					screenplay(tmpstr1, 2, 0);
+					delconfigtmp("dirsort");
 				}
 				else if(ostrcmp(keyconf, "Streaming Playback Caching (0.5MB)") == 0)
 				{
-					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-					{
-						addconfigtmp("playerbuffersize", "524288");
-						screenplay(tmpstr1, 2, 0);
-						delconfigtmp("dirsort");
-					}
+					addconfigtmp("playerbuffersize", "524288");
+					screenplay(tmpstr1, 2, 0);
+					delconfigtmp("dirsort");
 				}
 				else if(ostrcmp(keyconf, "Streaming Playback Caching (1MB)") == 0)
 				{
-					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-					{
-						addconfigtmp("playerbuffersize", "1048576");
-						screenplay(tmpstr1, 2, 0);
-						delconfigtmp("dirsort");
-					}
+					addconfigtmp("playerbuffersize", "1048576");
+					screenplay(tmpstr1, 2, 0);
+					delconfigtmp("dirsort");
 				}
 				else if(ostrcmp(keyconf, "Streaming Playback Caching (2MB)") == 0)
 				{
-					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-					{
-						addconfigtmp("playerbuffersize", "2097152");
-						screenplay(tmpstr1, 2, 0);
-						delconfigtmp("dirsort");
-					}
+					addconfigtmp("playerbuffersize", "2097152");
+					screenplay(tmpstr1, 2, 0);
+					delconfigtmp("dirsort");
 				}
 				else if(ostrcmp(keyconf, "Streaming Playback Caching (3MB)") == 0)
 				{
-					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-					{
-						addconfigtmp("playerbuffersize", "3145728");
-						screenplay(tmpstr1, 2, 0);
-						delconfigtmp("dirsort");
-					}
+					addconfigtmp("playerbuffersize", "3145728");
+					screenplay(tmpstr1, 2, 0);
+					delconfigtmp("dirsort");
 				}
 				else if(ostrcmp(keyconf, "Streaming Playback Caching (4MB)") == 0)
 				{
-					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-					{
-						addconfigtmp("playerbuffersize", "4194304");
-						screenplay(tmpstr1, 2, 0);
-						delconfigtmp("dirsort");
-					}
+					addconfigtmp("playerbuffersize", "4194304");
+					screenplay(tmpstr1, 2, 0);
+					delconfigtmp("dirsort");
 				}
 				else if(ostrcmp(keyconf, "Streaming Playback Caching (5MB)") == 0)
 				{
-					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-					{
-						addconfigtmp("playerbuffersize", "5242880");
-						screenplay(tmpstr1, 2, 0);
-						delconfigtmp("dirsort");
-					}
+					addconfigtmp("playerbuffersize", "5242880");
+					screenplay(tmpstr1, 2, 0);
+					delconfigtmp("dirsort");
 				}
 				else if(ostrcmp(keyconf, "File Caching Playback (10MB / 120s)") == 0)
 				{
-					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-						cacheplay(tmpstr1, filename, 1);
+					cacheplay(tmpstr1, filename, 1);
 				}
 				else if(ostrcmp(keyconf, "File Caching Playback (20MB / 240s)") == 0)
 				{
-					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-						cacheplay(tmpstr1, filename, 2);
+					cacheplay(tmpstr1, filename, 2);
 				}
 				else if(ostrcmp(keyconf, "File Caching Playback (30MB / 360s)") == 0)
 				{
-					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-						cacheplay(tmpstr1, filename, 3);
+					cacheplay(tmpstr1, filename, 3);
 				}
 				else if(ostrcmp(keyconf, "Download Full File") == 0)
 				{
@@ -1323,6 +1299,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 					free(search), search = NULL;
 				}
 				free(filename), filename = NULL;
+				freemenulist(mlist); mlist = NULL;
 			}
 			else if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 				screenplay(tmpstr1, 2, 0);
