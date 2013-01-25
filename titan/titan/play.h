@@ -668,11 +668,50 @@ void playrcstop(int playertype, int flag)
 	screenplayinfobar(NULL, 1, playertype, flag);
 }
 
+void playrcslow(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
+{
+	if(checkbit(status.playercan, 15) == 0) return;
+
+	if(status.pause == 0 && status.playspeed == 0)
+	{
+		status.slwospeed++;
+		if(status.slwospeed > 6) status.slwospeed = 0;
+		if(status.slwospeed > 0)
+		{
+			status.play = 0;
+
+      if(playertype == 1)
+				playerslowts((int)pow(2, status.slwospeed));
+			else if(playertype == 0)
+				playerslow(status.playspeed);
+			*playinfobarstatus = 2;
+			*playinfobarcount = 0;
+			screenplayinfobar(file, 0, playertype, flag);
+		}
+		if(status.slwospeed == 0)
+		{
+			status.play = 1;
+			if(playertype == 1)
+			{
+				playerpausets();
+				playercontinuets();
+			}
+			else if(playertype == 2)
+				dvdcontinue();
+			else
+				playercontinue();
+			*playinfobarstatus = 1;
+			*playinfobarcount = 0;
+			screenplayinfobar(file, 0, playertype, flag);
+		}
+	}
+}
+
 void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
 	if(checkbit(status.playercan, 7) == 0) return;
 
-	if(status.pause == 0)
+	if(status.pause == 0 && status.slwospeed == 0)
 	{
 		status.playspeed++;
 		if(status.playspeed > 6) status.playspeed = 6;
@@ -725,7 +764,7 @@ void playrcfr(char* file, int* playinfobarstatus, int* playinfobarcount, int pla
 {
 	if(checkbit(status.playercan, 8) == 0) return;
 
-	if(status.pause == 0)
+	if(status.pause == 0 && status.slwospeed == 0)
 	{
 		status.playspeed--;
 		if(status.playspeed < -6) status.playspeed = -6;
@@ -777,6 +816,7 @@ void playrcpause(char* file, int* playinfobarstatus, int* playinfobarcount, int 
 
 	if(status.pause == 1)
 	{
+		status.slowspeed = 0;
 		status.playspeed = 0;
 		status.play = 1;
 		status.pause = 0;
@@ -792,6 +832,7 @@ void playrcpause(char* file, int* playinfobarstatus, int* playinfobarcount, int 
 	}
 	else
 	{
+		status.slowspeed = 0;
 		status.playspeed = 0;
 		status.play = 0;
 		status.pause = 1;
@@ -823,6 +864,7 @@ void playrcplay(char* file, int* playinfobarstatus, int* playinfobarcount, int p
 		dvdcontinue();
 	else
 		playercontinue();
+	status.slowspeed = 0;
 	status.playspeed = 0;
 	status.pause = 0;
 	status.play = 1;
@@ -837,7 +879,7 @@ void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 
 	unsigned long long pos = 0;
 	
-	if(status.pause == 0 && status.playspeed == 0)
+	if(status.pause == 0 && status.playspeed == 0 && status.slowspeed == 0)
 	{
 		//a jump over the beginning of the
 		//file, freez the player
@@ -893,7 +935,7 @@ void playrcjumpf(char* file, int sec, int* playinfobarstatus, int* playinfobarco
 {
 //	if(checkbit(status.playercan, 12) == 0) return;
 
-	if(status.pause == 0 && status.playspeed == 0)
+	if(status.pause == 0 && status.playspeed == 0 && && status.slowspeed == 0)
 	{
 		if(playertype == 1)
 			playerseekts(getservice(RECORDPLAY, 0), sec, 0);
@@ -1061,7 +1103,7 @@ playerstart:
 	else
 		startdir = getconfig("rec_path", NULL);
 
-	status.playspeed = 0, status.play = 0, status.pause = 0;
+	status.playspeed = 0, status.play = 0, status.pause = 0, status.slowspeed == 0;
 	int playinfobarcount = 0, playinfobarstatus = 1, dirrcret = 0;
 
 	if(startfile == NULL)
@@ -1129,7 +1171,7 @@ playerstart:
 		{
 			struct stimerthread* bufferstatus = addtimer(&screenplaybufferstatus, START, 1000, 1, NULL, NULL, NULL);
 			rcret = playerstart(file);
-			if(bufferstatus != NULL && gettimerbythread(bufferstatus) != NULL)
+			if(bufferstatus != NULL && gettimer(bufferstatus) != NULL)
 			{
 				bufferstatus->aktion = STOP;
 				usleep(100000);
@@ -1233,6 +1275,9 @@ playerstart:
 						goto playerend;
 					}
 				}
+				
+				if(rcret == getrcconfigint("rcslow", NULL))
+					playrcslow(file, &playinfobarstatus, &playinfobarcount, playertype, flag);
 
 				if(rcret == getrcconfigint("rcff", NULL))
 					playrcff(file, &playinfobarstatus, &playinfobarcount, playertype, flag);
@@ -1323,7 +1368,8 @@ playerend:
 		deinitscreensaver();
 
 	addconfigint("dirsort", oldsort);
-	free(status.playfile); status.playfile = NULL; 
+	free(status.playfile); status.playfile = NULL;
+	status.slowspeed = 0; 
 	status.playspeed = 0;
 	status.pause = 0;
 	status.play = 0;
