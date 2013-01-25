@@ -46,7 +46,7 @@ fi
 [ -z "`lsmod | grep $WLAN_MODULE`" ] && echo "[wlan] could not load $WLAN_MODULE" | tee -a $WLAN_LOG && exit 1
 case $WLAN_MODULE in
 	rt2870sta | rt3070sta )	WLAN_IF=ra0
-				WLAN_DRV=ralink
+				WLAN_DRV=wext
 				;;
 	8192cu )		WLAN_IF=wlan0
 				WLAN_DRV=wext
