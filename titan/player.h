@@ -17,6 +17,7 @@
 // 12 jump/seek forward
 // 13 changecodec
 // 14 infobar
+//15 slowmotion
 
 #ifdef EPLAYER3
 Context_t * player = NULL;
@@ -165,7 +166,7 @@ int playerstartts(char* file, int flag)
 			return 1;
 		}
 		//status.playercan = 0x7EFF;
-		status.playercan = 0x7FFF;	
+		status.playercan = 0xFFFF;	
 	}
 
 	return 0;
@@ -348,6 +349,11 @@ void playerffts(int speed)
 	videofastforward(status.aktservice->videodev, speed);
 }
 
+void playerslowts(int speed)
+{
+	videoslowmotion(status.aktservice->videodev, speed);
+}
+
 //flag = 0 --> recordplay
 //flag = 1 --> timeshift
 void playerfrts(int speed, int flag)
@@ -461,7 +467,7 @@ int playerstart(char* file)
 		if(ostrstr(tmpfile, "file://") == NULL)
 			status.playercan = 0x4650;
 		else
-			status.playercan = 0x7FFF;
+			status.playercan = 0xFFFF;
 		
 		player->playback = &PlaybackHandler;
 		player->output = &OutputHandler;
@@ -897,6 +903,30 @@ void playerff(int speed)
 
 	if(player && player->playback)
 		player->playback->Command(player, PLAYBACK_FASTFORWARD, &speedmap);
+#endif
+}
+
+void playerslow(int speed)
+{
+#ifdef EPLAYER3
+	int speedmap = 0;
+
+	if (speed < 1) speed = 1;
+	if (speed > 7) speed = 7;
+
+	switch(speed)
+	{
+		case 1: speedmap = 1; break;
+		case 2: speedmap = 3; break;
+		case 3: speedmap = 7; break;
+		case 4: speedmap = 15; break;
+		case 5: speedmap = 31; break;
+		case 6: speedmap = 63; break;
+		case 7: speedmap = 127; break;
+	}
+
+	if(player && player->playback)
+		player->playback->Command(player, PLAYBACK_SLOWMOTION, &speedmap);
 #endif
 }
 

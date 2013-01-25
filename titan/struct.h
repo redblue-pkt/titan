@@ -1155,6 +1155,7 @@ struct status
 	int play;
 	int pause;
 	int playspeed;
+	int slowspeed;
 	int random;
 	int repeat;
 	int epgdays;
