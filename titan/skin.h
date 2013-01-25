@@ -93,6 +93,11 @@ void* convertfunc(char *value, uint8_t *rettype)
 	}
 	if(ostrcmp("getplaytext", value) == 0)
 		return &getplaytext;
+  if(ostrcmp("getbufferstatus", value) == 0)
+	{
+		*rettype = FUNCPROGRESS;
+		return &getbufferstatus;
+	}
 	if(ostrcmp("getrecfreesize", value) == 0)
 	{
 		*rettype = FUNCPROGRESS;

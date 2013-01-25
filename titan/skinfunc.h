@@ -1087,4 +1087,20 @@ char* getemu(struct skin* node)
 	return tmpstr;
 }
 
+char* getbufferstatus(struct skin* node)
+{
+	int ret = 0, size = 0, status = 0;
+	
+	size = playergetbuffersize();
+	if(size > 0)
+			status = playergetbufferstatus();
+
+	if(size > 0 && size > status) ret = ((size - status) * 100) / size;
+
+	if(ret < 0) ret = 0;
+	if(ret > 100) ret = 100;
+
+	return oitoa(ret);
+}
+
 #endif

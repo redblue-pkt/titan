@@ -29,6 +29,31 @@ start:
 	clearscreen(playpolicy);
 }
 
+void screenplaybufferstatus(struct stimerthread* self)
+{
+	int draw = 50;
+	if(self == NULL) return;
+
+	struct skin* playbufferstatus = getscreen("playbufferstatus");
+	
+	while(self->aktion != STOP)
+	{
+		if(draw == 50 && playergetbuffersize() > 0)
+		{
+			drawscreen(playbufferstatus, 0, 0);
+			draw = 0;
+		}
+		usleep(10000);
+		draw++;
+	}
+	
+	if(playergetbuffersize() > 0)
+	{
+		clearscreen(playbufferstatus);
+		drawscreen(skin, 0, 0);
+	}
+}
+
 //flag = 4 ---> timeshift
 void screenplayinfobar(char* file, int mode, int playertype, int flag)
 {
@@ -1098,8 +1123,18 @@ playerstart:
 		playwritevfd(file);
 		if(playertype == 1)
 			rcret = playerstartts(file, 0);
-		else
+		else if(playertype == 2)
 			rcret = playerstart(file);
+		else
+		{
+			struct stimerthread* bufferstatus = addtimer(&screenplaybufferstatus, START, 1000, 1, NULL, NULL, NULL);
+			rcret = playerstart(file);
+			if(bufferstatus != NULL && gettimerbythread(bufferstatus) != NULL)
+			{
+				bufferstatus->aktion = STOP;
+				usleep(100000);
+			}
+		}
 #ifndef SIMULATE
 		if(rcret != 0)
 		{
