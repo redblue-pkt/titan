@@ -2004,13 +2004,13 @@ char* webdelfile(char* param, char* link, char* dellink, char* path, char* mask,
 
 		if(cmpfilename(tmpparam, ".ts") == 0)
 		{
-			epgfilename = changefilenameext(file, ".epg");
+			epgfilename = changefilenameext(tmpparam, ".epg");
 			unlink(epgfilename);
 			free(epgfilename); epgfilename = NULL;
-			epgfilename = changefilenameext(file, ".se");
+			epgfilename = changefilenameext(tmpparam, ".se");
 			unlink(epgfilename);
 			free(epgfilename); epgfilename = NULL;
-			epgfilename = changefilenameext(file, ".ma");
+			epgfilename = changefilenameext(tmpparam, ".ma");
 			unlink(epgfilename);
 			free(epgfilename); epgfilename = NULL;
 		}
