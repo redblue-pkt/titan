@@ -35,6 +35,8 @@ void screenplaybufferstatus(struct stimerthread* self)
 	if(self == NULL) return;
 
 	struct skin* playbufferstatus = getscreen("playbufferstatus");
+
+	playbufferstatus->progresssize = 0;
 	
 	while(self->aktion != STOP)
 	{
