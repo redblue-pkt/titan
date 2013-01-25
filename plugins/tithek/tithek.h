@@ -1229,43 +1229,43 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 				{
 					addconfigtmp("playerbuffersize", "0");
 					screenplay(tmpstr1, 2, 0);
-					delconfigtmp("dirsort");
+					delconfigtmp("playerbuffersize");
 				}
 				else if(ostrcmp(keyconf, "Streaming Playback Caching (0.5MB)") == 0)
 				{
 					addconfigtmp("playerbuffersize", "524288");
 					screenplay(tmpstr1, 2, 0);
-					delconfigtmp("dirsort");
+					delconfigtmp("playerbuffersize");
 				}
 				else if(ostrcmp(keyconf, "Streaming Playback Caching (1MB)") == 0)
 				{
 					addconfigtmp("playerbuffersize", "1048576");
 					screenplay(tmpstr1, 2, 0);
-					delconfigtmp("dirsort");
+					delconfigtmp("playerbuffersize");
 				}
 				else if(ostrcmp(keyconf, "Streaming Playback Caching (2MB)") == 0)
 				{
 					addconfigtmp("playerbuffersize", "2097152");
 					screenplay(tmpstr1, 2, 0);
-					delconfigtmp("dirsort");
+					delconfigtmp("playerbuffersize");
 				}
 				else if(ostrcmp(keyconf, "Streaming Playback Caching (3MB)") == 0)
 				{
 					addconfigtmp("playerbuffersize", "3145728");
 					screenplay(tmpstr1, 2, 0);
-					delconfigtmp("dirsort");
+					delconfigtmp("playerbuffersize");
 				}
 				else if(ostrcmp(keyconf, "Streaming Playback Caching (4MB)") == 0)
 				{
 					addconfigtmp("playerbuffersize", "4194304");
 					screenplay(tmpstr1, 2, 0);
-					delconfigtmp("dirsort");
+					delconfigtmp("playerbuffersize");
 				}
 				else if(ostrcmp(keyconf, "Streaming Playback Caching (5MB)") == 0)
 				{
 					addconfigtmp("playerbuffersize", "5242880");
 					screenplay(tmpstr1, 2, 0);
-					delconfigtmp("dirsort");
+					delconfigtmp("playerbuffersize");
 				}
 				else if(ostrcmp(keyconf, "File Caching Playback (10MB / 120s)") == 0)
 				{
