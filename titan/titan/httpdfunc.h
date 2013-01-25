@@ -2002,7 +2002,7 @@ char* webdelfile(char* param, char* link, char* dellink, char* path, char* mask,
 
 		unlink(tmpparam);
 
-		if(cmpfilename(tmpparam, ".ts") == 0)
+		if(cmpfilenameext(tmpparam, ".ts") == 0)
 		{
 			epgfilename = changefilenameext(tmpparam, ".epg");
 			unlink(epgfilename);
