@@ -459,6 +459,8 @@ double playergetlength();
 int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, unsigned long long* endpts, unsigned long long* aktpts, unsigned long long* bitrate, int flag);
 int playerisplaying();
 void playerafterend();
+int playergetbuffersize();
+int playergetbufferstatus();
 
 //filelist.h
 void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* filelist, char* path, char* filemask, int tmpview, char* selection);
