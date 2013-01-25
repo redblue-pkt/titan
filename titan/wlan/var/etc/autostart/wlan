@@ -58,7 +58,7 @@ if [ ! -z $WLAN_STARTMODE ] && [ $WLAN_STARTMODE == "load" ]; then
 #					WLAN_DRV=ralink
 #					;;
 	    rt2870sta | rt3070sta )	WLAN_IF=ra0
-					WLAN_DRV=ralink
+					WLAN_DRV=wext
 					;;
 	    rt5370sta )		WLAN_IF=ra0
 				  WLAN_DRV=wext
