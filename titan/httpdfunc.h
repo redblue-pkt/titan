@@ -1969,6 +1969,7 @@ char* webgetmovieepg(char* param, char* path, int flag, int fmt)
 
 char* webdelfile(char* param, char* link, char* dellink, char* path, char* mask, int flag, int fmt)
 {
+	int del = 0;
 	char* buf = NULL, *param1 = NULL, *param2 = NULL, *tmpparam = NULL;
 
 	if(param == NULL) return NULL;
@@ -1990,10 +1991,30 @@ char* webdelfile(char* param, char* link, char* dellink, char* path, char* mask,
 	if(checkbit(flag, 0) == 1)
 	{
 		if(tmpparam != NULL && ostrstr(tmpparam, path) == tmpparam)
-			unlink(tmpparam);
+			del = 1;
 	}
 	else
+		del = 1;
+
+	if(del == 1)
+	{
+		char* epgfilename = NULL;
+
 		unlink(tmpparam);
+
+		if(cmpfilename(tmpparam, ".ts") == 0)
+		{
+			epgfilename = changefilenameext(file, ".epg");
+			unlink(epgfilename);
+			free(epgfilename); epgfilename = NULL;
+			epgfilename = changefilenameext(file, ".se");
+			unlink(epgfilename);
+			free(epgfilename); epgfilename = NULL;
+			epgfilename = changefilenameext(file, ".ma");
+			unlink(epgfilename);
+			free(epgfilename); epgfilename = NULL;
+		}
+	}
 
 	free(tmpparam); tmpparam = NULL;
 	tmpparam = ostrcat(tmpparam, param, 1, 0);
