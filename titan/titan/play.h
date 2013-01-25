@@ -810,7 +810,7 @@ void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int pla
 void playrcfr(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
   if(status.pause == 1)
-    playrcsf(file, playinfobarstatus, playinfobarcount, playertype, 1, flag);
+    playrcsr(file, playinfobarstatus, playinfobarcount, playertype, 1, flag);
 	
   if(checkbit(status.playercan, 8) == 0) return;
 
