@@ -1299,7 +1299,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 					free(search), search = NULL;
 				}
 				free(filename), filename = NULL;
-				freemenulist(mlist); mlist = NULL;
+				freemenulist(mlist, 1); mlist = NULL;
 			}
 			else if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 				screenplay(tmpstr1, 2, 0);
