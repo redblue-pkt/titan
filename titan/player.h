@@ -481,6 +481,10 @@ int playerstart(char* file)
 			player->container->Command(player, CONTAINER_ADD, ext);
 			free(ext); ext = NULL;
 		}
+
+		//select container_ffmpeg, if we does not found a container with extensions
+		if(player->container->selectedContainer == NULL)
+			player->container->Command(player, CONTAINER_ADD, "mp3");
 		
 		if(player && player->container && player->container->selectedContainer)
 		{
