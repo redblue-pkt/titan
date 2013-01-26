@@ -17,8 +17,8 @@ for CASE in A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
 		exit
 	fi
 
-	if [ $LINES -gt 500 ]; then
-		LINES=500
+	if [ $LINES -gt 1000 ]; then
+		LINES=1000
 	fi
 
 	max=`expr $LINES - 4`
@@ -69,7 +69,7 @@ for ROUND0 in $main_list; do
 	main_next_list=`cat cache.main.next.list | grep /Stream/ | sed 's!/Stream/!\n/Stream/!' | grep ^/Stream/ | cut -d '"' -f1  | cut -d "'" -f1 | sort -um`
 	
 	if [ $ROUND0 == "Popular-Series" ]; then
-		main_next_list="$main_next_list /Stream/Die_Gummibaerenbande.html /Stream/Touch-1.html /Stream/Alcatraz_german_subbed.html /Stream/Battlestar_Galactica.html /Stream/24.html /Stream/Heroes.html /Stream/Star_Wars_The_Clone_Wars-1.html /Stream/Star_Wars_The_Clone_Wars_german_subbed.html"
+		main_next_list="$main_next_list /Stream/Die_Gummibaerenbande.html /Stream/Touch-1.html /Stream/Alcatraz_german_subbed.html /Stream/Battlestar_Galactica.html /Stream/24.html /Stream/Heroes.html /Stream/Star_Wars_The_Clone_Wars-1.html /Stream/Star_Wars_The_Clone_Wars_german_subbed.html /Stream/TRON_Der_Aufstand.html /Stream/TRON_Uprising.html"
 	fi
 
 	if [ $ROUND0 == "Movies" ]; then
@@ -106,16 +106,29 @@ for ROUND0 in $main_list; do
 	
 		wget --no-check-certificate "http://kinox.to/$ROUND1" -O cache."$filename".list
 		PIC=`cat cache."$filename".list | tr '><' '>\n<' | grep $picname | cut -d '"' -f2 | sort -um`
+		LANG=`cat cache."$filename".list | grep 'alt="language" src="/gr/sys/lng' | sed 's!alt="language" src="/gr/sys/lng/!\n!' | tail -n1 |cut -d"." -f1`
+	 	LANGTXT=" (??)"
 
+		if [ ! -z $LANG ];then
+			if [ $LANG = 1 ];then
+			 	LANGTXT=" (de)"
+			elif [ $LANG = 2 ];then
+			 	LANGTXT=" (en)"
+			else
+			 	LANGTXT=" (??)"
+			fi
+		fi
+		
 		echo cache."$filename".list
 		echo filename=$filename
 		echo picname=$picname
 		echo PIC=$PIC
 		echo TITLE=$TITLE
+		echo LANGTXT=$LANGTXT
 
 		URL="http://kinox.to/$ROUND1"
 	
-		LINE="$TITLE#$URL#$PIC#kinox_$piccount.jpg#KinoX#22"
+		LINE="$TITLE$LANGTXT#$URL#$PIC#kinox_$piccount.jpg#KinoX#22"
 		if [ ! -z "$TITLE" ]; then
 			echo $LINE >> cache.kinox.$filename.titanlist
 			echo $LINE >> cache.kinox.titanlist			
@@ -133,7 +146,7 @@ for ROUND0 in $main_list; do
 	done
 done
 
-cat cache.kinox.titanlist | sort -u > _full/kinox/kinox.all-sorted.list
+cat cache.kinox.titanlist | sort -u > _full/kinox/streams/kinox.all-sorted.list
 cat cache.kinox.category.titanlist | sort -u > _full/kinox/kinox.category.list
 
 for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
