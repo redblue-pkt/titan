@@ -35,7 +35,17 @@ char* filenuke(char* host, char* file)
 	debug(99, "tmpfile: %s", tmpfile);
 	tmpstr = gethttp(tmphost, tmpfile, 80, NULL, NULL, NULL, 0);
 	debug(99, "write file");
-//	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke_gethttp", tmpstr, 0);
+	sleep(2);
+	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke_gethttp", tmpstr, 0);
+
+	if(ostrstr(tmpstr, "<title>The page is temporarily unavailable</title>") != NULL)
+	{
+		tmpstr = string_resub("<td align=\"center\" valign=\"middle\">", "</td>", tmpstr, 1);
+		string_deltags(tmpstr);
+		tmpstr = string_replace("Terms", "\nTerms", tmpstr, 1);
+		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
+		goto end;
+	}
 
 	//get hash from tmpstr
 	char* pos1 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"fname\" value=");
@@ -79,7 +89,7 @@ char* filenuke(char* host, char* file)
 
 	//send and receive answer
 	post = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 0);
-//	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke_post1", post, 0);
+	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke_post1", post, 0);
 
 //	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/post", NULL, NULL, 0, send, NULL, 0);
 //	cmd = ostrcat(cmd, "cat /tmp/tithek/post | zcat", 1, 0);
@@ -90,21 +100,21 @@ char* filenuke(char* host, char* file)
 
 	free(tmpstr),tmpstr = NULL;
 	tmpstr = string_resub(";return p}('", ");'", post, 0);
-//	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke_tmpstr1", tmpstr, 0);
+	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke_tmpstr1", tmpstr, 0);
 	
 	post = string_replace_all(tmpstr, "", post, 1);
 	post = string_replace_all(";return p}(');'", "", post, 1);
-//	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke_post2", post, 0);
+	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke_post2", post, 0);
 
 	free(tmpstr),tmpstr = NULL;
 	free(b36code),b36code = NULL;
 	tmpstr = string_resub(";return p}('", ");'", post, 0);
-//	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke_tmpstr2", tmpstr, 0);
+	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke_tmpstr2", tmpstr, 0);
 
 	b36code = oregex(".*;',[0-9]{2,2},[0-9]{2,2},'(.*)'.split.*", post);
 	
 	b36code = string_replace_all("||", "| |", b36code, 1);		
-//	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke_b36code2", b36code, 0);
+	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke_b36code2", b36code, 0);
 	
 	struct splitstr* ret1 = NULL;
 	int count = 0;
@@ -183,7 +193,7 @@ char* filenuke(char* host, char* file)
 	free(post), post = NULL;
 	free(charlist), charlist = NULL;
 
-//	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke_tmpstr_last", tmpstr, 0);
+	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke_tmpstr_last", tmpstr, 0);
 
 	streamlink = oregex(".*file.*(http:.*video.flv).*image.*", tmpstr);
 	if(streamlink == NULL)

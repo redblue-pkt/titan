@@ -87,8 +87,11 @@ char* youtube(char* link, char* url, char* name, int flag)
 								debug(99, "(%d) title == NULL streamurl %s\n",i, streamurl);
 								debug(99, "(%d) ret1 %s\n",i, (ret1[i]).part);
 							}
-							debug(99, "(%d) title == NULL streamurl %s\n",i, streamurl);																									
-							addmenulist(&mlist, title, streamurl, NULL, 0, 0);
+							else
+							{
+								debug(99, "(%d) title == NULL streamurl %s\n",i, streamurl);																									
+								addmenulist(&mlist, title, streamurl, NULL, 0, 0);
+							}
 							free(title), title = NULL;					
 							free(streamurl), streamurl = NULL;
 						  

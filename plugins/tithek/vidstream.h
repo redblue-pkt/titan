@@ -40,10 +40,19 @@ char* vidstream(char* host, char* file)
 	debug(99, "tmpfile: %s", tmpfile);
 	debug(99, "send: %s", send);
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 1);
-//	writesys("/var/usr/local/share/titan/plugins/tithek/vidstream1", tmpstr, 0);
+	writesys("/var/usr/local/share/titan/plugins/tithek/vidstream1", tmpstr, 0);
 
 	sleep(1);
 
+	if(ostrstr(tmpstr, "<b>File Not Found</b>") != NULL)
+	{
+		tmpstr = string_resub("<Center>", "</Center>", tmpstr, 1);
+		string_deltags(tmpstr);
+		tmpstr = string_replace("Terms", "\nTerms", tmpstr, 1);
+		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
+		goto end;
+	}
+		
 	//get hash from tmpstr
 	char* pos1 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"fname\" value=");
 	fname = getxmlentry(pos1, "value=");
@@ -106,7 +115,7 @@ char* vidstream(char* host, char* file)
 	free(tmpstr), tmpstr = NULL;
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 1);
 	
-//	writesys("/var/usr/local/share/titan/plugins/tithek/vidstream2", tmpstr, 0);
+	writesys("/var/usr/local/share/titan/plugins/tithek/vidstream2", tmpstr, 0);
 
 	sleep(1);
 	streamlink = string_resub("file: \"", "\",", tmpstr, 0);
