@@ -797,7 +797,7 @@ void screennetwork_wlan()
 
 		if(rcret == getrcconfigint("rcinfo", NULL) && scan == 0)
 		{
-			ret = system("check_wlan_driver.sh > /tmp/check_wlan_driver");
+			ret = WEXITSTATUS(system("check_wlan_driver.sh > /tmp/check_wlan_driver"));
 			if(ret == 0)
 			{
 				tmpstr = readfiletomem("/tmp/check_wlan_driver", 0);
