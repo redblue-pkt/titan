@@ -502,7 +502,7 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 					if(flag == 0) node = addlistbox(scan, listbox, node, 1);
 					if(node != NULL)
 					{
-						if(chnode != NULL)
+						if(chnode != NULL && chnode->transponder != NULL)
 							node->fontcol = convertcol("deaktivcol");
 						switch(servicetype)
 						{
@@ -1239,6 +1239,14 @@ void scanaddchannel(struct skin* node, int scantype, struct transponder* tp1, in
 		if(scantype == 0)
 		{
 			tp2 = gettransponder(transponderid);
+
+			if(tp2 == NULL && tp1 != NULL)
+			{
+				tp2 = gettransponderbydetail(tp1->fetype, tp1->orbitalpos, tp1->frequency, tp1->inversion, tp1->symbolrate, tp1->polarization, tp1->fec, tp1->modulation, tp1->rolloff, tp1->pilot, tp1->system);
+				if(tp2 != NULL && tp2->id == 0)
+					changetransponderid(tp2, transponderid);
+			}
+
 			if(tp2 == NULL) //create new transponder
 				copytransponder(tp1, tp2, transponderid);
 			else //change transponder

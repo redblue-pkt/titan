@@ -892,15 +892,19 @@ void deltransponderbyid(uint64_t transponderid)
 	}
 }
 
-/*
-struct transponder* gettransponder(uint64_t transponderid)
+struct transponder* gettransponderbydetail(int fetype, int orbitalpos, unsigned int frequency, int inversion, unsigned int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int system)
 {
 	//debug(1000, "in");
 	struct transponder *node = transponder;
 
 	while(node != NULL)
 	{
-		if(node->id == transponderid)
+		if(node->id == 99)
+		{
+			node = node->next;
+			continue;
+		}
+		if(node->fetype == fetype && node->orbitalpos == orbitalpos && node->frequency == frequency && node->inversion == inversion && node->symbolrate == symbolrate && node->polarization == polarization && node->fec == fec && node->modulation == modulation && node->rolloff == rolloff && node->pilot == pilot && node->system == system)
 		{
 			//debug(1000, "out");
 			return node;
@@ -911,7 +915,6 @@ struct transponder* gettransponder(uint64_t transponderid)
 	debug(100, "transponder not found (%llu)", transponderid);
 	return NULL;
 }
-*/
 
 void deltransponderbyorbitalpos(int orbitalpos)
 {
