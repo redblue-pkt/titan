@@ -40,7 +40,16 @@ for SEARCH in $SEARCHLIST; do
 		piccount=`expr $piccount + 1`
 	
 		wget --no-check-certificate http://www.youtube.com/watch?v=$ROUND -O cache.$filename.title.list
-		TITLE=`cat cache.$filename.title.list | grep '<meta name="title" content="' | sed 's/      <meta name="title" content="//' | sed 's/">//' | tr '&#' '%' | tr -d ';'`
+#		TITLE=`cat cache.$filename.title.list | grep '<meta name="title" content="' | sed 's/      <meta name="title" content="//' | sed 's/">//' | tr '&#' '%' | tr -d ';'`
+		TITLE=`cat cache.$filename.title.list | grep '<meta name="title" content="' | sed 's/content=/\n/' | tail -n 1 | cut -d '"' -f2`
+		TITLE=`echo $TITLE | sed 's/&amp;/und/'`
+		TITLE=`echo $TITLE | sed 's/&amp;/und/'`
+		TITLE=`echo $TITLE | sed 's/&quot;/"/'`
+		TITLE=`echo $TITLE | sed 's/&quot;/"/'`
+
+#ls cat cache.$filename.title.list 
+#exit
+
 		if [ -z "$TITLE" ]; then
 			TITLE="not found"
 		fi
@@ -76,7 +85,15 @@ for SEARCH in $SEARCHLIST; do
 		piccount=`expr $piccount + 1`
 	
 		wget --no-check-certificate http://www.youtube.com/watch?v=$ROUND -O cache.$filename.title.list
-		TITLE=`cat cache.$filename.title.list | grep '<meta name="title" content="' | sed 's/      <meta name="title" content="//' | sed 's/">//' | tr '&#' '%' | tr -d ';'`
+#		TITLE=`cat cache.$filename.title.list | grep '<meta name="title" content="' | sed 's/      <meta name="title" content="//' | sed 's/">//' | tr '&#' '%' | tr -d ';'`
+		TITLE=`cat cache.$filename.title.list | grep '<meta name="title" content="' | sed 's/content=/\n/' | tail -n 1 | cut -d '"' -f2`
+		TITLE=`echo $TITLE | sed 's/&amp;/und/'`
+		TITLE=`echo $TITLE | sed 's/&amp;/und/'`
+		TITLE=`echo $TITLE | sed 's/&quot;/"/'`
+		TITLE=`echo $TITLE | sed 's/&quot;/"/'`
+
+
+
 		if [ -z "$TITLE" ]; then
 			TITLE="not found"
 		fi
