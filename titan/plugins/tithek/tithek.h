@@ -717,7 +717,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	}
 	else
 	{
-		localfile = ostrcat(getconfig("rec_path", NULL), "/", 0, 0);
+		localfile = ostrcat(getconfig("rec_streampath", NULL), "/", 0, 0);
 		if(localname == NULL)
 			localfile = ostrcat(localfile, basename(tmpstr), 1, 0);
 		else
@@ -1007,7 +1007,8 @@ void cacheplay(char* link, char* filename, int flag)
 		path = pos + 1;
 	}
 
-	file = ostrcat("/media/hdd/.cache.", filename, 0, 0);
+	file = ostrcat(getconfig("rec_streampath", NULL), "/.cache.", 0, 0);
+	file = ostrcat(file, filename, 1, 0);
 
 	if(ostrstr(host, ":") != NULL)
 	{
@@ -1216,7 +1217,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 				addmenulist(&mlist, "Streaming Playback Caching (4MB)", NULL, NULL, 0, 0);
 				addmenulist(&mlist, "Streaming Playback Caching (5MB)", NULL, NULL, 0, 0);
 
-				if(file_exist(getconfig("rec_path", NULL)))
+				if(file_exist(getconfig("rec_streampath", NULL)))
 				{
 //					addmenulist(&mlist, "File Caching Playback (10MB / 120s)", NULL, NULL, 0, 0);
 //					addmenulist(&mlist, "File Caching Playback (20MB / 240s)", NULL, NULL, 0, 0);
@@ -1290,7 +1291,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 					
 						if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 						{
-							tmpstr2 = ostrcat(getconfig("rec_path", NULL), "/", 0, 0);
+							tmpstr2 = ostrcat(getconfig("rec_streampath", NULL), "/", 0, 0);
 							tmpstr2 = ostrcat(tmpstr2, search, 1, 0);
 							screenplay(tmpstr2, 2, 0);
 							free(tmpstr2); tmpstr2 = NULL;
