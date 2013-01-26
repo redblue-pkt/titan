@@ -2268,6 +2268,18 @@ start:
 		servicecheckret(servicestart(status.lastservice->channel, tmpstr, NULL, 0), 0);
 		free(tmpstr); tmpstr = NULL;
 	}
+
+	//recalc channels
+	struct channel* chnode = channel;
+	while(chnode != NULL)
+	{
+		if(chnode->servicetype != 99)
+		{
+			chnode->transponder = gettransponder(chnode->transponderid);
+			chnode->provider = getprovider(chnode->providerid);
+		}
+		chnode = chnode->next;
+	}
 	
 	writeallconfig(1);
 }
