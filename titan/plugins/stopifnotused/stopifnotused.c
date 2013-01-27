@@ -67,11 +67,8 @@ void init(void)
 //wird beim entladen ausgefuehrt
 void deinit(void)
 {
-	char* tmpstr = NULL;
-	
 	pluginaktiv = 0;
 	debug(10, "Stop if not used removed !!!");
-	free(tmpstr); tmpstr = NULL;
 	delmarkedscreen(117);
 }
 
