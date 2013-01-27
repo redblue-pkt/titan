@@ -895,8 +895,13 @@ void deltransponderbyid(uint64_t transponderid)
 struct transponder* gettransponderbydetail(int fetype, int orbitalpos, unsigned int frequency, int inversion, unsigned int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int system)
 {
 	//debug(1000, "in");
+	int divisor = 1000000;
 	struct transponder *node = transponder;
 
+	if(fetype == FE_QPSK)
+		divisor = 1000;
+
+	frequency = frequency / divisor;
 	while(node != NULL)
 	{
 		if(node->id == 99)
@@ -904,7 +909,7 @@ struct transponder* gettransponderbydetail(int fetype, int orbitalpos, unsigned 
 			node = node->next;
 			continue;
 		}
-		if(node->fetype == fetype && node->orbitalpos == orbitalpos && node->frequency == frequency && node->inversion == inversion && node->symbolrate == symbolrate && node->polarization == polarization && node->fec == fec && node->modulation == modulation && node->rolloff == rolloff && node->pilot == pilot && node->system == system)
+		if(node->fetype == fetype && node->orbitalpos == orbitalpos && (node->frequency / divisor) == frequency && node->inversion == inversion && node->symbolrate == symbolrate && node->polarization == polarization && node->fec == fec && node->modulation == modulation && node->rolloff == rolloff && node->pilot == pilot && node->system == system)
 		{
 			//debug(1000, "out");
 			return node;
