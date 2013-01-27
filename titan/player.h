@@ -768,6 +768,18 @@ int playergetbufferstatus()
 	return ret;
 }
 
+int playerstopbuffer()
+{
+	int ret = 0;
+
+#ifdef EPLAYER3
+	if(player && player->container && player->container->selectedContainer)
+		player->container->selectedContainer->Command(player, CONTAINER_STOP_BUFFER, NULL);
+#endif
+
+	return ret;
+}
+
 int playerisplaying()
 {
 #ifdef SIMULATE
