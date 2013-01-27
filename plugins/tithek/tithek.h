@@ -923,7 +923,7 @@ void removefav(char* title, char* link, char* pic, char* localname, char* menuti
 	input = ostrcat(input, "#", 1, 0);
 	input = ostrcat(input, menutitle, 1, 0);
 	input = ostrcat(input, "#", 1, 0);
-	input = ostrcat(input, oitoa(flag), 1, 0);
+	input = ostrcat(input, oitoa(flag), 1, 1);
 	
 	tmpstr = readfiletomem(getconfig("tithek_fav", NULL), 0);
 	
@@ -970,7 +970,7 @@ void addfav(char* title, char* link, char* pic, char* localname, char* menutitle
 	input = ostrcat(input, "#", 1, 0);
 	input = ostrcat(input, menutitle, 1, 0);
 	input = ostrcat(input, "#", 1, 0);
-	input = ostrcat(input, oitoa(flag), 1, 0);
+	input = ostrcat(input, oitoa(flag), 1, 1);
 	
 	tmpstr1 = ostrcat(tmpstr1, input, 1, 0);
 	tmpstr1 = ostrcat(tmpstr1, "\n", 1, 0);
@@ -1707,13 +1707,13 @@ waitrcstart:
 		}
 	}
 
-//	freetithek();
 	delmarkedscreennodes(grid, 1);
 	delownerrc(grid);
 	clearscreen(grid);
 
 	if(first == 1)
 	{
+		freetithek();
 		delallfiles("/tmp/tithek", ".list");
 		if(status.mcaktiv == 0)
 			servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
