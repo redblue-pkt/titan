@@ -31,7 +31,6 @@ void akttomerk()
 	merkservice->channellist = ostrcat(status.aktservice->channellist, NULL, 0, 0);
 }
 
-
 void zapback_thread()
 {
 	
@@ -42,7 +41,7 @@ void zapback_thread()
 	
 	merkminute = atoi(gettime(NULL, "%M"));
 	
-	while (zapbackthread->aktion != STOP)
+	while(zapbackthread->aktion != STOP)
 	{
 		helpminute = atoi(gettime(NULL, "%M"));
 		if(helpminute != merkminute)
@@ -73,7 +72,7 @@ void zapback_main()
 	struct skin* zapback_main = getscreen("zapback_main");
 	struct skin* minuten = getscreennode(zapback_main, "minuten");
 //	struct skin* b1 = getscreennode(zapback_main, "b1");
-	char *temp;
+	char *temp = NULL;
 	
 	if(zapbackthread != NULL)
 	{
@@ -88,6 +87,7 @@ void zapback_main()
 		waitminute = 9;
 	temp = oitoa(waitminute);
 	changetext(minuten, temp);
+	free(temp); temp = NULL;
 	while(1)
 	{
 		drawscreen(zapback_main, 0, 0);
@@ -169,6 +169,8 @@ void init(void)
 void deinit(void)
 {
 	free(merkservice->channellist);
+	delservice(merkservice);
+	merkservice = NULL;
 	delmarkedscreen(115);
 	pluginaktiv = 0;
 	debug(10, "zapback Time removed !!!");
