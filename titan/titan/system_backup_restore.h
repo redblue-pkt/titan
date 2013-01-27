@@ -36,13 +36,15 @@ void screensystem_backup_restore()
 			
 				if(isfile("/var/backup/.actbackup"))
 				{
-					FILE *fd; fd=fopen("/var/backup/.firstrun", "w"); fclose(fd);
+					FILE *fd; fd = fopen("/var/backup/.firstrun", "w");
+					if(fd != NULL) fclose(fd);
 					oshutdown(2, 1);
 				}
 				else if(isfile("/tmp/.backupdev"))
 				{
 					//this is a small workaround until the file .actbackup exists everywhere....
-					FILE *fd; fd=fopen("/var/backup/.firstrun", "w"); fclose(fd);
+					FILE *fd; fd = fopen("/var/backup/.firstrun", "w");
+					if(fd != NULL) fclose(fd);
 					oshutdown(2, 1);
 				}
 				else

@@ -572,7 +572,7 @@ int checkhttpheader(char* tmpbuf, char** retstr)
 
 //flag 0: output without header
 //flag 1: output with header
-char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect, char* header, long* clen, int flag)
+char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect, char* header, long* clen, int timeout, int flag)
 {
 	int sock = -1, ret = 0, count = 0, hret = 0, freeheader = 0;
 	int headerlen = 0;
@@ -608,7 +608,7 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 		return NULL;
 	}
 
-	ret = sockportopen(&sock, ip, port, 5000 * 1000);
+	ret = sockportopen(&sock, ip, port, timeout * 1000);
 	if(ret != 0)
 	{
 		if(fd != NULL)
@@ -630,7 +630,7 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 	}
 
 	//Send the query to the server
-	ret = socksend(&sock, (unsigned char*)header, strlen(header), 5000 * 1000);
+	ret = socksend(&sock, (unsigned char*)header, strlen(header), timeout * 1000);
 	if(ret != 0)
 	{
 		perr("can't send query");
@@ -666,7 +666,7 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 	{
 		unsigned char c;
 
-		ret = sockreceive(&sock, &c, 1, 5000 * 1000);
+		ret = sockreceive(&sock, &c, 1, timeout * 1000);
 		if(ret != 0)
 		{
 			err("no client data in buffer");
@@ -694,7 +694,7 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 	}
 
 	if(flag == 0) headerlen = 0;
-	while((ret = sockread(sock, (unsigned char*)tmpbuf + headerlen, 0, MINMALLOC - headerlen, 5000 * 1000, 0)) > 0)
+	while((ret = sockread(sock, (unsigned char*)tmpbuf + headerlen, 0, MINMALLOC - headerlen, timeout * 1000, 0)) > 0)
 	{
 		maxret += ret;
 		if(len > 0)
@@ -770,7 +770,7 @@ end:
 
 		redirect++;
 		free(buf); buf = NULL;
-		buf = gethttpreal(rhost, rpage, port, filename, auth, dnode, redirect, NULL, clen, flag);
+		buf = gethttpreal(rhost, rpage, port, filename, auth, dnode, redirect, NULL, clen, timeout, flag);
 		free(rhost); rhost = NULL;
 	}
 
@@ -782,7 +782,7 @@ end:
 
 char* gethttp(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect)
 {
-	return gethttpreal(host, page, port, filename, auth, dnode, redirect, NULL, NULL, 0);
+	return gethttpreal(host, page, port, filename, auth, dnode, redirect, NULL, NULL, 5000, 0);
 }
 
 void gethttpstruct(struct stimerthread* timernode, struct download* node, int flag)
