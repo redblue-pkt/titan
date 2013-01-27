@@ -1735,6 +1735,7 @@ void initmutex(int flag)
 		pthread_mutex_init(&status.mediadbmutex, NULL);
 		pthread_mutex_init(&status.oldentrymutex, NULL);
 		pthread_mutex_init(&status.newslettermutex, NULL);
+		pthread_mutex_init(&status.tithekmutex, NULL);
 	}
 	else
 	{
@@ -1758,6 +1759,7 @@ void initmutex(int flag)
 		pthread_mutex_destroy(&status.mediadbmutex);
 		pthread_mutex_destroy(&status.oldentrymutex);
 		pthread_mutex_destroy(&status.newslettermutex);
+		pthread_mutex_destroy(&status.tithekmutex);
 	}
 }
 
@@ -2089,6 +2091,7 @@ void m_lock(pthread_mutex_t *mutex, int flag)
 		case 17: debug(900, "mediadbmutex lock"); break;
 		case 18: debug(900, "oldentrymutex lock"); break;
 		case 19: debug(900, "newslettermutex lock"); break;
+		case 20: debug(900, "tithekmutex lock"); break;
 		default: debug(900, "unknown mutex lock"); break;
 	}
 	pthread_mutex_lock(mutex);
@@ -2118,6 +2121,7 @@ void m_unlock(pthread_mutex_t *mutex, int flag)
 		case 17: debug(900, "mediadbmutex unlock"); break;
 		case 18: debug(900, "oldentrymutex unlock"); break;
 		case 19: debug(900, "newslettermutex unlock"); break;
+		case 20: debug(900, "tithekmutex unlock"); break;
 		default: debug(900, "unknown mutex unlock"); break;
 	}
 	pthread_mutex_unlock(mutex);
