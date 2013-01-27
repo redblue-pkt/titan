@@ -37,6 +37,20 @@ char* getplaytext(struct skin* node, char* path)
 		tmpstr = ostrcat("<< 64x", NULL, 0, 0);
 	else if(status.playspeed == -7)
 		tmpstr = ostrcat("<< 128x", NULL, 0, 0);
+	else if(status.slowspeed == 1)
+		tmpstr = ostrcat("|| 2x", NULL, 0, 0);
+	else if(status.slowspeed == 2)
+		tmpstr = ostrcat("|| 4x", NULL, 0, 0);
+	else if(status.slowspeed == 3)
+		tmpstr = ostrcat("|| 8x", NULL, 0, 0);
+	else if(status.slowspeed == 4)
+	 tmpstr = ostrcat("|| 16x", NULL, 0, 0);
+	else if(status.slowspeed == 5)
+		tmpstr = ostrcat("|| 32x", NULL, 0, 0);
+	else if(status.slowspeed == 6)
+		tmpstr = ostrcat("|| 64x", NULL, 0, 0);
+	else if(status.slowspeed == 7)
+		tmpstr = ostrcat("|| 128x", NULL, 0, 0);
 
 	return tmpstr;
 }
@@ -77,6 +91,20 @@ char* getplaypic(struct skin* node, char* path)
 		tmpstr = ostrcat("rewind6.png", NULL, 0, 0);
 	else if(status.playspeed == -7)
 		tmpstr = ostrcat("rewind7.png", NULL, 0, 0);
+	else if(status.slowspeed == 1)
+		tmpstr = ostrcat("slow1.png", NULL, 0, 0);
+	else if(status.slowspeed == 2)
+		tmpstr = ostrcat("slow2.png", NULL, 0, 0);
+	else if(status.slowspeed == 3)
+		tmpstr = ostrcat("slow3.png", NULL, 0, 0);
+	else if(status.slowspeed == 4)
+	 tmpstr = ostrcat("slow4.png", NULL, 0, 0);
+	else if(status.slowspeed == 5)
+		tmpstr = ostrcat("slow5.png", NULL, 0, 0);
+	else if(status.slowspeed == 6)
+		tmpstr = ostrcat("slow6.png", NULL, 0, 0);
+	else if(status.slowspeed == 7)
+		tmpstr = ostrcat("slow7.png", NULL, 0, 0);
 
 	if(tmpstr != NULL)
 	{
