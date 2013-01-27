@@ -10,53 +10,65 @@ IPKDIR=$9
 VERSION=${10}
 BUILDTYPE=${11}
 
+rm "$HOME"/flashimg/.ipk-build-error
+
 if [ -z "$TYPE" ]; then
 	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
+	touch "$HOME"/flashimg/.ipk-build-error
 	exit 1
 fi
 
 if [ -z "$STM" ]; then
 	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
+	touch "$HOME"/flashimg/.ipk-build-error
 	exit 1
 fi
 
 if [ -z "$MEDIAFW" ]; then
 	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
+	touch "$HOME"/flashimg/.ipk-build-error
 	exit 1
 fi
 
 if [ -z "$SVNUSER" ]; then
 	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
+	touch "$HOME"/flashimg/.ipk-build-error
 	exit 1
 fi
 
 if [ -z "$SVNPASS" ]; then
 	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
+	touch "$HOME"/flashimg/.ipk-build-error
 	exit 1
 fi
 
 if [ -z "$SVNURL" ]; then
 	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
+	touch "$HOME"/flashimg/.ipk-build-error
 	exit 1
 fi
 
 if [ -z "$KERNELDIR" ]; then
 	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
+	touch "$HOME"/flashimg/.ipk-build-error
 	exit 1
 fi
 
 if [ -z "$ROOTDIR" ]; then
 	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
+	touch "$HOME"/flashimg/.ipk-build-error
 	exit 1
 fi
 
 if [ -z "$IPKDIR" ]; then
 	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
+	touch "$HOME"/flashimg/.ipk-build-error
 	exit 1
 fi
 
 if [ -z "$VERSION" ]; then
 	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
+	touch "$HOME"/flashimg/.ipk-build-error
 	exit 1
 fi
 
@@ -65,6 +77,7 @@ if [ -z "$BUILDTYPE" ]; then
 	echo BUILDTYPE 0 = build all
 	echo BUILDTYPE 1 = build libdreamdvd and titan
 	echo BUILDTYPE 2 = build titan only
+	touch "$HOME"/flashimg/.ipk-build-error
 	exit 1
 fi
 
@@ -74,6 +87,7 @@ if [ $# -lt 10 ]; then
 	echo BUILDTYPE 0 = build all
 	echo BUILDTYPE 1 = build libdreamdvd and titan
 	echo BUILDTYPE 2 = build titan only
+	touch "$HOME"/flashimg/.ipk-build-error
 	exit 1
 fi
 
@@ -155,7 +169,8 @@ if [ $BUILDTYPE == 0 ]; then
 		echo "[titan] netsurf building error !!!"
 		echo "[titan] check your src"
 		echo "[titan]--------------------------------------------------------"
-	#	exit 1
+		touch "$HOME"/flashimg/.ipk-build-error
+		exit 1
 	fi
 	
 	echo "[titan]--------------------------------------------------------"
@@ -178,7 +193,8 @@ if [ $BUILDTYPE == 0 ]; then
 		echo "[titan] minidlna building error !!!"
 		echo "[titan] check your src"
 		echo "[titan]--------------------------------------------------------"
-	#	exit 1
+		touch "$HOME"/flashimg/.ipk-build-error
+		exit 1
 	fi
 	
 	echo "[titan]--------------------------------------------------------"
@@ -201,6 +217,7 @@ if [ $BUILDTYPE == 0 ]; then
 			echo "[titan] curlftpfs building error !!!"
 			echo "[titan] check your src"
 			echo "[titan]--------------------------------------------------------"
+			touch "$HOME"/flashimg/.ipk-build-error
 			exit 1
 		fi
 		
@@ -224,6 +241,7 @@ if [ $BUILDTYPE == 0 ]; then
 			echo "[titan] djmount building error !!!"
 			echo "[titan] check your src"
 			echo "[titan]--------------------------------------------------------"
+			touch "$HOME"/flashimg/.ipk-build-error
 			exit 1
 		fi
 		
@@ -247,6 +265,7 @@ if [ $BUILDTYPE == 0 ]; then
 			echo "[titan] sshfs building error !!!"
 			echo "[titan] check your src"
 			echo "[titan]--------------------------------------------------------"
+			touch "$HOME"/flashimg/.ipk-build-error
 			exit 1
 		fi
 		
@@ -270,6 +289,7 @@ if [ $BUILDTYPE == 0 ]; then
 			echo "[titan] sshfs building error !!!"
 			echo "[titan] check your src"
 			echo "[titan]--------------------------------------------------------"
+			touch "$HOME"/flashimg/.ipk-build-error
 			exit 1
 		fi
 		
@@ -293,6 +313,7 @@ if [ $BUILDTYPE == 0 ]; then
 			echo "[titan] gst building error !!!"
 			echo "[titan] check your src"
 			echo "[titan]--------------------------------------------------------"
+			touch "$HOME"/flashimg/.ipk-build-error
 			exit 1
 		fi
 		
@@ -316,6 +337,7 @@ if [ $BUILDTYPE == 0 ]; then
 			echo "[titan] directfb building error !!!"
 			echo "[titan] check your src"
 			echo "[titan]--------------------------------------------------------"
+			touch "$HOME"/flashimg/.ipk-build-error
 			exit 1
 		fi
 		
@@ -334,6 +356,7 @@ if [ $BUILDTYPE == 0 ]; then
 			echo "[titan] gmediarender building error !!!"
 			echo "[titan] check your src"
 			echo "[titan]--------------------------------------------------------"
+#			touch "$HOME"/flashimg/.ipk-build-error
 #			exit 1
 		fi
 		cp 
@@ -350,6 +373,7 @@ if [ $BUILDTYPE == 0 ]; then
 #			echo "[titan] gmediarender building error !!!"
 #			echo "[titan] check your src"
 #			echo "[titan]--------------------------------------------------------"
+#			touch "$HOME"/flashimg/.ipk-build-error
 #			exit 1
 #		fi
 		
@@ -371,6 +395,7 @@ if [ $BUILDTYPE == 0 ] || [ $BUILDTYPE == 1 ]; then
 		echo "[titan] ipkg building error !!!"
 		echo "[titan] check your src"
 		echo "[titan]--------------------------------------------------------"
+		touch "$HOME"/flashimg/.ipk-build-error
 		exit 1
 	fi
 	echo "[titan]--------------------------------------------------------"
@@ -389,6 +414,7 @@ if [ $BUILDTYPE == 0 ] || [ $BUILDTYPE == 1 ]; then
 		echo "[titan] libdreamdvd building error !!!"
 		echo "[titan] check your src"
 		echo "[titan]--------------------------------------------------------"
+		touch "$HOME"/flashimg/.ipk-build-error
 		exit 1
 	fi
 	cp "$HOME"/flashimg/source.titan/libdreamdvd/.libs/libdreamdvd.so.0.0.0 "$ROOTDIR"/lib
@@ -454,6 +480,7 @@ if [ ! -e ./titan ]; then
 	echo "[titan] building error !!!"
 	echo "[titan] check your src"
 	echo "[titan]--------------------------------------------------------"
+	touch "$HOME"/flashimg/.ipk-build-error
 	exit 1
 fi
 
