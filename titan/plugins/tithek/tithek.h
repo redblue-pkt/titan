@@ -1100,7 +1100,7 @@ void cacheplay(char* link, char* filename, int flag)
 			break;
 		
 		tmpstr = ostrcat(_("please wait..."), " (", 0, 0);
-		tmpstr = ostrcat(tmpstr, oitoa(proz), 0, 1);
+		tmpstr = ostrcat(tmpstr, oitoa(proz), 1, 1);
 		tmpstr = ostrcat(tmpstr, "%)", 1, 0);
 		clearscreen(load);
 		changetext(proztext, tmpstr);
@@ -1384,9 +1384,9 @@ void screentithekplay(char* titheklink, char* title, int first)
 
 				char* tmpstr = ostrcat(_("Page"), NULL, 0, 0);
 				tmpstr = ostrcat(tmpstr, " ( ", 1, 0);
-				tmpstr = ostrcat(tmpstr, oitoa(tmp->pagecount), 1, 0);
+				tmpstr = ostrcat(tmpstr, oitoa(tmp->pagecount), 1, 1);
 				tmpstr = ostrcat(tmpstr, " / ", 1, 0);
-				tmpstr = ostrcat(tmpstr, oitoa(pagecount), 1, 0);	
+				tmpstr = ostrcat(tmpstr, oitoa(pagecount), 1, 1);
 				tmpstr = ostrcat(tmpstr, _(" )"), 1, 0);
 				changetext(countpage, tmpstr);
 				free(tmpstr); tmpstr = NULL;
