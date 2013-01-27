@@ -912,7 +912,6 @@ struct transponder* gettransponderbydetail(int fetype, int orbitalpos, unsigned 
 
 		node = node->next;
 	}
-	debug(100, "transponder not found (%llu)", transponderid);
 	return NULL;
 }
 
