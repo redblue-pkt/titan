@@ -1095,6 +1095,7 @@ char* getbufferstatus(struct skin* node)
 	if(size > 0)
 			status = playergetbufferstatus();
 
+	if(status > size) status = size;
 	if(size > 0 && size > status) ret = 100 - (((size - status) * 100) / size);
 
 	if(ret < 0) ret = 0;
