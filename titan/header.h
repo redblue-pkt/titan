@@ -631,6 +631,7 @@ int ozip(char* inbuf, int inlen, char** outbuf, int* outlen, int level);
 int delallfiles(char* dir, char* ext);
 unsigned long getfilecount(char* dir);
 char* readfiletomem(const char* filename, int flag);
+char* readbintomem(const char* filename, size_t size);
 int setbit(int value, int bitpos);
 char* changefilenameext(char* filename, char* ext);
 void destroy();

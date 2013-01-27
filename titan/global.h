@@ -4837,6 +4837,34 @@ char* getxmlentry(char *line, char *searchstr)
 	return buf1;
 }
 
+char* readbintomem(const char* filename, size_t size)
+{
+	debug(1000, "in");
+	FILE *fd = NULL;
+	char *fileline = NULL;
+
+	fileline = calloc(1, size + 1);
+	if(fileline == NULL)
+	{
+		err("no memory");
+		return NULL;
+	}
+
+	fd = fopen(filename, "rb");
+	if(fd == NULL)
+	{
+		perr("can't open %s", filename);
+		free(fileline);
+		return NULL;
+	}
+
+	fread(fileline, size, 1, fd);
+
+	fclose(fd);
+	debug(1000, "out");
+	return fileline;
+}
+
 char* readfiletomem(const char* filename, int flag)
 {
 	debug(1000, "in");
