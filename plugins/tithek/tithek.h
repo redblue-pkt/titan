@@ -652,6 +652,8 @@ void freetithek()
 
 void tithekdownloadthread(struct stimerthread* timernode, struct download* node, int flag)
 {
+	int defpic = 0;
+
 	tithekdownloadcount++;
 	if(node != NULL)
 	{
@@ -661,9 +663,21 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 			unlink(node->filename);
 		else
 		{
+			//check file size
 			off64_t checkpic = getfilesize(node->filename);
+			if(checkpic < 1000) defpic = 1;
 
-			if(checkpic < 1000)
+			//check file is gif or html
+			if(defpic == 0)
+			{
+				char* tmp = NULL;
+				tmp = readbintomem(node->filename, 3);
+				if(ostrcmp("GIF", tmp) == 0) defpic = 1; //gif
+				if(ostrcmp("<", tmp) == 0) defpic = 1; //html
+				free(tmp); tmp = NULL;
+			}
+
+			if(defpic == 1)
 			{
 				unlink(node->filename);
 				symlink("/var/usr/local/share/titan/plugins/tithek/default.jpg", node->filename);
