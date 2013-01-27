@@ -1242,8 +1242,8 @@ void scanaddchannel(struct skin* node, int scantype, struct transponder* tp1, in
 
 			if(tp2 == NULL && tp1 != NULL)
 			{
-				tp2 = gettransponderbydetail(tp1->fetype, tp1->orbitalpos, tp1->frequency, tp1->inversion, tp1->symbolrate, tp1->polarization, tp1->fec, tp1->modulation, tp1->rolloff, tp1->pilot, tp1->system);
-				if(tp2 != NULL && tp2->id == 0)
+				tp2 = gettransponderbydetail(0, tp1->fetype, tp1->orbitalpos, tp1->frequency, tp1->inversion, tp1->symbolrate, tp1->polarization, tp1->fec, tp1->modulation, tp1->rolloff, tp1->pilot, tp1->system, 1);
+				if(tp2 != NULL)
 					changetransponderid(tp2, transponderid);
 			}
 
