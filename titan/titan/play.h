@@ -31,7 +31,7 @@ start:
 
 void screenplaybufferstatus(struct stimerthread* self)
 {
-	int draw = 50;
+	int rcret = -1, draw = 50;
 	if(self == NULL) return;
 
 	struct skin* playbufferstatus = getscreen("playbufferstatus");
@@ -40,12 +40,19 @@ void screenplaybufferstatus(struct stimerthread* self)
 	
 	while(self->aktion != STOP)
 	{
+		rcret = waitrc(0, 1, 0);
+		if(rcret == getrcconfigint("rcexit", NULL))
+		{
+			playerstopbuffer();
+			break;
+		}
+
 		if(draw == 50 && playergetbuffersize() > 0)
 		{
 			drawscreen(playbufferstatus, 0, 0);
 			draw = 0;
 		}
-		usleep(10000);
+		//usleep(10000);
 		draw++;
 	}
 	
