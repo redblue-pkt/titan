@@ -447,6 +447,7 @@ struct pic* addpic(char *name, unsigned char* picbuf, int memfd, unsigned long w
 int singlepicstart(const char *filename, int flag);
 
 //player.h
+void playerslowts(int speed);
 void playerff(int speed);
 void playerfr(int speed);
 void playercontinue();
