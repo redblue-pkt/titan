@@ -40,7 +40,7 @@ char* putlocker(char* host, char* file)
 	debug(99, "tmpfile: %s", tmpfile);
 	debug(99, "send: %s", send);
 
-	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/get", NULL, NULL, 0, send, NULL, 1);
+	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/get", NULL, NULL, 0, send, NULL, 5000, 1);
 	sleep(1);
 	free(send); send = NULL;
 	
@@ -116,7 +116,7 @@ char* putlocker(char* host, char* file)
 
 	sleep(7);
 	//send and receive answer
-	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/x9", NULL, NULL, 0, send, NULL, 0);
+	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/x9", NULL, NULL, 0, send, NULL, 5000, 0);
 	sleep(1);
 
 	free(send); send = NULL;
@@ -167,7 +167,7 @@ char* putlocker(char* host, char* file)
 	sleep(5);
 	
 	//send and receive answer
-	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 0);
+	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
 	free(send); send = NULL;
 
 //Streaming version of this file is currently not available. You can download it below.

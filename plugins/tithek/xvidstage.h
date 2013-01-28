@@ -53,7 +53,7 @@ char* xvidstage(char* host, char* file)
 	char* line = NULL;
 	char* lines = NULL;
 	char* cmd = NULL;
-	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/get", NULL, NULL, 0, send, NULL, 1);
+	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/get", NULL, NULL, 0, send, NULL, 5000, 1);
 	sleep(1);
 	free(send); send = NULL;
 //	system("cp /tmp/tithek/get /var/usr/local/share/titan/plugins/tithek/xvidstage4"); 
@@ -159,10 +159,10 @@ char* xvidstage(char* host, char* file)
 	free(tmpstr), tmpstr = NULL;
 
 	//send and receive answer
-//	post = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 0);
+//	post = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
 //	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_post1", post, 0);
 ///
-	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/post", NULL, NULL, 0, send, NULL, 0);
+	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/post", NULL, NULL, 0, send, NULL, 5000, 0);
 	cmd = ostrcat(cmd, "cat /tmp/tithek/post | zcat", 1, 0);
 	debug(99, "cmd: %s", cmd);
 	post = command(cmd);

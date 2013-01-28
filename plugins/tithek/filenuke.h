@@ -88,10 +88,10 @@ char* filenuke(char* host, char* file)
 	sleep(5);
 
 	//send and receive answer
-	post = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 0);
+	post = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
 	writesys("/var/usr/local/share/titan/plugins/tithek/filenuke_post1", post, 0);
 
-//	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/post", NULL, NULL, 0, send, NULL, 0);
+//	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/post", NULL, NULL, 0, send, NULL, 5000, 0);
 //	cmd = ostrcat(cmd, "cat /tmp/tithek/post | zcat", 1, 0);
 //	debug(99, "cmd: %s", cmd);
 //	post = command(cmd);
