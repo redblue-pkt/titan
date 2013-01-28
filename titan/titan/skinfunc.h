@@ -44,7 +44,7 @@ char* getplaytext(struct skin* node, char* path)
 	else if(status.slowspeed == 3)
 		tmpstr = ostrcat("|| 8x", NULL, 0, 0);
 	else if(status.slowspeed == 4)
-	 tmpstr = ostrcat("|| 16x", NULL, 0, 0);
+		tmpstr = ostrcat("|| 16x", NULL, 0, 0);
 	else if(status.slowspeed == 5)
 		tmpstr = ostrcat("|| 32x", NULL, 0, 0);
 	else if(status.slowspeed == 6)
@@ -866,7 +866,7 @@ char* getrecfreesize(struct skin* node)
 	unsigned long long full = getfullspace(getconfig("rec_path", NULL)) / (1024 * 1024);
 	unsigned long long free = getfreespace(getconfig("rec_path", NULL)) / (1024 * 1024);
 
-	if(full > 0 && full > free) ret = ((full - free) * 100) / full;
+	if(full > 0 && full >= free) ret = ((full - free) * 100) / full;
 
 	if(ret < 0) ret = 0;
 	if(ret > 100) ret = 100;
@@ -1123,8 +1123,7 @@ char* getbufferstatus(struct skin* node)
 	if(size > 0)
 			status = playergetbufferstatus();
 
-	if(status > size) status = size;
-	if(size > 0 && size > status) ret = 100 - (((size - status) * 100) / size);
+	if(size > 0 && size >= status) ret = 100 - (((size - status) * 100) / size);
 
 	if(ret < 0) ret = 0;
 	if(ret > 100) ret = 100;
