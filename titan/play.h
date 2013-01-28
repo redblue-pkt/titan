@@ -563,6 +563,8 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 	if(status.play == 1)
 		screenplayinfobar(file, 1, playertype, flag);
 
+	int hangtime = status.hangtime;
+
 	struct skin* pluginnode = NULL;
 	void (*startplugin)(void);
 	struct skin* plugin = getscreen("plugin");
@@ -641,6 +643,8 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 	resettvpic();
 	if(playinfobarstatus > 0 &&	status.play == 1)
 		screenplayinfobar(file, 0, playertype, flag);
+
+	status.hangtime = hangtime;
 }
 
 void playrcinfo(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
