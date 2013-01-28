@@ -212,8 +212,8 @@ struct playlist* addplaylist(struct playlist **firstnode, char *line, int count,
 		return NULL;
 	}
 
-	free(file);
-	newnode->file = ostrshrink(line);
+	free(newnode->file);
+	newnode->file = ostrshrink(file);
 
 	if(last == NULL)
 	{
