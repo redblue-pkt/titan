@@ -658,16 +658,16 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 
 	if(node != NULL)
 	{
-		m_lock(&status.tithekmutex);
+		m_lock(&status.tithekmutex, 20);
 		if(file_exist(node->filename))
 		{
-			m_unlock(&status.tithekmutex);
+			m_unlock(&status.tithekmutex, 20);
 			goto end;
 		}
 
 		FILE *fd; fd = fopen(node->filename, "w");
 		if(fd != NULL) fclose(fd);
-		m_unlock(&status.tithekmutex);
+		m_unlock(&status.tithekmutex, 20);
 
 		gethttpreal(node->host, node->page, node->port, node->filename, node->auth, NULL, 0, NULL, NULL, 20000, 0);
 
@@ -691,10 +691,10 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 
 			if(defpic == 1)
 			{
-				m_lock(&status.tithekmutex);
+				m_lock(&status.tithekmutex, 20);
 				unlink(node->filename);
 				symlink("/var/usr/local/share/titan/plugins/tithek/default.jpg", node->filename);
-				m_unlock(&status.tithekmutex);
+				m_unlock(&status.tithekmutex, 20);
 			}
 		}
 

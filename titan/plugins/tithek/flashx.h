@@ -29,7 +29,7 @@ char* flashx(char* host, char* file)
 	debug(99, "tmphost: %s", tmphost);
 	debug(99, "tmpfile: %s", tmpfile);
 	debug(99, "send: %s", send);
-	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 1);
+	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 //	writesys("/var/usr/local/share/titan/plugins/tithek/flashx1", tmpstr, 0);
 	free(tmpstr); tmpstr = NULL;
 	free(send); send = NULL;
@@ -43,7 +43,7 @@ char* flashx(char* host, char* file)
 	debug(99, "tmphost: %s", tmphost);
 	debug(99, "tmpfile: %s", tmpfile);
 	debug(99, "send: %s", send);
-	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 1);
+	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 //	writesys("/var/usr/local/share/titan/plugins/tithek/flashx2", tmpstr, 0);
 	free(tmpstr); tmpstr = NULL;
 	free(send); send = NULL;
@@ -55,7 +55,7 @@ char* flashx(char* host, char* file)
 	debug(99, "tmphost: %s", tmphost);
 	debug(99, "tmpfile: %s", tmpfile);
 	debug(99, "send: %s", send);
-	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/x9", NULL, NULL, 0, send, NULL, 0);
+	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/x9", NULL, NULL, 0, send, NULL, 5000, 0);
 
 	free(send); send = NULL;
 	tmpstr = command("cat /tmp/tithek/x9 | sed '1,1d' | zcat");

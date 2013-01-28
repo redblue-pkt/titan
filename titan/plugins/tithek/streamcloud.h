@@ -39,7 +39,7 @@ char* streamcloud(char* host, char* file)
 	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);
 	debug(99, "send: %s", send);
 
-	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 1);
+	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 
 /*
 	old code	
@@ -119,7 +119,7 @@ char* streamcloud(char* host, char* file)
 	debug(99, "send: %s", send);
 
 	free(tmpstr), tmpstr = NULL;
-	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 0);
+	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
 	debug(99, "tmpstr: %s", tmpstr);
 //	streamlink = oregex(".*file: \".*(http:.*video.mp4).*\".*", tmpstr);
 	streamlink = string_resub("file: \"", "\"", tmpstr, 0);
