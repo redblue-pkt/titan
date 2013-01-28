@@ -381,6 +381,7 @@ void screenopera(char* url)
 	opera_fonts = ostrcat(opera_root, "/fonts", 0, 0);
 	opera_widgets = ostrcat(opera_root, "/widgets", 0, 0);
 
+	resettvpic();
 	drawscreen(skin, 0, 0);
 
 	debug(788, "step 1, set env");
