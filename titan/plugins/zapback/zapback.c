@@ -169,7 +169,7 @@ void init(void)
 void deinit(void)
 {
 	free(merkservice->channellist);
-	delservice(merkservice);
+	delservice(merkservice, 0);
 	merkservice = NULL;
 	delmarkedscreen(115);
 	pluginaktiv = 0;
