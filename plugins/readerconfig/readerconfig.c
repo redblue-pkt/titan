@@ -5,7 +5,7 @@
 
 char pluginname[] = "Reader Config";
 char plugindesc[] = "Reader Config";
-char pluginpic[] = "%pluginpath%/oscam/plugin.png";
+char pluginpic[] = "%pluginpath%/readerconfig/plugin.png";
 
 int pluginaktiv = 0;
 int pluginversion = PLUGINVERSION;
