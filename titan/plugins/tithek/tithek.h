@@ -771,7 +771,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 		{
 			if(pic == 1)
 			{
-				if(tithekdownloadcount > 100) //start max 100 threads
+				if(tithekdownloadcount >= 24) //start max 24 threads
 					gethttp(ip, path, port, localfile, pw, NULL, 0);
 				else
 				{
