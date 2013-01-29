@@ -526,6 +526,9 @@ void delmainbouquet(char *name)
 			free(node->name);
 			node->name = NULL;
 
+			freebouquet(&node->bouquet);
+			unlink(node->filename);
+
 			free(node->filename);
 			node->filename = NULL;
 
