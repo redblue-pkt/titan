@@ -458,27 +458,35 @@ void imdb_submenu(char* file, int mode)
 				debug(133, "file=%s", basename(file));
 			if(file != NULL)
 			{
-				//create imdb search name
-
-				char* dname = ostrcat(file, NULL, 0, 0);
-				dname = dirname(dname);
-			
-				char* shortname = ostrcat(basename(file), NULL, 0, 0);
-				string_tolower(shortname);
-//				shortname = string_shortname(shortname, 1);
-				shortname = string_shortname(shortname, 2);
-				string_removechar(shortname);
-				strstrip(shortname);
-
-				debug(133, "inputfile=%s", file);
-				debug(133, "shortname=%s", shortname);
-				debug(133, "dname=%s", dname);
-				debug(133, "file=%s", basename(file));
-
-				startplugin(shortname, NULL, 2, dname, basename(file));
-
-				free(shortname), shortname = NULL;
-				free(dname), dname = NULL;
+				if(ostrstr(file, "/") != NULL)
+				{
+					//create imdb search name
+	
+					char* dname = ostrcat(file, NULL, 0, 0);
+					dname = dirname(dname);
+				
+					char* shortname = ostrcat(basename(file), NULL, 0, 0);
+					string_tolower(shortname);
+	//				shortname = string_shortname(shortname, 1);
+					shortname = string_shortname(shortname, 2);
+					string_removechar(shortname);
+					strstrip(shortname);
+	
+					debug(133, "inputfile=%s", file);
+					debug(133, "shortname=%s", shortname);
+					debug(133, "dname=%s", dname);
+					debug(133, "file=%s", basename(file));
+	
+					startplugin(shortname, NULL, 2, dname, basename(file));
+	
+					free(shortname), shortname = NULL;
+					free(dname), dname = NULL;
+				}
+				else
+				{
+					startplugin(file, NULL, 2, NULL, NULL);
+				}
+				
 			}				
 		}
 	}
@@ -557,6 +565,7 @@ void screenremovefile(char* file)
 	free(tmpstr), tmpstr = NULL;
 }
 
+// flag 100 = tithek
 void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 {
 //	if(checkbit(status.playercan, 5) == 0) return;
@@ -572,20 +581,23 @@ void playrcred(char* file, int playinfobarstatus, int playertype, int flag)
 	struct menulist* mlist = NULL, *mbox = NULL;
 	char* skintitle = "Menu";
 
-	if(status.play == 1)
+	if(flag < 99)
 	{
-		addmenulist(&mlist, "Video Settings", NULL, NULL, 0, 0);
-		addmenulist(&mlist, "AV Settings", NULL, NULL, 0, 0);
-		addmenulist(&mlist, "iD3Tag Info", NULL, NULL, 0, 0);
+		if(status.play == 1)
+		{
+			addmenulist(&mlist, "Video Settings", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "AV Settings", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "iD3Tag Info", NULL, NULL, 0, 0);
+		}
+
+		addmenulist(&mlist, "MediaDB Edit", NULL, NULL, 0, 0);
+	
+		if(status.play == 0)
+			addmenulist(&mlist, "Delete File", NULL, NULL, 0, 0);
+			
+		if(status.mediadbfiles > 0)
+			addmenulist(&mlist, "MediaDB Scan Info", NULL, NULL, 0, 0);
 	}
-
-	addmenulist(&mlist, "MediaDB Edit", NULL, NULL, 0, 0);
-
-	if(status.play == 0)
-		addmenulist(&mlist, "Delete File", NULL, NULL, 0, 0);
-		
-	if(status.mediadbfiles > 0)
-		addmenulist(&mlist, "MediaDB Scan Info", NULL, NULL, 0, 0);
 
 	//add plugins
 	while(child != NULL)

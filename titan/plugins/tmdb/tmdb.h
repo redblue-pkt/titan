@@ -801,7 +801,7 @@ struct tmdb* screentmdb(char* title, char* skinname, int flag, char* path, char*
 	struct skin* skin_released = getscreennode(tmdbskin, "released");
 	struct skin* skin_cover = getscreennode(tmdbskin, "cover");
 	struct skin* skin_votes = getscreennode(tmdbskin, "votes");
-	struct skin* b3 = getscreennode(tmdbskin, "b3");
+	struct skin* skin_b3 = getscreennode(tmdbskin, "b3");
 	struct skin* load = getscreen("loading");
 	struct skin* blackscreen = getscreen("blackscreen");
 	
@@ -811,11 +811,16 @@ struct tmdb* screentmdb(char* title, char* skinname, int flag, char* path, char*
 //	setfbtransparent(255);
 	status.hangtime = 99999;
 
-	if(flag == 0)
-		b3->hidden = YES;
+//	if(flag == 0)
+//		skin_b3->hidden = YES;
+//	else
+//		skin_b3->hidden = NO;
+
+	if(path == NULL || file == NULL)
+		skin_b3->hidden = YES;
 	else
-		b3->hidden = NO;
-		
+		skin_b3->hidden = NO;
+				
 	if(title == NULL)
 		searchstr = getepgakttitle(NULL);
 	else

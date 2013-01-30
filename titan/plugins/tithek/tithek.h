@@ -1488,41 +1488,26 @@ waitrcstart:
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
-				if(((struct tithek*)listbox->select->handle)->flag == 2)
-				{
-					if(status.security == 1)
-					{
-						char* tmpstr = tithekdownload((((struct tithek*)listbox->select->handle)->link), NULL, NULL, 0, 1);
-						free(tmpstr); tmpstr = NULL;
-						drawscreen(grid, 0, 0);
-					}
-					else
-						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
-				}
-				else if(((struct tithek*)listbox->select->handle)->flag == 4)
-				{
-					if(status.security == 1)
-					{
-						char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
-						tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						if(tmpstr != NULL) tmpstr1 = youtube(tmpstr, NULL, NULL, 1);
-						tmpstr2 = changefilenameext(((struct tithek*)tmp->handle)->localname, ".mp4");
-						free(tmpstr); tmpstr = NULL;
-							
-						if(tmpstr1 != NULL)
-						{
-							char* tmpstr = tithekdownload(tmpstr1, tmpstr2, NULL, 0, 1);
-							free(tmpstr); tmpstr = NULL;
-							drawscreen(grid, 0, 0);
-						}
-						else
-							textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-						free(tmpstr1); tmpstr1 = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-					}
-					else
-						textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
-				}
+
+				char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->title, NULL, 0, 0);
+printf("tmpstr: %s\n", tmpstr);
+				tmpstr = string_replace("-1 (de)", "", tmpstr, 1);
+				tmpstr = string_replace("-1 (en)", "", tmpstr, 1);
+				tmpstr = string_replace("-1 (\?\?)", "", tmpstr, 1);
+				tmpstr = string_replace("-2 (de)", "", tmpstr, 1);
+				tmpstr = string_replace("-2 (en)", "", tmpstr, 1);
+				tmpstr = string_replace("-2 (\?\?)", "", tmpstr, 1);
+				tmpstr = string_replace("-3 (de)", "", tmpstr, 1);
+				tmpstr = string_replace("-3 (en)", "", tmpstr, 1);
+				tmpstr = string_replace("-3 (\?\?)", "", tmpstr, 1);
+				tmpstr = string_replace(" (de)", "", tmpstr, 1);
+				tmpstr = string_replace(" (en)", "", tmpstr, 1);
+				tmpstr = string_replace(" (\?\?)", "", tmpstr, 1);
+printf("tmpstr: %s\n", tmpstr);
+
+
+				playrcred(tmpstr, 1, 0, 99);
+free(tmpstr), tmpstr = NULL;
 			}
 		}
 		else if(rcret == getrcconfigint("rcok", NULL))
