@@ -88,7 +88,7 @@
 #include <ddvdlib.h>
 #endif
 
-#define OVERSION "1.23"
+#define OVERSION "1.24"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
 #define CRONTRIBUT "obi, black, dvboxer, oxygen, gost"
