@@ -2824,6 +2824,9 @@ msgstr "Wiedergabepuffer - Zeit bis zum automatischen laden nach einem Seek"
 msgid "Streaming Playback (default)"
 msgstr "Direktes Streamen (standard)"
 
+msgid "Streaming Playback Caching (0.5MB)"
+msgstr "Direktes Streamen mit Puffer (0.5MB)"
+
 msgid "Streaming Playback Caching (1MB)"
 msgstr "Direktes Streamen mit Puffer (1MB)"
 

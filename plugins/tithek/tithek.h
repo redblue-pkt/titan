@@ -1250,17 +1250,25 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 			
 			if(!ostrncmp("http://", tmpstr1, 7))
 			{
-				addmenulist(&mlist, "Streaming Playback Caching (1MB)", NULL, NULL, 0, 0);
-				addmenulist(&mlist, "Streaming Playback Caching (2MB)", NULL, NULL, 0, 0);
-				addmenulist(&mlist, "Streaming Playback Caching (3MB)", NULL, NULL, 0, 0);
-				addmenulist(&mlist, "Streaming Playback Caching (4MB)", NULL, NULL, 0, 0);
-				addmenulist(&mlist, "Streaming Playback Caching (5MB)", NULL, NULL, 0, 0);
-				if(file_exist(getconfig("rec_streampath", NULL)) && flag != 4)
+				if(flag == 4)
 				{
-//					addmenulist(&mlist, "File Caching Playback (10MB / 120s)", NULL, NULL, 0, 0);
-//					addmenulist(&mlist, "File Caching Playback (20MB / 240s)", NULL, NULL, 0, 0);
-//					addmenulist(&mlist, "File Caching Playback (30MB / 360s)", NULL, NULL, 0, 0);
-					addmenulist(&mlist, "Download Full File", NULL, NULL, 0, 0);
+					addmenulist(&mlist, "Streaming Playback Caching (0.5MB)", NULL, NULL, 0, 0);
+					addmenulist(&mlist, "Streaming Playback Caching (1MB)", NULL, NULL, 0, 0);
+				}	
+				else if(!ostrncmp("http://", tmpstr1, 7))
+				{
+					addmenulist(&mlist, "Streaming Playback Caching (1MB)", NULL, NULL, 0, 0);
+					addmenulist(&mlist, "Streaming Playback Caching (2MB)", NULL, NULL, 0, 0);
+					addmenulist(&mlist, "Streaming Playback Caching (3MB)", NULL, NULL, 0, 0);
+					addmenulist(&mlist, "Streaming Playback Caching (4MB)", NULL, NULL, 0, 0);
+					addmenulist(&mlist, "Streaming Playback Caching (5MB)", NULL, NULL, 0, 0);
+					if(file_exist(getconfig("rec_streampath", NULL)))
+					{
+//						addmenulist(&mlist, "File Caching Playback (10MB / 120s)", NULL, NULL, 0, 0);
+//						addmenulist(&mlist, "File Caching Playback (20MB / 240s)", NULL, NULL, 0, 0);
+//						addmenulist(&mlist, "File Caching Playback (30MB / 360s)", NULL, NULL, 0, 0);
+						addmenulist(&mlist, "Download Full File", NULL, NULL, 0, 0);
+					}
 				}
 			}
 			mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
