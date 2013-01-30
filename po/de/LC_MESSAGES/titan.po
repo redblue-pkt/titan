@@ -2838,3 +2838,9 @@ msgstr "Direktes Streamen mit Puffer (4MB)"
 
 msgid "Streaming Playback Caching (5MB)"
 msgstr "Direktes Streamen mit Puffer (5MB)"
+
+msgid "ERROR... can't set maker in this file"
+msgstr "Fehler für diese Datei kann kein Marker gesetzt werden"
+
+msgid "Marker has been set."
+msgstr "Ihr Marker wurde erfolgreich gesetzt"
