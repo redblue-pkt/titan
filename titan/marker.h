@@ -187,7 +187,9 @@ int setmarker()
 	atime = (atime - startpos) / 90000;
 	if(atime == 0)
 	{
-		int ret = textbox(_("Message"), _("ERROR... can't set maker in this file"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 4, 0);
+		// syntax ??
+		//int ret = textbox(_("Message"), _("ERROR... can't set maker in this file"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 4, 0);
+		textbox(_("Message"), _("ERROR... can't set maker in this file"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 4, 0);
 		return -1;
 	}
 	node = addmarkernode(pos);
@@ -199,7 +201,9 @@ int setmarker()
 		//char* filemarker = changefilenameext(snode->recname, ".ma");
 		//putmarker(filemarker);
 		//free(filemarker); filemarker=NULL;
-		int ret = textbox(_("Message"), _("Marker has been set."), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 2, 0);
+		// syntax ??
+		//int ret = textbox(_("Message"), _("Marker has been set."), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 2, 0);
+		textbox(_("Message"), _("Marker has been set."), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 2, 0);
 	}
 	else
 		return -1;
@@ -215,12 +219,14 @@ int jumpmarker(char* timetext)
 	{
 		if(ostrcmp(marker->timetext, timetext) == 0)
 		{
-			struct service* snode = getservice(RECORDPLAY, 0);
+// unused
+//			struct service* snode = getservice(RECORDPLAY, 0);
 			m_lock(&status.tsseekmutex, 15);
 			videoclearbuffer(status.aktservice->videodev);
 			audioclearbuffer(status.aktservice->audiodev);
 			videodiscontinuityskip(status.aktservice->videodev, 0);
-			off64_t pos = lseek64(snode->recsrcfd, marker->pos, SEEK_SET);
+// unused
+//			off64_t pos = lseek64(snode->recsrcfd, marker->pos, SEEK_SET);
 			m_unlock(&status.tsseekmutex, 15);
 			return 0;
 		}
