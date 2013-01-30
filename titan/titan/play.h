@@ -1176,7 +1176,7 @@ playerstart:
 	else
 		startdir = getconfig("rec_path", NULL);
 
-	status.playspeed = 0, status.play = 0, status.pause = 0, status.slowspeed == 0;
+	status.playspeed = 0, status.play = 0, status.pause = 0, status.slowspeed = 0;
 	int playinfobarcount = 0, playinfobarstatus = 1, dirrcret = 0;
 
 	if(startfile == NULL)
