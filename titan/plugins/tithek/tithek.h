@@ -703,7 +703,7 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 		else
 		{
 			char* tmpstr = ostrcat(_("Start playback"), "\n\n", 0, 0);
-			tmpstr = ostrcat(tmpstr2, node->filename, 1, 0);		
+			tmpstr = ostrcat(tmpstr, node->filename, 1, 0);		
 			if(textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 			{
 				screenplay(node->filename, 2, flag);
