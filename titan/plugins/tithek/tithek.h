@@ -730,11 +730,21 @@ void tithekbackgrounddownloadthread(struct stimerthread* timernode, struct downl
 
 		gethttpreal(node->host, node->page, node->port, node->filename, node->auth, NULL, 0, NULL, NULL, node->timeout, 0);
 
-		char* tmpstr = ostrcat(_("Start playback"), "\n\n", 0, 0);
+		char* tmpstr = ostrcat(_("Download successful !"), "\n\n", 0, 0);
 		tmpstr = ostrcat(tmpstr, node->filename, 1, 0);		
-		if(textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0) == 1)
+		tmpstr = ostrcat(tmpstr, _("Start playback"), 1, 0);		
+		tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
+		tmpstr = ostrcat(tmpstr, node->filename, 1, 0);		
+		if(textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 300, 0, 0) == 1)
 		{
+			if(status.mcaktiv == 0)
+			{
+				int rcret = servicestop(status.aktservice, 1, 1);
+				if(rcret == 1) return;
+			}
 			screenplay(node->filename, 2, flag);
+			if(status.mcaktiv == 0)
+				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 		}		
 		free(tmpstr); tmpstr = NULL;
 
