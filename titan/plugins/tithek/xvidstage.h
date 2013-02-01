@@ -66,7 +66,7 @@ char* xvidstage(char* host, char* file)
 	}
 
 	if(getconfigint("debuglevel", NULL) == 99)
-		system("cp -a /tmp/tithek/get /tmp/xvidstage1_tmpstr_get", tmpstr, 0);
+		system("cp -a /tmp/tithek/get /tmp/xvidstage1_tmpstr_get");
 
 	tmpstr = command("cat /tmp/tithek/get");
 	cookie = string_resub("Set-Cookie: afc=", ";", tmpstr, 0);	
