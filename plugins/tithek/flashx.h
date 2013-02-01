@@ -11,6 +11,8 @@ char* flashx(char* host, char* file)
 	char* ip = NULL;
 	char* streamlink = NULL;
 
+	unlink("/tmp/tithek/x9");
+
 	if(host == NULL || file == NULL) return NULL;
 
 	tmphost = ostrcat("www.", host, 0, 0);
@@ -32,7 +34,7 @@ char* flashx(char* host, char* file)
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 
 	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/var/usr/local/share/titan/plugins/tithek/flashx1", tmpstr, 0);
+		writesys("/tmp/flashx1_tmpstr_get1", tmpstr, 0);
 
 	free(tmpstr); tmpstr = NULL;
 	free(send); send = NULL;
@@ -49,7 +51,7 @@ char* flashx(char* host, char* file)
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 
 	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/var/usr/local/share/titan/plugins/tithek/flashx2", tmpstr, 0);
+		writesys("/tmp/flashx2_tmpstr_get2", tmpstr, 0);
 
 	free(tmpstr); tmpstr = NULL;
 	free(send); send = NULL;
@@ -63,14 +65,26 @@ char* flashx(char* host, char* file)
 	debug(99, "send: %s", send);
 	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/x9", NULL, NULL, 0, send, NULL, 5000, 0);
 
+	if(!file_exist("/tmp/tithek/x9"))
+	{
+		textbox(_("Message"), _("This file doesn't exist, or has been removed") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+
+	if(getconfigint("debuglevel", NULL) == 99)
+		system("cp -a /tmp/tithek/x9 /tmp/flashx3_tmpstr_get3", tmpstr, 0);
+
 	free(send); send = NULL;
 	tmpstr = command("cat /tmp/tithek/x9 | sed '1,1d' | zcat");
 
 	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/var/usr/local/share/titan/plugins/tithek/flashx4", tmpstr, 0);
+		writesys("/tmp/flashx4_tmpstr_get3_zcat", tmpstr, 0);
 
 	streamlink = string_resub("<file>", "</file>", tmpstr, 0);
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/tmp/flashx5_streamlink", streamlink, 0);
 
+end:
 	free(tmphost); tmphost = NULL;
 	free(tmpfile); tmpfile = NULL;
 	free(tmpstr); tmpstr = NULL;

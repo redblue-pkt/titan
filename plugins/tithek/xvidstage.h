@@ -31,6 +31,9 @@ char* xvidstage(char* host, char* file)
 	char* tmpstr3 = NULL;
 	char* charlist = NULL;
 
+	unlink("/tmp/tithek/get");
+	unlink("/tmp/tithek/post");
+
 	if(host == NULL || file == NULL) return NULL;
 
 	tmphost = ostrcat("www.", host, 0, 0);
@@ -56,19 +59,21 @@ char* xvidstage(char* host, char* file)
 	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/get", NULL, NULL, 0, send, NULL, 5000, 1);
 	sleep(1);
 	free(send); send = NULL;
-//	system("cp /tmp/tithek/get /var/usr/local/share/titan/plugins/tithek/xvidstage4"); 
 	if(!file_exist("/tmp/tithek/get"))
 	{
 		textbox(_("Message"), _("This file doesn't exist, or has been removed") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		goto end;
 	}
 
+	if(getconfigint("debuglevel", NULL) == 99)
+		system("cp -a /tmp/tithek/get /tmp/xvidstage1_tmpstr_get", tmpstr, 0);
+
 	tmpstr = command("cat /tmp/tithek/get");
 	cookie = string_resub("Set-Cookie: afc=", ";", tmpstr, 0);	
 	debug(99, "cookie: %s", cookie);
 
 	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage1", tmpstr, 0);
+		writesys("/tmp/xvidstage2_tmpstr", tmpstr, 0);
 
 	free(tmpstr), tmpstr = NULL;
 
@@ -94,7 +99,7 @@ char* xvidstage(char* host, char* file)
 	free(lines); lines = NULL;
 
 	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage2", tmpstr, 0);
+		writesys("/tmp/xvidstage3_tmpstr_zcat", tmpstr, 0);
 
 	sleep(1);
 
@@ -166,34 +171,44 @@ char* xvidstage(char* host, char* file)
 //	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_post1", post, 0);
 ///
 	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/post", NULL, NULL, 0, send, NULL, 5000, 0);
+
+	if(!file_exist("/tmp/tithek/post"))
+	{
+		textbox(_("Message"), _("This file doesn't exist, or has been removed") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+
+	if(getconfigint("debuglevel", NULL) == 99)
+		system("cp -a /tmp/tithek/post /tmp/xvidstage4_tmpstr_post");	
+
 	cmd = ostrcat(cmd, "cat /tmp/tithek/post | zcat", 1, 0);
 	debug(99, "cmd: %s", cmd);
 	post = command(cmd);
 	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_post1", post, 0);
+		writesys("/tmp/xvidstage5_tmpstr_post1_zcat", post, 0);
 	free(cmd); cmd = NULL;
 
 	free(tmpstr),tmpstr = NULL;
 	tmpstr = string_resub(";return p}('", ");'", post, 0);
 	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_tmpstr1", tmpstr, 0);
+		writesys("/tmp/xvidstage6_tmpstr_post1_zcat_resub", tmpstr, 0);
 	
 	post = string_replace_all(tmpstr, "", post, 1);
 	post = string_replace_all(";return p}(');'", "", post, 1);
 	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_post2", post, 0);
+		writesys("/tmp/xvidstage7_tmpstr_post2", post, 0);
 
 	free(tmpstr),tmpstr = NULL;
 	free(b36code),b36code = NULL;
 	tmpstr = string_resub(";return p}('", ");'", post, 0);
 	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_tmpstr2", tmpstr, 0);
+		writesys("/tmp/xvidstage8_tmpstr_post2_resub", tmpstr, 0);
 
 	b36code = oregex(".*;',[0-9]{2,2},[0-9]{2,2},'(.*)'.split.*", post);
 	
 	b36code = string_replace_all("||", "| |", b36code, 1);		
 	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_b36code2", b36code, 0);
+		writesys("/tmp/xvidstage9_tmpstr_post2_resub_b36code2", b36code, 0);
 	
 	struct splitstr* ret1 = NULL;
 	int count = 0;
@@ -273,7 +288,7 @@ char* xvidstage(char* host, char* file)
 	free(charlist), charlist = NULL;
 
 	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_tmpstr_last", tmpstr, 0);
+		writesys("/tmp/xvidstage10_tmpstr_last", tmpstr, 0);
 
 	streamlink = oregex(".*file.*(http:.*video.flv).*image.*", tmpstr);
 	if(streamlink == NULL)
@@ -302,6 +317,9 @@ char* xvidstage(char* host, char* file)
 
 	if(streamlink == NULL)
 		streamlink = oregex(".*value=.*(http:.*video.avi).*\".*", tmpstr);			
+
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/tmp/xvidstage11_streamlink", streamlink, 0);
 
 	free(tmpstr); tmpstr = NULL;
 

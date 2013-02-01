@@ -41,6 +41,8 @@ char* streamcloud(char* host, char* file)
 
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/tmp/streamcould1_tmpstr", tmpstr, 0);
 /*
 	old code	
 	cmd = ostrcat(cmd, "echo -e \"", 1, 0);
@@ -120,9 +122,14 @@ char* streamcloud(char* host, char* file)
 
 	free(tmpstr), tmpstr = NULL;
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
-	debug(99, "tmpstr: %s", tmpstr);
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/tmp/streamcould2_tmpstr_post", tmpstr, 0);
+
 //	streamlink = oregex(".*file: \".*(http:.*video.mp4).*\".*", tmpstr);
 	streamlink = string_resub("file: \"", "\"", tmpstr, 0);
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/tmp/streamcould3_streamlink", streamlink, 0);
+
 	free(tmpstr); tmpstr = NULL;
 
 end:

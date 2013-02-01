@@ -42,7 +42,7 @@ char* vidstream(char* host, char* file)
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 
 	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/var/usr/local/share/titan/plugins/tithek/vidstream1", tmpstr, 0);
+		writesys("/tmp/vidstream1_tmpstr", tmpstr, 0);
 
 	sleep(1);
 
@@ -118,10 +118,13 @@ char* vidstream(char* host, char* file)
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	
 	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/var/usr/local/share/titan/plugins/tithek/vidstream2", tmpstr, 0);
+		writesys("/tmp/vidstream2_tmpstr_post", tmpstr, 0);
 
 	sleep(1);
 	streamlink = string_resub("file: \"", "\",", tmpstr, 0);
+
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/tmp/vidstream3_streamlink", streamlink, 0);
 
 end:
 
