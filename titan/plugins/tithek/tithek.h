@@ -1198,7 +1198,7 @@ void backgroundplay(char* link, char* filename, int flag)
 		dnode->auth = NULL;
 		dnode->connfd = -1;
 		dnode->ret = -1;
-		dnode->timeout = timeout;
+		dnode->timeout = 50000;
 		addtimer(&tithekdownloadthread, START, 100, 1, (void*)dnode, NULL, 1);
 	}
 					
