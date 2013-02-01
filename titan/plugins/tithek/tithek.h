@@ -1362,9 +1362,9 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 				else if(!ostrncmp("http://", tmpstr1, 7))
 				{
 					addmenulist(&mlist, "Streaming Playback Caching (1MB)", NULL, NULL, 0, 0);
-					addmenulist(&mlist, "Streaming Playback Caching (2MB)", NULL, NULL, 0, 0);
+//					addmenulist(&mlist, "Streaming Playback Caching (2MB)", NULL, NULL, 0, 0);
 					addmenulist(&mlist, "Streaming Playback Caching (3MB)", NULL, NULL, 0, 0);
-					addmenulist(&mlist, "Streaming Playback Caching (4MB)", NULL, NULL, 0, 0);
+//					addmenulist(&mlist, "Streaming Playback Caching (4MB)", NULL, NULL, 0, 0);
 					addmenulist(&mlist, "Streaming Playback Caching (5MB)", NULL, NULL, 0, 0);
 					if(file_exist(getconfig("rec_streampath", NULL)))
 					{
