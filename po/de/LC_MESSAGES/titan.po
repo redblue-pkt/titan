@@ -2847,3 +2847,6 @@ msgstr "Fehler für diese Datei kann kein Marker gesetzt werden"
 
 msgid "Marker has been set."
 msgstr "Ihr Marker wurde erfolgreich gesetzt"
+
+msgid "Download successful !"
+msgstr "Download erfolgreich abgeschlossen !"
