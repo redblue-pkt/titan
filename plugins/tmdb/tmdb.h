@@ -153,12 +153,12 @@ char* savetmdbpic(char* imdbid, char* url, char* tmppic, char* pic, int flag1)
 		savefile = ostrcat(savefile, imdbid, 1, 0);
 		savefile = ostrcat(savefile, pic, 1, 0);
 		if(!file_exist(savefile))
-			gethttp(ip, path, 80, savefile, NULL, NULL, 0);
+			gethttp(ip, path, 80, savefile, NULL, 5000, NULL, 0);
 		ret = savefile;
 	}
 	else
 	{
-		gethttp(ip, path, 80, tmppic, NULL, NULL, 0);
+		gethttp(ip, path, 80, tmppic, NULL, 5000, NULL, 0);
 		ret = ostrcat(tmppic, NULL, 0, 0);
 	}
 
@@ -206,7 +206,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
 
 	debug(133, "search: http://api.themoviedb.org/%s", tmpsearch);
-	tmpstr = gethttp("api.themoviedb.org", tmpsearch, 80, NULL, NULL, NULL, 0);
+	tmpstr = gethttp("api.themoviedb.org", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
 	
 	debug(133, "tmpsearch: %s", tmpsearch);
 //	debug(133, "tmpstr: %s", tmpstr);

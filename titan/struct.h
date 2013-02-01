@@ -552,6 +552,7 @@ struct download
 	unsigned int maxkb;
 	unsigned int aktkb;
 	int ret;
+	int timeout;
 };
 
 struct epgscanlist

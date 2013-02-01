@@ -118,7 +118,7 @@ struct stock* getstock(char* name)
 	tmpsearch = ostrcat(tmpsearch, "&hl=de", 1, 0);
 	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
 
-	tmpstr = gethttp("www.google.com", tmpsearch, 80, NULL, NULL, NULL, 0);
+	tmpstr = gethttp("www.google.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
 
 	free(tmpsearch); tmpsearch = NULL;
 

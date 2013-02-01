@@ -78,7 +78,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 		ip = ostrcat("kinox.to", NULL, 0, 0);
 		path = ostrcat("Search.html?q=", search, 0, 0);
 	
-		tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
+		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 		tmpstr = string_resub("<div id=\"beep\" class=\"beep\"></div>", "</table>", tmpstr, 0);
 
 		int count = 0;
@@ -110,7 +110,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					else
 						lang = ostrcat(lang, " (\?\?)", 1, 0);
 																	
-					tmpstr1 = gethttp("kinox.to", path, 80, NULL, NULL, NULL, 0);
+					tmpstr1 = gethttp("kinox.to", path, 80, NULL, NULL, 10000, NULL, 0);
 
 					from = ostrcat("<div class=\"Grahpics\"><a href=\"", path, 0, 0);
 					from = ostrcat(from, "\"><img src=\"", 1, 0);
@@ -194,7 +194,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 		path = pos + 1;
 	}
 
-	tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
+	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 	
 	if(tmpstr != NULL)
 	{
@@ -293,7 +293,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
 					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
 	
-					tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, NULL, 0);
+					tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 					free(pathnew), pathnew = NULL;
 	
 					tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
@@ -459,7 +459,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 		path = pos + 1;
 	}
 
-	tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
+	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 
 	if(tmpstr != NULL)
 	{
@@ -478,7 +478,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 		debug(99, "pathnew: %s", pathnew);
 	
 		free(tmpstr), tmpstr = NULL;
-		tmpstr = gethttp("kinox.to", pathnew, 80, NULL, NULL, NULL, 0);
+		tmpstr = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 		free(pathnew), pathnew = NULL;
 	
 		if(tmpstr != NULL)
@@ -511,7 +511,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
 					debug(99, "pathnew: %s", pathnew);
 	
-					tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, NULL, 0);
+					tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 					tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
 					tmpstr1 = string_resub("<a href=\"", "\"", tmpstr1, 0);
 	

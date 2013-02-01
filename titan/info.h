@@ -70,7 +70,7 @@ void screensystem_info(int mode)
 		path = ostrcat(path, "/svn/image-beta/changelog.", 1, 0);
 		path = ostrcat(path, boxversion, 1, 0);
 		path = ostrcat(path, ".titan", 1, 0);
-		tmpstr = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, NULL, 0);
+		tmpstr = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
 		free(path), path = NULL;
 		free(boxversion), boxversion = NULL;
 		out = readfromlinetoline(tmpstr, 37, 537, 1);
@@ -83,7 +83,7 @@ void screensystem_info(int mode)
 		char* path = NULL;
 		char* out = NULL;
 		path = ostrcat(path, "/svn/image-beta/changelog.git", 1, 0);
-		tmpstr = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, NULL, 0);
+		tmpstr = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
 		free(path), path = NULL;
 		out = readfromlinetoline(tmpstr, 0, 500, 1);
 		changetext(info, out);

@@ -780,15 +780,15 @@ end:
 	return buf;
 }
 
-char* gethttp(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect)
+char* gethttp(char* host, char* page, int port, char* filename, char* auth, int timeout, struct download* dnode, int redirect)
 {
-	return gethttpreal(host, page, port, filename, auth, dnode, redirect, NULL, NULL, 5000, 0);
+	return gethttpreal(host, page, port, filename, auth, dnode, redirect, NULL, NULL, timeout, 0);
 }
 
 void gethttpstruct(struct stimerthread* timernode, struct download* node, int flag)
 {
 	if(node != NULL)
-		gethttp(node->host, node->page, node->port, node->filename, node->auth, node, 0);
+		gethttp(node->host, node->page, node->port, node->filename, node->auth, node->timeout, node, 0);
 }
 
 #endif

@@ -60,7 +60,7 @@ struct imdbapi* getimdbapi(struct imdbapi** first, char* input, int flag, int fl
 	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
 	debug(133, "search: http://www.imdbapi.com/%s", tmpsearch);
 
-	tmpstr = gethttp("www.imdbapi.com", tmpsearch, 80, NULL, NULL, NULL, 0);
+	tmpstr = gethttp("www.imdbapi.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
 	debug(133, "tmpsearch: %s", tmpsearch);
 //	debug(133, "tmpstr: %s", tmpstr);
 
@@ -120,7 +120,7 @@ struct imdbapi* getimdbapi(struct imdbapi** first, char* input, int flag, int fl
 				savefile = ostrcat(savefile, "_poster.jpg", 1, 0);
 
 				if(!file_exist(savefile))
-					gethttp(ip, path, 80, savefile, NULL, NULL, 0);
+					gethttp(ip, path, 80, savefile, NULL, 5000, NULL, 0);
 				free((*first)->poster);
 				(*first)->poster = savefile;
 
@@ -152,7 +152,7 @@ struct imdbapi* getimdbapi(struct imdbapi** first, char* input, int flag, int fl
 			}
 			else if(flag == 0)
 			{
-				gethttp(ip, path, 80, TMPIMDBAPIPIC, NULL, NULL, 0);
+				gethttp(ip, path, 80, TMPIMDBAPIPIC, NULL, 5000, NULL, 0);
 				free((*first)->poster);
 				(*first)->poster = ostrcat(TMPIMDBAPIPIC, NULL, 0, 0);
 			}

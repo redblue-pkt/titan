@@ -55,7 +55,7 @@ int checkinternet()
 	for(i = 0; i < 3; i++)
 	{
 		free(tmp); tmp = NULL;
-		tmp = gethttp(cmd, "/", 80, NULL, NULL, NULL, 0);
+		tmp = gethttp(cmd, "/", 80, NULL, NULL, 5000, NULL, 0);
 		if(tmp != NULL) break;
 	}
 	if(tmp == NULL)
@@ -1044,7 +1044,7 @@ void checkserial(char* input)
 	if(status.security == 1)
 	{
 		char* blackfile = NULL;
-		blackfile = gethttp("atemio.dyndns.tv", "/svn/auth/blacklist", 80, NULL, HTTPAUTH, NULL, 0);
+		blackfile = gethttp("atemio.dyndns.tv", "/svn/auth/blacklist", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 	
 		count = 0;
 		if(blackfile != NULL)

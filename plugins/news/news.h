@@ -122,7 +122,7 @@ int getnews()
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
 
 	//TODO: got language from titan.cfg
-	tmpstr = gethttp("www.google.com", "ig/api?news&hl=de", 80, NULL, NULL, NULL, 0);
+	tmpstr = gethttp("www.google.com", "ig/api?news&hl=de", 80, NULL, NULL, 5000, NULL, 0);
 
 	if(tmpstr != NULL)
 	{
