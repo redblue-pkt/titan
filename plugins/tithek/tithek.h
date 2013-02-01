@@ -1267,7 +1267,8 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 //						addmenulist(&mlist, "File Caching Playback (10MB / 120s)", NULL, NULL, 0, 0);
 //						addmenulist(&mlist, "File Caching Playback (20MB / 240s)", NULL, NULL, 0, 0);
 //						addmenulist(&mlist, "File Caching Playback (30MB / 360s)", NULL, NULL, 0, 0);
-						addmenulist(&mlist, "Download Full File", NULL, NULL, 0, 0);
+						if(status.expertmodus >= 11)
+							addmenulist(&mlist, "Download Full File", NULL, NULL, 0, 0);
 					}
 				}
 			}

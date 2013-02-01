@@ -66,7 +66,9 @@ char* xvidstage(char* host, char* file)
 	tmpstr = command("cat /tmp/tithek/get");
 	cookie = string_resub("Set-Cookie: afc=", ";", tmpstr, 0);	
 	debug(99, "cookie: %s", cookie);
-//	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage1", tmpstr, 0);
+
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage1", tmpstr, 0);
 
 	free(tmpstr), tmpstr = NULL;
 
@@ -90,8 +92,9 @@ char* xvidstage(char* host, char* file)
 	tmpstr = command(cmd);
 	free(cmd); cmd = NULL;
 	free(lines); lines = NULL;
-//	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage2", tmpstr, 0);
 
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage2", tmpstr, 0);
 
 	sleep(1);
 
@@ -166,26 +169,31 @@ char* xvidstage(char* host, char* file)
 	cmd = ostrcat(cmd, "cat /tmp/tithek/post | zcat", 1, 0);
 	debug(99, "cmd: %s", cmd);
 	post = command(cmd);
-//	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_post1", post, 0);
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_post1", post, 0);
 	free(cmd); cmd = NULL;
 
 	free(tmpstr),tmpstr = NULL;
 	tmpstr = string_resub(";return p}('", ");'", post, 0);
-//	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_tmpstr1", tmpstr, 0);
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_tmpstr1", tmpstr, 0);
 	
 	post = string_replace_all(tmpstr, "", post, 1);
 	post = string_replace_all(";return p}(');'", "", post, 1);
-//	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_post2", post, 0);
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_post2", post, 0);
 
 	free(tmpstr),tmpstr = NULL;
 	free(b36code),b36code = NULL;
 	tmpstr = string_resub(";return p}('", ");'", post, 0);
-//	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_tmpstr2", tmpstr, 0);
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_tmpstr2", tmpstr, 0);
 
 	b36code = oregex(".*;',[0-9]{2,2},[0-9]{2,2},'(.*)'.split.*", post);
 	
 	b36code = string_replace_all("||", "| |", b36code, 1);		
-//	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_b36code2", b36code, 0);
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_b36code2", b36code, 0);
 	
 	struct splitstr* ret1 = NULL;
 	int count = 0;
@@ -264,7 +272,8 @@ char* xvidstage(char* host, char* file)
 	free(post), post = NULL;
 	free(charlist), charlist = NULL;
 
-//	writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_tmpstr_last", tmpstr, 0);
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/var/usr/local/share/titan/plugins/tithek/xvidstage_tmpstr_last", tmpstr, 0);
 
 	streamlink = oregex(".*file.*(http:.*video.flv).*image.*", tmpstr);
 	if(streamlink == NULL)
