@@ -18,7 +18,7 @@ char* beeg(char* link)
 
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
 	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/var/usr/local/share/titan/plugins/tithek/tmpstr", tmpstr, 0);
+		writesys("/tmp/beeg1_tmpstr", tmpstr, 0);
 
 	if(tmpstr != NULL)
 	{
@@ -27,6 +27,9 @@ char* beeg(char* link)
 
 	free(tmpstr); tmpstr = NULL;
 	free(ip), ip = NULL;
+
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/tmp/beeg2_streamurl", streamurl, 0);
 
 // segfault munmap_chunk(): invalid pointer
 //	free(pos), pos = NULL;
