@@ -1,7 +1,6 @@
 #ifndef MC_HEADER_H
 #define MC_HEADER_H
 
-void playerslowts(int speed);
 void picplayer(struct skin* picscreen, struct skin* picture, struct skin* picname, char* filename, int flag);
 struct clist* addconfigscreen(char *key, struct skin *node);
 
