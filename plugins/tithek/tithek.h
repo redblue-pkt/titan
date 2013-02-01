@@ -671,45 +671,73 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 
 		gethttpreal(node->host, node->page, node->port, node->filename, node->auth, NULL, 0, NULL, NULL, node->timeout, 0);
 
-		if(flag == NULL)
-		{
-			if(tithekrun == 0)
-				unlink(node->filename);
-			else
-			{
-				//check file size
-				off64_t checkpic = getfilesize(node->filename);
-				if(checkpic < 1000) defpic = 1;
-	
-				//check file is gif or html
-				if(defpic == 0)
-				{
-					char* tmp = NULL;
-					tmp = readbintomem(node->filename, 3);
-					if(ostrcmp("GIF", tmp) == 0) defpic = 1; //gif
-					if(ostrcmp("<", tmp) == 0) defpic = 1; //html
-					free(tmp); tmp = NULL;
-				}
-	
-				if(defpic == 1)
-				{
-					m_lock(&status.tithekmutex, 20);
-					unlink(node->filename);
-					symlink("/var/usr/local/share/titan/plugins/tithek/default.jpg", node->filename);
-					m_unlock(&status.tithekmutex, 20);
-				}
-			}
-		}
+		if(tithekrun == 0)
+			unlink(node->filename);
 		else
 		{
-			char* tmpstr = ostrcat(_("Start playback"), "\n\n", 0, 0);
-			tmpstr = ostrcat(tmpstr, node->filename, 1, 0);		
-			if(textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+			//check file size
+			off64_t checkpic = getfilesize(node->filename);
+			if(checkpic < 1000) defpic = 1;
+
+			//check file is gif or html
+			if(defpic == 0)
 			{
-				screenplay(node->filename, 2, flag);
-			}		
-			free(tmpstr); tmpstr = NULL;
+				char* tmp = NULL;
+				tmp = readbintomem(node->filename, 3);
+				if(ostrcmp("GIF", tmp) == 0) defpic = 1; //gif
+				if(ostrcmp("<", tmp) == 0) defpic = 1; //html
+				free(tmp); tmp = NULL;
+			}
+
+			if(defpic == 1)
+			{
+				m_lock(&status.tithekmutex, 20);
+				unlink(node->filename);
+				symlink("/var/usr/local/share/titan/plugins/tithek/default.jpg", node->filename);
+				m_unlock(&status.tithekmutex, 20);
+			}
 		}
+
+end:
+		free(node->host); node->host = NULL;
+		free(node->page); node->page = NULL;
+		free(node->filename); node->filename = NULL;
+		free(node->auth); node->auth = NULL;
+	}
+
+	free(node); node = NULL;
+
+	tithekdownloadcount--;
+	tithekdownloadrun = 1;
+}
+
+void tithekbackgrounddownloadthread(struct stimerthread* timernode, struct download* node, int flag)
+{
+	tithekdownloadcount++;
+
+	if(node != NULL)
+	{
+		m_lock(&status.tithekmutex, 20);
+		if(file_exist(node->filename))
+		{
+			m_unlock(&status.tithekmutex, 20);
+			goto end;
+		}
+
+		FILE *fd; fd = fopen(node->filename, "w");
+		if(fd != NULL) fclose(fd);
+		m_unlock(&status.tithekmutex, 20);
+
+		gethttpreal(node->host, node->page, node->port, node->filename, node->auth, NULL, 0, NULL, NULL, node->timeout, 0);
+
+		char* tmpstr = ostrcat(_("Start playback"), "\n\n", 0, 0);
+		tmpstr = ostrcat(tmpstr, node->filename, 1, 0);		
+		if(textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0) == 1)
+		{
+			screenplay(node->filename, 2, flag);
+		}		
+		free(tmpstr); tmpstr = NULL;
+
 end:
 		free(node->host); node->host = NULL;
 		free(node->page); node->page = NULL;
@@ -1155,10 +1183,9 @@ void cacheplay(char* link, char* filename, int flag)
 	free(host), host = NULL;
 }
 
-void backgroundplay(char* link, char* filename, int flag)
+void backgroundplay(char* link, char* filename)
 {
-	int port = 80, count = 0, mcount = 0;
-	off64_t size = 0, msize = 0;
+	int port = 80;
 	char* host = NULL, *pos = NULL, *path = NULL, *file = NULL, *tmpstr = NULL;
 	host = string_replace("http://", "", (char*)link, 0);
 
@@ -1170,7 +1197,8 @@ void backgroundplay(char* link, char* filename, int flag)
 		path = pos + 1;
 	}
 
-	file = ostrcat(getconfig("rec_streampath", NULL), filename, 0, 0);
+	file = ostrcat(getconfig("rec_streampath", NULL), "/", 0, 0);
+	file = ostrcat(file, filename, 1, 0);
 
 	if(ostrstr(host, ":") != NULL)
 	{
@@ -1199,7 +1227,7 @@ void backgroundplay(char* link, char* filename, int flag)
 		dnode->connfd = -1;
 		dnode->ret = -1;
 		dnode->timeout = 50000;
-		addtimer(&tithekdownloadthread, START, 100, 1, (void*)dnode, NULL, 1);
+		addtimer(&tithekbackgrounddownloadthread, START, 100, 1, (void*)dnode, NULL, NULL);
 	}
 					
 	free(tmpstr), tmpstr = NULL;
