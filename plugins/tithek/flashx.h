@@ -72,7 +72,7 @@ char* flashx(char* host, char* file)
 	}
 
 	if(getconfigint("debuglevel", NULL) == 99)
-		system("cp -a /tmp/tithek/x9 /tmp/flashx3_tmpstr_get3", tmpstr, 0);
+		system("cp -a /tmp/tithek/x9 /tmp/flashx3_tmpstr_get3");
 
 	free(send); send = NULL;
 	tmpstr = command("cat /tmp/tithek/x9 | sed '1,1d' | zcat");
