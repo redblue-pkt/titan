@@ -30,7 +30,10 @@ char* flashx(char* host, char* file)
 	debug(99, "tmpfile: %s", tmpfile);
 	debug(99, "send: %s", send);
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
-//	writesys("/var/usr/local/share/titan/plugins/tithek/flashx1", tmpstr, 0);
+
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/var/usr/local/share/titan/plugins/tithek/flashx1", tmpstr, 0);
+
 	free(tmpstr); tmpstr = NULL;
 	free(send); send = NULL;
 	sleep(1);
@@ -44,7 +47,10 @@ char* flashx(char* host, char* file)
 	debug(99, "tmpfile: %s", tmpfile);
 	debug(99, "send: %s", send);
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
-//	writesys("/var/usr/local/share/titan/plugins/tithek/flashx2", tmpstr, 0);
+
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/var/usr/local/share/titan/plugins/tithek/flashx2", tmpstr, 0);
+
 	free(tmpstr); tmpstr = NULL;
 	free(send); send = NULL;
 	sleep(1);
@@ -59,7 +65,10 @@ char* flashx(char* host, char* file)
 
 	free(send); send = NULL;
 	tmpstr = command("cat /tmp/tithek/x9 | sed '1,1d' | zcat");
-//	writesys("/var/usr/local/share/titan/plugins/tithek/flashx4", tmpstr, 0);
+
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/var/usr/local/share/titan/plugins/tithek/flashx4", tmpstr, 0);
+
 	streamlink = string_resub("<file>", "</file>", tmpstr, 0);
 
 	free(tmphost); tmphost = NULL;

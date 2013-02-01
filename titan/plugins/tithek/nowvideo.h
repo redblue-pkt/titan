@@ -30,7 +30,9 @@ char* nowvideo(char* host, char* file)
 	debug(99, "send: %s", send);
 
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
-//	writesys("/var/usr/local/share/titan/plugins/tithek/nowvideo1", tmpstr, 0);
+
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/var/usr/local/share/titan/plugins/tithek/nowvideo1", tmpstr, 0);
 
 	file = string_resub("flashvars.file=\"", "\";", tmpstr, 0);
 	filekey = string_resub("flashvars.filekey=\"", "\";", tmpstr, 0);
@@ -49,7 +51,9 @@ char* nowvideo(char* host, char* file)
 	debug(99, "send: %s", send);
 	free(tmpstr), tmpstr = NULL;
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
-//	writesys("/var/usr/local/share/titan/plugins/tithek/nowvideo2", tmpstr, 0);
+
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/var/usr/local/share/titan/plugins/tithek/nowvideo2", tmpstr, 0);
 
 	sleep(1);
 	streamlink = string_resub("url=", "&", tmpstr, 0);

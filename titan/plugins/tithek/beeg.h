@@ -5,7 +5,7 @@ char* beeg(char* link)
 {
 	debug(99, "link %s", link);
 	char* ip = NULL, *pos = NULL, *path = NULL, *streamurl = NULL, *tmpstr = NULL;
-		
+	
 	ip = string_replace("http://", "", (char*)link, 0);
 
 	if(ip != NULL)
@@ -17,7 +17,8 @@ char* beeg(char* link)
 	}
 
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
-//	writesys("/var/usr/local/share/titan/plugins/tithek/tmpstr", tmpstr, 0);
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/var/usr/local/share/titan/plugins/tithek/tmpstr", tmpstr, 0);
 
 	if(tmpstr != NULL)
 	{
