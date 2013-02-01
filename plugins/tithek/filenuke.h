@@ -26,7 +26,7 @@ char* filenuke(char* host, char* file)
 
 	if(host == NULL || file == NULL) return NULL;
 
-	tmphost = ostrcat("www.", host, 0, 0);
+	tmphost = ostrcat(host, NULL, 0, 0);
 	tmpfile = ostrcat("/", file, 0, 0);
 	debug(99, "tmphost: %s", tmphost);
 	ip = get_ip(tmphost);
@@ -80,7 +80,7 @@ char* filenuke(char* host, char* file)
 	send = ostrcat(send, id, 1, 0);
 	send = ostrcat(send, " HTTP/1.1\r\nContent-Length: ", 1, 0);
 	send = ostrcat(send, hashlen, 1, 0);
-	send = ostrcat(send, "\r\nAccept-Encoding: gzip\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nHost: www.", 1, 0);
+	send = ostrcat(send, "\r\nAccept-Encoding: gzip\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nHost: ", 1, 0);
 	send = ostrcat(send, host, 1, 0);
 	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);
 	send = ostrcat(send, hash, 1, 0);
