@@ -2812,6 +2812,9 @@ msgstr "Auf Festplatte Zwischenspeichern (30MB / 360s)"
 msgid "Download Full File"
 msgstr "Datei Downloaden in den Streampfad"
 
+msgid "Download Full File (background)"
+msgstr "Datei Downloaden in den Streampfad (unsichtbar)"
+
 msgid "Remove Cachefile ?"
 msgstr "Zwischengespeichertes File löschen ?"
 
