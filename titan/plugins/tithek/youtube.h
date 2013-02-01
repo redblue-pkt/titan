@@ -18,7 +18,7 @@ char* youtube(char* link, char* url, char* name, int flag)
 		path = pos + 1;
 	}
 
-	tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
+	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 	if(flag == 1)
 	{
 
@@ -169,7 +169,7 @@ int youtube_search(struct skin* grid, struct skin* listbox, struct skin* countla
 		else if(((struct tithek*)listbox->select->handle)->flag == 11)
 			path = ostrcat(path, "&max-results=50", 1, 0);
 					
-		char* tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
+		char* tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 		tmpstr = string_replace_all("media:thumbnail", "\nthumbnail", tmpstr, 1);
 
 		int count = 0;
@@ -193,7 +193,7 @@ int youtube_search(struct skin* grid, struct skin* listbox, struct skin* countla
 						incount += 1;
 						ip = ostrcat("www.youtube.com", NULL, 0, 0);
 						path = ostrcat("watch?v=", id, 0, 0);
-						title = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
+						title = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 						title = string_resub("<meta name=\"title\" content=\"", "\">", title, 0);
 
 						line = ostrcat(line, title, 1, 0);

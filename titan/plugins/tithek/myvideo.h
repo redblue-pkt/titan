@@ -35,7 +35,7 @@ char* myvideo(char* input, char* url, char* name, int flag)
 
 	char* tmpstr = NULL;
 // not working tmpstr hat zusatzdaten im string
-	tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
+	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 /*
 // work start
 	unlink("/tmp/myvideo_tmp");
@@ -164,7 +164,7 @@ int myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countla
 		char* ip = ostrcat("www.myvideo.de", NULL, 0, 0);
 		char* path = ostrcat("Videos_A-Z?searchWord=", search, 0, 0);
 					
-		char* tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
+		char* tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 		tmpstr = string_replace_all("<", "\n", tmpstr, 1);
 		tmpstr = string_replace_all(">", "\n", tmpstr, 1);
 

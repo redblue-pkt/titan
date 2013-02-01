@@ -89,7 +89,7 @@ int getfacefoto(char* url, char* name)
 		path = pos + 1;
 	}
 
-	gethttp(ip, path, 80, name, NULL, NULL, 0);
+	gethttp(ip, path, 80, name, NULL, 5000, NULL, 0);
 
 	return 0;
 }

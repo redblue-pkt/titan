@@ -16,7 +16,7 @@ char* beeg(char* link)
 		path = pos + 1;
 	}
 
-	tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
+	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 	if(getconfigint("debuglevel", NULL) == 99)
 		writesys("/tmp/beeg1_tmpstr", tmpstr, 0);
 

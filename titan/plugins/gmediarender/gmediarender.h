@@ -42,7 +42,7 @@ void gmediarendergetpic(struct skin* gmediarender, char* buf)
 		system(cmd); 
 		free(cmd), cmd = NULL;
 */
-		gethttp(tmpip, path, port, "/tmp/gmediarenderpic.jpg", NULL, NULL, 0);
+		gethttp(tmpip, path, port, "/tmp/gmediarenderpic.jpg", NULL, 5000, NULL, 0);
 		changepic(gmediarender, "/tmp/gmediarenderpic.jpg");
 		drawscreen(gmediarender, 0, 0);
 	}
@@ -58,7 +58,7 @@ void gmediarendergetpic(struct skin* gmediarender, char* buf)
 		system(cmd); 
 		free(cmd), cmd = NULL;
 */
-		gethttp(tmpip, path, port, "/tmp/gmediarenderpic.png", NULL, NULL, 0);
+		gethttp(tmpip, path, port, "/tmp/gmediarenderpic.png", NULL, 5000, NULL, 0);
 		changepic(gmediarender, "/tmp/gmediarenderpic.png");
 		drawscreen(gmediarender, 0, 0);
 	}

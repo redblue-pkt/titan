@@ -164,7 +164,7 @@ void screennetwork_inadyn();
 void screenepgsearch(char* text);
 
 //sock.h
-char* gethttp(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect);
+char* gethttp(char* host, char* page, int port, char* filename, char* auth, int timeout, struct download* dnode, int redirect);
 char *get_ip(char *host);
 int sockportopen(int *fd, char* ip, int port, int tout);
 void sockclose(int *fd);
@@ -291,7 +291,7 @@ struct playlist* getplaylistrandom(struct playlist* plist, int max);
 void screensaveradjust();
 
 //download.h
-int screendownload(char* title, char* host, char* page, int port, char* filename, char* auth, int flag);
+int screendownload(char* title, char* host, char* page, int port, char* filename, char* auth, int timeout, int flag);
 
 // epgrecord.h
 void freeepgrecord(struct epgrecord** first);

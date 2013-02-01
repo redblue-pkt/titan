@@ -98,7 +98,7 @@ int readnewsletter()
 	char* newsletterfile = "/tmp/newsletter.txt";
 
 	unlink(newsletterfile);
-	gethttp("atemio.dyndns.tv", "/mediathek/newsletter.txt", 80, newsletterfile, HTTPAUTH, NULL, 0);
+	gethttp("atemio.dyndns.tv", "/mediathek/newsletter.txt", 80, newsletterfile, HTTPAUTH, 5000, NULL, 0);
 
 	fileline = malloc(MINMALLOC);
 	if(fileline == NULL)

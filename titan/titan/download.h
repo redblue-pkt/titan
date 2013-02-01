@@ -1,7 +1,7 @@
 #ifndef DOWNLOAD_H
 #define DOWNLOAD_H
 
-int screendownload(char* title, char* host, char* page, int port, char* filename, char* auth, int flag)
+int screendownload(char* title, char* host, char* page, int port, char* filename, char* auth, int timeout, int flag)
 {
 	debug(1000, "in");
 	int rcret = -1, count = 0, ret = 0, fromthread = 0, sleeptime = 2;
@@ -59,6 +59,7 @@ int screendownload(char* title, char* host, char* page, int port, char* filename
 	dnode->auth = auth;
 	dnode->connfd = -1;
 	dnode->ret = -1;
+	dnode->timeout = timeout;
 	
 	addtimer(&gethttpstruct, START, 1000, 1, (void*)dnode, NULL, NULL);
 

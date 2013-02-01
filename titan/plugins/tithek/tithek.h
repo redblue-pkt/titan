@@ -144,7 +144,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		for(i = 0; i < 3; i++)
 		{
 			free(tmp); tmp = NULL;
-			tmp = gethttp(cmd, "/", 80, NULL, NULL, NULL, 0);
+			tmp = gethttp(cmd, "/", 80, NULL, NULL, 10000, NULL, 0);
 			if(tmp != NULL) break;
 		}
 		if(tmp == NULL)
@@ -355,7 +355,7 @@ struct tithek* addtithek(char *line, int count, struct tithek* last)
 		for(i = 0; i < 3; i++)
 		{
 			free(tmp); tmp = NULL;
-			tmp = gethttp(cmd, "/", 80, NULL, NULL, NULL, 0);
+			tmp = gethttp(cmd, "/", 80, NULL, NULL, 10000, NULL, 0);
 			if(tmp != NULL) break;
 		}
 		if(tmp == NULL)
@@ -669,7 +669,7 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 		if(fd != NULL) fclose(fd);
 		m_unlock(&status.tithekmutex, 20);
 
-		gethttpreal(node->host, node->page, node->port, node->filename, node->auth, NULL, 0, NULL, NULL, 20000, 0);
+		gethttpreal(node->host, node->page, node->port, node->filename, node->auth, NULL, 0, NULL, NULL, node->timeout, 0);
 
 		if(tithekrun == 0)
 			unlink(node->filename);
@@ -713,7 +713,7 @@ end:
 
 char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 {
-	int ret = 1, port = 80;
+	int ret = 1, port = 80, timeout = 50000;
 	char* ip = NULL, *pos = NULL, *path = NULL;
 	char* tmpstr = NULL, *localfile = NULL;
 
@@ -772,7 +772,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 			if(pic == 1)
 			{
 				if(tithekdownloadcount >= 24) //start max 24 threads
-					gethttp(ip, path, port, localfile, pw, NULL, 0);
+					gethttp(ip, path, port, localfile, pw, timeout, NULL, 0);
 				else
 				{
 					//dnode is freed in thread
@@ -786,12 +786,13 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 						dnode->auth = ostrcat(pw, NULL, 0, 0);
 						dnode->connfd = -1;
 						dnode->ret = -1;
+						dnode->timeout = timeout;
 						addtimer(&tithekdownloadthread, START, 100, 1, (void*)dnode, NULL, NULL);
 					}
 				}
 			}
 			else
-				gethttp(ip, path, port, localfile, pw, NULL, 0);			
+				gethttp(ip, path, port, localfile, pw, timeout, NULL, 0);			
 		}
 	}
 	else
@@ -801,7 +802,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 			ret = textbox(_("Message"), _("File exist, overwrite?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 
 		if(localfile != NULL && ret == 1)
-			screendownload("Download", ip, path, port, localfile, pw, 0);
+			screendownload("Download", ip, path, port, localfile, pw, timeout, 0);
 	}
 
 	free(ip); ip = NULL;
@@ -1070,6 +1071,7 @@ void cacheplay(char* link, char* filename, int flag)
 	dnode->auth = NULL;
 	dnode->connfd = -1;
 	dnode->ret = -1;
+	dnode->timeout = 500000;
 	
 	addtimer(&gethttpstruct, START, 1000, 1, (void*)dnode, NULL, NULL);
 

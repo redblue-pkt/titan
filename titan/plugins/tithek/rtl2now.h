@@ -20,7 +20,7 @@ char* rtl2now(char* link, char* url, char* name, int flag)
 	}
 
 	char* tmpstr = NULL;
-	tmpstr = gethttp(ip, path, 80, NULL, NULL, NULL, 0);
+	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 		
 	if(flag == 1)
 	{

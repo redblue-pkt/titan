@@ -33,7 +33,7 @@ char* filenuke(char* host, char* file)
 	debug(99, "ip: %s", ip);
 	debug(99, "test host only: %s", get_ip(host));
 	debug(99, "tmpfile: %s", tmpfile);
-	tmpstr = gethttp(tmphost, tmpfile, 80, NULL, NULL, NULL, 0);
+	tmpstr = gethttp(tmphost, tmpfile, 80, NULL, NULL, 10000, NULL, 0);
 	debug(99, "write file");
 	sleep(2);
 	if(getconfigint("debuglevel", NULL) == 99)
