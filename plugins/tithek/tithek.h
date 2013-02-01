@@ -671,33 +671,45 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 
 		gethttpreal(node->host, node->page, node->port, node->filename, node->auth, NULL, 0, NULL, NULL, node->timeout, 0);
 
-		if(tithekrun == 0)
-			unlink(node->filename);
-		else
+		if(flag == NULL)
 		{
-			//check file size
-			off64_t checkpic = getfilesize(node->filename);
-			if(checkpic < 1000) defpic = 1;
-
-			//check file is gif or html
-			if(defpic == 0)
-			{
-				char* tmp = NULL;
-				tmp = readbintomem(node->filename, 3);
-				if(ostrcmp("GIF", tmp) == 0) defpic = 1; //gif
-				if(ostrcmp("<", tmp) == 0) defpic = 1; //html
-				free(tmp); tmp = NULL;
-			}
-
-			if(defpic == 1)
-			{
-				m_lock(&status.tithekmutex, 20);
+			if(tithekrun == 0)
 				unlink(node->filename);
-				symlink("/var/usr/local/share/titan/plugins/tithek/default.jpg", node->filename);
-				m_unlock(&status.tithekmutex, 20);
+			else
+			{
+				//check file size
+				off64_t checkpic = getfilesize(node->filename);
+				if(checkpic < 1000) defpic = 1;
+	
+				//check file is gif or html
+				if(defpic == 0)
+				{
+					char* tmp = NULL;
+					tmp = readbintomem(node->filename, 3);
+					if(ostrcmp("GIF", tmp) == 0) defpic = 1; //gif
+					if(ostrcmp("<", tmp) == 0) defpic = 1; //html
+					free(tmp); tmp = NULL;
+				}
+	
+				if(defpic == 1)
+				{
+					m_lock(&status.tithekmutex, 20);
+					unlink(node->filename);
+					symlink("/var/usr/local/share/titan/plugins/tithek/default.jpg", node->filename);
+					m_unlock(&status.tithekmutex, 20);
+				}
 			}
 		}
-
+		else
+		{
+			char* tmpstr = ostrcat(_("Start playback"), "\n\n", 0, 0);
+			tmpstr = ostrcat(tmpstr2, node->filename, 1, 0);		
+			if(textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+			{
+				screenplay(node->filename, 2, flag);
+			}		
+			free(tmpstr); tmpstr = NULL;
+		}
 end:
 		free(node->host); node->host = NULL;
 		free(node->page); node->page = NULL;
@@ -1142,6 +1154,58 @@ void cacheplay(char* link, char* filename, int flag)
 	free(file), file = NULL;
 	free(host), host = NULL;
 }
+
+void backgroundplay(char* link, char* filename, int flag)
+{
+	int port = 80, count = 0, mcount = 0;
+	off64_t size = 0, msize = 0;
+	char* host = NULL, *pos = NULL, *path = NULL, *file = NULL, *tmpstr = NULL;
+	host = string_replace("http://", "", (char*)link, 0);
+
+	if(host != NULL)
+		pos = strchr(host, '/');
+	if(pos != NULL)
+	{
+		pos[0] = '\0';
+		path = pos + 1;
+	}
+
+	file = ostrcat(getconfig("rec_streampath", NULL), filename, 0, 0);
+
+	if(ostrstr(host, ":") != NULL)
+	{
+		host = oregex("http://(.*):.*", link);
+		port = atoi(oregex("http://.*:(.*)/.*", link));
+	}
+
+	debug(99, "---------------------------------------");
+	debug(99, "link: %s", link);
+	debug(99, "---------------------------------------");
+	debug(99, "host: %s", host);
+	debug(99, "port: %d", port);
+	debug(99, "path: %s", path);
+	debug(99, "local: %s", file);
+	debug(99, "---------------------------------------");
+	
+	//dnode is freed in thread
+	struct download* dnode = calloc(1, sizeof(struct download));
+	if(dnode != NULL)
+	{
+		dnode->host = ostrcat(host, NULL, 0, 0);
+		dnode->page = ostrcat(path, NULL, 0, 0);
+		dnode->port = port;
+		dnode->filename = ostrcat(file, NULL, 0, 0);
+		dnode->auth = NULL;
+		dnode->connfd = -1;
+		dnode->ret = -1;
+		dnode->timeout = timeout;
+		addtimer(&tithekdownloadthread, START, 100, 1, (void*)dnode, NULL, 1);
+	}
+					
+	free(tmpstr), tmpstr = NULL;
+	free(file), file = NULL;
+	free(host), host = NULL;
+}
 	
 void submenu(struct skin* listbox, struct skin* load, char* title)
 {
@@ -1270,7 +1334,10 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 //						addmenulist(&mlist, "File Caching Playback (20MB / 240s)", NULL, NULL, 0, 0);
 //						addmenulist(&mlist, "File Caching Playback (30MB / 360s)", NULL, NULL, 0, 0);
 						if(file_exist("/var/swap/etc/.tithekdownload") || status.expertmodus >= 11)
+						{
 							addmenulist(&mlist, "Download Full File", NULL, NULL, 0, 0);
+							addmenulist(&mlist, "Download Full File (background)", NULL, NULL, 0, 0);
+						}
 					}
 				}
 			}
@@ -1349,6 +1416,14 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 				}
 				free(search), search = NULL;
 			}
+			else if(ostrcmp(keyconf, "Download Full File (background)") == 0)
+			{
+				char* search = textinput("Search", filename);
+				if(search != NULL)
+					backgroundplay(tmpstr1, search);
+				free(search), search = NULL;
+			}
+			 
 			free(filename), filename = NULL;
 			freemenulist(mlist, 1); mlist = NULL;
 		}
