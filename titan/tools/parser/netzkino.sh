@@ -98,7 +98,7 @@ done
 
 cat cache.netzkino.titanlist | sort -m > _full/netzkino/streams/netzkino.all-newfirst.list
 cat cache.netzkino.titanlist | sort -um > _full/netzkino/streams/netzkino.all-sorted.list
-cat cache.netzkino.category.titanlist | sort -um > _full/netzkino/netzkino.category.list
+cat cache.netzkino.category.titanlist | sort -m > _full/netzkino/netzkino.category.list
 
 for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
 	filename=`echo "$ROUND" | tr 'A-Z' 'a-z'`
