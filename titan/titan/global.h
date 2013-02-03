@@ -4725,7 +4725,7 @@ int setvol(int value)
 			status.volmute = value;
 		else
 		{
-			status.volmute = 0;
+			status.volmute = -1;
 			ret = writesysint(voldev, value, 0);
 		}
 		if(ret == 0 && status.mute != 2) addconfigint("vol", tmpvol);
@@ -4741,7 +4741,7 @@ int getvol()
 	debug(1000, "in");
 	char *voldev = NULL;
 	char *value = NULL;
-	int tmpvol = 0;
+	int tmpvol = -1;
 
 	voldev = getconfig("voldev", NULL);
 
@@ -4750,16 +4750,16 @@ int getvol()
 		debug(1000, "out -> NULL detect");
 		return 0;
 	}
-	if(status.volmute == 0)
+	if(status.volmute == -1)
 		value = readsys(voldev, 1);
 	else
 		tmpvol = status.volmute;
-	if(value == NULL && tmpvol == 0)
+	if(value == NULL && tmpvol == -1)
 	{
 		debug(1000, "out -> NULL detect");
 		return 0;
 	}
-	if(status.volmute == 0)
+	if(status.volmute == -1)
 		tmpvol = atoi(value);
 	free(value);
 	tmpvol = 100 - tmpvol * 100 / 63;
