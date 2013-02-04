@@ -10,7 +10,7 @@ piccount=0
 mainurl=http://www.myvideo.de
 mainliste="Top_100 Videos_A-Z Serien Filme Musik"
 
-black_list="Themen webstars tv Playlisten Flight Videos_in_Playlisten Videos_in_Playlisten/Beliebte_Playlisten Alle_Serien_A-Z Videos_in_Kategorien Video_Flight"
+black_list="Themen webstars tv Playlisten Flight Videos_in_Playlisten Videos_in_Playlisten/Beliebte_Playlisten Alle_Serien_A-Z Videos_in_Kategorien Video_Flight channel/unforgettable Serien/Serien_Suche Serien/WWE Top_100/Top_100_Playlisten Themen/Sexy echo channel/Clipgenerator musik-tv Videos_A-Z/Videos_in_Playlisten Videos_A-Z/Video_Flight"
 wget --no-check-certificate "http://myvideo.de" -O cache.main.list
 main_list=`cat cache.main.list | tr ':' '\n' | grep return | grep topgrey | tr ' ' '\n' | grep href | cut -d"'" -f2 | grep -v ^# | sed 's!/!!' | sort -um`
 skip=0
@@ -174,8 +174,9 @@ ls cache.$filename.list
 #			URL=http://www.myvideo.de/watch/$ID/`echo $TITLE | tr ' ' '_'`
 
 #echo $PIC | tr '/' '\n' | tail -n 4 | head -n1`"/"`echo $PIC | tr '/' '\n' | tail -n 3 | head -n1`"
-			URL="http://www.myvideo.de/dynamic/get_player_video_xml.php?flash_playertype=SER&ID=$ID&_countlimit=4&autorun=yes;pageUrl=http://www.myvideo.de/watch/$ID/;playpath=flv:`echo $PIC | tr '/' '\n' | tail -n 4 | head -n1`/`echo $PIC | tr '/' '\n' | tail -n 3 | head -n1`/$ID;$ID"
-			
+#			URL="http://www.myvideo.de/dynamic/get_player_video_xml.php?flash_playertype=SER&ID=$ID&_countlimit=4&autorun=yes;pageUrl=http://www.myvideo.de/watch/$ID/;playpath=flv:`echo $PIC | tr '/' '\n' | tail -n 4 | head -n1`/`echo $PIC | tr '/' '\n' | tail -n 3 | head -n1`/$ID;$ID"
+			URL="http://www.myvideo.de/dynamic/get_player_video_xml.php?domain=www.myvideo.de&flash_playertype=SER&ds=1&autorun=yes&ID=$ID&_countlimit=4;pageUrl=http://www.myvideo.de/watch/$ID/;playpath=flv:`echo $PIC | tr '/' '\n' | tail -n 4 | head -n1`/`echo $PIC | tr '/' '\n' | tail -n 3 | head -n1`/$ID;$ID"
+
 			echo URL $URL
 			if [ -z $PIC ];then
 				PIC=`echo $ROUND1 | cut -d"'" -f4`
@@ -224,7 +225,9 @@ ls cache.$filename.list
 		
 				#http://www.myvideo.de/watch/5296613/Unsere_Hochzeit
 #				URL=http://www.myvideo.de/watch/$ID/`echo $TITLE | tr ' ' '_'`
-				URL="http://www.myvideo.de/dynamic/get_player_video_xml.php?flash_playertype=SER&ID=$ID&_countlimit=4&autorun=yes;pageUrl=http://www.myvideo.de/watch/$ID/;playpath=flv:`echo $PIC | tr '/' '\n' | tail -n 4 | head -n1`/`echo $PIC | tr '/' '\n' | tail -n 3 | head -n1`/$ID;$ID"				
+#				URL="http://www.myvideo.de/dynamic/get_player_video_xml.php?flash_playertype=SER&ID=$ID&_countlimit=4&autorun=yes;pageUrl=http://www.myvideo.de/watch/$ID/;playpath=flv:`echo $PIC | tr '/' '\n' | tail -n 4 | head -n1`/`echo $PIC | tr '/' '\n' | tail -n 3 | head -n1`/$ID;$ID"				
+				URL="http://www.myvideo.de/dynamic/get_player_video_xml.php?domain=www.myvideo.de&flash_playertype=SER&ds=1&autorun=yes&ID=$ID&_countlimit=4;pageUrl=http://www.myvideo.de/watch/$ID/;playpath=flv:`echo $PIC | tr '/' '\n' | tail -n 4 | head -n1`/`echo $PIC | tr '/' '\n' | tail -n 3 | head -n1`/$ID;$ID"
+
 				echo URL $URL
 
 				if [ -z $PIC ];then
