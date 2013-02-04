@@ -36,6 +36,15 @@ char* myvideo(char* input, char* url, char* name, int flag)
 	char* tmpstr = NULL;
 // not working tmpstr hat zusatzdaten im string
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
+
+	debug(99, "link: http://%s/%s", ip, path);
+
+unlink("/tmp/myvideo_tmpstr");
+unlink("/tmp/myvideo_tmpstr_uni");
+
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/tmp/myvideo_tmpstr", tmpstr, 0);
+
 /*
 // work start
 	unlink("/tmp/myvideo_tmp");
@@ -56,7 +65,7 @@ char* myvideo(char* input, char* url, char* name, int flag)
 
 		if(ret1 != NULL && count >= 2)
 		{
-			debug(99, "ret1[1].part=%s", (ret1[1]).part);
+//			debug(99, "ret1[1].part=%s", (ret1[1]).part);
 			hlen = strlen(ret1[1].part);
 			tmpstr_uni = unhexlify(ret1[1].part);
 		}
@@ -89,7 +98,10 @@ char* myvideo(char* input, char* url, char* name, int flag)
 			//printf("tmpstr_uni: %s\n",tmpstr_uni);
 
 			htmldecode(tmpstr_uni, tmpstr_uni);
-	
+
+			if(getconfigint("debuglevel", NULL) == 99)
+				writesys("/tmp/myvideo_tmpstr_uni", tmpstr_uni, 0);
+
 			if(ostrstr(tmpstr_uni, "connectionurl='rtmp"))
 			{
 				printf("found rtmpe:// stream\n");
@@ -140,7 +152,7 @@ char* myvideo(char* input, char* url, char* name, int flag)
 //	free(pos), pos = NULL;
 //	free(path), path = NULL;
 
-	debug(99, "streamurl2: %s", streamurl);	
+//	debug(99, "streamurl2: %s", streamurl);	
 	return streamurl;
 }
 
