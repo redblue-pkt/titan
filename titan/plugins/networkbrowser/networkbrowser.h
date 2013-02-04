@@ -630,11 +630,11 @@ void savenetworkbrowser(char* filename)
 			{
 				node->sharedir = string_replace_all("//", "", node->sharedir, 1);
 				if(!ostrncmp("/", node->sharedir, 1))
-			        savesettings = ostrcat(savesettings, "/", 1, 0);				
+					savesettings = ostrcat(savesettings, "/", 1, 0);				
 				else
-			        savesettings = ostrcat(savesettings, "//", 1, 0);
+					savesettings = ostrcat(savesettings, "//", 1, 0);
 
-		        savesettings = ostrcat(savesettings, node->sharedir, 1, 0);
+				savesettings = ostrcat(savesettings, node->sharedir, 1, 0);
 			}
 
 			savesettings = ostrcat(savesettings, "\n", 1, 0);
