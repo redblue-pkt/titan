@@ -418,16 +418,13 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 					free(newnode->userauth); newnode->userauth = NULL;
 					newnode->userauth = ostrcat(newnode->userauth, "1", 1, 0);
 					ret = sscanf(tmpstr, ":ftp\\://%[^\\]\\:%[^@]@%[^\\]\\:%s", newnode->username, newnode->password, newnode->ip, newnode->ftpport);
-// sharedir not working
 //					if(ret != 5) treffer = 0;
 					if(ret != 4) treffer = 0;
 				}
 				else
 				{
 					ret = sscanf(tmpstr, ":ftp\\://%[^\\]\\:%s", newnode->ip, newnode->ftpport);
-// sharedir not working
-//					if(ret != 3) treffer = 0;
-					if(ret != 2) treffer = 0;
+					if(ret != 3) treffer = 0;
 				}
 			}
 			else
@@ -628,15 +625,18 @@ void savenetworkbrowser(char* filename)
  			free(tmpstr); tmpstr = NULL;
 			savesettings = ostrcat(savesettings, "\\:", 1, 0);
  			savesettings = ostrcat(savesettings, node->ftpport, 1, 0);
-      
-// sharedir not working
-/*
+
 			if(ostrcmp(node->sharedir, "sharedir") != 0)
 			{
-		        savesettings = ostrcat(savesettings, "/", 1, 0);
+				node->sharedir = string_replace_all("//", "", node->sharedir, 1);
+				if(!ostrncmp("/", node->sharedir, 1))
+			        savesettings = ostrcat(savesettings, "/", 1, 0);				
+				else
+			        savesettings = ostrcat(savesettings, "//", 1, 0);
+
 		        savesettings = ostrcat(savesettings, node->sharedir, 1, 0);
 			}
-*/
+
 			savesettings = ostrcat(savesettings, "\n", 1, 0);
 		}
 		
@@ -1104,7 +1104,7 @@ void changemodenetworkbrowser(struct networkbrowser* node, struct skin* titletex
 		skin_usessl->hidden = NO;
 		skin_useproxy->hidden = NO;
 		skin_ftpport->hidden = NO;
-		skin_sharedir->hidden = YES;
+		skin_sharedir->hidden = NO;
 		
 		if(ostrcmp(node->userauth, "0") == 0)
 		{
@@ -1422,20 +1422,20 @@ start:
 	while(node != NULL)
 	{
 		if(ostrcmp(node->mode, "0") == 0)
-    {
+		{
 			tmpstr = ostrcat(tmpstr, "(cifs) ", 1, 0);
-      tmppic = ostrcat("netbrowser_cifs.png", NULL, 0, 0);
-    }
+			tmppic = ostrcat("netbrowser_cifs.png", NULL, 0, 0);
+		}
 		else if(ostrcmp(node->mode, "1") == 0)
-    {
+		{
 			tmpstr = ostrcat(tmpstr, "(nfs) ", 1, 0);
-      tmppic = ostrcat("netbrowser_nfs.png", NULL, 0, 0);
-    }
+			tmppic = ostrcat("netbrowser_nfs.png", NULL, 0, 0);
+		}
 		else if(ostrcmp(node->mode, "2") == 0)
-    {
+		{
 			tmpstr = ostrcat(tmpstr, "(ftpfs) ", 1, 0);
-      tmppic = ostrcat("netbrowser_ftpfs.png", NULL, 0, 0);
-    }
+			tmppic = ostrcat("netbrowser_ftpfs.png", NULL, 0, 0);
+	    }
 
 		tmpstr = ostrcat(tmpstr, node->sharename, 1, 0);
 		tmpstr = ostrcat(tmpstr, " (", 1, 0);
@@ -1445,11 +1445,11 @@ start:
 		tmpstr = ostrcat(tmpstr, "/", 1, 0);
 		tmpstr = ostrcat(tmpstr, node->sharedir, 1, 0);
 		tmpstr = ostrcat(tmpstr, ")", 1, 0);
-    
+	
 		struct menulist* tmpmlist = addmenulist(&mlist, tmpstr, NULL, tmppic, 0, 0);
 		if(tmpmlist != NULL) tmpmlist->param = (char*)node;
 		free(tmpstr); tmpstr = NULL;
-    free(tmppic); tmppic = NULL;
+	    free(tmppic); tmppic = NULL;
 		node = node->next;
 	}
 	
