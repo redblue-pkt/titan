@@ -10,6 +10,13 @@
 #ifndef NETWORKBROWSER_H
 #define NETWORKBROWSER_H
 
+char *kill_the_nulls (char* s) 
+{ 
+    while (*s && *s == '0') 
+        s++; 
+    return s;     
+} 
+
 extern struct inetwork* inetwork;
 
 struct networkbrowser
@@ -624,7 +631,10 @@ void savenetworkbrowser(char* filename)
  			savesettings = ostrcat(savesettings, fixip(tmpstr, 1), 1, 0);
  			free(tmpstr); tmpstr = NULL;
 			savesettings = ostrcat(savesettings, "\\:", 1, 0);
- 			savesettings = ostrcat(savesettings, node->ftpport, 1, 0);
+
+			tmpstr = fixport(node->ftpport, 1);
+ 			savesettings = ostrcat(savesettings, fixport(tmpstr, 1), 1, 0);
+ 			free(tmpstr); tmpstr = NULL;
 
 			if(ostrcmp(node->sharedir, "sharedir") != 0)
 			{
@@ -1217,8 +1227,10 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 	changeinput(skin_ip, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 
+	tmpstr = fixport(node->ftpport, 0);
 	changemask(skin_ftpport, "00000");
-	changeinput(skin_ftpport, node->ftpport);
+	changeinput(skin_ftpport, tmpstr);
+	free(tmpstr); tmpstr = NULL;
 
 	changemask(skin_sharedir, "abcdefghijklmnopqrstuvwxyz");
 	changeinput(skin_sharedir, node->sharedir);
