@@ -273,30 +273,33 @@ void newsletterthreadfunc(struct stimerthread* self)
 	{
 		int count = 0, ret = 0;
 
-		m_lock(&status.newslettermutex, 19);
-		long unsigned lastnewsletter = getconfiglu("lastnewsletter", NULL);
-		readnewsletter();
-		node = newsletter;
-
-		if(node != NULL && node->nr > lastnewsletter)
+		if(status.standby == 0)
 		{
-			tmpstr = ostrcat(node->title, NULL, 0, 0);
-			tmpstr = ostrcat(tmpstr, " - ", 1, 0);
-			tmpstr = ostrcat(tmpstr, node->date, 1, 0);
+			m_lock(&status.newslettermutex, 19);
+			long unsigned lastnewsletter = getconfiglu("lastnewsletter", NULL);
+			readnewsletter();
+			node = newsletter;
 
-			ret = textbox(tmpstr, node->text, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 15, 2);
-			free(tmpstr); tmpstr = NULL;
-
-			//mark only if no timeout
-			if(ret != 0)
+			if(node != NULL && node->nr > lastnewsletter)
 			{
-				addconfiglu("lastnewsletter", node->nr);
-				writeallconfig(3);
-			}
-		}
+				tmpstr = ostrcat(node->title, NULL, 0, 0);
+				tmpstr = ostrcat(tmpstr, " - ", 1, 0);
+				tmpstr = ostrcat(tmpstr, node->date, 1, 0);
 
-		freenewsletter();
-		m_unlock(&status.newslettermutex, 19);
+				ret = textbox(tmpstr, node->text, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 15, 2);
+				free(tmpstr); tmpstr = NULL;
+
+				//mark only if no timeout
+				if(ret != 0)
+				{
+					addconfiglu("lastnewsletter", node->nr);
+					writeallconfig(3);
+				}
+			}
+
+			freenewsletter();
+			m_unlock(&status.newslettermutex, 19);
+		}
 
 		//wait 1h
 		while(count < 3600)
