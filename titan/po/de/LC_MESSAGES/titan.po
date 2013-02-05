@@ -2853,3 +2853,10 @@ msgstr "Ihr Marker wurde erfolgreich gesetzt"
 
 msgid "Download successful !"
 msgstr "Download erfolgreich abgeschlossen !"
+
+msgid "dnsaddresse"
+msgstr "DNS Addresse"
+
+msgid "usedns"
+msgstr "Benutze DNS Addresse"
+

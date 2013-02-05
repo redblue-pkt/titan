@@ -10,12 +10,33 @@
 #ifndef NETWORKBROWSER_H
 #define NETWORKBROWSER_H
 
-char *kill_the_nulls (char* s) 
-{ 
-    while (*s && *s == '0') 
-        s++; 
-    return s;     
-} 
+//flag 0: convert port to 00021
+//flag 1: convert port to 21
+char* fixport(char* input, int flag)
+{
+	char* tmpstr = NULL;
+
+	if(flag == 0)
+	{
+		int plen = strlen(input);
+		if(plen < 5)
+		{
+			int i;
+			for(i = 0; i < 5 - plen; i++)
+				tmpstr = ostrcat(tmpstr, "0", 1, 0);
+		}
+		tmpstr = ostrcat(tmpstr, input, 1, 0);		
+	}
+	else
+	{
+	    while (*input && *input == '0') 
+	        input++;
+	
+		tmpstr = ostrcat(tmpstr, input, 1, 0);		
+	}        
+	return tmpstr;
+}
+
 
 extern struct inetwork* inetwork;
 
@@ -45,6 +66,8 @@ struct networkbrowser
 	char* proxyauth;
 	char* useproxy;
 	char* usessl;
+	char* usedns;
+	char* dns;
 	struct networkbrowser* next;
 };
 
@@ -78,6 +101,8 @@ void debugnetworkbrowser(struct networkbrowser* node)
 	debug(70, "proxyauth: %s", node->proxyauth);
 	debug(70, "useproxy: %s", node->useproxy);
 	debug(70, "usessl: %s", node->usessl);
+	debug(70, "usedns: %s", node->usedns);
+	debug(70, "dns: %s", node->dns);
 }
 
 void delnetworkbrowsercontent(struct networkbrowser* node)
@@ -105,6 +130,8 @@ void delnetworkbrowsercontent(struct networkbrowser* node)
 	free(node->proxyauth); node->proxyauth = NULL;
 	free(node->useproxy); node->useproxy = NULL;
 	free(node->usessl); node->usessl = NULL;
+	free(node->usedns); node->usedns = NULL;
+	free(node->dns); node->dns = NULL;
 }
 
 void delnetworkbrowser(struct networkbrowser* netnode)
@@ -181,6 +208,16 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 		}
 		memset(newnode->ip, 0, 256);
 
+		newnode->dns = malloc(256);
+		if(newnode->dns == NULL)
+		{
+			err("no memory");
+			delnetworkbrowsercontent(newnode);
+			free(newnode);
+			return NULL;
+		}
+		memset(newnode->dns, 0, 256);
+	
 		newnode->sharedir = malloc(256);
 		if(newnode->sharedir == NULL)
 		{
@@ -325,13 +362,23 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 		newnode->proxyauth = ostrcat(newnode->proxyauth, "0", 1, 0);
 		newnode->useproxy = ostrcat(newnode->useproxy, "0", 1, 0);
 		newnode->usessl = ostrcat(newnode->usessl, "0", 1, 0);
+		newnode->usedns = ostrcat(newnode->usedns, "0", 1, 0);
 
 		//nfs parse
 		if(ostrstr(line, "-fstype=nfs") != NULL)
 		{
 			treffer = 1;
 			newnode->mode = ostrcat("1", NULL, 0, 0);
-			ret = sscanf(line, "%s\t-fstype=nfs,%[^,],%*[^,],rsize=%[^,],wsize=%[^,],%s\t%[^:]:/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->protocol, newnode->ip, newnode->sharedir);
+			if(oregex(".*([0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}).*", tmpstr))
+			{
+				ret = sscanf(line, "%s\t-fstype=nfs,%[^,],%*[^,],rsize=%[^,],wsize=%[^,],%s\t%[^:]:/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->protocol, newnode->ip, newnode->sharedir);
+			}
+			else
+			{
+				free(newnode->usedns); newnode->usedns = NULL;
+				newnode->usedns = ostrcat(newnode->usedns, "1", 1, 0);
+				ret = sscanf(line, "%s\t-fstype=nfs,%[^,],%*[^,],rsize=%[^,],wsize=%[^,],%s\t%[^:]:/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->protocol, newnode->dns, newnode->sharedir);
+			}
 			if(ret != 7)
 			{
 				if(count > 0)
@@ -353,17 +400,37 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 		{
 			treffer = 1;
 			newnode->mode = ostrcat("0", NULL, 0, 0);
-			if(ostrstr(line, "user=,") != NULL)
+			if(oregex(".*([0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}).*", line))
 			{
-				treffer = 6;
-				ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
+				if(ostrstr(line, "user=,") != NULL)
+				{
+					treffer = 6;
+					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
+				}
+				else
+				{
+					treffer = 8;
+					free(newnode->userauth); newnode->userauth = NULL;
+					newnode->userauth = ostrcat(newnode->userauth, "1", 1, 0);
+					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->ip, newnode->sharedir);
+				}
 			}
 			else
 			{
-				treffer = 8;
-				free(newnode->userauth); newnode->userauth = NULL;
-				newnode->userauth = ostrcat(newnode->userauth, "1", 1, 0);
-				ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->ip, newnode->sharedir);
+				free(newnode->usedns); newnode->usedns = NULL;
+				newnode->usedns = ostrcat(newnode->usedns, "1", 1, 0);
+				if(ostrstr(line, "user=,") != NULL)
+				{
+					treffer = 6;
+					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->dns, newnode->sharedir);
+				}
+				else
+				{
+					treffer = 8;
+					free(newnode->userauth); newnode->userauth = NULL;
+					newnode->userauth = ostrcat(newnode->userauth, "1", 1, 0);
+					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->dns, newnode->sharedir);
+				}
 			}
 			if(ret != treffer)
 			{
@@ -420,18 +487,41 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 			tmpstr = ostrstr(line, ":ftp\\://");
 			if(tmpstr != NULL)
 			{
-				if(ostrstr(line, "@") != NULL)
+				if(oregex(".*([0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}).*", tmpstr))
 				{
-					free(newnode->userauth); newnode->userauth = NULL;
-					newnode->userauth = ostrcat(newnode->userauth, "1", 1, 0);
-					ret = sscanf(tmpstr, ":ftp\\://%[^\\]\\:%[^@]@%[^\\]\\:%s", newnode->username, newnode->password, newnode->ip, newnode->ftpport);
-//					if(ret != 5) treffer = 0;
-					if(ret != 4) treffer = 0;
+					if(ostrstr(line, "@") != NULL)
+					{
+						free(newnode->userauth); newnode->userauth = NULL;
+						newnode->userauth = ostrcat(newnode->userauth, "1", 1, 0);
+						ret = sscanf(tmpstr, ":ftp\\://%[^\\]\\:%[^@]@%[^\\]\\:%s", newnode->username, newnode->password, newnode->ip, newnode->ftpport);
+	//					if(ret != 5) treffer = 0;
+						if(ret != 4) treffer = 0;
+					}
+					else
+					{
+						ret = sscanf(tmpstr, ":ftp\\://%[^\\]\\:%s", newnode->ip, newnode->ftpport);
+						if(ret != 3) treffer = 0;
+					}
+
 				}
 				else
 				{
-					ret = sscanf(tmpstr, ":ftp\\://%[^\\]\\:%s", newnode->ip, newnode->ftpport);
-					if(ret != 3) treffer = 0;
+					free(newnode->usedns); newnode->usedns = NULL;
+					newnode->usedns = ostrcat(newnode->usedns, "1", 1, 0);
+
+					if(ostrstr(line, "@") != NULL)
+					{
+						free(newnode->userauth); newnode->userauth = NULL;
+						newnode->userauth = ostrcat(newnode->userauth, "1", 1, 0);
+						ret = sscanf(tmpstr, ":ftp\\://%[^\\]\\:%[^@]@%[^\\]\\:%s", newnode->username, newnode->password, newnode->dns, newnode->ftpport);
+	//					if(ret != 5) treffer = 0;
+						if(ret != 4) treffer = 0;
+					}
+					else
+					{
+						ret = sscanf(tmpstr, ":ftp\\://%[^\\]\\:%s", newnode->dns, newnode->ftpport);
+						if(ret != 3) treffer = 0;
+					}
 				}
 			}
 			else
@@ -522,6 +612,8 @@ void setdefaultnetworkbrowser(struct networkbrowser* node)
 	if(node->proxyauth == NULL || node->proxyauth[0] == '\0') node->proxyauth = ostrcat(node->proxyauth, "0", 1, 0);
 	if(node->useproxy == NULL || node->useproxy[0] == '\0') node->useproxy = ostrcat(node->useproxy, "0", 1, 0);
 	if(node->usessl == NULL || node->usessl[0] == '\0') node->usessl = ostrcat(node->usessl, "0", 1, 0);
+	if(node->usedns == NULL || node->usedns[0] == '\0') node->usedns = ostrcat(node->usedns, "0", 1, 0);
+	if(node->dns == NULL || node->dns[0] == '\0') node->dns = ostrcat(node->dns, "dns.addresse.de", 1, 0);
 }
 
 void savenetworkbrowser(char* filename)
@@ -575,7 +667,7 @@ void savenetworkbrowser(char* filename)
 			savesettings = ostrcat(savesettings, node->protocol, 1, 0);
 			savesettings = ostrcat(savesettings, "\t", 1, 0);
 			tmpstr = fixip(node->ip, 1);
- 			savesettings = ostrcat(savesettings, fixip(node->ip, 1), 1, 0);
+ 			savesettings = ostrcat(savesettings, tmpstr, 1, 0);
  			free(tmpstr); tmpstr = NULL;
 			savesettings = ostrcat(savesettings, ":/", 1, 0);
  			savesettings = ostrcat(savesettings, node->sharedir, 1, 0);
@@ -627,9 +719,15 @@ void savenetworkbrowser(char* filename)
 				savesettings = ostrcat(savesettings, "@", 1, 0);
 			}
 
-			tmpstr = fixip(node->ip, 1);
- 			savesettings = ostrcat(savesettings, fixip(tmpstr, 1), 1, 0);
- 			free(tmpstr); tmpstr = NULL;
+ 			if(ostrcmp(node->usedns, "1") == 0)
+	 			savesettings = ostrcat(savesettings, node->dns, 1, 0);
+			else
+			{
+				tmpstr = fixip(node->ip, 1);
+	 			savesettings = ostrcat(savesettings, tmpstr, 1, 0);
+	 			free(tmpstr); tmpstr = NULL;
+			}
+			
 			savesettings = ostrcat(savesettings, "\\:", 1, 0);
 
 			tmpstr = fixport(node->ftpport, 1);
@@ -697,6 +795,8 @@ void copynetworkbrowser(struct networkbrowser* from, struct networkbrowser* to, 
 	to->proxyauth = ostrcat(from->proxyauth, NULL, 0, 0);
 	to->useproxy = ostrcat(from->useproxy, NULL, 0, 0);
 	to->usessl = ostrcat(from->usessl, NULL, 0, 0);
+	to->usedns = ostrcat(from->usedns, NULL, 0, 0);
+	to->dns = ostrcat(from->dns, NULL, 0, 0);
 }
 
 //flag 0: read and add to struct
@@ -756,11 +856,17 @@ void getnetworkbrowser_dns(struct inetwork* net, struct menulist** mlist)
 {
 	int i = 0;
 	netinfo* nInfo;
-	char *tmpstr = NULL, *s = NULL;
+	char *tmpstr = NULL, *s = NULL, *tmpstr2 = NULL;
 
 	if(net == NULL || mlist == NULL) return;
 
-	s = ostrcat(s, net->ip, 1, 0);
+	tmpstr2 = ostrcat(tmpstr2, net->ip, 1, 0);
+	tmpstr = fixip(tmpstr2, 1);
+	free(tmpstr2); tmpstr2 = NULL;
+	
+	s = ostrcat(s, tmpstr, 1, 0);
+	free(tmpstr); tmpstr = NULL;
+
 	s = ostrcat(s, "/24", 1, 0);
 	debug(70, "start scanning: %s", s);
 	
@@ -844,6 +950,8 @@ void  getnetworkbrowser_nfs(struct menulist** mlist, char* s, char* r)
 	{
 		for (i = 0; i < 256; i++)
 		{
+			usleep(100000);
+
 			if(nfsInfo[i].ip[0] == '\0') {
 				break;
 			}
@@ -923,7 +1031,10 @@ start1:
 				{
 					node->mode = ostrcat("0", NULL, 0, 0);
 					node->ip = ostrcat(mbox->param, NULL, 0, 0);
-					node->sharename = ostrcat(mbox1->param, NULL, 0, 0);
+					char* tmpstr3 = ostrcat(mbox->param1, NULL, 0, 0);
+					string_remove_whitechars(tmpstr3);
+					node->sharename = ostrcat(tmpstr3, NULL, 0, 0);
+					free(tmpstr3), tmpstr3 = NULL;
 					node->sharedir = ostrcat(mbox1->param, NULL, 0, 0);
 					screennetworkbrowser_addshare(node, 1);
 				}
@@ -936,7 +1047,10 @@ start1:
 				{
 					node->mode = ostrcat("1", NULL, 0, 0);
 					node->ip = ostrcat(mbox->param, NULL, 0, 0);
-					node->sharename = ostrcat(mbox1->param, NULL, 0, 0);
+					char* tmpstr3 = ostrcat(mbox->param1, NULL, 0, 0);
+					string_remove_whitechars(tmpstr3);
+					node->sharename = ostrcat(tmpstr3, NULL, 0, 0);
+					free(tmpstr3), tmpstr3 = NULL;
 					node->sharedir = ostrcat(mbox1->param, NULL, 0, 0);
 					screennetworkbrowser_addshare(node, 1);
 				}
@@ -1024,7 +1138,7 @@ int checknetworkbrowserexist(struct networkbrowser* node)
 	return 0;
 }
 
-void changemodenetworkbrowser(struct networkbrowser* node, struct skin* titletext, struct skin* net_addshare, struct skin* skin_username, struct skin* skin_password, struct skin* skin_protocol, struct skin* skin_rsize, struct skin* skin_wsize, struct skin* skin_options, struct skin* skin_ssl, struct skin* skin_proxy, struct skin* skin_proxyip, struct skin* skin_proxyport, struct skin* skin_proxyuser, struct skin* skin_proxypass, struct skin* skin_ftpport, struct skin* skin_userauth, struct skin* skin_proxyauth, struct skin* skin_useproxy, struct skin* skin_usessl, struct skin* skin_sharedir)
+void changemodenetworkbrowser(struct networkbrowser* node, struct skin* titletext, struct skin* net_addshare, struct skin* skin_username, struct skin* skin_password, struct skin* skin_protocol, struct skin* skin_rsize, struct skin* skin_wsize, struct skin* skin_options, struct skin* skin_ssl, struct skin* skin_proxy, struct skin* skin_proxyip, struct skin* skin_proxyport, struct skin* skin_proxyuser, struct skin* skin_proxypass, struct skin* skin_ftpport, struct skin* skin_userauth, struct skin* skin_proxyauth, struct skin* skin_useproxy, struct skin* skin_usessl, struct skin* skin_sharedir, struct skin* skin_usedns, struct skin* skin_dns, struct skin* skin_ip)
 {
 	char* tmpstr = NULL;
 	if(node == NULL) return;
@@ -1050,12 +1164,24 @@ void changemodenetworkbrowser(struct networkbrowser* node, struct skin* titletex
 		skin_proxyuser->hidden = YES;
 		skin_proxypass->hidden = YES;
 		skin_ftpport->hidden = YES;
-		skin_userauth->hidden = NO;
+		skin_userauth->hidden = NO;		
 		skin_proxyauth->hidden = YES;
 		skin_useproxy->hidden = YES;
 		skin_usessl->hidden = YES;
 		skin_sharedir->hidden = NO;
-		
+		skin_usedns->hidden = NO;
+
+		if(ostrcmp(node->usedns, "0") == 0)
+		{
+			skin_dns->hidden = YES;
+			skin_ip->hidden = NO;
+		}
+		else
+		{
+			skin_dns->hidden = NO;
+			skin_ip->hidden = YES;		
+		}
+
 		if(ostrcmp(node->userauth, "0") == 0)
 		{
 			skin_username->hidden = YES;
@@ -1095,6 +1221,17 @@ void changemodenetworkbrowser(struct networkbrowser* node, struct skin* titletex
 		skin_useproxy->hidden = YES;
 		skin_usessl->hidden = YES;
 		skin_sharedir->hidden = NO;
+		skin_usedns->hidden = NO;
+		if(ostrcmp(node->usedns, "0") == 0)
+		{
+			skin_dns->hidden = YES;
+			skin_ip->hidden = NO;
+		}
+		else
+		{
+			skin_dns->hidden = NO;
+			skin_ip->hidden = YES;		
+		}
 	}
 	else if(ostrcmp(node->mode, "2") == 0)
 	{
@@ -1115,6 +1252,7 @@ void changemodenetworkbrowser(struct networkbrowser* node, struct skin* titletex
 		skin_useproxy->hidden = NO;
 		skin_ftpport->hidden = NO;
 		skin_sharedir->hidden = NO;
+		skin_usedns->hidden = NO;
 		
 		if(ostrcmp(node->userauth, "0") == 0)
 		{
@@ -1158,6 +1296,16 @@ void changemodenetworkbrowser(struct networkbrowser* node, struct skin* titletex
 				skin_proxypass->hidden = NO;
 			}
 		}
+		if(ostrcmp(node->usedns, "0") == 0)
+		{
+			skin_dns->hidden = YES;
+			skin_ip->hidden = NO;
+		}
+		else
+		{
+			skin_dns->hidden = NO;
+			skin_ip->hidden = YES;		
+		}
 	}
 }
 
@@ -1190,6 +1338,8 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 	struct skin* skin_usessl = getscreennode(net_addshare, "skin_usessl");
 	struct skin* skin_userauth = getscreennode(net_addshare, "skin_userauth");
 	struct skin* skin_proxyauth = getscreennode(net_addshare, "skin_proxyauth");
+	struct skin* skin_usedns = getscreennode(net_addshare, "skin_usedns");
+	struct skin* skin_dns = getscreennode(net_addshare, "skin_dns");
 	struct skin* skin_mode = getscreennode(net_addshare, "skin_mode");
 	struct skin* b3 = getscreennode(net_addshare, "b3");
 	char* tmpstr = NULL;
@@ -1277,6 +1427,10 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 	addchoicebox(skin_proxyauth, "1", _("yes"));
 	setchoiceboxselection(skin_proxyauth, node->proxyauth);
 
+	addchoicebox(skin_usedns, "0", _("no"));
+	addchoicebox(skin_usedns, "1", _("yes"));
+	setchoiceboxselection(skin_usedns, node->usedns);
+
 	tmpstr = fixip(node->proxyip, 0);
 	changemask(skin_proxyip, "000.000.000.000");
 	changeinput(skin_proxyip, tmpstr);
@@ -1312,7 +1466,10 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 	addchoicebox(skin_options, "ro", _("ro"));
 	setchoiceboxselection(skin_options, node->options);
 
-	changemodenetworkbrowser(node, titletext, net_addshare, skin_username, skin_password, skin_protocol, skin_rsize, skin_wsize, skin_options, skin_ssl, skin_proxy, skin_proxyip, skin_proxyport, skin_proxyuser, skin_proxypass, skin_ftpport, skin_userauth, skin_proxyauth, skin_useproxy, skin_usessl, skin_sharedir);
+	changemask(skin_dns, "abcdefghijklmnopqrstuvwxyz");
+	changeinput(skin_dns, node->dns);
+
+	changemodenetworkbrowser(node, titletext, net_addshare, skin_username, skin_password, skin_protocol, skin_rsize, skin_wsize, skin_options, skin_ssl, skin_proxy, skin_proxyip, skin_proxyport, skin_proxyuser, skin_proxypass, skin_ftpport, skin_userauth, skin_proxyauth, skin_useproxy, skin_usessl, skin_sharedir, skin_usedns, skin_dns, skin_ip);
 
 	addscreenrc(net_addshare, listbox);
 	drawscreen(net_addshare, 0, 0);
@@ -1345,10 +1502,12 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 		free(node->password); node->password = ostrcat(skin_password->ret, NULL, 0, 0);
 		free(node->protocol); node->protocol = ostrcat(skin_protocol->ret, NULL, 0, 0);
 		free(node->options); node->options = ostrcat(skin_options->ret, NULL, 0, 0);
+		free(node->usedns); node->usedns = ostrcat(skin_usedns->ret, NULL, 0, 0);
+		free(node->dns); node->dns = ostrcat(skin_dns->ret, NULL, 0, 0);
 
 		if(listbox->select != NULL)
 		{
-			changemodenetworkbrowser(node, titletext, net_addshare, skin_username, skin_password, skin_protocol, skin_rsize, skin_wsize, skin_options, skin_ssl, skin_proxy, skin_proxyip, skin_proxyport, skin_proxyuser, skin_proxypass, skin_ftpport, skin_userauth, skin_proxyauth, skin_useproxy, skin_usessl, skin_sharedir);
+			changemodenetworkbrowser(node, titletext, net_addshare, skin_username, skin_password, skin_protocol, skin_rsize, skin_wsize, skin_options, skin_ssl, skin_proxy, skin_proxyip, skin_proxyport, skin_proxyuser, skin_proxypass, skin_ftpport, skin_userauth, skin_proxyauth, skin_useproxy, skin_usessl, skin_sharedir, skin_usedns, skin_dns, skin_ip);
 			drawscreen(net_addshare, 0, 0);
 		}
 
@@ -1369,7 +1528,7 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 					node = newshare;
 					changeinput(skin_sharename, node->sharename);
 					b3->hidden = YES;
-					changemodenetworkbrowser(node, titletext, net_addshare, skin_username, skin_password, skin_protocol, skin_rsize, skin_wsize, skin_options, skin_ssl, skin_proxy, skin_proxyip, skin_proxyport, skin_proxyuser, skin_proxypass, skin_ftpport, skin_userauth, skin_proxyauth, skin_useproxy, skin_usessl, skin_sharedir);
+					changemodenetworkbrowser(node, titletext, net_addshare, skin_username, skin_password, skin_protocol, skin_rsize, skin_wsize, skin_options, skin_ssl, skin_proxy, skin_proxyip, skin_proxyport, skin_proxyuser, skin_proxypass, skin_ftpport, skin_userauth, skin_proxyauth, skin_useproxy, skin_usessl, skin_sharedir, skin_usedns, skin_dns, skin_ip);
 				}
 				else
 					delnetworkbrowser(newshare);
@@ -1451,7 +1610,10 @@ start:
 
 		tmpstr = ostrcat(tmpstr, node->sharename, 1, 0);
 		tmpstr = ostrcat(tmpstr, " (", 1, 0);
-		tmpstr = ostrcat(tmpstr, node->ip, 1, 0);
+		if(ostrcmp(node->dns, "1") == 0)
+			tmpstr = ostrcat(tmpstr, node->dns, 1, 0);
+		else
+			tmpstr = ostrcat(tmpstr, node->ip, 1, 0);
 		tmpstr = ostrcat(tmpstr, ":", 1, 0);
 		tmpstr = ostrcat(tmpstr, node->ftpport, 1, 0);
 		tmpstr = ostrcat(tmpstr, "/", 1, 0);
