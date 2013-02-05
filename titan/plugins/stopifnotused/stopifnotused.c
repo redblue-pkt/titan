@@ -9,6 +9,7 @@ char pluginpic[] = "%pluginpath%/stopifnotused/stopifnotused.png";
 
 int pluginaktiv = 0;
 int pluginversion = PLUGINVERSION;
+//int pluginversion = 999999;
 
 struct stimerthread* StopIfNotUsed = NULL;
 
@@ -41,7 +42,10 @@ void StopIfNotUsed_thread()
 						break;
 					}
 					else
+					{
 						status.standby = 1;
+						screenstandby();
+					}
 				}
 			} 
 		}
