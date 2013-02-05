@@ -875,7 +875,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 			}
 			else
 			{
-				if(textbox(_("Message"), _("Can't find free Tuner for Record.\nSwitch to Recording/Timeshift Channel ?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0) == 1)
+				if(status.standby == 0 && textbox(_("Message"), _("Can't find free Tuner for Record.\nSwitch to Recording/Timeshift Channel ?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0) == 1)
 				{
 					ret = 14;
 					goto end;
