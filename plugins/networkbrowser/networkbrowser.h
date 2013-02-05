@@ -10,34 +10,6 @@
 #ifndef NETWORKBROWSER_H
 #define NETWORKBROWSER_H
 
-//flag 0: convert port to 00021
-//flag 1: convert port to 21
-char* fixport(char* input, int flag)
-{
-	char* tmpstr = NULL;
-
-	if(flag == 0)
-	{
-		int plen = strlen(input);
-		if(plen < 5)
-		{
-			int i;
-			for(i = 0; i < 5 - plen; i++)
-				tmpstr = ostrcat(tmpstr, "0", 1, 0);
-		}
-		tmpstr = ostrcat(tmpstr, input, 1, 0);		
-	}
-	else
-	{
-	    while (*input && *input == '0') 
-	        input++;
-	
-		tmpstr = ostrcat(tmpstr, input, 1, 0);		
-	}        
-	return tmpstr;
-}
-
-
 extern struct inetwork* inetwork;
 
 struct networkbrowser
