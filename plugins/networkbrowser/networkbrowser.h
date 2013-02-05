@@ -619,9 +619,14 @@ void savenetworkbrowser(char* filename)
 				savesettings = ostrcat(savesettings, ",user=,pass=", 1, 0); 
  			
 			savesettings = ostrcat(savesettings, "\t://", 1, 0);
-			tmpstr = fixip(node->ip, 1);
-	 		savesettings = ostrcat(savesettings, tmpstr, 1, 0);
-	 		free(tmpstr); tmpstr = NULL;
+ 			if(ostrcmp(node->usedns, "1") == 0)
+	 			savesettings = ostrcat(savesettings, node->dns, 1, 0);
+			else
+			{
+				tmpstr = fixip(node->ip, 1);
+	 			savesettings = ostrcat(savesettings, tmpstr, 1, 0);
+	 			free(tmpstr); tmpstr = NULL;
+			}
 			savesettings = ostrcat(savesettings, "/", 1, 0);
 			savesettings = ostrcat(savesettings, node->sharedir, 1, 0);
 			savesettings = ostrcat(savesettings, "\n", 1, 0);
@@ -638,9 +643,14 @@ void savenetworkbrowser(char* filename)
 			savesettings = ostrcat(savesettings, ",", 1, 0); 
 			savesettings = ostrcat(savesettings, node->protocol, 1, 0);
 			savesettings = ostrcat(savesettings, "\t", 1, 0);
-			tmpstr = fixip(node->ip, 1);
- 			savesettings = ostrcat(savesettings, tmpstr, 1, 0);
- 			free(tmpstr); tmpstr = NULL;
+  			if(ostrcmp(node->usedns, "1") == 0)
+	 			savesettings = ostrcat(savesettings, node->dns, 1, 0);
+			else
+			{
+				tmpstr = fixip(node->ip, 1);
+	 			savesettings = ostrcat(savesettings, tmpstr, 1, 0);
+	 			free(tmpstr); tmpstr = NULL;
+			}
 			savesettings = ostrcat(savesettings, ":/", 1, 0);
  			savesettings = ostrcat(savesettings, node->sharedir, 1, 0);
 			savesettings = ostrcat(savesettings, "\n", 1, 0);
@@ -847,6 +857,8 @@ void getnetworkbrowser_dns(struct inetwork* net, struct menulist** mlist)
 	
 	for(i = 0; i < 256; i++)
 	{
+		usleep(100000);
+
 		if(nInfo[i].ip[0] == '\0')
 			break;
 		else
@@ -884,6 +896,8 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 	
 	for (i = 0; i < 128; i++)
 	{
+		usleep(100000);
+
 		if(sInfo[i].sharename[0] == '\0'){
 			break;
 		}
@@ -988,7 +1002,19 @@ start:
 	if(mbox != NULL)
 	{
 		drawscreen(load, 0, 0);
-		getnetworkbrowser_cifs(&mlist1, mbox->param, mbox->param1, "user", "pass");
+		char* user = ostrcat(user, getconfig("netbrowser_user", NULL), 1, 0);
+		if(user == NULL)
+			user = ostrcat("user", NULL, 0, 0);
+		char* pass = ostrcat(pass, getconfig("netbrowser_pass", NULL), 1, 0);
+		if(pass == NULL)
+			pass = ostrcat("pass", NULL, 0, 0);
+
+		debug(70, "user: %s",user);
+		debug(70, "pass: %s",pass);
+
+		getnetworkbrowser_cifs(&mlist1, mbox->param, mbox->param1, user, pass);
+		free(user), user = NULL;
+		free(pass), pass = NULL;		
 		getnetworkbrowser_nfs(&mlist1, mbox->param, mbox->param1);
 		clearscreen(load);
 start1:
@@ -1006,6 +1032,7 @@ start1:
 					char* tmpstr3 = ostrcat(mbox->param1, NULL, 0, 0);
 					string_remove_whitechars(tmpstr3);
 					node->sharename = ostrcat(tmpstr3, NULL, 0, 0);
+					node->dns = ostrcat(tmpstr3, NULL, 0, 0);
 					free(tmpstr3), tmpstr3 = NULL;
 					node->sharedir = ostrcat(mbox1->param, NULL, 0, 0);
 					screennetworkbrowser_addshare(node, 1);
@@ -1022,6 +1049,7 @@ start1:
 					char* tmpstr3 = ostrcat(mbox->param1, NULL, 0, 0);
 					string_remove_whitechars(tmpstr3);
 					node->sharename = ostrcat(tmpstr3, NULL, 0, 0);
+					node->dns = ostrcat(tmpstr3, NULL, 0, 0);
 					free(tmpstr3), tmpstr3 = NULL;
 					node->sharedir = ostrcat(mbox1->param, NULL, 0, 0);
 					screennetworkbrowser_addshare(node, 1);
@@ -1582,7 +1610,7 @@ start:
 
 		tmpstr = ostrcat(tmpstr, node->sharename, 1, 0);
 		tmpstr = ostrcat(tmpstr, " (", 1, 0);
-		if(ostrcmp(node->dns, "1") == 0)
+		if(ostrcmp(node->usedns, "1") == 0)
 			tmpstr = ostrcat(tmpstr, node->dns, 1, 0);
 		else
 			tmpstr = ostrcat(tmpstr, node->ip, 1, 0);
