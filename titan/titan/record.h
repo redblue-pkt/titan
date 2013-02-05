@@ -1038,15 +1038,16 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 
 	if(type != RECSTREAM && type != RECTIMESHIFT && type != RECPLAY)
 		recordwriteepg(filename, chnode, rectimernode);
+
+	//start readwrite thread
+	addtimer(&readwritethread, START, 1000, 1, (void*)servicenode, NULL, NULL);
+
 	if(type == RECTIMER)
 	{
 		tmpstr = ostrcat(_("Timer Record start !\n"), filename, 0, 0);
 		textbox(_("Message"), tmpstr, _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 4, 0);
 		free(tmpstr); tmpstr = NULL;
 	}
-	
-	//start readwrite thread
-	addtimer(&readwritethread, START, 1000, 1, (void*)servicenode, NULL, NULL);
 	
 	if(filename != NULL) debug(250, "rec filename = %s\n", filename);
 
