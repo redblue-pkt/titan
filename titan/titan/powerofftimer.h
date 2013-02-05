@@ -62,7 +62,8 @@ void checkshutdowntimer()
 		else
 		{
 			mode = 0;
-			status.sd_timer->active = 0;
+			if(status.sd_timer != NULL)
+				status.sd_timer->active = 0;
 			status.standby = 2;
 			screenstandby();
 		}
