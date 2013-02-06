@@ -54,7 +54,7 @@ playerstart:
 		}
 
 		drawscreen(skin, 0, 0);
-		playwritevfd(file);
+		playwritevfd(file, NULL);
 		rcret = dvdstart(file);
 #ifndef SIMULATE
 		if(rcret != 0)
@@ -70,7 +70,7 @@ playerstart:
 		}
 #endif
 
-		//screenplayinfobar(file, 0, playertype, flag);
+		//screenplayinfobar(file, NULL, 0, playertype, flag);
 
 		//change codec if ac3default and video has ac3
 		//deaktivate, freeze player, makes a seek -5
@@ -90,11 +90,11 @@ playerstart:
 				dvdkeypress(rcret);
 				playinfobarcount++;
 				if(playinfobarstatus > 0)
-					screenplayinfobar(file, 0, playertype, flag);
+					screenplayinfobar(file, NULL, 0, playertype, flag);
 				if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL) * 10)
 				{
 					playinfobarstatus = 0;
-					screenplayinfobar(NULL, 1, playertype, flag);
+					screenplayinfobar(NULL, NULL, 1, playertype, flag);
 				}
 
 				if(rcret == getrcconfigint("rcstop", NULL))
@@ -113,7 +113,7 @@ playerstart:
 				{
 					if(playinfobarstatus == 1)
 					{
-						screenplayinfobar(NULL, 1, playertype, flag);
+						screenplayinfobar(NULL, NULL, 1, playertype, flag);
 						playinfobarstatus = 0;
 					}
 					continue;
@@ -122,52 +122,52 @@ playerstart:
 				if(rcret == RCTIMEOUT) continue;
 
 				//if(rcret == getrcconfigint("rcyellow", NULL))
-				//	playrcyellow(file, playinfobarstatus, playertype, flag);
+				//	playrcyellow(file, NULL, playinfobarstatus, playertype, flag);
 				
 				//if(rcret == getrcconfigint("rctext", NULL) || rcret == getrcconfigint("rcsubtitel", NULL))
-				//	playrctext(file, playinfobarstatus, playertype, flag);
+				//	playrctext(file, NULL, playinfobarstatus, playertype, flag);
 					
 				if(rcret == getrcconfigint("rcgreen", NULL))
 				{
-					playrcgreen(file, playinfobarstatus, playertype, flag);
+					playrcgreen(file, NULL, playinfobarstatus, playertype, flag);
 					dvdchangevideo();
 				}
 					
 				if(rcret == getrcconfigint("rcred", NULL))
-					playrcred(file, playinfobarstatus, playertype, flag);
+					playrcred(file, NULL, playinfobarstatus, playertype, flag);
 
 				if(rcret == getrcconfigint("rcinfo", NULL))
-					playrcinfo(file, &playinfobarstatus, &playinfobarcount, playertype, flag);
+					playrcinfo(file, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
 				if(rcret == getrcconfigint("rcff", NULL))
-					playrcff(file, &playinfobarstatus, &playinfobarcount, playertype, flag);
+					playrcff(file, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
 				if(rcret == getrcconfigint("rcfr", NULL))
-					playrcfr(file, &playinfobarstatus, &playinfobarcount, playertype, flag);
+					playrcfr(file, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
 
 				if(rcret == getrcconfigint("rcpause", NULL))
-					playrcpause(file, &playinfobarstatus, &playinfobarcount, playertype, flag);
+					playrcpause(file, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
 
 				if(rcret == getrcconfigint("rcplay", NULL))
-					playrcplay(file, &playinfobarstatus, &playinfobarcount, playertype, flag);
+					playrcplay(file, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
 
 				if(rcret == getrcconfigint("rc1", NULL))
-					playrcjumpr(file, skip13, &playinfobarstatus, &playinfobarcount, playertype, flag);
+					playrcjumpr(file, NULL, skip13, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
 				if(rcret == getrcconfigint("rc4", NULL))
-					playrcjumpr(file, skip46, &playinfobarstatus, &playinfobarcount, playertype, flag);
+					playrcjumpr(file, NULL, skip46, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
 				if(rcret == getrcconfigint("rc7", NULL))
-					playrcjumpr(file, skip79, &playinfobarstatus, &playinfobarcount, playertype, flag);
+					playrcjumpr(file, NULL, skip79, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
 				if(rcret == getrcconfigint("rc3", NULL))
-					playrcjumpf(file, skip13, &playinfobarstatus, &playinfobarcount, playertype, flag);
+					playrcjumpf(file, NULL, skip13, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
 				if(rcret == getrcconfigint("rc6", NULL))
-					playrcjumpf(file, skip46, &playinfobarstatus, &playinfobarcount, playertype, flag);
+					playrcjumpf(file, NULL, skip46, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
 				if(rcret == getrcconfigint("rc9", NULL))
-					playrcjumpf(file, skip79, &playinfobarstatus, &playinfobarcount, playertype, flag);
+					playrcjumpf(file, NULL, skip79, &playinfobarstatus, &playinfobarcount, playertype, flag);
 			}
 			//don't change this sleep, without this
 			//the player stops to fast, and a last seek can
@@ -177,7 +177,7 @@ playerend:
 			dvdafterend();
 
 			writevfd("DVD");
-			screenplayinfobar(file, 1, playertype, flag);
+			screenplayinfobar(file, NULL, 1, playertype, flag);
 
 			if(startfile == NULL)
 			{

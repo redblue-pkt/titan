@@ -87,7 +87,7 @@ void screenmc_pictureplayer()
 	if(stopradio == 0 && getconfig("mc_pp_sound", NULL) != NULL && ostrcmp(sound, "off") != 0)
 	{
 		playerret = playerstart(track);
-		playwritevfd(track);
+		playwritevfd(track, NULL);
 
 		#ifndef SIMULATE
 			if(playerret != 0)
@@ -116,12 +116,12 @@ void screenmc_pictureplayer()
 		if(rcret == getrcconfigint("rcplay", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcplay(filename, &playinfobarstatus, &playinfobarcount, playertype, flag);
+				playrcplay(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rcpause", NULL))
 		{
 			if((status.play == 1) || (status.pause == 1))
-				playrcpause(filename, &playinfobarstatus, &playinfobarcount, playertype, flag);
+				playrcpause(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if((rcret == getrcconfigint("rcchdown", NULL)) || (rcret == getrcconfigint("rcprev", NULL)))
 		{
@@ -155,7 +155,7 @@ void screenmc_pictureplayer()
 		else if(rcret == getrcconfigint("rcred", NULL))
 		{
 			if(status.play == 1)
-				playrcred(filename, playinfobarstatus, playertype, flag);
+				playrcred(filename, NULL, playinfobarstatus, playertype, flag);
 			else
 			{
 				if(playlist == 0)
@@ -175,7 +175,7 @@ void screenmc_pictureplayer()
 		else if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			if(status.play == 1)
-				playrcgreen(filename, playinfobarstatus, playertype, flag);
+				playrcgreen(filename, NULL, playinfobarstatus, playertype, flag);
 			else
 			{
 				showplaylist(apskin, filelistpath, filelist, listbox, b2, 0, &playlist, &eof, &filename, &currentdirectory, &playertype, flag);
@@ -186,7 +186,7 @@ void screenmc_pictureplayer()
 		else if(rcret == getrcconfigint("rctext", NULL))
 		{		
 			if(status.play == 1)
-				playrctext(filename, playinfobarstatus, playertype, flag);	
+				playrctext(filename, NULL, playinfobarstatus, playertype, flag);	
 		}
 		else if(rcret == getrcconfigint("rcmenu", NULL))
 		{
@@ -224,7 +224,7 @@ void screenmc_pictureplayer()
 				if(stopradio == 0 && getconfig("mc_pp_sound", NULL) != NULL && ostrcmp(sound, "off") != 0)
 				{
 					playerret = playerstart(track);
-					playwritevfd(filename);
+					playwritevfd(filename, NULL);
 
 					#ifndef SIMULATE
 						if(playerret != 0)
@@ -346,7 +346,7 @@ void screenmc_pictureplayer()
 				if(stopradio == 0 && getconfig("mc_pp_sound", NULL) != NULL && ostrcmp(sound, "off") != 0)
 				{
 					playerret = playerstart(filename);
-					playwritevfd(filename);
+					playwritevfd(filename, NULL);
 
 					#ifndef SIMULATE
 						if(playerret != 0)
@@ -369,7 +369,7 @@ void screenmc_pictureplayer()
 					#endif
 				}
 
-				screenplayinfobar(filename, 0, playertype, 0);			
+				screenplayinfobar(filename, NULL, 0, playertype, 0);			
 				status.play = 1;
 			}
 			else if(filelist->select != NULL && filelist->select->input != NULL)
@@ -443,7 +443,7 @@ void screenmc_pictureplayer()
 			if(stopradio == 0 && getconfig("mc_pp_sound", NULL) != NULL && ostrcmp(sound, "off") != 0)
 			{
 				playerret = playerstart(track);
-				playwritevfd(filename);
+				playwritevfd(filename, NULL);
 
 				#ifndef SIMULATE
 					if(playerret != 0)

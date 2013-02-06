@@ -325,47 +325,47 @@ void screenmc_audioplayer()
 		if(rcret == getrcconfigint("rc1", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpr(filename, 10, &playinfobarstatus, &playinfobarcount, playertype, flag);
+				playrcjumpr(filename, NULL, 10, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rc4", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpr(filename, 30, &playinfobarstatus, &playinfobarcount, playertype, flag);
+				playrcjumpr(filename, NULL, 30, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rc7", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpr(filename, 60, &playinfobarstatus, &playinfobarcount, playertype, flag);
+				playrcjumpr(filename, NULL, 60, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rc3", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpf(filename, 10, &playinfobarstatus, &playinfobarcount, playertype, flag);
+				playrcjumpf(filename, NULL, 10, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rc6", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpf(filename, 30, &playinfobarstatus, &playinfobarcount, playertype, flag);
+				playrcjumpf(filename, NULL, 30, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rc9", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpf(filename, 60, &playinfobarstatus, &playinfobarcount, playertype, flag);
+				playrcjumpf(filename, NULL, 60, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rcff", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcff(filename, &playinfobarstatus, &playinfobarcount, playertype, 2);
+				playrcff(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, 2);
 		}	
 		else if(rcret == getrcconfigint("rcfr", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcfr(filename, &playinfobarstatus, &playinfobarcount, playertype, 2);
+				playrcfr(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, 2);
 		}
 		else if(rcret == getrcconfigint("rcplay", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
-				playrcplay(filename, &playinfobarstatus, &playinfobarcount, playertype, flag);
+				playrcplay(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
 			//showplaylist(1);
 		}
 		else if(rcret == getrcconfigint("rcpause", NULL))
@@ -377,7 +377,7 @@ void screenmc_audioplayer()
 				drawscreen(apskin, 0, 0);
 			}
 			if((status.play == 1) || (status.pause == 1))
-				playrcpause(filename, &playinfobarstatus, &playinfobarcount, playertype, flag);
+				playrcpause(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if((rcret == getrcconfigint("rcchdown", NULL)) || (rcret == getrcconfigint("rcnext", NULL)))
 		{
@@ -586,7 +586,7 @@ void screenmc_audioplayer()
 				eof = 0;
 
 				playerret = playerstart(filename);
-				playwritevfd(filename);
+				playwritevfd(filename, NULL);
 
 				#ifndef SIMULATE
 					if(playerret != 0)
@@ -683,7 +683,7 @@ void screenmc_audioplayer()
 				debug(50, "playerstart: %s", filename);
 				eof = 0;
 				playerret = playerstart(filename);
-				playwritevfd(filename);
+				playwritevfd(filename, NULL);
 
 				#ifndef SIMULATE
 					if(playerret != 0)

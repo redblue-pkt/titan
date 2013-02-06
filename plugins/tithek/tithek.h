@@ -742,7 +742,7 @@ void tithekbackgrounddownloadthread(struct stimerthread* timernode, struct downl
 				int rcret = servicestop(status.aktservice, 1, 1);
 				if(rcret == 1) return;
 			}
-			screenplay(node->filename, node->title, 2, flag);
+			screenplay(node->filename, node->filename, 2, flag);
 			if(status.mcaktiv == 0)
 				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 		}		
@@ -1636,7 +1636,7 @@ waitrcstart:
 				tmpstr = string_replace(" (\?\?)", "", tmpstr, 1);
 				debug(99, "tmpstr: %s", tmpstr);
 
-				playrcred(tmpstr, 1, 0, 99);
+				playrcred(tmpstr, NULL, 1, 0, 99);
 				free(tmpstr), tmpstr = NULL;
 			}
 		}

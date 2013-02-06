@@ -756,7 +756,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 							else
 								playerret = playerstart(*filename);
 					
-							playwritevfd(*filename);
+							playwritevfd(*filename, NULL);
 				
 	
 							#ifndef SIMULATE
@@ -1001,9 +1001,9 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 				else
 					playerret = playerstart(*filename);
 
-				playwritevfd(*filename);
+				playwritevfd(*filename, NULL);
 				
-				//playwritevfd(*filename);
+				//playwritevfd(*filename, NULL);
 				#ifndef SIMULATE
 					if(playerret != 0)
 					{
@@ -1015,7 +1015,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 	
 				status.play = 1;
 				if(flag == 1)
-					screenplayinfobar(*filename, 0, 0, 0);
+					screenplayinfobar(*filename, NULL, 0, 0, 0);
 			}				
 
 			*playlist = 1;
