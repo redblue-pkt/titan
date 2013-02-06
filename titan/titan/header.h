@@ -388,6 +388,10 @@ void playrcplay(char* file, char* showname, int* playinfobarstatus, int* playinf
 void playrcjumpr(char* file, char* showname, int sec, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
 void playrcjumpf(char* file, char* showname, int sec, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
 void get_mediadb_scan_info();
+void playrcblue(char* file, char* showname, int playinfobarstatus, int playertype, int flag);
+void playrcyellow(char* file, char* showname, int playinfobarstatus, int playertype, int flag);
+void playrctext(char* file, char* showname, int playinfobarstatus, int playertype, int flag);
+void playrcok(char* file, char* showname, int playinfobarstatus, int playertype, int flag);
 
 //inetwork.h
 struct inetwork* getinetworkbydevice(char* device);
