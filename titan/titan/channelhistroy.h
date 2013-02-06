@@ -106,7 +106,7 @@ void screenchannelhistory()
 		rcret = waitrc(chistory, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcok", NULL))
+		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcrecall", NULL))
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL && listbox->select->handle1 != NULL)
 				servicecheckret(servicestart((struct channel*)listbox->select->handle, listbox->select->handle1, NULL, 0), 0);
