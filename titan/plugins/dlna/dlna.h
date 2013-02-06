@@ -227,7 +227,7 @@ int writedlna(const char* filename, struct dlna* node)
 
 void screendlna()
 {
-	int rcret = -1, ret = 0, i = 0;
+	int rcret = -1, ret = 0;
 	struct skin* dlna = getscreen("dlnasettings");
 	struct skin* listbox = getscreennode(dlna, "listbox");
 	struct skin* startmode = getscreennode(dlna, "startmode");

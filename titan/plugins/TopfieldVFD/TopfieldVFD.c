@@ -50,7 +50,7 @@ void deinit(void)
 {
 	if(checkbox("TF7700"))
 	{
-		deltimer(TopfieldVFDstimerthread);
+		deltimer(TopfieldVFDstimerthread, 1);
 		pluginaktiv = 0;
 		debug(10, "TopfieldVFD removed !!!");
 	}

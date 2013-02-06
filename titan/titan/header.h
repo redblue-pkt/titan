@@ -257,6 +257,7 @@ int videocontinue(struct dvbdev* node);
 int videofastforward(struct dvbdev* node, int frames);
 int videoclearbuffer(struct dvbdev* node);
 int videogetpts(struct dvbdev* node, uint64_t* pts);
+int videoslowmotion(struct dvbdev* node, int frames);
 
 // scan.h
 unsigned int satblindscan(struct stimerthread* timernode, int onlycalc);
@@ -286,6 +287,8 @@ struct mainplaylist* screenmainplaylist(int flag);
 //playlist.h
 int getplaylistmax(struct playlist* plist);
 struct playlist* getplaylistrandom(struct playlist* plist, int max);
+void getplaylistmaxold(struct skin* playlist, int* maxdirs, int* maxfiles);
+struct skin* getplaylistrandomold(struct skin* playlist, int maxdirs, int maxfiles);
 
 // screensaveradjust.h
 void screensaveradjust();
@@ -466,6 +469,8 @@ int playergetbufferstatus();
 //filelist.h
 void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* filelist, char* path, char* filemask, int tmpview, char* selection);
 int createfilelist(struct skin* screen, struct skin* node, int view);
+void getfilelistmax(struct skin* filelist, int* maxdirs, int* maxfiles);
+struct skin* getfilelistrandom(struct skin* filelist, int maxdirs, int maxfiles);
 
 //plugin.h
 struct skin* getplugin(char* pluginname);
@@ -560,6 +565,7 @@ void screenmute(struct skin* screen, struct skin* node, int flag);
 
 //menu.h
 int menucall(struct skin* menunode, struct skin* menuentry, int check);
+struct skin* menu(struct skin* menu);
 
 //textbox.h
 int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char* b3, int rc3, char* b4, int rc4, int width, int height, int timeout, int flag);
@@ -568,6 +574,7 @@ int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char*
 struct clist* addconfig(char *key, char *value);
 void delconfigtmpall();
 struct clist* addconfigscreencheck(char *key, struct skin *node, char* check);
+struct clist* addconfigscreen(char *key, struct skin *node);
 struct clist* addconfigdef(char *key, char *value);
 struct clist* addconfigtmp(char *key, char *value);
 char* getconfig(char *key, char *ext);
@@ -587,6 +594,7 @@ void delownerrc(struct skin* owner);
 struct rc* addrc(int key, void *func, struct skin* screen, struct skin *screennode);
 void delrc(int key, struct skin* owner, struct skin* screennode);
 int flushrc(unsigned int timeout);
+int writerc(int keycode);
 
 //rcfunc.h
 void inputboxchar(struct skin* screen, struct skin* inputbox, char zeichen, int screencalc, int filelistview, int flag);
