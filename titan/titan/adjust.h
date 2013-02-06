@@ -56,6 +56,7 @@ void screenadjust()
 	struct skin* usecec = getscreennode(adjust, "usecec");
 	struct skin* playerbuffersize = getscreennode(adjust, "playerbuffersize");
 	struct skin* playerbufferseektime = getscreennode(adjust, "playerbufferseektime");
+	struct skin* sataswitch = getscreennode(adjust, "sataswitch");
 
 	struct skin* tmp = NULL;
 
@@ -273,7 +274,11 @@ void screenadjust()
 		usecec->hidden = NO;
 	else
 		usecec->hidden = YES;
-	
+
+	if(checkbox("AT7500") == 1 || checkbox("ATEMIO7600") == 1)
+		sataswitch->hidden = NO;
+	else
+		sataswitch->hidden = YES;
 	
 	addchoicebox(playerbuffersize, "0", _("no"));
 	addchoicebox(playerbuffersize, "524288", "512KB");
@@ -299,7 +304,13 @@ void screenadjust()
 	addchoicebox(playerbufferseektime, "8", "8");
 	addchoicebox(playerbufferseektime, "9", "9");
 	addchoicebox(playerbufferseektime, "10", "10");
-	setchoiceboxselection(playerbufferseektime, getconfig("playerbufferseektime", NULL));	
+	setchoiceboxselection(playerbufferseektime, getconfig("playerbufferseektime", NULL));
+
+	addchoicebox(sataswitch, "0", _("extern"));
+	addchoicebox(sataswitch, "1", _("intern"));
+	tmpstr = getsataswitch();
+	setchoiceboxselection(sataswitch, tmpstr);
+	free(tmpstr); tmpstr = NULL;
 	
 	drawscreen(adjust, 0, 0);
 	addscreenrc(adjust, listbox);
@@ -387,9 +398,15 @@ void screenadjust()
 			if(ostrcmp(minitv->ret, "1") == 0) resettvpic();
 			addconfigscreencheck("minitv", minitv, "0");
 
-			if(checkbox("ATEMIO500") == 1 || checkbox("ATEMIO510") == 1 || checkbox("UFS912") == 1 || checkbox("AT7500") == 1 || checkbox("ATEMIO7600") == 1)
+			if(checkbox("ATEMIO500") == 1 || checkbox("ATEMIO510") == 1 || checkbox("UFS912") == 1)
 				addconfigscreencheck("usecec", usecec, "0");
-			
+
+			if(checkbox("AT7500") == 1 || checkbox("ATEMIO7600") == 1)
+			{
+				addconfigscreencheck("usecec", usecec, "0");
+				if(sataswitch->ret != NULL) addownconfig("sataswitch", sataswitch->ret);
+			}
+
 			if(checkbox("ATEVIO7000") == 1)
 			{
 				addconfigscreencheck("at7000frontrun", at7000frontrun, "0");

@@ -4650,6 +4650,31 @@ char* getaudiosource()
 	return value;
 }
 
+char* getsataswitch()
+{
+	debug(1000, "in");
+	char *sataswitchdev = NULL;
+	char *value = NULL;
+
+	sataswitchdev = getconfig("sataswitchdev", NULL);
+
+	if(sataswitchdev == NULL)
+	{
+		debug(1000, "out -> NULL detect");
+		return NULL;
+	}
+
+	value = readsys(sataswitchdev, 1);
+	if(value == NULL)
+	{
+		debug(1000, "out -> NULL detect");
+		return NULL;
+	}
+
+	debug(1000, "out");
+	return value;
+}
+
 int setprogress(value)
 {
 	debug(1000, "in");
