@@ -2855,8 +2855,8 @@ msgid "Download successful !"
 msgstr "Download erfolgreich abgeschlossen !"
 
 msgid "dnsaddresse"
-msgstr "DNS Addresse"
+msgstr "DNS Adresse"
 
 msgid "usedns"
-msgstr "Benutze DNS Addresse"
+msgstr "Benutze DNS Adresse"
 

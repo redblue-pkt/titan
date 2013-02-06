@@ -17,6 +17,9 @@ void screenmc_pictureplayer()
 	addconfigtmp("dirsort", tmpstr);
 	free(tmpstr), tmpstr = NULL;
 
+	// disable buffer
+	addconfigtmp("playerbuffersize", "0");
+				
 	// workaround for grey background mvi
 	struct skin* blackscreen = getscreen("blackscreen");
 	drawscreen(blackscreen, 0, 0);
@@ -463,6 +466,9 @@ void screenmc_pictureplayer()
 			}
 		}
 	}
+
+	// remove disable buffer
+	delconfigtmp("playerbuffersize");
 
 	deinitscreensaver();
 	status.hangtime = getconfigint("hangtime", NULL);
