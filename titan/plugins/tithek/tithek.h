@@ -804,6 +804,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 			localfile = ostrcat(localfile, localname, 1, 0);
 	}
 
+/*
 	debug(99, "---------------------------------------");
 	debug(99, "link: %s", link);
 	debug(99, "localname: %s", localname);
@@ -812,9 +813,9 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	debug(99, "port: %d", port);
 	debug(99, "path: %s", path);
 	debug(99, "localfile: %s", localfile);
-	debug(99, "pw: %s", pw);
+//	debug(99, "pw: %s", pw);
 	debug(99, "---------------------------------------");
-
+*/
 	if(flag == 0)
 	{
 		if(localfile != NULL && !file_exist(localfile))
