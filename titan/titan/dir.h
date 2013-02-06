@@ -243,7 +243,7 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 		if(rcret == getrcconfigint("rcinfo", NULL) && status.play == 0 && flag == 64)
 		{
 			char* file = createpath(filelistpath->text, filelist->select->text);
-			playrcred(file, 0, 1, 1);
+			playrcred(file, NULL, 0, 1, 1);
 			free(file), file = NULL;
 			drawscreen(dir, 0, 0);
 		}

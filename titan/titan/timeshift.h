@@ -43,7 +43,7 @@ void timeshiftstop(int flag)
 	playerstopts(1, flag);
 
 	writevfd("Player");
-	screenplayinfobar(NULL, 1, 1, 4);
+	screenplayinfobar(NULL, NULL, 1, 1, 4);
 	
 	
 	if(snode != NULL)
@@ -105,7 +105,7 @@ void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)
 	status.playercan = 0x7FFF;
 	*playinfobarstatus = 1;
 	*playinfobarcount = 0;
-	screenplayinfobar(snode->recname, 0, 1, 4);
+	screenplayinfobar(snode->recname, NULL, 0, 1, 4);
 }
 
 void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
@@ -264,14 +264,14 @@ void timeshiftseek(int sekunden, int* playinfobarstatus, int* playinfobarcount, 
 				}
 				*playinfobarstatus = 2;
 				*playinfobarcount = 0;
-				screenplayinfobar(status.playfile, 0, 1, 4);
+				screenplayinfobar(status.playfile, NULL, 0, 1, 4);
 			}	
 			else
 			{
 				playerseekts(snode, sekunden, 1);
 				*playinfobarstatus = 1;
 				*playinfobarcount = 0;
-				screenplayinfobar(status.playfile, 0, 1, 4);
+				screenplayinfobar(status.playfile, NULL, 0, 1, 4);
 			}
 		}
 	}
@@ -281,12 +281,12 @@ void timeshiftseek(int sekunden, int* playinfobarstatus, int* playinfobarcount, 
 		{
 			*playinfobarstatus = 1;
 			*playinfobarcount = 0;
-			screenplayinfobar(status.playfile, 0, 1, 4);
+			screenplayinfobar(status.playfile, NULL, 0, 1, 4);
 		}
 		else if(*playinfobarstatus == 1)
 		{
 			*playinfobarstatus = 0;
-			screenplayinfobar(status.playfile, 1, 1, 4);
+			screenplayinfobar(status.playfile, NULL, 1, 1, 4);
 		}
 	}
 }
@@ -295,11 +295,11 @@ void timeshiftinfobar(int* playinfobarstatus, int* playinfobarcount)
 {
 	(*playinfobarcount)++;
 	if(*playinfobarstatus > 0)
-		screenplayinfobar(status.playfile, 0, 1, 4);
+		screenplayinfobar(status.playfile, NULL, 0, 1, 4);
 	if(*playinfobarstatus == 1 && *playinfobarcount >= getconfigint("infobartimeout", NULL))
 	{
 		*playinfobarstatus = 0;
-		screenplayinfobar(NULL, 1, 1, 4);
+		screenplayinfobar(NULL, NULL, 1, 1, 4);
 	}
 }
 

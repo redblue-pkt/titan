@@ -782,7 +782,7 @@ void playrcsr(char* file, char* showname, int* playinfobarstatus, int* playinfob
 void playrcff(char* file, char* showname, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
   if(status.pause == 1)
-    playrcsf(file, playinfobarstatus, playinfobarcount, playertype, 1, flag);
+    playrcsf(file, showname, playinfobarstatus, playinfobarcount, playertype, 1, flag);
 
 	if(checkbit(status.playercan, 7) == 0) return;
 
@@ -838,7 +838,7 @@ void playrcff(char* file, char* showname, int* playinfobarstatus, int* playinfob
 void playrcfr(char* file, char* showname, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
   if(status.pause == 1)
-    playrcsr(file, playinfobarstatus, playinfobarcount, playertype, 1, flag);
+    playrcsr(file, showname, playinfobarstatus, playinfobarcount, playertype, 1, flag);
 	
   if(checkbit(status.playercan, 8) == 0) return;
 
