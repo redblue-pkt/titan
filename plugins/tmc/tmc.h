@@ -1464,7 +1464,7 @@ void screentmcmenu()
 							while(plist != NULL)
 							{
 								//TODO: play playlist
-								playlistret = screenplay(plist->file, 0, 0);
+								playlistret = screenplay(plist->file, NULL, 0, 0);
 								if(playlistret == 1 || playlistret == 2) break;
 
 								if(playlistplaytype == 2) //random
@@ -1488,7 +1488,7 @@ void screentmcmenu()
 					if(file != NULL)
 					{
 						drawscreen(skin, 0, 0);
-						screenplay(file, 0, 0);
+						screenplay(file, NULL, 0, 0);
 
 						free(file); file = NULL;
 						drawscreen(tmcbg, 0, 1);
@@ -1506,7 +1506,7 @@ void screentmcmenu()
 				{
 					drawscreen(skin, 0, 0);
 
-					screenplay(tmcpic3->ret, 0, 0);
+					screenplay(tmcpic3->ret, NULL, 0, 0);
 
 					drawscreen(tmcbg, 0, 1);
 					tmcpicscroll(menuid, tmcpictitle, tmcpicstar, tmcstatus, tmcpic1, tmcpic2, tmcpic3, tmcpic4, tmcpic5, tmcpictitlebg, tmcpicstarbg, tmcstatusbg, 0);
@@ -1529,7 +1529,7 @@ void screentmcmenu()
 								char* tmpfile = ostrcat(mfilter->node->path, "/", 0, 0);
 								tmpfile = ostrcat(tmpfile, mfilter->node->file, 1, 0);
 								tmpfile = addmountpart(tmpfile, 1);
-								audioret = screenplay(tmpfile, 0, 3);
+								audioret = screenplay(tmpfile, NULL, 0, 3);
 								free(tmpfile); tmpfile = NULL;
 								mediadbfilterpos = mfilter;
 							}

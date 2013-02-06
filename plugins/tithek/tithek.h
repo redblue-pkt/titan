@@ -742,7 +742,7 @@ void tithekbackgrounddownloadthread(struct stimerthread* timernode, struct downl
 				int rcret = servicestop(status.aktservice, 1, 1);
 				if(rcret == 1) return;
 			}
-			screenplay(node->filename, 2, flag);
+			screenplay(node->filename, node->title, 2, flag);
 			if(status.mcaktiv == 0)
 				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 		}		
@@ -1070,7 +1070,7 @@ void addfav(char* title, char* link, char* pic, char* localname, char* menutitle
 	free(input); input = NULL;
 }
 
-void cacheplay(char* link, char* filename, int flag)
+void cacheplay(char* link, char* filename, char* showname, int flag)
 {
 	struct skin* load = getscreen("loadingproz");
 	struct skin* proztext = getscreennode(load, "proztext");
@@ -1177,7 +1177,7 @@ void cacheplay(char* link, char* filename, int flag)
 		free(tmpstr), tmpstr = NULL;
 	}
 
-	screenplay(file, 2, 0);
+	screenplay(file, showname, 2, 0);
 	sockclose(&dnode->connfd);
 	free(dnode); dnode = NULL;
 
@@ -1385,56 +1385,56 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 			if(ostrcmp(keyconf, "Streaming Playback (default)") == 0)
 			{
 				addconfigtmp("playerbuffersize", "0");
-				screenplay(tmpstr1, 2, flag);
+				screenplay(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 2, flag);
 				delconfigtmp("playerbuffersize");
 			}
 			else if(ostrcmp(keyconf, "Streaming Playback Caching (0.5MB)") == 0)
 			{
 				addconfigtmp("playerbuffersize", "524288");
-				screenplay(tmpstr1, 2, flag);
+				screenplay(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 2, flag);
 				delconfigtmp("playerbuffersize");
 			}
 			else if(ostrcmp(keyconf, "Streaming Playback Caching (1MB)") == 0)
 			{
 				addconfigtmp("playerbuffersize", "1048576");
-				screenplay(tmpstr1, 2, flag);
+				screenplay(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 2, flag);
 				delconfigtmp("playerbuffersize");
 			}
 			else if(ostrcmp(keyconf, "Streaming Playback Caching (2MB)") == 0)
 			{
 				addconfigtmp("playerbuffersize", "2097152");
-				screenplay(tmpstr1, 2, flag);
+				screenplay(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 2, flag);
 				delconfigtmp("playerbuffersize");
 			}
 			else if(ostrcmp(keyconf, "Streaming Playback Caching (3MB)") == 0)
 			{
 				addconfigtmp("playerbuffersize", "3145728");
-				screenplay(tmpstr1, 2, flag);
+				screenplay(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 2, flag);
 				delconfigtmp("playerbuffersize");
 			}
 			else if(ostrcmp(keyconf, "Streaming Playback Caching (4MB)") == 0)
 			{
 				addconfigtmp("playerbuffersize", "4194304");
-				screenplay(tmpstr1, 2, flag);
+				screenplay(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 2, flag);
 				delconfigtmp("playerbuffersize");
 			}
 			else if(ostrcmp(keyconf, "Streaming Playback Caching (5MB)") == 0)
 			{
 				addconfigtmp("playerbuffersize", "5242880");
-				screenplay(tmpstr1, 2, flag);
+				screenplay(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 2, flag);
 				delconfigtmp("playerbuffersize");
 			}
 			else if(ostrcmp(keyconf, "File Caching Playback (10MB / 120s)") == 0)
 			{
-				cacheplay(tmpstr1, filename, 1);
+				cacheplay(tmpstr1, filename, ((struct tithek*)listbox->select->handle)->title, 1);
 			}
 			else if(ostrcmp(keyconf, "File Caching Playback (20MB / 240s)") == 0)
 			{
-				cacheplay(tmpstr1, filename, 2);
+				cacheplay(tmpstr1, filename, ((struct tithek*)listbox->select->handle)->title, 2);
 			}
 			else if(ostrcmp(keyconf, "File Caching Playback (30MB / 360s)") == 0)
 			{
-				cacheplay(tmpstr1, filename, 3);
+				cacheplay(tmpstr1, filename, ((struct tithek*)listbox->select->handle)->title, 3);
 			}
 			else if(ostrcmp(keyconf, "Download Full File") == 0)
 			{
@@ -1449,7 +1449,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 					{
 						tmpstr2 = ostrcat(getconfig("rec_streampath", NULL), "/", 0, 0);
 						tmpstr2 = ostrcat(tmpstr2, search, 1, 0);
-						screenplay(tmpstr2, 2, flag);
+						screenplay(tmpstr2, ((struct tithek*)listbox->select->handle)->title, 2, flag);
 						free(tmpstr2); tmpstr2 = NULL;
 					}
 				}
