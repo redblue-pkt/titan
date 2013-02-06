@@ -370,20 +370,20 @@ void dvdafterend();
 
 // play.h
 void playerffts(int speed);
-int screenplay(char* startfile, int startfolder, int flag);
+int screenplay(char* startfile, char* showname, int startfolder, int flag);
 void playrcstop(int playertype, int flag);
-void playwritevfd(char* file);
+void playwritevfd(char* file, char* showname);
 void playstartservice();
-void screenplayinfobar(char* file, int mode, int playertype, int flag);
-void playrcgreen(char* file, int playinfobarstatus, int playertype, int flag);
-void playrcred(char* file, int playinfobarstatus, int playertype, int flag);
-void playrcinfo(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
-void playrcff(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
-void playrcfr(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
-void playrcpause(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
-void playrcplay(char* file, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
-void playrcjumpr(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
-void playrcjumpf(char* file, int sec, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
+void screenplayinfobar(char* file, char* showname, int mode, int playertype, int flag);
+void playrcgreen(char* file, char* showname, int playinfobarstatus, int playertype, int flag);
+void playrcred(char* file, char* showname, int playinfobarstatus, int playertype, int flag);
+void playrcinfo(char* file, char* showname, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
+void playrcff(char* file, char* showname, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
+void playrcfr(char* file, char* showname, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
+void playrcpause(char* file, char* showname, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
+void playrcplay(char* file, char* showname, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
+void playrcjumpr(char* file, char* showname, int sec, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
+void playrcjumpf(char* file, char* showname, int sec, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
 void get_mediadb_scan_info();
 
 //inetwork.h

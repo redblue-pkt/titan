@@ -319,7 +319,7 @@ void screeninfobar()
 			status.infobar = 0;
 			status.infobaraktiv = 0;
 			clearscreen(infobar);
-			screenplay(NULL, 1, 0);
+			screenplay(NULL, NULL, 1, 0);
 			status.infobaraktiv = 1;
 			status.updatevfd = START;
 			drawscreen(skin, 0, 0);
