@@ -404,7 +404,11 @@ void screenadjust()
 			if(checkbox("AT7500") == 1 || checkbox("ATEMIO7600") == 1)
 			{
 				addconfigscreencheck("usecec", usecec, "0");
-				if(sataswitch->ret != NULL) addownconfig("sataswitch", sataswitch->ret);
+				if(sataswitch->ret != NULL)
+				{
+					addownconfig("sataswitch", sataswitch->ret);
+					setsataswitch(sataswitch->ret);
+				}
 			}
 
 			if(checkbox("ATEVIO7000") == 1)

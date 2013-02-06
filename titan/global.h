@@ -4675,6 +4675,25 @@ char* getsataswitch()
 	return value;
 }
 
+int setsataswitch(char* value)
+{
+	debug(1000, "in");
+	char* sataswitchdev;
+	int ret = 1;
+
+	sataswitchdev = getconfig("sataswitchdev", NULL);
+
+	if(sataswitchdev != NULL && value != NULL)
+	{
+		debug(100, "set %s to %s", sataswitchdev, value);
+		ret = writesys(sataswitchdev, value, 0);
+		return ret;
+	}
+
+	debug(1000, "out");
+	return 0;
+}
+
 int setprogress(value)
 {
 	debug(1000, "in");
