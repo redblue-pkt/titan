@@ -1073,13 +1073,13 @@ int playcheckdirrcret(char* file, int dirrcret)
 
 		tmpstr = readfiletomem(epgfilename, 0);
 		if(tmpstr != NULL)
-			textbox(_("EPG Info"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 700, 600, 0, 2);
+			textbox(_("EPG Info"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 2);
 		else {
 			free(epgfilename); epgfilename = NULL;
 			epgfilename = changefilenameext(file, ".eit");
 			tmpstr = readeittomem(epgfilename);
 			if(tmpstr != NULL)
-				textbox(_("EPG Info"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 700, 600, 0, 2);
+				textbox(_("EPG Info"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 2);
 		}
 		free(epgfilename); epgfilename = NULL;
 		free(tmpstr); tmpstr = NULL;
@@ -1087,7 +1087,7 @@ int playcheckdirrcret(char* file, int dirrcret)
 	}
 	if(dirrcret == 1)
 	{
-		if(textbox(_("Realy Delete ?"), file, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+		if(textbox(_("Realy Delete ?"), file, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
 		{
 			unlink(file);
 			epgfilename = changefilenameext(file, ".epg");

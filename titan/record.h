@@ -87,7 +87,7 @@ char* recordcheckret(struct stimerthread* timernode, int ret, int flag)
 		if(tmpstr != NULL)
 		{
 			if(checkbit(flag, 2) == 1) err("%s", tmpstr);
-			if(checkbit(flag, 1) == 1) textbox(_("Record / Timeshift / Stream"), tmpstr, _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, timeout, 0);
+			if(checkbit(flag, 1) == 1) textbox(_("Record / Timeshift / Stream"), tmpstr, _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, timeout, 0);
 		}
 	}
 	if(checkbit(flag, 3) == 0)
@@ -875,7 +875,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 			}
 			else
 			{
-				if(status.standby == 0 && textbox(_("Message"), _("Can't find free Tuner for Record.\nSwitch to Recording/Timeshift Channel ?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0) == 1)
+				if(status.standby == 0 && textbox(_("Message"), _("Can't find free Tuner for Record.\nSwitch to Recording/Timeshift Channel ?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 200, 10, 0) == 1)
 				{
 					ret = 14;
 					goto end;
@@ -1045,7 +1045,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 	if(type == RECTIMER && status.standby == 0)
 	{
 		tmpstr = ostrcat(_("Timer Record start !\n"), filename, 0, 0);
-		textbox(_("Message"), tmpstr, _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 4, 0);
+		textbox(_("Message"), tmpstr, _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 4, 0);
 		free(tmpstr); tmpstr = NULL;
 	}
 	
@@ -1256,7 +1256,7 @@ void screenrecorddirect()
 			if(epgnode != NULL && epgnode->endtime > time(NULL))
 				ret = recordstart(status.aktservice->channel, -1, 0, RECDIRECT, epgnode->endtime, NULL);
 			else
-				textbox(_("Message"), _("Can't get EPG time or EPG endtime not ok"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox(_("Message"), _("Can't get EPG time or EPG endtime not ok"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
 #else
 			ret = recordstart(status.aktservice->channel, -1,  0, RECDIRECT, time(NULL) + 5, NULL);
 #endif
