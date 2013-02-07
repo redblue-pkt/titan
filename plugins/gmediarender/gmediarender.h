@@ -90,10 +90,10 @@ void screengmediarender()
 
 	drawscreen(skin, 0, 0);
 
-	cmd = ostrcat(cmd, "/var/swap/titanplugins/gmediarender/gmediarender.sh gmediarender-", 1, 0);
+	cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/gmediarender/gmediarender.sh gmediarender-", 1, 0);
 	cmd = ostrcat(cmd, status.boxtype, 1, 0);
 	cmd = ostrcat(cmd, " &", 1, 0);
-	
+
 	//start renderer
 	system(cmd);
 	free(cmd), cmd = NULL;
