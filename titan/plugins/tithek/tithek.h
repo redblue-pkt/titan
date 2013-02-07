@@ -1471,7 +1471,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		
 		free(tmpstr1); tmpstr1 = NULL;
 	}
-	else<
+	else
 		textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 }
 
