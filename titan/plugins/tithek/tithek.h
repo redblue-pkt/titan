@@ -1485,13 +1485,17 @@ void screentithekplay(char* titheklink, char* title, int first)
 		char* tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/disclaimer.txt", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 		if(textbox(_("TitanNit Tithek disclaimer"), _(tmpstr), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 650, 0, 0) == 1)
 		{
-			FILE* fd = NULL;
-			if((fd = fopen(disclaimer, "w")) != NULL)
-				fclose(fd);
+			writesys(disclaimer, tmpstr, 0);				
+			free(tmpstr), tmpstr = NULL;
 		}
 		else
+		{
+			free(tmpstr), tmpstr = NULL;
+			free(disclaimer), disclaimer = NULL;
 			return;
+		}
 	}
+	free(disclaimer), disclaimer = NULL;
 
 	int rcret = -1, oaktline = 1, oaktpage = -1, ogridcol = 0;
 
