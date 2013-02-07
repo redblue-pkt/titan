@@ -1471,12 +1471,28 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		
 		free(tmpstr1); tmpstr1 = NULL;
 	}
-	else
+	else<
 		textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 }
 
 void screentithekplay(char* titheklink, char* title, int first)
 {
+	char* disclaimer = NULL;
+	disclaimer = ostrcat(disclaimer, "/var/etc/tithek_disclaimer_accepted", 1, 0);
+				
+	if(!file_exist(disclaimer))
+	{
+		char* tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/disclaimer.txt", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		if(textbox(_("TitanNit Tithek disclaimer"), _(tmpstr), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 650, 0, 0) == 1)
+		{
+			FILE* fd = NULL;
+			if((fd = fopen(disclaimer, "w")) != NULL)
+				fclose(fd);
+		}
+		else
+			return;
+	}
+
 	int rcret = -1, oaktline = 1, oaktpage = -1, ogridcol = 0;
 
 	if(!file_exist("/var/swap/player"))
