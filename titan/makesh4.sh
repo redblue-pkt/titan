@@ -749,6 +749,8 @@ cp -a "$HOME"/flashimg/BUILD/titan "$HOME"/flashimg/BUILD/titan-smal
 rm -rf "$HOME"/flashimg/BUILD/titan-smal/var/usr/local/share/titan/picons
 rm -rf "$HOME"/flashimg/BUILD/titan-smal/var/etc/titan/titan.cfg
 
+rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/skin/default/*_grid.png
+
 echo "[titan]--------------------------------------------------------"
 echo "[titan] building to: "$HOME"/flashimg/BUILD/titan"
 echo "[titan] copy this folder to duckbox: /var/usr/local/share/titan"
