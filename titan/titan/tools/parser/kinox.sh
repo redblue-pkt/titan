@@ -65,7 +65,7 @@ piccount=0
 counttt=0
 for ROUND0 in $main_list; do
 	wget --no-check-certificate "http://kinox.to/$ROUND0.html" -O cache.main.next.list
-exit
+#exit
 	main_next_list=`cat cache.main.next.list | grep /Stream/ | sed 's!/Stream/!\n/Stream/!' | grep ^/Stream/ | cut -d '"' -f1  | cut -d "'" -f1 | sort -um`
 	
 	if [ $ROUND0 == "Popular-Series" ]; then
