@@ -1634,6 +1634,9 @@ waitrcstart:
 				tmpstr = string_replace(" (de)", "", tmpstr, 1);
 				tmpstr = string_replace(" (en)", "", tmpstr, 1);
 				tmpstr = string_replace(" (\?\?)", "", tmpstr, 1);
+				tmpstr = string_replace_all("_", " ", tmpstr, 1);
+				tmpstr = string_replace_all("-", " ", tmpstr, 1);
+				tmpstr = string_replace_all(".", " ", tmpstr, 1);				
 				debug(99, "tmpstr: %s", tmpstr);
 
 				playrcred(tmpstr, NULL, 1, 0, 99);
