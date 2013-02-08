@@ -809,7 +809,6 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 /*
 	debug(99, "---------------------------------------");
 	debug(99, "link: %s", link);
-	debug(99, "fake: %s", fake);
 	debug(99, "localname: %s", localname);
 	debug(99, "---------------------------------------");
 	debug(99, "ip: %s", ip);
