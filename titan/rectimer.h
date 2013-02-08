@@ -209,7 +209,7 @@ void recrepeatecalc(struct rectimer* node)
 int checkrectimertime(struct rectimer* node)
 {
 	//don't load old timers
-	if(time(NULL) - node->end > 604800 && (node->status == 2 || node->status == 3))
+	if(time(NULL) - node->end > 604800 && (node->status == 2 || node->status == 3 || node->status == 4 || node->status == 5))
 		return 1;
 
 	if(time(NULL) > node->end && node->repeate == 0 && node->status == 0)
@@ -440,6 +440,7 @@ void checkrectimer(struct stimerthread* self)
 	{
 		self->delay = 10000;
 		readrectimer(getconfig("rectimerfile", NULL));
+		epgscancreatetimer();
 		checkboxstart();
 	}
 
@@ -514,12 +515,22 @@ void checkrectimer(struct stimerthread* self)
 			node->errstr = ostrcat(_("not started akttime greater timer endtime"), NULL, 0, 0);
 			status.writerectimer = 1;
 		}
+		//for epgscan
+		if(t >= begin && t < end && node->disabled == 0 && node->status == 4)
+		{
+			node->status = 5;
+			status.writerectimer = 1;
+			writerectimer(getconfig("rectimerfile", NULL), 0);
+
+			status.standby = 2;
+			screenstandby();
+		}
 		node = node->next;
 	}
 
 	m_unlock(&status.rectimermutex, 1);
 
-	if(node != NULL && node->disabled == 0)
+	if(node != NULL && node->disabled == 0 && node->status < 4)
 	{
 		if(node->justplay == 1)
 		{
@@ -753,6 +764,8 @@ int writerectimer(const char *filename, int flag)
 		if(node->recpath == NULL) node->recpath = ostrcat(node->recpath, NULL, 1, 0);
 		if(node->status == 0 || node->status == 1)
 			type = "timer";
+		else if(node->status == 4 || node->status == 5)
+			type = "epgscan";
 		else
 			type = "log";
 
@@ -764,7 +777,7 @@ int writerectimer(const char *filename, int flag)
 		}
 
 		//get wakeup time
-		if(node->status == 0 || node->status == 1)
+		if(node->status == 0 || node->status == 1 || node->status == 4)
 		{
 			if(node->begin < rectime && node->begin > curtime)
 				rectime = node->begin;
@@ -1356,7 +1369,7 @@ start:
 
 	while(rectimernode != NULL)
 	{
-		if((flag == 0 && (rectimernode->status == 2 || rectimernode->status == 3)) || (flag == 1 && (rectimernode->status == 0 || rectimernode->status == 1)))
+		if((flag == 0 && (rectimernode->status == 2 || rectimernode->status == 3)) || (flag == 1 && (rectimernode->status == 0 || rectimernode->status == 1)) || rectimernode->status == 4 || rectimernode->status == 5)
 		{
 			rectimernode = rectimernode->next;
 			continue;

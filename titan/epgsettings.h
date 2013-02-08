@@ -228,6 +228,12 @@ void screenepgsettings()
 			addconfigscreencheck("mhwepg", mhwepg, "0");
 			addconfigscreencheck("mhw2epg", mhw2epg, "0");
 			addconfigscreencheck("opentv", opentv, "0");
+
+			if(getconfig("epg_refreshtime", NULL) == NULL || ostrcmp(getconfig("epg_refreshtime", NULL), "0") == 0)
+				epgscandeltimer();
+			else
+				epgscancreatetimer();
+
 			break;
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL))
