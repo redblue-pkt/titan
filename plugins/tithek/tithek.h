@@ -1477,8 +1477,11 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 
 void screentithekplay(char* titheklink, char* title, int first)
 {
+	if(!file_exist("/var/swap/player"))
+		mkdir("/var/swap/player", 0777); 
+
 	char* disclaimer = NULL;
-	disclaimer = ostrcat(disclaimer, "/var/etc/tithek_disclaimer_accepted", 1, 0);
+	disclaimer = ostrcat(disclaimer, "/var/swap/player/tithek_disclaimer_accepted", 1, 0);
 				
 	if(!file_exist(disclaimer))
 	{
@@ -1498,9 +1501,6 @@ void screentithekplay(char* titheklink, char* title, int first)
 	free(disclaimer), disclaimer = NULL;
 
 	int rcret = -1, oaktline = 1, oaktpage = -1, ogridcol = 0;
-
-	if(!file_exist("/var/swap/player"))
-		mkdir("/var/swap/player", 0777); 
 
 	writesysint("/proc/sys/vm/drop_caches", 3, 0); 
 	
