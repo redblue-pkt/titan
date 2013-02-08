@@ -745,11 +745,12 @@ rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/tithek/men
 cp -a "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan."$TYPE".cfg "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan.cfg
 rm -rf "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan.*.cfg
 
+rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/skin/default/skin/*_grid.png
+rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/skin/default/skin/*_grid_*.png
+
 cp -a "$HOME"/flashimg/BUILD/titan "$HOME"/flashimg/BUILD/titan-smal
 rm -rf "$HOME"/flashimg/BUILD/titan-smal/var/usr/local/share/titan/picons
 rm -rf "$HOME"/flashimg/BUILD/titan-smal/var/etc/titan/titan.cfg
-
-rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/skin/default/*_grid.png
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] building to: "$HOME"/flashimg/BUILD/titan"
