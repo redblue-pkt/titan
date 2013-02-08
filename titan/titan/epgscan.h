@@ -1,6 +1,82 @@
 #ifndef EPGSCAN_H
 #define EPGSCAN_H
 
+void epgscandeltimer()
+{
+	struct rectimer *recnode = rectimer, *prev = rectimer;
+
+	while(recnode != NULL)
+	{
+		prev = recnode;
+		recnode = recnode->next;
+
+		if(prev->status == 4 || prev->status == 5)
+			delrectimer(prev, 0, 0);
+	}
+
+	writerectimer(getconfig("rectimerfile", NULL), 0);
+}
+
+void epgscancreatetimer()
+{
+	int daylight = 0;
+	struct tm* loctime = NULL;
+	time_t akttime = time(NULL), starttime = 0;
+	char* buf = NULL;
+	struct rectimer *recnode = rectimer, *prev = rectimer;
+
+	if(ostrcmp(getconfig("epg_refreshtime", NULL), "0") == 0)
+		return;
+
+	buf = malloc(12);
+	if(buf == NULL)
+	{
+		err("no memory");
+		return;
+	}
+
+	loctime = localtime(&akttime);
+	daylight = loctime->tm_isdst;
+	loctime->tm_sec = 0;
+
+	strftime(buf, MINMALLOC, "%d-%m-%Y ", loctime);
+	buf = ostrcat(buf, getconfig("epg_refreshtime", NULL), 1, 0);
+
+	loctime->tm_isdst = daylight;
+	if(strptime(buf, "%d-%m-%Y %H:%M", loctime) != NULL)
+		starttime = mktime(loctime);
+
+	free(buf); buf = NULL;
+	if(starttime < akttime) starttime += 86400;
+
+	if(starttime > akttime)
+	{
+		//check if timer exists
+		while(recnode != NULL)
+		{
+			prev = recnode;
+			recnode = recnode->next;
+
+			if(prev->status == 4 || prev->status == 5)
+				delrectimer(prev, 0, 0);
+		}
+
+		buf = ostrcat(buf, "<epgscan begin=", 1, 0);
+		buf = ostrcat(buf, olutoa(starttime - 300), 1, 1);
+		buf = ostrcat(buf, " end=", 1, 0);
+		buf = ostrcat(buf, olutoa(starttime - 300 + 120), 1, 1);
+		buf = ostrcat(buf, " afterevent=", 1, 0);
+		buf = ostrcat(buf, oitoa(getconfigint("epg_afterevent", NULL)), 1, 1);
+		buf = ostrcat(buf, " status=4 timestamp=", 1, 0);
+		buf = ostrcat(buf, gettimestamp(), 1, 1);
+		buf = ostrcat(buf, "></epgscan)", 1, 0);
+		addrectimer(buf);
+		free(buf); buf = NULL;
+
+		writerectimer(getconfig("rectimerfile", NULL), 0);
+	}
+}
+
 void epgscanlistclearscantime()
 {
 	struct epgscanlist *node = epgscanlist;
@@ -33,7 +109,7 @@ struct epgscanlist* getepgscanlistbytransponder(uint64_t transponderid)
 
 void epgscanlistthread(struct stimerthread* self)
 {
-	int epgdelete = 0;
+	int epgdelete = 0, startmode = 0;
 	struct epgscanlist* node = epgscanlist, *tmpepgscannode = NULL;
 	struct dvbdev* fenode = NULL;
 	struct channel* chnode = NULL;
@@ -53,6 +129,8 @@ void epgscanlistthread(struct stimerthread* self)
 		if(tmpstr != NULL) fprintf(fd, "%s\n", tmpstr);
 		free(tmpstr); tmpstr = NULL;
 	}
+
+	if(status.standby != 0) startmode = 1;
 
 	if(status.standby == 0)
 	{
@@ -185,6 +263,18 @@ end:
 		fprintf(fd, "epgscan thread end\n");
 		fclose(fd);
 	}
+
+	if(status.standby != 0 && startmode == 1 && getconfig("epg_refreshtime", NULL) != NULL)
+	{
+		int afterevent = getconfigint("epg_afterevent", NULL);
+
+		if(afterevent == 3)
+		{
+			if(status.recording < 1)
+				oshutdown(1, 3);
+		}
+	}
+
 	status.epgscanlistthread = NULL;
 	debug(400, "epgscan thread end");
 }
