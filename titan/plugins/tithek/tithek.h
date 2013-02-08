@@ -770,6 +770,8 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	if(link == NULL) return NULL;
 
 	ip = string_replace("http://", "", (char*)link, 0);
+	// tithek security
+	ip = string_replace_all("imageshack.us/md/up/grd/", "atemio.dyndns.tv/", ip, 1);
 
 	if(ip != NULL)
 		pos = strchr(ip, '/');
@@ -807,6 +809,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 /*
 	debug(99, "---------------------------------------");
 	debug(99, "link: %s", link);
+	debug(99, "fake: %s", fake);
 	debug(99, "localname: %s", localname);
 	debug(99, "---------------------------------------");
 	debug(99, "ip: %s", ip);
@@ -1039,6 +1042,8 @@ void addfav(char* title, char* link, char* pic, char* localname, char* menutitle
 	input = ostrcat(input, menutitle, 1, 0);
 	input = ostrcat(input, "#", 1, 0);
 	input = ostrcat(input, oitoa(flag), 1, 1);
+	// tithek security
+	input = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", input, 1);
 	
 	tmpstr1 = ostrcat(tmpstr1, input, 1, 0);
 	tmpstr1 = ostrcat(tmpstr1, "\n", 1, 0);
@@ -1070,7 +1075,7 @@ void addfav(char* title, char* link, char* pic, char* localname, char* menutitle
 	free(input); input = NULL;
 }
 
-void cacheplay(char* link, char* filename, char* showname, int flag)
+void cacheplay(char* link, char* filename, int flag)
 {
 	struct skin* load = getscreen("loadingproz");
 	struct skin* proztext = getscreennode(load, "proztext");
@@ -1177,7 +1182,7 @@ void cacheplay(char* link, char* filename, char* showname, int flag)
 		free(tmpstr), tmpstr = NULL;
 	}
 
-	screenplay(file, showname, 2, 0);
+	screenplay(file, filename, 2, 0);
 	sockclose(&dnode->connfd);
 	free(dnode); dnode = NULL;
 
@@ -1385,56 +1390,56 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 			if(ostrcmp(keyconf, "Streaming Playback (default)") == 0)
 			{
 				addconfigtmp("playerbuffersize", "0");
-				screenplay(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 2, flag);
+				screenplay(tmpstr1, filename, 2, flag);
 				delconfigtmp("playerbuffersize");
 			}
 			else if(ostrcmp(keyconf, "Streaming Playback Caching (0.5MB)") == 0)
 			{
 				addconfigtmp("playerbuffersize", "524288");
-				screenplay(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 2, flag);
+				screenplay(tmpstr1, filename, 2, flag);
 				delconfigtmp("playerbuffersize");
 			}
 			else if(ostrcmp(keyconf, "Streaming Playback Caching (1MB)") == 0)
 			{
 				addconfigtmp("playerbuffersize", "1048576");
-				screenplay(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 2, flag);
+				screenplay(tmpstr1, filename, 2, flag);
 				delconfigtmp("playerbuffersize");
 			}
 			else if(ostrcmp(keyconf, "Streaming Playback Caching (2MB)") == 0)
 			{
 				addconfigtmp("playerbuffersize", "2097152");
-				screenplay(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 2, flag);
+				screenplay(tmpstr1, filename, 2, flag);
 				delconfigtmp("playerbuffersize");
 			}
 			else if(ostrcmp(keyconf, "Streaming Playback Caching (3MB)") == 0)
 			{
 				addconfigtmp("playerbuffersize", "3145728");
-				screenplay(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 2, flag);
+				screenplay(tmpstr1, filename, 2, flag);
 				delconfigtmp("playerbuffersize");
 			}
 			else if(ostrcmp(keyconf, "Streaming Playback Caching (4MB)") == 0)
 			{
 				addconfigtmp("playerbuffersize", "4194304");
-				screenplay(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 2, flag);
+				screenplay(tmpstr1, filename, 2, flag);
 				delconfigtmp("playerbuffersize");
 			}
 			else if(ostrcmp(keyconf, "Streaming Playback Caching (5MB)") == 0)
 			{
 				addconfigtmp("playerbuffersize", "5242880");
-				screenplay(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 2, flag);
+				screenplay(tmpstr1, filename, 2, flag);
 				delconfigtmp("playerbuffersize");
 			}
 			else if(ostrcmp(keyconf, "File Caching Playback (10MB / 120s)") == 0)
 			{
-				cacheplay(tmpstr1, filename, ((struct tithek*)listbox->select->handle)->title, 1);
+				cacheplay(tmpstr1, filename, 1);
 			}
 			else if(ostrcmp(keyconf, "File Caching Playback (20MB / 240s)") == 0)
 			{
-				cacheplay(tmpstr1, filename, ((struct tithek*)listbox->select->handle)->title, 2);
+				cacheplay(tmpstr1, filename, 2);
 			}
 			else if(ostrcmp(keyconf, "File Caching Playback (30MB / 360s)") == 0)
 			{
-				cacheplay(tmpstr1, filename, ((struct tithek*)listbox->select->handle)->title, 3);
+				cacheplay(tmpstr1, filename, 3);
 			}
 			else if(ostrcmp(keyconf, "Download Full File") == 0)
 			{
@@ -1449,7 +1454,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 					{
 						tmpstr2 = ostrcat(getconfig("rec_streampath", NULL), "/", 0, 0);
 						tmpstr2 = ostrcat(tmpstr2, search, 1, 0);
-						screenplay(tmpstr2, ((struct tithek*)listbox->select->handle)->title, 2, flag);
+						screenplay(tmpstr2, filename, 2, flag);
 						free(tmpstr2); tmpstr2 = NULL;
 					}
 				}
