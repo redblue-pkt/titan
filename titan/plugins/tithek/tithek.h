@@ -34,6 +34,7 @@ int tithekexit = 0;
 //flag 25	- kinox vidstream
 //flag 26	- kinox xvidstage
 //flag 27	- kinox nowvideo
+//flag 28	- solarmovie hoster
 //flag 50	- beeg
 //flag 66   - coming soon dummy
 //flag 1000 - menu pincode
@@ -1481,7 +1482,30 @@ waitrcstart:
 						listbox->gridcol = ogridcol;
 						addscreenrc(grid, listbox);
 					}
-				}			 
+				}
+				else if((((struct tithek*)listbox->select->handle)->flag == 28))
+				{
+					if(solarmovie_hoster(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
+					{
+						oaktpage = listbox->aktpage;
+						oaktline = listbox->aktline;
+						ogridcol = listbox->gridcol;
+						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
+						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
+						screentithekplay(tmpstr, tmpstr2, 0);
+						free(tmpstr); tmpstr = NULL;
+						free(tmpstr2); tmpstr2 = NULL;
+//					if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
+						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel);
+						if(pagecount == 0 || tithekexit == 1) break;
+
+						listbox->aktpage = oaktpage;
+						listbox->aktline = oaktline;
+						listbox->gridcol = ogridcol;
+						addscreenrc(grid, listbox);
+					}
+				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 23))
 				{
 					if(kinox_hoster_series(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)

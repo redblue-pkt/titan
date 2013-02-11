@@ -16,6 +16,7 @@
 #include "xvidstage.h"
 #include "nowvideo.h"
 #include "beeg.h"
+#include "solarmovie.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";
