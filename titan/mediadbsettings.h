@@ -80,12 +80,6 @@ void screenmediadbsettings()
 
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
-			if(!file_exist(getconfig("mediadbpath", NULL)))
-			{
-				if(textbox(_("Message"), _("No MediaDB Directory found\nPress OK to create it"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-					mkdir(getconfig("mediadbpath", NULL), 0777);
-			}
-
 			break;
 		}
 
@@ -94,7 +88,10 @@ void screenmediadbsettings()
 			addconfigscreencheck("mediadbpath", mediadbpath, NULL);
 
 			if(!file_exist(getconfig("mediadbpath", NULL)))
-				mkdir(getconfig("mediadbpath", NULL), 0777);
+			{
+				if(textbox(_("Message"), _("No MediaDB Directory found\nPress OK to create it"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+					mkdir(getconfig("mediadbpath", NULL), 0777);
+			}
 			
 			free(tmpstr); tmpstr = NULL;
 			tmpstr = ostrcat(getconfig("mediadbpath", NULL), "/mediadb", 0, 0);
