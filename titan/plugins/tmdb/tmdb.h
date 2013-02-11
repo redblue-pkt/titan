@@ -816,7 +816,7 @@ struct tmdb* screentmdb(char* title, char* skinname, int flag, char* path, char*
 //	else
 //		skin_b3->hidden = NO;
 
-	if(path == NULL || file == NULL)
+	if(path == NULL || file == NULL || !file_exist(getconfig("mediadbpath", NULL)))
 		skin_b3->hidden = YES;
 	else
 		skin_b3->hidden = NO;
