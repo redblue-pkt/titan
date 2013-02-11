@@ -365,7 +365,7 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 
 		char* checkfile = NULL;
 		checkfile = ostrcat("/tmp/Packages.", ip, 0, 0);
-		checkfile = ostrcat(checkfile, path, 0, 0);
+		checkfile = ostrcat(checkfile, path, 1, 0);
 		checkfile = string_replace_all("/", ".", checkfile, 1);
 		debug(130, "checkfile: %s", checkfile);
 	
