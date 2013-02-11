@@ -363,12 +363,15 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 			}
 		}
 
+		char* checkpath = ostrcat(path, NULL, 0, 0);
+		checkpath = string_replace_all("/", ".", checkpath, 1);
+		checkpath = string_replace_all("-", ".", checkpath, 1);
+
 		char* checkfile = NULL;
 		checkfile = ostrcat("/tmp/Packages.", ip, 0, 0);
 		checkfile = ostrcat(checkfile, ".", 1, 0);
-		checkfile = ostrcat(checkfile, path, 1, 0);
-		checkfile = string_replace_all("/", ".", checkfile, 1);
-		checkfile = string_replace_all("-", ".", checkfile, 1);
+		checkfile = ostrcat(checkfile, checkpath, 1, 0);
+		free(checkpath), checkpath = NULL;
 		debug(130, "checkfile: %s", checkfile);
 	
 		if(ostrcmp("97.74.32.10", ip) == 0)
