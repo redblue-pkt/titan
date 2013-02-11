@@ -218,7 +218,7 @@ void screenimdbapi(char* title, char* dummy1, char* dummy2, char* path, char* fi
 	struct imdbapi* node = NULL;
 	char* search = NULL;
 
-	if(path == NULL || file == NULL)
+	if(path == NULL || file == NULL || !file_exist(getconfig("mediadbpath", NULL)))
 		skin_b2->hidden = YES;
 	else
 		skin_b2->hidden = NO;

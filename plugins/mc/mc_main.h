@@ -121,6 +121,9 @@ void mc_main()
 	if(getconfigint("emucontrol", NULL) == 1)
 		system("emu.sh halt");
 
+	if(!file_exist(getconfig("mediadbpath", NULL)))
+		mkdir(getconfig("mediadbpath", NULL), 0777);
+		
 	debug(50, "drop_caches");
 	writesysint("/proc/sys/vm/drop_caches", 3, 0);
 	
