@@ -21,5 +21,6 @@ char* vidstream(char* host, char* file);
 char* xvidstage(char* host, char* file);
 char* nowvideo(char* host, char* file);
 char* beeg(char* link);
+int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title);
 
 #endif

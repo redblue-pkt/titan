@@ -15,7 +15,7 @@ char* nowvideo(char* host, char* file)
 	if(host == NULL || file == NULL) return NULL;
 
 	tmphost = ostrcat(tmphost, host, 1, 0);
-	tmpfile = ostrcat("/", file, 0, 0);
+	tmpfile = ostrcat("/video/", file, 0, 0);
 	
 	debug(99, "tmphost: %s", tmphost);
 	ip = get_ip(tmphost);
@@ -32,7 +32,13 @@ char* nowvideo(char* host, char* file)
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 
 	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/var/usr/local/share/titan/plugins/tithek/nowvideo1", tmpstr, 0);
+		writesys("/tmp/nowvideo1", tmpstr, 0);
+
+	if(ostrstr(tmpstr, "The file is being transfered to our other servers. This may take few minutes.") != NULL)
+	{
+		textbox(_("Message"), _("The file is being transfered to our other servers. This may take few minutes.") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
 
 	file = string_resub("flashvars.file=\"", "\";", tmpstr, 0);
 	filekey = string_resub("flashvars.filekey=\"", "\";", tmpstr, 0);
@@ -53,11 +59,11 @@ char* nowvideo(char* host, char* file)
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 
 	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/var/usr/local/share/titan/plugins/tithek/nowvideo2", tmpstr, 0);
+		writesys("/tmp/nowvideo2", tmpstr, 0);
 
 	sleep(1);
 	streamlink = string_resub("url=", "&", tmpstr, 0);
-
+end:
 	free(tmphost); tmphost = NULL;
 	free(tmpfile); tmpfile = NULL;
 	free(tmpstr); tmpstr = NULL;
