@@ -218,15 +218,18 @@ for ROUND0 in $watchlist; do
 		URL="http://atemio.dyndns.tv/mediathek/solarmovie/streams/solarmovie.$filename0.list"
 		PIC="http://atemio.dyndns.tv/mediathek/menu/$filename0.jpg"
 		TITLE=`echo $ROUND0 | sed 's/.html//' | sed 's/watch-//' | tr '-' ' ' | tr '/' ' '`
-	
-		LINE="$TITLE#$URL#$PIC#solarmovie_$piccount.jpg#Solarmovie#0"
-		if [ ! -z "$TITLE" ]; then
-			echo $LINE >> cache.solarmovie.category.titanlist	
-		fi
-	
+
 		pcount=0
 		echo pages $pages
 		if [ ! -z $pages ]; then
+
+			if [ "$pcount" -lt "$pages" ]; then
+				LINE="$TITLE#$URL#$PIC#solarmovie_$piccount.jpg#Solarmovie#0"
+				if [ ! -z "$TITLE" ]; then
+					echo $LINE >> cache.solarmovie.category.titanlist	
+				fi
+			fi
+		
 			while [ "$pcount" -lt "$pages" ]
 			do
 				echo "pcount $pcount"
