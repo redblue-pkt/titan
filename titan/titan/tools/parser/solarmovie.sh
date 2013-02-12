@@ -149,8 +149,10 @@ for ROUND0 in $watchlist; do
 				PIC=`echo $ROUND1 | cut -d '"' -f8 | tr '~' ' '`
 				LINE="$TITLE#$URL#$PIC#solarmovie_$piccount.jpg#Solarmovie#28"
 	
-				if [ ! -z "$TITLE" ] && [ `cat cache.solarmovie.titanlist | grep ^"$TITLE#" | wc -l` -gt 0 ];then
+				if [ ! -z "$TITLE" ] && [ `cat cache.solarmovie.$ROUND0.titanlist | grep ^"$TITLE#" | wc -l` -gt 0 ];then
 					echo $LINE >> cache.solarmovie.$ROUND0.titanlist	
+				fi
+				if [ ! -z "$TITLE" ] && [ `cat cache.solarmovie.titanlist | grep ^"$TITLE#" | wc -l` -gt 0 ];then
 					echo $LINE >> cache.solarmovie.titanlist
 				fi
 			done
@@ -163,7 +165,8 @@ for ROUND0 in $watchlist; do
 done
 
 cat cache.solarmovie.titanlist | sort -u > _full/solarmovie/streams/solarmovie.all-sorted.list
-cat cache.solarmovie.category.titanlist | sort -u > _full/solarmovie/solarmovie.category.list
+#cat cache.solarmovie.category.titanlist | sort -u > _full/solarmovie/solarmovie.category.list
+cat cache.solarmovie.category.titanlist > _full/solarmovie/solarmovie.category.list
 
 for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
 	filename=`echo "$ROUND" | tr 'A-Z' 'a-z'`
