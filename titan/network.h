@@ -696,46 +696,26 @@ void screennetwork_wlan()
 			}
 			else
 			{
-				int startwlan = 1;
-				if(!checkprozess("wpa_supplicant"))
+				int tmptype = 0;
+				if(type->ret != NULL) tmptype = atoi(type->ret);
+				writewlan("/var/etc/wpa_supplicant.conf", tmptype, ssid->ret, key->ret);
+				if(startmode->ret != NULL) addownconfig("wlan", startmode->ret);
+				if(rcret == getrcconfigint("rcok", NULL))
 				{
-					ret = system("wlan.sh");
-					clearscreen(load);
-					if(ret == 0)
+					net = getinetworkbydevice("eth0");
+					if(net != NULL && net->type != 2)
 					{
-						textbox(_("Message"), _("WLAN started.\n You can now configure the new interface."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
-						screennetwork_restart(NULL, 0);
-					}
-					else
-					{
-						startwlan = 0;
-						textbox(_("Message"), _("WLAN not started,\nPlease check your config."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
-					}
-				}
-
-				if(startwlan == 1)
-				{
-					int tmptype = 0;
-					if(type->ret != NULL) tmptype = atoi(type->ret);
-					writewlan("/var/etc/wpa_supplicant.conf", tmptype, ssid->ret, key->ret);
-					if(startmode->ret != NULL) addownconfig("wlan", startmode->ret);
-					if(rcret == getrcconfigint("rcok", NULL))
-					{
-						net = getinetworkbydevice("eth0");
-						if(net != NULL && net->type != 2)
+						if(textbox(_("Message"), _("deaktivate ethernet interface ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 						{
-							if(textbox(_("Message"), _("deaktivate ethernet interface ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-							{
-								net->type = 2; //deaktivate
-								writeinterfaces();
-							}
+							net->type = 2; //deaktivate
+							writeinterfaces();
 						}
-	
-						net = getinetworkfirstwlan();
-						if(net != NULL) screennetwork_restart(net, 1);
 					}
+
+					net = getinetworkfirstwlan();
+					if(net != NULL) screennetwork_restart(net, 1);
+					break;
 				}
-				break;
 			}
 			if(rcret == getrcconfigint("rcgreen", NULL))
 			{
