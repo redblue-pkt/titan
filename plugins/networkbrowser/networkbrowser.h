@@ -742,7 +742,7 @@ void savenetworkbrowser(char* filename)
 
 		writesys("/var/etc/automount/auto.misc", savesettings, 0);
 		system("hotplug.sh first");
-		system("rm -rf /mnt/automount ; mkdir /mnt/automount; cp -a /var/etc/automount/* /mnt/automount");
+//		system("rm -rf /mnt/automount ; mkdir /mnt/automount; cp -a /var/etc/automount/* /mnt/automount");
 	}
 
 	debugnetworkbrowser(node);
@@ -1583,7 +1583,7 @@ void screennetworkbrowser()
 	char* tmpstr = NULL, *tmppic = NULL;
 	
 	status.hangtime = 99999;
-	system("cp -a /mnt/automount/* /var/etc/automount");
+//	system("cp -a /mnt/automount/* /var/etc/automount");
 
 start:
 	freenetworkbrowser(); networkbrowser = NULL;
