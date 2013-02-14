@@ -283,7 +283,7 @@ int writelist(struct clist **clist, const char *filename)
 	struct clist *node = NULL;
 	int ret = 0, i;
 
-	fd = fopen(filename, "w");
+	fd = fopen(filename, "w+");
 	if(fd == NULL)
 	{
 		perr("can't open %s", filename);
