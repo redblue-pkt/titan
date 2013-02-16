@@ -2860,3 +2860,5 @@ msgstr "DNS Adresse"
 msgid "usedns"
 msgstr "Benutze DNS Adresse"
 
+msgid "Search on Kinox"
+msgstr "Suche den ausgewählten Titel bei Kinox"
