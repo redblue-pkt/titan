@@ -571,8 +571,9 @@ void screenremovefile(char* file)
 }
 
 // flag 100 = tithek
-void playrcred(char* file, char* showname, int playinfobarstatus, int playertype, int flag)
+int playrcred(char* file, char* showname, int playinfobarstatus, int playertype, int flag)
 {
+	int ret = 1;
 //	if(checkbit(status.playercan, 5) == 0) return;
 	if(status.play == 1)
 		screenplayinfobar(file, showname, 1, playertype, flag);
@@ -603,6 +604,8 @@ void playrcred(char* file, char* showname, int playinfobarstatus, int playertype
 		if(status.mediadbfiles > 0)
 			addmenulist(&mlist, "MediaDB Scan Info", NULL, NULL, 0, 0);
 	}
+	else
+		addmenulist(&mlist, "Search on Kinox", NULL, NULL, 0, 0);
 
 	//add plugins
 	while(child != NULL)
@@ -642,6 +645,8 @@ void playrcred(char* file, char* showname, int playinfobarstatus, int playertype
 			screenmediadbedit(file, 0, 0);
 		else if(ostrcmp(mbox->name, "Delete File") == 0)
 			screenremovefile(file);
+		else if(ostrcmp(mbox->name, "Search on Kinox") == 0)
+			ret = 2;
 		else
 		{
 			pluginnode = getplugin(mbox->name);
@@ -662,6 +667,7 @@ void playrcred(char* file, char* showname, int playinfobarstatus, int playertype
 		screenplayinfobar(file, showname, 0, playertype, flag);
 
 	status.hangtime = hangtime;
+	return ret;
 }
 
 void playrcinfo(char* file, char* showname, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
