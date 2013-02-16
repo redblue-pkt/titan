@@ -1376,7 +1376,31 @@ waitrcstart:
 				tmpstr = string_replace_all(".", " ", tmpstr, 1);				
 				debug(99, "tmpstr: %s", tmpstr);
 
-				playrcred(tmpstr, NULL, 1, 0, 99);
+				int check = playrcred(tmpstr, NULL, 1, 0, 99);
+				if(check == 2)
+				{
+					if(kinox_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "KinoX - Search", tmpstr) == 0)
+					{
+						oaktpage = listbox->aktpage;
+						oaktline = listbox->aktline;
+						ogridcol = listbox->gridcol;
+						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+						char* tmpstr1 = ostrcat("KinoX - Search", " - ", 0, 0);
+						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
+						screentithekplay(tmpstr, tmpstr2, 0);
+						free(tmpstr); tmpstr = NULL;
+						free(tmpstr2); tmpstr2 = NULL;
+//					if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
+						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel);
+						if(pagecount == 0 || tithekexit == 1) break;
+
+						listbox->aktpage = oaktpage;
+						listbox->aktline = oaktline;
+						listbox->gridcol = ogridcol;
+						addscreenrc(grid, listbox);
+					}
+				}
+
 				free(tmpstr), tmpstr = NULL;
 			}
 		}
@@ -1439,7 +1463,7 @@ waitrcstart:
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 21))
 				{
-					if(kinox_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
+					if(kinox_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL) == 0)
 					{
 						oaktpage = listbox->aktpage;
 						oaktline = listbox->aktline;
