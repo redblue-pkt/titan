@@ -2477,7 +2477,7 @@ char* webrectimersend(char* param, int fmt)
 			loctime->tm_isdst = -1;
 			node->end = mktime(loctime);
 		}
-		if(node->justplay == 0 && newnode == 1) node->end -= getconfigint("recoverrun" , NULL) * 60;
+		if(node->justplay == 0 && newnode == 1) node->end += getconfigint("recoverrun" , NULL) * 60;
 		node->end -= (node->end % 60);
 		tmpstr = NULL;
 		free(loctime); loctime = NULL;
