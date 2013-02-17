@@ -667,6 +667,8 @@ struct rectimer
 	//1 = running
 	//2 = end
 	//3 = error
+	//4 = epgscan timer activ
+	//5 = epgscan timer not activ
 	int status;
 	char* errstr;
 	struct service* servicenode;
