@@ -2055,7 +2055,7 @@ char* webgetrectimer(char* param, int flag, int fmt)
 
 	while(node != NULL)
 	{
-		if((flag == 0 && (node->status == 2 || node->status == 3)) || (flag == 1 && (node->status == 0 || node->status == 1)))
+		if((flag == 0 && (node->status == 2 || node->status == 3)) || (flag == 1 && (node->status == 0 || node->status == 1)) || rectimernode->status == 4 || rectimernode->status == 5)
 		{
 			node = node->next;
 			continue;
