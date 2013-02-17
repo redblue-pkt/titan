@@ -69,7 +69,7 @@ void epgscancreatetimer()
 		buf = ostrcat(buf, oitoa(getconfigint("epg_afterevent", NULL)), 1, 1);
 		buf = ostrcat(buf, " status=4 timestamp=", 1, 0);
 		buf = ostrcat(buf, gettimestamp(), 1, 1);
-		buf = ostrcat(buf, "></epgscan)", 1, 0);
+		buf = ostrcat(buf, "></epgscan>", 1, 0);
 		addrectimer(buf);
 		free(buf); buf = NULL;
 

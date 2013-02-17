@@ -209,7 +209,7 @@ void recrepeatecalc(struct rectimer* node)
 int checkrectimertime(struct rectimer* node)
 {
 	//don't load old timers
-	if(time(NULL) - node->end > 604800 && (node->status == 2 || node->status == 3 || node->status == 4 || node->status == 5))
+	if(time(NULL) - node->end > 604800 && (node->status == 2 || node->status == 3 || node->status == 5))
 		return 1;
 
 	if(time(NULL) > node->end && node->repeate == 0 && node->status == 0)
@@ -582,7 +582,7 @@ int addrectimer(char *buf)
 				snprintf(line, buf - buf1 + 1, "%s", buf1);
 			buf1 = buf;
 
-			if(ostrstr(line, "<timer ") != NULL || ostrstr(line, "<log "))
+			if(ostrstr(line, "<timer ") != NULL || ostrstr(line, "<log ") != NULL || ostrstr(line, "<epgscan ") != NULL)
 				node = addrectimernode(line, node);
 		}
 	}
@@ -737,7 +737,7 @@ int writerectimer(const char *filename, int flag)
 
 	if(flag == 0) m_lock(&status.rectimermutex, 1);
 	sortrectimer();
-  node = rectimer;
+	node = rectimer;
 
 	fd = fopen(filename, "w");
 	if(fd == NULL)
