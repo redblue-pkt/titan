@@ -155,7 +155,7 @@ char* textinputhist(char* title, char* text, char* histname)
 		rcret = waitrc(textinputhist, 0, 0);
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 
-		if(text == NULL)
+		if(text == NULL && listbox->select != NULL)
 		{
 			changeinput(input, listbox->select->name);
 
