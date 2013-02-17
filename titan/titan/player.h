@@ -1,7 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-//playercan bits:
+// playercan bits:
 // 0 policy
 // 1 auditraklist
 // 2 subtitle
@@ -17,7 +17,7 @@
 // 12 jump/seek forward
 // 13 changecodec
 // 14 infobar
-//15 slowmotion
+// 15 slowmotion
 
 #ifdef EPLAYER3
 Context_t * player = NULL;
@@ -444,7 +444,7 @@ int playerstart(char* file)
 			playerstop();
 		}
 
-		player = malloc(sizeof(Context_t));
+		player = calloc(1, sizeof(Context_t));
 
 		if(player == NULL)
 		{
