@@ -435,8 +435,6 @@ void checkrectimer(struct stimerthread* self)
 	while(self->aktion != STOP && time(NULL) < 1072224000) // 01.01.2004
 		usleep(1 * 1000000);
 
-printf("start rectimer thread\n");
-
 	//on first start read rectimer
 	if(self->delay == 1000)
 	{
@@ -468,7 +466,6 @@ printf("start rectimer thread\n");
 			begin = node->begin;
 			end = node->end;
 		}
-printf("start=%d, end=%d, akt=%d\n", begin, end, t);
 
 		if(t >= begin && t < end && node->disabled == 0 && node->status == 0)
 		{
@@ -524,10 +521,8 @@ printf("start=%d, end=%d, akt=%d\n", begin, end, t);
 		//for epgscan
 		if(t >= begin && t < end && node->disabled == 0 && node->status == 4)
 		{
-printf("rectimer thread epgscan\n");
 			node->status = 5;
 			status.writerectimer = 1;
-			writerectimer(getconfig("rectimerfile", NULL), 0);
 
 			status.standby = 2;
 			addtimer(&screenstandby, START, 1000, 1, NULL, NULL, NULL);
@@ -559,7 +554,6 @@ printf("rectimer thread epgscan\n");
 	}
 
 	writerectimer(getconfig("rectimerfile", NULL), 0);
-printf("rectimer thread end\n");
 }
 
 int addrectimer(char *buf)
