@@ -508,9 +508,12 @@ void checkrectimer(struct stimerthread* self)
 				status.writerectimer = 1;
 			}
 		}
-		if(t > node->end && node->status == 0 && node->end != 0)
+		if(t > node->end && (node->status == 0 || node->status == 4) && node->end != 0)
 		{
-			node->status = 3;
+			if(node->status == 4)
+				node->status = 5;
+			else
+				node->status = 3;
 			free(node->errstr);
 			node->errstr = ostrcat(_("not started akttime greater timer endtime"), NULL, 0, 0);
 			status.writerectimer = 1;
