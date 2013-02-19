@@ -746,7 +746,8 @@ cp -a "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan."$TYPE".cfg "$HOME"/flash
 rm -rf "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan.*.cfg
 
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/skin/default/skin/*_grid.png
-rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/skin/default/skin/*_grid_*.png
+# mc grid filelist pngs
+#rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/skin/default/skin/*_grid_*.png
 
 cp -a "$HOME"/flashimg/BUILD/titan "$HOME"/flashimg/BUILD/titan-smal
 rm -rf "$HOME"/flashimg/BUILD/titan-smal/var/usr/local/share/titan/picons
