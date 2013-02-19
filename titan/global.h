@@ -4366,7 +4366,7 @@ char* getvideomodechoices()
 		return NULL;
 	}
 
-	if(status.expertmodus != 11 && status.mcaktiv == 0)
+	if(status.mcaktiv == 0)
 	{
 		value = string_replace("1080p60", "", value, 1);
 		value = string_replace("  ", " ", value, 1);
