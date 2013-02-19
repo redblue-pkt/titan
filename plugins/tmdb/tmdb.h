@@ -943,9 +943,14 @@ start:
 			debug(133, "file: %s",file);
 			debug(133, "type: 2");
 			debug(133, "node->imdbid: %s",node->imdbid);
-			addconfigtmp("mediadbscantimeout", "0");
-			mediadbfindfilecb(path, file, 0, node->imdbid, 2);
-			delconfigtmp("mediadbscantimeout");			
+			if(ostrncmp("tt", node->imdbid, 2))
+				textbox(_("Message"), _("Error, found result without imdbid we can't this save in MediaDB"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 10, 0);
+			else
+			{
+				addconfigtmp("mediadbscantimeout", "0");
+				mediadbfindfilecb(path, file, 0, node->imdbid, 2);
+				delconfigtmp("mediadbscantimeout");			
+			}
 			clearscreen(load);
 			clearscreen(blackscreen);
 			break;
