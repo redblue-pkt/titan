@@ -728,6 +728,23 @@ void deltunerconfig(flag)
 				delconfig(tmpstr);
 				free(tmpstr); tmpstr = NULL;
 			}
+			
+			//del all diseqc settings on single LNB
+			if(getmaxsat(dvbnode->feshortname) == 1)
+			{
+				for(i = 1; i <= MAXSAT; i++)
+				{
+					tmpnr = oitoa(i);
+          
+					tmpstr = ostrcat(tmpstr, dvbnode->feshortname, 1, 0);
+					tmpstr = ostrcat(tmpstr, "_diseqc", 1, 0);
+					tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
+					delconfig(tmpstr);
+					free(tmpstr); tmpstr = NULL;
+  
+					free(tmpnr); tmpnr = NULL;
+				}
+			}
 		}
 		dvbnode = dvbnode->next;
 	}
