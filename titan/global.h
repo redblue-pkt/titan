@@ -2309,6 +2309,7 @@ void checkboxstart()
 			{
 				debug(400, "found rectimer who has start the box");
 				setwaswakuptimer(1);
+				setcecstandby(1);
 			}
 		}
 		node = node->next;
