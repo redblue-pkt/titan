@@ -110,6 +110,7 @@ void screenepgsettings()
 	struct skin* mhwepg = getscreennode(epgsettings, "mhwepg");
 	struct skin* mhw2epg = getscreennode(epgsettings, "mhw2epg");
 	struct skin* opentv = getscreennode(epgsettings, "opentv");
+	struct skin* epg_afterevent = getscreennode(epgsettings, "epg_afterevent");
 	struct skin* tmp = NULL;
 
 	changeinput(epgpath, getconfig("epg_path", NULL));
@@ -198,6 +199,10 @@ void screenepgsettings()
 	addchoicebox(opentv, "2", _("always"));
 	setchoiceboxselection(opentv, getconfig("opentv", NULL));
 
+	addchoicebox(epg_afterevent, "0", _("nothing"));
+	addchoicebox(epg_afterevent, "1", _("poweroff"));
+	setchoiceboxselection(epg_afterevent, getconfig("epg_afterevent", NULL));
+
 	drawscreen(epgsettings, 0, 0);
 	addscreenrc(epgsettings, listbox);
 
@@ -228,6 +233,7 @@ void screenepgsettings()
 			addconfigscreencheck("mhwepg", mhwepg, "0");
 			addconfigscreencheck("mhw2epg", mhw2epg, "0");
 			addconfigscreencheck("opentv", opentv, "0");
+			addconfigscreencheck("epg_afterevent", epg_afterevent, "0");
 
 			if(getconfig("epg_refreshtime", NULL) == NULL || ostrcmp(getconfig("epg_refreshtime", NULL), "0") == 0)
 				epgscandeltimer();
