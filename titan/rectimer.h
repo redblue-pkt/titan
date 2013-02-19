@@ -459,7 +459,7 @@ void checkrectimer(struct stimerthread* self)
 		if(node->justplay == 1)
 		{
 			begin = node->begin;
-			end = node->end + 120;
+			end = node->end + 180;
 		}
 		else
 		{
@@ -523,7 +523,7 @@ void checkrectimer(struct stimerthread* self)
 			writerectimer(getconfig("rectimerfile", NULL), 0);
 
 			status.standby = 2;
-			screenstandby();
+			addtimer(&screenstandby, START, 1000, 1, NULL, NULL, NULL);
 		}
 		node = node->next;
 	}
