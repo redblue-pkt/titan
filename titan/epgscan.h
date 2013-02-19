@@ -26,7 +26,20 @@ void epgscancreatetimer()
 	struct rectimer *recnode = rectimer, *prev = rectimer;
 
 	if(ostrcmp(getconfig("epg_refreshtime", NULL), "0") == 0)
+	{
+		//del all epgscan timer
+		while(recnode != NULL)
+		{
+			prev = recnode;
+			recnode = recnode->next;
+
+			if(prev->status == 4 || prev->status == 5)
+				delrectimer(prev, 0, 0);
+		}
+
+		writerectimer(getconfig("rectimerfile", NULL), 0);
 		return;
+	}
 
 	buf = malloc(12);
 	if(buf == NULL)
