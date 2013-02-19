@@ -524,8 +524,16 @@ void checkrectimer(struct stimerthread* self)
 			node->status = 5;
 			status.writerectimer = 1;
 
-			status.standby = 2;
-			addtimer(&screenstandby, START, 1000, 1, NULL, NULL, NULL);
+			if(status.standby == 0)
+			{
+				int tret = textbox(_("Message"), _("EPG Scan ask if we can go into standby?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+
+				if(tret == 0 || tret == 1)
+				{
+					status.standby = 2;
+					addtimer(&screenstandby, START, 1000, 1, NULL, NULL, NULL);
+				}
+			}
 		}
 		node = node->next;
 	}
