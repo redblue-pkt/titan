@@ -64,7 +64,7 @@ void epgscancreatetimer()
 		buf = ostrcat(buf, "<epgscan begin=", 1, 0);
 		buf = ostrcat(buf, olutoa(starttime - 300), 1, 1);
 		buf = ostrcat(buf, " end=", 1, 0);
-		buf = ostrcat(buf, olutoa(starttime - 300 + 120), 1, 1);
+		buf = ostrcat(buf, olutoa(starttime - 300 + 180), 1, 1);
 		buf = ostrcat(buf, " afterevent=", 1, 0);
 		buf = ostrcat(buf, oitoa(getconfigint("epg_afterevent", NULL)), 1, 1);
 		buf = ostrcat(buf, " status=4 timestamp=", 1, 0);
