@@ -1079,11 +1079,13 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 				}	
 				else if(!ostrncmp("http://", tmpstr1, 7))
 				{
-					addmenulist(&mlist, "Streaming Playback Caching (1MB)", NULL, NULL, 0, 0);
+//					addmenulist(&mlist, "Streaming Playback Caching (1MB)", NULL, NULL, 0, 0);
 //					addmenulist(&mlist, "Streaming Playback Caching (2MB)", NULL, NULL, 0, 0);
-					addmenulist(&mlist, "Streaming Playback Caching (3MB)", NULL, NULL, 0, 0);
+//					addmenulist(&mlist, "Streaming Playback Caching (3MB)", NULL, NULL, 0, 0);
 //					addmenulist(&mlist, "Streaming Playback Caching (4MB)", NULL, NULL, 0, 0);
 					addmenulist(&mlist, "Streaming Playback Caching (5MB)", NULL, NULL, 0, 0);
+					addmenulist(&mlist, "Streaming Playback Caching (7.5MB)", NULL, NULL, 0, 0);
+					addmenulist(&mlist, "Streaming Playback Caching (10MB)", NULL, NULL, 0, 0);
 					if(file_exist(getconfig("rec_streampath", NULL)))
 					{
 //						addmenulist(&mlist, "File Caching Playback (10MB / 120s)", NULL, NULL, 0, 0);
@@ -1138,6 +1140,18 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 			else if(ostrcmp(keyconf, "Streaming Playback Caching (5MB)") == 0)
 			{
 				addconfigtmp("playerbuffersize", "5242880");
+				screenplay(tmpstr1, filename, 2, flag);
+				delconfigtmp("playerbuffersize");
+			}
+			else if(ostrcmp(keyconf, "Streaming Playback Caching (7.5MB)") == 0)
+			{
+				addconfigtmp("playerbuffersize", "7864320");
+				screenplay(tmpstr1, filename, 2, flag);
+				delconfigtmp("playerbuffersize");
+			}
+			else if(ostrcmp(keyconf, "Streaming Playback Caching (10MB)") == 0)
+			{
+				addconfigtmp("playerbuffersize", "10485760");
 				screenplay(tmpstr1, filename, 2, flag);
 				delconfigtmp("playerbuffersize");
 			}
