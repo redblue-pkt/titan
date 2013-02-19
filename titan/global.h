@@ -7,22 +7,22 @@
 //flag 1: set standby
 int setcecstandby(int flag)
 {
-  if(getconfigint("usecec", "NULL") == 1)
-  {
-    if(flag == 0)
-      writesys("/proc/stb/cec/onetouchplay", "0", 1);
-    else
-    {
-      char* tmpstr = readsys("/proc/stb/cec/state_cecaddress", 1);
-      char* tmpstr1 = readsys("/proc/stb/cec/state_activesource", 1);
+	if(getconfigint("usecec", NULL) == 1)
+	{
+		if(flag == 0)
+			writesys("/proc/stb/cec/onetouchplay", "0", 1);
+		else
+		{
+			char* tmpstr = readsys("/proc/stb/cec/state_cecaddress", 1);
+			char* tmpstr1 = readsys("/proc/stb/cec/state_activesource", 1);
 
-      if(ostrcmp(tmpstr, tmpstr1) == 0)
-        writesys("/proc/stb/cec/systemstandby", "0", 1);
+			if(ostrcmp(tmpstr, tmpstr1) == 0)
+				writesys("/proc/stb/cec/systemstandby", "0", 1);
 
-      free(tmpstr); tmpstr = NULL;
-      free(tmpstr1); tmpstr1 = NULL;
-    }
-  }
+			free(tmpstr); tmpstr = NULL;
+			free(tmpstr1); tmpstr1 = NULL;
+		}
+	}
 
 	return 0;
 }
