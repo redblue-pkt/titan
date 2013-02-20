@@ -2305,6 +2305,8 @@ void checkboxstart()
 			time_t akttime = time(NULL);
 			time_t begin = node->begin - getconfigint("wakeuptimerdevdiff", NULL);
 
+			debug(400, "begin=%d akttime1=%d akttime2=%d", begin, akttime - timediff, akttime + timediff);
+
 			if(begin > akttime - timediff && begin < akttime + timediff)
 			{
 				debug(400, "found rectimer who has start the box");
