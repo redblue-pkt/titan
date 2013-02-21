@@ -178,6 +178,12 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		status.aktservice->fedev = fenode;
 	}
 
+	if(fenode == NULL)
+	{
+		m_unlock(&status.servicemutex, 2);
+		return 1;
+	}
+
 	//check pmt if not all infos in channellist
 	if(chnode->audiopid == -1 || chnode->videopid == -1 || chnode->audiocodec == -1 || chnode->videocodec == -1 || (getconfigint("av_ac3default", NULL) == YES && chnode->audiocodec != AC3))
 	{
