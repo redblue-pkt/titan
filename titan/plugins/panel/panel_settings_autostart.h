@@ -25,167 +25,250 @@ void screenpanel_settings_autostart(int mode)
 
 		changetitle(panel_config, _("Autostart Defaults"));
 
-		if(file_exist("/etc/.usbimage")){
+		if(file_exist("/etc/.usbimage"))
+		{
 			node = addlistbox(panel_config, listbox, node, 1);
+			if(node != NULL)
+			{
+				node->type = CHOICEBOX;
+				changetext(node, _("fsckroot")); changename(node, "fsckroot");
+				addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
+				setchoiceboxselection(node, getownconfig(node->name));
+			}
+		}
+
+		node = addlistbox(panel_config, listbox, node, 1);
+		if(node != NULL)
+		{
 			node->type = CHOICEBOX;
-			changetext(node, _("fsckroot")); changename(node, "fsckroot");
+			changetext(node, _("bootstop")); changename(node, "bootstop");
+			for(i=0; i <= 20; i++)
+			{
+				char* tmpnr = NULL;
+				tmpnr = oitoa(i);
+				addchoicebox(node, tmpnr, _(tmpnr));
+				free(tmpnr); tmpnr = NULL;
+			}
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
+
+		node = addlistbox(panel_config, listbox, node, 1);
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("debug")); changename(node, "debug");
+			addchoicebox(node, "high", _("high")); addchoicebox(node, "low", _("low"));
+			addchoicebox(node, "off", _("off"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
+
+		node = addlistbox(panel_config, listbox, node, 1);
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("logto")); changename(node, "logto");
+			addchoicebox(node, "normal", _("normal")); addchoicebox(node, "hdd", _("hdd"));
+			addchoicebox(node, "swap", _("swap")); addchoicebox(node, "off", _("off"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
+
+		node = addlistbox(panel_config, listbox, node, 1);
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("errorboot")); changename(node, "errorboot");
 			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 			setchoiceboxselection(node, getownconfig(node->name));
 		}
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("bootstop")); changename(node, "bootstop");
-		for(i=0; i <= 20; i++)
+		if(node != NULL)
 		{
-			char* tmpnr = NULL;
-			tmpnr = oitoa(i);
-			addchoicebox(node, tmpnr, _(tmpnr));
-			free(tmpnr); tmpnr = NULL;
+			node->type = CHOICEBOX;
+			changetext(node, _("repairmodus")); changename(node, "repairmodus");
+			addchoicebox(node, "1", _("always")); addchoicebox(node, "0", _("off"));
+			addchoicebox(node, "2", _("at bootloop"));
+			setchoiceboxselection(node, getownconfig(node->name));
 		}
-		setchoiceboxselection(node, getownconfig(node->name));
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("debug")); changename(node, "debug");
-		addchoicebox(node, "high", _("high")); addchoicebox(node, "low", _("low"));
-		addchoicebox(node, "off", _("off"));
-		setchoiceboxselection(node, getownconfig(node->name));
-
-		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("logto")); changename(node, "logto");
-		addchoicebox(node, "normal", _("normal")); addchoicebox(node, "hdd", _("hdd"));
-		addchoicebox(node, "swap", _("swap")); addchoicebox(node, "off", _("off"));
-		setchoiceboxselection(node, getownconfig(node->name));
-
-		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("errorboot")); changename(node, "errorboot");
-		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
-		setchoiceboxselection(node, getownconfig(node->name));
-
-		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("repairmodus")); changename(node, "repairmodus");
-		addchoicebox(node, "1", _("always")); addchoicebox(node, "0", _("off"));
-		addchoicebox(node, "2", _("at bootloop"));
-		setchoiceboxselection(node, getownconfig(node->name));
-
-		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("rmcrashlog")); changename(node, "rmcrashlog");
-		addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
-		setchoiceboxselection(node, getownconfig(node->name));
-
-		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("rmemthy")); changename(node, "rmemthy");
-		addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
-		setchoiceboxselection(node, getownconfig(node->name));
-
-		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("plugload")); changename(node, "plugload");
-		addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
-		setchoiceboxselection(node, getownconfig(node->name));
-
-		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("progressbar")); changename(node, "progressbar");
-		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
-		setchoiceboxselection(node, getownconfig(node->name));
-
-		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("showip")); changename(node, "showip");
-		addchoicebox(node, "status", _("status")); addchoicebox(node, "ip", _("ip"));
-		setchoiceboxselection(node, getownconfig(node->name));
-
-		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("showtvinfo")); changename(node, "showtvinfo");
-		addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
-		setchoiceboxselection(node, getownconfig(node->name));
-
-		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("playlist")); changename(node, "playlist");
-		addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
-		setchoiceboxselection(node, getownconfig(node->name));
-
-		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("updatelist")); changename(node, "updatelist");
-		for(i=0; i <= 20; i++)
+		if(node != NULL)
 		{
-			char* tmpnr = NULL;
-			tmpnr = oitoa(i);
-			addchoicebox(node, tmpnr, _(tmpnr));
-			free(tmpnr); tmpnr = NULL;
+			node->type = CHOICEBOX;
+			changetext(node, _("rmcrashlog")); changename(node, "rmcrashlog");
+			addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
+			setchoiceboxselection(node, getownconfig(node->name));
 		}
-		setchoiceboxselection(node, getownconfig(node->name));
+
+		node = addlistbox(panel_config, listbox, node, 1);
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("rmemthy")); changename(node, "rmemthy");
+			addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
+
+		node = addlistbox(panel_config, listbox, node, 1);
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("plugload")); changename(node, "plugload");
+			addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
+
+		node = addlistbox(panel_config, listbox, node, 1);
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("progressbar")); changename(node, "progressbar");
+			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
+
+		node = addlistbox(panel_config, listbox, node, 1);
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("showip")); changename(node, "showip");
+			addchoicebox(node, "status", _("status")); addchoicebox(node, "ip", _("ip"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
+
+		node = addlistbox(panel_config, listbox, node, 1);
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("showtvinfo")); changename(node, "showtvinfo");
+			addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
+
+		node = addlistbox(panel_config, listbox, node, 1);
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("playlist")); changename(node, "playlist");
+			addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
+
+		node = addlistbox(panel_config, listbox, node, 1);
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("updatelist")); changename(node, "updatelist");
+			for(i=0; i <= 20; i++)
+			{
+				char* tmpnr = NULL;
+				tmpnr = oitoa(i);
+				addchoicebox(node, tmpnr, _(tmpnr));
+				free(tmpnr); tmpnr = NULL;
+			}
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
+		
+		if(checkbox("UFS910") == 1)
+		{
+			node = addlistbox(panel_config, listbox, node, 1);
+			if(node != NULL)
+			{
+				node->type = CHOICEBOX;
+				changetext(node, _("useUnknown910")); changename(node, "useUnknown910");
+				addchoicebox(node, "1", _("yes")); addchoicebox(node, "0", _("no"));
+				setchoiceboxselection(node, getownconfig(node->name));
+			}
+		}
 	}
 
 	if (mode == 1){
 
 		changetitle(panel_config, _("Autostart Defaults"));
 
-		if(isfile("/var/bin/audio.elf") || isfile("/boot/audio.old.elf")){
+		if(isfile("/var/bin/audio.elf") || isfile("/boot/audio.old.elf"))
+		{
 			node = addlistbox(panel_config, listbox, node, 1);
+			if(node != NULL)
+			{
+				node->type = CHOICEBOX;
+				changetext(node, _("Old Audiofw")); changename(node, "oldaudiofw");
+				addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
+				setchoiceboxselection(node, getownconfig(node->name));
+			}
+		}
+
+		node = addlistbox(panel_config, listbox, node, 1);
+		if(node != NULL)
+		{
 			node->type = CHOICEBOX;
-			changetext(node, _("Old Audiofw")); changename(node, "oldaudiofw");
+			changetext(node, _("No Audiosync")); changename(node, "noaudiosync");
 			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 			setchoiceboxselection(node, getownconfig(node->name));
 		}
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("No Audiosync")); changename(node, "noaudiosync");
-		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
-		setchoiceboxselection(node, getownconfig(node->name));
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("Boot Resolution")); changename(node, "BootResolution");
+			addchoicebox(node, "low", _("low")); addchoicebox(node, "high", _("high"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("Boot Resolution")); changename(node, "BootResolution");
-		addchoicebox(node, "low", _("low")); addchoicebox(node, "high", _("high"));
-		setchoiceboxselection(node, getownconfig(node->name));
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("Bootlogo")); changename(node, "bootlogo");
+			addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("Bootlogo")); changename(node, "bootlogo");
-		addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
-		setchoiceboxselection(node, getownconfig(node->name));
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("Poweroff")); changename(node, "poweroff");
+			addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("Poweroff")); changename(node, "poweroff");
-		addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
-		setchoiceboxselection(node, getownconfig(node->name));
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("Scart On Standby")); changename(node, "scartonstandby");
+			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("Scart On Standby")); changename(node, "scartonstandby");
-		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
-		setchoiceboxselection(node, getownconfig(node->name));
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("HighSR")); changename(node, "HighSR");
+			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("HighSR")); changename(node, "HighSR");
-		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
-		setchoiceboxselection(node, getownconfig(node->name));
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("Tuner Sleep Off")); changename(node, "tuner_sleep_off");
+			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("Tuner Sleep Off")); changename(node, "tuner_sleep_off");
-		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
-		setchoiceboxselection(node, getownconfig(node->name));
-
-		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("Boot RGB Fix")); changename(node, "bootrgbfix");
-		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
-		setchoiceboxselection(node, getownconfig(node->name));
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("Boot RGB Fix")); changename(node, "bootrgbfix");
+			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
 	}
 
 	if (mode == 2){
@@ -195,69 +278,91 @@ void screenpanel_settings_autostart(int mode)
 		changetitle(panel_config, _("Autostart USB"));
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("Load Partition")); changename(node, "loadpartition");
-		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
-		setchoiceboxselection(node, getownconfig(node->name));
-
-		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("Fsck Record")); changename(node, "fsckrecord");
-		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
-		setchoiceboxselection(node, getownconfig(node->name));
-
-		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("Swap")); changename(node, "swap");
-		addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
-		setchoiceboxselection(node, getownconfig(node->name));
-		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("Swap Size")); changename(node, "swapsize");
-		tmpsize = 16384;
-		for(i=0; i < 7; i++)
+		if(node != NULL)
 		{
-			char* tmpnr = NULL;
-			tmpnr = oitoa(tmpsize);
-			addchoicebox(node, tmpnr, _(tmpnr));
-			free(tmpnr); tmpnr = NULL;
-			tmpsize = tmpsize * 2;
+			node->type = CHOICEBOX;
+			changetext(node, _("Load Partition")); changename(node, "loadpartition");
+			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
+			setchoiceboxselection(node, getownconfig(node->name));
 		}
-		setchoiceboxselection(node, getownconfig(node->name));
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("Fsck Swap")); changename(node, "fsckswap");
-		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
-		setchoiceboxselection(node, getownconfig(node->name));
-
-		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("Record Max Sectors")); changename(node, "RecordMaxSectors");
-		tmpsize = 80;
-		for(i=0; i < 13; i++)
+		if(node != NULL)
 		{
-			char* tmpnr = NULL;
-			tmpnr = oitoa(tmpsize);
-			addchoicebox(node, tmpnr, _(tmpnr));
-			free(tmpnr); tmpnr = NULL;
-			tmpsize = tmpsize + 80;
+			node->type = CHOICEBOX;
+			changetext(node, _("Fsck Record")); changename(node, "fsckrecord");
+			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
+			setchoiceboxselection(node, getownconfig(node->name));
 		}
-		setchoiceboxselection(node, getownconfig(node->name));
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("Swap Max Sectors")); changename(node, "SwapMaxSectors");
-		tmpsize = 80;
-		for(i=0; i < 13; i++)
+		if(node != NULL)
 		{
-			char* tmpnr = NULL;
-			tmpnr = oitoa(tmpsize);
-			addchoicebox(node, tmpnr, _(tmpnr));
-			free(tmpnr); tmpnr = NULL;
-			tmpsize = tmpsize + 80;
+			node->type = CHOICEBOX;
+			changetext(node, _("Swap")); changename(node, "swap");
+			addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
+			setchoiceboxselection(node, getownconfig(node->name));
 		}
-		setchoiceboxselection(node, getownconfig(node->name));
+		
+		node = addlistbox(panel_config, listbox, node, 1);
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("Swap Size")); changename(node, "swapsize");
+			tmpsize = 16384;
+			for(i=0; i < 7; i++)
+			{
+				char* tmpnr = NULL;
+				tmpnr = oitoa(tmpsize);
+				addchoicebox(node, tmpnr, _(tmpnr));
+				free(tmpnr); tmpnr = NULL;
+				tmpsize = tmpsize * 2;
+			}
+			setchoiceboxselection(node, getownconfig(node->name));
+		 }
+
+		node = addlistbox(panel_config, listbox, node, 1);
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("Fsck Swap")); changename(node, "fsckswap");
+			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
+
+		node = addlistbox(panel_config, listbox, node, 1);
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("Record Max Sectors")); changename(node, "RecordMaxSectors");
+			tmpsize = 80;
+			for(i=0; i < 13; i++)
+			{
+				char* tmpnr = NULL;
+				tmpnr = oitoa(tmpsize);
+				addchoicebox(node, tmpnr, _(tmpnr));
+				free(tmpnr); tmpnr = NULL;
+				tmpsize = tmpsize + 80;
+			}
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
+		
+		node = addlistbox(panel_config, listbox, node, 1);
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("Swap Max Sectors")); changename(node, "SwapMaxSectors");
+			tmpsize = 80;
+			for(i=0; i < 13; i++)
+			{
+				char* tmpnr = NULL;
+				tmpnr = oitoa(tmpsize);
+				addchoicebox(node, tmpnr, _(tmpnr));
+				free(tmpnr); tmpnr = NULL;
+				tmpsize = tmpsize + 80;
+			}
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
 
 	}
 
@@ -266,37 +371,52 @@ void screenpanel_settings_autostart(int mode)
 		changetitle(panel_config, _("Autostart EMU"));
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("Emu Control")); changename(node, "emucontrol");
-		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
-		setchoiceboxselection(node, getownconfig(node->name));
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("Emu Control")); changename(node, "emucontrol");
+			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("ftdi")); changename(node, "ftdi");
-		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
-		setchoiceboxselection(node, getownconfig(node->name));
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("ftdi")); changename(node, "ftdi");
+			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("pl2303")); changename(node, "pl2303");
-		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
-		setchoiceboxselection(node, getownconfig(node->name));
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("pl2303")); changename(node, "pl2303");
+			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("Nr Usbreaders")); changename(node, "nr_usbreaders");
-		addchoicebox(node, "2", _("2 readers")); addchoicebox(node, "3", _("3 readers"));
-		addchoicebox(node, "4", _("4 readers")); addchoicebox(node, "5", _("5 readers"));
-		addchoicebox(node, "6", _("6 readers")); addchoicebox(node, "7", _("7 readers"));
-		addchoicebox(node, "0", _("not one")); addchoicebox(node, "1", _("1 reader"));
-		setchoiceboxselection(node, getownconfig(node->name));
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("Nr Usbreaders")); changename(node, "nr_usbreaders");
+			addchoicebox(node, "2", _("2 readers")); addchoicebox(node, "3", _("3 readers"));
+			addchoicebox(node, "4", _("4 readers")); addchoicebox(node, "5", _("5 readers"));
+			addchoicebox(node, "6", _("6 readers")); addchoicebox(node, "7", _("7 readers"));
+			addchoicebox(node, "0", _("not one")); addchoicebox(node, "1", _("1 reader"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("Iwatch")); changename(node, "iwatch");
-		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
-		setchoiceboxselection(node, getownconfig(node->name));
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("Iwatch")); changename(node, "iwatch");
+			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
 	}
 
 	if (mode == 4){
@@ -304,22 +424,31 @@ void screenpanel_settings_autostart(int mode)
 		changetitle(panel_config, "Autostart NETWORK");
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("nfs server")); changename(node, "nfsserver");
-		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
-		setchoiceboxselection(node, getownconfig(node->name));
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("nfs server")); changename(node, "nfsserver");
+			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("samba server")); changename(node, "sambaserver");
-		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
-		setchoiceboxselection(node, getownconfig(node->name));
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("samba server")); changename(node, "sambaserver");
+			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("scan wlan")); changename(node, "wlan");
-		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
-		setchoiceboxselection(node, getownconfig(node->name));
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("scan wlan")); changename(node, "wlan");
+			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
 	}
 
 	if (mode == 5){
@@ -327,19 +456,25 @@ void screenpanel_settings_autostart(int mode)
 		changetitle(panel_config, _("Autostart Child Safety"));
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("Parental")); changename(node, "Parental");
-		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
-		setchoiceboxselection(node, getownconfig(node->name));
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("Parental")); changename(node, "Parental");
+			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
 
 		node = addlistbox(panel_config, listbox, node, 1);
-		node->type = INPUTBOXNUM;
-		changetext(node, _("Pin")); changename(node, "Pin");
-		addchoicebox(node, "n", _("no"));
-		if(getownconfig(node->name) != NULL)
-			changeinput(node, getownconfig(node->name));
-		else
-			changeinput(node, "0000");
+		if(node != NULL)
+		{
+			node->type = INPUTBOXNUM;
+			changetext(node, _("Pin")); changename(node, "Pin");
+			addchoicebox(node, "n", _("no"));
+			if(getownconfig(node->name) != NULL)
+				changeinput(node, getownconfig(node->name));
+			else
+				changeinput(node, "0000");
+		}
 
 	}
 
