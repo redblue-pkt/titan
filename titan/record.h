@@ -484,11 +484,11 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 					frmulti = frmultiread * 8;				
 			}			
 			
-			if(frcount == 0 && status.playspeed != 0)
+			if(frcount == 0 && status.playspeed < 0 || status.playspeed > 3)
 			{				
 				pthread_mutex_lock(&status.tsseekmutex);
-				off64_t pos;
-				if(status.playspeed <= 0)
+				off64_t pos = 0;
+				if(status.playspeed < 0)
 					pos = lseek64(servicenode->recsrcfd, -(frbsize * frmulti), SEEK_CUR);
 				else if(status.playspeed == 4 || status.playspeed == 5 || status.playspeed == 6)
 					pos = lseek64(servicenode->recsrcfd, ((frbsize * frmulti) - ( frbsize * frmultiread )), SEEK_CUR);
