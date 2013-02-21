@@ -294,6 +294,14 @@ void screeninfobar()
 				tmpstr = ostrcat(getconfig("tuxtxtfile", NULL), " ", 0, 0);
 				tmpnr = oitoa(status.aktservice->channel->txtpid);
 				tmpstr = ostrcat(tmpstr, tmpnr, 1, 1);
+        
+				if(status.aktservice->fedev != NULL)
+				{
+					tmpnr = oitoa(status.aktservice->fedev->devnr);
+					tmpstr = ostrcat(tmpstr, " ", 1, 0);
+					tmpstr = ostrcat(tmpstr, tmpnr, 1, 1);
+				}
+        
 				drawscreen(skin, 0, 0);
 				system(tmpstr);
 				free(tmpstr); tmpstr = NULL; tmpnr = NULL;
