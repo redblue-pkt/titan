@@ -21,13 +21,16 @@ void screenpanel_settings(int mode)
 		changetitle(config, _("Automount Config"));
 
 		node = addlistbox(config, listbox, node, 1);
-		node->type = CHOICEBOX;
-		changetext(node, _("Ntfs Write"));
-		changename(node, "ntfs_write");
-		addchoicebox(node, "0", _("disable"));
-		addchoicebox(node, "1", _("ntfs-3g"));
-		addchoicebox(node, "2", _("ntfsmount"));
-		setchoiceboxselection(node, getownconfig(node->name));
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("Ntfs Write"));
+			changename(node, "ntfs_write");
+			addchoicebox(node, "0", _("disable"));
+			addchoicebox(node, "1", _("ntfs-3g"));
+			addchoicebox(node, "2", _("ntfsmount"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
 	}
 
 	drawscreen(config, 0, 0);
