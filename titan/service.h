@@ -588,6 +588,25 @@ struct service* getservicebychannel(struct channel* chnode)
 	return NULL;
 }
 
+struct service* getservicebyrecname(char* recname)
+{
+	m_lock(&status.servicemutex, 2);
+	struct service* snode = service;
+
+	while(snode != NULL)
+	{
+		if(ostrcmp(snode->recname, recname) == 0)
+		{
+			m_unlock(&status.servicemutex, 2);
+			return snode;
+		}
+		snode = snode->next;
+
+	}
+	m_unlock(&status.servicemutex, 2);
+	return NULL;
+}
+
 //flag 0: lock
 //flag 1: no lock
 struct service* getservicebyrectimestamp(char* timestamp, int flag)
