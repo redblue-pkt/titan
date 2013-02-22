@@ -729,7 +729,10 @@ void removefav(char* title, char* link, char* pic, char* localname, char* menuti
 	if(tmpstr1 != NULL && strlen(tmpstr1) > 0)
 		tmpstr1[strlen(tmpstr1) - 1] = '\0';
 
-	writesys(getconfig("tithek_fav", NULL), tmpstr1, 0);
+	if(tmpstr1 == NULL)
+		writesys(getconfig("tithek_fav", NULL), "", 0);
+	else
+		writesys(getconfig("tithek_fav", NULL), tmpstr1, 0);
 
 	free(ret); ret = NULL;
 	free(tmpstr); tmpstr = NULL;
