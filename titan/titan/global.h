@@ -2042,9 +2042,9 @@ size_t writelengthfield(unsigned char * buf, unsigned int len)
 	}
 }
 
-
 //flag 0: del non alpha/num
 //flag 1: change all /
+//flag 2: change all non filename conform chars
 void delspezchar(char* text, int flag)
 {
 	char* tmpstr = text;
@@ -2053,10 +2053,29 @@ void delspezchar(char* text, int flag)
 
 	while(*tmpstr != '\0')
 	{
-		if(flag == 1)
+		if(flag == 1 || flag == 2)
 		{
-			if(tmpstr[0] == '/')
-				tmpstr[0] = '-';
+			if(tmpstr[0] == '/') tmpstr[0] = '-';
+			if(flag == 2)
+			{
+				if(tmpstr[0] == '§') tmpstr[0] = '-';
+				if(tmpstr[0] == '<') tmpstr[0] = '-';
+ 				if(tmpstr[0] == '>') tmpstr[0] = '-';
+				if(tmpstr[0] == ':') tmpstr[0] = '-';
+				if(tmpstr[0] == '"') tmpstr[0] = '-';
+				if(tmpstr[0] == '\') tmpstr[0] = '-';
+				if(tmpstr[0] == '|') tmpstr[0] = '-';
+				if(tmpstr[0] == '*') tmpstr[0] = '-';
+				if(tmpstr[0] == '?') tmpstr[0] = '-';
+				if(tmpstr[0] == '[') tmpstr[0] = '-';
+				if(tmpstr[0] == ']') tmpstr[0] = '-';
+				if(tmpstr[0] == '=') tmpstr[0] = '-';
+				if(tmpstr[0] == '%') tmpstr[0] = '-';
+				if(tmpstr[0] == '$') tmpstr[0] = '-';
+				if(tmpstr[0] == ',') tmpstr[0] = '-';
+				if(tmpstr[0] == ';') tmpstr[0] = '-';
+				if(tmpstr[0] == '~') tmpstr[0] = '-';
+			}
 		}
 		else
 		{

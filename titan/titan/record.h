@@ -781,12 +781,12 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 			if(chnode != NULL)
 			{
 				chname = strstrip(chnode->name);
-				delspezchar(chname, 1);
+				delspezchar(chname, 2);
 			}
 			if(rectimernode != NULL && rectimernode->name != NULL)
 			{
 				moviename = strstrip(rectimernode->name);
-				delspezchar(moviename, 1);
+				delspezchar(moviename, 2);
 			}
 			break;
 		default:
@@ -795,13 +795,13 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 			if(chnode != NULL)
 			{
 				chname = strstrip(chnode->name);
-				delspezchar(chname, 1);
+				delspezchar(chname, 2);
 			}
 			epgnode = getepgbytime(status.aktservice->channel, time(NULL) + 60);
 			if(epgnode != NULL)
 			{
 				moviename = strstrip(epgnode->title);
-				delspezchar(moviename, 1);
+				delspezchar(moviename, 2);
 			}
 			break;
 	}
