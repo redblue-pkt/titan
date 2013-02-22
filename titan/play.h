@@ -552,24 +552,6 @@ void get_mediadb_scan_info()
 	free(tmpstr), tmpstr = NULL;
 }
 
-void screenremovefile(char* file)
-{
-	char* tmpstr = NULL, *cmd = NULL;
-	tmpstr = ostrcat(tmpstr, _("Realy delete this file/dir?"), 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, file, 1, 0);
-	if(textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
-	{
-		cmd = ostrcat(cmd, "rm -rf ", 1, 0);
-		cmd = ostrcat(cmd, "\"", 1, 0);
-		cmd = ostrcat(cmd, file, 1, 0);
-		cmd = ostrcat(cmd, "\"", 1, 0);
-		system(cmd);
-		free(cmd), cmd = NULL;
-	}
-	free(tmpstr), tmpstr = NULL;
-}
-
 // flag 100 = tithek
 int playrcred(char* file, char* showname, int playinfobarstatus, int playertype, int flag)
 {
@@ -644,7 +626,7 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 		else if(ostrcmp(mbox->name, "MediaDB Edit") == 0)
 			screenmediadbedit(file, 0, 0);
 		else if(ostrcmp(mbox->name, "Delete File") == 0)
-			screenremovefile(file);
+			playcheckdirrcret(file, 1);
 		else if(ostrcmp(mbox->name, "Search on Kinox") == 0)
 			ret = 2;
 		else
