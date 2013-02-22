@@ -1093,7 +1093,9 @@ int playcheckdirrcret(char* file, int dirrcret)
 	}
 	if(dirrcret == 1)
 	{
-		if(textbox(_("Realy Delete ?"), file, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
+		if(getservicebyrecname(file) != NULL)
+			textbox(_("Message"), _("Can't delete file who is recording"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
+		else if(textbox(_("Realy Delete ?"), file, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
 		{
 			unlink(file);
 			epgfilename = changefilenameext(file, ".epg");

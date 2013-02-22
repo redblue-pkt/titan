@@ -730,6 +730,7 @@ char* getrcconfig(char *key, char *ext);
 int reloadconfig(char *filename);
 
 //service.h
+struct service* getservicebyrecname(char* recname);
 struct service* getservicebyservice(struct service* node, int flag);
 struct service* getservicebychannel(struct channel* chnode);
 struct service* checkservice(struct service* node);
