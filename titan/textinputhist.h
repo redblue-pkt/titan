@@ -155,16 +155,6 @@ char* textinputhist(char* title, char* text, char* histname)
 		rcret = waitrc(textinputhist, 0, 0);
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 
-		if(listbox->select != NULL && (text == NULL || ostrcmp(text, " ") == 0))
-		{
-			changeinput(input, listbox->select->name);
-
-			if(fromthread == 1)
-				drawscreen(textinputhist, 0, 2);
-			else
-				drawscreen(textinputhist, 0, 0);
-		}
-		
 		if(rcret == getrcconfigint("rcok", NULL) && tmpstr != NULL && listbox->select != NULL && (input->input == NULL || ostrcmp(input->input, " ") == 0))
 		{
 			changeinput(input, listbox->select->name);
