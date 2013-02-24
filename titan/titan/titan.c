@@ -518,7 +518,7 @@ int main(int argc, char *argv[])
 	ret = addinetworkall(NULL);
 	
 #ifndef SIMULATE
-	if(getconfigint("ss", NULL) == 0)
+	if(getconfigint("sos", NULL) == 0)
 	{
 		if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1)
 		{
