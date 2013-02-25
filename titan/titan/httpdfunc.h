@@ -818,6 +818,7 @@ end:
 
 char* webgetm3u(char* param, int connfd, int fmt)
 {
+	int extip = 1;
 	char* buf = NULL, *ip = NULL, *tmpbuf = NULL;
 	struct sockaddr_in sin;
 	socklen_t len = sizeof(sin);
@@ -835,6 +836,7 @@ char* webgetm3u(char* param, int connfd, int fmt)
 			return NULL;
 		}
 
+		extip = 0;
 		ip = inet_ntoa(sin.sin_addr);
 			if(ip == NULL) return NULL;
 	}
@@ -854,11 +856,13 @@ char* webgetm3u(char* param, int connfd, int fmt)
 	buf = ostrcat(buf, param, 1, 0);
 	free(tmpbuf); tmpbuf = NULL;
 
+	if(extip == 1) free(ip);
 	return buf;
 }
 
 char* webgetvideo(char* param, int connfd, int fmt)
 {
+	int extip = 1;
 	char* buf = NULL, *ip = NULL, *tmpbuf = NULL;
 	struct sockaddr_in sin;
 	socklen_t len = sizeof(sin);
@@ -876,6 +880,7 @@ char* webgetvideo(char* param, int connfd, int fmt)
 			return NULL;
 		}
 
+		extip = 0;
 		ip = inet_ntoa(sin.sin_addr);
 		if(ip == NULL) return NULL;
 	}
@@ -909,6 +914,7 @@ char* webgetvideo(char* param, int connfd, int fmt)
 		buf = ostrcat(buf, "</td></tr></body></html>", 1, 0);
 	}
 
+	if(extip == 1) free(ip);
 	return buf;
 }
 
