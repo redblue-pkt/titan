@@ -723,6 +723,7 @@ int checkinternet();
 struct splitstr* oregexsplit(char* regex, char *str, char *tok, int* count);
 void freeoregexsplit(struct splitstr* tmparray, int len);
 char* fixport(char* input, int flag);
+char* getispip();
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
