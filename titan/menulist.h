@@ -224,6 +224,7 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 					tmpstr = changepicpath(tmppic);
 					if(!file_exist(tmpstr))
 					{
+						debug(10, "menu pic not found: %s", tmpstr);
 						free(mlist->pic); mlist->pic = NULL;
 						free(tmppic); tmppic = NULL;
 					}
