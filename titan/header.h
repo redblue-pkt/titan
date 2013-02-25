@@ -392,6 +392,7 @@ void playrcblue(char* file, char* showname, int playinfobarstatus, int playertyp
 void playrcyellow(char* file, char* showname, int playinfobarstatus, int playertype, int flag);
 void playrctext(char* file, char* showname, int playinfobarstatus, int playertype, int flag);
 void playrcok(char* file, char* showname, int playinfobarstatus, int playertype, int flag);
+int playcheckdirrcret(char* file, int dirrcret);
 
 //inetwork.h
 struct inetwork* getinetworkbydevice(char* device);
@@ -428,6 +429,7 @@ int addrecepg(struct channel* chnode, struct epg* epgnode, char* channellist);
 struct rectimer* getrectimerbyservice(struct service* servicenode);
 void delrectimer(struct rectimer* rectimernode, int write, int flag);
 int rectimergetaktday();
+int addrectimer(char *buf);
 
 //dvb.h
 unsigned char* dvbgetsdt(struct dvbdev* fenode, int secnr, int timeout);
