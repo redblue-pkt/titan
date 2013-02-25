@@ -13,6 +13,7 @@ void screenhttpdsettings()
 	struct skin* streamport = getscreennode(httpdsettings, "streamport");
 	struct skin* rguidstart = getscreennode(httpdsettings, "rguidstart");
 	struct skin* rguidport = getscreennode(httpdsettings, "rguidport");
+	struct skin* webifip = getscreennode(httpdsettings, "webifip");
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *pos = NULL;
 
@@ -37,6 +38,10 @@ void screenhttpdsettings()
 	changemask(httpdport, "00000");
 	changeinput(httpdport, getconfig("httpdport", NULL));
 	httpdport->input = mask(httpdport->input, 5, "0");
+
+	addchoicebox(webifip, "0", _("intern"));
+	addchoicebox(webifip, "1", _("extern"));
+	setchoiceboxselection(webifip, getconfig("webifip", NULL));
 
 	changemask(streamport, "00000");
 	changeinput(streamport, getconfig("streamport", NULL));
@@ -91,6 +96,9 @@ void screenhttpdsettings()
 				int hport = atoi(httpdport->ret);
 				addconfigint("httpdport", hport);
 			}
+
+			addconfigscreencheck("webifip", webifip, "0");
+
 			if(streamport->ret != NULL)
 			{
 				int sport = atoi(streamport->ret);
