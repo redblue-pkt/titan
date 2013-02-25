@@ -824,14 +824,20 @@ char* webgetm3u(char* param, int connfd, int fmt)
 
 	if(param == NULL) return NULL;
 
-	if(getsockname(connfd, &sin, &len) < 0)
-	{
-		perr("getsockname");
-		return NULL;
-	}
+	if(getconfigint("webifip", NULL) == 1)
+		ip = getispip();
 
-	ip = inet_ntoa(sin.sin_addr);
-	if(ip == NULL) return NULL;
+	if(ip == NULL)
+	{
+		if(getsockname(connfd, &sin, &len) < 0)
+		{
+			perr("getsockname");
+			return NULL;
+		}
+
+		ip = inet_ntoa(sin.sin_addr);
+			if(ip == NULL) return NULL;
+	}
 
 	buf = ostrcat(buf, "#EXTM3U\n", 1, 0);
 	buf = ostrcat(buf, "#EXTVLCOPT--http-reconnect=true\n", 1, 0);
@@ -859,14 +865,20 @@ char* webgetvideo(char* param, int connfd, int fmt)
 
 	if(param == NULL) return NULL;
 
-	if(getsockname(connfd, &sin, &len) < 0)
-	{
-		perr("getsockname");
-		return NULL;
-	}
+	if(getconfigint("webifip", NULL) == 1)
+		ip = getispip();
 
-	ip = inet_ntoa(sin.sin_addr);
-	if(ip == NULL) return NULL;
+	if(ip == NULL)
+	{
+		if(getsockname(connfd, &sin, &len) < 0)
+		{
+			perr("getsockname");
+			return NULL;
+		}
+
+		ip = inet_ntoa(sin.sin_addr);
+		if(ip == NULL) return NULL;
+	}
 
 	if(fmt == 0)
 	{
