@@ -3,6 +3,20 @@
 
 #define MAXTOKENS 256
 
+char* getispip()
+{
+	char* tmpstr = NULL;
+	char* ip = NULL;
+	tmpstr = gethttp("checkip.dyndns.org", "", 80, NULL, NULL, 10000, NULL, 0);
+
+	if(oregex(".*<body>Current IP Address: ([0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})</body>.*", tmpstr))
+	{
+		ip = oregex(".*<body>Current IP Address: ([0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})</body>.*", tmpstr);
+	}
+	free(tmpstr), tmpstr = NULL;
+	return ip;
+}
+
 //flag 0: leave standby
 //flag 1: set standby
 int setcecstandby(int flag)
