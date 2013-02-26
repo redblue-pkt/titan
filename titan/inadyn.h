@@ -127,7 +127,7 @@ void screennetwork_inadyn()
 	struct skin* user = getscreennode(inadyn, "user");
 	struct skin* pw = getscreennode(inadyn, "pw");
 	struct skin* host = getscreennode(inadyn, "host");
-	struct skin* system = getscreennode(inadyn, "system");
+	struct skin* hoster = getscreennode(inadyn, "system");
 	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
 
@@ -148,13 +148,13 @@ void screennetwork_inadyn()
 	changeinput(host, ihost);
 	free(ihost); ihost = NULL;
 
-	addchoicebox(system, "dyndns@dyndns.org", "dyndns@dyndns.org");
-	addchoicebox(system, "statdns@dyndns.org", "statdns@dyndns.org");
-	addchoicebox(system, "customdns@dyndns.org", "customdns@dyndns.org");
-	addchoicebox(system, "default@freedns.afraid.org", "default@freedns.afraid.org");
-	addchoicebox(system, "default@zoneedit.com", "default@zoneedit.com");
-	addchoicebox(system, "default@no-ip.com", "default@no-ip.com");
-	setchoiceboxselection(system, isystem);
+	addchoicebox(hoster, "dyndns@dyndns.org", "dyndns@dyndns.org");
+	addchoicebox(hoster, "statdns@dyndns.org", "statdns@dyndns.org");
+	addchoicebox(hoster, "customdns@dyndns.org", "customdns@dyndns.org");
+	addchoicebox(hoster, "default@freedns.afraid.org", "default@freedns.afraid.org");
+	addchoicebox(hoster, "default@zoneedit.com", "default@zoneedit.com");
+	addchoicebox(hoster, "default@no-ip.com", "default@no-ip.com");
+	setchoiceboxselection(hoster, isystem);
 	free(isystem); isystem = NULL;
 
 	drawscreen(inadyn, 0, 0);
@@ -171,7 +171,7 @@ void screennetwork_inadyn()
 
 		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcgreen", NULL))
 		{
-			writeinadyn("/var/etc/inadyn.conf", user->ret, pw->ret, host->ret, system->ret);
+			writeinadyn("/var/etc/inadyn.conf", user->ret, pw->ret, host->ret, hoster->ret);
 			if(startmode->ret != NULL) addownconfig("inadyn", startmode->ret);
 			if(rcret == getrcconfigint("rcok", NULL)) break;
 			if(rcret == getrcconfigint("rcgreen", NULL))
