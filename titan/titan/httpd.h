@@ -195,6 +195,8 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webswitch(param, fmt);
 	if(ostrcmp(query, "getaktservice") == 0)
 		buf = webgetaktservice(fmt);
+	if(ostrcmp(query, "getservice") == 0)
+		buf = webgetservice(param, fmt);
 	if(ostrcmp(query, "getepg") == 0)
 		buf = webgetepg(param, fmt);
 	if(ostrcmp(query, "getmovieepg") == 0)

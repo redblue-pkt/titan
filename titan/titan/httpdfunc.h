@@ -782,6 +782,30 @@ char* webgetaktservice(int fmt)
 	return buf;
 }
 
+char* webgetservice(char* param, int fmt)
+{
+	char* buf = NULL, *param1 = NULL;
+	struct channel* chnode = NULL;
+	int line = 0, maxlen = 0, pos = 0;
+
+	if(param == NULL) return NULL;
+
+	//create param1
+	param1 = strchr(param, '&');
+	if(param1 != NULL)
+		*param1++ = '\0';
+
+	if(param1 == NULL) return NULL;
+
+	chnode = getchannel(atoi(param), strtoull(param1, NULL, 10));
+
+	if(fmt == 0) webcreateheadbig(&buf, &maxlen, NULL, &pos, 1);
+	webcreatechannelbody(&buf, line, chnode, getconfig("channellist", NULL), &maxlen, &pos ,1, fmt);
+	if(fmt == 0) webcreatetailbig(&buf, &maxlen, &pos, 1);
+
+	return buf;
+}
+
 char* webswitch(char* param, int fmt)
 {
 	if(status.channelswitch == 1) goto end;
