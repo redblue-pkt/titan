@@ -418,7 +418,8 @@ void oshutdown(int exitcode, int flag)
 	else
 		freetimer(1);
 
-	setcecstandby(1);
+	if(exitcode == 1)
+		setcecstandby(1);
 
 	starthttpd(0);
 	startrguid(0);
