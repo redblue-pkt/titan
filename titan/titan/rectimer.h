@@ -641,7 +641,7 @@ void delrectimer(struct rectimer* rectimernode, int write, int flag)
 				free(node->errstr);
 				node->errstr = ostrcat(_("stopped from user"), NULL, 0, 0);
 				//stop recording
-				node->servicenode->recendtime = 1;
+				node->servicenode->recendtime = 2;
 				if(flag == 0)
 					m_unlock(&status.rectimermutex, 1);
 				return;
