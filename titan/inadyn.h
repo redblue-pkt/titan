@@ -105,7 +105,7 @@ int writeinadyn(const char* filename, char* user, char* pw, char* host, char* sy
 	savesettings = ostrcat(savesettings, system, 1, 0);
 	savesettings = ostrcat(savesettings, "\n", 1, 0);
 	
-	savesettings = ostrcat(savesettings, "update_period 60000\n", 1, 0);
+	savesettings = ostrcat(savesettings, "--update_period 60000\n", 1, 0);
 
 	FILE* fd = fopen(filename, "w");
 	if(fd)
