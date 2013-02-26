@@ -1,7 +1,7 @@
 #ifndef INADYN_H
 #define INADYN_H
 
-int readinadyn(const char* filename, char** user, char** pw, char** host)
+int readinadyn(const char* filename, char** user, char** pw, char** host, char** system)
 {
 	debug(1000, "in");
 	FILE *fd = NULL;
@@ -67,6 +67,17 @@ int readinadyn(const char* filename, char** user, char** pw, char** host)
 				*host = ostrcat(tmpstr, NULL, 0, 0);
 			}				
 		}
+		tmpstr = ostrstrcase(fileline, "--dyndns_system ");
+		if(tmpstr != NULL)
+		{
+			tmpstr += 16;
+			if(tmpstr != NULL)
+			{
+				tmpstr[strlen(tmpstr)] = '\0';
+				free(*system); *system = NULL;
+				*system = ostrcat(tmpstr, NULL, 0, 0);
+			}
+		}
 	}
 
 	free(fileline);
@@ -74,7 +85,7 @@ int readinadyn(const char* filename, char** user, char** pw, char** host)
 	return 0;
 }
 
-int writeinadyn(const char* filename, char* user, char* pw, char* host)
+int writeinadyn(const char* filename, char* user, char* pw, char* host, char* system)
 {
 	char* savesettings = NULL;
 	
@@ -88,6 +99,10 @@ int writeinadyn(const char* filename, char* user, char* pw, char* host)
 
 	savesettings = ostrcat(savesettings, "--alias ", 1, 0);
 	savesettings = ostrcat(savesettings, host, 1, 0);
+	savesettings = ostrcat(savesettings, "\n", 1, 0);
+
+	savesettings = ostrcat(savesettings, "--dyndns_system ", 1, 0);
+	savesettings = ostrcat(savesettings, system, 1, 0);
 	savesettings = ostrcat(savesettings, "\n", 1, 0);
 	
 	savesettings = ostrcat(savesettings, "update_period 60000\n", 1, 0);
@@ -112,12 +127,13 @@ void screennetwork_inadyn()
 	struct skin* user = getscreennode(inadyn, "user");
 	struct skin* pw = getscreennode(inadyn, "pw");
 	struct skin* host = getscreennode(inadyn, "host");
+	struct skin* system = getscreennode(inadyn, "system");
 	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
 
-	char* iuser = NULL, *ipw = NULL, *ihost = NULL;
+	char* iuser = NULL, *ipw = NULL, *ihost = NULL, *isystem = NULL;
 
-	readinadyn("/var/etc/inadyn.conf", &iuser, &ipw, &ihost);
+	readinadyn("/var/etc/inadyn.conf", &iuser, &ipw, &ihost, &isystem);
 	
 	addchoicebox(startmode, "n", _("no"));
 	addchoicebox(startmode, "y", _("yes"));
@@ -131,6 +147,15 @@ void screennetwork_inadyn()
 
 	changeinput(host, ihost);
 	free(ihost); ihost = NULL;
+
+	addchoicebox(system, "dyndns@dyndns.org", "dyndns@dyndns.org");
+	addchoicebox(system, "statdns@dyndns.org", "statdns@dyndns.org");
+	addchoicebox(system, "customdns@dyndns.org", "customdns@dyndns.org");
+	addchoicebox(system, "default@freedns.afraid.org", "default@freedns.afraid.org");
+	addchoicebox(system, "default@zoneedit.com", "default@zoneedit.com");
+	addchoicebox(system, "default@no-ip.com", "default@no-ip.com");
+	setchoiceboxselection(system, isystem);
+	free(isystem); isystem = NULL;
 
 	drawscreen(inadyn, 0, 0);
 	addscreenrc(inadyn, listbox);
@@ -146,7 +171,7 @@ void screennetwork_inadyn()
 
 		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcgreen", NULL))
 		{
-			writeinadyn("/var/etc/inadyn.conf", user->ret, pw->ret, host->ret);
+			writeinadyn("/var/etc/inadyn.conf", user->ret, pw->ret, host->ret, system->ret);
 			if(startmode->ret != NULL) addownconfig("inadyn", startmode->ret);
 			if(rcret == getrcconfigint("rcok", NULL)) break;
 			if(rcret == getrcconfigint("rcgreen", NULL))
