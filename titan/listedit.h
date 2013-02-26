@@ -79,13 +79,21 @@ int screenlistedit(int list, struct channel* chnode)
 				newentry = textinput(NULL, "bouquet");
 				if(newentry != NULL)
 				{
+		
+					
 					newentry = stringreplacechar(newentry, '#', '_');
 					tmpstr = ostrcat(newentry, "#", 0, 0);
 					tmpnr = oitoa(status.servicetype);
 					tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
 					free(tmpnr); tmpnr = NULL;
 					tmpstr = ostrcat(tmpstr, "#", 1, 0);
-					tmpstr = ostrcat(tmpstr, getconfig("bouquetpath", NULL), 1, 0);
+
+					char* dname = realpath(getconfig("bouquetfile", NULL), NULL);
+					dname = dirname(dname);
+					tmpstr = ostrcat(tmpstr, dname, 1, 0);
+//					tmpstr = ostrcat(tmpstr, getconfig("bouquetpath", NULL), 1, 0);
+					free(dname); dname = NULL;
+
 					tmpstr = ostrcat(tmpstr, "/", 1, 0);
 					tmpstr = ostrcat(tmpstr, "bouquets.", 1, 0);
 					tmpstr = ostrcat(tmpstr, newentry, 1, 1);
