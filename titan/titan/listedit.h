@@ -89,9 +89,8 @@ int screenlistedit(int list, struct channel* chnode)
 					tmpstr = ostrcat(tmpstr, "#", 1, 0);
 
 					char* dname = realpath(getconfig("bouquetfile", NULL), NULL);
-					dname = dirname(dname);
+					if(dname != NULL) dname = dirname(dname);
 					tmpstr = ostrcat(tmpstr, dname, 1, 0);
-//					tmpstr = ostrcat(tmpstr, getconfig("bouquetpath", NULL), 1, 0);
 					free(dname); dname = NULL;
 
 					tmpstr = ostrcat(tmpstr, "/", 1, 0);
