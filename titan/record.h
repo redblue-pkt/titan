@@ -222,7 +222,7 @@ void recordstop(struct service* node, int ret)
 
 		m_lock(&status.rectimermutex, 1);
 		rectimernode = getrectimerbyservice(node);
-		if(rectimernode != NULL && rectimernode->recendtime != 2) //2 = manuall rec stop
+		if(rectimernode != NULL && node->recendtime != 2) //2 = manuall rec stop
 			afterevent = rectimernode->afterevent;
 		m_unlock(&status.rectimermutex, 1);
 
