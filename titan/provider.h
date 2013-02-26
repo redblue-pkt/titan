@@ -424,12 +424,10 @@ int provider2bouquet(int providerid)
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	tmpstr = ostrcat(tmpstr, oitoa(status.servicetype), 1, 1);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	//TODO: make path as config
 
 	path = realpath(getconfig("bouquetfile", NULL), NULL);
-	path = dirname(path);
+	if(path != NULL) path = dirname(path);
 	path = ostrcat(path, "/bouquets.", 1, 0);
-//	path = ostrcat(path, "/var/etc/titan/bouquets.", 1, 0);
 					
 	path = ostrcat(path, pnode->name, 1, 0);
 	if(status.servicetype == 0) path = ostrcat(path, "_tv", 1, 0);
