@@ -222,7 +222,7 @@ void recordstop(struct service* node, int ret)
 
 		m_lock(&status.rectimermutex, 1);
 		rectimernode = getrectimerbyservice(node);
-		if(rectimernode != NULL)
+		if(rectimernode != NULL && rectimernode->recendtime != 2) //2 = manuall rec stop
 			afterevent = rectimernode->afterevent;
 		m_unlock(&status.rectimermutex, 1);
 
@@ -572,7 +572,6 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 						}
 					}
 				}
-
 			}
 
 			if(writeret < 1)
@@ -1166,13 +1165,12 @@ void screenrecordstop()
 	{
 		servicenode = getrecordbyname(mbox->param, RECORDDIRECT);
 		if(servicenode != NULL)
-		
-			servicenode->recendtime = 1;
+			servicenode->recendtime = 2;
 		else
 		{
 			servicenode = getrecordbyname(mbox->param, RECORDTIMER);
 			if(servicenode != NULL)
-				servicenode->recendtime = 1;
+				servicenode->recendtime = 2;
 		}
 	}
 	
@@ -1236,7 +1234,7 @@ void screenrecorddirect()
 		{
 			servicenode = getrecordbyname(mbox->param, RECORDDIRECT);
 			if(servicenode != NULL)
-				servicenode->recendtime = 1;
+				servicenode->recendtime = 2;
 		}
 		if(mbox->param != NULL && ostrstr(mbox->param, "change") == mbox->param)
 		{
