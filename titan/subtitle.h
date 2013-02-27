@@ -1591,6 +1591,7 @@ void screensubtitle()
 	struct skin* listbox = getscreennode(subtitle, "listbox");
 	struct skin* tmp = NULL;
 	struct subtitle* node = NULL;
+	struct lastsubtitle* lsnode = NULL;
 
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
@@ -1640,6 +1641,14 @@ void screensubtitle()
 			{
 				subtitlestop(1);
 				m_lock(&status.subtitlemutex, 8);
+
+				if(status.autosubtitle == 1 && status.aktservice->channel != NULL)
+				{
+					lsnode = getlastsubtitle(status.aktservice->channel->transponderid, status.aktservice->channel->serviceid);
+					dellastsubtitle(lsnode);
+					lsnode = NULL;
+				}
+				
 				if(checksubtitle(status.aktservice->channel, (struct subtitle*)listbox->select->handle) != NULL)
 				{
 					if(((struct subtitle*)listbox->select->handle)->pid != status.subthreadpid)
@@ -1648,6 +1657,24 @@ void screensubtitle()
 						drawscreen(skin, 0, 0);
 						if(subtitlestart((struct subtitle*)listbox->select->handle) == 0)
 							status.subthreadpid = ((struct subtitle*)listbox->select->handle)->pid;
+
+						if(status.autosubtitle == 1 && status.aktservice->channel != NULL)
+						{
+							lsnode = getlastsubtitle(status.aktservice->channel->transponderid, status.aktservice->channel->serviceid);
+							if(lsnode == NULL)
+							{
+								char* tmpstr = NULL;
+								tmpstr = ostrcat(ollutoa(status.aktservice->channel->transponderid), "#", 1, 0);
+								tmpstr = ostrcat(tmpstr, oitoa(status.aktservice->channel->serviceid), 1, 1);
+								tmpstr = ostrcat(tmpstr, "#", 1, 0);
+								tmpstr = ostrcat(tmpstr, oitoa(((struct subtitle*)listbox->select->handle)->pid), 1, 1);
+								addlastsubtitle(tmpstr, 1, NULL);
+								free(tmpstr); tmpstr = NULL;
+							}
+							else
+								changelastsubtitle(lsnode, ((struct subtitle*)listbox->select->handle)->pid);
+						}
+
 					}
 					else
 						status.subthreadpid = 0;
@@ -1771,5 +1798,246 @@ void freesubtitle(struct channel* chnode)
 	m_unlock(&status.subtitlemutex, 8);
 	debug(1000, "out");
 }
+
+int subtitlestartlast()
+{
+	int ret = 1;
+	struct subtitle* node = NULL;
+	struct lastsubtitle* lsnode = NULL;
+	
+	if(status.aktservice->channel != NULL)
+	{
+		m_lock(&status.subtitlemutex, 8);
+		node = status.aktservice->channel->subtitle;
+		lsnode = getlastsubtitle(status.aktservice->channel->transponderid, status.aktservice->channel->serviceid);
+		
+		if(lsnode != NULL)
+		{
+			while(node != NULL)
+			{
+				if(node->pid == lsnode->subtitlepid)
+					break;
+				node = node->next;
+			}
+		
+			if(node != NULL)
+			{
+				if(subtitlestart(node) == 0)
+				{
+					status.subthreadpid = node->pid;
+					ret = 0;
+				}
+			}
+		}
+		m_unlock(&status.subtitlemutex, 8);
+	}
+	return ret;
+}
+
+void changelastsubtitle(struct lastsubtitle* lsnode, int pid)
+{
+	if(lsnode == NULL) return;
+
+	if(lsnode->subtitlepid != pid)
+	{
+		lsnode->subtitlepid = pid;
+		status.writelastsubtitle = 1;
+	}
+}
+
+struct lastsubtitle* getlastsubtitle(uint64_t transponderid, int serviceid)
+{
+	struct lastsubtitle *node = lastsubtitle;
+
+	while(node != NULL)
+	{
+		if(node->transponderid == transponderid && node->serviceid == serviceid)
+			break;
+		node = node->next;
+	}
+	
+	return node;
+}
+
+struct lastsubtitle* addlastsubtitle(char* line, int count, struct lastsubtitle* last)
+{
+	//debug(1000, "in");
+	struct lastsubtitle *newnode = NULL, *prev = NULL, *node = lastsubtitle;
+	int ret = 0;
+
+	if(line == NULL) return NULL;
+
+	newnode = (struct lastsubtitle*)calloc(1, sizeof(struct lastsubtitle));
+	if(newnode == NULL)
+	{
+		err("no memory");
+		return NULL;
+	}
+
+	ret = sscanf(line, "%llu#%d#%"SCNu16"", &newnode->transponderid, &newnode->serviceid, &newnode->subtitlepid);
+	if(ret != 12)
+	{
+		if(count > 0)
+		{
+			err("lastsubtitle line %d not ok", count);
+		}
+		else
+		{
+			err("add lastsubtitle");
+		}
+		free(newnode);
+		return NULL;
+	}
+
+	status.writelastsubtitle = 1;
+	
+	if(last == NULL)
+	{
+		while(node != NULL)
+		{
+			prev = node;
+			node = node->next;
+		}
+	}
+	else
+	{
+		prev = last;
+		node = last->next;
+	}
+
+	if(prev == NULL)
+		lastsubtitle = newnode;
+	else
+		prev->next = newnode;
+	newnode->next = node;
+
+	//debug(1000, "out");
+	return newnode;
+}
+
+int readlastsubtitle(const char* filename)
+{
+	debug(1000, "in");
+	FILE *fd = NULL;
+	char *fileline = NULL;
+	int linecount = 0, len = 0;
+	struct lastsubtitle* last = NULL, *tmplast = NULL;
+
+	fileline = malloc(MINMALLOC);
+	if(fileline == NULL)
+	{
+		err("no memory");
+		return 1;
+	}
+
+	fd = fopen(filename, "r");
+	if(fd == NULL)
+	{
+		perr("can't open %s", filename);
+		free(fileline);
+		return 1;
+	}
+
+	while(fgets(fileline, MINMALLOC, fd) != NULL)
+	{
+		if(fileline[0] == '#' || fileline[0] == '\n')
+			continue;
+		len = strlen(fileline) - 1;
+		if(len >= 0 && fileline[len] == '\n')
+			fileline[len] = '\0';
+		len--;
+		if(len >= 0 && fileline[len] == '\r')
+			fileline[len] = '\0';
+
+		linecount++;
+		
+		if(last == NULL) last = tmplast;
+		last = addlastsubtitle(fileline, linecount, last);
+		if(last != NULL) tmplast = last;
+	}
+
+	status.writelastsubtitle = 0;
+	free(fileline);
+	fclose(fd);
+	return 0;
+}
+
+void dellastsubtitle(struct lastsubtitle* lsnode)
+{
+	debug(1000, "in");
+	struct lastsubtitle *node = lastsubtitle, *prev = lastsubtitle;
+
+	while(node != NULL)
+	{
+		if(node == lsnode)
+		{
+			status.writetransponder = 1;
+			if(node == lastsubtitle)
+				lastsubtitle = node->next;
+			else
+				prev->next = node->next;
+
+			free(node);
+			node = NULL;
+			break;
+		}
+
+		prev = node;
+		node = node->next;
+	}
+	debug(1000, "out");
+}
+
+void freelastsubtitle()
+{
+	debug(1000, "in");
+	struct lastsubtitle *node = lastsubtitle, *prev = lastsubtitle;
+
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+		if(prev != NULL)
+			dellastsubtitle(prev);
+	}
+	debug(1000, "out");
+}
+
+int writelastsubtitle(const char *filename)
+{
+	debug(1000, "in");
+	FILE *fd = NULL;
+	struct lastsubtitle *node = lastsubtitle;
+	int ret = 0;
+
+	fd = fopen(filename, "w");
+	if(fd == NULL)
+	{
+		perr("can't open %s", filename);
+		return 1;
+	}
+
+	while(node != NULL)
+	{
+		ret = fprintf(fd, "%llu#%d#%d\n", node->transponderid, node->serviceid, node->subtitlepid);
+		if(ret < 0)
+		{
+			perr("writting file %s", filename);
+		}
+		node = node->next;
+	}
+
+	fclose(fd);
+	debug(1000, "out");
+	return 0;
+}
+
+//TODO:
+/*
+add writelastsubtitle to global write
+add readlastsubtitle to titan.c
+add freelastsubtitle to titan.c
+add subtitlestartlast to service (end) with config (status.autosubtitle == 1)
+*/
 
 #endif

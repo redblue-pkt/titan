@@ -52,6 +52,7 @@ struct newsletter* newsletter = NULL;
 struct extepgcache* extepgcache = NULL;
 struct extepgchannel* extepgchannel = NULL;
 struct extepgconfig* extepgconfig = NULL;
+struct lastsubtitle* lastsubtitle = NULL;
 
 #ifdef SH4
 #include "sh4port.h"
