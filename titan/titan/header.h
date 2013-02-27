@@ -777,6 +777,10 @@ struct subtitle* addsubtitle(struct channel* chnode, int subtype, char* langdesc
 void freesubtitle(struct channel* chnode);
 int subtitlestop(int flag);
 int subtitlepause(int flag);
+void changelastsubtitle(struct lastsubtitle* lsnode, int pid);
+void dellastsubtitle(struct lastsubtitle* lsnode);
+struct lastsubtitle* addlastsubtitle(char* line, int count, struct lastsubtitle* last);
+struct lastsubtitle* getlastsubtitle(uint64_t transponderid, int serviceid);
 
 //linkedchannel.h
 struct linkedchannel* addlinkedchannel(struct channel* chnode, int serviceid, uint64_t transponderid, struct linkedchannel* last);

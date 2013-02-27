@@ -190,6 +190,14 @@ enum {DEACTIVE, ACTIVE, INPAUSE, ERROR};
 enum {FUNCTEXT, FUNCPIC, FUNCPROGRESS};
 enum {CASESSIONCREATE, CASESSIONBUSY, CASESSIONDEL, CASESSIONSTART, CASESSIONFINAL, CARESFIRSTENQUIRY, CARESCHANGE, CARESENQUIRY, CADATETIMESEND, CAMMIIDLE, CAMMIDISPLAYREPLAY, CAMMIFAKEOK};
 
+struct lastsubtitle
+{
+	uint64_t transponderid;
+	int serviceid;
+	int16_t subtitlepid;
+	struct lastsubtitle* next;
+};
+
 struct newsletter
 {
 	unsigned long nr;
@@ -1192,6 +1200,7 @@ struct status
 	int writeepgscanlist;
 	int writemostzap;
 	int writemediadb;
+	int writelastsubtitle;
 	// 1 mute is aktiv
 	int mute;
 	// 1 spinner is aktiv
@@ -1339,6 +1348,7 @@ struct status
 	int secondzap;
 	//pointer to marker for recordings
 	struct marker* playmarker;
+	int autosubtitle;
 } status;
 
 struct fb
