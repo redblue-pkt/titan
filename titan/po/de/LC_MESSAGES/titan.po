@@ -2527,11 +2527,26 @@ msgstr "Links gefunden"
 msgid "Page"
 msgstr "Seite"
 
+msgid "show 2 entrys"
+msgstr "sehr gross (2 Bilder)"
+
 msgid "show 6 entrys"
 msgstr "gross (6 Bilder)"
 
 msgid "show 12 entrys"
 msgstr "klein (12 Bilder)"
+
+msgid "show 20 entrys"
+msgstr "sehr klein (20 Bilder)"
+
+msgid "show 30 entrys"
+msgstr "ganz klein (30 Bilder)"
+
+msgid "show auto entrys"
+msgstr "je nach Anzahl automatisch anpassen"
+
+msgid "Pic Ratio"
+msgstr "Menu Bilder im Orginalformat darstellen"
 
 msgid "Delete"
 msgstr "Löschen"
