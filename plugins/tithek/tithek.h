@@ -608,8 +608,74 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	int zcount = 3;
 	int fontsize = 20;
 	int pcount = 6;
+
+	if(getconfigint("tithek_view", NULL) == 0)
+	{
+		if(linecount > 2)
+		{
+			height = 280;
+			width = 390;
+			picheight = 230;
+			picwidth = 370;
+			zcount = 3;
+			fontsize = 20;
+			pcount = 6;
+		}
 	 
-	if(linecount > 8 && getconfigint("tithek_view", NULL) == 1)
+		if(linecount > 8)
+		{
+			height = 180;
+			width = 295;
+			picheight = 130;
+			picwidth = 270;
+			zcount = 4;
+			fontsize = 18;
+			pcount = 12;
+		}
+
+		if(linecount > 19)
+		{
+			height = 140;
+			width = 235;
+			picheight = 90;
+			picwidth = 210;
+			zcount = 5;
+			fontsize = 16;
+			pcount = 20;
+		}
+	
+		if(linecount > 25)
+		{
+			height = 111;
+			width = 196;
+			picheight = 60;
+			picwidth = 150;
+			zcount = 6;
+			fontsize = 14;
+			pcount = 20;
+		}
+	}
+	else if(getconfigint("tithek_view", NULL) == 1)
+	{
+		height = 500;
+		width = 590;
+		picheight = 480;
+		picwidth = 570;
+		zcount = 2;
+		fontsize = 25;
+		pcount = 2;
+	}
+	else if(getconfigint("tithek_view", NULL) == 2)
+	{
+		height = 280;
+		width = 390;
+		picheight = 230;
+		picwidth = 370;
+		zcount = 3;
+		fontsize = 20;
+		pcount = 6;
+	}
+	else if(getconfigint("tithek_view", NULL) == 3)
 	{
 		height = 180;
 		width = 295;
@@ -619,7 +685,33 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		fontsize = 18;
 		pcount = 12;
 	}
+	else if(getconfigint("tithek_view", NULL) == 4)
+	{
+		height = 140;
+		width = 235;
+		picheight = 90;
+		picwidth = 210;
+		zcount = 5;
+		fontsize = 16;
+		pcount = 20;
+	}
+	else if(getconfigint("tithek_view", NULL) == 5)
+	{
+		height = 111;
+		width = 196;
+		picheight = 60;
+		picwidth = 150;
+		zcount = 6;
+		fontsize = 14;
+		pcount = 20;
+	}
 
+	if(getconfigint("tithek_pic_ratio", NULL) == 1)
+	{
+		picwidth = 2;
+		picheight = 2;
+	}
+			
 	while(titheknode != NULL)
 	{
 		tmp = addlistbox(grid, listbox, tmp, 1);
@@ -636,7 +728,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 
 			tmp->picheight = picheight;
 			tmp->picwidth = picwidth;
-
+								
 			tmp->fontsize = fontsize;
 			tmp->height = height;
 			tmp->width = width;
@@ -1365,7 +1457,13 @@ waitrcstart:
 		if(rcret == getrcconfigint("rcmenu", NULL))
 		{
 			screentithek_settings();
-			createtithekplay(titheklink, grid, listbox, countlabel);
+			int pagecount = createtithekplay(titheklink, grid, listbox, countlabel);
+			if(pagecount == 0 || tithekexit == 1) break;
+
+			listbox->aktpage = oaktpage;
+			listbox->aktline = oaktline;
+			listbox->gridcol = ogridcol;
+			addscreenrc(grid, listbox);
 			drawscreen(grid, 0, 0);
 		}
 		
