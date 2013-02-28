@@ -1971,7 +1971,7 @@ void dellastsubtitle(struct lastsubtitle* lsnode)
 	{
 		if(node == lsnode)
 		{
-			status.writetransponder = 1;
+			status.writelastsubtitle = 1;
 			if(node == lastsubtitle)
 				lastsubtitle = node->next;
 			else
@@ -2031,13 +2031,5 @@ int writelastsubtitle(const char *filename)
 	debug(1000, "out");
 	return 0;
 }
-
-//TODO:
-/*
-add writelastsubtitle to global write
-add readlastsubtitle to titan.c
-add freelastsubtitle to titan.c
-add subtitlestartlast to service (end) with config (status.autosubtitle == 1)
-*/
 
 #endif
