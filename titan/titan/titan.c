@@ -415,6 +415,7 @@ void oshutdown(int exitcode, int flag)
 		freeinetwork();
 		freeoldentry();
 		freeextepgconfig();
+		freelastsubtitle();
 	}
 	else
 		freetimer(1);
@@ -708,6 +709,7 @@ int main(int argc, char *argv[])
 	ret = readchannel(getconfig("channelfile", NULL));
 	ret = readtransponderencoding(getconfig("transponderencodingfile", NULL));
 	ret = readmostzap(getconfig("mostzapfile", NULL));
+	ret = readlastsubtitle(getconfig("lastsubtitle", NULL));
 
 	status.aktservice = addservice(NULL);
 	status.lastservice = addservice(NULL);
