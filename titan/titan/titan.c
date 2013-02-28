@@ -53,6 +53,7 @@ struct extepgcache* extepgcache = NULL;
 struct extepgchannel* extepgchannel = NULL;
 struct extepgconfig* extepgconfig = NULL;
 struct lastsubtitle* lastsubtitle = NULL;
+struct style* style = NULL;
 
 #ifdef SH4
 #include "sh4port.h"
@@ -112,6 +113,7 @@ struct lastsubtitle* lastsubtitle = NULL;
 #include "pic.h"
 #include "filelist.h"
 #include "skinfunc.h"
+#include "style.h"
 #include "skin.h"
 #include "inputhelp.h"
 #include "rcfunc.h"

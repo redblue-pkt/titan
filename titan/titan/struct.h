@@ -843,6 +843,66 @@ struct skin
 	struct skin *next;
 };
 
+struct style
+{
+	char* name;
+	int16_t posx;
+	int16_t posy;
+	int16_t width;
+	int16_t height;
+	int16_t picwidth;
+	int16_t picheight;
+	uint16_t textposx;
+	uint16_t textposx2;
+	uint16_t halign;
+	uint16_t valign;
+	uint16_t hspace;
+	uint16_t vspace;
+	uint16_t bgspace;
+	int16_t borderradius;
+	int16_t titlealign;
+	int16_t zorder;
+	int16_t gradient;
+	int16_t titlegradient;
+	uint8_t picquality;
+	uint8_t hidden;
+	uint8_t wrap;
+	uint8_t scrollbar;
+	uint8_t bordersize;
+	int8_t bordertype;
+	uint8_t shadowsize;
+	uint8_t shadowpos;
+	uint8_t fontsize;
+	uint8_t fontsize2;
+	int8_t charspace;
+	uint8_t transparent;
+	uint8_t prozposx;
+	uint8_t prozposy;
+	uint8_t prozwidth;
+	uint8_t prozheight;
+	uint8_t picprozwidth;
+	uint8_t picprozheight;
+	uint8_t funcrettype;
+	long bordercol;
+	long deaktivcol;
+	long progresscol;
+	long shadowcol;
+	long fontcol;
+	long fontcol2;
+	long titlebgcol;
+	long titlebgcol2;
+	long bgcol;
+	long bgcol2;
+	char* font;
+	char* pic;
+	char* param1;
+	char* param2;
+	char* input;
+	char* mask;
+	char* (*skinfunc)(struct skin*, void*, void*);
+	struct style* next;
+};
+
 struct epg
 {
 	int eventid;
