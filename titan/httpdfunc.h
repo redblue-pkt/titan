@@ -1262,7 +1262,9 @@ char* webgetsingleepg(char* param, int fmt)
 	struct epg* epgnode = NULL;
 	struct channel* chnode = NULL;
 	struct tm *loctime = NULL;
-
+	
+	if(param == NULL) return NULL;
+	
 	//create param1
 	param1 = strchr(param, '&');
 	if(param1 != NULL)
