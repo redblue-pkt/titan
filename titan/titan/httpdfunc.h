@@ -1322,7 +1322,7 @@ char* webgetsingleepg(char* param, int fmt)
 
 			loctime = olocaltime(&epgnode->starttime);
 			if(loctime != NULL)
-			strftime(buf1, MINMALLOC, "%d.%m _ %H:%M __ ", loctime);
+				strftime(buf1, MINMALLOC, "%d.%m _ %H:%M __ ", loctime);
 			//strftime(buf1, MINMALLOC, "%H:%M -", loctime);
 			free(loctime); loctime = NULL;
 			//loctime = olocaltime(&epgnode->endtime);
@@ -2295,7 +2295,8 @@ char* webaddrectimer(char* param, int fmt)
 		loctime =	olocaltime(&epgnode->starttime);
 	else
 		loctime = olocaltime(&akttime);
-	strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
+	if(loctime != NULL)
+		strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
 	free(loctime); loctime = NULL;
 
 	buf1 = ostrcat(buf2, NULL, 0, 0);
@@ -2309,7 +2310,8 @@ char* webaddrectimer(char* param, int fmt)
 		loctime =	olocaltime(&epgnode->endtime);
 	else
 		loctime = olocaltime(&akttime);
-	strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
+	if(loctime != NULL)
+		strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
 	free(loctime); loctime = NULL;
 	
 	buf1 = ostrcat(buf2, NULL, 0, 0);
@@ -2505,10 +2507,13 @@ char* webrectimersend(char* param, int fmt)
 		}
 	
 		loctime = olocaltime(&node->begin);
-		tmpstr = strptime(begin, "%H:%M %d-%m-%Y", loctime);
-		if(tmpstr != NULL) {
-			loctime->tm_isdst = -1;
-			node->begin = mktime(loctime);
+		if(loctime != NULL)
+		{
+			tmpstr = strptime(begin, "%H:%M %d-%m-%Y", loctime);
+			if(tmpstr != NULL) {
+				loctime->tm_isdst = -1;
+				node->begin = mktime(loctime);
+			}
 		}
 		if(node->justplay == 0 && newnode == 1) node->begin -= getconfigint("recforerun" , NULL) * 60;
 		node->begin -= (node->begin % 60);
@@ -2516,10 +2521,13 @@ char* webrectimersend(char* param, int fmt)
 		free(loctime); loctime = NULL;
 
 		loctime = olocaltime(&node->end);
-		tmpstr = strptime(end, "%H:%M %d-%m-%Y", loctime);
-		if(tmpstr != NULL) {
-			loctime->tm_isdst = -1;
-			node->end = mktime(loctime);
+		if(loctime != NULL)
+		{
+			tmpstr = strptime(end, "%H:%M %d-%m-%Y", loctime);
+			if(tmpstr != NULL) {
+				loctime->tm_isdst = -1;
+				node->end = mktime(loctime);
+			}
 		}
 		if(node->justplay == 0 && newnode == 1) node->end += getconfigint("recoverrun" , NULL) * 60;
 		node->end -= (node->end % 60);
@@ -2600,7 +2608,8 @@ char* webeditrectimer(char* param, int fmt)
 		
 	buf2 = malloc(MINMALLOC);
 	loctime = olocaltime(&node->begin);
-	strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
+	if(loctime != NULL)
+		strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
 	free(loctime); loctime = NULL;
 
 	buf1 = ostrcat(buf2, NULL, 0, 0);
@@ -2611,7 +2620,8 @@ char* webeditrectimer(char* param, int fmt)
 	free(buf1); buf1 = NULL;
 	
 	loctime = olocaltime(&node->end);
-	strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
+	if(loctime != NULL)
+		strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
 	free(loctime); loctime = NULL;
 
 	buf1 = ostrcat(buf2, NULL, 0, 0);

@@ -1643,6 +1643,8 @@ int ostrftime(char* buf, int count, char* format, struct tm* t)
 {
 	int ret = -1;
 
+	if(buf == NULL || t == NULL) return ret;
+
 	if(format != NULL)
 		ret = strftime(buf, count, format, t);
 	else
