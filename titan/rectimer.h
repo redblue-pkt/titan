@@ -175,7 +175,8 @@ void recrepeatecalc(struct rectimer* node)
 
 	//get rectimer start day
 	loctime = olocaltime(&node->begin);
-	rectimerday = loctime->tm_wday - 1;
+	if(loctime != NULL)
+		rectimerday = loctime->tm_wday - 1;
 	free(loctime); loctime = NULL;
 	if(rectimerday == -1) rectimerday = 6;
 
@@ -875,13 +876,16 @@ int rectimergetaktday()
 
 	time_t akttime = time(NULL);
 	loctime = olocaltime(&akttime);
-	if(loctime->tm_wday == 0) ret = 64;
-	if(loctime->tm_wday == 1) ret = 1;
-	if(loctime->tm_wday == 2) ret = 2;
-	if(loctime->tm_wday == 3) ret = 4;
-	if(loctime->tm_wday == 4) ret = 8;
-	if(loctime->tm_wday == 5) ret = 16;
-	if(loctime->tm_wday == 6) ret = 32;
+	if(loctime != NULL)
+	{
+		if(loctime->tm_wday == 0) ret = 64;
+		if(loctime->tm_wday == 1) ret = 1;
+		if(loctime->tm_wday == 2) ret = 2;
+		if(loctime->tm_wday == 3) ret = 4;
+		if(loctime->tm_wday == 4) ret = 8;
+		if(loctime->tm_wday == 5) ret = 16;
+		if(loctime->tm_wday == 6) ret = 32;
+	}
 	free(loctime); loctime = NULL;
 
 	return ret;
