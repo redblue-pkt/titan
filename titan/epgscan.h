@@ -35,7 +35,7 @@ void epgscancreatetimer()
 		return;
 	}
 
-	loctime = localtime(&akttime);
+	loctime = olocaltime(&akttime);
 	daylight = loctime->tm_isdst;
 	loctime->tm_sec = 0;
 
@@ -46,6 +46,7 @@ void epgscancreatetimer()
 	if(strptime(buf, "%d-%m-%Y %H:%M", loctime) != NULL)
 		starttime = mktime(loctime);
 
+	free(loctime); loctime = NULL;
 	free(buf); buf = NULL;
 	if(starttime < akttime) starttime += 86400;
 

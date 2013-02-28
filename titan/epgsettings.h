@@ -161,7 +161,7 @@ void screenepgsettings()
 	addchoicebox(epgrefresh, "21:00", "21:00");
 	addchoicebox(epgrefresh, "22:00", "22:00");
 	addchoicebox(epgrefresh, "23:00", "23:00");
-	addchoicebox(epgrefresh, "24:00", "24:00");
+	addchoicebox(epgrefresh, "23:59", "24:00");
 	setchoiceboxselection(epgrefresh, getconfig("epg_refreshtime", NULL));
 		
 	addchoicebox(epgbutton, "0", _("Single EPG")); 	 	 
