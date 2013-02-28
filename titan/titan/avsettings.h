@@ -24,6 +24,7 @@ void screenavsettings(int flag)
 	struct skin* ac3mode = getscreennode(avsettings, "ac3mode");
 	struct skin* volautochangevalue = getscreennode(avsettings, "volautochangevalue");
 	struct skin* mode3d = getscreennode(avsettings, "mode3d");
+	struct skin* autosubtitle = getscreennode(avsettings, "autosubtitle");
 	struct skin* tmp = NULL;
 
 	ret = getvideomodechoices();
@@ -136,6 +137,10 @@ void screenavsettings(int flag)
 	ret = getmode3d();
 	setchoiceboxselection(mode3d, ret);
 	free(ret); ret = NULL;
+
+	addchoicebox(autosubtitle, "0", _("no"));
+	addchoicebox(autosubtitle, "1", _("yes"));
+	setchoiceboxselection(autosubtitle, getconfig("autosubtitle", NULL));
 
 	drawscreen(avsettings, 0, 0);
 	addscreenrc(avsettings, listbox);
@@ -269,6 +274,9 @@ void screenavsettings(int flag)
 			addconfigscreencheck("volautochangevalue", volautochangevalue, 0);
 			status.volautochangevalue = getconfigint("volautochangevalue", NULL);
 			addconfigscreencheck("av_ac3default", ac3default, 0);
+			addconfigscreencheck("autosubtitle", autosubtitle, 0);
+			status.autosubtitle = getconfigint("autosubtitle", NULL);
+
 			if(rcret == getrcconfigint("rcok", NULL)) break;
 		}
 	}
