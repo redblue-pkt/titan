@@ -36,6 +36,12 @@ void epgscancreatetimer()
 	}
 
 	loctime = olocaltime(&akttime);
+	if(loctime == NULL)
+	{
+		free(buf);
+		return;
+	}
+
 	daylight = loctime->tm_isdst;
 	loctime->tm_sec = 0;
 
