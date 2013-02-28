@@ -1771,6 +1771,8 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 		//auto scale to mwidth / mheight
 		if(scalewidth == 1 && scaleheight == 1)
 			calcautoscale(width, height, mwidth, mheight, &scalewidth, &scaleheight);
+		else if(scalewidth == 2 && scaleheight == 2)
+			calcautoscale(width, height, mwidth, mheight - 20, &scalewidth, &scaleheight);
 
 		if(scalewidth == 0) scalewidth = width;
 		if(scaleheight == 0) scaleheight = height;
@@ -1989,6 +1991,8 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 		//auto scale to mwidth / mheight
 		if(scalewidth == 1 && scaleheight == 1)
 			calcautoscale(width, height, mwidth, mheight, &scalewidth, &scaleheight);
+		else if(scalewidth == 2 && scaleheight == 2)
+			calcautoscale(width, height, mwidth, mheight - 20, &scalewidth, &scaleheight);
 	
 		if(scalewidth == 0) scalewidth = width;
 		if(scaleheight == 0) scaleheight = height;
