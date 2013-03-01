@@ -206,13 +206,22 @@ void screenavsettings(int flag)
 						{
 							setvideomode(ret, 0); 
 							changefbresolution(ret);
-							writeallconfig(1);
-							if((ostrncmp("576", ret, 3) == 0) || (ostrncmp("pal", ret, 3) == 0))
-								writesys("/var/etc/.scart", "0", 0);
-							else
-								unlink("/var/etc/.scart");
 						}
-
+						else
+						{
+							writeallconfig(1);
+							debug(10, "resolution->ret: %s", resolution->ret);
+							if(ostrncmp("576", resolution->ret, 3) == 0 || ostrncmp("pal", resolution->ret, 3) == 0)
+							{
+								debug(10, "create /var/etc/.scart");
+								writesys("/var/etc/.scart", "0", 0);
+							}
+							else
+							{
+								debug(10, "unlink /var/etc/.scart");
+								unlink("/var/etc/.scart");
+							}
+						}
 					}
 					if(flag == 1) drawscreen(avsettings, 0, 0);
 				}
