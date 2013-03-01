@@ -811,6 +811,10 @@ void playrcff(char* file, char* showname, int* playinfobarstatus, int* playinfob
 			{
 				playerpausets();
 				playercontinuets();
+				audiostop(status.aktservice->audiodev);
+				videostop(status.aktservice->videodev, 0);
+				videoplay(status.aktservice->videodev);
+				audioplay(status.aktservice->audiodev);
 			}
 			else if(playertype == 2)
 				dvdcontinue();
@@ -864,7 +868,14 @@ void playrcfr(char* file, char* showname, int* playinfobarstatus, int* playinfob
 		{
 			status.play = 1;
 			if(playertype == 1)
+			{
+				playerpausets();
 				playercontinuets();
+				audiostop(status.aktservice->audiodev);
+				videostop(status.aktservice->videodev, 0);
+				videoplay(status.aktservice->videodev);
+				audioplay(status.aktservice->audiodev);
+			}
 			else if(playertype == 2)
 				dvdcontinue();
 			else
@@ -880,18 +891,22 @@ void playrcpause(char* file, char* showname, int* playinfobarstatus, int* playin
 {
 	if(checkbit(status.playercan, 9) == 0) return;
 
+	if(status.playspeed != 0) return;
+
 	if(status.pause == 1)
 	{
-		status.slowspeed = 0;
-		status.playspeed = 0;
-		status.play = 1;
-		status.pause = 0;
 		if(playertype == 1)
+		{
 			playercontinuets();
+		}
 		else if(playertype == 2)
 			dvdcontinue();
 		else
 			playercontinue();
+		status.slowspeed = 0;
+		status.playspeed = 0;
+		status.play = 1;
+		status.pause = 0;
 		*playinfobarstatus = 1;
 		*playinfobarcount = 0;
 		screenplayinfobar(file, showname, 0, playertype, flag);
@@ -925,6 +940,13 @@ void playrcplay(char* file, char* showname, int* playinfobarstatus, int* playinf
 	{
 		playerpausets();
 		playercontinuets();
+		if(status.playspeed != 0)
+		{
+			audiostop(status.aktservice->audiodev);
+			videostop(status.aktservice->videodev, 0);
+			videoplay(status.aktservice->videodev);
+			audioplay(status.aktservice->audiodev);
+		}
 	}
 	else if(playertype == 2)
 		dvdcontinue();
