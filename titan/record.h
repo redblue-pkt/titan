@@ -984,7 +984,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 			if(chnode->audiopid > 0) dmxaddpid(dmxnode, chnode->audiopid);
 			if(chnode->videopid > 0) dmxaddpid(dmxnode, chnode->videopid);
 			dmxaddpid(dmxnode, chnode->pmtpid);
-			//dmxaddpid(dmxnode, chnode->pcrpid);
+			if(chnode->pcrpid > 0 && chnode->pcrpid != chnode->videopid) dmxaddpid(dmxnode, chnode->pcrpid);
 			//add all audiotracks
 			atrack = chnode->audiotrack;
 			while(atrack != NULL)
