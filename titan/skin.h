@@ -751,7 +751,10 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 		}
 		ret = getxmlentry(line, " font=");
 		if(ret != NULL)
+		{
+			free(newnode->font); newnode->font = NULL;
 			newnode->font = ret;
+		}
 		ret = getxmlentry(line, " title=");
 		if(ret != NULL)
 		{
@@ -837,6 +840,7 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 		ret = getxmlentry(line, " pic=");
 		if(ret != NULL)
 		{
+			free(newnode->pic); newnode->pic = NULL;
 			newnode->pic = changepicpath(ret);
 			free(ret);
 		}
@@ -848,13 +852,22 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 		}
 		ret = getxmlentry(line, " param1=");
 		if(ret != NULL)
+		{
+			free(newnode->param1); newnode->param1 = NULL;
 			newnode->param1 = ret;
+		}
 		ret = getxmlentry(line, " param2=");
 		if(ret != NULL)
+		{
+			free(newnode->param2); newnode->param2 = NULL;
 			newnode->param2 = ret;
+		}
 		ret = getxmlentry(line, " input=");
 		if(ret != NULL)
+		{
+			free(newnode->input); newnode->input = NULL;
 			newnode->input = ret;
+		}
 		ret = getxmlentry(line, " mask=");
 		if(ret != NULL)
 		{
