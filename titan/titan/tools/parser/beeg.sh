@@ -102,7 +102,7 @@ for ROUND3 in $sectionstags; do
 			tagname=`echo $ROUND4 | cut -d"/" -f5`
 			STREAMURL="http://atemio.dyndns.tv/mediathek/beeg/streams/beeg.$tagname.list"
 			PIC="http://atemio.dyndns.tv/mediathek/menu/$tagname.jpg"
-			LINE="$tagname#$STREAMURL#$PIC#beeg_$piccount.jpg#Beeg#0"
+			LINE="$tagname#$STREAMURL#$PIC#beeg_$piccount.jpg#Beeg#3"
 			
 			if [ `cat cache.beeg.category.titanlist | grep "$tagname#$STREAMURL#$PIC#beeg_" | wc -l` -eq 0 ];then
 				echo $LINE >> cache.beeg.category.titanlist
@@ -144,11 +144,11 @@ for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X
 	if [ `cat cache.beeg.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 		cat cache.beeg.titanlist | grep ^"$ROUND" > cache.beeg.titanlist."$ROUND"
 		cat cache.beeg.titanlist."$ROUND" | sort -u > _full/beeg/streams/beeg.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/beeg/streams/beeg."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Beeg#0 >> _full/beeg/beeg.a-z.list
+		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/beeg/streams/beeg."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Beeg#3 >> _full/beeg/beeg.a-z.list
 	elif [ `cat cache.beeg.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 		cat cache.beeg.titanlist | grep ^"$ROUND" > cache.beeg.titanlist."$ROUND"
 		cat cache.beeg.titanlist."$ROUND" | sort -u > _full/beeg/streams/beeg.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/beeg/streams/beeg."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Beeg#0 >> _full/beeg/beeg.a-z.list
+		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/beeg/streams/beeg."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Beeg#3 >> _full/beeg/beeg.a-z.list
 	fi
 done
 

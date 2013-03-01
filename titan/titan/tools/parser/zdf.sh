@@ -26,7 +26,7 @@ for ROUND1 in $SEARCHLIST; do
 	piccount=`expr $piccount + 1`
 	URL="http://atemio.dyndns.tv/mediathek/zdf/streams/zdf.$filename.list"
 	PIC="http://atemio.dyndns.tv/mediathek/menu/$filename.jpg"
-	LINE="$TITLE#$URL#$PIC#zdf_$piccount.jpg#ZDF#0"
+	LINE="$TITLE#$URL#$PIC#zdf_$piccount.jpg#ZDF#3"
 	echo LINE $LINE
 #	echo $LINE >> cache.titanlist
 	if [ ! -z "$TITLE" ] || [ ! -z "$URL" ] || [ ! -z "$PIC" ]; then
@@ -51,7 +51,7 @@ tcount=0
 			URL="http://atemio.dyndns.tv/mediathek/zdf/streams/zdf.$filename.day$i.list"
 			TITLE=`cat cache.$filename.list | grep "</li><li><a href=\"/ZDFmediathek/hauptnavigation/$filename/day$i" | cut -d">" -f4 | cut -d"<" -f1 | sed 's/- //'`
 			PIC="http://atemio.dyndns.tv/mediathek/menu/day$i.jpg"
-			LINE="$TITLE#$URL#$PIC#zdf_$piccount.jpg#ZDF#0"
+			LINE="$TITLE#$URL#$PIC#zdf_$piccount.jpg#ZDF#3"
 			if [ ! -z "$TITLE" ] || [ ! -z "$URL" ] || [ ! -z "$PIC" ]; then
 				echo "$LINE" >> cache.$filename.titanlist
 			fi
@@ -164,7 +164,7 @@ tcount=0
 			URL="http://atemio.dyndns.tv/mediathek/zdf/streams/zdf.$filename.$filename2.list"
 			PIC="http://atemio.dyndns.tv/mediathek/menu/$filename2.jpg"
 
-			LINE="$TITLE#$URL#$PIC#zdf_$piccount.jpg#ZDF#0"
+			LINE="$TITLE#$URL#$PIC#zdf_$piccount.jpg#ZDF#3"
 			if [ ! -z "$TITLE" ] || [ ! -z "$URL" ] || [ ! -z "$PIC" ]; then
 				echo "$LINE" >> cache.$filename.titanlist
 			fi
@@ -191,7 +191,7 @@ tcount=0
 				ls cache.$filename.list
 							
 				if [ ! `echo $TITLE | grep "^/" | wc -l` -eq 1 ]; then
-					LINE="$TITLE#$URL#$PIC#zdf_$piccount.jpg#ZDF#0"
+					LINE="$TITLE#$URL#$PIC#zdf_$piccount.jpg#ZDF#3"
 					if [ ! -z "$TITLE" ] || [ ! -z "$URL" ] || [ ! -z "$PIC" ]; then
 						echo "$LINE" >> cache.$filename.$filename2.titanlist
 					fi
@@ -257,11 +257,11 @@ tcount=0
 		
 		if [ ! `echo $TITLE | grep "^/" | wc -l` -eq 1 ]; then
 			if [ $filename == rubriken ];then
-				LINE="$TITLE#$URL#$PIC#zdf_$piccount.png#ZDF#0"
+				LINE="$TITLE#$URL#$PIC#zdf_$piccount.png#ZDF#3"
 			elif [ $filename == themen ];then
-				LINE="$TITLE#$URL#$PIC#zdf_$piccount.png#ZDF#0"
+				LINE="$TITLE#$URL#$PIC#zdf_$piccount.png#ZDF#3"
 			else
-				LINE="$TITLE#$URL#$PIC#zdf_$piccount.jpg#ZDF#0"
+				LINE="$TITLE#$URL#$PIC#zdf_$piccount.jpg#ZDF#3"
 			fi
 			if [ ! -z "$TITLE" ] || [ ! -z "$URL" ] || [ ! -z "$PIC" ]; then			
 				echo "$LINE" >> cache.$filename.titanlist
@@ -291,7 +291,7 @@ tcount=0
 			ls cache.$filename.list
 						
 			if [ ! `echo $TITLE | grep "^/" | wc -l` -eq 1 ]; then	
-				LINE="$TITLE#$URL#$PIC#zdf_$piccount.jpg#ZDF#0"
+				LINE="$TITLE#$URL#$PIC#zdf_$piccount.jpg#ZDF#3"
 				if [ ! -z "$TITLE" ] || [ ! -z "$URL" ] || [ ! -z "$PIC" ]; then
 					echo "$LINE" >> cache.$filename.$filename2.titanlist
 				fi

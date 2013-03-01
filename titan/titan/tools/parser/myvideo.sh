@@ -29,7 +29,7 @@ for ROUND1 in $main_list; do
 		wget --no-check-certificate "http://myvideo.de/$ROUND1" -O cache.$filename.list
 		echo ROUND1 $ROUND1
 		TITLE=`echo "$ROUND1" | tr '_' ' ' | tr '-' ' '`			
-		echo "$TITLE""#http://atemio.dyndns.tv/mediathek/myvideo/myvideo."$filename".list#http://atemio.dyndns.tv/mediathek/menu/"$filename".jpg#"$filename".jpg"#MyVideo#0 >> cache.myvideo.category.titanlist
+		echo "$TITLE""#http://atemio.dyndns.tv/mediathek/myvideo/myvideo."$filename".list#http://atemio.dyndns.tv/mediathek/menu/"$filename".jpg#"$filename".jpg"#MyVideo#3 >> cache.myvideo.category.titanlist
 		submenu_list=`cat cache.$filename.list | tr ' ' '\n' | grep "/$ROUND1/" | grep -v page |cut -d "'" -f2 | sed "s!/$ROUND1/!!" | sort -um`
 	fi
 	echo submenu_list1 $submenu_list
@@ -61,11 +61,11 @@ for ROUND1 in $main_list; do
 	
 			if [ $skip == 0 ];then
 				if [ $filename_submenu1 == "serien" ] && [ $ROUND2 != Alle_Serien_A-Z ] ;then
-					echo "$TITLE""#http://atemio.dyndns.tv/mediathek/myvideo/myvideo."$filename_submenu1"."$filename".list#http://atemio.dyndns.tv/mediathek/menu/"$filename".jpg#"$filename".jpg"#MyVideo#0 >> cache.myvideo.$filename_submenu1.titanlist
+					echo "$TITLE""#http://atemio.dyndns.tv/mediathek/myvideo/myvideo."$filename_submenu1"."$filename".list#http://atemio.dyndns.tv/mediathek/menu/"$filename".jpg#"$filename".jpg"#MyVideo#3 >> cache.myvideo.$filename_submenu1.titanlist
 					submenu2_list=`cat cache.$filename.list | tr ";" "\n" | grep /channel | grep .jpg | sed "s/.*longdesc=/pic=/" | grep ^pic  | tr ' ' '\n'| grep href | cut -d"'" -f2`
 				else
-	#				echo "$TITLE""#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."$filename_submenu1"."$filename".list#http://atemio.dyndns.tv/mediathek/menu/"$filename".jpg#"$filename".jpg"#MyVideo#0 >> cache.myvideo.$filename_submenu1.titanlist
-					echo "$TITLE""#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."$filename".list#http://atemio.dyndns.tv/mediathek/menu/"$filename".jpg#"$filename".jpg"#MyVideo#0 >> cache.myvideo.$filename_submenu1.titanlist
+	#				echo "$TITLE""#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."$filename_submenu1"."$filename".list#http://atemio.dyndns.tv/mediathek/menu/"$filename".jpg#"$filename".jpg"#MyVideo#3 >> cache.myvideo.$filename_submenu1.titanlist
+					echo "$TITLE""#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."$filename".list#http://atemio.dyndns.tv/mediathek/menu/"$filename".jpg#"$filename".jpg"#MyVideo#3 >> cache.myvideo.$filename_submenu1.titanlist
 					submenu2_list=`cat cache.$filename.list | tr ' ' '\n' |grep "href='http://www.myvideo.de/channel" | cut -d"'" -f2 | sed 's!http://www.myvideo.de!!'`
 				fi
 	
@@ -113,9 +113,9 @@ for ROUND1 in $main_list; do
 		
 					if [ $skip == 0 ];then			
 						if [ -z $PIC ];then
-							echo "$TITLE""#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."$filename".list#http://atemio.dyndns.tv/mediathek/menu/"$filename".jpg#"$filename".jpg"#MyVideo#0 >> cache.myvideo.$filename_submenu1.$filename_submenu2.titanlist
+							echo "$TITLE""#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."$filename".list#http://atemio.dyndns.tv/mediathek/menu/"$filename".jpg#"$filename".jpg"#MyVideo#3 >> cache.myvideo.$filename_submenu1.$filename_submenu2.titanlist
 						else
-							echo "$TITLE""#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."$filename".list#$PIC#"$filename".jpg"#MyVideo#0 >> cache.myvideo.$filename_submenu1.$filename_submenu2.titanlist
+							echo "$TITLE""#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."$filename".list#$PIC#"$filename".jpg"#MyVideo#3 >> cache.myvideo.$filename_submenu1.$filename_submenu2.titanlist
 						fi
 	
 	#					echo "cache.$filename.list#http://myvideo.de/$ROUND3PATH/$ROUND3" >> _liste
@@ -262,11 +262,11 @@ for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X
 	if [ `cat cache.myvideo.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 		cat cache.myvideo.titanlist | grep ^"$ROUND" > cache.myvideo.titanlist."$ROUND"
 		cat cache.myvideo.titanlist."$ROUND" | sort -um > _full/myvideo/streams/myvideo.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#MyVideo#0 >> _full/myvideo/myvideo.a-z.list
+		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#MyVideo#3 >> _full/myvideo/myvideo.a-z.list
 	elif [ `cat cache.myvideo.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 		cat cache.myvideo.titanlist | grep ^"$ROUND" > cache.myvideo.titanlist."$ROUND"
 		cat cache.myvideo.titanlist."$ROUND" | sort -um > _full/myvideo/streams/myvideo.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#MyVideo#0 >> _full/myvideo/myvideo.a-z.list
+		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#MyVideo#3 >> _full/myvideo/myvideo.a-z.list
 	fi
 done
 
