@@ -87,27 +87,6 @@ int playerstartts(char* file, int flag)
 			dvrclose(dvrnode, -1);
 			return 1;
 		}
-		if(flag == 0 && getconfigint("showlastpos", NULL) == 1)
-		{ 
-			char* fileseek = changefilenameext(file, ".se");
-			FILE* fbseek = fopen(fileseek, "r");
-			if(fbseek != NULL)
-			{
-				ret = textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
-				if(ret == 0 || ret == 1)
-				{
-					char* skip1 = calloc(1, 20);
-					if(skip1 != NULL)
-					{
-						fscanf(fbseek, "%s", skip1);
-						lseek64(fd, atoll(skip1), SEEK_SET);
-					}
-					free(skip1); skip1 = NULL;
-				}
-				fclose(fbseek);
-			}
-			free(fileseek); fileseek = NULL;
-		}
 		if(flag == 0)
 		{
 			delmarkernode(-1);
@@ -165,6 +144,27 @@ int playerstartts(char* file, int flag)
 		{
 			snode->endoffile = lseek64(snode->recsrcfd , 0, SEEK_END);
 			lseek64(snode->recsrcfd , 0, SEEK_SET);
+			if(flag == 0 && getconfigint("showlastpos", NULL) == 1)
+			{ 
+				char* fileseek = changefilenameext(file, ".se");
+				FILE* fbseek = fopen(fileseek, "r");
+				if(fbseek != NULL)
+				{
+					ret = textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+					if(ret == 0 || ret == 1)
+					{
+						char* skip1 = calloc(1, 20);
+						if(skip1 != NULL)
+						{
+							fscanf(fbseek, "%s", skip1);
+							lseek64(snode->recsrcfd, atoll(skip1), SEEK_SET);
+						}
+						free(skip1); skip1 = NULL;
+					}
+					fclose(fbseek);
+				}
+				free(fileseek); fileseek = NULL;
+			}
 		}
 	}
 
