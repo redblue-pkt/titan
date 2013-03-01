@@ -1073,7 +1073,7 @@ int gettsinfo(int fd, unsigned long long* lenpts, unsigned long long* startpts, 
 		if(lenpts != NULL) *lenpts = end - start;
 		if(startpts != NULL) *startpts = start;
 		if(endpts != NULL) *endpts = end;
-		if(bitrate != NULL) *bitrate = gettsbitrate(start, end, startfindpos, endfindpos);
+		if(bitrate != NULL && *bitrate == 0) *bitrate = gettsbitrate(start, end, startfindpos, endfindpos);
 	}
 
 	if(lenpts != NULL && *lenpts < 0) *lenpts = 0;
