@@ -4566,7 +4566,7 @@ void switchvideomode()
 		}
 		/*
 		int ret = textbox(_("Message"), _("Is this Videomode ok ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
-		if(ret == 0 || ret == 2)
+		if(ret == 1 || ret == 2)
 		{
 			setvideomode(tmpstr, 0);
 			changefbresolution(tmpstr);
