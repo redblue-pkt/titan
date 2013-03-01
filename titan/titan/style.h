@@ -389,7 +389,6 @@ void addstyletoscreennode(struct skin* node, struct style* snode)
 	node->charspace = snode->charspace;
 	node->borderradius = snode->borderradius;
 	node->transparent = snode->transparent;
-	node->font = ostrcat(snode->font, NULL, 0, 0);
 	node->titlealign = snode->titlealign;
 	node->titlebgcol = snode->titlebgcol;
 	node->titlebgcol2 = snode->titlebgcol2;
@@ -397,12 +396,7 @@ void addstyletoscreennode(struct skin* node, struct style* snode)
 	node->bgcol2 = snode->bgcol2;
 	node->gradient = snode->gradient;
 	node->titlegradient = snode->titlegradient;
-	node->pic = ostrcat(snode->pic, NULL, 0, 0);
 	node->skinfunc = snode->skinfunc;
-	node->param1 = ostrcat(snode->param1, NULL, 0, 0);
-	node->param2 = ostrcat(snode->param2, NULL, 0, 0);
-	node->input = ostrcat(snode->input, NULL, 0, 0);
-	changemask(node, snode->mask);
 	node->prozposx = snode->prozposx;
 	node->prozposy = snode->prozposy;
 	node->prozwidth = snode->prozwidth;
@@ -410,6 +404,14 @@ void addstyletoscreennode(struct skin* node, struct style* snode)
 	node->picprozwidth = snode->picprozwidth;
 	node->picprozheight = snode->picprozheight;
 	node->funcrettype = snode->funcrettype;
+
+	changemask(node, snode->mask);
+
+	node->param1 = ostrcat(snode->param1, NULL, 0, 0);
+	node->param2 = ostrcat(snode->param2, NULL, 0, 0);
+	node->input = ostrcat(snode->input, NULL, 0, 0);
+	node->pic = ostrcat(snode->pic, NULL, 0, 0);
+	node->font = ostrcat(snode->font, NULL, 0, 0);
 }
 
 struct style* getstyle(char* name)
