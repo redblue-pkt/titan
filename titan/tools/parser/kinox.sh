@@ -91,7 +91,7 @@ for ROUND0 in $main_list; do
 	piccount=`expr $piccount + 1`
 	URL="http://atemio.dyndns.tv/mediathek/kinox/streams/kinox.$ROUND0.list"
 	PIC="http://atemio.dyndns.tv/mediathek/menu/$ROUND0.jpg"
-	LINE="$TITLE#$URL#$PIC#kinox_$piccount.jpg#KinoX#0"
+	LINE="$TITLE#$URL#$PIC#kinox_$piccount.jpg#KinoX#3"
 	if [ ! -z "$TITLE" ]; then
 		echo $LINE >> cache.kinox.category.titanlist	
 	fi
@@ -154,11 +154,11 @@ for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X
 	if [ `cat cache.kinox.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 		cat cache.kinox.titanlist | grep ^"$ROUND" > cache.kinox.titanlist."$ROUND"
 		cat cache.kinox.titanlist."$ROUND" | sort -um > _full/kinox/streams/kinox.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/kinox/streams/kinox."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#KinoX#0 >> _full/kinox/kinox.a-z.list
+		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/kinox/streams/kinox."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#KinoX#3 >> _full/kinox/kinox.a-z.list
 	elif [ `cat cache.kinox.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 		cat cache.kinox.titanlist | grep ^"$ROUND" > cache.kinox.titanlist."$ROUND"
 		cat cache.kinox.titanlist."$ROUND" | sort -um > _full/kinox/streams/kinox.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/kinox/streams/kinox."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#KinoX#0 >> _full/kinox/kinox.a-z.list
+		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/kinox/streams/kinox."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#KinoX#3 >> _full/kinox/kinox.a-z.list
 	fi
 done
 rm cache.*

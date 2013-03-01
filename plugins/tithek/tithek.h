@@ -10,6 +10,7 @@ int tithekexit = 0;
 //flag 0	- menu
 //flag 1	- menu pay hidden tithek_pay=0/1 0=hidden
 //flag 2	- http (default streamurl)
+//flag 3	- menu cover
 //flag 4	- youtube
 //flag 5	- rtl2now
 //flag 6	- superrtlnow
@@ -577,7 +578,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	return localfile;
 }
 
-int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, struct skin* countlabel)
+int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, struct skin* countlabel, int flag)
 {
 	int gridbr = 0, posx = 0, count = 0, sumcount = 0, count1 = 0, pagecount = 0, skip = 0;
 	int localfile = 0;
@@ -608,8 +609,8 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	int zcount = 2;
 	int fontsize = 25;
 	int pcount = 2;
-
-	if(getconfigint("tithek_view", NULL) == 0 || ((struct tithek*)listbox->select->handle)->flag == 0 || ((struct tithek*)listbox->select->handle)->flag == 1 || ((struct tithek*)listbox->select->handle)->flag == 1000 || ((struct tithek*)listbox->select->handle)->flag == 22 || ((struct tithek*)listbox->select->handle)->flag == 23 || ((struct tithek*)listbox->select->handle)->flag == 28)
+	
+	if(getconfigint("tithek_view", NULL) == 0 || flag != 3)
 	{
 		if(linecount > 2)
 		{
@@ -655,7 +656,8 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 			pcount = 30;
 		}
 	}
-	else if(getconfigint("tithek_view", NULL) == 1)
+	
+	if(getconfigint("tithek_view", NULL) == 1 && flag == 3)
 	{
 		height = 500;
 		width = 590;
@@ -665,7 +667,8 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		fontsize = 25;
 		pcount = 2;
 	}
-	else if(getconfigint("tithek_view", NULL) == 2)
+
+	if(getconfigint("tithek_view", NULL) == 2 && flag == 3)
 	{
 		height = 280;
 		width = 390;
@@ -675,7 +678,8 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		fontsize = 20;
 		pcount = 6;
 	}
-	else if(getconfigint("tithek_view", NULL) == 3)
+
+	if(getconfigint("tithek_view", NULL) == 3 && flag == 3)
 	{
 		height = 180;
 		width = 295;
@@ -685,7 +689,8 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		fontsize = 18;
 		pcount = 12;
 	}
-	else if(getconfigint("tithek_view", NULL) == 4)
+
+	if(getconfigint("tithek_view", NULL) == 4 && flag == 3)
 	{
 		height = 140;
 		width = 235;
@@ -695,7 +700,8 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		fontsize = 16;
 		pcount = 20;
 	}
-	else if(getconfigint("tithek_view", NULL) == 5)
+
+	if(getconfigint("tithek_view", NULL) == 5 && flag == 3)
 	{
 		height = 111;
 		width = 196;
@@ -1356,8 +1362,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 	listbox->gridcol = 0;
 	listbox->select = NULL;
 
-//	if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) return;
-	int pagecount = createtithekplay(titheklink, grid, listbox, countlabel);
+	int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, first);
 	if(pagecount == 0) return;
 
 	changetitle(grid, _(title));
@@ -1457,7 +1462,8 @@ waitrcstart:
 		if(rcret == getrcconfigint("rcmenu", NULL))
 		{
 			screentithek_settings();
-			int pagecount = createtithekplay(titheklink, grid, listbox, countlabel);
+
+			int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, first);
 			if(pagecount == 0 || tithekexit == 1) break;
 
 			listbox->aktpage = oaktpage;
@@ -1505,8 +1511,8 @@ waitrcstart:
 						screentithekplay(tmpstr, tmpstr2, 0);
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
-//					if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel);
+			
+						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1543,8 +1549,8 @@ waitrcstart:
 						screentithekplay(tmpstr, tmpstr2, 0);
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
-//					if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel);
+			
+						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1566,8 +1572,8 @@ waitrcstart:
 						screentithekplay(tmpstr, tmpstr2, 0);
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
-//					if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel);
+			
+						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1589,8 +1595,8 @@ waitrcstart:
 						screentithekplay(tmpstr, tmpstr2, 0);
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
-//					if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel);
+
+						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1612,8 +1618,8 @@ waitrcstart:
 						screentithekplay(tmpstr, tmpstr2, 0);
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
-//					if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel);
+
+						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 3);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1635,8 +1641,8 @@ waitrcstart:
 						screentithekplay(tmpstr, tmpstr2, 0);
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
-//					if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel);
+			
+						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 3);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1658,8 +1664,8 @@ waitrcstart:
 						screentithekplay(tmpstr, tmpstr2, 0);
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
-//					if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel);
+			
+						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1673,6 +1679,32 @@ waitrcstart:
 					textbox(_("Message"), _("The hoster is not yet supported for the time !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 					continue;
 				}	
+				else if((((struct tithek*)listbox->select->handle)->flag == 3))
+				{
+					int pincheck = 0;
+					if(((struct tithek*)listbox->select->handle)->flag == 1000)
+						pincheck = screenpincheck(0, NULL);
+					if(pincheck == 0)
+					{
+						oaktpage = listbox->aktpage;
+						oaktline = listbox->aktline;
+						ogridcol = listbox->gridcol;
+						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);					
+						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
+						screentithekplay(tmpstr, tmpstr2, 3);
+						free(tmpstr); tmpstr = NULL;
+						free(tmpstr2); tmpstr2 = NULL;	
+
+						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						if(pagecount == 0 || tithekexit == 1) break;
+
+						listbox->aktpage = oaktpage;
+						listbox->aktline = oaktline;
+						listbox->gridcol = ogridcol;
+						addscreenrc(grid, listbox);
+					}
+				}
 				else
 				{
 					int pincheck = 0;
@@ -1689,8 +1721,8 @@ waitrcstart:
 						screentithekplay(tmpstr, tmpstr2, 0);
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;	
-//						if(createtithekplay(titheklink, grid, listbox, countlabel) != 0) break;
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel);
+
+						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1708,7 +1740,7 @@ waitrcstart:
 			if(textbox(_("Message"), _("Remove this Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
 			{
 				removefav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag);		
-				int pagecount = createtithekplay(getconfig("tithek_fav", NULL), grid, listbox, countlabel);
+				int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 				if(pagecount == 0) return;
 					
 				drawscreen(grid, 0, 0);
