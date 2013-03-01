@@ -1058,19 +1058,22 @@ int gettsinfo(int fd, unsigned long long* lenpts, unsigned long long* startpts, 
 	unsigned long long start = 0, end = 0;
 	off64_t startfindpos = 0, endfindpos = 0;
 
-	//TODO: save startpts in service struct so we can use it faster
-	ret = getpts(fd, 0, 0, 256 * 1024, &start, &startfindpos, 1, tssize);
+	if(startpts != NULL && *startpts > 0) start = *startpts;
+	if(endpts != NULL && *endpts > 0) end = *endpts;
+
+	if(start == 0 || (bitrate != NULL && bitrate == 0))
+		ret = getpts(fd, 0, 0, 256 * 1024, &start, &startfindpos, 1, tssize);
+
+	if((ret == 0 && end == 0) || (bitrate != NULL && bitrate == 0))
+		ret = getpts(fd, 0, 0, 256 * 1024, &end, &endfindpos, -1, tssize);
+
 	if(ret == 0)
 	{
-		ret = getpts(fd, 0, 0, 256 * 1024, &end, &endfindpos, -1, tssize);
-		if(ret == 0)
-		{
-			end = fixuppts(start, end);
-			if(lenpts != NULL) *lenpts = end - start;
-			if(startpts != NULL) *startpts = start;
-			if(endpts != NULL) *endpts = end;
-			if(bitrate != NULL) *bitrate = gettsbitrate(start, end, startfindpos, endfindpos);
-		}
+		end = fixuppts(start, end);
+		if(lenpts != NULL) *lenpts = end - start;
+		if(startpts != NULL) *startpts = start;
+		if(endpts != NULL) *endpts = end;
+		if(bitrate != NULL) *bitrate = gettsbitrate(start, end, startfindpos, endfindpos);
 	}
 
 	if(lenpts != NULL && *lenpts < 0) *lenpts = 0;
@@ -1083,11 +1086,11 @@ int getptspos(int fd, off64_t startfind, unsigned long long* pts, off64_t* findp
 {
 	int ret = 0;
 	unsigned long long pts1 = 0;
-	off64_t findpos1;
+	off64_t findpos1 = 0;
 	
 	ret = getpts(fd, startfind, 0, 256 * 1024, &pts1, &findpos1, dir, tssize);
-	*pts = pts1;
-	*findpos = findpos1;
+	if(pts != NULL) *pts = pts1;
+	if(findpos != NULL) *findpos = findpos1;
 	
 	return ret;		
 }

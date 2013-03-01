@@ -152,9 +152,24 @@ int playerstartts(char* file, int flag)
 		return 1;
 	}
 
+	snode = getservice(RECORDPLAY, 0);
+	if(snode != NULL)
+	{
+		gettsinfo(snode->recsrcfd, &snode->lenpts, &snode->startpts, &snode->endpts, &snode->bitrate, snode->tssize);
+		if(flag == 1)
+		{
+			snode->lenpts = 0;
+			snode->endpts = 0;
+		}
+		else
+		{
+			snode->endoffile = lseek64(snode->recsrcfd , 0, SEEK_END);
+			lseek64(snode->recsrcfd , 0, SEEK_SET);
+		}
+	}
+
 	if(flag == 0 || flag == 2)
 	{
-		snode = getservice(RECORDPLAY, 0);
 		if(snode != NULL) snode->recname = ostrcat(file, NULL, 0, 0);
 		ret = servicestart(chnode, NULL, NULL, 1);
 		if(ret != 0)
@@ -238,16 +253,18 @@ void playerpausets()
 //flag 1: from timeshift
 int playerseekts(struct service* servicenode, int sekunden, int flag)
 {
-	off64_t offset;
-	off64_t endoffile;
-	off64_t currentpos;
-	//off64_t fdptspos;
+	off64_t offset = 0;
+	off64_t endoffile = 0;
+	off64_t currentpos = 0;
+	//off64_t fdptspos = 0;
 	int dupfd = -1;
 	int ret = 0;
 	unsigned long long lenpts = 0;
+	unsigned long long startpts = 0;
+	unsigned long long endpts = 0;
+	unsigned long long bitrate = 0;
 	//unsigned long long aktpts = 0;
 	//unsigned long long fdpts = 0;
-	unsigned long long bitrate = 0;
 	//int aktsekunden = 0;
 	int sekundenoff = 0;
 	struct service* snode = NULL;
@@ -293,13 +310,20 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 		sekundenoff = 0;
 */
 	
-	if(gettsinfo(dupfd, &lenpts, NULL, NULL, &bitrate, servicenode->tssize) != 0)
+	lenpts = servicenode->lenpts;
+	startpts = servicenode->startpts;
+	endpts = servicenode->endpts;
+	bitrate = servicenode->bitrate;
+	if(gettsinfo(dupfd, &lenpts, &startpts, &endpts, &bitrate, servicenode->tssize) != 0)
 	{
 		err("cant read endpts/bitrate");
 		m_unlock(&status.tsseekmutex, 15);
 		return 1;
 	}
-	endoffile = lseek64(dupfd , -servicenode->tssize * 2, SEEK_END);
+	if(servicenode->endoffile > 0)
+		endoffile = servicenode->endoffile - (servicenode->tssize * 2);
+	else
+		endoffile = lseek64(dupfd , -servicenode->tssize * 2, SEEK_END);
 	close(dupfd);
 
 	currentpos = lseek64(servicenode->recsrcfd, 0, SEEK_CUR);
@@ -376,6 +400,10 @@ int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, un
 {
 	int dupfd = -1;
 	struct service* snode = NULL;
+	unsigned long long lenpts1 = 0;
+	unsigned long long startpts1 = 0;
+	unsigned long long endpts1 = 0;
+	unsigned long long bitrate1 = 0;
 	
 	if(flag == 0)
 		snode = getservice(RECORDPLAY, 0);
@@ -391,11 +419,20 @@ int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, un
 		return 1;
 	}
 
-	if(gettsinfo(dupfd, lenpts, startpts, endpts, bitrate, snode->tssize) != 0)
+	lenpts1 = snode->lenpts;
+	startpts1 = snode->startpts;
+	endpts1 = snode->endpts;
+	bitrate1 = snode->bitrate;
+	if(gettsinfo(dupfd, &lenpts1, &startpts1, &endpts1, &bitrate1, snode->tssize) != 0)
 	{
 		err("cant read endpts/bitrate");
 		return 1;
 	}
+
+	if(lenpts != NULL) *lenpts = lenpts1;
+	if(startpts != NULL) *startpts = startpts1;
+	if(endpts != NULL) *endpts = endpts1;
+	if(bitrate != NULL) *bitrate = bitrate1;
 	
 	close(dupfd);
 
@@ -1276,11 +1313,13 @@ int playerjumpts(struct service* servicenode, int sekunden, int *startpts, off64
 	int adaptation = 0;
 	int payload = 0;
 	int pes = 0;
-  int tspid = 0;
+	int tspid = 0;
 	
 	off64_t pts  = 0;
 	uint64_t aktpts = 0;
 	long long unsigned int lenpts = 0;
+	long long unsigned int startpts1 = 0;
+	long long unsigned int endpts = 0;
 	long long unsigned int aktbitrate = 0;
 	off64_t ziehlpts = 0;
 
@@ -1294,6 +1333,8 @@ int playerjumpts(struct service* servicenode, int sekunden, int *startpts, off64
 	int len = 0;
 	int i = 0;
 	int ret = 0;
+
+	if(servicenode == NULL) return -1;
 
 	int buflen = tssize * 15000;
 	char *buf = malloc(buflen);
@@ -1321,7 +1362,11 @@ int playerjumpts(struct service* servicenode, int sekunden, int *startpts, off64
 
 	if(*bitrate == 0)
 	{
-		ret = gettsinfo(dupfd, &lenpts, NULL, NULL, &aktbitrate, servicenode->tssize);
+		lenpts = servicenode->lenpts;
+		startpts1 = servicenode->startpts;
+		endpts = servicenode->endpts;
+		aktbitrate = servicenode->bitrate;
+		ret = gettsinfo(dupfd, &lenpts, &startpts1, &endpts, &aktbitrate, servicenode->tssize);
 		if(ret != 0) 
 		{
 			err("cant read endpts/bitrate");
