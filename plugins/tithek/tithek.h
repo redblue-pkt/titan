@@ -601,15 +601,15 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	
 	struct tithek* titheknode = tithek;
 
-	int height = 280;
-	int width = 390;
-	int picheight = 230;
-	int picwidth = 370;
-	int zcount = 3;
-	int fontsize = 20;
-	int pcount = 6;
+	int height = 500;
+	int width = 590;
+	int picheight = 480;
+	int picwidth = 570;
+	int zcount = 2;
+	int fontsize = 25;
+	int pcount = 2;
 
-	if(getconfigint("tithek_view", NULL) == 0)
+	if(getconfigint("tithek_view", NULL) == 0 || ((struct tithek*)listbox->select->handle)->flag == 0 || ((struct tithek*)listbox->select->handle)->flag == 1 || ((struct tithek*)listbox->select->handle)->flag == 1000 || ((struct tithek*)listbox->select->handle)->flag == 22 || ((struct tithek*)listbox->select->handle)->flag == 23 || ((struct tithek*)listbox->select->handle)->flag == 28))
 	{
 		if(linecount > 2)
 		{
@@ -652,7 +652,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 			picwidth = 150;
 			zcount = 6;
 			fontsize = 14;
-			pcount = 20;
+			pcount = 30;
 		}
 	}
 	else if(getconfigint("tithek_view", NULL) == 1)
@@ -703,7 +703,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		picwidth = 150;
 		zcount = 6;
 		fontsize = 14;
-		pcount = 20;
+		pcount = 30;
 	}
 
 	if(getconfigint("tithek_pic_ratio", NULL) == 1)
