@@ -257,7 +257,6 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	off64_t endoffile = 0;
 	off64_t currentpos = 0;
 	//off64_t fdptspos = 0;
-	int dupfd = -1;
 	int ret = 0;
 	unsigned long long lenpts = 0;
 	unsigned long long startpts = 0;
@@ -267,7 +266,6 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	//unsigned long long fdpts = 0;
 	//int aktsekunden = 0;
 	int sekundenoff = 0;
-	struct service* snode = NULL;
 	
 	if(servicenode == NULL) return 1;
 
@@ -276,22 +274,9 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 		err("source fd not ok");
 		return 1;
 	}
-	if(flag == 0)
-		snode = getservice(RECORDPLAY, 0);
-	else
-		snode = getservice(RECORDTIMESHIFT, 0);
-	
-	if(snode == NULL) return 1;
-	
-	dupfd = open(snode->recname, O_RDONLY | O_LARGEFILE);
-	if(dupfd < 0)
-	{
-		err("copy source fd not ok");
-		return 1;
-	}
 	
 	m_lock(&status.tsseekmutex, 15);
-	
+
 /*
 	ret = videogetpts(status.aktservice->videodev, &aktpts);
 	if(ret == 0)
@@ -310,27 +295,28 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 		sekundenoff = 0;
 */
 	
+	currentpos = lseek64(servicenode->recsrcfd, 0, SEEK_CUR);
+
 	lenpts = servicenode->lenpts;
 	startpts = servicenode->startpts;
 	endpts = servicenode->endpts;
 	bitrate = servicenode->bitrate;
-	if(gettsinfo(dupfd, &lenpts, &startpts, &endpts, &bitrate, servicenode->tssize) != 0)
+	if(gettsinfo(servicenode->recsrcfd, &lenpts, &startpts, &endpts, &bitrate, servicenode->tssize) != 0)
 	{
-		err("cant read endpts/bitrate");
+		err("cant read ts info");
 		m_unlock(&status.tsseekmutex, 15);
 		return 1;
 	}
 	if(servicenode->endoffile > 0)
 		endoffile = servicenode->endoffile - (servicenode->tssize * 2);
 	else
-		endoffile = lseek64(dupfd , -servicenode->tssize * 2, SEEK_END);
-	close(dupfd);
+		endoffile = lseek64(servicenode->recsrcfd , -servicenode->tssize * 2, SEEK_END);
 
-	currentpos = lseek64(servicenode->recsrcfd, 0, SEEK_CUR);
-
-	//ret = videoclearbuffer(status.aktservice->videodev);
-	//ret = audioclearbuffer(status.aktservice->audiodev);
-	//ret = videodiscontinuityskip(status.aktservice->videodev, 0);
+/*
+	ret = videoclearbuffer(status.aktservice->videodev);
+	ret = audioclearbuffer(status.aktservice->audiodev);
+	ret = videodiscontinuityskip(status.aktservice->videodev, 0);
+*/
 
 	if(sekunden >= 0)
 	{
@@ -430,7 +416,7 @@ int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, un
 	bitrate1 = snode->bitrate;
 	if(gettsinfo(dupfd, &lenpts1, &startpts1, &endpts1, &bitrate1, snode->tssize) != 0)
 	{
-		err("cant read endpts/bitrate");
+		err("cant read ts info");
 		return 1;
 	}
 
@@ -789,7 +775,7 @@ int gstbuscall(GstBus *bus, GstMessage *msg)
 int playergetbuffersize()
 {
 	int ret = 0;
-  
+
 #ifdef EPLAYER3
 	if(player && player->container && player->container->selectedContainer)
 		player->container->selectedContainer->Command(player, CONTAINER_GET_BUFFER_SIZE, (void*)&ret);
@@ -801,7 +787,7 @@ int playergetbuffersize()
 int playergetbufferstatus()
 {
 	int ret = 0;
-  
+
 #ifdef EPLAYER3
 	if(player && player->container && player->container->selectedContainer)
 		player->container->selectedContainer->Command(player, CONTAINER_GET_BUFFER_STATUS, (void*)&ret);
@@ -1374,7 +1360,7 @@ int playerjumpts(struct service* servicenode, int sekunden, int *startpts, off64
 		ret = gettsinfo(dupfd, &lenpts, &startpts1, &endpts, &aktbitrate, servicenode->tssize);
 		if(ret != 0) 
 		{
-			err("cant read endpts/bitrate");
+			err("cant read ts info");
 		}
 		else
 			*bitrate = aktbitrate;
@@ -1445,8 +1431,8 @@ int playerjumpts(struct service* servicenode, int sekunden, int *startpts, off64
 					{
 						//printf("adaptation field only\n");
 					}
-			  	if(adaptation == 48)
-			  	{
+					if(adaptation == 48)
+					{
 						payload = buf[i+4] & 0xFF;
 						payload = payload + 5;
 					}
