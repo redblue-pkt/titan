@@ -1105,6 +1105,11 @@ struct service
 	int reccount;
 	int tssize;
 	char* recname;
+	unsigned long long lenpts;
+	unsigned long long startpts;
+	unsigned long long endpts;
+	unsigned long long bitrate;
+	off64_t endoffile;
 	struct service *next;
 };
 
