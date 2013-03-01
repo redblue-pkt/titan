@@ -527,7 +527,7 @@ void checkrectimer(struct stimerthread* self)
 
 			if(status.standby == 0)
 			{
-				int tret = textbox(_("Message"), _("EPG Scan ask if we can go into standby?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+				int tret = textbox(_("Message"), _("EPG Scan ask if we can go into standby?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 20, 0);
 
 				if(tret == 0 || tret == 1)
 				{
