@@ -609,7 +609,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	int fontsize = 25;
 	int pcount = 2;
 
-	if(getconfigint("tithek_view", NULL) == 0 || ((struct tithek*)listbox->select->handle)->flag == 0 || ((struct tithek*)listbox->select->handle)->flag == 1 || ((struct tithek*)listbox->select->handle)->flag == 1000 || ((struct tithek*)listbox->select->handle)->flag == 22 || ((struct tithek*)listbox->select->handle)->flag == 23 || ((struct tithek*)listbox->select->handle)->flag == 28))
+	if(getconfigint("tithek_view", NULL) == 0 || ((struct tithek*)listbox->select->handle)->flag == 0 || ((struct tithek*)listbox->select->handle)->flag == 1 || ((struct tithek*)listbox->select->handle)->flag == 1000 || ((struct tithek*)listbox->select->handle)->flag == 22 || ((struct tithek*)listbox->select->handle)->flag == 23 || ((struct tithek*)listbox->select->handle)->flag == 28)
 	{
 		if(linecount > 2)
 		{
