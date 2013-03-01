@@ -105,7 +105,7 @@ void screenextensions(int mode, char* path)
 	{
 		drawscreen(load, 0, 0);
 
-		system("syncipkg.sh");
+//		system("syncipkg.sh");
 		ipkg_update();
 		ipkg_list();
 
@@ -153,7 +153,7 @@ void screenextensions(int mode, char* path)
 					}
 					textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 					loadplugin();
-					saveipkg();
+//					saveipkg();
 					free(log), log = NULL;
 					unlink("/tmp/ipkg.log");
 					if(file_exist("/tmp/.ipkg_needs_reboot"))
@@ -174,7 +174,7 @@ void screenextensions(int mode, char* path)
 	}
 	else if(mode == 1)
 	{
-		system("syncipkg.sh");
+//		system("syncipkg.sh");
 		ipkg_list_installed();
 		mbox = ipkmenulist(mlist, NULL, "Ipk Remove - select file", NULL, NULL, 1, 2);
 		
@@ -201,7 +201,7 @@ void screenextensions(int mode, char* path)
 					log = readfiletomem("/tmp/ipkg.log", 0);
 					if(log == NULL) log = ostrcat("Remove success", NULL, 0, 0);
 					textbox(_("Ipk Remove Info - Remove OK"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
-					saveipkg();
+//					saveipkg();
 				}
 				else
 				{
@@ -294,11 +294,11 @@ void screenextensions(int mode, char* path)
 		drawscreen(load, 0, 0);
 		resettvpic();
 		unlink("/tmp/ipkg.log");
-		system("syncipkg.sh");
+//		system("syncipkg.sh");
 		writesys("/tmp/.ipkg_upgrade_start", "0", 0);
 		ipkg_update();
 		ipkg_upgrade();
-		saveipkg();
+//		saveipkg();
 		freeipkg();
 		loadplugin();
 		clearscreen(load);
