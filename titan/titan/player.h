@@ -328,9 +328,9 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 
 	currentpos = lseek64(servicenode->recsrcfd, 0, SEEK_CUR);
 
-	ret = videoclearbuffer(status.aktservice->videodev);
-	ret = audioclearbuffer(status.aktservice->audiodev);
-	ret = videodiscontinuityskip(status.aktservice->videodev, 0);
+	//ret = videoclearbuffer(status.aktservice->videodev);
+	//ret = audioclearbuffer(status.aktservice->audiodev);
+	//ret = videodiscontinuityskip(status.aktservice->videodev, 0);
 
 	if(sekunden >= 0)
 	{
@@ -363,6 +363,11 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 		offset = offset * -1;
 	}
 	currentpos = lseek64(servicenode->recsrcfd, offset, SEEK_CUR);
+
+	audiostop(status.aktservice->audiodev);
+	videostop(status.aktservice->videodev, 0);
+	videoplay(status.aktservice->videodev);
+	audioplay(status.aktservice->audiodev);
 
 	m_unlock(&status.tsseekmutex, 15);
 	return 0;
