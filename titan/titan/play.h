@@ -710,11 +710,16 @@ void playrcsf(char* file, char* showname, int* playinfobarstatus, int* playinfob
 		}
 		if(status.slowspeed == 0)
 		{
+			status.pause = 0;
 			status.play = 1;
 			if(playertype == 1)
 			{
 				playerpausets();
 				playercontinuets();
+				audiostop(status.aktservice->audiodev);
+				videostop(status.aktservice->videodev, 0);
+				videoplay(status.aktservice->videodev);
+				audioplay(status.aktservice->audiodev);
 			}
 			else if(playertype == 2)
 				dvdcontinue();
@@ -750,11 +755,16 @@ void playrcsr(char* file, char* showname, int* playinfobarstatus, int* playinfob
 		}
 		if(status.slowspeed == 0)
 		{
+			status.pause = 0;
 			status.play = 1;
 			if(playertype == 1)
 			{
 				playerpausets();
 				playercontinuets();
+				audiostop(status.aktservice->audiodev);
+				videostop(status.aktservice->videodev, 0);
+				videoplay(status.aktservice->videodev);
+				audioplay(status.aktservice->audiodev);
 			}
 			else if(playertype == 2)
 				dvdcontinue();
@@ -769,8 +779,11 @@ void playrcsr(char* file, char* showname, int* playinfobarstatus, int* playinfob
 
 void playrcff(char* file, char* showname, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
-  if(status.pause == 1)
-    playrcsf(file, showname, playinfobarstatus, playinfobarcount, playertype, 1, flag);
+	if(status.pause == 1)
+	{
+		playrcsf(file, showname, playinfobarstatus, playinfobarcount, playertype, 1, flag);
+		return;
+	}
 
 	if(checkbit(status.playercan, 7) == 0) return;
 
@@ -829,10 +842,13 @@ void playrcff(char* file, char* showname, int* playinfobarstatus, int* playinfob
 
 void playrcfr(char* file, char* showname, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
-  if(status.pause == 1)
-    playrcsr(file, showname, playinfobarstatus, playinfobarcount, playertype, 1, flag);
+	if(status.pause == 1)
+	{
+		playrcsr(file, showname, playinfobarstatus, playinfobarcount, playertype, 1, flag);
+		return;
+	}
 	
-  if(checkbit(status.playercan, 8) == 0) return;
+	if(checkbit(status.playercan, 8) == 0) return;
 
 	if(status.pause == 0 && status.slowspeed == 0)
 	{
@@ -940,7 +956,7 @@ void playrcplay(char* file, char* showname, int* playinfobarstatus, int* playinf
 	{
 		playerpausets();
 		playercontinuets();
-		if(status.playspeed != 0)
+		if(status.playspeed != 0 || status.slowspeed != 0)
 		{
 			audiostop(status.aktservice->audiodev);
 			videostop(status.aktservice->videodev, 0);
