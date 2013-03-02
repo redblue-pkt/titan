@@ -389,7 +389,7 @@ void playerfrts(int speed, int flag)
 //flag = 1 --> timeshift
 int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, unsigned long long* endpts, unsigned long long* aktpts, unsigned long long* bitrate, int flag)
 {
-	int dupfd = -1;
+	int ret = 0, dupfd = -1;
 	struct service* snode = NULL;
 	unsigned long long lenpts1 = 0;
 	unsigned long long startpts1 = 0;
@@ -402,6 +402,17 @@ int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, un
 		snode = getservice(RECORDTIMESHIFT, 0);
 		
 	if(snode == NULL) return 1;
+
+	if(snode->lenpts > 0 && snode->startpts > 0 && snode->endpts > 0 && snode->bitrate > 0)
+	{
+		if(lenpts != NULL) *lenpts = snode->lenpts;
+		if(startpts != NULL) *startpts = snode->startpts;
+		if(endpts != NULL) *endpts = snode->endpts;
+		if(bitrate != NULL) *bitrate = snode->bitrate;
+
+		ret = videogetpts(status.aktservice->videodev, aktpts);
+		return ret;
+	}
 	
 	dupfd = open(snode->recname, O_RDONLY | O_LARGEFILE);
 	if(dupfd < 0)
@@ -427,8 +438,8 @@ int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, un
 	
 	close(dupfd);
 
-	videogetpts(status.aktservice->videodev, aktpts);
-	return 0;
+	ret = videogetpts(status.aktservice->videodev, aktpts);
+	return ret;
 }
 
 void playerchangeaudiotrackts()
