@@ -66,6 +66,8 @@ void screenplaybufferstatus(struct stimerthread* self)
 //flag = 4 ---> timeshift
 void screenplayinfobar(char* file, char* showname, int mode, int playertype, int flag)
 {
+	int change = 1;
+
 	if(checkbit(status.playercan, 14) == 0) return;
 
 	if((flag == 2) || (flag == 3))
@@ -129,13 +131,15 @@ void screenplayinfobar(char* file, char* showname, int mode, int playertype, int
 
 	if(playertype == 1)
 	{
+		int ret = 0;
 		unsigned long long startpos = 0;
 		if(flag == 4)
-			playergetinfots(&len, &startpos, NULL, &pos, NULL, 1);
+			ret = playergetinfots(&len, &startpos, NULL, &pos, NULL, 1);
 		else
-			playergetinfots(&len, &startpos, NULL, &pos, NULL, 0);
+			ret = playergetinfots(&len, &startpos, NULL, &pos, NULL, 0);
 		len = len / 90000;
 		pos = (pos - startpos) / 90000;
+		if(ret != 0) change = 0;
 	}
 	else if(playertype == 2)
 	{
@@ -150,10 +154,13 @@ void screenplayinfobar(char* file, char* showname, int mode, int playertype, int
 	if(pos < 0) pos = 0;
 	reverse = len - pos;
 
-	if(len == 0)
-		sprogress->progresssize = 0;
-	else
-		sprogress->progresssize = pos * 100 / len;
+	if(change == 1)
+	{
+		if(len == 0)
+			sprogress->progresssize = 0;
+		else
+			sprogress->progresssize = pos * 100 / len;
+	}
 
 	tmpstr = convert_timesec(pos);
 	changetext(spos, tmpstr);
