@@ -679,7 +679,7 @@ void start(void)
   addchoicebox(lcdtype, "spf87h", _("SPF-87H"));
   addchoicebox(lcdtype, "spf87hold", _("SPF-87H-old"));
   addchoicebox(lcdtype, "spf105p", _("SPF-105P"));
-  addchoicebox(lcdtype, "spf107p", _("SPF-107H"));
+  addchoicebox(lcdtype, "spf107h", _("SPF-107H"));
   addchoicebox(lcdtype, "none", _("tiMote"));
 	setchoiceboxselection(lcdtype, getconfig("lcd_samsung_plugin_type", NULL));
 	
