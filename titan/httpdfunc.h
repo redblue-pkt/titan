@@ -2804,8 +2804,10 @@ char* webgetrccodes(int fmt)
 {
 	int i = 0;
 	char* buf = NULL;
-	struct clist **clist = rcconfig;
 	struct clist* node = NULL;
+
+	m_lock(&status.clistmutex, 12);
+	struct clist **clist = rcconfig;
 
 	for(i = 0; i < LISTHASHSIZE; i++)
 	{
@@ -2821,6 +2823,52 @@ char* webgetrccodes(int fmt)
 		}
 	}
 
+	m_unlock(&status.clistmutex, 12);
+	return buf;
+}
+
+char* webgetconfig(int fmt)
+{
+	char* buf = NULL;
+	struct clist *node = NULL;
+	int i = 0;
+
+	m_lock(&status.clistmutex, 12);
+	struct clist **clist = config;
+
+	for(i = 0; i < LISTHASHSIZE; i++)
+	{
+		node = clist[i];
+
+		while(node != NULL)
+		{
+			if(node->tmp != NULL && strlen(node->tmp) > 0)
+			{
+				buf = ostrcat(buf, node->key, 1, 0);
+				buf = ostrcat(buf, "#", 1, 0);
+				buf = ostrcat(buf, node->tmp, 1, 0);
+				buf = ostrcat(buf, "\n", 1, 0);
+			}
+			else if(node->value != NULL)
+			{
+				buf = ostrcat(buf, node->key, 1, 0);
+				buf = ostrcat(buf, "#", 1, 0);
+				buf = ostrcat(buf, node->value, 1, 0);
+				buf = ostrcat(buf, "\n", 1, 0);
+			}
+			else
+			{
+				buf = ostrcat(buf, node->key, 1, 0);
+				buf = ostrcat(buf, "#", 1, 0);
+				buf = ostrcat(buf, node->def, 1, 0);
+				buf = ostrcat(buf, "\n", 1, 0);
+			}
+
+			node = node->next;
+		}
+	}
+
+	m_unlock(&status.clistmutex, 12);
 	return buf;
 }
 

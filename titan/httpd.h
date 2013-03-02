@@ -179,6 +179,8 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webgetprovider(fmt);
 	if(ostrcmp(query, "getaz") == 0)
 		buf = webgetaz(fmt);
+	if(ostrcmp(query, "getconfig") == 0)
+		buf = webgetconfig(fmt);
 	if(ostrcmp(query, "getchannelpage") == 0)
 		buf = webgetchannelpage(param, fmt);
 	if(ostrcmp(query, "getallchannel") == 0)
