@@ -5,7 +5,7 @@ char* getplaytext(struct skin* node, char* path)
 {
 	char* tmpstr = NULL;
 
-	if(status.pause > 0)
+	if(status.pause > 0 && status.slowspeed == 0)
 		tmpstr = ostrcat("Pause", NULL, 0, 0);
 	else if(status.play > 0)
 		tmpstr = ostrcat("Play", NULL, 0, 0);
@@ -59,7 +59,7 @@ char* getplaypic(struct skin* node, char* path)
 {
 	char* tmpstr = NULL;
 
-	if(status.pause > 0)
+	if(status.pause > 0 && status.slowspeed == 0)
 		tmpstr = ostrcat("pause.png", NULL, 0, 0);
 	else if(status.play > 0)
 		tmpstr = ostrcat("play.png", NULL, 0, 0);
