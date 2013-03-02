@@ -1011,8 +1011,8 @@ int addscreenrc(struct skin* screen, struct skin* node)
 		addrc(getrcconfigint("rcright", NULL), listboxright, screen, node);
 		addrc(getrcconfigint("rcleft", NULL), listboxleft, screen, node);
 		addrc(getrcconfigint("rcok", NULL), filelistok, screen, node);
-		addrc(getrcconfigint("rcchup", NULL), listboxleft, screen, node);
-		addrc(getrcconfigint("rcchdown", NULL), listboxright, screen, node);
+		//addrc(getrcconfigint("rcchup", NULL), listboxleft, screen, node);
+		//addrc(getrcconfigint("rcchdown", NULL), listboxright, screen, node);
 		addrc(getrcconfigint("rchelp", NULL), helpbox, screen, node);
 	}
 	else if(node->type & PROGRESSBAR)
@@ -1098,8 +1098,8 @@ int delscreenrc(struct skin* screen, struct skin* node)
 		delrc(getrcconfigint("rcright", NULL), screen, node);
 		delrc(getrcconfigint("rcleft", NULL), screen, node);
 		delrc(getrcconfigint("rcok", NULL), screen, node);
-		delrc(getrcconfigint("rcchup", NULL), screen, node);
-		delrc(getrcconfigint("rcchdown", NULL), screen, node);
+		//delrc(getrcconfigint("rcchup", NULL), screen, node);
+		//delrc(getrcconfigint("rcchdown", NULL), screen, node);
 		delrc(getrcconfigint("rchelp", NULL), screen, node);
 	}
 	else if(node->type & PROGRESSBAR)
