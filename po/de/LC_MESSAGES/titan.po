@@ -2886,3 +2886,6 @@ msgstr "Suche den ausgewählten Titel bei Kinox"
 
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr "Fehler, ihr TMBb Suchergebniss hat eine ungültige imdbid und kann\ndadurch nicht in der MediaDB abgespeichert werden"
+
+msgid "EPG Scan activate standby?"
+msgstr "EPG Scan aktiviert Standby?"
