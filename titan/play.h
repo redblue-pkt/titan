@@ -722,6 +722,7 @@ void playrcsf(char* file, char* showname, int* playinfobarstatus, int* playinfob
 			if(playertype == 1)
 			{
 				playerpausets();
+				audioclearbuffer(status.aktservice->audiodev);
 				playercontinuets();
 				audiostop(status.aktservice->audiodev);
 				videostop(status.aktservice->videodev, 0);
@@ -767,6 +768,7 @@ void playrcsr(char* file, char* showname, int* playinfobarstatus, int* playinfob
 			if(playertype == 1)
 			{
 				playerpausets();
+				audioclearbuffer(status.aktservice->audiodev);
 				playercontinuets();
 				audiostop(status.aktservice->audiodev);
 				videostop(status.aktservice->videodev, 0);
@@ -914,7 +916,7 @@ void playrcpause(char* file, char* showname, int* playinfobarstatus, int* playin
 {
 	if(checkbit(status.playercan, 9) == 0) return;
 
-	if(status.playspeed != 0) return;
+	if(status.playspeed != 0 || status.slowspeed != 0) return;
 
 	if(status.pause == 1)
 	{
@@ -962,6 +964,8 @@ void playrcplay(char* file, char* showname, int* playinfobarstatus, int* playinf
 	if(playertype == 1)
 	{
 		playerpausets();
+		if(status.slowspeed != 0)
+			audioclearbuffer(status.aktservice->audiodev);
 		playercontinuets();
 		if(status.playspeed != 0 || status.slowspeed != 0)
 		{
@@ -1186,13 +1190,14 @@ int screenplay(char* startfile, char* showname, int startfolder, int flag)
 	char* tmppolicy = NULL, *startdir = NULL;
 	char* formats = NULL;
 	struct skin* playinfobar = getscreen("playinfobar");
+	struct skin* sprogress = getscreennode(playinfobar, "progress");
 	struct skin* load = getscreen("loading");
 
 	int oldsort = getconfigint("dirsort", NULL);
 	int skip13 = getconfigint("skip13", NULL);
 	int skip46 = getconfigint("skip46", NULL);
 	int skip79 = getconfigint("skip79", NULL);
-	
+
 	if(startfolder == 0 && flag != 3)
 	{
 		rcret = servicestop(status.aktservice, 1, 1);
@@ -1216,6 +1221,9 @@ int screenplay(char* startfile, char* showname, int startfolder, int flag)
 	tmppolicy = getpolicy();
 
 playerstart:
+	//reset timeline
+	sprogress->progresssize = 0;
+
 	if(startfolder == 0)
 		startdir = getconfig("rec_moviepath", NULL);
 	else
