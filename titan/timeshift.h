@@ -7,6 +7,11 @@ void timeshiftpause()
 
 	if(status.timeshift == 0)
 	{
+		//reset timeline
+		struct skin* playinfobar = getscreen("playinfobar");
+    struct skin* sprogress = getscreennode(playinfobar, "progress");
+		sprogress->progresssize = 0;
+
 		ret = servicestop(status.aktservice, 0, 2);
 		if(ret == 0)
 		{
