@@ -511,7 +511,12 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 					status.play = 1;
 				}
 				else
-					videodiscontinuityskip(status.aktservice->videodev, -1);
+				{
+					if(status.playspeed < 0)
+						videodiscontinuityskip(status.aktservice->videodev, -1);
+					else
+						videodiscontinuityskip(status.aktservice->videodev, 1);
+				}
 				pthread_mutex_unlock(&status.tsseekmutex);
 			}
 
