@@ -222,10 +222,10 @@ int jumpmarker(char* timetext)
 
 			struct service* snode = getservice(RECORDPLAY, 0);
 			m_lock(&status.tsseekmutex, 15);
-			//videoclearbuffer(status.aktservice->videodev);
-			//audioclearbuffer(status.aktservice->audiodev);
-			//videodiscontinuityskip(status.aktservice->videodev, 0);
 			lseek64(snode->recsrcfd, marker->pos, SEEK_SET);
+			videoclearbuffer(status.aktservice->videodev);
+			audioclearbuffer(status.aktservice->audiodev);
+			//videodiscontinuityskip(status.aktservice->videodev, 0);
 			audiostop(snode->audiodev);
 			videostop(snode->videodev, 0);
 			videoplay(snode->videodev);
