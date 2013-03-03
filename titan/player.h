@@ -134,7 +134,13 @@ int playerstartts(char* file, int flag)
 	snode = getservice(RECORDPLAY, 0);
 	if(snode != NULL)
 	{
-		gettsinfo(snode->recsrcfd, &snode->lenpts, &snode->startpts, &snode->endpts, &snode->bitrate, snode->tssize);
+		int dupfd = -1;
+		snode->recname = ostrcat(file, NULL, 0, 0);
+
+		dupfd = open(snode->recname, O_RDONLY | O_LARGEFILE);
+		if(dupfd > -1)
+			gettsinfo(dupfd, &snode->lenpts, &snode->startpts, &snode->endpts, &snode->bitrate, snode->tssize);
+
 		if(flag == 1)
 		{
 			snode->lenpts = 0;
@@ -142,8 +148,8 @@ int playerstartts(char* file, int flag)
 		}
 		else
 		{
-			snode->endoffile = lseek64(snode->recsrcfd , 0, SEEK_END);
-			lseek64(snode->recsrcfd , 0, SEEK_SET);
+			if(dupfd > -1)
+				snode->endoffile = lseek64(dupfd , 0, SEEK_END);
 			if(flag == 0 && getconfigint("showlastpos", NULL) == 1)
 			{ 
 				char* fileseek = changefilenameext(file, ".se");
@@ -166,11 +172,11 @@ int playerstartts(char* file, int flag)
 				free(fileseek); fileseek = NULL;
 			}
 		}
+		close(dupfd);
 	}
 
 	if(flag == 0 || flag == 2)
 	{
-		if(snode != NULL) snode->recname = ostrcat(file, NULL, 0, 0);
 		ret = servicestart(chnode, NULL, NULL, 1);
 		if(ret != 0)
 		{
@@ -397,10 +403,7 @@ int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, un
 	unsigned long long endpts1 = 0;
 	unsigned long long bitrate1 = 0;
 	
-	if(flag == 0)
-		snode = getservice(RECORDPLAY, 0);
-	else if(flag == 1)
-		snode = getservice(RECORDTIMESHIFT, 0);
+	snode = getservice(RECORDPLAY, 0);
 		
 	if(snode == NULL) return 1;
 
