@@ -315,7 +315,16 @@ void timeshiftseek(int sekunden, int* playinfobarstatus, int* playinfobarcount, 
 void timeshiftinfobar(int* playinfobarstatus, int* playinfobarcount)
 {
 	(*playinfobarcount)++;
-	if(*playinfobarstatus > 0)
+	if(*playinfobarstatus == 2)
+	{
+		screenplayinfobar(status.playfile, NULL, 0, 1, 4);
+		if(status.timeshiftseek == 0) // used for begin of file with fr
+		{
+			*playinfobarstatus = 1;
+			*playinfobarcount = 0;
+		}
+	}
+	if(*playinfobarstatus == 1)
 		screenplayinfobar(status.playfile, NULL, 0, 1, 4);
 	if(*playinfobarstatus == 1 && *playinfobarcount >= getconfigint("infobartimeout", NULL))
 	{
