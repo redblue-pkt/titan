@@ -1875,7 +1875,7 @@ struct lastsubtitle* addlastsubtitle(char* line, int count, struct lastsubtitle*
 	}
 
 	ret = sscanf(line, "%llu#%d#%"SCNu16"", &newnode->transponderid, &newnode->serviceid, &newnode->subtitlepid);
-	if(ret != 12)
+	if(ret != 3)
 	{
 		if(count > 0)
 		{
