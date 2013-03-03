@@ -344,18 +344,15 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 		if(sekundenoff != 0)
 			offset = (bitrate / 8) * (sekunden + sekundenoff);
 		else
-			offset = (bitrate / 8) * sekunden + 5000000;
+			offset = (bitrate / 8) * sekunden;
+		if(offset > 0) offset += 5000000;
 		offset = offset - (offset % servicenode->tssize);
 		if(currentpos - offset < 0)
-		{
-			offset = currentpos - servicenode->tssize;
-			offset = offset - (offset % servicenode->tssize);
-			if(offset < 0)
-				offset = 0; 
-		}	
+			offset = currentpos;
 		offset = offset * -1;
 	}
-	currentpos = lseek64(servicenode->recsrcfd, offset, SEEK_CUR);
+	offset += currentpos;
+	currentpos = lseek64(servicenode->recsrcfd, offset, SEEK_SET);
 
 	audiostop(status.aktservice->audiodev);
 	videostop(status.aktservice->videodev, 0);
