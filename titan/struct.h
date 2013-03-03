@@ -1414,6 +1414,8 @@ struct status
 	//pointer to marker for recordings
 	struct marker* playmarker;
 	int autosubtitle;
+	//save timeshift start time
+	time_t timeshiftstart;
 } status;
 
 struct fb
