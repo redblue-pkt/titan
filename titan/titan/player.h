@@ -203,6 +203,7 @@ void playerstopts(int flag, int flag1)
 
 	if(flag == 0 || flag == 2)
 	{
+		playerslowts(0);
 		playerffts(0);
 
 		if(snode != NULL && snode->recsrcfd >= 0 && flag == 0)
