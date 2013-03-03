@@ -43,6 +43,7 @@ int playerstartts(char* file, int flag)
 	int16_t pmtpid = 0;
 	int serviceid = 0;
 	int supermagic = -1;
+	off64_t seekpos = 0;
 	struct channel* chnode = NULL;
 	struct service* snode = NULL;
 	struct dvbdev* fenode = NULL;
@@ -87,6 +88,30 @@ int playerstartts(char* file, int flag)
 			dvrclose(dvrnode, -1);
 			return 1;
 		}
+		
+		if(flag == 0 && getconfigint("showlastpos", NULL) == 1)
+		{ 
+			char* fileseek = changefilenameext(file, ".se");
+			FILE* fbseek = fopen(fileseek, "r");
+			if(fbseek != NULL)
+			{
+				ret = textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+				if(ret == 0 || ret == 1)
+				{
+					char* skip1 = calloc(1, 20);
+					if(skip1 != NULL)
+					{
+						fscanf(fbseek, "%s", skip1);
+						seekpos =  atoll(skip1);
+						//lseek64(snode->recsrcfd, atoll(skip1), SEEK_SET);
+					}
+					free(skip1); skip1 = NULL;
+				}
+				fclose(fbseek);
+			}
+			free(fileseek); fileseek = NULL;
+		}	
+		
 		if(flag == 0)
 		{
 			delmarkernode(-1);
@@ -152,27 +177,6 @@ int playerstartts(char* file, int flag)
 				snode->endoffile = lseek64(dupfd , 0, SEEK_END);
 		}
 		close(dupfd);
-		if(flag == 0 && getconfigint("showlastpos", NULL) == 1)
-		{ 
-			char* fileseek = changefilenameext(file, ".se");
-			FILE* fbseek = fopen(fileseek, "r");
-			if(fbseek != NULL)
-			{
-				ret = textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
-				if(ret == 0 || ret == 1)
-				{
-					char* skip1 = calloc(1, 20);
-					if(skip1 != NULL)
-					{
-						fscanf(fbseek, "%s", skip1);
-						lseek64(snode->recsrcfd, atoll(skip1), SEEK_SET);
-					}
-					free(skip1); skip1 = NULL;
-				}
-				fclose(fbseek);
-			}
-			free(fileseek); fileseek = NULL;
-		}			
 	}
 
 	if(flag == 0 || flag == 2)
@@ -189,7 +193,21 @@ int playerstartts(char* file, int flag)
 		//status.playercan = 0x7EFF;
 		status.playercan = 0xFFFF;	
 	}
-
+	if(flag == 0 && getconfigint("showlastpos", NULL) == 1)
+	{ 
+		if(seekpos != 0)
+		{
+			m_lock(&status.tsseekmutex, 15);
+			lseek64(snode->recsrcfd, seekpos, SEEK_SET);
+			videoclearbuffer(status.aktservice->videodev);
+			audioclearbuffer(status.aktservice->audiodev);
+			audiostop(snode->audiodev);
+			videostop(snode->videodev, 0);
+			videoplay(snode->videodev);
+			audioplay(snode->audiodev);
+			m_unlock(&status.tsseekmutex, 15);
+		}
+	}			
 	return 0;
 }
 
@@ -264,7 +282,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	off64_t endoffile = 0;
 	off64_t currentpos = 0;
 	//off64_t fdptspos = 0;
-	int ret = 0;
+	//int ret = 0;
 	unsigned long long lenpts = 0;
 	unsigned long long startpts = 0;
 	unsigned long long endpts = 0;
