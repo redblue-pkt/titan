@@ -16,6 +16,8 @@ void timeshiftpause()
 				status.timeshift = 0;
 				servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 3), 0);
 			}
+			else
+				status.timeshiftstart = time(NULL);
 			recordcheckret(NULL, ret, 6);
 		}
 	}
@@ -75,11 +77,19 @@ void timeshiftstop(int flag)
 	
 	//if timeshift ends in pause status, we must reactivate continue in player driver
 	playercontinuets();
+	status.timeshiftstart = 0;
 }
 
 void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)
 {
 	int ret = 1;
+
+	if(status.timeshiftstart + 15 > time(NULL))
+	{
+		textbox(_("Message"), _("Timeshift file to short\nplease wait a little and try again"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+		return;
+	}
+
 	struct service* snode = getservice(RECORDTIMESHIFT, 0);
 	
 	if(status.playing == 0)
