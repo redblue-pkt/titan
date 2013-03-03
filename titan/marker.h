@@ -219,14 +219,17 @@ int jumpmarker(char* timetext)
 	{
 		if(ostrcmp(marker->timetext, timetext) == 0)
 		{
-// unused
-//			struct service* snode = getservice(RECORDPLAY, 0);
+
+			struct service* snode = getservice(RECORDPLAY, 0);
 			m_lock(&status.tsseekmutex, 15);
-			videoclearbuffer(status.aktservice->videodev);
-			audioclearbuffer(status.aktservice->audiodev);
-			videodiscontinuityskip(status.aktservice->videodev, 0);
-// unused
-//			off64_t pos = lseek64(snode->recsrcfd, marker->pos, SEEK_SET);
+			//videoclearbuffer(status.aktservice->videodev);
+			//audioclearbuffer(status.aktservice->audiodev);
+			//videodiscontinuityskip(status.aktservice->videodev, 0);
+			lseek64(snode->recsrcfd, marker->pos, SEEK_SET);
+			audiostop(snode->audiodev);
+			videostop(snode->videodev, 0);
+			videoplay(snode->videodev);
+			audioplay(snode->audiodev);
 			m_unlock(&status.tsseekmutex, 15);
 			return 0;
 		}
