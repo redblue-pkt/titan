@@ -27,9 +27,8 @@ void timeshiftpause()
 		}
 	}
 	else {
-		if(status.timeshiftseek != 0) 
-			status.timeshiftseek = 0;
-		playerpausets();
+		if(status.timeshiftseek == 0)
+			playerpausets();
 	}
 }
 
@@ -113,6 +112,13 @@ void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)
 			playerpausets();
 		}
 		playercontinuets();
+		if(status.playspeed != 0)
+		{
+			audiostop(status.aktservice->audiodev);
+			videostop(status.aktservice->videodev, 0);
+			videoplay(status.aktservice->videodev);
+			audioplay(status.aktservice->audiodev);
+		}
 	}
 	status.playspeed = 0;
 	status.pause = 0;
