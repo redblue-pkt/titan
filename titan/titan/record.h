@@ -496,10 +496,16 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				//begin of file
 				if(pos <= 0)
 				{
-					videoclearbuffer(status.aktservice->videodev);
-					audioclearbuffer(status.aktservice->audiodev);
+					//videoclearbuffer(status.aktservice->videodev);
+					//audioclearbuffer(status.aktservice->audiodev);
 					playerpausets();
 					playercontinuets();
+					audiostop(status.aktservice->audiodev);
+					videostop(status.aktservice->videodev, 0);
+					videoplay(status.aktservice->videodev);
+					audioplay(status.aktservice->audiodev);
+
+					status.timeshiftseek = 0;
 					status.playspeed = 0;
 					status.pause = 0;
 					status.play = 1;
