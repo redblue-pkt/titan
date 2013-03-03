@@ -110,6 +110,7 @@ void setdefaults()
 	status.casendallcaids = getconfigint("casendallcaids", NULL);
 	status.showhiddenfiles = getconfigint("showhiddenfiles", NULL);
 	status.infobarprogram = getconfigint("infobarprogram", NULL);
+	status.autosubtitle = getconfigint("autosubtitle", NULL);
 
 	if(status.filelistselectcol == 0) status.filelistselectcol = status.listboxselectcol;
 	
