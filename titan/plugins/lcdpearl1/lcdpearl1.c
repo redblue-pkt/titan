@@ -362,8 +362,12 @@ void LCD_Pearl1_thread()
 		free(tmpstr); tmpstr = NULL;
 		free(tmpstr2); tmpstr2 = NULL;
 		free(tmpstr3); tmpstr3 = NULL;
-		//sleep(1);
-		usleep(500000);
+
+		do
+		{
+			//sleep(1);
+			usleep(500000);
+		}while ( status.aktservice->type == TMPOTHER ); //virtual zap
 		
 		if(ostrcmp(getconfig("lcd_pearl1_plugin_wetter", NULL), "yes") == 0)
 		{
