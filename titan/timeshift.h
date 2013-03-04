@@ -113,12 +113,7 @@ void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)
 		}
 		playercontinuets();
 		if(status.playspeed != 0)
-		{
-			audiostop(status.aktservice->audiodev);
-			videostop(status.aktservice->videodev, 0);
-			videoplay(status.aktservice->videodev);
-			audioplay(status.aktservice->audiodev);
-		}
+			playerresetts();
 	}
 	status.playspeed = 0;
 	status.pause = 0;

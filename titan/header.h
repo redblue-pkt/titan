@@ -145,6 +145,7 @@ char* checkthumb(char* path, char* file);
 //dvdplayer.h
 int dvdstop();
 int dvdsetfb();
+void playerresetts();
 
 //channelhistory.h
 void delchannelhistory(struct channel* chnode);
