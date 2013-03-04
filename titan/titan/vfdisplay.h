@@ -10,6 +10,7 @@ void screenvfdisplay()
 	struct skin* standby = getscreennode(vfdisplay, "standby");
 	struct skin* vfdnotstandby = getscreennode(vfdisplay, "vfdnotstandby");
 	struct skin* vfdstandby = getscreennode(vfdisplay, "vfdstandby");
+	struct skin* vfdrecord = getscreennode(vfdisplay, "vfdrecord");
 	struct skin* tmp = NULL;
 
 	if(brightness != NULL)
@@ -35,6 +36,11 @@ void screenvfdisplay()
 	addchoicebox(vfdstandby, "2", _("date + time"));
 	addchoicebox(vfdstandby, "3", _("date"));
 	setchoiceboxselection(vfdstandby, getconfig("vfdisplaystandby", NULL));
+	
+	addchoicebox(vfdrecord, "0", _("off"));
+	addchoicebox(vfdrecord, "1", _("blink"));
+	addchoicebox(vfdrecord, "2", _("fade out/in"));
+	setchoiceboxselection(vfdrecord, getconfig("vfdisplayrecord", NULL));
 
 	drawscreen(vfdisplay, 0, 0);
 	addscreenrc(vfdisplay, listbox);
@@ -91,6 +97,7 @@ void screenvfdisplay()
 		{
 			addconfigscreencheck("vfdisplay", vfdnotstandby, "0");
 			addconfigscreencheck("vfdisplaystandby", vfdstandby, "0");
+			addconfigscreencheck("vfdisplayrecord", vfdrecord, "0");
 			addconfigint("vfdbrightness", vfdbrightness);
 			addconfigint("vfdstandbybrightness", vfdstandbybrightness);
 			break;

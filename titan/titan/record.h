@@ -1044,6 +1044,8 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 	{
 		status.recording++;
 		servicenode->recname = ostrcat(filename, NULL, 0, 0);
+		if(VFD_Recordthread == NULL && getconfigint("vfdisplayrecord", NULL) != 0)
+			VFD_Recordthread = addtimer(&vfdrecordthread, START, 10000, 1, NULL, NULL, NULL);
 	}
 
 	if(type != RECSTREAM && type != RECTIMESHIFT && type != RECPLAY)

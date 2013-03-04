@@ -7,6 +7,8 @@
 #define	VFDDISPLAYCHARS 0xc0425a00
 #define	VFDICONDISPLAYONOFF 0xc0425a0a
 
+struct stimerthread* VFD_Recordthread = NULL;
+
 // Struct to handle ioctl calls (no one outside this file will need this)
 struct vfdioctl
 {
@@ -477,5 +479,59 @@ void updatevfd()
 	writevfd(tmpstr);
 	free(tmpstr);
 }
+
+void vfdrecordthread()
+{
+	int action = 0;
+	int brightness = 0;
+	int aufab = 0;
+	int brightnesshelp = 0;
+	
+	while (VFD_Recordthread->aktion != STOP && getconfigint("vfdisplayrecord", NULL) != 0)
+	{
+		//brightness = getconfigint("vfdbrightness", NULL);
+		//if( brightness == 0 )
+			brightness = 7;
+		//brightnesshelp = brightness;
+				
+		while (VFD_Recordthread->aktion != STOP && getconfigint("vfdisplayrecord", NULL) == 1 && status.recording > 0)
+		{
+			action = 1;
+			setvfdbrightness(0);
+			sleep(1);
+			setvfdbrightness(brightness);
+			sleep(1);
+		}
+		
+		while (VFD_Recordthread->aktion != STOP && getconfigint("vfdisplayrecord", NULL) == 2 && status.recording > 0)
+		{
+			action = 1;
+			if(brightnesshelp == brightness)
+				aufab = 1;
+			if(brightnesshelp == 0)
+				aufab = 0;
+				
+			if(aufab == 1)
+				brightnesshelp--;
+			if(aufab == 0)
+				brightnesshelp++;	 	
+			
+			setvfdbrightness(brightnesshelp);
+			usleep(500000);
+		}
+		
+		if(action == 1)
+		{
+			brightness = getconfigint("vfdbrightness", NULL);
+			if( brightness == 0 )
+				brightness = 7;
+			setvfdbrightness(brightness);
+			action = 0;
+			aufab = 0;
+		}
+		sleep(2);
+	}
+	VFD_Recordthread = NULL;
+} 						
 
 #endif
