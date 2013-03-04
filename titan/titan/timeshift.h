@@ -82,6 +82,9 @@ void timeshiftstop(int flag)
 	//if timeshift ends in pause status, we must reactivate continue in player driver
 	playercontinuets();
 	status.timeshiftstart = 0;
+	status.playspeed = 0;
+	status.pause = 0;
+	status.play = 0;
 }
 
 void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)

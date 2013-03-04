@@ -686,6 +686,30 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			}
 		}
 
+		//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+		if(listbox->select != NULL && list == BOUQUETCHANNEL && (rcret == getrcconfigint("rcright", NULL) || rcret == getrcconfigint("rcleft", NULL)))
+		{
+			struct mainbouquet *mnode = (struct mainbouquet*)aktlist;
+			if(rcret == getrcconfigint("rcright", NULL) && mnode != NULL)
+				mnode = mnode->next;
+			if(rcret == getrcconfigint("rcleft", NULL) && mnode != NULL)
+				mnode = mnode->prev;
+
+			if(mnode != NULL)
+			{
+				showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, timeline, mnode->bouquet, mnode, zoom, akttime, aktchannel, 0);
+				aktlist = (void*)mnode;
+
+				createtimeline(gmultiepg, timeline, akttime, zoom);
+				drawscreen(gmultiepg, 2, 0);
+				gmultiepgfilldesc(listbox, epgdesc, NULL, NULL, 0);
+				drawscreen(gmultiepg, 0, 0);
+				if(listbox->select != NULL)
+					aktchannel = (struct channel*)listbox->select->handle;
+			}
+			continue;
+		}
+
 		if((listbox->select != NULL && (listbox->select->titlealign == 1 || listbox->select->titlealign == 3) && rcret == getrcconfigint("rcright", NULL)) || rcret == getrcconfigint("rcff", NULL) || rcret == getrcconfigint("rcfav", NULL))
 		{
 			time_t tmptime = 0;
