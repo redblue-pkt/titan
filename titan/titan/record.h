@@ -500,10 +500,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 					//audioclearbuffer(status.aktservice->audiodev);
 					playerpausets();
 					playercontinuets();
-					audiostop(status.aktservice->audiodev);
-					videostop(status.aktservice->videodev, 0);
-					videoplay(status.aktservice->videodev);
-					audioplay(status.aktservice->audiodev);
+					playerresetts();
 
 					status.timeshiftseek = 0;
 					status.playspeed = 0;

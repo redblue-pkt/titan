@@ -724,10 +724,7 @@ void playrcsf(char* file, char* showname, int* playinfobarstatus, int* playinfob
 				playerpausets();
 				audioclearbuffer(status.aktservice->audiodev);
 				playercontinuets();
-				audiostop(status.aktservice->audiodev);
-				videostop(status.aktservice->videodev, 0);
-				videoplay(status.aktservice->videodev);
-				audioplay(status.aktservice->audiodev);
+				playerresetts();
 			}
 			else if(playertype == 2)
 				dvdcontinue();
@@ -770,10 +767,7 @@ void playrcsr(char* file, char* showname, int* playinfobarstatus, int* playinfob
 				playerpausets();
 				audioclearbuffer(status.aktservice->audiodev);
 				playercontinuets();
-				audiostop(status.aktservice->audiodev);
-				videostop(status.aktservice->videodev, 0);
-				videoplay(status.aktservice->videodev);
-				audioplay(status.aktservice->audiodev);
+				playerresetts();
 			}
 			else if(playertype == 2)
 				dvdcontinue();
@@ -833,10 +827,7 @@ void playrcff(char* file, char* showname, int* playinfobarstatus, int* playinfob
 			{
 				playerpausets();
 				playercontinuets();
-				audiostop(status.aktservice->audiodev);
-				videostop(status.aktservice->videodev, 0);
-				videoplay(status.aktservice->videodev);
-				audioplay(status.aktservice->audiodev);
+				playerresetts();
 			}
 			else if(playertype == 2)
 				dvdcontinue();
@@ -896,10 +887,7 @@ void playrcfr(char* file, char* showname, int* playinfobarstatus, int* playinfob
 			{
 				playerpausets();
 				playercontinuets();
-				audiostop(status.aktservice->audiodev);
-				videostop(status.aktservice->videodev, 0);
-				videoplay(status.aktservice->videodev);
-				audioplay(status.aktservice->audiodev);
+				playerresetts();
 			}
 			else if(playertype == 2)
 				dvdcontinue();
@@ -968,12 +956,7 @@ void playrcplay(char* file, char* showname, int* playinfobarstatus, int* playinf
 			audioclearbuffer(status.aktservice->audiodev);
 		playercontinuets();
 		if(status.playspeed != 0 || status.slowspeed != 0)
-		{
-			audiostop(status.aktservice->audiodev);
-			videostop(status.aktservice->videodev, 0);
-			videoplay(status.aktservice->videodev);
-			audioplay(status.aktservice->audiodev);
-		}
+			playerresetts();
 	}
 	else if(playertype == 2)
 		dvdcontinue();
