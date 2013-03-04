@@ -2889,3 +2889,6 @@ msgstr "Fehler, ihr TMBb Suchergebniss hat eine ungültige imdbid und kann\ndadur
 
 msgid "EPG Scan activate standby?"
 msgstr "EPG Scan aktiviert Standby?"
+
+msgid "Timeshift file to short\nplease wait a little and try again"
+msgstr "Timeshift: Datei ist zu klein\nBitte später versuchen"
