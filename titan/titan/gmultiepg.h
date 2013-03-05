@@ -644,8 +644,11 @@ int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			if(listbox->select != NULL)
 			{
 				clearscreen(gmultiepg);
-				screenepg((struct channel*)listbox->select->handle, (struct epg*)listbox->select->handle1, 1);
-				drawscreen(gmultiepg, 0, 0);
+				end = screenepg((struct channel*)listbox->select->handle, (struct epg*)listbox->select->handle1, 1);
+				if(end == 1)
+					break;
+				else
+					drawscreen(gmultiepg, 0, 0);
 			}
 		}
 		

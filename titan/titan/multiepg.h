@@ -508,6 +508,8 @@ int screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	tmpstr = NULL;
 	drawscreen(multiepg, 2, 0);
 	addscreenrc(multiepg, listbox);
+	delrc(getrcconfigint("rcchup", NULL), multiepg, listbox);
+	delrc(getrcconfigint("rcchdown", NULL), multiepg, listbox);
 
 	drawchannellistmepg(multiepg, list, listbox);
 
@@ -536,8 +538,11 @@ int screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			if(listbox->select != NULL)
 			{
 				clearscreen(multiepg);
-				screenepg((struct channel*)listbox->select->handle, (struct epg*)listbox->select->handle1, 1);
-				drawscreen(multiepg, 0, 0);
+				end = screenepg((struct channel*)listbox->select->handle, (struct epg*)listbox->select->handle1, 1);
+				if(end == 1)
+					break;
+				else
+					drawscreen(multiepg, 0, 0);
 			}
 		}
 		
@@ -582,8 +587,6 @@ int screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			}
 		}
 		
-		//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-		/*
 		if(list == BOUQUETCHANNEL && (rcret == getrcconfigint("rcff", NULL) || rcret == getrcconfigint("rcfr", NULL)))
 		{
 			struct mainbouquet *mnode = (struct mainbouquet*)aktlist;
@@ -641,9 +644,8 @@ int screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			}
 			continue;
 		}
-		*/
 
-		if(rcret == getrcconfigint("rcff", NULL))
+		if(rcret == getrcconfigint("rcchdown", NULL))
 		{
 			epgnr++;
 
@@ -707,7 +709,7 @@ int screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			continue;
 		}
 
-		if(rcret == getrcconfigint("rcfr", NULL))
+		if(rcret == getrcconfigint("rcchup", NULL))
 		{
 			epgnr--;
 			if(epgnr < 0) epgnr = 0;
@@ -744,6 +746,8 @@ int screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	delmarkedscreennodes(multiepg, 1);
 	delownerrc(multiepg);
 	clearscreen(multiepg);
+
+	return end;
 }
 
 #endif
