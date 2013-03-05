@@ -404,9 +404,9 @@ void drawchannellistmepg(struct skin* multiepg, int list, struct skin* listbox)
 	drawscreen(multiepg, 0, 0);
 }
 
-void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
+int screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 {
-	int rcret = 0, ret = 0, epgscreenconf = 0;
+	int rcret = 0, ret = 0, epgscreenconf = 0, end = 0;
 	struct skin* multiepg = getscreen("multiepg");
 	struct skin* listbox = getscreennode(multiepg, "listbox");
 	struct skin* b2 = getscreennode(multiepg, "b2");
@@ -521,7 +521,13 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		{
 			if(channelnottunable((struct channel*)listbox->select->handle) == 0)
 			{
-				servicecheckret(servicestart((struct channel*)listbox->select->handle, NULL, NULL, 0), 0);
+				int ret = 0;
+				if(status.servicetype == 0)
+					ret = servicestart((struct channel*)listbox->select->handle, getconfig("channellist", NULL), NULL, 0);
+				else
+					ret = servicestart((struct channel*)listbox->select->handle, getconfig("rchannellist", NULL), NULL, 0);
+				if(ret == 20) writeconfigtmp();
+				servicecheckret(ret, 0);
 				break;
 			}
 		}
@@ -540,7 +546,7 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			if(listbox->select != NULL)
 			{
 				clearscreen(multiepg);
-				screenepg((struct channel*)listbox->select->handle, (struct epg*)listbox->select->handle1, 0);
+				end = screenepg((struct channel*)listbox->select->handle, (struct epg*)listbox->select->handle1, 0);
 				//drawscreen(multiepg, 0, 0);
 				break;
 			}
@@ -550,7 +556,7 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			if(listbox->select != NULL)
 			{
 				clearscreen(multiepg);
-				screensingleepg((struct channel*)listbox->select->handle, NULL, 0);
+				end = screensingleepg((struct channel*)listbox->select->handle, NULL, 0);
 				//drawscreen(multiepg, 0, 0);
 				break;
 			}
@@ -560,7 +566,7 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			if(listbox->select != NULL)
 			{
 				clearscreen(multiepg);
-				screengmultiepg((struct channel*)listbox->select->handle, NULL, 0);
+				end = screengmultiepg((struct channel*)listbox->select->handle, NULL, 0);
 				//drawscreen(multiepg, 0, 0);
 				break;
 			}
@@ -575,6 +581,67 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 				continue;
 			}
 		}
+		
+		//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+		/*
+		if(list == BOUQUETCHANNEL && (rcret == getrcconfigint("rcff", NULL) || rcret == getrcconfigint("rcfr", NULL)))
+		{
+			struct mainbouquet *mnode = (struct mainbouquet*)aktlist;
+			int round = 0;
+			while(mnode != NULL)
+			{
+				if(rcret == getrcconfigint("rcff", NULL))
+				{
+					mnode = mnode->next;
+					if(mnode == NULL && round == 0)
+					{
+						round = 1;
+						mnode = mainbouquet;
+					}
+				}
+				else if(rcret == getrcconfigint("rcfr", NULL))
+				{
+					mnode = mnode->prev;
+					if(mnode == NULL && round == 0)
+					{
+						round = 1;
+						mnode = getlastmainbouquet(mainbouquet);
+					}
+				}
+				if(mnode == NULL) break;
+				if(mnode->type != status.servicetype) continue;
+
+				char* tmp = ostrcat(tmp, "(BOUQUET)-", 0, 0);
+				tmp = ostrcat(tmp, mnode->name, 1, 0);
+				if(status.servicetype == 0)
+					addconfigtmp("channellist", tmp);
+				else
+					addconfigtmp("rchannellist", tmp);
+				free(tmp); tmp = NULL;
+
+				if(nochanneltitle == 0)
+				{
+					tmpstr1 = ostrcat(tmpstr1, _("MULTI EPG - Bouquets"), 0, 0);
+					tmpstr1 = ostrcat(tmpstr1, " - ", 1, 0);
+					tmpstr1 = ostrcat(tmpstr1, mnode->name, 1, 0);
+					changetitle(multiepg, tmpstr1);
+					free(tmpstr1); tmpstr1 = NULL;
+				}
+
+				listbox->aktpage = -1;
+				listbox->aktline = 1;
+				listbox->select = NULL;
+				epgnr = 0;
+				showbouquetmepgchannel(multiepg, listbox, mnode->bouquet, mnode, epgnr);
+				selectchannelgmepg(listbox);
+				aktlist = (void*)mnode;
+
+				drawscreen(multiepg, 0, 0);
+				break;
+			}
+			continue;
+		}
+		*/
 
 		if(rcret == getrcconfigint("rcff", NULL))
 		{
@@ -670,6 +737,8 @@ void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		drawscreen(multiepg, 0, 0);
 	}
 
+	delconfigtmp("channellist");
+	delconfigtmp("rchannellist");
 	status.markedchannel = NULL;
 	status.markmodus = 0;
 	delmarkedscreennodes(multiepg, 1);

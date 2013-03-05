@@ -1,9 +1,9 @@
 #ifndef EPG_H
 #define EPG_H
 
-void screensingleepg(struct channel* chnode, struct epg* epgnode, int flag)
+int screensingleepg(struct channel* chnode, struct epg* epgnode, int flag)
 {
-	int rcret = 0, ret = 0, epgscreenconf = 0;
+	int rcret = 0, ret = 0, epgscreenconf = 0, end = 0;
 	struct skin* singleepg = getscreen("singleepg");
 	struct skin* channelname = getscreennode(singleepg, "channelname");
 	struct skin* epgdesc = getscreennode(singleepg, "epgdesc");
@@ -38,7 +38,7 @@ start:
 	if(buf == NULL)
 	{
 		err("no mem");
-		return;
+		return 2;
 	}
 
 	tmp = NULL;
@@ -89,8 +89,15 @@ start:
 		if((rcret == getrcconfigint("rcexit", NULL)) || (rcret == getrcconfigint("rcepg", NULL))) break;
 		if(rcret == getrcconfigint("rcinfo", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
-		{
-			servicecheckret(servicestart(chnode, NULL, NULL, 0), 0);
+		{	
+			int ret = 0;
+			if(status.servicetype == 0)
+				ret = servicestart(chnode, getconfig("channellist", NULL), NULL, 0);
+			else
+				ret = servicestart(chnode, getconfig("rchannellist", NULL), NULL, 0);
+			if(ret == 20) writeconfigtmp();
+			servicecheckret(ret, 0);
+			end = 1;
 			break;
 		}
 		if(flag == 0 && epgscreenconf == 1 && rcret == getrcconfigint("rcgreen", NULL))
@@ -98,7 +105,7 @@ start:
 			if(listbox->select != NULL)
 			{
 				clearscreen(singleepg);
-				screenepg(chnode, (struct epg*)listbox->select->handle, 0);
+				end = screenepg(chnode, (struct epg*)listbox->select->handle, 0);
 				//drawscreen(singleepg, 0, 0);
 				break;
 			}
@@ -106,14 +113,14 @@ start:
 		if(flag == 0 && epgscreenconf == 1 && rcret == getrcconfigint("rcyellow", NULL))
 		{
 			clearscreen(singleepg);
-			screenmultiepg(chnode, NULL, 0);
+			end = screenmultiepg(chnode, NULL, 0);
 			//drawscreen(singleepg, 0, 0);
 			break;
 		}
 		if(flag == 0 && epgscreenconf == 1 && rcret == getrcconfigint("rcblue", NULL))
 		{
 			clearscreen(singleepg);
-			screengmultiepg(chnode, NULL, 0);
+			end = screengmultiepg(chnode, NULL, 0);
 			//drawscreen(singleepg, 0, 0);
 			break;
 		}
@@ -146,11 +153,13 @@ start:
 	delmarkedscreennodes(singleepg, 1);
 	delownerrc(singleepg);
 	clearscreen(singleepg);
+
+	return end;
 }
 
-void screenepg(struct channel* chnode, struct epg* epgnode, int flag)
+int screenepg(struct channel* chnode, struct epg* epgnode, int flag)
 {
-	int rcret = 0, ret = 0, epgscreenconf = 0, min = 0;
+	int rcret = 0, ret = 0, epgscreenconf = 0, min = 0, end = 0;
 	struct skin* screenepg = getscreen("epg");
 	struct skin* channelname = getscreennode(screenepg, "channelname");
 	struct skin* channelnr = getscreennode(screenepg, "channelnr");
@@ -213,7 +222,7 @@ start:
 		if(buf == NULL)
 		{
 			err("no memory");
-			return;
+			return 2;
 		}
 
 		changetext(channelname, chnode->name);
@@ -268,7 +277,14 @@ start:
 		{
 			if(channelnottunable(chnode) == 0)
 			{
-				servicecheckret(servicestart(chnode, NULL, NULL, 0), 0);
+				int ret = 0;
+				if(status.servicetype == 0)
+					ret = servicestart(chnode, getconfig("channellist", NULL), NULL, 0);
+				else
+					ret = servicestart(chnode, getconfig("rchannellist", NULL), NULL, 0);
+				if(ret == 20) writeconfigtmp();
+				servicecheckret(ret, 0);
+				end = 1;
 				break;
 			}
 		}
@@ -287,21 +303,21 @@ start:
 		if(flag == 0 && epgscreenconf == 0 && rcret == getrcconfigint("rcgreen", NULL))
 		{
 			clearscreen(screenepg);
-			screensingleepg(chnode, NULL, 0);
+			end = screensingleepg(chnode, NULL, 0);
 			//drawscreen(screenepg, 0, 0);
 			break;
 		}
 		if(flag == 0 && epgscreenconf == 0 && rcret == getrcconfigint("rcyellow", NULL))
 		{
 			clearscreen(screenepg);
-			screenmultiepg(chnode, NULL, 0);
+			end = screenmultiepg(chnode, NULL, 0);
 			//drawscreen(screenepg, 0, 0);
 			break;
 		}
 		if(flag == 0 && epgscreenconf == 0 && rcret == getrcconfigint("rcblue", NULL))
 		{
 			clearscreen(screenepg);
-			screengmultiepg(chnode, NULL, 0);
+			end = screengmultiepg(chnode, NULL, 0);
 			//drawscreen(screenepg, 0, 0);
 			break;
 		}
@@ -324,14 +340,14 @@ start:
 			if(getconfigint("epgbutton", NULL) == 0)
 			{
 				clearscreen(screenepg);
-				screensingleepg(chnode, NULL, 0);
+				end = screensingleepg(chnode, NULL, 0);
 				//drawscreen(screenepg, 0, 0);
 				break;
 			}
 			else
 			{
 				clearscreen(screenepg);
-				screenmultiepg(chnode, NULL, 0);
+				end = screenmultiepg(chnode, NULL, 0);
 				//drawscreen(screenepg, 0, 0);
 				break;
 			}
@@ -357,21 +373,25 @@ start:
 	freeepgrecord(&rectimeline->epgrecord);
 	delownerrc(screenepg);
 	clearscreen(screenepg);
+
+	return end;
 }
 
-void epgchoice(struct channel* chnode)
+int epgchoice(struct channel* chnode)
 {
-	int epgscreenconf = 0;
+	int epgscreenconf = 0, ret = 0;
 
 	epgscreenconf = getconfigint("epg_screen", NULL);
 	if(epgscreenconf == 1)
-		screensingleepg(chnode, NULL, 0);
+		ret = screensingleepg(chnode, NULL, 0);
 	else if(epgscreenconf == 2)
-		screenmultiepg(chnode, NULL, 0);
+		ret = screenmultiepg(chnode, NULL, 0);
 	else if(epgscreenconf == 3)
-		screengmultiepg(chnode, NULL, 0);
+		ret = screengmultiepg(chnode, NULL, 0);
 	else
-		screenepg(chnode, NULL, 0);
+		ret = screenepg(chnode, NULL, 0);
+
+	return ret;
 }
 
 #endif

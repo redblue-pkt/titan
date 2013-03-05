@@ -1682,18 +1682,25 @@ start:
 		}
 		if(flag == 0 && rcret == getrcconfigint("rcepg", NULL) && (list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL || list == BOUQUETCHANNEL))
 		{
+			int ret = 0;
 			if(listbox->select != NULL)
 			{
 				clearscreen(channellist);
 				resettvpic();
 				struct channel* tmpmarkedchannel = status.markedchannel;
-				epgchoice((struct channel*)listbox->select->handle);
-				status.markedchannel = tmpmarkedchannel;
-				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
-				selectchannel(listbox, 0, 0);
-				drawchannellist(channellist, list, listbox);
+				ret = epgchoice((struct channel*)listbox->select->handle);
+				//epg ends with no zap
+				if(ret == 0)
+				{
+					status.markedchannel = tmpmarkedchannel;
+					changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+					drawchannellist(channellist, list, listbox);
+				}
 			}
-			continue;
+			if(ret == 1)
+				break;
+			else
+				continue;
 		}
 		if(flag == 0 && rcret == getrcconfigint("rc0", NULL) && (list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL || list == BOUQUETCHANNEL))
 		{
