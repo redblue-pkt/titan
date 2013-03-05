@@ -693,6 +693,7 @@ int main(int argc, char *argv[])
 	ret = cagetdev();
 	ret = cigetdev();
 	ret = dvrgetdev();
+	settunerstatus();
 
 	//start ca slot watching threads
 	castart();

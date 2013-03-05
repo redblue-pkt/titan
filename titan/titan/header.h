@@ -192,6 +192,7 @@ int ipkg_list_installed(void);
 
 //frontenddev.h
 struct dvbdev* fegetdummy();
+void settunerstatus();
 
 //dvrdev.h
 void dvrclose(struct dvbdev* node, int fd);

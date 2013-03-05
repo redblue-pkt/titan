@@ -932,6 +932,7 @@ struct dvbdev
 	uint8_t adapter;
 	uint8_t devnr;
 	uint8_t felock;
+	uint8_t deactivate;
 	struct transponder* felasttransponder;
 	struct transponder* feakttransponder;
 	int feunicable;
