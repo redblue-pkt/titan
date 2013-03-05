@@ -2892,3 +2892,6 @@ msgstr "EPG Scan aktiviert Standby?"
 
 msgid "Timeshift file to short\nplease wait a little and try again"
 msgstr "Timeshift: Datei ist zu klein\nBitte später versuchen"
+
+msgid "Behavior at recording"
+msgstr "Verhalten bei der Aufnahme"
