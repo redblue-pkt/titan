@@ -224,10 +224,10 @@ void caservicedel(struct service* snode, struct caslot* caslot);
 void sendcapmt(struct service* node, int clear, int flag);
 
 //gmultiepg.h
-void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag);
+int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag);
 
 //multiepg.h
-void screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag);
+int screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag);
 
 //harddisk.h
 void hddfsck(char* dev);
@@ -797,8 +797,8 @@ void zapup();
 void zapdown();
 
 //epg.h
-void screensingleepg(struct channel* chnode, struct epg* epgnode, int flag);
-void screenepg(struct channel* chnode, struct epg* epgnode, int flag);
+int screensingleepg(struct channel* chnode, struct epg* epgnode, int flag);
+int screenepg(struct channel* chnode, struct epg* epgnode, int flag);
 
 //eit.h
 void epgthreadfunc(struct stimerthread* self);

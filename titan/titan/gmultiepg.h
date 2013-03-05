@@ -471,9 +471,9 @@ void gmultiepgchangesize(struct skin* gmultiepg, struct skin* listbox, struct sk
 }
 
 
-void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
+int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 {
-	int rcret = 0, ret = 0, epgscreenconf = 0;
+	int rcret = 0, ret = 0, epgscreenconf = 0, end = 0;
 	struct skin* gmultiepg = getscreen("gmultiepg");
 	struct skin* listbox = getscreennode(gmultiepg, "listbox");
 	struct skin* channellistbox = getscreennode(gmultiepg, "channellistbox");
@@ -635,6 +635,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 					ret = servicestart((struct channel*)listbox->select->handle, getconfig("rchannellist", NULL), NULL, 0);
 				if(ret == 20) writeconfigtmp();
 				servicecheckret(ret, 0);
+				end = 1;
 				break;
 			}
 		}
@@ -653,7 +654,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			if(listbox->select != NULL)
 			{
 				clearscreen(gmultiepg);
-				screenepg((struct channel*)listbox->select->handle, (struct epg*)listbox->select->handle1, 0);
+				end = screenepg((struct channel*)listbox->select->handle, (struct epg*)listbox->select->handle1, 0);
 				//drawscreen(gmultiepg, 0, 0);
 				break;
 			}
@@ -663,7 +664,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			if(listbox->select != NULL)
 			{
 				clearscreen(gmultiepg);
-				screensingleepg((struct channel*)listbox->select->handle, NULL, 0);
+				end = screensingleepg((struct channel*)listbox->select->handle, NULL, 0);
 				//drawscreen(gmultiepg, 0, 0);
 				break;
 			}
@@ -673,7 +674,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			if(listbox->select != NULL)
 			{
 				clearscreen(gmultiepg);
-				screenmultiepg((struct channel*)listbox->select->handle, NULL, 0);
+				end = screenmultiepg((struct channel*)listbox->select->handle, NULL, 0);
 				//drawscreen(gmultiepg, 0, 0);
 				break;
 			}
@@ -909,6 +910,8 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	delmarkedscreennodes(gmultiepg, 3);
 	delownerrc(gmultiepg);
 	clearscreen(gmultiepg);
+
+	return end;
 }
 
 #endif
