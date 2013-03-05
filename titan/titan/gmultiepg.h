@@ -628,10 +628,13 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		{
 			if(channelnottunable((struct channel*)listbox->select->handle) == 0)
 			{
+				int ret = 0;
 				if(status.servicetype == 0)
-					servicecheckret(servicestart((struct channel*)listbox->select->handle, getconfig("channellist", NULL), NULL, 0), 0);
+					ret = servicestart((struct channel*)listbox->select->handle, getconfig("channellist", NULL), NULL, 0);
 				else
-					servicecheckret(servicestart((struct channel*)listbox->select->handle, getconfig("rchannellist", NULL), NULL, 0), 0);
+					ret = servicestart((struct channel*)listbox->select->handle, getconfig("rchannellist", NULL), NULL, 0);
+				if(ret == 20) writeconfigtmp();
+				servicecheckret(ret, 0);
 				break;
 			}
 		}
@@ -686,31 +689,74 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			}
 		}
 
-		//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-		if(listbox->select != NULL && list == BOUQUETCHANNEL && (rcret == getrcconfigint("rcright", NULL) || rcret == getrcconfigint("rcleft", NULL)))
+		if(list == BOUQUETCHANNEL && (rcret == getrcconfigint("rcff", NULL) || rcret == getrcconfigint("rcfr", NULL)))
 		{
 			struct mainbouquet *mnode = (struct mainbouquet*)aktlist;
-			if(rcret == getrcconfigint("rcright", NULL) && mnode != NULL)
-				mnode = mnode->next;
-			if(rcret == getrcconfigint("rcleft", NULL) && mnode != NULL)
-				mnode = mnode->prev;
-
-			if(mnode != NULL)
+			int round = 0;
+			while(mnode != NULL)
 			{
-				showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, timeline, mnode->bouquet, mnode, zoom, akttime, aktchannel, 0);
+				if(rcret == getrcconfigint("rcff", NULL))
+				{
+					mnode = mnode->next;
+					if(mnode == NULL && round == 0)
+					{
+						round = 1;
+						mnode = mainbouquet;
+					}
+				}
+				else if(rcret == getrcconfigint("rcfr", NULL))
+				{
+					mnode = mnode->prev;
+					if(mnode == NULL && round == 0)
+					{
+						round = 1;
+						mnode = getlastmainbouquet(mainbouquet);
+					}
+				}
+				if(mnode == NULL) break;
+				if(mnode->type != status.servicetype) continue;
+
+				char* tmp = ostrcat(tmp, "(BOUQUET)-", 0, 0);
+				tmp = ostrcat(tmp, mnode->name, 1, 0);
+				if(status.servicetype == 0)
+					addconfigtmp("channellist", tmp);
+				else
+					addconfigtmp("rchannellist", tmp);
+				free(tmp); tmp = NULL;
+
+				if(nochanneltitle == 0)
+				{
+					tmpstr1 = ostrcat(tmpstr1, _("GRAPHIC MULTI EPG - Bouquets"), 0, 0);
+					tmpstr1 = ostrcat(tmpstr1, " - ", 1, 0);
+					tmpstr1 = ostrcat(tmpstr1, mnode->name, 1, 0);
+					changetitle(gmultiepg, tmpstr1);
+					free(tmpstr1); tmpstr1 = NULL;
+				}
+
+				if(status.servicetype == 0)
+					aktchannel = getchannel(getconfigint("serviceid", NULL), getconfigllu("transponderid", NULL));
+				else
+					aktchannel = getchannel(getconfigint("rserviceid", NULL), getconfigllu("rtransponderid", NULL));
+
+				listbox->aktpage = -1;
+				listbox->aktline = 1;
+				listbox->select = NULL;
+				showbouquetgmepgchannel(gmultiepg, channellistbox, listbox, timeline, mnode->bouquet, mnode, zoom, starttime, aktchannel, 0);
+				selectchannelgmepg(channellistbox);
 				aktlist = (void*)mnode;
 
-				createtimeline(gmultiepg, timeline, akttime, zoom);
+				createtimeline(gmultiepg, timeline, starttime, zoom);
 				drawscreen(gmultiepg, 2, 0);
 				gmultiepgfilldesc(listbox, epgdesc, NULL, NULL, 0);
 				drawscreen(gmultiepg, 0, 0);
 				if(listbox->select != NULL)
 					aktchannel = (struct channel*)listbox->select->handle;
+				break;
 			}
 			continue;
 		}
 
-		if((listbox->select != NULL && (listbox->select->titlealign == 1 || listbox->select->titlealign == 3) && rcret == getrcconfigint("rcright", NULL)) || rcret == getrcconfigint("rcff", NULL) || rcret == getrcconfigint("rcfav", NULL))
+		if((listbox->select != NULL && (listbox->select->titlealign == 1 || listbox->select->titlealign == 3) && rcret == getrcconfigint("rcright", NULL)) || rcret == getrcconfigint("rcfav", NULL))
 		{
 			time_t tmptime = 0;
 
@@ -804,7 +850,7 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			continue;
 		}
 
-		if((listbox->select != NULL && (listbox->select->titlealign == 2 || listbox->select->titlealign == 3) && rcret == getrcconfigint("rcleft", NULL)) || rcret == getrcconfigint("rcfr", NULL))
+		if((listbox->select != NULL && (listbox->select->titlealign == 2 || listbox->select->titlealign == 3) && rcret == getrcconfigint("rcleft", NULL)))
 		{
 			akttime -= addtime;
 			if(akttime < starttime) akttime = starttime;
@@ -855,6 +901,8 @@ void screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			aktchannel = (struct channel*)listbox->select->handle;
 	}
 
+	delconfigtmp("channellist");
+	delconfigtmp("rchannellist");
 	status.markedchannel = NULL;
 	status.markmodus = 0;
 	delmarkedscreennodes(gmultiepg, 1);
