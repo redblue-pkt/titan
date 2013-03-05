@@ -165,6 +165,25 @@ struct dvbdev* fegetdummy()
 	return NULL;
 }
 
+void settunerstatus()
+{
+	struct dvbdev* dvbnode = dvbdev;
+
+	while(dvbnode != NULL)
+	{
+		//FRONTENDDEV first in the list
+		if(dvbnode->type != FRONTENDDEV) break;
+
+		//check if tuner is deactivate
+		if(ostrcmp("x", getconfig(dvbnode->feshortname, NULL)) == 0)
+			dvbnode->deactive = 1;
+		else
+			dvbnode->deactive = 0;
+
+		dvbnode = dvbnode->next;
+	}
+}
+
 //flag 0 = normal
 //flag 1 = check only
 //flag 2 = from record
@@ -193,6 +212,14 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 	{
 		//FRONTENDDEV first in the list
 		if(dvbnode->type != FRONTENDDEV) break;
+
+		//check if tuner is deactivate
+		if(dvbnode->deactive == 1)
+		{
+			dvbnode = dvbnode->next;
+			continue;
+		}
+
 		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == tpnode->fetype)
 		{
 			if(dvbnode->feakttransponder != NULL && dvbnode->feakttransponder->orbitalpos == tpnode->orbitalpos && dvbnode->feakttransponder->frequency == tpnode->frequency && dvbnode->feaktpolarization == tpnode->polarization)
@@ -221,6 +248,14 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 	{
 		//FRONTENDDEV first in the list
 		if(dvbnode->type != FRONTENDDEV) break;
+
+		//check if tuner is deactivate
+		if(dvbnode->deactive == 1)
+		{
+			dvbnode = dvbnode->next;
+			continue;
+		}
+
 		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == tpnode->fetype && dvbnode->felock == 0)
 		{
 			if(flag == 2 && status.aktservice->fedev == dvbnode)
@@ -302,6 +337,14 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 	{
 		//FRONTENDDEV first in the list
 		if(dvbnode->type != FRONTENDDEV) break;
+
+		//check if tuner is deactivate
+		if(dvbnode->deactive == 1)
+		{
+			dvbnode = dvbnode->next;
+			continue;
+		}
+
 		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == tpnode->fetype && dvbnode->felock == 0)
 		{
 			if(flag == 2 && status.aktservice->fedev == dvbnode)
