@@ -543,6 +543,13 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 			newnode->type = convertxmlentry(ret, NULL);
 			free(ret);
 		}
+		ret = getxmlentry(line, " style=");
+		if(ret != NULL)
+		{
+			struct style* snode = getstyle(ret);
+			addstyletoscreennode(newnode, snode);
+			free(ret);
+		}
 		ret = getxmlentry(line, " posx=");
 		if(ret != NULL)
 		{
@@ -972,6 +979,8 @@ int addscreen(char *buf, int del, int flag)
 			}
 			if(ostrstr(buf1, "<node ") != NULL && node != NULL)
 				addscreennode(node, buf1, NULL);
+			if(ostrstr(buf1, "<style ") != NULL)
+				addstyle(buf1, NULL);
 
 			buf1 = buf;
 		}
