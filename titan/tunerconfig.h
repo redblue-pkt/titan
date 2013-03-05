@@ -668,7 +668,7 @@ void createloopstr(struct dvbdev* node, char** loopstr, char** loopstr1)
 		dvbnode = dvbnode->next;
 	}
 
-	*loopstr = ostrcat(*loopstr, _("deactive"), 1, 0);
+	*loopstr = ostrcat(*loopstr, _("off"), 1, 0);
 	*loopstr = ostrcat(*loopstr, "\n", 1, 0);
 	*loopstr1 = ostrcat(*loopstr1, "x\n", 1, 0);
 }
