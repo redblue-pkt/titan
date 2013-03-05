@@ -487,7 +487,7 @@ void vfdrecordthread()
 	int aufab = 0;
 	int brightnesshelp = 0;
 	
-	while (VFD_Recordthread->aktion != STOP && getconfigint("vfdisplayrecord", NULL) != 0)
+	while (VFD_Recordthread->aktion != STOP && getconfigint("vfdisplayrecord", NULL) != 0 && status.recording > 0)
 	{
 		//brightness = getconfigint("vfdbrightness", NULL);
 		//if( brightness == 0 )
@@ -529,7 +529,7 @@ void vfdrecordthread()
 			action = 0;
 			aufab = 0;
 		}
-		sleep(2);
+		sleep(1);
 	}
 	VFD_Recordthread = NULL;
 } 						
