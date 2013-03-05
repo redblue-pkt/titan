@@ -1690,7 +1690,8 @@ start:
 				epgchoice((struct channel*)listbox->select->handle);
 				status.markedchannel = tmpmarkedchannel;
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
-				drawscreen(channellist, 0, 0);
+				selectchannel(listbox, 0, 0);
+				drawchannellist(channellist, list, listbox);
 			}
 			continue;
 		}
