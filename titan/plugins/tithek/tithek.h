@@ -1,6 +1,8 @@
 #ifndef TITHEK_H
 #define TITHEK_H
 
+#define HTTPAUTH "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0="
+
 #define TITHEKPATH "/tmp/tithek"
 int tithekdownloadrun = 0;
 int tithekdownloadcount = 0;
@@ -609,8 +611,8 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	int zcount = 2;
 	int fontsize = 25;
 	int pcount = 2;
-	
-	if(getconfigint("tithek_view", NULL) == 0 || flag != 3)
+
+	if(getconfigint("tithek_cover", NULL) == 0 || getconfigint("tithek_view", NULL) == 0)
 	{
 		if(linecount > 2)
 		{
@@ -657,7 +659,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		}
 	}
 	
-	if(getconfigint("tithek_view", NULL) == 1 && flag == 3)
+	if((getconfigint("tithek_cover", NULL) == 1 && flag == 3) || (getconfigint("tithek_view", NULL) == 1 && flag != 3))
 	{
 		height = 500;
 		width = 590;
@@ -668,7 +670,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		pcount = 2;
 	}
 
-	if(getconfigint("tithek_view", NULL) == 2 && flag == 3)
+	if((getconfigint("tithek_cover", NULL) == 2 && flag == 3) || (getconfigint("tithek_view", NULL) == 2 && flag != 3))
 	{
 		height = 280;
 		width = 390;
@@ -679,7 +681,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		pcount = 6;
 	}
 
-	if(getconfigint("tithek_view", NULL) == 3 && flag == 3)
+	if((getconfigint("tithek_cover", NULL) == 3 && flag == 3) || (getconfigint("tithek_view", NULL) == 3 && flag != 3))
 	{
 		height = 180;
 		width = 295;
@@ -690,7 +692,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		pcount = 12;
 	}
 
-	if(getconfigint("tithek_view", NULL) == 4 && flag == 3)
+	if((getconfigint("tithek_cover", NULL) == 4 && flag == 3) || (getconfigint("tithek_view", NULL) == 4 && flag != 3))
 	{
 		height = 140;
 		width = 235;
@@ -701,7 +703,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		pcount = 20;
 	}
 
-	if(getconfigint("tithek_view", NULL) == 5 && flag == 3)
+	if((getconfigint("tithek_cover", NULL) == 5 && flag == 3) || (getconfigint("tithek_view", NULL) == 5 && flag != 3))
 	{
 		height = 111;
 		width = 196;

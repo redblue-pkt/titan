@@ -2543,10 +2543,10 @@ msgid "show 30 entrys"
 msgstr "ganz klein (30 Bilder)"
 
 msgid "show auto entrys"
-msgstr "je nach Anzahl automatisch anpassen"
+msgstr "automatisch anpassen"
 
 msgid "Pic Ratio"
-msgstr "Menu Bilder im Orginalformat darstellen"
+msgstr "Bilder im Orginalformat darstellen"
 
 msgid "Delete"
 msgstr "Löschen"
@@ -2898,3 +2898,9 @@ msgstr "Verhalten bei der Aufnahme"
 
 msgid "Start Wlan ?"
 msgstr "Wollen Sie Wlan jetzt starten ?"
+
+msgid "View Sections"
+msgstr "Ansicht Kategorie"
+
+msgid "View Cover"
+msgstr "Ansicht Film-Musik"

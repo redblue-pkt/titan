@@ -18,8 +18,6 @@
 #include "beeg.h"
 #include "solarmovie.h"
 
-#define HTTPAUTH "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0="
-
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";
 char pluginpic[] = "%pluginpath%/tithek/plugin.png";
