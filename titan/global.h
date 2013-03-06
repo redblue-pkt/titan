@@ -1734,6 +1734,18 @@ int writeallconfig(int flag)
 	return ret;
 }
 
+void* writeallconfigthread0()
+{
+	writeallconfig(0);
+	pthread_exit(NULL);
+}
+
+void* writeallconfigthread1()
+{
+	writeallconfig(1);
+	pthread_exit(NULL);
+}
+
 void initmutex(int flag)
 {
 	if(flag == 1)

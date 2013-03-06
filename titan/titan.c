@@ -271,6 +271,8 @@ void oshutdown(int exitcode, int flag)
 	int i = 0, faststop = 0, ret = 0;
 	char* tmpstr = NULL;
 	struct skin* logo = getscreen("logo");
+	pthread_attr_t writethreadattr;
+	pthread_t writethread;
 
 	//check if record running
 	if((flag == 1 || flag == 2 || flag == 3 || flag == 4 || flag == 5) && (status.recording > 0 || getrectimerbytimediff(300) != NULL))
@@ -332,11 +334,20 @@ void oshutdown(int exitcode, int flag)
 
 	if(flag != 2)
 	{
+		//start write thread
+		pthread_attr_init(&writethreadattr);
+		pthread_attr_setstacksize(&writethreadattr, 50000);
+		pthread_attr_setdetachstate(&writethreadattr, PTHREAD_CREATE_JOINABLE);
+
 		int epgsave = getconfigint("epgsave", NULL);
 		if((epgsave == 1 && exitcode == 3) || epgsave == 2)
-			writeallconfig(1); //do not save epg
+			ret = pthread_create(&writethread, &writethreadattr, writeallconfigthread1, NULL); //do not save epg
 		else
-			writeallconfig(0); //save epg
+			ret = pthread_create(&writethread, &writethreadattr, writeallconfigthread0, NULL); //save epg
+		if(ret)
+		{
+			err("create write thread");
+		}
 	}
 
 	//reset ci devices
@@ -349,6 +360,11 @@ void oshutdown(int exitcode, int flag)
 
 	if(faststop == 0)
 	{
+		//wait for write thread
+		if(writethread != '\0')
+			pthread_join(writethread, &threadstatus);
+		pthread_attr_destroy(&writethreadattr);
+
 		//stop timer thread
 		i = 0;
 		status.timerthreadaktion = STOP;
@@ -429,6 +445,14 @@ void oshutdown(int exitcode, int flag)
 	starthttpd(0);
 	startrguid(0);
 	initmutex(0);
+
+	if(faststop != 0)
+	{
+		//wait for write thread
+		if(writethread != '\0')
+			pthread_join(writethread, &threadstatus);
+		pthread_attr_destroy(&writethreadattr);
+	}
 
 	debug(1000, "out");
 	exit(exitcode);
