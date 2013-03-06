@@ -148,11 +148,11 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		*param++ = '\0';
 
 	if(ostrcmp(query, "getrccodes") == 0)
-		webgetrccodes(fmt);
+		buf = webgetrccodes(fmt);
 	if(ostrcmp(query, "getmute") == 0)
-		webgetmute(fmt);
+		buf = webgetmute(fmt);
 	if(ostrcmp(query, "getvol") == 0)
-		webgetvol(fmt);
+		buf = webgetvol(fmt);
 	if(ostrcmp(query, "sendrc") == 0)
 		websendrc(param, fmt);
 	if(ostrcmp(query, "getrectimer") == 0)
