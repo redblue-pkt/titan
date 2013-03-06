@@ -2904,3 +2904,6 @@ msgstr "Ansicht Kategorie"
 
 msgid "View Cover"
 msgstr "Ansicht Film-Musik"
+
+msgid "deaktivate ethernet interface ?"
+msgstr "Lan Verbindung ausschalten ?"
