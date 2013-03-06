@@ -289,6 +289,7 @@ void screennetwork(int mode)
 //flag 2: no msg and no info
 void screennetwork_restart(struct inetwork *net, int flag)
 {
+	struct skin* load = getscreen("loading");
 	char* tmpstr = NULL, *cmd = NULL;
 
 	if(flag == 0)
@@ -301,6 +302,7 @@ void screennetwork_restart(struct inetwork *net, int flag)
 		debug(10, "%s", tmpstr);
 		free(tmpstr), tmpstr = NULL;
 
+		drawscreen(load, 0, 0);
 		if(net == NULL)
 		{
 			net = inetwork;
@@ -328,6 +330,7 @@ void screennetwork_restart(struct inetwork *net, int flag)
 		}
 
 		addinetworkall(NULL);
+		clearscreen(load);
 
 		if(flag != 2)
 			textbox(_("Restart Network"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
