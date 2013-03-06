@@ -21,7 +21,7 @@ int screensingleepg(struct channel* chnode, struct epg* epgnode, int flag)
 	listbox->aktpage = -1;
 
 	if(chnode == NULL) chnode = status.aktservice->channel;
-	if(chnode == NULL) return;
+	if(chnode == NULL) return 2;
 	if(epgnode == NULL) epgnode = getepgakt(chnode);
 	if(epgnode == NULL) epgnode = getepgnext(chnode);
 	tmpepg = epgnode;
@@ -184,7 +184,7 @@ int screenepg(struct channel* chnode, struct epg* epgnode, int flag)
 		changetext(b5, _("Multi (EPG)"));
 
 	if(chnode == NULL) chnode = status.aktservice->channel;
-	if(chnode == NULL) return;
+	if(chnode == NULL) return 2;
 	if(epgnode == NULL) epgnode = getepgakt(chnode);
 	if(epgnode == NULL) epgnode = getepgnext(chnode);
 
