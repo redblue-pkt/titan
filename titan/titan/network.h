@@ -285,16 +285,18 @@ void screennetwork(int mode)
 	textbox(_("Network"), _("comming soon..."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 }
 
+//flag 0 and 1: other message
+//flag 2: no msg and no info
 void screennetwork_restart(struct inetwork *net, int flag)
 {
 	char* tmpstr = NULL, *cmd = NULL;
 
 	if(flag == 0)
 		tmpstr = ostrcat("Restart Network ?", NULL, 0, 0);
-	else
+	else if(flag == 1)
 		tmpstr = ostrcat("Aktivate new network config ?", NULL, 0, 0);
 	
-	if(textbox(_("Network"), _(tmpstr), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+	if(flag == 2 || textbox(_("Network"), _(tmpstr), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
 		debug(10, "%s", tmpstr);
 		free(tmpstr), tmpstr = NULL;
@@ -327,7 +329,8 @@ void screennetwork_restart(struct inetwork *net, int flag)
 
 		addinetworkall(NULL);
 
-		textbox(_("Restart Network"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
+		if(flag != 2)
+			textbox(_("Restart Network"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 		free(tmpstr); tmpstr = NULL;
 	}
 }
@@ -727,6 +730,7 @@ void screennetwork_wlan()
 						{
 							net->type = 2; //deaktivate
 							writeinterfaces();
+							screennetwork_restart(net, 2);
 						}
 					}
           
