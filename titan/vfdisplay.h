@@ -3,6 +3,7 @@
 
 void screenvfdisplay()
 {
+	char* tmpstr = NULL;
 	int rcret = 0, vfdbrightness = 0, vfdstandbybrightness = 0;
 	struct skin* vfdisplay = getscreen("vfdisplay");
 	struct skin* listbox = getscreennode(vfdisplay, "listbox");
@@ -11,6 +12,8 @@ void screenvfdisplay()
 	struct skin* vfdnotstandby = getscreennode(vfdisplay, "vfdnotstandby");
 	struct skin* vfdstandby = getscreennode(vfdisplay, "vfdstandby");
 	struct skin* vfdrecord = getscreennode(vfdisplay, "vfdrecord");
+	struct skin* at7000frontrun = getscreennode(vfdisplay, "at7000frontrun");
+	struct skin* at7000frontsleep = getscreennode(vfdisplay, "at7000frontsleep");
 	struct skin* tmp = NULL;
 
 	if(brightness != NULL)
@@ -41,6 +44,23 @@ void screenvfdisplay()
 	addchoicebox(vfdrecord, "1", _("blink"));
 	addchoicebox(vfdrecord, "2", _("fade out/in"));
 	setchoiceboxselection(vfdrecord, getconfig("vfdisplayrecord", NULL));
+
+	changeinput(at7000frontrun, "15\n14\n13\n12\n11\n10\n9\n8\n7\n6\n5\n4\n3\n2\n1");
+	setchoiceboxselection(at7000frontrun, getconfig("at7000frontrun", NULL));
+	
+	changeinput(at7000frontsleep, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15");
+	setchoiceboxselection(at7000frontsleep, getconfig("at7000frontsleep", NULL));
+
+	if(checkbox("ATEVIO7000") == 1)
+	{
+		at7000frontrun->hidden = NO;
+		at7000frontsleep->hidden = NO;
+	}
+	else
+	{
+		at7000frontrun->hidden = YES;
+		at7000frontsleep->hidden = YES;
+	}
 
 	drawscreen(vfdisplay, 0, 0);
 	addscreenrc(vfdisplay, listbox);
@@ -100,6 +120,16 @@ void screenvfdisplay()
 			addconfigscreencheck("vfdisplayrecord", vfdrecord, "0");
 			addconfigint("vfdbrightness", vfdbrightness);
 			addconfigint("vfdstandbybrightness", vfdstandbybrightness);
+
+			if(checkbox("ATEVIO7000") == 1)
+			{
+				addconfigscreencheck("at7000frontrun", at7000frontrun, "0");
+				addconfigscreencheck("at7000frontsleep", at7000frontsleep, "0");
+				tmpstr = ostrcat("fp_control -P ",getconfig("at7000frontrun", NULL), 0, 0);
+				system(tmpstr);
+				free(tmpstr); tmpstr=NULL;
+			}
+
 			break;
 		}
 	}
