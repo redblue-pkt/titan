@@ -711,9 +711,20 @@ void screennetwork_wlan()
 							writeinterfaces();
 						}
 					}
-
-					net = getinetworkfirstwlan();
-					if(net != NULL) screennetwork_restart(net, 1);
+          
+					if(textbox(_("Message"), _("Start Wlan ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+					{
+						drawscreen(load, 0, 0);
+						system("killall wpa_supplicant; sleep 2; killall -9 wpa_supplicant");
+						ret = system("wlan.sh");
+						clearscreen(load);
+						
+						if(ret == 0)
+						{
+							net = getinetworkfirstwlan();
+							if(net != NULL) screennetwork_adapterext(0, net->device);
+						}
+					}
 					break;
 				}
 			}
