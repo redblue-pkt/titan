@@ -1243,11 +1243,11 @@ playerstart:
 
 	if(file != NULL)
 	{
+		if(getconfigint("playertype", NULL) == 1 && (cmpfilenameext(file, ".ts") == 0 || cmpfilenameext(file, ".mts") == 0 || cmpfilenameext(file, ".m2ts") == 0))
+			playertype = 1;
+
 		if(startfile == NULL)
 		{
-			if(getconfigint("playertype", NULL) == 1 && (cmpfilenameext(file, ".ts") == 0 || cmpfilenameext(file, ".mts") == 0 || cmpfilenameext(file, ".m2ts") == 0))
-				playertype = 1;
-
 			tmpstr = ostrcat(file, NULL, 0, 0);
 			if(tmpstr != NULL && startfolder == 0) addconfig("rec_moviepath", dirname(tmpstr));
 			free(tmpstr); tmpstr = NULL;
@@ -1278,13 +1278,18 @@ playerstart:
 			rcret = playerstart(file);
 		else
 		{
-			struct stimerthread* bufferstatus = addtimer(&screenplaybufferstatus, START, 1000, 1, NULL, NULL, NULL);
-			rcret = playerstart(file);
-			if(bufferstatus != NULL && gettimer(bufferstatus) != NULL)
+			if(ostrstr(file, "http://") == file)
 			{
-				bufferstatus->aktion = STOP;
-				usleep(100000);
+				struct stimerthread* bufferstatus = addtimer(&screenplaybufferstatus, START, 1000, 1, NULL, NULL, NULL);
+				rcret = playerstart(file);
+				if(bufferstatus != NULL && gettimer(bufferstatus) != NULL)
+				{
+					bufferstatus->aktion = STOP;
+					usleep(100000);
+				}
 			}
+			else
+				rcret = playerstart(file);
 		}
 #ifndef SIMULATE
 		if(rcret != 0)
