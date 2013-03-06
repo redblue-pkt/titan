@@ -9,8 +9,17 @@ void screentithek_settings()
 	struct skin* tithek_settings = getscreen("tithek_settings");
 	struct skin* listbox = getscreennode(tithek_settings, "listbox");
 	struct skin* view = getscreennode(tithek_settings, "view");
+	struct skin* cover = getscreennode(tithek_settings, "cover");
 	struct skin* pay = getscreennode(tithek_settings, "pay");
 	struct skin* picratio = getscreennode(tithek_settings, "picratio");
+
+	addchoicebox(cover, "0", _("show auto entrys"));
+	addchoicebox(cover, "1", _("show 2 entrys"));
+	addchoicebox(cover, "2", _("show 6 entrys"));
+	addchoicebox(cover, "3", _("show 12 entrys"));	
+	addchoicebox(cover, "4", _("show 20 entrys"));
+	addchoicebox(cover, "5", _("show 30 entrys"));
+	setchoiceboxselection(cover, getconfig("tithek_cover", NULL));
 
 	addchoicebox(view, "0", _("show auto entrys"));
 	addchoicebox(view, "1", _("show 2 entrys"));
@@ -42,6 +51,7 @@ void screentithek_settings()
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			addconfigscreencheck("tithek_view", view, NULL);
+			addconfigscreencheck("tithek_cover", cover, NULL);
 			addconfigscreencheck("tithek_pay", pay, NULL);
 			addconfigscreencheck("tithek_pic_ratio", picratio, NULL);
 			break;
