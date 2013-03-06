@@ -685,7 +685,7 @@ void deltunerconfig(flag)
 	{
 		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL)
 		{
-			if(flag == 0 && getconfig(dvbnode->feshortname, NULL) == NULL)
+			if(flag == 0 && (getconfig(dvbnode->feshortname, NULL) == NULL || ostrcmp(getconfig(dvbnode->feshortname, NULL), "x") == 0))
 			{
 				dvbnode = dvbnode->next;
 				continue;
