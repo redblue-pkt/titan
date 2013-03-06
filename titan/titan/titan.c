@@ -271,8 +271,8 @@ void oshutdown(int exitcode, int flag)
 	int i = 0, faststop = 0, ret = 0;
 	char* tmpstr = NULL;
 	struct skin* logo = getscreen("logo");
-	pthread_attr_t writethreadattr;
-	pthread_t writethread;
+	pthread_attr_t writethreadattr = {};
+	pthread_t writethread = '\0';
 
 	//check if record running
 	if((flag == 1 || flag == 2 || flag == 3 || flag == 4 || flag == 5) && (status.recording > 0 || getrectimerbytimediff(300) != NULL))
