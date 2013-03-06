@@ -324,6 +324,9 @@ void screennetwork_restart(struct inetwork *net, int flag)
 			tmpstr = ostrcat(tmpstr, command(cmd), 1, 1);
 			free(cmd); cmd = NULL;
 		}
+
+		addinetworkall(NULL);
+
 		textbox(_("Restart Network"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 		free(tmpstr); tmpstr = NULL;
 	}
@@ -592,6 +595,17 @@ start:
 	clearscreen(interfacelist);
 }
 
+int wlanstart()
+{
+	int ret = 0;
+
+	system("killall wpa_supplicant; sleep 2; killall -9 wpa_supplicant");
+	ret = system("wlan.sh");
+	addinetworkall(NULL);
+
+	return ret;
+}
+
 void screennetwork_wlan()
 {
 	int rcret = -1, scan = 0, ret = 0;
@@ -719,8 +733,7 @@ void screennetwork_wlan()
 					if(textbox(_("Message"), _("Start Wlan ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 					{
 						drawscreen(load, 0, 0);
-						system("killall wpa_supplicant; sleep 2; killall -9 wpa_supplicant");
-						ret = system("wlan.sh");
+						wlanstart();
 						clearscreen(load);
 						
 						if(ret == 0)
@@ -735,8 +748,7 @@ void screennetwork_wlan()
 			if(rcret == getrcconfigint("rcgreen", NULL))
 			{
 				drawscreen(load, 0, 0);
-				system("killall wpa_supplicant; sleep 2; killall -9 wpa_supplicant");
-				ret = system("wlan.sh");
+				wlanstart();
 				clearscreen(load);
 				if(ret == 0)
 				{

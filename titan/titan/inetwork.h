@@ -238,16 +238,19 @@ int addinetworkall(struct stimerthread* self)
 	struct ifaddrs *ifa = NULL, *tmpifa = NULL;
 	void* tmpaddr = NULL;
 	char* buf = NULL, *tmpstr = NULL;
-	struct inetwork* node = inetwork;
 	char* tmp_gateway = NULL;
 	char* tmp_dnsserver1 = NULL;
 	char* tmp_dnsserver2 = NULL;
 	char* cmd = NULL;
 
+	m_lock(&status.inetworkmutex, 21);
+	struct inetwork* node = inetwork;
+
 	ret = getifaddrs(&ifa);
 	if(ret != 0)
 	{
 		err("get network interfaces");
+		m_unlock(&status.inetworkmutex, 21);
 		return 1;
 	}
 
@@ -255,6 +258,7 @@ int addinetworkall(struct stimerthread* self)
 	if(buf == NULL)
 	{
 		err("no mem");
+		m_unlock(&status.inetworkmutex, 21);
 		return 1;
 	}
 
@@ -452,6 +456,7 @@ int addinetworkall(struct stimerthread* self)
 	free(buf);
 
 	delinetworknotfound();
+	m_unlock(&status.inetworkmutex, 21);
 	return 0;
 }
 
