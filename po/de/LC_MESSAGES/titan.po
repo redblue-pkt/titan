@@ -2895,3 +2895,6 @@ msgstr "Timeshift: Datei ist zu klein\nBitte später versuchen"
 
 msgid "Behavior at recording"
 msgstr "Verhalten bei der Aufnahme"
+
+msgid "Start Wlan ?"
+msgstr "Wollen Sie Wlan jetzt starten ?"
