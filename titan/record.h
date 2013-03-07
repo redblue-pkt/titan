@@ -1103,11 +1103,20 @@ struct service* getrecordbyname(char* recname, int type)
 	debug(1000, "out");
 }
 
-int screenrecordduration(int minutes)
+int screenrecordduration(int minutes, int nextmin)
 {
 		int rcret = 0, ret = 0;
 		struct skin* recordduration = getscreen("recordduration");
+		struct skin* b1 = getscreennode(recordduration, "b1");
 		char* tmpnr = NULL;
+
+		if(nextmin == 0)
+			b1->hidden = YES;
+		else
+		{
+			if(nextmin > 9999) nextmin = 9999;
+			b1->hidden = NO;
+		}
 
 		changemask(recordduration, "0000");
 		if(minutes < 0) minutes = 0;
@@ -1115,7 +1124,7 @@ int screenrecordduration(int minutes)
 		tmpnr = malloc(5);
 		snprintf(tmpnr, 5, "%04d", minutes);
 		changeinput(recordduration, tmpnr);
-		free(tmpnr);
+		free(tmpnr); tmpnr = NULL;
 
 		drawscreen(recordduration, 0, 0);
 		addscreenrc(recordduration, recordduration);
@@ -1123,6 +1132,16 @@ int screenrecordduration(int minutes)
 		while(1)
 		{
 			rcret = waitrc(recordduration, 0, 0);
+			if(nextmin > 0 && rcret == getrcconfigint("rcred", NULL))
+			{
+				changemask(recordduration, "0000");
+				tmpnr = malloc(5);
+				snprintf(tmpnr, 5, "%04d", nextmin);
+				changeinput(recordduration, tmpnr);
+				changeret(recordduration, tmpnr);
+				free(tmpnr); tmpnr = NULL;
+				drawscreen(recordduration, 0, 0);
+			}
 			if(rcret == getrcconfigint("rcexit", NULL))
 			{
 				changeret(recordduration, NULL);
@@ -1251,8 +1270,13 @@ void screenrecorddirect()
 			servicenode = getrecordbyname(mbox->param, RECORDDIRECT);
 			if(servicenode != NULL)
 			{
+				int nextmin = 0;
+				epgnode = getepgbytime(servicenode->channel, time(NULL));
+				if(epgnode != NULL) epgnode = epgnode->next;
+				if(epgnode != NULL) nextmin = epgnode->endtime - time(NULL);
+				if(nextmin < 0) nextmin = 0;
 				ret1 = (servicenode->recendtime - time(NULL)) / 60;
-				ret1 = screenrecordduration(ret1);
+				ret1 = screenrecordduration(ret1, nextmin);
 				if(ret1 > 0)
 					servicenode->recendtime = time(NULL) + (ret1 * 60);
 			}
@@ -1277,7 +1301,7 @@ void screenrecorddirect()
 		}
 		if(ostrcmp(mbox->name, "add recording (enter duration)") == 0)
 		{
-			ret1 = screenrecordduration(0);
+			ret1 = screenrecordduration(0, 0);
 
 			if(ret1 > 0)
 			{
