@@ -2900,10 +2900,10 @@ msgid "Start Wlan ?"
 msgstr "Wollen Sie Wlan jetzt starten ?"
 
 msgid "View Sections"
-msgstr "Ansicht Kategorie"
+msgstr "Ansicht Menus"
 
 msgid "View Cover"
-msgstr "Ansicht Film-Musik"
+msgstr "Ansicht Cover (streams)"
 
 msgid "deaktivate ethernet interface ?"
 msgstr "Lan Verbindung ausschalten ?"
