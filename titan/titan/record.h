@@ -525,7 +525,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			{
 				playerpausets();
 				playercontinuets();
-				playerresetts();
+				//playerresetts();
 				status.timeshiftseek = 0;
 				status.playspeed = 0;
 				status.pause = 0;
