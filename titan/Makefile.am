@@ -1,15 +1,15 @@
 ALL_CFLAGS= -DSH4 -Deplayer3 -DDVDPLAYER -Os -export-dynamic -Wall
 
 INCLUDES = \
-	-I../../tufsbox/cdkroot/usr/include \
-	-I../../tufsbox/cdkroot/usr/include/freetype2 \
-	-I../driver/bpamem \
-	-I../apps/titan/libdreamdvd \
-	-I../apps/misc/tools/libeplayer3/include \
-	-I../apps/misc/tools/libmmeimage \
-	-I../apps/titan/titan/libdreamdvd \
-	-I../apps/misc/tools/libmmeimage \
-	-I../apps/titan/titan
+	-I$(targetprefix)/usr/include \
+	-I$(targetprefix)/usr/include/freetype2 \
+	-I$(driver)/driver/bpamem \
+	-I$(appsdir)/titan/libdreamdvd \
+	-I$(appsdir)/misc/tools/libeplayer3/include \
+	-I$(appsdir)/misc/tools/libmmeimage \
+	-I$(appsdir)/titan/titan/libdreamdvd \
+	-I$(appsdir)/misc/tools/libmmeimage \
+	-I$(appsdir)/titan/titan
 
 bin_PROGRAMS = titan
 
