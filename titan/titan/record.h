@@ -1285,7 +1285,7 @@ void screenrecorddirect()
 				int nextmin = 0;
 				epgnode = getepgbytime(servicenode->channel, time(NULL));
 				if(epgnode != NULL) epgnode = epgnode->next;
-				if(epgnode != NULL) nextmin = epgnode->endtime - time(NULL);
+				if(epgnode != NULL) nextmin = (epgnode->endtime - time(NULL)) / 60;
 				if(nextmin < 0) nextmin = 0;
 				ret1 = (servicenode->recendtime - time(NULL)) / 60;
 				ret1 = screenrecordduration(ret1, nextmin);
