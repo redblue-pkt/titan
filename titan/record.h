@@ -521,6 +521,18 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				frcount = 0;
 			
 			readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
+			if(readret <= 0 && status.timeshift == 1)
+			{
+				playerpausets();
+				playercontinuets();
+				playerresetts();
+				status.timeshiftseek = 0;
+				status.playspeed = 0;
+				status.pause = 0;
+				status.play = 1;
+				playerseekts(servicenode, -2, 1);
+				readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
+			}				
 		
 			if(status.playspeed < 0 || status.playspeed > 0)
 			{
