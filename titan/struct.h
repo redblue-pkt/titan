@@ -86,7 +86,7 @@
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
 #define CRONTRIBUT "obi, black, dvboxer, oxygen, gost"
-#define PLUGINVERSION 20198
+#define PLUGINVERSION 0
 
 #define _(x) gettext(x)
 #define MINMALLOC 4096
