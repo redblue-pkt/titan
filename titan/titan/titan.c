@@ -7,6 +7,12 @@
 #define SYSCODE 0UL
 #define HTTPAUTH "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0="
 
+#define IPKG_LIB
+#include "libipkg/config.h"
+#include "libipkg/libipkg.h"
+#include "libipkg/args.h"
+#include "libipkg/ipkg_cmd.h"
+
 struct clist *config[LISTHASHSIZE] = {NULL};
 struct clist *ownconfig[LISTHASHSIZE] = {NULL};
 struct clist *rcconfig[LISTHASHSIZE] = {NULL};
@@ -770,7 +776,10 @@ int main(int argc, char *argv[])
 	else
 		serviceret = servicestart(getchannel(getconfigint("rserviceid", NULL), getconfigllu("rtransponderid", NULL)), getconfig("rchannellist", NULL),  NULL, 0);
 
+printf("obi1: %d\n", time(NULL));
 	ret = readscreen(getconfig("skinfile", NULL), 0, 0);
+printf("obi2: %d\n", time(NULL));
+  
 	ret = readmainbouquet(getconfig("bouquetfile", NULL));
 	ret = readallbouquet();
 	ret = readmainplaylist(getconfig("playlistfile", NULL));
