@@ -2235,7 +2235,10 @@ char* webgetrectimer(char* param, int flag, int fmt)
 		node = node->next;
 	}
 
-	if(fmt == 0) webcreatetailbig(&buf, &maxlen, &pos, 0);
+	if(fmt == 0)
+		webcreatetailbig(&buf, &maxlen, &pos, 0);
+	else if(buf == NULL)
+		buf = ostrcat("no data", NULL, 0, 0);
 
 	free(buf1);
 	return buf;
