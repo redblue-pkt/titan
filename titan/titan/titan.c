@@ -776,10 +776,7 @@ int main(int argc, char *argv[])
 	else
 		serviceret = servicestart(getchannel(getconfigint("rserviceid", NULL), getconfigllu("rtransponderid", NULL)), getconfig("rchannellist", NULL),  NULL, 0);
 
-printf("obi1: %d\n", time(NULL));
 	ret = readscreen(getconfig("skinfile", NULL), 0, 0);
-printf("obi2: %d\n", time(NULL));
-  
 	ret = readmainbouquet(getconfig("bouquetfile", NULL));
 	ret = readallbouquet();
 	ret = readmainplaylist(getconfig("playlistfile", NULL));
