@@ -3,11 +3,11 @@ ALL_CFLAGS= -DSH4 -Deplayer3 -DDVDPLAYER -Os -export-dynamic -Wall
 INCLUDES = \
 	-I$(targetprefix)/usr/include \
 	-I$(targetprefix)/usr/include/freetype2 \
-	-I$(driver)/driver/bpamem \
+	-I$(driverdir)/driver/bpamem \
 	-I$(appsdir)/titan/libdreamdvd \
 	-I$(appsdir)/misc/tools/libeplayer3/include \
 	-I$(appsdir)/misc/tools/libmmeimage \
-	-I$(appsdir)/titan/titan/libdreamdvd \
+	-I$(appsdir)/titan/libdreamdvd \
 	-I$(appsdir)/misc/tools/libmmeimage \
 	-I$(appsdir)/titan/titan
 
