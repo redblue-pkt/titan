@@ -229,6 +229,7 @@ void sendcapmt(struct service* node, int clear, int flag);
 
 //gmultiepg.h
 int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag);
+int selectchannelgmepg(struct skin* listbox);
 
 //multiepg.h
 int screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag);

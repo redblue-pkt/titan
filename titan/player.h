@@ -102,7 +102,7 @@ int playerstartts(char* file, int flag)
 					{
 						fscanf(fbseek, "%s", skip1);
 						off64_t seekpos = atoll(skip1);
-						seekpos - (seekpos % tssize);
+						seekpos = seekpos - (seekpos % tssize);
 						lseek64(fd, atoll(skip1), SEEK_SET);
 					}
 					free(skip1); skip1 = NULL;
