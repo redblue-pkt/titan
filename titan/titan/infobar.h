@@ -233,7 +233,7 @@ void screeninfobar()
 				continue;	
 			}
 		}
-		if(rcret == getrcconfigint("rcstop", NULL))
+		if(rcret == getrcconfigint("rcstop", NULL) && status.recording > 0)
 		{
 			subtitlepause(1);
 			status.infobar = 0;
