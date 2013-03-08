@@ -1,4 +1,5 @@
 AUTOMAKE_OPTIONS = gnu
 
 SUBDIRS = \
-	news
+	news \
+	wins3

@@ -32,4 +32,5 @@ AC_SUBST(MULTICOM324)
 AC_OUTPUT([
 Makefile
 news/Makefile
+wins3/Makefile
 ])
