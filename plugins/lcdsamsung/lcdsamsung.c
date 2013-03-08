@@ -96,6 +96,8 @@ void LCD_Samsung1_thread()
 	
 	struct skin* n_stunde = NULL;
 	struct skin* n_minute = NULL;
+	struct skin* n_stunde_standby = NULL;
+	struct skin* n_minute_standby = NULL;
 	
 	struct skin* sday0_t = NULL;
 	struct skin* sday0_i = NULL;
@@ -277,10 +279,10 @@ void LCD_Samsung1_thread()
 		sday3_i = getscreennode(LCD_Standby, "day3_i");
 		sday3_d = getscreennode(LCD_Standby, "day3_d");
 		
-		struct skin* n_stunde_standby =  getscreennode(LCD_Standby, "stunde");
+		n_stunde_standby =  getscreennode(LCD_Standby, "stunde");
 		if(n_stunde_standby != NULL)
 			pichr_standby = ostrcat(n_stunde_standby->pic, "", 0, 0);
-		struct skin* n_minute_standby =  getscreennode(LCD_Standby, "minute");
+		n_minute_standby =  getscreennode(LCD_Standby, "minute");
 		if(n_minute_standby != NULL)
 			picmin_standby = ostrcat(n_minute_standby->pic, "", 0, 0);
 
@@ -552,20 +554,22 @@ void LCD_Samsung1_thread()
 							if(n_stunde != NULL)
 							{
 								free(tmpstr);tmpstr=NULL;
-								if(hr > 12)
+								if(hr >= 12)
 									hr = hr - 12;
 								if(hr < 10)
 									tmpstr = ostrcat("hr_0",oitoa(hr), 0, 1);
 								else
 									tmpstr = ostrcat("hr_",oitoa(hr), 0, 1);
-								if(min < 15)
+								if(min < 12)
 									tmpstr = ostrcat(tmpstr,"00", 0, 0);
-								else if(min < 30)
-									tmpstr = ostrcat(tmpstr,"15", 0, 0);
-								else if(min < 45)
-									tmpstr = ostrcat(tmpstr,"30", 0, 0);
-								else if(min < 59)
-								 tmpstr = ostrcat(tmpstr,"45", 0, 0);
+								else if(min < 24)
+									tmpstr = ostrcat(tmpstr,"12", 0, 0);
+								else if(min < 36)
+									tmpstr = ostrcat(tmpstr,"24", 0, 0);
+								else if(min < 48)
+								 tmpstr = ostrcat(tmpstr,"36", 0, 0);
+								else if(min < 60)
+								 tmpstr = ostrcat(tmpstr,"48", 0, 0);								
 								free(n_stunde->pic);
 								n_stunde->pic = string_replace("hr_hhmm", tmpstr, pichr, 0);
 								free(tmpstr);tmpstr=NULL;
@@ -579,6 +583,37 @@ void LCD_Samsung1_thread()
 						{
 							if(akttime_Standby != NULL)
 								changetext(akttime_Standby, tmpstr); 
+							if(n_minute_standby != NULL)
+							{
+								free(tmpstr);tmpstr=NULL;
+								tmpstr = ostrcat("min_",gettime(NULL, "%M"), 0, 0);
+								free(n_minute_standby->pic);
+								n_minute_standby->pic = string_replace("min_mm", tmpstr, picmin_standby, 0);
+								free(tmpstr);tmpstr=NULL;
+							}
+							if(n_stunde_standby != NULL)
+							{
+								free(tmpstr);tmpstr=NULL;
+								if(hr >= 12)
+									hr = hr - 12;
+								if(hr < 10)
+									tmpstr = ostrcat("hr_0",oitoa(hr), 0, 1);
+								else
+									tmpstr = ostrcat("hr_",oitoa(hr), 0, 1);
+								if(min < 12)
+									tmpstr = ostrcat(tmpstr,"00", 0, 0);
+								else if(min < 24)
+									tmpstr = ostrcat(tmpstr,"12", 0, 0);
+								else if(min < 36)
+									tmpstr = ostrcat(tmpstr,"24", 0, 0);
+								else if(min < 48)
+								 tmpstr = ostrcat(tmpstr,"36", 0, 0);
+								else if(min < 60)
+								 tmpstr = ostrcat(tmpstr,"48", 0, 0);								
+								free(n_stunde_standby->pic);
+								n_stunde_standby->pic = string_replace("hr_hhmm", tmpstr, pichr_standby, 0);
+								free(tmpstr);tmpstr=NULL;
+							}	
 							drawscreen(LCD_Standby, 0, 0); 
 							put = 0;
 						} 
