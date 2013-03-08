@@ -1327,6 +1327,8 @@ struct status
 	int streaming;
 	// timeshift running = 1
 	int timeshift;
+	// 0 = normal, 1 = permanent timeshift
+	int timeshifttype;
 	// ts playing running = 1
 	int playing;
 	// timeshift seeking <> 0

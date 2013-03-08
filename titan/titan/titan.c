@@ -230,6 +230,7 @@ struct style* style = NULL;
 #include "mediadbedit.h"
 #include "tpchoice.h"
 #include "marker.h"
+#include "timeshiftsettings.h"
 
 //#include "cardreader.h"
 //#include "sci.h"
