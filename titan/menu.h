@@ -447,6 +447,11 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screenadjust();
 	}
+	else if(ostrcmp("timeshiftsettings", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screentimeshiftsettings();
+	}
 	else if(ostrcmp("skinadjust", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
