@@ -951,7 +951,8 @@ void playrcplay(char* file, char* showname, int* playinfobarstatus, int* playinf
 
 	if(playertype == 1)
 	{
-		playerpausets();
+		if(status.playspeed != 0 || status.slowspeed != 0)
+			playerpausets();
 		if(status.slowspeed != 0)
 			audioclearbuffer(status.aktservice->audiodev);
 		playercontinuets();
