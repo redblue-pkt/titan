@@ -502,7 +502,6 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 					playercontinuets();
 					playerresetts();
 
-					status.timeshiftseek = 0;
 					status.playspeed = 0;
 					status.pause = 0;
 					status.play = 1;
@@ -520,19 +519,20 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			if(frcount != 0 && status.playspeed == 0)
 				frcount = 0;
 			
+			pthread_mutex_lock(&status.tsseekmutex);
 			readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
 			if(readret <= 0 && status.timeshift == 1)
 			{
 				playerpausets();
 				playercontinuets();
 				//playerresetts();
-				status.timeshiftseek = 0;
 				status.playspeed = 0;
 				status.pause = 0;
 				status.play = 1;
-				playerseekts(servicenode, -2, 1);
+				playerseekts(servicenode, -3, 1);
 				readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
-			}				
+			}
+			pthread_mutex_unlock(&status.tsseekmutex);				
 		
 			if(status.playspeed < 0 || status.playspeed > 0)
 			{

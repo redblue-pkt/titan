@@ -981,43 +981,35 @@ void playrcjumpr(char* file, char* showname, int sec, int* playinfobarstatus, in
 	if(status.pause == 0 && status.playspeed == 0 && status.slowspeed == 0)
 	{
 		//a jump over the beginning of the
-		//file, freez the player
+		//file, freez the player (type 0)
 		if(playertype == 1)
-		{
-			unsigned long long startpos = 0;
-			playergetinfots(NULL, &startpos, NULL, &pos, NULL, 0);
-			pos = (pos - startpos) / 90000;
-		}
+			playerseekts(getservice(RECORDPLAY, 0), sec * -1, 0);
 		else if(playertype == 2)
 			pos = dvdgetpts() / 90000;
 		else
 			pos = playergetpts() / 90000;
 	
-		if(pos + 10 > sec)
+		if(playertype != 1)
 		{
-			if(playertype == 1)
-				playerseekts(getservice(RECORDPLAY, 0), sec * -1, 0);
-			else if(playertype == 2)
-				dvdseek(sec * -1);
-			else
-				playerseek(sec * -1);
-		}
-		else
-		{
-			if(playertype == 1)
+			if(pos + 10 > sec)
 			{
-				playerstopts(2, 0);
-				playerstartts(file, 2);
-			}
-			else if(playertype == 2)
-			{
-				dvdstop();
-				dvdstart(file);
+				if(playertype == 2)
+					dvdseek(sec * -1);
+				else
+					playerseek(sec * -1);
 			}
 			else
 			{
-				playerstop();
-				playerstart(file);
+				if(playertype == 2)
+				{
+					dvdstop();
+					dvdstart(file);
+				}
+				else
+				{
+					playerstop();
+					playerstart(file);
+				}
 			}
 		}
 
