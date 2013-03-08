@@ -9,7 +9,8 @@ char plugindesc[] = "Extensions";
 char pluginpic[] = "%pluginpath%/lcdsamsung/lcdsamsung.png";
 
 int pluginaktiv = 0;
-int pluginversion = PLUGINVERSION;
+//int pluginversion = PLUGINVERSION;
+int pluginversion = 999999;
 
 struct stimerthread* LCD_Samsung1thread = NULL;
 
@@ -93,6 +94,9 @@ void LCD_Samsung1_thread()
 	struct skin* akttime = NULL;
 	struct skin* akttime_Standby = NULL;
 	
+	struct skin* n_stunde = NULL;
+	struct skin* n_minute = NULL;
+	
 	struct skin* sday0_t = NULL;
 	struct skin* sday0_i = NULL;
 	struct skin* sday0_d = NULL;
@@ -108,6 +112,7 @@ void LCD_Samsung1_thread()
 	
 	
 	char* tmpstr = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *timemerk = NULL, *sendermerk = NULL, *recmerk = NULL;
+	char* pichr = NULL, *picmin = NULL, *pichr_standby = NULL, *picmin_standby = NULL;
 	FILE *fd = NULL;
 	char *fileline = NULL;
 	int weatherwrite = 999;
@@ -149,6 +154,8 @@ void LCD_Samsung1_thread()
 		day3_i = getscreennode(LCD_Samsung1, "day3_i");
 		day3_d = getscreennode(LCD_Samsung1, "day3_d");
 		akttime = getscreennode(LCD_Samsung1, "akttime");
+		n_stunde =  getscreennode(LCD_Samsung1, "stunde");
+		n_minute =  getscreennode(LCD_Samsung1, "minute");
 		if(file_exist("/tmp/lcdweather"))
 			system("rm /tmp/lcdweather");
 		weatherwrite = 0;
@@ -175,6 +182,12 @@ void LCD_Samsung1_thread()
 		else
 			LCD_Samsung1 = getscreen("LCD_spf87");	
 		akttime = getscreennode(LCD_Samsung1, "akttime");
+		n_stunde =  getscreennode(LCD_Samsung1, "stunde");
+		if(n_stunde != NULL)
+			pichr = ostrcat(n_stunde->pic, "", 0, 0);
+		n_minute =  getscreennode(LCD_Samsung1, "minute");
+		if(n_minute != NULL)
+			picmin = ostrcat(n_minute->pic, "", 0, 0);
 	}
 	
 	if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
@@ -263,6 +276,14 @@ void LCD_Samsung1_thread()
 		sday3_t = getscreennode(LCD_Standby, "day3_t");
 		sday3_i = getscreennode(LCD_Standby, "day3_i");
 		sday3_d = getscreennode(LCD_Standby, "day3_d");
+		
+		struct skin* n_stunde_standby =  getscreennode(LCD_Standby, "stunde");
+		if(n_stunde_standby != NULL)
+			pichr_standby = ostrcat(n_stunde_standby->pic, "", 0, 0);
+		struct skin* n_minute_standby =  getscreennode(LCD_Standby, "minute");
+		if(n_minute_standby != NULL)
+			picmin_standby = ostrcat(n_minute_standby->pic, "", 0, 0);
+
 	} 
 	
 	
@@ -272,6 +293,8 @@ void LCD_Samsung1_thread()
 	unsigned long long int pos = 0, len = 0, reverse = 0;
 	int playertype = 0;
 	int loopcount = 0;
+	
+	int hr = 0, min = 0;
 	
 	if(firststart == 1)
 		sleep(8);
@@ -283,6 +306,8 @@ void LCD_Samsung1_thread()
 	while (LCD_Samsung1thread->aktion != STOP) {
 
 		tmpstr = gettime(NULL, "%H:%M");
+		hr = atoi(gettime(NULL, "%H"));
+		min = atoi(gettime(NULL, "%M"));
 		
 		// TV Programm läuft
 		if(status.infobaraktiv == 1)
@@ -514,13 +539,46 @@ void LCD_Samsung1_thread()
 						}
 						if(standby == 0)
 						{
-							changetext(akttime, tmpstr);
+							if(akttime != NULL)
+								changetext(akttime, tmpstr);
+							if(n_minute != NULL)
+							{
+								free(tmpstr);tmpstr=NULL;
+								tmpstr = ostrcat("min_",gettime(NULL, "%M"), 0, 0);
+								free(n_minute->pic);
+								n_minute->pic = string_replace("min_mm", tmpstr, picmin, 0);
+								free(tmpstr);tmpstr=NULL;
+							}
+							if(n_stunde != NULL)
+							{
+								free(tmpstr);tmpstr=NULL;
+								if(hr > 12)
+									hr = hr - 12;
+								if(hr < 10)
+									tmpstr = ostrcat("hr_0",oitoa(hr), 0, 1);
+								else
+									tmpstr = ostrcat("hr_",oitoa(hr), 0, 1);
+								if(min < 15)
+									tmpstr = ostrcat(tmpstr,"00", 0, 0);
+								else if(min < 30)
+									tmpstr = ostrcat(tmpstr,"15", 0, 0);
+								else if(min < 45)
+									tmpstr = ostrcat(tmpstr,"30", 0, 0);
+								else if(min < 59)
+								 tmpstr = ostrcat(tmpstr,"45", 0, 0);
+								free(n_stunde->pic);
+								n_stunde->pic = string_replace("hr_hhmm", tmpstr, pichr, 0);
+								free(tmpstr);tmpstr=NULL;
+							}	
+								
+									
 							if(drawscreen(LCD_Samsung1, 0, 0) == -2)
 								printf("nicht genug Speicher fuer drawscreen\n");
 						}
 						else if(standby == 2)
 						{
-							changetext(akttime_Standby, tmpstr); 
+							if(akttime_Standby != NULL)
+								changetext(akttime_Standby, tmpstr); 
 							drawscreen(LCD_Standby, 0, 0); 
 							put = 0;
 						} 
@@ -604,6 +662,10 @@ void LCD_Samsung1_thread()
  	free(sendermerk);sendermerk=NULL;
  	free(recmerk);recmerk=NULL;
  	free(startlcd);startlcd=NULL;
+ 	free(pichr);pichr=NULL;
+ 	free(picmin);picmin=NULL;
+ 	free(pichr_standby);pichr=NULL;
+ 	free(picmin_standby);picmin=NULL;
  	addconfig("lcd_samsung_plugin_running", "no");
  	LCD_Samsung1thread = NULL;
  	if(drawscreen(LCD_Samsung1, 0, 0) == -2)
