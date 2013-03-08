@@ -1331,8 +1331,6 @@ struct status
 	int timeshifttype;
 	// ts playing running = 1
 	int playing;
-	// timeshift seeking <> 0
-	int timeshiftseek;
 	// if set to a skin (screenpointer) only this screen has rc
 	struct skin* rcowner;
 	// timerstuktur fuer autores

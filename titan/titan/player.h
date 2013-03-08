@@ -145,6 +145,10 @@ int playerstartts(char* file, int flag)
 			dvrclose(dvrnode, -1);
 			return 1;
 		}
+		
+		//on permanent timeshift seek to end, and a little back (eof problem)
+		if(status.timeshifttype == 1)
+			lseek64(fd, -1000000, SEEK_END);	
 	}
 
 	ret = recordstartreal(NULL, fd, dvrnode->fd, RECPLAY, 0, NULL, tssize);
@@ -268,8 +272,8 @@ void playerpausets()
 	audiopause(status.aktservice->audiodev);
 }
 
-//flag 0: from play
-//flag 1: from timeshift
+//flag 0: with lock
+//flag 1: without lock
 int playerseekts(struct service* servicenode, int sekunden, int flag)
 {
 	off64_t offset = 0;
@@ -294,7 +298,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 		return 1;
 	}
 	
-	m_lock(&status.tsseekmutex, 15);
+	if(flag == 0) m_lock(&status.tsseekmutex, 15);
 
 /*
 	ret = videogetpts(status.aktservice->videodev, &aktpts);
@@ -323,7 +327,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	if(gettsinfo(servicenode->recsrcfd, &lenpts, &startpts, &endpts, &bitrate, servicenode->tssize) != 0)
 	{
 		err("cant read ts info");
-		m_unlock(&status.tsseekmutex, 15);
+		if(flag == 0) m_unlock(&status.tsseekmutex, 15);
 		return 1;
 	}
 	if(servicenode->endoffile > 0)
@@ -368,7 +372,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 
 	playerresetts();
 
-	m_unlock(&status.tsseekmutex, 15);
+	if(flag == 0) m_unlock(&status.tsseekmutex, 15);
 	return 0;
 }
 

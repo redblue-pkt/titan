@@ -24,7 +24,7 @@ void screeninfobar()
 	status.infobaraktiv = 1;
 	status.mcaktiv = 0;
 	
-	int playinfobarcount = 0, playinfobarstatus = 1;
+	int playinfobarcount = 0, playinfobarstatus = 0;
 	
 	while(1)
 	{
@@ -140,97 +140,95 @@ void screeninfobar()
 		if(status.timeshift == 1)
 		{
 					
-			if(rcret == getrcconfigint("rcstop", NULL))
+			if(rcret == getrcconfigint("rcstop", NULL) && status.timeshifttype == 0)
 			{
 				timeshiftstop(0);
 				continue;
 			}
 			if(rcret == getrcconfigint("rcplay", NULL))
 			{
-				timeshiftplay(&playinfobarstatus, &playinfobarcount);
+				if(status.timeshifttype == 0 || (status.timeshifttype == 1 && status.playing == 1))
+					timeshiftplay(&playinfobarstatus, &playinfobarcount);
 				continue;
 			}
-			if(rcret == getrcconfigint("rcff", NULL))
+			if(status.timeshifttype == 1 && status.playing == 0)
 			{
-				if(status.playing == 1) { 
-					if(status.timeshiftseek > 10000)
-					{
-						if(status.timeshiftseek == 20002)
-							timeshiftplay(&playinfobarstatus, &playinfobarcount);
-						else if(status.timeshiftseek > 20002)
-							timeshiftseek((status.timeshiftseek - 20000) / 2 + 20000, &playinfobarstatus, &playinfobarcount, 1);
-						else
-							timeshiftseek((status.timeshiftseek - 10000) * 2 + 10000, &playinfobarstatus, &playinfobarcount, 0);
-					}
-					else
-						timeshiftseek(10002, &playinfobarstatus, &playinfobarcount, 0);
+				if(rcret == getrcconfigint("rcfr", NULL))
+				{
+					timeshiftplay(&playinfobarstatus, &playinfobarcount);
+					if(status.playing == 1)
+						playrcfr(status.playfile, NULL, &playinfobarstatus, &playinfobarcount, 1, 4);
+					continue;
 				}
-				continue;
-			}
-			if(rcret == getrcconfigint("rcfr", NULL))
-			{
-				if(status.playing == 1) { 
-					if(status.timeshiftseek > 10000)
-					{
-						if(status.timeshiftseek == 10002)
-							timeshiftplay(&playinfobarstatus, &playinfobarcount);
-						else if(status.timeshiftseek < 20002)
-							timeshiftseek((status.timeshiftseek - 10000) / 2 + 10000, &playinfobarstatus, &playinfobarcount, 1);
-						else
-							timeshiftseek((status.timeshiftseek - 20000) * 2 + 20000, &playinfobarstatus, &playinfobarcount, 0);
-					}
-					else
-						timeshiftseek(20002, &playinfobarstatus, &playinfobarcount, 0);
+				if(rcret == getrcconfigint("rc1", NULL))
+				{
+					timeshiftplay(&playinfobarstatus, &playinfobarcount);
+					if(status.playing == 1)
+						playrcjumpr(status.playfile, NULL, getconfigint("skip13", NULL), &playinfobarstatus, &playinfobarcount, 1, 4);
+					continue;
 				}
-				continue;
+				if(rcret == getrcconfigint("rc4", NULL))
+				{
+					timeshiftplay(&playinfobarstatus, &playinfobarcount);
+					if(status.playing == 1)
+						playrcjumpr(status.playfile, NULL, getconfigint("skip46", NULL), &playinfobarstatus, &playinfobarcount, 1, 4);
+					continue;
+				}
+				if(rcret == getrcconfigint("rc7", NULL))
+				{
+					timeshiftplay(&playinfobarstatus, &playinfobarcount);
+					if(status.playing == 1)
+						playrcjumpr(status.playfile, NULL, getconfigint("skip79", NULL), &playinfobarstatus, &playinfobarcount, 1, 4);
+					continue;
+				}
 			}
-			if(rcret == getrcconfigint("rc3", NULL))
+			if(status.playing == 1)
 			{
-				if(status.timeshiftseek >= 10002)
-						timeshiftplay(&playinfobarstatus, &playinfobarcount);
-				timeshiftseek(60, &playinfobarstatus, &playinfobarcount, 0);
-				continue;
-			}
-			if(rcret == getrcconfigint("rc6", NULL))
-			{
-				if(status.timeshiftseek >= 10002)
-						timeshiftplay(&playinfobarstatus, &playinfobarcount);
-				timeshiftseek(300, &playinfobarstatus, &playinfobarcount, 0);
-				continue;
-			}
-			if(rcret == getrcconfigint("rc9", NULL))
-			{
-				if(status.timeshiftseek >= 10002)
-						timeshiftplay(&playinfobarstatus, &playinfobarcount);
-				timeshiftseek(600, &playinfobarstatus, &playinfobarcount, 0);
-				continue;
-			}	
-			if(rcret == getrcconfigint("rc1", NULL))
-			{
-				if(status.timeshiftseek >= 10002)
-						timeshiftplay(&playinfobarstatus, &playinfobarcount);
-				timeshiftseek(-60, &playinfobarstatus, &playinfobarcount, 0);
-				continue;
-			}
-			if(rcret == getrcconfigint("rc4", NULL))
-			{
-				if(status.timeshiftseek >= 10002)
-						timeshiftplay(&playinfobarstatus, &playinfobarcount);
-				timeshiftseek(-300, &playinfobarstatus, &playinfobarcount, 0);
-				continue;
-			}
-			if(rcret == getrcconfigint("rc7", NULL))
-			{
-				if(status.timeshiftseek >= 10002)
-						timeshiftplay(&playinfobarstatus, &playinfobarcount);
-				timeshiftseek(-600, &playinfobarstatus, &playinfobarcount, 0);
-				continue;
-			}
-			if(rcret == getrcconfigint("rcinfo", NULL))
-			{
-				if(status.playing == 1)
-					timeshiftseek(999999, &playinfobarstatus, &playinfobarcount, 0);
-				continue;	
+				if(rcret == getrcconfigint("rcff", NULL))
+				{
+					playrcff(status.playfile, NULL, &playinfobarstatus, &playinfobarcount, 1, 4);
+					continue;
+				}
+				if(rcret == getrcconfigint("rcfr", NULL))
+				{
+					playrcfr(status.playfile, NULL, &playinfobarstatus, &playinfobarcount, 1, 4);
+					continue;
+				}
+				if(rcret == getrcconfigint("rc3", NULL))
+				{
+					playrcjumpf(status.playfile, NULL, getconfigint("skip13", NULL), &playinfobarstatus, &playinfobarcount, 1, 4);
+					continue;
+				}
+				if(rcret == getrcconfigint("rc6", NULL))
+				{
+					playrcjumpf(status.playfile, NULL, getconfigint("skip46", NULL), &playinfobarstatus, &playinfobarcount, 1, 4);
+					continue;
+				}
+				if(rcret == getrcconfigint("rc9", NULL))
+				{				
+					playrcjumpf(status.playfile, NULL, getconfigint("skip79", NULL), &playinfobarstatus, &playinfobarcount, 1, 4);
+					continue;
+				}	
+				if(rcret == getrcconfigint("rc1", NULL))
+				{
+					playrcjumpr(status.playfile, NULL, getconfigint("skip13", NULL), &playinfobarstatus, &playinfobarcount, 1, 4);
+					continue;
+				}
+				if(rcret == getrcconfigint("rc4", NULL))
+				{
+					playrcjumpr(status.playfile, NULL, getconfigint("skip46", NULL), &playinfobarstatus, &playinfobarcount, 1, 4);
+					continue;
+				}
+				if(rcret == getrcconfigint("rc7", NULL))
+				{
+					playrcjumpr(status.playfile, NULL, getconfigint("skip79", NULL), &playinfobarstatus, &playinfobarcount, 1, 4);
+					continue;
+				}
+				if(rcret == getrcconfigint("rcinfo", NULL))
+				{
+					playrcinfo(status.playfile, NULL, &playinfobarstatus, &playinfobarcount, 1, 4);
+					continue;	
+				}
 			}
 		}
 		if(rcret == getrcconfigint("rcstop", NULL) && status.recording > 0)
@@ -274,8 +272,8 @@ void screeninfobar()
 		}
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
-			if(status.timeshiftseek == 999999)
-					status.timeshiftseek = 0;
+			if(status.timeshift == 1 && status.playing == 1)
+				screenplayinfobar(NULL, NULL, 1, 1, 4);
 			subtitlepause(1);
 			status.infobar = 0;
 			clearscreen(infobar);

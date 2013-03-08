@@ -9,26 +9,32 @@ void timeshiftpause()
 	{
 		//reset timeline
 		struct skin* playinfobar = getscreen("playinfobar");
-    struct skin* sprogress = getscreennode(playinfobar, "progress");
+		struct skin* sprogress = getscreennode(playinfobar, "progress");
 		sprogress->progresssize = 0;
 
-		ret = servicestop(status.aktservice, 0, 2);
+		if(status.timeshifttype == 0)
+			ret = servicestop(status.aktservice, 0, 2);
 		if(ret == 0)
 		{
 			ret = recordstart(status.aktservice->channel, -1, 0, RECTIMESHIFT, 0, NULL);
 			if(ret != 0)
 			{
 				status.timeshift = 0;
-				servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 3), 0);
+				if(status.timeshifttype == 0)
+					servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 3), 0);
 			}
 			else
 				status.timeshiftstart = time(NULL);
 			recordcheckret(NULL, ret, 6);
 		}
 	}
-	else {
-		if(status.timeshiftseek == 0)
-			playerpausets();
+	else if(status.playspeed == 0 && status.slowspeed == 0)
+	{
+		status.slowspeed = 0;
+		status.playspeed = 0;
+		status.play = 0;
+		status.pause = 1;
+		playerpausets();
 	}
 }
 
@@ -40,8 +46,8 @@ void timeshiftstop(int flag)
 	char* file = NULL;
 	struct service* snode = getservice(RECORDTIMESHIFT, flag);
 
-	if(status.timeshiftseek != 0) { 
-		status.timeshiftseek = 0;
+	if(status.playspeed != 0 || status.slowspeed != 0)
+	{ 
 		playerpausets();
 		playercontinuets();
 	}
@@ -50,7 +56,6 @@ void timeshiftstop(int flag)
 
 	writevfd("Player");
 	screenplayinfobar(NULL, NULL, 1, 1, 4);
-	
 	
 	if(snode != NULL)
 	{
@@ -83,6 +88,7 @@ void timeshiftstop(int flag)
 	playercontinuets();
 	status.timeshiftstart = 0;
 	status.playspeed = 0;
+	status.slowspeed = 0;
 	status.pause = 0;
 	status.play = 0;
 }
@@ -109,15 +115,17 @@ void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)
 		}
 	}
 	else
-	{	
-		if(status.timeshiftseek != 0) {
-			status.timeshiftseek = 0;
+	{
+		if(status.playspeed != 0 || status.slowspeed != 0)
 			playerpausets();
-		}
+		if(status.slowspeed != 0)
+			audioclearbuffer(status.aktservice->audiodev);
 		playercontinuets();
-		if(status.playspeed != 0)
+		if(status.playspeed != 0 || status.slowspeed != 0)
 			playerresetts();
 	}
+	
+	status.slowspeed = 0;
 	status.playspeed = 0;
 	status.pause = 0;
 	status.play = 1;
@@ -127,6 +135,7 @@ void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)
 	screenplayinfobar(snode->recname, NULL, 0, 1, 4);
 }
 
+/*
 void timeshiftscreen(struct stimerthread* self, struct service* servicenode)
 {
 	
@@ -279,7 +288,7 @@ void timeshiftseek(int sekunden, int* playinfobarstatus, int* playinfobarcount, 
 						status.playspeed++;
 					sekunden = sekunden - 20000;
 					playerfrts(sekunden * -1, 1);
-					//playerseekts(snode, -10, 1);
+					//playerseekts(snode, -10, 0);
 				}
 				*playinfobarstatus = 2;
 				*playinfobarcount = 0;
@@ -287,7 +296,7 @@ void timeshiftseek(int sekunden, int* playinfobarstatus, int* playinfobarcount, 
 			}	
 			else
 			{
-				playerseekts(snode, sekunden, 1);
+				playerseekts(snode, sekunden, 0);
 				*playinfobarstatus = 1;
 				*playinfobarcount = 0;
 				screenplayinfobar(status.playfile, NULL, 0, 1, 4);
@@ -309,22 +318,36 @@ void timeshiftseek(int sekunden, int* playinfobarstatus, int* playinfobarcount, 
 		}
 	}
 }
+*/
 
 void timeshiftinfobar(int* playinfobarstatus, int* playinfobarcount)
 {
-	(*playinfobarcount)++;
-	if(*playinfobarstatus == 2)
+	if(status.playing == 1 && status.pause == 1)
 	{
-		screenplayinfobar(status.playfile, NULL, 0, 1, 4);
-		if(status.timeshiftseek == 0) // used for begin of file with fr
+		*playinfobarstatus = 0;
+		screenplayinfobar(NULL, NULL, 1, 1, 4);
+	}
+	if(status.playing == 1)
+	{
+		(*playinfobarcount)++;
+		if(*playinfobarstatus == 2)
 		{
-			*playinfobarstatus = 1;
-			*playinfobarcount = 0;
+			screenplayinfobar(status.playfile, NULL, 0, 1, 4);
+			if(status.playspeed == 0 && status.slowspeed == 0) //used for begin of file with fr
+			{
+				*playinfobarstatus = 1;
+				*playinfobarcount = 0;
+			}
+		}
+		if(*playinfobarstatus == 1)
+			screenplayinfobar(status.playfile, NULL, 0, 1, 4);
+		if(*playinfobarstatus == 1 && *playinfobarcount >= getconfigint("infobartimeout", NULL) && status.playspeed == 0 && status.slowspeed == 0)
+		{
+			*playinfobarstatus = 0;
+			screenplayinfobar(NULL, NULL, 1, 1, 4);
 		}
 	}
-	if(*playinfobarstatus == 1)
-		screenplayinfobar(status.playfile, NULL, 0, 1, 4);
-	if(*playinfobarstatus == 1 && *playinfobarcount >= getconfigint("infobartimeout", NULL))
+	else if(*playinfobarstatus > 0) 
 	{
 		*playinfobarstatus = 0;
 		screenplayinfobar(NULL, NULL, 1, 1, 4);

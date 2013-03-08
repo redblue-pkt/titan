@@ -547,8 +547,9 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
  			status.restimer = addtimer(&setaktres, START, 10000, 1, (void*)sec, NULL, NULL);
 		}			
 	}
-
-	if(status.autosubtitle == 1) subtitlestartlast();
+	
+	if(status.timeshifttype == 1) timeshiftpause(); //start permanent timeshift record
+	if(status.autosubtitle == 1) subtitlestartlast(); //start subtitle
 	
 	debug(1000, "out");
 	return 0;
