@@ -2875,4 +2875,30 @@ char* webgetconfig(int fmt)
 	return buf;
 }
 
+char* webgetsysteminfo(int fmt)
+{
+	char* buf = NULL;
+	char* imgversion = NULL;
+
+	buf = ostrcat(buf, PROGNAME, 1, 0);
+	buf = ostrcat(buf, "#", 1, 0);
+	buf = ostrcat(buf, COPYRIGHT, 1, 0);
+	buf = ostrcat(buf, "#", 1, 0);
+	buf = ostrcat(buf, OVERSION, 1, 0);
+	buf = ostrcat(buf, "#", 1, 0);
+	
+	if(isfile(getconfig("imagenamefile", NULL))	!= 0)
+		imgversion = readsys(getconfig("imagenamefile", NULL), 1);
+	else
+		imgversion = ostrcat("unknown", NULL, 0, 0);
+	
+	buf = ostrcat(buf, imgversion, 1, 1);
+	buf = ostrcat(buf, "#", 1, 0);
+	buf = ostrcat(buf, getboxtype(), 1, 0);
+	buf = ostrcat(buf, "#", 1, 0);
+	buf = ostrcat(buf, ollutoa(time(NULL)), 1, 1);
+	
+	return buf;
+}
+
 #endif

@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//timeshiftsettings.h
+void screentimeshiftsettings();
+
 //tpchoice.h
 struct transponder* tpchoicescreen(int orbitalpos, int flag);
 
@@ -240,6 +243,7 @@ void autoresthreadfunc(struct stimerthread* self, char* text, int timeout);
 void screenautores(char* text, int timeout, int flag);
 
 // timeshift.h
+void timeshiftpause();
 void timeshiftstop(int flag);
 
 // keyaktions.h
