@@ -224,7 +224,7 @@ void screeninfobar()
 					playrcjumpr(status.playfile, NULL, getconfigint("skip79", NULL), &playinfobarstatus, &playinfobarcount, 1, 4);
 					continue;
 				}
-				if(rcret == getrcconfigint("rcinfo", NULL))
+				if(status.timeshifttype == 0 && rcret == getrcconfigint("rcinfo", NULL))
 				{
 					playrcinfo(status.playfile, NULL, &playinfobarstatus, &playinfobarcount, 1, 4);
 					continue;	
