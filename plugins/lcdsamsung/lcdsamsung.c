@@ -156,8 +156,13 @@ void LCD_Samsung1_thread()
 		day3_i = getscreennode(LCD_Samsung1, "day3_i");
 		day3_d = getscreennode(LCD_Samsung1, "day3_d");
 		akttime = getscreennode(LCD_Samsung1, "akttime");
+		akttime = getscreennode(LCD_Samsung1, "akttime");
 		n_stunde =  getscreennode(LCD_Samsung1, "stunde");
+		if(n_stunde != NULL)
+			pichr = ostrcat(n_stunde->pic, "", 0, 0);
 		n_minute =  getscreennode(LCD_Samsung1, "minute");
+		if(n_minute != NULL)
+			picmin = ostrcat(n_minute->pic, "", 0, 0);
 		if(file_exist("/tmp/lcdweather"))
 			system("rm /tmp/lcdweather");
 		weatherwrite = 0;
