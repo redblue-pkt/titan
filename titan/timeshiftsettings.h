@@ -3,7 +3,7 @@
 
 void screentimeshiftsettings()
 {
-	int rcret = 0, ret = 0;
+	int rcret = 0, ret = 0, change = 0;
 	
 	struct skin* timeshiftsettings = getscreen("timeshiftsettings");
 	struct skin* listbox = getscreennode(timeshiftsettings, "listbox");
@@ -43,25 +43,30 @@ void screentimeshiftsettings()
 			
 			//check if timeshifttype change
 			if(ostrcmp(timeshifttype->ret, getconfig("timeshifttype", NULL)) != 0)
-			{
-				//zap on change so timeshift is ended or started
-				ret = servicestop(status.aktservice, 1, 1);
-				if(ret == 0)
-				{
-					status.aktservice->transponder = NULL;
-					servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 5), 0);
-				}
-			}
+				change = 1;
+			if(ostrcmp(timeshifttype->ret, "0") == 0 && getconfig("timeshifttype", NULL) == NULL)
+				change = 0;
 			
 			addconfigscreencheck("timeshifttype", timeshifttype, "0");
 			status.timeshifttype = getconfigint("timeshifttype", NULL);
-			
 			break;
 		}
 	}
 
-	delownerrc(timeshifttype);
-	clearscreen(timeshifttype);
+	delownerrc(timeshiftsettings);
+	clearscreen(timeshiftsettings);
+	drawscreen(skin, 0, 0);
+
+	//zap on change so timeshift is ended or started
+	if(change == 1)
+	{
+		ret = servicestop(status.aktservice, 1, 1);
+		if(ret == 0)
+		{
+			status.aktservice->transponder = NULL;
+			servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 5), 0);
+		}
+	}
 }
 
 #endif
