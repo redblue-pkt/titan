@@ -99,6 +99,11 @@ void LCD_Samsung1_thread()
 	struct skin* n_stunde_standby = NULL;
 	struct skin* n_minute_standby = NULL;
 	
+	struct skin* n_stunde2 = NULL;
+	struct skin* n_minute2 = NULL;
+	struct skin* n_stunde2_standby = NULL;
+	struct skin* n_minute2_standby = NULL;
+	
 	struct skin* sday0_t = NULL;
 	struct skin* sday0_i = NULL;
 	struct skin* sday0_d = NULL;
@@ -115,6 +120,8 @@ void LCD_Samsung1_thread()
 	
 	char* tmpstr = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *timemerk = NULL, *sendermerk = NULL, *recmerk = NULL;
 	char* pichr = NULL, *picmin = NULL, *pichr_standby = NULL, *picmin_standby = NULL;
+	char* pichr2 = NULL, *picmin2 = NULL, *pichr2_standby = NULL, *picmin2_standby = NULL;
+	int digitaluhr = 0, digitaluhr_standby = 0;
 	FILE *fd = NULL;
 	char *fileline = NULL;
 	int weatherwrite = 999;
@@ -159,10 +166,21 @@ void LCD_Samsung1_thread()
 		akttime = getscreennode(LCD_Samsung1, "akttime");
 		n_stunde =  getscreennode(LCD_Samsung1, "stunde");
 		if(n_stunde != NULL)
+		{
 			pichr = ostrcat(n_stunde->pic, "", 0, 0);
+			if(ostrstr(pichr, "Digital") != NULL)
+				digitaluhr = 1;
+		}
 		n_minute =  getscreennode(LCD_Samsung1, "minute");
 		if(n_minute != NULL)
 			picmin = ostrcat(n_minute->pic, "", 0, 0);
+		if(digitaluhr == 1)
+		{
+			n_stunde2 =  getscreennode(LCD_Samsung1, "stunde2");
+			n_minute2 =  getscreennode(LCD_Samsung1, "minute2");
+			picmin2 = ostrcat(n_minute2->pic, "", 0, 0);
+			pichr2 = ostrcat(n_stunde2->pic, "", 0, 0);
+		}
 		if(file_exist("/tmp/lcdweather"))
 			system("rm /tmp/lcdweather");
 		weatherwrite = 0;
@@ -191,10 +209,21 @@ void LCD_Samsung1_thread()
 		akttime = getscreennode(LCD_Samsung1, "akttime");
 		n_stunde =  getscreennode(LCD_Samsung1, "stunde");
 		if(n_stunde != NULL)
+		{
 			pichr = ostrcat(n_stunde->pic, "", 0, 0);
+			if(ostrstr(pichr, "Digital") != NULL)
+				digitaluhr = 1;
+		}
 		n_minute =  getscreennode(LCD_Samsung1, "minute");
 		if(n_minute != NULL)
 			picmin = ostrcat(n_minute->pic, "", 0, 0);
+		if(digitaluhr == 1)
+		{
+			n_stunde2 =  getscreennode(LCD_Samsung1, "stunde2");
+			n_minute2 =  getscreennode(LCD_Samsung1, "minute2");
+			picmin2 = ostrcat(n_minute2->pic, "", 0, 0);
+			pichr2 = ostrcat(n_stunde2->pic, "", 0, 0);
+		}
 	}
 	
 	if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
@@ -286,11 +315,21 @@ void LCD_Samsung1_thread()
 		
 		n_stunde_standby =  getscreennode(LCD_Standby, "stunde");
 		if(n_stunde_standby != NULL)
+		{
 			pichr_standby = ostrcat(n_stunde_standby->pic, "", 0, 0);
+			if(ostrstr(pichr_standby, "Digital") != NULL)
+				digitaluhr_standby = 1;
+		}
 		n_minute_standby =  getscreennode(LCD_Standby, "minute");
 		if(n_minute_standby != NULL)
 			picmin_standby = ostrcat(n_minute_standby->pic, "", 0, 0);
-
+		if(digitaluhr_standby == 1)
+		{
+			n_stunde2_standby =  getscreennode(LCD_Standby, "stunde2");
+			n_minute2_standby =  getscreennode(LCD_Standby, "minute2");
+			picmin2_standby = ostrcat(n_minute2_standby->pic, "", 0, 0);
+			pichr2_standby = ostrcat(n_stunde2_standby->pic, "", 0, 0);
+		}
 	} 
 	
 	
@@ -548,7 +587,7 @@ void LCD_Samsung1_thread()
 						{
 							if(akttime != NULL)
 								changetext(akttime, tmpstr);
-							if(n_minute != NULL)
+							if(n_minute != NULL && digitaluhr == 0)
 							{
 								free(tmpstr);tmpstr=NULL;
 								tmpstr = ostrcat("min_",gettime(NULL, "%M"), 0, 0);
@@ -556,7 +595,7 @@ void LCD_Samsung1_thread()
 								n_minute->pic = string_replace("min_mm", tmpstr, picmin, 0);
 								free(tmpstr);tmpstr=NULL;
 							}
-							if(n_stunde != NULL)
+							if(n_stunde != NULL && digitaluhr == 0)
 							{
 								free(tmpstr);tmpstr=NULL;
 								if(hr >= 12)
@@ -578,6 +617,22 @@ void LCD_Samsung1_thread()
 								free(n_stunde->pic);
 								n_stunde->pic = string_replace("hr_hhmm", tmpstr, pichr, 0);
 								free(tmpstr);tmpstr=NULL;
+							}
+							if(digitaluhr == 1)
+							{
+								free(tmpstr);tmpstr=NULL;
+								tmpstr = ostrcat("wert_",oitoa(hr/10), 0, 1);
+								n_stunde->pic = string_replace("wert_w", tmpstr, pichr, 0);	
+								free(tmpstr);tmpstr=NULL;
+								tmpstr = ostrcat("wert_",oitoa(hr%10), 0, 1);
+								n_stunde2->pic = string_replace("wert_w", tmpstr, pichr2, 0);	
+								free(tmpstr);tmpstr=NULL;
+								tmpstr = ostrcat("wert_",oitoa(min/10), 0, 1);
+								n_minute->pic = string_replace("wert_w", tmpstr, picmin, 0);	
+								free(tmpstr);tmpstr=NULL;
+								tmpstr = ostrcat("wert_",oitoa(min%10), 0, 1);
+								n_minute2->pic = string_replace("wert_w", tmpstr, picmin2, 0);
+								free(tmpstr);tmpstr=NULL;
 							}	
 								
 									
@@ -588,7 +643,7 @@ void LCD_Samsung1_thread()
 						{
 							if(akttime_Standby != NULL)
 								changetext(akttime_Standby, tmpstr); 
-							if(n_minute_standby != NULL)
+							if(n_minute_standby != NULL && digitaluhr_standby == 0)
 							{
 								free(tmpstr);tmpstr=NULL;
 								tmpstr = ostrcat("min_",gettime(NULL, "%M"), 0, 0);
@@ -596,7 +651,7 @@ void LCD_Samsung1_thread()
 								n_minute_standby->pic = string_replace("min_mm", tmpstr, picmin_standby, 0);
 								free(tmpstr);tmpstr=NULL;
 							}
-							if(n_stunde_standby != NULL)
+							if(n_stunde_standby != NULL && digitaluhr_standby == 0)
 							{
 								free(tmpstr);tmpstr=NULL;
 								if(hr >= 12)
@@ -619,6 +674,23 @@ void LCD_Samsung1_thread()
 								n_stunde_standby->pic = string_replace("hr_hhmm", tmpstr, pichr_standby, 0);
 								free(tmpstr);tmpstr=NULL;
 							}	
+							if(digitaluhr_standby == 1)
+							{
+								free(tmpstr);tmpstr=NULL;
+								tmpstr = ostrcat("wert_",oitoa(hr/10), 0, 1);
+								n_stunde_standby->pic = string_replace("wert_w", tmpstr, pichr_standby, 0);	
+								free(tmpstr);tmpstr=NULL;
+								tmpstr = ostrcat("wert_",oitoa(hr%10), 0, 1);
+								n_stunde2_standby->pic = string_replace("wert_w", tmpstr, pichr2_standby, 0);	
+								free(tmpstr);tmpstr=NULL;
+								tmpstr = ostrcat("wert_",oitoa(min/10), 0, 1);
+								n_minute_standby->pic = string_replace("wert_w", tmpstr, picmin_standby, 0);	
+								free(tmpstr);tmpstr=NULL;
+								tmpstr = ostrcat("wert_",oitoa(min%10), 0, 1);
+								n_minute2_standby->pic = string_replace("wert_w", tmpstr, picmin2_standby, 0);
+								free(tmpstr);tmpstr=NULL;
+							}	
+							
 							drawscreen(LCD_Standby, 0, 0); 
 							put = 0;
 						} 
@@ -706,6 +778,10 @@ void LCD_Samsung1_thread()
  	free(picmin);picmin=NULL;
  	free(pichr_standby);pichr=NULL;
  	free(picmin_standby);picmin=NULL;
+ 	free(pichr2);pichr2=NULL;
+ 	free(picmin2);picmin2=NULL;
+ 	free(pichr2_standby);pichr2_standby=NULL;
+ 	free(picmin2_standby);picmin2_standby=NULL;
  	addconfig("lcd_samsung_plugin_running", "no");
  	LCD_Samsung1thread = NULL;
  	if(drawscreen(LCD_Samsung1, 0, 0) == -2)
