@@ -1325,7 +1325,7 @@ struct status
 	int recording;
 	// count for streaming
 	int streaming;
-	// timeshift running = 1
+	// timeshift running = 1, ending = 2
 	int timeshift;
 	// 0 = normal, 1 = permanent timeshift
 	int timeshifttype;

@@ -241,9 +241,9 @@ void recordstop(struct service* node, int ret)
 			status.streaming--;
 		else if(type == RECORDTIMESHIFT)
 		{
-			status.timeshift = 0;
 			if(ret != 0) // on error stop timeshift
-				timeshiftstop(0);
+				timeshiftstop(2);
+			status.timeshift = 0;
 		}
 		else if(type == RECORDPLAY)
 			status.playing = 0;
@@ -521,7 +521,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			
 			pthread_mutex_lock(&status.tsseekmutex);
 			readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
-			if(readret <= 0 && status.timeshift == 1)
+			if(readret <= 0 && status.timeshift > 0)
 			{
 				playerpausets();
 				playercontinuets();

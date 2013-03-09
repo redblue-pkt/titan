@@ -71,7 +71,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	//struct dvbdev *dmxpcrnode = NULL;
 	struct dvbdev *audionode = NULL;
 	struct dvbdev *videonode = NULL;
-	int ret = 0, festatus = 1, tmpmute = 0;
+	int ret = 0, festatus = 1, tmpmute = 0, i = 0;
 	unsigned char *patbuf = NULL;
 	int checkpmt = 0, pincheck = 0, stopflag = 0, ageprotect = 0, tune = 0;
 	struct epg* epgnode = NULL;
@@ -449,11 +449,11 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	{
 		unsigned char* aitbuf = NULL;
 		aitbuf = dvbgetait(fenode, chnode->aitpid, 0, -1);
-    if(aitbuf != NULL)
-    {
-      free(chnode->hbbtvurl); chnode->hbbtvurl = NULL;
-      chnode->hbbtvurl = dvbgethbbtvurl(aitbuf);
-    }
+		if(aitbuf != NULL)
+		{
+			free(chnode->hbbtvurl); chnode->hbbtvurl = NULL;
+			chnode->hbbtvurl = dvbgethbbtvurl(aitbuf);
+		}
 
 		debug(200, "hbbtvurl=%s", chnode->hbbtvurl);
 		free(aitbuf); aitbuf = NULL;
@@ -548,8 +548,16 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		}			
 	}
 	
-	if(status.timeshifttype == 1) timeshiftpause(); //start permanent timeshift record
 	if(status.autosubtitle == 1) subtitlestartlast(); //start subtitle
+	if(status.timeshifttype == 1)
+	{
+		while(status.timeshift > 0)
+		{
+			usleep(100000);
+			i++; if(i > 20) break;
+		}
+		timeshiftpause(); //start permanent timeshift record
+	}
 	
 	debug(1000, "out");
 	return 0;
