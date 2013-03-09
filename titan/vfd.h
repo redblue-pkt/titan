@@ -384,6 +384,8 @@ void cleanupvfd()
 	}
 }
 
+int recstar = 0;
+
 void updatevfd()
 {
 	char* tmpstr = NULL;
@@ -476,7 +478,29 @@ void updatevfd()
 		// Switch off all VFD icons:
 		setallvfdsymbols(0);
 	}
-	writevfd(tmpstr);
+	if(VFD_Recordthread != NULL && getconfigint("vfdisplayrecord", NULL) == 3 && status.recording > 0)
+		{ }	
+	else if(VFD_Recordthread != NULL && getconfigint("vfdisplayrecord", NULL) == 4 && status.recording > 0)
+	{	
+		tmpstr = ostrcat("* ", tmpstr, 0, 0);
+		writevfd(tmpstr);
+	}
+	else if(VFD_Recordthread != NULL && getconfigint("vfdisplayrecord", NULL) == 5 && status.recording > 0)
+	{	
+		if(recstar == 0)
+		{
+			tmpstr = ostrcat("* ", tmpstr, 0, 0);
+			recstar = 1;
+		}
+		else
+		{
+			tmpstr = ostrcat("  ", tmpstr, 0, 0);
+			recstar = 0;
+		}
+		writevfd(tmpstr);
+	}
+	else	
+		writevfd(tmpstr);
 	free(tmpstr);
 }
 
@@ -486,6 +510,7 @@ void vfdrecordthread()
 	int brightness = 0;
 	int aufab = 0;
 	int brightnesshelp = 0;
+	char* merkvfd = NULL;
 
 	if(VFD_Recordthread == NULL) return;
 	
@@ -495,6 +520,8 @@ void vfdrecordthread()
 		//if( brightness == 0 )
 			brightness = 7;
 		//brightnesshelp = brightness;
+		free(merkvfd);merkvfd=NULL;
+		merkvfd = ostrcat(vfdtext, "", 0, 0);
 				
 		while(VFD_Recordthread->aktion != STOP && getconfigint("vfdisplayrecord", NULL) == 1 && status.recording > 0)
 		{
@@ -522,6 +549,25 @@ void vfdrecordthread()
 			usleep(500000);
 		}
 		
+		while(VFD_Recordthread->aktion != STOP && getconfigint("vfdisplayrecord", NULL) == 3 && status.recording > 0)
+		{
+			action = 2;
+			writecentervfd("RECORD");
+			sleep(1);
+		}
+		
+		while(VFD_Recordthread->aktion != STOP && getconfigint("vfdisplayrecord", NULL) == 4 && status.recording > 0)
+		{
+			action = 0;
+			sleep(1);
+		}
+		
+		while(VFD_Recordthread->aktion != STOP && getconfigint("vfdisplayrecord", NULL) == 5 && status.recording > 0)
+		{
+			action = 0;
+			sleep(1);
+		}
+		
 		if(action == 1)
 		{
 			brightness = getconfigint("vfdbrightness", NULL);
@@ -531,9 +577,13 @@ void vfdrecordthread()
 			action = 0;
 			aufab = 0;
 		}
+		else if(action == 2)
+			writevfd(merkvfd);
+		
 		sleep(1);
 	}
 	VFD_Recordthread = NULL;
+	free(merkvfd);merkvfd=NULL;
 } 						
 
 #endif
