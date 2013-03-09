@@ -563,7 +563,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 						writeret = dvbwrite(servicenode->recdstfd, buf, readret, writetimeout);
 
 				//inject first pakets slower/smaler, so demux can start and read
-				if(servicenode->type == RECORDPLAY && count < 20)
+				if(status.timeshift == 0 && servicenode->type == RECORDPLAY && count < 20)
 				{
 					count++;
 					usleep(50000);
