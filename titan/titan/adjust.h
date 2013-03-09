@@ -224,6 +224,8 @@ void screenadjust()
 
 	addchoicebox(expertmodus, "0", _("no"));
 	addchoicebox(expertmodus, "10", _("yes"));
+	if(getconfigint("expertmodus", NULL) == 11)
+		addchoicebox(expertmodus, "11", _("expert (11)"));
 	setchoiceboxselection(expertmodus, getconfig("expertmodus", NULL));
 
 	addchoicebox(infobarprogram, "0", _("no"));
