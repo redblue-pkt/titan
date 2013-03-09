@@ -282,7 +282,7 @@ void oshutdown(int exitcode, int flag)
 	pthread_t writethread = '\0';
 
 	//stop permanent timeshift
-	if(status.timeshifttype == 1)
+	if(status.timeshift == 1)
 		timeshiftstop(3);
 
 	//check if record running
