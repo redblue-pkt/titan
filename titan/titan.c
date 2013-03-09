@@ -281,6 +281,10 @@ void oshutdown(int exitcode, int flag)
 	pthread_attr_t writethreadattr = {};
 	pthread_t writethread = '\0';
 
+	//stop permanent timeshift
+	if(status.timeshifttype == 1)
+		timeshiftstop(3);
+
 	//check if record running
 	if((flag == 1 || flag == 2 || flag == 3 || flag == 4 || flag == 5) && (status.recording > 0 || getrectimerbytimediff(300) != NULL))
 	{

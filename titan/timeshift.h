@@ -41,6 +41,7 @@ void timeshiftpause()
 //flag 0: stop from rcstop
 //flag 1: stop from servicestop
 //flag 2: error in record thread
+//flag 3: stop from titan end
 void timeshiftstop(int flag)
 {
 	int i = 0, ret = 0;
@@ -76,7 +77,7 @@ void timeshiftstop(int flag)
 		free(file); file = NULL;
 	}
 
-	if(flag == 0)
+	if(flag == 0 || flag == 3)
 	{
 		while(status.timeshift > 0)
 		{
@@ -84,8 +85,7 @@ void timeshiftstop(int flag)
 			i++; if(i > 20) break;
 		}
 	}
-
-	if(flag == 0 || flag == 3)
+	if(flag == 0 || flag == 2)
 		servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 3), 0);
 	
 	//if timeshift ends in pause status, we must reactivate continue in player driver
