@@ -28,7 +28,7 @@ void timeshiftpause()
 			recordcheckret(NULL, ret, 6);
 		}
 	}
-	else if(status.playspeed == 0 && status.slowspeed == 0)
+	else if(status.playspeed == 0 && status.slowspeed == 0 && status.timeshift == 1 && status.playing == 1)
 	{
 		status.slowspeed = 0;
 		status.playspeed = 0;
@@ -40,6 +40,7 @@ void timeshiftpause()
 
 //flag 0: stop from rcstop
 //flag 1: stop from servicestop
+//flag 2: error in record thread
 void timeshiftstop(int flag)
 {
 	int i = 0, ret = 0;
@@ -59,6 +60,7 @@ void timeshiftstop(int flag)
 	
 	if(snode != NULL)
 	{
+		status.timeshift = 2;
 		file = ostrcat(file, snode->recname, 1, 0);
 		snode->recendtime = 1;
 
@@ -76,13 +78,15 @@ void timeshiftstop(int flag)
 
 	if(flag == 0)
 	{
-		while(status.timeshift == 1)
+		while(status.timeshift > 0)
 		{
 			usleep(100000);
 			i++; if(i > 20) break;
 		}
-		servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 3), 0);
 	}
+
+	if(flag == 0 || flag == 3)
+		servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 3), 0);
 	
 	//if timeshift ends in pause status, we must reactivate continue in player driver
 	playercontinuets();

@@ -11,7 +11,7 @@ void screentimeshiftsettings()
 	struct skin* deltimeshift = getscreennode(timeshiftsettings, "deltimeshift");
 	struct skin* tmp = NULL;
 	
-	if(status.timeshifttype == 0 && status.timeshift == 1)
+	if(status.timeshifttype == 0 && status.timeshift > 0)
 	{
 		textbox(_("Message"), _("Timeshiftsettings not allowed\nif timeshift is running !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		return;
