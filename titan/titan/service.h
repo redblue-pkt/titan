@@ -514,7 +514,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	}
 
 	//wait for epg thread stops
-	if(status.epgthread != NULL)
+	if(flag == 0 && status.epgthread != NULL)
 	{
 		int i = 0;
 		while(status.epgthread->status != INPAUSE)
@@ -548,8 +548,8 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		}			
 	}
 	
-	if(status.autosubtitle == 1) subtitlestartlast(); //start subtitle
-	if(status.timeshifttype == 1)
+	if(flag == 0 && status.autosubtitle == 1) subtitlestartlast(); //start subtitle
+	if(flag == 0 && status.timeshifttype == 1)
 	{
 		while(status.timeshift > 0)
 		{
