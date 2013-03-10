@@ -2347,7 +2347,7 @@ char* webaddrectimer(char* param, int fmt)
 
 char* webrectimersend(char* param, int fmt)
 {
-	char* buf = NULL, *string = NULL, *name = NULL, *begin = NULL, *end = NULL, *type = NULL, *anode = NULL, *channelname = NULL, *sid = NULL, *tid = NULL, *ext = NULL, *afterevent = NULL;
+	char* buf = NULL, *string = NULL, *name = NULL, *begin = NULL, *end = NULL, *type = NULL, *anode = NULL, *channelname = NULL, *sid = NULL, *tid = NULL, *ext = NULL, *afterevent = NULL, *repeat = NULL;
 //	int maxlen = 0, pos = 0, newnode = 0, channelfind = 0;
 	int newnode = 0, channelfind = 0;
 	struct rectimer *node = NULL;
@@ -2386,7 +2386,9 @@ char* webrectimersend(char* param, int fmt)
 	afterevent = ostrstr(param, "afterevent="); 
 	if(afterevent != NULL)
 		afterevent = afterevent + 11;
-		
+	repeat = ostrstr(param, "repeat=");
+	if(repeat != NULL)
+		repeat = repeat + 7;
 	
 	string = param;	
 	while(string != NULL)
@@ -2508,6 +2510,9 @@ char* webrectimersend(char* param, int fmt)
 			else if(ostrcmp(afterevent, "off") == 0)
 				node->afterevent = 3;
 		}
+
+		if(repeat != NULL)
+			node->repeate = atoi(repeat);
 	
 		loctime = olocaltime(&node->begin);
 		if(loctime != NULL)
