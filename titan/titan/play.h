@@ -1015,9 +1015,9 @@ void playrcjumpr(char* file, char* showname, int sec, int* playinfobarstatus, in
 
 		*playinfobarstatus = 1;
 		*playinfobarcount = 0;
-		status.play = 0;		
+		//status.play = 0;
 		screenplayinfobar(file, showname, 0, playertype, flag);
-		status.play = 1;
+		//status.play = 1;
 		sleep(1);
 	}
 }
@@ -1036,9 +1036,9 @@ void playrcjumpf(char* file, char* showname, int sec, int* playinfobarstatus, in
 			playerseek(sec);
 		*playinfobarstatus = 1;
 		*playinfobarcount = 0;
-		status.play = 0;		
+		//status.play = 0;
 		screenplayinfobar(file, showname, 0, playertype, flag);
-		status.play = 1;
+		//status.play = 1;
 	}
 }
 
