@@ -407,24 +407,39 @@ void playerfrts(int speed, int flag)
 int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, unsigned long long* endpts, unsigned long long* aktpts, unsigned long long* bitrate, int flag)
 {
 	int ret = 0, dupfd = -1;
+	double ratio = 0;
 	struct service* snode = NULL;
 	unsigned long long lenpts1 = 0;
 	unsigned long long startpts1 = 0;
 	unsigned long long endpts1 = 0;
 	unsigned long long bitrate1 = 0;
+	unsigned long long endoffile1 = 0;
+	unsigned long long aktpos = 0;
 	
 	snode = getservice(RECORDPLAY, 0);
 		
 	if(snode == NULL) return 1;
 
-	if(snode->lenpts > 0 && snode->startpts > 0 && snode->endpts > 0 && snode->bitrate > 0)
+	if(snode->lenpts > 0 && snode->startpts > 0 && snode->endpts > 0 && snode->bitrate > 0 && snode->endoffile > 0)
 	{
 		if(lenpts != NULL) *lenpts = snode->lenpts;
 		if(startpts != NULL) *startpts = snode->startpts;
 		if(endpts != NULL) *endpts = snode->endpts;
 		if(bitrate != NULL) *bitrate = snode->bitrate;
 
-		ret = videogetpts(status.aktservice->videodev, aktpts);
+		//ret = videogetpts(status.aktservice->videodev, aktpts);
+		if(aktpts != NULL)
+		{
+			m_lock(&status.tsseekmutex, 15);
+			aktpos = lseek64(snode->recsrcfd , 0, SEEK_CUR);
+			m_unlock(&status.tsseekmutex, 15);
+
+			ratio = (double)snode->endoffile / (double)snode->endpts;
+			if(ratio == 0) ratio = 1;
+			*aktpts = ((double)aktpos / ratio);
+			*aktpts += snode->startpts;
+		}
+
 		return ret;
 	}
 	
@@ -449,10 +464,30 @@ int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, un
 	if(startpts != NULL) *startpts = startpts1;
 	if(endpts != NULL) *endpts = endpts1;
 	if(bitrate != NULL) *bitrate = bitrate1;
-	
-	close(dupfd);
 
-	ret = videogetpts(status.aktservice->videodev, aktpts);
+	//ret = videogetpts(status.aktservice->videodev, aktpts);
+	if(aktpts != NULL)
+	{
+		m_lock(&status.tsseekmutex, 15);
+		aktpos = lseek64(snode->recsrcfd, 0, SEEK_CUR);
+		m_unlock(&status.tsseekmutex, 15);
+
+		if(snode->endoffile <= 0)
+			endoffile1 = lseek64(dupfd, 0, SEEK_END);
+		else
+			endoffile1 = snode->endoffile;
+
+		if(endpts1 == 0)
+			ratio = 1;
+		else
+			ratio = (double)endoffile1 / (double)endpts1;
+
+		if(ratio == 0) ratio = 1;
+		*aktpts = ((double)aktpos / ratio);
+		*aktpts += startpts1;
+	}
+
+	close(dupfd);
 	return ret;
 }
 
