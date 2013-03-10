@@ -326,7 +326,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	bitrate = servicenode->bitrate;
 	if(gettsinfo(servicenode->recsrcfd, &lenpts, &startpts, &endpts, &bitrate, servicenode->tssize) != 0)
 	{
-		err("cant read ts info");
+		err("can't read ts info");
 		if(flag == 0) m_unlock(&status.tsseekmutex, 15);
 		return 1;
 	}
@@ -434,7 +434,7 @@ int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, un
 			aktpos = lseek64(snode->recsrcfd , 0, SEEK_CUR);
 			m_unlock(&status.tsseekmutex, 15);
 
-			ratio = (double)snode->endoffile / (double)snode->endpts;
+			ratio = (double)snode->endoffile / (double)(snode->endpts - snode->startpts);
 			if(ratio == 0) ratio = 1;
 			*aktpts = ((double)aktpos / ratio);
 			*aktpts += snode->startpts;
@@ -456,7 +456,7 @@ int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, un
 	bitrate1 = snode->bitrate;
 	if(gettsinfo(dupfd, &lenpts1, &startpts1, &endpts1, &bitrate1, snode->tssize) != 0)
 	{
-		err("cant read ts info");
+		err("can't read ts info");
 		return 1;
 	}
 
@@ -480,7 +480,7 @@ int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, un
 		if(endpts1 == 0)
 			ratio = 1;
 		else
-			ratio = (double)endoffile1 / (double)endpts1;
+			ratio = (double)endoffile1 / (double)(endpts1 - startpts1);
 
 		if(ratio == 0) ratio = 1;
 		*aktpts = ((double)aktpos / ratio);
@@ -1420,7 +1420,7 @@ int playerjumpts(struct service* servicenode, int sekunden, int *startpts, off64
 		ret = gettsinfo(dupfd, &lenpts, &startpts1, &endpts, &aktbitrate, servicenode->tssize);
 		if(ret != 0) 
 		{
-			err("cant read ts info");
+			err("can't read ts info");
 		}
 		else
 			*bitrate = aktbitrate;
