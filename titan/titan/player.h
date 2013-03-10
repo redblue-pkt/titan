@@ -327,6 +327,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	if(gettsinfo(servicenode->recsrcfd, &lenpts, &startpts, &endpts, &bitrate, servicenode->tssize) != 0)
 	{
 		err("can't read ts info");
+		lseek64(servicenode->recsrcfd, currentpos, SEEK_SET);
 		if(flag == 0) m_unlock(&status.tsseekmutex, 15);
 		return 1;
 	}
