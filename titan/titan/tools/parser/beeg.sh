@@ -21,7 +21,7 @@ sectionstags=`cat cache.beeg.main.html | grep 'href="/tag/' | cut -d '"' -f4`
 count=`cat cache.beeg.main.html | grep ^'<a href="/section/home/' | grep -v self | cut -d ">" -f2 | cut -d"<" -f1`
 
 i=1
-until [ $i -gt $count ]
+until [ "$i" -gt "$count" ]
 do
 #echo $i
 sections="$sections http://beeg.com/section/home/$i/"
