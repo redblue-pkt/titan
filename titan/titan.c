@@ -497,6 +497,7 @@ int main(int argc, char *argv[])
 	sigaction(SIGBUS, &sa, NULL);
 	sigaction(SIGABRT, &sa, NULL);
 	sigaction(SIGPIPE, &sa, NULL);
+	signal(SIGHUP, SIG_IGN);
 
 	status.rguidfd = -1;
 	status.sec = time(NULL);
