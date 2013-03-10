@@ -855,7 +855,7 @@ int getpts(int fd, off64_t offset, int spid, int left, unsigned long long *pts, 
 	int first = 1;
 	
 	offset -= offset % tssize;
-	if(dir < 0 && offset < tssize) offset = tssize;
+	if(dir < 0 && offset < tssize) offset = tssize * 2;
 	if(dir < 0) offset *= -1;
 	while(left >= tssize)
 	{
@@ -865,8 +865,10 @@ int getpts(int fd, off64_t offset, int spid, int left, unsigned long long *pts, 
 			*findpos = lseek64(fd, offset, SEEK_SET);
 		else
 		{
-			if(dir == -2) {
-				if(first == 1) {
+			if(dir == -2)
+			{
+				if(first == 1)
+				{
 					first = 0;
 					offset *= -1;
 					*findpos = lseek64(fd, offset, SEEK_SET);
@@ -874,7 +876,8 @@ int getpts(int fd, off64_t offset, int spid, int left, unsigned long long *pts, 
 				}
 				else 
 				{
-					if(offset % tssize != 0) {
+					if(offset % tssize != 0)
+					{
 						*findpos = lseek64(fd, (offset % tssize) - tssize, SEEK_CUR);
 						offset = -tssize;
 					}
