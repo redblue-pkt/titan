@@ -486,7 +486,7 @@ char *get_ip(char *host)
 		//the external tool read resolv.conf on each start
 		err("can't get ip, test with extern tool (%s)", host);
 
-		tmpstr = ostrcat("getip %s", host, 0, 0);
+		tmpstr = ostrcat("getip ", host, 0, 0);
 		ip = command(tmpstr);
 		free(tmpstr); tmpstr = NULL;
 		if(ip == NULL)
