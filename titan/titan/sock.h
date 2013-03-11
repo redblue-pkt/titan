@@ -456,8 +456,8 @@ char *get_ip(char *host)
 {
 	struct hostent hent;
 	struct hostent *result = NULL;
-	int ret = 0, err = 0, iplen = 16;
-	char *ip = NULL, *buf = NULL;
+	int ret = 0, err = 0, iplen = 16, ext = 0;
+	char *ip = NULL, *buf = NULL, *tmpstr = NULL;
 
 	if(host == NULL) return NULL;
 
@@ -482,20 +482,34 @@ char *get_ip(char *host)
 	{
 		free(ip);
 		free(buf);
-		err("can't get ip (%s)", host);
-		return NULL;
+		//workaround: if resolv.conf is changed, titan mußt stopped, so gethostbyname read resolv.conf new
+		//the external tool read resolv.conf on each start
+		err("can't get ip, test with extern tool (%s)", host);
+
+		tmpstr = ostrcat("getip %s", host, 0, 0);
+		ip = command(tmpstr);
+		free(tmpstr); tmpstr = NULL;
+		if(ip == NULL)
+		{
+			err("can't get ip (%s)", host);
+			return NULL;
+		}
+		ext = 1;
 	}
 
 	//snprintf(ip, iplen, "%s", inet_ntoa(*((struct in_addr*)hent->h_addr)));
 	//snprintf(ip, iplen, "%s", inet_ntoa(*((struct in_addr*)result->h_addr)));
-	
-	//if(inet_ntop(AF_INET, (void *)hent->h_addr_list[0], ip, iplen) == NULL)
-	if(inet_ntop(AF_INET, (void *)result->h_addr_list[0], ip, iplen) == NULL)
+
+	if(ext == 0)
 	{
-		free(ip);
-		free(buf);
-		perr("can't resolve host");
-		return NULL;
+		//if(inet_ntop(AF_INET, (void *)hent->h_addr_list[0], ip, iplen) == NULL)
+		if(inet_ntop(AF_INET, (void *)result->h_addr_list[0], ip, iplen) == NULL)
+		{
+			free(ip);
+			free(buf);
+			perr("can't resolve host");
+			return NULL;
+		}
 	}
 
 	free(buf);
