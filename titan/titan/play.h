@@ -106,7 +106,7 @@ void screenplayinfobar(char* file, char* showname, int mode, int playertype, int
 		
 		if(node != NULL)
 		{
-			if(ostrncmp("tt", node->id, 2))
+			if(ostrncmp("tt", node->id, 2) == 0)
 			{
 				tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
 				tmpstr = ostrcat(tmpstr, "/", 1, 0);
