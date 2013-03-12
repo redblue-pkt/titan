@@ -106,16 +106,19 @@ void screenplayinfobar(char* file, char* showname, int mode, int playertype, int
 		
 		if(node != NULL)
 		{
-			tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
-			tmpstr = ostrcat(tmpstr, "/", 1, 0);
-			tmpstr = ostrcat(tmpstr, node->id, 1, 0);
-			tmpstr = ostrcat(tmpstr, "_poster.jpg", 0, 0);
-			if(file_exist(tmpstr))
+			if(ostrncmp("tt", node->id, 2))
 			{
-				changepic(cover, tmpstr);
-				cover->hidden = NO;
+				tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
+				tmpstr = ostrcat(tmpstr, "/", 1, 0);
+				tmpstr = ostrcat(tmpstr, node->id, 1, 0);
+				tmpstr = ostrcat(tmpstr, "_poster.jpg", 0, 0);
+				if(file_exist(tmpstr))
+				{
+					changepic(cover, tmpstr);
+					cover->hidden = NO;
+				}
+				free(tmpstr), tmpstr = NULL;
 			}
-			free(tmpstr), tmpstr = NULL;
 		}
 	}
 	// show thumb cover end
