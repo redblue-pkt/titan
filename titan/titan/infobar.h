@@ -134,21 +134,20 @@ void screeninfobar()
 		if(rcret == getrcconfigint("rcpause", NULL))
 		{
 			//timeshift
-			timeshiftpause();
+			timeshiftpause(0);
 			continue;
 		}
 		if(status.timeshift == 1)
 		{
 					
-			if(rcret == getrcconfigint("rcstop", NULL) && status.timeshifttype == 0)
+			if(rcret == getrcconfigint("rcstop", NULL))
 			{
 				timeshiftstop(0);
 				continue;
 			}
 			if(rcret == getrcconfigint("rcplay", NULL))
 			{
-				if(status.timeshifttype == 0 || (status.timeshifttype == 1 && status.playing == 1))
-					timeshiftplay(&playinfobarstatus, &playinfobarcount);
+				timeshiftplay(&playinfobarstatus, &playinfobarcount);
 				continue;
 			}
 			if(status.timeshifttype == 1 && status.playing == 0)

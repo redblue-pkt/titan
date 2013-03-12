@@ -148,7 +148,12 @@ int playerstartts(char* file, int flag)
 		
 		//on permanent timeshift seek to end, and a little back (eof problem)
 		if(status.timeshifttype == 1)
-			lseek64(fd, -1000000, SEEK_END);	
+		{
+			if(status.timeshiftpos > 0)
+				lseek64(fd, status.timeshiftpos, SEEK_SET);
+			else
+				lseek64(fd, -1000000, SEEK_END);
+		}
 	}
 
 	ret = recordstartreal(NULL, fd, dvrnode->fd, RECPLAY, 0, NULL, tssize);

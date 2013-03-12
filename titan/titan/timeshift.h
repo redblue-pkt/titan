@@ -1,11 +1,26 @@
 #ifndef TIMESHIFT_H
 #define TIMESHIFT_H
 
-void timeshiftpause()
+//flag 0: pause from rcpause
+//flag 1: pause from servicestart
+void timeshiftpause(int flag)
 {
 	int ret = 0;
-
-	if(status.timeshift == 0)
+	
+	if(flag == 0 && status.timeshift == 1 && status.playing == 0 && status.timeshifttype == 1 && status.timeshiftpos == 0) //stop service
+	{
+		ret = servicestop(status.aktservice, 0, 2);
+		if(ret == 0)
+		{
+			struct service* snode = getservice(RECORDTIMESHIFT, 0);
+			if(snode != NULL)
+			{
+				status.timeshiftstart = time(NULL);
+				status.timeshiftpos = lseek64(snode->recdstfd, 0, SEEK_SET);
+			}		
+		}
+	}
+	else if(status.timeshift == 0) //stop service an start timeshift record
 	{
 		//reset timeline
 		struct skin* playinfobar = getscreen("playinfobar");
@@ -28,7 +43,7 @@ void timeshiftpause()
 			recordcheckret(NULL, ret, 6);
 		}
 	}
-	else if(status.playspeed == 0 && status.slowspeed == 0 && status.timeshift == 1 && status.playing == 1)
+	else if(status.playspeed == 0 && status.slowspeed == 0 && status.timeshift == 1 && status.playing == 1) //if playing, set pause
 	{
 		status.slowspeed = 0;
 		status.playspeed = 0;
@@ -46,8 +61,15 @@ void timeshiftstop(int flag)
 {
 	int i = 0, ret = 0;
 	char* file = NULL;
-	struct service* snode = getservice(RECORDTIMESHIFT, flag);
 
+	if(flag == 0 && status.timeshifttype == 1)
+	{
+		if(status.timeshiftpos > 0 && status.playing == 0) goto startservice;
+		return;
+	}
+  
+  struct service* snode = getservice(RECORDTIMESHIFT, flag);
+	
 	if(status.playspeed != 0 || status.slowspeed != 0)
 	{ 
 		playerpausets();
@@ -85,12 +107,15 @@ void timeshiftstop(int flag)
 			i++; if(i > 20) break;
 		}
 	}
+	
+startservice:
 	if(flag == 0 || flag == 2)
 		servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 3), 0);
 	
 	//if timeshift ends in pause status, we must reactivate continue in player driver
 	playercontinuets();
 	status.timeshiftstart = 0;
+	status.timeshiftpos = 0;
 	status.playspeed = 0;
 	status.slowspeed = 0;
 	status.pause = 0;
@@ -101,16 +126,16 @@ void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)
 {
 	int ret = 1;
 
-	if(status.timeshiftstart + 15 > time(NULL))
-	{
-		textbox(_("Message"), _("Timeshift file to short\nplease wait a little and try again"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-		return;
-	}
-
 	struct service* snode = getservice(RECORDTIMESHIFT, 0);
 	
-	if(status.playing == 0)
+	if((status.timeshifttype == 0 && status.playing == 0) || (status.timeshifttype == 1 && status.playing == 0 && status.timeshiftpos > 0))
 	{
+		if(status.timeshiftstart + 15 > time(NULL))
+		{
+			textbox(_("Message"), _("Timeshift file to short\nplease wait a little and try again"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+			return;
+		}
+	
 		if(snode != NULL) ret = playerstartts(snode->recname, 1);
 		if(ret != 0)
 		{
