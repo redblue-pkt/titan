@@ -1329,6 +1329,8 @@ struct status
 	int timeshift;
 	// 0 = normal, 1 = permanent timeshift
 	int timeshifttype;
+	// position in timeshiftfile to seek
+	off64_t timeshiftpos;
 	// ts playing running = 1
 	int playing;
 	// if set to a skin (screenpointer) only this screen has rc
