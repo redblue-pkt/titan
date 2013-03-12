@@ -147,77 +147,79 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 	if(param != NULL)
 		*param++ = '\0';
 
-	if(ostrcmp(query, "getsysteminfo") == 0)
+	if(ostrcmp(query, "getchannellock") == 0)
+		buf = webgetchannellock(param, fmt);
+	else if(ostrcmp(query, "getsysteminfo") == 0)
 		buf = webgetsysteminfo(fmt);
-	if(ostrcmp(query, "getrccodes") == 0)
+	else if(ostrcmp(query, "getrccodes") == 0)
 		buf = webgetrccodes(fmt);
-	if(ostrcmp(query, "getmute") == 0)
+	else if(ostrcmp(query, "getmute") == 0)
 		buf = webgetmute(fmt);
-	if(ostrcmp(query, "getvol") == 0)
+	else if(ostrcmp(query, "getvol") == 0)
 		buf = webgetvol(fmt);
-	if(ostrcmp(query, "sendrc") == 0)
+	else if(ostrcmp(query, "sendrc") == 0)
 		websendrc(param, fmt);
-	if(ostrcmp(query, "getrectimer") == 0)
+	else if(ostrcmp(query, "getrectimer") == 0)
 		buf = webgetrectimer(param, 0, fmt);
-	if(ostrcmp(query, "addrectimer") == 0)
+	else if(ostrcmp(query, "addrectimer") == 0)
 		buf = webaddrectimer(param, fmt);
-	if(ostrcmp(query, "delrectimer") == 0)
+	else if(ostrcmp(query, "delrectimer") == 0)
 		buf = webdelrectimer(param, fmt);
-	if(ostrcmp(query, "editrectimer") == 0)
+	else if(ostrcmp(query, "editrectimer") == 0)
 		buf = webeditrectimer(param, fmt);
-	if(ostrcmp(query, "rectimersend") == 0)
+	else if(ostrcmp(query, "rectimersend") == 0)
 		buf = webrectimersend(param, fmt);
-	if(ostrcmp(query, "getrectimerarchive") == 0)
+	else if(ostrcmp(query, "getrectimerarchive") == 0)
 		buf = webgetrectimer(param, 1, fmt);
-	if(ostrcmp(query, "setvol") == 0)
+	else if(ostrcmp(query, "setvol") == 0)
 		buf = websetvol(param, fmt);
-	if(ostrcmp(query, "setmute") == 0)
+	else if(ostrcmp(query, "setmute") == 0)
 		buf = websetmute(param, fmt);
-	if(ostrcmp(query, "getbouquet") == 0)
+	else if(ostrcmp(query, "getbouquet") == 0)
 		buf = webgetbouquet(fmt);
-	if(ostrcmp(query, "getsat") == 0)
+	else if(ostrcmp(query, "getsat") == 0)
 		buf = webgetsat(fmt);
-	if(ostrcmp(query, "getprovider") == 0)
+	else if(ostrcmp(query, "getprovider") == 0)
 		buf = webgetprovider(fmt);
-	if(ostrcmp(query, "getaz") == 0)
+	else if(ostrcmp(query, "getaz") == 0)
 		buf = webgetaz(fmt);
-	if(ostrcmp(query, "getconfig") == 0)
+	else if(ostrcmp(query, "getconfig") == 0)
 		buf = webgetconfig(fmt);
-	if(ostrcmp(query, "getchannelpage") == 0)
+	else if(ostrcmp(query, "getchannelpage") == 0)
 		buf = webgetchannelpage(param, fmt);
-	if(ostrcmp(query, "getallchannel") == 0)
+	else if(ostrcmp(query, "getallchannel") == 0)
 		buf = webgetchannel(0, 0, 1, fmt);
-	if(ostrcmp(query, "getbouquetchannel") == 0)
+	else if(ostrcmp(query, "getbouquetchannel") == 0)
 		buf = webgetbouquetchannel(param, fmt);
-	if(ostrcmp(query, "getsatchannel") == 0 && param != NULL)
+	else if(ostrcmp(query, "getsatchannel") == 0 && param != NULL)
 		buf = webgetchannel(atoi(param), 1, 1, fmt);
-	if(ostrcmp(query, "getproviderchannel") == 0 && param != NULL)
+	else if(ostrcmp(query, "getproviderchannel") == 0 && param != NULL)
 		buf = webgetchannel(atoi(param), 2, 1, fmt);
-	if(ostrcmp(query, "getazchannel") == 0 && param != NULL)
+	else if(ostrcmp(query, "getazchannel") == 0 && param != NULL)
 		buf = webgetchannel(atoi(param), 3, 1, fmt);
-	if(ostrcmp(query, "switch") == 0)
+	else if(ostrcmp(query, "switch") == 0)
 		buf = webswitch(param, fmt);
-	if(ostrcmp(query, "getaktservice") == 0)
+	else if(ostrcmp(query, "getaktservice") == 0)
 		buf = webgetaktservice(fmt);
-	if(ostrcmp(query, "getservice") == 0)
+	else if(ostrcmp(query, "getservice") == 0)
 		buf = webgetservice(param, fmt);
-	if(ostrcmp(query, "getepg") == 0)
+	else if(ostrcmp(query, "getepg") == 0)
 		buf = webgetepg(param, fmt);
-	if(ostrcmp(query, "getmovieepg") == 0)
+	else if(ostrcmp(query, "getmovieepg") == 0)
 		buf = webgetmovieepg(param, getconfig("rec_streampath", NULL), 1, fmt);
-	if(ostrcmp(query, "getsingleepg") == 0)
+	else if(ostrcmp(query, "getsingleepg") == 0)
 		buf = webgetsingleepg(param, fmt);
-	if(ostrcmp(query, "getgmultiepg") == 0)
+	else if(ostrcmp(query, "getgmultiepg") == 0)
 		buf = webgetgmultiepg(param, fmt);
-	if(query != NULL && ostrstr(query, "getepgsearch") == query)
+	else if(query != NULL && ostrstr(query, "getepgsearch") == query)
 		buf = webgetepgsearch(query, param, fmt);
-	if(ostrcmp(query, "getsignal") == 0)
+	else if(ostrcmp(query, "getsignal") == 0)
 		buf = webgetsignal(fmt);
-	if(ostrcmp(query, "getmoviefilelist") == 0)
+	else if(ostrcmp(query, "getmoviefilelist") == 0)
 		buf = webgetfilelist(param, "getmoviefilelist", "delmoviefile", getconfig("rec_streampath", NULL), "*.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", 31, fmt);
-	if(ostrcmp(query, "delmoviefile") == 0)
+	else if(ostrcmp(query, "delmoviefile") == 0)
 		buf = webdelfile(param, "getmoviefilelist", "delmoviefile", getconfig("rec_streampath", NULL), "*.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", 31, fmt);
-	if(ostrcmp(query, "getm3u") == 0)
+	else if(ostrcmp(query, "getm3u") == 0)
 	{
 		buf = webgetm3u(param, *connfd, fmt);
 		if(fmt == 0)
@@ -226,11 +228,11 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 			mime = "text/plain";
 		}
 	}
-	if(ostrcmp(query, "getvideo") == 0)
+	else if(ostrcmp(query, "getvideo") == 0)
 		buf = webgetvideo(param, *connfd, fmt);
-  if(ostrcmp(query, "videoplay") == 0 || ostrcmp(query, "videoplay=") == 0)
+  else if(ostrcmp(query, "videoplay") == 0 || ostrcmp(query, "videoplay=") == 0)
 		buf = webvideo(param, fmt);
-	if(ostrcmp(query, "getshoot") == 0)
+	else if(ostrcmp(query, "getshoot") == 0)
 	{
 		webgetshoot(param, fmt);
 		if(fmt == 0)
@@ -242,18 +244,18 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		else
 			buf = ostrcat("shoot.html", NULL, 0, 0);
 	}
-	if(query != NULL && ostrstr(query, "poweroff") == query)
+	else if(query != NULL && ostrstr(query, "poweroff") == query)
 		oshutdown(1, 1);
-	if(query != NULL && ostrstr(query, "restart") == query)
+	else if(query != NULL && ostrstr(query, "restart") == query)
 		oshutdown(2, 1);
-	if(query != NULL && ostrstr(query, "guirestart") == query)
+	else if(query != NULL && ostrstr(query, "guirestart") == query)
 		oshutdown(3, 1);
-	if(query != NULL && ostrstr(query, "standby") == query)
+	else if(query != NULL && ostrstr(query, "standby") == query)
 	{
 		status.standby = 2;
 		addtimer(&screenstandby, START, 1000, 1, NULL, NULL, NULL);
 	}
-	if(query != NULL && ostrstr(query, "boxstatus") == query)
+	else if(query != NULL && ostrstr(query, "boxstatus") == query)
 	{
 		if(status.standby > 0)
 		{
@@ -270,7 +272,7 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 				buf = ostrcat("running", NULL, 0, 0);
 		}
 	}
-	if(query != NULL && ostrstr(query, "mutestatus") == query)
+	else if(query != NULL && ostrstr(query, "mutestatus") == query)
 	{
 		if(status.mute > 0)
 		{
@@ -287,7 +289,7 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 				buf = ostrcat("muteoff", NULL, 0, 0);
 		}
 	}
-	if(query != NULL && ostrstr(query, "message") == query)
+	else if(query != NULL && ostrstr(query, "message") == query)
 		buf = websendmessage(query, fmt);
 		
 	if(buf != NULL || onlyheader == 1)
