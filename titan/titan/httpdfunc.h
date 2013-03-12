@@ -2927,4 +2927,39 @@ char* webgetsysteminfo(int fmt)
 	return buf;
 }
 
+char* webgetchannellock(char* param, int fmt)
+{
+	char* buf = NULL, *param1 = NULL;
+	struct channel* chnode = NULL;
+
+	if(param == NULL) return NULL;
+
+	//create param1
+	param1 = strchr(param, '&');
+	if(param1 != NULL)
+		*param1++ = '\0';
+
+	if(param1 == NULL) return NULL;
+
+	chnode = getchannel(atoi(param), strtoull(param1, NULL, 10));
+	if(chnode != NULL)
+	{
+		buf = ostrcat(buf, chnode->name, 1, 0);
+		buf = ostrcat(buf, "#", 1, 0);
+		buf = ostrcat(buf, atoi(chnode->serviceid), 1, 1);
+		buf = ostrcat(buf, "#", 1, 0);
+		buf = ostrcat(buf, strtoull(chnode->transponderid, NULL, 10), 1, 1);
+		buf = ostrcat(buf, "#", 1, 0);
+
+		if(channelnottunable(chnode) == 1)
+			buf = ostrcat(buf, "1", 1, 0);
+		else
+			buf = ostrcat(buf, "0", 1, 0);
+	}
+	else
+		buf = ostrcat("no data", NULL, 0, 0);
+
+	return buf;
+}
+
 #endif
