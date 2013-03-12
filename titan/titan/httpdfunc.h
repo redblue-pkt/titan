@@ -1269,20 +1269,26 @@ char* webgetepg(char* param, int fmt)
 
 char* webgetsingleepg(char* param, int fmt)
 {
-	int line = 0, maxlen = 0, pos = 0;
-	char* buf = NULL, *buf1 = NULL, *buf2 = NULL, *param1 = NULL, *tmpstr = NULL;
+	int line = 0, maxlen = 0, pos = 0, longdesc = 1;
+	char* buf = NULL, *buf1 = NULL, *buf2 = NULL, *param1 = NULL, *param2 = NULL, *tmpstr = NULL;
 	struct epg* epgnode = NULL;
 	struct channel* chnode = NULL;
 	struct tm *loctime = NULL;
 	
 	if(param == NULL) return NULL;
-	
-	//create param1
+
+	//create param1 + 2
 	param1 = strchr(param, '&');
 	if(param1 != NULL)
+	{
 		*param1++ = '\0';
+		param2 = strchr(param1, '&');
+		if(param2 != NULL)
+			*param2++ = '\0';
+	}
 
 	if(param1 == NULL) return NULL;
+	if(param2 != NULL) longdesc = atoi(param2);
 
 	chnode = getchannel(atoi(param), strtoull(param1, NULL, 10));
 	if(chnode == NULL) return NULL;
@@ -1366,11 +1372,14 @@ char* webgetsingleepg(char* param, int fmt)
 			buf = ostrcat(buf, "#", 1, 0);
 			buf = ostrcat(buf, epgnode->subtitle, 1, 0);
 			buf = ostrcat(buf, "#", 1, 0);
-			tmpstr = epgdescunzip(epgnode);
-			if(tmpstr != NULL)
-				buf = ostrcat(buf, tmpstr, 1, 0);
-			free(tmpstr); tmpstr = NULL;
-			buf = ostrcat(buf, "#", 1, 0);
+			if(longdesc == 1)
+			{
+				tmpstr = epgdescunzip(epgnode);
+				if(tmpstr != NULL)
+					buf = ostrcat(buf, tmpstr, 1, 0);
+				free(tmpstr); tmpstr = NULL;
+				buf = ostrcat(buf, "#", 1, 0);
+			}
 			buf = ostrcat(buf, oitoa(epgnode->eventid), 1, 1);
 			buf = ostrcat(buf, "\n", 1, 0);
 		}
