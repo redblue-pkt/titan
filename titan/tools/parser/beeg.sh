@@ -18,7 +18,7 @@ mkdir _single
 wget http://beeg.com -O cache.beeg.main.html
 
 sectionstags=`cat cache.beeg.main.html | grep 'href="/tag/' | cut -d '"' -f4`
-count=`cat cache.beeg.main.html | grep ^'<a href="/section/home/' | grep -v self | cut -d ">" -f2 | cut -d"<" -f1`
+count=`cat cache.beeg.main.html | grep ^'<a href="/section/home/' | grep 'target="_self">' | cut -d ">" -f2 | cut -d"<" -f1 | tail -n1`
 
 i=1
 until [ "$i" -gt "$count" ]
@@ -85,7 +85,7 @@ for ROUND3 in $sectionstags; do
 		tags=""
 		i=1
 #		echo tagcount = $tagcount
-		until [ $i -gt "$tagcount" ]
+		until [ "$i" -gt "$tagcount" ]
 		do
 #		echo $i
 		tags="$tags http://beeg.com$ROUND3/$i/"
