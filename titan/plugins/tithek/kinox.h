@@ -153,7 +153,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						line = ostrcat(line, "#", 1, 0);
 						line = ostrcat(line, pic, 1, 0);
 						line = ostrcat(line, "#kinox_search_", 1, 0);
-						line = ostrcat(line, oitoa(incount + time(NULL)), 1, 0);
+						line = ostrcat(line, oitoa(incount + time(NULL)), 1, 1);
 						line = ostrcat(line, ".jpg#KinoX - Search#22\n", 1, 0);
 					}
 					free(url), url = NULL;

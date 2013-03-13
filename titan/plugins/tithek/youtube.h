@@ -143,14 +143,18 @@ char* youtube(char* link, char* url, char* name, int flag)
 	return streamurl;
 }
 
-int youtube_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
+int youtube_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr)
 {
 	int ret = 1;
 
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
 
-	char* search = textinputhist("Search", " ", "searchhist");
+	if(searchstr == NULL)
+		search = textinputhist("Search", " ", "searchhist");
+	else
+		search = textinputhist("Search", searchstr, "searchhist");
+
 	if(search != NULL)
 	{
 		drawscreen(load, 0, 0);
