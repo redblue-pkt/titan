@@ -1573,7 +1573,7 @@ waitrcstart:
 				}
 				else if(check == 5)
 				{
-					if(youtube_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Youtube - Search") == 0)
+					if(youtube_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Youtube - Search", tmpstr) == 0)
 					{
 						oaktpage = listbox->aktpage;
 						oaktline = listbox->aktline;
@@ -1596,7 +1596,7 @@ waitrcstart:
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 13))
 				{
-					if(myvideo_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "MyVideo - Search") == 0)
+					if(myvideo_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "MyVideo - Search", tmpstr) == 0)
 					{
 						oaktpage = listbox->aktpage;
 						oaktline = listbox->aktline;
@@ -1634,7 +1634,7 @@ waitrcstart:
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 9) || (((struct tithek*)listbox->select->handle)->flag == 10) || (((struct tithek*)listbox->select->handle)->flag == 11))
 				{
-					if(youtube_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
+					if(youtube_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL) == 0)
 					{
 						oaktpage = listbox->aktpage;
 						oaktline = listbox->aktline;
@@ -1657,7 +1657,7 @@ waitrcstart:
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 13))
 				{
-					if(myvideo_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
+					if(myvideo_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL) == 0)
 					{
 						oaktpage = listbox->aktpage;
 						oaktline = listbox->aktline;

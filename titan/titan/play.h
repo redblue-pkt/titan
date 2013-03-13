@@ -597,7 +597,16 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			addmenulist(&mlist, "MediaDB Scan Info", NULL, NULL, 0, 0);
 	}
 	else
-		addmenulist(&mlist, "Search on Kinox", NULL, NULL, 0, 0);
+	{
+		if(file_exist("/var/swap/etc/.codecpack"))
+		{
+			addmenulist(&mlist, "Search on Kinox", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on Solarmovies (movie)", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on Solarmovies (serie)", NULL, NULL, 0, 0);
+		}
+		addmenulist(&mlist, "Search on Youtube", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on MyVideo", NULL, NULL, 0, 0);
+	}
 
 	//add plugins
 	while(child != NULL)
@@ -639,6 +648,14 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			playcheckdirrcret(file, 1);
 		else if(ostrcmp(mbox->name, "Search on Kinox") == 0)
 			ret = 2;
+		else if(ostrcmp(mbox->name, "Search on Solarmovies (movie)") == 0)
+			ret = 3;
+		else if(ostrcmp(mbox->name, "Search on Solarmovies (serie)") == 0)
+			ret = 4;
+		else if(ostrcmp(mbox->name, "Search on Youtube") == 0)
+			ret = 5;
+		else if(ostrcmp(mbox->name, "Search on MyVideo") == 0)
+			ret = 6;
 		else
 		{
 			pluginnode = getplugin(mbox->name);
