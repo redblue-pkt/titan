@@ -50,6 +50,112 @@ char* solarmovie(char* link, char* url, char* name, int flag)
 	return streamurl;
 }
 
+int solarmovie_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
+{
+	int ret = 1;
+	int incount = 0;
+		
+	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
+		return ret;
+
+	char* search = NULL;
+	if(searchstr == NULL)
+		search = textinputhist("Search", " ", "searchhist");
+	else
+		search = textinputhist("Search", searchstr, "searchhist");
+	
+	if(search != NULL)
+	{
+		drawscreen(load, 0, 0);
+		search = stringreplacechar(search, ' ', '+');
+		char* tmpstr = NULL;
+		char* tmpstr1 = NULL;
+		char* line = NULL;
+		char* pic = NULL;
+		char* title = NULL;
+		char* url = NULL;
+		char* ip = NULL;
+		char* path = NULL;
+		char* menu = NULL;
+		char* file = NULL;
+		char* file1 = NULL;
+
+		ip = ostrcat("www.solarmovie.so", NULL, 0, 0);
+		if(flag == 0)
+			path = ostrcat("movie/search/", search, 0, 0);
+		else
+			path = ostrcat("tv/search/", search, 0, 0);
+	
+		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
+		if(getconfigint("debuglevel", NULL) == 99)
+			writesys("/tmp/solarmovie_tmpstr", tmpstr, 0);
+
+		while(ostrstr(tmpstr, "<div class=\"typicalGrey coverGroup\">") != NULL)
+		{
+			incount += 1;
+			if(getconfigint("debuglevel", NULL) == 99)
+			{
+				file = ostrcat("/tmp/solarmovie_tmpstr", oitoa(incount), 0, 1);
+				writesys(file, tmpstr, 0);
+			}
+				
+			tmpstr1 = string_resub("<div class=\"typicalGrey coverGroup\">", "</div>", tmpstr, 0);
+
+			if(getconfigint("debuglevel", NULL) == 99)
+			{
+				file1 = ostrcat("/tmp/solarmovie_tmpstr_resub", oitoa(incount), 0, 1);
+				writesys(file1, tmpstr1, 0);
+			}
+
+			path = string_resub("href=\"", "\"", tmpstr1, 0);
+			pic = string_resub("<img src=\"", "\"", tmpstr1, 0);
+			title = string_resub("<a title=\"", "\"", tmpstr1, 0);
+	
+			url = ostrcat("http://www.solarmovie.so", path, 0, 0);
+	
+			debug(99, "---------------------------");
+			debug(99, "pic: %s", pic);
+			debug(99, "title: %s", title);
+			debug(99, "url: %s", url);					
+			debug(99, "---------------------------");
+	
+			if(url != NULL)
+			{
+				line = ostrcat(line, title, 1, 0);
+				line = ostrcat(line, "#", 1, 0);
+				line = ostrcat(line, url, 1, 0);
+				line = ostrcat(line, "#", 1, 0);
+				line = ostrcat(line, pic, 1, 0);
+				line = ostrcat(line, "#solarmovie_search_", 1, 0);
+				line = ostrcat(line, oitoa(incount + time(NULL)), 1, 0);
+				line = ostrcat(line, ".jpg#SolarMovie - Search#28\n", 1, 0);
+			}
+			free(url), url = NULL;
+			free(path), path = NULL;
+			free(title), title = NULL;
+			free(pic), pic = NULL;		
+			free(file), file = NULL;
+			free(file1), file1 = NULL;
+
+			tmpstr = string_replace("typicalGrey coverGroup", "", tmpstr, 1);
+			free(tmpstr1), tmpstr1 = NULL;
+		}
+
+		if(line != NULL)
+		{
+			menu = ostrcat("/tmp/tithek/solarmovie.search.list", NULL, 0, 0);
+			writesys(menu, line, 0);
+			struct tithek* tnode = (struct tithek*)listbox->select->handle;
+			createtithek(tnode, tnode->title,  menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
+			ret = 0;
+		}
+
+		free(tmpstr), tmpstr = NULL;
+		free(ip), ip = NULL;
+	}
+	free(search), search = NULL;
+	return ret;
+}
 
 int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
 {
