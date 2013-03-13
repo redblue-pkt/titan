@@ -163,6 +163,7 @@ int myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countla
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
 
+	char* search = NULL;
 	if(searchstr == NULL)
 		search = textinputhist("Search", " ", "searchhist");
 	else
