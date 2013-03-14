@@ -147,7 +147,9 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 	if(param != NULL)
 		*param++ = '\0';
 
-	if(ostrcmp(query, "getchannellock") == 0)
+	if(ostrcmp(query, "getbouquetepg") == 0)
+		buf = webgetbouquetepg(param, fmt);
+	else if(ostrcmp(query, "getchannellock") == 0)
 		buf = webgetchannellock(param, fmt);
 	else if(ostrcmp(query, "getsysteminfo") == 0)
 		buf = webgetsysteminfo(fmt);
