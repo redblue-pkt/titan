@@ -70,6 +70,7 @@ void screenadjust()
 	addchoicebox(secondinfobar, "0", _("no"));
 	addchoicebox(secondinfobar, "1", _("infobar"));
 	addchoicebox(secondinfobar, "2", _("epg"));
+	addchoicebox(secondinfobar, "3", _("Channel EPG"));
 	setchoiceboxselection(secondinfobar, getconfig("secondinfobar", NULL));
 
 	changeinput(spinnerspeed, "1\n3\n9\n12\n15\n18\n21\n24\n27\n30");

@@ -491,6 +491,14 @@ void screeninfobar()
 					drawscreen(skin, 0, 0);
 					subtitlepause(0);
 				}
+				else if(getconfigint("secondinfobar", NULL) == 3)
+				{
+					clearscreen(infobar);
+					screenepg(NULL, NULL, 0);
+					status.infobar = 0;
+					drawscreen(skin, 0, 0);
+					subtitlepause(0);
+				}
 				else if(getconfigint("secondinfobar", NULL) == 0 || infobar2 == status.skinerr || infobar == infobar2)
 				{
 					status.infobar = 0;
