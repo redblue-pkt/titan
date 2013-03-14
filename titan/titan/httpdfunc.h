@@ -2962,4 +2962,101 @@ char* webgetchannellock(char* param, int fmt)
 	return buf;
 }
 
+char* webgetbouquetepg(char* param, int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
+	char* param1 = NULL, *param2 = NULL, *param3 = NULL;
+	struct mainbouquet *mbouquet = NULL;
+	struct bouquet *node = NULL;
+	struct channel* chnode = NULL;
+	struct epg* epgnode = NULL;
+	int longepg = 0;
+	time_t start = 0, end = 0;
+
+	if(param == NULL) return NULL;
+
+	//create param1 + 2 + 3
+	param1 = strchr(param, '&');
+	if(param1 != NULL)
+	{
+		*param1++ = '\0';
+		param2 = strchr(param1, '&');
+		if(param2 != NULL)
+		{
+			*param2++ = '\0';
+			param3 = strchr(param2, '&');
+			if(param3 != NULL)
+				*param3++ = '\0';
+		}
+	}
+	if(param1 == NULL || param2 == NULL || param3 == NULL) return NULL;
+
+	longepg = atoi(param1);
+	start = atoi(param2);
+	end = atoi(param3);
+
+	mbouquet = getmainbouquet(param);
+	if(mbouquet != NULL)
+	{
+		node = mbouquet->bouquet;
+		tmpstr = ostrcat(tmpstr, "(BOUQUET)-", 1, 0);
+		tmpstr = ostrcat(tmpstr, mbouquet->name, 1, 0);
+		tmpstr1 = htmlencode(tmpstr);
+		free(tmpstr); tmpstr = NULL;
+		while(node != NULL)
+		{
+			chnode = getchannel(node->serviceid, node->transponderid);
+			if(chnode != NULL)
+			{
+				buf = ostrcat(buf, "BeginNewChannel", 1, 0);
+				buf = ostrcat(buf, "#", 1, 0);
+				buf = ostrcat(buf, chnode->name, 1, 0);
+				buf = ostrcat(buf, "#", 1, 0);
+				buf = ostrcat(buf, oitoa(chnode->serviceid), 1, 1);
+				buf = ostrcat(buf, "#", 1, 0);
+				buf = ostrcat(buf, ollutoa(chnode->transponderid), 1, 1);
+				buf = ostrcat(buf, "#", 1, 0);
+				buf = ostrcat(buf, oitoa(chnode->servicetype), 1, 1);
+				buf = ostrcat(buf, "\n", 1, 0);
+
+				epgnode = chnode->epg;
+				while(epgnode != NULL)
+				{
+					if((epgnode->starttime >= start && epgnode->starttime < end) || (epgnode->endtime > start && epgnode->endtime <= end))
+					{
+						buf = ostrcat(buf, epgnode->title, 1, 0);
+						buf = ostrcat(buf, "#", 1, 0);
+						buf = ostrcat(buf, olutoa(epgnode->starttime), 1, 1);
+						buf = ostrcat(buf, "#", 1, 0);
+						buf = ostrcat(buf, olutoa(epgnode->endtime), 1, 1);
+						buf = ostrcat(buf, "#", 1, 0);
+						buf = ostrcat(buf, epgnode->subtitle, 1, 0);
+						buf = ostrcat(buf, "#", 1, 0);
+
+						if(longepg == 1)
+						{
+							tmpstr = epgdescunzip(epgnode);
+							if(tmpstr != NULL)
+								buf = ostrcat(buf, tmpstr, 1, 0);
+							free(tmpstr); tmpstr = NULL;
+						}
+
+						buf = ostrcat(buf, "#", 1, 0);
+						buf = ostrcat(buf, oitoa(epgnode->eventid), 1, 1);
+						buf = ostrcat(buf, "\n", 1, 0);
+					}
+
+					epgnode = epgnode->next;
+				}
+			}
+			node = node->next;
+		}
+		free(tmpstr1); tmpstr1 = NULL;
+	}
+
+	if(buf == NULL)
+		buf = ostrcat("no data", NULL, 0, 0);
+	return buf;
+}
+
 #endif
