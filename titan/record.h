@@ -285,7 +285,11 @@ void recordstop(struct service* node, int ret)
 					sleep(1);
 					count++;
 				}
-				oshutdown(1, 3);
+				int ret = 0;
+				if(status.standby == 0)
+					ret = textbox(_("Message"), _("Record power off system?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 200, 20, 0);
+				if(ret == 0 || ret == 2)
+					oshutdown(1, 3);
 			}
 		}
 	}
