@@ -3022,7 +3022,7 @@ char* webgetbouquetepg(char* param, int fmt)
 				epgnode = chnode->epg;
 				while(epgnode != NULL)
 				{
-					if((epgnode->starttime >= start && epgnode->starttime < end) || (epgnode->endtime > start && epgnode->endtime <= end))
+					if((epgnode->starttime >= start && epgnode->starttime < end) || (epgnode->endtime > start && epgnode->endtime <= end) || (epgnode->starttime < start && epgnode->endtime > end))
 					{
 						buf = ostrcat(buf, epgnode->title, 1, 0);
 						buf = ostrcat(buf, "#", 1, 0);
