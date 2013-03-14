@@ -9,6 +9,7 @@ void screentimeshiftsettings()
 	struct skin* listbox = getscreennode(timeshiftsettings, "listbox");
 	struct skin* timeshifttype = getscreennode(timeshiftsettings, "timeshifttype");	
 	struct skin* deltimeshift = getscreennode(timeshiftsettings, "deltimeshift");
+	struct skin* asktimeshift = getscreennode(timeshiftsettings, "asktimeshift");
 	struct skin* tmp = NULL;
 	
 	if(status.timeshifttype == 0 && status.timeshift > 0)
@@ -25,6 +26,10 @@ void screentimeshiftsettings()
 	addchoicebox(deltimeshift, "1", _("allways del file"));
 	addchoicebox(deltimeshift, "2", _("never del file"));
 	setchoiceboxselection(deltimeshift, getconfig("deltimeshift", NULL));
+
+	addchoicebox(asktimeshift, "0", _("yes"));
+	addchoicebox(asktimeshift, "1", _("no"));
+	setchoiceboxselection(asktimeshift, getconfig("asktimeshift", NULL));
 	
 	drawscreen(timeshiftsettings, 0, 0);
 	addscreenrc(timeshiftsettings, listbox);
@@ -49,6 +54,8 @@ void screentimeshiftsettings()
 			
 			addconfigscreencheck("timeshifttype", timeshifttype, "0");
 			status.timeshifttype = getconfigint("timeshifttype", NULL);
+			addconfigscreencheck("asktimeshift", asktimeshift, "0");
+			status.asktimeshift = getconfigint("asktimeshift", NULL);
 			break;
 		}
 	}

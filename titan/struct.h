@@ -1331,6 +1331,8 @@ struct status
 	int timeshifttype;
 	// position in timeshiftfile to seek
 	off64_t timeshiftpos;
+	// ask if timeshift is running and switch channel
+	int asktimeshift;
 	// ts playing running = 1
 	int playing;
 	// if set to a skin (screenpointer) only this screen has rc

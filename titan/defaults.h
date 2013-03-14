@@ -111,6 +111,7 @@ void setdefaults()
 	status.showhiddenfiles = getconfigint("showhiddenfiles", NULL);
 	status.infobarprogram = getconfigint("infobarprogram", NULL);
 	status.autosubtitle = getconfigint("autosubtitle", NULL);
+	status.asktimeshift = getconfigint("asktimeshift", NULL);
 
 	if(status.filelistselectcol == 0) status.filelistselectcol = status.listboxselectcol;
 	
