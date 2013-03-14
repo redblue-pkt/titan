@@ -2948,7 +2948,7 @@ char* webgetchannellock(char* param, int fmt)
 		buf = ostrcat(buf, "#", 1, 0);
 		buf = ostrcat(buf, oitoa(chnode->serviceid), 1, 1);
 		buf = ostrcat(buf, "#", 1, 0);
-		buf = ostrcat(buf, strtoull(chnode->transponderid, NULL, 10), 1, 1);
+		buf = ostrcat(buf, ollutoa(chnode->transponderid), 1, 1);
 		buf = ostrcat(buf, "#", 1, 0);
 
 		if(channelnottunable(chnode) == 1)
