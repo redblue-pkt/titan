@@ -1378,8 +1378,8 @@ char* webgetsingleepg(char* param, int fmt)
 				if(tmpstr != NULL)
 					buf = ostrcat(buf, tmpstr, 1, 0);
 				free(tmpstr); tmpstr = NULL;
-				buf = ostrcat(buf, "#", 1, 0);
 			}
+      buf = ostrcat(buf, "#", 1, 0);
 			buf = ostrcat(buf, oitoa(epgnode->eventid), 1, 1);
 			buf = ostrcat(buf, "\n", 1, 0);
 		}
@@ -2946,7 +2946,7 @@ char* webgetchannellock(char* param, int fmt)
 	{
 		buf = ostrcat(buf, chnode->name, 1, 0);
 		buf = ostrcat(buf, "#", 1, 0);
-		buf = ostrcat(buf, atoi(chnode->serviceid), 1, 1);
+		buf = ostrcat(buf, oitoa(chnode->serviceid), 1, 1);
 		buf = ostrcat(buf, "#", 1, 0);
 		buf = ostrcat(buf, strtoull(chnode->transponderid, NULL, 10), 1, 1);
 		buf = ostrcat(buf, "#", 1, 0);
