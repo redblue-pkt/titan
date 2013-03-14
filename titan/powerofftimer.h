@@ -108,11 +108,11 @@ void screenpowerofftimer(void)
 	}
 	int min = ((float)secs / 60 + 0.5);
 	if(min > 1000) min = 999;
-	char *tmpstr = (char*)malloc(4 * sizeof(char)) ;
-	snprintf(tmpstr,4,"%03d", min);
+	char *tmpstr = (char*)malloc(4 * sizeof(char));
+	if(tmpstr != NULL) snprintf(tmpstr, 4, "%03d", min);
 	changemask(minutes, "000");
 	changeinput(minutes, tmpstr);
-	free(tmpstr);
+	free(tmpstr); tmpstr = NULL;
 
 	addchoicebox(shutdowntimetype, "0", _("DeepStandby"));
 	addchoicebox(shutdowntimetype, "1", _("Standby"));
@@ -137,13 +137,9 @@ void screenpowerofftimer(void)
 		rcret = waitrc(screen, 0, 0);
 		tmp = listbox->select;
 		if(rcret == getrcconfigint("rcexit", NULL))  //user pressed exit so no change
-		{
-			//fprintf(stderr,"shutdowntimerscreen cancelled\n");
 			break;
-		}
 		if(rcret == getrcconfigint("rcred", NULL)) //red means "cancel shutdowntimer"
 		{
-			//fprintf(stderr,"shutdowntimer cancelled\n");
 			status.sd_timer->active = 0;
 			status.sd_timer->shutdown_time = time(NULL);
 			break;
@@ -162,18 +158,49 @@ void screenpowerofftimer(void)
 				break;
 			}
 		}
-		if(rcret == getrcconfigint("rcgreen",NULL)) //blue means "use epg end time of current program"
+		if(rcret == getrcconfigint("rcgreen", NULL)) //blue means "use epg end time of current program"
 		{
 			struct epg* epgnode = getepgakt(status.aktservice->channel);
 			if(epgnode != NULL)
 			{
 				min = (epgnode->endtime - time(NULL)) / 60 + 1;
 				char *tmpstr = (char*)malloc(4 * sizeof(char));
-				snprintf(tmpstr, 4, "%03d", min);
+				if(tmpstr != NULL) snprintf(tmpstr, 4, "%03d", min);
 				debug(100, "blue: %s %d", tmpstr, min);
 				changeinput(minutes, tmpstr);
-				free(tmpstr);
+				free(tmpstr); tmpstr = NULL;
 				drawscreen(screen, 0, 0);
+			}
+		}
+		if(listbox->select != NULL && ostrcmp(listbox->select->name, "minutes") == 0)
+		{
+			if(rcret == getrcconfigint("rcff", NULL))
+			{
+				if(minutes->ret != NULL)
+				{
+					int min = atoi(minutes->ret);
+					min += 5;
+					if(min > 999) min = 999;
+					char *tmpstr = NULL;
+					tmpstr = oitoa(min);
+					changeinput(minutes, tmpstr);
+					free(tmpstr); tmpstr = NULL;
+					drawscreen(screen, 0, 0);
+				}
+			}
+			if(rcret == getrcconfigint("rcfr", NULL))
+			{
+				if(minutes->ret != NULL)
+				{
+					int min = atoi(minutes->ret);
+					min -= 5;
+					if(min < 0) min = 0;
+					char *tmpstr = NULL;
+					tmpstr = oitoa(min);
+					changeinput(minutes, tmpstr);
+					free(tmpstr); tmpstr = NULL;
+					drawscreen(screen, 0, 0);
+				}
 			}
 		}
 	}
