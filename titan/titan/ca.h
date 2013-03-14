@@ -20,6 +20,8 @@ void cawait(struct stimerthread* self, struct dvbdev* dvbnode, int tout)
 		sleep(1);
 		i++;
 		if(i >= tout) break;
+
+		if(dvbnode->caslot != NULL && dvbnode->caslot->status == 100) break;
 	}
 }
 
@@ -1507,8 +1509,11 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 	switch(canode->status)
 	{
 		case 0: //idle
+		case 100: //manuell reset
 		{
-			cawait(self, dvbnode, -1);
+			if(canode->status == 0)
+				cawait(self, dvbnode, -1);
+			canode->status = 0;
 			debug(620, "status: no, slot %d", dvbnode->devnr);
 
 			//reset the module an wait max 10 sek
