@@ -240,7 +240,7 @@ start:
 		if(listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcred", NULL))
 		{
 			if(((struct dvbdev*)listbox->select->handle)->caslot != NULL)
-				((struct dvbdev*)listbox->select->handle)->caslot->status = 0;
+				((struct dvbdev*)listbox->select->handle)->caslot->status = 100;
 		}
 		if(listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcgreen", NULL))
 		{
