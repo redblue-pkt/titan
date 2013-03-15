@@ -155,7 +155,7 @@ start:
 				tmpstr = ostrcat(tmpstr, ": ", 1, 0);
 				if(dvbnode->caslot != NULL)
 				{
-					if(dvbnode->caslot->name == NULL)
+					if(dvbnode->caslot->name == NULL || dvbnode->caslot->status == 0)
 						tmpstr = ostrcat(tmpstr, _("unknown"), 1, 0);
 					else
 						tmpstr = ostrcat(tmpstr, dvbnode->caslot->name, 1, 0);
