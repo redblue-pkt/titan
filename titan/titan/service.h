@@ -580,6 +580,28 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 	return ret;
 }
 
+//flag 0: lock
+//flag 1: no lock
+struct service* getservicebyrecname(char* file, int type, int flag)
+{
+	if(file == NULL) return NULL;
+
+	if(flag == 0) m_lock(&status.servicemutex, 2);
+	struct service* snode = service;
+
+	while(snode != NULL)
+	{
+		if(ostrcmp(snode->recname, file) == 0 && (type == 0 || (type == 1 && (snode->type == RECORDDIRECT || snode->type == RECORDTIMER))))
+		{
+			if(flag == 0) m_unlock(&status.servicemutex, 2);
+			return snode;
+		}
+		snode = snode->next;
+	}
+	if(flag == 0) m_unlock(&status.servicemutex, 2);
+	return NULL;
+}
+
 struct service* getservicebychannel(struct channel* chnode)
 {
 	m_lock(&status.servicemutex, 2);
@@ -588,25 +610,6 @@ struct service* getservicebychannel(struct channel* chnode)
 	while(snode != NULL)
 	{
 		if(snode->channel == chnode)
-		{
-			m_unlock(&status.servicemutex, 2);
-			return snode;
-		}
-		snode = snode->next;
-
-	}
-	m_unlock(&status.servicemutex, 2);
-	return NULL;
-}
-
-struct service* getservicebyrecname(char* recname)
-{
-	m_lock(&status.servicemutex, 2);
-	struct service* snode = service;
-
-	while(snode != NULL)
-	{
-		if(ostrcmp(snode->recname, recname) == 0)
 		{
 			m_unlock(&status.servicemutex, 2);
 			return snode;
