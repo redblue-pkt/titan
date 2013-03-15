@@ -1120,7 +1120,7 @@ int playcheckdirrcret(char* file, int dirrcret)
 	}
 	if(dirrcret == 1)
 	{
-		if(getservicebyrecname(file) != NULL)
+		if(getservicebyrecname(file, 0, 0) != NULL)
 			textbox(_("Message"), _("Record in progress"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 		else if(textbox(_("Realy Delete ?"), file, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
 		{

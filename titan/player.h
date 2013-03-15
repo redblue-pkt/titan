@@ -182,7 +182,12 @@ int playerstartts(char* file, int flag)
 		}
 		else
 		{
-			if(dupfd > -1)
+			if(getservicebyrecname(file, 1, 0) != NULL) //playfile is recording, so len can change
+			{
+				snode->lenpts = 0;
+				snode->endpts = 0;
+			}
+			else if(dupfd > -1)
 				snode->endoffile = lseek64(dupfd , 0, SEEK_END);
 		}
 		close(dupfd);
