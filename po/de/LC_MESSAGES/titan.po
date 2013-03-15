@@ -2907,3 +2907,6 @@ msgstr "Ansicht Cover (streams)"
 
 msgid "deaktivate ethernet interface ?"
 msgstr "Lan Verbindung ausschalten ?"
+
+msgid "EPG SHORT VIEW"
+msgstr "EPG-Kurzübersicht"
