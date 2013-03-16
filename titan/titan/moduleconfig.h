@@ -118,12 +118,13 @@ void screencaidlock(struct dvbdev* dvbnode)
 
 void screenmoduleconfig()
 {
-	int rcret = 0, i = 0;
+	int rcret = 0, i = 0, reset = 0, allready = 1;
 	struct skin* moduleconfig = getscreen("moduleconfig");
 	struct skin* listbox = getscreennode(moduleconfig, "listbox");
 	struct skin* b3 = getscreennode(moduleconfig, "b3");
 	struct skin* b4 = getscreennode(moduleconfig, "b4");
 	struct skin* b5 = getscreennode(moduleconfig, "b5");
+	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
 	struct dvbdev* dvbnode = NULL;
 	char* tmpstr = NULL, *tmpnr = NULL;
@@ -136,7 +137,7 @@ void screenmoduleconfig()
 	b5->hidden = NO;
 
 start:
-	i = 0;
+	i = 0, allready = 1;
 	dvbnode = dvbdev;
 	tmp = NULL;
 	delmarkedscreennodes(moduleconfig, 1);
@@ -164,13 +165,14 @@ start:
 				tmpstr = ostrcat(tmpstr, _("Status: "), 1, 0);
 				if(dvbnode->caslot != NULL)
 				{
-					if(dvbnode->caslot->status == 0)
+					if(dvbnode->caslot->status == 0 || dvbnode->caslot->status == 100)
 						tmpstr = ostrcat(tmpstr, _("empty"), 1, 0);
 					if(dvbnode->caslot->status == 1)
 						tmpstr = ostrcat(tmpstr, _("initializing"), 1, 0);
 					if(dvbnode->caslot->status == 2)
 						tmpstr = ostrcat(tmpstr, _("ready"), 1, 0);
 				}
+				if(dvbnode->caslot->status != 2) allready = 0;
 				changetext(tmp, tmpstr);
 				free(tmpstr); tmpstr = NULL;
 				tmp->height = (listbox->fontsize * 2) + (2 * 2);
@@ -199,8 +201,11 @@ start:
 		}
 		dvbnode = dvbnode->next;
 	}
+	if(allready == 1) reset = 0;
 
+	clearscreen(load);
 	drawscreen(moduleconfig, 0, 0);
+	if(reset == 1) drawscreen(load, 0, 0);
 	addscreenrc(moduleconfig, listbox);
 
 	tmp = listbox->select;
@@ -223,7 +228,9 @@ start:
 			b4->hidden = YES;
 			b5->hidden = YES;
 		}
+		clearscreen(load);
 		drawscreen(moduleconfig, 0, 0);
+		if(reset == 1) drawscreen(load, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
@@ -240,23 +247,34 @@ start:
 		if(listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcred", NULL))
 		{
 			if(((struct dvbdev*)listbox->select->handle)->caslot != NULL)
+			{
 				((struct dvbdev*)listbox->select->handle)->caslot->status = 100;
+				reset = 1;
+				drawscreen(load, 0, 0);
+			}
 		}
 		if(listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcgreen", NULL))
 		{
 			if((struct dvbdev*)listbox->select->handle != NULL)
+			{
 				caappmenu((struct dvbdev*)listbox->select->handle);
+				reset = 0;
+			}
 		}
 		if(listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcyellow", NULL))
 		{
 			if((struct dvbdev*)listbox->select->handle != NULL)
+			{
 				screencaidlock((struct dvbdev*)listbox->select->handle);
+				reset = 0;
+			}
 		}
 		if(rcret == RCTIMEOUT) goto start;
 	}
 
 	delmarkedscreennodes(moduleconfig, 1);
 	delownerrc(moduleconfig);
+	clearscreen(load);
 	clearscreen(moduleconfig);
 }
 
