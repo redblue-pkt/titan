@@ -2910,3 +2910,12 @@ msgstr "Lan Verbindung ausschalten ?"
 
 msgid "EPG SHORT VIEW"
 msgstr "EPG-Kurzübersicht"
+
+msgid "Timeshift Settings"
+msgstr "Timeshift Einstellungen"
+
+msgid "Timeshifttype"
+msgstr "Timeshiftart"
+
+msgid "Ask on channel switch"
+msgstr "Nachfragen bei Kanalwechsel"
