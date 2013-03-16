@@ -482,7 +482,7 @@ void recalclist(int list, void* aktlist, int listmode, struct skin* channellist,
 		showprovider(channellist, listbox);
 }
 
-void changebutton(int listmode, struct skin* b1, struct skin* b2, struct skin* b3, struct skin* b4, struct skin* b5, struct skin* b6, struct skin* b7, struct skin* b8, struct skin* b9, struct skin* b10, struct skin* b11, struct skin* b12, struct skin* b13, struct skin* b14)
+void changebutton(int listmode, struct skin* b1, struct skin* b2, struct skin* b3, struct skin* b4, struct skin* b5, struct skin* b6, struct skin* b7, struct skin* b8, struct skin* b9, struct skin* b10, struct skin* b11, struct skin* b12, struct skin* b13, struct skin* b14, struct skin* b15)
 {
 	if(listmode == NOMODE)
 	{
@@ -500,6 +500,7 @@ void changebutton(int listmode, struct skin* b1, struct skin* b2, struct skin* b
 		b12->hidden = YES;
 		b13->hidden = YES;
 		b14->hidden = YES;
+		b15->hidden = NO;
 	}
 	else if(listmode == MVMODE)
 	{
@@ -517,6 +518,7 @@ void changebutton(int listmode, struct skin* b1, struct skin* b2, struct skin* b
 		b12->hidden = NO;
 		b13->hidden = YES;
 		b14->hidden = NO;
+		b15->hidden = YES;
 	}
 	else
 	{
@@ -534,6 +536,7 @@ void changebutton(int listmode, struct skin* b1, struct skin* b2, struct skin* b
 		b12->hidden = NO;
 		b13->hidden = NO;
 		b14->hidden = YES;
+		b15->hidden = YES;
 	}
 }
 
@@ -631,7 +634,8 @@ int screenchannellist(struct channel** retchannel, char** retchannellist, int fl
 	struct skin* b11 = getscreennode(channellist, "b11");
 	struct skin* b12 = getscreennode(channellist, "b12");
 	struct skin* b13 = getscreennode(channellist, "b13");
-	struct skin* b14 = getscreennode(channellist, "b14");					
+	struct skin* b14 = getscreennode(channellist, "b14");
+	struct skin* b15 = getscreennode(channellist, "b15");
 	struct skin* tmpskin;
 	int rcret, ret, listmode, newmodus, list;
 	char* tmpstr = NULL, *tmpstr1 = NULL, *oldtitle = NULL;
@@ -771,7 +775,7 @@ start:
 	}
 	if(flag != 2)
 	{
-		changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+		changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 		drawchannellist(channellist, list, listbox);
 	}
 
@@ -808,14 +812,14 @@ start:
 		{
 			if(listmode != MVMODE || (listmode == MVMODE && status.markmodus == 0))
 			{
-				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 				drawchannellist(channellist, list, listbox);
 			}
 		}
 
 		if(rcret == RCTIMEOUT)
 		{
-			changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+			changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 			drawscreen(channellist, 0, 0);
 		}
 
@@ -855,7 +859,7 @@ start:
 				delmarkedscreennodes(channellist, 2);
 				recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
 				selectchannel(listbox, sid, tid);
-				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 				drawscreen(channellist, 0, 0);
 			}
 			if(listmode == PROTECTMODE && listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcok", NULL))
@@ -874,7 +878,7 @@ start:
 				delmarkedscreennodes(channellist, 1);
 				delmarkedscreennodes(channellist, 2);
 				recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
-				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 				drawscreen(channellist, 0, 0);
 			}
 			if(listmode == CPMODE && listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcok", NULL))
@@ -907,7 +911,7 @@ start:
 						}
 					}
 				}
-				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 				drawscreen(channellist, 0, 0);
 			}
 			if(listmode == EDITMODE && listbox->select != NULL && listbox->select->handle1 != NULL && rcret == getrcconfigint("rcok", NULL))
@@ -955,7 +959,7 @@ start:
 				delmarkedscreennodes(channellist, 2);
 				status.markedchannel = NULL;
 				recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
-				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 				drawscreen(channellist, 0, 0);
 			}
 			if(listmode == RMMODE && listbox->select != NULL && listbox->select->handle1 != NULL && rcret == getrcconfigint("rcok", NULL))
@@ -1000,7 +1004,7 @@ start:
 				delmarkedscreennodes(channellist, 2);
 				status.markedchannel = NULL;
 				recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
-				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 				drawscreen(channellist, 0, 0);
 			}
 			if(listmode == MVMODE && listbox->select != NULL && rcret == getrcconfigint("rcok", NULL))
@@ -1015,7 +1019,7 @@ start:
 					status.markmodus = 0;
 					movesel = NULL;
 				}
-				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 				drawscreen(channellist, 0, 0);
 			}
 			if(listmode == MVMODE && listbox->select != NULL && movesel != NULL && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL) || rcret == getrcconfigint("rcchdown", NULL) || rcret == getrcconfigint("rcchup", NULL)))
@@ -1158,7 +1162,7 @@ start:
 				delmarkedscreennodes(channellist, 1);
 				delmarkedscreennodes(channellist, 2);
 				recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
-				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 				drawscreen(channellist, 0, 0);
 			}
 			continue;
@@ -1180,7 +1184,7 @@ start:
 			delmarkedscreennodes(channellist, 2);
 			showallchannel(channellist, listbox, channeltimeline, flag);
 			selectchannel(listbox, 0, 0);
-			changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+			changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 			drawchannellist(channellist, list, listbox);
 			continue;
 		}
@@ -1214,7 +1218,7 @@ start:
 				listbox->aktline = 1;
 			}
 			tmpstr = NULL;
-			changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+			changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 			drawchannellist(channellist, list, listbox);
 			continue;
 		}
@@ -1248,7 +1252,7 @@ start:
 				listbox->aktline = 1;
 			}
 			tmpstr = NULL;
-			changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+			changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 			drawchannellist(channellist, list, listbox);
 			continue;
 		}
@@ -1282,7 +1286,7 @@ start:
 				listbox->aktline = 1;
 			}
 			tmpstr = NULL;
-			changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+			changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 			drawchannellist(channellist, list, listbox);
 			continue;
 		}
@@ -1316,7 +1320,7 @@ start:
 				listbox->aktline = 1;
 			}
 			tmpstr = NULL;
-			changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+			changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 			drawchannellist(channellist, list, listbox);
 			continue;
 		}
@@ -1339,7 +1343,7 @@ start:
 				}
 
 				clearscreen(channellist);
-				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 				resettvpic();
 				drawscreen(skin, 0, 0);
 				if(status.servicetype == 0)
@@ -1422,7 +1426,7 @@ start:
 				showbouquetchannel(channellist, listbox, channeltimeline, (struct bouquet*)listbox->select->handle, (struct mainbouquet*)aktlist, flag);
 				delmarkedscreennodes(channellist, 2);
 				selectchannel(listbox, 0, 0);
-				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 				drawchannellist(channellist, list, listbox);
 			}
 			continue;
@@ -1496,7 +1500,7 @@ start:
 				showsatchannel(channellist, listbox, channeltimeline, (struct sat*)listbox->select->handle, flag);
 				delmarkedscreennodes(channellist, 2);
 				selectchannel(listbox, 0, 0);
-				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 				drawchannellist(channellist, list, listbox);
 			}
 			continue;
@@ -1562,7 +1566,7 @@ start:
 				showazchannel(channellist, listbox, channeltimeline, (int)listbox->select->handle, flag);
 				delmarkedscreennodes(channellist, 2);
 				selectchannel(listbox, 0, 0);
-				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 				drawchannellist(channellist, list, listbox);
 			}
 			continue;
@@ -1636,7 +1640,7 @@ start:
 				showproviderchannel(channellist, listbox, channeltimeline, (struct provider*) listbox->select->handle, flag);
 				delmarkedscreennodes(channellist, 2);
 				selectchannel(listbox, 0, 0);
-				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 				drawchannellist(channellist, list, listbox);
 			}
 			continue;
@@ -1676,7 +1680,7 @@ start:
 			delmarkedscreennodes(channellist, 2);
 			recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
 			selectchannel(listbox, sid, tid);
-			changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+			changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 			drawscreen(channellist, 0, 0);
 			continue;
 		}
@@ -1693,7 +1697,7 @@ start:
 				if(ret == 0)
 				{
 					status.markedchannel = tmpmarkedchannel;
-					changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+					changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 					drawchannellist(channellist, list, listbox);
 				}
 			}
@@ -1711,7 +1715,7 @@ start:
 				struct channel* tmpmarkedchannel = status.markedchannel;
 				screenshortepg((struct channel*)listbox->select->handle, NULL, 0);
 				status.markedchannel = tmpmarkedchannel;
-				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
 				drawscreen(channellist, 0, 0);
 			}
 			continue;
