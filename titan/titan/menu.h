@@ -342,6 +342,11 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screenrestoredefault();
 	}
+	else if(ostrcmp("shortepg", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screenshortepg(NULL, NULL, 1);
+	}
 	else if(ostrcmp("singleepg", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
