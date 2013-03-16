@@ -257,7 +257,9 @@ start:
 		{
 			if((struct dvbdev*)listbox->select->handle != NULL)
 			{
+				drawscreen(load, 0, 0);
 				caappmenu((struct dvbdev*)listbox->select->handle);
+				sleep(7);
 				reset = 0;
 			}
 		}
