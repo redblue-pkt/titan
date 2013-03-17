@@ -398,6 +398,7 @@ void timeshiftinfobar(int* playinfobarstatus, int* playinfobarcount)
 
 void timeshiftposplay(int* playinfobarstatus, int* playinfobarcount)
 {
+	unsigned long long oldpos = status.timeshiftpos;
 	struct service* snode = getservice(RECORDTIMESHIFT, 0);
 	if(snode != NULL)
 	{
@@ -406,7 +407,10 @@ void timeshiftposplay(int* playinfobarstatus, int* playinfobarcount)
 		if(status.timeshiftpos <= 0) status.timeshiftpos = snode->tssize;
 	}
 	timeshiftplay(playinfobarstatus, playinfobarcount);
-	status.timeshiftpos = 0;
+	if(status.playing == 0)
+		status.timeshiftpos = oldpos;
+	else
+		status.timeshiftpos = 0;
 }
 
 
