@@ -268,9 +268,14 @@ start:
 	}
 	if(allready == 1) reset = 0;
 
+
 	clearscreen(load);
 	drawscreen(moduleconfig, 0, 0);
-	if(reset == 1) drawscreen(load, 0, 0);
+	if(reset > 0)
+	{
+		reset--;
+		drawscreen(load, 0, 0);
+	}
 	addscreenrc(moduleconfig, listbox);
 
 	tmp = listbox->select;
@@ -295,7 +300,7 @@ start:
 		}
 		clearscreen(load);
 		drawscreen(moduleconfig, 0, 0);
-		if(reset == 1) drawscreen(load, 0, 0);
+		if(reset > 0) drawscreen(load, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
@@ -314,7 +319,7 @@ start:
 			if(((struct dvbdev*)listbox->select->handle)->caslot != NULL)
 			{
 				((struct dvbdev*)listbox->select->handle)->caslot->status = 100;
-				reset = 1;
+				reset = 5;
 				drawscreen(load, 0, 0);
 			}
 		}
