@@ -184,6 +184,7 @@ void screenpowerofftimer(void)
 					char *tmpstr = NULL;
 					tmpstr = oitoa(min);
 					changeinput(minutes, tmpstr);
+					minutes->input = mask(minutes->input, 3, "0");
 					free(tmpstr); tmpstr = NULL;
 					drawscreen(screen, 0, 0);
 				}
@@ -198,6 +199,7 @@ void screenpowerofftimer(void)
 					char *tmpstr = NULL;
 					tmpstr = oitoa(min);
 					changeinput(minutes, tmpstr);
+					minutes->input = mask(minutes->input, 3, "0");
 					free(tmpstr); tmpstr = NULL;
 					drawscreen(screen, 0, 0);
 				}
