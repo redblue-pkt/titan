@@ -16,7 +16,7 @@ void timeshiftpause(int flag)
 			if(snode != NULL)
 			{
 				status.timeshiftstart = time(NULL);
-				status.timeshiftpos = lseek64(snode->recdstfd, 0, SEEK_SET);
+				status.timeshiftpos = lseek64(snode->recdstfd, 0, SEEK_CUR);
 			}		
 		}
 	}
@@ -62,13 +62,15 @@ void timeshiftstop(int flag)
 	int i = 0, ret = 0;
 	char* file = NULL;
 
+	if(flag == 1 && status.timeshifttype == 1 && status.playing == 0 && status.timeshiftpos > 0)
+		return;
 	if(flag == 0 && status.timeshifttype == 1)
 	{
 		if(status.timeshiftpos > 0 && status.playing == 0) goto startservice;
 		return;
 	}
   
-  struct service* snode = getservice(RECORDTIMESHIFT, flag);
+	struct service* snode = getservice(RECORDTIMESHIFT, flag);
 	
 	if(status.playspeed != 0 || status.slowspeed != 0)
 	{ 
@@ -143,7 +145,14 @@ void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)
 			return;
 		}
 	}
-	else
+	else if(status.playing == 0 && status.timeshifttype == 1)
+	{
+		status.playercan = 0x7FFF;
+		*playinfobarstatus = 1;
+		*playinfobarcount = 0;
+		if(snode != NULL) screenplayinfobar(snode->recname, NULL, 0, 1, 4);
+	}
+	else if(status.playing == 1)
 	{
 		if(status.playspeed != 0 || status.slowspeed != 0)
 			playerpausets();
@@ -154,6 +163,8 @@ void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)
 			playerresetts();
 	}
 	
+	if(status.playing == 0) return;
+
 	status.slowspeed = 0;
 	status.playspeed = 0;
 	status.pause = 0;
@@ -161,7 +172,7 @@ void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)
 	status.playercan = 0x7FFF;
 	*playinfobarstatus = 1;
 	*playinfobarcount = 0;
-	screenplayinfobar(snode->recname, NULL, 0, 1, 4);
+	if(snode != NULL) screenplayinfobar(snode->recname, NULL, 0, 1, 4);
 }
 
 /*
