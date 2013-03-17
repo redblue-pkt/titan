@@ -365,7 +365,11 @@ void oshutdown(int exitcode, int flag)
 	while(dvbnode != NULL)
 	{
 		if(dvbnode->type == CIDEV && dvbnode->fd > -1)
+		{
+			if(dvbnode->caslot != NULL) dvbnode->caslot->status = 101;
+			usleep(10000);
 			careset(dvbnode, dvbnode->devnr);
+		}
 		dvbnode = dvbnode->next;
 	}
 
