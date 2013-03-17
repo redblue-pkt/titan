@@ -29,21 +29,15 @@ void screenadjust()
 	struct skin* skip46 = getscreennode(adjust, "skip46");
 	struct skin* skip79 = getscreennode(adjust, "skip79");
 	struct skin* playertype = getscreennode(adjust, "playertype");
-	struct skin* nocamsg = getscreennode(adjust, "nocamsg");
 	struct skin* autochangechannelname = getscreennode(adjust, "autochangechannelname");
 	struct skin* def_rectimer_after = getscreennode(adjust, "def_rectimer_after");
-	struct skin* deltimeshift = getscreennode(adjust, "deltimeshift");
 	struct skin* showchanneltimeline = getscreennode(adjust, "showchanneltimeline");
 	struct skin* screenanim = getscreennode(adjust, "screenanim");
 	struct skin* screenanimspeed = getscreennode(adjust, "screenanimspeed");
 	struct skin* channellistview = getscreennode(adjust, "channellistview");
-	struct skin* camwait = getscreennode(adjust, "camwait");
-	struct skin* checkcamdecrypt = getscreennode(adjust, "checkcamdecrypt");
 	struct skin* showlastpos = getscreennode(adjust, "showlastpos");
 	struct skin* recsync = getscreennode(adjust, "recsync");
 	struct skin* recordnamefmt = getscreennode(adjust, "recordnamefmt");
-	struct skin* caskipprivat = getscreennode(adjust, "caskipprivat");
-	struct skin* casendallcaids = getscreennode(adjust, "casendallcaids");
 	struct skin* newsletter = getscreennode(adjust, "newsletter");
 	struct skin* showhiddenfiles = getscreennode(adjust, "showhiddenfiles");
 	struct skin* expertmodus = getscreennode(adjust, "expertmodus");
@@ -146,10 +140,6 @@ void screenadjust()
 	addchoicebox(playertype, "1", _("intern"));
 	setchoiceboxselection(playertype, getconfig("playertype", NULL));
 	
-	addchoicebox(nocamsg, "0", _("yes"));
-	addchoicebox(nocamsg, "1", _("no"));
-	setchoiceboxselection(nocamsg, getconfig("nocamsg", NULL));
-	
 	addchoicebox(autochangechannelname, "0", _("no"));
 	addchoicebox(autochangechannelname, "1", _("yes"));
 	setchoiceboxselection(autochangechannelname, getconfig("autochangechannelname", NULL));
@@ -159,11 +149,6 @@ void screenadjust()
 	addchoicebox(def_rectimer_after, "2", _("standby"));
 	addchoicebox(def_rectimer_after, "3", _("power off"));
 	setchoiceboxselection(def_rectimer_after, getconfig("def_rectimer_after", NULL));
-	
-	addchoicebox(deltimeshift, "0", _("ask"));
-	addchoicebox(deltimeshift, "1", _("allways del file"));
-	addchoicebox(deltimeshift, "2", _("never del file"));
-	setchoiceboxselection(deltimeshift, getconfig("deltimeshift", NULL));
 	
 	addchoicebox(showchanneltimeline, "0", _("no"));
 	addchoicebox(showchanneltimeline, "1", _("yes"));
@@ -186,15 +171,6 @@ void screenadjust()
 	addchoicebox(channellistview, "1", _("deactive"));
 	setchoiceboxselection(channellistview, getconfig("channellistview", NULL));
 
-	addchoicebox(camwait, "25", _("slow"));
-	addchoicebox(camwait, "15", _("middle"));
-	addchoicebox(camwait, "5", _("fast"));
-	setchoiceboxselection(camwait, getconfig("camwait", NULL));
-
-	addchoicebox(checkcamdecrypt, "0", _("no"));
-	addchoicebox(checkcamdecrypt, "1", _("yes"));
-	setchoiceboxselection(checkcamdecrypt, getconfig("checkcamdecrypt", NULL));
-
 	addchoicebox(showlastpos, "0", _("no"));	
 	addchoicebox(showlastpos, "1", _("yes"));
 	setchoiceboxselection(showlastpos, getconfig("showlastpos", NULL));
@@ -206,14 +182,6 @@ void screenadjust()
 	addchoicebox(recordnamefmt, "0", _("channel-movie"));
 	addchoicebox(recordnamefmt, "1", _("movie-channel"));
 	setchoiceboxselection(recordnamefmt, getconfig("recordnamefmt", NULL));
-
-	addchoicebox(caskipprivat, "0", _("no"));
-	addchoicebox(caskipprivat, "1", _("yes"));
-	setchoiceboxselection(caskipprivat, getconfig("caskipprivat", NULL));
-
-	addchoicebox(casendallcaids, "0", _("no"));
-	addchoicebox(casendallcaids, "1", _("yes"));
-	setchoiceboxselection(casendallcaids, getconfig("casendallcaids", NULL));
 
 	addchoicebox(newsletter, "0", _("no"));
 	addchoicebox(newsletter, "1", _("yes"));
@@ -342,10 +310,8 @@ void screenadjust()
 			addconfigscreen("skip46", skip46);
 			addconfigscreen("skip79", skip79);
 			addconfigscreencheck("playertype", playertype, "0");
-			addconfigscreencheck("nocamsg", nocamsg, "0");
 			addconfigscreencheck("autochangechannelname", autochangechannelname, "0");
 			addconfigscreencheck("def_rectimer_after", def_rectimer_after, "0");
-			addconfigscreencheck("deltimeshift", deltimeshift, "0");
 			addconfigscreencheck("showchanneltimeline", showchanneltimeline, "0");
 			status.showchanneltimeline = getconfigint("showchanneltimeline", NULL);
 			addconfigscreencheck("screenanim", screenanim, "0");
@@ -354,15 +320,9 @@ void screenadjust()
 			status.screenanimspeed = getconfigint("screenanimspeed", NULL);
 			addconfigscreencheck("channellistview", channellistview, "0");
 			status.channellistview = getconfigint("channellistview", NULL);
-			addconfigscreencheck("camwait", camwait, "25");
-			addconfigscreencheck("checkcamdecrypt", checkcamdecrypt, "0");
 			addconfigscreencheck("showlastpos", showlastpos, "0");
 			addconfigscreencheck("recsync", recsync, "0");
 			addconfigscreencheck("recordnamefmt", recordnamefmt, "0");
-			addconfigscreencheck("caskipprivat", caskipprivat, "0");
-			status.caskipprivat = getconfigint("caskipprivat", NULL);
-			addconfigscreencheck("casendallcaids", casendallcaids, "0");
-			status.casendallcaids = getconfigint("casendallcaids", NULL);
 
 			addconfigscreen("newsletter", newsletter);
 			if(newsletter->ret != NULL && ostrcmp(newsletter->ret, "0") == 0)
