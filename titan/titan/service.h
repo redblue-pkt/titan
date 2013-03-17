@@ -692,7 +692,7 @@ int servicestop(struct service *node, int clear, int flag)
 	{
 		if(status.timeshift == 1 && flag != 2)
 		{
-			if(status.asktimeshift == 0)
+			if(status.timeshifttype == 0 && status.asktimeshift == 0)
 				rcret = textbox(_("Message"), _("Timeshift is running !!!\nStop it and switch ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 10, 0);
 
 			if(rcret == 2) return 1;
