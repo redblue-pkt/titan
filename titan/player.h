@@ -152,7 +152,12 @@ int playerstartts(char* file, int flag)
 			if(status.timeshiftpos > 0)
 				lseek64(fd, status.timeshiftpos, SEEK_SET);
 			else
-				lseek64(fd, -1000000, SEEK_END);
+			{
+				unsigned long long pos = lseek64(fd, 0, SEEK_END);
+				pos -= 10000000;
+				pos = pos - (pos & tssize);
+				lseek64(fd, -pos, SEEK_END);
+			}
 		}
 	}
 
@@ -415,6 +420,7 @@ void playerfrts(int speed, int flag)
 
 //flag = 0 --> play ts
 //flag = 1 --> timeshift
+//flag = 2 --> timeshift, not in play mode (only recording)
 int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, unsigned long long* endpts, unsigned long long* aktpts, unsigned long long* bitrate, int flag)
 {
 	int ret = 0, dupfd = -1;
@@ -427,7 +433,10 @@ int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, un
 	unsigned long long endoffile1 = 0;
 	unsigned long long aktpos = 0;
 	
-	snode = getservice(RECORDPLAY, 0);
+	if(flag == 2)
+		snode = getservice(RECORDTIMESHIFT, 0);
+	else
+		snode = getservice(RECORDPLAY, 0);
 		
 	if(snode == NULL) return 1;
 
@@ -442,7 +451,10 @@ int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, un
 		if(aktpts != NULL)
 		{
 			m_lock(&status.tsseekmutex, 15);
-			aktpos = lseek64(snode->recsrcfd , 0, SEEK_CUR);
+			if(flag == 2)
+				aktpos = lseek64(snode->recdstfd , 0, SEEK_CUR);
+			else
+				aktpos = lseek64(snode->recsrcfd , 0, SEEK_CUR);
 			m_unlock(&status.tsseekmutex, 15);
 
 			ratio = (double)snode->endoffile / (double)(snode->endpts - snode->startpts);
@@ -480,7 +492,10 @@ int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, un
 	if(aktpts != NULL)
 	{
 		m_lock(&status.tsseekmutex, 15);
-		aktpos = lseek64(snode->recsrcfd, 0, SEEK_CUR);
+		if(flag == 2)
+			aktpos = lseek64(snode->recdstfd, 0, SEEK_CUR);
+		else
+			aktpos = lseek64(snode->recsrcfd, 0, SEEK_CUR);
 		m_unlock(&status.tsseekmutex, 15);
 
 		if(snode->endoffile <= 0)

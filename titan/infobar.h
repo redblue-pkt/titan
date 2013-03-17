@@ -152,30 +152,42 @@ void screeninfobar()
 			}
 			if(status.timeshifttype == 1 && status.playing == 0)
 			{
+				if(rcret == getrcconfigint("rcff", NULL) || rcret == getrcconfigint("rc3", NULL) || rcret == getrcconfigint("rc6", NULL) || rcret == getrcconfigint("rc9", NULL))
+				{
+					struct service* snode = getservice(RECORDTIMESHIFT, 0);
+					if(snode != NULL)
+					{
+						status.playercan = 0x7FFF;
+						playinfobarstatus = 1;
+						playinfobarcount = 0;
+						screenplayinfobar(snode->recname, NULL, 0, 1, 5);
+					}
+					continue;
+				}
 				if(rcret == getrcconfigint("rcfr", NULL))
 				{
-					timeshiftplay(&playinfobarstatus, &playinfobarcount);
+					timeshiftposplay(&playinfobarstatus, &playinfobarcount);
 					if(status.playing == 1)
 						playrcfr(status.playfile, NULL, &playinfobarstatus, &playinfobarcount, 1, 4);
 					continue;
 				}
 				if(rcret == getrcconfigint("rc1", NULL))
 				{
-					timeshiftplay(&playinfobarstatus, &playinfobarcount);
+					timeshiftposplay(&playinfobarstatus, &playinfobarcount);
 					if(status.playing == 1)
 						playrcjumpr(status.playfile, NULL, getconfigint("skip13", NULL), &playinfobarstatus, &playinfobarcount, 1, 4);
 					continue;
 				}
 				if(rcret == getrcconfigint("rc4", NULL))
 				{
-					timeshiftplay(&playinfobarstatus, &playinfobarcount);
+					timeshiftposplay(&playinfobarstatus, &playinfobarcount);
 					if(status.playing == 1)
 						playrcjumpr(status.playfile, NULL, getconfigint("skip46", NULL), &playinfobarstatus, &playinfobarcount, 1, 4);
 					continue;
 				}
 				if(rcret == getrcconfigint("rc7", NULL))
 				{
-					timeshiftplay(&playinfobarstatus, &playinfobarcount);
+					timeshiftposplay(&playinfobarstatus, &playinfobarcount);
 					if(status.playing == 1)
 						playrcjumpr(status.playfile, NULL, getconfigint("skip79", NULL), &playinfobarstatus, &playinfobarcount, 1, 4);
 					continue;

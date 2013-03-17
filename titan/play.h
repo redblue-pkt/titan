@@ -64,6 +64,7 @@ void screenplaybufferstatus(struct stimerthread* self)
 }
 
 //flag = 4 ---> timeshift
+//flag = 5 --> timeshift, not in play mode (only recording)
 void screenplayinfobar(char* file, char* showname, int mode, int playertype, int flag)
 {
 	int change = 1;
@@ -138,6 +139,8 @@ void screenplayinfobar(char* file, char* showname, int mode, int playertype, int
 		unsigned long long startpos = 0;
 		if(flag == 4)
 			ret = playergetinfots(&len, &startpos, NULL, &pos, NULL, 1);
+		else if(flag == 5)
+			ret = playergetinfots(&len, &startpos, NULL, &pos, NULL, 2);
 		else
 			ret = playergetinfots(&len, &startpos, NULL, &pos, NULL, 0);
 		len = len / 90000;
