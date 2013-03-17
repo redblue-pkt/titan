@@ -116,6 +116,71 @@ void screencaidlock(struct dvbdev* dvbnode)
 	clearscreen(caidlock);
 }
 
+void screenmoduleadjust()
+{
+	int rcret = 0;
+	char* tmpstr = NULL;
+
+	struct skin* moduleadjust = getscreen("moduleadjust");
+	struct skin* listbox = getscreennode(moduleadjust, "listbox");
+	struct skin* nocamsg = getscreennode(moduleadjust, "nocamsg");
+	struct skin* camwait = getscreennode(moduleadjust, "camwait");
+	struct skin* checkcamdecrypt = getscreennode(moduleadjust, "checkcamdecrypt");
+	struct skin* caskipprivat = getscreennode(moduleadjust, "caskipprivat");
+	struct skin* casendallcaids = getscreennode(moduleadjust, "casendallcaids");
+
+	struct skin* tmp = NULL;
+
+	addchoicebox(nocamsg, "0", _("yes"));
+	addchoicebox(nocamsg, "1", _("no"));
+	setchoiceboxselection(nocamsg, getconfig("nocamsg", NULL));
+
+	addchoicebox(camwait, "25", _("slow"));
+	addchoicebox(camwait, "15", _("middle"));
+	addchoicebox(camwait, "5", _("fast"));
+	setchoiceboxselection(camwait, getconfig("camwait", NULL));
+
+	addchoicebox(checkcamdecrypt, "0", _("no"));
+	addchoicebox(checkcamdecrypt, "1", _("yes"));
+	setchoiceboxselection(checkcamdecrypt, getconfig("checkcamdecrypt", NULL));
+
+	addchoicebox(caskipprivat, "0", _("no"));
+	addchoicebox(caskipprivat, "1", _("yes"));
+	setchoiceboxselection(caskipprivat, getconfig("caskipprivat", NULL));
+
+	addchoicebox(casendallcaids, "0", _("no"));
+	addchoicebox(casendallcaids, "1", _("yes"));
+	setchoiceboxselection(casendallcaids, getconfig("casendallcaids", NULL));
+
+	drawscreen(moduleadjust, 0, 0);
+	addscreenrc(moduleadjust, listbox);
+
+	tmp = listbox->select;
+	while(1)
+	{
+		addscreenrc(moduleadjust, tmp);
+		rcret = waitrc(moduleadjust, 0, 0);
+		tmp = listbox->select;
+
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			addconfigscreencheck("nocamsg", nocamsg, "0");
+			addconfigscreencheck("camwait", camwait, "25");
+			addconfigscreencheck("checkcamdecrypt", checkcamdecrypt, "0");
+			addconfigscreencheck("caskipprivat", caskipprivat, "0");
+			status.caskipprivat = getconfigint("caskipprivat", NULL);
+			addconfigscreencheck("casendallcaids", casendallcaids, "0");
+			status.casendallcaids = getconfigint("casendallcaids", NULL);
+
+			break;
+		}
+	}
+
+	delownerrc(moduleadjust);
+	clearscreen(moduleadjust);
+}
+
 void screenmoduleconfig()
 {
 	int rcret = 0, i = 0, reset = 0, allready = 1;
@@ -270,6 +335,11 @@ start:
 				screencaidlock((struct dvbdev*)listbox->select->handle);
 				reset = 0;
 			}
+		}
+		if(rcret == getrcconfigint("rcblue", NULL))
+		{
+			screenmoduleadjust();
+			reset = 0;
 		}
 		if(rcret == RCTIMEOUT) goto start;
 	}
