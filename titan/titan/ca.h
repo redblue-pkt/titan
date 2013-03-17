@@ -7,7 +7,7 @@ void cawait(struct stimerthread* self, struct dvbdev* dvbnode, int tout)
 	unsigned int i = 0;
 	ca_slot_info_t info;
 
-	if(dvbnode == NULL) return;
+	if(dvbnode == NULL || self == NULL) return;
 	info.num = dvbnode->devnr;
 
 	while(self->aktion == START)
@@ -1515,6 +1515,7 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 				cawait(self, dvbnode, -1);
 			canode->status = 0;
 			debug(620, "status: no, slot %d", dvbnode->devnr);
+			if(dvbnode->caslot->status == 101) break; //titan end
 
 			//reset the module an wait max 10 sek
 			careseting(self, dvbnode, 0);
@@ -1552,6 +1553,7 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 		{
 			//debug(620, "status: wait, slot %d", dvbnode->devnr);
 			ret = caread(dvbnode, buf, &len);
+			if(dvbnode->caslot->status == 101) break; //titan end
 			if(ret == 0) //ready
 			{
 				//debug(620, "read, slot %d, ret %d", dvbnode->devnr, ret);
@@ -1681,7 +1683,8 @@ void cathread(struct stimerthread* self, struct dvbdev* dvbnode)
 
 	while(self != NULL && self->aktion != STOP && self->aktion != PAUSE)
 	{
-		cacheck(self, dvbnode);
+		if(dvbnode->caslot->status != 101)
+			cacheck(self, dvbnode);
 		if(dvbnode->caslot->fastrun == 0)
 			sleep(1);
 		else
