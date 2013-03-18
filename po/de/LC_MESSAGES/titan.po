@@ -301,7 +301,7 @@ msgstr "folgt demnächst, das Team arbeitet dran"
 msgid "Committed command"
 msgstr "Committed command"
 msgid "Common Interface"
-msgstr "CI Module"
+msgstr "CI-Module"
 msgid "Contrast"
 msgstr "Kontrast"
 msgid "Configure"
@@ -2209,6 +2209,9 @@ msgstr "Hier können Sie einen Blindscan durchführen, dieser Vorgang dauert sehr 
 msgid "Here you can configure Ci-Modules. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie CI-Module konfigurieren.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
+msgid "Here you can make your module settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie die Einstellungen für CI-Module anpassen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
 msgid "Here you can select your Network Interface. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie Ihre Netzwerkschnittstelle auswählen.\n\nBenutzen Sie das Steuer-Kreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
@@ -2582,7 +2585,7 @@ msgid "Are you sure you want to delete this directory?"
 msgstr "Wollen Sie dieses Verzeichnis löschen ?"
 
 msgid "Wait for cam ready"
-msgstr "Wartezeit für CI Module"
+msgstr "Wartezeit für CI-Module"
 
 msgid "middle"
 msgstr "mittel"
@@ -2627,7 +2630,7 @@ msgid "Streaming version of this file is currently not available. You can downlo
 msgstr "Streaming-Version dieser Datei ist derzeit nicht verfügbar. Sie können es nur downloaden."
 
 msgid "Autocheck cam can decrypt"
-msgstr "Automatisches überprüfen ob Ihr Cam entschlüsseln kann ?"
+msgstr "Automatisches Überprüfen ob Ihr CAM entschlüsseln kann?"
 
 msgid "Enable Cable Tuner ?"
 msgstr "Wollen Sie den Kabel Tuner aktivieren ?"
@@ -2726,10 +2729,10 @@ msgid "Reader active"
 msgstr "Reader aktiviert"
 
 msgid "Oscam config written to medium !"
-msgstr "Oscam Config wird gespeichert !"
+msgstr "Oscam Config wurde gespeichert!"
 
 msgid "Restart Oscam ?"
-msgstr "Soll Oscam neu gestartet werden ?"
+msgstr "Soll Oscam neu gestartet werden?"
 
 msgid "first slot"
 msgstr "erster Kartenschacht (unten)"
@@ -2919,3 +2922,6 @@ msgstr "Timeshiftart"
 
 msgid "Ask on channel switch"
 msgstr "Nachfragen bei Kanalwechsel"
+
+msgid "Send all CAID to modules"
+msgstr "Alle CAIDs an CI-Modul schicken"
