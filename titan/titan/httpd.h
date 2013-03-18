@@ -117,15 +117,23 @@ char* createheader(off64_t len, char* filename, char* mime, char* ext, int code,
 	return header;
 }
 
-void senderror(int* connfd, char* title, char* text, int auth)
+void senderror(int* connfd, char* title, char* text, int auth, int fmt)
 {
 	char* buf = NULL, *header = NULL;;
 
-	buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=stylesheet type=text/css href=titan.css><title>Error ", 1, 0);
-	buf = ostrcat(buf, title, 1, 0);
-	buf = ostrcat(buf, "</title></head><body class=body><font class=error>Error - ", 1, 0);
-	buf = ostrcat(buf, text, 1, 0);
-	buf = ostrcat(buf, "</font></body></html>", 1, 0);
+	if(fmp == 0)
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=stylesheet type=text/css href=titan.css><title>Error ", 1, 0);
+		buf = ostrcat(buf, title, 1, 0);
+		buf = ostrcat(buf, "</title></head><body class=body><font class=error>Error - ", 1, 0);
+		buf = ostrcat(buf, text, 1, 0);
+		buf = ostrcat(buf, "</font></body></html>", 1, 0);
+	}
+	else
+	{
+		buf = ostrcat(buf, "Error: ", 1, 0);
+		buf = ostrcat(buf, text, 1, 0);
+	}
 
 	header = createheader(strlen(buf), NULL, NULL, NULL, 500, auth);
 
@@ -304,7 +312,7 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 			socksend(connfd, (unsigned char*)buf, buflen, 5000 * 1000);
 	}
 	else
-		senderror(connfd, "query", "Error in query string", auth);
+		senderror(connfd, "query", "Error in query string", auth, fmt);
 
 	free(header);
 	free(buf);
@@ -401,7 +409,7 @@ void gotdata(int* connfd)
 			{	
 				xmessage(filename);
 				sendoktext(connfd, "ok", 0);
-				//senderror(connfd, "ok", "ok", 0);
+				//senderror(connfd, "ok", "ok", 0, 0);
 				free(buf); buf = NULL;
 				free(filename); filename = NULL;
 				tmpstr = NULL;
@@ -450,7 +458,7 @@ void gotdata(int* connfd)
 			if(filefd < 0)
 			{
 				perr("open filename=%s", fullfilename);
-				senderror(connfd, "Open File", "Can't open File", auth);
+				senderror(connfd, "Open File", "Can't open File", auth, 0);
 				free(fullfilename); fullfilename = NULL;
 				free(buf); buf = NULL;
 				free(filename); filename = NULL;
