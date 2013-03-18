@@ -119,7 +119,6 @@ void screencaidlock(struct dvbdev* dvbnode)
 void screenmoduleadjust()
 {
 	int rcret = 0;
-	char* tmpstr = NULL;
 
 	struct skin* moduleadjust = getscreen("moduleadjust");
 	struct skin* listbox = getscreennode(moduleadjust, "listbox");
