@@ -345,6 +345,7 @@ start:
 		{
 			screenmoduleadjust();
 			reset = 0;
+			drawscreen(moduleconfig, 0, 0);
 		}
 		if(rcret == RCTIMEOUT) goto start;
 	}
