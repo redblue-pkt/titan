@@ -121,7 +121,7 @@ void senderror(int* connfd, char* title, char* text, int auth, int fmt)
 {
 	char* buf = NULL, *header = NULL;;
 
-	if(fmp == 0)
+	if(fmt == 0)
 	{
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=stylesheet type=text/css href=titan.css><title>Error ", 1, 0);
 		buf = ostrcat(buf, title, 1, 0);
