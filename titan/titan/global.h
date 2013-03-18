@@ -2425,6 +2425,35 @@ int changepolicy()
 	return 0;
 }
 
+char* getmac(char* dev)
+{
+	int sock = -1, i = 0;
+	struct ifreq buf;
+	char* tmpstr = NULL;
+	char tmpbuf[4] = {};
+
+	if(dev == NULL) return NULL;
+
+	sock = socket(PF_INET, SOCK_DGRAM, 0);
+	if(sock >= 0)
+	{
+		memset(&buf, 0x00, sizeof(buf));
+		strcpy(buf.ifr_name, dev);
+		ioctl(sock, SIOCGIFHWADDR, &buf);
+		close(sock);
+
+		for(i = 0; i < 6; i++)
+		{
+			snprintf(tmpbuf, 4, "%.2X:", (unsigned char)buf.ifr_hwaddr.sa_data[i]);
+			tmpstr = ostrcat(tmpstr, tmpbuf, 1, 0);
+		}
+		if(tmpbuf != NULL)
+			tmpstr[strlen(tmpstr) - 1] = '\0';
+	}
+
+	return tmpstr;
+}
+
 char* getdefaultgw()
 {
 	char* name = NULL;

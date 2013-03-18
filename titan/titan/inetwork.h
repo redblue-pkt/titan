@@ -266,7 +266,6 @@ int addinetworkall(struct stimerthread* self)
 
 	for(tmpifa = ifa; tmpifa != NULL; tmpifa = tmpifa->ifa_next)
 	{
-		char* cmddev = NULL;
 		char* tmp_ipaddresse = NULL;
 		char* tmp_netmask = NULL;
 		char* tmp_mac = NULL;
@@ -280,9 +279,6 @@ int addinetworkall(struct stimerthread* self)
 		//Don't add IPV6 ot other
 		if(tmpifa->ifa_addr->sa_family != AF_INET && tmpifa->ifa_addr->sa_family != AF_PACKET)
 			continue;
-
-		cmddev = ostrcat(cmddev, tmpifa->ifa_name, 1, 0);
-		cmddev = ostrcat("ifconfig ", cmddev, 0, 1);
 
 		//Device Name
 		tmp_device = string_newline(ostrcat(tmp_device, tmpifa->ifa_name, 1, 0));
@@ -354,20 +350,9 @@ int addinetworkall(struct stimerthread* self)
 		if(self == NULL)
 		{
 			// MAC
-			if(ostrcmp(cmddev, "ifconfig lo") == 0)
+			tmp_mac = getmac(tmp_device);
+			if(tmp_mac == NULL)
 				tmp_mac = ostrcat(tmp_mac, "00:00:00:00:00:00", 1, 0);
-			else
-			{
-				cmd = ostrcat(cmd, " | grep -m1 'HWaddr' | awk '{ print $5 }'", 1, 0);
-				cmd = ostrcat(cmddev, cmd, 0, 1);
-				tmp_mac = command(cmd);
-		
-				if(tmp_mac != NULL)
-					tmp_mac = string_newline(tmp_mac);
-				else
-					tmp_mac = ostrcat(tmp_mac, "00:00:00:00:00:00", 1, 0);
-			}
-			free(cmd); cmd = NULL;
 
 			// DHCP
 			if(tmp_type == 0)
@@ -406,8 +391,6 @@ int addinetworkall(struct stimerthread* self)
 		}
 		else
 			node = addinetwork(tmp_device, tmp_ipaddresse, tmp_netmask, tmp_mac, tmp_broadcast, tmp_type, node);
-
-		free(cmddev); cmddev = NULL;
 	}
 
 	freeifaddrs(ifa); ifa = NULL;
