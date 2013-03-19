@@ -158,8 +158,8 @@ if [ $BUILDTYPE == 0 ]; then
 	echo "[titan]--------------------------------------------------------"
 	
 	cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-	echo make curl
-	make curl
+#	echo make curl
+#	make curl
 			
 	cd "$HOME"/flashimg/source.titan/netsurf
 	./makesh4.sh $STM
