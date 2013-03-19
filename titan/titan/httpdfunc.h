@@ -2536,7 +2536,7 @@ char* webrectimersend(char* param, int fmt)
 			node->repeate = atoi(repeat);
 	
 		loctime = olocaltime(&node->begin);
-		if(loctime != NULL)
+		if(loctime != NULL && begin != NULL)
 		{
 			tmpstr = strptime(begin, "%H:%M %d-%m-%Y", loctime);
 			if(tmpstr != NULL) {
@@ -2550,7 +2550,7 @@ char* webrectimersend(char* param, int fmt)
 		free(loctime); loctime = NULL;
 
 		loctime = olocaltime(&node->end);
-		if(loctime != NULL)
+		if(loctime != NULL && end != NULL)
 		{
 			tmpstr = strptime(end, "%H:%M %d-%m-%Y", loctime);
 			if(tmpstr != NULL) {
