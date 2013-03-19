@@ -170,7 +170,7 @@ if [ $BUILDTYPE == 0 ]; then
 		echo "[titan] check your src"
 		echo "[titan]--------------------------------------------------------"
 		touch "$HOME"/flashimg/.ipk-build-error
-		exit 1
+#		exit 1
 	fi
 	
 	echo "[titan]--------------------------------------------------------"
