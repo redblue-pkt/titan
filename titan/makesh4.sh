@@ -158,8 +158,8 @@ if [ $BUILDTYPE == 0 ]; then
 	echo "[titan]--------------------------------------------------------"
 	
 	cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-#	echo make curl
-#	make curl
+	echo make curl
+	make curl
 			
 	cd "$HOME"/flashimg/source.titan/netsurf
 	./makesh4.sh $STM
@@ -170,7 +170,7 @@ if [ $BUILDTYPE == 0 ]; then
 		echo "[titan] check your src"
 		echo "[titan]--------------------------------------------------------"
 		touch "$HOME"/flashimg/.ipk-build-error
-#		exit 1
+		exit 1
 	fi
 	
 	echo "[titan]--------------------------------------------------------"
