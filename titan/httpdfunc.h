@@ -182,6 +182,7 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 			}
 			else
 			{
+				*buf = ostrcat(*buf, olutoa(epgnode->endtime), 1, 1);
 				*buf = ostrcat(*buf, "#", 1, 0);
 				*buf = ostrcat(*buf, "#", 1, 0);
 				*buf = ostrcat(*buf, "#", 1, 0);
@@ -191,6 +192,7 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 		else
 		{
 			*buf = ostrcat(*buf, "0", 1, 0);
+			*buf = ostrcat(*buf, "#", 1, 0);
 			*buf = ostrcat(*buf, "#", 1, 0);
 			*buf = ostrcat(*buf, "#", 1, 0);
 			*buf = ostrcat(*buf, "#", 1, 0);
