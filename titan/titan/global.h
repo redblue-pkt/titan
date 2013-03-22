@@ -1406,6 +1406,8 @@ void setskinnodeslocked(int flag)
 				if(ostrcmp("vfdisplay", child->name) == 0) child->locked = 1;
 				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
 			}
+// disable backup restore entry
+			if(ostrcmp("system_backup_restore", child->name) == 0) child->locked = 1;
 
 			if((checkbox("ATEMIO7600") == 1 ) || (checkbox("UFS912") == 1) || (checkbox("ATEVIO7000") == 1) || (checkbox("ATEVIO700") == 1))
 			{
