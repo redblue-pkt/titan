@@ -25,6 +25,7 @@ void screenavsettings(int flag)
 	struct skin* volautochangevalue = getscreennode(avsettings, "volautochangevalue");
 	struct skin* mode3d = getscreennode(avsettings, "mode3d");
 	struct skin* autosubtitle = getscreennode(avsettings, "autosubtitle");
+	struct skin* audiodelaybitstream = getscreennode(avsettings, "audiodelaybitstream");
 	struct skin* tmp = NULL;
 
 	ret = getvideomodechoices();
@@ -141,6 +142,19 @@ void screenavsettings(int flag)
 	addchoicebox(autosubtitle, "0", _("no"));
 	addchoicebox(autosubtitle, "1", _("yes"));
 	setchoiceboxselection(autosubtitle, getconfig("autosubtitle", NULL));
+
+	addchoicebox(audiodelaybitstream, "0", _("no"));
+	addchoicebox(audiodelaybitstream, "350", "10ms");
+	addchoicebox(audiodelaybitstream, "700", "20ms");
+	addchoicebox(audiodelaybitstream, "1050", "30ms");
+	addchoicebox(audiodelaybitstream, "1400", "40ms");
+	addchoicebox(audiodelaybitstream, "1750", "50ms");
+	addchoicebox(audiodelaybitstream, "2100", "60ms");
+	addchoicebox(audiodelaybitstream, "2450", "70ms");
+	addchoicebox(audiodelaybitstream, "2800", "80ms");
+	addchoicebox(audiodelaybitstream, "3150", "90ms");
+	addchoicebox(audiodelaybitstream, "3500", "100ms");
+	setchoiceboxselection(audiodelaybitstream, getconfig("audiodelaybitstream", NULL));
 
 	drawscreen(avsettings, 0, 0);
 	addscreenrc(avsettings, listbox);
@@ -280,6 +294,14 @@ void screenavsettings(int flag)
 					setmode3d(mode3d->ret); 
 				free(ret); ret = NULL;
 			}
+			if(audiodelaybitstream->ret != NULL)
+			{
+				ret = getaudiodelaybitstream();
+				if(ostrcmp(ret, audiodelaybitstream->ret) != 0)
+					setaudiodelaybitstream(audiodelaybitstream->ret);
+				free(ret); ret = NULL;
+			}
+
 			addconfigscreencheck("volautochangevalue", volautochangevalue, 0);
 			status.volautochangevalue = getconfigint("volautochangevalue", NULL);
 			addconfigscreencheck("av_ac3default", ac3default, 0);
