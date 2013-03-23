@@ -1275,7 +1275,7 @@ void autochangechannelname()
 	{
 		buf = dvbgetsdt(status.aktservice->fedev, secnr, 2000000);
 		if(buf != NULL)
-			findchannel(status.aktservice->fedev, NULL, buf, &lastsecnr, NULL, NULL, 1);
+			findchannel(status.aktservice->fedev, NULL, buf, &lastsecnr, NULL, NULL, 1, 1);
 		else
 			break;
 		free(buf); buf = NULL;
