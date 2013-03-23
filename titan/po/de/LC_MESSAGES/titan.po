@@ -2928,3 +2928,9 @@ msgstr "Nachfragen bei Kanalwechsel"
 
 msgid "Send all CAID to modules"
 msgstr "Alle CAIDs an CI-Modul schicken"
+
+msgid "Automatic start last subtitle"
+msgstr "Automatischer Untertitel Start"
+
+msgid "Audio delay"
+msgstr "Audio Verzögerung"
