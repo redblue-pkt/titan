@@ -4293,6 +4293,51 @@ char* getac3()
 	return value;
 }
 
+int setaudiodelaybitstream(char* value)
+{
+	debug(1000, "in");
+	char* audiodelaybitstreamdev = NULL;
+	int ret = 0;
+
+	audiodelaybitstreamdev = getconfig("audiodelaybitstreamdev", NULL);
+
+	if(audiodelaybitstreamdev != NULL && value != NULL)
+	{
+		debug(100, "set %s to %s", audiodelaybitstreamdev, value);
+		ret = writesys(audiodelaybitstreamdev, value, 0);
+		if(ret == 0) addconfig("audiodelaybitstream", value);
+		return ret;
+	}
+
+	debug(1000, "out");
+	return 0;
+}
+
+char* getaudiodelaybitstream()
+{
+	debug(1000, "in");
+	char *audiodelaybitstreamdev = NULL;
+	char *value = NULL;
+
+	audiodelaybitstreamdev = getconfig("audiodelaybitstreamdev", NULL);
+
+	if(audiodelaybitstreamdev == NULL)
+	{
+		debug(1000, "out -> NULL detect");
+		return NULL;
+	}
+
+	value = readsys(audiodelaybitstreamdev, 1);
+	if(value == NULL)
+	{
+		debug(1000, "out -> NULL detect");
+		return NULL;
+	}
+
+	debug(1000, "out");
+	return value;
+}
+
 char* getpolicychoices()
 {
 	debug(1000, "in");
