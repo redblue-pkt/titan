@@ -2934,3 +2934,9 @@ msgstr "Automatischer Untertitel Start"
 
 msgid "Audio delay"
 msgstr "Audio Verzögerung"
+
+msgid "Show hidden files"
+msgstr "Versteckte Dateien anzeigen"
+
+msgid "Activate CEC"
+msgstr "CEC einschalten"
