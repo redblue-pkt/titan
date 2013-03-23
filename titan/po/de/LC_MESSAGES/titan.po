@@ -2917,6 +2917,9 @@ msgstr "Lan Verbindung ausschalten ?"
 msgid "EPG SHORT VIEW"
 msgstr "EPG-Kurzübersicht"
 
+msgid "Short EPG"
+msgstr "Kurz-EPG"
+
 msgid "Timeshift Settings"
 msgstr "Timeshift Einstellungen"
 
