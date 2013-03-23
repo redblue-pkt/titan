@@ -270,7 +270,7 @@ int videoslowmotion(struct dvbdev* node, int frames);
 unsigned int satblindscan(struct stimerthread* timernode, int onlycalc);
 unsigned int cableblindscan(struct stimerthread* timernode, int onlycalc);
 unsigned int terrblindscan(struct stimerthread* timernode, int onlycalc);
-int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char *buf, uint8_t* lastsecnr, struct skin* scan, struct skin* listbox, int flag);
+int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char *buf, uint8_t* lastsecnr, struct skin* scan, struct skin* listbox, int ichangename, int flag);
 void screenscanconfig(int flag);
 
 // screensaver.h
