@@ -130,10 +130,11 @@ void screennetwork_inadyn()
 	struct skin* hoster = getscreennode(inadyn, "system");
 	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
+	char* tmpstr = NULL;
 
 	char* iuser = NULL, *ipw = NULL, *ihost = NULL, *isystem = NULL;
 
-	readinadyn("/var/etc/inadyn.conf", &iuser, &ipw, &ihost, &isystem);
+	readinadyn(getconfig("inadynfile", NULL), &iuser, &ipw, &ihost, &isystem);
 	
 	addchoicebox(startmode, "n", _("no"));
 	addchoicebox(startmode, "y", _("yes"));
@@ -171,14 +172,18 @@ void screennetwork_inadyn()
 
 		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcgreen", NULL))
 		{
-			writeinadyn("/var/etc/inadyn.conf", user->ret, pw->ret, host->ret, hoster->ret);
+			writeinadyn(getconfig("inadynfile", NULL), user->ret, pw->ret, host->ret, hoster->ret);
 			if(startmode->ret != NULL) addownconfig("inadyn", startmode->ret);
 			if(rcret == getrcconfigint("rcok", NULL)) break;
 			if(rcret == getrcconfigint("rcgreen", NULL))
 			{
 				drawscreen(load, 0, 0);
 				system("killall inadyn; sleep 2; killall -9 inadyn");
-				ret = system("inadyn --input_file /var/etc/inadyn.conf &");
+				tmpstr = ostrcat(tmpstr, "inadyn --input_file ", 1, 0);
+				tmpstr = ostrcat(tmpstr, getconfig("inadynfile", NULL), 1, 0);
+				tmpstr = ostrcat(tmpstr, " &", 1, 0);
+				ret = system(tmpstr);
+				free(tmpstr); tmpstr = NULL;
 				clearscreen(load);
 				if(ret == 0)
 					textbox(_("Message"), _("DYNDNS started."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);

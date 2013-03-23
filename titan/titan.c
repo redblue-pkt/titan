@@ -561,7 +561,7 @@ int main(int argc, char *argv[])
 	ret = setac3(getconfig("av_ac3mode", NULL));
 	ret = setmode3d(getconfig("av_mode3d", NULL));
 	ret = setvfdbrightness(getconfigint("vfdbrightness", NULL));
-	ret = setaudiodelaybitstream(getconfig("audiodelaybitstream", NULL));
+	ret = setaudiodelaybitstream(getconfig("audiodelaybitstreamdev", NULL));
 	ret = addinetworkall(NULL);
 	
 #ifndef SIMULATE
