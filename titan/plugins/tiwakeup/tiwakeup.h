@@ -18,6 +18,7 @@ void screentiwakeup()
 	struct skin* tiwakeup3 = getscreennode(tiwakeup, "tiwakeup3");
 	struct skin* tiwakeup4 = getscreennode(tiwakeup, "tiwakeup4");
 	struct skin* tiwakeup5 = getscreennode(tiwakeup, "tiwakeup5");
+	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL;
 
@@ -54,10 +55,12 @@ void screentiwakeup()
 	
 			if(listbox->select != NULL && listbox->select->ret != NULL)
 			{
+				drawscreen(load, 0, 0);
 				tmpstr = fixip(listbox->select->ret, 1);
 				tmpstr = ostrcat("ether-wake.sh ", tmpstr, 0, 1);
 				ret = WEXITSTATUS(system(tmpstr));
 				free(tmpstr); tmpstr = NULL;
+				clearscreen(load);
 
 				if(ret == 0)
 					textbox(_("Message"), "Send wakeup ok!", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);

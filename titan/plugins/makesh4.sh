@@ -113,5 +113,6 @@ compile "filemanager" "filemanager" "" ""
 compile "catcatch" "catcatch" "" ""
 compile "facebook" "facebook" "" "-l curl"
 compile "readerconfig" "readerconfig" "" ""
+compile "tiwakeup" "tiwakeup" "" ""
 
 #rm -r networkbrowser/networkbrowser
