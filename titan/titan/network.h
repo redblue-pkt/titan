@@ -740,7 +740,7 @@ void screennetwork_wlan()
 					if(textbox(_("Message"), _("Start Wlan ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 					{
 						drawscreen(load, 0, 0);
-						wlanstart();
+						ret = wlanstart();
 						clearscreen(load);
 						
 						if(ret == 0)
@@ -755,7 +755,7 @@ void screennetwork_wlan()
 			if(rcret == getrcconfigint("rcgreen", NULL))
 			{
 				drawscreen(load, 0, 0);
-				wlanstart();
+				ret = wlanstart();
 				clearscreen(load);
 				if(ret == 0)
 				{
