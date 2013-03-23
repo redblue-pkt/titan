@@ -418,9 +418,9 @@ int parsenit(unsigned char* buf, uint8_t* lastsecnr, int orbitalpos)
 
 //flag 0: from scan
 //flag 1: from update channelname
-int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char *buf, uint8_t* lastsecnr, struct skin* scan, struct skin* listbox, int flag)
+int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char *buf, uint8_t* lastsecnr, struct skin* scan, struct skin* listbox, int ichangename, int flag)
 {
-	int ret = -1;
+	int ret = -1, changed = 0;
 	uint64_t transponderid = 0;
 	struct skin* node = NULL;
 	struct channel* chnode = NULL;
@@ -502,8 +502,6 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 					if(flag == 0) node = addlistbox(scan, listbox, node, 1);
 					if(node != NULL)
 					{
-						if(chnode != NULL && chnode->transponder != NULL)
-							node->fontcol = convertcol("deaktivcol");
 						switch(servicetype)
 						{
 							case 0:
@@ -528,13 +526,20 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 							tmpstr = ostrcat(tmpstr, _("Radio"), 1, 0);
 						else
 							tmpstr = ostrcat(tmpstr, _("Data"), 1, 0);
+
+						changed = 0;
 						if(chnode != NULL && chnode->name != NULL && strlen(chnode->name) > 0 && ostrcmp(tmpstr2, chnode->name) != 0)
 						{
 							tmpstr = ostrcat(tmpstr, " - ", 1, 0);
 							tmpstr = ostrcat(tmpstr, chnode->name, 1, 0);
+							if(ichangename == 1) changed = 1;
 						}
 						tmpstr = ostrcat(tmpstr, ")", 1, 0);
 						changetext(node, tmpstr);
+
+						if(chnode != NULL && chnode->transponder != NULL && changed == 0)
+							node->fontcol = convertcol("deaktivcol");
+
 						changeparam1(node, tmpstr1);
 						changeparam2(node, tmpstr2);
 						tmpuint64 = (uint64_t*)calloc(1, sizeof(uint64_t) * 3);
@@ -1182,7 +1187,7 @@ void doscan(struct stimerthread* timernode)
 				buf = dvbgetsdt(fenode, secnr, scaninfo.timeout);
 #endif
 				if(buf != NULL)
-					findchannel(fenode, tpnode, buf, &lastsecnr, scaninfo.scanscreen, scaninfo.listbox, 0);
+					findchannel(fenode, tpnode, buf, &lastsecnr, scaninfo.scanscreen, scaninfo.listbox, scaninfo.changename, 0);
 				else
 					break;
 				free(buf); buf = NULL;
@@ -1200,7 +1205,7 @@ void doscan(struct stimerthread* timernode)
 	debug(500, "channel scan thread end");
 }
 
-void scanaddchannel(struct skin* node, int scantype, struct transponder* tp1, int changename)
+void scanaddchannel(struct skin* node, int scantype, struct transponder* tp1, int ichangename)
 {
 	int serviceid = 0;
 	uint64_t transponderid = 0;
@@ -1268,7 +1273,7 @@ void scanaddchannel(struct skin* node, int scantype, struct transponder* tp1, in
 	{
 		node->fontcol = convertcol("deaktivcol");
 		//change channel name if selected
-		if(changename == 1 && node->param2 != NULL && strlen(node->param2) > 0 && ostrcmp(node->param2, chnode->name) != 0)
+		if(ichangename == 1 && node->param2 != NULL && strlen(node->param2) > 0 && ostrcmp(node->param2, chnode->name) != 0)
 		{
 			free(chnode->name);
 			chnode->name = ostrcat(node->param2, NULL, 0, 0);
@@ -1358,7 +1363,7 @@ void delchannelbymultisat()
 	}
 }
 
-void screenscan(struct transponder* transpondernode, struct skin* mscan, char* tuner, int scantype, int orbitalpos, unsigned int frequency, int inversion, unsigned int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int networkscan, int onlyfree, int clear, int blindscan, int changename, int system, int timeout)
+void screenscan(struct transponder* transpondernode, struct skin* mscan, char* tuner, int scantype, int orbitalpos, unsigned int frequency, int inversion, unsigned int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int networkscan, int onlyfree, int clear, int blindscan, int ichangename, int system, int timeout)
 {
 	int rcret = 0, tpmax = 0, i = 0, alladded = 0;
 	struct skin* scan = getscreen("scan");
@@ -1492,6 +1497,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	scaninfo.onlyfree = onlyfree;
 	scaninfo.networkscan = networkscan;
 	scaninfo.blindscan = blindscan;
+	scaninfo.changename = ichangename;
 	scaninfo.clear = clear;
 	scaninfo.tpmax = tpmax;
 	timernode = addtimer(&doscan, START, 1000, 1, NULL, NULL, NULL);
@@ -1557,7 +1563,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 		rcret = waitrc(scan, 1000, 0);
 
 		if(scantype != 3 && rcret == getrcconfigint("rcred", NULL))
-			scanaddchannel(listbox->select, scantype, tpnode, changename);
+			scanaddchannel(listbox->select, scantype, tpnode, ichangename);
 
 		if((scantype != 3 && rcret == getrcconfigint("rcgreen", NULL)) || (scantype == 3 && scaninfo.threadend == 1 && alladded < 2))
 		{
@@ -1576,7 +1582,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 			while(lnode != NULL)
 			{
 				if(lnode->fontcol != deaktivcol && lnode->del == 1)
-					scanaddchannel(lnode, scantype, tpnode, changename);
+					scanaddchannel(lnode, scantype, tpnode, ichangename);
 				lnode = lnode->next;
 			}
 			clearscreen(load);

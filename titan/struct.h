@@ -496,6 +496,7 @@ struct scaninfo
 	int newdatacount;
 	int blindcount;
 	int newblindcount;
+	int changename;
 	unsigned int blindmax;
 } scaninfo;
 
