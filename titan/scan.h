@@ -489,6 +489,8 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 					//channelname
 					tmpstr2 = strndup((char*)&(buf[pos2 + 4 + providerlen + 1]), (2 + buf[pos2 + 1]) - (4 + providerlen + 1));
 
+					tmpstr1 = string_strip_whitechars(tmpstr1);
+					tmpstr2 = string_strip_whitechars(tmpstr2);
 					if(tmpstr1 == NULL || strlen(tmpstr1) == 0) tmpstr1 = ostrcat(tmpstr1, "unknown", 1, 0);
 					if(tmpstr2 == NULL || strlen(tmpstr2) == 0) tmpstr2 = ostrcat(tmpstr2, "unknown", 1, 0);
 
