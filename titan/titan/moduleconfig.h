@@ -131,7 +131,7 @@ void screenmoduleadjust()
 
 	struct skin* tmp = NULL;
 
-	if(checkbox("AT7500") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO500") == 1)
+	if(checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO510") == 1)
 		extmoduldetect->hidden = NO;
 	else
 		extmoduldetect->hidden = YES;
@@ -182,7 +182,7 @@ void screenmoduleadjust()
 			addconfigscreencheck("casendallcaids", casendallcaids, "0");
 			status.casendallcaids = getconfigint("casendallcaids", NULL);
 
-			if(checkbox("AT7500") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO500") == 1)
+			if(checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO510") == 1)
 			{
 				if(extdetect->ret != NULL)
 					addownconfig("extmoduldetect", extmoduldetect->ret);

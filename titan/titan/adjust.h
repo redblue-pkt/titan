@@ -222,12 +222,12 @@ void screenadjust()
 	else
 		emucontrol->hidden = YES;
 
-	if(checkbox("ATEMIO500") == 1 || checkbox("ATEMIO510") == 1 || checkbox("UFS912") == 1 || checkbox("AT7500") == 1 || checkbox("ATEMIO7600") == 1)
+	if(checkbox("ATEMIO510") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1)
 		usecec->hidden = NO;
 	else
 		usecec->hidden = YES;
 
-	if(checkbox("AT7500") == 1 || checkbox("ATEMIO7600") == 1)
+	if(checkbox("ATEMIO7600") == 1)
 		sataswitch->hidden = NO;
 	else
 		sataswitch->hidden = YES;
@@ -342,10 +342,10 @@ void screenadjust()
 			if(ostrcmp(minitv->ret, "1") == 0) resettvpic();
 			addconfigscreencheck("minitv", minitv, "0");
 
-			if(checkbox("ATEMIO500") == 1 || checkbox("ATEMIO510") == 1 || checkbox("UFS912") == 1)
+			if(checkbox("ATEMIO510") == 1 || checkbox("UFS912") == 1)
 				addconfigscreencheck("usecec", usecec, "0");
 
-			if(checkbox("AT7500") == 1 || checkbox("ATEMIO7600") == 1)
+			if(checkbox("ATEMIO7600") == 1)
 			{
 				addconfigscreencheck("usecec", usecec, "0");
 				if(sataswitch->ret != NULL)
