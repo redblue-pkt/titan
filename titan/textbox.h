@@ -14,6 +14,7 @@ int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char*
 	struct skin* framebuffer = getscreen("framebuffer");
 	char* bg = NULL;
 
+	m_lock(&status.textboxmutex, 22);
 	if(pthread_self() != status.mainthread)
 		fromthread = 1;
 
@@ -146,6 +147,7 @@ int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char*
 	changetext(textbox, NULL);
 	debug(1000, "out");
 
+	m_unlock(&status.textboxmutex, 22);
 	if(rcret == rc1) return 1;
 	else if(rcret == rc2) return 2;
 	else if(rcret == rc3) return 3;
