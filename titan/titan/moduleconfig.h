@@ -159,7 +159,7 @@ void screenmoduleadjust()
 
 	addchoicebox(extmoduldetect, "0", _("yes"));
 	addchoicebox(extmoduldetect, "1", _("no"));
-	setchoiceboxselection(extmoduldetect, getownconfig("extmoduldetect", NULL));
+	setchoiceboxselection(extmoduldetect, getownconfig("extmoduldetect"));
 
 	drawscreen(moduleadjust, 0, 0);
 	addscreenrc(moduleadjust, listbox);
