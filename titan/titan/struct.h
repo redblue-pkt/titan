@@ -1216,6 +1216,7 @@ struct status
 	pthread_mutex_t newslettermutex;
 	pthread_mutex_t tithekmutex;
 	pthread_mutex_t inetworkmutex;
+	pthread_mutex_t textboxmutex;
 	// mutex for VFD handling
 	pthread_mutex_t vfdmutex;
 	off64_t recsplitsize;

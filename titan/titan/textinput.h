@@ -11,7 +11,7 @@ char* textinput(char* title, char* text)
 	char* ret = NULL, *bg = NULL;
 
 	if(pthread_self() != status.mainthread)
-	fromthread = 1;
+		fromthread = 1;
 
 	changetitle(textinput, title);
 	height = textinput->height;
