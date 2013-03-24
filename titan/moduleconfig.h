@@ -184,7 +184,7 @@ void screenmoduleadjust()
 
 			if(checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO510") == 1)
 			{
-				if(extdetect->ret != NULL)
+				if(extmoduldetect->ret != NULL)
 					addownconfig("extmoduldetect", extmoduldetect->ret);
 			}
 
