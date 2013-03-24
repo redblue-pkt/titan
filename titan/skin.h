@@ -98,6 +98,11 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPROGRESS;
 		return &getbufferstatus;
 	}
+	if(ostrcmp("getwlanlinkquality", value) == 0)
+	{
+		*rettype = FUNCPROGRESS;
+		return &getwlanlinkquality;
+	}
 	if(ostrcmp("getrecfreesize", value) == 0)
 	{
 		*rettype = FUNCPROGRESS;

@@ -1131,4 +1131,16 @@ char* getbufferstatus(struct skin* node)
 	return oitoa(ret);
 }
 
+char* getwlanlinkquality(struct skin* node)
+{
+	int quality = 0;
+
+	quality = wlanlinkquality();
+
+	if(quality < 0) quality = 0;
+	if(quality > 100) quality = 100;
+
+	return oitoa(quality);
+}
+
 #endif
