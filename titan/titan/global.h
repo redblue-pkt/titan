@@ -3,6 +3,42 @@
 
 #define MAXTOKENS 256
 
+int wlanlinkquality()
+{
+	char dev[20];
+	int tmp = 0, linkquality = 0;
+	FILE *fd = NULL;
+	char *fileline = NULL;
+
+	struct inetwork* wlandev = getinetworkfirstwlan();
+	if(wlandev == NULL) return 0;
+
+	fileline = malloc(MINMALLOC);
+	if(fileline == NULL)
+	{
+		err("no memory");
+		return 0;
+	}
+
+	fd = fopen("/proc/net/wireless", "r");
+	if(fd == NULL)
+	{
+		perr("can't open %s", filename);
+		free(fileline);
+		return 0;
+	}
+
+	while(fgets(fileline, MINMALLOC, fd) != NULL)
+	{
+		if(strstr(fileline, wlandev) != NULL)
+			sscanf(fileline, "%[^:]: %d %d", dev, &tmp, &linkquality);
+	}
+
+	free(fileline);
+	fclose(fd);
+	return linkquality;
+}
+
 char* getispip()
 {
 	char* tmpstr = NULL;
