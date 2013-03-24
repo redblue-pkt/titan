@@ -1417,6 +1417,7 @@ struct status
 	int autosubtitle;
 	//save timeshift start time
 	time_t timeshiftstart;
+	int crosscontrol;
 } status;
 
 struct fb
