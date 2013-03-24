@@ -127,8 +127,14 @@ void screenmoduleadjust()
 	struct skin* checkcamdecrypt = getscreennode(moduleadjust, "checkcamdecrypt");
 	struct skin* caskipprivat = getscreennode(moduleadjust, "caskipprivat");
 	struct skin* casendallcaids = getscreennode(moduleadjust, "casendallcaids");
+	struct skin* extmoduldetect = getscreennode(moduleadjust, "extmoduldetect");
 
 	struct skin* tmp = NULL;
+
+	if(checkbox("AT7500") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO500") == 1)
+		extmoduldetect->hidden = NO;
+	else
+		extmoduldetect->hidden = YES;
 
 	addchoicebox(nocamsg, "0", _("yes"));
 	addchoicebox(nocamsg, "1", _("no"));
@@ -151,6 +157,10 @@ void screenmoduleadjust()
 	addchoicebox(casendallcaids, "1", _("yes"));
 	setchoiceboxselection(casendallcaids, getconfig("casendallcaids", NULL));
 
+	addchoicebox(extmoduldetect, "0", _("yes"));
+	addchoicebox(extmoduldetect, "1", _("no"));
+	setchoiceboxselection(extmoduldetect, getownconfig("extmoduldetect", NULL));
+
 	drawscreen(moduleadjust, 0, 0);
 	addscreenrc(moduleadjust, listbox);
 
@@ -171,6 +181,12 @@ void screenmoduleadjust()
 			status.caskipprivat = getconfigint("caskipprivat", NULL);
 			addconfigscreencheck("casendallcaids", casendallcaids, "0");
 			status.casendallcaids = getconfigint("casendallcaids", NULL);
+
+			if(checkbox("AT7500") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO500") == 1)
+			{
+				if(extdetect->ret != NULL)
+					addownconfig("extmoduldetect", extmoduldetect->ret);
+			}
 
 			break;
 		}
