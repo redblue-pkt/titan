@@ -30,9 +30,9 @@ void screeninfobar()
 	{
 		mark = 0;
 
-		if(getconfigint("crosscontrol", NULL) == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcright", NULL))
+		if(status.crosscontrol == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcright", NULL))
 			writerc(getrcconfigint("rcvolup", NULL));
-		if(getconfigint("crosscontrol", NULL) == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcleft", NULL))
+		if(status.crosscontrol == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcleft", NULL))
 			writerc(getrcconfigint("rcvoldown", NULL));
 
 		//check if mediadb can freed
@@ -255,7 +255,7 @@ void screeninfobar()
 		}
 		if(rcret == getrcconfigint("rcblue", NULL) && getconfig("bluekey", NULL) == NULL)
 			rcret = getrcconfigint("rctvradio", NULL);
-		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rctvradio", NULL) || rcret == getrcconfigint("rcfav", NULL) || (getconfigint("crosscontrol", NULL) == 0 && status.play == 0 && status.pause == 0 && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL) || rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL))))
+		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rctvradio", NULL) || rcret == getrcconfigint("rcfav", NULL) || (status.crosscontrol == 0 && status.play == 0 && status.pause == 0 && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL) || rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL))))
 		{
 			int tmpservicetype = status.servicetype;
 			status.infobaraktiv = 0;
@@ -599,7 +599,7 @@ void screeninfobar()
 			status.infobar = 1;
 			continue;
 		}
-		if(rcret == getrcconfigint("rcchup", NULL) || (getconfigint("crosscontrol", NULL) == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcdown", NULL)))
+		if(rcret == getrcconfigint("rcchup", NULL) || (status.crosscontrol == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcdown", NULL)))
 		{
 			subtitlepause(1);
 			zapup();
@@ -609,7 +609,7 @@ void screeninfobar()
 			status.infobar = 2;
 			continue;
 		}
-		if(rcret == getrcconfigint("rcchdown", NULL) || (getconfigint("crosscontrol", NULL) == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcup", NULL)))
+		if(rcret == getrcconfigint("rcchdown", NULL) || (status.crosscontrol == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcup", NULL)))
 		{
 			subtitlepause(1);
 			zapdown();

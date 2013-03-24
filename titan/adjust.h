@@ -337,6 +337,7 @@ void screenadjust()
 			addconfigscreencheck("infobarprogram", infobarprogram, "0");
 			status.infobarprogram = getconfigint("infobarprogram", NULL);
 			addconfigscreencheck("crosscontrol", crosscontrol, "0");
+			status.crosscontrol = getconfigint("crosscontrol", NULL);
 			addconfigscreencheck("emucontrol", emucontrol, "0");
 
 			if(ostrcmp(minitv->ret, "1") == 0) resettvpic();
