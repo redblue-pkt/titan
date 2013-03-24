@@ -735,16 +735,6 @@ int checkreseller()
 			return 0;
 		}
 	}
-	else if(checkbox("AT7500") == 1)
-	{
-		if((buf[1072] & 0xff) == 0x09 && (buf[1073] & 0xff) == 0x00 && (buf[1074] & 0xff) == 0x09 && (buf[1075] & 0xff) == 0x00)
-		{
-			debug(10, "ResellerId: found (%s) reseller !", getboxtype());
-			free(buf);
-			fclose(fd);
-			return 0;
-		}
-	}
 	else if(checkbox("SKYSAT") == 1)
 	{
 		if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x22 && (buf[1074] & 0xff) == 0x00 && (buf[1075] & 0xff) == 0xa0)
@@ -800,15 +790,10 @@ int checkflash()
 		dev = ostrcat(dev, "3", 1, 0);
 		dir = ostrcat(dir, "var", 1, 0);		
 	}
-	else if((checkbox("ATEMIO500") == 1) || (checkbox("ATEMIO510") == 1) || (checkbox("ATEMIO7600") == 1) || (checkbox("IPBOX91") == 1) || (checkbox("IPBOX900") == 1) || (checkbox("IPBOX910") == 1) || (checkbox("IPBOX9000") == 1) || (checkbox("ATEVIO700") == 1) || (checkbox("ATEVIO7000") == 1))
+	else if((checkbox("ATEMIO510") == 1) || (checkbox("ATEMIO7600") == 1) || (checkbox("IPBOX91") == 1) || (checkbox("IPBOX900") == 1) || (checkbox("IPBOX910") == 1) || (checkbox("IPBOX9000") == 1) || (checkbox("ATEVIO700") == 1) || (checkbox("ATEVIO7000") == 1))
 	{
 		dev = ostrcat(dev, "4", 1, 0);
 		dir = ostrcat(dir, "var", 1, 0);
-	}
-	else if((checkbox("SKYSAT") == 1) || (checkbox("AT7500") == 1))
-	{
-		dev = ostrcat(dev, "2", 1, 0);
-		dir = ostrcat(dir, "boot", 1, 0);
 	}
 	else if(checkbox("UFS912") == 1)
 	{
