@@ -2943,3 +2943,6 @@ msgstr "Versteckte Dateien anzeigen"
 
 msgid "Activate CEC"
 msgstr "CEC einschalten"
+
+msgid "Ext. Modul detect (needs reboot)"
+msgstr "Erw. Modulerkennung (reboot erforderlich)"
