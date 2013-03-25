@@ -1187,7 +1187,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 				tmppath = ostrcat("/", tmppath, 0, 1);				
 				tmppath = ostrcat(getconfig("rec_path", NULL), tmppath, 0, 1);
 				
-				if(tmppath != NULL && mkdir(tmppath) == 0)
+				if(tmppath != NULL && mkdir(tmppath, 0777) == 0)
 				{
 					changeinput(path, tmppath);
 					changetext(path, tmppath);
