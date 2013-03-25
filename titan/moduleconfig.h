@@ -157,8 +157,8 @@ void screenmoduleadjust()
 	addchoicebox(casendallcaids, "1", _("yes"));
 	setchoiceboxselection(casendallcaids, getconfig("casendallcaids", NULL));
 
-	addchoicebox(extmoduldetect, "0", _("yes"));
-	addchoicebox(extmoduldetect, "1", _("no"));
+	addchoicebox(extmoduldetect, "0", _("no"));
+	addchoicebox(extmoduldetect, "1", _("yes"));
 	setchoiceboxselection(extmoduldetect, getownconfig("extmoduldetect"));
 
 	drawscreen(moduleadjust, 0, 0);
