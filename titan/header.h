@@ -403,6 +403,7 @@ int playcheckdirrcret(char* file, int dirrcret);
 
 //inetwork.h
 struct inetwork* getinetworkbydevice(char* device);
+struct inetwork* getinetworkfirstwlan();
 
 //fb.h
 void blitfb(int flag);
