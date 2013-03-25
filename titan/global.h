@@ -23,7 +23,7 @@ int wlanlinkquality()
 	fd = fopen("/proc/net/wireless", "r");
 	if(fd == NULL)
 	{
-		perr("can't open %s", fileline);
+		perr("can't open /proc/net/wireless");
 		free(fileline);
 		return 0;
 	}
