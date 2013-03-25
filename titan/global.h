@@ -30,7 +30,7 @@ int wlanlinkquality()
 
 	while(fgets(fileline, MINMALLOC, fd) != NULL)
 	{
-		if(strstr(fileline, wlandev) != NULL)
+		if(ostrstr(fileline, wlandev->device) != NULL)
 			sscanf(fileline, "%[^:]: %d %d", dev, &tmp, &linkquality);
 	}
 
