@@ -1191,11 +1191,11 @@ void screenrectimerext(struct rectimer* node, int flag)
 				{
 					changeinput(path, tmppath);
 					changetext(path, tmppath);
-					drawscreen(rectimerext, 0, 0);
 				}
 				else
 					textbox(_("Message"), "Can't create Path", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 				
+				drawscreen(rectimerext, 0, 0);
 				free(tmppath); tmppath = NULL;
 			}
 			continue;
