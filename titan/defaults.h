@@ -113,6 +113,7 @@ void setdefaults()
 	status.autosubtitle = getconfigint("autosubtitle", NULL);
 	status.asktimeshift = getconfigint("asktimeshift", NULL);
 	status.crosscontrol = getconfigint("crosscontrol", NULL);
+	status.timeshifttype = getconfigint("timeshifttype", NULL);
 
 	if(status.filelistselectcol == 0) status.filelistselectcol = status.listboxselectcol;
 	
