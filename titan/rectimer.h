@@ -1174,6 +1174,32 @@ void screenrectimerext(struct rectimer* node, int flag)
 		addscreenrc(rectimerext, tmp);
 		rcret = waitrc(rectimerext, 0, 2);
 		tmp = listbox->select;
+		
+		if(rcret == getrcconfigint("rcred", NULL))
+		{
+			if(name->ret != NULL && strlen(name->ret) > 0)
+			{
+				char* tmppath = NULL;
+				
+				tmppath = ostrcat(tmppath, name->ret, 1, 0);
+				tmppath = strstrip(tmppath);
+				delspezchar(tmppath, 2);
+				tmppath = ostrcat("/", tmppath, 0, 1);				
+				tmppath = ostrcat(getconfig("rec_path", NULL), tmppath, 0, 1);
+				
+				if(tmppath != NULL && mkdir(tmppath) == 0)
+				{
+					changeinput(path, tmppath);
+					changetext(path, tmppath);
+					drawscreen(rectimerext, 0, 0);
+				}
+				else
+					textbox(_("Message"), "Can't create Path", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+				
+				free(tmppath); tmppath = NULL;
+			}
+			continue;
+		}
 
 		if(listbox->select != NULL && listbox->select->ret != NULL && ostrcmp(listbox->select->name, "justplay") == 0)
 		{
