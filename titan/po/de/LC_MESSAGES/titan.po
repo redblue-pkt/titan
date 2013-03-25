@@ -2949,3 +2949,6 @@ msgstr "Erw. Modulerkennung (reboot erforderlich)"
 
 msgid "Can't create Path"
 msgstr "Verzeichnis konnte nicht angelegt werden"
+
+msgid "Create Path"
+msgstr "Verzeichnis anlegen"
