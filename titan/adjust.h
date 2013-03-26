@@ -311,6 +311,7 @@ void screenadjust()
 			addconfigscreen("skip79", skip79);
 			addconfigscreencheck("playertype", playertype, "0");
 			addconfigscreencheck("autochangechannelname", autochangechannelname, "0");
+			status.autochangechannelname = getconfigint("autochangechannelname", NULL);
 			addconfigscreencheck("def_rectimer_after", def_rectimer_after, "0");
 			addconfigscreencheck("showchanneltimeline", showchanneltimeline, "0");
 			status.showchanneltimeline = getconfigint("showchanneltimeline", NULL);

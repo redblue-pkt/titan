@@ -95,6 +95,10 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		m_unlock(&status.servicemutex, 2);
 		return 21;
 	}
+	
+	//stop running autoresolution
+	if(status.restimer != NULL)
+		status.restimer->aktion = STOP;
 
 	ageprotect = getconfigint("ageprotect", NULL);
 	if(ageprotect > 0) epgnode = getepgakt(chnode);
@@ -516,7 +520,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	//wait for epg thread stops
 	if(flag == 0 && status.epgthread != NULL)
 	{
-		int i = 0;
+		i = 0;
 		while(status.epgthread->status != INPAUSE)
 		{
 			usleep(10000);
@@ -529,28 +533,29 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	m_unlock(&status.servicemutex, 2);
 	
 	//auto change channel name
-	if(flag == 0 && getconfigint("autochangechannelname", NULL) == 1)
+	if(flag == 0 && status.autochangechannelname == 1)
 		addtimer(&autochangechannelname, START, 1000, 1, NULL, NULL, NULL);
 	
 	//autoresolution
 	if(flag == 0 && ostrcmp(getconfig("av_videomode_autores", NULL), "auto") == 0)
 	{
 		int sec = 7;
-		if(getconfig("av_videomode_autores_ts", NULL) != NULL)
-			sec = atoi(getconfig("av_videomode_autores_ts", NULL));
+		char* av_videomode_autores_ts = getconfig("av_videomode_autores_ts", NULL);
+		if(av_videomode_autores_ts != NULL)
+			sec = atoi(av_videomode_autores_ts);
 		if(status.restimer == NULL)
-			status.restimer = addtimer(&setaktres, START, 10000, 1, (void*)sec, NULL, NULL);
+			status.restimer = addtimer(&setaktres, START, 1000, 1, (void*)sec, NULL, NULL);
 		else
 		{
 			status.restimer->aktion = STOP;
- 			sleep(1);
- 			status.restimer = addtimer(&setaktres, START, 10000, 1, (void*)sec, NULL, NULL);
+ 			status.restimer = addtimer(&setaktres, START, 1000, 1, (void*)sec, NULL, NULL);
 		}			
 	}
 	
 	if(flag == 0 && status.autosubtitle == 1) subtitlestartlast(); //start subtitle
 	if(flag == 0 && status.timeshifttype == 1)
 	{
+		i = 0;
 		while(status.timeshift > 0)
 		{
 			usleep(100000);

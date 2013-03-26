@@ -10,6 +10,7 @@ void screentimeshiftsettings()
 	struct skin* timeshifttype = getscreennode(timeshiftsettings, "timeshifttype");	
 	struct skin* deltimeshift = getscreennode(timeshiftsettings, "deltimeshift");
 	struct skin* asktimeshift = getscreennode(timeshiftsettings, "asktimeshift");
+  struct skin* timeshiftnumkeys = getscreennode(timeshiftsettings, "timeshiftnumkeys");
 	struct skin* tmp = NULL;
 	
 	if(status.timeshifttype == 0 && status.timeshift > 0)
@@ -30,6 +31,10 @@ void screentimeshiftsettings()
 	addchoicebox(asktimeshift, "0", _("yes"));
 	addchoicebox(asktimeshift, "1", _("no"));
 	setchoiceboxselection(asktimeshift, getconfig("asktimeshift", NULL));
+  
+  addchoicebox(timeshiftnumkeys, "0", _("yes"));
+	addchoicebox(timeshiftnumkeys, "1", _("no"));
+	setchoiceboxselection(timeshiftnumkeys, getconfig("timeshiftnumkeys", NULL));
 	
 	drawscreen(timeshiftsettings, 0, 0);
 	addscreenrc(timeshiftsettings, listbox);
@@ -56,6 +61,7 @@ void screentimeshiftsettings()
 			status.timeshifttype = getconfigint("timeshifttype", NULL);
 			addconfigscreencheck("asktimeshift", asktimeshift, "0");
 			status.asktimeshift = getconfigint("asktimeshift", NULL);
+      addconfigscreencheck("timeshiftnumkeys", timeshiftnumkeys, "0");
 			break;
 		}
 	}
