@@ -2952,3 +2952,6 @@ msgstr "Verzeichnis konnte nicht angelegt werden"
 
 msgid "Create Path"
 msgstr "Verzeichnis anlegen"
+
+msgid "Use numeric keys"
+msgstr "Benutze Nummerntasten"
