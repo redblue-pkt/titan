@@ -1796,6 +1796,7 @@ void initmutex(int flag)
 		pthread_mutex_init(&status.tithekmutex, NULL);
 		pthread_mutex_init(&status.inetworkmutex, NULL);
 		pthread_mutex_init(&status.textboxmutex, NULL);
+		pthread_mutex_init(&status.setaktresmutex, NULL);
 	}
 	else
 	{
@@ -1822,6 +1823,7 @@ void initmutex(int flag)
 		pthread_mutex_destroy(&status.tithekmutex);
 		pthread_mutex_destroy(&status.inetworkmutex);
 		pthread_mutex_destroy(&status.textboxmutex);
+		pthread_mutex_destroy(&status.setaktresmutex);
 	}
 }
 
@@ -2175,6 +2177,7 @@ void m_lock(pthread_mutex_t *mutex, int flag)
 		case 20: debug(900, "tithekmutex lock"); break;
 		case 21: debug(900, "inetworkmutex lock"); break;
 		case 22: debug(900, "textboxmutex lock"); break;
+		case 23: debug(900, "setaktresmutex lock"); break;
 		default: debug(900, "unknown mutex lock"); break;
 	}
 	pthread_mutex_lock(mutex);
@@ -2207,6 +2210,7 @@ void m_unlock(pthread_mutex_t *mutex, int flag)
 		case 20: debug(900, "tithekmutex unlock"); break;
 		case 21: debug(900, "inetworkmutex unlock"); break;
 		case 22: debug(900, "textboxmutex unlock"); break;
+		case 23: debug(900, "setaktresmutex unlock"); break;
 		default: debug(900, "unknown mutex unlock"); break;
 	}
 	pthread_mutex_unlock(mutex);
@@ -5891,32 +5895,35 @@ void setfanspeed(int speed, int aktion)
 
 void setaktres()
 {
-	int m_width;
+	int m_width = 0;
 	char* res = NULL;
 	char* res_akt = NULL;
 	char* res_sd = NULL;
-	int count=1;
+	int count = 1;
 	int sec = 0;
 
-	if(status.restimer == NULL) return;
+	m_lock(&status.setaktresmutex, 23);
+
+	if(status.restimer == NULL)
+		goto end;
+
 	sec = (int)status.restimer->param1;
 
 	if(sec > 0)
 	{
-		while(status.restimer->aktion == START && count <= sec)
+		while(status.restimer->aktion == START && count <= (sec * 10))
 		{
-			sleep(1);
+			usleep(100000);
 			if(status.restimer->aktion != START)
-			{
-				status.restimer = NULL;
-				return;
-			}
+				goto end;
 			count++;
 		}
 	}
+	if(status.restimer->aktion != START) goto end;
 
 	if(videoreadqwidth(status.aktservice->videodev) == 0)
 	{
+		if(status.restimer->aktion != START) goto end;
 		m_width = status.videosize.w;
 		if(m_width == 720)
 		{
@@ -5935,22 +5942,41 @@ void setaktres()
 
 		if(m_width > 0)
 		{
+			if(status.restimer->aktion != START) goto end;
 			res_akt = getvideomode();
-			if (ostrcmp(res_akt, res) != 0)
+			if(status.restimer->aktion != START) goto end;
+			if(ostrcmp(res_akt, res) != 0)
 			{
+				if(status.restimer->aktion != START) goto end;
 				setvideomode(res, 1);
-	  		changefbresolution(res);
-				sleep(1);
+				if(status.restimer->aktion != START) goto end;
+				changefbresolution(res);
+				if(status.restimer->aktion != START) goto end;
+
+				count = 0;
+				while(status.restimer->aktion == START && count < 10)
+				{
+					usleep(100000);
+					if(status.restimer->aktion != START)
+						goto end;
+					count++;
+				}
+
+				if(status.restimer->aktion != START) goto end;
 				screenautores(res, 5, 0);
 			}
 		}
 	}
 	else
+	{
+		if(status.restimer->aktion != START) goto end;
 		textbox(_("Message"), _("ERROR cant read res"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
+	}
 
-	free(res);
-	res = NULL;
+end:
+	free(res); res = NULL;
 	status.restimer = NULL;
+	m_unlock(&status.setaktresmutex, 23);
 	return;
 }
 

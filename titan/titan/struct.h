@@ -1217,6 +1217,7 @@ struct status
 	pthread_mutex_t tithekmutex;
 	pthread_mutex_t inetworkmutex;
 	pthread_mutex_t textboxmutex;
+	pthread_mutex_t setaktresmutex;
 	// mutex for VFD handling
 	pthread_mutex_t vfdmutex;
 	off64_t recsplitsize;
@@ -1418,6 +1419,7 @@ struct status
 	//save timeshift start time
 	time_t timeshiftstart;
 	int crosscontrol;
+	int autochangechannelname;
 } status;
 
 struct fb

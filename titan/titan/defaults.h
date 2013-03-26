@@ -114,6 +114,7 @@ void setdefaults()
 	status.asktimeshift = getconfigint("asktimeshift", NULL);
 	status.crosscontrol = getconfigint("crosscontrol", NULL);
 	status.timeshifttype = getconfigint("timeshifttype", NULL);
+	status.autochangechannelname = getconfigint("autochangechannelname", NULL);
 
 	if(status.filelistselectcol == 0) status.filelistselectcol = status.listboxselectcol;
 	
