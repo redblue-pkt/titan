@@ -153,29 +153,29 @@ echo "[titan] Ipkdir done"
 echo "[titan]--------------------------------------------------------"
 
 if [ $BUILDTYPE == 0 ]; then
-	echo "[titan]--------------------------------------------------------"
-	echo "[titan] netsurf"
-	echo "[titan]--------------------------------------------------------"
-	
-	cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-	echo make curl
-	make curl
-			
-	cd "$HOME"/flashimg/source.titan/netsurf
-	./makesh4.sh $STM
-	cd "$HOME"/flashimg/source.titan/titan
-	if [ ! -e "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/nsfb ]; then
-		echo "[titan]--------------------------------------------------------"
-		echo "[titan] netsurf building error !!!"
-		echo "[titan] check your src"
-		echo "[titan]--------------------------------------------------------"
-		touch "$HOME"/flashimg/.ipk-build-error
-		exit 1
-	fi
-	
-	echo "[titan]--------------------------------------------------------"
-	echo "[titan] netsurf done"
-	echo "[titan]--------------------------------------------------------"
+#	echo "[titan]--------------------------------------------------------"
+#	echo "[titan] netsurf"
+#	echo "[titan]--------------------------------------------------------"
+#	
+#	cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
+#	echo make curl
+#	make curl
+#			
+#	cd "$HOME"/flashimg/source.titan/netsurf
+#	./makesh4.sh $STM
+#	cd "$HOME"/flashimg/source.titan/titan
+#	if [ ! -e "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/nsfb ]; then
+#		echo "[titan]--------------------------------------------------------"
+#		echo "[titan] netsurf building error !!!"
+#		echo "[titan] check your src"
+#		echo "[titan]--------------------------------------------------------"
+#		touch "$HOME"/flashimg/.ipk-build-error
+#		exit 1
+#	fi
+#	
+#	echo "[titan]--------------------------------------------------------"
+#	echo "[titan] netsurf done"
+#	echo "[titan]--------------------------------------------------------"
 	
 	echo "[titan]--------------------------------------------------------"
 	echo "[titan] minidlna"
