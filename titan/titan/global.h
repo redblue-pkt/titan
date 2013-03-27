@@ -2216,7 +2216,7 @@ void m_unlock(pthread_mutex_t *mutex, int flag)
 	pthread_mutex_unlock(mutex);
 }
 
-void debugstack(void* address, void* address1)
+void debugstack(int sig, void* address, void* address1)
 {
 	Dl_info info, info1;
 	void* trace[10];
@@ -2255,6 +2255,7 @@ void debugstack(void* address, void* address1)
 	printf("--------------------------------------\n");
 	printf("Box: %s\n", boxversion);
 	printf("Image: %s\n", imgversion);
+	printf("Signal: %d (%s)\n", sig, strsignal(sig));
 	if(info1.dli_fname != NULL)
 		printf("Error in File: %s\n", info1.dli_fname);
 	printf("MainThread: %x\n", (unsigned int)status.mainthread);
@@ -2283,6 +2284,7 @@ void debugstack(void* address, void* address1)
 		fprintf(fd, "Date: %s", ctime(&rawtime));
 		fprintf(fd, "Box: %s\n", boxversion);
 		fprintf(fd, "Image: %s\n", imgversion);
+		fprintf(fd, "Signal: %d (%s)\n", sig, strsignal(sig));
 		if(info1.dli_fname != NULL)
 			printf("Error in File: %s\n", info1.dli_fname);
 		fprintf(fd, "MainThread: %x\n", (unsigned int)status.mainthread);

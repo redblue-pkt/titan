@@ -647,7 +647,7 @@ void closeonexec(int fd);
 char* ostrstrcase(char* str, char* sub);
 char* getdevcontent(char* devconfig);
 char* getxmlentry(char *line, char *searchstr);
-void debugstack(void* address, void* address1);
+void debugstack(int sig, void* address, void* address1);
 char* string_strip_whitechars(char *text);
 int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int flag);
 int ozip(char* inbuf, int inlen, char** outbuf, int* outlen, int level);
