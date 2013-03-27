@@ -3,6 +3,7 @@
 
 void timeshiftplaydisable()
 {
+	int end = 0;
 	struct skin* node = skin;
 	struct skin* child = NULL;
 
@@ -15,11 +16,14 @@ void timeshiftplaydisable()
 			{
 				if(status.timeshifttype == 0)
 					child->locked = 1;
-				else if(status.timeshifttype == 0)
+				else if(status.timeshifttype == 1)
 					child->locked = 0;
+				end = 1;
+				break;
 			}
 			child = child->next;
 		}
+		if(end == 1) break;
 		node = node->next;
 	}
 }
