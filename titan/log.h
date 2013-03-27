@@ -10,6 +10,7 @@ void screenlog()
 	struct skin* text = getscreennode(log, "textbox");
 	struct skin* b3 = getscreennode(log, "b3");
 	struct skin* b4 = getscreennode(log, "b4");
+	struct skin* load = getscreen("loading");
 
 start:	
 	tmpstr = readfiletomem(getconfig("tracelog", NULL), 0);
@@ -39,11 +40,13 @@ start:
 		if(rcret == getrcconfigint("rcok", NULL)) break;
 		if(b3->hidden == NO && rcret == getrcconfigint("rcred", NULL))
 		{
+			drawscreen(load, 0, 0);
 			ret = sendmail("mailserver.at", "m@x.at", "m@x.at", "Titan Error LOG", 25, getconfig("tracelog", NULL), NULL, 1000 * 1000, 5000 * 1000);
 			if(ret == 0)
 				textbox(_("Message"), "Mail send succesfull", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 			else
 				textbox(_("Message"), "Can't send Mail", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+			clearscreen(load);
 			drawscreen(log, 0, 0);
 		}
 		if(b4->hidden == NO && rcret == getrcconfigint("rcgreen", NULL))
