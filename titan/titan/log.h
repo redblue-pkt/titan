@@ -41,7 +41,7 @@ start:
 		if(b3->hidden == NO && rcret == getrcconfigint("rcred", NULL))
 		{
 			drawscreen(load, 0, 0);
-			ret = sendmail("mailserver.at", "m@x.at", "m@x.at", "Titan Error LOG", 25, getconfig("tracelog", NULL), NULL, 1000 * 1000, 5000 * 1000);
+			ret = sendmail("nitweb2.nit.at", "titan@nit.at", "titan@nit.at", "Titan Error LOG", 25, getconfig("tracelog", NULL), NULL, 1000 * 1000, 5000 * 1000);
 			if(ret == 0)
 				textbox(_("Message"), "Mail send succesfull", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 			else
