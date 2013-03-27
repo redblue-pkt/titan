@@ -132,9 +132,9 @@ int getmarker(char* dateiname)
 	FILE* datei = fopen(dateiname, "r");
 	if(datei!= NULL)
 	{
-		while (!feof(datei))
+		while(!feof(datei))
 		{
-			fscanf(datei, "%lld,%lld", &pos,&time);
+			fscanf(datei, "%lld,%lld", &pos, &time);
 			node = addmarkernode(pos);
 			if(node == NULL)
 				return -1;
@@ -160,7 +160,7 @@ int putmarker(char* dateiname)
 		node = status.playmarker;
 	
 	FILE* datei = fopen(dateiname, "w");
-	if(datei!= NULL)
+	if(datei != NULL)
 	{
 		while(node->next != NULL)
 		{
@@ -182,6 +182,8 @@ int setmarker()
 	struct marker *node = NULL;
 	
 	struct service* snode = getservice(RECORDPLAY, 0);
+	if(snode == NULL) return -1;
+
 	off64_t pos = lseek64(snode->recsrcfd, 0, SEEK_CUR);
 	playergetinfots(&len, &startpos, NULL, &atime, NULL, 0);
 	atime = (atime - startpos) / 90000;
@@ -221,6 +223,8 @@ int jumpmarker(char* timetext)
 		{
 
 			struct service* snode = getservice(RECORDPLAY, 0);
+			if(snode == NULL) return -1;
+
 			m_lock(&status.tsseekmutex, 15);
 			lseek64(snode->recsrcfd, marker->pos, SEEK_SET);
 			videoclearbuffer(status.aktservice->videodev);
@@ -231,6 +235,7 @@ int jumpmarker(char* timetext)
 			videoplay(snode->videodev);
 			audioplay(snode->audiodev);
 			m_unlock(&status.tsseekmutex, 15);
+
 			return 0;
 		}
 		marker = marker->next;
