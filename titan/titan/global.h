@@ -5955,7 +5955,6 @@ void setaktres()
 			{
 				if(status.restimer->aktion != START) goto end;
 				setvideomode(res, 1);
-				if(status.restimer->aktion != START) goto end;
 				changefbresolution(res);
 				if(status.restimer->aktion != START) goto end;
 
