@@ -191,7 +191,7 @@ void dvdcleanup()
 	if(tv_videomode != NULL)
 	{
 		setvideomode(tv_videomode, 0);
-		changefbresolution(tv_videomode);
+		changefbresolution(tv_videomode, 0);
 		free(tv_videomode); tv_videomode = NULL;
 	}
 #endif
@@ -267,7 +267,7 @@ int dvdstart(char* filename)
 	if(ostrncmp("1080", tv_videomode, 4) == 0)
 	{
 		setvideomode("720p50", 0);
-		changefbresolution("720p50");
+		changefbresolution("720p50", 0);
 	}
 	else 
 	{

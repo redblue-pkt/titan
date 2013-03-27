@@ -2036,13 +2036,13 @@ int autoresolution()
 	if(value[0] == 'y')
 	{
 		setvideomode("720p50", 0);
-		changefbresolution("720p50");
+		changefbresolution("720p50", 0);
 		setcolorformat("hdmi_rgb");
 	}
 	else
 	{
 		setvideomode("576i50", 0);
-		changefbresolution("576i50");
+		changefbresolution("576i50", 0);
 		setcolorformat("rgb");
 	}
 
@@ -4538,6 +4538,9 @@ char* getvideomodechoices()
 		return NULL;
 	}
 
+	value = string_replace("pal", "", value, 1);
+	value = string_replace("  ", " ", value, 1);
+
 	if(status.mcaktiv == 0)
 	{
 		value = string_replace("1080p60", "", value, 1);
@@ -4670,7 +4673,7 @@ void switchvideomode()
 		if(ostrcmp("pal", tmpstr) == 0 || ostrncmp("576", tmpstr, 3) == 0)
 		{
 			setvideomode("720p50", 0);
-			changefbresolution("720p50");
+			changefbresolution("720p50", 0);
 			changetext(playpolicy, "720p50");
 			writevfd("720p50");
 			unlink("/var/etc/.scart");
@@ -4678,7 +4681,7 @@ void switchvideomode()
 		else if(ostrncmp("720", tmpstr, 3) == 0)
 		{
 			setvideomode("1080i50", 0);
-			changefbresolution("1080i50");
+			changefbresolution("1080i50", 0);
 			changetext(playpolicy, "1080i50");
 			writevfd("1080i50");
 			unlink("/var/etc/.scart");			
@@ -4686,7 +4689,7 @@ void switchvideomode()
 		else if(ostrncmp("1080", tmpstr, 4) == 0)
 		{
 			setvideomode("576i50", 0);
-			changefbresolution("576i50");
+			changefbresolution("576i50", 0);
 			changetext(playpolicy, "576i50");
 			writevfd("576i50 / pal");
 			writesys("/var/etc/.scart", "0", 0);
@@ -4696,7 +4699,7 @@ void switchvideomode()
 		if(ret == 1 || ret == 2)
 		{
 			setvideomode(tmpstr, 0);
-			changefbresolution(tmpstr);
+			changefbresolution(tmpstr, 0);
 		}
 		*/
 		drawscreen(playpolicy, 0, 0);
@@ -5955,7 +5958,8 @@ void setaktres()
 			{
 				if(status.restimer->aktion != START) goto end;
 				setvideomode(res, 1);
-				changefbresolution(res);
+				changefbresolution(res, 1);
+/*
 				if(status.restimer->aktion != START) goto end;
 
 				count = 0;
@@ -5968,6 +5972,7 @@ void setaktres()
 				}
 
 				if(status.restimer->aktion != START) goto end;
+*/
 				screenautores(res, 5, 0);
 			}
 		}

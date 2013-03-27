@@ -407,7 +407,7 @@ struct inetwork* getinetworkfirstwlan();
 
 //fb.h
 void blitfb(int flag);
-void changefbresolution(char *value);
+void changefbresolution(char *value, int flag);
 void setfbtransparent(int value);
 struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int fd, unsigned char* mmapfb, unsigned long fixfbsize);
 void blitfb2(struct fb* fbnode, int flag);

@@ -38,7 +38,7 @@ void screenkeyactions(int key, int flag)
 		}
 	
 		//addmenulist(&mlist, "Extensions List", NULL, NULL, 0, 0);
-		addmenulist(&mlist, "Resolution .. (default <-> actual)", NULL, "resolution.png", 0, 0);
+		addmenulist(&mlist, "Auto Resolution", NULL, "resolution.png", 0, 0);
 		if(checkemu() == 1)
 			addmenulist(&mlist, "Softcam Panel", NULL, NULL, 0, 0);
 		//addmenulist(&mlist, "TV / Radio Switch", NULL, NULL, 0, 0);
@@ -180,15 +180,13 @@ void keyactions_setres()
 				if(res_def == NULL)
 					 res_def = res_act;
 				setvideomode(res_def, 1);
-				changefbresolution(res_def);
-				sleep(2);
-				screenautores(res_def, 5, 0);		 	
+				changefbresolution(res_def, 0);
+				screenautores(res_def, 5, 0);
 			}
 			else
 			{
 				setvideomode(res, 1);
-				changefbresolution(res);
-				sleep(2);
+				changefbresolution(res, 0);
 				screenautores(res, 5, 0);
 			}
 		}			
