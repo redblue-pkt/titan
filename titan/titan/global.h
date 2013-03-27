@@ -1660,7 +1660,10 @@ int getaktvideosize()
 #ifndef SIMULATE
 		if(videoreadqwidth(status.aktservice->videodev) == 0)
 #endif
+		{
 			status.videosizevalid = 1;
+			return 0;
+		}
 	}
 
 	return 1;
