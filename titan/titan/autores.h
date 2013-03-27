@@ -55,6 +55,7 @@ void screenautores(char* text, int timeout, int flag)
 		drawscreen(skin, 0, 0);
 	}
 
+	//if(rcret != RCTIMEOUT) writerc(rcret);
 	debug(1000, "out");
 }
 
