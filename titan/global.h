@@ -1427,7 +1427,7 @@ void setskinnodeslocked(int flag)
 				if(ostrcmp("vfdisplay", child->name) == 0) child->locked = 1;
 				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
 			}
-// disable backup restore entry
+			// disable backup restore entry
 			if(ostrcmp("system_backup_restore", child->name) == 0) child->locked = 1;
 
 			if((checkbox("ATEMIO7600") == 1 ) || (checkbox("UFS912") == 1) || (checkbox("ATEVIO7000") == 1) || (checkbox("ATEVIO700") == 1))
@@ -1452,7 +1452,11 @@ void setskinnodeslocked(int flag)
 			else if(ostrcmp("system_update_usb_online", child->name) == 0) child->locked = tmpflag;
 			else if(ostrcmp("sambasettings", child->name) == 0) child->locked = tmpflag;
 			else if(ostrcmp("nfssettings", child->name) == 0) child->locked = tmpflag;
-			else if(ostrcmp("mediaplayer", child->name) == 0) child->locked = tmpflag;
+			else if(ostrcmp("mediaplayer", child->name) == 0)
+			{
+				child->locked = tmpflag;
+				if(status.timeshifttype == 1) child->locked = 0;
+			}
 			
 			child = child->next;
 		}

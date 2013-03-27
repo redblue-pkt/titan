@@ -1,6 +1,29 @@
 #ifndef TIMESHIFTSETTINGS_H
 #define TIMESHIFTSETTINGS_H
 
+void timeshiftplaydisable()
+{
+	struct skin* node = skin;
+	struct skin* child = NULL;
+
+	while(node != NULL)
+	{
+		child = node->child;
+		while(child != NULL)
+		{
+			if(ostrcmp("mediaplayer", child->name) == 0)
+			{
+				if(status.timeshifttype == 0)
+					child->locked = 1;
+				else if(status.timeshifttype == 0)
+					child->locked = 0;
+			}
+			child = child->next;
+		}
+		node = node->next;
+	}
+}
+
 void screentimeshiftsettings()
 {
 	int rcret = 0, ret = 0, change = 0;
@@ -66,6 +89,7 @@ void screentimeshiftsettings()
 		}
 	}
 
+	timeshiftplaydisable();
 	delownerrc(timeshiftsettings);
 	clearscreen(timeshiftsettings);
 	drawscreen(skin, 0, 0);
