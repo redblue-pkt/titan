@@ -2955,3 +2955,9 @@ msgstr "Verzeichnis anlegen"
 
 msgid "Use numeric keys"
 msgstr "Benutze Nummerntasten"
+
+msgid "Mail send succesfull"
+msgstr "Mail erfolgreich versendet"
+
+msgid "Can't send Mail"
+msgstr "Mail konnte nicht versendet werden"
