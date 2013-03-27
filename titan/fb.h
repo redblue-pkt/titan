@@ -282,7 +282,9 @@ void blitfb(int flag)
 	blitfb2(skinfb, flag);
 }
 
-void changefbresolution(char *value)
+//flag 0: del skinfb
+//flag 1: don't del skinfb
+void changefbresolution(char *value, int flag)
 {
 	if(ostrcmp("pal", value) == 0)
 	{
@@ -318,7 +320,7 @@ void changefbresolution(char *value)
 		skin->rheight = skinfb->height;
 	}
 	clearfb(fb);
-	clearfb(skinfb);
+	if(flag == 0) clearfb(skinfb);
 }
 
 static void write_PNG(unsigned char *outbuffer, char *filename, 
