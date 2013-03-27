@@ -231,6 +231,7 @@ struct style* style = NULL;
 #include "tpchoice.h"
 #include "marker.h"
 #include "timeshiftsettings.h"
+#include "log.h"
 
 //#include "cardreader.h"
 //#include "sci.h"

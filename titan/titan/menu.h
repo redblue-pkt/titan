@@ -332,6 +332,11 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screenhttpdsettings();
 	}
+	else if(ostrcmp("log", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screenlog();
+	}
 	else if(ostrcmp("mediaplayer", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;

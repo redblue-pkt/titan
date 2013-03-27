@@ -805,4 +805,195 @@ void gethttpstruct(struct stimerthread* timernode, struct download* node, int fl
 		gethttp(node->host, node->page, node->port, node->filename, node->auth, node->timeout, node, 0);
 }
 
+int sendmail(char* host, char* mailfrom, char* mailto, char* subject, int port, char* filename, char* string, int rtimeout, int wtimeout)
+{
+	int sock = -1, ret = 0;
+	char *ip = NULL, *tmpstr = NULL, *sendstr = NULL, *data = NULL;
+
+	if(filename == NULL && string == NULL) return 1;
+
+	ip = get_ip(host);
+	if(ip == NULL)
+	{
+		err("can't get ip");
+		return 1;
+	}
+
+	data = malloc(MINMALLOC);
+	if(data == NULL)
+	{
+		err("no memory");
+		return 1;
+	}
+
+	if(filename != NULL)
+		tmpstr = readfiletomem(filename, 0);
+	else if(string != NULL)
+		tmpstr = string;
+
+	//open connection
+	ret = sockportopen(&sock, ip, port, wtimeout);
+	if(ret != 0) goto end;
+
+	//wait for smtp answer
+	memset(data, 0, MINMALLOC);
+	sockread(sock, (unsigned char*)data, 0, MINMALLOC, wtimeout, 0);
+	debug(975, "rcv: %s", data);
+/*
+	if(ostrstr(data, "1") != data && ostrstr(data, "2") != data && ostrstr(data, "3") != data)
+	{
+		debug(975, "incorrect answer: %s", data);
+		ret = 1;
+		goto end;
+	}
+*/
+
+	//send helo
+	ret = 1;
+	sendstr = ostrcat(sendstr, "HELO nit.at\r\n", 1, 0);
+	debug(975, "send: %s", sendstr);
+	if(sendstr != NULL)
+		ret = socksend(&sock, (unsigned char*)sendstr, strlen(sendstr), wtimeout);
+	free(sendstr); sendstr = NULL;
+	if(ret != 0) goto end;
+
+	//wait for smtp answer
+	memset(data, 0, MINMALLOC);
+	sockread(sock, (unsigned char*)data, 0, MINMALLOC, rtimeout, 0);
+	debug(975, "rcv: %s", data);
+	if(ostrstr(data, "1") != data && ostrstr(data, "2") != data && ostrstr(data, "3") != data)
+	{
+		debug(975, "incorrect answer: %s", data);
+		ret = 1;
+		goto end;
+	}
+
+	//send mail from:
+	ret = 1;
+	sendstr = ostrcat(sendstr, "MAIL FROM:<", 1, 0);
+	sendstr = ostrcat(sendstr, mailfrom, 1, 0);
+	sendstr = ostrcat(sendstr, ">\r\n", 1, 0);
+	debug(975, "send: %s", sendstr);
+	if(sendstr != NULL)
+		ret = socksend(&sock, (unsigned char*)sendstr, strlen(sendstr), wtimeout);
+	free(sendstr); sendstr = NULL;
+	if(ret != 0) goto end;
+
+	//wait for smtp answer
+	memset(data, 0, MINMALLOC);
+	sockread(sock, (unsigned char*)data, 0, MINMALLOC, rtimeout, 0);
+	debug(975, "rcv: %s", data);
+	if(ostrstr(data, "1") != data && ostrstr(data, "2") != data && ostrstr(data, "3") != data)
+	{
+		debug(975, "incorrect answer: %s", data);
+		ret = 1;
+		goto end;
+	}
+
+	//send rcpt to:
+	ret = 1;
+	sendstr = ostrcat(sendstr, "RCPT TO:<", 1, 0);
+	sendstr = ostrcat(sendstr, mailto, 1, 0);
+	sendstr = ostrcat(sendstr, ">\r\n", 1, 0);
+	debug(975, "send: %s", sendstr);
+	if(sendstr != NULL)
+		ret = socksend(&sock, (unsigned char*)sendstr, strlen(sendstr), wtimeout);
+	free(sendstr); sendstr = NULL;
+	if(ret != 0) goto end;
+
+	//wait for smtp answer
+	memset(data, 0, MINMALLOC);
+	sockread(sock, (unsigned char*)data, 0, MINMALLOC, rtimeout, 0);
+	debug(975, "rcv: %s", data);
+	if(ostrstr(data, "1") != data && ostrstr(data, "2") != data && ostrstr(data, "3") != data)
+	{
+		debug(975, "incorrect answer: %s", data);
+		ret = 1;
+		goto end;
+	}
+
+	//send data
+	ret = 1;
+	sendstr = ostrcat(sendstr, "DATA\r\n", 1, 0);
+	debug(975, "send: %s", sendstr);
+	if(sendstr != NULL)
+		ret = socksend(&sock, (unsigned char*)sendstr, strlen(sendstr), wtimeout);
+	free(sendstr); sendstr = NULL;
+	if(ret != 0) goto end;
+
+	//wait for smtp answer
+	memset(data, 0, MINMALLOC);
+	sockread(sock, (unsigned char*)data, 0, MINMALLOC, rtimeout, 0);
+	debug(975, "rcv: %s", data);
+	if(ostrstr(data, "1") != data && ostrstr(data, "2") != data && ostrstr(data, "3") != data)
+	{
+		debug(975, "incorrect answer: %s", data);
+		ret = 1;
+		goto end;
+	}
+
+	//send content
+	ret = 1;
+
+	sendstr = ostrcat(sendstr, "From: ", 1, 0);
+	sendstr = ostrcat(sendstr, mailfrom, 1, 0);
+	sendstr = ostrcat(sendstr, "\r\n", 1, 0);
+
+	sendstr = ostrcat(sendstr, "To: ", 1, 0);
+	sendstr = ostrcat(sendstr, mailto, 1, 0);
+	sendstr = ostrcat(sendstr, "\r\n", 1, 0);
+
+	sendstr = ostrcat(sendstr, "Subject: ", 1, 0);
+	sendstr = ostrcat(sendstr, subject, 1, 0);
+	sendstr = ostrcat(sendstr, "\r\n", 1, 0);
+
+	sendstr = ostrcat(sendstr, "Content-Type: text/plain\r\n\r\n", 1, 0);
+
+	sendstr = ostrcat(sendstr, tmpstr, 1, 0);
+	sendstr = ostrcat(sendstr, "\r\n.\r\n", 1, 0);
+
+	debug(975, "send: %s", sendstr);
+	if(sendstr != NULL)
+		ret = socksend(&sock, (unsigned char*)sendstr, strlen(sendstr), wtimeout);
+	free(sendstr); sendstr = NULL;
+	if(ret != 0) goto end;
+
+	//wait for smtp answer
+	memset(data, 0, MINMALLOC);
+	sockread(sock, (unsigned char*)data, 0, MINMALLOC, rtimeout, 0);
+	debug(975, "rcv: %s", data);
+	if(ostrstr(data, "1") != data && ostrstr(data, "2") != data && ostrstr(data, "3") != data)
+	{
+		debug(975, "incorrect answer: %s", data);
+		ret = 1;
+		goto end;
+	}
+
+	//send quit
+	ret = 1;
+	sendstr = ostrcat(sendstr, "QUIT\r\n", 1, 0);
+	debug(975, "send: %s", sendstr);
+	if(sendstr != NULL)
+		ret = socksend(&sock, (unsigned char*)sendstr, strlen(sendstr), wtimeout);
+	free(sendstr); sendstr = NULL;
+	if(ret != 0) goto end;
+
+	//wait for smtp answer
+	memset(data, 0, MINMALLOC);
+	sockread(sock, (unsigned char*)data, 0, MINMALLOC, rtimeout, 0);
+	debug(975, "rcv: %s", data);
+	if(ostrstr(data, "1") != data && ostrstr(data, "2") != data && ostrstr(data, "3") != data)
+	{
+		debug(975, "incorrect answer: %s", data);
+		ret = 1;
+		goto end;
+	}
+
+end:
+	if(filename != NULL)
+		free(tmpstr);
+	tmpstr = NULL;
+	return ret;
+}
+
 #endif
