@@ -193,8 +193,8 @@ void sighandler(int sig, struct sigcontext ctx)
 		case SIGABRT:
 		{
 			//intel
-			debugstack((void *)ctx.eip, NULL);
-			err("got signal %d, fault address 0x%lx from 0x%lx", sig, ctx.cr2, ctx.eip);
+			debugstack(sig, (void *)ctx.eip, NULL);
+			err("got signal %d (%s), fault address 0x%lx from 0x%lx", sig, strsignal(sig), ctx.cr2, ctx.eip);
 
 			if(getconfigint("saverun", NULL) == 1 && status.longjumpbuf != NULL)
 				siglongjmp(status.longjumpbuf, 1);

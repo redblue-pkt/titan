@@ -705,8 +705,8 @@ void sighandler(int sig, struct sigcontext ctx)
 			//unsigned long sc_mach;
 			//unsigned long sc_macl;
 
-			debugstack((void *)ctx.sc_pr, (void *)ctx.sc_pc);
-			err("got signal %d, programm counter reg: 0x%lx,  procedure reg: 0x%lx", sig, ctx.sc_pc, ctx.sc_pr);
+			debugstack(sig, (void *)ctx.sc_pr, (void *)ctx.sc_pc);
+			err("got signal %d (%s), programm counter reg: 0x%lx,  procedure reg: 0x%lx", sig, strsignal(sig), ctx.sc_pc, ctx.sc_pr);
 #endif
 */
 			if(getconfigint("saverun", NULL) == 1 && status.longjumpbuf != NULL)
