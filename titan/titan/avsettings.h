@@ -65,11 +65,12 @@ void screenavsettings(int flag)
 	addchoicebox(autoresolution, "auto", _("auto"));
 	addchoicebox(autoresolution, "blue", _("blueKey"));
 	setchoiceboxselection(autoresolution, getconfig("av_videomode_autores", NULL));
-	addchoicebox(autoressd, "576i", _("576i"));
-	addchoicebox(autoressd, "576p", _("576p"));
-	addchoicebox(autoressd, "720p", _("720p"));
-	addchoicebox(autoressd, "1080i", _("1080i"));
+
+	ret = getvideomodechoices();
+	changeinput(autoressd, ret);
+	free(ret); ret = NULL;
 	setchoiceboxselection(autoressd, getconfig("av_videomode_autores_sd", NULL));
+
 	addchoicebox(autorests, "2", _("2 sec"));
 	addchoicebox(autorests, "4", _("4 sec"));
 	addchoicebox(autorests, "6", _("6 sec"));
