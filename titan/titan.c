@@ -807,7 +807,7 @@ int main(int argc, char *argv[])
 		if(file_exist("/var/etc/.scart"))
 		{
 			setvideomode("pal", 0);
-			changefbresolution("pal");
+			changefbresolution("pal", 0);
 			autoresolution();
 		}
 		addconfig("firststart", "0");
@@ -819,7 +819,7 @@ int main(int argc, char *argv[])
 		if(file_exist("/var/etc/.scart"))
 		{
 			setvideomode("pal", 0);
-			changefbresolution("pal");
+			changefbresolution("pal", 0);
 		}
 
 		autoresolution();
