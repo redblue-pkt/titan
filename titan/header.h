@@ -205,6 +205,7 @@ struct dvbdev* dvropen(struct dvbdev* fenode);
 int audiopause(struct dvbdev* node);
 int audioplay(struct dvbdev* node);
 int audioclearbuffer(struct dvbdev* node);
+int audiostop(struct dvbdev* node);
 
 //textinput.h
 char* textinput(char* title, char* text);
@@ -265,6 +266,8 @@ int videofastforward(struct dvbdev* node, int frames);
 int videoclearbuffer(struct dvbdev* node);
 int videogetpts(struct dvbdev* node, uint64_t* pts);
 int videoslowmotion(struct dvbdev* node, int frames);
+int videostop(struct dvbdev* node, int clearscreen);
+int videoplay(struct dvbdev* node);
 
 // scan.h
 unsigned int satblindscan(struct stimerthread* timernode, int onlycalc);
