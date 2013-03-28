@@ -7,8 +7,8 @@ void screensystem_update(int mode)
 	int rcret = 0;
 
 	status.hangtime = 99999;
-	struct skin* systemupdate = getscreen("loading");
-	drawscreen(systemupdate, 0, 0);
+	struct skin* load = getscreen("loading");
+	drawscreen(load, 0, 0);
 
 	char* tmpstr = NULL;
 
@@ -62,7 +62,7 @@ void screensystem_update(int mode)
 		type = ostrcat(type, "tmp", 1, 0);
 	}
 
-	systemupdate = getscreen(skinname);
+	struct skin* systemupdate = getscreen(skinname);
 	struct skin* filelistpath = getscreennode(systemupdate, "filelistpath");
 	struct skin* filelist = getscreennode(systemupdate, "filelist");
 	struct skin* device = getscreennode(systemupdate, "device");
@@ -129,8 +129,11 @@ void screensystem_update(int mode)
 
 	setchoiceboxselection(device, getconfig("device", NULL));
 
+	clearscreen(load);)
 	getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 0, NULL);
 	addscreenrc(systemupdate, filelist);
+
+
 	if(mode == 2 || mode == 3)
 	{
 		delrc(getrcconfigint("rcright", NULL), systemupdate, filelist);
@@ -151,10 +154,13 @@ void screensystem_update(int mode)
 			if (mode == 0 || mode == 2)
 			{
 				char* cmd = NULL;
+
+				drawscreen(load, 0, 0);
 				cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
 				cmd = ostrcat(cmd, auth, 1, 0);	
 				system(cmd);
 				free(cmd),cmd = NULL;
+				clearscreen(load);
 			}
 
 			drawscreen(systemupdate, 0, 0);
