@@ -393,11 +393,11 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 	}
 
 	recsync = getconfigint("recsync", NULL);
-	frbsize = servicenode->tssize * 2788;
+	frbsize = servicenode->tssize * 3072;
 
 	if(servicenode->type == RECORDDIRECT || servicenode->type == RECORDTIMER || servicenode->type == RECORDTIMESHIFT)
 	{
-		recbsize = servicenode->tssize * 2788;
+		recbsize = servicenode->tssize * 3072;
 		readtimeout = 5000000;
 		writetimeout = 5000000; //5 sec
 	}
@@ -414,7 +414,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			recbsize = servicenode->tssize * 188;
 			tmprecbsize = 188 * 188;
 		}
-		if(servicenode->type == RECORDSTREAM) recbsize = servicenode->tssize * 2788;
+		if(servicenode->type == RECORDSTREAM) recbsize = servicenode->tssize * 3072;
 		readtimeout = 5000000;
 		writetimeout = 5000000;
 	}
@@ -573,8 +573,8 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 					usleep(50000);
 					if(count == 19)
 					{
-						recbsize = servicenode->tssize * 2788;
-						tmprecbsize = 188 * 2788;
+						recbsize = servicenode->tssize * 3072;
+						tmprecbsize = 188 * 3072;
 
 						free(buf);
 						buf = malloc(recbsize);
