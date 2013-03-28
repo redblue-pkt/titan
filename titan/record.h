@@ -348,7 +348,7 @@ int recordsplit(struct service* servicenode, int flag)
 		}
 
 		if(flag == 0)
-			servicenode->recdstfd = open(filename, O_WRONLY|O_CREAT|O_LARGEFILE, 0644);
+			servicenode->recdstfd = open(filename, O_WRONLY | O_CREAT | O_LARGEFILE, 0644);
 		else
 			servicenode->recsrcfd = open(filename, O_RDONLY | O_LARGEFILE | O_NONBLOCK);
 
@@ -863,7 +863,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 			else
 				delspezchar(fn + 1, 0);
 	
-			fd = open(filename, O_WRONLY|O_CREAT|O_LARGEFILE, 0666);
+			fd = open(filename, O_WRONLY | O_CREAT | O_LARGEFILE, 0666);
 			if(fd < 0)
 			{
 				ret = 4;
