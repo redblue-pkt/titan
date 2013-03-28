@@ -1,7 +1,7 @@
 #include "../titan/struct.h"
 #include "../titan/debug.h"
 #include "../titan/header.h"
-#include "news.h"
+#include "tinews.h"
 
 char pluginname[] = "News";
 char plugindesc[] = "News";
