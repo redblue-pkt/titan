@@ -279,7 +279,7 @@ void mc_main()
 		debug(50, "detected videomode change: %s > %s", videomode, currvideomode);
 		debug(50, "reset videomode: %s", videomode);
 		setvideomode(videomode, 0); 
-		changefbresolution(videomode);
+		changefbresolution(videomode, 0);
 		writeallconfig(1);
 		if((ostrncmp("576", videomode, 3) == 0) || (ostrncmp("pal", videomode, 3) == 0))
 			writesys("/var/etc/.scart", "0", 0);
