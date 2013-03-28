@@ -56,8 +56,10 @@ void callmon_main()
 
 	struct skin* callmon_main = getscreen("callmon_main");
 	struct skin* listbox = getscreennode(callmon_main, "listbox");
+	struct skin* fritzversion = getscreennode(callmon_main, "fritzversion");
 	struct skin* ipaddresse = getscreennode(callmon_main, "ipaddresse");
 	struct skin* phonebook = getscreennode(callmon_main, "phonebook");
+	struct skin* userid = getscreennode(callmon_main, "userid");
 	struct skin* passwort = getscreennode(callmon_main, "passwort");
 	struct skin* rufnummer1 = getscreennode(callmon_main, "rufnummer1");
 	struct skin* rufnummer2 = getscreennode(callmon_main, "rufnummer2");
@@ -69,8 +71,15 @@ void callmon_main()
 	struct skin* atimeout = getscreennode(callmon_main, "atimeout");
 	struct skin* tmp = NULL;
 	
+	addchoicebox(fritzversion, "49", _(".....-04.49"));
+	addchoicebox(fritzversion, "50", _("05.50-....."));
+	setchoiceboxselection(fritzversion, getlist(myconfig, "FritzVersion", NULL));
+	
 	changemask(passwort, "abcdefghijklmnopqrstuvwxyz");
 	changeinput(passwort, getlist(myconfig, "FritzPass", NULL));
+	
+	changemask(userid, "abcdefghijklmnopqrstuvwxyz");
+	changeinput(userid, getlist(myconfig, "FritzUser", NULL));
 	
 	changemask(ipaddresse, "000.000.000.000");
 	tmpstr = fixip(getlist(myconfig, "FRITZBOXIP", NULL), 0);
@@ -170,6 +179,7 @@ void callmon_main()
 			tmpstr = fixip(ipaddresse->ret, 1);
 			addlist(myconfig, "FRITZBOXIP", tmpstr);
 			free(tmpstr); tmpstr = NULL;
+			addlist(myconfig, "FritzVersion", fritzversion->ret);
 			addlist(myconfig, "monRing", eingehend->ret);
 			addlist(myconfig, "monCall", ausgehend->ret);
 			addlist(myconfig, "muteRing", stumm->ret);
@@ -177,6 +187,7 @@ void callmon_main()
 			addlist(myconfig, "anzeigetimeout", atimeout->ret);
 			addlist(myconfig, "usePhoneBook", phonebook->ret);
 			addlist(myconfig, "FritzPass", passwort->ret);
+			addlist(myconfig, "FritzUser", userid->ret);
 			addlist(myconfig, "Ziel", rufnummer1->ret);
 			addlist(myconfig, "Ziel_2", rufnummer2->ret);
 			
