@@ -129,7 +129,7 @@ void screensystem_update(int mode)
 
 	setchoiceboxselection(device, getconfig("device", NULL));
 
-	clearscreen(load);)
+	clearscreen(load);
 	getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 0, NULL);
 	addscreenrc(systemupdate, filelist);
 

@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//log.h
+void screenlog();
+
 //timeshiftsettings.h
 void screentimeshiftsettings();
 
