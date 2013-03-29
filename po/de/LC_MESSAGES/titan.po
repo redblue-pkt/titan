@@ -2961,3 +2961,6 @@ msgstr "Mail erfolgreich versendet"
 
 msgid "Can't send Mail"
 msgstr "Mail konnte nicht versendet werden"
+
+msgid "SEND"
+msgstr "Senden"
