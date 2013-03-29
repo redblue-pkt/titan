@@ -315,7 +315,9 @@ void screeninfobar()
 				}
         
 				drawscreen(skin, 0, 0);
+				status.tuxtxt = 1;
 				system(tmpstr);
+				status.tuxtxt = 0;
 				free(tmpstr); tmpstr = NULL; tmpnr = NULL;
 				drawscreen(skin, 0, 0);
 				subtitlepause(0);
