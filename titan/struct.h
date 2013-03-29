@@ -1420,6 +1420,8 @@ struct status
 	time_t timeshiftstart;
 	int crosscontrol;
 	int autochangechannelname;
+	//tuxtext is running
+	int tuxtxt;
 } status;
 
 struct fb
