@@ -845,6 +845,12 @@ void getnetworkbrowser_dns(struct inetwork* net, struct menulist** mlist)
 	tmpstr2 = ostrcat(tmpstr2, net->ip, 1, 0);
 	tmpstr = fixip(tmpstr2, 1);
 	free(tmpstr2); tmpstr2 = NULL;
+
+	if(ostrcmp(tmpstr, "0.0.0.0") == 0)
+	{
+		free(tmpstr); tmpstr = NULL;
+		return;
+	}
 	
 	s = ostrcat(s, tmpstr, 1, 0);
 	free(tmpstr); tmpstr = NULL;
