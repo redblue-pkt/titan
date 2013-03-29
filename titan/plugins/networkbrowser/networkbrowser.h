@@ -595,7 +595,7 @@ void savenetworkbrowser(char* filename)
 
 	if(filename == NULL) return;
 
-	savesettings = readnetworkbrowser("/var/etc/automount/auto.misc", 1);
+	savesettings = readnetworkbrowser(getconfig("automiscfile", NULL) , 1);
 
 	while(node != NULL)
 	{
@@ -740,7 +740,7 @@ void savenetworkbrowser(char* filename)
 		drawscreen(blackscreen, 0, 0);
 		drawscreen(loadmediadb, 0, 0);	
 
-		writesys("/var/etc/automount/auto.misc", savesettings, 0);
+		writesys(getconfig("automiscfile", NULL), savesettings, 0);
 		system("hotplug.sh first");
 //		system("rm -rf /mnt/automount ; mkdir /mnt/automount; cp -a /var/etc/automount/* /mnt/automount");
 	}
@@ -1563,7 +1563,7 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 				else if(checkhddreplacement(node->sharename) == 1)
 					delhddreplacement(0);
 
-				savenetworkbrowser("/var/etc/automount/auto.misc");
+				savenetworkbrowser(getconfig("automiscfile", NULL));
 				save = 1;
 			}
 			break;
@@ -1587,7 +1587,7 @@ void screennetworkbrowser()
 
 start:
 	freenetworkbrowser(); networkbrowser = NULL;
-	readnetworkbrowser("/var/etc/automount/auto.misc", 0);
+	readnetworkbrowser(getconfig("automiscfile", NULL), 0);
 	
 	node = networkbrowser;
 	while(node != NULL)
@@ -1660,7 +1660,7 @@ start:
 						delhddreplacement(0);
 
 					delnetworkbrowser(delnode);
-					savenetworkbrowser("/var/etc/automount/auto.misc");
+					savenetworkbrowser(getconfig("automiscfile", NULL));
 				}
 			}
 		}
