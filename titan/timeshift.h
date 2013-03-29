@@ -68,7 +68,23 @@ void timeshiftstop(int flag)
 		return;
 	if(flag == 0 && status.timeshifttype == 1)
 	{
-		if(status.timeshiftpos > 0 && status.playing == 0) goto startservice;
+		if(status.timeshiftpos > 0 && status.playing == 0)
+			goto startservice;
+		else if(status.playing == 1)
+		{
+			if(status.playspeed != 0 || status.slowspeed != 0)
+			{
+				playerpausets();
+				playercontinuets();
+			}
+
+			playerstopts(1, flag);
+
+			writevfd("Player");
+			screenplayinfobar(NULL, NULL, 1, 1, 4);
+
+			goto startservice;
+		}
 		return;
 	}
 
