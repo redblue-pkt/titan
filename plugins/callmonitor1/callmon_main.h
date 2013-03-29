@@ -71,8 +71,8 @@ void callmon_main()
 	struct skin* atimeout = getscreennode(callmon_main, "atimeout");
 	struct skin* tmp = NULL;
 	
-	addchoicebox(fritzversion, "49", _(".....-04.49"));
-	addchoicebox(fritzversion, "50", _("05.50-....."));
+	addchoicebox(fritzversion, "49", _("nein"));
+	addchoicebox(fritzversion, "50", _("ja"));
 	setchoiceboxselection(fritzversion, getlist(myconfig, "FritzVersion", NULL));
 	
 	changemask(passwort, "abcdefghijklmnopqrstuvwxyz");
