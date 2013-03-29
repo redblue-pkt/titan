@@ -1086,8 +1086,8 @@ void addhddreplacement(char* sharename, int flag)
 	symlink(tmpstr, "/media/hdd");
 	free(tmpstr); tmpstr = NULL;
 
-	writesys("/var/etc/automount/.recordshare", sharename, 0);
-	if(flag == 1) system("/sbin/hotplug.sh first &");
+	writesys(getconfig("recordsharefile", NULL), sharename, 0);
+	if(flag == 1) system("hotplug.sh first &");
 }
 
 
@@ -1101,13 +1101,13 @@ void delhddreplacement(int flag)
 	drawscreen(loadmediadb, 0, 0);	
 
 	unlink("/media/hdd");
-	unlink("/var/etc/automount/.recordshare");
-	if(flag == 1) system("/sbin/hotplug.sh first &");
+	unlink(getconfig("recordsharefile", NULL));
+	if(flag == 1) system("hotplug.sh first &");
 }
 
 int checkhddreplacement(char* sharename)
 {
-	char* recordshare = readfiletomem("/var/etc/automount/.recordshare", 0);
+	char* recordshare = readfiletomem(getconfig("recordsharefile", NULL), 0);
 
 	if(recordshare != NULL)
 	{
