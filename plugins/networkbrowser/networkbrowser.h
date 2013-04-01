@@ -879,7 +879,7 @@ void getnetworkbrowser_dns(struct inetwork* net, struct menulist** mlist)
 			tmpstr = ostrcat(tmpstr , strstrip(nInfo[i].ip), 1, 0);
 			tmpstr = ostrcat(tmpstr , ")", 1, 0);
 			struct menulist* tmpmlist = addmenulist(mlist, tmpstr, NULL, "netbrowser_scanshares.png", 0, 0);
-			changemenulistparam(tmpmlist, nInfo[i].ip, nInfo[i].name);
+			changemenulistparam(tmpmlist, nInfo[i].ip, strstrip(nInfo[i].name));
 			free(tmpstr); tmpstr = NULL;
 
 		}
