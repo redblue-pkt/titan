@@ -1769,6 +1769,7 @@ char* webgetepgsearch(char* query, char* param, int fmt)
 							ostrcatbig(&buf, tmpstr, &maxlen, &pos);
 						free(tmpstr); tmpstr = NULL;
 					}
+					ostrcatbig(&buf, "#", &maxlen, &pos);
 
 					tmpstr = oitoa(epgnode->eventid);
 					ostrcatbig(&buf, tmpstr, &maxlen, &pos);
