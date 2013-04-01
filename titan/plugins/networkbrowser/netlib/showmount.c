@@ -154,7 +154,7 @@ int netbrowsersockportopen(char* ip, int port, int tout)
 			
 		if(ret <= 0)
 		{
-			printf("can't connect\n");
+			printf("can't connect %s (%d)\n", ip, port);
 			close(fd);
 			return 0;
 		}
