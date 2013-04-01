@@ -1597,8 +1597,8 @@ void webgetshoot(char* param, int fmt)
 
 char* webgetepgsearch(char* query, char* param, int fmt)
 {
-	int line = 0, maxlen = 0, pos = 0, maxcount = 0, page = 1;
-	char* buf = NULL, *buf1 = NULL, *buf2 = NULL, *tmpstr = NULL, *tmpnr = NULL, * param1 = NULL;
+	int line = 0, maxlen = 0, pos = 0, maxcount = 0, page = 1, newchannel = 0, longepg = 0;
+	char* buf = NULL, *buf1 = NULL, *buf2 = NULL, *tmpstr = NULL, *tmpnr = NULL, *param1 = NULL, *param2 = NULL;
 	struct channel* chnode = channel;
 	struct epg* epgnode = NULL;
 	struct tm *loctime = NULL;
@@ -1617,14 +1617,19 @@ char* webgetepgsearch(char* query, char* param, int fmt)
 	}
 	else
 	{
-		//create param1
+		//create param1 + 2
 		param1 = strchr(param, '&');
 		if(param1 != NULL)
 		{
 			*param1++ = '\0';
-			page = atoi(param1);
-		}	
+			param2 = strchr(param1, '&');
+			if(param2 != NULL)
+				*param2++ = '\0';
+		}
 	}
+
+	if(param1 != NULL) page = atoi(param1);
+	if(param2 != NULL) longepg = atoi(param2);
 
 	buf1 = malloc(MINMALLOC);
 	if(buf1 == NULL)
@@ -1636,6 +1641,7 @@ char* webgetepgsearch(char* query, char* param, int fmt)
 	if(fmt == 0) webcreateheadbig(&buf, &maxlen, NULL, &pos, 0);
 	while(chnode != NULL)
 	{
+		newchannel = 1;
 		epgnode = getepgakt(chnode);
 		while(epgnode != NULL)
 		{
@@ -1643,10 +1649,14 @@ char* webgetepgsearch(char* query, char* param, int fmt)
 			{
 
 				maxcount++;
-				if(maxcount <= (MAXHTMLLINE * page) - MAXHTMLLINE || maxcount > MAXHTMLLINE * page)
+
+				if(page >= 0)
 				{
-					epgnode = epgnode->next;
-					continue;
+					if(maxcount <= (MAXHTMLLINE * page) - MAXHTMLLINE || maxcount > MAXHTMLLINE * page)
+					{
+						epgnode = epgnode->next;
+						continue;
+					}
 				}
 
 				if(fmt == 0)
@@ -1661,6 +1671,27 @@ char* webgetepgsearch(char* query, char* param, int fmt)
 						ostrcatbig(&buf, "<tr class=line2>", &maxlen, &pos);
 						line = 0;
 					}
+				}
+
+				if(fmt == 1 && newchannel == 1)
+				{
+					newchannel = 0;
+					ostrcatbig(&buf, "BeginNewChannel", &maxlen, &pos);
+					ostrcatbig(&buf, "#", &maxlen, &pos);
+					ostrcatbig(&buf, chnode->name, &maxlen, &pos);
+					ostrcatbig(&buf, "#", &maxlen, &pos);
+					tmpstr = oitoa(chnode->serviceid);
+					ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+					free(tmpstr); tmpstr = NULL;
+					ostrcatbig(&buf, "#", &maxlen, &pos);
+					tmpstr = ollutoa(chnode->transponderid);
+					ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+					free(tmpstr); tmpstr = NULL;
+					ostrcatbig(&buf, "#", &maxlen, &pos);
+					tmpstr = oitoa(chnode->servicetype);
+					ostrcatbig(&buf, "servicetype", &maxlen, &pos);
+					free(tmpstr); tmpstr = NULL;
+					ostrcatbig(&buf, "\n", &maxlen, &pos);
 				}
 
 				if(fmt == 0)
@@ -1684,41 +1715,66 @@ char* webgetepgsearch(char* query, char* param, int fmt)
 					buf2 = ostrcat(buf2, ">", 0, 0);
 					free(tmpstr); tmpstr = NULL;
 					ostrcatbig(&buf, ">", &maxlen, &pos);
-				}
 	
-				loctime = olocaltime(&epgnode->starttime);
-				if(loctime != NULL)
-					strftime(buf1, MINMALLOC, "%d.%m _ %H:%M __ ", loctime);
-					//strftime(buf1, MINMALLOC, "%H:%M -", loctime);
-				free(loctime); loctime = NULL;
-				//loctime = olocaltime(&epgnode->endtime);
-				//if(loctime != NULL)
-				//	strftime(&buf1[7], MINMALLOC - 8, " %H:%M ", loctime);
-				//free(loctime); loctime = NULL;
-				ostrcatbig(&buf, buf1, &maxlen, &pos);
-				ostrcatbig(&buf, " ", &maxlen, &pos);
+					loctime = olocaltime(&epgnode->starttime);
+					if(loctime != NULL)
+						strftime(buf1, MINMALLOC, "%d.%m _ %H:%M __ ", loctime);
+						//strftime(buf1, MINMALLOC, "%H:%M -", loctime);
+					free(loctime); loctime = NULL;
+					//loctime = olocaltime(&epgnode->endtime);
+					//if(loctime != NULL)
+					//	strftime(&buf1[7], MINMALLOC - 8, " %H:%M ", loctime);
+					//free(loctime); loctime = NULL;
+					ostrcatbig(&buf, buf1, &maxlen, &pos);
+					ostrcatbig(&buf, " ", &maxlen, &pos);
 	
-				ostrcatbig(&buf, epgnode->title, &maxlen, &pos);
-				if(chnode->name != NULL)
-				{
-					ostrcatbig(&buf, " (", &maxlen, &pos);
-					ostrcatbig(&buf, chnode->name, &maxlen, &pos);
-					ostrcatbig(&buf, ")", &maxlen, &pos);
-				}
-				if(fmt == 0)
+					ostrcatbig(&buf, epgnode->title, &maxlen, &pos);
+					if(chnode->name != NULL)
+					{
+						ostrcatbig(&buf, " (", &maxlen, &pos);
+						ostrcatbig(&buf, chnode->name, &maxlen, &pos);
+						ostrcatbig(&buf, ")", &maxlen, &pos);
+					}
+
 					ostrcatbig(&buf, "</a><br><font class=smalllabel1>", &maxlen, &pos);
-				else
-					ostrcatbig(&buf, "#", &maxlen, &pos);
-				ostrcatbig(&buf, epgnode->subtitle, &maxlen, &pos);
-				if(fmt == 0)
-				{
+					ostrcatbig(&buf, epgnode->subtitle, &maxlen, &pos);
+
 					ostrcatbig(&buf, "</font></td>", &maxlen, &pos);
 					ostrcatbig(&buf, buf2, &maxlen, &pos);
 					ostrcatbig(&buf, "<img border=0 width=16 height=16 src=img/timer.png alt=\"set timer\"/>", &maxlen, &pos);
 					ostrcatbig(&buf, "</a></td></tr>", &maxlen, &pos);
 				}
 				else
+				{
+					ostrcatbig(&buf, epgnode->title, &maxlen, &pos);
 					ostrcatbig(&buf, "#", &maxlen, &pos);
+
+					tmpstr = olutoa(epgnode->starttime);
+					ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+					free(tmpstr); tmpstr = NULL;
+					ostrcatbig(&buf, "#", &maxlen, &pos);
+
+					tmpstr = olutoa(epgnode->endtime);
+					ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+					free(tmpstr); tmpstr = NULL;
+					ostrcatbig(&buf, "#", &maxlen, &pos);
+
+					ostrcatbig(&buf, epgnode->subtitle, &maxlen, &pos);
+					ostrcatbig(&buf, "#", &maxlen, &pos);
+
+					if(longepg == 1)
+					{
+						tmpstr = epgdescunzip(epgnode);
+						if(tmpstr != NULL)
+							ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+						free(tmpstr); tmpstr = NULL;
+					}
+
+					tmpstr = oitoa(epgnode->eventid);
+					ostrcatbig(&buf, tmpstr, &maxlen, &pos);
+					free(tmpstr); tmpstr = NULL;
+					ostrcatbig(&buf, "\n", &maxlen, &pos);
+				}
 			}
 			epgnode = epgnode->next;
 			free(buf2); buf2 = NULL;
