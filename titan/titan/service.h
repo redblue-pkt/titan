@@ -770,8 +770,12 @@ void servicechangeaudio(struct channel* chnode, struct audiotrack* tracknode)
 	//clear videobuffer on playback for syncing video / audio
 	if(status.playing == 1) videoclearbuffer(status.aktservice->videodev);
 	dmxsetpesfilter(status.aktservice->dmxaudiodev, chnode->audiopid, -1, DMX_OUT_DECODER, DMX_PES_AUDIO, 0);
-	if(!(status.timeshift == 1 && status.playing == 0))
-		audioplay(status.aktservice->audiodev);
+
+	//don't start audio play, if we are in timeshift record, but not playing mode
+	if(status.timeshifttype == 0 && status.timeshift == 1 && status.playing == 0) return;
+	if(status.timeshifttype == 1 && status.timeshift == 1 && status.playing == 0 && status.timeshiftpos > 0) return;
+
+	audioplay(status.aktservice->audiodev);
 }
 
 struct service* addservice(struct service* last)
