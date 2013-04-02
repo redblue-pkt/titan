@@ -660,7 +660,7 @@ void screennetwork_wlan()
 	while(1)
 	{
 		if(scan == 0) addscreenrc(wlan, tmp);
-		rcret = waitrc(wlan, 0, 0);
+		rcret = waitrc(wlan, 1000, 0);
 		if(scan == 0) tmp = listbox->select;
 
 		if(rcret == getrcconfigint("rcexit", NULL))
