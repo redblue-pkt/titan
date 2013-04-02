@@ -1689,7 +1689,7 @@ char* webgetepgsearch(char* query, char* param, int fmt)
 					free(tmpstr); tmpstr = NULL;
 					ostrcatbig(&buf, "#", &maxlen, &pos);
 					tmpstr = oitoa(chnode->servicetype);
-					ostrcatbig(&buf, "servicetype", &maxlen, &pos);
+					ostrcatbig(&buf, tmpstr, &maxlen, &pos);
 					free(tmpstr); tmpstr = NULL;
 					ostrcatbig(&buf, "\n", &maxlen, &pos);
 				}
@@ -1807,7 +1807,11 @@ char* webgetepgsearch(char* query, char* param, int fmt)
 		ostrcatbig(&buf, "</td></tr>", &maxlen, &pos);
 	}
 
-	if(fmt == 0) webcreatetailbig(&buf, &maxlen, &pos, 0);
+	if(fmt == 0)
+		webcreatetailbig(&buf, &maxlen, &pos, 0);
+	else if(buf == NULL)
+		buf = ostrcat("no data", NULL, 0, 0);
+
 	free(buf1);
 	return buf;
 }
