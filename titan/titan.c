@@ -551,7 +551,6 @@ int main(int argc, char *argv[])
 
 	if(checkbox("UFS922") == 1)
 		setfanspeed(-1, 0);
-	status.tuxtxt = 0;
 
 	system(getconfig("skriptbeforetv", NULL));
 	ret = setcecstandby(0);
