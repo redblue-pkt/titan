@@ -2964,3 +2964,6 @@ msgstr "Mail konnte nicht versendet werden"
 
 msgid "SEND"
 msgstr "Senden"
+
+msgid "If you don't find Windows shares you need to disable 'Password protected sharing' in the 'Network and Sharing Center'."
+msgstr "Sollten keine Windows Freigaben sichtbar sein, muss 'Kennwortgeschützte Freigaben' im 'Netzwerk- und Freigabecenter' abgeschalten werden."
