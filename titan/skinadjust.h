@@ -14,6 +14,7 @@ void screenskinadjust()
 	struct skin* topoffset = getscreennode(skinadjust, "topoffset");
 	struct skin* bottomoffset = getscreennode(skinadjust, "bottomoffset");
 	struct skin* piconpath = getscreennode(skinadjust, "piconpath");
+	struct skin* showrecfreesize = getscreennode(skinadjust, "showrecfreesize");
 	struct skin* tmp = NULL;
 	char* ret = NULL;
 
@@ -47,6 +48,10 @@ void screenskinadjust()
 	orightoffset = getconfigint("fbrightoffset", NULL); 
 	otopoffset = getconfigint("fbtopoffset", NULL);
 	obottomoffset = getconfigint("fbbottomoffset", NULL);
+
+	addchoicebox(showrecfreesize, "0", _("no"));
+	addchoicebox(showrecfreesize, "1", _("yes"));
+	setchoiceboxselection(showrecfreesize, getconfig("showrecfreesize", NULL));
 
 	drawscreen(skinadjust, 0, 0);
 	addscreenrc(skinadjust, listbox);
@@ -90,6 +95,8 @@ void screenskinadjust()
 			addskinconfigscreencheck("osdtransparent", osdtransparent, "0");
 			setosdtransparent(getskinconfigint("osdtransparent", NULL));
 			addconfigscreen("piconpath", piconpath);
+			addconfigscreencheck("showrecfreesize", showrecfreesize, "0");
+			status.showrecfreesize = getconfigint("showrecfreesize", NULL);
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "piconpath") == 0)
 			{

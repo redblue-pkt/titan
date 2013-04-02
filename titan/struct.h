@@ -1422,6 +1422,8 @@ struct status
 	int autochangechannelname;
 	//tuxtext is running
 	int tuxtxt;
+	//on some fat32 hdd it takes very long to get free size
+	int showrecfreesize;
 } status;
 
 struct fb

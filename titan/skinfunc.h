@@ -863,13 +863,16 @@ char* getrecfreesize(struct skin* node)
 {
 	int ret = 0;
 
-	unsigned long long full = getfullspace(getconfig("rec_path", NULL)) / (1024 * 1024);
-	unsigned long long free = getfreespace(getconfig("rec_path", NULL)) / (1024 * 1024);
+	if(status.showrecfreesize == 1)
+	{
+		unsigned long long full = getfullspace(getconfig("rec_path", NULL)) / (1024 * 1024);
+		unsigned long long free = getfreespace(getconfig("rec_path", NULL)) / (1024 * 1024);
 
-	if(full > 0 && full >= free) ret = ((full - free) * 100) / full;
+		if(full > 0 && full >= free) ret = ((full - free) * 100) / full;
 
-	if(ret < 0) ret = 0;
-	if(ret > 100) ret = 100;
+		if(ret < 0) ret = 0;
+		if(ret > 100) ret = 100;
+	}
 
 	return oitoa(ret);
 }
