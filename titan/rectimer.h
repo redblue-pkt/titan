@@ -168,7 +168,7 @@ void recrepeatecalc(struct rectimer* node)
 {
 	time_t daysec = 24 * 60 * 60;
 	struct tm* loctime = NULL;
-	int rectimerday = -1, rep = 0, i;
+	int rectimerday = -1, rep = 0, i = 0, daylight = 0;
 
 	if(node->repeate == 0) return;
 	status.writerectimer = 1;
@@ -176,7 +176,10 @@ void recrepeatecalc(struct rectimer* node)
 	//get rectimer start day
 	loctime = olocaltime(&node->begin);
 	if(loctime != NULL)
+	{
 		rectimerday = loctime->tm_wday - 1;
+		daylight = loctime->tm_isdst;
+	}
 	free(loctime); loctime = NULL;
 	if(rectimerday == -1) rectimerday = 6;
 
@@ -203,6 +206,22 @@ void recrepeatecalc(struct rectimer* node)
 			if(rectimerday > 6) rectimerday = 0;
 			if(checkbit(rep, rectimerday) == 1)
 				break;
+		}
+	}
+
+	//calc daylight
+	loctime = olocaltime(&node->begin);
+	if(loctime != NULL)
+	{
+		if(loctime->tm_isdst > daylight)
+		{
+			node->begin = node->begin - 3600;
+			node->end = node->end - 3600;
+		}
+		else if(loctime->tm_isdst < daylight)
+		{
+			node->begin = node->begin + 3600;
+			node->end = node->end + 3600;
 		}
 	}
 }
