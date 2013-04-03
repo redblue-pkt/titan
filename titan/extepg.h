@@ -4,6 +4,7 @@
 //channel C+ DEMANDE for test on astra 19.2 (mhw)
 //channel C+ PORTADA for test on astra 19.2 (mhw2)
 //channel Sky Assist for test on hotbird (opentv)
+//channel EPG Background Audio for test on 28.2 (opentv)
 
 //global function
 
@@ -2084,7 +2085,7 @@ start:
 						//get start/endtime
 						dvbtime = ((mjdtime - 40587) * 86400) + ((buf[p + 2] << 9) | (buf[p + 3] << 1));
 						starttime = dvbtime;
-						endtime = starttime + ((buf[p + 4] << 9) | (buf[p + 5] << 1)) * 60;
+						endtime = starttime + ((buf[p + 4] << 9) | (buf[p + 5] << 1));
 
 						tmpchnode = getchannel(extepgchannelnode->serviceid, extepgchannelnode->transponderid);
 						if(tmpchnode == NULL)
