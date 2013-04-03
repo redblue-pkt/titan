@@ -2245,7 +2245,7 @@ int readopentvsummary(struct stimerthread* self, struct dvbdev* fenode, int pid)
 			while(p < readlen + 3)
 			{
 				unsigned short int eventid = 0;
-				unsigned char	desclen = 0;
+				unsigned char desclen = 0;
 				unsigned short int packetlen = ((buf[p + 2] & 0x0f) << 8) | buf[p + 3];
 
 				if((buf[p + 4] != 0xb9) || ((packetlen + p) > readlen + 3)) break;
@@ -2255,6 +2255,7 @@ int readopentvsummary(struct stimerthread* self, struct dvbdev* fenode, int pid)
 				desclen = buf[p + 1];
 
 				char tmpstr[MINMALLOC];
+				memset(tmpstr, 0, MINMALLOC);
 
 				if(skyhuffmandecode(buf + p + 2, desclen, (unsigned char*)tmpstr, MINMALLOC) != 0)
 					tmpstr[0] = '\0';
@@ -2263,6 +2264,7 @@ int readopentvsummary(struct stimerthread* self, struct dvbdev* fenode, int pid)
 					cache = getextepgcache((channelid << 16) | eventid);
 					if(cache != NULL && cache->epgnode != NULL)
 					{
+						ret = 0;
 						//tmpstr = stringreplacechar(tmpstr, '\n', ' ');
 
 						//compress long desc
