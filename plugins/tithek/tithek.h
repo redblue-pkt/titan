@@ -450,9 +450,8 @@ void tithekbackgrounddownloadthread(struct stimerthread* timernode, struct downl
 
 		char* tmpstr = ostrcat(_("Download successful !"), "\n\n", 0, 0);
 		tmpstr = ostrcat(tmpstr, node->filename, 1, 0);		
-		tmpstr = ostrcat(tmpstr, _("Start playback"), 1, 0);		
 		tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
-		tmpstr = ostrcat(tmpstr, node->filename, 1, 0);		
+		tmpstr = ostrcat(tmpstr, _("Start playback"), 1, 0);		
 		if(textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 300, 0, 0) == 1)
 		{
 			if(status.mcaktiv == 0)
