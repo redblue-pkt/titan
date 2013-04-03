@@ -228,7 +228,14 @@ void screenadjust()
 		usecec->hidden = YES;
 
 	if(checkbox("ATEMIO7600") == 1)
+	{
 		sataswitch->hidden = NO;
+		addchoicebox(sataswitch, "0", _("extern"));
+		addchoicebox(sataswitch, "1", _("intern"));
+		tmpstr = getsataswitch();
+		setchoiceboxselection(sataswitch, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
 	else
 		sataswitch->hidden = YES;
 	
@@ -257,12 +264,6 @@ void screenadjust()
 	addchoicebox(playerbufferseektime, "9", "9");
 	addchoicebox(playerbufferseektime, "10", "10");
 	setchoiceboxselection(playerbufferseektime, getconfig("playerbufferseektime", NULL));
-
-	addchoicebox(sataswitch, "0", _("extern"));
-	addchoicebox(sataswitch, "1", _("intern"));
-	tmpstr = getsataswitch();
-	setchoiceboxselection(sataswitch, tmpstr);
-	free(tmpstr); tmpstr = NULL;
 	
 	drawscreen(adjust, 0, 0);
 	addscreenrc(adjust, listbox);
