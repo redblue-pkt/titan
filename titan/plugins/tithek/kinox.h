@@ -50,21 +50,31 @@ char* kinox(char* link, char* url, char* name, int flag)
 	return streamurl;
 }
 
-int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr)
+int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
 {
 	int ret = 1;
-
+printf("1111111111\n");
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
 
 	char* search = NULL;
-	if(searchstr == NULL)
-		search = textinputhist("Search", " ", "searchhist");
+	if(flag == 0)
+	{
+printf("2222222222\n");
+
+		if(searchstr == NULL)
+			search = textinputhist("Search", " ", "searchhist");
+		else
+			search = textinputhist("Search", searchstr, "searchhist");
+	}
 	else
-		search = textinputhist("Search", searchstr, "searchhist");
-	
+		search = ostrcat(link, NULL, 0, 0);
+printf("3333333333\n");
+
 	if(search != NULL)
 	{
+printf("4444444444\n");
+
 		drawscreen(load, 0, 0);
 		search = stringreplacechar(search, ' ', '+');
 		char* tmpstr = NULL;
@@ -81,8 +91,14 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 		char* menu = NULL;
 
 		ip = ostrcat("kinox.to", NULL, 0, 0);
-		path = ostrcat("Search.html?q=", search, 0, 0);
-	
+		if(flag == 0)
+			path = ostrcat("Search.html?q=", search, 0, 0);
+		else
+			path = string_replace_all("http://kinox.to/", "", search, 0);
+
+printf("5555555555\n");
+printf("path: %s\n",path);
+		
 		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 		tmpstr = string_resub("<div id=\"beep\" class=\"beep\"></div>", "</table>", tmpstr, 0);
 
@@ -791,6 +807,111 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 		ret = 0;
 	}
 
+	return ret;
+}
+
+int kinox_search_cast(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr)
+{
+	int ret = 1;
+
+	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
+		return ret;
+
+	char* search = NULL;
+	if(searchstr == NULL)
+		search = textinputhist("Search", " ", "searchhist");
+	else
+		search = textinputhist("Search", searchstr, "searchhist");
+	
+	if(search != NULL)
+	{
+		drawscreen(load, 0, 0);
+		search = stringreplacechar(search, ' ', '+');
+
+		char* tmpstr = NULL;
+		char* tmpstr1 = NULL;
+		char* ip = NULL;
+		char* path = NULL;
+
+		char* line = NULL;
+		char* menu = NULL;
+
+		ip = ostrcat("www.imdb.com", NULL, 0, 0);
+		path = ostrcat("find?q=", search, 0, 0);
+		path = ostrcat(path, "&s=nm", 1, 0);
+printf("ip: %s\n", ip);
+printf("path: %s\n", path);
+		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
+		writesys("/var/usr/local/share/titan/plugins/tithek/kinox_cast_tmpstr", tmpstr, 0);
+		tmpstr = string_replace_all("<td class=\"primary_photo\"> <a href=\"/name/", "\nfound=\"", tmpstr, 1);
+		writesys("/var/usr/local/share/titan/plugins/tithek/kinox_cast_tmpstr2", tmpstr, 0);
+
+		tmpstr1 = string_resub("<table class=\"findList\">", "</div>", tmpstr, 0);
+		writesys("/var/usr/local/share/titan/plugins/tithek/kinox_cast_tmpstr3", tmpstr1, 0);
+				free(tmpstr), tmpstr = NULL;
+
+		int count = 0;
+		int incount = 0;
+		int i;
+		struct splitstr* ret1 = NULL;
+		ret1 = strsplit(tmpstr1, "\n", &count);
+	
+		char* url = NULL;
+		char* pic = NULL;
+		char* name = NULL;
+		
+		if(ret1 != NULL && count > 0)
+		{
+			int max = count;
+			for(i = 0; i < max; i++)
+			{
+				url = string_resub("found=\"", "/", ret1[i].part, 0);
+				pic = string_resub("<img src=\"", "\"", ret1[i].part, 0);
+
+				tmpstr = string_resub("found=\"", "<small>", ret1[i].part, 0);
+				name = oregex(".*<a href=\"/name/nm.*\ >(.*)</a>", tmpstr);
+
+				printf("(%d/%d) name: %s\n",i, count, name);				
+				printf("(%d/%d) url: %s\n",i, count, url);
+				printf("(%d/%d) pic: %s\n",i, count, pic);
+
+				pic = string_replace_all(",", "%2C", pic, 1);
+				printf("(%d/%d) pic: %s\n",i, count, pic);
+
+				if(url != NULL)
+				{
+					incount += 1;
+					line = ostrcat(line, name, 1, 0);
+					line = ostrcat(line, "#http://kinox.to/People/", 1, 0);
+					line = ostrcat(line, url, 1, 0);
+					line = ostrcat(line, "#", 1, 0);
+					line = ostrcat(line, pic, 1, 0);
+					line = ostrcat(line, "#kinox_search_", 1, 0);
+					line = ostrcat(line, oitoa(incount + time(NULL)), 1, 1);
+					line = ostrcat(line, ".jpg#KinoX - Search#32\n", 1, 0);
+				}
+				
+				free(url), url = NULL;
+				free(pic), pic = NULL;
+				free(name), name = NULL;				
+				free(tmpstr), tmpstr = NULL;
+			}
+
+			free(ret1), ret1 = NULL;
+			if(line != NULL)
+			{
+				menu = ostrcat("/tmp/tithek/kinox.search.cast.list", NULL, 0, 0);
+				writesys(menu, line, 0);
+				struct tithek* tnode = (struct tithek*)listbox->select->handle;
+				createtithek(tnode, tnode->title,  menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
+				ret = 0;
+			}
+
+		}
+		free(tmpstr), tmpstr = NULL;
+		free(ip), ip = NULL;
+	}
+	free(search), search = NULL;
 	return ret;
 }
 
