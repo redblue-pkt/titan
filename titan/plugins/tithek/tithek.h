@@ -41,6 +41,7 @@ int tithekexit = 0;
 //flag 29	- solarmovie search movie
 //flag 30	- solarmovie search serie
 //flag 31	- kinox search cast
+//flag 32	- kinox search cast results
 //flag 50	- beeg
 //flag 66   - coming soon dummy
 //flag 1000 - menu pincode

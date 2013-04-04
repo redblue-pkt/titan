@@ -876,7 +876,7 @@ int kinox_search_cast(struct skin* grid, struct skin* listbox, struct skin* coun
 					line = ostrcat(line, pic, 1, 0);
 					line = ostrcat(line, "#kinox_search_", 1, 0);
 					line = ostrcat(line, oitoa(incount + time(NULL)), 1, 1);
-					line = ostrcat(line, ".jpg#KinoX - Search#32\n", 1, 0);
+					line = ostrcat(line, ".jpg#KinoX - Cast Search#32\n", 1, 0);
 				}
 				
 				free(url), url = NULL;
