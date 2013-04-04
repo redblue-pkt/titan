@@ -168,7 +168,7 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 	else if(ostrcmp(query, "getvol") == 0)
 		buf = webgetvol(fmt);
 	else if(ostrcmp(query, "sendrc") == 0)
-		websendrc(param, fmt);
+		buf = websendrc(param, fmt);
 	else if(ostrcmp(query, "getrectimer") == 0)
 		buf = webgetrectimer(param, 0, fmt);
 	else if(ostrcmp(query, "addrectimer") == 0)

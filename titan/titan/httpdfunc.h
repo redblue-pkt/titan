@@ -1390,7 +1390,10 @@ char* webgetsingleepg(char* param, int fmt)
 		free(buf2); buf2 = NULL;
 	}
 
-	if(fmt == 0) webcreatetailbig(&buf, &maxlen, &pos, 0);
+	if(fmt == 0)
+		webcreatetailbig(&buf, &maxlen, &pos, 0);
+	else if(buf == NULL)
+		buf = ostrcat("no data", NULL, 0, 0);
 
 	free(buf1);
 	return buf;
@@ -2154,12 +2157,15 @@ char* webdelfile(char* param, char* link, char* dellink, char* path, char* mask,
 	return buf;
 }
 
-void websendrc(char* param, int fmt)
+char* websendrc(char* param, int fmt)
 {
 	int rccode = 0;
 
 	rccode = getrcconfigint(param, NULL);
 	writerc(rccode);
+
+	buf = ostrcat("ok", NULL, 0, 0);
+	return buf;
 }
 
 //flag 0: get aktiv timer
