@@ -983,7 +983,7 @@ char* webvideo(char* param, int fmt)
 	tmpbuf = ostrcat("not in play mode", NULL, 0, 0);
     
 	int count = 0;
-	if(status.play == 0 && (ostrcmp("play", param) == 0 || ostrcmp("play=", param) == 0))
+	if(status.timeshift == 0 && status.play == 0 && (ostrcmp("play", param) == 0 || ostrcmp("play=", param) == 0))
 	{
 		int count = 0;
 
@@ -1000,10 +1000,11 @@ char* webvideo(char* param, int fmt)
 	if(count >= 30 && status.play == 0)
 	{
 		free(status.webplayfile); status.webplayfile = NULL;
+		free(tmpbuf); tmpbuf = NULL;
 		tmpbuf = ostrcat("can not start playback", NULL, 0, 0);
 	}
 
-	if(status.play == 1)
+	if(status.timeshift == 0 && status.play == 1)
 	{
 		if(ostrcmp("stop", param) == 0 || ostrcmp("stop=", param) == 0)
 			writerc(getrcconfigint("rcstop", NULL));
