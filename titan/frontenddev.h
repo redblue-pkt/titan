@@ -1051,7 +1051,7 @@ void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 	
 	if(diseqmode == 3) // Diseqc 1.3 (USALS)
 	{
-		double	orbitalpos = abs(tpnode->orbitalpos) / 10.00;
+		double orbitalpos = tpnode->orbitalpos / 10.00;
 
 		if(latpos == 1) // south
 			latitude = -latitude;
