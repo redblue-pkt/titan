@@ -53,15 +53,13 @@ char* kinox(char* link, char* url, char* name, int flag)
 int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
 {
 	int ret = 1;
-printf("1111111111\n");
+
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
 
 	char* search = NULL;
 	if(flag == 0)
 	{
-printf("2222222222\n");
-
 		if(searchstr == NULL)
 			search = textinputhist("Search", " ", "searchhist");
 		else
@@ -69,12 +67,9 @@ printf("2222222222\n");
 	}
 	else
 		search = ostrcat(link, NULL, 0, 0);
-printf("3333333333\n");
 
 	if(search != NULL)
 	{
-printf("4444444444\n");
-
 		drawscreen(load, 0, 0);
 		search = stringreplacechar(search, ' ', '+');
 		char* tmpstr = NULL;
@@ -95,9 +90,6 @@ printf("4444444444\n");
 			path = ostrcat("Search.html?q=", search, 0, 0);
 		else
 			path = string_replace_all("http://kinox.to/", "", search, 0);
-
-printf("5555555555\n");
-printf("path: %s\n",path);
 		
 		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 		tmpstr = string_resub("<div id=\"beep\" class=\"beep\"></div>", "</table>", tmpstr, 0);
@@ -244,8 +236,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 				pos1 = ostrstr(tmpstr, from);
 				folgen = getxmlentry(ostrstr(tmpstr, from), "rel=");
 				printf("session %d folgen: %s\n",i , folgen);	
-		
-	
+
 				if(folgen != NULL)
 				{
 					int count = 0;
@@ -839,8 +830,7 @@ int kinox_search_cast(struct skin* grid, struct skin* listbox, struct skin* coun
 		ip = ostrcat("www.imdb.com", NULL, 0, 0);
 		path = ostrcat("find?q=", search, 0, 0);
 		path = ostrcat(path, "&s=nm", 1, 0);
-printf("ip: %s\n", ip);
-printf("path: %s\n", path);
+
 		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 		writesys("/var/usr/local/share/titan/plugins/tithek/kinox_cast_tmpstr", tmpstr, 0);
 		tmpstr = string_replace_all("<td class=\"primary_photo\"> <a href=\"/name/", "\nfound=\"", tmpstr, 1);
@@ -871,12 +861,10 @@ printf("path: %s\n", path);
 				tmpstr = string_resub("found=\"", "<small>", ret1[i].part, 0);
 				name = oregex(".*<a href=\"/name/nm.*\ >(.*)</a>", tmpstr);
 
-				printf("(%d/%d) name: %s\n",i, count, name);				
-				printf("(%d/%d) url: %s\n",i, count, url);
-				printf("(%d/%d) pic: %s\n",i, count, pic);
-
+				debug(99, "(%d/%d) name: %s url: %s pic: %s\n",i, count, name, url, pic);
+				debug(99, "-------------------------------");
+									
 				pic = string_replace_all(",", "%2C", pic, 1);
-				printf("(%d/%d) pic: %s\n",i, count, pic);
 
 				if(url != NULL)
 				{
