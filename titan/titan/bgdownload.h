@@ -133,9 +133,16 @@ void screenbgdownload()
 		if(rcret == getrcconfigint("rcred", NULL) && listbox->select != NULL && listbox->select->handle != NULL) //stop download
 		{
 			int nr = (int)listbox->select->handle;
-			if(textbox(_("Message"), _("Realy stop download ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-				delbgdownload(nr);
-			drawscreen(screenbgdownload, 0, 0);
+			if(nr < MAXBGDOWNLOAD)
+			{
+				struct download* dnode = bgdownload[nr];
+				if(dnode != NULL && dnode->ret == -1)
+				{
+					if(textbox(_("Message"), _("Realy stop download ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+						delbgdownload(nr);
+					drawscreen(screenbgdownload, 0, 0);
+				}
+			}
 		}
 		
 		if(rcret == getrcconfigint("rcyellow", NULL) && listbox->select != NULL && listbox->select->handle != NULL) //play download
