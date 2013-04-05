@@ -52,7 +52,7 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin, int fla
 	if(view == 0)
 	{
 		filelist->fontsize = 25;//, fontspace = 5;
-		filelist->height = 480;
+		filelist->height = 460;
 		filelist->width = 1160;
 		filelist->prozwidth = 0;
 		filelist->posx = 40;
@@ -76,7 +76,7 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin, int fla
 	else if(view == 1)
 	{
 		filelist->fontsize = 35;//, fontspace = 5;
-		filelist->height = 480;
+		filelist->height = 460;
 		filelist->width = 1160;
 		filelist->prozwidth = 0;
 		filelist->posx = 40;
@@ -101,7 +101,7 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin, int fla
 	else if(view == 2)
 	{
 		filelist->fontsize = 20;//, fontspace = 5;
-		filelist->height = 480;
+		filelist->height = 460;
 		filelist->width = 1160;
 		filelist->prozwidth = 0;	
 		filelist->posx = 40;
@@ -171,7 +171,7 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin, int fla
 	else if(view == 4)
 	{
 		filelist->fontsize = 30;//, fontspace = 5;
-		filelist->height = 480;
+		filelist->height = 460;
 		filelist->width = 1160;
 		filelist->prozwidth = 0;
 		filelist->posx = 40;
@@ -196,7 +196,7 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin, int fla
 	else if(view == 5)
 	{
 		filelist->fontsize = 25;//, fontspace = 5;
-		filelist->height = 480;
+		filelist->height = 460;
 		filelist->width = 1160;
 		filelist->prozwidth = 0;
 		filelist->posx = 40;
