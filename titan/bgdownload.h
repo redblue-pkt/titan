@@ -146,7 +146,14 @@ void screenbgdownload()
 				struct download* dnode = bgdownload[nr];
 				if(dnode != NULL && dnode->flag == 1)
 				{
-					//TODO play -> dnode->filename
+					if(status.mcaktiv == 0)
+					{
+						int ret = servicestop(status.aktservice, 1, 1);
+						if(ret == 1) return;
+					}
+					screenplay(dnode->filename, dnode->filename, 2, 0);
+					if(status.mcaktiv == 0)
+						servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 					drawscreen(screenbgdownload, 0, 0);
 				}
 			}

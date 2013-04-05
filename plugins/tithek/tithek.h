@@ -431,55 +431,6 @@ end:
 	tithekdownloadrun = 1;
 }
 
-void tithekbackgrounddownloadthread(struct stimerthread* timernode, struct download* node, int flag)
-{
-	tithekdownloadcount++;
-
-	if(node != NULL)
-	{
-		m_lock(&status.tithekmutex, 20);
-		if(file_exist(node->filename))
-		{
-			m_unlock(&status.tithekmutex, 20);
-			goto end;
-		}
-
-		FILE *fd; fd = fopen(node->filename, "w");
-		if(fd != NULL) fclose(fd);
-		m_unlock(&status.tithekmutex, 20);
-
-		gethttpreal(node->host, node->page, node->port, node->filename, node->auth, NULL, 0, NULL, NULL, node->timeout, 0);
-
-		char* tmpstr = ostrcat(_("Download successful !"), "\n\n", 0, 0);
-		tmpstr = ostrcat(tmpstr, node->filename, 1, 0);		
-		tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
-		tmpstr = ostrcat(tmpstr, _("Start playback"), 1, 0);		
-		if(textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 300, 0, 0) == 1)
-		{
-			if(status.mcaktiv == 0)
-			{
-				int rcret = servicestop(status.aktservice, 1, 1);
-				if(rcret == 1) return;
-			}
-			screenplay(node->filename, node->filename, 2, flag);
-			if(status.mcaktiv == 0)
-				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
-		}		
-		free(tmpstr); tmpstr = NULL;
-
-end:
-		free(node->host); node->host = NULL;
-		free(node->page); node->page = NULL;
-		free(node->filename); node->filename = NULL;
-		free(node->auth); node->auth = NULL;
-	}
-
-	free(node); node = NULL;
-
-	tithekdownloadcount--;
-	tithekdownloadrun = 1;
-}
-
 char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 {
 	int ret = 1, port = 80, timeout = 50000;
@@ -1017,9 +968,9 @@ void cacheplay(char* link, char* filename, int flag)
 	free(host), host = NULL;
 }
 
-void backgroundplay(char* link, char* filename)
+void backgrounddl(char* link, char* filename)
 {
-	int port = 80;
+	int port = 80, ret = 0;
 	char* host = NULL, *pos = NULL, *path = NULL, *file = NULL, *tmpstr = NULL;
 	host = string_replace("http://", "", (char*)link, 0);
 
@@ -1049,20 +1000,9 @@ void backgroundplay(char* link, char* filename)
 	debug(99, "local: %s", file);
 	debug(99, "---------------------------------------");
 	
-	//dnode is freed in thread
-	struct download* dnode = calloc(1, sizeof(struct download));
-	if(dnode != NULL)
-	{
-		dnode->host = ostrcat(host, NULL, 0, 0);
-		dnode->page = ostrcat(path, NULL, 0, 0);
-		dnode->port = port;
-		dnode->filename = ostrcat(file, NULL, 0, 0);
-		dnode->auth = NULL;
-		dnode->connfd = -1;
-		dnode->ret = -1;
-		dnode->timeout = 50000;
-		addtimer(&tithekbackgrounddownloadthread, START, 100, 1, (void*)dnode, NULL, NULL);
-	}
+	ret = startbgdownload(host, path, port, file, NULL, 1);
+	if(ret == 1)
+		textbox(_("Message"), _("Can't start download.\nPlease try later."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 					
 	free(tmpstr), tmpstr = NULL;
 	free(file), file = NULL;
@@ -1297,7 +1237,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 			{
 				char* search = textinput("Search", filename);
 				if(search != NULL)
-					backgroundplay(tmpstr1, search);
+					backgrounddl(tmpstr1, search);
 				free(search), search = NULL;
 			}
 			 
