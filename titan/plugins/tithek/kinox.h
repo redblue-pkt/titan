@@ -196,7 +196,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 {
 	debug(99, "link: %s", link);
 	int ret = 1, series = 0;
-	char* ip = NULL, *pos = NULL, *path = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *line = NULL, *url = NULL, *url2 = NULL, *pathnew = NULL;
+	char* ip = NULL, *pos = NULL, *path = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *tmpstr4 = NULL, *tmpstr5 = NULL, *line = NULL, *url = NULL, *url2 = NULL, *url3 = NULL, *url4 = NULL, *pathnew = NULL;
 
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
@@ -352,6 +352,50 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					tmpstr3 = string_resub("<a href=\"", "\"", tmpstr3, 0);
 					
 					url2 = ostrcat(tmpstr3, NULL, 0, 0);
+////////////////
+					free(pathnew), pathnew = NULL;
+					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
+					pathnew = ostrcat(pathnew, "&Part=3", 1, 0);
+
+					logfile = ostrcat("/tmp/kinox6_pathnew3", hname, 0, 0);
+					if(getconfigint("debuglevel", NULL) == 99)
+						writesys(logfile, pathnew, 0);
+					free(logfile), logfile= NULL;
+					
+					tmpstr4 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+					free(pathnew), pathnew = NULL;
+
+					logfile = ostrcat("/tmp/kinox7_tmpstr4", hname, 0, 0);
+					if(getconfigint("debuglevel", NULL) == 99)
+						writesys(logfile, tmpstr4, 0);
+					free(logfile), logfile= NULL;
+
+					tmpstr4 = string_replace_all("\\", "", tmpstr4, 1);
+					tmpstr4 = string_resub("<a href=\"", "\"", tmpstr4, 0);
+					
+					url3 = ostrcat(tmpstr4, NULL, 0, 0);
+////////////////
+					free(pathnew), pathnew = NULL;
+					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
+					pathnew = ostrcat(pathnew, "&Part=4", 1, 0);
+
+					logfile = ostrcat("/tmp/kinox6_pathnew4", hname, 0, 0);
+					if(getconfigint("debuglevel", NULL) == 99)
+						writesys(logfile, pathnew, 0);
+					free(logfile), logfile= NULL;
+					
+					tmpstr5 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+					free(pathnew), pathnew = NULL;
+
+					logfile = ostrcat("/tmp/kinox7_tmpstr5", hname, 0, 0);
+					if(getconfigint("debuglevel", NULL) == 99)
+						writesys(logfile, tmpstr5, 0);
+					free(logfile), logfile= NULL;
+
+					tmpstr5 = string_replace_all("\\", "", tmpstr5, 1);
+					tmpstr5 = string_resub("<a href=\"", "\"", tmpstr5, 0);
+					
+					url4 = ostrcat(tmpstr5, NULL, 0, 0);
 ////////////////
 
 					int type = 0;
@@ -549,14 +593,212 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						free(tmpstr2), tmpstr2 = NULL;
 					}
 
+					if(ostrcmp(url, url3) != 0 && ostrcmp(url2, url3) != 0)
+					{
+						free(tmpstr2), tmpstr2 = NULL;
+						free(hname), hname = NULL;
+						hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
+						int type = 0;
+						int count2 = 0;
+						struct splitstr* ret2 = NULL;
+						ret2 = strsplit(tmpstr4, "/", &count2);
+				
+						if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Sockshare.com") == 0)
+						{
+							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+							type = 14;
+						}
+						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Putlocker.com") == 0)
+						{
+							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+							type = 14;
+						}
+						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "FileNuke.com") == 0)
+						{
+							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+							type = 15;
+						}
+						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "StreamCloud.eu") == 0)
+						{
+							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+							type = 20;
+						}
+						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "VidStream.in") == 0)
+						{
+							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+							type = 25;
+						}
+						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "FlashX.tv") == 0)
+						{
+							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+							type = 24;
+						}
+						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "PrimeShare.tv") == 0)
+						{
+							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+						}				
+						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "XvidStage.com") == 0)
+						{
+							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+							type = 26;
+						}
+						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Vidxden.com (DivX)") == 0)
+						{
+							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+						}
+						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "NowVideo.eu") == 0)
+						{
+							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+							type = 27;
+						}
+						else if(ret2 != NULL && count2 > 2)
+						{
+							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+							hname = ostrcat(hname, " (coming soon)", 1, 0);
+							type = 66;
+						}
+						else
+						{
+							tmpstr2 = ostrcat("unknown", NULL, 0, 0);
+							hname = ostrcat(hname, " (coming soon)", 1, 0);
+							type = 66;
+						}
+							
+						free(ret2), ret2 = NULL;
+						debug(99, "-------------------------------");
+						debug(99, "hname: %s (Part3) url: %s id: %s", hname, url3, tmpstr2);
+											
+						incount += 1;
+						line = ostrcat(line, hname, 1, 0);
+						line = ostrcat(line, " (Part3)", 1, 0);					
+						line = ostrcat(line, "#", 1, 0);
+						line = ostrcat(line, url3, 1, 0);
+						line = ostrcat(line, ";", 1, 0);
+						line = ostrcat(line, tmpstr2, 1, 0);
+						line = ostrcat(line, ";", 1, 0);				
+						line = ostrcat(line, hname, 1, 0);
+						line = ostrcat(line, "#", 1, 0);
+						line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
+						line = ostrcat(line, hname, 1, 0);
+						line = ostrcat(line, ".jpg#kinox_", 1, 0);
+						line = ostrcat(line, hname, 1, 0);
+						line = ostrcat(line, ".jpg#KinoX - ", 1, 0);
+						line = ostrcat(line, title, 1, 0);
+						line = ostrcat(line, "#", 1, 0);
+						line = ostrcat(line, oitoa(type), 1, 0);
+						line = ostrcat(line, "\n", 1, 0);
+						free(tmpstr2), tmpstr2 = NULL;
+					}
+
+					if(ostrcmp(url, url4) != 0 && ostrcmp(url2, url4) != 0 && ostrcmp(url3, url4) != 0)
+					{
+						free(tmpstr2), tmpstr2 = NULL;
+						free(hname), hname = NULL;
+						hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
+						int type = 0;
+						int count2 = 0;
+						struct splitstr* ret2 = NULL;
+						ret2 = strsplit(tmpstr5, "/", &count2);
+				
+						if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Sockshare.com") == 0)
+						{
+							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+							type = 14;
+						}
+						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Putlocker.com") == 0)
+						{
+							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+							type = 14;
+						}
+						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "FileNuke.com") == 0)
+						{
+							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+							type = 15;
+						}
+						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "StreamCloud.eu") == 0)
+						{
+							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+							type = 20;
+						}
+						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "VidStream.in") == 0)
+						{
+							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+							type = 25;
+						}
+						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "FlashX.tv") == 0)
+						{
+							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+							type = 24;
+						}
+						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "PrimeShare.tv") == 0)
+						{
+							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+						}				
+						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "XvidStage.com") == 0)
+						{
+							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+							type = 26;
+						}
+						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Vidxden.com (DivX)") == 0)
+						{
+							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+						}
+						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "NowVideo.eu") == 0)
+						{
+							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+							type = 27;
+						}
+						else if(ret2 != NULL && count2 > 2)
+						{
+							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+							hname = ostrcat(hname, " (coming soon)", 1, 0);
+							type = 66;
+						}
+						else
+						{
+							tmpstr2 = ostrcat("unknown", NULL, 0, 0);
+							hname = ostrcat(hname, " (coming soon)", 1, 0);
+							type = 66;
+						}
+							
+						free(ret2), ret2 = NULL;
+						debug(99, "-------------------------------");
+						debug(99, "hname: %s (Part4) url: %s id: %s", hname, url4, tmpstr2);
+											
+						incount += 1;
+						line = ostrcat(line, hname, 1, 0);
+						line = ostrcat(line, " (Part4)", 1, 0);					
+						line = ostrcat(line, "#", 1, 0);
+						line = ostrcat(line, url4, 1, 0);
+						line = ostrcat(line, ";", 1, 0);
+						line = ostrcat(line, tmpstr2, 1, 0);
+						line = ostrcat(line, ";", 1, 0);				
+						line = ostrcat(line, hname, 1, 0);
+						line = ostrcat(line, "#", 1, 0);
+						line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
+						line = ostrcat(line, hname, 1, 0);
+						line = ostrcat(line, ".jpg#kinox_", 1, 0);
+						line = ostrcat(line, hname, 1, 0);
+						line = ostrcat(line, ".jpg#KinoX - ", 1, 0);
+						line = ostrcat(line, title, 1, 0);
+						line = ostrcat(line, "#", 1, 0);
+						line = ostrcat(line, oitoa(type), 1, 0);
+						line = ostrcat(line, "\n", 1, 0);
+						free(tmpstr2), tmpstr2 = NULL;
+					}
+					
 					free(tmpstr1), tmpstr1 = NULL;
 					free(tmpstr2), tmpstr2 = NULL;
 					free(tmpstr3), tmpstr3 = NULL;
+					free(tmpstr4), tmpstr4 = NULL;
+					free(tmpstr5), tmpstr5 = NULL;
 					free(hname), hname = NULL;
 					free(hnr), hnr = NULL;
 					free(hlink), hlink = NULL;										
 					free(url), url = NULL;
 					free(url2), url2 = NULL;
+					free(url3), url3 = NULL;
+					free(url4), url4 = NULL;
 					free(pathnew), pathnew = NULL;
 				}
 			}
