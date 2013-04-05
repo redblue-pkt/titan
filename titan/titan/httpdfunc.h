@@ -2161,6 +2161,7 @@ char* webdelfile(char* param, char* link, char* dellink, char* path, char* mask,
 char* websendrc(char* param, int fmt)
 {
 	int rccode = 0;
+	char* buf = NULL;
 
 	rccode = getrcconfigint(param, NULL);
 	writerc(rccode);
