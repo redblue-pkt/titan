@@ -101,7 +101,7 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin, int fla
 	else if(view == 2)
 	{
 		filelist->fontsize = 20;//, fontspace = 5;
-		filelist->height = 460;
+		filelist->height = 480;
 		filelist->width = 1160;
 		filelist->prozwidth = 0;	
 		filelist->posx = 40;
