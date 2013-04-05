@@ -450,6 +450,7 @@ void oshutdown(int exitcode, int flag)
 		freeoldentry();
 		freeextepgconfig();
 		freelastsubtitle();
+		freebgdownload();
 	}
 	else
 		freetimer(1);
