@@ -406,6 +406,7 @@ void playrcyellow(char* file, char* showname, int playinfobarstatus, int playert
 void playrctext(char* file, char* showname, int playinfobarstatus, int playertype, int flag);
 void playrcok(char* file, char* showname, int playinfobarstatus, int playertype, int flag);
 int playcheckdirrcret(char* file, int dirrcret);
+void playrcjumpto(char* file, char* showname, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
 
 //inetwork.h
 struct inetwork* getinetworkbydevice(char* device);

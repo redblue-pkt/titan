@@ -1045,6 +1045,16 @@ void playrcjumpr(char* file, char* showname, int sec, int* playinfobarstatus, in
 	}
 }
 
+void playrcjumpto(char* file, char* showname, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
+{
+	if(status.pause == 0 && status.playspeed == 0 && status.slowspeed == 0)
+	{
+		int jump = atoi(numinput(_("Jump To (min)"), NULL, "000", 1));
+		jump = jump * 60;
+		playrcjumpf(file, showname, jump, &playinfobarstatus, &playinfobarcount, playertype, flag);
+	}
+}
+
 void playrcjumpf(char* file, char* showname, int sec, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
 //	if(checkbit(status.playercan, 12) == 0) return;
@@ -1435,6 +1445,9 @@ playerstart:
 				
 				if(rcret == getrcconfigint("rc7", NULL))
 					playrcjumpr(file, showname, skip79, &playinfobarstatus, &playinfobarcount, playertype, flag);
+
+				if(rcret == getrcconfigint("rc0", NULL))
+					playrcjumpto(file, showname, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
 				if(rcret == getrcconfigint("rcright", NULL))
 					playrcjumpf(file, showname, 60, &playinfobarstatus, &playinfobarcount, playertype, flag);
