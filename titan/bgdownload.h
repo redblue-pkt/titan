@@ -9,14 +9,19 @@ void delbgdownload(int nr)
 	
 	if(dnode != NULL)
 	{
+		if(dnode->connfd > -1)
+		{
+			sockclose(&dnode->connfd);
+			sleep(1);
+		}
 		free(dnode->host); dnode->host = NULL;
 		free(dnode->page); dnode->page = NULL;
 		free(dnode->filename); dnode->filename = NULL;
 		free(dnode->auth); dnode->auth = NULL;
 		
-		sockclose(&dnode->connfd);
 		dnode->port = -1;
 		dnode->ret = -1;
+		dnode->flag = 0;
 		
 		free(dnode); dnode = NULL;
 		bgdownload[nr] = NULL;
@@ -40,6 +45,7 @@ void screenbgdownload()
 	struct skin* progress = getscreennode(screenbgdownload, "progress");
 	struct skin* tmp = NULL;
 	struct download* dnode = NULL;
+	char* tmpstr = NULL;
 
 	for(i = 0; i < MAXBGDOWNLOAD; i++)
 	{
@@ -48,8 +54,14 @@ void screenbgdownload()
 		{
 			if(bgdownload[i] != NULL)
 			{
-				changetext(tmp, bgdownload[i]->filename);
-				tmp->progresssize = dnode->proz;
+				if(bgdownload[i]->ret == 0)
+					tmpstr = ostrcat(tmpstr, "OK - ", 1, 0);
+				else if(bgdownload[i]->ret == 1)
+					tmpstr = ostrcat(tmpstr, "ERR - ", 1, 0);
+				tmpstr = ostrcat(tmpstr, bgdownload[i]->filename, 1, 0);
+				changetext(tmp, tmpstr);
+				free(tmpstr); tmpstr = NULL;
+				tmp->progresssize = bgdownload[i]->proz;
 				tmp->handle = (void*)i;
 			}
 			else
@@ -61,7 +73,7 @@ void screenbgdownload()
 			
 			tmp->textposx = progress->width + 10;
 			struct skin* tmp1 = NULL;
-			tmp1 = addlistbox(screenbgdownload, tmp, tmp, 1);
+			tmp1 = addlistbox(screenbgdownload, tmp, tmp, 2);
 			if(tmp1 != NULL)
 			{
 				tmp1->progresscol = progress->progresscol;
@@ -71,11 +83,13 @@ void screenbgdownload()
 				tmp1->bordersize = progress->bordersize;
 				tmp1->bordercol = progress->bordercol;
 				tmp1->prozwidth = 0;		
+				tmp1->handle = (void*)i;
 			}
 		}
 	}
 
 	drawscreen(screenbgdownload, 0, 0);
+	addscreenrc(screenbgdownload, listbox);
 
 	while(1)
 	{
@@ -86,7 +100,7 @@ void screenbgdownload()
 			tmp = listbox;
 			while(tmp != NULL)
 			{
-				if(tmp->del == 1)
+				if(tmp->del > 0)
 				{
 					int nr = (int)tmp->handle;
 					if(nr < MAXBGDOWNLOAD)
@@ -94,11 +108,21 @@ void screenbgdownload()
 						struct download* dnode = bgdownload[nr];
 						if(dnode != NULL)
 						{
-							changetext(tmp, dnode->filename);
-							tmp->progresssize = dnode->proz;
+							if(tmp->del == 1)
+							{
+								if(dnode->ret == 0)
+									tmpstr = ostrcat(tmpstr, "OK - ", 1, 0);
+								else if(dnode->ret == 1)
+									tmpstr = ostrcat(tmpstr, "ERR - ", 1, 0);
+								tmpstr = ostrcat(tmpstr, dnode->filename, 1, 0);
+								changetext(tmp, tmpstr);
+								free(tmpstr); tmpstr = NULL;
+							}
+							if(tmp->del == 2)
+								tmp->progresssize = dnode->proz;
 						}
 					}
-			  }
+				}
 				tmp = tmp->next;
 			}
 		}
@@ -109,8 +133,9 @@ void screenbgdownload()
 		if(rcret == getrcconfigint("rcred", NULL) && listbox->select != NULL && listbox->select->handle != NULL) //stop download
 		{
 			int nr = (int)listbox->select->handle;
-			//textbox
-			delbgdownload(nr);
+			if(textbox(_("Message"), _("Realy stop download ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+				delbgdownload(nr);
+			drawscreen(screenbgdownload, 0, 0);
 		}
 		
 		if(rcret == getrcconfigint("rcyellow", NULL) && listbox->select != NULL && listbox->select->handle != NULL) //play download
@@ -119,22 +144,25 @@ void screenbgdownload()
 			if(nr < MAXBGDOWNLOAD)
 			{
 				struct download* dnode = bgdownload[nr];
-				if(dnode != NULL)
+				if(dnode != NULL && dnode->flag == 1)
 				{
-					//play
+					//TODO play -> dnode->filename
+					drawscreen(screenbgdownload, 0, 0);
 				}
 			}
 		}
 	}
 
+	delmarkedscreennodes(screenbgdownload, 2);
 	delmarkedscreennodes(screenbgdownload, 1);
+	delownerrc(screenbgdownload);
 	clearscreen(screenbgdownload);
 	debug(1000, "out");
 }
 
 //flag 0: normal download
 //flag 1: playable download
-int startbgdownload(char* title, char* host, char* page, int port, char* filename, char* auth, int flag)
+int startbgdownload(char* host, char* page, int port, char* filename, char* auth, int flag)
 {
 	int i = 0;
 	struct download* dnode = NULL;
@@ -149,7 +177,7 @@ int startbgdownload(char* title, char* host, char* page, int port, char* filenam
 	{
 		if(bgdownload[i] == NULL) 
 			break; //found unused slot
-		else if(bgdownload[i]->ret > 0)
+		else if(bgdownload[i]->ret >= 0)
 		{
 			delbgdownload(i);
 			break; //found unused slot
@@ -166,11 +194,11 @@ int startbgdownload(char* title, char* host, char* page, int port, char* filenam
 	}
 	
 	bgdownload[i] = dnode;
-	dnode->host = host;
-	dnode->page = page;
+	dnode->host = ostrcat(host, NULL, 0, 0);
+	dnode->page = ostrcat(page, NULL, 0, 0);
 	dnode->port = port;
-	dnode->filename = filename;
-	dnode->auth = auth;
+	dnode->filename = ostrcat(filename, NULL, 0, 0);
+	dnode->auth = ostrcat(auth, NULL, 0, 0);
 	dnode->connfd = -1;
 	dnode->ret = -1;
 	dnode->flag = flag;
