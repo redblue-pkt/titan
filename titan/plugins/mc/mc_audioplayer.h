@@ -676,8 +676,11 @@ void screenmc_audioplayer()
 					screensaver->value = (void*)filelist->select->text;
 
 				debug(50, "playerstop");
-				playerstop();
-				sleep(1);
+				if((status.play == 1) || (status.pause == 1))
+				{
+					playerstop();
+					sleep(1);
+				}
 
 				drawscreen(infobar, 0, 0);
 				debug(50, "playerstart: %s", filename);
