@@ -93,15 +93,18 @@ void showallchannel(struct skin* channellist, struct skin* listbox, struct skin*
 					chnode->textposx = channeltimeline->width + 10;
 					struct skin* chnode1 = NULL;
 					chnode1 = addlistbox(channellist, chnode, chnode, 1);
-					chnode1->progresscol = channeltimeline->progresscol;
-					chnode1->skinfunc = convertfunc("getepgchanneltimeline", &chnode1->funcrettype);
-					chnode1->handle = (char*) tmpchannel;
-					chnode1->posy = channeltimeline->posy;
-					chnode1->width = channeltimeline->width;
-					chnode1->height = channeltimeline->height;
-					chnode1->bordersize = channeltimeline->bordersize;
-					chnode1->bordercol = channeltimeline->bordercol;
-					chnode1->prozwidth = 0;
+					if(chnode1 != NULL)
+					{
+						chnode1->progresscol = channeltimeline->progresscol;
+						chnode1->skinfunc = convertfunc("getepgchanneltimeline", &chnode1->funcrettype);
+						chnode1->handle = (char*) tmpchannel;
+						chnode1->posy = channeltimeline->posy;
+						chnode1->width = channeltimeline->width;
+						chnode1->height = channeltimeline->height;
+						chnode1->bordersize = channeltimeline->bordersize;
+						chnode1->bordercol = channeltimeline->bordercol;
+						chnode1->prozwidth = 0;
+					}
 				}
 			}
 		}
@@ -157,15 +160,18 @@ void showbouquetchannel(struct skin* channellist, struct skin* listbox, struct s
 						chnode->textposx = channeltimeline->width + 10;
 						struct skin* chnode1 = NULL;
 						chnode1 = addlistbox(channellist, chnode, chnode, 1);
-						chnode1->progresscol = channeltimeline->progresscol;
-						chnode1->skinfunc = convertfunc("getepgchanneltimeline", &chnode1->funcrettype);
-						chnode1->handle = (char*)tmpbouquet->channel;
-						chnode1->posy = channeltimeline->posy;
-						chnode1->width = channeltimeline->width;
-						chnode1->height = channeltimeline->height;
-						chnode1->bordersize = channeltimeline->bordersize;
-						chnode1->bordercol = channeltimeline->bordercol;
-						chnode1->prozwidth = 0;
+						if(chnode1 != NULL)
+						{
+							chnode1->progresscol = channeltimeline->progresscol;
+							chnode1->skinfunc = convertfunc("getepgchanneltimeline", &chnode1->funcrettype);
+							chnode1->handle = (char*)tmpbouquet->channel;
+							chnode1->posy = channeltimeline->posy;
+							chnode1->width = channeltimeline->width;
+							chnode1->height = channeltimeline->height;
+							chnode1->bordersize = channeltimeline->bordersize;
+							chnode1->bordercol = channeltimeline->bordercol;
+							chnode1->prozwidth = 0;
+						}
 					}
 				}
 			}
@@ -206,16 +212,19 @@ void showproviderchannel(struct skin* channellist, struct skin* listbox, struct 
 					{
 						chnode->textposx = channeltimeline->width + 10;
 						struct skin* chnode1 = NULL;
-						chnode1 = addlistbox(channellist, chnode, chnode, 1);
-						chnode1->progresscol = channeltimeline->progresscol;
-						chnode1->skinfunc = convertfunc("getepgchanneltimeline", &chnode1->funcrettype);
-						chnode1->handle = (char*) tmpchannel;
-						chnode1->posy = channeltimeline->posy;
-						chnode1->width = channeltimeline->width;
-						chnode1->height = channeltimeline->height;
-						chnode1->bordersize = channeltimeline->bordersize;
-						chnode1->bordercol = channeltimeline->bordercol;
-						chnode1->prozwidth = 0;
+						if(chnode1 != NULL)
+						{
+							chnode1 = addlistbox(channellist, chnode, chnode, 1);
+							chnode1->progresscol = channeltimeline->progresscol;
+							chnode1->skinfunc = convertfunc("getepgchanneltimeline", &chnode1->funcrettype);
+							chnode1->handle = (char*) tmpchannel;
+							chnode1->posy = channeltimeline->posy;
+							chnode1->width = channeltimeline->width;
+							chnode1->height = channeltimeline->height;
+							chnode1->bordersize = channeltimeline->bordersize;
+							chnode1->bordercol = channeltimeline->bordercol;
+							chnode1->prozwidth = 0;
+						}
 					}
 				}
 			}
@@ -278,16 +287,19 @@ void showsatchannel(struct skin* channellist, struct skin* listbox, struct skin*
 					{
 						chnode->textposx = channeltimeline->width + 10;
 						struct skin* chnode1 = NULL;
-						chnode1 = addlistbox(channellist, chnode, chnode, 1);
-						chnode1->progresscol = channeltimeline->progresscol;
-						chnode1->skinfunc = convertfunc("getepgchanneltimeline", &chnode1->funcrettype);
-						chnode1->handle = (char*) tmpchannel;
-						chnode1->posy = channeltimeline->posy;
-						chnode1->width = channeltimeline->width;
-						chnode1->height = channeltimeline->height;
-						chnode1->bordersize = channeltimeline->bordersize;
-						chnode1->bordercol = channeltimeline->bordercol;
-						chnode1->prozwidth = 0;
+						if(chnode1 != NULL)
+						{
+							chnode1 = addlistbox(channellist, chnode, chnode, 1);
+							chnode1->progresscol = channeltimeline->progresscol;
+							chnode1->skinfunc = convertfunc("getepgchanneltimeline", &chnode1->funcrettype);
+							chnode1->handle = (char*) tmpchannel;
+							chnode1->posy = channeltimeline->posy;
+							chnode1->width = channeltimeline->width;
+							chnode1->height = channeltimeline->height;
+							chnode1->bordersize = channeltimeline->bordersize;
+							chnode1->bordercol = channeltimeline->bordercol;
+							chnode1->prozwidth = 0;
+						}
 					}
 				}
 			}
@@ -380,16 +392,19 @@ void showazchannel(struct skin* channellist, struct skin* listbox, struct skin* 
 					{
 						chnode->textposx = channeltimeline->width + 10;
 						struct skin* chnode1 = NULL;
-						chnode1 = addlistbox(channellist, chnode, chnode, 1);
-						chnode1->progresscol = channeltimeline->progresscol;
-						chnode1->skinfunc = convertfunc("getepgchanneltimeline", &chnode1->funcrettype);
-						chnode1->handle = (char*) tmpchannel;
-						chnode1->posy = channeltimeline->posy;
-						chnode1->width = channeltimeline->width;
-						chnode1->height = channeltimeline->height;
-						chnode1->bordersize = channeltimeline->bordersize;
-						chnode1->bordercol = channeltimeline->bordercol;
-						chnode1->prozwidth = 0;
+						if(chnode1 != NULL)
+						{
+							chnode1 = addlistbox(channellist, chnode, chnode, 1);
+							chnode1->progresscol = channeltimeline->progresscol;
+							chnode1->skinfunc = convertfunc("getepgchanneltimeline", &chnode1->funcrettype);
+							chnode1->handle = (char*) tmpchannel;
+							chnode1->posy = channeltimeline->posy;
+							chnode1->width = channeltimeline->width;
+							chnode1->height = channeltimeline->height;
+							chnode1->bordersize = channeltimeline->bordersize;
+							chnode1->bordercol = channeltimeline->bordercol;
+							chnode1->prozwidth = 0;
+						}
 					}
 				}
 			}
