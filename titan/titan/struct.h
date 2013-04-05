@@ -125,6 +125,7 @@
 #define MAXCASERVICE 20
 #define MAXLONGKEY 10
 #define MAXSAT 64
+#define MAXBGDOWNLOAD 5
 #define EPGSCANLOG "/tmp/epgscan.log"
 #define MAXCHANNELHISTORY 6
 #define HILO(x) (x##_hi << 8 | x##_lo)
@@ -555,6 +556,7 @@ struct download
 	unsigned int aktkb;
 	int ret;
 	int timeout;
+	int flag;
 };
 
 struct epgscanlist

@@ -61,6 +61,7 @@ struct extepgchannel* extepgchannel = NULL;
 struct extepgconfig* extepgconfig = NULL;
 struct lastsubtitle* lastsubtitle = NULL;
 struct style* style = NULL;
+struct download* bgdownload[MAXBGDOWNLOAD] = {NULL};
 
 #ifdef SH4
 #include "sh4port.h"
@@ -232,6 +233,7 @@ struct style* style = NULL;
 #include "marker.h"
 #include "timeshiftsettings.h"
 #include "log.h"
+#include "bgdownload.h"
 
 #define TIMECODE ""
 
