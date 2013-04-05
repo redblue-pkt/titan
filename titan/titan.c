@@ -233,9 +233,6 @@ struct style* style = NULL;
 #include "timeshiftsettings.h"
 #include "log.h"
 
-//#include "cardreader.h"
-//#include "sci.h"
-
 #define TIMECODE ""
 
 int createstartscreen()
