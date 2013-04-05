@@ -1,18 +1,28 @@
 #ifndef BGDOWNLOAD_H
 #define BGDOWNLOAD_H
 
-void delbgdownload(int nr)
+//flag 0: no msg
+//flag 1: with msg
+void delbgdownload(int nr, int flag)
 {
 	if(nr >= MAXBGDOWNLOAD) return;
 	
+	int count = 0;
+	struct skin* load = getscreen("loading");
 	struct download* dnode = bgdownload[nr];
 	
 	if(dnode != NULL)
 	{
 		if(dnode->connfd > -1)
 		{
+			if(flag == 1) drawscreen(load, 0, 0);
 			sockclose(&dnode->connfd);
-			sleep(1);
+			while(dnode->ret < 0 && count < 10)
+			{
+				count++;
+				sleep(1);
+			}
+			if(flag == 1) clearscreen(load);
 		}
 		free(dnode->host); dnode->host = NULL;
 		free(dnode->page); dnode->page = NULL;
@@ -33,7 +43,7 @@ void freebgdownload()
 	int i = 0;
 	
 	for(i = 0; i < MAXBGDOWNLOAD; i++)
-		delbgdownload(i);
+		delbgdownload(i, 0);
 }
 
 void screenbgdownload()
@@ -139,7 +149,7 @@ void screenbgdownload()
 				if(dnode != NULL && dnode->ret == -1)
 				{
 					if(textbox(_("Message"), _("Realy stop download ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-						delbgdownload(nr);
+						delbgdownload(nr, 1);
 					drawscreen(screenbgdownload, 0, 0);
 				}
 			}
@@ -193,7 +203,7 @@ int startbgdownload(char* host, char* page, int port, char* filename, char* auth
 			break; //found unused slot
 		else if(bgdownload[i]->ret >= 0)
 		{
-			delbgdownload(i);
+			delbgdownload(i, 0);
 			break; //found unused slot
 		}
 	}
