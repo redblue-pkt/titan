@@ -8,6 +8,10 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//bgdownload.h
+void screenbgdownload();
+int startbgdownload(char* host, char* page, int port, char* filename, char* auth, int flag);
+
 //log.h
 void screenlog();
 
