@@ -14,15 +14,15 @@ void debugpic()
 
 void checkpictimeout()
 {
-  struct pic* node = pic;
-  time_t akttime = time(NULL);
+	struct pic* node = pic;
+	time_t akttime = time(NULL);
 
-  while(node != NULL)
-  {
-    if(node->timeout != 0 && node->lastaccess + node->timeout < akttime)
-      delpic(node->name);
-    node = node->next;
-  }
+	while(node != NULL)
+	{
+		if(node->timeout != 0 && node->lastaccess + node->timeout < akttime)
+			delpic(node->name);
+		node = node->next;
+	}
 }
 
 struct pic* addpic(char *name, unsigned char* picbuf, int memfd, unsigned long width, unsigned long height, unsigned long rowbytes, int channels, int timeout, int del, struct pic* last)
@@ -50,7 +50,7 @@ struct pic* addpic(char *name, unsigned char* picbuf, int memfd, unsigned long w
 	newnode->height = height;
 	newnode->rowbytes = rowbytes;
 	newnode->channels = channels;
-  newnode->timeout = timeout;
+	newnode->timeout = timeout;
 	newnode->lastaccess = time(NULL);
 	newnode->del = del;
 
@@ -167,7 +167,7 @@ struct pic* getpic(char* name)
 		{
 			debug(1000, "out");
 			free(tmpstr);
-      node->lastaccess = time(NULL);
+			node->lastaccess = time(NULL);
 			return node;
 		}
 
