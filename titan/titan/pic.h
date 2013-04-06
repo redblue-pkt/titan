@@ -50,7 +50,10 @@ struct pic* addpic(char *name, unsigned char* picbuf, int memfd, unsigned long w
 	newnode->height = height;
 	newnode->rowbytes = rowbytes;
 	newnode->channels = channels;
-	newnode->timeout = timeout;
+	if(timeout == 0)
+		newnode->timeout = status.defpicmemtimeout;
+	else
+		newnode->timeout = timeout;
 	newnode->lastaccess = time(NULL);
 	newnode->del = del;
 

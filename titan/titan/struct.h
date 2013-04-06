@@ -1386,6 +1386,7 @@ struct status
 	char* bgpic;
 	//time for next picmem timeout check
 	time_t picmemtimeout;
+	time_t defpicmemtimeout;
 	//show not tunable channel hidden (0)) or deaktive (1) in channellist
 	int channellistview;
 	//for blockmove in channellist
