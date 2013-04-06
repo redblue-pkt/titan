@@ -1015,10 +1015,10 @@ starterror:
 	if(tmpstr == NULL)
 		tmpstr = ostrcat(tmpstr, _("Unknown Error."), 1, 0);
 	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, _("Automatic stop in 5 seconds."), 1, 0);
+	tmpstr = ostrcat(tmpstr, _("Automatic stop in 10 seconds."), 1, 0);
 	changetext(starterror, _(tmpstr));
 	drawscreen(starterror, 0, 0);
-	sleep(5);
+	sleep(10);
 	free(tmpstr);
 	return 100;
 }
