@@ -834,6 +834,7 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 			int channels = 0;
 			unsigned char* buf = NULL;
 
+			newnode->picmem = 1;
 			newnode->pic = changepicpath(ret);
 			free(ret);
 
@@ -1968,7 +1969,7 @@ unsigned char* readpng(const char* filename, unsigned long* width, unsigned long
 	return buf;
 }
 
-void drawpic(const char* filename, int posx, int posy, int scalewidth, int scaleheight, int mwidth, int mheight, int halign, int valign, int transparent, int quality)
+void drawpic(const char* filename, int posx, int posy, int scalewidth, int scaleheight, int mwidth, int mheight, int halign, int valign, int transparent, int quality, int add)
 {
 	debug(1000, "in");
 	unsigned char *buf = NULL, *scalebuf = NULL;
@@ -1998,8 +1999,12 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 			buf = readpng(filename, &width, &height, &rowbytes, &channels, 0, 0, 0, 0, 0, 0);
 		else if(pictype == 1)
 			readjpg(filename, &width, &height, &rowbytes, &channels, &buf, &memfd);
-		else if(pictype == 2)
+		else if(pictype == 2 && add == 0)
 			readjpgsw(filename, posx, posy, mwidth, mheight, scalewidth, scaleheight, halign, valign, quality);
+		else if(pictype == 2 && add == 1)
+			buf = loadjpg((char*)filename, &width, &height, &rowbytes, &channels, 1);
+		if(add == 1)
+			picnode = addpic((char*)filename, buf, memfd, width, height, rowbytes, channels, 0, 0, NULL);
 	}
 	else
 	{
@@ -2972,30 +2977,30 @@ void drawpicborder(struct skin* node)
 	int borderheight = status.picbordersize;
 
 	//top-left
-	//drawpic("/home/nit/titan/skin/bs_tl.png", node->rposx + node->bordersize - borderwidth, node->rposy + node->bordersize - borderheight, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent, node->picquality);
-	drawpic("/home/nit/titan/skin/bs_tl.png", node->rposx, node->rposy, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent, node->picquality);
+	//drawpic("/home/nit/titan/skin/bs_tl.png", node->rposx + node->bordersize - borderwidth, node->rposy + node->bordersize - borderheight, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
+	drawpic("/home/nit/titan/skin/bs_tl.png", node->rposx, node->rposy, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
 	//top-right
-	//drawpic("/home/nit/titan/skin/bs_tr.png", node->rposx - node->bordersize + node->rwidth, node->rposy + node->bordersize - borderheight, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent, node->picquality);
-	drawpic("/home/nit/titan/skin/bs_tr.png", node->rposx + node->rwidth - borderwidth, node->rposy, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent, node->picquality);
+	//drawpic("/home/nit/titan/skin/bs_tr.png", node->rposx - node->bordersize + node->rwidth, node->rposy + node->bordersize - borderheight, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
+	drawpic("/home/nit/titan/skin/bs_tr.png", node->rposx + node->rwidth - borderwidth, node->rposy, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
 	//bottom-left
-	//drawpic("/home/nit/titan/skin/bs_bl.png", node->rposx + node->bordersize - borderwidth, node->rposy - node->bordersize + node->rheight, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent, node->picquality);
-	drawpic("/home/nit/titan/skin/bs_bl.png", node->rposx, node->rposy + node->rheight - borderheight, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent, node->picquality);
+	//drawpic("/home/nit/titan/skin/bs_bl.png", node->rposx + node->bordersize - borderwidth, node->rposy - node->bordersize + node->rheight, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
+	drawpic("/home/nit/titan/skin/bs_bl.png", node->rposx, node->rposy + node->rheight - borderheight, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
 	//bottom-right
-	//drawpic("/home/nit/titan/skin/bs_br.png", node->rposx - node->bordersize + node->rwidth, node->rposy - node->bordersize + node->rheight, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent, node->picquality);
-	drawpic("/home/nit/titan/skin/bs_br.png", node->rposx + node->rwidth - borderwidth, node->rposy + node->rheight - borderheight, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent, node->picquality);
+	//drawpic("/home/nit/titan/skin/bs_br.png", node->rposx - node->bordersize + node->rwidth, node->rposy - node->bordersize + node->rheight, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
+	drawpic("/home/nit/titan/skin/bs_br.png", node->rposx + node->rwidth - borderwidth, node->rposy + node->rheight - borderheight, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
 
 	//top
-	//drawpic("/home/nit/titan/skin/bs_t.png", node->rposx + node->bordersize, node->rposy + node->bordersize - borderheight, node->rwidth - (node->bordersize * 2), 0, node->rwidth - (node->bordersize * 2), borderheight, LEFT, TOP, node->transparent, node->picquality);
-	drawpic("/home/nit/titan/skin/bs_t.png", node->rposx + borderwidth, node->rposy, node->rwidth - (borderwidth * 2), 0, node->rwidth - (borderwidth * 2), borderheight, LEFT, TOP, node->transparent, node->picquality);
+	//drawpic("/home/nit/titan/skin/bs_t.png", node->rposx + node->bordersize, node->rposy + node->bordersize - borderheight, node->rwidth - (node->bordersize * 2), 0, node->rwidth - (node->bordersize * 2), borderheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
+	drawpic("/home/nit/titan/skin/bs_t.png", node->rposx + borderwidth, node->rposy, node->rwidth - (borderwidth * 2), 0, node->rwidth - (borderwidth * 2), borderheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
 	//bottom
-	//drawpic("/home/nit/titan/skin/bs_b.png", node->rposx + node->bordersize, node->rposy - node->bordersize + node->rheight, node->rwidth - (node->bordersize * 2), 0, node->rwidth - (node->bordersize * 2), borderheight, LEFT, TOP, node->transparent, node->picquality);
-	drawpic("/home/nit/titan/skin/bs_b.png", node->rposx + borderwidth, node->rposy + node->rheight - borderheight, node->rwidth - (borderwidth * 2), 0, node->rwidth - (node->bordersize * 2), borderheight, LEFT, TOP, node->transparent, node->picquality);
+	//drawpic("/home/nit/titan/skin/bs_b.png", node->rposx + node->bordersize, node->rposy - node->bordersize + node->rheight, node->rwidth - (node->bordersize * 2), 0, node->rwidth - (node->bordersize * 2), borderheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
+	drawpic("/home/nit/titan/skin/bs_b.png", node->rposx + borderwidth, node->rposy + node->rheight - borderheight, node->rwidth - (borderwidth * 2), 0, node->rwidth - (node->bordersize * 2), borderheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
 	//left
-	//drawpic("/home/nit/titan/skin/bs_l.png", node->rposx + node->bordersize - borderwidth, node->rposy + node->bordersize, 0, node->rheight - (node->bordersize * 2), borderwidth, node->rheight - (node->bordersize * 2), LEFT, TOP, node->transparent, node->picquality);
-	drawpic("/home/nit/titan/skin/bs_l.png", node->rposx, node->rposy + borderheight, 0, node->rheight - (borderheight * 2), borderwidth, node->rheight - (borderheight * 2), LEFT, TOP, node->transparent, node->picquality);
+	//drawpic("/home/nit/titan/skin/bs_l.png", node->rposx + node->bordersize - borderwidth, node->rposy + node->bordersize, 0, node->rheight - (node->bordersize * 2), borderwidth, node->rheight - (node->bordersize * 2), LEFT, TOP, node->transparent, node->picquality, node->picmem);
+	drawpic("/home/nit/titan/skin/bs_l.png", node->rposx, node->rposy + borderheight, 0, node->rheight - (borderheight * 2), borderwidth, node->rheight - (borderheight * 2), LEFT, TOP, node->transparent, node->picquality, node->picmem);
 	//right
-	//drawpic("/home/nit/titan/skin/bs_r.png", node->rposx - node->bordersize + node->rwidth, node->rposy + node->bordersize, 0, node->rheight - (node->bordersize * 2), borderwidth, node->rheight - (node->bordersize * 2), LEFT, TOP, node->transparent, node->picquality);
-	drawpic("/home/nit/titan/skin/bs_r.png", node->rposx + node->rwidth - borderwidth, node->rposy + borderheight, 0, node->rheight - (borderheight * 2), borderwidth, node->rheight - (borderheight * 2), LEFT, TOP, node->transparent, node->picquality);
+	//drawpic("/home/nit/titan/skin/bs_r.png", node->rposx - node->bordersize + node->rwidth, node->rposy + node->bordersize, 0, node->rheight - (node->bordersize * 2), borderwidth, node->rheight - (node->bordersize * 2), LEFT, TOP, node->transparent, node->picquality, node->picmem);
+	drawpic("/home/nit/titan/skin/bs_r.png", node->rposx + node->rwidth - borderwidth, node->rposy + borderheight, 0, node->rheight - (borderheight * 2), borderwidth, node->rheight - (borderheight * 2), LEFT, TOP, node->transparent, node->picquality, node->picmem);
 	debug(1000, "out");
 }
 
@@ -3143,7 +3148,7 @@ void drawnode(struct skin* node, int flag)
 			drawbgcol(node);
 	}
 	if(node->child != NULL && status.bgpic != NULL)
-		drawpic(status.bgpic, node->iposx, node->iposy, node->iwidth, node->iheight, node->iwidth, node->iheight, node->halign, node->valign, node->transparent, node->picquality);
+		drawpic(status.bgpic, node->iposx, node->iposy, node->iwidth, node->iheight, node->iwidth, node->iheight, node->halign, node->valign, node->transparent, node->picquality, node->picmem);
 	if(node->gradient > 0)
 		drawbggradient(node);
 	if(node->titlebgcol > -1)
@@ -3155,9 +3160,9 @@ void drawnode(struct skin* node, int flag)
 	if(node->type & MULTIPROGRESSBAR)
 		drawmultiprogressbar(node);
 	if(node->selectpic != NULL && !(node->type & FILELIST))
-		drawpic(node->selectpic, node->iposx, node->iposy, node->iwidth, node->iheight, node->iwidth, node->iheight, LEFT, TOP, node->transparent, node->picquality);
+		drawpic(node->selectpic, node->iposx, node->iposy, node->iwidth, node->iheight, node->iwidth, node->iheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
 	if(node->pic != NULL && !(node->type & FILELIST))
-		drawpic(node->pic, node->iposx, node->iposy, node->rpicwidth, node->rpicheight, node->iwidth, node->iheight, node->halign, node->valign, node->transparent, node->picquality);
+		drawpic(node->pic, node->iposx, node->iposy, node->rpicwidth, node->rpicheight, node->iwidth, node->iheight, node->halign, node->valign, node->transparent, node->picquality, node->picmem);
 	if(node->input != NULL)
 	{
 		if(node->type & CHOICEBOX)
@@ -4166,6 +4171,7 @@ int changepicmem(struct skin* node, char* text, int timeout, int del)
 		free(node->pic);
 		if(text != NULL)
 		{
+			node->picmem = 1;
 			node->pic = changepicpath(text);
 
 			if(getpic(node->pic) == NULL)
@@ -4196,6 +4202,7 @@ int changepic(struct skin* node, char* text)
 
 	if(node != NULL)
 	{
+		node->picmem = 0;
 		free(node->pic);
 		if(text != NULL)
 			node->pic = changepicpath(text);

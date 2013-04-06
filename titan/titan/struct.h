@@ -831,6 +831,7 @@ struct skin
 	struct epgrecord* epgrecord;
 	char* pluginhandle;
 	uint8_t locked;
+	uint8_t picmem;
 	//bit 0: 1 = node is drawed
 	uint8_t flag;
 	struct skin *select;
