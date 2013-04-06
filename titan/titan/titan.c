@@ -130,6 +130,7 @@ struct download* bgdownload[MAXBGDOWNLOAD] = {NULL};
 #include "vfd.h"
 #include "timerthread.h"
 #include "service.h"
+#include "pip.h"
 #include "player.h"
 #include "dvdplayer.h"
 #include "timeshift.h"
@@ -759,6 +760,7 @@ int main(int argc, char *argv[])
 
 	status.aktservice = addservice(NULL);
 	status.lastservice = addservice(NULL);
+	status.pipservice = addservice(NULL);
 
 	//check if startchannel defined
 	char* startchannellist = getconfig("startchannellist", NULL);

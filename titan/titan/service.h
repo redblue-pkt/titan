@@ -364,7 +364,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		else
 		{
 			videoclose(status.aktservice->videodev, -1);
-			videonode = videoopen(fenode->adapter);
+			videonode = videoopen(fenode->adapter, 0);
 			status.aktservice->videodev = videonode;
 		}
 		if(videonode != NULL)
