@@ -222,7 +222,7 @@ void screenadjust()
 	else
 		emucontrol->hidden = YES;
 
-	if(checkbox("ATEMIO510") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1)
+	if(checkbox("ATEMIO510") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("WHITEBOX") == 1)
 		usecec->hidden = NO;
 	else
 		usecec->hidden = YES;

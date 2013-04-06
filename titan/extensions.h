@@ -3,7 +3,7 @@
 
 void saveipkg()
 {
-	if(checkbox("ATEMIO510") == 0 && checkbox("AT7500") == 0 && checkbox("UFS912") == 0 && checkbox("ATEMIO7600") == 0)
+	if(checkbox("ATEMIO510") == 0 && checkbox("ATEVIO700") == 0 && checkbox("ATEVIO7000") == 0 && checkbox("UFS912") == 0 && checkbox("ATEMIO7600") == 0 && checkbox("WHITEBOX") == 0)
 		return;
 
 	int err = 0;
