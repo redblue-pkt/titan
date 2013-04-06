@@ -285,6 +285,7 @@ struct style* addstyle(char* line, struct style* last)
 			int channels = 0;
 			unsigned char* buf = NULL;
 
+			newnode->picmem = 1;
 			newnode->pic = changepicpath(ret);
 			free(ret);
 
