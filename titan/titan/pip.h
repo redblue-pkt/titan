@@ -289,7 +289,6 @@ int pipstartreal(struct channel* chnode, char* pin, int flag)
 
 	m_unlock(&status.servicemutex, 2);
 	
-printf("end pip zap\n");
 	debug(1000, "out");
 	return 0;
 }
