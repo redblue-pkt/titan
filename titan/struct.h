@@ -1314,6 +1314,7 @@ struct status
 	int rguidfd;
 	struct service* aktservice;
 	struct service* lastservice;
+	struct service* pipservice;
 	struct channel* markedchannel;
 	//if we are in a epg screen, this is the showen channel
 	struct channel* epgchannel;

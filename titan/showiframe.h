@@ -26,7 +26,7 @@ int singlepicstart(const char *filename, int flag)
 
 		if(status.aktservice->type != STILLPIC)
 		{
-			videonode = videoopen(0);
+			videonode = videoopen(0, 0);
 			videoselectsource(videonode, VIDEO_SOURCE_MEMORY);
 
 			videosetformat(videonode, VIDEO_FORMAT_16_9);

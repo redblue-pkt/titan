@@ -5,7 +5,7 @@
 #define VIDEO_SET_ENCODING              _IO('o',  81)
 #endif
 
-struct dvbdev* videoopen(int adapter)
+struct dvbdev* videoopen(int adapter, int devnr)
 {
 	debug(1000, "in");
 	int fd = -1;
@@ -13,6 +13,11 @@ struct dvbdev* videoopen(int adapter)
 
 	while(node != NULL)
 	{
+		if(devnr > -1 && devnr != node->devnr)
+		{
+			node = node->next;
+			continue;
+		}
 		if(node->fd == -1 && node->type == VIDEODEV && node->adapter == adapter)
 			break;
 		node = node->next;
