@@ -880,6 +880,7 @@ struct style
 	uint8_t picprozwidth;
 	uint8_t picprozheight;
 	uint8_t funcrettype;
+	uint8_t picmem;
 	long bordercol;
 	long deaktivcol;
 	long progresscol;

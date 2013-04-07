@@ -11,11 +11,9 @@ int pipstartreal(struct channel* chnode, char* pin, int flag)
 	debug(1000, "in");
 	struct transponder* tpnode = NULL;
 	struct dvbdev *fenode = NULL;
-	struct dvbdev *dmxaudionode = NULL;
 	struct dvbdev *dmxvideonode = NULL;
-	struct dvbdev *audionode = NULL;
 	struct dvbdev *videonode = NULL;
-	int ret = 0, festatus = 1, i = 0;
+	int ret = 0, festatus = 1;
 	unsigned char *patbuf = NULL;
 	int checkpmt = 0, pincheck = 0, ageprotect = 0, tune = 0;
 	struct epg* epgnode = NULL;
@@ -312,8 +310,6 @@ int pipstart(struct channel* chnode, char* pin, int flag)
 
 int pipstop(struct service *node, int flag)
 {
-	int rcret = 0;
-
 	if(node != NULL)
 	{
 		if(node->type != NOTHING && node->type != STILLPIC) caservicedel(node, NULL);

@@ -54,7 +54,6 @@ void screenbgdownload()
 	struct skin* listbox = getscreennode(screenbgdownload, "listbox");
 	struct skin* progress = getscreennode(screenbgdownload, "progress");
 	struct skin* tmp = NULL;
-	struct download* dnode = NULL;
 	char* tmpstr = NULL;
 
 	for(i = 0; i < MAXBGDOWNLOAD; i++)
