@@ -405,6 +405,7 @@ void addstyletoscreennode(struct skin* node, struct style* snode)
 	node->picprozwidth = snode->picprozwidth;
 	node->picprozheight = snode->picprozheight;
 	node->funcrettype = snode->funcrettype;
+	node->picmem = snode->picmem;
 
 	changemask(node, snode->mask);
 
