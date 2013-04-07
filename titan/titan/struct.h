@@ -893,7 +893,6 @@ struct style
 	long bgcol2;
 	char* font;
 	char* pic;
-	char* picmem;
 	char* param1;
 	char* param2;
 	char* input;
