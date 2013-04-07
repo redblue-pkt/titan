@@ -226,7 +226,7 @@ int startbgdownload(char* host, char* page, int port, char* filename, char* auth
 	dnode->ret = -1;
 	dnode->flag = flag;
 	
-	addtimer(&gethttpstruct, START, 1000, 1, (void*)dnode, NULL, NULL);
+	addtimer(&gethttpstructmsg, START, 1000, 1, (void*)dnode, NULL, NULL);
 
 	return 0;
 }

@@ -805,6 +805,21 @@ void gethttpstruct(struct stimerthread* timernode, struct download* node, int fl
 		gethttp(node->host, node->page, node->port, node->filename, node->auth, node->timeout, node, 0);
 }
 
+void gethttpstructmsg(struct stimerthread* timernode, struct download* node, int flag)
+{
+	char* tmpstr = NULL;
+
+	if(node != NULL)
+	{
+		gethttp(node->host, node->page, node->port, node->filename, node->auth, node->timeout, node, 0);
+		tmpstr = ostrcat(_("Download finished!"), "\n\n", 0, 0);
+		tmpstr = ostrcat(tmpstr, node->filename, 1, 0);
+		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 300, 7, 0);
+
+		free(tmpstr); tmpstr = NULL;
+	}
+}
+
 int sendmail(char* host, char* mailfrom, char* mailto, char* subject, int port, char* filename, char* string, int rtimeout, int wtimeout)
 {
 	int sock = -1, ret = 0;
