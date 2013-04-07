@@ -1053,7 +1053,7 @@ void playrcjumpto(char* file, char* showname, int* playinfobarstatus, int* playi
 		if(tmpstr != NULL)
 		{
 			int jump = atoi(tmpstr) * 60;
-			playrcjumpf(file, showname, jump, &playinfobarstatus, &playinfobarcount, playertype, flag);
+			playrcjumpf(file, showname, jump, playinfobarstatus, playinfobarcount, playertype, flag);
 		}
 		free(tmpstr), tmpstr = NULL;
 	}
