@@ -598,22 +598,37 @@ msgid "grey"
 msgstr "grau"
 msgid "German"
 msgstr "Deutsch"
+
+msgid "Dutch"
+msgstr "Niederländisch"
+
 msgid "GUI Restart"
 msgstr "GUI Neustart"
+
 msgid "Goto startpos"
 msgstr "gehe zur startposition"
+
 msgid "h"
 msgstr "h"
+
 msgid "H"
 msgstr "H"
+
 msgid "Hangtime"
 msgstr "Zeit bis Warnmeldung erscheint in Sekunden"
+
 msgid "Harddisk Format - List Devices"
 msgstr "Festplatte formatieren - angeschlossene Geräte"
+
+msgid "Harddisk Format - Filesystem"
+msgstr "Festplatte formatieren - Dateisystem"
+
 msgid "Harddisk Fsck - List Devices"
 msgstr "Dateisysten prüfen- angeschl. Geräte"
+
 msgid "Harddisk"
 msgstr "Festplatte"
+
 msgid "HDD not configured\ncan't find record path"
 msgstr "Festplatte nicht eingerichtet, kein Aufnahmepfad vorhanden!\n"
 "Bitte Festplatte einrichten."
@@ -1489,318 +1504,478 @@ msgid "Subchannel"
 msgstr "Unterkanäle"
 msgid "Swap"
 msgstr "Swap"
+
 msgid "swap"
 msgstr "Swap"
+
 msgid "swapemus"
 msgstr "Swap-Emus"
+
 msgid "swap_max_sectors"
 msgstr "max. Swap Sektoren"
+
 msgid "swapnetwork"
 msgstr "Swap-Netzwerk"
+
 msgid "swappicons"
 msgstr "Swap-Picons"
+
 msgid "swapscreensaver"
 msgstr "Swap-Bildschirmschoner"
+
 msgid "swapskins"
 msgstr "Swap-Skins"
+
 msgid "swapsystem"
 msgstr "Swap-System"
+
 msgid "swapsize"
 msgstr "Swap Größe"
+
 msgid "swapsystems"
 msgstr "Swap-System"
+
 msgid "Switch"
 msgstr "Umschalten"
+
 msgid "switch channel"
 msgstr "Kanal umschalten"
+
 msgid "swts"
 msgstr "swts"
+
 msgid "Symbol rate:"
 msgstr "Symbolrate"
+
 msgid "Symbolrate"
 msgstr "Symbolrate"
+
 msgid "Sysinfo"
 msgstr "Systeminformation"
+
 msgid "System - Flashupdate (online)"
 msgstr "System - Flash Softwareaktualisierung (Internet)"
+
 msgid "System - Flashupdate (tmp)"
 msgstr "System - Flash Softwareaktualisierung (Lokal)"
+
 msgid "System - Usbupdate (online)"
 msgstr "System - USB Softwareaktualisierung (Internet)"
+
 msgid "System - Usbupdate (tmp)"
 msgstr "System - USB Softwareaktualisierung (Lokal)"
+
 msgid "System Info"
 msgstr "System Infos"
+
 msgid "System"
 msgstr "System"
+
 msgid "System..."
 msgstr "System"
+
 msgid "System:"
 msgstr "System:"
+
 msgid "szap"
 msgstr "sZap"
+
 msgid "szap_diseqc_repeat"
 msgstr "sZap DiSEqC Wiederholung"
+
 msgid "szap_emul"
 msgstr "sZap EMU"
+
 msgid "szap_frontend"
 msgstr "sZap Front-End"
+
 msgid "szaplong"
 msgstr "langer sZap "
+
 msgid "t"
 msgstr "t"
+
 msgid "T"
 msgstr "T"
+
 msgid "tab"
 msgstr "untereinander (Tab)"
+
 msgid "telnet"
 msgstr "Telnet"
+
 msgid "Test frequency"
 msgstr "Frequenz testen"
+
 msgid "TEST"
-msgstr "TEST"
+msgstr "Test"
+
 msgid "text"
 msgstr "Farbliche Darstellung des Textes"
+
 msgid "thereafter on this Channel:"
 msgstr "danach auf diesem Sender:"
+
 msgid "Threshold"
 msgstr "Grenzwert"
+
 msgid "Thursday"
 msgstr "Donnerstag"
+
 msgid "Time to sleep"
 msgstr "Festplattenstandby"
+
+msgid "Harddisk Sleep"
+msgstr "Festplattenstandby"
+
 msgid "Timer Record Path"
 msgstr "Ordner für Timeraufnahme"
+
 msgid "Timer"
 msgstr "Aufnahme"
+
 msgid "time"
 msgstr "Uhrzeit"
+
 msgid "time + channel"
 msgstr "Uhrzeit + Sendername"
+
 msgid "Timeshift Path"
 msgstr "Ordner für Timeshift"
+
 msgid "Timeshift is running !!!\nStop it and switch ?"
 msgstr "Timeshift läuft!!!\nAusschalten und Umschalten?"
+
 msgid "Timezone"
 msgstr "Zeitzone"
+
 msgid "Tint"
 msgstr "Sättigung"
+
 msgid "Tone Burst"
 msgstr "Tone Burst"
+
 msgid "Tone Mode"
 msgstr "Tone Modus"
+
 msgid "Top"
 msgstr "Top (Prozesse)"
+
 msgid "Transponder:"
 msgstr "Transponder:"
+
 msgid "TSID:"
 msgstr "TSID:"
+
 msgid "Tuesday"
 msgstr "Dienstag"
+
 msgid "Tuner Configuration"
 msgstr "Tuner Einstellungen"
+
 msgid "Tuner Reception"
 msgstr "Tunerempfang"
+
 msgid "Tuner"
 msgstr "Tuner"
+
 msgid "Tuner:"
 msgstr "Tuner:"
+
 msgid "tuner_sleep_off"
 msgstr "Tuner im Ruhezustand aus"
+
 msgid "Tunerconfig"
 msgstr "Tunereinstellungen"
+
 msgid "Tuning to Channel failed!"
 msgstr "Kanal nicht verfügbar!"
+
 msgid "tuxtxt_cpufrequ_workaround"
 msgstr "Teletext CPU Frequenz fix"
+
 msgid "TV (Info)"
 msgstr "TV (Info)"
+
 msgid "TXT PID:"
 msgstr "TXT PID:"
+
 msgid "Type of Scan"
 msgstr "Art des Suchlaufs"
+
 msgid "type"
 msgstr "Typ"
+
 msgid "Type"
 msgstr "Typ"
+
 msgid "Type:"
 msgstr "Typ:"
+
 msgid "type of channelsearch"
 msgstr "Type der Kanalsuche"
+
 msgid "u"
 msgstr "u"
+
 msgid "U"
 msgstr "U"
+
 msgid "UNC:"
 msgstr "UNC:"
+
 msgid "undefined"
 msgstr "nicht definiert"
+
 msgid "Unicable Configuration"
 msgstr "Unicable Einstellungen"
+
 msgid "unknown"
 msgstr "unbekannt"
+
 msgid "Unknown Error."
 msgstr "unbekannter Fehler"
+
 msgid "UNLOAD"
 msgstr "Deaktivieren"
+
 msgid "update"
 msgstr "aktualisieren"
+
 msgid "Update"
 msgstr "Aktualisierung"
+
 msgid "updatelist"
 msgstr "Update Liste"
+
 msgid "Usb Device"
 msgstr "USB Geräte"
+
 msgid "Usbupdate (online)"
 msgstr "USB Software Aktualisierung (Internet)"
+
 msgid "Usbupdate (tmp)"
 msgstr "USB Software Aktualisierung (Lokal)"
+
 msgid "use medium for backup"
 msgstr "Laufwerk für Sicherungen und Wiederherstellung benutzen"
+
 msgid "use medium for record"
 msgstr "Laufwerk für Aufnahmen benutzen"
+
 msgid "use medium for extension"
 msgstr "Laufwerk für Erweiterungen benutzen"
+
 msgid "use medium for swap"
 msgstr "Laufwerk für SWAP-DATEI benutzen"
+
 msgid "Use EPG Endtime"
 msgstr "Zum Sendungsende"
+
 msgid "Use Teletxt Workaround"
 msgstr "Workaround für Videotext nutzen"
+
 msgid "use ssl"
 msgstr "SSL benutzen"
+
 msgid "useproxy"
 msgstr "Benutze Proxy"
+
 msgid "userauth"
 msgstr "Benutzer Authentifizierung"
+
 msgid "User"
 msgstr "Benutzer"
+
 msgid "user defined"
 msgstr "Benutzer definiert"
+
 msgid "username"
 msgstr "Benutzername"
+
 msgid "v"
 msgstr "v"
+
 msgid "V"
 msgstr "V"
+
 msgid "VFDisplay"
 msgstr "VFDisplay"
+
 msgid "Video PID:"
 msgstr "Video PID:"
+
 msgid "Video Player"
 msgstr "Filme abspielen"
+
 msgid "Video Settings"
 msgstr "Bild Einstellungen"
+
 msgid "VIDEO SETTINGS"
 msgstr "FILME Einstellungen"
+
 msgid "Video"
 msgstr "Bild"
+
 msgid "VIDEO"
 msgstr "FILME"
+
 msgid "VideoMode Aspect Settings"
 msgstr "Bild Seitenverhältnis Einstellungen"
+
 msgid "VideoMode Resolution Settings"
 msgstr "Bild Auflösung Einstellungen"
+
 msgid "VideoMode Settings"
 msgstr "Bild Einstellungen"
+
 msgid "Videotune"
 msgstr "Bild Einstellungen"
+
 msgid "View"
 msgstr "Zeige"
+
 msgid "Virtualzap Timeout"
 msgstr "Virtuelles Umschalten"
+
 msgid "VLC Player"
 msgstr "VLC Player"
+
 msgid "Voltage Mode"
 msgstr "Spannung Modus"
+
 msgid "Volume off"
 msgstr "Lautstärke aus"
+
 msgid "Vol off"
 msgstr "Lautstärke aus"
+
 msgid "Volumebar Timeout"
 msgstr "Zeit bis Lautstärkeanzeige ausblendet in Sekunden"
+
 msgid "w"
 msgstr "w"
+
 msgid "W"
 msgstr "W"
+
 msgid "Wait for channel scan end"
 msgstr "Sendersuchlauf, warte bis zum Ende."
+
 msgid "wait for stopping download"
 msgstr "Warten, Download wird gestoppt."
+
 msgid "Weather Info"
 msgstr "Wetter anzeigen"
+
 msgid "Web Radio Player"
 msgstr "Web Radio Player"
+
 msgid "webif"
 msgstr "Web Interface"
+
 msgid "Wednesday"
 msgstr "Mittwoch"
+
 msgid "weekly"
 msgstr "Wochentag"
+
 msgid "wlan"
 msgstr "WLAN"
+
 msgid "whitelist"
 msgstr "Weiße Liste"
+
 msgid "white"
 msgstr "weiß"
+
 msgid "workdays"
 msgstr "Werktags"
+
 msgid "wsize"
 msgstr "wsize"
+
 msgid "x"
 msgstr "x"
+
 msgid "X"
 msgstr "X"
+
 msgid "y"
 msgstr "y"
+
 msgid "yes"
 msgstr "Ja"
+
 msgid "Yes"
 msgstr "Ja"
+
 msgid "YES"
 msgstr "Ja"
+
 msgid "Y"
 msgstr "Y"
+
 msgid "yellow"
 msgstr "gelb"
+
 msgid "z"
 msgstr "z"
+
 msgid "Z"
 msgstr "Z"
+
 msgid "DEU (DVB Subtitle)"
 msgstr "Deutsch (DVB-Untertitel)"
+
 msgid "ENG (DVB-Subtitle)"
 msgstr "Englisch (DVB-Untertitel)"
+
 msgid "FRA (DVB-Subtitle)"
 msgstr "Französisch (DVB-Untertitel)"
+
 msgid "Change Feed"
 msgstr "Feedadresse hinzufügen"
+
 msgid "ADD ONE"
 msgstr "hinzufügen"
+
 msgid "ADD ALL"
 msgstr "auswählen"
+
 msgid "Show Modules"
 msgstr "CI Modulanzeige"
+
 msgid "Age Protect"
 msgstr "Altersschutz ab"
+
 msgid "Protect Channel Freetime (min)"
 msgstr "Kanalschutzzeit aus (min)"
+
 msgid " SELECT"
 msgstr "alle hinzu"
+
 msgid "rename service"
 msgstr "Eintrag umbennen"
+
 msgid "Resolution (current)"
 msgstr "Aktuelle Auflösung"
+
 msgid "virtualbox (text)"
 msgstr "Eingabe (Teletext)"
+
 msgid "Two step mute"
 msgstr "Zwei Stufen Stummschaltung"
+
 msgid "Backup started\n\nPlease wait..."
 msgstr "Sicherung gestartet\n\nBitte warten"
+
 msgid "No backup folders found!!!\n\nAborting restoring..."
 msgstr "Kein Backup Verzeichnis gefunden"
+
 msgid "A record hdd or a swapstick must be mounted!\n\nAborting backup..."
 msgstr "Kein Backup Verzeichnis gefunden"
+
 msgid "You find this Backup with timestamp on /tmp\nConnecting per ftp and copy this backup to your Pc !\nPlease Waiting 2 Min ... and relax\n \nNext infos on LCD Display!"
 msgstr "Datensicherung wird in /tmp abgelegt\nBitte per FTP-Client kopieren und anschliessend löschen"
 msgid "Some plugins needs restart.\nIf the plugin is not active\nreboot the box."
