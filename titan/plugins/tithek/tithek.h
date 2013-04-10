@@ -396,8 +396,10 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 		else
 		{
 			//check file size
+			/*
 			off64_t checkpic = getfilesize(node->filename);
 			if(checkpic < 200) defpic = 1;
+			*/
 
 			//check file is gif or html
 			if(defpic == 0)
