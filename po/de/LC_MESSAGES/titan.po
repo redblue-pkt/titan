@@ -3164,4 +3164,4 @@ msgid "Show HDD freesize"
 msgstr "Zeige freien Festplattenspeicher"
 
 msgid "Jump To (min)"
-msgstr "Springe zur Minute"
+msgstr "Springe vor Minute"
