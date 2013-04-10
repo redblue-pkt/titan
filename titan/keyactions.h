@@ -47,6 +47,7 @@ void screenkeyactions(int key, int flag)
 		addmenulist(&mlist, "Sleep Timer", NULL, NULL, 0, 0);
 		addmenulist(&mlist, "Child Protection", NULL, NULL, 0, 0);
 		addmenulist(&mlist, "Subchannel", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Downloads", NULL, NULL, 0, 0);
 	
 		mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
 		if(mbox != NULL) keyconf = mbox->name;
@@ -120,6 +121,13 @@ void screenkeyactions(int key, int flag)
 	else if(ostrcmp(keyconf, "Child Protection") == 0)
 	{
 		screenpin();
+		freemenulist(mlist, 1); mlist = NULL;
+		resettvpic();
+		return;
+	}
+	else if(ostrcmp(keyconf, "Downloads") == 0)
+	{
+		screenbgdownload(0);
 		freemenulist(mlist, 1); mlist = NULL;
 		resettvpic();
 		return;
