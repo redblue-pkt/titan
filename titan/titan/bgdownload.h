@@ -46,15 +46,23 @@ void freebgdownload()
 		delbgdownload(i, 0);
 }
 
-void screenbgdownload()
+//flag 0: with play
+//flag 1: without play
+void screenbgdownload(int flag)
 {
 	debug(1000, "in");
 	int rcret = -1, i = 0;
 	struct skin* screenbgdownload = getscreen("bgdownload");
 	struct skin* listbox = getscreennode(screenbgdownload, "listbox");
 	struct skin* progress = getscreennode(screenbgdownload, "progress");
+	struct skin* b4 = getscreennode(screenbgdownload, "b4");;
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL;
+
+	if(flag == 0)
+		b4->hidden = NO;
+	else
+		b4->hidden = YES;
 
 	for(i = 0; i < MAXBGDOWNLOAD; i++)
 	{
@@ -154,7 +162,7 @@ void screenbgdownload()
 			}
 		}
 		
-		if(rcret == getrcconfigint("rcyellow", NULL) && listbox->select != NULL && listbox->select->handle != NULL) //play download
+		if(flag == 0 && rcret == getrcconfigint("rcyellow", NULL) && listbox->select != NULL && listbox->select->handle != NULL) //play download
 		{
 			int nr = (int)listbox->select->handle;
 			if(nr < MAXBGDOWNLOAD)

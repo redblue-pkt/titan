@@ -19,6 +19,7 @@ void screensettings_bluebutton()
 	addmenulist(&mlist, "Sleep Timer", NULL, NULL, 0, 0);
 	addmenulist(&mlist, "Child Protection", NULL, NULL, 0, 0);
 	addmenulist(&mlist, "Subchannel", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Downloads", NULL, NULL, 0, 0);
 
 	while(child != NULL)
 	{
