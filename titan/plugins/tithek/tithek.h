@@ -406,8 +406,8 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 			{
 				char* tmp = NULL;
 				tmp = readbintomem(node->filename, 3);
-				if(ostrcmp("GIF", tmp) == 0) defpic = 1; //gif
-				if(ostrcmp("<", tmp) == 0) defpic = 1; //html
+				if(ostrncmp("GIF", tmp, 3) == 0) defpic = 1; //gif
+				if(ostrncmp("<", tmp, 1) == 0) defpic = 1; //html
 				free(tmp); tmp = NULL;
 			}
 
