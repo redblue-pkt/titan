@@ -1450,7 +1450,7 @@ playerstart:
 				if(rcret == getrcconfigint("rc7", NULL))
 					playrcjumpr(file, showname, skip79, &playinfobarstatus, &playinfobarcount, playertype, flag);
 
-				if(rcret == getrcconfigint("rc0", NULL))
+				if(rcret == getrcconfigint("rc2", NULL))
 					playrcjumpto(file, showname, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
 				if(rcret == getrcconfigint("rcright", NULL))

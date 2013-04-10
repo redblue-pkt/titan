@@ -319,7 +319,7 @@ void screenmc_videoplayer()
 			free(cmd), cmd = NULL;
 		}
 		
-		if(rcret == getrcconfigint("rc0", NULL))
+		if(rcret == getrcconfigint("rc2", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
 				playrcjumpto(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
