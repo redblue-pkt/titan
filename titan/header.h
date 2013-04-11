@@ -10,7 +10,7 @@
 
 //bgdownload.h
 void screenbgdownload();
-int startbgdownload(char* host, char* page, int port, char* filename, char* auth, int flag);
+int startbgdownload(char* host, char* page, int port, char* filename, char* auth, int timeout, int flag);
 
 //log.h
 void screenlog();
