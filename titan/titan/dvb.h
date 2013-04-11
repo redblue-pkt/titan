@@ -464,6 +464,7 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 	int firstaudiopid = -1, firstaudiocodec = -1, audiochange = 1;
 	int streamtype, pid, tsid, onid;
 	unsigned char *tmpbuf = NULL;
+	struct audiotrack* prevaudio = NULL;
 
 	if(pmtbuf == NULL || chnode == NULL)
 	{
@@ -507,12 +508,13 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 		esinfolength = ((tmpbuf[3] & 0x0F) << 8) | (tmpbuf[4] & 0xff);
 		isac3 = 0; isdts = 0; isaac = 0, audiocodec = 0, videocodec = 0;
 		char langdesc[4] = "---";
-		int y = 0;
+		int y = 0, descriptorcount = 0;
 
 		addesinfo(chnode, streamtype, pid, NULL);
 
 		for(pos = 5; pos < esinfolength + 5; pos += descriptorlength + 2)
 		{
+			descriptorcount++;
 			descriptortag = tmpbuf[pos];
 			descriptorlength = tmpbuf[pos + 1];
 			switch (descriptortag)
@@ -633,6 +635,12 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 			//case 0x86: // DTS-HD
 			//case 0xA6: // DTS-HD
 			case 0x06:
+				if(descriptorcount == 0 && streamtype == 0x06 && prevaudio != NULL)
+				{
+					prevaudio->rdspid = pid;
+					debug(200, "set rdspid to %d", pid);
+				}
+				prevaudio = NULL;
 				//if(streamtype == 0x81) esInfo->stream_type = 0x6;
 				if(streamtype == 0x06 && !isac3 && !isdts && !isaac)
 					continue;
@@ -677,7 +685,7 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 				if(chnode->audiopid == pid && chnode->audiocodec == audiocodec)
 					audiochange = 0;
 
-				addaudiotrack(chnode, langdesc, pid, audiocodec, NULL);
+				prevaudio = addaudiotrack(chnode, langdesc, pid, audiocodec, NULL);
 				break;
 		}
 	}
