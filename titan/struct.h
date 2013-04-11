@@ -1023,6 +1023,7 @@ struct audiotrack
 	char* name;
 	uint8_t audiocodec;
 	int16_t audiopid;
+	int16_t rdspid;
 	struct audiotrack* next;
 };
 
