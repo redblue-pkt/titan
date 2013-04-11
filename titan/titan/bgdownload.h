@@ -31,6 +31,7 @@ void delbgdownload(int nr, int flag)
 		
 		dnode->port = -1;
 		dnode->ret = -1;
+		dnode->timeout = 0;
 		dnode->flag = 0;
 		
 		free(dnode); dnode = NULL;
@@ -193,7 +194,7 @@ void screenbgdownload(int flag)
 
 //flag 0: normal download
 //flag 1: playable download
-int startbgdownload(char* host, char* page, int port, char* filename, char* auth, int flag)
+int startbgdownload(char* host, char* page, int port, char* filename, char* auth, int timeout, int flag)
 {
 	int i = 0;
 	struct download* dnode = NULL;
@@ -232,6 +233,7 @@ int startbgdownload(char* host, char* page, int port, char* filename, char* auth
 	dnode->auth = ostrcat(auth, NULL, 0, 0);
 	dnode->connfd = -1;
 	dnode->ret = -1;
+	dnode->timeout = timeout;
 	dnode->flag = flag;
 	
 	addtimer(&gethttpstructmsg, START, 1000, 1, (void*)dnode, NULL, NULL);
