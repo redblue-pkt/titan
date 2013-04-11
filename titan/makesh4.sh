@@ -380,7 +380,7 @@ if [ $BUILDTYPE == 0 ]; then
 #		echo "[titan]--------------------------------------------------------"
 #		echo "[titan] gmediarender done"
 #		echo "[titan]--------------------------------------------------------"
-#	fi
+	fi
 fi
 
 if [ $BUILDTYPE == 0 ] || [ $BUILDTYPE == 1 ]; then
