@@ -435,7 +435,7 @@ end:
 
 char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 {
-	int ret = 1, port = 80, timeout = 50000;
+	int ret = 1, port = 80, timeout = 10000;
 	char* ip = NULL, *pos = NULL, *path = NULL;
 	char* tmpstr = NULL, *localfile = NULL;
 
@@ -898,7 +898,7 @@ void cacheplay(char* link, char* filename, int flag)
 	dnode->auth = NULL;
 	dnode->connfd = -1;
 	dnode->ret = -1;
-	dnode->timeout = 500000;
+	dnode->timeout = 30000;
 	
 	addtimer(&gethttpstruct, START, 1000, 1, (void*)dnode, NULL, NULL);
 
@@ -1002,7 +1002,7 @@ void backgrounddl(char* link, char* filename)
 	debug(99, "local: %s", file);
 	debug(99, "---------------------------------------");
 	
-	ret = startbgdownload(host, path, port, file, NULL, 1);
+	ret = startbgdownload(host, path, port, file, NULL, 30000, 1);
 	if(ret == 1)
 		textbox(_("Message"), _("Can't start download.\nPlease try later."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 					
