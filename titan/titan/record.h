@@ -891,7 +891,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 		fenode = fegetfree(tpnode, 2, NULL);
 		if(fenode == NULL)
 		{
-			if(type == RECSTREAM)
+			if(status.standby == 0 && type == RECSTREAM)
 			{
 				ret = 5;
 				goto end;
