@@ -321,29 +321,29 @@ if [ $BUILDTYPE == 0 ]; then
 #		echo "[titan] gst done"
 #		echo "[titan]--------------------------------------------------------"
 		
-		echo "[titan]--------------------------------------------------------"
-		echo "[titan] directfb"
-		echo "[titan]--------------------------------------------------------"
-		
-		cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-		echo make directfb-clean
-		make directfb-clean
-		echo make directfb
-		make directfb
-		cd "$HOME"/flashimg/source.titan/titan
-		
-		if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/directfb-1.4-5 ]; then
-			echo "[titan]--------------------------------------------------------"
-			echo "[titan] directfb building error !!!"
-			echo "[titan] check your src"
-			echo "[titan]--------------------------------------------------------"
-			touch "$HOME"/flashimg/.ipk-build-error
-			exit 1
-		fi
-		
-		echo "[titan]--------------------------------------------------------"
-		echo "[titan] directfb done"
-		echo "[titan]--------------------------------------------------------"
+#		echo "[titan]--------------------------------------------------------"
+#		echo "[titan] directfb"
+#		echo "[titan]--------------------------------------------------------"
+#		
+#		cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
+#		echo make directfb-clean
+#		make directfb-clean
+#		echo make directfb
+#		make directfb
+#		cd "$HOME"/flashimg/source.titan/titan
+#		
+#		if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/directfb-1.4-5 ]; then
+#			echo "[titan]--------------------------------------------------------"
+#			echo "[titan] directfb building error !!!"
+#			echo "[titan] check your src"
+#			echo "[titan]--------------------------------------------------------"
+#			touch "$HOME"/flashimg/.ipk-build-error
+#			exit 1
+#		fi
+#		
+#		echo "[titan]--------------------------------------------------------"
+#		echo "[titan] directfb done"
+#		echo "[titan]--------------------------------------------------------"
 		
 #		echo "[titan]--------------------------------------------------------"
 #		echo "[titan] gmediarender"
