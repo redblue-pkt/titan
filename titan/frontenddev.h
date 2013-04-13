@@ -627,7 +627,7 @@ void fesetvoltage(struct dvbdev* node, fe_sec_voltage_t volt, int wait)
 	else
 	{
 		node->feaktvolt = volt;
-		usleep(wait * 1000);
+		if(wait > 0) usleep(wait * 1000);
 
 		if(volt == SEC_VOLTAGE_OFF)
 		{
@@ -1116,7 +1116,7 @@ void feset(struct dvbdev* node, struct transponder* tpnode)
 		if(dvbnode->type != FRONTENDDEV) break;
 		if(dvbnode->type == FRONTENDDEV && dvbnode != node && dvbnode->felock == 0 && dvbnode != status.aktservice->fedev)
 		{
-			fesetvoltage(dvbnode, SEC_VOLTAGE_OFF, 15);
+			fesetvoltage(dvbnode, SEC_VOLTAGE_OFF, 0);
 		}
 		dvbnode = dvbnode->next;
 	}
