@@ -814,13 +814,16 @@ int checkreseller()
 	else
 	{
 		// dummy for other boxes
+/*
+not working why ?
+
 printf("ResellerId: check\n");
 printf("ResellerId1: %x\n", buf[1072]);
 printf("ResellerId2: %x\n", buf[1073]);
 printf("ResellerId3: %x\n", buf[1074]);
 printf("ResellerId4: %x\n", buf[1075]);
 printf("ResellerId: %x %x %x %x\n", buf[1072], buf[1073], buf[1074], buf[1075]);
-
+*/
 		debug(10, "ResellerId: not supported");
 		debug(10, "boxtype: %s", getboxtype());
 // disable for test
