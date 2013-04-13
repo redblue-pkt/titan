@@ -686,7 +686,7 @@ void ckeckkillnetthread()
 
 int checkreseller()
 {
-	if(checkbox("ATEMIO510") == 0 && checkbox("ATEMIO7600") == 0 && checkbox("ATEVIO7000") == 0 && checkbox("ATEVIO700") == 0)
+	if(checkbox("UFS910") == 1)
 	{
 		debug(10, "ResellerId: skipped");
 		debug(10, "boxtype: %s", getboxtype());
@@ -724,6 +724,16 @@ int checkreseller()
 	if(checkbox("ATEMIO510") == 1)
 	{
 		if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x29 && (buf[1074] & 0xff) == 0x02 && (buf[1075] & 0xff) == 0xA0)
+		{
+			debug(10, "ResellerId: found (%s) reseller !", getboxtype());
+			free(buf);
+			fclose(fd);
+			return 0;
+		}
+	}
+	else if(checkbox("WHITEBOX") == 1)
+	{
+		if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x29 && (buf[1074] & 0xff) == 0x02 && (buf[1075] & 0xff) == 0xA5)
 		{
 			debug(10, "ResellerId: found (%s) reseller !", getboxtype());
 			free(buf);
@@ -804,9 +814,17 @@ int checkreseller()
 	else
 	{
 		// dummy for other boxes
+		printf("ResellerId: check\n");
+		printf("ResellerId1: %x\n", buf[1072]);
+		printf("ResellerId2: %x\n", buf[1073]);
+		printf("ResellerId3: %x\n", buf[1074]);
+		printf("ResellerId4: %x\n", buf[1075]);
+		printf("ResellerId: %x %x %x %x\n", buf[1072], buf[1073], buf[1074], buf[1075]);
+
 		debug(10, "ResellerId: not supported");
 		debug(10, "boxtype: %s", getboxtype());
-		return 1;
+// disable for test
+//		return 1;
 	}
 
 	free(buf);
