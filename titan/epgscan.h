@@ -194,8 +194,8 @@ void epgscanlistthread(struct stimerthread* self)
 			continue;
 		}
 
-		if(node->name != NULL)
-			chname = node->name;
+		if(chnode->name != NULL)
+			chname = chnode->name;
 		else
 			chname = "unknown";
 
