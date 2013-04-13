@@ -566,6 +566,7 @@ struct epgscanlist
 	time_t scantime;
 	struct epgscanlist* prev;
 	struct epgscanlist* next;
+	char* name;
 };
 
 struct rgba
