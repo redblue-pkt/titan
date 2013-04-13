@@ -414,9 +414,13 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			recbsize = servicenode->tssize * 188;
 			tmprecbsize = 188 * 188;
 		}
-		if(servicenode->type == RECORDSTREAM) recbsize = servicenode->tssize * 1024; //aligned to 188 and 4096
 		readtimeout = 5000000;
 		writetimeout = 5000000;
+		if(servicenode->type == RECORDSTREAM)
+		{
+			recbsize = servicenode->tssize * 1024; //aligned to 188 and 4096
+			writetimeout = 60000000 * 30; // 30min if player is in pause
+		}
 	}
 	
 #ifdef SIMULATE
