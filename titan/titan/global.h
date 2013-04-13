@@ -686,7 +686,7 @@ void ckeckkillnetthread()
 
 int checkreseller()
 {
-	if(checkbox("UFS910") == 1)
+	if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1)
 	{
 		debug(10, "ResellerId: skipped");
 		debug(10, "boxtype: %s", getboxtype());
@@ -827,7 +827,7 @@ printf("ResellerId: %x %x %x %x\n", buf[1072], buf[1073], buf[1074], buf[1075]);
 		debug(10, "ResellerId: not supported");
 		debug(10, "boxtype: %s", getboxtype());
 // disable for test
-//		return 1;
+		return 1;
 	}
 
 	free(buf);
