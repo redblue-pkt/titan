@@ -126,8 +126,11 @@ char* youtube(char* link, char* url, char* name, int flag)
 			tmpstr = string_replace("wiedergegeben", "\nwiedergegeben ", tmpstr, 1);
 			tmpstr = string_replace("<br/><u><a href='", "\n\n", tmpstr, 1);
 			tmpstr = string_replace("' target='_blank'>", "\n", tmpstr, 1);
-			tmpstr = string_replace("</a></u>", "\n", tmpstr, 1);			
-			textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
+			tmpstr = string_replace("</a></u>", "\n", tmpstr, 1);
+
+			tmpstr = strstrip(tmpstr);
+			if(tmpstr != NULL && strlen(tmpstr) > 0)
+				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
 		}
 	}
 
