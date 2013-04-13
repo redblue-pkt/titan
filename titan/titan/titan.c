@@ -235,6 +235,7 @@ struct download* bgdownload[MAXBGDOWNLOAD] = {NULL};
 #include "timeshiftsettings.h"
 #include "log.h"
 #include "bgdownload.h"
+#include "fancontrol.h"
 
 #define TIMECODE ""
 
