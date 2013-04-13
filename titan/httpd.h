@@ -235,7 +235,7 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		if(fmt == 0)
 		{
 			ext = "Content-Disposition: attachment; filename=stream.m3u";
-			mime = "text/plain";
+			mime = "audio/x-mpegurl";
 		}
 	}
 	else if(ostrcmp(query, "getvideo") == 0)
