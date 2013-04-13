@@ -280,6 +280,11 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		resettvpic();
 		struct skin* screen = getscreen("systemmenu");
+		if(checkbox("UFS922") == 1)
+		{
+			struct skin* fancontrol = getscreennode(screen, "fancontrol");
+			fancontrol->hidden = NO;
+		}
 		menu(screen, 0);
 	}
 	else if(ostrcmp("system_grid", menuentry->name) == 0)
@@ -491,6 +496,11 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	{
 		if(check == 1) return 0;
 		screenvfdisplay();
+	}
+	else if(ostrcmp("fancontrol", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screenpanel_settings_fancontrol();
 	}
 	else if(ostrcmp("serviceinfo", menuentry->name) == 0)
 	{
