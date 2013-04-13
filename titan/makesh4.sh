@@ -201,7 +201,7 @@ if [ $BUILDTYPE == 0 ]; then
 #	echo "[titan] minidlna done"
 #	echo "[titan]--------------------------------------------------------"
 	
-#	if [ $STM != "stm23" ] ;then
+	if [ $STM != "stm23" ] ;then
 #		echo "[titan]--------------------------------------------------------"
 #		echo "[titan] curlftpfs"
 #		echo "[titan]--------------------------------------------------------"
@@ -273,29 +273,29 @@ if [ $BUILDTYPE == 0 ]; then
 #		echo "[titan] sshfs done"
 #		echo "[titan]--------------------------------------------------------"
 		
-		echo "[titan]--------------------------------------------------------"
-		echo "[titan] rarfs"
-		echo "[titan]--------------------------------------------------------"
+#		echo "[titan]--------------------------------------------------------"
+#		echo "[titan] rarfs"
+#		echo "[titan]--------------------------------------------------------"
 		
-		cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-		echo make rarfs-clean
-		make rarfs-clean
-		echo make rarfs
-		make rarfs
-		cd "$HOME"/flashimg/source.titan/titan
-		
-		if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/rarfs ]; then
-			echo "[titan]--------------------------------------------------------"
-			echo "[titan] sshfs building error !!!"
-			echo "[titan] check your src"
-			echo "[titan]--------------------------------------------------------"
-			touch "$HOME"/flashimg/.ipk-build-error
-			exit 1
-		fi
-		
-		echo "[titan]--------------------------------------------------------"
-		echo "[titan] rarfs done"
-		echo "[titan]--------------------------------------------------------"
+#		cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
+#		echo make rarfs-clean
+#		make rarfs-clean
+#		echo make rarfs
+#		make rarfs
+#		cd "$HOME"/flashimg/source.titan/titan
+#		
+#		if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/rarfs ]; then
+#			echo "[titan]--------------------------------------------------------"
+#			echo "[titan] sshfs building error !!!"
+#			echo "[titan] check your src"
+#			echo "[titan]--------------------------------------------------------"
+#			touch "$HOME"/flashimg/.ipk-build-error
+#			exit 1
+#		fi
+#		
+#		echo "[titan]--------------------------------------------------------"
+#		echo "[titan] rarfs done"
+#		echo "[titan]--------------------------------------------------------"
 	
 #		echo "[titan]--------------------------------------------------------"
 #		echo "[titan] gst"
