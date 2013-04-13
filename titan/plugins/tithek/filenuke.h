@@ -44,6 +44,9 @@ char* filenuke(char* host, char* file)
 		tmpstr = string_resub("<td align=\"center\" valign=\"middle\">", "</td>", tmpstr, 1);
 		string_deltags(tmpstr);
 		tmpstr = string_replace("Terms", "\nTerms", tmpstr, 1);
+		tmpstr = strstrip(tmpstr);
+		if(tmpstr == NULL || strlen(tmpstr) == 0)
+			tmpstr = ostrcat(_("The page is temporarily unavailable"), tmpstr, 0, 1);
 		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
 		goto end;
 	}

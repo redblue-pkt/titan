@@ -135,7 +135,10 @@ char* putlocker(char* host, char* file)
 	
 	if(ostrstr(tmpstr, "warning_message") != NULL)
 	{
-		tmpstr = string_resub("<div class='warning_message'>", "</div>", tmpstr, 0);	
+		tmpstr = string_resub("<div class='warning_message'>", "</div>", tmpstr, 0);
+		tmpstr = strstrip(tmpstr);
+		if(tmpstr == NULL || strlen(tmpstr) == 0)
+			tmpstr = ostrcat(_("The page is temporarily unavailable"), tmpstr, 0, 1);
 		textbox(_("Message"), _(tmpstr) , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		goto end;
 	}
