@@ -2842,42 +2842,11 @@ int setvmpeg(struct dvbdev* node, int posx, int posy, int width, int height)
 		debug(100, "set %s to %s", buf, tmpstr);
 
 		status.tvpic = 1;
-		/*
-		//workaround for driver crash
-		if(status.tvpic > 0)
-		{
-			char* tmpstr1 = NULL;
-
-			tmpstr1 = getaspect();
-			if(ostrcmp(tmpstr1, "4:3") == 0)
-				status.tvpic = 2;
-			else
-				status.tvpic = 1;
-			free(tmpstr1); tmpstr1 = NULL;
-
-			tmpstr1 = getvideomode();
-			if(ostrcmp("pal", tmpstr1) == 0 || ostrncmp("576", tmpstr1, 3) == 0)
-				setaspect("4:3");
-			else
-				setaspect("16:9");
-			free(tmpstr1); tmpstr1 = NULL;
-		}
-		*/
-
 		ret = writesys(buf, tmpstr, 1);
 
 		//reset
 		if(posx == 0 && posy == 0 && width == 0 && height == 0)
-		{
-			/*
-			//workaround for driver crash
-			if(status.tvpic == 1)
-				setaspect("16:9");
-			else
-				setaspect("4:3");
-			*/
 			status.tvpic = 0;
-		}
 		
 		free(tmpstr);
 		free(buf);
@@ -4533,7 +4502,15 @@ int setaspect(char* value)
 	{
 		debug(100, "set %s to %s", aspectdev, value);
 		ret = writesys(aspectdev, value, 0);
-		if(ret == 0) addconfig("av_aspect", value);
+		if(ret == 0)
+		{
+			addconfig("av_aspect", value);
+
+			//set policy new after change aspect
+			char* tmpstr getpolicy();
+			setpolicy(tmpstr);
+			free(tmpstr); tmpstr = NULL;
+		}
 		return ret;
 	}
 
