@@ -57,6 +57,7 @@ void screenpanel_settings_fancontrol()
 			drawscreen(panel_fancontrol, 0, 0);
 		}
 	}
+	clearscreen(panel_fancontrol);
 }
 
 #endif
