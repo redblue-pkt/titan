@@ -582,9 +582,9 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 							langdesc[2] = toupper(tmpbuf[pos + 8 * y + 4]);
 							langdesc[3] = '\0';
 							unsigned char subtype = tmpbuf[pos + 8 * y + 5];
-							unsigned short subpageid = *((unsigned short*)(&tmpbuf[pos + 8 * y + 6]));
+							unsigned short subpageid = (tmpbuf[(pos + 8 * y + 6) + 1] << 8) | tmpbuf[pos + 8 * y + 6];
 							endianswapshort(&subpageid);
-							unsigned short subancillarypageid = *((unsigned short*)(&tmpbuf[pos + 8 * y + 8]));
+							unsigned short subancillarypageid = (tmpbuf[(pos + 8 * y + 8) + 1] << 8) | tmpbuf[pos + 8 * y + 8];
 							endianswapshort(&subancillarypageid);
 							addsubtitle(chnode, 2, langdesc , pid, subtype, subpageid, subancillarypageid, NULL);
 						}
