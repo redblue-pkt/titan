@@ -4507,7 +4507,7 @@ int setaspect(char* value)
 			addconfig("av_aspect", value);
 
 			//set policy new after change aspect
-			char* tmpstr getpolicy();
+			char* tmpstr = getpolicy();
 			setpolicy(tmpstr);
 			free(tmpstr); tmpstr = NULL;
 		}
