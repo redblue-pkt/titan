@@ -108,11 +108,22 @@ void screenstandby()
 		free(tmpstr); tmpstr=NULL;
 	}
 
-	tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
-	if(voltoff == 1)
-		servicestart(status.lastservice->channel, tmpstr, NULL, 4);
+	if(status.aktservice->channel != NULL)
+	{
+		tmpstr = ostrcat(status.aktservice->channellist, NULL, 0, 0);
+		if(voltoff == 1)
+			servicecheckret(servicestart(status.aktservice->channel, tmpstr, NULL, 5), 0);
+		else
+			servicecheckret(servicestart(status.aktservice->channel, tmpstr, NULL, 3), 0);
+	}
 	else
-		servicestart(status.lastservice->channel, tmpstr, NULL, 0);
+	{
+		tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
+		if(voltoff == 1)
+			servicecheckret(servicestart(status.lastservice->channel, tmpstr, NULL, 4), 0);
+		else
+			servicecheckret(servicestart(status.lastservice->channel, tmpstr, NULL, 0), 0);
+	}
 	free(tmpstr); tmpstr = NULL;
 
 	subtitlepause(0);
