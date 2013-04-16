@@ -1032,6 +1032,8 @@ struct linkedchannel
 {
 	uint64_t transponderid;
 	int serviceid;
+	time_t starttime;
+	time_t endtime;
 	struct linkedchannel* next;
 };
 

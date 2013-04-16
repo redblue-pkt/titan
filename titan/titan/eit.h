@@ -775,6 +775,8 @@ void deloldepg()
 		chnode = chnode->next;
 	}
 	m_unlock(&status.epgmutex, 4);
+
+	deloldlinkedchannel();
 }
 
 /*
@@ -952,8 +954,8 @@ void linkagedesc(struct channel* chnode, struct epg* epgnode, void *buf)
 		else if(chnode->transponder->fetype == FE_OFDM)
 			transponderid = transponderid | ((uint64_t)2 << 32);
 
-		if(getlinkedchannel(chnode, serviceid, transponderid) == NULL)
-			addlinkedchannel(chnode, serviceid, transponderid, NULL);
+		if(getlinkedchannel(chnode, serviceid, transponderid, epgnode->starttime, epgnode->endtime) == NULL)
+			addlinkedchannel(chnode, serviceid, transponderid, epgnode->starttime, epgnode->endtime, NULL);
 	}
 }
 
