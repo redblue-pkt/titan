@@ -1083,14 +1083,17 @@ void checkserial(char* input)
 
 	//Authfile check
 	ret = strsplit((char*)authbuf, "\n", &count);
-	for(i = 0; i < count; i++)
+	if(ret != NULL)
 	{
-		(&ret[i])->part = stringreplacecharonce((&ret[i])->part, ',', '\0');
-		if(ret != NULL && ostrcmp(input, (&ret[i])->part) == 0)
+		for(i = 0; i < count; i++)
 		{
-			status.security = 1;
-			if(count > 1) writeserial(input);
-			break;
+			(&ret[i])->part = stringreplacecharonce((&ret[i])->part, ',', '\0');
+			if(ret != NULL && ostrcmp(input, (&ret[i])->part) == 0)
+			{
+				status.security = 1;
+				if(count > 1) writeserial(input);
+				break;
+			}
 		}
 	}
 	free(ret); ret = NULL;
@@ -1106,13 +1109,41 @@ void checkserial(char* input)
 		if(blackfile != NULL)
 			ret = strsplit(blackfile, "\n", &count);
 	
-		for(i = 0; i < count; i++)
+		if(ret != NULL)
 		{
-			(&ret[i])->part = stringreplacecharonce((&ret[i])->part, ',', '\0');
-			if(ret != NULL && ostrcmp(input, (&ret[i])->part) == 0)
+			for(i = 0; i < count; i++)
 			{
-				status.security = 0;
-				break;
+	      if(ostrncmp("AA", ret[i].part, 2) == 0)
+	      {
+					ret[i].part = stringreplacecharonce(ret[i].part, ',', '\0');
+					if(ret != NULL && ostrcmp(input, ret[i].part) == 0)
+					{
+						status.security = 0;
+						break;
+					}
+				}
+				if(ostrncmp("BB", ret[i].part, 2) == 0)
+	      {
+	      	char* tmp = ret[i].part + 2;
+	      	if(tmp != NULL && PLUGINVERSION == atoi(tmp))
+	      	{
+						status.security = 0;
+						break;
+					}
+				}
+				if(ostrncmp("CC", ret[i].part, 2) == 0)
+	      {
+	      	char* tmp1 = ret[i].part + 2;	      	
+	      	char* tmp2 = strchr(ret[i].part, ',');
+					if(tmp2 != NULL) tmp2++;      	
+	      	ret[i].part = stringreplacecharonce(ret[i].part, ',', '\0');
+	      	
+	      	if(tmp1 != NULL && tmp2 != NULL && PLUGINVERSION == atoi(tmp1) && time(NULL) > atoi(tmp2))
+	      	{
+						status.security = 0;
+						break;
+					}
+				}
 			}
 		}
 		free(ret); ret = NULL;
