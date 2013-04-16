@@ -806,10 +806,12 @@ int subtitlestartlast();
 int writelastsubtitle(const char *filename);
 
 //linkedchannel.h
-struct linkedchannel* addlinkedchannel(struct channel* chnode, int serviceid, uint64_t transponderid, struct linkedchannel* last);
+struct linkedchannel* addlinkedchannel(struct channel* chnode, int serviceid, uint64_t transponderid, time_t starttime, time_t endtime, struct linkedchannel* last);
 void freelinkedchannel(struct channel* chnode);
 void screenlinkedchannel();
-struct linkedchannel* getlinkedchannel(struct channel* chnode, int serviceid, uint64_t transponderid);
+struct linkedchannel* getlinkedchannel(struct channel* chnode, int serviceid, uint64_t transponderid, time_t starttime, time_t endtime);
+void dellinkedchannel(struct channel* chnode, struct linkedchannel* lnode, int flag);
+void deloldlinkedchannel();
 
 //zap.h
 void zapup();

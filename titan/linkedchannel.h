@@ -1,7 +1,7 @@
 #ifndef LINKEDCHANNEL_H
 #define LINKEDCHANNEL_H
 
-struct linkedchannel* getlinkedchannel(struct channel* chnode, int serviceid, uint64_t transponderid)
+struct linkedchannel* getlinkedchannel(struct channel* chnode, int serviceid, uint64_t transponderid, time_t starttime, time_t endtime)
 {
 	if(chnode == NULL) return NULL;
 
@@ -10,7 +10,7 @@ struct linkedchannel* getlinkedchannel(struct channel* chnode, int serviceid, ui
 
 	while(node != NULL)
 	{
-		if(node->serviceid == serviceid && node->transponderid == transponderid)
+		if(node->serviceid == serviceid && node->transponderid == transponderid && node->starttime == starttime && node->endtime == endtime)
 		{
 			m_unlock(&status.linkedchannelmutex, 14);
 			return node;
@@ -41,7 +41,7 @@ struct linkedchannel* checklinkedchannel(struct channel* chnode, struct linkedch
 
 void screenlinkedchannel()
 {
-	int rcret = 0, treffer = 0;
+	int rcret = 0, treffer = 0, akttime = 0;
 	struct skin* linkedchannel = getscreen("linkedchannel");
 	struct skin* listbox = getscreennode(linkedchannel, "listbox");
 	struct skin* tmp = NULL;
@@ -58,68 +58,69 @@ void screenlinkedchannel()
 
 	addscreenrc(linkedchannel, listbox);
 start:
+	akttime = time(NULL);
 	tmp = NULL;
 	chnode = channel;
 	delmarkedscreennodes(linkedchannel, 1);
 	if(status.aktservice->channel != NULL)
 	{
-    m_lock(&status.linkedchannelmutex, 14);
-		if(status.aktservice->channel->linkedchannel == NULL)
+		m_lock(&status.linkedchannelmutex, 14);
+		while(chnode != NULL)
 		{
-			while(chnode != NULL)
+			node = chnode->linkedchannel;
+			while(node != NULL)
 			{
-				node = chnode->linkedchannel;
-				while(node != NULL)
+				if(node->serviceid == status.aktservice->channel->serviceid && node->transponderid == status.aktservice->channel->transponderid && akttime >= node->starttime && akttime < node->endtime)
 				{
-					if(node->serviceid == status.aktservice->channel->serviceid && node->transponderid == status.aktservice->channel->transponderid)
-					{
-						node = chnode->linkedchannel;
-						break;
-					}
-					node = node->next;
+					node = chnode->linkedchannel;
+					break;
 				}
-				if(node != NULL) break;
-				chnode = chnode->next;
+				node = node->next;
 			}
+			if(node != NULL) break;
+			chnode = chnode->next;
 		}
 
 		if(node == NULL)
 			node = status.aktservice->channel->linkedchannel;
 		while(node != NULL)
 		{
-			chnode = getchannel(node->serviceid, node->transponderid);
-			if(chnode != NULL)
+			if(akttime >= node->starttime && akttime < node->endtime)
 			{
-				epgnode = getepgakt(chnode);
-				//don't show linked channel with start/end 1day
-				if(epgnode != NULL && epgnode->endtime - epgnode->starttime >= 86400)
+				chnode = getchannel(node->serviceid, node->transponderid);
+				if(chnode != NULL)
 				{
-					node = node->next;
-					continue;
-				}
-				tmp = addlistbox(linkedchannel, listbox, tmp, 1);
-				if(tmp != NULL)
-				{
-					if(chnode == status.aktservice->channel)
-						treffer = 1;
-					if(treffer == 0)
-						listbox->aktline++;
-					tmpstr = ostrcat(tmpstr, chnode->name, 1, 0);
-					if(epgnode != NULL)
+					epgnode = getepgakt(chnode);
+					//don't show linked channel with start/end 1day
+					if(epgnode != NULL && epgnode->endtime - epgnode->starttime >= 86400)
 					{
-						tmpstr = ostrcat(tmpstr, " - ", 1, 0);
-						if(buf != NULL)
-						{
-							loctime = olocaltime(&epgnode->starttime);
-							ostrftime(buf, MINMALLOC, "%H:%M ", loctime);
-							free(loctime); loctime = NULL;
-							tmpstr = ostrcat(tmpstr, buf, 1, 0);
-						}
-						tmpstr = ostrcat(tmpstr, epgnode->title, 1, 0);
+						node = node->next;
+						continue;
 					}
-					changetext(tmp, tmpstr);
-					free(tmpstr); tmpstr = NULL;
-					tmp->handle = (char*)chnode;
+					tmp = addlistbox(linkedchannel, listbox, tmp, 1);
+					if(tmp != NULL)
+					{
+						if(chnode == status.aktservice->channel)
+							treffer = 1;
+						if(treffer == 0)
+							listbox->aktline++;
+						tmpstr = ostrcat(tmpstr, chnode->name, 1, 0);
+						if(epgnode != NULL)
+						{
+							tmpstr = ostrcat(tmpstr, " - ", 1, 0);
+							if(buf != NULL)
+							{
+								loctime = olocaltime(&epgnode->starttime);
+								ostrftime(buf, MINMALLOC, "%H:%M ", loctime);
+								free(loctime); loctime = NULL;
+								tmpstr = ostrcat(tmpstr, buf, 1, 0);
+							}
+							tmpstr = ostrcat(tmpstr, epgnode->title, 1, 0);
+						}
+						changetext(tmp, tmpstr);
+						free(tmpstr); tmpstr = NULL;
+						tmp->handle = (char*)chnode;
+					}
 				}
 			}
 			node = node->next;
@@ -127,7 +128,11 @@ start:
 		m_unlock(&status.linkedchannelmutex, 14);
 	}
 
-	if(treffer == 0) listbox->aktline = 1;
+	if(treffer == 0)
+	{
+		listbox->aktline = 1;
+		treffer = 1;
+	}
 
 	drawscreen(linkedchannel, 0, 0);
 
@@ -152,7 +157,7 @@ start:
 	clearscreen(linkedchannel);
 }
 
-struct linkedchannel* addlinkedchannel(struct channel* chnode, int serviceid, uint64_t transponderid, struct linkedchannel* last)
+struct linkedchannel* addlinkedchannel(struct channel* chnode, int serviceid, uint64_t transponderid, time_t starttime, time_t endtime, struct linkedchannel* last)
 {
 	debug(1000, "in");
 	struct linkedchannel *newnode = NULL, *prev = NULL, *node = NULL;
@@ -172,6 +177,8 @@ struct linkedchannel* addlinkedchannel(struct channel* chnode, int serviceid, ui
 
 	newnode->serviceid = serviceid;
 	newnode->transponderid = transponderid;
+	newnode->starttime = starttime;
+	newnode->endtime = endtime;
 
 	m_lock(&status.linkedchannelmutex, 14);
 	node = chnode->linkedchannel;
@@ -201,6 +208,40 @@ struct linkedchannel* addlinkedchannel(struct channel* chnode, int serviceid, ui
 	return newnode;
 }
 
+//flag 0: lock
+//flag 1: nolock
+void dellinkedchannel(struct channel* chnode, struct linkedchannel* lnode, int flag)
+{
+	if(chnode == NULL)
+	{
+		debug(1000, "out-> NULL detect");
+		return;
+	}
+
+	if(flag == 0) m_lock(&status.linkedchannelmutex, 14);
+
+	struct linkedchannel *node = chnode->linkedchannel, *prev = chnode->linkedchannel;
+
+	while(node != NULL)
+	{
+		if(node == lnode)
+		{
+			if(node == chnode->linkedchannel)
+				chnode->linkedchannel = node->next;
+			else
+				prev->next = node->next;
+
+			free(node);
+			node = NULL;
+			break;
+		}
+
+		prev = node;
+		node = node->next;
+	}
+	if(flag == 0) m_unlock(&status.linkedchannelmutex, 14);
+}
+
 void freelinkedchannel(struct channel* chnode)
 {
 	debug(1000, "in");
@@ -224,10 +265,32 @@ void freelinkedchannel(struct channel* chnode)
 
 		free(prev);
 		prev = NULL;
-
 	}
 	m_unlock(&status.linkedchannelmutex, 14);
 	debug(1000, "out");
+}
+
+void deloldlinkedchannel()
+{
+	struct channel* chnode = channel;
+	struct linkedchannel* node = NULL;
+
+	m_lock(&status.linkedchannelmutex, 14);
+	while(chnode != NULL)
+	{
+		if(chnode->linkedchannel != NULL)
+		{
+			node = channel->linkedchannel;
+			while(node != NULL)
+			{
+				if(node->endtime + 60 < time(NULL))
+		 			dellinkedchannel(chnode, node, 1);
+				node = node->next;
+			}
+		}
+		chnode = chnode->next;
+	}
+	m_unlock(&status.linkedchannelmutex, 14);
 }
 
 #endif
