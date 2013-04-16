@@ -1113,8 +1113,8 @@ void checkserial(char* input)
 		{
 			for(i = 0; i < count; i++)
 			{
-	      if(ostrncmp("AA", ret[i].part, 2) == 0)
-	      {
+				if(ostrncmp("AA", ret[i].part, 2) == 0)
+				{
 					ret[i].part = stringreplacecharonce(ret[i].part, ',', '\0');
 					if(ret != NULL && ostrcmp(input, ret[i].part) == 0)
 					{
@@ -1123,24 +1123,28 @@ void checkserial(char* input)
 					}
 				}
 				if(ostrncmp("BB", ret[i].part, 2) == 0)
-	      {
-	      	char* tmp = ret[i].part + 2;
-	      	if(tmp != NULL && PLUGINVERSION == atoi(tmp))
-	      	{
+				{
+			      	char* tmp = ret[i].part + 2;
+			      	if(tmp != NULL && PLUGINVERSION == atoi(tmp))
+			      	{
 						status.security = 0;
+						printf("error: 8\n");		
+						destroy();
 						break;
 					}
 				}
 				if(ostrncmp("CC", ret[i].part, 2) == 0)
-	      {
-	      	char* tmp1 = ret[i].part + 2;	      	
-	      	char* tmp2 = strchr(ret[i].part, ',');
+				{
+			      	char* tmp1 = ret[i].part + 2;	      	
+			      	char* tmp2 = strchr(ret[i].part, ',');
 					if(tmp2 != NULL) tmp2++;      	
-	      	ret[i].part = stringreplacecharonce(ret[i].part, ',', '\0');
+			      	ret[i].part = stringreplacecharonce(ret[i].part, ',', '\0');
 	      	
-	      	if(tmp1 != NULL && tmp2 != NULL && PLUGINVERSION == atoi(tmp1) && time(NULL) > atoi(tmp2))
-	      	{
+			      	if(tmp1 != NULL && tmp2 != NULL && PLUGINVERSION == atoi(tmp1) && time(NULL) > atoi(tmp2))
+			      	{
 						status.security = 0;
+						printf("error: 9\n");		
+						destroy();
 						break;
 					}
 				}
