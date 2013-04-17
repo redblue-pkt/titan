@@ -724,7 +724,6 @@ int main(int argc, char *argv[])
 	{
 		tmpstr = ostrcat(tmpstr, _("Error: no frontend device found !!"), 1, 0);
 		err("no frontend device found");
-		sleep(180);
 		goto starterror;
 	}
 	if(dmxgetdev() < 1)
