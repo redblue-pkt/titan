@@ -2846,6 +2846,10 @@ int setoverclockfreq(int mode)
 int setvmpeg(struct dvbdev* node, int posx, int posy, int width, int height)
 {
 	debug(1000, "in");
+
+	if(status.tvpic == 1 && (posx != 0 || posy != 0 || width != 0 || height != 0))
+		return 0;
+
 	if(getconfigint("minitv", NULL) == 1) 
  		return 0;
  	

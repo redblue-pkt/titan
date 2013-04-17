@@ -694,6 +694,7 @@ int servicestop(struct service *node, int clear, int flag)
 
 	if(node != NULL)
 	{
+		status.tvpic = 0;
 		if(status.timeshift == 1 && flag != 2)
 		{
 			if(status.timeshifttype == 0 && status.asktimeshift == 0)
