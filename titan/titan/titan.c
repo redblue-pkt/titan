@@ -239,6 +239,11 @@ struct download* bgdownload[MAXBGDOWNLOAD] = {NULL};
 
 #define TIMECODE ""
 
+void demomodethread(struct stimerthread* self)
+{
+	textbox(_("Message"), _("!!! This is a DEMO Version !!!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 600, 0, 1);
+}
+
 int createstartscreen()
 {
 	addscreen("<screen name=framebuffer/>", 0, 0);
@@ -885,6 +890,8 @@ firstwizzardstep1:
 	addtimer(&checkspinner, START, 2000, -1, NULL, NULL, NULL);
 	//start auto shutdown thread
 	addtimer(&checkshutdowntimer, START, 10000, -1, NULL, NULL, NULL);
+	//start demo mode
+	//addtimer(&demomodethread, START, 10000, -1, NULL, NULL, NULL);
 
 	status.lastrcaction = time(NULL);
 	ret = loadplugin();
