@@ -263,7 +263,7 @@ int checklowflash()
 	cmd = ostrcat(cmd, " ", 1, 0); 
 	cmd = ostrcat(cmd, "grep", 1, 0); 
 	cmd = ostrcat(cmd, " ", 1, 0); 
-	cmd = ostrcat(cmd, "mtd5", 1, 0); 
+	cmd = ostrcat(cmd, "mtd2", 1, 0); 
 	cmd = ostrcat(cmd, " ", 1, 0); 
 	cmd = ostrcat(cmd, "|", 1, 0); 
 	cmd = ostrcat(cmd, " ", 1, 0); 
@@ -278,7 +278,7 @@ int checklowflash()
 		return 1;
 	}
 
-	if(ostrcmp(tmpstr, "00fc0000") == 0)
+	if(ostrcmp(tmpstr, "009e0000") == 0)
 	{
 		free(tmpstr), tmpstr = NULL;
 		status.security = 1;
