@@ -1,3 +1,0 @@
-3#14.04.2013#Software Update#An diesem Wochenende wird die TitanNit Version 1.25\nfür die UFS922 als Testversion freigegeben.\nDanke an Atemio wo ihr auch eine Lizenz erwerben könnt.
-2#06.12.2012#TitanNit news#Atemio hat es mit dem Betriebssystem Titan geschafft,\nLinux als Firmware etwas aus dem Freakbereich herauszuholen und Mainstream\ntauglich zu machen.\nDenn mit dem AM 7600 werden sich auch Nutzer ohne Linux-Erfahrungen\nsehr schnell zurecht finden.
-1#06.12.2012#Atemio 7600 news#Der Atemio AM 7600 HD PVR TitanNit Edition konnte gleich bei den ersten Test\ndie Fachpresse von sich überzeugen.\nDie neue TitanNit Box wurde in der aktuellen Ausgabe 12/2012 der SATVISION\nnicht nur Testsieger,sondern auch "Preis-/Leistungssieger" und\n"Energiesparsieger".
