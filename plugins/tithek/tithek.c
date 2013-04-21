@@ -63,7 +63,7 @@ void start(void)
 	tithekdownloadcount = 0;
 	tithekrun = 1;
 	tithekexit = 0;
-	screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.list", "Tithek - Mainmenu", 1);
+	screentithekplay("http://atemio.dyndns.tv/mediathek/demomainmenu.list", "Operator - Mainmenu", 1);
 	tithekrun = 0;
 	addconfigint("playerbuffersize", aktplayerbuffersize);
 	status.hangtime = getconfigint("hangtime", NULL);
