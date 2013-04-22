@@ -891,7 +891,8 @@ firstwizzardstep1:
 	//start auto shutdown thread
 	addtimer(&checkshutdowntimer, START, 10000, -1, NULL, NULL, NULL);
 	//start demo mode
-	//addtimer(&demomodethread, START, 600000, -1, NULL, NULL, NULL);
+	if(checkbox("WHITEBOX") == 1)
+		addtimer(&demomodethread, START, 600000, -1, NULL, NULL, NULL);
 
 	status.lastrcaction = time(NULL);
 	ret = loadplugin();
