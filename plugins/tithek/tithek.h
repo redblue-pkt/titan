@@ -1014,7 +1014,7 @@ void backgrounddl(char* link, char* filename)
 void submenu(struct skin* listbox, struct skin* load, char* title)
 {
 	int flag = 0;
-	if(status.security == 1)
+	if(status.security == 1 || checkbox("WHITEBOX") == 1)
 	{
 		drawscreen(load, 0, 0);	
 		char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
