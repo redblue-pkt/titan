@@ -321,6 +321,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 //titan.c
 void oshutdown(int exitcode, int flag);
 int createstartscreen();
+struct channel *channel;
 
 // powerofftimer.h
 void screenpowerofftimer(void);
@@ -450,6 +451,8 @@ struct rectimer* getrectimerbyservice(struct service* servicenode);
 void delrectimer(struct rectimer* rectimernode, int write, int flag);
 int rectimergetaktday();
 int addrectimer(char *buf);
+struct rectimer* addrectimernode(char* line, struct rectimer* last);
+int checkrectimerconflict(struct rectimer* recnode);
 
 //dvb.h
 unsigned char* dvbgetsdt(struct dvbdev* fenode, int secnr, int timeout);
