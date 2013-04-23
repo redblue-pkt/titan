@@ -65,6 +65,15 @@ void menucheckentry(struct skin* child)
 		}
 		return;
 	}
+	
+	// Hide FanControl when no ufs922
+	if(ostrcmp(child->name, "fancontrol") == 0)
+	{
+		if(checkbox("UFS922") == 1)
+			child->hidden = NO;
+		else
+			child->hidden = YES;
+	}
 }
 
 //flag 1: fist call
@@ -280,11 +289,6 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		resettvpic();
 		struct skin* screen = getscreen("systemmenu");
-		if(checkbox("UFS922") == 1)
-		{
-			struct skin* fancontrol = getscreennode(screen, "fancontrol");
-			fancontrol->hidden = NO;
-		}
 		menu(screen, 0);
 	}
 	else if(ostrcmp("system_grid", menuentry->name) == 0)
