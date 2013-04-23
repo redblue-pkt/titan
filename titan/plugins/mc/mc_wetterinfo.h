@@ -3,7 +3,7 @@
 
 void screenmc_wetterinfo()
 {
-	if(status.security == 1)
+	if(status.security == 1 || (checkbox("WHITEBOX") == 1))
 	{
 		int treffer = 0;
 		struct skin* pluginnode = NULL;

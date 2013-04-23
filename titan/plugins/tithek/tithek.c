@@ -64,7 +64,7 @@ void start(void)
 	tithekrun = 1;
 	tithekexit = 0;
 	if(checkbox("WHITEBOX") == 1)
-		screentithekplay("http://atemio.dyndns.tv/mediathek/demomainmenu.list", "Operator - Mainmenu", 1);
+		screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.list", "Operator - Mainmenu", 1);
 	else
 		screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.list", "Tithek - Mainmenu", 1);
 	
