@@ -27,18 +27,24 @@ void screenvfdisplay()
 		standby->progresssize = (int)ceil(((float)vfdstandbybrightness * 14.28));
 	}
 
-	addchoicebox(vfdnotstandby, "0", _("channel"));
-	addchoicebox(vfdnotstandby, "1", _("channel + time"));
-	addchoicebox(vfdnotstandby, "2", _("time + channel"));
-	addchoicebox(vfdnotstandby, "3", _("time"));
-	addchoicebox(vfdnotstandby, "4", _("time small"));
+	if(checkbox("WHITEBOX") == 0 && checkbox("ATEMIO520") == 0)
+	{
+		addchoicebox(vfdnotstandby, "0", _("channel"));
+		addchoicebox(vfdnotstandby, "1", _("channel + time"));
+		addchoicebox(vfdnotstandby, "2", _("time + channel"));
+		addchoicebox(vfdnotstandby, "3", _("time"));
+		addchoicebox(vfdnotstandby, "4", _("time small"));
+	}
 	addchoicebox(vfdnotstandby, "5", _("channel number"));
 	setchoiceboxselection(vfdnotstandby, getconfig("vfdisplay", NULL));
 
 	addchoicebox(vfdstandby, "0", _("time"));
 	addchoicebox(vfdstandby, "1", _("off"));
-	addchoicebox(vfdstandby, "2", _("date + time"));
-	addchoicebox(vfdstandby, "3", _("date"));
+	if(checkbox("WHITEBOX") == 0 && checkbox("ATEMIO520") == 0)
+	{
+		addchoicebox(vfdstandby, "2", _("date + time"));
+		addchoicebox(vfdstandby, "3", _("date"));
+	}
 	setchoiceboxselection(vfdstandby, getconfig("vfdisplaystandby", NULL));
 	
 	addchoicebox(vfdrecord, "0", _("off"));

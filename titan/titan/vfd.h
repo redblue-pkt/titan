@@ -208,7 +208,7 @@ int writevfdmenu(char *value)
 {
 	int ret = 0;
 
-	if((checkbox("WHITEBOX") == 0)
+	if(checkbox("WHITEBOX") == 0 && checkbox("ATEMIO520") == 0)
 		ret = writevfd(value);
 	return ret;
 }
@@ -499,7 +499,10 @@ void updatevfd()
 				tmpstr = ostrcat(tmpstr, gettime(NULL, "%d.%m.%y"), 1, 1);
 				break;
 			default: // time
-				tmpstr = ostrcat(tmpstr, gettime(NULL, "%H:%M"), 1, 1);
+				if(checkbox("WHITEBOX") == 1 || checkbox("ATEMIO520") == 1)
+					tmpstr = ostrcat(tmpstr, gettime(NULL, "%H%M"), 1, 1);
+				else
+					tmpstr = ostrcat(tmpstr, gettime(NULL, "%H:%M"), 1, 1);
 				break;
 		}
 
