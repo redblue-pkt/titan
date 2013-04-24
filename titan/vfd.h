@@ -8,6 +8,7 @@
 #define	VFDICONDISPLAYONOFF 0xc0425a0a
 
 struct stimerthread* VFD_Recordthread = NULL;
+struct channel* oldvfdchannel = NULL;
 
 // Struct to handle ioctl calls (no one outside this file will need this)
 struct vfdioctl
@@ -434,21 +435,33 @@ void updatevfd()
 					tmpstr = ostrcat(tmpstr, status.aktservice->channel->name, 1, 0);
 				tmpstr = ostrcat(tmpstr, gettime(NULL, " %H:%M"), 1, 1);
 				break;
-
 			case 2: // time + channel
 				tmpstr = ostrcat(tmpstr, gettime(NULL, "%H:%M "), 1, 1);
 				if(status.aktservice->channel != NULL)
 					tmpstr = ostrcat(tmpstr, status.aktservice->channel->name, 1, 0);
 				break;
-
 			case 3: // only time
 				tmpstr = ostrcat(tmpstr, gettime(NULL, "%H:%M"), 1, 1);
 				break;
-				
 			case 4: // only time (small)
 				tmpstr = ostrcat(tmpstr, gettime(NULL, "%H%M"), 1, 1);
 				break;
-
+			case 5: // only channel number
+				if(status.aktservice->channel != NULL && oldvfdchannel != status.aktservice->channel)
+				{
+					oldvfdchannel = status.aktservice->channel;
+					if(ostrncmp("(BOUQUET)-", status.aktservice->channellist, 10) == 0 && strlen(status.aktservice->channellist) > 10)
+					{
+						struct mainbouquet* mnode = getmainbouquet(status.aktservice->channellist + 10);
+						if(mnode != NULL)
+						{
+							struct bouquet* bnode = getbouquetbychannel(mnode->bouquet, status.aktservice->channel->serviceid, status.aktservice->channel->transponderid);
+							if(bnode != NULL)
+								tmpstr = ostrcat(tmpstr, oitoa(bnode->nr), 1, 1);
+						}
+					}
+				}
+				break;
 			default: // only channel name
 				if(status.aktservice->channel != NULL)
 					tmpstr = ostrcat(tmpstr, status.aktservice->channel->name, 1, 0);
@@ -461,15 +474,12 @@ void updatevfd()
 			case 1: // off
 				tmpstr = ostrcat(tmpstr, " ", 1, 0);
 				break;
-
 			case 2: // date + time
 				tmpstr = ostrcat(tmpstr, gettime(NULL, "%d.%m %H:%M"), 1, 1);
 				break;
-
 			case 3: // date
 				tmpstr = ostrcat(tmpstr, gettime(NULL, "%d.%m.%y"), 1, 1);
 				break;
-
 			default: // time
 				tmpstr = ostrcat(tmpstr, gettime(NULL, "%H:%M"), 1, 1);
 				break;
@@ -479,7 +489,7 @@ void updatevfd()
 		setallvfdsymbols(0);
 	}
 	if(VFD_Recordthread != NULL && getconfigint("vfdisplayrecord", NULL) == 3 && status.recording > 0)
-		{ }	
+	{ }
 	else if(VFD_Recordthread != NULL && getconfigint("vfdisplayrecord", NULL) == 4 && status.recording > 0)
 	{	
 		tmpstr = ostrcat("* ", tmpstr, 0, 0);
