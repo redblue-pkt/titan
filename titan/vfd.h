@@ -9,6 +9,7 @@
 
 struct stimerthread* VFD_Recordthread = NULL;
 struct channel* oldvfdchannel = NULL;
+int oldvfdchannelnr = -1;
 
 // Struct to handle ioctl calls (no one outside this file will need this)
 struct vfdioctl
@@ -200,6 +201,14 @@ int writevfdioctl(char *value)
 	}
 
 	debug(1000, "out");
+	return ret;
+}
+
+int writevfdmenu(char *value)
+{
+	int ret = 0;
+
+	ret = writevfd(value);
 	return ret;
 }
 
@@ -447,20 +456,28 @@ void updatevfd()
 				tmpstr = ostrcat(tmpstr, gettime(NULL, "%H%M"), 1, 1);
 				break;
 			case 5: // only channel number
-				if(status.aktservice->channel != NULL && oldvfdchannel != status.aktservice->channel)
+				if(oldvfdchannel != status.aktservice->channel)
 				{
-					oldvfdchannel = status.aktservice->channel;
-					if(ostrncmp("(BOUQUET)-", status.aktservice->channellist, 10) == 0 && strlen(status.aktservice->channellist) > 10)
+					if(status.aktservice->channel != NULL)
 					{
-						struct mainbouquet* mnode = getmainbouquet(status.aktservice->channellist + 10);
-						if(mnode != NULL)
+						oldvfdchannel = status.aktservice->channel;
+						if(ostrncmp("(BOUQUET)-", status.aktservice->channellist, 10) == 0 && strlen(status.aktservice->channellist) > 10)
 						{
-							struct bouquet* bnode = getbouquetbychannel(mnode->bouquet, status.aktservice->channel->serviceid, status.aktservice->channel->transponderid);
-							if(bnode != NULL)
-								tmpstr = ostrcat(tmpstr, oitoa(bnode->nr), 1, 1);
+							struct mainbouquet* mnode = getmainbouquet(status.aktservice->channellist + 10);
+							if(mnode != NULL)
+							{
+								struct bouquet* bnode = getbouquetbychannel(mnode->bouquet, status.aktservice->channel->serviceid, status.aktservice->channel->transponderid);
+								if(bnode != NULL)
+								{
+									tmpstr = ostrcat(tmpstr, oitoa(bnode->nr), 1, 1);
+									oldvfdchannelnr = bnode->nr;
+								}
+							}
 						}
 					}
 				}
+				else if(oldvfdchannelnr != -1)
+					tmpstr = ostrcat(tmpstr, oitoa(oldvfdchannelnr), 1, 1);
 				break;
 			default: // only channel name
 				if(status.aktservice->channel != NULL)

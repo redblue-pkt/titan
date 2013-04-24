@@ -714,7 +714,7 @@ void playrcstop(int playertype, int flag)
 	else
 		playerstop();
 
-	writevfd("Player");
+	writevfdmenu("Player");
 	screenplayinfobar(NULL, NULL, 1, playertype, flag);
 }
 
@@ -1167,11 +1167,11 @@ void playwritevfd(char* file, char* showname)
 	if(showname == NULL)
 	{
 		tmpstr = ostrcat(file, NULL, 0, 0);
-		if(tmpstr != NULL) writevfd(basename(tmpstr));
+		if(tmpstr != NULL) writevfdmenu(basename(tmpstr));
 		free(tmpstr); tmpstr = NULL;
 	}
 	else
-		writevfd(showname);
+		writevfdmenu(showname);
 }
 
 
@@ -1327,7 +1327,7 @@ playerstart:
 		if(rcret != 0)
 		{
 			textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
-			writevfd("Player");
+			writevfdmenu("Player");
 			
 			if(startfile == NULL)
 			{
@@ -1489,7 +1489,7 @@ playerend:
 			else
 				playerafterend();
 
-			writevfd("Player");
+			writevfdmenu("Player");
 			screenplayinfobar(file, showname, 1, playertype, flag);
 
 			if(startfile == NULL)

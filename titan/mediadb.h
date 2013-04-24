@@ -970,7 +970,7 @@ int writemediadb(const char *filename, struct mediadb* cmediadb)
 		tmpstr = ostrcat(tmpstr, "/", 1, 0);
 		tmpstr = ostrcat(tmpstr, oitoa(status.mediadbfiles), 1, 1);
 		tmpstr = ostrcat(tmpstr, ")", 1, 0);
-		writevfd(tmpstr);
+		writevfdmenu(tmpstr);
 		free(tmpstr),tmpstr = NULL;
 	}
 
@@ -1150,7 +1150,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 									
 		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 500, 10, 0);
 		free(tmpstr), tmpstr = NULL;
-		writevfd("iMDB start");
+		writevfdmenu("iMDB start");
 		count = 0;
 	}
 	
@@ -1496,7 +1496,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 	freemediadbcategory(0);
 
 	textbox(_("Message"), _("MediaDB scan finished"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
-	writevfd("iMDB Done !");
+	writevfdmenu("iMDB Done !");
 
 	status.mediadbsavetime = 0;
 	status.mediadbfiles = 0;

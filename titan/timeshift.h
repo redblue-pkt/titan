@@ -80,7 +80,7 @@ void timeshiftstop(int flag)
 
 			playerstopts(1, flag);
 
-			writevfd("Player");
+			writevfdmenu("Player");
 			screenplayinfobar(NULL, NULL, 1, 1, 4);
 
 			goto startservice;
@@ -98,7 +98,7 @@ void timeshiftstop(int flag)
 	
 	playerstopts(1, flag);
 
-	writevfd("Player");
+	writevfdmenu("Player");
 	screenplayinfobar(NULL, NULL, 1, 1, 4);
 	
 	if(snode != NULL)
