@@ -818,7 +818,7 @@ int main(int argc, char *argv[])
 	ret = readextepgconfig(getconfig("extepgfile", NULL));
 
 	addtimer(&checkdate, START, 2000, -1, NULL, NULL, NULL);
-	if((checkbox("WHITEBOX") == 0) && (checkbox("ATEMIO510") == 0))
+	if((checkbox("WHITEBOX") == 0) && (checkbox("ATEMIO510") == 0) && (checkbox("ATEMIO520") == 0))
 		addtimer(&updatevfd, START, 1000, -1, NULL, NULL, NULL);
 
 	if(getconfigint("firststart", NULL) == 1)
@@ -981,17 +981,7 @@ firstwizzardstep1:
 		textbox(_("Message"), _("Free space in /var to little!\nThis can make problems!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
 
 	//check free space in /mnt
-	if(checkbox("ATEMIO510") == 1 && getfreespace("/mnt") / 1024 < 200) //200kb
-		textbox(_("Message"), _("Free space in /mnt to little!\nThis can make problems!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
-	else if(checkbox("ATEMIO7600") == 1 && getfreespace("/mnt") / 1024 < 200) //200kb
-		textbox(_("Message"), _("Free space in /mnt to little!\nThis can make problems!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
-	else if(checkbox("ATEVIO700") == 1 && getfreespace("/mnt") / 1024 < 200) //200kb
-		textbox(_("Message"), _("Free space in /mnt to little!\nThis can make problems!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
-	else if(checkbox("ATEVIO7000") == 1 && getfreespace("/mnt") / 1024 < 200) //200kb
-		textbox(_("Message"), _("Free space in /mnt to little!\nThis can make problems!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
-	else if(checkbox("UFS912") == 1 && getfreespace("/mnt") / 1024 < 200) //200kb
-		textbox(_("Message"), _("Free space in /mnt to little!\nThis can make problems!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
-	else if(checkbox("WHITEBOX") == 1 && getfreespace("/mnt") / 1024 < 200) //200kb
+	if(getfreespace("/mnt") / 1024 < 200) //200kb
 		textbox(_("Message"), _("Free space in /mnt to little!\nThis can make problems!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
 
 	screeninfobar();

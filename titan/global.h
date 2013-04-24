@@ -731,7 +731,7 @@ int checkreseller()
 			return 0;
 		}
 	}
-	else if(checkbox("WHITEBOX") == 1)
+	else if(checkbox("WHITEBOX") == 1 || checkbox("ATEMIO520") == 1)
 	{
 		if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x29 && (buf[1074] & 0xff) == 0x02 && (buf[1075] & 0xff) == 0xA5)
 		{
@@ -847,7 +847,7 @@ int checkflash()
 		dev = ostrcat(dev, "3", 1, 0);
 		dir = ostrcat(dir, "var", 1, 0);		
 	}
-	else if((checkbox("ATEMIO510") == 1) || (checkbox("ATEMIO7600") == 1) || (checkbox("IPBOX91") == 1) || (checkbox("IPBOX900") == 1) || (checkbox("IPBOX910") == 1) || (checkbox("IPBOX9000") == 1) || (checkbox("ATEVIO700") == 1) || (checkbox("ATEVIO7000") == 1) || (checkbox("WHITEBOX") == 1))
+	else if((checkbox("ATEMIO510") == 1) || (checkbox("ATEMIO7600") == 1) || (checkbox("IPBOX91") == 1) || (checkbox("IPBOX900") == 1) || (checkbox("IPBOX910") == 1) || (checkbox("IPBOX9000") == 1) || (checkbox("ATEVIO700") == 1) || (checkbox("ATEVIO7000") == 1) || (checkbox("WHITEBOX") == 1) || (checkbox("ATEMIO520") == 1))
 	{
 		dev = ostrcat(dev, "4", 1, 0);
 		dir = ostrcat(dir, "var", 1, 0);

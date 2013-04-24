@@ -1,27 +1,6 @@
 #ifndef EXTENSIONS_H
 #define EXTENSIONS_H
 
-void saveipkg()
-{
-	if(checkbox("ATEMIO510") == 0 && checkbox("ATEVIO700") == 0 && checkbox("ATEVIO7000") == 0 && checkbox("UFS912") == 0 && checkbox("ATEMIO7600") == 0 && checkbox("WHITEBOX") == 0)
-		return;
-
-	int err = 0;
-	
-	system("rm -rf /mnt/ipkg ; mkdir /mnt/ipkg; cp -a /var/usr/lib/ipkg/info /mnt/ipkg; cp /var/usr/lib/ipkg/status /mnt/ipkg");
-
-	if(file_exist("/var/usr/lib/ipkg/info") && !file_exist("/mnt/ipkg/info"))
-		err = 1;
-
-	if(file_exist("/var/usr/lib/ipkg/status") && !file_exist("/mnt/ipkg/status"))
-		err = 1;
-
-	if(err == 1)
-	{
-		system("rm -rf /mnt/ipkg");
-		textbox(_("Message"), _("Can't backup ipkg files\nPlease check if partition is full"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
-	}
-}
 
 void screenfeed()
 {
@@ -105,7 +84,6 @@ void screenextensions(int mode, char* path)
 	{
 		drawscreen(load, 0, 0);
 
-//		system("syncipkg.sh");
 		ipkg_update();
 		ipkg_list();
 
@@ -153,7 +131,6 @@ void screenextensions(int mode, char* path)
 					}
 					textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 					loadplugin();
-//					saveipkg();
 					free(log), log = NULL;
 					unlink("/tmp/ipkg.log");
 					if(file_exist("/tmp/.ipkg_needs_reboot"))
@@ -174,7 +151,6 @@ void screenextensions(int mode, char* path)
 	}
 	else if(mode == 1)
 	{
-//		system("syncipkg.sh");
 		ipkg_list_installed();
 		mbox = ipkmenulist(mlist, NULL, "Ipk Remove - select file", NULL, NULL, 1, 2);
 		
@@ -201,7 +177,6 @@ void screenextensions(int mode, char* path)
 					log = readfiletomem("/tmp/ipkg.log", 0);
 					if(log == NULL) log = ostrcat("Remove success", NULL, 0, 0);
 					textbox(_("Ipk Remove Info - Remove OK"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
-//					saveipkg();
 				}
 				else
 				{
@@ -294,11 +269,9 @@ void screenextensions(int mode, char* path)
 		drawscreen(load, 0, 0);
 		resettvpic();
 		unlink("/tmp/ipkg.log");
-//		system("syncipkg.sh");
 		writesys("/tmp/.ipkg_upgrade_start", "0", 0);
 		ipkg_update();
 		ipkg_upgrade();
-//		saveipkg();
 		freeipkg();
 		loadplugin();
 		clearscreen(load);
