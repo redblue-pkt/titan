@@ -4700,7 +4700,7 @@ void switchvideomode()
 			setvideomode("720p50", 0);
 			changefbresolution("720p50", 0);
 			changetext(playpolicy, "720p50");
-			writevfd("720p50");
+			writevfdmenu("720p50");
 			unlink("/var/etc/.scart");
 		}
 		else if(ostrncmp("720", tmpstr, 3) == 0)
@@ -4708,7 +4708,7 @@ void switchvideomode()
 			setvideomode("1080i50", 0);
 			changefbresolution("1080i50", 0);
 			changetext(playpolicy, "1080i50");
-			writevfd("1080i50");
+			writevfdmenu("1080i50");
 			unlink("/var/etc/.scart");			
 		}
 		else if(ostrncmp("1080", tmpstr, 4) == 0)
@@ -4716,7 +4716,7 @@ void switchvideomode()
 			setvideomode("576i50", 0);
 			changefbresolution("576i50", 0);
 			changetext(playpolicy, "576i50");
-			writevfd("576i50 / pal");
+			writevfdmenu("576i50 / pal");
 			writesys("/var/etc/.scart", "0", 0);
 		}
 		/*

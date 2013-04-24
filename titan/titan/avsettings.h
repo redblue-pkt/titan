@@ -161,7 +161,7 @@ void screenavsettings(int flag)
 	addscreenrc(avsettings, listbox);
 
 	if(flag == 1 && listbox->select != NULL)
-		writevfd(listbox->select->text);
+		writevfdmenu(listbox->select->text);
 
 	tmp = listbox->select;
 	while(1)
@@ -173,11 +173,11 @@ void screenavsettings(int flag)
 		if(flag == 1 && listbox->select != NULL)
 		{
 			if(rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL))
-				writevfd(listbox->select->text);
+				writevfdmenu(listbox->select->text);
 			if(rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL))
 			{
 				setlr = 1;
-				writevfd(listbox->select->ret);
+				writevfdmenu(listbox->select->ret);
 			}	
 		} else {
 			if(listbox->select != NULL)
