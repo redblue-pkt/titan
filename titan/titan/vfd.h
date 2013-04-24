@@ -208,7 +208,8 @@ int writevfdmenu(char *value)
 {
 	int ret = 0;
 
-	ret = writevfd(value);
+	if((checkbox("WHITEBOX") == 0)
+		ret = writevfd(value);
 	return ret;
 }
 
