@@ -2520,12 +2520,10 @@ char* webrectimersend(char* param, int fmt)
 		channel1 = channel;
 		while(channel1 != NULL)
 		{
-			if(ostrcmp(channel1->name, channelname) == 0 && channel1->servicetype == 0) {
-				//if(channelnottunable(channel1) == 0) //allow timer in webif on channel not tunable
-				{
+			if(ostrcmp(channel1->name, channelname) == 0 && (channel1->servicetype == 0 || channel1->servicetype == 1))
+			{
 					channelfind = 1;
 					break;
-				}
 			}
 			channel1 = channel1->next;
 		}
@@ -2534,13 +2532,10 @@ char* webrectimersend(char* param, int fmt)
 			channel1 = channel;		
 			while(channel1 != NULL)
 			{
-				if(ostrstr(channel1->name, channelname) != NULL && channel1->servicetype == 0)
+				if(ostrstr(channel1->name, channelname) != NULL && (channel1->servicetype == 0 || channel1->servicetype == 1))
 				{
-					if(channelnottunable(channel1) == 0)
-					{
 						channelfind = 1;
 						break;
-					}
 				}
 				channel1 = channel1->next;
 			}
