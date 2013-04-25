@@ -662,7 +662,7 @@ void fediseqcsendburst(struct dvbdev* node, fe_sec_mini_cmd_t burst, int wait)
 void fediseqcsendmastercmd(struct dvbdev* node, struct dvb_diseqc_master_cmd *cmd, int wait)
 {
 	debug(1000, "in");
-	int i, repeat = 0; 
+	int i, repeat = 0, imsg = 0;
 	char* tmpstr = NULL;
 
 	if(node == NULL)
@@ -687,7 +687,8 @@ void fediseqcsendmastercmd(struct dvbdev* node, struct dvb_diseqc_master_cmd *cm
 		}
 		usleep(wait * 1000);
 	}
-	debug(200, "DISEQC Master cmd (%s)", node->feshortname);
+	imsg = (cmd->msg[0] << 24) | (cmd->msg[1] << 16) | (cmd->msg[2] << 8) | cmd->msg[3];
+	debug(200, "DISEQC Master cmd (%s -> %04X)", node->feshortname, imsg);
 	debug(1000, "out");
 }
 
@@ -900,7 +901,7 @@ void fesetunicable(struct dvbdev* node)
 	unicabletune |= ((node->feaktband & 0x1) << 10);
 	unicabletune |= ((node->feloffrequency / 1000) & 0x3ff);
 
-	debug(200, "unicabletune %04x", unicabletune);
+	debug(200, "unicabletune %04X", unicabletune);
 
 	//fesetvoltage(node, SEC_VOLTAGE_OFF, 15);
 	fesetvoltage(node, SEC_VOLTAGE_18, 15);
