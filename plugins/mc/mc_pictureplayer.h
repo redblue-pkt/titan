@@ -279,7 +279,7 @@ void screenmc_pictureplayer()
 			status.play = 0;
 			playlist = 0;
 			playinfobarcount = 0;
-			writevfd("pictureplayer Filelist-Mode");
+			writevfdmenu("pictureplayer Filelist-Mode");
 		}
 		else if(rcret == getrcconfigint("rcexit", NULL))
 		{
@@ -316,7 +316,7 @@ void screenmc_pictureplayer()
 			status.random = 0;
 			status.repeat = 0;
 			playlist = 0;
-			writevfd("Mediacenter");
+			writevfdmenu("Mediacenter");
 			playinfobarcount = 0;
 
 			printf("exit: view=%d tmpview=%d\n", view, tmpview);			
@@ -351,7 +351,7 @@ void screenmc_pictureplayer()
 					#ifndef SIMULATE
 						if(playerret != 0)
 						{
-							writevfd("pictureplayer Filelist-Mode");
+							writevfdmenu("pictureplayer Filelist-Mode");
 							status.play = 0;
 							playlist = 0;
 							status.playspeed = 0;
@@ -487,7 +487,7 @@ void screenmc_pictureplayer()
 	clearscreen(blackscreen);
 	clearscreen(loadmediadb);
 	
-	writevfd("Mediacenter");
+	writevfdmenu("Mediacenter");
 	debug(50, "closed");
 }
 

@@ -60,7 +60,7 @@ playerstart:
 		if(rcret != 0)
 		{
 			textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-			writevfd("DVD");
+			writevfdmenu("DVD");
 			
 			if(startfile == NULL)
 			{
@@ -176,7 +176,7 @@ playerend:
 			sleep(1);
 			dvdafterend();
 
-			writevfd("DVD");
+			writevfdmenu("DVD");
 			screenplayinfobar(file, NULL, 1, playertype, flag);
 
 			if(startfile == NULL)

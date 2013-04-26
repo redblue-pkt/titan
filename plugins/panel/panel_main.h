@@ -118,7 +118,7 @@ void panel_main()
 	if(listbox->select != NULL)
 	{
 		status.updatevfd = PAUSE;
-		writevfd(listbox->select->text);
+		writevfdmenu(listbox->select->text);
 	}
 
 	while(1)
@@ -146,7 +146,7 @@ void panel_main()
 		}
 		drawscreen(panel_main, 0, 0);
 		if(listbox->select != NULL)
-			writevfd(listbox->select->text);
+			writevfdmenu(listbox->select->text);
 	}
 
 	delownerrc(panel_main);

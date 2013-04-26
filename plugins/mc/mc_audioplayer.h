@@ -523,7 +523,7 @@ void screenmc_audioplayer()
 				status.play = 0;
 				playlist = 0;
 
-				writevfd("AudioPlayer Filelist-Mode");				
+				writevfdmenu("AudioPlayer Filelist-Mode");
 //			}
 		}
 		else if(rcret == getrcconfigint("rcexit", NULL))
@@ -559,7 +559,7 @@ void screenmc_audioplayer()
 			status.random = 0;
 			status.repeat = 0;
 			playlist = 0;
-			writevfd("Mediacenter");
+			writevfdmenu("Mediacenter");
 			
 			printf("exit: view=%d tmpview=%d\n", view, tmpview);
 			unlink("/tmp/.autoscan");			
@@ -593,7 +593,7 @@ void screenmc_audioplayer()
 					{
 						textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 /*
-						writevfd("AudioPlayer Filelist-Mode");
+						writevfdmenu("AudioPlayer Filelist-Mode");
 						status.play = 0;
 						playlist = 0;
 						status.playspeed = 0;
@@ -691,7 +691,7 @@ void screenmc_audioplayer()
 				#ifndef SIMULATE
 					if(playerret != 0)
 					{
-						writevfd("AudioPlayer Filelist-Mode");
+						writevfdmenu("AudioPlayer Filelist-Mode");
 						status.play = 0;
 						status.playspeed = 0;
 						textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
@@ -752,7 +752,7 @@ void screenmc_audioplayer()
 	clearscreen(blackscreen);
 	clearscreen(loadmediadb);
 
-	writevfd("Mediacenter");
+	writevfdmenu("Mediacenter");
 	debug(50, "closed");
 }
 
