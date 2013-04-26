@@ -2989,6 +2989,12 @@ char* webgetsysteminfo(int fmt)
 	buf = ostrcat(buf, getboxtype(), 1, 0);
 	buf = ostrcat(buf, "#", 1, 0);
 	buf = ostrcat(buf, ollutoa(time(NULL)), 1, 1);
+	buf = ostrcat(buf, "#", 1, 0);
+
+	if(status.standby == 0)
+		buf = ostrcat(buf, "0", 1, 0);
+	else
+		buf = ostrcat(buf, "1", 1, 0);
 	
 	return buf;
 }
