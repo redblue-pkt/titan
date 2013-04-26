@@ -571,10 +571,12 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 						writeret = dvbwrite(servicenode->recdstfd, buf, readret, writetimeout);
 
 				//inject first pakets slower/smaler, so demux can start and read
-				if(status.timeshift == 0 && servicenode->type == RECORDPLAY && count < 20)
+				if(servicenode->type == RECORDPLAY && count < 20)
 				{
-					count++;
-					usleep(50000);
+					if(status.timeshift == 0)
+						usleep(50000);
+					else
+						count = 19;
 					if(count == 19)
 					{
 						recbsize = servicenode->tssize * 1024; //aligned to 188 and 4096
@@ -599,6 +601,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 							}
 						}
 					}
+					count++;
 				}
 			}
 
@@ -757,7 +760,7 @@ char* recordcreatefilename(char* path, char* channelname, char* moviename, int t
 
 int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, time_t endtime, struct rectimer* rectimernode, int tssize)
 {
-	int ret = 0, fd = -1, servicetype = RECORDDIRECT, festatus = 0;
+	int ret = 0, fd = -1, servicetype = RECORDDIRECT, festatus = 0, pcrpidmatch = 0;
 	char* path = NULL, *chname = NULL, *filename = NULL, *moviename = NULL;
 	unsigned char* patbuf = NULL, *pmtbuf = NULL;
 	struct epg* epgnode = NULL;
@@ -1012,15 +1015,16 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 			if(chnode->audiopid > 0) dmxaddpid(dmxnode, chnode->audiopid);
 			if(chnode->videopid > 0) dmxaddpid(dmxnode, chnode->videopid);
 			dmxaddpid(dmxnode, chnode->pmtpid);
-			if(chnode->pcrpid > 0 && chnode->pcrpid != chnode->videopid) dmxaddpid(dmxnode, chnode->pcrpid);
 			//add all audiotracks
 			atrack = chnode->audiotrack;
 			while(atrack != NULL)
 			{
 				if(atrack->audiopid > 0 && atrack->audiopid != chnode->audiopid)
 					dmxaddpid(dmxnode, atrack->audiopid);
+				if(atrack->audiopid == chnode->pcrpid) pcrpidmatch = 1;
 				atrack = atrack->next;
 			}
+			if(chnode->pcrpid > 0 && chnode->pcrpid != chnode->videopid && chnode->pcrpid != chnode->audiopid && pcrpidmatch == 0) dmxaddpid(dmxnode, chnode->pcrpid);
 		}
 		else
 		{
