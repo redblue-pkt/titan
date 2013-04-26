@@ -334,7 +334,7 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 
 								singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 								changetext(b2, _("Filelist-Mode"));
-								writevfd("Filelist-Mode");
+								writevfdmenu("Filelist-Mode");
 								switchtofilelist = 1;
 	
 								drawscreen(skin, 0, 0);

@@ -106,7 +106,7 @@ void mc_main()
 	int rcret = 0, ret = 0;
 	char* videomode = NULL, *currvideomode = NULL;
 
-	writevfd("Mediacenter");
+	writevfdmenu("Mediacenter");
 	resettvpic();
 	videomode = getvideomode();
 	debug(50, "save videomode: %s", videomode);
@@ -153,7 +153,7 @@ void mc_main()
 		if(first == 1 && listbox->select != NULL)
 		{
 	// menu is slow if enable
-			writevfd(listbox->select->text);
+			writevfdmenu(listbox->select->text);
 		
 			if(ostrcmp(listbox->select->name, "mc_videoplayer") == 0)
 			{
@@ -213,7 +213,7 @@ void mc_main()
 
 		drawscreen(mc_main, 0, 0);
 // menu is slow if enable
-		writevfd(listbox->select->text);
+		writevfdmenu(listbox->select->text);
 		
 		if(listbox->select != NULL && (rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL) || rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL)))
 		{

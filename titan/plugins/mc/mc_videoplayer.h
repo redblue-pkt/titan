@@ -604,7 +604,7 @@ void screenmc_videoplayer()
 			else
 				playerafterend();
 		
-			writevfd("VideoPlayer Filelist-Mode");
+			writevfdmenu("VideoPlayer Filelist-Mode");
 		}
 		else if(rcret == getrcconfigint("rcexit", NULL))
 		{
@@ -659,7 +659,7 @@ void screenmc_videoplayer()
 			status.random = 0;
 			status.repeat = 0;
 			playlist = 0;
-			writevfd("Mediacenter");
+			writevfdmenu("Mediacenter");
 			playinfobarcount = 0;
 	
 			printf("exit: view=%d tmpview=%d\n", view, tmpview);
@@ -728,7 +728,7 @@ void screenmc_videoplayer()
 				#ifndef SIMULATE
 					if(playerret != 0)
 					{
-						writevfd("VideoPlayer Filelist-Mode");
+						writevfdmenu("VideoPlayer Filelist-Mode");
 						status.play = 0;
 						playlist = 0;
 						status.playspeed = 0;
@@ -865,7 +865,7 @@ void screenmc_videoplayer()
 				#ifndef SIMULATE
 					if(playerret != 0)
 					{
-						writevfd("VideoPlayer Filelist-Mode");
+						writevfdmenu("VideoPlayer Filelist-Mode");
 						status.play = 0;
 						status.playspeed = 0;
 						textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
@@ -986,7 +986,7 @@ void screenmc_videoplayer()
 	clearscreen(blackscreen);
 	clearscreen(loadmediadb);
 			
-	writevfd("Mediacenter");
+	writevfdmenu("Mediacenter");
 	debug(50, "closed");
 }
 
