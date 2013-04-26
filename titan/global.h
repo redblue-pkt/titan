@@ -1471,10 +1471,10 @@ void setskinnodeslocked(int flag)
 			// disable backup restore entry
 			if(ostrcmp("system_backup_restore", child->name) == 0) child->locked = 1;
 
-//			if((checkbox("ATEMIO7600") == 1 ) || (checkbox("UFS912") == 1) || (checkbox("ATEVIO7000") == 1) || (checkbox("ATEVIO700") == 1))
-//			{
+			if(checkbox("UFS910") == 0)
+			{
 				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
-//			}
+			}
 		
 			if(checkbox("UFS910") == 1)
 			{
