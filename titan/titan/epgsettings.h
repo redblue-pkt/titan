@@ -95,7 +95,7 @@ void screenepgsettings()
 	char* ret = NULL;
 	struct skin* epgsettings = getscreen("epgsettings");
 	struct skin* listbox = getscreennode(epgsettings, "listbox");
-	struct skin *epgpath = getscreennode(epgsettings, "epgpath");
+	struct skin* epgpath = getscreennode(epgsettings, "epgpath");
 	struct skin* epgdays = getscreennode(epgsettings, "epgdays");
 	struct skin* epgdel = getscreennode(epgsettings, "epgdel");
 	struct skin* epgscreen = getscreennode(epgsettings, "epgscreen");
