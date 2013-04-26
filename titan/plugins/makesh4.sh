@@ -114,5 +114,6 @@ compile "catcatch" "catcatch" "" ""
 compile "facebook" "facebook" "" "-l curl"
 compile "readerconfig" "readerconfig" "" ""
 compile "tiwakeup" "tiwakeup" "" ""
+compile "autotimer" "autotimer" "" ""
 
 #rm -r networkbrowser/networkbrowser
