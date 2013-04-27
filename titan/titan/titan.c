@@ -622,7 +622,7 @@ int main(int argc, char *argv[])
 			destroy();
 			exit(100);
 		}
-		if(checkbox("UFS9101") == 1 && checklowflash() != 0)
+		if(checkbox("UFS910") == 1 && checklowflash() != 0)
 		{
 			printf("error: 7\n");		
 			destroy();
