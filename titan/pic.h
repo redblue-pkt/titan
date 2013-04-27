@@ -29,19 +29,17 @@ struct pic* addpic(char *name, unsigned char* picbuf, int memfd, unsigned long w
 {
 	debug(1000, "in");
 
-	//chech if pic timed aut and can remove
+	//chech if pic timed out and can remove
 	checkpictimeout();
 
 	struct pic *newnode = NULL, *prev = NULL, *node = pic;
 
-	newnode = (struct pic*)malloc(sizeof(struct pic));	
+	newnode = (struct pic*)calloc(1, sizeof(struct pic));
 	if(newnode == NULL)
 	{
 		err("no memory");
 		return NULL;
 	}
-
-	memset(newnode, 0, sizeof(struct pic));
 
 	newnode->name = ostrcat(name, NULL, 0, 0);
 	newnode->picbuf = picbuf;
