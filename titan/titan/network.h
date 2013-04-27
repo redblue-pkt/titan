@@ -560,7 +560,7 @@ start:
 		if(tmp != NULL)
 		{
 			tmpstr = ostrcat(inetworknode->device, " (", 0, 0);
-			if(ostrcmp(inetworknode->ip, "000.000.000.000") != 1)					
+			if(inetworknode->type == 2)
 				tmpstr = ostrcat(tmpstr, _("deaktiv"), 1, 0);
 			else
 				tmpstr = ostrcat(tmpstr, inetworknode->ip, 1, 0);
