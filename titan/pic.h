@@ -14,14 +14,15 @@ void debugpic()
 
 void checkpictimeout()
 {
-	struct pic* node = pic;
+	struct pic* node = pic, *prev = pic;
 	time_t akttime = time(NULL);
 
 	while(node != NULL)
 	{
-		if(node->timeout != 0 && node->lastaccess + node->timeout < akttime)
-			delpic(node->name);
+		prev = node;
 		node = node->next;
+		if(prev->timeout != 0 && prev->lastaccess + prev->timeout < akttime)
+			delpic(prev->name);
 	}
 }
 
