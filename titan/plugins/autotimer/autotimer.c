@@ -154,7 +154,7 @@ void autotimer_thread()
 						node->recpath = ostrcat(NULL, getconfig("rec_path", NULL), 0, 0);
 						node->afterevent = 0;
 						node->repeate = 0;
-						node->justplay = 0;
+						node->justplay = getconfigint("at1_event", NULL);
 						node->afterevent = 0;
 						node->serviceid = channel1->serviceid;
 						node->servicetype = channel1->servicetype;
@@ -245,6 +245,7 @@ void start(void)
 	struct skin* autotimer_channel = getscreennode(autotimer, "channel");
 	struct skin* autotimer_search = getscreennode(autotimer, "search");
 	struct skin* autotimer_begin = getscreennode(autotimer, "begin");
+	struct skin* autotimer_event = getscreennode(autotimer, "event");
 	struct skin* autotimer_end = getscreennode(autotimer, "end");
 	struct skin* autotimer_blue = getscreennode(autotimer, "blue");
 	struct skin* tmp = NULL;
@@ -271,6 +272,10 @@ void start(void)
 		changeinput(autotimer_end, "23:59");
 	else
 		changeinput(autotimer_end, getconfig("at1_endtime", NULL));
+	
+	addchoicebox(autotimer_event, "0", _("record"));
+	addchoicebox(autotimer_event, "1", _("switch channel"));
+	setchoiceboxselection(autotimer_event, getconfig("at1_event", NULL));
 	
 	drawscreen(autotimer, 0, 0);
 	addscreenrc(autotimer, autotimer_listbox);
@@ -307,6 +312,7 @@ void start(void)
 				addconfig("at1_search", autotimer_search->ret);
 				addconfig("at1_starttime", autotimer_begin->ret);
 				addconfig("at1_endtime", autotimer_end->ret);
+				addconfig("at1_event", autotimer_event->ret);
 				autotimerthread = addtimer(&autotimer_thread, START, 10000, 1, NULL, NULL, NULL);
 				sleep(1);
 				if(autotimerthread != NULL)
@@ -328,6 +334,7 @@ void start(void)
 			addconfig("at1_search", autotimer_search->ret);
 			addconfig("at1_starttime", autotimer_begin->ret);
 			addconfig("at1_endtime", autotimer_end->ret);
+			addconfig("at1_event", autotimer_event->ret);
 			if(getconfigint("at1_running", NULL) == 1)
 			{
 				autotimerthread->aktion = STOP;
