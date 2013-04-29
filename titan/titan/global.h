@@ -2267,9 +2267,9 @@ void m_unlock(pthread_mutex_t *mutex, int flag)
 void debugstack(int sig, void* address, void* address1)
 {
 	Dl_info info, info1;
-	void* trace[10];
+	void* trace[20];
 	size_t size;
-	size = backtrace(trace, 10);
+	size = backtrace(trace, 20);
 
 	FILE* fd = NULL;
 	void* akttrace[2];
