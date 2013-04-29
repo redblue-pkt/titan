@@ -2592,7 +2592,7 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount, int first)
 		}
 
 		//See if entry is a subdirectory of d
-		if(entry->d_type & DT_DIR)
+		if(entry->d_type == DT_DIR)
 		{
 			//Check that the directory is not d or d's parent
 			if(entry->d_name != NULL && entry->d_name[0] != '.' && entry->d_name[0] != '$')
