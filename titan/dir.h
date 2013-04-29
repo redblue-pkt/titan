@@ -115,6 +115,7 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 
 	changepic(thumb, "playpic.png");
 
+	clearscreen(load);
 	drawscreen(dir, 0, 0);
 	addscreenrc(dir, filelist);
 
