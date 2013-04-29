@@ -232,13 +232,12 @@ int id3tagsize(fd)
 int id3getversion(int fd)
 {
 	char sig[3];
-	unsigned short int version;
+	unsigned short int version = 0;
 
 	if(fd < 0) return -1;
 
 	read(fd, sig, sizeof(sig));
-	//if(ostrncmp("ID3", sig, 3) == 0)
-	if(!strncmp("ID3", sig, 3))
+	if(ostrncmp("ID3", sig, 3) == 0)
 		read(fd, &version, sizeof(unsigned short int));
 
 	version = id3swapendian16(version);
@@ -364,66 +363,57 @@ void id3parse2_2(int fd, struct id3tag *node)
 		//perform checks for end of tags and tag length overflow or zero
 		if(*tag == 0 || taglen > size || taglen == 0) break;
 
-		//if(ostrncmp("TP1", tag, 3) == 0) //artist
-		if(!strncmp("TP1", tag, 3)) //artist
+		if(ostrncmp("TP1", tag, 3) == 0) //artist
 		{
 			lseek(fd, 1, SEEK_CUR);
 			free(node->artist); node->artist = NULL;
 			node->artist = id3readtag(fd, taglen - 1, 260);
 		}
-		//else if(ostrncmp("TP2", tag, 3) == 0) //title
-		else if(!strncmp("TP2", tag, 3)) //title
+		else if(ostrncmp("TP2", tag, 3) == 0) //title
 		{
 			lseek(fd, 1, SEEK_CUR);
 			free(node->title); node->title = NULL;
 			node->title = id3readtag(fd, taglen - 1, 260);
 		}
-		//else if(ostrncmp("TAL", tag, 3) == 0) //album
-		else if(!strncmp("TAL", tag, 3)) //album
+		else if(ostrncmp("TAL", tag, 3) == 0) //album
 		{
 			lseek(fd, 1, SEEK_CUR);
 			free(node->album); node->album = NULL;
 			node->album = id3readtag(fd, taglen - 1, 260);
 		}
-		//else if(0strncmp("TRK", tag, 3) == 0) //track nr.
-		else if(!strncmp("TRK", tag, 3)) //track nr.
+		else if(ostrncmp("TRK", tag, 3) == 0) //track nr.
 		{
 			lseek(fd, 1, SEEK_CUR);
 			buf = id3readtag(fd, taglen - 1, 8);
 			if(buf != NULL) node->track = atoi(buf);
 			free(buf); buf = NULL;
 		}
-		//else if(ostrncmp("TYE", tag, 3) == 0) //year
-		else if(!strncmp("TYE", tag, 3)) //year
+		else if(ostrncmp("TYE", tag, 3) == 0) //year
 		{
 			lseek(fd, 1, SEEK_CUR);
 			free(node->year); node->year = NULL;
 			node->year = id3readtag(fd, taglen - 1, 12);
 		}
-		//else if(ostrncmp("TLE", tag, 3) == 0) //length
-		else if(!strncmp("TLE", tag, 3)) //length
+		else if(ostrncmp("TLE", tag, 3) == 0) //length
 		{
 			lseek(fd, 1, SEEK_CUR);
 			buf = id3readtag(fd, taglen - 1, 264);
 			if(buf != NULL) node->len = atoi(buf);
 			free(buf); buf = NULL;
 		}
-		//else if(ostrncmp("COM", tag, 3) == 0) //comment
-		else if(!strncmp("COM", tag, 3)) //comment
+		else if(ostrncmp("COM", tag, 3) == 0) //comment
 		{
 			lseek(fd, 1, SEEK_CUR);
 			free(node->comment); node->comment = NULL;
 			node->comment = id3readtag(fd, taglen - 1, 260);
 		}
-		//else if(ostrncmp("TCO", tag, 3) == 0) //genre
-		else if(!strncmp("TCO", tag, 3)) //genre
+		else if(ostrncmp("TCO", tag, 3) == 0) //genre
 		{
 			lseek(fd, 1, SEEK_CUR);
 			free(node->genretext); node->genretext = NULL;
 			node->genretext = id3readtag(fd, taglen - 1, 260);
 		}
-		//else if(ostrncmp("PIC", tag, 3) == 0) //picture
-		else if(!strncmp("PIC", tag, 3)) //picture
+		else if(ostrncmp("PIC", tag, 3) == 0) //picture
 		{
 			lseek(fd, 1, SEEK_CUR);
 			lseek(fd, 5, SEEK_CUR);
@@ -462,7 +452,7 @@ void id3parse2_3(int fd, struct id3tag *node)
 	int size = 0;
 	int taglen = 0;
 	char tag[4];
-	char* buf = 0;
+	char* buf = NULL;
 	
 	if(fd < 0 || node == NULL) return;
 
@@ -485,66 +475,57 @@ void id3parse2_3(int fd, struct id3tag *node)
 		//perform checks for end of tags and tag length overflow or zero
 		if(*tag == 0 || taglen > size || taglen == 0) break;
 
-		//if(ostrncmp("TPE1", tag, 4) == 0) //artist
-		if(!strncmp("TPE1", tag, 4)) //artist
+		if(ostrncmp("TPE1", tag, 4) == 0) //artist
 		{
 			lseek(fd, 1, SEEK_CUR);
 			free(node->artist); node->artist = NULL;
 			node->artist = id3readtag(fd, taglen - 1, 260);
 		}
-		//else if(ostrncmp("TIT2", tag, 4) == 0) //title
-		else if(!strncmp("TIT2", tag, 4)) //title
+		else if(ostrncmp("TIT2", tag, 4) == 0) //title
 		{
 			lseek(fd, 1, SEEK_CUR);
 			free(node->title); node->title = NULL;
 			node->title = id3readtag(fd, taglen - 1, 260);
 		}
-		//else if(ostrncmp("TALB", tag, 4) == 0) //album
-		else if(!strncmp("TALB", tag, 4)) //album
+		else if(ostrncmp("TALB", tag, 4) == 0) //album
 		{
 			lseek(fd, 1, SEEK_CUR);
 			free(node->album); node->album = NULL;
 			node->album = id3readtag(fd, taglen - 1, 260);
 		}
-		//else if(ostrncmp("TRCK", tag, 4) == 0) //track nr
-		else if(!strncmp("TRCK", tag, 4)) //track nr
+		else if(ostrncmp("TRCK", tag, 4) == 0) //track nr
 		{
 			lseek(fd, 1, SEEK_CUR);
 			buf = id3readtag(fd, taglen - 1, 8);
 			if(buf != NULL) node->track = atoi(buf);
 			free(buf); buf = NULL;
 		}
-		//else if(ostrncmp("TYER", tag, 4) == 0) //year
-		else if(!strncmp("TYER", tag, 4)) //year
+		else if(ostrncmp("TYER", tag, 4) == 0) //year
 		{
 			lseek(fd, 1, SEEK_CUR);
 			free(node->year); node->year = NULL;
 			node->year = id3readtag(fd, taglen - 1, 12);
 		}
-		//else if(ostrncmp("TLEN", tag, 4) == 0) //length in milliseconds
-		else if(!strncmp("TLEN", tag, 4)) //length in milliseconds 
+		else if(ostrncmp("TLEN", tag, 4) == 0) //length in milliseconds
 		{
 			lseek(fd, 1, SEEK_CUR);
 			buf = id3readtag(fd, taglen - 1, 264);
 			if(buf != NULL) node->len = atol(buf) / 1000;
 			free(buf); buf = NULL;
 		}
-		//else if(ostrncmp("TCON", tag, 4) == 0) //genre
-		else if(!strncmp("TCON", tag, 4)) //genre
+		else if(ostrncmp("TCON", tag, 4) == 0) //genre
 		{
 			lseek(fd, 1, SEEK_CUR);
 			free(node->genretext); node->genretext = NULL;
 			node->genretext = id3readtag(fd, taglen - 1, 260);
 		}
-		//else if(ostrncmp("COMM", tag, 4) == 0) //comment
-		else if(!strncmp("COMM", tag, 4)) //comment
+		else if(ostrncmp("COMM", tag, 4) == 0) //comment
 		{
 			lseek(fd, 1, SEEK_CUR);
 			free(node->comment); node->comment = NULL;
 			node->comment = id3readtag(fd, taglen - 1, 260);
 		}
-		//else if(ostrncmp("APIC", tag, 4) == 0) //picture
-		else if(!strncmp("APIC", tag, 4)) //picture
+		else if(ostrncmp("APIC", tag, 4) == 0) //picture
 		{
 			lseek(fd, 1, SEEK_CUR);
 			lseek(fd, 12, SEEK_CUR);
@@ -607,66 +588,57 @@ void id3parse2_4(int fd, struct id3tag *node)
 		//perform checks for end of tags and tag length overflow or zero 
 		if(*tag == 0 || taglen > size || taglen == 0) break;
 
-		//if(ostrncmp("TPE1", tag, 4) == 0) //artist
-		if(!strncmp("TPE1", tag, 4)) //artist
+		if(ostrncmp("TPE1", tag, 4) == 0) //artist
 		{
 			lseek(fd, 1, SEEK_CUR);
 			free(node->artist); node->artist = NULL;
 			node->artist = id3readtag(fd, taglen - 1, 260);
 		}
-		//else if(ostrncmp("TIT2", tag, 4) == 0) //title
-		else if(!strncmp("TIT2", tag, 4)) //title
+		else if(ostrncmp("TIT2", tag, 4) == 0) //title
 		{
 			lseek(fd, 1, SEEK_CUR);
 			free(node->title); node->title = NULL;
 			node->title = id3readtag(fd, taglen - 1, 260);
 		}
-		//else if(ostrncmp("TALB", tag, 4) == 0) //album
-		else if(!strncmp("TALB", tag, 4)) //album
+		else if(ostrncmp("TALB", tag, 4) == 0) //album
 		{
 			lseek(fd, 1, SEEK_CUR);
 			free(node->album); node->album = NULL;
 			node->album = id3readtag(fd, taglen - 1, 260);
 		}
-		//else if(ostrncmp("TRCK", tag, 4) == 0) //track nr
-		else if(!strncmp("TRCK", tag, 4)) //track nr
+		else if(ostrncmp("TRCK", tag, 4) == 0) //track nr
 		{
 			lseek(fd, 1, SEEK_CUR);
 			buf = id3readtag(fd, taglen - 1, 8);
 			if(buf != NULL) node->track = atoi(buf);
 			free(buf); buf = NULL;
 		}
-		//else if(ostrncmp("TYER", tag, 4) == 0) //year
-		else if(!strncmp("TYER", tag, 4)) //year
+		else if(ostrncmp("TYER", tag, 4) == 0) //year
 		{
 			lseek(fd, 1, SEEK_CUR);
 			free(node->year); node->year = NULL;
 			node->year = id3readtag(fd, taglen - 1, 12);
 		}
-		//else if(ostrncmp("TLEN", tag, 4) == 0) //length in milliseconds
-		else if(!strncmp("TLEN", tag, 4)) //length in milliseconds
+		else if(ostrncmp("TLEN", tag, 4) == 0) //length in milliseconds
 		{
 			lseek(fd, 1, SEEK_CUR);
 			buf = id3readtag(fd, taglen - 1, 264);
 			if(buf != NULL) node->len = atol(buf) / 1000;
 			free(buf); buf = NULL;
 		}
-		//else if(ostrncmp("TCON", tag, 4) == 0) //genre
-		else if(!strncmp("TCON", tag, 4)) //genre
+		else if(ostrncmp("TCON", tag, 4) == 0) //genre
 		{
 			lseek(fd, 1, SEEK_CUR);
 			free(node->genretext); node->genretext = NULL;
 			node->genretext = id3readtag(fd, taglen - 1, 260);
 		}
-		//else if(ostrncmp("COMM", tag, 4) == 0) //comment
-		else if(!strncmp("COMM", tag, 4)) //comment
+		else if(ostrncmp("COMM", tag, 4) == 0) //comment
 		{
 			lseek(fd, 1, SEEK_CUR);
 			free(node->comment); node->comment = NULL;
 			node->comment = id3readtag(fd, taglen - 1, 260);
 		}
-		//else if(ostrncmp("APIC", tag, 4) == 0) //picture
-		else if(!strncmp("APIC", tag, 4)) //picture
+		else if(ostrncmp("APIC", tag, 4) == 0) //picture
 		{
 			lseek(fd, 1, SEEK_CUR);
 			lseek(fd, 12, SEEK_CUR);

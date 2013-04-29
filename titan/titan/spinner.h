@@ -46,7 +46,7 @@ void screenspinner()
 findspinner:
 	while(node != NULL)
 	{
-		if(strncmp("spinner", node->name, 7) == 0)
+		if(ostrncmp("spinner", node->name, 7) == 0)
 			count++;
 		if(count == status.spinner)
 		{
