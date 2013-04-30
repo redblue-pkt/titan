@@ -8,6 +8,10 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//pip.h
+int pipstop(struct service *node, int flag);
+int pipstart(struct channel* chnode, char* pin, int flag);
+
 //bgdownload.h
 void screenbgdownload();
 int startbgdownload(char* host, char* page, int port, char* filename, char* auth, int timeout, int flag);
