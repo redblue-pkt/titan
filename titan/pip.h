@@ -59,7 +59,7 @@ int pipstartreal(struct channel* chnode, char* pin, int flag)
 			tpnode = chnode->transponder;
 	}
 
-	ret = pipstop(status.pipservice, 0, 0);
+	ret = pipstop(status.pipservice, 0);
 
 	//can't stop service (timeshift ??)
 	if(ret == 1)
