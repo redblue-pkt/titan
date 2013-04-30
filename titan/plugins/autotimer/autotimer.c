@@ -94,26 +94,19 @@ void autotimer_thread()
 	
 	channel1 = channel;
 	channelfind = 0;
-	printf("++++> %s<-----\n",search1->channelname);
 	while(channel1 != NULL)
 	{
 		if(ostrcmp(channel1->name, search1->channelname) == 0)
-		{
-			channelfind = 1;
 			break;
-		}
+
 		channel1 = channel1->next;
 	}
-	if(channelfind == 0)
+	if(channel1 == NULL)
 	{
 		autotimerthread->aktion = STOP;
-		printf("++++> 5\n");
 	}
-	printf("++++> %s<-----\n",channel1->name);
-	printf("----> %i\n",autotimerthread->aktion);
 	while (autotimerthread->aktion != STOP)
 	{
-		printf("----> los\n");
 		i = 0;
 		node = NULL;
 		write_note = 0;
@@ -186,7 +179,6 @@ void autotimer_thread()
 			sleep(2);
 		}
 	}
-	printf("***** ENDE ++\n");
 	free(buf); buf = NULL;
 	search1->channelname = NULL;
 	search1->search = NULL;
@@ -198,10 +190,8 @@ void autotimer_thread()
 
 void autotimer_main()
 {
-	printf("***** START_main\n");
 	if(getconfigint("at1_running", NULL) == 1)
 	{
-		printf("***** START_Thread\n");
 		if(autotimerthread == NULL)
 			autotimerthread = addtimer(&autotimer_thread, START, 10000, 1, NULL, NULL, NULL);
 	}
