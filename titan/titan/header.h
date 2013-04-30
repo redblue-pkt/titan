@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//fancontrol.h
+void screenpanel_settings_fancontrol();
+
 //pip.h
 int pipstop(struct service *node, int flag);
 int pipstart(struct channel* chnode, char* pin, int flag);
