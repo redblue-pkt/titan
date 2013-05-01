@@ -1876,8 +1876,13 @@ msgid "swaptool"
 msgstr "Swap-Tools"
 msgid "tools"
 msgstr "Tools"
+
 msgid "lcdpearlskins"
 msgstr "Pearl-LCD-Skins"
+
+msgid "lcdsamsungskins"
+msgstr "Samsung-LCD-Skins"
+
 msgid "Backup created successfully"
 msgstr "Backup created successfully"
 msgid "EPG Save Mode"
