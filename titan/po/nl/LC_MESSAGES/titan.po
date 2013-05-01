@@ -2903,6 +2903,9 @@ msgstr "Tools"
 msgid "lcdpearlskins"
 msgstr "Pearl-LCD-Skins"
 
+msgid "lcdsamsungskins"
+msgstr "Samsung-LCD-Skins"
+
 msgid "Backup created successfully"
 msgstr "Backup gelukt"
 
