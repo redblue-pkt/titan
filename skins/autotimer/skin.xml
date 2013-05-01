@@ -1,6 +1,6 @@
 <screen name="autotimer" title="AutoTimer Settings" titlealign=center fontcol=fontcol valign=bottom fontsize=30 posx=center posy=center width=50% height=70% bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node bordercol=bordercol scrollbar=auto type=listbox posy=center posx=center name=listbox width=85% height=70%>
-<node name=channel type=inputbox parent=listbox valign=middle posx=0 text="channel" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=channel type=inputbox parent=listbox valign=middle posx=0 text="channel (EPG=Current channel)" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=search type=inputbox parent=listbox valign=middle posx=0 text="search string" bordercol=bordercol bordersize=2 width=100% height=25>	
 <node name=begin type=inputboxnum parent=listbox valign=middle posx=0 text="begin search" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=end type=inputboxnum parent=listbox valign=middle posx=0 text="end search" bordercol=bordercol bordersize=2 width=100% height=25>
