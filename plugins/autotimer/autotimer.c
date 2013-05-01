@@ -10,6 +10,9 @@ int pluginaktiv = 0;
 int pluginversion = 999999;
 //struct skin* pluginmenu = NULL;
 //int pluginflag = 1; //don't show the plugin in pluginmanager
+
+struct rectimer *rectimer;
+
 struct searchoption
 {
 	int starttime;
@@ -23,7 +26,6 @@ struct stimerthread* autotimerthread = NULL;
 
 void autotimer_thread()
 {
-	printf("----> %i\n",autotimerthread->aktion);
 	char* tmpstr = NULL;
 	char* buf = NULL;
 	char* result = NULL;
@@ -32,12 +34,14 @@ void autotimer_thread()
 	struct epg* epgnode = NULL;
 	struct tm *loctime = NULL;
 	struct rectimer *node = NULL;
+	struct rectimer* recnode = rectimer;
 	int channelfind = 0;
 	int epg_starttime = 0;
 	//int epg_endtime = 0;
 	int tageswechsel = 0;
 	int write_note = 0;
 	int i = 0;
+	int konflikt = 0;
 	
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
@@ -107,6 +111,7 @@ void autotimer_thread()
 	}
 	while (autotimerthread->aktion != STOP)
 	{
+		sleep(10);
 		i = 0;
 		node = NULL;
 		write_note = 0;
@@ -122,7 +127,6 @@ void autotimer_thread()
 				epg_starttime = epg_starttime + 2400;
 			if(epg_starttime >= search1->starttime &&  epg_starttime <= search1->endtime)
 			{
-				printf("***** %s\n",epgnode->title);
 				if(epgnode->title != NULL)
 						result = ostrstrcase(epgnode->title, search1->search);
 				if(result != NULL)
@@ -139,9 +143,28 @@ void autotimer_thread()
 					}
 	
 					node->begin = epgnode->starttime;
+					node->begin -= getconfigint("recforerun" , NULL) * 60;
+					node->begin -= (node->begin % 60);
 					node->end = epgnode->endtime;
+					node->end += getconfigint("recoverrun" , NULL) * 60;
+					node->end -= (node->end % 60);
 					node->transponderid = channel1->transponderid;
-					if(checkrectimerconflict(node) == 0)
+					
+					konflikt = 0;
+					while(recnode != NULL)
+					{
+						if(recnode != node && recnode->status < 2)
+						{
+							if((node->begin >= recnode->begin && node->begin < recnode->end) || (node->end >= recnode->begin && node->end < recnode->end))
+							{
+								konflikt = 1;
+								break;
+							}
+						}
+						recnode = recnode->next;
+					}
+						
+					if(konflikt == 0)
 					{
 						node->pincode = ostrcat("0000", NULL, 0, 0);
 						node->recpath = ostrcat(NULL, getconfig("rec_path", NULL), 0, 0);
