@@ -315,7 +315,7 @@ void oshutdown(int exitcode, int flag)
 	{
 		if(bgdownload[i] != NULL && bgdownload[i]->ret == -1)
 		{
-	 		if(textbox(_("Message"), _("Found running download\nReally shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 1) == 1)
+	 		if(textbox(_("Message"), _("Found running download\nReally shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 1) != 1)
 				return;
 			break;
 		}
