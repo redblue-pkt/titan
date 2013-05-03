@@ -3173,3 +3173,9 @@ msgstr "Springe vor Minute"
 
 msgid "Jump"
 msgstr "Springen"
+
+msgid "Season"
+msgstr "Staffel"
+
+msgid "Episode"
+msgstr "Folge"
