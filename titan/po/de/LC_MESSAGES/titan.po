@@ -3170,3 +3170,6 @@ msgstr "Zeige freien Festplattenspeicher"
 
 msgid "Jump To (min)"
 msgstr "Springe vor Minute"
+
+msgid "Jump"
+msgstr "Springen"
