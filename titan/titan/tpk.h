@@ -1,6 +1,13 @@
 #ifndef TPK_H
 #define TPK_H
 
+#define WORKDIR "/tpk" //path must exist
+#define TPKFILELIST WORKDIR"/filelist.tpk"
+#define ARCHIVE WORKDIR"/archive.tpk"
+#define PACKAGES WORKDIR"/Packages"
+#define PREVIEW WORKDIR"/Packages.preview"
+#define PREVIEWFILELIST WORKDIR"/filelist.preview"
+
 #define FEEDFILE "/etc/ipkg/official-feed.conf"
 #define PREDIR "/var/tpk"
 #define TMP "/tmp/tpk"
@@ -11,6 +18,11 @@
 
 #define HTTPPACKAGES "Packages.gz"
 #define HTTPPREVIEW "Packages.preview.gz"
+
+int tpkremove(char* file, int restore, int flag);
+int tpkgetpackage(char* package, char* url);
+int tpklistinstalled();
+int tpkcreatefilereal(char* mainpath, char* from, char* to, off64_t start, off64_t len, int flag, char* name);
 
 struct tpk
 {
@@ -164,33 +176,6 @@ void freetpk()
 	}
 }
 
-int getfiletype(char* filename)
-{
-	struct stat64 s;
-
-	if(filename == NULL) return -1;
-
-	if(lstat64(filename, &s) >= 0)
-	{
-		if(S_ISREG(s.st_mode))
-			return DT_REG;
-		else if(S_ISDIR(s.st_mode))
-			return DT_DIR;
-		else if(S_ISCHR(s.st_mode))
-			return DT_CHR;
-		else if(S_ISBLK(s.st_mode))
-			return DT_BLK;
-		else if(S_ISFIFO(s.st_mode))
-			return DT_FIFO;
-		else if(S_ISLNK(s.st_mode))
-			return DT_LNK;
-		else
-			return -1;
-	}
-
-	return -1;
-}
-
 int tpkcreateflagfile(char* path, char* file)
 {
 	int ret = 0;
@@ -219,7 +204,7 @@ int tpkcreatefilelist(char* mainpath, char* to, char* from, int type, off64_t en
 {
 	int ret = 0, writeret = 0;
 	FILE *fd = NULL;
-	char* file = FILELIST, *tmpstr = NULL;
+	char* file = TPKFILELIST, *tmpstr = NULL;
 
 	if(flag == 1)
 		file = PREVIEWFILELIST;
@@ -287,7 +272,7 @@ int tpkcreatefile(char* mainpath, char* from, char* to, off64_t start, off64_t l
 }
 int tpkcreatefilereal(char* mainpath, char* from, char* to, off64_t start, off64_t len, int flag, char* name)
 {
-	int fdfrom = -1, fdto = -1, ret = 0, readret = 0, writeret = 0, i = 0;
+	int fdfrom = -1, fdto = -1, ret = 0, readret = 0, writeret = 0;
 	off64_t count = 0, endpos = 0;
 	unsigned char* buf = NULL;
 
@@ -400,7 +385,7 @@ int tpkcreatefilereal(char* mainpath, char* from, char* to, off64_t start, off64
 
 	if(flag == 2)
 	{
-		writeret = dvbwrite(fdto, (char*)&endpos, sizeof(off64_t), -1);
+		writeret = dvbwrite(fdto, (unsigned char*)&endpos, sizeof(off64_t), -1);
 		if(writeret < 0)
 		{
 			err("write file %s", to);
@@ -408,7 +393,7 @@ int tpkcreatefilereal(char* mainpath, char* from, char* to, off64_t start, off64
 			goto end;
 		}
 
-		writeret = dvbwrite(fdto, (char*)&len, sizeof(off64_t), -1);
+		writeret = dvbwrite(fdto, (unsigned char*)&len, sizeof(off64_t), -1);
 		if(writeret < 0)
 		{
 			err("write file %s", to);
@@ -646,7 +631,6 @@ int tpkcreateblk(char* mainpath, char* file, int major, int minor, int flag)
 int tpkcleanworkdir(char* dir)
 {
 	DIR *d;
-	char* tmpstr = NULL;
 	int ret = 0;
 
 	d = opendir(dir); //Open the directory
@@ -1388,7 +1372,7 @@ int tpkextractfilelist(char* file, char* path, int flag)
 		{
 			exist = 0;
 			if(file_exist(to) == 1) exist = 1;
-			ret = tpkwriterestore(path, to, type, getfiletype(to), exist);
+			ret = tpkwriterestore(path, to, type, getlfiletype(to), exist);
 			if(ret != 0)
 			{
 				err("write restore file");
@@ -1471,7 +1455,7 @@ int tpkextractindex(char* url)
 	int ret = 0;
 	FILE *fdr = NULL, *fdw = NULL;
 	off64_t startpos = 0, len = 0;
-	char* file = NULL, *tmpstr = NULL, *fileline = NULL;
+	char* tmpstr = NULL, *fileline = NULL;
 
 	fileline = malloc(MINMALLOC);
 	if(fileline == NULL)
@@ -1748,7 +1732,6 @@ int tpkinstall(char* file)
 		goto end;
 	}
 
-	int skip = 0;
 	if(tpknode->group != 0)
 	{
 		struct tpk* node = tpkinstalled;
@@ -2229,6 +2212,8 @@ int tpkupdate()
 	freetpk();
 	tpk = tpkinstalled;
 	freetpk();
+
+	return 0;
 }
 
 void tpkgeturl(char* line, char** ip, char** path, int* port)
@@ -2322,7 +2307,7 @@ int tpkgetindex(int flag)
 		{
 			if(ostrcmp(path, "svn/ipk/sh4/titan") == 0)
 			{
-				textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfig("rcok", NULL), _("EXIT"), getrcconfig("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
+				textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 				ret = 1;
 				goto end;
 			}
@@ -2528,7 +2513,7 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 			
 			tmpstr = ostrcat(tmpstr, node->showname, 1, 0);
 			tmpstr = ostrcat(tmpstr, " v.", 1, 0);
-			tmpstr = ostrcat(tmpstr, node->version, 1, 0);
+			tmpstr = ostrcat(tmpstr, oitoa(node->version), 1, 1);
 
 			tmpinfo = ostrcat(tmpinfo, "\nSection: ", 1, 0);
 			tmpinfo = ostrcat(tmpinfo, node->section, 1, 0);
