@@ -235,7 +235,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 			
 				pos1 = ostrstr(tmpstr, from);
 				folgen = getxmlentry(ostrstr(tmpstr, from), "rel=");
-				printf("session %d folgen: %s\n",i , folgen);	
+				printf("Season %d folgen: %s\n",i , folgen);	
 
 				if(folgen != NULL)
 				{
@@ -251,7 +251,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						for(j = 1; j < max; j++)
 						{							
 							incount += 1;
-							line = ostrcat(line, _("Session"), 1, 0);
+							line = ostrcat(line, _("Season"), 1, 0);
 							line = ostrcat(line, " ", 1, 0);
 							line = ostrcat(line, oitoa(i), 1, 0);
 							line = ostrcat(line, " ", 1, 0);
@@ -844,7 +844,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 		debug(99, "url: %s", url);
 
 		session = ostrcat(session, ret0[1].part, 1, 0);
-		debug(99, "session: %s", session);
+		debug(99, "Season: %s", session);
 
 		episode = ostrcat(episode, ret0[2].part, 1, 0);
 		debug(99, "episode: %s", episode);
