@@ -1,5 +1,3 @@
-6) ok vieleicht noch son art minversion >= 12345 dann darf das ipk nur ab rev 12345 installiert werden dürfen
-
 #define _GNU_SOURCE
 
 #include <stdio.h>
@@ -765,32 +763,17 @@ end:
 	return ret;
 }
 
-int main()
+int main(int argc, char *argv[])
 {
 	int ret = 0;
 
-	//ret = tpkgetindex(1);
-	printf("return %d\n", ret);
+	if(argc > 2)
+		ret = tpkcreatallearchive(argv[1], argv[2]);
+	else
+	{
+		err("parameter not ok");
+		ret = 1;
+	}
 
-	//ret = tpkremovepre();
-	//printf("return %d\n", ret);
-
-//	ret = tpkcreatallearchive("/home/nit/ipk");
-//	printf("return %d\n", ret);
-
-//	ret = tpkinstall("/tpk/titangames_catcatch.tpk");
-//	printf("return %d\n", ret);
-
-//	ret = tpkinstall("/tpk/titanplayers_dtsdownmix.tpk");
-//	printf("return %d\n", ret);
-//	tpklist();
-//	debugtpk();
-
-//	ret = tpkgetpackage("titaninfos_streaminfo.tpk", "http://97.74.32.10/svn/ipk/atemio510-rev21275/sh4/titan");
-	printf("return %d\n", ret);
-
-
-//	ret = tpkextractindex();
-//	printf("return %d\n", ret);
 	return ret;
 }
