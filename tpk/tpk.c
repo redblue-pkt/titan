@@ -1,3 +1,5 @@
+6) ok vieleicht noch son art minversion >= 12345 dann darf das ipk nur ab rev 12345 installiert werden dürfen
+
 #define _GNU_SOURCE
 
 #include <stdio.h>
@@ -9,23 +11,181 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
-#include <tpk.h>
-#include <dvb.h>
-#include <global.h>
+char* ostrcat(char* value1, char* value2, int free1, int free2);
+int file_exist(char* filename);
+int dvbwrite(int fd, unsigned char* buf, int count, int tout);
+int dvbread(int fd, unsigned char *buf, int pos, int count, int tout, int flag);
 
 short debug_level = 10;
+#define MINMALLOC 4096
 #define PROGNAME "tpk"
+
 #define WORKDIR "/tpk" //path must exist
-#define FILELIST WORKDIR"/filelist.tpk"
+#define TPKFILELIST WORKDIR"/filelist.tpk"
 #define ARCHIVE WORKDIR"/archive.tpk"
 #define PACKAGES WORKDIR"/Packages"
 #define PREVIEW WORKDIR"/Packages.preview"
 #define PREVIEWFILELIST WORKDIR"/filelist.preview"
 
+#define FEEDFILE "/etc/ipkg/official-feed.conf"
+
 #define debug(level, fmt, args...) if(debug_level == level) { do { printf("[%s] " fmt, PROGNAME, ##args); } while (0); printf(", file=%s, func=%s, line=%d\n", __FILE__, __FUNCTION__, __LINE__); }
 #define err(fmt, args...) { do { fprintf(stderr, "[%s] error: " fmt, PROGNAME, ##args); } while (0); fprintf(stderr, ", file=%s, func=%s, line=%d\n", __FILE__, __FUNCTION__, __LINE__); }
 #define perr(fmt, args...) { do { fprintf(stderr, "[%s] error: " fmt, PROGNAME, ##args); } while (0); fprintf(stderr, ", err=%m, file=%s, func=%s, line=%d\n", __FILE__, __FUNCTION__, __LINE__); }
 #define filedebug(file, fmt, args...) { FILE* fd = fopen(file, "a"); if(fd != NULL) { do { fprintf(fd, "" fmt, ##args); } while (0); fprintf(fd, "\n"); fclose(fd); }}
+
+#include <tpk.h>
+
+char* ostrcat(char* value1, char* value2, int free1, int free2)
+{
+	int len = 0, len1 = 0, len2 = 0;
+	char* buf = NULL;
+
+	if(value1 == NULL && value2 == NULL) return NULL;
+
+	if(value1 != NULL) len1 = strlen(value1);
+	if(value2 != NULL) len2 = strlen(value2);
+
+	len = len1 + len2 + 1;
+
+	if(free1 == 1)
+		buf = realloc(value1, len);
+	else
+		buf = malloc(len);
+	if(buf == NULL)
+	{
+		if(free1 == 1) free(value1);
+		if(free2 == 1) free(value2);
+		return NULL;
+	}
+
+	if(free1 == 0 && len1 > 0) memcpy(buf, value1, len1);
+	if(len2 > 0) memcpy(buf + len1, value2, len2);
+	buf[len - 1] = '\0';
+
+	if(free2 == 1) free(value2);
+
+	return buf;
+}
+
+int file_exist(char* filename)
+{
+	debug(1000, "in");
+	if(access(filename, F_OK) == 0)
+		return 1;
+	else
+		return 0;
+}
+
+int dvbwrite(int fd, unsigned char* buf, int count, int tout)
+{
+	struct timeval timeout;
+	int ret = 0, usec = 0, sec = 0, tmpcount = count;
+	unsigned char* buffer = NULL;
+
+	if(fd < 0) return -1;
+
+	if(tout == -1) tout = 3000 * 1000;
+	usec = tout % 1000000;
+	sec = (tout - usec) / 1000000;
+
+	fd_set wfds;
+
+	while (tmpcount > 0)
+	{
+		buffer = buf + (count - tmpcount);
+		ret = write(fd, buffer, tmpcount);
+		if(ret < 0)
+		{
+			if(errno == EINTR || errno == EAGAIN)
+			{
+				FD_ZERO(&wfds);
+				FD_SET(fd, &wfds);
+
+				timeout.tv_sec = sec;
+				timeout.tv_usec = usec;
+
+				ret = TEMP_FAILURE_RETRY(select(fd + 1, NULL, &wfds, NULL, &timeout));
+			}
+
+			if(ret == 0)
+			{
+				perr("dvbwrite timed out fd=%d", fd);
+				return -1;
+			}
+			if(ret < 0)
+			{
+				perr("can't write fd=%d", fd);
+				return errno * -1;
+			}
+		}
+		else
+			tmpcount -= ret;
+	}
+
+	return count;
+}
+
+//flag 0: eof with timeout
+//flag 1: eof without timeout
+int dvbread(int fd, unsigned char *buf, int pos, int count, int tout, int flag)
+{
+	struct timeval timeout;
+	int ret = 0, usec = 0, sec = 0;
+	fd_set rfds;
+
+	if(fd < 0) return -1;
+
+	if(tout == -1) tout = 3000 * 1000;
+	usec = tout % 1000000;
+	sec = (tout - usec) / 1000000;
+
+	timeout.tv_sec = sec;
+	timeout.tv_usec = usec;
+	FD_ZERO(&rfds);
+	FD_SET(fd, &rfds);
+
+	ret = TEMP_FAILURE_RETRY(select(fd + 1, &rfds , NULL, NULL, &timeout));
+
+	if(ret == 1)
+	{
+retry:
+		ret = TEMP_FAILURE_RETRY(read(fd, buf + pos, count));
+		if(ret > 0)
+			return ret;
+		else if(ret == 0)
+		{
+			tout = tout - 1000;
+			usleep(1000);
+
+			if(flag == 0 && tout > 0) goto retry;
+			debug(10, "tpk read timeout fd=%d", fd);
+		}
+		else if(ret < 0)
+		{
+			if((errno == EAGAIN || errno == EOVERFLOW) && tout > 0)
+			{
+				if(errno != EAGAIN) perr("tpk read data fd=%d -> retry", fd);
+
+				tout = tout - 1000;
+				usleep(1000);
+
+				goto retry;
+			}
+			perr("tpk read data fd=%d", fd);
+		}
+	}
+	else if(ret == 0)
+	{
+		debug(10, "tpk select timeout fd=%d, tout=%d", fd, tout);
+	}
+	else
+	{
+		perr("tpk select fd=%d", fd);
+	}
+
+	return -1;
+}
 
 int tpkcheckcontrol(char* path)
 {
@@ -68,7 +228,7 @@ int tpkcreatepreinstalled(char* name)
 	tmpstr = ostrcat(tmpstr, name, 1, 0);
 	tmpstr = ostrcat(tmpstr, ".tpk.pre", 1, 0);
 
-	ret = tpkcreatefile("", FILELIST, tmpstr, 0, -1, 0);
+	ret = tpkcreatefile("", TPKFILELIST, tmpstr, 0, -1, 0);
 	if(ret != 0)
 	{
 		err("create preinstalled file %s\n", tmpstr);
@@ -159,7 +319,7 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 
 	if(mainpath == NULL)
 	{
-		err("NULL detect"); 
+		err("NULL detect");
 		return 1;
 	}
 
@@ -173,7 +333,7 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 	while(1)
 	{
 		struct dirent* entry;
-		int path_length = 0, type = 0;
+		int path_length = 0;
 		char path[PATH_MAX];
 
 		snprintf(path, PATH_MAX, "%s", dirname);
@@ -194,7 +354,7 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 					err("path length has got too long");
 					return 1;
 				}
-				
+
 				if(!(strcmp("CONTROL", entry->d_name) == 0 && first == 1))
 				{
 
@@ -219,14 +379,14 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 			tmpstr = ostrcat(tmpstr, path, 1, 0);
 			tmpstr = ostrcat(tmpstr, "/", 1, 0);
 			tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
-			
+
 			char* buf = calloc(1, MINMALLOC);
 			if(buf == NULL)
 			{
 				err("no mem");
 				return 1;
 			}
-			
+
 			ret = readlink(tmpstr, buf, MINMALLOC);
 			if(ret < 0)
 			{
@@ -234,7 +394,7 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 				err("read link %s", tmpstr);
 				return 1;
 			}
-			
+
 			ret = tpkcreatelink(mainpath, tmpstr, buf, 1);
 			free(tmpstr); tmpstr = NULL;
 			if(ret != 0)
@@ -334,13 +494,12 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 int tpkcreatepreviewarchive(char* mainpath, char* dirname, char* name)
 {
 	DIR *d;
-	struct stat64 s;
 	char* tmpstr = NULL;
 	int ret = 0;
 
 	if(mainpath == NULL)
 	{
-		err("NULL detect"); 
+		err("NULL detect");
 		return 1;
 	}
 
@@ -354,7 +513,6 @@ int tpkcreatepreviewarchive(char* mainpath, char* dirname, char* name)
 	while(1)
 	{
 		struct dirent* entry;
-		int path_length = 0;
 		char path[PATH_MAX];
 
 		snprintf(path, PATH_MAX, "%s", dirname);
@@ -450,16 +608,16 @@ int tpkcreatallearchive(char* dirname, char* name)
 
 				debug(10, "create %s", path);
 
-				ret = unlink(FILELIST);
+				ret = unlink(TPKFILELIST);
 				if(ret != 0 && errno != ENOENT)
 				{
-					perr("removing %s", FILELIST);
+					perr("removing %s", TPKFILELIST);
 					ret = 1;
 					goto end;
 				}
 				else
 					ret = 0;
-				
+
 				ret = unlink(ARCHIVE);
 				if(ret != 0 && errno != ENOENT)
 				{
@@ -469,7 +627,7 @@ int tpkcreatallearchive(char* dirname, char* name)
 				}
 				else
 					ret = 0;
-				
+
 				ret = tpkcreatearchive(path, path, 1);
 				if(ret != 0)
 				{
@@ -485,15 +643,15 @@ int tpkcreatallearchive(char* dirname, char* name)
 					ret = 1;
 					goto end;
 				}
-				
-				ret = tpkcreatefile("", FILELIST, ARCHIVE, 0, -1, 2);
+
+				ret = tpkcreatefile("", TPKFILELIST, ARCHIVE, 0, -1, 2);
 				if(ret != 0)
 				{
-					err("merge filelist to archive %s -> %s", FILELIST, ARCHIVE);
+					err("merge filelist to archive %s -> %s", TPKFILELIST, ARCHIVE);
 					ret = 1;
 					goto end;
 				}
-				
+
 				tmpstr = ostrcat(tmpstr, WORKDIR, 1, 0);
 				tmpstr = ostrcat(tmpstr, "/", 1, 0);
 				tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
@@ -506,7 +664,7 @@ int tpkcreatallearchive(char* dirname, char* name)
 					ret = 1;
 					goto end;
 				}
-				
+
 				tmpstr = ostrcat(tmpstr, "gzip ", 1, 0);
 				tmpstr = ostrcat(tmpstr, WORKDIR, 1, 0);
 				tmpstr = ostrcat(tmpstr, "/", 1, 0);
@@ -520,17 +678,17 @@ int tpkcreatallearchive(char* dirname, char* name)
 					ret = 1;
 					goto end;
 				}
-				
-				ret = unlink(FILELIST);
+
+				ret = unlink(TPKFILELIST);
 				if(ret != 0 && errno != ENOENT)
 				{
-					perr("removing %s", FILELIST);
+					perr("removing %s", TPKFILELIST);
 					ret = 1;
 					goto end;
 				}
 				else
 					ret = 0;
-				
+
 				ret = unlink(ARCHIVE);
 				if(ret != 0 && errno != ENOENT)
 				{
@@ -562,7 +720,7 @@ int tpkcreatallearchive(char* dirname, char* name)
 		ret = 1;
 		goto end;
 	}
-				
+
 	ret = unlink(PREVIEWFILELIST);
 	if(ret != 0 && errno != ENOENT)
 	{
@@ -611,7 +769,28 @@ int main()
 {
 	int ret = 0;
 
-	ret = tpkcreatallearchive(char* dirname, char* name);
+	//ret = tpkgetindex(1);
+	printf("return %d\n", ret);
 
+	//ret = tpkremovepre();
+	//printf("return %d\n", ret);
+
+//	ret = tpkcreatallearchive("/home/nit/ipk");
+//	printf("return %d\n", ret);
+
+//	ret = tpkinstall("/tpk/titangames_catcatch.tpk");
+//	printf("return %d\n", ret);
+
+//	ret = tpkinstall("/tpk/titanplayers_dtsdownmix.tpk");
+//	printf("return %d\n", ret);
+//	tpklist();
+//	debugtpk();
+
+//	ret = tpkgetpackage("titaninfos_streaminfo.tpk", "http://97.74.32.10/svn/ipk/atemio510-rev21275/sh4/titan");
+	printf("return %d\n", ret);
+
+
+//	ret = tpkextractindex();
+//	printf("return %d\n", ret);
 	return ret;
 }
