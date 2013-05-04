@@ -344,7 +344,7 @@ void gotdata(int* connfd)
 		ret = sockreceive(connfd, &c, 1, 5000 * 1000);
 		if(ret != 0)
 		{
-			err("no client data in buffer");
+			debug(250, "no client data in buffer");
 			break;
 		}
 
