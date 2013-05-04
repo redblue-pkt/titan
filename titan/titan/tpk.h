@@ -8,6 +8,7 @@
 #define PREVIEW WORKDIR"/Packages.preview"
 #define PREVIEWFILELIST WORKDIR"/filelist.preview"
 
+#define TPKLOG "/tmp/tpk.log"
 #define FEEDFILE "/etc/ipkg/official-feed.conf"
 #define PREDIR "/var/tpk"
 #define TMP "/tmp/tpk"
@@ -118,7 +119,6 @@ struct tpk* addtpk(char *name, char* desc, char* section, char* showname, int ve
 
 void deltpk(struct tpk* tpknode)
 {
-	//debug(1000, "in");
 	struct tpk *node = tpk, *prev = tpk;
 
 	while(node != NULL)
@@ -859,6 +859,8 @@ end:
 	return ret;
 }
 
+#ifndef TPKCREATE
+
 int tpkgettail(char* file, off64_t* startpos, off64_t* len)
 {
 	int fd = -1, ret = 0;
@@ -967,7 +969,7 @@ int tpkdelpre(char* file)
 			ret = unlink(to);
 			if(ret != 0 && errno != ENOENT)
 			{
-				debug(10, "can't remove file %s", to);
+				debug(130, "can't remove file %s", to);
 			}
 			ret = 0;
 		}
@@ -1048,7 +1050,7 @@ int tpkdel(char* path, int restore)
 			ret = unlink(to);
 			if(ret != 0 && errno != ENOENT)
 			{
-				debug(10, "can't remove file %s", to);
+				debug(130, "can't remove file %s", to);
 			}
 			ret = 0;
 		}
@@ -1059,7 +1061,7 @@ int tpkdel(char* path, int restore)
 				ret = rmdir(to);
 				if(ret != 0 && errno != ENOENT)
 				{
-					debug(10, "can't remove dir %s", to);
+					debug(130, "can't remove dir %s", to);
 				}
 				ret = 0;
 			}
@@ -1073,7 +1075,7 @@ int tpkdel(char* path, int restore)
 					ret = rmdir(to);
 					if(ret != 0 && errno != ENOENT)
 					{
-						debug(10, "can't remove file/dir %s", to);
+						debug(130, "can't remove file/dir %s", to);
 					}
 				}
 			}
@@ -1582,13 +1584,13 @@ end:
 	int iret = unlink(TMPPACKAGES);
 	if(iret != 0 && errno != ENOENT)
 	{
-		debug(10, "can't remove file %s", TMPPACKAGES);
+		debug(130, "can't remove file %s", TMPPACKAGES);
 	}
 
 	iret = unlink(TMPPREVIEW);
 	if(iret != 0 && errno != ENOENT)
 	{
-		debug(10, "can't remove file %s", TMPPREVIEW);
+		debug(130, "can't remove file %s", TMPPREVIEW);
 	}
 
 	tmpstr = ostrcat(tmpstr, TMPPACKAGES, 1, 0);
@@ -1596,7 +1598,7 @@ end:
 	iret = unlink(tmpstr);
 	if(iret != 0 && errno != ENOENT)
 	{
-		debug(10, "can't remove file %s", tmpstr);
+		debug(130, "can't remove file %s", tmpstr);
 	}
 	free(tmpstr); tmpstr = NULL;
 
@@ -1605,7 +1607,7 @@ end:
 	iret = unlink(tmpstr);
 	if(iret != 0 && errno != ENOENT)
 	{
-		debug(10, "can't remove file %s", tmpstr);
+		debug(130, "can't remove file %s", tmpstr);
 	}
 	free(tmpstr); tmpstr = NULL;
 
@@ -1614,7 +1616,7 @@ end:
 	iret = unlink(tmpstr);
 	if(iret != 0 && errno != ENOENT)
 	{
-		debug(10, "can't remove file %s", tmpstr);
+		debug(130, "can't remove file %s", tmpstr);
 	}
 	free(tmpstr); tmpstr = NULL;
 
@@ -1623,7 +1625,7 @@ end:
 	iret = unlink(tmpstr);
 	if(iret != 0 && errno != ENOENT)
 	{
-		debug(10, "can't remove file %s", tmpstr);
+		debug(130, "can't remove file %s", tmpstr);
 	}
 	free(tmpstr); tmpstr = NULL;
 
@@ -1747,9 +1749,18 @@ int tpkinstall(char* file)
 		}
 	}
 
+	//check minversion
+	if(tpknode->minversion != 0 && tpknode->minversion < PLUGINVERSION)
+	{
+		err("minversion to short %d\n", tpknode->minversion);
+		ret = 1;
+		goto end;
+	}
+
 	//execute pre install
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
-	tmpstr = ostrcat(tmpstr, "/preinst", 1, 0);
+	tmpstr = ostrcat(tmpstr, "/preinst 2>&1 > ", 1, 0);
+	tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
 	if(file_exist(tmpstr) == 1)
 	{
 		ret = system(tmpstr);
@@ -1784,7 +1795,8 @@ int tpkinstall(char* file)
 
 	//execute post install
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
-	tmpstr = ostrcat(tmpstr, "/postinst", 1, 0);
+	tmpstr = ostrcat(tmpstr, "/postinst 2>&1 > ", 1, 0);
+	tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
 	if(file_exist(tmpstr) == 1)
 	{
 		ret = system(tmpstr);
@@ -1819,7 +1831,7 @@ end:
 		ret = rmdir(path);
 		if(ret != 0 && errno != ENOENT)
 		{
-			debug(10, "can't remove dir %s", path);
+			debug(130, "can't remove dir %s", path);
 		}
 		ret = 1;
 	}
@@ -1868,7 +1880,8 @@ int tpkremove(char* file, int restore, int flag)
 
 	//execute pre remove
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
-	tmpstr = ostrcat(tmpstr, "/prerm", 1, 0);
+	tmpstr = ostrcat(tmpstr, "/prerm 2>&1 > ", 1, 0);
+	tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
 	if(file_exist(tmpstr) == 1)
 	{
 		ret = system(tmpstr);
@@ -1886,7 +1899,8 @@ int tpkremove(char* file, int restore, int flag)
 
 	//execute post remove
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
-	tmpstr = ostrcat(tmpstr, "/postrm", 1, 0);
+	tmpstr = ostrcat(tmpstr, "/postrm 2>&1 > ", 1, 0);
+	tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
 	if(file_exist(tmpstr) == 1)
 	{
 		ret = system(tmpstr);
@@ -1906,7 +1920,7 @@ end:
 		int iret = rmdir(path);
 		if(iret != 0 && errno != ENOENT)
 		{
-			debug(10, "can't remove dir %s", path);
+			debug(130, "can't remove dir %s", path);
 			ret = 1;
 		}
 	}
@@ -1969,7 +1983,7 @@ int tpkremovepre()
 				ret = unlink(path);
 				if(ret != 0 && errno != ENOENT)
 				{
-					debug(10, "can't remove file %s", path);
+					debug(130, "can't remove file %s", path);
 				}
 				ret = 0;
 			}
@@ -1985,7 +1999,7 @@ end:
 	ret = rmdir(PREDIR);
 	if(ret != 0 && errno != ENOENT)
 	{
-		debug(10, "can't remove file %s", PREDIR);
+		debug(130, "can't remove file %s", PREDIR);
 	}
 	ret = 0;
 
@@ -2036,7 +2050,7 @@ int tpklistinstalled()
 				tpknode = tpkreadcontrol(path, entry->d_name, 0);
 				if(tpknode == NULL)
 				{
-					debug(10, "read control file %s", path);
+					debug(130, "read control file %s", path);
 					continue;
 				}
 				else
@@ -2164,6 +2178,10 @@ int tpklist()
 			}
 		}
 
+		//check minversion
+		if(minversion != 0 && minversion < PLUGINVERSION)
+			skip = 1;
+
 		if(skip == 0)
 			tpknode = addtpk(name, desc, section, showname, version, group, minversion, preinstalled, url, tpknode);
 	}
@@ -2248,7 +2266,7 @@ int tpkcleantmp(int flag)
 		ret = rmdir(TMP);
 		if(ret != 0 && errno != ENOENT)
 		{
-			debug(10, "can't remove dir %s", TMP);
+			debug(130, "can't remove dir %s", TMP);
 		}
 		ret = 0;
 	}
@@ -2550,7 +2568,6 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 
 char* gettpktmplist(char* path)
 {
-	debug(130, "in");
 	char* cmd = NULL, *tmpstr = NULL;
 
 	cmd = ostrcat(cmd, "ls ", 1, 0);
@@ -2559,10 +2576,10 @@ char* gettpktmplist(char* path)
 
 	tmpstr = command(cmd);
 
-	debug(130, "out %s",cmd);
 	free(cmd); cmd = NULL;
 	return tmpstr;
 }
 
+#endif
 #endif
 
