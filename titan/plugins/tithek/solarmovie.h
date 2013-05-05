@@ -451,7 +451,7 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 				url = string_resub("\"", "\"", ret1[i].part, 0);
 printf("(s%se%s) (%s) = %s\n",session , episode, etitle, url);				
 				incount += 1;
-				line = ostrcat(line, _("Session"), 1, 0);
+				line = ostrcat(line, _("Season"), 1, 0);
 				line = ostrcat(line, " ", 1, 0);
 				line = ostrcat(line, session, 1, 0);
 				line = ostrcat(line, " ", 1, 0);
