@@ -565,6 +565,7 @@ int main(int argc, char *argv[])
 	setdefaults();
 	setdebuglevel();
 	initmutex(1);
+	m_lock(&status.waitrcmutex, 24);
 	initvfd();
 
 	if(checkbox("UFS922") == 1)

@@ -1227,6 +1227,7 @@ struct status
 	pthread_mutex_t inetworkmutex;
 	pthread_mutex_t textboxmutex;
 	pthread_mutex_t setaktresmutex;
+	pthread_mutex_t waitrcmutex;
 	// mutex for VFD handling
 	pthread_mutex_t vfdmutex;
 	off64_t recsplitsize;

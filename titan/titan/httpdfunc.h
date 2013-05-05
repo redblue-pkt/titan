@@ -1132,7 +1132,7 @@ char* webgetsignal(int fmt)
 	unc = fereaduncorrectedblocks(status.aktservice->fedev);
 	signal = fereadsignalstrength(status.aktservice->fedev);
 	snr = fereadsnr(status.aktservice->fedev);
-        snr = (snr * 100) / 0xffff;
+	snr = (snr * 100) / 0xffff;
 
 	if(fmt == 0)
 	{
@@ -1579,6 +1579,8 @@ void webgetshoot(char* param, int fmt)
 
 	if(status.aktservice->channel != NULL)
 	{
+		m_lock(&status.waitrcmutex, 24);
+
 		cmd = ostrcat(cmd, "grab.sh ", 1, 0);
 		cmd = ostrcat(cmd, param, 1, 0);
 		cmd = ostrcat(cmd, " ", 1, 0);
@@ -1592,6 +1594,8 @@ void webgetshoot(char* param, int fmt)
 		cmd = ostrcat(cmd, tmpstr, 1, 0);
 		free(tmpstr); tmpstr = NULL;
 		cmd = ostrcat(cmd, " titan", 1, 0);
+
+		m_unlock(&status.waitrcmutex, 24);
 	}
 
 	if(cmd != NULL)
