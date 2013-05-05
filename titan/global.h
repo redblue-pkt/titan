@@ -1845,6 +1845,7 @@ void initmutex(int flag)
 		pthread_mutex_init(&status.inetworkmutex, NULL);
 		pthread_mutex_init(&status.textboxmutex, NULL);
 		pthread_mutex_init(&status.setaktresmutex, NULL);
+		pthread_mutex_init(&status.waitrcmutex, NULL);
 	}
 	else
 	{
@@ -1872,6 +1873,7 @@ void initmutex(int flag)
 		pthread_mutex_destroy(&status.inetworkmutex);
 		pthread_mutex_destroy(&status.textboxmutex);
 		pthread_mutex_destroy(&status.setaktresmutex);
+		pthread_mutex_destroy(&status.waitrcmutex, NULL);
 	}
 }
 
@@ -2226,6 +2228,7 @@ void m_lock(pthread_mutex_t *mutex, int flag)
 		case 21: debug(900, "inetworkmutex lock"); break;
 		case 22: debug(900, "textboxmutex lock"); break;
 		case 23: debug(900, "setaktresmutex lock"); break;
+		case 24: debug(900, "waitrcmutex lock"); break;
 		default: debug(900, "unknown mutex lock"); break;
 	}
 	pthread_mutex_lock(mutex);
@@ -2259,6 +2262,7 @@ void m_unlock(pthread_mutex_t *mutex, int flag)
 		case 21: debug(900, "inetworkmutex unlock"); break;
 		case 22: debug(900, "textboxmutex unlock"); break;
 		case 23: debug(900, "setaktresmutex unlock"); break;
+		case 24: debug(900, "waitrcmutex unlock"); break;
 		default: debug(900, "unknown mutex unlock"); break;
 	}
 	pthread_mutex_unlock(mutex);

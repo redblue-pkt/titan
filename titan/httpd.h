@@ -156,9 +156,17 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		*param++ = '\0';
 
 	if(ostrcmp(query, "getbouquetepg") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webgetbouquetepg(param, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "getchannellock") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webgetchannellock(param, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "getsysteminfo") == 0)
 		buf = webgetsysteminfo(fmt);
 	else if(ostrcmp(query, "getrccodes") == 0)
@@ -170,59 +178,147 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 	else if(ostrcmp(query, "sendrc") == 0)
 		buf = websendrc(param, fmt);
 	else if(ostrcmp(query, "getrectimer") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webgetrectimer(param, 0, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "addrectimer") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webaddrectimer(param, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "delrectimer") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webdelrectimer(param, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "editrectimer") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webeditrectimer(param, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "rectimersend") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webrectimersend(param, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "getrectimerarchive") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webgetrectimer(param, 1, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "setvol") == 0)
 		buf = websetvol(param, fmt);
 	else if(ostrcmp(query, "setmute") == 0)
 		buf = websetmute(param, fmt);
 	else if(ostrcmp(query, "getbouquet") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webgetbouquet(fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "getsat") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webgetsat(fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "getprovider") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webgetprovider(fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "getaz") == 0)
 		buf = webgetaz(fmt);
 	else if(ostrcmp(query, "getconfig") == 0)
 		buf = webgetconfig(fmt);
 	else if(ostrcmp(query, "getchannelpage") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webgetchannelpage(param, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "getallchannel") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webgetchannel(0, 0, 1, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "getbouquetchannel") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webgetbouquetchannel(param, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "getsatchannel") == 0 && param != NULL)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webgetchannel(atoi(param), 1, 1, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "getproviderchannel") == 0 && param != NULL)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webgetchannel(atoi(param), 2, 1, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "getazchannel") == 0 && param != NULL)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webgetchannel(atoi(param), 3, 1, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "switch") == 0)
 		buf = webswitch(param, fmt);
 	else if(ostrcmp(query, "getaktservice") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webgetaktservice(fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "getservice") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webgetservice(param, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "getepg") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webgetepg(param, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "getmovieepg") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webgetmovieepg(param, getconfig("rec_streampath", NULL), 1, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "getsingleepg") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webgetsingleepg(param, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "getgmultiepg") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webgetgmultiepg(param, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(query != NULL && ostrstr(query, "getepgsearch") == query)
+	{
+		m_lock(&status.waitrcmutex, 24);
 		buf = webgetepgsearch(query, param, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "getsignal") == 0)
 		buf = webgetsignal(fmt);
 	else if(ostrcmp(query, "getmoviefilelist") == 0)
