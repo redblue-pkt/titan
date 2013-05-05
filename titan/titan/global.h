@@ -1873,7 +1873,7 @@ void initmutex(int flag)
 		pthread_mutex_destroy(&status.inetworkmutex);
 		pthread_mutex_destroy(&status.textboxmutex);
 		pthread_mutex_destroy(&status.setaktresmutex);
-		pthread_mutex_destroy(&status.waitrcmutex, NULL);
+		pthread_mutex_destroy(&status.waitrcmutex);
 	}
 }
 
