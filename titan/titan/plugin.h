@@ -259,6 +259,43 @@ int loadplugin()
 		free(filelist[count]);
 	}
 	free(filelist);
+	
+	
+	// 2. plugindir
+	tmppath = getconfig("pluginpath_2", NULL);
+
+	if(tmppath == NULL)
+		return 0;
+
+	count = scandir(tmppath, &filelist, 0, 0);
+	if(count < 0)
+	{
+		perr("scandir_2");
+		return 0;
+	}
+
+	while(count--)
+	{
+		//check if link is a dir
+		if(filelist[count]->d_type == DT_LNK || filelist[count]->d_type == DT_UNKNOWN)
+		{
+			tmpstr = createpath(tmppath, filelist[count]->d_name);
+			if(isdir(tmpstr) == 1)
+				filelist[count]->d_type = DT_DIR;
+
+			free(tmpstr); tmpstr = NULL;
+		}
+
+		if(filelist[count]->d_type == DT_DIR && ostrcmp(filelist[count]->d_name, ".") != 0 && ostrcmp(filelist[count]->d_name, "..") != 0)
+		{
+			pluginpath = createpath(tmppath, filelist[count]->d_name);
+			readplugin(pluginpath);
+			free(pluginpath); pluginpath = NULL;
+
+		}
+		free(filelist[count]);
+	}
+	free(filelist);	
 
 	return 0;
 	debug(1000, "out");
