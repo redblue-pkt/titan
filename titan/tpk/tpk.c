@@ -768,7 +768,12 @@ int main(int argc, char *argv[])
 	int ret = 0;
 
 	if(argc > 2)
-		ret = tpkcreatallearchive(argv[1], argv[2]);
+	{
+		if(argv[2] != NULL && argv[2][0] != '*')
+			ret = tpkcreatallearchive(argv[1], argv[2]);
+		else
+			ret = tpkcreatallearchive(argv[1], NULL);
+	}
 	else
 	{
 		err("parameter not ok");
