@@ -414,7 +414,7 @@ struct skin* sortscreen(struct skin* node)
 					{
 						nodetmp = nodeb->next;
 						nodeb->next = nodea;
- 						nodea->next = nodetmp;
+						nodea->next = nodetmp;
 						nodec->next = nodeb;
 						nodec = nodeb;
 					}
@@ -1412,8 +1412,8 @@ unsigned char* scale(unsigned char* buf, int width, int height, int channels, in
 
 struct jpgerror
 {
-        struct jpeg_error_mgr jerr;
-        jmp_buf setjmpbuf;
+	struct jpeg_error_mgr jerr;
+	jmp_buf setjmpbuf;
 };
 
 void jpgswerror(j_common_ptr cinfo)
@@ -1474,7 +1474,7 @@ unsigned char *loadjpg(char *filename, unsigned long *width, unsigned long *heig
 	ciptr->do_fancy_upsampling = FALSE;
 	ciptr->two_pass_quantize = FALSE;
 	ciptr->dither_mode = JDITHER_ORDERED;
-  
+
 	if(denom < 1) denom = 1;
 	if(denom > 16) denom = 16;
 	ciptr->scale_num = 1;
@@ -1517,15 +1517,15 @@ unsigned char *loadjpg(char *filename, unsigned long *width, unsigned long *heig
 
 unsigned char* savejpg(char* filename, int width, int height, int channels, int newwidth, int newheight, int quality, unsigned char *buf)
 {
- 	struct jpeg_compress_struct cinfo;
- 	struct jpeg_error_mgr jerr;
- 	FILE* outfile = NULL;
- 	JSAMPROW pointer[1];
- 	int stride;
+	struct jpeg_compress_struct cinfo;
+	struct jpeg_error_mgr jerr;
+	FILE* outfile = NULL;
+	JSAMPROW pointer[1];
+	int stride;
 
 	if(buf == NULL) return buf;
 
- 	if((outfile = fopen(filename, "wb")) == NULL)
+	if((outfile = fopen(filename, "wb")) == NULL)
 	{
 		perr("jpeg can't open %s", filename);
 		return buf;
@@ -1536,34 +1536,34 @@ unsigned char* savejpg(char* filename, int width, int height, int channels, int 
 		buf = scale(buf, width, height, channels, newwidth, newheight, 1);
 		if(buf == NULL)
 		{
- 			fclose(outfile);
+			fclose(outfile);
 			return buf;
 		}
 	}
 
- 	cinfo.err = jpeg_std_error(&jerr);
- 	jpeg_create_compress(&cinfo);
- 	jpeg_stdio_dest(&cinfo, outfile);
+	cinfo.err = jpeg_std_error(&jerr);
+	jpeg_create_compress(&cinfo);
+	jpeg_stdio_dest(&cinfo, outfile);
 
- 	cinfo.image_width = newwidth;
- 	cinfo.image_height = newheight;
- 	cinfo.input_components = channels;
- 	cinfo.in_color_space = JCS_RGB;
- 	jpeg_set_defaults(&cinfo);
- 	jpeg_set_quality(&cinfo, quality, TRUE);
- 	jpeg_start_compress(&cinfo, TRUE);
- 	stride = newwidth * channels;
+	cinfo.image_width = newwidth;
+	cinfo.image_height = newheight;
+	cinfo.input_components = channels;
+	cinfo.in_color_space = JCS_RGB;
+	jpeg_set_defaults(&cinfo);
+	jpeg_set_quality(&cinfo, quality, TRUE);
+	jpeg_start_compress(&cinfo, TRUE);
+	stride = newwidth * channels;
 
- 	while(cinfo.next_scanline < cinfo.image_height)
+	while(cinfo.next_scanline < cinfo.image_height)
 	{
- 		pointer[0] = &buf[cinfo.next_scanline * stride];
- 		jpeg_write_scanlines(&cinfo, pointer, 1);
- 	}
+		pointer[0] = &buf[cinfo.next_scanline * stride];
+		jpeg_write_scanlines(&cinfo, pointer, 1);
+	}
 
- 	jpeg_finish_compress(&cinfo);
- 	fclose(outfile);
- 	jpeg_destroy_compress(&cinfo);
- 	return buf;
+	jpeg_finish_compress(&cinfo);
+	fclose(outfile);
+	jpeg_destroy_compress(&cinfo);
+	return buf;
 }
 
 int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx, int posy, int width, int height, int colbytes, int mwidth, int mheight, int scalewidth, int scaleheight, int halign, int valign)
@@ -1572,9 +1572,9 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 	unsigned char red, green, blue;
 	unsigned long color = 0;
 	JSAMPARRAY buffer = NULL;
-  
+
 	if(cinfo == NULL && buf == NULL) return 1;
-  
+
 	if(cinfo != NULL)
 	{
 		row_stride = cinfo->output_width * cinfo->output_components;
@@ -1582,7 +1582,7 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 	}
 	else
 		row_stride = width * colbytes; 
-  
+
 	if(accelfb != NULL && accelfb->varfbsize > width * 8 && (scalewidth != 0 || scaleheight != 0) && (scalewidth != width || scaleheight != height))
 	{
 		if(halign == CENTER)
@@ -1724,7 +1724,7 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 					red = buffer[0][px];
 				else
 					red = buf[((aktline - 1) * row_stride) + px];
- 
+
 				if(colbytes > 2)
 				{
 					if(cinfo != NULL)
@@ -1745,7 +1745,7 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 
 				drawpixelfast(posx + x, py, color);
 			}
-		} 
+		}
 	}
 
 	return 0;
@@ -2353,13 +2353,11 @@ int drawchar(struct font* font, FT_ULong currentchar, int posx, int posy, int mw
 		{
 			buffercol = src[0];
 			src++;
-			if(buffercol)
+			if(buffercol > min)
 			{
 				//renderquality 255-0 = best
 				if(buffercol > max)
 					skinfb->fblong[x] = tmpcol;
-				else if(buffercol < min)
-					continue;
 				else
 				{
 					tmpcol1 = skinfb->fblong[x];
@@ -2583,9 +2581,9 @@ char* saverect(int posx, int posy, int width, int height)
 {
 	debug(1000, "in");
 	char* buf;
-	int y;
+	int y = 0, len = width * skinfb->colbytes, px = posx * skinfb->colbytes;
 
-	buf = malloc(width * height * skinfb->colbytes);
+	buf = malloc(len * height);
 	if(buf == NULL)
 	{
 		err("no memory");
@@ -2593,9 +2591,7 @@ char* saverect(int posx, int posy, int width, int height)
 	}
 
 	for(y = 0; y < height; y++)
-	{
-		memcpy(buf + width * skinfb->colbytes * y, skinfb->fb + ((y + posy) * skinfb->pitch) + (posx * skinfb->colbytes), width * skinfb->colbytes);
-	}
+		memcpy(buf + len * y, skinfb->fb + ((y + posy) * skinfb->pitch) + px, len);
 
 	debug(1000, "out");
 	return buf;
@@ -2611,14 +2607,13 @@ char* savescreen(struct skin* node)
 void restorerectcheck(char* buf, int posx, int posy, int width, int height, int flag)
 {
 	debug(1000, "in");
-	int y;
+	int y = 0, len = width * skinfb->colbytes, px = posx * skinfb->colbytes;
 
 	if(buf != NULL)
 	{
 		for(y = 0; y < height; y++)
-		{
-			memcpy(skinfb->fb + ((y + posy) * skinfb->pitch) + (posx * skinfb->colbytes), buf + width * skinfb->colbytes * y,  width * skinfb->colbytes);
-		}
+			memcpy(skinfb->fb + ((y + posy) * skinfb->pitch) + px, buf + len * y,  len);
+
 		if(flag == 1)
 		{
 			free(buf);
@@ -2663,12 +2658,9 @@ void lcd_fillrect(int posx, int posy, int width, int height, long color, int tra
 	tmpcol = color | ((transparent & 0xff) << 24);
 
 	for(y = 0; y < height; y++)
-	{
 		for(x = 0; x < width; x++)
-		{
 			drawpixel(posx + x, posy + y, tmpcol);
-		}
-	}
+
 	//debug(1000, "out");
 }
 
@@ -2827,6 +2819,7 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 			for(y = 0; y < ystep; y++)
 				for(x = 0; x < xstep; x++)
 					drawpixel(posx + x, posy + y, col);
+			
 			if(flag == LEFTMIDDLE)
 			{
 				posx += xstep;
@@ -2844,8 +2837,9 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 	{
 		if(owidth > xcount)
 		{
+			int tmp = owidth - xcount;
 			for(y = 0; y < ystep; y++)
-				for(x = 0; x < (owidth - xcount); x++)
+				for(x = 0; x < tmp; x++)
 					drawpixel(posx + x, posy + y, col);
 		}
 	}
@@ -2853,7 +2847,8 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 	{
 		if(oheight > ycount)
 		{
-			for(y = 0; y < (oheight - ycount); y++)
+			int tmp = oheight - ycount;
+			for(y = 0; y < tmp; y++)
 				for(x = 0; x < xstep; x++)
 					drawpixel(posx + x, posy + y, col);
 		}
