@@ -290,6 +290,19 @@ int tpkcreatefilereal(char* mainpath, char* from, char* to, off64_t start, off64
 		goto end;
 	}
 
+	if(flag == 0)
+	{
+		ret = unlink(to);
+		if(ret != 0 && errno != ENOENT)
+		{
+			err("remove file %s", to);
+			ret = 1;
+			goto end;
+		}
+		else
+			ret = 0;
+	}
+
 	if(flag == 1 || flag == 2 || flag == 3 || flag == 4)
 		fdto = open(to, O_CREAT | O_WRONLY | O_APPEND | O_LARGEFILE, 0777);
 	else
@@ -434,6 +447,7 @@ int tpkcreatedir(char* mainpath, char* path, int flag)
 		{
 			err("create path %s", path);
 			ret = 1;
+			goto end;
 		}
 		else
 			ret = 0;
@@ -446,9 +460,11 @@ int tpkcreatedir(char* mainpath, char* path, int flag)
 		{
 			err("create filelist %s", path);
 			ret = 1;
+			goto end;
 		}
 	}
 
+end:
 	return ret;
 }
 
@@ -471,6 +487,7 @@ int tpkcreatelink(char* mainpath, char* from, char* to, int flag)
 		{
 			err("remove symlink %s -> %s", from, to);
 			ret = 1;
+			goto end;
 		}
 		else
 			ret = 0;
@@ -480,6 +497,7 @@ int tpkcreatelink(char* mainpath, char* from, char* to, int flag)
 		{
 			err("create symlink %s -> %s", from, to);
 			ret = 1;
+			goto end;
 		}
 	}
 
@@ -490,9 +508,11 @@ int tpkcreatelink(char* mainpath, char* from, char* to, int flag)
 		{
 			err("create filelist %s -> %s", from, to);
 			ret = 1;
+			goto end;
 		}
 	}
 
+end:
 	return ret;
 }
 
@@ -515,6 +535,7 @@ int tpkcreatefifo(char* mainpath, char* file, int flag)
 		{
 			err("remove fifo %s", file);
 			ret = 1;
+			goto end;
 		}
 		else
 			ret = 0;
@@ -524,6 +545,7 @@ int tpkcreatefifo(char* mainpath, char* file, int flag)
 		{
 			err("create fifo %s", file);
 			ret = 1;
+			goto end;
 		}
 	}
 
@@ -534,9 +556,11 @@ int tpkcreatefifo(char* mainpath, char* file, int flag)
 		{
 			err("create filelist %s", file);
 			ret = 1;
+			goto end;
 		}
 	}
 
+end:
 	return ret;
 }
 
@@ -559,6 +583,7 @@ int tpkcreatechr(char* mainpath, char* file, int major, int minor, int flag)
 		{
 			err("remove chr dev %s", file);
 			ret = 1;
+			goto end;
 		}
 		else
 			ret = 0;
@@ -568,6 +593,7 @@ int tpkcreatechr(char* mainpath, char* file, int major, int minor, int flag)
 		{
 			err("create chr dev %s", file);
 			ret = 1;
+			goto end;
 		}
 	}
 
@@ -578,9 +604,11 @@ int tpkcreatechr(char* mainpath, char* file, int major, int minor, int flag)
 		{
 			err("create filelist %s", file);
 			ret = 1;
+			goto end:
 		}
 	}
 
+end:
 	return ret;
 }
 
@@ -603,6 +631,7 @@ int tpkcreateblk(char* mainpath, char* file, int major, int minor, int flag)
 		{
 			err("remove blk dev %s", file);
 			ret = 1;
+			goto end;
 		}
 		else
 			ret = 0;
@@ -612,6 +641,7 @@ int tpkcreateblk(char* mainpath, char* file, int major, int minor, int flag)
 		{
 			err("create blk dev %s", file);
 			ret = 1;
+			goto end;
 		}
 	}
 
@@ -622,9 +652,11 @@ int tpkcreateblk(char* mainpath, char* file, int major, int minor, int flag)
 		{
 			err("create filelist %s", file);
 			ret = 1;
+			goto end;
 		}
 	}
 
+end:
 	return ret;
 }
 
@@ -1759,8 +1791,9 @@ int tpkinstall(char* file)
 
 	//execute pre install
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
-	tmpstr = ostrcat(tmpstr, "/preinst 2>&1 > ", 1, 0);
+	tmpstr = ostrcat(tmpstr, "/preinst >> ", 1, 0);
 	tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
+	tmpstr = ostrcat(tmpstr, " 2>&1", 1, 0);
 	if(file_exist(tmpstr) == 1)
 	{
 		ret = system(tmpstr);
@@ -1795,8 +1828,9 @@ int tpkinstall(char* file)
 
 	//execute post install
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
-	tmpstr = ostrcat(tmpstr, "/postinst 2>&1 > ", 1, 0);
+	tmpstr = ostrcat(tmpstr, "/postinst >> ", 1, 0);
 	tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
+	tmpstr = ostrcat(tmpstr, " 2>&1", 1, 0);
 	if(file_exist(tmpstr) == 1)
 	{
 		ret = system(tmpstr);
@@ -1880,8 +1914,9 @@ int tpkremove(char* file, int restore, int flag)
 
 	//execute pre remove
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
-	tmpstr = ostrcat(tmpstr, "/prerm 2>&1 > ", 1, 0);
+	tmpstr = ostrcat(tmpstr, "/prerm >> ", 1, 0);
 	tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
+	tmpstr = ostrcat(tmpstr, " 2>&1", 1, 0);
 	if(file_exist(tmpstr) == 1)
 	{
 		ret = system(tmpstr);
@@ -1899,8 +1934,9 @@ int tpkremove(char* file, int restore, int flag)
 
 	//execute post remove
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
-	tmpstr = ostrcat(tmpstr, "/postrm 2>&1 > ", 1, 0);
+	tmpstr = ostrcat(tmpstr, "/postrm >> ", 1, 0);
 	tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
+	tmpstr = ostrcat(tmpstr, " 2>&1", 1, 0);
 	if(file_exist(tmpstr) == 1)
 	{
 		ret = system(tmpstr);
