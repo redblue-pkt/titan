@@ -45,20 +45,25 @@ fi
 
 [ -z "`lsmod | grep $WLAN_MODULE`" ] && echo "[wlan] could not load $WLAN_MODULE" | tee -a $WLAN_LOG && exit 1
 case $WLAN_MODULE in
-	rt2870sta | rt3070sta )	WLAN_IF=ra0
-				WLAN_DRV=wext
-				;;
-	8192cu )		WLAN_IF=wlan0
-				WLAN_DRV=wext
-				;;
-	8192u )		WLAN_IF=wlan0
-				WLAN_DRV=wext
-				;;
-	rt5370sta )		WLAN_IF=ra0
-				WLAN_DRV=wext
-				;;
-	* )			echo "[wlan] Unknown module $WLAN_MODULE" | tee -a $WLAN_LOG && exit 1
-				;;
+	rt2870sta | rt3070sta)
+		WLAN_IF=ra0
+		WLAN_DRV=wext
+		;;
+	8192cu)
+		WLAN_IF=wlan0
+		WLAN_DRV=wext
+		;;
+	8192u)
+		WLAN_IF=wlan0
+		WLAN_DRV=wext
+		;;
+	rt5370sta)
+		WLAN_IF=ra0
+		WLAN_DRV=wext
+		;;
+	*)
+		echo "[wlan] Unknown module $WLAN_MODULE" | tee -a $WLAN_LOG && exit 1
+		;;
 esac
 
 ifconfig $WLAN_IF 0.0.0.0 up
@@ -90,10 +95,12 @@ done
 
 if [ $AP_TRIES -lt 1 ]; then
 	case "$AP_STATE" in
-		"SCANNING"  )	echo -e "[wlan] access point $AP not found (scanning aborted...)" | tee -a $WLAN_LOG
-		;;
-		*           )	echo -e "[wlan] authentification to access point $AP failed" | tee -a $WLAN_LOG
-		;;
+		"SCANNING")
+			echo -e "[wlan] access point $AP not found (scanning aborted...)" | tee -a $WLAN_LOG
+			;;
+		*)
+			echo -e "[wlan] authentification to access point $AP failed" | tee -a $WLAN_LOG
+			;;
 	esac
 	kill -9 `cat /var/run/wpa_supplicant.$WLAN_IF`
 	rm /var/run/wpa_supplicant.$WLAN_IF
