@@ -72,9 +72,6 @@ void screensystem_update(int mode)
 		char* devicelist = command("cat /proc/diskstats | awk {'print $3'} | grep 'sd[a-z][0-9]'");
 		char* rootpart = command("cat /proc/cmdline | sed 's/^.*root=//;s/ .*$//' | sed 's!/dev/!!'");
 
-		if(file_exist("/var/baroot/ba/bainit"))
-			addchoicebox(device,"BA-IMAGE","BA-IMAGE");
-
 		if(devicelist != NULL && strlen(devicelist) != 0)
 		{
 			char* pch;
