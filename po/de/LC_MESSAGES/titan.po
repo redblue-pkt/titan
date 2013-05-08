@@ -1863,7 +1863,7 @@ msgid "Wait for channel scan end"
 msgstr "Sendersuchlauf, warte bis zum Ende."
 
 msgid "wait for stopping download"
-msgstr "Warten, Download wird gestoppt."
+msgstr "Warten, Download wird beendet."
 
 msgid "Weather Info"
 msgstr "Wetter anzeigen"
