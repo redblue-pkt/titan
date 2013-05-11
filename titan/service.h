@@ -60,6 +60,7 @@ void akttolast()
 //flag 3: same as 0 but don't check chnode
 //flag 4: same as 0 but new tuning
 //flag 5: same as 3 but new tuning
+//flag 6: same as 5 but second zap
 int servicestartreal(struct channel* chnode, char* channellist, char* pin, int flag)
 {
 	debug(1000, "in");
@@ -72,14 +73,15 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	struct dvbdev *videonode = NULL;
 	int ret = 0, festatus = 1, tmpmute = 0, i = 0;
 	unsigned char *patbuf = NULL;
-	int checkpmt = 0, pincheck = 0, stopflag = 0, ageprotect = 0, tune = 0;
+	int checkpmt = 0, pincheck = 0, stopflag = 0, ageprotect = 0, tune = 0, secondzap = 0;
 	struct epg* epgnode = NULL;
 
 	m_lock(&status.servicemutex, 2);
 
 	status.secondzap = 0;
 
-	if(flag == 4 || flag == 5) tune = 1;
+	if(flag == 4 || flag == 5 || flag == 6) tune = 1;
+	if(flag == 6) secondzap = 1;
 	if(flag == 4) flag = 0;
 
 	if(flag == 0 && status.aktservice->type == CHANNEL && status.aktservice->channel != NULL && chnode == status.aktservice->channel)
@@ -87,7 +89,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		m_unlock(&status.servicemutex, 2);
 		return 20;
 	}
-	if(flag == 3 || flag == 5) flag = 0;
+	if(flag == 3 || flag == 5 || flag == 6) flag = 0;
 
 	if(chnode == NULL)
 	{
@@ -99,15 +101,18 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	if(status.restimer != NULL)
 		status.restimer->aktion = STOP;
 
-	ageprotect = getconfigint("ageprotect", NULL);
-	if(ageprotect > 0) epgnode = getepgakt(chnode);
-	if(chnode->protect > 0 || (epgnode != NULL && epgnode->parentalrating >= ageprotect))
+	if(secondzap == 0)
 	{
-		pincheck = screenpincheck(1, pin);
-		if(pincheck == 1)
+		ageprotect = getconfigint("ageprotect", NULL);
+		if(ageprotect > 0) epgnode = getepgakt(chnode);
+		if(chnode->protect > 0 || (epgnode != NULL && epgnode->parentalrating >= ageprotect))
 		{
-			m_unlock(&status.servicemutex, 2);
-			return 22;
+			pincheck = screenpincheck(1, pin);
+			if(pincheck == 1)
+			{
+				m_unlock(&status.servicemutex, 2);
+				return 22;
+			}
 		}
 	}
 
@@ -120,7 +125,10 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 			tpnode = chnode->transponder;
 	}
 
-	if(flag == 1 || flag == 2) stopflag = 2;
+	if(flag == 1 || flag == 2)
+		stopflag = 2;
+	else if(secondzap == 1)
+		stopflag = 3;
 	if(getconfigint("nozapclear", NULL) == 1)
 		ret = servicestop(status.aktservice, 0, stopflag);
 	else
@@ -568,7 +576,6 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 }
 
 //second zap on failure
-//TODO: use flag 6 (same as 5 but no pin question on second tune)
 int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 {
 	int ret = 0;
@@ -578,7 +585,7 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 	if(status.secondzap != 0 && ret == 0 && (flag == 0 || flag > 2))
 	{
 		debug(200, "first zap not ok, make second zap (%d)", status.secondzap);
-		ret = servicestartreal(chnode, channellist, pin, 5);
+		ret = servicestartreal(chnode, channellist, pin, 6);
 	}
 
 	return ret;
@@ -688,6 +695,7 @@ struct service* getservice(int type, int flag)
 //flag 0: faststop depends on param faststop
 //flag 1: always normal stop
 //flag 2: from timeshift/player
+//flag 3: same as 0 but no akttolast
 int servicestop(struct service *node, int clear, int flag)
 {
 	int rcret = 0;
@@ -714,7 +722,7 @@ int servicestop(struct service *node, int clear, int flag)
 		if(status.epgthread != NULL) status.epgthread->aktion = PAUSE;
 		subtitlestop(0);
 
-		if(node->type == CHANNEL && flag != 2) akttolast();
+		if(node->type == CHANNEL && flag < 2) akttolast();
 		if(flag != 2) node->type = NOTHING;
 
 		audiostop(node->audiodev);
@@ -722,6 +730,7 @@ int servicestop(struct service *node, int clear, int flag)
 		
 		int fastzap = getconfigint("fastzap", NULL);
 
+		if(flag == 3) flag = 0;
 		if(flag == 1 || (flag == 0 && (fastzap == 0 || fastzap == 2)))
 		{
 			audioclose(node->audiodev, -1);
