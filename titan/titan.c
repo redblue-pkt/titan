@@ -980,20 +980,38 @@ firstwizzardstep1:
 	//check free space in /var
 	if(getfreespace("/var") / 1024 < 250) //200kb
 		textbox(_("Message"), _("Free space in /var to little!\nThis can make problems!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
-
-	//check writeable in /var
-	if(mkdir("/var/writetest", 0777) != 0 && errno != EEXIST)
-		textbox(_("Message"), _("/var not writeable!\nThis can make problems!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
-	unlink("/var/writetest");
+	else
+	{
+		//check writeable in /var
+		if(mkdir("/var/writetest", 0777) != 0 && errno != EEXIST)
+		{
+			if(textbox(_("Message"), _("/var not writeable!\nRepear it?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) == 1)
+			{
+				ret = system("repairjffs2.sh var");
+				if(ret != 0)
+					textbox(_("Message"), _("Can't repair /var"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
+			}
+		}
+		unlink("/var/writetest");
+	}
 
 	//check free space in /mnt
 	if(getfreespace("/mnt") / 1024 < 200) //200kb
 		textbox(_("Message"), _("Free space in /mnt to little!\nThis can make problems!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
-
-	//check writeable in /mnt
-	if(mkdir("/mnt/writetest", 0777) != 0 && errno != EEXIST)
-		textbox(_("Message"), _("/mnt not writeable!\nThis can make problems!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
-	unlink("/mnt/writetest");
+	else
+	{
+		//check writeable in /mnt
+		if(mkdir("/mnt/writetest", 0777) != 0 && errno != EEXIST)
+		{
+			if(textbox(_("Message"), _("/mnt not writeable!\nRepear it?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) == 1)
+			{
+				ret = system("repairjffs2.sh mnt");
+				if(ret != 0)
+					textbox(_("Message"), _("Can't repair /mnt"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
+			}
+		}
+		unlink("/mnt/writetest");
+	}
 
 	screeninfobar();
 
