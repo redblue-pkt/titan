@@ -9,6 +9,7 @@ ROOTDIR=$8
 IPKDIR=$9
 VERSION=${10}
 BUILDTYPE=${11}
+GROUP=${12}
 
 rm "$HOME"/flashimg/.ipk-build-error
 
@@ -452,7 +453,13 @@ else
 	eplayerlib=gstreamer-0.10
 fi
 
-"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -DSH4 -D$eplayer -DDVDPLAYER -Os -export-dynamic -Wall -Wno-unused-but-set-variable \
+if [ $GROUP == "dev" ]; then
+	devflag="-fexceptions -rdynamic"
+else
+	devflag=""
+fi
+
+"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -DSH4 -D$eplayer -DDVDPLAYER -Os $devflag -export-dynamic -Wall -Wno-unused-but-set-variable \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/include/freetype2 \
 	-I $eplayerinclude \
 	-I "$HOME"/flashimg/source.titan/libdreamdvd \
@@ -461,7 +468,7 @@ fi
 	-I "$HOME"/flashimg/source.titan \
 	-c titan.c
 	
-"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -Os -export-dynamic -lpthread -ldl -lpng -lfreetype -l$eplayerlib -ldreamdvd -ljpeg -lmmeimage -lmme_host -lipkg -Wall \
+"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -Os $devflag -export-dynamic -lpthread -ldl -lpng -lfreetype -l$eplayerlib -ldreamdvd -ljpeg -lmmeimage -lmme_host -lipkg -Wall \
 	titan.o \
 	-o titan
 	
@@ -486,7 +493,7 @@ fi
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Make Plugins"
 echo "[titan]--------------------------------------------------------"
-"$HOME"/flashimg/source.titan/plugins/makesh4.sh "$STM" "$MEDIAFW"
+"$HOME"/flashimg/source.titan/plugins/makesh4.sh "$STM" "$MEDIAFW" "$GROUP"
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Plugins done"
 echo "[titan]--------------------------------------------------------"

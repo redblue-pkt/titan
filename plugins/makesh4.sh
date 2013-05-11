@@ -7,6 +7,7 @@
 
 STM=$1
 MEDIAFW=$2
+GROUP=$3
 
 if [ -z "$STM" ]; then
 	echo "error: use makesh4.sh <stm23|stm23|stm24> <1|2>"
@@ -15,6 +16,12 @@ fi
 if [ -z "$MEDIAFW" ]; then
 	echo "error: use makesh4.sh <stm23|stm23|stm24> <1|2>"
 	exit 1
+fi
+
+if [ $GROUP == "dev" ]; then
+	devflag="-fexceptions -rdynamic"
+else
+	devflag=""
 fi
 
 cd "$HOME"/flashimg/source.titan/plugins
@@ -40,7 +47,7 @@ compile()
 	echo "[titan] Make Plugin $1"
 	echo "[titan]--------------------------------------------------------"
 
-	$HOME/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -D$eplayer -Os -fPIC -Wall -Wno-unused-but-set-variable $4 \
+	$HOME/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -D$eplayer -Os $devflag -fPIC -Wall -Wno-unused-but-set-variable $4 \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/include/freetype2 \
 	-I $eplayerinclude \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/driver/bpamem \
