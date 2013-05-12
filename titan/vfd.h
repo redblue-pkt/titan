@@ -241,17 +241,17 @@ int writevfd(char *value)
 
 		len = strlen(value);
 
-		if(checkbox("WHITEBOX") != 1 && len > 63)
+		if(checkbox("WHITEBOX") != 1  && checkbox("ATEMIO520") != 1 && len > 63)
 		{
 			memcpy(tmpvalue, value, 63);
 			tmpvalue[62] = '\0';
 		}
-		else if(checkbox("WHITEBOX") == 1 && len > 4)
+		else if((checkbox("WHITEBOX") == 1 || checkbox("ATEMIO520") == 1) && len > 4)
 		{
 			memcpy(tmpvalue, value, 4);
 			tmpvalue[4] = '\0';
 		}
-		else if(checkbox("WHITEBOX") == 1 && len < 4)
+		else if((checkbox("WHITEBOX") == 1 || checkbox("ATEMIO520") == 1) && len < 4)
 		{
 			memcpy(tmpvalue, value, len);
 			tmpvalue[4] = '\0';
@@ -413,7 +413,7 @@ void updatevfd()
 
 	// Set VFD icons:
 	setvfdicon(VFD_REC, status.recording > 0);
-	if(status.standby == 0 && checkbox("WHITEBOX") != 1)
+	if(status.standby == 0 && checkbox("WHITEBOX") != 1 && checkbox("ATEMIO520") != 1)
 	{
 		//setvfdicon(VFD_USB, 0);
 		if(getaktvideosize() == 0) //videosize is ok
