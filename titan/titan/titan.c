@@ -819,7 +819,7 @@ int main(int argc, char *argv[])
 	ret = readextepgconfig(getconfig("extepgfile", NULL));
 
 	addtimer(&checkdate, START, 2000, -1, NULL, NULL, NULL);
-	if((checkbox("ATEMIO510") == 0)
+	if(checkbox("ATEMIO510") == 0)
 		addtimer(&updatevfd, START, 1000, -1, NULL, NULL, NULL);
 
 	if(getconfigint("firststart", NULL) == 1)
