@@ -249,7 +249,13 @@ int writevfd(char *value)
 		else if(checkbox("WHITEBOX") == 1 && len > 4)
 		{
 			memcpy(tmpvalue, value, 4);
-			tmpvalue[3] = '\0';
+			tmpvalue[4] = '\0';
+		}
+		else if(checkbox("WHITEBOX") == 1 && len < 4)
+		{
+			memcpy(tmpvalue, "    ", 4);
+			memcpy(tmpvalue, value, len);
+			tmpvalue[4] = '\0';
 		}
 		else
 		{
