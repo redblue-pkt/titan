@@ -3179,3 +3179,6 @@ msgstr "Staffel"
 
 msgid "Episode"
 msgstr "Folge"
+
+msgid "Vietnamese"
+msgstr "Vietnamesisch"
