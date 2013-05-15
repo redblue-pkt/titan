@@ -1003,7 +1003,7 @@ start:
 				}
 				if(list == MAINBOUQUETLIST)
 				{
-					delmainbouquet(((struct mainbouquet*)listbox->select->handle1)->name);
+					delmainbouquet(((struct mainbouquet*)listbox->select->handle1)->name, 1);
 					recalcbouquetnr();
 					listbox->aktline--;
 					listbox->aktpage = -1;

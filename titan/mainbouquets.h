@@ -500,7 +500,9 @@ struct mainbouquet* getmainbouquet(char *name)
 	return NULL;
 }
 
-void delmainbouquet(char *name)
+//flag 0: don't unlink bouquet
+//flag 1: unlink bouquet
+void delmainbouquet(char *name, int flag)
 {
 	debug(1000, "in");
 	struct mainbouquet *node = mainbouquet, *prev = mainbouquet;
@@ -527,7 +529,7 @@ void delmainbouquet(char *name)
 			node->name = NULL;
 
 			freebouquet(&node->bouquet);
-			unlink(node->filename);
+			if(flag == 1) unlink(node->filename);
 
 			free(node->filename);
 			node->filename = NULL;
@@ -553,7 +555,7 @@ void freemainbouquet()
 		prev = node;
 		node = node->next;
 		if(prev != NULL)
-			delmainbouquet(prev->name);
+			delmainbouquet(prev->name, 0);
 	}
 	debug(1000, "out");
 }
