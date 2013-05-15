@@ -18,7 +18,7 @@ short debug_level = 10;
 #define MINMALLOC 4096
 #define PROGNAME "tpk"
 
-#define WORKDIR "/tpk" //path must exist
+//#define WORKDIR "/tpk" //path must exist
 #define TPKFILELIST WORKDIR"/filelist.tpk"
 #define ARCHIVE WORKDIR"/archive.tpk"
 #define PACKAGES WORKDIR"/Packages"
