@@ -709,23 +709,37 @@ int tpkcreatallearchive(char* dirname, char* name)
 		}
 	}
 
-	ret = tpkcreatefile("", PREVIEWFILELIST, PREVIEW, 0, -1, 2);
-	if(ret != 0)
+	if(file_exist(PREVIEWFILELIST) || file_exist(PREVIEW))
 	{
-		err("merge preview filelist to archive %s -> %s", PREVIEWFILELIST, PREVIEW);
-		ret = 1;
-		goto end;
-	}
+		ret = tpkcreatefile("", PREVIEWFILELIST, PREVIEW, 0, -1, 2);
+		if(ret != 0)
+		{
+			err("merge preview filelist to archive %s -> %s", PREVIEWFILELIST, PREVIEW);
+			ret = 1;
+			goto end;
+		}
 
-	ret = unlink(PREVIEWFILELIST);
-	if(ret != 0 && errno != ENOENT)
-	{
-		perr("removing %s", PREVIEWFILELIST);
-		ret = 1;
-		goto end;
+		ret = unlink(PREVIEWFILELIST);
+		if(ret != 0 && errno != ENOENT)
+		{
+			perr("removing %s", PREVIEWFILELIST);
+			ret = 1;
+			goto end;
+		}
+		else
+			ret = 0;
+
+		tmpstr = ostrcat(tmpstr, "gzip ", 1, 0);
+		tmpstr = ostrcat(tmpstr, PREVIEW, 1, 0);
+		ret = system(tmpstr);
+		free(tmpstr); tmpstr = NULL;
+		if(ret != 0)
+		{
+			err("gzip file %s", PREVIEW);
+			ret = 1;
+			goto end;
+		}
 	}
-	else
-		ret = 0;
 
 	tmpstr = ostrcat(tmpstr, "gzip ", 1, 0);
 	tmpstr = ostrcat(tmpstr, PACKAGES, 1, 0);
@@ -738,16 +752,6 @@ int tpkcreatallearchive(char* dirname, char* name)
 		goto end;
 	}
 
-	tmpstr = ostrcat(tmpstr, "gzip ", 1, 0);
-	tmpstr = ostrcat(tmpstr, PREVIEW, 1, 0);
-	ret = system(tmpstr);
-	free(tmpstr); tmpstr = NULL;
-	if(ret != 0)
-	{
-		err("gzip file %s", PREVIEW);
-		ret = 1;
-		goto end;
-	}
 end:
 	if(d && closedir(d))
 	{
