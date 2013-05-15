@@ -604,7 +604,7 @@ int tpkcreatechr(char* mainpath, char* file, int major, int minor, int flag)
 		{
 			err("create filelist %s", file);
 			ret = 1;
-			goto end:
+			goto end;
 		}
 	}
 
