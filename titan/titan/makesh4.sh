@@ -491,6 +491,16 @@ if [ ! -e ./titan ]; then
 fi
 
 echo "[titan]--------------------------------------------------------"
+echo "[titan] Make TPK Binary"
+echo "[titan]--------------------------------------------------------"
+
+"$HOME"/flashimg/source.titan/tpk/make4.sh
+
+echo "[titan]--------------------------------------------------------"
+echo "[titan] TPK done"
+echo "[titan]--------------------------------------------------------"
+
+echo "[titan]--------------------------------------------------------"
 echo "[titan] Make Plugins"
 echo "[titan]--------------------------------------------------------"
 "$HOME"/flashimg/source.titan/plugins/makesh4.sh "$STM" "$MEDIAFW" "$GROUP"
