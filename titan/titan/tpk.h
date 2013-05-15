@@ -1,13 +1,6 @@
 #ifndef TPK_H
 #define TPK_H
 
-#define WORKDIR "/tpk" //path must exist
-#define TPKFILELIST WORKDIR"/filelist.tpk"
-#define ARCHIVE WORKDIR"/archive.tpk"
-#define PACKAGES WORKDIR"/Packages"
-#define PREVIEW WORKDIR"/Packages.preview"
-#define PREVIEWFILELIST WORKDIR"/filelist.preview"
-
 #define TPKLOG "/tmp/tpk.log"
 #define FEEDFILE "/etc/ipkg/official-feed.conf"
 #define PREDIR "/var/tpk"
