@@ -24,6 +24,7 @@ struct tpk
 	char* desc;
 	char* section;
 	char* showname;
+	char* arch;
 	int version;
 	int group;
 	int minversion;
@@ -62,7 +63,7 @@ void debugtpk()
 	}
 }
 
-struct tpk* addtpk(char *name, char* desc, char* section, char* showname, int version, int group, int minversion, int preinstalled, char* url, struct tpk* last)
+struct tpk* addtpk(char *name, char* desc, char* section, char* showname, char* arch, int version, int group, int minversion, int preinstalled, char* url, struct tpk* last)
 {
 	struct tpk *newnode = NULL, *prev = NULL, *node = tpk;
 
@@ -77,6 +78,7 @@ struct tpk* addtpk(char *name, char* desc, char* section, char* showname, int ve
 	newnode->desc = ostrcat(desc, NULL, 0, 0);
 	newnode->section = ostrcat(section, NULL, 0, 0);
 	newnode->showname = ostrcat(showname, NULL, 0, 0);
+	newnode->arch = ostrcat(arch, NULL, 0, 0);
 	newnode->url = ostrcat(url, NULL, 0, 0);
 	newnode->version = version;
 	newnode->group = group;
@@ -142,6 +144,9 @@ void deltpk(struct tpk* tpknode)
 
 			free(node->showname);
 			node->showname = NULL;
+			
+			free(node->arch);
+			node->arch = NULL;
 
 			free(node->url);
 			node->url = NULL;
@@ -714,16 +719,16 @@ end:
 
 //flag 0: extract archive
 //flag 1: create archive
-struct tpk* tpkreadcontrol(char* path, char* name, int flag)
+struct tpk* tpkreadcontrol(char* path, int flag)
 {
 	int len = 0;
 	FILE *fd = NULL;
 	char* fileline = NULL, *tmpstr = NULL;
-	char* showname = NULL, *section = NULL, *desc = NULL;
+	char* showname = NULL, *section = NULL, *desc = NULL, *packagename = NULL, *arch = NULL;
 	int version = 0, group = 0, minversion = 0, preinstalled = 0;
 	struct tpk* tpknode = NULL;
 
-	if(name == NULL || path == NULL) return NULL;
+	if(path == NULL) return NULL;
 
 	fileline = malloc(MINMALLOC);
 	if(fileline == NULL)
@@ -756,6 +761,10 @@ struct tpk* tpkreadcontrol(char* path, char* name, int flag)
 		if(len >= 0 && fileline[len] == '\r')
 			fileline[len] = '\0';
 
+		if(strstr(fileline, "Package: ") == fileline)
+			packagename = ostrcat(fileline + 9, NULL, 0, 0);
+		if(strstr(fileline, "Architecture: ") == fileline)
+			arch = ostrcat(fileline + 14, NULL, 0, 0);
 		if(strstr(fileline, "Showname: ") == fileline)
 			showname = ostrcat(fileline + 10, NULL, 0, 0);
 		if(strstr(fileline, "Version: ") == fileline)
@@ -788,12 +797,14 @@ struct tpk* tpkreadcontrol(char* path, char* name, int flag)
 		}
 	}
 
-	tpknode = addtpk(name, desc, section, showname, version, group, minversion, preinstalled, NULL, NULL);
+	tpknode = addtpk(packagename, desc, section, showname, arch, version, group, minversion, preinstalled, NULL, NULL);
 
 end:
 	free(showname); showname = NULL;
 	free(section); section = NULL;
 	free(desc); desc = NULL;
+	free(packagename); packagename = NULL;
+	free(arch); arch = NULL;
 	free(fileline); fileline = NULL;
 	if(fd != NULL) fclose(fd);
 	return tpknode;
@@ -1751,7 +1762,7 @@ int tpkinstall(char* file)
 	tpkinstalled = tpk;
 	tpk = NULL;
 
-	tpknode = tpkreadcontrol(path, name, 0);
+	tpknode = tpkreadcontrol(path, 0);
 	if(tpknode == NULL)
 	{
 		err("read control files %s/%s", path, name);
@@ -2076,7 +2087,7 @@ int tpklistinstalled()
 					goto end;
 				}
 
-				tpknode = tpkreadcontrol(path, entry->d_name, 0);
+				tpknode = tpkreadcontrol(path, 0);
 				if(tpknode == NULL)
 				{
 					debug(130, "read control file %s", path);
@@ -2110,7 +2121,7 @@ int tpklist()
 	int ret = 0, len = 0;
 	FILE *fd = NULL;
 	char* fileline = NULL;
-	char* name = NULL, *showname = NULL, *section = NULL, *desc = NULL, *url = NULL;
+	char* name = NULL, *showname = NULL, *section = NULL, *desc = NULL, *url = NULL, *arch = NULL;
 	int version = 0, group = 0, minversion = 0, preinstalled = 0;
 	struct tpk* tpknode = NULL, *tpkinstalled = NULL, *tpktmp = NULL;
 
@@ -2166,6 +2177,14 @@ int tpklist()
 		ret = 1;
 		goto end;
 	}
+	
+	arch = malloc(MINMALLOC);
+	if(arch == NULL)
+	{
+		err("no mem");
+		ret = 1;
+		goto end;
+	}
 
 	fd = fopen(TMPALLPACKAGES, "r");
 	if(fd == NULL)
@@ -2184,7 +2203,7 @@ int tpklist()
 		if(len >= 0 && fileline[len] == '\r')
 			fileline[len] = '\0';
 
-		ret = sscanf(fileline, "%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%d#%d#%d#%d", url, name, showname, section, desc, &version, &group, &minversion, &preinstalled);
+		ret = sscanf(fileline, "%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%d#%d#%d#%d", url, name, showname, section, desc, arch, &version, &group, &minversion, &preinstalled);
 		if(ret != 9)
 		{
 			err("read file %s", TMPALLPACKAGES);
@@ -2212,7 +2231,7 @@ int tpklist()
 			skip = 1;
 
 		if(skip == 0)
-			tpknode = addtpk(name, desc, section, showname, version, group, minversion, preinstalled, url, tpknode);
+			tpknode = addtpk(name, desc, section, showname, arch, version, group, minversion, preinstalled, url, tpknode);
 	}
 
 end:
@@ -2226,6 +2245,7 @@ end:
 	free(section); section = NULL;
 	free(desc); desc = NULL;
 	free(url); url = NULL;
+	free(arch); arch = NULL;
 	free(fileline); fileline = NULL;
 	if(fd != NULL) fclose(fd);
 	return ret;

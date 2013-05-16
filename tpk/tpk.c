@@ -32,6 +32,25 @@ short debug_level = 10;
 
 #include <tpk.h>
 
+char* oitoa(int value)
+{
+	debug(1000, "in");
+	char *buf = NULL;
+
+	buf = malloc(MINMALLOC);
+	if(buf == NULL)
+	{
+		err("no memory");
+		return NULL;
+	}
+
+	sprintf(buf, "%d", value);
+	//buf = ostrshrink(buf);
+
+	debug(1000, "out");
+	return buf;
+}
+
 char* ostrcat(char* value1, char* value2, int free1, int free2)
 {
 	int len = 0, len1 = 0, len2 = 0;
@@ -246,23 +265,20 @@ end:
 	return ret;
 }
 
-int tpkcreateindex(char* path, char* name)
+struct tpk* tpkcreateindex(char* path, char* name)
 {
 	int ret = 0, writeret = 0;
 	FILE *fd = NULL;
 	struct tpk* tpknode = NULL;
-	char* tmpstr = NULL;
 
 	if(name == NULL)
 	{
 		err("NULL detect");
-		return 1;
+		return NULL;
 	}
 
 	freetpk();
-	tmpstr = ostrcat(name, ".tpk", 0, 0);
-	tpknode = tpkreadcontrol(path, tmpstr, 1);
-	free(tmpstr); tmpstr = NULL;
+	tpknode = tpkreadcontrol(path, 1);
 	if(tpknode == NULL)
 	{
 		err("read control file %s", path);
@@ -293,7 +309,7 @@ int tpkcreateindex(char* path, char* name)
 		}
 	}
 
-	writeret = fprintf(fd, "%s#%s#%s#%s#%d#%d#%d#%d\n", tpknode->name, tpknode->showname, tpknode->section, tpknode->desc, tpknode->version, tpknode->group, tpknode->minversion, tpknode->preinstalled);
+	writeret = fprintf(fd, "%s#%s#%s#%s#%s#%d#%d#%d#%d\n", tpknode->name, tpknode->showname, tpknode->section, tpknode->desc, tpknode->arch, tpknode->version, tpknode->group, tpknode->minversion, tpknode->preinstalled);
 	if(writeret < 0)
 	{
 		perr("writting file %s", PACKAGES);
@@ -301,9 +317,12 @@ int tpkcreateindex(char* path, char* name)
 		goto end;
 	}
 end:
-	freetpk();
 	if(fd != NULL) fclose(fd);
-	return ret;
+	
+	if(ret == 1) 
+		return NULL;
+	else
+		return tpknode;
 }
 
 int tpkcreatearchive(char* mainpath, char* dirname, int first)
@@ -546,6 +565,7 @@ int tpkcreatallearchive(char* dirname, char* name)
 	DIR *d;
 	char* tmpstr = NULL;
 	int ret = 0;
+	struct tpk* tpknode = NULL;
 
 	//clean workdir
 	ret = tpkcleanworkdir(WORKDIR);
@@ -569,6 +589,7 @@ int tpkcreatallearchive(char* dirname, char* name)
 		struct dirent* entry;
 		int path_length;
 		char path[PATH_MAX];
+		tpknode = NULL;
 
 		snprintf(path, PATH_MAX, "%s", dirname);
 		entry = readdir(d); //Readdir gets subsequent entries from d
@@ -623,19 +644,19 @@ int tpkcreatallearchive(char* dirname, char* name)
 				}
 				else
 					ret = 0;
+					
+				tpknode = tpkcreateindex(path, entry->d_name);
+				if(tpknode == NULL)
+				{
+					err("create index file %s/%s", path, entry->d_name);
+					ret = 1;
+					goto end;
+				}
 
 				ret = tpkcreatearchive(path, path, 1);
 				if(ret != 0)
 				{
 					err("create archive %s", path);
-					ret = 1;
-					goto end;
-				}
-
-				ret = tpkcreateindex(path, entry->d_name);
-				if(ret != 0)
-				{
-					err("create index file %s/%s", path, entry->d_name);
 					ret = 1;
 					goto end;
 				}
@@ -650,7 +671,11 @@ int tpkcreatallearchive(char* dirname, char* name)
 
 				tmpstr = ostrcat(tmpstr, WORKDIR, 1, 0);
 				tmpstr = ostrcat(tmpstr, "/", 1, 0);
-				tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
+				tmpstr = ostrcat(tmpstr, tpknode->name, 1, 0);
+				tmpstr = ostrcat(tmpstr, "_", 1, 0);
+				tmpstr = ostrcat(tmpstr, oitoa(tpknode->version), 1, 1);
+				tmpstr = ostrcat(tmpstr, "_", 1, 0);
+				tmpstr = ostrcat(tmpstr, tpknode->arch, 1, 0);
 				tmpstr = ostrcat(tmpstr, ".tpk", 1, 0);
 				ret = rename(ARCHIVE, tmpstr);
 				free(tmpstr); tmpstr = NULL;
@@ -664,7 +689,11 @@ int tpkcreatallearchive(char* dirname, char* name)
 				tmpstr = ostrcat(tmpstr, "gzip ", 1, 0);
 				tmpstr = ostrcat(tmpstr, WORKDIR, 1, 0);
 				tmpstr = ostrcat(tmpstr, "/", 1, 0);
-				tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
+				tmpstr = ostrcat(tmpstr, tpknode->name, 1, 0);
+				tmpstr = ostrcat(tmpstr, "_", 1, 0);
+				tmpstr = ostrcat(tmpstr, oitoa(tpknode->version), 1, 1);
+				tmpstr = ostrcat(tmpstr, "_", 1, 0);
+				tmpstr = ostrcat(tmpstr, tpknode->arch, 1, 0);
 				tmpstr = ostrcat(tmpstr, ".tpk", 1, 0);
 				ret = system(tmpstr);
 				free(tmpstr); tmpstr = NULL;
@@ -674,6 +703,8 @@ int tpkcreatallearchive(char* dirname, char* name)
 					ret = 1;
 					goto end;
 				}
+				
+				freetpk();
 
 				ret = unlink(TPKFILELIST);
 				if(ret != 0 && errno != ENOENT)
@@ -753,6 +784,8 @@ int tpkcreatallearchive(char* dirname, char* name)
 	}
 
 end:
+	freetpk();
+
 	if(d && closedir(d))
 	{
 		perr("Could not close %s", dirname);
@@ -769,9 +802,9 @@ int main(int argc, char *argv[])
 {
 	int ret = 0;
 
-	if(argc == 1)
+	if(argc == 2)
 		ret = tpkcreatallearchive(argv[1], NULL);
-	else if(argc == 1)
+	else if(argc == 3)
 		ret = tpkcreatallearchive(argv[1], argv[2]);
 	else
 	{
