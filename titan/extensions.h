@@ -1,7 +1,6 @@
 #ifndef EXTENSIONS_H
 #define EXTENSIONS_H
 
-
 void screenfeed()
 {
 	char* tmpstr = NULL, *line = NULL, *lastline = NULL;
@@ -84,24 +83,21 @@ void screenextensions(int mode, char* path)
 	{
 		drawscreen(load, 0, 0);
 
-		ipkg_update();
-		ipkg_list();
+		tpkgetindex(1);
+		tpklist();
 
 		clearscreen(load);
 
-		mbox = ipkmenulist(mlist, NULL, "Ipk Install - select section", NULL, NULL, 1, 0);
+		mbox = tpkmenulist(mlist, NULL, "Tpk Install - select section", NULL, NULL, 1, 0);
 
 		if(mbox != NULL)
 		{
 			debug(130, "section: %s", mbox->name);
-			mbox1 = ipkmenulist(mlist1, "ipkinstall", "Ipk Install - select file", "/tmp/preview", mbox->name, 2, 1);
+			mbox1 = tpkmenulist(mlist1, "tpkinstall", "Tpk Install - select file", "/tmp/tpk", mbox->name, 2, 1);
 			
-			if(mbox1 != NULL)
+			if(mbox1 != NULL && mbox1->param1 != NULL)
 			{
 				debug(130, "file: %s", mbox1->name);
-				tmpstr = ostrcat("titan-plugin-", mbox->name, 0, 0);
-				tmpstr = ostrcat(tmpstr, "-", 1, 0);
-				tmpstr = ostrcat(tmpstr, mbox1->param, 1, 0);
 
 				tmpinfo = ostrcat(tmpinfo, _("Installing"), 1, 0);
 				tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
@@ -112,30 +108,30 @@ void screenextensions(int mode, char* path)
 				tmpinfo = ostrcat(tmpinfo, _("started"), 1, 0);
 				tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 
-				if(textbox(_("Ipk Install Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+				if(textbox(_("Tpk Install Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 				{
 					drawscreen(load, 0, 0);
 					resettvpic();
 					char* log = NULL;
-					if(ipkg_install(tmpstr) == 0)
+					if(tpkgetpackage(mbox1->name, ((struct tpk*)mbox1->param1)->url) == 0)
 					{
-						log = readfiletomem("/tmp/ipkg.log", 0);
+						log = readfiletomem(TPKLOG, 0);
 						if(log == NULL) log = ostrcat("Install success", NULL, 0, 0);
-						textbox(_("Ipk Install Info - Install OK"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+						textbox(_("Tpk Install Info - Install OK"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
 					}
 					else
 					{
-						log = readfiletomem("/tmp/ipkg.log", 0);
+						log = readfiletomem(TPKLOG, 0);
 						if(log == NULL) log = ostrcat("Install error", NULL, 0, 0);
-						textbox(_("Ipk Install Info - Install ERROR"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+						textbox(_("Tpk Install Info - Install ERROR"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
 					}
 					textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 					loadplugin();
 					free(log), log = NULL;
-					unlink("/tmp/ipkg.log");
-					if(file_exist("/tmp/.ipkg_needs_reboot"))
+					unlink(TPKLOG);
+					if(file_exist("/tmp/.tpk_needs_reboot"))
 					{
-						textbox(_("Message"), _("IPK Install Done your system rebooting !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+						textbox(_("Message"), _("TPK Install Done your system rebooting !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 						system("init 6");
 					}
 				}
@@ -146,19 +142,17 @@ void screenextensions(int mode, char* path)
 		freemenulist(mlist, 1); mlist = NULL;
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
-		freeipkg();
+		freetpk();
 		if(mbox != NULL) screenextensions(0, path);
 	}
 	else if(mode == 1)
 	{
-		ipkg_list_installed();
-		mbox = ipkmenulist(mlist, NULL, "Ipk Remove - select file", NULL, NULL, 1, 2);
+		tpklistinstalled();
+		mbox = tpkmenulist(mlist, NULL, "Tpk Remove - select file", NULL, NULL, 1, 2);
 		
 		if(mbox != NULL)
 		{
 			debug(130, "file: %s", mbox->name);
-
-			tmpstr = ostrcat("titan-plugin-", mbox->name, 0, 0);
 
 			tmpinfo = ostrcat(tmpinfo, _("Removeing"), 1, 0);
 			tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
@@ -167,29 +161,29 @@ void screenextensions(int mode, char* path)
 			tmpinfo = ostrcat(tmpinfo, _("started"), 1, 0);
 			tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 
-			if(textbox(_("Ipk Remove Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+			if(textbox(_("Tpk Remove Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 			{
 				drawscreen(load, 0, 0);
 				resettvpic();
 				char* log = NULL;
-				if(ipkg_remove(tmpstr, 1) == 0)
+				if(tpkremove(mbox->name, 0, 0) == 0)
 				{
-					log = readfiletomem("/tmp/ipkg.log", 0);
+					log = readfiletomem(TPKLOG, 0);
 					if(log == NULL) log = ostrcat("Remove success", NULL, 0, 0);
-					textbox(_("Ipk Remove Info - Remove OK"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+					textbox(_("Tpk Remove Info - Remove OK"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
 				}
 				else
 				{
-					log = readfiletomem("/tmp/ipkg.log", 0);
+					log = readfiletomem(TPKLOG, 0);
 					if(log == NULL) log = ostrcat("Remove error", NULL, 0, 0);
-					textbox(_("Ipk Remove Info - Remove ERROR"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+					textbox(_("Tpk Remove Info - Remove ERROR"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
 				}
 				textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
-				free(log), log = NULL;
-				unlink("/tmp/ipkg.log");
-				if(file_exist("/tmp/.ipkg_needs_reboot"))
+				free(log); log = NULL;
+				unlink(TPKLOG);
+				if(file_exist("/tmp/.tpk_needs_reboot"))
 				{
-					textbox(_("Message"), _("IPK Remove Done your system rebooting !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+					textbox(_("Message"), _("TPK Remove Done your system rebooting !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 					system("init 6");
 				}
 			}
@@ -197,21 +191,21 @@ void screenextensions(int mode, char* path)
 		freemenulist(mlist, 1); mlist = NULL;
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
-		freeipkg();
+		freetpk();
 		if(mbox != NULL) screenextensions(1, path);
 	}
 	else if(mode == 2)
 	{
-		char* text1 = "Ipk Tmp Install - select file";
-		char* text2 = "Ipk Tmp Info";
+		char* text1 = "Tpk Tmp Install - select file";
+		char* text2 = "Tpk Tmp Info";
 
 		if(path == NULL)
-			tmpstr = get_ipk_tmplistinstall("/tmp");
+			tmpstr = gettpktmplist("/tmp");
 		else
 		{
-			tmpstr = get_ipk_tmplistinstall(path);
-			text1 = "Ipk Media Install - select file";
-			text2 = "Ipk Media Info";
+			tmpstr = gettpktmplist(path);
+			text1 = "Tpk Media Install - select file";
+			text2 = "Tpk Media Info";
 		}
     
 		if(tmpstr == NULL || strlen(tmpstr) == 0)
@@ -239,22 +233,38 @@ void screenextensions(int mode, char* path)
 
 			if(textbox(_(text2), _(tmpinfo), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
 			{
-				char* log = NULL;				
+				char* log = NULL;
+				int ret = 0;				
 				drawscreen(load, 0, 0);
 				resettvpic();				
 				if(path == NULL)
-					log = get_ipk_tmpinstall("/tmp", mbox->name);
+				{
+					tmpstr = ostrcat(tmpstr, "/tmp", 1, 0);
+					tmpstr = ostrcat(tmpstr, "/", 1, 0);
+					tmpstr = ostrcat(tmpstr, "mbox->name", 1, 0);
+					ret = tpkinstall(tmpstr);
+					free(tmpstr); tmpstr = NULL;
+				}
 				else
-					log = get_ipk_tmpinstall(path, mbox->name);
+				{
+					tmpstr = ostrcat(tmpstr, path, 1, 0);
+					tmpstr = ostrcat(tmpstr, "/", 1, 0);
+					tmpstr = ostrcat(tmpstr, "mbox->name", 1, 0);
+					ret = tpkinstall(tmpstr);
+					free(tmpstr); tmpstr = NULL;
+				}
 
-				if(log == NULL) log = ostrcat("No output found !", NULL, 0, 0);
+				log = readfiletomem(TPKLOG, 0);
+				if(log == NULL && ret != 0) log = ostrcat("Install error", NULL, 0, 0);
+				if(log == NULL && ret == 0) log = ostrcat("Install success", NULL, 0, 0);
 				textbox(_(text2), log, "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 				free(log); log = NULL;
+				unlink(TPKLOG);
 				textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 				loadplugin();
-				if(file_exist("/tmp/.ipkg_needs_reboot"))
+				if(file_exist("/tmp/.tpk_needs_reboot"))
 				{
-					textbox(_("Message"), _("IPK Tmp Install Done your system rebooting !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+					textbox(_("Message"), _("TPK Tmp Install Done your system rebooting !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 					system("init 6");
 				}
 			}
@@ -268,21 +278,19 @@ void screenextensions(int mode, char* path)
 	{
 		drawscreen(load, 0, 0);
 		resettvpic();
-		unlink("/tmp/ipkg.log");
-		writesys("/tmp/.ipkg_upgrade_start", "0", 0);
-		ipkg_update();
-		ipkg_upgrade();
-		freeipkg();
+		unlink(TPKLOG);
+		writesys("/tmp/.tpk_upgrade_start", "0", 0);
+		tpkupdate();
 		loadplugin();
 		clearscreen(load);
 		drawscreen(skin, 0, 0);
 
-		if(file_exist("/tmp/.ipkg_needs_reboot"))
+		if(file_exist("/tmp/.tpk_needs_reboot"))
 		{
-			textbox(_("Message"), _("IPK Upgrade Done your system rebooting !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+			textbox(_("Message"), _("TPK Upgrade Done your system rebooting !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 			system("init 6");
 		}
-		unlink("/tmp/.ipkg_upgrade_start");
+		unlink("/tmp/.tpk_upgrade_start");
 	}
 	status.hangtime = getconfigint("hangtime", NULL);
 }
@@ -305,7 +313,7 @@ void screenextensions_check(int flag)
 			if(node->partition != 0)
 			{
 				tmpstr = ostrcat("/autofs/", node->device, 0, 0);
-				tmpstr1 = get_ipk_tmplistinstall(tmpstr);
+				tmpstr1 = gettpktmplist(tmpstr);
 
 				if(tmpstr1 != NULL)
 				{
@@ -320,7 +328,7 @@ void screenextensions_check(int flag)
 		}
 
 		if(flag == 1 && treffer == 0)
-			textbox(_("Ipk Install Info"), _("No plugin found."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+			textbox(_("Tpk Install Info"), _("No plugin found."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 	}
 }
 
