@@ -70,7 +70,7 @@ void screenfeed()
 	free(lastline);
 }
 
-void screenextensions(int mode, char* path)
+void screenextensions(int mode, char* path, int first)
 {
 	char* tmpstr = NULL, *tmpinfo = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;
@@ -83,7 +83,7 @@ void screenextensions(int mode, char* path)
 	{
 		drawscreen(load, 0, 0);
 
-		tpkgetindex(1);
+		if(first == 1) tpkgetindex(1);
 		tpklist();
 
 		clearscreen(load);
@@ -143,7 +143,7 @@ void screenextensions(int mode, char* path)
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
 		freetpk();
-		if(mbox != NULL) screenextensions(0, path);
+		if(mbox != NULL) screenextensions(0, path, 0);
 	}
 	else if(mode == 1)
 	{
@@ -192,7 +192,7 @@ void screenextensions(int mode, char* path)
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
 		freetpk();
-		if(mbox != NULL) screenextensions(1, path);
+		if(mbox != NULL) screenextensions(1, path, 0);
 	}
 	else if(mode == 2)
 	{
@@ -272,7 +272,7 @@ void screenextensions(int mode, char* path)
 		freemenulist(mlist, 1); mlist = NULL;
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
-		if(mbox != NULL) screenextensions(2, path);
+		if(mbox != NULL) screenextensions(2, path, 0);
 	}
 	else if(mode == 3)
 	{
@@ -318,7 +318,7 @@ void screenextensions_check(int flag)
 				if(tmpstr1 != NULL)
 				{
 					treffer = 1;
-					screenextensions(2, tmpstr);
+					screenextensions(2, tmpstr, 1);
 				}
 
 				free(tmpstr); tmpstr = NULL;
