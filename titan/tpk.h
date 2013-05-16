@@ -1,6 +1,14 @@
 #ifndef TPK_H
 #define TPK_H
 
+#ifndef TPKFILELIST
+#define TPKFILELIST "/tmp/filelist.tpk"
+#endif
+
+#ifndef PREVIEWFILELIST
+#define PREVIEWFILELIST "/tmp/filelist.preview"
+#endif
+
 #define TPKLOG "/tmp/tpk.log"
 #define FEEDFILE "/etc/ipkg/official-feed.conf"
 #define PREDIR "/var/tpk"
@@ -1684,10 +1692,22 @@ int tpkinstall(char* file)
 
 	//remove arch + version from filename
 	tmpfile = ostrcat(file, NULL, 0, 0);
-	tmpstr = strrchr(tmpfile, '_');
-	if(tmpstr != NULL) tmpstr[0] = '\0';
-	tmpstr = strrchr(tmpfile, '_');
-	if(tmpstr != NULL) tmpstr[0] = '\0';
+	if(tmpfile != NULL)
+	{
+		tmpstr = strrchr(tmpfile, '_');
+		if(tmpstr != NULL)
+		{
+			tmpstr[0] = '\0';
+			tmpstr = strrchr(tmpfile, '_');
+			if(tmpstr != NULL) tmpstr[0] = '\0';
+		}
+	}
+
+	if(tmpfile == NULL)
+	{
+		err("NULL detect");
+			return 1;
+	}
 
 	name = basename(tmpfile);
 	if(name == NULL || strcmp("/", name) == 0 || strcmp(".", name) == 0 || strcmp("..", name) == 0)
