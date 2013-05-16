@@ -384,23 +384,23 @@ if [ $BUILDTYPE == 220 ]; then
 fi
 
 if [ $BUILDTYPE == 0 ] || [ $BUILDTYPE == 1 ]; then
-	echo "[titan]--------------------------------------------------------"
-	echo "[titan] libipkg"
-	echo "[titan]--------------------------------------------------------"
-	cd "$HOME"/flashimg/source.titan/libipkg
-	./makesh4.sh $STM
-	cd "$HOME"/flashimg/source.titan/titan
-	if [ ! -e "$HOME"/flashimg/source.titan/libipkg/.libs/libipkg.so.0.0.0 ]; then
-		echo "[titan]--------------------------------------------------------"
-		echo "[titan] ipkg building error !!!"
-		echo "[titan] check your src"
-		echo "[titan]--------------------------------------------------------"
-		touch "$HOME"/flashimg/.ipk-build-error
-		exit 1
-	fi
-	echo "[titan]--------------------------------------------------------"
-	echo "[titan] libipkg done"
-	echo "[titan]--------------------------------------------------------"
+	#echo "[titan]--------------------------------------------------------"
+	#echo "[titan] libipkg"
+	#echo "[titan]--------------------------------------------------------"
+	#cd "$HOME"/flashimg/source.titan/libipkg
+	#./makesh4.sh $STM
+	#cd "$HOME"/flashimg/source.titan/titan
+	#if [ ! -e "$HOME"/flashimg/source.titan/libipkg/.libs/libipkg.so.0.0.0 ]; then
+	#	echo "[titan]--------------------------------------------------------"
+	#	echo "[titan] ipkg building error !!!"
+	#	echo "[titan] check your src"
+	#	echo "[titan]--------------------------------------------------------"
+	#	touch "$HOME"/flashimg/.ipk-build-error
+	#	exit 1
+	#fi
+	#echo "[titan]--------------------------------------------------------"
+	#echo "[titan] libipkg done"
+	#echo "[titan]--------------------------------------------------------"
 	
 	###
 	echo "[titan]--------------------------------------------------------"
@@ -468,7 +468,7 @@ fi
 	-I "$HOME"/flashimg/source.titan \
 	-c titan.c
 	
-"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -Os $devflag -export-dynamic -lpthread -ldl -lpng -lfreetype -l$eplayerlib -ldreamdvd -ljpeg -lmmeimage -lmme_host -lipkg -Wall \
+"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -Os $devflag -export-dynamic -lpthread -ldl -lpng -lfreetype -l$eplayerlib -ldreamdvd -ljpeg -lmmeimage -lmme_host -Wall \
 	titan.o \
 	-o titan
 	
@@ -605,8 +605,8 @@ cp -a "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/framebuffer/res/config/A
 cp -a "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/framebuffer/res/config/*.css "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf
 cp -a "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/framebuffer/res/config/messages "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf
 
-cp -a "$HOME"/flashimg/source.titan/libipkg/.libs/libipkg.so.0.0.0 "$HOME"/flashimg/BUILD/titan/lib/libipkg.so.0
-cp -a "$HOME"/flashimg/source.titan/libipkg/.libs/ipkg-cl "$HOME"/flashimg/BUILD/titan/usr/bin/ipkg
+#cp -a "$HOME"/flashimg/source.titan/libipkg/.libs/libipkg.so.0.0.0 "$HOME"/flashimg/BUILD/titan/lib/libipkg.so.0
+#cp -a "$HOME"/flashimg/source.titan/libipkg/.libs/ipkg-cl "$HOME"/flashimg/BUILD/titan/usr/bin/ipkg
 
 # minidlna
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/sbin/minidlna "$HOME"/flashimg/BUILD/titan/usr/bin
@@ -746,9 +746,9 @@ cp -a "$ROOTDIR"/lib/modules/rt3070sta.ko "$HOME"/flashimg/BUILD/titan/modules
 cp -a "$ROOTDIR"/lib/modules/rt5370sta.ko "$HOME"/flashimg/BUILD/titan/modules
 
 #ipkg
-cp -a "$HOME"/flashimg/source.titan/ipkg "$HOME"/flashimg/BUILD/titan/var/usr/lib
-sed "s/Version:.*/Version: $VERSION/" -i "$HOME"/flashimg/BUILD/titan/var/usr/lib/ipkg/status
-sed "s/Version:.*/Version: $VERSION/" -i "$HOME"/flashimg/BUILD/titan/var/usr/lib/ipkg/info/*.control
+#cp -a "$HOME"/flashimg/source.titan/ipkg "$HOME"/flashimg/BUILD/titan/var/usr/lib
+#sed "s/Version:.*/Version: $VERSION/" -i "$HOME"/flashimg/BUILD/titan/var/usr/lib/ipkg/status
+#sed "s/Version:.*/Version: $VERSION/" -i "$HOME"/flashimg/BUILD/titan/var/usr/lib/ipkg/info/*.control
 
 #crypt
 "$HOME"/flashimg/source.titan/titan/tools/ocrypt -c "$HOME"/flashimg/source.titan/titan/tools/trustlist "$HOME"/flashimg/BUILD/titan/var/etc/codepages/codepage.868
