@@ -279,7 +279,7 @@ struct tpk* tpkcreateindex(char* path, char* name)
 
 	freetpk();
 	tpknode = tpkreadcontrol(path, 1);
-	if(tpknode == NULL)
+	if(tpknode == NULL || tpknode->name == NULL)
 	{
 		err("read control file %s", path);
 		ret = 1;
@@ -289,6 +289,7 @@ struct tpk* tpkcreateindex(char* path, char* name)
 	if(tpknode->section == NULL) tpknode->section = ostrcat("*", NULL, 0, 0);
 	if(tpknode->desc == NULL) tpknode->desc = ostrcat("*", NULL, 0, 0);
 	if(tpknode->showname == NULL) tpknode->showname = ostrcat("*", NULL, 0, 0);
+	if(tpknode->arch == NULL) tpknode->arch = ostrcat("sh4", NULL, 0, 0);
 
 	fd = fopen(PACKAGES, "a");
 	if(fd == NULL)
