@@ -1673,7 +1673,7 @@ int tpkinstall(char* file)
 {
 	int ret = 0;
 	off64_t startpos = 0, len = 0;
-	char* tmpstr = NULL, *name = NULL, *path = NULL;
+	char* tmpstr = NULL, *name = NULL, *path = NULL, *tmpfile = NULL;
 	struct tpk* tpknode = NULL, *tpkinstalled = NULL;
 
 	if(file == NULL)
@@ -1682,10 +1682,17 @@ int tpkinstall(char* file)
 		return 1;
 	}
 
-	name = basename(file);
+	//remove arch + version from filename
+	tmpfile = ostrcat(file, NULL, 0, 0);
+	tmpstr = strrchr(tmpfile, '_');
+	if(tmpstr != NULL) tmpstr[0] = '\0';
+	tmpstr = strrchr(tmpfile, '_');
+	if(tmpstr != NULL) tmpstr[0] = '\0';
+
+	name = basename(tmpfile);
 	if(name == NULL || strcmp("/", name) == 0 || strcmp(".", name) == 0 || strcmp("..", name) == 0)
 	{
-		err("NULL detect %s", file);
+		err("NULL detect %s", tmpfile);
 		return 1;
 	}
 
@@ -1877,6 +1884,7 @@ end:
 		tpkdelbackup(path);
 
 	free(path); path = NULL;
+	free(tmpfile); tmpfile = NULL;
 	return ret;
 }
 
@@ -2629,6 +2637,5 @@ char* gettpktmplist(char* path)
 	return tmpstr;
 }
 
-#endif
 #endif
 
