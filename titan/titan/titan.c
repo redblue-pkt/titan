@@ -7,12 +7,6 @@
 #define SYSCODE 0UL
 #define HTTPAUTH "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0="
 
-#define IPKG_LIB
-#include "libipkg/config.h"
-#include "libipkg/libipkg.h"
-#include "libipkg/args.h"
-#include "libipkg/ipkg_cmd.h"
-
 struct clist *config[LISTHASHSIZE] = {NULL};
 struct clist *ownconfig[LISTHASHSIZE] = {NULL};
 struct clist *rcconfig[LISTHASHSIZE] = {NULL};
@@ -76,7 +70,7 @@ struct download* bgdownload[MAXBGDOWNLOAD] = {NULL};
 #endif
 
 #include "oldentry.h"
-#include "ipkg.h"
+#include "tpk.h"
 #include "jsmn.h"
 #include "queue.h"
 #include "channelcache.h"
