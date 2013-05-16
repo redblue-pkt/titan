@@ -494,7 +494,7 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] Make TPK Binary"
 echo "[titan]--------------------------------------------------------"
 
-"$HOME"/flashimg/source.titan/tpk/make4.sh
+"$HOME"/flashimg/source.titan/tpk/make.sh
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] TPK done"
