@@ -649,7 +649,7 @@ int tpkcreatallearchive(char* dirname, char* name)
 				tpknode = tpkcreateindex(path, entry->d_name);
 				if(tpknode == NULL)
 				{
-					err("create index file %s/%s", path, entry->d_name);
+					err("create index file %s", path);
 					ret = 1;
 					goto end;
 				}
