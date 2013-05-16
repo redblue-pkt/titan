@@ -299,17 +299,6 @@ struct tpk* tpkcreateindex(char* path, char* name)
 		goto end;
 	}
 
-	if(tpknode->preinstalled == 1)
-	{
-		ret = tpkcreatepreinstalled(name);
-		if(ret != 0)
-		{
-			err("create preinstalled file");
-			ret = 1;
-			goto end;
-		}
-	}
-
 	writeret = fprintf(fd, "%s#%s#%s#%s#%s#%d#%d#%d#%d\n", tpknode->name, tpknode->showname, tpknode->section, tpknode->desc, tpknode->arch, tpknode->version, tpknode->group, tpknode->minversion, tpknode->preinstalled);
 	if(writeret < 0)
 	{
@@ -660,6 +649,17 @@ int tpkcreatallearchive(char* dirname, char* name)
 					err("create archive %s", path);
 					ret = 1;
 					goto end;
+				}
+
+				if(tpknode->preinstalled == 1)
+				{
+					ret = tpkcreatepreinstalled(entry->d_name);
+					if(ret != 0)
+					{
+						err("create preinstalled file");
+						ret = 1;
+						goto end;
+					}
 				}
 
 				ret = tpkcreatefile("", TPKFILELIST, ARCHIVE, 0, -1, 2);
