@@ -8,11 +8,13 @@
 #include <errno.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <ctype.h>
 
 char* ostrcat(char* value1, char* value2, int free1, int free2);
 int file_exist(char* filename);
 int dvbwrite(int fd, unsigned char* buf, int count, int tout);
 int dvbread(int fd, unsigned char *buf, int pos, int count, int tout, int flag);
+char* strstrip(char *text);
 
 short debug_level = 10;
 #define MINMALLOC 4096
@@ -31,6 +33,23 @@ short debug_level = 10;
 #define filedebug(file, fmt, args...) { FILE* fd = fopen(file, "a"); if(fd != NULL) { do { fprintf(fd, "" fmt, ##args); } while (0); fprintf(fd, "\n"); fclose(fd); }}
 
 #include <tpk.h>
+
+char* strstrip(char *text)
+{
+	debug(1000, "in");
+	char* tmpstr = text;
+
+	if(text == NULL) return NULL;
+	int len = strlen(text);
+
+	while(isspace(tmpstr[len - 1])) tmpstr[--len] = '\0';
+	while(*tmpstr && isspace(*tmpstr)) ++tmpstr, --len;
+
+	memmove(text, tmpstr, len + 1);
+
+	debug(1000, "out");
+	return text;
+}
 
 char* oitoa(int value)
 {
@@ -285,6 +304,11 @@ struct tpk* tpkcreateindex(char* path, char* name)
 		ret = 1;
 		goto end;
 	}
+  
+  tpknode->name = strstrip(tpknode->name);
+  tpknode->section = strstrip(tpknode->section);
+  tpknode->desc = strstrip(tpknode->desc);
+  tpknode->arch = strstrip(tpknode->arch);
 
 	if(tpknode->section == NULL) tpknode->section = ostrcat("*", NULL, 0, 0);
 	if(tpknode->desc == NULL) tpknode->desc = ostrcat("*", NULL, 0, 0);
