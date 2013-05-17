@@ -812,6 +812,9 @@ int main(int argc, char *argv[])
 	ret = settimezone(getconfig("timezone", NULL));
 	ret = readextepgconfig(getconfig("extepgfile", NULL));
 
+	//check to remove preinstalled tpk packages
+	ret = tpkremovepre();
+
 	addtimer(&checkdate, START, 2000, -1, NULL, NULL, NULL);
 	if(checkbox("ATEMIO510") == 0)
 		addtimer(&updatevfd, START, 1000, -1, NULL, NULL, NULL);
