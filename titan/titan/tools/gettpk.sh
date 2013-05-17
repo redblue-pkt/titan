@@ -6,12 +6,12 @@ VERSION=$2
 
 cd "$HOME"/flashimg/source.titan/titan/tools
 
-echo gettpkg extensions.hpatch 1
+echo gettpkg extensions.h patch 1
 cat ../extensions.h | sed s!/svn/tpk/sh4/titan!$TPKDIR! > extensions.h.tmp
 mv extensions.h.tmp ../extensions.h
 
 echo gettpkg tpk.h patch 1
-cat ../tpk.h | sed s!//svn/tpk/sh4/titan!$TPKDIR! > tpk.h.tmp
+cat ../tpk.h | sed s!svn/tpk/sh4/titan!$TPKDIR! > tpk.h.tmp
 mv tpk.h.tmp ../tpk.h
 
 echo gettpk tpk.h patch 2
