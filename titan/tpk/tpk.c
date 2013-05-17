@@ -13,7 +13,7 @@
 char* ostrcat(char* value1, char* value2, int free1, int free2);
 int file_exist(char* filename);
 int dvbwrite(int fd, unsigned char* buf, int count, int tout);
-int dvbread(int fd, unsigned char *buf, int pos, int count, int tout, int flag);
+int dvbreadfd(int fd, unsigned char *buf, int pos, int count, int tout, int flag);
 char* strstrip(char *text);
 
 short debug_level = 10;
@@ -162,7 +162,7 @@ int dvbwrite(int fd, unsigned char* buf, int count, int tout)
 
 //flag 0: eof with timeout
 //flag 1: eof without timeout
-int dvbread(int fd, unsigned char *buf, int pos, int count, int tout, int flag)
+int dvbreadfd(int fd, unsigned char *buf, int pos, int count, int tout, int flag)
 {
 	struct timeval timeout;
 	int ret = 0, usec = 0, sec = 0;
