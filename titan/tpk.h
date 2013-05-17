@@ -29,6 +29,7 @@ int tpkcreatefilereal(char* mainpath, char* from, char* to, off64_t start, off64
 struct tpk
 {
 	char* name;
+	char* filename;
 	char* desc;
 	char* section;
 	char* showname;
@@ -71,7 +72,7 @@ void debugtpk()
 	}
 }
 
-struct tpk* addtpk(char *name, char* desc, char* section, char* showname, char* arch, int version, int group, int minversion, int preinstalled, char* url, struct tpk* last)
+struct tpk* addtpk(char *name, char* desc, char* section, char* showname, char* arch, char* filename, int version, int group, int minversion, int preinstalled, char* url, struct tpk* last)
 {
 	struct tpk *newnode = NULL, *prev = NULL, *node = tpk;
 
@@ -85,9 +86,13 @@ struct tpk* addtpk(char *name, char* desc, char* section, char* showname, char* 
 	newnode->name = strstrip(ostrcat(name, NULL, 0, 0));
 	newnode->desc = strstrip(ostrcat(desc, NULL, 0, 0));
 	newnode->section = strstrip(ostrcat(section, NULL, 0, 0));
-	newnode->showname = strstrip(ostrcat(showname, NULL, 0, 0));
 	newnode->arch = strstrip(ostrcat(arch, NULL, 0, 0));
 	newnode->url = strstrip(ostrcat(url, NULL, 0, 0));
+	newnode->filename = strstrip(ostrcat(filename, NULL, 0, 0));
+	if(showname == NULL || showname[0] == '*')
+		newnode->showname = strstrip(ostrcat(name, NULL, 0, 0));
+	else
+		newnode->showname = strstrip(ostrcat(showname, NULL, 0, 0));
 	newnode->version = version;
 	newnode->group = group;
 	newnode->minversion = minversion;
@@ -158,6 +163,9 @@ void deltpk(struct tpk* tpknode)
 
 			free(node->url);
 			node->url = NULL;
+
+			free(node->filename);
+			node->filename = NULL;
 
 			free(node);
 			node = NULL;
@@ -246,7 +254,7 @@ int tpkcreatefilelist(char* mainpath, char* to, char* from, int type, off64_t en
 		tmpstr = ostrcat(tmpstr, TMP, 1, 0);
 		tmpstr = ostrcat(tmpstr, "/", 1, 0);
 		tmpstr = ostrcat(tmpstr, name, 1, 0);
-		tmpstr = ostrcat(tmpstr, ".tpk.png", 1, 0);
+		tmpstr = ostrcat(tmpstr, ".png", 1, 0);
 		writeret = fprintf(fd, "%s#%s#%d#%lld#%lld#%d#%d\n", tmpstr, from, type, endpos, len, major, minor);
 		free(tmpstr); tmpstr = NULL;
 	}
@@ -732,7 +740,7 @@ struct tpk* tpkreadcontrol(char* path, int flag)
 	int len = 0;
 	FILE *fd = NULL;
 	char* fileline = NULL, *tmpstr = NULL;
-	char* showname = NULL, *section = NULL, *desc = NULL, *packagename = NULL, *arch = NULL;
+	char* showname = NULL, *section = NULL, *desc = NULL, *packagename = NULL, *arch = NULL, *filename = NULL;
 	int version = 0, group = 0, minversion = 0, preinstalled = 0;
 	struct tpk* tpknode = NULL;
 
@@ -805,7 +813,14 @@ struct tpk* tpkreadcontrol(char* path, int flag)
 		}
 	}
 
-	tpknode = addtpk(packagename, desc, section, showname, arch, version, group, minversion, preinstalled, NULL, NULL);
+	filename = ostrcat(packagename, "_", 0, 0);
+	filename = ostrcat(filename, oitoa(version), 1, 1);
+	filename = ostrcat(filename, "_", 1, 0);
+	filename = ostrcat(filename, arch, 1, 0);
+
+	if(showname == NULL) showname = ostrcat("*", NULL, 0, 0);
+
+	tpknode = addtpk(packagename, desc, section, showname, arch, filename, version, group, minversion, preinstalled, NULL, NULL);
 
 end:
 	free(showname); showname = NULL;
@@ -813,6 +828,7 @@ end:
 	free(desc); desc = NULL;
 	free(packagename); packagename = NULL;
 	free(arch); arch = NULL;
+	free(filename); filename = NULL;
 	free(fileline); fileline = NULL;
 	if(fd != NULL) fclose(fd);
 	return tpknode;
@@ -1702,11 +1718,12 @@ int tpkinstall(char* file)
 			if(tmpstr != NULL) tmpstr[0] = '\0';
 		}
 	}
+	tmpstr = NULL;
 
 	if(tmpfile == NULL)
 	{
 		err("NULL detect");
-			return 1;
+		return 1;
 	}
 
 	name = basename(tmpfile);
@@ -1822,11 +1839,12 @@ int tpkinstall(char* file)
 
 	//execute pre install
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
-	tmpstr = ostrcat(tmpstr, "/preinst >> ", 1, 0);
-	tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
-	tmpstr = ostrcat(tmpstr, " 2>&1", 1, 0);
+	tmpstr = ostrcat(tmpstr, "/preinst", 1, 0);
 	if(file_exist(tmpstr) == 1)
 	{
+		tmpstr = ostrcat(tmpstr, " >> ", 1, 0);
+		tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
+		tmpstr = ostrcat(tmpstr, " 2>&1", 1, 0);
 		ret = system(tmpstr);
 		if(ret != 0)
 		{
@@ -1859,11 +1877,12 @@ int tpkinstall(char* file)
 
 	//execute post install
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
-	tmpstr = ostrcat(tmpstr, "/postinst >> ", 1, 0);
-	tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
-	tmpstr = ostrcat(tmpstr, " 2>&1", 1, 0);
+	tmpstr = ostrcat(tmpstr, "/postinst", 1, 0);
 	if(file_exist(tmpstr) == 1)
 	{
+		tmpstr = ostrcat(tmpstr, " >> ", 1, 0);
+		tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
+		tmpstr = ostrcat(tmpstr, " 2>&1", 1, 0);
 		ret = system(tmpstr);
 		if(ret != 0)
 		{
@@ -1946,11 +1965,12 @@ int tpkremove(char* file, int restore, int flag)
 
 	//execute pre remove
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
-	tmpstr = ostrcat(tmpstr, "/prerm >> ", 1, 0);
-	tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
-	tmpstr = ostrcat(tmpstr, " 2>&1", 1, 0);
+	tmpstr = ostrcat(tmpstr, "/prerm", 1, 0);
 	if(file_exist(tmpstr) == 1)
 	{
+		tmpstr = ostrcat(tmpstr, " >> ", 1, 0);
+		tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
+		tmpstr = ostrcat(tmpstr, " 2>&1", 1, 0);
 		ret = system(tmpstr);
 		if(ret != 0)
 		{
@@ -1966,11 +1986,12 @@ int tpkremove(char* file, int restore, int flag)
 
 	//execute post remove
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
-	tmpstr = ostrcat(tmpstr, "/postrm >> ", 1, 0);
-	tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
-	tmpstr = ostrcat(tmpstr, " 2>&1", 1, 0);
+	tmpstr = ostrcat(tmpstr, "/postrm", 1, 0);
 	if(file_exist(tmpstr) == 1)
 	{
+		tmpstr = ostrcat(tmpstr, " >> ", 1, 0);
+		tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
+		tmpstr = ostrcat(tmpstr, " 2>&1", 1, 0);
 		ret = system(tmpstr);
 		if(ret != 0)
 		{
@@ -2149,7 +2170,7 @@ int tpklist()
 	int ret = 0, len = 0;
 	FILE *fd = NULL;
 	char* fileline = NULL;
-	char* name = NULL, *showname = NULL, *section = NULL, *desc = NULL, *url = NULL, *arch = NULL;
+	char* name = NULL, *showname = NULL, *section = NULL, *desc = NULL, *url = NULL, *arch = NULL, *filename = NULL;
 	int version = 0, group = 0, minversion = 0, preinstalled = 0;
 	struct tpk* tpknode = NULL, *tpkinstalled = NULL, *tpktmp = NULL;
 
@@ -2259,7 +2280,14 @@ int tpklist()
 			skip = 1;
 
 		if(skip == 0)
-			tpknode = addtpk(name, desc, section, showname, arch, version, group, minversion, preinstalled, url, tpknode);
+		{
+			filename = ostrcat(name, "_", 0, 0);
+			filename = ostrcat(filename, oitoa(version), 1, 1);
+			filename = ostrcat(filename, "_", 1, 0);
+			filename = ostrcat(filename, arch, 1, 0);
+			
+			tpknode = addtpk(name, desc, section, showname, arch, filename, version, group, minversion, preinstalled, url, tpknode);
+		}
 	}
 
 end:
@@ -2274,6 +2302,7 @@ end:
 	free(desc); desc = NULL;
 	free(url); url = NULL;
 	free(arch); arch = NULL;
+	free(filename); filename = NULL;
 	free(fileline); fileline = NULL;
 	if(fd != NULL) fclose(fd);
 	return ret;
@@ -2360,7 +2389,6 @@ int tpkgetindex(int flag)
 	char* fileline = NULL, *ip = NULL, *path = NULL;
 	char* tmpstr1 = NULL, *tmpstr2 = NULL;
 
-	tpkcleantmp(0);
 	ret = mkdir(TMP, 0777);
 	if(ret != 0 && errno != EEXIST)
 	{
@@ -2370,6 +2398,8 @@ int tpkgetindex(int flag)
 	}
 	else
 		ret = 0;
+
+	tpkcleantmp(0);
 
 	fileline = malloc(MINMALLOC);
 	if(fileline == NULL)
@@ -2483,16 +2513,17 @@ int tpkgetpackage(char* package, char* url)
 		tmpstr1 = ostrcat(tmpstr1, path, 1, 0);
 		tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
 		tmpstr1 = ostrcat(tmpstr1, package, 1, 0);
-		tmpstr1 = ostrcat(tmpstr1, ".gz", 1, 0);
+		tmpstr1 = ostrcat(tmpstr1, ".tpk.gz", 1, 0);
 
 		tmpstr2 = ostrcat(tmpstr2, TMP, 1, 0);
 		tmpstr2 = ostrcat(tmpstr2, "/", 1, 0);
 		tmpstr2 = ostrcat(tmpstr2, package, 1, 0);
-		tmpstr2 = ostrcat(tmpstr2, ".gz", 1, 0);
+		tmpstr2 = ostrcat(tmpstr2, ".tpk.gz", 1, 0);
 
 		tmpstr3 = ostrcat(tmpstr3, TMP, 1, 0);
 		tmpstr3 = ostrcat(tmpstr3, "/", 1, 0);
 		tmpstr3 = ostrcat(tmpstr3, package, 1, 0);
+		tmpstr3 = ostrcat(tmpstr3, ".tpk", 1, 0);
 
 		if(ostrcmp("97.74.32.10", ip) == 0)
 			ip = "atemio.dyndns.tv";
@@ -2574,7 +2605,8 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 				tmpstr = ostrcat(tmpstr, node->section, 1, 0);
 				tmpstr = ostrcat(tmpstr, "-", 1, 0);
 				tmpstr = ostrcat(tmpstr, node->showname, 1, 0);
-				addmenulist(&mlist, tmpstr, NULL, tmppic, 0, 0);
+				tmpmlist = addmenulist(&mlist, tmpstr, NULL, tmppic, 0, 0);
+				changemenulistparam(tmpmlist, node->name, NULL);
 				free(tmpstr); tmpstr = NULL;
 			}
 			
@@ -2623,7 +2655,7 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 				tmppic = ostrcat(tmppic, ".png", 1, 0);
 
 			tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 0, 0);
-			changemenulistparam(tmpmlist, node->showname, node->url);
+			changemenulistparam(tmpmlist, node->filename, node->url);
 			free(tmpstr); tmpstr = NULL;
 			free(tmpinfo); tmpinfo = NULL;
 			free(tmppic); tmppic = NULL;
