@@ -360,9 +360,9 @@ int tpkcreatefilereal(char* mainpath, char* from, char* to, off64_t start, off64
 	while(len != 0)
 	{
 		if(len - count > MINMALLOC)
-			readret = dvbread(fdfrom, buf, 0, MINMALLOC, -1, 1);
+			readret = dvbreadfd(fdfrom, buf, 0, MINMALLOC, -1, 1);
 		else
-			readret = dvbread(fdfrom, buf, 0, len - count, -1, 1);
+			readret = dvbreadfd(fdfrom, buf, 0, len - count, -1, 1);
 		if(readret <= 0)
 		{
 			err("read file %s", from);
@@ -928,7 +928,7 @@ int tpkgettail(char* file, off64_t* startpos, off64_t* len)
 	else
 		ret = 0;
 
-	ret = dvbread(fd, (char*)startpos, 0, sizeof(off64_t), -1, 1);
+	ret = dvbreadfd(fd, (unsigned char*)startpos, 0, sizeof(off64_t), -1, 1);
 	if(ret <= 0)
 	{
 		err("read file %s", file);
@@ -938,7 +938,7 @@ int tpkgettail(char* file, off64_t* startpos, off64_t* len)
 	else
 		ret = 0;
 
-	ret = dvbread(fd, (char*)len, 0, sizeof(off64_t), -1, 1);
+	ret = dvbreadfd(fd, (unsigned char*)len, 0, sizeof(off64_t), -1, 1);
 	if(ret <= 0)
 	{
 		err("read file %s", file);
@@ -2232,7 +2232,7 @@ int tpklist()
 			fileline[len] = '\0';
 
 		ret = sscanf(fileline, "%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%d#%d#%d#%d", url, name, showname, section, desc, arch, &version, &group, &minversion, &preinstalled);
-		if(ret != 9)
+		if(ret != 10)
 		{
 			err("read file %s", TMPALLPACKAGES);
 			continue;
