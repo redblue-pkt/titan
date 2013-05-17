@@ -15,6 +15,7 @@ int file_exist(char* filename);
 int dvbwrite(int fd, unsigned char* buf, int count, int tout);
 int dvbreadfd(int fd, unsigned char *buf, int pos, int count, int tout, int flag);
 char* strstrip(char *text);
+char* oitoa(int value);
 
 short debug_level = 10;
 #define MINMALLOC 4096
