@@ -198,16 +198,6 @@ void gethttpstructmsg(struct stimerthread* timernode, struct download* node, int
 //numinput.h
 char* numinput(char* title, char* num, char* mask, int isip);
 
-//ipkg.h
-void freeipkg();
-int ipkg_update(void);
-int ipkg_upgrade(void);
-int ipkg_list(void);
-int ipkg_install(const char* package);
-int ipkg_remove(const char* package, int purge);
-struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* section, int showpng, int flag);
-int ipkg_list_installed(void);
-
 //frontenddev.h
 struct dvbdev* fegetdummy();
 void settunerstatus();
