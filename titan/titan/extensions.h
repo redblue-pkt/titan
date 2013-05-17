@@ -95,7 +95,7 @@ void screenextensions(int mode, char* path, int first)
 			debug(130, "section: %s", mbox->name);
 			mbox1 = tpkmenulist(mlist1, "tpkinstall", "Tpk Install - select file", "/tmp/tpk", mbox->name, 2, 1);
 			
-			if(mbox1 != NULL && mbox1->param1 != NULL)
+			if(mbox1 != NULL && mbox1->param != NULL && mbox1->param1 != NULL)
 			{
 				debug(130, "file: %s", mbox1->name);
 
@@ -113,7 +113,7 @@ void screenextensions(int mode, char* path, int first)
 					drawscreen(load, 0, 0);
 					resettvpic();
 					char* log = NULL;
-					if(tpkgetpackage(mbox1->name, ((struct tpk*)mbox1->param1)->url) == 0)
+					if(tpkgetpackage(mbox1->param, mbox1->param1) == 0)
 					{
 						log = readfiletomem(TPKLOG, 0);
 						if(log == NULL) log = ostrcat("Install success", NULL, 0, 0);
@@ -138,8 +138,8 @@ void screenextensions(int mode, char* path, int first)
 			}
 		}
 			
-		freemenulist(mlist1, 1); mlist1 = NULL;
-		freemenulist(mlist, 1); mlist = NULL;
+		freemenulist(mlist1, 0); mlist1 = NULL;
+		freemenulist(mlist, 0); mlist = NULL;
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
 		freetpk();
@@ -150,7 +150,7 @@ void screenextensions(int mode, char* path, int first)
 		tpklistinstalled();
 		mbox = tpkmenulist(mlist, NULL, "Tpk Remove - select file", NULL, NULL, 1, 2);
 		
-		if(mbox != NULL)
+		if(mbox != NULL && mbox->param != NULL)
 		{
 			debug(130, "file: %s", mbox->name);
 
@@ -166,7 +166,7 @@ void screenextensions(int mode, char* path, int first)
 				drawscreen(load, 0, 0);
 				resettvpic();
 				char* log = NULL;
-				if(tpkremove(mbox->name, 0, 0) == 0)
+				if(tpkremove(mbox->param, 0, 0) == 0)
 				{
 					log = readfiletomem(TPKLOG, 0);
 					if(log == NULL) log = ostrcat("Remove success", NULL, 0, 0);
@@ -188,7 +188,7 @@ void screenextensions(int mode, char* path, int first)
 				}
 			}
 		}
-		freemenulist(mlist, 1); mlist = NULL;
+		freemenulist(mlist, 0); mlist = NULL;
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
 		freetpk();
@@ -269,7 +269,7 @@ void screenextensions(int mode, char* path, int first)
 				}
 			}
 		}
-		freemenulist(mlist, 1); mlist = NULL;
+		freemenulist(mlist, 0); mlist = NULL;
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
 		if(mbox != NULL) screenextensions(2, path, 0);
@@ -292,6 +292,8 @@ void screenextensions(int mode, char* path, int first)
 		}
 		unlink("/tmp/.tpk_upgrade_start");
 	}
+
+	if(first == 1) tpkcleantmp(0);
 	status.hangtime = getconfigint("hangtime", NULL);
 }
 
