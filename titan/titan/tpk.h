@@ -82,12 +82,12 @@ struct tpk* addtpk(char *name, char* desc, char* section, char* showname, char* 
 		return NULL;
 	}
 
-	newnode->name = ostrcat(name, NULL, 0, 0);
-	newnode->desc = ostrcat(desc, NULL, 0, 0);
-	newnode->section = ostrcat(section, NULL, 0, 0);
-	newnode->showname = ostrcat(showname, NULL, 0, 0);
-	newnode->arch = ostrcat(arch, NULL, 0, 0);
-	newnode->url = ostrcat(url, NULL, 0, 0);
+	newnode->name = strstrip(ostrcat(name, NULL, 0, 0));
+	newnode->desc = strstrip(ostrcat(desc, NULL, 0, 0));
+	newnode->section = strstrip(ostrcat(section, NULL, 0, 0));
+	newnode->showname = strstrip(ostrcat(showname, NULL, 0, 0));
+	newnode->arch = strstrip(ostrcat(arch, NULL, 0, 0));
+	newnode->url = strstrip(ostrcat(url, NULL, 0, 0));
 	newnode->version = version;
 	newnode->group = group;
 	newnode->minversion = minversion;
