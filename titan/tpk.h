@@ -2323,10 +2323,11 @@ int tpkupdate()
 		tpknode = tpk;
 		while(tpknode != NULL)
 		{
-			if(tpknode->version > tpkinstallednode->version)
+			if(ostrcmp(tpkinstallednode->name, tpknode->name) == 0 && tpknode->version > tpkinstallednode->version)
 			{
 				tpkremove(tpkinstallednode->name, 0, 0);
-				tpkgetpackage(tpkinstallednode->name, tpkinstallednode->url);
+				tpkgetpackage(tpknode->filename, tpknode->url);
+				break;
 			}
 			tpknode = tpknode->next;
 		}
