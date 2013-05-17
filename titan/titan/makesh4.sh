@@ -147,7 +147,7 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] Make Ipkdir"
 echo "[titan]--------------------------------------------------------"
 
-"$HOME"/flashimg/source.titan/titan/tools/getipk.sh $IPKDIR $VERSION
+"$HOME"/flashimg/source.titan/titan/tools/gettpk.sh $IPKDIR $VERSION
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Ipkdir done"
