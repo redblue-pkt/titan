@@ -2440,6 +2440,9 @@ int tpkgetindex(int flag)
 
 		if(ip != NULL && path != NULL)
 		{
+			if(ostrcmp("97.74.32.10", ip) == 0)
+				ip = "atemio.dyndns.tv";
+
 			tmpstr1 = ostrcat(tmpstr1, path, 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, HTTPPACKAGES, 1, 0);
