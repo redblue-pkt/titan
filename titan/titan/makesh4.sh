@@ -144,13 +144,13 @@ echo "[titan]--------------------------------------------------------"
 #echo "[titan]--------------------------------------------------------"
 
 echo "[titan]--------------------------------------------------------"
-echo "[titan] Make Ipkdir"
+echo "[titan] Make Tpkdir"
 echo "[titan]--------------------------------------------------------"
 
 "$HOME"/flashimg/source.titan/titan/tools/gettpk.sh $IPKDIR $VERSION
 
 echo "[titan]--------------------------------------------------------"
-echo "[titan] Ipkdir done"
+echo "[titan] Tpkdir done"
 echo "[titan]--------------------------------------------------------"
 
 if [ $BUILDTYPE == 220 ]; then
