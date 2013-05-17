@@ -626,27 +626,27 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screenfeed();
 	}
-	else if(ostrcmp("extensions_ipkinstall", menuentry->name) == 0)
+	else if(ostrcmp("extensions_tpkinstall", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		screenextensions(0, NULL, 1);
 	}
-	else if(ostrcmp("extensions_ipkremove", menuentry->name) == 0)
+	else if(ostrcmp("extensions_tpkremove", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		screenextensions(1, NULL, 1);
 	}
-	else if(ostrcmp("extensions_tmpipkinstall", menuentry->name) == 0)
+	else if(ostrcmp("extensions_tmptpkinstall", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		screenextensions(2, NULL, 1);
 	}
-	else if(ostrcmp("extensions_ipkupgrade", menuentry->name) == 0)
+	else if(ostrcmp("extensions_tpkupgrade", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		screenextensions(3, NULL, 1);
 	}
-	else if(ostrcmp("extensions_mediaipkinstall", menuentry->name) == 0)
+	else if(ostrcmp("extensions_mediatpkinstall", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		screenextensions_check(1);
