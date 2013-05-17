@@ -728,8 +728,6 @@ int tpkcreatallearchive(char* dirname, char* name)
 					ret = 1;
 					goto end;
 				}
-				
-				freetpk();
 
 				ret = unlink(TPKFILELIST);
 				if(ret != 0 && errno != ENOENT)
@@ -753,7 +751,7 @@ int tpkcreatallearchive(char* dirname, char* name)
 
 				tmpstr = ostrcat(tmpstr, path, 1, 0);
 				tmpstr = ostrcat(tmpstr, "/preview", 1, 0);
-				ret = tpkcreatepreviewarchive(tmpstr, tmpstr, entry->d_name);
+				ret = tpkcreatepreviewarchive(tmpstr, tmpstr, tpknode->name);
 				free(tmpstr); tmpstr = NULL;
 				if(ret != 0)
 				{
@@ -761,6 +759,8 @@ int tpkcreatallearchive(char* dirname, char* name)
 					ret = 1;
 					goto end;
 				}
+
+				freetpk();
 			}
 		}
 	}
