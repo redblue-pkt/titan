@@ -2430,7 +2430,7 @@ int tpkgetindex(int flag)
 
 		if(ostrcmp("97.74.32.10", ip) == 0)
 		{
-			if(ostrcmp(path, "svn/ipk/sh4/titan") == 0)
+			if(ostrcmp(path, "svn/tpk/sh4/titan") == 0)
 			{
 				textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 				ret = 1;
