@@ -278,6 +278,7 @@ void screenextensions(int mode, char* path, int first)
 	{
 		drawscreen(load, 0, 0);
 		resettvpic();
+		if(first == 1) tpkgetindex(0);
 		unlink(TPKLOG);
 		writesys("/tmp/.tpk_upgrade_start", "0", 0);
 		tpkupdate();
