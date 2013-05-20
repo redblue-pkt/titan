@@ -241,7 +241,7 @@ void screenextensions(int mode, char* path, int first)
 				{
 					tmpstr = ostrcat(tmpstr, "/tmp", 1, 0);
 					tmpstr = ostrcat(tmpstr, "/", 1, 0);
-					tmpstr = ostrcat(tmpstr, "mbox->name", 1, 0);
+					tmpstr = ostrcat(tmpstr, mbox->name, 1, 0);
 					ret = tpkinstall(tmpstr);
 					free(tmpstr); tmpstr = NULL;
 				}
@@ -249,7 +249,7 @@ void screenextensions(int mode, char* path, int first)
 				{
 					tmpstr = ostrcat(tmpstr, path, 1, 0);
 					tmpstr = ostrcat(tmpstr, "/", 1, 0);
-					tmpstr = ostrcat(tmpstr, "mbox->name", 1, 0);
+					tmpstr = ostrcat(tmpstr, mbox->name, 1, 0);
 					ret = tpkinstall(tmpstr);
 					free(tmpstr); tmpstr = NULL;
 				}
