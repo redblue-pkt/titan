@@ -2685,7 +2685,7 @@ char* gettpktmplist(char* path)
 
 	cmd = ostrcat(cmd, "ls ", 1, 0);
 	cmd = ostrcat(cmd, path, 1, 0);
-	cmd = ostrcat(cmd, " | grep '\\.tpk'", 1, 0);
+	cmd = ostrcat(cmd, " | grep '\\.tpk' | sed s/.gz//", 1, 0);
 
 	tmpstr = command(cmd);
 
