@@ -1742,6 +1742,11 @@ int tpkinstall(char* file)
 		return 1;
 	}
 
+	//remove del flag file
+	tmpstr = ostrcat(path, ".del", 0, 0);
+	unlink(tmpstr);
+	free(tmpstr); tmpstr = NULL;
+
 	ret = mkdir(path, 0777);
 	if(ret != 0)
 	{
@@ -1928,7 +1933,8 @@ end:
 }
 
 //flag 0: clean workdir
-//flag 1: don't clean workdir
+//flag 1: don't clean workdir, don't create del flag file
+//flag 2: same as 0 but don't create del flag file
 int tpkremove(char* file, int restore, int flag)
 {
 	int ret = 0;
@@ -1961,6 +1967,14 @@ int tpkremove(char* file, int restore, int flag)
 		err("package not exist %s", path);
 		ret = 1;
 		goto end;
+	}
+
+	//create del flag file
+	if(flag == 0)
+	{
+		tmpstr = ostrcat(name, ".del", 0, 0);
+		tpkcreateflagfile(EXTRACTDIR, tmpstr);
+		free(tmpstr); tmpstr = NULL;
 	}
 
 	//execute pre remove
@@ -2003,7 +2017,7 @@ int tpkremove(char* file, int restore, int flag)
 	}
 	free(tmpstr); tmpstr = NULL;
 end:
-	if(flag == 0)
+	if(flag == 0 || flag == 2)
 	{
 		tpkcleanworkdir(path);
 		int iret = rmdir(path);
@@ -2064,8 +2078,9 @@ int tpkremovepre()
 				tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
 				if(tmpstr != NULL)
 				{
-					tmpstr[strlen(tmpstr) - 4] = '\0';
-					if(file_exist(tmpstr) == 0)
+					tmpstr[strlen(tmpstr) - 7] = '\0';
+					tmpstr = ostrcat(tmpstr, "del", 1, 0);
+					if(file_exist(tmpstr) == 1)
 						tpkdelpre(path);
 				}
 				free(tmpstr); tmpstr = NULL;
@@ -2325,7 +2340,7 @@ int tpkupdate()
 		{
 			if(ostrcmp(tpkinstallednode->name, tpknode->name) == 0 && tpknode->version > tpkinstallednode->version)
 			{
-				tpkremove(tpkinstallednode->name, 0, 0);
+				tpkremove(tpkinstallednode->name, 0, 2);
 				tpkgetpackage(tpknode->filename, tpknode->url);
 				break;
 			}
