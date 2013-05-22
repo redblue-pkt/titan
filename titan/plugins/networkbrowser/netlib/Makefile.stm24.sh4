@@ -7,7 +7,7 @@ DEPS = $(patsubst %.o,%.d,$(OBJS))
 CC = $(HOME)/flashimg/BUILDGIT/checkout_stm24/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc
 AR = $(HOME)/flashimg/BUILDGIT/checkout_stm24/tdt/tufsbox/devkit/sh4/bin/sh4-linux-ar
 
-CFLAGS = -Os -Wall -g -I.
+CFLAGS = -Os -Wall -fPIC -I.
 
 all: $(LIB)
 
