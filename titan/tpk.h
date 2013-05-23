@@ -17,6 +17,7 @@
 #define TMPPACKAGES TMP"/Packages"
 #define TMPPREVIEW TMP"/Packages.preview"
 #define EXTRACTDIR "/mnt/tpk" //path must exist
+#define PREFILE "/var/etc/.preinstalled"
 
 #define HTTPPACKAGES "Packages.gz"
 #define HTTPPREVIEW "Packages.preview.gz"
@@ -195,10 +196,21 @@ int tpkcreateflagfile(char* path, char* file)
 	int ret = 0;
 	FILE* fd = NULL;
 	char* tmpstr = NULL;
+	
+	if(path == NULL)
+	{
+		err("NULL detect");
+		return 1;
+	}
 
-	tmpstr = ostrcat(tmpstr, path, 1, 0);
-	tmpstr = ostrcat(tmpstr, "/", 1, 0);
-	tmpstr = ostrcat(tmpstr, file, 1, 0);
+	if(file == NULL)
+		tmpstr = ostrcat(tmpstr, path, 1, 0);	
+	else
+	{
+		tmpstr = ostrcat(tmpstr, path, 1, 0);
+		tmpstr = ostrcat(tmpstr, "/", 1, 0);
+		tmpstr = ostrcat(tmpstr, file, 1, 0);
+	}
 
 	fd = fopen(tmpstr, "w");
 	if(fd == NULL)
@@ -284,6 +296,7 @@ int tpkcreatefile(char* mainpath, char* from, char* to, off64_t start, off64_t l
 	ret = tpkcreatefilereal(mainpath, from, to, start, len, flag, NULL);
 	return ret;
 }
+
 int tpkcreatefilereal(char* mainpath, char* from, char* to, off64_t start, off64_t len, int flag, char* name)
 {
 	int fdfrom = -1, fdto = -1, ret = 0, readret = 0, writeret = 0;
@@ -723,6 +736,7 @@ int tpkcleanworkdir(char* dir)
 			}
 		}
 	}
+
 end:
 	if(d && closedir(d))
 	{
@@ -963,86 +977,9 @@ int tpkgettail(char* file, off64_t* startpos, off64_t* len)
 	}
 	else
 		ret = 0;
+
 end:
 	close(fd);
-	return ret;
-}
-
-int tpkdelpre(char* file)
-{
-	int ret = 0, ilen = 0, type = 0, major = 0, minor = 0;
-	off64_t startpos = 0, len = 0;
-	FILE *fd = NULL;
-	char* fileline = NULL, *from = NULL, *to = NULL;
-
-	fileline = malloc(MINMALLOC);
-	if(fileline == NULL)
-	{
-		err("no mem");
-		ret = 1;
-		goto end;
-	}
-
-	from = malloc(MINMALLOC);
-	if(from == NULL)
-	{
-		err("no mem");
-		ret = 1;
-		goto end;
-	}
-
-	to = malloc(MINMALLOC);
-	if(to == NULL)
-	{
-		err("no mem");
-		ret = 1;
-		goto end;
-	}
-
-	fd = fopen(file, "r");
-	if(fd == NULL)
-	{
-		perr("can't open %s", file);
-		ret = 1;
-		goto end;
-	}
-
-	while(fgets(fileline, MINMALLOC, fd) != NULL)
-	{
-		ilen = strlen(fileline) - 1;
-		if(ilen >= 0 && fileline[ilen] == '\n')
-			fileline[ilen] = '\0';
-		ilen--;
-		if(ilen >= 0 && fileline[ilen] == '\r')
-			fileline[ilen] = '\0';
-
-		ret = sscanf(fileline, "%[^#]#%[^#]#%d#%lld#%lld#%d#%d", to, from, &type, &startpos, &len, &major, &minor);
-		if(ret != 7)
-		{
-			err("read preinstalled file");
-			continue;
-		}
-		ret = 0;
-
-		if(type == DT_REG || type == DT_LNK || type == DT_BLK || type == DT_CHR || type == DT_FIFO)
-		{
-			ret = unlink(to);
-			if(ret != 0 && errno != ENOENT)
-			{
-				debug(130, "can't remove file %s", to);
-			}
-			ret = 0;
-		}
-		else if(type == DT_DIR) //dir
-		{
-			//do nothing
-		}
-	}
-end:
-	free(fileline); fileline = NULL;
-	free(from); from = NULL;
-	free(to); to = NULL;
-	if(fd != NULL) fclose(fd);
 	return ret;
 }
 
@@ -1504,6 +1441,7 @@ int tpkextractfilelist(char* file, char* path, int flag)
 			}
 		}
 	}
+
 end:
 	free(fileline); fileline = NULL;
 	free(from); from = NULL;
@@ -1634,6 +1572,7 @@ int tpkextractindex(char* url)
 			goto end;
 		}
 	}
+
 end:
 	if(fdr != NULL) fclose(fdr);
 	if(fdw != NULL) fclose(fdw);
@@ -1837,7 +1776,7 @@ int tpkinstall(char* file)
 	//check minversion
 	if(tpknode->minversion != 0 && tpknode->minversion < PLUGINVERSION)
 	{
-		err("minversion to short %d\n", tpknode->minversion);
+		err("minversion to short %d", tpknode->minversion);
 		ret = 1;
 		goto end;
 	}
@@ -1898,6 +1837,24 @@ int tpkinstall(char* file)
 		}
 	}
 	free(tmpstr); tmpstr = NULL;
+	
+	//del preinst file
+	tmpstr = ostrcat(tmpstr, path, 1, 0);
+	tmpstr = ostrcat(tmpstr, "/preinst", 1, 0);
+	unlink(tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	
+	//del postinst file
+	tmpstr = ostrcat(tmpstr, path, 1, 0);
+	tmpstr = ostrcat(tmpstr, "/postinst", 1, 0);
+	unlink(tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	
+	//del filelist
+	tmpstr = ostrcat(tmpstr, path, 1, 0);
+	tmpstr = ostrcat(tmpstr, "/filelist.tpk", 1, 0);
+	unlink(tmpstr);
+	free(tmpstr); tmpstr = NULL;
 
 	//create ok flagfile
 	ret = tpkcreateflagfile(path, ".tpkok");
@@ -1907,6 +1864,7 @@ int tpkinstall(char* file)
 		ret = 1;
 		goto end;
 	}
+	
 end:
 	freetpk();
 	tpk = tpkinstalled;
@@ -2016,6 +1974,7 @@ int tpkremove(char* file, int restore, int flag)
 		}
 	}
 	free(tmpstr); tmpstr = NULL;
+
 end:
 	if(flag == 0 || flag == 2)
 	{
@@ -2032,13 +1991,13 @@ end:
 	return ret;
 }
 
-int tpkremovepre()
+int tpkupdatepre()
 {
 	DIR *d;
 	int ret = 0;
-	char* tmpstr = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL;
 
-	if(file_exist(PREDIR) == 0)
+	if(file_exist(PREFILE) == 1)
 		return 0;
 
 	d = opendir(PREDIR); //Open the directory
@@ -2061,9 +2020,9 @@ int tpkremovepre()
 		if(!entry) //no more entries, so break
 			break;
 
-		if(entry->d_type == DT_REG)
+		if(entry->d_type == DT_DIR)
 		{
-			if(entry->d_name != NULL && strstr(entry->d_name, ".tpk.pre") != NULL)
+			if(entry->d_name != NULL && entry->d_name[0] != '.')
 			{
 				path_length = snprintf(path, PATH_MAX, "%s/%s", PREDIR, entry->d_name);
 				if(path_length >= PATH_MAX)
@@ -2076,23 +2035,104 @@ int tpkremovepre()
 				tmpstr = ostrcat(tmpstr, EXTRACTDIR, 1, 0);
 				tmpstr = ostrcat(tmpstr, "/", 1, 0);
 				tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
-				if(tmpstr != NULL)
+				ret = mkdir(tmpstr, 0777);
+				if(ret != 0 && errno != EEXIST)
 				{
-					tmpstr[strlen(tmpstr) - 7] = '\0';
-					tmpstr = ostrcat(tmpstr, "del", 1, 0);
-					if(file_exist(tmpstr) == 1)
-						tpkdelpre(path);
+					err("create path %s", tmpstr);
+					ret = 0;
+					free(tmpstr); tmpstr = NULL;
+					continue;
 				}
 				free(tmpstr); tmpstr = NULL;
-				ret = unlink(path);
-				if(ret != 0 && errno != ENOENT)
+				
+				//copy control file
+				tmpstr = ostrcat(tmpstr, path, 1, 0);
+				tmpstr = ostrcat(tmpstr, "/control", 1, 0);
+	
+				tmpstr1 = ostrcat(tmpstr1, EXTRACTDIR, 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, entry->d_name, 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, "/control", 1, 0);
+	
+				ret = tpkcreatefile("", tmpstr, tmpstr1, 0, -1, 0);
+				if(ret != 0)
 				{
-					debug(130, "can't remove file %s", path);
+					err("create preinstalled control file %s", tmpstr1);
 				}
-				ret = 0;
+				free(tmpstr); tmpstr = NULL;
+				free(tmpstr1); tmpstr1 = NULL;
+				
+				//copy prerm file
+				tmpstr = ostrcat(tmpstr, path, 1, 0);
+				tmpstr = ostrcat(tmpstr, "/prerm", 1, 0);
+	
+				tmpstr1 = ostrcat(tmpstr1, EXTRACTDIR, 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, entry->d_name, 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, "/prerm", 1, 0);
+	
+				ret = tpkcreatefile("", tmpstr, tmpstr1, 0, -1, 0);
+				if(ret != 0)
+				{
+					err("create preinstalled prerm file %s", tmpstr1);
+				}
+				free(tmpstr); tmpstr = NULL;
+				free(tmpstr1); tmpstr1 = NULL;
+				
+				//copy postrm file
+				tmpstr = ostrcat(tmpstr, path, 1, 0);
+				tmpstr = ostrcat(tmpstr, "/postrm", 1, 0);
+	
+				tmpstr1 = ostrcat(tmpstr1, EXTRACTDIR, 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, entry->d_name, 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, "/postrm", 1, 0);
+	
+				ret = tpkcreatefile("", tmpstr, tmpstr1, 0, -1, 0);
+				if(ret != 0)
+				{
+					err("create preinstalled postrm file %s", tmpstr1);
+				}
+				free(tmpstr); tmpstr = NULL;
+				free(tmpstr1); tmpstr1 = NULL;
+				
+				//copy restore file
+				tmpstr = ostrcat(tmpstr, path, 1, 0);
+				tmpstr = ostrcat(tmpstr, "/restore.tpk", 1, 0);
+	
+				tmpstr1 = ostrcat(tmpstr1, EXTRACTDIR, 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, entry->d_name, 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, "/restore.tpk", 1, 0);
+	
+				ret = tpkcreatefile("", tmpstr, tmpstr1, 0, -1, 0);
+				if(ret != 0)
+				{
+					err("create preinstalled restore file %s", tmpstr1);
+				}
+				free(tmpstr); tmpstr = NULL;
+				free(tmpstr1); tmpstr1 = NULL;
+				
+				//check if .del file exist
+				tmpstr = ostrcat(tmpstr, EXTRACTDIR, 1, 0);
+				tmpstr = ostrcat(tmpstr, "/", 1, 0);
+				tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
+				tmpstr = ostrcat(tmpstr, ".del", 1, 0);
+				
+				tmpstr1 = ostrcat(tmpstr1, EXTRACTDIR, 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, entry->d_name, 1, 0);
+				
+				if(file_exist(tmpstr) == 1)
+					tpkremove(tmpstr1, 0, 2);
+				
+				free(tmpstr); tmpstr = NULL;
+				free(tmpstr1); tmpstr1 = NULL;
+				
 			}
 		}
 	}
+
 end:
 	if(d && closedir(d))
 	{
@@ -2100,13 +2140,13 @@ end:
 		ret = 1;
 	}
 
-	ret = rmdir(PREDIR);
-	if(ret != 0 && errno != ENOENT)
+	//create preinstalled flag file
+	ret = tpkcreateflagfile(PREFILE, NULL);
+	if(ret != 0)
 	{
-		debug(130, "can't remove file %s", PREDIR);
+		err("create flag file %s", PREFILE);	
 	}
-	ret = 0;
-
+	
 	return ret;
 }
 
@@ -2170,6 +2210,7 @@ int tpklistinstalled()
 			}
 		}
 	}
+
 end:
 	if(d && closedir(d))
 	{
@@ -2494,6 +2535,7 @@ int tpkgetindex(int flag)
 			free(tmpstr1); tmpstr1 = NULL;
 		}
 	}
+
 end:
 	if(fd != NULL) fclose(fd);
 	free(fileline); fileline = NULL;
@@ -2556,6 +2598,7 @@ int tpkgetpackage(char* package, char* url)
 		free(tmpstr2); tmpstr2 = NULL;
 		free(tmpstr3); tmpstr3 = NULL;
 	}
+
 end:
 	free(tmpurl); tmpurl = NULL;
 	return ret;
