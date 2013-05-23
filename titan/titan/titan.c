@@ -813,7 +813,7 @@ int main(int argc, char *argv[])
 	ret = readextepgconfig(getconfig("extepgfile", NULL));
 
 	//check to remove preinstalled tpk packages
-	//ret = tpkremovepre();
+	ret = tpkupdatepre();
 
 	addtimer(&checkdate, START, 2000, -1, NULL, NULL, NULL);
 	if(checkbox("ATEMIO510") == 0)
