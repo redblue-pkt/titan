@@ -1,0 +1,15 @@
+/var#*#4#0#0#0#0
+/var/usr#*#4#0#0#0#0
+/var/usr/local#*#4#0#0#0#0
+/var/usr/local/share#*#4#0#0#0#0
+/var/usr/local/share/titan#*#4#0#0#0#0
+/var/usr/local/share/titan/plugins#*#4#0#0#0#0
+/var/usr/local/share/titan/plugins/imdb#*#4#0#0#0#0
+/var/usr/local/share/titan/plugins/imdb/plugin.png#*#8#0#2318#0#0
+/var/usr/local/share/titan/plugins/imdb/imdb.so#*#8#2318#18112#0#0
+/var/usr/local/share/titan/plugins/imdb/skin.xml#*#8#20430#2961#0#0
+/CONTROL/control#*#8#23391#212#0#0
+/CONTROL/postrm#*#8#23603#440#0#0
+/CONTROL/prerm#*#8#24043#356#0#0
+/CONTROL/preinst#*#8#24399#1195#0#0
+/CONTROL/postinst#*#8#25594#358#0#0

@@ -1,0 +1,12 @@
+#!/bin/sh
+TMP=/tmp/.wlan
+if [ `df | grep /dev/mtdblock | grep var | sed 's/ \+/ /g' | cut -d ' ' -f4 | head -n1 | wc -l` -eq 1 ]; then
+	SPACE=`df | grep /dev/mtdblock | grep var | sed 's/ \+/ /g' | cut -d ' ' -f4 | head -n1`
+	FREE=`expr $SPACE - 100`
+	echo new freespace size $FREE kb
+else
+	echo "syncing disk"
+	sync
+fi
+echo "removing wireless rt5370sta.ko modul"
+exit 0
