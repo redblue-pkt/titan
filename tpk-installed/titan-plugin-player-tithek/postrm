@@ -1,0 +1,15 @@
+#!/bin/sh
+TMP=/tmp/.tmp
+
+rm -r /var/usr/local/share/titan/plugins/tithek
+
+echo "successfully removed"
+if [ `df | grep /dev/mtdblock | grep var | sed 's/ \+/ /g' | cut -d ' ' -f4 | head -n1 | wc -l` -eq 1 ]; then
+	SPACE=`df | grep /dev/mtdblock | grep var | sed 's/ \+/ /g' | cut -d ' ' -f4 | head -n1`
+	FREE=`expr $SPACE - 100`
+	echo new freespace size $FREE kb
+else
+	echo "syncing disk"
+	sync
+fi
+exit 0

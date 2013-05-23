@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+TMP=/tmp/.tmp
+
+model=`cat /etc/model`
+echo""
+echo "Checking your Boxtype...."
+echo "Some Plugins will not work correctly on your $model!"
+echo ""
+if [ "$model" = "" ]; then
+	echo "Sorry! This Plugin is not available for your $model because it will not work correctly!!!"
+	echo "Aborting installation..."
+	exit 1
+else
+	echo "Boxtype: $model OK"
+fi
+
+if [ `df | grep /dev/mtdblock | grep var | sed 's/ \+/ /g' | cut -d ' ' -f4 | head -n1 | wc -l` -eq 1 ]; then
+	SPACE=`df | grep /dev/mtdblock | grep var | sed 's/ \+/ /g' | cut -d ' ' -f4 | head -n1`
+	FREE=`expr $SPACE - 100`
+	SIZE=16
+	echo "checking freespace"
+	echo packege size $SIZE kb
+	echo freespace size $FREE kb
+	if  [ "$FREE" -lt "$SIZE" ]; then
+		echo "sorry no freespace left on device"
+		exit 1
+	else
+		echo ok		
+	fi
+else
+	echo "syncing disk"
+	sync
+fi  
+echo "installing TiThek ..."
+
+exit 0
