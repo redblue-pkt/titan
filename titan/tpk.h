@@ -983,7 +983,9 @@ end:
 	return ret;
 }
 
-int tpkdel(char* path, int restore)
+//flag 0: normal
+//flag 1: don't del dir
+int tpkdel(char* path, int restore, int flag)
 {
 	int ret = 0, len = 0, newtype = 0, oldtype = 0, major = 0, minor = 0, exist = 0;
 	FILE *fd = NULL;
@@ -1034,13 +1036,19 @@ int tpkdel(char* path, int restore)
 		if(len >= 0 && fileline[len] == '\r')
 			fileline[len] = '\0';
 
-		ret = sscanf(fileline, "%[^#]#%[^#]#%d#%d#%d#%d#%d", to, from, &newtype, &oldtype, &major, &minor, &exist);
+		ret = sscanf(fileline, "%[^#]#%[^#]#%d#%d#%d#%d#%d", to, from, &newtype, &oldtype, &exist, &major, &minor);
 		if(ret != 7)
 		{
 			err("read restore file");
 			continue;
 		}
 		ret = 0;
+
+		if(flag == 1)
+		{
+			oldtype = -1;
+			exist = 1;
+		}
 
 		if(newtype == DT_REG || newtype == DT_LNK || newtype == DT_BLK || newtype == DT_CHR || newtype == DT_FIFO)
 		{
@@ -1081,7 +1089,7 @@ int tpkdel(char* path, int restore)
 
 		if(oldtype == DT_REG) //file
 		{
-			if(from[0] != '*' && restore == 1)
+			if(restore == 1 && from[0] != '*')
 				tpkcreatefile("", from, to, 0, -1, 0);
 		}
 		else if(oldtype == DT_LNK) //link
@@ -1165,7 +1173,7 @@ int tpkdelbackup(char* path)
 		if(len >= 0 && fileline[len] == '\r')
 			fileline[len] = '\0';
 
-		ret = sscanf(fileline, "%[^#]#%[^#]#%d#%d#%d#%d#%d", to, from, &newtype, &oldtype, &major, &minor, &exist);
+		ret = sscanf(fileline, "%[^#]#%[^#]#%d#%d#%d#%d#%d", to, from, &newtype, &oldtype, &exist, &major, &minor);
 		if(ret != 7)
 		{
 			err("read restore file");
@@ -1272,7 +1280,7 @@ int tpkwriterestore(char* path, char* to, int newtype, int oldtype, int exist)
 
 	if(from == NULL) from = ostrcat("*", NULL, 0, 0);
 
-	ret = fprintf(fd, "%s#%s#%d#%d#%d#%d#%d\n", to, from, newtype, oldtype, major, minor, exist);
+	ret = fprintf(fd, "%s#%s#%d#%d#%d#%d#%d\n", to, from, newtype, oldtype, exist, major, minor);
 	if(ret < 0)
 	{
 		perr("writting restorefile");
@@ -1578,7 +1586,7 @@ end:
 	if(fdw != NULL) fclose(fdw);
 
 	if(ret != 0)
-		tpkdel(TMP, 0);
+		tpkdel(TMP, 0, 0);
 
 	int iret = unlink(TMPPACKAGES);
 	if(iret != 0 && errno != ENOENT)
@@ -1954,7 +1962,10 @@ int tpkremove(char* file, int restore, int flag)
 	}
 	free(tmpstr); tmpstr = NULL;
 
-	tpkdel(path, restore);
+	if(flag == 2)
+		tpkdel(path, restore, 1);
+	else
+		tpkdel(path, restore, 0);
 
 	//execute post remove
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
