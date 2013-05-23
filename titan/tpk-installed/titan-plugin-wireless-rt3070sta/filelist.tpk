@@ -1,9 +1,0 @@
-/var#*#4#0#0#0#0
-/var/lib#*#4#0#0#0#0
-/var/lib/modules#*#4#0#0#0#0
-/var/lib/modules/rt3070sta.ko#*#8#0#498428#0#0
-/CONTROL/control#*#8#498428#232#0#0
-/CONTROL/postrm#*#8#498660#429#0#0
-/CONTROL/prerm#*#8#499089#371#0#0
-/CONTROL/preinst#*#8#499460#1211#0#0
-/CONTROL/postinst#*#8#500671#357#0#0
