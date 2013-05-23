@@ -1771,7 +1771,7 @@ int tpkinstall(char* file)
 		struct tpk* node = tpkinstalled;
 		while(node != NULL)
 		{
-			if(node->group == tpknode->group)
+			if(node->group == tpknode->group && ostrcmp(node->name, tpknode->name) != 0)
 			{
 				err("can't install tpk with same group %s (group %d)", path, tpknode->group);
 				ret = 1;
