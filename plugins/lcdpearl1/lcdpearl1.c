@@ -166,7 +166,7 @@ void LCD_Pearl1_thread()
 
 		if(status.security == 1)
 		{
-			if(status.standby == 1 && standby == 0)
+			if(status.standby > 0 && standby == 0)
 			{
 				if(ostrcmp(getconfig("lcd_pearl1_plugin_standby", NULL), "yes") == 0)
 					standby = 2;
