@@ -27,6 +27,7 @@ short debug_level = 10;
 #define PACKAGES WORKDIR"/Packages"
 #define PREVIEW WORKDIR"/Packages.preview"
 #define PREVIEWFILELIST WORKDIR"/filelist.preview"
+#define PREINSTDIR WORKDIR"/pre" //path must exist
 
 #define debug(level, fmt, args...) if(debug_level == level) { do { printf("[%s] " fmt, PROGNAME, ##args); } while (0); printf(", file=%s, func=%s, line=%d\n", __FILE__, __FUNCTION__, __LINE__); }
 #define err(fmt, args...) { do { fprintf(stderr, "[%s] error: " fmt, PROGNAME, ##args); } while (0); fprintf(stderr, ", file=%s, func=%s, line=%d\n", __FILE__, __FUNCTION__, __LINE__); }
@@ -229,8 +230,7 @@ int tpkcheckcontrol(char* path)
 	char* tmpstr = NULL;
 
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
-	tmpstr = ostrcat(tmpstr, "/", 1, 0);
-	tmpstr = ostrcat(tmpstr, "CONTROL/control", 1, 0);
+	tmpstr = ostrcat(tmpstr, "/CONTROL/control", 1, 0);
 
 	fd = fopen(tmpstr, "r");
 	if(fd == NULL)
@@ -246,10 +246,10 @@ end:
 	return ret;
 }
 
-int tpkcreatepreinstalled(char* name)
+int tpkcreatepreinstalled(char* mainpath, char* name)
 {
 	int ret = 0;
-	char* tmpstr = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL, *path = NULL;
 
 	if(name == NULL)
 	{
@@ -257,16 +257,25 @@ int tpkcreatepreinstalled(char* name)
 		ret = 1;
 		goto end;
 	}
+	
+	path = ostrcat(path, PREINSTDIR, 1, 0);
+	path = ostrcat(path, "/", 1, 0);
+	path = ostrcat(path, name, 1, 0);
+	ret = mkdir(path, 0777);
+	if(ret != 0)
+	{
+		err("create path %s", path);
+		ret = 1;
+		goto end;
+	}
 
-	tmpstr = ostrcat(tmpstr, WORKDIR, 1, 0);
-	tmpstr = ostrcat(tmpstr, "/", 1, 0);
-	tmpstr = ostrcat(tmpstr, name, 1, 0);
-	tmpstr = ostrcat(tmpstr, ".tpk.pre", 1, 0);
-
+	//create restore file
+	tmpstr = ostrcat(tmpstr, path, 1, 0);
+	tmpstr = ostrcat(tmpstr, "/restore.tpk", 1, 0);
 	ret = tpkcreatefile("", TPKFILELIST, tmpstr, 0, -1, 0);
 	if(ret != 0)
 	{
-		err("create preinstalled file %s\n", tmpstr);
+		err("create preinstalled restore file %s", tmpstr);
 		ret = 1;
 		goto end;
 	}
@@ -274,14 +283,73 @@ int tpkcreatepreinstalled(char* name)
 	ret = tpkrevertfile(tmpstr);
 	if(ret != 0)
 	{
-		err("revert preinstalled file %s\n", tmpstr);
+		err("revert preinstalled file %s", tmpstr);
 		ret = 1;
 		goto end;
 	}
-
 	free(tmpstr); tmpstr = NULL;
+	
+	//create control file
+	tmpstr = ostrcat(tmpstr, mainpath, 1, 0);
+	tmpstr = ostrcat(tmpstr, "/CONTROL/control", 1, 0);
+	
+	tmpstr1 = ostrcat(tmpstr1, path, 1, 0);
+	tmpstr1 = ostrcat(tmpstr1, "/control", 1, 0);
+	
+	ret = tpkcreatefile("", tmpstr, tmpstr1, 0, -1, 0);
+	if(ret != 0)
+	{
+		err("create preinstalled control file %s", tmpstr1);
+		ret = 1;
+		goto end;
+	}
+	free(tmpstr); tmpstr = NULL;
+	free(tmpstr1); tmpstr1 = NULL;
+	
+	//create prerm file
+	tmpstr = ostrcat(tmpstr, mainpath, 1, 0);
+	tmpstr = ostrcat(tmpstr, "/CONTROL/prerm", 1, 0);
+	
+	tmpstr1 = ostrcat(tmpstr1, path, 1, 0);
+	tmpstr1 = ostrcat(tmpstr1, "/prerm", 1, 0);
+	
+	if(file_exist(tmpstr) == 1)
+	{
+		ret = tpkcreatefile("", tmpstr, tmpstr1, 0, -1, 0);
+		if(ret != 0)
+		{
+			err("create preinstalled prerm file %s", tmpstr1);
+			ret = 1;
+			goto end;
+		}
+	}
+	free(tmpstr); tmpstr = NULL;
+	free(tmpstr1); tmpstr1 = NULL;
+	
+	//create postrm file
+	tmpstr = ostrcat(tmpstr, mainpath, 1, 0);
+	tmpstr = ostrcat(tmpstr, "/CONTROL/postrm", 1, 0);
+	
+	tmpstr1 = ostrcat(tmpstr1, path, 1, 0);
+	tmpstr1 = ostrcat(tmpstr1, "/postrm", 1, 0);
+	
+	if(file_exist(tmpstr) == 1)
+	{
+		ret = tpkcreatefile("", tmpstr, tmpstr1, 0, -1, 0);
+		if(ret != 0)
+		{
+			err("create preinstalled postrm file %s", tmpstr1);
+			ret = 1;
+			goto end;
+		}
+	}
+	free(tmpstr); tmpstr = NULL;
+	free(tmpstr1); tmpstr1 = NULL;
 
 end:
+	free(tmpstr); tmpstr = NULL;
+	free(tmpstr1); tmpstr1 = NULL;
+	free(path); path = NULL;
 	return ret;
 }
 
@@ -331,6 +399,7 @@ struct tpk* tpkcreateindex(char* path, char* name)
 		ret = 1;
 		goto end;
 	}
+
 end:
 	if(fd != NULL) fclose(fd);
 	
@@ -678,7 +747,7 @@ int tpkcreatallearchive(char* dirname, char* name)
 
 				if(tpknode->preinstalled == 1)
 				{
-					ret = tpkcreatepreinstalled(entry->d_name);
+					ret = tpkcreatepreinstalled(path, tpknode->name);
 					if(ret != 0)
 					{
 						err("create preinstalled file");
