@@ -133,7 +133,12 @@ void screenkeyactions(int key, int flag)
 		return;
 	}
 	else if(ostrcmp(keyconf, "MediaDB Scan Info") == 0)
+	{
 		get_mediadb_scan_info();
+		freemenulist(mlist, 1); mlist = NULL;
+		resettvpic();
+		return;
+	}
 
 	pluginnode = getplugin(keyconf);
 
@@ -145,6 +150,13 @@ void screenkeyactions(int key, int flag)
 			resettvpic();
 			startplugin();
 		}
+	}
+	else
+	{
+		screenkeyactions(1, 1);
+		freemenulist(mlist, 1); mlist = NULL;
+		resettvpic();
+		return;
 	}
 
 	resettvpic();
