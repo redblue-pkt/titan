@@ -2377,17 +2377,19 @@ end:
 
 int tpkupdate()
 {
-	struct tpk* tpknode = NULL, *tpkinstalled = NULL, *tpkinstallednode = NULL;
+	struct tpk* tpknode = NULL, *tpkinstalled = NULL, *tpkinstallednode = NULL *tpklist = NULL;
 
 	tpklistinstalled();
 	tpkinstalled = tpk;
 	tpk = NULL;
 	tpklist();
+	tpklist = tpk;
+	tpk = NULL;
 
 	tpkinstallednode = tpkinstalled;
 	while(tpkinstallednode != NULL)
 	{
-		tpknode = tpk;
+		tpknode = tpklist;
 		while(tpknode != NULL)
 		{
 			if(ostrcmp(tpkinstallednode->name, tpknode->name) == 0 && tpknode->version > tpkinstallednode->version)
@@ -2403,6 +2405,8 @@ int tpkupdate()
 
 	freetpk();
 	tpk = tpkinstalled;
+	freetpk();
+	tpk = tpklist;
 	freetpk();
 
 	return 0;
