@@ -1492,6 +1492,11 @@ void setskinnodeslocked(int flag)
 			else	 			
 				if(ostrcmp("system_update_usb_tmp", child->name) == 0) child->locked = tmpflag;
 
+			if(checkbox("ATEVIO7000") == 1 && !file_exist("/etc/.beta"))
+			{
+				if(ostrcmp("restart", child->name) == 0) child->locked = 1;
+			}
+
 			if(ostrcmp("savesettings", child->name) == 0) child->locked = tmpflag;
 			else if(ostrcmp("scartrecorder", child->name) == 0) child->locked = tmpflag;
 			else if(ostrcmp("system_update_usb_online", child->name) == 0) child->locked = tmpflag;
