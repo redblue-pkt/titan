@@ -9,7 +9,7 @@ int delplugin(char *pluginname)
 	struct skin* child = getscreennode(plugin, pluginname);
 	void (*deinitplugin)(void);
 
-	if(plugin == NULL || child == NULL || listbox == NULL)
+	if(plugin == NULL || child == NULL || listbox == NULL || child->pluginhandle == NULL)
 	{
 		debug(1000, "out -> NULL detect");
 		return 1;
