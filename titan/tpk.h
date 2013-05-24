@@ -2358,7 +2358,7 @@ int tpklist()
 			fileline[len] = '\0';
 
 		ret = sscanf(fileline, "%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%d#%d#%d#%d", url, name, showname, section, desc, arch, titanname, &version, &group, &minversion, &preinstalled);
-		if(ret != 10)
+		if(ret != 11)
 		{
 			err("read file %s", TMPALLPACKAGES);
 			continue;
