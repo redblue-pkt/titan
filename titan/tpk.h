@@ -11,7 +11,7 @@
 
 #define TPKLOG "/tmp/tpk.log"
 #define FEEDFILE "/etc/ipkg/official-feed.conf"
-#define PREDIR "/var/tpk"
+#define PREDIR "/etc/tpk.restore"
 #define TMP "/tmp/tpk"
 #define TMPALLPACKAGES TMP"/AllPackages"
 #define TMPPACKAGES TMP"/Packages"
