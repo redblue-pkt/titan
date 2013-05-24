@@ -686,6 +686,11 @@ void sighandler(int sig, struct sigcontext ctx)
 			reloadconfig(getconfig("ownconfig", NULL));
 			break;
 		}
+		case SIGUSR2: //called if hanging mainthread detect
+		{
+			debugstack(sig, NULL, NULL);
+			break;
+		}
 		case SIGSEGV:
 		case SIGBUS:
 		case SIGABRT:

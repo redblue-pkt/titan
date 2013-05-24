@@ -17,9 +17,15 @@ void checkspinner()
 			status.sec = sec - status.spinnertime - 1;
 			rcret = textbox(_("Message"), _("Detect hanging System !!!\n\nKILL = Red\nBOOT = Power"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), _("KILL"), getrcconfigint("rcred", NULL), _("BOOT"), getrcconfigint("rcgreen", NULL), 600, 400, 0, 0);
 			if(rcret == 3)
+			{
+				pthread_kill(status.mainthread, SIGUSR2);
 				system(KILLPROG);
+			}
 			if(rcret == 4)
+			{
+				pthread_kill(status.mainthread, SIGUSR2);
 				system(REBOOT);
+			}
 		}
 	}
 

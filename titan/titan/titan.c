@@ -510,6 +510,7 @@ int main(int argc, char *argv[])
 	sigemptyset(&sa.sa_mask);
 	sa.sa_flags = SA_RESTART;
 	sigaction(SIGUSR1, &sa, NULL);
+	sigaction(SIGUSR2, &sa, NULL);
 	sigaction(SIGSEGV, &sa, NULL);
 	sigaction(SIGBUS, &sa, NULL);
 	sigaction(SIGABRT, &sa, NULL);
