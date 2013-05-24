@@ -378,11 +378,13 @@ struct tpk* tpkcreateindex(char* path, char* name)
   tpknode->section = strstrip(tpknode->section);
   tpknode->desc = strstrip(tpknode->desc);
   tpknode->arch = strstrip(tpknode->arch);
+  tpknode->titanname = strstrip(tpknode->titanname);
 
-	if(tpknode->section == NULL) tpknode->section = ostrcat("*", NULL, 0, 0);
+	if(tpknode->section == NULL) tpknode->section = ostrcat("extra", NULL, 0, 0);
 	if(tpknode->desc == NULL) tpknode->desc = ostrcat("*", NULL, 0, 0);
 	if(tpknode->showname == NULL) tpknode->showname = ostrcat("*", NULL, 0, 0);
-	if(tpknode->arch == NULL) tpknode->arch = ostrcat("sh4", NULL, 0, 0);
+	if(tpknode->arch == NULL) tpknode->arch = ostrcat("noarch", NULL, 0, 0);
+	if(tpknode->titanname == NULL) tpknode->titanname = ostrcat("*", NULL, 0, 0);
 
 	fd = fopen(PACKAGES, "a");
 	if(fd == NULL)
@@ -392,7 +394,7 @@ struct tpk* tpkcreateindex(char* path, char* name)
 		goto end;
 	}
 
-	writeret = fprintf(fd, "%s#%s#%s#%s#%s#%d#%d#%d#%d\n", tpknode->name, tpknode->showname, tpknode->section, tpknode->desc, tpknode->arch, tpknode->version, tpknode->group, tpknode->minversion, tpknode->preinstalled);
+	writeret = fprintf(fd, "%s#%s#%s#%s#%s#%s#%d#%d#%d#%d\n", tpknode->name, tpknode->showname, tpknode->section, tpknode->desc, tpknode->arch, tpknode->titanname, tpknode->version, tpknode->group, tpknode->minversion, tpknode->preinstalled);
 	if(writeret < 0)
 	{
 		perr("writting file %s", PACKAGES);
