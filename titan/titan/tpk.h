@@ -35,6 +35,7 @@ struct tpk
 	char* section;
 	char* showname;
 	char* arch;
+	char* titanname;
 	int version;
 	int group;
 	int minversion;
@@ -73,7 +74,7 @@ void debugtpk()
 	}
 }
 
-struct tpk* addtpk(char *name, char* desc, char* section, char* showname, char* arch, char* filename, int version, int group, int minversion, int preinstalled, char* url, struct tpk* last)
+struct tpk* addtpk(char *name, char* desc, char* section, char* showname, char* arch, char* filename, char* titanname, int version, int group, int minversion, int preinstalled, char* url, struct tpk* last)
 {
 	struct tpk *newnode = NULL, *prev = NULL, *node = tpk;
 
@@ -90,6 +91,7 @@ struct tpk* addtpk(char *name, char* desc, char* section, char* showname, char* 
 	newnode->arch = strstrip(ostrcat(arch, NULL, 0, 0));
 	newnode->url = strstrip(ostrcat(url, NULL, 0, 0));
 	newnode->filename = strstrip(ostrcat(filename, NULL, 0, 0));
+	newnode->titanname = strstrip(ostrcat(titanname, NULL, 0, 0));
 	if(showname == NULL || showname[0] == '*')
 		newnode->showname = strstrip(ostrcat(name, NULL, 0, 0));
 	else
@@ -101,7 +103,12 @@ struct tpk* addtpk(char *name, char* desc, char* section, char* showname, char* 
 
 	if(last == NULL)
 	{
-		while(node != NULL)
+		while(node != NULL && strcasecmp(newnode->section, node->section) >= 0)
+		{
+			prev = node;
+			node = node->next;
+		}
+		while(node != NULL && strcasecmp(newnode->section, node->section) == 0 && strcasecmp(newnode->showname, node->showname) > 0)
 		{
 			prev = node;
 			node = node->next;
@@ -167,6 +174,9 @@ void deltpk(struct tpk* tpknode)
 
 			free(node->filename);
 			node->filename = NULL;
+			
+			free(node->titanname);
+			node->titanname = NULL;
 
 			free(node);
 			node = NULL;
@@ -754,7 +764,7 @@ struct tpk* tpkreadcontrol(char* path, int flag)
 	int len = 0;
 	FILE *fd = NULL;
 	char* fileline = NULL, *tmpstr = NULL;
-	char* showname = NULL, *section = NULL, *desc = NULL, *packagename = NULL, *arch = NULL, *filename = NULL;
+	char* showname = NULL, *section = NULL, *desc = NULL, *packagename = NULL, *arch = NULL, *filename = NULL, *titanname = NULL;
 	int version = 0, group = 0, minversion = 0, preinstalled = 0;
 	struct tpk* tpknode = NULL;
 
@@ -825,16 +835,22 @@ struct tpk* tpkreadcontrol(char* path, int flag)
 			if(tmpstr != NULL) preinstalled = atoi(tmpstr);
 			free(tmpstr); tmpstr = NULL;
 		}
+		if(strstr(fileline, "Titanname: ") == fileline)
+			titanname = ostrcat(fileline + 11, NULL, 0, 0);
 	}
 
+	if(section == NULL) section = ostrcat("extra", NULL, 0, 0);
+	if(desc == NULL) desc = ostrcat("*", NULL, 0, 0);
+	if(showname == NULL) showname = ostrcat("*", NULL, 0, 0);
+	if(arch == NULL) arch = ostrcat("noarch", NULL, 0, 0);
+	if(titanname == NULL) titanname = ostrcat("*", NULL, 0, 0);
+	
 	filename = ostrcat(packagename, "_", 0, 0);
 	filename = ostrcat(filename, oitoa(version), 1, 1);
 	filename = ostrcat(filename, "_", 1, 0);
 	filename = ostrcat(filename, arch, 1, 0);
 
-	if(showname == NULL) showname = ostrcat("*", NULL, 0, 0);
-
-	tpknode = addtpk(packagename, desc, section, showname, arch, filename, version, group, minversion, preinstalled, NULL, NULL);
+	tpknode = addtpk(packagename, desc, section, showname, arch, filename, titanname, version, group, minversion, preinstalled, NULL, NULL);
 
 end:
 	free(showname); showname = NULL;
@@ -843,6 +859,7 @@ end:
 	free(packagename); packagename = NULL;
 	free(arch); arch = NULL;
 	free(filename); filename = NULL;
+	free(titanname); titanname = NULL;
 	free(fileline); fileline = NULL;
 	if(fd != NULL) fclose(fd);
 	return tpknode;
@@ -2250,7 +2267,7 @@ int tpklist()
 	int ret = 0, len = 0;
 	FILE *fd = NULL;
 	char* fileline = NULL;
-	char* name = NULL, *showname = NULL, *section = NULL, *desc = NULL, *url = NULL, *arch = NULL, *filename = NULL;
+	char* name = NULL, *showname = NULL, *section = NULL, *desc = NULL, *url = NULL, *arch = NULL, *filename = NULL, *titanname = NULL;
 	int version = 0, group = 0, minversion = 0, preinstalled = 0;
 	struct tpk* tpknode = NULL, *tpkinstalled = NULL, *tpktmp = NULL;
 
@@ -2314,6 +2331,14 @@ int tpklist()
 		ret = 1;
 		goto end;
 	}
+	
+	titanname = malloc(MINMALLOC);
+	if(titanname == NULL)
+	{
+		err("no mem");
+		ret = 1;
+		goto end;
+	}
 
 	fd = fopen(TMPALLPACKAGES, "r");
 	if(fd == NULL)
@@ -2332,7 +2357,7 @@ int tpklist()
 		if(len >= 0 && fileline[len] == '\r')
 			fileline[len] = '\0';
 
-		ret = sscanf(fileline, "%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%d#%d#%d#%d", url, name, showname, section, desc, arch, &version, &group, &minversion, &preinstalled);
+		ret = sscanf(fileline, "%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%d#%d#%d#%d", url, name, showname, section, desc, arch, titanname, &version, &group, &minversion, &preinstalled);
 		if(ret != 10)
 		{
 			err("read file %s", TMPALLPACKAGES);
@@ -2366,7 +2391,7 @@ int tpklist()
 			filename = ostrcat(filename, "_", 1, 0);
 			filename = ostrcat(filename, arch, 1, 0);
 			
-			tpknode = addtpk(name, desc, section, showname, arch, filename, version, group, minversion, preinstalled, url, tpknode);
+			tpknode = addtpk(name, desc, section, showname, arch, filename, titanname, version, group, minversion, preinstalled, url, NULL);
 		}
 	}
 
@@ -2383,6 +2408,7 @@ end:
 	free(url); url = NULL;
 	free(arch); arch = NULL;
 	free(filename); filename = NULL;
+	free(titanname); titanname = NULL;
 	free(fileline); fileline = NULL;
 	if(fd != NULL) fclose(fd);
 	return ret;
@@ -2696,7 +2722,7 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 				tmpstr = ostrcat(tmpstr, "-", 1, 0);
 				tmpstr = ostrcat(tmpstr, node->showname, 1, 0);
 				tmpmlist = addmenulist(&mlist, tmpstr, NULL, tmppic, 0, 0);
-				changemenulistparam(tmpmlist, node->name, NULL);
+				changemenulistparam(tmpmlist, node->name, node->titanname);
 				free(tmpstr); tmpstr = NULL;
 			}
 			
