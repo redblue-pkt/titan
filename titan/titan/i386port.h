@@ -176,6 +176,11 @@ void sighandler(int sig, struct sigcontext ctx)
 	debug(1000, "in");
 	switch(sig)
 	{
+		case SIGALRM:
+		{
+			err("got signal sigalrm but ignore it");
+			break;
+		}
 		case SIGPIPE:
 		{
 			err("got signal sigpipe but ignore it");
@@ -193,9 +198,11 @@ void sighandler(int sig, struct sigcontext ctx)
 			debugstack(sig, NULL, NULL);
 			break;
 		}
-		case SIGSEGV:
+		case SIGILL:
 		case SIGBUS:
-		case SIGABRT:
+		case SIGFPE:
+		case SIGSEGV:
+		case SIGSTKFLT:
 		{
 			//intel
 			debugstack(sig, (void *)ctx.eip, NULL);
