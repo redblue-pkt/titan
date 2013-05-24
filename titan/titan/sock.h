@@ -745,6 +745,7 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 		free(buf);
 		free(tmpbuf);
 		if(dnode != NULL) dnode->ret = 1;
+
 		return NULL;
 	}
 
@@ -791,7 +792,11 @@ end:
 	if(clen != 0) *clen = maxret;
 	if(dnode != NULL) dnode->ret = 0;
 	free(retstr); retstr = NULL;
-	return buf;
+
+	if(filename == NULL)
+		return buf;
+	else
+		return "0";
 }
 
 char* gethttp(char* host, char* page, int port, char* filename, char* auth, int timeout, struct download* dnode, int redirect)
