@@ -2497,7 +2497,7 @@ int tpkgetindex(int flag)
 {
 	int ret = 0, len = 0, port = 80;
 	FILE *fd = NULL;
-	char* fileline = NULL, *ip = NULL, *path = NULL;
+	char* fileline = NULL, *ip = NULL, *path = NULL, *httpret = NULL;
 	char* tmpstr1 = NULL, *tmpstr2 = NULL;
 
 	ret = mkdir(TMP, 0777);
@@ -2562,31 +2562,41 @@ int tpkgetindex(int flag)
 			tmpstr2 = ostrcat(tmpstr2, "/", 1, 0);
 			tmpstr2 = ostrcat(tmpstr2, HTTPPACKAGES, 1, 0);
 
-			gethttp(ip, tmpstr1, 80, tmpstr2, HTTPAUTH, 5000, NULL, 0);
+			httpret = gethttp(ip, tmpstr1, 80, tmpstr2, HTTPAUTH, 5000, NULL, 0);
+			if(httpret == NULL)
+			{
+				err("http download error %s/%s", ip, tmpstr1);
+				unlink(tmpstr2);
+			}
 			free(tmpstr1); tmpstr1 = NULL;
 			free(tmpstr2); tmpstr2 = NULL;
 
-			if(flag == 1)
+			if(httpret != NULL)
 			{
-				tmpstr1 = ostrcat(tmpstr1, path, 1, 0);
+				if(flag == 1)
+				{
+					tmpstr1 = ostrcat(tmpstr1, path, 1, 0);
+					tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
+					tmpstr1 = ostrcat(tmpstr1, HTTPPREVIEW, 1, 0);
+
+					tmpstr2 = ostrcat(tmpstr2, TMP, 1, 0);
+					tmpstr2 = ostrcat(tmpstr2, "/", 1, 0);
+					tmpstr2 = ostrcat(tmpstr2, HTTPPREVIEW, 1, 0);
+
+					gethttp(ip, tmpstr1, 80, tmpstr2, HTTPAUTH, 5000, NULL, 0);
+					free(tmpstr1); tmpstr1 = NULL;
+					free(tmpstr2); tmpstr2 = NULL;
+				}
+
+				tmpstr1 = ostrcat(tmpstr1, "http://", 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, ip, 1, 0);
 				tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
-				tmpstr1 = ostrcat(tmpstr1, HTTPPREVIEW, 1, 0);
-
-				tmpstr2 = ostrcat(tmpstr2, TMP, 1, 0);
-				tmpstr2 = ostrcat(tmpstr2, "/", 1, 0);
-				tmpstr2 = ostrcat(tmpstr2, HTTPPREVIEW, 1, 0);
-
-				gethttp(ip, tmpstr1, 80, tmpstr2, HTTPAUTH, 5000, NULL, 0);
+				tmpstr1 = ostrcat(tmpstr1, path, 1, 0);
+				ret = tpkextractindex(tmpstr1);
 				free(tmpstr1); tmpstr1 = NULL;
-				free(tmpstr2); tmpstr2 = NULL;
 			}
-
-			tmpstr1 = ostrcat(tmpstr1, "http://", 1, 0);
-			tmpstr1 = ostrcat(tmpstr1, ip, 1, 0);
-			tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
-			tmpstr1 = ostrcat(tmpstr1, path, 1, 0);
-			ret = tpkextractindex(tmpstr1);
-			free(tmpstr1); tmpstr1 = NULL;
+			else
+				ret = 1;
 		}
 	}
 
