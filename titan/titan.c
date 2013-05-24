@@ -1006,7 +1006,7 @@ firstwizzardstep1:
 				sleep(10);
 			}
 		}
-		unlink("/var/writetest");
+		rmdir("/var/writetest");
 	}
 
 	//check free space in /mnt
@@ -1023,7 +1023,7 @@ firstwizzardstep1:
 				sleep(10);
 			}
 		}
-		unlink("/mnt/writetest");
+		rmdir("/mnt/writetest");
 	}
 
 	screeninfobar();
