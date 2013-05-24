@@ -17,7 +17,7 @@
 #define TMPPACKAGES TMP"/Packages"
 #define TMPPREVIEW TMP"/Packages.preview"
 #define EXTRACTDIR "/mnt/tpk" //path must exist
-#define PREFILE "/var/etc/.preinstalled"
+#define PREFILE "/var/etc/.tpkpre"
 
 #define HTTPPACKAGES "Packages.gz"
 #define HTTPPREVIEW "Packages.preview.gz"
