@@ -10,9 +10,9 @@
 /var/usr/local/share/titan/plugins/networkbrowser/skin/netbrowser_scanshares.png#*#8#0#0#0#0
 /var/usr/local/share/titan/plugins/networkbrowser/skin#*#4#0#0#0#0
 /var/usr/local/share/titan/plugins/networkbrowser#*#4#0#0#0#0
-/var/usr/local/share/titan/plugins#*#4#4#0#0#1
-/var/usr/local/share/titan#*#4#4#0#0#1
-/var/usr/local/share#*#4#4#0#0#1
-/var/usr/local#*#4#4#0#0#1
-/var/usr#*#4#4#0#0#1
-/var#*#4#4#0#0#1
+/var/usr/local/share/titan/plugins#*#4#4#1#0#0
+/var/usr/local/share/titan#*#4#4#1#0#0
+/var/usr/local/share#*#4#4#1#0#0
+/var/usr/local#*#4#4#1#0#0
+/var/usr#*#4#4#1#0#0
+/var#*#4#4#1#0#0
