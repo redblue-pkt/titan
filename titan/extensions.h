@@ -172,7 +172,7 @@ void screenextensions(int mode, char* path, int first)
 					if(log == NULL) log = ostrcat("Remove success", NULL, 0, 0);
 					textbox(_("Tpk Remove Info - Remove OK"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 2);
 					//del plugin from memory if Titanname is defined in plugin control file
-					if(mbox->param1 != NULL) delplugin(mbox->param1);
+					if(mbox->param1 != NULL && mbox->param1[0] != '*') delplugin(mbox->param1);
 				}
 				else
 				{
