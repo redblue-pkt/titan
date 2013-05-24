@@ -453,7 +453,7 @@ else
 	eplayerlib=gstreamer-0.10
 fi
 
-if [ $GROUP == "dev" ]; then
+if [ "$GROUP" = "dev" ]; then
 	devflag="-fexceptions -rdynamic"
 else
 	devflag=""
