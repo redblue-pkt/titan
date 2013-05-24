@@ -151,7 +151,7 @@ void screenkeyactions(int key, int flag)
 			startplugin();
 		}
 	}
-	else
+	else if(keyconf != NULL)
 	{
 		screenkeyactions(1, 1);
 		freemenulist(mlist, 1); mlist = NULL;
