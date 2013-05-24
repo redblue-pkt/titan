@@ -2123,6 +2123,19 @@ int tpkupdatepre()
 				}
 				free(tmpstr); tmpstr = NULL;
 				free(tmpstr1); tmpstr1 = NULL;
+
+				//create .tpkok file
+				tmpstr = ostrcat(tmpstr, EXTRACTDIR, 1, 0);
+				tmpstr = ostrcat(tmpstr, "/", 1, 0);
+				tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
+				tmpstr = ostrcat(tmpstr, "/.tpkok", 1, 0);
+
+				ret = tpkcreateflagfile(tmpstr, NULL);
+				if(ret != 0)
+				{
+					err("create flag file %s", tmpstr);
+				}
+				free(tmpstr); tmpstr = NULL;
 				
 				//check if .del file exist
 				tmpstr = ostrcat(tmpstr, EXTRACTDIR, 1, 0);
