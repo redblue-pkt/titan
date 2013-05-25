@@ -264,7 +264,7 @@ int tpkcreatepreinstalled(char* mainpath, char* name)
 	ret = mkdir(path, 0777);
 	if(ret != 0)
 	{
-		err("create path %s", path);
+		perr("create path %s", path);
 		ret = 1;
 		goto end;
 	}
@@ -491,8 +491,8 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 			ret = readlink(tmpstr, buf, MINMALLOC);
 			if(ret < 0)
 			{
+				perr("read link %s", tmpstr);
 				free(buf); buf = NULL;
-				err("read link %s", tmpstr);
 				return 1;
 			}
 
@@ -514,7 +514,7 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 			ret = stat64(tmpstr, &s);
 			if(ret != 0)
 			{
-				err("get file status %s", tmpstr);
+				perr("get file status %s", tmpstr);
 				return 1;
 			}
 			ret = tpkcreateblk(mainpath, tmpstr, major(s.st_rdev), minor(s.st_rdev), 1);
@@ -533,7 +533,7 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 			ret = stat64(tmpstr, &s);
 			if(ret != 0)
 			{
-				err("get file status %s", tmpstr);
+				perr("get file status %s", tmpstr);
 				return 1;
 			}
 			ret = tpkcreatechr(mainpath, tmpstr, major(s.st_rdev), minor(s.st_rdev), 1);
@@ -778,7 +778,7 @@ int tpkcreatallearchive(char* dirname, char* name)
 				free(tmpstr); tmpstr = NULL;
 				if(ret != 0)
 				{
-					err("rename archive %s", ARCHIVE);
+					perr("rename archive %s", ARCHIVE);
 					ret = 1;
 					goto end;
 				}
