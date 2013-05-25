@@ -78,6 +78,7 @@ void screenextensions(int mode, char* path, int first)
 	struct skin* load = getscreen("loading");
 		
 	status.hangtime = 99999;
+	unlink(TPKLOG);
 	
 	if(mode == 0)
 	{
@@ -281,12 +282,12 @@ void screenextensions(int mode, char* path, int first)
 		drawscreen(load, 0, 0);
 		resettvpic();
 		if(first == 1) tpkgetindex(0);
-		unlink(TPKLOG);
 		writesys("/tmp/.tpk_upgrade_start", "0", 0);
 		tpkupdate();
 		loadplugin();
 		clearscreen(load);
 		drawscreen(skin, 0, 0);
+		unlink(TPKLOG);
 
 		if(file_exist("/tmp/.tpk_needs_reboot"))
 		{
