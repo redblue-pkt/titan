@@ -332,7 +332,7 @@ int tpkcreatefilereal(char* mainpath, char* from, char* to, off64_t start, off64
 		ret = unlink(to);
 		if(ret != 0 && errno != ENOENT)
 		{
-			err("remove file %s", to);
+			perr("remove file %s", to);
 			ret = 1;
 			goto end;
 		}
@@ -364,7 +364,7 @@ int tpkcreatefilereal(char* mainpath, char* from, char* to, off64_t start, off64
 		len = lseek64(fdfrom, 0, SEEK_END);
 		if(len < 0)
 		{
-			err("can't get filelen %s", from);
+			perr("can't get filelen %s", from);
 			ret = 1;
 			goto end;
 		}
@@ -375,7 +375,7 @@ int tpkcreatefilereal(char* mainpath, char* from, char* to, off64_t start, off64
 		endpos = lseek64(fdto, 0, SEEK_END);
 		if(len < 0)
 		{
-			err("can't get endpos %s", to);
+			perr("can't get endpos %s", to);
 			ret = 1;
 			goto end;
 		}
@@ -383,7 +383,7 @@ int tpkcreatefilereal(char* mainpath, char* from, char* to, off64_t start, off64
 
 	if(lseek64(fdfrom, start, SEEK_SET) < 0)
 	{
-		err("can't seek to startpos %s", from);
+		perr("can't seek to startpos %s", from);
 		ret = 1;
 		goto end;
 	}
@@ -482,7 +482,7 @@ int tpkcreatedir(char* mainpath, char* path, int flag)
 		ret = mkdir(path, 0777);
 		if(ret != 0 && errno != EEXIST)
 		{
-			err("create path %s", path);
+			perr("create path %s", path);
 			ret = 1;
 			goto end;
 		}
@@ -522,7 +522,7 @@ int tpkcreatelink(char* mainpath, char* from, char* to, int flag)
 		ret = unlink(from);
 		if(ret != 0 && errno != ENOENT)
 		{
-			err("remove symlink %s -> %s", from, to);
+			perr("remove symlink %s -> %s", from, to);
 			ret = 1;
 			goto end;
 		}
@@ -532,7 +532,7 @@ int tpkcreatelink(char* mainpath, char* from, char* to, int flag)
 		ret = symlink(to, from);
 		if(ret != 0)
 		{
-			err("create symlink %s -> %s", from, to);
+			perr("create symlink %s -> %s", from, to);
 			ret = 1;
 			goto end;
 		}
@@ -570,7 +570,7 @@ int tpkcreatefifo(char* mainpath, char* file, int flag)
 		ret = unlink(file);
 		if(ret != 0 && errno != ENOENT)
 		{
-			err("remove fifo %s", file);
+			perr("remove fifo %s", file);
 			ret = 1;
 			goto end;
 		}
@@ -580,7 +580,7 @@ int tpkcreatefifo(char* mainpath, char* file, int flag)
 		ret = mkfifo(file, 0777);
 		if(ret != 0)
 		{
-			err("create fifo %s", file);
+			perr("create fifo %s", file);
 			ret = 1;
 			goto end;
 		}
@@ -618,7 +618,7 @@ int tpkcreatechr(char* mainpath, char* file, int major, int minor, int flag)
 		ret = unlink(file);
 		if(ret != 0 && errno != ENOENT)
 		{
-			err("remove chr dev %s", file);
+			perr("remove chr dev %s", file);
 			ret = 1;
 			goto end;
 		}
@@ -628,7 +628,7 @@ int tpkcreatechr(char* mainpath, char* file, int major, int minor, int flag)
 		ret = mknod(file, S_IFCHR|0777, makedev(major, minor));
 		if(ret != 0)
 		{
-			err("create chr dev %s", file);
+			perr("create chr dev %s", file);
 			ret = 1;
 			goto end;
 		}
@@ -666,7 +666,7 @@ int tpkcreateblk(char* mainpath, char* file, int major, int minor, int flag)
 		ret = unlink(file);
 		if(ret != 0 && errno != ENOENT)
 		{
-			err("remove blk dev %s", file);
+			perr("remove blk dev %s", file);
 			ret = 1;
 			goto end;
 		}
@@ -676,7 +676,7 @@ int tpkcreateblk(char* mainpath, char* file, int major, int minor, int flag)
 		ret = mknod(file, S_IFBLK|0777, makedev(major, minor));
 		if(ret != 0)
 		{
-			err("create blk dev %s", file);
+			perr("create blk dev %s", file);
 			ret = 1;
 			goto end;
 		}
@@ -899,7 +899,7 @@ int tpkrevertfile(char* file)
 	ret = fseek(fd, 0, SEEK_SET);
 	if(ret < 0)
 	{
-		err("seek to startpos");
+		perr("seek to startpos");
 		ret = 1;
 		goto end;
 	}
@@ -968,7 +968,7 @@ int tpkgettail(char* file, off64_t* startpos, off64_t* len)
 	ret = lseek64(fd, pos, SEEK_END);
 	if(ret < 0)
 	{
-		err("can't get endpos %s", file);
+		perr("can't get endpos %s", file);
 		ret = 1;
 		goto end;
 	}
@@ -1260,8 +1260,8 @@ int tpkwriterestore(char* path, char* to, int newtype, int oldtype, int exist)
 			ret = readlink(to, buf, MINMALLOC);
 			if(ret < 0)
 			{
+				perr("read link %s", to);
 				free(buf); buf = NULL;
-				err("read link %s", to);
 				ret = 1;
 				goto end;
 			}
@@ -1275,7 +1275,7 @@ int tpkwriterestore(char* path, char* to, int newtype, int oldtype, int exist)
 			ret = stat64(to, &s);
 			if(ret != 0)
 			{
-				err("get file status %s", to);
+				perr("get file status %s", to);
 				return 1;
 			}
 			major = major(s.st_rdev);
@@ -1287,7 +1287,7 @@ int tpkwriterestore(char* path, char* to, int newtype, int oldtype, int exist)
 			ret = stat64(to, &s);
 			if(ret != 0)
 			{
-				err("get file status %s", to);
+				perr("get file status %s", to);
 				return 1;
 			}
 			major = major(s.st_rdev);
@@ -1714,7 +1714,7 @@ int tpkinstall(char* file)
 	ret = mkdir(path, 0777);
 	if(ret != 0)
 	{
-		err("create path %s", path);
+		perr("create path %s", path);
 		free(path); path = NULL;
 		return 1;
 	}
@@ -2066,7 +2066,7 @@ int tpkupdatepre()
 				ret = mkdir(tmpstr, 0777);
 				if(ret != 0 && errno != EEXIST)
 				{
-					err("create path %s", tmpstr);
+					perr("create path %s", tmpstr);
 					ret = 0;
 					free(tmpstr); tmpstr = NULL;
 					continue;
@@ -2191,6 +2191,107 @@ end:
 	return ret;
 }
 
+int checkupdatedir()
+{
+	DIR *d;
+	int ret = 0;
+	char* tmpstr = NULL, *tmpstr1 = NULL;
+
+	d = opendir(EXTRACTDIR); //Open the directory
+	if(! d) //Check it was opened
+	{
+		perr("Cannot open directory %s", EXTRACTDIR);
+		ret = 1;
+		goto end;
+	}
+
+	while(1)
+	{
+		struct dirent* entry;
+		int path_length;
+		char path[PATH_MAX];
+
+		free(tmpstr); tmpstr = NULL;
+		free(tmpstr1); tmpstr1 = NULL;
+
+		snprintf(path, PATH_MAX, "%s", EXTRACTDIR);
+		entry = readdir(d); //gets subsequent entries from d
+
+		if(!entry) //no more entries, so break
+			break;
+
+		if(entry->d_type == DT_DIR)
+		{
+			if(entry->d_name != NULL && entry->d_name[0] != '.' && strstr(entry->d_name, ".update") != NULL)
+			{
+				path_length = snprintf(path, PATH_MAX, "%s/%s", EXTRACTDIR, entry->d_name);
+				if(path_length >= PATH_MAX)
+				{
+					err("path length has got too long");
+					ret = 1;
+					goto end;
+				}
+
+				tmpstr = ostrcat(tmpstr, path, 1, 0);
+				if(tmpstr != NULL) tmpstr[strlen(tmpstr) - 7] = '\0';
+				if(file_exist(tmpstr) == 0)
+				{
+					ret = rename(path, tmpstr);
+					if(ret != 0)
+					{
+						perr("rename file %s -> %s", path, tmpstr);
+						ret = 0;
+						continue;
+					}
+				}
+				else
+				{
+					tmpstr1 = ostrcat(tmpstr1, tmpstr, 1, 0);
+					tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
+					tmpstr1 = ostrcat(tmpstr1, ".tpkok", 1, 0);
+					if(file_exist(tmpstr1) == 1)
+					{
+						tpkcleanworkdir(path);
+						ret = rmdir(path);
+						if(ret != 0 && errno != ENOENT)
+						{
+							perr("remove dir %s", path);
+							ret = 0;
+						}
+					}
+					else
+					{
+						tpkcleanworkdir(tmpstr);
+						ret = rmdir(tmpstr);
+						if(ret != 0 && errno != ENOENT)
+						{
+							perr("remove dir %s", tmpstr);
+							ret = 0;
+						}
+						ret = rename(path, tmpstr);
+						if(ret != 0)
+						{
+							perr("rename file %s -> %s", path, tmpstr);
+							ret = 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+end:
+	if(d && closedir(d))
+	{
+		perr("Could not close %s", EXTRACTDIR);
+		ret = 1;
+	}
+
+	free(tmpstr); tmpstr = NULL;
+	free(tmpstr1); tmpstr1 = NULL;
+	return ret;
+}
+
 int tpklistinstalled()
 {
 	DIR *d;
@@ -2198,6 +2299,7 @@ int tpklistinstalled()
 	int ret = 0;
 	struct tpk* tpknode = NULL;
 
+	checkupdatedir();
 	freetpk();
 
 	d = opendir(EXTRACTDIR); //Open the directory
@@ -2416,6 +2518,8 @@ end:
 
 int tpkupdate()
 {
+	int ret = 0;
+	char* tmpstr = NULL, *tmpstr1 = NULL;
 	struct tpk* tpknode = NULL, *tpkinstalled = NULL, *tpkinstallednode = NULL, *tpkmainlist = NULL;
 
 	tpklistinstalled();
@@ -2433,8 +2537,47 @@ int tpkupdate()
 		{
 			if(ostrcmp(tpkinstallednode->name, tpknode->name) == 0 && tpknode->version > tpkinstallednode->version)
 			{
-				tpkremove(tpkinstallednode->name, 0, 2);
-				tpkgetpackage(tpknode->filename, tpknode->url);
+				//TODO: remove file that never exist in new pakages
+				tmpstr = ostrcat(tmpstr, EXTRACTDIR, 1, 0);
+				tmpstr = ostrcat(tmpstr, "/", 1, 0);
+				tmpstr = ostrcat(tmpstr, tpkinstallednode->name, 1, 0);
+
+				tmpstr1 = ostrcat(tmpstr1, tmpstr, 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, ".update", 1, 0);
+
+				ret = rename(tmpstr, tmpstr1);
+				if(ret != 0)
+				{
+					perr("rename file %s -> %s", tmpstr, tmpstr1);
+					ret = 0;
+					free(tmpstr); tmpstr = NULL;
+					free(tmpstr1); tmpstr1 = NULL;
+					tpknode = tpknode->next;
+					continue;
+				}
+
+				ret = tpkgetpackage(tpknode->filename, tpknode->url);
+				if(ret == 0) //install ok
+				{
+					tpkcleanworkdir(tmpstr1);
+					ret = rmdir(tmpstr1);
+					if(ret != 0 && errno != ENOENT)
+					{
+						perr("remove dir %s", tmpstr1);
+					}
+				}
+				else //install nok
+				{
+					ret = rename(tmpstr1, tmpstr);
+					if(ret != 0)
+					{
+						perr("rename file %s -> %s", tmpstr1, tmpstr);
+					}
+				}
+
+				free(tmpstr); tmpstr = NULL;
+				free(tmpstr1); tmpstr1 = NULL;
+				ret = 0;
 				break;
 			}
 			tpknode = tpknode->next;
@@ -2503,7 +2646,7 @@ int tpkgetindex(int flag)
 	ret = mkdir(TMP, 0777);
 	if(ret != 0 && errno != EEXIST)
 	{
-		err("create path %s", TMP);
+		perr("create path %s", TMP);
 		ret = 1;
 		goto end;
 	}
@@ -2623,7 +2766,7 @@ int tpkgetpackage(char* package, char* url)
 	ret = mkdir(TMP, 0777);
 	if(ret != 0 && errno != EEXIST)
 	{
-		err("create path %s", TMP);
+		perr("create path %s", TMP);
 		ret = 1;
 		goto end;
 	}
