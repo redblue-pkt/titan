@@ -24,7 +24,7 @@
 
 int tpkremove(char* file, int restore, int flag);
 int tpkgetpackage(char* package, char* url);
-int tpklistinstalled();
+int tpklistinstalled(int flag);
 int tpkcreatefilereal(char* mainpath, char* from, char* to, off64_t start, off64_t len, int flag, char* name);
 
 struct tpk
@@ -1771,7 +1771,7 @@ int tpkinstall(char* file)
 
 	//check group
 	freetpk();
-	tpklistinstalled();
+	tpklistinstalled(1);
 	tpkinstalled = tpk;
 	tpk = NULL;
 
@@ -1897,7 +1897,7 @@ end:
 
 	if(ret != 0)
 	{
-		tpkremove(file, 1, 1);
+		tpkremove(tmpfile, 1, 1);
 		tpkdelbackup(path);
 		tpkcleanworkdir(path);
 		ret = rmdir(path);
@@ -2292,14 +2292,16 @@ end:
 	return ret;
 }
 
-int tpklistinstalled()
+//flag 0: checkupdatedir
+//flag 1: don't checkupdatedir
+int tpklistinstalled(int flag)
 {
 	DIR *d;
 	char* tmpstr = NULL;
 	int ret = 0;
 	struct tpk* tpknode = NULL;
 
-	checkupdatedir();
+	if(flag == 0) checkupdatedir();
 	freetpk();
 
 	d = opendir(EXTRACTDIR); //Open the directory
@@ -2374,7 +2376,7 @@ int tpklist()
 	struct tpk* tpknode = NULL, *tpkinstalled = NULL, *tpktmp = NULL;
 
 	freetpk();
-	tpklistinstalled();
+	tpklistinstalled(0);
 	tpkinstalled = tpk;
 	tpk = NULL;
 
@@ -2522,7 +2524,7 @@ int tpkupdate()
 	char* tmpstr = NULL, *tmpstr1 = NULL;
 	struct tpk* tpknode = NULL, *tpkinstalled = NULL, *tpkinstallednode = NULL, *tpkmainlist = NULL;
 
-	tpklistinstalled();
+	tpklistinstalled(0);
 	tpkinstalled = tpk;
 	tpk = NULL;
 	tpklist();
@@ -2842,7 +2844,7 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 	if(flag == 1)
 	{
 		tpk = NULL;
-		tpklistinstalled();
+		tpklistinstalled(0);
 		tpk_installed = tpk;
 		tpk = node;
 	}

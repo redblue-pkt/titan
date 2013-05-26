@@ -148,7 +148,7 @@ void screenextensions(int mode, char* path, int first)
 	}
 	else if(mode == 1)
 	{
-		tpklistinstalled();
+		tpklistinstalled(0);
 		mbox = tpkmenulist(mlist, NULL, "Tpk Remove - select file", NULL, NULL, 1, 2);
 		
 		if(mbox != NULL && mbox->param != NULL)
