@@ -904,8 +904,8 @@ void fesetunicable(struct dvbdev* node)
 	debug(200, "unicabletune %04X", unicabletune);
 
 	//fesetvoltage(node, SEC_VOLTAGE_OFF, 15);
-	fesetvoltage(node, SEC_VOLTAGE_18, 15);
-	fesettone(node, SEC_TONE_OFF, 50);
+	fesetvoltage(node, SEC_VOLTAGE_18, 150);
+	fesettone(node, SEC_TONE_OFF, 15);
 
 	//feunicable
 	//byte1 (bit 7/6/5) -> satcr number
