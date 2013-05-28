@@ -1026,6 +1026,9 @@ firstwizzardstep1:
 		rmdir("/mnt/writetest");
 	}
 
+	system("repairjffs2.sh var &"); //this script kills titan an reboot
+				sleep(10);
+
 	screeninfobar();
 
 	//for testign screens
