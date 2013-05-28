@@ -905,7 +905,7 @@ void fesetunicable(struct dvbdev* node)
 
 	//fesetvoltage(node, SEC_VOLTAGE_OFF, 15);
 	fesetvoltage(node, SEC_VOLTAGE_18, 15);
-	fesettone(node, SEC_TONE_OFF, 500);
+	fesettone(node, SEC_TONE_OFF, 50);
 
 	//feunicable
 	//byte1 (bit 7/6/5) -> satcr number
