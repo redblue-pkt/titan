@@ -980,7 +980,7 @@ int tpkchecksize(struct tpk* tpknode)
       unsigned long long size = getfreespace("/var") / 1024;
       if(tpknode->size + TPKADDSIZE >= size)
       {
-        err("size to big for /var %lld -> %lld", tpknode->size, size);
+        err("size to big for /var %d -> %lld", tpknode->size, size);
         return 1;
       }
     }
@@ -989,7 +989,7 @@ int tpkchecksize(struct tpk* tpknode)
       unsigned long long size = getfreespace("/var/swap") / 1024;
       if(tpknode->size + TPKADDSIZE >= size)
       {
-        err("size to big for /var/swap %lld -> %lld", tpknode->size, size);
+        err("size to big for /var/swap %d -> %lld", tpknode->size, size);
         return 1;
       }
     }
