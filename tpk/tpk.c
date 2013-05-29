@@ -921,7 +921,7 @@ int tpkgetfilesize(char* file)
   }
 
   close(fd);
-  return len / 1024;
+  return (len / 1024) + 1;
 }
 
 int tpkwritecontrol(char* path, struct tpk* tpknode, int size, int type)
@@ -947,7 +947,7 @@ int tpkwritecontrol(char* path, struct tpk* tpknode, int size, int type)
 		goto end;
 	}
   
-  ret = fprintf(fd, "Package: %s\nArchitecture: %s\nShowname: %s\nVersion: %d\nSection: %s\nDescription: %s\nGroup: %d\nMinversion: %d\nPreinstalled: %d\nSize: %d\nType: %d\nTitanname: %s", tpknode->name, tpknode->arch, tpknode->showname, tpknode->version, tpknode->section, tpknode->desc, tpknode->group, tpknode->minversion, tpknode->preinstalled, tpknode->size, tpknode->type, tpknode->titanname);
+  ret = fprintf(fd, "Package: %s\nArchitecture: %s\nShowname: %s\nVersion: %d\nSection: %s\nDescription: %s\nGroup: %d\nMinversion: %d\nPreinstalled: %d\nSize: %d\nType: %d\nTitanname: %s", tpknode->name, tpknode->arch, tpknode->showname, tpknode->version, tpknode->section, tpknode->desc, tpknode->group, tpknode->minversion, tpknode->preinstalled, size, type, tpknode->titanname);
   if(ret < 0)
   {
     perr("writting file %s", tmpstr);
@@ -1024,8 +1024,7 @@ int tpkcalcsize(char* mainpath, char* dirname, int* size, int* type, int first)
 			tmpstr = ostrcat(tmpstr, path, 1, 0);
 			tmpstr = ostrcat(tmpstr, "/", 1, 0);
 			tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
-			*size += tpkgetfilesize(tmpstr);
-printf("file: %s, size: %d\n", tmpstr, *size);      
+			*size += tpkgetfilesize(tmpstr);      
 			free(tmpstr); tmpstr = NULL;
 		}
 	}
