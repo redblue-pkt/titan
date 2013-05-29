@@ -952,7 +952,10 @@ int tpkwritecontrol(char* path, struct tpk* tpknode, int size, int type)
   {
     perr("writting file %s", tmpstr);
     ret = 1;
+    goto end;
   }
+  else
+    ret = 0;
 
 end:
 	free(tmpstr); tmpstr = NULL;
@@ -1022,6 +1025,7 @@ int tpkcalcsize(char* mainpath, char* dirname, int* size, int* type, int first)
 			tmpstr = ostrcat(tmpstr, "/", 1, 0);
 			tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
 			*size += tpkgetfilesize(tmpstr);
+printf("file: %s, size: %d\n", tmpstr, *size);      
 			free(tmpstr); tmpstr = NULL;
 		}
 	}
