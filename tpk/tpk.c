@@ -915,7 +915,7 @@ int tpkgetfilesize(char* file)
   len = lseek64(fd, 0, SEEK_END);
   if(len < 0)
 	{
-    perr("can't get filelen %s", from);
+    perr("can't get filelen %s", file);
     close(fd);
     return 0;
   }
@@ -924,7 +924,7 @@ int tpkgetfilesize(char* file)
   return len / 1024;
 }
 
-int tpkwritecontrol(path, tpknode, size, type)
+int tpkwritecontrol(char* path, struct tpk* tpknode, int size, int type)
 {
   int ret = 0;
 	FILE *fd = NULL;
@@ -1038,7 +1038,6 @@ int tpkcalcsize(char* mainpath, char* dirname, int* size, int* type, int first)
 int tpkcalcallsize(char* dirname, char* name)
 {
 	DIR *d;
-	char* tmpstr = NULL;
 	int ret = 0, size = 0, type = 0;
 	struct tpk* tpknode = NULL;
 
@@ -1109,7 +1108,7 @@ int tpkcalcallsize(char* dirname, char* name)
 				{
 					err("write control %s", path);
 					freetpk();
-          ret = 0
+          ret = 0;
 					continue;
 				} 			
 			}
