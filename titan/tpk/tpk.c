@@ -947,7 +947,7 @@ int tpkwritecontrol(char* path, struct tpk* tpknode, int size, int type)
 		goto end;
 	}
   
-  ret = fprintf(fd, "Package: %s\nArchitecture: %s\nShowname: %s\nVersion: %d\nSection: %d\nDescription: %s\nGroup: %d\nMinversion: %d\nPreinstalled: %d\nSize: %d\nType: %d\nTitanname: %s", tpknode->name, tpknode->arch, tpknode->showname, tpknode->version, tpknode->section, tpknode->desc, tpknode->group, tpknode->minversion, tpknode->preinstalled, tpknode->size, tpknode->type, tpknode->titanname);
+  ret = fprintf(fd, "Package: %s\nArchitecture: %s\nShowname: %s\nVersion: %d\nSection: %s\nDescription: %s\nGroup: %d\nMinversion: %d\nPreinstalled: %d\nSize: %d\nType: %d\nTitanname: %s", tpknode->name, tpknode->arch, tpknode->showname, tpknode->version, tpknode->section, tpknode->desc, tpknode->group, tpknode->minversion, tpknode->preinstalled, tpknode->size, tpknode->type, tpknode->titanname);
   if(ret < 0)
   {
     perr("writting file %s", tmpstr);
@@ -1008,7 +1008,7 @@ int tpkcalcsize(char* mainpath, char* dirname, int* size, int* type, int first)
         if(path != NULL && strstr(path, "/var/swap/") != NULL)
           *type = 1;
         
-				ret = tpkcalcsize(mainpath, path, 0); //Recursively call with the new path
+				ret = tpkcalcsize(mainpath, path, size, type, 0); //Recursively call with the new path
 				if(ret != 0)
 				{
 					err("calc size %s", path);
