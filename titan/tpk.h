@@ -308,7 +308,7 @@ int tpkcreatefile(char* mainpath, char* from, char* to, off64_t start, off64_t l
 {
 	int ret = 0;
 
-	ret = tpkcreatefilereal(mainpath, from, to, start, len, flag);
+	ret = tpkcreatefilereal(mainpath, from, to, start, len, NULL, flag);
 	return ret;
 }
 
