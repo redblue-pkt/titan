@@ -99,41 +99,48 @@ void screenextensions(int mode, char* path, int first)
 			if(mbox1 != NULL && mbox1->param != NULL && mbox1->param1 != NULL)
 			{
 				debug(130, "file: %s", mbox1->name);
-
-				tmpinfo = ostrcat(tmpinfo, _("Installing"), 1, 0);
-				tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
-				tmpinfo = ostrcat(tmpinfo, mbox->name, 1, 0);
-				tmpinfo = ostrcat(tmpinfo, "-", 1, 0);
-				tmpinfo = ostrcat(tmpinfo, mbox1->name, 1, 0);
-				tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
-				tmpinfo = ostrcat(tmpinfo, _("started"), 1, 0);
-				tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
-
-				if(textbox(_("Tpk Install Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
-				{
-					drawscreen(load, 0, 0);
-					resettvpic();
-					char* log = NULL;
-					if(tpkgetpackage(mbox1->param, mbox1->param1) == 0)
+				
+				if(ostrcmp(mbox1->param1, "0") == 0)
+        {
+          textbox(_("Tpk Install Info"), _("Can't install Package. Package to big."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);       
+        }
+        else
+        {
+					tmpinfo = ostrcat(tmpinfo, _("Installing"), 1, 0);
+					tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
+					tmpinfo = ostrcat(tmpinfo, mbox->name, 1, 0);
+					tmpinfo = ostrcat(tmpinfo, "-", 1, 0);
+					tmpinfo = ostrcat(tmpinfo, mbox1->name, 1, 0);
+					tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
+					tmpinfo = ostrcat(tmpinfo, _("started"), 1, 0);
+					tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
+	
+					if(textbox(_("Tpk Install Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 					{
-						log = readfiletomem(TPKLOG, 0);
-						if(log == NULL) log = ostrcat("Install success", NULL, 0, 0);
-						textbox(_("Tpk Install Info - Install OK"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 2);
-					}
-					else
-					{
-						log = readfiletomem(TPKLOG, 0);
-						if(log == NULL) log = ostrcat("Install error", NULL, 0, 0);
-						textbox(_("Tpk Install Info - Install ERROR"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 2);
-					}
-					textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
-					loadplugin();
-					free(log), log = NULL;
-					unlink(TPKLOG);
-					if(file_exist("/tmp/.tpk_needs_reboot"))
-					{
-						textbox(_("Message"), _("TPK Install Done your system rebooting !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
-						system("init 6");
+						drawscreen(load, 0, 0);
+						resettvpic();
+						char* log = NULL;
+						if(tpkgetpackage(mbox1->param, mbox1->param1) == 0)
+						{
+							log = readfiletomem(TPKLOG, 0);
+							if(log == NULL) log = ostrcat("Install success", NULL, 0, 0);
+							textbox(_("Tpk Install Info - Install OK"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 2);
+						}
+						else
+						{
+							log = readfiletomem(TPKLOG, 0);
+							if(log == NULL) log = ostrcat("Install error", NULL, 0, 0);
+							textbox(_("Tpk Install Info - Install ERROR"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 2);
+						}
+						textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
+						loadplugin();
+						free(log), log = NULL;
+						unlink(TPKLOG);
+						if(file_exist("/tmp/.tpk_needs_reboot"))
+						{
+							textbox(_("Message"), _("TPK Install Done your system rebooting !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
+							system("init 6");
+						}
 					}
 				}
 			}
