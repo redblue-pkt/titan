@@ -632,7 +632,7 @@ int tpkcreatepreviewarchive(char* mainpath, char* dirname, char* name)
 			tmpstr = ostrcat(tmpstr, path, 1, 0);
 			tmpstr = ostrcat(tmpstr, "/", 1, 0);
 			tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
-			ret = tpkcreatefilereal(mainpath, tmpstr, PREVIEW, 0, -1, 3, name);
+			ret = tpkcreatefilereal(mainpath, tmpstr, PREVIEW, 0, -1, name, 3);
 			free(tmpstr); tmpstr = NULL;
 			if(ret != 0)
 			{
@@ -912,7 +912,7 @@ int tpkgetfilesize(char* file)
 		return 0;
 	}
   
-  len = lseek64(fdfrom, 0, SEEK_END);
+  len = lseek64(fd, 0, SEEK_END);
   if(len < 0)
 	{
     perr("can't get filelen %s", from);
