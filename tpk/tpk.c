@@ -353,7 +353,9 @@ end:
 	return ret;
 }
 
-struct tpk* tpkcreateindex(char* path, char* name)
+//flag 0: write index file
+//flag 1: don't write index file
+struct tpk* tpkcreateindex(char* path, char* name, int flag)
 {
 	int ret = 0, writeret = 0;
 	FILE *fd = NULL;
@@ -386,21 +388,24 @@ struct tpk* tpkcreateindex(char* path, char* name)
 	if(tpknode->arch == NULL) tpknode->arch = ostrcat("noarch", NULL, 0, 0);
 	if(tpknode->titanname == NULL) tpknode->titanname = ostrcat("*", NULL, 0, 0);
 
-	fd = fopen(PACKAGES, "a");
-	if(fd == NULL)
-	{
-		perr("can't open %s", PACKAGES);
-		ret = 1;
-		goto end;
-	}
-
-	writeret = fprintf(fd, "%s#%s#%s#%s#%s#%s#%d#%d#%d#%d\n", tpknode->name, tpknode->showname, tpknode->section, tpknode->desc, tpknode->arch, tpknode->titanname, tpknode->version, tpknode->group, tpknode->minversion, tpknode->preinstalled);
-	if(writeret < 0)
-	{
-		perr("writting file %s", PACKAGES);
-		ret = 1;
-		goto end;
-	}
+  if(flag == 0)
+  {
+  	fd = fopen(PACKAGES, "a");
+  	if(fd == NULL)
+  	{
+  		perr("can't open %s", PACKAGES);
+  		ret = 1;
+  		goto end;
+  	}
+  
+  	writeret = fprintf(fd, "%s#%s#%s#%s#%s#%s#%d#%d#%d#%d#%d#%d\n", tpknode->name, tpknode->showname, tpknode->section, tpknode->desc, tpknode->arch, tpknode->titanname, tpknode->version, tpknode->group, tpknode->minversion, tpknode->preinstalled, tpknode->size, tpknode->type);
+  	if(writeret < 0)
+  	{
+  		perr("writting file %s", PACKAGES);
+  		ret = 1;
+  		goto end;
+  	}
+  }
 
 end:
 	if(fd != NULL) fclose(fd);
@@ -731,7 +736,7 @@ int tpkcreatallearchive(char* dirname, char* name)
 				else
 					ret = 0;
 					
-				tpknode = tpkcreateindex(path, entry->d_name);
+				tpknode = tpkcreateindex(path, entry->d_name, 0);
 				if(tpknode == NULL)
 				{
 					err("create index file %s", path);
@@ -895,14 +900,254 @@ end:
 	return ret;
 }
 
+int tpkgetfilesize(char* file)
+{
+  int fd = -1;
+  off64_t len = 0;
+  
+  fd = open(file, O_RDONLY);
+	if(fd < 0)
+	{
+		perr("open file %s", file);
+		return 0;
+	}
+  
+  len = lseek64(fdfrom, 0, SEEK_END);
+  if(len < 0)
+	{
+    perr("can't get filelen %s", from);
+    close(fd);
+    return 0;
+  }
+
+  close(fd);
+  return len / 1024;
+}
+
+int tpkwritecontrol(path, tpknode, size, type)
+{
+  int ret = 0;
+	FILE *fd = NULL;
+	char* tmpstr = NULL;
+  
+  if(tpknode == NULL)
+  {
+    err("NULL detect");
+    return 1;
+  }
+
+	tmpstr = ostrcat(tmpstr, path, 1, 0);
+	tmpstr = ostrcat(tmpstr, "/CONTROL/control", 1, 0);
+
+	fd = fopen(tmpstr, "w");
+	if(fd == NULL)
+	{
+		perr("can't open %s", tmpstr);
+		ret = 1;
+		goto end;
+	}
+  
+  ret = fprintf(fd, "Package: %s\nArchitecture: %s\nShowname: %s\nVersion: %d\nSection: %d\nDescription: %s\nGroup: %d\nMinversion: %d\nPreinstalled: %d\nSize: %d\nType: %d\nTitanname: %s", tpknode->name, tpknode->arch, tpknode->showname, tpknode->version, tpknode->section, tpknode->desc, tpknode->group, tpknode->minversion, tpknode->preinstalled, tpknode->size, tpknode->type, tpknode->titanname);
+  if(ret < 0)
+  {
+    perr("writting file %s", tmpstr);
+    ret = 1;
+  }
+
+end:
+	free(tmpstr); tmpstr = NULL;
+	if(fd != NULL) fclose(fd);
+	return ret;
+}
+
+int tpkcalcsize(char* mainpath, char* dirname, int* size, int* type, int first)
+{
+	DIR *d;
+	char* tmpstr = NULL;
+	int ret = 0;
+
+	if(mainpath == NULL)
+	{
+		err("NULL detect");
+		return 1;
+	}
+
+	d = opendir(dirname); //Open the directory
+	if(! d) //Check it was opened
+	{
+		perr("Cannot open directory %s", dirname);
+		return 1;
+	}
+
+	while(1)
+	{
+		struct dirent* entry;
+		int path_length = 0;
+		char path[PATH_MAX];
+
+		snprintf(path, PATH_MAX, "%s", dirname);
+		entry = readdir(d); //Readdir gets subsequent entries from d
+
+		if(!entry) //no more entries , so break
+			break;
+
+		free(tmpstr); tmpstr = NULL;
+		if(entry->d_type == DT_DIR) //dir
+		{
+			//Check that the directory is not d or d's parent
+			if(entry->d_name != NULL && entry->d_name[0] != '.' && !(strcmp("preview", entry->d_name) == 0 && first == 1))
+			{
+				path_length = snprintf(path, PATH_MAX, "%s/%s", dirname, entry->d_name);
+				if(path_length >= PATH_MAX)
+				{
+					err("path length has got too long");
+					return 1;
+				}
+        
+        //check type of package
+        if(path != NULL && strstr(path, "/var/swap/") != NULL)
+          *type = 1;
+        
+				ret = tpkcalcsize(mainpath, path, 0); //Recursively call with the new path
+				if(ret != 0)
+				{
+					err("calc size %s", path);
+					return 1;
+				}
+			}
+		}
+		else if(entry->d_type == DT_REG) //file
+		{
+			tmpstr = ostrcat(tmpstr, path, 1, 0);
+			tmpstr = ostrcat(tmpstr, "/", 1, 0);
+			tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
+			*size += tpkgetfilesize(tmpstr);
+			free(tmpstr); tmpstr = NULL;
+		}
+	}
+
+	if(closedir(d))
+	{
+		perr("Could not close %s", dirname);
+		return 1;
+	}
+
+	return 0;
+}
+
+int tpkcalcallsize(char* dirname, char* name)
+{
+	DIR *d;
+	char* tmpstr = NULL;
+	int ret = 0, size = 0, type = 0;
+	struct tpk* tpknode = NULL;
+
+	d = opendir(dirname); //Open the directory
+	if(! d) //Check it was opened
+	{
+		perr("Cannot open directory %s", dirname);
+		ret = 1;
+		goto end;
+	}
+
+	while(1)
+	{
+		struct dirent* entry;
+		int path_length;
+		char path[PATH_MAX];
+		tpknode = NULL;
+    size = 0;
+    type = 0;
+
+		snprintf(path, PATH_MAX, "%s", dirname);
+		entry = readdir(d); //Readdir gets subsequent entries from d
+
+		if(!entry) //no more entries , so break
+			break;
+
+		if(entry->d_type & DT_DIR) //dir
+		{
+			//Check that the directory is not d or d's parent
+			if(entry->d_name != NULL && entry->d_name[0] != '.' && (name == NULL || strstr(entry->d_name, name) != NULL))
+			{
+				path_length = snprintf(path, PATH_MAX, "%s/%s", dirname, entry->d_name);
+				if(path_length >= PATH_MAX)
+				{
+					err("path length has got too long");
+					ret = 1;
+					goto end;
+				}
+        
+        ret = tpkcheckcontrol(path);
+				if(ret != 0)
+				{
+					ret = 0;
+					continue;
+				}
+        
+        debug(10, "calc %s", path);
+
+				tpknode = tpkcreateindex(path, entry->d_name, 1);
+				if(tpknode == NULL)
+				{
+					err("read index file %s", path);
+					freetpk();
+					continue;
+				}
+
+				ret = tpkcalcsize(path, path, &size, &type, 1);
+				if(ret != 0)
+				{
+					err("calc size %s", path);
+					freetpk();
+          ret = 0;
+					continue;
+				}
+        
+        ret = tpkwritecontrol(path, tpknode, size, type);
+        if(ret != 0)
+				{
+					err("write control %s", path);
+					freetpk();
+          ret = 0
+					continue;
+				} 			
+			}
+		}
+    
+    freetpk();
+	}
+
+end:
+	freetpk();
+
+	if(d && closedir(d))
+	{
+		perr("Could not close %s", dirname);
+		ret = 1;
+	}
+
+	return ret;
+}
+
 int main(int argc, char *argv[])
 {
 	int ret = 0;
 
-	if(argc == 2)
-		ret = tpkcreatallearchive(argv[1], NULL);
-	else if(argc == 3)
-		ret = tpkcreatallearchive(argv[1], argv[2]);
+	if(argc == 3)
+  {
+    if(argv[1] != NULL && strcmp(argv[1], "calc") == 0)
+      ret = tpkcalcallsize(argv[2], NULL);
+    else
+		  ret = tpkcreatallearchive(argv[2], NULL);
+  }
+	else if(argc == 4)
+  {
+    if(argv[1] != NULL && strcmp(argv[1], "calc") == 0)
+      ret = tpkcalcallsize(argv[2], argv[3]);
+    else
+		  ret = tpkcreatallearchive(argv[2], argv[3]);
+  }
 	else
 	{
 		err("parameter not ok");
