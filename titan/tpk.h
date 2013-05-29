@@ -980,7 +980,7 @@ int tpkchecksize(struct tpk* tpknode)
       unsigned long long size = getfreespace("/var") / 1024;
       if(tpknode->size + TPKADDSIZE >= size)
       {
-        err("size to big for /var %d -> %d", tpknode->size, size);
+        err("size to big for /var %lld -> %lld", tpknode->size, size);
         return 1;
       }
     }
@@ -989,7 +989,7 @@ int tpkchecksize(struct tpk* tpknode)
       unsigned long long size = getfreespace("/var/swap") / 1024;
       if(tpknode->size + TPKADDSIZE >= size)
       {
-        err("size to big for /var/swap %d -> %d", tpknode->size, size);
+        err("size to big for /var/swap %lld -> %lld", tpknode->size, size);
         return 1;
       }
     }
@@ -1856,7 +1856,7 @@ int tpkinstall(char* file)
   ret = tpkchecksize(tpknode);
   if(ret != 0)
   {
-    err("size to big %d", tpknode->sizee);
+    err("size to big %d", tpknode->size);
     ret = 1;
     goto end;
   }
