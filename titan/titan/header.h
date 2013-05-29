@@ -748,6 +748,7 @@ void freeoregexsplit(struct splitstr* tmparray, int len);
 char* fixport(char* input, int flag);
 char* getispip();
 int getlfiletype(char* filename);
+unsigned long long getfreespace(char* dir);
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
