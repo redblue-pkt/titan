@@ -3179,3 +3179,14 @@ msgstr "Folge"
 
 msgid "Vietnamese"
 msgstr "Vietnamesisch"
+
+msgid "/var not writeable!\nRepear it?"
+msgstr "/var nicht beschreibbar!\nReparieren?"
+
+msgid "/mnt not writeable!\nRepear it?"
+msgstr "/mnt nicht beschreibbar!\nReparieren?"
+
+Can't install Package. Package to big.
+
+msgid "Can't install Package. Package to big."
+msgstr "Paket zu gross. Installation nicht möglich."
