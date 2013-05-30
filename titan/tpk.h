@@ -971,31 +971,31 @@ end:
 
 int tpkchecksize(struct tpk* tpknode)
 {
-  if(tpknode == NULL) return 0;
-  
-  if(tpknode->size != 0)
-  {
-    if(tpknode->type == 0) //check /var
-    {
-      unsigned long long size = getfreespace("/var") / 1024;
-      if(tpknode->size + TPKADDSIZE >= size)
-      {
-        err("size to big for /var %d -> %lld", tpknode->size, size);
-        return 1;
-      }
-    }
-    else if(tpknode->type == 1) //check /var/swap
-    {
-      unsigned long long size = getfreespace("/var/swap") / 1024;
-      if(tpknode->size + TPKADDSIZE >= size)
-      {
-        err("size to big for /var/swap %d -> %lld", tpknode->size, size);
-        return 1;
-      }
-    }
-  }
-  
-  return 0;
+	if(tpknode == NULL) return 0;
+
+	if(tpknode->size != 0)
+	{
+		if(tpknode->type == 0) //check /var
+		{
+			unsigned long long size = getfreespace("/var") / 1024;
+			if(tpknode->size + TPKADDSIZE >= size)
+			{
+				err("size to big for /var %d -> %lld", tpknode->size, size);
+				return 1;
+			}
+		}
+		else if(tpknode->type == 1) //check /var/swap
+		{
+			unsigned long long size = getfreespace("/var/swap") / 1024;
+			if(tpknode->size + TPKADDSIZE >= size)
+			{
+				err("size to big for /var/swap %d -> %lld", tpknode->size, size);
+				return 1;
+			}
+		}
+	}
+
+	return 0;
 }
 
 int tpkgettail(char* file, off64_t* startpos, off64_t* len)
@@ -1851,15 +1851,15 @@ int tpkinstall(char* file)
 		ret = 1;
 		goto end;
 	}
-  
-  //check size
-  ret = tpkchecksize(tpknode);
-  if(ret != 0)
-  {
-    err("size to big %d", tpknode->size);
-    ret = 1;
-    goto end;
-  }
+
+	//check size
+	ret = tpkchecksize(tpknode);
+	if(ret != 0)
+	{
+		err("size to big %d", tpknode->size);
+		ret = 1;
+		goto end;
+	}
 
 	//execute pre install
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
@@ -1883,6 +1883,11 @@ int tpkinstall(char* file)
 	ret = tpkextractfilelist(file, path, 1); //extract other files
 	if(ret != 0)
 	{
+		tmpstr = ostrcat(tmpstr, path, 1, 0);
+		tmpstr = ostrcat(tmpstr, "/restore.tpk", 1, 0);
+		tpkrevertfile(tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
 		err("extract files %s", file);
 		ret = 1;
 		goto end;
@@ -2981,12 +2986,12 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 				tmppic = ostrcat(tmppic, ".png", 1, 0);
 
 			tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 0, 0);
-      
-      //check size
-      if(tpkchecksize(node) != 0)
-        changemenulistparam(tmpmlist, node->filename, "0");
-      else
-        changemenulistparam(tmpmlist, node->filename, node->url);
+
+			//check size
+			if(tpkchecksize(node) != 0)
+				changemenulistparam(tmpmlist, node->filename, "0");
+			else
+				changemenulistparam(tmpmlist, node->filename, node->url);
  
 			free(tmpstr); tmpstr = NULL;
 			free(tmpinfo); tmpinfo = NULL;
