@@ -3010,10 +3010,10 @@ msgid "Caching Playback (30MB / 360s)"
 msgstr "Auf Festplatte zwischenspeichern (30MB/360s)"
 
 msgid "Download Full File"
-msgstr "Datei Downloaden in den Streampfad"
+msgstr "Datei Downloaden in Streampfad"
 
 msgid "Download Full File (background)"
-msgstr "Datei Downloaden in den Streampfad (unsichtbar)"
+msgstr "Datei Downloaden in Streampfad (unsichtbar)"
 
 msgid "Remove Cachefile ?"
 msgstr "Zwischengespeicherte Datei löschen?"
@@ -3067,7 +3067,19 @@ msgid "usedns"
 msgstr "Benutze DNS Adresse"
 
 msgid "Search on Kinox"
-msgstr "Suche den ausgewählten Titel bei Kinox"
+msgstr "Suche diesen Titel bei Kinox"
+
+msgid "Search on Solarmovies (movie)"
+msgstr "Suche diesen Titel bei Solarmovies (movie)"
+
+msgid "Search on Solarmovies (serie)"
+msgstr "Suche diesen Titel bei Solarmovies (serie)"
+
+msgid "Search on Youtube"
+msgstr "Suche diesen Titel bei Youtube"
+
+msgid "Search on MyVideo"
+msgstr "Suche diesen Titel bei MyVideo"
 
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr "Fehler, ihr TMBb Suchergebniss hat eine ungültige imdbid und kann\ndadurch nicht in der MediaDB abgespeichert werden"
@@ -3166,7 +3178,7 @@ msgid "Show HDD freesize"
 msgstr "Zeige freien Festplattenspeicher"
 
 msgid "Jump To (min)"
-msgstr "Springe vor Minute"
+msgstr "Springe von aktueller Position vor +(min)"
 
 msgid "Jump"
 msgstr "Springen"
