@@ -935,7 +935,7 @@ void fesetunicable(struct dvbdev* node)
 
 	debug(200, "send diseqc unicable cmd (%s)", node->feshortname);
 	fediseqcsendmastercmd(node, &cmd, 100);
-	fesetvoltage(node, SEC_VOLTAGE_13, 15);
+	//fesetvoltage(node, SEC_VOLTAGE_13, 15);
 }
 
 void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
