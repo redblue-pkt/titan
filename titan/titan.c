@@ -202,7 +202,6 @@ struct download* bgdownload[MAXBGDOWNLOAD] = {NULL};
 #include "settings_bluebutton.h"
 #include "extensions.h"
 #include "system_update.h"
-#include "eraseswap.h"
 #include "system_backup.h"
 #include "system_backup_restore.h"
 #include "info.h"
