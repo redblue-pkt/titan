@@ -354,7 +354,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	else if(ostrcmp("restoredefault", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screenrestoredefault();
+		screenrestoredefaultchoice();
 	}
 	else if(ostrcmp("shortepg", menuentry->name) == 0)
 	{
@@ -779,11 +779,6 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	{
 		if(check == 1) return 0;
 		screensystem_info(2);
-	}
-	else if(ostrcmp("eraseswap", menuentry->name) == 0)
-	{
-		if(check == 1) return 0;
-		screeneraseswap();
 	}
 	else if(ostrcmp("system_backup", menuentry->name) == 0)
 	{
