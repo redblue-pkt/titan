@@ -223,6 +223,7 @@ void screenhelp(struct skin* node);
 
 //restoredefault.h
 void screenrestoredefault();
+void screenrestoredefaultchoice();
 
 //ca.h
 int getfreecasession(struct dvbdev* dvbnode, int type, int value);
