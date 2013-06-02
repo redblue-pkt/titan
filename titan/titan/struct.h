@@ -82,7 +82,6 @@
 #include <ddvdlib.h>
 #endif
 
-
 #define OVERSION "1.28"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
