@@ -47,10 +47,11 @@ void screenplaybufferstatus(struct stimerthread* self)
 			break;
 		}
 
-		if(draw == 50 && playergetbuffersize() > 0)
+		if(draw == 50)
 		{
-			drawscreen(playbufferstatus, 0, 0);
 			draw = 0;
+			if(playergetbuffersize() > 0)
+				drawscreen(playbufferstatus, 0, 0);
 		}
 		//usleep(10000);
 		draw++;
