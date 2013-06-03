@@ -329,6 +329,8 @@ void screenmediadbedit(char* file, int id, int flag)
 			blitfb(0);
 		}
 	}
+	else
+		textbox(_("Message"), _("MediaDB entry for this file not found."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 }
 
 #endif
