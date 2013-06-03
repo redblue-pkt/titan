@@ -396,7 +396,7 @@ msgid "dnsserver 2"
 msgstr "DNS-Server 2"
 msgid "Do you really want to erase all datas and backups from Swap?\n"
 "The Box will reboot and the erase will be started!"
-msgstr "Swap Daten und Backup löschen?\n"
+msgstr "Internen Swap Speicher löschen und Werkseinstellung durchführen?\n"
 "Box neu starten und Löschvorgang ausführen "
 msgid "Do you really want to start the Wizard?\n"
 "The Box will reboot and the Wizard will be started!"
@@ -3204,3 +3204,8 @@ msgstr "Formatiere Internen Speicher mit Werkseinstellung"
 
 msgid "Format and backup/restore settings"
 msgstr "Formatiere Internen Speicher ohne Werkseinstellung"
+
+msgid "Do you really want to erase Swap (Settings are preserve)?\nThe Box will reboot and the erase will be started!"
+msgstr "Internen Swap Speicher löschen ohne Werkseinstellung durchführen?\nBox neu starten und Löschvorgang ausführen "
+
+
