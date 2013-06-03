@@ -3208,4 +3208,6 @@ msgstr "Formatiere Internen Speicher ohne Werkseinstellung"
 msgid "Do you really want to erase Swap (Settings are preserve)?\nThe Box will reboot and the erase will be started!"
 msgstr "Internen Swap Speicher löschen ohne Werkseinstellung durchführen?\nBox neu starten und Löschvorgang ausführen "
 
+msgid "MediaDB entry for this file not found."
+msgstr "MediaDB Eintrag dieser Datei konnte nicht gefunden werden."
 
