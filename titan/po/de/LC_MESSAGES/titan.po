@@ -3211,3 +3211,6 @@ msgstr "Internen Swap Speicher löschen ohne Werkseinstellung durchführen?\nBox n
 msgid "MediaDB entry for this file not found."
 msgstr "MediaDB Eintrag dieser Datei konnte nicht gefunden werden."
 
+msgid "Tunerconfig is not allowed if record\nor stream is running !"
+msgstr "Tunerconfig während einer Aufnahme/Streaming ist nicht erlaubt"
+
