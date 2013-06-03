@@ -48,7 +48,8 @@ void screenbackuperaseswap()
 	{
 		debug(40, "Erase-Mtd with settings restore");
 		drawscreen(load, 0, 0);
-		system("touch /var/etc/.erasemtd1");
+		system("touch /var/etc/.erasemtd");
+		system("touch /var/etc/.backupmtd");
 		sleep(4);
 		clearscreen(load);
 		oshutdown(2, 1);
