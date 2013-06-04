@@ -152,6 +152,11 @@
 #define T_DATA_LAST 0xA0	//convey data from higher (h<->m)
 #define T_DATA_MORE 0xA1	//convey data from higher (h<->m)
 
+//Alarm Signal used as timeout
+#define ALARMTIMEOUT 1
+#define ALARMSTARTTIME(x) if(ALARMTIMEOUT == 1) {alarm(x);}
+#define ALARMSTOPTIME if(ALARMTIMEOUT == 1) {alarm(0);}
+
 // VFD icons supported (more or less) on all boxes:
 typedef enum { VFD_USB = 0x10, VFD_HD, VFD_HDD, VFD_LOCK, VFD_BT, VFD_MP3, VFD_MUSIC, VFD_DD, VFD_MAIL, VFD_MUTE, VFD_PLAY, VFD_PAUSE, VFD_FF, VFD_FR, VFD_REC, VFD_CLOCK } vfdicons;
 
