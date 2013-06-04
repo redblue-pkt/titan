@@ -306,7 +306,7 @@ void start(void)
 			if(autotimerthread != NULL)
 			{
 				autotimerthread->aktion = STOP;
-				sleep(2);
+				sleep(3);
 				if(autotimerthread == NULL)
 				{
 					textbox(_("Stop AutoTimer"), _("AutoTimer succesfull stopped"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);	
