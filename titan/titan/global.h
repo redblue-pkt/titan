@@ -3,13 +3,16 @@
 
 #define MAXTOKENS 256
 
-int osystem(char* cmd, int timeout) //should not used in thread
+int osystem(char* cmd, int timeout)
 {
-	int ret = 0;
+	char* tmpstr = NULL;
 
-	alarm(timeout); //timeout in sec
-	ret = system(cmd);
-	alarm(0);
+	tmpstr = ostrcat(tmpstr, "timeout -t ", 1, 0);
+	tmpstr = ostrcat(tmpstr, oitoa(timeout), 1, 1);
+	tmpstr = ostrcat(tmpstr, " -s 9 ", 1, 0);
+	tmpstr = ostrcat(tmpstr, cmd, 1, 0);
+	ret = system(tmpstr);
+	free(tmpstr); tmpstr = NULL;
 
 	return ret;
 }
