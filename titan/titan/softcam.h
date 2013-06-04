@@ -69,7 +69,7 @@ void readmenu()
 			free(cmd); cmd = NULL;
 			if(ostrcmp(emush, checkactive) == 0)
 			{
-				debug(100, "active emu = %s\n", emush);
+				debug(100, "active emu = %s", emush);
 				active = 1;
 			}
 
@@ -80,7 +80,7 @@ void readmenu()
 			free(cmd); cmd = NULL;
 			if(ostrstr(checkstate, "checkemu running") != 0)
 			{
-				debug(100, "running emu = %s\n", emush);
+				debug(100, "running emu = %s", emush);
 				check = 1;
 			}
 
@@ -106,7 +106,7 @@ void readmenu()
 				emuname = ostrcat(emuname, ")", 1, 0);
 			}
 
-			debug(100, "emuname = %s\n", emuname);
+			debug(100, "emuname = %s", emuname);
 			addlist(emulist, emuname, emush);
 			free(emuname); emuname = NULL;
 			free(checkactive); checkactive = NULL;
@@ -179,13 +179,16 @@ void fillmenubox()
 		}
 	}
 	setlistboxselection(listbox, aktemu);
-	debug(100, "set selection to %s\n", aktemu);
+	debug(100, "set selection to %s", aktemu);
 }
 
 void activate(char* emu)
 {
-	debug(100, "active emu= %s\n",emu);
 	char* cmd = NULL;
+
+	debug(100, "active emu= %s", emu);
+	if(emu == NULL) return;
+
 	cmd = ostrcat(emu, "\"" , 0, 0);
 	cmd = ostrcat("emu.sh activate \"" , cmd, 0, 1);
 	system(cmd);
@@ -196,8 +199,11 @@ void activate(char* emu)
 
 void deactivate(char* emu)
 {
-	debug(100, "deaktivate emu= %s\n",emu);
 	char* cmd = NULL;
+
+	debug(100, "deaktivate emu= %s", emu);
+	if(emu == NULL) return;
+
 	cmd = ostrcat(emu, "\"" , 0, 0);
 	cmd = ostrcat("emu.sh deactivate \"" , cmd, 0, 1);
 	system(cmd);
@@ -208,8 +214,11 @@ void deactivate(char* emu)
 
 void startcam(char* emu)
 {
-	debug(100, "startcam emu= %s\n",emu);
 	char* cmd = NULL;
+
+	debug(100, "startcam emu= %s", emu);
+	if(emu == NULL) return;
+
 	cmd = ostrcat(emu, "\"" , 0, 0);
 	cmd = ostrcat("emu.sh start \"" , cmd, 0, 1);
 	system(cmd);
@@ -220,8 +229,11 @@ void startcam(char* emu)
 
 void stopcam(char* emu)
 {
-	debug(100, "stopcam emu= %s\n",emu);
 	char* cmd = NULL;
+
+	debug(100, "stopcam emu= %s", emu);
+	if(emu == NULL) return;
+
 	cmd = ostrcat(emu, "\"" , 0, 0);
 	cmd = ostrcat("emu.sh stop \"" , cmd, 0, 1);
 	system(cmd);
@@ -232,8 +244,11 @@ void stopcam(char* emu)
 
 void restartcam(char* emu)
 {
-	debug(100, "restart emu= %s\n",emu);
 	char* cmd = NULL;
+
+	debug(100, "restart emu= %s", emu);
+	if(emu == NULL) return;
+
 	cmd = ostrcat(emu, "\"" , 0, 0);
 	cmd = ostrcat("emu.sh restart \"" , cmd, 0, 1);
 	system(cmd);
