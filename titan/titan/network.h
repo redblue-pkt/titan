@@ -533,6 +533,37 @@ void screennetwork_adapterext(int mode, char* interface)
 	clearscreen(network);
 }
 
+void screenhostname()
+{
+	ret = 0;
+	char* hostname = NULL, *newhostname = NULL, *cmd = NULL;
+	
+	hostname = command("hostname");
+	newhostname = textinput(NULL, hostname);
+	newhostname = strstrip(newhostname);
+	
+	if(newhostname != NULL && strlen(newhostname) > 0)
+	{
+		ret = writesys("/etc/hostname", newhostname, 1);
+		if(ret == 0)
+		{
+			cmd = ostrcat(cmd, "hostname \"", 1, 0);
+			cmd = ostrcat(cmd, newhostname, 1, 0);
+			cmd = ostrcat(cmd, "\"", 1, 0);
+			ret = system(cmd);
+		}
+	}
+	else
+		ret = 1;
+	
+	if(ret != 0)
+			textbox(_("Message"), _("Can't change hostname !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
+	
+	free(cmd); cmd = NULL;
+	free(hostname); hostname = NULL;
+	free(newhostname); newhostname = NULL;
+}
+
 void screennetwork_adapter()
 {
 	int rcret = 0, mode = 0;
@@ -592,6 +623,11 @@ start:
 
 				delmarkedscreennodes(interfacelist, 1);
 				goto start;
+			}
+			if(rcret == getrcconfigint("rcgreen", NULL))
+			{
+				screenhostname();
+				drawscreen(interfacelist, 0, 0);
 			}
 		}
 	}

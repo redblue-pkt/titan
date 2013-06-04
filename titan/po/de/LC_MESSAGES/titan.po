@@ -3214,3 +3214,5 @@ msgstr "MediaDB Eintrag dieser Datei konnte nicht gefunden werden."
 msgid "Tunerconfig is not allowed if record\nor stream is running !"
 msgstr "Tunerconfig während einer Aufnahme/Streaming ist nicht erlaubt"
 
+msgid "Can't change hostname !"
+msgstr "Fehler Hostname kann nicht geändert werden !"
