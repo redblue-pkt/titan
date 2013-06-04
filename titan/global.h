@@ -7,9 +7,9 @@ int osystem(char* cmd, int timeout) //should not used in thread
 {
 	int ret = 0;
 
-ALARMSTARTTIME(timeout) //timeout in sec
+	alarm(timeout); //timeout in sec
 	ret = system(cmd);
-ALARMSTOPTIME
+	alarm(0);
 
 	return ret;
 }
