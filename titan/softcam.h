@@ -191,7 +191,7 @@ void activate(char* emu)
 
 	cmd = ostrcat(emu, "\"" , 0, 0);
 	cmd = ostrcat("emu.sh activate \"" , cmd, 0, 1);
-	osystem(cmd, 15);
+	osystem(cmd, 20);
 	free(cmd);
 	readmenu();
 	fillmenubox();
@@ -206,7 +206,7 @@ void deactivate(char* emu)
 
 	cmd = ostrcat(emu, "\"" , 0, 0);
 	cmd = ostrcat("emu.sh deactivate \"" , cmd, 0, 1);
-	osystem(cmd, 15);
+	osystem(cmd, 20);
 	free(cmd);
 	readmenu();
 	fillmenubox();
@@ -221,7 +221,7 @@ void startcam(char* emu)
 
 	cmd = ostrcat(emu, "\"" , 0, 0);
 	cmd = ostrcat("emu.sh start \"" , cmd, 0, 1);
-	osystem(cmd, 15);
+	osystem(cmd, 20);
 	free(cmd);
 	readmenu();
 	fillmenubox();
@@ -236,7 +236,7 @@ void stopcam(char* emu)
 
 	cmd = ostrcat(emu, "\"" , 0, 0);
 	cmd = ostrcat("emu.sh stop \"" , cmd, 0, 1);
-	osystem(cmd, 15);
+	osystem(cmd, 20);
 	free(cmd);
 	readmenu();
 	fillmenubox();
@@ -251,7 +251,7 @@ void restartcam(char* emu)
 
 	cmd = ostrcat(emu, "\"" , 0, 0);
 	cmd = ostrcat("emu.sh restart \"" , cmd, 0, 1);
-	osystem(cmd, 15);
+	osystem(cmd, 20);
 	free(cmd);
 	readmenu();
 	fillmenubox();
