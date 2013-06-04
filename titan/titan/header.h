@@ -637,6 +637,7 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+int osystem(char* cmd, int timeout);
 char* mask(char* input, int count, char* maskchar);
 char* getboxtype();
 char* getfilenameext(char* filename);
