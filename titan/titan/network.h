@@ -535,7 +535,7 @@ void screennetwork_adapterext(int mode, char* interface)
 
 void screenhostname()
 {
-	ret = 0;
+	int ret = 0;
 	char* hostname = NULL, *newhostname = NULL, *cmd = NULL;
 	
 	hostname = command("hostname");
