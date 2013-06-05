@@ -371,13 +371,13 @@ void screenmc_videoplayer()
 		}
 		else if(rcret == getrcconfigint("rcup", NULL))
 		{
-			if(status.play == 1 || status.playspeed != 0 || status.pause = 1)
+			if(status.play == 1 || status.playspeed != 0 || status.pause == 1)
 				playrcjumpf(filename, NULL, 600, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 
 		else if(rcret == getrcconfigint("rcff", NULL))
 		{
-			if(status.play == 1 || status.playspeed != 0 || status.pause = 1)
+			if(status.play == 1 || status.playspeed != 0 || status.pause == 1)
 				playrcff(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}	
 		else if(rcret == getrcconfigint("rcfr", NULL))
