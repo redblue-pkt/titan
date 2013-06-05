@@ -741,7 +741,7 @@ void savenetworkbrowser(char* filename)
 		drawscreen(loadmediadb, 0, 0);	
 
 		writesys(getconfig("automiscfile", NULL), savesettings, 0);
-		system("hotplug.sh first");
+		system("hotplug.sh first &");
 //		system("rm -rf /mnt/automount ; mkdir /mnt/automount; cp -a /var/etc/automount/* /mnt/automount");
 	}
 
