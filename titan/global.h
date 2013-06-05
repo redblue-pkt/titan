@@ -5,6 +5,7 @@
 
 int osystem(char* cmd, int timeout)
 {
+	int ret = 0;
 	char* tmpstr = NULL;
 
 	tmpstr = ostrcat(tmpstr, "timeout -t ", 1, 0);
