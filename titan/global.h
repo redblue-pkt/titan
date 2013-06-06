@@ -304,6 +304,47 @@ int checklowflash()
 	return 1;	
 }
 
+int checkhighflash()
+{
+	char* tmpstr = NULL;
+	char* cmd = NULL;
+	cmd = ostrcat(cmd, "cat", 1, 0); 
+	cmd = ostrcat(cmd, " ", 1, 0); 
+	cmd = ostrcat(cmd, "/", 1, 0); 
+	cmd = ostrcat(cmd, "proc", 1, 0); 
+	cmd = ostrcat(cmd, "/", 1, 0); 
+	cmd = ostrcat(cmd, "mtd", 1, 0); 
+	cmd = ostrcat(cmd, " ", 1, 0); 
+	cmd = ostrcat(cmd, "|", 1, 0); 
+	cmd = ostrcat(cmd, " ", 1, 0); 
+	cmd = ostrcat(cmd, "grep", 1, 0); 
+	cmd = ostrcat(cmd, " ", 1, 0); 
+	cmd = ostrcat(cmd, "mtd5", 1, 0); 
+	cmd = ostrcat(cmd, " ", 1, 0); 
+	cmd = ostrcat(cmd, "|", 1, 0); 
+	cmd = ostrcat(cmd, " ", 1, 0); 
+	cmd = ostrcat(cmd, "awk '{print ", 1, 0); 
+	cmd = ostrcat(cmd, "$2}'", 1, 0); 
+
+	tmpstr = string_newline(command(cmd));
+	free(cmd), cmd = NULL;
+
+	if(tmpstr == NULL)
+	{
+		return 1;
+	}
+
+	if(ostrcmp(tmpstr, "1ce40000") == 0)
+	{
+		free(tmpstr), tmpstr = NULL;
+		status.security = 1;
+		setskinnodeslocked(0);
+
+		return 0;
+	}
+	return 1;	
+}
+
 char* unhexlify(char *hexstr)
 {
 	int len = 0, tmpint = 0;
