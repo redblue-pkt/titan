@@ -877,6 +877,8 @@ firstwizzardstep1:
 			resettvpic();
 			screentunerconfig();
 			resettvpic();
+			screenscanconfig(1);
+			resettvpic();
 			screennetwork_adapter();
 			resettvpic();
 			writevfd("Setting OK ?");
