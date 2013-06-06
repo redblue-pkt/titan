@@ -337,9 +337,6 @@ int checkhighflash()
 	if(ostrcmp(tmpstr, "1ce40000") == 0)
 	{
 		free(tmpstr), tmpstr = NULL;
-		status.security = 1;
-		setskinnodeslocked(0);
-
 		return 0;
 	}
 	return 1;	
