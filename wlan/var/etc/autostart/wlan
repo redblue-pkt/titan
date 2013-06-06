@@ -1,7 +1,5 @@
 #######/bin/sh
 
-startWaitfor "/tmp/.hotplugready" 20
-
 rm -f /tmp/.networkready
 
 if [ ! -z $WLAN_STARTMODE ] && [ $WLAN_STARTMODE == "load" ]; then
@@ -45,8 +43,10 @@ if [ ! -z $WLAN_STARTMODE ] && [ $WLAN_STARTMODE == "load" ]; then
 	elif [ -e /var/lib/modules/$WLAN_MODULE.ko ];then
 		insmod /var/lib/modules/$WLAN_MODULE.ko
 	elif [ -e /var/swap/modules/$WLAN_MODULE.ko ];then
+		startWaitfor "/tmp/.hotplugready" 20
 		insmod /var/swap/modules/$WLAN_MODULE.ko
 	elif [ -e /mnt/swapextensions/modules/$WLAN_MODULE.ko ];then
+		startWaitfor "/tmp/.hotplugready" 20
 		insmod /mnt/swapextensions/modules/$WLAN_MODULE.ko
 	fi
 	
@@ -121,6 +121,7 @@ if [ -z $WLAN_STARTMODE ] || [ $WLAN_STARTMODE == "load" ] || [ $WLAN_STARTMODE 
 		NET=`echo ${IP%.*}`
 		/bin/fping -l -b12 -q -i2000 -g $NET.1 $NET.254 2> /dev/null &
 		echo "[wlan] completed, now checking recordshare by hotplug" | tee -a $WLAN_LOG
+		startWaitfor "/tmp/.hotplugready" 20
 		/sbin/hotplug.sh checkRecordShare
 	) &
 
