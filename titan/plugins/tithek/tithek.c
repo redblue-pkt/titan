@@ -63,9 +63,9 @@ void start(void)
 	tithekdownloadcount = 0;
 	tithekrun = 1;
 	tithekexit = 0;
-	if(checkbox("WHITEBOX") == 1)
-		screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.crenova.list", "Operator - Mainmenu", 1);
-	else
+//	if(checkbox("WHITEBOX") == 1)
+//		screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.crenova.list", "Operator - Mainmenu", 1);
+//	else
 		screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.list", "Tithek - Mainmenu", 1);
 	
 	tithekrun = 0;
