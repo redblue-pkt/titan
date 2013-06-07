@@ -12,7 +12,7 @@ void screensystem_backup_restore()
 	struct skin* info = getscreennode(backup_restore, "info");
 	char* tmpstr = NULL, *infotext = NULL;
 
-	infotext = "Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n\nPress -backup- to save your actual settings to swapstick / recording hdd.\nWARNING: The old backup will be deleted!\n\nWhile using the update function, your settings will be saved and restored automatically, if possible!";
+	infotext = "Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n\nPress -backup- to save your actual settings to swapstick / recording hdd.\nWARNING: The old backup will be deleted!";
 
 	changetext(info, _(infotext));
 	changetitle(backup_restore, _("Backup / Restore Settings"));
@@ -33,19 +33,18 @@ void screensystem_backup_restore()
 			{
 				changetext(info, _("Please wait ...\n\nAll Settings are saved.\n\nBox will start in few seconds."));
 				drawscreen(backup_restore, 0, 0);
-			
-				if(isfile("/var/backup/.actbackup"))
+
+				if(isfile("/tmp/.backupdev"))
 				{
-					FILE *fd; fd = fopen("/var/backup/.firstrun", "w");
-					if(fd != NULL) fclose(fd);
-					oshutdown(2, 1);
-				}
-				else if(isfile("/tmp/.backupdev"))
-				{
-					//this is a small workaround until the file .actbackup exists everywhere....
-					FILE *fd; fd = fopen("/var/backup/.firstrun", "w");
-					if(fd != NULL) fclose(fd);
-					oshutdown(2, 1);
+					ret = system("/sbin/settings.sh restore > /tmp/backup.log 2>&1");
+					if(ret != 0)
+						textbox(_("Message"), _("Restore failed, see log"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
+				  else
+				  {
+						if(textbox(_("Message"), _("Update Plugins to new Version?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+							screenextensions(3, NULL, 1); 
+						ret = system("init 6");
+					}
 				}
 				else
 				{
@@ -54,7 +53,8 @@ void screensystem_backup_restore()
 					changetext(info, _(infotext));
 					drawscreen(backup_restore, 0, 0);
 				}
-			}else
+			}
+			else
 			{
 				drawscreen(backup_restore, 0, 0);
 			}
@@ -78,8 +78,8 @@ void screensystem_backup_restore()
 
 				writeallconfig(1);
 				
-				ret = system("/sbin/settings.sh titan backup > /tmp/backup.log 2>&1");
-				
+				ret = system("/sbin/settings.sh backup > /tmp/backup.log 2>&1");
+	
 				changetitle(backup_restore, _("Backup / Restore Settings"));
 				changetext(info, _(infotext));
 				info->textposx = 0;
