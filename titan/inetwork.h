@@ -357,7 +357,7 @@ int addinetworkall(struct stimerthread* self)
 			// DHCP
 			if(tmp_type == 0)
 			{
-				cmd = ostrcat(cmd, "cat /var/etc/network/interfaces | grep ", 1, 0);
+				cmd = ostrcat(cmd, "cat /mnt/network/interfaces | grep ", 1, 0);
 				cmd = ostrcat(cmd, tmp_device, 1, 0);
 				cmd = ostrcat(cmd, " | grep dhcp | wc -l", 1, 0);
 				tmpstr = command(cmd);
@@ -370,7 +370,7 @@ int addinetworkall(struct stimerthread* self)
 			// OFF
 			if(tmp_type == 0)
 			{
-				cmd = ostrcat(cmd, "cat /var/etc/network/interfaces | grep ", 1, 0);
+				cmd = ostrcat(cmd, "cat /mnt/network/interfaces | grep ", 1, 0);
 				cmd = ostrcat(cmd, tmp_device, 1, 0);
 				cmd = ostrcat(cmd, " | grep off | wc -l", 1, 0);
 				tmpstr = command(cmd);
@@ -410,7 +410,7 @@ int addinetworkall(struct stimerthread* self)
 
 		// DNSSERVER1
 		free(status.dnsserver1); status.dnsserver1 = NULL;
-		cmd = ostrcat(cmd, "cat /var/etc/resolv.conf | grep nameserver | awk '{ print $2 }' | sed -n 1p", 1, 0);
+		cmd = ostrcat(cmd, "cat /mnt/network/resolv.conf | grep nameserver | awk '{ print $2 }' | sed -n 1p", 1, 0);
 		tmp_dnsserver1 = ostrcat(tmp_dnsserver1 , command(cmd), 1, 1);
 		if(tmp_dnsserver1 != NULL)
 		{
@@ -424,7 +424,7 @@ int addinetworkall(struct stimerthread* self)
 
 		// DNSSERVER2
 		free(status.dnsserver2); status.dnsserver2 = NULL;
-		cmd = ostrcat(cmd, "cat /var/etc/resolv.conf | grep nameserver | awk '{ print $2 }' | sed -n 2p", 1, 0);
+		cmd = ostrcat(cmd, "cat /mnt/network/resolv.conf | grep nameserver | awk '{ print $2 }' | sed -n 2p", 1, 0);
 		tmp_dnsserver2 = ostrcat(tmp_dnsserver2 , command(cmd), 1, 1);
 		if(tmp_dnsserver2 != NULL)
 		{
