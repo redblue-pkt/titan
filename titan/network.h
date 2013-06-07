@@ -539,6 +539,7 @@ void screenhostname()
 	char* hostname = NULL, *newhostname = NULL, *cmd = NULL;
 	
 	hostname = command("hostname");
+	hostname = strstrip(hostname);
 	newhostname = textinput(NULL, hostname);
 	newhostname = strstrip(newhostname);
 	
@@ -553,8 +554,6 @@ void screenhostname()
 			ret = system(cmd);
 		}
 	}
-	else
-		ret = 1;
 	
 	if(ret != 0)
 			textbox(_("Message"), _("Can't change hostname !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
