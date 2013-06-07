@@ -184,17 +184,6 @@ void screenbrowser()
 	ret = servicestop(status.aktservice, 1, 0);
 	if(ret == 1) return;
 	setfbtransparent(255);
-			
-	if(!file_exist(getconfig("browserfavfile", NULL)))   
-	{
-		if(!file_exist("/var/swap/player"))   
-			mkdir("/var/swap/player", 0777);
-		
-		char* cmd = NULL;
-		cmd = ostrcat("cp /var/etc/titan/browserfav ", getconfig("browserfavfile", NULL), 0, 0);
-		system(cmd);
-		free(cmd), cmd = NULL;
-	}
 
 	readbrowserfav(getconfig("browserfavfile", NULL));
 	node = browserfav;
