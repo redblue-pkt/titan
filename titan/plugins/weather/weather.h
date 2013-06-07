@@ -410,17 +410,6 @@ void screenweather()
 	struct weather* node = NULL;
 	char* tmpstr = NULL, *location = NULL;
 
-	if(!file_exist(getconfig("weatherfile", NULL)))   
-	{
-		if(!file_exist("/var/swap/player"))   
-			mkdir("/var/swap/player", 0777);
-		
-		char* cmd = NULL;
-		cmd = ostrcat("cp /var/etc/titan/weather ", getconfig("weatherfile", NULL), 0, 0);
-		system(cmd);
-		free(cmd), cmd = NULL;
-	}
-
 	location = readweather(getconfig("weatherfile", NULL), weather, listbox);
 	addscreenrc(weather, listbox);
 
