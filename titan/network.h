@@ -212,7 +212,7 @@ int writeinterfaces()
 					savedns = ostrcat(savedns, "options timeout:2 attempts:1", 1, 0);
 
 				
-				FILE* fd1 = fopen("/var/etc/resolv.conf", "w");
+				FILE* fd1 = fopen("/mnt/network/resolv.conf", "w");
 				if(fd1)
 				{
 					fprintf(fd1, "%s\n", savedns);
@@ -226,7 +226,7 @@ int writeinterfaces()
 
 	debug(50, "[NETWORK] save interfaces:\n %s", savesettings);
 
-	FILE* fd = fopen("/var/etc/network/interfaces", "w");
+	FILE* fd = fopen("/mnt/network/interfaces", "w");
 	if(fd)
 	{
 		fprintf(fd, "%s\n", savesettings);
