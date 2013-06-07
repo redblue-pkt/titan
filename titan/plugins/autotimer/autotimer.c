@@ -8,6 +8,7 @@ char pluginpic[] = "%pluginpath%/autotimer/plugin.png";
 
 int pluginaktiv = 0;
 int pluginversion = 999999;
+int autostart = 0;
 //struct skin* pluginmenu = NULL;
 //int pluginflag = 1; //don't show the plugin in pluginmanager
 
@@ -109,6 +110,13 @@ void autotimer_thread()
 	{
 		autotimerthread->aktion = STOP;
 	}
+	
+	while (autotimerthread->aktion != STOP && autostart > 0)
+	{
+		sleep(1);
+		autostart = autostart - 1;
+	}
+		
 	while (autotimerthread->aktion != STOP)
 	{
 		sleep(10);
@@ -213,6 +221,7 @@ void autotimer_thread()
 
 void autotimer_main()
 {
+	autostart = 0;
 	if(getconfigint("at1_running", NULL) == 1)
 	{
 		if(autotimerthread == NULL)
@@ -234,7 +243,14 @@ void init(void)
 	readscreen(tmpstr, 120, 1);
 	free(tmpstr); tmpstr = NULL;
 	debug(10, "Autot Timer Plugin loadet !!!");
-	autotimer_main();
+	if(getconfigint("at1_running", NULL) == 1)
+	{
+		if(autotimerthread == NULL)
+		{
+			autostart = 120;
+			autotimerthread = addtimer(&autotimer_thread, START, 10000, 1, NULL, NULL, NULL);
+		}
+	}
 }
 
 //wird beim entladen ausgefuehrt
@@ -262,6 +278,8 @@ void start(void)
 	struct skin* autotimer_end = getscreennode(autotimer, "end");
 	struct skin* autotimer_blue = getscreennode(autotimer, "blue");
 	struct skin* tmp = NULL;
+	
+	autostart = 0;
 	
 	if(autotimerthread == NULL)
 		changetext(autotimer_blue, "start");
