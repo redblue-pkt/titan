@@ -359,17 +359,6 @@ void screenopera(char* url)
 	char* opera_root, *opera_bin = NULL, *opera_dir = NULL;
 	char* opera_home = NULL, *opera_fonts = NULL, *opera_widgets = NULL;
 
-	if(!file_exist(getconfig("hbbtvfavfile", NULL)))   
-	{
-		if(!file_exist("/var/swap/player"))   
-			mkdir("/var/swap/player", 0777);
-		
-		char* cmd = NULL;
-		cmd = ostrcat("cp /var/etc/titan/hbbtvfav ", getconfig("hbbtvfavfile", NULL), 0, 0);
-		system(cmd);
-		free(cmd), cmd = NULL;
-	}
-
 	if(isdir("/var/usr/local/share/titan/plugins/hbbtv/opera"))
 		opera_root = ostrcat("/var/usr/local/share/titan/plugins/hbbtv/opera", NULL, 0, 0);
 	else
@@ -739,17 +728,6 @@ void screenoperafav()
 	//ret = servicestop(status.aktservice, 1, 0);
 	//if(ret == 1) return;
 	//setfbtransparent(255);
-
-	if(!file_exist(getconfig("hbbtvfavfile", NULL)))   
-	{
-		if(!file_exist("/var/swap/player"))   
-			mkdir("/var/swap/player", 0777);
-		
-		char* cmd = NULL;
-		cmd = ostrcat("cp /var/etc/titan/hbbtvfav ", getconfig("hbbtvfavfile", NULL), 0, 0);
-		system(cmd);
-		free(cmd), cmd = NULL;
-	}
 
 	readhbbtvfav(getconfig("hbbtvfavfile", NULL));
 	node = hbbtvfav;
