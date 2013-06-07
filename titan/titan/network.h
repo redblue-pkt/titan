@@ -669,7 +669,7 @@ void screennetwork_wlan()
 
 	char* wtype = NULL, *wssid = NULL, *wkey = NULL;
 
-	readwlan("/var/etc/wpa_supplicant.conf", &wtype, &wssid, &wkey);
+	readwlan("/mnt/network/wpa_supplicant.conf", &wtype, &wssid, &wkey);
 
 	addchoicebox(startmode, "n", _("no"));
 	addchoicebox(startmode, "y", _("yes"));
@@ -758,7 +758,7 @@ void screennetwork_wlan()
 			{
 				int tmptype = 0;
 				if(type->ret != NULL) tmptype = atoi(type->ret);
-				writewlan("/var/etc/wpa_supplicant.conf", tmptype, ssid->ret, key->ret);
+				writewlan("/mnt/network/wpa_supplicant.conf", tmptype, ssid->ret, key->ret);
 				if(startmode->ret != NULL) addownconfig("wlan", startmode->ret);
 				if(rcret == getrcconfigint("rcok", NULL))
 				{
