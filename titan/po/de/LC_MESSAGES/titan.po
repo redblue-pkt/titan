@@ -3215,4 +3215,7 @@ msgid "Tunerconfig is not allowed if record\nor stream is running !"
 msgstr "Tunerconfig während einer Aufnahme/Streaming ist nicht erlaubt"
 
 msgid "Can't change hostname !"
-msgstr "Fehler Hostname kann nicht geändert werden !"
+msgstr "Fehler, Hostname kann nicht geändert werden!"
+
+msgid "HOSTNAME"
+msgstr "Hostname"
