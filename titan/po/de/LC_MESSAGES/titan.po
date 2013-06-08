@@ -2518,6 +2518,9 @@ msgstr "Sicherung fehlgeschlagen, Infos können Sie im Log sehen"
 msgid "Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n\nPress -backup- to save your actual settings to swapstick / recording hdd.\nWARNING: The old backup will be deleted!\n\nWhile using the update function, your settings will be saved and restored automatically, if possible!"
 msgstr "Drücken von -Wiederherstellung- (Grün)\nund Ihre Daten werden aus einer zuvor erstellten Sicherung wiederhergestellt! Ihre Satbox wird dafür automatisch neugestartet! \n\nDrücken von -Sicherung erstellen- (Gelb)\ndann werden Ihre Daten gesichert.\nWARNUNG: Die alten Sicherungen werden gelöscht!\n\nWenn man die Softwareaktualisierung unter System benutzt wird diese Sicherung automatisch angelegt und wiederhergestellt!"
 
+msgid "Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n\nPress -backup- to save your actual settings to swapstick / recording hdd.\nWARNING: The old backup will be deleted!"
+msgstr "Drücken von -Wiederherstellung- (Grün)\nund Ihre Daten werden aus einer zuvor erstellten Sicherung wiederhergestellt! Ihre Satbox wird dafür automatisch neugestartet! \n\nDrücken von -Sicherung erstellen- (Gelb)\ndann werden Ihre Daten gesichert.\nWARNUNG: Die alten Sicherungen werden gelöscht!"
+
 msgid "Can't start system update\nPlease remove Stick/HDD and try again"
 msgstr "System Aktualisierung kann nicht gestartet werden!\nEntfernen Sie Bitte alle USB Speichermedien und versuchen Sie es erneut."
 
