@@ -559,7 +559,7 @@ for ROUND in $PLIST;do
 	fi
 done
 
-cp -a "$HOME"/flashimg/source.titan/settings/* "$HOME"/flashimg/BUILD/titan/var/etc/titan
+cp -a "$HOME"/flashimg/source.titan/var.settings/* "$HOME"/flashimg/BUILD/titan/var/etc/titan
 cp -a "$HOME"/flashimg/source.titan/skin "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan
 cp -a "$HOME"/flashimg/source.titan/po "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan
 cp titan "$HOME"/flashimg/BUILD/titan/usr/local/bin
