@@ -157,7 +157,7 @@ void autotimer_thread()
 					node->end += getconfigint("recoverrun" , NULL) * 60;
 					node->end -= (node->end % 60);
 					node->transponderid = channel1->transponderid;
-					
+					recnode = rectimer;
 					konflikt = 0;
 					while(recnode != NULL)
 					{
