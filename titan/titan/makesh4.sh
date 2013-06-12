@@ -767,8 +767,8 @@ rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/networkbro
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/tithek/menu
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/tithek/tithekmainmenu
 
-cp -a "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan."$TYPE".cfg "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan.cfg
-rm -rf "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan.*.cfg
+cp -a "$HOME"/flashimg/BUILD/titan/var/etc/titan.mnt/titan."$TYPE".cfg "$HOME"/flashimg/BUILD/titan/var/etc/titan.mnt/titan.cfg
+rm -rf "$HOME"/flashimg/BUILD/titan/var/etc/titan.mnt/titan.*.cfg
 
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/skin/default/skin/*_grid.png
 # mc grid filelist pngs
