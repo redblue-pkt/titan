@@ -109,10 +109,10 @@ echo "[titan] get settings"
 echo "[titan]--------------------------------------------------------"
 rm -rf "$HOME"/flashimg/source.titan/settings.svn
 svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source.sh4/titansettings_default_sat_1_0/mnt/settings "$HOME"/flashimg/source.titan/settings.svn
-mv -f "$HOME"/flashimg/source.titan/settings.svn/* "$HOME"/flashimg/source.titan/settings
-sort -u "$HOME"/flashimg/source.titan/settings/channel > "$HOME"/flashimg/source.titan/settings/channel.sort
-mv "$HOME"/flashimg/source.titan/settings/channel.sort "$HOME"/flashimg/source.titan/settings/channel
-sed s/"^ *"// -i "$HOME"/flashimg/source.titan/settings/channel
+mv -f "$HOME"/flashimg/source.titan/settings.svn/* "$HOME"/flashimg/source.titan/var.settings
+sort -u "$HOME"/flashimg/source.titan/var.settings/channel > "$HOME"/flashimg/source.titan/var.settings/channel.sort
+mv "$HOME"/flashimg/source.titan/var.settings/channel.sort "$HOME"/flashimg/source.titan/var.settings/channel
+sed s/"^ *"// -i "$HOME"/flashimg/source.titan/var.settings/channel
 echo "[titan]--------------------------------------------------------"
 echo "[titan] get settings done"
 echo "[titan]--------------------------------------------------------"
