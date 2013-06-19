@@ -469,7 +469,7 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 	if(pmtbuf == NULL || chnode == NULL)
 	{
 		debug(1000, "NULL detect");
-		return 1;
+		return -1;
 	}
 
 	sectionlength = ((pmtbuf[1] & 0x0F) << 8) + (pmtbuf[2] & 0xff);
@@ -721,6 +721,7 @@ void dvbgetpmtthread()
 	int16_t pmtpid = status.aktservice->channel->pmtpid;
 	int16_t audiopid = status.aktservice->channel->audiopid;
 	int16_t videopid = status.aktservice->channel->videopid;
+	int oldpmtlen = status.aktservice->pmtlen;
 	
 	if(pmtpid < 1) return;
 
@@ -748,9 +749,9 @@ void dvbgetpmtthread()
 		status.aktservice->channel->pmtpid = pmtpid;
 		dvbgetinfo(pmtbuf, status.aktservice->channel);
 
-		debug(200, "pmt dynamic change oldapid=%d apid=%d oldvpid=%d vpid=%d\n", audiopid, status.aktservice->channel->audiopid, videopid, status.aktservice->channel->videopid);
+		debug(200, "pmt dynamic change oldapid=%d apid=%d oldvpid=%d vpid=%d oldpmtlen=%d\n", audiopid, status.aktservice->channel->audiopid, videopid, status.aktservice->channel->videopid, oldpmtlen);
 
-		if(status.aktservice->channel->audiopid != audiopid || status.aktservice->channel->videopid != videopid)
+		if(status.aktservice->channel->audiopid != audiopid || status.aktservice->channel->videopid != videopid || oldpmtlen == -1)
 			change = 1;
 	}
 
