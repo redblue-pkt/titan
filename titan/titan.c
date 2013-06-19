@@ -984,10 +984,26 @@ firstwizzardstep1:
 		char* cmd = ostrcat("/media/hdd/movie/titankey ", cpuid, 0, 0);
 		system(cmd);
 		checkserial(cpuid);
+		free(cmd); cmd = NULL;
+
+		if(status.security == 1)
+		{
+			struct inetwork* net = getinetworkbydevice("eth0");
+			if(net != NULL)
+			{
+				cmd = ostrcat(cmd, cpuid, 1, 0);
+				cmd = ostrcat(cmd, ",", 1, 0);
+				cmd = ostrcat(cmd, net->mac, 1, 0);
+			}
+			else
+				cmd = ostrcat(cmd, cpuid, 1, 0);
+
+			writesys("/media/hdd/movie/codelist.txt", cmd, 1);
+			textbox(_("Message"), _("Receiver successful unlocked"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+		}
+
 		free(cpuid); cpuid = NULL;
 		free(cmd); cmd = NULL;
-		if(status.security == 1)
-			textbox(_("Message"), _("Receiver successful unlocked"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 	}
 
 	//must called direct befor screeninfobar
