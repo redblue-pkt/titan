@@ -998,7 +998,7 @@ firstwizzardstep1:
 			else
 				cmd = ostrcat(cmd, cpuid, 1, 0);
 
-			writesys("/media/hdd/movie/codelist.txt", cmd, 1);
+			writesys("/media/hdd/movie/codelist.txt", cmd, 3);
 			textbox(_("Message"), _("Receiver successful unlocked"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		}
 
