@@ -437,7 +437,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 			//audio or video pid or codec changed
 			free(status.aktservice->pmtbuf);
 			status.aktservice->pmtbuf = NULL;
-			status.aktservice->pmtlen = 0;
+			status.aktservice->pmtlen = -1;
 		}
 
 		if(flag == 0)
