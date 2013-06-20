@@ -113,8 +113,6 @@ sort -u "$HOME"/flashimg/source.titan/settings.svn/channel > "$HOME"/flashimg/so
 mv "$HOME"/flashimg/source.titan/settings.svn/channel.sort "$HOME"/flashimg/source.titan/settings.svn/channel
 sed s/"^ *"// -i "$HOME"/flashimg/source.titan/settings.svn/channel
 
-mkdir -p "$DEST"_ROOT/etc/titan.restore/mnt/settings
-mv -f "$HOME"/flashimg/source.titan/settings.svn/* "$DEST"_ROOT/etc/titan.restore/mnt/settings
 echo "[titan]--------------------------------------------------------"
 echo "[titan] get settings done"
 echo "[titan]--------------------------------------------------------"
