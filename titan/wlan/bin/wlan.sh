@@ -73,7 +73,7 @@ if [ "$1" == "notstart" ]; then
 	exit 0
 fi
 
-if [ ! -f /etc/wpa_supplicant.conf ]; then
+if [ ! -f /mnt/network/wpa_supplicant.conf ]; then
 	echo "[wlan] wireless lan not yet configured" | tee -a $WLAN_LOG
 	ifconfig $WLAN_IF down
 	exit 1
@@ -83,9 +83,9 @@ rm -Rf /var/run/wpa_supplicant*
 killall wpa_supplicant
 sleep 1
 AP_TRIES=40
-AP=`cat /etc/wpa_supplicant.conf | grep ssid | grep -v scan_ssid | cut -d"=" -f2`
+AP=`cat /mnt/network/wpa_supplicant.conf | grep ssid | grep -v scan_ssid | cut -d"=" -f2`
 echo "[wlan] starting wpa_supplicant ..." | tee -a $WLAN_LOG
-wpa_supplicant -B -i $WLAN_IF -P /var/run/wpa_supplicant.$WLAN_IF -D $WLAN_DRV -c /etc/wpa_supplicant.conf
+wpa_supplicant -B -i $WLAN_IF -P /var/run/wpa_supplicant.$WLAN_IF -D $WLAN_DRV -c /mnt/network/wpa_supplicant.conf
 while [ $AP_TRIES -gt 0 ]; do
 	AP_STATE=`wpa_cli -i $WLAN_IF -p /var/run/wpa_supplicant status | grep wpa_state | cut -d"=" -f2`
 	[ "$AP_STATE" == "COMPLETED" ] && echo "[wlan] association with $AP completed" | tee -a $WLAN_LOG && break
