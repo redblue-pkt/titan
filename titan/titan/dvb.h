@@ -711,8 +711,8 @@ void dvbgetpmtthread()
 	int len = 0, change = 0;
 	unsigned char* pmtbuf = NULL;
 
-	//fastrew activ?
-	if(status.playspeed < 0) return;
+	//play activ?
+	if(status.play != 0 || status.playspeed != 0) return;
 	
 	if(status.aktservice->type != CHANNEL || status.aktservice->channel == NULL) return;
 
