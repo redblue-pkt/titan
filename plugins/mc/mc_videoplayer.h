@@ -388,10 +388,8 @@ void screenmc_videoplayer()
 		}
 		else if(rcret == getrcconfigint("rcplay", NULL))
 		{
-//			if((status.play == 1) || (status.playspeed != 0))
-//				playrcplay(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
 			if((status.play == 1) || (status.pause == 1) || (status.playspeed != 0))
-				playrcpause(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
+				playrcplay(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rcpause", NULL))
 		{
