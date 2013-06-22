@@ -612,6 +612,8 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 		addmenulist(&mlist, "Search on MyVideo", NULL, NULL, 0, 0);
 	}
 
+	addmenulist(&mlist, "Downloads", NULL, NULL, 0, 0);
+
 	//add plugins
 	while(child != NULL)
 	{
@@ -665,6 +667,8 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			ret = 5;
 		else if(ostrcmp(mbox->name, "Search on MyVideo") == 0)
 			ret = 6;
+		else if(ostrcmp(mbox->name, "Downloads") == 0)
+			screenbgdownload(0);
 		else
 		{
 			pluginnode = getplugin(mbox->name);
