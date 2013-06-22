@@ -288,9 +288,14 @@ void screenextensions(int mode, char* path, int first)
 	{
 		drawscreen(load, 0, 0);
 		resettvpic();
-		if(first == 1) tpkgetindex(0);
+		if(first == 1)
+		{
+			if(tpkgetindex(0) != 0)
+				textbox(_("Tpk Update Info - Update ERROR"), _("Can't get TPK index !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+		}
 		writesys("/tmp/.tpk_upgrade_start", "0", 0);
-		tpkupdate();
+		if(tpkupdate() != 0)
+			textbox(_("Tpk Update Info - Update ERROR"), _("Can't update all packages !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		loadplugin();
 		clearscreen(load);
 		drawscreen(skin, 0, 0);

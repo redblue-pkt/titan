@@ -2580,7 +2580,7 @@ end:
 
 int tpkupdate()
 {
-	int ret = 0;
+	int ret = 0, err = 0;
 	char* tmpstr = NULL, *tmpstr1 = NULL;
 	struct tpk* tpknode = NULL, *tpkinstalled = NULL, *tpkinstallednode = NULL, *tpkmainlist = NULL;
 
@@ -2612,6 +2612,7 @@ int tpkupdate()
 				{
 					perr("rename file %s -> %s", tmpstr, tmpstr1);
 					ret = 0;
+					err++;
 					free(tmpstr); tmpstr = NULL;
 					free(tmpstr1); tmpstr1 = NULL;
 					tpknode = tpknode->next;
@@ -2630,6 +2631,7 @@ int tpkupdate()
 				}
 				else //install nok
 				{
+					err++;
 					ret = rename(tmpstr1, tmpstr);
 					if(ret != 0)
 					{
@@ -2653,7 +2655,7 @@ int tpkupdate()
 	tpk = tpkmainlist;
 	freetpk();
 
-	return 0;
+	return err;
 }
 
 void tpkgeturl(char* line, char** ip, char** path, int* port)
