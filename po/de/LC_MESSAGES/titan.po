@@ -3219,3 +3219,18 @@ msgstr "Fehler, Hostname kann nicht geändert werden!"
 
 msgid "HOSTNAME"
 msgstr "Hostname"
+
+msgid "Tpk Update Info - Update ERROR"
+msgstr "Tpk Update Info - Update Fehler"
+
+msgid "Can't get TPK index !"
+msgstr "TPK Index Dtei konnte nicht geholt werden !"
+
+msgid "Can't update all packages !"
+msgstr "Es konnten nicht alle TPK Pakete aktualisiert werden !"
+
+msgid "Update Plugins to new Version?"
+msgstr "Plugins auf die neue Version aktualisieren?"
+
+
+
