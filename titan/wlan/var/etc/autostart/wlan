@@ -42,12 +42,12 @@ if [ ! -z $WLAN_STARTMODE ] && [ $WLAN_STARTMODE == "load" ]; then
 		insmod /lib/modules/$WLAN_MODULE.ko
 	elif [ -e /var/lib/modules/$WLAN_MODULE.ko ];then
 		insmod /var/lib/modules/$WLAN_MODULE.ko
+	elif [ -e /mnt/swapextensions/modules/$WLAN_MODULE.ko ];then
+		insmod /mnt/swapextensions/modules/$WLAN_MODULE.ko
 	else
 		startWaitfor "/tmp/.hotplugready" 20
 		if [ -e /var/swap/modules/$WLAN_MODULE.ko ];then
 			insmod /var/swap/modules/$WLAN_MODULE.ko
-		elif [ -e /mnt/swapextensions/modules/$WLAN_MODULE.ko ];then
-			insmod /mnt/swapextensions/modules/$WLAN_MODULE.ko
 		fi
 	fi
 	
