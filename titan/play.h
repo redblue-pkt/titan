@@ -668,7 +668,12 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 		else if(ostrcmp(mbox->name, "Search on MyVideo") == 0)
 			ret = 6;
 		else if(ostrcmp(mbox->name, "Downloads") == 0)
-			screenbgdownload(0);
+		{
+			if(status.play == 1)
+				screenbgdownload(1);
+			else
+				screenbgdownload(0);
+		}			
 		else
 		{
 			pluginnode = getplugin(mbox->name);
