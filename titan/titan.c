@@ -523,7 +523,9 @@ int main(int argc, char *argv[])
 	signal(SIGINT, SIG_IGN);
 	signal(SIGTRAP, SIG_IGN);
 	signal(SIGABRT, SIG_IGN);
-	//signal(SIGTERM, SIG_IGN);
+#ifdef SH4
+	signal(SIGTERM, SIG_IGN);
+#endif
 	signal(SIGXCPU, SIG_IGN);
 	signal(SIGXFSZ, SIG_IGN);
 	signal(SIGVTALRM, SIG_IGN);
