@@ -903,22 +903,9 @@ void fesetunicable(struct dvbdev* node)
 
 	debug(200, "unicabletune %04X", unicabletune);
 
-	////fesetvoltage(node, SEC_VOLTAGE_OFF, 15);
-	//fesetvoltage(node, SEC_VOLTAGE_18, 15);
-	//fesettone(node, SEC_TONE_OFF, 15);
-	
-	//Delay after change voltage before switch command -- 75
-	int dvol = getconfigint("delay_voltage", NULL);
-	if(dvol == 0)
-		dvol = 15;
-	
-	//Delay after last diseqc command --- 100
-	int ddis = getconfigint("delay_diseqc", NULL);
-	if(ddis == 0)
-		ddis = 15;
-	
-	fesetvoltage(node, SEC_VOLTAGE_18, dvol);
-	fesettone(node, SEC_TONE_OFF, ddis);
+	//fesetvoltage(node, SEC_VOLTAGE_OFF, 15);
+	fesetvoltage(node, SEC_VOLTAGE_18, 15);
+	fesettone(node, SEC_TONE_OFF, 15);
 
 	//feunicable
 	//byte1 (bit 7/6/5) -> satcr number
