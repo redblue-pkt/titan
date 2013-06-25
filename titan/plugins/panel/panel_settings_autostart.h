@@ -66,16 +66,6 @@ void screenpanel_settings_autostart(int mode)
 		if(node != NULL)
 		{
 			node->type = CHOICEBOX;
-			changetext(node, _("logto")); changename(node, "logto");
-			addchoicebox(node, "normal", _("normal")); addchoicebox(node, "hdd", _("hdd"));
-			addchoicebox(node, "swap", _("swap")); addchoicebox(node, "off", _("off"));
-			setchoiceboxselection(node, getownconfig(node->name));
-		}
-
-		node = addlistbox(panel_config, listbox, node, 1);
-		if(node != NULL)
-		{
-			node->type = CHOICEBOX;
 			changetext(node, _("showip")); changename(node, "showip");
 			addchoicebox(node, "status", _("status")); addchoicebox(node, "ip", _("ip"));
 			setchoiceboxselection(node, getownconfig(node->name));
@@ -312,18 +302,6 @@ void screenpanel_settings_autostart(int mode)
 			node->type = CHOICEBOX;
 			changetext(node, _("pl2303")); changename(node, "pl2303");
 			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
-			setchoiceboxselection(node, getownconfig(node->name));
-		}
-
-		node = addlistbox(panel_config, listbox, node, 1);
-		if(node != NULL)
-		{
-			node->type = CHOICEBOX;
-			changetext(node, _("Nr Usbreaders")); changename(node, "nr_usbreaders");
-			addchoicebox(node, "2", _("2 readers")); addchoicebox(node, "3", _("3 readers"));
-			addchoicebox(node, "4", _("4 readers")); addchoicebox(node, "5", _("5 readers"));
-			addchoicebox(node, "6", _("6 readers")); addchoicebox(node, "7", _("7 readers"));
-			addchoicebox(node, "0", _("not one")); addchoicebox(node, "1", _("1 reader"));
 			setchoiceboxselection(node, getownconfig(node->name));
 		}
 
