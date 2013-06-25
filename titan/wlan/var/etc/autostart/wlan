@@ -1,7 +1,5 @@
 #######/bin/sh
 
-rm -f /tmp/.networkready
-
 if [ ! -z $WLAN_STARTMODE ] && [ $WLAN_STARTMODE == "load" ]; then
 	if  [ ! "$debug" = 'off' ]; then
 		echo $CMD ["$INPUT"] startWlan
@@ -44,11 +42,8 @@ if [ ! -z $WLAN_STARTMODE ] && [ $WLAN_STARTMODE == "load" ]; then
 		insmod /var/lib/modules/$WLAN_MODULE.ko
 	elif [ -e /mnt/swapextensions/modules/$WLAN_MODULE.ko ];then
 		insmod /mnt/swapextensions/modules/$WLAN_MODULE.ko
-	else
-		startWaitfor "/tmp/.hotplugready" 20
-		if [ -e /var/swap/modules/$WLAN_MODULE.ko ];then
+	elif [ -e /var/swap/modules/$WLAN_MODULE.ko ];then
 			insmod /var/swap/modules/$WLAN_MODULE.ko
-		fi
 	fi
 	
 	[ -z "`lsmod | grep $WLAN_MODULE`" ] && echo "[wlan] could not load $WLAN_MODULE" | tee -a $WLAN_LOG && return
@@ -117,12 +112,10 @@ if [ -z $WLAN_STARTMODE ] || [ $WLAN_STARTMODE == "load" ] || [ $WLAN_STARTMODE 
 
 	startNetwork $WLAN_IF
 	(
-		startWaitfor "/tmp/.networkready" 30
 		IP=`ifconfig $WLAN_IF | grep -m1 "inet addr" | sed s/"^\s*"// | sed s/" \+"/" "/g | cut -d " " -f2 | cut -d ":" -f2`
 		NET=`echo ${IP%.*}`
 		/bin/fping -l -b12 -q -i2000 -g $NET.1 $NET.254 2> /dev/null &
 		echo "[wlan] completed, now checking recordshare by hotplug" | tee -a $WLAN_LOG
-		startWaitfor "/tmp/.hotplugready" 20
 		/sbin/hotplug.sh checkRecordShare
 	) &
 
