@@ -951,6 +951,27 @@ int checkflash()
 	free(tmpstr), tmpstr = NULL;	
 	return 1;
 }
+
+char* getmacfromcmdline()
+{
+	char* cmdline = NULL;
+	char* tmpstr = NULL;
+	char* mac = NULL;
+	
+	cmdline = readsys("/proc/cmdline", 1);
+	if(cmdline != NULL)
+	{
+		tmpstr = strstr(cmdline, "ethaddr:");
+		if(tmpstr != NULL && strlen(tmpstr) >= 25)
+		{
+			tmpstr[25] = '\0';
+			tmpstr += 8;
+			mac = ostrcat(tmpstr, NULL, 0, 0);		
+		}
+	}
+	
+	return mac;
+}
 	
 char* getcpuid()
 {
@@ -965,7 +986,11 @@ char* getcpuid()
 		int mac2_int = 0;
 	
 		char* mac = NULL;
-		mac = ostrcat(mac, net->mac, 1, 0);
+		
+		if(checkbox("WHITEBOX") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO510") == 1 || checkbox("ATEMIO7600") == 1)
+			mac = getmacfromcmdline();
+		else
+			mac = ostrcat(mac, net->mac, 1, 0);
 
 		int count = 0;
 		char* mac1 = NULL;
