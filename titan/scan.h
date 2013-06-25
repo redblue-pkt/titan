@@ -8,8 +8,12 @@ uint8_t changeservicetype(uint8_t type)
 	switch(type)
 	{
 		case 0x01:
+		case 0x06:
+		case 0x0B:
 		case 0x11:
+		case 0x16:
 		case 0x19:
+		case 0x1C:
 		case 0x9A:
 		case 0x86:
 		case 0xC3:
@@ -18,6 +22,8 @@ uint8_t changeservicetype(uint8_t type)
 			ret = 0;
 			break;
 		case 0x02:
+		case 0x07:
+		case 0x0A:
 			ret = 1;
 			break;
 	}
