@@ -990,12 +990,14 @@ firstwizzardstep1:
 
 		if(status.security == 1)
 		{
-			struct inetwork* net = getinetworkbydevice("eth0");
-			if(net != NULL)
+			char* mac = getmacfromcmdline();
+			if(mac != NULL)
 			{
 				cmd = ostrcat(cmd, cpuid, 1, 0);
 				cmd = ostrcat(cmd, ",", 1, 0);
-				cmd = ostrcat(cmd, net->mac, 1, 0);
+				cmd = ostrcat(cmd, mac, 1, 0);
+				
+				free(mac); mac = NULL;
 			}
 			else
 				cmd = ostrcat(cmd, cpuid, 1, 0);
