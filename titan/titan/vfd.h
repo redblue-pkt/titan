@@ -364,7 +364,8 @@ void initvfd()
 	tmpstr = ostrcat(tmpstr, "<", 1, 0);
 	tmpstr = ostrcat(tmpstr, PROGNAME, 1, 0);
 	tmpstr = ostrcat(tmpstr, ">", 1, 0);
-	writevfd(string_toupper(tmpstr));
+	if(checkbox("WHITEBOX") != 1 && checkbox("ATEMIO520") != 1)
+		writevfd(string_toupper(tmpstr));
 	free(tmpstr); tmpstr = NULL;
 
 	addvfdiconstate(VFD_USB);
