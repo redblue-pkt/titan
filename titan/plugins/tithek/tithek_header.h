@@ -24,5 +24,9 @@ char* vidstream(char* host, char* file);
 char* xvidstage(char* host, char* file);
 char* nowvideo(char* host, char* file);
 char* beeg(char* link);
+int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title);
+int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag);
+
+
 
 #endif
