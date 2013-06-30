@@ -219,28 +219,29 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 	if(tmpstr != NULL)
 	{
 		drawscreen(load, 0, 0);
-			char* hname = NULL;
-			char* hnr = NULL;
-			char* hlink = NULL;
-			char* id = NULL;
+		char* hname = NULL;
+		char* hnr = NULL;
+		char* hlink = NULL;
+		char* id = NULL;
+		char* logfile = NULL;
+				
+		char* nolinks = NULL;
+		if(ostrstr(tmpstr, "links\[") == NULL)
+		{
+		//		printf("found no links !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1\n");
+			hname = string_resub("width=\"16\"> &nbsp;", "</a></td><td align=", tmpstr, 0);
+			nolinks = ostrcat(tmpstr, NULL, 0, 0);
 			
-	char* nolinks = NULL;
-	if(ostrstr(tmpstr, "links\[") == NULL)
-	{
-		printf("found no links !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1\n");
-		hname = string_resub("width=\"16\"> &nbsp;", "</a></td><td align=", tmpstr, 0);
-		nolinks = ostrcat(tmpstr, NULL, 0, 0);
-		
-		printf("hname: %s\n", hname);
-	}
+			printf("hname: %s\n", hname);
+		}
 													
-			int count = 0;
-			int incount = 0;
-			int i;
-			struct splitstr* ret1 = NULL;
-			ret1 = strsplit(tmpstr, "\n", &count);		
-					
-			printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1\n");
+		int count = 0;
+		int incount = 0;
+		int i;
+		struct splitstr* ret1 = NULL;
+		ret1 = strsplit(tmpstr, "\n", &count);		
+				
+//		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1\n");
 
 			if(ret1 != NULL && count > 0)
 			{
@@ -252,13 +253,15 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 						
 					if((!ostrncmp("links", ret1[i].part, 5) && nolinks == NULL) || nolinks != NULL)
 					{
-			printf("######################################1\n");
-char* logfile = NULL;
+//			printf("######################################1\n");
+
 						if(nolinks == NULL)
 						{
 							pathnew = string_resub("<a href=\\\"", "\\", ret1[i].part, 0);
 							hname = string_resub("&nbsp;", "</a", ret1[i].part, 0);
 							id = string_resub("online-film-", ".html", pathnew, 0);
+							if(id == NULL)
+								id = string_resub("watch-movie-", ".html", pathnew, 0);
 							
 							logfile = ostrcat("/tmp/movie4k4_pathnew1", id, 0, 0);
 							logfile = ostrcat(logfile, "_", 1, 0);
@@ -276,6 +279,9 @@ char* logfile = NULL;
 						{
 							tmpstr1 = ostrcat(nolinks, NULL, 0, 0);
 							id = string_resub("online-film-", ".html", path, 0);
+							if(id == NULL)
+								id = string_resub("watch-movie-", ".html", path, 0);
+
 						}	
 						logfile = ostrcat("/tmp/movie4k5_tmpstr1", id, 0, 0);
 						logfile = ostrcat(logfile, "_", 1, 0);
@@ -322,11 +328,11 @@ char* logfile = NULL;
 //						id = string_resub("online-film-", ".html", path, 0);
 						if(id != NULL)
 						{
-			printf("--------------------------------------1\n");
+//			printf("--------------------------------------1\n");
 
 							if(countj >= 2)
 							{
-			printf("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa1\n");
+//			printf("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa1\n");
 								pathnew = ostrcat("movie.php?id=", id, 0, 0);
 								pathnew = ostrcat(pathnew, "&part=2", 1, 0);
 								tmpstr3 = gethttp("movie4k.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
@@ -361,7 +367,7 @@ char* logfile = NULL;
 
 							if(countj >= 3)
 							{
-			printf("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb1\n");
+//			printf("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb1\n");
 								pathnew = ostrcat("movie.php?id=", id, 0, 0);
 								pathnew = ostrcat(pathnew, "&part=3", 1, 0);
 								tmpstr4 = gethttp("movie4k.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
@@ -396,7 +402,7 @@ char* logfile = NULL;
 
 							if(countj >= 4)
 							{
-			printf("ccccccccccccccccccccccccccccccccccccccccccc1\n");
+//			printf("ccccccccccccccccccccccccccccccccccccccccccc1\n");
 								pathnew = ostrcat("movie.php?id=", id, 0, 0);
 								pathnew = ostrcat(pathnew, "&part=4", 1, 0);
 								tmpstr5 = gethttp("movie4k.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
@@ -923,7 +929,7 @@ char* logfile = NULL;
 					free(url3), url3 = NULL;
 					free(url4), url4 = NULL;
 					free(pathnew), pathnew = NULL;
-//					free(id), id = NULL;					
+					free(logfile), logfile = NULL;					
 				}
 //			}
 			free(ret1), ret1 = NULL;
