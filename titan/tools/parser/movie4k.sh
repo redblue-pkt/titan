@@ -262,9 +262,15 @@ for ROUND1 in $watchlist; do
 		ck=0
 		id_list=""
 		for ROUND3 in $pagelist; do
-			count=`expr $count + 1`
+			count=`expr $count + 1`	
 			filename3="$ROUND3"
 			wget "http://www.movie4k.to/$ROUND3" -O cache."$count"."$filename3"
+#			ck=`expr $ck + 1`
+#			echo !!!!!!!!!!!!!!!!!!!ck $ck
+#			if [ "$ck" = "10" ];then
+#				echo ----------------------------------------------------------------
+#				break
+#			fi
 
 			id_list="$id_list "`cat cache."$count"."$filename3" | grep coverPreview | sed 's!coverPreview!"!' | cut -d'"' -f3 | tr ' ' '\n' | grep -v ").append" | sort -u`
 		done
@@ -276,10 +282,11 @@ for ROUND1 in $watchlist; do
 		echo $id_list > _full/movie4k/streams/_$TITLE
 		ck=0
 		for ROUND4 in $id_list; do
+		echo ROUND4 $ROUND4
 			filename4="$ROUND4"
-			LINE=`cat cache.movie4k.titanlist | grep $ROUND4`
+			LINE=`cat cache.movie4k.titanlist | grep $ROUND4".html#"`
 			if [ ! -z "$LINE" ];then
-				echo $LINE >> cache.movie4k.`echo "$TITLE" | tr 'A-Z' 'a-z'`.titanlist	
+				echo "$LINE\n" >> cache.movie4k.`echo "$TITLE" | tr 'A-Z' 'a-z'`.titanlist	
 			fi
 		done
 
