@@ -282,7 +282,6 @@ for ROUND1 in $watchlist; do
 		echo $id_list > _full/movie4k/streams/_$TITLE
 		ck=0
 		for ROUND4 in $id_list; do
-		echo ROUND4 $ROUND4
 			filename4="$ROUND4"
 			LINE=`cat cache.movie4k.titanlist | grep $ROUND4".html#"`
 			if [ ! -z "$LINE" ];then
