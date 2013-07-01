@@ -234,7 +234,7 @@ done
 # add Film dummy in category
 piccount=`expr $piccount + 1`
 URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.movies.list"
-PIC="http://atemio.dyndns.tv/mediathek/menu/movies.jpg"
+PIC="http://atemio.dyndns.tv/mediathek/menu/Movies.jpg"
 LINE="Filme (alle)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
 echo $LINE >> cache.movie4k.category.titanlist
 
@@ -302,7 +302,7 @@ done
 # add Series dummys
 piccount=`expr $piccount + 1`
 URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.series.list"
-PIC="http://atemio.dyndns.tv/mediathek/menu/series.jpg"
+PIC="http://atemio.dyndns.tv/mediathek/menu/serien.jpg"
 LINE="Filme (alle)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
 echo $LINE >> cache.movie4k.category.titanlist
 
