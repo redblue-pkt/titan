@@ -218,11 +218,73 @@ for ROUND3 in $watchlist; do
 	done
 done
 
+# filme update
+watchlist="
+movies-updates.html
+"
+
+for ROUND3 in $watchlist; do
+	filename3="$ROUND3"
+	wget "http://www.movie4k.to/$ROUND3" -O cache."$count"."$filename3"
+
+	id_list=`cat cache."$count"."$filename3" | grep "\.html"  | cut -d'"' -f2 | grep "\.html" | sort -um`
+
+	piccount=`expr $piccount + 1`
+	for ROUND4 in $id_list; do
+		piccount=`expr $piccount + 1`
+		STR=`echo $ROUND4 | sed "s/online-film.*//" | sed "s/watch-movie.*//"`
+		if [ `echo $STR | grep "^-" | wc -l` -eq 1 ];then
+			STR=\\$STR
+		fi
+
+		PIC=`cat cache."$count"."$filename3" | grep "$STR" | grep coverPreview | cut -d "'" -f4 | head -n1`
+		ID=`echo $ROUND4 | sed "s/.*online-film-//" | sed "s/.*watch-movie-//" | sed "s/.html.*//"`
+		ZEILE=`cat cache."$count"."$filename3" | grep -n $ID | head -n1 | cut -d ":" -f1`
+		ALLES=`cat cache."$count"."$filename3" | wc -l`
+		CUT=`expr $ALLES - $ZEILE`
+		TMPLANG=`cat cache."$count"."$filename3" | tail -n $CUT | grep small.png | head -n1`
+
+		if [ -z "$PIC" ]; then
+			lostcount=`expr $lostcount + 1`
+			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+		fi
+		TITLE=`echo $ROUND4 | sed "s!-online-film-!;!" | sed "s!-watch-movie-!;!" | tr ";" "\n" | head -n1 | tr '-' ' ' | sed 's/^ //'`
+		URL=http://www.movie4k.to/"$ROUND4"
+
+		lang=35
+		if [ `echo $TMPLANG | grep "us_ger_small.png" | wc -l` -eq 1 ];then
+			lang=34
+			LANGTXT=" (de)"
+		elif [ `echo $TMPLANG | grep "us_flag_small.png" | wc -l` -eq 1 ];then
+			lang=35
+			LANGTXT=" (en)"
+		else
+			LANGTXT=" (??)"
+		fi
+		
+		if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
+			LINE="$TITLE$LANGTXT#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#$lang"			
+			if [ `cat cache.movie4k.titanlist | grep "^$TITLE$LANGTXT" | wc -l` -eq 0 ];then
+				echo $LINE >> cache.movie4k.titanlist
+			fi
+			if [ `cat cache.movie4k.movies.update.titanlist | grep "^$TITLE$LANGTXT" | wc -l` -eq 0 ];then
+				echo $LINE >> cache.movie4k.movies.update.titanlist
+			fi
+		fi
+	done
+done
+
 # add Film dummy in category
 piccount=`expr $piccount + 1`
 URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.movies.list"
 PIC="http://atemio.dyndns.tv/mediathek/menu/Movies.jpg"
 LINE="Filme (alle)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
+echo $LINE >> cache.movie4k.category.titanlist
+
+piccount=`expr $piccount + 1`
+URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.movies.update.list"
+PIC="http://atemio.dyndns.tv/mediathek/menu/Movies.jpg"
+LINE="Filme (letzten uploads)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
 echo $LINE >> cache.movie4k.category.titanlist
 
 piccount=`expr $piccount + 1`
@@ -357,6 +419,9 @@ done
 
 cat cache.movie4k.series.genre.titanlist | sort -um > _full/movie4k/streams/movie4k.series.genre.list
 cat cache.movie4k.movies.genre.titanlist | sort -um > _full/movie4k/streams/movie4k.movies.genre.list
+
+cat cache.movie4k.series.update.titanlist > _full/movie4k/streams/movie4k.series.update.list
+cat cache.movie4k.movies.update.titanlist > _full/movie4k/streams/movie4k.movies.update.list
 
 cat cache.movie4k.series.titanlist | sort -um > _full/movie4k/streams/movie4k.series.list
 cat cache.movie4k.movies.titanlist | sort -um > _full/movie4k/streams/movie4k.movies.list
