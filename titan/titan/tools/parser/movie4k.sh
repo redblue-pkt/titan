@@ -262,12 +262,14 @@ for ROUND1 in $watchlist; do
 		ck=0
 		id_list=""
 		for ROUND3 in $pagelist; do
+			count=`expr $count + 1`
 			filename3="$ROUND3"
 			wget "http://www.movie4k.to/$ROUND3" -O cache."$count"."$filename3"
 
 			id_list="$id_list "`cat cache."$count"."$filename3" | grep coverPreview | sed 's!coverPreview!"!' | cut -d'"' -f3 | tr ' ' '\n' | grep -v ").append" | sort -u`
 		done
 
+		id_list=`echo $id_list | tr ' ' '\n' | sort -u`
 
 		TITLE=`echo $ROUND2 | sed 's/.html//' | tr '-' '\n' | tail -n1`
 
