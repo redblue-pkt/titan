@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 
+
 rm cache.*
 rm _liste
 rm -rf _full/movie4k
@@ -167,70 +168,55 @@ testcount=0
 piccount=0
 count=0
 
-#for ROUND2 in $watchlist; do
-#	count=`expr $count + 1`	
-#	filename2="$ROUND2"
-#	wget "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
-#	if [ `cat cache."$count"."$filename2" | grep boxgrey | tr '><' '\n' | grep .html | cut -d'"' -f2 | wc -l` -gt 0 ];then
-#		pagelist="$ROUND2 `cat cache.$count.$filename2 | grep boxgrey | tr '><' '\n' | grep .html | cut -d'"' -f2 | sed "s!http://www.movie4k.to//!!"`"	
-#	else
-#		pagelist="$ROUND2"
-#	fi
-#
-#	for ROUND3 in $pagelist; do
-	for ROUND3 in $watchlist; do
-		count=`expr $count + 1`
-		filename3="$ROUND3"
-#		echo ROUND3 $ROUND3
-#		sleep 1
-		wget "http://www.movie4k.to/$ROUND3" -O cache."$count"."$filename3"
+for ROUND3 in $watchlist; do
+	count=`expr $count + 1`
+	filename3="$ROUND3"
+	wget "http://www.movie4k.to/$ROUND3" -O cache."$count"."$filename3"
 
-		id_list=`cat cache."$count"."$filename3" | grep tvshows-season- | cut -d '"' -f6 | sort -u | grep .html`
-#		echo id_list $id_list
-		
+	id_list=`cat cache."$count"."$filename3" | grep tvshows-season- | cut -d '"' -f6 | sort -u | grep .html`
+	echo id_list $id_list
+
+	piccount=`expr $piccount + 1`
+	for ROUND4 in $id_list; do
 		piccount=`expr $piccount + 1`
-		for ROUND4 in $id_list; do
-			piccount=`expr $piccount + 1`
-			STR=`echo $ROUND4 | sed "s/tvshows-season.*//" | sed "s/watch-movie.*//"`
-			if [ `echo $STR | grep "^-" | wc -l` -eq 1 ];then
-				STR=\\$STR
-			fi
+		STR=`echo $ROUND4 | sed "s/tvshows-season.*//" | sed "s/watch-movie.*//"`
+		if [ `echo $STR | grep "^-" | wc -l` -eq 1 ];then
+			STR=\\$STR
+		fi
 
-			PIC=`cat cache."$count"."$filename3" | grep "$STR" | grep coverPreview | cut -d "'" -f4 | head -n1`
-			ID=`echo $ROUND4 | sed "s/.*tvshows-season-//" | sed "s/.*watch-movie-//" | sed "s/.html.*//"`
-			ZEILE=`cat cache."$count"."$filename3" | grep -n $ID | head -n1 | cut -d ":" -f1`
-			ALLES=`cat cache."$count"."$filename3" | wc -l`
-			CUT=`expr $ALLES - $ZEILE`
-			TMPLANG=`cat cache."$count"."$filename3" | tail -n $CUT | grep small.png | head -n1`
+		PIC=`cat cache."$count"."$filename3" | grep "$STR" | grep coverPreview | cut -d "'" -f4 | head -n1`
+		ID=`echo $ROUND4 | sed "s/.*tvshows-season-//" | sed "s/.*watch-movie-//" | sed "s/.html.*//"`
+		ZEILE=`cat cache."$count"."$filename3" | grep -n $ID | head -n1 | cut -d ":" -f1`
+		ALLES=`cat cache."$count"."$filename3" | wc -l`
+		CUT=`expr $ALLES - $ZEILE`
+		TMPLANG=`cat cache."$count"."$filename3" | tail -n $CUT | grep small.png | head -n1`
 
-			if [ -z "$PIC" ]; then
-				lostcount=`expr $lostcount + 1`
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
-			fi
-#			echo round4 $ROUND4
-#			exit
-			TITLE=`echo $ROUND4 | sed "s!tvshows-season-!!" | sed "s!.html!!" | head -n1 | tr '-' ' ' | sed 's/^ //'`
-			URL=http://www.movie4k.to/"$ROUND4"
+		if [ -z "$PIC" ]; then
+			lostcount=`expr $lostcount + 1`
+			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+		fi
 
+		TITLE=`echo $ROUND4 | sed "s!tvshows-season-!!" | sed "s!.html!!" | head -n1 | tr '-' ' ' | sed 's/^ //'`
+		URL=http://www.movie4k.to/"$ROUND4"
+
+		lang=37
+		if [ `echo $TMPLANG | grep "us_ger_small.png" | wc -l` -eq 1 ];then
+			lang=36
+			LANGTXT=" (de)"
+		elif [ `echo $TMPLANG | grep "us_flag_small.png" | wc -l` -eq 1 ];then
 			lang=37
-			if [ `echo $TMPLANG | grep "us_ger_small.png" | wc -l` -eq 1 ];then
-				lang=36
-				LANGTXT=" (de)"
-			elif [ `echo $TMPLANG | grep "us_flag_small.png" | wc -l` -eq 1 ];then
-				lang=37
-				LANGTXT=" (en)"
-			else
-				LANGTXT=" (??)"
-			fi
-			
-			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ] && [ `cat cache.movie4k.titanlist | grep "^$TITLE$LANGTXT" | wc -l` -eq 0 ];then
-				LINE="$TITLE$LANGTXT#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#$lang"			
-				echo $LINE >> cache.movie4k.titanlist
-				echo $LINE >> cache.movie4k.series.titanlist
-			fi
-		done
+			LANGTXT=" (en)"
+		else
+			LANGTXT=" (??)"
+		fi
+		
+		if [ ! -z "$TITLE" ] && [ ! -z "$URL" ] && [ `cat cache.movie4k.titanlist | grep "^$TITLE$LANGTXT" | wc -l` -eq 0 ];then
+			LINE="$TITLE$LANGTXT#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#$lang"			
+			echo $LINE >> cache.movie4k.titanlist
+			echo $LINE >> cache.movie4k.series.titanlist
+		fi
 	done
-#done
+done
 
 # add Film dummy in category
 piccount=`expr $piccount + 1`
@@ -265,17 +251,16 @@ for ROUND1 in $watchlist; do
 			count=`expr $count + 1`	
 			filename3="$ROUND3"
 			wget "http://www.movie4k.to/$ROUND3" -O cache."$count"."$filename3"
-#			ck=`expr $ck + 1`
-#			echo !!!!!!!!!!!!!!!!!!!ck $ck
-#			if [ "$ck" = "10" ];then
-#				echo ----------------------------------------------------------------
-#				break
-#			fi
+			ck=`expr $ck + 1`
+			echo !!!!!!!!!!!!!!!!!!!ck $ck
+			if [ "$ck" = "10" ];then
+				echo ----------------------------------------------------------------
+				break
+			fi
 
-			id_list="$id_list "`cat cache."$count"."$filename3" | grep coverPreview | sed 's!coverPreview!"!' | cut -d'"' -f3 | tr ' ' '\n' | grep -v ").append" | sort -u`
+#			id_list="$id_list "`cat cache."$count"."$filename3" | grep coverPreview | sed 's!coverPreview!"!' | cut -d'"' -f3 | tr ' ' '\n' | grep -v ").append" | sort -u`
+			id_list="$id_list "`cat cache."$count"."$filename3" | grep coverPreview | sed 's!coverPreview!"!' | grep "TR id=" | cut -d'"' -f3`
 		done
-
-		id_list=`echo $id_list | tr ' ' '\n' | sort -u`
 
 		TITLE=`echo $ROUND2 | sed 's/.html//' | tr '-' '\n' | tail -n1`
 
@@ -283,15 +268,17 @@ for ROUND1 in $watchlist; do
 		ck=0
 		for ROUND4 in $id_list; do
 			filename4="$ROUND4"
-			LINE=`cat cache.movie4k.titanlist | grep $ROUND4".html#"`
+# check if more as 1 results
+#			LINE=`cat cache.movie4k.movies.titanlist | grep $ROUND4".html#"`
+			LINE=`cat cache.movie4k.movies.titanlist | grep $ROUND4".html#" | head -n1`
 			if [ ! -z "$LINE" ];then
-				echo "$LINE\n" >> cache.movie4k.`echo "$TITLE" | tr 'A-Z' 'a-z'`.titanlist	
+				echo "$LINE\n" >> cache.movie4k.category.movie.`echo "$TITLE" | tr 'A-Z' 'a-z'`.titanlist	
 			fi
 		done
 
 		piccount=`expr $piccount + 1`
 
-		URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list"
+		URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.category.movie.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list"
 		PIC="http://atemio.dyndns.tv/mediathek/menu/`echo "$TITLE" | tr 'A-Z' 'a-z'`.jpg"
 
 		if [ `echo $ROUND2 | grep "movies" | wc -l` -eq 1 ];then
@@ -303,8 +290,9 @@ for ROUND1 in $watchlist; do
 		if [ ! -z "$TITLE" ];then
 			echo $LINE >> cache.movie4k.category.titanlist	
 		fi
-		
-		cat cache.movie4k.`echo "$TITLE" | tr 'A-Z' 'a-z'`.titanlist  | sort -u > _full/movie4k/streams/movie4k.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list
+# unsortet for check on website		
+#		cat cache.movie4k.category.movie.`echo "$TITLE" | tr 'A-Z' 'a-z'`.titanlist  | sort -u > _full/movie4k/streams/movie4k.category.movie.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list
+		cat cache.movie4k.category.movie.`echo "$TITLE" | tr 'A-Z' 'a-z'`.titanlist > _full/movie4k/streams/movie4k.category.movie.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list
 	done
 done
 
@@ -325,30 +313,29 @@ for ROUND1 in $watchlist; do
 
 	filename1="$ROUND1"
 	wget "http://www.movie4k.to/$ROUND1" -O cache."$count"."$filename1"
-
-	genrelist=`cat cache."$count"."$filename1" | grep tvshows-genre | grep .html | cut -d '"' -f6`
+	genrelist=`cat cache."$count"."$filename1" | grep tvshows-genre | grep .html | cut -d'"' -f6 | sort -um`
 	for ROUND2 in $genrelist; do
 		count=`expr $count + 1`	
 		filename2="$ROUND2"
 		wget "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
-		
-		pagelist="$ROUND2"
 
-		id_list=`cat cache."$count"."$filename2" | grep tvshows-season | cut -d'"' -f6 | sort -u`
-
+		id_list=`cat cache."$count"."$filename2" | grep tvshows-season | grep .html | cut -d'"' -f6 | sort -um`
 		TITLE=`echo $ROUND2 | sed 's/.html//' | tr '-' '\n' | tail -n1`
 
 		for ROUND4 in $id_list; do
 			filename4="$ROUND4"
-			LINE=`cat cache.movie4k.titanlist | grep $ROUND4`
+# check if more as 1 results
+			LINE=`cat cache.movie4k.series.titanlist | grep "$ROUND4#" | head -n1`
+#			LINE=`cat cache.movie4k.series.titanlist | grep "$ROUND4#"`
+
 			if [ ! -z "$LINE" ];then
-				echo $LINE >> cache.movie4k.`echo "$TITLE" | tr 'A-Z' 'a-z'`.series.titanlist	
+				echo $LINE >> cache.movie4k.category.series.`echo "$TITLE" | tr 'A-Z' 'a-z'`.titanlist	
 			fi
 		done
 
 		piccount=`expr $piccount + 1`
 
-		URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.`echo "$TITLE" | tr 'A-Z' 'a-z'`.series.list"
+		URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.category.series.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list"
 		PIC="http://atemio.dyndns.tv/mediathek/menu/`echo "$TITLE" | tr 'A-Z' 'a-z'`.jpg"
 
 		if [ `echo $ROUND2 | grep "movies" | wc -l` -eq 1 ];then
@@ -360,16 +347,17 @@ for ROUND1 in $watchlist; do
 		if [ ! -z "$TITLE" ];then
 			echo $LINE >> cache.movie4k.category.titanlist	
 		fi
-		
-		cat cache.movie4k.`echo "$TITLE" | tr 'A-Z' 'a-z'`.series.titanlist  | sort -u > _full/movie4k/streams/movie4k.`echo "$TITLE" | tr 'A-Z' 'a-z'`.series.list
+# unsortet for check on website
+#		cat cache.movie4k.category.series.`echo "$TITLE" | tr 'A-Z' 'a-z'`.titanlist  | sort -u > _full/movie4k/streams/movie4k.category.series.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list
+		cat cache.movie4k.category.series.`echo "$TITLE" | tr 'A-Z' 'a-z'`.titanlist > _full/movie4k/streams/movie4k.category.series.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list
 	done
 done
 
-cat cache.movie4k.series.titanlist | sort -u > _full/movie4k/streams/movie4k.series.list
-cat cache.movie4k.movies.titanlist | sort -u > _full/movie4k/streams/movie4k.movies.list
+cat cache.movie4k.series.titanlist | sort -um > _full/movie4k/streams/movie4k.series.list
+cat cache.movie4k.movies.titanlist | sort -um > _full/movie4k/streams/movie4k.movies.list
 
-cat cache.movie4k.titanlist | sort -u > _full/movie4k/streams/movie4k.all-sorted.list
-#cat cache.movie4k.category.titanlist | sort -u > _full/movie4k/movie4k.category.list
+cat cache.movie4k.titanlist | sort -um > _full/movie4k/streams/movie4k.all-sorted.list
+#cat cache.movie4k.category.titanlist | sort -um > _full/movie4k/movie4k.category.list
 cat cache.movie4k.category.titanlist > _full/movie4k/movie4k.category.list
 
 for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
