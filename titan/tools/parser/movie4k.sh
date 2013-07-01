@@ -20,74 +20,131 @@ testcount=0
 piccount=0
 count=0
 
+for ROUND2 in $watchlist; do
+	count=`expr $count + 1`	
+	filename2="$ROUND2"
+	wget "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
+	if [ `cat cache."$count"."$filename2" | grep boxgrey | tr '><' '\n' | grep .html | grep -v './'  | cut -d'"' -f2 | wc -l` -gt 0 ];then
+		pagelist="$ROUND2 `cat cache.$count.$filename2 | grep boxgrey | tr '><' '\n' | grep .html | grep -v './'  | cut -d'"' -f2`"	
+	else
+		pagelist="$ROUND2"
+	fi
 
-#for ROUND1 in $watchlist; do
-#	count=`expr $count + 1`
-#
-#	filename1="$ROUND1"
-#	wget "http://www.movie4k.to/$ROUND1" -O cache."$count"."$filename1"
-#	genrelist=`cat cache."$count"."$filename1" | grep tdmovies | grep .html | cut -d '"' -f6`
-#	for ROUND2 in $genrelist; do
-	for ROUND2 in $watchlist; do
-		count=`expr $count + 1`	
-		filename2="$ROUND2"
-		wget "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
-		if [ `cat cache."$count"."$filename2" | grep boxgrey | tr '><' '\n' | grep .html | grep -v './'  | cut -d'"' -f2 | wc -l` -gt 0 ];then
-			pagelist="$ROUND2 `cat cache.$count.$filename2 | grep boxgrey | tr '><' '\n' | grep .html | grep -v './'  | cut -d'"' -f2`"	
-		else
-			pagelist="$ROUND2"
-		fi
+	for ROUND3 in $pagelist; do
+		filename3="$ROUND3"
+		wget "http://www.movie4k.to/$ROUND3" -O cache."$count"."$filename3"
 
-		for ROUND3 in $pagelist; do
-			filename3="$ROUND3"
-			wget "http://www.movie4k.to/$ROUND3" -O cache."$count"."$filename3"
+		id_list=`cat cache."$count"."$filename3" | grep '<a href="' | cut -d'"' -f2 | sort -u | grep .html`
 
-			id_list=`cat cache."$count"."$filename3" | grep '<a href="' | cut -d'"' -f2 | sort -u | grep .html`
-
+		piccount=`expr $piccount + 1`
+		for ROUND4 in $id_list; do
 			piccount=`expr $piccount + 1`
-			for ROUND4 in $id_list; do
-				piccount=`expr $piccount + 1`
-				STR=`echo $ROUND4 | sed "s/online-film.*//" | sed "s/watch-movie.*//"`
-				if [ `echo $STR | grep "^-" | wc -l` -eq 1 ];then
-					STR=\\$STR
-				fi
+			STR=`echo $ROUND4 | sed "s/online-film.*//" | sed "s/watch-movie.*//"`
+			if [ `echo $STR | grep "^-" | wc -l` -eq 1 ];then
+				STR=\\$STR
+			fi
 
-				PIC=`cat cache."$count"."$filename3" | grep "$STR" | grep coverPreview | cut -d "'" -f4 | head -n1`
-				ID=`echo $ROUND4 | sed "s/.*online-film-//" | sed "s/.*watch-movie-//" | sed "s/.html.*//"`
-				ZEILE=`cat cache."$count"."$filename3" | grep -n $ID | head -n1 | cut -d ":" -f1`
-				ALLES=`cat cache."$count"."$filename3" | wc -l`
-				CUT=`expr $ALLES - $ZEILE`
-				TMPLANG=`cat cache."$count"."$filename3" | tail -n $CUT | grep small.png | head -n1`
+			PIC=`cat cache."$count"."$filename3" | grep "$STR" | grep coverPreview | cut -d "'" -f4 | head -n1`
+			ID=`echo $ROUND4 | sed "s/.*online-film-//" | sed "s/.*watch-movie-//" | sed "s/.html.*//"`
+			ZEILE=`cat cache."$count"."$filename3" | grep -n $ID | head -n1 | cut -d ":" -f1`
+			ALLES=`cat cache."$count"."$filename3" | wc -l`
+			CUT=`expr $ALLES - $ZEILE`
+			TMPLANG=`cat cache."$count"."$filename3" | tail -n $CUT | grep small.png | head -n1`
 
-				if [ -z "$PIC" ]; then
-					lostcount=`expr $lostcount + 1`
-					PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
-				fi
-				TITLE=`echo $ROUND4 | sed "s!-online-film-!;!" | sed "s!-watch-movie-!;!" | tr ";" "\n" | head -n1 | tr '-' ' ' | sed 's/^ //'`
-				URL=http://www.movie4k.to/"$ROUND4"
+			if [ -z "$PIC" ]; then
+				lostcount=`expr $lostcount + 1`
+				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+			fi
+			TITLE=`echo $ROUND4 | sed "s!-online-film-!;!" | sed "s!-watch-movie-!;!" | tr ";" "\n" | head -n1 | tr '-' ' ' | sed 's/^ //'`
+			URL=http://www.movie4k.to/"$ROUND4"
 
+			lang=35
+			if [ `echo $TMPLANG | grep "us_ger_small.png" | wc -l` -eq 1 ];then
+				lang=34
+				LANGTXT=" (de)"
+			elif [ `echo $TMPLANG | grep "us_flag_small.png" | wc -l` -eq 1 ];then
 				lang=35
-				if [ `echo $TMPLANG | grep "us_ger_small.png" | wc -l` -eq 1 ];then
-					lang=34
-					LANGTXT=" (de)"
-				elif [ `echo $TMPLANG | grep "us_flag_small.png" | wc -l` -eq 1 ];then
-					lang=35
-					LANGTXT=" (en)"
-				else
-					LANGTXT=" (??)"
-				fi
-				
-				if [ ! -z "$TITLE" ] && [ ! -z "$URL" ] && [ `cat cache.movie4k.titanlist | grep "^$TITLE$LANGTXT" | wc -l` -eq 0 ];then
-					LINE="$TITLE$LANGTXT#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#$lang"			
-					echo $LINE >> cache.movie4k.titanlist
-				fi
-			done
+				LANGTXT=" (en)"
+			else
+				LANGTXT=" (??)"
+			fi
+			
+			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ] && [ `cat cache.movie4k.titanlist | grep "^$TITLE$LANGTXT" | wc -l` -eq 0 ];then
+				LINE="$TITLE$LANGTXT#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#$lang"			
+				echo $LINE >> cache.movie4k.titanlist
+			fi
 		done
 	done
-#done
+done
 
-#rm -f /home/obiwan/test/_full/movie4k/streams/*
-#cp backupcache.movie4k.titanlist cache.movie4k.titanlist
+watchlist="
+index.php?lang=de
+index.php
+"
+
+for ROUND2 in $watchlist; do
+	piccount=`expr $piccount + 1`
+	count=`expr $count + 1`	
+	filename2="$ROUND2"
+	wget "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
+	if [ "$ROUND2" = "index.php?lang=de" ];then
+		TYPE="newest.ger"
+		TYPENAME="Kino Filme (de)"
+	elif [ "$ROUND2" = "index.php" ];then
+		TYPE="newest.eng"
+		TYPENAME="Kino Filme (en)"
+	fi
+
+	pagelist=`cat cache."$count"."$filename2" | grep "float:left" | cut -d '"' -f4`
+	for ROUND3 in $pagelist; do
+		piccount=`expr $piccount + 1`
+		filename3="$ROUND3"
+		PIC=`cat cache."$count"."$filename2" | grep $ROUND3 | grep "img src" | tail -n1 | cut -d '"' -f6`
+		ID=`echo $ROUND3 | sed "s/.*online-film-//" | sed "s/.*watch-movie-//" | sed "s/.html.*//"`
+		ZEILE=`cat cache."$count"."$filename2" | grep -n $ID | head -n1 | cut -d ":" -f1`
+		ALLES=`cat cache."$count"."$filename2" | wc -l`
+		CUT=`expr $ALLES - $ZEILE`
+		TMPLANG=`cat cache."$count"."$filename2" | tail -n $CUT | grep small.png | head -n1`
+
+		if [ -z "$PIC" ]; then
+			lostcount=`expr $lostcount + 1`
+			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+		fi
+		TITLE=`echo $ROUND3 | sed "s!-online-film-!;!" | sed "s!-watch-movie-!;!" | tr ";" "\n" | head -n1 | tr '-' ' ' | sed 's/^ //'`
+		URL=http://www.movie4k.to/"$ROUND3"
+
+		lang=35
+		if [ `echo $TMPLANG | grep "us_ger_small.png" | wc -l` -eq 1 ];then
+			lang=34
+			LANGTXT=" (de)"
+		elif [ `echo $TMPLANG | grep "us_flag_small.png" | wc -l` -eq 1 ];then
+			lang=35
+			LANGTXT=" (en)"
+		else
+			LANGTXT=" (??)"
+		fi
+		
+		if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
+			LINE="$TITLE$LANGTXT#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#$lang"			
+			if [ `cat cache.movie4k.$TYPE.titanlist | grep "^$TITLE$LANGTXT" | wc -l` -eq 0 ];then
+				echo $LINE >> cache.movie4k.$TYPE.titanlist
+			fi
+			if [ `cat cache.movie4k.titanlist | grep "^$TITLE$LANGTXT" | wc -l` -eq 0 ];then
+				echo $LINE >> cache.movie4k.titanlist
+			fi
+		fi
+	done
+
+	URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.$TYPE.list"
+	PIC="http://atemio.dyndns.tv/mediathek/menu/$TYPE.jpg"
+	
+	LINE="$TYPENAME#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
+	if [ ! -z "$TYPENAME" ];then
+		echo $LINE >> cache.movie4k.category.titanlist	
+	fi
+			
+	cat cache.movie4k.$TYPE.titanlist > _full/movie4k/streams/movie4k.$TYPE.list	
+done
 
 watchlist="
 genres-movies.html
