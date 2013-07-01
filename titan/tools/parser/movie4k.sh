@@ -248,7 +248,7 @@ for ROUND1 in $watchlist; do
 	filename1="$ROUND1"
 	wget "http://www.movie4k.to/$ROUND1" -O cache."$count"."$filename1"
 
-	genrelist=movies-updates.html `cat cache."$count"."$filename1" | grep tdmovies | grep .html | cut -d '"' -f6`
+	genrelist=`cat cache."$count"."$filename1" | grep tdmovies | grep .html | cut -d '"' -f6`
 	for ROUND2 in $genrelist; do
 		count=`expr $count + 1`	
 		filename2="$ROUND2"
@@ -325,9 +325,7 @@ for ROUND1 in $watchlist; do
 		
 		pagelist="$ROUND2"
 
-		ck=0
-		id_list=""
-		id_list="$id_list "`cat cache."$count"."$filename2" | grep tvshows-season | cut -d'"' -f6 | sort -u`
+		id_list=`cat cache."$count"."$filename2" | grep tvshows-season | cut -d'"' -f6 | sort -u`
 
 		TITLE=`echo $ROUND2 | sed 's/.html//' | tr '-' '\n' | tail -n1`
 
