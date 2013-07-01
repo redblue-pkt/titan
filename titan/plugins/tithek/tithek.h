@@ -43,7 +43,8 @@ int tithekexit = 0;
 //flag 31	- kinox search cast
 //flag 32	- kinox search cast results
 //flag 33	- movie4k search
-//flag 34	- movie4k hoster
+//flag 34	- movie4k hoster de
+//flag 35	- movie4k hoster other
 //flag 50	- beeg
 //flag 66   - coming soon dummy
 //flag 1000 - menu pincode
@@ -139,6 +140,8 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 	else if(node->flag == 19 && pay == 0)
 		skip = 1;
 	else if(node->flag == 1 && pay == 0)
+		skip = 1;
+	else if(node->flag == 35 && pay == 0)
 		skip = 1;
 	else if(node->flag == 9999)
 	{
@@ -1763,7 +1766,7 @@ waitrcstart:
 						addscreenrc(grid, listbox);
 					}
 				}
-				else if((((struct tithek*)listbox->select->handle)->flag == 34))
+				else if((((struct tithek*)listbox->select->handle)->flag == 34) || (((struct tithek*)listbox->select->handle)->flag == 35))
 				{
 					if(movie4k_hoster(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
 					{
