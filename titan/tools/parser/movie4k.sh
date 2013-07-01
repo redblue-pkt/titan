@@ -225,6 +225,12 @@ PIC="http://atemio.dyndns.tv/mediathek/menu/Movies.jpg"
 LINE="Filme (alle)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
 echo $LINE >> cache.movie4k.category.titanlist
 
+piccount=`expr $piccount + 1`
+URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.movies.genre.list"
+PIC="http://atemio.dyndns.tv/mediathek/menu/Movies.genre.jpg"
+LINE="Filme (genre)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
+echo $LINE >> cache.movie4k.category.titanlist
+
 # filme in genres sortieren
 watchlist="
 genres-movies.html
@@ -281,14 +287,9 @@ for ROUND1 in $watchlist; do
 		URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.category.movie.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list"
 		PIC="http://atemio.dyndns.tv/mediathek/menu/`echo "$TITLE" | tr 'A-Z' 'a-z'`.jpg"
 
-		if [ `echo $ROUND2 | grep "movies" | wc -l` -eq 1 ];then
-			ZUSATZ="Filme "
-		else
-			ZUSATZ="Serie "
-		fi
-		LINE="$ZUSATZ$TITLE#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
+		LINE="$TITLE#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
 		if [ ! -z "$TITLE" ];then
-			echo $LINE >> cache.movie4k.category.titanlist	
+			echo $LINE >> cache.movie4k.movies.genre.titanlist
 		fi
 # unsortet for check on website		
 #		cat cache.movie4k.category.movie.`echo "$TITLE" | tr 'A-Z' 'a-z'`.titanlist  | sort -u > _full/movie4k/streams/movie4k.category.movie.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list
@@ -300,7 +301,13 @@ done
 piccount=`expr $piccount + 1`
 URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.series.list"
 PIC="http://atemio.dyndns.tv/mediathek/menu/serien.jpg"
-LINE="Filme (alle)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
+LINE="Serien (alle)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
+echo $LINE >> cache.movie4k.category.titanlist
+
+piccount=`expr $piccount + 1`
+URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.series.genre.list"
+PIC="http://atemio.dyndns.tv/mediathek/menu/serien.genre.jpg"
+LINE="Serien (genre)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
 echo $LINE >> cache.movie4k.category.titanlist
 
 # serien in genres sortieren
@@ -338,20 +345,18 @@ for ROUND1 in $watchlist; do
 		URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.category.series.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list"
 		PIC="http://atemio.dyndns.tv/mediathek/menu/`echo "$TITLE" | tr 'A-Z' 'a-z'`.jpg"
 
-		if [ `echo $ROUND2 | grep "movies" | wc -l` -eq 1 ];then
-			ZUSATZ="Filme "
-		else
-			ZUSATZ="Serie "
-		fi
-		LINE="$ZUSATZ$TITLE#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
+		LINE="$TITLE#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
 		if [ ! -z "$TITLE" ];then
-			echo $LINE >> cache.movie4k.category.titanlist	
+			echo $LINE >> cache.movie4k.series.genre.titanlist
 		fi
 # unsortet for check on website
 #		cat cache.movie4k.category.series.`echo "$TITLE" | tr 'A-Z' 'a-z'`.titanlist  | sort -u > _full/movie4k/streams/movie4k.category.series.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list
 		cat cache.movie4k.category.series.`echo "$TITLE" | tr 'A-Z' 'a-z'`.titanlist > _full/movie4k/streams/movie4k.category.series.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list
 	done
 done
+
+cat cache.movie4k.series.genre.titanlist | sort -um > _full/movie4k/streams/movie4k.series.genre.list
+cat cache.movie4k.movies.genre.titanlist | sort -um > _full/movie4k/streams/movie4k.movies.genre.list
 
 cat cache.movie4k.series.titanlist | sort -um > _full/movie4k/streams/movie4k.series.list
 cat cache.movie4k.movies.titanlist | sort -um > _full/movie4k/streams/movie4k.movies.list
