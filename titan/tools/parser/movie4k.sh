@@ -167,17 +167,18 @@ testcount=0
 piccount=0
 count=0
 
-for ROUND2 in $watchlist; do
-	count=`expr $count + 1`	
-	filename2="$ROUND2"
-	wget "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
-	if [ `cat cache."$count"."$filename2" | grep boxgrey | tr '><' '\n' | grep .html | cut -d'"' -f2 | wc -l` -gt 0 ];then
-		pagelist="$ROUND2 `cat cache.$count.$filename2 | grep boxgrey | tr '><' '\n' | grep .html | cut -d'"' -f2 | sed "s!http://www.movie4k.to//!!"`"	
-	else
-		pagelist="$ROUND2"
-	fi
-
-	for ROUND3 in $pagelist; do
+#for ROUND2 in $watchlist; do
+#	count=`expr $count + 1`	
+#	filename2="$ROUND2"
+#	wget "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
+#	if [ `cat cache."$count"."$filename2" | grep boxgrey | tr '><' '\n' | grep .html | cut -d'"' -f2 | wc -l` -gt 0 ];then
+#		pagelist="$ROUND2 `cat cache.$count.$filename2 | grep boxgrey | tr '><' '\n' | grep .html | cut -d'"' -f2 | sed "s!http://www.movie4k.to//!!"`"	
+#	else
+#		pagelist="$ROUND2"
+#	fi
+#
+#	for ROUND3 in $pagelist; do
+	for ROUND3 in $watchlist; do
 		count=`expr $count + 1`
 		filename3="$ROUND3"
 #		echo ROUND3 $ROUND3
@@ -229,7 +230,7 @@ for ROUND2 in $watchlist; do
 			fi
 		done
 	done
-done
+#done
 
 # add Film dummy in category
 piccount=`expr $piccount + 1`
