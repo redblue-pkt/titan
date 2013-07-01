@@ -123,15 +123,18 @@ for ROUND2 in $watchlist; do
 		else
 			LANGTXT=" (??)"
 		fi
+
+# show allways
+		lang=34
 		
 		if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
 			LINE="$TITLE$LANGTXT#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#$lang"			
 			if [ `cat cache.movie4k.$TYPE.titanlist | grep "^$TITLE$LANGTXT" | wc -l` -eq 0 ];then
 				echo $LINE >> cache.movie4k.$TYPE.titanlist
 			fi
-			if [ `cat cache.movie4k.titanlist | grep "^$TITLE$LANGTXT" | wc -l` -eq 0 ];then
-				echo $LINE >> cache.movie4k.titanlist
-			fi
+#			if [ `cat cache.movie4k.titanlist | grep "^$TITLE$LANGTXT" | wc -l` -eq 0 ];then
+#				echo $LINE >> cache.movie4k.titanlist
+#			fi
 		fi
 	done
 
