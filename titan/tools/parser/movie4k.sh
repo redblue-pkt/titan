@@ -71,10 +71,14 @@ for ROUND2 in $watchlist; do
 				LANGTXT=" (??)"
 			fi
 			
-			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ] && [ `cat cache.movie4k.titanlist | grep "^$TITLE$LANGTXT" | wc -l` -eq 0 ];then
+			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
 				LINE="$TITLE$LANGTXT#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#$lang"			
-				echo $LINE >> cache.movie4k.titanlist
-				echo $LINE >> cache.movie4k.movies.titanlist
+				if [ `cat cache.movie4k.titanlist | grep "^$TITLE$LANGTXT" | wc -l` -eq 0 ];then
+					echo $LINE >> cache.movie4k.titanlist
+				fi
+				if [ `cat cache.movie4k.movies.titanlist | grep "^$TITLE$LANGTXT" | wc -l` -eq 0 ];then
+					echo $LINE >> cache.movie4k.movies.titanlist
+				fi
 			fi
 		done
 	done
@@ -210,10 +214,14 @@ for ROUND3 in $watchlist; do
 			LANGTXT=" (??)"
 		fi
 		
-		if [ ! -z "$TITLE" ] && [ ! -z "$URL" ] && [ `cat cache.movie4k.titanlist | grep "^$TITLE$LANGTXT" | wc -l` -eq 0 ];then
+		if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
 			LINE="$TITLE$LANGTXT#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#$lang"			
-			echo $LINE >> cache.movie4k.titanlist
-			echo $LINE >> cache.movie4k.series.titanlist
+			if [ `cat cache.movie4k.titanlist | grep "^$TITLE$LANGTXT" | wc -l` -eq 0 ];then
+				echo $LINE >> cache.movie4k.titanlist
+			fi
+			if [ `cat cache.movie4k.series.titanlist | grep "^$TITLE$LANGTXT" | wc -l` -eq 0 ];then
+				echo $LINE >> cache.movie4k.series.titanlist
+			fi
 		fi
 	done
 done
@@ -283,7 +291,7 @@ echo $LINE >> cache.movie4k.category.titanlist
 
 piccount=`expr $piccount + 1`
 URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.movies.update.list"
-PIC="http://atemio.dyndns.tv/mediathek/menu/Movies.jpg"
+PIC="http://atemio.dyndns.tv/mediathek/menu/Movies.update.jpg"
 LINE="Filme (letzten uploads)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
 echo $LINE >> cache.movie4k.category.titanlist
 
