@@ -269,6 +269,9 @@ for ROUND3 in $watchlist; do
 		else
 			LANGTXT=" (??)"
 		fi
+
+		# show allways
+		lang=34
 		
 		if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
 			LINE="$TITLE$LANGTXT#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#$lang"			
