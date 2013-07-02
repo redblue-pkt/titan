@@ -18,6 +18,7 @@
 #include "beeg.h"
 #include "solarmovie.h"
 #include "movie4k.h"
+#include "mlehd.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";
