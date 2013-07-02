@@ -151,7 +151,7 @@ done
 #exit
 #echo lostcount $lostcount
 
-cp -a _full/mlhhd/* /var/www/atemio/web/mediathek/mlhhd
+#cp -a _full/mlhhd/* /var/www/atemio/web/mediathek/mlhhd
 #cp -a mainmenu.list /var/www/atemio/web/mediathek
 #cp -a mainmenu-mlhhd.list /var/www/atemio/web/mediathek
 
