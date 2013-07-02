@@ -130,10 +130,6 @@ cat cache.mlhhd.titanlist | sort -um > _full/mlhhd/streams/mlhhd.all-sorted.list
 #cat cache.mlhhd.category.titanlist | sort -um > _full/mlhhd/mlhhd.category.list
 cat cache.mlhhd.category.titanlist > _full/mlhhd/mlhhd.category.list
 
-rm -rf _full
-cp /home/obiwan/test/_ba/mlhhd/streams/mlhhd.all-sorted.list cache.mlhhd.titanlist
-mkdir -p _full/mlhhd/streams/
-
 for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
 	filename=`echo "$ROUND" | tr 'A-Z' 'a-z'`
 	if [ `cat cache.mlhhd.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
