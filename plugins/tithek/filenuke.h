@@ -19,6 +19,7 @@ char* filenuke(char* host, char* file)
 	char* search = NULL;
 	char* post = NULL;
 	char* streamlink = NULL;
+	char* cmd = NULL;
 
 	char* tmpstr2 = NULL;
 	char* tmpstr3 = NULL;
@@ -95,14 +96,14 @@ char* filenuke(char* host, char* file)
 	post = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
 	if(getconfigint("debuglevel", NULL) == 99)
 		writesys("/tmp/filenuke2_tmpstr_post1", post, 0);
-
-//	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/post", NULL, NULL, 0, send, NULL, 5000, 0);
-//	cmd = ostrcat(cmd, "cat /tmp/tithek/post | zcat", 1, 0);
-//	debug(99, "cmd: %s", cmd);
-//	post = command(cmd);
-//	writesys("/tmp/filenuke2_post1", post, 0);
-//	free(cmd); cmd = NULL;
-
+//
+	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/post", NULL, NULL, 0, send, NULL, 5000, 0);
+	cmd = ostrcat("cat /tmp/tithek/post | zcat", NULL, 0, 0);
+	debug(99, "cmd: %s", cmd);
+	post = command(cmd);
+	writesys("/tmp/filenuke2_post1", post, 0);
+	free(cmd); cmd = NULL;
+//
 	free(tmpstr),tmpstr = NULL;
 	tmpstr = string_resub(";return p}('", ");'", post, 0);
 	if(getconfigint("debuglevel", NULL) == 99)

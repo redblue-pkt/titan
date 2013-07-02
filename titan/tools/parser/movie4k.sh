@@ -448,7 +448,7 @@ for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X
 		cat cache.movie4k.titanlist."$ROUND" | sort -um > _full/movie4k/streams/movie4k.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
 		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Movie4k#3 >> _full/movie4k/movie4k.a-z.list
 	elif [ `cat cache.movie4k.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
-		cat cache.movie4k.titanlist | grep ^"$ROUND" > cache.movie4k.titanlist."$ROUND"
+		cat cache.movie4k.titanlist | grep ^"$filename" > cache.movie4k.titanlist."$ROUND"
 		cat cache.movie4k.titanlist."$ROUND" | sort -um > _full/movie4k/streams/movie4k.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
 		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Movie4k#3 >> _full/movie4k/movie4k.a-z.list
 	fi

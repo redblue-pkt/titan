@@ -45,6 +45,9 @@ int tithekexit = 0;
 //flag 33	- movie4k search
 //flag 34	- movie4k hoster de
 //flag 35	- movie4k hoster other
+//flag 36	- movie4k hoster series
+//flag 37	- mlehd
+
 //flag 50	- beeg
 //flag 66   - coming soon dummy
 //flag 1000 - menu pincode
@@ -79,8 +82,7 @@ void freetithekcontent(struct tithek* node)
 int addtithekcontent(struct tithek* node, char *line, int len, int count, int pay)
 {
 	int ret = 0, i = 0, skip = 0;
-	char* tmpstr = NULL, *flag = NULL, *cmd = NULL;
-
+	char* tmpstr = NULL, *flag = NULL, *cmd = NULL, *tmp = NULL;
 	if(node == NULL) return 1;
 
 	if(len > 0) tmpstr = malloc(len + 1);
@@ -145,7 +147,6 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		skip = 1;
 	else if(node->flag == 9999)
 	{
-		char* tmp = NULL;
 /*
 		//cmd = ostrcat(cmd, "wget -s http://", 1, 0);
 		cmd = ostrcat(cmd, "kin", 1, 0);
@@ -163,8 +164,6 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		if(tmp == NULL)
 			skip = 1;
 
-		free(tmp); tmp = NULL;
-		free(cmd), cmd = NULL;
 */
 	}
 
@@ -174,6 +173,9 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		return 1;
 	}
 
+	free(tmp); tmp = NULL;
+	free(cmd), cmd = NULL;
+		
 	return 0;
 }
 
@@ -1098,6 +1100,10 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		{
 			if(tmpstr != NULL) tmpstr1 = kinox(tmpstr, NULL, NULL, 7);
 		}
+		else if(((struct tithek*)listbox->select->handle)->flag == 37)
+		{
+			if(tmpstr != NULL) tmpstr1 = mlehd(tmpstr);
+		}
 		else if(((struct tithek*)listbox->select->handle)->flag == 50)
 		{
 			if(tmpstr != NULL) tmpstr1 = beeg(tmpstr);
@@ -1577,7 +1583,7 @@ waitrcstart:
 			{
 				clearscreen(grid);
 
-				if((((struct tithek*)listbox->select->handle)->flag == 2) || (((struct tithek*)listbox->select->handle)->flag == 4) || (((struct tithek*)listbox->select->handle)->flag == 5) || (((struct tithek*)listbox->select->handle)->flag == 6) || (((struct tithek*)listbox->select->handle)->flag == 7) || (((struct tithek*)listbox->select->handle)->flag == 8) || (((struct tithek*)listbox->select->handle)->flag == 12) || (((struct tithek*)listbox->select->handle)->flag == 14) || (((struct tithek*)listbox->select->handle)->flag == 15) || (((struct tithek*)listbox->select->handle)->flag == 16) || (((struct tithek*)listbox->select->handle)->flag == 17) || (((struct tithek*)listbox->select->handle)->flag == 18) || (((struct tithek*)listbox->select->handle)->flag == 19) || (((struct tithek*)listbox->select->handle)->flag == 20) || (((struct tithek*)listbox->select->handle)->flag == 24) || (((struct tithek*)listbox->select->handle)->flag == 25) || (((struct tithek*)listbox->select->handle)->flag == 26) || (((struct tithek*)listbox->select->handle)->flag == 27) || (((struct tithek*)listbox->select->handle)->flag == 50))
+				if((((struct tithek*)listbox->select->handle)->flag == 2) || (((struct tithek*)listbox->select->handle)->flag == 4) || (((struct tithek*)listbox->select->handle)->flag == 5) || (((struct tithek*)listbox->select->handle)->flag == 6) || (((struct tithek*)listbox->select->handle)->flag == 7) || (((struct tithek*)listbox->select->handle)->flag == 8) || (((struct tithek*)listbox->select->handle)->flag == 12) || (((struct tithek*)listbox->select->handle)->flag == 14) || (((struct tithek*)listbox->select->handle)->flag == 15) || (((struct tithek*)listbox->select->handle)->flag == 16) || (((struct tithek*)listbox->select->handle)->flag == 17) || (((struct tithek*)listbox->select->handle)->flag == 18) || (((struct tithek*)listbox->select->handle)->flag == 19) || (((struct tithek*)listbox->select->handle)->flag == 20) || (((struct tithek*)listbox->select->handle)->flag == 24) || (((struct tithek*)listbox->select->handle)->flag == 25) || (((struct tithek*)listbox->select->handle)->flag == 26) || (((struct tithek*)listbox->select->handle)->flag == 27) || (((struct tithek*)listbox->select->handle)->flag == 37) || (((struct tithek*)listbox->select->handle)->flag == 50))
 				{
 					submenu(listbox, load, title);
 					drawscreen(grid, 0, 0);
