@@ -3,10 +3,10 @@
 
 rm cache.*
 rm _liste
-rm -rf _full/mlhhd
-mkdir -p _full/mlhhd/streams
+rm -rf _full/mlehd
+mkdir -p _full/mlehd/streams
 rm cache.*
-touch cache.mlhhd.titanlist
+touch cache.mlehd.titanlist
 
 # filme a-z
 watchlist="
@@ -46,22 +46,22 @@ for ROUND2 in $watchlist; do
 #		fi
 ####		
 		if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
-			LINE="$TITLE#$URL#$PIC#mlhhd_$piccount.jpg#Mle-HD#$type"
-			if [ `cat cache.mlhhd.newest.titanlist | grep "^$TITLE" | wc -l` -eq 0 ];then
-				echo $LINE >> cache.mlhhd.newest.titanlist
+			LINE="$TITLE#$URL#$PIC#mlehd_$piccount.jpg#Mle-HD#$type"
+			if [ `cat cache.mlehd.newest.titanlist | grep "^$TITLE" | wc -l` -eq 0 ];then
+				echo $LINE >> cache.mlehd.newest.titanlist
 			fi
-			if [ `cat cache.mlhhd.titanlist | grep "^$TITLE" | wc -l` -eq 0 ];then
-				echo $LINE >> cache.mlhhd.titanlist
+			if [ `cat cache.mlehd.titanlist | grep "^$TITLE" | wc -l` -eq 0 ];then
+				echo $LINE >> cache.mlehd.titanlist
 			fi
 		fi
 	done
 
 	piccount=`expr $piccount + 1`
-	URL="http://atemio.dyndns.tv/mediathek/mlhhd/streams/mlhhd.newest.list"
+	URL="http://atemio.dyndns.tv/mediathek/mlehd/streams/mlehd.newest.list"
 	PIC="http://atemio.dyndns.tv/mediathek/menu/Movies.update.jpg"
 	TITLE="Letzte Uploads"
-	LINE="$TITLE#$URL#$PIC#mlhhd_$piccount.jpg#Mle-HD#3"
-	echo $LINE >> cache.mlhhd.category.titanlist
+	LINE="$TITLE#$URL#$PIC#mlehd_$piccount.jpg#Mle-HD#3"
+	echo $LINE >> cache.mlehd.category.titanlist
 
 ###
 
@@ -103,43 +103,43 @@ for ROUND2 in $watchlist; do
 #				fi
 				
 				if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
-					LINE="$TITLE#$URL#$PIC#mlhhd_$piccount.jpg#Mle-HD#$type"
-					if [ `cat cache.mlhhd.category.$ROUND3.titanlist | grep "^$TITLE" | wc -l` -eq 0 ];then
-						echo $LINE >> cache.mlhhd.category.$ROUND3.titanlist
+					LINE="$TITLE#$URL#$PIC#mlehd_$piccount.jpg#Mle-HD#$type"
+					if [ `cat cache.mlehd.category.$ROUND3.titanlist | grep "^$TITLE" | wc -l` -eq 0 ];then
+						echo $LINE >> cache.mlehd.category.$ROUND3.titanlist
 					fi
-					if [ `cat cache.mlhhd.titanlist | grep "^$TITLE" | wc -l` -eq 0 ];then
-						echo $LINE >> cache.mlhhd.titanlist
+					if [ `cat cache.mlehd.titanlist | grep "^$TITLE" | wc -l` -eq 0 ];then
+						echo $LINE >> cache.mlehd.titanlist
 					fi
 				fi
 			done
 		done
 
-		cat cache.mlhhd.category.$ROUND3.titanlist > _full/mlhhd/streams/mlhhd.category.$ROUND3.list
+		cat cache.mlehd.category.$ROUND3.titanlist > _full/mlehd/streams/mlehd.category.$ROUND3.list
 			
 		piccount=`expr $piccount + 1`
-		URL="http://atemio.dyndns.tv/mediathek/mlhhd/streams/mlhhd.category.$ROUND3.list"
+		URL="http://atemio.dyndns.tv/mediathek/mlehd/streams/mlehd.category.$ROUND3.list"
 		PIC="http://atemio.dyndns.tv/mediathek/menu/$ROUND3.jpg"
 		TITLE="$ROUND3"
-		LINE="$TITLE#$URL#$PIC#mlhhd_$piccount.jpg#Mle-HD#3"
-		echo $LINE >> cache.mlhhd.category.titanlist
+		LINE="$TITLE#$URL#$PIC#mlehd_$piccount.jpg#Mle-HD#3"
+		echo $LINE >> cache.mlehd.category.titanlist
 	done
 done
 
-cat cache.mlhhd.newest.titanlist > _full/mlhhd/streams/mlhhd.newest.list
-cat cache.mlhhd.titanlist | sort -um > _full/mlhhd/streams/mlhhd.all-sorted.list
-#cat cache.mlhhd.category.titanlist | sort -um > _full/mlhhd/mlhhd.category.list
-cat cache.mlhhd.category.titanlist > _full/mlhhd/mlhhd.category.list
+cat cache.mlehd.newest.titanlist > _full/mlehd/streams/mlehd.newest.list
+cat cache.mlehd.titanlist | sort -um > _full/mlehd/streams/mlehd.all-sorted.list
+#cat cache.mlehd.category.titanlist | sort -um > _full/mlehd/mlehd.category.list
+cat cache.mlehd.category.titanlist > _full/mlehd/mlehd.category.list
 
 for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
 	filename=`echo "$ROUND" | tr 'A-Z' 'a-z'`
-	if [ `cat cache.mlhhd.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
-		cat cache.mlhhd.titanlist | grep ^"$ROUND" >> cache.mlhhd.titanlist."$ROUND"
-		cat cache.mlhhd.titanlist."$ROUND" | sort -um > _full/mlhhd/streams/mlhhd.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/mlhhd/streams/mlhhd."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Mle-HD#3 >> _full/mlhhd/mlhhd.a-z.list
-	elif [ `cat cache.mlhhd.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
-		cat cache.mlhhd.titanlist | grep ^"$filename" >> cache.mlhhd.titanlist."$ROUND"
-		cat cache.mlhhd.titanlist."$ROUND" | sort -um > _full/mlhhd/streams/mlhhd.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/mlhhd/streams/mlhhd."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Mle-HD#3 >> _full/mlhhd/mlhhd.a-z.list
+	if [ `cat cache.mlehd.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
+		cat cache.mlehd.titanlist | grep ^"$ROUND" >> cache.mlehd.titanlist."$ROUND"
+		cat cache.mlehd.titanlist."$ROUND" | sort -um > _full/mlehd/streams/mlehd.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
+		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/mlehd/streams/mlehd."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Mle-HD#3 >> _full/mlehd/mlehd.a-z.list
+	elif [ `cat cache.mlehd.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
+		cat cache.mlehd.titanlist | grep ^"$filename" >> cache.mlehd.titanlist."$ROUND"
+		cat cache.mlehd.titanlist."$ROUND" | sort -um > _full/mlehd/streams/mlehd.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
+		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/mlehd/streams/mlehd."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Mle-HD#3 >> _full/mlehd/mlehd.a-z.list
 
 	fi
 done
@@ -147,9 +147,9 @@ done
 #exit
 #echo lostcount $lostcount
 
-#cp -a _full/mlhhd/* /var/www/atemio/web/mediathek/mlhhd
+#cp -a _full/mlehd/* /var/www/atemio/web/mediathek/mlehd
 #cp -a mainmenu.list /var/www/atemio/web/mediathek
-#cp -a mainmenu-mlhhd.list /var/www/atemio/web/mediathek
+#cp -a mainmenu-mlehd.list /var/www/atemio/web/mediathek
 
 rm file.*
 rm cache.*
