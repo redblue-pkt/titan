@@ -8,6 +8,10 @@ int tithekdownloadrun = 0;
 int tithekdownloadcount = 0;
 int tithekrun = 0;
 int tithekexit = 0;
+int tithekmovie4k = 0;
+int tithekkinox = 0;
+int titheksolarmovie = 0;
+int tithekmlehd = 0;
 
 //flag 0	- menu
 //flag 1	- menu pay hidden tithek_pay=0/1 0=hidden
@@ -42,12 +46,14 @@ int tithekexit = 0;
 //flag 30	- solarmovie search serie
 //flag 31	- kinox search cast
 //flag 32	- kinox search cast results
-//flag 33	- movie4k search
+//flag 33	- movie4k search : serie > open seasons and list episode flag=40 > hoster listed flag=34
 //flag 34	- movie4k hoster de
 //flag 35	- movie4k hoster other
-//flag 36	- movie4k series de
-//flag 37	- movie4k series other
+//flag 36	- movie4k series de > open seasons and list episode flag=39 > hoster listed flag=34 
+//flag 37	- movie4k series other > open seasons and list episode flag=39 > hoster listed flag=34
 //flag 38	- mlehd
+//flag 39   - movie4k_hoster_listed
+//flag 40   - movie4k_hoster_series
 
 //flag 50	- beeg
 //flag 66   - coming soon dummy
@@ -146,41 +152,13 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		skip = 1;
 	else if(node->flag == 35 && pay == 0)
 		skip = 1;
-	else if(node->flag == 9996 || node->flag == 9997 || node->flag == 9998 || node->flag == 9999)
+	else if(titheksolarmovie == 1 && node->flag == 9996)
 	{
-	/*
-		//cmd = ostrcat(cmd, "wget -s http://", 1, 0);
-		if(node->flag == 9996)
-		{
-			cmd = ostrcat(cmd, "ww", 1, 0);
-			cmd = ostrcat(cmd, "w.sola", 1, 0);
-			cmd = ostrcat(cmd, "rmovi", 1, 0);
-			cmd = ostrcat(cmd, "e.", 1, 0);
-			cmd = ostrcat(cmd, "so", 1, 0);
-		}
-		else if(node->flag == 9997)
-		{
-			cmd = ostrcat(cmd, "ww", 1, 0);
-			cmd = ostrcat(cmd, "w.mov", 1, 0);
-			cmd = ostrcat(cmd, "ie4k", 1, 0);
-			cmd = ostrcat(cmd, ".", 1, 0);
-			cmd = ostrcat(cmd, "to", 1, 0);
-		}
-		else if(node->flag == 9998)
-		{
-			cmd = ostrcat(cmd, "ww", 1, 0);
-			cmd = ostrcat(cmd, "w.mle", 1, 0);
-			cmd = ostrcat(cmd, "-hd", 1, 0);
-			cmd = ostrcat(cmd, ".", 1, 0);
-			cmd = ostrcat(cmd, "se", 1, 0);
-		}
-		else if(node->flag == 9999)
-		{
-			cmd = ostrcat(cmd, "kin", 1, 0);
-			cmd = ostrcat(cmd, "ox", 1, 0);
-			cmd = ostrcat(cmd, ".", 1, 0);
-			cmd = ostrcat(cmd, "to", 1, 0);
-		}
+		cmd = ostrcat(cmd, "ww", 1, 0);
+		cmd = ostrcat(cmd, "w.sola", 1, 0);
+		cmd = ostrcat(cmd, "rmovi", 1, 0);
+		cmd = ostrcat(cmd, "e.", 1, 0);
+		cmd = ostrcat(cmd, "so", 1, 0);
 		
 		//if(system(cmd) != 0)
 		for(i = 0; i < 3; i++)
@@ -191,7 +169,67 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		}
 		if(tmp == NULL)
 			skip = 1;
-*/
+
+		titheksolarmovie = 0;
+	}
+	else if(tithekmovie4k == 1 && node->flag == 9997)
+	{
+		cmd = ostrcat(cmd, "ww", 1, 0);
+		cmd = ostrcat(cmd, "w.mov", 1, 0);
+		cmd = ostrcat(cmd, "ie4k", 1, 0);
+		cmd = ostrcat(cmd, ".", 1, 0);
+		cmd = ostrcat(cmd, "to", 1, 0);
+		
+		//if(system(cmd) != 0)
+		for(i = 0; i < 3; i++)
+		{
+			free(tmp); tmp = NULL;
+			tmp = gethttp(cmd, "/", 80, NULL, NULL, 5000, NULL, 0);
+			if(tmp != NULL) break;
+		}
+		if(tmp == NULL)
+			skip = 1;
+
+		tithekmovie4k = 0;
+	}		
+	else if(tithekmlehd == 1 && node->flag == 9998)
+	{
+		cmd = ostrcat(cmd, "ww", 1, 0);
+		cmd = ostrcat(cmd, "w.mle", 1, 0);
+		cmd = ostrcat(cmd, "-hd", 1, 0);
+		cmd = ostrcat(cmd, ".", 1, 0);
+		cmd = ostrcat(cmd, "se", 1, 0);
+		
+		//if(system(cmd) != 0)
+		for(i = 0; i < 3; i++)
+		{
+			free(tmp); tmp = NULL;
+			tmp = gethttp(cmd, "/", 80, NULL, NULL, 5000, NULL, 0);
+			if(tmp != NULL) break;
+		}
+		if(tmp == NULL)
+			skip = 1;
+
+		tithekmlehd = 0;
+	}
+	else if(tithekkinox == 1 && node->flag == 9999)
+	{
+		cmd = ostrcat(cmd, "kin", 1, 0);
+		cmd = ostrcat(cmd, "ox", 1, 0);
+		cmd = ostrcat(cmd, ".", 1, 0);
+		cmd = ostrcat(cmd, "to", 1, 0);
+		
+		//if(system(cmd) != 0)
+		for(i = 0; i < 3; i++)
+		{
+			free(tmp); tmp = NULL;
+			tmp = gethttp(cmd, "/", 80, NULL, NULL, 5000, NULL, 0);
+			if(tmp != NULL) break;
+		}
+		if(tmp == NULL)
+			skip = 1;
+
+		tithekkinox = 0;
 	}
 
 	if(skip == 1)
@@ -1341,6 +1379,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
 	char* tithekpic = NULL;
+	drawscreen(load, 0, 0);
 	
 	if(titheklink == NULL) return;
 	
@@ -1684,6 +1723,29 @@ waitrcstart:
 						addscreenrc(grid, listbox);
 					}
 				}
+				else if((((struct tithek*)listbox->select->handle)->flag == 33))
+				{
+					if(movie4k_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
+					{
+						oaktpage = listbox->aktpage;
+						oaktline = listbox->aktline;
+						ogridcol = listbox->gridcol;
+						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
+						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
+						screentithekplay(tmpstr, tmpstr2, 0);
+						free(tmpstr); tmpstr = NULL;
+						free(tmpstr2); tmpstr2 = NULL;
+
+						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						if(pagecount == 0 || tithekexit == 1) break;
+
+						listbox->aktpage = oaktpage;
+						listbox->aktline = oaktline;
+						listbox->gridcol = ogridcol;
+						addscreenrc(grid, listbox);
+					}
+				}				
 				else if(((struct tithek*)listbox->select->handle)->flag == 29)
 				{
 					if(solarmovie_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
@@ -1917,6 +1979,29 @@ waitrcstart:
 				else if((((struct tithek*)listbox->select->handle)->flag == 39))
 				{
 					if(movie4k_series_listed(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
+					{
+						oaktpage = listbox->aktpage;
+						oaktline = listbox->aktline;
+						ogridcol = listbox->gridcol;
+						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
+						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
+						screentithekplay(tmpstr, tmpstr2, 0);
+						free(tmpstr); tmpstr = NULL;
+						free(tmpstr2); tmpstr2 = NULL;
+			
+						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						if(pagecount == 0 || tithekexit == 1) break;
+
+						listbox->aktpage = oaktpage;
+						listbox->aktline = oaktline;
+						listbox->gridcol = ogridcol;
+						addscreenrc(grid, listbox);
+					}
+				}
+				else if((((struct tithek*)listbox->select->handle)->flag == 40))
+				{
+					if(movie4k_hoster_series(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
 					{
 						oaktpage = listbox->aktpage;
 						oaktline = listbox->aktline;

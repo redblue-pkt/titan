@@ -3,7 +3,6 @@
 
 // flag 1 = putlocker/sockshare
 // flag 2 = filenuke
-//http://www.movie4k.to/movies.php?list=search&securekey=sk1014414788&search=Die+Monster+Uni
 
 char* movie4k(char* link, char* url, char* name, int flag)
 {
@@ -54,6 +53,21 @@ char* movie4k(char* link, char* url, char* name, int flag)
 int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
 {
 	int ret = 1;
+	int incount = 0;
+	char* tmpstr = NULL;
+	char* from = NULL;
+	char* folgen = NULL;
+	char* folgentmp = NULL;
+	char* name = NULL;
+	char* lang = NULL;
+	char* season = NULL;
+	char* episode = NULL;
+	char* line = NULL;
+	char* menu = NULL;
+	char* str = NULL;
+	char* pic = NULL;
+	char* type = NULL;
+
 
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
@@ -73,121 +87,119 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 	{
 		drawscreen(load, 0, 0);
 		search = stringreplacechar(search, ' ', '+');
-		char* tmpstr = NULL;
-		char* tmpstr1 = NULL;
-		char* line = NULL;
-		char* pic = NULL;
-		char* title = NULL;	
-		char* lang = NULL;
-		char* langck = NULL;
-		char* from = NULL;
-		char* url = NULL;
-		char* ip = NULL;
-		char* path = NULL;
-		char* menu = NULL;
 
-		ip = ostrcat("movie4k.to", NULL, 0, 0);
-		if(flag == 0)
-			path = ostrcat("Search.html?q=", search, 0, 0);
-		else
-			path = string_replace_all("http://movie4k.to/", "", search, 0);
-		
-		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-		tmpstr = string_resub("<div id=\"beep\" class=\"beep\"></div>", "</table>", tmpstr, 0);
+		char* send = NULL;
+		send = ostrcat(send, "GET /searchAutoCompleteNew.php?search=the HTTP/1.1\r\n", 1, 0);
+		send = ostrcat(send, "Accept-Encoding: identity\r\nAccept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7\r\n", 1, 0);
+		send = ostrcat(send, "Host: www.movie4k.to\r\nAccept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4\r\n", 1, 0);
+		send = ostrcat(send, "Connection: close\r\nUser-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; de-DE; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3\r\n\r\n", 1, 0);
+		debug(99, "send: %s", send);
 
-		if(getconfigint("debuglevel", NULL) == 99)
-			writesys("/tmp/movie4k1_tmpstr", tmpstr, 0);
+		tmpstr = gethttpreal("movie4k.to", "/", 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
+		free(send); send = NULL;
 
+		char* key = string_resub("securekey=", "&search", tmpstr, 0);
+		debug(99, "key: %s", key);
 
-		int count = 0;
-		int incount = 0;
-		int i = 0;
-		struct splitstr* ret1 = NULL;
-		ret1 = strsplit(tmpstr, "\n", &count);
+		send = ostrcat(send, "GET /movies.php?list=search&securekey=", 1, 0);
+		send = ostrcat(send, key, 1, 0);
+		send = ostrcat(send, "&search=", 1, 0);
+		send = ostrcat(send, search, 1, 0);
+		send = ostrcat(send, " HTTP/1.1\r\nAccept-Encoding: identity\r\n", 1, 0);
+		send = ostrcat(send, "Accept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4\r\n", 1, 0);
+		send = ostrcat(send, "Host: www.movie4k.to\r\n", 1, 0);
+		send = ostrcat(send, "User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; de-DE; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3\r\n", 1, 0);
+		send = ostrcat(send, "Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7\r\n", 1, 0);
+		send = ostrcat(send, "Connection: close\r\nCookie: xxx2=ok;\r\n\r\n", 1, 0);
+		debug(99, "send: %s", send);
 
-		if(ret1 != NULL)
+		free(tmpstr), tmpstr = NULL;
+		tmpstr = gethttpreal("movie4k.to", "/", 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
+
+		folgen = string_resub("<TABLE id=\"tablemoviesindex\">", "</TABLE>", tmpstr, 0);
+		folgen = string_replace_all("\n", "", folgen, 1);
+		folgen = string_replace_all("\t", "", folgen, 1);
+		string_strip_whitechars(folgen);
+		folgen = string_replace_all("</TD> </TR> <TR id=\"coverPreview", "</TD> </TR>\n<TR id=\"coverPreview", folgen, 1);
+
+		if(folgen != NULL)
 		{
-			int max = count;
-			for(i = 0; i < max; i++)
+			int count = 0;
+			int j;
+			struct splitstr* ret1 = NULL;
+			ret1 = strsplit(folgen, "\n", &count);
+
+			if(ret1 != NULL && count > 0)
 			{
-				if(oregex(".*src=\"/gr/sys/lng/(.*)\" alt=\"language\"></td>.*", ret1[i].part) != NULL)
+				int max = count;
+				for(j = 0; j < max; j++)
 				{
-					free(langck), langck = NULL;
-					langck = oregex(".*src=\"/gr/sys/lng/(.*)\" alt=\"language\"></td>.*", ret1[i].part);
-				}
-				
-				if(oregex(".*<td class=\"Title\"><a href=\"(.*)\" onclick=.*", ret1[i].part) != NULL)
-				{
-					free(path), path = NULL;
-					path = oregex(".*<td class=\"Title\"><a href=\"(.*)\" onclick=.*", ret1[i].part);
+					incount += 1;
+					link = string_resub("<a href=\"", "\">", ret1[j].part, 0);
+					name = string_resub(".html\">", "</a>", ret1[j].part, 0);
 
-					if(ostrstr(langck, "1.png") != NULL)
-						lang = ostrcat(lang, " (de)", 1, 0);
-					else if(ostrstr(langck, "2.png") != NULL)
-						lang = ostrcat(lang, " (en)", 1, 0);
-					else
-						lang = ostrcat(lang, " (\?\?)", 1, 0);
-																	
-					tmpstr1 = gethttp("movie4k.to", path, 80, NULL, NULL, 10000, NULL, 0);
+					char* id = string_resub("online-film-", ".html", link, 0);
+					if(id == NULL)
+						id = string_resub("watch-movie-", ".html", link, 0);
+					if(id == NULL)
+						id = oregex(".*tvshows-(.*[0-9]{1,10})-.*", link);
 
-					from = ostrcat("<div class=\"Grahpics\"><a href=\"", path, 0, 0);
-					from = ostrcat(from, "\"><img src=\"", 1, 0);
 
-					pic = string_resub(from, "\" alt=\"", tmpstr1, 0);
+					from = ostrcat("#coverPreview", id, 0, 0);
+					pic = string_resub(from, from, tmpstr, 0);	
+					pic = string_resub("<img src='", "' alt=", pic, 1);	
 					
-					if(pic == NULL)
-						pic = ostrcat("dummy", NULL, 0, 0);
+					if(ostrstr(link, "online-serie-") != NULL)
+						type = ostrcat("40", NULL, 0, 0);
+					else
+						type = ostrcat("34", NULL, 0, 0);
 
-					title = ostrcat(path, NULL, 0, 0);
-					title = string_replace_all("/Stream/", "", title, 1);
-					title = string_replace_all(".html", "", title, 1);
-				 	title = stringreplacechar(title, '_', ' ');
-					title = ostrcat(title , lang, 1, 0);
 
-					url = ostrcat("http://movie4k.to", path, 0, 0);
+					if(ostrstr(ret1[j].part, "us_ger_small.png") != NULL)
+						lang = ostrcat(" (de)", NULL, 0, 0);
+					else if(ostrstr(ret1[j].part, "us_flag_small.png") != NULL)
+						lang = ostrcat(" (en)", NULL, 0, 0);
+					else
+						lang = ostrcat(" (\?\?)", NULL, 0, 0);
+					line = ostrcat(line, name, 1, 0);
 
-					debug(99, "---------------------------");
-					debug(99, "langck: %s", langck);
-					debug(99, "pic: %s", pic);
-					debug(99, "title: %s", title);
-					debug(99, "url: %s", url);					
-					debug(99, "---------------------------");
-
-					if(url != NULL)
-					{
-						incount += 1;
-						line = ostrcat(line, title, 1, 0);
-						line = ostrcat(line, "#", 1, 0);
-						line = ostrcat(line, url, 1, 0);
-						line = ostrcat(line, "#", 1, 0);
-						line = ostrcat(line, pic, 1, 0);
-						line = ostrcat(line, "#movie4k_search_", 1, 0);
-						line = ostrcat(line, oitoa(incount + time(NULL)), 1, 1);
-						line = ostrcat(line, ".jpg#movie4k - Search#22\n", 1, 0);
-					}
-					free(url), url = NULL;
-					free(path), path = NULL;
-					free(title), title = NULL;
-					free(pic), pic = NULL;		
-					free(from), from = NULL;
-					free(tmpstr1), tmpstr1 = NULL;
+					line = ostrcat(line, lang, 1, 0);	
+					line = ostrcat(line, "#http://www.movie4k.to/", 1, 0);
+					line = ostrcat(line, link, 1, 0);
+					line = ostrcat(line, "#", 1, 0);
+					line = ostrcat(line, pic, 1, 0);
+					line = ostrcat(line, "#movie4k_search_", 1, 0);
+					line = ostrcat(line, oitoa(incount + time(NULL)), 1, 1);
+					line = ostrcat(line, ".jpg#Movie4k - Search#", 1, 0);
+					line = ostrcat(line, type, 1, 0);
+					line = ostrcat(line, "\n", 1, 0);
+					free(str), str = NULL;
+											
+					free(name), name = NULL;
 					free(lang), lang = NULL;
-					free(langck), langck = NULL;	
+					free(season), season = NULL;
+					free(episode), episode = NULL;
+					free(from), from = NULL;
+					free(pic), pic = NULL;
+					free(type), type = NULL;
 				}
 			}
 			free(ret1), ret1 = NULL;
-			if(line != NULL)
-			{
-				menu = ostrcat("/tmp/tithek/movie4k.search.list", NULL, 0, 0);
-				writesys(menu, line, 0);
-				struct tithek* tnode = (struct tithek*)listbox->select->handle;
-				createtithek(tnode, tnode->title,  menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
-				ret = 0;
-			}
+		}				
+		free(from), from = NULL;
+		free(folgen), folgen = NULL;
+		free(folgentmp), folgentmp = NULL;		
 
+		if(line != NULL)
+		{
+			menu = ostrcat("/tmp/tithek/movie4k.search.list", NULL, 0, 0);
+			writesys(menu, line, 0);
+			struct tithek* tnode = (struct tithek*)listbox->select->handle;
+			createtithek(tnode, tnode->title,  menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
+			ret = 0;
 		}
+
 		free(tmpstr), tmpstr = NULL;
-		free(ip), ip = NULL;
 	}
 	free(search), search = NULL;
 	return ret;
@@ -1024,9 +1036,9 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 	debug(99, "link: %s", link);
 	int ret = 1, series = 0;
 	char* ip = NULL, *pos = NULL, *id = NULL, *tpath = NULL, *path = NULL, *tmpstr = NULL, *line = NULL;
-			char* from = NULL;
-			char* folgen = NULL;
-			char* folgentmp = NULL;
+	char* from = NULL;
+	char* folgen = NULL;
+	char* folgentmp = NULL;
 
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
@@ -1041,8 +1053,6 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 		path = pos + 1;
 	}
 /*
-tvshows-season-Battlestar-Galactica.html
-
 	if(!ostrncmp("tvshows-", path, 8))
 	{
 		debug(99, "path: %s",path);
@@ -1070,12 +1080,7 @@ tvshows-season-Battlestar-Galactica.html
 
 		if(ostrstr(tmpstr, "episodeform") != NULL)
 		{
-
-
 			int i;
-
-			series = 1;
-	
 			for(i = 1; i < 30; i++)
 			{
 				from = ostrcat(from, "<FORM name=\"episodeform", 1, 0);
@@ -1124,10 +1129,6 @@ tvshows-season-Battlestar-Galactica.html
 							line = ostrcat(line, oitoa(j), 1, 0);					
 							line = ostrcat(line, "#http://www.movie4k.to/", 1, 0);
 							line = ostrcat(line, link, 1, 0);
-//							line = ostrcat(line, ";", 1, 0);
-//							line = ostrcat(line, oitoa(i), 1, 0);
-//							line = ostrcat(line, ";", 1, 0);
-//							line = ostrcat(line, oitoa(j), 1, 0);
 							line = ostrcat(line, "#", 1, 0);
 							line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/s", 1, 0);
 							line = ostrcat(line, oitoa(i), 1, 0);
