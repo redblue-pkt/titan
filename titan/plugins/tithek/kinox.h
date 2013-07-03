@@ -270,7 +270,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 							line = ostrcat(line, "e", 1, 0);
 							line = ostrcat(line, oitoa(j), 1, 0);
 							line = ostrcat(line, ".jpg", 1, 0);																
-							line = ostrcat(line, "#kinox_search_", 1, 0);
+							line = ostrcat(line, "#s", 1, 0);
 							line = ostrcat(line, oitoa(i), 1, 0);
 							line = ostrcat(line, "e", 1, 0);
 							line = ostrcat(line, oitoa(j), 1, 0);
