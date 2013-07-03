@@ -252,7 +252,11 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 
 						pathnew = string_resub("<a href=\\\"", "\\", ret1[i].part, 0);
 						hname = string_resub("&nbsp;", "</a", ret1[i].part, 0);
-						id = oregex(".*tvshows-(.*[0-9]{1,10})-.*", pathnew);
+						id = string_resub("online-film-", ".html", pathnew, 0);
+						if(id == NULL)
+							id = string_resub("watch-movie-", ".html", pathnew, 0);
+						if(id == NULL)
+							id = oregex(".*tvshows-(.*[0-9]{1,10})-.*", pathnew);
 
 						debug(99, "(%d) pathnew: %s hname: %s id: %s",i ,pathnew, hname, id);
 
@@ -274,7 +278,7 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							writesys(logfile, pathnew, 0);
 						free(logfile), logfile= NULL;
 						
-						tmpstr1 = gethttp("movie4k.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+						tmpstr1 = gethttp("movie4k.to", pathnew, 80, NULL, NULL, 5000, NULL, 0);
 						free(pathnew), pathnew = NULL;
 					}
 					else
@@ -283,7 +287,8 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 						id = string_resub("online-film-", ".html", path, 0);
 						if(id == NULL)
 							id = string_resub("watch-movie-", ".html", path, 0);
-
+						if(id == NULL);
+							id = oregex(".*tvshows-(.*[0-9]{1,10})-.*", path);
 					}	
 					logfile = ostrcat("/tmp/movie4k5_tmpstr1", id, 0, 0);
 					logfile = ostrcat(logfile, "_", 1, 0);
@@ -430,12 +435,12 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							tmpstr5 = ostrcat(url4, NULL, 0, 0);
 						}
 					}
-						
+
 					int type = 0;
 					int count2 = 0;
 					struct splitstr* ret2 = NULL;
 					ret2 = strsplit(tmpstr1, "/", &count2);
-		
+
 					if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Sockshare") == 0)
 					{
 						free(hname), hname = NULL;
@@ -458,6 +463,13 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 						type = 15;
 					}
 					else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "Streamclou") == 0)
+					{
+						free(hname), hname = NULL;
+						hname = ostrcat("StreamCloud.eu", NULL, 0, 0);
+						tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+						type = 20;
+					}
+					else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "Streamcloud") == 0)
 					{
 						free(hname), hname = NULL;
 						hname = ostrcat("StreamCloud.eu", NULL, 0, 0);
@@ -500,6 +512,15 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 						free(hname), hname = NULL;
 						hname = ostrcat("NowVideo.eu", NULL, 0, 0);
 						tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+						tmpstr2 = string_replace("embed.php?v=", "", tmpstr2, 1);
+						type = 27;
+					}
+					else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "Nowvideo") == 0)
+					{
+						free(hname), hname = NULL;
+						hname = ostrcat("NowVideo.eu", NULL, 0, 0);
+						tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+						tmpstr2 = string_replace("embed.php?v=", "", tmpstr2, 1);
 						type = 27;
 					}
 					else if(ret2 != NULL && count2 > 2)
@@ -590,6 +611,13 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
 							type = 20;
 						}
+						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "Streamcloud") == 0)
+						{
+							free(hname), hname = NULL;
+							hname = ostrcat("StreamCloud.eu", NULL, 0, 0);
+							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+							type = 20;
+						}
 						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "VidStream") == 0)
 						{
 							free(hname), hname = NULL;
@@ -626,6 +654,15 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							free(hname), hname = NULL;
 							hname = ostrcat("NowVideo.eu", NULL, 0, 0);
 							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+							tmpstr2 = string_replace("embed.php?v=", "", tmpstr2, 1);
+							type = 27;
+						}
+						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "Nowvideo") == 0)
+						{
+							free(hname), hname = NULL;
+							hname = ostrcat("NowVideo.eu", NULL, 0, 0);
+							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+							tmpstr2 = string_replace("embed.php?v=", "", tmpstr2, 1);
 							type = 27;
 						}
 						else if(ret2 != NULL && count2 > 2)
@@ -709,6 +746,13 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
 							type = 20;
 						}
+						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "Streamcloud") == 0)
+						{
+							free(hname), hname = NULL;
+							hname = ostrcat("StreamCloud.eu", NULL, 0, 0);
+							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+							type = 20;
+						}
 						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "VidStream") == 0)
 						{
 							free(hname), hname = NULL;
@@ -745,6 +789,15 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							free(hname), hname = NULL;
 							hname = ostrcat("NowVideo.eu", NULL, 0, 0);
 							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+							tmpstr2 = string_replace("embed.php?v=", "", tmpstr2, 1);
+							type = 27;
+						}
+						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "Nowvideo") == 0)
+						{
+							free(hname), hname = NULL;
+							hname = ostrcat("NowVideo.eu", NULL, 0, 0);
+							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+							tmpstr2 = string_replace("embed.php?v=", "", tmpstr2, 1);
 							type = 27;
 						}
 						else if(ret2 != NULL && count2 > 2)
@@ -828,6 +881,13 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
 							type = 20;
 						}
+						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "Streamcloud") == 0)
+						{
+							free(hname), hname = NULL;
+							hname = ostrcat("StreamCloud.eu", NULL, 0, 0);
+							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+							type = 20;
+						}
 						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "VidStream") == 0)
 						{
 							free(hname), hname = NULL;
@@ -864,6 +924,15 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							free(hname), hname = NULL;
 							hname = ostrcat("NowVideo.eu", NULL, 0, 0);
 							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+							tmpstr2 = string_replace("embed.php?v=", "", tmpstr2, 1);
+							type = 27;
+						}
+						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "Nowvideo") == 0)
+						{
+							free(hname), hname = NULL;
+							hname = ostrcat("NowVideo.eu", NULL, 0, 0);
+							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+							tmpstr2 = string_replace("embed.php?v=", "", tmpstr2, 1);
 							type = 27;
 						}
 						else if(ret2 != NULL && count2 > 2)
@@ -954,7 +1023,10 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 {
 	debug(99, "link: %s", link);
 	int ret = 1, series = 0;
-	char* ip = NULL, *pos = NULL, *path = NULL, *tmpstr = NULL, *line = NULL;
+	char* ip = NULL, *pos = NULL, *id = NULL, *tpath = NULL, *path = NULL, *tmpstr = NULL, *line = NULL;
+			char* from = NULL;
+			char* folgen = NULL;
+			char* folgentmp = NULL;
 
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
@@ -968,8 +1040,27 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 		pos[0] = '\0';
 		path = pos + 1;
 	}
+/*
+tvshows-season-Battlestar-Galactica.html
 
-	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
+	if(!ostrncmp("tvshows-", path, 8))
+	{
+		debug(99, "path: %s",path);
+		tpath = ostrcat(path, NULL, 0, 0);
+		id = oregex(".*tvshows-(.*[0-9]{1,10})-.*", path);
+		tpath = string_replace("tvshows-season-", "", tpath, 1);
+		tpath = string_replace(".html", "", tpath, 1);
+		tpath = ostrcat(tpath, "-online-serie-", 1, 0);
+		tpath = ostrcat(tpath, id, 1, 0);
+		tpath = ostrcat(tpath, ".html", 1, 0);
+		debug(99, "convertpath: %s",tpath);
+	}
+	else
+*/
+		tpath = ostrcat(path, NULL, 0, 0);
+
+	tmpstr = gethttp(ip, tpath, 80, NULL, NULL, 10000, NULL, 0);
+	free(tpath), tpath = NULL;
 	if(getconfigint("debuglevel", NULL) == 99)
 		writesys("/tmp/movie4k2_tmpstr", tmpstr, 0);
 
@@ -979,10 +1070,7 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 
 		if(ostrstr(tmpstr, "episodeform") != NULL)
 		{
-			char* from = NULL;
-			char* folgen = NULL;
-			char* folgentmp = NULL;
-			char* id = NULL;
+
 
 			int i;
 
@@ -1083,5 +1171,242 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 	}
 	return ret;
 }
+
+int movie4k_series(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
+{
+	debug(99, "link: %s", link);
+	int ret = 1;
+	char* ip = NULL, *pos = NULL, *tpath = NULL, *path = NULL, *tmpstr = NULL, *line = NULL;
+	char* from = NULL;
+	char* folgen = NULL;
+	char* folgentmp = NULL;
+	char* name = NULL;
+	char* lang = NULL;
+	char* season = NULL;
+
+	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
+		return ret;
+
+	ip = string_replace("http://", "", (char*)link, 0);
+
+	if(ip != NULL)
+		pos = strchr(ip, '/');
+	if(pos != NULL)
+	{
+		pos[0] = '\0';
+		path = pos + 1;
+	}
+
+	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
+	free(tpath), tpath = NULL;
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/tmp/movie4k2_tmpstr", tmpstr, 0);
+
+	if(tmpstr != NULL)
+	{
+		drawscreen(load, 0, 0);
+
+		folgen = string_resub("<TABLE id=\"tablemoviesindex\">", "</TABLE>", tmpstr, 0);
+		folgen = string_replace_all("\n", "", folgen, 1);
+		folgen = string_replace_all("\t", "", folgen, 1);
+		string_strip_whitechars(folgen);
+		folgen = string_replace_all("</TD> </TR> <TR>", "</TD> </TR>\n<TR>", folgen, 1);
+
+		if(folgen != NULL)
+		{
+			int count = 0;
+			int j;
+			struct splitstr* ret1 = NULL;
+			ret1 = strsplit(folgen, "\n", &count);
+
+			if(ret1 != NULL && count > 0)
+			{
+				int max = count;
+				for(j = 0; j < max; j++)
+				{
+					link = string_resub("<a href=\"", "\">", ret1[j].part, 0);
+
+					name = oregex(".*><a href=.*\">(.*)</a></TD>.*", ret1[j].part);
+
+					if(ostrstr(ret1[j].part, "us_ger_small.png") != NULL)
+						lang = ostrcat(" (de)", NULL, 0, 0);
+					else if(ostrstr(ret1[j].part, "us_flag_small.png") != NULL)
+						lang = ostrcat(" (en)", NULL, 0, 0);
+					else
+						lang = ostrcat(" (\?\?)", NULL, 0, 0);
+
+					season = oregex(".*Season:(.*[0-9]{1,3}).*", name);
+					season = strstrip(season);
+					debug(99, "(S%s) input: %s%s",season, name, lang);
+
+					line = ostrcat(line, _("Season"), 1, 0);
+					line = ostrcat(line, " ", 1, 0);
+					line = ostrcat(line, season, 1, 0);
+					line = ostrcat(line, " ", 1, 0);
+										
+					line = ostrcat(line, lang, 1, 0);	
+					line = ostrcat(line, "#http://www.movie4k.to/", 1, 0);
+					line = ostrcat(line, link, 1, 0);
+					line = ostrcat(line, "#", 1, 0);
+					line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/s", 1, 0);
+					line = ostrcat(line, season, 1, 0);
+					line = ostrcat(line, ".jpg", 1, 0);
+					line = ostrcat(line, "#s", 1, 0);
+					line = ostrcat(line, season, 1, 0);
+					line = ostrcat(line, ".jpg", 1, 0);
+					line = ostrcat(line, "#Movie4k - ", 1, 0);
+					line = ostrcat(line, title, 1, 0);
+					line = ostrcat(line, "#39\n", 1, 0);
+					free(name), name = NULL;
+					free(lang), lang = NULL;
+					free(season), season = NULL;
+				}
+			}
+			free(ret1), ret1 = NULL;
+		}				
+		free(from), from = NULL;
+		free(folgen), folgen = NULL;
+		free(folgentmp), folgentmp = NULL;		
+	}
+	free(tmpstr), tmpstr = NULL;	
+
+	if(line != NULL)
+	{
+		tmpstr = ostrcat("/tmp/tithek/movie4k.series.list", NULL, 0, 0);
+		writesys(tmpstr, line, 0);
+
+		if(getconfigint("debuglevel", NULL) == 99)
+			writesys("/tmp/movie4k8_line", line, 0);
+					
+		struct tithek* tnode = (struct tithek*)listbox->select->handle;
+		createtithek(tnode, tnode->title,  tmpstr, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
+		ret = 0;
+	}
+	return ret;
+}
+
+int movie4k_series_listed(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
+{
+	debug(99, "link: %s", link);
+	int ret = 1;
+	char* ip = NULL, *pos = NULL, *tpath = NULL, *path = NULL, *tmpstr = NULL, *line = NULL;
+	char* from = NULL;
+	char* folgen = NULL;
+	char* folgentmp = NULL;
+	char* name = NULL;
+	char* lang = NULL;
+	char* season = NULL;
+	char* episode = NULL;
+
+	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
+		return ret;
+
+	ip = string_replace("http://", "", (char*)link, 0);
+
+	if(ip != NULL)
+		pos = strchr(ip, '/');
+	if(pos != NULL)
+	{
+		pos[0] = '\0';
+		path = pos + 1;
+	}
+
+	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
+	free(tpath), tpath = NULL;
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/tmp/movie4k2_tmpstr", tmpstr, 0);
+
+	if(tmpstr != NULL)
+	{
+		drawscreen(load, 0, 0);
+
+		folgen = string_resub("<TABLE id=\"tablemoviesindex\">", "</TABLE>", tmpstr, 0);
+		folgen = string_replace_all("\n", "", folgen, 1);
+		folgen = string_replace_all("\t", "", folgen, 1);
+		string_strip_whitechars(folgen);
+		folgen = string_replace_all("</TD> </TR> <TR>", "</TD> </TR>\n<TR>", folgen, 1);
+
+		if(folgen != NULL)
+		{
+			int count = 0;
+			int j;
+			struct splitstr* ret1 = NULL;
+			ret1 = strsplit(folgen, "\n", &count);
+
+			if(ret1 != NULL && count > 0)
+			{
+				int max = count;
+				for(j = 0; j < max; j++)
+				{
+					link = string_resub("<a href=\"", "\">", ret1[j].part, 0);
+					name = oregex(".*><a href=.*\">(.*)</a></TD>.*", ret1[j].part);
+
+					if(ostrstr(ret1[j].part, "us_ger_small.png") != NULL)
+						lang = ostrcat(" (de)", NULL, 0, 0);
+					else if(ostrstr(ret1[j].part, "us_flag_small.png") != NULL)
+						lang = ostrcat(" (en)", NULL, 0, 0);
+					else
+						lang = ostrcat(" (\?\?)", NULL, 0, 0);
+
+					season = oregex(".*Season:(.*),.*", name);
+					season = strstrip(season);
+					episode = oregex(".*Episode:(.*[0-9]{1,3}).*", name);
+					episode = strstrip(episode);
+					debug(99, "(S%s/E%s) input: %s%s",season, episode, name, lang);
+
+					line = ostrcat(line, _("Season"), 1, 0);
+					line = ostrcat(line, " ", 1, 0);
+					line = ostrcat(line, season, 1, 0);
+					line = ostrcat(line, " ", 1, 0);
+					line = ostrcat(line, _("Episode"), 1, 0);
+					line = ostrcat(line, " ", 1, 0);				
+					line = ostrcat(line, episode, 1, 0);
+					line = ostrcat(line, " ", 1, 0);
+					line = ostrcat(line, lang, 1, 0);	
+					line = ostrcat(line, "#http://www.movie4k.to/", 1, 0);
+					line = ostrcat(line, link, 1, 0);
+					line = ostrcat(line, "#", 1, 0);
+					line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/s", 1, 0);
+					line = ostrcat(line, season, 1, 0);
+					line = ostrcat(line, "e", 1, 0);
+					line = ostrcat(line, episode, 1, 0);
+					line = ostrcat(line, ".jpg", 1, 0);
+					line = ostrcat(line, "#s", 1, 0);
+					line = ostrcat(line, season, 1, 0);
+					line = ostrcat(line, "e", 1, 0);
+					line = ostrcat(line, episode, 1, 0);
+					line = ostrcat(line, ".jpg", 1, 0);
+					line = ostrcat(line, "#Movie4k - ", 1, 0);
+					line = ostrcat(line, title, 1, 0);
+					line = ostrcat(line, "#34\n", 1, 0);
+					free(name), name = NULL;
+					free(lang), lang = NULL;
+					free(season), season = NULL;
+					free(episode), episode = NULL;
+				}
+			}
+			free(ret1), ret1 = NULL;
+		}				
+		free(from), from = NULL;
+		free(folgen), folgen = NULL;
+		free(folgentmp), folgentmp = NULL;		
+	}
+	free(tmpstr), tmpstr = NULL;	
+
+	if(line != NULL)
+	{
+		tmpstr = ostrcat("/tmp/tithek/movie4k.series.listed.list", NULL, 0, 0);
+		writesys(tmpstr, line, 0);
+
+		if(getconfigint("debuglevel", NULL) == 99)
+			writesys("/tmp/movie4k8_line", line, 0);
+					
+		struct tithek* tnode = (struct tithek*)listbox->select->handle;
+		createtithek(tnode, tnode->title,  tmpstr, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
+		ret = 0;
+	}
+	return ret;
+}
+
 
 #endif
