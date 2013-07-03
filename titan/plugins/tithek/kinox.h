@@ -270,7 +270,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 							line = ostrcat(line, "e", 1, 0);
 							line = ostrcat(line, oitoa(j), 1, 0);
 							line = ostrcat(line, ".jpg", 1, 0);																
-							line = ostrcat(line, "#s", 1, 0);
+							line = ostrcat(line, "#kinox_search_", 1, 0);
 							line = ostrcat(line, oitoa(i), 1, 0);
 							line = ostrcat(line, "e", 1, 0);
 							line = ostrcat(line, oitoa(j), 1, 0);
@@ -1101,7 +1101,8 @@ int kinox_search_cast(struct skin* grid, struct skin* listbox, struct skin* coun
 				pic = string_resub("<img src=\"", "\"", ret1[i].part, 0);
 
 				tmpstr = string_resub("found=\"", "<small>", ret1[i].part, 0);
-				name = oregex(".*<a href=\"/name/nm.*\ >(.*)</a>", tmpstr);
+//				name = oregex(".*<a href=\"/name/nm.*\ >(.*)</a>", tmpstr);
+				name = oregex(".*<a href=\"/name/nm.* >(.*)</a>", tmpstr);
 
 				debug(99, "(%d/%d) name: %s url: %s pic: %s\n",i, count, name, url, pic);
 				debug(99, "-------------------------------");
