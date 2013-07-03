@@ -39,7 +39,7 @@ for ROUND2 in $watchlist; do
 #		playlist=`cat cache.urlsrc."$icount" | tr '\015' '\012' | grep playlis | cut -d"'" -f2`
 #		wget "$playlist" -O cache.urlstream."$icount"
 #		STREAMURL=`cat cache.urlstream."$icount" | sed 's!location>!\nlocation<!' | grep location | cut -d'<' -f2`
-		type=37
+		type=38
 #		if [ ! -z $STREAMURL ] && [ `echo $STREAMURL | grep "http://" | wc -l` -eq 1 ];then
 #			URL=$STREAMURL
 #			type=2
@@ -96,7 +96,7 @@ for ROUND2 in $watchlist; do
 #				playlist=`cat cache.urlsrc."$icount" | tr '\015' '\012' | grep playlis | cut -d"'" -f2`
 #				wget "$playlist" -O cache.urlstream."$icount"
 #				STREAMURL=`cat cache.urlstream."$icount" | sed 's!location>!\nlocation<!' | grep location | cut -d'<' -f2`
-				type=37
+				type=38
 #				if [ ! -z $STREAMURL ] && [ `echo $STREAMURL | grep "http://" | wc -l` -eq 1 ];then
 #					URL=$STREAMURL
 #					type=2
