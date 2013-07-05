@@ -153,7 +153,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		skip = 1;
 	else if(node->flag == 35 && pay == 0)
 		skip = 1;
-/*	else if(titheksolarmovie == 1 && node->flag == 9996)
+	else if(titheksolarmovie == 1 && node->flag == 9996)
 	{
 		cmd = ostrcat(cmd, "ww", 1, 0);
 		cmd = ostrcat(cmd, "w.sola", 1, 0);
@@ -232,7 +232,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 
 		tithekkinox = 0;
 	}
-*/
+
 	if(skip == 1)
 	{
 		freetithekcontent(node);
