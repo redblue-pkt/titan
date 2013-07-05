@@ -54,6 +54,7 @@ int tithekmlehd = 0;
 //flag 38	- mlehd
 //flag 39   - movie4k_hoster_listed
 //flag 40   - movie4k_hoster_series
+//flag 41   - movie4k
 
 //flag 50	- beeg
 //flag 66   - coming soon dummy
@@ -152,7 +153,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		skip = 1;
 	else if(node->flag == 35 && pay == 0)
 		skip = 1;
-	else if(titheksolarmovie == 1 && node->flag == 9996)
+/*	else if(titheksolarmovie == 1 && node->flag == 9996)
 	{
 		cmd = ostrcat(cmd, "ww", 1, 0);
 		cmd = ostrcat(cmd, "w.sola", 1, 0);
@@ -231,7 +232,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 
 		tithekkinox = 0;
 	}
-
+*/
 	if(skip == 1)
 	{
 		freetithekcontent(node);
@@ -1086,9 +1087,12 @@ void backgrounddl(char* link, char* filename)
 	
 void submenu(struct skin* listbox, struct skin* load, char* title)
 {
+printf("sub 11\n");
 	int flag = 0;
 	if(status.security == 1 || checkbox("WHITEBOX") == 1)
 	{
+printf("sub 22\n");
+
 		drawscreen(load, 0, 0);	
 		char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
 		char* tmpstr1 = NULL;
@@ -1169,6 +1173,11 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		{
 			if(tmpstr != NULL) tmpstr1 = mlehd(tmpstr);
 		}
+		else if(((struct tithek*)listbox->select->handle)->flag == 41)
+		{
+		
+			if(tmpstr != NULL) tmpstr1 = movie4k(tmpstr);
+		}
 		else if(((struct tithek*)listbox->select->handle)->flag == 50)
 		{
 			if(tmpstr != NULL) tmpstr1 = beeg(tmpstr);
@@ -1179,6 +1188,13 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		if(ostrcmp(title, "TiThek - Internet Radio") == 0)
 			flag = 4;
 
+		if(ostrstr(tmpstr1, "&") != NULL)
+		{
+			printf("change streamurl from: %s\n", tmpstr1);
+			tmpstr1 = string_replace_all("&amp;", "&", tmpstr1, 1);
+			printf("change streamurl to: %s\n", tmpstr1);
+		}
+		
 		if(tmpstr1 != NULL)
 		{
 			char* filename = ostrcat(title, "_", 0, 0);
@@ -1648,9 +1664,12 @@ waitrcstart:
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
 				clearscreen(grid);
+printf("sub aa\n");
 
-				if((((struct tithek*)listbox->select->handle)->flag == 2) || (((struct tithek*)listbox->select->handle)->flag == 4) || (((struct tithek*)listbox->select->handle)->flag == 5) || (((struct tithek*)listbox->select->handle)->flag == 6) || (((struct tithek*)listbox->select->handle)->flag == 7) || (((struct tithek*)listbox->select->handle)->flag == 8) || (((struct tithek*)listbox->select->handle)->flag == 12) || (((struct tithek*)listbox->select->handle)->flag == 14) || (((struct tithek*)listbox->select->handle)->flag == 15) || (((struct tithek*)listbox->select->handle)->flag == 16) || (((struct tithek*)listbox->select->handle)->flag == 17) || (((struct tithek*)listbox->select->handle)->flag == 18) || (((struct tithek*)listbox->select->handle)->flag == 19) || (((struct tithek*)listbox->select->handle)->flag == 20) || (((struct tithek*)listbox->select->handle)->flag == 24) || (((struct tithek*)listbox->select->handle)->flag == 25) || (((struct tithek*)listbox->select->handle)->flag == 26) || (((struct tithek*)listbox->select->handle)->flag == 27) || (((struct tithek*)listbox->select->handle)->flag == 38) || (((struct tithek*)listbox->select->handle)->flag == 50))
+				if((((struct tithek*)listbox->select->handle)->flag == 2) || (((struct tithek*)listbox->select->handle)->flag == 4) || (((struct tithek*)listbox->select->handle)->flag == 5) || (((struct tithek*)listbox->select->handle)->flag == 6) || (((struct tithek*)listbox->select->handle)->flag == 7) || (((struct tithek*)listbox->select->handle)->flag == 8) || (((struct tithek*)listbox->select->handle)->flag == 12) || (((struct tithek*)listbox->select->handle)->flag == 14) || (((struct tithek*)listbox->select->handle)->flag == 15) || (((struct tithek*)listbox->select->handle)->flag == 16) || (((struct tithek*)listbox->select->handle)->flag == 17) || (((struct tithek*)listbox->select->handle)->flag == 18) || (((struct tithek*)listbox->select->handle)->flag == 19) || (((struct tithek*)listbox->select->handle)->flag == 20) || (((struct tithek*)listbox->select->handle)->flag == 24) || (((struct tithek*)listbox->select->handle)->flag == 25) || (((struct tithek*)listbox->select->handle)->flag == 26) || (((struct tithek*)listbox->select->handle)->flag == 27) || (((struct tithek*)listbox->select->handle)->flag == 38) || (((struct tithek*)listbox->select->handle)->flag == 50) || (((struct tithek*)listbox->select->handle)->flag == 41))
 				{
+printf("sub bb\n");
+
 					submenu(listbox, load, title);
 					drawscreen(grid, 0, 0);
 				}
