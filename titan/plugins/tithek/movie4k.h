@@ -245,7 +245,7 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
 {
 	debug(99, "link: %s", link);
-	int ret = 1, series = 0;
+	int ret = 1;
 	char* ip = NULL, *pos = NULL, *path = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *line = NULL, *url = NULL, *url2 = NULL, *url3 = NULL, *url4 = NULL, *pathnew = NULL, *hname = NULL, *id = NULL, *logfile = NULL, *tmphname = NULL, *hnamein = NULL, *nolinks = NULL;
 
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
