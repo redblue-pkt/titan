@@ -135,7 +135,12 @@ void screeninfobar()
 		{
 			//timeshift
 			if(status.timeshift == 1 && (status.playing == 0 || status.slowspeed != 0 || status.playspeed != 0 || status.pause != 0))
-				timeshiftplay(&playinfobarstatus, &playinfobarcount);
+			{
+				if(status.timeshifttype == 1 && status.timeshiftpos == 0)
+					timeshiftpause(0);
+				else
+					timeshiftplay(&playinfobarstatus, &playinfobarcount);
+			}
 			else
 				timeshiftpause(0);
 			
