@@ -940,9 +940,13 @@ void playrcfr(char* file, char* showname, int* playinfobarstatus, int* playinfob
 
 void playrcpause(char* file, char* showname, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
+	if(status.playspeed != 0 || status.slowspeed != 0)
+	{
+		playrcplay(file, showname, playinfobarstatus, playinfobarcount, playertype, flag);
+		return;
+	}
+	
 	if(checkbit(status.playercan, 9) == 0) return;
-
-	if(status.playspeed != 0 || status.slowspeed != 0) return;
 
 	if(status.pause == 1)
 	{
