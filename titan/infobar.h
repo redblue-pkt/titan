@@ -134,7 +134,11 @@ void screeninfobar()
 		if(rcret == getrcconfigint("rcpause", NULL))
 		{
 			//timeshift
-			timeshiftpause(0);
+			if(status.timeshift == 1 && (status.playing == 0 || status.slowspeed != 0 || status.playspeed != 0 || status.pause != 0))
+				timeshiftplay(&playinfobarstatus, &playinfobarcount);
+			else
+				timeshiftpause(0);
+			
 			continue;
 		}
 		if(status.timeshift == 1)
