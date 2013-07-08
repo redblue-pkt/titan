@@ -166,7 +166,7 @@ int writeepgslow(const char* filename)
 	FILE *fd = NULL;
 	struct channel *chnode = channel;
 	struct epg* epgnode = NULL;
-	int ret, len = 0, count;
+	int ret = 0, len = 0, count = 0, checkcount = 0, err = 0;
 	
 	m_lock(&status.epgmutex, 4);
 
@@ -185,7 +185,7 @@ int writeepgslow(const char* filename)
 	{
 		epgnode = chnode->epg;
 		while(epgnode != NULL)
-		{
+		{	
 			ret = 0, count = 0;
 			ret += fwrite(&chnode->serviceid, sizeof(int), 1, fd); count++;
 			freespace -= sizeof(int);
@@ -249,12 +249,22 @@ int writeepgslow(const char* filename)
 			if(ret != count)
 			{
 				perr("writting file %s", filename);
+				err = 1;
+			}
+			
+			//recheck freespace
+			checkcount++;
+			if(checkcount > 10) 
+			{
+				checkcount = 0;
+				freespace = getfreespace((char*)filename);
 			}
 
 			if(freespace < epgfreespace)
 				break;
 			epgnode = epgnode->next;
 		}
+		if(err == 1) break;
 		if(freespace < epgfreespace)
 		{
 			err("not all data written freespace=%llu epgfreespace=%llu (%s)", freespace, epgfreespace, filename);
@@ -264,6 +274,7 @@ int writeepgslow(const char* filename)
 	}
 
 	fclose(fd);
+	if(err == 1) unlink(filename);
 	debug(1000, "out");
 	m_unlock(&status.epgmutex, 4);
 	return 0;
