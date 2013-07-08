@@ -249,7 +249,11 @@ int writeepgslow(const char* filename)
 			if(ret != count)
 			{
 				perr("writting file %s", filename);
-				err = 1;
+				if(errno == ENOSPC)
+				{
+					err = 1;
+					break;
+				}
 			}
 			
 			//recheck freespace
