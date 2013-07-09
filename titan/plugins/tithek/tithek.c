@@ -71,7 +71,7 @@ void start(void)
 	tithekmlehd = 1;
 
 //change markcolor
-	long tmplistboxselectcol = listboxselectcol;
+	long tmplistboxselectcol = status.listboxselectcol;
 	status.listboxselectcol = convertcol("tithekselect");
 
 //	if(checkbox("WHITEBOX") == 1)
