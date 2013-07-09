@@ -760,7 +760,7 @@ int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			continue;
 		}
 
-		if((listbox->select != NULL && (listbox->select->titlealign == 1 || listbox->select->titlealign == 3) && rcret == getrcconfigint("rcright", NULL)) || rcret == getrcconfigint("rcfav", NULL))
+		if((listbox->select != NULL && (listbox->select->titlealign == 1 || listbox->select->titlealign == 3) && rcret == getrcconfigint("rcright", NULL)) || rcret == getrcconfigint("rc9", NULL) || rcret == getrcconfigint("rcfav", NULL))
 		{
 			time_t tmptime = 0;
 
@@ -854,7 +854,7 @@ int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			continue;
 		}
 
-		if((listbox->select != NULL && (listbox->select->titlealign == 2 || listbox->select->titlealign == 3) && rcret == getrcconfigint("rcleft", NULL)))
+		if((listbox->select != NULL && (listbox->select->titlealign == 2 || listbox->select->titlealign == 3) && rcret == getrcconfigint("rcleft", NULL)) || rcret == getrcconfigint("rc7", NULL))
 		{
 			akttime -= addtime;
 			if(akttime < starttime) akttime = starttime;
