@@ -69,11 +69,17 @@ void start(void)
 	tithekkinox = 1;
 	titheksolarmovie = 1;
 	tithekmlehd = 1;
+  
+  //change markcolor
+  status.listboxselectcol = convertcol("tithekselect");
 
 //	if(checkbox("WHITEBOX") == 1)
 //		screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.crenova.list", "Operator - Mainmenu", 1);
 //	else
 		screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.list", "Tithek - Mainmenu", 1);
+  
+  //reset markcolor  
+  status.listboxselectcol = convertcol("listboxselect");
 	
 	tithekrun = 0;
 	addconfigint("playerbuffersize", aktplayerbuffersize);
