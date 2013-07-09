@@ -721,6 +721,7 @@ void dvbgetpmtthread()
 	int16_t pmtpid = status.aktservice->channel->pmtpid;
 	int16_t audiopid = status.aktservice->channel->audiopid;
 	int16_t videopid = status.aktservice->channel->videopid;
+	uint8_t crypt = status.aktservice->channel->crypt;
 	int oldpmtlen = status.aktservice->pmtlen;
 	
 	if(pmtpid < 1) return;
@@ -747,11 +748,12 @@ void dvbgetpmtthread()
 		status.aktservice->channel->videopid = -1;
 		status.aktservice->channel->videocodec = -1;
 		status.aktservice->channel->pmtpid = pmtpid;
+		status.aktservice->channel->crypt = 0;
 		dvbgetinfo(pmtbuf, status.aktservice->channel);
 
-		debug(200, "pmt dynamic change oldapid=%d apid=%d oldvpid=%d vpid=%d oldpmtlen=%d\n", audiopid, status.aktservice->channel->audiopid, videopid, status.aktservice->channel->videopid, oldpmtlen);
+		debug(200, "pmt dynamic change oldapid=%d apid=%d oldvpid=%d vpid=%d oldcrypt=%d crypt=%d oldpmtlen=%d\n", audiopid, status.aktservice->channel->audiopid, videopid, status.aktservice->channel->videopid, status.aktservice->channel->crypt, crypt, oldpmtlen);
 
-		if(status.aktservice->channel->audiopid != audiopid || status.aktservice->channel->videopid != videopid || oldpmtlen == -1)
+		if(status.aktservice->channel->audiopid != audiopid || status.aktservice->channel->videopid != videopid || oldpmtlen == -1 || status.aktservice->channel->crypt != crypt)
 			change = 1;
 	}
 
