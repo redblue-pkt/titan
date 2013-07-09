@@ -628,6 +628,10 @@ int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		{
 			if(channelnottunable((struct channel*)listbox->select->handle) == 0)
 			{
+				//clear screen before zap
+				clearscreen(gmultiepg);
+				drawscreen(skin, 0, 0);
+				
 				int ret = 0;
 				if(status.servicetype == 0)
 					ret = servicestart((struct channel*)listbox->select->handle, getconfig("channellist", NULL), NULL, 0);
