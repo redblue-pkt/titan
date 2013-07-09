@@ -292,7 +292,11 @@ void screenavsettings(int flag)
 			{
 				ret = getmode3d();
 				if(ostrcmp(ret, mode3d->ret) != 0)
-					setmode3d(mode3d->ret); 
+				{
+					clearscreen(avsettings);
+					setmode3d(mode3d->ret);
+					drawscreen(avsettings, 0, 0);
+				}
 				free(ret); ret = NULL;
 			}
 			if(audiodelaybitstream->ret != NULL)
