@@ -179,14 +179,16 @@ void screenavsettings(int flag)
 				setlr = 1;
 				writevfdmenu(listbox->select->ret);
 			}	
-		} else {
+		}
+    else
+    {
 			if(listbox->select != NULL)
 			{	
 				if(rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL))
 					setlr = 1;
 			}
 		}
-		if(setlr ==1 && ostrcmp(listbox->select->name, "autoresolution") == 0)
+		if(setlr == 1 && ostrcmp(listbox->select->name, "autoresolution") == 0)
 		{	
 			autoressd->hidden=YES;
 			autorests->hidden=YES;
@@ -294,6 +296,7 @@ void screenavsettings(int flag)
 				if(ostrcmp(ret, mode3d->ret) != 0)
 				{
 					clearscreen(avsettings);
+          blitfb(0);
 					setmode3d(mode3d->ret);
 					drawscreen(avsettings, 0, 0);
 				}
