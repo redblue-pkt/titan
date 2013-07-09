@@ -198,11 +198,11 @@ void blitfb2(struct fb* fbnode, int flag)
 	bltData.dst_left   = status.leftoffset;
 	bltData.dst_top    = status.topoffset;
 	if(mode3d == 1)
-		bltData.dst_right = fb->width / 2;
+		bltData.dst_right = (fb->width - status.rightoffset) / 2;
 	else
 		bltData.dst_right = fb->width - status.rightoffset;
 	if(mode3d == 2)
-		bltData.dst_bottom = fb->height / 2;
+		bltData.dst_bottom = (fb->height - status.bottomoffset) / 2;
 	else
 		bltData.dst_bottom = fb->height - status.bottomoffset;
 	bltData.dstFormat  = SURF_BGRA8888;
@@ -268,9 +268,9 @@ void blitfb2(struct fb* fbnode, int flag)
 		if(mode3d != 0)
 		{
 			if(mode3d == 1)
-				bltData.dst_left = fb->width / 2;
+				bltData.dst_left = status.leftoffset + ((fb->width - status.rightoffset) / 2);
 			if(mode3d == 2)
-				bltData.dst_top = fb->height / 2;
+				bltData.dst_top = status.topoffset + ((fb->height - status.bottomoffset) / 2);
 			bltData.dst_right  = fb->width - status.rightoffset;
 			bltData.dst_bottom = fb->height - status.bottomoffset;
 
