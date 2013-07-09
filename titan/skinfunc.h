@@ -784,9 +784,9 @@ char* getchannellistname(struct skin* node)
 	char* tmpstr = NULL, *tmpstr1 = NULL;
 
 	if(status.servicetype == 0)
-                tmpstr = getconfig("channellist", NULL);
-        else
-                tmpstr = getconfig("rchannellist", NULL);
+		tmpstr = getconfig("channellist", NULL);
+	else
+		tmpstr = getconfig("rchannellist", NULL);
 
 	if(tmpstr != NULL)
 	{
@@ -1144,6 +1144,21 @@ char* getwlanlinkquality(struct skin* node)
 	if(quality > 100) quality = 100;
 
 	return oitoa(quality);
+}
+
+char* getwlanlinkqualitytext(struct skin* node)
+{
+	int quality = 0;
+	char* tmpstr = NULL;
+
+	quality = wlanlinkquality();
+
+	if(quality < 0) quality = 0;
+	if(quality > 100) quality = 100;
+
+	tmpstr = ostrcat(oitoa(quality), " %", 1, 0);
+
+	return tmpstr;
 }
 
 #endif
