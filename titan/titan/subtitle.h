@@ -1,5 +1,5 @@
 #ifndef SUBTITLE_H
-#define SUBTITLE
+#define SUBTITLE_H
 
 int subdisplaywidth = 720;
 int subdisplayheight = 576;
