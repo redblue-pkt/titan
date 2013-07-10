@@ -56,6 +56,7 @@ struct extepgconfig* extepgconfig = NULL;
 struct lastsubtitle* lastsubtitle = NULL;
 struct style* style = NULL;
 struct download* bgdownload[MAXBGDOWNLOAD] = {NULL};
+struct channelslot *channelslot = NULL;
 
 #ifdef SH4
 #include "sh4port.h"

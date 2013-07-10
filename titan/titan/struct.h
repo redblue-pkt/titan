@@ -1488,6 +1488,14 @@ struct bouquet
 	struct bouquet *next;
 };
 
+struct channelslot
+{
+	int slot;
+	int serviceid;
+	uint64_t transponderid;
+	struct channelslot *next;
+};
+
 struct mainbouquet
 {
 	char *name;
