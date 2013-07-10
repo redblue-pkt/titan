@@ -553,6 +553,15 @@ void changebutton(int listmode, struct skin* b1, struct skin* b2, struct skin* b
 		b14->hidden = YES;
 		b15->hidden = YES;
 	}
+	
+	if(flag == 1)
+	{
+		b8->hidden = YES;
+		b9->hidden = YES;
+		b10->hidden = YES;
+		b11->hidden = YES;
+		b15->hidden = YES;	
+	}
 }
 
 void changechanneltitle(struct skin* channellist, struct skin* listbox, int listmode, char** oldtitle, long* oldfontcol, long* oldbgcol)
