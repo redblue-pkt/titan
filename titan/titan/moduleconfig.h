@@ -13,7 +13,7 @@ void createchannelslotlist(struct skin* channelslotlist, struct skin* listbox, i
 			struct channel* chnode = getchannel(node->serviceid, node->transponderid);
 			if(chnode != NULL)
 			{
-				tmp = addlistbox(channelslot, listbox, tmp, 1);
+				tmp = addlistbox(channelslotlist, listbox, tmp, 1);
 				if(tmp != NULL)
 				{
 					changetext(tmp, chnode->name);
