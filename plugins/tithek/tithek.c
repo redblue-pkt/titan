@@ -72,7 +72,7 @@ void start(void)
 
 //change markcolor
 	long tmplistboxselectcol = status.listboxselectcol;
-	status.listboxselectcol = convertcol("tithekselect");
+	status.listboxselectcol = convertcol("tithek_selectcol");
 
 //	if(checkbox("WHITEBOX") == 1)
 //		screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.crenova.list", "Operator - Mainmenu", 1);
