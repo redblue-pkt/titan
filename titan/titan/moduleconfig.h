@@ -1,6 +1,99 @@
 #ifndef MODULECONFIG_H
 #define MODULECONFIG_H
 
+void createchannelslotlist(struct skin* channelslotlist, struct skin* listbox, int slot)
+{
+	struct channelslot *node = channelslot;
+	struct skin* tmp = NULL;
+
+	while(node != NULL)
+	{
+		if(node->slot == slot)
+		{
+			struct channel* chnode = getchannel(node->serviceid, node->transponderid);
+			if(chnode != NULL)
+			{
+				tmp = addlistbox(channelslot, listbox, tmp, 1);
+				if(tmp != NULL)
+				{
+					changetext(tmp, chnode->name);
+					tmp->handle = (char*)node;
+				}
+			}
+		}
+		node = node->next;
+	}
+}
+
+void screenchannelslot(int slot)
+{
+	int rcret = 0;
+	struct skin* channelslotlist = getscreen("channelslotlist");
+	struct skin* listbox = getscreennode(channelslotlist, "listbox");
+	char* tmpstr = NULL, *tmpchannellist = NULL;
+
+	if(status.servicetype == 0)
+		tmpchannellist = ostrcat(getconfig("channellist", NULL), NULL, 0, 0);
+	else
+		tmpchannellist = ostrcat(getconfig("rchannellist", NULL), NULL, 0, 0);
+
+	channelslotlist->aktline = 1;
+	channelslotlist->aktpage = -1;
+
+	createchannelslotlist(channelslotlist, listbox, slot);
+
+	drawscreen(channelslotlist, 0, 0);
+	addscreenrc(channelslotlist, listbox);
+
+	while(1)
+	{
+		rcret = waitrc(channelslotlist, 0, 0);
+
+		if(rcret == getrcconfigint("rcok", NULL)) break;
+		if(rcret == getrcconfigint("rcred", NULL) && listbox->select != NULL && listbox->select->handle != NULL)
+		{
+			if(delchannelslot(((struct epgscanlist*)listbox->select->handle)->serviceid, ((struct epgscanlist*)listbox->select->handle)->transponderid) == 0)
+			{
+				listbox->aktline--;
+				listbox->aktpage = -1;
+				delmarkedscreennodes(channelslotlist, 1);
+				createchannelslotlist(channelslotlist, listbox, slot);
+				drawscreen(channelslotlist, 0, 0);
+			}
+		}
+		if(rcret == getrcconfigint("rcgreen", NULL))
+		{
+
+			clearscreen(channelslotlist);
+			int saveservicetype = status.servicetype;
+			struct channel* tmpchnode = NULL;
+
+			screenchannellist(&tmpchnode, &tmpchannellist, 1);
+			status.servicetype = saveservicetype;
+
+			if(tmpchnode != NULL)
+			{
+				tmpstr = ostrcat(oitoa(tmpchnode->transponderid), "#", 1, 0);
+				tmpstr = ostrcat(tmpstr, ollutoa(tmpchnode->serviceid), 1, 1);
+				tmpstr = ostrcat(tmpstr, "#", 1, 0);
+				tmpstr = ostrcat(tmpstr, oitoa(slot), 1, 1);
+				if(addchannelslot(tmpstr, 1, NULL) != NULL)
+				{
+					delmarkedscreennodes(channelslotlist, 1);
+					createchannelslotlist(channelslotlist, listbox, slot);
+				}
+				free(tmpstr); tmpstr = NULL;
+			}
+
+			drawscreen(channelslotlist, 0, 0);
+		}
+	}
+
+	delmarkedscreennodes(channelslotlist, 1);
+	delownerrc(channelslotlist);
+	clearscreen(channelslotlist);
+}
+
 int checkdoublecaid(struct dvbdev* excdvbnode, char* caid)
 {
 	struct dvbdev* dvbnode = dvbdev;
@@ -204,6 +297,7 @@ void screenmoduleconfig()
 	struct skin* b3 = getscreennode(moduleconfig, "b3");
 	struct skin* b4 = getscreennode(moduleconfig, "b4");
 	struct skin* b5 = getscreennode(moduleconfig, "b5");
+	struct skin* b6 = getscreennode(moduleconfig, "b6");
 	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
 	struct dvbdev* dvbnode = NULL;
@@ -215,6 +309,7 @@ void screenmoduleconfig()
 	b3->hidden = NO;
 	b4->hidden = NO;
 	b5->hidden = NO;
+	b6->hidden = NO;
 
 start:
 	i = 0, allready = 1;
@@ -306,12 +401,14 @@ start:
 			b3->hidden = NO;
 			b4->hidden = NO;
 			b5->hidden = NO;
+			b6->hidden = NO;
 		}
 		else
 		{
 			b3->hidden = YES;
 			b4->hidden = YES;
 			b5->hidden = YES;
+			b6->hidden = YES;
 		}
 		clearscreen(load);
 		drawscreen(moduleconfig, 0, 0);
@@ -362,6 +459,13 @@ start:
 			reset = 0;
 			drawscreen(moduleconfig, 0, 0);
 		}
+		if(listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcmenu", NULL))
+		{
+			clearscreen(moduleconfig);
+			screenchannelslot(((struct dvbdev*)listbox->select->handle)->devnr);
+			drawscreen(moduleconfig, 0, 0);
+		}
+		
 		if(rcret == RCTIMEOUT) goto start;
 	}
 
