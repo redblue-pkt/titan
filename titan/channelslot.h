@@ -4,7 +4,6 @@
 struct channelslot* addchannelslot(char *line, int count, struct channelslot* last)
 {
 	struct channelslot *newnode = NULL, *prev = NULL, *node = channelslot;
-	char *date = NULL, *title = NULL, *text = NULL;
 	int ret = 0;
 
 	newnode = (struct channelslot*)calloc(1, sizeof(struct channelslot));
