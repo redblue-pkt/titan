@@ -1738,36 +1738,56 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 			return 1;
 		}
 		free(tmpstr); tmpstr = NULL;
-
-		//check if cam can caid
+		
+		//check if channel used this slot
 		int foundcaid = 0;
-		tmpstr = ostrcat("camblacklist_", oitoa(dvbnode->devnr), 0, 1);
-		blacklist = getconfig(tmpstr, NULL);
-		free(tmpstr); tmpstr = NULL;
+		
 		if(node->channel != NULL)
 		{
-			struct cadesc *nodecadesc = node->channel->cadesc;
-			while(nodecadesc != NULL)
+			struct channelslot *channelslotnode = channelslot; 
+			while(channelslotnode != NULL)
 			{
-				debug(620, "cam-ciads=%s", dvbnode->caslot->caids);
-				debug(620, "videopid=%d, audiopid=%d, ac3pid=%d, capid=%d, caid=%d", node->channel->videopid, node->channel->audiopid, node->channel->ac3audiopid, nodecadesc->pid, nodecadesc->systemid);
-				tmpstr = oitoa(nodecadesc->systemid);
-				if(ostrstr(dvbnode->caslot->caids, tmpstr) != NULL)
+				if(channelslotnode->transponderid == node->channel->transponderid && channelslotnode->serviceid == node->channel->serviceid && channelslotnode->slot == dvbnode->devnr)
 				{
-					//check if caid is in cams blacklist
-					if(blacklist == NULL || ostrstr(blacklist, tmpstr) == NULL)
-					{
-						foundcaid = 1;
-						break;
-					}
-					else
-						debug(620, "caid is in blacklist (%s -> %s)", tmpstr, blacklist);
-				}
-				free(tmpstr); tmpstr = NULL;
-    		nodecadesc = nodecadesc->next;
+					debug(620, "found channel in channelslot (slot=%d)", dvbnode->devnr);
+					foundcaid = 1;
+					break;
+				}			
+				channelslotnode = channelslotnode->next;			
 			}
 		}
-		free(tmpstr); tmpstr = NULL;
+
+		//check if cam can caid
+		if(foundcaid == 0)
+		{
+			tmpstr = ostrcat("camblacklist_", oitoa(dvbnode->devnr), 0, 1);
+			blacklist = getconfig(tmpstr, NULL);
+			free(tmpstr); tmpstr = NULL;
+			if(node->channel != NULL)
+			{
+				struct cadesc *nodecadesc = node->channel->cadesc;
+				while(nodecadesc != NULL)
+				{
+					debug(620, "cam-ciads=%s", dvbnode->caslot->caids);
+					debug(620, "videopid=%d, audiopid=%d, ac3pid=%d, capid=%d, caid=%d", node->channel->videopid, node->channel->audiopid, node->channel->ac3audiopid, nodecadesc->pid, nodecadesc->systemid);
+					tmpstr = oitoa(nodecadesc->systemid);
+					if(ostrstr(dvbnode->caslot->caids, tmpstr) != NULL)
+					{
+						//check if caid is in cams blacklist
+						if(blacklist == NULL || ostrstr(blacklist, tmpstr) == NULL)
+						{
+							foundcaid = 1;
+							break;
+						}
+						else
+							debug(620, "caid is in blacklist (%s -> %s)", tmpstr, blacklist);
+					}
+					free(tmpstr); tmpstr = NULL;
+	    		nodecadesc = nodecadesc->next;
+				}
+			}
+			free(tmpstr); tmpstr = NULL;
+		}
 
 		if(foundcaid == 0)
 		{
