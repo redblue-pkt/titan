@@ -8,6 +8,12 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//channelslot.h
+int writechannelslot(char *filename);
+int delchannelslot(int serviceid, uint64_t transponderid);
+struct channelslot* addchannelslot(char *line, int count, struct channelslot* last);
+
+
 //fancontrol.h
 void screenpanel_settings_fancontrol();
 
