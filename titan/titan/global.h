@@ -1866,6 +1866,9 @@ int writeallconfig(int flag)
 		if(status.writelastsubtitle == 1)
 			if(writelastsubtitle(getconfig("lastsubtitle", NULL)) != 0)
 				ret = 1;
+		if(status.writechannelslot == 1)
+			if(writechannelslot(getconfig("channelslotfile", NULL)) != 0)
+				ret = 1;
 	}
 	if(flag == 0 || flag == 1 || flag == 3)
 	{

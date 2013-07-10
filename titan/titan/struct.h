@@ -1279,6 +1279,7 @@ struct status
 	int writemostzap;
 	int writemediadb;
 	int writelastsubtitle;
+	int writechannelslot;
 	// 1 mute is aktiv
 	int mute;
 	// 1 spinner is aktiv
