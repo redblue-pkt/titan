@@ -230,6 +230,7 @@ struct channelslot *channelslot = NULL;
 #include "log.h"
 #include "bgdownload.h"
 #include "fancontrol.h"
+#include "channelslot.h"
 
 #define TIMECODE ""
 
@@ -463,6 +464,7 @@ void oshutdown(int exitcode, int flag)
 		freeextepgconfig();
 		freelastsubtitle();
 		freebgdownload();
+		freechannelslot();
 	}
 	else
 		freetimer(1);
@@ -795,6 +797,7 @@ int main(int argc, char *argv[])
 	ret = readtransponderencoding(getconfig("transponderencodingfile", NULL));
 	ret = readmostzap(getconfig("mostzapfile", NULL));
 	ret = readlastsubtitle(getconfig("lastsubtitle", NULL));
+	ret = readchannelslot(getconfig("channelslotfile", NULL));
 
 	status.aktservice = addservice(NULL);
 	status.lastservice = addservice(NULL);
