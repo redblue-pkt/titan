@@ -102,13 +102,15 @@ int readchannelslot(char* filename)
 	return 0;
 }
 
-void delchannelslot(struct channelslot* nnode)
+int delchannelslot(int serviceid, uint64_t transponderid)
 {
+	debug(1000, "in");
+	int ret = 1;
 	struct channelslot *node = channelslot, *prev = channelslot;
 
 	while(node != NULL)
 	{
-		if(nnode == node)
+		if(node->serviceid == serviceid && node->transponderid == transponderid)
 		{
 			status.writechannelslot = 1;
 			if(node == channelslot)
@@ -118,13 +120,15 @@ void delchannelslot(struct channelslot* nnode)
 
 			free(node);
 			node = NULL;
-
+			ret = 0;
 			break;
 		}
 
 		prev = node;
 		node = node->next;
 	}
+	debug(1000, "out");
+	return ret;
 }
 
 void freechannelslot()
@@ -136,7 +140,7 @@ void freechannelslot()
 		prev = node;
 		node = node->next;
 		if(prev != NULL)
-			delchannelslot(prev);
+			delchannelslot(prev->serviceid, prev->transponderid);
 	}
 }
 
