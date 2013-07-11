@@ -5439,30 +5439,26 @@ char* command(char* input)
 
 char* string_tolower(char *str)
 {
-	debug(1000, "in");
-	int i;
+	char *p1 = str;
 
 	if(str == NULL) return NULL;
 
-	for(i = 0; i < strlen(str); i++)
-		str[i] = tolower(str[i]);
-
-	debug(1000, "out");
+	while(*p1 != '\0')
+		*p1++ = tolower(*p1);
+	
 	return str;
 }
 
 char* string_toupper(char *str)
 {
-	debug(1000, "in");
-	int i;
+	char *p1 = str;
 
 	if(str == NULL) return NULL;
 
-	for(i = 0; i < strlen(str); i++)
-		str[i] = toupper(str[i]);
-
-	debug(1000, "out");
-	return str;
+	while(*p1 != '\0')
+		*p1++ = toupper(*p1);
+	
+	return str;		
 }
 
 char* stringreplacecharonce(char *str, char c1, char c2)
@@ -5478,7 +5474,7 @@ char* stringreplacecharonce(char *str, char c1, char c2)
 			*p1 = c2;
 			break;			
 		}			
-		*p1++;
+		p1++;
 	}
 
 	return str;
@@ -5493,7 +5489,7 @@ char* stringreplacechar(char *str, char c1, char c2)
 	while(*p1 != '\0')
 	{
 		if(*p1 == c1) *p1 = c2;
-		*p1++;
+		p1++;
 	}
 
 	return str;
@@ -5512,7 +5508,7 @@ char* string_removechar(char *str)
 		else if(*p1 == '-') *p1 = ' ';
 		else if(*p1 == '_') *p1 = ' ';
 		else if(*p1 == '/') *p1 = ' '; 
-		*p1++;
+		p1++;
 	}
 
 	return str;
@@ -5527,7 +5523,7 @@ char* string_withchars2return(char *str)
 	while(*p1 != '\0')
 	{
 		if(*p1 == ' ') *p1 = '\n';
-		*p1++;
+		p1++;
 	}
 
 	return str;
@@ -5537,6 +5533,8 @@ char* string_remove_whitechars(char *text)
 {
 	debug(1000, "in");
 	char *p1 = text, *p2 = text;
+
+	if(text == NULL) return NULL;
 
 	while(*p1 != '\0')
 	{
