@@ -92,6 +92,9 @@ int solarmovie_search(struct skin* grid, struct skin* listbox, struct skin* coun
 
 		while(ostrstr(tmpstr, "<div class=\"typicalGrey coverGroup\">") != NULL)
 		{
+			int rcret = waitrc(NULL, 10, 0);
+			if(rcret == getrcconfigint("rcexit", NULL)) break;
+
 			incount += 1;
 			if(getconfigint("debuglevel", NULL) == 99)
 			{

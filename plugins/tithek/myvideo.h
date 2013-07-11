@@ -200,6 +200,8 @@ int myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countla
 				{
 					debug(99, "---------------------------");
 					debug(99, "ret1[i].part: %s", ret1[i].part);
+					int rcret = waitrc(NULL, 10, 0);
+					if(rcret == getrcconfigint("rcexit", NULL)) break;
 				
 					pic = oregex(".*longdesc='(.*)' class='vThumb'.*", ret1[i].part);
 					id = oregex(".*img id='i(.*)' onload=.*", ret1[i].part);

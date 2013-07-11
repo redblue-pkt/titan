@@ -117,6 +117,8 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 				
 				if(oregex(".*<td class=\"Title\"><a href=\"(.*)\" onclick=.*", ret1[i].part) != NULL)
 				{
+					int rcret = waitrc(NULL, 10, 0);
+					if(rcret == getrcconfigint("rcexit", NULL)) break;
 					free(path), path = NULL;
 					path = oregex(".*<td class=\"Title\"><a href=\"(.*)\" onclick=.*", ret1[i].part);
 
