@@ -234,6 +234,7 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 			struct tithek* tnode = (struct tithek*)listbox->select->handle;
 			createtithek(tnode, tnode->title,  menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
 			ret = 0;
+			free(menu); menu = NULL;
 		}
 
 		free(tmpstr), tmpstr = NULL;
