@@ -54,6 +54,20 @@ struct channelslot* addchannelslot(char *line, int count, struct channelslot* la
 	return newnode;
 }
 
+struct channelslot* getchannelslot(int serviceid, uint64_t transponderid)
+{
+	struct channelslot *node = channelslot;
+	
+	while(node != NULL)
+	{
+		if(node->serviceid == serviceid && node->transponderid == transponderid)
+			return node;
+		node = node->next;	
+	}
+	
+	return NULL;
+}
+
 int readchannelslot(char* filename)
 {
 	debug(1000, "in");

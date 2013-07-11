@@ -52,7 +52,7 @@ void screenchannelslot(int slot)
 		if(rcret == getrcconfigint("rcok", NULL)) break;
 		if(rcret == getrcconfigint("rcred", NULL) && listbox->select != NULL && listbox->select->handle != NULL)
 		{
-			if(delchannelslot(((struct epgscanlist*)listbox->select->handle)->serviceid, ((struct epgscanlist*)listbox->select->handle)->transponderid) == 0)
+			if(delchannelslot(((struct channelslot*)listbox->select->handle)->serviceid, ((struct channelslot*)listbox->select->handle)->transponderid) == 0)
 			{
 				listbox->aktline--;
 				listbox->aktpage = -1;
@@ -71,7 +71,7 @@ void screenchannelslot(int slot)
 			screenchannellist(&tmpchnode, &tmpchannellist, 1);
 			status.servicetype = saveservicetype;
 
-			if(tmpchnode != NULL)
+			if(tmpchnode != NULL && getchannelslot(tmpchnode->serviceid, tmpchnode->transponderid) == NULL)
 			{
 				tmpstr = ostrcat(oitoa(tmpchnode->transponderid), "#", 1, 0);
 				tmpstr = ostrcat(tmpstr, ollutoa(tmpchnode->serviceid), 1, 1);

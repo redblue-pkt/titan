@@ -68,7 +68,7 @@ void screenepgscanlist()
 			screenchannellist(&tmpchnode, &tmpchannellist, 1);
 			status.servicetype = saveservicetype;
 
-			if(tmpchnode != NULL)
+			if(tmpchnode != NULL && getepgscanlist(tmpchnode->serviceid, tmpchnode->transponderid) == NULL)
 			{
 				tmpstr = ostrcat(oitoa(tmpchnode->serviceid), "#", 1, 0);
 				tmpstr = ostrcat(tmpstr, ollutoa(tmpchnode->transponderid), 1, 1);
