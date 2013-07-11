@@ -5487,17 +5487,19 @@ char* stringreplacecharonce(char *str, char c1, char c2)
 
 char* stringreplacechar(char *str, char c1, char c2)
 {
-	debug(1000, "in");
-	int i;
+	char *p1 = str;
 
 	if(str == NULL) return NULL;
 
-	for(i = 0; i < strlen(str); i++)
-		if(str[i] == c1) str[i] = c2;
+	while(*p1 != '\0')
+	{
+		if(*p1 == c1) *p1 = c2;
+		*p1++;
+	}
 
-	debug(1000, "out");
 	return str;
 }
+
 
 char* string_removechar(char *str)
 {
