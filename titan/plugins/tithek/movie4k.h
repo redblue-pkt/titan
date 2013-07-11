@@ -659,7 +659,7 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 {
 	debug(99, "link: %s", link);
 	int ret = 1, series = 0;
-	char* ip = NULL, *pos = NULL, *id = NULL, *tpath = NULL, *path = NULL, *tmpstr = NULL, *line = NULL;
+	char* ip = NULL, *pos = NULL, *id = NULL, *tpath = NULL, *path = NULL, *tmpstr = NULL, *line = NULL, *episode = NULL;
 	char* from = NULL;
 	char* folgen = NULL;
 	char* folgentmp = NULL;
@@ -710,9 +710,7 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 				from = ostrcat(from, "<FORM name=\"episodeform", 1, 0);
 				from = ostrcat(from, oitoa(i), 1, 0);
 				from = ostrcat(from, "\">", 1, 0);
-				
 				folgen = string_resub(from, "</FORM>", tmpstr, 0);
-
 				folgen = string_resub("<OPTION></OPTION>", "</SELECT>", folgen, 1);
 				folgen = string_replace_all("><", ">\n<", folgen, 1);
 				folgentmp = ostrcat(folgen, NULL, 0, 0);
@@ -732,8 +730,9 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 						{
 							link = string_resub("<OPTION value=\"", "\"", ret1[j-1].part, 0);
 							id = oregex(".*tvshows-(.*[0-9]{1,10})-.*", link);
+							episode = oregex(".*>Episode (.*[0-9]{1,10})</OPTION>.*", ret1[j-1].part);
 
-							debug(99, "(S%d/E%d) link: %s id: %s", i, j, link, id);
+ 							debug(99, "(S%d/E%s)(%d) link: %s id: %s", i, episode, j, link, id);
 							link = string_replace("tvshows-", "", link, 1);
 							link = string_replace(id, "", link, 1);
 							link = string_replace("-", "", link, 1);
@@ -750,23 +749,27 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 							line = ostrcat(line, " ", 1, 0);
 							line = ostrcat(line, _("Episode"), 1, 0);
 							line = ostrcat(line, " ", 1, 0);
-							line = ostrcat(line, oitoa(j), 1, 0);					
+//							line = ostrcat(line, oitoa(j), 1, 0);
+							line = ostrcat(line, episode, 1, 0);					
 							line = ostrcat(line, "#http://www.movie4k.to/", 1, 0);
 							line = ostrcat(line, link, 1, 0);
 							line = ostrcat(line, "#", 1, 0);
 							line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/s", 1, 0);
 							line = ostrcat(line, oitoa(i), 1, 0);
 							line = ostrcat(line, "e", 1, 0);
-							line = ostrcat(line, oitoa(j), 1, 0);
+//							line = ostrcat(line, oitoa(j), 1, 0);
+							line = ostrcat(line, episode, 1, 0);
 							line = ostrcat(line, ".jpg", 1, 0);																
 							line = ostrcat(line, "#movie4k_search_", 1, 0);
 							line = ostrcat(line, oitoa(i), 1, 0);
 							line = ostrcat(line, "e", 1, 0);
-							line = ostrcat(line, oitoa(j), 1, 0);
+//							line = ostrcat(line, oitoa(j), 1, 0);
+							line = ostrcat(line, episode, 1, 0);
 							line = ostrcat(line, ".jpg#Movie4k - ", 1, 0);
 							line = ostrcat(line, title, 1, 0);
 							line = ostrcat(line, "#34\n", 1, 0);
 							free(id), id = NULL;
+							free(episode), episode = NULL;
 						}
 					}
 					free(ret1), ret1 = NULL;
