@@ -5281,7 +5281,7 @@ char* readeittomem(const char* filename)
 	char *zeichen = NULL, *buf = NULL, *buf1 = NULL;
 	int buf1size = 0, buf1oldsize = 0;
 	int Beschreibung;
-  int len;
+	int len;
 
 	zeichen = malloc(255);
 	if(zeichen == NULL)
@@ -5309,13 +5309,13 @@ char* readeittomem(const char* filename)
 	fseek(fil, 12, SEEK_SET); //ersten 12 Byte nicht relevant
 	while(!feof(fil)) {
 		byte=fgetc(fil);
-      
+
 		if (byte == 0x4D) {
 			fseek(fil, 4,SEEK_CUR);
 			byte=fgetc(fil);
 			len = byte + 0;
-      byte=fgetc(fil);
-      fgets(zeichen,len,fil);
+			byte=fgetc(fil);
+			fgets(zeichen,len,fil);
 			if (byte != 0x05)
 				sprintf(buf,"%c%s\n", byte,zeichen);
 			else
@@ -5332,8 +5332,8 @@ char* readeittomem(const char* filename)
 				fclose(fil);
 				return NULL;
 			}
-     	sprintf(buf1 + buf1oldsize, "%s", buf);
-       	
+			sprintf(buf1 + buf1oldsize, "%s", buf);
+
  			//printf("T %s\n", zeichen);
 			byte=fgetc(fil);
 			len = byte + 0;
@@ -5355,7 +5355,7 @@ char* readeittomem(const char* filename)
 				fclose(fil);
 				return NULL;
 			}
-     	sprintf(buf1 + buf1oldsize, "%s", buf);
+			sprintf(buf1 + buf1oldsize, "%s", buf);
 
 		}
 		else if (byte == 0x4E) {
@@ -5371,8 +5371,9 @@ char* readeittomem(const char* filename)
 					sprintf(buf,"%s", zeichen);
 				Beschreibung = 1;
 			}
- 			else {
- 				if (byte != 0x05)
+			else
+			{
+				if (byte != 0x05)
 					sprintf(buf,"%c%s", byte,zeichen);
 				else
 					sprintf(buf,"%s", zeichen);
@@ -5389,9 +5390,9 @@ char* readeittomem(const char* filename)
 				fclose(fil);
 				return NULL;
 			}
-     	sprintf(buf1 + buf1oldsize, "%s", buf);      
-        	  
-		}  
+			sprintf(buf1 + buf1oldsize, "%s", buf);      
+
+		}
 		else {
 			byte=fgetc(fil);
 			len= byte;
