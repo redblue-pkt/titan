@@ -605,8 +605,10 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 		if(file_exist("/var/swap/etc/.codecpack"))
 		{
 			addmenulist(&mlist, "Search on Kinox", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on Movie4k", NULL, NULL, 0, 0);
 			addmenulist(&mlist, "Search on Solarmovies (movie)", NULL, NULL, 0, 0);
 			addmenulist(&mlist, "Search on Solarmovies (serie)", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on Movie4k", NULL, NULL, 0, 0);
 		}
 		addmenulist(&mlist, "Search on Youtube", NULL, NULL, 0, 0);
 		addmenulist(&mlist, "Search on MyVideo", NULL, NULL, 0, 0);
@@ -667,6 +669,8 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			ret = 5;
 		else if(ostrcmp(mbox->name, "Search on MyVideo") == 0)
 			ret = 6;
+		else if(ostrcmp(mbox->name, "Search on Movie4k") == 0)
+			ret = 7;
 		else if(ostrcmp(mbox->name, "Downloads") == 0)
 		{
 			if(status.play == 1)
