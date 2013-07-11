@@ -172,8 +172,9 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 				int max = count;
 				for(j = 0; j < max; j++)
 				{
-				    int rcret = waitrc(NULL, 10, 0);
-				    if(rcret == getrcconfigint("rcexit", NULL)) break;
+					int rcret = waitrc(NULL, 10, 0);
+					if(rcret == getrcconfigint("rcexit", NULL)) break;
+
 					incount += 1;
 					link = string_resub("<a href=\"", "\">", ret1[j].part, 0);
 					name = string_resub(".html\">", "</a>", ret1[j].part, 0);

@@ -195,6 +195,8 @@ int youtube_search(struct skin* grid, struct skin* listbox, struct skin* countla
 				{
 					pic = oregex(".*thumbnail url=\'(http://i.ytimg.com/vi/.*/0.jpg).*", ret1[i].part);
 					id = oregex(".*thumbnail url=\'http://i.ytimg.com/vi/(.*)/0.jpg.*", ret1[i].part);
+					int rcret = waitrc(NULL, 10, 0);
+					if(rcret == getrcconfigint("rcexit", NULL)) break;
 
 					if(id != NULL)
 					{
