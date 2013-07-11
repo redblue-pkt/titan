@@ -5467,21 +5467,20 @@ char* string_toupper(char *str)
 
 char* stringreplacecharonce(char *str, char c1, char c2)
 {
-	debug(1000, "in");
-	int i;
+	char *p1 = str;
 
 	if(str == NULL) return NULL;
 
-	for(i = 0; i < strlen(str); i++)
+	while(*p1 != '\0')
 	{
-		if(str[i] == c1)
+		if(*p1 == c1)
 		{
-			str[i] = c2;
-			break;
-		}
+			*p1 = c2;
+			break;			
+		}			
+		*p1++;
 	}
 
-	debug(1000, "out");
 	return str;
 }
 
@@ -5503,33 +5502,34 @@ char* stringreplacechar(char *str, char c1, char c2)
 
 char* string_removechar(char *str)
 {
-	debug(1000, "in");
-	int i;
+	char *p1 = str;
 
 	if(str == NULL) return NULL;
 
-	for(i = 0; i < strlen(str); i++)
+	while(*p1 != '\0')
 	{
-		if(str[i] == '.') str[i] = ' ';
-		if(str[i] == '-') str[i] = ' ';
-		if(str[i] == '_') str[i] = ' ';
-		if(str[i] == '/') str[i] = ' ';
+		if(*p1 == '.') *p1 = ' ';
+		else if(*p1 == '-') *p1 = ' ';
+		else if(*p1 == '_') *p1 = ' ';
+		else if(*p1 == '/') *p1 = ' '; 
+		*p1++;
 	}
-	debug(1000, "out");
+
 	return str;
 }
 
 char* string_withchars2return(char *str)
 {
-	debug(1000, "in");
-	int i;
+	char *p1 = str;
 
-	for(i = 0; i < strlen(str); i++)
+	if(str == NULL) return NULL;
+
+	while(*p1 != '\0')
 	{
-		if(str[i] == ' ') str[i] = '\n';
+		if(*p1 == ' ') *p1 = '\n';
+		*p1++;
 	}
 
-	debug(1000, "out");
 	return str;
 }
 
