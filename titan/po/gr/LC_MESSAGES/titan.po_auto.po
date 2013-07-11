@@ -51,15 +51,49 @@
 #: networkbrowser.h:1204 networkbrowser.h:1208 networkbrowser.h:1212
 #: networkbrowser.h:1216 networkbrowser.h:1242 adjust.h:50 adjust.h:64
 #: adjust.h:68 adjust.h:73 adjust.h:98 adjust.h:129 adjust.h:132 adjust.h:147
-#: adjust.h:151 mc_audioplayer_settings.h:38 dlna.h:249 dlna.h:253
+#: adjust.h:151 mc_audioplayer_settings.h:38 dlna.h:249 dlna.h:253 adjust.h:79
+#: adjust.h:83 adjust.h:88 adjust.h:113 adjust.h:143 adjust.h:153 adjust.h:157
+#: adjust.h:174 adjust.h:178 adjust.h:186 adjust.h:190 adjust.h:194
+#: adjust.h:200 adjust.h:204 adjust.h:208 adjust.h:212 adjust.h:216
+#: adjust.h:242 avsettings.h:122 avsettings.h:143 avsettings.h:147
+#: blindscanadjust.h:150 blindscanadjust.h:154 blindscanadjust.h:158
+#: blindscanadjust.h:187 blindscanadjust.h:191 dlna.h:256 epgsettings.h:121
+#: epgsettings.h:174 epgsettings.h:183 epgsettings.h:187 epgsettings.h:192
+#: epgsettings.h:197 httpdsettings.h:20 httpdsettings.h:50 inadyn.h:139
+#: mc_audioplayer_settings.h:45 mc_audioplayer_settings.h:51
+#: mc_audioplayer_settings.h:55 mc_pictureplayer_settings.h:75
+#: mc_videoplayer_settings.h:43 mc_videoplayer_settings.h:49 mediadb.h:1106
+#: mediadb.h:1113 mediadb.h:1128 mediadbsettings.h:25 mediadbsettings.h:29
+#: mediadbsettings.h:48 mediadbsettings.h:63 mediadbsettings.h:67
+#: moduleconfig.h:233 moduleconfig.h:241 moduleconfig.h:245 moduleconfig.h:249
+#: moduleconfig.h:253 networkbrowser.h:1419 networkbrowser.h:1423
+#: networkbrowser.h:1427 networkbrowser.h:1431 networkbrowser.h:1435
+#: networkbrowser.h:1461 network.h:673 panel_settings_autostart.h:35
+#: panel_settings_autostart.h:113 panel_settings_autostart.h:123
+#: panel_settings_autostart.h:141 panel_settings_autostart.h:150
+#: panel_settings_autostart.h:159 panel_settings_autostart.h:168
+#: panel_settings_autostart.h:177 panel_settings_autostart.h:193
+#: panel_settings_autostart.h:202 panel_settings_autostart.h:211
+#: panel_settings_autostart.h:237 panel_settings_autostart.h:286
+#: panel_settings_autostart.h:295 panel_settings_autostart.h:304
+#: panel_settings_autostart.h:319 panel_settings_autostart.h:328
+#: panel_settings_autostart.h:337 panel_settings_autostart.h:351
+#: panel_settings_autostart.h:360 panel_settings_overclocking.h:234
+#: panel_settings_overclocking.h:244 play.h:534 play.h:541 play.h:556
+#: readerconfig.h:254 rectimer.h:1074 rectimer.h:1079 rectimer.h:1084
+#: rectimer.h:1089 rectimer.h:1094 rectimer.h:1099 rectimer.h:1104 scan.h:1711
+#: scan.h:2174 scan.h:2178 scan.h:2182 scan.h:2186 scan.h:2190 skinadjust.h:52
+#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:32
+#: tithek_settings.h:36 tmc.h:531 tmc.h:535 tunerconfig.h:184
+#: tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
 msgid "no"
 msgstr ""
 
-#: adjust.h:50 adjust.h:51
+#: adjust.h:50 adjust.h:51 adjust.h:65
 msgid "infobar"
 msgstr ""
 
-#: adjust.h:51 adjust.h:52
+#: adjust.h:51 adjust.h:52 adjust.h:66
 msgid "epg"
 msgstr ""
 
@@ -114,11 +148,42 @@ msgstr ""
 #: networkbrowser.h:1228 networkbrowser.h:1205 networkbrowser.h:1209
 #: networkbrowser.h:1213 networkbrowser.h:1217 networkbrowser.h:1243
 #: adjust.h:65 adjust.h:74 adjust.h:99 adjust.h:128 adjust.h:133 adjust.h:148
-#: mc_audioplayer_settings.h:39 dlna.h:250 dlna.h:254
+#: mc_audioplayer_settings.h:39 dlna.h:250 dlna.h:254 adjust.h:80 adjust.h:89
+#: adjust.h:114 adjust.h:144 adjust.h:154 adjust.h:175 adjust.h:179
+#: adjust.h:187 adjust.h:191 adjust.h:195 adjust.h:201 adjust.h:205
+#: adjust.h:209 adjust.h:213 adjust.h:217 avsettings.h:123 avsettings.h:144
+#: blindscanadjust.h:151 blindscanadjust.h:155 blindscanadjust.h:159
+#: blindscanadjust.h:188 blindscanadjust.h:192 dlna.h:257 epgsettings.h:122
+#: epgsettings.h:175 epgsettings.h:184 httpdsettings.h:21 httpdsettings.h:51
+#: inadyn.h:140 mc_audioplayer_settings.h:46 mc_audioplayer_settings.h:52
+#: mc_audioplayer_settings.h:56 mc_pictureplayer_settings.h:76
+#: mc_videoplayer_settings.h:44 mc_videoplayer_settings.h:50 mediadb.h:1104
+#: mediadb.h:1111 mediadb.h:1126 mediadbsettings.h:26 mediadbsettings.h:30
+#: mediadbsettings.h:49 mediadbsettings.h:64 mediadbsettings.h:68
+#: moduleconfig.h:232 moduleconfig.h:242 moduleconfig.h:246 moduleconfig.h:250
+#: moduleconfig.h:254 networkbrowser.h:1420 networkbrowser.h:1424
+#: networkbrowser.h:1428 networkbrowser.h:1432 networkbrowser.h:1436
+#: networkbrowser.h:1462 network.h:674 panel_settings_autostart.h:35
+#: panel_settings_autostart.h:113 panel_settings_autostart.h:123
+#: panel_settings_autostart.h:141 panel_settings_autostart.h:150
+#: panel_settings_autostart.h:159 panel_settings_autostart.h:168
+#: panel_settings_autostart.h:177 panel_settings_autostart.h:193
+#: panel_settings_autostart.h:202 panel_settings_autostart.h:211
+#: panel_settings_autostart.h:237 panel_settings_autostart.h:286
+#: panel_settings_autostart.h:295 panel_settings_autostart.h:304
+#: panel_settings_autostart.h:319 panel_settings_autostart.h:328
+#: panel_settings_autostart.h:337 panel_settings_autostart.h:351
+#: panel_settings_overclocking.h:234 panel_settings_overclocking.h:244
+#: play.h:532 play.h:539 play.h:554 readerconfig.h:255 rectimer.h:1075
+#: rectimer.h:1080 rectimer.h:1085 rectimer.h:1090 rectimer.h:1095
+#: rectimer.h:1100 rectimer.h:1105 scan.h:1712 scan.h:2175 scan.h:2179
+#: scan.h:2183 scan.h:2187 scan.h:2191 skinadjust.h:53 timeshiftsettings.h:58
+#: timeshiftsettings.h:62 tithek_settings.h:33 tithek_settings.h:37 tmc.h:532
+#: tmc.h:536
 msgid "yes"
 msgstr ""
 
-#: adjust.h:68 adjust.h:69
+#: adjust.h:68 adjust.h:69 adjust.h:84
 msgid "medium"
 msgstr ""
 
@@ -126,20 +191,28 @@ msgstr ""
 #: mc_pictureplayer_settings.h:34 mc_videoplayer_settings.h:29
 #: plugins_mc_skin.xml.h:17 skins_mc_skin.xml.h:17 adjust.h:70 adjust.h:158
 #: mc_audioplayer_settings.h:29 mc_pictureplayer_settings.h:38
-#: mc_videoplayer_settings.h:24
+#: mc_videoplayer_settings.h:24 adjust.h:85 adjust.h:164
+#: mc_audioplayer_settings.h:35 mc_pictureplayer_settings.h:50
+#: mc_videoplayer_settings.h:31 moduleconfig.h:238 plugins_mc_skin.xml.h:23
+#: skins_mc_skin.xml.h:23
 msgid "fast"
 msgstr ""
 
 #: adjust.h:76 mc_audioplayer_settings.h:21 mc_pictureplayer_settings.h:21
 #: mc_videoplayer_settings.h:16 plugins_mc_skin.xml.h:5 skins_mc_skin.xml.h:5
-#: mc_pictureplayer_settings.h:30 adjust.h:77
+#: mc_pictureplayer_settings.h:30 adjust.h:77 adjust.h:92
+#: mc_audioplayer_settings.h:27 mc_pictureplayer_settings.h:42
+#: mc_videoplayer_settings.h:23 plugins_mc_skin.xml.h:7 skins_mc_skin.xml.h:7
 msgid "alpha"
 msgstr ""
 
 #: adjust.h:77 mc_audioplayer_settings.h:22 mc_pictureplayer_settings.h:22
 #: mc_videoplayer_settings.h:17 plugins_mc_skin.xml.h:36
 #: skins_mc_skin.xml.h:36 mc_pictureplayer_settings.h:31
-#: plugins_mc_skin.xml.h:38 skins_mc_skin.xml.h:38 adjust.h:78
+#: plugins_mc_skin.xml.h:38 skins_mc_skin.xml.h:38 adjust.h:78 adjust.h:93
+#: mc_audioplayer_settings.h:28 mc_pictureplayer_settings.h:43
+#: mc_videoplayer_settings.h:24 plugins_mc_skin.xml.h:48
+#: skins_mc_skin.xml.h:48
 msgid "reverse alpha"
 msgstr ""
 
@@ -147,31 +220,42 @@ msgstr ""
 #: mc_videoplayer_settings.h:18 plugins_mc_skin.xml.h:42
 #: skins_mc_skin.xml.h:42 mc_videoplayer_settings.h:26
 #: mc_pictureplayer_settings.h:32 plugins_mc_skin.xml.h:44
-#: skins_mc_skin.xml.h:44 adjust.h:79
+#: skins_mc_skin.xml.h:44 adjust.h:79 adjust.h:94 mc_audioplayer_settings.h:29
+#: mc_pictureplayer_settings.h:44 mc_videoplayer_settings.h:25
+#: plugins_mc_skin.xml.h:54 skins_mc_skin.xml.h:54
 msgid "size"
 msgstr ""
 
 #: adjust.h:79 mc_audioplayer_settings.h:24 mc_pictureplayer_settings.h:24
 #: mc_videoplayer_settings.h:19 plugins_mc_skin.xml.h:38
 #: skins_mc_skin.xml.h:38 mc_pictureplayer_settings.h:33
-#: plugins_mc_skin.xml.h:40 skins_mc_skin.xml.h:40 adjust.h:80
+#: plugins_mc_skin.xml.h:40 skins_mc_skin.xml.h:40 adjust.h:80 adjust.h:95
+#: mc_audioplayer_settings.h:30 mc_pictureplayer_settings.h:45
+#: mc_videoplayer_settings.h:26 plugins_mc_skin.xml.h:50
+#: skins_mc_skin.xml.h:50
 msgid "reverse size"
 msgstr ""
 
 #: adjust.h:80 mc_audioplayer_settings.h:25 mc_pictureplayer_settings.h:25
 #: mc_videoplayer_settings.h:20 plugins_mc_skin.xml.h:12
 #: skins_mc_skin.xml.h:12 mc_pictureplayer_settings.h:34 adjust.h:81
+#: adjust.h:96 mc_audioplayer_settings.h:31 mc_pictureplayer_settings.h:46
+#: mc_videoplayer_settings.h:27 plugins_mc_skin.xml.h:16
+#: skins_mc_skin.xml.h:16 vfdisplay.h:46
 msgid "date"
 msgstr ""
 
 #: adjust.h:81 mc_audioplayer_settings.h:26 mc_pictureplayer_settings.h:26
 #: mc_videoplayer_settings.h:21 plugins_mc_skin.xml.h:37
 #: skins_mc_skin.xml.h:37 mc_pictureplayer_settings.h:35
-#: plugins_mc_skin.xml.h:39 skins_mc_skin.xml.h:39 adjust.h:82
+#: plugins_mc_skin.xml.h:39 skins_mc_skin.xml.h:39 adjust.h:82 adjust.h:97
+#: mc_audioplayer_settings.h:32 mc_pictureplayer_settings.h:47
+#: mc_videoplayer_settings.h:28 plugins_mc_skin.xml.h:49
+#: skins_mc_skin.xml.h:49
 msgid "reverse date"
 msgstr ""
 
-#: adjust.h:84 adjust.h:85
+#: adjust.h:84 adjust.h:85 adjust.h:100
 msgid "Power Menu"
 msgstr ""
 
@@ -180,7 +264,7 @@ msgstr ""
 #: skin_default_skin.xml.h:317 skin_default_skin.xml.h:318
 #: skin_default_skin.xml.h:319 skin_default_skin.xml.h:325
 #: skin_default_skin.xml.h:326 skin_default_skin.xml.h:327
-#: skin_default_skin.xml.h:328 adjust.h:86
+#: skin_default_skin.xml.h:328 adjust.h:86 adjust.h:101
 msgid "Power Off"
 msgstr ""
 
@@ -191,6 +275,7 @@ msgstr ""
 #: skin_default_skin.xml.h:404 skin_default_skin.xml.h:406
 #: skin_default_skin.xml.h:412 skin_default_skin.xml.h:413
 #: skin_default_skin.xml.h:414 skin_default_skin.xml.h:415 adjust.h:87
+#: adjust.h:102 powerofftimer.h:118
 msgid "Standby"
 msgstr ""
 
@@ -201,51 +286,53 @@ msgstr ""
 #: skin_default_skin.xml.h:347 skin_default_skin.xml.h:348
 #: skin_default_skin.xml.h:354 skin_default_skin.xml.h:355
 #: skin_default_skin.xml.h:356 skin_default_skin.xml.h:357 adjust.h:88
+#: adjust.h:103 softcam.h:291
 msgid "Restart"
 msgstr ""
 
-#: adjust.h:88 adjust.h:89
+#: adjust.h:88 adjust.h:89 adjust.h:104
 msgid "Gui Restart"
 msgstr ""
 
 #: adjust.h:91 adjust.h:101 epgsettings.h:41 epgsettings.h:48
-#: epgsettings.h:129 epgsettings.h:136 adjust.h:92 adjust.h:102
+#: epgsettings.h:129 epgsettings.h:136 adjust.h:92 adjust.h:102 adjust.h:107
+#: adjust.h:117 epgsettings.h:134 epgsettings.h:140 network.h:594
 msgid "deaktiv"
 msgstr ""
 
-#: adjust.h:92 adjust.h:93
+#: adjust.h:92 adjust.h:93 adjust.h:108
 msgid "1 sec"
 msgstr ""
 
-#: adjust.h:93 avsettings.h:71 adjust.h:94
+#: adjust.h:93 avsettings.h:71 adjust.h:94 adjust.h:109 avsettings.h:74
 msgid "2 sec"
 msgstr ""
 
-#: adjust.h:94 pin.h:165 adjust.h:95
+#: adjust.h:94 pin.h:165 adjust.h:95 adjust.h:110
 msgid "endless"
 msgstr ""
 
-#: adjust.h:102 adjust.h:103
+#: adjust.h:102 adjust.h:103 adjust.h:118
 msgid "1 GB"
 msgstr ""
 
-#: adjust.h:103 adjust.h:104
+#: adjust.h:103 adjust.h:104 adjust.h:119
 msgid "2 GB"
 msgstr ""
 
-#: adjust.h:104 adjust.h:105
+#: adjust.h:104 adjust.h:105 adjust.h:120
 msgid "3 GB"
 msgstr ""
 
-#: adjust.h:105 adjust.h:106
+#: adjust.h:105 adjust.h:106 adjust.h:121
 msgid "4 GB"
 msgstr ""
 
-#: adjust.h:123 adjust.h:124
+#: adjust.h:123 adjust.h:124 adjust.h:139 adjust.h:233 httpdsettings.h:43
 msgid "extern"
 msgstr ""
 
-#: adjust.h:124 adjust.h:125
+#: adjust.h:124 adjust.h:125 adjust.h:140 adjust.h:234 httpdsettings.h:42
 msgid "intern"
 msgstr ""
 
@@ -257,68 +344,79 @@ msgstr ""
 #: transponder.h:216 transponder.h:223 transponder.h:247 transponder.h:265
 #: transponder.h:294 transponder.h:300 transponder.h:307 transponder.h:339
 #: transponder.h:349 transponder.h:404 transponder.h:440 adjust.h:136
+#: adjust.h:147 avsettings.h:65 rectimer.h:1170 transponder.h:120
+#: transponder.h:132 transponder.h:156 transponder.h:166 transponder.h:192
+#: transponder.h:199 transponder.h:225 transponder.h:233 transponder.h:257
+#: transponder.h:267 transponder.h:293 transponder.h:318 transponder.h:336
+#: transponder.h:362 transponder.h:371 transponder.h:377 transponder.h:384
+#: transponder.h:416 transponder.h:426 transponder.h:475 transponder.h:511
 msgid "auto"
 msgstr ""
 
-#: adjust.h:136 rectimer.h:995 rectimer.h:1000 adjust.h:137
+#: adjust.h:136 rectimer.h:995 rectimer.h:1000 adjust.h:137 adjust.h:148
+#: epgsettings.h:202 rectimer.h:1171
 msgid "nothing"
 msgstr ""
 
-#: adjust.h:137 rectimer.h:996 rectimer.h:1001 adjust.h:138
+#: adjust.h:137 rectimer.h:996 rectimer.h:1001 adjust.h:138 adjust.h:149
+#: rectimer.h:1172
 msgid "standby"
 msgstr ""
 
-#: adjust.h:138 rectimer.h:997 rectimer.h:1002 adjust.h:139
+#: adjust.h:138 rectimer.h:997 rectimer.h:1002 adjust.h:139 adjust.h:150
+#: rectimer.h:1173
 msgid "power off"
 msgstr ""
 
-#: adjust.h:141 adjust.h:142
+#: adjust.h:141 adjust.h:142 timeshiftsettings.h:53
 msgid "ask"
 msgstr ""
 
-#: adjust.h:142 adjust.h:143
+#: adjust.h:142 adjust.h:143 timeshiftsettings.h:54
 msgid "allways del file"
 msgstr ""
 
-#: adjust.h:143 adjust.h:144
+#: adjust.h:143 adjust.h:144 timeshiftsettings.h:55
 msgid "never del file"
 msgstr ""
 
-#: adjust.h:151 adjust.h:152
+#: adjust.h:151 adjust.h:152 adjust.h:158
 msgid "anim. width"
 msgstr ""
 
-#: adjust.h:152 adjust.h:153
+#: adjust.h:152 adjust.h:153 adjust.h:159
 msgid "anim. height"
 msgstr ""
 
-#: adjust.h:153 adjust.h:154
+#: adjust.h:153 adjust.h:154 adjust.h:160
 msgid "anim. both"
 msgstr ""
 
-#: adjust.h:156 adjust.h:157
+#: adjust.h:156 adjust.h:157 adjust.h:163
 msgid "very fast"
 msgstr ""
 
-#: adjust.h:158 panel_settings_autostart.h:58 adjust.h:159
+#: adjust.h:158 panel_settings_autostart.h:58 adjust.h:159 adjust.h:165
+#: timeshiftsettings.h:49 tmc.h:557
 msgid "normal"
 msgstr ""
 
-#: adjust.h:159 adjust.h:160
+#: adjust.h:159 adjust.h:160 adjust.h:166 moduleconfig.h:236 tmc.h:556
 msgid "slow"
 msgstr ""
 
-#: adjust.h:160 adjust.h:161
+#: adjust.h:160 adjust.h:161 adjust.h:167
 msgid "very slow"
 msgstr ""
 
 #: audiotrack.h:48 play.h:155 rectimer.h:1283 subtitle.h:1612 rectimer.h:1288
-#: subtitle.h:1614 play.h:160
+#: subtitle.h:1614 play.h:160 play.h:247 rectimer.h:1490 subtitle.h:1615
 msgid "running"
 msgstr ""
 
 #: audiotrack.h:119 play.h:140 subtitle.h:1693 tunerconfig.h:99
-#: subtitle.h:1695 play.h:145
+#: subtitle.h:1695 play.h:145 audiotrack.h:117 play.h:232 subtitle.h:1722
+#: tunerconfig.h:157 tunerconfig.h:341 tunerconfig.h:381
 msgid "undefined"
 msgstr ""
 
@@ -330,6 +428,12 @@ msgstr ""
 #: vfdisplay.h:34 transponder.h:178 transponder.h:186 transponder.h:337
 #: transponder.h:345 mc_pictureplayer_settings.h:22
 #: mc_pictureplayer_settings.h:26 mc_pictureplayer_settings.h:53
+#: avsettings.h:64 avsettings.h:80 harddisk.h:645
+#: mc_pictureplayer_settings.h:34 mc_pictureplayer_settings.h:38
+#: mc_pictureplayer_settings.h:67 mc_videoplayer_settings.h:53 network.h:392
+#: panel_settings_autostart.h:61 panel_settings_overclocking.h:276
+#: readerconfig.h:358 transponder.h:255 transponder.h:263 transponder.h:414
+#: transponder.h:422 tunerconfig.h:671 vfdisplay.h:42 vfdisplay.h:50
 msgid "off"
 msgstr ""
 
@@ -353,26 +457,29 @@ msgstr ""
 msgid "1080i"
 msgstr ""
 
-#: avsettings.h:72
+#: avsettings.h:72 avsettings.h:75
 msgid "4 sec"
 msgstr ""
 
-#: avsettings.h:73
+#: avsettings.h:73 avsettings.h:76
 msgid "6 sec"
 msgstr ""
 
-#: avsettings.h:74
+#: avsettings.h:74 avsettings.h:77
 msgid "8 sec"
 msgstr ""
 
-#: avsettings.h:75
+#: avsettings.h:75 avsettings.h:78
 msgid "10 sec"
 msgstr ""
 
 #: avsettings.h:78 lnbconfig.h:143 mc_pictureplayer_settings.h:18
 #: transponder.h:170 transponder.h:179 transponder.h:329 transponder.h:338
 #: transponder.h:188 transponder.h:347 mc_pictureplayer_settings.h:23
-#: mc_pictureplayer_settings.h:27
+#: mc_pictureplayer_settings.h:27 avsettings.h:81
+#: mc_pictureplayer_settings.h:35 mc_pictureplayer_settings.h:39
+#: readerconfig.h:361 transponder.h:256 transponder.h:265 transponder.h:415
+#: transponder.h:424
 msgid "on"
 msgstr ""
 
@@ -474,10 +581,49 @@ msgstr ""
 #: channellist.h:826 channellist.h:833 channellist.h:838 panel_extensions.h:96
 #: panel_extensions.h:113 panel_extensions.h:137 global.h:4634 global.h:4645
 #: dlna.h:311 dlna.h:319 channellist.h:846 dlna.h:313 dlna.h:315 dlna.h:323
+#: avsettings.h:221 bgdownload.h:159 blindscanadjust.h:25 channellist.h:913
+#: channellist.h:915 channellist.h:999 dlna.h:312 dlna.h:314 dlna.h:322
+#: dvdplay.h:62 epgsettings.h:261 extensions.h:135 extensions.h:141
+#: extensions.h:191 extensions.h:196 extensions.h:223 extensions.h:273
+#: extensions.h:277 extensions.h:306 facebook.h:66 facebook.h:157
+#: facebook.h:167 filemanager.h:196 filemanager.h:235 filemanager.h:281
+#: filemanager.h:306 filenuke.h:51 flashx.h:70 global.h:6121
+#: gmediarender.h:107 harddisk.h:549 harddisk.h:563 harddisk.h:591
+#: httpdfunc.h:1095 imdbapi.h:200 imdb.h:480 inadyn.h:189 inadyn.h:191
+#: inadyn.h:201 keyactions.h:216 marker.h:194 marker.h:208
+#: mc_audioplayer.h:595 mc_audioplayer.h:698 mc_dateibrowser.h:38
+#: mc_global.h:765 mc_global.h:1010 mc_internetbrowser.h:38
+#: mc_internetbrowser.h:41 mc_main.h:73 mc_main.h:78 mc_main.h:201
+#: mc_mediathek.h:37 mc_pictureplayer.h:95 mc_pictureplayer.h:232
+#: mc_pictureplayer.h:358 mc_pictureplayer.h:451 mc_videoplayer.h:734
+#: mc_videoplayer.h:870 mc_videoplayer.h:886 mc_wetterinfo.h:38
+#: mc_wetterinfo.h:41 mediadbedit.h:333 mediadb.h:1151 mediadb.h:1498
+#: mediadbsettings.h:92 networkbrowser.h:1550 networkbrowser.h:1557
+#: networkbrowser.h:1562 networkbrowser.h:1658 network.h:427 network.h:559
+#: network.h:767 network.h:775 network.h:797 network.h:801 network.h:855
+#: nowvideo.h:39 panel_main.h:135 panel_settings_wizard.h:6 player.h:97
+#: play.h:565 play.h:1164 play.h:1350 possetup.h:98 putlocker.h:52
+#: putlocker.h:142 readerconfig.h:388 readerconfig.h:389 record.h:290
+#: record.h:908 record.h:1081 record.h:1315 record.h:1339 rectimer.h:549
+#: rectimer.h:1215 rectimer.h:1361 rectimer.h:1373 restoredefault.h:10
+#: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
+#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:28
+#: scan.h:1597 scan.h:1607 scan.h:1618 scan.h:1826 scan.h:1917 scan.h:2262
+#: service.h:709 service.h:955 sock.h:822 softcam.h:395 solarmovie.h:187
+#: system_backup.h:61 system_backup_restore.h:41 system_backup_restore.h:44
+#: system_backup_restore.h:88 system_backup_restore.h:90 system_update.h:330
+#: system_update.h:336 system_update.h:342 timeshift.h:113 timeshift.h:155
+#: timeshift.h:162 timeshiftsettings.h:45 tithek.h:601 tithek.h:1038
+#: tithek.h:1081 tithek.h:1321 tithek.h:1343 tithek.h:1348 tithek.h:2069
+#: tithek.h:2131 tithek.h:2145 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:784 tmdb.h:947 tpk.h:2753
+#: tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
+#: vidstream.h:57 xvidstage.h:64 xvidstage.h:177 youtube.h:133
 msgid "Message"
 msgstr ""
 
 #: avsettings.h:199 videomode.h:53 videomode.h:60 videomode.h:61
+#: avsettings.h:221
 msgid "Is this Videomode ok ?"
 msgstr ""
 
@@ -606,7 +752,53 @@ msgstr ""
 #: channellist.h:838 panel_extensions.h:81 panel_extensions.h:88
 #: panel_extensions.h:94 panel_extensions.h:96 panel_extensions.h:113
 #: global.h:4634 global.h:4645 httpdfunc.h:2448 dlna.h:311 dlna.h:319
-#: channellist.h:846 dlna.h:313 dlna.h:315 dlna.h:323
+#: channellist.h:846 dlna.h:313 dlna.h:315 dlna.h:323 avsettings.h:221
+#: bgdownload.h:159 blindscanadjust.h:25 channellist.h:913 channellist.h:915
+#: channellist.h:999 dlna.h:312 dlna.h:314 dlna.h:322 dvdplay.h:62
+#: epgsettings.h:261 epgsettings.h:275 extensions.h:105 extensions.h:118
+#: extensions.h:127 extensions.h:133 extensions.h:135 extensions.h:172
+#: extensions.h:181 extensions.h:189 extensions.h:191 extensions.h:223
+#: extensions.h:294 extensions.h:298 extensions.h:349 facebook.h:66
+#: facebook.h:157 facebook.h:167 filemanager.h:196 filemanager.h:235
+#: filemanager.h:271 filemanager.h:281 filemanager.h:306 filenuke.h:51
+#: flashx.h:70 global.h:6121 gmediarender.h:107 harddisk.h:322 harddisk.h:332
+#: harddisk.h:336 harddisk.h:366 harddisk.h:549 harddisk.h:563 harddisk.h:591
+#: httpdfunc.h:1095 httpdfunc.h:2812 imdbapi.h:200 imdb.h:480 inadyn.h:189
+#: inadyn.h:191 inadyn.h:201 info.h:27 keyactions.h:216 mc_audioplayer.h:595
+#: mc_audioplayer.h:698 mc_dateibrowser.h:38 mc_global.h:765 mc_global.h:1010
+#: mc_internetbrowser.h:38 mc_internetbrowser.h:41 mc_main.h:73 mc_main.h:78
+#: mc_main.h:201 mc_mediathek.h:37 mc_pictureplayer.h:95
+#: mc_pictureplayer.h:232 mc_pictureplayer.h:358 mc_pictureplayer.h:451
+#: mc_videoplayer.h:734 mc_videoplayer.h:870 mc_videoplayer.h:886
+#: mc_wetterinfo.h:38 mc_wetterinfo.h:41 mediadbedit.h:333 mediadb.h:1151
+#: mediadb.h:1498 mediadb.h:2436 mediadbsettings.h:92 networkbrowser.h:1550
+#: networkbrowser.h:1557 networkbrowser.h:1562 networkbrowser.h:1658
+#: network.h:272 network.h:285 network.h:300 network.h:336 network.h:427
+#: network.h:559 network.h:767 network.h:775 network.h:797 network.h:801
+#: network.h:855 network.h:862 network.h:884 newsletter.h:253 newsletter.h:293
+#: nowvideo.h:39 panel_main.h:135 panel_settings_wizard.h:6 player.h:97
+#: play.h:448 play.h:1149 play.h:1155 play.h:1164 play.h:1165 play.h:1350
+#: plugins_facebook_skin.xml.h:5 plugins_mc_skin.xml.h:38
+#: plugins_tiwakeup_skin.xml.h:3 possetup.h:98 putlocker.h:52 putlocker.h:142
+#: readerconfig.h:388 readerconfig.h:389 record.h:290 record.h:908
+#: record.h:1339 rectimer.h:549 rectimer.h:1215 rectimer.h:1361
+#: rectimer.h:1373 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
+#: rtl2now.h:28 scan.h:1597 scan.h:1618 scan.h:1826 scan.h:1917 scan.h:2262
+#: service.h:709 service.h:955 skins_facebook_skin.xml.h:5
+#: skins_mc_skin.xml.h:38 skins_tiwakeup_skin.xml.h:3 sock.h:822 softcam.h:395
+#: solarmovie.h:187 system_backup.h:61 system_backup_restore.h:32
+#: system_backup_restore.h:41 system_backup_restore.h:44
+#: system_backup_restore.h:52 system_backup_restore.h:65
+#: system_backup_restore.h:88 system_backup_restore.h:90
+#: system_backup_restore.h:96 system_update.h:330 system_update.h:336
+#: system_update.h:342 timeshift.h:113 timeshift.h:155 timeshift.h:162
+#: timeshiftsettings.h:45 tithek.h:601 tithek.h:1038 tithek.h:1081
+#: tithek.h:1321 tithek.h:1343 tithek.h:1348 tithek.h:1362 tithek.h:2069
+#: tithek.h:2131 tithek.h:2145 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:784 tmdb.h:947 tpk.h:2753
+#: tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
+#: vidstream.h:57 xvidstage.h:64 xvidstage.h:177 youtube.h:133
 msgid "OK"
 msgstr ""
 
@@ -737,7 +929,56 @@ msgstr ""
 #: channellist.h:838 panel_extensions.h:81 panel_extensions.h:88
 #: panel_extensions.h:94 panel_extensions.h:96 panel_extensions.h:113
 #: global.h:4634 global.h:4645 httpdfunc.h:2448 dlna.h:311 dlna.h:319
-#: channellist.h:846 dlna.h:313 dlna.h:315 dlna.h:323
+#: channellist.h:846 dlna.h:313 dlna.h:315 dlna.h:323 avsettings.h:221
+#: bgdownload.h:159 blindscanadjust.h:25 channellist.h:913 channellist.h:915
+#: channellist.h:999 dlna.h:312 dlna.h:314 dlna.h:322 dvdplay.h:62
+#: epgsettings.h:261 epgsettings.h:275 extensions.h:105 extensions.h:118
+#: extensions.h:127 extensions.h:133 extensions.h:135 extensions.h:172
+#: extensions.h:181 extensions.h:189 extensions.h:191 extensions.h:223
+#: extensions.h:294 extensions.h:298 extensions.h:349 facebook.h:66
+#: facebook.h:157 facebook.h:167 filemanager.h:196 filemanager.h:235
+#: filemanager.h:271 filemanager.h:281 filemanager.h:306 filenuke.h:51
+#: flashx.h:70 global.h:6121 gmediarender.h:107 harddisk.h:322 harddisk.h:332
+#: harddisk.h:336 harddisk.h:366 harddisk.h:549 harddisk.h:563 harddisk.h:591
+#: httpdfunc.h:1095 httpdfunc.h:2812 imdbapi.h:200 imdb.h:480 inadyn.h:189
+#: inadyn.h:191 inadyn.h:201 info.h:27 keyactions.h:216 marker.h:194
+#: marker.h:208 mc_audioplayer.h:595 mc_audioplayer.h:698 mc_dateibrowser.h:38
+#: mc_global.h:765 mc_global.h:1010 mc_internetbrowser.h:38
+#: mc_internetbrowser.h:41 mc_main.h:73 mc_main.h:78 mc_main.h:201
+#: mc_mediathek.h:37 mc_pictureplayer.h:95 mc_pictureplayer.h:232
+#: mc_pictureplayer.h:358 mc_pictureplayer.h:451 mc_videoplayer.h:734
+#: mc_videoplayer.h:870 mc_videoplayer.h:886 mc_wetterinfo.h:38
+#: mc_wetterinfo.h:41 mediadbedit.h:333 mediadb.h:1151 mediadb.h:1498
+#: mediadb.h:2436 mediadbsettings.h:92 networkbrowser.h:1550
+#: networkbrowser.h:1557 networkbrowser.h:1562 networkbrowser.h:1658
+#: network.h:285 network.h:300 network.h:336 network.h:427 network.h:559
+#: network.h:767 network.h:775 network.h:797 network.h:801 network.h:855
+#: network.h:862 network.h:884 newsletter.h:253 newsletter.h:293 nowvideo.h:39
+#: panel_main.h:135 panel_settings_wizard.h:6 player.h:97 play.h:448
+#: play.h:1149 play.h:1155 play.h:1164 play.h:1165 play.h:1350
+#: plugins_catcatch_skin.xml.h:4 plugins_facebook_skin.xml.h:4
+#: plugins_mc_skin.xml.h:22 plugins_panel_skin.xml.h:15
+#: plugins_tiwakeup_skin.xml.h:2 possetup.h:98 putlocker.h:52 putlocker.h:142
+#: readerconfig.h:388 readerconfig.h:389 record.h:90 record.h:290 record.h:908
+#: record.h:1081 record.h:1315 record.h:1339 rectimer.h:549 rectimer.h:1215
+#: rectimer.h:1361 rectimer.h:1373 restoredefault.h:10 restoredefault.h:19
+#: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
+#: rgui.h:118 rgui.h:134 rtl2now.h:28 scan.h:1597 scan.h:1618 scan.h:1826
+#: scan.h:1917 scan.h:2262 service.h:709 service.h:955
+#: skins_catcatch_skin.xml.h:4 skins_facebook_skin.xml.h:4
+#: skins_mc_skin.xml.h:22 skins_panel_skin.xml.h:15
+#: skins_tiwakeup_skin.xml.h:2 sock.h:822 softcam.h:395 solarmovie.h:187
+#: system_backup.h:61 system_backup_restore.h:32 system_backup_restore.h:41
+#: system_backup_restore.h:44 system_backup_restore.h:52
+#: system_backup_restore.h:65 system_backup_restore.h:88
+#: system_backup_restore.h:90 system_backup_restore.h:96 system_update.h:330
+#: system_update.h:336 system_update.h:342 timeshift.h:113 timeshift.h:155
+#: timeshift.h:162 timeshiftsettings.h:45 tithek.h:601 tithek.h:1038
+#: tithek.h:1081 tithek.h:1321 tithek.h:1343 tithek.h:1348 tithek.h:1362
+#: tithek.h:2069 tithek.h:2131 tithek.h:2145 tiwakeup.h:66 tiwakeup.h:68
+#: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:784 tmdb.h:947 tpk.h:2753
+#: tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
+#: vidstream.h:57 xvidstage.h:64 xvidstage.h:177 youtube.h:133
 msgid "EXIT"
 msgstr ""
 
@@ -749,63 +990,65 @@ msgid ""
 msgstr ""
 
 #: callmon_main.h:85 callmon_main.h:103 callmon_main.h:107 callmon_main.h:111
-#: callmon_main.h:115
+#: callmon_main.h:115 callmon_main.h:75 callmon_main.h:95 callmon_main.h:113
+#: callmon_main.h:117 callmon_main.h:121 callmon_main.h:125 instar.h:193
 msgid "ja"
 msgstr ""
 
 #: callmon_main.h:86 callmon_main.h:104 callmon_main.h:108 callmon_main.h:112
-#: callmon_main.h:116
+#: callmon_main.h:116 callmon_main.h:74 callmon_main.h:96 callmon_main.h:114
+#: callmon_main.h:118 callmon_main.h:122 callmon_main.h:126 instar.h:192
 msgid "nein"
 msgstr ""
 
-#: callmon_main.h:119
+#: callmon_main.h:119 callmon_main.h:129
 msgid "puffern"
 msgstr ""
 
-#: callmon_main.h:120
+#: callmon_main.h:120 callmon_main.h:130
 msgid "verwerfen"
 msgstr ""
 
 #: callmon_main.h:123 skin_default_skin.xml.h:90 skin_default_skin.xml.h:91
 #: skin_default_skin.xml.h:92 skin_default_skin.xml.h:93
 #: skin_default_skin.xml.h:94 skin_default_skin.xml.h:95
-#: skin_default_skin.xml.h:96
+#: skin_default_skin.xml.h:96 callmon_main.h:133 mediadbsettings.h:55
 msgid "3"
 msgstr ""
 
 #: callmon_main.h:124 skin_default_skin.xml.h:92 skin_default_skin.xml.h:93
 #: skin_default_skin.xml.h:94 skin_default_skin.xml.h:95
 #: skin_default_skin.xml.h:96 skin_default_skin.xml.h:97
-#: skin_default_skin.xml.h:98
+#: skin_default_skin.xml.h:98 callmon_main.h:134 mediadbsettings.h:56
 msgid "4"
 msgstr ""
 
 #: callmon_main.h:125 skin_default_skin.xml.h:93 skin_default_skin.xml.h:94
 #: skin_default_skin.xml.h:95 skin_default_skin.xml.h:96
 #: skin_default_skin.xml.h:97 skin_default_skin.xml.h:98
-#: skin_default_skin.xml.h:99
+#: skin_default_skin.xml.h:99 callmon_main.h:135 mediadbsettings.h:57
 msgid "5"
 msgstr ""
 
 #: callmon_main.h:126 skin_default_skin.xml.h:94 skin_default_skin.xml.h:95
 #: skin_default_skin.xml.h:96 skin_default_skin.xml.h:97
 #: skin_default_skin.xml.h:98 skin_default_skin.xml.h:99
-#: skin_default_skin.xml.h:100
+#: skin_default_skin.xml.h:100 callmon_main.h:136
 msgid "6"
 msgstr ""
 
 #: callmon_main.h:127 skin_default_skin.xml.h:96 skin_default_skin.xml.h:97
 #: skin_default_skin.xml.h:98 skin_default_skin.xml.h:99
 #: skin_default_skin.xml.h:100 skin_default_skin.xml.h:101
-#: skin_default_skin.xml.h:102
+#: skin_default_skin.xml.h:102 callmon_main.h:137
 msgid "8"
 msgstr ""
 
-#: callmon_main.h:128
+#: callmon_main.h:128 callmon_main.h:138 mediadbsettings.h:58
 msgid "10"
 msgstr ""
 
-#: callmon_main.h:129
+#: callmon_main.h:129 callmon_main.h:139
 msgid "12"
 msgstr ""
 
@@ -849,7 +1092,8 @@ msgstr ""
 #: channellist.h:1168 channellist.h:569 channellist.h:972 channellist.h:1173
 #: channellist.h:1009 channellist.h:1210 channellist.h:1018 channellist.h:1219
 #: channellist.h:1027 channellist.h:1228 channellist.h:1254 channellist.h:577
-#: channellist.h:1061 channellist.h:1262
+#: channellist.h:1061 channellist.h:1262 channellist.h:702 channellist.h:1220
+#: channellist.h:1221 channellist.h:1433
 msgid "Bouquets"
 msgstr ""
 
@@ -865,7 +1109,8 @@ msgstr ""
 #: channellist.h:1294 channellist.h:568 channellist.h:1295 channellist.h:1296
 #: channellist.h:1297 channellist.h:577 channellist.h:1304 channellist.h:582
 #: channellist.h:1309 channellist.h:1346 channellist.h:1355 channellist.h:1364
-#: channellist.h:1390 channellist.h:590 channellist.h:1398
+#: channellist.h:1390 channellist.h:590 channellist.h:1398 channellist.h:719
+#: channellist.h:1573
 msgid "Channel"
 msgstr ""
 
@@ -881,7 +1126,8 @@ msgstr ""
 #: channellist.h:1240 channellist.h:594 channellist.h:1002 channellist.h:1245
 #: channellist.h:1039 channellist.h:1282 channellist.h:1048 channellist.h:1291
 #: channellist.h:1057 channellist.h:1300 channellist.h:1083 channellist.h:1326
-#: channellist.h:602 channellist.h:1091 channellist.h:1334
+#: channellist.h:602 channellist.h:1091 channellist.h:1334 channellist.h:735
+#: channellist.h:1254 channellist.h:1255 channellist.h:1507
 msgid "Satellites"
 msgstr ""
 
@@ -898,6 +1144,7 @@ msgstr ""
 #: channellist.h:1381 channellist.h:1099 channellist.h:1418 channellist.h:1108
 #: channellist.h:1427 channellist.h:1117 channellist.h:1436 channellist.h:1143
 #: channellist.h:1462 channellist.h:615 channellist.h:1151 channellist.h:1470
+#: channellist.h:752 channellist.h:1322 channellist.h:1323 channellist.h:1647
 msgid "Provider"
 msgstr ""
 
@@ -909,13 +1156,14 @@ msgstr ""
 #: channellist.h:947 channellist.h:948 channellist.h:615 channellist.h:955
 #: channellist.h:620 channellist.h:960 channellist.h:997 channellist.h:1006
 #: channellist.h:1015 channellist.h:1041 channellist.h:628 channellist.h:1049
+#: channellist.h:771 channellist.h:772 channellist.h:1204 channellist.h:1205
 msgid "All Channels"
 msgstr ""
 
 #: channellist.h:718 channellist.h:766 channellist.h:793 channellist.h:767
 #: channellist.h:771 channellist.h:790 channellist.h:821 channellist.h:822
 #: channellist.h:823 channellist.h:824 channellist.h:825 channellist.h:826
-#: channellist.h:833 channellist.h:838 channellist.h:846
+#: channellist.h:833 channellist.h:838 channellist.h:846 channellist.h:999
 msgid "Can't remove akive Service"
 msgstr ""
 
@@ -923,7 +1171,8 @@ msgstr ""
 #: channellist.h:965 channellist.h:984 channellist.h:1015 channellist.h:1016
 #: channellist.h:1017 channellist.h:1018 channellist.h:1019 channellist.h:1020
 #: channellist.h:1027 channellist.h:1032 channellist.h:1069 channellist.h:1078
-#: channellist.h:1087 channellist.h:1113 channellist.h:1121
+#: channellist.h:1087 channellist.h:1113 channellist.h:1121 channellist.h:1288
+#: channellist.h:1289
 msgid "Channels A-Z"
 msgstr ""
 
@@ -933,7 +1182,9 @@ msgstr ""
 #: skin_default_skin.xml.h:67 skin_default_skin.xml.h:68
 #: skin_default_skin.xml.h:69 dir.h:72 dir.h:78 dir.h:84 dir.h:90
 #: skin_default_skin.xml.h:70 dir.h:73 dir.h:79 dir.h:85 dir.h:91
-#: plugins_lcdpearl1_skin.xml.h:2 skins_lcdpearl1_skin.xml.h:2
+#: plugins_lcdpearl1_skin.xml.h:2 skins_lcdpearl1_skin.xml.h:2 dir.h:80
+#: dir.h:98 dir.h:107 plugins_lcdsamsung_skin.xml.h:2
+#: skins_lcdsamsung_skin.xml.h:2
 msgid "---"
 msgstr ""
 
@@ -983,7 +1234,9 @@ msgstr ""
 
 #: diseqcconfig.h:135 diseqcconfig.h:140 diseqcconfig.h:159 transponder.h:248
 #: transponder.h:263 transponder.h:287 transponder.h:293 transponder.h:257
-#: transponder.h:272 transponder.h:296 transponder.h:302
+#: transponder.h:272 transponder.h:296 transponder.h:302 transponder.h:221
+#: transponder.h:231 transponder.h:328 transponder.h:346 transponder.h:373
+#: transponder.h:379
 msgid "none"
 msgstr ""
 
@@ -1065,19 +1318,19 @@ msgstr ""
 msgid "Input 16"
 msgstr ""
 
-#: diseqcconfig.h:257
+#: diseqcconfig.h:257 diseqcconfig.h:254
 msgid "north"
 msgstr ""
 
-#: diseqcconfig.h:258
+#: diseqcconfig.h:258 diseqcconfig.h:255
 msgid "south"
 msgstr ""
 
-#: diseqcconfig.h:262
+#: diseqcconfig.h:262 diseqcconfig.h:259
 msgid "east"
 msgstr ""
 
-#: diseqcconfig.h:263
+#: diseqcconfig.h:263 diseqcconfig.h:260
 msgid "west"
 msgstr ""
 
@@ -1086,15 +1339,15 @@ msgstr ""
 #: skin_default_skin.xml.h:390 skin_default_skin.xml.h:391
 #: skin_default_skin.xml.h:392 skin_default_skin.xml.h:394
 #: skin_default_skin.xml.h:400 skin_default_skin.xml.h:401
-#: skin_default_skin.xml.h:402 epg.h:192 skin_default_skin.xml.h:403
+#: skin_default_skin.xml.h:402 epg.h:192 skin_default_skin.xml.h:403 epg.h:182
 msgid "Single (EPG)"
 msgstr ""
 
-#: epg.h:193 epg.h:194
+#: epg.h:193 epg.h:194 epg.h:184
 msgid "Multi (EPG)"
 msgstr ""
 
-#: epgsettings.h:32 epgsettings.h:120
+#: epgsettings.h:32 epgsettings.h:120 adjust.h:67 epgsettings.h:125
 msgid "Channel EPG"
 msgstr ""
 
@@ -1104,7 +1357,7 @@ msgstr ""
 #: skin_default_skin.xml.h:390 skin_default_skin.xml.h:391 epgsettings.h:121
 #: epgsettings.h:142 skin_default_skin.xml.h:393 skin_default_skin.xml.h:399
 #: skin_default_skin.xml.h:400 skin_default_skin.xml.h:401
-#: skin_default_skin.xml.h:402
+#: skin_default_skin.xml.h:402 epgsettings.h:126 epgsettings.h:167
 msgid "Single EPG"
 msgstr ""
 
@@ -1114,39 +1367,42 @@ msgstr ""
 #: skin_default_skin.xml.h:271 epgsettings.h:122 epgsettings.h:143
 #: skin_default_skin.xml.h:272 skin_default_skin.xml.h:278
 #: skin_default_skin.xml.h:279 skin_default_skin.xml.h:280
-#: skin_default_skin.xml.h:281 skin_default_skin.xml.h:282
+#: skin_default_skin.xml.h:281 skin_default_skin.xml.h:282 epgsettings.h:127
+#: epgsettings.h:168
 msgid "Multi EPG"
 msgstr ""
 
-#: epgsettings.h:35 epgsettings.h:123
+#: epgsettings.h:35 epgsettings.h:123 epgsettings.h:128
 msgid "Graphic Multi EPG"
 msgstr ""
 
-#: epgsettings.h:42 epgsettings.h:130
+#: epgsettings.h:42 epgsettings.h:130 epgsettings.h:135 tmc.h:389
 msgid "scan"
 msgstr ""
 
-#: epgsettings.h:43 epgsettings.h:131
+#: epgsettings.h:43 epgsettings.h:131 epgsettings.h:136
 msgid "whitelist"
 msgstr ""
 
-#: epgsettings.h:44 epgsettings.h:132
+#: epgsettings.h:44 epgsettings.h:132 epgsettings.h:137
 msgid "scan and whitelist"
 msgstr ""
 
 #: epgsettings.h:65 panel_settings_autostart.h:71 epgsettings.h:153
+#: epgsettings.h:178 epgsettings.h:189 epgsettings.h:194 epgsettings.h:199
+#: mediadbsettings.h:33
 msgid "always"
 msgstr ""
 
-#: epgsettings.h:66 epgsettings.h:154
+#: epgsettings.h:66 epgsettings.h:154 epgsettings.h:179
 msgid "only on power off / restart"
 msgstr ""
 
-#: epgsettings.h:67 epgsettings.h:155
+#: epgsettings.h:67 epgsettings.h:155 epgsettings.h:180 mediadbsettings.h:45
 msgid "never"
 msgstr ""
 
-#: epgsettings.h:114 epgsettings.h:202
+#: epgsettings.h:114 epgsettings.h:202 epgsettings.h:261
 msgid "EPG resetet and now clear."
 msgstr ""
 
@@ -1154,7 +1410,8 @@ msgstr ""
 #: skins_panel_skin.xml.h:6 global.h:151 global.h:195 global.h:154
 #: global.h:198 global.h:192 global.h:236 global.h:193 global.h:237
 #: global.h:205 global.h:249 global.h:210 global.h:254 global.h:213
-#: global.h:257 global.h:255 global.h:262
+#: global.h:257 global.h:255 global.h:262 info.h:27 plugins_tmc_skin.xml.h:9
+#: skins_tmc_skin.xml.h:9
 msgid "Info"
 msgstr ""
 
@@ -1173,7 +1430,7 @@ msgid ""
 msgstr ""
 
 #: global.h:189 global.h:194 global.h:197 global.h:235 global.h:236
-#: global.h:248 global.h:253 global.h:256 global.h:254 global.h:261
+#: global.h:248 global.h:253 global.h:256 global.h:254 global.h:261 info.h:26
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
@@ -1183,75 +1440,76 @@ msgstr ""
 #: global.h:4539 global.h:4557 global.h:4561 global.h:4563 global.h:4565
 #: global.h:4522 global.h:4536 global.h:4551 global.h:4586 global.h:4587
 #: global.h:4602 global.h:4606 global.h:4607 global.h:4614 global.h:4639
-#: global.h:4634 global.h:4645
+#: global.h:4634 global.h:4645 global.h:6121 keyactions.h:216
 msgid "ERROR cant read res"
 msgstr ""
 
-#: gmultiepg.h:509 gmultiepg.h:518 gmultiepg.h:525
+#: gmultiepg.h:509 gmultiepg.h:518 gmultiepg.h:525 gmultiepg.h:537
+#: gmultiepg.h:737
 msgid "GRAPHIC MULTI EPG - Bouquets"
 msgstr ""
 
-#: gmultiepg.h:522 gmultiepg.h:531 gmultiepg.h:538
+#: gmultiepg.h:522 gmultiepg.h:531 gmultiepg.h:538 gmultiepg.h:550
 msgid "GRAPHIC MULTI EPG - Channel"
 msgstr ""
 
-#: gmultiepg.h:535 gmultiepg.h:544 gmultiepg.h:551
+#: gmultiepg.h:535 gmultiepg.h:544 gmultiepg.h:551 gmultiepg.h:563
 msgid "GRAPHIC MULTI EPG - Satellites"
 msgstr ""
 
-#: gmultiepg.h:548 gmultiepg.h:557 gmultiepg.h:564
+#: gmultiepg.h:548 gmultiepg.h:557 gmultiepg.h:564 gmultiepg.h:576
 msgid "GRAPHIC MULTI EPG - Provider"
 msgstr ""
 
-#: gmultiepg.h:561 gmultiepg.h:570 gmultiepg.h:577
+#: gmultiepg.h:561 gmultiepg.h:570 gmultiepg.h:577 gmultiepg.h:589
 msgid "GRAPHIC MULTI EPG - All Channels"
 msgstr ""
 
-#: harddisk.h:178
+#: harddisk.h:178 harddisk.h:190 harddisk.h:191
 msgid "Harddisk Configure"
 msgstr ""
 
-#: harddisk.h:188
+#: harddisk.h:188 harddisk.h:202
 msgid "use medium for record"
 msgstr ""
 
-#: harddisk.h:193
+#: harddisk.h:193 harddisk.h:212
 msgid "use medium for extension"
 msgstr ""
 
-#: harddisk.h:198
+#: harddisk.h:198 harddisk.h:222
 msgid "use medium for swap"
 msgstr ""
 
-#: harddisk.h:203
+#: harddisk.h:203 harddisk.h:232
 msgid "use medium for backup"
 msgstr ""
 
-#: harddisk.h:208
+#: harddisk.h:208 harddisk.h:207
 msgid "del medium for record"
 msgstr ""
 
-#: harddisk.h:213
+#: harddisk.h:213 harddisk.h:217
 msgid "del medium for extension"
 msgstr ""
 
-#: harddisk.h:218
+#: harddisk.h:218 harddisk.h:227
 msgid "del medium for swap"
 msgstr ""
 
-#: harddisk.h:223
+#: harddisk.h:223 harddisk.h:237
 msgid "del medium for backup"
 msgstr ""
 
-#: harddisk.h:309
+#: harddisk.h:309 harddisk.h:322
 msgid "Are you sure you want to delete this directory?"
 msgstr ""
 
-#: harddisk.h:319
+#: harddisk.h:319 harddisk.h:332
 msgid "can't create or delete directory"
 msgstr ""
 
-#: harddisk.h:323
+#: harddisk.h:323 harddisk.h:336
 msgid "succesfull create or delelete directory"
 msgstr ""
 
@@ -1263,64 +1521,64 @@ msgstr ""
 #: skin_default_skin.xml.h:222 skin_default_skin.xml.h:14
 #: skin_default_skin.xml.h:224 skin_default_skin.xml.h:15
 #: skin_default_skin.xml.h:225 skin_default_skin.xml.h:226
-#: skin_default_skin.xml.h:227 skin_default_skin.xml.h:228
+#: skin_default_skin.xml.h:227 skin_default_skin.xml.h:228 harddisk.h:366
 msgid "Harddisk"
 msgstr ""
 
-#: harddisk.h:352
+#: harddisk.h:352 harddisk.h:366
 msgid "sorry found no harddisk"
 msgstr ""
 
-#: harddisk.h:359
+#: harddisk.h:359 harddisk.h:374 harddisk.h:375
 msgid "Harddisk Format - List Devices"
 msgstr ""
 
-#: harddisk.h:361
+#: harddisk.h:361 harddisk.h:379 harddisk.h:380
 msgid "Harddisk Fsck - List Devices"
 msgstr ""
 
-#: harddisk.h:363
+#: harddisk.h:363 harddisk.h:384 harddisk.h:385
 msgid "Harddisk Configure - List Devices"
 msgstr ""
 
-#: harddisk.h:380
+#: harddisk.h:380 harddisk.h:403
 msgid "HDD "
 msgstr ""
 
-#: harddisk.h:386
+#: harddisk.h:386 harddisk.h:409
 msgid "STICK "
 msgstr ""
 
-#: harddisk.h:405
+#: harddisk.h:405 harddisk.h:428
 msgid "ext"
 msgstr ""
 
-#: harddisk.h:417 panel_settings_autostart.h:59
+#: harddisk.h:417 panel_settings_autostart.h:59 harddisk.h:440
 msgid "swap"
 msgstr ""
 
-#: harddisk.h:429
+#: harddisk.h:429 harddisk.h:452
 msgid "backup"
 msgstr ""
 
-#: harddisk.h:441 rectimer.h:862
+#: harddisk.h:441 rectimer.h:862 harddisk.h:464 rectimer.h:1033
 msgid "record"
 msgstr ""
 
-#: harddisk.h:526
+#: harddisk.h:526 harddisk.h:549
 msgid ""
 "Are you sure you want to remove all Partitions\n"
 "on this device and create a new Partition 1?\n"
 "Box reboots after format"
 msgstr ""
 
-#: harddisk.h:540
+#: harddisk.h:540 harddisk.h:563
 msgid ""
 "Are you sure you want to format this Partition?\n"
 "Box reboots after format"
 msgstr ""
 
-#: harddisk.h:568
+#: harddisk.h:568 harddisk.h:591
 msgid ""
 "Are you sure you want to check this Partition?\n"
 "Box reboots after check"
@@ -1332,23 +1590,23 @@ msgstr ""
 #: skin_default_skin.xml.h:436 skin_default_skin.xml.h:438
 #: skin_default_skin.xml.h:440 skin_default_skin.xml.h:450
 #: skin_default_skin.xml.h:451 skin_default_skin.xml.h:452
-#: skin_default_skin.xml.h:453
+#: skin_default_skin.xml.h:453 harddisk.h:644
 msgid "Time to sleep"
 msgstr ""
 
-#: harddisk.h:616
+#: harddisk.h:616 harddisk.h:646
 msgid "5 min"
 msgstr ""
 
-#: harddisk.h:616
+#: harddisk.h:616 harddisk.h:646
 msgid "10 min"
 msgstr ""
 
-#: harddisk.h:617
+#: harddisk.h:617 harddisk.h:647
 msgid "15 min"
 msgstr ""
 
-#: harddisk.h:617
+#: harddisk.h:617 harddisk.h:647
 msgid "60 min"
 msgstr ""
 
@@ -1356,12 +1614,12 @@ msgstr ""
 msgid "Imdb Suche"
 msgstr ""
 
-#: ipkg.h:362 ipkg.h:363 ipkg.h:364 ipkg.h:358
+#: ipkg.h:362 ipkg.h:363 ipkg.h:364 ipkg.h:358 tpk.h:2753
 msgid "check your Secret Feed !"
 msgstr ""
 
 #: ipkg.h:701 ipkg.h:702 ipkg.h:467 ipkg.h:733 ipkg.h:525 ipkg.h:804
-#: ipkg.h:519 ipkg.h:798 ipkg.h:524 ipkg.h:528 ipkg.h:549
+#: ipkg.h:519 ipkg.h:798 ipkg.h:524 ipkg.h:528 ipkg.h:549 tpk.h:2984
 msgid "no description found"
 msgstr ""
 
@@ -1394,7 +1652,7 @@ msgstr ""
 msgid "C-Band"
 msgstr ""
 
-#: lnbconfig.h:149 rectimer.h:889
+#: lnbconfig.h:149 rectimer.h:889 rectimer.h:1060
 msgid "user defined"
 msgstr ""
 
@@ -1411,6 +1669,8 @@ msgstr ""
 #: mc_videoplayer.h:207 mc_videoplayer.h:218 mc_pictureplayer.h:118
 #: mc_pictureplayer.h:119 mc_videoplayer.h:220 mc_videoplayer.h:215
 #: mc_videoplayer.h:214 mc_pictureplayer.h:116 mc_videoplayer.h:216
+#: mc_audioplayer.h:399 mc_global.h:1069 mc_pictureplayer.h:140
+#: mc_videoplayer.h:417
 msgid "Repeat-On"
 msgstr ""
 
@@ -1426,6 +1686,9 @@ msgstr ""
 #: mc_videoplayer.h:362 plugins_mc_skin.xml.h:37 skins_mc_skin.xml.h:37
 #: mc_videoplayer.h:221 mc_videoplayer.h:361 mc_audioplayer.h:299
 #: mc_pictureplayer.h:123 mc_videoplayer.h:223 mc_videoplayer.h:368
+#: mc_audioplayer.h:406 mc_audioplayer.h:556 mc_global.h:1071
+#: mc_pictureplayer.h:147 mc_pictureplayer.h:312 mc_videoplayer.h:424
+#: mc_videoplayer.h:654 plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47
 msgid "Repeat"
 msgstr ""
 
@@ -1448,6 +1711,11 @@ msgstr ""
 #: mc_videoplayer.h:513 mc_videoplayer.h:359 mc_videoplayer.h:512
 #: mc_audioplayer.h:266 mc_audioplayer.h:297 mc_audioplayer.h:406
 #: mc_videoplayer.h:321 mc_videoplayer.h:366 mc_videoplayer.h:521
+#: mc_audioplayer.h:511 mc_audioplayer.h:554 mc_audioplayer.h:674
+#: mc_global.h:336 mc_global.h:408 mc_pictureplayer.h:265
+#: mc_pictureplayer.h:310 mc_pictureplayer.h:420 mc_videoplayer.h:581
+#: mc_videoplayer.h:652 mc_videoplayer.h:836 plugins_mc_skin.xml.h:27
+#: skins_mc_skin.xml.h:27
 msgid "Filelist-Mode"
 msgstr ""
 
@@ -1459,6 +1727,9 @@ msgstr ""
 #: mc_pictureplayer.h:264 mc_videoplayer.h:374 mc_pictureplayer.h:263
 #: mc_videoplayer.h:361 plugins_mc_skin.xml.h:36 skins_mc_skin.xml.h:36
 #: mc_videoplayer.h:360 mc_audioplayer.h:298 mc_videoplayer.h:367
+#: mc_audioplayer.h:555 mc_global.h:552 mc_global.h:580 mc_global.h:1066
+#: mc_pictureplayer.h:311 mc_videoplayer.h:653 plugins_mc_skin.xml.h:46
+#: skins_mc_skin.xml.h:46
 msgid "Random"
 msgstr ""
 
@@ -1471,7 +1742,9 @@ msgstr ""
 #: mc_pictureplayer.h:281 mc_global.h:140 mc_global.h:567 mc_global.h:799
 #: mc_global.h:813 mc_pictureplayer.h:283 mc_videoplayer.h:414
 #: mc_pictureplayer.h:282 mc_videoplayer.h:401 mc_videoplayer.h:400
-#: mc_audioplayer.h:319 mc_videoplayer.h:408
+#: mc_audioplayer.h:319 mc_videoplayer.h:408 mc_audioplayer.h:576
+#: mc_global.h:269 mc_global.h:692 mc_global.h:925 mc_global.h:939
+#: mc_pictureplayer.h:331 mc_videoplayer.h:694
 msgid "Playlist-Mode"
 msgstr ""
 
@@ -1493,6 +1766,10 @@ msgstr ""
 #: mc_videoplayer.h:545 mc_videoplayer.h:440 mc_videoplayer.h:544
 #: mc_audioplayer.h:338 mc_audioplayer.h:427 mc_pictureplayer.h:72
 #: mc_pictureplayer.h:194 mc_videoplayer.h:448 mc_videoplayer.h:553
+#: dvdplay.h:62 mc_audioplayer.h:595 mc_audioplayer.h:698 mc_global.h:765
+#: mc_global.h:1010 mc_pictureplayer.h:95 mc_pictureplayer.h:232
+#: mc_pictureplayer.h:358 mc_pictureplayer.h:451 mc_videoplayer.h:734
+#: mc_videoplayer.h:870 play.h:1350
 msgid "Can't start playback !"
 msgstr ""
 
@@ -1500,19 +1777,25 @@ msgstr ""
 #: mc_videoplayer_settings.h:24 plugins_mc_skin.xml.h:14
 #: plugins_panel_skin.xml.h:34 skins_mc_skin.xml.h:14
 #: skins_panel_skin.xml.h:34 mc_audioplayer_settings.h:32
-#: mc_pictureplayer_settings.h:41 mc_videoplayer_settings.h:27
+#: mc_pictureplayer_settings.h:41 mc_videoplayer_settings.h:27 harddisk.h:143
+#: plugins_mc_skin.xml.h:18 skins_mc_skin.xml.h:18
 msgid "default"
 msgstr ""
 
 #: mc_audioplayer_settings.h:30 mc_pictureplayer_settings.h:30
 #: mc_videoplayer_settings.h:25 plugins_mc_skin.xml.h:11
 #: skins_mc_skin.xml.h:11 mc_pictureplayer_settings.h:39
+#: mc_audioplayer_settings.h:36 mc_pictureplayer_settings.h:51
+#: mc_videoplayer_settings.h:32 plugins_mc_skin.xml.h:14
+#: skins_mc_skin.xml.h:14
 msgid "big"
 msgstr ""
 
 #: mc_audioplayer_settings.h:31 mc_pictureplayer_settings.h:31
 #: mc_videoplayer_settings.h:26 plugins_mc_skin.xml.h:22
 #: skins_mc_skin.xml.h:22 mc_videoplayer_settings.h:29
+#: mc_audioplayer_settings.h:38 mc_videoplayer_settings.h:34
+#: plugins_mc_skin.xml.h:29 skins_mc_skin.xml.h:29
 msgid "fullcover"
 msgstr ""
 
@@ -1520,6 +1803,7 @@ msgstr ""
 #: mc_videoplayer_settings.h:27 plugins_mc_skin.xml.h:15
 #: skins_mc_skin.xml.h:15 mc_audioplayer_settings.h:33
 #: mc_pictureplayer_settings.h:42 mc_videoplayer_settings.h:28
+#: plugins_mc_skin.xml.h:20 skins_mc_skin.xml.h:20
 msgid "details"
 msgstr ""
 
@@ -1529,7 +1813,8 @@ msgid "smal"
 msgstr ""
 
 #: mc_global.h:355 mc_global.h:383 mc_global.h:359 mc_global.h:387
-#: mc_global.h:416 mc_global.h:444
+#: mc_global.h:416 mc_global.h:444 mc_global.h:541 mc_global.h:569
+#: mc_global.h:1064
 msgid "Random-On"
 msgstr ""
 
@@ -1571,7 +1856,29 @@ msgstr ""
 #: skins_lcdpearl1_skin.xml.h:13 plugins_tmc_skin.xml.h:1
 #: skins_tmc_skin.xml.h:1 plugins_stock_skin.xml.h:6
 #: plugins_weather_skin.xml.h:5 skins_stock_skin.xml.h:6
-#: skins_weather_skin.xml.h:5
+#: skins_weather_skin.xml.h:5 dirsort.h:18 dirsort.h:19 dirsort.h:20
+#: dirsort.h:21 dirsort.h:22 dirsort.h:23 plugins_autotimer_skin.xml.h:10
+#: plugins_callmonitor1_skin.xml.h:19 plugins_catcatch_skin.xml.h:7
+#: plugins_facebook_skin.xml.h:6 plugins_filemanager_skin.xml.h:6
+#: plugins_gmediarender_skin.xml.h:1 plugins_imdbapi_skin.xml.h:11
+#: plugins_imdb_skin.xml.h:11 plugins_instar_skin.xml.h:20
+#: plugins_lcdpearl1_skin.xml.h:14 plugins_lcdsamsung_skin.xml.h:18
+#: plugins_mc_skin.xml.h:69 plugins_networkbrowser_skin.xml.h:32
+#: plugins_panel_skin.xml.h:28 plugins_readerconfig_skin.xml.h:8
+#: plugins_tithek_skin.xml.h:14 plugins_tiwakeup_skin.xml.h:9
+#: plugins_tmc_skin.xml.h:18 plugins_tmdb_skin.xml.h:11
+#: plugins_weather_skin.xml.h:4 plugins_zapback_skin.xml.h:7
+#: skins_autotimer_skin.xml.h:10 skins_callmonitor1_skin.xml.h:19
+#: skins_catcatch_skin.xml.h:7 skins_facebook_skin.xml.h:6
+#: skins_filemanager_skin.xml.h:6 skins_gmediarender_skin.xml.h:1
+#: skins_imdbapi_skin.xml.h:11 skins_imdb_skin.xml.h:11
+#: skins_instar_skin.xml.h:20 skins_lcdpearl1_skin.xml.h:14
+#: skins_lcdsamsung_skin.xml.h:18 skins_mc_skin.xml.h:69
+#: skins_networkbrowser_skin.xml.h:32 skins_panel_skin.xml.h:28
+#: skins_readerconfig_skin.xml.h:8 skins_tithek_skin.xml.h:14
+#: skins_tiwakeup_skin.xml.h:9 skins_tmc_skin.xml.h:18
+#: skins_tmdb_skin.xml.h:11 skins_weather_skin.xml.h:4
+#: skins_zapback_skin.xml.h:7
 msgid ""
 msgstr ""
 
@@ -1584,44 +1891,54 @@ msgstr ""
 #: tithek.h:521 tithek.h:484 tithek.h:502 tithek.h:523 tithek.h:544
 #: tithek.h:552 tithek.h:459 tithek.h:483 tithek.h:501 tithek.h:522
 #: tithek.h:560 tithek.h:461 tithek.h:503 tithek.h:524 tithek.h:562
+#: filemanager.h:306 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1348
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
 #: mc_main.h:43 mc_main.h:48 mc_main.h:53 mc_main.h:58 mc_main.h:71
 #: mc_main.h:76 mc_main.h:81 mc_main.h:37 mc_main.h:42 mc_main.h:47
-#: mc_main.h:52 mc_main.h:64 mc_main.h:69 mc_main.h:74
+#: mc_main.h:52 mc_main.h:64 mc_main.h:69 mc_main.h:74 mc_main.h:73
+#: mc_main.h:78
 msgid "comming soon"
 msgstr ""
 
 #: mc_main.h:172 panel_main.h:29 panel_main.h:243 mc_main.h:146 mc_main.h:144
+#: mc_main.h:201 panel_main.h:135
 msgid "Menu not implemented !"
 msgstr ""
 
 #: mc_pictureplayer_settings.h:37 mc_pictureplayer_settings.h:46
+#: mc_pictureplayer_settings.h:60
 msgid "MTH House"
 msgstr ""
 
 #: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:47
+#: mc_pictureplayer_settings.h:61
 msgid "Radio Funclub"
 msgstr ""
 
 #: mc_pictureplayer_settings.h:39 mc_pictureplayer_settings.h:48
+#: mc_pictureplayer_settings.h:62
 msgid "Radio Funclub 80s"
 msgstr ""
 
 #: mc_pictureplayer_settings.h:40 mc_pictureplayer_settings.h:49
+#: mc_pictureplayer_settings.h:63
 msgid "Antenne Kaernten"
 msgstr ""
 
 #: mc_pictureplayer_settings.h:41 mc_pictureplayer_settings.h:50
+#: mc_pictureplayer_settings.h:64
 msgid "Onkelz Rock Radio"
 msgstr ""
 
 #: mc_pictureplayer_settings.h:42 mc_pictureplayer_settings.h:51
+#: mc_pictureplayer_settings.h:59 mc_pictureplayer_settings.h:65
 msgid "Jump"
 msgstr ""
 
 #: mc_pictureplayer_settings.h:43 mc_pictureplayer_settings.h:52
+#: mc_pictureplayer_settings.h:66
 msgid "Raute Musik FM"
 msgstr ""
 
@@ -1633,7 +1950,7 @@ msgstr ""
 msgid "skin (picmem jpg)"
 msgstr ""
 
-#: moduleconfig.h:30
+#: moduleconfig.h:30 moduleconfig.h:328
 msgid "Slot "
 msgstr ""
 
@@ -1649,69 +1966,76 @@ msgstr ""
 #: transponder.h:258 transponder.h:273 transponder.h:286 transponder.h:340
 #: transponder.h:373 transponder.h:408 transponder.h:421 transponder.h:432
 #: transponder.h:502 skin_default_skin.xml.h:474 skin_default_skin.xml.h:475
-#: skin_default_skin.xml.h:476
+#: skin_default_skin.xml.h:476 bgdownload.h:87 moduleconfig.h:335
+#: transponder.h:121 transponder.h:157 transponder.h:193 transponder.h:226
+#: transponder.h:294 transponder.h:329 transponder.h:347 transponder.h:363
+#: transponder.h:417 transponder.h:450 transponder.h:479 transponder.h:492
+#: transponder.h:503 transponder.h:573 youtube.h:86
 msgid "unknown"
 msgstr ""
 
-#: moduleconfig.h:42
+#: moduleconfig.h:42 moduleconfig.h:340
 msgid "Status: "
 msgstr ""
 
-#: moduleconfig.h:46
+#: moduleconfig.h:46 moduleconfig.h:344
 msgid "empty"
 msgstr ""
 
-#: moduleconfig.h:48
+#: moduleconfig.h:48 moduleconfig.h:346
 msgid "initializing"
 msgstr ""
 
-#: moduleconfig.h:50
+#: moduleconfig.h:50 moduleconfig.h:348
 msgid "ready"
 msgstr ""
 
-#: moduleconfig.h:65
+#: moduleconfig.h:65 moduleconfig.h:364
 msgid "Single Service"
 msgstr ""
 
-#: moduleconfig.h:66
+#: moduleconfig.h:66 moduleconfig.h:365
 msgid "Multiple Service"
 msgstr ""
 
-#: multiepg.h:433
+#: multiepg.h:433 multiepg.h:437 multiepg.h:627
 msgid "MULTI EPG - Bouquets"
 msgstr ""
 
-#: multiepg.h:446
+#: multiepg.h:446 multiepg.h:450
 msgid "MULTI EPG - Channel"
 msgstr ""
 
-#: multiepg.h:459
+#: multiepg.h:459 multiepg.h:463
 msgid "MULTI EPG - Satellites"
 msgstr ""
 
-#: multiepg.h:472
+#: multiepg.h:472 multiepg.h:476
 msgid "MULTI EPG - Provider"
 msgstr ""
 
-#: multiepg.h:485
+#: multiepg.h:485 multiepg.h:489
 msgid "MULTI EPG - All Channels"
 msgstr ""
 
 #: networkbrowser.h:23 networkbrowser.h:25 networkbrowser.h:788
 #: networkbrowser.h:806 networkbrowser.h:811 networkbrowser.h:838
 #: networkbrowser.h:840 networkbrowser.h:836 networkbrowser.h:854
+#: networkbrowser.h:984 networkbrowser.h:985
 msgid "Scanning Network Shares, please wait !!"
 msgstr ""
 
 #: networkbrowser.h:30 networkbrowser.h:34 networkbrowser.h:806
 #: networkbrowser.h:824 networkbrowser.h:829 networkbrowser.h:856
 #: networkbrowser.h:858 networkbrowser.h:854 networkbrowser.h:872
+#: networkbrowser.h:1005
 msgid "Networkbrowser - show scanned DNS-Shares"
 msgstr ""
 
 #: networkbrowser.h:47 networkbrowser.h:56 networkbrowser.h:813
 #: networkbrowser.h:831 networkbrowser.h:836 networkbrowser.h:863
 #: networkbrowser.h:865 networkbrowser.h:861 networkbrowser.h:879
+#: networkbrowser.h:1026
 msgid "Networkbrowser - show scanned cifs/nfs-Shares"
 msgstr ""
 
@@ -1723,7 +2047,7 @@ msgstr ""
 #: networkbrowser.h:437 networkbrowser.h:434 networkbrowser.h:442
 #: networkbrowser.h:1117 networkbrowser.h:1089 networkbrowser.h:1094
 #: networkbrowser.h:1143 networkbrowser.h:1145 networkbrowser.h:1144
-#: networkbrowser.h:1159
+#: networkbrowser.h:1159 networkbrowser.h:1372
 msgid "cifs"
 msgstr ""
 
@@ -1731,7 +2055,7 @@ msgstr ""
 #: networkbrowser.h:438 networkbrowser.h:435 networkbrowser.h:443
 #: networkbrowser.h:1118 networkbrowser.h:1090 networkbrowser.h:1095
 #: networkbrowser.h:1144 networkbrowser.h:1146 networkbrowser.h:1145
-#: networkbrowser.h:1160
+#: networkbrowser.h:1160 networkbrowser.h:1373
 msgid "nfs"
 msgstr ""
 
@@ -1739,7 +2063,7 @@ msgstr ""
 #: networkbrowser.h:439 networkbrowser.h:436 networkbrowser.h:444
 #: networkbrowser.h:1119 networkbrowser.h:1091 networkbrowser.h:1096
 #: networkbrowser.h:1145 networkbrowser.h:1147 networkbrowser.h:1146
-#: networkbrowser.h:1161
+#: networkbrowser.h:1161 networkbrowser.h:1374
 msgid "ftpfs"
 msgstr ""
 
@@ -1747,7 +2071,7 @@ msgstr ""
 #: networkbrowser.h:477 networkbrowser.h:474 networkbrowser.h:482
 #: networkbrowser.h:1152 networkbrowser.h:1124 networkbrowser.h:1129
 #: networkbrowser.h:1178 networkbrowser.h:1180 networkbrowser.h:1179
-#: networkbrowser.h:1194
+#: networkbrowser.h:1194 networkbrowser.h:1409
 msgid "ssl_try"
 msgstr ""
 
@@ -1755,7 +2079,7 @@ msgstr ""
 #: networkbrowser.h:478 networkbrowser.h:475 networkbrowser.h:483
 #: networkbrowser.h:1153 networkbrowser.h:1125 networkbrowser.h:1130
 #: networkbrowser.h:1179 networkbrowser.h:1181 networkbrowser.h:1180
-#: networkbrowser.h:1195
+#: networkbrowser.h:1195 networkbrowser.h:1410
 msgid "ssl_control"
 msgstr ""
 
@@ -1767,6 +2091,8 @@ msgstr ""
 #: networkbrowser.h:1126 networkbrowser.h:1131 networkbrowser.h:1180
 #: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
 #: networkbrowser.h:1182 networkbrowser.h:1181 networkbrowser.h:1196
+#: networkbrowser.h:1411 plugins_networkbrowser_skin.xml.h:24
+#: skins_networkbrowser_skin.xml.h:24
 msgid "ssl"
 msgstr ""
 
@@ -1774,7 +2100,7 @@ msgstr ""
 #: networkbrowser.h:482 networkbrowser.h:479 networkbrowser.h:487
 #: networkbrowser.h:1157 networkbrowser.h:1129 networkbrowser.h:1134
 #: networkbrowser.h:1183 networkbrowser.h:1185 networkbrowser.h:1184
-#: networkbrowser.h:1199
+#: networkbrowser.h:1199 networkbrowser.h:1414
 msgid "socks5"
 msgstr ""
 
@@ -1782,7 +2108,7 @@ msgstr ""
 #: networkbrowser.h:483 networkbrowser.h:480 networkbrowser.h:488
 #: networkbrowser.h:1158 networkbrowser.h:1130 networkbrowser.h:1135
 #: networkbrowser.h:1184 networkbrowser.h:1186 networkbrowser.h:1185
-#: networkbrowser.h:1200
+#: networkbrowser.h:1200 networkbrowser.h:1415
 msgid "socks4"
 msgstr ""
 
@@ -1790,7 +2116,7 @@ msgstr ""
 #: networkbrowser.h:484 networkbrowser.h:481 networkbrowser.h:489
 #: networkbrowser.h:1159 networkbrowser.h:1131 networkbrowser.h:1136
 #: networkbrowser.h:1185 networkbrowser.h:1187 networkbrowser.h:1186
-#: networkbrowser.h:1201
+#: networkbrowser.h:1201 networkbrowser.h:1416
 msgid "html"
 msgstr ""
 
@@ -1798,7 +2124,7 @@ msgstr ""
 #: networkbrowser.h:531 networkbrowser.h:528 networkbrowser.h:536
 #: networkbrowser.h:1205 networkbrowser.h:1177 networkbrowser.h:1182
 #: networkbrowser.h:1231 networkbrowser.h:1233 networkbrowser.h:1232
-#: networkbrowser.h:1247
+#: networkbrowser.h:1247 networkbrowser.h:1466
 msgid "udp"
 msgstr ""
 
@@ -1806,7 +2132,7 @@ msgstr ""
 #: networkbrowser.h:532 networkbrowser.h:529 networkbrowser.h:537
 #: networkbrowser.h:1206 networkbrowser.h:1178 networkbrowser.h:1183
 #: networkbrowser.h:1232 networkbrowser.h:1234 networkbrowser.h:1233
-#: networkbrowser.h:1248
+#: networkbrowser.h:1248 networkbrowser.h:1467
 msgid "tcp"
 msgstr ""
 
@@ -1836,7 +2162,7 @@ msgstr ""
 #: networkbrowser.h:545 networkbrowser.h:789 networkbrowser.h:553
 #: networkbrowser.h:797 networkbrowser.h:956 networkbrowser.h:919
 #: networkbrowser.h:924 networkbrowser.h:967 networkbrowser.h:969
-#: networkbrowser.h:965 networkbrowser.h:983
+#: networkbrowser.h:965 networkbrowser.h:983 networkbrowser.h:1153
 msgid "Add Cifs Network Share"
 msgstr ""
 
@@ -1846,7 +2172,7 @@ msgstr ""
 #: networkbrowser.h:818 networkbrowser.h:582 networkbrowser.h:826
 #: networkbrowser.h:983 networkbrowser.h:955 networkbrowser.h:960
 #: networkbrowser.h:1003 networkbrowser.h:1005 networkbrowser.h:1002
-#: networkbrowser.h:1019
+#: networkbrowser.h:1019 networkbrowser.h:1203
 msgid "Add Nfs Network Share"
 msgstr ""
 
@@ -1856,7 +2182,7 @@ msgstr ""
 #: networkbrowser.h:603 networkbrowser.h:847 networkbrowser.h:611
 #: networkbrowser.h:855 networkbrowser.h:1010 networkbrowser.h:982
 #: networkbrowser.h:987 networkbrowser.h:1030 networkbrowser.h:1032
-#: networkbrowser.h:1046
+#: networkbrowser.h:1046 networkbrowser.h:1243
 msgid "Add Ftpfs Network Share"
 msgstr ""
 
@@ -1864,7 +2190,7 @@ msgstr ""
 #: networkbrowser.h:1007 networkbrowser.h:1011 networkbrowser.h:1008
 #: networkbrowser.h:1016 networkbrowser.h:1282 networkbrowser.h:1254
 #: networkbrowser.h:1259 networkbrowser.h:1322 networkbrowser.h:1324
-#: networkbrowser.h:1323 networkbrowser.h:1338
+#: networkbrowser.h:1323 networkbrowser.h:1338 networkbrowser.h:1562
 msgid "Are you sure you want to save this network mount?"
 msgstr ""
 
@@ -1905,7 +2231,7 @@ msgstr ""
 #: networkbrowser.h:1267 networkbrowser.h:1364 networkbrowser.h:1336
 #: networkbrowser.h:1341 networkbrowser.h:1404 networkbrowser.h:1406
 #: networkbrowser.h:1419 networkbrowser.h:1415 networkbrowser.h:1416
-#: networkbrowser.h:1431
+#: networkbrowser.h:1431 networkbrowser.h:1658
 msgid "Are you sure you want remove this share?"
 msgstr ""
 
@@ -1926,11 +2252,14 @@ msgstr ""
 #: skin_default_skin.xml.h:24 skin_default_skin.xml.h:284
 #: skin_default_skin.xml.h:25 skin_default_skin.xml.h:285
 #: skin_default_skin.xml.h:286 skin_default_skin.xml.h:287
-#: skin_default_skin.xml.h:288
+#: skin_default_skin.xml.h:288 network.h:285 network.h:300
+#: plugins_mc_skin.xml.h:37 plugins_panel_skin.xml.h:18 skins_mc_skin.xml.h:37
+#: skins_panel_skin.xml.h:18 system_infos.h:89
 msgid "Network"
 msgstr ""
 
 #: network.h:186 network.h:187 network.h:264 network.h:273 network.h:284
+#: network.h:285
 msgid "comming soon..."
 msgstr ""
 
@@ -1939,7 +2268,7 @@ msgid "Restart Network ?"
 msgstr ""
 
 #: network.h:197 network.h:198 network.h:275 network.h:299 network.h:308
-#: network.h:319
+#: network.h:319 network.h:336
 msgid "Restart Network"
 msgstr ""
 
@@ -1951,12 +2280,12 @@ msgstr ""
 
 #: network.h:269 network.h:275 panel_settings.h:43 network.h:270 network.h:276
 #: network.h:347 network.h:353 network.h:371 network.h:377 network.h:380
-#: network.h:386 network.h:391 network.h:397 network.h:389
+#: network.h:386 network.h:391 network.h:397 network.h:389 panel_settings.h:29
 msgid "disable"
 msgstr ""
 
 #: network.h:301 network.h:302 network.h:379 network.h:403 network.h:412
-#: network.h:423 network.h:424
+#: network.h:423 network.h:424 network.h:427
 msgid "save network settings ?"
 msgstr ""
 
@@ -1966,16 +2295,19 @@ msgstr ""
 
 #: network.h:469 network.h:474 network.h:556 network.h:561 network.h:585
 #: network.h:586 network.h:595 network.h:606 network.h:607 network.h:608
+#: network.h:681
 msgid "WEP"
 msgstr ""
 
 #: network.h:470 network.h:475 network.h:557 network.h:562 network.h:586
 #: network.h:587 network.h:596 network.h:607 network.h:608 network.h:609
+#: network.h:682
 msgid "WPA"
 msgstr ""
 
 #: network.h:471 network.h:476 network.h:558 network.h:563 network.h:587
 #: network.h:588 network.h:597 network.h:608 network.h:609 network.h:610
+#: network.h:683
 msgid "WPA2"
 msgstr ""
 
@@ -1998,6 +2330,7 @@ msgstr ""
 #: panel_extensions.h:67 panel_extensions.h:123 panel_extensions.h:157
 #: panel_extensions.h:51 panel_extensions.h:95 panel_extensions.h:129
 #: panel_extensions.h:136 panel_extensions.h:96 panel_extensions.h:137
+#: extensions.h:135 extensions.h:191 extensions.h:273
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
@@ -2026,84 +2359,94 @@ msgstr ""
 msgid "No IPK found in /tmp"
 msgstr ""
 
-#: panel_feed.h:20
+#: panel_feed.h:20 extensions.h:20
 msgid "Feed"
 msgstr ""
 
 #: panel_infos.h:17 plugins_panel_skin.xml.h:47 skins_panel_skin.xml.h:47
+#: info.h:48 info.h:64 info.h:81 plugins_panel_skin.xml.h:17
+#: skins_panel_skin.xml.h:17
 msgid "Infos"
 msgstr ""
 
 #: panel_infos.h:35 plugins_panel_skin.xml.h:35 skins_panel_skin.xml.h:35
+#: plugins_panel_skin.xml.h:14 skins_panel_skin.xml.h:14 system_infos.h:17
 msgid "Default"
 msgstr ""
 
-#: panel_infos.h:66
+#: panel_infos.h:66 system_infos.h:49
 msgid "Free Space"
 msgstr ""
 
 #: panel_infos.h:75 plugins_panel_skin.xml.h:52 skins_panel_skin.xml.h:52
+#: system_infos.h:63
 msgid "Kernel"
 msgstr ""
 
 #: panel_infos.h:84 plugins_panel_skin.xml.h:55 skins_panel_skin.xml.h:55
+#: system_infos.h:73
 msgid "Mounts"
 msgstr ""
 
 #: panel_infos.h:106 plugins_panel_skin.xml.h:59 skins_panel_skin.xml.h:59
+#: system_infos.h:101
 msgid "Ram"
 msgstr ""
 
-#: panel_infos_sysinfo.h:15
+#: panel_infos_sysinfo.h:15 system_infos_sysinfo.h:16
 msgid "CPU info"
 msgstr ""
 
-#: panel_infos_sysinfo.h:24
+#: panel_infos_sysinfo.h:24 system_infos_sysinfo.h:26
 msgid "Memory info"
 msgstr ""
 
-#: panel_infos_sysinfo.h:33
+#: panel_infos_sysinfo.h:33 system_infos_sysinfo.h:36
 msgid "MTD info"
 msgstr ""
 
-#: panel_infos_sysinfo.h:42
+#: panel_infos_sysinfo.h:42 system_infos_sysinfo.h:46
 msgid "Module info"
 msgstr ""
 
 #: panel_infos_sysinfo.h:51 plugins_panel_skin.xml.h:37
-#: skins_panel_skin.xml.h:37
+#: skins_panel_skin.xml.h:37 system_infos_sysinfo.h:56
 msgid "Devices"
 msgstr ""
 
-#: panel_infos_sysinfo.h:64
+#: panel_infos_sysinfo.h:64 system_infos_sysinfo.h:70
 msgid "Swap info"
 msgstr ""
 
-#: panel_infos_sysinfo.h:101
+#: panel_infos_sysinfo.h:101 system_infos_sysinfo.h:108
 msgid "Top Info"
 msgstr ""
 
 #: panel_settings_autostart.h:26 panel_settings_autostart.h:132
+#: panel_settings_autostart.h:104
 msgid "Autostart Defaults"
 msgstr ""
 
-#: panel_settings_autostart.h:31
+#: panel_settings_autostart.h:31 panel_settings_autostart.h:34
 msgid "fsckroot"
 msgstr ""
 
-#: panel_settings_autostart.h:38
+#: panel_settings_autostart.h:38 panel_settings_autostart.h:44
 msgid "bootstop"
 msgstr ""
 
-#: panel_settings_autostart.h:50
+#: panel_settings_autostart.h:50 panel_settings_autostart.h:59
 msgid "debug"
 msgstr ""
 
 #: panel_settings_autostart.h:51 panel_settings_autostart.h:151
+#: panel_settings_autostart.h:60 panel_settings_autostart.h:132 tmc.h:558
 msgid "high"
 msgstr ""
 
 #: panel_settings_autostart.h:51 panel_settings_autostart.h:151
+#: mc_pictureplayer_settings.h:29 panel_settings_autostart.h:60
+#: panel_settings_autostart.h:132
 msgid "low"
 msgstr ""
 
@@ -2143,15 +2486,15 @@ msgstr ""
 msgid "progressbar"
 msgstr ""
 
-#: panel_settings_autostart.h:101
+#: panel_settings_autostart.h:101 panel_settings_autostart.h:69
 msgid "showip"
 msgstr ""
 
-#: panel_settings_autostart.h:102
+#: panel_settings_autostart.h:102 panel_settings_autostart.h:70
 msgid "status"
 msgstr ""
 
-#: panel_settings_autostart.h:102
+#: panel_settings_autostart.h:102 panel_settings_autostart.h:70
 msgid "ip"
 msgstr ""
 
@@ -2163,35 +2506,35 @@ msgstr ""
 msgid "playlist"
 msgstr ""
 
-#: panel_settings_autostart.h:119
+#: panel_settings_autostart.h:119 panel_settings_autostart.h:78
 msgid "updatelist"
 msgstr ""
 
-#: panel_settings_autostart.h:137
+#: panel_settings_autostart.h:137 panel_settings_autostart.h:112
 msgid "Old Audiofw"
 msgstr ""
 
-#: panel_settings_autostart.h:144
+#: panel_settings_autostart.h:144 panel_settings_autostart.h:122
 msgid "No Audiosync"
 msgstr ""
 
-#: panel_settings_autostart.h:150
+#: panel_settings_autostart.h:150 panel_settings_autostart.h:131
 msgid "Boot Resolution"
 msgstr ""
 
-#: panel_settings_autostart.h:156
+#: panel_settings_autostart.h:156 panel_settings_autostart.h:140
 msgid "Bootlogo"
 msgstr ""
 
-#: panel_settings_autostart.h:162
+#: panel_settings_autostart.h:162 panel_settings_autostart.h:149
 msgid "Poweroff"
 msgstr ""
 
-#: panel_settings_autostart.h:168
+#: panel_settings_autostart.h:168 panel_settings_autostart.h:158
 msgid "Scart On Standby"
 msgstr ""
 
-#: panel_settings_autostart.h:174
+#: panel_settings_autostart.h:174 panel_settings_autostart.h:167
 msgid "HighSR"
 msgstr ""
 
@@ -2199,56 +2542,56 @@ msgstr ""
 msgid "Tuner Sleep Off"
 msgstr ""
 
-#: panel_settings_autostart.h:186
+#: panel_settings_autostart.h:186 panel_settings_autostart.h:176
 msgid "Boot RGB Fix"
 msgstr ""
 
-#: panel_settings_autostart.h:195
+#: panel_settings_autostart.h:195 panel_settings_autostart.h:186
 msgid "Autostart USB"
 msgstr ""
 
-#: panel_settings_autostart.h:199
+#: panel_settings_autostart.h:199 panel_settings_autostart.h:192
 msgid "Load Partition"
 msgstr ""
 
-#: panel_settings_autostart.h:205
+#: panel_settings_autostart.h:205 panel_settings_autostart.h:201
 msgid "Fsck Record"
 msgstr ""
 
 #: panel_settings_autostart.h:211 plugins_panel_skin.xml.h:73
-#: skins_panel_skin.xml.h:73
+#: skins_panel_skin.xml.h:73 panel_settings_autostart.h:210
 msgid "Swap"
 msgstr ""
 
-#: panel_settings_autostart.h:216
+#: panel_settings_autostart.h:216 panel_settings_autostart.h:219
 msgid "Swap Size"
 msgstr ""
 
-#: panel_settings_autostart.h:230
+#: panel_settings_autostart.h:230 panel_settings_autostart.h:236
 msgid "Fsck Swap"
 msgstr ""
 
-#: panel_settings_autostart.h:236
+#: panel_settings_autostart.h:236 panel_settings_autostart.h:245
 msgid "Record Max Sectors"
 msgstr ""
 
-#: panel_settings_autostart.h:250
+#: panel_settings_autostart.h:250 panel_settings_autostart.h:262
 msgid "Swap Max Sectors"
 msgstr ""
 
-#: panel_settings_autostart.h:266
+#: panel_settings_autostart.h:266 panel_settings_autostart.h:279
 msgid "Autostart EMU"
 msgstr ""
 
-#: panel_settings_autostart.h:270
+#: panel_settings_autostart.h:270 panel_settings_autostart.h:285
 msgid "Emu Control"
 msgstr ""
 
-#: panel_settings_autostart.h:276
+#: panel_settings_autostart.h:276 panel_settings_autostart.h:294
 msgid "ftdi"
 msgstr ""
 
-#: panel_settings_autostart.h:282
+#: panel_settings_autostart.h:282 panel_settings_autostart.h:303
 msgid "pl2303"
 msgstr ""
 
@@ -2292,27 +2635,27 @@ msgstr ""
 msgid "Iwatch"
 msgstr ""
 
-#: panel_settings_autostart.h:308
+#: panel_settings_autostart.h:308 panel_settings_autostart.h:318
 msgid "nfs server"
 msgstr ""
 
-#: panel_settings_autostart.h:314
+#: panel_settings_autostart.h:314 panel_settings_autostart.h:327
 msgid "samba server"
 msgstr ""
 
-#: panel_settings_autostart.h:320
+#: panel_settings_autostart.h:320 panel_settings_autostart.h:336
 msgid "scan wlan"
 msgstr ""
 
-#: panel_settings_autostart.h:327
+#: panel_settings_autostart.h:327 panel_settings_autostart.h:344
 msgid "Autostart Child Safety"
 msgstr ""
 
-#: panel_settings_autostart.h:331
+#: panel_settings_autostart.h:331 panel_settings_autostart.h:350
 msgid "Parental"
 msgstr ""
 
-#: panel_settings_autostart.h:337
+#: panel_settings_autostart.h:337 panel_settings_autostart.h:359
 msgid "Pin"
 msgstr ""
 
@@ -2339,19 +2682,19 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: panel_settings.h:37
+#: panel_settings.h:37 panel_settings.h:21
 msgid "Automount Config"
 msgstr ""
 
-#: panel_settings.h:41
+#: panel_settings.h:41 panel_settings.h:27
 msgid "Ntfs Write"
 msgstr ""
 
-#: panel_settings.h:44
+#: panel_settings.h:44 panel_settings.h:30
 msgid "ntfs-3g"
 msgstr ""
 
-#: panel_settings.h:45
+#: panel_settings.h:45 panel_settings.h:31
 msgid "ntfsmount"
 msgstr ""
 
@@ -2363,51 +2706,55 @@ msgstr ""
 msgid "Open Panel when pressing red button:"
 msgstr ""
 
-#: panel_settings_overclocking.h:193
+#: panel_settings_overclocking.h:193 panel_settings_overclocking.h:213
 msgid "Only Boot Overclock"
 msgstr ""
 
-#: panel_settings_overclocking.h:202
+#: panel_settings_overclocking.h:202 panel_settings_overclocking.h:222
 msgid "CPU frequency"
 msgstr ""
 
-#: panel_settings_overclocking.h:213
+#: panel_settings_overclocking.h:213 panel_settings_overclocking.h:233
 msgid "FDMA bypass"
 msgstr ""
 
-#: panel_settings_overclocking.h:223
+#: panel_settings_overclocking.h:223 panel_settings_overclocking.h:243
 msgid "Reduce Standby frequency"
 msgstr ""
 
 #: panel_settings_overclocking.h:233 panel_settings_overclocking.h:299
+#: panel_settings_overclocking.h:253 panel_settings_overclocking.h:319
 msgid "Standby frequency"
 msgstr ""
 
-#: panel_settings_overclocking.h:255
+#: panel_settings_overclocking.h:255 panel_settings_overclocking.h:275
 msgid "Use Teletxt Workaround"
 msgstr ""
 
-#: panel_settings_overclocking.h:256
+#: panel_settings_overclocking.h:256 panel_settings_overclocking.h:276
 msgid "frequency"
 msgstr ""
 
-#: panel_settings_overclocking.h:256
+#: panel_settings_overclocking.h:256 panel_settings_overclocking.h:276
 msgid "videmode"
 msgstr ""
 
-#: panel_softcam.h:241
+#: panel_softcam.h:241 softcam.h:289
 msgid "Softcam selection:"
 msgstr ""
 
 #: panel_softcam.h:242 plugins_panel_skin.xml.h:33 skins_panel_skin.xml.h:33
+#: softcam.h:290
 msgid "Deactivate"
 msgstr ""
 
 #: panel_softcam.h:244 plugins_panel_skin.xml.h:61 skins_panel_skin.xml.h:61
+#: softcam.h:292
 msgid "Refresh"
 msgstr ""
 
 #: panel_softcam.h:245 plugins_panel_skin.xml.h:20 skins_panel_skin.xml.h:20
+#: softcam.h:293
 msgid "Activate"
 msgstr ""
 
@@ -2417,81 +2764,89 @@ msgstr ""
 #: skin_default_skin.xml.h:138 skin_default_skin.xml.h:139
 #: skin_default_skin.xml.h:140 skin_default_skin.xml.h:142
 #: skin_default_skin.xml.h:143 skin_default_skin.xml.h:144
+#: plugins_panel_skin.xml.h:12 skins_panel_skin.xml.h:12 system_backup.h:20
 msgid "Cancel"
 msgstr ""
 
 #: panel_system_backup.h:20 plugins_panel_skin.xml.h:24
-#: skins_panel_skin.xml.h:24
+#: skins_panel_skin.xml.h:24 system_backup.h:21
 msgid "Backup"
 msgstr ""
 
 #: panel_system_backup.h:23 plugins_panel_skin.xml.h:3
-#: skins_panel_skin.xml.h:3
+#: skins_panel_skin.xml.h:3 system_backup.h:24
 msgid "Create Backup"
 msgstr ""
 
-#: panel_system.h:11
+#: panel_system.h:11 restoredefault.h:32
 msgid ""
 "Do you really want to erase all datas and backups from Swap?\n"
 "The Box will reboot and the erase will be started!"
 msgstr ""
 
-#: panel_system.h:22
+#: panel_system.h:22 panel_settings_wizard.h:6
 msgid ""
 "Do you really want to start the Wizard?\n"
 "The Box will reboot and the Wizard will be started!"
 msgstr ""
 
-#: panel_system.h:138
+#: panel_system.h:138 system_update.h:99
 msgid "non-version"
 msgstr ""
 
-#: panel_system.h:227 panel_system.h:291
+#: panel_system.h:227 panel_system.h:291 system_update.h:194
+#: system_update.h:268
 msgid "starting Kernel Update ?"
 msgstr ""
 
-#: panel_system.h:235 panel_system.h:298
+#: panel_system.h:235 panel_system.h:298 system_update.h:202
+#: system_update.h:275
 msgid "starting Fw Update ?"
 msgstr ""
 
-#: panel_system.h:243
+#: panel_system.h:243 system_update.h:210
 msgid "starting Root Update ?"
 msgstr ""
 
-#: panel_system.h:251 panel_system.h:312
+#: panel_system.h:251 panel_system.h:312 system_update.h:218
+#: system_update.h:289
 msgid "starting Var Update ?"
 msgstr ""
 
-#: panel_system.h:259 panel_system.h:319
+#: panel_system.h:259 panel_system.h:319 system_update.h:226
+#: system_update.h:296
 msgid "starting Full Update ?"
 msgstr ""
 
-#: panel_system.h:269 panel_system.h:328
+#: panel_system.h:269 panel_system.h:328 system_update.h:236
+#: system_update.h:305
 msgid "starting Usb Update ?"
 msgstr ""
 
-#: panel_system.h:279 panel_system.h:337
+#: panel_system.h:279 panel_system.h:337 system_update.h:246
+#: system_update.h:314
 msgid "starting Fullusb Update ?"
 msgstr ""
 
-#: panel_system.h:305
+#: panel_system.h:305 system_update.h:282
 msgid "starting Root Update starten ?"
 msgstr ""
 
-#: panel_system.h:343
+#: panel_system.h:343 system_update.h:330
 msgid "Error file not supported"
 msgstr ""
 
 #: panel_system_restore.h:17 panel_system_restore.h:74
 #: plugins_panel_skin.xml.h:2 skins_panel_skin.xml.h:2
+#: system_backup_restore.h:18 system_backup_restore.h:83
 msgid "Backup / Restore Settings"
 msgstr ""
 
-#: panel_system_restore.h:31
+#: panel_system_restore.h:31 system_backup_restore.h:32
 msgid "Restore Settings"
 msgstr ""
 
-#: panel_system_restore.h:31
+#: panel_system_restore.h:31 system_backup_restore.h:32
 msgid ""
 "Are you sure you want to restore settings?\n"
 "\n"
@@ -2499,7 +2854,7 @@ msgid ""
 "EXIT = abort restore"
 msgstr ""
 
-#: panel_system_restore.h:33
+#: panel_system_restore.h:33 system_backup_restore.h:34
 msgid ""
 "Please wait ...\n"
 "\n"
@@ -2508,53 +2863,54 @@ msgid ""
 "Box will start in few seconds."
 msgstr ""
 
-#: panel_system_restore.h:50
+#: panel_system_restore.h:50 system_backup_restore.h:52
 msgid "RESTORE ERROR"
 msgstr ""
 
-#: panel_system_restore.h:50
+#: panel_system_restore.h:50 system_backup_restore.h:52
 msgid ""
 "No backup folders found!!!\n"
 "\n"
 "Aborting restoring..."
 msgstr ""
 
-#: panel_system_restore.h:63
+#: panel_system_restore.h:63 system_backup_restore.h:73
 msgid "Backup - Settings"
 msgstr ""
 
-#: panel_system_restore.h:64
+#: panel_system_restore.h:64 system_backup_restore.h:74
 msgid ""
 "Backup started\n"
 "\n"
 "Please wait..."
 msgstr ""
 
-#: panel_system_restore.h:78
+#: panel_system_restore.h:78 system_backup_restore.h:90
 msgid "Backup created successfully"
 msgstr ""
 
-#: panel_system_restore.h:84
+#: panel_system_restore.h:84 system_backup_restore.h:96
 msgid "BACKUP ERROR"
 msgstr ""
 
-#: panel_system_restore.h:84
+#: panel_system_restore.h:84 system_backup_restore.h:96
 msgid ""
 "A record hdd or a swapstick must be mounted!\n"
 "\n"
 "Aborting backup..."
 msgstr ""
 
-#: pin.h:83 adjust.h:164
+#: pin.h:83 adjust.h:164 adjust.h:170
 msgid "hidden"
 msgstr ""
 
 #: play.h:551 play.h:557 play.h:563 play.h:587 play.h:593 play.h:590
-#: play.h:596
+#: play.h:596 play.h:1149 play.h:1155 plugins_tmc_skin.xml.h:1
+#: skins_tmc_skin.xml.h:1
 msgid "EPG Info"
 msgstr ""
 
-#: play.h:559 play.h:565 play.h:571 play.h:601 play.h:604
+#: play.h:559 play.h:565 play.h:571 play.h:601 play.h:604 play.h:1165
 msgid "Realy Delete ?"
 msgstr ""
 
@@ -2567,12 +2923,14 @@ msgstr ""
 #: skins_networkbrowser_skin.xml.h:3 skin_default_skin.xml.h:163
 #: skin_default_skin.xml.h:164 skin_default_skin.xml.h:165
 #: plugins_stock_skin.xml.h:4 plugins_weather_skin.xml.h:3
-#: skins_stock_skin.xml.h:4 skins_weather_skin.xml.h:3
+#: skins_stock_skin.xml.h:4 skins_weather_skin.xml.h:3 play.h:1283
+#: plugins_weather_skin.xml.h:2 skins_weather_skin.xml.h:2
 msgid "DEL"
 msgstr ""
 
 #: play.h:633 play.h:639 play.h:645 play.h:675 play.h:676 dvdplay.h:27
 #: play.h:679 dvdplay.h:29 plugins_dlna_skin.xml.h:10 skins_dlna_skin.xml.h:10
+#: play.h:1283
 msgid "SELECT"
 msgstr ""
 
@@ -2626,21 +2984,28 @@ msgid "FritzBook"
 msgstr ""
 
 #: plugins_callmonitor1_skin.xml.h:12 skins_callmonitor1_skin.xml.h:12
+#: plugins_callmonitor1_skin.xml.h:13 skins_callmonitor1_skin.xml.h:13
 msgid "IP-FritzBox"
 msgstr ""
 
 #: plugins_callmonitor1_skin.xml.h:13 skins_callmonitor1_skin.xml.h:13
+#: plugins_callmonitor1_skin.xml.h:15 skins_callmonitor1_skin.xml.h:15
 msgid "Passwort-FritzBox"
 msgstr ""
 
 #: plugins_callmonitor1_skin.xml.h:14 plugins_stopifnotused_skin.xml.h:5
 #: skins_callmonitor1_skin.xml.h:14 skins_stopifnotused_skin.xml.h:5
+#: plugins_autotimer_skin.xml.h:7 plugins_callmonitor1_skin.xml.h:16
+#: plugins_lcdpearl1_skin.xml.h:10 plugins_lcdsamsung_skin.xml.h:13
+#: skins_autotimer_skin.xml.h:7 skins_callmonitor1_skin.xml.h:16
+#: skins_lcdpearl1_skin.xml.h:10 skins_lcdsamsung_skin.xml.h:13
 msgid ""
 "text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 "
 "bordertype=2 posx=160 posy=0 width=150 height=30/>"
 msgstr ""
 
 #: plugins_callmonitor1_skin.xml.h:15 skins_callmonitor1_skin.xml.h:15
+#: plugins_callmonitor1_skin.xml.h:17 skins_callmonitor1_skin.xml.h:17
 msgid ""
 "text=LOAD-FritzBook halign=center valign=middle bordercol=blue bordersize=2 "
 "bordertype=2 posx=400 posy=0 width=200 height=30/>"
@@ -2648,6 +3013,10 @@ msgstr ""
 
 #: plugins_callmonitor1_skin.xml.h:16 plugins_stopifnotused_skin.xml.h:6
 #: skins_callmonitor1_skin.xml.h:16 skins_stopifnotused_skin.xml.h:6
+#: plugins_autotimer_skin.xml.h:8 plugins_callmonitor1_skin.xml.h:18
+#: plugins_lcdpearl1_skin.xml.h:11 plugins_lcdsamsung_skin.xml.h:14
+#: skins_autotimer_skin.xml.h:8 skins_callmonitor1_skin.xml.h:18
+#: skins_lcdpearl1_skin.xml.h:11 skins_lcdsamsung_skin.xml.h:14
 msgid ""
 "text=SAVE halign=center valign=middle bordercol=green bordersize=2 "
 "bordertype=2 posx=0 posy=0 width=150 height=30/>"
@@ -2667,7 +3036,9 @@ msgid "--director--"
 msgstr ""
 
 #: plugins_imdb_skin.xml.h:4 skins_imdb_skin.xml.h:4 plugins_tmdb_skin.xml.h:4
-#: skins_tmdb_skin.xml.h:4
+#: skins_tmdb_skin.xml.h:4 plugins_imdbapi_skin.xml.h:2
+#: plugins_imdb_skin.xml.h:2 plugins_tmc_skin.xml.h:4
+#: skins_imdbapi_skin.xml.h:2 skins_imdb_skin.xml.h:2 skins_tmc_skin.xml.h:4
 msgid "Director:"
 msgstr ""
 
@@ -2677,7 +3048,11 @@ msgid "--genre--"
 msgstr ""
 
 #: plugins_imdb_skin.xml.h:6 skins_imdb_skin.xml.h:6 plugins_tmdb_skin.xml.h:6
-#: skins_tmdb_skin.xml.h:6
+#: skins_tmdb_skin.xml.h:6 play.h:388 play.h:422 plugins_imdbapi_skin.xml.h:3
+#: plugins_imdb_skin.xml.h:3 plugins_mc_skin.xml.h:30 plugins_tmc_skin.xml.h:7
+#: plugins_tmdb_skin.xml.h:1 skins_imdbapi_skin.xml.h:3
+#: skins_imdb_skin.xml.h:3 skins_mc_skin.xml.h:30 skins_tmc_skin.xml.h:7
+#: skins_tmdb_skin.xml.h:1
 msgid "Genre:"
 msgstr ""
 
@@ -2692,12 +3067,18 @@ msgid "--plot--"
 msgstr ""
 
 #: plugins_imdb_skin.xml.h:9 skins_imdb_skin.xml.h:9 plugins_tmdb_skin.xml.h:9
-#: skins_tmdb_skin.xml.h:9
+#: skins_tmdb_skin.xml.h:9 plugins_imdbapi_skin.xml.h:5
+#: plugins_imdb_skin.xml.h:5 plugins_tmdb_skin.xml.h:4
+#: skins_imdbapi_skin.xml.h:5 skins_imdb_skin.xml.h:5 skins_tmdb_skin.xml.h:4
 msgid "Plot:"
 msgstr ""
 
 #: plugins_imdb_skin.xml.h:10 skins_imdb_skin.xml.h:10
 #: plugins_tmdb_skin.xml.h:10 skins_tmdb_skin.xml.h:10
+#: plugins_imdbapi_skin.xml.h:6 plugins_imdb_skin.xml.h:6
+#: plugins_tmc_skin.xml.h:13 plugins_tmdb_skin.xml.h:6
+#: skins_imdbapi_skin.xml.h:6 skins_imdb_skin.xml.h:6 skins_tmc_skin.xml.h:13
+#: skins_tmdb_skin.xml.h:6
 msgid "Release:"
 msgstr ""
 
@@ -2722,7 +3103,11 @@ msgstr ""
 
 #: plugins_imdb_skin.xml.h:15 skins_imdb_skin.xml.h:15
 #: plugins_imdb_skin.xml.h:14 skins_imdb_skin.xml.h:14
-#: plugins_tmdb_skin.xml.h:14 skins_tmdb_skin.xml.h:14
+#: plugins_tmdb_skin.xml.h:14 skins_tmdb_skin.xml.h:14 play.h:368 play.h:402
+#: plugins_imdbapi_skin.xml.h:9 plugins_imdb_skin.xml.h:9
+#: plugins_tmc_skin.xml.h:16 plugins_tmdb_skin.xml.h:9
+#: skins_imdbapi_skin.xml.h:9 skins_imdb_skin.xml.h:9 skins_tmc_skin.xml.h:16
+#: skins_tmdb_skin.xml.h:9
 msgid "Title:"
 msgstr ""
 
@@ -2735,12 +3120,15 @@ msgstr ""
 #: plugins_imdb_skin.xml.h:17 skins_imdb_skin.xml.h:17
 #: plugins_imdb_skin.xml.h:16 skins_imdb_skin.xml.h:16
 #: plugins_tmdb_skin.xml.h:16 skins_tmdb_skin.xml.h:16
+#: plugins_imdbapi_skin.xml.h:10 plugins_imdb_skin.xml.h:10
+#: skins_imdbapi_skin.xml.h:10 skins_imdb_skin.xml.h:10
 msgid "Writers:"
 msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:2 skins_lcdpearl1_skin.xml.h:2
 #: plugins_lcdpearl1_skin.xml.h:4 skins_lcdpearl1_skin.xml.h:4
 #: plugins_lcdpearl1_skin.xml.h:5 skins_lcdpearl1_skin.xml.h:5
+#: plugins_lcdpearl1_skin.xml.h:6 skins_lcdpearl1_skin.xml.h:6
 msgid "Auswahl"
 msgstr ""
 
@@ -2756,43 +3144,54 @@ msgstr ""
 msgid "MC VideoPlayer View Settings"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:4 skins_mc_skin.xml.h:4
+#: plugins_mc_skin.xml.h:4 skins_mc_skin.xml.h:4 mediadb.h:1133
+#: mediadbsettings.h:52 play.h:561 plugins_mc_skin.xml.h:6
+#: skins_mc_skin.xml.h:6 tmc.h:539
 msgid "all"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:6 skins_mc_skin.xml.h:6
+#: plugins_mc_skin.xml.h:6 skins_mc_skin.xml.h:6 plugins_mc_skin.xml.h:8
+#: skins_mc_skin.xml.h:8
 msgid "Apple Trailer"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:7 skins_mc_skin.xml.h:7
+#: plugins_mc_skin.xml.h:7 skins_mc_skin.xml.h:7 plugins_mc_skin.xml.h:9
+#: skins_mc_skin.xml.h:9
 msgid "AUDIO"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:8 skins_mc_skin.xml.h:8
+#: plugins_mc_skin.xml.h:8 skins_mc_skin.xml.h:8 plugins_mc_skin.xml.h:10
+#: skins_mc_skin.xml.h:10
 msgid "Audio Player"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:9 skins_mc_skin.xml.h:9
+#: plugins_mc_skin.xml.h:9 skins_mc_skin.xml.h:9 plugins_mc_skin.xml.h:11
+#: skins_mc_skin.xml.h:11
 msgid "AUDIO SETTINGS"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:10 skins_mc_skin.xml.h:10
+#: plugins_mc_skin.xml.h:10 skins_mc_skin.xml.h:10 plugins_mc_skin.xml.h:12
+#: skins_mc_skin.xml.h:12
 msgid "Autostart Playlist"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:13 skins_mc_skin.xml.h:13
+#: plugins_mc_skin.xml.h:13 skins_mc_skin.xml.h:13 plugins_mc_skin.xml.h:17
+#: skins_mc_skin.xml.h:17
 msgid "Datei Browser"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:18 skins_mc_skin.xml.h:18
+#: plugins_mc_skin.xml.h:18 skins_mc_skin.xml.h:18 mediadb.h:2421
+#: plugins_mc_skin.xml.h:24 skins_mc_skin.xml.h:24
 msgid "file"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:19 skins_mc_skin.xml.h:19
+#: plugins_mc_skin.xml.h:19 skins_mc_skin.xml.h:19 plugins_mc_skin.xml.h:25
+#: skins_mc_skin.xml.h:25
 msgid "filealt"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:20 skins_mc_skin.xml.h:20
+#: plugins_mc_skin.xml.h:20 skins_mc_skin.xml.h:20 plugins_mc_skin.xml.h:26
+#: skins_mc_skin.xml.h:26
 msgid "filealtresult"
 msgstr ""
 
@@ -2800,44 +3199,49 @@ msgstr ""
 msgid "Imdb Directory"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:24 skins_mc_skin.xml.h:24
+#: plugins_mc_skin.xml.h:24 skins_mc_skin.xml.h:24 plugins_mc_skin.xml.h:31
+#: skins_mc_skin.xml.h:31
 msgid "Internet Browser"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:25 skins_mc_skin.xml.h:25
+#: plugins_mc_skin.xml.h:25 skins_mc_skin.xml.h:25 plugins_mc_skin.xml.h:32
+#: skins_mc_skin.xml.h:32
 msgid "Interval"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:26 skins_mc_skin.xml.h:26
+#: plugins_mc_skin.xml.h:26 skins_mc_skin.xml.h:26 plugins_mc_skin.xml.h:35
+#: skins_mc_skin.xml.h:35
 msgid "mvid"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:27 skins_mc_skin.xml.h:27
+#: plugins_mc_skin.xml.h:27 skins_mc_skin.xml.h:27 plugins_mc_skin.xml.h:36
+#: skins_mc_skin.xml.h:36
 msgid "My Video"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:30 skins_mc_skin.xml.h:30 plugins_mc_skin.xml.h:32
-#: skins_mc_skin.xml.h:32
+#: skins_mc_skin.xml.h:32 plugins_mc_skin.xml.h:42 skins_mc_skin.xml.h:42
 msgid "PICTURE"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:31 skins_mc_skin.xml.h:31 plugins_mc_skin.xml.h:33
-#: skins_mc_skin.xml.h:33
+#: skins_mc_skin.xml.h:33 plugins_mc_skin.xml.h:43 skins_mc_skin.xml.h:43
 msgid "Picture Player"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:32 skins_mc_skin.xml.h:32 plugins_mc_skin.xml.h:34
-#: skins_mc_skin.xml.h:34
+#: skins_mc_skin.xml.h:34 plugins_mc_skin.xml.h:44 skins_mc_skin.xml.h:44
 msgid "PICTURE SETTINGS"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:33 skins_mc_skin.xml.h:33 plugins_mc_skin.xml.h:35
-#: skins_mc_skin.xml.h:35
+#: skins_mc_skin.xml.h:35 plugins_mc_skin.xml.h:45 skins_mc_skin.xml.h:45
 msgid "Radio Player"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:39 skins_mc_skin.xml.h:39 plugins_mc_skin.xml.h:41
-#: skins_mc_skin.xml.h:41
+#: skins_mc_skin.xml.h:41 plugins_mc_skin.xml.h:51 plugins_tithek_skin.xml.h:9
+#: skins_mc_skin.xml.h:51 skins_tithek_skin.xml.h:9
 msgid "Screensaver"
 msgstr ""
 
@@ -2847,71 +3251,76 @@ msgstr ""
 #: skin_default_skin.xml.h:42 skin_default_skin.xml.h:43
 #: skin_default_skin.xml.h:44 skin_default_skin.xml.h:45
 #: skin_default_skin.xml.h:46 plugins_mc_skin.xml.h:42 skins_mc_skin.xml.h:42
+#: plugins_mc_skin.xml.h:52 plugins_panel_skin.xml.h:5
+#: plugins_panel_skin.xml.h:22 skins_mc_skin.xml.h:52 skins_panel_skin.xml.h:5
+#: skins_panel_skin.xml.h:22
 msgid "Settings"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:41 skins_mc_skin.xml.h:41 plugins_mc_skin.xml.h:43
-#: skins_mc_skin.xml.h:43
+#: skins_mc_skin.xml.h:43 plugins_mc_skin.xml.h:53 skins_mc_skin.xml.h:53
 msgid "Show Pictitle"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:43 skins_mc_skin.xml.h:43 plugins_mc_skin.xml.h:45
-#: skins_mc_skin.xml.h:45
+#: skins_mc_skin.xml.h:45 plugins_mc_skin.xml.h:55 skins_mc_skin.xml.h:55
 msgid "small"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:44 skins_mc_skin.xml.h:44 plugins_mc_skin.xml.h:46
-#: skins_mc_skin.xml.h:46
+#: skins_mc_skin.xml.h:46 plugins_mc_skin.xml.h:56 skins_mc_skin.xml.h:56
 msgid "Sort"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:45 skins_mc_skin.xml.h:45 plugins_mc_skin.xml.h:47
-#: skins_mc_skin.xml.h:47
+#: skins_mc_skin.xml.h:47 plugins_mc_skin.xml.h:57 skins_mc_skin.xml.h:57
 msgid "Sorting"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:46 skins_mc_skin.xml.h:46 plugins_mc_skin.xml.h:48
-#: skins_mc_skin.xml.h:48
+#: skins_mc_skin.xml.h:48 plugins_mc_skin.xml.h:58 skins_mc_skin.xml.h:58
 msgid "Sound"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47 plugins_mc_skin.xml.h:49
-#: skins_mc_skin.xml.h:49
+#: skins_mc_skin.xml.h:49 plugins_mc_skin.xml.h:59 skins_mc_skin.xml.h:59
 msgid "Style"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:48 skins_mc_skin.xml.h:48 plugins_mc_skin.xml.h:50
-#: skins_mc_skin.xml.h:50
+#: skins_mc_skin.xml.h:50 plugins_mc_skin.xml.h:61 skins_mc_skin.xml.h:61
 msgid "VIDEO"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:49 skins_mc_skin.xml.h:49 plugins_mc_skin.xml.h:51
-#: skins_mc_skin.xml.h:51
+#: skins_mc_skin.xml.h:51 plugins_mc_skin.xml.h:62 skins_mc_skin.xml.h:62
 msgid "Video Player"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:50 skins_mc_skin.xml.h:50 plugins_mc_skin.xml.h:52
-#: skins_mc_skin.xml.h:52
+#: skins_mc_skin.xml.h:52 plugins_mc_skin.xml.h:63 skins_mc_skin.xml.h:63
 msgid "VIDEO SETTINGS"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:51 skins_mc_skin.xml.h:51 plugins_mc_skin.xml.h:53
-#: skins_mc_skin.xml.h:53
+#: skins_mc_skin.xml.h:53 plugins_filemanager_skin.xml.h:5
+#: plugins_mc_skin.xml.h:64 skins_filemanager_skin.xml.h:5
+#: skins_mc_skin.xml.h:64
 msgid "View"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:52 skins_mc_skin.xml.h:52 plugins_mc_skin.xml.h:54
-#: skins_mc_skin.xml.h:54
+#: skins_mc_skin.xml.h:54 plugins_mc_skin.xml.h:65 skins_mc_skin.xml.h:65
 msgid "VLC Player"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:53 skins_mc_skin.xml.h:53 plugins_mc_skin.xml.h:55
-#: skins_mc_skin.xml.h:55
+#: skins_mc_skin.xml.h:55 plugins_mc_skin.xml.h:66 skins_mc_skin.xml.h:66
 msgid "Weather Infos"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:54 skins_mc_skin.xml.h:54 plugins_mc_skin.xml.h:56
-#: skins_mc_skin.xml.h:56
+#: skins_mc_skin.xml.h:56 plugins_mc_skin.xml.h:67 skins_mc_skin.xml.h:67
 msgid "Web Radio Player"
 msgstr ""
 
@@ -2946,113 +3355,132 @@ msgstr ""
 #: skins_networkbrowser_skin.xml.h:7 plugins_networkbrowser_skin.xml.h:8
 #: skins_networkbrowser_skin.xml.h:8 skin_default_skin.xml.h:240
 #: skin_default_skin.xml.h:241 skin_default_skin.xml.h:242
+#: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
 msgid "ipaddresse"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:7 skins_networkbrowser_skin.xml.h:7
 #: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
 #: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
+#: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
 msgid "options"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:8 skins_networkbrowser_skin.xml.h:8
 #: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
 #: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
+#: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
 msgid "password"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
 #: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
 #: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
+#: plugins_networkbrowser_skin.xml.h:13 skins_networkbrowser_skin.xml.h:13
 msgid "protocol"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
 #: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
 #: plugins_networkbrowser_skin.xml.h:13 skins_networkbrowser_skin.xml.h:13
+#: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
 msgid "proxyauth"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
 #: plugins_networkbrowser_skin.xml.h:13 skins_networkbrowser_skin.xml.h:13
 #: plugins_networkbrowser_skin.xml.h:14 skins_networkbrowser_skin.xml.h:14
+#: plugins_networkbrowser_skin.xml.h:16 skins_networkbrowser_skin.xml.h:16
 msgid "proxyip"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
 #: plugins_networkbrowser_skin.xml.h:14 skins_networkbrowser_skin.xml.h:14
 #: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
+#: plugins_networkbrowser_skin.xml.h:17 skins_networkbrowser_skin.xml.h:17
 msgid "proxypass"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:13 skins_networkbrowser_skin.xml.h:13
 #: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
 #: plugins_networkbrowser_skin.xml.h:16 skins_networkbrowser_skin.xml.h:16
+#: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
 msgid "proxyport"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:14 skins_networkbrowser_skin.xml.h:14
 #: plugins_networkbrowser_skin.xml.h:16 skins_networkbrowser_skin.xml.h:16
 #: plugins_networkbrowser_skin.xml.h:17 skins_networkbrowser_skin.xml.h:17
+#: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
 msgid "proxyuser"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
 #: plugins_networkbrowser_skin.xml.h:17 skins_networkbrowser_skin.xml.h:17
 #: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
+#: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
 msgid "rsize"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:16 skins_networkbrowser_skin.xml.h:16
 #: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
 #: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
+#: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
 msgid "sharedir"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:17 skins_networkbrowser_skin.xml.h:17
 #: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
 #: plugins_networkbrowser_skin.xml.h:21 skins_networkbrowser_skin.xml.h:21
+#: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
 msgid "sharename"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
 #: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
 #: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
+#: plugins_networkbrowser_skin.xml.h:25 skins_networkbrowser_skin.xml.h:25
 msgid "type"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
 #: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
 #: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
+#: plugins_networkbrowser_skin.xml.h:27 skins_networkbrowser_skin.xml.h:27
 msgid "useproxy"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:21 skins_networkbrowser_skin.xml.h:21
 #: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
 #: plugins_networkbrowser_skin.xml.h:25 skins_networkbrowser_skin.xml.h:25
+#: plugins_networkbrowser_skin.xml.h:28 skins_networkbrowser_skin.xml.h:28
 msgid "userauth"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
 #: plugins_networkbrowser_skin.xml.h:25 skins_networkbrowser_skin.xml.h:25
 #: plugins_networkbrowser_skin.xml.h:26 skins_networkbrowser_skin.xml.h:26
+#: plugins_networkbrowser_skin.xml.h:29 skins_networkbrowser_skin.xml.h:29
 msgid "username"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
 #: plugins_networkbrowser_skin.xml.h:26 skins_networkbrowser_skin.xml.h:26
 #: plugins_networkbrowser_skin.xml.h:27 skins_networkbrowser_skin.xml.h:27
+#: plugins_networkbrowser_skin.xml.h:30 skins_networkbrowser_skin.xml.h:30
 msgid "usessl"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
 #: plugins_networkbrowser_skin.xml.h:27 skins_networkbrowser_skin.xml.h:27
 #: plugins_networkbrowser_skin.xml.h:28 skins_networkbrowser_skin.xml.h:28
+#: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
 msgid "wsize"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:1 plugins_panel_skin.xml.h:23
 #: skins_panel_skin.xml.h:1 skins_panel_skin.xml.h:23
+#: plugins_panel_skin.xml.h:10 skins_panel_skin.xml.h:10
 msgid "Autostart"
 msgstr ""
 
@@ -3062,6 +3490,7 @@ msgid "Extensions"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:5 skins_panel_skin.xml.h:5
+#: plugins_panel_skin.xml.h:2 skins_panel_skin.xml.h:2
 msgid "FanControl"
 msgstr ""
 
@@ -3070,6 +3499,7 @@ msgid "Ipk Install - select file"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:8 skins_panel_skin.xml.h:8
+#: plugins_panel_skin.xml.h:3 skins_panel_skin.xml.h:3
 msgid "OverClock Settings"
 msgstr ""
 
@@ -3079,7 +3509,8 @@ msgstr ""
 #: skin_default_skin.xml.h:298 skin_default_skin.xml.h:299
 #: skin_default_skin.xml.h:300 skin_default_skin.xml.h:306
 #: skin_default_skin.xml.h:307 skin_default_skin.xml.h:308
-#: skin_default_skin.xml.h:309
+#: skin_default_skin.xml.h:309 plugins_panel_skin.xml.h:4
+#: skins_panel_skin.xml.h:4
 msgid "Panel"
 msgstr ""
 
@@ -3124,18 +3555,22 @@ msgid "System - Usbupdate (tmp)"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:18 skins_panel_skin.xml.h:18
+#: plugins_panel_skin.xml.h:6 skins_panel_skin.xml.h:6
 msgid "1500rpm"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:19 skins_panel_skin.xml.h:19
+#: plugins_panel_skin.xml.h:7 skins_panel_skin.xml.h:7
 msgid "500rpm"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:21 skins_panel_skin.xml.h:21
+#: plugins_panel_skin.xml.h:8 skins_panel_skin.xml.h:8
 msgid "Audio / Video / Sat"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:22 skins_panel_skin.xml.h:22
+#: plugins_panel_skin.xml.h:9 skins_panel_skin.xml.h:9
 msgid "Automount"
 msgstr ""
 
@@ -3144,6 +3579,7 @@ msgid "Blue Button"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:27 skins_panel_skin.xml.h:27
+#: plugins_panel_skin.xml.h:11 skins_panel_skin.xml.h:11
 msgid "Cam / Emu"
 msgstr ""
 
@@ -3156,6 +3592,7 @@ msgid "Change Feed"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:31 skins_panel_skin.xml.h:31
+#: plugins_panel_skin.xml.h:13 skins_panel_skin.xml.h:13
 msgid "Child safety"
 msgstr ""
 
@@ -3176,6 +3613,7 @@ msgid "Extensions Menu"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:42 skins_panel_skin.xml.h:42
+#: plugins_panel_skin.xml.h:16 skins_panel_skin.xml.h:16
 msgid "Fancontrol"
 msgstr ""
 
@@ -3224,6 +3662,7 @@ msgid "MTD"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:58 skins_panel_skin.xml.h:58
+#: plugins_panel_skin.xml.h:19 skins_panel_skin.xml.h:19
 msgid "Overclocking"
 msgstr ""
 
@@ -3236,6 +3675,7 @@ msgid "Restore"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:64 skins_panel_skin.xml.h:64
+#: plugins_panel_skin.xml.h:20 skins_panel_skin.xml.h:20
 msgid "Save"
 msgstr ""
 
@@ -3243,6 +3683,10 @@ msgstr ""
 #: skins_panel_skin.xml.h:65 skins_tithek_skin.xml.h:3
 #: plugins_stock_skin.xml.h:5 plugins_weather_skin.xml.h:4
 #: skins_stock_skin.xml.h:5 skins_weather_skin.xml.h:4
+#: plugins_imdbapi_skin.xml.h:7 plugins_imdb_skin.xml.h:7
+#: plugins_panel_skin.xml.h:21 plugins_tmdb_skin.xml.h:7
+#: skins_imdbapi_skin.xml.h:7 skins_imdb_skin.xml.h:7
+#: skins_panel_skin.xml.h:21 skins_tmdb_skin.xml.h:7
 msgid "SAVE"
 msgstr ""
 
@@ -3263,6 +3707,7 @@ msgid "Softcam auswahl:"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:72 skins_panel_skin.xml.h:72
+#: plugins_panel_skin.xml.h:23 skins_panel_skin.xml.h:23
 msgid "speed"
 msgstr ""
 
@@ -3271,6 +3716,7 @@ msgid "System Infos"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:76 skins_panel_skin.xml.h:76
+#: plugins_panel_skin.xml.h:24 skins_panel_skin.xml.h:24
 msgid "Test"
 msgstr ""
 
@@ -3279,6 +3725,7 @@ msgid "update"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:78 skins_panel_skin.xml.h:78
+#: plugins_panel_skin.xml.h:25 skins_panel_skin.xml.h:25
 msgid "Usb Device"
 msgstr ""
 
@@ -3291,10 +3738,12 @@ msgid "Usbupdate (tmp)"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:81 skins_panel_skin.xml.h:81
+#: plugins_panel_skin.xml.h:26 skins_panel_skin.xml.h:26
 msgid "Videotune"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:82 skins_panel_skin.xml.h:82
+#: plugins_panel_skin.xml.h:27 skins_panel_skin.xml.h:27
 msgid "Wizard"
 msgstr ""
 
@@ -3405,7 +3854,7 @@ msgid "startposition"
 msgstr ""
 
 #: powerofftimer.h:66 powerofftimer.h:72 powerofftimer.h:97
-#: powerofftimer.h:116
+#: powerofftimer.h:116 powerofftimer.h:117
 msgid "DeepStandby"
 msgstr ""
 
@@ -3471,88 +3920,91 @@ msgstr ""
 msgid "Can't create service"
 msgstr ""
 
-#: record.h:87
+#: record.h:87 record.h:90
 msgid "Record / Timeshift / Stream"
 msgstr ""
 
-#: record.h:635 record.h:636 record.h:663
+#: record.h:635 record.h:636 record.h:663 record.h:908
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
 msgstr ""
 
-#: record.h:797 record.h:798 record.h:825 record.h:828
+#: record.h:797 record.h:798 record.h:825 record.h:828 record.h:1080
 msgid "Timer Record start !\n"
 msgstr ""
 
 #: record.h:892 record.h:929 record.h:898 record.h:935 record.h:925
-#: record.h:962 record.h:928 record.h:965 record.h:970
+#: record.h:962 record.h:928 record.h:965 record.h:970 record.h:1197
+#: record.h:1245
 msgid "stop"
 msgstr ""
 
 #: record.h:933 record.h:939 record.h:966 record.h:969 record.h:978
+#: record.h:1260
 msgid "change"
 msgstr ""
 
 #: record.h:969 record.h:975 record.h:1002 record.h:1005 record.h:1019
+#: record.h:1315
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr ""
 
-#: rectimer.h:21
+#: rectimer.h:21 rectimer.h:129
 msgid "undefined error"
 msgstr ""
 
-#: rectimer.h:26
+#: rectimer.h:26 rectimer.h:134
 msgid "Timer starttime or endtime not ok"
 msgstr ""
 
-#: rectimer.h:31
+#: rectimer.h:31 rectimer.h:139
 msgid "Timer endtime shorter than aktual time"
 msgstr ""
 
-#: rectimer.h:36
+#: rectimer.h:36 rectimer.h:144
 msgid "Timer endtime shorter than start time"
 msgstr ""
 
-#: rectimer.h:41
+#: rectimer.h:41 rectimer.h:149
 msgid "Timer service ID not ok"
 msgstr ""
 
-#: rectimer.h:46
+#: rectimer.h:46 rectimer.h:154
 msgid "Timer transponder ID not ok"
 msgstr ""
 
-#: rectimer.h:397
+#: rectimer.h:397 rectimer.h:538
 msgid "not started akttime greater timer endtime"
 msgstr ""
 
-#: rectimer.h:505
+#: rectimer.h:505 rectimer.h:662
 msgid "stopped from user"
 msgstr ""
 
-#: rectimer.h:863
+#: rectimer.h:863 rectimer.h:1034
 msgid "switch channel"
 msgstr ""
 
 #: rectimer.h:873 rectimer.h:1242 rectimer.h:1253 rectimer.h:1247
-#: rectimer.h:1258
+#: rectimer.h:1258 rectimer.h:1044 rectimer.h:1453 rectimer.h:1464
 msgid "once"
 msgstr ""
 
 #: rectimer.h:874 rectimer.h:1244 rectimer.h:1255 rectimer.h:1249
-#: rectimer.h:1260
+#: rectimer.h:1260 rectimer.h:1045 rectimer.h:1455 rectimer.h:1466
 msgid "repeate"
 msgstr ""
 
-#: rectimer.h:886
+#: rectimer.h:886 rectimer.h:1057
 msgid "daily"
 msgstr ""
 
-#: rectimer.h:887
+#: rectimer.h:887 rectimer.h:1058
 msgid "weekly"
 msgstr ""
 
-#: rectimer.h:888
+#: rectimer.h:888 rectimer.h:1059
 msgid "workdays"
 msgstr ""
 
@@ -3561,7 +4013,7 @@ msgstr ""
 #: skin_default_skin.xml.h:266 skin_default_skin.xml.h:267
 #: skin_default_skin.xml.h:268 skin_default_skin.xml.h:274
 #: skin_default_skin.xml.h:275 skin_default_skin.xml.h:276
-#: skin_default_skin.xml.h:277 skin_default_skin.xml.h:278
+#: skin_default_skin.xml.h:277 skin_default_skin.xml.h:278 rectimer.h:1064
 msgid "Monday"
 msgstr ""
 
@@ -3571,7 +4023,7 @@ msgstr ""
 #: skin_default_skin.xml.h:444 skin_default_skin.xml.h:446
 #: skin_default_skin.xml.h:448 skin_default_skin.xml.h:458
 #: skin_default_skin.xml.h:459 skin_default_skin.xml.h:460
-#: skin_default_skin.xml.h:461
+#: skin_default_skin.xml.h:461 rectimer.h:1065
 msgid "Tuesday"
 msgstr ""
 
@@ -3581,7 +4033,7 @@ msgstr ""
 #: skin_default_skin.xml.h:475 skin_default_skin.xml.h:477
 #: skin_default_skin.xml.h:479 skin_default_skin.xml.h:489
 #: skin_default_skin.xml.h:490 skin_default_skin.xml.h:491
-#: skin_default_skin.xml.h:492
+#: skin_default_skin.xml.h:492 rectimer.h:1066
 msgid "Wednesday"
 msgstr ""
 
@@ -3591,7 +4043,7 @@ msgstr ""
 #: skin_default_skin.xml.h:431 skin_default_skin.xml.h:433
 #: skin_default_skin.xml.h:435 skin_default_skin.xml.h:445
 #: skin_default_skin.xml.h:446 skin_default_skin.xml.h:447
-#: skin_default_skin.xml.h:448
+#: skin_default_skin.xml.h:448 rectimer.h:1067
 msgid "Thursday"
 msgstr ""
 
@@ -3600,7 +4052,7 @@ msgstr ""
 #: skin_default_skin.xml.h:205 skin_default_skin.xml.h:206
 #: skin_default_skin.xml.h:207 skin_default_skin.xml.h:209
 #: skin_default_skin.xml.h:210 skin_default_skin.xml.h:211
-#: skin_default_skin.xml.h:212 skin_default_skin.xml.h:213
+#: skin_default_skin.xml.h:212 skin_default_skin.xml.h:213 rectimer.h:1068
 msgid "Friday"
 msgstr ""
 
@@ -3609,7 +4061,7 @@ msgstr ""
 #: skin_default_skin.xml.h:363 skin_default_skin.xml.h:364
 #: skin_default_skin.xml.h:365 skin_default_skin.xml.h:366
 #: skin_default_skin.xml.h:372 skin_default_skin.xml.h:373
-#: skin_default_skin.xml.h:374 skin_default_skin.xml.h:375
+#: skin_default_skin.xml.h:374 skin_default_skin.xml.h:375 rectimer.h:1069
 msgid "Saturday"
 msgstr ""
 
@@ -3619,117 +4071,123 @@ msgstr ""
 #: skin_default_skin.xml.h:416 skin_default_skin.xml.h:418
 #: skin_default_skin.xml.h:420 skin_default_skin.xml.h:428
 #: skin_default_skin.xml.h:429 skin_default_skin.xml.h:430
-#: skin_default_skin.xml.h:431
+#: skin_default_skin.xml.h:431 rectimer.h:1070
 msgid "Sunday"
 msgstr ""
 
-#: rectimer.h:1239 rectimer.h:1244
+#: rectimer.h:1239 rectimer.h:1244 rectimer.h:1450
 msgid "rec"
 msgstr ""
 
-#: rectimer.h:1250 rectimer.h:1255
+#: rectimer.h:1250 rectimer.h:1255 rectimer.h:1461
 msgid "switch"
 msgstr ""
 
-#: rectimer.h:1278 rectimer.h:1283
+#: rectimer.h:1278 rectimer.h:1283 rectimer.h:1488
 msgid "waiting"
 msgstr ""
 
-#: rectimer.h:1288 rectimer.h:1293
+#: rectimer.h:1288 rectimer.h:1293 rectimer.h:1492
 msgid "success"
 msgstr ""
 
-#: rectimer.h:1293 rectimer.h:1298
+#: rectimer.h:1293 rectimer.h:1298 rectimer.h:1494
 msgid "error"
 msgstr ""
 
-#: restoredefault.h:9
+#: restoredefault.h:9 restoredefault.h:10
 msgid "Realy restore default settings ?"
 msgstr ""
 
-#: restoredefault.h:17
+#: restoredefault.h:17 restoredefault.h:19
 msgid "Receiver now reboot !!!"
 msgstr ""
 
-#: restoredefault.h:21
+#: restoredefault.h:21 restoredefault.h:23
 msgid "Can't restore settings"
 msgstr ""
 
-#: scan.h:306 scan.h:308
+#: scan.h:306 scan.h:308 channellist.h:694 channellist.h:1752 scan.h:532
 msgid "TV"
 msgstr ""
 
-#: scan.h:308 scan.h:310
+#: scan.h:308 scan.h:310 channellist.h:689 channellist.h:1757 scan.h:534
 msgid "Radio"
 msgstr ""
 
-#: scan.h:310 scan.h:312
+#: scan.h:310 scan.h:312 scan.h:536
 msgid "Data"
 msgstr ""
 
 #: scan.h:729 scan.h:818 scan.h:838 scan.h:863 scan.h:886 scan.h:882
+#: blindscanadjust.h:13
 msgid "Sat: "
 msgstr ""
 
 #: scan.h:735 scan.h:824 scan.h:844 scan.h:869 scan.h:892 scan.h:888
-#: optimize.h:265 optimize.h:272
+#: optimize.h:265 optimize.h:272 scan.h:1522
 msgid "Transponder: "
 msgstr ""
 
 #: scan.h:743 scan.h:832 scan.h:852 scan.h:877 scan.h:900 scan.h:896
+#: scan.h:1532
 msgid "TV: "
 msgstr ""
 
 #: scan.h:751 scan.h:840 scan.h:860 scan.h:885 scan.h:908 scan.h:904
+#: scan.h:1540
 msgid "Radio: "
 msgstr ""
 
 #: scan.h:759 scan.h:848 scan.h:868 scan.h:893 scan.h:916 scan.h:912
+#: scan.h:1548
 msgid "Data: "
 msgstr ""
 
 #: scan.h:793 scan.h:882 scan.h:902 scan.h:927 scan.h:960 scan.h:956
+#: scan.h:1597
 msgid "All new channel added!"
 msgstr ""
 
 #: scan.h:803 scan.h:892 scan.h:912 scan.h:937 scan.h:970 scan.h:966
+#: scan.h:1607
 msgid "Wait for channel scan end"
 msgstr ""
 
 #: scan.h:947 scan.h:951 scan.h:954 scan.h:1043 scan.h:1064 scan.h:1089
-#: scan.h:1122 tunerconfig.h:606 scan.h:1119
+#: scan.h:1122 tunerconfig.h:606 scan.h:1119 scan.h:1826
 msgid ""
 "Scan is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 
 #: scan.h:1019 scan.h:1023 scan.h:1026 scan.h:1115 scan.h:1136 scan.h:1161
-#: scan.h:1194 scan.h:1191
+#: scan.h:1194 scan.h:1191 scan.h:1917
 msgid "No Tuner configured"
 msgstr ""
 
 #: scan.h:1032 scan.h:1036 scan.h:1039 scan.h:1128 scan.h:1149 scan.h:1174
-#: scan.h:1207 scan.h:1204
+#: scan.h:1207 scan.h:1204 scan.h:1931 scan.h:1938
 msgid "Single Transponder"
 msgstr ""
 
 #: scan.h:1033 scan.h:1037 scan.h:1040 scan.h:1129 scan.h:1150 scan.h:1175
-#: scan.h:1208 scan.h:1205
+#: scan.h:1208 scan.h:1205 scan.h:1932
 msgid "Single Sat"
 msgstr ""
 
 #: scan.h:1034 scan.h:1038 scan.h:1041 scan.h:1130 scan.h:1151 scan.h:1176
-#: scan.h:1209 scan.h:1206
+#: scan.h:1209 scan.h:1206 scan.h:1933
 msgid "Multi Sat"
 msgstr ""
 
 #: scan.h:1039 scan.h:1043 scan.h:1046 scan.h:1135 scan.h:1156 scan.h:1181
-#: scan.h:1214 scan.h:1211
+#: scan.h:1214 scan.h:1211 scan.h:1944
 msgid "Auto Scan"
 msgstr ""
 
 #: scan.h:1225 scan.h:1229 scan.h:1232 scan.h:1321 scan.h:1347 scan.h:1372
-#: scan.h:1405 scan.h:1402 scan.h:1403
+#: scan.h:1405 scan.h:1402 scan.h:1403 scan.h:2262
 msgid "Transponder changed"
 msgstr ""
 
@@ -3749,7 +4207,7 @@ msgstr ""
 msgid "blue"
 msgstr ""
 
-#: screensaveradjust.h:31
+#: screensaveradjust.h:31 screensaveradjust.h:32
 msgid "red"
 msgstr ""
 
@@ -3809,47 +4267,48 @@ msgstr ""
 msgid "Logo 2"
 msgstr ""
 
-#: screensaveradjust.h:59
+#: screensaveradjust.h:59 screensaveradjust.h:58
 msgid "imdb mvis (network/hdd)"
 msgstr ""
 
 #: service.h:560 service.h:566 service.h:571 service.h:573 service.h:574
+#: service.h:709
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
 msgstr ""
 
 #: service.h:783 service.h:784 service.h:790 service.h:795 service.h:797
-#: service.h:798
+#: service.h:798 service.h:938
 msgid ""
 "Can't find a Tuner.\n"
 "Alle Tuners in use or no Tuner defined."
 msgstr ""
 
 #: service.h:786 service.h:787 service.h:793 service.h:798 service.h:800
-#: service.h:801
+#: service.h:801 service.h:941
 msgid "Tuning to Channel failed!"
 msgstr ""
 
 #: service.h:789 service.h:790 service.h:796 service.h:801 service.h:803
-#: service.h:804
+#: service.h:804 service.h:944
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 
 #: service.h:794 service.h:795 service.h:801 service.h:806 service.h:808
-#: service.h:809
+#: service.h:809 service.h:949
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
-#: skinadjust.h:23
+#: skinadjust.h:23 skinadjust.h:24
 msgid "border"
 msgstr ""
 
-#: skinadjust.h:24
+#: skinadjust.h:24 skinadjust.h:25
 msgid "bar"
 msgstr ""
 
-#: skinadjust.h:25
+#: skinadjust.h:25 skinadjust.h:26
 msgid "text"
 msgstr ""
 
@@ -4077,6 +4536,7 @@ msgstr ""
 #: skin_default_skin.xml.h:36 skin_default_skin.xml.h:37
 #: skin_default_skin.xml.h:38 skin_default_skin.xml.h:39
 #: skin_default_skin.xml.h:40 skin_default_skin.xml.h:41
+#: plugins_tmc_skin.xml.h:15 skins_tmc_skin.xml.h:15
 msgid "Scan"
 msgstr ""
 
@@ -4421,21 +4881,24 @@ msgstr ""
 #: skin_default_skin.xml.h:87 skin_default_skin.xml.h:88
 #: skin_default_skin.xml.h:89 skin_default_skin.xml.h:90
 #: skin_default_skin.xml.h:91 skin_default_skin.xml.h:92
-#: skin_default_skin.xml.h:93
+#: skin_default_skin.xml.h:93 plugins_catcatch_skin.xml.h:2
+#: plugins_zapback_skin.xml.h:2 skins_catcatch_skin.xml.h:2
+#: skins_zapback_skin.xml.h:2
 msgid "0"
 msgstr ""
 
 #: skin_default_skin.xml.h:88 skin_default_skin.xml.h:89
 #: skin_default_skin.xml.h:90 skin_default_skin.xml.h:91
 #: skin_default_skin.xml.h:92 skin_default_skin.xml.h:93
-#: skin_default_skin.xml.h:94
+#: skin_default_skin.xml.h:94 mediadbsettings.h:53
+#: plugins_catcatch_skin.xml.h:3 skins_catcatch_skin.xml.h:3
 msgid "1"
 msgstr ""
 
 #: skin_default_skin.xml.h:89 skin_default_skin.xml.h:90
 #: skin_default_skin.xml.h:91 skin_default_skin.xml.h:92
 #: skin_default_skin.xml.h:93 skin_default_skin.xml.h:94
-#: skin_default_skin.xml.h:95
+#: skin_default_skin.xml.h:95 mediadbsettings.h:54
 msgid "2"
 msgstr ""
 
@@ -4509,6 +4972,7 @@ msgstr ""
 #: skins_networkbrowser_skin.xml.h:1 skin_default_skin.xml.h:112
 #: plugins_stock_skin.xml.h:2 plugins_weather_skin.xml.h:2
 #: skins_stock_skin.xml.h:2 skins_weather_skin.xml.h:2
+#: plugins_weather_skin.xml.h:1 skins_weather_skin.xml.h:1
 msgid "ADD"
 msgstr ""
 
@@ -4580,6 +5044,7 @@ msgstr ""
 #: skin_default_skin.xml.h:120 skin_default_skin.xml.h:121
 #: skin_default_skin.xml.h:122 skin_default_skin.xml.h:123
 #: plugins_streaminfo_skin.xml.h:2 skins_streaminfo_skin.xml.h:2
+#: plugins_streaminfo_skin.xml.h:1 skins_streaminfo_skin.xml.h:1
 msgid "Aspect"
 msgstr ""
 
@@ -4859,7 +5324,7 @@ msgstr ""
 #: skin_default_skin.xml.h:162 skin_default_skin.xml.h:163
 #: skin_default_skin.xml.h:165 skin_default_skin.xml.h:166
 #: skin_default_skin.xml.h:167 skin_default_skin.xml.h:168
-#: skin_default_skin.xml.h:169
+#: skin_default_skin.xml.h:169 network.h:390
 msgid "dhcp"
 msgstr ""
 
@@ -4960,7 +5425,10 @@ msgstr ""
 #: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
 #: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
 #: skin_default_skin.xml.h:180 skin_default_skin.xml.h:181
-#: skin_default_skin.xml.h:182
+#: skin_default_skin.xml.h:182 plugins_mc_skin.xml.h:21
+#: plugins_networkbrowser_skin.xml.h:5 plugins_readerconfig_skin.xml.h:2
+#: skins_mc_skin.xml.h:21 skins_networkbrowser_skin.xml.h:5
+#: skins_readerconfig_skin.xml.h:2
 msgid "EDIT"
 msgstr ""
 
@@ -7213,7 +7681,7 @@ msgstr ""
 #: skin_default_skin.xml.h:465 skin_default_skin.xml.h:467
 #: skin_default_skin.xml.h:469 skin_default_skin.xml.h:479
 #: skin_default_skin.xml.h:480 skin_default_skin.xml.h:481
-#: skin_default_skin.xml.h:482
+#: skin_default_skin.xml.h:482 tmc.h:399
 msgid "Video"
 msgstr ""
 
@@ -7390,11 +7858,11 @@ msgstr ""
 msgid "No Live Stream running"
 msgstr ""
 
-#: timeshift.h:52
+#: timeshift.h:52 timeshift.h:113
 msgid "Should Timeshift File deleted ?"
 msgstr ""
 
-#: timeshift.h:82
+#: timeshift.h:82 timeshift.h:162
 msgid "Can't start timeshift play !"
 msgstr ""
 
@@ -7406,109 +7874,123 @@ msgstr ""
 msgid "skip "
 msgstr ""
 
-#: tithek.h:298 tithek.h:303
+#: tithek.h:298 tithek.h:303 tithek.h:601
 msgid "File exist, overwrite?"
 msgstr ""
 
 #: tithek.h:464 tithek.h:481 tithek.h:491 tithek.h:508 tithek.h:496
 #: tithek.h:513 tithek.h:498 tithek.h:515 tithek.h:536 tithek.h:544
 #: tithek.h:497 tithek.h:514 tithek.h:552 tithek.h:499 tithek.h:516
-#: tithek.h:554
+#: tithek.h:554 tithek.h:1321
 msgid "Start playback"
 msgstr ""
 
 #: tithek.h:488 tithek.h:473 tithek.h:512 tithek.h:478 tithek.h:517
 #: tithek.h:479 tithek.h:519 tithek.h:540 tithek.h:548 tithek.h:518
-#: tithek.h:556 tithek.h:480 tithek.h:520 tithek.h:558
+#: tithek.h:556 tithek.h:480 tithek.h:520 tithek.h:558 tithek.h:1343
 msgid "Can't get Streamurl !"
 msgstr ""
 
 #: transponder.h:362 transponder.h:369 transponder.h:371 transponder.h:378
+#: transponder.h:448 transponder.h:455
 msgid "Horizontal"
 msgstr ""
 
 #: transponder.h:363 transponder.h:371 transponder.h:372 transponder.h:380
+#: transponder.h:449 transponder.h:457
 msgid "Vertikal"
 msgstr ""
 
 #: transponder.h:396 transponder.h:419 transponder.h:433 transponder.h:455
 #: transponder.h:405 transponder.h:428 transponder.h:442 transponder.h:464
+#: transponder.h:476 transponder.h:499 transponder.h:513 transponder.h:535
 msgid "QPSK"
 msgstr ""
 
 #: transponder.h:397 transponder.h:435 transponder.h:406 transponder.h:444
+#: transponder.h:477 transponder.h:515
 msgid "PSK 8"
 msgstr ""
 
 #: transponder.h:398 transponder.h:407 transponder.h:420 transponder.h:437
 #: transponder.h:443 transponder.h:457 transponder.h:416 transponder.h:429
-#: transponder.h:446 transponder.h:452 transponder.h:466
+#: transponder.h:446 transponder.h:452 transponder.h:466 transponder.h:478
+#: transponder.h:487 transponder.h:500 transponder.h:517 transponder.h:523
+#: transponder.h:537
 msgid "QAM 16"
 msgstr ""
 
 #: transponder.h:406 transponder.h:422 transponder.h:441 transponder.h:461
 #: transponder.h:415 transponder.h:431 transponder.h:450 transponder.h:470
+#: transponder.h:486 transponder.h:502 transponder.h:521 transponder.h:541
 msgid "QAM auto"
 msgstr ""
 
 #: transponder.h:408 transponder.h:445 transponder.h:417 transponder.h:454
+#: transponder.h:488 transponder.h:525
 msgid "QAM 32"
 msgstr ""
 
 #: transponder.h:409 transponder.h:421 transponder.h:447 transponder.h:459
 #: transponder.h:418 transponder.h:430 transponder.h:456 transponder.h:468
+#: transponder.h:489 transponder.h:501 transponder.h:527 transponder.h:539
 msgid "QAM 64"
 msgstr ""
 
 #: transponder.h:410 transponder.h:449 transponder.h:419 transponder.h:458
+#: transponder.h:490 transponder.h:529
 msgid "QAM 128"
 msgstr ""
 
 #: transponder.h:411 transponder.h:451 transponder.h:420 transponder.h:460
+#: transponder.h:491 transponder.h:531
 msgid "QAM 256"
 msgstr ""
 
 #: transponder.h:491 transponder.h:498 transponder.h:500 transponder.h:507
+#: transponder.h:571 transponder.h:578
 msgid "DVBS"
 msgstr ""
 
 #: transponder.h:492 transponder.h:500 transponder.h:501 transponder.h:509
+#: transponder.h:572 transponder.h:580
 msgid "DVBS2"
 msgstr ""
 
-#: tunerconfig.h:49
+#: tunerconfig.h:49 tunerconfig.h:107
 msgid "Satelite Type"
 msgstr ""
 
-#: tunerconfig.h:51
+#: tunerconfig.h:51 tunerconfig.h:109
 msgid "Single LNB"
 msgstr ""
 
-#: tunerconfig.h:52
+#: tunerconfig.h:52 tunerconfig.h:110
 msgid "DiSEqC A/B"
 msgstr ""
 
-#: tunerconfig.h:54
+#: tunerconfig.h:54 tunerconfig.h:112
 msgid "DiSEqC A/B/C/D"
 msgstr ""
 
-#: tunerconfig.h:56
+#: tunerconfig.h:56 tunerconfig.h:114
 msgid "DiSEqC A/B/C/D/E/F/G/H"
 msgstr ""
 
-#: tunerconfig.h:58
+#: tunerconfig.h:58 tunerconfig.h:116
 msgid "Expert"
 msgstr ""
 
 #: tunerconfig.h:125 tunerconfig.h:154 tunerconfig.h:185 tunerconfig.h:218
+#: tunerconfig.h:183 tunerconfig.h:212 tunerconfig.h:243 tunerconfig.h:276
 msgid "DiSEqC"
 msgstr ""
 
-#: tunerconfig.h:243
+#: tunerconfig.h:243 tunerconfig.h:301
 msgid "Lnb / Unicable"
 msgstr ""
 
-#: tunerconfig.h:244 tunerconfig.h:245
+#: tunerconfig.h:244 tunerconfig.h:245 tunerconfig.h:302 tunerconfig.h:303
 msgid "press red"
 msgstr ""
 
@@ -7524,15 +8006,15 @@ msgstr ""
 msgid "search EU VHF I"
 msgstr ""
 
-#: tunerconfig.h:500
+#: tunerconfig.h:500 tunerconfig.h:645
 msgid "direct connect"
 msgstr ""
 
-#: tunerconfig.h:511
+#: tunerconfig.h:511 tunerconfig.h:656
 msgid "loop to Tuner"
 msgstr ""
 
-#: tunerconfig.h:614 tunerconfig.h:620
+#: tunerconfig.h:614 tunerconfig.h:620 tunerconfig.h:786
 msgid "Tuner "
 msgstr ""
 
@@ -7540,23 +8022,23 @@ msgstr ""
 msgid "DVB-T not supportet at the moment !"
 msgstr ""
 
-#: vfdisplay.h:26
+#: vfdisplay.h:26 vfdisplay.h:32
 msgid "channel"
 msgstr ""
 
-#: vfdisplay.h:27
+#: vfdisplay.h:27 vfdisplay.h:33
 msgid "channel + time"
 msgstr ""
 
-#: vfdisplay.h:28
+#: vfdisplay.h:28 vfdisplay.h:34
 msgid "time + channel"
 msgstr ""
 
-#: vfdisplay.h:29 vfdisplay.h:33
+#: vfdisplay.h:29 vfdisplay.h:33 vfdisplay.h:35 vfdisplay.h:41
 msgid "time"
 msgstr ""
 
-#: vfdisplay.h:30
+#: vfdisplay.h:30 vfdisplay.h:36
 msgid "time small"
 msgstr ""
 
@@ -7611,12 +8093,13 @@ msgid "TITLE"
 msgstr ""
 
 #: network.h:473 network.h:555 network.h:560 network.h:584 network.h:585
-#: network.h:594 network.h:605 network.h:606 network.h:607
+#: network.h:594 network.h:605 network.h:606 network.h:607 network.h:680
 msgid "NONE"
 msgstr ""
 
 #: network.h:554 network.h:637 network.h:643 network.h:667 network.h:669
 #: network.h:672 network.h:681 network.h:692 network.h:698 network.h:699
+#: network.h:797
 msgid ""
 "WLAN started.\n"
 " You can now configure the new interface."
@@ -7624,6 +8107,7 @@ msgstr ""
 
 #: network.h:556 network.h:639 network.h:645 network.h:669 network.h:671
 #: network.h:674 network.h:683 network.h:694 network.h:700 network.h:701
+#: network.h:801
 msgid ""
 "WLAN not started,\n"
 "Please check your config."
@@ -7631,12 +8115,13 @@ msgstr ""
 
 #: network.h:576 network.h:659 network.h:665 network.h:689 network.h:692
 #: network.h:696 network.h:705 network.h:716 network.h:722 network.h:723
+#: network.h:824
 msgid "searching..."
 msgstr ""
 
 #: network.h:604 network.h:687 network.h:693 network.h:717 network.h:720
 #: network.h:721 network.h:725 network.h:734 network.h:745 network.h:751
-#: network.h:752
+#: network.h:752 network.h:855
 msgid "WLAN now stopped"
 msgstr ""
 
@@ -7685,17 +8170,17 @@ msgstr ""
 msgid "STOP"
 msgstr ""
 
-#: inadyn.h:138 inadyn.h:144 inadyn.h:153
+#: inadyn.h:138 inadyn.h:144 inadyn.h:153 inadyn.h:189
 msgid "DYNDNS started."
 msgstr ""
 
-#: inadyn.h:140 inadyn.h:146 inadyn.h:155
+#: inadyn.h:140 inadyn.h:146 inadyn.h:155 inadyn.h:191
 msgid ""
 "DYNDNS not started,\n"
 "Please check your config."
 msgstr ""
 
-#: inadyn.h:148 inadyn.h:154 inadyn.h:163
+#: inadyn.h:148 inadyn.h:154 inadyn.h:163 inadyn.h:201
 msgid "DYNDNS now stopped"
 msgstr ""
 
@@ -7735,11 +8220,11 @@ msgid "Blindscan"
 msgstr ""
 
 #: network.h:728 network.h:732 network.h:741 network.h:752 network.h:758
-#: network.h:759
+#: network.h:759 network.h:862
 msgid "WLAN LOG"
 msgstr ""
 
-#: scan.h:924 scan.h:920
+#: scan.h:924 scan.h:920 scan.h:1556
 msgid "Blindscan: "
 msgstr ""
 
@@ -7748,31 +8233,36 @@ msgid "RGUI Client"
 msgstr ""
 
 #: plugins_rgui_skin.xml.h:4 skins_rgui_skin.xml.h:4
+#: plugins_tiwakeup_skin.xml.h:4 skins_tiwakeup_skin.xml.h:4
 msgid "Server 1"
 msgstr ""
 
 #: plugins_rgui_skin.xml.h:5 skins_rgui_skin.xml.h:5
+#: plugins_tiwakeup_skin.xml.h:5 skins_tiwakeup_skin.xml.h:5
 msgid "Server 2"
 msgstr ""
 
 #: plugins_rgui_skin.xml.h:6 skins_rgui_skin.xml.h:6
+#: plugins_tiwakeup_skin.xml.h:6 skins_tiwakeup_skin.xml.h:6
 msgid "Server 3"
 msgstr ""
 
 #: plugins_rgui_skin.xml.h:7 skins_rgui_skin.xml.h:7
+#: plugins_tiwakeup_skin.xml.h:7 skins_tiwakeup_skin.xml.h:7
 msgid "Server 4"
 msgstr ""
 
 #: plugins_rgui_skin.xml.h:8 skins_rgui_skin.xml.h:8
+#: plugins_tiwakeup_skin.xml.h:8 skins_tiwakeup_skin.xml.h:8
 msgid "Server 5"
 msgstr ""
 
-#: rgui.h:21 rgui.h:24 rgui.h:23
+#: rgui.h:21 rgui.h:24 rgui.h:23 rgui.h:30
 msgid "Can't connect to server !"
 msgstr ""
 
 #: rgui.h:84 rgui.h:87 rgui.h:106 rgui.h:130 rgui.h:129 rgui.h:126 rgui.h:128
-#: rgui.h:127
+#: rgui.h:127 rgui.h:134
 msgid "Connection to server lost !"
 msgstr ""
 
@@ -7788,7 +8278,7 @@ msgstr ""
 msgid "Start RGUID"
 msgstr ""
 
-#: global.h:250 global.h:251 global.h:258 global.h:253
+#: global.h:250 global.h:251 global.h:258 global.h:253 info.h:23
 msgid ""
 "For next OnlineUpdate please contact Atemio and send this Serial Number\n"
 "and your Atemio Serial Number !!\n"
@@ -7811,7 +8301,7 @@ msgstr ""
 msgid "EGG Scan Log"
 msgstr ""
 
-#: epgsettings.h:216
+#: epgsettings.h:216 epgsettings.h:275
 msgid "EPG Scan Log"
 msgstr ""
 
@@ -7887,7 +8377,11 @@ msgstr ""
 #: skins_weather_skin.xml.h:2 plugins_tmdb_skin.xml.h:12
 #: skins_tmdb_skin.xml.h:12 plugins_stock_skin.xml.h:3
 #: skins_stock_skin.xml.h:3 skin_default_skin.xml.h:387
-#: skin_default_skin.xml.h:388
+#: skin_default_skin.xml.h:388 plugins_imdbapi_skin.xml.h:8
+#: plugins_imdb_skin.xml.h:8 plugins_networkbrowser_skin.xml.h:21
+#: plugins_tmdb_skin.xml.h:8 skins_imdbapi_skin.xml.h:8
+#: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:21
+#: skins_tmdb_skin.xml.h:8
 msgid "SEARCH"
 msgstr ""
 
@@ -7927,7 +8421,7 @@ msgstr ""
 msgid "Optimize"
 msgstr ""
 
-#: rgui.h:109 rgui.h:108 rgui.h:110 rgui.h:112 rgui.h:111
+#: rgui.h:109 rgui.h:108 rgui.h:110 rgui.h:112 rgui.h:111 rgui.h:118
 msgid "Send remote box into standby ?"
 msgstr ""
 
@@ -7943,40 +8437,43 @@ msgstr ""
 msgid "Script execute"
 msgstr ""
 
-#: skinadjust.h:26
+#: skinadjust.h:26 skinadjust.h:27 tmc.h:542
 msgid "picture"
 msgstr ""
 
 #: mc_videoplayer_settings.h:25 mc_audioplayer_settings.h:31
 #: mc_pictureplayer_settings.h:40 mc_videoplayer_settings.h:26
+#: mc_audioplayer_settings.h:37 mc_pictureplayer_settings.h:52
+#: mc_videoplayer_settings.h:33
 msgid "cover"
 msgstr ""
 
-#: panel_extensions.h:112 panel_extensions.h:113
+#: panel_extensions.h:112 panel_extensions.h:113 extensions.h:223
+#: extensions.h:349
 msgid "No plugin found."
 msgstr ""
 
 #: networkbrowser.h:1209 networkbrowser.h:1181 networkbrowser.h:1186
 #: networkbrowser.h:1235 networkbrowser.h:1237 networkbrowser.h:1236
-#: networkbrowser.h:1251
+#: networkbrowser.h:1251 networkbrowser.h:1470
 msgid "rw"
 msgstr ""
 
 #: networkbrowser.h:1210 networkbrowser.h:1182 networkbrowser.h:1187
 #: networkbrowser.h:1236 networkbrowser.h:1238 networkbrowser.h:1237
-#: networkbrowser.h:1252
+#: networkbrowser.h:1252 networkbrowser.h:1471
 msgid "ro"
 msgstr ""
 
 #: networkbrowser.h:1259 networkbrowser.h:1231 networkbrowser.h:1236
 #: networkbrowser.h:1310 networkbrowser.h:1312 networkbrowser.h:1311
-#: networkbrowser.h:1326
+#: networkbrowser.h:1326 networkbrowser.h:1550
 msgid "Sharename can't be empty!"
 msgstr ""
 
 #: networkbrowser.h:1270 networkbrowser.h:1242 networkbrowser.h:1247
 #: networkbrowser.h:1317 networkbrowser.h:1319 networkbrowser.h:1318
-#: networkbrowser.h:1333
+#: networkbrowser.h:1333 networkbrowser.h:1557
 msgid "A mount entry with this name already exists!"
 msgstr ""
 
@@ -7986,15 +8483,19 @@ msgid "--actors--"
 msgstr ""
 
 #: plugins_imdb_skin.xml.h:2 skins_imdb_skin.xml.h:2 plugins_tmdb_skin.xml.h:2
-#: skins_tmdb_skin.xml.h:2
+#: skins_tmdb_skin.xml.h:2 plugins_imdbapi_skin.xml.h:1
+#: plugins_imdb_skin.xml.h:1 plugins_mc_skin.xml.h:4
+#: skins_imdbapi_skin.xml.h:1 skins_imdb_skin.xml.h:1 skins_mc_skin.xml.h:4
 msgid "Actors:"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:30 skins_mc_skin.xml.h:30
+#: plugins_mc_skin.xml.h:30 skins_mc_skin.xml.h:30 plugins_mc_skin.xml.h:39
+#: skins_mc_skin.xml.h:39
 msgid "Picdenom Mode"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:31 skins_mc_skin.xml.h:31
+#: plugins_mc_skin.xml.h:31 skins_mc_skin.xml.h:31 plugins_mc_skin.xml.h:40
+#: skins_mc_skin.xml.h:40
 msgid "Pic HW-decode"
 msgstr ""
 
@@ -8002,17 +8503,17 @@ msgstr ""
 msgid "COPY"
 msgstr ""
 
-#: dlna.h:307 dlna.h:309 dlna.h:313
+#: dlna.h:307 dlna.h:309 dlna.h:313 dlna.h:312
 msgid "DLNA started."
 msgstr ""
 
-#: dlna.h:309 dlna.h:311 dlna.h:315
+#: dlna.h:309 dlna.h:311 dlna.h:315 dlna.h:314
 msgid ""
 "DLNA not started,\n"
 "Please check your config."
 msgstr ""
 
-#: dlna.h:317 dlna.h:319 dlna.h:323
+#: dlna.h:317 dlna.h:319 dlna.h:323 dlna.h:322
 msgid "DLNA now stopped"
 msgstr ""
 
@@ -8067,35 +8568,36 @@ msgid "PREV"
 msgstr ""
 
 #: plugins_weather_skin.xml.h:1 skins_weather_skin.xml.h:1 weather.h:302
-#: weather.h:304 weather.h:306
+#: weather.h:304 weather.h:306 plugins_weather_skin.xml.h:3
+#: skins_weather_skin.xml.h:3 weather.h:418
 msgid "Weather"
 msgstr ""
 
 #: weather.h:308 weather.h:326 weather.h:344 weather.h:362 weather.h:314
 #: weather.h:332 weather.h:350 weather.h:368 weather.h:316 weather.h:334
 #: weather.h:352 weather.h:370 weather.h:318 weather.h:336 weather.h:354
-#: weather.h:372
+#: weather.h:372 weather.h:430 weather.h:448 weather.h:466 weather.h:484
 msgid "Day: "
 msgstr ""
 
 #: weather.h:312 weather.h:330 weather.h:348 weather.h:366 weather.h:318
 #: weather.h:336 weather.h:354 weather.h:372 weather.h:320 weather.h:338
 #: weather.h:356 weather.h:374 weather.h:322 weather.h:340 weather.h:358
-#: weather.h:376
+#: weather.h:376 weather.h:434 weather.h:452 weather.h:470 weather.h:488
 msgid "Lowest temp: "
 msgstr ""
 
 #: weather.h:316 weather.h:334 weather.h:352 weather.h:370 weather.h:322
 #: weather.h:340 weather.h:358 weather.h:376 weather.h:324 weather.h:342
 #: weather.h:360 weather.h:378 weather.h:326 weather.h:344 weather.h:362
-#: weather.h:380
+#: weather.h:380 weather.h:438 weather.h:456 weather.h:474 weather.h:492
 msgid "Highest temp: "
 msgstr ""
 
 #: weather.h:320 weather.h:338 weather.h:356 weather.h:374 weather.h:326
 #: weather.h:344 weather.h:362 weather.h:380 weather.h:328 weather.h:346
 #: weather.h:364 weather.h:382 weather.h:330 weather.h:348 weather.h:366
-#: weather.h:384
+#: weather.h:384 weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr ""
 
@@ -8121,11 +8623,14 @@ msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:3 skins_lcdpearl1_skin.xml.h:3
 #: plugins_lcdpearl1_skin.xml.h:4 skins_lcdpearl1_skin.xml.h:4
+#: plugins_lcdpearl1_skin.xml.h:5 plugins_lcdsamsung_skin.xml.h:5
+#: skins_lcdpearl1_skin.xml.h:5 skins_lcdsamsung_skin.xml.h:5
 msgid "alle Menus anzeigen"
 msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:9 skins_lcdpearl1_skin.xml.h:9
 #: plugins_lcdpearl1_skin.xml.h:10 skins_lcdpearl1_skin.xml.h:10
+#: plugins_instar_skin.xml.h:18 skins_instar_skin.xml.h:18
 msgid ""
 "text=START halign=center valign=middle bordercol=blue bordersize=2 "
 "bordertype=2 posx=400 posy=0 width=200 height=30/>);"
@@ -8133,6 +8638,7 @@ msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:7 skins_lcdpearl1_skin.xml.h:7
 #: plugins_lcdpearl1_skin.xml.h:8 skins_lcdpearl1_skin.xml.h:8
+#: plugins_instar_skin.xml.h:16 skins_instar_skin.xml.h:16
 msgid ""
 "text=SAVE halign=center valign=middle bordercol=green bordersize=2 "
 "bordertype=2 posx=0 posy=0 width=150 height=30/>);"
@@ -8140,73 +8646,74 @@ msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:5 skins_lcdpearl1_skin.xml.h:5
 #: plugins_lcdpearl1_skin.xml.h:6 skins_lcdpearl1_skin.xml.h:6
+#: plugins_instar_skin.xml.h:14 skins_instar_skin.xml.h:14
 msgid ""
 "text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 "
 "bordertype=2 posx=160 posy=0 width=150 height=30/>);"
 msgstr ""
 
 #: plugins_stock_skin.xml.h:1 skins_stock_skin.xml.h:1 stock.h:175 stock.h:177
-#: stock.h:179
+#: stock.h:179 stock.h:187
 msgid "Stock"
 msgstr ""
 
-#: stock.h:179 stock.h:185 stock.h:187 stock.h:189
+#: stock.h:179 stock.h:185 stock.h:187 stock.h:189 stock.h:197
 msgid "Company: "
 msgstr ""
 
-#: stock.h:183 stock.h:189 stock.h:191 stock.h:193
+#: stock.h:183 stock.h:189 stock.h:191 stock.h:193 stock.h:201
 msgid "Exchange: "
 msgstr ""
 
-#: stock.h:187 stock.h:193 stock.h:195 stock.h:197
+#: stock.h:187 stock.h:193 stock.h:195 stock.h:197 stock.h:205
 msgid "Exchange closing: "
 msgstr ""
 
-#: stock.h:191 stock.h:197 stock.h:199 stock.h:201
+#: stock.h:191 stock.h:197 stock.h:199 stock.h:201 stock.h:209
 msgid "Currency: "
 msgstr ""
 
-#: stock.h:195 stock.h:201 stock.h:203 stock.h:205
+#: stock.h:195 stock.h:201 stock.h:203 stock.h:205 stock.h:213
 msgid "Last: "
 msgstr ""
 
-#: stock.h:199 stock.h:205 stock.h:207 stock.h:209
+#: stock.h:199 stock.h:205 stock.h:207 stock.h:209 stock.h:217
 msgid "High: "
 msgstr ""
 
-#: stock.h:203 stock.h:209 stock.h:211 stock.h:213
+#: stock.h:203 stock.h:209 stock.h:211 stock.h:213 stock.h:221
 msgid "Low: "
 msgstr ""
 
-#: stock.h:207 stock.h:213 stock.h:215 stock.h:217
+#: stock.h:207 stock.h:213 stock.h:215 stock.h:217 stock.h:225
 msgid "Volume: "
 msgstr ""
 
-#: stock.h:211 stock.h:217 stock.h:219 stock.h:221
+#: stock.h:211 stock.h:217 stock.h:219 stock.h:221 stock.h:229
 msgid "Avg volume: "
 msgstr ""
 
-#: stock.h:215 stock.h:221 stock.h:223 stock.h:225
+#: stock.h:215 stock.h:221 stock.h:223 stock.h:225 stock.h:233
 msgid "Market cap: "
 msgstr ""
 
-#: stock.h:219 stock.h:225 stock.h:227 stock.h:229
+#: stock.h:219 stock.h:225 stock.h:227 stock.h:229 stock.h:237
 msgid "Open: "
 msgstr ""
 
-#: stock.h:223 stock.h:229 stock.h:231 stock.h:233
+#: stock.h:223 stock.h:229 stock.h:231 stock.h:233 stock.h:241
 msgid "Close: "
 msgstr ""
 
-#: stock.h:227 stock.h:233 stock.h:235 stock.h:237
+#: stock.h:227 stock.h:233 stock.h:235 stock.h:237 stock.h:245
 msgid "Change: "
 msgstr ""
 
-#: stock.h:231 stock.h:237 stock.h:239 stock.h:241
+#: stock.h:231 stock.h:237 stock.h:239 stock.h:241 stock.h:249
 msgid "Change in %: "
 msgstr ""
 
-#: stock.h:235 stock.h:241 stock.h:243 stock.h:245
+#: stock.h:235 stock.h:241 stock.h:243 stock.h:245 stock.h:253
 msgid "Trade time: "
 msgstr ""
 
@@ -8215,27 +8722,27 @@ msgid "CHANGE"
 msgstr ""
 
 #: channellist.h:425 channellist.h:452 channellist.h:426 channellist.h:430
-#: channellist.h:440 channellist.h:463 channellist.h:467
+#: channellist.h:440 channellist.h:463 channellist.h:467 channellist.h:578
 msgid "Move mode"
 msgstr ""
 
 #: channellist.h:431 channellist.h:458 channellist.h:432 channellist.h:436
-#: channellist.h:446 channellist.h:470 channellist.h:475
+#: channellist.h:446 channellist.h:470 channellist.h:475 channellist.h:587
 msgid "Remove mode"
 msgstr ""
 
 #: channellist.h:437 channellist.h:464 channellist.h:438 channellist.h:442
-#: channellist.h:452 channellist.h:477 channellist.h:483
+#: channellist.h:452 channellist.h:477 channellist.h:483 channellist.h:596
 msgid "Copy mode"
 msgstr ""
 
 #: channellist.h:443 channellist.h:470 channellist.h:444 channellist.h:448
-#: channellist.h:458 channellist.h:484 channellist.h:491
+#: channellist.h:458 channellist.h:484 channellist.h:491 channellist.h:605
 msgid "Protect mode"
 msgstr ""
 
 #: channellist.h:449 channellist.h:476 channellist.h:450 channellist.h:454
-#: channellist.h:464 channellist.h:491 channellist.h:499
+#: channellist.h:464 channellist.h:491 channellist.h:499 channellist.h:614
 msgid "Edit mode"
 msgstr ""
 
@@ -8244,10 +8751,12 @@ msgid "abc/ABC"
 msgstr ""
 
 #: plugins_streaminfo_skin.xml.h:1 skins_streaminfo_skin.xml.h:1
+#: plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
 msgid "Streaminfo"
 msgstr ""
 
 #: plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
+#: plugins_streaminfo_skin.xml.h:2 skins_streaminfo_skin.xml.h:2
 msgid "Framerate"
 msgstr ""
 
@@ -8263,14 +8772,1371 @@ msgstr ""
 msgid "Channellist view"
 msgstr ""
 
-#: adjust.h:165
+#: adjust.h:165 adjust.h:171
 msgid "deactive"
 msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:3 skins_lcdpearl1_skin.xml.h:3
+#: plugins_lcdsamsung_skin.xml.h:3 skins_lcdsamsung_skin.xml.h:3
 msgid "0 C"
 msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:12 skins_lcdpearl1_skin.xml.h:12
+#: plugins_lcdpearl1_skin.xml.h:13 plugins_lcdsamsung_skin.xml.h:17
+#: skins_lcdpearl1_skin.xml.h:13 skins_lcdsamsung_skin.xml.h:17
 msgid "Wettervorhersage"
+msgstr ""
+
+#: adjust.h:182
+msgid "channel-movie"
+msgstr ""
+
+#: adjust.h:183
+msgid "movie-channel"
+msgstr ""
+
+#: adjust.h:197
+msgid "expert (11)"
+msgstr ""
+
+#: avsettings.h:66
+msgid "redKey"
+msgstr ""
+
+#: bgdownload.h:159
+msgid "Realy stop download ?"
+msgstr ""
+
+#: blindscanadjust.h:17
+msgid "Cable: "
+msgstr ""
+
+#: blindscanadjust.h:21
+msgid "Terrestrial: "
+msgstr ""
+
+#: blindscanadjust.h:120
+msgid "Sat"
+msgstr ""
+
+#: blindscanadjust.h:121 tunerconfig.h:339
+msgid "Cable"
+msgstr ""
+
+#: blindscanadjust.h:122
+msgid "Terrestrial"
+msgstr ""
+
+#: channellist.h:913
+msgid "Copy providerlist successfull"
+msgstr ""
+
+#: channellist.h:915
+msgid "Copy providerlist not ok"
+msgstr ""
+
+#: epgsettings.h:188 epgsettings.h:193 epgsettings.h:198
+msgid "only for scan"
+msgstr ""
+
+#: epgsettings.h:203
+msgid "poweroff"
+msgstr ""
+
+#: extensions.h:105 extensions.h:118 extensions.h:349
+msgid "Tpk Install Info"
+msgstr ""
+
+#: extensions.h:105
+msgid "Can't install Package. Package to big."
+msgstr ""
+
+#: extensions.h:109 extensions.h:237
+msgid "Installing"
+msgstr ""
+
+#: extensions.h:115 extensions.h:169 extensions.h:241 softcam.h:91
+#: softcam.h:99
+msgid "started"
+msgstr ""
+
+#: extensions.h:127
+msgid "Tpk Install Info - Install OK"
+msgstr ""
+
+#: extensions.h:133
+msgid "Tpk Install Info - Install ERROR"
+msgstr ""
+
+#: extensions.h:141
+msgid "TPK Install Done your system rebooting !"
+msgstr ""
+
+#: extensions.h:165
+msgid "Removeing"
+msgstr ""
+
+#: extensions.h:172
+msgid "Tpk Remove Info"
+msgstr ""
+
+#: extensions.h:181
+msgid "Tpk Remove Info - Remove OK"
+msgstr ""
+
+#: extensions.h:189
+msgid "Tpk Remove Info - Remove ERROR"
+msgstr ""
+
+#: extensions.h:196
+msgid "TPK Remove Done your system rebooting !"
+msgstr ""
+
+#: extensions.h:277
+msgid "TPK Tmp Install Done your system rebooting !"
+msgstr ""
+
+#: extensions.h:294 extensions.h:298
+msgid "Tpk Update Info - Update ERROR"
+msgstr ""
+
+#: extensions.h:294
+msgid "Can't get TPK index !"
+msgstr ""
+
+#: extensions.h:298
+msgid "Can't update all packages !"
+msgstr ""
+
+#: extensions.h:306
+msgid "TPK Upgrade Done your system rebooting !"
+msgstr ""
+
+#: facebook.h:66 facebook.h:167
+msgid "Can't get data from facebook"
+msgstr ""
+
+#: facebook.h:157
+msgid ""
+"Facebook allready registered,\n"
+"Make new registration ?"
+msgstr ""
+
+#: facebook.h:471
+msgid "Group created"
+msgstr ""
+
+#: facebook.h:472
+msgid "Event created"
+msgstr ""
+
+#: facebook.h:473
+msgid "Status update"
+msgstr ""
+
+#: facebook.h:474
+msgid "Post on wall from another user"
+msgstr ""
+
+#: facebook.h:475
+msgid "Note created"
+msgstr ""
+
+#: facebook.h:476
+msgid "Link postet"
+msgstr ""
+
+#: facebook.h:477
+msgid "Video postet"
+msgstr ""
+
+#: facebook.h:478
+msgid "Photos postet"
+msgstr ""
+
+#: facebook.h:479 facebook.h:481
+msgid "App story"
+msgstr ""
+
+#: facebook.h:480
+msgid "Coment created"
+msgstr ""
+
+#: facebook.h:482
+msgid "Checkin to a place"
+msgstr ""
+
+#: facebook.h:483
+msgid "Post in group"
+msgstr ""
+
+#: filemanager.h:22
+msgid "Rename"
+msgstr ""
+
+#: filemanager.h:67
+msgid "Create Folder"
+msgstr ""
+
+#: filemanager.h:176
+msgid "Realy copy this file/dir?"
+msgstr ""
+
+#: filemanager.h:181
+msgid "Realy move this file/dir?"
+msgstr ""
+
+#: filemanager.h:186
+msgid "From"
+msgstr ""
+
+#: filemanager.h:190
+msgid "To"
+msgstr ""
+
+#: filemanager.h:232
+msgid "Realy delete this file/dir?"
+msgstr ""
+
+#: filemanager.h:281
+msgid "Can't show this file!"
+msgstr ""
+
+#: filenuke.h:50 putlocker.h:141 vidstream.h:56
+msgid "The page is temporarily unavailable"
+msgstr ""
+
+#: flashx.h:70 putlocker.h:52 solarmovie.h:187 xvidstage.h:64 xvidstage.h:177
+msgid "This file doesn't exist, or has been removed"
+msgstr ""
+
+#: gmediarender.h:101
+msgid "Servername"
+msgstr ""
+
+#: gmediarender.h:105
+msgid "Wait for connect or press EXIT"
+msgstr ""
+
+#: harddisk.h:111 harddisk.h:112
+msgid "Harddisk Format - Filesystem"
+msgstr ""
+
+#: harddisk.h:637 harddisk.h:638
+msgid "Harddisk Sleep"
+msgstr ""
+
+#: imdbapi.h:200 imdb.h:480 tmdb.h:784
+msgid "Error, Internet Connection not found"
+msgstr ""
+
+#: instar.h:196 instar.h:208
+msgid "aus"
+msgstr ""
+
+#: instar.h:197 instar.h:209
+msgid "ein"
+msgstr ""
+
+#: kinox.h:254 movie4k.h:766 movie4k.h:890 movie4k.h:1005 solarmovie.h:454
+msgid "Season"
+msgstr ""
+
+#: kinox.h:258 movie4k.h:770 movie4k.h:1009 solarmovie.h:458
+msgid "Episode"
+msgstr ""
+
+#: marker.h:194
+msgid "ERROR... can't set maker in this file"
+msgstr ""
+
+#: marker.h:208
+msgid "Marker has been set."
+msgstr ""
+
+#: mc_audioplayer_settings.h:39 mc_pictureplayer_settings.h:54
+#: mc_videoplayer_settings.h:35
+msgid "size (default)"
+msgstr ""
+
+#: mc_audioplayer_settings.h:40 mc_pictureplayer_settings.h:55
+#: mc_videoplayer_settings.h:36
+msgid "datetime"
+msgstr ""
+
+#: mc_dateibrowser.h:38
+msgid "Install File Manager Tpk first !"
+msgstr ""
+
+#: mc_internetbrowser.h:38
+msgid "Install netsurf Internetbrowser Tpk first !"
+msgstr ""
+
+#: mc_mediathek.h:37
+msgid "Install Tithek Tpk first !"
+msgstr ""
+
+#: mc_pictureplayer_settings.h:30 moduleconfig.h:237
+msgid "middle"
+msgstr ""
+
+#: mc_pictureplayer_settings.h:31
+msgid "best"
+msgstr ""
+
+#: mc_videoplayer.h:886 player.h:97
+msgid "Start at last position ?"
+msgstr ""
+
+#: mc_videoplayer_settings.h:54
+msgid "1s"
+msgstr ""
+
+#: mc_videoplayer_settings.h:55
+msgid "2s"
+msgstr ""
+
+#: mc_videoplayer_settings.h:56
+msgid "3s"
+msgstr ""
+
+#: mc_videoplayer_settings.h:57
+msgid "4s"
+msgstr ""
+
+#: mc_videoplayer_settings.h:58
+msgid "5s (default)"
+msgstr ""
+
+#: mc_wetterinfo.h:38
+msgid "Install Weather Tpk first !"
+msgstr ""
+
+#: mediadbedit.h:75
+msgid "unlock -> lock it"
+msgstr ""
+
+#: mediadbedit.h:76
+msgid "unlock -> leaf unlock"
+msgstr ""
+
+#: mediadbedit.h:77
+msgid "locked -> unlock it"
+msgstr ""
+
+#: mediadbedit.h:78
+msgid "locked -> leaf locked"
+msgstr ""
+
+#: mediadbedit.h:333
+msgid "MediaDB entry for this file not found."
+msgstr ""
+
+#: mediadb.h:1099 play.h:527
+msgid "MediaDB directory scan started in Background !"
+msgstr ""
+
+#: mediadb.h:1101 play.h:529
+msgid "Delete MediaDB before scan"
+msgstr ""
+
+#: mediadb.h:1108 play.h:536
+msgid "Delete unused entrys before scan"
+msgstr ""
+
+#: mediadb.h:1115 play.h:543
+msgid "scan Directory"
+msgstr ""
+
+#: mediadb.h:1119 play.h:547
+msgid "MediaDB place"
+msgstr ""
+
+#: mediadb.h:1123 play.h:551
+msgid "MediaDB Debug"
+msgstr ""
+
+#: mediadb.h:1130 play.h:558
+msgid "Backdrop Download Count"
+msgstr ""
+
+#: mediadb.h:1498
+msgid "MediaDB scan finished"
+msgstr ""
+
+#: mediadb.h:2425
+msgid "path"
+msgstr ""
+
+#: mediadb.h:2429
+msgid "title"
+msgstr ""
+
+#: mediadb.h:2433
+msgid "imdbid"
+msgstr ""
+
+#: mediadb.h:2436
+msgid "Add iMDB manuel"
+msgstr ""
+
+#: mediadbsettings.h:34
+msgid "older 1 day"
+msgstr ""
+
+#: mediadbsettings.h:35
+msgid "older 2 day"
+msgstr ""
+
+#: mediadbsettings.h:36
+msgid "older 3 day"
+msgstr ""
+
+#: mediadbsettings.h:37
+msgid "older 4 day"
+msgstr ""
+
+#: mediadbsettings.h:38
+msgid "older 5 day"
+msgstr ""
+
+#: mediadbsettings.h:39
+msgid "older 10 day"
+msgstr ""
+
+#: mediadbsettings.h:40
+msgid "older 15 day"
+msgstr ""
+
+#: mediadbsettings.h:41
+msgid "older 20 day"
+msgstr ""
+
+#: mediadbsettings.h:42
+msgid "older 30 day"
+msgstr ""
+
+#: mediadbsettings.h:43
+msgid "older 40 day"
+msgstr ""
+
+#: mediadbsettings.h:44
+msgid "older 50 day"
+msgstr ""
+
+#: mediadbsettings.h:59
+msgid "15"
+msgstr ""
+
+#: mediadbsettings.h:60
+msgid "20"
+msgstr ""
+
+#: mediadbsettings.h:92
+msgid ""
+"No MediaDB Directory found\n"
+"Press OK to create it"
+msgstr ""
+
+#: moduleconfig.h:149
+msgid "double"
+msgstr ""
+
+#: moduleconfig.h:158
+msgid "activate"
+msgstr ""
+
+#: moduleconfig.h:159
+msgid "deaktivate"
+msgstr ""
+
+#: moduleconfig.h:363
+msgid "Module Type"
+msgstr ""
+
+#: network.h:257 network.h:258
+msgid "Wait"
+msgstr ""
+
+#: network.h:266 network.h:274
+msgid "ERROR"
+msgstr ""
+
+#: network.h:391
+msgid "static"
+msgstr ""
+
+#: network.h:559
+msgid "Can't change hostname !"
+msgstr ""
+
+#: network.h:767
+msgid "deaktivate ethernet interface ?"
+msgstr ""
+
+#: network.h:775
+msgid "Start Wlan ?"
+msgstr ""
+
+#: network.h:873
+msgid "Found Wlan Stick and driver for: "
+msgstr ""
+
+#: network.h:878
+msgid ""
+"Found Wlan Stick but no driver\n"
+"Please install driver: "
+msgstr ""
+
+#: network.h:881
+msgid "Wlan Stick not found"
+msgstr ""
+
+#: network.h:884
+msgid "WLAN Info"
+msgstr ""
+
+#: nowvideo.h:39
+msgid ""
+"The file is being transfered to our other servers. This may take few minutes."
+msgstr ""
+
+#: panel_settings_autostart.h:95
+msgid "useUnknown910"
+msgstr ""
+
+#: play.h:373 play.h:407
+msgid "Artist:"
+msgstr ""
+
+#: play.h:378 play.h:412 plugins_mc_skin.xml.h:5 skins_mc_skin.xml.h:5
+msgid "Album:"
+msgstr ""
+
+#: play.h:383 play.h:417 plugins_mc_skin.xml.h:68 skins_mc_skin.xml.h:68
+msgid "Year:"
+msgstr ""
+
+#: play.h:393 play.h:427
+msgid "Comment:"
+msgstr ""
+
+#: play.h:432
+msgid "Track:"
+msgstr ""
+
+#: play.h:437
+msgid "Copyright:"
+msgstr ""
+
+#: play.h:448
+msgid "iD3Tag"
+msgstr ""
+
+#: play.h:1075
+msgid "Jump To (min)"
+msgstr ""
+
+#: play.h:1164
+msgid "Record in progress"
+msgstr ""
+
+#: plugins_autotimer_skin.xml.h:1 skins_autotimer_skin.xml.h:1
+msgid "AutoTimer Settings"
+msgstr ""
+
+#: plugins_autotimer_skin.xml.h:2 skins_autotimer_skin.xml.h:2
+msgid "begin search"
+msgstr ""
+
+#: plugins_autotimer_skin.xml.h:3 skins_autotimer_skin.xml.h:3
+msgid "channel (EPG=Current channel)"
+msgstr ""
+
+#: plugins_autotimer_skin.xml.h:4 skins_autotimer_skin.xml.h:4
+msgid "end search"
+msgstr ""
+
+#: plugins_autotimer_skin.xml.h:5 skins_autotimer_skin.xml.h:5
+msgid "event"
+msgstr ""
+
+#: plugins_autotimer_skin.xml.h:6 skins_autotimer_skin.xml.h:6
+msgid "search string"
+msgstr ""
+
+#: plugins_autotimer_skin.xml.h:9 plugins_lcdpearl1_skin.xml.h:12
+#: plugins_lcdsamsung_skin.xml.h:15 skins_autotimer_skin.xml.h:9
+#: skins_lcdpearl1_skin.xml.h:12 skins_lcdsamsung_skin.xml.h:15
+msgid ""
+"text=START halign=center valign=middle bordercol=blue bordersize=2 "
+"bordertype=2 posx=400 posy=0 width=200 height=30/>"
+msgstr ""
+
+#: plugins_callmonitor1_skin.xml.h:12 skins_callmonitor1_skin.xml.h:12
+msgid "Fritzbox Firmware... >= 05.50"
+msgstr ""
+
+#: plugins_callmonitor1_skin.xml.h:14 skins_callmonitor1_skin.xml.h:14
+msgid "Nutzername-Fritzbox (optional)"
+msgstr ""
+
+#: plugins_catcatch_skin.xml.h:1 skins_catcatch_skin.xml.h:1
+msgid "Cat-Catch"
+msgstr ""
+
+#: plugins_catcatch_skin.xml.h:5 skins_catcatch_skin.xml.h:5
+msgid "Level:"
+msgstr ""
+
+#: plugins_catcatch_skin.xml.h:6 skins_catcatch_skin.xml.h:6
+msgid "Score:"
+msgstr ""
+
+#: plugins_facebook_skin.xml.h:1 skins_facebook_skin.xml.h:1
+msgid "Facebook"
+msgstr ""
+
+#: plugins_facebook_skin.xml.h:2 skins_facebook_skin.xml.h:2
+msgid "Facebook Register"
+msgstr ""
+
+#: plugins_facebook_skin.xml.h:3 skins_facebook_skin.xml.h:3
+msgid ""
+"Enter the shown url in your browser and enter the Code to register the "
+"receiver to facebook"
+msgstr ""
+
+#: plugins_filemanager_skin.xml.h:1 skins_filemanager_skin.xml.h:1
+msgid "Copy"
+msgstr ""
+
+#: plugins_filemanager_skin.xml.h:2 plugins_tmc_skin.xml.h:3
+#: skins_filemanager_skin.xml.h:2 skins_tmc_skin.xml.h:3
+msgid "Delete"
+msgstr ""
+
+#: plugins_filemanager_skin.xml.h:3 skins_filemanager_skin.xml.h:3
+msgid "FILELIST MANAGER"
+msgstr ""
+
+#: plugins_filemanager_skin.xml.h:4 skins_filemanager_skin.xml.h:4
+msgid "Moven"
+msgstr ""
+
+#: plugins_imdbapi_skin.xml.h:4 skins_imdbapi_skin.xml.h:4
+msgid "IMDb-API - Plugin"
+msgstr ""
+
+#: plugins_imdb_skin.xml.h:4 skins_imdb_skin.xml.h:4
+msgid "IMDb - Plugin"
+msgstr ""
+
+#: plugins_instar_skin.xml.h:1 skins_instar_skin.xml.h:1
+msgid "IP-Kammera Einstellungen"
+msgstr ""
+
+#: plugins_instar_skin.xml.h:2 skins_instar_skin.xml.h:2
+msgid "Benutzer-Kammera 1"
+msgstr ""
+
+#: plugins_instar_skin.xml.h:3 skins_instar_skin.xml.h:3
+msgid "Benutzer-Kammera 2"
+msgstr ""
+
+#: plugins_instar_skin.xml.h:4 skins_instar_skin.xml.h:4
+msgid "CAMx"
+msgstr ""
+
+#: plugins_instar_skin.xml.h:5 skins_instar_skin.xml.h:5
+msgid "direkter Start"
+msgstr ""
+
+#: plugins_instar_skin.xml.h:6 skins_instar_skin.xml.h:6
+msgid "IP-Kammera 1"
+msgstr ""
+
+#: plugins_instar_skin.xml.h:7 skins_instar_skin.xml.h:7
+msgid "IP-Kammera 2"
+msgstr ""
+
+#: plugins_instar_skin.xml.h:8 skins_instar_skin.xml.h:8
+msgid "Kammera 1"
+msgstr ""
+
+#: plugins_instar_skin.xml.h:9 skins_instar_skin.xml.h:9
+msgid "Kammera 2 (Umschalten mit Rot)"
+msgstr ""
+
+#: plugins_instar_skin.xml.h:10 skins_instar_skin.xml.h:10
+msgid "Passwort-Kammera 1"
+msgstr ""
+
+#: plugins_instar_skin.xml.h:11 skins_instar_skin.xml.h:11
+msgid "Passwort-Kammera 2"
+msgstr ""
+
+#: plugins_instar_skin.xml.h:12 skins_instar_skin.xml.h:12
+msgid "Port-Kammera 1"
+msgstr ""
+
+#: plugins_instar_skin.xml.h:13 skins_instar_skin.xml.h:13
+msgid "Port-Kammera 2"
+msgstr ""
+
+#: plugins_lcdpearl1_skin.xml.h:4 plugins_lcdsamsung_skin.xml.h:4
+#: skins_lcdpearl1_skin.xml.h:4 skins_lcdsamsung_skin.xml.h:4
+msgid "aktiv im Standby"
+msgstr ""
+
+#: plugins_lcdpearl1_skin.xml.h:7 plugins_lcdsamsung_skin.xml.h:8
+#: skins_lcdpearl1_skin.xml.h:7 skins_lcdsamsung_skin.xml.h:8
+msgid "--- Land"
+msgstr ""
+
+#: plugins_lcdpearl1_skin.xml.h:8 plugins_lcdsamsung_skin.xml.h:11
+#: skins_lcdpearl1_skin.xml.h:8 skins_lcdsamsung_skin.xml.h:11
+msgid "--- Ort"
+msgstr ""
+
+#: plugins_lcdpearl1_skin.xml.h:9 plugins_lcdsamsung_skin.xml.h:12
+#: skins_lcdpearl1_skin.xml.h:9 skins_lcdsamsung_skin.xml.h:12
+msgid "--- PLZ"
+msgstr ""
+
+#: plugins_lcdsamsung_skin.xml.h:1 skins_lcdsamsung_skin.xml.h:1
+msgid "Samsung SPF.. Settings"
+msgstr ""
+
+#: plugins_lcdsamsung_skin.xml.h:6 skins_lcdsamsung_skin.xml.h:6
+msgid "DI"
+msgstr ""
+
+#: plugins_lcdsamsung_skin.xml.h:7 skins_lcdsamsung_skin.xml.h:7
+msgid "DO"
+msgstr ""
+
+#: plugins_lcdsamsung_skin.xml.h:9 skins_lcdsamsung_skin.xml.h:9
+msgid "MI"
+msgstr ""
+
+#: plugins_lcdsamsung_skin.xml.h:10 skins_lcdsamsung_skin.xml.h:10
+msgid "MO"
+msgstr ""
+
+#: plugins_lcdsamsung_skin.xml.h:16 skins_lcdsamsung_skin.xml.h:16
+msgid "Typenbezeichnung"
+msgstr ""
+
+#: plugins_mc_skin.xml.h:13 skins_mc_skin.xml.h:13
+msgid "Backdrop Interval"
+msgstr ""
+
+#: plugins_mc_skin.xml.h:15 skins_mc_skin.xml.h:15
+msgid "Choice Menu"
+msgstr ""
+
+#: plugins_mc_skin.xml.h:19 skins_mc_skin.xml.h:19
+msgid "default Directory"
+msgstr ""
+
+#: plugins_mc_skin.xml.h:28 skins_mc_skin.xml.h:28
+msgid "Filename:"
+msgstr ""
+
+#: plugins_mc_skin.xml.h:33 skins_mc_skin.xml.h:33
+msgid "MediaDB autoscan"
+msgstr ""
+
+#: plugins_mc_skin.xml.h:34 skins_mc_skin.xml.h:34
+msgid "Mediathek"
+msgstr ""
+
+#: plugins_mc_skin.xml.h:41 skins_mc_skin.xml.h:41
+msgid "Pic quality"
+msgstr ""
+
+#: plugins_mc_skin.xml.h:60 skins_mc_skin.xml.h:60
+msgid "use last Directory"
+msgstr ""
+
+#: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
+msgid "dnsaddresse"
+msgstr ""
+
+#: plugins_networkbrowser_skin.xml.h:8 skins_networkbrowser_skin.xml.h:8
+msgid ""
+"Here you can configure your network shares. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+
+#: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
+msgid ""
+"If you don't find Windows shares you need to disable 'Password protected "
+"sharing' in the 'Network and Sharing Center'."
+msgstr ""
+
+#: plugins_networkbrowser_skin.xml.h:14 skins_networkbrowser_skin.xml.h:14
+msgid "proxy"
+msgstr ""
+
+#: plugins_networkbrowser_skin.xml.h:26 skins_networkbrowser_skin.xml.h:26
+msgid "usedns"
+msgstr ""
+
+#: plugins_readerconfig_skin.xml.h:1 skins_readerconfig_skin.xml.h:1
+msgid "Device"
+msgstr ""
+
+#: plugins_readerconfig_skin.xml.h:3 skins_readerconfig_skin.xml.h:3
+msgid "Enable"
+msgstr ""
+
+#: plugins_readerconfig_skin.xml.h:4 skins_readerconfig_skin.xml.h:4
+msgid ""
+"Here you can set your language. Use to navigate the control cross and the "
+"extra buttons displayed with your remote control to select."
+msgstr ""
+
+#: plugins_readerconfig_skin.xml.h:5 skins_readerconfig_skin.xml.h:5
+msgid "Reader Config"
+msgstr ""
+
+#: plugins_readerconfig_skin.xml.h:6 readerconfig.h:268
+#: skins_readerconfig_skin.xml.h:6
+msgid "Reader Configuration"
+msgstr ""
+
+#: plugins_readerconfig_skin.xml.h:7 readerconfig.h:333
+#: skins_readerconfig_skin.xml.h:7
+msgid "Reader Selection"
+msgstr ""
+
+#: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3
+msgid "ADD FAV"
+msgstr ""
+
+#: plugins_tithek_skin.xml.h:4 skins_tithek_skin.xml.h:4
+msgid "DEL FAV"
+msgstr ""
+
+#: plugins_tithek_skin.xml.h:5 skins_tithek_skin.xml.h:5
+msgid "Exit Tithek"
+msgstr ""
+
+#: plugins_tithek_skin.xml.h:6 skins_tithek_skin.xml.h:6
+msgid "Pic Ratio"
+msgstr ""
+
+#: plugins_tithek_skin.xml.h:7 skins_tithek_skin.xml.h:7 tithek.h:1021
+msgid "please wait..."
+msgstr ""
+
+#: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8
+msgid "Red-Menu"
+msgstr ""
+
+#: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
+msgid "Show Pay Streams"
+msgstr ""
+
+#: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
+msgid "TITHEK SETTINGS"
+msgstr ""
+
+#: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12
+msgid "View Cover"
+msgstr ""
+
+#: plugins_tithek_skin.xml.h:13 skins_tithek_skin.xml.h:13
+msgid "View Sections"
+msgstr ""
+
+#: plugins_tiwakeup_skin.xml.h:1 skins_tiwakeup_skin.xml.h:1
+msgid "tiWakeup"
+msgstr ""
+
+#: plugins_tmc_skin.xml.h:2 skins_tmc_skin.xml.h:2
+msgid "Back Pic"
+msgstr ""
+
+#: plugins_tmc_skin.xml.h:5 skins_tmc_skin.xml.h:5
+msgid "Edit"
+msgstr ""
+
+#: plugins_tmc_skin.xml.h:6 skins_tmc_skin.xml.h:6
+msgid "Full Pic"
+msgstr ""
+
+#: plugins_tmc_skin.xml.h:8 skins_tmc_skin.xml.h:8
+msgid "IMDB Search"
+msgstr ""
+
+#: plugins_tmc_skin.xml.h:10 skins_tmc_skin.xml.h:10
+msgid "Pic Name"
+msgstr ""
+
+#: plugins_tmc_skin.xml.h:11 skins_tmc_skin.xml.h:11
+msgid "Pic Timeout"
+msgstr ""
+
+#: plugins_tmc_skin.xml.h:12 skins_tmc_skin.xml.h:12
+msgid "Preview"
+msgstr ""
+
+#: plugins_tmc_skin.xml.h:14 skins_tmc_skin.xml.h:14
+msgid "Runtime:"
+msgstr ""
+
+#: plugins_tmc_skin.xml.h:17 skins_tmc_skin.xml.h:17
+msgid "Votes:"
+msgstr ""
+
+#: plugins_tmdb_skin.xml.h:2 skins_tmdb_skin.xml.h:2
+msgid "Orgname:"
+msgstr ""
+
+#: plugins_tmdb_skin.xml.h:3 skins_tmdb_skin.xml.h:3
+msgid "OTHER"
+msgstr ""
+
+#: plugins_tmdb_skin.xml.h:5 skins_tmdb_skin.xml.h:5
+msgid "Rating:"
+msgstr ""
+
+#: plugins_tmdb_skin.xml.h:10 skins_tmdb_skin.xml.h:10
+msgid "TMDb - Plugin"
+msgstr ""
+
+#: plugins_zapback_skin.xml.h:1 skins_zapback_skin.xml.h:1
+msgid "ZapBack"
+msgstr ""
+
+#: plugins_zapback_skin.xml.h:3 skins_zapback_skin.xml.h:3
+msgid "in"
+msgstr ""
+
+#: plugins_zapback_skin.xml.h:4 skins_zapback_skin.xml.h:4
+msgid "Minuten"
+msgstr ""
+
+#: plugins_zapback_skin.xml.h:5 skins_zapback_skin.xml.h:5
+msgid "schaltet zurueck auf Sender"
+msgstr ""
+
+#: plugins_zapback_skin.xml.h:6 skins_zapback_skin.xml.h:6
+msgid "Start-> OK"
+msgstr ""
+
+#: possetup.h:98
+msgid ""
+"Position Setup is not allowed if record\n"
+"or stream is running !"
+msgstr ""
+
+#: readerconfig.h:258
+msgid "first slot"
+msgstr ""
+
+#: readerconfig.h:259
+msgid "second slot"
+msgstr ""
+
+#: readerconfig.h:363
+msgid "Reader active"
+msgstr ""
+
+#: readerconfig.h:388
+msgid "Oscam config written to medium !"
+msgstr ""
+
+#: readerconfig.h:389
+msgid "Restart Oscam ?"
+msgstr ""
+
+#: record.h:84
+msgid "No space left on device"
+msgstr ""
+
+#: record.h:290
+msgid "Record power off system?"
+msgstr ""
+
+#: record.h:1339
+msgid "Record started"
+msgstr ""
+
+#: rectimer.h:549
+msgid "EPG Scan activate standby?"
+msgstr ""
+
+#: restoredefault.h:47
+msgid ""
+"Do you really want to erase Swap (Settings are preserve)?\n"
+"The Box will reboot and the erase will be started!"
+msgstr ""
+
+#: rtl2now.h:28
+msgid ""
+"Found Pay Stream visit the official Website and Order this Stream and try "
+"this again !"
+msgstr ""
+
+#: scan.h:1516
+msgid "Sat/Provider: "
+msgstr ""
+
+#: scan.h:1618
+msgid "Does you want delete all unused Bouquetentrys?"
+msgstr ""
+
+#: scan.h:1939
+msgid "Single Provider"
+msgstr ""
+
+#: screensaveradjust.h:31
+msgid "green"
+msgstr ""
+
+#: sock.h:820
+msgid "Download finished!"
+msgstr ""
+
+#: softcam.h:93 softcam.h:105
+msgid "active"
+msgstr ""
+
+#: softcam.h:119
+msgid "Emu not found"
+msgstr ""
+
+#: softcam.h:395
+msgid "Reader Config Plugin not installed !"
+msgstr ""
+
+#: system_backup.h:61
+msgid "Backup failed"
+msgstr ""
+
+#: system_backup_restore.h:41
+msgid "Restore failed, see log"
+msgstr ""
+
+#: system_backup_restore.h:44
+msgid "Update Plugins to new Version?"
+msgstr ""
+
+#: system_backup_restore.h:65
+msgid "BACKUP LOG"
+msgstr ""
+
+#: system_backup_restore.h:88
+msgid "Backup failed, see log"
+msgstr ""
+
+#: system_infos_sysinfo.h:118
+msgid "Prozess Info"
+msgstr ""
+
+#: system_infos_sysinfo.h:128
+msgid "USB Info"
+msgstr ""
+
+#: system_update.h:256 system_update.h:323
+msgid "starting Usb (unknown release grp) Update ?"
+msgstr ""
+
+#: system_update.h:342
+msgid ""
+"Can't start system update\n"
+"Please remove Stick/HDD and try again"
+msgstr ""
+
+#: timeshift.h:155
+msgid ""
+"Timeshift file to short\n"
+"please wait a little and try again"
+msgstr ""
+
+#: timeshiftsettings.h:45
+msgid ""
+"Timeshiftsettings not allowed\n"
+"if timeshift is running !"
+msgstr ""
+
+#: timeshiftsettings.h:50
+msgid "permanent"
+msgstr ""
+
+#: tithek.h:807
+msgid "found"
+msgstr ""
+
+#: tithek.h:812
+msgid "Results"
+msgstr ""
+
+#: tithek.h:1034
+msgid "Remove Cachefile ?"
+msgstr ""
+
+#: tithek.h:1081
+msgid ""
+"Can't start download.\n"
+"Please try later."
+msgstr ""
+
+#: tithek.h:1362
+msgid "TitanNit Tithek disclaimer"
+msgstr ""
+
+#: tithek.h:1425
+msgid "Page"
+msgstr ""
+
+#: tithek.h:1430
+msgid " )"
+msgstr ""
+
+#: tithek.h:2069
+msgid "The hoster is not yet supported for the time !"
+msgstr ""
+
+#: tithek.h:2131
+msgid "Remove this Favorite ?"
+msgstr ""
+
+#: tithek.h:2145
+msgid "Add this link as Favorite ?"
+msgstr ""
+
+#: tithek_settings.h:16 tithek_settings.h:24
+msgid "show auto entrys"
+msgstr ""
+
+#: tithek_settings.h:17 tithek_settings.h:25
+msgid "show 2 entrys"
+msgstr ""
+
+#: tithek_settings.h:18 tithek_settings.h:26
+msgid "show 6 entrys"
+msgstr ""
+
+#: tithek_settings.h:19 tithek_settings.h:27
+msgid "show 12 entrys"
+msgstr ""
+
+#: tithek_settings.h:20 tithek_settings.h:28
+msgid "show 20 entrys"
+msgstr ""
+
+#: tithek_settings.h:21 tithek_settings.h:29
+msgid "show 30 entrys"
+msgstr ""
+
+#: tmc.h:387
+msgid "Status"
+msgstr ""
+
+#: tmc.h:391
+msgid "idle"
+msgstr ""
+
+#: tmc.h:408
+msgid "Audio"
+msgstr ""
+
+#: tmc.h:417
+msgid "Picture"
+msgstr ""
+
+#: tmc.h:540
+msgid "video"
+msgstr ""
+
+#: tmc.h:541
+msgid "audio"
+msgstr ""
+
+#: tmc.h:543
+msgid "video / audio"
+msgstr ""
+
+#: tmc.h:544
+msgid "video / picture"
+msgstr ""
+
+#: tmc.h:545
+msgid "audio / picture"
+msgstr ""
+
+#: tmc.h:548
+msgid "pic1"
+msgstr ""
+
+#: tmc.h:549
+msgid "pic2"
+msgstr ""
+
+#: tmc.h:550
+msgid "pic3"
+msgstr ""
+
+#: tmc.h:551
+msgid "pic4"
+msgstr ""
+
+#: tmc.h:552
+msgid "pic5"
+msgstr ""
+
+#: tmc.h:553
+msgid "no pic"
+msgstr ""
+
+#: tmc.h:699
+msgid "Delete selected entry ?"
+msgstr ""
+
+#: tmc.h:702
+msgid "RED"
+msgstr ""
+
+#: tmc.h:1004
+msgid ""
+"MediaDB Path not found!\n"
+"Configure it in MediaDB Settings"
+msgstr ""
+
+#: tmc.h:1005
+msgid "Path: "
+msgstr ""
+
+#: tmc.h:1012
+msgid ""
+"MediaDB not found!\n"
+"Scan your HDD in TMC Settings"
+msgstr ""
+
+#: tmc.h:1017
+msgid ""
+"IMDB Plugin not found!\n"
+"Can't get detail media infos\n"
+"Please install it"
+msgstr ""
+
+#: tmdb.h:947
+msgid "Error, found result without imdbid we can't this save in MediaDB"
+msgstr ""
+
+#: tpchoice.h:21
+msgid "Transponderlist"
+msgstr ""
+
+#: tpchoice.h:52
+msgid "ID"
+msgstr ""
+
+#: tpchoice.h:56
+msgid "FREQU"
+msgstr ""
+
+#: tpchoice.h:70
+msgid "CABLE"
+msgstr ""
+
+#: tpchoice.h:72
+msgid "TERR"
+msgstr ""
+
+#: tpchoice.h:74
+msgid "UNKNOWN"
+msgstr ""
+
+#: tpchoice.h:81
+msgid "SR"
+msgstr ""
+
+#: tpchoice.h:87
+msgid "POS"
+msgstr ""
+
+#: transponder.h:117 transponder.h:126
+msgid "8 Mhz"
+msgstr ""
+
+#: transponder.h:118 transponder.h:128
+msgid "7 Mhz"
+msgstr ""
+
+#: transponder.h:119 transponder.h:130
+msgid "6 Mhz"
+msgstr ""
+
+#: transponder.h:154 transponder.h:162
+msgid "2 Khz"
+msgstr ""
+
+#: transponder.h:155 transponder.h:164
+msgid "8 Khz"
+msgstr ""
+
+#: tunerconfig.h:379
+msgid "Terrestrisch"
+msgstr ""
+
+#: tunerconfig.h:772
+msgid ""
+"Tunerconfig is not allowed if record\n"
+"or stream is running !"
+msgstr ""
+
+#: unlock.h:20
+msgid "Spezialfunctions unlocked, no input required"
+msgstr ""
+
+#: unlock.h:26
+msgid "RECEIVER ID: "
+msgstr ""
+
+#: unlock.h:66
+msgid ""
+"Can't save Code.\n"
+"Delete Plugins to free space"
+msgstr ""
+
+#: unlock.h:71
+msgid "Code ok"
+msgstr ""
+
+#: unlock.h:75
+msgid "Code not ok, please try again !"
+msgstr ""
+
+#: vfdisplay.h:38
+msgid "channel number"
+msgstr ""
+
+#: vfdisplay.h:45
+msgid "date + time"
+msgstr ""
+
+#: vfdisplay.h:51
+msgid "blink"
+msgstr ""
+
+#: vfdisplay.h:52
+msgid "fade out/in"
+msgstr ""
+
+#: vfdisplay.h:53
+msgid "show record"
+msgstr ""
+
+#: vfdisplay.h:54
+msgid "star"
+msgstr ""
+
+#: vfdisplay.h:55
+msgid "blink star"
 msgstr ""
