@@ -154,10 +154,12 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 		tmpstr = gethttpreal("movie4k.to", "/", 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 
 		folgen = string_resub("<TABLE id=\"tablemoviesindex\">", "</TABLE>", tmpstr, 0);
-		folgen = string_replace_all("\n", "", folgen, 1);
-		folgen = string_replace_all("\t", "", folgen, 1);
+//		folgen = string_replace_all("\n", "", folgen, 1);
+		stringreplacechar(folgen, '\n', ' ');
+//		folgen = string_replace_all("\t", "", folgen, 1);
+		stringreplacechar(folgen, '\t', ' ');
 		string_strip_whitechars(folgen);
-		folgen = string_replace_all("</TD> </TR> <TR id=\"coverPreview", "</TD> </TR>\n<TR id=\"coverPreview", folgen, 1);
+		folgen = string_replace_all("</TD> </TR> <TR id=\"coverPreview", "</TD> </TR>\n<TR id=\"cover1Preview", folgen, 1);
 
 		if(folgen != NULL)
 		{
