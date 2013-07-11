@@ -204,13 +204,13 @@ void screenpowerofftimer(void)
 					drawscreen(screen, 0, 0);
 				}
 			}
-      if(rcret == getrcconfigint("rcsleep", NULL))
+			if(rcret == getrcconfigint("rcsleep", NULL))
 			{
 				if(minutes->ret != NULL)
 				{
 					int min = atoi(minutes->ret);
 					min += 30;
-					if(min > 999) min = 999;
+					if(min > 180) min = 30;
 					char *tmpstr = NULL;
 					tmpstr = oitoa(min);
 					changeinput(minutes, tmpstr);
