@@ -3232,5 +3232,9 @@ msgstr "Es konnten nicht alle TPK Pakete aktualisiert werden !"
 msgid "Update Plugins to new Version?"
 msgstr "Plugins auf die neue Version aktualisieren?"
 
+msgid "Channel Allocation"
+msgstr "Sender Zuordnung"
+
+
 
 
