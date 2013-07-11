@@ -158,7 +158,7 @@ void screenpowerofftimer(void)
 				break;
 			}
 		}
-		if(rcret == getrcconfigint("rcgreen", NULL)) //blue means "use epg end time of current program"
+		if(rcret == getrcconfigint("rcgreen", NULL)) //green means "use epg end time of current program"
 		{
 			struct epg* epgnode = getepgakt(status.aktservice->channel);
 			if(epgnode != NULL)
@@ -196,6 +196,21 @@ void screenpowerofftimer(void)
 					int min = atoi(minutes->ret);
 					min -= 5;
 					if(min < 0) min = 0;
+					char *tmpstr = NULL;
+					tmpstr = oitoa(min);
+					changeinput(minutes, tmpstr);
+					minutes->input = mask(minutes->input, 3, "0");
+					free(tmpstr); tmpstr = NULL;
+					drawscreen(screen, 0, 0);
+				}
+			}
+      if(rcret == getrcconfigint("rcsleep", NULL))
+			{
+				if(minutes->ret != NULL)
+				{
+					int min = atoi(minutes->ret);
+					min += 30;
+					if(min > 999) min = 999;
 					char *tmpstr = NULL;
 					tmpstr = oitoa(min);
 					changeinput(minutes, tmpstr);
