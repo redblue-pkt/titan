@@ -453,16 +453,16 @@ start:
 				reset = 0;
 			}
 		}
-		if(rcret == getrcconfigint("rcblue", NULL))
-		{
-			screenmoduleadjust();
-			reset = 0;
-			drawscreen(moduleconfig, 0, 0);
-		}
-		if(listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcmenu", NULL))
+		if(listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcblue", NULL))
 		{
 			clearscreen(moduleconfig);
 			screenchannelslot(((struct dvbdev*)listbox->select->handle)->devnr);
+			drawscreen(moduleconfig, 0, 0);
+		}
+		if(rcret == getrcconfigint("rcmenu", NULL))
+		{
+			screenmoduleadjust();
+			reset = 0;
 			drawscreen(moduleconfig, 0, 0);
 		}
 		
