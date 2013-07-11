@@ -618,7 +618,7 @@ msgstr ""
 #: tithek.h:2131 tithek.h:2145 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:784 tmdb.h:947 tpk.h:2753
 #: tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
-#: vidstream.h:57 xvidstage.h:64 xvidstage.h:177 youtube.h:133
+#: vidstream.h:57 xvidstage.h:64 xvidstage.h:177 youtube.h:133 global.h:6109
 msgid "Message"
 msgstr ""
 
@@ -798,7 +798,7 @@ msgstr ""
 #: tithek.h:2131 tithek.h:2145 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:784 tmdb.h:947 tpk.h:2753
 #: tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
-#: vidstream.h:57 xvidstage.h:64 xvidstage.h:177 youtube.h:133
+#: vidstream.h:57 xvidstage.h:64 xvidstage.h:177 youtube.h:133 global.h:6109
 msgid "OK"
 msgstr ""
 
@@ -978,7 +978,7 @@ msgstr ""
 #: tithek.h:2069 tithek.h:2131 tithek.h:2145 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:784 tmdb.h:947 tpk.h:2753
 #: tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
-#: vidstream.h:57 xvidstage.h:64 xvidstage.h:177 youtube.h:133
+#: vidstream.h:57 xvidstage.h:64 xvidstage.h:177 youtube.h:133 global.h:6109
 msgid "EXIT"
 msgstr ""
 
@@ -1440,7 +1440,7 @@ msgstr ""
 #: global.h:4539 global.h:4557 global.h:4561 global.h:4563 global.h:4565
 #: global.h:4522 global.h:4536 global.h:4551 global.h:4586 global.h:4587
 #: global.h:4602 global.h:4606 global.h:4607 global.h:4614 global.h:4639
-#: global.h:4634 global.h:4645 global.h:6121 keyactions.h:216
+#: global.h:4634 global.h:4645 global.h:6121 keyactions.h:216 global.h:6109
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -9039,12 +9039,13 @@ msgid "ein"
 msgstr ""
 
 #: kinox.h:254 movie4k.h:766 movie4k.h:890 movie4k.h:1005 solarmovie.h:454
-#: movie4k.h:774 movie4k.h:898 movie4k.h:1013
+#: movie4k.h:774 movie4k.h:898 movie4k.h:1013 movie4k.h:775 movie4k.h:899
+#: movie4k.h:1014
 msgid "Season"
 msgstr ""
 
 #: kinox.h:258 movie4k.h:770 movie4k.h:1009 solarmovie.h:458 movie4k.h:778
-#: movie4k.h:1017
+#: movie4k.h:1017 movie4k.h:779 movie4k.h:1018
 msgid "Episode"
 msgstr ""
 
