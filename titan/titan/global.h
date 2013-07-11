@@ -5492,7 +5492,7 @@ char* stringreplacechar(char *str, char c1, char c2)
 
 	if(str == NULL) return NULL;
 
-	for( i = 0; i < strlen(str); i++)
+	for(i = 0; i < strlen(str); i++)
 		if(str[i] == c1) str[i] = c2;
 
 	debug(1000, "out");
@@ -5506,7 +5506,7 @@ char* string_removechar(char *str)
 
 	if(str == NULL) return NULL;
 
-	for( i = 0; i < strlen(str); i++)
+	for(i = 0; i < strlen(str); i++)
 	{
 		if(str[i] == '.') str[i] = ' ';
 		if(str[i] == '-') str[i] = ' ';
@@ -5522,7 +5522,7 @@ char* string_withchars2return(char *str)
 	debug(1000, "in");
 	int i;
 
-	for( i = 0; i < strlen(str); i++)
+	for(i = 0; i < strlen(str); i++)
 	{
 		if(str[i] == ' ') str[i] = '\n';
 	}
