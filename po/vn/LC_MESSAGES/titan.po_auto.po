@@ -1300,10 +1300,12 @@ msgid "ein"
 msgstr ""
 
 #: kinox.h:254 movie4k.h:766 movie4k.h:890 movie4k.h:1005 solarmovie.h:454
+#: movie4k.h:774 movie4k.h:898 movie4k.h:1013
 msgid "Season"
 msgstr ""
 
-#: kinox.h:258 movie4k.h:770 movie4k.h:1009 solarmovie.h:458
+#: kinox.h:258 movie4k.h:770 movie4k.h:1009 solarmovie.h:458 movie4k.h:778
+#: movie4k.h:1017
 msgid "Episode"
 msgstr ""
 
