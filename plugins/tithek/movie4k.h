@@ -154,13 +154,12 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 		tmpstr = gethttpreal("movie4k.to", "/", 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 
 		folgen = string_resub("<TABLE id=\"tablemoviesindex\">", "</TABLE>", tmpstr, 0);
-//		folgen = string_replace_all("\n", "", folgen, 1);
+		folgen = string_replace_all("1000\r\n", "", folgen, 1);
+		folgen = string_replace_all("2000\r\n", "", folgen, 1);
 		stringreplacechar(folgen, '\n', ' ');
-//		folgen = string_replace_all("\t", "", folgen, 1);
 		stringreplacechar(folgen, '\t', ' ');
 		string_strip_whitechars(folgen);
 		folgen = string_replace_all("</TD> </TR> <TR id=\"coverPreview", "</TD> </TR>\n<TR id=\"cover1Preview", folgen, 1);
-
 		if(folgen != NULL)
 		{
 			int count = 0;
@@ -173,10 +172,11 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 				int max = count;
 				for(j = 0; j < max; j++)
 				{
+				    int rcret = waitrc(NULL, 10, 0);
+				    if(rcret == getrcconfigint("rcexit", NULL)) break;
 					incount += 1;
 					link = string_resub("<a href=\"", "\">", ret1[j].part, 0);
 					name = string_resub(".html\">", "</a>", ret1[j].part, 0);
-
 					char* id = string_resub("online-film-", ".html", link, 0);
 					if(id == NULL)
 						id = string_resub("watch-movie-", ".html", link, 0);
@@ -187,7 +187,9 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 					from = ostrcat("#coverPreview", id, 0, 0);
 					pic = string_resub(from, from, tmpstr, 0);	
 					pic = string_resub("<img src='", "' alt=", pic, 1);	
-					
+					if(pic == NULL)
+						pic = ostrcat("http://atemio.dyndns.tv/mediathek/menu/default.jpg", NULL, 0, 0);
+
 					if(ostrstr(link, "online-serie-") != NULL)
 						type = ostrcat("40", NULL, 0, 0);
 					else
@@ -221,6 +223,8 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 					free(from), from = NULL;
 					free(pic), pic = NULL;
 					free(type), type = NULL;
+					if(j == 60)
+						break;
 				}
 			}
 			free(ret1), ret1 = NULL;
