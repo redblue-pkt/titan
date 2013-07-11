@@ -5592,7 +5592,7 @@ char* string_strip_whitechars(char *text)
 char* string_replace_all(char *search, char *replace, char *string, int free1)
 {
 	char* tmpstr = NULL;
-	char* pos = NULL;
+	char* searchpos = NULL;
 
 	if(string == NULL || search == NULL)
 	{
@@ -5601,13 +5601,49 @@ char* string_replace_all(char *search, char *replace, char *string, int free1)
 		return tmpstr;
 	}
 
-	tmpstr = ostrcat(tmpstr, string, 1, 0);
-	pos = ostrstr(tmpstr, search);
-	while(pos != NULL)
+	searchpos = strstr(string, search);
+	if(searchpos == NULL)
 	{
-		tmpstr = string_replace(search, replace, tmpstr, 1);
-		pos = ostrstr(tmpstr, search);
+		tmpstr = ostrcat(tmpstr, string, 1, 0);
+		if(free1 == 1) free(string);
+		return tmpstr;
 	}
+
+	int count = 0;
+	int stringlen = strlen(string);
+	int searchlen = strlen(search);
+	int replacelen = strlen(replace);
+
+	while(searchpos != NULL)
+	{
+		count++;
+		searchpos = strstr(searchpos + searchlen, search);
+	}
+
+	int len = stringlen - (searchlen * count) + (replacelen * count);
+	tmpstr = calloc(1, len + 1);
+	if(tmpstr == NULL)
+	{
+		err("no mem");
+		tmpstr = ostrcat(tmpstr, string, 1, 0);
+		if(free1 == 1) free(string);
+		return tmpstr;
+	}
+
+	len = 0;	
+	char* str = string;
+	char* tmp = tmpstr;
+	searchpos = strstr(str, search);
+	while(searchpos != NULL)
+	{
+		len = searchpos - str;
+		memcpy(tmp, str, len);
+		memcpy(tmp + len, replace, replacelen);
+		tmp += len + replacelen;
+		str += len + searchlen;
+		searchpos = strstr(str, search);
+	}
+	memcpy(tmp, str, strlen(str));
 
 	if(free1 == 1) free(string);
 
