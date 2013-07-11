@@ -5570,8 +5570,7 @@ char* strstrip(char *text)
 
 char* string_strip_whitechars(char *text)
 {
-	debug(1000, "in");
-	int i;
+	char *p1 = text, *p2 = text;
 
 	if(text == NULL)
 	{
@@ -5579,24 +5578,15 @@ char* string_strip_whitechars(char *text)
 		return NULL;
 	}
 
-//	text = string_removechar(text);
-
-	for(i = 0; text[i] != '\0'; i++)
+	while(*p1 != '\0')
 	{
-		if(text[i] == ' ' && text[i + 1] == ' ')
-		{
-			int i2 = i + 1;
-			for(; text[i2] != '\0'; i2++)
-			{
-				text[i] = text[i2];
-				i++;
-			}
-			text[i2 - 1] = '\0';
-			i = -1;
-		}
+		if(*p1 == ' ' && *(p1 + 1) == ' ')
+			++p1;
+		else
+			*p2++ = *p1++;
 	}
+	*p2 = '\0';
 
-	debug(1000, "out");
 	return text;
 }
 
