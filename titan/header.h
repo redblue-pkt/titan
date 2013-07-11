@@ -12,7 +12,7 @@
 int writechannelslot(char *filename);
 int delchannelslot(int serviceid, uint64_t transponderid);
 struct channelslot* addchannelslot(char *line, int count, struct channelslot* last);
-
+struct channelslot* getchannelslot(int serviceid, uint64_t transponderid);
 
 //fancontrol.h
 void screenpanel_settings_fancontrol();
