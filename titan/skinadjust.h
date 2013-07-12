@@ -15,6 +15,7 @@ void screenskinadjust()
 	struct skin* bottomoffset = getscreennode(skinadjust, "bottomoffset");
 	struct skin* piconpath = getscreennode(skinadjust, "piconpath");
 	struct skin* showrecfreesize = getscreennode(skinadjust, "showrecfreesize");
+	struct skin* listboxselect = getscreennode(skinadjust, "listboxselect");
 	struct skin* tmp = NULL;
 	char* ret = NULL;
 
@@ -118,6 +119,15 @@ void screenskinadjust()
 					changeinput(listbox->select, ret);
 				free(ret);
 
+				drawscreen(skinadjust, 0, 0);
+				continue;
+			}
+			
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "listboxselect") == 0)
+			{
+				char* tmpstr = screencolorpicer(getskinconfig("listboxselect", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfig("listboxselect", tmpstr);
 				drawscreen(skinadjust, 0, 0);
 				continue;
 			}
