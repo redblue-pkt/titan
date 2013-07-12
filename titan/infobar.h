@@ -661,11 +661,13 @@ void screeninfobar()
 				}
 			}
 		}
+    /*
 		if(rcret == getrcconfigint("rcpip", NULL))
 		{
 			struct channel* tmp = getchannel(12003, 66625); //for test RTL Television
 			pipstart(tmp, NULL, 0);
 		}
+    */
 		if(rcret == RCTIMEOUT && mark == 0)
 		{
 			if(getconfigint("infobartimeout", NULL) > infobartimeout)
