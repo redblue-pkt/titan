@@ -1739,19 +1739,27 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 		}
 		free(tmpstr); tmpstr = NULL;
 		
-		//check if channel used this slot
 		int foundcaid = 0;
 		
+    //check if channel used this slot
 		if(node->channel != NULL)
 		{
 			struct channelslot *channelslotnode = channelslot; 
 			while(channelslotnode != NULL)
 			{
-				if(channelslotnode->transponderid == node->channel->transponderid && channelslotnode->serviceid == node->channel->serviceid && channelslotnode->slot == dvbnode->devnr)
+				if(channelslotnode->transponderid == node->channel->transponderid && channelslotnode->serviceid == node->channel->serviceid)
 				{
-					debug(620, "found channel in channelslot (slot=%d)", dvbnode->devnr);
-					foundcaid = 1;
-					break;
+          if(channelslotnode->slot == dvbnode->devnr)
+          {
+						debug(620, "channel support cam (channelslot=%d, slot=%d)", channelslotnode->slot, dvbnode->devnr);
+						foundcaid = 1;
+						break;
+          }
+          else
+          {
+          	debug(620, "channel not support cam (channelslot=%d, slot=%d)", channelslotnode->slot, dvbnode->devnr);
+						return 1;
+					}
 				}			
 				channelslotnode = channelslotnode->next;			
 			}
