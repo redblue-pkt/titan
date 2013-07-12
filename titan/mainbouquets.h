@@ -600,7 +600,7 @@ int writemainbouquet(const char *filename)
 	return 0;
 }
 
-int bouquet2channelslot(struct mainbouquet* mnode, int slot)
+int mainbouquet2channelslot(struct mainbouquet* mnode, int slot)
 {
 	struct bouquet* bnode = NULL;
 
@@ -627,7 +627,7 @@ int bouquet2channelslot(struct mainbouquet* mnode, int slot)
 	return 0;
 }
 
-int bouquet2epgscanlist(struct mainbouquet* mnode)
+int mainbouquet2epgscanlist(struct mainbouquet* mnode)
 {
 	struct bouquet* bnode = NULL;
 

@@ -91,7 +91,7 @@ void screenchannelslot(int slot)
 			clearscreen(channelslotlist);
 			struct mainbouquet* mbouquet = screenmainbouquet();
 			
-			bouquet2channelslot(mbouquet, slot);
+			mainbouquet2channelslot(mbouquet, slot);
 			delmarkedscreennodes(channelslotlist, 1);
 			createchannelslotlist(channelslotlist, listbox, slot);
 			
