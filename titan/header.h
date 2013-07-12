@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//epgscanlist.h
+struct epgscanlist* addepgscanlist(char *line, int count, struct epgscanlist* last);
+
 //channelslot.h
 int writechannelslot(char *filename);
 int delchannelslot(int serviceid, uint64_t transponderid);
