@@ -50,7 +50,8 @@ void screenskinadjust()
 	obottomoffset = getconfigint("fbbottomoffset", NULL);
 
 	addchoicebox(showrecfreesize, "0", _("no"));
-	addchoicebox(showrecfreesize, "1", _("yes"));
+	addchoicebox(showrecfreesize, "1", _("yes (Text in %)"));
+	addchoicebox(showrecfreesize, "2", _("yes (Text in MB)"));
 	setchoiceboxselection(showrecfreesize, getconfig("showrecfreesize", NULL));
 
 	drawscreen(skinadjust, 0, 0);
