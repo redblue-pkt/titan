@@ -863,7 +863,7 @@ char* getrecfreesize(struct skin* node)
 {
 	int ret = 0;
 
-	if(status.showrecfreesize == 1)
+	if(status.showrecfreesize > 0)
 	{
 		unsigned long long full = getfullspace(getconfig("rec_path", NULL)) / (1024 * 1024);
 		unsigned long long free = getfreespace(getconfig("rec_path", NULL)) / (1024 * 1024);
@@ -875,6 +875,30 @@ char* getrecfreesize(struct skin* node)
 	}
 
 	return oitoa(ret);
+}
+
+char* getrecfreesizetext(struct skin* node)
+{
+	int ret = 0;
+	char* tmpstr = NULL;
+
+	if(status.showrecfreesize > 0)
+	{
+		unsigned long long full = getfullspace(getconfig("rec_path", NULL)) / (1024 * 1024);
+		unsigned long long free = getfreespace(getconfig("rec_path", NULL)) / (1024 * 1024);
+
+		if(full > 0 && full >= free) ret = ((full - free) * 100) / full;
+
+		if(ret < 0) ret = 0;
+		if(ret > 100) ret = 100;
+		
+		if(status.showrecfreesize == 1)
+			tmpstr = ostrcat(oitoa(ret), " %", 1, 0);
+		else
+			tmpstr = ostrcat(ollutoa(free), " MB", 1, 0);
+	}
+
+	return tmpstr;
 }
 
 char* gethbbtv(struct skin* node, char* path)
