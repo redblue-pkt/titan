@@ -603,6 +603,7 @@ int writemainbouquet(const char *filename)
 int mainbouquet2channelslot(struct mainbouquet* mnode, int slot)
 {
 	struct bouquet* bnode = NULL;
+	char* tmpstr = NULL;
 
 	if(mnode != NULL)
 	{
@@ -630,6 +631,7 @@ int mainbouquet2channelslot(struct mainbouquet* mnode, int slot)
 int mainbouquet2epgscanlist(struct mainbouquet* mnode)
 {
 	struct bouquet* bnode = NULL;
+	char* tmpstr = NULL;
 
 	if(mnode != NULL)
 	{
