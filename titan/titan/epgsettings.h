@@ -86,7 +86,7 @@ void screenepgscanlist()
 			clearscreen(scanlist);
 			struct mainbouquet* mbouquet = screenmainbouquet();
 			
-			bouquet2epgscanlist(mbouquet);
+			mainbouquet2epgscanlist(mbouquet);
 			delmarkedscreennodes(scanlist, 1);
 			createepgscanlist(scanlist, listbox);
 			
