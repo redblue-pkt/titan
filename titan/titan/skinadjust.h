@@ -95,6 +95,7 @@ void screenskinadjust()
 			status.topoffset = getconfigint("fbtopoffset", NULL);
 			addconfigint("fbbottomoffset", obottomoffset);
 			status.bottomoffset = getconfigint("fbbottomoffset", NULL);
+			clearfball();
 			break;
 		}
 
