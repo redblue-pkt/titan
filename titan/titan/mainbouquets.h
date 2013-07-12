@@ -600,6 +600,58 @@ int writemainbouquet(const char *filename)
 	return 0;
 }
 
+int bouquet2channelslot(struct mainbouquet* mnode, int slot)
+{
+	struct bouquet* bnode = NULL;
+
+	if(mnode != NULL)
+	{
+		bnode = mnode->bouquet;
+		while(bnode != NULL)
+		{
+			if(getchannelslot(bnode->serviceid, bnode->transponderid) == NULL)
+			{
+				tmpstr = ostrcat(tmpstr, ollutoa(bnode->transponderid), 1, 1);
+				tmpstr = ostrcat(tmpstr, "#", 1, 0);
+				tmpstr = ostrcat(tmpstr, oitoa(bnode->serviceid), 1, 1);
+				tmpstr = ostrcat(tmpstr, "#", 1, 0);
+				tmpstr = ostrcat(tmpstr, oitoa(slot), 1, 1);
+				
+				addchannelslot(tmpstr, 1, NULL);
+				free(tmpstr); tmpstr = NULL;
+			}
+			bnode = bnode->next;
+		}
+	}
+
+	return 0;
+}
+
+int bouquet2epgscanlist(struct mainbouquet* mnode)
+{
+	struct bouquet* bnode = NULL;
+
+	if(mnode != NULL)
+	{
+		bnode = mnode->bouquet;
+		while(bnode != NULL)
+		{
+			if(getepgscanlist(bnode->serviceid, bnode->transponderid) == NULL)
+			{
+				tmpstr = ostrcat(tmpstr, oitoa(bnode->serviceid), 1, 1);
+				tmpstr = ostrcat(tmpstr, "#", 1, 0);
+				tmpstr = ostrcat(tmpstr, ollutoa(bnode->transponderid), 1, 1);
+				
+				addepgscanlist(tmpstr, 1, NULL);
+				free(tmpstr); tmpstr = NULL;
+			}
+			bnode = bnode->next;
+		}
+	}
+
+	return 0;
+}
+
 int writeallbouquet()
 {
 	struct mainbouquet* node = mainbouquet;

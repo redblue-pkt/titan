@@ -60,7 +60,6 @@ void screenepgscanlist()
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
-
 			clearscreen(scanlist);
 			int saveservicetype = status.servicetype;
 			struct channel* tmpchnode = NULL;
@@ -80,6 +79,17 @@ void screenepgscanlist()
 				free(tmpstr); tmpstr = NULL;
 			}
 
+			drawscreen(scanlist, 0, 0);
+		}
+		if(rcret == getrcconfigint("rcyellow", NULL))
+		{
+			clearscreen(scanlist);
+			struct mainbouquet* mbouquet = screenmainbouquet();
+			
+			bouquet2epgscanlist(mbouquet);
+			delmarkedscreennodes(scanlist, 1);
+			createepgscanlist(scanlist, listbox);
+			
 			drawscreen(scanlist, 0, 0);
 		}
 	}

@@ -783,6 +783,9 @@ struct mainbouquet* getmainbouquetbybouquetpointer(struct bouquet* bouquetnode);
 int movemainbouquetdown(struct mainbouquet* node);
 int movemainbouquetup(struct mainbouquet* node);
 struct mainbouquet* addmainbouquet(char *line, int count, struct mainbouquet* last);
+struct mainbouquet* screenmainbouquet();
+int bouquet2epgscanlist(struct mainbouquet* mnode);
+int bouquet2channelslot(struct mainbouquet* mnode, int slot);
 
 //listbox.h
 struct skin* addlistbox(struct skin* screen, struct skin* listbox, struct skin* last, int del);

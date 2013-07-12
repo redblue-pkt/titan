@@ -63,7 +63,6 @@ void screenchannelslot(int slot)
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
-
 			clearscreen(channelslotlist);
 			int saveservicetype = status.servicetype;
 			struct channel* tmpchnode = NULL;
@@ -85,6 +84,17 @@ void screenchannelslot(int slot)
 				free(tmpstr); tmpstr = NULL;
 			}
 
+			drawscreen(channelslotlist, 0, 0);
+		}
+		if(rcret == getrcconfigint("rcyellow", NULL))
+		{
+			clearscreen(channelslotlist);
+			struct mainbouquet* mbouquet = screenmainbouquet();
+			
+			bouquet2channelslot(mbouquet, slot);
+			delmarkedscreennodes(channelslotlist, 1);
+			createchannelslotlist(channelslotlist, listbox, slot);
+			
 			drawscreen(channelslotlist, 0, 0);
 		}
 	}
