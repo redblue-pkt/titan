@@ -6208,6 +6208,7 @@ char* string_decode(char* input, int flag)
 		input = string_replace("&#x", "%", input, 1);
 		debug(210, "input: %s", input);
 	}
+	
 	while(ostrstr(input, "&#") != NULL)
 	{
 		debug(210, "input: %s", input);
@@ -6269,17 +6270,13 @@ char* string_striptags(char* str)
 	
 	len = strlen(str);
 
-	int skip =0;
+	int skip = 0;
 	for(i = 0; i < len; i++)
 	{
 		if(str[i] == '<')
-		{
-			debug(210, "found < in string");
 			skip = 1;
-		}
 		else if(str[i] == '>')
 		{
-			debug(210, "found > in string");
 			skip = 0;
 			str[i] = ' ';
 		}
@@ -6361,11 +6358,11 @@ char* fixport(char* input, int flag)
 	}
 	else
 	{
-	    while (*input && *input == '0') 
-	        input++;
+		while (*input && *input == '0') 
+		input++;
 	
 		tmpstr = ostrcat(tmpstr, input, 1, 0);		
-	}        
+	}
 	return tmpstr;
 }
 
