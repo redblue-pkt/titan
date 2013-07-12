@@ -1,5 +1,5 @@
 #ifndef MAINBOUQUETS_H
-#define MAINBOUQUETS
+#define MAINBOUQUETS_H
 
 struct mainbouquet* screenmainbouquet()
 {
