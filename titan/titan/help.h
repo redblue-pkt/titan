@@ -22,6 +22,7 @@ void screenhelp(struct skin* node)
 	tmpstr = ostrcat(tmpstr, lang, 1, 1);
 	tmpstr = ostrcat(tmpstr, "/", 1, 0);
 	tmpstr = ostrcat(tmpstr, node->name, 1, 0);
+  tmpstr = ostrcat(tmpstr, ".txt", 1, 0);
 
 	buf = readfiletomem(tmpstr, 0);
 	if(buf == NULL)
