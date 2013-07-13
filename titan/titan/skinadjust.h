@@ -148,6 +148,8 @@ void screenskinadjust()
 	}
 
   delskinconfigtmpall();
+  status.listboxselectcol = convertcol("listboxselect");
+  
 	delownerrc(skinadjust);
 	clearscreen(skinadjust);
 }
