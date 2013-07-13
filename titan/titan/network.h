@@ -771,7 +771,7 @@ void screennetwork_wlan()
 							screennetwork_restart(net, 2);
 						}
 					}
-          
+
 					if(textbox(_("Message"), _("Start Wlan ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 					{
 						drawscreen(load, 0, 0);
@@ -885,6 +885,9 @@ void screennetwork_wlan()
 			free(tmpstr); tmpstr = NULL;
 			drawscreen(wlan, 0, 0);
 		}
+		
+		if(rcret == RCTIMEOUT)
+			drawscreen(wlan, 0, 0);
 	}
 
 	delmarkedscreennodes(wlan, 1);
