@@ -3236,6 +3236,6 @@ msgid "Channel Allocation"
 msgstr "Sender Zuordnung"
 
 msgid "ADD BOUQUET"
-msgstr "Favoriten hinzufuegen"
+msgstr "Favoriten hinzufügen"
 
 
