@@ -1,7 +1,7 @@
 #ifndef COLORPICKER_H
 #define COLORPICKER_H
 
-char* screencolorpicer(char* color, int screencalc, int filelistview, int flag)
+char* screencolorpicker(char* color, int screencalc, int filelistview, int flag)
 {
 	int rcret = 0;
 	long col = 0;
