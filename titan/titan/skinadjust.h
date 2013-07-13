@@ -3,7 +3,7 @@
 
 void screenskinadjust()
 {
-	int rcret = 0, oleftoffset = 0, orightoffset = 0, otopoffset = 0, obottomoffset = 0;
+	int rcret = 0, oleftoffset = 0, orightoffset = 0, otopoffset = 0, obottomoffset = 0, reboot = 0;
 	struct skin* skinadjust = getscreen("skinadjust");
 	struct skin* listbox = getscreennode(skinadjust, "listbox");
 	struct skin* fontsizeadjust = getscreennode(skinadjust, "fontsizeadjust");
@@ -98,9 +98,6 @@ void screenskinadjust()
 			status.topoffset = getconfigint("fbtopoffset", NULL);
 			addconfigint("fbbottomoffset", obottomoffset);
 			status.bottomoffset = getconfigint("fbbottomoffset", NULL);
-			
-			status.listboxselectcol = convertcol("listboxselect");
-			
 			clearfball();
 			break;
 		}
@@ -109,10 +106,11 @@ void screenskinadjust()
 		{
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "listboxselect") == 0)
 			{
-				char* tmpstr = screencolorpicer(getskinconfig("listboxselect", NULL), 0, 0, 0);
+				long oldlistboxselectcol = convertcol("listboxselect");
+				char* tmpstr = screencolorpicker(getskinconfig("listboxselect", NULL), 0, 0, 0);
 				if(tmpstr != NULL)
 					addskinconfigtmp("listboxselect", tmpstr);
-				status.listboxselectcol = convertcol("listboxselect");
+				if(oldlistboxselectcol != convertcol("listboxselect")) reboot = 1;
 				drawscreen(skinadjust, 0, 0);
 			}
 			
@@ -121,7 +119,10 @@ void screenskinadjust()
 
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
+			int oldfontsizeadjust = getskinconfigint("fontsizeadjust", NULL);
 			addskinconfigscreencheck("fontsizeadjust", fontsizeadjust, "0");
+			if(oldfontsizeadjust != getskinconfigint("fontsizeadjust", NULL)) reboot = 1;			
+			
 			addskinconfigscreencheck("listboxselecttype", listboxselecttype, "0");
 			status.listboxselecttype = getskinconfigint("listboxselecttype", NULL);
 			addskinconfigscreencheck("osdtransparent", osdtransparent, "0");
@@ -143,13 +144,17 @@ void screenskinadjust()
 			}
 
       writeskinconfigtmp();
+      if(reboot == 1)
+			{
+				textbox(_("Message"), _("Change needs GUI Restart"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				oshutdown(3, 0);
+			}
+      
 			break;
 		}
 	}
 
   delskinconfigtmpall();
-  status.listboxselectcol = convertcol("listboxselect");
-  
 	delownerrc(skinadjust);
 	clearscreen(skinadjust);
 }

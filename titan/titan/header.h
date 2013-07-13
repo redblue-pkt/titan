@@ -9,7 +9,7 @@
 #define HEADER_H
 
 //colorpicker.h
-char* screencolorpicer(char* color, int screencalc, int filelistview, int flag);
+char* screencolorpicker(char* color, int screencalc, int filelistview, int flag);
 
 //epgscanlist.h
 struct epgscanlist* addepgscanlist(char *line, int count, struct epgscanlist* last);
