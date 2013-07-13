@@ -54,6 +54,8 @@ void screenskinadjust()
 	addchoicebox(showrecfreesize, "1", _("yes (Text in %)"));
 	addchoicebox(showrecfreesize, "2", _("yes (Text in MB)"));
 	setchoiceboxselection(showrecfreesize, getconfig("showrecfreesize", NULL));
+	
+	addchoicebox(listboxselect, "0", _("press red"));
 
 	drawscreen(skinadjust, 0, 0);
 	addscreenrc(skinadjust, listbox);
@@ -99,6 +101,20 @@ void screenskinadjust()
 			clearfball();
 			break;
 		}
+		
+		if(rcret == getrcconfigint("rcred", NULL))
+		{
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "listboxselect") == 0)
+			{
+				char* tmpstr = screencolorpicer(getskinconfig("listboxselect", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfig("listboxselect", tmpstr);
+				status.listboxselectcol = convertcol("listboxselect");
+				drawscreen(skinadjust, 0, 0);
+			}
+			
+			continue;		
+		}
 
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
@@ -119,15 +135,6 @@ void screenskinadjust()
 					changeinput(listbox->select, ret);
 				free(ret);
 
-				drawscreen(skinadjust, 0, 0);
-				continue;
-			}
-			
-			if(listbox->select != NULL && ostrcmp(listbox->select->name, "listboxselect") == 0)
-			{
-				char* tmpstr = screencolorpicer(getskinconfig("listboxselect", NULL), 0, 0, 0);
-				if(tmpstr != NULL)
-					addskinconfig("listboxselect", tmpstr);
 				drawscreen(skinadjust, 0, 0);
 				continue;
 			}
