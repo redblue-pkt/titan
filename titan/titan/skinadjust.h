@@ -98,6 +98,9 @@ void screenskinadjust()
 			status.topoffset = getconfigint("fbtopoffset", NULL);
 			addconfigint("fbbottomoffset", obottomoffset);
 			status.bottomoffset = getconfigint("fbbottomoffset", NULL);
+			
+			status.listboxselectcol = convertcol("listboxselect");
+			
 			clearfball();
 			break;
 		}
@@ -108,7 +111,7 @@ void screenskinadjust()
 			{
 				char* tmpstr = screencolorpicer(getskinconfig("listboxselect", NULL), 0, 0, 0);
 				if(tmpstr != NULL)
-					addskinconfig("listboxselect", tmpstr);
+					addskinconfigtmp("listboxselect", tmpstr);
 				status.listboxselectcol = convertcol("listboxselect");
 				drawscreen(skinadjust, 0, 0);
 			}
@@ -139,10 +142,12 @@ void screenskinadjust()
 				continue;
 			}
 
+      writeskinconfigtmp();
 			break;
 		}
 	}
 
+  delskinconfigtmpall();
 	delownerrc(skinadjust);
 	clearscreen(skinadjust);
 }
