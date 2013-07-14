@@ -180,7 +180,7 @@ void screenfilemanager()
 					if(rcret == getrcconfigint("rcyellow", NULL))
 					{
 						tmpstr = ostrcat(tmpstr, _("Realy move this file/dir?"), 1, 0);
-						cmd = ostrcat(cmd, "mv ", 1, 0);
+						cmd = ostrcat(cmd, "mv -f ", 1, 0);
 					}
 					
 					tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
