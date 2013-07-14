@@ -1,3 +1,4 @@
+5#22.08.2013#Software Update#An diesem Wochenende wird die TitanNit Version 1.30\nfür alle Boxen freigegeben.\nDiese Version wird für die Atemio 510 und Atemio 7600\nnur als IRD Image mit dem iboot 2013 freigegeben.
 4#26.06.2013#Atemio news#Die TitanNit Test-Version 1.29 für alle Boxen\nund für die Atemio7600 mit dem neuen iboot ist ab heute verfügbar.\nIn der IRD Testversion Atemio7600 ist bereits das iboot enthalten\nBootzeiten unter 20 Sekunden sind nun auf der Atemio möglich.
 3#14.04.2013#Software Update#An diesem Wochenende wird die TitanNit Version 1.25\nfür die UFS922 als Testversion freigegeben.\nDanke an Atemio wo ihr auch eine Lizenz erwerben könnt.
 2#06.12.2012#TitanNit news#Atemio hat es mit dem Betriebssystem Titan geschafft,\nLinux als Firmware etwas aus dem Freakbereich herauszuholen und Mainstream\ntauglich zu machen.\nDenn mit dem AM 7600 werden sich auch Nutzer ohne Linux-Erfahrungen\nsehr schnell zurecht finden.
