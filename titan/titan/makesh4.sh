@@ -110,7 +110,7 @@ echo "[titan]--------------------------------------------------------"
 rm -rf "$HOME"/flashimg/source.titan/settings.svn
 svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source.sh4/titansettings_default_sat_1_0/mnt/settings "$HOME"/flashimg/source.titan/settings.svn
 sort -u "$HOME"/flashimg/source.titan/settings.svn/channel > "$HOME"/flashimg/source.titan/settings.svn/channel.sort
-mv "$HOME"/flashimg/source.titan/settings.svn/channel.sort "$HOME"/flashimg/source.titan/settings.svn/channel
+mv -f "$HOME"/flashimg/source.titan/settings.svn/channel.sort "$HOME"/flashimg/source.titan/settings.svn/channel
 sed s/"^ *"// -i "$HOME"/flashimg/source.titan/settings.svn/channel
 
 echo "[titan]--------------------------------------------------------"
