@@ -37,11 +37,11 @@ void filemanagerrename(int aktfilelist, struct skin* filelist1, struct skin* fil
 
 		if(!file_exist(tmpstr))
 		{
-			cmd = ostrcat(cmd, 'mv -f "', 1, 0);
+			cmd = ostrcat(cmd, "mv -f \"", 1, 0);
 			cmd = ostrcat(cmd, file1, 1, 0);
-			cmd = ostrcat(cmd, '" "', 1, 0);
+			cmd = ostrcat(cmd, "\" \"", 1, 0);
 			cmd = ostrcat(cmd, tmpstr, 1, 0);
-			cmd = ostrcat(cmd, '"', 1, 0);
+			cmd = ostrcat(cmd, "\"", 1, 0);
 			printf("cmd: %s\n",cmd);
 			system(cmd);
 			free(cmd); cmd = NULL;
@@ -197,14 +197,14 @@ void screenfilemanager()
 					ret = textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 300, 0, 0);
 					free(tmpstr); tmpstr = NULL;
 					
-					cmd = ostrcat(cmd, '"', 1, 0);
+					cmd = ostrcat(cmd, "\"", 1, 0);
 					cmd = ostrcat(cmd, file1, 1, 0);
-					cmd = ostrcat(cmd, '" "', 1, 0);
+					cmd = ostrcat(cmd, "\" \"", 1, 0);
 					if(aktfilelist == 0)
 						cmd = ostrcat(cmd, filelistpath2->text, 1, 0);
 					else
 						cmd = ostrcat(cmd, filelistpath1->text, 1, 0);
-					cmd = ostrcat(cmd, '"', 1, 0);
+					cmd = ostrcat(cmd, "\"", 1, 0);
 					if(ret == 1) system(cmd);
 					free(cmd); cmd = NULL;
 				}
@@ -237,9 +237,9 @@ void screenfilemanager()
 					free(tmpstr); tmpstr = NULL;
 					
 					cmd = ostrcat(cmd, "rm -rf ", 1, 0);
-					cmd = ostrcat(cmd, '"', 1, 0);
+					cmd = ostrcat(cmd, "\"", 1, 0);
 					cmd = ostrcat(cmd, file1, 1, 0);
-					cmd = ostrcat(cmd, '"', 1, 0);
+					cmd = ostrcat(cmd, "\"", 1, 0);
 					if(ret == 1) system(cmd);
 					free(cmd); cmd = NULL;			
 				}
