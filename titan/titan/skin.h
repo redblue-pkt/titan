@@ -133,6 +133,8 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPROGRESS;
 		return &getsignal;
 	}
+  if(ostrcmp("getrecfreesizetext", value) == 0)
+		return &getrecfreesizetext;
 	if(ostrcmp("getwlanlinkqualitytext", value) == 0)
 		return &getwlanlinkqualitytext;
 	if(ostrcmp("gettvpic", value) == 0)
