@@ -1624,6 +1624,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	delownerrc(scan);
 	clearscreen(scan);
 	resetsatscan();
+  sortchannel();
 }
 
 void changescantype(char* scantype, struct skin* scan, struct skin* listbox, struct skin* tuner, struct skin* satellite, struct skin* id, struct skin* system, struct skin* frequency, struct skin* inversion, struct skin* symbolrate, struct skin* polarization, struct skin* fec, struct skin* modulation, struct skin* rolloff, struct skin* pilot, struct skin* hp, struct skin* lp, struct skin* bandwidth, struct skin* transmission, struct skin* guardinterval, struct skin* hierarchy, struct skin* b4, struct skin* b5, int flag)
