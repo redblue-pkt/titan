@@ -358,6 +358,7 @@ struct channel* gettmpchannel();
 int delchannel(int serviceid, uint64_t transponderid, int flag);
 int movechanneldown(struct channel* node);
 int movechannelup(struct channel* node);
+struct channel* sortchannel();
 
 //transponder.h
 struct transponder* gettransponder(uint64_t transponderid);
