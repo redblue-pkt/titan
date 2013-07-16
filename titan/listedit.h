@@ -12,6 +12,7 @@ int screenlistedit(int list, struct channel* chnode)
 	struct skin* protectmode = getscreennode(listedit, "protectmode");
 	struct skin* addmode = getscreennode(listedit, "addmode");
 	struct skin* editmode = getscreennode(listedit, "editmode");
+	struct skin* sortmode = getscreennode(listedit, "sortmode");
 	struct skin* setstartchannel = getscreennode(listedit, "setstartchannel");
 	struct skin* delstartchannel = getscreennode(listedit, "delstartchannel");
 	char* newentry = NULL, *tmpstr = NULL, *tmpnr = NULL;
@@ -25,6 +26,7 @@ int screenlistedit(int list, struct channel* chnode)
 	protectmode->hidden = NO;
 	addmode->hidden = YES;
 	editmode->hidden = YES;
+	sortmode->hidden = YES;
 	setstartchannel->hidden = YES;
 	delstartchannel->hidden = YES;
 
@@ -53,6 +55,9 @@ int screenlistedit(int list, struct channel* chnode)
 		delstartchannel->hidden = NO;
 		editmode->hidden = NO;
 	}
+	
+	if(list == ALLCHANNEL)
+		sortmode->hidden = NO;
 
 	drawscreen(listedit, 0, 0);
 	addscreenrc(listedit, listbox);
@@ -114,6 +119,8 @@ int screenlistedit(int list, struct channel* chnode)
 				delconfig("starttransponderid");
 				delconfig("startservicetype");
 			}
+			if(ostrcmp(listbox->select->name, "sortmode") == 0)
+				sortchannel();
 			break;
 		}
 	}
