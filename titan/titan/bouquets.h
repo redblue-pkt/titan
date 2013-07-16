@@ -550,6 +550,80 @@ void freebouquet(struct bouquet** firstnode)
 	debug(1000, "out");
 }
 
+struct bouquet* sortbouquet(struct bouquet *node)
+{
+	debug(1000, "in");
+	struct bouquet *nodea = NULL, *nodeb = NULL, *nodec = NULL, *noded = NULL;
+	struct bouquet *nodetmp = NULL;
+
+	if(node == NULL)
+	{
+		debug(1000, "out -> NULL detect");
+		return NULL;
+	}
+	
+	struct bouquet **nodeaddr = &node;
+
+	if(node != NULL)
+	{
+		while(noded != node->next)
+		{
+			nodec = node;
+			nodea = node;
+			nodeb = nodea->next;
+
+			while(nodea != noded)
+			{
+				struct channel *chnode_a = getchannel(nodea->serviceid, nodea->transponderid);
+				struct channel *chnode_b = getchannel(nodeb->serviceid, nodeb->transponderid);
+				if(chnode_a != NULL && chnode_b != NULL && strcasecmp(chnode_a->name, chnode_b->name) > 0)
+				{
+					if(nodea == node)
+					{
+						nodetmp = nodeb->next;
+						nodeb->next = nodea;
+						nodea->next = nodetmp;
+						node = nodeb;
+						*nodeaddr = nodeb;
+						nodec = nodeb;
+					}
+					else
+					{
+						nodetmp = nodeb->next;
+						nodeb->next = nodea;
+						nodea->next = nodetmp;
+						nodec->next = nodeb;
+						nodec = nodeb;
+					}
+				}
+				else
+				{
+					nodec = nodea;
+					nodea = nodea->next;
+				}
+				nodeb = nodea->next;
+				if (nodeb == noded)
+					noded = nodea;
+			}
+		}
+	}
+
+	//calc prev
+	struct bouquet* prev = NULL;
+	nodetmp = node;
+	while(nodetmp != NULL)
+	{
+		nodetmp->prev = prev;
+		prev = nodetmp;
+
+		nodetmp = nodetmp->next;
+	}
+
+	status.writebouquet = 1;
+	debug(1000, "out");
+	return node;
+}
+
 int writebouquet(const char *filename, struct bouquet *node)
 {
 	debug(1000, "in");

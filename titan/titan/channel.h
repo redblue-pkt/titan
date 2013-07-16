@@ -570,13 +570,14 @@ struct channel* sortchannel()
 	struct channel *node = channel;
 	struct channel *nodea = NULL, *nodeb = NULL, *nodec = NULL, *noded = NULL;
 	struct channel *nodetmp = NULL;
-	struct channel **nodeaddr = &channel;
 
 	if(node == NULL)
 	{
 		debug(1000, "out -> NULL detect");
 		return NULL;
 	}
+	
+	struct channel **nodeaddr = &channel;
 
 	if(node != NULL)
 	{
