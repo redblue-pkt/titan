@@ -57,7 +57,7 @@ int screenlistedit(int list, struct channel* chnode)
 		editmode->hidden = NO;
 	}
 	
-	if(list == ALLCHANNEL)
+	if(list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL)
 		sortmode->hidden = NO;
 
 	drawscreen(listedit, 0, 0);
