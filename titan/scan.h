@@ -1385,6 +1385,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	struct skin* foundblind = getscreennode(scan, "foundblind");
 	struct skin* b2 = getscreennode(scan, "b2");
 	struct skin* b3 = getscreennode(scan, "b3");
+	struct skin* load = getscreen("loading");
 	struct transponder* tpnode = NULL;
 	struct dvbdev* fenode = NULL, *dvbnode = dvbdev;
 	struct stimerthread* timernode = NULL;
@@ -1575,7 +1576,6 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 
 		if((scantype != 3 && rcret == getrcconfigint("rcgreen", NULL)) || (scantype == 3 && scaninfo.threadend == 1 && alladded < 2))
 		{
-			struct skin* load = getscreen("loading");
 			struct skin* lnode = listbox;
 
 			long deaktivcol = convertcol("deaktivcol");
@@ -1624,7 +1624,9 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	delownerrc(scan);
 	clearscreen(scan);
 	resetsatscan();
+	drawscreen(load, 0, 0);
   sortchannel();
+  clearscreen(load);
 }
 
 void changescantype(char* scantype, struct skin* scan, struct skin* listbox, struct skin* tuner, struct skin* satellite, struct skin* id, struct skin* system, struct skin* frequency, struct skin* inversion, struct skin* symbolrate, struct skin* polarization, struct skin* fec, struct skin* modulation, struct skin* rolloff, struct skin* pilot, struct skin* hp, struct skin* lp, struct skin* bandwidth, struct skin* transmission, struct skin* guardinterval, struct skin* hierarchy, struct skin* b4, struct skin* b5, int flag)
