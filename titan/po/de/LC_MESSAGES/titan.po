@@ -3238,4 +3238,7 @@ msgstr "Sender Zuordnung"
 msgid "ADD BOUQUET"
 msgstr "Favoriten hinzufügen"
 
+msgid "rename service"
+msgstr "Sender sortieren"
+
 
