@@ -84,7 +84,7 @@ void screenskinadjust()
 		if(status.bottomoffset != getconfigint("fbbottomoffset", NULL)) offsetchange = 1;
 		status.bottomoffset = getconfigint("fbbottomoffset", NULL);
 		
-		if(offsetchange == 1 && getconfig("av_mode3d", NULL) != NULL) clearfball();
+		if(offsetchange == 1 && (ostrcmp(getconfig("av_mode3d", NULL), "sbs") == 0 || ostrcmp(getconfig("av_mode3d", NULL), "tab") == 0)) clearfball();
 		
 		drawscreen(skinadjust, 0, 0);
 
