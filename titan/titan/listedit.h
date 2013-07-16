@@ -15,6 +15,7 @@ int screenlistedit(int list, struct channel* chnode)
 	struct skin* sortmode = getscreennode(listedit, "sortmode");
 	struct skin* setstartchannel = getscreennode(listedit, "setstartchannel");
 	struct skin* delstartchannel = getscreennode(listedit, "delstartchannel");
+	struct skin* load = getscreen("loading");
 	char* newentry = NULL, *tmpstr = NULL, *tmpnr = NULL;
 
 	listbox->aktline = 1;
@@ -120,7 +121,11 @@ int screenlistedit(int list, struct channel* chnode)
 				delconfig("startservicetype");
 			}
 			if(ostrcmp(listbox->select->name, "sortmode") == 0)
+			{
+				drawscreen(load, 0, 0);
 				sortchannel();
+				clearscreen(load);
+			}
 			break;
 		}
 	}
