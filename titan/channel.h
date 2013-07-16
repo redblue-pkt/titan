@@ -326,7 +326,7 @@ struct channel* addchannel(char *line, int count, struct channel* last)
 	}
 
 	m_lock(&status.channelmutex, 5);
-  node = channel;
+	node = channel;
 
 	modifychannelcache(newnode->serviceid, newnode->transponderid, newnode);
 
@@ -564,6 +564,77 @@ void freechannel(int flag)
 	debug(1000, "out");
 }
 
+struct channel* sortchannel()
+{
+	debug(1000, "in");
+	struct channel *node = channel;
+	struct channel *nodea = NULL, *nodeb = NULL, *nodec = NULL, *noded = NULL;
+	struct channel *nodetmp = NULL;
+	struct channel **nodeaddr = &channel;
+
+	if(node == NULL)
+	{
+		debug(1000, "out -> NULL detect");
+		return NULL;
+	}
+
+	if(node != NULL)
+	{
+		while(noded != node->next)
+		{
+			nodec = node;
+			nodea = node;
+			nodeb = nodea->next;
+
+			while(nodea != noded)
+			{
+				if(strcasecmp(nodea->name, nodeb->name) > 0)
+				{
+					if(nodea == node)
+					{
+						nodetmp = nodeb->next;
+						nodeb->next = nodea;
+						nodea->next = nodetmp;
+						node = nodeb;
+						*nodeaddr = nodeb;
+						nodec = nodeb;
+					}
+					else
+					{
+						nodetmp = nodeb->next;
+						nodeb->next = nodea;
+						nodea->next = nodetmp;
+						nodec->next = nodeb;
+						nodec = nodeb;
+					}
+				}
+				else
+				{
+					nodec = nodea;
+					nodea = nodea->next;
+				}
+				nodeb = nodea->next;
+				if (nodeb == noded)
+					noded = nodea;
+			}
+		}
+	}
+
+	//calc prev
+	struct channel* prev = NULL;
+	nodetmp = node;
+	while(nodetmp != NULL)
+	{
+		nodetmp->prev = prev;
+		prev = nodetmp;
+
+		nodetmp = nodetmp->next;
+	}
+
+	debug(1000, "out");
+	return node;
+}
+
 int writechannel(const char *filename)
 {
 	debug(1000, "in");
@@ -579,8 +650,8 @@ int writechannel(const char *filename)
 	}
 
 	m_lock(&status.channelmutex, 5);
-  node = channel;
-  
+	node = channel;
+
 	while(node != NULL)
 	{
 		if(node->servicetype == 99)
