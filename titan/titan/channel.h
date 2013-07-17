@@ -645,6 +645,8 @@ struct channel* sortchannel()
 	struct channel* node = channel, *tnode = NULL;
 	struct channel *next = NULL, *prev = NULL;
 	struct channel **tnodeaddr = NULL;
+	
+	if(node == NULL) return;
 
 	while(node != NULL)
 	{
@@ -683,9 +685,9 @@ struct channel* sortchannel()
 
 		node = next;
 	}
-        
-	int i = 0;
-	channel = NULL; prev = NULL; node = NULL;
+
+	int i = 0, first = 0;
+	prev = NULL; node = NULL;
 	for(i = 0; i < 10; i++)
 	{
 		if(tmpnode[i] != NULL)
@@ -696,7 +698,11 @@ struct channel* sortchannel()
 				tmpnode[i]->prev = prev;
 			}
 
-			if(channel == NULL) channel = tmpnode[i];
+			if(first == 0)
+			{
+				channel = tmpnode[i];
+				first = 1;
+			}
 
 			node = tmpnode[i];
 			while(node != NULL)
@@ -706,7 +712,7 @@ struct channel* sortchannel()
 			}
 		}
 	}
-        
+
 	status.writechannel = 1;
 	return channel;
 }
