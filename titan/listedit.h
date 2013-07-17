@@ -1,7 +1,7 @@
 #ifndef LISTEDIT_H
 #define LISTEDIT_H
 
-int screenlistedit(int list, struct channel* chnode)
+int screenlistedit(int list, struct channel* chnode, void* aktlist)
 {
 	int rcret = 0, ret = NOMODE, startchannel = 0;
 	struct skin* listedit = getscreen("listedit");
@@ -55,10 +55,8 @@ int screenlistedit(int list, struct channel* chnode)
 		}
 		delstartchannel->hidden = NO;
 		editmode->hidden = NO;
+    sortmode->hidden = NO;
 	}
-	
-	if(list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL)
-		sortmode->hidden = NO;
 
 	drawscreen(listedit, 0, 0);
 	addscreenrc(listedit, listbox);
@@ -123,7 +121,13 @@ int screenlistedit(int list, struct channel* chnode)
 			if(ostrcmp(listbox->select->name, "sortmode") == 0)
 			{
 				drawscreen(load, 0, 0);
-				sortchannel();
+        if(list == BOUQUETCHANNEL)
+        {
+          if(aktlist != NULL)
+            sortbouquet(((struct mainbouquet*)aktlist)->bouquet);
+        }
+        else
+				  sortchannel();
 				clearscreen(load);
 			}
 			break;

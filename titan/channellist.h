@@ -792,7 +792,7 @@ start:
 		if(listbox->select != NULL)
 		{
 			resettvpic();
-			listmode = screenlistedit(list, (struct channel*)listbox->select->handle);
+			listmode = screenlistedit(list, (struct channel*)listbox->select->handle, aktlist);
 		}
 		if(listmode == NOMODE) goto end;
 		if(nochanneltitle == 0) changechanneltitle(channellist, listbox, listmode, &oldtitle, &oldfontcol, &oldbgcol);
@@ -867,7 +867,7 @@ start:
 				clearscreen(channellist);
 				resettvpic();
 
-				listmode = screenlistedit(list, NULL);
+				listmode = screenlistedit(list, NULL, aktlist);
 				if(listmode == MVMODE)
 				{
 					delrc(getrcconfigint("rcright", NULL), channellist, listbox);
@@ -1685,9 +1685,9 @@ start:
 			resettvpic();
 
 			if(listbox->select != NULL)
-				listmode = screenlistedit(list, (struct channel*)listbox->select->handle);
+				listmode = screenlistedit(list, (struct channel*)listbox->select->handle, aktlist);
 			else
-				listmode = screenlistedit(list, NULL);
+				listmode = screenlistedit(list, NULL, aktlist);
                                 
 			if(listmode == MVMODE)
 			{
