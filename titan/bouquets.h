@@ -624,6 +624,91 @@ struct bouquet* sortbouquet(struct bouquet *node)
 	return node;
 }
 
+/*
+struct bouquet* sortbouquet(struct bouquet *node)
+{
+	struct bouquet **nodeaddr = NULL;
+	struct bouquet *tmpnode[10] = {0};
+	struct bouquet *tnode = NULL;
+	struct bouquet *next = NULL, *prev = NULL;
+	struct bouquet **tnodeaddr = NULL;
+	
+	if(node == NULL) return NULL;
+	
+	nodeaddr = &node; 
+	while(node != NULL)
+	{
+		next = node->next;
+		prev = NULL;
+
+		if(strcasecmp("c", node->name) > 0) {tnode = tmpnode[0]; tnodeaddr = &tmpnode[0];}
+		else if(strcasecmp("f", node->name) > 0) {tnode = tmpnode[1]; tnodeaddr = &tmpnode[1];}
+		else if(strcasecmp("i", node->name) > 0) {tnode = tmpnode[2]; tnodeaddr = &tmpnode[2];}
+		else if(strcasecmp("l", node->name) > 0) {tnode = tmpnode[3]; tnodeaddr = &tmpnode[3];}
+		else if(strcasecmp("o", node->name) > 0) {tnode = tmpnode[4]; tnodeaddr = &tmpnode[4];}
+		else if(strcasecmp("r", node->name) > 0) {tnode = tmpnode[5]; tnodeaddr = &tmpnode[5];}
+		else if(strcasecmp("u", node->name) > 0) {tnode = tmpnode[6]; tnodeaddr = &tmpnode[6];}
+		else if(strcasecmp("x", node->name) > 0) {tnode = tmpnode[7]; tnodeaddr = &tmpnode[7];}
+		else if(strcasecmp("z", node->name) > 0) {tnode = tmpnode[8]; tnodeaddr = &tmpnode[8];}
+		else {tnode = tmpnode[9]; tnodeaddr = &tmpnode[9];}
+
+		struct channel *chnode_a = getchannel(node->serviceid, node->transponderid);
+		while(tnode != NULL)
+		{
+			struct channel *chnode_b = getchannel(tnode->serviceid, tnode->transponderid);
+			if(chnode_a != NULL && chnode_b != NULL && strcasecmp(chnode_a->name, chnode_b->name) <= 0) break;
+			prev = tnode;
+			tnode = tnode->next;
+		}
+
+		if(prev == NULL)
+		{
+			*tnodeaddr = node;
+			node->prev = NULL;
+		}
+		else
+		{
+			prev->next = node;
+			node->prev = prev;
+		}
+		node->next = tnode;
+		if(tnode != NULL) tnode->prev = node;
+
+		node = next;
+	}
+
+	int i = 0, first = 0;
+	prev = NULL; node = NULL;
+	for(i = 0; i < 10; i++)
+	{
+		if(tmpnode[i] != NULL)
+		{
+			if(prev != NULL)
+			{
+				prev->next = tmpnode[i];
+				tmpnode[i]->prev = prev;
+			}
+
+			if(first == 0)
+			{
+				*nodeaddr = tmpnode[i];
+				first = 1;
+			}
+
+			node = tmpnode[i];
+			while(node != NULL)
+			{
+				prev = node;
+				node = node->next;
+			}
+		}
+	}
+
+	status.writebouquet = 1;
+	return *nodeaddr;
+}
+*/
+
 int writebouquet(const char *filename, struct bouquet *node)
 {
 	debug(1000, "in");
