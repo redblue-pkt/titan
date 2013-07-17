@@ -55,7 +55,7 @@ int screenlistedit(int list, struct channel* chnode, void* aktlist)
 		}
 		delstartchannel->hidden = NO;
 		editmode->hidden = NO;
-    sortmode->hidden = NO;
+		sortmode->hidden = NO;
 	}
 
 	drawscreen(listedit, 0, 0);
@@ -121,13 +121,13 @@ int screenlistedit(int list, struct channel* chnode, void* aktlist)
 			if(ostrcmp(listbox->select->name, "sortmode") == 0)
 			{
 				drawscreen(load, 0, 0);
-        if(list == BOUQUETCHANNEL)
-        {
-          if(aktlist != NULL)
-            sortbouquet(((struct mainbouquet*)aktlist)->bouquet);
-        }
-        else
-				  sortchannel();
+				if(list == BOUQUETCHANNEL)
+				{
+					if(aktlist != NULL)
+						sortbouquet(((struct mainbouquet*)aktlist)->bouquet);
+				}
+				else
+					sortchannel();
 				clearscreen(load);
 			}
 			break;
