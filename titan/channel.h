@@ -564,6 +564,7 @@ void freechannel(int flag)
 	debug(1000, "out");
 }
 
+/*
 struct channel* sortchannel()
 {
 	debug(1000, "in");
@@ -635,6 +636,79 @@ struct channel* sortchannel()
 	status.writechannel = 1;
 	debug(1000, "out");
 	return node;
+}
+*/
+
+struct channel* sortchannel()
+{
+	struct channel* tmpnode[10] = {0};
+	struct channel* node = channel, *tnode = NULL;
+	struct channel *next = NULL, *prev = NULL;
+	struct channel **tnodeaddr = NULL;
+
+	while(node != NULL)
+	{
+		next = node->next;
+		prev = NULL;
+
+		if(strcasecmp("c", node->name) > 0) {tnode = tmpnode[0]; tnodeaddr = &tmpnode[0];}
+		else if(strcasecmp("f", node->name) > 0) {tnode = tmpnode[1]; tnodeaddr = &tmpnode[1];}
+		else if(strcasecmp("i", node->name) > 0) {tnode = tmpnode[2]; tnodeaddr = &tmpnode[2];}
+		else if(strcasecmp("l", node->name) > 0) {tnode = tmpnode[3]; tnodeaddr = &tmpnode[3];}
+		else if(strcasecmp("o", node->name) > 0) {tnode = tmpnode[4]; tnodeaddr = &tmpnode[4];}
+		else if(strcasecmp("r", node->name) > 0) {tnode = tmpnode[5]; tnodeaddr = &tmpnode[5];}
+		else if(strcasecmp("u", node->name) > 0) {tnode = tmpnode[6]; tnodeaddr = &tmpnode[6];}
+		else if(strcasecmp("x", node->name) > 0) {tnode = tmpnode[7]; tnodeaddr = &tmpnode[7];}
+		else if(strcasecmp("z", node->name) > 0) {tnode = tmpnode[8]; tnodeaddr = &tmpnode[8];}
+		else {tnode = tmpnode[9]; tnodeaddr = &tmpnode[9];}
+
+		while(tnode != NULL && strcasecmp(node->name, tnode->name) > 0)
+		{
+			prev = tnode;
+			tnode = tnode->next;
+		}
+
+		if(prev == NULL)
+		{
+			*tnodeaddr = node;
+			node->prev = NULL;
+		}
+		else
+		{
+			prev->next = node;
+			node->prev = prev;
+		}
+		node->next = tnode;
+		if(tnode != NULL) tnode->prev = node;
+
+		node = next;
+	}
+        
+	int i = 0;
+	channel = NULL; prev = NULL; node = NULL;
+	for(i = 0; i < 10; i++)
+	{
+		if(tmpnode[i] != NULL)
+		{
+			if(prev != NULL)
+			{
+				prev->next = tmpnode[i];
+				tmpnode[i]->prev = prev;
+			}
+
+			if(channel == NULL) channel = tmpnode[i];
+
+			node = tmpnode[i];
+			while(node != NULL)
+			{
+				prev = node;
+				node = node->next;
+			}
+		}
+	}
+        
+	status.writechannel = 1;
+	return channel;
 }
 
 int writechannel(const char *filename)
