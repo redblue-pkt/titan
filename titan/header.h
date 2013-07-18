@@ -806,7 +806,7 @@ void delbouquet(int serviceid, uint64_t transponderid, struct bouquet** firstnod
 int movebouquetdown(struct bouquet* node);
 int movebouquetup(struct bouquet* node);
 struct bouquet* addbouquet(struct bouquet **firstnode, char *line, int type, int count, struct bouquet* last);
-struct bouquet* sortbouquet(struct bouquet *node);
+struct bouquet* sortbouquet(struct bouquet **nodeaddr);
 
 //audiotrack.h
 void screenaudiotrack();
