@@ -124,7 +124,10 @@ int screenlistedit(int list, struct channel* chnode, void* aktlist)
 				if(list == BOUQUETCHANNEL)
 				{
 					if(aktlist != NULL)
+					{
 						sortbouquet(&((struct mainbouquet*)aktlist)->bouquet);
+						recalcbouquetnr();
+					}
 				}
 				else
 					sortchannel();
