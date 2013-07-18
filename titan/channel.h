@@ -635,7 +635,7 @@ struct channel* sortchannel()
 
 	status.writechannel = 1;
 	debug(1000, "out");
-	return node;
+	return channel;
 }
 */
 
