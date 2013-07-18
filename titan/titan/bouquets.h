@@ -550,19 +550,19 @@ void freebouquet(struct bouquet** firstnode)
 	debug(1000, "out");
 }
 
-struct bouquet* sortbouquet(struct bouquet *node)
+struct bouquet* sortbouquet(struct bouquet **nodeaddr)
 {
 	debug(1000, "in");
 	struct bouquet *nodea = NULL, *nodeb = NULL, *nodec = NULL, *noded = NULL;
 	struct bouquet *nodetmp = NULL;
 
-	if(node == NULL)
+	if(nodeaddr == NULL || *nodeaddr == NULL)
 	{
 		debug(1000, "out -> NULL detect");
 		return NULL;
 	}
 	
-	struct bouquet **nodeaddr = &node;
+	struct bouquet *node = *nodeaddr;
 
 	if(node != NULL)
 	{
@@ -621,21 +621,20 @@ struct bouquet* sortbouquet(struct bouquet *node)
 
 	status.writebouquet = 1;
 	debug(1000, "out");
-	return node;
+	return *nodeaddr;
 }
 
 /*
-struct bouquet* sortbouquet(struct bouquet *node)
+struct bouquet* sortbouquet(struct bouquet **nodeaddr)
 {
-	struct bouquet **nodeaddr = NULL;
 	struct bouquet *tmpnode[10] = {0};
 	struct bouquet *tnode = NULL;
 	struct bouquet *next = NULL, *prev = NULL;
 	struct bouquet **tnodeaddr = NULL;
 	
-	if(node == NULL) return NULL;
+	if(nodeaddr == NULL || *nodeaddr == NULL) return NULL;
 	
-	nodeaddr = &node; 
+	struct bouquet *node = *nodeaddr; 
 	while(node != NULL)
 	{
 		next = node->next;
