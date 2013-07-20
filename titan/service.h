@@ -352,11 +352,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		if(audionode != NULL)
 		{
 			audioselectsource(audionode, AUDIO_SOURCE_DEMUX);
-			//workaround for no audio on zap if old channel is mpeg audio and new
-			//channel has only ac3 audio
 			audiosetbypassmode(audionode, chnode->audiocodec);
-			audioplay(audionode);
-			audiostop(audionode);
 			audioplay(audionode);
 		}
 		else
