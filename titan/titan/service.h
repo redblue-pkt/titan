@@ -377,7 +377,6 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		if(videonode != NULL)
 		{
 			videoselectsource(videonode, VIDEO_SOURCE_DEMUX);
-			videosetstreamtype(videonode, 1); //transportstream
 			switch(chnode->videocodec)
 			{
 				case MPEGV:
