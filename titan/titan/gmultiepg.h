@@ -445,7 +445,7 @@ void gmultiepgfilldesc(struct skin* listbox, struct skin* epgdesc, struct skin* 
 		free(tmpstr); tmpstr = NULL;
 		
 		char* buf2 = malloc(50);
-		struct tm* loctime = olocaltime(&epgnode->begin);
+		struct tm* loctime = olocaltime(&epgnode->starttime);
 		if(loctime != NULL)
 			strftime(buf2, 50, "%d.%m. (%a) %H:%M", loctime);
 		free(loctime); loctime = NULL;
