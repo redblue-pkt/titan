@@ -377,13 +377,24 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		if(videonode != NULL)
 		{
 			videoselectsource(videonode, VIDEO_SOURCE_DEMUX);
-			if(chnode->videocodec == VC1)
+			videosetstreamtype(videonode, 1); //transportstream
+			switch(chnode->videocodec)
 			{
-				videosetstreamtype(videonode, 1); //transportstream
-				videosetencoding(videonode, chnode->videocodec);
+				case MPEGV:
+					videosetencoding(videonode, 2);
+					break;
+				case MPEG4V:
+					videosetencoding(videonode, 7);
+					break;
+				case H264:
+					videosetencoding(videonode, 8);
+					break;
+				case VC1:
+					videosetencoding(videonode, 10);
+					break;
+				default:
+					videosetencoding(videonode, 0);
 			}
-			else
-				videosetstreamtype(videonode, chnode->videocodec);
 			videoplay(videonode);
 		}
 		else
