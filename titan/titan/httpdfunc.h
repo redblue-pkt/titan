@@ -2705,10 +2705,10 @@ char* webeditrectimer(char* param, int fmt)
 	ostrcatbig(&buf, "<option>daily<option>weekly<option>workdays<option>user defined</select></td></tr>", &maxlen, &pos);	
 	*/
 		
-	buf2 = malloc(MINMALLOC);
+	buf2 = malloc(20);
 	loctime = olocaltime(&node->begin);
-	if(loctime != NULL)
-		strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
+	if(loctime != NULL && buf2 != NULL)
+		strftime(buf2, 20, "%H:%M %d-%m-%Y", loctime);
 	free(loctime); loctime = NULL;
 
 	buf1 = ostrcat(buf2, NULL, 0, 0);
@@ -2719,8 +2719,8 @@ char* webeditrectimer(char* param, int fmt)
 	free(buf1); buf1 = NULL;
 	
 	loctime = olocaltime(&node->end);
-	if(loctime != NULL)
-		strftime(buf2, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
+	if(loctime != NULL && buf2 != NULL)
+		strftime(buf2, 20, "%H:%M %d-%m-%Y", loctime);
 	free(loctime); loctime = NULL;
 
 	buf1 = ostrcat(buf2, NULL, 0, 0);
