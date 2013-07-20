@@ -337,6 +337,9 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	}
 
 	status.aktservice->dmxvideodev = dmxvideonode;
+	
+	//workaround for some audio channel not playing (for test)
+	usleep(100000);
 
 	//audio start
 	if(dmxaudionode != NULL)
