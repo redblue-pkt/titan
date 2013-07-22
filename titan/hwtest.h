@@ -82,6 +82,7 @@ void screenhwtest()
 		
 		if(mbox != NULL)
 		{
+			setmenulistdefault(mlist, mbox->name);
 			if(ostrstr(mbox->name, "[S]Lock & Search") == 0)
 			{
 				struct transponder* tp = NULL;

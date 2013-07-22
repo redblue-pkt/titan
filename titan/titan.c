@@ -231,6 +231,7 @@ struct channelslot *channelslot = NULL;
 #include "bgdownload.h"
 #include "fancontrol.h"
 #include "channelslot.h"
+#include "hwtest.h"
 
 #define TIMECODE ""
 
