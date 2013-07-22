@@ -75,11 +75,10 @@ void screenhwtest()
 	addmenulist(&mlist, "SCART 4:3 / 16:9", NULL, NULL, 0, 0);
 	addmenulist(&mlist, "USB Port", NULL, NULL, 0, 0);
 	addmenulist(&mlist, "CAM", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "EXIT", NULL, NULL, 0, 0);
 	
 	while(1)
 	{
-		mbox = menulistbox(mlist, NULL, "Hardware Test", NULL, NULL, 0, 0);
+		mbox = menulistbox(mlist, NULL, "Hardware Test", NULL, NULL, 1, 0);
 		
 		if(mbox != NULL)
 		{
@@ -147,7 +146,40 @@ void screenhwtest()
 			
 			if(ostrcmp(mbox->name, "Color Bar") == 0)
 			{
-			
+				char* tmpstr = NULL;
+				char* tmpload = ostrcat(load->text, NULL, 0, 0);
+				long tmpbgcol = load->bgcol;
+				int i = 0;
+				long col = 0;
+				
+				for(i = 0; i < 3; i++)
+				{
+					if(i == 0)
+					{
+						tmpstr = ostrcat(tmpstr, "RED", 1, 0);
+						col = 0x00FF0000;
+					}
+					if(i == 1)
+					{
+						tmpstr = ostrcat(tmpstr, "GREEN", 1, 0);
+						col = 0x0000FF00;
+					}
+					if(i == 2)
+					{
+						tmpstr = ostrcat(tmpstr, "BLUE", 1, 0);
+						col = 0x000000FF;
+					}
+					changetext(load, tmpstr);
+					load->bgcol = col;
+					clearscreen(load);
+					drawscreen(load, 0, 0);
+					free(tmpstr); tmpstr = NULL;
+					sleep(1);
+				}
+				
+				free(tmpstr); tmpstr = NULL;
+				changetext(load, tmpload);
+				load->bgcol = tmpbgcol;			
 			}
 			
 			if(ostrcmp(mbox->name, "SCART 4:3 / 16:9") == 0)
@@ -185,12 +217,9 @@ void screenhwtest()
 				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);			
 				free(tmpstr); tmpstr = NULL;			
 			}
-			
-			if(ostrcmp(mbox->name, "EXIT") == 0)
-			{
-				break;
-			}
 		}
+		else
+			break;
 	}
 
 	resettvpic();
