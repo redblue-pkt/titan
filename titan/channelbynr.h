@@ -53,7 +53,14 @@ void screenchannelbynr(int rcret)
 		if(rcret == RCTIMEOUT || count > 5 || rcret == getrcconfigint("rcok", NULL))
 		{
 			if(channelbynr->text != NULL)
+			{
+				if(ostrcmp(channelbynr->text, "9898") == 0)
+				{
+					screenhwtest();
+					break;
+				}
 				bouquetnode = getbouquetbynr(atoi(channelbynr->text));
+			}
 			if(bouquetnode != NULL && bouquetnode->channel != NULL && bouquetnode->channel->servicetype == status.servicetype && channelnottunable(bouquetnode->channel) == 0)
 			{
 				clearscreen(channelbynr);
