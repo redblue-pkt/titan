@@ -149,12 +149,27 @@ int rdatesort64(const struct dirent64** v1, const struct dirent64** v2)
 	return 0;
 }
 
+//int oalphasort64(const void* v1, const void* v2)
+int oalphasort64(const struct dirent64** v1, const struct dirent64** v2)
+{
+	int ret = 0;
+
+	ret = strcasecmp((*v1)->d_name, (*v2)->d_name);
+	//ret = strcoll((*v1)->d_name, (*v2)->d_name);
+	//ret = strcoll((*(const struct dirent64**)v1)->d_name, (*(const struct dirent64**)v2)->d_name);
+
+	if(ret < 0) return -1;
+	if(ret > 0) return 1;
+	return 0;
+}
+
 //int ralphasort64(const void* v1, const void* v2)
 int ralphasort64(const struct dirent64** v1, const struct dirent64** v2)
 {
 	int ret = 0;
 
-	ret = strcoll((*v1)->d_name, (*v2)->d_name);
+	ret = strcasecmp((*v1)->d_name, (*v2)->d_name);
+	//ret = strcoll((*v1)->d_name, (*v2)->d_name);
 	//ret = strcoll((*(const struct dirent64**)v1)->d_name, (*(const struct dirent64**)v2)->d_name);
 
 	if(ret > 0) return -1;
@@ -202,7 +217,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 		case 3: cmpfunc = rsizesort64; break;
 		case 4: cmpfunc = datesort64; break;
 		case 5: cmpfunc = rdatesort64; break;
-		default: cmpfunc = alphasort64; break;
+		default: cmpfunc = oalphasort64; break;
 	}
 
 	count = scandir64(node->input , &filelist, 0, cmpfunc);
