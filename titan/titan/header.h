@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//hwtest.h
+void screenhwtest();
+
 //colorpicker.h
 char* screencolorpicker(char* color, int screencalc, int filelistview, int flag);
 
