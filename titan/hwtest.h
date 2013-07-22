@@ -185,7 +185,26 @@ void screenhwtest()
 			
 			if(ostrcmp(mbox->name, "SCART 4:3 / 16:9") == 0)
 			{
-			
+				char* tmpload = ostrcat(load->text, NULL, 0, 0);
+				char* tmpstr = NULL;
+
+				tmpstr = ostrcat(tmpstr, "4:3", 1, 0);
+				changetext(load, tmpstr);
+				clearscreen(load);
+				drawscreen(load, 0, 0);
+				setaspect(tmpstr);
+				sleep(1);
+
+				free(tmpstr); tmpstr = NULL;
+				tmpstr = ostrcat(tmpstr, "16:9", 1, 0);
+				changetext(load, tmpstr);
+				clearscreen(load);
+				drawscreen(load, 0, 0);
+				setaspect(tmpstr);
+				sleep(1);
+
+				free(tmpstr); tmpstr = NULL;
+				changetext(load, tmpload);
 			}
 			
 			if(ostrcmp(mbox->name, "USB Port") == 0)
