@@ -53,6 +53,7 @@ void setmenulistdefault(struct menulist* mlist, char* defaultentry)
 {
 	while(mlist != NULL)
 	{
+		mlist->defaultentry = 0;
 		if(ostrcmp(defaultentry, mlist->name) == 0)
 			mlist->defaultentry = 1;
 		mlist = mlist->next;
