@@ -1,38 +1,50 @@
 #ifndef HWTEST_H
 #define HWTEST_H
 
+//DVB-S
+//#define TEST_S11_FREQ   10900000 // 4000, 22Khz off
+//#define TEST_S11_SYMBOL  28125000
+//#define TEST_S11_POL    _POLAR_HOR
+//#define TEST_S11_VIDEO_PID  380 
+//#define TEST_S11_AUDIO_PID    381 
+//#define TEST_S11_PCR_PID  380
+//test_channel.videoType = V_MP2;
+//test_channel.audioType = A_MP1;
+
+//testtransponder1s=0#10900000#0#0#28125000#?#?#?#?#?#0
+//testchannel1s=?#0#1#380#381
+
 //DVB-S2
-#define TEST_S2_ORBITALPOS 0
-#define TEST_S2_FREQ 11303000
-#define TEST_S2_SYMBOL 22000000
-#define TEST_S2_POL 0
-#define TEST_S2_VIDEO_PID 3583
-#define TEST_S2_AUDIO_PID 3587
-#define TEST_S2_PCR_PID 3583
+//#define TEST_S12_FREQ   10767000 // 4133, 22Khz off
+//#define TEST_S12_SYMBOL  10670000
+//#define TEST_S12_POL    _POLAR_HOR
+//#define TEST_S12_VIDEO_PID  711 
+//#define TEST_S12_AUDIO_PID    731 
+//#define TEST_S12_PCR_PID  711
+//test_channel.videoType = V_H264;
+//test_channel.audioType = A_MP1;
 
-//test_channel.videoType = V_H264; // 1;
-//test_channel.audioType = A_AC3; // 6;
+//testtransponder2s=0#10767000#0#0#10670000#?#?#?#?#?#1
+//testchannel2s=?#1#1#711#731
 
-//DVB-T 
-#define TEST_T2_FREQ  4820
-#define TEST_T2_BW   8
-#define TEST_T2_VIDEO_PID 545
-#define TEST_T2_AUDIO_PID 546
-#define TEST_T2_PCR_PID 545
-
-//test_channel.videoType = V_MP2; //0;
-//test_channel.audioType = A_MP1; // 0;
+//DVB-T
+//#define TEST_T1_FREQ   5060000
+//#define TEST_T1_BW    8
+//#define TEST_T1_VIDEO_PID  305
+//#define TEST_T1_AUDIO_PID  306
+//#define TEST_T1_PCR_PID  305
+//test_channel.videoType = V_MP2;
+//test_channel.audioType = A_MP1;
 
 //DVB-C
-#define TEST_C2_FREQ   4500
-#define TEST_C2_SYMBOL   6900
-#define TEST_C2_VIDEO_PID  201
-#define TEST_C2_AUDIO_PID  301
-#define TEST_C2_PCR_PID  201
-//#define TEST_C2_CAB_QAM     _QAMMODE_64
-
-//test_channel.videoType = V_MP2; //0;
-//test_channel.audioType = A_MP1; // 0;
+//#define TEST_C1_FREQ   3540000
+//#define TEST_C1_SYMBOL   6900000
+//#define TEST_C1_VIDEO_PID  305
+//#define TEST_C1_AUDIO_PID  306
+//#define TEST_C1_PCR_PID  305
+//#define TEST_C1_CAB_QAM   _QAMMODE_64
+//test_channel.videoType = V_MP2;
+//test_channel.audioType = A_MP1;
 
 void testzap(char* testtransponder, char* testchannel)
 {
@@ -69,7 +81,7 @@ void testzap(char* testtransponder, char* testchannel)
 					textbox(_("Message"), _("testchannel not found"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 				else
 				{
-					int ret = sscanf(line, "%d#%"SCNu8"#%"SCNu8"#%"SCNu16"#%"SCNu16, &newnode->serviceid, &newnode->videocodec, &newnode->audiocodec, &newnode->videopid, &newnode->audiopid);
+					int ret = sscanf(line, "%d#%"SCNu8"#%"SCNu8"#%"SCNu16"#%"SCNu16, &serviceid, &videocodec, &audiocodec, &videopid, &audiopid);
 					if(ret != 5)
 						textbox(_("Message"), _("testchannel entry not ok"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
 					else
