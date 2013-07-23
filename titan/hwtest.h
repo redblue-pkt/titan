@@ -76,7 +76,7 @@ void testzap(char* testtransponder, char* testchannel)
 		textbox(_("Message"), _("testtransponder not found"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 	else
 	{
-		int ret = sscanf(line, "%"SCNu8"#%d#%"SCNu8"#%d#%d#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8, &fetype, &frequency, &polarization, &orbitalpos, &symbolrate, &modulation, &fec, &pilot, &rolloff, &inversion, &system);
+		int ret = sscanf(tmpstr, "%"SCNu8"#%d#%"SCNu8"#%d#%d#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8, &fetype, &frequency, &polarization, &orbitalpos, &symbolrate, &modulation, &fec, &pilot, &rolloff, &inversion, &system);
 		if(ret != 11)
 			textbox(_("Message"), _("testtransponder entry not ok"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
 		else
@@ -91,7 +91,7 @@ void testzap(char* testtransponder, char* testchannel)
 					textbox(_("Message"), _("testchannel not found"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 				else
 				{
-					int ret = sscanf(line, "%d#%"SCNu8"#%"SCNu8"#%"SCNu16"#%"SCNu16, &serviceid, &videocodec, &audiocodec, &videopid, &audiopid);
+					int ret = sscanf(tmpstr1, "%d#%"SCNu8"#%"SCNu8"#%"SCNu16"#%"SCNu16, &serviceid, &videocodec, &audiocodec, &videopid, &audiopid);
 					if(ret != 5)
 						textbox(_("Message"), _("testchannel entry not ok"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
 					else
