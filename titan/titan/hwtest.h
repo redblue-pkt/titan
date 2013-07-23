@@ -106,6 +106,19 @@ void testzap(char* testtransponder, char* testchannel)
 			}
 		}
 	}
+
+	//del channel from service, so we can delete it
+	m_lock(&status.servicemutex, 2);
+	struct service* snode = service;
+
+	while(snode != NULL)
+	{
+		if(snode->channel == chnode)
+			snode->channel = NULL;
+		snode = snode->next;
+	}
+	m_unlock(&status.servicemutex, 2);
+
 	delchannel(serviceid, tpid, 1);
 	deltransponder(tp);
 	free(tmpstr); tmpstr = NULL;
@@ -162,19 +175,24 @@ void screenhwtest()
 		if(mbox != NULL)
 		{
 			setmenulistdefault(mlist, mbox->name);
-			if(ostrstr(mbox->name, "[S]Lock & Search") == 0)
+			if(ostrstr(mbox->name, "[S]Lock & Search") != NULL)
 			{
+				clearscreen(load);
+				drawscreen(load, 0, 0);
+				resettvpic();
 				testzap(getconfig("testtransponder1s", NULL), getconfig("testchannel1s", NULL));
 				sleep(2);
 				testzap(getconfig("testtransponder2s", NULL), getconfig("testchannel2s", NULL));
+				sleep(2);
+				servicestart(lastchannel, NULL, NULL, 0);	
 			}
 			
-			if(ostrstr(mbox->name, "[T]Lock & Search") == 0)
+			if(ostrstr(mbox->name, "[T]Lock & Search") != NULL)
 			{
 				//struct transponder* createtransponder(uint64_t id, FE_OFDM, int orbitalpos, TEST_S2_FREQ, int inversion, TEST_S2_SYMBOL, int polarization, int fec, int modulation, int rolloff, int pilot, int system);			
 			}
 			
-			if(ostrstr(mbox->name, "[C]Lock & Search") == 0)
+			if(ostrstr(mbox->name, "[C]Lock & Search") != NULL)
 			{
 				//struct transponder* createtransponder(uint64_t id, FE_QAM, int orbitalpos, TEST_S2_FREQ, int inversion, TEST_S2_SYMBOL, int polarization, int fec, int modulation, int rolloff, int pilot, int system);			
 			}
@@ -319,7 +337,6 @@ void screenhwtest()
 	}
 
 	resettvpic();	
-	servicestart(lastchannel, NULL, NULL, 0);	
 	freemenulist(mlist, 1); mlist = NULL;
 }
 
