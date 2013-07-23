@@ -11,11 +11,16 @@
 //test_channel.videoType = V_MP2;
 //test_channel.audioType = A_MP1;
 
-//testtransponder1s=0#10900000#0#0#28125000#?#?#?#?#?#0
-//testchannel1s=?#0#1#380#381
+//ASIASAT-5, 4000H28125 - France 24 English (fec: 3/4)
+//testtransponder1s=0#4000000#0#0#28125000#?#3#?#?#?#0
+//testchannel1s=8#0#1#380#381
+
+//Sat 19.2 (ProSieben)
+//testtransponder1s=0#12544750#0#192#22000000#0#4#2#0#2#0
+//testchannel1s=17501#0#1#511#512
 
 //DVB-S2
-//#define TEST_S12_FREQ   10767000 // 4133, 22Khz off
+//#define TEST_S12_FREQ   10767000 // 4132, 22Khz off
 //#define TEST_S12_SYMBOL  10670000
 //#define TEST_S12_POL    _POLAR_HOR
 //#define TEST_S12_VIDEO_PID  711 
@@ -24,8 +29,13 @@
 //test_channel.videoType = V_H264;
 //test_channel.audioType = A_MP1;
 
-//testtransponder2s=0#10767000#0#0#10670000#?#?#?#?#?#1
-//testchannel2s=?#1#1#711#731
+//ASIASAT-5, 4132H10670 - Trace Urban English (modulation: 8PSK, fec: 3/5)
+//testtransponder2s=0#4132000#0#0#10670000#2#7#?#?#?#1
+//testchannel2s=15#1#1#711#731
+
+//Sat 19.2 (ZDF HD)
+//testtransponder2s=0#11361750#0#192#22000000#2#2#2#0#2#1
+//testchannel2s=11110#1#1#6110#6120
 
 //DVB-T
 //#define TEST_T1_FREQ   5060000
