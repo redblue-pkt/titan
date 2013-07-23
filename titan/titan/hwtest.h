@@ -85,12 +85,58 @@ void screenhwtest()
 			setmenulistdefault(mlist, mbox->name);
 			if(ostrstr(mbox->name, "[S]Lock & Search") == 0)
 			{
-				struct transponder* tp = NULL;
-				tp = createtransponder(99, FE_QPSK, TEST_S2_ORBITALPOS, TEST_S2_FREQ, 0, TEST_S2_SYMBOL, TEST_S2_POL, 0, 0, 0, 0, 0);			
-				if(tp != NULL)
-				{
+				uint64_t tpid = 99;
+				uint8_t fetype = 0, polarization = 0, modulation = 0, fec = 0, pilot = 0, rolloff = 0, inversion = 0, system = 0;
+				int orbitalpos = 0;
+				unsigned int frequency = 0, symbolrate = 0;
 				
+				int serviceid = 0;
+				int8_t videocodec = 0, audiocodec = 0;
+				int16_t videopid = 0, audiopid = 0;
+				
+				char* tmpstr = NULL, *tmpstr1 = NULL;
+				struct transponder* tp = NULL;
+				struct channel* chnode = NULL;
+				
+				tmpstr = ostrcat(getconfig("testtransponder", NULL), NULL, 0, 0);
+				if(tmpstr == NULL)
+					textbox(_("Message"), _("testtransponder not found"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+				else
+				{
+					int ret = sscanf(line, "%"SCNu8"#%d#%"SCNu8"#%d#%d#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8, &fetype, &frequency, &polarization, &orbitalpos, &symbolrate, &modulation, &fec, &pilot, &rolloff, &inversion, &system);
+					if(ret != 11)
+						textbox(_("Message"), _("testtransponder entry not ok"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
+					else
+					{
+						tp = createtransponder(tpid, fetype, orbitalpos, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, system);			
+						if(tp == NULL)
+							textbox(_("Message"), _("can't create new transponer"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
+					  else
+					  {
+					  	tmpstr1 = ostrcat(getconfig("testchannel", NULL), NULL, 0, 0);
+					  	if(tmpstr1 == NULL)
+								textbox(_("Message"), _("testchannel not found"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+							else
+					  	{
+					  		int ret = sscanf(line, "%d#%"SCNu8"#%"SCNu8"#%"SCNu16"#%"SCNu16, &newnode->serviceid, &newnode->videocodec, &newnode->audiocodec, &newnode->videopid, &newnode->audiopid);
+	              if(ret != 5)
+	              	textbox(_("Message"), _("testchannel entry not ok"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
+	              else
+	              {
+									chnode = createchannel("testchannel", tpid, 0, serviceid, 99, 0, videocodec, audiocodec, videopid, audiopid, 0);
+									if(chnode == NULL)
+										textbox(_("Message"), _("can't create new channel"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
+					  			else
+					  				servicecheckret(servicestart(chnode, NULL, NULL, 5), 0);
+								}
+							}
+						}
+					}
 				}
+				delchannel(serviceid, tpid, 1);
+				deltransponder(tp);
+				free(tmpstr); tmpstr = NULL;
+				free(tmpstr1); tmpstr1 = NULL;
 			}
 			
 			if(ostrstr(mbox->name, "[T]Lock & Search") == 0)
@@ -125,7 +171,7 @@ void screenhwtest()
 				char* tmpload = ostrcat(load->text, NULL, 0, 0);
 				while(1)
 				{
-					changetext(load, "Press Front Key");
+					changetext(load, _("Press Front Key"));
 					clearscreen(load);
 					drawscreen(load, 0, 0);
 					int rcret = waitrc(NULL, 0, 0);
@@ -133,7 +179,7 @@ void screenhwtest()
 					if(rcret == getrcconfigint("rcexit", NULL) || rcret == getrcconfigint("rcok", NULL))
 						break;
 					
-					char* tmpstr = ostrcat("Got Keycode: ", oitoa(rcret), 0, 1);
+					char* tmpstr = ostrcat(_("Got Keycode: "), oitoa(rcret), 0, 1);
 					changetext(load, tmpstr);
 					clearscreen(load);
 					drawscreen(load, 0, 0);
@@ -157,17 +203,17 @@ void screenhwtest()
 				{
 					if(i == 0)
 					{
-						tmpstr = ostrcat(tmpstr, "RED", 1, 0);
+						tmpstr = ostrcat(tmpstr, _("RED"), 1, 0);
 						col = 0x00FF0000;
 					}
 					if(i == 1)
 					{
-						tmpstr = ostrcat(tmpstr, "GREEN", 1, 0);
+						tmpstr = ostrcat(tmpstr, _("GREEN"), 1, 0);
 						col = 0x0000FF00;
 					}
 					if(i == 2)
 					{
-						tmpstr = ostrcat(tmpstr, "BLUE", 1, 0);
+						tmpstr = ostrcat(tmpstr, _("BLUE"), 1, 0);
 						col = 0x000000FF;
 					}
 					changetext(load, tmpstr);
@@ -215,8 +261,8 @@ void screenhwtest()
 				if(file_exist("/sys/bus/usb/devices/usb3") == 1) usbcount++;
 				if(file_exist("/sys/bus/usb/devices/usb4") == 1) usbcount++;
 				
-				char* tmpstr = ostrcat("USB Ports found: ", oitoa(usbcount), 0, 1);
-				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);			
+				char* tmpstr = ostrcat(_("USB Ports found: "), oitoa(usbcount), 0, 1);
+				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
 				free(tmpstr); tmpstr = NULL;
 			}
 			
@@ -233,8 +279,8 @@ void screenhwtest()
 					dvbnode = dvbnode->next;
 				}
 				
-				char* tmpstr = ostrcat("CAM Ports found: ", oitoa(cicount), 0, 1);
-				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);			
+				char* tmpstr = ostrcat(_("CAM Ports found: "), oitoa(cicount), 0, 1);
+				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
 				free(tmpstr); tmpstr = NULL;			
 			}
 		}
