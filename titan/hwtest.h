@@ -34,11 +34,68 @@
 //test_channel.videoType = V_MP2; //0;
 //test_channel.audioType = A_MP1; // 0;
 
+void testzap(char* testtransponder, char* testchannel)
+{
+	uint64_t tpid = 99;
+	uint8_t fetype = 0, polarization = 0, modulation = 0, fec = 0, pilot = 0, rolloff = 0, inversion = 0, system = 0;
+	int orbitalpos = 0;
+	unsigned int frequency = 0, symbolrate = 0;
+				
+	int serviceid = 0;
+	int8_t videocodec = 0, audiocodec = 0;
+	int16_t videopid = 0, audiopid = 0;
+				
+	char* tmpstr = NULL, *tmpstr1 = NULL;
+	struct transponder* tp = NULL;
+	struct channel* chnode = NULL;
+				
+	tmpstr = ostrcat(testtransponder, NULL, 0, 0);
+	if(tmpstr == NULL)
+		textbox(_("Message"), _("testtransponder not found"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+	else
+	{
+		int ret = sscanf(line, "%"SCNu8"#%d#%"SCNu8"#%d#%d#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8, &fetype, &frequency, &polarization, &orbitalpos, &symbolrate, &modulation, &fec, &pilot, &rolloff, &inversion, &system);
+		if(ret != 11)
+			textbox(_("Message"), _("testtransponder entry not ok"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
+		else
+		{
+			tp = createtransponder(tpid, fetype, orbitalpos, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, system);			
+			if(tp == NULL)
+				textbox(_("Message"), _("can't create new transponer"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
+			else
+			{
+				tmpstr1 = ostrcat(testchannel, NULL, 0, 0);
+				if(tmpstr1 == NULL)
+					textbox(_("Message"), _("testchannel not found"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+				else
+				{
+					int ret = sscanf(line, "%d#%"SCNu8"#%"SCNu8"#%"SCNu16"#%"SCNu16, &newnode->serviceid, &newnode->videocodec, &newnode->audiocodec, &newnode->videopid, &newnode->audiopid);
+					if(ret != 5)
+						textbox(_("Message"), _("testchannel entry not ok"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
+					else
+					{
+						chnode = createchannel("testchannel", tpid, 0, serviceid, 99, 0, videocodec, audiocodec, videopid, audiopid, 0);
+						if(chnode == NULL)
+							textbox(_("Message"), _("can't create new channel"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
+						else
+							servicecheckret(servicestart(chnode, NULL, NULL, 5), 0);
+					}
+				}
+			}
+		}
+	}
+	delchannel(serviceid, tpid, 1);
+	deltransponder(tp);
+	free(tmpstr); tmpstr = NULL;
+	free(tmpstr1); tmpstr1 = NULL;
+}
+
 void screenhwtest()
 {
 	struct menulist* mlist = NULL, *mbox = NULL;
 	struct skin* load = getscreen("loading");
 	struct dvbdev* dvbnode = dvbdev;
+	struct channel* lastchannel = status.aktservice->channel;
 	
 	while(dvbnode != NULL)
 	{
@@ -85,58 +142,9 @@ void screenhwtest()
 			setmenulistdefault(mlist, mbox->name);
 			if(ostrstr(mbox->name, "[S]Lock & Search") == 0)
 			{
-				uint64_t tpid = 99;
-				uint8_t fetype = 0, polarization = 0, modulation = 0, fec = 0, pilot = 0, rolloff = 0, inversion = 0, system = 0;
-				int orbitalpos = 0;
-				unsigned int frequency = 0, symbolrate = 0;
-				
-				int serviceid = 0;
-				int8_t videocodec = 0, audiocodec = 0;
-				int16_t videopid = 0, audiopid = 0;
-				
-				char* tmpstr = NULL, *tmpstr1 = NULL;
-				struct transponder* tp = NULL;
-				struct channel* chnode = NULL;
-				
-				tmpstr = ostrcat(getconfig("testtransponder", NULL), NULL, 0, 0);
-				if(tmpstr == NULL)
-					textbox(_("Message"), _("testtransponder not found"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-				else
-				{
-					int ret = sscanf(line, "%"SCNu8"#%d#%"SCNu8"#%d#%d#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8, &fetype, &frequency, &polarization, &orbitalpos, &symbolrate, &modulation, &fec, &pilot, &rolloff, &inversion, &system);
-					if(ret != 11)
-						textbox(_("Message"), _("testtransponder entry not ok"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
-					else
-					{
-						tp = createtransponder(tpid, fetype, orbitalpos, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, system);			
-						if(tp == NULL)
-							textbox(_("Message"), _("can't create new transponer"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
-					  else
-					  {
-					  	tmpstr1 = ostrcat(getconfig("testchannel", NULL), NULL, 0, 0);
-					  	if(tmpstr1 == NULL)
-								textbox(_("Message"), _("testchannel not found"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-							else
-					  	{
-					  		int ret = sscanf(line, "%d#%"SCNu8"#%"SCNu8"#%"SCNu16"#%"SCNu16, &newnode->serviceid, &newnode->videocodec, &newnode->audiocodec, &newnode->videopid, &newnode->audiopid);
-	              if(ret != 5)
-	              	textbox(_("Message"), _("testchannel entry not ok"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
-	              else
-	              {
-									chnode = createchannel("testchannel", tpid, 0, serviceid, 99, 0, videocodec, audiocodec, videopid, audiopid, 0);
-									if(chnode == NULL)
-										textbox(_("Message"), _("can't create new channel"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
-					  			else
-					  				servicecheckret(servicestart(chnode, NULL, NULL, 5), 0);
-								}
-							}
-						}
-					}
-				}
-				delchannel(serviceid, tpid, 1);
-				deltransponder(tp);
-				free(tmpstr); tmpstr = NULL;
-				free(tmpstr1); tmpstr1 = NULL;
+				testzap(getconfig("testtransponder1s", NULL), getconfig("testchannel1s", NULL));
+				sleep(2);
+				testzap(getconfig("testtransponder2s", NULL), getconfig("testchannel2s", NULL));
 			}
 			
 			if(ostrstr(mbox->name, "[T]Lock & Search") == 0)
@@ -288,7 +296,8 @@ void screenhwtest()
 			break;
 	}
 
-	resettvpic();
+	resettvpic();	
+	servicestart(lastchannel, NULL, NULL, 0);	
 	freemenulist(mlist, 1); mlist = NULL;
 }
 
