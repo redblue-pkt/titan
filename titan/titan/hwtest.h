@@ -209,7 +209,7 @@ void screenhwtest()
 					tmpstr = ostrcat(tmpstr, oitoa(i), 1, 1);
 					writevfd(tmpstr);
 					free(tmpstr); tmpstr = NULL;
-					usleep(300000);
+					usleep(600000);
 				}
 				free(tmpstr); tmpstr = NULL;
 			}
