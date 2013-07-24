@@ -2414,8 +2414,17 @@ void debugstack(int sig, void* address, void* address1)
 
 	printf("--------------------------------------\n");
 
-	if(!file_exist("/var/swap/logs"))   
-		mkdir("/var/swap/logs", 0777); 
+	char* logdir = ostrcat(getconfig("tracelog", NULL), NULL, 0, 0);
+	if(logdir != NULL)
+	{
+		char* tmplogdir = dirname(logdir);
+		if(tmplogdir != NULL)
+		{
+			if(!file_exist(tmplogdir))   
+				mkdir(tmplogdir, 0777);
+		}
+		free(logdir); logdir = NULL;
+	} 
 			
 	fd = fopen(getconfig("tracelog", NULL), "w");
 	if(fd != NULL)
