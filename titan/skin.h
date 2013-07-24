@@ -1892,11 +1892,20 @@ unsigned char* readpng(const char* filename, unsigned long* width, unsigned long
 		return NULL;
 	}
 
+	if(png_jmpbuf(png_ptr) == NULL)
+	{
+		png_destroy_read_struct(&png_ptr, &info_ptr, NULL);
+		err("%s unknown error (png_jmpbuf = NULL)", filename);
+		free(sig);
+		fclose(fd);
+		return NULL;	
+	}
+
 	ret = setjmp(png_jmpbuf(png_ptr));
 	if(ret != 0)
 	{
 		png_destroy_read_struct(&png_ptr, &info_ptr, NULL);
-		err("%s has bad IHDR (libpng longjmp)", filename);
+		err("%s unknown error (libpng longjmp)", filename);
 		free(sig);
 		fclose(fd);
 		return NULL;
@@ -1906,16 +1915,6 @@ unsigned char* readpng(const char* filename, unsigned long* width, unsigned long
 	png_set_sig_bytes(png_ptr, 8);
 	png_read_info(png_ptr, info_ptr);
 	png_get_IHDR(png_ptr, info_ptr, (png_uint_32*)width, (png_uint_32*)height, &bit_depth, &color_type, NULL, NULL, NULL);
-
-	ret = setjmp(png_jmpbuf(png_ptr));
-	if(ret != 0)
-	{
-		png_destroy_read_struct(&png_ptr, &info_ptr, NULL);
-		err("%s unknown error", filename);
-		free(sig);
-		fclose(fd);
-		return NULL;
-	}
 
 	if(color_type == PNG_COLOR_TYPE_PALETTE)
 		png_set_expand(png_ptr);
