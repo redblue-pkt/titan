@@ -1272,8 +1272,8 @@ void startnet()
 			system(cmd);
 
 		free(cmd); cmd = NULL;
-		if(!file_exist("/dev/ttyS0") == 1)
-			mknod("/dev/ttyS0", S_IFCHR | 0666, makedev(204, 40));
+		if(!file_exist("/dev/ttyAS0") == 1)
+			mknod("/dev/ttyAS0", S_IFCHR | 0666, makedev(204, 40));
 	}
 }
 
