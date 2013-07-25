@@ -3,6 +3,10 @@
 #ifndef HWTEST_H
 #define HWTEST_H
 
+#ifndef IOCTL_GET_IS_CARD_PRESENT 
+#define IOCTL_GET_IS_CARD_PRESENT	_IO (0x64, 8)
+#endif
+
 //DVB-S
 //#define TEST_S11_FREQ   10900000 // 4000, 22Khz off
 //#define TEST_S11_SYMBOL  28125000
@@ -309,6 +313,46 @@ void screenhwtest()
 			
 			if(ostrcmp(mbox->name, "Smartcard") == 0)
 			{
+				int p1 = 0, p2 = 0, fd = -1, smartcardcount = 0;
+				char* tmpstr = NULL;
+				
+				if((fd = open("/dev/sci0", O_RDWR)) < 0)
+				{
+					perr("open /dev/sci0 failed");
+				}
+				else
+				{
+					smartcardcount++;
+					if(ioctl(fd, IOCTL_GET_IS_CARD_PRESENT, &p1) < 0)
+					{
+						perr("IOCTL_GET_IS_CARD_PRESENT");
+					}
+					close(fd);
+				}
+				
+				if((fd = open("/dev/sci1", O_RDWR)) < 0)
+				{
+					perr("open /dev/sci1 failed");
+				}
+				else
+				{
+					smartcardcount++;
+					if(ioctl(fd, IOCTL_GET_IS_CARD_PRESENT, &p2) < 0)
+					{
+						perr("IOCTL_GET_IS_CARD_PRESENT");
+					}
+					close(fd);
+				}
+				
+				tmpstr = ostrcat(_("Smartcard Ports found: "), oitoa(smartcardcount), 0, 1);
+				tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
+				
+				if(p1 == 1) tmpstr = ostrcat(tmpstr, "Smartcard 1 Present\n", 1, 0);
+				if(p2 == 1) tmpstr = ostrcat(tmpstr, "Smartcard 2 Present\n", 1, 0);
+				
+				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 0, 0);			
+			
+				free(tmpstr); tmpstr = NULL;
 			}
 			
 			if(ostrcmp(mbox->name, "Network") == 0)
