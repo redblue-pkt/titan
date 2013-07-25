@@ -4,7 +4,7 @@
 #define HWTEST_H
 
 #ifndef IOCTL_GET_IS_CARD_PRESENT 
-#define IOCTL_GET_IS_CARD_PRESENT	_IO (0x64, 8)
+#define IOCTL_GET_IS_CARD_PRESENT	_IOW('s', 8, uint32_t)
 #endif
 
 //DVB-S
@@ -313,7 +313,8 @@ void screenhwtest()
 			
 			if(ostrcmp(mbox->name, "Smartcard") == 0)
 			{
-				int p1 = 0, p2 = 0, fd = -1, smartcardcount = 0;
+				uint32_t p1 = 0, p2 = 0;
+				int fd = -1, smartcardcount = 0;
 				char* tmpstr = NULL;
 				
 				if((fd = open("/dev/sci0", O_RDWR)) < 0)
