@@ -587,18 +587,21 @@ void fegetfrontend(struct dvbdev* node)
 	debug(1000, "out");
 }
 
-void fesettone(struct dvbdev* node, fe_sec_tone_mode_t tone, int wait)
+int fesettone(struct dvbdev* node, fe_sec_tone_mode_t tone, int wait)
 {
+	int ret = 0;
+	
 	if(node == NULL)
 	{
 		debug(1000, "out-> NULL detect");
-		return;
+		return 1;
 	}
 
 	debug(200, "FE_SET_TONE: %d (%s)", tone, node->feshortname);
 	if(ioctl(node->fd, FE_SET_TONE, tone) == -1)
 	{
 		perr("FE_SET_TONE");
+		ret = 1;
 	}
 	else
 	{
@@ -606,23 +609,28 @@ void fesettone(struct dvbdev* node, fe_sec_tone_mode_t tone, int wait)
 		usleep(wait * 1000);
 	}
 	debug(1000, "out");
+	
+	return ret;
 }
 
 //flag 0: reset tuner params on volt off
 //flag 1: don't reset tuner params on volt off
-void fesetvoltage(struct dvbdev* node, fe_sec_voltage_t volt, int wait)
+int fesetvoltage(struct dvbdev* node, fe_sec_voltage_t volt, int wait)
 {
 	debug(1000, "in");
+	int ret = 0;
+	
 	if(node == NULL)
 	{
 		debug(1000, "out-> NULL detect");
-		return;
+		return 1;
 	}
 
 	debug(200, "FE_SET_VOLT: %d (%s)", volt, node->feshortname);
 	if(ioctl(node->fd, FE_SET_VOLTAGE, volt) == -1)
 	{
 		perr("FE_SET_VOLTAGE");
+		ret = 1;
 	}
 	else
 	{
@@ -641,6 +649,8 @@ void fesetvoltage(struct dvbdev* node, fe_sec_voltage_t volt, int wait)
 		}
 	}
 	debug(1000, "out");
+	
+	return ret;
 }
 
 void fediseqcsendburst(struct dvbdev* node, fe_sec_mini_cmd_t burst, int wait)
