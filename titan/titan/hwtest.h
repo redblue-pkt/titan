@@ -1,3 +1,5 @@
+//#include <termios.h>
+
 #ifndef HWTEST_H
 #define HWTEST_H
 
@@ -163,10 +165,14 @@ void screenhwtest()
 	}
 	addmenulist(&mlist, "Front Display", NULL, NULL, 0, 0);
 	addmenulist(&mlist, "Front Key", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Color Bar", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "SCART 4:3 / 16:9", NULL, NULL, 0, 0);
+	//addmenulist(&mlist, "Color Bar", NULL, NULL, 0, 0);
+	//addmenulist(&mlist, "SCART 4:3 / 16:9", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Smartcard", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Network", NULL, NULL, 0, 0);
 	addmenulist(&mlist, "USB Port", NULL, NULL, 0, 0);
 	addmenulist(&mlist, "CAM", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "RS232", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "LNB", NULL, NULL, 0, 0);
 	
 	while(1)
 	{
@@ -301,35 +307,198 @@ void screenhwtest()
 				changetext(load, tmpload);
 			}
 			
+			if(ostrcmp(mbox->name, "Smartcard") == 0)
+			{
+			}
+			
+			if(ostrcmp(mbox->name, "Network") == 0)
+			{
+				struct inetwork* inode = inetwork;
+				
+				while(inode != NULL)
+				{
+					if(ostrcmp(inode->device, "eth0") == 0)
+						break;
+					inode = inode->next;
+				}
+				
+				if(inode != NULL)
+				{
+					char* tmpstr = ostrcat(inode->device, ": ", 0, 0);
+					tmpstr = ostrcat(tmpstr, inode->ip, 0, 0);
+					textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
+					free(tmpstr); tmpstr = NULL;
+				}
+			}
+			
 			if(ostrcmp(mbox->name, "USB Port") == 0)
 			{
 				int usbcount = 0;
+				struct hdd* hddnode = NULL;
+				char* tmpstr = NULL;
+				
 				if(file_exist("/sys/bus/usb/devices/usb1") == 1) usbcount++;
 				if(file_exist("/sys/bus/usb/devices/usb2") == 1) usbcount++;
 				if(file_exist("/sys/bus/usb/devices/usb3") == 1) usbcount++;
 				if(file_exist("/sys/bus/usb/devices/usb4") == 1) usbcount++;
 				
-				char* tmpstr = ostrcat(_("USB Ports found: "), oitoa(usbcount), 0, 1);
-				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
+				tmpstr = ostrcat(_("USB Ports found: "), oitoa(usbcount), 0, 1);
+				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+				addhddall();
+				
+				hddnode = hdd;
+				while(hddnode != NULL)
+				{
+					tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+					tmpstr = ostrcat(tmpstr, _("found: "), 1, 0);
+					tmpstr = ostrcat(tmpstr, hddnode->device, 1, 0);
+					hddnode = hddnode->next;
+				}
+				
+				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 0, 0);			
 				free(tmpstr); tmpstr = NULL;
 			}
 			
 			if(ostrcmp(mbox->name, "CAM") == 0)
 			{
 				int cicount = 0;
+				char* tmpstr = NULL, *tmpstr1 = NULL;
 				dvbnode = dvbdev;
 	
 				while(dvbnode != NULL)
 				{
 					if(dvbnode->type == CIDEV)
+					{
 						cicount++;
+						
+						tmpstr = ostrcat(tmpstr, _("Slot "), 1, 0);
+						tmpstr = ostrcat(tmpstr, oitoa(cicount), 1, 1);
+						tmpstr = ostrcat(tmpstr, ": ", 1, 0);
+						if(dvbnode->caslot != NULL)
+						{
+							if(dvbnode->caslot->name == NULL || dvbnode->caslot->status == 0)
+								tmpstr = ostrcat(tmpstr, _("unknown"), 1, 0);
+							else
+								tmpstr = ostrcat(tmpstr, dvbnode->caslot->name, 1, 0);
+								
+							tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+						}
+					}
 						
 					dvbnode = dvbnode->next;
 				}
 				
-				char* tmpstr = ostrcat(_("CAM Ports found: "), oitoa(cicount), 0, 1);
-				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
-				free(tmpstr); tmpstr = NULL;			
+				tmpstr1 = ostrcat(_("CAM Ports found: "), oitoa(cicount), 0, 1);
+				tmpstr1 = ostrcat(tmpstr1, "\n\n", 1, 0);
+				tmpstr = ostrcat(tmpstr1, tmpstr, 0, 1);
+				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 0, 0);			
+				free(tmpstr); tmpstr = NULL;
+				free(tmpstr1); tmpstr1 = NULL;			
+			}
+			
+			if(ostrcmp(mbox->name, "RS232") == 0)
+			{
+				int exist = 1;
+				unsigned char tmpwr[5] = {0};
+				unsigned char tmprd[4] = {0};
+				
+				tmpwr[0] = 'A'; //65
+				tmpwr[1] = 'B'; //66
+				tmpwr[2] = 'C'; //67
+				tmpwr[3] = 'D'; //68
+				
+				if(!file_exist(SERIALDEV) == 1)
+				{
+					mknod(SERIALDEV, S_IFCHR | 0666, makedev(204, 40));
+					exist = 0;
+				}
+				
+				int fd = open(SERIALDEV, O_RDWR | O_NOCTTY | O_NDELAY | O_NONBLOCK);
+
+				if(fd >= 0)
+				{
+					//struct termios port_settings;      // structure to store the port settings in
+					int ret = 0;
+					
+
+					//tcgetattr(fd, &port_settings);
+
+					//cfsetispeed(&port_settings, B9600);    // set baud rates
+					//cfsetospeed(&port_settings, B9600);
+			
+					//port_settings.c_cflag |= (CLOCAL | CREAD);
+					//port_settings.c_cflag &= ~PARENB;    // set no parity, stop bits, data bits
+					//port_settings.c_cflag &= ~CSTOPB;
+					//port_settings.c_cflag &= ~CSIZE;
+					//port_settings.c_cflag |= CS8;
+					//tcsetattr(fd, TCSANOW, &port_settings);
+				
+					ret = dvbwrite(fd, tmpwr, 4, -1);
+					if(ret != 4)
+					{
+						perr("write %s (ret=%d)", SERIALDEV, ret);
+					}
+
+					ret = dvbreadfd(fd, tmprd, 0, 4, -1, 0);
+					if(ret != 4)
+					{
+						perr("read %s (ret=%d)", SERIALDEV, ret);
+					}
+
+					close(fd);
+				}
+				else
+				{
+					perr("open %s", SERIALDEV);
+				}
+				
+				if(exist == 0) unlink(SERIALDEV);
+
+				if(tmprd[0] == 'A' && tmprd[1] == 'B' && tmprd[2] == 'C' && tmprd[3] == 'D')
+					textbox(_("Message"), _("SUCESS Serial Port"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
+				else
+					textbox(_("Message"), _("FAIL Serial Port"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
+			}
+			
+			if(ostrcmp(mbox->name, "LNB") == 0)
+			{
+				char* tmpstr = NULL;
+				int ret1 = 0, ret2 = 0;
+			
+				ret1 = fesetvoltage(status.aktservice->fedev, SEC_VOLTAGE_OFF, 15);
+				ret2 = fesettone(status.aktservice->fedev, SEC_TONE_OFF, 15);
+				usleep(100000);
+				if(ret1 == 0 && ret2 == 0)
+					tmpstr = ostrcat(tmpstr, _("LNB off / 22K off: OK\n"), 1, 0);
+				else
+					tmpstr = ostrcat(tmpstr, _("LNB off / 22K off: NOT OK\n"), 1, 0);
+				
+				ret1 = fesetvoltage(status.aktservice->fedev, SEC_VOLTAGE_18, 15);
+				ret2 = fesettone(status.aktservice->fedev, SEC_TONE_OFF, 15);
+				usleep(100000);
+				if(ret1 == 0 && ret2 == 0)
+					tmpstr = ostrcat(tmpstr, _("LNB 18V / 22K off: OK\n"), 1, 0);
+				else
+					tmpstr = ostrcat(tmpstr, _("LNB 18V / 22K off: NOT OK\n"), 1, 0);
+				
+				ret1 = fesetvoltage(status.aktservice->fedev, SEC_VOLTAGE_13, 15);
+				ret2 = fesettone(status.aktservice->fedev, SEC_TONE_OFF, 15);
+				usleep(100000);
+				if(ret1 == 0 && ret2 == 0)
+					tmpstr = ostrcat(tmpstr, _("LNB 13V / 22K off: OK\n"), 1, 0);
+				else
+					tmpstr = ostrcat(tmpstr, _("LNB 13V / 22K off: NOT OK\n"), 1, 0);
+				
+				ret1 = fesetvoltage(status.aktservice->fedev, SEC_VOLTAGE_13, 15);
+				ret2 = fesettone(status.aktservice->fedev, SEC_TONE_ON, 15);
+				usleep(100000);
+				if(ret1 == 0 && ret2 == 0)
+					tmpstr = ostrcat(tmpstr, _("LNB 13V / 22K on: OK\n"), 1, 0);
+				else
+					tmpstr = ostrcat(tmpstr, _("LNB 13V / 22K on: NOT OK\n"), 1, 0);
+					
+				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 0, 0);			
+				free(tmpstr); tmpstr = NULL;
 			}
 		}
 		else

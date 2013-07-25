@@ -437,7 +437,7 @@ char* delmountpart(char* filename, int free1)
 	}
 
 	if(treffer != NULL)
-		ret = string_replace(treffer, NULL, rpath, 0);
+		ret = string_replace(treffer, "", rpath, 0);
 
 	endmntent(fd);
 	if(free1 == 1) free(filename);
@@ -1272,8 +1272,8 @@ void startnet()
 			system(cmd);
 
 		free(cmd); cmd = NULL;
-		if(!file_exist("/dev/ttyAS0") == 1)
-			mknod("/dev/ttyAS0", S_IFCHR | 0666, makedev(204, 40));
+		if(!file_exist(SERIALDEV) == 1)
+			mknod(SERIALDEV, S_IFCHR | 0666, makedev(204, 40));
 	}
 }
 
@@ -4683,28 +4683,27 @@ char* getvideomodechoices()
 		return NULL;
 	}
 
-	value = string_replace("pal", NULL, value, 1);
+	value = string_replace("pal", "", value, 1);
 	value = string_replace("  ", " ", value, 1);
 
 	if(status.mcaktiv == 0)
 	{
-		value = string_replace("1080p60", NULL, value, 1);
+		value = string_replace("1080p60", "", value, 1);
 		value = string_replace("  ", " ", value, 1);
-		value = string_replace("1080p59", NULL, value, 1);
+		value = string_replace("1080p59", "", value, 1);
 		value = string_replace("  ", " ", value, 1);
-		value = string_replace("1080p30", NULL, value, 1);
+		value = string_replace("1080p30", "", value, 1);
 		value = string_replace("  ", " ", value, 1);
-		value = string_replace("1080p25", NULL, value, 1);
+		value = string_replace("1080p25", "", value, 1);
 		value = string_replace("  ", " ", value, 1);
-		value = string_replace("1080p24", NULL, value, 1);
+		value = string_replace("1080p24", "", value, 1);
 		value = string_replace("  ", " ", value, 1);
-		value = string_replace("1080i60", NULL, value, 1);
+		value = string_replace("1080i60", "", value, 1);
 		value = string_replace("  ", " ", value, 1);
-		value = string_replace("720p60", NULL, value, 1);
+		value = string_replace("720p60", "", value, 1);
 		value = string_replace("  ", " ", value, 1);
 	}
 
-	value = strstrip(value);
 	value = convertspacetolf(value);
 
 	debug(1000, "out");
@@ -6234,7 +6233,7 @@ char* string_decode(char* input, int flag)
 	while(ostrstr(input, ";") != NULL)
 	{
 		debug(210, "input: %s", input);
-		input = string_replace(";", NULL, input, 1);
+		input = string_replace(";", "", input, 1);
 		debug(210, "input: %s", input);
 	}
 
