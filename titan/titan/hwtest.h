@@ -349,9 +349,12 @@ void screenhwtest()
 				hddnode = hdd;
 				while(hddnode != NULL)
 				{
-					tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-					tmpstr = ostrcat(tmpstr, _("found: "), 1, 0);
-					tmpstr = ostrcat(tmpstr, hddnode->device, 1, 0);
+					if(hddnode->partition == 0)
+					{
+						tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+						tmpstr = ostrcat(tmpstr, _("found: "), 1, 0);
+						tmpstr = ostrcat(tmpstr, hddnode->device, 1, 0);
+					}
 					hddnode = hddnode->next;
 				}
 				
@@ -414,13 +417,11 @@ void screenhwtest()
 				}
 				
 				int fd = open(SERIALDEV, O_RDWR | O_NOCTTY | O_NDELAY | O_NONBLOCK);
-
 				if(fd >= 0)
 				{
 					//struct termios port_settings;      // structure to store the port settings in
 					int ret = 0;
 					
-
 					//tcgetattr(fd, &port_settings);
 
 					//cfsetispeed(&port_settings, B9600);    // set baud rates
