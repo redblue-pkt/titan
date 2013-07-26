@@ -314,7 +314,7 @@ void screenhwtest()
 			if(ostrcmp(mbox->name, "Smartcard") == 0)
 			{
 				uint32_t status = 0;
-				int fd = -1, smartcardcount = 0;
+				int smartcardcount = 0;
 				char* tmpstr = NULL, *tmpstr1 = NULL;
 				
 				while(dvbnode != NULL)
