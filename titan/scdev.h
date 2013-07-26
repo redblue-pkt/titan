@@ -352,24 +352,6 @@ int scsetclock(struct dvbdev* node, uint32_t* clock)
 	return 0;
 }
 
-int scsetclock(struct dvbdev* node, uint32_t* clock)
-{
-	if(node == NULL)
-	{
-		debug(1000, "out-> NULL detect");
-		return 1;
-	}
-
-	debug(200, "IOCTL_SET_CLOCK");
-	if(ioctl(node->fd, IOCTL_SET_CLOCK, clock) < 0)
-	{
-		perr("IOCTL_SET_CLOCK");
-		return 1;
-	}
-
-	return 0;
-}
-
 int scsetonlyreset(struct dvbdev* node)
 {
 	if(node == NULL)
