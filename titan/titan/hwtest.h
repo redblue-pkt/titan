@@ -313,47 +313,37 @@ void screenhwtest()
 			
 			if(ostrcmp(mbox->name, "Smartcard") == 0)
 			{
-				uint32_t p1 = 0, p2 = 0;
+				uint32_t status = 0;
 				int fd = -1, smartcardcount = 0;
-				char* tmpstr = NULL;
+				char* tmpstr = NULL, *tmpstr1 = NULL;
 				
-				if((fd = open("/dev/sci0", O_RDWR)) < 0)
+				while(dvbnode != NULL)
 				{
-					perr("open /dev/sci0 failed");
-				}
-				else
-				{
-					smartcardcount++;
-					if(ioctl(fd, IOCTL_GET_IS_CARD_PRESENT, &p1) < 0)
+					if(dvbnode->type == SCDEV)
 					{
-						perr("IOCTL_GET_IS_CARD_PRESENT");
+						smartcardcount++;
+						status = 0;
+						scgetiscardpresent(dvbnode, &status);
+						
+						if(status == 1)
+						{
+							tmpstr1 = ostrcat(tmpstr1, "Smartcard ", 1, 0);
+							tmpstr1 = ostrcat(tmpstr1, oitoa(smartcardcount), 1, 1);
+							tmpstr1 = ostrcat(tmpstr1, " Present\n", 1, 0);
+						}
 					}
-					close(fd);
-				}
-				
-				if((fd = open("/dev/sci1", O_RDWR)) < 0)
-				{
-					perr("open /dev/sci1 failed");
-				}
-				else
-				{
-					smartcardcount++;
-					if(ioctl(fd, IOCTL_GET_IS_CARD_PRESENT, &p2) < 0)
-					{
-						perr("IOCTL_GET_IS_CARD_PRESENT");
-					}
-					close(fd);
+					
+					dvbnode = dvbnode->next;
 				}
 				
 				tmpstr = ostrcat(_("Smartcard Ports found: "), oitoa(smartcardcount), 0, 1);
 				tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
-				
-				if(p1 == 1) tmpstr = ostrcat(tmpstr, "Smartcard 1 Present\n", 1, 0);
-				if(p2 == 1) tmpstr = ostrcat(tmpstr, "Smartcard 2 Present\n", 1, 0);
-				
+				tmpstr = ostrcat(tmpstr, tmpstr1, 1, 0);
+									
 				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 0, 0);			
 			
 				free(tmpstr); tmpstr = NULL;
+				free(tmpstr1); tmpstr1 = NULL;
 			}
 			
 			if(ostrcmp(mbox->name, "Network") == 0)
