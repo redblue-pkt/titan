@@ -2,39 +2,39 @@
 #define SCDEV_H
 
 #ifndef IOCTL_SET_RESET
-#define IOCTL_SET_RESET	_IOW('s', 1,  uint32_t)
+#define IOCTL_SET_RESET	_IOW('s', 1, uint32_t)
 #endif
 
 #ifndef IOCTL_SET_MODES
-#define IOCTL_SET_MODES	_IOW('s', 2,  scimodes)
+#define IOCTL_SET_MODES	_IOW('s', 2, scimodes)
 #endif
 
 #ifndef IOCTL_GET_MODES
-#define IOCTL_GET_MODES	_IOW('s', 3,  scimodes)
+#define IOCTL_GET_MODES	_IOW('s', 3, scimodes)
 #endif
 
 #ifndef IOCTL_SET_PARAMETERS
-#define IOCTL_SET_PARAMETERS	_IOW('s', 4,  sciparameters)
+#define IOCTL_SET_PARAMETERS	_IOW('s', 4, sciparameters)
 #endif
 
 #ifndef IOCTL_GET_PARAMETERS
-#define IOCTL_GET_PARAMETERS	_IOW('s', 5,  sciparameters)
+#define IOCTL_GET_PARAMETERS	_IOW('s', 5, sciparameters)
 #endif
 
 #ifndef IOCTL_SET_CLOCK_START
-#define IOCTL_SET_CLOCK_START	_IOW('s', 6,  uint32_t)
+#define IOCTL_SET_CLOCK_START	_IOW('s', 6, uint32_t)
 #endif
 
 #ifndef IOCTL_SET_CLOCK_STOP
-#define IOCTL_SET_CLOCK_STOP	_IOW('s', 7,  uint32_t)
+#define IOCTL_SET_CLOCK_STOP	_IOW('s', 7, uint32_t)
 #endif
 
 #ifndef IOCTL_GET_IS_CARD_PRESENT
-#define IOCTL_GET_IS_CARD_PRESENT	_IOW('s', 8,  uint32_t)
+#define IOCTL_GET_IS_CARD_PRESENT	_IOW('s', 8, uint32_t)
 #endif
 
 #ifndef IOCTL_GET_IS_CARD_ACTIVATED
-#define IOCTL_GET_IS_CARD_ACTIVATED	_IOW('s', 9,  uint32_t)
+#define IOCTL_GET_IS_CARD_ACTIVATED	_IOW('s', 9, uint32_t)
 #endif
 
 #ifndef IOCTL_SET_DEACTIVATE
@@ -136,7 +136,7 @@ int scsetreset(struct dvbdev* node)
 	return 0;
 }
 
-int scsetmodes(struct dvbdev* node, struct scimodes* modes)
+int scsetmodes(struct dvbdev* node, struct sci_modes* modes)
 {
 	if(node == NULL || modes == NULL)
 	{
@@ -154,7 +154,7 @@ int scsetmodes(struct dvbdev* node, struct scimodes* modes)
 	return 0;
 }
 
-int scgetmodes(struct dvbdev* node, struct scimodes* modes)
+int scgetmodes(struct dvbdev* node, struct sci_modes* modes)
 {
 	if(node == NULL || modes == NULL)
 	{
@@ -172,7 +172,7 @@ int scgetmodes(struct dvbdev* node, struct scimodes* modes)
 	return 0;
 }
 
-int scsetparameters(struct dvbdev* node, struct sciparameters* parameters)
+int scsetparameters(struct dvbdev* node, struct sci_parameters* parameters)
 {
 	if(node == NULL || parameters == NULL)
 	{
@@ -190,7 +190,7 @@ int scsetparameters(struct dvbdev* node, struct sciparameters* parameters)
 	return 0;
 }
 
-int scgetparameters(struct dvbdev* node, struct sciparameters* parameters)
+int scgetparameters(struct dvbdev* node, struct sci_parameters* parameters)
 {
 	if(node == NULL || parameters == NULL)
 	{
