@@ -646,7 +646,7 @@ struct channel* sortchannel()
 	struct channel *next = NULL, *prev = NULL;
 	struct channel **tnodeaddr = NULL;
 	
-	if(node == NULL) return;
+	if(node == NULL) return NULL;
 
 	while(node != NULL)
 	{
