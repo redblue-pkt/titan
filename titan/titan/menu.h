@@ -586,6 +586,11 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screenmoduleconfig();
 	}
+	else if(ostrcmp("scconfig", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screenscconfig();
+	}
 	else if(ostrcmp("epgsearch", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;

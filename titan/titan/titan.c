@@ -169,6 +169,7 @@ struct channelslot *channelslot = NULL;
 #include "skinadjust.h"
 #include "blindscanadjust.h"
 #include "moduleconfig.h"
+#include "scconfig.h"
 #include "possetup.h"
 #include "rectimer.h"
 #include "pin.h"
