@@ -97,6 +97,7 @@ struct channelslot *channelslot = NULL;
 #include "audiodev.h"
 #include "cidev.h"
 #include "cadev.h"
+#include "scdev.h"
 #include "ca.h"
 #include "dvrdev.h"
 #include "cam.h"
@@ -777,6 +778,7 @@ int main(int argc, char *argv[])
 	ret = cagetdev();
 	ret = cigetdev();
 	ret = dvrgetdev();
+	ret = scgetdev();
 	settunerstatus();
 
 	//start ca slot watching threads
