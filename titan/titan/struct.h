@@ -112,6 +112,7 @@
 #define MAXCIDEV 4
 #define MAXCADEV 4
 #define MAXDVRDEV 4
+#define MAXSCDEV 2
 #define RCTIMEOUT 999999
 #define RCTHREADSTANDBY 999998
 #define MAXSERVICETYPE 10
@@ -178,7 +179,7 @@ enum {BOTTOMLEFT, BOTTOMRIGHT, TOPLEFT, TOPRIGHT};
 enum {LEFTRIGHT=1, TOPBOTTOM, LEFTMIDDLE, TOPMIDDLE};
 enum {NO, YES, AUTONO, AUTOYES};
 enum {UNDEF=0, LISTBOX=1, TEXTBOX=2, CHOICEBOX=4, INPUTBOX=8, INPUTBOXNUM=16, FILELIST=32, PROGRESSBAR=64, MENU=128, MULTIPROGRESSBAR=256, GRID=512, GRIDBR=1024};
-enum {FRONTENDDEV, DEMUXDEV, VIDEODEV, AUDIODEV, CADEV, CIDEV, FRONTENDDEVDUMMY, DVRDEV};
+enum {FRONTENDDEV, DEMUXDEV, VIDEODEV, AUDIODEV, CADEV, CIDEV, FRONTENDDEVDUMMY, DVRDEV, SCDEV};
 enum {TV, RADIO};
 enum {RECDIRECT, RECTIMER, RECTIMESHIFT, RECSTREAM, RECPLAY};
 enum {AC3 = 0, MPEGA = 1, DTS = 2, LPCM = 6, AAC = 8, AACHE = 9};
@@ -1790,5 +1791,29 @@ struct blacklist
   struct splitstr* splitstr;
   int count;
 };
+
+typedef struct sci_modes
+{
+	int emv2000;
+	int dma;
+	int man_act;
+	int rw_mode;
+} scimodes;
+
+typedef struct sci_parameters
+{
+	u_char T;
+	unsigned long fs;
+	unsigned long ETU;
+	unsigned long WWT;
+	unsigned long CWT;
+	unsigned long BWT;
+	unsigned long EGT;
+	unsigned long clock_stop_polarity;
+	u_char check;
+	u_char P;
+	u_char I;
+	u_char U;
+} sciparameters;
 
 #endif
