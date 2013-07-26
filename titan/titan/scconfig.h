@@ -9,6 +9,7 @@ void screenscconfig()
 	struct skin* load = getscreen("loading");
 	struct dvbdev* dvbnode = NULL;
 	char* tmpstr = NULL, *tmpnr = NULL;
+	struct skin* tmp = NULL;
 
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
@@ -30,7 +31,7 @@ start:
 				tmpstr = ostrcat(tmpstr, tmpnr, 1, 1);
 				tmpstr = ostrcat(tmpstr, ": ", 1, 0);
 				
-				int status = 0;
+				uint32_t status = 0;
 				scgetiscardpresent(dvbnode, &status);
 				
 				if(status == 1)
