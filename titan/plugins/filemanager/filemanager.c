@@ -36,5 +36,7 @@ void deinit(void)
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {
+	status.hangtime = 99999;
 	screenfilemanager();
+	status.hangtime = getconfigint("hangtime", NULL);
 }
