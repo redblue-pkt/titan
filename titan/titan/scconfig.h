@@ -16,6 +16,7 @@ void screenscconfig()
 
 start:
 	dvbnode = dvbdev;
+	tmp = NULL;
 	delmarkedscreennodes(scconfig, 1);
 
 	while(dvbnode != NULL)
@@ -35,9 +36,9 @@ start:
 				scgetiscardpresent(dvbnode, &status);
 				
 				if(status == 1)
-					tmpstr = ostrcat(tmpstr, _("card not present"), 1, 0);
-				else
 					tmpstr = ostrcat(tmpstr, _("card present"), 1, 0);
+				else
+					tmpstr = ostrcat(tmpstr, _("card not present"), 1, 0);
 				
 				changetext(tmp, tmpstr);
 				free(tmpstr); tmpstr = NULL;
