@@ -8,6 +8,7 @@ int copyfile(char* from, char* to, struct copyfile* cnode, int flag)
 	int fdfrom = -1, fdto = -1, ret = 0, readret = 0, writeret = 0;
 	off64_t count = 0, len = 0;
 	unsigned char* buf = NULL;
+	time_t akttime = 0;
 
 	fdfrom = open(from, O_RDONLY);
 	if(fdfrom < 0)
@@ -51,9 +52,9 @@ int copyfile(char* from, char* to, struct copyfile* cnode, int flag)
 		goto end;
 	}
 
-  if(cnode != NULL) cnode->maxkb = len;  	
+	if(cnode != NULL) cnode->maxkb = len;  	
 
-  while(len != 0)
+	while(len != 0)
 	{		
 		if(len - count > MINMALLOC)
 			readret = dvbreadfd(fdfrom, buf, 0, MINMALLOC, -1, 1);
@@ -99,7 +100,7 @@ int copyfile(char* from, char* to, struct copyfile* cnode, int flag)
 	}
 	
 end:
-	time_t akttime = time(NULL);
+	akttime = time(NULL);
 
 	if(fdfrom >= 0)
 		close(fdfrom);
