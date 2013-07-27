@@ -2819,6 +2819,7 @@ int tpkgetpackage(char* package, char* url)
 	char* ip = NULL, *path = NULL;
 	char* tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
 	char* tmpurl = NULL;
+	struct skin* load = getscreen("loading");
 
 	if(package == NULL || url == NULL)
 	{
@@ -2861,7 +2862,9 @@ int tpkgetpackage(char* package, char* url)
 			ip = "atemio.dyndns.tv";
 
 		screendownload("Download", ip, tmpstr1, 80, tmpstr2, HTTPAUTH, 5000, 0);
+		drawscreen(load, 0, 0);
 		ret = tpkinstall(tmpstr3);
+		clearscreen(load);
 		unlink(tmpstr2);
 		unlink(tmpstr3);
 
