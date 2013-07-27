@@ -15,6 +15,7 @@ void screenscconfig()
 	listbox->aktpage = -1;
 
 start:
+	i = 0;
 	dvbnode = dvbdev;
 	tmp = NULL;
 	delmarkedscreennodes(scconfig, 1);
@@ -33,7 +34,9 @@ start:
 				tmpstr = ostrcat(tmpstr, ": ", 1, 0);
 				
 				uint32_t status = 0;
+				dvbnode->fd = scopendirect(dvbnode->dev);
 				scgetiscardpresent(dvbnode, &status);
+				scclose(dvbnode, -1);
 				
 				if(status == 1)
 					tmpstr = ostrcat(tmpstr, _("card present"), 1, 0);
@@ -62,10 +65,15 @@ start:
 		if(listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcred", NULL))
 		{
 			clearscreen(scconfig);
-			scsetreset(((struct dvbdev*)listbox->select->handle));
-			drawscreen(load, 0, 0);
-			sleep(1);
-			clearscreen(load);
+			struct dvbdev *dvbtmp = ((struct dvbdev*)listbox->select->handle);
+			if(dvbtmp != NULL)
+			{
+				drawscreen(load, 0, 0);
+				dvbtmp->fd = scopendirect(dvbtmp->dev);
+				scsetreset(dvbtmp);
+				scclose(dvbtmp, -1);
+				clearscreen(load);
+			}
 			drawscreen(scconfig, 0, 0);
 		}
 		
