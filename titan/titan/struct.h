@@ -567,6 +567,17 @@ struct download
 	int flag;
 };
 
+struct copyfile
+{
+	char* from;
+	char* to;
+	int proz;
+	off64_t maxkb;
+	off64_t aktkb;
+	int ret;
+	int flag;
+};
+
 struct epgscanlist
 {
 	int serviceid;

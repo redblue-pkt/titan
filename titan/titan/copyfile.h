@@ -1,21 +1,10 @@
 #ifndef COPYFILE_H
 #define COPYFILE_H
 
-struct copyfile
-{
-	char* from;
-	char* to;
-	int proz;
-	off64_t maxkb;
-	off64_t aktkb;
-	int ret;
-	int flag;
-};
-
 int copyfile(char* from, char* to, struct copyfile* cnode)
 {
 	int fdfrom = -1, fdto = -1, ret = 0, readret = 0, writeret = 0;
-	off64_t count = 0;
+	off64_t count = 0, len = 0;
 	unsigned char* buf = NULL;
 
 	fdfrom = open(from, O_RDONLY);
@@ -101,11 +90,11 @@ end:
 	if(fdto >= 0)
 	{
 		close(fdto);
-		if(flag == 0 && ret == 1) unlink(to);
+		if(ret == 1) unlink(to);
 	}
 	free(buf);
 
-  if(cnode != NULL) cnode->ret = ret;
+	if(cnode != NULL) cnode->ret = ret;
 
 	return ret;
 }
@@ -151,12 +140,12 @@ int screencopy(char* title, char* from, char* to, int flag)
 {
 	debug(1000, "in");
 	int rcret = -1, count = 0, ret = 0, fromthread = 0, sleeptime = 2;
-	struct skin* download = getscreen("copyfile");
-	struct skin* progress = getscreennode(download, "progress");
-	struct skin* filefrom = getscreennode(download, "filefrom");
-	struct skin* fileto = getscreennode(download, "fileto");
-	struct skin* maxkb = getscreennode(download, "maxkb");
-	struct skin* aktkb = getscreennode(download, "aktkb");
+	struct skin* copyfile = getscreen("copyfile");
+	struct skin* progress = getscreennode(copyfile, "progress");
+	struct skin* filefrom = getscreennode(copyfile, "filefrom");
+	struct skin* fileto = getscreennode(copyfile, "fileto");
+	struct skin* maxkb = getscreennode(copyfile, "maxkb");
+	struct skin* aktkb = getscreennode(copyfile, "aktkb");
 	struct skin* framebuffer = getscreen("framebuffer");
 	char* bg = NULL, *tmpstr = NULL;
 	struct copyfile* cnode = NULL;
@@ -201,7 +190,7 @@ int screencopy(char* title, char* from, char* to, int flag)
 
 	cnode->from = from;
 	cnode->to = to;
-	dnode->ret = -1;
+	cnode->ret = -1;
 	
 	if(flag == 1)
 		addtimer(&movefilestruct, START, 1000, 1, (void*)cnode, NULL, NULL);
@@ -232,7 +221,7 @@ int screencopy(char* title, char* from, char* to, int flag)
 		if(cnode->ret == 0)
 		{
 			progress->progresssize = cnode->proz;
-			tmpstr = oitoa(dnode->aktkb / 1024);
+			tmpstr = oitoa(cnode->aktkb / 1024);
 			if(flag == 1)
 				tmpstr = ostrcat(_("Move (KB): "), tmpstr, 0, 1);
 			else
@@ -247,13 +236,22 @@ int screencopy(char* title, char* from, char* to, int flag)
 	if(cnode->ret > 0 && rcret != getrcconfigint("rcexit", NULL))
 	{	
 		if(flag == 1)
-			changetext(file, _("file move error"));
+		{
+			changetext(filefrom, _("file move error"));
+			changetext(fileto, _("file move error"));
+		}
 		else
-			changetext(file, _("file copy error"));
+		{
+			changetext(filefrom, _("file copy error"));
+			changetext(fileto, _("file copy error"));
+		}
 		sleeptime = 5;
 	}
 	else
-		changetext(file, _("wait for stopping"));
+	{
+		changetext(filefrom, _("wait for stopping"));
+		changetext(fileto, _("wait for stopping"));
+	}
 	drawscreen(copyfile, 0, 0);
 	sleep(sleeptime);
 	count = 0;
