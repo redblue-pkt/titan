@@ -99,6 +99,8 @@ int copyfile(char* from, char* to, struct copyfile* cnode, int flag)
 	}
 	
 end:
+	time_t akttime = time(NULL);
+
 	if(fdfrom >= 0)
 		close(fdfrom);
 	if(fdto >= 0)
@@ -120,7 +122,8 @@ end:
 	}
 	free(buf);
 
-	if(cnode != NULL) cnode->ret = ret;
+	//if the code from end to here takes longer then 8 sek, don't use cnode, cnode is freed after 10 sek
+	if(cnode != NULL && (time(NULL) - akttime) < 8) cnode->ret = ret;
 
 	return ret;
 }
