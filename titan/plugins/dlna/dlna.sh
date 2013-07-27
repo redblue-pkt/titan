@@ -6,7 +6,10 @@
 # Required-Stop:        $network
 # Short-Description:    MiniDLNA Server
 ### END INIT INFO
- 
+
+export PATH=$PATH:/var/swap/bin:/var/bin
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/var/swap/lib
+	
 NAME=minidlna
 DESC="MiniDLNA"
 DAEMON=minidlna

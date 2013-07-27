@@ -8,5 +8,7 @@
 
 echo start gmediarender
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/var/swap/lib
+export PATH=$PATH:/var/swap/bin:/var/bin
+
 gmediarender -f $1 --gst-debug-disable
 echo close gmediarender
