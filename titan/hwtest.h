@@ -317,13 +317,16 @@ void screenhwtest()
 				int smartcardcount = 0;
 				char* tmpstr = NULL, *tmpstr1 = NULL;
 				
+				dvbnode = dvbdev;
 				while(dvbnode != NULL)
 				{
 					if(dvbnode->type == SCDEV)
 					{
 						smartcardcount++;
 						status = 0;
+						dvbnode->fd = scopendirect(dvbnode->dev);
 						scgetiscardpresent(dvbnode, &status);
+						scclose(dvbnode, -1);
 						
 						if(status == 1)
 						{
