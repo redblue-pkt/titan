@@ -1,7 +1,9 @@
 #ifndef COPYFILE_H
 #define COPYFILE_H
 
-int copyfile(char* from, char* to, struct copyfile* cnode)
+//flag 0: copy file
+//flag 1: move file
+int copyfile(char* from, char* to, struct copyfile* cnode, int flag)
 {
 	int fdfrom = -1, fdto = -1, ret = 0, readret = 0, writeret = 0;
 	off64_t count = 0, len = 0;
@@ -63,12 +65,24 @@ int copyfile(char* from, char* to, struct copyfile* cnode)
 			ret = 1;
 			goto end;
 		}
+		
+		if(cnode != NULL && cnode->stop == 1)
+		{
+		  ret = 1;
+			goto end;
+		}
 
 		writeret = dvbwrite(fdto, buf, readret, -1);
 		if(writeret != readret)
 		{
 			err("write file %s", to);
 			ret = 1;
+			goto end;
+		}
+		
+		if(cnode != NULL && cnode->stop == 1)
+		{
+		  ret = 1;
 			goto end;
 		}
 
@@ -91,6 +105,18 @@ end:
 	{
 		close(fdto);
 		if(ret == 1) unlink(to);
+	}	
+	if(ret == 0 && flag == 1)
+	{
+		ret = unlink(from);
+		if(ret != 0 && errno != ENOENT)
+		{
+			perr("remove file %s", from);
+			unlink(to);
+			ret = 1;
+		}
+		else
+			ret = 0;
 	}
 	free(buf);
 
@@ -99,39 +125,16 @@ end:
 	return ret;
 }
 
-int movefile(char* from, char* to, struct copyfile* cnode)
-{
-	int ret = 0;
-	
-	ret = copyfile(from, to, cnode);
-	if(ret == 0)
-	{
-		ret = unlink(from);
-		if(ret != 0 && errno != ENOENT)
-		{
-			perr("remove file %s", from);
-			ret = 1;
-		}
-		else
-			ret = 0;	
-	}
-	
-	if(ret == 1)
-		unlink(to);
-	
-	return ret;
-}
-
 void copyfilestruct(struct stimerthread* timernode, struct copyfile* node, int flag)
 {
 	if(node != NULL)
-		copyfile(node->from, node->to, node);
+		copyfile(node->from, node->to, node, 0);
 }
 
 void movefilestruct(struct stimerthread* timernode, struct copyfile* node, int flag)
 {
 	if(node != NULL)
-		movefile(node->from, node->to, node);
+		copyfile(node->from, node->to, node, 1);
 }
 
 //flag 0: copy
@@ -191,6 +194,7 @@ int screencopy(char* title, char* from, char* to, int flag)
 	cnode->from = from;
 	cnode->to = to;
 	cnode->ret = -1;
+	cnode->stop = 0;
 	
 	if(flag == 1)
 		addtimer(&movefilestruct, START, 1000, 1, (void*)cnode, NULL, NULL);
@@ -253,6 +257,7 @@ int screencopy(char* title, char* from, char* to, int flag)
 		changetext(fileto, _("wait for stopping"));
 	}
 	drawscreen(copyfile, 0, 0);
+	cnode->stop = 1;
 	sleep(sleeptime);
 	count = 0;
 	while(cnode->ret < 0 && count < 10)

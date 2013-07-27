@@ -574,6 +574,7 @@ struct copyfile
 	int proz;
 	off64_t maxkb;
 	off64_t aktkb;
+	int stop;
 	int ret;
 	int flag;
 };
