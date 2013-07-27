@@ -190,6 +190,7 @@ struct channelslot *channelslot = NULL;
 #include "httpdfunc.h"
 #include "httpd.h"
 #include "download.h"
+#include "copyfile.h"
 #include "screensaver.h"
 #include "screensaveradjust.h"
 #include "scan.h"
