@@ -3241,4 +3241,10 @@ msgstr "Favoriten hinzufügen"
 msgid "sort service"
 msgstr "Sender sortieren"
 
+msgid "card present"
+msgstr "Karte gefunden"
+
+msgid "card not present"
+msgstr "Keine Karte gefunden"
+
 
