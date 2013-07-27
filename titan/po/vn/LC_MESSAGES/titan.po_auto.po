@@ -34,7 +34,11 @@
 #: scan.h:2182 scan.h:2186 scan.h:2190 screensaveradjust.h:19 skinadjust.h:52
 #: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:32
 #: tithek_settings.h:36 tmc.h:531 tmc.h:535 tunerconfig.h:184
-#: tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
+#: tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277 epgsettings.h:131
+#: epgsettings.h:184 epgsettings.h:193 epgsettings.h:202 epgsettings.h:207
+#: moduleconfig.h:243 moduleconfig.h:251 moduleconfig.h:255 moduleconfig.h:259
+#: moduleconfig.h:263 scan.h:1714 scan.h:2177 scan.h:2181 scan.h:2185
+#: scan.h:2189 scan.h:2193 skinadjust.h:53
 msgid "no"
 msgstr ""
 
@@ -46,7 +50,7 @@ msgstr ""
 msgid "epg"
 msgstr ""
 
-#: adjust.h:67 epgsettings.h:125
+#: adjust.h:67 epgsettings.h:125 epgsettings.h:135
 msgid "Channel EPG"
 msgstr ""
 
@@ -83,7 +87,9 @@ msgstr ""
 #: rectimer.h:1105 scan.h:1712 scan.h:2175 scan.h:2179 scan.h:2183 scan.h:2187
 #: scan.h:2191 screensaveradjust.h:20 skinadjust.h:53 timeshiftsettings.h:58
 #: timeshiftsettings.h:62 tithek_settings.h:33 tithek_settings.h:37 tmc.h:532
-#: tmc.h:536
+#: tmc.h:536 epgsettings.h:132 epgsettings.h:185 epgsettings.h:194
+#: moduleconfig.h:252 moduleconfig.h:256 moduleconfig.h:260 moduleconfig.h:264
+#: scan.h:1715 scan.h:2178 scan.h:2182 scan.h:2186 scan.h:2190 scan.h:2194
 msgid "yes"
 msgstr ""
 
@@ -94,6 +100,7 @@ msgstr ""
 #: adjust.h:85 adjust.h:164 mc_audioplayer_settings.h:35
 #: mc_pictureplayer_settings.h:50 mc_videoplayer_settings.h:31
 #: moduleconfig.h:238 plugins_mc_skin.xml.h:23 skins_mc_skin.xml.h:23
+#: moduleconfig.h:248
 msgid "fast"
 msgstr ""
 
@@ -153,6 +160,7 @@ msgid "Gui Restart"
 msgstr ""
 
 #: adjust.h:107 adjust.h:117 epgsettings.h:134 epgsettings.h:140 network.h:594
+#: epgsettings.h:144 epgsettings.h:150
 msgid "deaktiv"
 msgstr ""
 
@@ -202,7 +210,7 @@ msgstr ""
 msgid "auto"
 msgstr ""
 
-#: adjust.h:148 epgsettings.h:202 rectimer.h:1171
+#: adjust.h:148 epgsettings.h:202 rectimer.h:1171 epgsettings.h:212
 msgid "nothing"
 msgstr ""
 
@@ -234,7 +242,7 @@ msgstr ""
 msgid "normal"
 msgstr ""
 
-#: adjust.h:166 moduleconfig.h:236 tmc.h:556
+#: adjust.h:166 moduleconfig.h:236 tmc.h:556 moduleconfig.h:246
 msgid "slow"
 msgstr ""
 
@@ -346,6 +354,12 @@ msgstr ""
 #: tmc.h:1017 tmdb.h:784 tmdb.h:947 tpk.h:2753 tunerconfig.h:772 unlock.h:20
 #: unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:53 vidstream.h:57
 #: xvidstage.h:64 xvidstage.h:177 youtube.h:133 global.h:6109
+#: epgsettings.h:271 filemanager.h:197 filemanager.h:236 filemanager.h:282
+#: filemanager.h:307 global.h:6153 hwtest.h:82 hwtest.h:87 hwtest.h:92
+#: hwtest.h:97 hwtest.h:102 hwtest.h:107 hwtest.h:343 hwtest.h:364
+#: hwtest.h:396 hwtest.h:432 hwtest.h:494 hwtest.h:496 hwtest.h:536
+#: scan.h:1829 scan.h:1920 scan.h:2265 service.h:718 service.h:964
+#: skinadjust.h:149 solarmovie.h:190
 msgid "Message"
 msgstr ""
 
@@ -405,7 +419,12 @@ msgstr ""
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:784 tmdb.h:947 tpk.h:2753
 #: tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
 #: videomode.h:53 vidstream.h:57 xvidstage.h:64 xvidstage.h:177 youtube.h:133
-#: global.h:6109
+#: global.h:6109 epgsettings.h:271 epgsettings.h:285 filemanager.h:197
+#: filemanager.h:236 filemanager.h:272 filemanager.h:282 filemanager.h:307
+#: global.h:6153 hwtest.h:82 hwtest.h:87 hwtest.h:92 hwtest.h:97 hwtest.h:102
+#: hwtest.h:107 hwtest.h:343 hwtest.h:364 hwtest.h:396 hwtest.h:432
+#: hwtest.h:494 hwtest.h:496 hwtest.h:536 scan.h:1829 scan.h:1920 scan.h:2265
+#: service.h:718 service.h:964 skinadjust.h:149 solarmovie.h:190
 msgid "OK"
 msgstr ""
 
@@ -463,7 +482,12 @@ msgstr ""
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:784 tmdb.h:947 tpk.h:2753
 #: tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
 #: videomode.h:53 vidstream.h:57 xvidstage.h:64 xvidstage.h:177 youtube.h:133
-#: global.h:6109
+#: global.h:6109 epgsettings.h:271 epgsettings.h:285 filemanager.h:197
+#: filemanager.h:236 filemanager.h:272 filemanager.h:282 filemanager.h:307
+#: global.h:6153 hwtest.h:82 hwtest.h:87 hwtest.h:92 hwtest.h:97 hwtest.h:102
+#: hwtest.h:107 hwtest.h:343 hwtest.h:364 hwtest.h:396 hwtest.h:432
+#: hwtest.h:494 hwtest.h:496 hwtest.h:536 scan.h:1829 scan.h:1920 scan.h:2265
+#: service.h:718 service.h:964 solarmovie.h:190
 msgid "EXIT"
 msgstr ""
 
@@ -471,7 +495,8 @@ msgstr ""
 #: transponder.h:157 transponder.h:193 transponder.h:226 transponder.h:258
 #: transponder.h:294 transponder.h:329 transponder.h:347 transponder.h:363
 #: transponder.h:417 transponder.h:450 transponder.h:479 transponder.h:492
-#: transponder.h:503 transponder.h:573 youtube.h:86
+#: transponder.h:503 transponder.h:573 youtube.h:86 hwtest.h:418
+#: moduleconfig.h:345
 msgid "unknown"
 msgstr ""
 
@@ -840,56 +865,57 @@ msgstr ""
 msgid "Multi (EPG)"
 msgstr ""
 
-#: epgsettings.h:126 epgsettings.h:167
+#: epgsettings.h:126 epgsettings.h:167 epgsettings.h:136 epgsettings.h:177
 msgid "Single EPG"
 msgstr ""
 
-#: epgsettings.h:127 epgsettings.h:168
+#: epgsettings.h:127 epgsettings.h:168 epgsettings.h:137 epgsettings.h:178
 msgid "Multi EPG"
 msgstr ""
 
-#: epgsettings.h:128
+#: epgsettings.h:128 epgsettings.h:138
 msgid "Graphic Multi EPG"
 msgstr ""
 
-#: epgsettings.h:135 tmc.h:389
+#: epgsettings.h:135 tmc.h:389 epgsettings.h:145
 msgid "scan"
 msgstr ""
 
-#: epgsettings.h:136
+#: epgsettings.h:136 epgsettings.h:146
 msgid "whitelist"
 msgstr ""
 
-#: epgsettings.h:137
+#: epgsettings.h:137 epgsettings.h:147
 msgid "scan and whitelist"
 msgstr ""
 
 #: epgsettings.h:178 epgsettings.h:189 epgsettings.h:194 epgsettings.h:199
-#: mediadbsettings.h:33
+#: mediadbsettings.h:33 epgsettings.h:188 epgsettings.h:204 epgsettings.h:209
 msgid "always"
 msgstr ""
 
-#: epgsettings.h:179
+#: epgsettings.h:179 epgsettings.h:189
 msgid "only on power off / restart"
 msgstr ""
 
-#: epgsettings.h:180 mediadbsettings.h:45
+#: epgsettings.h:180 mediadbsettings.h:45 epgsettings.h:190
 msgid "never"
 msgstr ""
 
-#: epgsettings.h:188 epgsettings.h:193 epgsettings.h:198
+#: epgsettings.h:188 epgsettings.h:193 epgsettings.h:198 epgsettings.h:203
+#: epgsettings.h:208
 msgid "only for scan"
 msgstr ""
 
-#: epgsettings.h:203
+#: epgsettings.h:203 epgsettings.h:213
 msgid "poweroff"
 msgstr ""
 
-#: epgsettings.h:261
+#: epgsettings.h:261 epgsettings.h:271
 msgid "EPG resetet and now clear."
 msgstr ""
 
-#: epgsettings.h:275
+#: epgsettings.h:275 epgsettings.h:285
 msgid "EPG Scan Log"
 msgstr ""
 
@@ -1039,35 +1065,36 @@ msgstr ""
 msgid "Rename"
 msgstr ""
 
-#: filemanager.h:67
+#: filemanager.h:67 filemanager.h:68
 msgid "Create Folder"
 msgstr ""
 
-#: filemanager.h:176
+#: filemanager.h:176 filemanager.h:177
 msgid "Realy copy this file/dir?"
 msgstr ""
 
-#: filemanager.h:181
+#: filemanager.h:181 filemanager.h:182
 msgid "Realy move this file/dir?"
 msgstr ""
 
-#: filemanager.h:186
+#: filemanager.h:186 filemanager.h:187
 msgid "From"
 msgstr ""
 
-#: filemanager.h:190
+#: filemanager.h:190 filemanager.h:191
 msgid "To"
 msgstr ""
 
-#: filemanager.h:232
+#: filemanager.h:232 filemanager.h:233
 msgid "Realy delete this file/dir?"
 msgstr ""
 
-#: filemanager.h:281
+#: filemanager.h:281 filemanager.h:282
 msgid "Can't show this file!"
 msgstr ""
 
 #: filemanager.h:306 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1348
+#: filemanager.h:307
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
@@ -1076,10 +1103,11 @@ msgid "The page is temporarily unavailable"
 msgstr ""
 
 #: flashx.h:70 putlocker.h:52 solarmovie.h:187 xvidstage.h:64 xvidstage.h:177
+#: solarmovie.h:190
 msgid "This file doesn't exist, or has been removed"
 msgstr ""
 
-#: global.h:6121 keyactions.h:216 global.h:6109
+#: global.h:6121 keyactions.h:216 global.h:6109 global.h:6153
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -1091,23 +1119,23 @@ msgstr ""
 msgid "Wait for connect or press EXIT"
 msgstr ""
 
-#: gmultiepg.h:537 gmultiepg.h:737
+#: gmultiepg.h:537 gmultiepg.h:737 gmultiepg.h:546 gmultiepg.h:746
 msgid "GRAPHIC MULTI EPG - Bouquets"
 msgstr ""
 
-#: gmultiepg.h:550
+#: gmultiepg.h:550 gmultiepg.h:559
 msgid "GRAPHIC MULTI EPG - Channel"
 msgstr ""
 
-#: gmultiepg.h:563
+#: gmultiepg.h:563 gmultiepg.h:572
 msgid "GRAPHIC MULTI EPG - Satellites"
 msgstr ""
 
-#: gmultiepg.h:576
+#: gmultiepg.h:576 gmultiepg.h:585
 msgid "GRAPHIC MULTI EPG - Provider"
 msgstr ""
 
-#: gmultiepg.h:589
+#: gmultiepg.h:589 gmultiepg.h:598
 msgid "GRAPHIC MULTI EPG - All Channels"
 msgstr ""
 
@@ -1303,12 +1331,14 @@ msgstr ""
 
 #: kinox.h:254 movie4k.h:766 movie4k.h:890 movie4k.h:1005 solarmovie.h:454
 #: movie4k.h:774 movie4k.h:898 movie4k.h:1013 movie4k.h:775 movie4k.h:899
-#: movie4k.h:1014
+#: movie4k.h:1014 kinox.h:256 movie4k.h:754 movie4k.h:878 movie4k.h:993
+#: solarmovie.h:457
 msgid "Season"
 msgstr ""
 
 #: kinox.h:258 movie4k.h:770 movie4k.h:1009 solarmovie.h:458 movie4k.h:778
-#: movie4k.h:1017 movie4k.h:779 movie4k.h:1018
+#: movie4k.h:1017 movie4k.h:779 movie4k.h:1018 kinox.h:260 movie4k.h:758
+#: movie4k.h:997 solarmovie.h:461
 msgid "Episode"
 msgstr ""
 
@@ -1441,7 +1471,7 @@ msgstr ""
 msgid "low"
 msgstr ""
 
-#: mc_pictureplayer_settings.h:30 moduleconfig.h:237
+#: mc_pictureplayer_settings.h:30 moduleconfig.h:237 moduleconfig.h:247
 msgid "middle"
 msgstr ""
 
@@ -1657,47 +1687,47 @@ msgid ""
 "Press OK to create it"
 msgstr ""
 
-#: moduleconfig.h:149
+#: moduleconfig.h:149 moduleconfig.h:159
 msgid "double"
 msgstr ""
 
-#: moduleconfig.h:158
+#: moduleconfig.h:158 moduleconfig.h:168
 msgid "activate"
 msgstr ""
 
-#: moduleconfig.h:159
+#: moduleconfig.h:159 moduleconfig.h:169
 msgid "deaktivate"
 msgstr ""
 
-#: moduleconfig.h:328
+#: moduleconfig.h:328 hwtest.h:412 moduleconfig.h:338 scconfig.h:30
 msgid "Slot "
 msgstr ""
 
-#: moduleconfig.h:340
+#: moduleconfig.h:340 moduleconfig.h:350
 msgid "Status: "
 msgstr ""
 
-#: moduleconfig.h:344
+#: moduleconfig.h:344 moduleconfig.h:354
 msgid "empty"
 msgstr ""
 
-#: moduleconfig.h:346
+#: moduleconfig.h:346 moduleconfig.h:356
 msgid "initializing"
 msgstr ""
 
-#: moduleconfig.h:348
+#: moduleconfig.h:348 moduleconfig.h:358
 msgid "ready"
 msgstr ""
 
-#: moduleconfig.h:363
+#: moduleconfig.h:363 moduleconfig.h:373
 msgid "Module Type"
 msgstr ""
 
-#: moduleconfig.h:364
+#: moduleconfig.h:364 moduleconfig.h:374
 msgid "Single Service"
 msgstr ""
 
-#: moduleconfig.h:365
+#: moduleconfig.h:365 moduleconfig.h:375
 msgid "Multiple Service"
 msgstr ""
 
@@ -1935,7 +1965,7 @@ msgstr ""
 msgid "SatCount: "
 msgstr ""
 
-#: optimize.h:272 scan.h:1522
+#: optimize.h:272 scan.h:1522 scan.h:1523
 msgid "Transponder: "
 msgstr ""
 
@@ -3575,7 +3605,7 @@ msgstr ""
 msgid "Realy restore default settings ?"
 msgstr ""
 
-#: restoredefault.h:19
+#: restoredefault.h:19 skinadjust.h:149
 msgid "Receiver now reboot !!!"
 msgstr ""
 
@@ -3617,23 +3647,23 @@ msgstr ""
 msgid "Data"
 msgstr ""
 
-#: scan.h:1516
+#: scan.h:1516 scan.h:1517
 msgid "Sat/Provider: "
 msgstr ""
 
-#: scan.h:1532
+#: scan.h:1532 scan.h:1533
 msgid "TV: "
 msgstr ""
 
-#: scan.h:1540
+#: scan.h:1540 scan.h:1541
 msgid "Radio: "
 msgstr ""
 
-#: scan.h:1548
+#: scan.h:1548 scan.h:1549
 msgid "Data: "
 msgstr ""
 
-#: scan.h:1556
+#: scan.h:1556 scan.h:1557
 msgid "Blindscan: "
 msgstr ""
 
@@ -3649,37 +3679,37 @@ msgstr ""
 msgid "Does you want delete all unused Bouquetentrys?"
 msgstr ""
 
-#: scan.h:1826
+#: scan.h:1826 scan.h:1829
 msgid ""
 "Scan is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 
-#: scan.h:1917
+#: scan.h:1917 scan.h:1920
 msgid "No Tuner configured"
 msgstr ""
 
-#: scan.h:1931 scan.h:1938
+#: scan.h:1931 scan.h:1938 scan.h:1934 scan.h:1941
 msgid "Single Transponder"
 msgstr ""
 
-#: scan.h:1932
+#: scan.h:1932 scan.h:1935
 msgid "Single Sat"
 msgstr ""
 
-#: scan.h:1933
+#: scan.h:1933 scan.h:1936
 msgid "Multi Sat"
 msgstr ""
 
-#: scan.h:1939
+#: scan.h:1939 scan.h:1942
 msgid "Single Provider"
 msgstr ""
 
-#: scan.h:1944
+#: scan.h:1944 scan.h:1947
 msgid "Auto Scan"
 msgstr ""
 
-#: scan.h:2262
+#: scan.h:2262 scan.h:2265
 msgid "Transponder changed"
 msgstr ""
 
@@ -3775,43 +3805,43 @@ msgstr ""
 msgid "Script execute"
 msgstr ""
 
-#: service.h:709
+#: service.h:709 service.h:718
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
 msgstr ""
 
-#: service.h:938
+#: service.h:938 service.h:947
 msgid ""
 "Can't find a Tuner.\n"
 "Alle Tuners in use or no Tuner defined."
 msgstr ""
 
-#: service.h:941
+#: service.h:941 service.h:950
 msgid "Tuning to Channel failed!"
 msgstr ""
 
-#: service.h:944
+#: service.h:944 service.h:953
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 
-#: service.h:949
+#: service.h:949 service.h:958
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
-#: skinadjust.h:24
+#: skinadjust.h:24 skinadjust.h:25
 msgid "border"
 msgstr ""
 
-#: skinadjust.h:25
+#: skinadjust.h:25 skinadjust.h:26
 msgid "bar"
 msgstr ""
 
-#: skinadjust.h:26
+#: skinadjust.h:26 skinadjust.h:27
 msgid "text"
 msgstr ""
 
-#: skinadjust.h:27 tmc.h:542
+#: skinadjust.h:27 tmc.h:542 skinadjust.h:28
 msgid "picture"
 msgstr ""
 
@@ -4307,7 +4337,7 @@ msgstr ""
 msgid "Delete selected entry ?"
 msgstr ""
 
-#: tmc.h:702
+#: tmc.h:702 hwtest.h:264
 msgid "RED"
 msgstr ""
 
@@ -4479,7 +4509,7 @@ msgstr ""
 msgid "Lnb / Unicable"
 msgstr ""
 
-#: tunerconfig.h:302 tunerconfig.h:303
+#: tunerconfig.h:302 tunerconfig.h:303 skinadjust.h:58
 msgid "press red"
 msgstr ""
 
@@ -4589,4 +4619,116 @@ msgstr ""
 
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
+msgstr ""
+
+#: hwtest.h:82
+msgid "testtransponder not found"
+msgstr ""
+
+#: hwtest.h:87
+msgid "testtransponder entry not ok"
+msgstr ""
+
+#: hwtest.h:92
+msgid "can't create new transponer"
+msgstr ""
+
+#: hwtest.h:97
+msgid "testchannel not found"
+msgstr ""
+
+#: hwtest.h:102
+msgid "testchannel entry not ok"
+msgstr ""
+
+#: hwtest.h:107
+msgid "can't create new channel"
+msgstr ""
+
+#: hwtest.h:232
+msgid "Press Front Key"
+msgstr ""
+
+#: hwtest.h:240
+msgid "Got Keycode: "
+msgstr ""
+
+#: hwtest.h:269
+msgid "GREEN"
+msgstr ""
+
+#: hwtest.h:274
+msgid "BLUE"
+msgstr ""
+
+#: hwtest.h:339
+msgid "Smartcard Ports found: "
+msgstr ""
+
+#: hwtest.h:380
+msgid "USB Ports found: "
+msgstr ""
+
+#: hwtest.h:390
+msgid "found: "
+msgstr ""
+
+#: hwtest.h:429
+msgid "CAM Ports found: "
+msgstr ""
+
+#: hwtest.h:494
+msgid "SUCESS Serial Port"
+msgstr ""
+
+#: hwtest.h:496
+msgid "FAIL Serial Port"
+msgstr ""
+
+#: hwtest.h:508
+msgid "LNB off / 22K off: OK\n"
+msgstr ""
+
+#: hwtest.h:510
+msgid "LNB off / 22K off: NOT OK\n"
+msgstr ""
+
+#: hwtest.h:516
+msgid "LNB 18V / 22K off: OK\n"
+msgstr ""
+
+#: hwtest.h:518
+msgid "LNB 18V / 22K off: NOT OK\n"
+msgstr ""
+
+#: hwtest.h:524
+msgid "LNB 13V / 22K off: OK\n"
+msgstr ""
+
+#: hwtest.h:526
+msgid "LNB 13V / 22K off: NOT OK\n"
+msgstr ""
+
+#: hwtest.h:532
+msgid "LNB 13V / 22K on: OK\n"
+msgstr ""
+
+#: hwtest.h:534
+msgid "LNB 13V / 22K on: NOT OK\n"
+msgstr ""
+
+#: scconfig.h:39
+msgid "card present"
+msgstr ""
+
+#: scconfig.h:41
+msgid "card not present"
+msgstr ""
+
+#: skinadjust.h:54
+msgid "yes (Text in %)"
+msgstr ""
+
+#: skinadjust.h:55
+msgid "yes (Text in MB)"
 msgstr ""
