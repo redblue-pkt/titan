@@ -373,7 +373,7 @@ int scsetonlyreset(struct dvbdev* node)
 int scgetdev()
 {
 	debug(1000, "in");
-	int i, y, fd = -1, count = 0;
+	int y, fd = -1, count = 0;
 	char *buf = NULL, *scdev = NULL;
 
 	scdev = getconfig("scdev", NULL);
@@ -390,18 +390,15 @@ int scgetdev()
 		return count;
 	}
 
-	for(i = 0; i < MAXDVBADAPTER; i++)
+	for(y = 0; y < MAXSCDEV; y++)
 	{
-		for(y = 0; y < MAXSCDEV; y++)
+		sprintf(buf, scdev, y);
+		fd = scopendirect(buf);
+		if(fd >= 0)
 		{
-			sprintf(buf, scdev, i, y);
-			fd = scopendirect(buf);
-			if(fd >= 0)
-			{
-				scclose(NULL, fd);
-				count++;
-				adddvbdev(buf, i, y, -1, SCDEV, NULL, NULL, 0);
-			}
+			scclose(NULL, fd);
+			count++;
+			adddvbdev(buf, 0, y, -1, SCDEV, NULL, NULL, 0);
 		}
 	}
 
