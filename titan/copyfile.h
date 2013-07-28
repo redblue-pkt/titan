@@ -274,7 +274,7 @@ int screencopy(char* title, char* from, char* to, int flag)
 		cnode = NULL;
 	}
 	else
-		addoldentry((void*)dnode, 2, time(NULL) + 7200, NULL);
+		addoldentry((void*)cnode, 2, time(NULL) + 7200, NULL);
 
 	if(fromthread == 1)
 	{
