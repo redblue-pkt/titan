@@ -8,7 +8,6 @@ int copyfile(char* from, char* to, struct copyfile* cnode, int flag)
 	int fdfrom = -1, fdto = -1, ret = 0, readret = 0, writeret = 0;
 	off64_t count = 0, len = 0;
 	unsigned char* buf = NULL;
-	time_t akttime = 0;
 
 	fdfrom = open(from, O_RDONLY);
 	if(fdfrom < 0)
@@ -100,8 +99,6 @@ int copyfile(char* from, char* to, struct copyfile* cnode, int flag)
 	}
 	
 end:
-	akttime = time(NULL);
-
 	if(fdfrom >= 0)
 		close(fdfrom);
 	if(fdto >= 0)
@@ -124,7 +121,7 @@ end:
 	free(buf);
 
 	//if the code from end to here takes longer then 8 sek, don't use cnode, cnode is freed after 10 sek
-	if(cnode != NULL && (time(NULL) - akttime) < 8) cnode->ret = ret;
+	if(cnode != NULL) cnode->ret = ret;
 
 	return ret;
 }
@@ -270,7 +267,14 @@ int screencopy(char* title, char* from, char* to, int flag)
 		sleep(1);
 	}
 	ret = cnode->ret;
-	free(cnode); cnode = NULL;
+	
+	if(count < 10)
+	{
+		free(cnode);
+		cnode = NULL;
+	}
+	else
+		addoldentry((void*)dnode, 2, time(NULL) + 7200, NULL);
 
 	if(fromthread == 1)
 	{

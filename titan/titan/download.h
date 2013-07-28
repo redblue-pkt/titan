@@ -110,7 +110,14 @@ int screendownload(char* title, char* host, char* page, int port, char* filename
 		sleep(1);
 	}
 	ret = dnode->ret;
-	free(dnode); dnode = NULL;
+	
+	if(count < 10)
+	{
+		free(dnode);
+		dnode = NULL;
+	}
+	else
+		addoldentry((void*)dnode, 1, time(NULL) + 7200, NULL);
 
 	if(fromthread == 1)
 	{
