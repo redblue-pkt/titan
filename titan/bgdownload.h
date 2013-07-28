@@ -24,6 +24,7 @@ void delbgdownload(int nr, int flag)
 			}
 			if(flag == 1) clearscreen(load);
 		}
+		
 		free(dnode->host); dnode->host = NULL;
 		free(dnode->page); dnode->page = NULL;
 		free(dnode->filename); dnode->filename = NULL;
@@ -34,7 +35,14 @@ void delbgdownload(int nr, int flag)
 		dnode->timeout = 0;
 		dnode->flag = 0;
 		
-		free(dnode); dnode = NULL;
+		if(count < 10)
+		{
+			free(dnode);
+			dnode = NULL;
+		}
+		else
+			addoldentry((void*)dnode, 1, time(NULL) + 7200, NULL);
+		
 		bgdownload[nr] = NULL;
 	}
 }
