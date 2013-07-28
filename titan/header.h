@@ -62,6 +62,7 @@ void screennewsletter();
 void newsletterthreadfunc(struct stimerthread* self);
 
 //oldentry.h
+struct oldentry* addoldentry(void* entry, int type, time_t del, struct oldentry* last);
 void deloldentry(struct oldentry *entry, int flag);
 
 //id3.h

@@ -3,7 +3,7 @@
 
 void oldentrythreadfunc(struct stimerthread* self)
 {
-        debug(401, "start oldentry thread");
+	debug(401, "start oldentry thread");
 
 	m_lock(&status.oldentrymutex, 18);
 	struct oldentry* prev = oldentry, *node = oldentry;
@@ -17,9 +17,12 @@ void oldentrythreadfunc(struct stimerthread* self)
 	}
 
 	m_unlock(&status.oldentrymutex, 18);
-        debug(401, "end oldentry thread");
+	debug(401, "end oldentry thread");
 }
 
+//type 0: epg
+//type 1: download
+//type 2: copyfile
 struct oldentry* addoldentry(void* entry, int type, time_t del, struct oldentry* last)
 {
 	debug(1000, "in");
@@ -79,10 +82,13 @@ void deloldentry(struct oldentry *entry, int flag)
 				prev->next = node->next;
 
 			if(node->type == 0)
-			{
 				deloldentryepg(node->entry);
-				node->entry = NULL;
-			}
+			else if(node->type == 1)
+				free(node->entry);
+			else if(node->type == 2)
+				free(node->entry);
+			
+			node->entry = NULL;
 
 			free(node);
 			node = NULL;
