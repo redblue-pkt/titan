@@ -13,26 +13,13 @@ testcount=0
 piccount=0
 count=0
 
-	wget http://www.xvideos.com/tags/ -O cache.main.tags
-#	TAGLIST=`cat cache.main.tags | grep /tags/ | cut -d'"' -f4 | tr '\n' ' ' | sort -um`
-	TAGLIST=`cat cache.main.tags  | grep /c/ | sed 's!">!"<!g' | tr ' ' '~'`
-
-echo 11111111111
-ls cache.main.tags
+wget http://www.xvideos.com/tags/ -O cache.main.tags
+TAGLIST=`cat cache.main.tags  | grep /c/ | sed 's!">!"<!g' | tr ' ' '~'`
 
 echo TAGLIST "$TAGLIST"
-#exit
-#echo 2222222222222
-
-#exit
 for ROUND3 in $TAGLIST; do
-	if [ "$ROUND3" = "/tags/" ] || [ "$ROUND3" = "/tags/-" ] || [ "$ROUND3" = "/tags/--" ] || [ "$ROUND3" = "/tags/---" ] || [ "$ROUND3" = "/tags/----" ];then
-		continue
-	fi
-
 	piccount=`expr $piccount + 1`
 	count=`expr $count + 1`	
-#	filename3=`echo $ROUND3 | sed 's!http://!!' | tr '/' '.'`
 	tagname=`echo $ROUND3 | tr '~' ' ' | cut -d'<' -f4`
 	echo tagname $tagname
 	filename3=`echo $tagname | tr ' ' '.' | tr [A-Z] [a-z]`
@@ -40,17 +27,8 @@ for ROUND3 in $TAGLIST; do
 	tagurl=`echo $ROUND3 | cut -d'"' -f2 | sed 's!/c/!!'`
 	echo tagurl $tagurl
 
-#exit
-#	wget http://www.xvideos.com$tagurl/10000 -O cache."$count"."$filename3"
-
-#	tagcount=`cat cache."$count"."$filename3" | grep '<a class="sel">' | tail -n1 | cut -d">" -f2 | cut -d"<" -f1`
-#echo tagcount $tagcount
-#ls cache."$count"."$filename3"
-#exit
-
-#	if [ -z $tagcount ];then
-	tagcount=10
-#	fi 
+	tags="http://www.xvideos.com/c/$tagurl"
+	tagcount=1000
 	i=1
 	until [ "$i" -gt "$tagcount" ]
 	do
@@ -58,23 +36,21 @@ for ROUND3 in $TAGLIST; do
 	tags="$tags http://www.xvideos.com/c/$i/$tagurl"
 	i=$[$i+1]
 	
-#	if [ $i = 2 ];then
-#		break
-#	fi
 	done
-	echo tags $tags
-#exit
+
 	for ROUND4 in $tags; do
 		piccount=`expr $piccount + 1`
 		count=`expr $count + 1`	
 		filename4=tags-$filename3
 		wget "$ROUND4" -O cache."$filename4"."$count"
-#		ls cache."$filename4"."$count"
-#exit
+		if [ `cat cache."$filename4"."$count" | grep "<h1>Sorry but the page you requested was not found.</h1>" | wc -l` -eq 1 ];then
+			break
+		fi
+
 		foundlist=`cat cache."$filename4"."$count" | grep '<a href="/video' | grep '><img src=' | tr ' ' '~'`
 		for ROUND5 in $foundlist; do
 ###########
-
+			piccount=`expr $piccount + 1`
 			URL=`echo $ROUND5 | sed 's!<a~href=!\nlink=!g' | grep link= | cut -d'"' -f2 | head -n1`
 			PIC=`echo $ROUND5 | sed 's!<img~src=!\nimgpic=!g' | grep imgpic= | cut -d'"' -f2 | head -n1`
 			TITLE=`cat cache."$filename4"."$count" | grep "$URL" | sed 's!<a href=!\npic=!g' | grep ^pic= | tail -n1 | cut -d">" -f2 | cut -d"<" -f1`
@@ -100,7 +76,7 @@ for ROUND3 in $TAGLIST; do
 	done
 	if [ -e cache.xvideos."$filename4".titanlist ];then
 		piccount=`expr $piccount + 1`
-		URL="http://atemio.dyndns.tv/mediathek/xvideos/streams/xvideos."$filename3".list"
+		URL="http://atemio.dyndns.tv/mediathek/xvideos/streams/xvideos."$filename4".list"
 		PIC="http://atemio.dyndns.tv/mediathek/menu/"$filename3".jpg"
 		LINE="$tagname#$URL#$PIC#xvideos_$piccount.jpg#XVIDEOS#3"
 		echo $LINE >> cache.xvideos.category.titanlist
