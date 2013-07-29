@@ -46,6 +46,12 @@ for CASE in A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
 	done
 done
 
+piccount=`expr $piccount + 1`
+URL="http://atemio.dyndns.tv/mediathek/kinox/streams/kinox.movies.update.list"
+PIC="http://atemio.dyndns.tv/mediathek/menu/Movies.update.jpg"
+LINE="Filme (letzten uploads)#$URL#$PIC#kinox_$piccount.jpg#KinoX#3"
+echo $LINE >> cache.kinox.category.titanlist
+
 cat file.test.tmpliste | sort -u > movieliste.log
 
 #exit
@@ -146,6 +152,64 @@ for ROUND0 in $main_list; do
 	done
 done
 
+wget http://kinox.to -O cache.main.update.list
+
+#LIST=`cat cache.main.update.list | grep "Odd parentalguidiance" | grep ".html," | cut -d'"' -f4`
+LIST=`cat cache.main.update.list | grep "Odd parentalguidiance" | grep -v ".html,s" | cut -d'"' -f4`
+
+#count=1
+#piccount=1
+for ROUND3 in $LIST; do
+	echo ROUND3 $ROUND3
+	if [ `cat cache.kinox.titanlist | grep "$ROUND3" | wc -l` -eq 0 ];then
+		count=`expr $count + 1`
+		piccount=`expr $piccount + 1`
+		filename3=`echo $ROUND3 | sed 's!/Stream/!!'`
+		wget "http://kinox.to/$ROUND3" -O cache."$count"."$filename3"
+		ls cache."$count"."$filename3"
+		picname=`echo $filename3 | sed 's!.html!.jpg!'`
+
+		TITLE=`echo $picname | sed 's!.jpg!!' | tr "_" " "`
+
+		PIC=`cat cache."$count"."$filename3" | grep $ROUND3 | grep '<img src=' | cut -d'"' -f6`
+		if [ -z "$PIC" ]; then
+			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+		fi
+
+		LANG=`cat cache."$count"."$filename3" | grep 'alt="language" src="/gr/sys/lng' | sed 's!alt="language" src="/gr/sys/lng/!\n!' | tail -n1 |cut -d"." -f1`
+	 	LANGTXT=" (??)"
+
+		if [ ! -z $LANG ];then
+			if [ $LANG = 1 ];then
+			 	LANGTXT=" (de)"
+			elif [ $LANG = 2 ];then
+			 	LANGTXT=" (en)"
+			else
+			 	LANGTXT=" (??)"
+			fi
+		fi
+	
+		echo PIC=$PIC
+		echo TITLE=$TITLE
+		echo LANGTXT=$LANGTXT
+
+		URL="http://kinox.to/$ROUND3"
+
+		LINE="$TITLE$LANGTXT#$URL#$PIC#kinox_$piccount.jpg#KinoX#22"
+		if [ ! -z "$TITLE" ]; then
+			echo $LINE >> cache.kinox.movies.update.titanlist
+			echo $LINE >> cache.kinox.titanlist			
+		fi
+	else
+		echo ROUND3 $ROUND3 `cat cache.kinox.titanlist | grep "$ROUND3"`
+		cat cache.kinox.titanlist | grep "$ROUND3" >> cache.kinox.movies.update.titanlist
+	fi
+echo "########################################################"
+
+#exit
+done
+
+cat cache.kinox.movies.update.titanlist > _full/kinox/streams/kinox.movies.update.list
 cat cache.kinox.titanlist | sort -u > _full/kinox/streams/kinox.all-sorted.list
 cat cache.kinox.category.titanlist | sort -u > _full/kinox/kinox.category.list
 
