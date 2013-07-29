@@ -104,11 +104,17 @@ for ROUND2 in $watchlist; do
 		TYPENAME="Kino Filme (en)"
 	fi
 
-	pagelist=`cat cache."$count"."$filename2" | grep "float:left" | cut -d '"' -f4`
+#	pagelist=`cat cache."$count"."$filename2" | grep "float:left" | cut -d '"' -f4`
+# newest uploads
+#	pagelist=`cat cache."$count"."$filename2" | grep '<td valign="top" height="100%">' | cut -d '"' -f6`
+	pagelist=`cat cache."$count"."$filename2" | grep '.html"><img src=' | cut -d '"' -f4| grep .html`
+
 	for ROUND3 in $pagelist; do
 		piccount=`expr $piccount + 1`
 		filename3="$ROUND3"
-		PIC=`cat cache."$count"."$filename2" | grep $ROUND3 | grep "img src" | tail -n1 | cut -d '"' -f6`
+#		PIC=`cat cache."$count"."$filename2" | grep $ROUND3 | grep "img src" | tail -n1 | cut -d '"' -f6`
+		PIC=`cat cache."$count"."$filename2" | grep $ROUND3 | grep "img src" | head -n1 | cut -d '"' -f6`
+
 		ID=`echo $ROUND3 | sed "s/.*online-film-//" | sed "s/.*watch-movie-//" | sed "s/.html.*//"`
 		ZEILE=`cat cache."$count"."$filename2" | grep -n $ID | head -n1 | cut -d ":" -f1`
 		ALLES=`cat cache."$count"."$filename2" | wc -l`
