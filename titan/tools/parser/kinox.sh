@@ -46,12 +46,6 @@ for CASE in A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
 	done
 done
 
-piccount=`expr $piccount + 1`
-URL="http://atemio.dyndns.tv/mediathek/kinox/streams/kinox.movies.update.list"
-PIC="http://atemio.dyndns.tv/mediathek/menu/Movies.update.jpg"
-LINE="Filme (letzten uploads)#$URL#$PIC#kinox_$piccount.jpg#KinoX#3"
-echo $LINE >> cache.kinox.category.titanlist
-
 cat file.test.tmpliste | sort -u > movieliste.log
 
 #exit
@@ -62,6 +56,12 @@ rm _liste
 rm -rf _full/kinox
 mkdir -p _full/kinox/streams
 piccount=0
+
+piccount=`expr $piccount + 1`
+URL="http://atemio.dyndns.tv/mediathek/kinox/streams/kinox.movies.update.list"
+PIC="http://atemio.dyndns.tv/mediathek/menu/Movies.update.jpg"
+LINE="Filme (letzten uploads)#$URL#$PIC#kinox_$piccount.jpg#KinoX#3"
+echo $LINE >> cache.kinox.category.titanlist
 
 main_list="Cine-Films Popular-Movies Popular-Documentations Popular-Series Latest-Documentations Latest-Series Movies"
 #main_list="Movies"
