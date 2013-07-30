@@ -57,16 +57,24 @@ for ROUND3 in $TAGLIST; do
 			if [ -z "$TITLE" ];then
 				TITLE=`echo $URL | tr '/' '\n' | tail -n1 | tr '_' ' ' | tr '-' ' ' | sed 's/^ //'`
 			fi
+
+			TITLE=`echo $TITLE | sed 's/&amp;/und/g'`
+			TITLE=`echo $TITLE | sed 's/&quot;/"/g'`
+			TITLE=`echo $TITLE | sed 's/&uuml;/\ü/g'`
+			TITLE=`echo $TITLE | sed 's/&auml;/\ä/g'`
+			TITLE=`echo $TITLE | sed 's/&ouml;/\ö/g'`
+			TITLE=`echo $TITLE | sed 's/&szlig;/\ß/g'`
+		
 			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
 				LINE="$TITLE#http://www.xvideos.com$URL#$PIC#xvideos_$piccount.jpg#XVIDEOS#42"			
 
 				if [ ! -e cache.xvideos."$filename4".titanlist ];then
 					echo $LINE >> cache.xvideos."$filename4".titanlist
-				elif [ `cat cache.xvideos."$filename4".titanlist | grep "$ROUND5" | tail -n1 | wc -l ` -eq 0 ];then
+				elif [ `cat cache.xvideos."$filename4".titanlist | grep "#$URL#" | tail -n1 | wc -l ` -eq 0 ];then
 					echo $LINE >> cache.xvideos."$filename4".titanlist					
 				fi
 
-				if [ `cat cache.xvideos.titanlist | grep "^$TITLE#" | wc -l` -eq 0 ];then
+				if [ `cat cache.xvideos.titanlist | grep "#$URL#" | wc -l` -eq 0 ];then
 					echo $LINE >> cache.xvideos.titanlist
 				fi
 			fi
