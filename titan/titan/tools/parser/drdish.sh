@@ -40,7 +40,7 @@ for ROUND1 in $WATCHLIST; do
 
 	for ROUND2 in $LIST; do
 		count=`expr $count + 1`
-		echo $ROUND2 > echo
+#		echo $ROUND2 > echo
 		#	echo ROUND2 $ROUND2
 		URL="http://medianac.nacamar.de/p/435/sp/43500/playManifest/entryId/"`echo $ROUND2 | cut -d"&" -f2`"/"
 		if [ $ROUND1 = "tv-programm" ];then
