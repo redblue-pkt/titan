@@ -21,18 +21,18 @@ for ROUND3 in $TAGLIST; do
 	piccount=`expr $piccount + 1`
 	count=`expr $count + 1`	
 	tagname=`echo $ROUND3 | tr '~' ' ' | cut -d'<' -f4`
-	echo tagname $tagname
+#	echo tagname $tagname
 	filename3=`echo $tagname | tr ' ' '.' | tr [A-Z] [a-z]`
-	echo filename3 $filename3
+#	echo filename3 $filename3
 	tagurl=`echo $ROUND3 | cut -d'"' -f2 | sed 's!/c/!!'`
-	echo tagurl $tagurl
+#	echo tagurl $tagurl
 
 	tags="http://www.xvideos.com/c/$tagurl"
-	tagcount=1000
+	tagcount=100
 	i=1
 	until [ "$i" -gt "$tagcount" ]
 	do
-	echo $i
+#	echo $i
 	tags="$tags http://www.xvideos.com/c/$i/$tagurl"
 	i=$[$i+1]
 	
