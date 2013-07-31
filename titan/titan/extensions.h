@@ -145,14 +145,15 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 				}
 			}
 		}
-			
+		
+		free(tmpstr); tmpstr = NULL;	
 		freemenulist(mlist1, 0); mlist1 = NULL;
+		if(mbox != NULL) tmpstr = ostrcat(mbox->name, NULL, 0, 0);
 		freemenulist(mlist, 0); mlist = NULL;
-		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
 		freetpk();
-		if(mbox != NULL) screenextensions(0, path, ostrcat(mbox->name, NULL, 0, 0), 0);
-		free(defentry); defentry = NULL;
+		if(mbox != NULL) screenextensions(0, path, tmpstr, 0);
+		free(tmpstr); tmpstr = NULL;
 	}
 	else if(mode == 1)
 	{
@@ -199,12 +200,13 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 				}
 			}
 		}
-		freemenulist(mlist, 0); mlist = NULL;
 		free(tmpstr); tmpstr = NULL;
+		freemenulist(mlist, 0); mlist = NULL;
+		if(mbox != NULL) tmpstr = ostrcat(mbox->name, NULL, 0, 0);
 		free(tmpinfo); tmpinfo = NULL;
 		freetpk();
-		if(mbox != NULL) screenextensions(1, path, ostrcat(mbox->name, NULL, 0, 0), 0);
-		free(defentry); defentry = NULL;
+		if(mbox != NULL) screenextensions(1, path, tmpstr, 0);
+		free(tmpstr); tmpstr = NULL;
 	}
 	else if(mode == 2)
 	{
@@ -281,11 +283,12 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 				}
 			}
 		}
-		freemenulist(mlist, 0); mlist = NULL;
 		free(tmpstr); tmpstr = NULL;
+		freemenulist(mlist, 0); mlist = NULL;
+		if(mbox != NULL) tmpstr = ostrcat(mbox->name, NULL, 0, 0);
 		free(tmpinfo); tmpinfo = NULL;
-		if(mbox != NULL) screenextensions(2, path, ostrcat(mbox->name, NULL, 0, 0), 0);
-		free(defentry); defentry = NULL;
+		if(mbox != NULL) screenextensions(2, path, tmpstr, 0);
+		free(tmpstr); tmpstr = NULL;
 	}
 	else if(mode == 3)
 	{
