@@ -26,6 +26,11 @@ int singlepicstart(const char *filename, int flag)
 
 		if(status.aktservice->type != STILLPIC)
 		{
+			if(status.aktservice->videodev != NULL)
+			{
+				videoclose(status.aktservice->videodev, -1);
+				status.aktservice->videodev = NULL;
+			}
 			videonode = videoopen(0, 0);
 			videoselectsource(videonode, VIDEO_SOURCE_MEMORY);
 
