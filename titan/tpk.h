@@ -2897,7 +2897,7 @@ int findsectiondone(char* section)
 //flag 0: show section
 //flag 1: show entrys
 //flag 2: show entrys for remove
-struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* section, int showpng, int flag)
+struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* section, int showpng, char* defentry, int flag)
 {
 	int skip = 0;
 	struct tpk* node = tpk, *tpk_installed = NULL, *node_installed = NULL;
@@ -3014,6 +3014,7 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 		tpk = node;
 	}
 
+  setmenulistdefault(mlist, defentry);
 	return menulistbox(mlist, paramskinname, skintitle, paramskinpath, "/skin/plugin.png", showpng, 0);
 }
 
