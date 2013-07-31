@@ -159,7 +159,7 @@ void screensettings_redbutton();
 
 //extensions.h
 void screenfeed();
-void screenextensions(int mode, char* path, int first);
+void screenextensions(int mode, char* path, char* defentry, int first);
 void screenextensions_check(int flag);
 
 //...port.h
