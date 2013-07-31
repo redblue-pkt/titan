@@ -615,7 +615,8 @@ void hddformat(char* dev, char* filesystem)
 			cmd = ostrcat("/sbin/cmd.sh mkfs.ext3 -T largefile -m0 -O dir_index /dev/" , dev, 0, 0);
 
 		if(format == 2) cmd = ostrcat(cmd , "1", 1, 0);
-			
+
+/*			
 		if(record == 1) 
 			cmd = ostrcat(cmd , " 1", 1, 0);
 		else
@@ -635,6 +636,7 @@ void hddformat(char* dev, char* filesystem)
 			cmd = ostrcat(cmd , " 1", 1, 0);
 		else
 			cmd = ostrcat(cmd , " 0", 1, 0);
+*/
 
 		debug(80, "format cmd: %s", cmd);
 		system(cmd);
