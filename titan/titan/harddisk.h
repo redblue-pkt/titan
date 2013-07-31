@@ -162,8 +162,8 @@ void screenfilesystem(char* dev)
 	{
 		rcret = waitrc(screen, 0, 0);
 
-		if(rcret==getrcconfigint("rcexit",NULL)) break;
-		if(listbox->select != NULL && rcret==getrcconfigint("rcok",NULL))
+		if(rcret==getrcconfigint("rcexit", NULL)) break;
+		if(listbox->select != NULL && rcret==getrcconfigint("rcok", NULL))
 		{
 			hddformat(dev, listbox->select->name);
 			break;
@@ -180,6 +180,7 @@ void screenconfigurehdd(char* dev)
 	struct skin* screen = getscreen("harddisk_main");
 	struct skin* titletext = getscreennode(screen, "titletext");
 	struct skin* listbox = getscreennode(screen, "listbox");
+	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
 	char* path = NULL;
@@ -320,7 +321,25 @@ void screenconfigurehdd(char* dev)
 			if(mode == 1)
 			{
 				if(textbox("Message", _("Are you sure you want to delete this directory?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+				{
 					ret = rmdir(path);
+					if(ret < 0)
+					{
+						if(textbox("Message", _("Directory has content\nRealy delete directory and content?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+						{
+							drawscreen(load, 0, 0);
+							ret = 0;
+							char* cmd = NULL;
+							cmd = ostrcat("rm -rf ", path, 0, 0);
+							system(cmd);
+							free(cmd); cmd = NULL;
+							if(file_exist(path) == 0) ret = -1;
+							clearscreen(load);
+						}
+						else
+							ret = 9999;
+					}
+				}
 				else
 					ret = 9999;
 			}
@@ -335,8 +354,12 @@ void screenconfigurehdd(char* dev)
 			{
 				textbox("Message", _("succesfull create or delelete directory"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 				//mount hdd after create dir movie
-				if(ostrcmp(listbox->select->name, "addrecord") == 0)
+				if(ostrcmp(listbox->select->name, "addrecord") == 0 || ostrcmp(listbox->select->name, "addswap") == 0 || ostrcmp(listbox->select->name, "addext") == 0 || ostrcmp(listbox->select->name, "addbackup") == 0)
+				{
+					drawscreen(load, 0, 0);
 					system("hotplug.sh first");
+					clearscreen(load);
+				}
 			}
 			drawscreen(screen, 0, 0);
 		}
@@ -566,6 +589,22 @@ void hddformat(char* dev, char* filesystem)
 
 	if(format > 0)
 	{
+		int record = 0, ext = 0, swap = 0, backup = 0;
+		
+		if(textbox(_("Message"), _("Use this medium for record?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+			record = 1;
+		
+		if(status.expertmodus > 9)
+		{
+			if(textbox(_("Message"), _("Use this medium for extensions?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+				ext = 1;
+			if(textbox(_("Message"), _("Use this medium for swap?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+				swap = 1;
+			if(textbox(_("Message"), _("Use this medium for backup?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+				backup = 1;
+		}
+			
+	
 		if(ostrcmp(filesystem, "vfat") == 0)
 			cmd = ostrcat("/sbin/cmd.sh mkfs.fat -F 32 /dev/" , dev, 0, 0);
 		else if(ostrcmp(filesystem, "jfs") == 0)
@@ -576,6 +615,26 @@ void hddformat(char* dev, char* filesystem)
 			cmd = ostrcat("/sbin/cmd.sh mkfs.ext3 -T largefile -m0 -O dir_index /dev/" , dev, 0, 0);
 
 		if(format == 2) cmd = ostrcat(cmd , "1", 1, 0);
+			
+		if(record == 1) 
+			cmd = ostrcat(cmd , " 1", 1, 0);
+		else
+			cmd = ostrcat(cmd , " 0", 1, 0);
+			
+		if(ext == 1) 
+			cmd = ostrcat(cmd , " 1", 1, 0);
+		else
+			cmd = ostrcat(cmd , " 0", 1, 0);
+			
+		if(swap == 1) 
+			cmd = ostrcat(cmd , " 1", 1, 0);
+		else
+			cmd = ostrcat(cmd , " 0", 1, 0);
+			
+		if(backup == 1) 
+			cmd = ostrcat(cmd , " 1", 1, 0);
+		else
+			cmd = ostrcat(cmd , " 0", 1, 0);
 
 		debug(80, "format cmd: %s", cmd);
 		system(cmd);
