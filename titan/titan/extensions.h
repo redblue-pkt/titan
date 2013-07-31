@@ -70,7 +70,7 @@ void screenfeed()
 	free(lastline);
 }
 
-void screenextensions(int mode, char* path, int first)
+void screenextensions(int mode, char* path, char* defentry, int first)
 {
 	char* tmpstr = NULL, *tmpinfo = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;
@@ -89,12 +89,12 @@ void screenextensions(int mode, char* path, int first)
 
 		clearscreen(load);
 
-		mbox = tpkmenulist(mlist, NULL, "Tpk Install - select section", NULL, NULL, 1, 0);
+		mbox = tpkmenulist(mlist, NULL, "Tpk Install - select section", NULL, NULL, 1, defentry, 0);
 
 		if(mbox != NULL)
 		{
 			debug(130, "section: %s", mbox->name);
-			mbox1 = tpkmenulist(mlist1, "tpkinstall", "Tpk Install - select file", "/tmp/tpk", mbox->name, 2, 1);
+			mbox1 = tpkmenulist(mlist1, "tpkinstall", "Tpk Install - select file", "/tmp/tpk", mbox->name, 2, NULL, 1);
 			
 			if(mbox1 != NULL && mbox1->param != NULL && mbox1->param1 != NULL)
 			{
@@ -151,12 +151,13 @@ void screenextensions(int mode, char* path, int first)
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
 		freetpk();
-		if(mbox != NULL) screenextensions(0, path, 0);
+		if(mbox != NULL) screenextensions(0, path, ostrcat(mbox->name, NULL, 0, 0), 0);
+		free(defentry); defentry = NULL;
 	}
 	else if(mode == 1)
 	{
 		tpklistinstalled(0);
-		mbox = tpkmenulist(mlist, NULL, "Tpk Remove - select file", NULL, NULL, 1, 2);
+		mbox = tpkmenulist(mlist, NULL, "Tpk Remove - select file", NULL, NULL, 1, defentry, 2);
 		
 		if(mbox != NULL && mbox->param != NULL)
 		{
@@ -202,7 +203,8 @@ void screenextensions(int mode, char* path, int first)
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
 		freetpk();
-		if(mbox != NULL) screenextensions(1, path, 0);
+		if(mbox != NULL) screenextensions(1, path, ostrcat(mbox->name, NULL, 0, 0), 0);
+		free(defentry); defentry = NULL;
 	}
 	else if(mode == 2)
 	{
@@ -224,7 +226,7 @@ void screenextensions(int mode, char* path, int first)
 		}
 		else
 		{
-			addmenulistall(&mlist, tmpstr, NULL, 0, NULL);
+			addmenulistall(&mlist, tmpstr, NULL, 0, defentry);
 			mbox = menulistbox(mlist, NULL, text1, NULL, "/skin/plugin.png", 1, 0);
 		}
 		
@@ -282,7 +284,8 @@ void screenextensions(int mode, char* path, int first)
 		freemenulist(mlist, 0); mlist = NULL;
 		free(tmpstr); tmpstr = NULL;
 		free(tmpinfo); tmpinfo = NULL;
-		if(mbox != NULL) screenextensions(2, path, 0);
+		if(mbox != NULL) screenextensions(2, path, ostrcat(mbox->name, NULL, 0, 0), 0);
+		free(defentry); defentry = NULL;
 	}
 	else if(mode == 3)
 	{
@@ -336,7 +339,7 @@ void screenextensions_check(int flag)
 				if(tmpstr1 != NULL)
 				{
 					treffer = 1;
-					screenextensions(2, tmpstr, 1);
+					screenextensions(2, tmpstr, NULL, 1);
 				}
 
 				free(tmpstr); tmpstr = NULL;
