@@ -38,22 +38,22 @@ mv -f "$HOME"/parser/BUILD/mediathek/* /var/www/atemio/web/mediathek
 mv -f "$HOME"/parser/*.sh "$HOME"/parser/BUILD
 
 # disable beeg
-rm "$HOME"/parser/BUILD/beeg.sh
-rm "$HOME"/parser/BUILD/kinox.sh
-rm "$HOME"/parser/BUILD/myvideo.sh
-rm "$HOME"/parser/BUILD/netzkino.sh
-rm "$HOME"/parser/BUILD/rtl2now.sh
-rm "$HOME"/parser/BUILD/rtl-now.sh
-rm "$HOME"/parser/BUILD/solarmovie.sh
-rm "$HOME"/parser/BUILD/superrtlnow.sh
-rm "$HOME"/parser/BUILD/voxnow.sh
-rm "$HOME"/parser/BUILD/youtube.sh
-rm "$HOME"/parser/BUILD/zdf.sh
-rm "$HOME"/parser/BUILD/movie4k.sh
-rm "$HOME"/parser/BUILD/xvideos.sh
-rm "$HOME"/parser/BUILD/drdish.sh
-rm "$HOME"/parser/BUILD/mlehd.sh
-rm "$HOME"/parser/BUILD/giga.sh
+#rm "$HOME"/parser/BUILD/beeg.sh
+#rm "$HOME"/parser/BUILD/kinox.sh
+#rm "$HOME"/parser/BUILD/myvideo.sh
+#rm "$HOME"/parser/BUILD/netzkino.sh
+#rm "$HOME"/parser/BUILD/rtl2now.sh
+#rm "$HOME"/parser/BUILD/rtl-now.sh
+#rm "$HOME"/parser/BUILD/solarmovie.sh
+#rm "$HOME"/parser/BUILD/superrtlnow.sh
+#rm "$HOME"/parser/BUILD/voxnow.sh
+#rm "$HOME"/parser/BUILD/youtube.sh
+#rm "$HOME"/parser/BUILD/zdf.sh
+#rm "$HOME"/parser/BUILD/movie4k.sh
+#rm "$HOME"/parser/BUILD/xvideos.sh
+#rm "$HOME"/parser/BUILD/drdish.sh
+#rm "$HOME"/parser/BUILD/mlehd.sh
+#rm "$HOME"/parser/BUILD/giga.sh
 
 lasttimestamp=`cat /var/www/atemio/web/mediathek/lasttimestamp`
 lasttimestamp=`expr $lasttimestamp + 84500`
