@@ -353,22 +353,37 @@ void screenconfigurehdd(char* dev)
 			else if(ret != 9999)
 			{
 				textbox("Message", _("succesfull create or delelete directory"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
-				//mount hdd after create dir movie
+				//start hotplug after create/del dir
 				if(ostrcmp(listbox->select->name, "addrecord") == 0 || ostrcmp(listbox->select->name, "addswap") == 0 || ostrcmp(listbox->select->name, "addext") == 0 || ostrcmp(listbox->select->name, "addbackup") == 0)
 				{
 					drawscreen(load, 0, 0);
 					system("hotplug.sh first");
 					clearscreen(load);
 				}
-				//TODO
-				/*
-				if(ostrcmp(listbox->select->name, "delrecord") == 0 || ostrcmp(listbox->select->name, "delswap") == 0 || ostrcmp(listbox->select->name, "delext") == 0 || ostrcmp(listbox->select->name, "delbackup") == 0)
+				if(ostrcmp(listbox->select->name, "delrecord") == 0)
 				{
 					drawscreen(load, 0, 0);
-					system("hotplug.sh first");
+					system("hotplug.sh delRecord");
 					clearscreen(load);
 				}
-				*/
+				if(ostrcmp(listbox->select->name, "delswap") == 0)
+				{
+					drawscreen(load, 0, 0);
+					system("hotplug.sh delSwap");
+					clearscreen(load);
+				}
+				if(ostrcmp(listbox->select->name, "delext") == 0)
+				{
+					drawscreen(load, 0, 0);
+					system("hotplug.sh delSwapextensions");
+					clearscreen(load);
+				}
+				if(ostrcmp(listbox->select->name, "delbackup") == 0)
+				{
+					drawscreen(load, 0, 0);
+					system("hotplug.sh delBackup");
+					clearscreen(load);
+				}
 			}
 			drawscreen(screen, 0, 0);
 		}
