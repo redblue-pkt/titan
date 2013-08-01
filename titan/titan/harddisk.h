@@ -591,16 +591,16 @@ void hddformat(char* dev, char* filesystem)
 	{
 		int record = 0, ext = 0, swap = 0, backup = 0;
 		
-		if(textbox(_("Message"), _("Use this medium for record?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+		if(textbox(_("Message"), _("use medium for record"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 			record = 1;
 		
 		if(status.expertmodus > 9)
 		{
-			if(textbox(_("Message"), _("Use this medium for extensions?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+			if(textbox(_("Message"), _("use medium for extension"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 				ext = 1;
-			if(textbox(_("Message"), _("Use this medium for swap?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+			if(textbox(_("Message"), _("use medium for swap"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 				swap = 1;
-			if(textbox(_("Message"), _("Use this medium for backup?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+			if(textbox(_("Message"), _("use medium for backup"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 				backup = 1;
 		}
 			
