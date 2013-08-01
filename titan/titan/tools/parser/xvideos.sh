@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 
+wgetbin="wget -T2 -t2 --waitretry=2"
 
 rm cache.*
 rm _liste
@@ -13,7 +14,7 @@ testcount=0
 piccount=0
 count=0
 
-wget http://www.xvideos.com/tags/ -O cache.main.tags
+$wgetbin http://www.xvideos.com/tags/ -O cache.main.tags
 TAGLIST=`cat cache.main.tags  | grep /c/ | sed 's!">!"<!g' | tr ' ' '~'`
 
 echo TAGLIST "$TAGLIST"
@@ -42,7 +43,7 @@ for ROUND3 in $TAGLIST; do
 		piccount=`expr $piccount + 1`
 		count=`expr $count + 1`	
 		filename4=tags-$filename3
-		wget "$ROUND4" -O cache."$filename4"."$count"
+		$wgetbin "$ROUND4" -O cache."$filename4"."$count"
 		if [ `cat cache."$filename4"."$count" | grep "<h1>Sorry but the page you requested was not found.</h1>" | wc -l` -eq 1 ];then
 			break
 		fi

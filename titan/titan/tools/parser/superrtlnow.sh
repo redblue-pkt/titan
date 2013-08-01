@@ -5,13 +5,15 @@ MEDIAURL=atemio.dyndns.tv
 MEDIAPATH=mediathek
 STREAMTYPE=6
 
+wgetbin="wget -T2 -t2 --waitretry=2"
+
 rm cache.*
 rm -rf _full/$SUBDOMAIN
 mkdir -p _full/$SUBDOMAIN/streams
 piccount=0
 
 SITEURL=http://www.$SUBDOMAIN.$DOMAIN
-wget --no-check-certificate $SITEURL -O cache.$SUBDOMAIN.list
+$wgetbin --no-check-certificate $SITEURL -O cache.$SUBDOMAIN.list
 
 SEARCHLIST=`cat cache.$SUBDOMAIN.list | grep '<a class="menu' | grep -v '&paytype=ppv' | sed 's/href="/\nlink=/' | sed 's/.php/\n/' | grep ^link=  | sed 's!link=/!!'`
 
@@ -20,7 +22,7 @@ for SEARCH in $SEARCHLIST; do
 	rm cache.$SEARCH.list
 	piccount=`expr $piccount + 1`	
 	URL="$SITEURL"/"$SEARCH".php
-	wget --no-check-certificate $URL -O cache.$SEARCH.list
+	$wgetbin --no-check-certificate $URL -O cache.$SEARCH.list
 	PIC=`cat cache.$SEARCH.list | grep .jpg  | sed 's!src="!\n!' | tr '"' '\n' | grep ^http:// | tail -n1`
 	if [ -z $PIC ]; then
 		PIC=`cat cache.$SEARCH.list | grep jpg | grep _logo_ | sed 's!src="!\n!' | sed 's/">//' | grep ^http:// | tail -n1`
@@ -39,7 +41,7 @@ for SEARCH in $SEARCHLIST; do
 		echo ROUND=$ROUND
 		piccount=`expr $piccount + 1`
 		count=`expr $count + 1`		
-		echo wget
+		echo $wgetbin
 		DURL=$SITEURL/`echo $ROUND | sed 's/amp;//'`
 		echo DURL: $DURL
 		echo $DURL | sed 's/amp;//'
@@ -47,8 +49,8 @@ for SEARCH in $SEARCHLIST; do
 		DURL=`echo $DURL | sed 's/amp;//' | sed 's/amp;//' | sed 's/amp;//' | sed 's/productdetail=/player=/'`
 		echo DURL: $DURL
 		
-		echo wget --no-check-certificate "$DURL" -O cache.$SEARCH.$count.list
-		wget --no-check-certificate "$DURL" -O cache.$SEARCH.$count.list
+		echo $wgetbin --no-check-certificate "$DURL" -O cache.$SEARCH.$count.list
+		$wgetbin --no-check-certificate "$DURL" -O cache.$SEARCH.$count.list
 
 		DPIC=`cat cache.$SEARCH.$count.list | grep jpg | grep '<meta property="og:image"' | cut -d'"' -f4 | tail -n1`
 #		TITLE=`./urldecode.sh cache.$SEARCH.$count.list | grep og:title  | cut -d'"' -f4 | sed 's/ - /#/' | cut -d"#" -f2`

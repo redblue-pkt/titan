@@ -1,6 +1,8 @@
 #!/bin/bash
 #
 
+wgetbin="wget -T2 -t2 --waitretry=2"
+
 rm cache.*
 rm _liste
 rm -rf _full/drdish
@@ -32,7 +34,7 @@ for ROUND1 in $WATCHLIST; do
 	filename=`echo $ROUND1 | tr '-' '.' | tr '/' '.'`
 	tagname=`echo $ROUND1 | tr '/' '\n' | tail -n1`
 
-	wget http://www.drdish-tv.com/$ROUND1/ -O cache.drdish."$filename"."$count"
+	$wgetbin http://www.drdish-tv.com/$ROUND1/ -O cache.drdish."$filename"."$count"
 	LIST=`cat cache.drdish."$filename"."$count" | tr '\n' ' ' | sed 's/ \+/~/g' | sed 's!<div~class="videowrap">~<div~class="videocontent">~<div~class="videopic">~<a~href="videoplayer/?tx_kaltura_pi1%5Bclipid%5D=!\nlink=\&!g' | grep ^'link=&'`
 	if [ $ROUND1 = "tv-programm" ];then
 		LIST=`cat cache.drdish."$filename"."$count" | tr '\n' ' ' | sed 's/ \+/~/g' | sed 's!<div~class="sendebild"><a~href="videoplayer/?tx_kaltura_pi1%5Bclipid%5D=!\nlink="!g' | grep ^'link="'`
@@ -64,7 +66,7 @@ for ROUND1 in $WATCHLIST; do
 #			echo TITLE $TITLE
 #			echo URL $URL
 #			echo PIC $PIC
-			wget $URL -O cache.drdish."$filename".streamurl."$count"
+			$wgetbin $URL -O cache.drdish."$filename".streamurl."$count"
 			URL=`cat cache.drdish."$filename".streamurl."$count" | grep "<media url="| cut -d'"' -f2`	
 #			echo URL $URL
 			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then

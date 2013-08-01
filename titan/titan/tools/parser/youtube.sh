@@ -3,6 +3,8 @@ rm -rf _full/youtube
 mkdir -p _full/youtube/streams
 piccount=0
 
+wgetbin="wget -T2 -t2 --waitretry=2"
+
 SEARCHLIST="charts/trailers/most_popular?region=US&v=2 standardfeeds/DE/most_viewed_Music?v=2 standardfeeds/DE/most_viewed?v=2 standardfeedsDE/top_rated?v=2 videos/-/HD videos?q=bodyrock+tv videos?q=Zuzana+Light+ZWOW videos?q=titannit videos?q=trailer+2012+deutsch" 
 
 for SEARCH in $SEARCHLIST; do
@@ -28,7 +30,7 @@ for SEARCH in $SEARCHLIST; do
 	fi
 																					
 	rm cache.top_rated.list
-	wget --no-check-certificate "http://gdata.youtube.com/feeds/api/$SEARCH&max-results=50" -O cache.$filename.list
+	$wgetbin --no-check-certificate "http://gdata.youtube.com/feeds/api/$SEARCH&max-results=50" -O cache.$filename.list
 	LIST=`cat cache.$filename.list | tr '><' '>\n<'| grep url | grep "http://i.ytimg.com/vi/" | grep "width='480'" | cut -d "/" -f5`
 	
 	for ROUND in $LIST; do
@@ -39,7 +41,7 @@ for SEARCH in $SEARCHLIST; do
 		PIC=http://i.ytimg.com/vi/"$ROUND"/1.jpg
 		piccount=`expr $piccount + 1`
 	
-		wget --no-check-certificate http://www.youtube.com/watch?v=$ROUND -O cache.$filename.title.list
+		$wgetbin --no-check-certificate http://www.youtube.com/watch?v=$ROUND -O cache.$filename.title.list
 #		TITLE=`cat cache.$filename.title.list | grep '<meta name="title" content="' | sed 's/      <meta name="title" content="//' | sed 's/">//' | tr '&#' '%' | tr -d ';'`
 		TITLE=`cat cache.$filename.title.list | grep '<meta name="title" content="' | sed 's/content=/\n/' | tail -n 1 | cut -d '"' -f2`
 		TITLE=`echo $TITLE | sed 's/&amp;/und/'`
@@ -68,13 +70,13 @@ for SEARCH in $SEARCHLIST; do
 done
 
 #####################
-wget http://gdata.youtube.com/schemas/2007/categories.cat -O cache.categories.list 
+$wgetbin http://gdata.youtube.com/schemas/2007/categories.cat -O cache.categories.list 
 SEARCHLIST=`cat cache.categories.list | tr '><' '>\n<' | grep "atom:category term=" | tr ' ' '\n' | grep term=| cut -d"'" -f2`
 
 for SEARCH in $SEARCHLIST; do
 	echo SEARCH=$SEARCH
 	filename=`echo $SEARCH | tr 'A-Z' 'a-z'`																		
-	wget --no-check-certificate "http://gdata.youtube.com/feeds/api/standardfeeds/DE/top_rated_$SEARCH?v=2&max-results=50" -O cache.$filename.list
+	$wgetbin --no-check-certificate "http://gdata.youtube.com/feeds/api/standardfeeds/DE/top_rated_$SEARCH?v=2&max-results=50" -O cache.$filename.list
 	LIST=`cat cache.$filename.list | tr '><' '>\n<'| grep url | grep "http://i.ytimg.com/vi/" | grep "width='480'" | cut -d "/" -f5`
 	
 	for ROUND in $LIST; do
@@ -84,7 +86,7 @@ for SEARCH in $SEARCHLIST; do
 		PIC=http://i.ytimg.com/vi/"$ROUND"/0.jpg
 		piccount=`expr $piccount + 1`
 	
-		wget --no-check-certificate http://www.youtube.com/watch?v=$ROUND -O cache.$filename.title.list
+		$wgetbin --no-check-certificate http://www.youtube.com/watch?v=$ROUND -O cache.$filename.title.list
 #		TITLE=`cat cache.$filename.title.list | grep '<meta name="title" content="' | sed 's/      <meta name="title" content="//' | sed 's/">//' | tr '&#' '%' | tr -d ';'`
 		TITLE=`cat cache.$filename.title.list | grep '<meta name="title" content="' | sed 's/content=/\n/' | tail -n 1 | cut -d '"' -f2`
 		TITLE=`echo $TITLE | sed 's/&amp;/und/'`

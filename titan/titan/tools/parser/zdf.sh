@@ -2,9 +2,11 @@ rm cache.*
 rm -rf _full/zdf
 mkdir -p _full/zdf/streams
 
+wgetbin="wget -T2 -t2 --waitretry=2"
+
 SITEURL="http://www.zdf.de/ZDFmediathek/hauptnavigation/startseite?flash=off"
 
-wget --no-check-certificate $SITEURL -O cache.main.list
+$wgetbin --no-check-certificate $SITEURL -O cache.main.list
 
 SEARCHLIST=`cat cache.main.list | grep /ZDFmediathek/ | grep "</li><li><a href=" | sed 's!</ul>!!' | cut -d'"' -f2`
 echo SEARCHLIST1=$SEARCHLIST
@@ -33,7 +35,7 @@ for ROUND1 in $SEARCHLIST; do
 		echo $LINE >> cache.category.titanlist
 	fi
 
-	wget --no-check-certificate http://www.zdf.de/$ROUND1 -O cache.$filename.list
+	$wgetbin --no-check-certificate http://www.zdf.de/$ROUND1 -O cache.$filename.list
 
 	SEARCHLIST2=`cat cache.$filename.list | grep "<img src" | grep title | cut -d '"' -f2 | grep -v flash=off`
 	echo SEARCHLIST2=$SEARCHLIST2
@@ -56,7 +58,7 @@ tcount=0
 				echo "$LINE" >> cache.$filename.titanlist
 			fi
 
-			wget --no-check-certificate "http://www.zdf.de/ZDFmediathek/hauptnavigation/$filename/day$i?flash=off" -O cache.$filename.day$i.list
+			$wgetbin --no-check-certificate "http://www.zdf.de/ZDFmediathek/hauptnavigation/$filename/day$i?flash=off" -O cache.$filename.day$i.list
 
 			if [ $filename == "live" ];then
 				SEARCHLIST7=`cat cache.$filename.day$i.list | grep "<img src" | grep title | cut -d '"' -f2 | grep flash=off`
@@ -90,17 +92,17 @@ tcount=0
 #	exit
 #fi
 				if [ `cat cache.search.titanlist | grep $ID | wc -l` -eq 0 ];then		 
-					wget --no-check-certificate "http://www.zdf.de/ZDFmediathek/xmlservice/web/beitragsDetails?id=$ID&ak=web" -O cache.$ID.list
+					$wgetbin --no-check-certificate "http://www.zdf.de/ZDFmediathek/xmlservice/web/beitragsDetails?id=$ID&ak=web" -O cache.$ID.list
 					if [ `cat cache.$ID.list | grep "<debuginfo>Kein Beitrag mit ID=7011824</debuginfo>" | wc -l` -eq 1 ]; then
 						URL=http://www.zdf.de`cat cache.$filename.day$i.list | grep "<img src" | grep title | grep $ROUND7 | cut -d '"' -f2 | tr '&#' '%'`
 	echo URL $URL	
-						wget --no-check-certificate $URL -O cache.$ID.url.list
+						$wgetbin --no-check-certificate $URL -O cache.$ID.url.list
 						URL2=`cat cache.$ID.url.list | grep Abspielen | grep play | grep asx | cut -d'"' -f1 | head -n1`
 	echo URL2 $URL2	
-						wget --no-check-certificate $URL2 -O cache.$ID.url2.list
+						$wgetbin --no-check-certificate $URL2 -O cache.$ID.url2.list
 						URL3=`cat cache.$ID.url2.list | grep "Ref href" | cut -d'"' -f2 | head -n1`
 	echo URL3 $URL3	
-						wget --no-check-certificate $URL3 -O cache.$ID.url3.list
+						$wgetbin --no-check-certificate $URL3 -O cache.$ID.url3.list
 						URL3=`cat cache.$ID.url3.list | grep "REF HREF" | cut -d'"' -f2 | head -n1`
 						if [ ! -z $URL3 ];then
 							URL=$URL3
@@ -156,7 +158,7 @@ tcount=0
 #fi
 
 			piccount=`expr $piccount + 1`
-			wget --no-check-certificate "http://www.zdf.de/ZDFmediathek/hauptnavigation/$filename/saz$i?flash=off" -O cache.$filename.saz$i.titanlist
+			$wgetbin --no-check-certificate "http://www.zdf.de/ZDFmediathek/hauptnavigation/$filename/saz$i?flash=off" -O cache.$filename.saz$i.titanlist
 
 			TITLE=`cat cache.$filename.saz$i.titanlist | grep "/ZDFmediathek/hauptnavigation/$filename/saz$i?flash=off" | head -n1 | cut -d">" -f2 | cut -d"<" -f1`
 			filename2=`echo $TITLE`
@@ -197,7 +199,7 @@ tcount=0
 					fi
 				fi
 				
-				wget --no-check-certificate "http://www.zdf.de$ROUND5" -O cache.$filename.$filename2.$filename3.list
+				$wgetbin --no-check-certificate "http://www.zdf.de$ROUND5" -O cache.$filename.$filename2.$filename3.list
 				SEARCHLIST6=`cat cache.$filename.$filename2.$filename3.list | grep "<img src" | grep title | cut -d '"' -f2 | grep -v flash=off`
 				echo SEARCHLIST6=$SEARCHLIST6
 				ls cache.$filename.$filename2.$filename3.list 
@@ -209,7 +211,7 @@ tcount=0
 					TITLE=`cat cache.$filename.$filename2.$filename3.list | grep "<img src" | grep title | grep $ROUND6 | cut -d '"' -f4 | tr '&#' '%'`
 					ID=`echo $PIC | cut -d '/' -f6`
 			 
-					wget --no-check-certificate "http://www.zdf.de/ZDFmediathek/xmlservice/web/beitragsDetails?id=$ID&ak=web" -O cache.$ID.list
+					$wgetbin --no-check-certificate "http://www.zdf.de/ZDFmediathek/xmlservice/web/beitragsDetails?id=$ID&ak=web" -O cache.$ID.list
 					URL=`cat cache.$ID.list | grep mp4 | grep url | grep http | tail -n1 | cut -d'>' -f2 | cut -d'<' -f1`
 			
 					if [ ! `echo $TITLE | grep "^/" | wc -l` -eq 1 ]; then
@@ -269,7 +271,7 @@ tcount=0
 		fi
 		count=`expr $count + 1`
 		NEWURL=http://www.zdf.de`cat cache.$filename.list | grep "<img src" | grep title | grep $ROUND3 | cut -d '"' -f2`
-		wget --no-check-certificate $NEWURL -O cache.$filename.submenu.$count.list
+		$wgetbin --no-check-certificate $NEWURL -O cache.$filename.submenu.$count.list
 #######
 		SEARCHLIST4=`cat cache.$filename.submenu.$count.list | grep "<img src" | grep title | cut -d '"' -f2 | grep -v contentblob`
 		echo SEARCHLIST4=$SEARCHLIST4

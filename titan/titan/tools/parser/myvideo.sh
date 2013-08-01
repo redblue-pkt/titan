@@ -1,6 +1,8 @@
 #!/bin/bash
 #
 
+wgetbin="wget -T2 -t2 --waitretry=2"
+
 rm cache.*
 rm _liste
 rm -rf _full/myvideo
@@ -11,7 +13,7 @@ mainurl=http://www.myvideo.de
 mainliste="Top_100 Videos_A-Z Serien Filme Musik"
 
 black_list="Themen webstars tv Playlisten Flight Videos_in_Playlisten Videos_in_Playlisten/Beliebte_Playlisten Alle_Serien_A-Z Videos_in_Kategorien Video_Flight channel/unforgettable Serien/Serien_Suche Serien/WWE Top_100/Top_100_Playlisten Themen/Sexy echo channel/Clipgenerator musik-tv Videos_A-Z/Videos_in_Playlisten Videos_A-Z/Video_Flight"
-wget --no-check-certificate "http://myvideo.de" -O cache.main.list
+$wgetbin --no-check-certificate "http://myvideo.de" -O cache.main.list
 main_list=`cat cache.main.list | tr ':' '\n' | grep return | grep topgrey | tr ' ' '\n' | grep href | cut -d"'" -f2 | grep -v ^# | sed 's!/!!' | sort -um`
 skip=0
 
@@ -26,7 +28,7 @@ for ROUND1 in $main_list; do
 	if [ $skip == 0 ];then
 		filename=`echo $ROUND1 | tr '/' '.' | tr '-' '.' | tr '_' '.' | tr '%' '.' | tr 'A-Z' 'a-z'`
 		filename_submenu1=$filename
-		wget --no-check-certificate "http://myvideo.de/$ROUND1" -O cache.$filename.list
+		$wgetbin --no-check-certificate "http://myvideo.de/$ROUND1" -O cache.$filename.list
 		echo ROUND1 $ROUND1
 		TITLE=`echo "$ROUND1" | tr '_' ' ' | tr '-' ' '`			
 		echo "$TITLE""#http://atemio.dyndns.tv/mediathek/myvideo/myvideo."$filename".list#http://atemio.dyndns.tv/mediathek/menu/"$filename".jpg#"$filename".jpg"#MyVideo#3 >> cache.myvideo.category.titanlist
@@ -44,7 +46,7 @@ for ROUND1 in $main_list; do
 		if [ $skip == 0 ];then
 			filename=`echo $ROUND2 | tr '/' '.' | tr '-' '.' | tr '_' '.' | tr '%' '.' | tr 'A-Z' 'a-z'`	
 			filename_submenu2=$filename
-			wget --no-check-certificate "http://myvideo.de/$ROUND1/$ROUND2" -O cache.$filename.list
+			$wgetbin --no-check-certificate "http://myvideo.de/$ROUND1/$ROUND2" -O cache.$filename.list
 			echo ROUND2 $ROUND2
 			echo filename $filename
 
@@ -94,7 +96,7 @@ for ROUND1 in $main_list; do
 					echo PIC $PIC
 
 					filename=`echo $ROUND3PATH | tr '/' '.' | tr '-' '.' | tr '_' '.' | tr '%' '.' | tr 'A-Z' 'a-z'`.`echo $ROUND3 | tr '/' '.' | tr '-' '.' | tr '_' '.' | tr '%' '.' | tr 'A-Z' 'a-z'`	
-					wget --no-check-certificate "http://myvideo.de/$ROUND3PATH/$ROUND3" -O cache.$filename.list
+					$wgetbin --no-check-certificate "http://myvideo.de/$ROUND3PATH/$ROUND3" -O cache.$filename.list
 					echo ROUND1 $ROUND1
 					echo ROUND2 $ROUND2
 					echo ROUND3 $ROUND3										
@@ -199,7 +201,7 @@ ls cache.$filename.list
 	else
 		for PAGE in $PAGES; do
 			echo PAGE $PAGE
-			wget --no-check-certificate "http://myvideo.de/$WEBPATH?lpage=$PAGE" -O "cache.$filename.$PAGE.list"
+			$wgetbin --no-check-certificate "http://myvideo.de/$WEBPATH?lpage=$PAGE" -O "cache.$filename.$PAGE.list"
 			LIST2=`cat "cache.$filename.$PAGE.list" | tr '><' '>\n<' | grep "^img id='i" | tr ' ' '~'`
 			for ROUND1 in $LIST2; do
 				piccount=`expr $piccount + 1`
