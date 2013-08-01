@@ -328,12 +328,12 @@ void screenconfigurehdd(char* dev)
 						if(textbox("Message", _("Directory has content\nRealy delete directory and content?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 						{
 							drawscreen(load, 0, 0);
-							ret = 0;
+							ret = -1;
 							char* cmd = NULL;
 							cmd = ostrcat("rm -rf ", path, 0, 0);
 							system(cmd);
 							free(cmd); cmd = NULL;
-							if(file_exist(path) == 0) ret = -1;
+							if(file_exist(path) == 0) ret = 0;
 							clearscreen(load);
 						}
 						else
