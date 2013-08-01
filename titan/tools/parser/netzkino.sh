@@ -1,11 +1,19 @@
+#!/bin/bash
+#
+
+buildtype=$1
+wgetbin="wget -T2 -t2 --waitretry=2"
+
 rm cache.*
 rm -rf _full/netzkino
 mkdir -p _full/netzkino/streams
 piccount=0
 
-wgetbin="wget -T2 -t2 --waitretry=2"
-
-SEARCHLIST="81 61 39 1 4 32 18 6 51 31 3 10 5 33 34 71" 
+if [ "$buildtype" = "full" ];then
+	SEARCHLIST="81 61 39 1 4 32 18 6 51 31 3 10 5 33 34 71" 
+else
+	SEARCHLIST="81" 
+fi
      
 for SEARCH in $SEARCHLIST; do
 	echo SEARCH=$SEARCH 
@@ -61,7 +69,7 @@ for SEARCH in $SEARCHLIST; do
 	else
 		filename=not_found	
 	fi
-
+	
 	piccount=`expr $piccount + 1`
 	URL="http://atemio.dyndns.tv/mediathek/netzkino/streams/netzkino.$filename.list"
 	PIC="http://atemio.dyndns.tv/mediathek/menu/$filename.jpg"
@@ -98,21 +106,29 @@ for SEARCH in $SEARCHLIST; do
 	cat cache.netzkino.$filename.titanlist > _full/netzkino/streams/netzkino.$filename.list
 done
 
-cat cache.netzkino.titanlist | sort -m > _full/netzkino/streams/netzkino.all-newfirst.list
-cat cache.netzkino.titanlist | sort -um > _full/netzkino/streams/netzkino.all-sorted.list
-cat cache.netzkino.category.titanlist | sort -m > _full/netzkino/netzkino.category.list
+if [ "$buildtype" = "full" ];then
+	cat cache.netzkino.titanlist | sort -m > _full/netzkino/streams/netzkino.all-newfirst.list
+	cat cache.netzkino.titanlist | sort -um > _full/netzkino/streams/netzkino.all-sorted.list
+	cat cache.netzkino.category.titanlist | sort -m > _full/netzkino/netzkino.category.list
+	
+	for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
+		filename=`echo "$ROUND" | tr 'A-Z' 'a-z'`
+		if [ `cat cache.netzkino.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
+			cat cache.netzkino.titanlist | grep ^"$ROUND" > cache.netzkino.titanlist."$ROUND"
+			cat cache.netzkino.titanlist."$ROUND" | sort -um > _full/netzkino/streams/netzkino.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/netzkino/streams/netzkino."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Netzkino#3 >> _full/netzkino/netzkino.a-z.list
+		elif [ `cat cache.netzkino.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
+			cat cache.netzkino.titanlist | grep ^"$filename" > cache.netzkino.titanlist."$ROUND"
+			cat cache.netzkino.titanlist."$ROUND" | sort -um > _full/netzkino/streams/netzkino.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/netzkino/streams/netzkino."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Netzkino#3 >> _full/netzkino/netzkino.a-z.list
+		fi
+	done
+fi
 
-for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
-	filename=`echo "$ROUND" | tr 'A-Z' 'a-z'`
-	if [ `cat cache.netzkino.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
-		cat cache.netzkino.titanlist | grep ^"$ROUND" > cache.netzkino.titanlist."$ROUND"
-		cat cache.netzkino.titanlist."$ROUND" | sort -um > _full/netzkino/streams/netzkino.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/netzkino/streams/netzkino."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Netzkino#3 >> _full/netzkino/netzkino.a-z.list
-	elif [ `cat cache.netzkino.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
-		cat cache.netzkino.titanlist | grep ^"$filename" > cache.netzkino.titanlist."$ROUND"
-		cat cache.netzkino.titanlist."$ROUND" | sort -um > _full/netzkino/streams/netzkino.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/netzkino/streams/netzkino."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Netzkino#3 >> _full/netzkino/netzkino.a-z.list
-	fi
-done
+if [ "$buildtype" != "full" ];then
+	cp -a _full/netzkino/* /var/www/atemio/web/mediathek/netzkino
+fi
+
 rm cache.*
-#cp -a _full/netzkino/* /var/www/atemio/web/mediathek/netzkino
+
+exit

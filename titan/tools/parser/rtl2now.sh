@@ -1,11 +1,15 @@
+#!/bin/bash
+#
+
+buildtype=$1
+wgetbin="wget -T2 -t2 --waitretry=2"
+
 DOMAIN=rtl2.de
 SUBDOMAIN=rtl2now
 SHOWNAME=Rtl2Now
 MEDIAURL=atemio.dyndns.tv
 MEDIAPATH=mediathek
 STREAMTYPE=5
-
-wgetbin="wget -T2 -t2 --waitretry=2"
 
 rm cache.*
 rm -rf _full/$SUBDOMAIN
@@ -103,4 +107,10 @@ for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X
 	fi
 done
 
+if [ "$buildtype" != "full" ];then
+	cp -a _full/rtl2now/* /var/www/atemio/web/mediathek/rtl2now
+fi
+
 rm cache.*
+
+exit

@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 
+buildtype=$1
 wgetbin="wget -T2 -t2 --waitretry=2"
 
 rm cache.*
@@ -10,6 +11,7 @@ mkdir -p _full/drdish/streams
 rm cache.*
 touch cache.drdish.titanlist
 
+if [ "$buildtype" = "full" ];then
 WATCHLIST="
 neueste-videos
 sendungen/multimedia/dr-dish-magazin
@@ -26,6 +28,11 @@ sendungen/esa-tv
 sendungen/portalzine-tv
 tv-programm
 "
+else
+WATCHLIST="
+neueste-videos
+"
+fi
 
 #echo 1111111
 
@@ -92,24 +99,28 @@ for ROUND1 in $WATCHLIST; do
 	fi
 done
 
-cat cache.drdish.titanlist | sort -u > _full/drdish/streams/drdish.all-sorted.list
-cat cache.drdish.category.titanlist | sort -u > _full/drdish/drdish.category.list
+if [ "$buildtype" = "full" ];then
+	cat cache.drdish.titanlist | sort -u > _full/drdish/streams/drdish.all-sorted.list
+	cat cache.drdish.category.titanlist | sort -u > _full/drdish/drdish.category.list
+	
+	for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
+		filename=`echo "$ROUND" | tr 'A-Z' 'a-z'`
+		if [ `cat cache.drdish.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
+			cat cache.drdish.titanlist | grep ^"$ROUND" > cache.drdish.titanlist."$ROUND"
+			cat cache.drdish.titanlist."$ROUND" | sort -um > _full/drdish/streams/drdish.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/drdish/streams/drdish."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#DrDish#3 >> _full/drdish/drdish.a-z.list
+		elif [ `cat cache.drdish.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
+			cat cache.drdish.titanlist | grep ^"$filename" > cache.drdish.titanlist."$ROUND"
+			cat cache.drdish.titanlist."$ROUND" | sort -um > _full/drdish/streams/drdish.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/drdish/streams/drdish."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#DrDish#3 >> _full/drdish/drdish.a-z.list
+		fi
+	done
+fi
 
-for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
-	filename=`echo "$ROUND" | tr 'A-Z' 'a-z'`
-	if [ `cat cache.drdish.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
-		cat cache.drdish.titanlist | grep ^"$ROUND" > cache.drdish.titanlist."$ROUND"
-		cat cache.drdish.titanlist."$ROUND" | sort -um > _full/drdish/streams/drdish.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/drdish/streams/drdish."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#DrDish#3 >> _full/drdish/drdish.a-z.list
-	elif [ `cat cache.drdish.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
-		cat cache.drdish.titanlist | grep ^"$filename" > cache.drdish.titanlist."$ROUND"
-		cat cache.drdish.titanlist."$ROUND" | sort -um > _full/drdish/streams/drdish.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/drdish/streams/drdish."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#DrDish#3 >> _full/drdish/drdish.a-z.list
-	fi
-done
+if [ "$buildtype" != "full" ];then
+	cp -a _full/drdish/* /var/www/atemio/web/mediathek/drdish
+fi
+
 rm cache.*
-#cp -a _full/drdish/* /var/www/atemio/web/mediathek/drdish
-#cp -a _full/mainmenu.list /var/www/atemio/web/mediathek
-#cp -a _full/mainmenu-drdish.list /var/www/atemio/web/mediathek
 
 exit
