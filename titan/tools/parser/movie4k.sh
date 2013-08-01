@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-$wgetbinbin="$wgetbin -T2 -t2 --waitretry=2"
+wgetbin="wget -T2 -t2 --waitretry=2"
 
 rm cache.*
 rm _liste
