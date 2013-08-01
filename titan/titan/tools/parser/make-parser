@@ -20,6 +20,10 @@ if [ $# -ne 3 ]; then
 	exit 1
 fi
 
+if [ ! -e "$HOME"/make-svn/logs/parser ];then
+	mkdir -p "$HOME"/make-svn/logs/parser
+fi
+
 HOMEDIR=`pwd`
 TMP=.tmp
 
@@ -29,6 +33,7 @@ cd "$HOME"/parser/BUILD
 
 svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/titan/skins/tithek/tithekmainmenu "$HOME"/parser/BUILD/mediathek
 svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/titan/skins/tithek/menu "$HOME"/parser/BUILD/mediathek/menu
+version=`svn info --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/titan | grep Revision | sed s/'Revision: '//g`
 
 rm -rf `find "$HOME"/parser/BUILD/mediathek -type d -name "*.svn"`
 
@@ -73,6 +78,10 @@ else
 	PARSETYPE=fast
 fi
 
+BEGINTIME=`date +%s`
+DATENAME=´date +"%Y.%m.%d_%H.%m.%S"´
+echo "[make-parser] START (buildtype: $PARSETYPE): $DATENAME > "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME".smal.log
+
 if [ ! -e /var/www/atemio/web/mediathek ];then
 	mkdir -p /var/www/atemio/web/mediathek
 fi
@@ -91,6 +100,8 @@ for ROUND in $LINE; do
 	STARTTIME=`date +"%Y.%m.%d_%H.%M.%S"`
 	
 	cd "$HOME"/parser/BUILD/_full
+	cat "$HOME"/parser/BUILD/_full/$FILENAME/build.log >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME".smal.log
+
 	if [ $PARSETYPE = "fast" ]; then
 		echo "######################## $ROUND $PARSETYPE > continue ###################"
 		continue
@@ -134,3 +145,7 @@ for ROUND in $LINE; do
 	echo "############################ done ###############################"
 	cd "$HOME"/parser/BUILD
 done
+
+DONETIME=`date +%s`
+TIME=`expr $DONETIME - $BEGINTIME`
+echo "[make-parser] build time: ($TIME s) done" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME".smal.log	

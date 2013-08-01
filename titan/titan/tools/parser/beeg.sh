@@ -17,6 +17,10 @@ rm -rf _full/beeg
 mkdir -p _full/beeg/streams
 mkdir _single
 
+BEGINTIME=`date +%s`
+DATENAME=´date +"%Y.%m.%d_%H.%m.%S"´
+echo "[beeg.sh] START (buildtype: $buildtype): $DATENAME > _full/beeg/build.log
+
 if [ "$buildtype" = "full" ];then
 	$wgetbin http://beeg.com -O cache.beeg.main.html
 	
@@ -158,6 +162,10 @@ if [ "$buildtype" = "full" ];then
 	
 	echo beeg closed
 fi
+
+DONETIME=`date +%s`
+TIME=`expr $DONETIME - $BEGINTIME`
+echo "[beeg.sh] build time: ($TIME s) done" >> _full/beeg/build.log	
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/beeg/* /var/www/atemio/web/mediathek/beeg

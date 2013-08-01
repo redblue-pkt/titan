@@ -2,13 +2,17 @@
 #
 
 buildtype=$1
+wgetbin="wget -T2 -t2 --waitretry=2"
 
 rm cache.*
 rm -rf _full/youtube
 mkdir -p _full/youtube/streams
-piccount=0
 
-wgetbin="wget -T2 -t2 --waitretry=2"
+BEGINTIME=`date +%s`
+DATENAME=´date +"%Y.%m.%d_%H.%m.%S"´
+echo "[youtube.sh] START (buildtype: $buildtype): $DATENAME > _full/youtube/build.log
+
+piccount=0
 
 if [ "$buildtype" = "full" ];then
 	SEARCHLIST="charts/trailers/most_popular?region=US&v=2 standardfeeds/DE/most_viewed_Music?v=2 standardfeeds/DE/most_viewed?v=2 standardfeedsDE/top_rated?v=2 videos/-/HD videos?q=bodyrock+tv videos?q=Zuzana+Light+ZWOW videos?q=titannit videos?q=trailer+2013+deutsch" 
@@ -140,9 +144,14 @@ if [ "$buildtype" = "full" ];then
 	done
 fi
 
+DONETIME=`date +%s`
+TIME=`expr $DONETIME - $BEGINTIME`
+echo "[youtube.sh] build time: ($TIME s) done" >> _full/youtube/build.log	
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/youtube/* /var/www/atemio/web/mediathek/youtube
 fi
 
 rm cache.*
+
+exit

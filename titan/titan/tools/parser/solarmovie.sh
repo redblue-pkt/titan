@@ -11,6 +11,10 @@ mkdir -p _full/solarmovie/streams
 rm cache.*
 touch cache.solarmovie.titanlist
 
+BEGINTIME=`date +%s`
+DATENAME=´date +"%Y.%m.%d_%H.%m.%S"´
+echo "[solarmovie.sh] START (buildtype: $buildtype): $DATENAME > _full/solarmovie/build.log
+
 if [ "$buildtype" = "full" ];then
 watchlist="
 watch-action-movies.html
@@ -298,6 +302,10 @@ if [ "$buildtype" = "full" ];then
 		fi
 	done
 fi
+
+DONETIME=`date +%s`
+TIME=`expr $DONETIME - $BEGINTIME`
+echo "[solarmovie.sh] build time: ($TIME s) done" >> _full/solarmovie/build.log	
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/solarmovie/* /var/www/atemio/web/mediathek/solarmovie

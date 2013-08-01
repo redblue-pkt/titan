@@ -7,6 +7,11 @@ wgetbin="wget -T2 -t2 --waitretry=2"
 rm cache.*
 rm -rf _full/netzkino
 mkdir -p _full/netzkino/streams
+
+BEGINTIME=`date +%s`
+DATENAME=´date +"%Y.%m.%d_%H.%m.%S"´
+echo "[netzkino.sh] START (buildtype: $buildtype): $DATENAME > _full/netzkino/build.log
+
 piccount=0
 
 if [ "$buildtype" = "full" ];then
@@ -124,6 +129,10 @@ if [ "$buildtype" = "full" ];then
 		fi
 	done
 fi
+
+DONETIME=`date +%s`
+TIME=`expr $DONETIME - $BEGINTIME`
+echo "[netzkino.sh] build time: ($TIME s) done" >> _full/netzkino/build.log	
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/netzkino/* /var/www/atemio/web/mediathek/netzkino

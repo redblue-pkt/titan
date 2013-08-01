@@ -16,6 +16,11 @@ wgetbin="wget -T2 -t2 --waitretry=2"
 rm cache.*
 rm -rf _full/$SUBDOMAIN
 mkdir -p _full/$SUBDOMAIN/streams
+
+BEGINTIME=`date +%s`
+DATENAME=´date +"%Y.%m.%d_%H.%m.%S"´
+echo "[superrtlnow.sh] START (buildtype: $buildtype): $DATENAME > _full/superrtlnow/build.log
+
 piccount=0
 
 SITEURL=http://www.$SUBDOMAIN.$DOMAIN
@@ -104,6 +109,10 @@ for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X
 		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://$MEDIAURL/$MEDIAPATH/$SUBDOMAIN/streams/$SUBDOMAIN."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://$MEDIAURL/$MEDIAPATH/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#$SHOWNAME#3 >> _full/$SUBDOMAIN/$SUBDOMAIN.a-z.list
 	fi
 done
+
+DONETIME=`date +%s`
+TIME=`expr $DONETIME - $BEGINTIME`
+echo "[superrtlnow.sh] build time: ($TIME s) done" >> _full/superrtlnow/build.log	
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/superrtlnow/* /var/www/atemio/web/mediathek/superrtlnow

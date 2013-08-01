@@ -11,6 +11,10 @@ mkdir -p _full/mlehd/streams
 rm cache.*
 touch cache.mlehd.titanlist
 
+BEGINTIME=`date +%s`
+DATENAME=´date +"%Y.%m.%d_%H.%m.%S"´
+echo "[mlehd.sh] START (buildtype: $buildtype): $DATENAME > _full/mlehd/build.log
+
 # filme a-z
 watchlist="
 www.mle-hd.se
@@ -146,6 +150,10 @@ for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X
 
 	fi
 done
+
+DONETIME=`date +%s`
+TIME=`expr $DONETIME - $BEGINTIME`
+echo "[mlehd.sh] build time: ($TIME s) done" >> _full/mlehd/build.log	
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/mlehd/* /var/www/atemio/web/mediathek/mlehd

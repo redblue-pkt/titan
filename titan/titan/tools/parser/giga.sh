@@ -11,6 +11,10 @@ mkdir -p _full/giga/streams
 rm cache.*
 touch cache.giga.titanlist
 
+BEGINTIME=`date +%s`
+DATENAME=´date +"%Y.%m.%d_%H.%m.%S"´
+echo "[giga.sh] START (buildtype: $buildtype): $DATENAME > _full/giga/build.log
+
 WATCHLIST="
 tv/alle-videos
 "	
@@ -95,6 +99,10 @@ for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X
 		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/giga/streams/giga."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Giga#3 >> _full/giga/giga.a-z.list
 	fi
 done
+
+DONETIME=`date +%s`
+TIME=`expr $DONETIME - $BEGINTIME`
+echo "[giga.sh] build time: ($TIME s) done" >> _full/giga/build.log	
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/giga/* /var/www/atemio/web/mediathek/giga
