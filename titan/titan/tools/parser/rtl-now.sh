@@ -16,7 +16,7 @@ rm -rf _full/$SUBDOMAIN
 mkdir -p _full/$SUBDOMAIN/streams
 
 BEGINTIME=`date +%s`
-DATENAME=´date +"%Y.%m.%d_%H.%m.%S"´
+DATENAME=`date +"%Y.%m.%d_%H.%m.%S"`
 echo "[rtl-now.sh] START (buildtype: $buildtype): $DATENAME > _full/rtl-now/build.log
 
 piccount=0

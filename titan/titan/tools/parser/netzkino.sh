@@ -9,7 +9,7 @@ rm -rf _full/netzkino
 mkdir -p _full/netzkino/streams
 
 BEGINTIME=`date +%s`
-DATENAME=´date +"%Y.%m.%d_%H.%m.%S"´
+DATENAME=`date +"%Y.%m.%d_%H.%m.%S"`
 echo "[netzkino.sh] START (buildtype: $buildtype): $DATENAME > _full/netzkino/build.log
 
 piccount=0
