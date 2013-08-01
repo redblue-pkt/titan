@@ -12,7 +12,7 @@ mkdir -p _full/myvideo/streams
 piccount=0
 
 BEGINTIME=`date +%s`
-DATENAME=´date +"%Y.%m.%d_%H.%m.%S"´
+DATENAME=`date +"%Y.%m.%d_%H.%m.%S"`
 echo "[myvideo.sh] START (buildtype: $buildtype): $DATENAME > _full/myvideo/build.log
 
 mainurl=http://www.myvideo.de

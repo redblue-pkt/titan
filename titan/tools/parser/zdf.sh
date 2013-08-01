@@ -9,7 +9,7 @@ rm -rf _full/zdf
 mkdir -p _full/zdf/streams
 
 BEGINTIME=`date +%s`
-DATENAME=´date +"%Y.%m.%d_%H.%m.%S"´
+DATENAME=`date +"%Y.%m.%d_%H.%m.%S"`
 echo "[zdf.sh] START (buildtype: $buildtype): $DATENAME > _full/zdf/build.log
 
 if [ "$buildtype" = "full" ];then
