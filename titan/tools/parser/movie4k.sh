@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 
+$wgetbinbin="$wgetbin -T2 -t2 --waitretry=2"
 
 rm cache.*
 rm _liste
@@ -25,7 +26,7 @@ count=0
 for ROUND2 in $watchlist; do
 	count=`expr $count + 1`	
 	filename2="$ROUND2"
-	wget "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
+	$wgetbin "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
 	if [ `cat cache."$count"."$filename2" | grep boxgrey | tr '><' '\n' | grep .html | grep -v './'  | cut -d'"' -f2 | wc -l` -gt 0 ];then
 		pagelist="$ROUND2 `cat cache.$count.$filename2 | grep boxgrey | tr '><' '\n' | grep .html | grep -v './'  | cut -d'"' -f2`"	
 	else
@@ -34,7 +35,7 @@ for ROUND2 in $watchlist; do
 
 	for ROUND3 in $pagelist; do
 		filename3="$ROUND3"
-		wget "http://www.movie4k.to/$ROUND3" -O cache."$count"."$filename3"
+		$wgetbin "http://www.movie4k.to/$ROUND3" -O cache."$count"."$filename3"
 
 		id_list=`cat cache."$count"."$filename3" | grep '<a href="' | cut -d'"' -f2 | sort -u | grep .html`
 
@@ -95,7 +96,7 @@ for ROUND2 in $watchlist; do
 	piccount=`expr $piccount + 1`
 	count=`expr $count + 1`	
 	filename2="$ROUND2"
-	wget "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
+	$wgetbin "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
 	if [ "$ROUND2" = "index.php?lang=de" ];then
 		TYPE="newest.ger"
 		TYPENAME="Kino Filme (de)"
@@ -181,7 +182,7 @@ count=0
 for ROUND3 in $watchlist; do
 	count=`expr $count + 1`
 	filename3="$ROUND3"
-	wget "http://www.movie4k.to/$ROUND3" -O cache."$count"."$filename3"
+	$wgetbin "http://www.movie4k.to/$ROUND3" -O cache."$count"."$filename3"
 
 	id_list=`cat cache."$count"."$filename3" | grep tvshows-season- | cut -d '"' -f6 | sort -u | grep .html`
 	echo id_list $id_list
@@ -239,7 +240,7 @@ movies-updates.html
 
 for ROUND3 in $watchlist; do
 	filename3="$ROUND3"
-	wget "http://www.movie4k.to/$ROUND3" -O cache."$count"."$filename3"
+	$wgetbin "http://www.movie4k.to/$ROUND3" -O cache."$count"."$filename3"
 
 	id_list=`cat cache."$count"."$filename3" | grep "\.html"  | cut -d'"' -f2 | grep "\.html" | sort -um`
 
@@ -318,13 +319,13 @@ for ROUND1 in $watchlist; do
 	count=`expr $count + 1`
 
 	filename1="$ROUND1"
-	wget "http://www.movie4k.to/$ROUND1" -O cache."$count"."$filename1"
+	$wgetbin "http://www.movie4k.to/$ROUND1" -O cache."$count"."$filename1"
 
 	genrelist=`cat cache."$count"."$filename1" | grep tdmovies | grep .html | cut -d '"' -f6`
 	for ROUND2 in $genrelist; do
 		count=`expr $count + 1`	
 		filename2="$ROUND2"
-		wget "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
+		$wgetbin "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
 		if [ `cat cache."$count"."$filename2" | grep boxgrey | tr '><' '\n' | grep .html | grep -v './'  | cut -d'"' -f2 | wc -l` -gt 0 ];then
 			pagelist="$ROUND2 `cat cache.$count.$filename2 | grep boxgrey | tr '><' '\n' | grep .html | grep -v './'  | cut -d'"' -f2`"	
 		else
@@ -335,7 +336,7 @@ for ROUND1 in $watchlist; do
 		for ROUND3 in $pagelist; do
 			count=`expr $count + 1`	
 			filename3="$ROUND3"
-			wget "http://www.movie4k.to/$ROUND3" -O cache."$count"."$filename3"
+			$wgetbin "http://www.movie4k.to/$ROUND3" -O cache."$count"."$filename3"
 			ck=`expr $ck + 1`
 			echo !!!!!!!!!!!!!!!!!!!ck $ck
 			if [ "$ck" = "10" ];then
@@ -398,12 +399,12 @@ for ROUND1 in $watchlist; do
 	count=`expr $count + 1`
 
 	filename1="$ROUND1"
-	wget "http://www.movie4k.to/$ROUND1" -O cache."$count"."$filename1"
+	$wgetbin "http://www.movie4k.to/$ROUND1" -O cache."$count"."$filename1"
 	genrelist=`cat cache."$count"."$filename1" | grep tvshows-genre | grep .html | cut -d'"' -f6 | sort -um`
 	for ROUND2 in $genrelist; do
 		count=`expr $count + 1`	
 		filename2="$ROUND2"
-		wget "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
+		$wgetbin "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
 
 		id_list=`cat cache."$count"."$filename2" | grep tvshows-season | grep .html | cut -d'"' -f6 | sort -um`
 		TITLE=`echo $ROUND2 | sed 's/.html//' | tr '-' '\n' | tail -n1`

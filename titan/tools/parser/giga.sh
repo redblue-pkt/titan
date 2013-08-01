@@ -1,6 +1,8 @@
 #!/bin/bash
 #
 #cat index.html.3| grep "<h1><a href=" | cut -d'"' -f2
+wgetbin="wget -T2 -t2 --waitretry=2"
+
 rm cache.*
 rm _liste
 rm -rf _full/giga
@@ -29,15 +31,15 @@ for ROUND0 in $WATCHLIST; do
 			
 	for ROUND1 in $tags; do
 		count=`expr $count + 1`
-	#	wget http://www.giga.de/$ROUND1/ -O cache.giga."$filename"."$count"
-		wget http://www.giga.de/$ROUND1 -O cache.giga."$filename"."$count"
+	#	$wgetbin http://www.giga.de/$ROUND1/ -O cache.giga."$filename"."$count"
+		$wgetbin http://www.giga.de/$ROUND1 -O cache.giga."$filename"."$count"
 	
 	#	LIST=`cat cache.giga."$filename"."$count" | sed -e 's/$/\r/' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's/ \+/~/g' | sed 's!<span~class="timestamp">!\n\n\n<span~class="timestamp">!g' | grep ^'<span~class="timestamp">' > tests`
 		LIST=`cat cache.giga."$filename"."$count" | grep "<h1><a href=" | cut -d'"' -f2`
 		for ROUND2 in $LIST; do
 			count=`expr $count + 1`
 #			echo ROUND2 $ROUND2
-			wget $ROUND2 -O cache.giga."$filename"."$count"
+			$wgetbin $ROUND2 -O cache.giga."$filename"."$count"
 #			ls cache.giga."$filename"."$count"
 			URL=`cat cache.giga."$filename"."$count" | grep 'rel="media:video" resource=' | sed 's!rel="media:video" resource=!\nlink=!g' | grep ^link= | cut -d'"' -f2`
 #			echo URL $URL

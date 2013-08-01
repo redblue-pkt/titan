@@ -3,6 +3,8 @@ rm -rf _full/netzkino
 mkdir -p _full/netzkino/streams
 piccount=0
 
+wgetbin="wget -T2 -t2 --waitretry=2"
+
 SEARCHLIST="81 61 39 1 4 32 18 6 51 31 3 10 5 33 34 71" 
      
 for SEARCH in $SEARCHLIST; do
@@ -71,7 +73,7 @@ for SEARCH in $SEARCHLIST; do
 	TITLE=""
 																						
 	rm cache.top_rated.list
-	wget --no-check-certificate "http://www.netzkino.de/capi/get_category_posts?count=500&id=$SEARCH&custom_fields=Streaming" -O cache.$filename.list
+	$wgetbin --no-check-certificate "http://www.netzkino.de/capi/get_category_posts?count=500&id=$SEARCH&custom_fields=Streaming" -O cache.$filename.list
 
 	LIST=`cat cache.$filename.list | sed 's/}}\+/\n/g' | grep '"custom_fields":{"Streaming"'`
 

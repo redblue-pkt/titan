@@ -1,12 +1,14 @@
 #!/bin/bash
 #
 
+wgetbin="wget -T2 -t2 --waitretry=2"
+
 LIST="/Stream/"
 rm file.test*
 rm movieliste.log
 
 for CASE in A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
-	wget "http://kinox.to/aGET/List/?sEcho=1&iColumns=10&sColumns=&iDisplayStart=1&iDisplayLength=50&iSortingCols=1&iSortCol_0=5&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22movie%22%2C%22fLetter%22%3A%22$CASE%22%7D" -O file.test.$CASE
+	$wgetbin "http://kinox.to/aGET/List/?sEcho=1&iColumns=10&sColumns=&iDisplayStart=1&iDisplayLength=50&iSortingCols=1&iSortCol_0=5&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22movie%22%2C%22fLetter%22%3A%22$CASE%22%7D" -O file.test.$CASE
 	LINES=`cat file.test.$CASE | tr ',' '\n' | grep iTotalDisplayRecords | cut -d '"' -f4`
 	echo LINES $LINES
 
@@ -35,7 +37,7 @@ for CASE in A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
 	do
 		echo "count $count"
 		count=`expr $count + 1`
-		wget "http://kinox.to/aGET/List/?sEcho=1&iColumns=10&sColumns=&iDisplayStart=$count&iDisplayLength=50&iSortingCols=1&iSortCol_0=5&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22movie%22%2C%22fLetter%22%3A%22$CASE%22%7D" -O file.test.$CASE.$count
+		$wgetbin "http://kinox.to/aGET/List/?sEcho=1&iColumns=10&sColumns=&iDisplayStart=$count&iDisplayLength=50&iSortingCols=1&iSortCol_0=5&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22movie%22%2C%22fLetter%22%3A%22$CASE%22%7D" -O file.test.$CASE.$count
 		TMPLIST=`cat file.test.$CASE.$count | tr '],[' '\n' | grep 'Stream' | cut -d '"' -f3 | tr '\\' ' ' | sed 's/ \+//g'`
 		echo $TMPLIST | tr ' ' '\n' >> file.test.tmpliste
 #ls file.test.$CASE.$count
@@ -70,7 +72,7 @@ echo main_list $main_list
 piccount=0
 counttt=0
 for ROUND0 in $main_list; do
-	wget --no-check-certificate "http://kinox.to/$ROUND0.html" -O cache.main.next.list
+	$wgetbin --no-check-certificate "http://kinox.to/$ROUND0.html" -O cache.main.next.list
 #exit
 	main_next_list=`cat cache.main.next.list | grep /Stream/ | sed 's!/Stream/!\n/Stream/!' | grep ^/Stream/ | cut -d '"' -f1  | cut -d "'" -f1 | sort -um`
 	
@@ -110,7 +112,7 @@ for ROUND0 in $main_list; do
 		
 		TITLE=`echo $picname | sed 's!.jpg!!' | tr "_" " "`
 	
-		wget --no-check-certificate "http://kinox.to/$ROUND1" -O cache."$filename".list
+		$wgetbin --no-check-certificate "http://kinox.to/$ROUND1" -O cache."$filename".list
 		PIC=`cat cache."$filename".list | tr '><' '>\n<' | grep $picname | cut -d '"' -f2 | sort -um`
 		LANG=`cat cache."$filename".list | grep 'alt="language" src="/gr/sys/lng' | sed 's!alt="language" src="/gr/sys/lng/!\n!' | tail -n1 |cut -d"." -f1`
 	 	LANGTXT=" (??)"
@@ -152,7 +154,7 @@ for ROUND0 in $main_list; do
 	done
 done
 
-wget http://kinox.to -O cache.main.update.list
+$wgetbin http://kinox.to -O cache.main.update.list
 
 #LIST=`cat cache.main.update.list | grep "Odd parentalguidiance" | grep ".html," | cut -d'"' -f4`
 LIST=`cat cache.main.update.list | grep "Odd parentalguidiance" | grep -v ".html,s" | cut -d'"' -f4`
@@ -165,7 +167,7 @@ for ROUND3 in $LIST; do
 		count=`expr $count + 1`
 		piccount=`expr $piccount + 1`
 		filename3=`echo $ROUND3 | sed 's!/Stream/!!'`
-		wget "http://kinox.to/$ROUND3" -O cache."$count"."$filename3"
+		$wgetbin "http://kinox.to/$ROUND3" -O cache."$count"."$filename3"
 		ls cache."$count"."$filename3"
 		picname=`echo $filename3 | sed 's!.html!.jpg!'`
 

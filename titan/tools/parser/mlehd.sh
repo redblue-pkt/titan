@@ -1,6 +1,8 @@
 #!/bin/bash
 #
 
+wgetbin="wget -T2 -t2 --waitretry=2"
+
 rm cache.*
 rm _liste
 rm -rf _full/mlehd
@@ -20,7 +22,7 @@ icount=0
 for ROUND2 in $watchlist; do
 	count=`expr $count + 1`	
 	filename2="$ROUND2"
-	wget "http://$ROUND2" -O cache."$count"."$filename2"
+	$wgetbin "http://$ROUND2" -O cache."$count"."$filename2"
 
 	id_list="`cat cache."$count"."$filename2" | grep "opacity" | cut -d'"' -f2`"
 	for ROUND0 in $id_list; do
@@ -35,9 +37,9 @@ for ROUND2 in $watchlist; do
 
 ###
 #		icount=`expr $icount + 1`
-#		wget "$ROUND0" -O cache.urlsrc."$icount"
+#		$wgetbin "$ROUND0" -O cache.urlsrc."$icount"
 #		playlist=`cat cache.urlsrc."$icount" | tr '\015' '\012' | grep playlis | cut -d"'" -f2`
-#		wget "$playlist" -O cache.urlstream."$icount"
+#		$wgetbin "$playlist" -O cache.urlstream."$icount"
 #		STREAMURL=`cat cache.urlstream."$icount" | sed 's!location>!\nlocation<!' | grep location | cut -d'<' -f2`
 		type=38
 #		if [ ! -z $STREAMURL ] && [ `echo $STREAMURL | grep "http://" | wc -l` -eq 1 ];then
@@ -73,13 +75,13 @@ for ROUND2 in $watchlist; do
 	for ROUND3 in $catlist; do
 		count=`expr $count + 1`
 		filename3="$ROUND3"
-		wget "http://www.mle-hd.se/category/$ROUND3/" -O cache."$count"."$filename3"
+		$wgetbin "http://www.mle-hd.se/category/$ROUND3/" -O cache."$count"."$filename3"
 		pagelist="http://www.mle-hd.se/category/$ROUND3/ "`cat cache."$count"."$filename3" | grep "Page 1 of" | tr "'" '\n' | grep ^http`
 		for ROUND4 in $pagelist; do
 			count=`expr $count + 1`
 			filename4=`echo $ROUND4 | sed 's!http://www.mle-hd.se/!!' | tr '/' '.'`
 			piccount=`expr $piccount + 1`
-			wget "$ROUND4" -O cache."$count"."$filename4"		
+			$wgetbin "$ROUND4" -O cache."$count"."$filename4"		
 			id_list="`cat cache."$count"."$filename4" | grep "opacity" | cut -d'"' -f2`"
 			for ROUND5 in $id_list; do
 				piccount=`expr $piccount + 1`
@@ -92,9 +94,9 @@ for ROUND2 in $watchlist; do
 				fi
 		
 #				icount=`expr $icount + 1`
-#				wget "$ROUND5" -O cache.urlsrc."$icount"
+#				$wgetbin "$ROUND5" -O cache.urlsrc."$icount"
 #				playlist=`cat cache.urlsrc."$icount" | tr '\015' '\012' | grep playlis | cut -d"'" -f2`
-#				wget "$playlist" -O cache.urlstream."$icount"
+#				$wgetbin "$playlist" -O cache.urlstream."$icount"
 #				STREAMURL=`cat cache.urlstream."$icount" | sed 's!location>!\nlocation<!' | grep location | cut -d'<' -f2`
 				type=38
 #				if [ ! -z $STREAMURL ] && [ `echo $STREAMURL | grep "http://" | wc -l` -eq 1 ];then

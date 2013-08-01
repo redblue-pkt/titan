@@ -2,6 +2,8 @@
 echo beeg started
 date
 
+wgetbin="wget -T2 -t2 --waitretry=2"
+
 skipall=1
 count=0
 count0=0
@@ -15,7 +17,7 @@ rm -rf _single
 rm -rf _full/beeg
 mkdir -p _full/beeg/streams
 mkdir _single
-wget http://beeg.com -O cache.beeg.main.html
+$wgetbin http://beeg.com -O cache.beeg.main.html
 
 sectionstags=`cat cache.beeg.main.html | grep 'href="/tag/' | cut -d '"' -f4`
 count=`cat cache.beeg.main.html | grep ^'<a href="/section/home/' | grep 'target="_self">' | cut -d ">" -f2 | cut -d"<" -f1 | tail -n1`
@@ -33,8 +35,8 @@ for ROUND0 in $sections; do
 	count0=`expr $count0 + 1`
 	echo "sections($count0)=$ROUND0"
 
-#	echo wget $ROUND0
-	wget $ROUND0 -O cache.beeg.section."$count0".html
+#	echo $wgetbin $ROUND0
+	$wgetbin $ROUND0 -O cache.beeg.section."$count0".html
 
 	tumbid=`cat cache.beeg.section."$count0".html | grep "var tumbid" | cut -d"[" -f2 | cut -d"]" -f1 | tr ',' ' '`
 	tumbalt=`cat cache.beeg.section."$count0".html | grep "var tumbalt" | cut -d"[" -f2 | cut -d"]" -f1 | sed "s/','\+/|/g" | tr ' ' '_' | tr '|' ' '`
@@ -74,7 +76,7 @@ done
 
 for ROUND3 in $sectionstags; do
 	count3=`expr $count3 + 1`
-	wget http://beeg.com$ROUND3 -O cache.beeg.tags.$count3.html
+	$wgetbin http://beeg.com$ROUND3 -O cache.beeg.tags.$count3.html
 	tagcount=`cat cache.beeg.tags.$count3.html | grep ^'<a href="/tag/' | sort -u | cut -d"/" -f4 | tail -n1`
 
 #if [ $count3 = 3 ];then
@@ -109,8 +111,8 @@ for ROUND3 in $sectionstags; do
 				cat cache.beeg.category.titanlist | sort -u > _full/beeg/beeg.category.list
 			fi
 						
-#			echo wget $ROUND4
-			wget $ROUND4 -O cache.beeg.tags."$count4".html
+#			echo $wgetbin $ROUND4
+			$wgetbin $ROUND4 -O cache.beeg.tags."$count4".html
 		
 			tumbid=`cat cache.beeg.tags."$count4".html | grep "var tumbid" | cut -d"[" -f2 | cut -d"]" -f1 | tr ',' ' '`
 		

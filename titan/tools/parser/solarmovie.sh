@@ -1,6 +1,8 @@
 #!/bin/bash
 #
 
+wgetbin="wget -T2 -t2 --waitretry=2"
+
 rm cache.*
 rm _liste
 rm -rf _full/solarmovie
@@ -205,7 +207,7 @@ for ROUND0 in $watchlist; do
 	count=`expr $count + 1`
 
 	filename0=`echo $ROUND0 | tr '/' '-'`
-	wget "http://www.solarmovie.so/$ROUND0" -O cache."$count"."$filename0"
+	$wgetbin "http://www.solarmovie.so/$ROUND0" -O cache."$count"."$filename0"
 	if [ `cat cache."$count"."$filename0" | grep "<h4>Nothing was found</h4>" | wc -l` -eq 0 ];then
 		if [ `cat cache."$count"."$filename0" | grep "DOCTYPE html PUBLIC" | wc -l` -eq 0 ]; then
 			pages=`cat cache."$count"."$filename0" | zcat | grep ".html?page=" | grep "</a></li>" | grep -v 'class="next">' | sed 's!page=!\npage="!' | grep ^"page=" | cut -d'"' -f2`
@@ -234,8 +236,8 @@ for ROUND0 in $watchlist; do
 			do
 				echo "pcount $pcount"
 				pcount=`expr $pcount + 1`
-		#		wget "http://www.solarmovie.so/$ROUND0.html?page=$pcount" -O cache."$count".page"$pcount"."$filename0"
-				wget "http://www.solarmovie.so/$ROUND0?page=$pcount" -O cache."$count".page"$pcount"."$filename0"
+		#		$wgetbin "http://www.solarmovie.so/$ROUND0.html?page=$pcount" -O cache."$count".page"$pcount"."$filename0"
+				$wgetbin "http://www.solarmovie.so/$ROUND0?page=$pcount" -O cache."$count".page"$pcount"."$filename0"
 
 				if [ `cat cache."$count".page"$pcount"."$filename0" | grep "<h4>Nothing was found</h4>" | wc -l` -eq 0 ];then
 					if [ `cat cache."$count".page"$pcount"."$filename0" | grep "DOCTYPE html PUBLIC" | wc -l` -eq 0 ]; then
