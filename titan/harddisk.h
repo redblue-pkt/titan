@@ -606,17 +606,16 @@ void hddformat(char* dev, char* filesystem)
 			
 	
 		if(ostrcmp(filesystem, "vfat") == 0)
-			cmd = ostrcat("/sbin/cmd.sh mkfs.fat -F 32 /dev/" , dev, 0, 0);
+			cmd = ostrcat("/sbin/cmd.sh \"mkfs.fat -F 32\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(filesystem, "jfs") == 0)
-			cmd = ostrcat("/sbin/cmd.sh mkfs.jfs -q /dev/" , dev, 0, 0);
+			cmd = ostrcat("/sbin/cmd.sh \"mkfs.jfs -q\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(filesystem, "ext2") == 0)
 			cmd = ostrcat("/sbin/cmd.sh mkfs.ext2 /dev/" , dev, 0, 0);
 		else if(ostrcmp(filesystem, "ext3") == 0)
-			cmd = ostrcat("/sbin/cmd.sh mkfs.ext3 -T largefile -m0 -O dir_index /dev/" , dev, 0, 0);
+			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext3 -T largefile -m0 -O dir_index\" /dev/" , dev, 0, 0);
 
 		if(format == 2) cmd = ostrcat(cmd , "1", 1, 0);
-
-/*			
+			
 		if(record == 1) 
 			cmd = ostrcat(cmd , " 1", 1, 0);
 		else
@@ -636,7 +635,6 @@ void hddformat(char* dev, char* filesystem)
 			cmd = ostrcat(cmd , " 1", 1, 0);
 		else
 			cmd = ostrcat(cmd , " 0", 1, 0);
-*/
 
 		debug(80, "format cmd: %s", cmd);
 		system(cmd);
@@ -656,13 +654,13 @@ void hddfsck(char* dev)
 		debug(80, "device=%s filesystem=%s", dev, node->filesystem);
 
 		if(ostrcmp(node->filesystem, "vfat") == 0)
-			cmd = ostrcat("/sbin/cmd.sh fsck.fat -a -v /dev/" , dev, 0, 0);
+			cmd = ostrcat("/sbin/cmd.sh \"fsck.fat -a -v\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(node->filesystem, "jfs") == 0)
-			cmd = ostrcat("/sbin/cmd.sh fsck.jfs -f -p /dev/" , dev, 0, 0);
+			cmd = ostrcat("/sbin/cmd.sh \"fsck.jfs -f -p\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(node->filesystem, "ext2") == 0)
-			cmd = ostrcat("/sbin/cmd.sh fsck.ext2 -f -p /dev/" , dev, 0, 0);
+			cmd = ostrcat("/sbin/cmd.sh \"fsck.ext2 -f -p\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(node->filesystem, "ext3") == 0)
-			cmd = ostrcat("/sbin/cmd.sh fsck.ext3 -f -p /dev/" , dev, 0, 0);
+			cmd = ostrcat("/sbin/cmd.sh \"fsck.ext3 -f -p\" /dev/" , dev, 0, 0);
 
 		debug(80, "fsck cmd: %s", cmd);
 		system(cmd);
