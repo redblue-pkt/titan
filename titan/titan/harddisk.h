@@ -360,6 +360,15 @@ void screenconfigurehdd(char* dev)
 					system("hotplug.sh first");
 					clearscreen(load);
 				}
+				//TODO
+				/*
+				if(ostrcmp(listbox->select->name, "delrecord") == 0 || ostrcmp(listbox->select->name, "delswap") == 0 || ostrcmp(listbox->select->name, "delext") == 0 || ostrcmp(listbox->select->name, "delbackup") == 0)
+				{
+					drawscreen(load, 0, 0);
+					system("hotplug.sh first");
+					clearscreen(load);
+				}
+				*/
 			}
 			drawscreen(screen, 0, 0);
 		}
@@ -540,7 +549,10 @@ start:
 				free(tmpstr); tmpstr = NULL;
 			}
 			else if(mode == 1)
-				hddfsck(listbox->select->name);
+			{
+				if(hddfsck(listbox->select->name) == 1)
+					continue;
+			}
 			else if(mode == 2)
 			{
 				tmpstr = ostrcat(listbox->select->name, NULL, 0, 0);
@@ -642,17 +654,18 @@ void hddformat(char* dev, char* filesystem)
 	}
 }
 
-void hddfsck(char* dev)
+int hddfsck(char* dev)
 {
 	char* cmd = NULL;
 	struct hdd* node = NULL;
+	
+	node = gethdd(dev);
+	if(node == NULL) return 1;
+	if(node->filesystem == NULL) return 1;
+	debug(80, "device=%s filesystem=%s", dev, node->filesystem);
 
 	if(textbox(_("Message"), _("Are you sure you want to check this Partition?\nBox reboots after check"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 	{
-		node = gethdd(dev);
-		if(node == NULL) return;
-		debug(80, "device=%s filesystem=%s", dev, node->filesystem);
-
 		if(ostrcmp(node->filesystem, "vfat") == 0)
 			cmd = ostrcat("/sbin/cmd.sh \"fsck.fat -a -v\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(node->filesystem, "jfs") == 0)
@@ -667,6 +680,7 @@ void hddfsck(char* dev)
 		free(cmd); cmd = NULL;
 	}
 
+  return 0;
 }
 
 void screenharddisksleep()
