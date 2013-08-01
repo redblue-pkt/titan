@@ -258,7 +258,7 @@ int selectchannelgmepg(struct skin* listbox);
 int screenmultiepg(struct channel* chnode, struct epg* epgnode, int flag);
 
 //harddisk.h
-void hddfsck(char* dev);
+int hddfsck(char* dev);
 void hddformat(char* dev, char* filesystem);
 int addhddall();
 
