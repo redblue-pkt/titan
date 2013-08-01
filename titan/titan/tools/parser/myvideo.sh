@@ -1,17 +1,23 @@
 #!/bin/bash
 #
 
+buildtype=$1
 wgetbin="wget -T2 -t2 --waitretry=2"
 
 rm cache.*
 rm _liste
 rm -rf _full/myvideo
+
 mkdir -p _full/myvideo/streams
 piccount=0
 
 mainurl=http://www.myvideo.de
-mainliste="Top_100 Videos_A-Z Serien Filme Musik"
-
+if [ "$buildtype" = "full" ];then
+	mainliste="Top_100 Videos_A-Z Serien Filme Musik"
+else
+	mainliste="Top_100"
+fi
+	
 black_list="Themen webstars tv Playlisten Flight Videos_in_Playlisten Videos_in_Playlisten/Beliebte_Playlisten Alle_Serien_A-Z Videos_in_Kategorien Video_Flight channel/unforgettable Serien/Serien_Suche Serien/WWE Top_100/Top_100_Playlisten Themen/Sexy echo channel/Clipgenerator musik-tv Videos_A-Z/Videos_in_Playlisten Videos_A-Z/Video_Flight"
 $wgetbin --no-check-certificate "http://myvideo.de" -O cache.main.list
 main_list=`cat cache.main.list | tr ':' '\n' | grep return | grep topgrey | tr ' ' '\n' | grep href | cut -d"'" -f2 | grep -v ^# | sed 's!/!!' | sort -um`
@@ -136,141 +142,143 @@ for ROUND1 in $main_list; do
 	cat cache.myvideo."$filename_submenu1".titanlist | sort -um > _full/myvideo/myvideo."$filename_submenu1".list
 
 done
-echo main_list $main_list
-cat cache.myvideo.category.titanlist | sort -um > _full/myvideo/myvideo.category.list
 
-
-#WEBPATH Themen/Talente
-#round Lifestyle#Themen/Lifestyle
-#TITLE Lifestyle	
+if [ "$buildtype" = "full" ];then
+	echo main_list $main_list
+	cat cache.myvideo.category.titanlist | sort -um > _full/myvideo/myvideo.category.list
 	
-WEBLIST=`cat _liste`
-echo weblist $WEBLIST
-for LIST in $WEBLIST; do
-	filename=`echo $LIST | cut -d "#" -f1`
-	WEBPATH=`echo $LIST | cut -d "#" -f2`
-	echo filename $filename
-	echo WEBPATH $WEBPATH
-	LIST1=`cat cache.$filename.list | tr '><' '>\n<' | grep "^img id='i" | tr ' ' '~'`
-	echo LIST1 $LIST1
-	PAGES=`cat cache.$filename.list | tr '><' '>\n<' | grep "page" | grep 'pView pnNumbers' | cut -d ">" -f2 | tr '\n' ' '`
-	echo PAGES $PAGES
-	echo $PAGES >cache.myvideo.$filename.pages.titanlist
-	if [ -z "$PAGES" ];then
-		for ROUND1 in $LIST1; do
-			piccount=`expr $piccount + 1`
-			echo round1 $ROUND1
-
-			ROUND1=`echo $ROUND1 | tr '~' '\n'`
-			ID=`echo $ROUND1 | tr '~' '\n' | grep "id='" | cut -d"'" -f2 | sed 's/i//'`
-			echo ID $ID
-
-#			PIC=`cat "cache.$filename.list" | tr ' ' '\n' | grep "$ID"| grep ".jp" | grep thumbs | cut -d "'" -f2 | tr ' ' '\n' | head -n1`
-			PIC=`cat "cache.$filename.list" | tr ' ' '\n' | grep "$ID" | grep ".jp" | grep thumbs | cut -d "'" -f2 | tr ' ' '\n' | head -n1`
-			echo PIC $PIC
-
-ls cache.$filename.list
-			TITLE=`cat cache.$filename.list | tr ' ' '\n' | grep "/watch/$ID" | head -n1 | cut -d"'" -f2 | cut -d"/" -f4 | tr '_' ' '`			
-			echo TITLE $TITLE
-	
-#			URL=http://www.myvideo.de/watch/$ID/`echo $TITLE | tr ' ' '_'`
-
-#echo $PIC | tr '/' '\n' | tail -n 4 | head -n1`"/"`echo $PIC | tr '/' '\n' | tail -n 3 | head -n1`"
-#			URL="http://www.myvideo.de/dynamic/get_player_video_xml.php?flash_playertype=SER&ID=$ID&_countlimit=4&autorun=yes;pageUrl=http://www.myvideo.de/watch/$ID/;playpath=flv:`echo $PIC | tr '/' '\n' | tail -n 4 | head -n1`/`echo $PIC | tr '/' '\n' | tail -n 3 | head -n1`/$ID;$ID"
-			URL="http://www.myvideo.de/dynamic/get_player_video_xml.php?domain=www.myvideo.de&flash_playertype=SER&ds=1&autorun=yes&ID=$ID&_countlimit=4;pageUrl=http://www.myvideo.de/watch/$ID/;playpath=flv:`echo $PIC | tr '/' '\n' | tail -n 4 | head -n1`/`echo $PIC | tr '/' '\n' | tail -n 3 | head -n1`/$ID;$ID"
-
-			echo URL $URL
-			if [ -z $PIC ];then
-				PIC=`echo $ROUND1 | cut -d"'" -f4`
-				if [ -z $PIC ];then
-					LINE="$TITLE#$URL#http://atemio.dyndns.tv/mediathek/menu/comedy.jpg#myvideo_$piccount.jpg#MyVideo#12"
-#					exit
-				else
-					LINE="$TITLE#$URL#$PIC#myvideo_$piccount.jpg#MyVideo#12"
-				fi				
-			else
-				LINE="$TITLE#$URL#$PIC#myvideo_$piccount.jpg#MyVideo#12"
-			fi
-			echo LINE $LINE
-#			exit
-			if [ ! -z "$TITLE" ]; then
-				echo $LINE >> cache.myvideo."$filename".titanlist
-				echo $LINE >> cache.myvideo.all.titanlist
-			fi
-		done
-	else
-		for PAGE in $PAGES; do
-			echo PAGE $PAGE
-			$wgetbin --no-check-certificate "http://myvideo.de/$WEBPATH?lpage=$PAGE" -O "cache.$filename.$PAGE.list"
-			LIST2=`cat "cache.$filename.$PAGE.list" | tr '><' '>\n<' | grep "^img id='i" | tr ' ' '~'`
-			for ROUND1 in $LIST2; do
+	#WEBPATH Themen/Talente
+	#round Lifestyle#Themen/Lifestyle
+	#TITLE Lifestyle	
+		
+	WEBLIST=`cat _liste`
+	echo weblist $WEBLIST
+	for LIST in $WEBLIST; do
+		filename=`echo $LIST | cut -d "#" -f1`
+		WEBPATH=`echo $LIST | cut -d "#" -f2`
+		echo filename $filename
+		echo WEBPATH $WEBPATH
+		LIST1=`cat cache.$filename.list | tr '><' '>\n<' | grep "^img id='i" | tr ' ' '~'`
+		echo LIST1 $LIST1
+		PAGES=`cat cache.$filename.list | tr '><' '>\n<' | grep "page" | grep 'pView pnNumbers' | cut -d ">" -f2 | tr '\n' ' '`
+		echo PAGES $PAGES
+		echo $PAGES >cache.myvideo.$filename.pages.titanlist
+		if [ -z "$PAGES" ];then
+			for ROUND1 in $LIST1; do
 				piccount=`expr $piccount + 1`
 				echo round1 $ROUND1
-				
+	
 				ROUND1=`echo $ROUND1 | tr '~' '\n'`
 				ID=`echo $ROUND1 | tr '~' '\n' | grep "id='" | cut -d"'" -f2 | sed 's/i//'`
 				echo ID $ID
-
-#				PIC=`cat "cache.$filename.$PAGE.list" | tr ' ' '\n' | grep "$ID"| grep ".jp" | cut -d "'" -f2 | tr ' ' '\n' | head -n1`
-				PIC=`cat "cache.$filename.$PAGE.list" | tr ' ' '\n' | grep "$ID" | grep ".jp" | grep thumbs | cut -d "'" -f2 | tr ' ' '\n' | head -n1`
+	
+	#			PIC=`cat "cache.$filename.list" | tr ' ' '\n' | grep "$ID"| grep ".jp" | grep thumbs | cut -d "'" -f2 | tr ' ' '\n' | head -n1`
+				PIC=`cat "cache.$filename.list" | tr ' ' '\n' | grep "$ID" | grep ".jp" | grep thumbs | cut -d "'" -f2 | tr ' ' '\n' | head -n1`
 				echo PIC $PIC
-
-ls cache.$filename.list			
-#				if [ -z "$PIC" ];then
-#					PIC=`echo $ROUND1 | cut -d"'" -f4`
-#					echo PIC3 $PIC
-#					exit
-#				fi
-
-				TITLE=`cat "cache.$filename.$PAGE.list" | tr ' ' '\n' | grep "/watch/$ID" | head -n1 | cut -d"'" -f2 | cut -d"/" -f4 | tr '_' ' '`
+	
+	ls cache.$filename.list
+				TITLE=`cat cache.$filename.list | tr ' ' '\n' | grep "/watch/$ID" | head -n1 | cut -d"'" -f2 | cut -d"/" -f4 | tr '_' ' '`			
 				echo TITLE $TITLE
 		
-				#http://www.myvideo.de/watch/5296613/Unsere_Hochzeit
-#				URL=http://www.myvideo.de/watch/$ID/`echo $TITLE | tr ' ' '_'`
-#				URL="http://www.myvideo.de/dynamic/get_player_video_xml.php?flash_playertype=SER&ID=$ID&_countlimit=4&autorun=yes;pageUrl=http://www.myvideo.de/watch/$ID/;playpath=flv:`echo $PIC | tr '/' '\n' | tail -n 4 | head -n1`/`echo $PIC | tr '/' '\n' | tail -n 3 | head -n1`/$ID;$ID"				
+	#			URL=http://www.myvideo.de/watch/$ID/`echo $TITLE | tr ' ' '_'`
+	
+	#echo $PIC | tr '/' '\n' | tail -n 4 | head -n1`"/"`echo $PIC | tr '/' '\n' | tail -n 3 | head -n1`"
+	#			URL="http://www.myvideo.de/dynamic/get_player_video_xml.php?flash_playertype=SER&ID=$ID&_countlimit=4&autorun=yes;pageUrl=http://www.myvideo.de/watch/$ID/;playpath=flv:`echo $PIC | tr '/' '\n' | tail -n 4 | head -n1`/`echo $PIC | tr '/' '\n' | tail -n 3 | head -n1`/$ID;$ID"
 				URL="http://www.myvideo.de/dynamic/get_player_video_xml.php?domain=www.myvideo.de&flash_playertype=SER&ds=1&autorun=yes&ID=$ID&_countlimit=4;pageUrl=http://www.myvideo.de/watch/$ID/;playpath=flv:`echo $PIC | tr '/' '\n' | tail -n 4 | head -n1`/`echo $PIC | tr '/' '\n' | tail -n 3 | head -n1`/$ID;$ID"
-
+	
 				echo URL $URL
-
 				if [ -z $PIC ];then
 					PIC=`echo $ROUND1 | cut -d"'" -f4`
 					if [ -z $PIC ];then
 						LINE="$TITLE#$URL#http://atemio.dyndns.tv/mediathek/menu/comedy.jpg#myvideo_$piccount.jpg#MyVideo#12"
-#						exit
+	#					exit
 					else
 						LINE="$TITLE#$URL#$PIC#myvideo_$piccount.jpg#MyVideo#12"
-					fi
+					fi				
 				else
 					LINE="$TITLE#$URL#$PIC#myvideo_$piccount.jpg#MyVideo#12"
 				fi
-			
+				echo LINE $LINE
+	#			exit
 				if [ ! -z "$TITLE" ]; then
-					echo $LINE >> cache.myvideo.$filename.titanlist
-					echo $LINE >> cache.myvideo.titanlist
+					echo $LINE >> cache.myvideo."$filename".titanlist
+					echo $LINE >> cache.myvideo.all.titanlist
 				fi
 			done
-		done
-	fi
-
-	cat cache.myvideo.$filename.titanlist | sort -um > _full/myvideo/streams/myvideo.$filename.list
-	echo piccount $piccount
-done
-
-cat cache.myvideo.titanlist | sort -um > _full/myvideo/streams/myvideo.all-sorted.list
-cat cache.myvideo.category.titanlist | sort -um > _full/myvideo/myvideo.category.list
-
-for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
-	filename=`echo "$ROUND" | tr 'A-Z' 'a-z'`
-	if [ `cat cache.myvideo.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
-		cat cache.myvideo.titanlist | grep ^"$ROUND" > cache.myvideo.titanlist."$ROUND"
-		cat cache.myvideo.titanlist."$ROUND" | sort -um > _full/myvideo/streams/myvideo.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#MyVideo#3 >> _full/myvideo/myvideo.a-z.list
-	elif [ `cat cache.myvideo.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
-		cat cache.myvideo.titanlist | grep ^"$filename" > cache.myvideo.titanlist."$ROUND"
-		cat cache.myvideo.titanlist."$ROUND" | sort -um > _full/myvideo/streams/myvideo.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#MyVideo#3 >> _full/myvideo/myvideo.a-z.list
-	fi
-done
+		else
+			for PAGE in $PAGES; do
+				echo PAGE $PAGE
+				$wgetbin --no-check-certificate "http://myvideo.de/$WEBPATH?lpage=$PAGE" -O "cache.$filename.$PAGE.list"
+				LIST2=`cat "cache.$filename.$PAGE.list" | tr '><' '>\n<' | grep "^img id='i" | tr ' ' '~'`
+				for ROUND1 in $LIST2; do
+					piccount=`expr $piccount + 1`
+					echo round1 $ROUND1
+					
+					ROUND1=`echo $ROUND1 | tr '~' '\n'`
+					ID=`echo $ROUND1 | tr '~' '\n' | grep "id='" | cut -d"'" -f2 | sed 's/i//'`
+					echo ID $ID
+	
+	#				PIC=`cat "cache.$filename.$PAGE.list" | tr ' ' '\n' | grep "$ID"| grep ".jp" | cut -d "'" -f2 | tr ' ' '\n' | head -n1`
+					PIC=`cat "cache.$filename.$PAGE.list" | tr ' ' '\n' | grep "$ID" | grep ".jp" | grep thumbs | cut -d "'" -f2 | tr ' ' '\n' | head -n1`
+					echo PIC $PIC
+	
+	ls cache.$filename.list			
+	#				if [ -z "$PIC" ];then
+	#					PIC=`echo $ROUND1 | cut -d"'" -f4`
+	#					echo PIC3 $PIC
+	#					exit
+	#				fi
+	
+					TITLE=`cat "cache.$filename.$PAGE.list" | tr ' ' '\n' | grep "/watch/$ID" | head -n1 | cut -d"'" -f2 | cut -d"/" -f4 | tr '_' ' '`
+					echo TITLE $TITLE
+			
+					#http://www.myvideo.de/watch/5296613/Unsere_Hochzeit
+	#				URL=http://www.myvideo.de/watch/$ID/`echo $TITLE | tr ' ' '_'`
+	#				URL="http://www.myvideo.de/dynamic/get_player_video_xml.php?flash_playertype=SER&ID=$ID&_countlimit=4&autorun=yes;pageUrl=http://www.myvideo.de/watch/$ID/;playpath=flv:`echo $PIC | tr '/' '\n' | tail -n 4 | head -n1`/`echo $PIC | tr '/' '\n' | tail -n 3 | head -n1`/$ID;$ID"				
+					URL="http://www.myvideo.de/dynamic/get_player_video_xml.php?domain=www.myvideo.de&flash_playertype=SER&ds=1&autorun=yes&ID=$ID&_countlimit=4;pageUrl=http://www.myvideo.de/watch/$ID/;playpath=flv:`echo $PIC | tr '/' '\n' | tail -n 4 | head -n1`/`echo $PIC | tr '/' '\n' | tail -n 3 | head -n1`/$ID;$ID"
+	
+					echo URL $URL
+	
+					if [ -z $PIC ];then
+						PIC=`echo $ROUND1 | cut -d"'" -f4`
+						if [ -z $PIC ];then
+							LINE="$TITLE#$URL#http://atemio.dyndns.tv/mediathek/menu/comedy.jpg#myvideo_$piccount.jpg#MyVideo#12"
+	#						exit
+						else
+							LINE="$TITLE#$URL#$PIC#myvideo_$piccount.jpg#MyVideo#12"
+						fi
+					else
+						LINE="$TITLE#$URL#$PIC#myvideo_$piccount.jpg#MyVideo#12"
+					fi
+				
+					if [ ! -z "$TITLE" ]; then
+						echo $LINE >> cache.myvideo.$filename.titanlist
+						echo $LINE >> cache.myvideo.titanlist
+					fi
+				done
+			done
+		fi
+	
+		cat cache.myvideo.$filename.titanlist | sort -um > _full/myvideo/streams/myvideo.$filename.list
+		echo piccount $piccount
+	done
+	
+	cat cache.myvideo.titanlist | sort -um > _full/myvideo/streams/myvideo.all-sorted.list
+	cat cache.myvideo.category.titanlist | sort -um > _full/myvideo/myvideo.category.list
+	
+	for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
+		filename=`echo "$ROUND" | tr 'A-Z' 'a-z'`
+		if [ `cat cache.myvideo.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
+			cat cache.myvideo.titanlist | grep ^"$ROUND" > cache.myvideo.titanlist."$ROUND"
+			cat cache.myvideo.titanlist."$ROUND" | sort -um > _full/myvideo/streams/myvideo.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#MyVideo#3 >> _full/myvideo/myvideo.a-z.list
+		elif [ `cat cache.myvideo.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
+			cat cache.myvideo.titanlist | grep ^"$filename" > cache.myvideo.titanlist."$ROUND"
+			cat cache.myvideo.titanlist."$ROUND" | sort -um > _full/myvideo/streams/myvideo.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/myvideo/streams/myvideo."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#MyVideo#3 >> _full/myvideo/myvideo.a-z.list
+		fi
+	done
+fi
 
 # check category
 input_list=`ls -1 _full/myvideo | grep -v streams | grep -v myvideo.a-z.list | grep -v myvideo.category.list`
@@ -316,3 +324,12 @@ echo round $ROUND0
 	fi
 	echo "##############################################"
 done
+fi
+
+if [ "$buildtype" != "full" ];then
+	cp -a _full/myvideo/* /var/www/atemio/web/mediathek/myvideo
+fi
+
+rm cache.*
+
+exit

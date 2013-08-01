@@ -1,3 +1,9 @@
+#!/bin/bash
+#
+
+buildtype=$1
+wgetbin="wget -T2 -t2 --waitretry=2"
+
 SUBDOMAIN=superrtlnow
 DOMAIN=de
 SHOWNAME=SuperRTL-Now
@@ -99,4 +105,10 @@ for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X
 	fi
 done
 
+if [ "$buildtype" != "full" ];then
+	cp -a _full/superrtlnow/* /var/www/atemio/web/mediathek/superrtlnow
+fi
+
 rm cache.*
+
+exit

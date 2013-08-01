@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 
+buildtype=$1
 wgetbin="wget -T2 -t2 --waitretry=2"
 
 rm cache.*
@@ -146,12 +147,10 @@ for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X
 	fi
 done
 
-#exit
-#echo lostcount $lostcount
+if [ "$buildtype" != "full" ];then
+	cp -a _full/mlehd/* /var/www/atemio/web/mediathek/mlehd
+fi
 
-#cp -a _full/mlehd/* /var/www/atemio/web/mediathek/mlehd
-#cp -a mainmenu.list /var/www/atemio/web/mediathek
-#cp -a mainmenu-mlehd.list /var/www/atemio/web/mediathek
-
-rm file.*
 rm cache.*
+
+exit

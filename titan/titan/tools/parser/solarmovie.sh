@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 
+buildtype=$1
 wgetbin="wget -T2 -t2 --waitretry=2"
 
 rm cache.*
@@ -10,6 +11,7 @@ mkdir -p _full/solarmovie/streams
 rm cache.*
 touch cache.solarmovie.titanlist
 
+if [ "$buildtype" = "full" ];then
 watchlist="
 watch-action-movies.html
 watch-adventure-movies.html
@@ -199,7 +201,11 @@ tv/watch-tv-shows-1932.html
 tv/watch-tv-shows-1931.html
 tv/watch-tv-shows-1930.html
 "
-#watchlist="tv/watch-tv-shows-1930.html"
+else
+watchlist="
+watch-movies-of-2013.html
+tv/watch-tv-shows-2013.html
+"
 
 piccount=0
 count=0
@@ -274,25 +280,29 @@ for ROUND0 in $watchlist; do
 	fi
 done
 
-cat cache.solarmovie.titanlist | sort -u > _full/solarmovie/streams/solarmovie.all-sorted.list
-#cat cache.solarmovie.category.titanlist | sort -u > _full/solarmovie/solarmovie.category.list
-cat cache.solarmovie.category.titanlist > _full/solarmovie/solarmovie.category.list
+if [ "$buildtype" = "full" ];then
+	cat cache.solarmovie.titanlist | sort -u > _full/solarmovie/streams/solarmovie.all-sorted.list
+	#cat cache.solarmovie.category.titanlist | sort -u > _full/solarmovie/solarmovie.category.list
+	cat cache.solarmovie.category.titanlist > _full/solarmovie/solarmovie.category.list
+	
+	for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
+		filename=`echo "$ROUND" | tr 'A-Z' 'a-z'`
+		if [ `cat cache.solarmovie.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
+			cat cache.solarmovie.titanlist | grep ^"$ROUND" > cache.solarmovie.titanlist."$ROUND"
+			cat cache.solarmovie.titanlist."$ROUND" | sort -um > _full/solarmovie/streams/solarmovie.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/solarmovie/streams/solarmovie."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Solarmovie#3 >> _full/solarmovie/solarmovie.a-z.list
+		elif [ `cat cache.solarmovie.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
+			cat cache.solarmovie.titanlist | grep ^"$filename" > cache.solarmovie.titanlist."$ROUND"
+			cat cache.solarmovie.titanlist."$ROUND" | sort -um > _full/solarmovie/streams/solarmovie.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/solarmovie/streams/solarmovie."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Solarmovie#3 >> _full/solarmovie/solarmovie.a-z.list
+		fi
+	done
+fi
 
-for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
-	filename=`echo "$ROUND" | tr 'A-Z' 'a-z'`
-	if [ `cat cache.solarmovie.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
-		cat cache.solarmovie.titanlist | grep ^"$ROUND" > cache.solarmovie.titanlist."$ROUND"
-		cat cache.solarmovie.titanlist."$ROUND" | sort -um > _full/solarmovie/streams/solarmovie.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/solarmovie/streams/solarmovie."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Solarmovie#3 >> _full/solarmovie/solarmovie.a-z.list
-	elif [ `cat cache.solarmovie.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
-		cat cache.solarmovie.titanlist | grep ^"$filename" > cache.solarmovie.titanlist."$ROUND"
-		cat cache.solarmovie.titanlist."$ROUND" | sort -um > _full/solarmovie/streams/solarmovie.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/solarmovie/streams/solarmovie."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Solarmovie#3 >> _full/solarmovie/solarmovie.a-z.list
-	fi
-done
-rm file.*
+if [ "$buildtype" != "full" ];then
+	cp -a _full/solarmovie/* /var/www/atemio/web/mediathek/solarmovie
+fi
+
 rm cache.*
-#mkdir /var/www/atemio/web/mediathek/solarmovie
-#cp -a _full/solarmovie/* /var/www/atemio/web/mediathek/solarmovie
-#cp -a mainmenu.list /var/www/atemio/web/mediathek
-#cp -a mainmenu-solarmovie.list /var/www/atemio/web/mediathek
+
+exit
