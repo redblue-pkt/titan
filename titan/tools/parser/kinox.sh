@@ -9,6 +9,14 @@ rm movieliste.log
 rm cache.*
 rm -rf _full/kinox
 
+rm cache.*
+rm -rf _full/kinox
+mkdir -p _full/kinox/streams
+
+BEGINTIME=`date +%s`
+DATENAME=´date +"%Y.%m.%d_%H.%m.%S"´
+echo "[kinox.sh] START (buildtype: $buildtype): $DATENAME > _full/kinox/build.log
+
 if [ "$buildtype" = "full" ];then
 	LIST="/Stream/"
 	
@@ -58,10 +66,6 @@ if [ "$buildtype" = "full" ];then
 	#exit
 	##############
 	
-	rm cache.*
-	rm _liste
-	rm -rf _full/kinox
-	mkdir -p _full/kinox/streams
 	piccount=0
 	
 	piccount=`expr $piccount + 1`
@@ -235,6 +239,10 @@ if [ "$buildtype" = "full" ];then
 		fi
 	done
 fi
+
+DONETIME=`date +%s`
+TIME=`expr $DONETIME - $BEGINTIME`
+echo "[kinox.sh] build time: ($TIME s) done" >> _full/kinox/build.log	
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/kinox/* /var/www/atemio/web/mediathek/kinox

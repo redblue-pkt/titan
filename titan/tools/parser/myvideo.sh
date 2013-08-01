@@ -11,6 +11,10 @@ rm -rf _full/myvideo
 mkdir -p _full/myvideo/streams
 piccount=0
 
+BEGINTIME=`date +%s`
+DATENAME=´date +"%Y.%m.%d_%H.%m.%S"´
+echo "[myvideo.sh] START (buildtype: $buildtype): $DATENAME > _full/myvideo/build.log
+
 mainurl=http://www.myvideo.de
 if [ "$buildtype" = "full" ];then
 	mainliste="Top_100 Videos_A-Z Serien Filme Musik"
@@ -325,6 +329,10 @@ echo round $ROUND0
 	echo "##############################################"
 done
 fi
+
+DONETIME=`date +%s`
+TIME=`expr $DONETIME - $BEGINTIME`
+echo "[myvideo.sh] build time: ($TIME s) done" >> _full/myvideo/build.log	
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/myvideo/* /var/www/atemio/web/mediathek/myvideo

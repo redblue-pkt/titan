@@ -4,17 +4,23 @@
 buildtype=$1
 wgetbin="wget -T2 -t2 --waitretry=2"
 
-if [ "$buildtype" = "full" ];then
-	rm cache.*
-	rm _liste
-	rm -rf _full/xvideos
-	mkdir -p _full/xvideos/streams
-	rm cache.*
-	touch cache.xvideos.titanlist
+rm cache.*
+rm _liste
+rm -rf _full/xvideos
+mkdir -p _full/xvideos/streams
+rm cache.*
+touch cache.xvideos.titanlist
+
+BEGINTIME=`date +%s`
+DATENAME=´date +"%Y.%m.%d_%H.%m.%S"´
+echo "[xvideos.sh] START (buildtype: $buildtype): $DATENAME > _full/xvideos/build.log
 	
-	testcount=0
-	piccount=0
-	count=0
+testcount=0
+piccount=0
+count=0
+	
+if [ "$buildtype" = "full" ];then	
+
 	
 	$wgetbin http://www.xvideos.com/tags/ -O cache.main.tags
 	TAGLIST=`cat cache.main.tags  | grep /c/ | sed 's!">!"<!g' | tr ' ' '~'`
@@ -111,7 +117,15 @@ if [ "$buildtype" = "full" ];then
 		fi
 	done
 fi
+
+DONETIME=`date +%s`
+TIME=`expr $DONETIME - $BEGINTIME`
+echo "[xvideos.sh] build time: ($TIME s) done" >> _full/xvideos/build.log	
+
+if [ "$buildtype" != "full" ];then
+	cp -a _full/xvideos/* /var/www/atemio/web/mediathek/xvideos
+fi
+
 rm cache.*
-#cp -a _full/xvideos/* /var/www/atemio/web/mediathek/xvideos
+
 exit
-#done

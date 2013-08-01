@@ -11,6 +11,10 @@ mkdir -p _full/drdish/streams
 rm cache.*
 touch cache.drdish.titanlist
 
+BEGINTIME=`date +%s`
+DATENAME=´date +"%Y.%m.%d_%H.%m.%S"´
+echo "[drdish.sh] START (buildtype: $buildtype): $DATENAME > _full/drdish/build.log
+
 if [ "$buildtype" = "full" ];then
 WATCHLIST="
 neueste-videos
@@ -116,6 +120,10 @@ if [ "$buildtype" = "full" ];then
 		fi
 	done
 fi
+
+DONETIME=`date +%s`
+TIME=`expr $DONETIME - $BEGINTIME`
+echo "[drdish.sh] build time: ($TIME s) done" >> _full/drdish/build.log	
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/drdish/* /var/www/atemio/web/mediathek/drdish

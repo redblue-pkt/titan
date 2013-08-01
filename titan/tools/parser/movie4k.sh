@@ -11,6 +11,10 @@ mkdir -p _full/movie4k/streams
 rm cache.*
 touch cache.movie4k.titanlist
 
+BEGINTIME=`date +%s`
+DATENAME=´date +"%Y.%m.%d_%H.%m.%S"´
+echo "[movie4k.sh] START (buildtype: $buildtype): $DATENAME > _full/movie4k/build.log
+
 if [ "$buildtype" = "full" ];then
 	# filme a-z
 	watchlist="
@@ -466,6 +470,10 @@ if [ "$buildtype" = "full" ];then
 fi
 #cat cache.movie4k.series.update.titanlist > _full/movie4k/streams/movie4k.series.update.list
 cat cache.movie4k.movies.update.titanlist > _full/movie4k/streams/movie4k.movies.update.list
+
+DONETIME=`date +%s`
+TIME=`expr $DONETIME - $BEGINTIME`
+echo "[movie4k.sh] build time: ($TIME s) done" >> _full/movie4k/build.log	
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/movie4k/* /var/www/atemio/web/mediathek/movie4k
