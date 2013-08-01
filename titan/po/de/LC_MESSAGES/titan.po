@@ -3247,4 +3247,7 @@ msgstr "Karte gefunden"
 msgid "card not present"
 msgstr "Keine Karte gefunden"
 
+msgid "Directory has content\nRealy delete directory and content?"
+msgstr "Verzeichnis hat einen Inhalt\nWirklich löschen?"
+
 
