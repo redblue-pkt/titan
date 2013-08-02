@@ -80,7 +80,7 @@ fi
 
 BEGINTIME=`date +%s`
 DATENAME=`date +"%Y.%m.%d_%H.%m.%S"`
-echo "[make-parser] START (buildtype: $PARSETYPE): $DATENAME > "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME".smal.log
+echo "[make-parser] START (buildtype: $PARSETYPE): $DATENAME" > "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME".smal.log
 
 if [ ! -e /var/www/atemio/web/mediathek ];then
 	mkdir -p /var/www/atemio/web/mediathek

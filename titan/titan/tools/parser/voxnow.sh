@@ -19,7 +19,7 @@ mkdir -p _full/$SUBDOMAIN/streams
 
 BEGINTIME=`date +%s`
 DATENAME=`date +"%Y.%m.%d_%H.%m.%S"`
-echo "[voxnow.sh] START (buildtype: $buildtype): $DATENAME > _full/voxnow/build.log
+echo "[voxnow.sh] START (buildtype: $buildtype): $DATENAME" > _full/voxnow/build.log
 
 piccount=0
 
