@@ -92,13 +92,14 @@ echo "LINE: $LINE" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME".smal.
 
 echo LINE $LINE
 for ROUND in $LINE; do
+	cd "$HOME"/parser/BUILD
 	FILE=`echo $ROUND | tr '/' '\n' | tail -n1`
 	FILENAME=`echo $ROUND | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 	if [ $FILE == "beeg.sh" ];then
 		echo `date +%s` >/var/www/atemio/web/mediathek/lasttimestamp
 	fi
 	echo "######################## $ROUND ###############################"
-	echo "######################## parse $ROUND ($PARSETYPE) ####################" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME".smal.log
+	echo "######################## parse $ROUND ($FILENAME $PARSETYPE) ####################" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME".smal.log
 
 	$ROUND $PARSETYPE
 	echo "[make-parser] make $ROUND"
