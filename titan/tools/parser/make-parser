@@ -95,7 +95,7 @@ echo LINE $LINE
 for ROUND in $LINE; do
 	cd "$HOME"/parser/BUILD
 	FILE=`echo $ROUND | tr '/' '\n' | tail -n1`
-	FILENAME=`echo $ROUND | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
+	FILENAME=`echo $ROUND | tr '/' '\n' | tail -n1 | sed 's/\.sh//'`
 	if [ $FILE == "beeg.sh" ];then
 		echo `date +%s` >/var/www/atemio/web/mediathek/lasttimestamp
 	fi
