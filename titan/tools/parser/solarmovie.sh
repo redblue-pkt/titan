@@ -306,6 +306,8 @@ fi
 DONETIME=`date +%s`
 TIME=`expr $DONETIME - $BEGINTIME`
 echo "[solarmovie.sh] build time: ($TIME s) done" >> _full/solarmovie/build.log	
+echo "[solarmovie.sh] solarmovie: "`ls -1 _full/solarmovie` >> _full/solarmovie/build.log
+echo "[solarmovie.sh] solarmovie/streams: "`ls -1 _full/solarmovie/streams` >> _full/solarmovie/build.log
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/solarmovie/* /var/www/atemio/web/mediathek/solarmovie

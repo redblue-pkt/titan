@@ -262,6 +262,8 @@ fi
 DONETIME=`date +%s`
 TIME=`expr $DONETIME - $BEGINTIME`
 echo "[zdf.sh] build time: ($TIME s) done" >> _full/zdf/build.log	
+echo "[zdf.sh] zdf: "`ls -1 _full/zdf` >> _full/zdf/build.log
+echo "[zdf.sh] zdf/streams: "`ls -1 _full/zdf/streams` >> _full/zdf/build.log
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/zdf/* /var/www/atemio/web/mediathek/zdf

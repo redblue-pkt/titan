@@ -115,6 +115,8 @@ done
 DONETIME=`date +%s`
 TIME=`expr $DONETIME - $BEGINTIME`
 echo "[rtl2now.sh] build time: ($TIME s) done" >> _full/rtl2now/build.log	
+echo "[rtl2now.sh] rtl2now: "`ls -1 _full/rtl2now` >> _full/rtl2now/build.log
+echo "[rtl2now.sh] rtl2now/streams: "`ls -1 _full/rtl2now/streams` >> _full/rtl2now/build.log
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/rtl2now/* /var/www/atemio/web/mediathek/rtl2now

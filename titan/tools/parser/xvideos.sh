@@ -121,6 +121,8 @@ fi
 DONETIME=`date +%s`
 TIME=`expr $DONETIME - $BEGINTIME`
 echo "[xvideos.sh] build time: ($TIME s) done" >> _full/xvideos/build.log	
+echo "[xvideos.sh] xvideos: "`ls -1 _full/xvideos` >> _full/xvideos/build.log
+echo "[xvideos.sh] xvideos/streams: "`ls -1 _full/xvideos/streams` >> _full/xvideos/build.log
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/xvideos/* /var/www/atemio/web/mediathek/xvideos

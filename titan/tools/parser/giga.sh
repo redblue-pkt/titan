@@ -103,6 +103,8 @@ done
 DONETIME=`date +%s`
 TIME=`expr $DONETIME - $BEGINTIME`
 echo "[giga.sh] build time: ($TIME s) done" >> _full/giga/build.log	
+echo "[giga.sh] giga: "`ls -1 _full/giga` >> _full/giga/build.log
+echo "[giga.sh] giga/streams: "`ls -1 _full/giga/streams` >> _full/giga/build.log
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/giga/* /var/www/atemio/web/mediathek/giga

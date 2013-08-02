@@ -474,6 +474,8 @@ cat cache.movie4k.movies.update.titanlist > _full/movie4k/streams/movie4k.movies
 DONETIME=`date +%s`
 TIME=`expr $DONETIME - $BEGINTIME`
 echo "[movie4k.sh] build time: ($TIME s) done" >> _full/movie4k/build.log	
+echo "[movie4k.sh] movie4k: "`ls -1 _full/movie4k` >> _full/movie4k/build.log
+echo "[movie4k.sh] movie4k/streams: "`ls -1 _full/movie4k/streams` >> _full/movie4k/build.log
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/movie4k/* /var/www/atemio/web/mediathek/movie4k

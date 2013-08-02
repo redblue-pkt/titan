@@ -67,7 +67,8 @@ today=`date +%s`
 echo today $today
 echo lasttimestamp $lasttimestamp
 
-ls -1 "$HOME"/parser/BUILD/*.sh | sort -r > tmp.txt
+#ls -1 "$HOME"/parser/BUILD/*.sh | sort -r > tmp.txt
+ls -1 "$HOME"/parser/BUILD/*.sh > tmp.txt
 	
 if [ $today -gt $lasttimestamp ];then
 #	ls -1 "$HOME"/parser/BUILD/*.sh | sort -r > tmp.txt

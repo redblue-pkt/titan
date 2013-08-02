@@ -147,6 +147,8 @@ fi
 DONETIME=`date +%s`
 TIME=`expr $DONETIME - $BEGINTIME`
 echo "[youtube.sh] build time: ($TIME s) done" >> _full/youtube/build.log	
+echo "[youtube.sh] youtube: "`ls -1 _full/youtube` >> _full/youtube/build.log
+echo "[youtube.sh] youtube/streams: "`ls -1 _full/youtube/streams` >> _full/youtube/build.log
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/youtube/* /var/www/atemio/web/mediathek/youtube

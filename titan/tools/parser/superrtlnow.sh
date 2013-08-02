@@ -113,6 +113,8 @@ done
 DONETIME=`date +%s`
 TIME=`expr $DONETIME - $BEGINTIME`
 echo "[superrtlnow.sh] build time: ($TIME s) done" >> _full/superrtlnow/build.log	
+echo "[superrtlnow.sh] superrtlnow: "`ls -1 _full/superrtlnow` >> _full/superrtlnow/build.log
+echo "[superrtlnow.sh] superrtlnow/streams: "`ls -1 _full/superrtlnow/streams` >> _full/superrtlnow/build.log
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/superrtlnow/* /var/www/atemio/web/mediathek/superrtlnow
