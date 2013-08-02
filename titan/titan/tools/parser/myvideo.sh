@@ -263,7 +263,6 @@ echo round $ROUND0
 		echo ---------------------- change ----------------------------- $ROUND0
 	fi
 done
-fi
 
 DONETIME=`date +%s`
 TIME=`expr $DONETIME - $BEGINTIME`
