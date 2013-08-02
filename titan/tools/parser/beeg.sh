@@ -166,7 +166,7 @@ fi
 DONETIME=`date +%s`
 TIME=`expr $DONETIME - $BEGINTIME`
 echo "[beeg.sh] build time: ($TIME s) done" >> _full/beeg/build.log	
-echo "[beeg.sh] beeg: "`ls -1 _full/drdish` >> _full/beeg/build.log
+echo "[beeg.sh] beeg: "`ls -1 _full/beeg` >> _full/beeg/build.log
 echo "[beeg.sh] beeg/streams: "`ls -1 _full/beeg/streams` >> _full/beeg/build.log
 
 if [ "$buildtype" != "full" ];then
