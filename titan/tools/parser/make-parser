@@ -98,8 +98,8 @@ for ROUND in $LINE; do
 	if [ $FILE == "beeg.sh" ];then
 		echo `date +%s` >/var/www/atemio/web/mediathek/lasttimestamp
 	fi
-	echo "######################## $ROUND ###############################"
-	echo "######################## parse $ROUND ($FILENAME $PARSETYPE) ####################" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME".smal.log
+	echo "######################## $ROUND"
+	echo "######################## parse $ROUND ($FILENAME $PARSETYPE)" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME".smal.log
 
 	$ROUND $PARSETYPE
 	echo "[make-parser] make $ROUND"
@@ -109,13 +109,13 @@ for ROUND in $LINE; do
 	cat "$HOME"/parser/BUILD/_full/"$FILENAME"/build.log >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME".smal.log
 
 	if [ $PARSETYPE = "fast" ]; then
-		echo "######################## $ROUND $PARSETYPE > continue ###################"
+		echo "######################## $ROUND $PARSETYPE > continue"
 		continue
 	fi
 
 	LINE1=`ls -1`
 	TIME=`date +"%Y.%m.%d_%H.%M.%S"`
-	echo "########################## move ##############################"	
+	echo "######################## move"	
 	for TYPE in $LINE1; do
 		if [ $TYPE == $FILENAME ];then 
 			mv $TYPE /var/www/atemio/web/mediathek/"$TYPE"_"$TIME"
@@ -148,7 +148,7 @@ for ROUND in $LINE; do
 			done	
 		fi
 	done
-	echo "############################ done ###############################"
+	echo "######################## done"
 	cd "$HOME"/parser/BUILD
 done
 
