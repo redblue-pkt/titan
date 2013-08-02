@@ -18,7 +18,7 @@ mkdir -p _full/beeg/streams
 mkdir _single
 
 BEGINTIME=`date +%s`
-DATENAME=`date +"%Y.%m.%d_%H.%m.%S"`
+DATENAME=`date +"%Y.%m.%d_%H.%M.%S"`
 echo "[beeg.sh] START (buildtype: $buildtype): $DATENAME" > _full/beeg/build.log
 
 if [ "$buildtype" = "full" ];then

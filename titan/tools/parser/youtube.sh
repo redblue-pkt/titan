@@ -9,7 +9,7 @@ rm -rf _full/youtube
 mkdir -p _full/youtube/streams
 
 BEGINTIME=`date +%s`
-DATENAME=`date +"%Y.%m.%d_%H.%m.%S"`
+DATENAME=`date +"%Y.%m.%d_%H.%M.%S"`
 echo "[youtube.sh] START (buildtype: $buildtype): $DATENAME" > _full/youtube/build.log
 
 piccount=0

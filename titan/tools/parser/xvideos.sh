@@ -12,7 +12,7 @@ rm cache.*
 touch cache.xvideos.titanlist
 
 BEGINTIME=`date +%s`
-DATENAME=`date +"%Y.%m.%d_%H.%m.%S"`
+DATENAME=`date +"%Y.%m.%d_%H.%M.%S"`
 echo "[xvideos.sh] START (buildtype: $buildtype): $DATENAME" > _full/xvideos/build.log
 	
 testcount=0
