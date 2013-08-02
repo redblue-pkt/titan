@@ -154,6 +154,8 @@ done
 DONETIME=`date +%s`
 TIME=`expr $DONETIME - $BEGINTIME`
 echo "[mlehd.sh] build time: ($TIME s) done" >> _full/mlehd/build.log	
+echo "[mlehd.sh] mlehd: "`ls -1 _full/mlehd` >> _full/mlehd/build.log
+echo "[mlehd.sh] mlehd/streams: "`ls -1 _full/mlehd/streams` >> _full/mlehd/build.log
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/mlehd/* /var/www/atemio/web/mediathek/mlehd

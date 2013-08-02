@@ -333,6 +333,8 @@ fi
 DONETIME=`date +%s`
 TIME=`expr $DONETIME - $BEGINTIME`
 echo "[myvideo.sh] build time: ($TIME s) done" >> _full/myvideo/build.log	
+echo "[myvideo.sh] myvideo: "`ls -1 _full/myvideo` >> _full/myvideo/build.log
+echo "[myvideo.sh] myvideo/streams: "`ls -1 _full/myvideo/streams` >> _full/myvideo/build.log
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/myvideo/* /var/www/atemio/web/mediathek/myvideo

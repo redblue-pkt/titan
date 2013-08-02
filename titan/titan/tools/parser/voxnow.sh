@@ -118,6 +118,8 @@ done
 DONETIME=`date +%s`
 TIME=`expr $DONETIME - $BEGINTIME`
 echo "[voxnow.sh] build time: ($TIME s) done" >> _full/voxnow/build.log	
+echo "[voxnow.sh] voxnow: "`ls -1 _full/voxnow` >> _full/voxnow/build.log
+echo "[voxnow.sh] voxnow/streams: "`ls -1 _full/voxnow/streams` >> _full/voxnow/build.log
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/voxnow/* /var/www/atemio/web/mediathek/voxnow

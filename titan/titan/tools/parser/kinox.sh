@@ -243,6 +243,8 @@ fi
 DONETIME=`date +%s`
 TIME=`expr $DONETIME - $BEGINTIME`
 echo "[kinox.sh] build time: ($TIME s) done" >> _full/kinox/build.log	
+echo "[kinox.sh] kinox: "`ls -1 _full/kinox` >> _full/kinox/build.log
+echo "[kinox.sh] kinox/streams: "`ls -1 _full/kinox/streams` >> _full/kinox/build.log
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/kinox/* /var/www/atemio/web/mediathek/kinox

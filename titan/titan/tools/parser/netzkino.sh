@@ -133,6 +133,8 @@ fi
 DONETIME=`date +%s`
 TIME=`expr $DONETIME - $BEGINTIME`
 echo "[netzkino.sh] build time: ($TIME s) done" >> _full/netzkino/build.log	
+echo "[netzkino.sh] netzkino: "`ls -1 _full/netzkino` >> _full/netzkino/build.log
+echo "[netzkino.sh] netzkino/streams: "`ls -1 _full/netzkino/streams` >> _full/netzkino/build.log
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/netzkino/* /var/www/atemio/web/mediathek/netzkino

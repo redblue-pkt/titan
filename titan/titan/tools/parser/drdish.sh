@@ -124,6 +124,8 @@ fi
 DONETIME=`date +%s`
 TIME=`expr $DONETIME - $BEGINTIME`
 echo "[drdish.sh] build time: ($TIME s) done" >> _full/drdish/build.log	
+echo "[drdish.sh] drdish: "`ls -1 _full/drdish` >> _full/drdish/build.log
+echo "[drdish.sh] drdish/streams: "`ls -1 _full/drdish/streams` >> _full/drdish/build.log
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/drdish/* /var/www/atemio/web/mediathek/drdish
