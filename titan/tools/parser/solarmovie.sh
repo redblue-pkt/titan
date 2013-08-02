@@ -210,6 +210,7 @@ watchlist="
 watch-movies-of-2013.html
 tv/watch-tv-shows-2013.html
 "
+fi
 
 piccount=0
 count=0
