@@ -12,7 +12,7 @@ rm cache.*
 touch cache.solarmovie.titanlist
 
 BEGINTIME=`date +%s`
-DATENAME=`date +"%Y.%m.%d_%H.%m.%S"`
+DATENAME=`date +"%Y.%m.%d_%H.%M.%S"`
 echo "[solarmovie.sh] START (buildtype: $buildtype): $DATENAME" > _full/solarmovie/build.log
 
 if [ "$buildtype" = "full" ];then

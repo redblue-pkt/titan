@@ -12,7 +12,7 @@ rm cache.*
 touch cache.drdish.titanlist
 
 BEGINTIME=`date +%s`
-DATENAME=`date +"%Y.%m.%d_%H.%m.%S"`
+DATENAME=`date +"%Y.%m.%d_%H.%M.%S"`
 echo "[drdish.sh] START (buildtype: $buildtype): $DATENAME" > _full/drdish/build.log
 
 if [ "$buildtype" = "full" ];then

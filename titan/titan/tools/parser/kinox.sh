@@ -11,7 +11,7 @@ rm -rf _full/kinox
 mkdir -p _full/kinox/streams
 
 BEGINTIME=`date +%s`
-DATENAME=`date +"%Y.%m.%d_%H.%m.%S"`
+DATENAME=`date +"%Y.%m.%d_%H.%M.%S"`
 echo "[kinox.sh] START (buildtype: $buildtype): $DATENAME" > _full/kinox/build.log
 
 count=0

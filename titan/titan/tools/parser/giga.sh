@@ -12,7 +12,7 @@ rm cache.*
 touch cache.giga.titanlist
 
 BEGINTIME=`date +%s`
-DATENAME=`date +"%Y.%m.%d_%H.%m.%S"`
+DATENAME=`date +"%Y.%m.%d_%H.%M.%S"`
 echo "[giga.sh] START (buildtype: $buildtype): $DATENAME" > _full/giga/build.log
 
 WATCHLIST="
