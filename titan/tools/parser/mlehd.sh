@@ -13,7 +13,7 @@ touch cache.mlehd.titanlist
 
 BEGINTIME=`date +%s`
 DATENAME=`date +"%Y.%m.%d_%H.%m.%S"`
-echo "[mlehd.sh] START (buildtype: $buildtype): $DATENAME > _full/mlehd/build.log
+echo "[mlehd.sh] START (buildtype: $buildtype): $DATENAME" > _full/mlehd/build.log
 
 # filme a-z
 watchlist="

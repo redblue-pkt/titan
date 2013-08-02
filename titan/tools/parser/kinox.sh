@@ -15,7 +15,7 @@ mkdir -p _full/kinox/streams
 
 BEGINTIME=`date +%s`
 DATENAME=`date +"%Y.%m.%d_%H.%m.%S"`
-echo "[kinox.sh] START (buildtype: $buildtype): $DATENAME > _full/kinox/build.log
+echo "[kinox.sh] START (buildtype: $buildtype): $DATENAME" > _full/kinox/build.log
 
 if [ "$buildtype" = "full" ];then
 	LIST="/Stream/"

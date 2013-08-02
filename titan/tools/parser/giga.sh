@@ -13,7 +13,7 @@ touch cache.giga.titanlist
 
 BEGINTIME=`date +%s`
 DATENAME=`date +"%Y.%m.%d_%H.%m.%S"`
-echo "[giga.sh] START (buildtype: $buildtype): $DATENAME > _full/giga/build.log
+echo "[giga.sh] START (buildtype: $buildtype): $DATENAME" > _full/giga/build.log
 
 WATCHLIST="
 tv/alle-videos

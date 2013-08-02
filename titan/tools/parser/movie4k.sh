@@ -13,7 +13,7 @@ touch cache.movie4k.titanlist
 
 BEGINTIME=`date +%s`
 DATENAME=`date +"%Y.%m.%d_%H.%m.%S"`
-echo "[movie4k.sh] START (buildtype: $buildtype): $DATENAME > _full/movie4k/build.log
+echo "[movie4k.sh] START (buildtype: $buildtype): $DATENAME" > _full/movie4k/build.log
 
 if [ "$buildtype" = "full" ];then
 	# filme a-z
