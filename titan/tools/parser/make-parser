@@ -87,6 +87,9 @@ if [ ! -e /var/www/atemio/web/mediathek ];then
 fi
 
 LINE=`cat "$HOME"/parser/BUILD/tmp.txt`
+
+echo "LINE: $LINE" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME".smal.log
+
 echo LINE $LINE
 for ROUND in $LINE; do
 	FILE=`echo $ROUND | tr '/' '\n' | tail -n1`
