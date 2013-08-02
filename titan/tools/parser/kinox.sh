@@ -8,14 +8,14 @@ rm file.test*
 rm movieliste.log
 rm cache.*
 rm -rf _full/kinox
-
-rm cache.*
-rm -rf _full/kinox
 mkdir -p _full/kinox/streams
 
 BEGINTIME=`date +%s`
 DATENAME=`date +"%Y.%m.%d_%H.%m.%S"`
 echo "[kinox.sh] START (buildtype: $buildtype): $DATENAME" > _full/kinox/build.log
+
+count=0
+piccount=0
 
 if [ "$buildtype" = "full" ];then
 	LIST="/Stream/"
@@ -48,16 +48,10 @@ if [ "$buildtype" = "full" ];then
 		
 		while [ $count -lt $max ]
 		do
-			echo "count $count"
 			count=`expr $count + 1`
 			$wgetbin "http://kinox.to/aGET/List/?sEcho=1&iColumns=10&sColumns=&iDisplayStart=$count&iDisplayLength=50&iSortingCols=1&iSortCol_0=5&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22movie%22%2C%22fLetter%22%3A%22$CASE%22%7D" -O file.test.$CASE.$count
 			TMPLIST=`cat file.test.$CASE.$count | tr '],[' '\n' | grep 'Stream' | cut -d '"' -f3 | tr '\\' ' ' | sed 's/ \+//g'`
 			echo $TMPLIST | tr ' ' '\n' >> file.test.tmpliste
-	#ls file.test.$CASE.$count
-	#exit
-	#		if [ $count == 1 ]; then
-	#			break
-	#		fi
 		done
 	done
 	
@@ -82,7 +76,6 @@ if [ "$buildtype" = "full" ];then
 	counttt=0
 	for ROUND0 in $main_list; do
 		$wgetbin --no-check-certificate "http://kinox.to/$ROUND0.html" -O cache.main.next.list
-	#exit
 		main_next_list=`cat cache.main.next.list | grep /Stream/ | sed 's!/Stream/!\n/Stream/!' | grep ^/Stream/ | cut -d '"' -f1  | cut -d "'" -f1 | sort -um`
 		
 		if [ $ROUND0 == "Popular-Series" ]; then
@@ -92,8 +85,6 @@ if [ "$buildtype" = "full" ];then
 		if [ $ROUND0 == "Movies" ]; then
 			main_next_list=`cat movieliste.log | tr '\n' ' '`
 		fi
-	
-	#	main_next_list="/Stream/Die_Simpsons.html"
 		
 		skip=0
 	
@@ -135,13 +126,6 @@ if [ "$buildtype" = "full" ];then
 				 	LANGTXT=" (??)"
 				fi
 			fi
-			
-			echo cache."$filename".list
-			echo filename=$filename
-			echo picname=$picname
-			echo PIC=$PIC
-			echo TITLE=$TITLE
-			echo LANGTXT=$LANGTXT
 	
 			URL="http://kinox.to/$ROUND1"
 		
@@ -150,13 +134,7 @@ if [ "$buildtype" = "full" ];then
 				echo $LINE >> cache.kinox.$filename.titanlist
 				echo $LINE >> cache.kinox.titanlist			
 			fi
-				
-			echo cache."$filename".list
-			echo filename=$filename
-	#		counttt=`expr $counttt + 1`
-	#		if [ $counttt = 2 ]; then
-	#			exit
-	#		fi
+
 			skip1=0
 					
 			cat cache.kinox.$filename.titanlist | sort -u >> _full/kinox/streams/kinox.$ROUND0.list	
@@ -166,11 +144,8 @@ fi
 	
 $wgetbin http://kinox.to -O cache.main.update.list
 
-#LIST=`cat cache.main.update.list | grep "Odd parentalguidiance" | grep ".html," | cut -d'"' -f4`
 LIST=`cat cache.main.update.list | grep "Odd parentalguidiance" | grep -v ".html,s" | cut -d'"' -f4`
 
-#count=1
-#piccount=1
 for ROUND3 in $LIST; do
 	echo ROUND3 $ROUND3
 	if [ `cat cache.kinox.titanlist | grep "$ROUND3" | wc -l` -eq 0 ];then
