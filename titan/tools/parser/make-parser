@@ -95,12 +95,14 @@ for ROUND in $LINE; do
 		echo `date +%s` >/var/www/atemio/web/mediathek/lasttimestamp
 	fi
 	echo "######################## $ROUND ###############################"
-	$ROUND
+	echo "######################## parse $ROUND ($PARSETYPE) ####################" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME".smal.log
+
+	$ROUND $PARSETYPE
 	echo "[make-parser] make $ROUND"
 	STARTTIME=`date +"%Y.%m.%d_%H.%M.%S"`
 	
 	cd "$HOME"/parser/BUILD/_full
-	cat "$HOME"/parser/BUILD/_full/$FILENAME/build.log >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME".smal.log
+	cat "$HOME"/parser/BUILD/_full/"$FILENAME"/build.log >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME".smal.log
 
 	if [ $PARSETYPE = "fast" ]; then
 		echo "######################## $ROUND $PARSETYPE > continue ###################"
