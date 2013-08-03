@@ -105,17 +105,94 @@ for ROUND2 in $watchlist; do
 	filename2="$ROUND2"
 	$wgetbin "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
 	if [ "$ROUND2" = "index.php?lang=de" ];then
-		TYPE="newest.ger"
+		TYPE="kino.ger"
 		TYPENAME="Kino Filme (de)"
 	elif [ "$ROUND2" = "index.php" ];then
-		TYPE="newest.eng"
+		TYPE="kino.eng"
 		TYPENAME="Kino Filme (en)"
+	fi
+
+	pagelist=`cat cache."$count"."$filename2" | tr '\n' ' ' | sed 's/ \+/ /g' | sed 's/<div style="float:left"> <a href=/\n\nlink=/g' | grep ^link=  | cut -d'"' -f2`
+
+	for ROUND3 in $pagelist; do
+		piccount=`expr $piccount + 1`
+		filename3="$ROUND3"
+#		PIC=`cat cache."$count"."$filename2" | grep $ROUND3 | grep "img src" | tail -n1 | cut -d '"' -f6`
+		PIC=`cat cache."$count"."$filename2" | grep $ROUND3 | grep "img src" | head -n1 | cut -d '"' -f6`
+
+		ID=`echo $ROUND3 | sed "s/.*online-film-//" | sed "s/.*watch-movie-//" | sed "s/.html.*//"`
+		ZEILE=`cat cache."$count"."$filename2" | grep -n $ID | head -n1 | cut -d ":" -f1`
+		ALLES=`cat cache."$count"."$filename2" | wc -l`
+		CUT=`expr $ALLES - $ZEILE`
+		TMPLANG=`cat cache."$count"."$filename2" | tail -n $CUT | grep small.png | head -n1`
+
+		if [ -z "$PIC" ]; then
+			lostcount=`expr $lostcount + 1`
+			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+		fi
+		TITLE=`echo $ROUND3 | sed "s!-online-film-!;!" | sed "s!-watch-movie-!;!" | tr ";" "\n" | head -n1 | tr '-' ' ' | sed 's/^ //'`
+		URL=http://www.movie4k.to/"$ROUND3"
+
+		lang=35
+		if [ `echo $TMPLANG | grep "us_ger_small.png" | wc -l` -eq 1 ];then
+			lang=34
+			LANGTXT=" (de)"
+		elif [ `echo $TMPLANG | grep "us_flag_small.png" | wc -l` -eq 1 ];then
+			lang=35
+			LANGTXT=" (en)"
+		else
+			LANGTXT=" (??)"
+		fi
+
+# show allways
+		lang=34
+		
+		if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
+			LINE="$TITLE$LANGTXT#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#$lang"			
+			if [ `cat cache.movie4k.$TYPE.titanlist | grep "^$TITLE$LANGTXT" | wc -l` -eq 0 ];then
+				echo $LINE >> cache.movie4k.$TYPE.titanlist
+			fi
+#			if [ `cat cache.movie4k.titanlist | grep "^$TITLE$LANGTXT" | wc -l` -eq 0 ];then
+#				echo $LINE >> cache.movie4k.titanlist
+#			fi
+		fi
+	done
+
+	URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.$TYPE.list"
+	PIC="http://atemio.dyndns.tv/mediathek/menu/$TYPE.jpg"
+	
+	LINE="$TYPENAME#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
+	if [ ! -z "$TYPENAME" ];then
+		echo $LINE >> cache.movie4k.category.titanlist	
+	fi
+			
+	cat cache.movie4k.$TYPE.titanlist > _full/movie4k/streams/movie4k.$TYPE.list	
+done
+
+# letzte updates de/eng
+
+watchlist="
+index.php?lang=de
+index.php
+"
+
+for ROUND2 in $watchlist; do
+	piccount=`expr $piccount + 1`
+	count=`expr $count + 1`	
+	filename2="$ROUND2"
+	$wgetbin "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
+	if [ "$ROUND2" = "index.php?lang=de" ];then
+		TYPE="last.updates.ger"
+		TYPENAME="Letzte Updates (de)"
+	elif [ "$ROUND2" = "index.php" ];then
+		TYPE="last.updates.eng"
+		TYPENAME="Letzte Updates (en)"
 	fi
 
 #	pagelist=`cat cache."$count"."$filename2" | grep "float:left" | cut -d '"' -f4`
 # newest uploads
-#	pagelist=`cat cache."$count"."$filename2" | grep '<td valign="top" height="100%">' | cut -d '"' -f6`
-	pagelist=`cat cache."$count"."$filename2" | grep '.html"><img src=' | cut -d '"' -f4| grep .html`
+	pagelist=`cat cache."$count"."$filename2" | grep '<td valign="top" height="100%">' | cut -d '"' -f6`
+#	pagelist=`cat cache."$count"."$filename2" | grep '.html"><img src=' | cut -d '"' -f4| grep .html`
 
 	for ROUND3 in $pagelist; do
 		piccount=`expr $piccount + 1`
@@ -312,7 +389,7 @@ if [ "$buildtype" = "full" ];then
 	piccount=`expr $piccount + 1`
 	URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.movies.update.list"
 	PIC="http://atemio.dyndns.tv/mediathek/menu/Movies.update.jpg"
-	LINE="Filme (letzten uploads)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
+	LINE="Filme (letzten updates)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
 	echo $LINE >> cache.movie4k.category.titanlist
 	
 	piccount=`expr $piccount + 1`
@@ -481,7 +558,6 @@ if [ "$buildtype" != "full" ];then
 	cp -a _full/movie4k/* /var/www/atemio/web/mediathek/movie4k
 fi
 
-rm file.*
 rm cache.*
 
 exit
