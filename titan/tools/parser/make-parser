@@ -81,17 +81,17 @@ fi
 
 BEGINTIME=`date +%s`
 DATENAME=`date +"%Y.%m.%d_%H.%M.%S"`
-echo "[make-parser] START (buildtype: $PARSETYPE): $DATENAME" > "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME"_"$PARSETYPE"_smal.log
-echo "######################## start" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME".smal.log
-echo "today: $today" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME"_"$PARSETYPE"_smal.log
-echo "lasttimestamp: $lasttimestamp" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME"_"$PARSETYPE"_smal.log
+echo "[make-parser] START (buildtype: $PARSETYPE): $DATENAME" > "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME"_smal_"$PARSETYPE".log
+echo "######################## start" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME"_smal_"$PARSETYPE".log
+echo "today: $today" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME"_smal_"$PARSETYPE".log
+echo "lasttimestamp: $lasttimestamp" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME"_smal_"$PARSETYPE".log
 
 if [ ! -e /var/www/atemio/web/mediathek ];then
 	mkdir -p /var/www/atemio/web/mediathek
 fi
 
 LINE=`cat "$HOME"/parser/BUILD/tmp.txt`
-echo "LINE: $LINE" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME"_"$PARSETYPE"_smal.log
+echo "LINE: $LINE" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME"_smal_"$PARSETYPE".log
 
 echo LINE $LINE
 for ROUND in $LINE; do
@@ -102,14 +102,14 @@ for ROUND in $LINE; do
 		echo `date +%s` >/var/www/atemio/web/mediathek/lasttimestamp
 	fi
 	echo "######################## $ROUND"
-	echo "######################## parse: $ROUND $PARSETYPE ($FILENAME)" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME"_"$PARSETYPE"_smal.log
+	echo "######################## parse: $ROUND $PARSETYPE ($FILENAME)" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME"_smal_"$PARSETYPE".log
 
 	$ROUND $PARSETYPE
 	echo "[make-parser] make $ROUND"
 	STARTTIME=`date +"%Y.%m.%d_%H.%M.%S"`
 	
 	cd "$HOME"/parser/BUILD/_full
-	cat "$HOME"/parser/BUILD/_full/"$FILENAME"/build.log >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME"_"$PARSETYPE"_smal.log
+	cat "$HOME"/parser/BUILD/_full/"$FILENAME"/build.log >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME"_smal_"$PARSETYPE".log
 
 	if [ $PARSETYPE = "fast" ]; then
 		echo "######################## $ROUND $PARSETYPE > continue"
@@ -155,7 +155,7 @@ for ROUND in $LINE; do
 	cd "$HOME"/parser/BUILD
 done
 
-echo "######################## done" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME"_"$PARSETYPE"_smal.log
+echo "######################## done" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME"_smal_"$PARSETYPE".log
 DONETIME=`date +%s`
 TIME=`expr $DONETIME - $BEGINTIME`
-echo "[make-parser] build time: ($TIME s) done" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME"_"$PARSETYPE"_smal.log	
+echo "[make-parser] build time: ($TIME s) done" >> "$HOME"/make-svn/logs/parser/m"$version"_"$DATENAME"_smal_"$PARSETYPE".log	
