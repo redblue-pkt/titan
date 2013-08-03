@@ -329,6 +329,10 @@ void screenconfigurehdd(char* dev)
 						{
 							drawscreen(load, 0, 0);
 							ret = -1;
+							
+							if(ostrcmp(listbox->select->name, "delswap") == 0)
+								system("hotplug.sh delSwap");
+							
 							char* cmd = NULL;
 							cmd = ostrcat("rm -rf ", path, 0, 0);
 							system(cmd);
@@ -364,12 +368,6 @@ void screenconfigurehdd(char* dev)
 				{
 					drawscreen(load, 0, 0);
 					system("hotplug.sh delRecord");
-					clearscreen(load);
-				}
-				if(ostrcmp(listbox->select->name, "delswap") == 0)
-				{
-					drawscreen(load, 0, 0);
-					system("hotplug.sh delSwap");
 					clearscreen(load);
 				}
 				if(ostrcmp(listbox->select->name, "delext") == 0)
