@@ -192,6 +192,7 @@ for ROUND2 in $watchlist; do
 #	pagelist=`cat cache."$count"."$filename2" | grep "float:left" | cut -d '"' -f4`
 # newest uploads
 	pagelist=`cat cache."$count"."$filename2" | grep '<td valign="top" height="100%">' | cut -d '"' -f6`
+# hauptseite rechte liste, ka was da gelistet ist
 #	pagelist=`cat cache."$count"."$filename2" | grep '.html"><img src=' | cut -d '"' -f4| grep .html`
 
 	for ROUND3 in $pagelist; do
