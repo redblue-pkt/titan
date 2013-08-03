@@ -118,7 +118,8 @@ for ROUND2 in $watchlist; do
 		piccount=`expr $piccount + 1`
 		filename3="$ROUND3"
 #		PIC=`cat cache."$count"."$filename2" | grep $ROUND3 | grep "img src" | tail -n1 | cut -d '"' -f6`
-		PIC=`cat cache."$count"."$filename2" | grep $ROUND3 | grep "img src" | head -n1 | cut -d '"' -f6`
+#		PIC=`cat cache."$count"."$filename2" | grep $ROUND3 | grep "img src" | head -n1 | cut -d '"' -f6`
+		PIC=`cat cache."$count"."$filename2" | grep $ROUND3 | sed 's/<img src=/\npic=/g' | grep ^pic= | grep .jpg | cut -d'"' -f2 | head -n1`
 
 		ID=`echo $ROUND3 | sed "s/.*online-film-//" | sed "s/.*watch-movie-//" | sed "s/.html.*//"`
 		ZEILE=`cat cache."$count"."$filename2" | grep -n $ID | head -n1 | cut -d ":" -f1`
