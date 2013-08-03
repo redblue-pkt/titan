@@ -38,8 +38,11 @@ int screenabout(void)
 		}
 		dvbnode = dvbnode->next;
 	}
+	
+	char* flog = readfiletomem("/tmp/.firmware.log", 0);
+	text = ostrcat(text, flog, 1, 1);
 
-	textbox(_("System-Info"), text, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 500, 0, 0);
+	textbox(_("System-Info"), text, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 600, 0, 0);
 	free(text);
 
 	return 0;
