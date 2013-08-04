@@ -1400,6 +1400,8 @@ void screentithekplay(char* titheklink, char* title, int first)
 	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
 	char* tithekpic = NULL;
+	
+	changetitle(countpage, NULL);
 	drawscreen(load, 0, 0);
 	
 	if(titheklink == NULL) return;
@@ -1432,7 +1434,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 				tmpstr = ostrcat(tmpstr, oitoa(tmp->pagecount), 1, 1);
 				tmpstr = ostrcat(tmpstr, " / ", 1, 0);
 				tmpstr = ostrcat(tmpstr, oitoa(pagecount), 1, 1);
-				tmpstr = ostrcat(tmpstr, _(" )"), 1, 0);
+				tmpstr = ostrcat(tmpstr, " )", 1, 0);
 				changetext(countpage, tmpstr);
 				free(tmpstr); tmpstr = NULL;
 	
