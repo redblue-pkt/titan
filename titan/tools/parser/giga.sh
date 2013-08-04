@@ -46,9 +46,9 @@ for ROUND0 in $WATCHLIST; do
 #			echo ROUND2 $ROUND2
 			$wgetbin $ROUND2 -O cache.giga."$filename"."$count"
 #			ls cache.giga."$filename"."$count"
-			URL=`cat cache.giga."$filename"."$count" | grep 'rel="media:video" resource=' | sed 's!rel="media:video" resource=!\nlink=!g' | grep ^link= | cut -d'"' -f2`
+			URL=`cat cache.giga."$filename"."$count" | grep 'rel="media:video" resource=' | sed 's!rel="media:video" resource=!\nlink=!g' | grep ^link= | cut -d'"' -f2 | tail -n1`
 #			echo URL $URL
-			PIC=`cat cache.giga."$filename"."$count" | grep 'rel="media:video" resource=' | sed 's!poster=!\npic=!g' | grep ^pic= | cut -d'"' -f2`
+			PIC=`cat cache.giga."$filename"."$count" | grep 'rel="media:video" resource=' | sed 's!poster=!\npic=!g' | grep ^pic= | cut -d'"' -f2 | tail -n1`
 #			echo PIC $PIC
 	
 			TITLE=`cat cache.giga."$filename"."$count" | grep 'rel="media:video" resource=' | sed 's!"POST_TITLE":!\ntitle=!g' | grep ^title= | cut -d'"' -f2`
