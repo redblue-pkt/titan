@@ -1378,7 +1378,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 	}
 	free(disclaimer), disclaimer = NULL;
 
-	int rcret = -1, oaktline = 1, oaktpage = -1, ogridcol = 0;
+	int rcret = -1, oaktline = 1, oaktpage = -1, ogridcol = 0, pagecount = 0;
 
 	writesysint("/proc/sys/vm/drop_caches", 3, 0); 
 	
@@ -1411,7 +1411,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 	listbox->gridcol = 0;
 	listbox->select = NULL;
 
-	int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, first);
+	pagecount = createtithekplay(titheklink, grid, listbox, countlabel, first);
 	if(pagecount == 0) return;
 
 	changetitle(grid, _(title));
@@ -1512,7 +1512,7 @@ waitrcstart:
 		{
 			screentithek_settings();
 
-			int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, first);
+			pagecount = createtithekplay(titheklink, grid, listbox, countlabel, first);
 			if(pagecount == 0 || tithekexit == 1) break;
 
 			listbox->aktpage = oaktpage;
@@ -1561,7 +1561,7 @@ waitrcstart:
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 			
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1584,7 +1584,7 @@ waitrcstart:
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 			
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1607,7 +1607,7 @@ waitrcstart:
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 			
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1630,7 +1630,7 @@ waitrcstart:
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 			
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1653,7 +1653,7 @@ waitrcstart:
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 			
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1676,7 +1676,7 @@ waitrcstart:
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 			
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1694,12 +1694,9 @@ waitrcstart:
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
 				clearscreen(grid);
-printf("sub aa\n");
 
 				if((((struct tithek*)listbox->select->handle)->flag == 2) || (((struct tithek*)listbox->select->handle)->flag == 4) || (((struct tithek*)listbox->select->handle)->flag == 5) || (((struct tithek*)listbox->select->handle)->flag == 6) || (((struct tithek*)listbox->select->handle)->flag == 7) || (((struct tithek*)listbox->select->handle)->flag == 8) || (((struct tithek*)listbox->select->handle)->flag == 12) || (((struct tithek*)listbox->select->handle)->flag == 14) || (((struct tithek*)listbox->select->handle)->flag == 15) || (((struct tithek*)listbox->select->handle)->flag == 16) || (((struct tithek*)listbox->select->handle)->flag == 17) || (((struct tithek*)listbox->select->handle)->flag == 18) || (((struct tithek*)listbox->select->handle)->flag == 19) || (((struct tithek*)listbox->select->handle)->flag == 20) || (((struct tithek*)listbox->select->handle)->flag == 24) || (((struct tithek*)listbox->select->handle)->flag == 25) || (((struct tithek*)listbox->select->handle)->flag == 26) || (((struct tithek*)listbox->select->handle)->flag == 27) || (((struct tithek*)listbox->select->handle)->flag == 38) || (((struct tithek*)listbox->select->handle)->flag == 42) || (((struct tithek*)listbox->select->handle)->flag == 50) || (((struct tithek*)listbox->select->handle)->flag == 41))
 				{
-printf("sub bb\n");
-
 					submenu(listbox, load, title);
 					drawscreen(grid, 0, 0);
 				}
@@ -1717,7 +1714,7 @@ printf("sub bb\n");
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 			
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1740,7 +1737,7 @@ printf("sub bb\n");
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 			
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1763,7 +1760,7 @@ printf("sub bb\n");
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1786,7 +1783,7 @@ printf("sub bb\n");
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1809,7 +1806,7 @@ printf("sub bb\n");
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1832,7 +1829,7 @@ printf("sub bb\n");
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1855,7 +1852,7 @@ printf("sub bb\n");
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1878,7 +1875,7 @@ printf("sub bb\n");
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1901,7 +1898,7 @@ printf("sub bb\n");
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 3);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 3);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1924,7 +1921,7 @@ printf("sub bb\n");
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1947,7 +1944,7 @@ printf("sub bb\n");
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 3);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 3);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1970,7 +1967,7 @@ printf("sub bb\n");
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 			
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 3);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 3);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -1993,7 +1990,7 @@ printf("sub bb\n");
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 			
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -2016,7 +2013,7 @@ printf("sub bb\n");
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 			
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -2039,7 +2036,7 @@ printf("sub bb\n");
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 			
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -2062,7 +2059,7 @@ printf("sub bb\n");
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;
 			
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -2093,7 +2090,7 @@ printf("sub bb\n");
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;	
 
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -2119,7 +2116,7 @@ printf("sub bb\n");
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;	
 
-						int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 						if(pagecount == 0 || tithekexit == 1) break;
 
 						listbox->aktpage = oaktpage;
@@ -2138,7 +2135,7 @@ printf("sub bb\n");
 				if(textbox(_("Message"), _("Remove this Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
 				{
 					removefav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag);		
-					int pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+					pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 					if(pagecount == 0) return;
 						
 					drawscreen(grid, 0, 0);
