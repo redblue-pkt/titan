@@ -18,7 +18,7 @@
 //test_channel.audioType = A_MP1;
 
 //ASIASAT-5, 4000H28125 - France 24 English (fec: 3/4)
-//testtransponder1s=0#4000000#0#0#28125000#?#3#?#?#?#0
+//testtransponder1s=0#4000000#0#192#28125000#?#3#?#?#?#0
 //testchannel1s=8#0#1#380#381
 
 //Sat 19.2 (ProSieben)
@@ -36,7 +36,7 @@
 //test_channel.audioType = A_MP1;
 
 //ASIASAT-5, 4132H10670 - Trace Urban English (modulation: 8PSK, fec: 3/5)
-//testtransponder2s=0#4132000#0#0#10670000#2#7#?#?#?#1
+//testtransponder2s=0#4132000#0#192#10670000#2#7#?#?#?#1
 //testchannel2s=15#1#1#711#731
 
 //Sat 19.2 (ZDF HD)
@@ -212,7 +212,7 @@ void screenhwtest()
 				int i = 0;
 				char* tmpstr = NULL;
 
-				for(i = 0; i < 9; i++)
+				for(i = 0; i < 10; i++)
 				{
 					tmpstr = ostrcat(oitoa(i), oitoa(i), 1, 1);
 					tmpstr = ostrcat(tmpstr, oitoa(i), 1, 1);
