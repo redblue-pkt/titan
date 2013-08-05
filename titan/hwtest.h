@@ -212,6 +212,7 @@ void screenhwtest()
 				int i = 0;
 				char* tmpstr = NULL;
 
+				status.updatevfd = PAUSE;
 				for(i = 0; i < 10; i++)
 				{
 					tmpstr = ostrcat(oitoa(i), oitoa(i), 1, 1);
@@ -222,6 +223,7 @@ void screenhwtest()
 					usleep(600000);
 				}
 				free(tmpstr); tmpstr = NULL;
+				status.updatevfd = START;
 			}
 			
 			if(ostrcmp(mbox->name, "Front Key") == 0)
