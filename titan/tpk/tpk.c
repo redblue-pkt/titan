@@ -490,6 +490,7 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 			if(buf == NULL)
 			{
 				err("no mem");
+				free(tmpstr); tmpstr = NULL;
 				return 1;
 			}
 
@@ -497,6 +498,7 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 			if(ret < 0)
 			{
 				perr("read link %s", tmpstr);
+				free(tmpstr); tmpstr = NULL;
 				free(buf); buf = NULL;
 				return 1;
 			}
@@ -520,6 +522,7 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 			if(ret != 0)
 			{
 				perr("get file status %s", tmpstr);
+				free(tmpstr); tmpstr = NULL;
 				return 1;
 			}
 			ret = tpkcreateblk(mainpath, tmpstr, major(s.st_rdev), minor(s.st_rdev), 1);
@@ -539,6 +542,7 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 			if(ret != 0)
 			{
 				perr("get file status %s", tmpstr);
+				free(tmpstr); tmpstr = NULL;
 				return 1;
 			}
 			ret = tpkcreatechr(mainpath, tmpstr, major(s.st_rdev), minor(s.st_rdev), 1);
@@ -556,7 +560,11 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 			tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
 			ret = tpkcreatefifo(mainpath, tmpstr, 1);
 			free(tmpstr); tmpstr = NULL;
-			if(ret != 0) return 1;
+			if(ret != 0)
+			{
+				err("create fifo");
+				return 1;
+			}
 		}
 		else if(entry->d_type == DT_REG) //file
 		{
