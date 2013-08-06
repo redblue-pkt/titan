@@ -3326,10 +3326,16 @@ int getfiletype(char* filename)
 {
 	struct stat64 s;
 
+	if(filename == NULL) return -1;
+
 	if(stat64(filename, &s) >= 0)
 	{
-		if(S_ISDIR(s.st_mode)) return DT_DIR;
 		if(S_ISREG(s.st_mode)) return DT_REG;
+		if(S_ISDIR(s.st_mode)) return DT_DIR;
+		if(S_ISCHR(s.st_mode)) return DT_CHR;
+		if(S_ISBLK(s.st_mode)) return DT_BLK;
+		if(S_ISFIFO(s.st_mode)) return DT_FIFO;
+		if(S_ISLNK(s.st_mode)) return DT_LNK;
 	}
 
 	return DT_UNKNOWN;
