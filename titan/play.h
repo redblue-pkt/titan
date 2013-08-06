@@ -1072,7 +1072,7 @@ void playrcjumpto(char* file, char* showname, int* playinfobarstatus, int* playi
 {
 	if(status.pause == 0 && status.playspeed == 0 && status.slowspeed == 0)
 	{
-		char* tmpstr = numinput(_("Jump To (min)"), NULL, "000", 1);
+		char* tmpstr = numinput(_("Jump To (min)"), NULL, "000", 0);
 		if(tmpstr != NULL)
 		{
 			int jump = atoi(tmpstr) * 60;

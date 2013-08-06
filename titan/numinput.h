@@ -12,7 +12,7 @@ char* numinput(char* title, char* num, char* mask, int isip)
 	char* numtmp = NULL;
 
 	if(pthread_self() != status.mainthread)
-                fromthread = 1;
+		fromthread = 1;
 
 	changetitle(numinput, title);
 	height = numinput->height;
@@ -25,7 +25,7 @@ char* numinput(char* title, char* num, char* mask, int isip)
 		numtmp = ostrcat(num, NULL, 0, 0);
 
 	changemask(input, mask);
-        changeinput(input, numtmp);
+	changeinput(input, numtmp);
 	free(numtmp); numtmp = NULL;
 
 	if(fromthread == 1)
