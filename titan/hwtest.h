@@ -177,6 +177,7 @@ void screenhwtest()
 	addmenulist(&mlist, "CAM", NULL, NULL, 0, 0);
 	addmenulist(&mlist, "RS232", NULL, NULL, 0, 0);
 	addmenulist(&mlist, "LNB", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Flash/Nand Check", NULL, NULL, 0, 0);
 	
 	while(1)
 	{
@@ -540,6 +541,44 @@ void screenhwtest()
 					
 				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 0, 0);			
 				free(tmpstr); tmpstr = NULL;
+			}
+			if(ostrcmp(mbox->name, "Flash/Nand Check") == 0)
+			{
+				int ret1 = 0, ret2 = 0, i = 0;
+				char* tmpstr = NULL, *tmpstr1 = NULL;
+				
+				for(i = 0; i < 20; i++)
+					tmpstr = ostrcat(tmpstr, "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789", 1, 0);
+				
+				//check /var
+				ret = writesys("/var/hwtest.txt", tmpstr, 0);
+				if(ret == 0)
+				{
+					tmpstr1 = readsys("/var/hwtest.txt", 1);
+					if(ostrcmp(tmpstr, tmpstr1) != 0) ret = 1;
+				}
+				unlink("/var/hwtest.txt");
+				free(tmpstr1); tmpstr1 = NULL;
+				
+				//check /mnt
+				ret = writesys("/mnt/hwtest.txt", tmpstr, 0);
+				if(ret == 0)
+				{
+					tmpstr1 = readsys("/mnt/hwtest.txt", 1);
+					if(ostrcmp(tmpstr, tmpstr1) != 0) ret = 1;
+				}
+				unlink("/mnt/hwtest.txt");
+				free(tmpstr); tmpstr = NULL;
+				free(tmpstr1); tmpstr1 = NULL;
+
+				if(ret1 == 0 && ret2 == 0)
+					textbox(_("Message"), _("SUCESS Flash/Nand"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
+				else if(ret1 != 0 && ret2 != 0)
+					textbox(_("Message"), _("FAIL Flash/Nand (/var and /mnt)"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+				else if(ret1 != 0)
+					textbox(_("Message"), _("FAIL Flash/Nand (/var)"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+				else if(ret2 != 0)
+					textbox(_("Message"), _("FAIL Flash/Nand (/mnt)"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
 			}
 		}
 		else
