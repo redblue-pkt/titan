@@ -1,7 +1,6 @@
 #ifndef COPYFILE_H
 #define COPYFILE_H
 
-/*
 int countfiles(char* dirname, int* count, int first)
 {
 	DIR *d;
@@ -33,7 +32,7 @@ int countfiles(char* dirname, int* count, int first)
 		//for nfs mounts if file type is unknown use stat
 		if(entry->d_type == DT_UNKNOWN)
 		{
-			tmpstr = ostrcat(dirfrom, "/", 0, 0);
+			tmpstr = ostrcat(dirname, "/", 0, 0);
 			tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
 			entry->d_type = getfiletype(tmpstr);
 			free(tmpstr); tmpstr = NULL;
@@ -43,7 +42,7 @@ int countfiles(char* dirname, int* count, int first)
 		if(entry->d_type == DT_DIR)
 		{
 			//Check that the directory is not d or d's parent
-			if(entry->d_name != NULL && entry->d_name[0] != '.')
+			if(entry->d_name != NULL && ostrcmp(entry->d_name[0], ".") != 0 && ostrcmp(entry->d_name[0], "..") != 0)
 			{
 				(*count)++;
 				path_length = snprintf(path, PATH_MAX, "%s/%s", dirname, entry->d_name);
@@ -80,7 +79,6 @@ int countfiles(char* dirname, int* count, int first)
 
 	return 0;
 }
-*/
 
 //flag 0: copy file
 //flag 1: move file
