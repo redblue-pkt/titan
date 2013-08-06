@@ -557,17 +557,27 @@ void screenhwtest()
 					tmpstr1 = readsys("/var/hwtest.txt", 1);
 					if(ostrcmp(tmpstr, tmpstr1) != 0) ret = 1;
 				}
-				unlink("/var/hwtest.txt");
+				
+				if(ret1 == 0)
+					ret1 = unlink("/var/hwtest.txt");
+				else
+					unlink("/var/hwtest.txt");
+				
 				free(tmpstr1); tmpstr1 = NULL;
 				
 				//check /mnt
-				ret = writesys("/mnt/hwtest.txt", tmpstr, 0);
-				if(ret == 0)
+				ret1 = writesys("/mnt/hwtest.txt", tmpstr, 0);
+				if(ret1 == 0)
 				{
 					tmpstr1 = readsys("/mnt/hwtest.txt", 1);
-					if(ostrcmp(tmpstr, tmpstr1) != 0) ret = 1;
+					if(ostrcmp(tmpstr, tmpstr1) != 0) ret1 = 1;
 				}
-				unlink("/mnt/hwtest.txt");
+				
+				if(ret1 == 0)
+					ret1 = unlink("/mnt/hwtest.txt");
+				else
+					unlink("/mnt/hwtest.txt");
+				
 				free(tmpstr); tmpstr = NULL;
 				free(tmpstr1); tmpstr1 = NULL;
 
