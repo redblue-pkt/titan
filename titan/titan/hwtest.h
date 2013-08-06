@@ -555,11 +555,11 @@ void screenhwtest()
 					tmpstr = ostrcat(tmpstr, "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789", 1, 0);
 				
 				//check /var
-				ret = writesys("/var/hwtest.txt", tmpstr, 0);
-				if(ret == 0)
+				ret1 = writesys("/var/hwtest.txt", tmpstr, 0);
+				if(ret1 == 0)
 				{
 					tmpstr1 = readsys("/var/hwtest.txt", 1);
-					if(ostrcmp(tmpstr, tmpstr1) != 0) ret = 1;
+					if(ostrcmp(tmpstr, tmpstr1) != 0) ret1 = 1;
 				}
 				
 				if(ret1 == 0)
@@ -570,15 +570,15 @@ void screenhwtest()
 				free(tmpstr1); tmpstr1 = NULL;
 				
 				//check /mnt
-				ret1 = writesys("/mnt/hwtest.txt", tmpstr, 0);
-				if(ret1 == 0)
+				ret2 = writesys("/mnt/hwtest.txt", tmpstr, 0);
+				if(ret2 == 0)
 				{
 					tmpstr1 = readsys("/mnt/hwtest.txt", 1);
-					if(ostrcmp(tmpstr, tmpstr1) != 0) ret1 = 1;
+					if(ostrcmp(tmpstr, tmpstr1) != 0) ret2 = 1;
 				}
 				
-				if(ret1 == 0)
-					ret1 = unlink("/mnt/hwtest.txt");
+				if(ret2 == 0)
+					ret2 = unlink("/mnt/hwtest.txt");
 				else
 					unlink("/mnt/hwtest.txt");
 				
