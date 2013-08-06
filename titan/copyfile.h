@@ -248,7 +248,7 @@ int copydir(char* dirfrom, char* dirto, struct copyfile* node, int first, int fl
 		if(entry->d_type == DT_DIR) //dir
 		{
 			//Check that the directory is not d or d's parent
-			if(entry->d_name != NULL && entry->d_name[0] != '.')
+			if(entry->d_name != NULL && ostrcmp(entry->d_name[0], ".") != 0 && ostrcmp(entry->d_name[0], "..") != 0)
 			{
 				if(node != NULL) node->filecount--;
 			
