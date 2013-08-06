@@ -129,6 +129,13 @@ int copyfile(char* from, char* to, struct copyfile* cnode, int flag)
 		ret = 1;
 		goto end;
 	}
+	
+	if(lseek64(fdfrom, 0, SEEK_SET) < 0)
+	{
+		perr("can't seek to startpos %s", from);
+		ret = 1;
+		goto end;
+	}
 
 	if(cnode != NULL) cnode->maxkb = len;  	
 
