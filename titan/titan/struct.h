@@ -573,6 +573,7 @@ struct copyfile
 	char* to;
 	int proz;
 	int filecount;
+	int maxfilecount;
 	off64_t maxkb;
 	off64_t aktkb;
 	int stop;
