@@ -3,6 +3,7 @@
 
 int countfiles(char* dirname, int* count, int first)
 {
+	int ret = 0;
 	DIR *d;
 	char* tmpstr = NULL;
 
@@ -34,7 +35,7 @@ int countfiles(char* dirname, int* count, int first)
 		{
 			tmpstr = ostrcat(dirname, "/", 0, 0);
 			tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
-			entry->d_type = getfiletype(tmpstr);
+			entry->d_type = getlfiletype(tmpstr);
 			free(tmpstr); tmpstr = NULL;
 		}
 
@@ -49,7 +50,8 @@ int countfiles(char* dirname, int* count, int first)
 				if(path_length >= PATH_MAX)
 				{
 					err("path length has got too long");
-					return 1;
+					ret = 1;
+					break;
 				}
 				//Recursively call findfiles with the new path
 				countfiles(path, count, 0);
@@ -71,18 +73,18 @@ int countfiles(char* dirname, int* count, int first)
 	}
 
 	//After going through all the entries, close the directory
-	if(closedir(d))
+	if(d && closedir(d))
 	{
 		perr("Could not close %s", dirname);
-		return 1;
+		ret = 1;
 	}
 
-	return 0;
+	return ret;
 }
 
 //flag 0: copy file
 //flag 1: move file
-int copyfile(char* from, char* to, struct copyfile* cnode, int flag)
+int copyfilereal(char* from, char* to, struct copyfile* node, int flag)
 {
 	int fdfrom = -1, fdto = -1, ret = 0, readret = 0, writeret = 0;
 	off64_t count = 0, len = 0;
@@ -137,7 +139,7 @@ int copyfile(char* from, char* to, struct copyfile* cnode, int flag)
 		goto end;
 	}
 
-	if(cnode != NULL) cnode->maxkb = len;  	
+	if(node != NULL) node->maxkb = len;  	
 
 	while(len != 0)
 	{		
@@ -152,7 +154,7 @@ int copyfile(char* from, char* to, struct copyfile* cnode, int flag)
 			goto end;
 		}
 		
-		if(cnode != NULL && cnode->stop == 1)
+		if(node != NULL && node->stop == 1)
 		{
 		  ret = 1;
 			goto end;
@@ -166,14 +168,18 @@ int copyfile(char* from, char* to, struct copyfile* cnode, int flag)
 			goto end;
 		}
 		
-		if(cnode != NULL && cnode->stop == 1)
+		if(node != NULL && node->stop == 1)
 		{
 		  ret = 1;
 			goto end;
 		}
 
 		count += readret;
-		if(cnode != NULL) cnode->aktkb = count;
+		if(node != NULL)
+		{ 
+			node->aktkb = count;
+			node->proz = (int)ceil((((float)count / node->maxkb) * 100));
+		}
 		
 		if(count == len) break;
 		if(count > len)
@@ -206,12 +212,160 @@ end:
 	}
 	free(buf);
 
-	if(cnode != NULL) cnode->ret = ret;
-
+	if(node != NULL) node->filecount--;
 	return ret;
 }
 
-/*
+//flag 0: copy file
+//flag 1: move file
+int copylink(char* from, char* to, struct copyfile* node, int flag)
+{
+	int ret = 0;
+	
+	if(from == NULL || to == NULL) return 1;
+
+	char* buf = calloc(1, MINMALLOC);
+	if(buf == NULL)
+	{
+		err("no mem");
+		return 1;
+	}
+
+	ret = readlink(from, buf, MINMALLOC);
+	if(ret < 0)
+	{
+		perr("read link %s", from);
+		free(buf); buf = NULL;
+		return 1;
+	}
+
+	ret = tpkcreatelink("", to, buf, 0);
+	if(ret != 0)
+	{
+		free(buf); buf = NULL;
+		err("create link");
+		return 1;
+	}
+			
+	if(flag == 1)
+	{
+		ret = unlink(from);
+		if(ret != 0 && errno != ENOENT)
+		{
+			perr("remove file %s", from);
+			free(buf); buf = NULL;
+			return 1;
+		}
+	}
+
+	if(node != NULL) node->filecount--;
+	free(buf); buf = NULL;
+	return 0;
+}
+
+//flag 0: copy file
+//flag 1: move file
+int copyblk(char* from, char* to, struct copyfile* node, int flag)
+{
+	int ret = 0;
+	struct stat64 s;
+	
+	if(from == NULL || to == NULL) return 1;
+
+	ret = stat64(from, &s);
+	if(ret != 0)
+	{
+		perr("get file status %s", from);
+		return 1;
+	}
+			
+	ret = tpkcreateblk("", to, major(s.st_rdev), minor(s.st_rdev), 0);
+	if(ret != 0)
+	{
+		err("create blk dev");
+		return 1;
+	}
+			
+	if(flag == 1)
+	{
+		ret = unlink(from);
+		if(ret != 0 && errno != ENOENT)
+		{
+			perr("remove file %s", from);
+			return 1;
+		}
+	}
+
+	if(node != NULL) node->filecount--;
+	return 0;
+}
+
+//flag 0: copy file
+//flag 1: move file
+int copychr(char* from, char* to, struct copyfile* node, int flag)
+{
+	int ret = 0;
+	struct stat64 s;
+	
+	if(from == NULL || to == NULL) return 1;
+
+	ret = stat64(from, &s);
+	if(ret != 0)
+	{
+		perr("get file status %s", from);
+		return 1;
+	}
+			
+	ret = tpkcreatechr("", to, major(s.st_rdev), minor(s.st_rdev), 0);
+	if(ret != 0)
+	{
+		err("create chr dev");
+		return 1;
+	}
+			
+	if(flag == 1)
+	{
+		ret = unlink(from);
+		if(ret != 0 && errno != ENOENT)
+		{
+			perr("remove file %s", from);
+			return 1;
+		}
+	}
+
+	if(node != NULL) node->filecount--;
+	return 0;
+}
+
+//flag 0: copy file
+//flag 1: move file
+int copyfifo(char* from, char* to, struct copyfile* node, int flag)
+{
+	int ret = 0;
+	
+	if(from == NULL || to == NULL) return 1;
+			
+	ret = tpkcreatefifo("", to, 0);
+	if(ret != 0)
+	{
+		err("create fifo");
+		return 1;
+	}
+			
+	if(flag == 1)
+	{
+		ret = unlink(from);
+		if(ret != 0 && errno != ENOENT)
+		{
+			perr("remove file %s", from);
+			return 1;
+		}
+	}
+
+	if(node != NULL) node->filecount--;
+	return 0;
+}
+
 //flag 0: copy file
 //flag 1: move file
 int copydir(char* dirfrom, char* dirto, struct copyfile* node, int first, int flag)
@@ -247,44 +401,54 @@ int copydir(char* dirfrom, char* dirto, struct copyfile* node, int first, int fl
 		{
 			tmpstr = ostrcat(dirfrom, "/", 0, 0);
 			tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
-			entry->d_type = getfiletype(tmpstr);
+			entry->d_type = getlfiletype(tmpstr);
 			free(tmpstr); tmpstr = NULL;
 		}
 
 		free(tmpstr); tmpstr = NULL;
 		if(entry->d_type == DT_DIR) //dir
 		{
+			if(node != NULL && node->stop == 1)
+			{
+				ret = 1;
+				break;
+			}
+
 			//Check that the directory is not d or d's parent
 			if(entry->d_name != NULL && ostrcmp(entry->d_name, ".") != 0 && ostrcmp(entry->d_name, "..") != 0)
 			{
-				if(node != NULL) node->filecount--;
-			
 				path_length = snprintf(pathfrom, PATH_MAX, "%s/%s", dirfrom, entry->d_name);
 				if(path_length >= PATH_MAX)
 				{
 					err("path length has got too long");
-					return 1;
+					ret = 1;
+					break;
 				}
 				
 				path_length = snprintf(pathto, PATH_MAX, "%s/%s", dirto, entry->d_name);
 				if(path_length >= PATH_MAX)
 				{
 					err("path length has got too long");
-					return 1;
+					ret = 1;
+					break;
 				}
 
 				ret = tpkcreatedir("", pathto, 0);
 				if(ret != 0)
 				{
 					err("create dir %s", pathto);
-					return 1;
+					ret = 1;
+					break;
 				}
+				
+				if(node != NULL) node->filecount--;
 
-				ret = copydir(pathfrom, pathto, 0, flag); //Recursively call with the new path
+				ret = copydir(pathfrom, pathto, node, 0, flag); //Recursively call with the new path
 				if(ret != 0)
 				{
 					err("copydir %s", pathfrom);
-					return 1;
+					ret = 1;
+					break;
 				}
 				
 				if(flag == 1)
@@ -293,106 +457,61 @@ int copydir(char* dirfrom, char* dirto, struct copyfile* node, int first, int fl
 					if(ret != 0 && errno != ENOENT)
 					{
 						perr("remove dir %s", pathfrom);
-						return 1;
+						ret = 1;
+						break;
 					}
 				}
 			}
 		}
 		else if(entry->d_type == DT_LNK) //link
 		{
-			if(node != NULL) node->filecount--;
-			
+			if(node != NULL && node->stop == 1)
+			{
+				ret = 1;
+				break;
+			}
+
 			tmpstr = ostrcat(tmpstr, pathfrom, 1, 0);
 			tmpstr = ostrcat(tmpstr, "/", 1, 0);
 			tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
-
-			char* buf = calloc(1, MINMALLOC);
-			if(buf == NULL)
-			{
-				free(tmpstr); tmpstr = NULL;
-				err("no mem");
-				return 1;
-			}
-
-			ret = readlink(tmpstr, buf, MINMALLOC);
-			if(ret < 0)
-			{
-				perr("read link %s", tmpstr);
-				free(tmpstr); tmpstr = NULL;
-				free(buf); buf = NULL;
-				return 1;
-			}
 
 			tmpstr1 = ostrcat(tmpstr1, pathto, 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, entry->d_name, 1, 0);
 
-			ret = tpkcreatelink("", tmpstr1, buf, 1);
-			if(ret != 0)
+			if(copylink(tmpstr, tmpstr, node, flag) != 0)
 			{
 				free(tmpstr); tmpstr = NULL;
 				free(tmpstr1); tmpstr1 = NULL;
-				free(buf); buf = NULL;
-				err("create link");
-				return 1;
-			}
-			
-			if(flag == 1)
-			{
-				ret = unlink(tmpstr);
-				if(ret != 0 && errno != ENOENT)
-				{
-					perr("remove file %s", tmpstr);
-					free(tmpstr); tmpstr = NULL;
-					free(tmpstr1); tmpstr1 = NULL;
-					free(buf); buf = NULL;
-					return 1;
-				}
+				ret = 1;
+				break;
 			}
 			
 			free(tmpstr); tmpstr = NULL;
 			free(tmpstr1); tmpstr1 = NULL;
-			free(buf); buf = NULL;
 		}
 		else if(entry->d_type == DT_BLK) //block device
 		{
-			if(node != NULL) node->filecount--;
-			
+			if(node != NULL && node->stop == 1)
+			{
+				ret = 1;
+				break;
+			}
+
 			tmpstr = ostrcat(tmpstr, pathfrom, 1, 0);
 			tmpstr = ostrcat(tmpstr, "/", 1, 0);
 			tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
 			
-			ret = stat64(tmpstr, &s);
-			if(ret != 0)
-			{
-				perr("get file status %s", tmpstr);
-				free(tmpstr); tmpstr = NULL;
-				return 1;
-			}
-
 			tmpstr1 = ostrcat(tmpstr1, pathto, 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, entry->d_name, 1, 0);
 			
-			ret = tpkcreateblk("", tmpstr1, major(s.st_rdev), minor(s.st_rdev), 1);
-			if(ret != 0)
+			if(copyblk(tmpstr, tmpstr1, node, flag) != 0)
 			{
 				free(tmpstr); tmpstr = NULL;
 				free(tmpstr1); tmpstr1 = NULL;
-				err("create blk dev");
-				return 1;
-			}
-			
-			if(flag == 1)
-			{
-				ret = unlink(tmpstr);
-				if(ret != 0 && errno != ENOENT)
-				{
-					perr("remove file %s", tmpstr);
-					free(tmpstr); tmpstr = NULL;
-					free(tmpstr1); tmpstr1 = NULL;
-					return 1;
-				}
+				ret = 1;
+				break;
 			}
 			
 			free(tmpstr); tmpstr = NULL;
@@ -400,43 +519,26 @@ int copydir(char* dirfrom, char* dirto, struct copyfile* node, int first, int fl
 		}
 		else if(entry->d_type == DT_CHR) //charcter device
 		{
-			if(node != NULL) node->filecount--;
-			
+			if(node != NULL && node->stop == 1)
+			{
+				ret = 1;
+				break;
+			}
+
 			tmpstr = ostrcat(tmpstr, pathfrom, 1, 0);
 			tmpstr = ostrcat(tmpstr, "/", 1, 0);
 			tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
-			
-			ret = stat64(tmpstr, &s);
-			if(ret != 0)
-			{
-				free(tmpstr); tmpstr = NULL;
-				perr("get file status %s", tmpstr);
-				return 1;
-			}
 			
 			tmpstr1 = ostrcat(tmpstr1, pathto, 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, entry->d_name, 1, 0);
 			
-			ret = tpkcreatechr("", tmpstr1, major(s.st_rdev), minor(s.st_rdev), 1);
-			if(ret != 0)
+			if(copychr(tmpstr, tmpstr1, node, flag) != 0)
 			{
 				free(tmpstr); tmpstr = NULL;
 				free(tmpstr1); tmpstr1 = NULL;
-				err("create chr dev");
-				return 1;
-			}
-			
-			if(flag == 1)
-			{
-				ret = unlink(tmpstr);
-				if(ret != 0 && errno != ENOENT)
-				{
-					perr("remove file %s", tmpstr);
-					free(tmpstr); tmpstr = NULL;
-					free(tmpstr1); tmpstr1 = NULL;
-					return 1;
-				}
+				ret = 1;
+				break;
 			}
 			
 			free(tmpstr); tmpstr = NULL;
@@ -444,8 +546,12 @@ int copydir(char* dirfrom, char* dirto, struct copyfile* node, int first, int fl
 		}
 		else if(entry->d_type == DT_FIFO) //fifo
 		{
-			if(node != NULL) node->filecount--;
-			
+			if(node != NULL && node->stop == 1)
+			{
+				ret = 1;
+				break;
+			}
+
 			tmpstr = ostrcat(tmpstr, pathfrom, 1, 0);
 			tmpstr = ostrcat(tmpstr, "/", 1, 0);
 			tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
@@ -454,25 +560,12 @@ int copydir(char* dirfrom, char* dirto, struct copyfile* node, int first, int fl
 			tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, entry->d_name, 1, 0);
 			
-			ret = tpkcreatefifo("", tmpstr1, 1);
-			if(ret != 0)
+			if(copyfifo(tmpstr, tmpstr1, node, flag) != 0)
 			{
 				free(tmpstr); tmpstr = NULL;
 				free(tmpstr1); tmpstr1 = NULL;
-				err("create fifo");
-				return 1;
-			}
-			
-			if(flag == 1)
-			{
-				ret = unlink(tmpstr);
-				if(ret != 0 && errno != ENOENT)
-				{
-					perr("remove file %s", tmpstr);
-					free(tmpstr); tmpstr = NULL;
-					free(tmpstr1); tmpstr1 = NULL;
-					return 1;
-				}
+				ret = 1;
+				break;
 			}
 			
 			free(tmpstr); tmpstr = NULL;
@@ -480,8 +573,12 @@ int copydir(char* dirfrom, char* dirto, struct copyfile* node, int first, int fl
 		}
 		else if(entry->d_type == DT_REG) //file
 		{
-			if(node != NULL) node->filecount--;
-			
+			if(node != NULL && node->stop == 1)
+			{
+				ret = 1;
+				break;
+			}
+
 			tmpstr = ostrcat(tmpstr, pathfrom, 1, 0);
 			tmpstr = ostrcat(tmpstr, "/", 1, 0);
 			tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
@@ -490,41 +587,103 @@ int copydir(char* dirfrom, char* dirto, struct copyfile* node, int first, int fl
 			tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, entry->d_name, 1, 0);
 			
-			ret = copyfile(tmpstr, tmpstr1, node, flag);
-			if(ret != 0)
+			if(copyfilereal(tmpstr, tmpstr1, node, flag) != 0)
 			{
 				free(tmpstr); tmpstr = NULL;
 				free(tmpstr1); tmpstr1 = NULL;
-				err("create file");
-				return 1;
+				ret = 1;
+				break;
 			}
 			
 			free(tmpstr); tmpstr = NULL;
 			free(tmpstr1); tmpstr1 = NULL;
 		}
-		else if(entry->d_type == DT_SOCK) //socket
-		{
-			err("socket filetype found");
-		}
-		else if(entry->d_type == DT_UNKNOWN) //unknown
-		{
-			err("unknown filetype found");
-		}
 		else //unknown
 		{
+			if(node != NULL && node->stop == 1)
+			{
+				ret = 1;
+				break;
+			}
+
 			err("unknown filetype found");
 		}
 	}
 
-	if(closedir(d))
+	if(d && closedir(d))
 	{
 		perr("Could not close %s", dirfrom);
-		return 1;
+		ret = 1;
 	}
 
-	return 0;
+	return ret;
 }
-*/
+
+//flag 0: copy file
+//flag 1: move file
+int copyfile(char* from, char* to, struct copyfile* node, int flag)
+{
+	char* tmpto = NULL, *tmpstr = NULL, *bname = NULL;
+	int ret = 1, fromtype = 0, totype = 0;
+	
+	if(from == NULL || to == NULL || ostrcmp(from, to) == 0)
+	{
+		if(node != NULL) node->ret = 1;
+		return 1;
+	}
+	
+	fromtype = getlfiletype(from);
+	totype = getlfiletype(to);
+	
+	tmpto = ostrcat(to, NULL, 0, 0);
+	
+	//check if link is a dir
+	if(totype == DT_LNK)
+	{
+		char* rpath = realpath(tmpto, NULL);
+		if(rpath != NULL)
+		{
+			if(getlfiletype(rpath) == DT_DIR)
+			{
+				free(tmpto); tmpto = NULL;
+				tmpto = ostrcat(rpath, NULL, 0, 0);
+				totype = DT_DIR; 
+			}
+		}
+		free(rpath); rpath = NULL;	
+	}
+	
+	if((fromtype == DT_LNK || fromtype == DT_BLK || fromtype == DT_CHR || fromtype == DT_FIFO || fromtype == DT_REG) && totype == DT_DIR)
+	{
+		tmpstr = ostrcat(from, NULL, 0, 0);
+		if(tmpstr != NULL)
+			bname = basename(tmpstr);
+		tmpto = ostrcat(tmpto, "/", 1, 0);
+		tmpto = ostrcat(tmpto, bname, 1, 0);
+		free(tmpstr); tmpstr = NULL;
+		
+		totype = fromtype;
+	}
+	
+	if(fromtype == DT_DIR && totype == DT_DIR)
+		ret = copydir(from, tmpto, node, 1, flag);
+	else if(fromtype == DT_LNK && totype != DT_DIR)
+		ret = copylink(from, tmpto, node, flag);	
+	else if(fromtype == DT_BLK && totype != DT_DIR)
+		ret = copyblk(from, tmpto, node, flag);	
+	else if(fromtype == DT_CHR && totype != DT_DIR)
+		ret = copychr(from, tmpto, node, flag);
+	else if(fromtype == DT_FIFO && totype != DT_DIR)
+		ret = copyfifo(from, tmpto, node, flag);	
+	else if(fromtype == DT_REG && totype != DT_DIR)
+		ret = copyfilereal(from, tmpto, node, flag);
+	else
+		err("copy not allowed");
+	
+	free(tmpto); tmpto = NULL;
+	if(node != NULL) node->ret = ret;
+	return ret;
+}
 
 void copyfilestruct(struct stimerthread* timernode, struct copyfile* node, int flag)
 {
@@ -598,10 +757,11 @@ int screencopy(char* title, char* from, char* to, int flag)
 	cnode->to = to;
 	cnode->ret = -1;
 	cnode->stop = 0;
-	//cnode->filecount = 0;
+	cnode->filecount = 1;
 	
-	//countfiles(from, &count, 1);
-	//cnode->filecount = count;
+	ret = countfiles(from, &count, 1);
+	if(ret == 0)
+		cnode->filecount = count;
 	
 	if(flag == 1)
 		addtimer(&movefilestruct, START, 1000, 1, (void*)cnode, NULL, NULL);
@@ -619,6 +779,7 @@ int screencopy(char* title, char* from, char* to, int flag)
 			tmpstr = ostrcat(_("Filesize (KB): "), tmpstr, 0, 1);
 			changetext(maxkb, tmpstr);
 			free(tmpstr); tmpstr = NULL;
+			
 			tmpstr = oitoa(cnode->aktkb / 1024);
 			if(flag == 1)
 				tmpstr = ostrcat(_("Move (KB): "), tmpstr, 0, 1);
@@ -627,12 +788,10 @@ int screencopy(char* title, char* from, char* to, int flag)
 			changetext(aktkb, tmpstr);
 			free(tmpstr); tmpstr = NULL;
 			
-			/*
 			tmpstr = oitoa(cnode->filecount);
 			tmpstr = ostrcat(_("Amount of files): "), tmpstr, 0, 1);
 			changetext(filecount, NULL);
 			free(tmpstr); tmpstr = NULL;
-			*/
 		}
 		drawscreen(copyfile, 0, 0);
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
@@ -651,6 +810,7 @@ int screencopy(char* title, char* from, char* to, int flag)
 		if(cnode->ret > 0) break;
 	}
 
+	progress->progresssize = 100;
 	if(cnode->ret > 0 && rcret != getrcconfigint("rcexit", NULL))
 	{	
 		if(flag == 1)
