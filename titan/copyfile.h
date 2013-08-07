@@ -139,7 +139,7 @@ int copyfilereal(char* from, char* to, struct copyfile* node, int flag)
 		goto end;
 	}
 
-	if(node != NULL) node->maxkb = len;  	
+	if(node != NULL) node->maxkb += len;  	
 
 	while(len != 0)
 	{		
@@ -177,8 +177,9 @@ int copyfilereal(char* from, char* to, struct copyfile* node, int flag)
 		count += readret;
 		if(node != NULL)
 		{ 
-			node->aktkb = count;
-			node->proz = (int)ceil((((float)count / node->maxkb) * 100));
+			node->aktkb += readret;
+			if(node->maxfilecount == 1)
+				node->proz = (int)ceil((((float)node->aktkb / node->maxkb) * 100));
 		}
 		
 		if(count == len) break;
@@ -212,7 +213,12 @@ end:
 	}
 	free(buf);
 
-	if(node != NULL) node->filecount--;
+	if(node != NULL)
+	{ 
+		node->filecount--;
+		if(node->maxfilecount > 1)
+			node->proz = 100 - ((int)ceil((((float)node->filecount / node->maxfilecount) * 100)));
+	}
 	return ret;
 }
 
@@ -258,7 +264,12 @@ int copylink(char* from, char* to, struct copyfile* node, int flag)
 		}
 	}
 
-	if(node != NULL) node->filecount--;
+	if(node != NULL)
+	{ 
+		node->filecount--;
+		if(node->maxfilecount > 1)
+			node->proz = 100 - ((int)ceil((((float)node->filecount / node->maxfilecount) * 100)));
+	}
 	free(buf); buf = NULL;
 	return 0;
 }
@@ -296,7 +307,12 @@ int copyblk(char* from, char* to, struct copyfile* node, int flag)
 		}
 	}
 
-	if(node != NULL) node->filecount--;
+	if(node != NULL)
+	{ 
+		node->filecount--;
+		if(node->maxfilecount > 1)
+			node->proz = 100 - ((int)ceil((((float)node->filecount / node->maxfilecount) * 100)));
+	}
 	return 0;
 }
 
@@ -333,7 +349,12 @@ int copychr(char* from, char* to, struct copyfile* node, int flag)
 		}
 	}
 
-	if(node != NULL) node->filecount--;
+	if(node != NULL)
+	{ 
+		node->filecount--;
+		if(node->maxfilecount > 1)
+			node->proz = 100 - ((int)ceil((((float)node->filecount / node->maxfilecount) * 100)));
+	}
 	return 0;
 }
 
@@ -362,7 +383,12 @@ int copyfifo(char* from, char* to, struct copyfile* node, int flag)
 		}
 	}
 
-	if(node != NULL) node->filecount--;
+	if(node != NULL)
+	{
+		node->filecount--;
+		if(node->maxfilecount > 1)
+			node->proz = 100 - ((int)ceil((((float)node->filecount / node->maxfilecount) * 100)));
+	}
 	return 0;
 }
 
@@ -441,7 +467,12 @@ int copydir(char* dirfrom, char* dirto, struct copyfile* node, int first, int fl
 					break;
 				}
 				
-				if(node != NULL) node->filecount--;
+				if(node != NULL)
+				{
+					node->filecount--;
+					if(node->maxfilecount > 1)
+						node->proz = 100 - ((int)ceil((((float)node->filecount / node->maxfilecount) * 100)));
+				}
 
 				ret = copydir(pathfrom, pathto, node, 0, flag); //Recursively call with the new path
 				if(ret != 0)
@@ -758,10 +789,14 @@ int screencopy(char* title, char* from, char* to, int flag)
 	cnode->ret = -1;
 	cnode->stop = 0;
 	cnode->filecount = 1;
+	cnode->maxfilecount = 1;
 	
 	ret = countfiles(from, &count, 1);
 	if(ret == 0)
+	{
 		cnode->filecount = count;
+		cnode->maxfilecount = count;
+	}
 	
 	if(flag == 1)
 		addtimer(&movefilestruct, START, 1000, 1, (void*)cnode, NULL, NULL);
@@ -788,8 +823,9 @@ int screencopy(char* title, char* from, char* to, int flag)
 			changetext(aktkb, tmpstr);
 			free(tmpstr); tmpstr = NULL;
 			
-			tmpstr = oitoa(cnode->filecount);
-			tmpstr = ostrcat(_("Amount of files): "), tmpstr, 0, 1);
+			tmpstr = ostrcat(_("Amount of files): "), oitoa(cnode->filecount), 0, 1);
+			tmpstr = ostrcat(tmpstr, " / ", 1, 0);
+			tmpstr = ostrcat(tmpstr, oitoa(cnode->maxfilecount), 1, 1);
 			changetext(filecount, NULL);
 			free(tmpstr); tmpstr = NULL;
 		}
