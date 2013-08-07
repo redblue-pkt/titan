@@ -3250,4 +3250,5 @@ msgstr "Keine Karte gefunden"
 msgid "Directory has content\nRealy delete directory and content?"
 msgstr "Verzeichnis hat einen Inhalt\nWirklich löschen?"
 
-
+msgid "Hid XXX Streams"
+msgstr "XXX Streams ausblenden"
