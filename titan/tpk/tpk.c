@@ -458,7 +458,8 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 				if(path_length >= PATH_MAX)
 				{
 					err("path length has got too long");
-					return 1;
+					ret = 1;
+					break;
 				}
 
 				if(!(strcmp("CONTROL", entry->d_name) == 0 && first == 1))
@@ -468,7 +469,8 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 					if(ret != 0)
 					{
 						err("create dir %s", path);
-						return 1;
+						ret = 1;
+						break;
 					}
 				}
 
@@ -476,7 +478,8 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 				if(ret != 0)
 				{
 					err("create archive %s", path);
-					return 1;
+					ret = 1;
+					break;
 				}
 			}
 		}
@@ -491,7 +494,8 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 			{
 				err("no mem");
 				free(tmpstr); tmpstr = NULL;
-				return 1;
+				ret = 1;
+				break;
 			}
 
 			ret = readlink(tmpstr, buf, MINMALLOC);
@@ -500,7 +504,8 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 				perr("read link %s", tmpstr);
 				free(tmpstr); tmpstr = NULL;
 				free(buf); buf = NULL;
-				return 1;
+				ret = 1;
+				break;
 			}
 
 			ret = tpkcreatelink(mainpath, tmpstr, buf, 1);
@@ -509,7 +514,8 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 			{
 				free(buf); buf = NULL;
 				err("create link");
-				return 1;
+				ret = 1;
+				break;
 			}
 			free(buf); buf = NULL;
 		}
@@ -523,14 +529,16 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 			{
 				perr("get file status %s", tmpstr);
 				free(tmpstr); tmpstr = NULL;
-				return 1;
+				ret = 1;
+				break;
 			}
 			ret = tpkcreateblk(mainpath, tmpstr, major(s.st_rdev), minor(s.st_rdev), 1);
 			free(tmpstr); tmpstr = NULL;
 			if(ret != 0)
 			{
 				err("create blk dev");
-				return 1;
+				ret = 1;
+				break;
 			}
 		}
 		else if(entry->d_type == DT_CHR) //charcter device
@@ -543,14 +551,16 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 			{
 				perr("get file status %s", tmpstr);
 				free(tmpstr); tmpstr = NULL;
-				return 1;
+				ret = 1;
+				break;
 			}
 			ret = tpkcreatechr(mainpath, tmpstr, major(s.st_rdev), minor(s.st_rdev), 1);
 			free(tmpstr); tmpstr = NULL;
 			if(ret != 0)
 			{
 				err("create chr dev");
-				return 1;
+				ret = 1;
+				break;
 			}
 		}
 		else if(entry->d_type == DT_FIFO) //fifo
@@ -563,7 +573,8 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 			if(ret != 0)
 			{
 				err("create fifo");
-				return 1;
+				ret = 1;
+				break;
 			}
 		}
 		else if(entry->d_type == DT_REG) //file
@@ -576,33 +587,37 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 			if(ret != 0)
 			{
 				err("create file");
-				return 1;
+				ret = 1;
+				break;
 			}
 		}
 		else if(entry->d_type == DT_SOCK) //socket
 		{
 			err("socket filetype found");
-			return 1;
+			ret = 1;
+			break;
 		}
 		else if(entry->d_type == DT_UNKNOWN) //unknown
 		{
 			err("unknown filetype found");
-			return 1;
+			ret = 1;
+			break;
 		}
 		else //unknown
 		{
 			err("unknown filetype found");
-			return 1;
+			ret = 1;
+			break;
 		}
 	}
 
-	if(closedir(d))
+	if(d && closedir(d))
 	{
 		perr("Could not close %s", dirname);
 		return 1;
 	}
 
-	return 0;
+	return ret;
 }
 
 int tpkcreatepreviewarchive(char* mainpath, char* dirname, char* name)
@@ -645,18 +660,19 @@ int tpkcreatepreviewarchive(char* mainpath, char* dirname, char* name)
 			if(ret != 0)
 			{
 				err("create file");
-				return 1;
+				ret = 1;
+				break;
 			}
 		}
 	}
 
-	if(closedir(d))
+	if(d && closedir(d))
 	{
 		perr("Could not close %s", dirname);
 		return 1;
 	}
 
-	return 0;
+	return ret;
 }
 
 int tpkcreatallearchive(char* dirname, char* name)
@@ -1012,7 +1028,8 @@ int tpkcalcsize(char* mainpath, char* dirname, int* size, int* type, int first)
 				if(path_length >= PATH_MAX)
 				{
 					err("path length has got too long");
-					return 1;
+					ret = 1;
+					break;
 				}
         
         //check type of package
@@ -1023,7 +1040,8 @@ int tpkcalcsize(char* mainpath, char* dirname, int* size, int* type, int first)
 				if(ret != 0)
 				{
 					err("calc size %s", path);
-					return 1;
+					ret = 1;
+					break;
 				}
 			}
 		}
@@ -1037,13 +1055,13 @@ int tpkcalcsize(char* mainpath, char* dirname, int* size, int* type, int first)
 		}
 	}
 
-	if(closedir(d))
+	if(d && closedir(d))
 	{
 		perr("Could not close %s", dirname);
 		return 1;
 	}
 
-	return 0;
+	return ret;
 }
 
 int tpkcalcallsize(char* dirname, char* name)
