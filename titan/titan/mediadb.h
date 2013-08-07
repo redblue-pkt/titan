@@ -2601,6 +2601,7 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount, int first)
 				if(path_length >= PATH_MAX)
 				{
 					err("path length has got too long");
+					if(d) closedir(d);
 					return -1;
 				}
 				//Recursively call findfiles with the new path
@@ -2682,7 +2683,7 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount, int first)
 	}
 
 	//After going through all the entries, close the directory
-	if(closedir(d))
+	if(d && closedir(d))
 	{
 		perr("Could not close %s", dirname);
 		return -1;
