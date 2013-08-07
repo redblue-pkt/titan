@@ -141,7 +141,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 	if(flag != NULL) node->flag = atoi(flag);
 	
 	hid = getconfigint("tithek_hid_xxx", NULL);
-	if(node->flag == 1000 && hid = 1)
+	if(node->flag == 1000 && hid == 1)
 		skip = 1;
 	else if((node->flag == 9996 || node->flag == 9997 || node->flag == 9998 || node->flag == 9999) && !file_exist("/var/swap/etc/.codecpack"))
 		skip = 1;
