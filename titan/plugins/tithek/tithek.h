@@ -90,7 +90,7 @@ void freetithekcontent(struct tithek* node)
 
 int addtithekcontent(struct tithek* node, char *line, int len, int count, int pay)
 {
-	int ret = 0, i = 0, skip = 0;
+	int ret = 0, i = 0, skip = 0, hid = 0;
 	char* tmpstr = NULL, *flag = NULL, *cmd = NULL, *tmp = NULL;
 	if(node == NULL) return 1;
 
@@ -139,7 +139,10 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 	}
 
 	if(flag != NULL) node->flag = atoi(flag);
-
+	
+	hid = getconfigint("tithek_hid_xxx", NULL);
+	if((node->flag == 1000 && hid = 1)
+		skip = 1;
 	if((node->flag == 9996 || node->flag == 9997 || node->flag == 9998 || node->flag == 9999) && !file_exist("/var/swap/etc/.codecpack"))
 		skip = 1;
 	else if(node->flag == 16 && pay == 0)
@@ -515,6 +518,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	char* tmpstr = NULL, *localfile = NULL;
 
 	if(link == NULL) return NULL;
+	if(ostrncmp("http://", link, 7)) return NULL;
 
 	ip = string_replace("http://", "", (char*)link, 0);
 	// tithek security
