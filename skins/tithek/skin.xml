@@ -23,6 +23,7 @@
 <node name=cover type=choicebox parent=listbox valign=middle posx=0 text="View Cover" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=picratio type=choicebox parent=listbox valign=middle posx=0 text="Pic Ratio" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=pay type=choicebox parent=listbox valign=middle posx=0 text="Show Pay Streams" bordercol=bordercol bordersize=1 width=100% height=25>
+<node name=hidxxx type=choicebox parent=listbox valign=middle posx=0 text="Show XXX Streams" bordercol=bordercol bordersize=1 width=100% height=25>
 
 <node name="buttonbar" posx=center posy="660" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
 <node name="b1" picmem="skin/key_ok_70x40.png"   posx="50"  posy="665" width="70" height="40">
