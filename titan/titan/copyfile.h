@@ -810,16 +810,34 @@ int screencopy(char* title, char* from, char* to, int flag)
 		if(rcret == RCTIMEOUT)
 		{
 			progress->progresssize = cnode->proz;
-			tmpstr = oitoa(cnode->maxkb / 1024);
-			tmpstr = ostrcat(_("Filesize (KB): "), tmpstr, 0, 1);
+			
+			if(cnode->maxkb < 1024)
+				tmpstr = ostrcat(_("Filesize (B): "), oitoa(cnode->maxkb), 0, 1);
+			else if(cnode->maxkb < 1048576)
+				tmpstr = ostrcat(_("Filesize (KB): "), oitoa(cnode->maxkb / 1024), 0, 1);
+			else
+				tmpstr = ostrcat(_("Filesize (MB): "), oitoa(cnode->maxkb / 1024 / 1024), 0, 1);
 			changetext(maxkb, tmpstr);
 			free(tmpstr); tmpstr = NULL;
 			
-			tmpstr = oitoa(cnode->aktkb / 1024);
 			if(flag == 1)
-				tmpstr = ostrcat(_("Move (KB): "), tmpstr, 0, 1);
+			{
+				if(cnode->aktkb < 1024)
+					tmpstr = ostrcat(_("Move (B): "), oitoa(cnode->aktkb), 0, 1);
+				else if(cnode->aktkb < 1048576)
+					tmpstr = ostrcat(_("Move (KB): "), oitoa(cnode->aktkb / 1024), 0, 1);
+				else
+					tmpstr = ostrcat(_("Move (MB): "), oitoa(cnode->aktkb / 1024 / 1024), 0, 1);
+			}
 			else
-				tmpstr = ostrcat(_("Copy (KB): "), tmpstr, 0, 1);
+			{
+				if(cnode->aktkb < 1024)
+					tmpstr = ostrcat(_("Copy (B): "), oitoa(cnode->aktkb), 0, 1);
+				else if(cnode->aktkb < 1048576)
+					tmpstr = ostrcat(_("Copy (KB): "), oitoa(cnode->aktkb / 1024), 0, 1);
+				else
+					tmpstr = ostrcat(_("Copy (MB): "), oitoa(cnode->aktkb / 1024 / 1024), 0, 1);
+			}
 			changetext(aktkb, tmpstr);
 			free(tmpstr); tmpstr = NULL;
 			
@@ -834,13 +852,28 @@ int screencopy(char* title, char* from, char* to, int flag)
 		if(cnode->ret == 0)
 		{
 			progress->progresssize = cnode->proz;
-			tmpstr = oitoa(cnode->aktkb / 1024);
+			
 			if(flag == 1)
-				tmpstr = ostrcat(_("Move (KB): "), tmpstr, 0, 1);
+			{
+				if(cnode->aktkb < 1024)
+					tmpstr = ostrcat(_("Move (B): "), oitoa(cnode->aktkb), 0, 1);
+				else if(cnode->aktkb < 1048576)
+					tmpstr = ostrcat(_("Move (KB): "), oitoa(cnode->aktkb / 1024), 0, 1);
+				else
+					tmpstr = ostrcat(_("Move (MB): "), oitoa(cnode->aktkb / 1024 / 1024), 0, 1);
+			}
 			else
-				tmpstr = ostrcat(_("Copy (KB): "), tmpstr, 0, 1);
+			{
+				if(cnode->aktkb < 1024)
+					tmpstr = ostrcat(_("Copy (B): "), oitoa(cnode->aktkb), 0, 1);
+				else if(cnode->aktkb < 1048576)
+					tmpstr = ostrcat(_("Copy (KB): "), oitoa(cnode->aktkb / 1024), 0, 1);
+				else
+					tmpstr = ostrcat(_("Copy (MB): "), oitoa(cnode->aktkb / 1024 / 1024), 0, 1);
+			}
 			changetext(aktkb, tmpstr);
 			free(tmpstr); tmpstr = NULL;
+			
 			break;
 		}
 		if(cnode->ret > 0) break;
