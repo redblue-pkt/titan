@@ -4025,3 +4025,12 @@ msgstr "Fehler beim Verschieben"
 
 msgid "file copy error"
 msgstr "Fehler beim Kopieren"
+
+msgid "Can't rename file !"
+msgstr "Datei konnte nicht umbenannt werden !"
+
+msgid "Can't create directory !"
+msgstr "Verzeichniss konnte nicht erstellt werden !"
+
+msgid "Can't remove file/dir !"
+msgstr "Date/Verzeichniss konnte nicht gelöscht werden !"
