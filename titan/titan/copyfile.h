@@ -841,7 +841,7 @@ int screencopy(char* title, char* from, char* to, int flag)
 			changetext(aktkb, tmpstr);
 			free(tmpstr); tmpstr = NULL;
 			
-			tmpstr = ostrcat(_("Amount of files): "), oitoa(cnode->filecount), 0, 1);
+			tmpstr = ostrcat(_("Amount of files: "), oitoa(cnode->filecount), 0, 1);
 			tmpstr = ostrcat(tmpstr, " / ", 1, 0);
 			tmpstr = ostrcat(tmpstr, oitoa(cnode->maxfilecount), 1, 1);
 			changetext(filecount, NULL);
