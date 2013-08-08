@@ -3252,3 +3252,39 @@ msgstr "Verzeichnis hat einen Inhalt\nWirklich löschen?"
 
 msgid "Hid XXX Streams"
 msgstr "XXX Streams ausblenden"
+
+msgid "Filesize (B): "
+msgstr "Dateigrösse (B): "
+
+msgid "Filesize (KB): "
+msgstr "Dateigrösse (KB): "
+
+msgid "Filesize (MB): "
+msgstr "Dateigrösse (MB): "
+
+msgid "Move (B): "
+msgstr "Verschoben (B): "
+
+msgid "Move (KB): "
+msgstr "Verschoben (KB): "
+
+msgid "Move (MB): "
+msgstr "Verschoben (MB): "
+
+msgid "Copy (B): "
+msgstr "Kopiert (B): "
+
+msgid "Copy (KB): "
+msgstr "Kopiert (KB): "
+
+msgid "Copy (MB): "
+msgstr "Kopiert (MB): "
+
+msgid "Amount of files: "
+msgstr "Anzahl Dateien: "
+
+msgid "file move error"
+msgstr "Fehler beim Verschieben"
+
+msgid "file copy error"
+msgstr "Fehler beim Kopieren"
