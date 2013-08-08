@@ -1,18 +1,19 @@
 #ifndef FILEMANAGER_H
 #define FILEMANAGER_H
 
-void filemanagerrename(int aktfilelist, struct skin* filelist1, struct skin* filelistpath1, struct skin* filelist2, struct skin* filelistpath2)
+int filemanagerrename(int aktfilelist, struct skin* filelist1, struct skin* filelistpath1, struct skin* filelist2, struct skin* filelistpath2)
 {
-	char* tmpstr = NULL, *file1 = NULL, *cmd = NULL;
+	int ret = 0;
+	char* tmpstr = NULL, *file1 = NULL;
 
 	if(filelistpath1 == NULL || filelistpath2 == NULL)
-		return;
+		return 1;
 
 	if(filelist1 == NULL || filelist1->select == NULL)
-		return;
+		return 1;
 
 	if(filelist2 == NULL || filelist2->select == NULL)
-		return;
+		return 1;
 
 	if(aktfilelist == 0)
 		tmpstr = ostrcat(filelist1->select->text, NULL, 0, 0);
@@ -35,35 +36,28 @@ void filemanagerrename(int aktfilelist, struct skin* filelist1, struct skin* fil
 			tmpstr = createpath(filelistpath2->text, search);
 		}
 
-		if(!file_exist(tmpstr))
-		{
-			cmd = ostrcat(cmd, "mv -f \"", 1, 0);
-			cmd = ostrcat(cmd, file1, 1, 0);
-			cmd = ostrcat(cmd, "\" \"", 1, 0);
-			cmd = ostrcat(cmd, tmpstr, 1, 0);
-			cmd = ostrcat(cmd, "\"", 1, 0);
-			printf("cmd: %s\n",cmd);
-			system(cmd);
-			free(cmd); cmd = NULL;
-		}
+		ret = rename(file1, tmpstr);
 
 		free(tmpstr); tmpstr = NULL;
 		free(search); search = NULL;
 	}
+	
+	return ret;
 }
 
-void filemanagercreatefolder(int aktfilelist, struct skin* filelist1, struct skin* filelistpath1, struct skin* filelist2, struct skin* filelistpath2)
+int filemanagercreatefolder(int aktfilelist, struct skin* filelist1, struct skin* filelistpath1, struct skin* filelist2, struct skin* filelistpath2)
 {
+	int ret = 0;
 	char* tmpstr = NULL;
 
 	if(filelistpath1 == NULL || filelistpath2 == NULL)
-		return;
+		return 1;
 
 	if(filelist1 == NULL || filelist1->select == NULL)
-		return;
+		return 1;
 
 	if(filelist2 == NULL || filelist2->select == NULL)
-		return;
+		return 1;
 
 	char* search = textinputhist(_("Create Folder"), " ", "searchhist");
 	if(search != NULL)
@@ -73,13 +67,13 @@ void filemanagercreatefolder(int aktfilelist, struct skin* filelist1, struct ski
 		else
 			tmpstr = createpath(filelistpath2->text, search);
 
-		if(!file_exist(tmpstr))
-			mkdir(tmpstr, 0777);
-
+		ret = mkdir(tmpstr, 0777);
 	}
 
 	free(tmpstr); tmpstr = NULL;
 	free(search); search = NULL;
+	
+	return ret;
 }
 			
 void filemanagermenu(int aktfilelist, struct skin* filelist1, struct skin* filelistpath1, struct skin* filelist2, struct skin* filelistpath2)
@@ -94,10 +88,15 @@ void filemanagermenu(int aktfilelist, struct skin* filelist1, struct skin* filel
 	if(mbox != NULL)
 	{
 		if(ostrcmp(mbox->name, "Rename") == 0)
-			filemanagerrename(aktfilelist, filelist1, filelistpath1, filelist2, filelistpath1);
+		{
+			if(filemanagerrename(aktfilelist, filelist1, filelistpath1, filelist2, filelistpath1) != 0)
+				textbox(_("Message"), _("Can't rename file !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);		
+		}
 		else if(ostrcmp(mbox->name, "Create Folder") == 0)
-			filemanagercreatefolder(aktfilelist, filelist1, filelistpath1, filelist2, filelistpath1);
-
+		{
+			if(filemanagercreatefolder(aktfilelist, filelist1, filelistpath1, filelist2, filelistpath1) != 0)
+				textbox(_("Message"), _("Can't create directory !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+		}
 	}
 
 	freemenulist(mlist, 1); mlist = NULL;
@@ -172,15 +171,23 @@ void screenfilemanager()
 
 				if(file1 != NULL)
 				{
+					int copy = 1;
+					
 					if(rcret == getrcconfigint("rcgreen", NULL))
 					{
 						tmpstr = ostrcat(tmpstr, _("Realy copy this file/dir?"), 1, 0);
+						copy = 1;
+						//not need with screencopy start
 						cmd = ostrcat(cmd, "cp -r ", 1, 0);
+						//not need with screencopy end
 					}
 					if(rcret == getrcconfigint("rcyellow", NULL))
 					{
 						tmpstr = ostrcat(tmpstr, _("Realy move this file/dir?"), 1, 0);
+						copy = 0;
+						//not need with screencopy start
 						cmd = ostrcat(cmd, "mv -f ", 1, 0);
+						//not need with screencopy end
 					}
 					
 					tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
@@ -190,13 +197,26 @@ void screenfilemanager()
 					tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 					tmpstr = ostrcat(tmpstr, _("To"), 1, 0);
 					tmpstr = ostrcat(tmpstr, ": ", 1, 0);
+					
 					if(aktfilelist == 0)
 						tmpstr = ostrcat(tmpstr, filelistpath2->text, 1, 0);
 					else
 						tmpstr = ostrcat(tmpstr, filelistpath1->text, 1, 0);
+					
 					ret = textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 300, 0, 0);
+					
+					/*
+					if(ret == 1)
+					{
+						if(copy == 0)
+							screencopy(_("Move File"), file1, tmpstr, 1);
+						else
+							screencopy(_("Copy File"), file1, tmpstr, 0);
+					}
+					*/
 					free(tmpstr); tmpstr = NULL;
 					
+					//not need with screencopy start
 					cmd = ostrcat(cmd, "\"", 1, 0);
 					cmd = ostrcat(cmd, file1, 1, 0);
 					cmd = ostrcat(cmd, "\" \"", 1, 0);
@@ -207,6 +227,7 @@ void screenfilemanager()
 					cmd = ostrcat(cmd, "\"", 1, 0);
 					if(ret == 1) system(cmd);
 					free(cmd); cmd = NULL;
+					//not need with screencopy end
 				}
 				free(file1); file1 = NULL;
 				
@@ -240,7 +261,11 @@ void screenfilemanager()
 					cmd = ostrcat(cmd, "\"", 1, 0);
 					cmd = ostrcat(cmd, file1, 1, 0);
 					cmd = ostrcat(cmd, "\"", 1, 0);
-					if(ret == 1) system(cmd);
+					if(ret == 1)
+					{ 
+						if(system(cmd) != 0)
+							textbox(_("Message"), _("Can't remove file/dir !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+					}
 					free(cmd); cmd = NULL;			
 				}
 				free(file1); file1 = NULL;
@@ -264,7 +289,7 @@ void screenfilemanager()
 				else
 					file1 = createpath(filelistpath2->text, filelist2->select->text);
 
-				if(cmpfilenameext(file1, ".txt") == 0 || cmpfilenameext(file1, ".sh") == 0 || cmpfilenameext(file1, ".cfg") == 0 || cmpfilenameext(file1, ".conf") == 0)
+				if(getfilesize(file1) < 1048576 && (cmpfilenameext(file1, ".txt") == 0 || cmpfilenameext(file1, ".sh") == 0 || cmpfilenameext(file1, ".cfg") == 0 || cmpfilenameext(file1, ".conf") == 0))
 				{
 					tmpstr = readfiletomem(file1, 0);
 					if(tmpstr != NULL)
@@ -288,8 +313,7 @@ void screenfilemanager()
 				free(file1); file1 = NULL;
 			}
 
-			//menu
-			if(rcret == getrcconfigint("rcmenu", NULL))
+			if(rcret == getrcconfigint("rcmenu", NULL)) //menu
 			{
 				filemanagermenu(aktfilelist, filelist1, filelistpath1, filelist2, filelistpath2);
 
