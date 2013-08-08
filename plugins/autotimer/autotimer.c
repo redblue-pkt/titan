@@ -179,7 +179,7 @@ void autotimer_thread()
 						node->afterevent = 0;
 						node->repeate = 0;
 						node->justplay = getconfigint("at1_event", NULL);
-						node->afterevent = 0;
+						node->afterevent = getconfigint("at1_afterevent", NULL);
 						node->serviceid = channel1->serviceid;
 						node->servicetype = channel1->servicetype;
 						node->disabled = 0;
@@ -275,6 +275,7 @@ void start(void)
 	struct skin* autotimer_search = getscreennode(autotimer, "search");
 	struct skin* autotimer_begin = getscreennode(autotimer, "begin");
 	struct skin* autotimer_event = getscreennode(autotimer, "event");
+	struct skin* autotimer_afterevent = getscreennode(autotimer, "afterevent");
 	struct skin* autotimer_end = getscreennode(autotimer, "end");
 	struct skin* autotimer_blue = getscreennode(autotimer, "blue");
 	struct skin* tmp = NULL;
@@ -307,6 +308,12 @@ void start(void)
 	addchoicebox(autotimer_event, "0", _("record"));
 	addchoicebox(autotimer_event, "1", _("switch channel"));
 	setchoiceboxselection(autotimer_event, getconfig("at1_event", NULL));
+	
+	addchoicebox(autotimer_afterevent, "0", _("auto"));
+	addchoicebox(autotimer_afterevent, "1", _("nothing"));
+	addchoicebox(autotimer_afterevent, "2", _("standby"));
+	addchoicebox(autotimer_afterevent, "3", _("power off"));
+	setchoiceboxselection(autotimer_afterevent, getconfig("at1_afterevent", NULL));
 	
 	drawscreen(autotimer, 0, 0);
 	addscreenrc(autotimer, autotimer_listbox);
@@ -344,6 +351,7 @@ void start(void)
 				addconfig("at1_starttime", autotimer_begin->ret);
 				addconfig("at1_endtime", autotimer_end->ret);
 				addconfig("at1_event", autotimer_event->ret);
+				addconfig("at1_afterevent", autotimer_afterevent->ret);
 				autotimerthread = addtimer(&autotimer_thread, START, 10000, 1, NULL, NULL, NULL);
 				sleep(1);
 				if(autotimerthread != NULL)
@@ -366,6 +374,7 @@ void start(void)
 			addconfig("at1_starttime", autotimer_begin->ret);
 			addconfig("at1_endtime", autotimer_end->ret);
 			addconfig("at1_event", autotimer_event->ret);
+			addconfig("at1_afterevent", autotimer_afterevent->ret);
 			if(getconfigint("at1_running", NULL) == 1)
 			{
 				autotimerthread->aktion = STOP;
