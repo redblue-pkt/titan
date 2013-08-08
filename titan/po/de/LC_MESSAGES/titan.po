@@ -4030,7 +4030,7 @@ msgid "Can't rename file !"
 msgstr "Datei konnte nicht umbenannt werden !"
 
 msgid "Can't create directory !"
-msgstr "Verzeichniss konnte nicht erstellt werden !"
+msgstr "Verzeichnis konnte nicht erstellt werden !"
 
 msgid "Can't remove file/dir !"
-msgstr "Date/Verzeichniss konnte nicht gelöscht werden !"
+msgstr "Datei/Verzeichnis konnte nicht gelöscht werden !"
