@@ -879,7 +879,6 @@ int screencopy(char* title, char* from, char* to, int flag)
 		if(cnode->ret > 0) break;
 	}
 
-	progress->progresssize = 100;
 	if(cnode->ret > 0 && rcret != getrcconfigint("rcexit", NULL))
 	{	
 		if(flag == 1)
