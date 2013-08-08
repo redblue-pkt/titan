@@ -147,6 +147,13 @@ void screenbgdownload(int flag)
 							if(tmp->del == 2)
 								tmp->progresssize = dnode->proz;
 						}
+						else
+						{
+							if(tmp->del == 1)
+								changetext(tmp, NULL);
+							if(tmp->del == 2)
+								tmp->progresssize = 0;
+						}
 					}
 				}
 				tmp = tmp->next;
