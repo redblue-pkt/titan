@@ -88,13 +88,13 @@ void screenbgdownload(int flag)
 				changetext(tmp, tmpstr);
 				free(tmpstr); tmpstr = NULL;
 				tmp->progresssize = bgdownload[i]->proz;
-				tmp->handle = (void*)i;
+				tmp->handle = (void*)(i + 1);
 			}
 			else
 			{
 				changetext(tmp, _("unknown"));
 				tmp->progresssize = 0;
-				tmp->handle = (void*)i;
+				tmp->handle = (void*)(i + 1);
 			}
 			
 			tmp->textposx = progress->width + 10;
@@ -109,7 +109,7 @@ void screenbgdownload(int flag)
 				tmp1->bordersize = progress->bordersize;
 				tmp1->bordercol = progress->bordercol;
 				tmp1->prozwidth = 0;		
-				tmp1->handle = (void*)i;
+				tmp1->handle = (void*)(i + 1);
 			}
 		}
 	}
@@ -128,8 +128,8 @@ void screenbgdownload(int flag)
 			{
 				if(tmp->del > 0)
 				{
-					int nr = (int)tmp->handle;
-					if(nr < MAXBGDOWNLOAD)
+					int nr = ((int)tmp->handle) - 1;
+					if(nr > -1 && nr < MAXBGDOWNLOAD)
 					{
 						struct download* dnode = bgdownload[nr];
 						if(dnode != NULL)
@@ -165,14 +165,10 @@ void screenbgdownload(int flag)
 		
 		if(rcret == getrcconfigint("rcred", NULL) && listbox->select != NULL && listbox->select->handle != NULL) //stop download
 		{
-printf("stop 1111\n");
-			int nr = (int)listbox->select->handle;
-printf("stop 2222 %d\n", nr);
-			if(nr < MAXBGDOWNLOAD)
+			int nr = ((int)listbox->select->handle) - 1;
+			if(nr > -1 && nr < MAXBGDOWNLOAD)
 			{
 				struct download* dnode = bgdownload[nr];
-printf("stop 3333 %p\n", dnode);
-if(dnode != NULL) printf("stop 4444 %p\n", dnode->ret);
 				if(dnode != NULL && dnode->ret == -1)
 				{
 					if(textbox(_("Message"), _("Realy stop download ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
@@ -184,8 +180,8 @@ if(dnode != NULL) printf("stop 4444 %p\n", dnode->ret);
 		
 		if(flag == 0 && rcret == getrcconfigint("rcyellow", NULL) && listbox->select != NULL && listbox->select->handle != NULL) //play download
 		{
-			int nr = (int)listbox->select->handle;
-			if(nr < MAXBGDOWNLOAD)
+			int nr = ((int)listbox->select->handle) -1;
+			if(nr > -1 && nr < MAXBGDOWNLOAD)
 			{
 				struct download* dnode = bgdownload[nr];
 				if(dnode != NULL && dnode->flag == 1)
