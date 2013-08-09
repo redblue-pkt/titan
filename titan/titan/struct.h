@@ -61,6 +61,7 @@
 #include <sys/utsname.h>
 #include <regex.h>
 #include <mntent.h>
+#include <termios.h>
 
 //for freetype
 #include <ft2build.h>
