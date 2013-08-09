@@ -515,7 +515,7 @@ void screenhwtest()
 					tmpstr = ostrcat(tmpstr, _("LNB off / 22K off: OK\n"), 1, 0);
 				else
 					tmpstr = ostrcat(tmpstr, _("LNB off / 22K off: NOT OK\n"), 1, 0);
-				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 5, 0);
+				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 				free(tmpstr); tmpstr = NULL;
 				
 				ret1 = fesetvoltage(status.aktservice->fedev, SEC_VOLTAGE_18, 15);
@@ -524,7 +524,7 @@ void screenhwtest()
 					tmpstr = ostrcat(tmpstr, _("LNB 18V / 22K off: OK\n"), 1, 0);
 				else
 					tmpstr = ostrcat(tmpstr, _("LNB 18V / 22K off: NOT OK\n"), 1, 0);
-				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 5, 0);
+				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 				free(tmpstr); tmpstr = NULL;
 				
 				ret1 = fesetvoltage(status.aktservice->fedev, SEC_VOLTAGE_13, 15);
@@ -533,7 +533,7 @@ void screenhwtest()
 					tmpstr = ostrcat(tmpstr, _("LNB 13V / 22K off: OK\n"), 1, 0);
 				else
 					tmpstr = ostrcat(tmpstr, _("LNB 13V / 22K off: NOT OK\n"), 1, 0);
-				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 5, 0);
+				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 				free(tmpstr); tmpstr = NULL;
 				
 				ret1 = fesetvoltage(status.aktservice->fedev, SEC_VOLTAGE_13, 15);
@@ -542,7 +542,7 @@ void screenhwtest()
 					tmpstr = ostrcat(tmpstr, _("LNB 13V / 22K on: OK\n"), 1, 0);
 				else
 					tmpstr = ostrcat(tmpstr, _("LNB 13V / 22K on: NOT OK\n"), 1, 0);
-				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 5, 0);
+				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 				free(tmpstr); tmpstr = NULL;
 				
 				drawscreen(load, 0, 0);
