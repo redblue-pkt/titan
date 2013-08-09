@@ -1,5 +1,3 @@
-//#include <termios.h>
-
 #ifndef HWTEST_H
 #define HWTEST_H
 
@@ -444,7 +442,7 @@ void screenhwtest()
 			{
 				int exist = 1;
 				unsigned char tmpwr[4] = {0};
-				unsigned char tmprd[4] = {0};
+				unsigned char tmprd[5] = {0};
 				
 				tmpwr[0] = 'A'; //65
 				tmpwr[1] = 'B'; //66
@@ -475,18 +473,22 @@ void screenhwtest()
 					//port_settings.c_cflag |= CS8;
 					//tcsetattr(fd, TCSANOW, &port_settings);
 				
+					tcflush(fd, TCIOFLUSH);
+				
 					ret = dvbwrite(fd, tmpwr, 4, -1);
 					if(ret != 4)
 					{
 						err("write %s (ret=%d)", SERIALDEV, ret);
 					}
 
-					ret = dvbreadfd(fd, tmprd, 0, 4, -1, 0);
+					ret = dvbreadfd(fd, tmprd, 0, 1, -1, 0);
+					ret += dvbreadfd(fd, tmprd, 1, 1, -1, 0);
+					ret += dvbreadfd(fd, tmprd, 2, 1, -1, 0);
+					ret += dvbreadfd(fd, tmprd, 3, 1, -1, 0);
 					if(ret != 4)
 					{
-						err("read %s (ret=%d)", SERIALDEV, ret);
+						err("read %s (ret=%d, tmprd=%s)", SERIALDEV, ret, tmprd);
 					}
-
 					close(fd);
 				}
 				else
