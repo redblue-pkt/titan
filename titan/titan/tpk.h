@@ -2702,7 +2702,7 @@ int tpkcleantmp(int flag)
 //flag 1: package + preview
 int tpkgetindex(int flag)
 {
-	int ret = 0, len = 0, port = 80;
+	int ret = 0, len = 0, port = 80, err = 0;
 	FILE *fd = NULL;
 	char* fileline = NULL, *ip = NULL, *path = NULL, *httpret = NULL;
 	char* tmpstr1 = NULL, *tmpstr2 = NULL;
@@ -2711,11 +2711,9 @@ int tpkgetindex(int flag)
 	if(ret != 0 && errno != EEXIST)
 	{
 		perr("create path %s", TMP);
-		ret = 1;
+		err = 1;
 		goto end;
 	}
-	else
-		ret = 0;
 
 	tpkcleantmp(0);
 
@@ -2723,7 +2721,7 @@ int tpkgetindex(int flag)
 	if(fileline == NULL)
 	{
 		err("no mem");
-		ret = 1;
+		err = 1;
 		goto end;
 	}
 
@@ -2731,7 +2729,7 @@ int tpkgetindex(int flag)
 	if(fd == NULL)
 	{
 		perr("can't open %s", FEEDFILE);
-		ret = 1;
+		err = 1;
 		goto end;
 	}
 
@@ -2751,8 +2749,7 @@ int tpkgetindex(int flag)
 			if(ostrcmp(path, "svn/tpk/sh4/titan") == 0)
 			{
 				textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
-				ret = 1;
-				goto end;
+				err = 1;
 			}
 		}
 
@@ -2800,17 +2797,18 @@ int tpkgetindex(int flag)
 				tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
 				tmpstr1 = ostrcat(tmpstr1, path, 1, 0);
 				ret = tpkextractindex(tmpstr1);
+				if(ret != 0) err = 1;
 				free(tmpstr1); tmpstr1 = NULL;
 			}
 			else
-				ret = 1;
+				err = 1;
 		}
 	}
 
 end:
 	if(fd != NULL) fclose(fd);
 	free(fileline); fileline = NULL;
-	return ret;
+	return err;
 }
 
 int tpkgetpackage(char* package, char* url)

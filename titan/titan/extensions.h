@@ -297,7 +297,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 		if(first == 1)
 		{
 			if(tpkgetindex(0) != 0)
-				textbox(_("Tpk Update Info - Update ERROR"), _("Can't get TPK index !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox(_("Tpk Update Info - Update ERROR"), _("Can't get all TPK index !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		}
 		writesys("/tmp/.tpk_upgrade_start", "0", 0);
 		if(tpkupdate() != 0)
