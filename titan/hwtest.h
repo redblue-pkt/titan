@@ -473,10 +473,12 @@ void screenhwtest()
 					//port_settings.c_cflag |= CS8;
 					//tcsetattr(fd, TCSANOW, &port_settings);
 				
+					//tcflush(fd, TCIOFLUSH);
+				
 					ret = dvbwrite(fd, tmpwr, 4, -1);
 					if(ret != 4)
 					{
-						perr("write %s (ret=%d)", SERIALDEV, ret);
+						err("write %s (ret=%d)", SERIALDEV, ret);
 					}
 
 					ret = dvbreadfd(fd, tmprd, 0, 1, -1, 0);
@@ -485,10 +487,8 @@ void screenhwtest()
 					ret += dvbreadfd(fd, tmprd, 3, 1, -1, 0);
 					if(ret != 4)
 					{
-						err("read %s (ret=%d, tmprd=%d)", SERIALDEV, ret, tmprd);
+						err("read %s (ret=%d, tmprd=%s)", SERIALDEV, ret, tmprd);
 					}
-					printf("dvbreadfd tmprd: %s\n", tmprd);
-
 					close(fd);
 				}
 				else
@@ -503,7 +503,7 @@ void screenhwtest()
 				else
 					textbox(_("Message"), _("FAIL Serial Port"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
 			}
-
+			
 			if(ostrcmp(mbox->name, "LNB") == 0)
 			{
 				char* tmpstr = NULL;
