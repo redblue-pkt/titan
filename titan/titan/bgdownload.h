@@ -150,7 +150,7 @@ void screenbgdownload(int flag)
 						else
 						{
 							if(tmp->del == 1)
-								changetext(tmp, NULL);
+								changetext(tmp, _("unknown"));
 							if(tmp->del == 2)
 								tmp->progresssize = 0;
 						}
@@ -165,10 +165,14 @@ void screenbgdownload(int flag)
 		
 		if(rcret == getrcconfigint("rcred", NULL) && listbox->select != NULL && listbox->select->handle != NULL) //stop download
 		{
+printf("stop 1111\n");
 			int nr = (int)listbox->select->handle;
+printf("stop 2222 %d\n", nr);
 			if(nr < MAXBGDOWNLOAD)
 			{
 				struct download* dnode = bgdownload[nr];
+printf("stop 3333 %p\n", dnode);
+if(dnode != NULL) printf("stop 4444 %p\n", dnode->ret);
 				if(dnode != NULL && dnode->ret == -1)
 				{
 					if(textbox(_("Message"), _("Realy stop download ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
