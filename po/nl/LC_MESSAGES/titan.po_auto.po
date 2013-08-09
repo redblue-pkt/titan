@@ -371,7 +371,9 @@ msgstr ""
 #: hwtest.h:500 hwtest.h:502 hwtest.h:516 hwtest.h:525 hwtest.h:534
 #: hwtest.h:543 hwtest.h:590 hwtest.h:592 hwtest.h:594 hwtest.h:596
 #: tithek.h:606 tithek.h:1043 tithek.h:1086 tithek.h:1330 tithek.h:1352
-#: tithek.h:1357 tithek.h:2077 tithek.h:2139 tithek.h:2153
+#: tithek.h:1357 tithek.h:2077 tithek.h:2139 tithek.h:2153 hwtest.h:506
+#: hwtest.h:508 hwtest.h:522 hwtest.h:531 hwtest.h:540 hwtest.h:549
+#: hwtest.h:598 hwtest.h:600 hwtest.h:602
 msgid "Message"
 msgstr ""
 
@@ -448,7 +450,8 @@ msgstr ""
 #: hwtest.h:534 hwtest.h:543 hwtest.h:590 hwtest.h:592 hwtest.h:594
 #: hwtest.h:596 tithek.h:606 tithek.h:1043 tithek.h:1086 tithek.h:1330
 #: tithek.h:1352 tithek.h:1357 tithek.h:1371 tithek.h:2077 tithek.h:2139
-#: tithek.h:2153
+#: tithek.h:2153 hwtest.h:506 hwtest.h:508 hwtest.h:522 hwtest.h:531
+#: hwtest.h:540 hwtest.h:549 hwtest.h:598 hwtest.h:600 hwtest.h:602
 msgid "OK"
 msgstr ""
 
@@ -523,6 +526,8 @@ msgstr ""
 #: hwtest.h:543 hwtest.h:590 hwtest.h:592 hwtest.h:594 hwtest.h:596
 #: tithek.h:606 tithek.h:1043 tithek.h:1086 tithek.h:1330 tithek.h:1352
 #: tithek.h:1357 tithek.h:1371 tithek.h:2077 tithek.h:2139 tithek.h:2153
+#: hwtest.h:506 hwtest.h:508 hwtest.h:522 hwtest.h:531 hwtest.h:540
+#: hwtest.h:549 hwtest.h:598 hwtest.h:600 hwtest.h:602
 msgid "EXIT"
 msgstr ""
 
@@ -4738,43 +4743,43 @@ msgstr ""
 msgid "CAM Ports found: "
 msgstr ""
 
-#: hwtest.h:494 hwtest.h:500
+#: hwtest.h:494 hwtest.h:500 hwtest.h:506
 msgid "SUCESS Serial Port"
 msgstr ""
 
-#: hwtest.h:496 hwtest.h:502
+#: hwtest.h:496 hwtest.h:502 hwtest.h:508
 msgid "FAIL Serial Port"
 msgstr ""
 
-#: hwtest.h:508 hwtest.h:513
+#: hwtest.h:508 hwtest.h:513 hwtest.h:519
 msgid "LNB off / 22K off: OK\n"
 msgstr ""
 
-#: hwtest.h:510 hwtest.h:515
+#: hwtest.h:510 hwtest.h:515 hwtest.h:521
 msgid "LNB off / 22K off: NOT OK\n"
 msgstr ""
 
-#: hwtest.h:516 hwtest.h:522
+#: hwtest.h:516 hwtest.h:522 hwtest.h:528
 msgid "LNB 18V / 22K off: OK\n"
 msgstr ""
 
-#: hwtest.h:518 hwtest.h:524
+#: hwtest.h:518 hwtest.h:524 hwtest.h:530
 msgid "LNB 18V / 22K off: NOT OK\n"
 msgstr ""
 
-#: hwtest.h:524 hwtest.h:531
+#: hwtest.h:524 hwtest.h:531 hwtest.h:537
 msgid "LNB 13V / 22K off: OK\n"
 msgstr ""
 
-#: hwtest.h:526 hwtest.h:533
+#: hwtest.h:526 hwtest.h:533 hwtest.h:539
 msgid "LNB 13V / 22K off: NOT OK\n"
 msgstr ""
 
-#: hwtest.h:532 hwtest.h:540
+#: hwtest.h:532 hwtest.h:540 hwtest.h:546
 msgid "LNB 13V / 22K on: OK\n"
 msgstr ""
 
-#: hwtest.h:534 hwtest.h:542
+#: hwtest.h:534 hwtest.h:542 hwtest.h:548
 msgid "LNB 13V / 22K on: NOT OK\n"
 msgstr ""
 
@@ -4864,19 +4869,19 @@ msgid ""
 "Realy delete directory and content?"
 msgstr ""
 
-#: hwtest.h:590
+#: hwtest.h:590 hwtest.h:596
 msgid "SUCESS Flash/Nand"
 msgstr ""
 
-#: hwtest.h:592
+#: hwtest.h:592 hwtest.h:598
 msgid "FAIL Flash/Nand (/var and /mnt)"
 msgstr ""
 
-#: hwtest.h:594
+#: hwtest.h:594 hwtest.h:600
 msgid "FAIL Flash/Nand (/var)"
 msgstr ""
 
-#: hwtest.h:596
+#: hwtest.h:596 hwtest.h:602
 msgid "FAIL Flash/Nand (/mnt)"
 msgstr ""
 
