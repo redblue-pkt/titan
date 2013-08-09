@@ -478,13 +478,13 @@ void screenhwtest()
 					ret = dvbwrite(fd, tmpwr, 4, -1);
 					if(ret != 4)
 					{
-						perr("write %s (ret=%d)", SERIALDEV, ret);
+						err("write %s (ret=%d)", SERIALDEV, ret);
 					}
 
 					ret = dvbreadfd(fd, tmprd, 0, 4, -1, 0);
 					if(ret != 4)
 					{
-						perr("read %s (ret=%d)", SERIALDEV, ret);
+						err("read %s (ret=%d)", SERIALDEV, ret);
 					}
 
 					close(fd);
