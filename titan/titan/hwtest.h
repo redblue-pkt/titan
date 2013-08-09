@@ -443,7 +443,7 @@ void screenhwtest()
 			if(ostrcmp(mbox->name, "RS232") == 0)
 			{
 				int exist = 1;
-				unsigned char tmpwr[5] = {0};
+				unsigned char tmpwr[4] = {0};
 				unsigned char tmprd[4] = {0};
 				
 				tmpwr[0] = 'A'; //65
@@ -507,44 +507,45 @@ void screenhwtest()
 				char* tmpstr = NULL;
 				int ret1 = 0, ret2 = 0;
 			
-				drawscreen(load, 0, 0);
-			
 				ret1 = fesetvoltage(status.aktservice->fedev, SEC_VOLTAGE_OFF, 15);
 				ret2 = fesettone(status.aktservice->fedev, SEC_TONE_OFF, 15);
-				usleep(100000);
 				if(ret1 == 0 && ret2 == 0)
 					tmpstr = ostrcat(tmpstr, _("LNB off / 22K off: OK\n"), 1, 0);
 				else
 					tmpstr = ostrcat(tmpstr, _("LNB off / 22K off: NOT OK\n"), 1, 0);
+				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 2, 0);
+				free(tmpstr); tmpstr = NULL;
 				
 				ret1 = fesetvoltage(status.aktservice->fedev, SEC_VOLTAGE_18, 15);
 				ret2 = fesettone(status.aktservice->fedev, SEC_TONE_OFF, 15);
-				usleep(100000);
 				if(ret1 == 0 && ret2 == 0)
 					tmpstr = ostrcat(tmpstr, _("LNB 18V / 22K off: OK\n"), 1, 0);
 				else
 					tmpstr = ostrcat(tmpstr, _("LNB 18V / 22K off: NOT OK\n"), 1, 0);
+				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 2, 0);
+				free(tmpstr); tmpstr = NULL;
 				
 				ret1 = fesetvoltage(status.aktservice->fedev, SEC_VOLTAGE_13, 15);
 				ret2 = fesettone(status.aktservice->fedev, SEC_TONE_OFF, 15);
-				usleep(100000);
 				if(ret1 == 0 && ret2 == 0)
 					tmpstr = ostrcat(tmpstr, _("LNB 13V / 22K off: OK\n"), 1, 0);
 				else
 					tmpstr = ostrcat(tmpstr, _("LNB 13V / 22K off: NOT OK\n"), 1, 0);
+				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 2, 0);
+				free(tmpstr); tmpstr = NULL;
 				
 				ret1 = fesetvoltage(status.aktservice->fedev, SEC_VOLTAGE_13, 15);
 				ret2 = fesettone(status.aktservice->fedev, SEC_TONE_ON, 15);
-				usleep(100000);
 				if(ret1 == 0 && ret2 == 0)
 					tmpstr = ostrcat(tmpstr, _("LNB 13V / 22K on: OK\n"), 1, 0);
 				else
 					tmpstr = ostrcat(tmpstr, _("LNB 13V / 22K on: NOT OK\n"), 1, 0);
+				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 2, 0);
+				free(tmpstr); tmpstr = NULL;
 				
+				drawscreen(load, 0, 0);
 				servicestart(lastchannel, NULL, NULL, 5);
 				clearscreen(load);	
-				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 0, 0);			
-				free(tmpstr); tmpstr = NULL;
 			}
 			if(ostrcmp(mbox->name, "Flash/Nand Check") == 0)
 			{
