@@ -2766,6 +2766,7 @@ int tpkgetindex(int flag)
 			tmpstr2 = ostrcat(tmpstr2, "/", 1, 0);
 			tmpstr2 = ostrcat(tmpstr2, HTTPPACKAGES, 1, 0);
 
+			debug(130, "get http://%s/%s -> %s", ip, tmpstr1, tmpstr2);
 			httpret = gethttp(ip, tmpstr1, 80, tmpstr2, HTTPAUTH, 5000, NULL, 0);
 			if(httpret == NULL)
 			{
@@ -2787,6 +2788,7 @@ int tpkgetindex(int flag)
 					tmpstr2 = ostrcat(tmpstr2, "/", 1, 0);
 					tmpstr2 = ostrcat(tmpstr2, HTTPPREVIEW, 1, 0);
 
+          debug(130, "get http://%s/%s -> %s", ip, tmpstr1, tmpstr2);
 					gethttp(ip, tmpstr1, 80, tmpstr2, HTTPAUTH, 5000, NULL, 0);
 					free(tmpstr1); tmpstr1 = NULL;
 					free(tmpstr2); tmpstr2 = NULL;
@@ -2859,6 +2861,7 @@ int tpkgetpackage(char* package, char* url)
 		if(ostrcmp("97.74.32.10", ip) == 0)
 			ip = "atemio.dyndns.tv";
 
+    debug(130, "get http://%s/%s -> %s", ip, tmpstr1, tmpstr2);
 		screendownload("Download", ip, tmpstr1, 80, tmpstr2, HTTPAUTH, 5000, 0);
 		drawscreen(load, 0, 0);
 		ret = tpkinstall(tmpstr3);
