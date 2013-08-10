@@ -397,7 +397,6 @@ int copyfifo(char* from, char* to, struct copyfile* node, int flag)
 int copydir(char* dirfrom, char* dirto, struct copyfile* node, int first, int flag)
 {
 	DIR *d;
-	struct stat64 s;
 	char* tmpstr = NULL, *tmpstr1 = NULL;
 	int ret = 0;
 
