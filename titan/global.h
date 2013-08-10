@@ -3132,10 +3132,16 @@ int ozip(char* inbuf, int inlen, char** outbuf, int* outlen, int level)
 {
 	int ret = 0;
 	z_stream stream;
+	
+	if(inbuf == NULL || outbuf == NULL) return 1;
 
 	stream.zalloc = Z_NULL;
 	stream.zfree = Z_NULL;
 	stream.opaque = Z_NULL;
+	stream.avail_in = 0;
+	stream.next_in = Z_NULL;
+	stream.avail_out = 0;
+	stream.next_out = Z_NULL;
 
 	ret = deflateInit(&stream, level);
 	if(ret != Z_OK)
@@ -3180,12 +3186,17 @@ int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int f
 {
 	int ret = 0;
 	z_stream stream;
+	
+	if(inbuf == NULL || outbuf == NULL) return 1;
+	if(flag == 1 && *outbuf == NULL) return 1;
 
 	stream.zalloc = Z_NULL;
 	stream.zfree = Z_NULL;
 	stream.opaque = Z_NULL;
 	stream.avail_in = 0;
 	stream.next_in = Z_NULL;
+	stream.avail_out = 0;
+	stream.next_out = Z_NULL;
 
 	ret = inflateInit(&stream);
 	if(ret != Z_OK)
