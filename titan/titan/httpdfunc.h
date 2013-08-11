@@ -2441,6 +2441,39 @@ char* webaddrectimer(char* param, int fmt)
 	return buf;
 }
 
+/*
+char* webrectimercheck(char* channelname)
+{
+	char* buf = NULL;
+	int maxlen = 0, pos = 0;
+	struct channel *channel1 = NULL;
+	
+	if(channelname == NULL) return buf;
+	
+	ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"titan.css\"></head>", &maxlen, &pos);
+	ostrcatbig(&buf, "<body class=body ><center>", &maxlen, &pos);
+	ostrcatbig(&buf, "<form name=F1 action=query method=get><br><br>", &maxlen, &pos);
+	ostrcatbig(&buf, "<select size=10>", &maxlen, &pos);
+
+	channel1 = channel;		
+	while(channel1 != NULL)
+	{
+		if(ostrstr(channel1->name, channelname) != NULL && (channel1->servicetype == 0 || channel1->servicetype == 1))
+		{
+			ostrcatbig(&buf, "<option>", &maxlen, &pos);
+			ostrcatbig(&buf, channel1->name, &maxlen, &pos);	
+			channelfind = 1;
+		}
+		channel1 = channel1->next;
+	}
+	
+
+	ostrcatbig(&buf, "<br><br></select>><input class=button type=submit name=send value=\"Send\" onClick=\"return checkdaytime(begin.value, end.value)\"></input>&nbsp;<input class=button type=reset name=reset value=\"Reset\"></input></form></center></body></html>", &maxlen, &pos);
+
+	return buf;		
+}
+*/
+
 char* webrectimersend(char* param, int fmt)
 {
 	char* buf = NULL, *string = NULL, *name = NULL, *begin = NULL, *end = NULL, *type = NULL, *anode = NULL, *channelname = NULL, *sid = NULL, *tid = NULL, *ext = NULL, *afterevent = NULL, *repeat = NULL;
