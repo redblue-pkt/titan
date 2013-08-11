@@ -2475,55 +2475,77 @@ char* webrectimercheck(char* param, int fmt)
 	if(repeat != NULL)
 		repeat = repeat + 7;
 
-
-printf("%s\n", param);
-
 	param1 = ostrcat(param, NULL, 0, 0);
 	string = param;
-        while(string != NULL)
-        {
-                string = strchr(string, '&');
-                if(string != NULL)
-                        *string++ = '\0';
-        }
+	while(string != NULL)
+	{
+		string = strchr(string, '&');
+		if(string != NULL)
+			*string++ = '\0';
+	}
 	
 	ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"titan.css\"></head>", &maxlen, &pos);
 	ostrcatbig(&buf, "<body class=body ><center>", &maxlen, &pos);
 	ostrcatbig(&buf, "<form name=F1 action=query method=get><br><br>", &maxlen, &pos);
 	
-	ostrcatbig(&buf, "<input type=\"hidden\" name=\"rectimersend&node\" value=\"", &maxlen, &pos);
-	ostrcatbig(&buf, anode, &maxlen, &pos);
-	ostrcatbig(&buf, "\" />", &maxlen, &pos);
-		
-	ostrcatbig(&buf, "<input type=\"hidden\" name=\"name\" value=\"", &maxlen, &pos);
-	ostrcatbig(&buf, name, &maxlen, &pos);
-	ostrcatbig(&buf, "\" />", &maxlen, &pos);
+	if(anode != NULL)
+	{
+		ostrcatbig(&buf, "<input type=\"hidden\" name=\"rectimersend&node\" value=\"", &maxlen, &pos);
+		ostrcatbig(&buf, anode, &maxlen, &pos);
+		ostrcatbig(&buf, "\" />", &maxlen, &pos);
+	}
 	
-	ostrcatbig(&buf, "<input type=\"hidden\" name=\"begin\" value=\"", &maxlen, &pos);
-	ostrcatbig(&buf, begin, &maxlen, &pos);
-	ostrcatbig(&buf, "\" />", &maxlen, &pos);
+	if(name != NULL)
+	{	
+		ostrcatbig(&buf, "<input type=\"hidden\" name=\"name\" value=\"", &maxlen, &pos);
+		ostrcatbig(&buf, name, &maxlen, &pos);
+		ostrcatbig(&buf, "\" />", &maxlen, &pos);
+	}
 	
-	ostrcatbig(&buf, "<input type=\"hidden\" name=\"end\" value=\"", &maxlen, &pos);
-	ostrcatbig(&buf, end, &maxlen, &pos);
-	ostrcatbig(&buf, "\" />", &maxlen, &pos);
+	if(begin != NULL)
+	{
+		ostrcatbig(&buf, "<input type=\"hidden\" name=\"begin\" value=\"", &maxlen, &pos);
+		ostrcatbig(&buf, begin, &maxlen, &pos);
+		ostrcatbig(&buf, "\" />", &maxlen, &pos);
+	}
 	
-	ostrcatbig(&buf, "<input type=\"hidden\" name=\"type\" value=\"", &maxlen, &pos);
-	ostrcatbig(&buf, type, &maxlen, &pos);
-	ostrcatbig(&buf, "\" />", &maxlen, &pos);
+	if(end != NULL)
+	{
+		ostrcatbig(&buf, "<input type=\"hidden\" name=\"end\" value=\"", &maxlen, &pos);
+		ostrcatbig(&buf, end, &maxlen, &pos);             
+		ostrcatbig(&buf, "\" />", &maxlen, &pos);
+	}
 	
-	ostrcatbig(&buf, "<input type=\"hidden\" name=\"ext\" value=\"", &maxlen, &pos);
-	ostrcatbig(&buf, ext, &maxlen, &pos);
-	ostrcatbig(&buf, "\" />", &maxlen, &pos);
+	if(type != NULL)
+	{
+		ostrcatbig(&buf, "<input type=\"hidden\" name=\"type\" value=\"", &maxlen, &pos);
+		ostrcatbig(&buf, type, &maxlen, &pos);
+		ostrcatbig(&buf, "\" />", &maxlen, &pos);
+	}
 	
-	ostrcatbig(&buf, "<input type=\"hidden\" name=\"afterevent\" value=\"", &maxlen, &pos);
-	ostrcatbig(&buf, afterevent, &maxlen, &pos);
-	ostrcatbig(&buf, "\" />", &maxlen, &pos);
+	if(ext != NULL)
+	{
+		ostrcatbig(&buf, "<input type=\"hidden\" name=\"ext\" value=\"", &maxlen, &pos);
+		ostrcatbig(&buf, ext, &maxlen, &pos);
+		ostrcatbig(&buf, "\" />", &maxlen, &pos);
+	}
 	
-	ostrcatbig(&buf, "<input type=\"hidden\" name=\"repeate\" value=\"", &maxlen, &pos);
-	ostrcatbig(&buf, repeat, &maxlen, &pos);
-	ostrcatbig(&buf, "\" />", &maxlen, &pos);
+	if(afterevent != NULL)
+	{
+		ostrcatbig(&buf, "<input type=\"hidden\" name=\"afterevent\" value=\"", &maxlen, &pos);
+		ostrcatbig(&buf, afterevent, &maxlen, &pos);
+		ostrcatbig(&buf, "\" />", &maxlen, &pos);
+	}
 	
-	ostrcatbig(&buf, "<select name=sid size=10>", &maxlen, &pos);
+	if(repeat != NULL)
+	{
+		ostrcatbig(&buf, "<input type=\"hidden\" name=\"repeat\" value=\"", &maxlen, &pos);
+		ostrcatbig(&buf, repeat, &maxlen, &pos);
+		ostrcatbig(&buf, "\" />", &maxlen, &pos);
+	}
+	
+	ostrcatbig(&buf, "<table border=\"0\"><tr>", &maxlen, &pos);
+	ostrcatbig(&buf, "<td><select name=sid size=10 border=0>", &maxlen, &pos);
 	
 	channel1 = channel;		
 	while(channel1 != NULL)
@@ -2558,15 +2580,13 @@ printf("%s\n", param);
 			}
 			
 			ostrcatbig(&buf, ")", &maxlen, &pos);	
-
-printf("xxxxxxxxxxxxxx\n");
 			
 			channelfind++;
 		}
 		channel1 = channel1->next;
 	}
 	
-	ostrcatbig(&buf, "<br><br></select><input class=button type=submit name=send value=\"Send\" onClick=\"return checkdaytime(begin.value, end.value)\"></input>&nbsp;<input class=button type=reset name=reset value=\"Reset\"></input></form></center></body></html>", &maxlen, &pos);
+	ostrcatbig(&buf, "</td></tr></table><br><br></select><input class=button type=submit name=send value=\"Send\" onClick=\"return checkdaytime(begin.value, end.value)\"></input>&nbsp;<input class=button type=reset name=reset value=\"Reset\"></input></form></center></body></html>", &maxlen, &pos);
 
 	if(channelfind < 2)
 	{
