@@ -2,7 +2,8 @@
 #
 
 buildtype=$1
-wgetbin="wget -T2 -t2 --waitretry=2"
+äwgetbin="wget -T2 -t2 --waitretry=2"
+wgetbin="wget -T10 -t2 --waitretry=2"
 
 rm cache.*
 rm _liste
