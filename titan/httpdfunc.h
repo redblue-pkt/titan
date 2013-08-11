@@ -2441,12 +2441,12 @@ char* webaddrectimer(char* param, int fmt)
 	return buf;
 }
 
-/*
 char* webrectimercheck(char* param, int fmt)
 {
-	char* buf = NULL, *buf1 = NULL, *string = NULL, *name = NULL, *begin = NULL, *end = NULL, *type = NULL, *anode = NULL, *ext = NULL, *afterevent = NULL, *repeat = NULL;
+	char* buf = NULL, *buf1 = NULL, *string = NULL, *name = NULL, *begin = NULL, *end = NULL, *type = NULL, *anode = NULL, *channelname = NULL, *ext = NULL, *afterevent = NULL, *repeat = NULL;
 	int maxlen = 0, pos = 0;
 	struct channel *channel1 = NULL;
+/*
 	
 	anode = ostrstr(param, "node=");
 	if(anode != NULL)
@@ -2463,6 +2463,9 @@ char* webrectimercheck(char* param, int fmt)
 	type = ostrstr(param, "type=");
 	if(type != NULL)
 		type = type + 5;
+	channelname = ostrstr(param, "channel=");
+	if(channelname != NULL)
+		channelname = channelname + 8;
 	ext = ostrstr(param, "ext=");
 	if(ext != NULL)
 		ext = ext + 4;
@@ -2557,10 +2560,10 @@ char* webrectimercheck(char* param, int fmt)
 		free(buf); buf = NULL;
 		buf = webrectimersend(param, fmt);	
 	}
-	
+
+*/	
 	return buf;		
 }
-*/
 
 char* webrectimersend(char* param, int fmt)
 {
