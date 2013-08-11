@@ -2373,7 +2373,7 @@ char* webaddrectimer(char* param, int fmt)
 	ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"titan.css\"></head>", &maxlen, &pos);
 	ostrcatbig(&buf, "<body class=body ><center>", &maxlen, &pos);
 	ostrcatbig(&buf, "<form name=F1 action=query method=get><br><br>", &maxlen, &pos);
-	ostrcatbig(&buf, "<input type=\"hidden\" name=\"rectimersend&node\" value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, "<input type=\"hidden\" name=\"rectimercheck&node\" value=\"", &maxlen, &pos);
 	ostrcatbig(&buf, "0", &maxlen, &pos);
 	ostrcatbig(&buf, "\">", &maxlen, &pos);
 	ostrcatbig(&buf, "<table border=\"0\"><tr>", &maxlen, &pos);
@@ -2443,10 +2443,9 @@ char* webaddrectimer(char* param, int fmt)
 
 char* webrectimercheck(char* param, int fmt)
 {
-	char* buf = NULL, *buf1 = NULL, *string = NULL, *name = NULL, *begin = NULL, *end = NULL, *type = NULL, *anode = NULL, *channelname = NULL, *ext = NULL, *afterevent = NULL, *repeat = NULL;
-	int maxlen = 0, pos = 0;
+	char* buf = NULL, *buf1 = NULL, *string = NULL, *param1 = NULL, *name = NULL, *begin = NULL, *end = NULL, *type = NULL, *anode = NULL, *channelname = NULL, *ext = NULL, *afterevent = NULL, *repeat = NULL;
+	int maxlen = 0, pos = 0, channelfind = 0;
 	struct channel *channel1 = NULL;
-/*
 	
 	anode = ostrstr(param, "node=");
 	if(anode != NULL)
@@ -2475,6 +2474,18 @@ char* webrectimercheck(char* param, int fmt)
 	repeat = ostrstr(param, "repeat=");
 	if(repeat != NULL)
 		repeat = repeat + 7;
+
+
+printf("%s\n", param);
+
+	param1 = ostrcat(param, NULL, 0, 0);
+	string = param;
+        while(string != NULL)
+        {
+                string = strchr(string, '&');
+                if(string != NULL)
+                        *string++ = '\0';
+        }
 	
 	ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"titan.css\"></head>", &maxlen, &pos);
 	ostrcatbig(&buf, "<body class=body ><center>", &maxlen, &pos);
@@ -2509,7 +2520,7 @@ char* webrectimercheck(char* param, int fmt)
 	ostrcatbig(&buf, "\" />", &maxlen, &pos);
 	
 	ostrcatbig(&buf, "<input type=\"hidden\" name=\"repeate\" value=\"", &maxlen, &pos);
-	ostrcatbig(&buf, repeate, &maxlen, &pos);
+	ostrcatbig(&buf, repeat, &maxlen, &pos);
 	ostrcatbig(&buf, "\" />", &maxlen, &pos);
 	
 	ostrcatbig(&buf, "<select name=sid size=10>", &maxlen, &pos);
@@ -2520,15 +2531,15 @@ char* webrectimercheck(char* param, int fmt)
 		if(ostrstr(channel1->name, channelname) != NULL && (channel1->servicetype == 0 || channel1->servicetype == 1))
 		{
 			if(channelfind == 0)
-				ostrcatbig(&buf, "<option selected value=\"">", &maxlen, &pos);
+				ostrcatbig(&buf, "<option selected value=\"", &maxlen, &pos);
 			else
-				ostrcatbig(&buf, "<option value=\"">", &maxlen, &pos);
+				ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
 			
 			buf1 = oitoa(channel1->serviceid);
 			ostrcatbig(&buf, buf1, &maxlen, &pos);
 			free(buf1); buf1 = NULL;
 			ostrcatbig(&buf, "&tid=", &maxlen, &pos);
-			buf1 = ollutoa(channel1->transponderid)
+			buf1 = ollutoa(channel1->transponderid);
 			ostrcatbig(&buf, buf1, &maxlen, &pos);
 			free(buf1); buf1 = NULL;
 			ostrcatbig(&buf, "\">", &maxlen, &pos);
@@ -2547,6 +2558,8 @@ char* webrectimercheck(char* param, int fmt)
 			}
 			
 			ostrcatbig(&buf, ")", &maxlen, &pos);	
+
+printf("xxxxxxxxxxxxxx\n");
 			
 			channelfind++;
 		}
@@ -2558,10 +2571,10 @@ char* webrectimercheck(char* param, int fmt)
 	if(channelfind < 2)
 	{
 		free(buf); buf = NULL;
-		buf = webrectimersend(param, fmt);	
+		buf = webrectimersend(param1, fmt);	
+		free(param1); param1 = NULL;
 	}
 
-*/	
 	return buf;		
 }
 

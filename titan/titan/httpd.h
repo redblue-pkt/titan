@@ -505,6 +505,8 @@ void gotdata(int* connfd)
 		{
 			if(ostrstr(filename, "query?rectimersend") != NULL)
 				stringreplacechar(filename, '+', ' ');
+			if(ostrstr(filename, "query?rectimercheck") != NULL)
+				stringreplacechar(filename, '+', ' ');
 			htmldecode(filename, filename);
 			
 			if(ostrstr(filename, "xmessage") == filename + 1  || ostrstr(filename, "/cgi-bin/xmessage") == filename )
