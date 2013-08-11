@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//httpdfunc.h
+char* webrectimersend(char* param, int fmt);
+
 //hwtest.h
 void screenhwtest();
 
