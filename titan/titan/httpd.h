@@ -201,6 +201,12 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webeditrectimer(param, fmt);
 		m_unlock(&status.waitrcmutex, 24);
 	}
+	else if(ostrcmp(query, "rectimercheck") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
+		buf = webrectimercheck(param, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "rectimersend") == 0)
 	{
 		m_lock(&status.waitrcmutex, 24);
