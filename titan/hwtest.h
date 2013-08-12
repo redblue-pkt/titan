@@ -228,6 +228,7 @@ void screenhwtest()
 			if(ostrcmp(mbox->name, "Front Key") == 0)
 			{
 				char* tmpload = ostrcat(load->text, NULL, 0, 0);
+				char* tmpstr = NULL;
 				while(1)
 				{
 					changetext(load, _("Press Front Key"));
