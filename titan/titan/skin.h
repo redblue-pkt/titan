@@ -300,6 +300,10 @@ int convertxmlentry(char *value, uint8_t *proz)
 		ret = INPUTBOX;
 	else if(strcasecmp(value, "inputboxnum") == 0)
 		ret = INPUTBOXNUM;
+	else if(strcasecmp(value, "inputboxpw") == 0)
+		ret = INPUTBOX | PASSWORD;
+	else if(strcasecmp(value, "inputboxnumpw") == 0)
+		ret = INPUTBOXNUM | PASSWORD;
 	else if(strcasecmp(value, "filelist") == 0)
 		ret = FILELIST;
 	else if(strcasecmp(value, "progressbar") == 0)
@@ -2493,8 +2497,9 @@ void wrapstr(char* string, char* fontname, int fontsize, int mwidth, int charspa
 	}
 }
 
-
-int drawstring(char* string, unsigned long linecount, unsigned int poscount, unsigned int markpos, int posx, int posy, int mwidth, int mheight, int halign, int valign, char* fontname, int fontsize, long color, int transparent, int wrap, int* lastposx, int* lastposy, int* len, int charspace)
+//flag 0: normal
+//flag 1: password
+int drawstring(char* string, unsigned long linecount, unsigned int poscount, unsigned int markpos, int posx, int posy, int mwidth, int mheight, int halign, int valign, char* fontname, int fontsize, long color, int transparent, int wrap, int* lastposx, int* lastposy, int* len, int charspace, int flag)
 {
 	debug(1000, "in");
 	int charwidth = 0, lineend = 0;
@@ -2507,6 +2512,9 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 	FT_ULong cret = 0;
 
 	if(string == NULL || color == -1) return 1;
+	
+	if(flag == 1)
+		string = mask("*", strlen(string), "*");	
 
 	transparent = (transparent - 255) * -1;
 
@@ -2520,6 +2528,7 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 	if(fontsize < 5)
 	{
 		debug(1000, "out -> fontsize to small");
+		if(flag == 1) free(string);
 		return 1;
 	}
 
@@ -2531,6 +2540,7 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 	if(aktheight > mheight)
 	{
 		debug(1000, "out -> to many textlines");
+		if(flag == 1) free(string);
 		return 1;
 	}
 
@@ -2576,6 +2586,8 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 	}
 	if(lastposx != NULL) *lastposx = posx;
 	if(lastposy != NULL) *lastposy = posy + fontsize;
+	
+	if(flag == 1) free(string);
 	debug(1000, "out");
 	return ret;
 }
@@ -2903,9 +2915,9 @@ void drawtitle(struct skin* node)
 {
 	debug(1000, "in");
 	if(status.titlelinesize > 0)
-		drawstring(node->title, 1, 0, -1, node->iposx, node->rposy + node->bordersize, node->iwidth, node->titlesize - status.titlelinesize, node->titlealign, MIDDLE, node->font, node->fontsize, node->fontcol, node->transparent, 0, NULL, NULL, NULL, node->charspace);
+		drawstring(node->title, 1, 0, -1, node->iposx, node->rposy + node->bordersize, node->iwidth, node->titlesize - status.titlelinesize, node->titlealign, MIDDLE, node->font, node->fontsize, node->fontcol, node->transparent, 0, NULL, NULL, NULL, node->charspace, 0);
 	else
-		drawstring(node->title, 1, 0, -1, node->iposx, node->rposy + node->bordersize, node->iwidth, node->titlesize - node->bordersize, node->titlealign, MIDDLE, node->font, node->fontsize, node->fontcol, node->transparent, 0, NULL, NULL, NULL, node->charspace);
+		drawstring(node->title, 1, 0, -1, node->iposx, node->rposy + node->bordersize, node->iwidth, node->titlesize - node->bordersize, node->titlealign, MIDDLE, node->font, node->fontsize, node->fontcol, node->transparent, 0, NULL, NULL, NULL, node->charspace, 0);
 	if(status.titlelinesize > 0)
 		fillrect(node->rposx, node->rposy + node->titlesize + status.picbordersize, node->rwidth, status.titlelinesize, node->bordercol, node->transparent);
 	else if(node->bordersize > 0)
@@ -3164,29 +3176,34 @@ void drawnode(struct skin* node, int flag)
 	if(node->input != NULL)
 	{
 		if(node->type & CHOICEBOX)
-			drawstring(node->input, 1, node->poscount, -1, node->iposx, node->iposy, node->iwidth, node->iheight, RIGHT, node->valign, node->font, node->fontsize, color, node->transparent, 0, NULL, NULL, &len, node->charspace);
+			drawstring(node->input, 1, node->poscount, -1, node->iposx, node->iposy, node->iwidth, node->iheight, RIGHT, node->valign, node->font, node->fontsize, color, node->transparent, 0, NULL, NULL, &len, node->charspace, 0);
 		if((node->type & INPUTBOX) || (node->type & INPUTBOXNUM))
-			drawstring(node->input, 1, node->poscount, node->aktpage, node->iposx, node->iposy, node->iwidth, node->iheight, RIGHT, node->valign, node->font, node->fontsize, color, node->transparent, 0, NULL, NULL, &len, node->charspace);
+		{
+			if(node->type & PASSWORD)
+				drawstring(node->input, 1, node->poscount, node->aktpage, node->iposx, node->iposy, node->iwidth, node->iheight, RIGHT, node->valign, node->font, node->fontsize, color, node->transparent, 0, NULL, NULL, &len, node->charspace, 1);
+			else
+				drawstring(node->input, 1, node->poscount, node->aktpage, node->iposx, node->iposy, node->iwidth, node->iheight, RIGHT, node->valign, node->font, node->fontsize, color, node->transparent, 0, NULL, NULL, &len, node->charspace, 0);
+		}
 	}
 	if(node->text != NULL)
 	{
 		if(node->type & TEXTBOX)
 		{
 			int lastposy = 0;
-			drawstring(node->text, node->linecount, node->poscount, -1, node->iposx + node->textposx, node->iposy, node->iwidth - node->textposx, node->iheight, node->halign, node->valign, node->font, node->fontsize, color, node->transparent, node->wrap, NULL, &lastposy, NULL, node->charspace);
-			drawstring(node->text2, node->linecount, node->poscount, -1, node->iposx + node->textposx2, lastposy, node->iwidth - node->textposx2, node->iheight - (lastposy - node->iposy), node->halign, node->valign, node->font, node->fontsize2, color2, node->transparent, node->wrap, NULL, &lastposy, NULL, node->charspace);
+			drawstring(node->text, node->linecount, node->poscount, -1, node->iposx + node->textposx, node->iposy, node->iwidth - node->textposx, node->iheight, node->halign, node->valign, node->font, node->fontsize, color, node->transparent, node->wrap, NULL, &lastposy, NULL, node->charspace, 0);
+			drawstring(node->text2, node->linecount, node->poscount, -1, node->iposx + node->textposx2, lastposy, node->iwidth - node->textposx2, node->iheight - (lastposy - node->iposy), node->halign, node->valign, node->font, node->fontsize2, color2, node->transparent, node->wrap, NULL, &lastposy, NULL, node->charspace, 0);
 		}
 		else
 		{
 			int lastposx = 0;
 			if(node->textposx2 > 0)
-				drawstring(node->text, 1, 0, -1, node->iposx + node->textposx, node->iposy, node->iwidth - node->textposx - (node->iwidth - node->textposx2) - len, node->iheight, node->halign, node->valign, node->font, node->fontsize, color, node->transparent, 0, &lastposx, NULL, NULL, node->charspace);
+				drawstring(node->text, 1, 0, -1, node->iposx + node->textposx, node->iposy, node->iwidth - node->textposx - (node->iwidth - node->textposx2) - len, node->iheight, node->halign, node->valign, node->font, node->fontsize, color, node->transparent, 0, &lastposx, NULL, NULL, node->charspace, 0);
 			else
-				drawstring(node->text, 1, 0, -1, node->iposx + node->textposx, node->iposy, node->iwidth - node->textposx - len, node->iheight, node->halign, node->valign, node->font, node->fontsize, color, node->transparent, 0, &lastposx, NULL, NULL, node->charspace);
+				drawstring(node->text, 1, 0, -1, node->iposx + node->textposx, node->iposy, node->iwidth - node->textposx - len, node->iheight, node->halign, node->valign, node->font, node->fontsize, color, node->transparent, 0, &lastposx, NULL, NULL, node->charspace, 0);
 			if(node->textposx2 > 0)
-				drawstring(node->text2, 1, 0, -1, node->iposx + node->textposx2, node->iposy, node->iwidth - node->textposx2 - len, node->iheight, node->halign, node->valign, node->font, node->fontsize2, color2, node->transparent, 0, NULL, NULL, NULL, node->charspace);
+				drawstring(node->text2, 1, 0, -1, node->iposx + node->textposx2, node->iposy, node->iwidth - node->textposx2 - len, node->iheight, node->halign, node->valign, node->font, node->fontsize2, color2, node->transparent, 0, NULL, NULL, NULL, node->charspace, 0);
 			else
-				drawstring(node->text2, 1, 0, -1, lastposx, node->iposy, node->iwidth - (lastposx - node->iposx) - len, node->iheight, node->halign, node->valign, node->font, node->fontsize2, color2, node->transparent, 0, NULL, NULL, NULL, node->charspace);
+				drawstring(node->text2, 1, 0, -1, lastposx, node->iposy, node->iwidth - (lastposx - node->iposx) - len, node->iheight, node->halign, node->valign, node->font, node->fontsize2, color2, node->transparent, 0, NULL, NULL, NULL, node->charspace, 0);
 		}
 	}
 	if(node->filelist != NULL && node->filelist->view > 3)
@@ -3230,7 +3247,7 @@ void drawnode(struct skin* node, int flag)
 				strftime(tmpnr, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
 			free(loctime);
 		}
-		drawstring(tmpnr, 1, node->poscount, -1, node->iposx, node->iposy, node->iwidth, node->iheight, RIGHT, node->valign, node->font, node->fontsize, node->fontcol, node->transparent, 0, NULL, NULL, NULL, node->charspace);
+		drawstring(tmpnr, 1, node->poscount, -1, node->iposx, node->iposy, node->iwidth, node->iheight, RIGHT, node->valign, node->font, node->fontsize, node->fontcol, node->transparent, 0, NULL, NULL, NULL, node->charspace, 0);
 		free(tmpnr);
 	}
 	if(node->title != NULL && node->fontsize > 1)
