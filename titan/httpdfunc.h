@@ -2592,38 +2592,40 @@ char* webrectimercheck(char* param, int fmt)
 		while(channel1 != NULL)
 		{
 			if(ostrstr(channel1->name, channelname) != NULL && (channel1->servicetype == 0 || channel1->servicetype == 1))
-			if(channelfind == 0)
-				ostrcatbig(&buf, "<option selected value=\"", &maxlen, &pos);
-			else
-				ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
-			
-			buf1 = oitoa(channel1->serviceid);
-			ostrcatbig(&buf, buf1, &maxlen, &pos);
-			free(buf1); buf1 = NULL;
-			ostrcatbig(&buf, "&tid=", &maxlen, &pos);
-			buf1 = ollutoa(channel1->transponderid);
-			ostrcatbig(&buf, buf1, &maxlen, &pos);
-			free(buf1); buf1 = NULL;
-			ostrcatbig(&buf, "\">", &maxlen, &pos);
-			
-			ostrcatbig(&buf, channel1->name, &maxlen, &pos);
-			ostrcatbig(&buf, " (", &maxlen, &pos);
-			
-			//get satname from channel
-			if(channel1->transponder != NULL)
 			{
-				struct sat* snode = getsatbyorbitalpos(channel1->transponder->orbitalpos);
-				if(snode != NULL)
-					ostrcatbig(&buf, snode->name, &maxlen, &pos);
+				if(channelfind == 0)
+					ostrcatbig(&buf, "<option selected value=\"", &maxlen, &pos);
 				else
-					ostrcatbig(&buf, _("unknown"), &maxlen, &pos);			
+					ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
+				
+				buf1 = oitoa(channel1->serviceid);
+				ostrcatbig(&buf, buf1, &maxlen, &pos);
+				free(buf1); buf1 = NULL;
+				ostrcatbig(&buf, "&tid=", &maxlen, &pos);
+				buf1 = ollutoa(channel1->transponderid);
+				ostrcatbig(&buf, buf1, &maxlen, &pos);
+				free(buf1); buf1 = NULL;
+				ostrcatbig(&buf, "\">", &maxlen, &pos);
+				
+				ostrcatbig(&buf, channel1->name, &maxlen, &pos);
+				ostrcatbig(&buf, " (", &maxlen, &pos);
+				
+				//get satname from channel
+				if(channel1->transponder != NULL)
+				{
+					struct sat* snode = getsatbyorbitalpos(channel1->transponder->orbitalpos);
+					if(snode != NULL)
+						ostrcatbig(&buf, snode->name, &maxlen, &pos);
+					else
+						ostrcatbig(&buf, _("unknown"), &maxlen, &pos);			
+				}
+				
+				ostrcatbig(&buf, ")", &maxlen, &pos);	
+				
+				channelfind++;
 			}
-			
-			ostrcatbig(&buf, ")", &maxlen, &pos);	
-			
-			channelfind++;
+			channel1 = channel1->next;
 		}
-		channel1 = channel1->next;
 	}
 	
 	ostrcatbig(&buf, "</td></tr></table><br><br></select><input class=button type=submit name=send value=\"Send\" onClick=\"return checkdaytime(begin.value, end.value)\"></input>&nbsp;<input class=button type=reset name=reset value=\"Reset\"></input></form></center></body></html>", &maxlen, &pos);
