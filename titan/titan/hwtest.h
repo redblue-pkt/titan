@@ -239,9 +239,9 @@ void screenhwtest()
 					if(rcret == getrcconfigint("rcexit", NULL) || rcret == getrcconfigint("rcok", NULL))
 						break;
 					
-					if(rcret = getrcconfigint("rcup", NULL)) tmpstr = ostrcat(tmpstr, "LEFT", 1, 0);
-					if(rcret = getrcconfigint("rcdown", NULL)) tmpstr = ostrcat(tmpstr, "RIGHT", 1, 0);
-					if(rcret = getrcconfigint("rcpower", NULL)) tmpstr = ostrcat(tmpstr, "POWER", 1, 0);
+					if(rcret == getrcconfigint("rcup", NULL)) tmpstr = ostrcat(tmpstr, "LEFT", 1, 0);
+					if(rcret == getrcconfigint("rcdown", NULL)) tmpstr = ostrcat(tmpstr, "RIGHT", 1, 0);
+					if(rcret == getrcconfigint("rcpower", NULL)) tmpstr = ostrcat(tmpstr, "POWER", 1, 0);
 					changetext(load, tmpstr);
 					clearscreen(load);
 					drawscreen(load, 0, 0);
