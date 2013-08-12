@@ -238,7 +238,9 @@ void screenhwtest()
 					if(rcret == getrcconfigint("rcexit", NULL) || rcret == getrcconfigint("rcok", NULL))
 						break;
 					
-					char* tmpstr = ostrcat(_("Got Keycode: "), oitoa(rcret), 0, 1);
+					if(rcret = getrcconfigint("rcup", NULL)) tmpstr = ostrcat(tmpstr, "LEFT", 1, 0);
+					if(rcret = getrcconfigint("rcdown", NULL)) tmpstr = ostrcat(tmpstr, "RIGHT", 1, 0);
+					if(rcret = getrcconfigint("rcpower", NULL)) tmpstr = ostrcat(tmpstr, "POWER", 1, 0);
 					changetext(load, tmpstr);
 					clearscreen(load);
 					drawscreen(load, 0, 0);
@@ -333,7 +335,13 @@ void screenhwtest()
 						{
 							tmpstr1 = ostrcat(tmpstr1, "Smartcard ", 1, 0);
 							tmpstr1 = ostrcat(tmpstr1, oitoa(smartcardcount), 1, 1);
-							tmpstr1 = ostrcat(tmpstr1, " Present\n", 1, 0);
+							tmpstr1 = ostrcat(tmpstr1, ": Present\n", 1, 0);
+						}
+						else
+						{
+							tmpstr1 = ostrcat(tmpstr1, "Smartcard ", 1, 0);
+							tmpstr1 = ostrcat(tmpstr1, oitoa(smartcardcount), 1, 1);
+							tmpstr1 = ostrcat(tmpstr1, ": Not Present\n", 1, 0);
 						}
 					}
 					
@@ -372,7 +380,7 @@ void screenhwtest()
 			
 			if(ostrcmp(mbox->name, "USB Port") == 0)
 			{
-				int usbcount = 0;
+				int usbcount = 0, found = 0, i = 0;
 				struct hdd* hddnode = NULL;
 				char* tmpstr = NULL;
 				
@@ -390,11 +398,24 @@ void screenhwtest()
 				{
 					if(hddnode->partition == 0)
 					{
+						found++;
 						tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-						tmpstr = ostrcat(tmpstr, _("found: "), 1, 0);
+						tmpstr = ostrcat(tmpstr, _("USB "), 1, 0);
+						tmpstr = ostrcat(tmpstr, oatoi(found), 1, 1);
+						tmpstr = ostrcat(tmpstr, " : "), 1, 0);
 						tmpstr = ostrcat(tmpstr, hddnode->device, 1, 0);
+						tmpstr = ostrcat(tmpstr, _(" - OKAY!"), 1, 0);
 					}
 					hddnode = hddnode->next;
+				}
+				
+				found++; usbcount++;
+				for(i = found; i < usbcount; i++)
+				{
+					tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+					tmpstr = ostrcat(tmpstr, _("USB "), 1, 0);
+					tmpstr = ostrcat(tmpstr, oatoi(found), 1, 1);
+					tmpstr = ostrcat(tmpstr, " : NOT OKAY!"), 1, 0);
 				}
 				
 				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 0, 0);			
