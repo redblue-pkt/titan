@@ -2514,7 +2514,7 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 	if(string == NULL || color == -1) return 1;
 	
 	if(flag == 1)
-		string = mask("*", strlen(string), "*");	
+		string = mask(NULL, strlen(string), "*");	
 
 	transparent = (transparent - 255) * -1;
 

@@ -105,6 +105,11 @@ char* mask(char* input, int count, char* maskchar)
 		for(i = 0; i < count - len; i++)
 			tmpstr = ostrcat(maskchar, tmpstr, 0, 1);
 	}
+	else
+	{
+		for(i = 0; i < count; i++)
+			tmpstr = ostrcat(maskchar, tmpstr, 0, 1);	
+	}
 
 	return tmpstr;
 }
