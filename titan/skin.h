@@ -2510,11 +2510,15 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 	struct font* aktfont = NULL;
 	long tmpcol = color;
 	FT_ULong cret = 0;
+	char* tmpstr = NULL;
 
 	if(string == NULL || color == -1) return 1;
 	
 	if(flag == 1)
-		string = mask(NULL, strlen(string), "*");	
+	{
+		string = mask(NULL, strlen(string), "*");
+		tmpstr = string;
+	}	
 
 	transparent = (transparent - 255) * -1;
 
@@ -2528,7 +2532,7 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 	if(fontsize < 5)
 	{
 		debug(1000, "out -> fontsize to small");
-		if(flag == 1) free(string);
+		if(flag == 1) free(tmpstr);
 		return 1;
 	}
 
@@ -2540,7 +2544,7 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 	if(aktheight > mheight)
 	{
 		debug(1000, "out -> to many textlines");
-		if(flag == 1) free(string);
+		if(flag == 1) free(tmpstr);
 		return 1;
 	}
 
@@ -2587,7 +2591,7 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 	if(lastposx != NULL) *lastposx = posx;
 	if(lastposy != NULL) *lastposy = posy + fontsize;
 	
-	if(flag == 1) free(string);
+	if(flag == 1) free(tmpstr);
 	debug(1000, "out");
 	return ret;
 }
