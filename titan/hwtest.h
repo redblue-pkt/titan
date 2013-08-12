@@ -402,7 +402,7 @@ void screenhwtest()
 						tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 						tmpstr = ostrcat(tmpstr, _("USB "), 1, 0);
 						tmpstr = ostrcat(tmpstr, oatoi(found), 1, 1);
-						tmpstr = ostrcat(tmpstr, " : "), 1, 0);
+						tmpstr = ostrcat(tmpstr, " : ", 1, 0);
 						tmpstr = ostrcat(tmpstr, hddnode->device, 1, 0);
 						tmpstr = ostrcat(tmpstr, _(" - OKAY!"), 1, 0);
 					}
@@ -415,7 +415,7 @@ void screenhwtest()
 					tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 					tmpstr = ostrcat(tmpstr, _("USB "), 1, 0);
 					tmpstr = ostrcat(tmpstr, oatoi(found), 1, 1);
-					tmpstr = ostrcat(tmpstr, " : NOT OKAY!"), 1, 0);
+					tmpstr = ostrcat(tmpstr, " : NOT OKAY!", 1, 0);
 				}
 				
 				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 0, 0);			
