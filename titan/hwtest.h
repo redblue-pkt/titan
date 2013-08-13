@@ -190,9 +190,12 @@ void screenhwtest()
 				drawscreen(load, 0, 0);
 				resettvpic();
 				testzap(getconfig("testtransponder1s", NULL), getconfig("testchannel1s", NULL));
-				sleep(2);
-				testzap(getconfig("testtransponder2s", NULL), getconfig("testchannel2s", NULL));
-				sleep(2);
+//				sleep(2);
+//				testzap(getconfig("testtransponder2s", NULL), getconfig("testchannel2s", NULL));
+//				sleep(2);
+				sleep(4);
+				testzap(getconfig("testtransponder1s", NULL), getconfig("testchannel2s", NULL));
+				sleep(4);
 				servicestart(lastchannel, NULL, NULL, 0);	
 			}
 			
