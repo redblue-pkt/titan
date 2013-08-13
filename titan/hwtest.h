@@ -193,9 +193,9 @@ void screenhwtest()
 //				sleep(2);
 //				testzap(getconfig("testtransponder2s", NULL), getconfig("testchannel2s", NULL));
 //				sleep(2);
-				testzap(getconfig("0#10900000#0#192#28125000#1#3#2#3#2#0", NULL), "8#0#1#380#381");
+				testzap("0#10900000#0#192#28125000#1#3#2#3#2#0", "8#0#1#380#381");
 				sleep(4);
-				testzap(getconfig("0#10900000#0#192#28125000#1#3#2#3#2#0", NULL), "8#0#1#380#381");
+				testzap("0#10900000#0#192#28125000#1#3#2#3#2#0", "8#0#1#380#381");
 				sleep(4);
 				servicestart(lastchannel, NULL, NULL, 0);	
 			}
