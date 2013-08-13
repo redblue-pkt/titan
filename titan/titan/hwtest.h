@@ -194,9 +194,7 @@ void screenhwtest()
 //				testzap(getconfig("testtransponder2s", NULL), getconfig("testchannel2s", NULL));
 //				sleep(2);
 				testzap("0#10900000#0#192#28125000#1#3#2#3#2#0", "8#0#1#380#381");
-				sleep(4);
-				testzap("0#10900000#0#192#28125000#1#3#2#3#2#0", "8#0#1#380#381");
-				sleep(4);
+				textbox(_("Message"), _("Press OK or EXIT"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 0, 0);
 				servicestart(lastchannel, NULL, NULL, 0);	
 			}
 			
@@ -338,15 +336,15 @@ void screenhwtest()
 						
 						if(status == 1)
 						{
-							tmpstr1 = ostrcat(tmpstr1, "Smartcard ", 1, 0);
+							tmpstr1 = ostrcat(tmpstr1, _("Smartcard "), 1, 0);
 							tmpstr1 = ostrcat(tmpstr1, oitoa(smartcardcount), 1, 1);
-							tmpstr1 = ostrcat(tmpstr1, ": Present\n", 1, 0);
+							tmpstr1 = ostrcat(tmpstr1, _(": Present\n"), 1, 0);
 						}
 						else
 						{
-							tmpstr1 = ostrcat(tmpstr1, "Smartcard ", 1, 0);
+							tmpstr1 = ostrcat(tmpstr1, _("Smartcard "), 1, 0);
 							tmpstr1 = ostrcat(tmpstr1, oitoa(smartcardcount), 1, 1);
-							tmpstr1 = ostrcat(tmpstr1, ": Not Present\n", 1, 0);
+							tmpstr1 = ostrcat(tmpstr1, _(": Not Present\n"), 1, 0);
 						}
 					}
 					
@@ -420,7 +418,7 @@ void screenhwtest()
 					tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 					tmpstr = ostrcat(tmpstr, _("USB "), 1, 0);
 					tmpstr = ostrcat(tmpstr, oitoa(found), 1, 1);
-					tmpstr = ostrcat(tmpstr, " : NOT OKAY!", 1, 0);
+					tmpstr = ostrcat(tmpstr, _(" : NOT OKAY!"), 1, 0);
 				}
 				
 				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 0, 0);			
