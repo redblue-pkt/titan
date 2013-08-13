@@ -153,7 +153,7 @@ int casend(struct dvbdev* dvbnode, unsigned char* buf, int len)
 	int flag = 0;
 
 	if(dvbnode == NULL || dvbnode->caslot == NULL) return 1;
-	tmpbuf = (unsigned char*) malloc(len + 5);
+	tmpbuf = (unsigned char*) malloc(len + 10);
 	if(tmpbuf == NULL)
 	{
 		err("no mem");
@@ -168,14 +168,16 @@ int casend(struct dvbdev* dvbnode, unsigned char* buf, int len)
 		else
 		{
 			//send data_last and data
-			memcpy(tmpbuf + 5, buf, len);
+			int lenfield = 0;
 
 			tmpbuf[0] = dvbnode->devnr;
 			tmpbuf[1] = dvbnode->caslot->connid;
 			tmpbuf[2] = T_DATA_LAST;
-			tmpbuf[3] = len + 1; //len
-			tmpbuf[4] = dvbnode->caslot->connid; //transport connection identifier
-			len += 5;
+			lenfield = writelengthfield(tmpbuf + 3, len + 1); //len
+			tmpbuf[3 + lenfield] = dvbnode->caslot->connid; //transport connection identifier
+			len += (4 + lenfield);
+			
+			memcpy(tmpbuf + (4 + lenfield), buf, len);
 		}
 	}
 	else
