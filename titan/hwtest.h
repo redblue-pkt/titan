@@ -322,7 +322,9 @@ void screenhwtest()
 				uint32_t status = 0;
 				int smartcardcount = 0;
 				char* tmpstr = NULL, *tmpstr1 = NULL;
+				unsigned char buf[1] = {0};
 				
+				drawscreen(load, 0, 0);
 				dvbnode = dvbdev;
 				while(dvbnode != NULL)
 				{
@@ -332,6 +334,24 @@ void screenhwtest()
 						status = 0;
 						dvbnode->fd = scopendirect(dvbnode->dev);
 						scgetiscardpresent(dvbnode, &status);
+						if(status == 1)
+						{
+							status = 0;
+							if(scsetreset(dvbnode) == 0)
+							{
+								sciparameters params;
+								params.ETU = 372;
+								params.EGT = 3;
+								params.fs = 5;
+								params.T = 0;
+								
+								if(scsetparameters(dvbnode, &params) == 0)
+								{
+									if(dvbreadfd(dvbnode->fd, buf, 0, 1, -1, 0) == 1)
+										status = 1;
+								}
+							}						
+						}
 						scclose(dvbnode, -1);
 						
 						if(status == 1)
@@ -350,6 +370,7 @@ void screenhwtest()
 					
 					dvbnode = dvbnode->next;
 				}
+				clearscreen(load);
 				
 				tmpstr = ostrcat(_("Smartcard Ports found: "), oitoa(smartcardcount), 0, 1);
 				tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
