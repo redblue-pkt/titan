@@ -494,8 +494,12 @@ void screenhwtest()
 					//port_settings.c_cflag &= ~CSIZE;
 					//port_settings.c_cflag |= CS8;
 					//tcsetattr(fd, TCSANOW, &port_settings);
-				
-					//tcflush(fd, TCIOFLUSH);
+
+					tcflush(fd, TCIOFLUSH);
+
+printf("sleep1\n");
+					sleep(4);
+printf("sleep2\n");				
 				
 					ret = dvbwrite(fd, tmpwr, 4, -1);
 					if(ret != 4)
