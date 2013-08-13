@@ -190,9 +190,9 @@ void screenhwtest()
 				drawscreen(load, 0, 0);
 				resettvpic();				
 //				testzap(getconfig("testtransponder1s", NULL), getconfig("testchannel1s", NULL));
-//				sleep(2);
+//				textbox(_("Message"), _("Press OK or EXIT"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 0, 0);
 //				testzap(getconfig("testtransponder2s", NULL), getconfig("testchannel2s", NULL));
-//				sleep(2);
+//				textbox(_("Message"), _("Press OK or EXIT"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 0, 0);
 				testzap("0#10900000#0#192#28125000#1#3#2#3#2#0", "8#0#1#380#381");
 				textbox(_("Message"), _("Press OK or EXIT"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 0, 0);
 				servicestart(lastchannel, NULL, NULL, 0);	
