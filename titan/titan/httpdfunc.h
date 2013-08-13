@@ -2550,7 +2550,7 @@ char* webrectimercheck(char* param, int fmt)
 	channel1 = channel;		
 	while(channel1 != NULL)
 	{
-		if(ostrcmp(channel1->name, channelname) != NULL && (channel1->servicetype == 0 || channel1->servicetype == 1))
+		if(ostrcmp(channel1->name, channelname) == 0 && (channel1->servicetype == 0 || channel1->servicetype == 1))
 		{
 			if(channelfind == 0)
 				ostrcatbig(&buf, "<option selected value=\"", &maxlen, &pos);
