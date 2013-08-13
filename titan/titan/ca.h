@@ -186,7 +186,7 @@ int casend(struct dvbdev* dvbnode, unsigned char* buf, int len)
 		tmpbuf[0] = dvbnode->devnr;
 		tmpbuf[1] = dvbnode->caslot->connid;
 		tmpbuf[2] = T_DATA_LAST;
-		tmpbuf[3] = len + 1; //len
+		tmpbuf[3] = 1; //len
 		tmpbuf[4] = dvbnode->caslot->connid; //transport connection identifier
 		len = 5;
 		flag = 1;
