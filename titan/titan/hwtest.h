@@ -347,7 +347,7 @@ void screenhwtest()
 								
 								if(scsetparameters(dvbnode, &params) == 0)
 								{
-									if(dvbreadfd(dvbnode->fd, buf, 0, 1, -1, 0) == 1)
+									if(dvbreadfd(dvbnode->fd, buf, 0, 1, -1, 1) == 1)
 										status = 1;
 								}
 							}						
