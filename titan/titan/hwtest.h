@@ -438,7 +438,7 @@ void screenhwtest()
 				{
 					tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 					tmpstr = ostrcat(tmpstr, _("USB "), 1, 0);
-					tmpstr = ostrcat(tmpstr, oitoa(found), 1, 1);
+					tmpstr = ostrcat(tmpstr, oitoa(i), 1, 1);
 					tmpstr = ostrcat(tmpstr, _(" : NOT OKAY!"), 1, 0);
 				}
 				
@@ -488,6 +488,8 @@ void screenhwtest()
 				int exist = 1;
 				unsigned char tmpwr[4] = {0};
 				unsigned char tmprd[5] = {0};
+				
+				drawscreen(load, 0, 0);
 				
 				tmpwr[0] = 'A'; //65
 				tmpwr[1] = 'B'; //66
@@ -542,6 +544,8 @@ void screenhwtest()
 				}
 				
 				if(exist == 0) unlink(SERIALDEV);
+				
+				clearscreen(load);
 
 				if(tmprd[0] == 'A' && tmprd[1] == 'B' && tmprd[2] == 'C' && tmprd[3] == 'D')
 					textbox(_("Message"), _("SUCESS Serial Port"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
