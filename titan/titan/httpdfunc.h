@@ -2576,6 +2576,18 @@ char* webrectimercheck(char* param, int fmt)
 				if(snode != NULL)
 					ostrcatbig(&buf, snode->name, &maxlen, &pos);
 				else
+					ostrcatbig(&buf, _("unknown"), &maxlen, &pos);
+					
+				if(channel1->provider != NULL)
+					ostrcatbig(&buf, " - ", &maxlen, &pos);			
+			}
+			
+			//get provider from channel
+			if(channel1->provider != NULL)
+			{
+				if(channel1->provider->name != NULL)
+					ostrcatbig(&buf, channel1->provider->name, &maxlen, &pos);
+				else
 					ostrcatbig(&buf, _("unknown"), &maxlen, &pos);			
 			}
 			
@@ -2616,6 +2628,18 @@ char* webrectimercheck(char* param, int fmt)
 					struct sat* snode = getsatbyorbitalpos(channel1->transponder->orbitalpos);
 					if(snode != NULL)
 						ostrcatbig(&buf, snode->name, &maxlen, &pos);
+					else
+						ostrcatbig(&buf, _("unknown"), &maxlen, &pos);
+						
+					if(channel1->provider != NULL)
+						ostrcatbig(&buf, " - ", &maxlen, &pos);			
+				}
+				
+				//get provider from channel
+				if(channel1->provider != NULL)
+				{
+					if(channel1->provider->name != NULL)
+						ostrcatbig(&buf, channel1->provider->name, &maxlen, &pos);
 					else
 						ostrcatbig(&buf, _("unknown"), &maxlen, &pos);			
 				}
