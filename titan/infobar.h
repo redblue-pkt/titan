@@ -357,6 +357,19 @@ void screeninfobar()
 			subtitlepause(0);
 			continue;
 		}
+		if(status.timeshift == 1 && rcret == getrcconfigint("rcarchive", NULL))
+		{
+			subtitlepause(1);
+			status.infobar = 0;
+			status.infobaraktiv = 0;
+			clearscreen(infobar);
+			screenplay(NULL, NULL, 1, 0);
+			status.infobaraktiv = 1;
+			status.updatevfd = START;
+			drawscreen(skin, 0, 0);
+			subtitlepause(0);
+			continue;
+		}
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			subtitlepause(1);
