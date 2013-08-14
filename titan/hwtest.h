@@ -520,10 +520,6 @@ void screenhwtest()
 
 					tcflush(fd, TCIOFLUSH);
 
-printf("sleep1\n");
-					sleep(4);
-printf("sleep2\n");				
-				
 					ret = dvbwrite(fd, tmpwr, 4, -1);
 					if(ret != 4)
 					{
