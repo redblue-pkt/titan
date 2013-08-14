@@ -485,9 +485,9 @@ void screenhwtest()
 			
 			if(ostrcmp(mbox->name, "RS232") == 0)
 			{
-				int exist = 1;
+				int exist = 1, count = 0, okA = 0, okB = 0, okC = 0, okD = 0;
 				unsigned char tmpwr[4] = {0};
-				unsigned char tmprd[5] = {0};
+				unsigned char tmprd[1] = {0};
 				
 				drawscreen(load, 0, 0);
 				
@@ -528,14 +528,16 @@ void screenhwtest()
 						err("write %s (ret=%d)", SERIALDEV, ret);
 					}
 
-					ret = dvbreadfd(fd, tmprd, 0, 1, -1, 0);
-					ret += dvbreadfd(fd, tmprd, 1, 1, -1, 0);
-					ret += dvbreadfd(fd, tmprd, 2, 1, -1, 0);
-					ret += dvbreadfd(fd, tmprd, 3, 1, -1, 0);
-					if(ret != 4)
+					while(dvbreadfd(fd, tmprd, 0, 1, -1, 0) == 1 && count < 200)
 					{
-						err("read %s (ret=%d, tmprd=%s)", SERIALDEV, ret, tmprd);
+						if(tmprd[0] == 'A') okA = 1;
+						if(tmprd[0] == 'B') okB = 1;
+						if(tmprd[0] == 'C') okC = 1;
+						if(tmprd[0] == 'D') okD = 1;
+						
+						count++;	
 					}
+					
 					close(fd);
 				}
 				else
@@ -547,7 +549,7 @@ void screenhwtest()
 				
 				clearscreen(load);
 
-				if(tmprd[0] == 'A' && tmprd[1] == 'B' && tmprd[2] == 'C' && tmprd[3] == 'D')
+				if(okA == 1 && okB == 1 && okC == 1 && okD == 1)
 					textbox(_("Message"), _("SUCESS Serial Port"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
 				else
 					textbox(_("Message"), _("FAIL Serial Port"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
