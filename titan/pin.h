@@ -6,6 +6,8 @@
 //type = 2 (only if menuprotect yes)
 int screenpincheck(int type, char* pin)
 {
+	int oldaktpage = -1;
+
 	if(type == 1)
 	{
 		if(getconfigint("channelprotect", NULL) == 0) return 0;
@@ -28,6 +30,11 @@ int screenpincheck(int type, char* pin)
 		rcret = waitrc(pincheck, 0, 0);
 	
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
+
+		if(pincheck->aktpage == 1 && oldaktpage == 4 && rcnumber(rcret))
+			rcret = getrcconfigint("rcok", NULL);
+		oldaktpage = pincheck->aktpage;
+
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			if(type == 1)
@@ -43,6 +50,16 @@ int screenpincheck(int type, char* pin)
 				if(ostrcmp(pincheck->ret, getconfig("pincodemenu", NULL)) == 0)
 					ret = 0;
 			}
+
+			if(ret != 0)
+			{
+				long oldbgcol = pincheck->bgcol;
+				pincheck->bgcol = status.markcol;
+				drawscreen(pincheck, 0, 0);
+				usleep(500000);
+				pincheck->bgcol = oldbgcol;
+			}
+
 			break;
 		}
 	}
