@@ -30,7 +30,7 @@ extern struct fb* fb;
 #include "mc_pictureplayer_settings.h"
 
 char pluginname[] = "Media Center";
-char plugindesc[] = "AAF Multi Mediacenter";
+char plugindesc[] = "Multi Mediacenter";
 char pluginpic[] = "%pluginpath%/mediacenter/plugin.png";
 
 int pluginaktiv = 0;
