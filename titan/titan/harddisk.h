@@ -1,6 +1,25 @@
 #ifndef HARDDISK_H
 #define HARDDISK_H
 
+int checkfilesystemexist(char* filesystem)
+{
+	int ret = 0;
+	char* tmpstr = NULL, *tmpstr1 = NULL;
+
+	tmpstr = readfiletomem("/proc/filesystems", 0);
+
+	tmpstr1 = ostrcat("\t", filesystem, 0, 0);
+	tmpstr1 = ostrcat(tmpstr1, "\n", 0, 0);
+
+	if(ostrstr(tmpstr, tmpstr1) != NULL)
+		ret = 1;
+
+	free(tmpstr); tmpstr = NULL;
+	free(tmpstr1); tmpstr1 = NULL;
+
+	return ret;
+}
+
 char* blocktogb(unsigned long size)
 {
 	char* buf = NULL;
@@ -115,6 +134,11 @@ void screenfilesystem(char* dev)
 
 	for(i = 0; i < count; i++)
 	{
+		if(i == 0 && checkfilesystemexist("ext3") == 0) continue;
+		else if(i ==  1 && checkfilesystemexist("ext2") == 0) continue;
+		else if(i == 2 && checkfilesystemexist("jfs") == 0) continue;
+		else if(i == 3 && checkfilesystemexist("vfat") == 0) continue;
+
 		tmp = addlistbox(screen, listbox, tmp, 1);
 		if(tmp != NULL)
 		{
