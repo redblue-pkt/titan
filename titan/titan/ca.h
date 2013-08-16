@@ -175,9 +175,9 @@ int casend(struct dvbdev* dvbnode, unsigned char* buf, int len)
 			tmpbuf[2] = T_DATA_LAST;
 			lenfield = writelengthfield(tmpbuf + 3, len + 1); //len
 			tmpbuf[3 + lenfield] = dvbnode->caslot->connid; //transport connection identifier
-			len += (4 + lenfield);
 			
 			memcpy(tmpbuf + (4 + lenfield), buf, len);
+			len += (4 + lenfield);
 		}
 	}
 	else
