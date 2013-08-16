@@ -912,9 +912,10 @@ void fesetunicable(struct dvbdev* node)
 	unicabletune |= ((node->feloffrequency / 1000) & 0x3ff);
 
 	debug(200, "unicabletune %04X", unicabletune);
-
+	
 	//fesetvoltage(node, SEC_VOLTAGE_OFF, 15);
 	fesetvoltage(node, SEC_VOLTAGE_18, 15);
+	sleep(5);
 	fesettone(node, SEC_TONE_OFF, 15);
 
 	//feunicable
