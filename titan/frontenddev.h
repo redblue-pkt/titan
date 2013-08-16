@@ -913,7 +913,7 @@ void fesetunicable(struct dvbdev* node)
 
 	debug(200, "unicabletune %04X", unicabletune);
 	
-	//fesetvoltage(node, SEC_VOLTAGE_OFF, 15);
+	fesetvoltage(node, SEC_VOLTAGE_13, 15);
 	fesetvoltage(node, SEC_VOLTAGE_18, 15);
 	fesettone(node, SEC_TONE_OFF, 15);
 
@@ -1142,6 +1142,7 @@ void feset(struct dvbdev* node, struct transponder* tpnode)
 		case 1: volt = SEC_VOLTAGE_13; break;
 		case 2: volt = SEC_VOLTAGE_18; break;
 		default: volt = node->feaktpolarization ? SEC_VOLTAGE_13 : SEC_VOLTAGE_18;
+		         if(node->feunicable == 1) volt = SEC_VOLTAGE_13;
 	}
 	fesetvoltage(node, volt, 15);
 
@@ -1165,6 +1166,7 @@ void feset(struct dvbdev* node, struct transponder* tpnode)
 		case 1: tone = SEC_TONE_ON; break;
 		case 2: tone = SEC_TONE_OFF; break;
 		default: tone = node->feaktband ? SEC_TONE_ON : SEC_TONE_OFF;
+		         if(node->feunicable == 1) tone = SEC_TONE_OFF;
 	}
 	fesettone(node, tone, 15);
 	debug(1000, "out");
