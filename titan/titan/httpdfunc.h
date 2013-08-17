@@ -2373,7 +2373,7 @@ char* webaddrectimer(char* param, int fmt)
 	ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"titan.css\"></head>", &maxlen, &pos);
 	ostrcatbig(&buf, "<body class=body ><center>", &maxlen, &pos);
 	ostrcatbig(&buf, "<form name=F1 action=query method=get><br><br>", &maxlen, &pos);
-	if(channel == NULL)
+	if(chnode == NULL)
 		ostrcatbig(&buf, "<input type=\"hidden\" name=\"rectimercheck&node\" value=\"", &maxlen, &pos);
 	else
 		ostrcatbig(&buf, "<input type=\"hidden\" name=\"rectimersend&node\" value=\"", &maxlen, &pos);
