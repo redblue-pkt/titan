@@ -2373,7 +2373,10 @@ char* webaddrectimer(char* param, int fmt)
 	ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"titan.css\"></head>", &maxlen, &pos);
 	ostrcatbig(&buf, "<body class=body ><center>", &maxlen, &pos);
 	ostrcatbig(&buf, "<form name=F1 action=query method=get><br><br>", &maxlen, &pos);
-	ostrcatbig(&buf, "<input type=\"hidden\" name=\"rectimercheck&node\" value=\"", &maxlen, &pos);
+	if(channel == NULL)
+		ostrcatbig(&buf, "<input type=\"hidden\" name=\"rectimercheck&node\" value=\"", &maxlen, &pos);
+	else
+		ostrcatbig(&buf, "<input type=\"hidden\" name=\"rectimersend&node\" value=\"", &maxlen, &pos);
 	ostrcatbig(&buf, "0", &maxlen, &pos);
 	ostrcatbig(&buf, "\">", &maxlen, &pos);
 	ostrcatbig(&buf, "<table border=\"0\"><tr>", &maxlen, &pos);
@@ -2422,7 +2425,23 @@ char* webaddrectimer(char* param, int fmt)
 	free(buf2); buf2 = NULL;
 
 	ostrcatbig(&buf, "<td><font class=label>Channel:&nbsp;</font></td>", &maxlen, &pos);
-	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"channel\" value=\"", &maxlen, &pos);
+	if(chnode == NULL)
+		ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"channel\" value=\"", &maxlen, &pos);
+	else
+	{
+		ostrcatbig(&buf, "<td>", &maxlen, &pos);
+		ostrcatbig(&buf, "<input class=inputbox type=\"hidden\" name=\"sid\" value=\"", &maxlen, &pos);
+		buf1 = oitoa(chnode->serviceid);
+		ostrcatbig(&buf, buf1, &maxlen, &pos);
+		free(buf1); buf1 = NULL;
+		ostrcatbig(&buf, "\" />", &maxlen, &pos); 
+		ostrcatbig(&buf, "<input class=inputbox type=\"hidden\" name=\"tid\" value=\"", &maxlen, &pos);
+		buf1 = ollutoa(chnode->transponderid);
+		ostrcatbig(&buf, buf1, &maxlen, &pos);
+		free(buf1); buf1 = NULL;
+		ostrcatbig(&buf, "\" />", &maxlen, &pos);
+		ostrcatbig(&buf, "<input readonly class=inputbox type=\"text\" name=\"channel\" value=\"", &maxlen, &pos);
+	}
 	if(chnode != NULL)
 		ostrcatbig(&buf, chnode->name, &maxlen, &pos);
 	else if(status.aktservice->channel != NULL)
