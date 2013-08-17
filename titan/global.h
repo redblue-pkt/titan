@@ -2397,27 +2397,27 @@ void debugstack(int sig, void* address, void* address1)
 	akttrace[1] = (void*)address;
 	aktstring = backtrace_symbols(akttrace, 2); //get fault funktion name
 
-	printf("--------------------------------------\n");
-	printf("Box: %s\n", boxversion);
-	printf("Image: %s\n", imgversion);
-	printf("Signal: %d (%s)\n", sig, strsignal(sig));
+	fprintf(stderr, "--------------------------------------\n");
+	fprintf(stderr, "Box: %s\n", boxversion);
+	fprintf(stderr, "Image: %s\n", imgversion);
+	fprintf(stderr, "Signal: %d (%s)\n", sig, strsignal(sig));
 	if(info1.dli_fname != NULL)
-		printf("Error in File: %s\n", info1.dli_fname);
-	printf("MainThread: %x\n", (unsigned int)status.mainthread);
+		fprintf(stderr, "Error in File: %s\n", info1.dli_fname);
+	fprintf(stderr, "MainThread: %x\n", (unsigned int)status.mainthread);
 	if(tnode != NULL && info.dli_sname != NULL)
-		printf("Error in Thread: %x (%s)\n", (unsigned int)pthread_self(), info.dli_sname);
+		fprintf(stderr, "Error in Thread: %x (%s)\n", (unsigned int)pthread_self(), info.dli_sname);
 	else
-		printf("Error in Thread: %x\n", (unsigned int)pthread_self());
-	printf("Obtaining %zd stack frames:\n\n", size);
+		fprintf(stderr, "Error in Thread: %x\n", (unsigned int)pthread_self());
+	fprintf(stderr, "Obtaining %zd stack frames:\n\n", size);
 
 	for(i = 0; i < size; i++)
-		printf("%s\n", strings[i]);
+		fprintf(stderr, "%s\n", strings[i]);
 
-	printf("\nLast functions:\n\n");
-	printf("%s\n", aktstring[0]);
-	printf("%s\n", aktstring[1]);
+	fprintf(stderr, "\nLast functions:\n\n");
+	fprintf(stderr, "%s\n", aktstring[0]);
+	fprintf(stderr, "%s\n", aktstring[1]);
 
-	printf("--------------------------------------\n");
+	fprintf(stderr, "--------------------------------------\n");
 
 	char* logdir = ostrcat(getconfig("tracelog", NULL), NULL, 0, 0);
 	if(logdir != NULL)
@@ -2440,7 +2440,7 @@ void debugstack(int sig, void* address, void* address1)
 		fprintf(fd, "Image: %s\n", imgversion);
 		fprintf(fd, "Signal: %d (%s)\n", sig, strsignal(sig));
 		if(info1.dli_fname != NULL)
-			printf("Error in File: %s\n", info1.dli_fname);
+			fprintf(fd, "Error in File: %s\n", info1.dli_fname);
 		fprintf(fd, "MainThread: %x\n", (unsigned int)status.mainthread);
 		if(tnode != NULL && info.dli_sname != NULL)
 			fprintf(fd, "Error in Thread: %x (%s)\n", (unsigned int)pthread_self(), info.dli_sname);
