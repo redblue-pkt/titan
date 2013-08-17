@@ -27,7 +27,7 @@ void debugfunc(int level, char* file, const char* function, int line, char* msg,
 		printf("[%s] ", PROGNAME);
 		vfprintf(stdout, msg, ap);
 		va_end(ap);
-		printf(", file=%s, func=%s, line=%d\n", file, function, line);
+		fprintf(stdout, ", file=%s, func=%s, line=%d\n", file, function, line);
 	}
 }
 #define debug(level, msg...) debugfunc(level, __FILE__, __FUNCTION__, __LINE__, msg);
