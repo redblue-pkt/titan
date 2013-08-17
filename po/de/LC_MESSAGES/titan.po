@@ -3961,7 +3961,7 @@ msgid "Tpk Update Info - Update ERROR"
 msgstr "Tpk Update Info - Update Fehler"
 
 msgid "Can't get all TPK index !"
-msgstr "Es konnten nicht alle TPK Index Datei geholt werden !"
+msgstr "Es konnten nicht alle TPK Index Dateien geholt werden !"
 
 msgid "Can't update all packages !"
 msgstr "Es konnten nicht alle TPK Pakete aktualisiert werden !"
