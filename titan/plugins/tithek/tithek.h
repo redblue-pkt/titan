@@ -1405,7 +1405,6 @@ void screentithekplay(char* titheklink, char* title, int first)
 	struct skin* tmp = NULL;
 	char* tithekpic = NULL;
 	
-	changetitle(countpage, NULL);
 	drawscreen(load, 0, 0);
 	
 	if(titheklink == NULL) return;
@@ -1425,6 +1424,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 	while(1)
 	{
 		changetitle(grid, _(title));
+		changetext(countpage, NULL);
 		if(listbox->select != NULL && listbox->select->handle != NULL)
 		{
 			tmp = listbox->select;
@@ -1519,9 +1519,9 @@ waitrcstart:
 			pagecount = createtithekplay(titheklink, grid, listbox, countlabel, first);
 			if(pagecount == 0 || tithekexit == 1) break;
 
-			listbox->aktpage = oaktpage;
-			listbox->aktline = oaktline;
-			listbox->gridcol = ogridcol;
+			listbox->aktpage = -1;
+			listbox->aktline = 1;
+			listbox->gridcol = 1;
 			addscreenrc(grid, listbox);
 			drawscreen(grid, 0, 0);
 		}
