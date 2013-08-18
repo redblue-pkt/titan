@@ -2375,11 +2375,8 @@ void debugstack(int sig, void* address, void* address1)
 	char **aktstring;
 	time_t rawtime;
 
-	char* boxversion = NULL;
 	char* imgversion = NULL;
 	struct stimerthread* tnode = NULL;
-
-	boxversion = getboxtype();
 
 	if(isfile(getconfig("imagenamefile", NULL))	!= 0)
 		imgversion = readsys(getconfig("imagenamefile", NULL), 1);
@@ -2398,7 +2395,7 @@ void debugstack(int sig, void* address, void* address1)
 	aktstring = backtrace_symbols(akttrace, 2); //get fault funktion name
 
 	fprintf(stderr, "--------------------------------------\n");
-	fprintf(stderr, "Box: %s\n", boxversion);
+	fprintf(stderr, "Box: %s\n", getboxtype());
 	fprintf(stderr, "Image: %s\n", imgversion);
 	fprintf(stderr, "Signal: %d (%s)\n", sig, strsignal(sig));
 	if(info1.dli_fname != NULL)
@@ -2431,12 +2428,12 @@ void debugstack(int sig, void* address, void* address1)
 		free(logdir); logdir = NULL;
 	} 
 			
-	fd = fopen(getconfig("tracelog", NULL), "w");
+	fd = fopen(getconfig("tracelog", NULL), "a");
 	if(fd != NULL)
 	{
 		time(&rawtime);
 		fprintf(fd, "Date: %s", ctime(&rawtime));
-		fprintf(fd, "Box: %s\n", boxversion);
+		fprintf(fd, "Box: %s\n", getboxtype());
 		fprintf(fd, "Image: %s\n", imgversion);
 		fprintf(fd, "Signal: %d (%s)\n", sig, strsignal(sig));
 		if(info1.dli_fname != NULL)
@@ -2460,7 +2457,6 @@ void debugstack(int sig, void* address, void* address1)
 		perr("open %s", getconfig("tracelog", NULL));
 
 	free(imgversion);
-	free(boxversion);
 	free(strings);
 	free(aktstring);
 }
