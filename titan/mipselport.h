@@ -722,7 +722,7 @@ void sighandler(int sig, struct sigcontext ctx)
 #endif
 */
 			if(getconfigint("saverun", NULL) == 1 && status.longjumpbuf != NULL)
-				siglongjmp(status.longjumpbuf, 1);
+				siglongjmp(status.longjumpbuf, 999);
 			else
 				exit(100);
 			break;

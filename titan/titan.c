@@ -1022,7 +1022,8 @@ firstwizzardstep1:
 	//must called direct befor screeninfobar
 	if(getconfigint("saverun", NULL) == 1)
 	{
-		if(sigsetjmp(status.longjumpbuf, 1) != 0)
+		ret = sigsetjmp(status.longjumpbuf, 1);
+		if(ret != 0 && ret != 999)
 		{
 			err("set sigsegjump");
 		}
