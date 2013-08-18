@@ -1026,6 +1026,9 @@ void playrcjumpr(char* file, char* showname, int sec, int* playinfobarstatus, in
 	
 	if(status.pause == 0 && status.playspeed == 0 && status.slowspeed == 0)
 	{
+		struct skin* load = getscreen("loading");
+		drawscreen(load, 0, 0);
+		
 		//a jump over the beginning of the
 		//file, freez the player (type 0)
 		if(playertype == 1)
@@ -1062,6 +1065,7 @@ void playrcjumpr(char* file, char* showname, int sec, int* playinfobarstatus, in
 		*playinfobarstatus = 1;
 		*playinfobarcount = 0;
 		//status.play = 0;
+		clearscreen(load);
 		screenplayinfobar(file, showname, 0, playertype, flag);
 		//status.play = 1;
 		sleep(1);
@@ -1088,6 +1092,9 @@ void playrcjumpf(char* file, char* showname, int sec, int* playinfobarstatus, in
 
 	if(status.pause == 0 && status.playspeed == 0 && status.slowspeed == 0)
 	{
+		struct skin* load = getscreen("loading");
+		drawscreen(load, 0, 0);
+		
 		if(playertype == 1)
 			playerseekts(getservice(RECORDPLAY, 0), sec, 0);
 		else if(playertype == 2)
@@ -1097,6 +1104,7 @@ void playrcjumpf(char* file, char* showname, int sec, int* playinfobarstatus, in
 		*playinfobarstatus = 1;
 		*playinfobarcount = 0;
 		//status.play = 0;
+		clearscreen(load);
 		screenplayinfobar(file, showname, 0, playertype, flag);
 		//status.play = 1;
 	}
